@@ -3,6 +3,7 @@
 PORTNAME=	gitolite
 DISTVERSIONPREFIX=v
 DISTVERSION=	3.6.7
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	devel
 
@@ -34,6 +35,10 @@ OPTIONS_SUB=	yes
 
 GITUSER_DESC=	Create git user as gitolite provider
 GITUSER_VARS=	USERS=git GROUPS=git
+
+post-patch:
+	@${REINPLACE_CMD} -i '' -e 's,#!/usr/bin/perl,#!${PERL},' \
+		${WRKSRC}/src/lib/Gitolite/Hooks/*.pm
 
 do-build:
 	echo "${GH_TAGNAME}" > ${WRKSRC}/src/VERSION
