@@ -31,11 +31,7 @@ RAKE_BIN=	${LOCALBASE}/bin/rake
 USES=		cpe gem
 NOPORTDOCS=	yes
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MAPACHE22}
-USE_APACHE=	22+
-.endif
+APACHE22_USE=	APACHE=22+
 
 LIB_DEPENDS+=	libuv.so:devel/libuv \
 		libcurl.so:ftp/curl
@@ -52,21 +48,11 @@ PLIST_FILES=	bin/passenger \
 		bin/passenger-status \
 		bin/passenger-install-nginx-module
 
-.if ${PORT_OPTIONS:MSYMLINK}
-PLIST_FILES+=	${GEMS_DIR}/${PORTNAME}
-SUB_LIST+=	PASSENGER_INSTALL_DIR="${PREFIX}/${GEMS_DIR}/${PORTNAME}"
-.else
-SUB_LIST+=	PASSENGER_INSTALL_DIR="${PREFIX}/${GEM_LIB_DIR}"
-.endif
+SYMLINK_PLIST_FILES=	${GEMS_DIR}/${PORTNAME}
+SYMLINK_SUB_LIST=	PASSENGER_INSTALL_DIR="${PREFIX}/${GEMS_DIR}/${PORTNAME}"
+SYMLINK_SUB_LIST_OFF=	PASSENGER_INSTALL_DIR="${PREFIX}/${GEM_LIB_DIR}"
 
 pre-patch:
-.if ${PORT_OPTIONS:MNGINX}
-	@${ECHO_CMD}
-	@${ECHO_CMD} "Do not forget compile www/nginx"
-	@${ECHO_CMD} "with PASSENGER_MODULE support"
-	@${ECHO_CMD}
-.endif
-
 	@${REINPLACE_CMD} \
 		's!-Wall!!g; \
 		s!gcc!${CC}!g; \
@@ -76,30 +62,34 @@ pre-patch:
 		s! -feliminate-unused-debug-symbols -feliminate-unused-debug-types!!g; \
 		166s!true!false!' \
 		${WRKSRC}/build/basics.rb
-.if ${PORT_OPTIONS:NDEBUG}
+
+pre-patch-DEBUG-off:
 	@${REINPLACE_CMD} \
 		's!-DPASSENGER_DEBUG!-DNDEBUG!g' \
 		${WRKSRC}/build/basics.rb
-.endif
+
+pre-patch-NGINX-on:
+	@${ECHO_CMD}
+	@${ECHO_CMD} "Do not forget compile www/nginx"
+	@${ECHO_CMD} "with PASSENGER_MODULE support"
+	@${ECHO_CMD}
 
 post-build:
-.if ${PORT_OPTIONS:MAPACHE22}
-	(CC=${CC} CXX=${CXX} ${WRKSRC}/bin/passenger-install-apache2-module --auto)
-.endif
-
-.if ${PORT_OPTIONS:MNGINX}
-	(cd ${WRKSRC} && CC=${CC} CXX=${CXX} ${RAKE_BIN} nginx)
-.endif
-
 	${FIND} ${WRKSRC} -name '*.o' -delete
 	${FIND} ${WRKSRC} -name '*.bak' -delete
+
+post-build-APACHE22-on:
+	(CC=${CC} CXX=${CXX} ${WRKSRC}/bin/passenger-install-apache2-module --auto)
+
+post-build-NGINX-on:
+	(cd ${WRKSRC} && CC=${CC} CXX=${CXX} ${RAKE_BIN} nginx)
 
 post-install:
 	( cd ${WRKSRC} && \
 	${COPYTREE_SHARE} buildout ${STAGEDIR}${PREFIX}/${GEMS_DIR}/${PORTNAME}-${PORTVERSION} )
 	${CHMOD} +x ${STAGEDIR}${PREFIX}/${GEMS_DIR}/${PORTNAME}-${PORTVERSION}/buildout/support-binaries/*
-.if ${PORT_OPTIONS:MSYMLINK}
+
+post-install-SYMLINK-on:
 	${LN} -s ${GEM_NAME} ${STAGEDIR}${PREFIX}/${GEMS_DIR}/${PORTNAME}
-.endif
 
 .include <bsd.port.mk>
