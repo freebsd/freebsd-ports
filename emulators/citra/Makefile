@@ -38,7 +38,6 @@ GH_TUPLE=	citra-emu:ext-soundtouch:5274ec4:soundtouch/externals/soundtouch \
 		weidai11:cryptopp:CRYPTOPP_5_6_5-164-g841c37e:cryptopp/externals/cryptopp/cryptopp
 
 USES=		cmake:outsource compiler:c++14-lang iconv localbase:ldflags
-FAVORITE_COMPILER=	${COMPILER_TYPE} # c++14-lib
 CMAKE_ARGS=	-DENABLE_WEB_SERVICE=off # XXX unbundle curl-7.52.1
 CXXFLAGS+=	-D_GLIBCXX_USE_C99 -D_GLIBCXX_USE_C99_MATH_TR1 \
 		-D_DECLARE_C99_LDBL_MATH # XXX ports/193528
