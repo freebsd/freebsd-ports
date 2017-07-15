@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	anvil
-PORTVERSION=	0.0.6
+PORTVERSION=	0.0.7
 CATEGORIES=	sysutils
 
 MAINTAINER=	dvl@FreeBSD.org
@@ -17,7 +17,7 @@ GROUPS=	anvil
 
 SUB_FILES+=	cert-shifter.conf.sample cert-puller.conf.sample pkg-install pkg-message
 
-NO_BUILD=    yes
+NO_BUILD=	yes
 
 do-install:
 	${MKDIR} ${STAGEDIR}${ETCDIR}

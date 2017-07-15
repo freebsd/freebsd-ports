@@ -158,7 +158,7 @@ drizzle:*:213:
 kyototycoon:*:214:
 opendnssec:*:215:
 nsd:*:216:
-# free: 217
+anvil:*:217:
 # free: 218
 # free: 219
 bs:*:220:
