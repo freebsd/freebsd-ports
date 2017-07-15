@@ -1,6 +1,6 @@
---- adm/templates/occt_macros.cmake.orig	2014-11-16 14:21:14.000000000 +0100
-+++ adm/templates/occt_macros.cmake	2014-11-16 14:35:55.000000000 +0100
-@@ -44,7 +44,7 @@
+--- adm/cmake/occt_macros.cmake.orig	2016-11-25 09:52:00 UTC
++++ adm/cmake/occt_macros.cmake
+@@ -53,7 +53,7 @@ macro (OCCT_MAKE_OS_WITH_BITNESS)
    elseif(APPLE)
      set (OS_WITH_BIT "mac${COMPILER_BITNESS}")
    else()
