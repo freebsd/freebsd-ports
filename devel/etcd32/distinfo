@@ -1,3 +1,3 @@
-TIMESTAMP = 1499504907
-SHA256 (coreos-etcd-v3.2.2_GH0.tar.gz) = dcbc38efb19c1a6238de01b8c2ced45209eec4f5c92239f2bc03a3c0db684e90
-SIZE (coreos-etcd-v3.2.2_GH0.tar.gz) = 2881889
+TIMESTAMP = 1500104915
+SHA256 (coreos-etcd-v3.2.3_GH0.tar.gz) = f7f70ec0a5d32522ed2599444671554aa4116196cb5298f89b5c34beae45f54b
+SIZE (coreos-etcd-v3.2.3_GH0.tar.gz) = 2881665
