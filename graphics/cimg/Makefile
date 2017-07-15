@@ -3,6 +3,7 @@
 
 PORTNAME=	cimg
 DISTVERSION=	2.0.2
+PORTEPOCH=	3
 CATEGORIES=	graphics devel
 
 MAINTAINER=	thierry@FreeBSD.org
@@ -17,7 +18,7 @@ LICENSE_FILE_CeCILL=	${WRKSRC}/Licence_CeCILL_V2-en.txt
 LICENSE_PERMS_CeCILL_C=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 LICENSE_PERMS_CeCILL=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-ONLY_FOR_ARCHS=	i386 amd64
+ONLY_FOR_ARCHS=	amd64 i386
 ONLY_FOR_ARCHS_REASON=	invokes i386 asm
 
 USE_GITHUB=	yes

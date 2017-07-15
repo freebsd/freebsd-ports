@@ -3,7 +3,7 @@
 
 PORTNAME=	rails
 PORTVERSION=	5.1.2
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	5
@@ -13,16 +13,16 @@ COMMENT=	Full-stack web application framework
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-actioncable5=${PORTVERSION}:www/rubygem-actioncable5 \
-		rubygem-actionmailer5=${PORTVERSION}:mail/rubygem-actionmailer5 \
-		rubygem-actionpack5=${PORTVERSION}:www/rubygem-actionpack5 \
-		rubygem-actionview5=${PORTVERSION}:devel/rubygem-actionview5 \
-		rubygem-activejob5=${PORTVERSION}:devel/rubygem-activejob5 \
-		rubygem-activemodel5=${PORTVERSION}:databases/rubygem-activemodel5 \
-		rubygem-activerecord5=${PORTVERSION}:databases/rubygem-activerecord5 \
-		rubygem-activesupport5=${PORTVERSION}:devel/rubygem-activesupport5 \
+RUN_DEPENDS=	rubygem-actioncable5>=${PORTVERSION}:www/rubygem-actioncable5 \
+		rubygem-actionmailer5>=${PORTVERSION}:mail/rubygem-actionmailer5 \
+		rubygem-actionpack5>=${PORTVERSION}:www/rubygem-actionpack5 \
+		rubygem-actionview5>=${PORTVERSION}:devel/rubygem-actionview5 \
+		rubygem-activejob5>=${PORTVERSION}:devel/rubygem-activejob5 \
+		rubygem-activemodel5>=${PORTVERSION}:databases/rubygem-activemodel5 \
+		rubygem-activerecord5>=${PORTVERSION}:databases/rubygem-activerecord5 \
+		rubygem-activesupport5>=${PORTVERSION}:devel/rubygem-activesupport5 \
 		rubygem-bundler<2.0:sysutils/rubygem-bundler \
-		rubygem-railties5=${PORTVERSION}:www/rubygem-railties5 \
+		rubygem-railties5>=${PORTVERSION}:www/rubygem-railties5 \
 		rubygem-sprockets-rails-rails5>=2.0.0:devel/rubygem-sprockets-rails-rails5
 
 RUN_DEPENDS+=	rubygem-bindex>=0.5.0:devel/rubygem-bindex \
