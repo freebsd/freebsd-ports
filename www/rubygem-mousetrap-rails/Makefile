@@ -10,10 +10,9 @@ COMMENT=	Javascript library for handling keyboard shortcuts
 
 LICENSE=	MIT APACHE20
 LICENSE_COMB=	multi
-LICENSE_FILE=	LICENSE.md
+LICENSE_FILE_MIT=	${WRKSRC}/LICENSE.md
 
 NO_ARCH=	yes
-
 USE_RUBY=	yes
 USES=		gem
 
