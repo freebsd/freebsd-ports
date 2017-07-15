@@ -19,4 +19,4 @@ respond to :to_str, e.g. String.
     end
     print "red bold".red.bold, "\n"
 
-WWW: http://flori.github.io/term-ansicolor/
+WWW: https://flori.github.io/term-ansicolor/
