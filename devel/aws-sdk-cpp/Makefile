@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	aws-sdk-cpp
-PORTVERSION=	1.1.8
+PORTVERSION=	1.1.12
 CATEGORIES=	devel
 
 MAINTAINER=	ports@FreeBSD.org
@@ -22,11 +22,9 @@ USES=		cmake pkgconfig compiler:c++11-lib ssl
 USE_LDCONFIG=	yes
 CXXFLAGS=	-Wno-error
 
-.include <bsd.port.pre.mk>
-
 post-patch:
 	${REINPLACE_CMD} -e "s,/pkgconfig,/../libdata/pkgconfig,g" \
 		${WRKSRC}/aws-cpp-sdk-core/CMakeLists.txt \
 		${WRKSRC}/cmake/utilities.cmake
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
