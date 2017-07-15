@@ -4,7 +4,7 @@
 PORTNAME=	gitlab
 PORTVERSION=	9.1.7
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www devel
 
 MAINTAINER=	tz@FreeBSD.org
@@ -69,7 +69,7 @@ RUN_DEPENDS=	git>=2.8.4:devel/git \
 	rubygem-gollum-lib-gitlab>=4.2.0:www/rubygem-gollum-lib-gitlab \
 	rubygem-gollum-rugged_adapter>=0.4.4:www/rubygem-gollum-rugged_adapter \
 	rubygem-github-linguist>=4.7.0:textproc/rubygem-github-linguist \
-	rubygem-grape>=0.19.0:devel/rubygem-grape \
+	rubygem-grape0>=0.19.0:devel/rubygem-grape0 \
 	rubygem-grape-entity>=0.6.0:devel/rubygem-grape-entity \
 	rubygem-rack-cors>=0.4.0:www/rubygem-rack-cors \
 	rubygem-kaminari-rails4>=0.17.0:www/rubygem-kaminari-rails4 \
