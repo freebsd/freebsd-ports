@@ -75,8 +75,6 @@ PLIST_SUB+=	\
 		OCTAVE_SITE_OCT=${OCTAVE_SITE_OCT:S|^${OCTAVE_BASE}/||}
 SHEBANG_FILES=	src/octave/*
 SHEBANG_LANG+=	octave
-octave_OLD_CMD?=/usr/bin/octave
-octave_CMD?=	${OCTAVE_BASE}/bin/octave
 .endif
 
 post-install:

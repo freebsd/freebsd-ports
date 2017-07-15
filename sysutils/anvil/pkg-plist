@@ -1,0 +1,5 @@
+@sample %%ETCDIR%%/cert-shifter.conf.sample
+@sample %%ETCDIR%%/cert-puller.conf.sample
+bin/cert-shifter
+bin/cert-puller
+@dir(,,755) /var/db/anvil
