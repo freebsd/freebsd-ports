@@ -31,8 +31,8 @@ RUN_DEPENDS=	rubygem-chef-zero>=2.1.0:sysutils/rubygem-chef-zero \
 		rubygem-pry>=0.9.0:devel/rubygem-pry \
 		rubygem-rest-client>=1.0.4:www/rubygem-rest-client
 
-NO_ARCH=		yes
-USE_RUBY=		yes
+NO_ARCH=	yes
+USE_RUBY=	yes
 USES=		gem
 
 SUB_LIST=	RUBY=${RUBY}
@@ -45,10 +45,10 @@ post-install:
 	knife-list.1 knife-node.1 knife-raw.1 knife-recipe-list.1 knife-role.1 knife-search.1 \
 	knife-serve.1 knife-show.1 knife-ssh.1 knife-ssl-check.1 knife-ssl-fetch.1 knife-status.1 \
 	knife-tag.1 knife-upload.1 knife-user.1 knife-xargs.1 knife.1
-	@cd ${WRKSRC}/distro/common/man/man1 && ${INSTALL_MAN} ${M1} ${STAGEDIR}${MANPREFIX}/man/man1/
+	${INSTALL_MAN} ${WRKSRC}/distro/common/man/man1/${M1} ${STAGEDIR}${MANPREFIX}/man/man1/
 .endfor
 .for M8 in chef-client.8 chef-solo.8
-	@cd ${WRKSRC}/distro/common/man/man8 && ${INSTALL_MAN} ${M8} ${STAGEDIR}${MANPREFIX}/man/man8/
+	${INSTALL_MAN} ${WRKSRC}/distro/common/man/man8/${M8} ${STAGEDIR}${MANPREFIX}/man/man8/
 .endfor
 
 .include <bsd.port.mk>
