@@ -57,7 +57,7 @@ dcc:*:112:
 amavis:*:113:
 dhis:*:114:
 _symon:*:115:
-# free: 116
+u2f:*:116:
 smokeping:*:117:
 ircproxyd:*:118:
 mythtv:*:119:
