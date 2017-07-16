@@ -5414,6 +5414,7 @@
     SUBDIR += rubygem-interact
     SUBDIR += rubygem-io-like
     SUBDIR += rubygem-iobuffer
+    SUBDIR += rubygem-iso8601
     SUBDIR += rubygem-jammit
     SUBDIR += rubygem-jasmine-core
     SUBDIR += rubygem-jbuilder
