@@ -1,6 +1,6 @@
---- cd_unix.c.orig	Sun Aug 20 03:25:53 2000
+--- cd_unix.c.orig	2000-10-30 22:18:23 UTC
 +++ cd_unix.c
-@@ -62,7 +62,6 @@
+@@ -62,7 +62,6 @@ void cd_read_next_sector(u8 *buf)
  
  void cd_play_track(u8 track)
  {
@@ -8,7 +8,7 @@
      struct ioc_play_track playtrack;
  
      /* FIXME: CD keeps playing after program quits */
-@@ -74,12 +73,10 @@
+@@ -74,12 +73,10 @@ void cd_play_track(u8 track)
      playtrack.end_index = 1;
  
      ioctl(cd_drive, CDIOCPLAYTRACKS, &playtrack);
@@ -21,7 +21,7 @@
      struct ioc_play_blocks playblocks;
  
      /* FIXME: ignores the repeat flag */
-@@ -94,7 +91,6 @@
+@@ -94,7 +91,6 @@ void cd_play_lba(u32 from, u32 to, int repeat)
      playblocks.len = to - from;
  
      ioctl(cd_drive, CDIOCPLAYBLOCKS, &playblocks);

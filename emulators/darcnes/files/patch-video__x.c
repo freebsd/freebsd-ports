@@ -1,6 +1,6 @@
---- video_x.c.orig	Tue Aug 24 10:46:40 2004
-+++ video_x.c	Tue Aug 24 10:46:55 2004
-@@ -365,7 +365,7 @@
+--- video_x.c.orig	2000-10-30 22:15:34 UTC
++++ video_x.c
+@@ -365,7 +365,7 @@ void handle_joypad_key(int type, KeySym keysym)
  	    ui_joypad->data &= ~ui_joypad->button_template->buttons[0];
  	}
  	
