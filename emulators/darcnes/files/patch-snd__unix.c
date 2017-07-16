@@ -1,5 +1,5 @@
---- snd_unix.c.orig	Wed Oct 23 20:11:53 2002
-+++ snd_unix.c	Wed Oct 23 20:12:07 2002
+--- snd_unix.c.orig	2000-10-30 22:18:27 UTC
++++ snd_unix.c
 @@ -23,7 +23,7 @@
  #endif
  
