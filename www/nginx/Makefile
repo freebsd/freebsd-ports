@@ -14,6 +14,10 @@ COMMENT?=	Robust and small WWW server
 
 LICENSE=	BSD2CLAUSE
 
+CONFLICTS_INSTALL=	nginx-devel
+
+PORTSCOUT=	limit:^1\.12\.[0-9]*
+
 USES+=		cpe
 
 CPE_VENDOR=	nginx
@@ -239,9 +243,9 @@ WANT_GNOME=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MX11}
-IMAGEMAGICK_LIB_DEPENDS= libMagickWand-6.so:graphics/ImageMagick
+IMAGEMAGICK_LIB_DEPENDS=	libMagickWand-6.so:graphics/ImageMagick
 .else
-IMAGEMAGICK_LIB_DEPENDS= libMagickWand-6.so:graphics/ImageMagick-nox11
+IMAGEMAGICK_LIB_DEPENDS=	libMagickWand-6.so:graphics/ImageMagick-nox11
 .endif
 
 .if ${PORT_OPTIONS:MPASSENGER}
@@ -465,11 +469,11 @@ EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-ngx_http_echo_request_info.c
 .endif
 
 .if ${PORT_OPTIONS:MFASTDFS}
-NGINX_FASTDFS_VERSION=     5a8110f
-GH_ACCOUNT+=    happyfish100:fastdfs
-GH_PROJECT+=    fastdfs-nginx-module:fastdfs
-GH_TAGNAME+=    ${NGINX_FASTDFS_VERSION}:fastdfs
-EXTRA_PATCHES+= ${PATCHDIR}/extra-patch-fastdfs-src-config
+NGINX_FASTDFS_VERSION=	5a8110f
+GH_ACCOUNT+=	happyfish100:fastdfs
+GH_PROJECT+=	fastdfs-nginx-module:fastdfs
+GH_TAGNAME+=	${NGINX_FASTDFS_VERSION}:fastdfs
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-fastdfs-src-config
 BUILD_DEPENDS+=	${LOCALBASE}/include/fastcommon/logger.h:devel/libfastcommon \
 		${LOCALBASE}/include/fastdfs/fdfs_client.h:ftp/fastdfs
 LIB_DEPENDS+=	libfastcommon.so:devel/libfastcommon \
