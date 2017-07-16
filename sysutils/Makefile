@@ -1026,6 +1026,7 @@
     SUBDIR += rubygem-sys-proctable
     SUBDIR += rubygem-sys-uname
     SUBDIR += rubygem-sys-uptime
+    SUBDIR += rubygem-syslog-logger
     SUBDIR += rubygem-teamocil
     SUBDIR += rubygem-tmuxinator
     SUBDIR += rubygem-vagrant-bhyve

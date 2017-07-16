@@ -1,0 +1,5 @@
+Logger::Syslog is a Logger replacement that logs to syslog. It is almost drop-in
+with a few caveats. You can add Logger::Syslog to your Rails production
+environment to aggregate logs between multiple machines.
+
+WWW: https://github.com/ngmoco/syslog_logger
