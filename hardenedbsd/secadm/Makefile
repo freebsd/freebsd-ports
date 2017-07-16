@@ -2,7 +2,7 @@
 
 PORTNAME=	secadm
 PORTVERSION=	0.3
-PORTREVISION?=	2
+PORTREVISION?=	3
 CATEGORIES=	hardenedbsd
 
 MAINTAINER=	shawn.webb@hardenedbsd.org
