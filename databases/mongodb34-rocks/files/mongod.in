@@ -31,21 +31,22 @@ load_rc_config $name
 : ${mongod_limits="NO"}
 : ${mongod_dbpath="/var/db/mongodb"}
 : ${mongod_logpath="/var/log/mongodb"}
+: ${mongod_runpath="/var/run/mongodb"}
 : ${mongod_flags="--logpath ${mongod_logpath}/mongod.log --logappend"}
 : ${mongod_user="mongodb"}
 : ${mongod_group="mongodb"}
 : ${mongod_config="%%PREFIX%%/etc/mongod.conf"}
 
-pidfile="/var/run/mongodb/mongod.pid"
+pidfile="${mongod_runpath}/mongod.pid"
 command=%%PREFIX%%/bin/${name}
 command_args="--config $mongod_config --dbpath $mongod_dbpath --fork >/dev/null 2>/dev/null"
 start_precmd="${name}_prestart"
 
 mongod_create_dbpath()
 {
-        mkdir ${mongod_dbpath} >/dev/null 2>/dev/null
-        mkdir ${mongod_logpath} >/dev/null 2>/dev/null
-        [ $? -eq 0 ] && chown -R ${mongod_user}:${mongod_group} ${mongod_dbpath} ${mongod_logpath}
+	install -d -g ${mongod_group} -o ${mongod_user} -m 755 ${mongod_dbpath}
+	install -d -g ${mongod_group} -o ${mongod_user} -m 755 ${mongod_logpath}
+	install -d -g ${mongod_group} -o ${mongod_user} -m 755 ${mongod_runpath}
 }
 
 mongod_prestart()
