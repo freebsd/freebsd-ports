@@ -1,0 +1,12 @@
+Fuzzyurl provides two related functions: non-strict parsing of URLs or URL-like
+strings into their component pieces (protocol, username, password, hostname,
+port, path, query, and fragment), and fuzzy matching of URLs and URL patterns.
+
+Specifically, URLs that look like this:
+[protocol ://] [username [: password] @] [hostname] [: port] [/ path] [? query] [# fragment]
+
+Fuzzyurls can be constructed using some or all of the above fields, optionally
+replacing some or all of those fields with a * wildcard if you wish to use the
+Fuzzyurl as a URL mask.
+
+WWW: https://github.com/gamache/fuzzyurl.rb
