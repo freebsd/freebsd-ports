@@ -350,7 +350,6 @@
     SUBDIR += libevhtp
     SUBDIR += libgtkhtml
     SUBDIR += libhpack
-    SUBDIR += libhtp-suricata
     SUBDIR += libhubbub
     SUBDIR += libjwt
     SUBDIR += libmicrohttpd
