@@ -1,19 +1,24 @@
-After installing anvil, this is a short checklist of things to do:
 
-* adjust anvil.conf
+****************************************************************************
 
-* run 'cert-puller -s' to see the visudo settings you need
+After installing anvil, this is a short checklist of things to do, depending
+on which tools are using.
 
-* adjust the service configuration files if cert filenames are different
+For cert-puller:
 
-* By default, anvil uses:
+  * adjust /usr/local/etc/anvil/cert-puller.conf
 
-  * example.org.fullchain.cer
-  * example.org.key
+  * run 'cert-puller -s' to see the visudo settings you need
 
-* anvil does not distribute .key files. Do that manually.
+  * adjust the service configuration files (e.g. httpd.conf) if cert filenames 
+    are different from defaults.  By default, anvil uses:
 
-* install the crontab for anvil: sudo crontab -e -u anvil:
+    * example.org.fullchain.cer
+    * example.org.key
+
+  * anvil does not distribute .key files. Do that manually.
+
+  * install the crontab for anvil: sudo crontab -e -u anvil:
 
 ###
 # use /bin/sh to run commands, overriding the default set by cron
@@ -21,6 +26,23 @@ SHELL=/bin/sh
 # mail any output to here, no matter whose crontab this is
 MAILTO=you@example.org
 
-7 13 * * * %%PREFIX%%/bin/cert-puller
+7 13 * * * /usr/local/bin/cert-puller
 ###
+
+For cert-shifter:
+
+  * adjust /usr/local/etc/anvil/cert-shifter.conf
+
+  * install the crontab:
+
+###
+# use /bin/sh to run commands, overriding the default set by cron
+SHELL=/bin/sh
+# mail any output to here, no matter whose crontab this is
+MAILTO=you@example.org
+
+19 20 * * * /usr/local/bin/cert-shifter
+###
+
+****************************************************************************
 
