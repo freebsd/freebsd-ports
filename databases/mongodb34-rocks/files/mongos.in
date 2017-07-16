@@ -28,20 +28,21 @@ load_rc_config $name
 : ${mongos_enable="NO"}
 : ${mongos_limits="NO"}
 : ${mongos_logpath="/var/log/mongodb"}
+: ${mongos_runpath="/var/run/mongodb"}
 : ${mongos_flags="--logpath ${mongos_logpath}/mongos.log --logappend"}
 : ${mongos_user="mongodb"}
 : ${mongos_group="mongodb"}
 : ${mongos_config="%%PREFIX%%/etc/mongos.conf"}
 
-pidfile="/var/run/mongodb/mongos.pid"
+pidfile="${mongos_runpath}/mongos.pid"
 command=%%PREFIX%%/bin/${name}
 command_args="--config $mongos_config --fork >/dev/null 2>/dev/null"
 start_precmd="${name}_prestart"
 
 mongos_create_dbpath()
 {
-        mkdir ${mongos_logpath} >/dev/null 2>/dev/null
-        [ $? -eq 0 ] && chown -R ${mongos_user}:${mongos_group} ${mongos_logpath}
+        install -d -g ${mongos_group} -o ${mongos_user} -m 755 ${mongos_logpath}
+        install -d -g ${mongos_group} -o ${mongos_user} -m 755 ${mongos_runpath}
 }
 
 mongos_prestart()
