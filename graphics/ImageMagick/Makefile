@@ -38,6 +38,7 @@ LIB_DEPENDS=	libltdl.so:devel/libltdl
 PORTSCOUT?=	limit:6.*$$
 
 CONFLICTS_INSTALL=	execline-[0-9]* # bin/import
+CONFLICTS_INSTALL+=	ImageMagick7 ImageMagick7-nox11 # bin/Magick++-config
 
 # This port uses .la files, keep libtool:keepla! (magick/module.c)
 USES=		cpe gettext-runtime gmake gnome libtool:keepla \
