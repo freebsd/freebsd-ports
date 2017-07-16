@@ -3,7 +3,7 @@
 PORTNAME=	mastodon
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.4.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-im www
 
 MAINTAINER=	jrm@FreeBSD.org
@@ -55,7 +55,7 @@ RUN_DEPENDS+=	rubygem-addressable>0:www/rubygem-addressable \
 		rubygem-pundit>0:security/rubygem-pundit \
 		rubygem-rabl>0:devel/rubygem-rabl \
 		rubygem-rack-attack>0:www/rubygem-rack-attack \
-		rubygem-rack-cors>0:www/rubygem-rack-cors \
+		rubygem-rack-cors0>0:www/rubygem-rack-cors0 \
 		rubygem-rack-timeout>0:www/rubygem-rack-timeout \
 		rubygem-rails-i18n>0:devel/rubygem-rails-i18n \
 		rubygem-rails-settings-cached-rails5>0:www/rubygem-rails-settings-cached-rails5 \
