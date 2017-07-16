@@ -31,19 +31,12 @@ LDFLAGS+=	-L${LOCALBASE}/lib -lGLU
 
 SOYATUTVER=	0.14
 
-OPTIONS_DEFINE=	DOCS EXAMPLES
-
 PLIST_FILES=	man/man1/soya_editor.1.gz
 PORTDOCS=	*
 PORTEXAMPLES=	*
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MEXAMPLES}
-DISTFILES+=	SoyaTutorial-${SOYATUTVER}${EXTRACT_SUFX}
-.endif
-
-.include <bsd.port.pre.mk>
+OPTIONS_DEFINE=	DOCS EXAMPLES
+EXAMPLES_DISTFILES=	SoyaTutorial-${SOYATUTVER}${EXTRACT_SUFX}
 
 post-patch:
 	@${REINPLACE_CMD} -e \
@@ -51,19 +44,19 @@ post-patch:
 			's|/usr/include|${LOCALBASE}/include|g' ${WRKSRC}/setup.py
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/soya/*.so
-.if ${PORT_OPTIONS:MEXAMPLES}
+	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/soya/*.so
+	${INSTALL_MAN} ${WRKSRC}/manpage/man1/soya_editor.1 ${STAGEDIR}${PREFIX}/man/man1
+
+post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${CP} -R ${WRKDIR}/SoyaTutorial-${SOYATUTVER}/tutorial/* ${STAGEDIR}${EXAMPLESDIR}
 	${FIND} ${STAGEDIR}${EXAMPLESDIR}/* -type f -print0 | \
 		${XARGS} -0 ${CHMOD} ${SHAREMODE}
-.endif
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-. for FILE in AUTHORS README
-	@${INSTALL_DATA} ${WRKDIR}/SoyaTutorial-${SOYATUTVER}/${FILE} ${STAGEDIR}${DOCSDIR}
-. endfor
-.endif
-	${INSTALL_MAN} ${WRKSRC}/manpage/man1/soya_editor.1 ${STAGEDIR}${PREFIX}/man/man1
 
-.include <bsd.port.post.mk>
+post-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+.for FILE in AUTHORS README
+	${INSTALL_DATA} ${WRKDIR}/SoyaTutorial-${SOYATUTVER}/${FILE} ${STAGEDIR}${DOCSDIR}
+.endfor
+
+.include <bsd.port.mk>
