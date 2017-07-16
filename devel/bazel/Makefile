@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=		bazel
-PORTVERSION=		0.5.0
+PORTVERSION=		0.5.2
 CATEGORIES=		devel java
 MASTER_SITES=		https://storage.googleapis.com/bazel/${PORTVERSION}/rc${FINALRC}/
 DISTNAME=		bazel-${PORTVERSION}rc${FINALRC}-dist
@@ -21,7 +21,7 @@ BROKEN_armv6=		fails to package: cp: bazel: No such file or directory
 # In bazel, a release is always code-wise identical to the final release candidate.
 # Hence we can also download that one and so have a simple way to also test earlier release
 # candidates.
-FINALRC=		9
+FINALRC=		4
 
 NO_WRKSUBDIR=		YES
 USES=			shebangfix zip
