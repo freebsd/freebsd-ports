@@ -11,7 +11,7 @@ MAINTAINER=	koobs@FreeBSD.org
 COMMENT=	Parsing and validation of URIs (RFC 3986) and IRIs (RFC 3987)
 
 LICENSE=	GPLv3+
-LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE_FILE=	${WRKSRC}/COPYING.txt
 
 USES=		python
 USE_PYTHON=	autoplist distutils

@@ -57,6 +57,10 @@ post-install-DOCS-on:
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == powerpc64
+USE_GCC=	yes
+.endif
+
 .if ${SSL_DEFAULT:Mopenssl-devel}
 BROKEN=		Does not build with openssl-devel
 .endif
