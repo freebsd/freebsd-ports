@@ -4,7 +4,7 @@
 PORTNAME=	gitlab
 PORTVERSION=	9.1.7
 DISTVERSIONPREFIX=	v
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www devel
 
 MAINTAINER=	tz@FreeBSD.org
@@ -71,7 +71,7 @@ RUN_DEPENDS=	git>=2.8.4:devel/git \
 	rubygem-github-linguist>=4.7.0:textproc/rubygem-github-linguist \
 	rubygem-grape0>=0.19.0:devel/rubygem-grape0 \
 	rubygem-grape-entity>=0.6.0:devel/rubygem-grape-entity \
-	rubygem-rack-cors>=0.4.0:www/rubygem-rack-cors \
+	rubygem-rack-cors0>=0.4.0:www/rubygem-rack-cors0 \
 	rubygem-kaminari-rails4>=0.17.0:www/rubygem-kaminari-rails4 \
 	rubygem-hamlit>=2.6.1:www/rubygem-hamlit \
 	rubygem-carrierwave>=0.11.0:www/rubygem-carrierwave \
