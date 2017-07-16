@@ -13,15 +13,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		php:pecl
 
-.include <bsd.port.pre.mk>
-
 post-patch:
-.if ${PHP_VER} >= 70
-	${CP} ${WRKSRC}/src/php7/igbinary.h ${WRKSRC}/igbinary.h
-	${CP} ${WRKSRC}/src/php7/php_igbinary.h ${WRKSRC}/php_igbinary.h
-.else
-	${CP} ${WRKSRC}/src/php5/igbinary.h ${WRKSRC}/igbinary.h
-	${CP} ${WRKSRC}/src/php5/php_igbinary.h ${WRKSRC}/php_igbinary.h
-.endif
+	@${CP} ${WRKSRC}/src/php${PHP_VER:C|.$||}/igbinary.h ${WRKSRC}/igbinary.h
+	@${CP} ${WRKSRC}/src/php${PHP_VER:C|.$||}/php_igbinary.h ${WRKSRC}/php_igbinary.h
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

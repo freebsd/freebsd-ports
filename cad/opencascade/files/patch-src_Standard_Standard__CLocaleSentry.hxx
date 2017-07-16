@@ -1,5 +1,5 @@
---- inc/Standard_CLocaleSentry.hxx.orig	2014-11-07 16:16:43.000000000 +0100
-+++ inc/Standard_CLocaleSentry.hxx	2014-11-16 14:42:51.000000000 +0100
+--- src/Standard/Standard_CLocaleSentry.hxx.orig	2016-11-25 09:52:27 UTC
++++ src/Standard/Standard_CLocaleSentry.hxx
 @@ -25,7 +25,7 @@
    //! and become part of POSIX since '2008.
    //! Notice that this is impossible to test (_POSIX_C_SOURCE >= 200809L)

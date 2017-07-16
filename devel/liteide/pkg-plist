@@ -87,6 +87,7 @@ share/icons/hicolor/64x64/apps/liteide.png
 %%DATADIR%%/liteapp/qss/gray.qss
 %%DATADIR%%/liteapp/qss/sublime.qss
 %%DATADIR%%/liteapp/qss/vs-dark.qss
+%%DATADIR%%/liteapp/qss/vs-dark-hdpi.qss
 %%DATADIR%%/liteapp/template/empty/root
 %%DATADIR%%/liteapp/template/empty/setup.inf
 %%DATADIR%%/liteapp/template/file.sub

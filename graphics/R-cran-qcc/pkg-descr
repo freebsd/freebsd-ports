@@ -5,4 +5,4 @@ Cusum and EWMA charts. Operating characteristic curves. Process capability
 analysis. Pareto chart and cause-and-effect chart. Multivariate control
 charts.
 
-WWW: http://cran.r-project.org/web/packages/qcc/
+WWW: https://cran.r-project.org/package=qcc
