@@ -2063,6 +2063,7 @@
     SUBDIR += rubygem-rack-cache
     SUBDIR += rubygem-rack-contrib
     SUBDIR += rubygem-rack-cors
+    SUBDIR += rubygem-rack-cors0
     SUBDIR += rubygem-rack-mount
     SUBDIR += rubygem-rack-openid
     SUBDIR += rubygem-rack-protection
