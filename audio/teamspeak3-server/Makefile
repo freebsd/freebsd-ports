@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	teamspeak3-server
-PORTVERSION=	3.0.13.6
+PORTVERSION=	3.0.13.7
 PORTEPOCH=	1
 CATEGORIES=	audio net
 MASTER_SITES=	http://dl.4players.de/ts/releases/${PORTVERSION}/ \
@@ -17,45 +17,50 @@ LICENSE_NAME=	TeamSpeak 3.x End User License Agreement
 LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_PERMS=	no-dist-mirror no-dist-sell no-pkg-mirror no-pkg-sell
 
+ONLY_FOR_ARCHS=		amd64 i386
+
 USES=		tar:bz2
-NO_BUILD=	yes
 USE_LDCONFIG=	${LIBDIR}
 USE_RC_SUBR=	teamspeak
-SUB_FILES=	pkg-message
 
-RESTRICTED=	No redistribution
-ONLY_FOR_ARCHS=	amd64 i386
+NO_BUILD=	yes
+SUB_FILES=	pkg-message
 
 USERS=	teamspeak
 GROUPS=	teamspeak
 
 CONFLICTS=	teamspeak_server-[0-9]*
 
-PLIST_SUB+=	DBDIR=${DBDIR} \
+PLIST_SUB=	DBDIR=${DBDIR} \
 		ETCDIR=${ETCDIR} \
 		LOGDIR=${LOGDIR} \
 		BINGRP=${BINGRP}
 
-SUB_LIST+=	DBDIR=${DBDIR} \
+SUB_LIST=	DBDIR=${DBDIR} \
 		ETCDIR=${ETCDIR} \
 		LOGDIR=${LOGDIR}
+
+PORTDOCS=	permissiondoc.txt \
+		privilegekey_guide.txt \
+		server_quickstart.txt \
+		server_upgrade.txt \
+		update_mysql_to_mariadb.txt
 
 OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 
 .if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1100000 && ${OSVERSION} < 1100507
-BROKEN=	Will not start on FreeBSD 11, Bug 212493
+BROKEN=	Will not start on FreeBSD 11.0, Bug 212493
 .endif
 
-.if ${ARCH} ==	"i386"
+.if ${ARCH} == "i386"
 TEAMSPEAK_ARCH=	x86
-WRKSRC=	${WRKDIR}/${PORTNAME}_freebsd_${TEAMSPEAK_ARCH}
-.endif
-.if ${ARCH} ==	"amd64"
+.elif ${ARCH} == "amd64"
 TEAMSPEAK_ARCH=	amd64
-WRKSRC=	${WRKDIR}/${PORTNAME}_freebsd_${TEAMSPEAK_ARCH}
 .endif
+
+WRKSRC= ${WRKDIR}/${PORTNAME}_freebsd_${TEAMSPEAK_ARCH}
 
 DBDIR=	/var/db/teamspeak
 ETCDIR=	${PREFIX}/etc/teamspeak
@@ -63,11 +68,6 @@ LIBDIR=	${PREFIX}/lib/teamspeak/server
 LIBEXECDIR=	${PREFIX}/libexec
 LOGDIR=	/var/log/teamspeak
 SHAREDIR=	${PREFIX}/share/teamspeak/server
-PORTDOCS=	permissiondoc.txt \
-		privilegekey_guide.txt \
-		server_quickstart.txt \
-		server_upgrade.txt \
-		update_mysql_to_mariadb.txt
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${SHAREDIR}

@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gemojione
-PORTVERSION=	3.2.0
+PORTVERSION=	3.3.0
 CATEGORIES=	graphics rubygems
 MASTER_SITES=	RG
 

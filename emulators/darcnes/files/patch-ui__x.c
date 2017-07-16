@@ -1,4 +1,4 @@
---- ui_x.c.orig	Mon Oct 30 23:15:31 2000
+--- ui_x.c.orig	2000-10-30 22:15:31 UTC
 +++ ui_x.c
 @@ -177,6 +177,12 @@ int main(int argc, char *argv[])
  	return 1;

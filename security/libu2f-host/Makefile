@@ -3,12 +3,13 @@
 PORTNAME=	libu2f-host
 PORTVERSION=	1.1.3
 DISTVERSIONPREFIX=	${PORTNAME}-
+PORTREVISION=	1
 CATEGORIES=	security devel
 
-MAINTAINER=	bapt@FreeBSD.org
+MAINTAINER=	cpm@FreeBSD.org
 COMMENT=	Yubico Universal 2nd Factor (U2F) Host C Library
 
-LICENSE=	LGPL21 GPLv3
+LICENSE=	LGPL21+ GPLv3+
 LICENSE_COMB=	multi
 
 BUILD_DEPENDS=	gengetopt:devel/gengetopt \
@@ -25,5 +26,13 @@ USE_LDCONFIG=	yes
 
 CONFIGRUE_ARGS=	--disable-gtk-doc
 INSTALL_TARGET=	install-strip
+
+SUB_FILES=	pkg-message
+
+GROUPS=	u2f
+
+post-install:
+	${INSTALL_DATA} ${FILESDIR}/u2f.conf.sample \
+		${STAGEDIR}${PREFIX}/etc/devd
 
 .include <bsd.port.mk>
