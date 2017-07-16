@@ -9,8 +9,10 @@ MASTER_SITES=	RG
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Logger replacement that logs to syslog
 
-NO_ARCH=	yes
+DEPRECATED=	Project is EOL'd because it was merged into Ruby 2.0
+EXPIRATION_DATE=2017-07-31
 
+NO_ARCH=	yes
 USE_RUBY=	yes
 USES=		gem
 
