@@ -1,5 +1,5 @@
---- urcu/syscall-compat.h.orig	2016-11-30 21:05:22 UTC
-+++ urcu/syscall-compat.h
+--- include/urcu/syscall-compat.h.orig	2017-06-12 23:02:38 UTC
++++ include/urcu/syscall-compat.h
 @@ -32,7 +32,7 @@
  #elif defined(__linux__) || defined(__GLIBC__)
  #include <syscall.h>
