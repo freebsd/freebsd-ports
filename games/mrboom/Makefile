@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mrboom
-PORTVERSION=	3.4
+PORTVERSION=	3.5
 CATEGORIES=	games
 
 MAINTAINER=	ehaupt@FreeBSD.org
@@ -11,7 +11,8 @@ COMMENT=	8 players Bomberman clone
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libminizip.so:archivers/minizip
+LIB_DEPENDS=	libminizip.so:archivers/minizip \
+		libmodplug.so:audio/libmodplug
 
 USES=		gmake
 USE_GITHUB=	yes
