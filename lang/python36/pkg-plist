@@ -3284,7 +3284,6 @@ lib/python%%XYDOT%%/tabnanny.py
 lib/python%%XYDOT%%/tarfile.py
 lib/python%%XYDOT%%/telnetlib.py
 lib/python%%XYDOT%%/tempfile.py
-lib/python%%XYDOT%%/test/185test.db
 lib/python%%XYDOT%%/test/Sine-1000Hz-300ms.aif
 lib/python%%XYDOT%%/test/__init__.py
 lib/python%%XYDOT%%/test/__main__.py
