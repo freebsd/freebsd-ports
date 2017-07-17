@@ -2,6 +2,7 @@
 # $FreeBSD$
 
 DISTVERSION?=	9.6.3
+PORTREVISION?=	3
 
 MAINTAINER?=	pgsql@FreeBSD.org
 

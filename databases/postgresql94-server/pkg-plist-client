@@ -598,6 +598,7 @@ lib/postgresql/pgxs/src/Makefile.port
 lib/postgresql/pgxs/src/Makefile.shlib
 lib/postgresql/pgxs/src/makefiles/pgxs.mk
 lib/postgresql/pgxs/src/nls-global.mk
+lib/postgresql/pgxs/src/test/regress/pg_regress
 libdata/pkgconfig/libecpg.pc
 libdata/pkgconfig/libecpg_compat.pc
 libdata/pkgconfig/libpgtypes.pc

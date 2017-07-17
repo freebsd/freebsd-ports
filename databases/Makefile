@@ -665,6 +665,7 @@
     SUBDIR += postgresql-libpqxx3
     SUBDIR += postgresql-mysql_fdw
     SUBDIR += postgresql-odbc
+    SUBDIR += postgresql-orafce
     SUBDIR += postgresql-plproxy
     SUBDIR += postgresql-plruby
     SUBDIR += postgresql-plv8js
@@ -672,6 +673,7 @@
     SUBDIR += postgresql-repmgr
     SUBDIR += postgresql-repmgr2
     SUBDIR += postgresql-tds_fdw
+    SUBDIR += postgresql-zhparser
     SUBDIR += postgresql92-client
     SUBDIR += postgresql92-contrib
     SUBDIR += postgresql92-docs
