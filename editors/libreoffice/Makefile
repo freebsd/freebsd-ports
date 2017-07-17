@@ -106,7 +106,7 @@ USES=		autoreconf:build bison compiler:c++11-lib cpe gmake jpeg \
 WANT_GNOME=	yes
 
 OPTIONS_DEFINE=	CUPS GNOME GTK2 GTK3 JAVA KDE4 MMEDIA PGSQL SDK SYSTRAY \
-		TEST VERBOSE WEBDAV
+		TEST WEBDAV
 OPTIONS_DEFAULT=	CUPS GTK2 MMEDIA
 
 GTK3_DESC=	GTK+ 3 GUI toolkit support (experimental)
@@ -116,7 +116,6 @@ PGSQL_DESC=	Build with PostgreSQL-SDBC driver
 SDK_DESC=	Build with SDK
 SYSTRAY_DESC=	Enable systemtray quickstarter
 TEST_DESC=	Run all regression tests
-VERBOSE_DESC=	Increase build verbosity
 WEBDAV_DESC=	Enable webdav protocol
 
 CUPS_CONFIGURE_ENABLE=	cups
@@ -207,8 +206,6 @@ SYSTRAY_CONFIGURE_ENABLE=	systray
 TEST_ALL_TARGET_OFF=	build-nocheck
 TEST_CONFIGURE_ENABLE=	cve-tests
 
-VERBOSE_CONFIGURE_ON=	--enable-verbose
-
 WEBDAV_CONFIGURE_ENABLE=	neon
 WEBDAV_LIB_DEPENDS=	libneon.so:www/neon
 
@@ -269,6 +266,7 @@ MAKE_ARGS+=	TMPDIR=${WRKDIR}
 MAKE_ENV+=	CXXFLAGS_WARN="${CXXFLAGS_WARN}"
 MAKE_ENV+=	GNUSED=${LOCALBASE}/bin/gsed
 MAKE_ENV+=	DISPLAY=
+MAKE_ENV+=	verbose=1
 
 _MAKE_JOBS=	#
 
