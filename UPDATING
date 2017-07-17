@@ -5,6 +5,15 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20170717:
+  AFFECTS: users of devel/p5-Log-Any and devel/p5-Log-Any-Adapter-Syslog
+  AUTHOR: eugen@FreeBSD.org
+
+  devel/p5-Log-Any-Adapter-Syslog functionality have been merged into
+  devel/p5-Log-Any and from now devel/p5-Log-Any must be used.
+
+  devel/p5-Log-Any-Adapter-Syslog will be marked as deprecated and removed.
+
 20170712:
   AFFECTS: users of devel/apr1
   AUTHOR: brnrd@FreeBSD.org
