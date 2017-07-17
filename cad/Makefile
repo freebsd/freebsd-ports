@@ -58,7 +58,6 @@
     SUBDIR += magic
     SUBDIR += meshdev
     SUBDIR += meshlab
-    SUBDIR += mfront
     SUBDIR += netgen
     SUBDIR += ngspice_rework
     SUBDIR += opencascade
