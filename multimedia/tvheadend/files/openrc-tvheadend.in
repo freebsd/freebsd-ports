@@ -1,16 +1,11 @@
 #!/sbin/openrc-run
 
-# Add the following line to /etc/rc.conf[.local] to enable tvheadend
-#
-# tvheadend_enable (bool):	Set to "NO" by default.
-#				Set it to "YES" to enable tvheadend.
 # tvheadend_user (str):		User account to run with.
 # tvheadend_group (str):	Group to run as.
 # tvheadend_flags (str):	Custom flags for tvheadend.
 
 name=tvheadend
 
-: ${tvheadend_enable:=NO}
 : ${tvheadend_user="%%TVHUSER%%"}
 : ${tvheadend_group="%%TVHGROUP%%"}
 
