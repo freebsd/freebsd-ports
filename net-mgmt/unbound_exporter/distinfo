@@ -1,0 +1,17 @@
+TIMESTAMP = 1491608926
+SHA256 (kumina-unbound_exporter-v0.1_GH0.tar.gz) = 13e3517cf06dbdea0239ff55193b6ff82f9f279b68ecbd53b889b505c7834386
+SIZE (kumina-unbound_exporter-v0.1_GH0.tar.gz) = 7415
+SHA256 (prometheus-client_golang-08fd2e1_GH0.tar.gz) = e82b53d03a2439b3c645dc9f4fb250a626c5307e41a8ac67b68ee4ade7278c6e
+SIZE (prometheus-client_golang-08fd2e1_GH0.tar.gz) = 83314
+SHA256 (prometheus-client_model-6f38060_GH0.tar.gz) = 6b4cc049a4588d8e93b7acf6cffa6a53034d5410128ae3752263f2bacf9e606c
+SIZE (prometheus-client_model-6f38060_GH0.tar.gz) = 54645
+SHA256 (prometheus-common-49fee29_GH0.tar.gz) = c38dd9ce34f65921f8e7604e6be471f4a49626b63e7312db21f98d65085a7be6
+SIZE (prometheus-common-49fee29_GH0.tar.gz) = 59151
+SHA256 (prometheus-procfs-a1dba9c_GH0.tar.gz) = 1702ef1142513b687bd544962828432f88195e12bbb079cbd68670b00c3e2d18
+SIZE (prometheus-procfs-a1dba9c_GH0.tar.gz) = 31615
+SHA256 (beorn7-perks-4c0e845_GH0.tar.gz) = 2d0c7784d2695b09c87710bc8c3c3d5b88ffeece31a650ed901763d215615478
+SIZE (beorn7-perks-4c0e845_GH0.tar.gz) = 10593
+SHA256 (golang-protobuf-2bba060_GH0.tar.gz) = ae917f15fd7de724cdce087b451326e6f364a898f03dc453a912ed7918e87742
+SIZE (golang-protobuf-2bba060_GH0.tar.gz) = 245284
+SHA256 (matttproud-golang_protobuf_extensions-c12348c_GH0.tar.gz) = da165c9275b77a0994b815bc7d761dcb2e4799a90fe49eec08d8bdff3a683f48
+SIZE (matttproud-golang_protobuf_extensions-c12348c_GH0.tar.gz) = 37200
