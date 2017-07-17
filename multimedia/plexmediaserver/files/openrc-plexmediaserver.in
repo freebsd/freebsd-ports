@@ -2,20 +2,14 @@
 
 # Created by: KalleDK <plexmaintainer@k-moeller.dk>
 
-# Add the following lines to /etc/rc.conf to enable the Plex Media Server:
-#
-# %%PORTNAME%%_enable="YES"
-#
 # %%PORTNAME%%_support_path="%%PREFIX%%/plexdata" # Plex data: logs, media metadata, settings, etc
 #
 # %%PORTNAME%%_tmp="/var/tmp/plex" # configure tmp directory used for the transcoding process if desired
 #
 # %%PORTNAME%%_maxplugins="6" # Maximum number of background plugin procs. May have to raise in rare cases.
-#
 
 name=%%PORTNAME%%
 
-: ${%%PORTNAME%%_enable:=NO}
 : ${%%PORTNAME%%_support_path="%%PREFIX%%/plexdata"}
 : ${%%PORTNAME%%_user="%%USERS%%"}
 : ${%%PORTNAME%%_group="%%GROUPS%%"}
@@ -23,14 +17,10 @@ name=%%PORTNAME%%
 
 command=%%DATADIR%%/Plex_Media_Server
 supervisor=supervise-daemon
-command_args=""
 
 pidfile=/var/run/plex/plex.pid
-start_precmd=plex_precmd
-stop_precmd=plex_stop_precmd
-stop_postcmd=plex_stop_postcmd
 
-plex_precmd()
+start_pre()
 {
 	export SUPPORT_PATH="${%%PORTNAME%%_support_path}"
 	export HOME="${%%PORTNAME%%_support_path}/Plex Media Server"
@@ -61,17 +51,17 @@ plex_precmd()
 	fi
 }
 
-plex_stop_precmd()
+stop_pre()
 {
 	if [ -r ${pidfile} ]; then
 		export _PLEXPID=$(check_pidfile ${pidfile} ${procname})
 	fi
 }
 
-plex_stop_postcmd()
+stop_post()
 {
 	_PLEX_CHILDREN=$(pgrep -g ${_PLEXPID})
-	echo "Cleaning up leftover child processes."
+	einfo "Cleaning up leftover child processes."
 	kill $sig_stop ${_PLEX_CHILDREN}
 	wait_for_pids ${_PLEX_CHILDREN}
 }
