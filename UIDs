@@ -425,7 +425,7 @@ gitlab-runner:*:474:474::0:0:GitLab Runner Daemon:/var/tmp/minio:/usr/sbin/nolog
 # free: 476
 # free: 477
 prometheus:*:478:478::0:0:Prometheus Daemon:/var/tmp/prometheus:/usr/sbin/nologin
-# free: 479
+alertmanager:*:479:479::0:0:Alertmanager Daemon:/var/tmp/alertmanager:/usr/sbin/nologin
 # free: 480
 # free: 481
 # free: 482
