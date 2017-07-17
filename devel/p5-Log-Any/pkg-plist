@@ -6,6 +6,7 @@
 %%SITE_PERL%%/Log/Any/Adapter/Null.pm
 %%SITE_PERL%%/Log/Any/Adapter/Stderr.pm
 %%SITE_PERL%%/Log/Any/Adapter/Stdout.pm
+%%SITE_PERL%%/Log/Any/Adapter/Syslog.pm
 %%SITE_PERL%%/Log/Any/Adapter/Test.pm
 %%SITE_PERL%%/Log/Any/Adapter/Util.pm
 %%SITE_PERL%%/Log/Any/Manager.pm
@@ -21,6 +22,7 @@
 %%PERL5_MAN3%%/Log::Any::Adapter::Null.3.gz
 %%PERL5_MAN3%%/Log::Any::Adapter::Stderr.3.gz
 %%PERL5_MAN3%%/Log::Any::Adapter::Stdout.3.gz
+%%PERL5_MAN3%%/Log::Any::Adapter::Syslog.3.gz
 %%PERL5_MAN3%%/Log::Any::Adapter::Test.3.gz
 %%PERL5_MAN3%%/Log::Any::Adapter::Util.3.gz
 %%PERL5_MAN3%%/Log::Any::Manager.3.gz
