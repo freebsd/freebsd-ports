@@ -13,5 +13,5 @@ stop()
 
 depend()
 {
-	keyword -nojail
+	keyword -jail
 }
