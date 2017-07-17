@@ -1228,7 +1228,6 @@ share/emacs/site-lisp/git/git.el
 %%CONTRIB%%share/git-core/contrib/completion/git-completion.tcsh
 %%CONTRIB%%share/git-core/contrib/completion/git-completion.zsh
 %%CONTRIB%%share/git-core/contrib/completion/git-prompt.sh
-@comment share/git-core/contrib/contacts/.gitignore
 %%CONTRIB%%share/git-core/contrib/contacts/Makefile
 %%CONTRIB%%share/git-core/contrib/contacts/git-contacts
 %%CONTRIB%%share/git-core/contrib/contacts/git-contacts.txt
@@ -1251,7 +1250,7 @@ share/emacs/site-lisp/git/git.el
 %%CONTRIB%%share/git-core/contrib/diff-highlight/README
 %%CONTRIB%%share/git-core/contrib/diff-highlight/DiffHighlight.pm
 %%CONTRIB%%share/git-core/contrib/diff-highlight/diff-highlight.perl
-@comment share/git-core/contrib/diff-highlight/t/.gitignore
+%%CONTRIB%%share/git-core/contrib/diff-highlight/diff-highlight
 %%CONTRIB%%share/git-core/contrib/diff-highlight/t/Makefile
 %%CONTRIB%%share/git-core/contrib/diff-highlight/t/t9400-diff-highlight.sh
 %%CONTRIB%%share/git-core/contrib/emacs/.gitignore
