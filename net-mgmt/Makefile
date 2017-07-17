@@ -19,6 +19,7 @@
     SUBDIR += bgpq
     SUBDIR += bgpq3
     SUBDIR += bgpuma
+    SUBDIR += blackbox_exporter
     SUBDIR += bpft
     SUBDIR += braa
     SUBDIR += bsnmp-jails
