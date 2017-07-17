@@ -2,8 +2,7 @@
 # $FreeBSD: head/net-mgmt/collectd5/Makefile 436572 2017-03-21 08:26:58Z glebius $
 
 PORTNAME=	collectd
-PORTVERSION=	5.7.1
-PORTREVISION=	1
+PORTVERSION=	5.7.2
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://collectd.org/files/ \
 		http://collectd.org/files/
