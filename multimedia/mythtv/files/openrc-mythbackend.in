@@ -1,0 +1,29 @@
+#!/sbin/openrc-run
+
+# mythbackend_logpath (str):  Custom logpath for mythbackend.
+#                             (default /var/log/mythtv)
+# mythbackend_flags (str):    Additional flags for mythbackend.
+# mythbackend_user (str):     Username to run with.
+
+name="mythbackend"
+command="%%PREFIX%%/bin/${name}"
+
+start_pre()
+{
+	if [ ! -d ${mythbackend_logpath} ]; then
+		/usr/bin/install -o ${mythbackend_user} -g wheel -m 755 -d ${mythbackend_logpath}
+	fi
+}
+
+: ${mythbackend_logpath="/var/log/mythtv"}
+: ${mythbackend_user="root"}
+
+command_args="-d --logpath ${mythbackend_logpath}"
+HOME=$(/usr/sbin/pw usershow -7 -n "${mythbackend_user}" | /usr/bin/cut -d: -f6)
+
+depend()
+{
+	need localmount
+	keyword -shutdown
+	after bootmisc
+}

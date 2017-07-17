@@ -1,0 +1,17 @@
+#!/sbin/openrc-run
+
+name="ptx"
+
+start()
+{
+	load_kld %%KMODDIR%%/ptx.ko
+}
+stop()
+{
+	/sbin/kldunload ptx
+}
+
+depend()
+{
+	keyword -jail
+}
