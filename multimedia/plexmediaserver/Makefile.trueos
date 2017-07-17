@@ -1,2 +1,4 @@
 PKG_NOTES+=	icon
 PKG_NOTE_icon=http://www.pcbsd.org/appcafe/icons/multimedia_plexmediaserver.png
+
+USE_OPENRC_SUBR=	openrc-plexmediasever

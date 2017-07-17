@@ -1,0 +1,84 @@
+#!/sbin/openrc-run
+
+# Created by: KalleDK <plexmaintainer@k-moeller.dk>
+
+# Add the following lines to /etc/rc.conf to enable the Plex Media Server:
+#
+# %%PORTNAME%%_enable="YES"
+#
+# %%PORTNAME%%_support_path="%%PREFIX%%/plexdata" # Plex data: logs, media metadata, settings, etc
+#
+# %%PORTNAME%%_tmp="/var/tmp/plex" # configure tmp directory used for the transcoding process if desired
+#
+# %%PORTNAME%%_maxplugins="6" # Maximum number of background plugin procs. May have to raise in rare cases.
+#
+
+name=%%PORTNAME%%
+
+: ${%%PORTNAME%%_enable:=NO}
+: ${%%PORTNAME%%_support_path="%%PREFIX%%/plexdata"}
+: ${%%PORTNAME%%_user="%%USERS%%"}
+: ${%%PORTNAME%%_group="%%GROUPS%%"}
+: ${%%PORTNAME%%_maxplugins=6}
+
+command=%%DATADIR%%/Plex_Media_Server
+supervisor=supervise-daemon
+command_args=""
+
+pidfile=/var/run/plex/plex.pid
+start_precmd=plex_precmd
+stop_precmd=plex_stop_precmd
+stop_postcmd=plex_stop_postcmd
+
+plex_precmd()
+{
+	export SUPPORT_PATH="${%%PORTNAME%%_support_path}"
+	export HOME="${%%PORTNAME%%_support_path}/Plex Media Server"
+	export PYTHONHOME="%%DATADIR%%/Resources/Python"
+	export SCRIPTPATH="%%DATADIR%%"
+	export LD_LIBRARY_PATH="%%PREFIX%%/lib/compat:${SCRIPTPATH}"
+	export PLEX_MEDIA_SERVER_HOME="${SCRIPTPATH}"
+	export PLEX_MEDIA_SERVER_MAX_PLUGIN_PROCS=${%%PORTNAME%%_maxplugins}
+	export PLEX_MEDIA_SERVER_APPLICATION_SUPPORT_DIR=${%%PORTNAME%%_support_path}
+	export PLEX_MEDIA_SERVER_PIDFILE=${pidfile}
+	export PLEX_MEDIA_SERVER_LOG_DIR="${%%PORTNAME%%_support_path}/Plex Media Server/Logs"
+	export PATH="${SCRIPTPATH}/Resources/Python/bin:${PATH}"
+	export LC_ALL="en_US.UTF-8"
+	export LANG="en_US.UTF-8"
+	ulimit -s 3000
+
+	if [ ! -d ${pidfile%/*} ]; then
+		install -d -o ${%%PORTNAME%%_user} ${pidfile%/*};
+	fi
+	
+	if [ ! -d "${%%PORTNAME%%_support_path}/Plex Media Server" ]; then
+		install -d -g ${%%PORTNAME%%_group} -o ${%%PORTNAME%%_user} "${%%PORTNAME%%_support_path}/Plex Media Server";
+	fi
+	
+	if [ ${%%PORTNAME%%_tmp} ]; then 
+		export TMPDIR=${%%PORTNAME%%_tmp};
+		install -d -g ${%%PORTNAME%%_group} -o ${%%PORTNAME%%_user} "${%%PORTNAME%%_tmp}";
+	fi
+}
+
+plex_stop_precmd()
+{
+	if [ -r ${pidfile} ]; then
+		export _PLEXPID=$(check_pidfile ${pidfile} ${procname})
+	fi
+}
+
+plex_stop_postcmd()
+{
+	_PLEX_CHILDREN=$(pgrep -g ${_PLEXPID})
+	echo "Cleaning up leftover child processes."
+	kill $sig_stop ${_PLEX_CHILDREN}
+	wait_for_pids ${_PLEX_CHILDREN}
+}
+
+depend()
+{
+	keyword -shutdown
+	need localmount
+	after bootmisc
+}
