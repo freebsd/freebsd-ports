@@ -349,6 +349,7 @@
     SUBDIR += telegraf
     SUBDIR += tornova
     SUBDIR += torrus
+    SUBDIR += unbound_exporter
     SUBDIR += unifi5
     SUBDIR += victorops-nagios
     SUBDIR += vidalia

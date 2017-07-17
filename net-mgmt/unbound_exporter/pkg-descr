@@ -1,0 +1,6 @@
+Unbound_exporter connects to Unbounds TLS control socket and sends the
+stats_noreset command, causing Unbound to return metrics as key-value
+pairs. The metrics exporter converts Unbound metric names to Prometheus
+metric names and labels by using a set of regular expressions.
+
+WWW: https://github.com/kumina/unbound_exporter
