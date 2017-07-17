@@ -14,10 +14,14 @@ var/lib/rkhunter/db/i18n/tr
 var/lib/rkhunter/db/i18n/tr.utf8
 var/lib/rkhunter/db/i18n/zh
 var/lib/rkhunter/db/i18n/zh.utf8
+var/lib/rkhunter/db/i18n/ja
 @sample var/lib/rkhunter/db/mirrors.dat.sample
 @sample var/lib/rkhunter/db/programs_bad.dat.sample
+var/lib/rkhunter/db/signatures/RKH_BillGates.ldb
 var/lib/rkhunter/db/signatures/RKH_Glubteba.ldb
+var/lib/rkhunter/db/signatures/RKH_MMD-0028-2014.ldb
 var/lib/rkhunter/db/signatures/RKH_dso.ldb
+var/lib/rkhunter/db/signatures/RKH_iptablex.ldb
 var/lib/rkhunter/db/signatures/RKH_jynx.ldb
 var/lib/rkhunter/db/signatures/RKH_kbeast.ldb
 var/lib/rkhunter/db/signatures/RKH_libkeyutils.ldb
