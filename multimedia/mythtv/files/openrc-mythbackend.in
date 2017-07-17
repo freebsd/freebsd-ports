@@ -1,9 +1,5 @@
 #!/sbin/openrc-run
 
-# Define mythbackend_enable in /etc/rc.conf[.local] to enable mythbackend
-#
-# mythbackend_enable (bool):  Set to "NO" by default.
-#                             Set it to "YES" to enable mythbackend.
 # mythbackend_logpath (str):  Custom logpath for mythbackend.
 #                             (default /var/log/mythtv)
 # mythbackend_flags (str):    Additional flags for mythbackend.
@@ -12,8 +8,6 @@
 name="mythbackend"
 command="%%PREFIX%%/bin/${name}"
 
-start_precmd="mythbackend_prestart"
-
 start_pre()
 {
 	if [ ! -d ${mythbackend_logpath} ]; then
@@ -21,7 +15,6 @@ start_pre()
 	fi
 }
 
-: ${mythbackend_enable="NO"}
 : ${mythbackend_logpath="/var/log/mythtv"}
 : ${mythbackend_user="root"}
 
@@ -30,5 +23,7 @@ HOME=$(/usr/sbin/pw usershow -7 -n "${mythbackend_user}" | /usr/bin/cut -d: -f6)
 
 depend()
 {
+	need localmount
 	keyword -shutdown
+	after bootmisc
 }
