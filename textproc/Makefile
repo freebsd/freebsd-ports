@@ -1605,6 +1605,7 @@
     SUBDIR += scr2txt
     SUBDIR += scrollkeeper
     SUBDIR += scss
+    SUBDIR += scws
     SUBDIR += sdcv
     SUBDIR += sdf
     SUBDIR += sdif
