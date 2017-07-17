@@ -2,45 +2,52 @@
 # $FreeBSD$
 
 PORTNAME=	kicad
-DISTVERSION=	20140622%2Bbzr4027
-PORTREVISION=	9
-PORTEPOCH=	1
+PORTVERSION=	4.0.7
+PORTEPOCH=	2
 CATEGORIES=	cad
-MASTER_SITES=	https://launchpadlibrarian.net/179199115/
-DISTNAME=	${PORTNAME}_0.${DISTVERSION}.orig
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Schematic and PCB editing software
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libboost_thread.so:devel/boost-libs
+BUILD_DEPENDS=	${LOCALBASE}/include/glm/glm.hpp:math/glm	\
+		swig3.0:devel/swig30
+LIB_DEPENDS=	libboost_thread.so:devel/boost-libs	\
+		libpixman-1.so:x11/pixman		\
+		libpng.so:graphics/png			\
+		libcurl.so:ftp/curl
 RUN_DEPENDS=	xpdf:graphics/xpdf
 
-CONFLICTS=	kicad-devel*
+CONFLICTS=	kicad-devel-r201*
 
-USES=		cmake:noninja compiler:gcc-c++11-lib desktop-file-utils dos2unix \
-		shared-mime-info tar:xz
+USE_GITHUB=	yes
+GH_ACCOUNT=	KiCad
+GH_PROJECT=	kicad-source-mirror
 
-DOS2UNIX_GLOB=	*.cmake sch_bus_entry.h sch_line.h sch_no_connect.h
+USES=		cmake:noninja compiler:c++11-lib desktop-file-utils	\
+		pkgconfig python shared-mime-info shebangfix ssl tar:xz
+SHEBANG_FILES=	pcbnew/scripting/plugins/touch_slider_wizard.py
+
 USE_XORG=	ice x11 xext
-USE_GL=		yes
+USE_GL=		gl glew glu glut
 USE_WX=		3.0
-USE_GNOME=	atk	# Required by libwx_gtk2_aui-2.8.so
-CXXFLAGS+=	-I${WRKSRC}/include -I${LOCALBASE}/include -DBOOST_HASH_NO_EXTENSIONS
-CMAKE_ARGS=	-DwxWidgets_CONFIG_EXECUTABLE=${WX_CONFIG}	\
-		-DwxUSE_UNICODE=ON -DKICAD_STABLE_VERSION=ON	\
-		-DwxWidgets_wxrc_EXECUTABLE=${WXRC_CMD}
+WX_COMPS=	python:lib wx
+USE_GNOME=	atk cairo
+CXXFLAGS+=	--std=c++11 -I${WRKSRC}/include -I${LOCALBASE}/include
+CMAKE_ARGS=	-DwxWidgets_CONFIG_EXECUTABLE=${WX_CONFIG}		\
+		-DwxWidgets_USE_UNICODE=ON -DKICAD_STABLE_VERSION=ON	\
+		-DwxWidgets_wxrc_EXECUTABLE=${WXRC_CMD}			\
+		-DKICAD_SCRIPTING=ON -DKICAD_SCRIPTING_MODULES=ON	\
+		-DKICAD_SCRIPTING_WXPYTHON=ON -DKICAD_SKIP_BOOST=ON
 INSTALLS_ICONS=	yes
-
-WRKSRC=		${WRKDIR}/${PORTNAME}-0.${DISTVERSION:C/%2B/+/}
 
 PLIST_SUB=	DESKTOPDIR=${DESKTOPDIR:S|^${PREFIX}/||}
 
 OPTIONS_DEFINE=	DOCS DOXYGEN NLS
 OPTIONS_SUB=	yes
 
-NLS_USES=		gettext
+NLS_USES=	gettext
 
 BINS=		cvpcb eeschema gerbview kicad pcbnew
 EXTRAS2RM=	linux-non_unicode linux wings3d LINUX.README	\
@@ -52,9 +59,6 @@ DOXYGEN_IMPLIES=	DOCS
 DOXYGEN_ALL_TARGET=	all doxygen-docs
 DOXYGEN_PORTDOCS=	doxygen
 
-post-patch:
-	${MV} ${WRKSRC}/include/boost ${WRKSRC}/include/boost.orig
-
 pre-configure:
 	${REINPLACE_CMD} -e 's|/usr/share/kicad|${DATADIR}|'		\
 		-e 's|/usr/local|${PREFIX}|'				\
@@ -65,21 +69,7 @@ pre-configure:
 		-e 's|/usr/bin/xdg-open|${LOCALBASE}/bin/xdg-open|'	\
 		${WRKSRC}/common/gestfich.cpp
 
-post-install:
-	${MKDIR} ${STAGEDIR}${DATADIR}
-	(cd ${WRKSRC}/library && ${COPYTREE_SHARE} library ${STAGEDIR}${DATADIR})
-	(cd ${WRKSRC}/library && ${COPYTREE_SHARE} modules ${STAGEDIR}${DATADIR})
-
-post-install-NLS-on:
-	${MKDIR} ${STAGEDIR}${DATADIR}/internat
-	(cd ${WRKSRC}/doc/internat &&	\
-		${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}/internat)
-	${RM} ${STAGEDIR}${DATADIR}/internat/CMakeLists.txt
-	${FIND} ${STAGEDIR}${DATADIR}/internat -name kicad.po -delete
-
 post-install-DOCS-on:
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	(cd ${WRKSRC}/doc/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
 	(cd ${WRKSRC}/Documentation && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>

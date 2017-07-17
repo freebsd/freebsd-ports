@@ -45,6 +45,7 @@
     SUBDIR += jspice3
     SUBDIR += kicad
     SUBDIR += kicad-devel
+    SUBDIR += kicad-library
     SUBDIR += klayout
     SUBDIR += layouteditor
     SUBDIR += ldraw
@@ -57,6 +58,7 @@
     SUBDIR += magic
     SUBDIR += meshdev
     SUBDIR += meshlab
+    SUBDIR += mfront
     SUBDIR += netgen
     SUBDIR += ngspice_rework
     SUBDIR += opencascade
