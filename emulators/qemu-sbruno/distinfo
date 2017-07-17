@@ -1,5 +1,3 @@
-TIMESTAMP = 1499792378
-SHA256 (qemu/2.9.50.g20170711/seanbruno-qemu-bsd-user-2.9.50.g20170711-1c182c5_GH0.tar.gz) = 2abe9de521335fcf7b596ec344e11d394a185851f0e1ff49b67855087c87a973
-SIZE (qemu/2.9.50.g20170711/seanbruno-qemu-bsd-user-2.9.50.g20170711-1c182c5_GH0.tar.gz) = 14209487
-SHA256 (qemu/2.9.50.g20170711/dtc-v1.4.0.tar.gz) = 39d0713efd82a27adc065ecb9ef36401c53d5ee87ae1764e2bb243fcd97488e3
-SIZE (qemu/2.9.50.g20170711/dtc-v1.4.0.tar.gz) = 131893
+TIMESTAMP = 1500307124
+SHA256 (qemu/2.9.50.g20170717/seanbruno-qemu-bsd-user-2.9.50.g20170717-cb766f5_GH0.tar.gz) = 324cb4c2001a0ccc9d20e244ea5a4b23ce52eae2bff9c3925d3fad8fce1287c1
+SIZE (qemu/2.9.50.g20170717/seanbruno-qemu-bsd-user-2.9.50.g20170717-cb766f5_GH0.tar.gz) = 14562773

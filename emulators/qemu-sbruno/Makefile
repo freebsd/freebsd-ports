@@ -2,14 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	qemu
-PORTVERSION=	2.9.50.g20170711
+PORTVERSION=	2.9.50.g20170717
 CATEGORIES=	emulators
-MASTER_SITES=	GH \
-		LOCAL/nox:dtc \
-		http://people.freebsd.org/~nox/tmp/distfiles/:dtc
+MASTER_SITES=	GH
 PKGNAMESUFFIX?=	-sbruno
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		dtc-v1.4.0${EXTRACT_SUFX}:dtc
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 DIST_SUBDIR=	qemu/${PORTVERSION}
 
 MAINTAINER=	sbruno@FreeBSD.org
@@ -19,7 +16,7 @@ LICENSE=	GPLv2
 USE_GITHUB=	yes
 GH_ACCOUNT=	seanbruno
 GH_PROJECT=	${PORTNAME}-bsd-user
-GH_TAGNAME=	1c182c5
+GH_TAGNAME=	cb766f5
 HAS_CONFIGURE=	yes
 USES=		gmake pkgconfig bison perl5 python:2,build
 USE_PERL5=	build
@@ -67,12 +64,14 @@ USE_XORG=	pixman
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libglib-2.0.a:devel/glib20
 .else
 USE_GNOME+=	glib20
+BUILD_DEPENDS+=	${LOCALBASE}/lib/libfdt.so:sysutils/dtc
 .endif
 
 .include <bsd.port.options.mk>
 
 CONFIGURE_ARGS+=	--localstatedir=/var
-CONFIGURE_ARGS+=	--extra-ldflags=-L\"${LOCALBASE}/lib\"
+CONFIGURE_ARGS+=	--extra-ldflags=-L${LOCALBASE}/lib
+CONFIGURE_ARGS+=	--extra-cflags=-I${LOCALBASE}/include
 CONFIGURE_ARGS+=	--disable-libssh2
 PORTDOCS=	docs qemu-doc.html
 
@@ -253,7 +252,6 @@ PLIST_SUB+=	LINUXBOOT_DMA=""
 .endif
 
 post-patch:
-	@${MV} ${WRKDIR}/dtc ${WRKSRC}
 	@${REINPLACE_CMD} -e '/libs_qga=/s|glib_libs|glib_libs -lintl|' ${WRKSRC}/configure
 # clang in freebsd 10 is unable to assemble linuxboot_dma.bin
 .if (${OSVERSION} < 1100000)
