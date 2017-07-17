@@ -95,13 +95,13 @@ you update your ports collection, before attempting any port upgrades.
 
   The upgrade instructions consider a basic usage and do not match
   complex scenarious like replication, sharding or similar.
-  
+
   Upgrade instructions:
 
   First stop your PostgreSQL, create PostgreSQL-binaries and backup your data.
   If you have another Version of PostgreSQL installed, for example 9.3.12, your
   files are named accourding to this.
-  
+
   # service postgresql stop
   # pkg create postgresql93-server postgresql93-contrib
   # mkdir /tmp/pg-upgrade
@@ -126,7 +126,7 @@ you update your ports collection, before attempting any port upgrades.
 
   After installing the new PostgreSQL version you need to convert
   all your databases to new version:
-  
+
   # service postgresql initdb
   # su -l pgsql -c "pg_upgrade -b /tmp/pg-upgrade/usr/local/bin/ -d /usr/local/pgsql/data93/ -B /usr/local/bin/ -D /usr/local/pgsql/data/"
 
@@ -142,7 +142,7 @@ you update your ports collection, before attempting any port upgrades.
   based application. Calligra now uses Qt5 and KF5. The translations have
   been merged (upstream) into the application, so separate language /
   translation ports are no longer provided. Krita has been split out
-  (upstream) into a separate application, which is packaged as 
+  (upstream) into a separate application, which is packaged as
   graphics/krita. Kexi, the visual database applications creator,
   is packaged separately as databases/kexi.
 
@@ -157,7 +157,7 @@ you update your ports collection, before attempting any port upgrades.
   which can be resolved by adding 'mod_s2s_dialback: {}' to 'modules' section
   of configuration file.
 
-  [1] - https://github.com/processone/ejabberd/issues/1700  
+  [1] - https://github.com/processone/ejabberd/issues/1700
 
 20170603:
   AFFECTS: users of www/kanboard
