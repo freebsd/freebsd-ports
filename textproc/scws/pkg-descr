@@ -1,0 +1,9 @@
+SCWS (Simple Chinese Word Segmentation) is a frequency dictionary based Chinese
+word segmentation engine, it can cut a whole section of the Chinese text into
+words. Word is the smallest unit of morpheme in Chinese, but in Chinese words
+are not separated by spaces,so word segmentation is an important step for
+Chinese language process.SCWS is written in C without other dependencies and
+accept GBK and UTF-8 encoding for both the Simple Chinese (zh_CN) and the
+Traditional Chinese (such as zh_TW).
+
+WWW: http://www.xunsearch.com/scws/index.php
