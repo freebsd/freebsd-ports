@@ -24,7 +24,7 @@ USES=	autoreconf pkgconfig gmake libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
-CONFIGRUE_ARGS=	--disable-gtk-doc
+CONFIGURE_ARGS=	--disable-gtk-doc
 INSTALL_TARGET=	install-strip
 
 SUB_FILES=	pkg-message
