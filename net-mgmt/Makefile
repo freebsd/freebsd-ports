@@ -286,6 +286,7 @@
     SUBDIR += pnp-icinga2
     SUBDIR += portmon
     SUBDIR += prometheus
+    SUBDIR += pushgateway
     SUBDIR += py-ipcalc
     SUBDIR += py-ipy
     SUBDIR += py-pyang
