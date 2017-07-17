@@ -8,6 +8,7 @@
     SUBDIR += adcli
     SUBDIR += aggregate
     SUBDIR += aircrack-ng
+    SUBDIR += alertmanager
     SUBDIR += ap-utils
     SUBDIR += argus3
     SUBDIR += argus3-clients
@@ -19,6 +20,7 @@
     SUBDIR += bgpq
     SUBDIR += bgpq3
     SUBDIR += bgpuma
+    SUBDIR += blackbox_exporter
     SUBDIR += bpft
     SUBDIR += braa
     SUBDIR += bsnmp-jails

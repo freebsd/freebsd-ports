@@ -1,0 +1,55 @@
+#!/bin/sh
+
+# PROVIDE: blackbox_exporter
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# blackbox_exporter_enable (bool):          Set to NO by default.
+#               Set it to YES to enable blackbox_exporter.
+# blackbox_exporter_user (string):          Set user that blackbox_exporter will run under
+#               Default is "nobody".
+# blackbox_exporter_group (string):         Set group that blackbox_exporter will run under
+#               Default is "nobody".
+# blackbox_exporter_args (string):          Set extra arguments to pass to blackbox_exporter
+#               Default is "".
+# blackbox_exporter_listen_address (string):Set ip:port that blackbox_exporter will listen on
+#               Default is ":9115".
+# blackbox_exporter_config (string):        Set configuration file of blackbox_exporter
+#               Default is "%%PREFIX%%/etc/blackbox_exporter.yml".
+
+. /etc/rc.subr
+
+name=blackbox_exporter
+rcvar=blackbox_exporter_enable
+
+load_rc_config $name
+
+: ${blackbox_exporter_enable:="NO"}
+: ${blackbox_exporter_user:="nobody"}
+: ${blackbox_exporter_group:="nobody"}
+: ${blackbox_exporter_args:=""}
+: ${blackbox_exporter_listen_address:=":9115"}
+: ${blackbox_exporter_config:="%%PREFIX%%/etc/blackbox_exporter.yml"}
+
+pidfile=/var/run/blackbox_exporter.pid
+command="/usr/sbin/daemon"
+procname="%%PREFIX%%/bin/blackbox_exporter"
+command_args="-p ${pidfile} /usr/bin/env ${procname} \
+    -web.listen-address=${blackbox_exporter_listen_address} \
+    -config.file=${blackbox_exporter_config} \
+    ${blackbox_exporter_args}"
+
+start_precmd=blackbox_exporter_startprecmd
+
+blackbox_exporter_startprecmd()
+{
+    if [ ! -e ${pidfile} ]; then
+        install -o ${blackbox_exporter_user} -g ${blackbox_exporter_group} /dev/null ${pidfile};
+    fi
+}
+
+load_rc_config $name
+run_rc_command "$1"

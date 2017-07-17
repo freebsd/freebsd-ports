@@ -169,14 +169,4 @@ processing error - resetting ehci HC
   messages on qemu's tty try disabling TSO etc on the host interface at least
   while using pcap.
 
-- kqemu is no longer supported in qemu upstream after the 0.11 branch
-  was created, which means also not in this version.  (Linux has moved
-  on to kvm now for qemu(-like) virtualization needs, so if you want qemu
-  to go faster and don't want to switch to virtualbox or stick to the older
-  emulators/qemu port which is at 0.11.1 atm and as such still supports
-  kqemu you should help getting the FreeBSD kvm port updated and
-  completed:
-
-	http://wiki.freebsd.org/FabioChecconi/PortingLinuxKVMToFreeBSD
-
   )
