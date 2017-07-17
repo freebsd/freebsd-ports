@@ -8,6 +8,7 @@
     SUBDIR += adcli
     SUBDIR += aggregate
     SUBDIR += aircrack-ng
+    SUBDIR += alertmanager
     SUBDIR += ap-utils
     SUBDIR += argus3
     SUBDIR += argus3-clients
