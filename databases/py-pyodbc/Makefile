@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	pyodbc
-PORTVERSION=	4.0.1
+PORTVERSION=	4.0.17
 CATEGORIES=	databases python
-MASTER_SITES=	CHEESESHOP/source/p/${PORTNAME}
+MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	rob.kruus@gmail.com
@@ -16,7 +16,10 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 LIB_DEPENDS=	libodbc.so:databases/unixODBC
 BUILD_DEPENDS=	unixODBC>=2.2.14:databases/unixODBC
 
-USES=		python
+USES=		localbase python
 USE_PYTHON=	autoplist distutils
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/pyodbc.so
 
 .include <bsd.port.mk>

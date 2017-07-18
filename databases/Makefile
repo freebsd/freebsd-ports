@@ -768,7 +768,6 @@
     SUBDIR += py-mysql-connector-python2
     SUBDIR += py-mysql2pgsql
     SUBDIR += py-mysqlclient
-    SUBDIR += py-odbc
     SUBDIR += py-oops
     SUBDIR += py-oursql
     SUBDIR += py-peewee
@@ -788,6 +787,7 @@
     SUBDIR += py-pylibmc
     SUBDIR += py-pymssql
     SUBDIR += py-pymysql
+    SUBDIR += py-pyodbc
     SUBDIR += py-pypuppetdb
     SUBDIR += py-pypuppetdb03
     SUBDIR += py-pytc
