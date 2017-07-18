@@ -3,6 +3,7 @@
 
 PORTNAME=	rackmonkey
 PORTVERSION=	1.2.5
+PORTREVISION=	1
 DISTVERSIONSUFFIX=	-1
 PORTREVISION=	4
 CATEGORIES=	net-mgmt www
@@ -14,6 +15,7 @@ MAINTAINER=	ecrist@secure-computing.net
 COMMENT=	Web-based tool for managing racks of equipment
 
 RUN_DEPENDS=	p5-DBI>=0:databases/p5-DBI \
+		p5-CGI>=0:www/p5-CGI \
 		p5-HTML-Template>=0:www/p5-HTML-Template \
 		p5-Spreadsheet-WriteExcel>=0:textproc/p5-Spreadsheet-WriteExcel \
 		p5-Net-DNS>=0:dns/p5-Net-DNS \
