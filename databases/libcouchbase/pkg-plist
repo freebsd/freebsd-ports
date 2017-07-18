@@ -25,6 +25,10 @@ bin/cbc-verbosity
 bin/cbc-version
 bin/cbc-view
 bin/cbc-write-config
+bin/cbc-role-list
+bin/cbc-user-delete
+bin/cbc-user-list
+bin/cbc-user-upsert
 include/libcouchbase/_cxxwrap.h
 include/libcouchbase/api-legacy.h
 include/libcouchbase/api3.h
@@ -60,7 +64,7 @@ include/libcouchbase/views.h
 include/libcouchbase/visibility.h
 lib/libcouchbase.so
 lib/libcouchbase.so.2
-lib/libcouchbase.so.2.0.44
+lib/libcouchbase.so.2.0.46
 lib/libcouchbase_libev.so
 lib/libcouchbase_libevent.so
 lib/libcouchbase_libuv.so
@@ -86,4 +90,8 @@ man/man1/cbc-verbosity.1.gz
 man/man1/cbc-version.1.gz
 man/man1/cbc-view.1.gz
 man/man1/cbc.1.gz
+man/man1/cbc-role-list.1.gz
+man/man1/cbc-user-delete.1.gz
+man/man1/cbc-user-list.1.gz
+man/man1/cbc-user-upsert.1.gz
 man/man4/cbcrc.4.gz
