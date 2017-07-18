@@ -1,7 +1,7 @@
---- src/main.cpp.orig	2017-01-29 12:48:48 UTC
+--- src/main.cpp.orig	2017-07-16 12:33:33 UTC
 +++ src/main.cpp
-@@ -317,3 +317,10 @@ int main(int argc, char *argv[])
- #endif
+@@ -322,3 +322,10 @@ int main(int argc, char* argv[])
+     delete a;
      return errorcode;
  }
 +
