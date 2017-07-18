@@ -1,0 +1,17 @@
+#!/sbin/openrc-run
+
+# Add the following lines to /etc/rc.conf to enable ebhttpd:
+# ebhttpd_flags (str):   Set to "" by default.
+#                        Extra flags passed to start ebhttpd.
+
+name=ebhttpd
+command="%%PREFIX%%/sbin/${name}"
+pidfile="/var/run/ebnetd/${name}.pid"
+required_dirs="/var/run/ebnetd"
+required_files=%%PREFIX%%/etc/ebnetd.conf
+
+ebhttpd_flags=${ebhttpd_flags:-""}
+
+depend() {
+	keyword -shutdown
+}

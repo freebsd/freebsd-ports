@@ -1,0 +1,8 @@
+#!/sbin/openrc-run
+#
+# See `%%PREFIX%%/sbin/multiskkserv -h` for flags
+
+name=multiskkserv
+command=%%PREFIX%%/sbin/multiskkserv
+multiskkserv_flags=${multiskkserv_flags:-"%%PREFIX%%/%%SKKDIR%%/SKK-JISYO.%%SKKJISYO_TYPE%%.cdb &"}
+command_args=${multiskkserv_flags}

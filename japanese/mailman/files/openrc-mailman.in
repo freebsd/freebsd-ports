@@ -1,0 +1,14 @@
+#!/sbin/openrc-run
+
+name="mailman"
+pidfile="%%MAILMANDIR%%/data/master-qrunner.pid"
+command="%%MAILMANDIR%%/bin/mailmanctl"
+command_args="-s -q start"
+
+stop_pre() {
+	 $command -q stop
+}
+
+depend() {
+	keyword -shutdown
+}

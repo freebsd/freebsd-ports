@@ -1,0 +1,17 @@
+#!/sbin/openrc-run
+
+name=twochproxy
+
+command=%%PREFIX%%/sbin/2chproxy.pl
+pidfile=/var/run/2chproxy.pid
+command_args="--daemon"
+supervisor=supervise-daemon
+
+stop_pre()
+{
+	$command --kill
+}
+
+depend() {
+	keyword -shutdown
+}

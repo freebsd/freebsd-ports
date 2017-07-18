@@ -1,0 +1,10 @@
+#!/sbin/openrc-run
+
+name=skkserv
+command=%%PREFIX%%/sbin/skkserv
+
+: ${skkserv_flags:="-a 127.0.0.1 -u skkserv"}
+
+depend() {
+	keyword -shutdown
+}

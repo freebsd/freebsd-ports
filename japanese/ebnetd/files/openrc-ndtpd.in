@@ -1,0 +1,19 @@
+#!/sbin/openrc-run
+
+# Add the following lines to /etc/rc.conf to enable ndtpd:
+# ndtpd_flags (str):     Set to "" by default.
+#                        Extra flags passed to start ndtpd.
+
+# ndtpd
+name=ndtpd
+command="%%PREFIX%%/sbin/${name}"
+pidfile="/var/run/ebnetd/${name}.pid"
+required_dirs="/var/run/ebnetd"
+required_files=%%PREFIX%%/etc/ebnetd.conf
+
+ndtpd_enable=${ndtpd_enable:-"NO"}
+ndtpd_flags=${ndtpd_flags:-""}
+
+depend() {
+	keyword -shutdown
+}
