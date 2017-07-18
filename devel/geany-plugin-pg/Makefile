@@ -8,7 +8,9 @@ CATEGORIES=	devel
 MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	Geany plugin: ${${GEANY_PLUGIN}_DESC}
 
-LIB_DEPENDS=	libgpgme.so:security/gpgme
+LIB_DEPENDS=	libgpgme.so:security/gpgme \
+		libassuan.so:security/libassuan \
+		libgpg-error.so:security/libgpg-error
 RUN_DEPENDS=	gpg2:security/gnupg
 
 .include "${.CURDIR}/../geany-plugins/files/Makefile.common"
