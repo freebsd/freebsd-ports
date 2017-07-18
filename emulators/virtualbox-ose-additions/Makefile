@@ -3,7 +3,7 @@
 
 PORTNAME=	virtualbox-ose
 PORTVERSION=	5.1.22
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	emulators
 MASTER_SITES=	http://download.virtualbox.org/virtualbox/${PORTVERSION}/
 PKGNAMESUFFIX?=	-additions
@@ -70,7 +70,8 @@ INPUTDIR=	${PREFIX}/lib/xorg/modules/input
 
 VBOX_BIN=	${WRKSRC}/out/${KMK_ARCH}/${KMK_BUILDTYPE}/bin/additions
 VBOX_SBINS=	VBoxControl \
-		VBoxService
+		VBoxService \
+		mount_vboxvfs
 
 BUILD_WRKSRC=	${VBOX_BIN}/src
 
@@ -125,9 +126,9 @@ EXTRA_PATCHES+=	${PATCHDIR}/extrapatch-src-VBox-Additions-x11-VBoxClient-Makefil
 .endif
 .endif
 
-pre-everything::
 .if ${ARCH} == "amd64"
 .if !exists(/usr/lib32/libc.so)
+pre-everything::
 	@${ECHO} 'Requires 32-bit libraries installed under /usr/lib32.'
 	@${ECHO} 'Do: cd /usr/src; make build32 install32; service ldconfig restart'
 	@${FALSE}
@@ -177,47 +178,41 @@ do-install:
 	${MKDIR} ${STAGEDIR}${KMODDIR}
 	${INSTALL_KLD} ${VBOX_BIN}/src/vboxguest/vboxguest.ko \
 	    ${STAGEDIR}${KMODDIR}
-.if ${PORT_OPTIONS:MDEBUG}
-	${INSTALL_KLD} ${VBOX_BIN}/src/vboxguest/vboxguest.ko.symbols \
-	    ${STAGEDIR}${KMODDIR}
-.endif
-
+	${INSTALL_KLD} ${VBOX_BIN}/vboxvfs.ko ${STAGEDIR}${KMODDIR}
 	${INSTALL_LIB} ${VBOX_BIN}/pam_vbox.so ${STAGEDIR}${PREFIX}/lib
 	${INSTALL_PROGRAM} ${VBOX_SBINS:S|^|${VBOX_BIN}/|} \
 	    ${STAGEDIR}${PREFIX}/sbin/
 
-.if ${PORT_OPTIONS:MX11}
+do-install-DEBUG-on:
+	${INSTALL_KLD} ${VBOX_BIN}/src/vboxguest/vboxguest.ko.symbols \
+	    ${STAGEDIR}${KMODDIR}
+
+do-install-X11-on:
 	${INSTALL_PROGRAM} ${VBOX_BIN}/VBoxClient ${STAGEDIR}${PREFIX}/bin/
 	${INSTALL_SCRIPT} \
 	    ${WRKSRC}/src/VBox/Additions/x11/Installer/98vboxadd-xclient \
 	    ${STAGEDIR}${PREFIX}/bin/VBoxClient-all
-
 	# X11 autostart
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/xdg/autostart/
 	${INSTALL_DATA} \
 	    ${WRKSRC}/src/VBox/Additions/x11/Installer/vboxclient.desktop \
 	    ${STAGEDIR}${PREFIX}/etc/xdg/autostart/
-
 	# KDE autostart
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/autostart/
 	${INSTALL_DATA} \
 	    ${WRKSRC}/src/VBox/Additions/x11/Installer/vboxclient.desktop \
 	    ${STAGEDIR}${PREFIX}/share/autostart/
-
 	${MKDIR} ${STAGEDIR}${VIDEODIR}
 	${INSTALL_DATA} ${VBOX_BIN}/vboxvideo_drv_$$(${XORG_DRV_ABI}).so \
 	    ${STAGEDIR}${VIDEODIR}/vboxvideo_drv.so
-
 	${MKDIR} ${STAGEDIR}${INPUTDIR}
 	${INSTALL_DATA} ${VBOX_BIN}/vboxmouse_drv_$$(${XORG_DRV_ABI}).so \
 	    ${STAGEDIR}${INPUTDIR}/vboxmouse_drv.so
-.endif
 
-.if ${PORT_OPTIONS:MOPENGL}
+do-install-OPENGL-on:
 	${INSTALL_DATA} ${FILESDIR}/vboxvideo.conf \
 	    ${STAGEDIR}${PREFIX}/etc/libmap.d/
 	${INSTALL_DATA} ${VBOX_LIBS:S|^|${VBOX_BIN}/|} \
 	    ${STAGEDIR}${PREFIX}/lib/
-.endif
 
 .include <bsd.port.post.mk>
