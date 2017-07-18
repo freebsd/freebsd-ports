@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	googler
-PORTVERSION=	2.8
+PORTVERSION=	3.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 
@@ -10,6 +10,7 @@ MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Google Search, Google Site Search, Google News from the terminal
 
 LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 GH_ACCOUNT=	jarun
 

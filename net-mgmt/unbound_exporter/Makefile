@@ -3,6 +3,7 @@
 
 PORTNAME=		unbound_exporter
 PORTVERSION=		0.1
+PORTREVISION=		1
 DISTVERSIONPREFIX=	v
 CATEGORIES=		net-mgmt
 
@@ -28,8 +29,6 @@ USE_RC_SUBR=		unbound_exporter
 
 USERS=			unbound
 GROUPS=			unbound
-
-STRIP=
 
 PLIST_FILES=		bin/unbound_exporter
 
