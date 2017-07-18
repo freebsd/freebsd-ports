@@ -3,7 +3,7 @@
 
 PORTNAME=	sympa
 PORTVERSION=	6.2.16
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	http://www.sympa.org/distribution/ \
 		http://www.sympa.org/distribution/old/
@@ -79,7 +79,8 @@ CONFIGURE_ARGS+=--bindir=${PREFIX}/bin \
 		--with-cgidir=${PREFIX}/libexec/${PORTNAME}	\
 		--without-smrshdir
 
-CONFIGURE_ENV+=	lt_cv_sys_max_cmd_len=${CONFIGURE_MAX_CMD_LEN}
+CONFIGURE_ENV+=	lt_cv_sys_max_cmd_len=${CONFIGURE_MAX_CMD_LEN} \
+		ac_cv_path_POSTALIAS=${LOCALBASE}/sbin/postalias
 MAKE_ENV?=	PERL_EXTUTILS_AUTOINSTALL=--skip
 SUB_FILES=	pkg-install pkg-message apache.sample nginx.sample fcgi.sample
 SUB_LIST=	DB_TYPE=${DB_TYPE} PERL=${PERL} WRKSRC=${WRKSRC} BINDIR=${STAGEDIR}${PREFIX}

@@ -77,6 +77,12 @@ DOXYGEN_RUN_DEPENDS=	${LOCALBASE}/www/MathJax/MathJax.js:www/mathjax
 
 .include <bsd.port.options.mk>
 
+.if ${ARCH} == "i386"
+BITS=	32
+.else
+BITS=	64
+.endif
+
 pre-everything::
 	@${ECHO_MSG}
 	@${ECHO_MSG} "Warning: to build OpenCascade, you should have at least"
