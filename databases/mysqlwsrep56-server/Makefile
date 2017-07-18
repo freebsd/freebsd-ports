@@ -4,7 +4,7 @@
 PORTNAME=	mysqlwsrep
 PORTVERSION?=	5.6.36
 DISTVERSIONSUFFIX?=	-25.20
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES=	databases ipv6
 PKGNAMESUFFIX=	56-server
 
@@ -13,7 +13,11 @@ COMMENT=	MySQL database enhanced with Galera replication (server package)
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	socat:net/socat lsof:sysutils/lsof netcat:net/netcat rsync:net/rsync
+RUN_DEPENDS=	bash:shells/bash \
+		lsof:sysutils/lsof \
+		netcat:net/netcat \
+		rsync:net/rsync \
+		socat:net/socat
 LIB_DEPENDS=	libevent.so:devel/libevent liblz4.so:archivers/liblz4
 
 BROKEN_powerpc64=	Does not build
