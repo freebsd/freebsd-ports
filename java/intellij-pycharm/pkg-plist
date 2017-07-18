@@ -753,6 +753,8 @@ share/applications/pycharm-ce.desktop
 %%DATADIR%%/helpers/pydev/tests_pydevd_mainloop/gui-tk.py
 %%DATADIR%%/helpers/pydev/tests_pydevd_mainloop/gui-wx.py
 %%DATADIR%%/helpers/pydev/tests_pydevd_python/__init__.py
+%%DATADIR%%/helpers/pydev/tests_pydevd_python/_bytecode_many_names_example.py
+%%DATADIR%%/helpers/pydev/tests_pydevd_python/_bytecode_overflow_example.py
 %%DATADIR%%/helpers/pydev/tests_pydevd_python/_debugger_case1.py
 %%DATADIR%%/helpers/pydev/tests_pydevd_python/_debugger_case10.py
 %%DATADIR%%/helpers/pydev/tests_pydevd_python/_debugger_case13.py
@@ -780,7 +782,6 @@ share/applications/pycharm-ce.desktop
 %%DATADIR%%/helpers/pydev/tests_pydevd_python/_debugger_case_remote_1.py
 %%DATADIR%%/helpers/pydev/tests_pydevd_python/_debugger_case_remote_2.py
 %%DATADIR%%/helpers/pydev/tests_pydevd_python/_debugger_case_set_next_statement.py
-%%DATADIR%%/helpers/pydev/tests_pydevd_python/_many_names_example.py
 %%DATADIR%%/helpers/pydev/tests_pydevd_python/_performance_1.py
 %%DATADIR%%/helpers/pydev/tests_pydevd_python/_performance_2.py
 %%DATADIR%%/helpers/pydev/tests_pydevd_python/_performance_3.py
