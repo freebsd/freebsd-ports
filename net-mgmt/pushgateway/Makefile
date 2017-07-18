@@ -3,6 +3,7 @@
 
 PORTNAME=	pushgateway
 PORTVERSION=	0.3.1
+PORTREVISION=	1
 DISTVERSIONPREFIX=v
 CATEGORIES=	net-mgmt
 
@@ -21,8 +22,6 @@ USE_RC_SUBR=	pushgateway
 
 USERS=		prometheus
 GROUPS=		prometheus
-
-STRIP=		# stripping can break go binaries
 
 do-build:
 	(cd ${GO_WRKSRC} ; ${SETENV} ${GO_ENV} go install)
