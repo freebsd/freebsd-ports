@@ -1,0 +1,38 @@
+#!/sbin/openrc-run
+
+# glance_api_logdir (str):
+#	Set it to chagge log directory
+#	Default is "/var/log/glance"
+#
+# glance_api_args (str):
+#	Set it to change command line arguments.
+#	Default is "--log-file ${glance_api_logdir}/glance-api.log"
+#
+
+name=glance_api
+
+required_files=%%PREFIX%%/etc/glance/glance-api.conf
+PATH=%%PREFIX%%/bin:%%PREFIX%%/sbin:$PATH
+
+pidfile="/var/run/glance-api.pid"
+
+: ${glance_api_logdir:="/var/log/glance"}
+: ${glance_api_args:="--log-file ${glance_api_logdir}/glance-api.log"}
+
+command="%%PREFIX%%/bin/python2.7"
+supervisor=supervise-daemon
+command_args="glance-api ${glance_api_args}"
+command_user=glance
+
+start_pre() {
+	mkdir -p ${glance_api_logdir}
+	chown glance ${glance_api_logdir}
+}
+start_post() {
+	# this is a workaround for a glance-api bug
+	pkill -u glance -f glance-api
+}
+depend()
+{
+	keyword -shutdown
+}

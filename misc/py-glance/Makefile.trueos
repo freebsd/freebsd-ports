@@ -1,0 +1,1 @@
+USE_OPENRC_SUBR=	openrc-glance-api openrc-glance-glare openrc-glance-registry openrc-glance-scrubber

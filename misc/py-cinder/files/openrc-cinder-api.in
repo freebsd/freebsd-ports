@@ -1,0 +1,31 @@
+#!/sbin/openrc-run
+
+# cinder_api_logdir (str):
+#	Set it to chagge log directory
+#	Default is "/var/log/cinder"
+#
+# cinder_api_args (str):
+#	Set it to change command line arguments.
+#	Default is "--log-file ${cinder_api_logdir}/cinder-api.log"
+#
+
+name=cinder_api
+
+PATH=%%PREFIX%%/bin:%%PREFIX%%/sbin:$PATH
+
+pidfile="/var/run/cinder-api.pid"
+
+: ${cinder_api_logdir:="/var/log/cinder"}
+: ${cinder_api_args:="--log-file ${cinder_api_logdir}/cinder-api.log"}
+
+command="%%PREFIX%%/bin/python2.7"
+supervisor=supervise-daemon
+command_args="cinder-api ${cinder_api_args}"
+
+start_pre() {
+	mkdir -p ${cinder_api_logdir}
+}
+depend()
+{
+	keyword -shutdown
+}

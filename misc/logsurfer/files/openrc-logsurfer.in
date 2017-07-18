@@ -1,0 +1,32 @@
+#!/sbin/openrc-run
+
+# logsurfer_config (string):	Configuration file,
+#				Default /usr/local/etc/logsurfer/logsurfer.conf
+#
+# logsurfer_user, logsurfer_group (string): User logsurfer will run as
+#				Default logsurfer
+#
+# logsurfer_logfile (string):	Log file logsurfer will monitor
+#				Default /var/log/messages
+#
+# logsurfer_pid (string):	Location of pid file
+#				Default /var/run/logsurfer.pid
+#
+
+name=logsurfer
+
+: ${logsurfer_config:=%%ETCDIR%%/logsurfer.conf}
+: ${logsurfer_user:=logsurfer}
+: ${logsurfer_group:=logsurfer}
+: ${logsurfer_logfile:=/var/log/messages}
+
+pidfile=${logsurfer_pidfile:="/var/run/logsurfer.pid"}
+command=%%PREFIX%%/bin/logsurfer
+command_args="-D -p ${pidfile} -c ${logsurfer_config} -F -s -e ${logsurfer_logfile}"
+required_files=${logsurfer_config} ${logsurfer_logfile}
+command_user()
+
+depend()
+{
+	keyword -shutdown
+}
