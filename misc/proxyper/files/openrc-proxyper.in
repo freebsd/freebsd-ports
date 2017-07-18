@@ -1,0 +1,20 @@
+#!/sbin/openrc-run
+
+dir="%%BINDIR%%"
+user="nobody"
+
+name="proxyper"
+
+pidfile=%%BINDIR%%/rc5desproxy.pid
+required_files=${dir}/${name}.ini
+
+proxyper_user=${user}
+
+command=${dir}/${name}
+command_args=">/dev/null 2>&1 &"
+command_user
+
+depend()
+{
+	keyword -shutdown
+}

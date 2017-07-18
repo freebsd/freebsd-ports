@@ -1,0 +1,54 @@
+#!/sbin/openrc-run
+
+# Add the following lines to /etc/rc.conf to enable dnetc:
+# dnetc_enable (bool):		Set to "NO" by default.
+#				Set to "YES" to enable dnetc.
+# dnetc_dir (path):		Set to "%%BINDIR%%" by default.
+# dnetc_user (user):		Set to "dnetc" by default.
+# dnetc_idprio (priority):	Unset by default. See idprio manpage.
+
+name="dnetc"
+
+: ${dnetc_dir="%%BINDIR%%"}
+: ${dnetc_user="dnetc"}
+
+required_files=${dnetc_dir}/${name}.ini
+command="${dnetc_dir}/${name}" 
+command_user=${dnetc_user}
+command_args="-quiet >/dev/null 2>&1"
+extra_commands="flush fetch update"
+
+start()
+{
+	ebegin "Starting $name"
+	if ps -x -o ucomm -U${dnetc_user} | grep ${name} >/dev/null; then
+		einfo "${name} already running?"
+	else
+		${dnetc_idprio:+idprio} ${dnetc_idprio} $command $command_args
+	fi
+}
+
+stop()
+{
+	$command "-shutdown >/dev/null 2>&1"
+}
+
+flush()
+{
+	su -m ${dnetc_user} -c "${dnetc_dir}/${name} -flush" >/dev/null 2>&1
+}
+
+fetch()
+{
+	su -m ${dnetc_user} -c "${dnetc_dir}/${name} -fetch" >/dev/null 2>&1
+}
+
+update()
+{
+	su -m ${dnetc_user} -c "${dnetc_dir}/${name} -update" >/dev/null 2>&1
+}
+
+depend()
+{
+	keyword -shutdown
+}
