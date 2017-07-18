@@ -2,15 +2,11 @@
 
 name=plexmediaserver
 
-command=/usr/sbin/daemon
-procname="/usr/local/share/plexmediaserver/Plex_Media_Server"
-command_args="-f ${procname}"
+command="/usr/local/share/plexmediaserver/Plex_Media_Server"
+supervisor=supervise-daemon
 pidfile=/var/run/plex/plex.pid
-start_precmd=plex_precmd
-stop_precmd=plex_stop_precmd
-stop_postcmd=plex_stop_postcmd
 
-plex_precmd()
+start_pre()
 {
 	export SUPPORT_PATH="${plexmediaserver_support_path}"
 	export HOME="${plexmediaserver_support_path}/Plex Media Server"
@@ -41,17 +37,23 @@ plex_precmd()
 	fi
 }
 
-plex_stop_precmd()
+stop_pre()
 {
 	if [ -r ${pidfile} ]; then
 		export _PLEXPID=$(check_pidfile ${pidfile} ${procname})
 	fi
 }
 
-plex_stop_postcmd()
+stop_post()
 {
 	_PLEX_CHILDREN=$(pgrep -g ${_PLEXPID})
 	echo "Cleaning up leftover child processes."
 	kill $sig_stop ${_PLEX_CHILDREN}
-	wait_for_pids ${_PLEX_CHILDREN}
+}
+
+depend()
+{
+	neet localmount
+	after bootmisc
+	keyword -shutdown
 }

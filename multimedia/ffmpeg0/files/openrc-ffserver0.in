@@ -8,4 +8,5 @@ required_files=%%PREFIX%%/etc/ffserver0.conf
 depend()
 {
 	keyword -shutdown
+	use net
 }
