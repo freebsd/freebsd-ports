@@ -1,0 +1,10 @@
+#!/sbin/openrc-run
+
+name="olsrd"
+
+command=%%PREFIX%%/sbin/olsrd
+command_args="-d 0"
+
+depend() {
+	use net
+}

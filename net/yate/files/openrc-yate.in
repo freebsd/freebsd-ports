@@ -1,0 +1,27 @@
+#!/sbin/openrc-run
+
+name=yate
+
+command="%%PREFIX%%/bin/yate"
+pidfile="/var/run/${name}.pid"
+logfile="/var/log/yate/messages"
+cdrfile=`awk -F= '/^file=.+/ {print $2}' %%PREFIX%%/etc/yate/cdrfile.conf`
+yate_flags=${yate_flags-"-Du -d -l ${logfile} -p ${pidfile} -s"}
+command_args=${yate_flags}
+
+start_pre()
+{
+    mkdir -p $(dirname $pidfile)
+    if [ x$cdrfile != "x" ]; then
+    	mkdir -p $(dirname $cdrfile)
+    	chown yate:yate $(dirname $cdrfile)
+    fi
+    mkdir -p $(dirname $logfile)
+    chown yate:yate $(dirname $logfile)
+}
+
+depend() {
+	need localmount
+	keyword -shutdown
+	after bootmisc
+}

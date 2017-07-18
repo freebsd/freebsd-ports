@@ -1,0 +1,16 @@
+#!/sbin/openrc-run
+
+name=htpdate
+servers=${htpdate_servers}
+pidfile=/var/run/htpdate.pid
+
+htpdate_servers="${htpdate_servers:-"www.freebsd.org www.linux.com"}"
+htpdate_flags="${htpdate_flags:-"-l -s -D"}"
+
+command="/usr/local/bin/htpdate"
+command_args="${htpdate_flags} $servers"
+
+depend() {
+	use net
+	keyword -shutdown
+}

@@ -1,0 +1,16 @@
+#!/sbin/openrc-run
+
+# Define these irrd_* variables in one of these files:
+#	/etc/rc.conf
+#	/etc/rc.conf.local
+#	/etc/rc.conf.d/irrd
+#
+# DO NOT CHANGE THESE DEFAULT VALUES HERE
+#
+#irrd_program="%%PREFIX%%/sbin/irrd"		# Location of irrd
+irrd_flags="${irrd_flags:--u}"			# Flags to irrd program
+
+name="irrd"
+command="%%PREFIX%%/sbin/irrd"
+command_args=${irrd_flags}
+required_files="%%PREFIX%%/etc/irrd.conf"

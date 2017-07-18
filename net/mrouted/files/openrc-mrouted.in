@@ -1,0 +1,12 @@
+#!/sbin/openrc-run
+
+name="mrouted"
+command="%%PREFIX%%/sbin/$name"
+pidfile="/var/run/${name}.pid"
+required_files="%%PREFIX%%/etc/${name}.conf"
+
+depend() {
+	use net
+	need routing #netif cleanvar
+	keyword -shutdown
+}

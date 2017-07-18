@@ -1,0 +1,10 @@
+#!/sbin/openrc-run
+
+name="smcroute"
+command="%%PREFIX%%/sbin/${name}"
+command_args="-d"
+
+depend() {
+	#need netif routing
+	keyword -jail
+}

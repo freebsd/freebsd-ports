@@ -1,0 +1,18 @@
+#!/sbin/openrc-run
+
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# bird6_config (path):   Set to %%PREFIX%%/etc/bird6.conf
+#               by default.
+
+name="bird6"
+command=%%PREFIX%%/sbin/${name}
+: ${bird6_config="%%PREFIX%%/etc/bird6.conf"}
+
+command_args="-P /var/run/${name}.pid -c $bird6_config"
+
+depend() {
+	provide bird6 dynamicrouting
+	keyword -shutdown
+}

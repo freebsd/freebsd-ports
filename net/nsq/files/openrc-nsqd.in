@@ -1,0 +1,21 @@
+#!/sbin/openrc-run
+
+name=nsqd
+
+: ${nsqd_args:=""}
+
+pidfile=/var/run/nsqd.pid
+command="%%PREFIX%%/bin/nsqd"
+supervisor=supervise-daemon
+
+start_pre()
+{
+	if [ ! -d /var/db/nsq/nsqd ] ; then
+		mkdir -p /var/db/nsq/nsqd
+	fi
+	cd /var/db/nsq/nsqd
+}
+
+depend() {
+	keyword -shutdown
+}

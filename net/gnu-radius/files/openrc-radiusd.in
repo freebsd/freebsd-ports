@@ -1,0 +1,13 @@
+#!/sbin/openrc-run
+
+name=radiusd
+
+command=%%PREFIX%%/sbin/radiusd
+radiusd_config=${radiusd_config:-"%%PREFIX%%/etc/raddb/config"}
+required_files=${radiusd_config}
+pidfile=/var/run/radiusd.pid
+
+depend() {
+	use net
+	keyword -shutdown
+}

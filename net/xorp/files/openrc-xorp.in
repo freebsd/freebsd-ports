@@ -1,0 +1,56 @@
+#!/sbin/openrc-run
+
+# Note: You have to create a config file before you can start xorp!
+#       Set ${xorp_conf} to its location, the default is defined below.
+#
+# Besides the xorp_* variables which you'll find below with their
+# default values, you can also define the following in rc.conf:
+#
+# xorp_rtprio=n
+#
+# This will run the xorp processes with realtime priority n, see rtprio(1).
+
+name=xorp
+
+: ${xorp_conf=%%PREFIX%%/etc/xorp.conf}
+: ${xorp_rtrmgr_pidfile=/var/run/xorp_rtrmgr.pid}
+: ${xorp_rtrmgr_logfile=/var/log/xorp_rtrmgr.log}
+: ${xorp_flags=-l ${xorp_rtrmgr_logfile}}
+: ${xorp_hardkill_enable:=NO}
+
+required_files=${xorp_conf}
+
+command=%%PREFIX%%/sbin/xorp_rtrmgr
+pidfile=${xorp_rtrmgr_pidfile}
+logfile=${xorp_rtrmgr_logfile}
+command_args="-d -c ${xorp_conf} -P ${pidfile}"
+sig_stop=INT
+
+start_pre()
+{
+	[ -z ${logfile} ] || [ -f ${logfile} ] || touch ${logfile}
+
+	# required for rtprio(1) until handled like nice(1) by rc.subr(8)
+	if [ -n "$xorp_rtprio" ] && [ "$xorp_rtprio" -ge 0 ]
+	then
+		#rc_flags="$xorp_rtprio $command $xorp_flags"
+		command=/usr/sbin/rtprio
+	fi
+
+	return 0
+}
+
+stop_post()
+{
+	if yesno xorp_hardkill_enable
+		return 0
+	fi
+	killall -9 -m xorp_\*
+}
+
+depend() {
+	provide xorp
+	need routing #netif ldconfig mountcritlocal
+	use net
+	keyword -shutdown
+}

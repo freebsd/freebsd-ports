@@ -1,0 +1,14 @@
+#!/sbin/openrc-run
+#
+# Add the following lines to /etc/rc.conf to enable wizd:
+# wizd_flags (str):		Flags passed to widz on startup.
+#				Default is "".
+
+name="wizd"
+command="%%PREFIX%%/bin/$name"
+command_args="-d"
+required_files="%%PREFIX%%/etc/$name.conf"
+
+depend() {
+	keyword -shutdown
+}

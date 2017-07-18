@@ -1,0 +1,22 @@
+#!/sbin/openrc-run
+
+# Add the following lines to /etc/rc.conf to enable miniupnpc
+# miniupnpc_config="port protocol [port2 protocol2] [...]"
+
+name="miniupnpc"
+command="%%PREFIX%%/bin/upnpc"
+
+start() {
+	eval "${command} -r ${miniupnpc_config} | grep duration"
+}
+
+stop() {
+	echo "Remove redirections" ${miniupnpc_config}
+	eval ${command} -d ${miniupnpc_config} > /dev/null
+}
+
+depend() {
+	need ldconfig #resolv
+	use net
+	keyword -shutdown
+}

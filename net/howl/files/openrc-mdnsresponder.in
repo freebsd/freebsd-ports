@@ -1,0 +1,6 @@
+#!/sbin/openrc-run
+#
+# Howl's mDNSResponder, a Zeroconf (Bonjour) service advertisement daemon.
+
+name=mdnsresponder
+command=%%PREFIX%%/bin/mDNSResponder

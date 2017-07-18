@@ -1,0 +1,19 @@
+#!/sbin/openrc-run
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# turnserver_config (path):	Set to %%PREFIX%%/etc/turnserver.conf
+#				by default.
+
+name=turnserver
+
+: ${turnserver_config=%%PREFIX%%/etc/turnserver.conf}
+
+command="%%PREFIX%%/bin/${name}"
+command_args="--daemon -c ${turnserver_config}"
+required_files=${turnserver_config}
+
+depend() {
+	keyword -shutdown
+}

@@ -1,0 +1,19 @@
+#!/sbin/openrc-run
+
+name="throttled"
+
+command="%%PREFIX%%/sbin/throttled-startup"
+
+start_pre()
+{
+	if ! ${SYSCTL} net.inet.ip.fw.enable > /dev/null 2>&1; then
+		ewarn "IPFW must be enabled"
+		return 1
+	fi
+}
+
+depend() {
+	need ipfw
+	use net
+	keyword -jail
+}

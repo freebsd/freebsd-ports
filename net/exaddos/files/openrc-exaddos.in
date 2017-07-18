@@ -1,0 +1,26 @@
+#!/sbin/openrc-run
+
+name=exaddos
+
+exaddos_conf=${exaddos_conf:-"%%ETCDIR%%/exaddos.conf"}
+pidfile=/var/run/${name}/${name}.pid
+required_files=${exaddos_conf}
+
+command="%%PYTHON_SITELIBDIR%%/${name}/application.py"
+procname=%%PYTHON_CMD%%
+
+start_pre()
+{
+	install -d -o exaddos -g exaddos -m 755 /var/run/${name}
+	install -d -o exaddos -g exaddos -m 750 /var/db/${name}
+}
+
+start() {
+	${procname} -m exaddos.debug ${command} -c ${exaddos_conf}
+}
+
+depend() {
+	need localmount
+	keyword -shutdown
+	after bootmisc
+}

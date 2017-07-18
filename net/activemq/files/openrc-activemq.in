@@ -1,0 +1,71 @@
+#!/sbin/openrc-run
+
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# activemq_user (username): Set to activemq by default.
+#               Set it to required username.
+# activemq_group (group):   Set to activemq by default.
+#               Set it to required group.
+# activemq_classpath (path):   Set to %%DATADIR%% by default.
+#               Set it to java classes directory.
+# activemq_home (path):     Set to %%DATADIR%% by default.
+#               Set it to java home directory.
+# activemq_javargs (args):  Set to -Xmx256M by default.
+#               See java -h for available arguments.
+# activemq_stop_timeout (num):  Set to "10" by default.
+#               Set the timeout in seconds to shutdown.
+
+name="activemq"
+
+# Set defaults
+: ${activemq_user:=%%MQUSER%%}
+: ${activemq_group:=%%MQGROUP%%}
+: ${activemq_classpath:=%%ETCDIR%%}
+: ${activemq_conf:=%%ETCDIR%%}
+: ${activemq_data:=%%MQDB%%}
+: ${activemq_logs:=/var/log/activemq}
+: ${activemq_home:=%%DATADIR%%}
+: ${activemq_javargs:='-Xmx512M -Dorg.apache.activemq.UseDedicatedTaskRunner=true -Djava.util.logging.config.file=logging.properties -Dcom.sun.management.jmxremote'}
+: ${activemq_stop_timeout:="10"}
+: ${activemq_hostname:=`/bin/hostname`}
+
+pidfile=/var/run/${name}.pid
+
+required_files="%%ETCDIR%%/activemq.xml"
+jar_file="%%DATADIR%%/bin/activemq.jar"
+java_options=" 	-server -jar ${activemq_javargs} \
+		-Dactivemq.classpath=${activemq_classpath} \
+		-Dactivemq.conf=${activemq_conf} \
+		-Dactivemq.data=${activemq_data} \
+		-Dactivemq.logs=${activemq_logs} \
+		-Dactivemq.home=${activemq_home} \
+		-Dactivemq.base=${activemq_home} \
+		-Dactivemq.hostname=${activemq_hostname}"
+java_command="%%LOCALBASE%%/bin/java ${java_options} ${jar_file}"
+
+command="${java_command} start"
+supervisor=supervise-daemon
+
+start_pre() {
+        touch ${pidfile}
+        chown ${activemq_user}:${activemq_group} ${pidfile}
+	if [ ! -d ${activemq_logs} ]; then 
+		/usr/bin/install -d -o ${activemq_user} -g ${activemq_group} ${activemq_logs}
+	fi
+	if [ ! -d ${activemq_data} ]; then 
+		/usr/bin/install -d -o ${activemq_user} -g ${activemq_group} ${activemq_data}
+	fi
+}
+
+stop_pre() {
+	eend "Stopping ${name}."
+	${java_command} stop >/dev/null
+}
+
+depend() {
+	need localmount
+	use net
+	keyword -shutdown
+	after bootmisc
+}

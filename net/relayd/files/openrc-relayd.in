@@ -1,0 +1,21 @@
+#!/sbin/openrc-run
+
+name=relayd
+command="%%PREFIX%%/sbin/relayd"
+relayctl="%%PREFIX%%/sbin/relayctl"
+extra_commands="reload"
+
+start_pre()
+{
+	einfo "Performing sanity check on relayd configuration:"
+	eval ${command} ${relayd_flags} -n
+}
+
+reload() {
+	${relayctl} reload
+}
+
+depend() {
+	use net
+	keyword -shutdown
+}

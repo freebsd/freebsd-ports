@@ -1,0 +1,10 @@
+#!/sbin/openrc-run
+#
+# init(1) startup script for hsflowd daemon
+#
+# description: Host sFlow Daemon
+# processname: hsflowd
+# pidfile: /var/run/hsflowd.pid
+
+name=hsflowd
+command="%%PREFIX%%/sbin/${name}"

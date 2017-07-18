@@ -1,0 +1,47 @@
+#!/sbin/openrc-run
+
+name="xrdp"
+xrdp_daemons="xrdp"
+command="%%PREFIX%%/sbin/${name}"
+pidfile="/var/run/${name}.pid"
+
+# Enable/disable dependent daemon.
+if yesno "xrdp_sesman_enable"; then
+	xrdp_daemons="xrdp xrdp_sesman"
+fi
+
+reverse_list() {
+	echo $1 | awk '{ for (i=NF; i>1; i--) printf("%s ",$i); print $1; }'
+}
+
+start_pre() {
+    if [ -f %%PREFIX%%/etc/xrdp/rsakeys.ini ] ; then
+        %%PREFIX%%/bin/xrdp-keygen xrdp %%PREFIX%%/etc/xrdp/rsakeys.ini
+    fi
+}
+
+start() {
+    for name in ${xrdp_daemons}; do
+		if [ "${name}" = "xrdp_sesman" ]; then
+			command="%%PREFIX%%/sbin/xrdp-sesman"
+			pidfile="/var/run/xrdp-sesman.pid"
+		fi
+		$command start 
+    done
+}
+
+stop() {
+    # Stop processes in the reverse to order.
+	xrdp=daemons=`echo $xrdp_daemons | awk '{ for (i=NF; i>1; i--) printf("%s ",$i); print $1; }'`
+    for name in ${xrdp_daemons}; do
+		if [ "${name}" = "xrdp_sesman" ]; then
+			command="%%PREFIX%%/sbin/xrdp-sesman"
+			pidfile="/var/run/xrdp-sesman.pid"
+		fi
+		$command stop 
+    done
+}
+
+depend() {
+	provide xrdp xrdp_sesman
+}

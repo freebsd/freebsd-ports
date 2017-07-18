@@ -1,0 +1,11 @@
+#!/sbin/openrc-run
+
+name=miredo
+
+command=%%PREFIX%%/sbin/${name}
+required_files=%%PREFIX%%/etc/miredo/miredo.conf
+
+depend() {
+	use net
+	keyword -shutdown
+}

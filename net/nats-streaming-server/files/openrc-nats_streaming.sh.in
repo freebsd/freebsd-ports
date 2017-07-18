@@ -1,0 +1,20 @@
+#!/sbin/openrc-run
+#
+# Add the following lines to /etc/rc.conf to run the NATS streaming server:
+#
+# nats_streaming_username:	User name to run as. default "nobody"
+# nats_streaming_options:	Options to pass nats_streaming server
+
+name="nats_streaming"
+
+: ${nats_streaming_username="nobody"}
+: ${nats_streaming_options="-c %%PREFIX%%/etc/nats_streaming.conf"}
+
+command=%%PREFIX%%/bin/nats-streaming-server
+command_args=${nats_streaming_options}
+command_user=${nats_streaming_username}
+supervisor=supervise-daemon
+
+depend() {
+	keyword -shutdown
+}

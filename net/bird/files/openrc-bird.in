@@ -1,0 +1,19 @@
+#!/sbin/openrc-run
+
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# bird_config (path):   Set to %%PREFIX%%/etc/bird.conf
+#               by default.
+
+name="bird"
+command=%%PREFIX%%/sbin/${name}
+
+: ${bird_config="%%PREFIX%%/etc/bird.conf"}
+
+command_args="-P /var/run/${name}.pid -c $bird_config"
+
+depend() {
+	provide bird dynamicrouting
+	keyword -shutdown
+}

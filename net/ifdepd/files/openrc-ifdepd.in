@@ -1,0 +1,26 @@
+#!/sbin/openrc-run
+
+# Add the following lines to /etc/rc.conf to enable ifdepd:
+#
+#ifdepd_src_ifaces="em0:em1"
+#ifdepd_dst_ifaces="carp1"
+
+name="ifdepd"
+command="%%PREFIX%%/bin/ifdepd"
+
+start()
+{
+	ebegin 'Starting ifdepd.'
+	ifdepd_src_ifaces=`echo $ifdepd_src_ifaces | sed -E 's/[ \t]+/:/g'`
+	ifdepd_dst_ifaces=`echo $ifdepd_dst_ifaces | sed -E 's/[ \t]+/:/g'`
+	if [ "x${ifdepd_src_ifaces}" != "x" ] && [ "x${ifdepd_dst_ifaces}" != "x" ]; then
+		$command -d -S ${ifdepd_src_ifaces} -D ${ifdepd_dst_ifaces}
+	else
+		ewarn '$ifdepd_ifaces is not set.'
+	fi
+}
+
+depend() {
+	need routing #netif
+	keyword -shutdown
+}

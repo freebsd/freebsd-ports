@@ -1,0 +1,63 @@
+#!/sbin/openrc-run
+
+name=rabbitmq
+
+: ${rabbitmq_user="rabbitmq"}
+
+command="%%PREFIX%%/sbin/rabbitmq-server"
+rabbitmq_ctl="%%PREFIX%%/sbin/rabbitmqctl"
+rabbitmq_env_conf="%%PREFIX%%/etc/rabbitmq/rabbitmq-env.conf"
+pidfile="/var/run/${name}.pid"
+extra_commands="rotate_logs status"
+supervisor=supervise-daemon
+
+: ${RABBITMQ_LOG_BASE:=/var/log/${name}}
+
+if [ -f ${rabbitmq_env_conf} ]; then
+    . ${rabbitmq_env_conf}
+fi
+
+export RABBITMQ_HOME=/var/db/${name}
+
+# Prevent conflicts with amqp_client and rabbit_common applications that
+# may be installed in ERL_LIBS.
+unset ERL_LIBS
+
+status() {
+	su -m ${rabbitmq_user} -c 'sh -c \"${rabbitmq_ctl} status\"'
+}
+
+rotate_logs() {
+	su -m ${rabbitmq_user} -c 'sh -c \"${rabbitmq_ctl} rotate_logs\"'
+}
+
+start_pre()
+{
+	if [ -d ${RABBITMQ_HOME} ]; then
+		chown -R ${rabbitmq_user}:${rabbitmq_user} ${RABBITMQ_HOME}
+	fi
+
+	mkdir -p ${RABBITMQ_LOG_BASE}
+ 
+	chown ${rabbitmq_user}:${rabbitmq_user} ${RABBITMQ_LOG_BASE}
+
+	if [ -f ${RABBITMQ_HOME}/.erlang.cookie ]; then
+		chmod 600 ${RABBITMQ_HOME}/.erlang.cookie
+	fi
+
+	env HOME=${RABBITMQ_HOME} >/dev/null 2>&1
+}
+
+start_post() {
+	einfo "Running: rabbitmqctl wait ${pidfile}"
+	${rabbitmq_ctl} wait ${pidfile} >/dev/null 2>&1
+}
+
+stop_pre()
+{
+	su -m ${rabbitmq_user} -c "sh -c \"${rabbitmq_ctl} stop ${pidfile}\"" >/dev/null 2>&1
+}
+
+depend() {
+	keyword -shutdown
+}

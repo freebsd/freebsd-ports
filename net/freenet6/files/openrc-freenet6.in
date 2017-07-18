@@ -1,0 +1,21 @@
+#!/sbin/openrc-run
+#
+# Start or stop the IPv6 tunnel to Freenet6.net
+#
+# Add the following lines to /etc/rc.conf to enable freenet6:
+#
+# freenet6_flags="-f %%PREFIX%%/etc/gw6c.conf"
+
+name=freenet6
+sig_stop="HUP"
+
+command=%%PREFIX%%/bin/gw6c
+required_files=%%PREFIX%%/etc/freenet6/gw6c.conf
+
+freenet6_flags=${freenet6_flags:-"-f %%PREFIX%%/etc/freenet6/gw6c.conf"}
+
+depend() {
+	use net
+	#need netif named
+	keyword -shutdown
+}
