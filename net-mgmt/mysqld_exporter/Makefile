@@ -3,6 +3,7 @@
 
 PORTNAME=	mysqld_exporter
 PORTVERSION=	0.10.0
+PORTREVISION=	1
 DISTVERSIONPREFIX=v
 CATEGORIES=	net-mgmt
 
@@ -22,8 +23,6 @@ GO_TARGET=	github.com/${GH_ACCOUNT}/${PORTNAME}
 PLIST_FILES=	bin/mysqld_exporter
 
 USE_RC_SUBR=	mysqld_exporter
-
-STRIP=		# stripping can break go binaries
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKDIR}/bin/mysqld_exporter ${STAGEDIR}${PREFIX}/bin

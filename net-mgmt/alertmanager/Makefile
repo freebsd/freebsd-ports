@@ -3,6 +3,7 @@
 
 PORTNAME=	alertmanager
 PORTVERSION=	0.5.1
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net-mgmt
 
@@ -24,8 +25,6 @@ GROUPS=		alertmanager
 
 PLIST_FILES=	bin/alertmanager \
 		etc/alertmanager/alertmanager.yml.sample
-
-STRIP=		# stripping can break go binaries
 
 do-build:
 	(cd ${GO_WRKSRC}/cmd/alertmanager ; ${SETENV} ${GO_ENV} go install)
