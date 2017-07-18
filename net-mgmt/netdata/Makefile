@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	netdata
-PORTVERSION=	1.6.0
+PORTVERSION=	1.7.0
+DISTVERSIONPREFIX=v
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	mmokhi@FreeBSD.org
@@ -10,14 +11,11 @@ COMMENT=	Scalable distributed realtime performance and health monitoring
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS+=	${LOCALBASE}/include/uuid/uuid.h:misc/e2fsprogs-libuuid
-LIB_DEPENDS+=	libuuid.so:misc/e2fsprogs-libuuid
-
-BROKEN_FreeBSD_12=	fails to compile: freebsd_sysctl.c: storage size of 'vmmeter_data' isn't known
+BUILD_DEPENDS=	${LOCALBASE}/include/uuid/uuid.h:misc/e2fsprogs-libuuid
+LIB_DEPENDS=	libuuid.so:misc/e2fsprogs-libuuid
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	firehol
-GH_TAGNAME=	f5fa346
 
 NETDATA_CACHE=	/var/cache/${PORTNAME}
 NETDATA_LOG=	/var/log/${PORTNAME}
@@ -31,11 +29,11 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
 
-SUB_LIST+=	NETDATA_CACHE=${NETDATA_CACHE} \
+SUB_LIST=	NETDATA_CACHE=${NETDATA_CACHE} \
 		NETDATA_LOG=${NETDATA_LOG} \
 		NETDATA_PERST=${NETDATA_PERST}
 
-PLIST_SUB+=	NETDATA_CACHE=${NETDATA_CACHE} \
+PLIST_SUB=	NETDATA_CACHE=${NETDATA_CACHE} \
 		NETDATA_LOG=${NETDATA_LOG} \
 		NETDATA_PERST=${NETDATA_PERST}
 
