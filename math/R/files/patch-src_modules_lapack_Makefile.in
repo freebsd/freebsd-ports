@@ -1,0 +1,30 @@
+--- src/modules/lapack/Makefile.in.orig	2017-07-16 08:46:49 UTC
++++ src/modules/lapack/Makefile.in
+@@ -82,16 +82,17 @@ $(lapack_la): $(lapack_la_OBJECTS)
+ ## Include BLAS here, as with (static) ATLAS that pulls all the
+ ## BLAS routines into one place.
+ $(Rlapack_la): $(LIBOBJECTS)
+-	$(DYLIB_LINK) -o $@ $(LIBOBJECTS) @RLAPACK_LDFLAGS@ @BLAS_LIBS@ $(Rlapack_la_LIBADD)
++	$(DYLIB_LINK) -o $@ $(LIBOBJECTS)  -Wl,-soname,libRlapack.so.%%LIBVER%% @BLAS_LIBS@ $(Rlapack_la_LIBADD)
+ 
+ Rlapack_install: $(Rlapack_la) 
+ 	@$(MKINSTALLDIRS) "$(DESTDIR)$(Rexeclibdir)"
+ 	@$(SHELL) $(top_srcdir)/tools/copy-if-change $(Rlapack_la) \
+ 	  $(Rexeclibdir)/$(Rlapack_la)
+-
++	@cd $(Rexeclibdir) && ln -s $(Rlapack_la) $(Rlapack_la).%%LIBVER%%
+ install: installdirs
+ 	@$(SHELL) $(top_srcdir)/tools/copy-if-change $(lapack_la) "$(DESTDIR)$(Rexecmodulesdir)/$(lapack_la)"
+ @USE_EXTERNAL_LAPACK_FALSE@	@$(SHELL) $(top_srcdir)/tools/copy-if-change $(Rlapack_la) "$(DESTDIR)$(Rexeclibdir)/$(Rlapack_la)"
++@USE_EXTERNAL_LAPACK_FALSE@	@cd "$(DESTDIR)$(Rexeclibdir)" && ln -sf $(Rlapack_la) $(Rlapack_la).%%LIBVER%%
+ installdirs:
+ 	@$(MKINSTALLDIRS) "$(DESTDIR)$(Rexecmodulesdir)"
+ install-strip-Rlapack:
+@@ -104,6 +105,7 @@ install-strip: @USE_EXTERNAL_LAPACK_FALSE@ install-str
+ 	@if test -n "$(STRIP_LIBS)"; then \
+ 	  $(STRIP_LIBS) "$(DESTDIR)$(Rexecmodulesdir)/$(lapack_la)"; \
+ 	fi
++	@cd "$(DESTDIR)$(Rexeclibdir)" && ln -s $(Rlapack_la) $(Rlapack_la).%%LIBVER%%
+ uninstall:
+ 	@rm -f "$(Rexecmodulesdir)/$(lapack_la)"
+ 
