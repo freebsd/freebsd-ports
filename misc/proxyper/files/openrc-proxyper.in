@@ -12,7 +12,7 @@ proxyper_user=${user}
 
 command=${dir}/${name}
 command_args=">/dev/null 2>&1 &"
-command_user
+command_user=nobody
 
 depend()
 {
