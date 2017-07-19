@@ -1209,6 +1209,7 @@
     SUBDIR += unicornscan
     SUBDIR += unssh
     SUBDIR += vault
+    SUBDIR += veracrypt
     SUBDIR += vinetto
     SUBDIR += vlock
     SUBDIR += vm-to-tor

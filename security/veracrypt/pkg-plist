@@ -1,0 +1,166 @@
+bin/veracrypt
+share/applications/veracrypt.desktop
+%%PORTDOCS%%%%DOCSDIR%%/License.txt
+%%PORTDOCS%%%%DOCSDIR%%/html/AES.html
+%%PORTDOCS%%%%DOCSDIR%%/html/Acknowledgements.html
+%%PORTDOCS%%%%DOCSDIR%%/html/Additional Security Requirements and Precautions.html
+%%PORTDOCS%%%%DOCSDIR%%/html/Authenticity and Integrity.html
+%%PORTDOCS%%%%DOCSDIR%%/html/Authors.html
+%%PORTDOCS%%%%DOCSDIR%%/html/Beginner's Tutorial.html
+%%PORTDOCS%%%%DOCSDIR%%/html/Beginner's Tutorial_Image_001.jpg
+%%PORTDOCS%%%%DOCSDIR%%/html/Beginner's Tutorial_Image_002.jpg
+%%PORTDOCS%%%%DOCSDIR%%/html/Beginner's Tutorial_Image_003.jpg
+%%PORTDOCS%%%%DOCSDIR%%/html/Beginner's Tutorial_Image_004.jpg
+%%PORTDOCS%%%%DOCSDIR%%/html/Beginner's Tutorial_Image_005.jpg
+%%PORTDOCS%%%%DOCSDIR%%/html/Beginner's Tutorial_Image_007.jpg
+%%PORTDOCS%%%%DOCSDIR%%/html/Beginner's Tutorial_Image_008.jpg
+%%PORTDOCS%%%%DOCSDIR%%/html/Beginner's Tutorial_Image_009.jpg
+%%PORTDOCS%%%%DOCSDIR%%/html/Beginner's Tutorial_Image_010.jpg
+%%PORTDOCS%%%%DOCSDIR%%/html/Beginner's Tutorial_Image_011.jpg
+%%PORTDOCS%%%%DOCSDIR%%/html/Beginner's Tutorial_Image_012.jpg
+%%PORTDOCS%%%%DOCSDIR%%/html/Beginner's Tutorial_Image_013.jpg
+%%PORTDOCS%%%%DOCSDIR%%/html/Beginner's Tutorial_Image_014.jpg
+%%PORTDOCS%%%%DOCSDIR%%/html/Beginner's Tutorial_Image_015.jpg
+%%PORTDOCS%%%%DOCSDIR%%/html/Beginner's Tutorial_Image_016.jpg
+%%PORTDOCS%%%%DOCSDIR%%/html/Beginner's Tutorial_Image_017.jpg
+%%PORTDOCS%%%%DOCSDIR%%/html/Beginner's Tutorial_Image_018.jpg
+%%PORTDOCS%%%%DOCSDIR%%/html/Beginner's Tutorial_Image_019.jpg
+%%PORTDOCS%%%%DOCSDIR%%/html/Beginner's Tutorial_Image_020.jpg
+%%PORTDOCS%%%%DOCSDIR%%/html/Beginner's Tutorial_Image_021.jpg
+%%PORTDOCS%%%%DOCSDIR%%/html/Beginner's Tutorial_Image_022.jpg
+%%PORTDOCS%%%%DOCSDIR%%/html/Beginner's Tutorial_Image_023.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/Beginner's Tutorial_Image_024.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/Beginner's Tutorial_Image_034.png
+%%PORTDOCS%%%%DOCSDIR%%/html/Camellia.html
+%%PORTDOCS%%%%DOCSDIR%%/html/Cascades.html
+%%PORTDOCS%%%%DOCSDIR%%/html/Changing Passwords and Keyfiles.html
+%%PORTDOCS%%%%DOCSDIR%%/html/Choosing Passwords and Keyfiles.html
+%%PORTDOCS%%%%DOCSDIR%%/html/Command Line Usage.html
+%%PORTDOCS%%%%DOCSDIR%%/html/Contact.html
+%%PORTDOCS%%%%DOCSDIR%%/html/Contributed Resources.html
+%%PORTDOCS%%%%DOCSDIR%%/html/Converting TrueCrypt volumes and partitions.html
+%%PORTDOCS%%%%DOCSDIR%%/html/Converting TrueCrypt volumes and partitions_truecrypt_convertion.jpg
+%%PORTDOCS%%%%DOCSDIR%%/html/Creating New Volumes.html
+%%PORTDOCS%%%%DOCSDIR%%/html/Data Leaks.html
+%%PORTDOCS%%%%DOCSDIR%%/html/Default Mount Parameters.html
+%%PORTDOCS%%%%DOCSDIR%%/html/Default Mount Parameters_VeraCrypt_password_using_default_parameters.png
+%%PORTDOCS%%%%DOCSDIR%%/html/Defragmenting.html
+%%PORTDOCS%%%%DOCSDIR%%/html/Digital Signatures.html
+%%PORTDOCS%%%%DOCSDIR%%/html/Disclaimers.html
+%%PORTDOCS%%%%DOCSDIR%%/html/Documentation.html
+%%PORTDOCS%%%%DOCSDIR%%/html/Donation.html
+%%PORTDOCS%%%%DOCSDIR%%/html/Donation_VeraCrypt_Bitcoin.png
+%%PORTDOCS%%%%DOCSDIR%%/html/Donation_donate_CHF.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/Donation_donate_Dollars.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/Donation_donate_Euros.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/Donation_donate_GBP.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/Donation_donate_YEN.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/Encryption Algorithms.html
+%%PORTDOCS%%%%DOCSDIR%%/html/Encryption Scheme.html
+%%PORTDOCS%%%%DOCSDIR%%/html/FAQ.html
+%%PORTDOCS%%%%DOCSDIR%%/html/Favorite Volumes.html
+%%PORTDOCS%%%%DOCSDIR%%/html/Hardware Acceleration.html
+%%PORTDOCS%%%%DOCSDIR%%/html/Hash Algorithms.html
+%%PORTDOCS%%%%DOCSDIR%%/html/Header Key Derivation.html
+%%PORTDOCS%%%%DOCSDIR%%/html/Hibernation File.html
+%%PORTDOCS%%%%DOCSDIR%%/html/Hidden Operating System.html
+%%PORTDOCS%%%%DOCSDIR%%/html/Hidden Volume.html
+%%PORTDOCS%%%%DOCSDIR%%/html/Home_VeraCrypt_Default_Mount_Parameters.png
+%%PORTDOCS%%%%DOCSDIR%%/html/Home_VeraCrypt_menu_Default_Mount_Parameters.png
+%%PORTDOCS%%%%DOCSDIR%%/html/Home_facebook_veracrypt.png
+%%PORTDOCS%%%%DOCSDIR%%/html/Home_reddit.png
+%%PORTDOCS%%%%DOCSDIR%%/html/Home_tibitDonateButton.png
+%%PORTDOCS%%%%DOCSDIR%%/html/Home_utilities-file-archiver-3.png
+%%PORTDOCS%%%%DOCSDIR%%/html/Hot Keys.html
+%%PORTDOCS%%%%DOCSDIR%%/html/How to Back Up Securely.html
+%%PORTDOCS%%%%DOCSDIR%%/html/Incompatibilities.html
+%%PORTDOCS%%%%DOCSDIR%%/html/Introduction.html
+%%PORTDOCS%%%%DOCSDIR%%/html/Issues and Limitations.html
+%%PORTDOCS%%%%DOCSDIR%%/html/Journaling File Systems.html
+%%PORTDOCS%%%%DOCSDIR%%/html/Keyfiles in VeraCrypt.html
+%%PORTDOCS%%%%DOCSDIR%%/html/Keyfiles in VeraCrypt_Image_040.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/Keyfiles.html
+%%PORTDOCS%%%%DOCSDIR%%/html/Kuznyechik.html
+%%PORTDOCS%%%%DOCSDIR%%/html/Language Packs.html
+%%PORTDOCS%%%%DOCSDIR%%/html/Legal Information.html
+%%PORTDOCS%%%%DOCSDIR%%/html/Main Program Window.html
+%%PORTDOCS%%%%DOCSDIR%%/html/Malware.html
+%%PORTDOCS%%%%DOCSDIR%%/html/Memory Dump Files.html
+%%PORTDOCS%%%%DOCSDIR%%/html/Miscellaneous.html
+%%PORTDOCS%%%%DOCSDIR%%/html/Modes of Operation.html
+%%PORTDOCS%%%%DOCSDIR%%/html/Mounting VeraCrypt Volumes.html
+%%PORTDOCS%%%%DOCSDIR%%/html/Multi-User Environment.html
+%%PORTDOCS%%%%DOCSDIR%%/html/Notation.html
+%%PORTDOCS%%%%DOCSDIR%%/html/Paging File.html
+%%PORTDOCS%%%%DOCSDIR%%/html/Parallelization.html
+%%PORTDOCS%%%%DOCSDIR%%/html/Personal Iterations Multiplier (PIM).html
+%%PORTDOCS%%%%DOCSDIR%%/html/Personal Iterations Multiplier (PIM)_VeraCrypt_ChangePIM_Step1.png
+%%PORTDOCS%%%%DOCSDIR%%/html/Personal Iterations Multiplier (PIM)_VeraCrypt_ChangePIM_Step2.png
+%%PORTDOCS%%%%DOCSDIR%%/html/Personal Iterations Multiplier (PIM)_VeraCrypt_ChangePIM_System_Step1.png
+%%PORTDOCS%%%%DOCSDIR%%/html/Personal Iterations Multiplier (PIM)_VeraCrypt_ChangePIM_System_Step2.png
+%%PORTDOCS%%%%DOCSDIR%%/html/Personal Iterations Multiplier (PIM)_VeraCrypt_UsePIM_Step1.png
+%%PORTDOCS%%%%DOCSDIR%%/html/Personal Iterations Multiplier (PIM)_VeraCrypt_UsePIM_Step2.png
+%%PORTDOCS%%%%DOCSDIR%%/html/Physical Security.html
+%%PORTDOCS%%%%DOCSDIR%%/html/Pipelining.html
+%%PORTDOCS%%%%DOCSDIR%%/html/Plausible Deniability.html
+%%PORTDOCS%%%%DOCSDIR%%/html/Portable Mode.html
+%%PORTDOCS%%%%DOCSDIR%%/html/Preface.html
+%%PORTDOCS%%%%DOCSDIR%%/html/Program Menu.html
+%%PORTDOCS%%%%DOCSDIR%%/html/Protection of Hidden Volumes.html
+%%PORTDOCS%%%%DOCSDIR%%/html/Protection of Hidden Volumes_Image_027.jpg
+%%PORTDOCS%%%%DOCSDIR%%/html/Protection of Hidden Volumes_Image_028.jpg
+%%PORTDOCS%%%%DOCSDIR%%/html/Protection of Hidden Volumes_Image_029.jpg
+%%PORTDOCS%%%%DOCSDIR%%/html/Protection of Hidden Volumes_Image_030.jpg
+%%PORTDOCS%%%%DOCSDIR%%/html/Protection of Hidden Volumes_Image_031.jpg
+%%PORTDOCS%%%%DOCSDIR%%/html/RIPEMD-160.html
+%%PORTDOCS%%%%DOCSDIR%%/html/Random Number Generator.html
+%%PORTDOCS%%%%DOCSDIR%%/html/Reallocated Sectors.html
+%%PORTDOCS%%%%DOCSDIR%%/html/References.html
+%%PORTDOCS%%%%DOCSDIR%%/html/Release Notes.html
+%%PORTDOCS%%%%DOCSDIR%%/html/Removable Medium Volume.html
+%%PORTDOCS%%%%DOCSDIR%%/html/Removing Encryption.html
+%%PORTDOCS%%%%DOCSDIR%%/html/SHA-256.html
+%%PORTDOCS%%%%DOCSDIR%%/html/SHA-512.html
+%%PORTDOCS%%%%DOCSDIR%%/html/Security Model.html
+%%PORTDOCS%%%%DOCSDIR%%/html/Security Requirements and Precautions.html
+%%PORTDOCS%%%%DOCSDIR%%/html/Security Requirements for Hidden Volumes.html
+%%PORTDOCS%%%%DOCSDIR%%/html/Security Tokens & Smart Cards.html
+%%PORTDOCS%%%%DOCSDIR%%/html/Serpent.html
+%%PORTDOCS%%%%DOCSDIR%%/html/Sharing over Network.html
+%%PORTDOCS%%%%DOCSDIR%%/html/Source Code.html
+%%PORTDOCS%%%%DOCSDIR%%/html/Standard Compliance.html
+%%PORTDOCS%%%%DOCSDIR%%/html/Streebog.html
+%%PORTDOCS%%%%DOCSDIR%%/html/Supported Operating Systems.html
+%%PORTDOCS%%%%DOCSDIR%%/html/Supported Systems for System Encryption.html
+%%PORTDOCS%%%%DOCSDIR%%/html/System Encryption.html
+%%PORTDOCS%%%%DOCSDIR%%/html/System Favorite Volumes.html
+%%PORTDOCS%%%%DOCSDIR%%/html/Technical Details.html
+%%PORTDOCS%%%%DOCSDIR%%/html/Trim Operation.html
+%%PORTDOCS%%%%DOCSDIR%%/html/Troubleshooting.html
+%%PORTDOCS%%%%DOCSDIR%%/html/TrueCrypt Support.html
+%%PORTDOCS%%%%DOCSDIR%%/html/TrueCrypt Support_truecrypt_mode_gui.jpg
+%%PORTDOCS%%%%DOCSDIR%%/html/Twofish.html
+%%PORTDOCS%%%%DOCSDIR%%/html/Unencrypted Data in RAM.html
+%%PORTDOCS%%%%DOCSDIR%%/html/Uninstalling VeraCrypt.html
+%%PORTDOCS%%%%DOCSDIR%%/html/Using VeraCrypt Without Administrator Privileges.html
+%%PORTDOCS%%%%DOCSDIR%%/html/VeraCrypt Background Task.html
+%%PORTDOCS%%%%DOCSDIR%%/html/VeraCrypt Hidden Operating System.html
+%%PORTDOCS%%%%DOCSDIR%%/html/VeraCrypt License.html
+%%PORTDOCS%%%%DOCSDIR%%/html/VeraCrypt Rescue Disk.html
+%%PORTDOCS%%%%DOCSDIR%%/html/VeraCrypt System Files.html
+%%PORTDOCS%%%%DOCSDIR%%/html/VeraCrypt Volume Format Specification.html
+%%PORTDOCS%%%%DOCSDIR%%/html/VeraCrypt Volume.html
+%%PORTDOCS%%%%DOCSDIR%%/html/VeraCrypt128x128.png
+%%PORTDOCS%%%%DOCSDIR%%/html/Volume Clones.html
+%%PORTDOCS%%%%DOCSDIR%%/html/Wear-Leveling.html
+%%PORTDOCS%%%%DOCSDIR%%/html/Whirlpool.html
+%%PORTDOCS%%%%DOCSDIR%%/html/arrow_right.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/bank_30x30.png
+%%PORTDOCS%%%%DOCSDIR%%/html/flattr-badge-large.png
+%%PORTDOCS%%%%DOCSDIR%%/html/gf2_mul.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/styles.css
+%%PORTDOCS%%%%DOCSDIR%%/html/twitter_veracrypt.PNG
+share/pixmaps/VeraCrypt-128x128.xpm
+share/pixmaps/VeraCrypt-16x16.xpm
+share/pixmaps/VeraCrypt-256x256.xpm
+share/pixmaps/VeraCrypt-48x48.xpm
