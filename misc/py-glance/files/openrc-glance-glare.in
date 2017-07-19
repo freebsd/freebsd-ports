@@ -1,0 +1,34 @@
+#!/sbin/openrc-run
+
+# glance_glare_logdir (str):
+#	Set it to chagge log directory
+#	Default is "/var/log/glance"
+#
+# glance_glare_args (str):
+#	Set it to change command line arguments.
+#	Default is "--log-file ${glance_glare_logdir}/glance-glare.log"
+#
+
+name=glance_glare
+
+required_files=%%PREFIX%%/etc/glance/glance-glare.conf
+PATH=%%PREFIX%%/bin:%%PREFIX%%/sbin:$PATH
+
+pidfile="/var/run/glance-glare.pid"
+
+: ${glance_glare_logdir:="/var/log/glance"}
+: ${glance_glare_args:="--log-file ${glance_glare_logdir}/glance-glare.log"}
+
+command="%%PREFIX%%/bin/python2.7"
+supervisor=supervise-daemon
+command_args="glance-glare ${glance_glare_args}"
+command_user=glance
+
+start_pre() {
+	mkdir -p ${glance_glare_logdir}
+	chown glance ${glance_glare_logdir}
+}
+depend()
+{
+	keyword -shutdown
+}

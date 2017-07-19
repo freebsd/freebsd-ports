@@ -1,0 +1,11 @@
+#!/sbin/openrc-run
+
+name=flash_heartbeat_led
+command="%%PREFIX%%/sbin/flash-heartbeat-led"
+
+pidfile="/var/run/flash-heartbeat-led.pid"
+
+depend()
+{
+	keyword -shutdown
+}

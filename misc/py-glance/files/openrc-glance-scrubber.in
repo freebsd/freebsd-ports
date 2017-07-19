@@ -1,0 +1,34 @@
+#!/sbin/openrc-run
+
+# glance_scrubber_logdir (str):
+#	Set it to chagge log directory
+#	Default is "/var/log/glance"
+#
+# glance_scrubber_args (str):
+#	Set it to change command line arguments.
+#	Default is "--log-file ${glance_scrubber_logdir}/glance-scrubber.log"
+#
+
+name=glance_scrubber
+
+required_files=%%PREFIX%%/etc/glance/glance-scrubber.conf
+PATH=%%PREFIX%%/bin:%%PREFIX%%/sbin:$PATH
+
+pidfile="/var/run/glance-scrubber.pid"
+
+: ${glance_scrubber_logdir:="/var/log/glance"}
+: ${glance_scrubber_args:="--log-file ${glance_scrubber_logdir}/glance-scrubber.log"}
+
+command="%%PREFIX%%/bin/python2.7"
+supervisor=supervise-daemon
+command_args="glance-scrubber ${glance_scrubber_args}"
+command_user=glance
+
+start_pre() {
+	mkdir -p ${glance_scrubber_logdir}
+	chown glance ${glance_scrubber_logdir}
+}
+depend()
+{
+	keyword -shutdown
+}
