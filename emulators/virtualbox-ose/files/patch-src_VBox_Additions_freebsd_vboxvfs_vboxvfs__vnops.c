@@ -12,7 +12,7 @@
   *
   * This file is part of VirtualBox Open Source Edition (OSE), as
   * available from http://www.virtualbox.org. This file is free software;
-@@ -14,228 +9,1336 @@
+@@ -14,228 +9,1334 @@
   * VirtualBox OSE distribution. VirtualBox OSE is distributed in the
   * hope that it will be useful, but WITHOUT ANY WARRANTY of any kind.
   */
@@ -521,7 +521,7 @@
 +	p = malloc(strlen(node->sf_path) + 1 + len + 1, M_VBOXVFS, M_WAITOK);
 +	strcpy(p, node->sf_path);
 +	strcat(p, "/");
-+	strncat(p, tail, len);
++	strcat(p, tail);
 +	return (p);
 +}
 +
@@ -610,7 +610,6 @@
 +static int
 +vboxfs_close(struct vop_close_args *ap)
 +{
-+
 +	struct vnode *vp = ap->a_vp;
 +	struct vboxfs_node *np;
 +
@@ -719,7 +718,6 @@
 +static int
 +vboxfs_setattr(struct vop_setattr_args *ap)
 +{
-+
 +	struct vnode 		*vp = ap->a_vp;
 +	struct vattr 		*vap = ap->a_vap;
 +	struct vboxfs_node	*np = VP_TO_VBOXFS_NODE(vp);

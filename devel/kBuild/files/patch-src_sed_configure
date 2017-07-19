@@ -1,0 +1,15 @@
+--- src/sed/configure.orig	2017-07-18 19:08:56 UTC
++++ src/sed/configure
+@@ -11266,12 +11266,10 @@ done
+     done ;;
+     gettext-fix )
+   sed -e '/^mkinstalldirs *=/a\' \
+-      -e "install_sh=$install_sh" \
+       -e 's/^mkinstalldirs *=.*/mkinstalldirs=$(MKINSTALLDIRS)/' \
+       intl/Makefile > intl/Makefile.tmp
+   mv intl/Makefile.tmp intl/Makefile
+   sed -e '/^mkinstalldirs *=/a\' \
+-      -e "install_sh=$install_sh" \
+       -e 's/^mkinstalldirs *=.*/mkinstalldirs=$(MKINSTALLDIRS)/' \
+       po/Makefile > po/Makefile.tmp
+   mv po/Makefile.tmp po/Makefile ;;
