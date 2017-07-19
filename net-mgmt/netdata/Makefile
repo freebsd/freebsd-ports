@@ -25,7 +25,7 @@ USES=		autoreconf pathfix pkgconfig:both python shebangfix
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include
+CPPFLAGS+=	-D_WANT_VMMETER -I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
 
