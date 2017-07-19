@@ -25,6 +25,10 @@ error() {
 	exit 1
 }
 
+# Lines from GID and UID files both contain *. As we do not need any pathname
+# expansion, disable globbing.
+set -f
+
 rm -f "${dp_UG_INSTALL}" "${dp_UG_DEINSTALL}" || :
 
 # Before FreeBSD 10.2, PW did not have -R support.
@@ -56,9 +60,16 @@ if [ -n "${GROUPS}" ]; then
 		if ! grep -q "^${group}:" ${dp_GID_FILES}; then \
 			error "** Cannot find any information about group \`${group}' in ${dp_GID_FILES}."
 		fi
-		o_IFS=${IFS}
-		IFS=":"
-		while read -r group _ gid _; do
+		while read -r line; do
+			# Do not change IFS for more than one command, if we
+			# changed IFS around the while read, it would mess up
+			# the string splitting in the heredoc command.
+			o_IFS=${IFS}
+			IFS=":"
+			set -- ${line}
+			IFS=${o_IFS}
+			group=$1
+			gid=$3
 			if [ -z "${gid}" ]; then
 				error "Group line for group ${group} has no gid"
 			fi
@@ -74,7 +85,6 @@ if [ -n "${GROUPS}" ]; then
 		done <<-eot
 		$(grep -h "^${group}:" ${dp_GID_FILES} | head -n 1)
 		eot
-		IFS=${o_IFS}
 	done
 fi
 
@@ -93,9 +103,21 @@ if [ -n "${USERS}" ]; then
 		if ! grep -q "^${user}:" ${dp_UID_FILES} ; then
 			error "** Cannot find any information about user \`${user}' in ${dp_UID_FILES}."
 		fi
-		o_IFS=${IFS}
-		IFS=":"
-		while read -r login _ uid gid class _ _ gecos homedir shell; do
+		while read -r line; do
+			# Do not change IFS for more than one command, if we
+			# changed IFS around the while read, it would mess up
+			# the string splitting in the heredoc command.
+			o_IFS=${IFS}
+			IFS=":"
+			set -- ${line}
+			IFS=${o_IFS}
+			login=$1
+			uid=$3
+			gid=$4
+			class=$5
+			gecos=$8
+			homedir=$9
+			shell=${10}
 			if [ -z "$uid" ] || [ -z "$gid" ] || [ -z "$homedir" ] || [ -z "$shell" ]; then
 				error "User line for ${user} is invalid"
 			fi
@@ -124,20 +146,31 @@ if [ -n "${USERS}" ]; then
 		done <<-eot
 		$(grep -h "^${user}:" ${dp_UID_FILES} | head -n 1)
 		eot
-		IFS=${o_IFS}
 	done
 fi
 
 if [ -n "${GROUPS}" ]; then
 	for group in ${GROUPS}; do
 		# mail:*:6:postfix,clamav
-		o_IFS=${IFS}
-		IFS=":"
-		while read -r group _ gid members; do
+		while read -r line; do
+			# Do not change IFS for more than one command, if we
+			# changed IFS around the while read, it would mess up
+			# the string splitting in the heredoc command.
+			o_IFS=${IFS}
+			IFS=":"
+			# As some lines do not have a fourth argument, provide
+			# one so $4 always exists.
+			set -- ${line} ""
+			IFS=${o_IFS}
+			group=$1
+			gid=$3
+			members=$4
 			gid=$((gid+dp_GID_OFFSET))
-			oo_IFS=${IFS}
+			o_IFS=${IFS}
 			IFS=","
-			for login in $members; do
+			set -- ${members}
+			IFS=${o_IFS}
+			for login in "$@"; do
 				for user in ${USERS}; do
 					if [ -n "${user}" ] && [ "${user}" = "${login}" ]; then
 						cat >> "${dp_UG_INSTALL}" <<-eot2
@@ -149,11 +182,9 @@ if [ -n "${GROUPS}" ]; then
 					fi
 				done
 			done
-			IFS=${oo_IFS}
 		done <<-eot
 		$(grep -h "^${group}:" ${dp_GID_FILES} | head -n 1)
 		eot
-		IFS=${o_IFS}
 	done
 fi
 
