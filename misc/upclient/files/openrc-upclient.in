@@ -1,0 +1,34 @@
+#!/sbin/openrc-run
+
+# Add the following line to /etc/rc.conf to enable upclient:
+
+# upclient_flags="<set as needed>"
+
+name=upclient
+command=%%PREFIX%%/sbin/${name}
+pidfile=/var/run/${name}.pid
+configfile=%%PREFIX%%/etc/${name}.conf
+required_files=${configfile}
+samplefile=${configfile}.sample
+
+start_pre()
+{
+	ws=" 	"
+	grep -qs "^[$ws]*AuthKey[$ws]*=" ${configfile} ||
+	eerror "AuthKey is missing from ${configfile}."
+	grep -qs "^[$ws]*AuthKey[$ws]*=[$ws]*your_authkey" ${configfile} &&
+	eerror "AuthKey isn't configured in ${configfile}."
+
+	hn=uptimes.wonko.com
+	egrep -qs "^[$ws]*UptimeServer[$ws]*=[$ws]*${hn}[$ws]*" ${configfile} &&
+	eerror "${configfile} needs to be updated from ${samplefile}."
+
+	kw="IdleTime|OS|(OS|CPU)Level"
+	egrep -qs "^[$ws]*Send($kw)[$ws]*=" ${configfile} &&
+	eerror "${configfile} needs to be updated from ${samplefile}."
+}
+
+depend()
+{
+	keyword -shutdown
+}

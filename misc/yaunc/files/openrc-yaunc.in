@@ -1,0 +1,11 @@
+#!/sbin/openrc-run
+
+
+# yaunc_config (path):   Set to %%PREFIX%%/etc/yaunc.conf
+#               by default.
+
+command=%%PREFIX%%/bin/${name}
+
+: ${yaunc_config="%%PREFIX%%/etc/yaunc.conf"}
+
+command_args="-f $yaunc_config"
