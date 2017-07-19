@@ -1,8 +1,8 @@
-# Created by: Oleg Gushchenkov <gor@clogic.com.ua>
+# Created by: Oleh Hushchenkov <gor@clogic.com.ua>
 # $FreeBSD$
 
 PORTNAME=	unclutter-xfixes
-PORTVERSION=	1.1
+PORTVERSION=	1.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	misc
 
@@ -10,6 +10,7 @@ MAINTAINER=	gor@clogic.com.ua
 COMMENT=	Rewrite of unclutter using the x11-xfixes extension
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	a2x:textproc/asciidoc
 LIB_DEPENDS=	libev.so:devel/libev
