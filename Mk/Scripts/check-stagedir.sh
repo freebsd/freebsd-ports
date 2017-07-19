@@ -152,7 +152,7 @@ check_orphans_from_plist() {
 		*/.svn/*|'@dir '*/.svn) ;;
 		*/.svnignore) ;;
 		*/CVS/*|'@dir '*/CVS) ;;
-		*/info/dir|info/dir) ;;
+		*/info/dir|info/dir|info/*/dir) ;;
 		share/fonts/*/fonts.dir) ;;
 		share/fonts/*/fonts.scale) ;;
 		share/applications/mimeinfo.cache) ;;
