@@ -1,9 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	geckodriver
-PORTVERSION=	0.17.0
+PORTVERSION=	0.18.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
 CATEGORIES=	www
 
 MAINTAINER=	daniel@blodan.se
@@ -29,7 +28,7 @@ CARGO_CRATES=	advapi32-sys-0.1.2 \
 		cfg-if-0.1.0 \
 		chrono-0.2.25 \
 		clap-2.24.2 \
-		cookie-0.6.2 \
+		cookie-0.9.1 \
 		crossbeam-0.2.10 \
 		dbghelp-sys-0.2.0 \
 		flate2-0.2.19 \
@@ -44,14 +43,14 @@ CARGO_CRATES=	advapi32-sys-0.1.2 \
 		language-tags-0.2.2 \
 		lazy_static-0.1.16 \
 		lazy_static-0.2.2 \
-		libc-0.2.20 \
+		libc-0.2.24 \
 		log-0.3.6 \
 		matches-0.1.4 \
 		memchr-1.0.1 \
 		mime-0.2.4 \
 		miniz-sys-0.1.9 \
 		mozprofile-0.3.0 \
-		mozrunner-0.4.0 \
+		mozrunner-0.4.1 \
 		mozversion-0.1.2 \
 		msdos_time-0.1.5 \
 		num-0.1.37 \
@@ -96,7 +95,7 @@ CARGO_CRATES=	advapi32-sys-0.1.2 \
 		uuid-0.1.18 \
 		vec_map-0.8.0 \
 		void-1.0.2 \
-		webdriver-0.26.0 \
+		webdriver-0.27.0 \
 		winapi-0.2.8 \
 		winapi-build-0.1.1 \
 		winreg-0.3.5 \
