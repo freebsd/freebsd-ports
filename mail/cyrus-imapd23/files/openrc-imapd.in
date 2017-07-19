@@ -1,0 +1,17 @@
+#!/sbin/openrc-run
+
+# Start or stop cyrus-imapd
+
+#cyrus_imapd_program="%%PREFIX%%/cyrus/bin/master"	# Location of imapd
+[ -z "$cyrus_imapd_flags" ] && cyrus_imapd_flags="-d" # Flags to imapd program
+
+name="cyrus_imapd"
+command="%%PREFIX%%/cyrus/bin/master"
+command_args=${cyrus_imapd_flags}
+pidfile="/var/run/cyrus-master.pid"
+required_files="%%PREFIX%%/etc/cyrus.conf %%PREFIX%%/etc/imapd.conf"
+
+depend()
+{
+	keyword -shutdown
+}

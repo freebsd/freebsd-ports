@@ -1,0 +1,30 @@
+#!/sbin/openrc-run
+
+# Add the following lines to /etc/rc.conf to enable postgrey:
+
+# postgrey_dbdir (path)         Location of postgrey database files.
+#                               Default: %%PG_DBDIR%%
+# postgrey_flags (extra args)   Additional command-line parameters.
+#                               Default: --inet=10023
+#
+# Note:
+#
+# postgrey_flags must include a --inet or --unix option or postgrey will
+# not run.  Change the --dbdir option with postgrey_dbdir.  Please see
+# the postgrey(1) man page or perldoc postgrey for more information.
+
+name=postgrey
+
+: ${postgrey_dbdir:=%%PG_DBDIR%%}
+: ${postgrey_flags:=--inet=10023}
+
+command=%%PREFIX%%/sbin/postgrey
+pidfile=%%PG_RUNDIR%%/postgrey.pid
+required_dirs="${postgrey_dbdir} %%PG_RUNDIR%%"
+
+command_args="-d --pidfile=${pidfile} --dbdir=${postgrey_dbdir}"
+
+depend()
+{
+	keyword -shutdown
+}
