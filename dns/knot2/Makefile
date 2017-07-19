@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	knot
-PORTVERSION=	2.5.2
-PORTREVISION=	1
+PORTVERSION=	2.5.3
 CATEGORIES=	dns ipv6
 MASTER_SITES=	https://secure.nic.cz/files/knot-dns/ \
 		http://dns-lab.com/downloads/knot-dns/
@@ -41,8 +40,6 @@ SUB_LIST+=	USERS="${USERS}" GROUPS="${GROUPS}"
 
 PORTDOCS=	AUTHORS COPYING ChangeLog INSTALL NEWS README THANKS
 
-BROKEN_i386=	Issues in knot/modules/*/*.c: undefined reference to '__atomic_fetch_add_8'
-
 OPTIONS_DEFINE=			DNSTAP FASTPARSER IDN
 
 DNSTAP_DESC=			dnstap support (see dnstap.info)
@@ -62,6 +59,16 @@ FASTPARSER_CONFIGURE_ENABLE=	fastparser
 IDN_CONFIGURE_WITH=		libidn
 IDN_LIB_DEPENDS=		libidn.so:dns/libidn
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "i386"
+CPUTYPE=	i686
+CFLAGS+=	-march=i686
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1100000
+USE_GCC=	yes
+.endif
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} 's|$$(INSTALL) -d $$(DESTDIR)/\@run_dir\@|#$$(INSTALL) -d $$(DESTDIR)/\@run_dir\@|' \
 		${WRKSRC}/src/Makefile.in
@@ -75,4 +82,4 @@ post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}/
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
