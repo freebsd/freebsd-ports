@@ -10,6 +10,7 @@ pidfile=/var/run/${name}.pid
 configfile=%%PREFIX%%/etc/${name}.conf
 required_files=${configfile}
 samplefile=${configfile}.sample
+
 start_pre()
 {
 	ws=" 	"
@@ -26,6 +27,7 @@ start_pre()
 	egrep -qs "^[$ws]*Send($kw)[$ws]*=" ${configfile} &&
 	eerror "${configfile} needs to be updated from ${samplefile}."
 }
+
 depend()
 {
 	keyword -shutdown
