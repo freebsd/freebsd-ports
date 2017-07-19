@@ -1,0 +1,10 @@
+USE_OPENRC_SUBR=	openrc-nova-api \
+		openrc-nova-consoleauth \
+		openrc-nova-conductor \
+		openrc-nova-scheduler \
+		openrc-nova-network \
+		openrc-nova-compute \
+		openrc-nova-cert \
+		openrc-nova-cells \
+		openrc-nova-serialproxy \
+		openrc-nova-novncproxy

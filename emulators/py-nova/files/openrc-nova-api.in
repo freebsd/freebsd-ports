@@ -1,0 +1,29 @@
+#!/sbin/openrc-run
+
+# nova_api_logdir (str):
+#	Set it to chagge log directory
+#	Default is "/var/log/nova"
+#
+# nova_api_args (str):
+#	Set it to change command line arguments.
+#	Default is "--log-file ${nova_api_logdir}/nova-api.log"
+
+name=nova_api
+PATH=%%PREFIX%%/bin:%%PREFIX%%/sbin:$PATH
+
+pidfile="/var/run/nova-api.pid"
+command="%%PREFIX%%/bin/python2.7"
+
+: ${nova_api_logdir:="/var/log/nova"}
+: ${nova_api_args:="--log-file ${nova_api_logdir}/nova-api.log"}
+
+command_args="nova-api ${nova_api_args}"
+supervisor=supervise-daemon
+
+start_pre() {
+	mkdir -p ${nova_api_logdir}
+}
+
+depend() {
+	keyword -shutdown
+}

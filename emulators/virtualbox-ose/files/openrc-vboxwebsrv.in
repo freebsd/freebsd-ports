@@ -1,0 +1,26 @@
+#!/sbin/openrc-run
+
+# Add the following line to /etc/rc.conf[.local] to enable vboxwebsrv
+#
+# vboxwebsrv_user (str):	User account to run with.
+# vboxwebsrv_flags (str):	Custom flags for vboxwebsrv.
+
+name=vboxwebsrv
+command="%%VBOXDIR%%/vboxwebsrv"
+pidfile="/var/run/${name}.pid"
+supervisor=supervise-daemon
+: ${vboxwebsrv_user="%%VBOXWSUSER%%"}
+command_args=${vboxwebserv_flags}
+command_user=${vboxwebsrv_user}
+
+start_pre()
+{
+	HOME=$(/usr/sbin/pw usershow -7 -n "${vboxwebsrv_user}" | /usr/bin/cut -d: -f6)
+	/usr/bin/install -o ${vboxwebsrv_user} -g %%VBOXGROUP%% -m 644 /dev/null ${pidfile}
+}
+
+depend() {
+	need localmount
+	keyword -shutdown
+	after bootmsic
+}

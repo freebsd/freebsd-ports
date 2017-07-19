@@ -1,0 +1,115 @@
+#!/sbin/openrc-run
+
+# Add the following line to /etc/rc.conf[.local] to enable vboxheadless
+#
+# vboxheadless_machines (str):        Space separated list of machines 
+# vboxheadless_user (str):            Default user account to run with.
+#                                     (default: %%VBOXUSER%%)
+# vboxheadless_stop (str):            Default stop cmd for VBoxManage controlvm.
+#                                     (default: savestate)
+# vboxheadless_delay (int):           Default startup/shutdown delay in seconds.
+#                                     (default: 0)
+# vboxheadless_<machine>_name (str):  Virtualbox machine name or UUID.
+# vboxheadless_<machine>_user (str):  User account to run with.
+# vboxheadless_<machine>_flags (str): Additional flags for VBoxHeadless.
+# vboxheadless_<machine>_stop (str):  Stop command for VBoxManage controlvm.
+# vboxheadless_<machine>_delay (int): Startup and shutdown delay in seconds.
+
+name="vboxheadless"
+command="%%VBOXDIR%%/VBoxHeadless"
+pidbase="/var/run/${name}"
+supervisor=supervise-daemon
+
+: ${vboxheadless_user="%%VBOXUSER%%"}
+: ${vboxheadless_stop="savestate"}
+: ${vboxheadless_delay="0"}
+command_user=${vboxheadless_user}
+
+start()
+{
+	local machine mpidfile pid vmname vmuser vmflags vmdelay
+
+	ebegin "Starting Virtual Machines:"
+	for machine in ${vboxheadless_machines}; do
+		mpidfile="${pidbase}_${machine}.pid"
+		eval vmname="\${vboxheadless_${machine}_name:-${machine}}"
+		eval vmuser="\${vboxheadless_${machine}_user:-${vboxheadless_user}}"
+		eval vmflags="\${vboxheadless_${machine}_flags:-}"
+		eval vmdelay="\${vboxheadless_${machine}_delay:-${vboxheadless_delay}}"
+
+		HOME=$(/usr/sbin/pw usershow -7 -n "${vmuser}" | /usr/bin/cut -d: -f6)
+
+		/usr/bin/printf "%25s " "${vmname}"
+		/usr/bin/su ${vmuser} -c "%%VBOXDIR%%/VBoxManage showvminfo '${vmname}' >/dev/null" 2>/dev/null
+
+		if [ $? != 0 ]; then
+			einfo "Unknown machine"
+			continue
+		fi
+
+		/bin/sleep ${vmdelay}
+		/usr/bin/install -o ${vmuser} -g %%VBOXGROUP%% -m 644 /dev/null ${mpidfile}
+		pidfile=${mpidfile}
+		command_args="--startvm ${vmname} ${vmflags}"
+		supervise-daemon -p ${pidfile} -u ${command_user} --start ${command} ${command_args}
+	done
+}
+
+stop()
+{
+	local machine mpidfile pid pids vmname vmuser vmstop vmdelay
+
+	eend "Saving states for Virtual Machines:"
+	for machine in ${vboxheadless_machines}; do
+		mpidfile="${pidbase}_${machine}.pid"
+		eval vmname="\${vboxheadless_${machine}_name:-${machine}}"
+		eval vmuser="\${vboxheadless_${machine}_user:-${vboxheadless_user}}"
+		eval vmstop="\${vboxheadless_${machine}_stop:-${vboxheadless_stop}}"
+		eval vmdelay="\${vboxheadless_${machine}_delay:-${vboxheadless_delay}}"
+
+		/usr/bin/printf "%25s " "${vmname}"
+
+		/bin/sleep ${vmdelay}
+		/usr/bin/su ${vmuser} -c "%%VBOXDIR%%/VBoxManage controlvm '${vmname}' ${vmstop} >/dev/null &" 2>/dev/null
+	done
+}
+
+status()
+{
+	local machine mpidfile pid vmname vmuser
+
+	/usr/bin/printf "%25s %s\n" "Machine" "Status"
+	/usr/bin/printf "%25s %s\n" "-------------------------" "------------"
+
+	for machine in ${vboxheadless_machines}; do
+		mpidfile="${pidbase}_${machine}.pid"
+		pid=$(check_pidfile $mpidfile $command)
+		eval vmname="\${vboxheadless_${machine}_name:-${machine}}"
+		eval vmuser="\${vboxheadless_${machine}_user:-${vboxheadless_user}}"
+
+		/usr/bin/su ${vmuser} -c "%%VBOXDIR%%/VBoxManage showvminfo '${vmname}' >/dev/null" 2>/dev/null
+
+		if [ $? != 0 ]; then
+			/usr/bin/printf "%20s %s\n" "${vmname}" "Unknown Machine"
+		elif [ -n "${pid}" ]; then
+			/usr/bin/printf "%25s %s\n" "${vmname}" "Running"
+		else
+			/usr/bin/printf "%25s %s\n" "${vmname}" "Powered Off"
+		fi
+	done
+}
+
+: ${vboxheadless_user="%%VBOXUSER%%"}
+: ${vboxheadless_stop="savestate"}
+: ${vboxheadless_delay="0"}
+
+cmd_arg="$1" ; shift
+
+if [ -n "$*" ]; then
+    vboxheadless_machines="$*"
+fi
+
+depend() {
+	need vboxnet
+	keyword -shutdown
+}

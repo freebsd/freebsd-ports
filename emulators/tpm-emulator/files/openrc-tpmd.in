@@ -1,0 +1,15 @@
+#!/sbin/openrc-run
+
+name=tpmd
+command="%%PREFIX%%/bin/${name}"
+
+: ${tpmd_user:="%%USERS%%"}
+: ${tpmd_group:="%%GROUPS%%"}
+
+command_args="-o ${tpmd_user} -g ${tpmd_group}"
+unset tpmd_user tpmd_group
+
+depend() {
+	provide tpmd
+	keyword -shutdown
+}

@@ -1,0 +1,31 @@
+#!/sbin/openrc-run
+
+# Add the following line to /etc/rc.conf[.local] to enable vboxwatchdog
+#
+# vboxwatchdog_user (str):	User account to run with.
+# vboxwatchdog_flags (str):	Custom flags for VBoxWatchdog.
+
+name=vboxwatchdog
+command="%%VBOXDIR%%/VBoxBalloonCtrl"
+pidfile="/var/run/${name}.pid"
+supervisor=supervise-daemon
+
+: ${vboxwatchdog_user="%%VBOXUSER%%"}
+: ${vboxwatchdog_flags=""}
+command_user=${vboxwatchdog_user}
+command_args=${vboxwatchdog_flags}
+
+start_pre()
+{
+	HOME=$(/usr/sbin/pw usershow -7 -n "${vboxwatchdog_user}" | /usr/bin/cut -d: -f6)
+
+	# prevent inheriting this setting to VBoxSVC
+	unset VBOX_RELEASE_LOG_DEST
+	/usr/bin/install -o ${vboxwatchdog_user} -g %%VBOXGROUP%% -m 644 /dev/null ${pidfile}
+}
+
+depend() {
+	need localmount
+	keyword -shutdown
+	after bootmisc
+}

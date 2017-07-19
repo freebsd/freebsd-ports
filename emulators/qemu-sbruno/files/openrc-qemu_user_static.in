@@ -1,0 +1,122 @@
+#!/sbin/openrc-run
+
+name=%%NAME%%
+
+command=/usr/sbin/binmiscctl
+QEMU_DIR=%%PREFIX%%/bin
+QEMU_PREFIX=qemu-
+QEMU_SUFFIX=-static
+
+list() {
+	${command} list
+}
+
+start() {
+	# register arm interpreter styled 'arm'
+	interpreter=${QEMU_DIR}/${QEMU_PREFIX}arm${QEMU_SUFFIX}
+	if [ -x "${interpreter}" ]; then
+		${command} add arm --interpreter "${interpreter}" \
+			--magic "\x7f\x45\x4c\x46\x01\x01\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x02\x00\x28\x00" \
+			--mask  "\xff\xff\xff\xff\xff\xff\xff\x00\xff\xff\xff\xff\xff\xff\xff\xff\xfe\xff\xff\xff" \
+			--size 20 --set-enabled
+	else
+		eerror "$0: interpreter ${interpreter} not found, cannot register."
+	fi
+	# register armv6 interpreter styled 'arm'
+	interpreter=${QEMU_DIR}/${QEMU_PREFIX}arm${QEMU_SUFFIX}
+	if [ -x "${interpreter}" ]; then
+		${command} add armv6 --interpreter "${interpreter}" \
+			--magic "\x7f\x45\x4c\x46\x01\x01\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x02\x00\x28\x00" \
+			--mask  "\xff\xff\xff\xff\xff\xff\xff\x00\xff\xff\xff\xff\xff\xff\xff\xff\xfe\xff\xff\xff" \
+			--size 20 --set-enabled
+	else
+		eerror "$0: interpreter ${interpreter} not found, cannot register."
+	fi
+	# register aarch64 interpreter styled 'aarch64'
+	interpreter=${QEMU_DIR}/${QEMU_PREFIX}aarch64${QEMU_SUFFIX}
+	if [ -x "${interpreter}" ]; then
+		${command} add aarch64 --interpreter "${interpreter}" \
+			--magic "\x7f\x45\x4c\x46\x02\x01\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x02\x00\xb7\x00" \
+			--mask  "\xff\xff\xff\xff\xff\xff\xff\x00\xff\xff\xff\xff\xff\xff\xff\xff\xfe\xff\xff\xff" \
+			--size 20 --set-enabled
+	else
+		eerror "$0: interpreter ${interpreter} not found, cannot register."
+	fi
+	# register mips interpreter styled 'mips'
+	interpreter=${QEMU_DIR}/${QEMU_PREFIX}mips${QEMU_SUFFIX}
+	if [ -x "${interpreter}" ]; then
+		${command} add mips --interpreter "${interpreter}" \
+			--magic "\x7f\x45\x4c\x46\x01\x02\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x02\x00\x08" \
+			--mask "\xff\xff\xff\xff\xff\xff\xff\x00\xff\xff\xff\xff\xff\xff\xff\xff\xff\xfe\xff\xff" \
+			--size 20 --set-enabled
+	else
+		eerror "$0: interpreter ${interpreter} not found, cannot register."
+	fi
+	# register mipsle interpreter styled 'mipsle'
+	interpreter=${QEMU_DIR}/${QEMU_PREFIX}mipsel${QEMU_SUFFIX}
+	if [ -x "${interpreter}" ]; then
+		${command} add mipsel --interpreter "${interpreter}" \
+			--magic "\x7f\x45\x4c\x46\x01\x01\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x02\x00\x08\x00" \
+			--mask "\xff\xff\xff\xff\xff\xff\xff\x00\xff\xff\xff\xff\xff\xff\xff\xff\xff\xfe\xff\xff" \
+			--size 20 --set-enabled
+	else
+		eerror "$0: interpreter ${interpreter} not found, cannot register."
+	fi
+	# register mips64 interpreter styled 'mips64'
+	interpreter=${QEMU_DIR}/${QEMU_PREFIX}mips64${QEMU_SUFFIX}
+	if [ -x "${interpreter}" ]; then
+		${command} add mips64 --interpreter "${interpreter}" \
+			--magic "\x7f\x45\x4c\x46\x02\x02\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x02\x00\x08" \
+			--mask  "\xff\xff\xff\xff\xff\xff\xff\x00\xff\xff\xff\xff\xff\xff\xff\xff\xff\xfe\xff\xff" \
+			--size 20 --set-enabled
+	else
+		error "$0: interpreter ${interpreter} not found, cannot register."
+	fi
+	# register powerpc interpreter styled 'ppc'
+	interpreter=${QEMU_DIR}/${QEMU_PREFIX}ppc${QEMU_SUFFIX}
+	if [ -x "${interpreter}" ]; then
+		${command} add powerpc --interpreter "${interpreter}" \
+			--magic "\x7f\x45\x4c\x46\x01\x02\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x02\x00\x14" \
+			--mask "\xff\xff\xff\xff\xff\xff\xff\x00\xff\xff\xff\xff\xff\xff\xff\xff\xff\xfe\xff\xff" \
+			--size 20 --set-enabled
+	else
+		error "$0: interpreter ${interpreter} not found, cannot register."
+	fi
+	# register powerpc64 interpreter styled 'ppc64'
+	interpreter=${QEMU_DIR}/${QEMU_PREFIX}ppc64${QEMU_SUFFIX}
+	if [ -x "${interpreter}" ]; then
+		${command} add powerpc64 --interpreter "${interpreter}" \
+			--magic "\x7f\x45\x4c\x46\x02\x02\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x02\x00\x15" \
+			--mask "\xff\xff\xff\xff\xff\xff\xff\x00\xff\xff\xff\xff\xff\xff\xff\xff\xff\xfe\xff\xff" \
+			--size 20 --set-enabled
+	else
+		error "$0: interpreter ${interpreter} not found, cannot register."
+	fi
+	# register sparc64 interpreter styled 'sparc64'
+	interpreter=${QEMU_DIR}/${QEMU_PREFIX}sparc64${QEMU_SUFFIX}
+	if [ -x "${interpreter}" ]; then
+		${command} add sparc64 --interpreter "${interpreter}" \
+			--magic "\x7f\x45\x4c\x46\x02\x02\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x02\x00\x2b" \
+			--mask "\xff\xff\xff\xff\xff\xff\xff\x00\xff\xff\xff\xff\xff\xff\xff\xff\xff\xfe\xff\xff" \
+			--size 20 --set-enabled
+	else
+		error "$0: interpreter ${interpreter} not found, cannot register."
+	fi
+}
+
+stop_pre()
+{
+	${command} remove mips64
+	${command} remove arm
+	${command} remove armv6
+	${command} remove aarch64
+	${command} remove mips
+	${command} remove mipsel
+	${command} remove powerpc
+	${command} remove powerpc64
+	${command} remove sparc64
+}
+
+depend() {
+	keyword -shutdown
+}

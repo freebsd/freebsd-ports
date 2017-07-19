@@ -1,0 +1,9 @@
+#!/sbin/openrc-run
+
+name="vboxservice"
+command="%%PREFIX%%/sbin/VBoxService"
+
+depend() {
+	need vboxguest
+	keyword -shutdown
+}
