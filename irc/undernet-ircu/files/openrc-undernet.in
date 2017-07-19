@@ -1,0 +1,20 @@
+#!/sbin/openrc-run
+
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# undernet_config (path):   Set to %%PREFIX%%/etc/ircd.conf
+#               by default.
+
+name=undernet
+
+: ${undernet_config="%%PREFIX%%/etc/ircd.conf"}
+undernet_user="undernet"
+undernet_group="undernet"
+
+command="%%PREFIX%%/sbin/ircd"
+pidfile="undernet.pid"
+piddir="/var/log/"
+required_files="${undernet_config}"
+command_args="-f ${undernet_config}"
+command_user=${undernet}

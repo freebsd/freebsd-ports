@@ -1,0 +1,19 @@
+#!/sbin/openrc-run
+
+name=charybdis
+
+: ${charybdis_user=ircd}
+: ${charybdis_group=ircd}
+
+command=%%PREFIX%%/bin/ircd
+command_user=${charybdis_user}
+pidfile=/var/run/${name}/${name}.pid
+command_args="-configfile %%ETCDIR%%/ircd.conf -pidfile ${pidfile}"
+
+start_pre() {
+	chown -R ircd %%ETCDIR%% /var/run/${name} /var/log/${name} /var/db/${name}
+}
+
+depend() {
+	keyword -shutdown
+}

@@ -1,0 +1,25 @@
+#!/sbin/openrc-run
+
+name="ircd_ratbox"
+ircd_ratbox_user=${ircd_ratbox_user:-"ircd"}
+ircd_ratbox_group=${ircd_ratbox_group:-"ircd"}
+
+conftest_cmd="ircd_ratbox_conftest"
+command="%%PREFIX%%/bin/ircd"
+command_user=${ircd_ratbox_user}
+pidfile=%%RUNDIR%%/ircd.pid
+required_files="%%PREFIX%%/etc/ircd-ratbox/ircd.conf"
+extra_commands="conftest"
+
+start_pre()
+{
+	touch $pidfile
+	chown $ircd_ratbox_user:$ircd_ratbox_group $pidfile
+}
+
+conftest()
+{
+	einfo "Starting ircd-ratbox in configuration test only mode."
+	command_args="-conftest"
+	start-stop-daemon --name $name --pidfile $pidfile --user $command_user --exec $command
+}

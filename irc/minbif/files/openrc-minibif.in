@@ -1,0 +1,22 @@
+#!/sbin/openrc-run
+
+name="minbif"
+
+: ${minbif_user="%%USERS%%"}
+: ${minbif_config="%%PREFIX%%/etc/minbif/minbif.conf"}
+
+required_files="${minbif_config}"
+command="%%PREFIX%%/bin/minbif"
+command_args="${minbif_config}"
+
+start() {
+	su -fm ${minbif_user} -c "${command} start"
+}
+
+stop() {
+	su -fm ${minbif_user} -c "${command} stop"
+}
+
+depend() {
+	keyword -shutdown
+}

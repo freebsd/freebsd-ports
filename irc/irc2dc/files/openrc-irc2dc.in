@@ -1,0 +1,11 @@
+#!/sbin/openrc-run
+
+name="irc2dc"
+command="%%PREFIX%%/bin/irc2dc"
+pidfile="/var/run/irc2dc.pid"
+required_files="%%PREFIX%%/etc/irc2dc.conf"
+
+depend() {
+	use net
+	keyword -shutdown
+}

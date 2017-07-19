@@ -1,0 +1,22 @@
+#!/sbin/openrc-run
+
+name="ircd"
+command="%%PREFIX%%/sbin/$name"
+
+: ${ircd_user="ircd"}
+: ${ircd_group="ircd"}
+
+required_files="%%PREFIX%%/etc/ircd-ru/ircd.conf %%PREFIX%%/etc/ircd-ru/ircd.motd %%PREFIX%%/etc/ircd-ru/ircd.smotd"
+piddir="/var/run/ircd-ru"
+pidfile="$piddir/$name.pid"
+command_user=${ircd_user}
+
+start_pre() {
+	/usr/bin/install -d -o $ircd_user -g $ircd_group $piddir
+        eval `/usr/bin/limits -U $ircd_user -e`
+}
+
+depend() {
+	#need syslogd
+	keyword -shutdown
+}

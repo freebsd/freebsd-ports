@@ -1,0 +1,25 @@
+#!/sbin/openrc-run
+#
+# Add the following line to /etc/rc.conf to enable znc:
+#
+# znc_conf_dir:     Directory where znc configuration
+#                   data is stored.
+#                   Default: %%PREFIX%%/etc/znc
+# znc_user:         The user account znc runs as what
+#                   you want it to be. It uses 'znc' user by
+#                   default. Do not sets it as empty or it will run
+#                   as root.
+
+name=znc
+command=%%PREFIX%%/bin/znc
+
+: ${znc_user:="znc"}
+: ${znc_conf_dir="%%PREFIX%%/etc/znc"}
+
+znc_flags=" \
+	${znc_conf_dir:+-d ${znc_conf_dir}} \
+	${znc_flags}"
+
+depend() {
+	keyword -shutdown
+}

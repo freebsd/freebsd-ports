@@ -1,0 +1,12 @@
+#!/sbin/openrc-run
+
+name=ircservices
+command="%%PREFIX%%/sbin/${name}"
+command_args="-dir=%%PREFIX%%/etc/ircservices"
+pidfile="/var/run/${name}.pid"
+required_files="%%PREFIX%%/etc/ircservices/ircservices.conf \
+		%%PREFIX%%/etc/ircservices/modules.conf"
+
+depend() {
+	keyword -shutdown -jail
+}

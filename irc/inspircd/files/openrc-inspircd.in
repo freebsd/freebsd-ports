@@ -1,0 +1,43 @@
+#!/sbin/openrc-run
+
+# Other rc.conf variables:
+# inspircd_flags="<set as needed>"
+#
+# inspircd_config="%%ETCDIR%%/inspircd.conf"
+#                          -- path to config file
+# inspircd_pidfile="%%INSPIRCD_RUN%%/inspircd.pid"
+#                          -- location of pidfile: must match setting
+#                             in ${inspircd_conffile}
+# inspircd_logfile="%%INSPIRCD_LOG%%"
+#                          -- file inspircd writes logs to
+
+name=inspircd
+
+: ${inspircd_config="%%ETCDIR%%/inspircd.conf"}
+: ${inspircd_pidfile="%%INSPIRCD_RUN%%/inspircd.pid"}
+: ${inspircd_user="%%USERS%%"}
+: ${inspircd_group="%%GROUPS%%"}
+: ${inspircd_data=/var/db/inspircd}
+: ${inspircd_logfile="%%INSPIRCD_LOG%%"}
+: ${inspircd_flags="${inspircd_flags} --logfile ${inspircd_logfile} --config ${inspircd_config}"}
+: ${inspircd_chdir="%%ETCDIR%%"}
+
+command_args="--nofork ${inspircd_flags}"
+command="%%PREFIX%%/bin/inspircd"
+supervisor=supervise-daemon
+pidfile=${inspircd_pidfile}
+required_files=${inspircd_config}
+
+start_pre()
+{
+	for i in ${inspircd_pidfile} ${inspircd_logfile}; do
+		install -d -m 755 -o ${inspircd_user} -g ${inspircd_group} ${i%/*}
+	done
+	install -d -m 755 -o ${inspircd_user} -g ${inspircd_group} ${inspircd_data}
+}
+
+depend() {
+	need localmount mysql postgresql
+	keyword -shutdown
+	after bootmisc
+}

@@ -1,0 +1,24 @@
+#!/sbin/openrc-run
+
+name=ircd_ratbox
+
+ircd_ratbox_user=${ircd_ratbox_user:-"ircd"}
+ircd_ratbox_group=${ircd_ratbox_group:-"ircd"}
+
+command="%%PREFIX%%/bin/ircd"
+command_user=${ircd_ratbox_user}
+pidfile=%%RUNDIR%%/ircd.pid
+required_files="%%PREFIX%%/etc/ircd-ratbox/ircd.conf"
+
+start_pre()
+{
+	for i in %%LOGDIR%% %%DBDIR%% %%RUNDIR%%; do
+		install -d -o ${ircd_ratbox_user} -g ${ircd_ratbox_group} ${i}
+	done
+}
+
+depend() {
+	need localmount
+	keyword -shutdown
+	after bootmisc
+}

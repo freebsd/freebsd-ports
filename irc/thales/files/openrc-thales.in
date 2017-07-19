@@ -1,0 +1,11 @@
+#!/sbin/openrc-run
+
+name="thales"
+command="%%PREFIX%%/sbin/thales"
+
+required_files="%%PREFIX%%/etc/thales.conf"
+
+depend() {
+	use net
+	keyword -shutdown
+}

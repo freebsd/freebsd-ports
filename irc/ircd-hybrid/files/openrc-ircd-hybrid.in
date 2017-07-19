@@ -1,0 +1,23 @@
+#!/sbin/openrc-run
+
+name="ircd_hybrid"
+command=/usr/local/bin/ircd
+pidfile=${ircd_hybrid_pidfile-"/var/run/ircd/ircd.pid"}
+: ${ircd_hybrid_user:="ircd"}
+: ${ircd_hybrid_config:="%%PREFIX%%/etc/ircd-hybrid/ircd.conf"}
+: ${ircd_hybrid_flags=" -pidfile ${pidfile}"}
+command_user=${ircd_hybird_user}
+command_args=${ircd_hybird_flags}
+
+start_pre()
+{
+    install -d -o ${ircd_hybrid_user} ${pidfile%/*} /var/log/ircd
+    touch $pidfile
+    chown $ircd_hybrid_user $pidfile
+}
+
+depend() {
+	need localmount
+	keyword -shutdown
+	after bootmisc
+}

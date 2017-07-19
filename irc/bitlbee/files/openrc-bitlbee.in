@@ -1,0 +1,15 @@
+#!/sbin/openrc-run
+
+name="bitlbee"
+
+: ${bitlbee_user="bitlbee"}
+: ${bitlbee_config="%%PREFIX%%/etc/bitlbee/bitlbee.conf"}
+
+required_files="${bitlbee_config}"
+command="%%PREFIX%%/sbin/bitlbee"
+command_user=${bitlbee_user}
+command_args="-F -u ${bitlbee_user} -c ${bitlbee_config} ${bitlbee_flags}"
+
+depend() {
+	keyword -shutdown
+}

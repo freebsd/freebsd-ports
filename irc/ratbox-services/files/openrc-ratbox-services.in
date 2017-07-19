@@ -1,0 +1,17 @@
+#!/sbin/openrc-run
+
+name="ratbox_services"
+
+ratbox_services_user=${ratbox_services_user:-"ircservices"}
+ratbox_services_group=${ratbox_services_group:-"ircservices"}
+
+command="%%PREFIX%%/sbin/ratbox-services"
+command_user=${ratbox_services_user}
+pidfile=%%RUNDIR%%/ratbox-services.pid
+required_files="%%PREFIX%%/etc/ratbox-services.conf"
+
+start_pre()
+{
+	touch $pidfile
+	chown $ratbox_services_user:$ratbox_services_group $pidfile
+}

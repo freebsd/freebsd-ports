@@ -1,0 +1,11 @@
+#!/sbin/openrc-run
+
+name="ircd"
+pidfile="%%PREFIX%%/var/run/ircd.pid"
+command="%%PREFIX%%/sbin/ircd"
+
+depend() {
+	use net
+	provide ircd
+	keyword -shutdown
+}

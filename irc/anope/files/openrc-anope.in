@@ -1,0 +1,13 @@
+#!/sbin/openrc-run
+
+name=anope
+
+: ${anope_user:=nobody}
+
+command=%%PREFIX%%/anope/bin/services
+pidfile=%%PREFIX%%/anope/data/services.pid
+
+depend() {
+	need mysql
+	keyword -shutdown
+}

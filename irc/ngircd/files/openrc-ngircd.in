@@ -1,0 +1,20 @@
+#!/sbin/openrc-run
+
+# Add the following lines to /etc/rc.conf to run ngircd:
+#
+# ngircd_conf (file):		Set local of config file.
+#				Default is "%%PREFIX%%/etc/ngircd.conf".
+# ngircd_flags (flags):		Set extra flags here. More options in ngircd(1)
+#				Default is empty "".
+
+name="ngircd"
+
+: ${ngircd_conf="%%PREFIX%%/etc/ngircd.conf"}
+
+required_files="${ngircd_conf}"
+command=%%PREFIX%%/sbin/ngircd
+command_args="-f ${ngircd_conf}"
+
+depend() {
+	keyword -shutdown
+}
