@@ -18,11 +18,12 @@ GH_TAGNAME=	ffea9cc
 WANT_PGSQL=	server
 
 PLIST_FILES=	lib/postgresql/orafce.so \
-		%%PORTDOCS%%%%DOCSDIR%%/README.asciidoc \
 		share/postgresql/extension/orafce--3.2--3.3.sql \
 		share/postgresql/extension/orafce--3.3--3.4.sql \
 		share/postgresql/extension/orafce--3.4.sql \
 		share/postgresql/extension/orafce.control
+
+PORTDOCS=	README.asciidoc
 
 OPTIONS_DEFINE=	DOCS
 
