@@ -11,7 +11,6 @@
 #
 # logsurfer_pid (string):	Location of pid file
 #				Default /var/run/logsurfer.pid
-#
 
 name=logsurfer
 
@@ -24,7 +23,7 @@ pidfile=${logsurfer_pidfile:="/var/run/logsurfer.pid"}
 command=%%PREFIX%%/bin/logsurfer
 command_args="-D -p ${pidfile} -c ${logsurfer_config} -F -s -e ${logsurfer_logfile}"
 required_files=${logsurfer_config} ${logsurfer_logfile}
-command_user()
+command_user=${logsurfer_user}
 
 depend()
 {
