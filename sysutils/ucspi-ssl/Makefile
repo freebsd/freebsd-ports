@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ucspi-ssl
-PORTVERSION=	0.99
+PORTVERSION=	0.99b
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.fehcom.de/ipnet/ucspi-ssl/
 
@@ -21,6 +21,8 @@ WRKSRC=		${WRKDIR}/host/superscript.com/net/${DISTNAME}
 
 SCRIPTS_TO_INSTALL=	https@ sslcat sslconnect
 
+.include <bsd.port.pre.mk>
+
 post-patch:
 .for x in ${SCRIPTS_TO_INSTALL}
 	@${REINPLACE_CMD} -i ''	-e 's|HOME/command/|${PREFIX}/bin/|' \
@@ -35,6 +37,9 @@ do-configure:
 	${ECHO_CMD} "/etc/ssl" > ${WRKSRC}/conf-cadir
 	${ECHO_CMD} "/etc/ssl/cert.pem" > ${WRKSRC}/conf-cafile
 	${ECHO_CMD} "/etc/ssl/dh1024.pem" > ${WRKSRC}/conf-dhfile
+.if ${SSL_DEFAULT} != base
+	${ECHO_CMD} "-lssl -lcrypto -L${LOCALBASE}/lib" > ${WRKSRC}/conf-ssllib
+.endif
 
 do-build:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} package/compile
@@ -49,4 +54,4 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC}/doc && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

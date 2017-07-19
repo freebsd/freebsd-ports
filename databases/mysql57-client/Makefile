@@ -22,7 +22,8 @@ CONFLICTS_INSTALL=	mysql5[0-68-9]-client-* \
 			mariadb[0-9][0-9]-client-* \
 			percona[0-9][0-9]-client-*
 
-CMAKE_ARGS+=	-DWITHOUT_SERVER=1
+CMAKE_ARGS+=	-DWITHOUT_SERVER=1 \
+		-DWITH_NDBCLUSTER=1
 
 USE_LDCONFIG+=	${PREFIX}/lib/mysql
 

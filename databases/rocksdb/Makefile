@@ -2,15 +2,17 @@
 # $FreeBSD$
 
 PORTNAME=	rocksdb
-PORTVERSION=	5.5.3
+PORTVERSION=	5.5.5
 DISTVERSIONPREFIX=	v
 CATEGORIES=	databases
 
 MAINTAINER?=	sunpoet@FreeBSD.org
 COMMENT?=	Persistent key-value store for fast storage environments
 
-LICENSE=	BSD3CLAUSE
-LICENSE_FILE=	${WRKSRC}/LICENSE
+LICENSE=	APACHE20 GPLv2
+LICENSE_COMB=	dual
+LICENSE_FILE_APACHE20=	${WRKSRC}/LICENSE.Apache
+LICENSE_FILE_GPLv2=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	bash:shells/bash
 LIB_DEPENDS=	libgflags.so:devel/gflags \
