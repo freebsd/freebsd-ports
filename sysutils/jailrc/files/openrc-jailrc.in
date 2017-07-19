@@ -2,7 +2,7 @@
 
 name="jailrc"
 
-extra_commands="status create remove"
+extra_commands="create remove"
 
 # init_name _j
 #	Initialize the name variable for jail _j.
@@ -721,7 +721,7 @@ jail_destroy()
 
 create()
 {
-	einfo -n 'Creating jails:'
+	echo -n 'Creating jails:'
 	for _jail in ${jail_list}
 	do
 		init_name $_jail
@@ -729,19 +729,18 @@ create()
 		jail_init $_jail
 		_ret=$?
 		if [ "$_ret" -eq 0 ]; then
-			einfo -n " ${_jail}"
+			echo -n " ${_jail}"
 		elif [ "$_ret" -eq 1 ]; then
-			einfo -n " [${_jail} already exists (JID: ${_jail_id})]"
+			echo -n " [${_jail} already exists (JID: ${_jail_id})]"
 		else
-			einfo -n "[${_jail} init eerroror]"
+			echo -n "[${_jail} init eerroror]"
 		fi
 	done
-	einfo "."
 }
 
 remove()
 {
-	einfo -n 'Removing jails:'
+	echo -n 'Removing jails:'
 	for _jail in ${jail_list}
 	do
 		init_name $_jail
@@ -749,15 +748,14 @@ remove()
 		if [ -z "${_jail_id}" ]; then
 			continue
 		elif `pgrep -j ${_jail_id} >/dev/null 2>&1`; then
-			einfo -n " [${_jail} has running processes (JID: ${_jail_id})]"
+			echo -n " [${_jail} has running processes (JID: ${_jail_id})]"
 			continue
 		fi
 		jail_destroy $_jail
 		if [ "$?" -eq 0 ] ; then
-			einfo -n " ${_jail}"
+			echo -n " ${_jail}"
 		fi
 	done
-	einfo "."
 }
 
 start()
