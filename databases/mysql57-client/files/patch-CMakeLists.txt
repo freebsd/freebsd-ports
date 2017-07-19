@@ -1,6 +1,16 @@
---- CMakeLists.txt.orig	2016-03-28 18:06:12 UTC
+--- CMakeLists.txt.orig	2017-06-22 14:13:19 UTC
 +++ CMakeLists.txt
-@@ -606,8 +606,8 @@ ENDIF()
+@@ -610,9 +610,6 @@ IF(NOT WITHOUT_SERVER)
+   SET (MYSQLD_STATIC_EMBEDDED_PLUGIN_LIBS "" CACHE INTERNAL "")
+   # Add storage engines and plugins.
+   CONFIGURE_PLUGINS()
+-ELSE()
+-  # We may still want Cluster client libraries, use -DWITH_NDBCLUSTER=1
+-  ADD_SUBDIRECTORY(storage/ndb)
+ ENDIF()
+ 
+ ADD_SUBDIRECTORY(include)
+@@ -647,8 +644,8 @@ ENDIF()
  
  ADD_SUBDIRECTORY(extra)
  ADD_SUBDIRECTORY(client)
@@ -10,7 +20,7 @@
  
  IF(UNIX)
    ADD_SUBDIRECTORY(man)
-@@ -676,14 +676,13 @@ ELSE()
+@@ -719,14 +716,13 @@ ELSE()
    SET(CPACK_GENERATOR "TGZ")
  ENDIF() 
  ADD_SUBDIRECTORY(packaging/WiX)
@@ -26,7 +36,7 @@
  IF(NOT INSTALL_LAYOUT MATCHES "RPM")
    INSTALL(FILES COPYING LICENSE.mysql 
    DESTINATION ${INSTALL_DOCREADMEDIR} 
-@@ -706,6 +705,7 @@ IF(NOT INSTALL_LAYOUT MATCHES "RPM")
+@@ -749,6 +745,7 @@ IF(NOT INSTALL_LAYOUT MATCHES "RPM")
      PATTERN "sp-imp-spec.txt" EXCLUDE
    )
  ENDIF()
