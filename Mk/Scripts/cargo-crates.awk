@@ -1,3 +1,6 @@
+# MAINTAINER: ports@FreeBSD.org
+# $FreeBSD$
+
 BEGIN {
 	gh_tuple_len = 0
 	crates_len = 0
@@ -17,18 +20,50 @@ BEGIN {
 	gsub("[^a-zA-Z_]", "", package_name)
 }
 
+function split_url(s) {
+	# scheme:[//[user[:password]@]host[:port]][/path][?query][#fragment]
+	split(s, url_scheme, "://")
+	url["scheme"] = url_scheme[1]
+
+	split(url_scheme[2], url_fragment, "#")
+	url["fragment"] = url_fragment[2]
+
+	split(url_fragment[1], url_query, "?")
+	url["query"] = url_query[2]
+
+	split(url_query[1], url_authority, "/")
+	url["path"] = substr(url_query[1], length(url_authority[1]) + 1)
+
+	split(url_authority[1], url_auth, "@")
+
+	if (length(url_auth) == 2) {
+		split(url_auth[1], url_user, ":")
+		url["user"] = url_user[1]
+		url["password"] = url_user[2]
+		split(url_auth[2], url_host, ":")
+	} else {
+		url["user"] = ""
+		url["password"] = ""
+		split(url_auth[1], url_host, ":")
+	}
+	url["host"] = url_host[1]
+	url["port"] = url_host[2]
+}
+
 /^source = "git\+(https|http|git):\/\/github.com\/.*#.*"/ {
-	split($3, url, "#")
-
-	gsub("^\"git\+", "", url[1])
-	split(url[1], repourl, "/")
-	account = repourl[4]
-	project = repourl[5]
+	split_url(substr($3, 1, length($3) - 1))
+	
+	split(url["path"], path, "/")
+	account = path[2]
+	project = path[3]
 	gsub("\.git$", "", project)
-
-	tag = url[2]
-	gsub("\"$", "", tag)
-
+	
+	if (match(url["query"], "^tag=")) {
+		split(url["query"], tag_, "=")
+		tag = tag_[2]
+	} else {
+		tag = url["fragment"]
+	}
 	gh_tuple[gh_tuple_len++] = sprintf(\
 		"%s:%s:%s:%s", account, project, tag, package_name)
 }
