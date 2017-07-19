@@ -9,7 +9,6 @@ bin/g++%%SUFFIX%%
 bin/gcc%%SUFFIX%%
 bin/gcov%%SUFFIX%%
 bin/gfortran%%SUFFIX%%
-@comment info/gcc%%SUFFIX%%/dir
 man/man1/cpp%%SUFFIX%%.1.gz
 man/man1/g++%%SUFFIX%%.1.gz
 man/man1/gcc%%SUFFIX%%.1.gz
