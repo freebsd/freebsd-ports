@@ -1,0 +1,15 @@
+#!/sbin/openrc-run
+
+name=ldmud
+
+command="%%PREFIX%%/sbin/${name}"
+rundir="/var/run/${name}"
+pidfile="${rundir}/${name}.pid"
+logfile="/var/log/${name}/${name}.log"
+supervisor=supervise-daemon
+command_user=ldmud
+command_args=" > ${logfile} 2>&1"
+
+depend() {
+	keyword -shutdown
+}

@@ -1,0 +1,66 @@
+#!/sbin/openrc-run
+
+# Add the following line to /etc/rc.conf[.local] to enable minetest server
+#
+# minetest_conffile (str): Path to config file (required).
+#                          (default: /usr/local/etc/minetest.conf)
+# minetest_rundir (str):   Path to directory holding a pidfile.
+#                          (default: /var/run/minetest)
+# minetest_user (str):     User to run as
+#                          (default: minetest)
+# minetest_group (str):    Group to run as
+#                          (default: minetest)
+# minetest_logdir (str):   Path to log directory
+#                          (default: /var/log/minetest)
+# minetest_dbdir (str):    Path to world database directory
+#                          (default: /var/db/minetest)
+
+name=minetest
+
+: ${minetest_config="/usr/local/etc/minetest.conf"}
+: ${minetest_rundir="/var/run/minetest"}
+: ${minetest_user="minetest"}
+: ${minetest_group="minetest"}
+: ${minetest_logdir="/var/log/minetest"}
+: ${minetest_dbdir="/var/db/minetest"}
+: ${minetest_args:="--logfile ${minetest_logdir}/debug.log --world ${minetest_dbdir}/world ${minetest_flags}"}
+
+pidfile=
+
+case "${minetest_args}" in
+*--config\ *)
+	echo "Warning \$minetest_args includes --config option." \
+	     "Please use \$minetest_conffile instead."
+	;;
+*)
+	minetest_args="--config ${minetest_config} ${minetest_args}"
+	;;
+esac
+
+command=/usr/local/bin/minetestserver
+pidfile=${minetest_rundir}/minetest.pid
+command_args=${minetest_args}
+command_user=${minetest_user}
+required_files=${minetest_config}
+supervisor=supervise-daemon
+
+start_pre() {
+	if [ ! -d ${minetest_rundir} ]; then
+		mkdir -m 755 -p ${minetest_rundir}
+		chown -R ${minetest_user}:${minetest_group} ${minetest_rundir}
+	fi
+	if [ ! -d ${minetest_logdir} ]; then
+		mkdir -m 755 -p ${minetest_logdir}
+		chown -R ${minetest_user}:${minetest_group} ${minetest_logdir}
+	fi
+	if [ ! -d ${minetest_dbdir} ]; then
+		mkdir -m 755 -p ${minetest_dbdir}/data
+		chown -R ${minetest_user}:${minetest_group} ${minetest_dbdir}
+	fi
+}
+
+depend() {
+	need localmount
+	keyword -shutdown
+	after bootmisc
+}

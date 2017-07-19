@@ -1,0 +1,8 @@
+#!/sbin/openrc-run
+
+name=tetrinetx
+command="%%DATADIR%%/tetrix.freebsd"
+
+depend() {
+	keyword -shutdown
+}

@@ -1,0 +1,10 @@
+#!/sbin/openrc-run
+
+name=bnetd
+command=%%PREFIX%%/sbin/bnetd
+pidfile=/var/run/pvpgn/bnetd.pid
+required_files=%%PREFIX%%/etc/pvpgn/bnetd.conf
+
+depend() {
+	keyword -shutdown
+}

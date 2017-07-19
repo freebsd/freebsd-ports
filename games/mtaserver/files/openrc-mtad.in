@@ -1,0 +1,23 @@
+#!/sbin/openrc-run
+
+name="mtad"
+
+: ${mtad_chdir="%%DATADIR%%"}
+: ${mtad_config="%%ETCDIR%%/mtaserver.conf"}
+: ${mtad_logfile="/var/log/mtaserver.log"}
+
+command="%%DATADIR%%/mtaserver"
+command_args="-b -c ${mtad_config} -l ${mtad_logfile} 2>&1 > /dev/null &"
+required_files=${mtad_config}
+
+start_pre() {
+    if ! kldstat -v | grep -E 'linux(aout|elf)' > /dev/null; then
+		eerror "Linux support required"
+		exit 1
+    fi
+}
+
+depend() {
+	use net
+	keyword -shutdown
+}

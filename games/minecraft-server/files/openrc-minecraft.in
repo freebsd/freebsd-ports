@@ -1,0 +1,70 @@
+#!/sbin/openrc-run
+
+# rc.conf variables:
+# minecraft_mems (Default: 1024M)
+# minecraft_memx (Default: 1024M)
+# minecraft_args (Default: "")
+
+name=minecraft
+description="Dedicated server for the game Minecraft"
+
+minecraft_mems=${minecraft_mems:-"1024M"}
+minecraft_memx=${minecraft_memx:-"1024M"}
+minecraft_args=${minecraft_args:-""}
+
+extra_commands="console status kill"
+command="%%LOCALBASE%%/bin/tmux"
+
+is_running()
+{
+	pgrep -qu mcserver java
+	return $?
+}
+
+start()
+{
+	if [ ${minecraft_mems%?} -gt ${minecraft_memx%?} ]; then
+		eerror "ERROR: minecraft_mems is set greater than minecraft_memx."
+		eerror "ERROR: Set minecraft_memx to be equal or greater than minecraft_mems in rc.conf."
+	else
+		if [ -n "${minecraft_mem}" ]; then
+			ewarn "WARNING: minecraft_mem is deprecated. Please change this to minecraft_memx."
+			minecraft_memx=${minecraft_mem}
+		fi
+		ebegin "Starting ${name}."
+		cd %%PREFIX%%/minecraft-server
+		$command new-session -s minecraft -d '%%LOCALBASE%%/bin/java -Xmx${minecraft_memx} -Xms${minecraft_mems} ${minecraft_args} -jar %%PREFIX%%/minecraft-server/minecraft_server.%%VERSION%%.jar nogui'
+	fi
+}
+
+stop()
+{
+	eend "Stopping ${name}."
+	$command send-keys -t ${name} \"stop\" ENTER
+
+	i=0
+	while [ $i -lt 10 ]; do
+		i=$(($i + 1))
+		if is_running; then
+			sleep 1
+		else
+			einfo "${name} has been stopped."
+			return
+		fi
+	done
+	ewarn "WARN: ${name} could not be stopped or is taking longer than expected."
+	ewarn "WARN: To view the console, type 'service ${name} console'"
+	eawrn "WARN: To kill ${name}, type 'service ${name} kill'"
+}
+
+console()
+{
+	export TERM=xterm
+	$command attach-session -t ${name}
+}
+
+kill()
+{
+	pkill -KILL -u mcserver java
+	einfo "${name} has been killed."
+}

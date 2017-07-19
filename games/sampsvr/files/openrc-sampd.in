@@ -1,0 +1,20 @@
+#!/sbin/openrc-run
+
+name="sampd"
+
+: ${sampd_chdir="%%SAMPDIR%%"}
+
+command="%%SAMPDIR%%/%%SAMPBIN%%"
+command_args="> /dev/null &"
+required_files="%%PREFIX%%/etc/sampsvr.cfg"
+
+start_pre() {
+    if ! kldstat -v | grep -E 'linux(aout|elf)' > /dev/null; then
+		eerror "Linux support required"
+		exit 1
+    fi
+}
+
+depend() {
+	use net
+}

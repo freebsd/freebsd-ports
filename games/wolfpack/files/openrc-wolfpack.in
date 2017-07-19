@@ -1,0 +1,12 @@
+#!/sbin/openrc-run
+
+# Please read the documentation in %%DATADIR%%/README
+# about configuring the server and creating a world first.
+
+name=wolfpack
+
+: ${wolfpack_user="wolfpack"}
+
+pidfile="/var/wolfpack/server.pid"
+command="%%PREFIX%%/lib/wolfpack/emp_server"
+command_user=${wolfpack_user}
