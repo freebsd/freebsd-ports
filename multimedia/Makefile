@@ -81,6 +81,7 @@
     SUBDIR += gmp-api
     SUBDIR += gmtk
     SUBDIR += gnome-mplayer
+    SUBDIR += gnome-mpv
     SUBDIR += gnome-subtitles
     SUBDIR += gpac-libgpac
     SUBDIR += gpac-mp4box
