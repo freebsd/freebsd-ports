@@ -1153,9 +1153,6 @@
     SUBDIR += ssh_askpass_gtk2
     SUBDIR += sshblock
     SUBDIR += sshguard
-    SUBDIR += sshguard-ipfw
-    SUBDIR += sshguard-null
-    SUBDIR += sshguard-pf
     SUBDIR += sshpass
     SUBDIR += ssl-admin
     SUBDIR += sslscan

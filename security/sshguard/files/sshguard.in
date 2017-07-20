@@ -81,7 +81,7 @@ pidfile=${sshguard_pidfile:="/var/run/sshguard.pid"}
 
 command=/usr/sbin/daemon
 actual_command="%%PREFIX%%/sbin/sshguard"
-procname="${actual_command}"
+procname="%%PREFIX%%/libexec/sshg-blocker"
 start_precmd=sshguard_prestart
 command_args="-c ${actual_command} \${sshguard_flags} \${sshguard_blacklist_params} \${sshguard_watch_params} -a ${sshguard_danger_thresh} -p ${sshguard_release_interval} -s ${sshguard_reset_interval} -w ${sshguard_whitelistfile} -i ${pidfile}"
 
