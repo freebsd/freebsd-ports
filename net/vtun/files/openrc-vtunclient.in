@@ -20,20 +20,31 @@ required_files="%%PREFIX%%/etc/vtund.conf"
 command=%%PREFIX%%/sbin/vtund
 
 start_pre() {
-	cmd=$1
-	if [ $# -gt 0 ]; then
-		shift
-	fi
 	if [ -n "$*" ]; then
 		vtunclient_list="$*"
 	fi
 
-	if ![ -z "$vtunclient_list" ]; then
+	if [ -n "$vtunclient_list" ]; then
 		for _client in ${vtunclient_list}; do
-			eval vtunclient_flags=\$vtunclient_${_client}_flags
+			eval command_args=\$vtunclient_${_client}_flags
 			eval pidfile=\$vtunclient_${_client}_pidfile
-			vtunclient_flags="-z $pidfile $vtunclient_flags"
-			#run_rc_command "$cmd"
+			command_args="-z $pidfile $command_args"
+			start-stop-daemon --name ${name} --pidfile ${pidfile} --exec ${command} ${vtunclient_flags}
+		done
+	fi
+}
+
+stop_pre() {
+	if [ -n "$*" ]; then
+		vtunclient_list="$*"
+	fi
+
+	if [ -n "$vtunclient_list" ]; then
+		for _client in ${vtunclient_list}; do
+			eval command_args=\$vtunclient_${_client}_flags
+			eval pidfile=\$vtunclient_${_client}_pidfile
+			command_args="-z $pidfile $command_args"
+			start-stop-daemon -- ${pidfile} -- stop $command
 		done
 	fi
 }
