@@ -11,6 +11,9 @@ MASTER_SITE_SUBDIR=	CPAN:JRED
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl Gtk+ based dvd-ripper
 
+LICENSE=        ART10 GPLv1 # (ART10 or GPLv1) and CC-BY-SA-2.5
+LICENSE_COMB=   dual
+
 BUILD_DEPENDS=	p5-Gtk2>=0:x11-toolkits/p5-Gtk2 \
 		p5-AnyEvent>=0:devel/p5-AnyEvent \
 		p5-Event-ExecFlow>=0:devel/p5-Event-ExecFlow \
@@ -32,22 +35,22 @@ RUN_DEPENDS=	p5-Gtk2>=0:x11-toolkits/p5-Gtk2 \
 		${LOCALBASE}/sbin/fping:net/fping \
 		cdrecord:sysutils/cdrtools
 
-OPTIONS_DEFINE=	VORBIS SUBTITLE RAR
+USES=		gettext perl5 shebangfix
+SHEBANG_FILES=	bin/dvdrip*
+USE_PERL5=	configure patch
+CONFIGURE_ENV=	SKIP_UNPACK_REQUIRED_MODULES=1
+
+MAKE_JOBS_UNSAFE=	yes
+
+OPTIONS_DEFINE=		VORBIS SUBTITLE RAR
 OPTIONS_DEFAULT=	VORBIS SUBTITLE
-RAR_DESC=	Support RAR-compressed vobsub subtitles
-SUBTITLE_DESC=	Enable support for getting subtitles
+RAR_DESC=		Support RAR-compressed vobsub subtitles
+SUBTITLE_DESC=		Enable support for getting subtitles
 
 RAR_RUN_DEPENDS=	rar:archivers/rar
 SUBTITLE_RUN_DEPENDS=	subtitle2pgm:multimedia/subtitleripper
 VORBIS_RUN_DEPENDS=	oggenc:audio/vorbis-tools \
 			ogmmerge:multimedia/ogmtools
-
-CONFIGURE_ENV=	SKIP_UNPACK_REQUIRED_MODULES=1
-USES=		gettext perl5 shebangfix
-USE_PERL5=	configure patch
-SHEBANG_FILES=	bin/dvdrip*
-
-MAKE_JOBS_UNSAFE=	yes
 
 post-patch:
 	@${PERL} -pi -e 's#/usr/sbin/fping#${LOCALBASE}/sbin/fping#' \
@@ -57,9 +60,9 @@ post-patch:
 
 post-install:
 .for f in dvdrip-progress dvdrip-splitpipe
-	${CHMOD} u+w ${STAGEDIR}${PREFIX}/bin/${f}
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${f}
-	${CHMOD} u-w ${STAGEDIR}${PREFIX}/bin/${f}
+	@${CHMOD} u+w ${STAGEDIR}${PREFIX}/bin/${f}
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${f}
+	@${CHMOD} u-w ${STAGEDIR}${PREFIX}/bin/${f}
 .endfor
 
 .include <bsd.port.mk>
