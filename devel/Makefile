@@ -5376,6 +5376,7 @@
     SUBDIR += rubygem-grape
     SUBDIR += rubygem-grape-entity
     SUBDIR += rubygem-grape-swagger
+    SUBDIR += rubygem-grape0
     SUBDIR += rubygem-grit
     SUBDIR += rubygem-guess_html_encoding
     SUBDIR += rubygem-gyoku
