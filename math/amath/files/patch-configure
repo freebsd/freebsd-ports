@@ -1,6 +1,6 @@
---- configure.orig	2017-04-03 12:17:53 UTC
+--- configure.orig	2017-04-21 22:00:00 UTC
 +++ configure
-@@ -465,8 +465,6 @@ catanh.c
+@@ -512,8 +512,6 @@ catanh.c
  ccos.c
  ccosh.c
  cexp.c
@@ -9,7 +9,7 @@
  csin.c
  csinh.c
  csqrt.c
-@@ -485,6 +483,8 @@ ccot.c
+@@ -532,6 +530,8 @@ ccot.c
  ccoth.c
  ccsc.c
  ccsch.c
@@ -18,3 +18,39 @@
  clogb.c
  clog10.c
  csec.c
+@@ -781,7 +781,7 @@ echo "doc:"
+ echo "	\${DOXYGEN} amatha.dox"
+ echo
+ echo ".PHONY: install"
+-echo "install:	\${alib} \${solib}"
++echo "install:"
+ echo "	\${MKDIR} \${INSTDIR}"
+ echo "	\${MKDIR} \${INSTDIRPC}"
+ echo "	\${MKDIR} \${INSTDIRI}"
+@@ -892,7 +892,7 @@ echo "doc:"
+ echo "	\${DOXYGEN} amathc.dox"
+ echo
+ echo ".PHONY: install"
+-echo "install:	\${alib} \${solib}"
++echo "install:"
+ echo "	\${MKDIR} \${INSTDIR}"
+ echo "	\${MKDIR} \${INSTDIRPC}"
+ echo "	\${MKDIR} \${INSTDIRI}"
+@@ -991,7 +991,7 @@ echo "doc:"
+ echo "	\${DOXYGEN} amathr.dox"
+ echo
+ echo ".PHONY: install"
+-echo "install:	\${alib} \${solib}"
++echo "install:	\${solib}"
+ echo "	\${MKDIR} \${INSTDIR}"
+ echo "	\${MKDIR} \${INSTDIRPC}"
+ echo "	\${MKDIR} \${INSTDIRI}"
+@@ -1088,7 +1088,7 @@ echo "doc:"
+ echo "	\${DOXYGEN} amathi.dox"
+ echo
+ echo ".PHONY: install"
+-echo "install:	\${alib} \${solib}"
++echo "install:"
+ echo "	\${MKDIR} \${INSTDIR}"
+ echo "	\${MKDIR} \${INSTDIRPC}"
+ echo "	\${MKDIR} \${INSTDIRI}"
