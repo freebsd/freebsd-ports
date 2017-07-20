@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	hyperlink
-PORTVERSION=	17.2.1
+PORTVERSION=	17.3.0
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,7 +13,7 @@ COMMENT=	Featureful, correct URL for Python
 LICENSE=	MIT
 
 NO_ARCH=	yes
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	autoplist concurrent distutils
 USES=		python
 
 .include <bsd.port.mk>

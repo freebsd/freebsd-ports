@@ -1,12 +1,10 @@
 ##########################################################################
   Sshguard installed successfully.
 
-%%PKGMSG_FWBLOCK%%
-
   You can start sshguard as a daemon by using the
   rc.d script installed at %%PREFIX%%/etc/rc.d/sshguard .
 
-  See sshguard(8) and http://www.sshguard.net/docs/setup for additional info.
+  See sshguard-setup(7) and http://www.sshguard.net/docs/setup for additional info.
 
   Please note that a few rc script parameters have been renamed to
   better reflect the documentation:

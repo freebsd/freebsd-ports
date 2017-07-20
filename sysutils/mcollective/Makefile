@@ -6,7 +6,7 @@ PORTVERSION=	2.9.0
 CATEGORIES=	sysutils
 MASTER_SITES=	http://downloads.puppetlabs.com/${PORTNAME}/
 
-MAINTAINER=	swills@FreeBSD.org
+MAINTAINER=	puppet@FreeBSD.org
 COMMENT=	Modern scalable datacenter orchestration framework
 
 LICENSE=	APACHE20

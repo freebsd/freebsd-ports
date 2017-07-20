@@ -5,7 +5,7 @@ PORTVERSION=	0.10.1
 PORTREVISION=	1
 CATEGORIES=	devel
 
-MAINTAINER=	jslagle@gmail.com
+MAINTAINER=	puppet@FreeBSD.org
 COMMENT=	Leatherman C++ Tool library
 
 LICENSE=	APACHE20

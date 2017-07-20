@@ -6,7 +6,7 @@ CATEGORIES=	databases ruby
 MASTER_SITES=	http://downloads.puppetlabs.com/puppetdb/
 DISTNAME=	puppetdb-${PORTVERSION}
 
-MAINTAINER=	freebsd@zleslie.info
+MAINTAINER=	puppet@FreeBSD.org
 COMMENT=	PuppetDB storeconfigs backend terminus module
 
 LICENSE=	APACHE20
