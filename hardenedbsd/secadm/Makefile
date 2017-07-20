@@ -2,7 +2,7 @@
 
 PORTNAME=	secadm
 PORTVERSION=	0.3
-PORTREVISION?=	3
+PORTREVISION?=	4
 CATEGORIES=	hardenedbsd
 
 MAINTAINER=	shawn.webb@hardenedbsd.org
@@ -17,7 +17,7 @@ MAKE_JOBS_UNSAFE=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	HardenedBSD
 GH_PROJECT=	secadm
-GH_TAGNAME=	57d21ca
+GH_TAGNAME=	6d86143
 
 .if defined(KMOD)
 MAKE_ENV+=	WITHOUT_CLI=YES
