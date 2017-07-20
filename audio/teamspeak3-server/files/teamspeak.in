@@ -28,6 +28,7 @@ command_args="-fp $pidfile -u teamspeak %%PREFIX%%/libexec/ts3server dbsqlpath=%
 teamspeak_chdir=$db_dir
 required_dirs="$db_dir $log_dir"
 
+%%CD%%
 load_rc_config $name
 
 : ${teamspeak_enable="NO"}
