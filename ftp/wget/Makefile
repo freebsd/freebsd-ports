@@ -15,37 +15,41 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 TEST_DEPENDS=	p5-HTTP-Daemon>=0:www/p5-HTTP-Daemon \
 		p5-IO-Socket-SSL>=0:security/p5-IO-Socket-SSL
 
-USES=		charsetfix cpe iconv makeinfo perl5 tar:xz
-USE_PERL5=	build
+USES=		charsetfix cpe iconv tar:xz
 CPE_VENDOR=	gnu
 GNU_CONFIGURE=	yes
 OPTIONS_SUB=	yes
 
 OPTIONS_RADIO=	SSL
 OPTIONS_RADIO_SSL=GNUTLS OPENSSL
-OPTIONS_DEFINE=	IPV6 NLS IDN METALINK PCRE PSL
-OPTIONS_DEFAULT=OPENSSL IDN
+OPTIONS_DEFINE=	DOCS IDN IPV6 METALINK NLS PCRE PSL
+OPTIONS_DEFAULT=DOCS IDN OPENSSL
 
-PCRE_DESC=	Support Perl regular expressions in addition to POSIX
-
-IPV6_CONFIGURE_ENABLE=	ipv6
-
-NLS_USES=		gettext
-NLS_CONFIGURE_ENABLE=	nls
-NLS_CPPFLAGS=		-I${LOCALBASE}/include
-NLS_LDFLAGS=		-L${LOCALBASE}/lib
+DOCS_DESC=	Install sample config file, info page and man page
+DOCS_INFO=	wget
+DOCS_USE=	PERL5=build
+DOCS_USES=	makeinfo perl5
 
 IDN_LIB_DEPENDS=	libidn2.so:dns/libidn2 \
 			libunistring.so:devel/libunistring
 IDN_CPPFLAGS=		-I${LOCALBASE}/include
 IDN_LDFLAGS=		-L${LOCALBASE}/lib
 IDN_CONFIGURE_ENABLE=	iri
-IDN_CONFIGURE_ON=	--with-libidn=${LOCALBASE} --with-libunistring-prefix=${LOCALBASE}
+IDN_CONFIGURE_ON=	--with-libidn=${LOCALBASE} \
+			--with-libunistring-prefix=${LOCALBASE}
 IDN_CONFIGURE_OFF=	--with-included-libunistring
+
+IPV6_CONFIGURE_ENABLE=	ipv6
 
 METALINK_CONFIGURE_WITH=metalink
 METALINK_LIB_DEPENDS=	libmetalink.so:misc/libmetalink
 
+NLS_USES=		gettext
+NLS_CONFIGURE_ENABLE=	nls
+NLS_CPPFLAGS=		-I${LOCALBASE}/include
+NLS_LDFLAGS=		-L${LOCALBASE}/lib
+
+PCRE_DESC=		Support Perl regular expressions in addition to POSIX
 PCRE_LIB_DEPENDS=	libpcre.so:devel/pcre
 PCRE_CPPFLAGS=		-I${LOCALBASE}/include
 PCRE_LDFLAGS=		-L${LOCALBASE}/lib
@@ -71,15 +75,18 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS+=--without-ssl
 .endif
 
-INFO=		wget
-
 TEST_TARGET=	check
 
-post-patch:
+post-patch-DOCS-off:
+	${REINPLACE_CMD} -e '/^SUBDIRS = / s/ doc / /' ${WRKSRC}/Makefile.in
+
+post-patch-DOCS-on:
 	${REINPLACE_CMD} -e 's,WGETRC = $$(sysconfdir)/wgetrc,&.sample,' \
 		${WRKSRC}/doc/Makefile.in
 	${REINPLACE_CMD} -e 's,/usr/local/etc/wgetrc,${PREFIX}/etc/wgetrc,' \
-		${WRKSRC}/doc/sample.wgetrc* ${WRKSRC}/doc/wget.texi ${WRKSRC}/doc/wget.info
+		${WRKSRC}/doc/sample.wgetrc* \
+		${WRKSRC}/doc/wget.info \
+		${WRKSRC}/doc/wget.texi
 
 .include <bsd.port.pre.mk>
 
