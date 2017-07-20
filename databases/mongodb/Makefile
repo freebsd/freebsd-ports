@@ -7,6 +7,9 @@ CATEGORIES=	databases net
 MASTER_SITES=	http://downloads.mongodb.org/src/
 DISTNAME=	${PORTNAME}-src-r${PORTVERSION}
 
+PATCH_SITES=	https://github.com/${PORTNAME}/${PORTNAME:S|db$||}/commit/
+PATCHFILES=	0ee4735ab8fb.patch:-p1
+
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	NOSQL distributed document-oriented database
 
