@@ -36,6 +36,9 @@ start() {
 	growfs -y ${firstboot_growfs_fs}
 }
 
+stop() {
+}
+
 depend() {
 	use net
 }

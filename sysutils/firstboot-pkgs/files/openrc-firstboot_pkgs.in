@@ -5,7 +5,7 @@
 # firstboot_pkgs_list="apache22 php5 mysql56-server"
 
 name="firstboot_pkgs"
-command=
+command="pkg"
 
 start() {
 
@@ -32,4 +32,11 @@ start() {
 		einfo "Requesting reboot after installing packages with rc.d scripts."
 		touch ${firstboot_sentinel}-reboot
 	fi
+}
+
+stop() {
+}
+
+depend() {
+	use net
 }

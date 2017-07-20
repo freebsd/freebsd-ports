@@ -24,9 +24,9 @@ firstboot_freebsd_update_run() {
 		esac
 	fi
 
-	freebsd-update fetch
+	$command fetch
 	if [ -e /var/db/freebsd-update/`echo / | sha256`-install ]; then
-		freebsd-update install
+		$command install
 		einfo "Requesting reboot after installing updates."
 		touch ${firstboot_sentinel}-reboot
 	fi
@@ -34,6 +34,9 @@ firstboot_freebsd_update_run() {
 
 start() {
 	firstboot_freebsd_update_run | logger -s -t 'freebsd-update'
+}
+
+stop() {
 }
 
 depend() {
