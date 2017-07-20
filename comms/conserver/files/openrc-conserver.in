@@ -1,0 +1,19 @@
+#!/sbin/openrc-run
+
+name=conserver
+command=%%PREFIX%%/sbin/conserver
+conserver_configfile=${conserver_configfile:-"%%PREFIX%%/etc/conserver.cf"}
+command_args="-d -n -C ${conserver_configfile}"
+required_files=${conserver_configfile}
+
+start_pre() {
+	if [ ! -x ${command} -a ! -f ${configfile} ]; then
+		eerror "The executable is invalid or the configuration file does not exist."
+		eerror "Please rerun the service with valid files."
+		exit 1
+	fi
+}
+
+depend() {
+	keyword -shutdown
+}

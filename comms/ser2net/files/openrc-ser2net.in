@@ -1,0 +1,15 @@
+#!/sbin/openrc-run
+
+name="ser2net"
+command="%%PREFIX%%/sbin/ser2net"
+supervisor=supervise-daemon
+: ${ser2net_pidfile="/var/run/ser2net.pid"}
+pidfile=${ser2net_pidfile}
+
+stop_post() {
+	rm -f /var/lock/subsys/ser2net
+}
+
+depend() {
+	keyword -shutdown
+}

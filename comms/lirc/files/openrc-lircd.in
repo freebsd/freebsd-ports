@@ -1,0 +1,10 @@
+#!/sbin/openrc-run
+
+name="lircd"
+: ${lircd_device="/dev/lirc0"}
+
+pidfile=/var/run/lirc/lircd.pid
+lircd_config="%%PREFIX%%/etc/lircd.conf"
+required_files=${lircd_config}
+command="%%PREFIX%%/sbin/lircd"
+command_args="-d ${lircd_device} ${lircd_config}"

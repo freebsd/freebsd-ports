@@ -1,0 +1,14 @@
+#!/sbin/openrc-run
+
+name=smsd
+: ${smsd_pidfile:="%%PIDDIR%%/smsd.pid"}
+: ${smsd_infofile:="%%PIDDIR%%/smsd.working"}
+: ${smsd_config:="%%PREFIX%%/etc/smsd.conf"}
+
+pidfile=${smsd_pidfile}
+command="%%PREFIX%%/bin/smsd"
+command_args="-c${smsd_config} -p${smsd_pidfile} -i${smsd_infofile}"
+
+depend() {
+	keyword -shutdown
+}

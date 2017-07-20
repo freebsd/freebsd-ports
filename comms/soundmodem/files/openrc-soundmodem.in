@@ -1,0 +1,23 @@
+#!/sbin/openrc-run
+
+# Add these lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# soundmodem_config (path):	Set to %%PREFIX%%/etc/soundmodem.conf
+#				by default.
+
+name=soundmodem
+
+: ${soundmodem_config:="%%PREFIX%%/etc/soundmodem.conf"}
+
+command=%%PREFIX%%/sbin/${name}
+command_args="$soundmodem_config --daemonize"
+required_files=%%PREFIX%%/etc/soundmodem.conf
+
+stop_pre() {
+	killall soundmodem
+}
+
+depend() {
+	keyword -shutdown
+}

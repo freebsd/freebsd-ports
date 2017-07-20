@@ -1,0 +1,9 @@
+#!/sbin/openrc-run
+
+name="thrulayd"
+
+# read settings, set default values
+: ${thrulayd_directory="%%PREFIX%%/sbin"}
+
+# path to your executable, might be bin, sbin, ...
+command="${thrulayd_directory}/thrulayd"

@@ -1,0 +1,44 @@
+#!/sbin/openrc-run
+
+name="atslogd"
+
+command="%%PREFIX%%/bin/atslogmaster"
+required_files="%%PREFIX%%/etc/atslog.conf"
+extra_commands="writedb rotate alltodb cleardb"
+
+start_pre() {
+    ${command} start
+}
+
+stop_pre() {
+	${command} stop
+}
+
+restart_pre() {
+	${command} restart
+}
+
+status_pre() {
+	${command} status
+}
+
+writedb() {
+	${command} writedb
+}
+
+rotate() {
+	${command} rotate
+}
+
+alltodb() {
+	${command} alltodb
+}
+
+cleardb() {
+	${command} cleardb
+}
+
+depend() {
+	need mysql postgresql
+	keyword -shutdown
+}

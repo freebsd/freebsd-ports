@@ -1,0 +1,21 @@
+#!/sbin/openrc-run
+
+# be sure to initialize the following:
+#   server: %%PREFIX%%/sbin/faxsetup
+#   modems: %%PREFIX%%/sbin/faxaddmodem
+#   incoming calls: /etc/ttys
+
+name="hylafax"
+command="%%PREFIX%%/sbin/faxq"
+
+start_pre() {
+	%%PREFIX%%/sbin/hylafax start
+}
+
+stop_pre() {
+	%%PREFIX%%/sbin/hylafax stop
+}
+
+depend() {
+	keyword -shutdown
+}

@@ -1,0 +1,34 @@
+#!/sbin/openrc-run
+#
+# Add the following lines to /etc/rc.conf
+# aprsd_root="YES" or aprsd_root="NO"
+
+name=aprsd
+
+: ${aprsd_root=NO}
+: ${aprsd_user=%%APRSD_RC_USER%%}
+: ${aprsd_group=%%APRSD_RC_GROUP%%}
+
+command=%%LOCALBASE%%/bin/aprsd
+pidfile=/var/run/aprsd.pid
+
+start_pre()
+{
+	if [ ${aprsd_root} != "YES" ]; then
+		einfo "Starting aprs server as user ${APRSD_RC_USER}:${APRSD_RC_GROUP}."
+		install -o ${APRSD_RC_USER} -g ${APRSD_RC_GROUP} /dev/null ${pidfile}
+		chown -R ${APRSD_RC_USER}:${APRSD_RC_GROUP} /var/log/aprsd
+	else   
+		einfo "Starting aprs server as root."
+		install -o root -g wheel /dev/null ${pidfile}
+                chown -R root:wheel /var/log/aprsd
+	fi
+	return 0
+}
+
+depend() {
+	need localmount
+	use net
+	keyword -shutdown
+	after bootmisc
+}

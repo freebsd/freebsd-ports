@@ -1,0 +1,22 @@
+#!/sbin/openrc-run
+
+#	/etc/rc.conf
+#	/etc/rc.conf.local
+#	/etc/rc.conf.d/tits
+#
+# DO NOT CHANGE THESE DEFAULT VALUES HERE
+#
+#tits_pidfile="/var/run/tits.pid"
+
+name="tits"
+command="%%PREFIX%%/sbin/tits"
+
+: ${tits_config="%%PREFIX%%/etc/tits.conf"}
+: ${tits_flags="${tits_config}"}
+
+#pidfile="${tits_pidfile}"
+required_files="${tits_config}"
+
+depend() {
+	keyword -shutdown
+}

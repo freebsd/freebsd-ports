@@ -1,0 +1,28 @@
+#!/sbin/openrc-run
+
+# Add the following lines to /etc/rc.conf to enable/configure this service:
+#
+# qpage_queue_interval (int):  Set to 10 (seconds) by default.
+# qpage_cfg_file (path):       Set it to an alternate configuration file path
+#                              if desired.
+# qpage_flags (str):           Set it to a list of additional command-line
+#                              parameters if desired.
+
+name="qpage"
+command=%%PREFIX%%/bin/${name}
+
+: ${qpage_queue_interval="10"}
+
+command_args="-q ${qpage_queue_interval} ${qpage_flags}"
+if [ -n "${qpage_cfg_file}" ]; then
+	command_args="${command_args} -C ${qpage_cfg_file}"
+fi
+
+stop_pre() {
+	killall qpage
+}
+
+depend() {
+	use net
+	keyword -shutdown
+}

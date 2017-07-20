@@ -1,0 +1,13 @@
+#!/sbin/openrc-run
+
+# Add the following lines to /etc/rc.conf to enable telldusd:
+# telldusd_flags (str):      Set to "" by default.
+# telldusd_configfile (str): Set to "/usr/local/etc/tellstick.conf" by defult
+
+name="telldusd"
+command="/usr/local/sbin/telldusd"
+pidfile="/var/run/telldusd.pid"
+
+telldusd_flags=${telldusd_flags:-""}
+telldusd_configfile=${telldusd_configfile:-"/usr/local/etc/tellstick.conf"}
+required_files="${telldusd_configfile}"
