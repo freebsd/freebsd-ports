@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gitlab-runner
-PORTVERSION=	1.11.1
-PORTREVISION=	1
+PORTVERSION=	9.3.0
 CATEGORIES=	devel
 MASTER_SITES=	\
 		https://gitlab.com/gitlab-org/gitlab-ci-multi-runner/repository/archive.tar.bz2?ref=v${PORTVERSION}&dummy=/ \
@@ -25,9 +24,9 @@ RUN_DEPENDS=	ca_root_nss>=0:security/ca_root_nss \
 		git:devel/git
 
 USES=		tar:bz2
-GITHASH=	a67a225cf0b1dc48820415e7fe9a4f176463a8ed
-GITREV=		08a9e6f
-GITBRANCH=	9-0-stable
+GITHASH=	3df822b2c6e3b083986002bb9f012599bd74f6e9
+GITREV=		3df822b
+GITBRANCH=	9-3-stable
 WRKSRC=		${WRKDIR}/gitlab-ci-multi-runner-v${PORTVERSION}-${GITHASH}
 
 PLIST_FILES=	bin/gitlab-runner
@@ -63,7 +62,7 @@ do-build:
 	@${MV} ${WRKSRC}/vendor ${WRKSRC}/src
 	@${MKDIR} ${WRKSRC}/src/gitlab.com/gitlab-org
 	@${LN} -s ${WRKSRC} ${WRKSRC}/src/gitlab.com/gitlab-org/gitlab-ci-multi-runner
-	@cd ${WRKSRC} && ${SETENV} GOPATH=${WRKSRC} go build -o gitlab-ci-multi-runner
+	@cd ${WRKSRC} && ${SETENV} CGO_ENABLED=0 GOPATH=${WRKSRC} go build -o gitlab-ci-multi-runner
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/gitlab-ci-multi-runner ${STAGEDIR}${PREFIX}/bin/gitlab-runner

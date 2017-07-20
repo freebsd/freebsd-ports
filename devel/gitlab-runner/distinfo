@@ -1,7 +1,7 @@
-TIMESTAMP = 1491480009
-SHA256 (gitlab-runner/gitlab-runner-1.11.1.tar.bz2) = a1730ab0e533079911a8c5cb79d66b382b53fb2377b6ebe62abe7df247fdca3c
-SIZE (gitlab-runner/gitlab-runner-1.11.1.tar.bz2) = 2358955
-SHA256 (gitlab-runner/prebuilt-x86_64.tar.xz) = c1873cf0ef1e0a37c1fd6fcaff7b709e38caa67977df2f016a005b2e4e6453d9
-SIZE (gitlab-runner/prebuilt-x86_64.tar.xz) = 8340432
-SHA256 (gitlab-runner/prebuilt-arm.tar.xz) = 698aad49185281cca1e3ee8caffc869e2564bb68e42490b7e3de20055d2b4a30
-SIZE (gitlab-runner/prebuilt-arm.tar.xz) = 8794064
+TIMESTAMP = 1500583645
+SHA256 (gitlab-runner/gitlab-runner-9.3.0.tar.bz2) = c888f4a406bbb1b6013e2aed040593d209030aeec99c926d55ae20317ec1994f
+SIZE (gitlab-runner/gitlab-runner-9.3.0.tar.bz2) = 2211320
+SHA256 (gitlab-runner/prebuilt-x86_64.tar.xz) = 84b34f511ac2294a13e61aa3f0c8b1db2f450d610c72dc3b84f5c865355ef154
+SIZE (gitlab-runner/prebuilt-x86_64.tar.xz) = 11106288
+SHA256 (gitlab-runner/prebuilt-arm.tar.xz) = 874e101bfa996b2ed4460a930429277f6eeaeb6d3f9fbcb962452b259be56f26
+SIZE (gitlab-runner/prebuilt-arm.tar.xz) = 9088532
