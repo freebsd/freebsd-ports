@@ -1,0 +1,22 @@
+#!/sbin/openrc-run
+
+# Add these lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# taskd_data (path):		Set to %%TASKD_DBDIR%% by default.
+#				Taskd data directory (TASKDDATA)
+# taskd_user (str):		Set to taskd by default.
+#				User to run taskd as.
+
+name=taskd
+
+: ${taskd_data="%%TASKD_DBDIR%%"}
+: ${taskd_user="taskd"}
+
+command=%%PREFIX%%/bin/${name}
+pidfile=$(${command} config --data $taskd_data | awk '/pid.file/ {print $2}')
+command_args="server --data $taskd_data --daemon"
+
+depend() {
+	keyword -shutdown
+}
