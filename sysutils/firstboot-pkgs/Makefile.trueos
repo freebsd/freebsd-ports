@@ -1,1 +1,1 @@
-#USE_OPENRC_SUBR=	openrc-firstboot_pkgs
+USE_OPENRC_SUBR=	openrc-firstboot_pkgs

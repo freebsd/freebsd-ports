@@ -31,36 +31,29 @@ start_pre() {
 	    done
 	;;
     esac
+
+	if [ -z ${arpwatch_interfaces} ]; then
+		 echo 'meuh'
+		 #Run as normal
+	fi
+}
+
+stop() {
+    killall arpwatch
 }
 
 start() {
-	case ${arpwatch_interfaces} in
-		'')  
-		 echo 'meuh'
-			 run_rc_command "$1"
-		;;
-
-		*)
-		 case "$1" in
-		  *start)
-			 for interface in ${arpwatch_interfaces}; do
-				 rc_interface=`echo ${interface} | sed 's/\./_/g'`
-				 eval options=\$arpwatch_${rc_interface}_options
-				 command_args="-i ${interface} ${options} -f ${arpwatch_dir}/arp.${interface}.dat"
-				 pidfile="/var/run/arpwatch-${interface}.pid"
-				 run_rc_command "$1"
-			 done
-			 ;;
-		  *)
-				 run_rc_command "$1"
-			 ;;
-		 esac
-		;;
-	esac
+	if [ -n ${arpwatch_interfaces} ]; then
+		 for interface in ${arpwatch_interfaces}; do
+			 rc_interface=`echo ${interface} | sed 's/\./_/g'`
+			 eval options=\$arpwatch_${rc_interface}_options
+			 command_args="-i ${interface} ${options} -f ${arpwatch_dir}/arp.${interface}.dat"
+			 pidfile="/var/run/arpwatch-${interface}.pid"
+			 start-stop-daemon --name $rc_interface --pidfile $pidfile --exec $command $command_args
+		 done
+	fi
 }
 
 depend() {
-	need localmount
 	use net
-	after bootmisc
 }

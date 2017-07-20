@@ -1,14 +1,15 @@
 #!/sbin/openrc-run
 
 name="aoe"
+command="mount"
 
 # discover the AoE devices on requested interfaces and tell vinum
 # about the disks requested
 start()
 {
-	echo -n 1>&2 "Starting AoE:"
+	ebegin "Starting AoE:"
 	if [ -z "${aoe_iflist}" ]; then
-		echo 2>&1 " aoe_start: unset aoe_iflist."
+		eerror " aoe_start: unset aoe_iflist."
 		return
 	fi
 	sysctl net.aoe > /dev/null 2>&1
@@ -19,10 +20,10 @@ start()
 	if [ $? -eq 0 ]; then
 		# Make sure the net interfaces are "up"
 		for i in ${aoe_iflist}; do
-			echo -n  1>&2 " $i"
+			echo -n " $i"
 			ifconfig $i up
 		done
-		echo 1>&2 "."
+		echo "."
 
 		# give the interfaces a chance to come up
 		sleep 3 
@@ -37,16 +38,19 @@ start()
 			#	vinum read "${aoe_vinum_drives}"
 			#fi
 		#fi
-		echo -n 1>&2 "Mounting AoE blades:"
+		echo -n "Mounting AoE blades:"
 
 		for i in ${aoe_mounts}; do
 			echo -n  1>&2 " $i"
-			mount $i
+			$command $i
 		done
-		echo 1>&2 "."
+		echo "."
 	else
-		echo 1>&2 Failure initializing AoE
+		eerror Failure initializing AoE
 	fi
+}
+
+stop() {
 }
 
 depend() {
