@@ -157,6 +157,7 @@
     SUBDIR += fcgiwrap
     SUBDIR += feedjack
     SUBDIR += ffproxy
+    SUBDIR += fgallery
     SUBDIR += fira-webfont
     SUBDIR += firefox
     SUBDIR += firefox-esr

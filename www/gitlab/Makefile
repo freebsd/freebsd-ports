@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	gitlab
-PORTVERSION=	9.1.7
+PORTVERSION=	9.1.8
 DISTVERSIONPREFIX=	v
-PORTREVISION=	3
 CATEGORIES=	www devel
 
 MAINTAINER=	tz@FreeBSD.org
@@ -113,6 +112,7 @@ RUN_DEPENDS=	git>=2.8.4:devel/git \
 	rubygem-httparty>=0.13.3:www/rubygem-httparty \
 	rubygem-rainbow>=2.1.0:devel/rubygem-rainbow \
 	rubygem-settingslogic>=2.0.9:devel/rubygem-settingslogic \
+	rubygem-re2>=1.0:devel/rubygem-re2 \
 	rubygem-version_sorter>=2.1.0:textproc/rubygem-version_sorter \
 	rubygem-redis-rails>=5.0.1:www/rubygem-redis-rails \
 	rubygem-redis>=3.2:databases/rubygem-redis \
