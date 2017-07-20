@@ -5,7 +5,7 @@ PORTVERSION=	0.1.4
 PORTREVISION=	1
 CATEGORIES=	devel
 
-MAINTAINER=	jslagle@gmail.com
+MAINTAINER=	puppet@FreeBSD.org
 COMMENT=	C++ configuration library
 
 LICENSE=	APACHE20
