@@ -1,14 +1,11 @@
---- dynflow.gemspec.orig	2017-02-27 13:37:24 UTC
+--- dynflow.gemspec.orig	2017-07-20 17:00:15 UTC
 +++ dynflow.gemspec
-@@ -25,9 +25,9 @@ Gem::Specification.new do |s|
-     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
-       s.add_runtime_dependency(%q<multi_json>.freeze, [">= 0"])
+@@ -27,7 +27,7 @@ Gem::Specification.new do |s|
        s.add_runtime_dependency(%q<apipie-params>.freeze, [">= 0"])
--      s.add_runtime_dependency(%q<algebrick>.freeze, ["< 0.7.4", ">= 0.7.0"])
-+      s.add_runtime_dependency(%q<algebrick>.freeze, [">= 0.7.0"])
+       s.add_runtime_dependency(%q<algebrick>.freeze, ["~> 0.7.0"])
        s.add_runtime_dependency(%q<concurrent-ruby>.freeze, ["~> 1.0"])
--      s.add_runtime_dependency(%q<concurrent-ruby-edge>.freeze, ["~> 0.2.3"])
-+      s.add_runtime_dependency(%q<concurrent-ruby-edge>.freeze, [">= 0.2.3"])
-       s.add_runtime_dependency(%q<sequel>.freeze, [">= 0"])
+-      s.add_runtime_dependency(%q<concurrent-ruby-edge>.freeze, ["~> 0.2.0"])
++      s.add_runtime_dependency(%q<concurrent-ruby-edge>.freeze, ["~> 0.2"])
+       s.add_runtime_dependency(%q<sequel>.freeze, [">= 4.0.0"])
        s.add_development_dependency(%q<rake>.freeze, [">= 0"])
        s.add_development_dependency(%q<rack-test>.freeze, [">= 0"])
