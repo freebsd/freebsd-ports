@@ -7,7 +7,7 @@ PORTREVISION=	0
 CATEGORIES=	security
 MASTER_SITES=	SF/sshguard/sshguard/${PORTVERSION}
 
-MAINTAINER=	feld@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT?=	Protect hosts from brute force attacks against ssh and other services
 
 SSHGUARDFW?=	none
