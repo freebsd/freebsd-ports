@@ -1,0 +1,29 @@
+#!/sbin/openrc-run
+
+name="pserv"
+: ${pserv_user="pop"}
+
+command_user=pop
+command="%%PREFIX%%/sbin/pserv"
+
+start_pre()
+{
+	mkdir -p /var/log/popular
+	chown ${pserv_user} /var/log/popular
+	mkdir -p /var/run/popular
+	chown ${pserv_user} /var/run/popular
+}
+
+start_post()
+{
+	if [ -f %%PREFIX%%/etc/popular/pserv.rc ]; then
+		sleep 1;
+		su -m ${pserv_user} -c "%%PREFIX%%/bin/pcontrol --program=pserv %%PREFIX%%/etc/popular/pserv.rc"
+	fi
+}
+
+depend()
+{
+	keyword -shutdown
+	use net
+}
