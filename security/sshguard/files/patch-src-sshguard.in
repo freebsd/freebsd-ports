@@ -1,0 +1,10 @@
+diff --git src/sshguard.in src/sshguard.in
+index 40c864b..249ddb5 100644
+--- src/sshguard.in
++++ src/sshguard.in
+@@ -85,4 +85,4 @@ elif [ -z "$tailcmd" ]; then
+ fi
+ 
+ eval $tailcmd | $libexec/sshg-parser | \
+-    $libexec/sshg-blocker $flags | ($BACKEND; kill -PIPE $$)
++    $libexec/sshg-blocker $flags | ($BACKEND ; pkill -PIPE -P $$)
