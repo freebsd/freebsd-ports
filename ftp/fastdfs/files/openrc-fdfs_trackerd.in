@@ -1,0 +1,25 @@
+#!/sbin/openrc-run
+
+name="fdfs_trackerd"
+command="%%PREFIX%%/bin/fdfs_trackerd"
+pidfile="/var/run/fdfs_trackerd.pid"
+
+start_post()
+{
+        /bin/ps auxwww|/usr/bin/grep fdfs_trackerd|/usr/bin/grep -v 'grep'|grep -v 'rc.d'|/usr/bin/awk '{print $2;}' > /var/run/fdfs_trackerd.pid
+
+        currpid=`/bin/cat /var/run/fdfs_trackerd.pid`
+
+        if [ "$currpid" -gt 0 ]; then
+                einfo "Started fdfs_trackerd."
+        fi
+}
+
+# read configuration and set defaults
+: ${fdfs_trackerd_config="%%PREFIX%%/etc/fdfs/tracker.conf"}
+command_args="${fdfs_trackerd_config}"
+required_files="${fdfs_trackerd_config}"
+
+depend() {
+	keyword -shutdown
+}

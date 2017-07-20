@@ -1,0 +1,25 @@
+#!/sbin/openrc-run
+
+name="fdfs_storaged"
+command="%%PREFIX%%/bin/fdfs_storaged"
+pidfile="/var/run/fdfs_storaged.pid"
+
+start_post()
+{
+        /bin/ps auxwww|/usr/bin/grep fdfs_storaged|/usr/bin/grep -v 'grep'|grep -v 'rc.d'|/usr/bin/awk '{print $2;}' > /var/run/fdfs_storaged.pid
+
+        currpid=`/bin/cat /var/run/fdfs_storaged.pid`
+
+        if [ "$currpid" -gt 0 ]; then
+                einfo "Started fdfs_storaged."
+        fi
+}
+
+# read configuration and set defaults
+: ${fdfs_storaged_config="%%PREFIX%%/etc/fdfs/storage.conf"}
+command_args="${fdfs_storaged_config}"
+required_files="${fdfs_storaged_config}"
+
+depend() {
+	keyword -shutdown
+}

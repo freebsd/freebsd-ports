@@ -1,0 +1,6 @@
+#!/sbin/openrc-run
+
+name="bbftpd"
+command=%%PREFIX%%/bin/${name}
+pidfile=/var/run/${name}.pid
+command_args="-b"

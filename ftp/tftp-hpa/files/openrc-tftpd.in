@@ -1,0 +1,12 @@
+#!/sbin/openrc-run
+
+name="tftpd"
+pidfile=${tftpd_pidfile:-"/var/run/tftpd.pid"}
+command="%%PREFIX%%/libexec/in.tftpd"
+command_args="-P $pidfile -l"
+: ${tftpd_flags:="-s %%PREFIX%%/tftp"}
+
+depend() {
+	use net
+	keyword -shutdown
+}

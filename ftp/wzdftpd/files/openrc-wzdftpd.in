@@ -1,0 +1,11 @@
+#!/sbin/openrc-run
+
+# Start or stop wzdftpd
+
+name="wzdftpd"
+command="%%PREFIX%%/sbin/${name}"
+required_files="%%PREFIX%%/etc/wzdftpd/wzd.cfg"
+
+depend() {
+	keyword -shutdown
+}

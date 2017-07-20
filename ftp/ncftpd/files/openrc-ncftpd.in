@@ -1,0 +1,15 @@
+#!/sbin/openrc-run
+
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable ncftpd:
+#
+# ncftpd_flags="-dq"	# Not required
+# ncftpd_config="/path/to/general.cf /path/to/domain.cf" # Not required
+
+name="ncftpd"
+: ${ncftpd_flags:="-dq"}
+: ${ncftpd_config:="%%PREFIX%%/etc/ncftpd/general.cf %%PREFIX%%/etc/ncftpd/domain.cf"}
+
+command=%%PREFIX%%/sbin/${name}
+required_files="${ncftpd_config}"
+command_args="${ncftpd_flags} ${ncftpd_config}"

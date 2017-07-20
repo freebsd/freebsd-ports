@@ -1,0 +1,12 @@
+#!/sbin/openrc-run
+
+name=jftpgw
+command=%%PREFIX%%/sbin/jftpgw
+jftpgw_config=${jftpgw_config:-"%%PREFIX%%/etc/jftpgw.conf"}
+required_files=${jftpgw_config}
+command_args="-f ${jftpgw_config}"
+
+depend() {
+	use net
+	keyword -shutdown
+}

@@ -1,0 +1,11 @@
+#!/sbin/openrc-run
+
+name=frox
+command=%%PREFIX%%/sbin/frox
+pidfile=/var/run/frox.pid
+required_files=%%PREFIX%%/etc/frox.conf
+
+depend() {
+	use net
+	keyword -shutdown
+}

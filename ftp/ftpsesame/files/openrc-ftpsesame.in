@@ -1,0 +1,22 @@
+#!/sbin/openrc-run
+#
+# Add the following line to /etc/rc.conf to enable ftpsesame
+#
+# ftpsesame_interface (str):	Interface name where ftp sessions will listen.
+#				(Usualy an external interface)
+# ftpsesame_flags (str):	Additional options (See ftpsesame(8)).
+
+name=ftpsesame
+command=%%PREFIX%%/bin/${name}
+pidfile="/var/run/${name}.pid"
+command_args=${ftpsesame_interface:+"-i ${ftpsesame_interface}"}
+
+start_post()
+{
+   ps -axo pid,comm | awk '/ftpsesame/ {print $1}' > ${pidfile}
+}
+
+depend() {
+	use net
+	keyword -shutdown
+}

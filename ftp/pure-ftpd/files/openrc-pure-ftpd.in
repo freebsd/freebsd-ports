@@ -1,0 +1,72 @@
+#!/sbin/openrc-run
+
+# Add the following lines to /etc/rc.conf to enable pure-ftpd:
+#
+# pureftpd_flags="<set as needed>"
+#
+# Add the following lines to /etc/rc.conf to enable pure-authd daemon:
+#
+# pureftpd_authd_enable="yes"
+# pureftpd_authdscript="/full/path/to/auth_script"
+# pureftpd_authsocket="/var/run/ftpd.sock"
+#
+# Add the following lines to /etc/rc.conf to enable uploadscript daemon:
+#
+# pureftpd_upload_enable="yes"
+# pureftpd_uploadscript="/full/path/to/upload_script"
+
+name=pureftpd
+
+command=%%PREFIX%%/sbin/pure-ftpd
+pureftpd_config=${pureftpd_config:-"%%PREFIX%%/etc/pure-ftpd.conf"}
+pureftpd_pidfile=${pureftpd_pidfile:-"/var/run/pure-ftpd.pid"}
+required_files=${pureftpd_config}
+# authd
+command_authd=%%PREFIX%%/sbin/pure-authd
+pidfile_authd=${pidfile_authd:-"/var/run/pure-authd.pid"}
+pureftpd_authd_enable=${pureftpd_authd_enable:-"no"}
+pureftpd_authdscript=${pureftpd_authdscript:-"%%PREFIX%%/sbin/pure-alwaysfail"}
+pureftpd_authsocket=${pureftpd_authsocket:-"/var/run/ftpd.sock"}
+# uploadscript
+command_upload=%%PREFIX%%/sbin/pure-uploadscript
+pidfile_uploadscript=${pidfile_uploadscript:-"/var/run/pure-uploadscript.pid"}
+pureftpd_upload_enable=${pureftpd_upload_enable:-"no"}
+pureftpd_uploadscript=${pureftpd_uploadscript:-"/usr/bin/touch"}
+# command_args
+flags="${pureftpd_config}"
+command_args="${pureftpd_flags}"
+command_authd_args="-B -p ${pidfile_authd} -r ${pureftpd_authdscript} -s ${pureftpd_authsocket}"
+command_upload_args="-B -p ${pidfile_uploadscript} -r ${pureftpd_uploadscript}"
+
+start_pre()
+{
+	if yesno pureftpd_authd_enable && test -x ${pureftpd_authdscript}; then
+		einfo "Starting ${command_authd}."
+		${command_authd} ${command_authd_args}
+	fi
+}
+
+start_post()
+{
+	if yesno pureftpd_upload_enable; then
+		einfo "Starting ${command_upload}."
+		${command_upload} ${command_upload_args}  
+	fi
+}
+
+stop_post()
+{
+	if yesno pureftpd_authd_enable; then
+		einfo "Stopping ${command_authd}."
+		kill -${sig_stop:-TERM} ${pid}
+	fi
+	if yesno pureftpd_upload_enable; then
+		einfo "Stopping ${command_upload}."
+		kill -${sig_stop:-TERM} ${pid}
+	fi
+}
+
+depend() {
+	use net
+	keyword -shutdown
+}

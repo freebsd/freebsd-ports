@@ -1,0 +1,18 @@
+#!/sbin/openrc-run
+
+# You need to set "bsdftpd_ssl_enable=YES" in either /etc/rc.conf,
+# /etc/rc.conf.local or /etc/rc.conf.d/bsdftpd_ssl to make this script actually
+# do something. There you can also set bsdftpd_ssl_flags. Note: the "-D" and
+# "-p" options will be added automatically, you should not specify them. Please
+# see the examples and the ftpd-ssl(8) man page for more information.
+#
+# bsdftpd_ssl_flags="<set as needed>"
+
+name="bsdftpd_ssl"
+pidfile="/var/run/ftpd.pid"
+command="%%PREFIX%%/libexec/ftpd"
+command_args="-D -p ${pidfile}"
+
+depend() {
+	keyword -shutdown
+}

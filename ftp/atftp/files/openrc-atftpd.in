@@ -1,0 +1,27 @@
+#!/sbin/openrc-run
+
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# atftpd_flags (str):		Default to "--daemon".
+#				Extra flags passed to start command.
+
+name="atftpd"
+
+command=%%PREFIX%%/sbin/${name}
+pidfile=/var/run/${name}.pid
+logfile=/var/log/${name}.log
+supervisor=supervise-daemon
+
+[ -z "$atftpd_flags" ]	&& atftpd_flags="--daemon --verbose=5 --pidfile ${pidfile} --logfile ${logfile} %%PREFIX%%/tftp"
+
+start_pre()
+{
+	touch ${logfile}
+	chown nobody ${logfile}
+}
+
+depend() {
+	use net
+	keyword -shutdown
+}
