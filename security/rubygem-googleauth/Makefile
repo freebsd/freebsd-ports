@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	googleauth
-PORTVERSION=	0.5.1
+PORTVERSION=	0.5.2
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
@@ -12,7 +12,7 @@ COMMENT=	Google Auth Library for Ruby
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	rubygem-faraday>=0.9:www/rubygem-faraday \
+RUN_DEPENDS=	rubygem-faraday>=0.12:www/rubygem-faraday \
 		rubygem-jwt>=1.4:www/rubygem-jwt \
 		rubygem-logging>=2.0:devel/rubygem-logging \
 		rubygem-memoist>=0.12:devel/rubygem-memoist \
