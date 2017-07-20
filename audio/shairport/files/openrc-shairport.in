@@ -25,6 +25,6 @@ start_pre() {
 
 depend() {
 	provide shairport
-	#need avahi_daemon
+	need avahi_daemon
 	keyword -shutdown
 }

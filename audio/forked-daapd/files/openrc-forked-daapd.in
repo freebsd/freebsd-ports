@@ -19,6 +19,6 @@ command="%%PREFIX%%/sbin/forked-daapd"
 command_args="-P $pidfile -c $forked_daapd_config $forked_daapd_flags"
 
 depend() {
-	need dbus #avahi_daemon
+	need dbus avahi_daemon
 	keyword -shutdown
 }

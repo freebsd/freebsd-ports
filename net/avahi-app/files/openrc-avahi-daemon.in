@@ -17,6 +17,7 @@ command_args="-D ${avahi_daemon_flags}"
 
 depend()
 {
+	provide avahi_daemon
 	need localmount
 	after dbus
 }
