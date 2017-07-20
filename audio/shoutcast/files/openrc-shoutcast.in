@@ -1,0 +1,21 @@
+#!/sbin/openrc-run
+
+# Add the following lines to /etc/rc.conf to enable SHOUTcast:
+# shoutcast_configfile (str): Set to "%%ETCDIR%%/sc_serv.conf" by default.
+# shoutcast_user (str):       Set to "%%SHOUTCASTUSER%%" by default.
+# shoutcast_chdir (str):      Set to "%%SHOUTCASTDIR%%" by default.
+
+name=shoutcast
+
+: ${shoutcast_configfile:="%%ETCDIR%%/sc_serv.conf"}
+: ${shoutcast_user:="%%SHOUTCASTUSER%%"}
+: ${shoutcast_chdir:="%%SHOUTCASTDIR%%"}
+
+command="%%PREFIX%%/sbin/sc_serv"
+required_dirs="${shoutcast_chdir}"
+required_files="${shoutcast_configfile}"
+command_args="${shoutcast_configfile} >/dev/null 2>&1 &"
+
+depend() {
+	keyword -shutdown
+}

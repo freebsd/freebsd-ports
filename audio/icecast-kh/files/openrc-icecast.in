@@ -1,0 +1,25 @@
+#!/sbin/openrc-run
+
+# To specify a non-default configuration file, set icecast_config
+# in /etc/rc.conf: 
+#
+#icecast_config="%%PREFIX%%/etc/icecast.xml"
+#
+# Make sure the <changeowner> section in your configuration file is
+# not commented out - icecast refuses to run as root.
+
+name="icecast"
+
+command="%%PREFIX%%/bin/icecast"
+command_args="-b 1>/dev/null"
+
+# read configuration and set defaults
+: ${icecast_config="%%PREFIX%%/etc/${name}.xml"}
+: ${icecast_flags="-c ${icecast_config}"}
+
+required_files="${icecast_config}"
+
+depend() {
+	provide icecast
+	keyword -shutdown
+}

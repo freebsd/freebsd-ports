@@ -1,0 +1,24 @@
+#!/sbin/openrc-run
+
+# Add these lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# forked_daapd_config (path):	Set to %%PREFIX%%/etc/forked-daapd.conf
+#				by default.
+# forked_daapd_flags (str):	Set to "" by default
+
+name=forked_daapd
+
+: ${forked_daapd_config:="%%PREFIX%%/etc/forked-daapd.conf"}
+: ${forked_daapd_flags:=""}
+
+pidfile="/var/run/forked-daapd.pid"
+required_files="$forked_daapd_config"
+
+command="%%PREFIX%%/sbin/forked-daapd"
+command_args="-P $pidfile -c $forked_daapd_config $forked_daapd_flags"
+
+depend() {
+	need dbus #avahi_daemon
+	keyword -shutdown
+}

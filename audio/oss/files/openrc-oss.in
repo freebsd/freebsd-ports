@@ -1,0 +1,22 @@
+#!/sbin/openrc-run
+
+name="oss"
+
+start()
+{
+	ebegin "Starting Open Sound System"
+	command=%%PREFIX%%/sbin/soundon
+	$command
+}
+
+stop()
+{
+	eend "Stopping Open Sound System"
+	command=%%PREFIX%%/sbin/soundoff
+	$command
+}
+
+depend() {
+	provide oss
+	keyword -shutdown -jail
+}

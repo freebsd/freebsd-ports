@@ -1,0 +1,11 @@
+#!/sbin/openrc-run
+
+name=mpdas
+
+command=%%PREFIX%%/bin/mpdas
+command_args="-d"
+
+depend() {
+	need musicpd
+	keyword -shutdown
+}

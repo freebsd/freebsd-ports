@@ -1,0 +1,14 @@
+#!/sbin/openrc-run
+
+name="darkice"
+
+command="%%PREFIX%%/bin/$name"
+command_args="& 1>/dev/null"
+required_files="%%ETCDIR%%.cfg"
+
+# read configuration and set defaults
+: ${darkice_flags="-c ${required_files}"}
+
+depend() {
+	keyword -shutdown
+}

@@ -1,0 +1,42 @@
+#!/sbin/openrc-run
+
+name=%%PORTNAME%%
+
+command=%%PREFIX%%/%%SLIMDIR%%/slimserver.pl
+pidfile=/var/run/${name}/${name}.pid
+logdir=/var/log/${name}
+statedir=%%SLIMDBDIR%%
+cachedir=${statedir}/cache
+prefsdir=${statedir}/prefs
+playlistdir=${statedir}/playlists
+u=%%SLIMUSER%%
+g=%%SLIMGROUP%%
+%%PORTNAME%%_flags=${%%PORTNAME%%_flags:-""}
+command_args="--daemon --pidfile=${pidfile} --user=${u} --group=${g} ${%%PORTNAME%%_flags}"
+command_user=${u}
+
+start_pre()
+{
+	# This is stuff is here and not in pkg-install because
+	# /var/run may be destroyed at any time and we've had issues
+	# with permissions on the various directories under /var getting
+ 	# screwed up in the past.
+
+	mkdir -p /var/run/${name}
+	chown -RH ${u}:${g} /var/run/${name}
+
+	mkdir -p ${logdir}
+	chown -RH ${u}:${g} ${logdir}
+
+	mkdir -p ${statedir}
+	mkdir -p ${cachedir}
+	mkdir -p ${prefsdir}
+	mkdir -p ${playlistdir}
+	chown -RH ${u}:${g} ${statedir}
+}
+
+depend() {
+	need localmount
+	keyword -shutdown
+	after bootmisc
+}

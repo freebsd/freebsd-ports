@@ -12,26 +12,14 @@
 # See: `man openrc-run`
 
 name=jackd
-BINARY=%%PREFIX%%/bin/jackd
-PID=/var/run/jackd.pid
+command=%%PREFIX%%/bin/jackd
+pidfile=/var/run/jackd.pid
+command_args=${jackd_args}
+command_usr=${jackd_user}
+start_stop_daemon_args="-b -m"
 
-# Service dependencies
 depend()
 {
 	need localmount
 	after network
 }
-
-start() {
-        ebegin "Starting ${name}"
-        start-stop-daemon --start --pidfile "${PID}" \
-                --exec "${BINARY}" -b -m -- ${jackd_args}
-        eend $?
-}
-
-stop() {
-        ebegin "Stopping ${name}"
-        start-stop-daemon --stop --pidfile "${PID}"
-        eend $?
-}
-

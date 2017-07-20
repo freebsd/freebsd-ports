@@ -1,0 +1,22 @@
+#!/sbin/openrc-run
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# umurmur_user (str):		Set to "umurmur" by default.
+#				Set to change user account.
+# umurmur_flags (str):		Set to "" by default.
+#				Extra flags passed to start command.
+
+name=umurmur
+pidfile="/var/run/umurmur/umurmur.pid"
+
+: ${umurmur_user="umurmur"}
+
+command="%%PREFIX%%/bin/umurmurd"
+command_args="-p ${pidfile}" 
+command_user=${umurmur_user}
+
+depend() {
+	keyword -shutdown
+}

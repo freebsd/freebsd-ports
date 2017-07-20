@@ -1,0 +1,13 @@
+#!/sbin/openrc-run
+
+name=mpdscribble
+command=%%PREFIX%%/bin/mpdscribble
+
+: ${mpdscribble_user="nobody"}
+
+command_args="--daemon-user ${mpdscribble_user}"
+command_user=${mpdscribble_user}
+
+depend() {
+	keyword -shutdown
+}

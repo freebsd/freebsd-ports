@@ -1,0 +1,31 @@
+#!/sbin/openrc-run
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf to
+# enable shairport_sync:
+#
+# shairport_sync_flags (flags):	Set extra flags here.
+#				shairport_sync_flags="-a name" to change Airport name
+#				Default is empty "".
+# shairport_sync_user (user):	Set user to run shairport_sync.
+#				Default is "nobody".
+
+name="shairport_sync"
+
+: ${shairport_sync_enable="NO"}
+: ${shairport_sync_user="nobody"}
+
+command="%%PREFIX%%/bin/shairport-sync"
+pidfile="/var/run/shairport-sync/shairport-sync.pid"
+
+command_args="-d -w ${pidfile}"
+command_user=${shairport_sync_user}
+
+start_pre() {
+	install -d -o ${shairport_sync_user} -g wheel -m 755 /var/run/shairport-sync
+}
+
+depend() {
+	need localmount #avahi_daemon
+	keyword -shutdown
+	after bootmisc
+}

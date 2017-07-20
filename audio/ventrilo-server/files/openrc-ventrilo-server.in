@@ -1,0 +1,34 @@
+#!/sbin/openrc-run
+
+name=ventrilo
+
+homedir="%%PREFIX%%/ventrilo-server"
+pidfile="${homedir}/ventrilo_srv.pid"
+command_user=${name}
+command="${homedir}/ventrilo_srv"
+command_args="'-f${homedir}/ventrilo_srv' -d >/dev/null"
+extra_commands="info"
+
+: ${ventrilo_port="3784"}
+: ${ventrilo_srv="localhost"}
+
+info()
+{
+	if [ "$1" != "" ]; then
+		ventrilo_srv="$1"
+	fi
+	if [ "$2" != "" ]; then
+		ventrilo_port="$2"
+	fi
+	echo -n "Password []: "
+	oldttymodes=`stty -g`
+	stty -echo
+	read ventrilo_passwd
+	stty $oldttymodes
+	${homedir}/ventrilo_status -c2 "-t${ventrilo_srv}:${ventrilo_port}:${ventrilo_passwd}"
+}
+
+depend() {
+	provide ventrilo
+	keyword -shutdown
+}

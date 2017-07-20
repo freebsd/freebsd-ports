@@ -1,28 +1,25 @@
 #!/sbin/openrc-run
 
-command=/usr/local/bin/musicpd
-command_args=/usr/local/etc/musicpd.conf
+name=musicpd
+description="Music Player Daemon"
+
+command=%%PREFIX%%/bin/musicpd
+command_args=%%PREFIX%%/etc/musicpd.conf
+required_files=%%PREFIX%%/etc/musicpd.conf
+pidfile="/var/mpd/.mpd/pid"
 
 start_pre()
 {
         if [ ! -d /var/mpd ] ; then
-           mkdir /var/mpd
-           chown mpd:mpd /var/mpd
-          if [ ! -d /var/mpd/music ] ; then
-             mkdir /var/mpd/music
-             chown mpd:mpd /var/mpd/music
-             if [ ! -d /var/mpd/.mpd ] ; then
-                mkdir /var/mpd/.mpd
-                chown mpd:mpd /var/mpd/.mpd
-                if [ ! -d /var/mpd/.mpd/playlists ] ; then
-                   mkdir /var/mpd/.mpd/playlists
-                   chown mpd:mpd /var/mpd/.mpd/playlists
-                   if [ ! -f /var/mpd/.mpd/log ] ; then
-                      touch /var/mpd/.mpd/log
-                      chown mpd:mpd /var/mpd/.mpd/log
-                fi
-              fi
-            fi
-          fi
-        fi
+           mkdir -p /var/mpd/music
+	       mkdir -p /var/mdp/.mpd/playlists
+		   mkdir /var/mdp/.mpd/log
+           chown -R mpd:mpd /var/mpd/
+		fi
+}
+
+depend() {
+	provide musicpd
+	need mixer oss #avahi_daemon 
+	keyword -shutdown
 }

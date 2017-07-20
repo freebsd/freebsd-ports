@@ -1,0 +1,13 @@
+#!/sbin/openrc-run
+
+name=autocd
+command=%%PREFIX%%/sbin/autocd
+
+stop_pre()
+{
+	%%PREFIX%%/bin/cdctl die
+}
+
+depend() {
+	keyword -shutdown
+}

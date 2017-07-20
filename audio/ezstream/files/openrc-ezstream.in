@@ -1,0 +1,12 @@
+#!/sbin/openrc-run
+
+name="ezstream"
+
+: ${ezstream_flags="-c %%PREFIX%%/etc/${name}/${name}.xml"}
+
+command="%%PREFIX%%/bin/${name}"
+command_args=${ezstream_flags}
+
+depend() {
+	keyword -shutdown
+}

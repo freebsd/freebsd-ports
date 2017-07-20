@@ -1,0 +1,33 @@
+#!/sbin/openrc-run
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# murmur_flags (str):		Set to "" by default.
+#				Extra flags passed to start command.
+
+name=murmur
+: ${murmur_user=%%USERS%%}
+
+command="%%PREFIX%%/sbin/murmurd"
+command_args="-ini %%PREFIX%%/etc/murmur.ini"
+command_user=${murmur_user}
+pidfile=/var/run/murmur/murmur.pid
+
+start_pre() {
+	for i in /var/log/murmur /var/run/murmur /var/db/murmur; do
+		if [ ! -d ${i} ]; then
+			install -d -o %%USERS%% -g %%GROUPS%% ${i}
+		fi
+	done
+}
+
+stop_pre() {
+	killall murmurd
+}
+
+depend() {
+	need localmount
+	keyword -shutdown
+	after bootmisc
+}
