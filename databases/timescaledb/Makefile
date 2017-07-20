@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	timescaledb
-PORTVERSION=	0.1.0
+PORTVERSION=	0.2.0
 CATEGORIES=	databases
 
 MAINTAINER=	kbowling@FreeBSD.org
@@ -18,8 +18,11 @@ MAKE_ARGS=	PG_CONFIG=${LOCALBASE}/bin/pg_config USE_PGXS=1 \
 USE_LDCONFIG=	yes
 USES=		compiler:c11 gmake pgsql:9.6
 
+WANT_PGSQL=	server
+
 PLIST_FILES=	lib/postgresql/timescaledb.so \
-		share/postgresql/extension/timescaledb--0.1.0.sql \
+		share/postgresql/extension/timescaledb--0.1.0--0.2.0.sql \
+		share/postgresql/extension/timescaledb--0.2.0.sql \
 		share/postgresql/extension/timescaledb.control
 
 post-install:
