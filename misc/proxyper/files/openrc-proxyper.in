@@ -1,22 +1,16 @@
 #!/sbin/openrc-run
 
-dir="%%BINDIR%%"
-user="nobody"
-
 name="proxyper"
 
+dir="%%BINDIR%%"
 pidfile=%%BINDIR%%/rc5desproxy.pid
 required_files=${dir}/${name}.ini
 
-proxyper_user=${user}
+proxyper_user=nobody
 
 command=${dir}/${name}
 command_args=">/dev/null 2>&1 &"
-<<<<<<< HEAD
-command_user=nobody
-=======
-command_user=${user}
->>>>>>> 969fa7bb954faec5e32f82fc042b50b2bc92a5c7
+command_user=${proxyper_user}
 
 depend()
 {
