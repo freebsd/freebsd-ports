@@ -106,7 +106,9 @@ wait_for_pids(){
 
 # We use the pids in so many parts of the script it makes sense to always check them.
 # Only after start() is run should the pids change. Sidekiq sets its own pid.
-check_pids
+start_pre() {
+	check_pids
+}
 
 ## Checks whether the different parts of the service are already running or not.
 check_status(){
@@ -358,9 +360,9 @@ reload(){
 restart(){
   check_status
   if [ "$web_status" = "0" ] || [ "$sidekiq_status" = "0" ] || [ "$gitlab_workhorse" = "0" ] || { [ "$mail_room_enabled" = true ] && [ "$mail_room_status" = "0" ]; }; then
-    stop_gitlab
+   stop 
   fi
-  start_gitlab
+  start
 }
 
 depend(){
