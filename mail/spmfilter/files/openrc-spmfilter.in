@@ -1,0 +1,17 @@
+#!/sbin/openrc-run
+
+# See spmfilter(1) for flags or the config file.
+
+name=spmfilter
+
+command=%%PREFIX%%/sbin/spmfilter
+command_args=${spmfilter_flags}
+sig_stop=KILL
+
+: ${spmfilter_config="%%PREFIX%%/etc/spmfilter.conf"}
+: ${spmfilter_flags="-f ${spmfilter_config}"}
+
+depend()
+{
+	keyword -shutdown
+}

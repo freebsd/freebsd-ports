@@ -1,0 +1,13 @@
+#!/sbin/openrc-run
+
+# dracd_flags (str):		Set to "" by default.
+#				Extra flags passed to rpc.dracd.
+
+name="dracd"
+command="%%PREFIX%%/sbin/rpc.dracd"
+required_files="%%PREFIX%%/etc/dracd.allow"
+
+depend()
+{
+	keyword -shutdown
+}

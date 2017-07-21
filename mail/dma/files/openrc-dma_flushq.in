@@ -1,0 +1,13 @@
+#!/sbin/openrc-run
+
+name="dma_flushq"
+
+start()
+{
+    %%PREFIX%%/libexec/dma -q
+}
+
+depend()
+{
+	keyword -shutdown
+}
