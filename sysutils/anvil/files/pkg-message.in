@@ -18,7 +18,7 @@ For cert-puller:
 
   * anvil does not distribute .key files. Do that manually.
 
-  * install the crontab for anvil: sudo crontab -e -u anvil:
+  * install the crontab for anvil: sudo crontab -u anvil -e
 
 ###
 # use /bin/sh to run commands, overriding the default set by cron
@@ -33,7 +33,7 @@ For cert-shifter:
 
   * adjust /usr/local/etc/anvil/cert-shifter.conf
 
-  * install the crontab:
+  * install the crontab for anvil: sudo crontab -u anvil -e
 
 ###
 # use /bin/sh to run commands, overriding the default set by cron
