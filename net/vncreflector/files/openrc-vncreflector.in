@@ -114,7 +114,7 @@ start()
 
 stop()
 {
-	eend "Stopping ${name}: "
+	einfo "Stopping ${name}: "
 	_pids=""
 
 	for _port in ${vncreflector_ports}; do

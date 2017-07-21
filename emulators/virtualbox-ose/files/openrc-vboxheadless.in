@@ -59,7 +59,7 @@ stop()
 {
 	local machine mpidfile pid pids vmname vmuser vmstop vmdelay
 
-	eend "Saving states for Virtual Machines:"
+	einfo "Saving states for Virtual Machines:"
 	for machine in ${vboxheadless_machines}; do
 		mpidfile="${pidbase}_${machine}.pid"
 		eval vmname="\${vboxheadless_${machine}_name:-${machine}}"

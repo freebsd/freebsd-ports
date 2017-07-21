@@ -50,7 +50,7 @@ stop() {
         socket=`awk '/socket_name/ { print $2 }' < %%PREFIX%%/etc/${name}.conf`
         if [ -x %%PREFIX%%/bin/${name}ctl -a -S ${socket} ]
         then
-                eend "Shutting down ${name} socket connections using pksdctl."
+                einfo "Shutting down ${name} socket connections using pksdctl."
                 %%PREFIX%%/bin/${name}ctl ${socket} shutdown
         else
                 eerror "couldn't stop ${name}."

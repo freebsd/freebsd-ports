@@ -11,7 +11,7 @@ start()
 
 stop()
 {
-	eend "Stopping Open Sound System"
+	einfo "Stopping Open Sound System"
 	command=%%PREFIX%%/sbin/soundoff
 	$command
 }

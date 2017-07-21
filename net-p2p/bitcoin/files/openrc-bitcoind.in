@@ -64,7 +64,7 @@ start() {
 }
 
 stop() {
-  eend "Stopping bitcoind:"
+  einfo "Stopping bitcoind:"
   pid=$(check_pidfile "${pidfile}" "${procname}")
   if [ -z "${pid}" ]
   then
@@ -103,7 +103,7 @@ stop_post() {
     fi
   done
   rm -f "${pidfile}"
-  eend "Shutdown complete"
+  einfo "Shutdown complete"
 }
 
 depend() {

@@ -24,7 +24,7 @@ start() {
 
 stop() {
 	for config_group in $clsync_config_groups; do
-		eend "Stopping clsync (group ${config_group})."
+		einfo "Stopping clsync (group ${config_group})."
 		pkill -F /var/run/clsync-"${config_group}".pid
 	done
 }

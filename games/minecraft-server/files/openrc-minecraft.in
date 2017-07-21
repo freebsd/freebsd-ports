@@ -39,7 +39,7 @@ start()
 
 stop()
 {
-	eend "Stopping ${name}."
+	einfo "Stopping ${name}."
 	$command send-keys -t ${name} \"stop\" ENTER
 
 	i=0

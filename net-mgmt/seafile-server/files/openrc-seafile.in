@@ -84,7 +84,7 @@ seafile_start() {
 }
 
 stop() {
-	eend "Stopping ${name}."
+	einfo "Stopping ${name}."
 	pkill -SIGTERM -f "seafile-controller -c ${seafile_ccnet}"
 	pkill -f "ccnet-server -c ${seafile_ccnet}"
 	pkill -f "seaf-server -c ${seafile_ccnet}"

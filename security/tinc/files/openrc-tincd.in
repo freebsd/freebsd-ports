@@ -40,12 +40,12 @@ start() {
 stop() {
 	if test -z "${tincd_cfg}"
 	then
-		eend "Stopping tincd"
+		einfo "Stopping tincd"
 		$command -k
 	else
 		for cfg in $tincd_cfg
 		do
-			eend "Stopping tincd for: ${cfg}"
+			einfo "Stopping tincd for: ${cfg}"
 			$command -n $cfg -k
 		done
 	fi

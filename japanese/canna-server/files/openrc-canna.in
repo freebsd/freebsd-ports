@@ -30,7 +30,7 @@ start_pre() {
 }
 
 stop() {
-	eend "Stopping ${name}"
+	einfo "Stopping ${name}"
 	if %%PREFIX%%/sbin/cannakill; then
 		rm -f /tmp/.iroha_unix/IROHA*
 		rmdir /tmp/.iroha_unix > /dev/null 2>&1 || true

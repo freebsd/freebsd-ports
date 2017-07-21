@@ -11,7 +11,7 @@ command_args="--config ${tox_bootstrapd_config}"
 
 stop() {
 	[ -f $pidfile ] || (eerror "$name not running?"; exit 1)
-	eend "Stopping $description"
+	einfo "Stopping $description"
 	kill `ps ax | grep $command | grep -v grep | awk '{print $1}'`
 	rm -f $pidfile
 }

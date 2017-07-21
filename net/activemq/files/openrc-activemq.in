@@ -59,7 +59,7 @@ start_pre() {
 }
 
 stop_pre() {
-	eend "Stopping ${name}."
+	einfo "Stopping ${name}."
 	${java_command} stop >/dev/null
 }
 
