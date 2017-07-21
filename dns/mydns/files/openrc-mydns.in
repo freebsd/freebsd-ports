@@ -1,0 +1,12 @@
+#!/sbin/openrc-run
+
+name="mydns"
+command="%%PREFIX%%/sbin/mydns"
+command_args="-b"
+pidfile="/var/run/mydns.pid"
+required_files="%%PREFIX%%/etc/mydns.conf"
+
+depend() {
+	need mysql postgresql
+	keyword -shutdown
+}

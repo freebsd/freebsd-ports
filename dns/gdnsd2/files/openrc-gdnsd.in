@@ -1,0 +1,30 @@
+#!/sbin/openrc-run
+
+name="gdnsd"
+: ${gdnsd_flags:=""}
+
+command="%%PREFIX%%/sbin/gdnsd"
+command_args="start"
+extra_commands="reload configtest"
+
+reload()
+{
+  ${command} ${gdnsd_flags} reload-zones
+}
+
+reload_pre() {
+	configtest
+}
+
+restart_pre() {
+	configtest
+}
+
+configtest()
+{
+  ${command} ${gdnsd_flags} checkconf
+}
+
+depend() {
+	keyword -shutdown
+}

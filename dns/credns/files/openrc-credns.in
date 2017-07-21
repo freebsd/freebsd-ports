@@ -1,0 +1,35 @@
+#!/sbin/openrc-run
+
+name=credns
+required_files=%%PREFIX%%/etc/credns/credns.conf
+
+command=%%PREFIX%%/sbin/crednsc
+command_args="start"
+pidfile=`%%PREFIX%%/sbin/credns-checkconf -o pidfile %%PREFIX%%/etc/credns/credns.conf`
+extra_commands="reload"
+
+start_pre()
+{
+	db=`%%PREFIX%%/sbin/credns-checkconf -o database %%PREFIX%%/etc/credns/credns.conf`
+	if [ ! -f "$db" ]; then
+		${command} rebuild
+	fi
+}
+
+reload()
+{
+	${command} rebuild && ${command} reload
+}
+
+stop_pre()
+{
+	einfo "Merging credns zone transfer changes to zone files."
+	${command} patch
+
+	ebegin "Stopping ${name}."
+	${command} stop
+}
+
+depend() {
+	keyword -shutdown
+}

@@ -1,0 +1,1 @@
+USE_OPENRC_SUBR=	openrc-ddns_client openrc-ddns_server

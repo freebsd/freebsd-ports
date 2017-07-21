@@ -1,0 +1,33 @@
+#!/sbin/openrc-run
+
+name=opendnssec
+command="%%PREFIX%%/sbin/ods-control"
+extra_commands="ksm hsm signer enforcer"
+
+start_pre() {
+	$command start
+}
+
+stop_pre() {
+	$command stop
+}
+
+ksm() {
+	$command ksm
+}
+
+hsm() {
+	$command hsm
+}
+
+signer() {
+	$command signer
+}
+
+enforcer() {
+	$command enforcer
+}
+
+depend() {
+	keyword -shutdown
+}

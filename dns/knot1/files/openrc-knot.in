@@ -1,0 +1,45 @@
+#!/sbin/openrc-run
+#
+# Add the following lines to /etc/rc.conf to enable knot:
+#
+# knot_config="":	Set to /usr/local/etc/knot/knot.conf
+#			by default.
+
+name=knot
+
+: ${knot_config="%%PREFIX%%/etc/knot/knot.conf"}
+
+command=%%PREFIX%%/sbin/knotd
+command_args="-c ${knot_config} -d"
+control=%%PREFIX%%/sbin/knotc
+pidfile=/var/run/knot/knot.pid
+extra_commands="reload"
+
+required_files=${knot_config}
+
+start_pre()
+{
+	if [ ! -d /var/run/knot ]; then
+		install -d -o %%USERS%% -g %%GROUPS%% /var/run/knot
+	fi
+	if [ ! -d /var/db/knot ]; then
+		install -d -o %%USERS%% -g %%GROUPS%% /var/db/knot
+	fi
+	grep -v '#' ${knot_config} | grep -q -E 'knot.knot;|bind.bind;'
+	if [ $? -ne 0 ]; then
+		einfo "Notice: not running as uid.gid knot.knot or bind.bind"
+	fi
+	${control} -c ${knot_config} checkconf
+}
+
+reload()
+{
+	einfo "Reloading ${name}."
+	${control} -c ${knot_config} reload
+}
+
+depend() {
+	need localmount
+	keyword -shutdown
+	after bootmisc
+}

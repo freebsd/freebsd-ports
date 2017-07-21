@@ -1,0 +1,17 @@
+#!/sbin/openrc-run
+
+name=pdns
+command=%%PREFIX%%/sbin/pdns_server
+
+pdns_conf=${pdns_conf:-"%%PREFIX%%/etc/pdns/pdns.conf"}
+pdns_flags=${pdns_flags:-"--daemon=yes --guardian=yes"}
+required_files=${pdns_conf}
+extra_commands="monitor"
+
+monitor() {
+	${command} --daemon=no --guardian=no --control-console --loglevel=9
+}
+
+depend() {
+	keyword -shutdown
+}

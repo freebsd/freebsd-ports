@@ -1,0 +1,11 @@
+#!/sbin/openrc-run
+
+name="adsuck"
+
+command=%%PREFIX%%/sbin/${name}
+: ${adsuck_flags="-c /var/adsuck -f resolv.conf -r regex Hosts.blc Hosts.pub Hosts.rsk Hosts.trc hosts.small hosts.yoyo"}
+command_args=${adsuck_flags}
+
+depend() {
+	keyword -shutdown
+}

@@ -1,0 +1,13 @@
+#!/sbin/openrc-run
+
+name=ez_ipupdate
+
+: ${ez_ipupdate_pidfile="/var/run/ez-ipupdate.pid"}
+: ${ez_ipupdate_configfile="%%PREFIX%%/etc/ez-ipupdate.conf"}
+: ${ez_ipupdate_flags="-d -c $ez_ipupdate_configfile -F $ez_ipupdate_pidfile"}
+
+command=%%PREFIX%%/bin/ez-ipupdate
+command_args=${ez_ipupdate_flags}
+pidfile=$ez_ipupdate_pidfile
+required_files=$ez_ipupdate_configfile
+sig_stop=QUIT

@@ -1,0 +1,12 @@
+#!/sbin/openrc-run
+
+: ${maradns_conf="%%ETCDIR%%/mararc"}
+
+name="zoneserver"
+command="%%PREFIX%%/bin/duende"
+pidfile="/var/run/${name}.pid"
+command_args="--pid=${pidfile} %%PREFIX%%/sbin/zoneserver -f ${maradns_conf}"
+
+depend() {
+	keyword -shutdown
+}

@@ -1,0 +1,9 @@
+#!/sbin/openrc-run
+
+name="inadynmt"
+command=%%PREFIX%%/bin/inadyn-mt
+
+depend() {
+	use net
+	keyword -shutdown
+}

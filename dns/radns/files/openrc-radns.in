@@ -1,0 +1,45 @@
+#!/sbin/openrc-run
+#
+# Add the following lines to /etc/rc.conf to enable radns:
+#
+# radns_resolv (path):	Full path to radns' own resolv.conf
+# radns_pidfile (path):	Full path to pid file.
+# radns_script (path): Full path to script file or empty string if no script.
+# radns_username (user): Username the daemon will run as.
+
+name=radns
+radns_dir="%%PREFIX%%/etc/radns"
+
+# Default values
+: ${radns_pidfile="/var/run/${name}.pid"}
+: ${radns_resolv="${radns_dir}/radns-resolv.conf"}
+: ${radns_script=""}
+: ${radns_username="radns"}
+
+command="%%PREFIX%%/bin/${name}"
+command_user=${rands_username}
+
+start_pre()
+{
+    [ -d ${radns_dir} ] || mkdir ${radns_dir}
+    chown ${radns_username} ${radns_dir}
+}
+
+stop_post()
+{
+    rm -f ${radns_resolv}
+    rm -f ${radns_pidfile}
+}
+
+# if script:
+if [ x${radns_script} != "x" ]
+then
+    command_args="-f ${radns_resolv} -s ${radns_script} -u ${radns_username} \
+    -p ${radns_pidfile}"
+else
+    command_args="-f ${radns_resolv} -u ${radns_username} -p ${radns_pidfile}"
+fi
+
+depend() {
+	keyword -shutdown
+}

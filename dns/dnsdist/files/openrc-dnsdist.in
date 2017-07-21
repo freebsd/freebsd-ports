@@ -1,0 +1,15 @@
+#!/sbin/openrc-run
+
+name=dnsdist
+description="dnsdist is a powerful, scriptable DNS loadbalancer"
+
+: ${dnsdist_priv_user:=_dnsdist}
+: ${dnsdist_priv_group:=_dnsdist}
+
+command=/usr/local/sbin/${name}
+command_args="-u ${dnsdist_priv_user} -g ${dnsdist_priv_group} -d"
+
+depend() {
+	use net
+	keyword -shutdown
+}

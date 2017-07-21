@@ -1,0 +1,6 @@
+#!/sbin/openrc-run
+
+name="pdnsd"
+command="%%PREFIX%%/sbin/pdnsd"
+command_args="-d"
+required_files="%%PREFIX%%/etc/pdnsd.conf"

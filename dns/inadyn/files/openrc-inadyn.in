@@ -1,0 +1,16 @@
+#!/sbin/openrc-run
+#
+# Reccomend using the inadyn.conf over inadyn_flags. However, inadyn_flags will
+# take priority the configuration file by upstream's design. Any command
+# line arguement (and thus inadyn_flags) will cause inadyn.conf to be ignored
+# completely.
+# See inadyn(8) for inadyn_flags and inadyn.conf syntax.
+#
+# Don't forget to include --background in either method!
+
+name="inadyn"
+command=%%PREFIX%%/bin/${name}
+
+depend() {
+	keyword -shutdown
+}

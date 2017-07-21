@@ -1,0 +1,10 @@
+#!/sbin/openrc-run
+
+name="dnsproxy"
+command_args=${dnsproxy_flags:-"-c %%ETCDIR%%/dnsproxy.conf -d"}
+command="%%PREFIX%%/sbin/dnsproxy"
+
+depend() {
+	use net
+	keyword -shutdown
+}

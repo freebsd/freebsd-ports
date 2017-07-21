@@ -1,0 +1,12 @@
+#!/sbin/openrc-run
+
+: ${dwood3_conf="%%ETCDIR%%/dwood3rc"}
+
+name="Deadwood"
+command="%%PREFIX%%/bin/duende"
+pidfile="/var/run/${name}.pid"
+command_args="--pid=${pidfile} %%PREFIX%%/sbin/Deadwood -f ${dwood3_conf}"
+
+depend() {
+	keyword -shutdown
+}

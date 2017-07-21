@@ -1,0 +1,18 @@
+#!/sbin/openrc-run
+
+# Add the following lines to /etc/rc.conf to enable this service:
+#
+# mdnsd_flags (string):	Arguments passed to mdnsd(8) such as the list of
+#			network interfaces to listen on e.g., "em0 fxp0".
+#			Default: lo0 (no network exposure)
+
+name="mdnsd"
+description="%%COMMENT%%"
+command="%%PREFIX%%/sbin/${name}"
+: ${mdnsd_flags:="lo0"}
+command_args=${mdnsd_flags}
+
+depend() {
+	use net
+	keyword -shutdown
+}

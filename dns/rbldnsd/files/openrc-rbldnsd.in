@@ -1,0 +1,13 @@
+#!/sbin/openrc-run
+
+name=rbldnsd
+
+rbldnsd_flags=${rbldnsd_flags:-"-r %%PREFIX%%/etc/rbldnsd -b 127.0.0.1 bl.example.com:ip4set:example"}
+
+command=%%PREFIX%%/sbin/rbldnsd
+pidfile=/var/run/rbldnsd.pid
+command_args="-p ${pidfile} ${rbldnsd_flags}"
+
+depend() {
+	keyword -shutdown
+}

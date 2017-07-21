@@ -1,0 +1,13 @@
+#!/sbin/openrc-run
+
+name="dualserver"
+command=%%PREFIX%%/sbin/dualserver
+
+stop_pre()
+{
+	killall dualserver
+}
+
+depend() {
+	keyword -shutdown
+}

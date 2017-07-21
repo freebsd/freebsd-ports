@@ -1,0 +1,9 @@
+#!/sbin/openrc-run
+
+name=dns_balance
+: ${dns_balance_logfile="/var/log/${name}.log"}
+: ${dns_balance_pidfile="/var/log/${name}.pid"}
+
+command="%%PREFIX%%/sbin/${name}"
+command_args="-l ${dns_balance_logfile} -p ${dns_balance_pidfile}"
+pidfile=${dns_balance_pidfile}

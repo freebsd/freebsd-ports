@@ -1,0 +1,14 @@
+#!/sbin/openrc-run
+
+name=dnrd
+command=%%PREFIX%%/sbin/${name}
+pidfile=/var/run/${name}.pid
+
+stop_pre() {
+		einfo "Stopping dnrd."
+		${command} -k
+}
+
+depend() {
+	use net
+}

@@ -1,0 +1,11 @@
+#!/sbin/openrc-run
+
+name=dnsflood
+
+command=%%PREFIX%%/sbin/dns_flood_detector
+command_args="-d"
+
+depend() {
+	use net
+	keyword -shutdown
+}

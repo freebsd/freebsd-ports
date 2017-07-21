@@ -1,0 +1,25 @@
+#!/sbin/openrc-run
+
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# noip_enable (bool): Set to NO by default.
+#                     Set it to YES to enable noip.
+# noip_config (path): Set to %%PREFIX%%/etc/no-ip2.conf by default.
+# noip_flags:         Set to -c %%PREFIX%%/etc/no-ip2.conf by default.
+
+name="noip"
+command="%%PREFIX%%/bin/noip2"
+
+: ${noip_config="%%PREFIX%%/etc/no-ip2.conf"}
+: ${noip_flags="-c $noip_config"}
+: ${noip_user="noip"}
+: ${noip_group="noip"}
+
+command_user=${noip_user}
+command_args=${noip_flags}
+required_files=${noip_config}
+
+depend() {
+	use net
+}

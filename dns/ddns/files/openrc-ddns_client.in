@@ -1,0 +1,17 @@
+#!/sbin/openrc-run
+
+# Add the following lines to /etc/rc.conf to enable ddns_client:
+#
+# ddns_client_conf (path):      Set full path to config file.
+
+name=ddns_client
+
+: ${ddns_client_conf="%%PREFIX%%/etc/ddns_client.conf"}
+
+command=%%PREFIX%%/sbin/ddns-client
+command_args="-d -c ${ddns_client_conf}"
+required_files=${ddns_client_conf}
+
+depend() {
+	keyword -shutdown
+}

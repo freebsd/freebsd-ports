@@ -1,0 +1,14 @@
+#!/sbin/openrc-run
+
+name=pdns_recursor
+command=%%PREFIX%%/sbin/pdns_recursor
+command_args="--daemon=yes"
+
+# set defaults
+
+pdns_recursor_conf=${pdns_recursor_conf:-"%%PREFIX%%/etc/pdns/recursor.conf"}
+required_files=${pdns_recursor_conf}
+
+depend() {
+	keyword -shutdown
+}

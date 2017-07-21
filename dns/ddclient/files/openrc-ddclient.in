@@ -1,0 +1,12 @@
+#!/sbin/openrc-run
+#
+# By default, ddclient does not daemonize.  To launch ddclient
+# as a daemon, add the -daemon 300 argument to ddclient_flags
+
+name="ddclient"
+command="%%PREFIX%%/sbin/${name}"
+required_files="%%PREFIX%%/etc/${name}.conf"
+
+depend() {
+	keyword -shutdown
+}

@@ -1,0 +1,28 @@
+#!/sbin/openrc-run
+
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# gdnsd_flags (str):		Set to "" by default
+#				Extra command line argument flags
+
+name="gdnsd"
+: ${gdnsd_flags:=""}
+
+command="%%PREFIX%%/sbin/gdnsd"
+command_args="start"
+extra_commands="reload configtest"
+
+reload()
+{
+  ${command} ${gdnsd_flags} reload
+}
+
+configtest()
+{
+  ${command} ${gdnsd_flags} checkconf
+}
+
+depend() {
+	keyword -shutdown
+}

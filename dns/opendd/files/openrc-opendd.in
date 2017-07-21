@@ -1,0 +1,21 @@
+#!/sbin/openrc-run
+
+name="opendd"
+
+: ${opendd_pidfile="/var/run/opendd.pid"}
+
+command="%%PREFIX%%/sbin/opendd"
+required_files="%%ETCDIR%%/opendd.conf"
+pidfile="/var/run/opendd.pid"
+
+start_pre()
+{
+	if [ ! egrep -q -i -E "^runasdaemon.*=.*1$" ${required_files} ]; then
+	    eerror "opendd script need "runasdaemon=1" on config file"
+		exit 1
+	fi
+}
+
+depend() {
+	use net
+}

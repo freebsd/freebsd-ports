@@ -1,0 +1,12 @@
+#!/sbin/openrc-run
+
+name="bindgraph"
+command=%%PREFIX%%/sbin/${name}.pl
+command_args='> /dev/null 2>&1'
+
+: ${bindgraph_pidfile="%%DATADIR%%/bindgraph.pid"}
+: ${bindgraph_flags="--logfile ${named_chrootdir}/var/log/query.log --daemon_rrd=%%DATADIR%% --daemon --daemon_pid=${bindgraph_pidfile}"}
+: ${bindgraph_user="%%BINDGRAPH_USER%%"}
+: ${bindgraph_chdir="%%DATADIR%%"}
+
+pidfile=${bindgraph_pidfile}
