@@ -1,0 +1,20 @@
+--- Makefile.am.orig	2016-11-20 19:55:11 UTC
++++ Makefile.am
+@@ -5,12 +5,13 @@ SUBDIRS = \
+ 	backgrounds
+ 
+ EXTRA_DIST = \
+-	AUTHORS \
+-	COPYING \
+-	LICENSE_CC_BY_SA3
++	AUTHORS
+ 
+ install-data-hook:
+-	cp -Rv $(EXTRA_DIST) $(adaptadir)
++	if test ! -z "$(ADAPTA_BG_DOCS)"; then \
++	mkdir -p $(DESTDIR)$(docdir); \
++	cp -Rv $(EXTRA_DIST) $(DESTDIR)$(docdir); \
++	fi;
+ 
+ uninstall-hook:
+ 	test -e $(adaptadir) && rm -rfv $(adaptadir)

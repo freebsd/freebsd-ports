@@ -1,6 +1,6 @@
---- net/BUILD.gn.orig	2017-06-05 19:03:09 UTC
-+++ net/BUILD.gn
-@@ -86,7 +86,7 @@ if (use_glib && use_gconf && !is_chromeos) {
+--- net/BUILD.gn.orig	2017-06-26 21:03:20.000000000 +0200
++++ net/BUILD.gn	2017-07-04 23:12:52.376233000 +0200
+@@ -86,7 +86,7 @@
    net_configs += [ "//build/config/linux/gconf" ]
  }
  
@@ -9,7 +9,7 @@
    net_configs += [ "//build/config/linux:libresolv" ]
  }
  
-@@ -1900,6 +1900,16 @@ component("net") {
+@@ -1900,6 +1900,17 @@
        sources -= [ "disk_cache/blockfile/file_posix.cc" ]
      }
  
@@ -21,12 +21,13 @@
 +         "base/network_change_notifier_linux.h",
 +         "base/network_interfaces_linux.cc",
 +      ]
++      sources += [ "base/network_interfaces_freebsd.cc" ]
 +    }
 +
      if (is_ios || is_mac) {
        sources += [
          "base/mac/url_conversions.h",
-@@ -2854,7 +2864,7 @@ if (!is_ios && !is_android) {
+@@ -2854,7 +2865,7 @@
    }
  }
  
@@ -35,7 +36,7 @@
    executable("cachetool") {
      testonly = true
      sources = [
-@@ -2883,7 +2893,7 @@ if (is_linux || is_mac) {
+@@ -2883,7 +2894,7 @@
    }
  }
  
@@ -44,7 +45,7 @@
    static_library("epoll_server") {
      sources = [
        "tools/epoll_server/epoll_server.cc",
-@@ -2987,7 +2997,7 @@ if (is_android) {
+@@ -2987,7 +2998,7 @@
    }
  }
  
@@ -53,7 +54,7 @@
    executable("disk_cache_memory_test") {
      testonly = true
      sources = [
-@@ -4874,7 +4884,7 @@ test("net_unittests") {
+@@ -4874,7 +4885,7 @@
      "third_party/nist-pkits/",
    ]
  
@@ -62,7 +63,7 @@
      deps += [
        "//third_party/pyftpdlib/",
        "//third_party/pywebsocket/",
-@@ -4897,7 +4907,7 @@ test("net_unittests") {
+@@ -4897,7 +4908,7 @@
    if (is_desktop_linux) {
      deps += [ ":epoll_quic_tools" ]
    }
@@ -71,7 +72,7 @@
      sources += [
        "tools/quic/chlo_extractor_test.cc",
        "tools/quic/end_to_end_test.cc",
-@@ -4957,6 +4967,10 @@ test("net_unittests") {
+@@ -4957,6 +4968,10 @@
  
    if (is_chromeos) {
      sources -= [ "proxy/proxy_config_service_linux_unittest.cc" ]
