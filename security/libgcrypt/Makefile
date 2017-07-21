@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libgcrypt
-PORTVERSION=	1.7.8
+PORTVERSION=	1.8.0
 CATEGORIES=	security
 MASTER_SITES=	GNUPG
 
@@ -11,8 +11,8 @@ COMMENT=	General purpose crypto library based on code used in GnuPG
 LICENSE=	GPLv2+ LGPL21+
 LICENSE_COMB=	multi
 
-BUILD_DEPENDS=	libgpg-error>=1.8:security/libgpg-error
-RUN_DEPENDS=	libgpg-error>=1.8:security/libgpg-error
+BUILD_DEPENDS=	libgpg-error>=1.25:security/libgpg-error
+RUN_DEPENDS=	libgpg-error>=1.25:security/libgpg-error
 
 USES=		cpe libtool makeinfo tar:bzip2
 CPE_VENDOR=	gnupg
