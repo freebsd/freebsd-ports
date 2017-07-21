@@ -22,6 +22,8 @@ GH_TUPLE=	grpc:grpc:v${PORTVERSION} \
 		google:boringssl:a93bc11:boringssl/third_party/boringssl \
 		google:benchmark:v1.1.0:benchmark/third_party/benchmark
 
+USE_HARDENING=	# empty
+
 USES=		cmake perl5 pkgconfig
 USE_LDCONFIG=	yes
 USE_PERL5=	build
