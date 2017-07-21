@@ -10,13 +10,8 @@
 # vbsfilter_flags Flags to vbsfilter
 vbsfilter_socket=${vbsfilter_socket:-"/var/run/vbsfilter"} # Path to socket
 
-. /etc/rc.subr
-
 name="vbsfilter"
 command="%%PREFIX%%/libexec/vbsfilter"
-procname="${command}"
-start_precmd="vbsfilter_prestart"
-stop_postcmd="vbsfilter_poststop"
 
 start_pre() {
 	/bin/rm -f "${vbsfilter_socket}"
