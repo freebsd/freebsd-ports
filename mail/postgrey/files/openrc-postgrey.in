@@ -22,7 +22,7 @@ command=%%PREFIX%%/sbin/postgrey
 pidfile=%%PG_RUNDIR%%/postgrey.pid
 required_dirs="${postgrey_dbdir} %%PG_RUNDIR%%"
 
-command_args="-d --pidfile=${pidfile} --dbdir=${postgrey_dbdir}"
+command_args="-d --pidfile=${pidfile} --dbdir=${postgrey_dbdir} ${postgrey_flags}"
 
 depend()
 {
