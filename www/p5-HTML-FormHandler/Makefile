@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	HTML-FormHandler
-PORTVERSION=	0.40067
+PORTVERSION=	0.40068
 PORTEPOCH=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
@@ -17,6 +17,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	p5-Class-Load>=0.06:devel/p5-Class-Load \
 		p5-Config-Any>=0:devel/p5-Config-Any \
+		p5-Crypt-Blowfish>=0:security/p5-Crypt-Blowfish \
+		p5-Crypt-CBC>=0:security/p5-Crypt-CBC \
 		p5-Data-Clone>=0:devel/p5-Data-Clone \
 		p5-DateTime-Format-Strptime>=0:devel/p5-DateTime-Format-Strptime \
 		p5-DateTime>=0:devel/p5-DateTime \
@@ -26,7 +28,6 @@ BUILD_DEPENDS=	p5-Class-Load>=0.06:devel/p5-Class-Load \
 		p5-HTML-Parser>=0:www/p5-HTML-Parser \
 		p5-HTML-Tree>=0:www/p5-HTML-Tree \
 		p5-JSON-MaybeXS>=1.003003:converters/p5-JSON-MaybeXS \
-		p5-Locale-Maketext>=1.09:devel/p5-Locale-Maketext \
 		p5-Moose>=2.1403:devel/p5-Moose \
 		p5-MooseX-Getopt>=0.16:devel/p5-MooseX-Getopt \
 		p5-MooseX-Types-Common>=0:devel/p5-MooseX-Types-Common \
