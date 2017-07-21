@@ -32,8 +32,6 @@ _INCLUDE_USES_SSL_MK=	yes
 IGNORE=	"USES=ssl invalid arguments ${ssl_ARGS}."
 .endif
 
-SSL_DEFAULT?=	libressl
-
 .if empty(ssl_ARGS) || (!empty(ssl_ARGS:Mbuild) && !empty(ssl_ARGS:Mrun))
 _SSL_BUILD_DEP=	1
 _SSL_RUN_DEP=	1
