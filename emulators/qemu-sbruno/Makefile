@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	qemu
-PORTVERSION=	2.9.50.g20170717
+PORTVERSION=	2.9.50.g20170721
 CATEGORIES=	emulators
 MASTER_SITES=	GH
 PKGNAMESUFFIX?=	-sbruno
@@ -16,7 +16,7 @@ LICENSE=	GPLv2
 USE_GITHUB=	yes
 GH_ACCOUNT=	seanbruno
 GH_PROJECT=	${PORTNAME}-bsd-user
-GH_TAGNAME=	cb766f5
+GH_TAGNAME=	17977d0
 HAS_CONFIGURE=	yes
 USES=		gmake pkgconfig bison perl5 python:2,build
 USE_PERL5=	build
