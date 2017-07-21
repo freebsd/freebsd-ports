@@ -54,7 +54,7 @@
 +  gint scale = gdk_screen_get_monitor_scale_factor(
 +      screen, gdk_screen_get_primary_monitor(screen));
 +  gdouble resolution = gdk_screen_get_resolution(screen);
-+  return resolution <= 0? scale : resolution * scale / kDefaultDPI;
++  return resolution <= 0 ? scale : resolution * scale / kDefaultDPI;
  }
  
  views::LinuxUI::NonClientMiddleClickAction GetDefaultMiddleClickAction() {
