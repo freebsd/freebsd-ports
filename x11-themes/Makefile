@@ -4,6 +4,7 @@
     COMMENT = X11 themes
 
     SUBDIR += adapta-backgrounds
+    SUBDIR += adapta-gtk-theme
     SUBDIR += adwaita-common
     SUBDIR += adwaita-icon-theme
     SUBDIR += adwaita-qt4
