@@ -1,0 +1,32 @@
+#!/sbin/openrc-run
+
+# Additional command-line options for the emailrelay daemon are sourced from
+# the file "/usr/local/etc/emailrelay.conf" if it exists.  Uncommented lines
+# in this file have "--" prepended to them and then they are pasted onto the
+# command line.
+#
+name=emailrelay
+command=%%PREFIX%%/sbin/emailrelay
+
+emailrelay_config_file=%%PREFIX%%/etc/emailrelay.conf
+
+pidfile=/var/run/emailrelay.pid
+required_files=$config_file
+
+
+emailrelay_start_options()
+{
+	# echo --options from the config file
+	echo --as-server --pid-file $pidfile `egrep -v '^#|^gui-|^ *$' < $emailrelay_config_file | sed 's/^/--/'`
+}
+
+start_pre()
+{
+	# echo start command tail
+	command_args=`emailrelay_start_options`
+}
+
+depend()
+{
+	keyword -shutdown
+}

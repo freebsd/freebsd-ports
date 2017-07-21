@@ -1,0 +1,16 @@
+#!/sbin/openrc-run
+
+name="spampd"
+
+: ${spampd_pidfile="/var/run/spamd/spampd.pid"}
+: ${spampd_flags="--user=spamd --group=spamd --host 127.0.0.1:10024 --relayhost=127.0.0.1:10025 --dose --tagall --auto-whitelist"}
+
+command_user=spamd
+command="%%PREFIX%%/sbin/$name"
+command_args="--pid=${spampd_pidfile}"
+pidfile="${spampd_pidfile}"
+
+depend()
+{
+	keyword -shutdown
+}
