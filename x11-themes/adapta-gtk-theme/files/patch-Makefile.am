@@ -1,0 +1,19 @@
+--- Makefile.am.orig	2017-06-09 19:33:36 UTC
++++ Makefile.am
+@@ -13,12 +13,13 @@ SUBDIRS = \
+ 	extra
+ 
+ EXTRA_DIST = \
+-	COPYING \
+-	LICENSE_CC_BY_SA4 \
+ 	README.md
+ 
+ install-data-hook:
+-	cp -Rv $(EXTRA_DIST) $(adaptadir)
++	if test ! -z "$(ADAPTA_DOCS)"; then \
++	mkdir -p $(DESTDIR)$(docdir); \
++	cp -Rv $(EXTRA_DIST) $(DESTDIR)$(docdir); \
++	fi
+ 
+ uninstall-hook:
+ 	test -e $(noktodir) && rm -rfv $(noktodir)
