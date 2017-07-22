@@ -2,22 +2,23 @@
 # $FreeBSD$
 
 PORTNAME=	libinotify
-PORTVERSION=	20160505
+PORTVERSION=	20170201
 CATEGORIES=	devel
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Kevent based inotify compatible library
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	libinotify-kqueue
-GH_PROJECT=	libinotify-kqueue
-GH_TAGNAME=	417e789
-
-USES=		autoreconf libtool
 GNU_CONFIGURE=	yes
-USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
+USE_LDCONFIG=	yes
+USES=		autoreconf libtool
+
+GH_ACCOUNT=	${PORTNAME}-kqueue
+GH_PROJECT=	${PORTNAME}-kqueue
+GH_TAGNAME=	84d0ed0
+USE_GITHUB=	yes
 
 .include <bsd.port.mk>
