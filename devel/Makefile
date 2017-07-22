@@ -409,6 +409,7 @@
     SUBDIR += dbus-sharp
     SUBDIR += dbus-sharp-glib
     SUBDIR += dbus-tcl
+    SUBDIR += dcd-client
     SUBDIR += dcd-server
     SUBDIR += dcmtk
     SUBDIR += dconf
