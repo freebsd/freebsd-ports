@@ -331,6 +331,7 @@
     SUBDIR += configkit
     SUBDIR += cons
     SUBDIR += cons-test
+    SUBDIR += containers
     SUBDIR += cook
     SUBDIR += courier-unicode
     SUBDIR += covtool
@@ -397,6 +398,7 @@
     SUBDIR += cxref
     SUBDIR += cxxtest
     SUBDIR += cxxtools
+    SUBDIR += d-scanner
     SUBDIR += d-feet
     SUBDIR += darts
     SUBDIR += dash.el
@@ -407,6 +409,8 @@
     SUBDIR += dbus-sharp
     SUBDIR += dbus-sharp-glib
     SUBDIR += dbus-tcl
+    SUBDIR += dcd-client
+    SUBDIR += dcd-server
     SUBDIR += dcmtk
     SUBDIR += dconf
     SUBDIR += dconf-editor
@@ -447,6 +451,7 @@
     SUBDIR += dreampie
     SUBDIR += drpython
     SUBDIR += ds2
+    SUBDIR += dsymbol
     SUBDIR += dub
     SUBDIR += dulwich
     SUBDIR += duplo
@@ -1132,6 +1137,7 @@
     SUBDIR += imake
     SUBDIR += include-what-you-use
     SUBDIR += inilib
+    SUBDIR += inifiled
     SUBDIR += iniparser
     SUBDIR += initutil
     SUBDIR += injeqt
@@ -1145,6 +1151,7 @@
     SUBDIR += it-eric6
     SUBDIR += itext
     SUBDIR += ivykis
+    SUBDIR += iz
     SUBDIR += jakarta-commons-configuration
     SUBDIR += jakarta-commons-daemon
     SUBDIR += jakarta-commons-io
@@ -1282,6 +1289,7 @@
     SUBDIR += libdbusmenu
     SUBDIR += libdbusmenu-qt
     SUBDIR += libdbusmenu-qt5
+    SUBDIR += libddoc
     SUBDIR += libdevq
     SUBDIR += libdfui
     SUBDIR += libdisasm
@@ -1293,6 +1301,7 @@
     SUBDIR += libdnsres
     SUBDIR += libdombey
     SUBDIR += libdouble-conversion
+    SUBDIR += libdparse
     SUBDIR += libds
     SUBDIR += libdsp
     SUBDIR += libdwarf
@@ -1660,6 +1669,7 @@
     SUBDIR += mpatrol
     SUBDIR += mph
     SUBDIR += mq4cpp
+    SUBDIR += msgpack-d
     SUBDIR += msgpack
     SUBDIR += msgpuck
     SUBDIR += msp430-debug-stack

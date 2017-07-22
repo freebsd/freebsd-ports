@@ -1,0 +1,17 @@
+--- dub.json.orig	2017-07-03 08:14:25 UTC
++++ dub.json
+@@ -6,12 +6,9 @@
+     "Brian Schott"
+   ],
+   "license": "GPL-3.0",
+-  "dependencies": {
+-    "dsymbol": "~>0.2.4",
+-    "libdparse": "~>0.7.1-beta.4",
+-    "msgpack-d": "~>1.0.0-beta.3"
+-  },
+   "versions": ["built_with_dub"],
++  "libs": ["dsymbol","dparse","emsi_containers","msgpack-d"],
++  "lflags": ["-L/usr/local/lib/d"],
+   "configurations": [
+     {
+       "name": "library",
