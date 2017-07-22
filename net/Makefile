@@ -204,6 +204,7 @@
     SUBDIR += gssdp
     SUBDIR += gstreamer-plugins-libmms
     SUBDIR += gstreamer1-plugins-libmms
+    SUBDIR += gstreamer1-plugins-srtp
     SUBDIR += gtic
     SUBDIR += gtk-vnc
     SUBDIR += gtknetcat
