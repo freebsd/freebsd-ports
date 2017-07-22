@@ -27,7 +27,7 @@ NLS_USES=	gettext-runtime
 NLS_CONFIGURE_ENABLE=	nls
 NLS_CONFIGURE_WITH=	libintl-prefix="${LOCALBASE}"
 OPTIONS_SUB=	yes
-USE_GCC=	4.9+
+USE_GCC=	yes
 USE_WX=		3.0+
 WX_COMPS=	wx
 INSTALLS_ICONS=	yes
