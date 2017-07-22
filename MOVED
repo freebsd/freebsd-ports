@@ -6010,7 +6010,6 @@ multimedia/xfce4-xmms-plugin||2014-04-28|Has expired: Abandonware, and can't sel
 multimedia/xmms-weasel||2014-04-28|Has expired: Abandonware, please consider using multimedia/audacious instead
 audio/xmms-sexyspc||2014-04-28|Has expired: Abandonware, please consider using multimedia/audacious instead
 audio/libmusicbrainz4|audio/libmusicbrainz5|2014-04-28|Has expired: Please use audio/libmusicbrainz5 instead
-cad/kicad-library||2014-05-02|kicad-library is no more distributed separately
 science/netcdf-ftn|science/netcdf-fortran|2014-05-03|Use science/netcdf-fortran instead
 science/netcdf3-ftn|science/netcdf-fortran|2014-05-03|Use science/netcdf-fortran instead
 science/netcdf4|science/netcdf|2014-05-03|Use science/netcdf instead
@@ -9403,10 +9402,10 @@ mail/linux-thunderbird||2017-06-07|Has expired: Use the native thunderbird mail/
 devel/p5-Penguin||2017-06-07|Has expired: Depends on expired security/pgp
 security/p5-Crypt-PGPSimple||2017-06-07|Has expired: Depends on expired security/pgp
 mail/pgpsendmail||2017-06-07|Has expired: Depends on expired security/pgp
-security/pgp||2017-06-07|Has expired: This software was last updated in 1996, use security/gnupg1 as a drop-in replacement with legacy PGP support.
+security/pgp||2017-06-07|Has expired: This software was last updated in 1996, use security/gnupg1 as a drop-in replacement with legacy PGP support
 dns/pear-Net_DNS||2017-06-07|Has expired: This Port use PHP4.2 - This PHP-Version is not longer supporded
-net/samba42|net/samba44|2016-09-07|Has expired: not supported upstream https://wiki.samba.org/index.php/Samba_Release_Planning
-net/samba43|net/samba44|2017-03-07|Has expired: not supported upstream https://wiki.samba.org/index.php/Samba_Release_Planning
+net/samba42|net/samba44|2017-06-07|Has expired: not supported upstream https://wiki.samba.org/index.php/Samba_Release_Planning
+net/samba43|net/samba44|2017-06-07|Has expired: not supported upstream https://wiki.samba.org/index.php/Samba_Release_Planning
 www/py-utidy|www/py-utidylib|2017-06-08|Rename to comply with PyPI scheme
 chinese/calligra-l10n-zh_CN||2017-06-12|Merged with editors/calligra
 chinese/calligra-l10n-zh_TW||2017-06-12|Merged with editors/calligra
@@ -9462,7 +9461,7 @@ devel/etcd3|devel/etcd31|2017-07-07|Version 3.2 introduces breaking changes
 sysutils/py-iocage|sysutils/py3-iocage|2017-07-10|Has expired: obsoleted by sysutils/py3-iocage port using Python 3 instead of Python 2
 www/mediawiki126|www/mediawiki127|2017-07-10|Has expired: Upstream support EoL
 devel/libbrotli|archivers/brotli|2017-07-12|meta project no longer required to build libs
-dns/opendnssec13|dns/opendnssec14|2017-07-13|Has expired: Approaching EOL, upgrade to opendnssec 1.4 or 2
+dns/opendnssec13|dns/opendnssec|2017-07-13|Has expired: Approaching EOL, upgrade to opendnssec 1.4 or 2
 multimedia/banshee||2017-07-13|Has expired: Project is not being actively maintained upstream anymore
 www/libhtp-suricata||2017-07-16|No longer required. security/suricata now uses official (not forked) libhtp 
 databases/py-odbc|databases/py-pyodbc|2017-07-18|Rename to comply with PyPI scheme
