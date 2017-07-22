@@ -1,0 +1,11 @@
+include/d/msgpack/attribute.d
+include/d/msgpack/buffer.d
+include/d/msgpack/common.d
+include/d/msgpack/exception.d
+include/d/msgpack/package.d
+include/d/msgpack/packer.d
+include/d/msgpack/register.d
+include/d/msgpack/streaming_unpacker.d
+include/d/msgpack/unpacker.d
+include/d/msgpack/value.d
+lib/d/libmsgpack-d.a
