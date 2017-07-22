@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	guake
-PORTVERSION=	0.8.8
+PORTVERSION=	0.8.10
 PORTREVISION=	0
 CATEGORIES=	x11
 
@@ -9,6 +9,7 @@ MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Dropdown terminal made for the GNOME desktop
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	gnome-common>=3.14.0:devel/gnome-common \
 		${PYTHON_PKGNAMEPREFIX}dbus>=0.84.0:devel/py-dbus \

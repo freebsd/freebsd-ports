@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gstreamer1-libav
-PORTVERSION=	1.8.0
-PORTREVISION=	2
+PORTVERSION=	1.12.2
 CATEGORIES=	multimedia
 MASTER_SITES=	http://gstreamer.freedesktop.org/src/gst-libav/
 DISTNAME=	gst-libav-${PORTVERSION}
@@ -20,13 +19,13 @@ LIB_DEPENDS=	liborc-0.4.so:devel/orc \
 
 PORTSCOUT=	limitw:1,even
 
-USES=		compiler:features gmake libtool pkgconfig tar:xz
+USES=		compiler:features gettext-runtime gmake libtool localbase \
+		pkgconfig tar:xz
 USE_LDCONFIG=	yes
 USE_GSTREAMER1=	yes
+USE_GNOME=	glib20
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-system-libav
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 
 INSTALL_TARGET=	install-strip
 

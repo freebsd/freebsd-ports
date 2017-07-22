@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gstreamer1-vaapi
-PORTVERSION=	1.8.0
-PORTREVISION=	3
+PORTVERSION=	1.12.2
 CATEGORIES=	multimedia
 MASTER_SITES=	https://gstreamer.freedesktop.org/src/gstreamer-vaapi/
 DISTNAME=	gstreamer-vaapi-${PORTVERSION}
@@ -18,8 +17,10 @@ LIB_DEPENDS=	libva.so:multimedia/libva
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-wayland
 INSTALL_TARGET=	install-strip
-USES=		compiler:c11 gmake libtool pkgconfig tar:xz
+USES=		compiler:c11 gettext-runtime gmake gnome libtool \
+		pkgconfig tar:xz
 USE_LDCONFIG=	yes
+USE_GNOME=	glib20
 USE_GSTREAMER1=	bad gl
 USE_GL=		gl
 USE_XORG=	x11 xrandr xrender xproto:build

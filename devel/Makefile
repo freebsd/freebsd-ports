@@ -3909,6 +3909,7 @@
     SUBDIR += pecl-propro
     SUBDIR += pecl-propro2
     SUBDIR += pecl-pthreads
+    SUBDIR += pecl-pthreads2
     SUBDIR += pecl-qb
     SUBDIR += pecl-raphf
     SUBDIR += pecl-raphf2

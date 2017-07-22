@@ -1113,7 +1113,6 @@
     SUBDIR += sguil
     SUBDIR += sha
     SUBDIR += sha1collisiondetection
-    SUBIDR += sha2wordlist
     SUBDIR += shibboleth2-sp
     SUBDIR += shimmer
     SUBDIR += shishi

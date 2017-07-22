@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	googleauth
-PORTVERSION=	0.5.2
+PORTVERSION=	0.5.3
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 

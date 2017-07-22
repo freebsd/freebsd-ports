@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	jira-ruby
-PORTVERSION=	1.2.0
+PORTVERSION=	1.3.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -13,7 +13,8 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-activesupport4>=4.0:devel/rubygem-activesupport4 \
-	rubygem-oauth>=0.5.0:net/rubygem-oauth
+		rubygem-multipart-post>=0:www/rubygem-multipart-post \
+		rubygem-oauth>=0.5.0:net/rubygem-oauth
 
 NO_ARCH=	yes
 USE_RUBY=	yes
