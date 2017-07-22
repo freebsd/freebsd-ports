@@ -1,11 +1,12 @@
+# Created by: Michael Johnson <ahze@FreeBSD.org>
 # $FreeBSD$
 
 PORTREVISION=	0
-CATEGORIES=	x11-toolkits
+CATEGORIES=	audio
 
-COMMENT=	GStreamer gtksink plugin
+COMMENT=	Gstreamer sndfile plugin
 
-GST_PLUGIN=	gtksink
+GST_PLUGIN=	sndfile
 DIST=		bad
 
 MASTERDIR=	${.CURDIR}/../../multimedia/gstreamer1-plugins

@@ -3,10 +3,10 @@
 PORTREVISION=	0
 CATEGORIES=	audio
 
-COMMENT=	GStreamer mp3 decoder plugin
+COMMENT=	Gstreamer OpenSPC plugin
 
-GST_PLUGIN=	mad
-DIST=		ugly
+GST_PLUGIN=	spc
+DIST=		bad
 
 MASTERDIR=	${.CURDIR}/../../multimedia/gstreamer1-plugins
 

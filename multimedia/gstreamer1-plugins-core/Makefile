@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gstreamer1-plugins-core
-PORTVERSION=	${GST1_VERSION}${GST1_MINIMAL_VERSION}
-PORTREVISION=	1
+PORTVERSION=	1.12
 CATEGORIES=	multimedia audio
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -25,7 +24,7 @@ DVD_DESC=	Include DVD related plugins
 .include <bsd.port.options.mk>
 
 # Audio plugins
-USE_GSTREAMER1+=	mad ogg vorbis
+USE_GSTREAMER1+=	mpg123 ogg vorbis
 
 # Graphics plugins
 USE_GSTREAMER1+=	png

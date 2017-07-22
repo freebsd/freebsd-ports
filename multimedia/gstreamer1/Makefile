@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	gstreamer
-PORTVERSION=	1.8.0
-PORTREVISION=	2
+PORTVERSION=	1.12.2
 CATEGORIES=	multimedia
-MASTER_SITES=	http://gstreamer.freedesktop.org/src/gstreamer/
+MASTER_SITES=	GNOME \
+		http://gstreamer.freedesktop.org/src/gstreamer/
 PKGNAMESUFFIX=	1
 
 MAINTAINER=	multimedia@FreeBSD.org
@@ -16,8 +16,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 PORTSCOUT=	limitw:1,even
 
-CFLAGS:=	${CFLAGS} -O2 -Wno-format
-USES=		bison gettext gmake libtool pathfix pkgconfig tar:xz
+CFLAGS+=	-Wno-format
+USES=		bison gettext gmake gnome libtool pathfix pkgconfig tar:xz
 USE_GNOME=	glib20 introspection:build
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-tests \
@@ -28,9 +28,15 @@ CONFIGURE_ARGS=	--disable-tests \
 CONFIGURE_ENV=	ac_cv_func_register_printf_function="no"
 INSTALL_TARGET=	install-strip
 PLIST_SUB=	VERSION=${GST10_VERSION} \
-		SOVERSION=0.800.0
+		SOVERSION=0.1202.0
 USE_LDCONFIG=	yes
 GST10_VERSION=	1.0
+
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == i386 || ${ARCH} == amd64
+LIB_DEPENDS+=	libunwind.so:devel/libunwind
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-Wmissing-include-dirs||g' \

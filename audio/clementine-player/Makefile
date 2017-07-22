@@ -3,7 +3,7 @@
 
 PORTNAME=	clementine
 PORTVERSION=	1.3.1
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	audio
 PKGNAMESUFFIX=	-player
 
@@ -62,7 +62,7 @@ USE_GSTREAMER1=	cdparanoia \
 		faad \
 		flac \
 		lame \
-		mad \
+		mpg123 \
 		neon \
 		shout2 \
 		soup \

@@ -3,7 +3,7 @@
 
 PORTNAME=	quodlibet
 PORTVERSION=	3.6.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia audio python gnome
 MASTER_SITES=	http://bitbucket.org/lazka/${PORTNAME}-files/raw/default/releases/
 
@@ -40,7 +40,7 @@ OGG_USE=	GSTREAMER1=ogg
 VORBIS_USE=	GSTREAMER1=vorbis
 SPC_USE=	GSTREAMER1=spc
 SPEEX_USE=	GSTREAMER1=speex
-MP3_USE=	GSTREAMER1=mad
+MP3_USE=	GSTREAMER1=mpg123
 FLAC_USE=	GSTREAMER1=flac
 
 WAVPACK_LIB_DEPENDS=	libwavpack.so:audio/wavpack
