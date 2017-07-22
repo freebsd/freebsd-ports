@@ -12,6 +12,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cockroaches hide under your windows
 
 BROKEN=		unfetchable (apparently abandoned upstream)
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2017-08-23
 
 USE_XORG=	x11
 PLIST_FILES=	bin/xroach man/man6/xroach.6.gz

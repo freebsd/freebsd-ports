@@ -61,6 +61,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3 \
 		xdpyinfo:x11/xdpyinfo
 
 BROKEN=		Fails to build against libsamplerate-0.1.9
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2017-08-23
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	plexinc

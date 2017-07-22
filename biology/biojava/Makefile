@@ -13,6 +13,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open-source Java tools for processing biological data
 
 BROKEN=		Does not build
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2017-08-23
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+

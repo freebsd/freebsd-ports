@@ -13,6 +13,8 @@ MAINTAINER=	mi@aldan.algebra.com
 COMMENT?=	GNU GDB of newer version than comes with the system
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2017-08-23
 BROKEN_powerpc=		Does not configure
 BROKEN_powerpc64=	Does not build
 
