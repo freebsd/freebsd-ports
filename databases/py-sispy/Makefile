@@ -11,7 +11,6 @@ MAINTAINER=	vmiller@verisign.com
 COMMENT=	Python client library for interacting with the SIS RESTful API
 
 LICENSE=	BSD3CLAUSE
-LICENSE_FILE=	${WRKSRC}/LICENSE
 
 # Python 2.6+, 3.4+
 USES=		python
