@@ -5,7 +5,7 @@ PORTNAME=	libinotify
 PORTVERSION=	20160505
 CATEGORIES=	devel
 
-MAINTAINER=	delphij@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Kevent based inotify compatible library
 
 LICENSE=	MIT
