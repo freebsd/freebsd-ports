@@ -1,35 +1,33 @@
---- Utilities/JIT.cpp.orig	2017-07-10 15:42:02 UTC
+FreeBSD ignores address hints with default RLIMIT_DATA
+
+--- Utilities/JIT.cpp.orig	2017-07-20 15:05:34 UTC
 +++ Utilities/JIT.cpp
-@@ -31,6 +31,10 @@
+@@ -30,6 +30,8 @@
+ 
+ #ifdef _WIN32
  #include <Windows.h>
++#else
++#include <sys/mman.h>
  #endif
  
-+#if defined(__FreeBSD__) || defined(__FreeBSD_kernel__)
-+#include <sys/resource.h>
-+#endif
-+
  #include "JIT.h"
- 
- // Memory manager mutex
-@@ -45,6 +49,21 @@ static void* const s_memory = []() -> void*
- 	llvm::InitializeNativeTarget();
+@@ -47,6 +49,11 @@ static void* const s_memory = []() -> void*
  	llvm::InitializeNativeTargetAsmPrinter();
  	LLVMLinkInMCJIT();
-+
-+#if defined(__FreeBSD__) || defined(__FreeBSD_kernel__)
-+	// XXX Fix maximum data segment size (data + BSS + heap) to 256 MB.
-+	// This allows avoiding calling mmap(2) with MAP_FIXED.
-+	// On FreeBSD, without lowering this limit, calling mmap(2)
-+	// without MAP_FIXED will result in getting an address just
-+	// beyond maximum data segment size which will be far beyond
-+	// the desired 2 GB.
-+	struct rlimit limit;
-+	limit.rlim_cur = 0x10000000; // 256 MB
-+	limit.rlim_max = 0x10000000;
-+	if(setrlimit(RLIMIT_DATA, &limit) != 0) {
-+		LOG_ERROR(GENERAL, "LLVM: Failed to lower maximum data segment size");
-+	}
-+#endif
  
++#ifdef MAP_32BIT
++	auto ptr = ::mmap(nullptr, s_memory_size, PROT_NONE, MAP_ANON | MAP_PRIVATE | MAP_32BIT, -1, 0);
++	if (ptr != MAP_FAILED)
++		return ptr;
++#else
  	for (u64 addr = 0x10000000; addr <= 0x80000000 - s_memory_size; addr += 0x1000000)
  	{
+ 		if (auto ptr = utils::memory_reserve(s_memory_size, (void*)addr))
+@@ -54,6 +61,7 @@ static void* const s_memory = []() -> void*
+ 			return ptr;
+ 		}
+ 	}
++#endif
+ 
+ 	return utils::memory_reserve(s_memory_size);
+ }();
