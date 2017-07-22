@@ -115,7 +115,7 @@ XDGDIR=			${OOPATH}/share/xdg
 XDGREL=			../../${INSTALLATION_BASEDIR}/openoffice${AOOVERSION1}/share/xdg
 EXECBASE?=		openoffice-${AOOSUFFIX}
 
-ONLY_FOR_ARCHS=	i386 amd64 powerpc64
+ONLY_FOR_ARCHS=	amd64 i386 powerpc64
 
 USE_GL=		gl glu
 USE_GNOME=	gtk20 libxslt libidl glib20
