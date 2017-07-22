@@ -12,6 +12,8 @@ COMMENT=	PostgreSQL foreign data wrapper to connect to TDS databases
 
 LICENSE=	PostgreSQL
 
+BROKEN=		wrong dependencies, libodbc.so is not provided by freetds
+
 LIB_DEPENDS=	libodbc.so:databases/freetds
 
 USES=		gmake pgsql:9.2+
