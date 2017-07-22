@@ -1,7 +1,7 @@
 # $FreeBSD$
 
-PORTREVISION=	5
-PKGNAMESUFFIX=	-qt4
+PORTREVISION=	0
+PKGNAMESUFFIX=	-qt5
 
 MAINTAINER=	crees@FreeBSD.org
 COMMENT=	Fast and lightweight Qt4 BitTorrent client
@@ -17,8 +17,8 @@ PLIST=		${.CURDIR}/pkg-plist
 SLAVEPORT=	qt4
 
 QT_NONSTANDARD=	yes
-USE_QT4=	moc_build qmake_build uic_build rcc_build \
-		corelib dbus gui network xml 
+USE_QT5=	buildtools_build qmake_build \
+		core dbus gui network widgets
 USES=		compiler:c++11-lib desktop-file-utils
 
 EXTRA_CONF_ARGS=--disable-cli \
@@ -27,7 +27,7 @@ EXTRA_CONF_ARGS=--disable-cli \
 		--disable-mac \
 		--disable-nls
 
-CONFLICTS_INSTALL=	transmission-qt5
+CONFLICTS_INSTALL=	transmission-qt4
 
 post-patch: general-patch
 	@${REINPLACE_CMD} -e 's|/share/man|/man|g ; /PKGCONFIG/s| openssl||g' \
@@ -46,7 +46,7 @@ post-install: general-install
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/transmission-qt
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/qt/README.txt \
-		${STAGEDIR}${DOCSDIR}/README-qt4
+		${STAGEDIR}${DOCSDIR}/README-qt5
 	@${INSTALL_DATA} ${WRKSRC}/qt/transmission-qt.desktop \
 		${STAGEDIR}${PREFIX}/share/applications/
 	@${INSTALL_DATA} ${WRKSRC}/qt/icons/transmission.png \

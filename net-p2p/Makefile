@@ -88,6 +88,7 @@
     SUBDIR += transmission-daemon
     SUBDIR += transmission-gtk
     SUBDIR += transmission-qt4
+    SUBDIR += transmission-qt5
     SUBDIR += transmission-remote-gui
     SUBDIR += tribler
     SUBDIR += twister

@@ -1,4 +1,4 @@
-A fast and lightweight Qt4 BitTorrent client, loosely based on the GTK+ client.
+A fast and lightweight Qt5 BitTorrent client, loosely based on the GTK+ client.
 
 This is the only Transmission client that can act as its own self-contained
 session (as the GTK+ and Mac clients do), and can also connect to a remote
