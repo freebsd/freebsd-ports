@@ -13,6 +13,8 @@ COMMENT=	Administration console client for RedHat OpenShift
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		wrong dependencies, ${LOCALBASE}/bin/minitar is not provided by rubygem-archive-tar-minitar
+
 RUN_DEPENDS=	${LOCALBASE}/bin/minitar:archivers/rubygem-archive-tar-minitar \
 		${LOCALBASE}/bin/commander:devel/rubygem-commander \
 		rubygem-highline>=1.6.11:devel/rubygem-highline \
