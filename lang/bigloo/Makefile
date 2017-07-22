@@ -16,6 +16,8 @@ LICENSE=	GPLv2 LGPL20
 LICENSE_COMB=	multi
 
 BROKEN=		fails to package
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2017-08-23
 
 LIB_DEPENDS=	libpcre.so:devel/pcre \
 		libgmp.so:math/gmp

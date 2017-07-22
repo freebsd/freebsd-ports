@@ -19,6 +19,8 @@ LIB_DEPENDS=	libboost_filesystem.so:devel/boost-libs \
 		libclaw_application.so:devel/libclaw
 
 BROKEN=		does not build with boost 1.62
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2017-08-23
 
 # gettext dep is unconditional; NLS option just disables translations install
 USES=		cmake gettext
