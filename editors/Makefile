@@ -19,6 +19,7 @@
     SUBDIR += calligra
     SUBDIR += chexedit
     SUBDIR += codelite
+    SUBDIR += coedit
     SUBDIR += conglomerate
     SUBDIR += cooledit
     SUBDIR += cream
