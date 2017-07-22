@@ -10,11 +10,9 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	Tool which prints PID of given process name
 
-<<<<<<< HEAD
-EXPLICIT_SAFESTACK=		yes
-=======
 LICENSE=	BSD2CLAUSE
->>>>>>> upstream/master
+
+USE_HARDENING=	pie relro safestack
 
 CONFLICTS=	psmisc-1*
 
