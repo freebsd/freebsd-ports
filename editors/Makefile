@@ -27,6 +27,7 @@
     SUBDIR += dhex
     SUBDIR += diakonos
     SUBDIR += dkns
+    SUBDIR += dlangide
     SUBDIR += drjava
     SUBDIR += e3
     SUBDIR += ecce
