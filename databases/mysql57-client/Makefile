@@ -2,6 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mysql
+PORTREVISION=	1
 PKGNAMESUFFIX=	57-client
 
 COMMENT=	Multithreaded SQL database (client)
@@ -32,6 +33,15 @@ MMAN1=		comp_err.1 msql2mysql.1 mysql.1 mysql_config.1 mysql_config_editor.1 mys
 		mysqlcheck.1 mysqldump.1 mysqlimport.1 mysqlshow.1 mysqlslap.1
 
 CLIENT_ONLY=	yes
+
+OPTIONS_GROUP+=		PLUGINS
+PLUGINS_DESC=		Default Client Plugins
+OPTIONS_GROUP_PLUGINS=	SASLCLIENT
+SASLCLIENT_DESC=	SASL client plugin module
+SASLCLIENT_CMAKE_BOOL=	WITH_AUTHENTICATION_LDAP
+SASLCLIENT_LIB_DEPENDS=		libsasl2.so:security/cyrus-sasl2
+SASLCLIENT_BUILD_DEPENDS=	${LOCALBASE}/include/sasl/sasl.h:net/openldap24-sasl-client
+OPTIONS_DEFAULT+=	SASLCLIENT
 
 # issue 166367: adding symlinks for back-compatibility with ${lib}_r
 post-install:

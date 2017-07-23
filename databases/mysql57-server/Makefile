@@ -3,6 +3,7 @@
 
 PORTNAME?=	mysql
 PORTVERSION=	5.7.19
+PORTREVISION=	1
 CATEGORIES=	databases ipv6
 MASTER_SITES=	MYSQL/MySQL-5.7
 PKGNAMESUFFIX?=	57-server
@@ -55,7 +56,8 @@ CMAKE_ARGS+=	-DINSTALL_LAYOUT=FREEBSD \
 		-DWITH_LIBEVENT=system \
 		-DWITH_LZ4=system \
 		-DWITH_ZLIB=system \
-		-DINSTALL_MYSQLTESTDIR=0
+		-DINSTALL_MYSQLTESTDIR=0 \
+		-DWITH_DEBUG=0
 
 SHEBANG_FILES=	scripts/*.pl* scripts/*.sh
 
@@ -70,6 +72,8 @@ SUB_LIST=	MY_DBDIR=${MY_DBDIR} \
 PLIST_SUB=	MY_DBDIR=${MY_DBDIR} \
 		MY_SECDIR=${MY_SECDIR} \
 		MY_TMPDIR=${MY_TMPDIR}
+
+OPTIONS_SUB=		YES
 
 # MySQL-Server part
 .if !defined(CLIENT_ONLY)
@@ -98,9 +102,8 @@ MMAN1=		my_print_defaults.1 myisam_ftdump.1 myisamchk.1 myisamlog.1 myisampack.1
 
 CMAKE_ARGS+=	-DWITH_EMBEDDED_SERVER="ON"
 
-OPTIONS_GROUP=		STORAGE
+OPTIONS_GROUP+=		STORAGE
 OPTIONS_GROUP_STORAGE=	ARCHIVE BLACKHOLE EXAMPLE FEDERATED INNOBASE PARTITION PERFSCHEMA
-OPTIONS_SUB=		YES
 STORAGE_DESC=		Permissible "Storage Engines" (to compile statically into the server)
 ARCHIVE_DESC=		Compile "Archive Storage" statically in server
 BLACKHOLE_DESC=		Compile "Blackhole Storage" statically in server
@@ -119,8 +122,8 @@ PARTITION_CMAKE_ON=	-DWITH_PARTITION_STORAGE_ENGINE=1
 PERFSCHEMA_CMAKE_ON=	-DWITH_PERFSCHEMA_STORAGE_ENGINE=1
 
 OPTIONS_GROUP+=		FEATURES
-OPTIONS_GROUP_FEATURES=	PERFSCHM
 FEATURES_DESC=		Default features knobs
+OPTIONS_GROUP_FEATURES=	PERFSCHM
 PERFSCHM_DESC=		Enable "Performance Schema" by default (High RAM usage)
 OPTIONS_DEFAULT+=	PERFSCHM
 
@@ -128,6 +131,10 @@ PERFSCHM_SUB_LIST+=		PERFSCHEMRC=""
 PERFSCHM_SUB_LIST_OFF+=		PERFSCHEMRC="--skip-performance-schema"
 FEDERATED_SUB_LIST+=		FEDER="--federated"
 FEDERATED_SUB_LIST_OFF+=	FEDER=""
+
+# issue 220865: Currently there's no source to be built with server-side support.
+# 		But this keeps the pkg-plist not overlaping
+CMAKE_ARGS+=	-DWITH_AUTHENTICATION_LDAP=0
 .endif
 
 .include <bsd.port.pre.mk>
@@ -143,6 +150,9 @@ post-extract:
 
 post-patch:
 	@${REINPLACE_CMD} 's/*.1/${MMAN1}/' ${WRKSRC}/man/CMakeLists.txt
+	# issue 220865: MySQL developers forgot that FreeBSD != Linux
+	@${REINPLACE_CMD} -e 's|%%FREEBSD_LOCAL_LIB%%|${LOCALBASE}/lib|g' \
+	    ${WRKSRC}/cmake/plugin.cmake
 
 .if !defined(CLIENT_ONLY)
 post-install:
