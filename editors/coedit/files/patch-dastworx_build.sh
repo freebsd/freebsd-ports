@@ -1,4 +1,4 @@
---- dastworx/build.sh	2017-07-21 05:32:58 UTC
+--- dastworx/build.sh.orig	2017-07-14 05:55:36 UTC
 +++ dastworx/build.sh
 @@ -1,13 +1,3 @@
 -#iz sources
