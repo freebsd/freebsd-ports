@@ -50,6 +50,7 @@
     SUBDIR += cython
     SUBDIR += cython3
     SUBDIR += diveintopython
+    SUBDIR += dlang-tools
     SUBDIR += dlv
     SUBDIR += dmd1
     SUBDIR += dmd2
