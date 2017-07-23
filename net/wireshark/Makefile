@@ -36,7 +36,8 @@ CONFIGURE_ARGS+=	--program-transform-name="" \
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 
-LIB_DEPENDS+=	libgpg-error.so:security/libgpg-error
+LIB_DEPENDS+=	libgpg-error.so:security/libgpg-error \
+		libgcrypt.so:security/libgcrypt
 
 CFLAGS+=	-funit-at-a-time
 LIBS+=		-L${LOCALBASE}/lib
