@@ -7,6 +7,15 @@ To enable dnscrypt-proxy at boot:
 sysrc dnscrypt_proxy_enable=YES
 sysrc dnscrypt_proxy_flags='-a 127.0.0.2'
 
+or
+
+sysrc dnscrypt_proxy_enable=YES
+sysrc dnscrypt_proxy_conf="/usr/local/etc/dnscrypt-proxy.conf"
+
+
+** You cannot mix the config file with the other rc.conf flags / settings. **
+
+
 To view available options, run:
 %%PREFIX%%/sbin/dnscrypt-proxy --help
 or read the manual: `man dnscrypt-proxy`

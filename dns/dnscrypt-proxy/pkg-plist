@@ -1,6 +1,5 @@
 bin/hostip
-%%ETCDIR%%.conf
-%%ETCDIR%%.conf.example
+@sample etc/dnscrypt-proxy.conf.sample
 %%PLUGINS%%include/dnscrypt/plugin.h
 %%PLUGINS%%include/dnscrypt/private.h
 %%PLUGINS%%include/dnscrypt/version.h
@@ -17,3 +16,6 @@ man/man8/hostip.8.gz
 sbin/dnscrypt-proxy
 %%DATADIR%%/dnscrypt-resolvers.csv
 %%DATADIR%%/minisign.pub
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/DNSCRYPT-V2-PROTOCOL.txt
+%%PORTDOCS%%%%DOCSDIR%%/dnscrypt-proxy.conf
