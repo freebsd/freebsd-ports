@@ -1,4 +1,4 @@
---- dastworx/build.sh	2017-07-21 05:32:58 UTC
+--- dastworx/build.sh.orig	2017-07-14 05:55:36 UTC
 +++ dastworx/build.sh
 @@ -1,13 +1,3 @@
 -#iz sources
@@ -22,7 +22,7 @@
 +%%LDMD2_CMD%% ${dast} \
  -O -release -inline -boundscheck=off \
 --Isrc -I../etc/iz/import -I../etc/libdparse/src \
-+-Isrc -I%%D_INCLUDE_DIR%% -L%%D_LIB_DIR%%/libiz.a -L%%D_LIB_DIR%%/libdparse.a \
++-Isrc -I%%D_INCLUDE_DIR%% -L%%D_LIB_DIR%%/libiz.a -L%%D_INCLUDE_DIR%%/libdparse.a \
  -of../bin/dastworx
  
  #cleanup
