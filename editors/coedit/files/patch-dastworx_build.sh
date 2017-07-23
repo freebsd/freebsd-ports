@@ -22,7 +22,7 @@
 +%%LDMD2_CMD%% ${dast} \
  -O -release -inline -boundscheck=off \
 --Isrc -I../etc/iz/import -I../etc/libdparse/src \
-+-Isrc -I%%D_INCLUDE_DIR%% -L%%D_LIB_DIR%%/libiz.a -L%%D_INCLUDE_DIR%%/libdparse.a \
++-Isrc -I%%D_INCLUDE_DIR%% -L%%D_LIB_DIR%%/libiz.a -L%%D_LIB_DIR%%/libdparse.a \
  -of../bin/dastworx
  
  #cleanup
