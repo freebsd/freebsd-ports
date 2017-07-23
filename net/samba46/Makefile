@@ -3,7 +3,7 @@
 
 PORTNAME?=			${SAMBA4_BASENAME}46
 PORTVERSION?=			${SAMBA4_VERSION}
-PORTREVISION?=	1
+PORTREVISION?=			0
 CATEGORIES?=			net
 MASTER_SITES=			SAMBA/samba/stable SAMBA/samba/rc
 DISTNAME=			${SAMBA4_DISTNAME}
@@ -13,13 +13,13 @@ COMMENT?=			Free SMB/CIFS and AD/DC server and client for Unix
 
 LICENSE=			GPLv3
 
-CONFLICTS?=			*samba3[2-6]-3.* samba4-4.0.* samba4[1-5]-4.* p5-Parse-Pidl-4.*
+CONFLICTS?=			*samba3[2-6]-3.* samba4-4.0.* samba4[1-57-9]-4.* p5-Parse-Pidl-4.*
 
 #EXTRA_PATCHES=		${PATCHDIR}/extra-patch-security:-p1
 
 SAMBA4_BASENAME=		samba
 SAMBA4_PORTNAME=		${SAMBA4_BASENAME}4
-SAMBA4_VERSION=			4.6.4
+SAMBA4_VERSION=			4.6.6
 SAMBA4_DISTNAME=		${SAMBA4_BASENAME}-${SAMBA4_VERSION:S|.p|pre|:S|.r|rc|:S|.t|tp|:S|.a|alpha|}
 
 WRKSRC?=			${WRKDIR}/${DISTNAME}
@@ -288,6 +288,9 @@ CFLAGS+=			-fno-omit-frame-pointer
 .endif
 .if ${CHOSEN_COMPILER_TYPE} == clang
 CFLAGS+=			-fno-color-diagnostics
+.endif
+.if ${readline_ARGS} == port
+CFLAGS+=			-D_FUNCTION_DEF
 .endif
 CONFIGURE_ENV+=			NOCOLOR=yes WAF_LOG_FORMAT='%(c1)s%(zone)s%(c2)s %(message)s'
 MAKE_ENV+=			NOCOLOR=yes WAF_LOG_FORMAT='%(c1)s%(zone)s%(c2)s %(message)s'
