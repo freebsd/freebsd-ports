@@ -481,20 +481,20 @@ lib/webmin/adsl-client/start.cgi
 lib/webmin/adsl-client/stop.cgi
 lib/webmin/ajaxterm/CHANGELOG
 lib/webmin/ajaxterm/ajaxterm/README.txt
+lib/webmin/ajaxterm/ajaxterm/ajaxterm.%%PYTHON_PYOEXTENSION%%
 lib/webmin/ajaxterm/ajaxterm/ajaxterm.1
 lib/webmin/ajaxterm/ajaxterm/ajaxterm.css
 lib/webmin/ajaxterm/ajaxterm/ajaxterm.html
 lib/webmin/ajaxterm/ajaxterm/ajaxterm.js
 lib/webmin/ajaxterm/ajaxterm/ajaxterm.py
 lib/webmin/ajaxterm/ajaxterm/ajaxterm.pyc
-lib/webmin/ajaxterm/ajaxterm/ajaxterm.%%PYTHON_PYOEXTENSION%%
 lib/webmin/ajaxterm/ajaxterm/configure
 lib/webmin/ajaxterm/ajaxterm/configure.initd.gentoo
 lib/webmin/ajaxterm/ajaxterm/configure.initd.redhat
 lib/webmin/ajaxterm/ajaxterm/configure.makefile
+lib/webmin/ajaxterm/ajaxterm/qweb.%%PYTHON_PYOEXTENSION%%
 lib/webmin/ajaxterm/ajaxterm/qweb.py
 lib/webmin/ajaxterm/ajaxterm/qweb.pyc
-lib/webmin/ajaxterm/ajaxterm/qweb.%%PYTHON_PYOEXTENSION%%
 lib/webmin/ajaxterm/ajaxterm/sarissa.js
 lib/webmin/ajaxterm/ajaxterm/sarissa_dhtml.js
 lib/webmin/ajaxterm/config
@@ -1011,6 +1011,7 @@ lib/webmin/authentic-theme/extensions/file-manager/create_folder.cgi
 lib/webmin/authentic-theme/extensions/file-manager/cut.cgi
 lib/webmin/authentic-theme/extensions/file-manager/delete.cgi
 lib/webmin/authentic-theme/extensions/file-manager/extract.cgi
+lib/webmin/authentic-theme/extensions/file-manager/fetcher.cgi
 lib/webmin/authentic-theme/extensions/file-manager/file-manager-lib.pm
 lib/webmin/authentic-theme/extensions/file-manager/file-manager.js
 lib/webmin/authentic-theme/extensions/file-manager/file-manager.min.js
@@ -1020,8 +1021,15 @@ lib/webmin/authentic-theme/extensions/file-manager/rename.cgi
 lib/webmin/authentic-theme/extensions/file-manager/search.cgi
 lib/webmin/authentic-theme/extensions/sql.js
 lib/webmin/authentic-theme/extensions/sql.min.js
+lib/webmin/authentic-theme/help/editor.ca.UTF-8.html
+lib/webmin/authentic-theme/help/editor.de.UTF-8.html
+lib/webmin/authentic-theme/help/editor.html
+lib/webmin/authentic-theme/help/editor.id.UTF-8.html
+lib/webmin/authentic-theme/help/editor.ro_RO.UTF-8.html
+lib/webmin/authentic-theme/help/editor.zh_CN.UTF-8.html
+lib/webmin/authentic-theme/help/file-manager.de.UTF-8.html
 lib/webmin/authentic-theme/help/file-manager.html
-lib/webmin/authentic-theme/images/_blank.gif
+lib/webmin/authentic-theme/help/file-manager.id.UTF-8.html
 lib/webmin/authentic-theme/images/after.gif
 lib/webmin/authentic-theme/images/attach.gif
 lib/webmin/authentic-theme/images/before.gif
@@ -1833,6 +1841,8 @@ lib/webmin/authentic-theme/lang/es
 lib/webmin/authentic-theme/lang/es.UTF-8
 lib/webmin/authentic-theme/lang/fr
 lib/webmin/authentic-theme/lang/fr.UTF-8
+lib/webmin/authentic-theme/lang/id
+lib/webmin/authentic-theme/lang/id.UTF-8
 lib/webmin/authentic-theme/lang/it
 lib/webmin/authentic-theme/lang/it.UTF-8
 lib/webmin/authentic-theme/lang/nl
@@ -2283,7 +2293,6 @@ lib/webmin/authentic-theme/unauthenticated/js/codemirror/mode/gas/gas.js
 lib/webmin/authentic-theme/unauthenticated/js/codemirror/mode/gfm/gfm.js
 lib/webmin/authentic-theme/unauthenticated/js/codemirror/mode/gherkin/gherkin.js
 lib/webmin/authentic-theme/unauthenticated/js/codemirror/mode/go/go.js
-lib/webmin/authentic-theme/unauthenticated/js/codemirror/mode/groovy/groovy.js
 lib/webmin/authentic-theme/unauthenticated/js/codemirror/mode/haml/haml.js
 lib/webmin/authentic-theme/unauthenticated/js/codemirror/mode/handlebars/handlebars.js
 lib/webmin/authentic-theme/unauthenticated/js/codemirror/mode/haskell-literate/haskell-literate.js
@@ -2325,7 +2334,6 @@ lib/webmin/authentic-theme/unauthenticated/js/codemirror/mode/puppet/puppet.js
 lib/webmin/authentic-theme/unauthenticated/js/codemirror/mode/python/python.js
 lib/webmin/authentic-theme/unauthenticated/js/codemirror/mode/q/q.js
 lib/webmin/authentic-theme/unauthenticated/js/codemirror/mode/r/r.js
-lib/webmin/authentic-theme/unauthenticated/js/codemirror/mode/rst/rst.js
 lib/webmin/authentic-theme/unauthenticated/js/codemirror/mode/ruby/ruby.js
 lib/webmin/authentic-theme/unauthenticated/js/codemirror/mode/rust/rust.js
 lib/webmin/authentic-theme/unauthenticated/js/codemirror/mode/sas/sas.js
@@ -2380,7 +2388,6 @@ lib/webmin/authentic-theme/unauthenticated/js/favico.min.js
 lib/webmin/authentic-theme/unauthenticated/js/fileinput.min.js
 lib/webmin/authentic-theme/unauthenticated/js/init.js
 lib/webmin/authentic-theme/unauthenticated/js/init.min.js
-lib/webmin/authentic-theme/unauthenticated/js/jquery-ui.min.js
 lib/webmin/authentic-theme/unauthenticated/js/jquery.autocomplete.min.js
 lib/webmin/authentic-theme/unauthenticated/js/jquery.datatables.min.js
 lib/webmin/authentic-theme/unauthenticated/js/jquery.datatables.plugins.min.js
@@ -8808,6 +8815,7 @@ lib/webmin/firewalld/create_zone.cgi
 lib/webmin/firewalld/default_zone.cgi
 lib/webmin/firewalld/delete_rules.cgi
 lib/webmin/firewalld/delete_zone.cgi
+lib/webmin/firewalld/edit_forward.cgi
 lib/webmin/firewalld/edit_port.cgi
 lib/webmin/firewalld/edit_serv.cgi
 lib/webmin/firewalld/firewalld-lib.pl
@@ -8829,6 +8837,7 @@ lib/webmin/firewalld/log_parser.pl
 lib/webmin/firewalld/module.info
 lib/webmin/firewalld/open-ports.pl
 lib/webmin/firewalld/restart.cgi
+lib/webmin/firewalld/save_forward.cgi
 lib/webmin/firewalld/save_ifaces.cgi
 lib/webmin/firewalld/save_port.cgi
 lib/webmin/firewalld/save_serv.cgi
@@ -20793,7 +20802,6 @@ lib/webmin/software/config-freebsd
 lib/webmin/software/config-freebsd-8.4-ALL
 lib/webmin/software/config-gentoo-linux
 lib/webmin/software/config-hpux
-lib/webmin/software/config-macos
 lib/webmin/software/config-mandrake-linux
 lib/webmin/software/config-msc-linux
 lib/webmin/software/config-netbsd
@@ -22108,6 +22116,7 @@ lib/webmin/status/edit_mon.cgi
 lib/webmin/status/edit_sched.cgi
 lib/webmin/status/edit_tmpl.cgi
 lib/webmin/status/exec-monitor.pl
+lib/webmin/status/fail2ban-monitor.pl
 lib/webmin/status/feedback_files.pl
 lib/webmin/status/file-monitor.pl
 lib/webmin/status/ftp-monitor.pl
@@ -23021,6 +23030,7 @@ lib/webmin/tunnel/seturl.cgi
 lib/webmin/tunnel/tunnel-lib.pl
 lib/webmin/ui-lib.pl
 lib/webmin/unauthenticated/filter_match.js
+lib/webmin/update-from-repo.sh
 lib/webmin/updown/CHANGELOG
 lib/webmin/updown/acl_security.pl
 lib/webmin/updown/cancel.cgi
@@ -24333,7 +24343,6 @@ lib/webmin/webalizer/webalizer-lib.pl
 lib/webmin/webalizer/webalizer.pl
 lib/webmin/webmin-daemon
 lib/webmin/webmin-debian-pam
-lib/webmin/webmin-gentoo-init
 lib/webmin/webmin-init
 lib/webmin/webmin-pam
 lib/webmin/webmin-search-lib.pl

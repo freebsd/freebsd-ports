@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	webmin
-PORTVERSION=	1.840
+PORTVERSION=	1.850
 CATEGORIES=	sysutils
 MASTER_SITES=	http://download.webmin.com/updates/:up \
 		SF/webadmin/${PORTNAME}/${PORTVERSION}:sf
@@ -18,15 +18,18 @@ RUN_DEPENDS=	p5-Net-SSLeay>=0:security/p5-Net-SSLeay \
 		p5-IO-Tty>=0:devel/p5-IO-Tty \
 		p5-Authen-PAM>=0:security/p5-Authen-PAM
 
-USES=		cpe perl5 python
+USES=		cpe perl5 python shebangfix
 USE_RC_SUBR=	webmin
 SUB_LIST=	PERL=${PERL}
 SUB_FILES=	pkg-message
+SHEBANG_FILES=	${WRKSRC}/ajaxterm/ajaxterm/ajaxterm.py \
+		${WRKSRC}/ajaxterm/ajaxterm/configure
 
 WEBMIN_MODULES=
 
 post-extract:
-	@${RM} ${WRKSRC}/mount/freebsd-mounts-?
+	@${RM} ${WRKSRC}/mount/freebsd-mounts-? \
+		${WRKSRC}/webmin-gentoo-init
 	@if [ "${WEBMIN_MODULES}" != "" ]; then \
 		for webmin_module in ${WEBMIN_MODULES}; do \
 			${ECHO} "===> Unpacking updated module: $${webmin_module}"; \
