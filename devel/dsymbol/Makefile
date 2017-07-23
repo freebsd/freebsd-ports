@@ -14,12 +14,17 @@ COMMENT=	Symbol lookup support for libdparse
 LICENSE=	BSL
 
 BUILD_DEPENDS=	ldmd2:lang/ldc \
-		dub:devel/dub
+		dub:devel/dub \
+		${LOCALBASE}/lib/d/libdparse.a:devel/libdparse \
+		${LOCALBASE}/lib/d/libemsi_containers.a:devel/containers
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 DUB_CMD=	${LOCALBASE}/bin/dub build --build=release
 D_INCLUDE_DIR=	${PREFIX}/include/d
 D_LIB_DIR=	${PREFIX}/lib/d
+
+post-patch:
+	${REINPLACE_CMD} -e '7,10d' ${WRKSRC}/dub.json
 
 do-build:
 	@cd ${WRKSRC} && ${DUB_CMD}
