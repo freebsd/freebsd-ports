@@ -23,7 +23,7 @@ BUILD_DEPENDS=	ldmd2:lang/ldc \
 		${LOCALBASE}/lib/d/libdlib.a:devel/dlib \
 		${LOCALBASE}/lib/d/libDerelictUtil.a:devel/derelict-util \
 		${LOCALBASE}/lib/d/libDerelictGL3.a:graphics/derelict-gl3 \
-		${LOCALBASE}/lib/d/libDerelictSDL2.a:devel/derelict-sdl \
+		${LOCALBASE}/lib/d/libDerelictSDL2.a:devel/derelict-sdl2 \
 		${LOCALBASE}/lib/d/libDerelictFT.a:print/derelict-ft \
 		dcd-server:devel/dcd-server
 
