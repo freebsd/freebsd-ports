@@ -3,7 +3,7 @@
 
 PORTNAME?=	percona
 DISTVERSION=	5.6.35-80.0
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES=	databases ipv6
 MASTER_SITES=	http://www.percona.com/downloads/Percona-Server-5.6/Percona-Server-${DISTVERSION}/source/tarball/
 PKGNAMESUFFIX?=	56-server
@@ -27,7 +27,8 @@ FASTMTX_DESC=	Replace mutexes with spinlocks
 FASTMTX_CMAKE_ON=	-DWITH_FAST_MUTEXES=1
 INNODBMEMCACHED_DESC=	InnoDB Memcached plugin
 INNODBMEMCACHED_CMAKE_ON=	-DWITH_INNODB_MEMCACHED=1
-OPENSSL_CMAKE_ON=	-DWITH_SSL=bundled
+OPENSSL_CMAKE_ON=	-DWITH_SSL=system
+OPENSSL_USES=	ssl
 TOKUDB_DESC=	TokuDB Engine (experimental)
 TOKUDB_CMAKE_ON=	-DUSE_CTAGS=0
 TOKUDB_EXTRA_PATCHES=${PATCHDIR}/extrapatch-tokudb
