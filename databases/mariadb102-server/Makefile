@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME?=	mariadb
-PORTVERSION=	10.2.6
-PORTREVISION?=	2
+PORTVERSION=	10.2.7
+PORTREVISION?=	0
 CATEGORIES=	databases ipv6
 MASTER_SITES=	http://mirrors.supportex.net/${SITESDIR}/ \
 		http://mirror2.hs-esslingen.de/pub/Mirrors/${SITESDIR}/ \
@@ -28,7 +28,7 @@ SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 SLAVEDIRS=	databases/mariadb102-client
-USES=		bison:build cmake compiler:c++11-lib cpe execinfo iconv:translit ncurses shebangfix ssl
+USES=		bison:build cmake compiler:c++11-lib cpe execinfo iconv:translit libedit ncurses shebangfix ssl
 USE_LDCONFIG=	${PREFIX}/lib/mysql
 SHEBANG_FILES=	scripts/*.sh
 SITESDIR=	mariadb/mariadb-${PORTVERSION}/source
@@ -179,6 +179,7 @@ post-install:
 		${STAGEDIR}${PREFIX}/bin/mysqlaccess
 	${RM} -r ${STAGEDIR}/${PREFIX}/share/mysql/policy \
 		${STAGEDIR}/${PREFIX}/share/pkgconfig
+	${RM} ${STAGEDIR}${LOCALBASE}/lib/mysql/libmysqlclient*
 # See https://mariadb.atlassian.net/browse/MDEV-9529
 	${RM} ${STAGEDIR}/${PREFIX}/bin/maria_add_gis_sp.sql
 .endif # defined(CLIENT_ONLY)
@@ -202,8 +203,8 @@ post-patch:
 		${WRKSRC}/cmake/os/DragonFly.cmake
 .endif
 
-post-configure-MROONGA-on:
-	${REINPLACE_CMD} 's|-llz4|-L${LOCALBASE}/lib -llz4|' \
-		${WRKSRC}/storage/mroonga/CMakeFiles/mroonga.dir/link.txt
+#post-configure-MROONGA-on:
+#	${REINPLACE_CMD} 's|-llz4|-L${LOCALBASE}/lib -llz4|' \
+#		${WRKSRC}/storage/mroonga/CMakeFiles/mroonga.dir/link.txt
 
 .include <bsd.port.post.mk>
