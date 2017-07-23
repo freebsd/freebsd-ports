@@ -1,0 +1,16 @@
+Bear is a tool that generates a compilation database for clang
+tooling. The JSON compilation database is used in the clang project
+to provide information on how a single compilation unit is processed.
+With this, it is easy to re-run the compilation with alternate
+programs. One way to get a compilation database is to use cmake as
+the build tool. Passing -DCMAKE_EXPORT_COMPILE_COMMANDS=ON to cmake
+generates the compile_commands.json file into the current directory.
+For non-cmake projects, Bear generates the JSON file during the
+build process.
+
+The concept behind Bear is: to execute the original build command
+and intercept the exec calls issued by the build tool. To achieve
+that, Bear uses the LD_PRELOAD or DYLD_INSERT_LIBRARIES mechanisms
+provided by the dynamic linker.
+
+WWW: https://github.com/rizsotto/Bear
