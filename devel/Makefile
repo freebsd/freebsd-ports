@@ -420,6 +420,7 @@
     SUBDIR += deforaos-libsystem
     SUBDIR += deheader
     SUBDIR += delta
+    SUBDIR += derelict-util
     SUBDIR += desktop-file-utils
     SUBDIR += dev86
     SUBDIR += devhelp
