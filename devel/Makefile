@@ -420,6 +420,8 @@
     SUBDIR += deforaos-libsystem
     SUBDIR += deheader
     SUBDIR += delta
+    SUBDIR += derelict-sdl2
+    SUBDIR += derelict-util
     SUBDIR += desktop-file-utils
     SUBDIR += dev86
     SUBDIR += devhelp
@@ -437,6 +439,8 @@
     SUBDIR += ditrack
     SUBDIR += djgpp-binutils
     SUBDIR += djgpp-crx
+    SUBDIR += dlangui
+    SUBDIR += dlib
     SUBDIR += dmake
     SUBDIR += dmalloc
     SUBDIR += dmucs

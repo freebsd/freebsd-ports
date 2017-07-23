@@ -1,0 +1,7 @@
+include/d/derelict/util/exception.d
+include/d/derelict/util/loader.d
+include/d/derelict/util/sharedlib.d
+include/d/derelict/util/system.d
+include/d/derelict/util/wintypes.d
+include/d/derelict/util/xtypes.d
+lib/d/libDerelictUtil.a

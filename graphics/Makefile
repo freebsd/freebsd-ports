@@ -135,6 +135,7 @@
     SUBDIR += deegree-wps
     SUBDIR += deegree-wpvs
     SUBDIR += delaboratory
+    SUBDIR += derelict-gl3
     SUBDIR += devil
     SUBDIR += dia
     SUBDIR += diacanvas2
