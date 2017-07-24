@@ -3,6 +3,7 @@
 
 PORTNAME=	sshguard
 PORTVERSION=	2.0.0
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	SF/sshguard/sshguard/${PORTVERSION}
 
@@ -21,6 +22,7 @@ SUB_FILES=	pkg-message
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%PREFIX%|${PREFIX}|' ${WRKSRC}/doc/sshguard.8.rst
+	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|' ${WRKSRC}/examples/sshguard.conf.sample
 
 post-install:
 	${INSTALL} -d ${STAGEDIR}${PREFIX}/etc

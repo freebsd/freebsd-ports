@@ -40,24 +40,21 @@
 # sshguard_pidfile (str):	Path to PID file.
 #				Set to "/var/run/sshguard.pid" by default
 # sshguard_watch_logs (str):	Colon splitted list of logs to watch.
-#				Set to "/var/log/auth.log:/var/log/maillog"
-#				by default.
+#				Unset by default. Overrides the configuration file.
 # The following options directly maps to their command line options,
-# please read manual page sshguard(8) for detailed information:
+# and override the configuration file, so most are unset by default.
+# Please read manual page sshguard(8) for detailed information:
 # sshguard_blacklist (str):	[thr:]/path/to/blacklist.
 #				Set to "30:/var/db/sshguard/blacklist.db"
 #				by default.
-# sshguard_danger_thresh (int):	Danger threshold.  Set to "30" by default.
+# sshguard_danger_thresh (int):	Danger threshold.
 # sshguard_release_interval (int):
 #				Minimum interval an address remains
-#				blocked.  Set to "120" by default.
+#				blocked.
 # sshguard_reset_interval (int):
 #				Interval before a suspected attack is
 #				forgotten and danger is reset to 0.
-#				Set to "1800" by default.
 # sshguard_whitelistfile (str):	Path to the whitelist.
-#				Set to "%%PREFIX%%/etc/sshguard.whitelist"
-#				by default.
 # sshguard_flags (str):		Set additional command line arguments.
 #
 
@@ -71,11 +68,11 @@ load_rc_config sshguard
 
 : ${sshguard_enable:=NO}
 : ${sshguard_blacklist=30:/var/db/sshguard/blacklist.db}
-: ${sshguard_danger_thresh=30}
-: ${sshguard_release_interval=120}
-: ${sshguard_reset_interval=1800}
-: ${sshguard_whitelistfile="%%PREFIX%%/etc/sshguard.whitelist"}
-: ${sshguard_watch_logs=/var/log/auth.log:/var/log/maillog}
+: ${sshguard_danger_thresh=}
+: ${sshguard_release_interval=}
+: ${sshguard_reset_interval=}
+: ${sshguard_whitelistfile=}
+: ${sshguard_watch_logs=}
 
 pidfile=${sshguard_pidfile:="/var/run/sshguard.pid"}
 
@@ -83,7 +80,7 @@ command=/usr/sbin/daemon
 actual_command="%%PREFIX%%/sbin/sshguard"
 procname="%%PREFIX%%/libexec/sshg-blocker"
 start_precmd=sshguard_prestart
-command_args="-c ${actual_command} \${sshguard_flags} \${sshguard_blacklist_params} \${sshguard_watch_params} -a ${sshguard_danger_thresh} -p ${sshguard_release_interval} -s ${sshguard_reset_interval} -w ${sshguard_whitelistfile} -i ${pidfile}"
+command_args="-c ${actual_command} \${sshguard_flags} \${sshguard_blacklist_params} \${sshguard_watch_params} \${sshguard_danger_params} \${sshguard_release_params} \${sshguard_reset_params} \${sshguard_whitelist_params} -i ${pidfile}"
 
 sshguard_prestart()
 {
@@ -96,9 +93,26 @@ sshguard_prestart()
 	    sshguard_blacklist_params="-b ${sshguard_blacklist}"
 	fi
 
-	[ -e ${sshguard_whitelistfile} ] || touch ${sshguard_whitelistfile}
+	if [ ! -z ${sshguard_whitelistfile} ]; then
+		[ -e "${sshguard_whitelistfile}" ] || touch ${sshguard_whitelistfile}
+		sshguard_whitelist_params="-w ${sshguard_whitelistfile}"
+	fi
 
-	sshguard_watch_params=$(echo ${sshguard_watch_logs} | tr : \\\n | sed -e s/^/-l\ /g | tr \\\n \ )
+	if [ ! -z ${sshguard_danger_thresh} ]; then
+		sshguard_danger_params="-a ${sshguard_danger_thresh}"
+	fi
+
+	if [ ! -z ${sshguard_release_interval} ]; then
+		sshguard_release_params="-p ${sshguard_release_interval}"
+	fi
+
+	if [ ! -z ${sshguard_reset_interval} ]; then
+		sshguard_reset_params="-s ${sshguard_reset_interval}"
+	fi
+
+	if [ ! -z "${sshguard_watch_logs}" ]; then
+		sshguard_watch_params=$(echo ${sshguard_watch_logs} | tr : \\\n | sed -e s/^/-l\ /g | tr \\\n \ )
+	fi
 }
 
 run_rc_command "$1"

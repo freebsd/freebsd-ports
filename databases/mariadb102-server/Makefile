@@ -180,8 +180,6 @@ post-install:
 	${RM} -r ${STAGEDIR}/${PREFIX}/share/mysql/policy \
 		${STAGEDIR}/${PREFIX}/share/pkgconfig
 	${RM} ${STAGEDIR}${LOCALBASE}/lib/mysql/libmysqlclient*
-# See https://mariadb.atlassian.net/browse/MDEV-9529
-	${RM} ${STAGEDIR}/${PREFIX}/bin/maria_add_gis_sp.sql
 .endif # defined(CLIENT_ONLY)
 
 .if defined(WITH_OPENSSL_PORT)

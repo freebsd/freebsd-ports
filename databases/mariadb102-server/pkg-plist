@@ -195,7 +195,7 @@ man/man8/mysqld.8.gz
 %%DATADIR%%/fill_help_tables.sql
 %%DATADIR%%/magic
 %%SPIDER%%%%DATADIR%%/install_spider.sql
-@comment %%DATADIR%%/maria_add_gis_sp.sql
+%%DATADIR%%/maria_add_gis_sp.sql
 %%DATADIR%%/maria_add_gis_sp_bootstrap.sql
 %%MROONGA%%%%DATADIR%%/mroonga/install.sql
 %%MROONGA%%%%DATADIR%%/mroonga/uninstall.sql
