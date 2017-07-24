@@ -28,8 +28,3 @@ start_post()
     # just if the directory is empty
     rmdir `dirname ${milterbogom_pid}` > /dev/null 2>&1
 }
-
-depend()
-{
-	keyword -milterbogom
-}

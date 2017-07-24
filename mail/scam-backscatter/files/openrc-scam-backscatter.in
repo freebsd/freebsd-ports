@@ -15,7 +15,6 @@ scambackscatter_flags=${scambackscatter_flags-"-p unix:$scambackscatter_sockfile
 -f $scambackscatter_cfgfile -u $scambackscatter_runas -P $scambackscatter_pidfile \
 -b $scambackscatter_dir/backscatter.txt -D"}
 command_user=mailnull
-command_group=mailnull
 
 start_pre()
 {
