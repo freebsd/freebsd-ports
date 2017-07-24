@@ -3,7 +3,7 @@
 
 PORTNAME=	rpy
 PORTVERSION=	1.0.3
-PORTREVISION=	35
+PORTREVISION=	36
 CATEGORIES=	math
 MASTER_SITES=	SF
 
@@ -13,10 +13,9 @@ COMMENT=	Python interface to the R Programming Language
 LICENSE=	GPLv2 LGPL21 MPL
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	${PYNUMPY} \
-		R:math/R
-RUN_DEPENDS=	${PYNUMPY} \
-		R:math/R
+BUILD_DEPENDS=	${PYNUMPY}
+LIB_DEPENDS=	libR.so:math/R
+RUN_DEPENDS=	${PYNUMPY}
 
 USES=		python
 USE_PYTHON=	distutils autoplist
