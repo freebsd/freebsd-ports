@@ -1,5 +1,5 @@
---- Makefile.orig	2014-06-29 23:25:53.573437041 +0800
-+++ Makefile	2014-06-29 23:26:20.982465783 +0800
+--- Makefile.orig	2005-12-21 00:46:49 UTC
++++ Makefile
 @@ -33,12 +33,12 @@ ${MAN1}: ${POD}
  	${POD2MAN} -c "${POD_CENTER}" -r "${POD_RELEASE}" ${POD} > ${MAN1} 
  
