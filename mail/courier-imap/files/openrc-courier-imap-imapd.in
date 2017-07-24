@@ -1,0 +1,29 @@
+#!/sbin/openrc-run
+
+# Define these courier_imap_imapd_* variables in one of these files:
+# 	/etc/rc.conf
+# 	/etc/rc.conf.local
+# 	/etc/rc.conf.d/courier_imap_imapd
+
+name="courier_imap_imapd"
+command="%%PREFIX%%/libexec/courier-imap/imapd.rc"
+pidfile="/var/run/imapd.pid"
+procname="%%PREFIX%%/sbin/courierlogger"
+
+start() {
+	case $1 in
+	start)
+		einfo "Starting ${name}."
+		${command} start
+		;;
+	stop)
+		einfo "Stopping ${name}."
+		${command} stop
+		;;
+	esac
+}
+
+depend()
+{
+	keyword -shutdown
+}

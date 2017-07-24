@@ -1,0 +1,36 @@
+#!/sbin/openrc-run
+
+name=dovecot
+: ${dovecot_config:="%%PREFIX%%/etc/${name}.conf"}
+
+command="%%PREFIX%%/sbin/${name}"
+
+start_pre()
+{	# Ensure runtime directories exist with correct permissions
+	local login_user login_gid
+	login_user=$(${command} ${command_args} -a | /usr/bin/awk -F ': ' '/^login_user:/ { print $2 }')
+	login_gid=$(/usr/sbin/pw usershow -n "${login_user}" 2>/dev/null | /usr/bin/cut -d: -f4)
+	/usr/bin/install -o root -g wheel -m 0755 -d ${base_dir}
+	/usr/bin/install -o root -g ${login_gid} -m 0750 -d ${login_dir}
+}
+
+stop_post()
+{	# Cleanup runtime directories
+	rm -rf ${login_dir} ${base_dir} 2>/dev/null
+}
+
+for config in ${dovecot_config}; do
+	required_files="${config}"
+	command_args="-c ${config}"
+	base_dir=$(${command} ${command_args} -a | /usr/bin/awk -F ': ' '/^base_dir:/ { print $2 }')
+	login_dir=$(${command} ${command_args} -a | /usr/bin/awk -F ': ' '/^login_dir:/ { print $2 }')
+	pidfile="${base_dir}/master.pid"
+	run_rc_command "$1"
+done
+
+depend()
+{
+	keyword -shutdown
+	after bootsmisc
+	neet localmount
+}
