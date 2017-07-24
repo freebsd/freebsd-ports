@@ -19,7 +19,7 @@ start_pre()
   [Nn][Oo]|[Ff][Aa][Ll][Ss][Ee]|[Oo][Ff][Ff]|0)
     case $sendmail_submit_enable in
     [Yy][Ee][Ss]|[Tt][Rr][Uu][Ee]|[Oo][Nn]|1)
-      warn "sendmail_submit_enable should be set to NO"
+      ewarn "sendmail_submit_enable should be set to NO"
       ;;
     esac
     ;;
@@ -28,14 +28,8 @@ start_pre()
   esac
 }
 
-stop_post()
-{
-  rm -f $pidfile
-}
-
-# read settings, set default values
-
 : ${exim_flags="-bd -q30m"}
+command_args=${exim_flags}
 
 depend()
 {
