@@ -14,7 +14,7 @@ index d881e51..87b7acc 100644
  # Space-separated list of log files to monitor. Ignored if LOGREADER is set.
  # (optional, no default)
 -#FILES="/var/log/auth.log /var/log/authlog /var/log/maillog"
-+#FILES="/var/log/auth.log /var/log/maillog"
++FILES="/var/log/auth.log /var/log/maillog"
  
  # Shell command that provides logs on standard output. Takes precedence over
  # FILES. (optional, no default)

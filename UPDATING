@@ -5,6 +5,23 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20170721:
+  AFFECTS: users of security/sshguard*
+  AUTHOR: dan.mcgregir@usask.ca
+
+  security/sshguard was updated to 2.0.0, and security/sshguard-pf,
+  security/sshguard-ipfw, and security/sshguard-null have been merged into
+  security/sshguard.
+
+  Configuration of the service is now handled in ${PREFIX}/etc/sshguard.conf.
+  Please select the desired backend, -null is selected by default.
+
+  In order to upgrade from 1.7.1 change the origin to security/sshguard
+
+  # pkg set -o security/sshguard-ipfw:security/sshguard
+  # pkg set -o security/sshguard-null:security/sshguard
+  # pkg set -o security/sshguard-pf:security/sshguard
+
 20170717:
   AFFECTS: users of devel/p5-Log-Any and devel/p5-Log-Any-Adapter-Syslog
   AUTHOR: eugen@FreeBSD.org
