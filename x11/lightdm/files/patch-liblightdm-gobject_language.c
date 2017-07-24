@@ -1,8 +1,52 @@
 https://bugs.launchpad.net/lightdm/+bug/790186
 
---- liblightdm-gobject/language.c.orig	2016-12-09 01:04:48 UTC
+--- liblightdm-gobject/language.c.orig	2016-09-30 03:23:52 UTC
 +++ liblightdm-gobject/language.c
-@@ -248,10 +248,16 @@ lightdm_language_get_name (LightDMLangua
+@@ -36,6 +36,12 @@ G_DEFINE_TYPE (LightDMLanguage, lightdm_language, G_TY
+ static gboolean have_languages = FALSE;
+ static GList *languages = NULL;
+ 
++static gboolean
++is_utf8 (const gchar *code)
++{
++    return g_strrstr (code, ".utf8") || g_strrstr (code, ".UTF-8");
++}
++
+ static void
+ update_languages (void)
+ {
+@@ -72,7 +78,7 @@ update_languages (void)
+                 continue;
+ 
+             /* Ignore the non-interesting languages */
+-            if (strcmp (command, "locale -a") == 0 && !g_strrstr (code, ".utf8"))
++            if (strcmp (command, "locale -a") == 0 && !is_utf8 (code))
+                 continue;
+ 
+             language = g_object_new (LIGHTDM_TYPE_LANGUAGE, "code", code, NULL);
+@@ -88,12 +94,6 @@ update_languages (void)
+     have_languages = TRUE;
+ }
+ 
+-static gboolean
+-is_utf8 (const gchar *code)
+-{
+-    return g_strrstr (code, ".utf8") || g_strrstr (code, ".UTF-8");
+-}
+-
+ /* Get a valid locale name that can be passed to setlocale(), so we always can use nl_langinfo() to get language and country names. */
+ static gchar *
+ get_locale_name (const gchar *code)
+@@ -133,7 +133,7 @@ get_locale_name (const gchar *code)
+         for (i = 0; avail_locales[i]; i++)
+         {
+             gchar *loc = avail_locales[i];
+-            if (!g_strrstr (loc, ".utf8"))
++            if (!is_utf8 (loc))
+                 continue;
+             if (g_str_has_prefix (loc, language))
+             {
+@@ -227,10 +227,16 @@ lightdm_language_get_name (LightDMLanguage *language)
          if (locale)
          {
              gchar *current = setlocale (LC_ALL, NULL);
@@ -19,7 +63,7 @@ https://bugs.launchpad.net/lightdm/+bug/790186
              if (language_en && strlen (language_en) > 0)
                  priv->name = g_strdup (dgettext ("iso_639_3", language_en));
  
-@@ -291,10 +297,16 @@ lightdm_language_get_territory (LightDML
+@@ -270,10 +276,16 @@ lightdm_language_get_territory (LightDMLanguage *langu
          if (locale)
          {
              gchar *current = setlocale (LC_ALL, NULL);
