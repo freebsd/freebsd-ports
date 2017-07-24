@@ -3,7 +3,7 @@
 
 PORTNAME=	ccache
 PORTVERSION=	3.3.4
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	devel
 MASTER_SITES=	http://www.samba.org/ftp/ccache/ \
 		LOCAL/bdrewery
@@ -61,6 +61,8 @@ MEMCACHED_IGNORE=		MEMCACHED cannot be combined with WITH_CCACHE_BUILD.  Use dev
 NO_CCACHE_DEPEND=	yes
 
 OPTIONS_SUB=	yes
+
+STATIC_LDFLAGS=	-static
 
 .include <bsd.port.pre.mk>
 
