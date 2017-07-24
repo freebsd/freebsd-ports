@@ -1,0 +1,21 @@
+#!/sbin/openrc-run
+
+name="nserve"
+
+: ${nserve_user:=www}
+: ${nserve_group:=www}
+
+pidfile="/var/run/${name}.pid"
+supervisor=supervise-daemon
+command="%%PREFIX%%/bin/nserve"
+command_user=${nserve_user}
+
+start_pre() {
+    /usr/bin/install -o ${nserve_user} -g ${nserve_group} -m 644 /dev/null ${pidfile}
+}
+
+depend() {
+	need localmount
+	keyword -shutdown
+	after bootmisc
+}

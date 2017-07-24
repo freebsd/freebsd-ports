@@ -1,0 +1,38 @@
+#!/sbin/openrc-run
+
+name=stafproc
+
+: ${stafproc_config:="%%PREFIX%%/etc/STAF.cfg"}
+: ${stafproc_user:="root"}
+: ${stafproc_group:="wheel"}
+: ${stafproc_log:="/var/log/stafproc.log"}
+
+required_files="${stafproc_config}"
+pidfile="/var/run/${name}/${name}.pid"
+command="%%PREFIX%%/bin/STAFProc"
+supervisor=supervise-daemon
+command_args="${stafproc_config} >> ${stafproc_log} 2>&1"
+
+start_pre()
+{
+	if [ ! -d $(dirname ${pidfile}) ]; then
+		mkdir $(dirname ${pidfile})
+		chown ${stafproc_user}:${stafproc_group} $(dirname ${pidfile})
+	fi
+
+	if [ ! -d %%STAF_VAR_DIR%% ]; then
+		mkdir -p %%STAF_VAR_DIR%%
+		chown ${stafproc_user}:${stafproc_group} %%STAF_VAR_DIR%%
+	fi
+
+	if [ ! -f ${stafproc_log} ]; then
+		install -o ${stafproc_user} -g ${stafproc_group} -m 640 /dev/null ${stafproc_log}
+	fi
+	env PATH=$PATH:%%PREFIX%%/bin > /dev/null
+}
+
+depend() {
+	need localmount
+	keyword -shutdown
+	after bootmisc
+}

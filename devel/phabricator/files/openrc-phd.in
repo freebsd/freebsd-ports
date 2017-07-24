@@ -1,0 +1,40 @@
+#!/sbin/openrc-run
+
+# Add the following line to /etc/rc.conf to enable phabricator daemons:
+# phd_fib (str):	Set an altered default network view for phd
+# phd_user (str):	User to run phabricator daemons as
+
+name="phd"
+
+: ${phd_user="www"}
+
+command="%%PREFIX%%/lib/php/phabricator/bin/phd"
+command_args=start
+
+extra_commands="launch list log"
+required_files="%%PREFIX%%/lib/php/phabricator/conf/local/local.json"
+PATH="${PATH}:%%PREFIX%%/bin"
+
+stop_pre() {
+	${command} stop
+}
+
+status() {
+	${command} status
+}
+
+launch() {
+	${command} launch
+}
+
+list() {
+	${command} list 
+}
+
+log() {
+	${command} log
+}
+
+depend() {
+	keyword -shutdown
+}

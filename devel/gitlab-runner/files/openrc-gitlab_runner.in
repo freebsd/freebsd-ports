@@ -1,0 +1,54 @@
+#!/sbin/openrc-run
+
+# Add the following line to /etc/rc.conf to enable gitlab_runner:
+#
+# gitlab_runner_dir (str):      Set to "/var/tmp/gitlab_runner" by default.
+#                               Set it to directory to run gitlab-runner in
+# gitlab_runner_user (str):     Set to "gitlab-runner" by default.
+#                               Set it to user to run gitlab_runner under
+# gitlab_runner_group (str):    Set to "gitlab-runner" by default.
+#                               Set it to group to run gitlab-runner under
+
+name="gitlab_runner"
+
+: ${gitlab_runner_dir:="/var/tmp/gitlab_runner"}
+: ${gitlab_runner_user:="gitlab-runner"}
+: ${gitlab_runner_group:="gitlab-runner"}
+
+export HOME=${gitlab_runner_dir}
+export PATH=${PATH}:%%PREFIX%%/bin
+
+pidfile="/var/run/${name}.pid"
+command="/usr/sbin/daemon"
+command_args="-f -p ${pidfile} %%PREFIX%%/bin/gitlab-runner run"
+command_user=${gitlab_runner_user}
+gitlab_runner_chdir="${gitlab_runner_dir}"
+extra_commands="list register"
+procname=%%PREFIX%%/bin/gitlab-runner
+
+list()
+{
+        su -m ${gitlab_runner_user} -c "env HOME=${gitlab_runner_dir} %%PREFIX%%/bin/gitlab-runner list"
+}
+
+register()
+{
+        su -m ${gitlab_runner_user} -c "env HOME=${gitlab_runner_dir} %%PREFIX%%/bin/gitlab-runner register"
+}
+
+start_pre()
+{
+        if [ ! -e "${pidfile}" ]; then
+                install -g ${gitlab_runner_group} -o ${gitlab_runner_user} -- /dev/null "${pidfile}";
+        fi
+        if [ ! -d "${gitlab_runner_dir}" ]; then
+                install -d -o "${gitlab_runner_user}" -g "${gitlab_runner_group}" "${gitlab_runner_dir}"
+        fi
+}
+
+depend() {
+	need localmount
+	use net
+	keyword -shutdown
+	after bootmisc
+}

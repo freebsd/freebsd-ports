@@ -1,0 +1,22 @@
+#!/sbin/openrc-run
+# Bitten continuous integration build slave
+
+name=bitten_slave
+logfile=/var/log/bitten-slave.log
+conffile=%%ETCDIR%%/bitten-slave.conf
+workdir=/var/lib/bitten-slave
+
+command=%%PREFIX%%/bin/bitten-slave
+command_args="-f ${conffile} -d ${workdir} --log=${logfile} ${bitten_slave_urls}"
+bitten_slave_user=%%USERS%%
+pidfile=/var/lib/bitten-slave/bitten-slave.pid
+supervisor=supervise-daemon
+command_user=${bitten_slave_user}
+
+start_pre() {
+    %%TOUCH%% $logfile && %%CHOWN%% ${bitten_slave_user} $logfile
+}
+
+depend() {
+	keyword -shutdown
+}

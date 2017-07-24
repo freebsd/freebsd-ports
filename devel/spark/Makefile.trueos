@@ -1,0 +1,1 @@
+USE_OPENRC_SUBR=	openrc-spark_master openrc-spark_worker

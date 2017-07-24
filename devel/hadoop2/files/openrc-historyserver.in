@@ -1,0 +1,18 @@
+#!/bin/sh
+
+export PATH=${PATH}:%%LOCALBASE%%/bin
+name=historyserver
+
+: ${historyserver_user:=%%MAPRED_USER%%}
+
+command="%%PREFIX%%/sbin/mr-jobhistory-daemon.sh"
+command_args='--config %%ETCDIR%% start historyserver'
+command_user=${historyserver_user}
+
+stop_pre() {
+  su -m ${historyserver_user} -c "${command} --config %%ETCDIR%% stop historyserver"
+}
+
+depend() {
+	keyword -shutdown
+}

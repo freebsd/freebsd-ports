@@ -1,0 +1,15 @@
+#!/sbin/openrc-run
+
+export PATH=${PATH}:%%LOCALBASE%%/bin
+name=metastore
+pidfile=%%HIVE_RUNDIR%%/${name}.pid
+command="%%PREFIX%%/hive/bin/hive"
+
+start() {
+  su -m %%HIVE_USER%% -c "HADOOP_OPTS=\"-Dhive.log.dir=%%HIVE_LOGDIR%% -Dhive.log.file=metastore.log -Dhive.log.threshold=INFO\" $command --service ${name} > %%HIVE_LOGDIR%%/$name.out 2>&1 < /dev/null & "' echo $! '"> $pidfile"
+}
+
+depend() {
+	provide metastore
+	keyword -shutdown
+}

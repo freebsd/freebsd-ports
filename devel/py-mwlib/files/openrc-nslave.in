@@ -1,0 +1,21 @@
+#!/sbin/openrc-run
+
+name="nslave"
+
+: ${nslave_user:=www}
+: ${nslave_group:=www}
+
+pidfile="/var/run/${name}.pid"
+supervisor=supervise-daemon
+command="%%PREFIX%%/bin/nslave"
+command_user=${nslave_user}
+
+start_pre() {
+    /usr/bin/install -o ${nslave_user} -g ${nslave_group} -m 644 /dev/null ${pidfile}
+}
+
+depend() {
+	need localmount
+	keyword -shutdown
+	after bootmisc
+}

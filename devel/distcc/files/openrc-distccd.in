@@ -1,0 +1,34 @@
+#!/sbin/openrc-run
+
+# Add the following lines to /etc/rc.conf to enable distccd:
+#
+# distccd_flags (str):		Arguments passed to distccd.
+# distccd_path (str):		DISTCCD_PATH environment value for distccd..
+
+distccd_flags=${distccd_flags-"-a 127.0.0.0/8 --user distcc --daemon -P %%DISTCCD_PIDFILE%%"}
+
+name=distccd
+
+command=%%PREFIX%%/sbin/${name}
+command_args=${distccd_flags}
+# extract pid file from distccd_flags (if any)
+pidfile="`echo ${distccd_flags} |sed -nE -e 's/^.*-P ([^ ]+).*$/\1/p'`"
+# set default value
+pidfile=${pidfile:-%%DISTCCD_PIDFILE%%}
+
+start_pre()
+{
+	# distccd drops root privileges and then attempts to create the pid file
+	touch ${pidfile}
+	chown distcc:distcc ${pidfile}
+
+	if [ -n "${distccd_path}" ]
+	then
+		export DISTCCD_PATH="${distccd_path}"
+	fi
+}
+
+depend() {
+	use net
+	keyword -shutdown
+}

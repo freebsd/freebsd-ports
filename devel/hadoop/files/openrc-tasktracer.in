@@ -1,0 +1,48 @@
+#!/sbin/openrc-run
+#
+# Add the following lines to /etc/rc.conf to enable this service:
+#
+# tasktracker_user (str):        Set to %%MAPRED_USER%% by default.
+#                                Set to a valid user to change default 
+#                                tasktracker user.
+# tasktracker_java_home (str):	 Unset by default.
+#                                Switch to another JVM.
+#
+# tasktracker_log_dir (str):	 Unset by default.
+# tasktracker_pid_dir (str):	 Unset by default.
+
+name=tasktracker
+
+: ${tasktracker_user:=%%MAPRED_USER%%}
+: ${tasktracker_group:=%%HADOOP_GROUP%%}
+
+command="%%DATADIR%%/bin/hadoop-daemon.sh"
+command_args='--config ${HADOOP_CONF_DIR} start tasktracker'
+command_user=${tasktracker_user}
+
+start_pre()
+{
+	if [ -n "${tasktracker_java_home}" ]
+	then
+		export JAVA_HOME="${tasktracker_java_home}"
+	fi
+
+	for f in %%ETCDIR%%/envvars.d/*.env
+	do
+		. ${f}
+	done
+}
+
+stop_pre()
+{
+	start_pre
+}
+
+stop()
+{
+	su -m ${tasktracker_user} -c "${command} --config ${HADOOP_CONF_DIR} stop tasktracker"
+}
+
+depend() {
+	keyword -shutdown
+}

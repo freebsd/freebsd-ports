@@ -1,0 +1,63 @@
+#!/sbin/openrc-run
+
+# Configuration settings for jenkins in /etc/rc.conf:
+#
+# jenkins_args (str):
+#   Extra arguments passed to start command
+#
+# jenkins_home (str)
+#   Set to "%%JENKINS_HOME%%" by default.
+#   Set the JENKINS_HOME variable for jenkins process
+#
+# jenkins_java_home (str):
+#   Set to "%%JAVA_HOME%%" by default.
+#   Set the Java virtual machine to run jenkins
+#
+# jenkins_java_opts (str):
+#   Set to "" by default.
+#   Java VM args to use.
+#
+# jenkins_user (str):
+#   Set to "%%JENKINS_USER%%" by default.
+#   User to run jenkins as.
+#
+# jenkins_group (str):
+#   Set to "%%JENKINS_GROUP%%" by default.
+#   Group for data file ownership.
+#
+# jenkins_log_file (str):
+#   Set to "%%JENKINS_LOG_FILE%%" by default.
+#   Log file location.
+
+name="jenkins"
+
+: ${jenkins_home="%%JENKINS_HOME%%"}
+: ${jenkins_args="--webroot=${jenkins_home}/war --httpPort=8180 --prefix=/jenkins"}
+: ${jenkins_java_home="%%JAVA_HOME%%"}
+: ${jenkins_user="%%JENKINS_USER%%"}
+: ${jenkins_group="%%JENKINS_GROUP%%"}
+: ${jenkins_log_file="%%JENKINS_LOG_FILE%%"}
+
+pidfile="/var/run/jenkins/jenkins.pid"
+command="${jenkins_java_home}/bin/java"
+command_args="-DJENKINS_HOME=${jenkins_home} ${jenkins_java_opts} -jar %%DATADIR%%/jenkins.war ${jenkins_args} >> ${jenkins_log_file} 2>&1"
+command_user=${jenkins_user}
+required_files="${command}"
+supervisor=supervise-daemon
+
+start_pre() {
+	if [ ! -f "${jenkins_log_file}" ]; then
+		touch "${jenkins_log_file}"
+		chown "${jenkins_user}:${jenkins_group}" "${jenkins_log_file}"
+		chmod 640 "${jenkins_log_file}"
+	fi
+	if [ ! -d "/var/run/jenkins" ]; then
+		install -d -o "${jenkins_user}" -g "${jenkins_group}" -m 750 "/var/run/jenkins"
+	fi
+}
+
+depend() {
+	need localmount
+	keyword -shutdown
+	after bootmisc
+}

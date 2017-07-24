@@ -1,0 +1,5 @@
+#!/sbin/openrc-run
+
+name="%%NAME%%"
+command="%%PREFIX%%/bin/gearmand"
+command_args="--daemon"

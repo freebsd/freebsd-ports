@@ -1,0 +1,45 @@
+#!/sbin/openrc-run
+#
+# Add the following lines to /etc/rc.conf to enable this service:
+#
+# datanode_user (str):           Set to %%HDFS_USER%% by default.
+#                                Set to a valid user to change default 
+#                                datanode user.
+# datanode_java_home (str):	 Unset by default.
+#                                Switch to another JVM.
+#
+# datanode_log_dir (str):	 Unset by default.
+# datanode_pid_dir (str):	 Unset by default.
+
+name=datanode
+
+: ${datanode_user:=%%HDFS_USER%%}
+: ${datanode_group:=%%HADOOP_GROUP%%}
+
+command="%%DATADIR%%/bin/hadoop-daemon.sh"
+command_args='--config ${HADOOP_CONF_DIR} start datanode'
+command_user=${datanode_user}
+
+start_pre() {
+	if [ -n "${datanode_java_home}" ]
+	then
+		export JAVA_HOME="${datanode_java_home}"
+	fi
+
+	for f in %%ETCDIR%%/envvars.d/*.env
+	do
+		. ${f}
+	done
+}
+
+stop_pre() {
+	start_pre
+}
+
+stop() {
+	su -m ${datanode_user} -c "${command} --config ${HADOOP_CONF_DIR} stop datanode"
+}
+
+depend() {
+	keyword -shutdown
+}

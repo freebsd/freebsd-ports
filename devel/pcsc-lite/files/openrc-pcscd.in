@@ -1,0 +1,4 @@
+#!/sbin/openrc-run
+
+name="pcscd"
+command="%%PREFIX%%/sbin/pcscd"

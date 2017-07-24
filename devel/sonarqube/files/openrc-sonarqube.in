@@ -1,0 +1,40 @@
+#!/sbin/openrc-run
+
+name="%%SQ_RC%%"
+command=%%SQ_RUN%%
+
+start_pre()
+{
+	if [ ! -f "%%SQ_LOG_DIR%%/%%SQ_LOG_FILE%%" ]; then
+		mkdir -p "%%SQ_LOG_DIR%%"
+		touch "%%SQ_LOG_DIR%%/%%SQ_LOG_FILE%%"
+		chown -R "%%SQ_USER%%:%%SQ_GROUP%%" "%%SQ_LOG_DIR%%"
+		chmod 755 "%%SQ_LOG_DIR%%"
+		chmod 640 "%%SQ_LOG_DIR%%/%%SQ_LOG_FILE%%"
+	fi
+	if [ ! -d "%%SQ_DB_DIR%%/data" ]; then
+		install -d -m 755 -o %%SQ_USER%% -g %%SQ_GROUP%% "%%SQ_DB_DIR%%/data"
+		install -d -m 755 -o %%SQ_USER%% -g %%SQ_GROUP%% "%%SQ_DB_DIR%%/temp"
+	fi
+}
+
+stop_pre()
+{
+	${command} stop
+}
+
+restart()
+{
+	${command} restart
+}
+
+status()
+{
+	${command} status
+}
+
+depend() {
+	need localmount
+	keyword -shutdown
+	after bootmisc
+}

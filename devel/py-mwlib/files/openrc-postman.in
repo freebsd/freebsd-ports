@@ -1,0 +1,21 @@
+#!/sbin/openrc-run
+
+name="postman"
+
+: ${postman_user:=www}
+: ${postman_group:=www}
+
+pidfile="/var/run/${name}.pid"
+supervisor=supervise-daemon
+command="%%PREFIX%%/bin/postman"
+command_user=${postman_user}
+
+start_pre() {
+    /usr/bin/install -o ${postman_user} -g ${postman_group} -m 644 /dev/null ${pidfile}
+}
+
+depend() {
+	need localmount
+	keyword -shutdown
+	after bootmisc
+}

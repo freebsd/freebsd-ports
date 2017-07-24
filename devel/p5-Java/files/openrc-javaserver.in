@@ -1,0 +1,26 @@
+#!/sbin/openrc-run
+
+# Add the following lines to /etc/rc.conf to enable javaserver:
+# javaserver_classpath (str):    Set to "" by default.
+#                              Define your classpath here.
+# javaserver_user (str):    Set to "nobody" by default.
+#                              Define owner of the javaserver process.
+
+name="javaserver"
+
+[ -z "$javaserver_classpath" ]	|| classpath="${javaserver_classpath}":$classpath
+[ -z "$javaserver_user" ]	&& javaserver_user="nobody"
+
+command="%%PREFIX%%/bin/java"
+pidfile="/var/run/${name}.pid"
+classpath="%%PREFIX%%"/share/p5-Java/JavaServer.jar
+command_user=${javaserver_user}
+
+start()
+{
+	su -m ${javaserver_user} -c "nohup %%PREFIX%%/bin/java -cp ${classpath} com.zzo.javaserver.JavaServer >/dev/null & ; echo \$! " | tail -1 > ${pidfile}
+}
+
+depend() {
+	keyword -shutdown
+}

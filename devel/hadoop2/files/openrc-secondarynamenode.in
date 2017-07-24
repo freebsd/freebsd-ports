@@ -1,0 +1,18 @@
+#!/sbin/openrc-run
+
+export PATH=${PATH}:%%LOCALBASE%%/bin
+name=secondarynamenode
+
+: ${secondarynamenode_user:=%%HDFS_USER%%}
+
+command="%%PREFIX%%/sbin/hadoop-daemon.sh"
+command_args='--config %%ETCDIR%% start secondarynamenode'
+command_user=${secondarynamenode_user}
+
+stop_pre() {
+  su -m ${secondarynamenode_user} -c "${command} --config %%ETCDIR%% stop secondarynamenode"
+}
+
+depend() {
+	keyword -shutdown
+}

@@ -1,0 +1,1 @@
+USE_OPENRC_SUBR=	openrc-historyserver openrc-nodemanager openrc-resourcemanager openrc-webappproxyserver openrc-datanode openrc-namenode openrc-secondarynamenode openrc-journalnode openrc-zkfc

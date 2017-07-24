@@ -1,0 +1,1 @@
+USE_OPENRC_SUBR=	openrc-tasktracker openrc-jobtracker openrc-datanode openrc-namenode openrc-secondarynamenode

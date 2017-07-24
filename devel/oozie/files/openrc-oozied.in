@@ -1,0 +1,16 @@
+#!/sbin/openrc-run
+
+export PATH=${PATH}:%%LOCALBASE%%/bin
+name=oozied
+pidfile=%%OOZIE_RUNDIR%%/${name}.pid
+command_user=%%OOZIE_USER%%
+command="%%PREFIX%%/oozie/bin/oozied.sh"
+command_args="start"
+
+stop_pre() {
+  ${command} stop
+}
+
+depend() {
+	keyword -shutdown
+}

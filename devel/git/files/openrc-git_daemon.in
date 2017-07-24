@@ -1,0 +1,17 @@
+#!/sbin/openrc-run
+
+name="git_daemon"
+
+: ${git_daemon_user:=git_daemon}
+: ${git_daemon_group:=git_daemon}
+: ${git_daemon_directory:=%%PREFIX%%/git}
+: ${git_daemon_flags:=--syslog --reuseaddr --detach}
+
+command="%%PREFIX%%/libexec/git-core/git-daemon"
+command_args="${git_daemon_directory} ${git_daemon_flags}"
+command_user=${git_daemon_user}
+PATH="${PATH}:%%PREFIX%%/libexec/git-core"
+
+depend() {
+	keyword -shutdown
+}

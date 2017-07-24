@@ -1,0 +1,32 @@
+#!/sbin/openrc-run
+#
+# svnserve.sh for rc.d usage (c) 2005 Thomas E. Spanjaard.
+# $Id$
+
+# Add the following line to /etc/rc.conf to enable SVNServe:
+#
+#  # optional
+#  svnserve_flags="-d --listen-port=3690 --listen-host 0.0.0.0"
+#  svnserve_data="/usr/local/repositories"
+#  svnserve_user="svn"
+#  svnserve_group="svn"
+#
+# Note:
+# svnserve bind per default at the ipv6 address!
+# If you want svnserve binding at ipv4 address, you have
+# to use option 'svnserve_flags' with --listen-host parameter
+
+# Set some defaults
+svnserve_flags=${svnserve_flags:-"-d --listen-port=3690 --listen-host 0.0.0.0"}
+svnserve_data=${svnserve_data:-"/home/svn/repos"}
+svnserve_user=${svnserve_user:-"svn"}
+svnserve_group=${svnserve_group:-"svn"}
+
+name=svnserve
+command=%%PREFIX%%/bin/svnserve%%SVNSERVE_BIN_EXT%%
+command_args="-r ${svnserve_data} ${svnserve_flags}"
+command_user=${svnserve_user}
+
+depend() {
+	keyword -shutdown
+}

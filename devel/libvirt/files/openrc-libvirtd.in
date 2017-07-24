@@ -1,0 +1,15 @@
+#!/sbin/openrc-run
+
+name=libvirtd
+
+command=%%PREFIX%%/sbin/libvirtd
+pidfile=/var/run/${name}.pid
+command_args="--daemon --pid-file=${pidfile}"
+supervisor=supervise-daemon
+
+PATH="${PATH}:/usr/local/sbin:/usr/local/bin"
+
+depend() {
+	need virtlogd
+	keyword -shutdown
+}

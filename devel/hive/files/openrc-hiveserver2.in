@@ -1,0 +1,17 @@
+#!/sbin/openrc-run
+
+export PATH=${PATH}:%%LOCALBASE%%/bin
+name=hiveserver2
+pidfile=%%HIVE_RUNDIR%%/${name}.pid
+
+command_user=%%HIVE_USER%%
+command="%%PREFIX%%/hive/bin/hive"
+
+start() {
+  su -m %%HIVE_USER%% -c "HADOOP_OPTS=\"-Dhive.log.dir=%%HIVE_LOGDIR%% -Dhive.log.file=hiveserver2.log -Dhive.log.threshold=INFO\" $command --service $name > %%HIVE_LOGDIR%%/$name.out 2>&1 < /dev/null & "' echo $! '"> $pidfile"
+}
+
+depend() {
+	need metastore
+	keyword -shutdown
+}

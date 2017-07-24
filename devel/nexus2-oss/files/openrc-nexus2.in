@@ -1,0 +1,20 @@
+#!/sbin/openrc-run
+
+name=nexus2
+description="%%DESC%%"
+
+nexus2_user=%%USER%%
+nexus2_group=%%GROUP%%
+
+pidfile=%%RUNDIR%%/%%NEXUS_RC%%.pid
+
+command=%%WRAPPER_CMD%%
+command_args="%%ETCDIR%%/wrapper.conf wrapper.syslog.ident=%%NEXUS_RC%% \
+  wrapper.pidfile=${pidfile} wrapper.lockfile=%%RUNDIR%%/%%NEXUS_RC%%.lock \
+  wrapper.java.pidfile=%%RUNDIR%%/%%NEXUS_RC%%.java.pid wrapper.daemonize=TRUE \
+  wrapper.name=%%NEXUS_RC%% wrapper.displayname=Nexus\ Repository\ Manager\ OSS"
+command_user=${nexus2_user}
+
+depend() {
+	keyword -shutdown
+}

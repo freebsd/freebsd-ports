@@ -1,0 +1,48 @@
+#!/sbin/openrc-run
+#
+# Add the following lines to /etc/rc.conf to enable this service:
+#
+# secondarynamenode_user (str):        Set to %%HDFS_USER%% by default.
+#                                Set to a valid user to change default 
+#                                secondarynamenode user.
+# secondarynamenode_java_home (str):	 Unset by default.
+#                                Switch to another JVM.
+#
+# secondarynamenode_log_dir (str):	 Unset by default.
+# secondarynamenode_pid_dir (str):	 Unset by default.
+
+name=secondarynamenode
+
+: ${secondarynamenode_user:=%%HDFS_USER%%}
+: ${secondarynamenode_group:=%%HADOOP_GROUP%%}
+
+command="%%DATADIR%%/bin/hadoop-daemon.sh"
+command_args='--config ${HADOOP_CONF_DIR} start secondarynamenode'
+command_user=${secondarynamenode_user}
+
+start_pre()
+{
+	if [ -n "${secondarynamenode_java_home}" ]
+	then
+		export JAVA_HOME="${secondarynamenode_java_home}"
+	fi
+
+	for f in %%ETCDIR%%/envvars.d/*.env
+	do
+		. ${f}
+	done
+}
+
+stop_pre()
+{
+	start_pre
+}
+
+stop()
+{
+	su -m ${secondarynamenode_user} -c "${command} --config ${HADOOP_CONF_DIR} stop secondarynamenode"
+}
+
+depend() {
+	keyword -shutdown
+}

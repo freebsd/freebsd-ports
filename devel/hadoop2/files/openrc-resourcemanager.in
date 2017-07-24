@@ -1,0 +1,23 @@
+#!/sbin/openrc-run
+
+export PATH=${PATH}:%%LOCALBASE%%/bin
+name=resourcemanager
+
+: ${resourcemanager_user:=%%MAPRED_USER%%}
+
+command="%%PREFIX%%/sbin/yarn-daemon.sh"
+command_interpreter_execution="%%JAVA_HOME%%/bin/java"
+command_args='--config %%ETCDIR%% start resourcemanager'
+command_user=${resourcemanager_user}
+
+stop_pre() {
+  su -m ${resourcemanager_user} -c "${command} --config %%ETCDIR%% stop resourcemanager"
+}
+
+status_pre() {
+  rc_pid=$(check_pidfile $pidfile $command_interpreter_execution)
+}
+
+depend() {
+	keyword -shutdown
+}

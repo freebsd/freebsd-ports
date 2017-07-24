@@ -1,0 +1,22 @@
+#!/sbin/openrc-run
+
+name="mwqserve"
+
+: ${mwqserve_user:=www}
+: ${mwqserve_group:=www}
+
+pidfile="/var/run/${name}.pid"
+supervisor=supervise-daemon
+command_args="${mwqserve_args}"
+command="%%PREFIX%%/bin/mw-qserve"
+command_user=${mwqserve_user}
+
+start_pre() {
+    /usr/bin/install -o ${mwqserve_user} -g ${mwqserve_group} -m 644 /dev/null ${pidfile}
+}
+
+depend() {
+	need localmount
+	keyword -shutdown
+	after bootmisc
+}

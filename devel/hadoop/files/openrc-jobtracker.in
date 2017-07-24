@@ -1,0 +1,48 @@
+#!/sbin/openrc-run
+#
+# Add the following lines to /etc/rc.conf to enable this service:
+#
+# jobtracker_user (str):         Set to %%MAPRED_USER%% by default.
+#                                Set to a valid user to change default 
+#                                jobtracker user.
+# jobtracker_java_home (str):	 Unset by default.
+#                                Switch to another JVM.
+#
+# jobtracker_log_dir (str):	 Unset by default.
+# jobtracker_pid_dir (str):	 Unset by default.
+
+name=jobtracker
+
+: ${jobtracker_user:=%%MAPRED_USER%%}
+: ${jobtracker_group:=%%HADOOP_GROUP%%}
+
+command="%%DATADIR%%/bin/hadoop-daemon.sh"
+command_args='--config ${HADOOP_CONF_DIR} start jobtracker'
+command_user=${jobtracker_user}
+
+start_pre()
+{
+	if [ -n "${jobtracker_java_home}" ]
+	then
+		export JAVA_HOME="${jobtracker_java_home}"
+	fi
+
+	for f in %%ETCDIR%%/envvars.d/*.env
+	do
+		. ${f}
+	done
+}
+
+stop_pre()
+{
+	start_pre
+}
+
+stop()
+{
+	su -m ${jobtracker_user} -c "${command} --config ${HADOOP_CONF_DIR} stop jobtracker"
+}
+
+depend() {
+	keyword -shutdown
+}

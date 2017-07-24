@@ -1,0 +1,18 @@
+#!/sbin/openrc-run
+
+export PATH=${PATH}:%%LOCALBASE%%/bin
+name=webappproxyserver
+
+: ${webappproxyserver_user:=%%MAPRED_USER%%}
+
+command="%%PREFIX%%/sbin/yarn-daemon.sh"
+command_args='--config %%ETCDIR%% start proxyserver'
+command_user=${webappproxyserver_user}
+
+stop_pre() {
+  su -m ${webappproxyserver_user} -c "${command} --config %%ETCDIR%% stop proxyserver"
+}
+
+depend() {
+	keyword -shutdown
+}
