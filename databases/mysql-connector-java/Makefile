@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mysql-connector-java
-PORTVERSION=	5.1.42
+PORTVERSION=	5.1.43
 CATEGORIES=	databases java
 MASTER_SITES=	MYSQL/Connector-J
 
@@ -28,7 +28,7 @@ APIDOCSDIR=	${STAGEDIR}${DOCSDIR}/javadoc
 SRCDIR=		${WRKDIR}/${DISTNAME}/src
 JAVADOCDIR=	${WRKDIR}/${DISTNAME}/javadoc
 DESTJARFILE=	${PORTNAME}.jar
-EXTRADOCS=	CHANGES docs/connector-j.html docs/connector-j.pdf
+EXTRADOCS=	CHANGES
 JARFILE=	${DISTNAME}-bin.jar
 JDCLASSPATH=	${SRCDIR}:${CLASSPATH}
 
