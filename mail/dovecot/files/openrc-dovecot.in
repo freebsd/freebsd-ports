@@ -25,7 +25,7 @@ for config in ${dovecot_config}; do
 	base_dir=$(${command} ${command_args} -a | /usr/bin/awk -F ': ' '/^base_dir:/ { print $2 }')
 	login_dir=$(${command} ${command_args} -a | /usr/bin/awk -F ': ' '/^login_dir:/ { print $2 }')
 	pidfile="${base_dir}/master.pid"
-	run_rc_command "$1"
+	start-stop-daemon --pidfile $pidfile --name $name --exec $command $command_args
 done
 
 depend()
