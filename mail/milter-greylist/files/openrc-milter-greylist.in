@@ -14,8 +14,3 @@ miltergreylist_flags=${miltergreylist_flags-"-P $miltergreylist_pidfile \
 command_args=miltergreylist_flags
 command_user=mailnull
 command_group=mailnull
-
-depend()
-{
-	keyword -milter-greylist
-}
