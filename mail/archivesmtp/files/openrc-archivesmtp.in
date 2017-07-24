@@ -10,7 +10,7 @@ command="%%PREFIX%%/sbin/${name}"
 : ${archivesmtp_pidfile="%%SOCKETBASE%%/%%SOCKETDIR%%/run.pid"}
 # archivesmtp_flags= May be used to set optional behaviours.
 
-command_user=nobody
+command_user=${archivemtp_chuser}
 
 pidfile="${archivesmtp_pidfile}"
 
