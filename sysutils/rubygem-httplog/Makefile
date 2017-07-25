@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	httplog
-PORTVERSION=	0.99.6
+PORTVERSION=	0.99.7
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
@@ -16,7 +16,7 @@ RUN_DEPENDS=	rubygem-colorize>=0:devel/rubygem-colorize \
 
 NO_ARCH=	yes
 
-USE_RUBY=	yes
 USES=		gem
+USE_RUBY=	yes
 
 .include <bsd.port.mk>
