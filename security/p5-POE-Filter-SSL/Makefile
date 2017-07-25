@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	POE-Filter-SSL
-PORTVERSION=	0.32
+PORTVERSION=	0.33
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -13,9 +13,9 @@ COMMENT=	Esiest and flexiblest way to SSL in POEIntegrate SSL into POE
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Net-SSLeay>=0:security/p5-Net-SSLeay \
-		p5-POE>=0:devel/p5-POE \
-		p5-libwww>=0:www/p5-libwww
+BUILD_DEPENDS=	p5-HTTP-Message>=0:www/p5-HTTP-Message \
+		p5-Net-SSLeay>=1.65:security/p5-Net-SSLeay \
+		p5-POE>=0:devel/p5-POE
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PORTSCOUT=	skipv:0.291
