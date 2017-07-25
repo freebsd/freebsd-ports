@@ -65,6 +65,9 @@ share/fusioninventory/lib/FusionInventory/Agent/Task/Deploy/CheckProcessor/FreeS
 share/fusioninventory/lib/FusionInventory/Agent/Task/Deploy/CheckProcessor/WinKeyEquals.pm
 share/fusioninventory/lib/FusionInventory/Agent/Task/Deploy/CheckProcessor/WinKeyExists.pm
 share/fusioninventory/lib/FusionInventory/Agent/Task/Deploy/CheckProcessor/WinKeyMissing.pm
+share/fusioninventory/lib/FusionInventory/Agent/Task/Deploy/CheckProcessor/WinValueExists.pm
+share/fusioninventory/lib/FusionInventory/Agent/Task/Deploy/CheckProcessor/WinValueMissing.pm
+share/fusioninventory/lib/FusionInventory/Agent/Task/Deploy/CheckProcessor/WinValueType.pm
 share/fusioninventory/lib/FusionInventory/Agent/Task/Deploy/Datastore.pm
 share/fusioninventory/lib/FusionInventory/Agent/Task/Deploy/Datastore/WorkDir.pm
 share/fusioninventory/lib/FusionInventory/Agent/Task/Deploy/DiskFree.pm
@@ -112,6 +115,9 @@ share/fusioninventory/lib/FusionInventory/Agent/Task/Inventory/Generic/Dmidecode
 share/fusioninventory/lib/FusionInventory/Agent/Task/Inventory/Generic/Dmidecode/Slots.pm
 share/fusioninventory/lib/FusionInventory/Agent/Task/Inventory/Generic/Domains.pm
 share/fusioninventory/lib/FusionInventory/Agent/Task/Inventory/Generic/Environment.pm
+share/fusioninventory/lib/FusionInventory/Agent/Task/Inventory/Generic/Firewall.pm
+share/fusioninventory/lib/FusionInventory/Agent/Task/Inventory/Generic/Firewall/Systemd.pm
+share/fusioninventory/lib/FusionInventory/Agent/Task/Inventory/Generic/Firewall/Ufw.pm
 share/fusioninventory/lib/FusionInventory/Agent/Task/Inventory/Generic/Hostname.pm
 share/fusioninventory/lib/FusionInventory/Agent/Task/Inventory/Generic/Ipmi.pm
 share/fusioninventory/lib/FusionInventory/Agent/Task/Inventory/Generic/Networks.pm
@@ -154,6 +160,7 @@ share/fusioninventory/lib/FusionInventory/Agent/Task/Inventory/HPUX/Storages.pm
 share/fusioninventory/lib/FusionInventory/Agent/Task/Inventory/HPUX/Uptime.pm
 share/fusioninventory/lib/FusionInventory/Agent/Task/Inventory/Linux.pm
 share/fusioninventory/lib/FusionInventory/Agent/Task/Inventory/Linux/ARM.pm
+share/fusioninventory/lib/FusionInventory/Agent/Task/Inventory/Linux/ARM/Board.pm
 share/fusioninventory/lib/FusionInventory/Agent/Task/Inventory/Linux/ARM/CPU.pm
 share/fusioninventory/lib/FusionInventory/Agent/Task/Inventory/Linux/Alpha.pm
 share/fusioninventory/lib/FusionInventory/Agent/Task/Inventory/Linux/Alpha/CPU.pm
@@ -190,6 +197,7 @@ share/fusioninventory/lib/FusionInventory/Agent/Task/Inventory/MacOS/Batteries.p
 share/fusioninventory/lib/FusionInventory/Agent/Task/Inventory/MacOS/Bios.pm
 share/fusioninventory/lib/FusionInventory/Agent/Task/Inventory/MacOS/CPU.pm
 share/fusioninventory/lib/FusionInventory/Agent/Task/Inventory/MacOS/Drives.pm
+share/fusioninventory/lib/FusionInventory/Agent/Task/Inventory/MacOS/Firewall.pm
 share/fusioninventory/lib/FusionInventory/Agent/Task/Inventory/MacOS/Hostname.pm
 share/fusioninventory/lib/FusionInventory/Agent/Task/Inventory/MacOS/License.pm
 share/fusioninventory/lib/FusionInventory/Agent/Task/Inventory/MacOS/Memory.pm
@@ -240,6 +248,7 @@ share/fusioninventory/lib/FusionInventory/Agent/Task/Inventory/Win32/Chassis.pm
 share/fusioninventory/lib/FusionInventory/Agent/Task/Inventory/Win32/Controllers.pm
 share/fusioninventory/lib/FusionInventory/Agent/Task/Inventory/Win32/Drives.pm
 share/fusioninventory/lib/FusionInventory/Agent/Task/Inventory/Win32/Environment.pm
+share/fusioninventory/lib/FusionInventory/Agent/Task/Inventory/Win32/Firewall.pm
 share/fusioninventory/lib/FusionInventory/Agent/Task/Inventory/Win32/Inputs.pm
 share/fusioninventory/lib/FusionInventory/Agent/Task/Inventory/Win32/License.pm
 share/fusioninventory/lib/FusionInventory/Agent/Task/Inventory/Win32/Memory.pm
@@ -265,11 +274,13 @@ share/fusioninventory/lib/FusionInventory/Agent/Task/WakeOnLan/Version.pm
 share/fusioninventory/lib/FusionInventory/Agent/Tools.pm
 share/fusioninventory/lib/FusionInventory/Agent/Tools/AIX.pm
 share/fusioninventory/lib/FusionInventory/Agent/Tools/BSD.pm
+share/fusioninventory/lib/FusionInventory/Agent/Tools/Constants.pm
 share/fusioninventory/lib/FusionInventory/Agent/Tools/Generic.pm
 share/fusioninventory/lib/FusionInventory/Agent/Tools/HPUX.pm
 share/fusioninventory/lib/FusionInventory/Agent/Tools/Hardware.pm
 share/fusioninventory/lib/FusionInventory/Agent/Tools/Hardware/Apc.pm
 share/fusioninventory/lib/FusionInventory/Agent/Tools/Hardware/Brocade.pm
+share/fusioninventory/lib/FusionInventory/Agent/Tools/Hardware/Juniper.pm
 share/fusioninventory/lib/FusionInventory/Agent/Tools/Hardware/Qlogic.pm
 share/fusioninventory/lib/FusionInventory/Agent/Tools/Hostname.pm
 share/fusioninventory/lib/FusionInventory/Agent/Tools/License.pm
@@ -283,7 +294,9 @@ share/fusioninventory/lib/FusionInventory/Agent/Tools/Screen/Philips.pm
 share/fusioninventory/lib/FusionInventory/Agent/Tools/Screen/Samsung.pm
 share/fusioninventory/lib/FusionInventory/Agent/Tools/Solaris.pm
 share/fusioninventory/lib/FusionInventory/Agent/Tools/Unix.pm
+share/fusioninventory/lib/FusionInventory/Agent/Tools/Virtualization.pm
 share/fusioninventory/lib/FusionInventory/Agent/Tools/Win32.pm
+share/fusioninventory/lib/FusionInventory/Agent/Tools/Win32/Constants.pm
 share/fusioninventory/lib/FusionInventory/Agent/Version.pm
 share/fusioninventory/lib/FusionInventory/Agent/XML/Query.pm
 share/fusioninventory/lib/FusionInventory/Agent/XML/Query/Inventory.pm
