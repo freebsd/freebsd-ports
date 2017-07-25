@@ -1,33 +1,33 @@
-# Created by: Herve Quiroz <hq@FreeBSD.org>
+# Created by: JonathanChen <jonc@chen.org.nz>
 # $FreeBSD$
 
-PORTNAME=	maven3
-DISTVERSION=	3.0.5
+PORTNAME=	maven
+DISTVERSION=	3.5.0
 CATEGORIES=	devel java
-MASTER_SITES=	APACHE/maven/binaries
+MASTER_SITES=	APACHE/maven/maven-3/${DISTVERSION}/binaries
 DISTNAME=	apache-maven-${DISTVERSION}-bin
 
-MAINTAINER=	wombat@marsupial.org
-COMMENT=	Java project management tool, 3.x branch
+MAINTAINER=	jonc@chen.org.nz
+COMMENT=	Java project management tool
 
 LICENSE=	APACHE20
 
 RUN_DEPENDS=	mvn:devel/maven-wrapper
 
-CONFLICTS_INSTALL=	maven-* maven33-* maven31-*
+CONFLICTS_INSTALL=	maven3-* maven31-* maven33-*
 
 USES=		cpe
 CPE_PRODUCT=	maven
 CPE_VENDOR=	apache
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.6+
+JAVA_VERSION=	1.7+
 NO_BUILD=	yes
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 WRKSRC=		${WRKDIR}/apache-maven-${DISTVERSION}
 SUB_FILES=	mvn.sh
-SUB_LIST=	CLASSWORLDS_JAR=plexus-classworlds-2.4.jar
-INSTANCE_FILE=	030005-${PORTNAME}-${PORTVERSION}
+SUB_LIST=	CLASSWORLDS_JAR=plexus-classworlds-2.5.2.jar
+INSTANCE_FILE=	${PORTNAME}-${PORTVERSION}
 INSTANCES_DIR=	etc/maven-wrapper/instances.d/
 
 post-extract:
