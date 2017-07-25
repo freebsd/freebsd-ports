@@ -1,0 +1,15 @@
+#!/sbin/openrc-run
+
+name=couriergraph
+
+command=%%PREFIX%%/sbin/couriergraph.pl
+command_args='> /dev/null 2>&1'
+
+couriergraph_pidfile=${couriergraph_pidfile:-"%%DATADIR%%/couriergraph.pid"}
+couriergraph_flags=${couriergraph_flags:-"--logfile /var/log/maillog --daemon-rrd=%%DATADIR%% --daemon --daemon-pid=${couriergraph_pidfile}"}
+couriergraph_user=${couriergraph_user:-"%%COURIERGRAPH_USER%%"}
+couriergraph_group=${couriergraph_group:-"%%COURIERGRAPH_GROUP%%"}
+couriergraph_chdir=${couriergraph_chdir:-"%%DATADIR%%"}
+command_user=%%COURIERGRAPH_USER%%
+
+pidfile=${couriergraph_pidfile}

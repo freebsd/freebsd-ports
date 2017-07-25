@@ -1,0 +1,1 @@
+USE_OPENRC_SUBR=	openrc-courier-imap openrc-courier-imap-pop3d openrc-courier-imap-ssl openrc-courier-imap-pop3d-ssl

@@ -1,0 +1,16 @@
+#!/sbin/openrc-run
+
+name="miltergreylist"
+
+command="%%PREFIX%%/libexec/milter-greylist"
+
+miltergreylist_runas=${miltergreylist_runas-"mailnull:mailnull"}
+miltergreylist_pidfile=${miltergreylist_pidfile-"/var/run/milter-greylist.pid"}
+miltergreylist_sockfile=${miltergreylist_sockfile-"/var/milter-greylist/milter-greylist.sock"}
+miltergreylist_cfgfile=${miltergreylist_cfgfile-"%%PREFIX%%/etc/mail/greylist.conf"}
+miltergreylist_flags=${miltergreylist_flags-"-P $miltergreylist_pidfile \
+-f $miltergreylist_cfgfile -p $miltergreylist_sockfile -u $miltergreylist_runas"}
+
+command_args=miltergreylist_flags
+command_user=mailnull
+command_group=mailnull

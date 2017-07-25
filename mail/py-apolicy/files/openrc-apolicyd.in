@@ -1,0 +1,14 @@
+#!/sbin/openrc-run
+
+name="apolicyd"
+command="%%PREFIX%%/bin/twistd"
+pidfile="/var/run/apolicyd.pid"
+logfile="/var/log/apolicyd.log"
+
+command_args="--pidfile=${pidfile} -y %%PYTHON_SITELIBDIR%%/apolicy/server.py -q --logfile=${logfile} 2>&1 >/dev/null"
+procname="%%PYTHON_CMD%%"
+
+depend()
+{
+	keyword -shutdown
+}
