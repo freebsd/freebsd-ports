@@ -1,0 +1,14 @@
+#!/sbin/openrc-run
+
+name="policyd_weight"
+command="%%PREFIX%%/bin/policyd-weight"
+pidfile=/var/run/policyd-weight.pid
+command_args=start
+
+stop_pre() {
+    %%PREFIX%%/bin/policyd-weight -k stop
+}
+
+depend() {
+	keyword -shutdown
+}

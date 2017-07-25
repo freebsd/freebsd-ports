@@ -1,0 +1,9 @@
+#!/sbin/openrc-run
+
+name="rspamd_redirector"
+pidfile=${rspamd_redirector_pidfile:-"/var/run/rspamd/redirector.pid"}
+command="%%PREFIX%%/bin/rspamd-redirector"
+
+depend() {
+	keyword -shutdown
+}

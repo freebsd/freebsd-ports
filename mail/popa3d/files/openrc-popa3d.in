@@ -1,0 +1,5 @@
+#!/sbin/openrc-run
+
+name="popa3d"
+command="%%PREFIX%%/libexec/${name}"
+command_args="-D"

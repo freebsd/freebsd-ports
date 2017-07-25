@@ -1,0 +1,25 @@
+#!/sbin/openrc-run
+
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# postfwd_config (path):
+#	Set to %%PREFIX%%/etc/postfwd.conf
+#	by default.
+
+name=postfwd
+
+: ${postfwd_flags="--shortlog --summary=600 --cache=600 --cache-rbl-timeout=3600 --cleanup-requests=1200 --cleanup-rbls=1800 --cleanup-rates=1200"}
+
+pidfile=${postfwd_pidfile:="/var/run/${name}.pid"}
+required_files=${postfwd_config:="%%PREFIX%%/etc/${name}.conf"}
+command=%%PREFIX%%/bin/${name}
+command_args="--daemon --file=${required_files} --pidfile=${pidfile} --interface=127.0.0.1 --port=10040 --user=nobody --group=nobody"
+
+stop() {
+	${command} -k --pidfile=${pidfile}
+}
+
+depend() {
+	keyword -shutdown
+}

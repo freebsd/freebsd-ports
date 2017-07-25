@@ -1,0 +1,38 @@
+#!/sbin/openrc-run
+
+# Add the following line to /etc/rc.conf to enable rspamd:
+#
+# rspamd_user (str):		Default to "nobody".
+#
+# rspamd_group (str):		Default to "nobody".
+#
+# rspamd_flags (str):		Default to "-c %%PREFIX%%/etc/rspamd.conf".
+
+name=rspamd
+
+: ${rspamd_user="nobody"}
+: ${rspamd_group="nobody"}
+: ${rspamd_flags="-c %%PREFIX%%/etc/rspamd/rspamd.conf"}
+
+pidfile=${rspamd_pidfile:-"/var/run/rspamd/rspamd.pid"}
+command=%%PREFIX%%/bin/rspamd
+command_adm=%%PREFIX%%/bin/rspamadm
+required_files=%%PREFIX%%/etc/rspamd/rspamd.conf
+command_args="-u ${rspamd_user} -g ${rspamd_group}"
+command_user=${rspamd_user}
+extra_commands="reload configtest reopenlog"
+
+configtest()
+{
+	einfo "Performing sanity check on rspamd configuration:"
+	eval ${command_adm} configtest ${rspamd_flags}
+}
+
+reopenlog()
+{
+	pkill -USR1 -F $pidfile
+}
+
+depend() {
+	keyword -shutdown
+}

@@ -1,0 +1,29 @@
+#!/sbin/openrc-run
+#
+# postfix_pidfile (path):	Set full path to master.pid.
+#				Default is "/var/spool/postfix/pid/master.pid".
+# postfix_procname (command):	Set command that start master. Used to verify if
+#				postfix is running.
+#				Default is "%%PREFIX%%/libexec/postfix/master".
+# postfix_flags (str):		Flags passed to postfix-script on startup.
+#				Default is "".
+
+name="postfix"
+
+: ${postfix_pidfile:="/var/spool/postfix/pid/master.pid"}
+: ${postfix_procname:="%%PREFIX%%/libexec/postfix/master"}
+
+command=%%PREFIX%%/sbin/postfix
+command_args="${postfix_flags} start"
+pidfile=${postfix_pidfile}
+procname=${postfix_procname}
+
+stop_pre() {
+	${command} ${postfix_flags} stop
+}
+
+depend() {
+	provide postfix mail
+	need dovecot
+	keyword -shutdown
+}

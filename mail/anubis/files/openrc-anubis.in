@@ -1,0 +1,17 @@
+#!/sbin/openrc-run
+#
+# Add the following lines to /etc/rc.conf to enable anubis:
+#
+# anubis_conf (file):	Set location of anubisrc.
+#			Default is "%%PREFIX%%/etc/anubisrc"
+
+name="anubis"
+: ${anubis_conf="%%PREFIX%%/etc/anubisrc"}
+
+required_files="${anubis_conf}"
+command="%%PREFIX%%/sbin/${name}"
+
+depend() {
+	need %%REQUIRE%%
+	keyword -shutdown
+}

@@ -1,0 +1,27 @@
+#!/sbin/openrc-run
+
+name=dkimproxy_in
+command=%%PREFIX%%/bin/dkimproxy.in
+required_files=%%PREFIX%%/etc/${name}.conf
+dkimproxy_in_user=%%DKIMPROXYUSER%%
+command_args="--conf_file=${required_files} --user=${dkimproxy_in_user} --daemonize"
+
+# dkimproxy_in/out return 0 even if startup failed
+start_post(){
+	pid=$( check_process ${command} ${command_interpreter} )
+	if [ -n "${pid}" ]; then
+		einfo "Starting ${name} done."
+		logger -t ${name} "Starting ${name}"
+	else
+		eerror "Starting ${name} failed."
+		logger -t ${name} "Starting ${name} failed"
+	fi
+}
+
+stop_post(){
+	logger -t ${name} "Stopped ${name}"
+}
+
+depend() {
+	keyword -shutdown
+}

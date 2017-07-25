@@ -1,0 +1,32 @@
+#!/sbin/openrc-run
+#
+# Before you enable dkimproxy.out you also have to 
+# - create your domainkey
+# - create domainkey records in DNS 
+# - configure %%PREFIX%%/etc/dkimproxy_out.conf
+
+name=dkimproxy_out
+command=%%PREFIX%%/bin/dkimproxy.out
+required_files=%%PREFIX%%/etc/${name}.conf
+dkimproxy_out_user=%%DKIMPROXYUSER%%
+command_args="--conf_file=${required_files} --user=${dkimproxy_out_user} --daemonize"
+
+# dkimproxy_in/out return 0 even if startup failed
+start_post(){
+	pid=$( check_process ${command} ${command_interpreter} )
+	if [ -n "${pid}" ]; then
+		einfo "Starting ${name} done."
+		logger -t ${name} "Starting ${name}"
+	else
+		eerror "Starting ${name} failed."
+		logger -t ${name} "Starting ${name} failed"
+	fi
+}
+
+stop_post(){
+	logger -t ${name} "Stopped ${name}"
+}
+
+depend() {
+	keyword -shutdown
+}

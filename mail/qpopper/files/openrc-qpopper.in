@@ -1,0 +1,12 @@
+#!/sbin/openrc-run
+# qpopper_flags (str):		Set to "-f %%PREFIX%%/etc/qpopper.config" by default.
+
+name=qpopper
+: ${qpopper_flags:="110 -S -f %%PREFIX%%/etc/${name}.config"}
+
+command="%%PREFIX%%/libexec/${name}"
+command_args=${qpopper_flags}
+
+depend() {
+	keyword -shutdown
+}

@@ -1,0 +1,15 @@
+#!/sbin/openrc-run
+
+name=postfix_policyd_sf
+command=%%PREFIX%%/sbin/%%REALNAME%%
+
+# set defaults
+postfix_policyd_sf_pidfile=${postfix_policyd_sf_pidfile:-"/var/run/%%REALNAME%%.pid"}
+postfix_policyd_sf_flags=${postfix_policyd_sf_flags:-"-c %%PREFIX%%/etc/%%REALNAME%%.conf"}
+
+pidfile="${postfix_policyd_sf_pidfile}"
+
+depend() {
+	need mysql
+	keyword -shutdown
+}

@@ -1,0 +1,20 @@
+#!/sbin/openrc-run
+
+name=sqlgrey
+command=%%PREFIX%%/sbin/sqlgrey
+required_files=${sqlgrey_config-"%%ETCDIR%%/sqlgrey.conf"}
+pidfile=${sqlgrey_pidfile-"/var/run/sqlgrey.pid"}
+command_args="--configfile=${required_files} --pidfile=${pidfile} --daemonize"
+
+start_pre()
+{
+	if [ ! -d %%DATADIR%% ]; then
+		install -d -o %%USERS%% -g %%GROUPS%% -m 2775 %%DATADIR%%
+	fi
+}
+
+depend() {
+	need localmount
+	keyword -shutdown
+	after bootmisc
+}

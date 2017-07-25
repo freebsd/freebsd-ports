@@ -1,0 +1,8 @@
+#!/sbin/openrc-run
+
+name=pop3proxyd
+command=%%PREFIX%%/sbin/pop3proxyd
+
+depend() {
+	keyword -shutdown
+}

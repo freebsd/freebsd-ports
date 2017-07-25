@@ -1,0 +1,26 @@
+#!/sbin/openrc-run
+
+# Add the following lines to /etc/rc.conf to enable mailscanner:
+# mailscanner_configfile (path):  Set to "%%PREFIX%%/etc/MailScanner/MailScanner.conf" by default.
+# mailscanner_pidfile (path):     Set to "/var/run/MailScanner.pid" by default.
+# mailscanner_user (str):         Set to "root" by default. If you changed the
+#				  "Run As User" variable in MailScanner.conf and
+#				  wish to disable taint mode, you MUST also set
+#				  the same value here.
+
+name="mailscanner"
+required_files=${mailscanner_configfile:-"%%PREFIX%%/etc/MailScanner/MailScanner.conf"}
+pidfile=${mailscanner_pidfile:-"/var/run/MailScanner.pid"}
+
+command="%%PREFIX%%/sbin/mailscanner"
+command_args="${required_files}"
+required_files="${mailscanner_configfile}"
+
+start_pre() {
+	install -o ${mailscanner_user:-root} /dev/null $pidfile
+}
+
+depend() {
+	need mta
+	keyword -shutdown
+}

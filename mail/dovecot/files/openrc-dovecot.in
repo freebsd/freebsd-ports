@@ -30,6 +30,7 @@ done
 
 depend()
 {
+	provide dovecot
 	keyword -shutdown
 	after bootsmisc
 	neet localmount
