@@ -4,6 +4,7 @@
 PORTNAME=	assimp
 PORTVERSION=	4.0.0
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	multimedia
 
 MAINTAINER=	yuri@rawbw.com
@@ -12,9 +13,11 @@ COMMENT=	Library to import various 3D model formats in a uniform manner
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+LIB_DEPENDS=	libminizip.so:archivers/minizip
+
 BROKEN_powerpc64=	Does not build: error: ByteSwap has not been declared
 
-USES=		cmake compiler:c++11-lib pkgconfig
+USES=		cmake compiler:c++11-lib localbase:ldflags pkgconfig
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 
