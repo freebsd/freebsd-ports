@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rwt
-PORTVERSION=	2.15.1
+PORTVERSION=	3.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,7 +16,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools_scm>=1.15.0:devel/py-setuptools
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pip>=0:devel/py-pip
 
 NO_ARCH=	yes
-USE_PYTHON=	distutils
+USE_PYTHON=	concurrent distutils
 USES=		python
 
 .include <bsd.port.mk>
