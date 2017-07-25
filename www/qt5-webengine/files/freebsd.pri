@@ -2,6 +2,7 @@ include(desktop_linux.pri)
 
 GYP_CONFIG +=   disable_nacl=1          \
                 enable_basic_printing=0 \
+                enable_cups=0 \
                 enable_printing=0       \
                 enable_webrtc=0         \
                 enable_hidpi=1          \
@@ -13,4 +14,7 @@ GYP_CONFIG +=   disable_nacl=1          \
 # For now, only add very few system libraries.
 GYP_CONFIG += use_system_yasm=1 \
               use_system_libusb=1 \
-              use_system_libcxx=1
+              use_system_libcxx=1 \
+              use_system_png=0 \
+              use_system_jpeg=0 \
+              use_system_ffmpeg=0
