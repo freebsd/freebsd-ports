@@ -1,0 +1,146 @@
+#!/sbin/openrc-run
+
+# Add the following lines to /etc/rc.conf to enable openemm2015:
+# openemm2015_args (str):         Optional arguments to OAJBoss
+# openemm2015_log_stdout (str)       OpenEMM log output stdout, filename.
+# openemm2015_log_stderr (str)       OpenEMM log output stderr, filename.
+
+name="openemm2015"
+
+openemm2015_logdir="%%LOG_DIR%%"
+openemm2015_log_stdout="${openemm2015_log_stdout:-"${openemm2015_logdir}/log"}"
+openemm2015_log_stderr="${openemm2015_log_stderr:-"${openemm2015_logdir}/error"}"
+openemm2015_args="${openemm2015_args:-""}"
+openemm2015_sleep="${openemm2015_sleep:-"5"}"
+openemm2015_kill9="${openemm2015_kill9:-""}"
+openemm2015_additional_killall="${openemm2015_additional_killall:-""}"
+openemm2015_user="%%USER%%"
+openemm2015_group="%%GROUP%%"
+openemm2015_lockdir="/var/run/openemm"
+
+pidfile="%%PID_FILE%%"
+tomcat_pidfile="tomcat8.pid" # todo replace dynamic with current version
+sendmail_pidfile="sendmail.pid"
+
+OPENEMM_HOME="%%APP_HOME%%"
+#minimal requirements must be set for our javavmwrapper
+JAVA_VERSION="1.8+"
+export JAVA_VERSION
+
+start()
+{
+	if [ ! -d "${openemm2015_logdir}" ]
+	then
+		install -d -o ${openemm2015_user} ${openemm2015_logdir}
+	fi
+
+	if [ ! -d "${openemm2015_lockdir}" ]
+	then
+		install -d -o ${openemm2015_user} ${openemm2015_lockdir}
+	fi
+
+	echo "Preconditions for openemm2015"
+	echo "   - check if sendmail processes are stopped, it will be started via this application"
+
+	if [ -f "/var/run/${sendmail_pidfile}"]
+	then
+		echo "TODO STOP all sendmail processes"
+		service sendmail stop
+		
+		# check for sendmail queues started via openemm
+		if [ -f "${openemm2015_lockdir}/mailer.pid" ]
+		then
+			echo "Stop Mailer Service...."
+        		pkill qctrl
+			pkill sendmail 
+		fi
+	fi
+
+	echo "Starting openemm2015."
+
+	# check for the startup pyhton scripts
+
+
+	# check if tomcat is running otherwise warning
+	if [ ! -f "/var/run/${tomcat_pidfile}" ]
+	then
+		ebegin "Tomcat is not running please start tomcat first"
+	else
+		einfo "Tomcat is running... starting app"
+	fi
+
+	echo "Start BOUNCE Servcie...."	
+ 	supervise-daemon --start -u ${openemm2015_user} ${OPENEMM_HOME}/bin/bounce.sh start >> ${openemm2015_logdir}/bounce.log 2>> ${openemm2015_logdir}/bounce_error.log
+	echo "Start Merger Service...."
+	supervise-daemon --start -u ${openemm2015_user} ${OPENEMM_HOME}/bin/merger.sh start >> ${openemm2015_logdir}/merger.log 2>> ${openemm2015_logdir}/merger_error.log
+	echo "Start Mailer Service...."
+	supervise-daemon --start ${OPENEMM_HOME}/bin/mailer.sh start >> ${openemm2015_logdir}/mailer.log 2>> ${openemm2015_logdir}/mailer_error.log
+	pgrep sendmail > ${openemm2015_lockdir}/mailer.pid
+	
+	echo "Start SLRT scan Service...."
+	supervise-daemon --start -u ${openemm2015_user} ${OPENEMM_HOME}/bin/slrtscn.sh start >> ${openemm2015_logdir}/slrtscn.log 2>> ${openemm2015_logdir}/slrtscn_error.log
+
+	echo "START THE APP ITSELF..."
+	#daemon -u ${openemm2015_user} ${OPENEMM_HOME}/bin/standalone.sh ${openemm2015_args} >> ${openemm2015_log_stdout} 2>> ${openemm2015_log_stderr}
+
+	#sleep ${openemm2015_sleep}	# let daemon(8) and sh(1) finish before executing pgrep(1)
+	#pgrep -U ${openemm2015_user} -f ${OPENEMM_HOME}/modules > ${pidfile}
+	#chown ${openemm2015_user} $pidfile
+}
+
+stop()
+{
+
+	${OPENEMM_HOME}/bin/bounce.sh stop
+	${OPENEMM_HOME}/bin/merger.sh stop
+
+	#${OPENEMM_HOME}/bin/mailer.sh stop
+	service sendmail stop   # pkill sendmail
+	#sendmail stop
+	pkill sendmail
+	terminator bin/qctrl #pkill qctrl
+	${OPENEMM_HOME}/bin/slrtscn.sh stop
+
+	# Subvert the check_pid_file procname check.
+	# at the moment we dont't handle this here
+	if [ -f ${pidfile} ]
+	then
+		kill `cat ${pidfile}`
+		# Only if we aware that our setup can hangs, and only after trying simple kill, we can kill it hard way.
+		if [ ! -z "${openemm2015_kill9}" ]
+		then
+			sleep ${openemm2015_sleep}
+			#kill  -9 `cat ${pidfile}`
+		fi
+		# In some setups, OpenEMM (Tomcat) can spawn some child processess, which could prevent it from stopping, and freeing net ports.
+		# Let's blindly kill them all, since we are really know what we are doing.
+		if [ ! -z "${openemm2015_additional_killall}" ]
+		then
+			sleep ${openemm2015_sleep}
+			killall ${openemm2015_additional_killall}
+		fi
+	fi
+}
+
+terminator() {
+	while [ $# -gt 0 ] ; do
+		__pat="$1"
+		shift
+		if [ "$__pat" ] ; then
+			for sig in 15 9 ; do
+				__run="`ps -aux | grep -- \"$__pat\" | grep -v grep | awk '{ print $2 }'`"
+				if [ "$__run" ] ; then
+					echo "Stop $__pat program with signal $sig .. "
+					kill -$sig $__run >/dev/null 2>&1
+					sleep 2
+					echo "done."
+				fi
+			done
+		fi
+	done
+}
+
+depend() {
+	use net
+	keyword -shutdown
+}

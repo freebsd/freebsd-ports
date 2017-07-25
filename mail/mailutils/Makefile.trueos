@@ -1,0 +1,1 @@
+USE_OPENRC_SUBR=	openrc-comsatd openrc-imap4d openrc-pop3d

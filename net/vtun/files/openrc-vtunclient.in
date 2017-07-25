@@ -29,7 +29,7 @@ start_pre() {
 			eval command_args=\$vtunclient_${_client}_flags
 			eval pidfile=\$vtunclient_${_client}_pidfile
 			command_args="-z $pidfile $command_args"
-			start-stop-daemon --name ${name} --pidfile ${pidfile} --exec ${command} ${vtunclient_flags}
+			start-stop-daemon --start --name ${name} --pidfile ${pidfile} --exec ${command} ${vtunclient_flags}
 		done
 	fi
 }

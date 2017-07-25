@@ -1,0 +1,10 @@
+#!/sbin/openrc-run
+
+name=smtptrapd
+command=%%PREFIX%%/bin/smtptrapd
+smtptrapd_flags=${smtptrapd_flags:-"-c /var/run/smtptrapd-root"}
+command_args=${smtptrapd_flags}
+
+depend() {
+	keyword -shutdown
+}

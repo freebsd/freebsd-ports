@@ -49,7 +49,7 @@ start() {
 			 eval options=\$arpwatch_${rc_interface}_options
 			 command_args="-i ${interface} ${options} -f ${arpwatch_dir}/arp.${interface}.dat"
 			 pidfile="/var/run/arpwatch-${interface}.pid"
-			 start-stop-daemon --name $rc_interface --pidfile $pidfile --exec $command $command_args
+			 start-stop-daemon --start --name $rc_interface --pidfile $pidfile --exec $command $command_args
 		 done
 	fi
 }

@@ -1,0 +1,33 @@
+#!/sbin/openrc-run
+#
+# Copyright 2007, AnyWi Technologies
+#
+# Note: tcpserver can be found in the sysutils/ucspi-tcp package.
+
+name="bincimapd"
+
+: ${bincimapd_tcpserver="%%PREFIX%%/bin/tcpserver"}
+: ${bincimapd_tcpserver_flags="-R -H"}
+: ${bincimapd_host="0"}
+: ${bincimapd_port="imap"}
+: ${bincimapd_conf="%%PREFIX%%/etc/bincimap/bincimap.conf"}
+: ${bincimapd_pidfile="/var/run/bincimapd.pid"}
+: ${bincimapd_checkpassword="%%PREFIX%%/bin/checkpassword-pam"} # e.g. /usr/local/bin/checkpassword-pam
+: ${bincimapd_checksubprogram="/usr/bin/true"}
+
+start()
+{
+	echo -n "Starting bincimapd: "
+	$bincimapd_tcpserver $bincimapd_tcpserver_flags $bincimapd_host $bincimapd_port \
+		%%PREFIX%%/bin/bincimap-up --conf=$bincimapd_conf -- \
+		%%PREFIX%%/bin/checkpassword-pam -s imap -- %%PREFIX%%/bin/bincimapd &
+	echo $! > $bincimapd_pidfile
+	echo "."
+}
+
+command=${bincimapd_tcpserver}
+pidfile=${bincimapd_pidfile}
+
+depend() {
+	keyword -shutdown
+}

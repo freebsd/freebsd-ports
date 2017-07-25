@@ -1,0 +1,27 @@
+#!/sbin/openrc-run
+
+# Define these rblmilter_* variables in one of these files:
+#	/etc/rc.conf
+#	/etc/rc.conf.local
+#	/etc/rc.conf.d/rblmilter
+#
+# DO NOT CHANGE THESE DEFAULT VALUES HERE
+#
+rblmilter_socket=${rblmilter_socket:-"/var/run/rbl-milter"} # Path to socket
+rblmilter_flags=${rblmilter_flags:-"-l -r -d relays.ordb.org"} # Flags to rblmilter
+
+name="rblmilter"
+command="%%PREFIX%%/sbin/rbl-milter"
+
+start_pre() {
+	/bin/rm -f "${rblmilter_socket}"
+}
+
+stop_post() {
+	/bin/rm -f "${rblmilter_socket}"
+}
+command_args="-p local:${rblmilter_socket} ${rblmilter_flags}"
+
+depend() {
+	keyword -shutdown
+}

@@ -1,0 +1,9 @@
+#!/sbin/openrc-run
+
+name="comsatd"
+command="%%PREFIX%%/sbin/${name}"
+pidfile="/var/run/${name}.pid"
+
+depend() {
+	keyword -shutdown
+}

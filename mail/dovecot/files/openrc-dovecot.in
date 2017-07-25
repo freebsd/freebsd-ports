@@ -19,14 +19,27 @@ stop_post()
 	rm -rf ${login_dir} ${base_dir} 2>/dev/null
 }
 
-for config in ${dovecot_config}; do
-	required_files="${config}"
-	command_args="-c ${config}"
-	base_dir=$(${command} ${command_args} -a | /usr/bin/awk -F ': ' '/^base_dir:/ { print $2 }')
-	login_dir=$(${command} ${command_args} -a | /usr/bin/awk -F ': ' '/^login_dir:/ { print $2 }')
-	pidfile="${base_dir}/master.pid"
-	start-stop-daemon --pidfile $pidfile --name $name --exec $command $command_args
-done
+start() {
+	for config in ${dovecot_config}; do
+		required_files="${config}"
+		command_args="-c ${config}"
+		base_dir=$(${command} ${command_args} -a | /usr/bin/awk -F ': ' '/^base_dir:/ { print $2 }')
+		login_dir=$(${command} ${command_args} -a | /usr/bin/awk -F ': ' '/^login_dir:/ { print $2 }')
+		pidfile="${base_dir}/master.pid"
+		start-stop-daemon --start --pidfile $pidfile --name $name --exec $command $command_args
+	done
+}
+
+stop() {
+	for config in ${dovecot_config}; do
+		required_files="${config}"
+		command_args="-c ${config}"
+		base_dir=$(${command} ${command_args} -a | /usr/bin/awk -F ': ' '/^base_dir:/ { print $2 }')
+		login_dir=$(${command} ${command_args} -a | /usr/bin/awk -F ': ' '/^login_dir:/ { print $2 }')
+		pidfile="${base_dir}/master.pid"
+		start-stop-daemon --stop --pidfile $pidfile --name $name --exec $command $command_args
+	done
+}
 
 depend()
 {

@@ -1,0 +1,11 @@
+#!/sbin/openrc-run
+
+name=assp
+command=%%PREFIX%%/sbin/assp
+pidfile=%%ASSP_HOME%%/pid
+: ${assp_flags="%%ASSP_HOME%%"}
+command_args=${assp_flags}
+
+depend() {
+	keyword -shutdown
+}

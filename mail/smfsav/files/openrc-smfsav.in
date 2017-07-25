@@ -1,0 +1,10 @@
+#!/sbin/openrc-run
+
+name="smfsav"
+required_files=${smfsav_config:="%%PREFIX%%/etc/smf-sav.conf"}
+command="%%PREFIX%%/sbin/smf-sav"
+command_args="-c ${required_files}"
+
+depend() {
+	use net
+}

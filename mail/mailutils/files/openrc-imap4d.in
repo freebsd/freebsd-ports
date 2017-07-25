@@ -1,0 +1,9 @@
+#!/sbin/openrc-run
+
+name="imap4d"
+command="%%PREFIX%%/sbin/${name}"
+pidfile="/var/run/${name}.pid"
+
+depend() {
+	keyword -shutdown
+}
