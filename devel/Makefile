@@ -1631,6 +1631,7 @@
     SUBDIR += mate-common
     SUBDIR += matreshka
     SUBDIR += maven-wrapper
+    SUBDIR += maven
     SUBDIR += maven3
     SUBDIR += maven31
     SUBDIR += maven33
