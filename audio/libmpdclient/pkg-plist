@@ -32,15 +32,15 @@ include/mpd/status.h
 include/mpd/sticker.h
 include/mpd/tag.h
 include/mpd/version.h
-lib/libmpdclient.a
 lib/libmpdclient.so
 lib/libmpdclient.so.2
-lib/libmpdclient.so.2.0.11
+lib/libmpdclient.so.2.13
 libdata/pkgconfig/libmpdclient.pc
 share/vala/vapi/libmpdclient.vapi
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
-%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.rst
 %%PORTDOCS%%%%DOXYGEN%%%%DOCSDIR%%/html/annotated.html
 %%PORTDOCS%%%%DOXYGEN%%%%DOCSDIR%%/html/async_8h.html
 %%PORTDOCS%%%%DOXYGEN%%%%DOCSDIR%%/html/async_8h_source.html
@@ -80,6 +80,10 @@ share/vala/vapi/libmpdclient.vapi
 %%PORTDOCS%%%%DOXYGEN%%%%DOCSDIR%%/html/globals_enum.html
 %%PORTDOCS%%%%DOXYGEN%%%%DOCSDIR%%/html/globals_eval.html
 %%PORTDOCS%%%%DOXYGEN%%%%DOCSDIR%%/html/globals_func.html
+%%PORTDOCS%%%%DOXYGEN%%%%DOCSDIR%%/html/globals_type.html
+%%PORTDOCS%%%%DOXYGEN%%%%DOCSDIR%%/html/graph_legend.html
+%%PORTDOCS%%%%DOXYGEN%%%%DOCSDIR%%/html/graph_legend.md5
+%%PORTDOCS%%%%DOXYGEN%%%%DOCSDIR%%/html/graph_legend.png
 %%PORTDOCS%%%%DOXYGEN%%%%DOCSDIR%%/html/idle_8h.html
 %%PORTDOCS%%%%DOXYGEN%%%%DOCSDIR%%/html/idle_8h_source.html
 %%PORTDOCS%%%%DOXYGEN%%%%DOCSDIR%%/html/index.html
@@ -156,5 +160,5 @@ share/vala/vapi/libmpdclient.vapi
 %%PORTDOCS%%%%DOXYGEN%%%%DOCSDIR%%/html/tabs.css
 %%PORTDOCS%%%%DOXYGEN%%%%DOCSDIR%%/html/tag_8h.html
 %%PORTDOCS%%%%DOXYGEN%%%%DOCSDIR%%/html/tag_8h_source.html
-%%PORTDOCS%%%%DOXYGEN%%%%DOCSDIR%%/html/version_8h.html
-%%PORTDOCS%%%%DOXYGEN%%%%DOCSDIR%%/html/version_8h_source.html
+%%PORTDOCS%%%%DOXYGEN%%%%DOCSDIR%%/html/socket_8h.html
+%%PORTDOCS%%%%DOXYGEN%%%%DOCSDIR%%/html/socket_8h_source.html
