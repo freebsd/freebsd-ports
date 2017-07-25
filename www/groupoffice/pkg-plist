@@ -3487,6 +3487,7 @@
 %%WWWDIR%%/modules/phpcustomfield/CustomField.js
 %%WWWDIR%%/modules/phpcustomfield/PhpcustomfieldModule.php
 %%WWWDIR%%/modules/phpcustomfield/customfieldtype/Php.php
+%%WWWDIR%%/modules/phpcustomfield/language/de.php
 %%WWWDIR%%/modules/phpcustomfield/language/en.php
 %%WWWDIR%%/modules/phpcustomfield/language/fr.php
 %%WWWDIR%%/modules/phpcustomfield/scripts.txt
