@@ -4,7 +4,7 @@ PORTNAME=	mcollective-actionpolicy-auth
 PORTVERSION=	2.2.0
 CATEGORIES=	sysutils
 
-MAINTAINER=	romain@FreeBSD.org
+MAINTAINER=	puppet@FreeBSD.org
 COMMENT=	MCollective Authorization plugin allowing fine grained ACLs
 
 LICENSE=	APACHE20

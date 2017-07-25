@@ -11,6 +11,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Star Trek: The Ferengi Rules of Acquisition
 
 BROKEN=		Unfetchable (tecnik93.com is down)
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2017-08-23
 
 .include "${.CURDIR}/../../misc/fortune-mod-culmea-culmilor/Makefile.fortune"
 .include <bsd.port.mk>

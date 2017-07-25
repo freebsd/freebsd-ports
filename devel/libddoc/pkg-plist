@@ -1,0 +1,8 @@
+include/d/ddoc/comments.d
+include/d/ddoc/highlight.d
+include/d/ddoc/lexer.d
+include/d/ddoc/macros.d
+include/d/ddoc/package.d
+include/d/ddoc/sections.d
+include/d/ddoc/standalone.d
+lib/d/libddoc.a

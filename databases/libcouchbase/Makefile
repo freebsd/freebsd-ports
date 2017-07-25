@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libcouchbase
-DISTVERSION=	2.7.4
+DISTVERSION=	2.7.6
 CATEGORIES=	databases
 MASTER_SITES=	http://packages.couchbase.com/clients/c/
 

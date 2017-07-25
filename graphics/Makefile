@@ -135,6 +135,7 @@
     SUBDIR += deegree-wps
     SUBDIR += deegree-wpvs
     SUBDIR += delaboratory
+    SUBDIR += derelict-gl3
     SUBDIR += devil
     SUBDIR += dia
     SUBDIR += diacanvas2
@@ -177,6 +178,7 @@
     SUBDIR += exiftran
     SUBDIR += exiv2
     SUBDIR += exrtools
+    SUBDIR += facedetect
     SUBDIR += farbfeld
     SUBDIR += feh
     SUBDIR += fig2sxd
@@ -320,9 +322,11 @@
     SUBDIR += gstreamer1-plugins-gdkpixbuf
     SUBDIR += gstreamer1-plugins-gl
     SUBDIR += gstreamer1-plugins-jpeg
+    SUBDIR += gstreamer1-plugins-kms
     SUBDIR += gstreamer1-plugins-libcaca
     SUBDIR += gstreamer1-plugins-libvisual
     SUBDIR += gstreamer1-plugins-opencv
+    SUBDIR += gstreamer1-plugins-openexr
     SUBDIR += gstreamer1-plugins-openjpeg
     SUBDIR += gstreamer1-plugins-png
     SUBDIR += gstreamer1-plugins-rsvg

@@ -1,8 +1,7 @@
---- t/porting/customized.dat.orig	2017-06-18 21:44:07 UTC
+--- t/porting/customized.dat.orig	2017-07-25 11:25:51 UTC
 +++ t/porting/customized.dat
-@@ -1,6 +1,7 @@
+@@ -1,5 +1,6 @@
  Digest cpan/Digest/Digest.pm 43f7f544cb11842b2f55c73e28930da50774e081
- Encode cpan/Encode/Unicode/Unicode.pm 9749692c67f7d69083034de9184a93f070ab4799
  ExtUtils::Constant cpan/ExtUtils-Constant/t/Constant.t a0369c919e216fb02767a637666bb4577ad79b02
 +ExtUtils::MakeMaker cpan/ExtUtils-MakeMaker/lib/ExtUtils/MM_Any.pm ac29a8dc1c7d6f0aca4abff0730c05bde1dab3ad
  Locale::Maketext::Simple cpan/Locale-Maketext-Simple/lib/Locale/Maketext/Simple.pm 57ed38905791a17c150210cd6f42ead22a7707b6

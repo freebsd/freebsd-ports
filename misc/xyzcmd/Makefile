@@ -12,6 +12,8 @@ COMMENT=	Pure console visual file manager
 LICENSE=	LGPL3
 
 BROKEN=		unfetchable (project moved to github)
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2017-08-23
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/urwid/raw_display.py:devel/py-urwid
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/urwid/raw_display.py:devel/py-urwid

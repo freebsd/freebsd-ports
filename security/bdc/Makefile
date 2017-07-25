@@ -14,6 +14,8 @@ COMMENT=	BitDefender Console Antivirus for FreeBSD
 LIB_DEPENDS=	libc.so.5:misc/compat5x
 
 BROKEN=		download link is dead: 404
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2017-08-23
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 NO_BUILD=	yes

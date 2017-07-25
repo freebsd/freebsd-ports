@@ -12,6 +12,9 @@ LICENSE=	WTFPL
 
 BUILD_DEPENDS=	${LOCALBASE}/include/vapoursynth/VapourSynth.h:multimedia/vapoursynth
 
+ONLY_FOR_ARCHS=	amd64 i386
+ONLY_FOR_ARCHS_REASON=	https://github.com/EleonoreMizo/fmtconv/issues/8
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	EleonoreMizo
 

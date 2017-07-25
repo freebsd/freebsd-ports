@@ -33,7 +33,10 @@ etc/xdg/awesome/rc.lua
 %%DATADIR%%/%%LUA_LIBDIR%%/awful/dbus.lua
 %%DATADIR%%/%%LUA_LIBDIR%%/awful/ewmh.lua
 %%DATADIR%%/%%LUA_LIBDIR%%/awful/hotkeys_popup/init.lua
+%%DATADIR%%/%%LUA_LIBDIR%%/awful/hotkeys_popup/keys/firefox.lua
 %%DATADIR%%/%%LUA_LIBDIR%%/awful/hotkeys_popup/keys/init.lua
+%%DATADIR%%/%%LUA_LIBDIR%%/awful/hotkeys_popup/keys/qutebrowser.lua
+%%DATADIR%%/%%LUA_LIBDIR%%/awful/hotkeys_popup/keys/tmux.lua
 %%DATADIR%%/%%LUA_LIBDIR%%/awful/hotkeys_popup/keys/vim.lua
 %%DATADIR%%/%%LUA_LIBDIR%%/awful/hotkeys_popup/widget.lua
 %%DATADIR%%/%%LUA_LIBDIR%%/awful/init.lua
@@ -67,6 +70,7 @@ etc/xdg/awesome/rc.lua
 %%DATADIR%%/%%LUA_LIBDIR%%/awful/wibar.lua
 %%DATADIR%%/%%LUA_LIBDIR%%/awful/wibox.lua
 %%DATADIR%%/%%LUA_LIBDIR%%/awful/widget/button.lua
+%%DATADIR%%/%%LUA_LIBDIR%%/awful/widget/calendar_popup.lua
 %%DATADIR%%/%%LUA_LIBDIR%%/awful/widget/clienticon.lua
 %%DATADIR%%/%%LUA_LIBDIR%%/awful/widget/common.lua
 %%DATADIR%%/%%LUA_LIBDIR%%/awful/widget/graph.lua
@@ -130,6 +134,7 @@ etc/xdg/awesome/rc.lua
 %%DATADIR%%/%%LUA_LIBDIR%%/wibox/layout/flex.lua
 %%DATADIR%%/%%LUA_LIBDIR%%/wibox/layout/grid.lua
 %%DATADIR%%/%%LUA_LIBDIR%%/wibox/layout/init.lua
+%%DATADIR%%/%%LUA_LIBDIR%%/wibox/layout/manual.lua
 %%DATADIR%%/%%LUA_LIBDIR%%/wibox/layout/margin.lua
 %%DATADIR%%/%%LUA_LIBDIR%%/wibox/layout/mirror.lua
 %%DATADIR%%/%%LUA_LIBDIR%%/wibox/layout/ratio.lua
@@ -138,6 +143,7 @@ etc/xdg/awesome/rc.lua
 %%DATADIR%%/%%LUA_LIBDIR%%/wibox/layout/stack.lua
 %%DATADIR%%/%%LUA_LIBDIR%%/wibox/widget/background.lua
 %%DATADIR%%/%%LUA_LIBDIR%%/wibox/widget/base.lua
+%%DATADIR%%/%%LUA_LIBDIR%%/wibox/widget/calendar.lua
 %%DATADIR%%/%%LUA_LIBDIR%%/wibox/widget/checkbox.lua
 %%DATADIR%%/%%LUA_LIBDIR%%/wibox/widget/graph.lua
 %%DATADIR%%/%%LUA_LIBDIR%%/wibox/widget/imagebox.lua

@@ -2,6 +2,7 @@
 
 PORTNAME=	arcanist
 PORTVERSION=	20170630
+PORTREVISION=	1
 CATEGORIES=	devel
 PKGNAMEPREFIX=	php-
 
@@ -16,7 +17,7 @@ CONFLICTS=	arc-*
 PHP_DESTDIR=	lib/php/arcanist
 RUN_DEPENDS=	php-libphutil>0:devel/libphutil
 USES=		php
-USE_PHP=	curl dom json simplexml
+USE_PHP=	curl dom hash json simplexml
 USE_GITHUB=	yes
 NO_BUILD=	yes
 NO_ARCH=	yes

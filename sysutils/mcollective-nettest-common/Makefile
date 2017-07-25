@@ -4,7 +4,7 @@ PORTNAME?=	mcollective-nettest-common
 PORTVERSION=	3.0.4
 CATEGORIES=	sysutils
 
-MAINTAINER=	romain@FreeBSD.org
+MAINTAINER=	puppet@FreeBSD.org
 COMMENT?=	MCollective common files to test ICMP and TCP connectivity
 
 LICENSE=	APACHE20

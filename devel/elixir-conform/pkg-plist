@@ -1,4 +1,5 @@
 lib/elixir/lib/conform/ebin/Elixir.Conform.Conf.beam
+lib/elixir/lib/conform/ebin/Elixir.Conform.Logger.beam
 lib/elixir/lib/conform/ebin/Elixir.Conform.Options.beam
 lib/elixir/lib/conform/ebin/Elixir.Conform.Parse.ParseError.beam
 lib/elixir/lib/conform/ebin/Elixir.Conform.Parse.beam
@@ -25,6 +26,7 @@ lib/elixir/lib/conform/ebin/conform.app
 lib/elixir/lib/conform/ebin/conform_parse.beam
 lib/elixir/lib/conform/lib/conform.ex
 lib/elixir/lib/conform/lib/conform/conf.ex
+lib/elixir/lib/conform/lib/conform/logger.ex
 lib/elixir/lib/conform/lib/conform/parse.ex
 lib/elixir/lib/conform/lib/conform/releases/plugin.ex
 lib/elixir/lib/conform/lib/conform/schema.ex

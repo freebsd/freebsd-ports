@@ -1,6 +1,6 @@
 # $FreeBSD$
 
-PORTREVISION=	3
+PORTREVISION=	0
 CATEGORIES=	multimedia
 
 COMMENT=	GStreamer ASS/SSA text renderer plugin

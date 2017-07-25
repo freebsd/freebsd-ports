@@ -6,7 +6,7 @@ steps as root:
 
 * Add usermin_enable="YES" to your /etc/rc.conf
 
-* Start Usermin for the first time by running %%LOCALBASE%%/etc/rc.d/usermin start
+* Start Usermin for the first time by running "service usermin start"
 
 The parameters requested by setup.sh may then be changed from within Usermin
 itself.

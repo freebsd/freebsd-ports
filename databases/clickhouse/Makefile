@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	clickhouse
-PORTVERSION=	1.1.54236
+PORTVERSION=	1.1.54245
 DISTVERSIONPREFIX=	v
 DISTVERSIONSUFFIX=	-stable
-PORTREVISION=	1
+#PORTREVISION=	1
 CATEGORIES=	databases
 
 MAINTAINER=	proler@gmail.com
@@ -71,11 +71,11 @@ post-install:
 	@${RM} -r ${STAGEDIR}${PREFIX}/include/gtest
 	@${RM} ${STAGEDIR}${PREFIX}/lib/libgtest*
 
-	${INSTALL_DATA} ${WRKSRC}/dbms/src/Client/config.xml \
+	${INSTALL_DATA} ${STAGEDIR}${PREFIX}/etc/clickhouse-client/config.xml \
 		${STAGEDIR}${PREFIX}/etc/clickhouse-client/config.xml.sample
-	${INSTALL_DATA} ${WRKSRC}/dbms/src/Server/config.xml \
+	${INSTALL_DATA} ${STAGEDIR}${PREFIX}/etc/clickhouse-server/config.xml \
 		${STAGEDIR}${PREFIX}/etc/clickhouse-server/config.xml.sample
-	${INSTALL_DATA} ${WRKSRC}/dbms/src/Server/users.xml \
+	${INSTALL_DATA} ${STAGEDIR}${PREFIX}/etc/clickhouse-server/users.xml \
 		${STAGEDIR}${PREFIX}/etc/clickhouse-server/users.xml.sample
 
 	@${MKDIR} ${STAGEDIR}/var/db/clickhouse

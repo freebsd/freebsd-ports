@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	local-lib
-PORTVERSION=	2.000015
+PORTVERSION=	2.000018
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:HAARG
@@ -12,8 +12,7 @@ COMMENT=	Perl extension to create and use a local lib/ with PERL5LIB
 
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
-
-TEST_DEPENDS=	p5-Capture-Tiny>=0:devel/p5-Capture-Tiny
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=	perl5
 USE_PERL5=	configure

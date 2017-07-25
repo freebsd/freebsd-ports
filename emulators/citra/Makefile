@@ -1,22 +1,23 @@
 # $FreeBSD$
 
 PORTNAME=	citra
-PORTVERSION=	s20170629
+PORTVERSION=	s20170713
 PORTREVISION?=	0
 CATEGORIES=	emulators
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Nintendo 3DS emulator/debugger
 
-LICENSE=	BSD2CLAUSE BSD3CLAUSE BSL GPLv2+ LGPL21+ UNLICENSE
+LICENSE=	BSD2CLAUSE BSD3CLAUSE BSL GPLv2+ LGPL21+ MIT UNLICENSE
 LICENSE_COMB=	multi
 LICENSE_FILE_BSD2CLAUSE=${WRKSRC}/externals/fmt/LICENSE.rst
 LICENSE_FILE_BSD3CLAUSE=${WRKSRC}/externals/inih/inih/LICENSE.txt
 LICENSE_FILE_BSL=	${WRKSRC}/externals/catch/LICENSE.txt
 LICENSE_FILE_GPLv2+ =	${WRKSRC}/license.txt
+LICENSE_FILE_MIT=	${WRKSRC}/externals/enet/LICENSE
 LICENSE_FILE_LGPL21+ =	${_LICENSE_STORE}/LGPL21 # soundtouch
 
-BUILD_DEPENDS=	boost-libs>=1.57:devel/boost-libs
+BUILD_DEPENDS=	boost-libs>=1.63:devel/boost-libs
 LIB_DEPENDS=	libpng.so:graphics/png
 
 # backend_x64/hostloc.h:93:8: fatal error: no type named 'Reg64' in namespace 'Xbyak'
@@ -25,21 +26,21 @@ ONLY_FOR_ARCHS_REASON=	https://github.com/MerryMage/dynarmic/issues/35
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	citra-emu
-GH_TAGNAME=	56d718b2a
+GH_TAGNAME=	5137a198f
 GH_TUPLE=	citra-emu:ext-soundtouch:5274ec4:soundtouch/externals/soundtouch \
 		MerryMage:dynarmic:8f15e3f:dynarmic/externals/dynarmic \
 		fmtlib:fmt:3.0.0-187-gac5484c:fmt/externals/fmt \
 		herumi:xbyak:v5.40:xbyak/externals/xbyak \
+		lsalzman:enet:a84c120:enet/externals/enet \
 		neobrain:nihstro:7e24743:nihstro/externals/nihstro \
 		philsquared:Catch:v1.9.4:catch/externals/catch \
 		svn2github:inih:603729d:inih/externals/inih/inih \
 		weidai11:cryptopp:CRYPTOPP_5_6_5-164-g841c37e:cryptopp/externals/cryptopp/cryptopp
 
 USES=		cmake:outsource compiler:c++14-lang iconv localbase:ldflags
-FAVORITE_COMPILER=	${COMPILER_TYPE} # c++14-lib
+CMAKE_ARGS=	-DENABLE_WEB_SERVICE=off # XXX unbundle curl-7.52.1
 CXXFLAGS+=	-D_GLIBCXX_USE_C99 -D_GLIBCXX_USE_C99_MATH_TR1 \
 		-D_DECLARE_C99_LDBL_MATH # XXX ports/193528
-LDFLAGS+=	-Wl,--as-needed # GL
 
 OPTIONS_MULTI=	GUI
 OPTIONS_MULTI_GUI=	QT5 SDL

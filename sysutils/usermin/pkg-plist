@@ -2,6 +2,48 @@ lib/usermin/LICENCE
 lib/usermin/LICENCE.ja
 lib/usermin/README
 lib/usermin/WebminCore.pm
+lib/usermin/WebminUI/All.pm
+lib/usermin/WebminUI/Button.pm
+lib/usermin/WebminUI/Checkbox.pm
+lib/usermin/WebminUI/Checkboxes.pm
+lib/usermin/WebminUI/Columns.pm
+lib/usermin/WebminUI/ConfirmPage.pm
+lib/usermin/WebminUI/Date.pm
+lib/usermin/WebminUI/DynamicBar.pm
+lib/usermin/WebminUI/DynamicHTML.pm
+lib/usermin/WebminUI/DynamicText.pm
+lib/usermin/WebminUI/DynamicWait.pm
+lib/usermin/WebminUI/ErrorPage.pm
+lib/usermin/WebminUI/File.pm
+lib/usermin/WebminUI/Form.pm
+lib/usermin/WebminUI/Group.pm
+lib/usermin/WebminUI/Icon.pm
+lib/usermin/WebminUI/Input.pm
+lib/usermin/WebminUI/InputTable.pm
+lib/usermin/WebminUI/JavascriptButton.pm
+lib/usermin/WebminUI/LinkTable.pm
+lib/usermin/WebminUI/Menu.pm
+lib/usermin/WebminUI/Multiline.pm
+lib/usermin/WebminUI/OptTextarea.pm
+lib/usermin/WebminUI/OptTextbox.pm
+lib/usermin/WebminUI/Page.pm
+lib/usermin/WebminUI/Password.pm
+lib/usermin/WebminUI/PlainText.pm
+lib/usermin/WebminUI/Properties.pm
+lib/usermin/WebminUI/Radios.pm
+lib/usermin/WebminUI/ResultPage.pm
+lib/usermin/WebminUI/Section.pm
+lib/usermin/WebminUI/Select.pm
+lib/usermin/WebminUI/Submit.pm
+lib/usermin/WebminUI/Table.pm
+lib/usermin/WebminUI/TableAction.pm
+lib/usermin/WebminUI/Tabs.pm
+lib/usermin/WebminUI/Textarea.pm
+lib/usermin/WebminUI/Textbox.pm
+lib/usermin/WebminUI/Time.pm
+lib/usermin/WebminUI/TitleList.pm
+lib/usermin/WebminUI/Upload.pm
+lib/usermin/WebminUI/User.pm
 lib/usermin/acl_security.pl
 lib/usermin/at/CHANGELOG
 lib/usermin/at/acl_security.pl
@@ -115,6 +157,7 @@ lib/usermin/authentic-theme/extensions/file-manager/create_folder.cgi
 lib/usermin/authentic-theme/extensions/file-manager/cut.cgi
 lib/usermin/authentic-theme/extensions/file-manager/delete.cgi
 lib/usermin/authentic-theme/extensions/file-manager/extract.cgi
+lib/usermin/authentic-theme/extensions/file-manager/fetcher.cgi
 lib/usermin/authentic-theme/extensions/file-manager/file-manager-lib.pm
 lib/usermin/authentic-theme/extensions/file-manager/file-manager.js
 lib/usermin/authentic-theme/extensions/file-manager/file-manager.min.js
@@ -124,8 +167,15 @@ lib/usermin/authentic-theme/extensions/file-manager/rename.cgi
 lib/usermin/authentic-theme/extensions/file-manager/search.cgi
 lib/usermin/authentic-theme/extensions/sql.js
 lib/usermin/authentic-theme/extensions/sql.min.js
+lib/usermin/authentic-theme/help/editor.ca.UTF-8.html
+lib/usermin/authentic-theme/help/editor.de.UTF-8.html
+lib/usermin/authentic-theme/help/editor.html
+lib/usermin/authentic-theme/help/editor.id.UTF-8.html
+lib/usermin/authentic-theme/help/editor.ro_RO.UTF-8.html
+lib/usermin/authentic-theme/help/editor.zh_CN.UTF-8.html
+lib/usermin/authentic-theme/help/file-manager.de.UTF-8.html
 lib/usermin/authentic-theme/help/file-manager.html
-lib/usermin/authentic-theme/images/_blank.gif
+lib/usermin/authentic-theme/help/file-manager.id.UTF-8.html
 lib/usermin/authentic-theme/images/after.gif
 lib/usermin/authentic-theme/images/attach.gif
 lib/usermin/authentic-theme/images/before.gif
@@ -937,6 +987,8 @@ lib/usermin/authentic-theme/lang/es
 lib/usermin/authentic-theme/lang/es.UTF-8
 lib/usermin/authentic-theme/lang/fr
 lib/usermin/authentic-theme/lang/fr.UTF-8
+lib/usermin/authentic-theme/lang/id
+lib/usermin/authentic-theme/lang/id.UTF-8
 lib/usermin/authentic-theme/lang/it
 lib/usermin/authentic-theme/lang/it.UTF-8
 lib/usermin/authentic-theme/lang/nl
@@ -1387,7 +1439,6 @@ lib/usermin/authentic-theme/unauthenticated/js/codemirror/mode/gas/gas.js
 lib/usermin/authentic-theme/unauthenticated/js/codemirror/mode/gfm/gfm.js
 lib/usermin/authentic-theme/unauthenticated/js/codemirror/mode/gherkin/gherkin.js
 lib/usermin/authentic-theme/unauthenticated/js/codemirror/mode/go/go.js
-lib/usermin/authentic-theme/unauthenticated/js/codemirror/mode/groovy/groovy.js
 lib/usermin/authentic-theme/unauthenticated/js/codemirror/mode/haml/haml.js
 lib/usermin/authentic-theme/unauthenticated/js/codemirror/mode/handlebars/handlebars.js
 lib/usermin/authentic-theme/unauthenticated/js/codemirror/mode/haskell-literate/haskell-literate.js
@@ -1429,7 +1480,6 @@ lib/usermin/authentic-theme/unauthenticated/js/codemirror/mode/puppet/puppet.js
 lib/usermin/authentic-theme/unauthenticated/js/codemirror/mode/python/python.js
 lib/usermin/authentic-theme/unauthenticated/js/codemirror/mode/q/q.js
 lib/usermin/authentic-theme/unauthenticated/js/codemirror/mode/r/r.js
-lib/usermin/authentic-theme/unauthenticated/js/codemirror/mode/rst/rst.js
 lib/usermin/authentic-theme/unauthenticated/js/codemirror/mode/ruby/ruby.js
 lib/usermin/authentic-theme/unauthenticated/js/codemirror/mode/rust/rust.js
 lib/usermin/authentic-theme/unauthenticated/js/codemirror/mode/sas/sas.js
@@ -1484,7 +1534,6 @@ lib/usermin/authentic-theme/unauthenticated/js/favico.min.js
 lib/usermin/authentic-theme/unauthenticated/js/fileinput.min.js
 lib/usermin/authentic-theme/unauthenticated/js/init.js
 lib/usermin/authentic-theme/unauthenticated/js/init.min.js
-lib/usermin/authentic-theme/unauthenticated/js/jquery-ui.min.js
 lib/usermin/authentic-theme/unauthenticated/js/jquery.autocomplete.min.js
 lib/usermin/authentic-theme/unauthenticated/js/jquery.datatables.min.js
 lib/usermin/authentic-theme/unauthenticated/js/jquery.datatables.plugins.min.js
@@ -1509,7 +1558,6 @@ lib/usermin/authentic-theme/unauthenticated/js/select2.min.js
 lib/usermin/authentic-theme/unauthenticated/js/settings.js
 lib/usermin/authentic-theme/unauthenticated/js/timeplot.min.js
 lib/usermin/authentic-theme/unauthenticated/js/transition.min.js
-lib/usermin/authentic-theme/update
 lib/usermin/blue-theme/CHANGELOG
 lib/usermin/blue-theme/acl/images/convert.gif
 lib/usermin/blue-theme/acl/images/icon.gif
@@ -2690,6 +2738,7 @@ lib/usermin/commands/sql.cgi
 lib/usermin/commands/uconfig.info.no
 lib/usermin/commands/ulang/ca
 lib/usermin/commands/ulang/de
+lib/usermin/commands/ulang/de.UTF-8
 lib/usermin/commands/ulang/el
 lib/usermin/commands/ulang/en
 lib/usermin/commands/ulang/nl
@@ -3006,6 +3055,7 @@ lib/usermin/fetchmail/stop.cgi
 lib/usermin/fetchmail/ulang/ca
 lib/usermin/fetchmail/ulang/cz
 lib/usermin/fetchmail/ulang/de
+lib/usermin/fetchmail/ulang/de.UTF-8
 lib/usermin/fetchmail/ulang/en
 lib/usermin/fetchmail/ulang/nl
 lib/usermin/fetchmail/ulang/no
@@ -5328,6 +5378,7 @@ lib/usermin/htaccess/uconfig.info.no
 lib/usermin/htaccess/uconfig.info.pl
 lib/usermin/htaccess/ulang/ca
 lib/usermin/htaccess/ulang/de
+lib/usermin/htaccess/ulang/de.UTF-8
 lib/usermin/htaccess/ulang/en
 lib/usermin/htaccess/ulang/fi
 lib/usermin/htaccess/ulang/nl
@@ -6091,6 +6142,7 @@ lib/usermin/man/module.info
 lib/usermin/man/search.cgi
 lib/usermin/man/ulang/ca
 lib/usermin/man/ulang/de
+lib/usermin/man/ulang/de.UTF-8
 lib/usermin/man/ulang/en
 lib/usermin/man/ulang/nl
 lib/usermin/man/ulang/no
@@ -6731,6 +6783,7 @@ lib/usermin/mysql/uconfig.info.de
 lib/usermin/mysql/uconfig.info.nl
 lib/usermin/mysql/uconfig.info.no
 lib/usermin/mysql/ulang/ca
+lib/usermin/mysql/ulang/config.info.de.UTF-8
 lib/usermin/mysql/ulang/de
 lib/usermin/mysql/ulang/en
 lib/usermin/mysql/ulang/nl
@@ -7717,6 +7770,7 @@ lib/usermin/procmail/uconfig.info.no
 lib/usermin/procmail/ulang/ca
 lib/usermin/procmail/ulang/cz
 lib/usermin/procmail/ulang/de
+lib/usermin/procmail/ulang/de.UTF-8
 lib/usermin/procmail/ulang/en
 lib/usermin/procmail/ulang/es
 lib/usermin/procmail/ulang/nl
@@ -8221,6 +8275,7 @@ lib/usermin/ui-lib.pl
 lib/usermin/ulang/ca
 lib/usermin/ulang/cz
 lib/usermin/ulang/de
+lib/usermin/ulang/de.UTF-8
 lib/usermin/ulang/el
 lib/usermin/ulang/en
 lib/usermin/ulang/es
@@ -8371,3 +8426,4 @@ lib/usermin/webmin-search-lib.pl
 lib/usermin/webmin_search.cgi
 @dir lib/usermin/file/xinha/plugins
 @dir lib/usermin/mailbox/xinha/plugins
+@postexec [ -d %D/etc/usermin ] && %D/lib/usermin/setup.sh || true

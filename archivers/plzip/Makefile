@@ -2,12 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	plzip
-PORTVERSION=	1.5
+PORTVERSION=	1.6
 CATEGORIES=	archivers
 MASTER_SITES=	SAVANNAH/lzip/${PORTNAME}
 
 MAINTAINER=	delphij@FreeBSD.org
 COMMENT=	Parallel, lossless data compressor based on the LZMA algorithm
+
+LICENSE=	GPLv2
 
 BUILD_DEPENDS=	lzlib>=1.1:archivers/lzlib
 
@@ -17,6 +19,7 @@ PLIST_FILES=	bin/plzip \
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	CXXFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+INSTALL_TARGET=	install-strip
 INFO=		plzip
 
 .include <bsd.port.mk>

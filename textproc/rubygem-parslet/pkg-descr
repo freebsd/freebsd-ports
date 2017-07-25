@@ -9,4 +9,4 @@ Parslet takes the long way around to make your job easier. It allows for
 incremental language construction. Often, you start out small, implementing the
 atoms of your language first; parslet takes pride in making this possible.
 
-WWW: http://kschiess.github.io/parslet/
+WWW: https://kschiess.github.io/parslet/

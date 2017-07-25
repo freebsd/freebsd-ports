@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Net-GitHub
-PORTVERSION=	0.87
+PORTVERSION=	0.89
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -12,6 +12,7 @@ COMMENT=	Perl interface to github.com
 
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	p5-Cache-LRU>=0:devel/p5-Cache-LRU \
 		p5-HTTP-Message>0:www/p5-HTTP-Message \

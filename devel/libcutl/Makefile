@@ -19,7 +19,7 @@ BROKEN_sparc64=	Does not build: cannot configure with boost
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
-USES=		libtool
+USES=		compiler:c++11-lib libtool
 
 # The checks for external boost and external expat are quite limited and do not
 # add the ${LOCALBASE} paths correctly (libboost.m4 uses wrong paths and

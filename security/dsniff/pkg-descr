@@ -6,4 +6,4 @@ unavailable to an attacker (e.g, due to layer-2 switching). sshmitm and webmitm
 implement active monkey-in-the-middle attacks against redirected SSH and HTTPS
 sessions by exploiting weak bindings in ad-hoc PKI.
 
-WWW: http://www.monkey.org/~dugsong/dsniff/
+WWW: https://www.monkey.org/~dugsong/dsniff/

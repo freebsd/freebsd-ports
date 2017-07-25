@@ -43,7 +43,6 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%PRIV_LIB%%/Attribute/Handlers.pm
 %%PRIV_LIB%%/AutoLoader.pm
 %%PRIV_LIB%%/AutoSplit.pm
-%%PRIV_LIB%%/B/Debug.pm
 %%PRIV_LIB%%/B/Deparse.pm
 %%PRIV_LIB%%/B/Op_private.pm
 %%PRIV_LIB%%/Benchmark.pm
@@ -971,12 +970,15 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%MAN1%%/perl5221delta.1.gz
 %%MAN1%%/perl5222delta.1.gz
 %%MAN1%%/perl5223delta.1.gz
+%%MAN1%%/perl5224delta.1.gz
 %%MAN1%%/perl5240delta.1.gz
 %%MAN1%%/perl5241delta.1.gz
+%%MAN1%%/perl5242delta.1.gz
 %%MAN1%%/perl5260delta.1.gz
 %%MAN1%%/perl5270delta.1.gz
 %%MAN1%%/perl5271delta.1.gz
 %%MAN1%%/perl5272delta.1.gz
+%%MAN1%%/perl5273delta.1.gz
 %%MAN1%%/perl561delta.1.gz
 %%MAN1%%/perl56delta.1.gz
 %%MAN1%%/perl581delta.1.gz
@@ -1163,7 +1165,6 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%MAN3%%/AutoSplit.3.gz
 %%MAN3%%/B.3.gz
 %%MAN3%%/B::Concise.3.gz
-%%MAN3%%/B::Debug.3.gz
 %%MAN3%%/B::Deparse.3.gz
 %%MAN3%%/B::Op_private.3.gz
 %%MAN3%%/B::Showlex.3.gz
@@ -1752,12 +1753,15 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%PRIV_LIB%%/pod/perl5221delta.pod
 %%PRIV_LIB%%/pod/perl5222delta.pod
 %%PRIV_LIB%%/pod/perl5223delta.pod
+%%PRIV_LIB%%/pod/perl5224delta.pod
 %%PRIV_LIB%%/pod/perl5240delta.pod
 %%PRIV_LIB%%/pod/perl5241delta.pod
+%%PRIV_LIB%%/pod/perl5242delta.pod
 %%PRIV_LIB%%/pod/perl5260delta.pod
 %%PRIV_LIB%%/pod/perl5270delta.pod
 %%PRIV_LIB%%/pod/perl5271delta.pod
 %%PRIV_LIB%%/pod/perl5272delta.pod
+%%PRIV_LIB%%/pod/perl5273delta.pod
 %%PRIV_LIB%%/pod/perl561delta.pod
 %%PRIV_LIB%%/pod/perl56delta.pod
 %%PRIV_LIB%%/pod/perl581delta.pod

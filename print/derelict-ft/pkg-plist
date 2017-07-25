@@ -1,0 +1,4 @@
+include/d/derelict/freetype/ft.d
+include/d/derelict/freetype/functions.d
+include/d/derelict/freetype/types.d
+lib/d/libDerelictFT.a

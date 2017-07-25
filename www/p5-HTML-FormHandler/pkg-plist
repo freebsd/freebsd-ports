@@ -38,9 +38,11 @@
 %%SITE_PERL%%/HTML/FormHandler/Field/PrimaryKey.pm
 %%SITE_PERL%%/HTML/FormHandler/Field/Repeatable.pm
 %%SITE_PERL%%/HTML/FormHandler/Field/Repeatable/Instance.pm
+%%SITE_PERL%%/HTML/FormHandler/Field/RequestToken.pm
 %%SITE_PERL%%/HTML/FormHandler/Field/Reset.pm
 %%SITE_PERL%%/HTML/FormHandler/Field/Result.pm
 %%SITE_PERL%%/HTML/FormHandler/Field/RmElement.pm
+%%SITE_PERL%%/HTML/FormHandler/Field/Role/RequestToken.pm
 %%SITE_PERL%%/HTML/FormHandler/Field/Second.pm
 %%SITE_PERL%%/HTML/FormHandler/Field/Select.pm
 %%SITE_PERL%%/HTML/FormHandler/Field/SelectCSV.pm
@@ -225,9 +227,11 @@
 %%PERL5_MAN3%%/HTML::FormHandler::Field::PrimaryKey.3.gz
 %%PERL5_MAN3%%/HTML::FormHandler::Field::Repeatable.3.gz
 %%PERL5_MAN3%%/HTML::FormHandler::Field::Repeatable::Instance.3.gz
+%%PERL5_MAN3%%/HTML::FormHandler::Field::RequestToken.3.gz
 %%PERL5_MAN3%%/HTML::FormHandler::Field::Reset.3.gz
 %%PERL5_MAN3%%/HTML::FormHandler::Field::Result.3.gz
 %%PERL5_MAN3%%/HTML::FormHandler::Field::RmElement.3.gz
+%%PERL5_MAN3%%/HTML::FormHandler::Field::Role::RequestToken.3.gz
 %%PERL5_MAN3%%/HTML::FormHandler::Field::Second.3.gz
 %%PERL5_MAN3%%/HTML::FormHandler::Field::Select.3.gz
 %%PERL5_MAN3%%/HTML::FormHandler::Field::SelectCSV.3.gz

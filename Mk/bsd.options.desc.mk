@@ -432,6 +432,7 @@ SCHROEDINGER_DESC?=	Dirac video codec support via libschroedinger
 SCIPY_DESC?=		SciPy scientific computing support
 SDL_DESC?=		Simple Direct Media Layer support
 SEM_DESC?=		POSIX semaphores support
+SFCGAL_DESC?=		3D operations support via SFCGAL
 SHOUTCAST_DESC?=	SHOUTcast and Ogg Icecast support
 SIMD_DESC?=		Use CPU-specific optimizations
 SLANG_DESC?=		S-Lang console graphics library support

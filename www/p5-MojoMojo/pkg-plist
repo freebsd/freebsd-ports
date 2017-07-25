@@ -80,10 +80,13 @@ bin/mojomojo_update_db.pl
 %%SITE_PERL%%/MojoMojo/I18N/ru.po
 %%SITE_PERL%%/MojoMojo/INSTALL
 %%SITE_PERL%%/MojoMojo/Installation.pod
+%%SITE_PERL%%/MojoMojo/MYMETA.json
+%%SITE_PERL%%/MojoMojo/MYMETA.yml
 %%SITE_PERL%%/MojoMojo/Model/DBIC.pm
 %%SITE_PERL%%/MojoMojo/Model/Search.pm
 %%SITE_PERL%%/MojoMojo/Model/Themes.pm
 %%SITE_PERL%%/MojoMojo/Prefs.pod
+%%SITE_PERL%%/MojoMojo/README.md
 %%SITE_PERL%%/MojoMojo/Schema.pm
 %%SITE_PERL%%/MojoMojo/Schema/Base/Result.pm
 %%SITE_PERL%%/MojoMojo/Schema/Base/ResultSet.pm
@@ -117,6 +120,8 @@ bin/mojomojo_update_db.pl
 %%SITE_PERL%%/MojoMojo/app.psgi
 %%SITE_PERL%%/MojoMojo/dotcloud.yml
 %%SITE_PERL%%/MojoMojo/mojomojo.conf
+%%SITE_PERL%%/MojoMojo/resources/logo/LinkedIn_logo.png
+%%SITE_PERL%%/MojoMojo/resources/logo/logo64x64.png
 %%SITE_PERL%%/MojoMojo/resources/logo/mmlogovector.psd
 %%SITE_PERL%%/MojoMojo/root/base/admin/create_role.tt
 %%SITE_PERL%%/MojoMojo/root/base/admin/edit_role.tt
@@ -214,6 +219,7 @@ bin/mojomojo_update_db.pl
 %%SITE_PERL%%/MojoMojo/root/static/Crystal_Clear_action_stop.png
 %%SITE_PERL%%/MojoMojo/root/static/catalyst.png
 %%SITE_PERL%%/MojoMojo/root/static/css/jquery.autocomplete.css
+%%SITE_PERL%%/MojoMojo/root/static/css/prism.css
 %%SITE_PERL%%/MojoMojo/root/static/css/progress.css
 %%SITE_PERL%%/MojoMojo/root/static/emote/47_47.gif
 %%SITE_PERL%%/MojoMojo/root/static/emote/48_48.gif
@@ -304,6 +310,7 @@ bin/mojomojo_update_db.pl
 %%SITE_PERL%%/MojoMojo/root/static/js/jquery.form.js
 %%SITE_PERL%%/MojoMojo/root/static/js/jquery.js
 %%SITE_PERL%%/MojoMojo/root/static/js/jquery.livequery.js
+%%SITE_PERL%%/MojoMojo/root/static/js/prism.js
 %%SITE_PERL%%/MojoMojo/root/static/js/swfupload.js
 %%SITE_PERL%%/MojoMojo/root/static/js/swfupload.queue.js
 %%SITE_PERL%%/MojoMojo/root/static/js/wiki.js
@@ -422,6 +429,14 @@ bin/mojomojo_update_db.pl
 %%SITE_PERL%%/MojoMojo/root/themes/purple-pleasure/page/wrapper.tt
 %%SITE_PERL%%/Text/SmartyPants.pm
 %%SITE_PERL%%/Text/Wikispaces2Markdown.pm
+%%PERL5_MAN1%%/mojomojo_cgi.pl.1.gz
+%%PERL5_MAN1%%/mojomojo_create.pl.1.gz
+%%PERL5_MAN1%%/mojomojo_fastcgi.pl.1.gz
+%%PERL5_MAN1%%/mojomojo_fastcgi_manage.pl.1.gz
+%%PERL5_MAN1%%/mojomojo_server.pl.1.gz
+%%PERL5_MAN1%%/mojomojo_spawn_db.pl.1.gz
+%%PERL5_MAN1%%/mojomojo_test.pl.1.gz
+%%PERL5_MAN1%%/mojomojo_update_db.pl.1.gz
 %%PERL5_MAN3%%/MojoMojo.3.gz
 %%PERL5_MAN3%%/MojoMojo::Controller::Admin.3.gz
 %%PERL5_MAN3%%/MojoMojo::Controller::Attachment.3.gz
@@ -510,11 +525,3 @@ bin/mojomojo_update_db.pl
 %%PERL5_MAN3%%/MojoMojo::WordDiff.3.gz
 %%PERL5_MAN3%%/Text::SmartyPants.3.gz
 %%PERL5_MAN3%%/Text::Wikispaces2Markdown.3.gz
-%%PERL5_MAN1%%/mojomojo_cgi.pl.1.gz
-%%PERL5_MAN1%%/mojomojo_create.pl.1.gz
-%%PERL5_MAN1%%/mojomojo_fastcgi.pl.1.gz
-%%PERL5_MAN1%%/mojomojo_fastcgi_manage.pl.1.gz
-%%PERL5_MAN1%%/mojomojo_server.pl.1.gz
-%%PERL5_MAN1%%/mojomojo_spawn_db.pl.1.gz
-%%PERL5_MAN1%%/mojomojo_test.pl.1.gz
-%%PERL5_MAN1%%/mojomojo_update_db.pl.1.gz

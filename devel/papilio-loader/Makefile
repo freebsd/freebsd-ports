@@ -18,7 +18,7 @@ GH_PROJECT=	Papilio-Loader
 GH_TAGNAME=     dd111c4
 WRKSRC=         ${WRKDIR}/${GH_PROJECT}-${GH_TAGNAME}/papilio-prog
 
-USES=           autoreconf:autoconf gmake
+USES=           autoreconf:autoconf pkgconfig gmake
 GNU_CONFIGURE=  yes
 CONFIGURE_ENV+=       libftdi1_CFLAGS="-I ${LOCALBASE}/include/libftdi1"
 CONFIGURE_ENV+=       libftdi1_LIBS="-L ${LOCALBASE}/lib -lftdi1"

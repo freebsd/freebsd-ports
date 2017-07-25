@@ -163,7 +163,7 @@ drizzle:*:213:213::0:0:Drizzle daemon:/var/db/drizzle:/usr/sbin/nologin
 kyototycoon:*:214:214::0:0:kyototycoon user:/var/empty:/usr/sbin/nologin
 opendnssec:*:215:215::0:0:Opendnssec Pseudo User:/nonexistent:/usr/sbin/nologin
 nsd:*:216:216::0:0:NSD DNS Server:/nonexistent:/usr/sbin/nologin
-# free: 217
+anvil:*:217:217::0:0:anvil certificate dropper:/var/db/anvil:/bin/sh
 # free: 218
 # free: 219
 bs:*:220:220::0:0:Big Sister:/usr/local/bigsister:/bin/sh
@@ -420,12 +420,12 @@ serf:*:470:470::0:0:Serf Daemon:/nonexistent:/usr/sbin/nologin
 vault:*:471:471::0:0:Vault Daemon:/nonexistent:/usr/sbin/nologin
 nomad:*:472:472::0:0:Nomad Daemon:/var/tmp/nomad:/usr/sbin/nologin
 minio:*:473:473::0:0:Minio Daemon:/var/tmp/minio:/usr/sbin/nologin
-gitlab-runner:*:474:474::0:0:GitLab Runner Daemon:/var/tmp/minio:/usr/sbin/nologin
+gitlab-runner:*:474:474::0:0:GitLab Runner Daemon:/var/tmp/gitlab_runner:/usr/sbin/nologin
 # free: 475
 # free: 476
 # free: 477
 prometheus:*:478:478::0:0:Prometheus Daemon:/var/tmp/prometheus:/usr/sbin/nologin
-# free: 479
+alertmanager:*:479:479::0:0:Alertmanager Daemon:/var/tmp/alertmanager:/usr/sbin/nologin
 # free: 480
 # free: 481
 # free: 482

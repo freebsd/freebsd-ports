@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	linuxcnc
-PORTVERSION=	20160626
-PORTREVISION=	5
+PORTVERSION=	20170708
 CATEGORIES=	cad
 PKGNAMESUFFIX=	-devel
 
@@ -12,7 +11,7 @@ COMMENT=	Open Source CNC machine controller
 
 LICENSE=	GPLv2
 
-BROKEN=		fails to build, too few arguments to modbus_set_response_timeout
+BROKEN_FreeBSD_10=	Does not build
 
 LIB_DEPENDS=	libBLT25.so:x11-toolkits/blt \
 		libboost_python.so:devel/boost-python-libs \
@@ -29,31 +28,38 @@ RUN_DEPENDS=	bash:shells/bash \
 		${LOCALBASE}/lib/Img/libtkimg1.4.6.so:graphics/libimg
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
+# Workaround for a clang crash on 12-CURRENT.
+BUILD_DEPENDS+=	clang38:lang/clang38
+CC=		clang38
+CXX=		clang++38
+
 NO_PACKAGE=	Licensing conflict between LinuxCNC (GPL2) and readline (GPL3)
 
-WRKSRC_SUBDIR=		src
+WRKSRC_SUBDIR=	src
 PATCH_WRKSRC=	${WRKDIR}/linuxcnc-${GH_TAGNAME}
 ALL_TARGET=	default
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-realtime=uspace --enable-non-distributable=yes \
 		CFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib" \
-		CXXFLAGS="-I${LOCALBASE}/include" CXX=c++ CC=cc \
+		CXXFLAGS="-I${LOCALBASE}/include" CXX="${CXX}" CC="${CC}" \
 		--with-locale-dir="${PREFIX}/share/locale" --with-python=${PYTHON_CMD}
 MAKE_ENV=	BUILD_VERBOSE=1
 USES=		autoreconf gettext gmake ncurses pkgconfig python readline shebangfix tk
 USE_GL=		gl glu
-USE_GNOME=	cairo gdkpixbuf2 pygtksourceview
+USE_GNOME=	cairo gdkpixbuf2 libgnomeprintui pygtksourceview
 USE_XORG=	ice sm x11 xext xft xinerama xmu xrender xscrnsaver xt
 USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	LinuxCNC
-GH_TAGNAME=	fe7b155c03fe77d6eb301bcfdc3d7c1acdea73e4
+GH_TAGNAME=	5b7929df50e0574cb1105143fffe525916d8a4c2
 
 post-patch:
-		${FIND} ${PATCH_WRKSRC} -type f | ${XARGS} ${REINPLACE_CMD} \
+		${FIND} ${PATCH_WRKSRC} -type f | ${XARGS} ${REINPLACE_CMD} -i '' \
 			-e 's|#!.*/bin/bash|#!${LOCALBASE}/bin/bash|' \
 			-e 's|#!.*/usr/bin/tclsh|#!${LOCALBASE}/bin/tclsh8.6|' \
-			-e 's|#!.*/usr/bin/wish|#!${LOCALBASE}/bin/wish8.6|'
+			-e 's|#!.*/usr/bin/wish|#!${LOCALBASE}/bin/wish8.6|' \
+			-e 's|#!.*/usr/bin/python|#!${LOCALBASE}/bin/env python2|' \
+			-e 's|#!.*/usr/bin/env python|#!/usr/bin/env python2|'
 
 .include <bsd.port.mk>

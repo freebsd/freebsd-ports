@@ -13,6 +13,7 @@ COMMENT=	Extensible and flexible object <-> relational mapper
 
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	p5-Class-Accessor-Grouped>=0.10012:devel/p5-Class-Accessor-Grouped \
 		p5-Class-C3-Componentised>=1.000900:devel/p5-Class-C3-Componentised \

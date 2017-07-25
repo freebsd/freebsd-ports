@@ -1,6 +1,6 @@
 # $FreeBSD$
 
-GEANY_VER=	1.30
+GEANY_VER=	1.31
 GEANY_PLUGINS_ALL=	addons \
 			autoclose \
 			automark \

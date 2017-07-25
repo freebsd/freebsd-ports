@@ -1,3 +1,5 @@
+include/gstreamer-%%VERSION%%/gst/allocators/badallocators.h
+include/gstreamer-%%VERSION%%/gst/allocators/gstphysmemory.h
 include/gstreamer-%%VERSION%%/gst/audio/gstaudioaggregator.h
 include/gstreamer-%%VERSION%%/gst/base/gstaggregator.h
 include/gstreamer-%%VERSION%%/gst/basecamerabinsrc/gstbasecamerasrc.h
@@ -5,6 +7,7 @@ include/gstreamer-%%VERSION%%/gst/basecamerabinsrc/gstcamerabin-enum.h
 include/gstreamer-%%VERSION%%/gst/basecamerabinsrc/gstcamerabinpreview.h
 include/gstreamer-%%VERSION%%/gst/codecparsers/gsth264parser.h
 include/gstreamer-%%VERSION%%/gst/codecparsers/gsth265parser.h
+include/gstreamer-%%VERSION%%/gst/codecparsers/gstjpeg2000sampling.h
 include/gstreamer-%%VERSION%%/gst/codecparsers/gstjpegparser.h
 include/gstreamer-%%VERSION%%/gst/codecparsers/gstmpeg4parser.h
 include/gstreamer-%%VERSION%%/gst/codecparsers/gstmpegvideometa.h
@@ -38,6 +41,7 @@ include/gstreamer-%%VERSION%%/gst/uridownloader/gsturidownloader.h
 include/gstreamer-%%VERSION%%/gst/uridownloader/gsturidownloader_debug.h
 include/gstreamer-%%VERSION%%/gst/video/gstvideoaggregator.h
 include/gstreamer-%%VERSION%%/gst/video/gstvideoaggregatorpad.h
+lib/girepository-1.0/GstBadAllocators-%%VERSION%%.typelib
 lib/girepository-1.0/GstInsertBin-%%VERSION%%.typelib
 lib/girepository-1.0/GstMpegts-%%VERSION%%.typelib
 lib/girepository-1.0/GstPlayer-%%VERSION%%.typelib
@@ -46,19 +50,22 @@ lib/gstreamer-%%VERSION%%/libgstadpcmdec.so
 lib/gstreamer-%%VERSION%%/libgstadpcmenc.so
 lib/gstreamer-%%VERSION%%/libgstaiff.so
 lib/gstreamer-%%VERSION%%/libgstasfmux.so
+lib/gstreamer-%%VERSION%%/libgstaudiobuffersplit.so
 lib/gstreamer-%%VERSION%%/libgstaudiofxbad.so
 lib/gstreamer-%%VERSION%%/libgstaudiomixer.so
+lib/gstreamer-%%VERSION%%/libgstaudiomixmatrix.so
 lib/gstreamer-%%VERSION%%/libgstaudiovisualizers.so
 lib/gstreamer-%%VERSION%%/libgstautoconvert.so
 lib/gstreamer-%%VERSION%%/libgstbayer.so
-lib/gstreamer-%%VERSION%%/libgstcamerabin2.so
+lib/gstreamer-%%VERSION%%/libgstbz2.so
+lib/gstreamer-%%VERSION%%/libgstcamerabin.so
 lib/gstreamer-%%VERSION%%/libgstcoloreffects.so
 lib/gstreamer-%%VERSION%%/libgstcompositor.so
-lib/gstreamer-%%VERSION%%/libgstdataurisrc.so
 lib/gstreamer-%%VERSION%%/libgstdebugutilsbad.so
 lib/gstreamer-%%VERSION%%/libgstdvb.so
 lib/gstreamer-%%VERSION%%/libgstdvbsuboverlay.so
 lib/gstreamer-%%VERSION%%/libgstdvdspu.so
+lib/gstreamer-%%VERSION%%/libgstfaceoverlay.so
 lib/gstreamer-%%VERSION%%/libgstfestival.so
 lib/gstreamer-%%VERSION%%/libgstfieldanalysis.so
 lib/gstreamer-%%VERSION%%/libgstfreeverb.so
@@ -73,6 +80,7 @@ lib/gstreamer-%%VERSION%%/libgstivfparse.so
 lib/gstreamer-%%VERSION%%/libgstivtc.so
 lib/gstreamer-%%VERSION%%/libgstjp2kdecimator.so
 lib/gstreamer-%%VERSION%%/libgstjpegformat.so
+lib/gstreamer-%%VERSION%%/libgstlegacyrawparse.so
 lib/gstreamer-%%VERSION%%/libgstmidi.so
 lib/gstreamer-%%VERSION%%/libgstmpegpsdemux.so
 lib/gstreamer-%%VERSION%%/libgstmpegpsmux.so
@@ -82,8 +90,8 @@ lib/gstreamer-%%VERSION%%/libgstmxf.so
 lib/gstreamer-%%VERSION%%/libgstnetsim.so
 lib/gstreamer-%%VERSION%%/libgstpcapparse.so
 lib/gstreamer-%%VERSION%%/libgstpnm.so
-lib/gstreamer-%%VERSION%%/libgstrawparse.so
 lib/gstreamer-%%VERSION%%/libgstremovesilence.so
+lib/gstreamer-%%VERSION%%/libgstrfbsrc.so
 lib/gstreamer-%%VERSION%%/libgstrtponvif.so
 lib/gstreamer-%%VERSION%%/libgstsdpelem.so
 lib/gstreamer-%%VERSION%%/libgstsegmentclip.so
@@ -93,6 +101,7 @@ lib/gstreamer-%%VERSION%%/libgstsmooth.so
 lib/gstreamer-%%VERSION%%/libgstspeed.so
 lib/gstreamer-%%VERSION%%/libgststereo.so
 lib/gstreamer-%%VERSION%%/libgstsubenc.so
+lib/gstreamer-%%VERSION%%/libgsttimecode.so
 lib/gstreamer-%%VERSION%%/libgstvideofiltersbad.so
 lib/gstreamer-%%VERSION%%/libgstvideoframe_audiolevel.so
 lib/gstreamer-%%VERSION%%/libgstvideoparsersbad.so
@@ -103,6 +112,9 @@ lib/gstreamer-%%VERSION%%/libgstyadif.so
 lib/libgstadaptivedemux-%%VERSION%%.so
 lib/libgstadaptivedemux-%%VERSION%%.so.0
 lib/libgstadaptivedemux-%%VERSION%%.so.%%SOVERSION%%
+lib/libgstbadallocators-%%VERSION%%.so
+lib/libgstbadallocators-%%VERSION%%.so.0
+lib/libgstbadallocators-%%VERSION%%.so.%%SOVERSION%%
 lib/libgstbadaudio-%%VERSION%%.so
 lib/libgstbadaudio-%%VERSION%%.so.0
 lib/libgstbadaudio-%%VERSION%%.so.%%SOVERSION%%
@@ -133,6 +145,7 @@ lib/libgstplayer-%%VERSION%%.so.%%SOVERSION%%
 lib/libgsturidownloader-%%VERSION%%.so
 lib/libgsturidownloader-%%VERSION%%.so.0
 lib/libgsturidownloader-%%VERSION%%.so.%%SOVERSION%%
+libdata/pkgconfig/gstreamer-bad-allocators-%%VERSION%%.pc
 libdata/pkgconfig/gstreamer-bad-audio-%%VERSION%%.pc
 libdata/pkgconfig/gstreamer-bad-base-%%VERSION%%.pc
 libdata/pkgconfig/gstreamer-bad-video-%%VERSION%%.pc
@@ -141,6 +154,7 @@ libdata/pkgconfig/gstreamer-insertbin-%%VERSION%%.pc
 libdata/pkgconfig/gstreamer-mpegts-%%VERSION%%.pc
 libdata/pkgconfig/gstreamer-player-%%VERSION%%.pc
 libdata/pkgconfig/gstreamer-plugins-bad-%%VERSION%%.pc
+share/gir-1.0/GstBadAllocators-%%VERSION%%.gir
 share/gir-1.0/GstInsertBin-%%VERSION%%.gir
 share/gir-1.0/GstMpegts-%%VERSION%%.gir
 share/gir-1.0/GstPlayer-%%VERSION%%.gir
@@ -159,6 +173,7 @@ share/locale/es/LC_MESSAGES/gst-plugins-bad-%%VERSION%%.mo
 share/locale/eu/LC_MESSAGES/gst-plugins-bad-%%VERSION%%.mo
 share/locale/fi/LC_MESSAGES/gst-plugins-bad-%%VERSION%%.mo
 share/locale/fr/LC_MESSAGES/gst-plugins-bad-%%VERSION%%.mo
+share/locale/fur/LC_MESSAGES/gst-plugins-bad-%%VERSION%%.mo
 share/locale/gl/LC_MESSAGES/gst-plugins-bad-%%VERSION%%.mo
 share/locale/hr/LC_MESSAGES/gst-plugins-bad-%%VERSION%%.mo
 share/locale/hu/LC_MESSAGES/gst-plugins-bad-%%VERSION%%.mo

@@ -12,6 +12,8 @@ EXTRACT_SUFX=	.gz
 COMMENT=	KDE Umicons iconset
 
 BROKEN=		does not fetch
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2017-08-23
 
 WRKSRC=		${WRKDIR}/Umicons_${PORTVERSION}
 PORT_SHAREDIR?=	"${PORTNAME}-${PORTVERSION}"

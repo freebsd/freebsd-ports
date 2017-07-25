@@ -1,6 +1,6 @@
 bin/wxmaxima
 man/man1/wxmaxima.1.gz
-share/appdata/wxmaxima.appdata.xml
+share/appdata/wxMaxima.appdata.xml
 %%DESKTOPDIR%%/wxMaxima.desktop
 share/bash-completion/completions/wxmaxima
 %%DOCSDIR%%/Autocomplete1.jpg
@@ -8,12 +8,15 @@ share/bash-completion/completions/wxmaxima
 %%DOCSDIR%%/BatchImage.jpg
 %%DOCSDIR%%/BatchImage.png
 %%DOCSDIR%%/InputCell.jpg
+%%DOCSDIR%%/Matrix table example.png
+%%DOCSDIR%%/MatrixTableExample.png
 %%DOCSDIR%%/NoiseFilter.jpg
+%%DOCSDIR%%/Second table example.png
+%%DOCSDIR%%/SecondTableExample.png
 %%DOCSDIR%%/SidePanes.jpg
 %%DOCSDIR%%/ezUnits.jpg
 %%DOCSDIR%%/ezUnits.png
-%%DOCSDIR%%/maxima_screenshot.jpg
-%%DOCSDIR%%/sbclMemory.jpg
+%%DOCSDIR%%/maxima_screenshot.png
 %%DOCSDIR%%/sbclMemory.png
 %%DOCSDIR%%/wxMaximaLogo.jpg
 %%DOCSDIR%%/wxMaximaLogo.png
@@ -22,7 +25,6 @@ share/bash-completion/completions/wxmaxima
 %%DOCSDIR%%/wxMaxima_configuration_001.png
 %%DOCSDIR%%/wxMaxima_configuration_002.jpg
 %%DOCSDIR%%/wxMaxima_configuration_002.png
-%%DOCSDIR%%/wxmaxima.hhp
 %%DOCSDIR%%/wxmaxima.html
 share/locale/ca/LC_MESSAGES/wxMaxima.mo
 share/locale/cs/LC_MESSAGES/wxMaxima.mo
@@ -37,6 +39,7 @@ share/locale/gl/LC_MESSAGES/wxMaxima.mo
 share/locale/hu/LC_MESSAGES/wxMaxima.mo
 share/locale/it/LC_MESSAGES/wxMaxima.mo
 share/locale/ja/LC_MESSAGES/wxMaxima.mo
+share/locale/kab/LC_MESSAGES/wxMaxima.mo
 share/locale/nb/LC_MESSAGES/wxMaxima.mo
 share/locale/pl/LC_MESSAGES/wxMaxima.mo
 share/locale/pt_BR/LC_MESSAGES/wxMaxima.mo
@@ -60,6 +63,12 @@ share/pixmaps/wxmaxima.svg
 %%DATADIR%%/autocomplete.txt
 %%DATADIR%%/editing.png
 %%DATADIR%%/maxima.png
+%%DATADIR%%/network-error.png
+%%DATADIR%%/network-idle.png
+%%DATADIR%%/network-offline.png
+%%DATADIR%%/network-receive.png
+%%DATADIR%%/network-transmit-receive.png
+%%DATADIR%%/network-transmit.png
 %%DATADIR%%/options.png
 %%DATADIR%%/styles.png
 %%DATADIR%%/testbench_simple.wxmx

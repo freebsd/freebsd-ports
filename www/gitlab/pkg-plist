@@ -4955,6 +4955,7 @@
 %%WWWDIR%%/db/post_migrate/20170406142253_migrate_user_project_view.rb
 %%WWWDIR%%/db/post_migrate/20170408033905_remove_old_cache_directories.rb
 %%WWWDIR%%/db/post_migrate/20170606202615_move_appearance_to_system_dir.rb
+%%WWWDIR%%/db/post_migrate/20170613111224_clean_appearance_symlinks.rb
 @(git,,) %%WWWDIR%%/db/schema.rb
 %%WWWDIR%%/db/seeds.rb
 %%WWWDIR%%/doc/README.md
@@ -6848,6 +6849,7 @@
 %%WWWDIR%%/lib/gitlab/testing/request_blocker_middleware.rb
 %%WWWDIR%%/lib/gitlab/time_tracking_formatter.rb
 %%WWWDIR%%/lib/gitlab/timeless.rb
+%%WWWDIR%%/lib/gitlab/untrusted_regexp.rb
 %%WWWDIR%%/lib/gitlab/update_path_error.rb
 %%WWWDIR%%/lib/gitlab/upgrader.rb
 %%WWWDIR%%/lib/gitlab/uploads_transfer.rb
@@ -7853,6 +7855,7 @@
 %%WWWDIR%%/spec/lib/banzai/object_renderer_spec.rb
 %%WWWDIR%%/spec/lib/banzai/pipeline/description_pipeline_spec.rb
 %%WWWDIR%%/spec/lib/banzai/pipeline/full_pipeline_spec.rb
+%%WWWDIR%%/spec/lib/banzai/pipeline/gfm_pipeline_spec.rb
 %%WWWDIR%%/spec/lib/banzai/pipeline/wiki_pipeline_spec.rb
 %%WWWDIR%%/spec/lib/banzai/querying_spec.rb
 %%WWWDIR%%/spec/lib/banzai/redactor_spec.rb
@@ -8197,6 +8200,7 @@
 %%WWWDIR%%/spec/lib/gitlab/template/gitlab_ci_yml_template_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/template/issue_template_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/template/merge_request_template_spec.rb
+%%WWWDIR%%/spec/lib/gitlab/untrusted_regexp_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/upgrader_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/uploads_transfer_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/url_blocker_spec.rb
@@ -8231,6 +8235,7 @@
 %%WWWDIR%%/spec/mailers/previews/devise_mailer_preview.rb
 %%WWWDIR%%/spec/mailers/previews/notify_preview.rb
 %%WWWDIR%%/spec/mailers/repository_check_mailer_spec.rb
+%%WWWDIR%%/spec/migrations/clean_appearance_symlinks_spec.rb
 %%WWWDIR%%/spec/migrations/clean_upload_symlinks_spec.rb
 %%WWWDIR%%/spec/migrations/fill_authorized_projects_spec.rb
 %%WWWDIR%%/spec/migrations/migrate_build_events_to_pipeline_events_spec.rb
@@ -8734,6 +8739,7 @@
 %%WWWDIR%%/spec/support/kubernetes_helpers.rb
 %%WWWDIR%%/spec/support/ldap_helpers.rb
 %%WWWDIR%%/spec/support/login_helpers.rb
+%%WWWDIR%%/spec/support/malicious_regexp_shared_examples.rb
 %%WWWDIR%%/spec/support/markdown_feature.rb
 %%WWWDIR%%/spec/support/matchers/access_matchers.rb
 %%WWWDIR%%/spec/support/matchers/be_like_time.rb

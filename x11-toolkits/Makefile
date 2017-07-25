@@ -32,7 +32,7 @@
     SUBDIR += gnustep-gui
     SUBDIR += granite
     SUBDIR += gstreamer-plugins-pango
-    SUBDIR += gstreamer1-plugins-gtksink
+    SUBDIR += gstreamer1-plugins-gtk
     SUBDIR += gstreamer1-plugins-pango
     SUBDIR += gtk-sharp-beans
     SUBDIR += gtk-sharp20

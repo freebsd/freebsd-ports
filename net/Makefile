@@ -204,6 +204,7 @@
     SUBDIR += gssdp
     SUBDIR += gstreamer-plugins-libmms
     SUBDIR += gstreamer1-plugins-libmms
+    SUBDIR += gstreamer1-plugins-srtp
     SUBDIR += gtic
     SUBDIR += gtk-vnc
     SUBDIR += gtknetcat
@@ -1219,6 +1220,7 @@
     SUBDIR += rubygem-opennebula
     SUBDIR += rubygem-packetfu
     SUBDIR += rubygem-pcaprub
+    SUBDIR += rubygem-proxifier
     SUBDIR += rubygem-qiniu
     SUBDIR += rubygem-rabbiter
     SUBDIR += rubygem-rbvmomi

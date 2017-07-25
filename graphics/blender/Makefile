@@ -221,11 +221,9 @@ USE_GCC=	yes
 .endif
 .endif
 
-post-patch:
-.if ${PORT_OPTIONS:MOPENCOLORIO}
+post-patch-OPENCOLORIO-on:
 	@${REINPLACE_CMD} -e 's|yaml-cpp|&03|' \
 		${PATCH_WRKSRC}/build_files/cmake/Modules/FindOpenColorIO.cmake
-.endif
 
 post-build:
 	@(cd ${WRKSRC}/doc/manpage && \

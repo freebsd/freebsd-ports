@@ -11,4 +11,4 @@ handling events. This library code does not depend on any particular SSL library
 This project also develops SPDY client, server and proxy on top of Spdylay
 library.
 
-WWW: http://tatsuhiro-t.github.io/spdylay/
+WWW: https://tatsuhiro-t.github.io/spdylay/

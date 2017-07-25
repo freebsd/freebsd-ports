@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	slurm
-PORTVERSION=	17.02.5
-PORTREVISION=	0
+DISTVERSION=	17.02.6
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.schedmd.com/download/latest/ \
 		http://www.schedmd.com/download/archive/ \
