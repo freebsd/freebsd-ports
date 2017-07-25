@@ -20,8 +20,13 @@
 
 PORTNAME=	cdrtools
 PORTVERSION=	3.01
+PORTREVISION=	1
 CATEGORIES=	sysutils audio
 MASTER_SITES=	SF/${PORTNAME}
+
+PATCH_SITES=	${MASTER_SITES}
+PATCHFILES=	cdrtools-3.01-fix-20151126-mkisofs-isoinfo.patch
+PATCH_DIST_STRIP= -p1
 
 MAINTAINER=	marius@FreeBSD.org
 COMMENT=	CD/DVD/BluRay and ISO-9660 image creation and extraction tools
