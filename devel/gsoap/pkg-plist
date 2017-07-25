@@ -152,6 +152,8 @@ libdata/pkgconfig/gsoapssl.pc
 %%DATADIR%%/plugin/cacerts.c
 %%DATADIR%%/plugin/cacerts.h
 %%DATADIR%%/plugin/calcrest.h
+%%DATADIR%%/plugin/curlapi.c
+%%DATADIR%%/plugin/curlapi.h
 %%DATADIR%%/plugin/httpda.c
 %%DATADIR%%/plugin/httpda.h
 %%DATADIR%%/plugin/httpdatest.c
