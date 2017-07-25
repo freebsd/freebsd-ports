@@ -135,6 +135,11 @@ OPTIONS_DEFAULT?=DSO FILE_AIO HTTP HTTP_ADDITION HTTP_AUTH_REQ HTTP_CACHE \
 		HTTPV2 MAIL MAIL_SSL STREAM STREAM_SSL STREAM_SSL_PREREAD \
 		THREADS WWW
 
+# If the target is makesum, make sure that every distfile is fetched.
+.if ${.TARGETS:Mmakesum}
+OPTIONS_DEFAULT=		${OPTIONS_DEFINE}
+.endif
+
 DSO_DESC=			Enable dynamic modules support
 DEBUG_DESC=			Build with debugging support
 DEBUGLOG_DESC=			Enable debug log (--with-debug)
