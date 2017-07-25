@@ -9,6 +9,9 @@ DISTFILES=	# empty
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Manage your own package jail
 
+LICENSE=	BSD3CLAUSE NONE
+LICENSE_COMB=	multi
+
 NO_BUILD=	yes
 NO_ARCH=	yes
 
