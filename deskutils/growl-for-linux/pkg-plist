@@ -24,7 +24,7 @@ lib/growl-for-linux/subscribe/libtweets.so
 lib/growl-for-linux/subscribe/libtweets.so.0
 lib/growl-for-linux/subscribe/libtweets.so.0.0.0
 %%DESKTOPDIR%%/gol.desktop
-%%DATADIR%%/data/growl4linux.jpg
 %%DATADIR%%/data/icon.png
+%%DATADIR%%/data/icon256.png
 %%DATADIR%%/data/icon_dnd.png
 %%DATADIR%%/data/mattn.png

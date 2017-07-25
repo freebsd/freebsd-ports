@@ -1,9 +1,9 @@
---- gsoap/wsdl/Makefile.in.orig	2017-04-08 13:59:08 UTC
-+++ gsoap/wsdl/Makefile.in
-@@ -314,7 +314,7 @@ SOAP_FLAGS = -SC -pwsdl -I$(srcdir) -I$(
+--- gsoap/wsdl/Makefile.in.orig	2017-07-24 13:25:52.574440000 -0400
++++ gsoap/wsdl/Makefile.in	2017-07-24 13:26:49.901559000 -0400
+@@ -315,7 +315,7 @@ SOAP_FLAGS = -SC -pwsdl -I$(srcdir) -I$(top_srcdir)/gs
  BUILT_SOURCES = $(SOAP_CPP_SRC)
- wsdl2h_CFLAGS = $(C_DEBUG_FLAGS) $(WSDL2H_EXTRA_FLAGS)
- wsdl2h_CXXFLAGS = $(C_DEBUG_FLAGS) $(WSDL2H_EXTRA_FLAGS) $(WSDL2H_IMPORTPATH)
+ wsdl2h_CFLAGS = $(C_DEBUG_FLAGS) $(SOAPCPP2_NO_C_LOCALE) $(WSDL2H_EXTRA_FLAGS)
+ wsdl2h_CXXFLAGS = $(C_DEBUG_FLAGS) $(SOAPCPP2_NO_C_LOCALE) $(WSDL2H_EXTRA_FLAGS) $(WSDL2H_IMPORTPATH)
 -wsdl2h_CPPFLAGS = $(AM_CPPFLAGS) $(SOAPCPP2_NONAMESPACES) -D$(platform)
 +wsdl2h_CPPFLAGS = $(AM_CPPFLAGS) $(SOAPCPP2_NONAMESPACES) $(WSDL2H_IMPORTPATH) -D$(platform)
  wsdl2h_SOURCES = wsdl2h.cpp wsdl.cpp wadl.cpp schema.cpp types.cpp service.cpp soap.cpp mime.cpp wsp.cpp bpel.cpp $(SOAP_CPP_SRC)

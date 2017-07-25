@@ -1,9 +1,0 @@
---- ./configure.ac.orig	2012-09-01 14:59:36.000000000 +0200
-+++ ./configure.ac	2012-09-01 15:00:01.000000000 +0200
-@@ -1,5 +1,5 @@
- AC_PREREQ([2.65])
--AC_INIT([growl-for-linux], [esyscmd([cat VERSION | tr -d '\n'])], [mattn.jp@gmail.com])
-+AC_INIT([growl-for-linux], esyscmd([tr -d '\n' < VERSION]), [mattn.jp@gmail.com])
- AC_CONFIG_SRCDIR([gol.c])
- AC_CONFIG_MACRO_DIR([m4])
- 

@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	logitechmediaserver
-PORTVERSION=	7.9.0.g2016.09.30
-PORTREVISION=	2
+PORTVERSION=	7.9.1.g2017.07.11
 CATEGORIES=	audio
 
 MAINTAINER=	mark@tranquillussoftware.co.uk
@@ -13,21 +12,18 @@ LICENSE_NAME=	Slim Devices License
 LICENSE_FILE=	${WRKSRC}/License.txt
 LICENSE_PERMS=	no-dist-mirror no-dist-sell no-pkg-mirror no-pkg-sell
 
+ONLY_FOR_ARCHS=	amd64 i386
+
 BUILD_DEPENDS=	nasm:devel/nasm \
 		bash:shells/bash \
 		rsync:net/rsync
 LIB_DEPENDS=	libgd.so:graphics/gd
 
-USE_GITHUB=	yes
-GH_TUPLE=	Logitech:slimserver:c835a1f \
-		Logitech:slimserver-vendor:14cc392:vendor
-
-RESTRICTED=	Contains non-redistributable firmware, documentation, and images
-
-USERS=		${SLIMUSER}
-GROUPS=		${SLIMGROUP}
 USES=		gettext-runtime gmake perl5 shebangfix
-EXTRA_PATCHES=	${FILESDIR}/vendorpatch-CPAN_buildme.sh
+USE_GITHUB=	yes
+GH_TUPLE=	Logitech:slimserver:762b5cb \
+		Logitech:slimserver-vendor:1463b00:vendor
+USE_RC_SUBR=	logitechmediaserver
 SHEBANG_FILES=	Bin/darwin/check-update.pl \
 		Bin/dbish \
 		CPAN/Log/Log4perl/Layout/PatternLayout/Multiline.pm \
@@ -47,7 +43,6 @@ OPTIONS_DEFINE=	APE FAAD FLAC LAME SHORTEN SOX TEST DOCS
 OPTIONS_DEFAULT=APE FAAD FLAX SOX TEST
 SHORTEN_DESC=	Support Shorten input
 SOX_DESC=	Support OGG Vorbis input via SoX (SliMP3 and SB1)
-
 APE_RUN_DEPENDS=	mac:audio/mac
 FAAD_RUN_DEPENDS=	faad:audio/faad
 FLAC_RUN_DEPENDS=	flac:audio/flac
@@ -56,7 +51,11 @@ SHORTEN_RUN_DEPENDS=	shorten:audio/shorten
 SOX_RUN_DEPENDS=	sox:audio/sox
 TEST_VARS_OFF=		CONTRIB_FLAGS=-t
 
-USE_RC_SUBR=	logitechmediaserver
+RESTRICTED=	Contains non-redistributable firmware, documentation, and images
+USERS=		${SLIMUSER}
+GROUPS=		${SLIMGROUP}
+EXTRA_PATCHES=	${FILESDIR}/vendorpatch-CPAN_buildme.sh
+
 DOCFILES=	Changelog*.html Installation.txt License*.txt
 CONFFILES=	convert.conf types.conf
 
@@ -85,8 +84,6 @@ SLIMGROUP?=	${SLIMUSER}
 
 .include <bsd.port.pre.mk>
 
-ONLY_FOR_ARCHS=	i386 amd64
-
 .if ${ARCH} == "i386"
 ARCHNAME=	i386-freebsd-thread-multi-64int
 PLIST_SUB+=	I386_ONLY=""
@@ -103,7 +100,6 @@ PLIST_SUB+=	AMD64_ONLY="@comment "
 
 do-build:
 	cd ${WRKSRC_vendor}/CPAN && ./buildme.sh ${CONTRIB_FLAGS}
-	cd ${WRKSRC}/CPAN/arch && ${CP} -R 5.22 5.24
 
 do-install:
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/${SLIMDIR})
@@ -113,7 +109,7 @@ do-install:
 		${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/${SLIMDIR}/CPAN/arch/${PERL_VER}/)
 	(cd ${STAGEDIR}${PREFIX}/${SLIMDIR} && \
 		${FIND} . -name \*.orig -delete -o -name \*.bak -delete -o -name \*.packlist -delete && \
-		${FIND} ./CPAN/arch/ -d 1 ! -name ${PERL_VER} -print0 | ${XARGS} -0 ${RM} -r -- && \
+		${FIND} ./CPAN/arch/ ! -path './CPAN/arch/${PERL_VER}*' -delete && \
 		${RM} -r -- Bin/* && \
 		${RM} -- ${CONFFILES} ${DOCFILES})
 	(cd ${STAGEDIR}${PREFIX}/${SLIMDIR}/CPAN/arch/${PERL_VER} && \

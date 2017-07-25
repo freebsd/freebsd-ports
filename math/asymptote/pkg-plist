@@ -203,6 +203,7 @@ man/man1/xasy.1x.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/100d.views
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/1overx.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/BezierPatch.asy
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/BezierSaddle.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/BezierSurface.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/BezierTriangle.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Bode.asy
@@ -267,6 +268,7 @@ man/man1/xasy.1x.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/clockarray.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/coag.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/colons.asy
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/colorpatch.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/colorplanes.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/colors.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/condor.asy
