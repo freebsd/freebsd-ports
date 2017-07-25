@@ -306,7 +306,7 @@ _USE_QT_ALL=	assistant dbus declarative designer doc gui help \
 				imageformats l10n linguist linguisttools multimedia \
 				network opengl pixeltool qdbusviewer qmake script \
 				scripttools sql sql-ibase sql-mysql sql-odbc sql-pgsql \
-				sql-sqlite2 sql-sqlite3 svg testlib webkit \
+				sql-sqlite2 sql-sqlite3 svg testlib webkit webengine \
 				xml xmlpatterns
 
 _USE_QT4_ONLY=	accessible assistant-adp assistantclient clucene codecs-cn codecs-jp \
@@ -591,6 +591,9 @@ virtualkeyboard_PATH=	${QT_PLUGINDIR}/platforminputcontexts/libqtvirtualkeyboard
 
 webchannel_PORT=	www/${_QT_RELNAME}-webchannel
 webchannel_LIB=	libQt${_QT_LIBVER}WebChannel.so
+
+webengine_PORT=	www/${_QT_RELNAME}-webengine
+webengine_LIB=	libQt${_QT_LIBVER}WebEngine.so
 
 websockets_PORT=	www/${_QT_RELNAME}-websockets
 websockets_LIB=	libQt${_QT_LIBVER}WebSockets.so

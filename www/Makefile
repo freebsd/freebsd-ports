@@ -1868,6 +1868,7 @@
     SUBDIR += quickie
     SUBDIR += qupzilla-qt4
     SUBDIR += qupzilla-qt5
+    SUBDIR += qupzilla-qt5-webkit
     SUBDIR += radicale
     SUBDIR += red5
     SUBDIR += redaxo
