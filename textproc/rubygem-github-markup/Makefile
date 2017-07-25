@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	github-markup
-PORTVERSION=	1.6.0
-PORTREVISION=	1
+PORTVERSION=	1.6.1
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
