@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xlockmore
-PORTVERSION=	5.51
-PORTREVISION=	1
+PORTVERSION=	5.54
 CATEGORIES?=	x11
 MASTER_SITES=	http://www.sillycycle.com/xlock/ \
 		LOCAL/jgh/x11/${PORTNAME}/
