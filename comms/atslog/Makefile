@@ -10,25 +10,41 @@ MASTER_SITES=	BERLIOS
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Software for collecting and analyzing calls from different PBX models
 
-OPTIONS_DEFINE=	EXAMPLES LIBWRAP WWW WWWGD DOCS
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+USES=		perl5 shebangfix
+SHEBANG_FILES=	data/sql/install-sql.pl \
+		include/atslogcleardb.pl.in include/atslogdb.pl.in
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--localstatedir=/var
+
+USE_RC_SUBR=	${PORTNAME}d
+PLIST_SUB=	WWWOWN="${WWWOWN}" WWWGRP="${WWWGRP}"
+
+SUB_FILES=	pkg-message
+
+PORTDOCS=	CHANGES ChangeLog DEINSTALL INSTALL TODO UPDATING USAGE
+
+OPTIONS_DEFINE=		EXAMPLES LIBWRAP WWW WWWGD DOCS
 OPTIONS_DEFAULT=	LIBWRAP MYSQL WWW WWWGD
-OPTIONS_MULTI=	DB
+OPTIONS_MULTI=		DB
 OPTIONS_MULTI_DB=	PGSQL MYSQL
+OPTIONS_SUB=		yes
+
 LIBWRAP_DESC=	Enable TCP wrapper support
 WWW_DESC=	Install web interface
 WWWGD_DESC=	Graphic reports
 
-GNU_CONFIGURE=	yes
-USES=		perl5 shebangfix
-USE_RC_SUBR=	${PORTNAME}d
-SHEBANG_FILES=	data/sql/install-sql.pl \
-		include/atslogcleardb.pl.in include/atslogdb.pl.in
-PORTDOCS=	CHANGES ChangeLog DEINSTALL INSTALL LICENSE TODO UPDATING USAGE
-SUB_FILES=	pkg-message
-CONFIGS=	${PORTNAME}.conf.default ${PORTNAME}.conf.default.rus
-CONFIGURE_ARGS+=--localstatedir=/var
-PLIST_SUB=	WWWOWN="${WWWOWN}" WWWGRP="${WWWGRP}"
-OPTIONS_SUB=yes
+MYSQL_USES=		mysql
+MYSQL_BUILD_DEPENDS=	p5-DBD-mysql>=0:databases/p5-DBD-mysql
+MYSQL_RUN_DEPENDS=	p5-DBD-mysql>=0:databases/p5-DBD-mysql
+
+PGSQL_USES=		pgsql
+PGSQL_BUILD_DEPENDS=	p5-DBD-Pg>=0:databases/p5-DBD-Pg
+PGSQL_RUN_DEPENDS=	p5-DBD-Pg>=0:databases/p5-DBD-Pg
+
+LIBWRAP_CONFIGURE_OFF=	--disable-libwrap
 
 .include <bsd.port.options.mk>
 
@@ -44,22 +60,6 @@ USE_PHP+=	mysqli
 .if ${PORT_OPTIONS:MPGSQL}
 USE_PHP+=	pgsql
 .endif
-.endif
-
-.if ${PORT_OPTIONS:MMYSQL}
-USE_MYSQL=	yes
-BUILD_DEPENDS+=	p5-DBD-mysql>=0:databases/p5-DBD-mysql
-RUN_DEPENDS+=	p5-DBD-mysql>=0:databases/p5-DBD-mysql
-.endif
-
-.if ${PORT_OPTIONS:MPGSQL}
-USES+=		pgsql
-BUILD_DEPENDS+=	p5-DBD-Pg>=0:databases/p5-DBD-Pg
-RUN_DEPENDS+=	p5-DBD-Pg>=0:databases/p5-DBD-Pg
-.endif
-
-.if ! ${PORT_OPTIONS:MLIBWRAP}
-CONFIGURE_ARGS+=--disable-libwrap
 .endif
 
 post-patch:
