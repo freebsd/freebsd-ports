@@ -14,8 +14,6 @@ LICENSE=	APACHE20
 
 RUN_DEPENDS=	mvn:devel/maven-wrapper
 
-CONFLICTS_INSTALL=	maven3-* maven31-* maven33-*
-
 USES=		cpe
 CPE_PRODUCT=	maven
 CPE_VENDOR=	apache
