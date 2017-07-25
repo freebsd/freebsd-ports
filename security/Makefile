@@ -95,6 +95,7 @@
     SUBDIR += courieruserinfo
     SUBDIR += cp2fwb
     SUBDIR += cracklib
+    SUBDIR += crackpkcs12
     SUBDIR += crank
     SUBDIR += create-cert
     SUBDIR += cryptlib
@@ -1092,6 +1093,7 @@
     SUBDIR += rubygem-sshkit
     SUBDIR += rubygem-timfel-krb5
     SUBDIR += rubygem-twitter_oauth
+    SUBDIR += rubygem-webpush
     SUBDIR += s2n
     SUBDIR += safesh
     SUBDIR += samba-virusfilter

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libidn2
-PORTVERSION=	2.0.2
+PORTVERSION=	2.0.3
 CATEGORIES=	dns
 MASTER_SITES=	GNU/libidn
 
@@ -12,6 +12,7 @@ COMMENT=	Implementation of IDNA2008 internationalized domain names
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BUILD_DEPENDS=	ronn:textproc/rubygem-ronn
 LIB_DEPENDS=	libunistring.so:devel/libunistring
 
 CONFIGURE_ARGS=	--disable-nls \

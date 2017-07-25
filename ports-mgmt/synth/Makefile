@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	synth
-PORTVERSION=	1.69
+PORTVERSION=	1.70
 DISTVERSIONPREFIX=	v
 CATEGORIES=	ports-mgmt
 
@@ -22,6 +22,13 @@ GH_ACCOUNT=	jrmarino
 
 GPR=		${LOCALBASE}/lib/gnat
 MAKE_ENV=	NCURSES_LINK=static
+
+OPTIONS_DEFINE=	NOWATCHDOG
+OPTIONS_DEFAULT=NOWATCHDOG
+
+NOWATCHDOG_DESC=	Disable build watchdog monitor
+
+NOWATCHDOG_EXTRA_PATCHES=	${FILESDIR}/extrapatch-nowatchdog-portscan-buildcycle.adb
 
 .include <bsd.port.pre.mk>
 

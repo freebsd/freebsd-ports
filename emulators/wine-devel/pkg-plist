@@ -992,6 +992,7 @@ lib/wine/api-ms-win-core-processthreads-l1-1-0.dll.so
 lib/wine/api-ms-win-core-processthreads-l1-1-1.dll.so
 lib/wine/api-ms-win-core-processthreads-l1-1-2.dll.so
 lib/wine/api-ms-win-core-profile-l1-1-0.dll.so
+lib/wine/api-ms-win-core-psapi-ansi-l1-1-0.dll.so
 lib/wine/api-ms-win-core-psapi-l1-1-0.dll.so
 lib/wine/api-ms-win-core-psapi-obsolete-l1-1-0.dll.so
 lib/wine/api-ms-win-core-quirks-l1-1-0.dll.so
@@ -1070,6 +1071,7 @@ lib/wine/api-ms-win-eventing-provider-l1-1-0.dll.so
 lib/wine/api-ms-win-eventlog-legacy-l1-1-0.dll.so
 lib/wine/api-ms-win-mm-misc-l1-1-1.dll.so
 lib/wine/api-ms-win-mm-mme-l1-1-0.dll.so
+lib/wine/api-ms-win-mm-time-l1-1-0.dll.so
 lib/wine/api-ms-win-ntuser-dc-access-l1-1-0.dll.so
 lib/wine/api-ms-win-power-base-l1-1-0.dll.so
 lib/wine/api-ms-win-power-setting-l1-1-0.dll.so
@@ -1087,6 +1089,7 @@ lib/wine/api-ms-win-security-lsalookup-l1-1-0.dll.so
 lib/wine/api-ms-win-security-lsalookup-l1-1-1.dll.so
 lib/wine/api-ms-win-security-lsalookup-l2-1-1.dll.so
 lib/wine/api-ms-win-security-lsapolicy-l1-1-0.dll.so
+lib/wine/api-ms-win-security-provider-l1-1-0.dll.so
 lib/wine/api-ms-win-security-sddl-l1-1-0.dll.so
 lib/wine/api-ms-win-security-systemfunctions-l1-1-0.dll.so
 lib/wine/api-ms-win-service-core-l1-1-0.dll.so
@@ -1372,6 +1375,7 @@ lib/wine/fakedlls/api-ms-win-core-processthreads-l1-1-0.dll
 lib/wine/fakedlls/api-ms-win-core-processthreads-l1-1-1.dll
 lib/wine/fakedlls/api-ms-win-core-processthreads-l1-1-2.dll
 lib/wine/fakedlls/api-ms-win-core-profile-l1-1-0.dll
+lib/wine/fakedlls/api-ms-win-core-psapi-ansi-l1-1-0.dll
 lib/wine/fakedlls/api-ms-win-core-psapi-l1-1-0.dll
 lib/wine/fakedlls/api-ms-win-core-psapi-obsolete-l1-1-0.dll
 lib/wine/fakedlls/api-ms-win-core-quirks-l1-1-0.dll
@@ -1450,6 +1454,7 @@ lib/wine/fakedlls/api-ms-win-eventing-provider-l1-1-0.dll
 lib/wine/fakedlls/api-ms-win-eventlog-legacy-l1-1-0.dll
 lib/wine/fakedlls/api-ms-win-mm-misc-l1-1-1.dll
 lib/wine/fakedlls/api-ms-win-mm-mme-l1-1-0.dll
+lib/wine/fakedlls/api-ms-win-mm-time-l1-1-0.dll
 lib/wine/fakedlls/api-ms-win-ntuser-dc-access-l1-1-0.dll
 lib/wine/fakedlls/api-ms-win-power-base-l1-1-0.dll
 lib/wine/fakedlls/api-ms-win-power-setting-l1-1-0.dll
@@ -1467,6 +1472,7 @@ lib/wine/fakedlls/api-ms-win-security-lsalookup-l1-1-0.dll
 lib/wine/fakedlls/api-ms-win-security-lsalookup-l1-1-1.dll
 lib/wine/fakedlls/api-ms-win-security-lsalookup-l2-1-1.dll
 lib/wine/fakedlls/api-ms-win-security-lsapolicy-l1-1-0.dll
+lib/wine/fakedlls/api-ms-win-security-provider-l1-1-0.dll
 lib/wine/fakedlls/api-ms-win-security-sddl-l1-1-0.dll
 lib/wine/fakedlls/api-ms-win-security-systemfunctions-l1-1-0.dll
 lib/wine/fakedlls/api-ms-win-service-core-l1-1-0.dll
@@ -1891,6 +1897,7 @@ lib/wine/fakedlls/photometadatahandler.dll
 lib/wine/fakedlls/pidgen.dll
 lib/wine/fakedlls/ping.exe
 lib/wine/fakedlls/plugplay.exe
+lib/wine/fakedlls/powershell.exe
 lib/wine/fakedlls/powrprof.dll
 lib/wine/fakedlls/presentationfontcache.exe
 lib/wine/fakedlls/printui.dll
@@ -2545,6 +2552,7 @@ lib/wine/photometadatahandler.dll.so
 lib/wine/pidgen.dll.so
 lib/wine/ping.exe.so
 lib/wine/plugplay.exe.so
+lib/wine/powershell.exe.so
 lib/wine/powrprof.dll.so
 lib/wine/presentationfontcache.exe.so
 lib/wine/printui.dll.so

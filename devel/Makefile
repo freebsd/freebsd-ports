@@ -1631,6 +1631,7 @@
     SUBDIR += mate-common
     SUBDIR += matreshka
     SUBDIR += maven-wrapper
+    SUBDIR += maven
     SUBDIR += maven3
     SUBDIR += maven31
     SUBDIR += maven33
@@ -5449,6 +5450,7 @@
     SUBDIR += rubygem-json1
     SUBDIR += rubygem-json_pure
     SUBDIR += rubygem-json_pure1
+    SUBDIR += rubygem-jsonapi-renderer
     SUBDIR += rubygem-kafo
     SUBDIR += rubygem-kafo_parsers
     SUBDIR += rubygem-kafo_wizards
