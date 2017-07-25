@@ -1,0 +1,75 @@
+#!/sbin/openrc-run
+
+# Add the following lines to /etc/rc.conf to run memcached:
+#
+# memcached_flags (flags):	Set extra flags here. More options in memcached(1)
+#				Default is empty "".
+# memcached_user (user):	Set user to run memcached.
+#				Default is "nobody".
+# memcached_profiles (str):     Set to "" by default.
+#                               Define your profiles here.
+# memcached_post_start (str):   Set extra commands that should be executed after memcached was successfully
+#                               started here.
+#                               Default is empty "".
+
+name="memcached"
+_piddir="/var/run/memcached"
+pidfile="${_piddir}/memcached.pid"
+
+: ${memcached_user="nobody"}
+
+if [ -n "$2" ]; then
+	profile="$2"
+	if [ -n "${memcached_profiles}" ]; then
+		pidfile="${_piddir}/memcached.${profile}.pid"
+		eval memcached_user="\${memcached_${profile}_user:-${memcached_user}}"
+		eval memcached_flags="\${memcached_${profile}_flags:-${memcached_flags}}"
+		eval memcached_post_start="\${memcached_${profile}_post_start:-${memcached_post_start}}"
+	else
+		echo "%%PREFIX%%/etc/rc.d/memcached%%RC_SUBR_SUFFIX%%: extra argument ignored"
+	fi
+else
+	if [ -n "${memcached_profiles}" -a -n "$1" ]; then
+		for profile in ${memcached_profiles}; do
+			echo "===> memcached profile: ${profile}"
+			if %%PREFIX%%/etc/rc.d/memcached%%RC_SUBR_SUFFIX%% $1 ${profile} ; then
+				success="${profile} ${success:-}"
+			else
+				failed="${profile} (${retcode}) ${failed:-}"
+			fi
+		done
+		exit 0
+	fi
+fi
+
+stop_post()
+{
+	if [ -n "${profile}" ]; then
+		[ -e "$pidfile" ] && unlink $pidfile
+	else
+		local file
+
+		for file in ${_piddir}/* ; do
+			case "$file" in
+			*\*)
+				continue ;;
+			esac
+			unlink $file
+		done
+	fi
+}
+
+command=%%PREFIX%%/bin/memcached
+command_args="-d -u ${memcached_user} -P ${pidfile} "
+command_user=${memcached_user}
+memcached_group=`id -gn $memcached_user`
+
+start_pre() {
+	install -d -o $memcached_user -g $memcached_group -m 755 $_piddir
+}
+
+depend() {
+	need localmount
+	keyword -shutdown
+	after bootmisc
+}

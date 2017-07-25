@@ -1,0 +1,11 @@
+#!/sbin/openrc-run
+
+RDFDB_DIR=%%RDFDB_DIR%%
+RDFDB_PORT=%%RDFDB_PORT%%
+export RDFDB_DIR RDFDB_PORT
+command="%%PREFIX%%/bin/rdfdb"
+command_args="> /dev/null &"
+
+stop_pre() {
+	killall rdfdb
+}

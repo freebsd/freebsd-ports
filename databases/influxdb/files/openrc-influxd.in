@@ -1,0 +1,36 @@
+#!/sbin/openrc-run
+
+# Add the following lines to /etc/rc.conf to enable influxdb:
+# influxd_conf (str):		influxd configuration file
+#				Default: ${PREFIX}/etc/influxd.conf
+# influxd_user (str):		influxd daemon user
+#				Default: influxd
+# influxd_group (str):		influxd daemon group
+#				Default: influxd
+# influxd_flags (str):		Extra flags passed to influxd
+
+name="influxd"
+
+: ${influxd_user:="%%INFLUXD_USER%%"}
+: ${influxd_group:="%%INFLUXD_GROUP%%"}
+: ${influxd_flags:=""}
+: ${influxd_conf:="%%PREFIX%%/etc/${name}.conf"}
+: ${influxd_options:="${influxdb_flags} -config=${influxd_conf} 2> %%INFLUXD_LOGDIR%%/influxdb.log"}
+
+# daemon
+influxd_pidfile="%%INFLUXD_PIDDIR%%${name}.pid"
+command="%%PREFIX%%/bin/${name}"
+command_user=${influxd_user}
+command_args="${influxd_options}"
+supervisor=supervise-daemon
+
+start_pre()
+{
+    install -d -o ${influxd_user} %%INFLUXD_PIDDIR%%
+}
+
+depend() {
+	need localmount
+	keyword -shutdown
+	after bootmisc
+}

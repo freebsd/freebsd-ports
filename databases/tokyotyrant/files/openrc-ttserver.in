@@ -1,0 +1,11 @@
+#!/sbin/openrc-run
+
+name="ttserver"
+command="%%PREFIX%%/bin/${name}"
+pidfile="/var/run/ttserver.pid"
+: ${ttserver_flags="-dmn -pid ${pidfile}"}
+command_args=${ttserver_flags}
+
+depend() {
+	keyword -shutdown
+}

@@ -1,0 +1,83 @@
+#!/sbin/openrc-run
+#
+# Add the following line to /etc/rc.conf to enable mysql:
+# mysql_limits (bool):	Set to "NO" by default.
+#			Set it to yes to run `limits -e -U mysql`
+#			just before mysql starts.
+# mysql_dbdir (str):	Default to "/var/db/mysql"
+#			Base database directory.
+# mysql_optfile (str):	Server-specific option file.
+#			Default to "${mysql_dbdir}/my.cnf".
+# mysql_pidfile (str):	Custum PID file path and name.
+#			Default to "${mysql_dbdir}/${hostname}.pid".
+# mysql_args (str):	Custom additional arguments to be passed
+#			to mysqld_safe (default empty).
+
+name="mysql"
+
+: ${mysql_limits="NO"}
+: ${mysql_dbdir="/var/db/mysql"}
+: ${mysql_optfile="${mysql_dbdir}/my.cnf"}
+
+command_user="mysql"
+mysql_limits_args="-e -U ${command_user}"
+: ${hostname:=`/bin/hostname`}
+pidfile=${mysql_pidfile:-"${mysql_dbdir}/${hostname}.pid"}
+supervisor=supervise-daemon
+command_args="--defaults-extra-file=${mysql_optfile} --user=${command_user} --datadir=${mysql_dbdir} --pid-file=${pidfile} ${mysql_args}"
+command="%%PREFIX%%/bin/mysqld_safe"
+procname="%%PREFIX%%/libexec/mysqld"
+mysql_install_db="%%PREFIX%%/bin/mysql_install_db"
+mysql_install_db_args="--basedir=%%PREFIX%% --defaults-extra-file=${mysql_optfile} --datadir=${mysql_dbdir} --force"
+service_startup_timeout=900
+startup_sleep=1
+sst_progress_file=${mysql_dbdir}/sst_in_progress
+extra_commands="bootstrap"
+
+bootstrap()
+{
+       # Bootstrap the cluster, start the first node that initiate the cluster
+       einfo "Bootstrapping cluster"
+       shift
+       command_args="$command_args --wsrep-new-cluster"
+	   start_pre
+	   start-stop-daemon --start --name $name --pidfile $pidfile --exec $command $command_args
+	   start_post
+}
+
+mysql_create_auth_tables()
+{
+	eval $mysql_install_db $mysql_install_db_args >/dev/null 2>/dev/null
+        [ $? -eq 0 ] && chown -R ${command_user}:${command_user} ${mysql_dbdir}
+}
+
+start_pre()
+{
+	if [ ! -d "${mysql_dbdir}/mysql/." ]; then
+		mysql_create_auth_tables || return 1
+	fi
+	if yesno mysql_limits; then
+		eval `/usr/bin/limits ${mysql_limits_args}` 2>/dev/null
+	else
+		return 0
+	fi
+}
+
+start_post()
+{
+        local timeout=${service_startup_timeout}
+        while [ ! -f "${pidfile}" -a ${timeout} -gt 0 ]; do
+                if test -e $sst_progress_file && [ $startup_sleep -ne 100 ]; then
+                        einfo "SST in progress, setting sleep higher"
+                        startup_sleep=100
+                fi
+                timeout=$(( timeout - 1 ))
+                sleep $startup_sleep
+        done
+        return 0
+}
+
+depend() {
+	provide mysql
+	keyword -shutdown
+}

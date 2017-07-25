@@ -1,0 +1,18 @@
+#!/sbin/openrc-run
+
+name=riak
+
+command=%%PREFIX%%/lib/riak/erts-5.10.4/bin/beam.smp
+pidfile="/var/run/${name}/${name}.pid"
+
+start() {
+	%%PREFIX%%/sbin/${name} start
+}
+
+stop() {
+	%%PREFIX%%/sbin/${name} stop
+}
+
+depend() {
+	keyword -shutdown
+}

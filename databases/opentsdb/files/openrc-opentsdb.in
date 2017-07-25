@@ -1,0 +1,18 @@
+#!/sbin/openrc-run
+
+export PATH=${PATH}:%%PREFIX%%/bin
+
+name=opentsdb
+
+: ${opentsdb_user:=opentsdb}
+: ${opentsdb_opts:=tsd 2> %%OPENTSDB_LOGDIR%%/error.log 1> %%OPENTSDB_LOGDIR%%/tsdb.log}
+
+pidfile="%%OPENTSDB_RUNDIR%%/${name}.pid"
+command="%%PREFIX%%/bin/tsdb"
+command_args="${opentsdb_opts}"
+command_user=${opensdb_user}
+supervisor=supervise-daemon
+
+depend() {
+	keyword -shutdown
+}

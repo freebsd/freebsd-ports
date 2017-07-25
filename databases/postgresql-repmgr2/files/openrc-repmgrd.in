@@ -1,0 +1,19 @@
+#!/sbin/openrc-run
+
+# Add these lines to /etc/rc.conf.local or /etc/rc.conf to enable this
+# service:
+#
+# repmgrd_config (path):   Default: %%PREFIX%%/etc/repmgr.conf
+
+name=repmgrd
+
+: ${repmgrd_config="%%PREFIX%%/etc/repmgr.conf"}
+
+command=%%PREFIX%%/sbin/${name}
+pidfile=/var/run/${name}.pid
+command_args="-p $pidfile -f $repmgrd_config"
+
+depend() {
+	need postgresql
+	keyword -shutdown
+}

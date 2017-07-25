@@ -1,0 +1,26 @@
+#!/sbin/openrc-run
+
+# Add the following line to /etc/rc.conf to enable Virtuoso Universal Server:
+#
+#  # optional
+#  virtuoso_config="%%PREFIX%%/virtuoso/db/virtuoso.ini"
+#  virtuoso_flags="<set as needed>"
+
+# set defaults
+virtuoso_config=${virtuoso_config:-"db/virtuoso.ini"}
+virtuoso_user=virtuoso
+virtuoso_data=%%PREFIX%%/virtuoso
+
+name=virtuoso
+command=%%PREFIX%%/bin/virtuoso-t
+command_args="+configfile ${virtuoso_config} ${virtuoso_flags}"
+command_user=${virtuoso_user}
+
+start_pre() {
+	cd ${virtuoso_data}
+}
+
+depend() {
+	provide virtuoso
+	keyword -shutdown
+}

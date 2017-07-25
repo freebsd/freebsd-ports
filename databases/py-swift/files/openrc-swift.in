@@ -1,0 +1,117 @@
+#!/sbin/openrc-run
+#
+# Add the following lines to /etc/rc.conf to enable swift:
+#
+# swift_servers (list):	Specify servers to run as a space separated
+# 			list of possible values:
+# 			account, account-reaper, account-replicator,
+# 			container, container-auditor, container-replicator,
+# 			container-sync, container-updater,
+# 			object, object-auditor, object-expirer,
+# 			object-replicator, object-updater,
+# 			proxy.
+# 			The following aliases may be used:
+# 			"ACCOUNT" -- all account servers;
+#                       "EXPIRER" -- object-expirer;
+# 			"CONTAINER" -- all container server;
+# 			"OBJECT" -- all object servers;
+# 			"PROXY" -- all proxy servers;
+# 			"STORAGE" -- all storage node servers
+# 			(alias for "ACCOUNT CONTAINER OBJECT");
+# 			"ALL" -- all servers
+# 			(alias for "ACCOUNT CONTAINER EXPIRER OBJECT PROXY").
+# 			Default is "ALL".
+
+name="swift"
+extra_commands="reload shutdown"
+
+status() {
+	swift-int status
+}
+
+reload() {
+	swift-int reload
+}
+
+shutdown() {
+	swift-int shutdown
+}
+
+start() {
+	swift-int status
+}
+
+stop() {
+	swift-int stop
+}
+
+required_files=%%PREFIX%%/etc/swift/swift.conf
+PATH=%%PREFIX%%/bin:$PATH
+
+: ${swift_servers:="ALL"}
+
+swift_expand_servers()
+{
+	local x
+
+	for x; do
+		case "${x}" in
+		ALL)
+			swift_expand_servers PROXY
+			swift_expand_servers EXPIRER
+			;&
+		STORAGE)
+			swift_expand_servers ACCOUNT
+			swift_expand_servers CONTAINER
+			swift_expand_servers OBJECT
+			;;
+		ACCOUNT)
+			echo account
+			echo account-reaper
+			echo account-replicator
+			;;
+		EXPIRER)
+			echo object-expirer
+			;;
+		CONTAINER)
+			echo container
+			echo container-auditor
+ 			echo container-replicator
+			echo container-sync
+ 			echo container-updater
+			;;
+		OBJECT)
+ 			echo object
+			echo object-auditor
+ 			echo object-replicator
+			echo object-updater
+			;;
+		PROXY)
+			echo proxy
+			;;
+		account|account-reaper|account-replicator|\
+		container|container-auditor|container-replicator|\
+		container-sync|container-updater|\
+		object|object-auditor|object-expirer|object-replicator|\
+		object-updater|\
+		proxy)
+			echo "${x}"
+			;;
+		*)
+			ewarn "unknown service: ${x}"
+			exit 1
+			;;
+		esac
+	done | sort -u
+}
+
+swift_init()
+{
+	local cmd=$1
+	swift-init `swift_expand_servers ${swift_servers}` ${cmd}
+}
+
+depend() {
+	provide swift
+	keyword -shutdown
+}

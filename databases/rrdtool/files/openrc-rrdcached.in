@@ -1,0 +1,14 @@
+#!/sbin/openrc-run
+
+name=rrdcached
+
+# Set defaults
+: ${rrdcached_flags="-s www -l /var/run/rrdcached.sock -p /var/run/rrdcached.pid"}
+
+pidfile=/var/run/${name}.pid   
+command=%%PREFIX%%/bin/${name}
+command_args=${rrdcached_flags}
+
+depend() {
+	keyword -shutdown
+}

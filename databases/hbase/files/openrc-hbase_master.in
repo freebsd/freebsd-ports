@@ -1,0 +1,18 @@
+#!/sbin/openrc-run
+
+export PATH=${PATH}:%%LOCALBASE%%/bin
+name=hbase_master
+
+: ${hbase_master_user:=%%HBASE_USER%%}
+
+command="%%PREFIX%%/hbase/bin/hbase-daemon.sh"
+command_args='--config %%ETCDIR%% start master'
+command_user=${hbase_master_user}
+
+stop() {
+  su -m ${hbase_master_user} -c "${command} --config %%ETCDIR%% stop master"
+}
+
+depend() {
+	keyword -shutdown
+}

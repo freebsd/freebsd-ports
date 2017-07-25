@@ -1,0 +1,26 @@
+#!/sbin/openrc-run
+
+# Add the following line to /etc/rc.conf to enable `tile38':
+#
+# optional:
+#
+# tile38_flags (flags):      Set extra flags here. More options in tile38(1)
+#                               Default is empty "".
+# tile38_user (user):        Set user to run tile38.
+#                               Default is "%%TILE38_USER%%".
+# tile38_data (data):        Set data directory path
+#                               Default is "%%TILE38_DBDIR%%".
+
+name="tile38"
+
+# read configuration and set defaults
+: ${tile38_user="%%TILE38_USER%%"}
+: ${tile38_data="%%TILE38_DBDIR%%"}
+command="%%PREFIX%%/bin/tile38-server"
+command_args="-d ${tile38_data} ${tile38_flags}"
+pidfile="%%TILE38_RUNDIR%%/$name.pid"
+supervisor=supervise-daemon
+
+depend() {
+	keyword -shutdown
+}

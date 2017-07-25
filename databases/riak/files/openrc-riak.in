@@ -1,0 +1,18 @@
+#!/sbin/openrc-run
+
+name="riak"
+pidfile=/var/run/riak/riak.pid
+command="%%PREFIX%%/sbin/riak"
+command_args=start
+
+stop()
+{
+	ebegin "Stopping Riak processes"
+	%%PREFIX%%/sbin/riak stop
+	killall -9 epmd
+	return 0
+}
+
+depend() {
+	keyword -shutdown
+}

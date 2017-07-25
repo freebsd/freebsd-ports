@@ -1,0 +1,27 @@
+#!/sbin/openrc-run
+# 
+# Add the following lines to /etc/rc.conf to run memcacheq:
+#
+# memcacheq_flags (flags):	Set extra flags here.
+#				Default is "-N -H /var/db/memcacheq -R -L 1024 -B 1024"
+# memcacheq_user (user):	Set user to run memcacheq.
+#				Default is "nobody".
+
+name="memcacheq"
+sig_stop=KILL
+
+: ${memcacheq_user="nobody"}
+: ${memcacheq_flags="-N -H /var/db/memcacheq -R -L 1024 -B 1024"}
+
+command=%%PREFIX%%/bin/memcacheq
+pidfile="/var/run/${name}/${name}.pid"
+command_args="-u ${memcacheq_user} -P ${pidfile} -d"
+command_user=${memcacheq_user}
+
+start_pre() {
+	install -d -o $memcacheq_user -g wheel -m 700 /var/run/${name}
+}
+
+depend() {
+	keyword -shutdown
+}

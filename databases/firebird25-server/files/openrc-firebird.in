@@ -1,0 +1,54 @@
+#!/sbin/openrc-run
+#
+# Add the following line to /etc/rc.conf to enable Firebird Database:
+#
+#
+# firebird_mode:	Set it to "superclassic" or "superserver" to enable firebird.
+#			Default is "superclassic".
+# firebird_flags:	Set options to run fbserver or fb_smp_server.
+# 			Default is "-el /var/db/firebird".
+# firebird_pidfile:	Set full path to pid file.
+#			Default is "/var/run/firebird.pid".
+
+name=firebird
+
+firebird_mode=${firebird_mode:-"superclassic"}
+firebird_flags=${firebird_flags:-"-el /var/db/firebird"}
+firebird_pidfile=${firebird_pidfile:-"/var/run/${name}.pid"}
+
+command_user=firebird
+command=%%PREFIX%%/sbin/fb_smp_server
+command_args="${firebird_flags} &"
+pidfile=${firebird_pidfile}
+
+start_pre()
+{
+	touch ${firebird_pidfile}
+	chown "${command_user}:wheel" ${firebird_pidfile} ||
+		err 1 "Cannot chown ${firebird_pidfile}"
+}
+
+start_post()
+{
+	pgrep -u ${command_user} ${command_app} > ${firebird_pidfile}
+	einfo "Current firebird mode is $firebird_mode"
+}
+
+case "${firebird_mode}" in
+        superclassic)
+                command=%%PREFIX%%/sbin/fb_smp_server
+                command_app=fb_smp_server
+                ;;
+        superserver)
+                command=%%PREFIX%%/sbin/fbserver
+                command_app=fbserver
+                ;;
+        *)
+                ewarn "$firebird_mode is an invalid value for firebird_mode"
+                return 1
+                ;;
+esac
+
+depend() {
+	keyword -shutdown
+}

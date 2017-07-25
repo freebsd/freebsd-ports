@@ -1,0 +1,73 @@
+#!/sbin/openrc-run
+
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# couchdb_enablelogs (bool):	Set to YES by default.
+#
+# couchdb_etcdir (string):	In case you want another dir
+# 				for default.ini/local.ini.
+#
+# couchdb_respawn (int):	Set to none by default. If CouchDB crashes,
+# 				respawn after this many seconds.
+#
+# couchdb_erl_flags (string):	Set to none by default. Additional Erlang flags
+# 				that are appended via ERL_ZFLAGS to the Erlang VM parameters.
+
+name="couchdb"
+
+couchdb_user="${couchdb_user:-"couchdb"}"
+couchdb_enablelogs="${couchdb_enablelogs:-"YES"}"
+couchdb_etcdir="${couchdb_etcdir:-"%%PREFIX%%/etc/couchdb"}"
+couchdb_respawn="${couchdb_respawn:-"0"}"
+couchdb_erl_flags="${couchdb_erl_flags:-""}"
+
+command="%%PREFIX%%/bin/${name}"
+pidfile="/var/run/${name}/${name}.pid"
+urifile="/var/run/${name}/couch.uri"
+command_args="-p ${pidfile} -b"
+command_user=${couchdb_user}
+
+start_pre()
+{
+	install -o $couchdb_user /dev/null $pidfile
+	install -o $couchdb_user /dev/null $urifile
+
+	if [ -n "$couchdb_flags" ]; then
+		case "$couchdb_flags" in
+		*-[bp]*) err 1 'The -b and -p options should be removed from couchdb_flags' ;;
+		esac
+		return 0
+	fi
+
+	if [ $couchdb_respawn -gt 0 ]; then
+		respawn="-r ${couchdb_respawn}"
+	fi
+
+	if yesno couchdb_enablelogs; then
+		logfile=/var/log/${name}/couch.log
+		errfile=/var/log/${name}/err.log
+	else
+		logfile=/dev/null
+		errfile=/dev/null
+	fi
+
+	# couchdb supports passing options through to the erlang vm directly in
+	# ERL_ZFLAGS which is appended to CouchDB own flags.
+	ERL_ZFLAGS=${couchdb_erl_flags}
+	export ERL_ZFLAGS
+
+	command_args="-a ${couchdb_etcdir}/default.ini -a ${couchdb_etcdir}/local.ini ${respawn} -o ${logfile} -e ${errfile} ${command_args}"
+}
+
+stop_pre() {
+	$command -d
+}
+
+status() {
+	$command -s
+}
+
+depend() {
+	keyword -shutdown
+}

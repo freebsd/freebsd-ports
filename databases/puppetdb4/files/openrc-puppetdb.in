@@ -1,0 +1,73 @@
+#!/sbin/openrc-run
+
+# Configuration settings for puppetdb in /etc/rc.conf:
+#
+# puppetdb_args (str):
+#   Extra arguments passed to start command
+#
+# puppetdb_java_home (str):
+#   Set to "%%JAVA_HOME%%" by default.
+#   Set the Java virtual machine to run puppetdb
+#
+# puppetdb_java_opts (str):
+#   Set to "" by default.
+#   Java VM args to use.
+#
+# puppetdb_user (str):
+#   Set to "puppetdb" by default.
+#   User to run puppetdb as.
+#
+# puppetdb_group (str):
+#   Set to "puppetdb" by default.
+#   Group for data file ownership.
+#
+# puppetdb_log_file (str):
+#   Set to "/var/log/puppetdb/puppetdb.log" by default.
+#   Log file location.
+
+name="puppetdb"
+
+: ${puppetdb_args="services -c %%PREFIX%%/etc/puppetdb/conf.d"}
+: ${puppetdb_java_home="%%JAVA_HOME%%"}
+: ${puppetdb_user="puppetdb"}
+: ${puppetdb_group="puppetdb"}
+: ${puppetdb_log_file="/var/log/puppetdb/puppetdb.log"}
+
+pidfile="/var/run/puppetdb/puppetdb.pid"
+supervisor=supervise-daemon
+command="${puppetdb_java_home}/bin/java"
+command_args="-Djava.security.egd=/dev/urandom -cp %%DATADIR%%/puppetdb.jar clojure.main -m puppetlabs.puppetdb.main  ${puppetdb_args} > ${puppetdb_log_file} 2>&1"
+command_user=${puppetdb_user}
+required_files="${command}"
+
+start_pre() {
+  if [ ! -d "/var/log/puppetdb" ]; then
+    install -d -o "${puppetdb_user}" -g "${puppetdb_group}" -m 750 "/var/log/puppetdb"
+  fi
+  if [ ! -f "${puppetdb_log_file}" ]; then
+    touch "${puppetdb_log_file}"
+    chown "${puppetdb_user}:${puppetdb_group}" "${puppetdb_log_file}"
+    chmod 640 "${puppetdb_log_file}"
+  fi
+  if [ ! -d "/var/run/puppetdb" ]; then
+    install -d -o "${puppetdb_user}" -g "${puppetdb_group}" -m 750 "/var/run/puppetdb"
+  fi
+
+  chown -R "root:${puppetdb_group}" "%%PREFIX%%/etc/puppetdb/conf.d"
+  chmod 0750 "%%PREFIX%%/etc/puppetdb/conf.d"
+
+  chown "root:${puppetdb_group}" "%%PREFIX%%/etc/puppetdb/logback.xml"
+  chmod 0640 "%%PREFIX%%/etc/puppetdb/logback.xml"
+
+  if [ ! -d "/var/db/puppetdb" ]; then
+    install -d -o "${puppetdb_user}" -g "${puppetdb_group}" -m 750 "/var/db/puppetdb"
+  fi
+  chown -R "${puppetdb_user}:${puppetdb_group}" "/var/db/puppetdb"
+  chmod 0750 "/var/db/puppetdb"
+}
+
+depend() {
+	need localmount
+	keyword -shutdown
+	after bootmisc
+}

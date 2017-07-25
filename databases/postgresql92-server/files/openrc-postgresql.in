@@ -37,7 +37,6 @@ command="%%PREFIX%%/bin/pg_ctl"
 initdb_command="%%PREFIX%%/bin/initdb"
 extra_stopped_commands="initdb"
 
-
 depend() {
 	provide postgresql
 	need localmount
@@ -60,23 +59,6 @@ profiles_available() {
 	if [ "x${postgresql_profiles}" != "x" -a "x$1" != "x" ]; then
 		return 0
 	fi
-	return 1
-}
-
-# Determines if a PostgreSQL profile is enabled.
-# Argument: name of the PostgreSQL profile
-# Return: 0 if enabled, 1 otherwise
-
-profile_enabled() {
-	local profile
-	profile=$1
-	local _enable
-	eval _enable="\${postgresql_${profile}_enable}"
-	case "x${_enable:-${postgresql_enable}}" in
-	x[Yy][Ee][Ss])
-		return 0
-		;;
-	esac
 	return 1
 }
 
@@ -185,9 +167,10 @@ _sub_checkconfig_checkpath() {
 	profile=$1
 	for file in postgresql pg_hba pg_ident ; do
 		f="$( get_data_dir ${profile} )/${file}.conf"
+		eval f="${f}"
 		if [ -f ${f} ] ; then
-			checkpath -f -m 0600 -o postgres:postgres ${f}
-			return 0
+			checkpath -f -m 0600 -o pgsql:pgsql ${f}
+			return $? 
 		else
 			eerror "${f} not found"
 			eerror "HINT: Check profile entries in /etc/conf.d and try initdb"
@@ -196,16 +179,9 @@ _sub_checkconfig_checkpath() {
 	done
 }
 
-checkconfig() {
-	# Check for PostgreSQL's config files.
-	# Note: The Gentoo scripts check ownership of these files, but
-	# the original FreeBSD RC scripts do not.
-	for_each_profile _sub_checkconfig_checkpath
-}
-
 start_pre() {
 	ebegin "Checking ${name} configuration"
-	checkconfig
+	for_each_profile _sub_checkconfig_checkpath
 	eend $?
 }
 

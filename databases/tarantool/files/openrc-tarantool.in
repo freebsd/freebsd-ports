@@ -1,0 +1,31 @@
+#!/sbin/openrc-run
+
+name="tarantool"
+
+tarantool_instances=${tarantool_instances:-"%%ETCDIR%%/instances.enabled"}
+
+INSTANCES=$(find ${tarantool_instances} -type l -name '*.lua')
+TDAEMON=%%PREFIX%%/bin/tarantool
+TCTL=%%PREFIX%%/bin/tarantoolctl
+
+start()
+{
+	ebegin "tarantool: Starting instances"
+	for inst in ${INSTANCES}
+	do
+		${TDAEMON} ${TCTL} start $(basename ${inst} .lua)
+	done
+}
+
+stop()
+{
+	ebegin "tarantool: Stopping instances"
+	for inst in ${INSTANCES}
+	do
+		${TDAEMON} ${TCTL} stop $(basename ${inst} .lua)
+	done
+}
+
+depend() {
+	keyword -shutdown
+}

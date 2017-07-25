@@ -1,0 +1,74 @@
+#!/sbin/openrc-run
+#
+# Add the following line to /etc/rc.conf to enable mysql:
+# mysql_limits (bool):	Set to "NO" by default.
+#			Set it to yes to run `limits -e -U mysql`
+#			just before mysql starts.
+# mysql_dbdir (str):	Default to "%%MY_DBDIR%%"
+#			Base database directory.
+# mysql_confdir (str):	Default to "%%ETCDIR%%"
+#			Base configuration directory.
+# mysql_optfile (str):	Server-specific option file.
+#			Set it in the rc.conf or default behaviour of
+#			`mysqld_safe` itself, will be picking
+#			${mysql_confdir}/my.cnf if it exists.
+# mysql_pidfile (str):	Custum PID file path and name.
+#			Default to "${mysql_dbdir}/${hostname}.pid".
+# mysql_args (str):	Custom additional arguments to be passed
+#			to mysqld_safe (default empty).
+
+name="mysql"
+
+: ${mysql_limits="NO"}
+: ${mysql_dbdir="%%MY_DBDIR%%"}
+: ${mysql_confdir="%%ETCDIR%%"}
+if [ -f "${mysql_confdir}/my.cnf" ]; then
+: ${mysql_optfile="${mysql_confdir}/my.cnf"}
+elif [ -f "${mysql_dbdir}/my.cnf" ]; then
+: ${mysql_optfile="${mysql_dbdir}/my.cnf"}
+fi
+if [ ! -z "${mysql_optfile}" ]; then
+mysql_extra="--defaults-extra-file=${mysql_optfile}"
+fi
+
+command_user="mysql"
+mysql_limits_args="-e -U ${command_user}"
+: ${hostname:=`/bin/hostname`}
+pidfile=${mysql_pidfile:-"${mysql_dbdir}/${hostname}.pid"}
+supervisor=supervise-daemon
+command="%%PREFIX%%/bin/mysqld_safe"
+command_args="${mysql_extra} --basedir=%%PREFIX%% --datadir=${mysql_dbdir} --pid-file=${pidfile} --user=${command_user} ${mysql_args} %%FEDER%% %%PERFSCHEMRC%%"
+mysqld_init="${procname}"
+mysqld_init_args="${mysql_extra} --initialize-insecure --basedir=%%PREFIX%% --datadir=${mysql_dbdir} --user=${command_user}"
+
+mysql_create_auth_tables()
+{
+	eval $mysqld_init $mysqld_init_args >/dev/null 2>/dev/null
+}
+
+start_pre()
+{
+	if [ ! -d "${mysql_dbdir}/mysql/." ]; then
+		mysql_create_auth_tables || return 1
+	fi
+	if yesno mysql_limits; then
+		eval `/usr/bin/limits ${mysql_limits_args}` 2>/dev/null
+	else
+		return 0
+	fi
+}
+
+start_post()
+{
+	local timeout=15
+	while [ ! -f "${pidfile}" -a ${timeout} -gt 0 ]; do
+		timeout=$(( timeout - 1 ))
+		sleep 1
+	done
+	return 0
+}
+
+depend() {
+	provide mysql
+	keyword -shutdown
+}

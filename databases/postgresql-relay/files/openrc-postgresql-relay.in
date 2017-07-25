@@ -1,0 +1,10 @@
+#!/sbin/openrc-run
+
+name=postgresqlrelay
+command=%%PREFIX%%/bin/postgresql-relay
+required_files=%%PREFIX%%/etc/postgresql-relay.conf
+
+depend() {
+	after postgresql
+	keyword -shutdown
+}

@@ -1,0 +1,24 @@
+#!/sbin/openrc-run
+
+name="sentinel"
+command="/usr/local/bin/redis-sentinel"
+pidfile="/var/run/redis/$name.pid"
+
+# read configuration and set defaults
+: ${sentinel_user="redis"}
+: ${sentinel_config="/usr/local/etc/$name.conf"}
+
+command_args="${sentinel_config} --daemonize yes --pidfile ${pidfile}"
+required_files="${sentinel_config}"
+
+start_pre()
+{
+    if [ x`id -u ${sentinel_user}` != x`stat -f %u ${sentinel_config}` ]; then
+		eeror "${sentinel_config} must be owned by user ${sentinel_user}"
+		exit 1
+    fi
+}
+
+depend() {
+	keyword -shutdown
+}

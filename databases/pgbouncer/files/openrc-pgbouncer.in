@@ -1,0 +1,21 @@
+#!/sbin/openrc-run
+
+# Add the following lines to /etc/rc.conf to enable pgbouncer:
+#
+# pgbouncer_conf (path):        Set full path to configuration file.
+#                               Default is "%%PREFIX%%/etc/pgbouncer.ini".
+# pgbouncer_flags (string):     Additional flags passed to pgbouncer.
+
+name="pgbouncer"
+: ${pgbouncer_user="pgbouncer"}
+: ${pgbouncer_conf="%%PREFIX%%/etc/$name.ini"}
+
+command="%%PREFIX%%/bin/pgbouncer"
+pidfile="%%PGBOUNCER_RUNDIR%%/$name.pid"
+required_files="${pgbouncer_conf}"
+command_args="-d ${pgbouncer_conf}"
+command_user=${pgbouncer_user}
+
+depend() {
+	keyword -shutdown
+}

@@ -1,0 +1,18 @@
+#!/sbin/openrc-run
+
+export PATH=${PATH}:%%LOCALBASE%%/bin
+name=hbase_regionserver
+
+: ${hbase_regionserver_user:=%%HBASE_USER%%}
+
+command="%%PREFIX%%/hbase/bin/hbase-daemon.sh"
+command_args='--config %%ETCDIR%% start regionserver'
+command_user=${hbase_regionserver_user}
+
+stop() {
+  su -m ${hbase_regionserver_user} -c "${command} --config %%ETCDIR%% stop regionserver"
+}
+
+depend() {
+	keyword -shutdown
+}

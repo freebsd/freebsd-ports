@@ -1,0 +1,26 @@
+#!/sbin/openrc-run
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# pgpool_conf (file):		Set location of your config.
+#				Default is "%%PREFIX%%/etc/pgpool.conf"
+# pgpool_user (uid):		User ID to run as (default nobody)
+
+name=pgpool
+
+: ${pgpool_conf="%%PREFIX%%/etc/pgpool.conf"}
+: ${pgpool_user="nobody"}
+
+command="%%PREFIX%%/bin/pgpool"
+command_args="-f ${pgpool_conf}"
+command_user=${pgpool_user}
+required_files="${pgpool_conf}"
+
+stop_pre() {
+	${command} ${command_args} stop
+}
+
+depend() {
+	keyword -shutdown
+}
