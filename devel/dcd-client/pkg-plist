@@ -1,0 +1,3 @@
+bin/dcd-client
+include/d/client/client.d
+man/man1/dcd-client.1.gz
