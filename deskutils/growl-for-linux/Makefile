@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	growl-for-linux
-PORTVERSION=	0.8.1
-PORTREVISION=	2
+PORTVERSION=	0.8.5
+PORTREVISION=	0
 CATEGORIES=	deskutils
 
 MAINTAINER=	nivit@FreeBSD.org
@@ -13,7 +13,10 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	desktop-file-install:devel/desktop-file-utils
 LIB_DEPENDS=	libcurl.so:ftp/curl \
-		libdbus-glib-1.so:devel/dbus-glib
+		libdbus-1.so:devel/dbus \
+		libdbus-glib-1.so:devel/dbus-glib \
+		libfontconfig.so:x11-fonts/fontconfig \
+		libfreetype.so:print/freetype2
 
 BROKEN_powerpc64=	fails to compile: balloon.c:160: error: nested functions are disabled, use -fnested-functions to re-enable
 
@@ -35,8 +38,9 @@ PLIST_SUB=	DESKTOPDIR=${DESKTOPDIR:S,^${PREFIX}/,,}
 
 USES=		autoreconf compiler:nestedfct libtool pkgconfig sqlite:3 ssl
 USE_GITHUB=	yes
-USE_GNOME=	gtk20
-
+USE_GNOME=	cairo gdkpixbuf2 gtk20 libxml2
+USE_LDCONFIG=	${PREFIX}/lib/${PORTNAME}/display \
+		${PREFIX}/lib/${PORTNAME}/subscribe
 post-patch:
 	@${REINPLACE_CMD} '/^gol_LDADD =/s/$$/ -lgmodule-2.0/' \
 		${WRKSRC}/Makefile.am
