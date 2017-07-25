@@ -22,23 +22,22 @@ COMMENT=	Puzzle game with arcade game elements
 RESTRICTED=	kye-data_nuke_levels is charityware
 RESTRICTED_FILES=	 kye-data_nuke_levels.20121101.tar.gz
 
-BROKEN=		unfetchable
-DEPRECATED=	Broken for more than 6 months
-EXPIRATION_DATE=	2017-08-23
-
 USE_GNOME=	pygtk2 librsvg2
 USES=		python
 USE_PYTHON=	distutils
 
 PORTDOCS=	NEWS README
-OPTIONS_DEFINE=	DOCS
 
 SUB_FILES=	pkg-message
 
-DESKTOP_ENTRIES="Python Kye" "" "Kye" \
-		"Kye" "Game;LogicGame;" ""
+DESKTOP_ENTRIES="Python Kye" \
+		"" \
+		"Kye" \
+		"Kye" \
+		"Game;LogicGame;" \
+		""
 
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|share/kye|${DATADIR_REL}|' ${WRKSRC}/setup.py
@@ -59,6 +58,7 @@ post-install:
 		${STAGEDIR}${PREFIX}/share/pixmaps/Kye-edit.png
 	@cd ${WRKDIR}/${PORTNAME} && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}
 
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
