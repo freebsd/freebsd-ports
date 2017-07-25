@@ -1,5 +1,5 @@
---- configure.ac.orig	2017-05-08 20:36:24.922407000 -0700
-+++ configure.ac	2017-05-08 20:39:41.725107000 -0700
+--- configure.ac.orig	2017-07-24 16:42:21.493682000 -0700
++++ configure.ac	2017-07-24 17:36:06.122588000 -0700
 @@ -28,6 +28,10 @@ AC_PROG_CC_C99
  if test "$ac_cv_prog_cc_c99" = no; then
      AC_MSG_ERROR(cannot find a C99-compatible compiler)
@@ -11,7 +11,7 @@
  
  AC_PROG_CPP
  AC_PROG_INSTALL
-@@ -97,19 +101,36 @@ AC_ARG_ENABLE(memcached,
+@@ -97,19 +101,38 @@ AC_ARG_ENABLE(memcached,
    [AS_HELP_STRING([--enable-memcached],
      [enable memcached as a cache backend])])
  
@@ -35,12 +35,14 @@
 +                   ac_cv_have_libsasl2=no, -lcrypto -lopie -lmd)
 +    fi
 +    if test x$ac_cv_have_libsasl2 = xyes; then
-+      AC_CHECK_LIB(memcached, memcached,[],[
++      AC_CHECK_LIB(memcached, memcached,[
++        LIBS="${LIBS} -lsasl2 -lcrypto -lopie -lmd -lmemcached"
++      ]
++      ,[
 +      echo '  WARNING: recent version libmemcached not found'
 +      echo '  please install libmemcached > 1.0 with development files'
 +      exit 1
 +      ], -lsasl2 -lcrypto -lopie -lmd)
-+      extra_ldflags="${extra_ldflags} -lcrypto -lopie -lmd"
 +    else
 +      AC_CHECK_LIB(memcached, memcached,[],[
 +      echo '  WARNING: recent version libmemcached not found'
