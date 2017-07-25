@@ -1,0 +1,9 @@
+bin/dcd-server
+include/d/common/constants.d
+include/d/common/dcd_version.d
+include/d/common/messages.d
+include/d/common/socket.d
+include/d/server/autocomplete.d
+include/d/server/server.d
+lib/d/libdcd.a
+man/man1/dcd-server.1.gz

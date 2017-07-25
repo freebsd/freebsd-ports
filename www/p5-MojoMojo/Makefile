@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	MojoMojo
-PORTVERSION=	1.11
+PORTVERSION=	1.12
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:MRAMBERG
@@ -35,7 +35,6 @@ BUILD_DEPENDS=	\
 	p5-Catalyst-Plugin-Session-Store-Cache>=0:www/p5-Catalyst-Plugin-Session-Store-Cache \
 	p5-Catalyst-Plugin-Setenv>=0:www/p5-Catalyst-Plugin-Setenv \
 	p5-Catalyst-Plugin-Static-Simple>=0.07:www/p5-Catalyst-Plugin-Static-Simple \
-	p5-Catalyst-Plugin-Unicode>=0.8:www/p5-Catalyst-Plugin-Unicode \
 	p5-Catalyst-View-TT>=0.23:www/p5-Catalyst-View-TT \
 	p5-Catalyst-View-JSON>=0.26:www/p5-Catalyst-View-JSON \
 	p5-Catalyst-View-Email>=0:www/p5-Catalyst-View-Email \
@@ -81,7 +80,8 @@ BUILD_DEPENDS=	\
 	p5-WWW-Mechanize-TreeBuilder>=1.10000:www/p5-WWW-Mechanize-TreeBuilder \
 	p5-YAML>=0.36:textproc/p5-YAML \
 	p5-Term-Prompt>=0:devel/p5-Term-Prompt \
-	p5-Text-Emoticon-MSN>=0:textproc/p5-Text-Emoticon-MSN
+	p5-Text-Emoticon-MSN>=0:textproc/p5-Text-Emoticon-MSN \
+	p5-File-Slurp>=0:devel/p5-File-Slurp
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-WWW-Mechanize-Catalyst>=0:devel/p5-Test-WWW-Mechanize-Catalyst
 

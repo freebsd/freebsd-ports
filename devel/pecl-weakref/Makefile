@@ -13,6 +13,8 @@ COMMENT=	PECL Weakref extension
 LICENSE=	PHP301
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+PORTSCOUT=	limitw:^0\.2\.[0-9]*
+
 USES=		php:pecl
 IGNORE_WITH_PHP=	70
 

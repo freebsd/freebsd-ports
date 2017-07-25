@@ -12,6 +12,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Nero AAC reference quality MPEG-4 and 3GPP audio codec
 
 BROKEN=		does not fetch (no such directory 'tools')
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2017-08-23
 
 USES=		dos2unix linux zip
 DOS2UNIX_REGEX=	.*\.txt

@@ -3,6 +3,7 @@
 
 PORTNAME=	openconnect-gui
 PORTVERSION=	1.4.1
+PORTREVISION=	1
 DISTVERSIONPREFIX=v
 CATEGORIES=	security
 
@@ -14,7 +15,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 BUILD_DEPENDS=	openconnect:security/openconnect
 LIB_DEPENDS=	libgnutls.so:security/gnutls
-RUN_DEPENDS=	openconnect:security/openconnect
+RUN_DEPENDS=	openconnect:security/openconnect \
+		vpnc-scripts>=0:sysutils/vpnc-scripts
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	${PORTNAME:C/-gui//}

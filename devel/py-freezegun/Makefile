@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	freezegun
-PORTVERSION=	0.3.6
+PORTVERSION=	0.3.9
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -23,9 +23,6 @@ USES?=		python
 USE_PYTHON=	autoplist distutils
 
 NO_ARCH=	yes
-
-post-extract:
-	${FIND} ${WRKSRC} -type d -name __pycache__ -or -type f -name '*.py[co]' -exec ${RM} -r {} +
 
 do-test:
 	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYDISTUTILS_SETUP} test

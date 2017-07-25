@@ -57,7 +57,7 @@ dcc:*:112:
 amavis:*:113:
 dhis:*:114:
 _symon:*:115:
-# free: 116
+u2f:*:116:
 smokeping:*:117:
 ircproxyd:*:118:
 mythtv:*:119:
@@ -158,7 +158,7 @@ drizzle:*:213:
 kyototycoon:*:214:
 opendnssec:*:215:
 nsd:*:216:
-# free: 217
+anvil:*:217:
 # free: 218
 # free: 219
 bs:*:220:
@@ -420,7 +420,7 @@ gitlab-runner:*:474:
 # free: 476
 # free: 477
 prometheus:*:478:
-# free: 479
+alertmanager:*:479:
 # free: 480
 # free: 481
 # free: 482

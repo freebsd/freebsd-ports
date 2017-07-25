@@ -1,7 +1,11 @@
---- mtypes.h.orig	Sat Aug  7 18:19:37 1999
-+++ mtypes.h	Thu Jun  1 02:43:05 2000
-@@ -11,2 +11,4 @@
+--- mtypes.h.orig	1999-08-07 16:19:37 UTC
++++ mtypes.h
+@@ -9,6 +9,8 @@
+ 
+ /* $Id: mtypes.h,v 1.2 1999/08/07 16:19:37 nyef Exp $ */
  
 +#include "endian.h"
 +
  typedef unsigned char byte;
+ typedef unsigned short word;
+ typedef signed char offset;

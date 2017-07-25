@@ -35,6 +35,7 @@
     SUBDIR += android-file-transfer-qt5
     SUBDIR += ansible
     SUBDIR += ansible1
+    SUBDIR += anvil
     SUBDIR += apachetop
     SUBDIR += apcpwr
     SUBDIR += apcupsd
@@ -403,6 +404,7 @@
     SUBDIR += gnome-settings-daemon
     SUBDIR += gnome-system-monitor
     SUBDIR += goaccess
+    SUBDIR += goss
     SUBDIR += gpart
     SUBDIR += gpte
     SUBDIR += graffer
@@ -1029,7 +1031,7 @@
     SUBDIR += rubygem-sys-proctable
     SUBDIR += rubygem-sys-uname
     SUBDIR += rubygem-sys-uptime
-    SUBDIR += rubygem-SyslogLogger
+    SUBDIR += rubygem-syslog-logger
     SUBDIR += rubygem-teamocil
     SUBDIR += rubygem-tmuxinator
     SUBDIR += rubygem-vagrant-bhyve

@@ -1,40 +1,41 @@
 # $FreeBSD$
 
 PORTNAME=	amath
-PORTVERSION=	1.8.0
+PORTVERSION=	1.8.2
 CATEGORIES=	math
-MASTER_SITES=	http://suyai.innolan.net/ \
+MASTER_SITES=	http://dist1.innolan.net/ \
+		http://dist2.innolan.net/ \
 		https://amath.innolan.net/
 
-MAINTAINER=	cs@innolan.dk
+MAINTAINER=	cs@innolan.net
 COMMENT=	Simple command line calculator
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-OPTIONS_DEFINE=	TESTS
-TESTS_DESC=	Build with regression tests
-OPTIONS_RADIO=	LIBM
-OPTIONS_RADIO_LIBM=	APPLIBM OPENLIBM SYSLIBM
-LIBM_DESC=	Math libraries
-APPLIBM_DESC=	Build and install application libraries
-OPENLIBM_DESC=	Build with OpenLibm
-SYSLIBM_DESC=	System (-lm)
-OPTIONS_DEFAULT=	APPLIBM TESTS
-OPTIONS_SUB=	yes
-
-SYSLIBM_CONFIGURE_WITH=	libm
-OPENLIBM_CONFIGURE_WITH=	openlibm
-OPENLIBM_LIB_DEPENDS=	libopenlibm.so:math/openlibm
-TESTS_CONFIGURE_ENABLE=	test
-
 USES=		gmake
+USE_LDCONFIG=	${PREFIX}/lib/${PORTNAME}
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} --pkgconfig=libdata/pkgconfig \
 		--mandir=man LDFLAGS="-L${LOCALBASE}/lib"
-USE_LDCONFIG=	${PREFIX}/lib/${PORTNAME}
 MAKE_ARGS=	CC=${CC} CXX=${CXX}
-ALL_TARGET=	static
+
+OPTIONS_DEFINE=	TESTS
+OPTIONS_DEFAULT=APPLIBM
+OPTIONS_RADIO=	LIBM
+OPTIONS_RADIO_LIBM=	APPLIBM OPENLIBM SYSLIBM
+OPTIONS_SUB=	yes
+APPLIBM_DESC=	Build and install application libraries
+LIBM_DESC=	Math libraries
+OPENLIBM_DESC=	Build with OpenLibm
+SYSLIBM_DESC=	System (-lm)
+TESTS_DESC=	Build with regression tests
+
+OPENLIBM_CONFIGURE_WITH=	openlibm
+OPENLIBM_LIB_DEPENDS=	libopenlibm.so:math/openlibm
+SYSLIBM_CONFIGURE_WITH=	libm
+TESTS_CONFIGURE_ENABLE=	test
+
 TEST_TARGET=	test
 
 post-install-APPLIBM-on:

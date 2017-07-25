@@ -21,7 +21,7 @@ diff --git config/Makefile.in config/Makefile.in
 index 5383399..0410004 100644
 --- mozilla/config/Makefile.in
 +++ mozilla/config/Makefile.in
-@@ -77,6 +77,11 @@ export:: $(export-preqs)
+@@ -51,6 +51,11 @@ export:: $(export-preqs)
  		-DMOZ_SYSTEM_ICU=$(MOZ_SYSTEM_ICU) \
  		-DMOZ_SYSTEM_GRAPHITE2=$(MOZ_SYSTEM_GRAPHITE2) \
  		-DMOZ_SYSTEM_HARFBUZZ=$(MOZ_SYSTEM_HARFBUZZ) \
@@ -30,7 +30,7 @@ index 5383399..0410004 100644
 +		-DMOZ_SYSTEM_VORBIS=$(MOZ_SYSTEM_VORBIS) \
 +		-DMOZ_SYSTEM_TREMOR=$(MOZ_SYSTEM_TREMOR) \
 +		-DMOZ_SYSTEM_SOUNDTOUCH=$(MOZ_SYSTEM_SOUNDTOUCH) \
- 		$(srcdir)/system-headers | $(PERL) $(topsrcdir)/nsprpub/config/make-system-wrappers.pl system_wrappers
+ 		$(srcdir)/system-headers $(srcdir)/stl-headers | $(PERL) $(topsrcdir)/nsprpub/config/make-system-wrappers.pl system_wrappers
  	$(INSTALL) system_wrappers $(DIST)
  
 diff --git config/external/moz.build config/external/moz.build
@@ -238,7 +238,7 @@ index 2127256..1ec09fe 100644
  }
  
  size_t
-@@ -177,7 +181,11 @@ nsresult AudioStream::EnsureTimeStretcherInitializedUnlocked()
+@@ -151,7 +155,11 @@ nsresult AudioStream::EnsureTimeStretche
  {
    mMonitor.AssertCurrentThreadOwns();
    if (!mTimeStretcher) {
@@ -247,7 +247,7 @@ index 2127256..1ec09fe 100644
 +#else
      mTimeStretcher = soundtouch::createSoundTouchObj();
 +#endif
-     mTimeStretcher->setSampleRate(mInRate);
+     mTimeStretcher->setSampleRate(mAudioClock.GetInputRate());
      mTimeStretcher->setChannels(mOutChannels);
      mTimeStretcher->setPitch(1.0);
 diff --git dom/media/AudioStream.h dom/media/AudioStream.h

@@ -1,6 +1,6 @@
---- net/BUILD.gn.orig	2017-04-19 19:06:36 UTC
-+++ net/BUILD.gn
-@@ -79,7 +79,7 @@ if (use_glib && use_gconf && !is_chromeo
+--- net/BUILD.gn.orig	2017-04-19 21:06:36.000000000 +0200
++++ net/BUILD.gn	2017-07-05 02:17:00.063914000 +0200
+@@ -79,7 +79,7 @@
    net_configs += [ "//build/config/linux/gconf" ]
  }
  
@@ -9,7 +9,7 @@
    net_configs += [ "//build/config/linux:libresolv" ]
  }
  
-@@ -1824,6 +1824,16 @@ component("net") {
+@@ -1824,6 +1824,17 @@
        sources -= [ "disk_cache/blockfile/file_posix.cc" ]
      }
  
@@ -21,12 +21,13 @@
 +         "base/network_change_notifier_linux.h",
 +         "base/network_interfaces_linux.cc",
 +      ]
++      sources += [ "base/network_interfaces_freebsd.cc" ]
 +    }
 +
      if (is_ios || is_mac) {
        sources += [
          "base/mac/url_conversions.h",
-@@ -2773,7 +2783,7 @@ if (!is_ios && !is_android) {
+@@ -2773,7 +2784,7 @@
    }
  }
  
@@ -35,7 +36,7 @@
    executable("cachetool") {
      testonly = true
      sources = [
-@@ -2802,7 +2812,7 @@ if (is_linux || is_mac) {
+@@ -2802,7 +2813,7 @@
    }
  }
  
@@ -44,7 +45,7 @@
    static_library("epoll_server") {
      sources = [
        "tools/epoll_server/epoll_server.cc",
-@@ -2906,7 +2916,7 @@ if (is_android) {
+@@ -2906,7 +2917,7 @@
    }
  }
  
@@ -53,7 +54,7 @@
    executable("disk_cache_memory_test") {
      testonly = true
      sources = [
-@@ -4767,7 +4777,7 @@ test("net_unittests") {
+@@ -4767,7 +4778,7 @@
      "third_party/nist-pkits/",
    ]
  
@@ -62,7 +63,7 @@
      deps += [
        "//third_party/pyftpdlib/",
        "//third_party/pywebsocket/",
-@@ -4790,7 +4800,7 @@ test("net_unittests") {
+@@ -4790,7 +4801,7 @@
    if (is_desktop_linux) {
      deps += [ ":epoll_quic_tools" ]
    }
@@ -71,14 +72,14 @@
      sources += [
        "tools/quic/chlo_extractor_test.cc",
        "tools/quic/end_to_end_test.cc",
-@@ -4852,6 +4862,10 @@ test("net_unittests") {
-     sources -= [ "proxy/proxy_config_service_linux_unittest.cc" ]
-   }
+@@ -4850,6 +4861,10 @@
  
-+  if (is_bsd) {
-+    sources -= [ "base/address_tracker_linux_unittest.cc" ]
+   if (is_chromeos) {
+     sources -= [ "proxy/proxy_config_service_linux_unittest.cc" ]
 +  }
 +
-   if (!is_proto_quic && v8_use_external_startup_data) {
-     deps += [ "//gin" ]
++  if (is_bsd) {
++    sources -= [ "base/address_tracker_linux_unittest.cc" ]
    }
+ 
+   if (!is_proto_quic && v8_use_external_startup_data) {

@@ -1113,6 +1113,7 @@
     SUBDIR += sguil
     SUBDIR += sha
     SUBDIR += sha1collisiondetection
+    SUBDIR += sha2wordlist
     SUBDIR += shibboleth2-sp
     SUBDIR += shimmer
     SUBDIR += shishi
@@ -1152,9 +1153,6 @@
     SUBDIR += ssh_askpass_gtk2
     SUBDIR += sshblock
     SUBDIR += sshguard
-    SUBDIR += sshguard-ipfw
-    SUBDIR += sshguard-null
-    SUBDIR += sshguard-pf
     SUBDIR += sshpass
     SUBDIR += ssl-admin
     SUBDIR += sslscan
@@ -1209,6 +1207,7 @@
     SUBDIR += unicornscan
     SUBDIR += unssh
     SUBDIR += vault
+    SUBDIR += veracrypt
     SUBDIR += vinetto
     SUBDIR += vlock
     SUBDIR += vm-to-tor

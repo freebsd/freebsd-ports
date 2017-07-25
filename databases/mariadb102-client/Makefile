@@ -1,7 +1,6 @@
 # $FreeBSD$
 
 PORTNAME=	mariadb
-PORTREVISION=	2
 PKGNAMESUFFIX=	102-client
 
 COMMENT=	Multithreaded SQL database (client)

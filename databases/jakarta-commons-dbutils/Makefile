@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	commons-dbutils
-PORTVERSION=	1.6
+PORTVERSION=	1.7
 CATEGORIES=	databases java
 MASTER_SITES=	APACHE_COMMONS_BINARIES
 PKGNAMEPREFIX=	jakarta-
@@ -27,7 +27,7 @@ PORTDOCS=	*
 OPTIONS_DEFINE=	DOCS
 
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/commons-dbutils-1.6.jar \
+	${INSTALL_DATA} ${WRKSRC}/commons-dbutils-1.7.jar \
 		${STAGEDIR}${JAVAJARDIR}/${PORTNAME}.jar
 
 do-install-DOCS-on:

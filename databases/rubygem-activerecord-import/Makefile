@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	activerecord-import
-PORTVERSION=	0.19.0
+PORTVERSION=	0.19.1
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 

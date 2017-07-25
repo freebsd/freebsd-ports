@@ -4,5 +4,5 @@ Java Interfaces, but as mixin modules they can also contain already implemented
 methods. Additionally you can define preconditions/postconditions for methods
 specified in a protocol.
 
-WWW: http://flori.github.io/protocol/
+WWW: https://flori.github.io/protocol/
 WWW: https://github.com/flori/protocol

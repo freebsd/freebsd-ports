@@ -1,10 +1,12 @@
 bin/softhsm2-dump-file
+%%SQLITE%%bin/softhsm2-dump-db
 bin/softhsm2-keyconv
 bin/softhsm2-util
 @sample %%ETCDIR%%2.conf.sample
 lib/softhsm/libsofthsm2.a
 lib/softhsm/libsofthsm2.so
 man/man1/softhsm2-dump-file.1.gz
+%%SQLITE%%man/man1/softhsm2-dump-db.1.gz
 man/man1/softhsm2-keyconv.1.gz
 man/man1/softhsm2-util.1.gz
 man/man5/softhsm2.conf.5.gz

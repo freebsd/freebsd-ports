@@ -1,4 +1,4 @@
---- Gemfile.orig	2017-06-07 20:48:31 UTC
+--- Gemfile.orig	2017-07-19 22:34:22 UTC
 +++ Gemfile
 @@ -1,48 +1,43 @@
  source 'https://rubygems.org'
@@ -136,7 +136,7 @@
  # Run events after state machine commits
  gem 'after_commit_queue', '~> 1.3.0'
  
-@@ -147,20 +142,20 @@ gem 'redis-namespace', '~> 1.5.2'
+@@ -147,13 +142,13 @@ gem 'redis-namespace', '~> 1.5.2'
  gem 'sidekiq-limit_fetch', '~> 3.4'
  
  # Cron Parser
@@ -153,6 +153,7 @@
  
  # GitLab settings
  gem 'settingslogic', '~> 2.0.9'
+@@ -163,7 +158,7 @@ gem 're2', '~> 1.0.0'
  
  # Misc
  
@@ -161,7 +162,7 @@
  
  # Cache
  gem 'redis-rails', '~> 5.0.1'
-@@ -170,10 +165,10 @@ gem 'redis', '~> 3.2'
+@@ -173,10 +168,10 @@ gem 'redis', '~> 3.2'
  gem 'connection_pool', '~> 2.0'
  
  # HipChat integration
@@ -174,7 +175,7 @@
  
  # Flowdock integration
  gem 'gitlab-flowdock-git-hook', '~> 1.0.1'
-@@ -191,7 +186,7 @@ gem 'asana', '~> 0.6.0'
+@@ -194,7 +189,7 @@ gem 'asana', '~> 0.6.0'
  gem 'ruby-fogbugz', '~> 0.2.1'
  
  # Kubernetes integration
@@ -183,7 +184,7 @@
  
  # d3
  gem 'd3_rails', '~> 3.5.0'
-@@ -200,7 +195,7 @@ gem 'd3_rails', '~> 3.5.0'
+@@ -203,7 +198,7 @@ gem 'd3_rails', '~> 3.5.0'
  gem 'underscore-rails', '~> 1.8.0'
  
  # Sanitize user input
@@ -192,7 +193,7 @@
  gem 'babosa', '~> 1.0.2'
  
  # Sanitizes SVG input
-@@ -210,7 +205,7 @@ gem 'loofah', '~> 2.0.3'
+@@ -213,7 +208,7 @@ gem 'loofah', '~> 2.0.3'
  gem 'licensee', '~> 8.7.0'
  
  # Protect against bruteforcing
@@ -201,7 +202,7 @@
  
  # Ace editor
  gem 'ace-rails-ap', '~> 4.1.0'
-@@ -229,122 +224,41 @@ gem 'chronic', '~> 0.10.2'
+@@ -232,122 +227,41 @@ gem 'chronic', '~> 0.10.2'
  gem 'chronic_duration', '~> 0.10.6'
  
  gem 'webpack-rails', '~> 0.9.10'
@@ -334,7 +335,7 @@
  
  # Soft deletion
  gem 'paranoia', '~> 2.2'
-@@ -359,4 +273,6 @@ gem 'sys-filesystem', '~> 1.1.6'
+@@ -362,4 +276,6 @@ gem 'sys-filesystem', '~> 1.1.6'
  # Gitaly GRPC client
  gem 'gitaly', '~> 0.5.0'
  

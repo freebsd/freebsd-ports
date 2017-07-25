@@ -268,10 +268,12 @@
 %%PHPBBDIR%%/ext/phpbb/viglink/language/en/viglink_module_acp.php
 %%PHPBBDIR%%/ext/phpbb/viglink/license.txt
 %%PHPBBDIR%%/ext/phpbb/viglink/migrations/viglink_ask_admin.php
+%%PHPBBDIR%%/ext/phpbb/viglink/migrations/viglink_ask_admin_wait.php
 %%PHPBBDIR%%/ext/phpbb/viglink/migrations/viglink_cron.php
 %%PHPBBDIR%%/ext/phpbb/viglink/migrations/viglink_data.php
 %%PHPBBDIR%%/ext/phpbb/viglink/migrations/viglink_data_v2.php
 %%PHPBBDIR%%/ext/phpbb/viglink/styles/all/template/event/acp_help_phpbb_stats_after.html
+%%PHPBBDIR%%/ext/phpbb/viglink/styles/all/template/event/acp_help_phpbb_stats_before.html
 %%PHPBBDIR%%/ext/phpbb/viglink/styles/all/template/event/overall_footer_after.html
 %%PHPBBDIR%%/ext/phpbb/viglink/styles/all/theme/images/VigLink_logo.png
 %%PHPBBDIR%%/ext/phpbb/viglink/styles/all/theme/viglink.css
@@ -526,6 +528,7 @@
 %%PHPBBDIR%%/install/convertors/functions_phpbb20.php
 %%PHPBBDIR%%/install/index.html
 %%PHPBBDIR%%/install/phpbbcli.php
+%%PHPBBDIR%%/install/phpinfo.php
 %%PHPBBDIR%%/install/schemas/index.htm
 %%PHPBBDIR%%/install/schemas/oracle_schema.sql
 %%PHPBBDIR%%/install/schemas/postgres_schema.sql
@@ -666,6 +669,7 @@
 %%PHPBBDIR%%/phpbb/cache/driver/eaccelerator.php
 %%PHPBBDIR%%/phpbb/cache/driver/file.php
 %%PHPBBDIR%%/phpbb/cache/driver/memcache.php
+%%PHPBBDIR%%/phpbb/cache/driver/memcached.php
 %%PHPBBDIR%%/phpbb/cache/driver/memory.php
 %%PHPBBDIR%%/phpbb/cache/driver/redis.php
 %%PHPBBDIR%%/phpbb/cache/driver/wincache.php
@@ -711,7 +715,9 @@
 %%PHPBBDIR%%/phpbb/console/command/extension/enable.php
 %%PHPBBDIR%%/phpbb/console/command/extension/purge.php
 %%PHPBBDIR%%/phpbb/console/command/extension/show.php
+%%PHPBBDIR%%/phpbb/console/command/fixup/fix_left_right_ids.php
 %%PHPBBDIR%%/phpbb/console/command/fixup/recalculate_email_hash.php
+%%PHPBBDIR%%/phpbb/console/command/fixup/update_hashes.php
 %%PHPBBDIR%%/phpbb/console/command/reparser/list_all.php
 %%PHPBBDIR%%/phpbb/console/command/reparser/reparse.php
 %%PHPBBDIR%%/phpbb/console/command/thumbnail/delete.php
@@ -740,6 +746,7 @@
 %%PHPBBDIR%%/phpbb/cron/task/core/tidy_search.php
 %%PHPBBDIR%%/phpbb/cron/task/core/tidy_sessions.php
 %%PHPBBDIR%%/phpbb/cron/task/core/tidy_warnings.php
+%%PHPBBDIR%%/phpbb/cron/task/core/update_hashes.php
 %%PHPBBDIR%%/phpbb/cron/task/parametrized.php
 %%PHPBBDIR%%/phpbb/cron/task/task.php
 %%PHPBBDIR%%/phpbb/cron/task/text_reparser/reparser.php
@@ -768,6 +775,7 @@
 %%PHPBBDIR%%/phpbb/db/extractor/postgres_extractor.php
 %%PHPBBDIR%%/phpbb/db/extractor/sqlite3_extractor.php
 %%PHPBBDIR%%/phpbb/db/migration/container_aware_migration.php
+%%PHPBBDIR%%/phpbb/db/migration/data/v30x/.htaccess
 %%PHPBBDIR%%/phpbb/db/migration/data/v30x/local_url_bbcode.php
 %%PHPBBDIR%%/phpbb/db/migration/data/v30x/release_3_0_0.php
 %%PHPBBDIR%%/phpbb/db/migration/data/v30x/release_3_0_1.php
@@ -814,6 +822,7 @@
 %%PHPBBDIR%%/phpbb/db/migration/data/v30x/release_3_0_9_rc2.php
 %%PHPBBDIR%%/phpbb/db/migration/data/v30x/release_3_0_9_rc3.php
 %%PHPBBDIR%%/phpbb/db/migration/data/v30x/release_3_0_9_rc4.php
+%%PHPBBDIR%%/phpbb/db/migration/data/v310/.htaccess
 %%PHPBBDIR%%/phpbb/db/migration/data/v310/acp_prune_users_module.php
 %%PHPBBDIR%%/phpbb/db/migration/data/v310/acp_style_components_module.php
 %%PHPBBDIR%%/phpbb/db/migration/data/v310/allow_cdn.php
@@ -910,7 +919,11 @@
 %%PHPBBDIR%%/phpbb/db/migration/data/v310/timezone_p2.php
 %%PHPBBDIR%%/phpbb/db/migration/data/v310/topic_sort_username.php
 %%PHPBBDIR%%/phpbb/db/migration/data/v310/ucp_popuppm_module.php
+%%PHPBBDIR%%/phpbb/db/migration/data/v31x/.htaccess
+%%PHPBBDIR%%/phpbb/db/migration/data/v31x/add_jabber_ssl_context_config_options.php
+%%PHPBBDIR%%/phpbb/db/migration/data/v31x/add_latest_topics_index.php
 %%PHPBBDIR%%/phpbb/db/migration/data/v31x/add_log_time_index.php
+%%PHPBBDIR%%/phpbb/db/migration/data/v31x/add_smtp_ssl_context_config_options.php
 %%PHPBBDIR%%/phpbb/db/migration/data/v31x/increase_size_of_dateformat.php
 %%PHPBBDIR%%/phpbb/db/migration/data/v31x/increase_size_of_emotion.php
 %%PHPBBDIR%%/phpbb/db/migration/data/v31x/m_pm_report.php
@@ -921,9 +934,12 @@
 %%PHPBBDIR%%/phpbb/db/migration/data/v31x/remove_duplicate_migrations.php
 %%PHPBBDIR%%/phpbb/db/migration/data/v31x/style_update.php
 %%PHPBBDIR%%/phpbb/db/migration/data/v31x/update_custom_bbcodes_with_idn.php
+%%PHPBBDIR%%/phpbb/db/migration/data/v31x/update_hashes.php
 %%PHPBBDIR%%/phpbb/db/migration/data/v31x/v311.php
 %%PHPBBDIR%%/phpbb/db/migration/data/v31x/v3110.php
 %%PHPBBDIR%%/phpbb/db/migration/data/v31x/v3110rc1.php
+%%PHPBBDIR%%/phpbb/db/migration/data/v31x/v3111.php
+%%PHPBBDIR%%/phpbb/db/migration/data/v31x/v3111rc1.php
 %%PHPBBDIR%%/phpbb/db/migration/data/v31x/v312.php
 %%PHPBBDIR%%/phpbb/db/migration/data/v31x/v312rc1.php
 %%PHPBBDIR%%/phpbb/db/migration/data/v31x/v313.php
@@ -943,6 +959,7 @@
 %%PHPBBDIR%%/phpbb/db/migration/data/v31x/v318rc1.php
 %%PHPBBDIR%%/phpbb/db/migration/data/v31x/v319.php
 %%PHPBBDIR%%/phpbb/db/migration/data/v31x/v319rc1.php
+%%PHPBBDIR%%/phpbb/db/migration/data/v320/.htaccess
 %%PHPBBDIR%%/phpbb/db/migration/data/v320/add_help_phpbb.php
 %%PHPBBDIR%%/phpbb/db/migration/data/v320/allowed_schemes_links.php
 %%PHPBBDIR%%/phpbb/db/migration/data/v320/announce_global_permission.php
@@ -966,6 +983,18 @@
 %%PHPBBDIR%%/phpbb/db/migration/data/v320/v320b2.php
 %%PHPBBDIR%%/phpbb/db/migration/data/v320/v320rc1.php
 %%PHPBBDIR%%/phpbb/db/migration/data/v320/v320rc2.php
+%%PHPBBDIR%%/phpbb/db/migration/data/v32x/.htaccess
+%%PHPBBDIR%%/phpbb/db/migration/data/v32x/cookie_notice_p2.php
+%%PHPBBDIR%%/phpbb/db/migration/data/v32x/load_user_activity_limit.php
+%%PHPBBDIR%%/phpbb/db/migration/data/v32x/user_notifications_table_index_p1.php
+%%PHPBBDIR%%/phpbb/db/migration/data/v32x/user_notifications_table_index_p2.php
+%%PHPBBDIR%%/phpbb/db/migration/data/v32x/user_notifications_table_index_p3.php
+%%PHPBBDIR%%/phpbb/db/migration/data/v32x/user_notifications_table_reduce_column_sizes.php
+%%PHPBBDIR%%/phpbb/db/migration/data/v32x/user_notifications_table_remove_duplicates.php
+%%PHPBBDIR%%/phpbb/db/migration/data/v32x/user_notifications_table_temp_index.php
+%%PHPBBDIR%%/phpbb/db/migration/data/v32x/user_notifications_table_unique_index.php
+%%PHPBBDIR%%/phpbb/db/migration/data/v32x/v321.php
+%%PHPBBDIR%%/phpbb/db/migration/data/v32x/v321rc1.php
 %%PHPBBDIR%%/phpbb/db/migration/exception.php
 %%PHPBBDIR%%/phpbb/db/migration/helper.php
 %%PHPBBDIR%%/phpbb/db/migration/migration.php
@@ -984,6 +1013,7 @@
 %%PHPBBDIR%%/phpbb/db/output_handler/migrator_output_handler_interface.php
 %%PHPBBDIR%%/phpbb/db/output_handler/null_migrator_output_handler.php
 %%PHPBBDIR%%/phpbb/db/sql_insert_buffer.php
+%%PHPBBDIR%%/phpbb/db/tools.php
 %%PHPBBDIR%%/phpbb/db/tools/factory.php
 %%PHPBBDIR%%/phpbb/db/tools/mssql.php
 %%PHPBBDIR%%/phpbb/db/tools/postgres.php
@@ -1116,6 +1146,7 @@
 %%PHPBBDIR%%/phpbb/install/module/install_data/task/add_bots.php
 %%PHPBBDIR%%/phpbb/install/module/install_data/task/add_languages.php
 %%PHPBBDIR%%/phpbb/install/module/install_data/task/add_modules.php
+%%PHPBBDIR%%/phpbb/install/module/install_data/task/create_search_index.php
 %%PHPBBDIR%%/phpbb/install/module/install_database/module.php
 %%PHPBBDIR%%/phpbb/install/module/install_database/task/add_config_settings.php
 %%PHPBBDIR%%/phpbb/install/module/install_database/task/add_default_data.php
@@ -1753,6 +1784,7 @@
 %%PHPBBDIR%%/vendor/lusitanian/oauth/src/OAuth/OAuth1/Token/TokenInterface.php
 %%PHPBBDIR%%/vendor/lusitanian/oauth/src/OAuth/OAuth2/Service/AbstractService.php
 %%PHPBBDIR%%/vendor/lusitanian/oauth/src/OAuth/OAuth2/Service/Amazon.php
+%%PHPBBDIR%%/vendor/lusitanian/oauth/src/OAuth/OAuth2/Service/BattleNet.php
 %%PHPBBDIR%%/vendor/lusitanian/oauth/src/OAuth/OAuth2/Service/Bitly.php
 %%PHPBBDIR%%/vendor/lusitanian/oauth/src/OAuth/OAuth2/Service/Bitrix24.php
 %%PHPBBDIR%%/vendor/lusitanian/oauth/src/OAuth/OAuth2/Service/Box.php
@@ -1779,6 +1811,7 @@
 %%PHPBBDIR%%/vendor/lusitanian/oauth/src/OAuth/OAuth2/Service/Linkedin.php
 %%PHPBBDIR%%/vendor/lusitanian/oauth/src/OAuth/OAuth2/Service/Mailchimp.php
 %%PHPBBDIR%%/vendor/lusitanian/oauth/src/OAuth/OAuth2/Service/Microsoft.php
+%%PHPBBDIR%%/vendor/lusitanian/oauth/src/OAuth/OAuth2/Service/Mondo.php
 %%PHPBBDIR%%/vendor/lusitanian/oauth/src/OAuth/OAuth2/Service/Nest.php
 %%PHPBBDIR%%/vendor/lusitanian/oauth/src/OAuth/OAuth2/Service/Netatmo.php
 %%PHPBBDIR%%/vendor/lusitanian/oauth/src/OAuth/OAuth2/Service/ParrotFlowerPower.php
@@ -2189,6 +2222,8 @@
 %%PHPBBDIR%%/vendor/ocramius/proxy-manager/tests/language-feature-scripts/null-object-public-property-empty.phpt
 %%PHPBBDIR%%/vendor/ocramius/proxy-manager/tests/language-feature-scripts/remote-object-json-adapter-denies-unknow-method.phpt
 %%PHPBBDIR%%/vendor/paragonie/random_compat/LICENSE
+%%PHPBBDIR%%/vendor/paragonie/random_compat/RATIONALE.md
+%%PHPBBDIR%%/vendor/paragonie/random_compat/build-phar.sh
 %%PHPBBDIR%%/vendor/paragonie/random_compat/composer.json
 %%PHPBBDIR%%/vendor/paragonie/random_compat/lib/byte_safe_strings.php
 %%PHPBBDIR%%/vendor/paragonie/random_compat/lib/cast_to_int.php
@@ -2201,6 +2236,8 @@
 %%PHPBBDIR%%/vendor/paragonie/random_compat/lib/random_bytes_mcrypt.php
 %%PHPBBDIR%%/vendor/paragonie/random_compat/lib/random_bytes_openssl.php
 %%PHPBBDIR%%/vendor/paragonie/random_compat/lib/random_int.php
+%%PHPBBDIR%%/vendor/paragonie/random_compat/psalm-autoload.php
+%%PHPBBDIR%%/vendor/paragonie/random_compat/psalm.xml
 %%PHPBBDIR%%/vendor/patchwork/utf8/.gitignore
 %%PHPBBDIR%%/vendor/patchwork/utf8/LICENSE-APACHE
 %%PHPBBDIR%%/vendor/patchwork/utf8/LICENSE-GPL
@@ -2520,7 +2557,6 @@
 %%PHPBBDIR%%/vendor/s9e/text-formatter/src/Utils/Http/Client.php
 %%PHPBBDIR%%/vendor/s9e/text-formatter/src/Utils/Http/Clients/Curl.php
 %%PHPBBDIR%%/vendor/s9e/text-formatter/src/Utils/Http/Clients/Native.php
-%%PHPBBDIR%%/vendor/s9e/text-formatter/src/autoloader.php
 %%PHPBBDIR%%/vendor/s9e/text-formatter/src/render.js
 %%PHPBBDIR%%/vendor/symfony/config/ConfigCache.php
 %%PHPBBDIR%%/vendor/symfony/config/ConfigCacheFactory.php
@@ -3168,6 +3204,7 @@
 %%PHPBBDIR%%/vendor/symfony/yaml/Unescaper.php
 %%PHPBBDIR%%/vendor/symfony/yaml/Yaml.php
 %%PHPBBDIR%%/vendor/symfony/yaml/composer.json
+%%PHPBBDIR%%/vendor/twig/twig/.php_cs.dist
 %%PHPBBDIR%%/vendor/twig/twig/LICENSE
 %%PHPBBDIR%%/vendor/twig/twig/composer.json
 %%PHPBBDIR%%/vendor/twig/twig/lib/Twig/Autoloader.php
@@ -3177,6 +3214,7 @@
 %%PHPBBDIR%%/vendor/twig/twig/lib/Twig/CacheInterface.php
 %%PHPBBDIR%%/vendor/twig/twig/lib/Twig/Compiler.php
 %%PHPBBDIR%%/vendor/twig/twig/lib/Twig/CompilerInterface.php
+%%PHPBBDIR%%/vendor/twig/twig/lib/Twig/ContainerRuntimeLoader.php
 %%PHPBBDIR%%/vendor/twig/twig/lib/Twig/Environment.php
 %%PHPBBDIR%%/vendor/twig/twig/lib/Twig/Error.php
 %%PHPBBDIR%%/vendor/twig/twig/lib/Twig/Error/Loader.php
@@ -3196,6 +3234,7 @@
 %%PHPBBDIR%%/vendor/twig/twig/lib/Twig/Extension/Staging.php
 %%PHPBBDIR%%/vendor/twig/twig/lib/Twig/Extension/StringLoader.php
 %%PHPBBDIR%%/vendor/twig/twig/lib/Twig/ExtensionInterface.php
+%%PHPBBDIR%%/vendor/twig/twig/lib/Twig/FactoryRuntimeLoader.php
 %%PHPBBDIR%%/vendor/twig/twig/lib/Twig/FileExtensionEscapingStrategy.php
 %%PHPBBDIR%%/vendor/twig/twig/lib/Twig/Filter.php
 %%PHPBBDIR%%/vendor/twig/twig/lib/Twig/Filter/Function.php
@@ -3295,6 +3334,8 @@
 %%PHPBBDIR%%/vendor/twig/twig/lib/Twig/Node/SetTemp.php
 %%PHPBBDIR%%/vendor/twig/twig/lib/Twig/Node/Spaceless.php
 %%PHPBBDIR%%/vendor/twig/twig/lib/Twig/Node/Text.php
+%%PHPBBDIR%%/vendor/twig/twig/lib/Twig/Node/With.php
+%%PHPBBDIR%%/vendor/twig/twig/lib/Twig/NodeCaptureInterface.php
 %%PHPBBDIR%%/vendor/twig/twig/lib/Twig/NodeInterface.php
 %%PHPBBDIR%%/vendor/twig/twig/lib/Twig/NodeOutputInterface.php
 %%PHPBBDIR%%/vendor/twig/twig/lib/Twig/NodeTraverser.php
@@ -3312,17 +3353,23 @@
 %%PHPBBDIR%%/vendor/twig/twig/lib/Twig/Profiler/Node/LeaveProfile.php
 %%PHPBBDIR%%/vendor/twig/twig/lib/Twig/Profiler/NodeVisitor/Profiler.php
 %%PHPBBDIR%%/vendor/twig/twig/lib/Twig/Profiler/Profile.php
+%%PHPBBDIR%%/vendor/twig/twig/lib/Twig/RuntimeLoaderInterface.php
 %%PHPBBDIR%%/vendor/twig/twig/lib/Twig/Sandbox/SecurityError.php
 %%PHPBBDIR%%/vendor/twig/twig/lib/Twig/Sandbox/SecurityNotAllowedFilterError.php
 %%PHPBBDIR%%/vendor/twig/twig/lib/Twig/Sandbox/SecurityNotAllowedFunctionError.php
+%%PHPBBDIR%%/vendor/twig/twig/lib/Twig/Sandbox/SecurityNotAllowedMethodError.php
+%%PHPBBDIR%%/vendor/twig/twig/lib/Twig/Sandbox/SecurityNotAllowedPropertyError.php
 %%PHPBBDIR%%/vendor/twig/twig/lib/Twig/Sandbox/SecurityNotAllowedTagError.php
 %%PHPBBDIR%%/vendor/twig/twig/lib/Twig/Sandbox/SecurityPolicy.php
 %%PHPBBDIR%%/vendor/twig/twig/lib/Twig/Sandbox/SecurityPolicyInterface.php
 %%PHPBBDIR%%/vendor/twig/twig/lib/Twig/SimpleFilter.php
 %%PHPBBDIR%%/vendor/twig/twig/lib/Twig/SimpleFunction.php
 %%PHPBBDIR%%/vendor/twig/twig/lib/Twig/SimpleTest.php
+%%PHPBBDIR%%/vendor/twig/twig/lib/Twig/Source.php
+%%PHPBBDIR%%/vendor/twig/twig/lib/Twig/SourceContextLoaderInterface.php
 %%PHPBBDIR%%/vendor/twig/twig/lib/Twig/Template.php
 %%PHPBBDIR%%/vendor/twig/twig/lib/Twig/TemplateInterface.php
+%%PHPBBDIR%%/vendor/twig/twig/lib/Twig/TemplateWrapper.php
 %%PHPBBDIR%%/vendor/twig/twig/lib/Twig/Test.php
 %%PHPBBDIR%%/vendor/twig/twig/lib/Twig/Test/Function.php
 %%PHPBBDIR%%/vendor/twig/twig/lib/Twig/Test/IntegrationTestCase.php
@@ -3350,6 +3397,7 @@
 %%PHPBBDIR%%/vendor/twig/twig/lib/Twig/TokenParser/Set.php
 %%PHPBBDIR%%/vendor/twig/twig/lib/Twig/TokenParser/Spaceless.php
 %%PHPBBDIR%%/vendor/twig/twig/lib/Twig/TokenParser/Use.php
+%%PHPBBDIR%%/vendor/twig/twig/lib/Twig/TokenParser/With.php
 %%PHPBBDIR%%/vendor/twig/twig/lib/Twig/TokenParserBroker.php
 %%PHPBBDIR%%/vendor/twig/twig/lib/Twig/TokenParserBrokerInterface.php
 %%PHPBBDIR%%/vendor/twig/twig/lib/Twig/TokenParserInterface.php

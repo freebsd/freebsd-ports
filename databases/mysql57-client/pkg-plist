@@ -125,6 +125,7 @@ lib/mysql/libmysqlservices.a
 lib/mysql/libmysqlclient_r.a
 lib/mysql/libmysqlclient_r.so
 lib/mysql/libmysqlclient_r.so.20
+%%SASLCLIENT%%lib/mysql/plugin/authentication_ldap_sasl_client.so
 libdata/pkgconfig/mysqlclient.pc
 man/man1/comp_err.1.gz
 man/man1/mysql.1.gz

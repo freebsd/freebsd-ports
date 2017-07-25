@@ -31,6 +31,7 @@
     SUBDIR += cups-pk-helper
     SUBDIR += cups-smb-backend
     SUBDIR += deforaos-pdfviewer
+    SUBDIR += derelict-ft
     SUBDIR += detex
     SUBDIR += dot2tex
     SUBDIR += dvi2tty

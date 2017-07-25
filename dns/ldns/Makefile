@@ -3,6 +3,7 @@
 
 PORTNAME=	ldns
 PORTVERSION=	1.7.0
+PORTREVISION=	1
 CATEGORIES=	dns
 MASTER_SITES=	http://www.nlnetlabs.nl/downloads/ldns/ \
 		LOCAL/ehaupt
@@ -15,6 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 GNU_CONFIGURE=	yes
 USES=		cpe gmake libtool ssl perl5
+USE_PERL5=	build
 CPE_VENDOR=	nlnetlabs
 USE_LDCONFIG=	yes
 

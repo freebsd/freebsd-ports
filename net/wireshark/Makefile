@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME?=	wireshark
-PORTVERSION=	2.2.7
+PORTVERSION=	2.4.0
 PORTREVISION?=	0
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.wireshark.org/download/src/ \
@@ -28,7 +28,7 @@ DATADIR=	${PREFIX}/share/${DATADIR_NAME}
 
 GNU_CONFIGURE=	yes
 USES=		alias cpe gettext-runtime gmake libtool pathfix perl5 \
-		pkgconfig python:build ssl tar:bzip2
+		pkgconfig python:build ssl tar:xz
 USE_PERL5=	build
 USE_GNOME=	glib20
 CONFIGURE_ARGS+=	--program-transform-name="" \
@@ -36,14 +36,15 @@ CONFIGURE_ARGS+=	--program-transform-name="" \
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 
-LIB_DEPENDS+=	libgpg-error.so:security/libgpg-error
+LIB_DEPENDS+=	libgpg-error.so:security/libgpg-error \
+		libgcrypt.so:security/libgcrypt
 
 CFLAGS+=	-funit-at-a-time
 LIBS+=		-L${LOCALBASE}/lib
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 
 .for x in capinfos editcap mergecap rawshark text2pcap dftest randpkt \
-    reordercap captype randpktdump
+    reordercap captype randpktdump udpdump sharkd
 .if defined(LITE)
 PKGNAMESUFFIX=		-lite
 PLIST_SUB+=		${x:tu}="@comment $x not installed" \

@@ -1,0 +1,15 @@
+@sample etc/sshguard.conf.sample
+sbin/sshguard
+libexec/sshg-blocker
+libexec/sshg-fw-firewalld
+libexec/sshg-fw-hosts
+libexec/sshg-fw-ipfilter
+libexec/sshg-fw-ipfw
+libexec/sshg-fw-ipset
+libexec/sshg-fw-iptables
+libexec/sshg-fw-null
+libexec/sshg-fw-pf
+libexec/sshg-logtail
+libexec/sshg-parser
+man/man7/sshguard-setup.7.gz
+man/man8/sshguard.8.gz

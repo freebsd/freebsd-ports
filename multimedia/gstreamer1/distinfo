@@ -1,2 +1,3 @@
-SHA256 (gstreamer-1.8.0.tar.xz) = 947a314a212b5d94985d89b43440dbe66b696e12bbdf9a2f78967b98d74abedc
-SIZE (gstreamer-1.8.0.tar.xz) = 3616276
+TIMESTAMP = 1500046323
+SHA256 (gstreamer-1.12.2.tar.xz) = 9fde3f39a2ea984f9e07ce09250285ce91f6e3619d186889f75b5154ecf994ba
+SIZE (gstreamer-1.12.2.tar.xz) = 3172260

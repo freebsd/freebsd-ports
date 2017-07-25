@@ -17,6 +17,9 @@ RUN_DEPENDS=	rubygem-highline>=1.5:devel/rubygem-highline \
 		rubygem-sqlite3>=1.3:databases/rubygem-sqlite3 \
 		rubygem-trollop1>=1.13:devel/rubygem-trollop1
 
+DEPRECATED=	Unmaintained by upstream, no changes since 2013
+EXPIRATION_DATE=2017-08-31
+
 NO_ARCH=	yes
 USE_RUBY=	yes
 USES=		gem

@@ -7,7 +7,7 @@ PORTEPOCH=	1
 CATEGORIES=	security devel
 MASTER_SITES=	http://www.openssl.org/source/ \
 		ftp://ftp.cert.dfn.de/pub/tools/net/openssl/source/
-DIST_SUBDIR=	${DISTNAME:C/[a-z]$//}
+DIST_SUBDIR=	${PORTNAME}-${DISTVERSION:C/[a-z]$//}
 
 MAINTAINER=	brnrd@FreeBSD.org
 COMMENT=	SSL and crypto library

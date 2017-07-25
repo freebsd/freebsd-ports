@@ -15,7 +15,7 @@
 # was removed.
 #
 # $FreeBSD$
-# $MCom: portlint/portlint.pl,v 1.409 2017/06/04 22:22:22 jclarke Exp $
+# $MCom: portlint/portlint.pl,v 1.413 2017/07/22 01:46:20 jclarke Exp $
 #
 
 use strict;
@@ -50,7 +50,7 @@ $portdir = '.';
 # version variables
 my $major = 2;
 my $minor = 17;
-my $micro = 9;
+my $micro = 10;
 
 # default setting - for FreeBSD
 my $portsdir = '/usr/ports';
@@ -214,7 +214,26 @@ while (<IN>) {
 close(IN);
 
 open(MK, 'Makefile') || die "Makefile: $!";
-my @muses = grep($_ = /^USES[?+]?=\s*(.*)/ && $1, <MK>);
+my $ulineno = -1;
+my $uulineno = -1;
+my @muses = ();
+while (my $mline = <MK>) {
+	if ($uulineno == -1 && $mline =~ /^USE_/) {
+		$uulineno = $.;
+	}
+    if ($mline =~ /^USES[?+]?=\s*(.*)/) {
+		if ($ulineno == -1) {
+		    $ulineno = $.;
+		}
+	    if ($1) {
+		    push @muses, split(/\s+/, $1);
+		}
+    }
+}
+if ($uulineno < $ulineno) {
+	&perror("WARN", 'Makefile', $uulineno, "USE_* seen before USES.  ".
+		"According to the porters-handbook, USES must appear first.");
+}
 foreach my $muse (@muses) {
 	$makevar{USES} .= " " . $muse;
 }
@@ -397,10 +416,6 @@ sub checkdistinfo {
 			my $now = time;
 			if ($1 > $now) {
 				&perror("FATAL", $file, $., "TIMESTAMP is in the future");
-			} else {
-				if ($now - $1 > (30 * 60 * 60 * 24)) {
-					&perror("WARN", $file, $., "TIMESTAMP is over 30 days old");
-				}
 			}
 			next;
 		}
@@ -2734,10 +2749,6 @@ DIST_SUBDIR EXTRACT_ONLY
 		foreach my $conflict (split ' ', $makevar{CONFLICTS}) {
 			`$pkg_version -T '$makevar{PKGNAME}' '$conflict'`;
 			my $selfconflict = !$?;
-			if ($conflict !~ /[<>=-][^-]*[0-9][^-]*$/) {
-				&perror("WARN", "", -1, "Conflict \"$conflict\" specified too broad. ".
-					"You should end it with a version number fragment (-[0-9]*).");
-			}
 			if ($selfconflict) {
 				&perror("FATAL", "", -1, "Package conflicts with itself. ".
 					"You should remove \"$conflict\" from CONFLICTS.");

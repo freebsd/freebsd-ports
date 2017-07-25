@@ -1,15 +1,15 @@
---- build.gradle.orig	2016-02-28 12:54:50 UTC
+--- build.gradle.orig	2017-07-20 23:39:54 UTC
 +++ build.gradle
-@@ -125,7 +125,7 @@ void loadProperties(String sourceFileNam
-     def propFile = new File(sourceFileName)
-     if (propFile.canRead()) {
-         config.load(new FileInputStream(propFile))
--        for (Map.Entry property in config) {
-+        for (property in config) {
-             def keySplit = property.key.split("\\.");
-             def key = keySplit[0];
-             for (int i = 1; i < keySplit.length; i++) {
-@@ -1167,7 +1167,8 @@ allprojects {
+@@ -344,7 +344,7 @@ ext.SWT_FILE_NAME = IS_MAC ? "org.eclipse.swt.cocoa.ma
+     IS_WINDOWS && !IS_64 ? "org.eclipse.swt.win32.win32.x86_3.7.2.v3740f" :
+     IS_LINUX && IS_64 ? "org.eclipse.swt.gtk.linux.x86_64_3.7.2.v3740f" :
+     IS_LINUX && !IS_64 ? "org.eclipse.swt.gtk.linux.x86_3.7.2.v3740f" :
+-    IS_BSD ? "/usr/local/share/java/classes/swt-devel.jar" : ""
++    IS_BSD ? "%%PREFIX%%/share/java/classes/swt-devel.jar" : ""
+ 
+ // Build javadocs only if BUILD_JAVADOC=true
+ defineProperty("BUILD_JAVADOC", "false")
+@@ -1163,7 +1163,8 @@ allprojects {
      // By default all of our projects require junit for testing so we can just
      // setup this dependency here.
      dependencies {
@@ -19,10 +19,10 @@
          if (BUILD_CLOSED && DO_JCOV)  {
              testCompile name: "jcov"
          }
-@@ -1307,11 +1308,10 @@ project(":graphics") {
-     dependencies {
-         compile project(":base"), BUILD_SRC
-         compile files("/usr/local/share/java/classes/swt-devel.jar")
+@@ -1306,11 +1307,10 @@ project(":graphics") {
+ 	} else {
+              compile name: SWT_FILE_NAME
+ 	}
 -        stubCompile group: "junit", name: "junit", version: "4.8.2",
 +        stubCompile files("%%PREFIX%%/share/java/classes/junit4.jar",
 +                          "%%PREFIX%%/share/java/classes/hamcrest.jar"),
@@ -34,7 +34,7 @@
      }
  
      // Create a single "native" task which will depend on all the individual native tasks for graphics
-@@ -1601,9 +1601,7 @@ project(":graphics") {
+@@ -1600,9 +1600,7 @@ project(":graphics") {
              copy {
                  into libsDir
                  from f.getParentFile()
@@ -45,7 +45,7 @@
                  includeEmptyDirs = false
              }
              // Have to rename the swt jar because it is some platform specific name but
-@@ -1787,7 +1785,7 @@ project(":fxpackager") {
+@@ -1789,7 +1787,7 @@ project(":fxpackager") {
      }
  
      dependencies {
@@ -54,10 +54,11 @@
      }
  
      // When producing the jar, we need to relocate a few class files
-@@ -2048,21 +2046,6 @@ project(":fxpackager") {
+@@ -2049,21 +2047,6 @@ project(":fxpackager") {
+ 
      jar.dependsOn buildJavaPackager
      jar.dependsOn packagerJar
- 
+-
 -    classes << {
 -        // Copy all of the download libraries to libs directory for the sake of the IDEs
 -        File libsDir = rootProject.file("build/libs");
@@ -72,7 +73,6 @@
 -            }
 -        }
 -    }
--
+ 
      task packagerFakeJar(type: Jar) {
          dependsOn compileTestJava
-         from compileTestJava.destinationDir

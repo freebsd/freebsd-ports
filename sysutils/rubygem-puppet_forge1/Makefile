@@ -15,6 +15,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 RUN_DEPENDS=	rubygem-activesupport4>=4.2:devel/rubygem-activesupport4 \
 		rubygem-her>=0.6.8:databases/rubygem-her
 
+DEPRECATED=	Use sysutils/rubygem-puppet_forge instead
+EXPIRATION_DATE=2017-07-31
+
 PORTSCOUT=	limit:^1\.
 
 NO_ARCH=	yes

@@ -1,0 +1,67 @@
+#!/bin/sh
+
+# PROVIDE: alertmanager
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# alertmanager_enable (bool):     Set to NO by default
+#                               Set it to YES to enable alertmanager
+# alertmanager_user (string):     Set user to run alertmanager
+#                               Default is "alertmanager"
+# alertmanager_group (string):    Set group to run alertmanager
+#                               Default is "alertmanager"
+# alertmanager_config (string):   The configuration file
+#                               Default is "%%PREFIX%%/etc/alertmanager/alertmanager.yml"
+# alertmanager_data_dir (string):   The configuration file
+#                               Default is "/var/db/alertmanager"
+# alertmanager_log_file (string): Set file that alertmanager will log to
+#                               Default is "/var/log/alertmanager.log"
+# alertmanager_args (string):     Set additional command line arguments
+#                               Default is ""
+
+. /etc/rc.subr
+
+name=alertmanager
+rcvar=alertmanager_enable
+
+load_rc_config $name
+
+: ${alertmanager_enable:="NO"}
+: ${alertmanager_user:="alertmanager"}
+: ${alertmanager_group:="alertmanager"}
+: ${alertmanager_config:="%%PREFIX%%/etc/alertmanager/alertmanager.yml"}
+: ${alertmanager_data_dir:="/var/db/alertmanager"}
+: ${alertmanager_log_file:="/var/log/alertmanager.log"}
+: ${alertmanager_args:=""}
+
+pidfile=/var/run/alertmanager.pid
+required_files="${alertmanager_config}"
+command="/usr/sbin/daemon"
+procname="%%PREFIX%%/bin/alertmanager"
+sig_reload=HUP
+extra_commands="reload"
+command_args="-p ${pidfile} /usr/bin/env ${procname} \
+                -config.file=${alertmanager_config} \
+                -storage.path=${alertmanager_data_dir} \
+                ${alertmanager_args} > ${alertmanager_log_file} 2>&1"
+
+start_precmd=alertmanager_startprecmd
+
+alertmanager_startprecmd()
+{
+    if [ ! -e ${pidfile} ]; then
+        install -o ${alertmanager_user} -g ${alertmanager_group} /dev/null ${pidfile};
+    fi
+    if [ ! -f "${alertmanager_log_file}" ]; then
+        install -o ${alertmanager_user} -g ${alertmanager_group} -m 640 /dev/null ${alertmanager_log_file};
+    fi
+    if [ ! -d ${alertmanager_data_dir} ]; then
+        install -d -o ${alertmanager_user} -g ${alertmanager_group} -m 750 ${alertmanager_data_dir}
+    fi
+}
+
+load_rc_config $name
+run_rc_command "$1"
