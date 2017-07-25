@@ -16,6 +16,7 @@
 %%SITE_PERL%%/Net/CLI/Interact/Transport/Platform/Unix.pm
 %%SITE_PERL%%/Net/CLI/Interact/Transport/Platform/Win32.pm
 %%SITE_PERL%%/Net/CLI/Interact/Transport/Role/ConnectCore.pm
+%%SITE_PERL%%/Net/CLI/Interact/Transport/Role/StripControlChars.pm
 %%SITE_PERL%%/Net/CLI/Interact/Transport/SSH.pm
 %%SITE_PERL%%/Net/CLI/Interact/Transport/Serial.pm
 %%SITE_PERL%%/Net/CLI/Interact/Transport/Telnet.pm
