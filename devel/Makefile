@@ -4673,6 +4673,7 @@
     SUBDIR += py-pyvalid
     SUBDIR += py-pyvisa
     SUBDIR += py-pyvisa-py
+    SUBDIR += py-pyxb
     SUBDIR += py-pyxml2obj
     SUBDIR += py-qpid
     SUBDIR += py-qserve
