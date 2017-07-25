@@ -340,6 +340,8 @@ etc/newsyslog.conf.d/logitechmediaserver.conf
 %%SLIMDIR%%/CPAN/Net/HTTP/Methods.pm
 %%SLIMDIR%%/CPAN/Net/HTTP/NB.pm
 %%SLIMDIR%%/CPAN/Net/HTTPS.pm
+%%SLIMDIR%%/CPAN/Net/IPv4Addr.pm
+%%SLIMDIR%%/CPAN/Net/Ifconfig/Wrapper.pm
 %%SLIMDIR%%/CPAN/Net/UPnP.pm
 %%SLIMDIR%%/CPAN/Net/UPnP/AV/Container.pm
 %%SLIMDIR%%/CPAN/Net/UPnP/AV/Content.pm
@@ -353,7 +355,6 @@ etc/newsyslog.conf.d/logitechmediaserver.conf
 %%SLIMDIR%%/CPAN/Net/UPnP/HTTPResponse.pm
 %%SLIMDIR%%/CPAN/Net/UPnP/QueryResponse.pm
 %%SLIMDIR%%/CPAN/Net/UPnP/Service.pm
-%%SLIMDIR%%/CPAN/Network/IPv4Addr.pm
 %%SLIMDIR%%/CPAN/PAR.pm
 %%SLIMDIR%%/CPAN/PAR/Dist.pm
 %%SLIMDIR%%/CPAN/PAR/Heavy.pm
@@ -780,6 +781,7 @@ etc/newsyslog.conf.d/logitechmediaserver.conf
 %%SLIMDIR%%/CPAN/arch/%%PERL_VER%%/ExtUtils/CBuilder/Platform/dec_osf.pm
 %%SLIMDIR%%/CPAN/arch/%%PERL_VER%%/ExtUtils/CBuilder/Platform/os2.pm
 %%SLIMDIR%%/CPAN/arch/%%PERL_VER%%/HTML/Tagset.pm
+%%SLIMDIR%%/CPAN/arch/%%PERL_VER%%/Image/Scale.pm
 %%SLIMDIR%%/CPAN/arch/%%PERL_VER%%/JSON/XS.pm
 %%SLIMDIR%%/CPAN/arch/%%PERL_VER%%/JSON/XS/Boolean.pm
 %%SLIMDIR%%/CPAN/arch/%%PERL_VER%%/Module/Build.pm
@@ -1922,6 +1924,7 @@ etc/newsyslog.conf.d/logitechmediaserver.conf
 %%SLIMDIR%%/Slim/Player/ProtocolHandlers.pm
 %%SLIMDIR%%/Slim/Player/Protocols/File.pm
 %%SLIMDIR%%/Slim/Player/Protocols/HTTP.pm
+%%SLIMDIR%%/Slim/Player/Protocols/HTTPS.pm
 %%SLIMDIR%%/Slim/Player/Protocols/LocalFile.pm
 %%SLIMDIR%%/Slim/Player/Protocols/MMS.pm
 %%SLIMDIR%%/Slim/Player/Protocols/SqueezePlayDirect.pm
@@ -2038,7 +2041,6 @@ etc/newsyslog.conf.d/logitechmediaserver.conf
 %%SLIMDIR%%/Slim/Plugin/Favorites/Playlist.pm
 %%SLIMDIR%%/Slim/Plugin/Favorites/Plugin.pm
 %%SLIMDIR%%/Slim/Plugin/Favorites/Settings.pm
-%%SLIMDIR%%/Slim/Plugin/Favorites/SqueezeNetwork.pm
 %%SLIMDIR%%/Slim/Plugin/Favorites/install.xml
 %%SLIMDIR%%/Slim/Plugin/Favorites/strings.txt
 %%SLIMDIR%%/Slim/Plugin/Flickr/HTML/EN/plugins/Flickr/html/images/icon.png
