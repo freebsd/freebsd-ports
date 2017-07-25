@@ -2,6 +2,7 @@ bin/liteide
 lib/liteide/libcolorstyle.a
 lib/liteide/libcplusplus.a
 lib/liteide/libdiff_match_pitch.a
+lib/liteide/libdlvclient.a
 lib/liteide/libdocbrowserapi.a
 lib/liteide/libdocumentbrowser.a
 lib/liteide/libeditorutil.a
@@ -31,6 +32,7 @@ lib/liteide/liblitettyapi.a
 lib/liteide/libmimetype.a
 lib/liteide/libmodelproject.a
 lib/liteide/libprocessex.a
+lib/liteide/libqjsonrpc.a
 lib/liteide/libqt_browser.a
 lib/liteide/libqtc_editutil.a
 lib/liteide/libqtc_itemview.a
