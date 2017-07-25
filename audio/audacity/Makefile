@@ -22,12 +22,11 @@ BROKEN_aarch64=		fails to configure: checking whether C++ compiler accepts -msse
 BROKEN_powerpc64=	fails to build
 
 GNU_CONFIGURE=	yes
-USES=		autoreconf compiler:gcc-c++11-lib cpe desktop-file-utils gettext-tools gmake iconv libtool pkgconfig shared-mime-info shebangfix dos2unix
+USES=		autoreconf compiler:c++11-lib cpe desktop-file-utils gettext-tools gmake iconv libtool pkgconfig shared-mime-info shebangfix dos2unix localbase
 NLS_USES=	gettext-runtime
 NLS_CONFIGURE_ENABLE=	nls
 NLS_CONFIGURE_WITH=	libintl-prefix="${LOCALBASE}"
 OPTIONS_SUB=	yes
-USE_GCC=	yes
 USE_WX=		3.0+
 WX_COMPS=	wx
 INSTALLS_ICONS=	yes
@@ -50,7 +49,6 @@ DYNLOAD_DESC=	Enable dynamic loading of lame and FFmpeg
 LAME_DESC=	Use lame for import and export support
 LV2_DESC=	Add LV2 plug-in support
 MAD_DESC=	Use libmad for mp2/3 decoding support
-MIDI_DESC=	Use portSMF for Midi support
 SBSMS_DESC=	Use libsbsms for pitch and tempo changing
 SOUNDTOUCH_DESC=	Use libSoundTouch for pitch and tempo changing
 TAGLIB_DESC=	Use TagLib for metadata support
@@ -60,16 +58,17 @@ VST_DESC=	VST plug-in support
 
 CONFIGURE_ENV+=	WX_CONFIG="${WX_CONFIG}"
 
-CONFIGURE_ARGS+=	--enable-unicode \
+CONFIGURE_ARGS+=	--disable-option-checking \
+			--enable-unicode \
 			${ICONV_CONFIGURE_ARG} \
 			--with-lib-preference="local" \
 			--with-expat=system \
 			--with-libsndfile=system \
 			--with-libsoxr \
-			--with-portaudio \
 			--with-midi \
-			--with-widgetextra \
-			--with-portmixer=yes
+			--with-portaudio \
+			--with-portmixer=yes \
+			--with-widgetextra
 
 CONFIGURE_SHELL?=	${LOCALBASE}/bin/bash
 
@@ -130,17 +129,17 @@ VAMP_CONFIGURE_WITH=	libvamp=system
 VAMP_LIB_DEPENDS=	libvamp-hostsdk.so:audio/vamp-plugin-sdk
 
 VORBIS_CONFIGURE_WITH=	libvorbis=system
-VORBIS_LIB_DEPENDS=	libvorbis.so:audio/libvorbis
+VORBIS_LIB_DEPENDS=	libvorbis.so:audio/libvorbis \
+			libogg.so:audio/libogg
 
 VST_CONFIGURE_ENABLE=	vst
 
-.include <bsd.port.pre.mk>
-
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+	@${RM} ${STAGEDIR}${DOCSDIR}/LICENSE.txt
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
