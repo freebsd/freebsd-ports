@@ -168,6 +168,7 @@
     SUBDIR += spandsp
     SUBDIR += splat
     SUBDIR += sredird
+    SUBDIR += sunxi-tools
     SUBDIR += svxlink
     SUBDIR += syncterm
     SUBDIR += tcpser
