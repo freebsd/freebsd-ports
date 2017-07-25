@@ -1451,6 +1451,7 @@
     SUBDIR += rubygem-babel-source
     SUBDIR += rubygem-babel-transpiler
     SUBDIR += rubygem-babosa
+    SUBDIR += rubygem-case_transform
     SUBDIR += rubygem-charlock_holmes
     SUBDIR += rubygem-citrus
     SUBDIR += rubygem-cld3

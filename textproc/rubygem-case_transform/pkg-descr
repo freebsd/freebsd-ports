@@ -1,0 +1,4 @@
+This gem implements a simple extraction of the key_transform abilities of
+ActiveModelSerializers
+
+WWW: https://github.com/NullVoxPopuli/case_transform
