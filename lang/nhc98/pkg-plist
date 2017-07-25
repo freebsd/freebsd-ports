@@ -224,6 +224,8 @@ include/nhc98/packages/base/Text/Printf.hi
 include/nhc98/packages/base/Text/Read.hi
 include/nhc98/packages/base/Text/Show.hi
 include/nhc98/packages/base/Text/Show/Functions.hi
+@dir include/nhc98/packages/base/Text/Html
+@dir include/nhc98/packages/base/Text/Regex
 include/nhc98/packages/base/Typeable.h
 include/nhc98/packages/base/Unsafe/Coerce.hi
 include/nhc98/packages/bytestring.cabal
@@ -249,6 +251,7 @@ include/nhc98/packages/filepath.cabal
 include/nhc98/packages/filepath/System/FilePath.hi
 include/nhc98/packages/filepath/System/FilePath/Posix.hi
 include/nhc98/packages/filepath/System/FilePath/Windows.hi
+@dir include/nhc98/packages/haskell98
 include/nhc98/packages/haskell98.cabal
 include/nhc98/packages/old-locale.cabal
 include/nhc98/packages/old-locale/System/Locale.hi
