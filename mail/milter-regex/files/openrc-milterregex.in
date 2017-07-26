@@ -1,0 +1,13 @@
+#!/sbin/openrc-run
+
+spooldir=%%SPOOLDIR%%
+
+name="milterregex"
+command="%%PREFIX%%/libexec/milter-regex"
+pidfile="${spooldir}/milter-regex.pid"
+required_files="%%PREFIX%%/etc/milter-regex.conf"
+
+depend()
+{
+	keyword -shutdown
+}

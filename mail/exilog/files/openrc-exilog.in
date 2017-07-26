@@ -1,0 +1,14 @@
+#!/sbin/openrc-run
+
+# also uncomment  'use_pretty_names' => 'no' in exilog.conf file
+
+name=exilog
+
+command=%%PREFIX%%/sbin/exilog_agent.pl
+pidfile=/var/run/exilog.pid
+required_files=%%PREFIX%%/etc/exilog.conf
+
+depend()
+{
+	keyword -shutdown
+}

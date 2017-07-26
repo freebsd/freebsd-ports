@@ -1,0 +1,46 @@
+#!/sbin/openrc-run
+
+# Define these milterenma_* variables in one of these files:
+#	/etc/rc.conf
+#	/etc/rc.conf.local
+#	/etc/rc.conf.d/milterenma
+
+# milterenma_cfgfile (str):   Configuration file.
+# milterenma_pid (str):       Set pid file path.
+# milterenma_uid (str):       Set username to run milter.
+#
+# DO NOT CHANGE THESE DEFAULT VALUES HERE
+
+milterenma_cfgfile=${milterenma_cfgfile:-"%%PREFIX%%/etc/enma.conf"}
+milterenma_pid=${milterenma_pid:-"/var/run/milterenma/enma.pid"}
+milterenma_uid=${milterenma_uid:-"mailnull"}
+
+name="milterenma"
+
+pidfile=${milterenma_pid}
+required_files=${milterenma_cfgfile}
+command="%%PREFIX%%/libexec/enma"
+command_args="-c ${milterenma_cfgfile}"
+_piddir=$(dirname ${pidfile})
+command_user=mailnull
+
+start_pre()
+{
+    if [ ! -d ${_piddir} ] ; then
+	mkdir -p ${_piddir}
+    fi
+    if [ -n "${milterenma_uid}" ] ; then
+	chown ${milterenma_uid} ${_piddir}
+    fi
+}
+
+start_post()
+{
+    # just if the directory is empty
+    rmdir ${_piddir} > /dev/null 2>&1
+}
+
+depend()
+{
+	keyword -shutdown
+}

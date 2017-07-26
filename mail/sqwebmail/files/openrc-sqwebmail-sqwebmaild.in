@@ -1,0 +1,36 @@
+#!/sbin/openrc-run
+
+# Define these sqwebmaild_* variables in one of these files:
+# 	/etc/rc.conf
+# 	/etc/rc.conf.local
+# 	/etc/rc.conf.d/sqwebmaild
+
+name="sqwebmaild"
+command="%%PREFIX%%/libexec/sqwebmaild.rc"
+pidfile="%%PREFIX%%/var/sqwebmail/run/sqwebmaild.pid"
+procname="%%PREFIX%%/sbin/courierlogger"
+
+start() {
+	ebegin "Starting ${name}."
+	${command} start
+	eend $?
+}
+
+stop() {
+	ebegin "Stopping ${name}."
+	${command} stop
+	eend $?
+	if[ $? -eq 0 ] ; then
+		for file in "$pidfile" "$pidfile".lock "$pidfile".pcp.lock %%PREFIX%%/var/sqwebmail/sqwebmail.sock ; do
+			[ -f "$file" -o -S "$file" ] && rm -f "$file"
+		done
+		return 0
+	fi
+}
+
+depend()
+{
+	need localmount
+	after bootmisc
+	keyword -shutdown
+}

@@ -1,0 +1,18 @@
+#!/sbin/openrc-run
+
+# Add the following line to /etc/rc.conf to enable imapproxyd:
+
+# imapproxyd_conf (file):	Set location of conf file.
+#				Default is "%%PREFIX%%/etc/imapproxyd.conf"
+
+name=imapproxyd
+
+: ${imapproxyd_conf="%%PREFIX%%/etc/imapproxyd.conf"}
+
+command=%%PREFIX%%/sbin/in.imapproxyd
+required_files="${imapproxyd_conf}"
+
+depend()
+{
+	keyword -shutdown
+}

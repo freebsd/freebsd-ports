@@ -1,0 +1,12 @@
+#!/sbin/openrc-run
+
+name="mailfromd"
+command="%%PREFIX%%/sbin/${name}"
+
+: ${mailfromd_runpath="%%MFD_RUN_DIR%%"}
+pidfile="${mailfromd_runpath}/${name}.pid"
+
+depend()
+{
+	keyword -shutdown
+}

@@ -1,0 +1,16 @@
+#!/sbin/openrc-run
+
+# Add the following lines to /etc/rc.conf to enable frox:
+
+#whosond="YES"
+
+name=whosond
+
+command=%%PREFIX%%/sbin/${name}
+required_files=%%PREFIX%%/etc/whoson.conf
+
+depend()
+{
+	keyword -shutdown
+	use net
+}
