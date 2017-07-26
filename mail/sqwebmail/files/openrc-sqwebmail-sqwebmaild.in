@@ -11,22 +11,21 @@ pidfile="%%PREFIX%%/var/sqwebmail/run/sqwebmaild.pid"
 procname="%%PREFIX%%/sbin/courierlogger"
 
 start() {
-		einfo "Starting ${name}."
-		${command} start
-		;;
+	ebegin "Starting ${name}."
+	${command} start
+	eend $?
 }
 
 stop() {
-		einfo "Stopping ${name}."
-		${command} stop
-		if [ $? -eq 0 ] ; then
-			for file in "$pidfile" "$pidfile".lock "$pidfile".pcp.lock %%PREFIX%%/var/sqwebmail/sqwebmail.sock ; do
-				[ -f "$file" -o -S "$file" ] && rm -f "$file"
-			done
-			return 0
-		fi
-		;;
-	esac
+	ebegin "Stopping ${name}."
+	${command} stop
+	eend $?
+	if[ $? -eq 0 ] ; then
+		for file in "$pidfile" "$pidfile".lock "$pidfile".pcp.lock %%PREFIX%%/var/sqwebmail/sqwebmail.sock ; do
+			[ -f "$file" -o -S "$file" ] && rm -f "$file"
+		done
+		return 0
+	fi
 }
 
 depend()
