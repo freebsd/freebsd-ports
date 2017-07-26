@@ -1,0 +1,10 @@
+bin/nsnotify
+bin/nsnotify-liststealth
+bin/nsnotify2git
+bin/nsnotify2stealth
+bin/nsnotify2update
+bin/nsnotifyd
+man/man1/metazone.1.gz
+man/man1/nsnotify.1.gz
+man/man1/nsnotifyd.1.gz
+man/man5/metazone.5.gz

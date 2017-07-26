@@ -3,7 +3,7 @@
 
 PORTNAME=	refocus
 PORTVERSION=	0.9.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 PKGNAMEPREFIX=	gimp-
@@ -13,27 +13,32 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GIMP plugin to "refocus" images through FIR Wiener filtering
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gimp-2.0.pc:graphics/gimp-app
-RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gimp-2.0.pc:graphics/gimp-app
+LIB_DEPENDS=	libgimp-2.0.so:graphics/gimp-app \
+		libfreetype.so:print/freetype2 \
+		libfontconfig.so:x11-fonts/fontconfig
+
+USES=		autoreconf gettext gmake pathfix pkgconfig
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	GIMPTOOL=${LOCALBASE}/bin/gimptool-2.0
+USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk20 pango
+
+GIMP_PLUGIN_DIR=	libexec/gimp/2.2/plug-ins
+
+PLIST_FILES=	${GIMP_PLUGIN_DIR}/${PORTNAME}
+PORTDOCS=	*
 
 OPTIONS_DEFINE=	ATLAS DOCS OPTIMIZED_CFLAGS
 OPTIONS_DEFAULT=	OPTIMIZED_CFLAGS
 
 ATLAS_DESC=	Build with optimized math/atlas instead of builtin
+ATLAS_USES=		blaslapack:atlas fortran
+ATLAS_BUILD_DEPENDS=	f2c>0:lang/f2c
+ATLAS_CONFIGURE_ON=	--with-lapack-libs="${LAPACKLIB} ${BLASLIB}" \
+			--with-lapack-includes="-I${LOCALBASE}/include"
 
-USES=		autoreconf gettext gmake pathfix pkgconfig
-
-# GCC required due to fortran dependency, e.g., math/atlas
-USE_GCC=	yes
-
-GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	GIMPTOOL=${LOCALBASE}/bin/gimptool-2.0
-
-GIMP_PLUGIN_DIR=	libexec/gimp/2.2/plug-ins
-
-# installed files
-PLIST_FILES=	${GIMP_PLUGIN_DIR}/${PORTNAME}
+OPTIMIZED_CFLAGS_CFLAGS=	-O3
 
 post-patch:
 	@${FIND} ${WRKSRC} -name Makefile.am \
@@ -41,38 +46,14 @@ post-patch:
 	@${REINPLACE_CMD} -e "s|%%WRKSRC%%|${WRKSRC}|" \
 		${WRKSRC}/configure.in
 
-.include <bsd.port.options.mk>
-
-# math/atlas library
-.if ${PORT_OPTIONS:MATLAS}
-BUILD_DEPENDS+=	\
-		${LOCALBASE}/include/f2c.h:lang/f2c \
-		${LOCALBASE}/include/clapack.h:math/atlas
-RUN_DEPENDS+=	\
-		${LOCALBASE}/include/clapack.h:math/atlas
-
-CONFIGURE_ARGS+=	--with-lapack-libs="-L${LOCALBASE}/lib -latlas -lblas -lcblas -llapack" \
-			--with-lapack-includes="-I${LOCALBASE}/include"
-.endif
-
-# optimized CFLAGS
-.if ${PORT_OPTIONS:MOPTIMIZED_CFLAGS}
-CFLAGS+=	-O3
-.endif
-
-# documentation
-PORTDOCS=	*
-
 do-install:
-# plugin
 	@${MKDIR} ${STAGEDIR}${PREFIX}/${GIMP_PLUGIN_DIR}/
 	${INSTALL_PROGRAM} ${WRKSRC}/src/${PORTNAME} \
 		${STAGEDIR}${PREFIX}/${GIMP_PLUGIN_DIR}/
-# docs
-.if ${PORT_OPTIONS:MDOCS}
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/*html ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/*pdf ${STAGEDIR}${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>

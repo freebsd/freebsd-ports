@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	URI
-PORTVERSION=	1.71
+PORTVERSION=	1.72
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -12,6 +12,8 @@ COMMENT=	Perl5 interface to Uniform Resource Identifier (URI) references
 
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
+
+TEST_DEPENDS=	p5-Test-Needs>=0:devel/p5-Test-Needs
 
 NO_ARCH=	yes
 USES=		perl5

@@ -1,17 +1,17 @@
-# Created by: Nicole Reid <root@cooltrainer.org>
 # $FreeBSD$
 
 PORTNAME=	subsonic
-PORTVERSION=	5.3
-PORTREVISION=	2
+PORTVERSION=	6.0
 CATEGORIES=	www java
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${PORTVERSION}-war
 
-MAINTAINER=	root@cooltrainer.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Subsonic streaming media server
 
-LICENSE=	GPLv3
+# Subsonic 6 onwards has become proprietary.  License is unclear.
+# http://forum.subsonic.org/forum/viewtopic.php?f=4&t=16604#p71128
+LICENSE=	NONE
 
 OPTIONS_SINGLE=	APPSERVER
 APPSERVER_DESC=	Java Application Server

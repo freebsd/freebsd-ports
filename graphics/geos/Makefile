@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	geos
-PORTVERSION=	3.6.1
+PORTVERSION=	3.6.2
 CATEGORIES=	graphics geography
 MASTER_SITES=	http://download.osgeo.org/geos/ \
 		LOCAL/sunpoet
@@ -27,7 +27,7 @@ PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
 PYTHON_BUILD_DEPENDS=	swig3.0:devel/swig30
 PYTHON_CONFIGURE_ENABLE=python
-PYTHON_USES=		python:2
+PYTHON_USES=		python
 RUBY_BUILD_DEPENDS=	swig3.0:devel/swig30
 RUBY_CONFIGURE_ENABLE=	ruby
 RUBY_CONFIGURE_ENV=	RUBY="${RUBY}"

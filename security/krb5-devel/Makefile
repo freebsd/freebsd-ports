@@ -2,13 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=		krb5
-DISTVERSION=		1.16
-PORTVERSION=		${DISTVERSION}.${MIT_COMMIT_DATE}
+PORTVERSION=		1.16.${MIT_COMMIT_DATE}
 CATEGORIES=		security
 .if !defined(MASTERDIR)
 PKGNAMESUFFIX=		-devel
 .endif
-HASH=			83d47cd 
+HASH=			96d0499
 
 PATCH_SITES=		http://web.mit.edu/kerberos/advisories/
 PATCH_DIST_STRIP=	-p2
@@ -20,7 +19,7 @@ LICENSE=		MIT
 
 USE_GITHUB=		yes
 GH_TAGNAME=		${HASH}
-MIT_COMMIT_DATE=	2017.06.20
+MIT_COMMIT_DATE=	2017.07.17
 
 CONFLICTS=		heimdal-[0-9]* srp-[0-9]* krb5-11[34]-[0-9]* krb5-1.[0-9]*
 

@@ -9,9 +9,8 @@
 # bump the version here.
 
 PORTNAME=	stack
-PORTVERSION=	1.4.0
+PORTVERSION=	1.5.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
 CATEGORIES=	devel haskell
 MASTER_SITES=	GH \
 		https://github.com/applicative-tech/stack-dependencies/releases/download/v${PORTVERSION}/:deps
