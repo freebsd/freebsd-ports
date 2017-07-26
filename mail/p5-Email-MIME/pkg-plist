@@ -2,9 +2,11 @@
 %%SITE_PERL%%/Email/MIME/Creator.pm
 %%SITE_PERL%%/Email/MIME/Encode.pm
 %%SITE_PERL%%/Email/MIME/Header.pm
+%%SITE_PERL%%/Email/MIME/Header/AddressList.pm
 %%SITE_PERL%%/Email/MIME/Modifier.pm
 %%PERL5_MAN3%%/Email::MIME.3.gz
 %%PERL5_MAN3%%/Email::MIME::Creator.3.gz
 %%PERL5_MAN3%%/Email::MIME::Encode.3.gz
 %%PERL5_MAN3%%/Email::MIME::Header.3.gz
+%%PERL5_MAN3%%/Email::MIME::Header::AddressList.3.gz
 %%PERL5_MAN3%%/Email::MIME::Modifier.3.gz
