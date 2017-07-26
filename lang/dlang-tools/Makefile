@@ -1,12 +1,11 @@
 # Created by: Alonso Cardenas Marquez <acm@FreeBSD.org>
 # $FreeBSD$
 
-PORTNAME=	dlang-tools
+PORTNAME=	tools
 PORTVERSION=	2.075.0
+DISTVERSIONPREFIX=	v
 CATEGORIES=	lang
-MASTER_SITES=	https://github.com/dlang/tools/archive/
-DISTNAME=	${PORTVERSION:S/^/v/}
-DIST_SUBDIR=	${PORTNAME}
+PKGNAMEPREFIX=	dlang-
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Ancillary tools for the D programming language compiler
@@ -17,7 +16,9 @@ BUILD_DEPENDS=	ldmd2:lang/ldc \
 		dub:devel/dub \
 		${LOCALBASE}/lib/d/libdparse.a:devel/libdparse
 
-WRKSRC=		${WRKDIR}/tools-${PORTVERSION}
+USE_GITHUB=	yes
+GH_ACCOUNT=	dlang
+
 LDC2_CMD=	${LOCALBASE}/bin/ldc2
 TOOLS_LIST=	catdoc changed checkwhitespace ddemangle detab dget rdmd tolf
 

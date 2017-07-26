@@ -3,10 +3,8 @@
 
 PORTNAME=	inifiled
 PORTVERSION=	1.0.2
+DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
-MASTER_SITES=	https://github.com/burner/inifiled/archive/
-DISTNAME=	${DISTVERSION:S/^/v/}
-DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Compile time ini file parser and writter generator for D
@@ -16,7 +14,9 @@ LICENSE=	BSL
 BUILD_DEPENDS=	ldmd2:lang/ldc \
 		dub:devel/dub
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+USE_GITHUB=	yes
+GH_ACCOUNT=	burner
+
 DUB_CMD=	${LOCALBASE}/bin/dub build --build=release
 D_INCLUDE_DIR=	${PREFIX}/include/d
 D_LIB_DIR=	${PREFIX}/lib/d

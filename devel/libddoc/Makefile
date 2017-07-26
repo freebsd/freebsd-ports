@@ -3,10 +3,8 @@
 
 PORTNAME=	libddoc
 PORTVERSION=	0.2.0
+DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
-MASTER_SITES=	https://github.com/economicmodeling/libddoc/archive/
-DISTNAME=	${DISTVERSION:S/^/v/}
-DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	D implementation of the DDoc macro system
@@ -17,7 +15,9 @@ BUILD_DEPENDS=	ldmd2:lang/ldc \
 		dub:devel/dub \
 		${LOCALBASE}/lib/d/libdparse.a:devel/libdparse
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+USE_GITHUB=	yes
+GH_ACCOUNT=	economicmodeling
+
 DUB_CMD=	${LOCALBASE}/bin/dub build --build=release
 D_INCLUDE_DIR=	${PREFIX}/include/d
 D_LIB_DIR=	${PREFIX}/lib/d
