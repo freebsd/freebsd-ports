@@ -29,9 +29,6 @@ CONFLICTS_INSTALL=	cacti88
 post-patch:
 	@${REINPLACE_CMD} 's,#define\ *DEFAULT_CONF_FILE .*,#define DEFAULT_CONF_FILE "${PREFIX}/etc/spine.conf",' ${WRKSRC}/spine.h
 
-do-build:
-	@cd ${WRKSRC}; ${MAKE}
-
 post-install:
 	${MV} ${STAGEDIR}${PREFIX}/etc/spine.conf.dist ${STAGEDIR}${PREFIX}/etc/spine.conf.sample
 

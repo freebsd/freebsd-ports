@@ -3,7 +3,7 @@ possible. For this reason it is written in native C, makes use of POSIX
 threads, and is linked directly against the net-snmp library for
 minimal SNMP polling overhead.
 
-It's a replacement for the default 'poller.php' script, so you must 
+It's a replacement for the default 'poller.php' script, so you must
 decide if using Spine makes sense for your installation.
 
-WWW: http://cacti.net/spine_info.php
+WWW: https://cacti.net/spine_info.php
