@@ -1,25 +1,22 @@
 #!/sbin/openrc-run
 
-# Add the following lines to /etc/rc.conf to enable ${name}:
-# ${name}_args (str):         Optional arguments to OAJBoss
-# ${name}_log_stdout (str)       OpenEMM log output stdout, filename.
-# ${name}_log_stderr (str)       OpenEMM log output stderr, filename.
+# Add the following lines to /etc/rc.conf to enable openemm2015:
+# openemm2015_args (str):         Optional arguments to OAJBoss
+# openemm2015_log_stdout (str)       OpenEMM log output stdout, filename.
+# openemm2015_log_stderr (str)       OpenEMM log output stderr, filename.
 
+name="openemm2015"
 
-name="%%APP_SHORTNAME%%"
-
-${name}_logdir="%%LOG_DIR%%"
-${name}_log_stdout="${${name}_log_stdout:-"${${name}_logdir}/log"}"
-${name}_log_stderr="${${name}_log_stderr:-"${${name}_logdir}/error"}"
-${name}_args="${${name}_args:-""}"
-${name}_sleep="${${name}_sleep:-"5"}"
-${name}_kill9="${${name}_kill9:-""}"
-${name}_additional_killall="${${name}_additional_killall:-""}"
-${name}_user="%%USER%%"
-${name}_group="%%GROUP%%"
-${name}_lockdir="/var/run/openemm"
-
-command_user=${name}_user
+openemm2015_logdir="%%LOG_DIR%%"
+openemm2015_log_stdout="${openemm2015_log_stdout:-"${openemm2015_logdir}/log"}"
+openemm2015_log_stderr="${openemm2015_log_stderr:-"${openemm2015_logdir}/error"}"
+openemm2015_args="${openemm2015_args:-""}"
+openemm2015_sleep="${openemm2015_sleep:-"5"}"
+openemm2015_kill9="${openemm2015_kill9:-""}"
+openemm2015_additional_killall="${openemm2015_additional_killall:-""}"
+openemm2015_user="%%USER%%"
+openemm2015_group="%%GROUP%%"
+openemm2015_lockdir="/var/run/openemm"
 
 pidfile="%%PID_FILE%%"
 tomcat_pidfile="tomcat8.pid" # todo replace dynamic with current version
@@ -32,17 +29,17 @@ export JAVA_VERSION
 
 start()
 {
-	if [ ! -d "${${name}_logdir}" ]
+	if [ ! -d "${openemm2013_logdir}" ]
 	then
-		install -d -o ${${name}_user} ${${name}_logdir}
+		install -d -o ${openemm2013_user} ${openemm2013_logdir}
 	fi
 
-	if [ ! -d "${${name}_lockdir}" ]
+	if [ ! -d "${openemm2013_lockdir}" ]
 	then
-		install -d -o ${${name}_user} ${${name}_lockdir}
+		install -d -o ${openemm2013_user} ${openemm2013_lockdir}
 	fi
 
-	echo "Preconditions for ${name}"
+	echo "Preconditions for openemm2013"
 	echo "   - check if sendmail processes are stopped, it will be started via this application"
 
 	if [ -f "/var/run/${sendmail_pidfile}"]
@@ -51,7 +48,7 @@ start()
 		service sendmail stop
 		
 		# check for sendmail queues started via openemm
-		if [ -f "${${name}_lockdir}/mailer.pid" ]
+		if [ -f "${openemm2013_lockdir}/mailer.pid" ]
 		then
 			echo "Stop Mailer Service...."
         		pkill qctrl
@@ -59,7 +56,7 @@ start()
 		fi
 	fi
 
-	echo "Starting ${name}."
+	echo "Starting openemm2013."
 
 	# check for the startup pyhton scripts
 
@@ -67,28 +64,28 @@ start()
 	# check if tomcat is running otherwise warning
 	if [ ! -f "/var/run/${tomcat_pidfile}" ]
 	then
-		echo "Tomcat is not running please start tomcat first"
+		ebegin "Tomcat is not running please start tomcat first"
 	else
-		echo "Tomcat is running... starting app"
+		einfo "Tomcat is running... starting app"
 	fi
 
 	echo "Start BOUNCE Servcie...."	
- 	supervise-daemon -u ${${name}_user} ${OPENEMM_HOME}/bin/bounce.sh start >> ${${name}_logdir}/bounce.log 2>> ${${name}_logdir}/bounce_error.log
+ 	supervise-daemon --start -u ${openemm2013_user} ${OPENEMM_HOME}/bin/bounce.sh start >> ${openemm2013_logdir}/bounce.log 2>> ${openemm2013_logdir}/bounce_error.log
 	echo "Start Merger Service...."
-	supervise-daemon -u ${${name}_user} ${OPENEMM_HOME}/bin/merger.sh start >> ${${name}_logdir}/merger.log 2>> ${${name}_logdir}/merger_error.log
+	supervise-daemon --start -u ${openemm2013_user} ${OPENEMM_HOME}/bin/merger.sh start >> ${openemm2013_logdir}/merger.log 2>> ${openemm2013_logdir}/merger_error.log
 	echo "Start Mailer Service...."
-	supervise-daemon ${OPENEMM_HOME}/bin/mailer.sh start >> ${${name}_logdir}/mailer.log 2>> ${${name}_logdir}/mailer_error.log
+	supervise-daemon --start ${OPENEMM_HOME}/bin/mailer.sh start >> ${openemm2013_logdir}/mailer.log 2>> ${openemm2013_logdir}/mailer_error.log
 	pgrep sendmail > ${openemm2013_lockdir}/mailer.pid
 	
 	echo "Start SLRT scan Service...."
-	supervise-daemon -u ${${name}_user} ${OPENEMM_HOME}/bin/slrtscn.sh start >> ${${name}_logdir}/slrtscn.log 2>> ${${name}_logdir}/slrtscn_error.log
+	supervise-daemon --start -u ${openemm2013_user} ${OPENEMM_HOME}/bin/slrtscn.sh start >> ${openemm2013_logdir}/slrtscn.log 2>> ${openemm2013_logdir}/slrtscn_error.log
 
 	echo "START THE APP ITSELF..."
-	#daemon -u ${${name}_user} ${OPENEMM_HOME}/bin/standalone.sh ${${name}_args} >> ${${name}_log_stdout} 2>> ${${name}_log_stderr}
+	#daemon -u ${openemm2013_user} ${OPENEMM_HOME}/bin/standalone.sh ${openemm2013_args} >> ${openemm2013_log_stdout} 2>> ${openemm2013_log_stderr}
 
-	#sleep ${${name}_sleep}	# let daemon(8) and sh(1) finish before executing pgrep(1)
-	#pgrep -U ${${name}_user} -f ${OPENEMM_HOME}/modules > ${pidfile}
-	#chown ${${name}_user} $pidfile
+	#sleep ${openemm2013_sleep}	# let daemon(8) and sh(1) finish before executing pgrep(1)
+	#pgrep -U ${openemm2013_user} -f ${OPENEMM_HOME}/modules > ${pidfile}
+	#chown ${openemm2013_user} $pidfile
 }
 
 stop()
@@ -110,43 +107,40 @@ stop()
 	then
 		kill `cat ${pidfile}`
 		# Only if we aware that our setup can hangs, and only after trying simple kill, we can kill it hard way.
-		if [ ! -z "${${name}_kill9}" ]
+		if [ ! -z "${openemm2013_kill9}" ]
 		then
-			sleep ${${name}_sleep}
+			sleep ${openemm2013_sleep}
 			#kill  -9 `cat ${pidfile}`
 		fi
 		# In some setups, OpenEMM (Tomcat) can spawn some child processess, which could prevent it from stopping, and freeing net ports.
 		# Let's blindly kill them all, since we are really know what we are doing.
-		if [ ! -z "${${name}_additional_killall}" ]
+		if [ ! -z "${openemm2013_additional_killall}" ]
 		then
-			sleep ${${name}_sleep}
-			killall ${${name}_additional_killall}
+			sleep ${openemm2013_sleep}
+			killall ${openemm2013_additional_killall}
 		fi
 	fi
 }
 
-terminator()
-{
-        while [ $# -gt 0 ] ; do
-                __pat="$1"
-                shift
-                if [ "$__pat" ] ; then
-                        for sig in 15 9 ; do
-                                __run="`ps -aux | grep -- \"$__pat\" | grep -v grep | awk '{ print $2 }'`"
-                                if [ "$__run" ] ; then
-                                        echo "Stop $__pat program with signal $sig .. "
-                                        kill -$sig $__run >/dev/null 2>&1
-                                        sleep 2
-                                        echo "done."
-                                fi
-                        done
-                fi
-        done
+terminator() {
+	while [ $# -gt 0 ] ; do
+		__pat="$1"
+		shift
+		if [ "$__pat" ] ; then
+			for sig in 15 9 ; do
+				__run="`ps -aux | grep -- \"$__pat\" | grep -v grep | awk '{ print $2 }'`"
+				if [ "$__run" ] ; then
+					echo "Stop $__pat program with signal $sig .. "
+					kill -$sig $__run >/dev/null 2>&1
+					sleep 2
+					echo "done."
+				fi
+			done
+		fi
+	done
 }
 
-depend()
-{
+depend() {
+	use net
 	keyword -shutdown
-	need localmount
-	after bootmisc
 }
