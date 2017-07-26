@@ -11,16 +11,13 @@ pidfile="/var/run/pop3d-ssl.pid"
 procname="%%PREFIX%%/sbin/courierlogger"
 
 start() {
-	case $1 in
-	start)
-		einfo "Starting ${name}."
-		${command} start
-		;;
-	stop)
-		einfo "Stopping ${name}."
-		${command} stop
-		;;
-	esac
+	einfo "Starting ${name}."
+	${command} start
+}
+
+stop() {
+	einfo "Stopping ${name}."
+	${command} stop
 }
 
 depend()
