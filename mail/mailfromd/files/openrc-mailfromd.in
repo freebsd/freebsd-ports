@@ -1,11 +1,8 @@
 #!/sbin/openrc-run
-#
-# $FreeBSD$
 
 name="mailfromd"
 command="%%PREFIX%%/sbin/${name}"
 
-: ${mailfromd_flags}
 : ${mailfromd_runpath="%%MFD_RUN_DIR%%"}
 pidfile="${mailfromd_runpath}/${name}.pid"
 
