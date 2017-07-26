@@ -12,7 +12,9 @@ DISTNAME=	subsonic-${PORTVERSION}-standalone
 MAINTAINER=	jlh@FreeBSD.org
 COMMENT=	Subsonic streaming media server, standalone version
 
-LICENSE=	GPLv3
+# Subsonic 6 onwards has become proprietary.  License is unclear.
+# http://forum.subsonic.org/forum/viewtopic.php?f=4&t=16604#p71128
+LICENSE=	NONE
 
 OPTIONS_GROUP=	TRANSCODING
 TRANSCODING_DESC=	Transcoding support
