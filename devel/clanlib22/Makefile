@@ -39,19 +39,14 @@ CONFIGURE_ARGS=	--disable-docs \
 		--enable-clanNetwork \
 		--enable-clanGUI \
 		--enable-clanCSSLayout \
-		--enable-clanSWRender \
 		--enable-clanMikMod \
 		--enable-clanVorbis \
 		--enable-getaddr
 
 INSTALL_TARGET=	install-strip
 PLIST_SUB+=	VER=${PORTVERSION:R} \
+		SWRENDER=${ARCH:N*86:Namd64:C/.+/"@comment "/} \
 		SHORT_VER=${PORTVERSION:R:R}${PORTVERSION:R:E}
-
-BROKEN_aarch64=		fails to configure: error:  Requires SSE2 Support
-BROKEN_armv6=		fails to configure: error:  Requires SSE2 Support
-BROKEN_powerpc64=	fails to configure: error:  Requires SSE2 Support
-BROKEN_sparc64=		fails to configure: error:  Requires SSE2 Support
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^extra_LIBS_clanSqlite/s|-ldl||g' \
