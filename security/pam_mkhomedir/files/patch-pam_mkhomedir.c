@@ -99,3 +99,18 @@
  		PAM_LOG("mkdir(%s)", dir);
  	} else {
  		int             infd, outfd;
+@@ -211,9 +294,11 @@ pam_sm_open_session(pam_handle_t *pamh,
+ 		goto err;
+ 	}
+ 
+-	copymkdir(pwd->pw_dir, skeldir, getmode(set, S_IRWXU | S_IRWXG | S_IRWXO), pwd->pw_uid,pwd->pw_gid);
+-	free(set);
+-	return (PAM_SUCCESS);
++	if (strcmp(pwd->pw_dir,"/nonexistent") != 0 ) {
++		copymkdir(pwd->pw_dir, skeldir, getmode(set, S_IRWXU | S_IRWXG | S_IRWXO), pwd->pw_uid,pwd->pw_gid);
++		free(set);
++		return (PAM_SUCCESS);
++	}
+ 
+ err:
+ 	if (openpam_get_option(pamh, "no_fail"))
