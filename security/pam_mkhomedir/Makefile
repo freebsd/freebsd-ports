@@ -3,7 +3,7 @@
 
 PORTNAME=	pam_mkhomedir
 PORTVERSION=	0.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	http://portal-to-web.de/pam_mkhomedir/
 
