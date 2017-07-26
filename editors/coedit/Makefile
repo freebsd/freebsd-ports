@@ -5,8 +5,6 @@ PORTNAME=	coedit
 DISTVERSION=	3_update_3
 PORTREVISION=	1
 CATEGORIES=	editors
-MASTER_SITES=	https://github.com/BBasile/Coedit/archive/
-DISTNAME=	${DISTVERSION}
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	IDE for the D programming language
@@ -24,11 +22,14 @@ RUN_DEPENDS=	ldmd2:lang/ldc \
 		dfmt:devel/dfmt \
 		ddemangle:lang/dlang-tools
 
+USE_GITHUB=	yes
+GH_ACCOUNT=	BBasile
+GH_PROJECT=	Coedit
+
 USE_FPC=	cairo fcl-base fcl-db fcl-image fcl-json fcl-net fcl-registry \
 		fcl-stl fcl-web fcl-xml numlib openssl pasjpeg rtl-objpas \
 		regexpr rtl-extra x11
 
-WRKSRC=		${WRKDIR}/${PORTNAME:S/c/C/}-${DISTVERSION}
 DESKTOP_ENTRIES="Coedit" \
 		"IDE for the D programming language" \
 		"${PREFIX}/share/pixmaps/${PORTNAME}.png" \
