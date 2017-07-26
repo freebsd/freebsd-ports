@@ -1,0 +1,18 @@
+#!/sbin/openrc-run
+
+# Start or stop policyd2
+
+# Define these policyd2_* variables in one of these files:
+#       /etc/rc.conf
+#       /etc/rc.conf.local
+#
+# DO NOT CHANGE THESE DEFAULT VALUES HERE
+
+name="policyd2"
+
+command="%%LOCALBASE%%/bin/cbpolicyd"
+
+depend()
+{
+	keyword -shutdown
+}

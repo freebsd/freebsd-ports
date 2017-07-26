@@ -1,0 +1,34 @@
+#!/sbin/openrc-run
+
+# Add the following lines to /etc/rc.conf to enable postfix:
+
+#				Default is "NO".
+# postfix_pidfile (path):	Set full path to master.pid.
+#				Default is "/var/spool/postfix/pid/master.pid".
+# postfix_procname (command):	Set command that start master. Used to verify if
+#				postfix is running.
+#				Default is "%%PREFIX%%/libexec/postfix/master".
+# postfix_flags (str):		Flags passed to postfix-script on startup.
+#				Default is "".
+#
+
+name="postfix"
+
+: ${postfix_pidfile:="/var/spool/postfix/pid/master.pid"}
+: ${postfix_procname:="%%PREFIX%%/libexec/postfix/master"}
+
+pidfile=${postfix_pidfile}
+procname=${postfix_procname}
+
+start() {
+	%%PREFIX%%/sbin/postfix ${postfix_flags} start
+}
+
+stop() {
+	%%PREFIX%%/sbin/postfix ${postfix_flags} stop
+}
+
+depend()
+{
+	keyword -shutdown
+}
