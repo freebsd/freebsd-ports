@@ -2,11 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	libdparse
-DISTVERSION=	0.7.1beta6
+DISTVERSION=	0.7.1-beta6
 CATEGORIES=	devel
-MASTER_SITES=	https://github.com/dlang-community/libdparse/archive/
-DISTNAME=	${DISTVERSION:S/^/v/:S/beta6/-beta.6/}
-DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Library for lexing and parsing D source code
@@ -16,7 +13,13 @@ LICENSE=	BSL
 BUILD_DEPENDS=	ldmd2:lang/ldc \
 		dub:devel/dub
 
-WRKSRC=		${WRKDIR}/libdparse-${DISTVERSION:S/beta6/-beta.6/}
+USE_GITHUB=	yes
+GH_ACCOUNT=	dlang-community
+# FIXME: Remove this once it goes out of beta.
+# Side note, 0.7.1-beta.6 was a perfectly reasonable version to be used in
+# DISTVERSION.
+GH_TAGNAME=	v${DISTVERSION:S/beta/beta./}
+
 DUB_CMD=	${LOCALBASE}/bin/dub build --build=release
 D_INCLUDE_DIR=	${PREFIX}/include/d
 D_LIB_DIR=	${PREFIX}/lib/d
