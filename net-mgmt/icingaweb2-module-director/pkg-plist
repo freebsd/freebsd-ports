@@ -1,3 +1,4 @@
+%%WWWDIR%%/.github/ISSUE_TEMPLATE.md
 %%WWWDIR%%/.gitignore
 %%WWWDIR%%/.gitlab-ci.yml
 %%WWWDIR%%/.travis.yml
@@ -19,6 +20,7 @@
 %%WWWDIR%%/application/clicommands/NotificationCommand.php
 %%WWWDIR%%/application/clicommands/ServiceCommand.php
 %%WWWDIR%%/application/clicommands/ServicesetCommand.php
+%%WWWDIR%%/application/clicommands/ServicesetsCommand.php
 %%WWWDIR%%/application/clicommands/TestCommand.php
 %%WWWDIR%%/application/clicommands/TimeperiodCommand.php
 %%WWWDIR%%/application/clicommands/UserCommand.php
@@ -429,7 +431,9 @@
 %%WWWDIR%%/library/Director/Objects/SyncRule.php
 %%WWWDIR%%/library/Director/Objects/SyncRun.php
 %%WWWDIR%%/library/Director/PlainObjectRenderer.php
+%%WWWDIR%%/library/Director/PropertyModifier/PropertyModifierArrayFilter.php
 %%WWWDIR%%/library/Director/PropertyModifier/PropertyModifierBitmask.php
+%%WWWDIR%%/library/Director/PropertyModifier/PropertyModifierCombine.php
 %%WWWDIR%%/library/Director/PropertyModifier/PropertyModifierDnsRecords.php
 %%WWWDIR%%/library/Director/PropertyModifier/PropertyModifierExtractFromDN.php
 %%WWWDIR%%/library/Director/PropertyModifier/PropertyModifierFromAdSid.php
@@ -437,6 +441,7 @@
 %%WWWDIR%%/library/Director/PropertyModifier/PropertyModifierGetHostByName.php
 %%WWWDIR%%/library/Director/PropertyModifier/PropertyModifierJoin.php
 %%WWWDIR%%/library/Director/PropertyModifier/PropertyModifierJsonDecode.php
+%%WWWDIR%%/library/Director/PropertyModifier/PropertyModifierLConfCustomVar.php
 %%WWWDIR%%/library/Director/PropertyModifier/PropertyModifierLowercase.php
 %%WWWDIR%%/library/Director/PropertyModifier/PropertyModifierMakeBoolean.php
 %%WWWDIR%%/library/Director/PropertyModifier/PropertyModifierMap.php
@@ -596,6 +601,7 @@
 %%WWWDIR%%/schema/mysql-migrations/upgrade_127.sql
 %%WWWDIR%%/schema/mysql-migrations/upgrade_128.sql
 %%WWWDIR%%/schema/mysql-migrations/upgrade_129.sql
+%%WWWDIR%%/schema/mysql-migrations/upgrade_130.sql
 %%WWWDIR%%/schema/mysql-migrations/upgrade_63.sql
 %%WWWDIR%%/schema/mysql-migrations/upgrade_64.sql
 %%WWWDIR%%/schema/mysql-migrations/upgrade_65.sql
@@ -700,6 +706,8 @@
 %%WWWDIR%%/test/php/library/Director/IcingaConfig/IcingaConfigHelperTest.php
 %%WWWDIR%%/test/php/library/Director/IcingaConfig/StateFilterTest.php
 %%WWWDIR%%/test/php/library/Director/IcingaConfig/rendered/dict1.out
+%%WWWDIR%%/test/php/library/Director/Import/SyncUtilsTest.php
+%%WWWDIR%%/test/php/library/Director/Objects/HostApplyMatchesTest.php
 %%WWWDIR%%/test/php/library/Director/Objects/IcingaCommandTest.php
 %%WWWDIR%%/test/php/library/Director/Objects/IcingaHostTest.php
 %%WWWDIR%%/test/php/library/Director/Objects/IcingaNotificationTest.php
@@ -725,5 +733,7 @@
 %%WWWDIR%%/test/php/library/Director/Objects/rendered/service5.out
 %%WWWDIR%%/test/php/library/Director/Objects/rendered/service6.out
 %%WWWDIR%%/test/php/library/Director/Objects/rendered/service7.out
+%%WWWDIR%%/test/php/library/Director/PropertyModifier/PropertyModifierArrayFilterTest.php
+%%WWWDIR%%/test/php/library/Director/PropertyModifier/PropertyModifierCombineTest.php
 %%WWWDIR%%/test/phpunit-compat.php
 %%WWWDIR%%/test/travis-prepare.sh
