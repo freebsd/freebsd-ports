@@ -21,8 +21,7 @@ start_pre()
 		echo "Chroot no fully functionnal for now so not activated"
 	#	command=/usr/local/sbin/${name}-chroot
 	fi
-	if ! checkyesno prayer_prefork; then
+	if ! yesno prayer_prefork; then
 		command_args="--disable-prefork"
 	fi
-return 0
 }
