@@ -20,13 +20,12 @@ LIB_DEPENDS=	libpng.so:graphics/png \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libpcre.so:devel/pcre
 
-USES=		gmake jpeg libtool pathfix pkgconfig sqlite tar:tgz
+USES=		gmake jpeg libtool localbase:ldflags pathfix pkgconfig \
+		sqlite tar:tgz
 USE_XORG=	x11
 USE_LDCONFIG=	yes
 USE_GL=		yes
 
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-docs \
 		--enable-clanDisplay \
