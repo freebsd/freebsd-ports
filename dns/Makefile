@@ -105,6 +105,7 @@
     SUBDIR += noip
     SUBDIR += nsd
     SUBDIR += nslint
+    SUBDIR += nsnotifyd
     SUBDIR += nsping
     SUBDIR += nss_mdns
     SUBDIR += nss_resinit

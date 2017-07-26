@@ -1,0 +1,7 @@
+The nsnotifyd daemon monitors a set of DNS zones and runs a command 
+when any of them change. It listens for DNS NOTIFY messages so it can
+respond to changes promptly. It also uses each zone's SOA refresh and
+retry parameters to poll for updates if nsnotifyd does not receive
+NOTIFY messages more frequently.
+
+WWW: https://dotat.at/prog/nsnotifyd/
