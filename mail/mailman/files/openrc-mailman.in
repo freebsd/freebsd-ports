@@ -1,0 +1,28 @@
+#!/sbin/openrc-run
+#
+# Add the following lines to /etc/rc.conf to enable or configure mailman:
+#
+# mailman_fix_perms (bool):     Set it to "NO" to disable running
+#                               check_perms on start or post-install.
+#                               Default is "YES", but this is unsuitable
+#                               for slow machines with many lists.
+
+name="mailman"
+required_dirs="%%MAILMANDIR%%/lists/mailman"
+command="%%MAILMANDIR%%/bin/mailmanctl"
+command_args="start"
+pidfile="%%MAILMANDIR%%/data/master-qrunner.pid"
+
+: ${mailman_fix_perms:="YES"}
+: ${mailman_flags:="-s -q"}
+
+start_pre() {
+	if yesno mailman_fix_perms ; then 
+	    einfo "Fixing ${name} permissions:"
+	    env LC_ALL=C %%MAILMANDIR%%/bin/check_perms -f ${rc_debug:+-v}
+	fi
+}
+
+depend() {
+	keyword -shutdown
+}

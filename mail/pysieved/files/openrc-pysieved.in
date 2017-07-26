@@ -1,0 +1,11 @@
+#!/sbin/openrc-run
+
+name="%%PORTNAME%%"
+: ${%%PORTNAME%%_pidfile="/var/run/%%PORTNAME%%.pid"}
+
+pidfile="${%%PORTNAME%%_pidfile}"
+command="%%PREFIX%%/lib/pysieved/pysieved.py"
+
+depend() {
+	keyword -shutdown
+}

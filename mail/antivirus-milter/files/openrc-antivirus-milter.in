@@ -1,0 +1,24 @@
+#!/sbin/openrc-run
+
+antivirus_pidfile=${antivirus_pidfile:-"%%ANTIVIRUS%%/run/antivirus.pid"} # Path to pidfile
+antivirus_socket=${antivirus_socket:-"%%ANTIVIRUS%%/antivirus.sock"} # Path to socket
+#antivirus_flags=${antivirus_flags:-""} # Flags to antivirus
+
+name="antivirus"
+command="%%PREFIX%%/libexec/antivirus"
+required_files="%%PREFIX%%/etc/antivirus.conf"
+
+start_pre() {
+	/bin/rm -f "${pidfile}" "${antivirus_socket}"
+}
+
+stop_post() {
+	/bin/rm -f "${pidfile}" "${antivirus_socket}"
+}
+
+pidfile="${antivirus_pidfile}"
+command_args="-p local:${antivirus_socket} ${antivirus_flags}"
+
+depend() {
+	keyword -shutdown
+}

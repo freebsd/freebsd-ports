@@ -1,0 +1,10 @@
+#!/sbin/openrc-run
+
+name=dbmail_imapd
+command=%%PREFIX%%/sbin/dbmail-imapd
+pidfile=/var/run/dbmail-imapd.pid
+required_files=%%PREFIX%%/etc/dbmail.conf
+
+depend() {
+	keyword -shutdown
+}

@@ -1,0 +1,1 @@
+USE_OPENRC_SUBR=	openrc-dbmail-pop3d openrc-dbmail-lmtpd openrc-dbmail-imapd openrc-dbmail-timsieved

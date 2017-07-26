@@ -1,0 +1,44 @@
+#!/sbin/openrc-run
+
+name="opendmarc"
+_piddir="/var/run/opendmarc"
+
+opendmarc_runas=${opendmarc_runas-"mailnull:mailnull"}
+opendmarc_pidfile=${opendmarc_pidfile-"${_piddir}/pid"}
+#opendmarc_socketspec=${opendmarc_socketspec-"local:${_piddir}/socket"}
+opendmarc_socketspec=${opendmarc_socketspec-"inet:8893@localhost"}
+opendmarc_cfgfile=${opendmarc_cfgfile-"%%PREFIX%%/etc/mail/opendmarc.conf"}
+opendmarc_flags=${opendmarc_flags-"-l -P $opendmarc_pidfile \
+ -c $opendmarc_cfgfile -p $opendmarc_socketspec -u $opendmarc_runas"}
+
+pidfile=${opendmarc_pidfile}
+command="%%PREFIX%%/sbin/opendmarc"
+command_args=${opendmarc_flags}
+
+start_pre()
+{
+    if [ -S ${opendmarc_socketspec##local:} ] ; then
+	rm -f ${opendmarc_socketspec##local:}
+    elif [ -S ${opendmarc_socketspec##unix:} ] ; then
+	rm -f ${opendmarc_socketspec##unix:}
+    fi
+    if [ ! -d ${_piddir} ] ; then
+	mkdir -p ${_piddir}
+    fi
+    chown ${opendmarc_runas} ${_piddir}
+}
+
+stop_post()
+{
+    if [ -S ${opendmarc_socketspec##local:} ] ; then
+	rm -f ${opendmarc_socketspec##local:}
+    elif [ -S ${opendmarc_socketspec##unix:} ] ; then
+	rm -f ${opendmarc_socketspec##unix:}
+    fi
+    # just if the directory is empty
+    rmdir ${_piddir} > /dev/null 2>&1
+}
+
+depend() {
+	keyword -shutdown
+}

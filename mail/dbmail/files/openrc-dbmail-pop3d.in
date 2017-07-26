@@ -1,0 +1,10 @@
+#!/sbin/openrc-run
+
+name=dbmail_pop3d
+command=%%PREFIX%%/sbin/dbmail-pop3d
+pidfile=/var/run/dbmail/dbmail-pop3d.pid
+required_files=%%PREFIX%%/etc/dbmail.conf
+
+depend() {
+	keyword -shutdown
+}

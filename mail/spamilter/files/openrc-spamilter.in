@@ -1,0 +1,10 @@
+#!/sbin/openrc-run
+
+name="spamilter"
+command="%%PREFIX%%/bin/spamilter"
+pidfile="/tmp/Spamilter.pid"
+required_files="%%PREFIX%%/etc/spamilter.rc"
+
+depend() {
+	keyword -shutdown
+}

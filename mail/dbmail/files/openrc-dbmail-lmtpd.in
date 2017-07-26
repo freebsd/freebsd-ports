@@ -1,0 +1,10 @@
+#!/sbin/openrc-run
+
+name=dbmail_lmtpd
+command=%%PREFIX%%/sbin/dbmail-lmtpd
+pidfile=/var/run/dbmail/dbmail-lmtpd.pid
+required_files=%%PREFIX%%/etc/dbmail.conf
+
+depend() {
+	keyword -shutdown
+}

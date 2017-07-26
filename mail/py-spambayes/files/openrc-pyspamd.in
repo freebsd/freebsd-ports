@@ -1,0 +1,14 @@
+#!/sbin/openrc-run
+
+name="pyspamd"
+: ${pyspamd_config="%%PREFIX%%/etc/bayescustomize.ini"}
+
+supervisor=supervise-daemon
+pidfile="/var/run/pyspamd.pid"
+command_args="-OO %%PREFIX%%/bin/sb_server.py 2>&1 >/dev/null"
+command="%%PYTHON_CMD%%"
+export BAYESCUSTOMIZE=${pyspamd_config}
+
+depend() {
+	keyword -shutdown
+}

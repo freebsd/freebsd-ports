@@ -1,0 +1,47 @@
+#!/sbin/openrc-run
+
+name=archiveopteryx
+
+pidfile=/var/run/${name}.pid
+config_file=%%PREFIX%%/etc/archiveopteryx/archiveopteryx.conf
+required_files=$config_file
+command=%%PREFIX%%/bin/aox
+status_cmd="${command} show status"
+
+start_pre()
+{
+	if [ ! -d /var/db/aox/jail ] ; then
+		install -d -o root -g wheel -m 001 /var/db/aox/jail
+	fi
+
+	for i in /var/run/aox /var/db/aox/messages /var/db/aox/jail/var/run /var/db/aox/jail/messages ; do
+		if [ ! -d ${i} ] ; then
+			install -d -o aox -g aox ${i} ;
+		fi
+	done
+}
+
+start()
+{
+    ebegin "Starting Archiveopteryx: "
+    ${command} start
+	eend $?
+}
+
+stop()
+{
+    ebegin "Stopping Archiveopteryx: "
+    ${command} stop
+	eend $?
+}
+
+restart()
+{
+    ebegin "Restarting Archiveopteryx: "
+    ${command} restart
+	eend $?
+}
+
+depend() {
+	keyword -shutdown
+}

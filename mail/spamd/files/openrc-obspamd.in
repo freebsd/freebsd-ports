@@ -1,0 +1,44 @@
+#!/sbin/openrc-run
+
+name="obspamd"
+command="%%PREFIX%%/libexec/%%SPAMDBIN%%"
+pidfile="/var/run/spamd.pid"
+
+start_pre()
+{
+	_rc=0
+	echo "${obspamd_flags}" | egrep "(^\-b| \-b)" 2>&1 > /dev/null
+	if [ $? -eq 1 ]; then
+		/sbin/mount -p | grep 'fdescfs.*/dev/fd.*fdescfs.*rw' 2>&1 > /dev/null
+		_rc=${?}
+		if [ ${_rc} -ne 0 ]; then
+			echo "Unable to start spamd in greylisting mode"
+			echo ""
+			echo "Please mount fdescfs with the following line in /etc/fstab"
+			echo ""
+			echo "  fdescfs /dev/fd fdescfs rw 0 0"
+			echo ""
+		fi
+		return ${_rc}
+	fi
+}
+
+start_post()
+{
+	if [ -x %%PREFIX%%/sbin/spamd-setup ]; then
+		if [ -r %%PREFIX%%/etc/spamd/spamd.conf ]; then
+			echo "${obspamd_flags}" | egrep "(^\-b| \-b)" 2>&1 > /dev/null
+			if [ $? -eq 0 ]; then
+				%%PREFIX%%/sbin/spamd-setup -bD
+			else
+				%%PREFIX%%/sbin/spamd-setup -D
+			fi
+		fi
+	fi
+}
+
+depend() {
+	provide obspamd
+	use net
+	keyword -shutdown
+}

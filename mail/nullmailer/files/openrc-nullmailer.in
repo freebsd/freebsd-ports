@@ -1,0 +1,12 @@
+#!/sbin/openrc-run
+
+name=nullmailer
+supervisor=supervise-daemon
+command=%%PREFIX%%/sbin/nullmailer-send
+pidfile=/var/run/${name}.pid
+command_user=%%NULLMAIL_USER%%
+command_args="| /usr/bin/logger -i -p mail.info -t $name"
+
+depend() {
+	keyword -shutdown
+}

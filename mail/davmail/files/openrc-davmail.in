@@ -1,0 +1,72 @@
+#!/sbin/openrc-run
+
+# Add the following lines to /etc/rc.conf or /etc/rc.conf.local to
+# enable davmail:
+# davmail_config (path):	Set to 
+#				"%%PREFIX%%/etc/davmail.properties"
+#				by default
+# davmail_profiles:             Set to "" by default
+
+name="davmail"
+
+: ${davmail_config="%%PREFIX%%/etc/davmail.properties"}
+: ${davmail_user="davmail"}
+: ${davmail_group="davmail"}
+
+davmail_procname()
+{
+	JAVAVM_DRYRUN=yes "%%LOCALBASE%%/bin/java" | \
+	    /usr/bin/awk -F= '{if ($1=="JAVAVM_PROG") print $2}' 2> /dev/null
+}
+
+pidfiledir="/var/run/davmail"
+pidfile="${pidfiledir}/davmail.pid"
+procname="$(davmail_procname)"
+required_files=${davmail_config}
+
+if [ -n "$2" ]; then
+	profile="$2"
+	if [ "x${davmail_profiles}" != "x" ]; then
+		if [ ! -f %%PREFIX%%/etc/davmail.${profile}.properties ]; then
+				echo "You must setup a davmail.${profile}.properties config file"
+				return 1
+		fi
+		eval davmail_enable="\${davmail_${profile}_enable:-${davmail_enable}}"
+		pidfile="${pidfiledir}/davmail.${profile}.pid"
+		davmail_config="%%PREFIX%%/etc/davmail.${profile}.properties"
+		required_files="${davmail_config}"
+	fi
+else
+	if [ "x${davmail_profiles}" != "x" -a "x$1" != "x" ]; then
+		for profile in ${davmail_profiles}; do
+			echo "===> davmail profile: ${profile}"
+			%%PREFIX%%/etc/init.d/davmail $1 ${profile}
+			retcode="$?"
+			if [ "0${retcode}" -ne 0 ]; then
+					failed="${profile} (${retcode}) ${failed:-}"
+			else
+					success="${profile} ${success:-}"
+			fi
+		done
+		exit 0
+	fi
+fi
+
+
+command="%%LOCALBASE%%/bin/java"
+command_args="-cp '%%DATADIR%%/davmail.jar:%%DATADIR%%/lib/*' davmail.DavGateway '${davmail_config}' 2 > %1 | /usr/bin/logger -p daemon.info -t davmail &"
+command_user=${davmail_user}
+
+start_pre()
+{
+	if [ ! -d "${pidfiledir}" ]; then
+		install -d -o "${davmail_user}" -g "${davmail_group}" -m 750 "${pidfiledir}"
+	fi
+	env -i PATH=${PATH} > /dev/null
+}
+
+depend() {
+	need localmount
+	keyword -shutdown
+	after bootmisc
+}

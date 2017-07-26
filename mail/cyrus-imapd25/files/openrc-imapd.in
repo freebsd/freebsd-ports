@@ -1,0 +1,20 @@
+#!/sbin/openrc-run
+
+# Define these cyrus_imapd_* variables in one of these files:
+#	/etc/rc.conf
+#	/etc/rc.conf.local
+#	/etc/rc.conf.d/cyrus_imapd
+#
+# DO NOT CHANGE THESE DEFAULT VALUES HERE
+#
+#cyrus_imapd_program="%%PREFIX%%/cyrus/bin/master"	# Location of imapd
+[ -z "$cyrus_imapd_flags" ] && cyrus_imapd_flags="-d" # Flags to imapd program
+
+name="cyrus_imapd"
+command="%%PREFIX%%/cyrus/bin/master"
+pidfile="/var/run/cyrus-master.pid"
+required_files="%%PREFIX%%/etc/cyrus.conf %%PREFIX%%/etc/imapd.conf"
+
+depend() {
+	keyword -shutdown
+}

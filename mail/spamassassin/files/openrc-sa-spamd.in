@@ -1,0 +1,32 @@
+#!/sbin/openrc-run
+
+# You can pass flags to spamd with spamd_flags="..."
+# To change the user that spamd runs as, use
+#
+#    spamd_flags="-u USER [-H /path/to/home... we suggest /var/spool/spamd]"
+#
+# To keep your user-config in a SQL database, use
+#
+#	 spamd_flags="-Q"
+#
+# and remove -c (auto-create user preference files).
+
+name=spamd
+: ${spamd_flags="-c %%SQL_FLAG%% %%RUN_AS_USER%%"}
+
+pidfile=${spamd_pidfile:-"/var/run/${name}/${name}.pid"}
+command=%%PREFIX%%/bin/${name}
+command_args="-d -r ${pidfile} ${spamd_flags}"
+required_dirs="%%PREFIX%%/share/spamassassin"
+
+start_pre()
+{
+	if [ ! -d /var/run/${name} ]; then
+		mkdir -p /var/run/${name}
+		chown %%SPAMD_OWN%% /var/run/${name}
+	fi
+}
+
+depend() {
+	keyword -shutdown
+}

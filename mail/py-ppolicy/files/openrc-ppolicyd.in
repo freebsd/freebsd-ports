@@ -1,0 +1,11 @@
+#!/sbin/openrc-run
+
+name="ppolicyd"
+command="%%LOCALBASE%%/bin/twistd"
+pidfile="/var/run/ppolicyd.pid"
+logfile="/var/log/ppolicyd.log"
+command_args="--pidfile=${pidfile} --file=%%PREFIX%%/sbin/ppolilcy.tap --python=%%PREFIX%%/sbin/ppolicy.tap --logfile=${logfile} 2>&1 >/dev/null"
+
+depend() {
+	keyword -shutdown
+}

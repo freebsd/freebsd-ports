@@ -1,0 +1,37 @@
+#!/sbin/openrc-run
+
+# Define these noattach_* variables in one of these files:
+#	/etc/rc.conf
+#	/etc/rc.conf.local
+#	/etc/rc.conf.d/noattach
+#
+# DO NOT CHANGE THESE DEFAULT VALUES HERE
+#
+# noattach_flags Flags to noattach
+
+noattach_pidfile=${noattach_pidfile:-"/var/run/noattach.pid"} # Path to pidfile
+noattach_socket=${noattach_socket:-"/var/run/noattach"} # Path to socket
+
+name="noattach"
+command="%%PREFIX%%/libexec/${name}"
+required_files="%%PREFIX%%/etc/noattach.patterns"
+extra_commands="reload"
+
+start_pre() {
+	/bin/rm -f "${pidfile}" "${noattach_socket}"
+}
+
+stop_post() {
+	/bin/rm -f "${pidfile}" "${noattach_socket}"
+}
+
+reload() {
+	kill -USR1 `head -1 "${pidfile}"`
+}
+
+pidfile="${noattach_pidfile}"
+command_args="-p local:${noattach_socket} ${noattach_flags}"
+
+depend() {
+	keyword -shutdown
+}

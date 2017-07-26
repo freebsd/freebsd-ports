@@ -1,0 +1,116 @@
+#!/sbin/openrc-run
+#
+# Configuration settings for james in /etc/rc.conf:
+#
+# james_home (str)
+#   Set to "%%JAMES_HOME%%" by default.
+#   Set the JAMES_HOME variable for the James process
+#
+# james_base (str)
+#   Set to "%%JAMES_HOME%%" by default.
+#   Set the JAMES_BASE variable for the James process
+#
+# james_tmpdir (str)
+#   Set to "/tmp" by default.
+#
+# james_stop_timeout (num)
+#   Set to "10" by default.
+#   Sets the timeout in seconds to allow james to shutdown.
+#   After the timeout has elapsed, james will be killed.
+#
+# james_java_home (str):
+# james_java_vendor (str):
+# james_java_version (str):
+# james_java_os (str):
+#   Specify the requirements of the Java VM to use. See javavm(1).
+#
+# james_classpath (str):
+#   Set to "" by default.
+#   Addtional classes to add to the CLASSPATH
+#
+# james_java_opts (str):
+#   Set to "" by default.
+#   Java VM args to use.
+
+james_java_version="${james_java_version:-"%%JAVA_VERSION%%"}"
+james_home="${james_home:-"%%JAMES_HOME%%"}"
+james_base="${james_base:-"%%JAMES_HOME%%"}"
+james_tmpdir="${james_tmpdir:-"/tmp"}"
+james_stop_timeout="${james_stop_timeout:-"10"}"
+
+name=james
+pidfile="%%PID_FILE%%"
+stopsig=KILL
+
+for var in $(list_vars "james[0-9]*"); do
+        ewarn "WARNING: \$$var is deprecated, use \$james_${var#*_} instead."
+        eval james_${var#*_}=\"\$$var\"
+done
+
+JAVA_HOME="%%JAVA_HOME%%"
+JRE_HOME="$JAVA_HOME/jre"
+JVM_EXT_DIRS="${james_home}/lib:${james_home}/tools/lib"
+JVM_OPTS="-Djava.ext.dirs=$JVM_EXT_DIRS"
+
+if [ -n "${james_java_home}" ] ; then
+	export JAVA_HOME="${james_java_home}"
+fi
+
+if [ -n "${james_java_version}" ] ; then
+	export JAVA_VERSION="${james_java_version}"
+fi
+
+if [ -n "${james_java_vendor}" ] ; then
+	export JAVA_VENDOR="${james_java_vendor}"
+fi
+
+if [ -n "${james_java_os}" ] ; then
+	export JAVA_OS="${james_java_os}"
+fi
+
+if [ "$JAVA_HOME" = "" ] ; then
+	echo "ERROR: JAVA_HOME not found in your environment."
+	echo
+	echo "Please, set the JAVA_HOME variable in your environment to match the"
+	echo "location of the Java Virtual Machine you want to use."
+	return 1
+fi
+
+if [ -z "${james_tmpdir}" ] ; then
+	# Define the java.io.tmpdir to use for Phoenix
+	james_tmpdir="${james_home}"/temp
+	mkdir -p "${james_tmpdir}"
+fi
+
+if [ -z "${JAVA_HOME}" ] ; then
+	java_cmd=%%LOCALBASE%%/bin/java
+else
+	java_cmd=${JAVA_HOME}/bin/java
+fi
+
+
+command="$java_cmd $JVM_OPTS \
+    -Djava.security.policy=jar:file:${james_home}/bin/phoenix-loader.jar!/META-INF/java.policy \
+    -Dphoenix.home=${james_home} \
+    -Djava.io.tmpdir=${james_tmpdir} \
+    -jar ${james_home}/bin/phoenix-loader.jar >/dev/null"
+
+PHOENIX_CONSOLE="$PHOENIX_TMPDIR/phoenix.console"
+if [ -z "$PHOENIX_CONSOLE" ] ; then
+	if [ -w /dev/console ]; then
+		PHOENIX_CONSOLE=/dev/console
+	else
+		PHOENIX_CONSOLE=/dev/tty
+	fi
+fi
+
+start() {
+	ebegin "Starting ${name}."
+	command_args=">>$PHOENIX_CONSOLE 2>&1"
+	nohup sh -c "exec $command $command_args" >/dev/null &
+	echo $! > $pidfile
+}
+
+depend() {
+	keyword -shutdown
+}

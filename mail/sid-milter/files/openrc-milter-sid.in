@@ -1,0 +1,21 @@
+#!/sbin/openrc-run
+
+name="miltersid"
+
+# DO NOT CHANGE THESE DEFAULT VALUES HERE
+: ${miltersid_socket="local:/var/run/sid-filter"}
+: ${miltersid_pid="/var/run/sid-filter.pid"}
+: ${miltersid_flags="-r 0 -t"}
+
+pidfile=${miltersid_pid}
+command="%%PREFIX%%/libexec/sid-filter"
+command_args="-l -p ${miltersid_socket} -P ${miltersid_pid}"
+
+start_pre()
+{
+    if [ -S ${miltersid_socket##local:} ] ; then
+        rm -f ${miltersid_socket##local:}
+    elif [ -S ${miltersid_socket##unix:} ] ; then
+        rm -f ${miltersid_socket##unix:}
+    fi
+}

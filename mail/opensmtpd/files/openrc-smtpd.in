@@ -1,0 +1,36 @@
+#!/sbin/openrc-run
+#
+# Add the following lines to /etc/rc.conf to enable smtpd:
+# smtpd_config (string):      Path to OpenSMTPD configuration file.
+#                             Default is "%%PREFIX%%/etc/mail/smtpd.conf"
+# smtpd_flags (string):       Additional flags to be passed to smtpd.
+#                             Default is "".
+
+name="smtpd"
+extra_commands="configtest"
+
+: ${smtpd_config:="%%PREFIX%%/etc/mail/${name}.conf"}
+: ${smtpd_procname:="%%PREFIX%%/sbin/${name}"}
+: ${smtpd_flags:=""}
+
+command=${smtpd_procname}
+command_args="-f ${smtpd_config} ${command_args}"
+required_files="${smtpd_config}"
+procname=${smtpd_procname}
+pidfile="/var/run/${name}.pid"
+
+checkconfig()
+{
+    einfo "Performing sanity check on smtpd configuration:"
+    eval ${command} ${command_args} ${smtpd_flags} -n
+}
+
+start_pre()
+{
+	checkconfig
+}
+
+depend() {
+	provide smtpd mail
+	keyword -shutdown
+}

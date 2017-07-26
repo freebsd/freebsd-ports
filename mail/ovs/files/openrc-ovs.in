@@ -1,0 +1,12 @@
+#!/sbin/openrc-run
+
+name="ovs"
+command=%%PREFIX%%/sbin/${name}.pl
+command_args='> /dev/null 2>&1'
+
+: ${ovs_pidfile="%%DATADIR%%/ovs.pid"}
+: ${ovs_flags="--logfile /var/log/maillog --daemon-rrd=%%DATADIR%% --ignore-localhost --daemon --daemon-pid=${ovs_pidfile} --rbl-is-spam --greylist --helo --spf --domain-not-found"}
+: ${ovs_user="%%OVS_USER%%"}
+: ${ovs_chdir="%%DATADIR%%"}
+
+pidfile=${ovs_pidfile}

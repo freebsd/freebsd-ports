@@ -1,0 +1,12 @@
+#!/sbin/openrc-run
+
+name=masqmail
+command=%%PREFIX%%/sbin/masqmail
+required_dirs=/var/log/masqmail
+required_files=%%PREFIX%%/etc/masqmail/masqmail.conf
+
+masqmail_flags=${masqmail_flags:-"-bd -q30m"}
+
+depend() {
+	keyword -shutdown
+}
