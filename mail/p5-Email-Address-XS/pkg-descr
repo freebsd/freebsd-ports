@@ -1,0 +1,23 @@
+This module implements RFC 2822 parser and formatter of email addresses and
+groups. It parses an input string from email headers which contain a list of
+email addresses or a groups of email addresses (like From, To, Cc, Bcc,
+Reply-To, Sender, ...). Also it can generate a string value for those headers
+from a list of email addresses objects.
+
+Parser and formatter functionality is implemented in XS and uses shared code
+from Dovecot IMAP server.
+
+It is a drop-in replacement for the Email::Address module which has several
+security issues. Existing applications that use Email::Address module could be
+easily switched to Email::Address::XS module. In most cases only changing use
+Email::Address to use Email::Address::XS and replacing every Email::Address
+occurrence with Email::Address::XS is sufficient.
+
+So unlike Email::Address, this module does not use regular expressions for
+parsing but instead native XS implementation parses input string sequentially
+according to RFC 2822 grammar.
+
+Additionally it has support also for named groups and so can be use instead of
+the Email::Address::List module.
+
+WWW: http://search.cpan.org/dist/Email-Address-XS/
