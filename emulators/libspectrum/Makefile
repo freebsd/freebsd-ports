@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libspectrum
-PORTVERSION=	1.3.4
+PORTVERSION=	1.3.5
 CATEGORIES=	emulators devel
 MASTER_SITES=	SF/fuse-emulator/${PORTNAME}/${PORTVERSION}
 
@@ -15,9 +15,9 @@ LIB_DEPENDS=	libaudiofile.so:audio/libaudiofile \
 		libgcrypt.so:security/libgcrypt
 
 GNU_CONFIGURE=	yes
+USES=		gettext gmake libtool pkgconfig
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
-USES=		gettext gmake libtool pkgconfig
 
 INSTALL_TARGET=	install-strip
 
