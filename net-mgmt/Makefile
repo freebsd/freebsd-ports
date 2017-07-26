@@ -89,6 +89,7 @@
     SUBDIR += icingaweb2-module-cube
     SUBDIR += icingaweb2-module-director
     SUBDIR += icingaweb2-module-generictts
+    SUBDIR += icingaweb2-module-map
     SUBDIR += icli
     SUBDIR += icmpmonitor
     SUBDIR += icmpquery
