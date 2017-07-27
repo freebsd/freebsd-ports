@@ -91,6 +91,7 @@
     SUBDIR += icingaweb2-module-generictts
     SUBDIR += icingaweb2-module-grafana
     SUBDIR += icingaweb2-module-map
+    SUBDIR += icingaweb2-module-vsphere
     SUBDIR += icli
     SUBDIR += icmpmonitor
     SUBDIR += icmpquery
