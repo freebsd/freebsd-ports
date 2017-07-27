@@ -89,11 +89,11 @@ do-install:
 			${CPIO} --quiet -pdmu -R ${BINOWN}:${BINGRP} ${STAGEDIR}${PREFIX}/etc/mq
 		@${CHMOD} 640 ${STAGEDIR}${PREFIX}/etc/mq/*.sample
 .else
-		@${INSTALL_DATA} ${WRKSRC}/dist/mq/lib/imq.jar ${STAGEDIR}${JAVAJARDIR}
-		@${INSTALL_DATA} ${WRKSRC}/dist/mq/lib/jms.jar ${STAGEDIR}${JAVAJARDIR}
-		@${INSTALL_DATA} ${WRKSRC}/dist/mq/lib/fscontext.jar ${STAGEDIR}${JAVAJARDIR}
-		@${INSTALL_DATA} ${WRKSRC}/dist/mq/lib/jaxm-api.jar ${STAGEDIR}${JAVAJARDIR}
-		@${INSTALL_DATA} ${WRKSRC}/dist/mq/lib/imqxm.jar ${STAGEDIR}${JAVAJARDIR}
+		${INSTALL_DATA} ${WRKSRC}/dist/mq/lib/imq.jar ${STAGEDIR}${JAVAJARDIR}
+		${INSTALL_DATA} ${WRKSRC}/dist/mq/lib/jms.jar ${STAGEDIR}${JAVAJARDIR}
+		${INSTALL_DATA} ${WRKSRC}/dist/mq/lib/fscontext.jar ${STAGEDIR}${JAVAJARDIR}
+		${INSTALL_DATA} ${WRKSRC}/dist/mq/lib/jaxm-api.jar ${STAGEDIR}${JAVAJARDIR}
+		${INSTALL_DATA} ${WRKSRC}/dist/mq/lib/imqxm.jar ${STAGEDIR}${JAVAJARDIR}
 .endif
 
 do-install-DOCS-on:
