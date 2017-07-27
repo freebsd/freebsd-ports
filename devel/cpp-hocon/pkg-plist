@@ -14,7 +14,6 @@ include/hocon/config_resolve_options.hpp
 include/hocon/config_syntax.hpp
 include/hocon/config_value.hpp
 include/hocon/config_value_factory.hpp
-include/hocon/config_value_factory.hpp.orig
 include/hocon/export.h
 include/hocon/functional_list.hpp
 include/hocon/parser/config_document.hpp
@@ -24,5 +23,5 @@ include/hocon/path.hpp
 include/hocon/program_options.hpp
 include/hocon/types.hpp
 include/hocon/version.h
-lib/libcpp-hocon.so
-lib/libcpp-hocon.so.0.1.2
+lib/liblibcpp-hocon.so
+lib/liblibcpp-hocon.so.%%PORTVERSION%%
