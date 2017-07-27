@@ -26,7 +26,7 @@ BUILD_DEPENDS+=	${LOCALBASE}/sbin/proftpd:ftp/proftpd
 RUN_DEPENDS+=	${LOCALBASE}/sbin/proftpd:ftp/proftpd
 .endif
 
-PROFTPD_VERSION=	1.3.5e
+PROFTPD_VERSION=	1.3.6
 
 .if defined(_BUILDING_PROFTPD_MODULE)
 DISTFILES+=	${DISTNAME}${EXTRACT_SUFX}
@@ -86,11 +86,12 @@ PLIST_FILES+=	libexec/proftpd/${m}.a \
 		libexec/proftpd/${m}.so
 .endfor
 .else
-OPTIONS_DEFINE=	DOCS HTMLDOCS IPV6 NLS MEMCACHE PCRE
+OPTIONS_DEFINE=	DOCS HTMLDOCS IPV6 NLS MEMCACHE PCRE REDIS
 OPTIONS_DEFAULT=	PCRE
 
 HTMLDOCS_DESC=		Include HTML documentation
 MEMCACHE_DESC=		Memcache support using libmemcached
+REDIS_DESC=		Redis support using hiredis
 
 PLIST_SUB+=	LOCALSTATEDIR="${LOCALSTATEDIR}"
 OPTIONS_SUB=	yes
@@ -153,6 +154,11 @@ MEMCACHE_LIB_DEPENDS=	libmemcached.so:databases/libmemcached
 MEMCACHE_CONFIGURE_ENABLE=	memcache
 MEMCACHE_VARS=		MODULES+="mod_memcache mod_tls_memcache" \
 			LIBS+="-L${LOCALBASE}/lib -lmemcached -lmemcachedutil"
+
+REDIS_LIB_DEPENDS=	libhiredis.so:databases/hiredis
+REDIS_CONFIGURE_ENABLE=		redis
+REDIS_VARS=		MODULES+="mod_redis mod_tls_redis mod_wrap2_redis" \
+			LIBS+="-L${LOCALBASE}/lib -lhiredis"
 
 .include <bsd.port.options.mk>
 

@@ -1,6 +1,6 @@
---- contrib/mod_sftp/Makefile.in.orig	2009-09-16 08:09:57.000000000 +0200
-+++ contrib/mod_sftp/Makefile.in	2010-03-24 17:38:46.947039120 +0100
-@@ -45,8 +45,9 @@
+--- contrib/mod_sftp/Makefile.in.orig	2017-04-10 02:31:02 UTC
++++ contrib/mod_sftp/Makefile.in
+@@ -60,8 +60,9 @@ install: install-misc
  	fi
  
  install-misc:
@@ -11,4 +11,4 @@
 +	$(INSTALL) -o $(INSTALL_USER) -g $(INSTALL_GROUP) -m 0644 blacklist.dat $(DESTDIR)$(sysconfdir)/proftpd/blacklist.dat.sample
  
  clean:
- 	$(RM) $(MODULE_NAME).a *.o *.la *.lo
+ 	$(LIBTOOL) --mode=clean $(RM) $(MODULE_NAME).a $(MODULE_NAME).la *.o *.lo .libs/*.o
