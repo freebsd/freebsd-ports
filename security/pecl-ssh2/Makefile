@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ssh2
-PORTVERSION=	1.1.1
+PORTVERSION=	1.1.2
 CATEGORIES=	security pear
 
 MAINTAINER=	dbaio@FreeBSD.org

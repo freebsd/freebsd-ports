@@ -10,7 +10,7 @@ MASTER_SITES=	http://bricxcc.sourceforge.net/nqc/release/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Compiler for writing programs for the Lego RCX
 
-LICENSE=	MPL
+LICENSE=	MPL10
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		gmake dos2unix tar:tgz
