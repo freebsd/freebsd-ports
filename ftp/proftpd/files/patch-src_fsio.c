@@ -1,7 +1,7 @@
---- src/fsio.c.orig	2010-04-12 21:00:00.000000000 +0200
-+++ src/fsio.c	2011-12-29 21:51:33.844925577 +0100
-@@ -50,6 +50,10 @@
- # include <acl/libacl.h>
+--- src/fsio.c.orig	2017-04-10 02:31:02 UTC
++++ src/fsio.c
+@@ -69,6 +69,10 @@ static size_t copy_iter_count = 0;
+ # define NFS_SUPER_MAGIC	0x6969
  #endif
  
 +#if defined(__FreeBSD__)
@@ -11,8 +11,8 @@
  typedef struct fsopendir fsopendir_t;
  
  struct fsopendir {
-@@ -284,7 +288,30 @@
- #endif
+@@ -1041,7 +1045,30 @@ static int sys_fsetxattr(pool *p, pr_fh_
+   return res;
  }
  
 +#if defined(__FreeBSD__)
@@ -39,6 +39,6 @@
 +  if (enter_freebsd_restricted_mode() != 0)
 +    return -1;
 +#endif
-   if (chroot(path) < 0)
+   if (chroot(path) < 0) {
      return -1;
- 
+   }
