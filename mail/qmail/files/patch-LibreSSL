@@ -20,7 +20,7 @@
  
    /* this is for the server only */
 -  ssl->state = SSL_ST_ACCEPT;
-+  SSL_set_connect_state(ssl);
++  SSL_set_accept_state(ssl);
    return ssl_timeoutio(SSL_do_handshake, t, rfd, wfd, ssl, NULL, 0);
  }
  
