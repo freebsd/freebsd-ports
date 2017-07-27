@@ -24,6 +24,7 @@ airfoil/sc2_0404.af
 bin/vsp
 bin/vspaero
 bin/vspscript
+bin/vspslicer
 bin/vspviewer
 matlab/OpenVSPParasiteDragPlotData.m
 matlab/plotDegenPlate.m
@@ -104,4 +105,5 @@ textures/window.tga
 vsp
 vspaero
 vspscript
+vspslicer
 vspviewer
