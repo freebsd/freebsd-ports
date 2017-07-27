@@ -1,0 +1,4 @@
+#!/sbin/openrc-run
+
+name=dictd
+command=%%PREFIX%%/sbin/dictd
