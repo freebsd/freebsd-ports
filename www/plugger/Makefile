@@ -18,9 +18,9 @@ PKGDEINSTALL=	${PKGINSTALL}
 WEBPLUGIN_FILES=npplugger.so
 
 post-patch:
-	@${REINPLACE_CMD} -e \
-	's|/usr/X11R6/lib/xscreensaver|${LOCALBASE}/bin/xscreensaver-hacks|g ; \
-	s|+useFrontEndProgram||g' \
+	@${REINPLACE_CMD} \
+		-e 's|/usr/X11R6/lib/xscreensaver|${LOCALBASE}/bin/xscreensaver-hacks|g' \
+		-e 's|+useFrontEndProgram||g' \
 		${WRKSRC}/pluggerrc
 
 do-install:
@@ -39,27 +39,27 @@ do-install:
 
 local-install:
 	@${MKDIR} ${HOME}/.plugger
-	@${INSTALL_PROGRAM} ${WRKSRC}/plugger-${PORTVERSION} \
+	${INSTALL_PROGRAM} ${WRKSRC}/plugger-${PORTVERSION} \
 		${HOME}/.plugger
-	@${INSTALL_PROGRAM} ${WRKSRC}/plugger-controller \
+	${INSTALL_PROGRAM} ${WRKSRC}/plugger-controller \
 		${HOME}/.plugger
-	@${INSTALL_SCRIPT} ${WRKSRC}/plugger-oohelper \
+	${INSTALL_SCRIPT} ${WRKSRC}/plugger-oohelper \
 		${HOME}/.plugger
-	@if [ -f ${HOME}/.plugger/pluggerrc-${PORTVERSION} ]; then \
+	if [ -f ${HOME}/.plugger/pluggerrc-${PORTVERSION} ]; then \
 		${MV} ${HOME}/.plugger/pluggerrc-${PORTVERSION} \
 			${HOME}/.plugger/pluggerrc-${PORTVERSION}.old; \
 	fi
-	@${INSTALL_DATA} ${WRKSRC}/pluggerrc \
+	${INSTALL_DATA} ${WRKSRC}/pluggerrc \
 		${HOME}/.plugger/pluggerrc-${PORTVERSION}
 
 local-mozilla-install: local-install
 	@${MKDIR} ${HOME}/.mozilla/plugins
-	@${INSTALL_PROGRAM} ${WRKSRC}/plugger.so \
+	${INSTALL_PROGRAM} ${WRKSRC}/plugger.so \
 		${HOME}/.mozilla/plugins/npplugger.so
 
 local-opera-install: local-install
 	@${MKDIR} ${HOME}/.opera/plugins
-	@${INSTALL_PROGRAM} ${WRKSRC}/plugger.so \
+	${INSTALL_PROGRAM} ${WRKSRC}/plugger.so \
 		${HOME}/.opera/plugins/npplugger.so
 
 .include <bsd.port.mk>
