@@ -2,8 +2,8 @@
 
 PORTNAME=	rpcs3
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.0.3-34
-DISTVERSIONSUFFIX=	-gb2fa0fdf
+DISTVERSION=	0.0.3-65
+DISTVERSIONSUFFIX=	-gf613901e
 CATEGORIES=	emulators
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -44,14 +44,18 @@ PLIST_FILES=	bin/${PORTNAME} \
 		share/icons/hicolor/48x48/apps/${PORTNAME}.png \
 		share/icons/hicolor/scalable/apps/${PORTNAME}.svg \
 
-OPTIONS_DEFINE=	GDB LLVM
+OPTIONS_DEFINE=	EVDEV GDB LLVM
 OPTIONS_DEFAULT=LLVM
+
+EVDEV_DESC=		libevdev-based joystick support
+EVDEV_CMAKE_BOOL=	USE_LIBEVDEV
+EVDEV_LIB_DEPENDS=	libevdev.so:devel/libevdev
 
 GDB_DESC=		GDB remote stub (powerpc64 target)
 GDB_CMAKE_BOOL=		WITH_GDB
 
 LLVM_DESC=		LLVM-based PPU recompiler
-LLVM_LIB_DEPENDS=	libLLVM-4.0.so:devel/llvm40
+LLVM_BUILD_DEPENDS=	llvm40>0:devel/llvm40
 LLVM_CMAKE_BOOL_OFF=	WITHOUT_LLVM
 
 post-patch:
