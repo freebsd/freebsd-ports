@@ -1,9 +1,9 @@
 @group www
 @owner www
 %%WWWDIR%%/CHANGELOG.txt
+%%WWWDIR%%/Dockerfile
 %%WWWDIR%%/GPLv3.txt
 %%WWWDIR%%/LICENSE.txt
-%%WWWDIR%%/Dockerfile
 %%WWWDIR%%/README.md
 @sample %%ETCDIR%%/config.php.sample
 %%WWWDIR%%/css/jquery-ui.css
@@ -19,6 +19,7 @@
 %%WWWDIR%%/endpoints/lib/auth/ActiveDirectory.php
 %%WWWDIR%%/endpoints/lib/auth/Builtin.php
 %%WWWDIR%%/endpoints/lib/auth/LDAP.php
+%%WWWDIR%%/endpoints/lib/auth/MySQL.php
 %%WWWDIR%%/endpoints/lib/auth/OpenMediaVault.php
 %%WWWDIR%%/endpoints/lib/auth/WebAuth.php
 %%WWWDIR%%/endpoints/lib/auth/index.html
@@ -29,8 +30,8 @@
 %%WWWDIR%%/endpoints/lib/utils.php
 %%WWWDIR%%/endpoints/lib/vboxServiceWrappers.php
 %%WWWDIR%%/endpoints/lib/vboxconnector.php
-%%WWWDIR%%/endpoints/lib/vboxweb-5.0.wsdl
-%%WWWDIR%%/endpoints/lib/vboxwebService-5.0.wsdl
+%%WWWDIR%%/endpoints/lib/vboxweb-5.1.wsdl
+%%WWWDIR%%/endpoints/lib/vboxwebService-5.1.wsdl
 %%WWWDIR%%/endpoints/rdp.php
 %%WWWDIR%%/endpoints/screen.php
 %%WWWDIR%%/images/30white.png
