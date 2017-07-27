@@ -1637,6 +1637,7 @@
     SUBDIR += maven31
     SUBDIR += maven33
     SUBDIR += mcpp
+    SUBDIR += mdb
     SUBDIR += mdds
     SUBDIR += memleax
     SUBDIR += menhir
