@@ -1,35 +1,31 @@
---- Common/MemoryUtil.cpp.orig	2015-11-19 15:07:48 UTC
+https://github.com/hrydgard/ppsspp/pull/9857
+
+--- Common/MemoryUtil.cpp.orig	2017-05-27 09:58:05 UTC
 +++ Common/MemoryUtil.cpp
-@@ -32,6 +32,10 @@
- #include <mach/vm_param.h>
- #endif
- 
-+#if defined(__FreeBSD__) || defined(__FreeBSD_kernel__)
-+#include <sys/resource.h>
-+#endif
-+
- #ifndef _WIN32
- #include <unistd.h>
- #endif
-@@ -149,6 +153,21 @@ void *AllocateExecutableMemory(size_t si
- 			map_hint = (char*)round_page(&hint_location) - 0x20000000; // 0.5gb lower than our approximate location
- 		else
- 			map_hint = (char*)0x20000000; // 0.5GB mark in memory
-+
-+#if defined(__FreeBSD__) || defined(__FreeBSD_kernel__)
-+		// XXX Fix maximum data segment size (data + BSS + heap) to 256 MB.
-+		// This allows avoiding calling mmap(2) with MAP_FIXED.
-+		// On FreeBSD, without lowering this limit, calling mmap(2)
-+		// without MAP_FIXED will result in getting an address just
-+		// beyond maximum data segment size which will be far beyond
-+		// the desired 2 GB.
-+		struct rlimit limit;
-+		limit.rlim_cur = 0x10000000; // 256 MB
-+		limit.rlim_max = 0x10000000;
-+		if(setrlimit(RLIMIT_DATA, &limit) != 0) {
-+		        PanicAlert("Failed to lower maximum data segment size");
-+		}
-+#endif
+@@ -154,7 +154,7 @@ void *AllocateExecutableMemory(size_t size) {
  	}
- 	else if ((uintptr_t) map_hint > 0xFFFFFFFFULL)
- 	{
+ #else
+ 	static char *map_hint = 0;
+-#if defined(_M_X64)
++#if defined(_M_X64) && !defined(MAP_32BIT)
+ 	// Try to request one that is close to our memory location if we're in high memory.
+ 	// We use a dummy global variable to give us a good location to start from.
+ 	if (!map_hint) {
+@@ -176,7 +176,7 @@ void *AllocateExecutableMemory(size_t size) {
+ 	void* ptr = mmap(map_hint, size, prot,
+ 		MAP_ANON | MAP_PRIVATE
+ #if defined(_M_X64) && defined(MAP_32BIT)
+-		| ((uintptr_t) map_hint == 0 ? MAP_32BIT : 0)
++		| MAP_32BIT
+ #endif
+ 		, -1, 0);
+ 
+@@ -193,7 +193,7 @@ void *AllocateExecutableMemory(size_t size) {
+ 		ERROR_LOG(MEMMAP, "Failed to allocate executable memory (%d)", (int)size);
+ 		PanicAlert("Failed to allocate executable memory\n%s", GetLastErrorMsg());
+ 	}
+-#if defined(_M_X64) && !defined(_WIN32)
++#if defined(_M_X64) && !defined(MAP_32BIT) && !defined(_WIN32)
+ 	else if ((uintptr_t)map_hint <= 0xFFFFFFFF) {
+ 		// Round up if we're below 32-bit mark, probably allocating sequentially.
+ 		map_hint += round_page(size);
