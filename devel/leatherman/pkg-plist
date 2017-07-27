@@ -107,3 +107,5 @@ lib/libleatherman_ruby.so
 lib/libleatherman_ruby.so.%%PORTVERSION%%
 lib/libleatherman_util.so
 lib/libleatherman_util.so.%%PORTVERSION%%
+share/locale/fr/LC_MESSAGES/leatherman_locale.mo
+share/locale/fr/LC_MESSAGES/leatherman_logging.mo
