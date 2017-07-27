@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	powder-toy
-PORTVERSION=	91.5
+PORTVERSION=	92.0
 DISTVERSIONPREFIX=	v
-DISTVERSIONSUFFIX=	.330 # build number, not part of official version
+DISTVERSIONSUFFIX=	.331 # build number, not part of official version
 CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -28,7 +28,7 @@ MAKE_ENV=	LINKFLAGS="${LINKFLAGS}"
 
 SUB_FILES=	${PORTNAME}.sh
 
-PORTDOCS=	README TODO
+PORTDOCS=	README.md TODO
 
 DESKTOP_ENTRIES="The Powder Toy" \
 		"" \
@@ -40,6 +40,7 @@ DESKTOP_ENTRIES="The Powder Toy" \
 OPTIONS_DEFINE=		DOCS OPTIMIZED_CFLAGS SSE
 OPTIONS_DEFAULT=	OPTIMIZED_CFLAGS
 OPTIONS_DEFAULT_amd64=	SSE
+# upstream also uses -funsafe-loop-optimizations, but it's not supported by clang
 OPTIMIZED_CFLAGS_CXXFLAGS=	-O3 -ftree-vectorize -funsafe-math-optimizations -ffast-math -fomit-frame-pointer
 SSE_MAKE_ARGS_OFF=	--no-sse
 
