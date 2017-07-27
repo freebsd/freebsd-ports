@@ -3,6 +3,7 @@
 
 PORTNAME=	nrpe
 PORTVERSION=	3.2.0
+DISTVERSIONPREFIX=	nrpe-
 PORTREVISION?=	0
 CATEGORIES=	net-mgmt
 PKGNAMESUFFIX=	3
@@ -16,7 +17,6 @@ CONFLICTS=	nrpe nrpe-ssl
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	NagiosEnterprises
-GH_TAGNAME=	nrpe-${DISTVERSION}
 
 USES=		perl5
 USE_PERL5=	build

@@ -1,10 +1,10 @@
-TIMESTAMP = 1493632048
+TIMESTAMP = 1501157648
 SHA256 (nuget.31.zip) = 727148dcfffdbb13f237e9b99ca4fee56443c7c0e0552c8f7b162e9f484f1e4b
 SIZE (nuget.31.zip) = 315117674
 SHA256 (monolite-156-latest.tar.gz) = 2cdf6cff1d82d76412461a4c8a3616bb2aa1e835fb55479941662dec3799c924
 SIZE (monolite-156-latest.tar.gz) = 4569148
-SHA256 (mono-mono-4.8.1.0-mono-4.8.1.0_GH0.tar.gz) = da32f26922adb29b2cc3341d11e20f754b95f87178578188fd6902c5cfc188e4
-SIZE (mono-mono-4.8.1.0-mono-4.8.1.0_GH0.tar.gz) = 72422583
+SHA256 (mono-mono-mono-4.8.1.0_GH0.tar.gz) = da32f26922adb29b2cc3341d11e20f754b95f87178578188fd6902c5cfc188e4
+SIZE (mono-mono-mono-4.8.1.0_GH0.tar.gz) = 72422583
 SHA256 (mono-Lucene.Net.Light-85978b7_GH0.tar.gz) = 6f9cbad4083c8acf214d86a61fd39585f7d82eeec80c96fc696e07c7006e3a4d
 SIZE (mono-Lucene.Net.Light-85978b7_GH0.tar.gz) = 640188
 SHA256 (mono-Newtonsoft.Json-471c3e0_GH0.tar.gz) = 38b2bc9f2290f780e58fdf1504c0bbdb25a67d7d998c4ec631ecbbf9ddcb3e13

@@ -3,6 +3,7 @@
 
 PORTNAME=	mysqlwsrep
 PORTVERSION?=	5.7.18
+DISTVERSIONPREFIX?=	wsrep_
 DISTVERSIONSUFFIX?=	-25.12
 PORTREVISION?=	1
 CATEGORIES=	databases ipv6
@@ -41,7 +42,6 @@ MY_TMPDIR=	/var/db/mysql_tmpdir
 USE_GITHUB=	yes
 GH_ACCOUNT=	codership
 GH_PROJECT?=	mysql-wsrep
-GH_TAGNAME?=	wsrep_${DISTVERSION}${DISTVERSIONSUFFIX}
 
 DATADIR=	${PREFIX}/share/mysql
 ETCDIR=		${PREFIX}/etc/mysql

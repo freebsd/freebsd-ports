@@ -25,8 +25,8 @@ BROKEN_powerpc64=	fails to install: gyp: Call to 'which clang' returned exit sta
 BROKEN_sparc64=		fails to compile: segfault
 
 USE_GITHUB=	yes
-GH_TUPLE=	hrs-allbsd:${PORTNAME}:${DISTVERSIONPREFIX}${DISTVERSION} \
-		hiroyuki-komatsu:japanese-usage-dictionary:e5b3425:udic
+GH_ACCOUNT=	hrs-allbsd
+GH_TUPLE=	hiroyuki-komatsu:japanese-usage-dictionary:e5b3425:udic
 
 USES=		compiler:c++11-lang pkgconfig gmake \
 		tar:bzip2 python:2.7,build shebangfix
