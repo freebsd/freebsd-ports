@@ -1,7 +1,7 @@
 # $FreeBSD$
 
-PORTNAME=	mariadb
-PORTVERSION=	2.3.2
+PORTNAME=	mariadb-connector-c
+PORTVERSION=	3.0.2
 CATEGORIES=	databases ipv6
 MASTER_SITES=	http://ftp.osuosl.org/pub/${SITESDIR}/ \
 		http://mirrors.supportex.net/${SITESDIR}/ \
@@ -11,13 +11,13 @@ MASTER_SITES=	http://ftp.osuosl.org/pub/${SITESDIR}/ \
 		http://mirror.de.gsnw.de:56431/${SITESDIR}/ \
 		http://mirror.layerjet.com/${SITESDIR}/ \
 		http://mirror.switch.ch/mirror/${SITESDIR}/
-PKGNAMESUFFIX=	connector-c
-DISTNAME=	${PORTNAME}-${PKGNAMESUFFIX}-${PORTVERSION}-src
+DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	brnrd@FreeBSD.org
 COMMENT=	MariaDB database connector for C
 
 LICENSE=	LGPL21
+LICENSE_FILE=	${WRKSRC}/COPYING.LIB
 
 BROKEN_armv6=		fails to configure: CMake Error: Generator: execution of make failed
 BROKEN_powerpc64=	fails to compile: my_stmt_codec.c: error: invalid use of void expression
@@ -27,18 +27,14 @@ CONFLICTS_INSTALL=	mariadb[0-9]*-client-* \
 			mysql[0-9]*-client-* \
 			percona[0-9]*-client-*
 
-USES=		cmake compiler:c++11-lib ssl
+USES=		cmake compiler:c++11-lib iconv:translit ssl
 USE_LDCONFIG=	${PREFIX}/lib/mysql
 SITESDIR=	mariadb/connector-c-${PORTVERSION}
 DOCSDIR=	${PREFIX}/share/doc/mysql
 
+LIB_DEPENDS=	libcurl.so:ftp/curl
+
 CMAKE_ARGS+=	-DCOMPILATION_COMMENT="FreeBSD Ports" \
 		-DWITH_EXTERNAL_ZLIB="YES"
-
-post-install:
-	${RM} -r ${STAGEDIR}${PREFIX}/include/mariadb/CMakeFiles
-.	for f in CMakeLists.txt Makefile Makefile.am cmake_install.cmake
-		${RM} ${STAGEDIR}${PREFIX}/include/mariadb/${f}
-.	endfor
 
 .include <bsd.port.mk>

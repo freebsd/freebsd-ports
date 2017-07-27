@@ -3,6 +3,7 @@
 
 PORTNAME=		open-vm-tools
 PORTVERSION=		${RELEASE_VER}
+DISTVERSIONPREFIX=	stable-
 PORTEPOCH=		2
 CATEGORIES=		emulators
 
@@ -47,7 +48,6 @@ USES=			autoreconf:-iv fuse gettext-runtime kmod libtool localbase pathfix pkgco
 
 USE_GITHUB=		yes
 GH_ACCOUNT=		vmware
-GH_TAGNAME=		stable-${RELEASE_VER}
 
 USE_LDCONFIG=		yes
 CPPFLAGS+=		-Wno-deprecated-declarations

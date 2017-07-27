@@ -3,6 +3,7 @@
 
 PORTNAME=	galera
 PORTVERSION?=	25.3.21
+DISTVERSIONPREFIX?=	release_
 CATEGORIES=	databases
 
 MAINTAINER=	devel@galeracluster.com
@@ -33,7 +34,6 @@ USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	codership
-GH_TAGNAME?=	release_${DISTVERSION}
 
 LDFLAGS+=	-lboost_program_options -lboost_system
 MAKE_ARGS+=	revno=${GH_TAGNAME} system_asio=0 tests=0

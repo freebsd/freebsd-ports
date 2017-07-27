@@ -3,7 +3,7 @@
 
 PORTNAME=	f2c
 PORTVERSION=	20060810
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	lang
 MASTER_SITES=	LOCAL/maho/f2c
 DISTNAME=	${PORTNAME}
@@ -19,23 +19,20 @@ GUNZIP_CMD=	minigzip -d
 USES=		gmake
 USE_LDCONFIG=	yes
 
-OPTIONS_DEFINE=	LEAD_0
-LEAD_0_DESC=	Print with leading zeros
+LIBVER=		2
 
 # Set FCNAME to the name of the Fortran 77 / F2C wrapper.
 FCNAME?=	fc
-PLIST_SUB=	FCNAME=${FCNAME}
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MFC}
-PLIST_SUB+=	FC=""
-.else
-PLIST_SUB+=	FC="@comment "
-.endif
+PLIST_SUB=	FCNAME=${FCNAME} LIBVER=${LIBVER}
 
 PORTDOCS=	00lastchange README README_libf2c changes f2c.pdf permission
 
-.include <bsd.port.pre.mk>
+OPTIONS_DEFINE=	DOCS FC LEAD_0
+OPTIONS_SUB=	yes
+
+FC_DESC=	f77 script based on f2c
+LEAD_0_DESC=	Print with leading zeros
+LEAD_0_CFLAGS=	-DWANT_LEAD_0
 
 post-extract:
 	cd ${WRKSRC} && ${FIND} . -name "*.gz" | ${XARGS} ${GUNZIP_CMD}
@@ -48,34 +45,29 @@ pre-patch:
 
 pre-configure:
 	${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' ${WRKSRC}/fc
-.if ${PORT_OPTIONS:MLEAD_0}
-	${REINPLACE_CMD} -e 's|CFLAGS += -fPIC|CFLAGS += -fPIC -DWANT_LEAD_0|' ${WRKSRC}/libf2c/Makefile
-	${REINPLACE_CMD} -e 's|#CFLAGS = -O|CFLAGS = -O -DWANT_LEAD_0|' ${WRKSRC}/src/Makefile
-.endif
-
-
+	${REINPLACE_CMD} -e 's|#CFLAGS = -O|CFLAGS = ${CFLAGS}|' ${WRKSRC}/src/Makefile
+	${REINPLACE_CMD} 's|%%LIBVER%%|${LIBVER}|' ${WRKSRC}/libf2c/Makefile
 
 do-build:
 	@${ECHO_MSG} "===> Building f2c..."
-	@(cd ${WRKSRC}/src;	\
-	${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${ALL_TARGET})
+	@(cd ${WRKSRC}/src && ${DO_MAKE_BUILD} ${ALL_TARGET})
 	@${ECHO_MSG} "===> Building libf2c..."
-	@(cd ${WRKSRC}/libf2c;	\
-	${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${ALL_TARGET} libf2c.so)
-	${MV} ${WRKSRC}/libf2c/libf2c.so ${WRKSRC}/libf2c/libf2c.so.2
+	@(cd ${WRKSRC}/libf2c && ${DO_MAKE_BUILD} ${ALL_TARGET} libf2c.so)
+	${MV} ${WRKSRC}/libf2c/libf2c.so ${WRKSRC}/libf2c/libf2c.so.${LIBVER}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/f2c ${STAGEDIR}${PREFIX}/bin
-.if defined(WITH_MFC)
-	${INSTALL_SCRIPT} ${WRKSRC}/fc ${STAGEDIR}${PREFIX}/bin/${FCNAME}
-.endif
 	${INSTALL_DATA} ${WRKSRC}/src/f2c.h ${STAGEDIR}${PREFIX}/include
 	${INSTALL_MAN} ${WRKSRC}/src/f2c.1t ${STAGEDIR}${MAN1PREFIX}/man/man1/f2c.1
-	${INSTALL_DATA} ${WRKSRC}/libf2c/libf2c.a ${STAGEDIR}${PREFIX}/lib
-	${INSTALL_DATA} ${WRKSRC}/libf2c/libf2c.so.2 ${STAGEDIR}${PREFIX}/lib
-	${LN} -sf libf2c.so.2 ${STAGEDIR}${PREFIX}/lib/libf2c.so
+	${INSTALL_LIB} ${WRKSRC}/libf2c/libf2c.a ${STAGEDIR}${PREFIX}/lib
+	${INSTALL_LIB} ${WRKSRC}/libf2c/libf2c.so.${LIBVER} ${STAGEDIR}${PREFIX}/lib
+	${LN} -sf libf2c.so.${LIBVER} ${STAGEDIR}${PREFIX}/lib/libf2c.so
 
+do-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.post.mk>
+do-install-FC-on:
+	${INSTALL_SCRIPT} ${WRKSRC}/fc ${STAGEDIR}${PREFIX}/bin/${FCNAME}
+
+.include <bsd.port.mk>
