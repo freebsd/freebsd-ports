@@ -52,6 +52,7 @@
     SUBDIR += asmon
     SUBDIR += asusoled
     SUBDIR += ataidle
+    SUBDIR += atf-allwinner
     SUBDIR += atitvout
     SUBDIR += atop
     SUBDIR += auto-admin
