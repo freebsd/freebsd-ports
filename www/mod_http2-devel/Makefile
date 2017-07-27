@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mod_http2-devel
-PORTVERSION=	1.10.7
+PORTVERSION=	1.10.8
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 
@@ -15,16 +15,17 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	libnghttp2>=1.2:www/libnghttp2
 LIB_DEPENDS=	libnghttp2.so:www/libnghttp2
 
+USES=		autoreconf libtool ssl
 USE_GITHUB=	yes
+USE_APACHE=	24
+
 GH_ACCOUNT=	icing
 GH_PROJECT=	mod_h2
 
-USES=		autoreconf libtool ssl
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-prefix=ext-
 CONFIGURE_ENV=	CONFIG_SHELL=/bin/sh
 
-USE_APACHE=	24
 MODULENAME=	${GH_PROJECT}
 
 CFLAGS+=	-I${LOCALBASE}/include
