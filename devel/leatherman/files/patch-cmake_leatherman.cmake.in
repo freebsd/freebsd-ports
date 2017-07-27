@@ -1,6 +1,9 @@
---- cmake/leatherman.cmake.orig	2016-12-06 01:37:41 UTC
-+++ cmake/leatherman.cmake
-@@ -78,11 +78,6 @@ macro(leatherman_install)
+
+$FreeBSD$
+
+--- cmake/leatherman.cmake.in.orig
++++ cmake/leatherman.cmake.in
+@@ -83,11 +83,6 @@
          RUNTIME DESTINATION bin
          LIBRARY DESTINATION lib${LIB_SUFFIX}
          ARCHIVE DESTINATION lib${LIB_SUFFIX})
