@@ -12,6 +12,11 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Create method aliases (and do it safely)
 
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
+LICENSE_FILE_ART10=	${WRKSRC}/LICENSE
+
+NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
 
