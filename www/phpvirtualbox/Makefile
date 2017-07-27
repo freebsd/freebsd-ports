@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	phpvirtualbox
-DISTVERSION=	5.0-5
+DISTVERSION=	5.1-1
 CATEGORIES=	www
-MASTER_SITES=	SF/${PORTNAME}
 
 MAINTAINER=	vbox@FreeBSD.org
 COMMENT=	AJAX Web Interface for VirtualBox
@@ -13,11 +12,18 @@ LICENSE=	GPLv3
 
 NO_ARCH=	yes
 NO_BUILD=	yes
+USES=		dos2unix php
 USE_PHP=	json session simplexml soap xml
-USES=		dos2unix php zip
+
+USE_GITHUB=	yes
+GH_TAGNAME=	65ebced
 
 DOS2UNIX_REGEX=	.*\.(php|txt|js|css|html)
 ETCDIR=		${WWWDIR}
+
+post-patch:
+	@${MV} ${WRKSRC}/endpoints/lib/vboxweb-5.0.wsdl ${WRKSRC}/endpoints/lib/vboxweb-5.1.wsdl
+	@${MV} ${WRKSRC}/endpoints/lib/vboxwebService-5.0.wsdl ${WRKSRC}/endpoints/lib/vboxwebService-5.1.wsdl
 
 do-install:
 	${MKDIR} ${STAGEDIR}${WWWDIR}
