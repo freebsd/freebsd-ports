@@ -1,0 +1,17 @@
+
+$FreeBSD$
+
+--- cmake/leatherman.cmake.in.orig
++++ cmake/leatherman.cmake.in
+@@ -83,11 +83,6 @@
+         RUNTIME DESTINATION bin
+         LIBRARY DESTINATION lib${LIB_SUFFIX}
+         ARCHIVE DESTINATION lib${LIB_SUFFIX})
+-    foreach(ARG ${ARGV})
+-        if (TARGET ${ARG})
+-            set_target_properties(${ARG} PROPERTIES PREFIX "" IMPORT_PREFIX "")
+-        endif()
+-    endforeach()
+ endmacro()
+ 
+ # Usage: add_cppcheck_dirs(dir1 dir2)

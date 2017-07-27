@@ -1,0 +1,14 @@
+--- contrib/mod_sftp/Makefile.in.orig	2017-04-10 02:31:02 UTC
++++ contrib/mod_sftp/Makefile.in
+@@ -60,8 +60,9 @@ install: install-misc
+ 	fi
+ 
+ install-misc:
+-	$(INSTALL) -o $(INSTALL_USER) -g $(INSTALL_GROUP) -m 0644 dhparams.pem $(DESTDIR)$(sysconfdir)/dhparams.pem 
+-	$(INSTALL) -o $(INSTALL_USER) -g $(INSTALL_GROUP) -m 0644 blacklist.dat $(DESTDIR)$(sysconfdir)/blacklist.dat
++	$(INSTALL) -d -m 0755 $(DESTDIR)$(sysconfdir)/proftpd
++	$(INSTALL) -o $(INSTALL_USER) -g $(INSTALL_GROUP) -m 0644 dhparams.pem $(DESTDIR)$(sysconfdir)/proftpd/dhparams.pem.sample
++	$(INSTALL) -o $(INSTALL_USER) -g $(INSTALL_GROUP) -m 0644 blacklist.dat $(DESTDIR)$(sysconfdir)/proftpd/blacklist.dat.sample
+ 
+ clean:
+ 	$(LIBTOOL) --mode=clean $(RM) $(MODULE_NAME).a $(MODULE_NAME).la *.o *.lo .libs/*.o

@@ -868,6 +868,7 @@
     SUBDIR += py-ed25519ll
     SUBDIR += py-fail2ban
     SUBDIR += py-fchksum
+    SUBDIR += py-first-server
     SUBDIR += py-flask-httpauth
     SUBDIR += py-gixy
     SUBDIR += py-gnupg
@@ -1027,6 +1028,7 @@
     SUBDIR += rubygem-googleauth
     SUBDIR += rubygem-gpgr
     SUBDIR += rubygem-gssapi
+    SUBDIR += rubygem-hkdf
     SUBDIR += rubygem-jugyo-twitter_oauth
     SUBDIR += rubygem-metasploit-aggregator
     SUBDIR += rubygem-metasploit-concern

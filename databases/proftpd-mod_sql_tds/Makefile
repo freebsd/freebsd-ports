@@ -30,4 +30,9 @@ _BUILDING_PROFTPD_MODULE=	${PORTNAME}
 post-extract:
 	@${MV} ${WRKDIR}/mod_sql_tds.c ${WRKSRC}/contrib
 
+post-patch:
+	@${REINPLACE_CMD} -e 's| ERROR_MSG| PR_ERROR_MSG|g' \
+		-e 's| HANDLED| PR_HANDLED|g' \
+		${WRKSRC}/contrib/mod_sql_tds.c
+
 .include "${MASTERDIR}/Makefile"
