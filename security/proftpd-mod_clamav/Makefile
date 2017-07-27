@@ -2,6 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mod_clamav
+DISTVERSIONPREFIX=	v
 DISTVERSION=	0.14rc2
 PORTREVISION=	0
 CATEGORIES=	security ftp
@@ -16,7 +17,6 @@ DESCR=		${.CURDIR}/pkg-descr
 
 MASTERDIR=	${.CURDIR}/../../ftp/proftpd
 
-GH_TAGNAME=	v${DISTVERSION}
 GIT_REVISION=	c8586c7
 
 RUN_DEPENDS+=	clamd:security/clamav

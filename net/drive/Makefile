@@ -18,8 +18,8 @@ USES=		go
 
 PLIST_FILES=	bin/drive
 
-GH_TUPLE=	odeke-em:drive:v${PORTVERSION} \
-		boltdb:bolt:v1.3.1:boltdb_bolt/../src/github.com/boltdb/bolt \
+GH_ACCOUNT=	odeke-em
+GH_TUPLE=	boltdb:bolt:v1.3.1:boltdb_bolt/../src/github.com/boltdb/bolt \
 		cheggaaa:pb:v2.0.4:cheggaaa_pb/../src/github.com/cheggaaa/pb \
 		fatih:color:v1.5.0:fatih_color/../src/github.com/fatih/color \
 		golang:crypto:6914964:golang_crypto/../src/golang.org/x/crypto \

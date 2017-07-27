@@ -3,6 +3,7 @@
 
 PORTNAME=	mysqlwsrep
 PORTVERSION?=	5.6.36
+DISTVERSIONPREFIX?=	wsrep_
 DISTVERSIONSUFFIX?=	-25.20
 PORTREVISION?=	2
 CATEGORIES=	databases ipv6
@@ -43,7 +44,6 @@ USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	codership
 GH_PROJECT?=	mysql-wsrep
-GH_TAGNAME?=	wsrep_${DISTVERSION}${DISTVERSIONSUFFIX}
 
 MY_DBDIR=	/var/db/mysql
 MY_SECDIR=	/var/db/mysql_secure
