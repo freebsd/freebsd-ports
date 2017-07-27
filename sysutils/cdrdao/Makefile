@@ -124,56 +124,59 @@ post-patch:
 .endfor
 .endif
 
-do-install:
 .if ${PORTNAME} == "gcdmaster"
-	@${INSTALL_PROGRAM} ${WRKSRC}/xdao/gcdmaster ${STAGEDIR}${PREFIX}/bin
-	@${INSTALL_MAN} ${WRKSRC}/xdao/gcdmaster.man \
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/xdao/gcdmaster ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/xdao/gcdmaster.man \
 		${STAGEDIR}${PREFIX}/man/man1/gcdmaster.1
 	@${MKDIR} ${STAGEDIR}${LOCALBASE}/share/pixmaps/document-icons
-	@${INSTALL_DATA} ${WRKSRC}/xdao/gcdmaster-doc.png \
+	${INSTALL_DATA} ${WRKSRC}/xdao/gcdmaster-doc.png \
 		${STAGEDIR}${LOCALBASE}/share/pixmaps/document-icons
 	@${MKDIR} ${STAGEDIR}${LOCALBASE}/share/application-registry
-	@${INSTALL_DATA} ${WRKSRC}/xdao/gcdmaster.applications \
+	${INSTALL_DATA} ${WRKSRC}/xdao/gcdmaster.applications \
 		${STAGEDIR}${LOCALBASE}/share/application-registry
-	@${INSTALL_DATA} ${WRKSRC}/xdao/gcdmaster.desktop \
+	${INSTALL_DATA} ${WRKSRC}/xdao/gcdmaster.desktop \
 		${STAGEDIR}${LOCALBASE}/share/applications
 	@${MKDIR} ${STAGEDIR}${LOCALBASE}/share/mime-info
-	@${INSTALL_DATA} ${WRKSRC}/xdao/gcdmaster.keys \
+	${INSTALL_DATA} ${WRKSRC}/xdao/gcdmaster.keys \
 		${STAGEDIR}${LOCALBASE}/share/mime-info
-	@${INSTALL_DATA} ${WRKSRC}/xdao/gcdmaster.mime \
+	${INSTALL_DATA} ${WRKSRC}/xdao/gcdmaster.mime \
 		${STAGEDIR}${LOCALBASE}/share/mime-info
-	@${INSTALL_DATA} ${WRKSRC}/xdao/gcdmaster.png \
+	${INSTALL_DATA} ${WRKSRC}/xdao/gcdmaster.png \
 		${STAGEDIR}${LOCALBASE}/share/pixmaps
 	@${MKDIR} ${STAGEDIR}${LOCALBASE}/etc/gconf/schemas
-	@${INSTALL_DATA} ${WRKSRC}/xdao/gcdmaster.schemas \
+	${INSTALL_DATA} ${WRKSRC}/xdao/gcdmaster.schemas \
 		${STAGEDIR}${LOCALBASE}/etc/gconf/schemas
 	@${MKDIR} ${STAGEDIR}${LOCALBASE}/share/mime/packages
-	@${INSTALL_DATA} ${WRKSRC}/xdao/gcdmaster.xml \
+	${INSTALL_DATA} ${WRKSRC}/xdao/gcdmaster.xml \
 		${STAGEDIR}${LOCALBASE}/share/mime/packages
 	@${MKDIR} ${STAGEDIR}${DATADIR}
-	@${INSTALL_DATA} ${WRKSRC}/xdao/glade/Preferences.glade \
+	${INSTALL_DATA} ${WRKSRC}/xdao/glade/Preferences.glade \
 		${STAGEDIR}${DATADIR}
-	@${INSTALL_DATA} ${WRKSRC}/xdao/glade/ProjectChooser.glade \
+	${INSTALL_DATA} ${WRKSRC}/xdao/glade/ProjectChooser.glade \
 		${STAGEDIR}${DATADIR}
 .else
-	@${INSTALL_PROGRAM} ${WRKSRC}/dao/cdrdao ${STAGEDIR}${PREFIX}/bin
-	@${INSTALL_MAN} ${WRKSRC}/dao/cdrdao.man \
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/dao/cdrdao ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/dao/cdrdao.man \
 		${STAGEDIR}${PREFIX}/man/man1/cdrdao.1
-	@${INSTALL_PROGRAM} ${WRKSRC}/utils/cue2toc ${STAGEDIR}${PREFIX}/bin
-	@${INSTALL_MAN} ${WRKSRC}/utils/cue2toc.1 ${STAGEDIR}${PREFIX}/man/man1
-	@${INSTALL_PROGRAM} ${WRKSRC}/utils/toc2cddb ${STAGEDIR}${PREFIX}/bin
-	@${INSTALL_MAN} ${WRKSRC}/utils/toc2cddb.1 ${STAGEDIR}${PREFIX}/man/man1
-	@${INSTALL_PROGRAM} ${WRKSRC}/utils/toc2cue ${STAGEDIR}${PREFIX}/bin
-	@${INSTALL_MAN} ${WRKSRC}/utils/toc2cue.1 ${STAGEDIR}${PREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/utils/cue2toc ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/utils/cue2toc.1 ${STAGEDIR}${PREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/utils/toc2cddb ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/utils/toc2cddb.1 ${STAGEDIR}${PREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/utils/toc2cue ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/utils/toc2cue.1 ${STAGEDIR}${PREFIX}/man/man1
 	@${MKDIR} ${STAGEDIR}${DATADIR}
-	@${INSTALL_DATA} ${WRKSRC}/dao/cdrdao.drivers \
+	${INSTALL_DATA} ${WRKSRC}/dao/cdrdao.drivers \
 		${STAGEDIR}${DATADIR}/drivers
-.if ${PORT_OPTIONS:MTOC2MP3}
-	@${INSTALL_PROGRAM} ${WRKSRC}/utils/toc2mp3 ${STAGEDIR}${PREFIX}/bin
-.endif
+
+do-install-TOC2MP3-on:
+	${INSTALL_PROGRAM} ${WRKSRC}/utils/toc2mp3 ${STAGEDIR}${PREFIX}/bin
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in CREDITS ChangeLog README README.PlexDAE
-	@${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
 .endif
 
