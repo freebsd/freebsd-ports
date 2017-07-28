@@ -32,7 +32,6 @@ server {
     gzip_types text/plain text/css application/json application/javascript text/xml application/xml application/xml+rss text/javascript;
 
     add_header Strict-Transport-Security "max-age=31536000";
-    add_header Content-Security-Policy "style-src 'self' 'unsafe-inline'; script-src 'self'; object-src 'self'; img-src data: https:; media-src data: https:; connect-src 'self' wss://example.com; upgrade-insecure-requests";
 
     location / {
         try_files $uri @proxy;
@@ -43,6 +42,10 @@ server {
         try_files $uri @proxy;
     }
 
+    location /sw.js {
+        add_header Cache-Control no-cache;
+    }
+    
     location @proxy {
         proxy_set_header Host $host;
         proxy_set_header X-Real-IP $remote_addr;
@@ -51,7 +54,7 @@ server {
         proxy_set_header Proxy "";
         proxy_pass_header Server;
 
-        proxy_pass http://127.0.0.1:3000;
+        proxy_pass http://localhost:3000;
         proxy_buffering off;
         proxy_redirect off;
         proxy_http_version 1.1;

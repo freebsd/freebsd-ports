@@ -1,16 +1,16 @@
---- Gemfile.orig	2017-07-02 14:52:42 UTC
+--- Gemfile.orig	2017-07-25 22:12:41 UTC
 +++ Gemfile
-@@ -19,7 +19,6 @@ gem 'paperclip', '~> 5.1'
- gem 'paperclip-av-transcoder', '~> 0.6'
+@@ -20,7 +20,6 @@ gem 'paperclip-av-transcoder', '~> 0.6'
  
+ gem 'active_model_serializers', '~> 0.10'
  gem 'addressable', '~> 2.5'
 -gem 'bootsnap'
  gem 'browser'
+ gem 'charlock_holmes', '~> 0.7.3'
  gem 'cld3', '~> 3.1'
- gem 'devise', '~> 4.2'
-@@ -62,45 +61,6 @@ gem 'twitter-text', '~> 1.14'
- gem 'tzinfo-data', '~> 1.2017'
+@@ -68,45 +67,6 @@ gem 'tzinfo-data', '~> 1.2017'
  gem 'webpacker', '~> 2.0'
+ gem 'webpush'
  
 -group :development, :test do
 -  gem 'fabrication', '~> 2.16'
@@ -24,7 +24,7 @@
 -  gem 'capybara', '~> 2.14'
 -  gem 'climate_control', '~> 0.2'
 -  gem 'faker', '~> 1.7'
--  gem 'microformats2', '~> 3.0'
+-  gem 'microformats', '~> 4.0'
 -  gem 'rails-controller-testing', '~> 1.0'
 -  gem 'rspec-sidekiq', '~> 3.0'
 -  gem 'simplecov', '~> 0.14', require: false
