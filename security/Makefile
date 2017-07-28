@@ -1218,6 +1218,7 @@
     SUBDIR += vm-to-tor
     SUBDIR += vnccrack
     SUBDIR += vpnc
+    SUBDIR += vuls
     SUBDIR += vuxml
     SUBDIR += vxquery
     SUBDIR += w3af

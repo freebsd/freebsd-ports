@@ -1,0 +1,29 @@
+[servers]
+
+[servers.localhost]
+host        = "localhost"
+port        = "local"
+
+#
+# [servers.172-31-4-82]
+# host        = "172.31.4.82"
+# port        = "22"
+# user        = "ec2-user"
+# keyPath     = "/home/ec2-user/.ssh/id_rsa"
+#
+# [slack]
+# hookURL      = "https://hooks.slack.com/services/abc123/defghijklmnopqrstuvwxyz"
+# channel      = "#channel-name"
+# iconEmoji    = ":ghost:"
+# authUser     = "username"
+# notifyUsers  = ["@username"]
+#
+# [email]
+# smtpAddr      = "smtp.gmail.com"
+# smtpPort      = "587"
+# user          = "username"
+# password      = "password"
+# from          = "from@address.com"
+# to            = ["to@address.com"]
+# cc            = ["cc@address.com"]
+# subjectPrefix = "[vuls]"
