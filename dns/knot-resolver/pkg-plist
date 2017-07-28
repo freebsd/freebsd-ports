@@ -66,9 +66,11 @@ lib/kdns_modules/stats.so
 lib/kdns_modules/trust_anchors.lua
 lib/kdns_modules/version.lua
 lib/kdns_modules/view.lua
+lib/kdns_modules/workarounds.lua
 lib/kdns_modules/zonefile.lua
 lib/libkres.so
-lib/libkres.so.2
+lib/libkres.so.3
 libdata/pkgconfig/libkres.pc
 man/man8/kresd.8.gz
+sbin/kresc
 sbin/kresd
