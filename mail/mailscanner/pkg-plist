@@ -1,26 +1,26 @@
-%%ETCDIR%%/MailScanner.conf
-%%ETCDIR%%/archives.filename.rules.conf
-%%ETCDIR%%/archives.filetype.rules.conf
+@sample %%ETCDIR%%/MailScanner.conf.sample
+@sample %%ETCDIR%%/archives.filename.rules.conf.sample
+@sample %%ETCDIR%%/archives.filetype.rules.conf.sample
 %%ETCDIR%%/conf.d/README
-%%ETCDIR%%/country.domains.conf
-%%ETCDIR%%/defaults
-%%ETCDIR%%/filename.rules.conf
-%%ETCDIR%%/filetype.rules.conf
-%%ETCDIR%%/mcp/10_example.cf
-%%ETCDIR%%/mcp/mcp.spamassassin.conf
-%%ETCDIR%%/phishing.bad.sites.conf
-%%ETCDIR%%/phishing.safe.sites.conf
+@sample %%ETCDIR%%/country.domains.conf.sample
+@sample %%ETCDIR%%/defaults.sample
+@sample %%ETCDIR%%/filename.rules.conf.sample
+@sample %%ETCDIR%%/filetype.rules.conf.sample
+@sample %%ETCDIR%%/mcp/10_example.cf.sample
+@sample %%ETCDIR%%/mcp/mcp.spamassassin.conf.sample
+@sample %%ETCDIR%%/phishing.bad.sites.conf.sample
+@sample %%ETCDIR%%/phishing.safe.sites.conf.sample
 %%ETCDIR%%/rules/EXAMPLES
 %%ETCDIR%%/rules/README
-%%ETCDIR%%/rules/bounce.rules
-%%ETCDIR%%/rules/max.message.size.rules
-%%ETCDIR%%/rules/spam.whitelist.rules
-%%ETCDIR%%/spam.lists.conf
-%%ETCDIR%%/spamassassin.conf
-%%ETCDIR%%/virus.scanners.conf
+@sample %%ETCDIR%%/rules/bounce.rules.sample
+@sample %%ETCDIR%%/rules/max.message.size.rules.sample
+@sample %%ETCDIR%%/rules/spam.whitelist.rules.sample
+@sample %%ETCDIR%%/spam.lists.conf.sample
+@sample %%ETCDIR%%/spamassassin.conf.sample
+@sample %%ETCDIR%%/virus.scanners.conf.sample
 man/man8/MailScanner.8.gz
-man/man8/mailscanner.8.gz
 sbin/MailScanner
+sbin/mailscanner
 sbin/ms-check
 sbin/ms-clean-quarantine
 sbin/ms-create-locks
@@ -81,423 +81,439 @@ sbin/ms-upgrade-conf
 %%DATADIR%%/perl/custom/Ruleset-from-Function.pm
 %%DATADIR%%/perl/custom/SpamWhitelist.pm
 %%DATADIR%%/perl/custom/ZMRouterDirHash.pm
-%%DATADIR%%/reports/ca/deleted.content.message.txt
-%%DATADIR%%/reports/ca/deleted.filename.message.txt
-%%DATADIR%%/reports/ca/deleted.size.message.txt
-%%DATADIR%%/reports/ca/deleted.virus.message.txt
-%%DATADIR%%/reports/ca/disinfected.report.txt
-%%DATADIR%%/reports/ca/inline.sig.html
-%%DATADIR%%/reports/ca/inline.sig.txt
-%%DATADIR%%/reports/ca/inline.spam.warning.txt
-%%DATADIR%%/reports/ca/inline.warning.html
-%%DATADIR%%/reports/ca/inline.warning.txt
-%%DATADIR%%/reports/ca/languages.conf
-%%DATADIR%%/reports/ca/languages.conf.strings
-%%DATADIR%%/reports/ca/recipient.mcp.report.txt
-%%DATADIR%%/reports/ca/recipient.spam.report.txt
-%%DATADIR%%/reports/ca/rejection.report.txt
-%%DATADIR%%/reports/ca/sender.content.report.txt
-%%DATADIR%%/reports/ca/sender.error.report.txt
-%%DATADIR%%/reports/ca/sender.filename.report.txt
-%%DATADIR%%/reports/ca/sender.mcp.report.txt
-%%DATADIR%%/reports/ca/sender.size.report.txt
-%%DATADIR%%/reports/ca/sender.spam.rbl.report.txt
-%%DATADIR%%/reports/ca/sender.spam.report.txt
-%%DATADIR%%/reports/ca/sender.spam.sa.report.txt
-%%DATADIR%%/reports/ca/sender.virus.report.txt
-%%DATADIR%%/reports/ca/stored.content.message.txt
-%%DATADIR%%/reports/ca/stored.filename.message.txt
-%%DATADIR%%/reports/ca/stored.size.message.txt
-%%DATADIR%%/reports/ca/stored.virus.message.txt
-%%DATADIR%%/reports/cy+en/deleted.content.message.txt
-%%DATADIR%%/reports/cy+en/deleted.filename.message.txt
-%%DATADIR%%/reports/cy+en/deleted.size.message.txt
-%%DATADIR%%/reports/cy+en/deleted.virus.message.txt
-%%DATADIR%%/reports/cy+en/disinfected.report.txt
-%%DATADIR%%/reports/cy+en/inline.sig.html
-%%DATADIR%%/reports/cy+en/inline.sig.txt
-%%DATADIR%%/reports/cy+en/inline.spam.warning.txt
-%%DATADIR%%/reports/cy+en/inline.warning.html
-%%DATADIR%%/reports/cy+en/inline.warning.txt
-%%DATADIR%%/reports/cy+en/languages.conf
-%%DATADIR%%/reports/cy+en/languages.conf.strings
-%%DATADIR%%/reports/cy+en/recipient.mcp.report.txt
-%%DATADIR%%/reports/cy+en/recipient.spam.report.txt
-%%DATADIR%%/reports/cy+en/rejection.report.txt
-%%DATADIR%%/reports/cy+en/sender.content.report.txt
-%%DATADIR%%/reports/cy+en/sender.error.report.txt
-%%DATADIR%%/reports/cy+en/sender.filename.report.txt
-%%DATADIR%%/reports/cy+en/sender.mcp.report.txt
-%%DATADIR%%/reports/cy+en/sender.size.report.txt
-%%DATADIR%%/reports/cy+en/sender.spam.rbl.report.txt
-%%DATADIR%%/reports/cy+en/sender.spam.report.txt
-%%DATADIR%%/reports/cy+en/sender.spam.sa.report.txt
-%%DATADIR%%/reports/cy+en/sender.virus.report.txt
-%%DATADIR%%/reports/cy+en/stored.content.message.txt
-%%DATADIR%%/reports/cy+en/stored.filename.message.txt
-%%DATADIR%%/reports/cy+en/stored.size.message.txt
-%%DATADIR%%/reports/cy+en/stored.virus.message.txt
-%%DATADIR%%/reports/cz/deleted.content.message.txt
-%%DATADIR%%/reports/cz/deleted.filename.message.txt
-%%DATADIR%%/reports/cz/deleted.size.message.txt
-%%DATADIR%%/reports/cz/deleted.virus.message.txt
-%%DATADIR%%/reports/cz/disinfected.report.txt
-%%DATADIR%%/reports/cz/inline.sig.html
-%%DATADIR%%/reports/cz/inline.sig.txt
-%%DATADIR%%/reports/cz/inline.spam.warning.txt
-%%DATADIR%%/reports/cz/inline.warning.html
-%%DATADIR%%/reports/cz/inline.warning.txt
-%%DATADIR%%/reports/cz/languages.conf
-%%DATADIR%%/reports/cz/languages.conf.strings
-%%DATADIR%%/reports/cz/recipient.mcp.report.txt
-%%DATADIR%%/reports/cz/recipient.spam.report.txt
-%%DATADIR%%/reports/cz/rejection.report.txt
-%%DATADIR%%/reports/cz/sender.content.report.txt
-%%DATADIR%%/reports/cz/sender.error.report.txt
-%%DATADIR%%/reports/cz/sender.filename.report.txt
-%%DATADIR%%/reports/cz/sender.mcp.report.txt
-%%DATADIR%%/reports/cz/sender.size.report.txt
-%%DATADIR%%/reports/cz/sender.spam.rbl.report.txt
-%%DATADIR%%/reports/cz/sender.spam.report.txt
-%%DATADIR%%/reports/cz/sender.spam.sa.report.txt
-%%DATADIR%%/reports/cz/sender.virus.report.txt
-%%DATADIR%%/reports/cz/stored.content.message.txt
-%%DATADIR%%/reports/cz/stored.filename.message.txt
-%%DATADIR%%/reports/cz/stored.size.message.txt
-%%DATADIR%%/reports/cz/stored.virus.message.txt
-%%DATADIR%%/reports/de/deleted.content.message.txt
-%%DATADIR%%/reports/de/deleted.filename.message.txt
-%%DATADIR%%/reports/de/deleted.size.message.txt
-%%DATADIR%%/reports/de/deleted.virus.message.txt
-%%DATADIR%%/reports/de/disinfected.report.txt
-%%DATADIR%%/reports/de/inline.sig.html
-%%DATADIR%%/reports/de/inline.sig.txt
-%%DATADIR%%/reports/de/inline.spam.warning.txt
-%%DATADIR%%/reports/de/inline.warning.html
-%%DATADIR%%/reports/de/inline.warning.txt
-%%DATADIR%%/reports/de/languages.conf
-%%DATADIR%%/reports/de/languages.conf.strings
-%%DATADIR%%/reports/de/recipient.mcp.report.txt
-%%DATADIR%%/reports/de/recipient.spam.report.txt
-%%DATADIR%%/reports/de/rejection.report.txt
-%%DATADIR%%/reports/de/sender.content.report.txt
-%%DATADIR%%/reports/de/sender.error.report.txt
-%%DATADIR%%/reports/de/sender.filename.report.txt
-%%DATADIR%%/reports/de/sender.mcp.report.txt
-%%DATADIR%%/reports/de/sender.size.report.txt
-%%DATADIR%%/reports/de/sender.spam.rbl.report.txt
-%%DATADIR%%/reports/de/sender.spam.report.txt
-%%DATADIR%%/reports/de/sender.spam.sa.report.txt
-%%DATADIR%%/reports/de/sender.virus.report.txt
-%%DATADIR%%/reports/de/stored.content.message.txt
-%%DATADIR%%/reports/de/stored.filename.message.txt
-%%DATADIR%%/reports/de/stored.size.message.txt
-%%DATADIR%%/reports/de/stored.virus.message.txt
-%%DATADIR%%/reports/dk/deleted.content.message.txt
-%%DATADIR%%/reports/dk/deleted.filename.message.txt
-%%DATADIR%%/reports/dk/deleted.size.message.txt
-%%DATADIR%%/reports/dk/deleted.virus.message.txt
-%%DATADIR%%/reports/dk/disinfected.report.txt
-%%DATADIR%%/reports/dk/inline.sig.html
-%%DATADIR%%/reports/dk/inline.sig.txt
-%%DATADIR%%/reports/dk/inline.spam.warning.txt
-%%DATADIR%%/reports/dk/inline.warning.html
-%%DATADIR%%/reports/dk/inline.warning.txt
-%%DATADIR%%/reports/dk/languages.conf
-%%DATADIR%%/reports/dk/languages.conf.strings
-%%DATADIR%%/reports/dk/recipient.mcp.report.txt
-%%DATADIR%%/reports/dk/recipient.spam.report.txt
-%%DATADIR%%/reports/dk/rejection.report.txt
-%%DATADIR%%/reports/dk/sender.content.report.txt
-%%DATADIR%%/reports/dk/sender.error.report.txt
-%%DATADIR%%/reports/dk/sender.filename.report.txt
-%%DATADIR%%/reports/dk/sender.mcp.report.txt
-%%DATADIR%%/reports/dk/sender.size.report.txt
-%%DATADIR%%/reports/dk/sender.spam.rbl.report.txt
-%%DATADIR%%/reports/dk/sender.spam.report.txt
-%%DATADIR%%/reports/dk/sender.spam.sa.report.txt
-%%DATADIR%%/reports/dk/sender.virus.report.txt
-%%DATADIR%%/reports/dk/stored.content.message.txt
-%%DATADIR%%/reports/dk/stored.filename.message.txt
-%%DATADIR%%/reports/dk/stored.size.message.txt
-%%DATADIR%%/reports/dk/stored.virus.message.txt
-%%DATADIR%%/reports/en/deleted.content.message.txt
-%%DATADIR%%/reports/en/deleted.filename.message.txt
-%%DATADIR%%/reports/en/deleted.size.message.txt
-%%DATADIR%%/reports/en/deleted.virus.message.txt
-%%DATADIR%%/reports/en/disinfected.report.txt
-%%DATADIR%%/reports/en/inline.sig.html
-%%DATADIR%%/reports/en/inline.sig.txt
-%%DATADIR%%/reports/en/inline.spam.warning.txt
-%%DATADIR%%/reports/en/inline.warning.html
-%%DATADIR%%/reports/en/inline.warning.txt
-%%DATADIR%%/reports/en/languages.conf
-%%DATADIR%%/reports/en/languages.conf.strings
-%%DATADIR%%/reports/en/recipient.mcp.report.txt
-%%DATADIR%%/reports/en/recipient.spam.report.txt
-%%DATADIR%%/reports/en/rejection.report.txt
-%%DATADIR%%/reports/en/sender.content.report.txt
-%%DATADIR%%/reports/en/sender.error.report.txt
-%%DATADIR%%/reports/en/sender.filename.report.txt
-%%DATADIR%%/reports/en/sender.mcp.report.txt
-%%DATADIR%%/reports/en/sender.size.report.txt
-%%DATADIR%%/reports/en/sender.spam.rbl.report.txt
-%%DATADIR%%/reports/en/sender.spam.report.txt
-%%DATADIR%%/reports/en/sender.spam.sa.report.txt
-%%DATADIR%%/reports/en/sender.virus.report.txt
-%%DATADIR%%/reports/en/stored.content.message.txt
-%%DATADIR%%/reports/en/stored.filename.message.txt
-%%DATADIR%%/reports/en/stored.size.message.txt
-%%DATADIR%%/reports/en/stored.virus.message.txt
-%%DATADIR%%/reports/es/deleted.content.message.txt
-%%DATADIR%%/reports/es/deleted.filename.message.txt
-%%DATADIR%%/reports/es/deleted.size.message.txt
-%%DATADIR%%/reports/es/deleted.virus.message.txt
-%%DATADIR%%/reports/es/disinfected.report.txt
-%%DATADIR%%/reports/es/inline.sig.html
-%%DATADIR%%/reports/es/inline.sig.txt
-%%DATADIR%%/reports/es/inline.spam.warning.txt
-%%DATADIR%%/reports/es/inline.warning.html
-%%DATADIR%%/reports/es/inline.warning.txt
-%%DATADIR%%/reports/es/languages.conf
-%%DATADIR%%/reports/es/languages.conf.strings
-%%DATADIR%%/reports/es/recipient.mcp.report.txt
-%%DATADIR%%/reports/es/recipient.spam.report.txt
-%%DATADIR%%/reports/es/rejection.report.txt
-%%DATADIR%%/reports/es/sender.content.report.txt
-%%DATADIR%%/reports/es/sender.error.report.txt
-%%DATADIR%%/reports/es/sender.filename.report.txt
-%%DATADIR%%/reports/es/sender.mcp.report.txt
-%%DATADIR%%/reports/es/sender.size.report.txt
-%%DATADIR%%/reports/es/sender.spam.rbl.report.txt
-%%DATADIR%%/reports/es/sender.spam.report.txt
-%%DATADIR%%/reports/es/sender.spam.sa.report.txt
-%%DATADIR%%/reports/es/sender.virus.report.txt
-%%DATADIR%%/reports/es/stored.content.message.txt
-%%DATADIR%%/reports/es/stored.filename.message.txt
-%%DATADIR%%/reports/es/stored.size.message.txt
-%%DATADIR%%/reports/es/stored.virus.message.txt
-%%DATADIR%%/reports/fr/deleted.content.message.txt
-%%DATADIR%%/reports/fr/deleted.filename.message.txt
-%%DATADIR%%/reports/fr/deleted.size.message.txt
-%%DATADIR%%/reports/fr/deleted.virus.message.txt
-%%DATADIR%%/reports/fr/disinfected.report.txt
-%%DATADIR%%/reports/fr/inline.sig.html
-%%DATADIR%%/reports/fr/inline.sig.txt
-%%DATADIR%%/reports/fr/inline.spam.warning.txt
-%%DATADIR%%/reports/fr/inline.warning.html
-%%DATADIR%%/reports/fr/inline.warning.txt
-%%DATADIR%%/reports/fr/languages.conf
-%%DATADIR%%/reports/fr/languages.conf.strings
-%%DATADIR%%/reports/fr/recipient.mcp.report.txt
-%%DATADIR%%/reports/fr/recipient.spam.report.txt
-%%DATADIR%%/reports/fr/rejection.report.txt
-%%DATADIR%%/reports/fr/sender.content.report.txt
-%%DATADIR%%/reports/fr/sender.error.report.txt
-%%DATADIR%%/reports/fr/sender.filename.report.txt
-%%DATADIR%%/reports/fr/sender.mcp.report.txt
-%%DATADIR%%/reports/fr/sender.size.report.txt
-%%DATADIR%%/reports/fr/sender.spam.rbl.report.txt
-%%DATADIR%%/reports/fr/sender.spam.report.txt
-%%DATADIR%%/reports/fr/sender.spam.sa.report.txt
-%%DATADIR%%/reports/fr/sender.virus.report.txt
-%%DATADIR%%/reports/fr/stored.content.message.txt
-%%DATADIR%%/reports/fr/stored.filename.message.txt
-%%DATADIR%%/reports/fr/stored.size.message.txt
-%%DATADIR%%/reports/fr/stored.virus.message.txt
-%%DATADIR%%/reports/hu/deleted.content.message.txt
-%%DATADIR%%/reports/hu/deleted.filename.message.txt
-%%DATADIR%%/reports/hu/deleted.size.message.txt
-%%DATADIR%%/reports/hu/deleted.virus.message.txt
-%%DATADIR%%/reports/hu/disinfected.report.txt
-%%DATADIR%%/reports/hu/inline.sig.html
-%%DATADIR%%/reports/hu/inline.sig.txt
-%%DATADIR%%/reports/hu/inline.spam.warning.txt
-%%DATADIR%%/reports/hu/inline.warning.html
-%%DATADIR%%/reports/hu/inline.warning.txt
-%%DATADIR%%/reports/hu/languages.conf
-%%DATADIR%%/reports/hu/languages.conf.strings
-%%DATADIR%%/reports/hu/recipient.mcp.report.txt
-%%DATADIR%%/reports/hu/recipient.spam.report.txt
-%%DATADIR%%/reports/hu/rejection.report.txt
-%%DATADIR%%/reports/hu/sender.content.report.txt
-%%DATADIR%%/reports/hu/sender.error.report.txt
-%%DATADIR%%/reports/hu/sender.filename.report.txt
-%%DATADIR%%/reports/hu/sender.mcp.report.txt
-%%DATADIR%%/reports/hu/sender.size.report.txt
-%%DATADIR%%/reports/hu/sender.spam.rbl.report.txt
-%%DATADIR%%/reports/hu/sender.spam.report.txt
-%%DATADIR%%/reports/hu/sender.spam.sa.report.txt
-%%DATADIR%%/reports/hu/sender.virus.report.txt
-%%DATADIR%%/reports/hu/stored.content.message.txt
-%%DATADIR%%/reports/hu/stored.filename.message.txt
-%%DATADIR%%/reports/hu/stored.size.message.txt
-%%DATADIR%%/reports/hu/stored.virus.message.txt
-%%DATADIR%%/reports/it/deleted.content.message.txt
-%%DATADIR%%/reports/it/deleted.filename.message.txt
-%%DATADIR%%/reports/it/deleted.size.message.txt
-%%DATADIR%%/reports/it/deleted.virus.message.txt
-%%DATADIR%%/reports/it/disinfected.report.txt
-%%DATADIR%%/reports/it/inline.sig.html
-%%DATADIR%%/reports/it/inline.sig.txt
-%%DATADIR%%/reports/it/inline.spam.warning.txt
-%%DATADIR%%/reports/it/inline.warning.html
-%%DATADIR%%/reports/it/inline.warning.txt
-%%DATADIR%%/reports/it/languages.conf
-%%DATADIR%%/reports/it/languages.conf.strings
-%%DATADIR%%/reports/it/recipient.mcp.report.txt
-%%DATADIR%%/reports/it/recipient.spam.report.txt
-%%DATADIR%%/reports/it/rejection.report.txt
-%%DATADIR%%/reports/it/sender.content.report.txt
-%%DATADIR%%/reports/it/sender.error.report.txt
-%%DATADIR%%/reports/it/sender.filename.report.txt
-%%DATADIR%%/reports/it/sender.mcp.report.txt
-%%DATADIR%%/reports/it/sender.size.report.txt
-%%DATADIR%%/reports/it/sender.spam.rbl.report.txt
-%%DATADIR%%/reports/it/sender.spam.report.txt
-%%DATADIR%%/reports/it/sender.spam.sa.report.txt
-%%DATADIR%%/reports/it/sender.virus.report.txt
-%%DATADIR%%/reports/it/stored.content.message.txt
-%%DATADIR%%/reports/it/stored.filename.message.txt
-%%DATADIR%%/reports/it/stored.size.message.txt
-%%DATADIR%%/reports/it/stored.virus.message.txt
-%%DATADIR%%/reports/nl/deleted.content.message.txt
-%%DATADIR%%/reports/nl/deleted.filename.message.txt
-%%DATADIR%%/reports/nl/deleted.size.message.txt
-%%DATADIR%%/reports/nl/deleted.virus.message.txt
-%%DATADIR%%/reports/nl/disinfected.report.txt
-%%DATADIR%%/reports/nl/inline.sig.html
-%%DATADIR%%/reports/nl/inline.sig.txt
-%%DATADIR%%/reports/nl/inline.spam.warning.txt
-%%DATADIR%%/reports/nl/inline.warning.html
-%%DATADIR%%/reports/nl/inline.warning.txt
-%%DATADIR%%/reports/nl/languages.conf
-%%DATADIR%%/reports/nl/languages.conf.strings
-%%DATADIR%%/reports/nl/recipient.mcp.report.txt
-%%DATADIR%%/reports/nl/recipient.spam.report.txt
-%%DATADIR%%/reports/nl/rejection.report.txt
-%%DATADIR%%/reports/nl/sender.content.report.txt
-%%DATADIR%%/reports/nl/sender.error.report.txt
-%%DATADIR%%/reports/nl/sender.filename.report.txt
-%%DATADIR%%/reports/nl/sender.mcp.report.txt
-%%DATADIR%%/reports/nl/sender.size.report.txt
-%%DATADIR%%/reports/nl/sender.spam.rbl.report.txt
-%%DATADIR%%/reports/nl/sender.spam.report.txt
-%%DATADIR%%/reports/nl/sender.spam.sa.report.txt
-%%DATADIR%%/reports/nl/sender.virus.report.txt
-%%DATADIR%%/reports/nl/stored.content.message.txt
-%%DATADIR%%/reports/nl/stored.filename.message.txt
-%%DATADIR%%/reports/nl/stored.size.message.txt
-%%DATADIR%%/reports/nl/stored.virus.message.txt
-%%DATADIR%%/reports/pt_br/deleted.content.message.txt
-%%DATADIR%%/reports/pt_br/deleted.filename.message.txt
-%%DATADIR%%/reports/pt_br/deleted.size.message.txt
-%%DATADIR%%/reports/pt_br/deleted.virus.message.txt
-%%DATADIR%%/reports/pt_br/disinfected.report.txt
-%%DATADIR%%/reports/pt_br/inline.sig.html
-%%DATADIR%%/reports/pt_br/inline.sig.txt
-%%DATADIR%%/reports/pt_br/inline.spam.warning.txt
-%%DATADIR%%/reports/pt_br/inline.warning.html
-%%DATADIR%%/reports/pt_br/inline.warning.txt
-%%DATADIR%%/reports/pt_br/languages.conf
-%%DATADIR%%/reports/pt_br/languages.conf.strings
-%%DATADIR%%/reports/pt_br/recipient.mcp.report.txt
-%%DATADIR%%/reports/pt_br/recipient.spam.report.txt
-%%DATADIR%%/reports/pt_br/rejection.report.txt
-%%DATADIR%%/reports/pt_br/sender.content.report.txt
-%%DATADIR%%/reports/pt_br/sender.error.report.txt
-%%DATADIR%%/reports/pt_br/sender.filename.report.txt
-%%DATADIR%%/reports/pt_br/sender.mcp.report.txt
-%%DATADIR%%/reports/pt_br/sender.size.report.txt
-%%DATADIR%%/reports/pt_br/sender.spam.rbl.report.txt
-%%DATADIR%%/reports/pt_br/sender.spam.report.txt
-%%DATADIR%%/reports/pt_br/sender.spam.sa.report.txt
-%%DATADIR%%/reports/pt_br/sender.virus.report.txt
-%%DATADIR%%/reports/pt_br/stored.content.message.txt
-%%DATADIR%%/reports/pt_br/stored.filename.message.txt
-%%DATADIR%%/reports/pt_br/stored.size.message.txt
-%%DATADIR%%/reports/pt_br/stored.virus.message.txt
-%%DATADIR%%/reports/ro/deleted.content.message.txt
-%%DATADIR%%/reports/ro/deleted.filename.message.txt
-%%DATADIR%%/reports/ro/deleted.size.message.txt
-%%DATADIR%%/reports/ro/deleted.virus.message.txt
-%%DATADIR%%/reports/ro/disinfected.report.txt
-%%DATADIR%%/reports/ro/inline.sig.html
-%%DATADIR%%/reports/ro/inline.sig.txt
-%%DATADIR%%/reports/ro/inline.spam.warning.txt
-%%DATADIR%%/reports/ro/inline.warning.html
-%%DATADIR%%/reports/ro/inline.warning.txt
-%%DATADIR%%/reports/ro/languages.conf
-%%DATADIR%%/reports/ro/languages.conf.strings
-%%DATADIR%%/reports/ro/recipient.mcp.report.txt
-%%DATADIR%%/reports/ro/recipient.spam.report.txt
-%%DATADIR%%/reports/ro/rejection.report.txt
-%%DATADIR%%/reports/ro/sender.content.report.txt
-%%DATADIR%%/reports/ro/sender.error.report.txt
-%%DATADIR%%/reports/ro/sender.filename.report.txt
-%%DATADIR%%/reports/ro/sender.mcp.report.txt
-%%DATADIR%%/reports/ro/sender.size.report.txt
-%%DATADIR%%/reports/ro/sender.spam.rbl.report.txt
-%%DATADIR%%/reports/ro/sender.spam.report.txt
-%%DATADIR%%/reports/ro/sender.spam.sa.report.txt
-%%DATADIR%%/reports/ro/sender.virus.report.txt
-%%DATADIR%%/reports/ro/stored.content.message.txt
-%%DATADIR%%/reports/ro/stored.filename.message.txt
-%%DATADIR%%/reports/ro/stored.size.message.txt
-%%DATADIR%%/reports/ro/stored.virus.message.txt
-%%DATADIR%%/reports/se/deleted.content.message.txt
-%%DATADIR%%/reports/se/deleted.filename.message.txt
-%%DATADIR%%/reports/se/deleted.size.message.txt
-%%DATADIR%%/reports/se/deleted.virus.message.txt
-%%DATADIR%%/reports/se/disinfected.report.txt
-%%DATADIR%%/reports/se/inline.sig.html
-%%DATADIR%%/reports/se/inline.sig.txt
-%%DATADIR%%/reports/se/inline.spam.warning.txt
-%%DATADIR%%/reports/se/inline.warning.html
-%%DATADIR%%/reports/se/inline.warning.txt
-%%DATADIR%%/reports/se/languages.conf
-%%DATADIR%%/reports/se/languages.conf.strings
-%%DATADIR%%/reports/se/recipient.mcp.report.txt
-%%DATADIR%%/reports/se/recipient.spam.report.txt
-%%DATADIR%%/reports/se/rejection.report.txt
-%%DATADIR%%/reports/se/sender.content.report.txt
-%%DATADIR%%/reports/se/sender.error.report.txt
-%%DATADIR%%/reports/se/sender.filename.report.txt
-%%DATADIR%%/reports/se/sender.mcp.report.txt
-%%DATADIR%%/reports/se/sender.size.report.txt
-%%DATADIR%%/reports/se/sender.spam.rbl.report.txt
-%%DATADIR%%/reports/se/sender.spam.report.txt
-%%DATADIR%%/reports/se/sender.spam.sa.report.txt
-%%DATADIR%%/reports/se/sender.virus.report.txt
-%%DATADIR%%/reports/se/stored.content.message.txt
-%%DATADIR%%/reports/se/stored.filename.message.txt
-%%DATADIR%%/reports/se/stored.size.message.txt
-%%DATADIR%%/reports/se/stored.virus.message.txt
-%%DATADIR%%/reports/sk/deleted.content.message.txt
-%%DATADIR%%/reports/sk/deleted.filename.message.txt
-%%DATADIR%%/reports/sk/deleted.size.message.txt
-%%DATADIR%%/reports/sk/deleted.virus.message.txt
-%%DATADIR%%/reports/sk/disinfected.report.txt
-%%DATADIR%%/reports/sk/inline.sig.html
-%%DATADIR%%/reports/sk/inline.sig.txt
-%%DATADIR%%/reports/sk/inline.spam.warning.txt
-%%DATADIR%%/reports/sk/inline.warning.html
-%%DATADIR%%/reports/sk/inline.warning.txt
-%%DATADIR%%/reports/sk/languages.conf
-%%DATADIR%%/reports/sk/languages.conf.strings
-%%DATADIR%%/reports/sk/recipient.mcp.report.txt
-%%DATADIR%%/reports/sk/recipient.spam.report.txt
-%%DATADIR%%/reports/sk/rejection.report.txt
-%%DATADIR%%/reports/sk/sender.content.report.txt
-%%DATADIR%%/reports/sk/sender.error.report.txt
-%%DATADIR%%/reports/sk/sender.filename.report.txt
-%%DATADIR%%/reports/sk/sender.mcp.report.txt
-%%DATADIR%%/reports/sk/sender.size.report.txt
-%%DATADIR%%/reports/sk/sender.spam.rbl.report.txt
-%%DATADIR%%/reports/sk/sender.spam.report.txt
-%%DATADIR%%/reports/sk/sender.spam.sa.report.txt
-%%DATADIR%%/reports/sk/sender.virus.report.txt
-%%DATADIR%%/reports/sk/stored.content.message.txt
-%%DATADIR%%/reports/sk/stored.filename.message.txt
-%%DATADIR%%/reports/sk/stored.size.message.txt
-%%DATADIR%%/reports/sk/stored.virus.message.txt
+@sample %%DATADIR%%/reports/ca/deleted.content.message.txt.sample
+@sample %%DATADIR%%/reports/ca/deleted.filename.message.txt.sample
+@sample %%DATADIR%%/reports/ca/deleted.size.message.txt.sample
+@sample %%DATADIR%%/reports/ca/deleted.virus.message.txt.sample
+@sample %%DATADIR%%/reports/ca/disinfected.report.txt.sample
+@sample %%DATADIR%%/reports/ca/inline.sig.html.sample
+@sample %%DATADIR%%/reports/ca/inline.sig.txt.sample
+@sample %%DATADIR%%/reports/ca/inline.spam.warning.txt.sample
+@sample %%DATADIR%%/reports/ca/inline.warning.html.sample
+@sample %%DATADIR%%/reports/ca/inline.warning.txt.sample
+@sample %%DATADIR%%/reports/ca/languages.conf.sample
+@sample %%DATADIR%%/reports/ca/languages.conf.strings.sample
+@sample %%DATADIR%%/reports/ca/recipient.mcp.report.txt.sample
+@sample %%DATADIR%%/reports/ca/recipient.spam.report.txt.sample
+@sample %%DATADIR%%/reports/ca/rejection.report.txt.sample
+@sample %%DATADIR%%/reports/ca/sender.content.report.txt.sample
+@sample %%DATADIR%%/reports/ca/sender.error.report.txt.sample
+@sample %%DATADIR%%/reports/ca/sender.filename.report.txt.sample
+@sample %%DATADIR%%/reports/ca/sender.mcp.report.txt.sample
+@sample %%DATADIR%%/reports/ca/sender.size.report.txt.sample
+@sample %%DATADIR%%/reports/ca/sender.spam.rbl.report.txt.sample
+@sample %%DATADIR%%/reports/ca/sender.spam.report.txt.sample
+@sample %%DATADIR%%/reports/ca/sender.spam.sa.report.txt.sample
+@sample %%DATADIR%%/reports/ca/sender.virus.report.txt.sample
+@sample %%DATADIR%%/reports/ca/stored.content.message.txt.sample
+@sample %%DATADIR%%/reports/ca/stored.filename.message.txt.sample
+@sample %%DATADIR%%/reports/ca/stored.size.message.txt.sample
+@sample %%DATADIR%%/reports/ca/stored.virus.message.txt.sample
+@sample %%DATADIR%%/reports/cy+en/deleted.content.message.txt.sample
+@sample %%DATADIR%%/reports/cy+en/deleted.filename.message.txt.sample
+@sample %%DATADIR%%/reports/cy+en/deleted.size.message.txt.sample
+@sample %%DATADIR%%/reports/cy+en/deleted.virus.message.txt.sample
+@sample %%DATADIR%%/reports/cy+en/disinfected.report.txt.sample
+@sample %%DATADIR%%/reports/cy+en/inline.sig.html.sample
+@sample %%DATADIR%%/reports/cy+en/inline.sig.txt.sample
+@sample %%DATADIR%%/reports/cy+en/inline.spam.warning.txt.sample
+@sample %%DATADIR%%/reports/cy+en/inline.warning.html.sample
+@sample %%DATADIR%%/reports/cy+en/inline.warning.txt.sample
+@sample %%DATADIR%%/reports/cy+en/languages.conf.sample
+@sample %%DATADIR%%/reports/cy+en/languages.conf.strings.sample
+@sample %%DATADIR%%/reports/cy+en/recipient.mcp.report.txt.sample
+@sample %%DATADIR%%/reports/cy+en/recipient.spam.report.txt.sample
+@sample %%DATADIR%%/reports/cy+en/rejection.report.txt.sample
+@sample %%DATADIR%%/reports/cy+en/sender.content.report.txt.sample
+@sample %%DATADIR%%/reports/cy+en/sender.error.report.txt.sample
+@sample %%DATADIR%%/reports/cy+en/sender.filename.report.txt.sample
+@sample %%DATADIR%%/reports/cy+en/sender.mcp.report.txt.sample
+@sample %%DATADIR%%/reports/cy+en/sender.size.report.txt.sample
+@sample %%DATADIR%%/reports/cy+en/sender.spam.rbl.report.txt.sample
+@sample %%DATADIR%%/reports/cy+en/sender.spam.report.txt.sample
+@sample %%DATADIR%%/reports/cy+en/sender.spam.sa.report.txt.sample
+@sample %%DATADIR%%/reports/cy+en/sender.virus.report.txt.sample
+@sample %%DATADIR%%/reports/cy+en/stored.content.message.txt.sample
+@sample %%DATADIR%%/reports/cy+en/stored.filename.message.txt.sample
+@sample %%DATADIR%%/reports/cy+en/stored.size.message.txt.sample
+@sample %%DATADIR%%/reports/cy+en/stored.virus.message.txt.sample
+@sample %%DATADIR%%/reports/cz/deleted.content.message.txt.sample
+@sample %%DATADIR%%/reports/cz/deleted.filename.message.txt.sample
+@sample %%DATADIR%%/reports/cz/deleted.size.message.txt.sample
+@sample %%DATADIR%%/reports/cz/deleted.virus.message.txt.sample
+@sample %%DATADIR%%/reports/cz/disinfected.report.txt.sample
+@sample %%DATADIR%%/reports/cz/inline.sig.html.sample
+@sample %%DATADIR%%/reports/cz/inline.sig.txt.sample
+@sample %%DATADIR%%/reports/cz/inline.spam.warning.txt.sample
+@sample %%DATADIR%%/reports/cz/inline.warning.html.sample
+@sample %%DATADIR%%/reports/cz/inline.warning.txt.sample
+@sample %%DATADIR%%/reports/cz/languages.conf.sample
+@sample %%DATADIR%%/reports/cz/languages.conf.strings.sample
+@sample %%DATADIR%%/reports/cz/recipient.mcp.report.txt.sample
+@sample %%DATADIR%%/reports/cz/recipient.spam.report.txt.sample
+@sample %%DATADIR%%/reports/cz/rejection.report.txt.sample
+@sample %%DATADIR%%/reports/cz/sender.content.report.txt.sample
+@sample %%DATADIR%%/reports/cz/sender.error.report.txt.sample
+@sample %%DATADIR%%/reports/cz/sender.filename.report.txt.sample
+@sample %%DATADIR%%/reports/cz/sender.mcp.report.txt.sample
+@sample %%DATADIR%%/reports/cz/sender.size.report.txt.sample
+@sample %%DATADIR%%/reports/cz/sender.spam.rbl.report.txt.sample
+@sample %%DATADIR%%/reports/cz/sender.spam.report.txt.sample
+@sample %%DATADIR%%/reports/cz/sender.spam.sa.report.txt.sample
+@sample %%DATADIR%%/reports/cz/sender.virus.report.txt.sample
+@sample %%DATADIR%%/reports/cz/stored.content.message.txt.sample
+@sample %%DATADIR%%/reports/cz/stored.filename.message.txt.sample
+@sample %%DATADIR%%/reports/cz/stored.size.message.txt.sample
+@sample %%DATADIR%%/reports/cz/stored.virus.message.txt.sample
+@sample %%DATADIR%%/reports/de/deleted.content.message.txt.sample
+@sample %%DATADIR%%/reports/de/deleted.filename.message.txt.sample
+@sample %%DATADIR%%/reports/de/deleted.size.message.txt.sample
+@sample %%DATADIR%%/reports/de/deleted.virus.message.txt.sample
+@sample %%DATADIR%%/reports/de/disinfected.report.txt.sample
+@sample %%DATADIR%%/reports/de/inline.sig.html.sample
+@sample %%DATADIR%%/reports/de/inline.sig.txt.sample
+@sample %%DATADIR%%/reports/de/inline.spam.warning.txt.sample
+@sample %%DATADIR%%/reports/de/inline.warning.html.sample
+@sample %%DATADIR%%/reports/de/inline.warning.txt.sample
+@sample %%DATADIR%%/reports/de/languages.conf.sample
+@sample %%DATADIR%%/reports/de/languages.conf.strings.sample
+@sample %%DATADIR%%/reports/de/recipient.mcp.report.txt.sample
+@sample %%DATADIR%%/reports/de/recipient.spam.report.txt.sample
+@sample %%DATADIR%%/reports/de/rejection.report.txt.sample
+@sample %%DATADIR%%/reports/de/sender.content.report.txt.sample
+@sample %%DATADIR%%/reports/de/sender.error.report.txt.sample
+@sample %%DATADIR%%/reports/de/sender.filename.report.txt.sample
+@sample %%DATADIR%%/reports/de/sender.mcp.report.txt.sample
+@sample %%DATADIR%%/reports/de/sender.size.report.txt.sample
+@sample %%DATADIR%%/reports/de/sender.spam.rbl.report.txt.sample
+@sample %%DATADIR%%/reports/de/sender.spam.report.txt.sample
+@sample %%DATADIR%%/reports/de/sender.spam.sa.report.txt.sample
+@sample %%DATADIR%%/reports/de/sender.virus.report.txt.sample
+@sample %%DATADIR%%/reports/de/stored.content.message.txt.sample
+@sample %%DATADIR%%/reports/de/stored.filename.message.txt.sample
+@sample %%DATADIR%%/reports/de/stored.size.message.txt.sample
+@sample %%DATADIR%%/reports/de/stored.virus.message.txt.sample
+@sample %%DATADIR%%/reports/dk/deleted.content.message.txt.sample
+@sample %%DATADIR%%/reports/dk/deleted.filename.message.txt.sample
+@sample %%DATADIR%%/reports/dk/deleted.size.message.txt.sample
+@sample %%DATADIR%%/reports/dk/deleted.virus.message.txt.sample
+@sample %%DATADIR%%/reports/dk/disinfected.report.txt.sample
+@sample %%DATADIR%%/reports/dk/inline.sig.html.sample
+@sample %%DATADIR%%/reports/dk/inline.sig.txt.sample
+@sample %%DATADIR%%/reports/dk/inline.spam.warning.txt.sample
+@sample %%DATADIR%%/reports/dk/inline.warning.html.sample
+@sample %%DATADIR%%/reports/dk/inline.warning.txt.sample
+@sample %%DATADIR%%/reports/dk/languages.conf.sample
+@sample %%DATADIR%%/reports/dk/languages.conf.strings.sample
+@sample %%DATADIR%%/reports/dk/recipient.mcp.report.txt.sample
+@sample %%DATADIR%%/reports/dk/recipient.spam.report.txt.sample
+@sample %%DATADIR%%/reports/dk/rejection.report.txt.sample
+@sample %%DATADIR%%/reports/dk/sender.content.report.txt.sample
+@sample %%DATADIR%%/reports/dk/sender.error.report.txt.sample
+@sample %%DATADIR%%/reports/dk/sender.filename.report.txt.sample
+@sample %%DATADIR%%/reports/dk/sender.mcp.report.txt.sample
+@sample %%DATADIR%%/reports/dk/sender.size.report.txt.sample
+@sample %%DATADIR%%/reports/dk/sender.spam.rbl.report.txt.sample
+@sample %%DATADIR%%/reports/dk/sender.spam.report.txt.sample
+@sample %%DATADIR%%/reports/dk/sender.spam.sa.report.txt.sample
+@sample %%DATADIR%%/reports/dk/sender.virus.report.txt.sample
+@sample %%DATADIR%%/reports/dk/stored.content.message.txt.sample
+@sample %%DATADIR%%/reports/dk/stored.filename.message.txt.sample
+@sample %%DATADIR%%/reports/dk/stored.size.message.txt.sample
+@sample %%DATADIR%%/reports/dk/stored.virus.message.txt.sample
+@sample %%DATADIR%%/reports/en/deleted.content.message.txt.sample
+@sample %%DATADIR%%/reports/en/deleted.filename.message.txt.sample
+@sample %%DATADIR%%/reports/en/deleted.size.message.txt.sample
+@sample %%DATADIR%%/reports/en/deleted.virus.message.txt.sample
+@sample %%DATADIR%%/reports/en/disinfected.report.txt.sample
+@sample %%DATADIR%%/reports/en/inline.sig.html.sample
+@sample %%DATADIR%%/reports/en/inline.sig.txt.sample
+@sample %%DATADIR%%/reports/en/inline.spam.warning.txt.sample
+@sample %%DATADIR%%/reports/en/inline.warning.html.sample
+@sample %%DATADIR%%/reports/en/inline.warning.txt.sample
+@sample %%DATADIR%%/reports/en/languages.conf.sample
+@sample %%DATADIR%%/reports/en/languages.conf.strings.sample
+@sample %%DATADIR%%/reports/en/recipient.mcp.report.txt.sample
+@sample %%DATADIR%%/reports/en/recipient.spam.report.txt.sample
+@sample %%DATADIR%%/reports/en/rejection.report.txt.sample
+@sample %%DATADIR%%/reports/en/sender.content.report.txt.sample
+@sample %%DATADIR%%/reports/en/sender.error.report.txt.sample
+@sample %%DATADIR%%/reports/en/sender.filename.report.txt.sample
+@sample %%DATADIR%%/reports/en/sender.mcp.report.txt.sample
+@sample %%DATADIR%%/reports/en/sender.size.report.txt.sample
+@sample %%DATADIR%%/reports/en/sender.spam.rbl.report.txt.sample
+@sample %%DATADIR%%/reports/en/sender.spam.report.txt.sample
+@sample %%DATADIR%%/reports/en/sender.spam.sa.report.txt.sample
+@sample %%DATADIR%%/reports/en/sender.virus.report.txt.sample
+@sample %%DATADIR%%/reports/en/stored.content.message.txt.sample
+@sample %%DATADIR%%/reports/en/stored.filename.message.txt.sample
+@sample %%DATADIR%%/reports/en/stored.size.message.txt.sample
+@sample %%DATADIR%%/reports/en/stored.virus.message.txt.sample
+@sample %%DATADIR%%/reports/es/deleted.content.message.txt.sample
+@sample %%DATADIR%%/reports/es/deleted.filename.message.txt.sample
+@sample %%DATADIR%%/reports/es/deleted.size.message.txt.sample
+@sample %%DATADIR%%/reports/es/deleted.virus.message.txt.sample
+@sample %%DATADIR%%/reports/es/disinfected.report.txt.sample
+@sample %%DATADIR%%/reports/es/inline.sig.html.sample
+@sample %%DATADIR%%/reports/es/inline.sig.txt.sample
+@sample %%DATADIR%%/reports/es/inline.spam.warning.txt.sample
+@sample %%DATADIR%%/reports/es/inline.warning.html.sample
+@sample %%DATADIR%%/reports/es/inline.warning.txt.sample
+@sample %%DATADIR%%/reports/es/languages.conf.sample
+@sample %%DATADIR%%/reports/es/languages.conf.strings.sample
+@sample %%DATADIR%%/reports/es/recipient.mcp.report.txt.sample
+@sample %%DATADIR%%/reports/es/recipient.spam.report.txt.sample
+@sample %%DATADIR%%/reports/es/rejection.report.txt.sample
+@sample %%DATADIR%%/reports/es/sender.content.report.txt.sample
+@sample %%DATADIR%%/reports/es/sender.error.report.txt.sample
+@sample %%DATADIR%%/reports/es/sender.filename.report.txt.sample
+@sample %%DATADIR%%/reports/es/sender.mcp.report.txt.sample
+@sample %%DATADIR%%/reports/es/sender.size.report.txt.sample
+@sample %%DATADIR%%/reports/es/sender.spam.rbl.report.txt.sample
+@sample %%DATADIR%%/reports/es/sender.spam.report.txt.sample
+@sample %%DATADIR%%/reports/es/sender.spam.sa.report.txt.sample
+@sample %%DATADIR%%/reports/es/sender.virus.report.txt.sample
+@sample %%DATADIR%%/reports/es/stored.content.message.txt.sample
+@sample %%DATADIR%%/reports/es/stored.filename.message.txt.sample
+@sample %%DATADIR%%/reports/es/stored.size.message.txt.sample
+@sample %%DATADIR%%/reports/es/stored.virus.message.txt.sample
+@sample %%DATADIR%%/reports/fr/deleted.content.message.txt.sample
+@sample %%DATADIR%%/reports/fr/deleted.filename.message.txt.sample
+@sample %%DATADIR%%/reports/fr/deleted.size.message.txt.sample
+@sample %%DATADIR%%/reports/fr/deleted.virus.message.txt.sample
+@sample %%DATADIR%%/reports/fr/disinfected.report.txt.sample
+@sample %%DATADIR%%/reports/fr/inline.sig.html.sample
+@sample %%DATADIR%%/reports/fr/inline.sig.txt.sample
+@sample %%DATADIR%%/reports/fr/inline.spam.warning.txt.sample
+@sample %%DATADIR%%/reports/fr/inline.warning.html.sample
+@sample %%DATADIR%%/reports/fr/inline.warning.txt.sample
+@sample %%DATADIR%%/reports/fr/languages.conf.sample
+@sample %%DATADIR%%/reports/fr/languages.conf.strings.sample
+@sample %%DATADIR%%/reports/fr/recipient.mcp.report.txt.sample
+@sample %%DATADIR%%/reports/fr/recipient.spam.report.txt.sample
+@sample %%DATADIR%%/reports/fr/rejection.report.txt.sample
+@sample %%DATADIR%%/reports/fr/sender.content.report.txt.sample
+@sample %%DATADIR%%/reports/fr/sender.error.report.txt.sample
+@sample %%DATADIR%%/reports/fr/sender.filename.report.txt.sample
+@sample %%DATADIR%%/reports/fr/sender.mcp.report.txt.sample
+@sample %%DATADIR%%/reports/fr/sender.size.report.txt.sample
+@sample %%DATADIR%%/reports/fr/sender.spam.rbl.report.txt.sample
+@sample %%DATADIR%%/reports/fr/sender.spam.report.txt.sample
+@sample %%DATADIR%%/reports/fr/sender.spam.sa.report.txt.sample
+@sample %%DATADIR%%/reports/fr/sender.virus.report.txt.sample
+@sample %%DATADIR%%/reports/fr/stored.content.message.txt.sample
+@sample %%DATADIR%%/reports/fr/stored.filename.message.txt.sample
+@sample %%DATADIR%%/reports/fr/stored.size.message.txt.sample
+@sample %%DATADIR%%/reports/fr/stored.virus.message.txt.sample
+@sample %%DATADIR%%/reports/hu/deleted.content.message.txt.sample
+@sample %%DATADIR%%/reports/hu/deleted.filename.message.txt.sample
+@sample %%DATADIR%%/reports/hu/deleted.size.message.txt.sample
+@sample %%DATADIR%%/reports/hu/deleted.virus.message.txt.sample
+@sample %%DATADIR%%/reports/hu/disinfected.report.txt.sample
+@sample %%DATADIR%%/reports/hu/inline.sig.html.sample
+@sample %%DATADIR%%/reports/hu/inline.sig.txt.sample
+@sample %%DATADIR%%/reports/hu/inline.spam.warning.txt.sample
+@sample %%DATADIR%%/reports/hu/inline.warning.html.sample
+@sample %%DATADIR%%/reports/hu/inline.warning.txt.sample
+@sample %%DATADIR%%/reports/hu/languages.conf.sample
+@sample %%DATADIR%%/reports/hu/languages.conf.strings.sample
+@sample %%DATADIR%%/reports/hu/recipient.mcp.report.txt.sample
+@sample %%DATADIR%%/reports/hu/recipient.spam.report.txt.sample
+@sample %%DATADIR%%/reports/hu/rejection.report.txt.sample
+@sample %%DATADIR%%/reports/hu/sender.content.report.txt.sample
+@sample %%DATADIR%%/reports/hu/sender.error.report.txt.sample
+@sample %%DATADIR%%/reports/hu/sender.filename.report.txt.sample
+@sample %%DATADIR%%/reports/hu/sender.mcp.report.txt.sample
+@sample %%DATADIR%%/reports/hu/sender.size.report.txt.sample
+@sample %%DATADIR%%/reports/hu/sender.spam.rbl.report.txt.sample
+@sample %%DATADIR%%/reports/hu/sender.spam.report.txt.sample
+@sample %%DATADIR%%/reports/hu/sender.spam.sa.report.txt.sample
+@sample %%DATADIR%%/reports/hu/sender.virus.report.txt.sample
+@sample %%DATADIR%%/reports/hu/stored.content.message.txt.sample
+@sample %%DATADIR%%/reports/hu/stored.filename.message.txt.sample
+@sample %%DATADIR%%/reports/hu/stored.size.message.txt.sample
+@sample %%DATADIR%%/reports/hu/stored.virus.message.txt.sample
+@sample %%DATADIR%%/reports/it/deleted.content.message.txt.sample
+@sample %%DATADIR%%/reports/it/deleted.filename.message.txt.sample
+@sample %%DATADIR%%/reports/it/deleted.size.message.txt.sample
+@sample %%DATADIR%%/reports/it/deleted.virus.message.txt.sample
+@sample %%DATADIR%%/reports/it/disinfected.report.txt.sample
+@sample %%DATADIR%%/reports/it/inline.sig.html.sample
+@sample %%DATADIR%%/reports/it/inline.sig.txt.sample
+@sample %%DATADIR%%/reports/it/inline.spam.warning.txt.sample
+@sample %%DATADIR%%/reports/it/inline.warning.html.sample
+@sample %%DATADIR%%/reports/it/inline.warning.txt.sample
+@sample %%DATADIR%%/reports/it/languages.conf.sample
+@sample %%DATADIR%%/reports/it/languages.conf.strings.sample
+@sample %%DATADIR%%/reports/it/recipient.mcp.report.txt.sample
+@sample %%DATADIR%%/reports/it/recipient.spam.report.txt.sample
+@sample %%DATADIR%%/reports/it/rejection.report.txt.sample
+@sample %%DATADIR%%/reports/it/sender.content.report.txt.sample
+@sample %%DATADIR%%/reports/it/sender.error.report.txt.sample
+@sample %%DATADIR%%/reports/it/sender.filename.report.txt.sample
+@sample %%DATADIR%%/reports/it/sender.mcp.report.txt.sample
+@sample %%DATADIR%%/reports/it/sender.size.report.txt.sample
+@sample %%DATADIR%%/reports/it/sender.spam.rbl.report.txt.sample
+@sample %%DATADIR%%/reports/it/sender.spam.report.txt.sample
+@sample %%DATADIR%%/reports/it/sender.spam.sa.report.txt.sample
+@sample %%DATADIR%%/reports/it/sender.virus.report.txt.sample
+@sample %%DATADIR%%/reports/it/stored.content.message.txt.sample
+@sample %%DATADIR%%/reports/it/stored.filename.message.txt.sample
+@sample %%DATADIR%%/reports/it/stored.size.message.txt.sample
+@sample %%DATADIR%%/reports/it/stored.virus.message.txt.sample
+@sample %%DATADIR%%/reports/nl/deleted.content.message.txt.sample
+@sample %%DATADIR%%/reports/nl/deleted.filename.message.txt.sample
+@sample %%DATADIR%%/reports/nl/deleted.size.message.txt.sample
+@sample %%DATADIR%%/reports/nl/deleted.virus.message.txt.sample
+@sample %%DATADIR%%/reports/nl/disinfected.report.txt.sample
+@sample %%DATADIR%%/reports/nl/inline.sig.html.sample
+@sample %%DATADIR%%/reports/nl/inline.sig.txt.sample
+@sample %%DATADIR%%/reports/nl/inline.spam.warning.txt.sample
+@sample %%DATADIR%%/reports/nl/inline.warning.html.sample
+@sample %%DATADIR%%/reports/nl/inline.warning.txt.sample
+@sample %%DATADIR%%/reports/nl/languages.conf.sample
+@sample %%DATADIR%%/reports/nl/languages.conf.strings.sample
+@sample %%DATADIR%%/reports/nl/recipient.mcp.report.txt.sample
+@sample %%DATADIR%%/reports/nl/recipient.spam.report.txt.sample
+@sample %%DATADIR%%/reports/nl/rejection.report.txt.sample
+@sample %%DATADIR%%/reports/nl/sender.content.report.txt.sample
+@sample %%DATADIR%%/reports/nl/sender.error.report.txt.sample
+@sample %%DATADIR%%/reports/nl/sender.filename.report.txt.sample
+@sample %%DATADIR%%/reports/nl/sender.mcp.report.txt.sample
+@sample %%DATADIR%%/reports/nl/sender.size.report.txt.sample
+@sample %%DATADIR%%/reports/nl/sender.spam.rbl.report.txt.sample
+@sample %%DATADIR%%/reports/nl/sender.spam.report.txt.sample
+@sample %%DATADIR%%/reports/nl/sender.spam.sa.report.txt.sample
+@sample %%DATADIR%%/reports/nl/sender.virus.report.txt.sample
+@sample %%DATADIR%%/reports/nl/stored.content.message.txt.sample
+@sample %%DATADIR%%/reports/nl/stored.filename.message.txt.sample
+@sample %%DATADIR%%/reports/nl/stored.size.message.txt.sample
+@sample %%DATADIR%%/reports/nl/stored.virus.message.txt.sample
+@sample %%DATADIR%%/reports/pt_br/deleted.content.message.txt.sample
+@sample %%DATADIR%%/reports/pt_br/deleted.filename.message.txt.sample
+@sample %%DATADIR%%/reports/pt_br/deleted.size.message.txt.sample
+@sample %%DATADIR%%/reports/pt_br/deleted.virus.message.txt.sample
+@sample %%DATADIR%%/reports/pt_br/disinfected.report.txt.sample
+@sample %%DATADIR%%/reports/pt_br/inline.sig.html.sample
+@sample %%DATADIR%%/reports/pt_br/inline.sig.txt.sample
+@sample %%DATADIR%%/reports/pt_br/inline.spam.warning.txt.sample
+@sample %%DATADIR%%/reports/pt_br/inline.warning.html.sample
+@sample %%DATADIR%%/reports/pt_br/inline.warning.txt.sample
+@sample %%DATADIR%%/reports/pt_br/languages.conf.sample
+@sample %%DATADIR%%/reports/pt_br/languages.conf.strings.sample
+@sample %%DATADIR%%/reports/pt_br/recipient.mcp.report.txt.sample
+@sample %%DATADIR%%/reports/pt_br/recipient.spam.report.txt.sample
+@sample %%DATADIR%%/reports/pt_br/rejection.report.txt.sample
+@sample %%DATADIR%%/reports/pt_br/sender.content.report.txt.sample
+@sample %%DATADIR%%/reports/pt_br/sender.error.report.txt.sample
+@sample %%DATADIR%%/reports/pt_br/sender.filename.report.txt.sample
+@sample %%DATADIR%%/reports/pt_br/sender.mcp.report.txt.sample
+@sample %%DATADIR%%/reports/pt_br/sender.size.report.txt.sample
+@sample %%DATADIR%%/reports/pt_br/sender.spam.rbl.report.txt.sample
+@sample %%DATADIR%%/reports/pt_br/sender.spam.report.txt.sample
+@sample %%DATADIR%%/reports/pt_br/sender.spam.sa.report.txt.sample
+@sample %%DATADIR%%/reports/pt_br/sender.virus.report.txt.sample
+@sample %%DATADIR%%/reports/pt_br/stored.content.message.txt.sample
+@sample %%DATADIR%%/reports/pt_br/stored.filename.message.txt.sample
+@sample %%DATADIR%%/reports/pt_br/stored.size.message.txt.sample
+@sample %%DATADIR%%/reports/pt_br/stored.virus.message.txt.sample
+@sample %%DATADIR%%/reports/ro/deleted.content.message.txt.sample
+@sample %%DATADIR%%/reports/ro/deleted.filename.message.txt.sample
+@sample %%DATADIR%%/reports/ro/deleted.size.message.txt.sample
+@sample %%DATADIR%%/reports/ro/deleted.virus.message.txt.sample
+@sample %%DATADIR%%/reports/ro/disinfected.report.txt.sample
+@sample %%DATADIR%%/reports/ro/inline.sig.html.sample
+@sample %%DATADIR%%/reports/ro/inline.sig.txt.sample
+@sample %%DATADIR%%/reports/ro/inline.spam.warning.txt.sample
+@sample %%DATADIR%%/reports/ro/inline.warning.html.sample
+@sample %%DATADIR%%/reports/ro/inline.warning.txt.sample
+@sample %%DATADIR%%/reports/ro/languages.conf.sample
+@sample %%DATADIR%%/reports/ro/languages.conf.strings.sample
+@sample %%DATADIR%%/reports/ro/recipient.mcp.report.txt.sample
+@sample %%DATADIR%%/reports/ro/recipient.spam.report.txt.sample
+@sample %%DATADIR%%/reports/ro/rejection.report.txt.sample
+@sample %%DATADIR%%/reports/ro/sender.content.report.txt.sample
+@sample %%DATADIR%%/reports/ro/sender.error.report.txt.sample
+@sample %%DATADIR%%/reports/ro/sender.filename.report.txt.sample
+@sample %%DATADIR%%/reports/ro/sender.mcp.report.txt.sample
+@sample %%DATADIR%%/reports/ro/sender.size.report.txt.sample
+@sample %%DATADIR%%/reports/ro/sender.spam.rbl.report.txt.sample
+@sample %%DATADIR%%/reports/ro/sender.spam.report.txt.sample
+@sample %%DATADIR%%/reports/ro/sender.spam.sa.report.txt.sample
+@sample %%DATADIR%%/reports/ro/sender.virus.report.txt.sample
+@sample %%DATADIR%%/reports/ro/stored.content.message.txt.sample
+@sample %%DATADIR%%/reports/ro/stored.filename.message.txt.sample
+@sample %%DATADIR%%/reports/ro/stored.size.message.txt.sample
+@sample %%DATADIR%%/reports/ro/stored.virus.message.txt.sample
+@sample %%DATADIR%%/reports/se/deleted.content.message.txt.sample
+@sample %%DATADIR%%/reports/se/deleted.filename.message.txt.sample
+@sample %%DATADIR%%/reports/se/deleted.size.message.txt.sample
+@sample %%DATADIR%%/reports/se/deleted.virus.message.txt.sample
+@sample %%DATADIR%%/reports/se/disinfected.report.txt.sample
+@sample %%DATADIR%%/reports/se/inline.sig.html.sample
+@sample %%DATADIR%%/reports/se/inline.sig.txt.sample
+@sample %%DATADIR%%/reports/se/inline.spam.warning.txt.sample
+@sample %%DATADIR%%/reports/se/inline.warning.html.sample
+@sample %%DATADIR%%/reports/se/inline.warning.txt.sample
+@sample %%DATADIR%%/reports/se/languages.conf.sample
+@sample %%DATADIR%%/reports/se/languages.conf.strings.sample
+@sample %%DATADIR%%/reports/se/recipient.mcp.report.txt.sample
+@sample %%DATADIR%%/reports/se/recipient.spam.report.txt.sample
+@sample %%DATADIR%%/reports/se/rejection.report.txt.sample
+@sample %%DATADIR%%/reports/se/sender.content.report.txt.sample
+@sample %%DATADIR%%/reports/se/sender.error.report.txt.sample
+@sample %%DATADIR%%/reports/se/sender.filename.report.txt.sample
+@sample %%DATADIR%%/reports/se/sender.mcp.report.txt.sample
+@sample %%DATADIR%%/reports/se/sender.size.report.txt.sample
+@sample %%DATADIR%%/reports/se/sender.spam.rbl.report.txt.sample
+@sample %%DATADIR%%/reports/se/sender.spam.report.txt.sample
+@sample %%DATADIR%%/reports/se/sender.spam.sa.report.txt.sample
+@sample %%DATADIR%%/reports/se/sender.virus.report.txt.sample
+@sample %%DATADIR%%/reports/se/stored.content.message.txt.sample
+@sample %%DATADIR%%/reports/se/stored.filename.message.txt.sample
+@sample %%DATADIR%%/reports/se/stored.size.message.txt.sample
+@sample %%DATADIR%%/reports/se/stored.virus.message.txt.sample
+@sample %%DATADIR%%/reports/sk/deleted.content.message.txt.sample
+@sample %%DATADIR%%/reports/sk/deleted.filename.message.txt.sample
+@sample %%DATADIR%%/reports/sk/deleted.size.message.txt.sample
+@sample %%DATADIR%%/reports/sk/deleted.virus.message.txt.sample
+@sample %%DATADIR%%/reports/sk/disinfected.report.txt.sample
+@sample %%DATADIR%%/reports/sk/inline.sig.html.sample
+@sample %%DATADIR%%/reports/sk/inline.sig.txt.sample
+@sample %%DATADIR%%/reports/sk/inline.spam.warning.txt.sample
+@sample %%DATADIR%%/reports/sk/inline.warning.html.sample
+@sample %%DATADIR%%/reports/sk/inline.warning.txt.sample
+@sample %%DATADIR%%/reports/sk/languages.conf.sample
+@sample %%DATADIR%%/reports/sk/languages.conf.strings.sample
+@sample %%DATADIR%%/reports/sk/recipient.mcp.report.txt.sample
+@sample %%DATADIR%%/reports/sk/recipient.spam.report.txt.sample
+@sample %%DATADIR%%/reports/sk/rejection.report.txt.sample
+@sample %%DATADIR%%/reports/sk/sender.content.report.txt.sample
+@sample %%DATADIR%%/reports/sk/sender.error.report.txt.sample
+@sample %%DATADIR%%/reports/sk/sender.filename.report.txt.sample
+@sample %%DATADIR%%/reports/sk/sender.mcp.report.txt.sample
+@sample %%DATADIR%%/reports/sk/sender.size.report.txt.sample
+@sample %%DATADIR%%/reports/sk/sender.spam.rbl.report.txt.sample
+@sample %%DATADIR%%/reports/sk/sender.spam.report.txt.sample
+@sample %%DATADIR%%/reports/sk/sender.spam.sa.report.txt.sample
+@sample %%DATADIR%%/reports/sk/sender.virus.report.txt.sample
+@sample %%DATADIR%%/reports/sk/stored.content.message.txt.sample
+@sample %%DATADIR%%/reports/sk/stored.filename.message.txt.sample
+@sample %%DATADIR%%/reports/sk/stored.size.message.txt.sample
+@sample %%DATADIR%%/reports/sk/stored.virus.message.txt.sample
+lib/MailScanner/init/ms-init
+lib/MailScanner/wrapper/avast-wrapper
+lib/MailScanner/wrapper/avg-autoupdate
+lib/MailScanner/wrapper/avg-wrapper
+lib/MailScanner/wrapper/bitdefender-autoupdate
+lib/MailScanner/wrapper/bitdefender-wrapper
+lib/MailScanner/wrapper/clamav-autoupdate
+lib/MailScanner/wrapper/clamav-wrapper
+lib/MailScanner/wrapper/esets-wrapper
+lib/MailScanner/wrapper/f-secure-autoupdate
+lib/MailScanner/wrapper/f-secure-wrapper
+lib/MailScanner/wrapper/generic-autoupdate
+lib/MailScanner/wrapper/generic-wrapper
+lib/MailScanner/wrapper/sophos-autoupdate
+lib/MailScanner/wrapper/sophos-wrapper
+
