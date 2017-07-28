@@ -5,16 +5,17 @@ PORTNAME=	freebsd-snapshot
 DISTVERSION=	20091208.1
 PORTREVISION=	1
 CATEGORIES=	sysutils
-MASTER_SITES=	http://people.freebsd.org/~rse/dist/
+MASTER_SITES=	https://people.freebsd.org/~rse/dist/
 
 MAINTAINER=	gtodd@bellanet.org
 COMMENT=	Convenience frontend tools for the management of UFS2 snapshots
 
+LICENSE=	BSD2CLAUSE
+
 NO_BUILD=	yes
+NO_ARCH=	yes
 
 SUB_FILES=	pkg-message pkg-deinstall
-PKGMESSAGE=	${WRKDIR}/pkg-message
-PKGDEINSTALLL=	${WRKDIR}/pkg-deinstall
 
 PLIST_FILES=	etc/amd.map.snap man/man8/periodic-snapshot.8.gz \
 		man/man8/snapshot.8.gz sbin/periodic-snapshot sbin/snapshot
