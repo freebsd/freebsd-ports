@@ -13,7 +13,7 @@ COMMENT=	Fast and portable Forth system
 
 LIB_DEPENDS=	libffi.so.6:devel/libffi \
 		libltdl.so:devel/libltdl
-BUILD_DEPENDS=	${LOCALBASE}/include/avcall.h:devel/ffcall
+BUILD_DEPENDS=	${LOCALBASE}/include/avcall.h:devel/libffcall
 
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

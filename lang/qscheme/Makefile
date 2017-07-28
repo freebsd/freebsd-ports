@@ -12,7 +12,7 @@ COMMENT=	Small and fast Scheme interpreter
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libavcall.so:devel/ffcall \
+LIB_DEPENDS=	libavcall.so:devel/libffcall \
 		libgmp.so:math/gmp \
 		libpcre.so:devel/pcre
 
