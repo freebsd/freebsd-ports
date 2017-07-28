@@ -473,7 +473,7 @@ _initialize_i386_kgdb_tdep(void)
 				       bfd_target_elf_flavour,
 				       fbsd_kernel_osabi_sniffer);
 	gdbarch_register_osabi (bfd_arch_i386, 0,
-	    GDB_OSABI_FREEBSD_ELF_KERNEL, i386fbsd_kernel_init_abi);
+	    GDB_OSABI_FREEBSD_KERNEL, i386fbsd_kernel_init_abi);
 
 	i386fbsd_pspace_data = register_program_space_data_with_cleanup (NULL,
 	    i386fbsd_pspace_data_cleanup);
