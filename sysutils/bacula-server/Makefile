@@ -114,7 +114,7 @@ MYSQL_USE=		MYSQL=yes
 SQLITE3_CONFIGURE_ON=	--with-sqlite3=yes
 SQLITE3_LIB_DEPENDS=	libsqlite3.so:databases/sqlite3
 PGSQL_CONFIGURE_ON=	--with-postgresql=yes
-#PGSQL_USE=		USES+=pgsql
+PGSQL_USE=		USES+=pgsql
 
 MTX_RUN_DEPENDS=	${LOCALBASE}/sbin/mtx:misc/mtx
 
