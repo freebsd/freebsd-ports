@@ -3,7 +3,7 @@
 
 PORTNAME=	clanlib
 PORTVERSION=	2.3.7
-PORTREVISION=	13
+PORTREVISION=	14
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.clanlib.org/download/releases-2.0/
@@ -52,9 +52,5 @@ post-patch:
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e '114 s|/proc/self/exe|/proc/curproc/file|g' \
 		${WRKSRC}/Sources/Core/System/Unix/init_linux.cpp
-	@${REINPLACE_CMD} -e 's|APPLE|FreeBSD|g' \
-		${WRKSRC}/Sources/Core/System/system.cpp
-	@${REINPLACE_CMD} -e '47 s|#ifndef __FreeBSD__|#if !defined(__FreeBSD__)|g' \
-		${WRKSRC}/Sources/Core/System/system.cpp
 
 .include <bsd.port.mk>
