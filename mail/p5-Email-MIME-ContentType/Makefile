@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	Email-MIME-ContentType
-PORTVERSION=	1.018
+PORTVERSION=	1.020
 CATEGORIES=	mail perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -17,4 +17,11 @@ NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 502508
+BUILD_DEPENDS+=	p5-Encode>=2.87:converters/p5-Encode
+RUN_DEPENDS+=	p5-Encode>=2.87:converters/p5-Encode
+.endif
+
+.include <bsd.port.post.mk>
