@@ -9390,6 +9390,7 @@ net-mgmt/zabbix24-proxy||2017-05-29|Has expired: Upstream has declared this vers
 net-mgmt/zabbix24-server||2017-05-29|Has expired: Upstream has declared this version EoL in 2016 (Q1)
 net/py-cloudfiles|net/py-python-cloudfiles|2017-05-30|Rename to match PyPI naming
 irc/konversation-kde4|irc/konversation|2017-05-30|Renamed to irc/konversation
+net/py-python-swiftclient|databases/py-python-swiftclient|2017-05-31|Duplicate port
 lang/perl5.20|lang/perl5.24|2017-06-01|Support ends three years after .0 release, please upgrade to a more recent version of Perl
 misc/unicode-ucd|textproc/UCD|2017-06-02|unicode-ucd was a duplicate of textproc/UCD, remove the younger port
 print/gutenprint-base|print/gutenprint|2017-06-04|Folded into gutenprint port
