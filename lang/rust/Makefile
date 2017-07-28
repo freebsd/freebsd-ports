@@ -80,7 +80,7 @@ LLNEXTGEN_BUILD_DEPENDS=	LLnextgen:devel/llnextgen
 
 # Rust may pass more regression tests with bundled LLVM
 PORT_LLVM_DESC=	Build against devel/llvm${LLVM_VER} instead of bundled version
-PORT_LLVM_BUILD_DEPENDS=	${LLVM_PREFIX}/bin/FileCheck:devel/llvm${LLVM_VER}
+PORT_LLVM_BUILD_DEPENDS=	${LOCALBASE}/bin/FileCheck${LLVM_VER}:devel/llvm${LLVM_VER}
 LLVM_VER?=			40
 LLVM_CONFIG=			${LOCALBASE}/bin/llvm-config${LLVM_VER}
 
