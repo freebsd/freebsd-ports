@@ -36,6 +36,7 @@ bin/git-locked
 bin/git-merge-into
 bin/git-merge-repo
 bin/git-missing
+bin/git-mr
 bin/git-obliterate
 bin/git-pr
 bin/git-psykorebase
@@ -103,6 +104,7 @@ man/man1/git-locked.1.gz
 man/man1/git-merge-into.1.gz
 man/man1/git-merge-repo.1.gz
 man/man1/git-missing.1.gz
+man/man1/git-mr.1.gz
 man/man1/git-obliterate.1.gz
 man/man1/git-pr.1.gz
 man/man1/git-psykorebase.1.gz
