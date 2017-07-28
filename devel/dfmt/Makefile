@@ -2,11 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	dfmt
-DISTVERSION=	0.5.0beta5
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.5.0-beta5
 CATEGORIES=	devel
-MASTER_SITES=	https://github.com/dlang-community/dfmt/archive/
-DISTNAME=	${DISTVERSION:S/^/v/:S/beta5/-beta.5/}
-DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Formatter for D source code
@@ -17,8 +15,14 @@ BUILD_DEPENDS=	ldmd2:lang/ldc \
 		dub:devel/dub \
 		${LOCALBASE}/lib/d/libdparse.a:devel/libdparse
 
+USE_GITHUB=	yes
+GH_ACCOUNT=	dlang-community
+# FIXME: Remove this once it goes out of beta.
+# Side note, 0.5.0-beta.5 was a perfectly reasonable version to be used in
+# DISTVERSION.
+GH_TAGNAME=	v${DISTVERSION:S/beta/beta./}
+
 PLIST_FILES=	bin/${PORTNAME}
-WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION:S/beta5/-beta.5/}
 DUB_CMD=	${LOCALBASE}/bin/dub build --build=release
 
 post-patch:

@@ -1,0 +1,5 @@
+TIMESTAMP = 1501102325
+SHA256 (dgibson-qemu-2.10.0-8d5981c_GH0.tar.gz) = 1a0a19167259d1b4598d73f765b069643d4e8628c099be6c425644e33aa82deb
+SIZE (dgibson-qemu-2.10.0-8d5981c_GH0.tar.gz) = 14435599
+SHA256 (dtc-v1.4.0.tar.gz) = 39d0713efd82a27adc065ecb9ef36401c53d5ee87ae1764e2bb243fcd97488e3
+SIZE (dtc-v1.4.0.tar.gz) = 131893

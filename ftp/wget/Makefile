@@ -3,6 +3,7 @@
 
 PORTNAME=	wget
 DISTVERSION=	1.19.1
+PORTREVISION=	1
 CATEGORIES=	ftp www ipv6
 MASTER_SITES=	GNU
 
@@ -22,13 +23,13 @@ OPTIONS_SUB=	yes
 
 OPTIONS_RADIO=	SSL
 OPTIONS_RADIO_SSL=GNUTLS OPENSSL
-OPTIONS_DEFINE=	DOCS IDN IPV6 METALINK NLS PCRE PSL
-OPTIONS_DEFAULT=DOCS IDN OPENSSL
+OPTIONS_DEFINE=	DOCS IDN IPV6 MANPAGES METALINK NLS PCRE PSL
+OPTIONS_DEFAULT=DOCS IDN IPV6 MANPAGES NLS OPENSSL
 
-DOCS_DESC=	Install sample config file, info page and man page
+DOCS_DESC=	Install info page
+DOCS_CONFIGURE_ENV=	MAKEINFO=makeinfo
 DOCS_INFO=	wget
-DOCS_USE=	PERL5=build
-DOCS_USES=	makeinfo perl5
+DOCS_USES=	makeinfo
 
 IDN_LIB_DEPENDS=	libidn2.so:dns/libidn2 \
 			libunistring.so:devel/libunistring
@@ -40,6 +41,10 @@ IDN_CONFIGURE_ON=	--with-libidn=${LOCALBASE} \
 IDN_CONFIGURE_OFF=	--with-included-libunistring
 
 IPV6_CONFIGURE_ENABLE=	ipv6
+
+MANPAGES_CONFIGURE_ENV_OFF=	ac_cv_path_POD2MAN=no
+MANPAGES_USE=		PERL5=build
+MANPAGES_USES=		perl5
 
 METALINK_CONFIGURE_WITH=metalink
 METALINK_LIB_DEPENDS=	libmetalink.so:misc/libmetalink
@@ -77,16 +82,20 @@ CONFIGURE_ARGS+=--without-ssl
 
 TEST_TARGET=	check
 
-post-patch-DOCS-off:
-	${REINPLACE_CMD} -e '/^SUBDIRS = / s/ doc / /' ${WRKSRC}/Makefile.in
-
-post-patch-DOCS-on:
+# Executed regardless of whether DOCS is ON or OFF.
+post-patch:
 	${REINPLACE_CMD} -e 's,WGETRC = $$(sysconfdir)/wgetrc,&.sample,' \
 		${WRKSRC}/doc/Makefile.in
 	${REINPLACE_CMD} -e 's,/usr/local/etc/wgetrc,${PREFIX}/etc/wgetrc,' \
 		${WRKSRC}/doc/sample.wgetrc* \
-		${WRKSRC}/doc/wget.info \
 		${WRKSRC}/doc/wget.texi
+
+post-patch-DOCS-off:
+	${REINPLACE_CMD} \
+		-e '/^all: wget.info/ s,wget.info,,' \
+		-e '/^all-am:/ s, $$(INFO_DEPS),,' \
+		-e '/^install-data-am:/ s, install-info-am,,' \
+		${WRKSRC}/doc/Makefile.in
 
 .include <bsd.port.pre.mk>
 

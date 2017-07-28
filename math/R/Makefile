@@ -3,7 +3,7 @@
 
 PORTNAME=		R
 PORTVERSION=		3.4.1
-PORTREVISION=		2
+PORTREVISION=		3
 CATEGORIES=		math lang
 MASTER_SITES=		CRAN/src/base/R-${PORTVERSION:C|\..*||}
 
@@ -76,6 +76,7 @@ CAIROPANGO_CONFIGURE_WITH=cairo
 CAIROPANGO_USES=	gettext jpeg pkgconfig
 CAIROPANGO_USE=		GNOME=pango,cairo
 FLANG_USE=		binutils
+FLANG_PREVENTS=		ATLAS OPENBLAS NETLIB
 FLANG_BUILD_DEPENDS=	flang:devel/flang
 FLANG_RUN_DEPENDS=	flang:devel/flang
 FLANG_VARS=		F77=flang FC=flang
@@ -96,6 +97,7 @@ JPEG_USES=		jpeg
 LDOUBLE_CONFIGURE_ENABLE=long-double
 LETTER_CONFIGURE_ENV=	R_PAPERSIZE=letter
 LIBR_CONFIGURE_ENABLE=	R-shlib
+LIBR_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-src_main_Makefile.in
 LTO_CONFIGURE_ENABLE=	lto
 LTO_CONFIGURE_ENV=	AR="${LOCALBASE}/bin/gcc-ar${GCC_DEFAULT:S/.//g}" \
 			RANLIB="${LOCALBASE}/bin/gcc-ranlib${GCC_DEFAULT:S/.//g}"
@@ -121,6 +123,8 @@ RBLAS_CONFIGURE_ON=	--without-blas \
 			--enable-BLAS-shlib
 RBLAS_CONFIGURE_OFF=	--with-blas="-L${LOCALBASE}/lib ${BLASLIB}" \
 			--with-lapack="${LAPACKLIB}"
+RBLAS_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-src_extra_blas_Makefile.in \
+			${PATCHDIR}/extra-patch-src_modules_lapack_Makefile.in
 RPROF_CONFIGURE_ENABLE=	R-profiling
 TCLTK_IMPLIES=		X11
 TCLTK_USES=		tcl tk:84+

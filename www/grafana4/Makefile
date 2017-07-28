@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	grafana
-PORTVERSION=	4.3.2
-PORTREVISION=	1
+PORTVERSION=	4.4.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 MASTER_SITES+=	https://s3-us-west-2.amazonaws.com/grafana-releases/release/:public
@@ -25,7 +24,7 @@ USES=	compiler
 
 USE_GITHUB=	yes
 GH_SUBDIR=	src/github.com/${PORTNAME}/${PORTNAME}
-TAG=		349f3eb
+TAG=		9341412
 
 GRAFANA_USER?=	grafana
 GRAFANA_GROUP?=	grafana

@@ -3,6 +3,7 @@
 
 PORTNAME=	linuxcnc
 PORTVERSION=	20170708
+PORTREVISION=	1
 CATEGORIES=	cad
 PKGNAMESUFFIX=	-devel
 
@@ -59,7 +60,8 @@ post-patch:
 			-e 's|#!.*/bin/bash|#!${LOCALBASE}/bin/bash|' \
 			-e 's|#!.*/usr/bin/tclsh|#!${LOCALBASE}/bin/tclsh8.6|' \
 			-e 's|#!.*/usr/bin/wish|#!${LOCALBASE}/bin/wish8.6|' \
-			-e 's|#!.*/usr/bin/python|#!${LOCALBASE}/bin/env python2|' \
-			-e 's|#!.*/usr/bin/env python|#!/usr/bin/env python2|'
+			-e 's|#!.*/usr/bin/env python|#!/usr/bin/env python2|' \
+			-e 's|#!.*/usr/bin/python|#!/usr/bin/env python2|' \
+			-e 's|lib/tcltk|lib/tcllib|'
 
 .include <bsd.port.mk>

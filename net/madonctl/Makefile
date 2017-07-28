@@ -18,8 +18,8 @@ USES=		go
 
 PLIST_FILES=	bin/madonctl
 
-GH_TUPLE=	McKael:${PORTNAME}:${DISTVERSIONFULL} \
-		McKael:madon:v1.6.0:madon/../src/github.com/McKael/madon \
+GH_ACCOUNT=	McKael
+GH_TUPLE=	McKael:madon:v1.6.0:madon/../src/github.com/McKael/madon \
 		fsnotify:fsnotify:v1.4.2:fsnotify/../src/github.com/fsnotify/fsnotify \
 		ghodss:yaml:v1.0.0:yaml/../src/github.com/ghodss/yaml \
 		go-yaml:yaml:cd8b52f:yaml2/../src/gopkg.in/yaml.v2 \

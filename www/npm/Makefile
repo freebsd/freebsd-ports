@@ -3,6 +3,7 @@
 
 PORTNAME=	npm
 PORTVERSION=	5.3.0
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	LOCAL/sunpoet
 
@@ -19,10 +20,13 @@ CONFLICTS_INSTALL=	npm2 npm3 npm4
 NO_ARCH=	yes
 NO_BUILD=	yes
 REINPLACE_ARGS=	-i ''
-USES=		cpe python:2,run tar:xz
+USES=		cpe python:2,run shebangfix tar:xz
 
 CPE_VENDOR=	npmjs
 CPE_PRODUCT=	node_packaged_modules
+
+SHEBANG_GLOB=	*.py
+SHEBANG_FILES=	lib/node_modules/npm/node_modules/node-gyp/gyp/samples/samples
 
 .include <bsd.port.pre.mk>
 

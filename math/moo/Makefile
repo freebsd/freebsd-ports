@@ -13,7 +13,6 @@ LICENSE=	PD
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	raylai
-GH_TAGNAME=	${PORTVERSION}
 
 PLIST_FILES=	bin/moo man/man1/moo.1.gz
 

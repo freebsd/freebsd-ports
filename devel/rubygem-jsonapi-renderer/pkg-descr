@@ -1,0 +1,5 @@
+This gem efficiently renders JSON API documents.  Given a resource that
+implements a certain interface, a JSON-API-compliant hash representing the
+described document is returned.
+
+WWW: https://github.com/jsonapi-rb/jsonapi-renderer

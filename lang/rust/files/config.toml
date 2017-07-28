@@ -1,0 +1,22 @@
+[build]
+
+# python(1) location.
+python = "%PYTHON_CMD%"
+
+# Do we want to build docs?
+docs = %DOCS%
+
+[install]
+
+# Install location.
+prefix = "%PREFIX%"
+sysconfdir = "%SYSCONFDIR%"
+mandir = "%MANDIR%"
+
+[rust]
+
+# Rust release channel.
+channel = "%CHANNEL%"
+
+[target.%TARGET%]
+llvm-config = "%LLVM_CONFIG%"

@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	jo
-PORTVERSION=	1.0
+PORTVERSION=	1.1
 CATEGORIES=	textproc
 MASTER_SITES=	https://github.com/jpmens/${PORTNAME}/releases/download/v${PORTVERSION}/
 

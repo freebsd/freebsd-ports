@@ -1,0 +1,7 @@
+bin/bin2fex
+bin/fex2bin
+bin/sunxi-bootinfo
+bin/sunxi-fel
+bin/sunxi-fexc
+bin/sunxi-nand-part
+bin/sunxi-pio

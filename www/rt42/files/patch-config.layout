@@ -1,5 +1,5 @@
---- ./config.layout.orig	2014-05-06 17:59:04.000000000 +0100
-+++ ./config.layout	2014-05-14 15:26:37.717215779 +0100
+--- ./config.layout.orig	2017-07-12 14:22:49 UTC
++++ ./config.layout
 @@ -103,31 +103,31 @@
  </Layout>
  

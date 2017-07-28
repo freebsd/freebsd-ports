@@ -7,7 +7,6 @@ PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	http://pwhois.org/get/ \
 		http://mirrors.rit.edu/zi/
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	zi@FreeBSD.org
 COMMENT=	Whois-compatible framework for disclosing routing data
@@ -48,15 +47,15 @@ post-patch:
 do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR} ${STAGEDIR}${ETCDIR} \
 		${STAGEDIR}${PREFIX}/etc/periodic/daily
-	@${INSTALL_SCRIPT} ${WRKDIR}/512.pwhois-updatedb \
+	${INSTALL_SCRIPT} ${WRKDIR}/512.pwhois-updatedb \
 		${STAGEDIR}${PREFIX}/etc/periodic/daily/
-	@${INSTALL_PROGRAM} ${WRKSRC}/pwhoisd ${STAGEDIR}${PREFIX}/sbin/
-	@${INSTALL_PROGRAM} ${WRKSRC}/pwhois-pwdump ${STAGEDIR}${PREFIX}/bin/
-	@${INSTALL_SCRIPT} ${WRKSRC}/pwhois-updatedb ${STAGEDIR}${PREFIX}/sbin/
-	@${INSTALL_DATA} ${WRKSRC}/pwhoisd.conf \
+	${INSTALL_PROGRAM} ${WRKSRC}/pwhoisd ${STAGEDIR}${PREFIX}/sbin/
+	${INSTALL_PROGRAM} ${WRKSRC}/pwhois-pwdump ${STAGEDIR}${PREFIX}/bin/
+	${INSTALL_SCRIPT} ${WRKSRC}/pwhois-updatedb ${STAGEDIR}${PREFIX}/sbin/
+	${INSTALL_DATA} ${WRKSRC}/pwhoisd.conf \
 		${STAGEDIR}${ETCDIR}/pwhoisd.conf.sample
-	@${INSTALL_DATA} ${WRKSRC}/mysql/createdb.sql ${STAGEDIR}${DATADIR}/
-	@${INSTALL} -d ${STAGEDIR}/var/db/pwhois
-	@${INSTALL} -d ${STAGEDIR}/var/log/pwhois
+	${INSTALL_DATA} ${WRKSRC}/mysql/createdb.sql ${STAGEDIR}${DATADIR}/
+	@${MKDIR} ${STAGEDIR}/var/db/pwhois
+	@${MKDIR} ${STAGEDIR}/var/log/pwhois
 
 .include <bsd.port.mk>

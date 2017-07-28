@@ -2,11 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	msgpack-d
-DISTVERSION=	1.0.0beta6
+DISTVERSION=	1.0.0-beta6
 CATEGORIES=	devel
-MASTER_SITES=	https://github.com/msgpack/msgpack-d/archive/
-DISTNAME=	${DISTVERSION:S/^/v/:S/beta6/-beta.6/}
-DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Pure D implementation of MessagePack
@@ -16,7 +13,13 @@ LICENSE=	BSL
 BUILD_DEPENDS=	ldmd2:lang/ldc \
 		dub:devel/dub
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION:S/beta6/-beta.6/}
+USE_GITHUB=	yes
+GH_ACCOUNT=	msgpack
+# FIXME: Remove this once it goes out of beta.
+# Side note, 1.0.0-beta.6 was a perfectly reasonable version to be used in
+# DISTVERSION.
+GH_TAGNAME=	v${DISTVERSION:S/beta/beta./}
+
 DUB_CMD=	${LOCALBASE}/bin/dub build --build=release
 D_INCLUDE_DIR=	${PREFIX}/include/d
 D_LIB_DIR=	${PREFIX}/lib/d

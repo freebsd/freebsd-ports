@@ -1,4 +1,4 @@
---- Makefile.orig	2016-10-30 12:25:26 UTC
+--- Makefile.orig	2017-07-14 19:01:20 UTC
 +++ Makefile
 @@ -1,17 +1,18 @@
  VERCMD  ?= git describe 2> /dev/null
@@ -27,7 +27,7 @@
  
  MD_DOCS    = README.md doc/CHANGELOG.md doc/CONTRIBUTING.md doc/INSTALL.md doc/MISC.md doc/TODO.md
  XSESSIONS ?= $(PREFIX)/share/xsessions
-@@ -37,22 +38,38 @@ bspc: $(CLI_OBJ)
+@@ -39,23 +40,44 @@ bspc: $(CLI_OBJ)
  
  install:
  	mkdir -p "$(DESTDIR)$(BINPREFIX)"
@@ -51,25 +51,32 @@
 +	${BSD_INSTALL_DATA} contrib/zsh_completion "$(DESTDIR)$(ZSHCPL)"/_bspc
  	mkdir -p "$(DESTDIR)$(DOCPREFIX)"
 -	cp -p $(MD_DOCS) "$(DESTDIR)$(DOCPREFIX)"
--	cp -pr examples "$(DESTDIR)$(DOCPREFIX)"/examples
+-	mkdir -p "$(DESTDIR)$(DOCPREFIX)"/examples
+-	cp -pr examples/* "$(DESTDIR)$(DOCPREFIX)"/examples
 +	${BSD_INSTALL_DATA} $(MD_DOCS) "$(DESTDIR)$(DOCPREFIX)"
-+	mkdir -p "$(DESTDIR)$(EXPREFIX)/external_rules"
++	mkdir -p "$(DESTDIR)$(EXPREFIX)"
++	${BSD_INSTALL_DATA} examples/bspwmrc "$(DESTDIR)$(EXPREFIX)"
++	${BSD_INSTALL_DATA} examples/sxhkdrc "$(DESTDIR)$(EXPREFIX)"
++	mkdir -p "$(DESTDIR)$(EXPREFIX)"/external_rules
 +	${BSD_INSTALL_DATA} examples/external_rules/bspwmrc \
-+		"$(DESTDIR)$(EXPREFIX)/external_rules"
++		"$(DESTDIR)$(EXPREFIX)"/external_rules
 +	${BSD_INSTALL_DATA} examples/external_rules/external_rules \
-+		"$(DESTDIR)$(EXPREFIX)/external_rules"
-+	mkdir -p "$(DESTDIR)$(EXPREFIX)/external_rules/pseudo_automatic_mode"
++		"$(DESTDIR)$(EXPREFIX)"/external_rules
++	mkdir -p "$(DESTDIR)$(EXPREFIX)"/external_rules/pseudo_automatic_mode
 +	${BSD_INSTALL_DATA} examples/external_rules/pseudo_automatic_mode/* \
-+		"$(DESTDIR)$(EXPREFIX)/external_rules/pseudo_automatic_mode"
-+	mkdir -p "$(DESTDIR)$(EXPREFIX)/loop"
++		"$(DESTDIR)$(EXPREFIX)"/external_rules/pseudo_automatic_mode
++	mkdir -p "$(DESTDIR)$(EXPREFIX)"/loop
 +	${BSD_INSTALL_DATA} examples/loop/* \
-+		"$(DESTDIR)$(EXPREFIX)/loop"
-+	mkdir -p "$(DESTDIR)$(EXPREFIX)/overlapping_borders"
++		"$(DESTDIR)$(EXPREFIX)"/loop
++	mkdir -p "$(DESTDIR)$(EXPREFIX)"/overlapping_borders
 +	${BSD_INSTALL_DATA} examples/overlapping_borders/* \
-+		"$(DESTDIR)$(EXPREFIX)/overlapping_borders"
-+	mkdir -p "$(DESTDIR)$(EXPREFIX)/panel"
++		"$(DESTDIR)$(EXPREFIX)"/overlapping_borders
++	mkdir -p "$(DESTDIR)$(EXPREFIX)"/panel
 +	${BSD_INSTALL_DATA} examples/panel/* \
-+		"$(DESTDIR)$(EXPREFIX)/panel"
++		"$(DESTDIR)$(EXPREFIX)"/panel
++	mkdir -p "$(DESTDIR)$(EXPREFIX)"/receptacles
++	${BSD_INSTALL_DATA} examples/receptacles/* \
++		"$(DESTDIR)$(EXPREFIX)"/receptacles
  	mkdir -p "$(DESTDIR)$(XSESSIONS)"
 -	cp -p contrib/freedesktop/bspwm.desktop "$(DESTDIR)$(XSESSIONS)"
 +	${BSD_INSTALL_DATA} contrib/freedesktop/bspwm.desktop "$(DESTDIR)$(XSESSIONS)"

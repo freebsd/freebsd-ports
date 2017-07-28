@@ -3,10 +3,8 @@
 
 PORTNAME=	dlib
 PORTVERSION=	0.11.1
+DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
-MASTER_SITES=	https://github.com/gecko0307/dlib/archive/
-DISTNAME=	${PORTVERSION:S/^/v/}
-DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Math, XML, I/O streams, image and audio processing for D
@@ -16,7 +14,9 @@ LICENSE=	BSL
 BUILD_DEPENDS=	ldmd2:lang/ldc \
 		dub:devel/dub
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+USE_GITHUB=	yes
+GH_ACCOUNT=	gecko0307
+
 DUB_CMD=	${LOCALBASE}/bin/dub build --build=release
 D_INCLUDE_DIR=	${PREFIX}/include/d
 D_LIB_DIR=	${PREFIX}/lib/d

@@ -1,6 +1,4 @@
-bin/wget
-%%DOCS%%etc/wgetrc.sample
-%%DOCS%%man/man1/wget.1.gz
+%%MANPAGES%%man/man1/wget.1.gz
 %%NLS%%share/locale/be/LC_MESSAGES/wget.mo
 %%NLS%%share/locale/bg/LC_MESSAGES/wget.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/wget.mo
@@ -40,3 +38,5 @@ bin/wget
 %%NLS%%share/locale/vi/LC_MESSAGES/wget.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/wget.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/wget.mo
+@sample etc/wgetrc.sample
+bin/wget

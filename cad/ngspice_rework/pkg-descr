@@ -1,9 +1,7 @@
-Ngspice is the name of a project and of a program in the project.  Spice is
-the famous circuit simulator developed by the CAD Group of the University of
-California at Berkeley (UCB). The NG prefix has a lot of meanings: Next
-Generation, New Good, etc. Choose or invent the one you prefer. The ngspice
-project aims to improve the capabilities of the Spice3 circuit simulator. The
-heart of the project is the ngspice program, a circuit simulator derived from
-spice3f5.
+Ngspice is a mixed-level/mixed-signal circuit simulator. Its code is based
+on three open source software packages: Spice3f5, Cider1b1 and Xspice. It is
+the open source successor of these venerable packages. Many, many
+modifications, bug fixes and improvements have been added to the code,
+yielding a stable and reliable simulator.
 
 WWW: http://ngspice.sourceforge.net/

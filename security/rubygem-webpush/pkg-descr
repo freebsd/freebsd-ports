@@ -1,0 +1,6 @@
+This gem makes it possible to send push messages to web browsers from Ruby
+backends using the Web Push Protocol. It supports Message Encryption for Web
+Push to send messages securely from server to user agent.  Payload is supported
+by Chrome50+, Firefox48+.
+
+WWW: https://github.com/zaru/webpush

@@ -1,0 +1,18 @@
+DrumGizmo is an open source, multichannel, multilayered, cross-platform drum
+plugin and stand-alone application. It enables you to compose drums in midi and
+mix them with a multichannel approach. It is comparable to that of mixing a real
+drumkit that has been recorded with a multimic setup.
+
+Features include:
+* Stand-alone, Lv2 and VSTi versions available
+* Open drumkit file format, allowing the community to create their own drumkits
+* Drum velocity, allowing for several different hit velocities for each drum
+* Multichannel output, making it possible to mix it just the way you would a
+  real drumkit
+* Optional built-in humanizer, analyzing the midi notes, adjusting velocities
+  on-the-fly
+* Stand-alone midi renderer, generating .wav files, 1 for each channel
+* Stand-alone midi input, making it possible to use DrumGizmo as a software
+  sampler for an electronic drumkit
+
+WWW: http://www.drumgizmo.org/

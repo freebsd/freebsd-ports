@@ -1,0 +1,4 @@
+Tools to help hacking Allwinner A10 (aka sun4i) based devices and possibly
+it's successors, that's why the 'x' in the package name.
+
+WWW: https://github.com/linux-sunxi/sunxi-tools

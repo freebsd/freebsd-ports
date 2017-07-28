@@ -3,12 +3,10 @@
 
 PORTNAME=	dcd
 PORTVERSION=	0.9.0
-PORTREVISION?=	1
+DISTVERSIONPREFIX=	v
+PORTREVISION?=	2
 CATEGORIES?=	devel
-MASTER_SITES=	https://github.com/dlang-community/DCD/archive/
 PKGNAMESUFFIX?=	-server
-DISTNAME=	${PORTVERSION:S/^/v/}
-DIST_SUBDIR=	${PORTNAME}-server
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT?=	Auto-complete program for the D programming language (server)
@@ -22,7 +20,10 @@ BUILD_DEPENDS=	ldmd2:lang/ldc \
 		${LOCALBASE}/lib/d/libmsgpack-d.a:devel/msgpack-d \
 		${LOCALBASE}/lib/d/libdparse.a:devel/libdparse
 
-WRKSRC=		${WRKDIR}/${PORTNAME:tu}-${PORTVERSION}
+USE_GITHUB=	yes
+GH_ACCOUNT=	dlang-community
+GH_PROJECT=	DCD
+
 DUB_CMD=	${LOCALBASE}/bin/dub build --build=release
 DUB_CONFIG?=	server
 D_INCLUDE_DIR=	${PREFIX}/include/d

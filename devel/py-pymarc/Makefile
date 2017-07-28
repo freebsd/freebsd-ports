@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pymarc
-PORTVERSION=	3.1.6
+PORTVERSION=	3.1.7
 PORTEPOCH=	1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
@@ -17,7 +17,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>=1.9.0:devel/py-six
 
 NO_ARCH=	yes
 USES=		python
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	autoplist concurrent distutils
 
 do-test:
 	@cd ${WRKSRC} && ${PYTHON_CMD} test.py

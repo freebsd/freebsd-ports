@@ -3,7 +3,7 @@
 
 PORTNAME=	nhc98
 PORTVERSION=	1.22
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang haskell
 MASTER_SITES=	http://haskell.org/${PORTNAME}/
 DISTFILES=	${PORTNAME}src-${PORTVERSION}${EXTRACT_SUFX}
@@ -14,14 +14,11 @@ COMMENT=	Fully-fledged compiler for Haskell 98
 
 ONLY_FOR_ARCHS=	i386
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-
 USES=		gmake
-# Fails to build with GCC 4.9, cf. PR 196857.
-USE_GCC=	4.8
+USE_GCC=	yes
 
 HAS_CONFIGURE=		yes
-CONFIGURE_ARGS+=	--prefix=${PREFIX} --heap=4M
+CONFIGURE_ARGS+=	--prefix=${PREFIX} --heap=4M --buildwith=gcc
 MAKE_ARGS+=		ARCH=
 MAKE_JOBS_UNSAFE=	yes
 
@@ -35,6 +32,10 @@ CONFLICTS=	hs-cpphs-[0-9]*
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-O3|${CFLAGS}|' ${WRKSRC}/Makefile.inc
+# The Makefile defines target names based on $(CC) which is
+# problematic when CC=gcc5.  The following patch does not affect the
+# compiler used during the build, but makes sure that targets have
+# the correct suffix e.g. 'basic-gcc' instead of 'basic-gcc5':
 	@${REINPLACE_CMD} -e 's|$$(CC)|gcc|g' ${WRKSRC}/Makefile
 
 post-configure:

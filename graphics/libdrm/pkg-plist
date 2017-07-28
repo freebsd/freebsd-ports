@@ -90,3 +90,4 @@ libdata/pkgconfig/libkms.pc
 %%MANPAGES%%man/man7/drm-mm.7.gz
 %%MANPAGES%%man/man7/drm-ttm.7.gz
 %%MANPAGES%%man/man7/drm.7.gz
+%%DATADIR%%/amdgpu.ids

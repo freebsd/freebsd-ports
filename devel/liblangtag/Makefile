@@ -9,7 +9,7 @@ MASTER_SITES=	https://bitbucket.org/tagoh/liblangtag/downloads/ \
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Interface library to access tags for identifying languages
 
-LICENSE=	LGPL3 MPL
+LICENSE=	LGPL3 MPL20
 LICENSE_COMB=	dual
 
 LIB_DEPENDS=	libxml2.so:textproc/libxml2

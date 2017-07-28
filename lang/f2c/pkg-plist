@@ -3,5 +3,5 @@ bin/f2c
 include/f2c.h
 lib/libf2c.a
 lib/libf2c.so
-lib/libf2c.so.2
+lib/libf2c.so.%%LIBVER%%
 man/man1/f2c.1.gz

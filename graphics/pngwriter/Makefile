@@ -21,7 +21,6 @@ BROKEN_powerpc64=	fails to build: ios_base.h: 'std::ios_base::ios_base(const std
 USES=		cmake:outsource
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
-GH_ACCOUNT=	${PORTNAME}
 
 PLIST_FILES=	include/pngwriter.h \
 		lib/libpngwriter.a \
