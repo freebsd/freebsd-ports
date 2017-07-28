@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gdb
-PORTVERSION=	7.12.1
-PORTREVISION=	2
+PORTVERSION=	8.0
 CATEGORIES=	devel
 MASTER_SITES=	GNU
 
@@ -15,7 +14,11 @@ LICENSE=	GPLv3
 TEST_DEPENDS=	runtest:misc/dejagnu
 
 TEST_TARGET=	check
-USES=		compiler:env cpe iconv gmake libtool tar:xz
+# XXX: This should be compiler:c++11-lib as GDB doesn't really require
+# C++14.  However, clang in 10.3 crashes while building this port.
+# Requiring C++14 forces 10.3 to use an external version of clang while
+# still using the base system clang on 11.0 and later.
+USES=		compiler:c++14-lang cpe iconv gmake libtool tar:xz
 USE_CSTD=	gnu89
 CPE_VENDOR=	gnu
 GNU_CONFIGURE=	yes
@@ -31,8 +34,7 @@ CFLAGS:=	${CFLAGS:C/ +$//}	# blanks at EOL creep in sometimes
 CFLAGS+=	-DRL_NO_COMPAT -Wno-unused-function -Wno-unused-variable
 EXCLUDE=	dejagnu expect sim texinfo intl
 EXTRACT_AFTER_ARGS=	${EXCLUDE:S/^/--exclude /}
-EXTRA_PATCHES=	${FILESDIR}/commit-387360daf9 \
-		${FILESDIR}/commit-b268007c68
+EXTRA_PATCHES=	${FILESDIR}/commit-b5430a3ced
 LIB_DEPENDS+=	libexpat.so:textproc/expat2
 
 VER=		${PORTVERSION:S/.//g}

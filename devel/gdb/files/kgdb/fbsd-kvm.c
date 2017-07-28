@@ -195,7 +195,7 @@ fbsd_kernel_osabi_sniffer(bfd *abfd)
 	if (s != NULL && bfd_section_size(abfd, s) == sizeof(buf) &&
 	    bfd_get_full_section_contents(abfd, s, &bufp) &&
 	    memcmp(buf, KERNEL_INTERP, sizeof(buf)) == 0)
-		return (GDB_OSABI_FREEBSD_ELF_KERNEL);
+		return (GDB_OSABI_FREEBSD_KERNEL);
 
 	return (GDB_OSABI_UNKNOWN);
 }
@@ -362,7 +362,7 @@ kgdb_trgt_detach(struct target_ops *ops, const char *args, int from_tty)
 		printf_filtered("No vmcore file now.\n");
 }
 
-static char *
+static const char *
 kgdb_trgt_extra_thread_info(struct target_ops *ops, struct thread_info *ti)
 {
 
@@ -402,7 +402,7 @@ kgdb_trgt_update_thread_list(struct target_ops *ops)
 #endif
 }
 
-static char *
+static const char *
 kgdb_trgt_pid_to_str(struct target_ops *ops, ptid_t ptid)
 {
 	static char buf[33];
