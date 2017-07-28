@@ -516,7 +516,7 @@
 -{
 -    return 0;
 -}
-+	if (strncmp(tail, ".", len) == 0 || strncmp(tail, "..", len) == 0)
++	if (len <= 2 && tail[0] == '.' && (len == 1 || tail[1] == '.'))
 +		panic("construct path for %s", tail);
 +	p = malloc(strlen(node->sf_path) + 1 + len + 1, M_VBOXVFS, M_WAITOK);
 +	strcpy(p, node->sf_path);
