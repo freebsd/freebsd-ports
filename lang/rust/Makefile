@@ -72,7 +72,6 @@ PLIST_SUB+=		RUST_TARGET=${RUST_TARGET}
 USES=		compiler gmake libedit python:2.7,build
 
 OPTIONS_DEFINE=		DOCS GDB LLNEXTGEN PORT_LLVM
-OPTIONS_DEFAULT=	PORT_LLVM
 GDB_DESC=		Install ports gdb (necessary for debugging rust programs)
 LLNEXTGEN_DESC=		Build with grammar verification
 
