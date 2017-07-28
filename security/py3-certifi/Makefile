@@ -3,6 +3,8 @@
 
 MASTERDIR=      ${.CURDIR}/../py-certifi
 
-USES=   python:3.3+
+PORTSCOUT=	ignore:1
+
+USES=   	python:3.3+
 
 .include "${MASTERDIR}/Makefile"

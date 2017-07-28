@@ -12,6 +12,8 @@ COMMENT=	Powerful virus/spam scanning framework for mail gateways
 
 LICENSE=	GPLv2
 
+IGNORE=		wipes out configuration on deinstall-- do not uninstall if you have it without backing up your ${ETCDIR}
+
 BUILD_DEPENDS=	\
 	p5-IO-stringy>=0:devel/p5-IO-stringy \
 	p5-DBI>=0:databases/p5-DBI \
