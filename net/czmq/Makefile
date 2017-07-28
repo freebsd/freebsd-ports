@@ -10,7 +10,7 @@ MASTER_SITES=	http://download.zeromq.org/
 MAINTAINER=	koobs@FreeBSD.org
 COMMENT=	High-level C Binding for ZeroMQ
 
-LICENSE=	MPL
+LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libzmq.so:net/libzmq4

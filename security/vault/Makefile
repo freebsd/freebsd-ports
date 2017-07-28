@@ -8,7 +8,8 @@ CATEGORIES=	security
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Tool for securely accessing secrets
 
-LICENSE=	MPL
+LICENSE=	MPL20
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	go>=1.7.1:lang/go
 
