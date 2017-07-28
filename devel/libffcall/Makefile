@@ -1,11 +1,10 @@
 # Created by: jagapen@home.com
 # $FreeBSD$
 
-PORTNAME=	ffcall
+PORTNAME=	libffcall
 PORTVERSION=	1.13
 CATEGORIES=	devel
-MASTER_SITES=	GNU/lib${PORTNAME}
-DISTNAME=	lib${PORTNAME}-${PORTVERSION}
+MASTER_SITES=	GNU/${PORTNAME}
 
 MAINTAINER=	amutu@amutu.com
 COMMENT=	Foreign function call libraries
