@@ -9,7 +9,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	neel@neelc.org
 COMMENT=	Fast, extensible progress bar for Python
 
-LICENSE=	MIT MPL
+LICENSE=	MIT MPL20
 LICENSE_COMB=	multi
 
 USE_GITHUB=	yes
