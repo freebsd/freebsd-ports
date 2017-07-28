@@ -2,13 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	Geo-ShapeFile
-PORTVERSION=	2.61
+PORTVERSION=	2.64
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	culot@FreeBSD.org
-COMMENT=	Perl extension for handling ESRI GIS Shapefiles
+COMMENT=	Extension for handling ESRI GIS Shapefiles
 
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
