@@ -834,7 +834,7 @@ chronyd:*:849:849::0:0:chronyd user:/nonexistent:/usr/sbin/nologin
 # free: 885
 # free: 886
 # free: 887
-# free: 888
+vuls:*:888:888::0:0:VULnerability Scanner:/var/db/vuls:/usr/sbin/nologin
 # free: 889
 # free: 890
 # free: 891
