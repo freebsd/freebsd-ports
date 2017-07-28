@@ -10,7 +10,8 @@ DISTNAME=	SaxonHE${PORTVERSION:S,.,-,g}J
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	XSLT 2.0 / XPath 2.0 / XQuery 1.0 processor for Java
 
-LICENSE=	MPL
+LICENSE=	MPL20
+LICENSE_FILE=	${WRKSRC}/notices/LICENSE.txt
 
 USES=		zip
 USE_JAVA=	yes
