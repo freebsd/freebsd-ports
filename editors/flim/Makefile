@@ -60,7 +60,7 @@ BUILD_DEPENDS+=	nkf:japanese/nkf
 .endif
 
 # makeinfo stuff
-MAKEINFO=		makeinfo --no-split --no-validate
+MAKEINFO_FLAGS=		--no-split --no-validate
 MAKEINFO_EMACS=		${EMACS_CMD} -no-site-file -no-init-file -batch
 MAKEINFO_EMACS_FLAGS=	-e texinfo-format-buffer -f save-buffer
 
@@ -109,14 +109,14 @@ info-build:
 	for i in mime-en.texi; do \
 		${MV} $${i} $${i}.jis ; \
 		${CAT} $${i}.jis | nkf -e > $${i} ; \
-		${MAKEINFO} $${i} || ${TRUE} ; \
+		${MAKEINFO} ${MAKEINFO_FLAGS} $${i} || ${TRUE} ; \
 	done)
 .if defined(EMACS_HAS_MULE) && (${EMACS_HAS_MULE} == "YES")
 	@(cd ${WRKSRC} ; \
 	for i in mime-ja.texi; do \
 		${MV} $${i} $${i}.jis ; \
 		${CAT} $${i}.jis | nkf -e > $${i} ; \
-		${MAKEINFO} $${i} || ${TRUE} ; \
+		${MAKEINFO} ${MAKEINFO_FLAGS} $${i} || ${TRUE} ; \
 	done)
 .endif
 
