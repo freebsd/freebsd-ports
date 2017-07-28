@@ -89,11 +89,19 @@ fi
 cp ${dp_DESCR} ${dp_METADIR}/+DESC
 
 # Concatenate all the scripts
+output_files=
+for stage in INSTALL DEINSTALL UPGRADE; do
+	for prepost in '' PRE POST; do
+		output=${dp_METADIR}/+${prepost:+${prepost}_}${stage}
+		[ -f "${output}" ] && output_files="${output_files:+${output_files} }${output}"
+	done
+done
+[ -n "${output_files}" ] && rm -f ${output_files}
+
 for stage in INSTALL DEINSTALL UPGRADE; do
 	for prepost in '' PRE POST; do
 		eval files="\${dp_PKG${prepost}${stage}}"
 		output=${dp_METADIR}/+${prepost:+${prepost}_}${stage}
-		rm -f ${output}
 		for input in ${files}; do
 			[ -f "${input}" ] && cat ${input} >> ${output}
 		done

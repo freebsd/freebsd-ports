@@ -2,8 +2,7 @@
 
 PORTNAME=	mastodon
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.4.7
-PORTREVISION=	2
+DISTVERSION=	1.5.0rc2
 CATEGORIES=	net-im www
 
 MAINTAINER=	jrm@FreeBSD.org
@@ -12,6 +11,7 @@ COMMENT=	GNU Social-compatible microblogging server
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+LIB_DEPENDS=	libidn2.so:dns/libidn2
 RUN_DEPENDS=	ffmpeg>0:multimedia/ffmpeg \
 		libpqtypes>1.5.0:databases/libpqtypes \
 		npm>=0:www/npm
@@ -32,8 +32,10 @@ RUN_DEPENDS+=	rubygem-aws-sdk>0:devel/rubygem-aws-sdk \
 		rubygem-paperclip-rails5>0:devel/rubygem-paperclip-rails5 \
 		rubygem-paperclip-av-transcoder>0:multimedia/rubygem-paperclip-av-transcoder
 
-RUN_DEPENDS+=	rubygem-addressable>0:www/rubygem-addressable \
+RUN_DEPENDS+=	rubygem-active_model_serializers>0:databases/rubygem-active_model_serializers \
+		rubygem-addressable>0:www/rubygem-addressable \
 		rubygem-browser>0:www/rubygem-browser \
+		rubygem-charlock_holmes>0:textproc/rubygem-charlock_holmes \
 		rubygem-cld3>0:textproc/rubygem-cld3 \
 		rubygem-devise-rails5>0:devel/rubygem-devise-rails5 \
 		rubygem-devise-two-factor-rails5>0:security/rubygem-devise-two-factor-rails5 \
@@ -46,6 +48,7 @@ RUN_DEPENDS+=	rubygem-addressable>0:www/rubygem-addressable \
 		rubygem-http>0:www/rubygem-http \
 		rubygem-http_accept_language>0:devel/rubygem-http_accept_language \
 		rubygem-httplog>0:sysutils/rubygem-httplog \
+		rubygem-idn-ruby>0:dns/rubygem-idn-ruby \
 		rubygem-kaminari-rails5>0:www/rubygem-kaminari-rails5 \
 		rubygem-link_header>0:www/rubygem-link_header \
 		rubygem-nokogiri>0:textproc/rubygem-nokogiri \
@@ -60,6 +63,7 @@ RUN_DEPENDS+=	rubygem-addressable>0:www/rubygem-addressable \
 		rubygem-rails-i18n>0:devel/rubygem-rails-i18n \
 		rubygem-rails-settings-cached-rails5>0:www/rubygem-rails-settings-cached-rails5 \
 		rubygem-redis>0:databases/rubygem-redis \
+		rubygem-mario-redis-lock>0:databases/rubygem-mario-redis-lock \
 		rubygem-rqrcode>0:www/rubygem-rqrcode \
 		rubygem-ruby-oembed>0:www/rubygem-ruby-oembed \
 		rubygem-sanitize>0:textproc/rubygem-sanitize \
@@ -73,7 +77,8 @@ RUN_DEPENDS+=	rubygem-addressable>0:www/rubygem-addressable \
 		rubygem-statsd-instrument>0:devel/rubygem-statsd-instrument \
 		rubygem-twitter-text>0:textproc/rubygem-twitter-text \
 		rubygem-tzinfo-data>0:devel/rubygem-tzinfo-data \
-		rubygem-webpacker-rails5>0:devel/rubygem-webpacker-rails5
+		rubygem-webpacker-rails5>0:devel/rubygem-webpacker-rails5 \
+		rubygem-webpush>0:security/rubygem-webpush
 
 RUN_DEPENDS+=	rubygem-lograge-rails5>0:www/rubygem-lograge-rails5 \
 		rubygem-redis-rails-rails5>0:www/rubygem-redis-rails-rails5
@@ -94,7 +99,7 @@ NO_ARCH=	yes
 NO_BUILD=	yes
 
 SUB_LIST+=	RAKE="${LOCALBASE}/bin/rake" RUBY="${RUBY_NAME}"
-SUB_FILES=	900.mastodon nginx.conf nginx-include.conf
+SUB_FILES=	nginx.conf nginx-include.conf
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|' \
@@ -103,10 +108,7 @@ post-patch:
 do-install:
 	${RM} ${WRKSRC}/Gemfile.lock \
 		${WRKSRC}/lib/tasks/auto_annotate_models.rake
-	${MKDIR} ${STAGEDIR}${LOCALBASE}/etc/periodic/daily \
-		${STAGEDIR}${WWWDIR} ${STAGEDIR}/var/log/mastodon
-	${INSTALL_SCRIPT} ${WRKDIR}/900.mastodon \
-		${STAGEDIR}${LOCALBASE}/etc/periodic/daily
+	${MKDIR} ${STAGEDIR}${WWWDIR} ${STAGEDIR}/var/log/mastodon
 	${INSTALL_DATA} ${WRKDIR}/nginx.conf \
 		${STAGEDIR}${WWWDIR}/nginx.conf.sample
 	${INSTALL_DATA} ${WRKDIR}/nginx-include.conf \

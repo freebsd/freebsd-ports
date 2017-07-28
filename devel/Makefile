@@ -592,7 +592,6 @@
     SUBDIR += fb-adb
     SUBDIR += fb303
     SUBDIR += fc++
-    SUBDIR += ffcall
     SUBDIR += fga
     SUBDIR += fhist
     SUBDIR += fib
@@ -1333,6 +1332,7 @@
     SUBDIR += libfaketime
     SUBDIR += libfastcommon
     SUBDIR += libfastjson
+    SUBDIR += libffcall
     SUBDIR += libffi
     SUBDIR += libfirm
     SUBDIR += libflatarray

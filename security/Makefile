@@ -181,6 +181,7 @@
     SUBDIR += gnupg20
     SUBDIR += gnutls
     SUBDIR += go.crypto
+    SUBDIR += go-cve-dictionary
     SUBDIR += goptlib
     SUBDIR += gorilla
     SUBDIR += govpn
@@ -1217,6 +1218,7 @@
     SUBDIR += vm-to-tor
     SUBDIR += vnccrack
     SUBDIR += vpnc
+    SUBDIR += vuls
     SUBDIR += vuxml
     SUBDIR += vxquery
     SUBDIR += w3af

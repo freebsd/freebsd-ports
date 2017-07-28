@@ -3,6 +3,7 @@
 
 PORTNAME=	MailScanner
 PORTVERSION=	5.0.3
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	https://s3.amazonaws.com/msv5/release/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-${PATCHLEVEL}.nix
@@ -11,8 +12,6 @@ MAINTAINER=	kkobb@skylinecorp.com
 COMMENT=	Powerful virus/spam scanning framework for mail gateways
 
 LICENSE=	GPLv2
-
-IGNORE=		wipes out configuration on deinstall-- do not uninstall if you have it without backing up your ${ETCDIR}
 
 BUILD_DEPENDS=	\
 	p5-IO-stringy>=0:devel/p5-IO-stringy \
@@ -57,22 +56,16 @@ RUN_DEPENDS:=	${BUILD_DEPENDS} \
 		tnef:converters/tnef \
 		wget:ftp/wget
 
-CONFLICTS=	${PORTNAME}-devel-[0-9]*
+CONFLICTS=	MailScanner-devel-[0-9]*
 
 PATCHLEVEL=	7
 
 USES=		perl5 shebangfix
-SHEBANG_FILES=	usr/sbin/${PORTNAME} usr/sbin/ms-create-locks \
-		usr/sbin/ms-peek usr/sbin/ms-perl-check \
-		usr/sbin/ms-sa-cache usr/sbin/ms-update-bad-emails \
-		usr/sbin/ms-upgrade-conf \
-		usr/lib/${PORTNAME}/wrapper/bitdefender-autoupdate \
-		usr/lib/${PORTNAME}/wrapper/clamav-autoupdate \
-		usr/lib/${PORTNAME}/wrapper/generic-autoupdate \
-		usr/lib/${PORTNAME}/wrapper/sophos-autoupdate
+SHEBANG_GLOB=	* usr/lib/MailScanner/init/* usr/lib/MailScanner/wrapper/* \
+		usr/sbin/* usr/share/MailScanner/perl/MailScanner/*
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-SUB_FILES=	${PORTNAME}.8 pkg-message pkg-install
+SUB_FILES=	MailScanner.8 pkg-message pkg-install pkg-deinstall
 SUB_LIST=	DATADIR=${DATADIR} \
 		PERL=${PERL} \
 		PKGVERSION=${PKGVERSION} \
@@ -80,7 +73,7 @@ SUB_LIST=	DATADIR=${DATADIR} \
 		ETC_FILES="${ETC_FILES}" \
 		MCP_FILES="${MCP_FILES}"
 
-OPTIONS_DEFINE=		SPAMASSASSIN CLAMAV CLAMAVMODULE BDC
+OPTIONS_DEFINE=		SPAMASSASSIN CLAMAV CLAMAVMODULE BDC DOCS
 SPAMASSASSIN_DESC=	Install SpamAssassin
 CLAMAV_DESC=		Install ClamAV
 CLAMAVMODULE_DESC=	Install ClamAV Module
@@ -131,81 +124,83 @@ SUB_LIST+=	WITHOUT_SPAMASSASSIN_SYMLINK=no
 .endif
 
 DOC_FILES=	README
-ETC_FILES=	${PORTNAME}.conf filename.rules.conf \
+ETC_FILES=	MailScanner.conf filename.rules.conf \
 		archives.filename.rules.conf archives.filetype.rules.conf \
 		filetype.rules.conf spam.assassin.prefs.conf \
 		spam.lists.conf virus.scanners.conf \
 		phishing.safe.sites.conf \
 		phishing.bad.sites.conf \
 		country.domains.conf
-MCP_FILES=	mcp.spam.assassin.prefs.conf \
-		10_example.cf v320.pre
-USRLOCAL_FILES_LIB=	\
-		bitdefender-autoupdate f-secure-autoupdate \
-		f-secure-wrapper sophos-autoupdate
+MCP_FILES=	mcp.spamassassin.conf \
+		10_example.cf
 
 USE_RC_SUBR=	mailscanner mta
 
 post-patch:
 	${REINPLACE_CMD} -e 's,\$$(mktemp),$$(mktemp -t tmp),' \
-		${WRKSRC}/usr/lib/${PORTNAME}/wrapper/clamav-wrapper \
-		${WRKSRC}/usr/lib/${PORTNAME}/wrapper/bitdefender-wrapper
+		${WRKSRC}/usr/lib/MailScanner/wrapper/*-wrapper
 
 do-build:
-	@${REINPLACE_CMD} \
-		-e 's,/bin/bash,${LOCALBASE}/bin/bash,g' \
+	@${FIND} ${WRKSRC} -type f | ${XARGS} ${REINPLACE_CMD} \
+		-e 's,/usr/bin/bash,${LOCALBASE}/bin/bash,g' \
 		-e 's,/bin/sed,/usr/bin/sed,g' \
-		-e 's,/etc/${PORTNAME}/${PORTNAME}.conf,${PREFIX}/etc/${PORTNAME}/${PORTNAME}.conf,g' \
-		-e 's,/etc/init.d/${PORTNAME},${LOCALBASE}/etc/rc.d/mailscanner,g' \
+		-e 's,/etc/init.d/mailscanner,${LOCALBASE}/etc/rc.d/mailscanner,g' \
 		-e 's,/etc/mail/,${LOCALBASE}/etc/mail/,g'		\
-		-e 's,/opt/${PORTNAME}/bin,${PREFIX}/libexec/${PORTNAME},g' \
-		-e 's,/opt/${PORTNAME}/etc/reports,${DATADIR}/reports,g' \
-		-e 's,/opt/${PORTNAME}/etc,${PREFIX}/etc/${PORTNAME},g'	\
-		-e 's,/opt/${PORTNAME}/lib,${PREFIX}/lib/${PORTNAME},g'	\
-		-e 's,/opt/${PORTNAME}/var/${PORTNAME}.pid,/var/run/${PORTNAME}.pid,g' \
+		-e 's,/usr/share/MailScanner,${DATADIR},g' \
+		-e 's,/usr/lib/MailScanner/reports,${DATADIR}/reports,g' \
+		-e 's,/etc/MailScanner,${PREFIX}/etc/MailScanner,g'	\
+		-e 's,/usr/sbin/ms-,${PREFIX}/sbin/ms-,g' \
+		-e 's,/usr/lib/MailScanner,${PREFIX}/lib/MailScanner,g'	\
 		-e 's,/usr/bin/clamscan,${LOCALBASE}/bin/clamscan,g'	\
 		-e 's,/usr/bin/sa-compile,${LOCALBASE}/bin/sa-compile,g' \
 		-e 's,/usr/bin/sa-update,${LOCALBASE}/bin/sa-update,g'	\
 		-e 's,/usr/bin/unzip,${UNZIP_CMD},g'				\
 		-e 's,/usr/bin/wget,${LOCALBASE}/bin/wget,g'		\
 		-e 's,/usr/lib/sendmail,/usr/sbin/sendmail,g'		\
-		${WRKSRC}/usr/sbin/${PORTNAME}				\
-		${WRKSRC}/usr/sbin/ms-create-locks			\
-		${WRKSRC}/usr/lib/${PORTNAME}/init/ms-init		\
-
-	@${REINPLACE_CMD} \
-		-e 's,/opt/${PORTNAME}/var/${PORTNAME}.pid,/var/run/${PORTNAME}.pid,g' \
-		-e 's,/usr/lib/sendmail,/usr/sbin/sendmail,g' \
-		-e 's,/opt/${PORTNAME}/bin,${PREFIX}/bin,g' \
-		-e 's,/opt/${PORTNAME}/etc/reports,${DATADIR}/reports,g' \
-		-e 's,/opt/${PORTNAME}/etc,${PREFIX}/etc/${PORTNAME},g' \
-		-e 's,/opt/${PORTNAME}/lib,${PREFIX}/lib/${PORTNAME},g' \
 		-e 's,/usr/bin/unrar,${LOCALBASE}/bin/unrar,g' \
 		-e 's,/bin/gunzip,/usr/bin/gunzip,g' \
 		-e 's,/etc/mail/spamassassin,${LOCALBASE}/etc/mail/spamassassin,g' \
 		-e 's,/tmp/clamd.socket,/var/run/clamav/clamd.sock,g' \
 		-e 's,/usr/local/share/clamav,/var/db/clamav,g' \
-		${WRKSRC}/etc/${PORTNAME}/${PORTNAME}.conf
+		-e 's,/bin/false,/usr/bin/false,'
 
-	@${REINPLACE_CMD} \
-		-e 's,/opt/${PORTNAME}/lib,${PREFIX}/libexec/${PORTNAME},g' \
-		-e 's,/bin/false,/usr/bin/false,' \
-		${WRKSRC}/etc/${PORTNAME}/virus.scanners.conf
-
-.for FILE in ${USRLOCAL_FILES_LIB}
 	@${REINPLACE_CMD} -e 's,/usr/local,${LOCALBASE},g' \
-		${WRKSRC}/usr/lib/${PORTNAME}/wrapper/${FILE}
-.endfor
+		${WRKSRC}/usr/lib/${PORTNAME}/wrapper/*
 	@${FIND} ${WRKSRC} \( -name "*.bak" -or -name "*.orig" \) -delete
 
 do-install:
-	(cd ${WRKSRC}/etc && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/etc)
-	(cd ${WRKSRC}/usr/sbin && ${COPYTREE_BIN} . ${STAGEDIR}${PREFIX}/sbin)
-	(cd ${WRKSRC}/usr/share && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/share)
+	(cd ${WRKSRC}/usr/sbin && ${COPYTREE_BIN} . ${STAGEDIR}/${PREFIX}/sbin)
+	${LN} -sf ${PREFIX}/sbin/MailScanner ${STAGEDIR}${PREFIX}/sbin/mailscanner
+	${MKDIR} ${STAGEDIR}${PREFIX}/etc/MailScanner \
+		${STAGEDIR}${PREFIX}/etc/MailScanner/conf.d \
+		${STAGEDIR}${PREFIX}/etc/MailScanner/rules
+	(cd ${WRKSRC}/etc/MailScanner && ${FIND} . -type f -depth 1 -exec \
+		${INSTALL_DATA} {} \
+		${STAGEDIR}${PREFIX}/etc/MailScanner/{}.sample \;)
+	cd ${WRKSRC}/etc/MailScanner/rules \
+		&& ${INSTALL_DATA} EXAMPLES README \
+			${STAGEDIR}${PREFIX}/etc/MailScanner/rules
+.for RULES in spam.whitelist.rules bounce.rules max.message.size.rules
+	${INSTALL_DATA} ${WRKSRC}/etc/MailScanner/rules/${RULES} \
+		${STAGEDIR}${PREFIX}/etc/MailScanner/rules/${RULES}.sample
+.endfor
+	${MKDIR} ${STAGEDIR}${PREFIX}/etc/MailScanner/mcp
+.for FILE in ${MCP_FILES}
+	${INSTALL_DATA} ${WRKSRC}/etc/MailScanner/mcp/${FILE} \
+		${STAGEDIR}${PREFIX}/etc/MailScanner/mcp/${FILE}.sample
+.endfor
+	${MKDIR} ${STAGEDIR}${PREFIX}/etc/MailScanner/conf.d
+	${INSTALL_DATA} ${WRKSRC}/etc/MailScanner/conf.d/README \
+		${STAGEDIR}${PREFIX}/etc/MailScanner/conf.d/README
+	(cd ${WRKSRC}/usr/share/MailScanner && ${COPYTREE_SHARE} . \
+		${STAGEDIR}${DATADIR})
+	for f in ${STAGEDIR}${DATADIR}/reports/*/*; do \
+		${MV} $${f} $${f}.sample; \
+	done
+	${MKDIR} ${STAGEDIR}${PREFIX}/lib
+	(cd ${WRKSRC}/usr/lib/MailScanner && ${COPYTREE_BIN} . \
+		${STAGEDIR}${PREFIX}/lib/MailScanner)
 	cd ${WRKDIR} && \
 		${INSTALL_MAN} ${PORTNAME}.8 ${STAGEDIR}${PREFIX}/man/man8
-	${LN} -sf ${PORTNAME}.8 \
-		${STAGEDIR}${PREFIX}/man/man8/${PORTNAME:tl}.8
-	@${ECHO_MSG} " [DONE]"
 
 .include <bsd.port.mk>
