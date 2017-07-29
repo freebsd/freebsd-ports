@@ -10,8 +10,6 @@ MASTER_SITES=	http://www.graphviz.org/pub/graphviz/ARCHIVE/
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Graph Visualization Software from AT&T and Bell Labs
 
-EXPLICIT_SAFESTACK=		yes
-
 LICENSE=	EPL
 LICENSE_FILE=	${WRKSRC}/COPYING
 
@@ -21,6 +19,8 @@ LIB_DEPENDS=	libltdl.so:devel/libltdl \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libexpat.so:textproc/expat2 \
 		libgd.so:${GD_PORT}
+
+USE_HARDENING=	pie relro
 
 USES=		bison cpe gmake jpeg libtool:keepla pkgconfig pathfix shebangfix
 GNU_CONFIGURE=	yes
