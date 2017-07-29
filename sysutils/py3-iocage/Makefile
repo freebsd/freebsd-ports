@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	iocage
-PORTVERSION=	0.9.8.1
+PORTVERSION=	0.9.9
 CATEGORIES=	sysutils python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -15,6 +15,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest-runner>=2.0.0:devel/py3-pytest-runn
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}click>=6.7:devel/py3-click \
 		${PYTHON_PKGNAMEPREFIX}tqdm>=4.10.0:misc/py3-tqdm \
 		${PYTHON_PKGNAMEPREFIX}coloredlogs>0:devel/py3-coloredlogs \
+		${PYTHON_PKGNAMEPREFIX}verboselogs>0:devel/py-verboselogs \
 		ca_root_nss>0:security/ca_root_nss \
 		${PYTHON_PKGNAMEPREFIX}texttable>=0.8.7:textproc/py3-texttable \
 		${PYTHON_PKGNAMEPREFIX}pytest-runner>=2.0.0:devel/py3-pytest-runner \
