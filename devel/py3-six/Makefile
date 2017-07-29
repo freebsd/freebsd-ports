@@ -5,6 +5,8 @@ MASTERDIR=	${.CURDIR}/../py-six
 
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py3-pytest
 
-USES=	python:3.3+
+PORTSCOUT=	ignore:1
+
+USES=		python:3.3+
 
 .include "${MASTERDIR}/Makefile"
