@@ -1,9 +1,11 @@
 # Created by: Neil Booth
 # $FreeBSD$
 
-MASTERDIR=      ${.CURDIR}/../py-pysocks
+MASTERDIR=	${.CURDIR}/../py-pysocks
 
-USES=   python:3.3+
+PORTSCOUT=	ignore:1
+
+USES=		python:3.3+
 
 .include "${MASTERDIR}/Makefile"
 
