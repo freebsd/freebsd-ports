@@ -12,7 +12,7 @@ MAINTAINER=	johans@FreeBSD.org
 COMMENT=	The GNU stream editor
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV+=	MAKEINFO="makeinfo --no-split"
+CONFIGURE_ENV+=	MAKEINFO="${MAKEINFO} --no-split"
 
 USES=		charsetfix makeinfo gmake
 PATCH_SUBDIRS=	. doc lib sed

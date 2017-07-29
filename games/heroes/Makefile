@@ -33,7 +33,7 @@ MUSICSRC=	${WRKDIR}/${MUSICDISTNAME}
 USE_SDL=	mixer sdl
 USES=		gettext gmake iconv makeinfo
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	MAKEINFO="makeinfo --no-split"
+CONFIGURE_ENV=	MAKEINFO="${MAKEINFO} --no-split"
 CONFIGURE_ARGS=	--with-sdl_mixer=${LOCALBASE} --without-gii --without-ggi
 
 OPTIONS_DEFINE=	OPTIMIZED_CFLAGS

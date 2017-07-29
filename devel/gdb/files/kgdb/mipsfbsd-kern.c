@@ -28,7 +28,7 @@
  */
 
 #include <sys/cdefs.h>
-__FBSDID("$FreeBSD$");
+__FBSDID("$FreeBSD: head/gnu/usr.bin/gdb/kgdb/trgt_mips.c 249878 2013-04-25 04:53:01Z imp $");
 
 #include <sys/types.h>
 #ifdef __mips__
@@ -300,6 +300,6 @@ _initialize_mips_kgdb_tdep (void)
   gdbarch_register_osabi_sniffer(bfd_arch_mips,
 				 bfd_target_elf_flavour,
 				 fbsd_kernel_osabi_sniffer);
-  gdbarch_register_osabi (bfd_arch_mips, 0, GDB_OSABI_FREEBSD_ELF_KERNEL,
+  gdbarch_register_osabi (bfd_arch_mips, 0, GDB_OSABI_FREEBSD_KERNEL,
 			  mipsfbsd_kernel_init_abi);
 }

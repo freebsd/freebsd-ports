@@ -28,10 +28,7 @@ BROKEN_powerpc64=	fails to configure: libvigraimpex is required to compile Enble
 
 USE_AUTOTOOLS=	automake:env autoconf:env
 USES=		compiler:features gmake jpeg localbase makeinfo
-# We need a newer version of makeinfo for this.
-# Remove this line when we remove texinfo from the base system.
-CONFIGURE_ARGS=	MAKEINFO="${LOCALBASE}/bin/makeinfo" \
-		--with-boost-filesystem
+CONFIGURE_ARGS=	--with-boost-filesystem
 
 USE_GL=		glew glut
 GNU_CONFIGURE=	yes

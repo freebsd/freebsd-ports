@@ -14,7 +14,7 @@ BUILD_DEPENDS=	flex>=2.5.39_1:textproc/flex
 LIB_DEPENDS=	libguile.so:lang/guile
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	LEXLIB=-lfl_pic MAKEINFO="makeinfo --no-split"
+CONFIGURE_ENV=	LEXLIB=-lfl_pic MAKEINFO="${MAKEINFO} --no-split"
 USE_LDCONFIG=	yes
 USES=		libtool localbase makeinfo pathfix
 INSTALL_TARGET=	install-strip

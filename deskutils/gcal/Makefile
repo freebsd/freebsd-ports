@@ -12,7 +12,7 @@ COMMENT=	GNU Gregorian calendar program
 LICENSE=	GPLv3+
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	MAKEINFO="makeinfo --no-split"
+CONFIGURE_ENV=	MAKEINFO="${MAKEINFO} --no-split"
 USES=		charsetfix shebangfix makeinfo tar:xz
 SHEBANG_FILES=	misc/gcalltx/gcalltxp.in misc/gcalltx/gcalltx.pl
 

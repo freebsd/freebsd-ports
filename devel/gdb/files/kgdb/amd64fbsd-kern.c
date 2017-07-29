@@ -238,7 +238,7 @@ void
 _initialize_amd64_kgdb_tdep(void)
 {
 	gdbarch_register_osabi (bfd_arch_i386, bfd_mach_x86_64,
-	    GDB_OSABI_FREEBSD_ELF_KERNEL, amd64fbsd_kernel_init_abi);
+	    GDB_OSABI_FREEBSD_KERNEL, amd64fbsd_kernel_init_abi);
 
 #ifdef __amd64__
 	gdb_assert(offsetof(struct pcb, pcb_rbx)
