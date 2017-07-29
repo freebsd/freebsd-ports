@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	cf-uaa-lib
-PORTVERSION=	3.10.0
+PORTVERSION=	3.11.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
