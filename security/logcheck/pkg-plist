@@ -1,4 +1,7 @@
 @mode 640
+%%DATADIR%%/detectrotate/10-savelog.dtr
+%%DATADIR%%/detectrotate/20-logrotate.dtr
+%%DATADIR%%/detectrotate/30-logrotate-dateext.dtr
 %%ETCDIR%%/cracking.d/kernel
 %%ETCDIR%%/cracking.d/rlogind
 %%ETCDIR%%/cracking.d/rsh
@@ -131,6 +134,8 @@
 %%ETCDIR%%/ignore.d.server/sudo
 %%ETCDIR%%/ignore.d.server/sympa
 %%ETCDIR%%/ignore.d.server/syslogd
+%%ETCDIR%%/ignore.d.server/systemd
+%%ETCDIR%%/ignore.d.server/systemd-timesyncd
 %%ETCDIR%%/ignore.d.server/teapop
 %%ETCDIR%%/ignore.d.server/telnetd
 %%ETCDIR%%/ignore.d.server/tftpd
@@ -179,6 +184,8 @@
 %%ETCDIR%%/ignore.d.workstation/wpasupplicant
 %%ETCDIR%%/ignore.d.workstation/xdm
 %%ETCDIR%%/ignore.d.workstation/xlockmore
+%%ETCDIR%%/logcheck.conf.sample
+%%ETCDIR%%/logcheck.logfiles.sample
 %%ETCDIR%%/violations.d/kernel
 %%ETCDIR%%/violations.d/logcheck
 %%ETCDIR%%/violations.d/smartd
@@ -186,12 +193,9 @@
 %%ETCDIR%%/violations.d/sudo
 %%ETCDIR%%/violations.ignore.d/logcheck-su
 %%ETCDIR%%/violations.ignore.d/logcheck-sudo
-%%ETCDIR%%/logcheck.conf.sample
-%%ETCDIR%%/logcheck.logfiles.sample
-%%DATADIR%%/detectrotate/10-savelog.dtr
-%%DATADIR%%/detectrotate/20-logrotate.dtr
-%%DATADIR%%/detectrotate/30-logrotate-dateext.dtr
 @mode
+bin/logcheck-test
+man/man1/logcheck-test.1.gz
 man/man8/logcheck.8.gz
 man/man8/logtail.8.gz
 man/man8/logtail2.8.gz

@@ -1,5 +1,5 @@
---- src/logcheck.orig	2010-07-07 15:59:57.000000000 -0400
-+++ src/logcheck	2010-07-07 16:19:33.000000000 -0400
+--- src/logcheck.orig	2017-07-11 17:32:13 UTC
++++ src/logcheck
 @@ -24,17 +24,10 @@
  
  if [ `id -u` = 0 ]; then
@@ -20,7 +20,7 @@
      exit 1
  fi
  
-@@ -69,12 +62,12 @@
+@@ -69,13 +62,13 @@ EVENTSSUBJECT="System Events"
  ADDTAG="no"
  
  # Set the default paths
@@ -28,18 +28,20 @@
 -CONFFILE="/etc/logcheck/logcheck.conf"
 -STATEDIR="/var/lib/logcheck"
 -LOGFILES_LIST="/etc/logcheck/logcheck.logfiles"
+-LOGFILES_LIST_D="/etc/logcheck/logcheck.logfiles.d"
 -LOGFILE_FALLBACK="/var/log/syslog"
 -LOGTAIL="/usr/sbin/logtail2"
 +RULEDIR="%%ETCDIR%%"
 +CONFFILE="%%ETCDIR%%/logcheck.conf"
-+STATEDIR="/var/db/logcheck"
++STATEDIR="%%DBDIR%%"
 +LOGFILES_LIST="%%ETCDIR%%/logcheck.logfiles"
++LOGFILES_LIST_D="%%ETCDIR%%/logcheck.logfiles.d"
 +LOGFILE_FALLBACK="/var/log/messages"
 +LOGTAIL="%%PREFIX%%/sbin/logtail2"
  CAT="/bin/cat"
  SYSLOG_SUMMARY="/usr/bin/syslog-summary"
  
-@@ -89,20 +82,15 @@
+@@ -90,20 +83,15 @@ FQDN=0
  SORTUNIQ=0
  SUPPORT_CRACKING_IGNORE=0
  SYSLOGSUMMARY=0
@@ -64,7 +66,7 @@
      fi
  
      if [ -d "$TMPDIR" ]; then
-@@ -144,14 +132,9 @@
+@@ -145,14 +133,9 @@ error() {
      if [ "$2" = "noclean" ]; then
  	debug "error: Not removing lockfile"
      else
@@ -82,7 +84,7 @@
         fi
  
      fi
-@@ -170,7 +153,7 @@
+@@ -171,7 +154,7 @@ $message
  ${TMPDIR:+Check temporary directory: $TMPDIR
  }
  Also verify that the logcheck user can read all files referenced in
@@ -91,16 +93,16 @@
  
  $(export)
  EOF
-@@ -215,7 +198,7 @@
- 	    mkdir "$cleaned" \
- 	        || error "Could not make dir $cleaned for cleaned rulefiles."
- 	fi
+@@ -223,7 +206,7 @@ cleanrules() {
+ 			error "Couldn't read $x"
+ 		fi
+ 	done
 -	for rulefile in $(run-parts --list "$dir"); do
 +	for rulefile in $(ls -1R "$dir"); do
  	    rulefile="$(basename "$rulefile")"
  	    if [ -f "${dir}/${rulefile}" ]; then
  		debug "cleanrules: ${dir}/${rulefile}"
-@@ -529,9 +512,9 @@
+@@ -538,9 +521,9 @@ fi
  
  # Hostname either fully qualified or not.
  if [ "$FQDN" -eq 1 ]; then
@@ -112,7 +114,7 @@
  fi
  
  # Now check for the other options
-@@ -610,30 +593,25 @@
+@@ -623,30 +606,25 @@ fi
  
  trap 'cleanup' 0
  
