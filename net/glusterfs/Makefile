@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	glusterfs
-PORTVERSION=	3.9.0
-PORTREVISION=	3
+PORTVERSION=	3.11.1
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://bits.gluster.org/pub/gluster/glusterfs/src/
 
@@ -14,18 +14,26 @@ LICENSE_COMB=	dual
 
 LIB_DEPENDS=	libargp.so:devel/argp-standalone liburcu-bp.so:sysutils/liburcu
 
-USE_GCC=	any
-
 USES=		bison gettext libtool pkgconfig python readline shebangfix \
 		sqlite ssl
 
 BROKEN_SSL=	libressl
 
-SHEBANG_FILES=	extras/ganesha/scripts/create-export-ganesha.sh \
-		extras/ganesha/scripts/dbus-send.sh \
-		extras/ganesha/scripts/ganesha-ha.sh \
-		extras/ganesha/scripts/generate-epoch.py \
-		extras/peer_add_secret_pub.in \
+SHEBANG_FILES=	extras/peer_add_secret_pub.in \
+		events/src/glustereventsd.py \
+		events/src/peer_eventsapi.py \
+		tools/glusterfind/src/nodeagent.py \
+		tools/glusterfind/src/brickfind.py \
+		tools/glusterfind/src/changelog.py \
+		tools/glusterfind/glusterfind.in \
+		tools/gfind_missing_files/gfid_to_path.py \
+		extras/pre-upgrade-script-for-quota.sh \
+		events/tools/eventsdash.py \
+		extras/post-upgrade-script-for-quota.sh \
+		extras/snap_scheduler/gcron.py \
+		extras/snap_scheduler/snap_scheduler.py \
+		events/src/peer_eventsapi.py \
+		events/src/glustereventsd.py \
 		tools/glusterfind/S57glusterfind-delete-post.py
 
 USE_GNOME=	glib20 libxml2
@@ -46,5 +54,11 @@ LDFLAGS+=	-L"${LOCALBASE}/lib" -largp
 INSTALL_TARGET=	install-strip
 PLIST_SUB=	GLUSTERLIBDIR="lib/${PORTNAME}/${PORTVERSION}"
 KMODDIR?=	/boot/modules
+
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1101001
+USE_GCC=	yes
+.endif
 
 .include <bsd.port.mk>
