@@ -9,13 +9,9 @@ CATEGORIES=	net
 MAINTAINER=	coco@executive-computing.de
 COMMENT=	Marco d'Itri whois client
 
-<<<<<<< HEAD
-EXPLICIT_SAFESTACK=		yes
+USE_HARDENING=	pie relro safestack
 
-LICENSE=	GPLv2
-=======
 LICENSE=	GPLv2+
->>>>>>> freebsd/master
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		iconv gmake perl5
