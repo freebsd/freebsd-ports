@@ -9471,3 +9471,4 @@ security/sshguard-null|security/sshguard|2017-07-20|Merged with security/sshguar
 audio/gstreamer1-plugins-mad|audio/gstreamer1-plugins-mpg123|2017-07-21|The GStreamer 1 mad plugin was removed, the mpg123 plugin supplies the same functionality
 x11-toolkits/gstreamer1-plugins-gtksink|x11-toolkits/gstreamer1-plugins-gtk|2017-07-21|The GStreamer 1 gtksink plugin was renamed
 devel/ffcall|devel/libffcall|2017-07-28|Project was renamed
+databases/grass|databases/grass6|2017-07-30|Project was renamed to allow for grass7
