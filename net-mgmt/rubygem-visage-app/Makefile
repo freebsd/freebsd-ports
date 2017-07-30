@@ -3,7 +3,7 @@
 
 PORTNAME=	visage-app
 PORTVERSION=	2.1.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net-mgmt rubygems
 MASTER_SITES=	RG
 
@@ -20,7 +20,6 @@ RUN_DEPENDS=	rubygem-errand>=0.7.3:devel/rubygem-errand \
 		rubygem-yajl-ruby>=1.1.0:devel/rubygem-yajl-ruby
 
 NO_ARCH=	yes
-
 USE_RUBY=	yes
 USES=		gem
 
