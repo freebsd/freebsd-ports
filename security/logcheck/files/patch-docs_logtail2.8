@@ -1,0 +1,11 @@
+--- docs/logtail2.8.orig	2017-01-25 21:08:04 UTC
++++ docs/logtail2.8
+@@ -38,7 +38,7 @@ is not empty, the inode of
+ is checked.  If the inode is changed,
+ .B logtail2
+ uses the heuristics stored in
+-.I /usr/share/logtail/detectrotate/
++.I %%DATADIR%%/detectrotate/
+ to find a file that might be the rotated
+ .I logfile
+ and prints it starting with the stored offset. It then proceeds to
