@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Math-Currency
-PORTVERSION=	0.51
+PORTVERSION=	0.52
 CATEGORIES=	math perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -21,13 +21,5 @@ TEST_DEPENDS=	p5-Test-More-UTF8>=0:devel/p5-Test-More-UTF8
 NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
-
-OPTIONS_DEFINE=	DOCS
-
-PORTDOCS=	Changes
-
-post-install-DOCS-on:
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
