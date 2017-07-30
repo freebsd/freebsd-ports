@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Mail-DKIM
-PORTVERSION=	0.41
+PORTVERSION=	0.42
 CATEGORIES=	mail perl5
 MASTER_SITES=	CPAN \
 		http://jason.long.name/dkimproxy/
@@ -23,7 +23,7 @@ NO_ARCH=	yes
 USES=		perl5 shebangfix
 USE_PERL5=	configure
 
-SHEBANG_FILES=	scripts/dkim*.pl sample_mime_lite.pl
+SHEBANG_FILES=	scripts/*.pl
 
 post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/scripts/dkim*.pl ${STAGEDIR}${PREFIX}/bin
