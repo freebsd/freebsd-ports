@@ -19,6 +19,7 @@ TEST_DEPENDS=	p5-Log-Log4perl>=0:devel/p5-Log-Log4perl
 
 USE_PERL5=	configure
 USES=		perl5
+CFLAGS+=	-I${LOCALBASE}/include/js-1.7/
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|libjs.a|libjs.so|' ${WRKSRC}/Makefile.PL

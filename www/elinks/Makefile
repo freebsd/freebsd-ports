@@ -94,7 +94,8 @@ XBELNARKS_CONFIGURE_OFF=--disable-xbel
 SPIDERMONKEY_BUILD_DEPENDS=	${LOCALBASE}/lib/libjs.so:lang/spidermonkey17
 SPIDERMONKEY_RUN_DEPENDS=	js:lang/spidermonkey17
 SPIDERMONKEY_LIB_DEPENDS=	libnspr4.so:devel/nspr
-SPIDERMONKEY_CFLAGS=		-I${LOCALBASE}/include/nspr
+SPIDERMONKEY_CFLAGS=		-I${LOCALBASE}/include/nspr \
+				-I${LOCALBASE}/include/js-1.7
 SPIDERMONKEY_LDFLAGS=		-lnspr4 -pthread -lpthread -lm
 SPIDERMONKEY_CONFIGURE_ON=	--enable-sm-scripting --with-spidermonkey
 SPIDERMONKEY_CONFIGURE_OFF=	--disable-sm-scripting --without-spidermonkey

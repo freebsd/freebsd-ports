@@ -18,8 +18,9 @@ MASTER_SITES=	http://grass.osgeo.org/%SUBDIR%/ \
 		http://wgbis.ces.iisc.ernet.in/grass/%SUBDIR%/ \
 		http://wgrass.media.osaka-cu.ac.jp/grassh/%SUBDIR%/
 MASTER_SITE_SUBDIR=	grass64/source
+PKGNAMESUFFIX=	6
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	lbartoletti@tuxfamily.org
 COMMENT=	Open source Geographical Information System (GIS)
 
 LICENSE=	GPLv2+

@@ -66,7 +66,7 @@ MYSQL_CONFIGURE_ENABLE=		mysql
 MYSQL_CONFIGURE_ON= 		--with-mysql-cfg="${LOCALBASE}/bin/mysql_config"
 
 JS_CONFIGURE_ENABLE=		libjs
-JS_CONFIGURE_ON=		--with-js-h="${LOCALBASE}/include" \
+JS_CONFIGURE_ON=		--with-js-h="${LOCALBASE}/include/js-1.7" \
 				--with-js-libs="${LOCALBASE}/lib"
 JS_LIB_DEPENDS=			libjs.so:lang/spidermonkey17
 

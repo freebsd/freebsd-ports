@@ -3,7 +3,7 @@
 
 PORTNAME=	spidermonkey17
 DISTVERSION=	1.7.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	lang
 MASTER_SITES=	MOZILLA/js
 DISTNAME=	js-${DISTVERSION}
@@ -40,7 +40,7 @@ JSH=		jsapi.h jsarena.h jsarray.h jsatom.h jsautocfg.h jsbool.h \
 		jsstr.h jstypes.h jsxdrapi.h jsxml.h \
 		js.msg jsproto.tbl
 
-PLIST_FILES=	bin/js lib/libjs.so lib/libjs.so.1 ${JSH:S,^,include/,}
+PLIST_FILES=	bin/js lib/libjs.so lib/libjs.so.1 ${JSH:S,^,include/js-1.7/,}
 WRKSRC=		${WRKDIR}/${SRC_DIR}
 EXTRACT_AFTER_ARGS=	--exclude js/jsd
 
@@ -63,6 +63,8 @@ do-install:
 		${STAGEDIR}${PREFIX}/lib
 	${LN} -sf libjs.so ${STAGEDIR}${PREFIX}/lib/libjs.so.1
 	${CP} ${WRKSRC}/${OPSYS}`${UNAME} -r`_DBG.OBJ/jsautocfg.h ${WRKSRC}
-	@${INSTALL_DATA} ${JSH:S,^,${WRKSRC}/,} ${STAGEDIR}${PREFIX}/include/
+	@${MKDIR} ${STAGEDIR}${PREFIX}/include/js-1.7
+	@${INSTALL_DATA} ${JSH:S,^,${WRKSRC}/,} \
+		${STAGEDIR}${PREFIX}/include/js-1.7/
 
 .include <bsd.port.mk>
