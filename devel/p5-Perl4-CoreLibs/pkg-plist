@@ -21,7 +21,6 @@
 %%SITE_PERL%%/hostname.pl
 %%SITE_PERL%%/importenv.pl
 %%SITE_PERL%%/look.pl
-%%PERL5_MAN3%%/Perl4::CoreLibs.3.gz
 %%SITE_PERL%%/newgetopt.pl
 %%SITE_PERL%%/open2.pl
 %%SITE_PERL%%/open3.pl
@@ -33,3 +32,4 @@
 %%SITE_PERL%%/termcap.pl
 %%SITE_PERL%%/timelocal.pl
 %%SITE_PERL%%/validate.pl
+%%PERL5_MAN3%%/Perl4::CoreLibs.3.gz
