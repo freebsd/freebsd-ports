@@ -215,7 +215,7 @@ post-install:
 		-C ${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}
 
 	${MV} ${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/erts-8.3/* \
-		${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/erts-8.3.5.1
+		${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/erts-8.3.5.2
 	${RMDIR} ${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/erts-8.3
 
 	${MV} ${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/lib/crypto-3.7.3/* \
