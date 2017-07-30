@@ -17,6 +17,8 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py3-pytest \
 
 DOCS_BUILD_DEPENDS=	sphinx-build:textproc/py3-sphinx
 
+PORTSCOUT=	ignore:1
+
 USES=		python:3.3+ shebangfix
 
 .include "${MASTERDIR}/Makefile"

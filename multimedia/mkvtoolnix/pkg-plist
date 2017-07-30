@@ -109,6 +109,7 @@ man/man1/mkvpropedit.1.gz
 %%NLS%%share/locale/pl/LC_MESSAGES/mkvtoolnix.mo
 %%NLS%%share/locale/pt/LC_MESSAGES/mkvtoolnix.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/mkvtoolnix.mo
+%%NLS%%share/locale/ro/LC_MESSAGES/mkvtoolnix.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/mkvtoolnix.mo
 %%NLS%%share/locale/sr_RS/LC_MESSAGES/mkvtoolnix.mo
 %%NLS%%share/locale/sr_RS@latin/LC_MESSAGES/mkvtoolnix.mo
