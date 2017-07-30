@@ -1,8 +1,8 @@
---- src/logtail2.orig	2010-01-18 17:24:26.000000000 -0500
-+++ src/logtail2	2010-01-18 17:24:40.000000000 -0500
-@@ -108,7 +108,7 @@
+--- src/logtail2.orig	2017-07-11 17:32:13 UTC
++++ src/logtail2
+@@ -109,7 +109,7 @@ sub determine_rotated_logfile {
      # function with dateext magic added.
-     
+ 
      #print "determine_rotated_logfile $filename $inode\n";
 -    for my $codefile (glob("/usr/share/logtail/detectrotate/*.dtr")) {
 +    for my $codefile (glob("%%DATADIR%%/detectrotate/*.dtr")) {

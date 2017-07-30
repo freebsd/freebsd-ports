@@ -1,0 +1,23 @@
+--- src/logcheck-test.orig	2017-01-25 21:08:04 UTC
++++ src/logcheck-test
+@@ -38,7 +38,7 @@ usage() {
+ usage: logcheck-test
+ -h|--help                   : Show usage information
+ -a|--auth.log               : Parse /var/log/auth.log
+--s|--syslog                 : Parse /var/log/syslog
++-m|--messages               : Parse /var/log/messages
+ -l|--log-file LOGFILE       : Parse LOGFILE
+ -i|--invert-match           : Show lines that don't match the RULE or RULEFILE
+ -q|--quiet                  : Suppress rule summary
+@@ -103,9 +103,9 @@ while [ -n "${1:-}" ]; do
+                 warn "option -a ignored"
+             fi
+         ;;
+-        -s|--syslog)
++        -m|--messages)
+             if [ -z "$FILE" ] ; then
+-                FILE="/var/log/syslog"
++                FILE="/var/log/messages"
+             else
+                 warn "option -s ignored"
+             fi

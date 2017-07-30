@@ -1,0 +1,26 @@
+--- docs/logcheck-test.1.orig	2017-01-25 21:08:04 UTC
++++ docs/logcheck-test.1
+@@ -38,8 +38,8 @@ Show usage information
+ .B \-a, \-\-auth.log
+ Parse /var/log/auth.log for matching lines
+ .TP
+-.B \-s, \-\-syslog
+-Parse /var/log/syslog for matching lines
++.B \-m, \-\-messages
++Parse /var/log/messages for matching lines
+ .TP
+ .B \-l, \-\-log\-file FILE
+ Parse FILE for matching lines
+@@ -69,10 +69,10 @@ With
+ .B logcheck-test
+ you can easily write and test new rules.
+ .PP
+-Test a single rule against /var/log/syslog:
++Test a single rule against /var/log/messages:
+ .RS
+ .fam C
+-logcheck-test \-s "RULE"
++logcheck-test \-m "RULE"
+ .fam T
+ .RE
+ 
