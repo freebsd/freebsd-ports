@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	menhir
-PORTVERSION=	20170607
+PORTVERSION=	20170712
 CATEGORIES=	devel
 MASTER_SITES=	http://cristal.inria.fr/~fpottier/menhir/
 
