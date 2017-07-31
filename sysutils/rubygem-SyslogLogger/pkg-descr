@@ -1,4 +1,0 @@
-SyslogLogger is a Logger replacement that logs to syslog. It is almost drop-in
-with a few caveats.
-
-WWW: https://github.com/seattlerb/sysloglogger

@@ -1,9 +1,0 @@
-bin/sieve-test
-bin/sievec
-bin/sieved
-lib/dovecot/lda/lib90_sieve_plugin.a
-lib/dovecot/lda/lib90_sieve_plugin.la
-lib/dovecot/lda/lib90_sieve_plugin.so
-man/man1/sieve-test.1.gz
-man/man1/sievec.1.gz
-man/man1/sieved.1.gz
