@@ -171,6 +171,7 @@
     SUBDIR += babeltrace
     SUBDIR += bam
     SUBDIR += bazel
+    SUBDIR += bazel-clang38
     SUBDIR += bbfreeze
     SUBDIR += bbfreeze-loader
     SUBDIR += bcc

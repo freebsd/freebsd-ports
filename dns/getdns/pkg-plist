@@ -7,7 +7,7 @@ include/getdns/getdns_extra.h
 %%LIBUV%%include/getdns/getdns_ext_libuv.h
 lib/libgetdns.so
 lib/libgetdns.so.%%SOMAJVER%%
-lib/libgetdns.so.%%SOMAJVER%%.1.0
+lib/libgetdns.so.%%SOVERSION%%
 lib/libgetdns.a
 libdata/pkgconfig/getdns.pc
 libdata/pkgconfig/getdns_ext_event.pc

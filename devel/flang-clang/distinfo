@@ -1,3 +1,3 @@
-TIMESTAMP = 1495120245
-SHA256 (flang-compiler-clang-3.9-20170518-edf56fd_GH0.tar.gz) = ff5dfcc322ceb247dffe10300a0a6072face2ef458c413e2dd70fb5c8e51beaa
-SIZE (flang-compiler-clang-3.9-20170518-edf56fd_GH0.tar.gz) = 14365634
+TIMESTAMP = 1500381643
+SHA256 (flang-compiler-clang-4.0-20170612-17f4427_GH0.tar.gz) = 71f00321c7bb2907623506b6f07ea8e9d19cb832f6cdeb99831ed64fd38307b0
+SIZE (flang-compiler-clang-4.0-20170612-17f4427_GH0.tar.gz) = 15209622
