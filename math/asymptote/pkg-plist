@@ -186,17 +186,6 @@ man/man1/xasy.1x.gz
 %%DATADIR%%/x11colors.asy
 %%PORTDOCS%%%%DOCSDIR%%/CAD.pdf
 %%PORTDOCS%%%%DOCSDIR%%/TeXShopAndAsymptote.pdf
-%%PORTDOCS%%%%DOCSDIR%%/asy-faq.ascii
-%%PORTDOCS%%%%DOCSDIR%%/asy-faq.html/index.html
-%%PORTDOCS%%%%DOCSDIR%%/asy-faq.html/section1.html
-%%PORTDOCS%%%%DOCSDIR%%/asy-faq.html/section2.html
-%%PORTDOCS%%%%DOCSDIR%%/asy-faq.html/section3.html
-%%PORTDOCS%%%%DOCSDIR%%/asy-faq.html/section4.html
-%%PORTDOCS%%%%DOCSDIR%%/asy-faq.html/section5.html
-%%PORTDOCS%%%%DOCSDIR%%/asy-faq.html/section6.html
-%%PORTDOCS%%%%DOCSDIR%%/asy-faq.html/section7.html
-%%PORTDOCS%%%%DOCSDIR%%/asy-faq.html/section8.html
-%%PORTDOCS%%%%DOCSDIR%%/asy-faq.html/section9.html
 %%PORTDOCS%%%%DOCSDIR%%/asy-latex.pdf
 %%PORTDOCS%%%%DOCSDIR%%/asyRefCard.pdf
 %%PORTDOCS%%%%DOCSDIR%%/asymptote.pdf
