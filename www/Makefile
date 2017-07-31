@@ -1668,6 +1668,7 @@
     SUBDIR += py-horizon
     SUBDIR += py-hpack
     SUBDIR += py-html
+    SUBDIR += py-html5-parser
     SUBDIR += py-html5lib
     SUBDIR += py-http-parser
     SUBDIR += py-httpie
