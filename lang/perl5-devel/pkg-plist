@@ -43,6 +43,7 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%PRIV_LIB%%/Attribute/Handlers.pm
 %%PRIV_LIB%%/AutoLoader.pm
 %%PRIV_LIB%%/AutoSplit.pm
+%%PRIV_LIB%%/B/Debug.pm
 %%PRIV_LIB%%/B/Deparse.pm
 %%PRIV_LIB%%/B/Op_private.pm
 %%PRIV_LIB%%/Benchmark.pm
@@ -1165,6 +1166,7 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%MAN3%%/AutoSplit.3.gz
 %%MAN3%%/B.3.gz
 %%MAN3%%/B::Concise.3.gz
+%%MAN3%%/B::Debug.3.gz
 %%MAN3%%/B::Deparse.3.gz
 %%MAN3%%/B::Op_private.3.gz
 %%MAN3%%/B::Showlex.3.gz
