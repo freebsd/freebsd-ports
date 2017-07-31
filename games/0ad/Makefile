@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	0ad
-PORTVERSION=	0.0.21
-PORTREVISION=	8
+PORTVERSION=	0.0.22
 CATEGORIES=	games
 MASTER_SITES=	http://releases.wildfiregames.com/ \
 		SF/zero-ad/releases
@@ -24,16 +23,18 @@ LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 		libgloox.so:net-im/gloox \
 		libminiupnpc.so:net/miniupnpc \
 		libnspr4.so:devel/nspr \
-		libenet.so:net/enet
+		libenet.so:net/enet \
+		libtiff.so:graphics/tiff
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-alpha
 BUILD_WRKSRC=	${WRKSRC}/build/workspaces/gcc
 MAKE_ARGS=	config=release
-USES=		compiler:c++11-lib dos2unix execinfo gmake iconv openal:al \
+USES=		compiler:c++11-lib dos2unix execinfo gmake iconv jpeg openal:al \
 		pkgconfig tar:xz
 USE_GNOME=	libxml2 gtk20
 USE_GL=		gl
 USE_SDL=	sdl2
+USE_XORG=	x11 xcursor
 BUNDLE_LIBS=	yes
 DOS2UNIX_REGEX=	.*\.([ch]p{0,2}|make)
 
@@ -62,6 +63,7 @@ post-patch:
 		${WRKSRC}/build/resources/0ad.desktop
 	@${REINPLACE_CMD} 's|%%PREFIX%%|${PREFIX}|' \
 		${WRKSRC}/build/resources/0ad.sh
+	@${CP} ${FILESDIR}/psutil.diff ${WRKSRC}/libraries/source/spidermonkey/
 
 pre-build:
 	(cd ${WRKSRC}/build/workspaces && ${SETENV} ${MAKE_ENV} ./update-workspaces.sh ${0ADSDLARG} --bindir=${PREFIX}/bin --datadir=${DATADIR} --libdir=${PREFIX}/lib/${PORTNAME})
