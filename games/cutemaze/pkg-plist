@@ -17,6 +17,7 @@ share/applications/cutemaze.desktop
 %%NLS%%%%DATADIR%%/translations/cutemaze_ro.qm
 %%NLS%%%%DATADIR%%/translations/cutemaze_ru.qm
 %%NLS%%%%DATADIR%%/translations/cutemaze_tr.qm
+%%NLS%%%%DATADIR%%/translations/cutemaze_zh.qm
 share/icons/hicolor/1024x1024/apps/cutemaze.png
 share/icons/hicolor/128x128/apps/cutemaze.png
 share/icons/hicolor/16x16/apps/cutemaze.png
