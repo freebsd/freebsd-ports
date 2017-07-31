@@ -1,4 +1,4 @@
 Mixlib::Authentication provides a class-based header signing authentication
 object, like the one used in Chef.
 
-WWW: http://www.opscode.com
+WWW: https://www.chef.io/

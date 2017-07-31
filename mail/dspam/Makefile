@@ -32,7 +32,7 @@ OPTIONS_MULTI_DB=	HASH MYSQL MYSQL_COMPRESS MYSQL_LOCAL \
 			PGSQL PGSQL_LOCAL SQLITE2 SQLITE3
 
 OPTIONS_RADIO=		LDA
-OPTIONS_RADIO_LDA=	CYRUS23 CYRUS24 DOVECOT1 \
+OPTIONS_RADIO_LDA=	CYRUS23 CYRUS24 \
 			DOVECOT2 EXIM MAILDROP PROCMAIL SAFECAT SENDMAIL
 
 OPTIONS_DEFAULT=	SYSLOG DEBUG DAEMON CLAMAV CLAMAV_LOCAL \
@@ -61,7 +61,6 @@ LARGE_SCALE_DESC=	File structure for large scale
 DOMAIN_SCALE_DESC=	File structure for multiple domains
 CYRUS23_DESC=		Cyrus's 2.3 deliver as LDA
 CYRUS24_DESC=		Cyrus's 2.4 deliver as LDA
-DOVECOT1_DESC=		Dovecot 1.2 deliver as LDA
 DOVECOT2_DESC=		Dovecot 2.2 dovecot-lda as LDA
 EXIM_DESC=		Exim as local delivery agent
 MAILDROP_DESC=		Maildrop as local delivery agent
@@ -338,11 +337,6 @@ CONFIGURE_ARGS+=	--with-delivery-agent='${LOCALBASE}/cyrus/bin/deliver'
 .if ${PORT_OPTIONS:MCYRUS24}
 RUN_DEPENDS+=	${LOCALBASE}/cyrus/bin/deliver:mail/cyrus-imapd24
 CONFIGURE_ARGS+=	--with-delivery-agent='${LOCALBASE}/cyrus/bin/deliver'
-.endif
-
-.if ${PORT_OPTIONS:MDOVECOT1}
-RUN_DEPENDS+=	${LOCALBASE}/libexec/dovecot/deliver:mail/dovecot
-CONFIGURE_ARGS+=	--with-delivery-agent='${LOCALBASE}/libexec/dovecot/deliver'
 .endif
 
 .if ${PORT_OPTIONS:MDOVECOT2}
