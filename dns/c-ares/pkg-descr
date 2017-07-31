@@ -4,4 +4,4 @@ need to perform multiple DNS queries in parallel.  The primary
 examples of such applications are servers which communicate with
 multiple clients and programs with graphical user interfaces.
 
-WWW: http://c-ares.haxx.se/
+WWW: https://c-ares.haxx.se/
