@@ -1,7 +1,0 @@
-Dovecot native ManageSieve implementation
-
-Provides ManageSieve protocol service giving users the ability to
-upload their own Sieve scripts to the server, i.e. without the need
-for shell or FTP access.
-
-WWW: http://Wiki.Dovecot.org/ManageSieve

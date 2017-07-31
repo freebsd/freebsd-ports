@@ -9472,3 +9472,17 @@ audio/gstreamer1-plugins-mad|audio/gstreamer1-plugins-mpg123|2017-07-21|The GStr
 x11-toolkits/gstreamer1-plugins-gtksink|x11-toolkits/gstreamer1-plugins-gtk|2017-07-21|The GStreamer 1 gtksink plugin was renamed
 devel/ffcall|devel/libffcall|2017-07-28|Project was renamed
 databases/grass|databases/grass6|2017-07-30|Project was renamed to allow for grass7
+net/rubygem-oauth212|net/rubygem-oauth2|2017-07-31|Has expired: Only created for www/gitlab; please use net/rubygem-oauth2 instead
+textproc/rubygem-liquid3|textproc/rubygem-liquid|2017-07-31|Has expired: Use textproc/rubygem-liquid instead
+mail/dovecot2-antispam-plugin|mail/dovecot2-pigeonhole|2017-07-31|Has expired: Use pigeonhole instead. See https://wiki2.dovecot.org/HowTo/AntispamWithSieve
+mail/dovecot-antispam|mail/dovecot2-antispam-plugin|2017-07-31|Has expired: Dovecot-1.x is deprecated. Use dovecot2 and dovecot2-antispam-plugin instead
+mail/dovecot-sieve|mail/dovecot2-pigeonhole|2017-07-31|Has expired: Dovecot-1.x is deprecated. Use dovecot2 and dovecot-pigeonhole instead
+mail/dovecot-managesieve|mail/dovecot2-pigeonhole|2017-07-31|Has expired: Dovecot-1.x is deprecated. Use dovecot2 and dovecot-pigeonhole instead
+www/rubygem-jquery-ui-rails5-rails4|www/rubygem-jquery-ui-rails-rails4|2017-07-31|Has expired: Only created for www/gitlab; please use www/rubygem-jquery-ui-rails-rails4 instead
+security/rubygem-omniauth13|security/rubygem-omniauth|2017-07-31|Has expired: Only created for www/gitlab; please use security/rubygem-omniauth instead
+devel/rubygem-health_check22|devel/rubygem-health_check|2017-07-31|Has expired: Only created for www/gitlab; please use devel/rubygem-health_check instead
+devel/rubygem-semantic_puppet0|devel/rubygem-semantic_puppet|2017-07-31|Has expired: Use devel/rubygem-semantic_puppet instead
+devel/rubygem-newrelic_rpm3|devel/rubygem-newrelic_rpm|2017-07-31|Has expired: Only created for www/gitlab; please use devel/rubygem-newrelic_rpm instead
+lang/p5-Parse-Perl||2017-07-31|Has expired: does not build with Perl >= 5.22
+sysutils/rubygem-puppet_forge1|sysutils/rubygem-puppet_forge|2017-07-31|Has expired: Use sysutils/rubygem-puppet_forge instead
+sysutils/rubygem-SyslogLogger||2017-07-31|Has expired: Project is EOL'd because it was merged into Ruby 2.0
