@@ -1,6 +1,14 @@
---- cutemaze.pro.orig	2017-02-13 13:47:42 UTC
+--- cutemaze.pro.orig	2017-07-30 17:16:25 UTC
 +++ cutemaze.pro
-@@ -94,7 +94,7 @@ macx {
+@@ -91,14 +91,14 @@ macx {
+ 	desktop.path = $$PREFIX/share/applications/
+ 
+ 	appdata.files = icons/cutemaze.appdata.xml
+-	appdata.path = $$PREFIX/share/metainfo/
++	appdata.path = $$PREFIX/share/appdata/
+ 
+ 	qm.files = $$replace(TRANSLATIONS, .ts, .qm)
+ 	qm.path = $$PREFIX/share/cutemaze/translations
  	qm.CONFIG += no_check_exist
  
  	man.files = doc/cutemaze.6

@@ -1,6 +1,6 @@
---- libraries/source/fcollada/src/Makefile.orig	2014-09-27 14:41:22 UTC
+--- libraries/source/fcollada/src/Makefile.orig	2014-09-24 14:39:28 UTC
 +++ libraries/source/fcollada/src/Makefile
-@@ -227,7 +227,7 @@
+@@ -227,7 +227,7 @@ OBJECTS_ALL = $(OBJECTS_DEBUG) $(OBJECTS_RELEASE) $(OB
  all: output/libFColladaSD.a output/libFColladaSR.a install
  
  output_dirs:

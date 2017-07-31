@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cutemaze
-PORTVERSION=	1.2.0
+PORTVERSION=	1.2.1
 CATEGORIES=	games
 MASTER_SITES=	http://gottcode.org/${PORTNAME}/
 DISTNAME=	${PORTNAME}-${DISTVERSION}-src

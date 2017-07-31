@@ -124,6 +124,9 @@ CFLAGS+=	-fomit-frame-pointer
 .  if ${ARCH} == "i386" && (${COMPILER_TYPE} == "gcc" || !empty(USE_GCC)) && !${PORT_OPTIONS:MOPENMPI}
 CFLAGS+=	-malign-double
 .  endif
+.  if ${ARCH} == "armv6" && ${OPSYS} == FreeBSD && ${OSVERSION} < 1200032
+CFLAGS+=	-fno-unsafe-math-optimizations
+.  endif
 WITHOUT_NO_STRICT_ALIASING=	yes
 .endif # end OPTIMIZED_CFLAGS
 
