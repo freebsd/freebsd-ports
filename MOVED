@@ -9486,3 +9486,8 @@ devel/rubygem-newrelic_rpm3|devel/rubygem-newrelic_rpm|2017-07-31|Has expired: O
 lang/p5-Parse-Perl||2017-07-31|Has expired: does not build with Perl >= 5.22
 sysutils/rubygem-puppet_forge1|sysutils/rubygem-puppet_forge|2017-07-31|Has expired: Use sysutils/rubygem-puppet_forge instead
 sysutils/rubygem-SyslogLogger||2017-07-31|Has expired: Project is EOL'd because it was merged into Ruby 2.0
+multimedia/avbin||2017-07-31|Has expired: Unfetchable for more than six months (google code has gone away)
+games/gondola||2017-07-31|Depends on expired multimedia/avbin
+sysutils/flyback||2017-07-31|Unfetchable for more than six months (google code has gone away)
+multimedia/py-ffmpeg||2017-07-31|Has expired: Depreciated upstream in favour of ffpyplayer
+mail/dovecot|mail/dovecot2|2017-07-31|Has expired: Deprecated by upstream years ago. Use mail/dovecot2 instead

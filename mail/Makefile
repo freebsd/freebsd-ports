@@ -96,7 +96,6 @@
     SUBDIR += dkimproxy
     SUBDIR += dma
     SUBDIR += dot-forward
-    SUBDIR += dovecot
     SUBDIR += dovecot2
     SUBDIR += dovecot2-pigeonhole
     SUBDIR += drac
