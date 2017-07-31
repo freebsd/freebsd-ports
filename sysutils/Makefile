@@ -317,7 +317,6 @@
     SUBDIR += flog
     SUBDIR += flowgger
     SUBDIR += fluent-bit
-    SUBDIR += flyback
     SUBDIR += fonteditfs
     SUBDIR += foremost
     SUBDIR += fortunelock

@@ -1,4 +1,0 @@
-#!/bin/sh
-
-cd %%DATADIR%%
-exec %%DATADIR%%/flyback.py

@@ -385,7 +385,6 @@
     SUBDIR += goldencheetah
     SUBDIR += golly
     SUBDIR += gomoku
-    SUBDIR += gondola
     SUBDIR += goonies
     SUBDIR += gottet
     SUBDIR += gracer

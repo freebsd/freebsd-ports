@@ -1,5 +1,0 @@
-py-ffmpeg includes a specific Python wrapper to decode audio / video,
-implemented to be as portable as possible. The goal is to use it for a
-core provider in the Kivy project, on android platform.
-
-WWW: http://txzone.net/
