@@ -6,7 +6,6 @@ share/applications/milkytracker.desktop
 %%PORTDOCS%%%%DOCSDIR%%/FAQ.html
 %%PORTDOCS%%%%DOCSDIR%%/MilkyTracker.html
 %%PORTDOCS%%%%DOCSDIR%%/TiTAN.nfo
-%%PORTDOCS%%%%DOCSDIR%%/readme_unix
 %%DATADIR%%/songs/milky.xm
 %%DATADIR%%/songs/slumberjack.xm
 %%DATADIR%%/songs/sv_ttt.xm
