@@ -25,7 +25,7 @@ USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libidn=${LOCALBASE} --docdir=${DOCSDIR} \
 		--with-trust-anchor=${LOCALBASE}/etc/unbound/root.key
-SOVERSION=	6.0.0
+SOVERSION=	6.1.0
 SOMAJVER=	${SOVERSION:C/([0-9]).*/\1/1}
 MAKE_JOBS_UNSAFE=yes
 
@@ -41,7 +41,7 @@ LIBUV_DESC=	Build with libuv extension
 
 LIBEV_LIB_DEPENDS=	libev.so:devel/libev
 LIBEV_CONFIGURE_WITH=	libev
-LIBEVENT_LIB_DEPENDS=	libevent_core.so:devel/libevent2
+LIBEVENT_LIB_DEPENDS=	libevent_core.so:devel/libevent
 LIBEVENT_CONFIGURE_WITH=libevent
 LIBUV_LIB_DEPENDS=	libuv.so:devel/libuv
 LIBUV_CONFIGURE_WITH=	libuv
