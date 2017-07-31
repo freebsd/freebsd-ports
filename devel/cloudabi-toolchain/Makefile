@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cloudabi-toolchain
-PORTVERSION=	1.9
+PORTVERSION=	1.10
 CATEGORIES=	devel
 MASTER_SITES=	# None
 DISTFILES=	# None
@@ -16,28 +16,19 @@ RUN_DEPENDS=	clang${LLVM_SUFFIX}:devel/llvm${LLVM_SUFFIX} \
 		lld${LLVM_SUFFIX}:devel/llvm${LLVM_SUFFIX} \
 		pkgconf:devel/pkgconf
 
+CONFLICTS=	cloudabi-binutils-*
+
 LLVM_SUFFIX=	40
 
 CLOUDABI_ARCHS=	aarch64-unknown-cloudabi armv6-unknown-cloudabi-eabihf \
 		armv7-unknown-cloudabi-eabihf i686-unknown-cloudabi \
 		x86_64-unknown-cloudabi
 
+BASE_TOOLS=	addr2line c++filt objcopy readelf strings strip
 LLVM_TOOLS=	ar nm objdump ranlib size
 SHELL_TOOLS=	man pkg-config
 
 .include <bsd.port.pre.mk>
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1100100
-# Depend on ELF tools provided by the base system. They work well with
-# CloudABI executables.
-BASE_TOOLS=	addr2line c++filt objcopy readelf strings strip
-CONFLICTS=	cloudabi-binutils-*
-.else
-# The tools in the base system are too old to properly support CloudABI
-# and aarch64. Depend on versions provided by GNU Binutils instead.
-RUN_DEPENDS+=	aarch64-unknown-cloudabi-readelf:devel/cloudabi-binutils-aarch64 \
-		x86_64-unknown-cloudabi-readelf:devel/cloudabi-binutils-x86_64
-.endif
 
 .for arch in ${CLOUDABI_ARCHS}
 . for tool in ${BASE_TOOLS} ${LLVM_TOOLS} ${SHELL_TOOLS}
