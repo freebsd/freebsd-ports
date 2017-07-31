@@ -1,14 +1,5 @@
---- CMakeLists.txt.orig	2017-05-17 00:40:01 UTC
+--- CMakeLists.txt.orig	2017-07-17 19:12:06 UTC
 +++ CMakeLists.txt
-@@ -23,7 +23,7 @@ cmake_minimum_required(VERSION 2.8)
- SET(CMAKE_Fortran_COMPILER_WORKS 1)
- 
- if( NOT DEFINED TARGET_ARCHITECTURE )
--  execute_process(COMMAND uname -i OUTPUT_STRIP_TRAILING_WHITESPACE
-+  execute_process(COMMAND uname -m OUTPUT_STRIP_TRAILING_WHITESPACE
-                   OUTPUT_VARIABLE TARGET_ARCHITECTURE)
-   execute_process(COMMAND uname -s OUTPUT_STRIP_TRAILING_WHITESPACE
-                   OUTPUT_VARIABLE TARGET_OS)
 @@ -48,6 +48,19 @@ if( ${TARGET_OS} STREQUAL "Linux" )
      message("Unsupported architecture: ${TARGET_ARCHITECTURE}" )
      return()
