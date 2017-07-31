@@ -4,4 +4,4 @@ it's primary purpose is to provide node data to Chef.
 Ohai will print out a JSON data blob for all the known data about your system.
 When used with Chef, that data is reported back via node attributes.
 
-WWW: http://wiki.opscode.com/display/ohai
+WWW: https://docs.chef.io/ohai.html
