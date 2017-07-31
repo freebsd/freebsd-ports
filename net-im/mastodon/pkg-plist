@@ -499,6 +499,7 @@
 %%WWWDIR%%/app/javascript/mastodon/features/compose/containers/upload_progress_container.js
 %%WWWDIR%%/app/javascript/mastodon/features/compose/containers/warning_container.js
 %%WWWDIR%%/app/javascript/mastodon/features/compose/index.js
+%%WWWDIR%%/app/javascript/mastodon/features/compose/util/counter.js
 %%WWWDIR%%/app/javascript/mastodon/features/favourited_statuses/index.js
 %%WWWDIR%%/app/javascript/mastodon/features/favourites/index.js
 %%WWWDIR%%/app/javascript/mastodon/features/follow_requests/components/account_authorize.js
@@ -5397,6 +5398,7 @@
 %%WWWDIR%%/spec/support/examples/lib/settings/settings_extended.rb
 %%WWWDIR%%/spec/support/examples/models/concerns/account_avatar.rb
 %%WWWDIR%%/spec/support/matchers/model/model_have_error_on_field.rb
+%%WWWDIR%%/spec/validators/status_length_validator_spec.rb
 %%WWWDIR%%/spec/views/about/_contact.html.haml_spec.rb
 %%WWWDIR%%/spec/views/about/show.html.haml_spec.rb
 %%WWWDIR%%/spec/views/stream_entries/show.html.haml_spec.rb
