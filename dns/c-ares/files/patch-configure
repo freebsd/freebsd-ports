@@ -1,0 +1,12 @@
+--- configure.bak	2016-05-10 15:50:50.046840000 -0400
++++ configure	2016-05-10 15:51:05.196516000 -0400
+@@ -3981,9 +3981,6 @@
+   xc_bad_var_cflags=no
+   for xc_word in $CFLAGS; do
+     case "$xc_word" in
+-      -D*)
+-        xc_bad_var_cflags=yes
+-        ;;
+       -U*)
+         xc_bad_var_cflags=yes
+         ;;
