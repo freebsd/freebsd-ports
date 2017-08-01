@@ -13,7 +13,7 @@ COMMENT=	Sass is an extension of CSS3
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
-PORTSCOUT=	limit:^3\.2\.
+PORTSCOUT=	limit:^3\.4\.
 
 NO_ARCH=	yes
 
