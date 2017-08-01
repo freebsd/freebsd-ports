@@ -6,7 +6,7 @@ PORTVERSION=	2.2.4
 PORTREVISION=	1
 CATEGORIES=	dns
 MASTER_SITES=	https://github.com/gdnsd/gdnsd/releases/download/v${PORTVERSION}/ \
-		http://mirrors.rit.edu/zi/ \
+		ZI \
 		http://gdnsd.scaleengine.net/gdnsd/
 PKGNAMESUFFIX=	2
 

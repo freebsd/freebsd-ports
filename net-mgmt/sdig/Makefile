@@ -5,7 +5,8 @@ PORTNAME=	sdig
 PORTVERSION=	0.45
 PORTREVISION=	1
 CATEGORIES=	net-mgmt
-MASTER_SITES=	SF
+MASTER_SITES=	SF \
+		ZI
 
 MAINTAINER=	zi@FreeBSD.org
 COMMENT=	Translate IP/DNS/WINS/MAC address into port description

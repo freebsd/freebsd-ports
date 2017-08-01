@@ -5,7 +5,7 @@ PORTNAME=	duo
 PORTVERSION=	1.9.21
 CATEGORIES=	security
 MASTER_SITES=	https://dl.duosecurity.com/ \
-		http://mirrors.rit.edu/zi/
+		ZI
 DISTNAME=	${PORTNAME}_unix-${PORTVERSION}
 
 MAINTAINER=	zi@FreeBSD.org
