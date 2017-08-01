@@ -529,6 +529,7 @@
     SUBDIR += xcoloredit
     SUBDIR += xcolors
     SUBDIR += xconsole
+    SUBDIR += xcur2png
     SUBDIR += xcursorgen
     SUBDIR += xcut
     SUBDIR += xdg-desktop-portal-gnome
