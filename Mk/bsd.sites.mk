@@ -1240,7 +1240,7 @@ MASTER_SITE_KERNEL_ORG+= \
 MASTER_SITE_ZI+= \
 	https://mirrors.rit.edu/zi/ \
 	https://blackened.zi0r.com/mirrors/ \
-	LOCAL/zi
+	LOCAL/zi/
 .endif
 
 # Macro magic
