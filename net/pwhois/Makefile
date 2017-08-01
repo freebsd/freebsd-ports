@@ -6,7 +6,7 @@ PORTVERSION=	2.2.0.1
 PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	http://pwhois.org/get/ \
-		http://mirrors.rit.edu/zi/
+		ZI
 
 MAINTAINER=	zi@FreeBSD.org
 COMMENT=	Whois-compatible framework for disclosing routing data

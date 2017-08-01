@@ -3,6 +3,7 @@
 
 PORTNAME=	podofo
 PORTVERSION=	0.9.5
+PORTREVISION=	1
 CATEGORIES=	graphics print
 MASTER_SITES=	SF
 
@@ -26,7 +27,7 @@ CMAKE_ARGS=	-DFONTCONFIG_LIBRARIES=${LOCALBASE}/lib/libfontconfig.so \
 		-DPODOFO_BUILD_SHARED=TRUE \
 		-DPODOFO_BUILD_STATIC=TRUE
 USE_LDCONFIG=	yes
-USES=		cmake compiler dos2unix ssl
+USES=		cmake compiler dos2unix pkgconfig ssl
 
 DOS2UNIX_FILES=	cmake/modules/FindFREETYPE.cmake
 
@@ -46,5 +47,9 @@ TIFF_LIB_DEPENDS=	libtiff.so:graphics/tiff
 .if ${CHOSEN_COMPILER_TYPE} == gcc && ${COMPILER_VERSION} >= 50
 CXXFLAGS+=	-std=gnu++11 -D_GLIBCXX_USE_C99=1
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|$${LIBDIRNAME}/pkgconfig|${PREFIX}/libdata/pkgconfig|' ${WRKSRC}/src/CMakeLists.txt
+	@${REINPLACE_CMD} -e '/^Libs: / s|-@PODOFO_VERSION_MAJOR@||' ${WRKSRC}/src/libpodofo.pc.in
 
 .include <bsd.port.post.mk>

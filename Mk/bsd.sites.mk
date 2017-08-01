@@ -1236,6 +1236,13 @@ MASTER_SITE_KERNEL_ORG+= \
 	http://slackware.cs.utah.edu/pub/kernel.org/pub/%SUBDIR%/
 .endif
 
+.if !defined(IGNORE_MASTER_SITE_ZI)
+MASTER_SITE_ZI+= \
+	https://mirrors.rit.edu/zi/ \
+	https://blackened.zi0r.com/mirrors/ \
+	LOCAL/zi/
+.endif
+
 # Macro magic
 
 MASTER_SITES_ABBREVS=	CPAN:PERL_CPAN \

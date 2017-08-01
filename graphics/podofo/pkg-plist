@@ -125,6 +125,7 @@ include/podofo/podofo.h
 lib/libpodofo.a
 lib/libpodofo.so
 lib/libpodofo.so.0
+libdata/pkgconfig/libpodofo-0.pc
 man/man1/podofobox.1.gz
 man/man1/podofocolor.1.gz
 man/man1/podofocountpages.1.gz

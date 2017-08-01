@@ -146,6 +146,7 @@
     SUBDIR += noto
     SUBDIR += noto-lite
     SUBDIR += nucleus
+    SUBDIR += ohsnap
     SUBDIR += oldschool-pc-fonts
     SUBDIR += p5-Font-AFM
     SUBDIR += p5-Font-TTF

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rails
-PORTVERSION=	5.0.4
+PORTVERSION=	5.0.5
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	50
@@ -30,10 +30,14 @@ RUN_DEPENDS=	rubygem-actioncable50>=${PORTVERSION}:www/rubygem-actioncable50 \
 		rubygem-coffee-script-source>=1.12.2:devel/rubygem-coffee-script-source \
 		rubygem-coffee-script>=2.4.1:devel/rubygem-coffee-script \
 		rubygem-execjs>=2.7.0:devel/rubygem-execjs \
+		rubygem-ffi>=1.9.18:devel/rubygem-ffi \
 		rubygem-jbuilder-rails50>=2.6.3:devel/rubygem-jbuilder-rails50 \
 		rubygem-jquery-rails-rails50>=4.3.1:www/rubygem-jquery-rails-rails50 \
 		rubygem-multi_json>=1.12.1:devel/rubygem-multi_json \
 		rubygem-puma>=3.8.2:www/rubygem-puma \
+		rubygem-rb-fsevent>=0.10.2:devel/rubygem-rb-fsevent \
+		rubygem-rb-inotify>=0.9.10:devel/rubygem-rb-inotify \
+		rubygem-sass-listen>=4.0.0:textproc/rubygem-sass-listen \
 		rubygem-sass-rails-rails50>=5.0.3:textproc/rubygem-sass-rails-rails50 \
 		rubygem-sass>=3.4.23:textproc/rubygem-sass \
 		rubygem-spring-rails50>=2.0.1:devel/rubygem-spring-rails50 \
@@ -47,8 +51,9 @@ RUN_DEPENDS=	rubygem-actioncable50>=${PORTVERSION}:www/rubygem-actioncable50 \
 PORTSCOUT=	limit:^5\.0\.
 
 NO_ARCH=	yes
-USE_RUBY=	yes
+
 USES=		gem
+USE_RUBY=	yes
 
 CPE_VENDOR=	rubyonrails
 CPE_PRODUCT=	ruby_on_rails

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	manaplus
-PORTVERSION=	1.7.7.8
+PORTVERSION=	1.7.7.22
 CATEGORIES=	games
 MASTER_SITES=	http://download.evolonline.org/manaplus/download/${PORTVERSION}/
 
@@ -12,11 +12,11 @@ COMMENT=	Free open source 2D MMORPG client for athena and evol servers
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_powerpc64=	fails to install: zip.cpp: 'bswap_16' was not declared in this scope
+
 LIB_DEPENDS=	libxml2.so:textproc/libxml2 \
 		libpng.so:graphics/png \
 		libcurl.so:ftp/curl
-
-BROKEN_powerpc64=	fails to install: zip.cpp: 'bswap_16' was not declared in this scope
 
 USES=		autoreconf pkgconfig:build tar:xz
 USE_XORG=	x11

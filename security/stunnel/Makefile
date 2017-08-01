@@ -18,7 +18,7 @@ MASTER_SITES=	https://www.stunnel.org/downloads/%SUBDIR%/ \
 		http://www.namesdir.com/mirrors/stunnel/%SUBDIR%/ \
 		http://stunnel.cybermirror.org/%SUBDIR%/ \
 		http://mirrors.zerg.biz/stunnel/%SUBDIR%/ \
-		http://mirrors.rit.edu/zi/
+		ZI
 
 MAINTAINER=	zi@FreeBSD.org
 COMMENT=	SSL encryption wrapper for standard network daemons

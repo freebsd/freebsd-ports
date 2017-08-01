@@ -5,7 +5,7 @@ PORTNAME=	exabgp
 PORTVERSION=	3.4.20
 CATEGORIES=	net
 MASTER_SITES=	GH \
-		http://mirrors.rit.edu/zi/
+		ZI
 
 MAINTAINER=	zi@FreeBSD.org
 COMMENT=	BGP engine and route injector

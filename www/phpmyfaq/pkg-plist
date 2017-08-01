@@ -256,7 +256,6 @@
 %%WWWDIR%%/assets/img/feed.png
 %%WWWDIR%%/assets/img/logo.png
 %%WWWDIR%%/assets/img/pdf.png
-%%WWWDIR%%/assets/img/phpmyfaq-logo.png
 %%WWWDIR%%/assets/img/pmfsearch.png
 %%WWWDIR%%/assets/img/print.png
 %%WWWDIR%%/assets/img/twitter.png
@@ -294,6 +293,7 @@
 %%WWWDIR%%/assets/template/default/fonts/glyphicons-halflings-regular.woff
 %%WWWDIR%%/assets/template/default/fonts/glyphicons-halflings-regular.woff2
 %%WWWDIR%%/assets/template/default/glossary.tpl
+%%WWWDIR%%/assets/template/default/img/logo.png
 %%WWWDIR%%/assets/template/default/index.tpl
 %%WWWDIR%%/assets/template/default/indexLogin.tpl
 %%WWWDIR%%/assets/template/default/indexMaintenance.tpl
