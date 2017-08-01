@@ -1,4 +1,4 @@
---- src/config.h.orig	2015-12-17 19:21:00 UTC
+--- src/config.h.orig	2017-04-11 19:31:27 UTC
 +++ src/config.h
 @@ -27,7 +27,7 @@
  /* highlight search results */
@@ -6,10 +6,10 @@
  /* disable scrollbars */
 -#define FEATURE_NO_SCROLLBARS
 +/*#define FEATURE_NO_SCROLLBARS*/
+ /* disable X window embedding */
+ /* #define FEATURE_NO_XEMBED */
  /* show page title in url completions */
- #define FEATURE_TITLE_IN_COMPLETION
- /* enable the read it later queue */
-@@ -65,7 +65,7 @@
+@@ -69,7 +69,7 @@
  #define SHOWCMD_LEN                 10
  
  /* parh to crt file for the certificate validation */
