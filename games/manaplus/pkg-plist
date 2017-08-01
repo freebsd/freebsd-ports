@@ -254,6 +254,7 @@ share/applications/manaplustest.desktop
 %%DATADIR%%/data/perserver/default/defaultcommands.xml
 %%DATADIR%%/data/perserver/default/features.xml
 %%DATADIR%%/data/perserver/default/gmcommands.txt
+%%DATADIR%%/data/perserver/default/groups.xml
 %%DATADIR%%/data/perserver/default/weapons.xml
 %%DATADIR%%/data/sfx/system/attention.ogg
 %%DATADIR%%/data/sfx/system/book.ogg
