@@ -6,6 +6,14 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 20170729:
+  AFFECTS: users of net-p2p/bitcoin
+  AUTHOR: lwhsu@FreeBSD.org
+
+  Bitcoin data directory has been changed from /var/db/bitcoind to
+  /var/db/bitcoin.  Users of previous versions may want to migrate data to
+  new location or specify bitcoind_data.
+
+20170729:
   AFFECTS: users of mail/mailscanner
   AUTHOR: crees@FreeBSD.org
 
