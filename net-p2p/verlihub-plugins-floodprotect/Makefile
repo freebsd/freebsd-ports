@@ -15,5 +15,9 @@ BROKEN_armv6=		fails to configure: checking for VERLIHUB - version >= 0... no (s
 PLUGIN_NAME=	floodprot
 PLUGIN_DESC=	Floodprotect
 
+# Bug 219281: the port fails to build in C++14 mode (the default in GCC 6),
+# switch back to the old default GCC used before.
+USE_CXXSTD=	gnu++03
+
 .include "../verlihub-plugins/Makefile.plugins"
 .include <bsd.port.mk>
