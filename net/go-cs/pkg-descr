@@ -1,4 +1,5 @@
 cs is a program for concurrently executing local or remote commands on
-multiple hosts.  It is using OpenSSH for running remote commands.
+multiple hosts.  It is using OpenSSH for running remote commands. Its
+main purpose is to help automate and manage large network of hosts.
 
 WWW: https://github.com/akosela/go-cs
