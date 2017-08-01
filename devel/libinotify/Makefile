@@ -3,6 +3,7 @@
 
 PORTNAME=	libinotify
 PORTVERSION=	20170711
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -18,7 +19,6 @@ USES=		autoreconf libtool
 
 GH_ACCOUNT=	${PORTNAME}-kqueue
 GH_PROJECT=	${PORTNAME}-kqueue
-GH_TAGNAME=	84d0ed0
 USE_GITHUB=	yes
 
 .include <bsd.port.mk>
