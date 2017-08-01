@@ -5044,6 +5044,7 @@
     SUBDIR += py3-tzlocal
     SUBDIR += py3-urwid
     SUBDIR += py3-vcversioner
+    SUBDIR += py3-verboselogs
     SUBDIR += py3-virtualenv
     SUBDIR += py3-voluptuous
     SUBDIR += py3-wcwidth
