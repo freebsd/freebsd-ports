@@ -7,7 +7,7 @@ CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.freeradius.org/pub/freeradius/%SUBDIR%/ \
 		ftp://ftp.ntua.gr/pub/net/radius/freeradius/%SUBDIR%/ \
 		http://ftp.cc.uoc.gr/mirrors/ftp.freeradius.org/%SUBDIR%/ \
-		http://mirrors.rit.edu/zi/
+		ZI
 MASTER_SITE_SUBDIR=	. old
 PKGNAMESUFFIX=	3
 DISTNAME=	freeradius-server-${DISTVERSION}

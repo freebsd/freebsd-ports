@@ -6,7 +6,7 @@ PORTVERSION=	2.0.6
 PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	https://snort.org/downloads/snort/ \
-		http://mirrors.rit.edu/zi/
+		ZI
 
 MAINTAINER=	zi@FreeBSD.org
 COMMENT=	Data Acquisition abstraction library for snort 2.9+

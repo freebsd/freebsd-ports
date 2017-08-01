@@ -5,9 +5,8 @@ PORTNAME=	getdns
 PORTVERSION=	1.1.2
 CATEGORIES=	dns ipv6
 MASTER_SITES=	https://getdnsapi.net/dist/ \
-		https://mirrors.rit.edu/zi/ \
+		ZI \
 		http://getdnsapi.net/dist/ \
-		http://mirrors.rit.edu/zi/
 
 MAINTAINER=	zi@FreeBSD.org
 COMMENT=	Modern asynchronous DNS API
