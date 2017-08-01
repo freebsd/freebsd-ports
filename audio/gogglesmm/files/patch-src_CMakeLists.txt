@@ -1,13 +1,6 @@
---- src/CMakeLists.txt.orig	2017-02-08 01:48:39 UTC
+--- src/CMakeLists.txt.orig	2017-06-10 02:18:06 UTC
 +++ src/CMakeLists.txt
-@@ -55,13 +55,14 @@ if(WITH_OPENGL)
- endif()
- 
- if(WITH_NLS)
-+  find_package(Intl REQUIRED)
-   set(HAVE_NLS 1)
- endif()
- 
+@@ -62,7 +62,7 @@ endif()
  
  
  # Detects reswrap version
@@ -16,13 +9,3 @@
  if(RESWRAP)
    message(STATUS "Found reswrap: ${RESWRAP}")
    execute_process(COMMAND ${RESWRAP} -v OUTPUT_VARIABLE RESWRAP_OUTPUT)
-@@ -339,6 +340,7 @@ target_link_libraries(gogglesmm PRIVATE 
-                       ${EPOXY_LIBRARIES}
-                       ${X11_LIBRARIES}
-                       ${SM_LIBRARIES}
--                      ${ICE_LIBRARIES})
-+                      ${ICE_LIBRARIES}
-+                      ${Intl_LIBRARY})
- 
- install(TARGETS gogglesmm RUNTIME DESTINATION bin)
-\ No newline at end of file
