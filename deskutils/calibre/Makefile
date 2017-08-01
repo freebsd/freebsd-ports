@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	calibre
-PORTVERSION=	3.4.0
+PORTVERSION=	3.5.0
 CATEGORIES=	deskutils python
 MASTER_SITES=	http://download.calibre-ebook.com/${PORTVERSION}/
 
@@ -26,7 +26,8 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>=0:databases/py-sqlite3 \
 		${PYTHON_PKGNAMEPREFIX}cssutils>=1.0.1,1:www/py-cssutils \
 		${PYTHON_PKGNAMEPREFIX}apsw>=0:databases/py-apsw \
 		${PYTHON_PKGNAMEPREFIX}msgpack-python>=0.3:devel/py-msgpack-python \
-		${PYTHON_PKGNAMEPREFIX}regex>=0:textproc/py-regex
+		${PYTHON_PKGNAMEPREFIX}regex>=0:textproc/py-regex \
+		${PYTHON_PKGNAMEPREFIX}html5-parser>=0.4.3:www/py-html5-parser
 RUN_DEPENDS=	xdg-open:devel/xdg-utils \
 		${PYTHON_PKGNAMEPREFIX}cssutils>=1.0.1,1:www/py-cssutils \
 		${PYTHON_PKGNAMEPREFIX}dnspython>=0:dns/py-dnspython \
@@ -43,13 +44,13 @@ RUN_DEPENDS=	xdg-open:devel/xdg-utils \
 		${PYTHON_PKGNAMEPREFIX}msgpack-python>=0.3:devel/py-msgpack-python \
 		${PYTHON_PKGNAMEPREFIX}regex>=0:textproc/py-regex \
 		${PYTHON_PKGNAMEPREFIX}chardet>=0:textproc/py-chardet \
+		${PYTHON_PKGNAMEPREFIX}html5-parser>=0.4.3:www/py-html5-parser \
 		pdftohtml:graphics/poppler-utils
-
-USE_RC_SUBR=	calibre
-EXTRACT_BEFORE_ARGS=	-x -s '/^calibre/~-src/' -f
 
 USES=		desktop-file-utils gettext-runtime gnome localbase:ldflags pkgconfig \
 		python:2 pyqt:5 shared-mime-info shebangfix ssl tar:xz
+USE_RC_SUBR=	calibre
+EXTRACT_BEFORE_ARGS=	-x -s '/^calibre/~-src/' -f
 SHEBANG_GLOB=	*.sh *.py
 python_OLD_CMD=	"/usr/bin/env python2" /bin/python2 /usr/bin/python2 /usr/local/bin/python2
 USE_PYQT=	core gui network sip svg webkit widgets webkitwidgets xmlpatterns

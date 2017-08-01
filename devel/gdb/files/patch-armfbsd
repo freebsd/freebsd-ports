@@ -1,8 +1,8 @@
-diff --git gdb/armfbsd-nat.c gdb/armfbsd-nat.c
+diff --git gdb/arm-fbsd-nat.c gdb/arm-fbsd-nat.c
 new file mode 100644
-index 0000000..b883411
+index 0000000000..b883411ceb
 --- /dev/null
-+++ gdb/armfbsd-nat.c
++++ gdb/arm-fbsd-nat.c
 @@ -0,0 +1,215 @@
 +/* Native-dependent code for BSD Unix running on ARM's, for GDB.
 +
@@ -219,11 +219,11 @@ index 0000000..b883411
 +  t->to_store_registers = armfbsd_store_inferior_registers;
 +  fbsd_nat_add_target (t);
 +}
-diff --git gdb/armfbsd-tdep.c gdb/armfbsd-tdep.c
+diff --git gdb/arm-fbsd-tdep.c gdb/arm-fbsd-tdep.c
 new file mode 100644
-index 0000000..f58c323
+index 0000000000..c76bc96700
 --- /dev/null
-+++ gdb/armfbsd-tdep.c
++++ gdb/arm-fbsd-tdep.c
 @@ -0,0 +1,109 @@
 +/* Target-dependent code for PowerPC systems running FreeBSD.
 +
@@ -331,37 +331,35 @@ index 0000000..f58c323
 +_initialize_armfbsd_tdep (void)
 +{
 +
-+  gdbarch_register_osabi (bfd_arch_arm, 0, GDB_OSABI_FREEBSD_ELF,
++  gdbarch_register_osabi (bfd_arch_arm, 0, GDB_OSABI_FREEBSD,
 +                          arm_freebsd_elf_init_abi);
 +}
 diff --git gdb/config/arm/fbsd.mh gdb/config/arm/fbsd.mh
 new file mode 100644
-index 0000000..0a2d8b1
+index 0000000000..7b2fd44b91
 --- /dev/null
 +++ gdb/config/arm/fbsd.mh
 @@ -0,0 +1,3 @@
 +# Host: FreeBSD/arm
-+NATDEPFILES= armfbsd-nat.o fbsd-nat.o fork-child.o inf-ptrace.o
++NATDEPFILES= arm-fbsd-nat.o fbsd-nat.o fork-child.o inf-ptrace.o
 +HAVE_NATIVE_GCORE_HOST = 1
 diff --git gdb/Makefile.in gdb/Makefile.in
-index dfaa8a3..ddad28d 100644
+index 1d2dbaf3f7..6e96a88a98 100644
 --- gdb/Makefile.in
 +++ gdb/Makefile.in
-@@ -659,7 +659,7 @@
- ALL_TARGET_OBS = \
- 	armbsd-tdep.o arm.o arm-linux.o arm-linux-tdep.o \
- 	arm-get-next-pcs.o arm-symbian-tdep.o \
--	armnbsd-tdep.o armobsd-tdep.o \
-+	armnbsd-tdep.o armobsd-tdep.o armfbsd-tdep.o \
- 	arm-tdep.o arm-wince-tdep.o \
- 	avr-tdep.o \
- 	bfin-linux-tdep.o bfin-tdep.o \
-@@ -1666,7 +1666,7 @@
- 	arm.c arm-get-next-pcs.c \
- 	arm-linux.c arm-linux-nat.c arm-linux-tdep.c \
- 	arm-symbian-tdep.c arm-tdep.c \
--	armnbsd-nat.c armbsd-tdep.c armnbsd-tdep.c armobsd-tdep.c \
-+	armnbsd-nat.c armbsd-tdep.c armnbsd-tdep.c armobsd-tdep.c armfbsd-tdep.c \
- 	avr-tdep.c \
- 	bfin-linux-tdep.c bfin-tdep.c \
- 	bsd-uthread.c bsd-kvm.c \
+@@ -780,6 +780,7 @@ ALL_TARGET_OBS = \
+ 	arc-tdep.o \
+ 	arm.o \
+ 	arm-bsd-tdep.o \
++	arm-fbsd-tdep.o \
+ 	arm-get-next-pcs.o \
+ 	arm-linux.o \
+ 	arm-linux-tdep.o \
+@@ -2488,6 +2489,7 @@ ALLDEPFILES = \
+ 	arc-tdep.c \
+ 	arm.c \
+ 	arm-bsd-tdep.c \
++	arm-fbsd-tdep.c \
+ 	arm-get-next-pcs.c \
+ 	arm-linux.c \
+ 	arm-linux-nat.c \

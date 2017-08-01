@@ -17,7 +17,6 @@
     SUBDIR += audacious-plugins
     SUBDIR += audacious-plugins-gtk3
     SUBDIR += audiopreview
-    SUBDIR += avbin
     SUBDIR += avidemux
     SUBDIR += avidemux-cli
     SUBDIR += avidemux-plugins
@@ -322,7 +321,6 @@
     SUBDIR += pwcview
     SUBDIR += py-cec
     SUBDIR += py-enzyme
-    SUBDIR += py-ffmpeg
     SUBDIR += py-flvlib
     SUBDIR += py-gstreamer
     SUBDIR += py-gstreamer1

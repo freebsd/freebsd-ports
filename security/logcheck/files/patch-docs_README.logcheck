@@ -1,0 +1,16 @@
+--- docs/README.logcheck.orig	2017-01-25 21:08:04 UTC
++++ docs/README.logcheck
+@@ -17,11 +17,11 @@ don't start overlapping.
+ ======================================================================
+ LOG ENTRIES
+ -----------
+-These are taken from a specified set of logfiles (usually syslog and
++These are taken from a specified set of logfiles (usually messages and
+ auth.log); a special Perl utility named "logtail" is used which
+ "bookmarks" its place in the logs, so that events aren't reported
+ twice in successive logcheck runs.  The offset records are stored as
+-(eg) "/var/lib/logcheck/offset.var.log.syslog"; lines to be
++(eg) "%%DBDIR%%/offset.var.log.messages"; lines to be
+ considered by logcheck are copied into tempfiles in the working
+ directory "/var/tmp/logcheck".  See the corresponding README for
+ logtail for further notes on complications such as log-rotation.

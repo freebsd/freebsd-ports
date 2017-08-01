@@ -1,9 +1,0 @@
-%%DATADIR%%/backup_backend.py
-%%DATADIR%%/config_backend.py
-%%DATADIR%%/desktop.py
-%%DATADIR%%/flyback.py
-%%DATADIR%%/help_data.py
-%%DATADIR%%/opengl_viewer.py
-%%DATADIR%%/viewer.glade
-%%DATADIR%%/GPL.txt
-bin/flyback

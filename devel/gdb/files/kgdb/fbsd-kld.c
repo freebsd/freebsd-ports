@@ -140,26 +140,22 @@ check_kld_path (char *path, size_t path_size)
  * in the various paths in the module path.
  */
 static int
-find_kld_path (char *filename, char *path, size_t path_size)
+find_kld_path (const char *filename, char *path, size_t path_size)
 {
 	struct kld_info *info;
 	struct cleanup *cleanup;
 	char *module_path;
-	char *kernel_dir, *module_dir, *cp;
+	char *module_dir, *cp;
 	int error;
 
 	info = get_kld_info();
 	if (exec_bfd) {
-		kernel_dir = ldirname(bfd_get_filename(exec_bfd));
-		if (kernel_dir != NULL) {
-			cleanup = make_cleanup(xfree, kernel_dir);
-			snprintf(path, path_size, "%s/%s", kernel_dir,
+		std::string kernel_dir = ldirname(bfd_get_filename(exec_bfd));
+		if (!kernel_dir.empty()) {
+			snprintf(path, path_size, "%s/%s", kernel_dir.c_str(),
 			    filename);
-			if (check_kld_path(path, path_size)) {
-				do_cleanups(cleanup);
+			if (check_kld_path(path, path_size))
 				return (1);
-			}
-			do_cleanups(cleanup);
 		}
 	}
 	if (info->module_path_addr != 0) {
@@ -271,28 +267,28 @@ load_kld (char *path, CORE_ADDR base_addr, int from_tty)
 	struct section_addr_info *sap;
 	struct target_section *sections = NULL, *sections_end = NULL, *s;
 	struct cleanup *cleanup;
-	bfd *bfd;
+	gdb_bfd_ref_ptr bfd;
 	CORE_ADDR curr_addr;
-	int add_flags, i;
+	symfile_add_flags add_flags;
+	int i;
 
 	/* Open the kld. */
-	bfd = bfd_openr(path, gnutarget);
+	bfd = gdb_bfd_openr(path, gnutarget);
 	if (bfd == NULL)
 		error("\"%s\": can't open: %s", path,
 		    bfd_errmsg(bfd_get_error()));
-	cleanup = make_cleanup_bfd_unref(bfd);
 
-	if (!bfd_check_format(bfd, bfd_object))
+	if (!bfd_check_format(bfd.get(), bfd_object))
 		error("\%s\": not an object file", path);
 
 	/* Make sure we have a .text section. */
-	if (bfd_get_section_by_name (bfd, ".text") == NULL)
+	if (bfd_get_section_by_name (bfd.get(), ".text") == NULL)
 		error("\"%s\": can't find text section", path);
 
 	/* Build a section table from the bfd and relocate the sections. */
-	if (build_section_table (bfd, &sections, &sections_end))
+	if (build_section_table (bfd.get(), &sections, &sections_end))
 		error("\"%s\": can't find file sections", path);
-	make_cleanup(xfree, sections);
+	cleanup = make_cleanup(xfree, sections);
 	curr_addr = base_addr;
 	for (s = sections; s < sections_end; s++)
 		adjust_section_address(s, &curr_addr);
@@ -313,7 +309,8 @@ load_kld (char *path, CORE_ADDR base_addr, int from_tty)
 	add_flags = 0;
 	if (from_tty)
 		add_flags |= SYMFILE_VERBOSE;
-	symbol_file_add(path, add_flags, sap, OBJF_USERLOADED);
+	symbol_file_add_from_bfd(bfd.get(), path, add_flags, sap,
+	    OBJF_USERLOADED, NULL);
 
 	do_cleanups(cleanup);
 }
@@ -431,12 +428,7 @@ kld_solib_create_inferior_hook (int from_tty)
 	}
 	END_CATCH
 
-	solib_add(NULL, 1, &current_target, auto_solib_add);
-}
-
-static void
-kld_special_symbol_handling (void)
-{
+	solib_add(NULL, from_tty, auto_solib_add);
 }
 
 static struct so_list *
@@ -547,7 +539,8 @@ kld_in_dynsym_resolve_code (CORE_ADDR pc)
 }
 
 static int
-kld_find_and_open_solib (char *solib, unsigned o_flags, char **temp_pathname)
+kld_find_and_open_solib (const char *solib, unsigned o_flags,
+    char **temp_pathname)
 {
 	char path[PATH_MAX];
 	int fd;
@@ -575,7 +568,6 @@ _initialize_kld_target(void)
 	kld_so_ops.clear_so = kld_clear_so;
 	kld_so_ops.clear_solib = kld_clear_solib;
 	kld_so_ops.solib_create_inferior_hook = kld_solib_create_inferior_hook;
-	kld_so_ops.special_symbol_handling = kld_special_symbol_handling;
 	kld_so_ops.current_sos = kld_current_sos;
 	kld_so_ops.open_symbol_file_object = kld_open_symbol_file_object;
 	kld_so_ops.in_dynsym_resolve_code = kld_in_dynsym_resolve_code;

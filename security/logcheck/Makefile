@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	logcheck
-PORTVERSION=	1.3.17
+PORTVERSION=	1.3.18
 CATEGORIES=	security
 MASTER_SITES=	DEBIAN_POOL
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -11,7 +11,9 @@ MAINTAINER=	yasu@utahime.org
 COMMENT=	Auditing tool for system logs on Unix boxes
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BUILD_DEPENDS=	docbook-to-man>0:textproc/docbook-to-man
 RUN_DEPENDS=	mime-construct:mail/mime-construct \
 		lockfile:mail/procmail \
 		bash:shells/bash
@@ -38,38 +40,31 @@ WRKSRC=		${WRKDIR}/${DISTNAME:S!_!-!}
 BINMODE=	755
 SUB_LIST+=	LOGCHECK_USER=${LOGCHECK_USER} \
 		LOGCHECK_GROUP=${LOGCHECK_GROUP} \
-		CRON=${PORT_OPTIONS:MCRON}
+		DBDIR=${DBDIR} CRON=${PORT_OPTIONS:MCRON}
 SUB_FILES=	pkg-install pkg-deinstall pkg-message
 PLIST_SUB+=	LOGCHECK_USER=${LOGCHECK_USER} \
 		LOGCHECK_GROUP=${LOGCHECK_GROUP} \
 		DBDIR=${DBDIR} RUNDIR=${RUNDIR}
-SHEBANG_FILES=	src/logcheck src/logtail src/logtail2
+SHEBANG_FILES=	src/logcheck src/logtail src/logtail2 src/detectrotate/*.dtr
 CONFIG_DIRS=	cracking.d ignore.d.paranoid ignore.d.server \
 		ignore.d.workstation violations.d violations.ignore.d
-DOCS=		AUTHORS CHANGES CREDITS LICENSE TODO docs/README*
+DOCS=		AUTHORS CHANGES CREDITS TODO docs/README*
 PORTDOCS=	${DOCS:T}
-MAN_FILES=	logcheck.8 logtail.8 logtail2.8
-
-PATCH_LIST=	extra-patch-debian__logcheck.cron.d \
-		extra-patch-docs__logcheck.8 \
-		extra-patch-etc__logcheck.conf \
-		extra-patch-src__logcheck \
-		extra-patch-src__logtail2
-EXTRA_PATCHES=	${PATCH_LIST:C|^|${WRKDIR}/|g}
+MAN1_FILES=	logcheck-test.1
+MAN8_FILES=	logcheck.8 logtail.8 logtail2.8
+REINPLACE_FILES=	debian/logcheck.cron.d docs/logcheck.sgml \
+			docs/logtail2.8 docs/README.logcheck \
+			docs/README.logcheck-database docs/README.logtail \
+			etc/logcheck.conf src/logcheck src/logtail2
 
 .include <bsd.port.pre.mk>
 
-pre-patch:
-.for patch in ${PATCH_LIST}
-	@${SED} ${_SUB_LIST_TEMP} ${FILESDIR}/${patch}.in > ${WRKDIR}/${patch}
-.endfor
-
-post-patch:
-	@${FIND} ${WRKSRC}/rulefiles -type f -name \*.orig -delete
-
 do-build:
-	@${REINPLACE_CMD} -e 's!/var/log/syslog!/var/log/messages!' \
-		${WRKSRC}/etc/logcheck.logfiles
+.for file in ${REINPLACE_FILES}
+	${REINPLACE_CMD} ${_SUB_LIST_TEMP} ${WRKSRC}/${file}
+.endfor
+	docbook-to-man ${WRKSRC}/docs/logcheck.sgml > ${WRKSRC}/docs/logcheck.8
+	${FIND} ${WRKSRC} -type f \( -name \*.orig -o -name \*.bak \) -delete
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}/detectrotate \
@@ -78,6 +73,7 @@ do-install:
 		  ${STAGEDIR}${ETCDIR} \
 		  ${STAGEDIR}${EXAMPLESDIR} \
 		  ${STAGEDIR}${RUNDIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/src/logcheck-test ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/src/logcheck ${STAGEDIR}${PREFIX}/sbin
 	${INSTALL_SCRIPT} ${WRKSRC}/src/logtail ${STAGEDIR}${PREFIX}/sbin
 	${INSTALL_SCRIPT} ${WRKSRC}/src/logtail2 ${STAGEDIR}${PREFIX}/sbin
@@ -97,7 +93,10 @@ do-install:
 	@${ECHO_CMD} '@exec ${CHGRP} -R ${LOGCHECK_GROUP} \
 		${ETCDIR:S|^${PREFIX}/|%D/|} \
 		${DATADIR:S|^${PREFIX}/|%D/|}' >> ${TMPPLIST}
-.for i in ${MAN_FILES}
+.for i in ${MAN1_FILES}
+	${INSTALL_MAN} ${WRKSRC}/docs/$i ${STAGEDIR}${MAN1PREFIX}/man/man1
+.endfor
+.for i in ${MAN8_FILES}
 	${INSTALL_MAN} ${WRKSRC}/docs/$i ${STAGEDIR}${MAN8PREFIX}/man/man8
 .endfor
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${DOCSDIR}

@@ -17,7 +17,7 @@ OPTIONS_DEFINE=	LIBSIGSEGV EXAMPLES
 LIBSIGSEGV_DESC=Use alternative page fault handler (GNU libsigsegv)
 
 CONFIGURE_ARGS=	--program-prefix=g
-CONFIGURE_ENV=	MAKEINFO="makeinfo --no-split"
+CONFIGURE_ENV=	MAKEINFO="${MAKEINFO} --no-split"
 GNU_CONFIGURE=	yes
 USES=		makeinfo tar:xz
 

@@ -1,0 +1,117 @@
+commit b5430a3ced5fe5ba484bd9b3215b9ae19ced0160
+Author: John Baldwin <jhb@FreeBSD.org>
+Date:   Thu Jun 1 09:40:46 2017 -0700
+
+    Use the ELF class to determine the word size for FreeBSD core notes.
+    
+    FreeBSD ELF cores contain data structures with that have two different
+    layouts: one for ILP32 platforms and a second for LP64 platforms.
+    Previously, the code used 'bits_per_word' from 'arch_info', but this
+    field is not a reliable indicator of the format for FreeBSD MIPS cores
+    in particular.
+    
+    I had originally posted this patch back in November because process
+    cores for FreeBSD MIPS contained an e_flags value of 0 in the header
+    which resulted in a bfd_arch which always had 'bits_per_word' set to
+    32.  This permitted reading o32 cores, but not n64 cores.  The feedback
+    I received then was to try to change n64 cores to use a different
+    default bfd_arch that had a 64-bit 'bits_per_word' when e_flags was zero.
+    I submitted a patch to that effect but it was never approved.  Instead,
+    I changed FreeBSD's kernel and gcore commands to preserve the e_flags
+    field from an executable when generating process cores.  With a proper
+    e_flags field in process cores, n64 cores now use a 64-bit bfd_arch and
+    now work fine.  However, the change to include e_flags in the process
+    cores had the unintended side effect of breaking handling of o32
+    process cores.  Specifically, FreeBSD MIPS builds o32 with a default
+    MIPS architecture of 'mips3', thus FreeBSD process cores with a non-zero
+    e_flags match the 'mips3' bfd_arch which has 64 'bits_per_word'.
+    
+    From this, it seems that 'bits_per_word' for FreeBSD MIPS is not likely
+    to ever be completely correct.  However, FreeBSD core dumps do
+    reliably set the ELF class to ELFCLASS32 for cores using ILP32 and
+    ELFCLASS64 for cores using LP64.  As such, I think my original patch of
+    using the ELF class instead of 'bits_per_word' is probably the simplest
+    and most reliable approach for detecting the note structure layout.
+    
+    bfd/ChangeLog:
+    
+            * elf.c (elfcore_grok_freebsd_psinfo): Use ELF header class to
+            determine structure sizes.
+            (elfcore_grok_freebsd_prstatus): Likewise.
+
+diff --git bfd/elf.c bfd/elf.c
+index 863bd61c5f..34d39c547b 100644
+--- bfd/elf.c
++++ bfd/elf.c
+@@ -9814,14 +9814,14 @@ elfcore_grok_freebsd_psinfo (bfd *abfd, Elf_Internal_Note *note)
+ {
+   size_t offset;
+ 
+-  switch (abfd->arch_info->bits_per_word)
++  switch (elf_elfheader (abfd)->e_ident[EI_CLASS])
+     {
+-    case 32:
++    case ELFCLASS32:
+       if (note->descsz < 108)
+ 	return FALSE;
+       break;
+ 
+-    case 64:
++    case ELFCLASS64:
+       if (note->descsz < 120)
+ 	return FALSE;
+       break;
+@@ -9836,7 +9836,7 @@ elfcore_grok_freebsd_psinfo (bfd *abfd, Elf_Internal_Note *note)
+   offset = 4;
+ 
+   /* Skip over pr_psinfosz. */
+-  if (abfd->arch_info->bits_per_word == 32)
++  if (elf_elfheader (abfd)->e_ident[EI_CLASS] == ELFCLASS32)
+     offset += 4;
+   else
+     {
+@@ -9879,13 +9879,13 @@ elfcore_grok_freebsd_prstatus (bfd *abfd, Elf_Internal_Note *note)
+   offset = 4;
+ 
+   /* Skip over pr_statussz.  */
+-  switch (abfd->arch_info->bits_per_word)
++  switch (elf_elfheader (abfd)->e_ident[EI_CLASS])
+     {
+-    case 32:
++    case ELFCLASS32:
+       offset += 4;
+       break;
+ 
+-    case 64:
++    case ELFCLASS64:
+       offset += 4;	/* Padding before pr_statussz. */
+       offset += 8;
+       break;
+@@ -9895,13 +9895,16 @@ elfcore_grok_freebsd_prstatus (bfd *abfd, Elf_Internal_Note *note)
+     }
+ 
+   /* Extract size of pr_reg from pr_gregsetsz.  */
+-  if (abfd->arch_info->bits_per_word == 32)
++  if (elf_elfheader (abfd)->e_ident[EI_CLASS] == ELFCLASS32)
+     size = bfd_h_get_32 (abfd, (bfd_byte *) note->descdata + offset);
+   else
+     size = bfd_h_get_64 (abfd, (bfd_byte *) note->descdata + offset);
+ 
+   /* Skip over pr_gregsetsz and pr_fpregsetsz. */
+-  offset += (abfd->arch_info->bits_per_word / 8) * 2;
++  if (elf_elfheader (abfd)->e_ident[EI_CLASS] == ELFCLASS32)
++    offset += 4 * 2;
++  else
++    offset += 8 * 2;
+ 
+   /* Skip over pr_osreldate. */
+   offset += 4;
+@@ -9918,7 +9921,7 @@ elfcore_grok_freebsd_prstatus (bfd *abfd, Elf_Internal_Note *note)
+   offset += 4;
+ 
+   /* Padding before pr_reg. */
+-  if (abfd->arch_info->bits_per_word == 64)
++  if (elf_elfheader (abfd)->e_ident[EI_CLASS] == ELFCLASS64)
+     offset += 4;
+ 
+   /* Make a ".reg/999" section and a ".reg" section.  */

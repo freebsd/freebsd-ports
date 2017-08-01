@@ -197,7 +197,7 @@ post-configure-DOCS-off:
 	${REINPLACE_CMD} -e 's,%DOCS%,false,' ${WRKSRC}/config.toml
 
 post-configure-PORT_LLVM-on:
-	${REINPLACE_CMD} -e 's,%LLVM_CONFIG%,${LLVM_PREFIX},' ${WRKSRC}/config.toml
+	${REINPLACE_CMD} -e 's,%LLVM_CONFIG%,${LLVM_CONFIG},' ${WRKSRC}/config.toml
 
 post-configure-PORT_LLVM-off:
 	${REINPLACE_CMD} -e '/%LLVM_CONFIG%/d' ${WRKSRC}/config.toml

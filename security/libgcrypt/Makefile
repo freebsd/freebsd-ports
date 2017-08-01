@@ -19,7 +19,7 @@ CPE_VENDOR=	gnupg
 USE_CSTD=	gnu89
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-drng-support --enable-static=yes
-CONFIGURE_ENV=	MAKEINFO="makeinfo --no-split"
+CONFIGURE_ENV=	MAKEINFO="${MAKEINFO} --no-split"
 CONFIGURE_TARGET=${ARCH:S/amd64/x86_64/}-portbld-${OPSYS:tl}${OSREL}
 USE_LDCONFIG=	yes
 TEST_TARGET=	check
@@ -40,6 +40,7 @@ CONFIGURE_ARGS+=	--disable-asm
 post-patch:
 	@${RM} ${WRKSRC}/doc/gcrypt.info*
 	@${REINPLACE_CMD} -e 's|ALIGN (3)|ALIGN (2)|g' ${WRKSRC}/mpi/i386/*.S
+	@${REINPLACE_CMD} -e 's|-O0/'\''|-O0/g'\''|g' ${WRKSRC}/random/Makefile.*
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/${PORTNAME}.so

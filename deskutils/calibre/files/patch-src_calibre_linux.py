@@ -1,5 +1,14 @@
---- src/calibre/linux.py.orig	2017-06-16 04:00:12 UTC
+--- src/calibre/linux.py.orig	2017-07-28 04:07:52 UTC
 +++ src/calibre/linux.py
+@@ -841,7 +841,7 @@ class PostInstall:
+                 f.close()
+                 des = ('calibre-gui.desktop', 'calibre-lrfviewer.desktop',
+                         'calibre-ebook-viewer.desktop', 'calibre-ebook-edit.desktop')
+-                appdata = os.path.join(os.path.dirname(self.opts.staging_sharedir), 'metainfo')
++                appdata = os.path.join(os.path.dirname(self.opts.staging_sharedir), 'appdata')
+                 if not os.path.exists(appdata):
+                     try:
+                         os.mkdir(appdata)
 @@ -1008,7 +1008,7 @@ Name=E-book Viewer
  GenericName=Viewer for E-books
  Comment=Viewer for E-books in all the major formats

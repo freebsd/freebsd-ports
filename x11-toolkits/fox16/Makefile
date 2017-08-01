@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fox
-PORTVERSION=	1.6.52
-PORTREVISION=	2
+PORTVERSION=	1.6.55
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	ftp://ftp.fox-toolkit.org/pub/ \
 		http://ftp.fox-toolkit.org/pub/
@@ -12,7 +11,8 @@ PKGNAMESUFFIX=	${PORTVERSION:R:S/.//}
 MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	Fast and extensive C++ GUI toolkit -- ver.1.6
 
-LICENSE=	LGPL3+
+LICENSE=	LGPL21+
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libtiff.so:graphics/tiff

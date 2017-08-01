@@ -4,7 +4,7 @@
 PORTNAME=	portsearch
 PORTVERSION=	1.3.4
 CATEGORIES=	ports-mgmt
-MASTER_SITES=	http://people.freebsd.org/~vd/portsearch/ \
+MASTER_SITES=	https://people.freebsd.org/~vd/portsearch/ \
 		LOCAL/vd/portsearch
 
 MAINTAINER=	vd@FreeBSD.org

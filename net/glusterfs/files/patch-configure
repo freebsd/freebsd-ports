@@ -1,6 +1,6 @@
---- configure.orig	2016-11-15 14:54:31 UTC
+--- configure.orig	2017-06-27 15:25:15 UTC
 +++ configure
-@@ -13428,6 +13428,9 @@ case $host_os in
+@@ -13475,6 +13475,9 @@ case $host_os in
       linux*)
  #do nothing
         ;;

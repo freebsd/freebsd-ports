@@ -1,5 +1,5 @@
---- Makefile.orig	2017-06-02 23:50:17.000000000 +0200
-+++ Makefile	2017-07-05 21:12:24.953147000 +0200
+--- Makefile.orig	2017-06-02 21:50:17 UTC
++++ Makefile
 @@ -571,7 +571,7 @@ HAVE_UNUSED=
  
  #INCDIR= /usr/local/include
@@ -192,6 +192,15 @@
      RMDIR=${RMDIR} \
      SCRIPTDIR="${SCRIPTDIR}" \
      SED=${SED} \
+@@ -1955,7 +1959,7 @@ CAL_PASSDOWN= \
+     CHMOD=${CHMOD} \
+     CMP=${CMP} \
+     CO=${CO} \
+-    CP=${CP} \
++    CP="${CP}" \
+     HELPDIR="${HELPDIR}" \
+     INCDIR="${INCDIR}" \
+     LANG=${LANG} \
 @@ -1964,7 +1968,7 @@ CAL_PASSDOWN= \
      MKDIR=${MKDIR} \
      MV=${MV} \

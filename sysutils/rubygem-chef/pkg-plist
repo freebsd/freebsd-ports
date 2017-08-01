@@ -1,10 +1,8 @@
 bin/chef-apply
 bin/chef-client
-bin/chef-service-manager
 bin/chef-shell
 bin/chef-solo
 bin/knife
-bin/shef
 man/man1/chef-shell.1.gz
 man/man1/knife-bootstrap.1.gz
 man/man1/knife-client.1.gz
@@ -37,5 +35,6 @@ man/man1/knife-upload.1.gz
 man/man1/knife-user.1.gz
 man/man1/knife-xargs.1.gz
 man/man1/knife.1.gz
+man/man8/chef-apply.8.gz
 man/man8/chef-client.8.gz
 man/man8/chef-solo.8.gz

@@ -3,5 +3,5 @@ http://www.w3.org/TR/xpath and yet allow extensions to be added in the
 form of functions.  Modules such as XSLT and XPointer may need to do
 this as they support functionality beyond XPath.
 
-WWW: http://www.w3.org/TR/xpath/
+WWW: https://www.w3.org/TR/xpath/
 WWW: http://search.cpan.org/dist/XML-XPath/

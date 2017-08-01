@@ -32,6 +32,6 @@ procname="%%RUBY%%:"
 
 command="%%PREFIX%%/bin/sidekiq"
 command_flags="-c ${mastodon_workers_threads} -q default -q mailers -q pull -q push"
-command_args=">> /var/log/mastodon/${name}.log 2>&1 &"
+command_args=">> /var/log/mastodon/${name##mastodon_}.log 2>&1 &"
 
 run_rc_command "$1"

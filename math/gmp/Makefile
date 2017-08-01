@@ -16,7 +16,7 @@ CPU_OPTS_DESC=	Enable assembly optimizations for your CPU
 
 USES=		libtool makeinfo tar:xz
 HAS_CONFIGURE=	yes
-CONFIGURE_ENV=	MAKEINFO="makeinfo --no-split"
+CONFIGURE_ENV=	MAKEINFO="${MAKEINFO} --no-split"
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--infodir=${PREFIX}/info \
 		--mandir=${PREFIX}/man \

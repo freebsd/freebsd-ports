@@ -16,6 +16,7 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 
 USES=		gmake autoreconf libtool pkgconfig:build
 USE_GNOME=	libxml2
+# GCC because of https://github.com/SpiderLabs/ModSecurity/issues/1411
 USE_GCC=	6+
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes

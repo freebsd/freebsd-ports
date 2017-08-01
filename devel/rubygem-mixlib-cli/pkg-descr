@@ -1,4 +1,4 @@
 Mixlib::CLI provides a class-based command line option parsing object, like the
  one used in Chef, Ohai and Relish.
 
-WWW: http://www.opscode.com
+WWW: https://www.chef.io/

@@ -25,7 +25,7 @@ USES=		cpe gmake iconv localbase lua:51 makeinfo perl5 \
 USE_PERL5=	build
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	MAKEINFO="makeinfo --no-split"
+CONFIGURE_ENV=	MAKEINFO="${MAKEINFO} --no-split"
 
 INFO=		monotone
 PORTDOCS=	*

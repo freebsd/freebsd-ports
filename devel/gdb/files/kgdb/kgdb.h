@@ -53,7 +53,7 @@ struct kthr *kgdb_thr_lookup_pid(int);
 struct kthr *kgdb_thr_lookup_paddr(uintptr_t);
 struct kthr *kgdb_thr_lookup_taddr(uintptr_t);
 struct kthr *kgdb_thr_next(struct kthr *);
-char        *kgdb_thr_extra_thread_info(int);
+const char  *kgdb_thr_extra_thread_info(int);
 
 enum gdb_osabi fbsd_kernel_osabi_sniffer(bfd *abfd);
 void fbsd_vmcore_set_supply_pcb (struct gdbarch *gdbarch,

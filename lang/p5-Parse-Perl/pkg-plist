@@ -1,7 +1,0 @@
-%%PERL5_MAN3%%/Parse::Perl.3.gz
-%%PERL5_MAN3%%/Parse::Perl::CopHintsHash.3.gz
-%%PERL5_MAN3%%/Parse::Perl::Environment.3.gz
-%%SITE_ARCH%%/Parse/Perl.pm
-%%SITE_ARCH%%/Parse/Perl/CopHintsHash.pod
-%%SITE_ARCH%%/Parse/Perl/Environment.pod
-%%SITE_ARCH%%/auto/Parse/Perl/Perl.so

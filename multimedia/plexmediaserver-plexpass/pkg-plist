@@ -996,6 +996,7 @@
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/mytv.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/nala.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/nat_geo_wild.png
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/national geographic.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/national_general_pictures.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/nbc.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/nbc_universal.png
@@ -1455,10 +1456,10 @@
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/desktop/ios/startup-iphone-portrait@2x.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/desktop/ios/startup-iphone5-portrait@2x.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/index.html
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/js/main-0-ab8f47937d76694021ea-plex-3.10.0-efd1768.js
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/js/vendors-1-cf4298a4f51c70e4665e-plex-3.10.0-efd1768.js
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/js/main-0-fcd60857cbcac7911bac-plex-3.11.0-1fe7810.js
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/js/vendors-1-ee1d06b5bac418b747a5-plex-3.11.0-1fe7810.js
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/main.571a2c1e67571148c8a3e747308c8c7d.css
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/main.v3.db206bf9b77eecc6613e4874a5f83620.css
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/main.v3.f20c28c0e35a6d9c4da97aeaffa5b916.css
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/setup.html
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/swf/jwplayer/jwplayer.swf
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/swf/jwplayer/plex.xml
@@ -1544,6 +1545,7 @@
 %%DATADIR%%/Resources/Profiles/RokuDLNA-6000X-7.x.xml
 %%DATADIR%%/Resources/Profiles/Safari.xml
 %%DATADIR%%/Resources/Profiles/Samsung SmartTV.xml
+%%DATADIR%%/Resources/Profiles/Samsung Tizen.xml
 %%DATADIR%%/Resources/Profiles/Samsung.xml
 %%DATADIR%%/Resources/Profiles/Sony Blu-ray 2013.xml
 %%DATADIR%%/Resources/Profiles/Sony Blu-ray.xml
@@ -2386,6 +2388,7 @@
 %%DATADIR%%/Resources/Python/lib/python2.7/xmllib.py
 %%DATADIR%%/Resources/Python/lib/python2.7/xmlrpclib.py
 %%DATADIR%%/Resources/Python/lib/python2.7/zipfile.py
+%%DATADIR%%/Resources/RegionProviders.xml
 %%DATADIR%%/Resources/StatusItemTemplate.png
 %%DATADIR%%/Resources/StatusItemTemplate@2x.png
 %%DATADIR%%/Resources/Tuner/Private/README.md

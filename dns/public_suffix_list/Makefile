@@ -8,7 +8,7 @@ CATEGORIES=	dns
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Public Suffix List by Mozilla
 
-LICENSE=	MPL
+LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 SLAVEDIRS=	dns/p5-Mozilla-PublicSuffix dns/rubygem-public_suffix dns/rubygem-public_suffix_service

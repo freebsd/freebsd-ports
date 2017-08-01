@@ -11,7 +11,7 @@ COMMENT=	Miscellaneous C programmer's utilities
 
 USES=		makeinfo
 GNU_CONFIGURE=	yes
-MAKE_ENV=	MAKEINFO=makeinfo
+MAKE_ENV=	MAKEINFO="${MAKEINFO}"
 INFO=		cutils
 MAKE_JOBS_UNSAFE=	yes
 

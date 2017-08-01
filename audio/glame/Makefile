@@ -18,7 +18,7 @@ LIB_DEPENDS=	libmp3lame.so:audio/lame \
 		libguile.so:lang/guile
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	MAKEINFO="makeinfo --no-split"
+CONFIGURE_ENV=	MAKEINFO="${MAKEINFO} --no-split"
 USES=		gettext gmake pathfix pkgconfig libtool makeinfo
 USE_GNOME=	gnomeprefix libgnomeui
 USE_XORG=	xbitmaps x11

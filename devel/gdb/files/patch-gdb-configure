@@ -1,24 +1,20 @@
---- gdb/configure.orig	2016-10-07 19:09:21.000000000 +0200
-+++ gdb/configure	2016-10-18 11:11:30.452542000 +0200
-@@ -14256,9 +14256,8 @@
+diff --git gdb/configure gdb/configure
+index 9f05b4bb7e..e14886b67d 100755
+--- gdb/configure
++++ gdb/configure
+@@ -15103,12 +15103,10 @@ if test "${ERROR_ON_WARNING}" = yes ; then
+     WERROR_CFLAGS="-Werror"
+ fi
  
- # These options work in either C or C++ modes.
+-# The options we'll try to enable.
++# These options work in either C or C++ modes.
  build_warnings="-Wall -Wpointer-arith \
 --Wno-unused -Wunused-value -Wunused-function \
 --Wno-switch -Wno-char-subscripts \
---Wempty-body -Wunused-but-set-parameter -Wunused-but-set-variable"
+--Wempty-body -Wunused-but-set-parameter -Wunused-but-set-variable \
+--Wno-sign-compare -Wno-narrowing"
 +-Wno-unused -Wno-switch -Wno-char-subscripts \
-+-Wempty-body"
- 
- # Now add in C and C++ specific options, depending on mode.
- if test "$enable_build_with_cxx" = "yes"; then
-@@ -14266,8 +14265,7 @@
- -Wno-narrowing"
- else
-    build_warnings="$build_warnings -Wpointer-sign -Wmissing-prototypes \
---Wdeclaration-after-statement -Wmissing-parameter-type \
---Wold-style-declaration -Wold-style-definition"
-+-Wdeclaration-after-statement -Wold-style-definition"
- fi
++-Wempty-body -Wno-sign-compare -Wno-narrowing"
  
  # Enable -Wno-format by default when using gcc on mingw since many
+ # GCC versions complain about %I64.

@@ -65,7 +65,7 @@ SHEBANG_GLOB=	* usr/lib/MailScanner/init/* usr/lib/MailScanner/wrapper/* \
 		usr/sbin/* usr/share/MailScanner/perl/MailScanner/*
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-SUB_FILES=	MailScanner.8 pkg-message pkg-install pkg-deinstall
+SUB_FILES=	MailScanner.8 pkg-message pkg-install
 SUB_LIST=	DATADIR=${DATADIR} \
 		PERL=${PERL} \
 		PKGVERSION=${PKGVERSION} \

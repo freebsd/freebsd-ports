@@ -31,6 +31,6 @@ mastodon_stream_user="mastodon"
 
 command="%%PREFIX%%/bin/node"
 command_args="./streaming/index.js \
->> /var/log/mastodon/${name}.log 2>&1 &"
+>> /var/log/mastodon/${name##mastodon_}.log 2>&1 &"
 
 run_rc_command "$1"

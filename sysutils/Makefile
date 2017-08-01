@@ -314,7 +314,6 @@
     SUBDIR += flog
     SUBDIR += flowgger
     SUBDIR += fluent-bit
-    SUBDIR += flyback
     SUBDIR += fonteditfs
     SUBDIR += foremost
     SUBDIR += fortunelock
@@ -978,6 +977,7 @@
     SUBDIR += rubygem-capistrano-harrow
     SUBDIR += rubygem-chef
     SUBDIR += rubygem-chef-api
+    SUBDIR += rubygem-chef-config
     SUBDIR += rubygem-chef-zero
     SUBDIR += rubygem-facter
     SUBDIR += rubygem-fluent-mixin-plaintextformatter
@@ -1015,7 +1015,6 @@
     SUBDIR += rubygem-ohai
     SUBDIR += rubygem-parallel
     SUBDIR += rubygem-puppet_forge
-    SUBDIR += rubygem-puppet_forge1
     SUBDIR += rubygem-r10k
     SUBDIR += rubygem-rubyipmi
     SUBDIR += rubygem-serverspec

@@ -30,7 +30,6 @@ bin/dkimverify.pl
 %%SITE_PERL%%/Mail/DKIM/SignerPolicy.pm
 %%SITE_PERL%%/Mail/DKIM/TextWrap.pm
 %%SITE_PERL%%/Mail/DKIM/Verifier.pm
-%%SITE_PERL%%/Mail/sample_mime_lite.pl
 %%PERL5_MAN3%%/Mail::DKIM.3.gz
 %%PERL5_MAN3%%/Mail::DKIM::Algorithm::Base.3.gz
 %%PERL5_MAN3%%/Mail::DKIM::AuthorDomainPolicy.3.gz

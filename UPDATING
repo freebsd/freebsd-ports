@@ -5,6 +5,28 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20170729:
+  AFFECTS: users of mail/mailscanner
+  AUTHOR: crees@FreeBSD.org
+
+  Version 5.0.3 of MailScanner introduced a serious bug in packaging.
+  Unfortunately if it is installed, your configuration has been deleted.
+
+  If you have managed to get it working, please back up
+  /usr/local/etc/MailScanner as it will also be deleted on deinstall
+  of the same package.
+
+20170726:
+  AFFECTS: users of www/luakit
+  AUTHOR: ports@textmail.me
+
+  Luakit was updated to version 2017.07.26, which is incompatible to the
+  previous release from 2012. Please remove old configuration files from
+  the following directories:
+        ${PREFIX}/etc/xdg/luakit
+        ${HOME}/.config/luakit
+        ${HOME}/.local/share/luakit
+
 20170721:
   AFFECTS: users of security/sshguard*
   AUTHOR: dan.mcgregir@usask.ca

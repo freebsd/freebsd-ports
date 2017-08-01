@@ -1,4 +1,4 @@
---- libraries/source/fcollada/src/FCollada/FUtils/FUStringBuilder.hpp.orig	2014-09-24 10:30:15 UTC
+--- libraries/source/fcollada/src/FCollada/FUtils/FUStringBuilder.hpp.orig	2017-07-28 19:57:27 UTC
 +++ libraries/source/fcollada/src/FCollada/FUtils/FUStringBuilder.hpp
 @@ -26,63 +26,6 @@
  #define SAFE_DELETE_ARRAY(ptr) if (ptr != NULL) { delete [] ptr; ptr = NULL; }
@@ -64,7 +64,7 @@
  template <class Char>
  FUStringBuilderT<Char>::FUStringBuilderT(const String& sz)
  {
-@@ -234,53 +177,50 @@
+@@ -234,53 +177,50 @@ void FUStringBuilderT<Char>::append(const FUStringBuil
  template <class Char>
  void FUStringBuilderT<Char>::append(float f)
  {

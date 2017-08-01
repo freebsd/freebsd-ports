@@ -1,6 +1,6 @@
---- ./rulefiles/linux/ignore.d.server/ssh.orig	2010-09-03 04:24:30.000000000 -0400
-+++ ./rulefiles/linux/ignore.d.server/ssh	2011-11-23 14:25:31.000000000 -0500
-@@ -21,8 +21,8 @@
+--- rulefiles/linux/ignore.d.server/ssh.orig	2017-01-25 21:08:04 UTC
++++ rulefiles/linux/ignore.d.server/ssh
+@@ -27,8 +27,8 @@
  ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ sshd\[[[:digit:]]+\]: \(pam_unix\) check pass; user unknown$
  ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ sshd\[[[:digit:]]+\]: \(pam_unix\) bad username \[[^]]+\]$
  ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ sshd\[[[:digit:]]+\]: error: Could not get shadow information for NOUSER$
