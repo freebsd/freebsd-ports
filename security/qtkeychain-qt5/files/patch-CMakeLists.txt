@@ -1,0 +1,23 @@
+--- CMakeLists.txt.orig	2017-04-19 13:09:34 UTC
++++ CMakeLists.txt
+@@ -38,7 +38,7 @@ if( NOT BUILD_WITH_QT4 )
+     find_package(Qt5Core QUIET)
+ endif()
+ 
+-if (Qt5Core_FOUND)
++if (NOT BUILD_WITH_QT4)
+   set(QTKEYCHAIN_VERSION_INFIX 5)
+ 
+   if(UNIX AND NOT APPLE AND NOT ANDROID)
+@@ -249,8 +249,9 @@ ecm_generate_pri_file(BASE_NAME Qt${QTKE
+   INCLUDE_INSTALL_DIR ${CMAKE_INSTALL_INCLUDEDIR}
+   FILENAME_VAR pri_filename)
+ 
+-install(FILES ${pri_filename} DESTINATION ${ECM_MKSPECS_INSTALL_DIR})
+-
++if( NOT BUILD_WITH_QT4 )
++  install(FILES ${pri_filename} DESTINATION ${ECM_MKSPECS_INSTALL_DIR})
++endif()
+ 
+ install(EXPORT Qt${QTKEYCHAIN_VERSION_INFIX}KeychainLibraryDepends
+     DESTINATION "${CMAKE_INSTALL_LIBDIR}/cmake/Qt${QTKEYCHAIN_VERSION_INFIX}Keychain"
