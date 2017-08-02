@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=		moosefs3
-PORTVERSION=		3.0.94
+PORTVERSION=		3.0.97
 CATEGORIES=		sysutils
 MASTER_SITES=		http://ppa.moosefs.com/src/
 PKGNAMESUFFIX?=		-master
