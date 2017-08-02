@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	django-post_office
-PORTVERSION=	3.0
+PORTVERSION=	3.0.3
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www python
 MASTER_SITES=	GH
@@ -19,8 +19,10 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django-jsonfield>=0:www/py-django-jsonfield 
 
 USES=		python
 USE_PYTHON=	autoplist distutils
-NO_ARCH=	yes
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	ui
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
