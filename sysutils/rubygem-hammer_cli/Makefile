@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	hammer_cli
-PORTVERSION=	0.10.2
+PORTVERSION=	0.11.0
 CATEGORIES=	sysutils ruby
 MASTER_SITES=	RG
 
@@ -25,9 +25,12 @@ NO_ARCH=	yes
 USE_RUBY=	yes
 USES=		gem
 
+PLIST_FILES=	bin/hammer \
+		"@sample etc/hammer/cli_config.yml.sample" \
+		"@dir etc/hammer/cli.modules.d"
+
 post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/hammer/cli.modules.d
-	${INSTALL_DATA} ${WRKSRC}/config/cli_config.template.yml \
-		${STAGEDIR}${PREFIX}/etc/hammer/cli_config.yml.sample
+	${INSTALL_DATA} ${WRKSRC}/config/cli_config.template.yml ${STAGEDIR}${PREFIX}/etc/hammer/cli_config.yml.sample
 
 .include <bsd.port.mk>
