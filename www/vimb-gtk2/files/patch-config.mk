@@ -1,6 +1,6 @@
---- config.mk.orig	2015-12-17 19:21:00 UTC
+--- config.mk.orig	2017-04-11 19:31:27 UTC
 +++ config.mk
-@@ -33,8 +33,6 @@ PROJECT_UCFIRST = $(shell echo '${PROJEC
+@@ -34,8 +34,6 @@ PROJECT_UCFIRST = $(shell echo '${PROJEC
  
  CPPFLAGS  = -DVERSION=\"${VERSION}\"
  CPPFLAGS += -DPROJECT=\"${PROJECT}\" -DPROJECT_UCFIRST=\"${PROJECT_UCFIRST}\"
