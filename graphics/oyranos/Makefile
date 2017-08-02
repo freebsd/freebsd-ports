@@ -1,16 +1,17 @@
 # $FreeBSD$
 
 PORTNAME=	oyranos
-PORTVERSION=	0.9.5
-PORTREVISION=	14
+PORTVERSION=	0.9.6
 CATEGORIES=	graphics
-MASTER_SITES=	SF/${PORTNAME}/Oyranos/Oyranos%20${PORTVERSION:C|(.*)\.[0-9]*$|\1|}
 
 MAINTAINER=	bsam@FreeBSD.org
 COMMENT=	Colour Management System (CMS)
 
+LICENSE=	BSD3CLAUSE
+
 RUN_DEPENDS=	${LOCALBASE}/share/color/icc/OpenICC/sRGB.icc:graphics/icc-profiles-openicc \
-		${LOCALBASE}/share/color/icc/basICColor/ISOcoated_v2_300_bas.ICC:graphics/icc-profiles-basiccolor
+		${LOCALBASE}/share/color/icc/basICColor/ISOcoated_v2_300_bas.ICC:graphics/icc-profiles-basiccolor \
+		xcalib:x11/xcalib
 LIB_DEPENDS=	libraw.so:graphics/libraw \
 		libexiv2.so:graphics/exiv2 \
 		libpng.so:graphics/png \
@@ -19,22 +20,25 @@ LIB_DEPENDS=	libraw.so:graphics/libraw \
 		libfltk.so:x11-toolkits/fltk \
 		libcups.so:print/cups \
 		libxdot.so:graphics/graphviz \
-		liblcms.so:graphics/lcms \
 		liblcms2.so:graphics/lcms2 \
-		libXcm.so:x11/libXcm
+		libXcm.so:x11/libXcm \
+		libltdl.so:devel/libltdl \
+		libfontconfig.so:x11-fonts/fontconfig \
+		libOpenICC.so:graphics/openicc-config
 
-USES=		cmake gettext iconv pkgconfig tar:bzip2
-USE_GL=		yes
+USE_GITHUB=	yes
+GH_ACCOUNT=	oyranos-cms
+USES=		cmake compiler:c++11-lib desktop-file-utils gettext iconv jpeg pkgconfig
+USE_GL=		gl
 USE_LDCONFIG=	yes
 USE_GNOME=	libxml2
-USE_QT4=	gui moc_build qmake_build rcc_build uic_build
-USE_XORG=	xfixes xinerama xrandr xxf86vm
+USE_QT4=	corelib gui moc_build qmake_build rcc_build uic_build
+USE_XORG=	ice sm x11 xcursor xext xfixes xinerama xrandr xft xxf86vm
 CMAKE_ARGS+=	-DXDG_CONFIG_DIR=${PREFIX}/etc/xdg
 LDFLAGS+=	-L${LOCALBASE}/lib ${ICONV_LIB}
 MAKE_JOBS_UNSAFE=yes
 
 OPTIONS_DEFINE=	DOXYGEN
-
 DOXYGEN_BUILD_DEPENDS=	${LOCALBASE}/bin/doxygen:devel/doxygen
 
 PORTDOCS=	*
