@@ -4152,6 +4152,7 @@
     SUBDIR += py-ZopeUndo
     SUBDIR += py-adb
     SUBDIR += py-akismet
+    SUBDIR += py-amalgamate
     SUBDIR += py-aniso8601
     SUBDIR += py-anonfunc
     SUBDIR += py-anyconfig
