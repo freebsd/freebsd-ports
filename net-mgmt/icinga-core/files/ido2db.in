@@ -15,6 +15,7 @@
 . /etc/rc.subr
 
 name="ido2db"
+desc="Icinga 1 database connection daemon"
 rcvar=ido2db_enable
 
 load_rc_config "${name}"

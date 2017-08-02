@@ -24,6 +24,7 @@
 export PATH=$PATH:%%LOCALBASE%%/bin:%%PREFIX%%/sbin
 
 name="icinga2"
+desc="Icinga 2 monitoring (core)"
 rcvar=icinga2_enable
 
 load_rc_config "${name}"
