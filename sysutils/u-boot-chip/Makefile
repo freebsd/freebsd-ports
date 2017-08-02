@@ -1,14 +1,10 @@
 # $FreeBSD$
 
-PKGNAMESUFFIX=	-chip
+MAINTAINER=	imp@FreeBSD.org
+MASTERDIR=	${.CURDIR}/../u-boot-master
 
-COMMENT=	Cross-build U-Boot loader for NextThingCo CHIP
-
-LICENSE=	GPLv2
-
-MASTERDIR=	${.CURDIR}/../u-boot-olimex-a20-som-evb
-DESCR=		${.CURDIR}/pkg-descr
-MODEL=		sun5i-r8-chip
+MODEL=		chip
 BOARD_CONFIG=	CHIP_defconfig
+FAMILY=		allwinner
 
 .include "${MASTERDIR}/Makefile"
