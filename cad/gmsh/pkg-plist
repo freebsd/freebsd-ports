@@ -87,6 +87,8 @@
 %%PORTDOCS%%%%DOCSDIR%%/tutorial/t14.geo
 %%PORTDOCS%%%%DOCSDIR%%/tutorial/t15.geo
 %%PORTDOCS%%%%DOCSDIR%%/tutorial/t16.geo
+%%PORTDOCS%%%%DOCSDIR%%/tutorial/t17.geo
+%%PORTDOCS%%%%DOCSDIR%%/tutorial/t17.pos
 %%PORTDOCS%%%%DOCSDIR%%/tutorial/t2.geo
 %%PORTDOCS%%%%DOCSDIR%%/tutorial/t3.geo
 %%PORTDOCS%%%%DOCSDIR%%/tutorial/t4.geo
@@ -249,7 +251,6 @@
 %%SHARED%%include/gmsh/partitionEdge.h
 %%SHARED%%include/gmsh/partitionFace.h
 %%SHARED%%include/gmsh/partitionVertex.h
-%%SHARED%%include/gmsh/periodical.h
 %%SHARED%%include/gmsh/picojson.h
 %%SHARED%%include/gmsh/pointsGenerators.h
 %%SHARED%%include/gmsh/polynomialBasis.h
