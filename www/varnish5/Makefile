@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	varnish
-PORTVERSION=	5.1.1
-PORTREVISION=	2
+PORTVERSION=	5.1.3
+PORTREVISION=	0
 CATEGORIES=	www
 MASTER_SITES=	http://repo.varnish-cache.org/source/
 PKGNAMESUFFIX=	5
