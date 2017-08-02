@@ -14,8 +14,6 @@ LICENSE=	GPLv3
 BUILD_DEPENDS=	psselect:print/psutils
 RUN_DEPENDS:=	psselect:print/psutils
 
-BROKEN_armv6=		fails to package: pkg-static: Unable to access file func.pl: No such file or directory
-
 MAKE_JOBS_UNSAFE=	yes
 
 USES=		cpe ghostscript gmake perl5 shebangfix
