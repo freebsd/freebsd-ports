@@ -19,6 +19,7 @@
 . /etc/rc.subr
 
 name="icinga"
+desc="Icinga 1 monitoring (core)"
 rcvar=icinga_enable
 
 load_rc_config "${name}"
