@@ -633,6 +633,7 @@
     SUBDIR += opencv-java
     SUBDIR += opendx
     SUBDIR += opengl-man
+    SUBDIR += openicc-config
     SUBDIR += openimageio
     SUBDIR += openjpeg
     SUBDIR += openjpeg15
