@@ -1,17 +1,18 @@
---- fog.gemspec.orig	2017-03-14 19:31:23 UTC
+--- fog.gemspec.orig	2017-08-02 18:27:55 UTC
 +++ fog.gemspec
-@@ -36,11 +36,11 @@ Gem::Specification.new do |s|
+@@ -36,12 +36,12 @@ Gem::Specification.new do |s|
        s.add_runtime_dependency(%q<fog-atmos>.freeze, [">= 0"])
        s.add_runtime_dependency(%q<fog-aws>.freeze, [">= 0.6.0"])
        s.add_runtime_dependency(%q<fog-brightbox>.freeze, ["~> 0.4"])
 -      s.add_runtime_dependency(%q<fog-cloudatcost>.freeze, ["~> 0.1.0"])
-+      s.add_runtime_dependency(%q<fog-cloudatcost>.freeze, [">= 0.1.0"])
++      s.add_runtime_dependency(%q<fog-cloudatcost>.freeze, ["~> 0.1"])
+       s.add_runtime_dependency(%q<fog-digitalocean>.freeze, [">= 0.3.0"])
        s.add_runtime_dependency(%q<fog-dnsimple>.freeze, ["~> 1.0"])
 -      s.add_runtime_dependency(%q<fog-dynect>.freeze, ["~> 0.0.2"])
 +      s.add_runtime_dependency(%q<fog-dynect>.freeze, [">= 0.0.2"])
        s.add_runtime_dependency(%q<fog-ecloud>.freeze, ["~> 0.1"])
 -      s.add_runtime_dependency(%q<fog-google>.freeze, ["<= 0.1.0"])
 +      s.add_runtime_dependency(%q<fog-google>.freeze, [">= 0.1.1"])
+       s.add_runtime_dependency(%q<fog-internet-archive>.freeze, [">= 0"])
+       s.add_runtime_dependency(%q<fog-joyent>.freeze, [">= 0"])
        s.add_runtime_dependency(%q<fog-local>.freeze, [">= 0"])
-       s.add_runtime_dependency(%q<fog-openstack>.freeze, [">= 0"])
-       s.add_runtime_dependency(%q<fog-powerdns>.freeze, [">= 0.1.1"])
