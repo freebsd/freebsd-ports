@@ -14,10 +14,10 @@ COMMENT=	Cross-build das u-boot for ${MODEL}
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	arm-none-eabi-gcc:devel/arm-none-eabi-gcc \
-		gsed:textproc/gsed \
+BUILD_DEPENDS+=	gsed:textproc/gsed \
 		swig:devel/swig13 \
 		dtc>=1.4.1:sysutils/dtc
+BUILD_DEPENDS+=	${COMPILER}:devel/${COMPILER}
 
 USES=		gmake python:build shebangfix
 
@@ -31,8 +31,7 @@ UBOOT_DIR=	share/u-boot/${PORTNAME}${PKGNAMESUFFIX}
 INST=		${PREFIX}/${UBOOT_DIR}
 DESCR?=		${.CURDIR}/pkg-descr
 
-MAKE_ARGS+=	V=1 ARCH=${UBOOT_ARCH} CROSS_COMPILE=${UBOOT_ARCH}-none-eabi- \
-		DTC=${LOCALBASE}/bin/dtc
+MAKE_ARGS+=	V=1 CROSS_COMPILE=${CROSS_COMPILE} DTC=${LOCALBASE}/bin/dtc ${ARCHFLAGS}
 
 NO_ARCH=	yes
 
@@ -53,6 +52,10 @@ UBOOT_PLIST_OMAP=u-boot.img MLO
 # Overrides for ALLWINNER family
 UBOOT_PLIST_ALLWINNER=u-boot.img u-boot-sunxi-with-spl.bin
 
+# Overrides for ALLWINNER family
+UBOOT_PLIST_ALLWINNER64=u-boot-sunxi-with-spl.bin
+UBOOT_ARCH_ALLWINNER64=aarch64
+
 # Uboot variables
 .if !defined(UBOOT_VERSION) && defined(UBOOT_VERSION_${FAMILY:tu})
 UBOOT_VERSION=${UBOOT_VERSION_${FAMILY:tu}}
@@ -68,6 +71,19 @@ UBOOT_PLIST?=u-boot.img
 UBOOT_ARCH=${UBOOT_ARCH_${FAMILY:tu}}
 .endif
 UBOOT_ARCH?=	arm
+
+.if ${UBOOT_ARCH} == arm
+CROSS_COMPILE=arm-none-eabi-
+ARCHFLAGS=ARCH=${UBOOT_ARCH}
+.elif ${UBOOT_ARCH} == aarch64
+CROSS_COMPILE=aarch64-none-elf-
+ARCHFLAGS=ARCH=arm
+.else
+# Best guess for other architectures
+CROSS_COMPILE=${UBOOT_ARCH}-none-elf-
+ARCHFLAGS=ARCH=${UBOOT_ARCH}
+.endif
+COMPILER?=${CROSS_COMPILE}gcc
 
 # Each u-boot family has different files to include, bring them in.
 .for i in ${UBOOT_PLIST}
