@@ -51,8 +51,6 @@ IPV6_CONFIGURE_ENABLE=	ipv6
 DMG_XAR_CONFIGURE_ENABLE=	xml
 DMG_XAR_USE=		GNOME=libxml2
 
-EXPLICIT_SAFESTACK=	yes
-
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USES=		cpe gmake libtool ncurses pathfix
