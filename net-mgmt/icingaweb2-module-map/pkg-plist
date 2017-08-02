@@ -1,3 +1,5 @@
+%%WWWDIR%%/CONTRIBUTING.md
+%%WWWDIR%%/LICENSE
 %%WWWDIR%%/README.md
 %%WWWDIR%%/application/controllers/ConfigController.php
 %%WWWDIR%%/application/controllers/DataController.php
