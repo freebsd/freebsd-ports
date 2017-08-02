@@ -61,7 +61,8 @@ _USE_HARDENING+=	static
 .endif
 
 .if defined(PACKAGE_BUILDING) || defined(BATCH)
-_USE_HARDENING+=	batch
+# XXX this is for compat with poudriere
+#_USE_HARDENING+=	batch
 .endif
 
 .for h in ${USE_HARDENING}
