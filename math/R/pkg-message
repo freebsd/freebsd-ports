@@ -1,0 +1,18 @@
+
+========================================================================
+On 11.1 and later, there is a problem downloading R packages when
+gfortran is chosen as the fortran compiler.
+
+Use either of these workarounds until a permanent solution is found.
+
+1. If you are on an amd64 system, you can use flang as the fortran
+   compiler.
+
+2. If you choose gfortran as the fortran compiler, you can add
+
+   options(download.file.method="wget")
+
+   to ~/.Rprofile followed by a newline.
+
+Details: https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=221127
+========================================================================
