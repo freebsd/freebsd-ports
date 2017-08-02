@@ -318,6 +318,7 @@
     SUBDIR += cobf
     SUBDIR += coccinelle
     SUBDIR += codeblocks
+    SUBDIR += codequery
     SUBDIR += codesearch-py
     SUBDIR += codeville
     SUBDIR += codeworker
