@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	translate-toolkit
-PORTVERSION=	2.2.3
+PORTVERSION=	2.2.4
 CATEGORIES=	textproc
 MASTER_SITES=	CHEESESHOP
 
