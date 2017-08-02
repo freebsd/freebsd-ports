@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	markasjunk2
-PORTVERSION=	1.11
+PORTVERSION=	1.11.1
 CATEGORIES=	mail
 PKGNAMEPREFIX=	roundcube-
 
