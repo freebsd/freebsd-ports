@@ -1,0 +1,16 @@
+bin/openicc-device
+include/openicc/openicc_config.h
+include/openicc/openicc_db.h
+include/openicc/openicc_version.h
+lib/cmake/openicc/OpenIccConfig.cmake
+lib/libOpenICC.so
+lib/libOpenICC.so.0
+lib/libOpenICC.so.0.1.0
+lib/libopenicc-static.a
+libdata/pkgconfig/openicc.pc
+share/locale/cs/LC_MESSAGES/OpenICC.mo
+share/locale/de/LC_MESSAGES/OpenICC.mo
+share/locale/eo/LC_MESSAGES/OpenICC.mo
+share/locale/eu/LC_MESSAGES/OpenICC.mo
+share/locale/fr/LC_MESSAGES/OpenICC.mo
+share/locale/ru/LC_MESSAGES/OpenICC.mo
