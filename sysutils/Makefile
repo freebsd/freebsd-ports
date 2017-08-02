@@ -1183,7 +1183,9 @@
     SUBDIR += u-boot-duovero
     SUBDIR += u-boot-imx-serial-loader
     SUBDIR += u-boot-master
+    SUBDIR += u-boot-nanopi-m1plus
     SUBDIR += u-boot-nanopi-neo
+    SUBDIR += u-boot-nanopi-neo-air
     SUBDIR += u-boot-olimex-a20-som-evb
     SUBDIR += u-boot-olinuxino-lime
     SUBDIR += u-boot-orangepi-one
