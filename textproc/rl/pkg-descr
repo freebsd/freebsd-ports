@@ -3,4 +3,4 @@ randomizes the lines and outputs a specified number of lines. It does
 this with only a single pass over the input while trying to use as little
 memory as possible.
 
-WWW: http://arthurdejong.org/rl/
+WWW: https://arthurdejong.org/rl/
