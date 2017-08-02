@@ -3,6 +3,7 @@
 
 PORTNAME=	icinga-core
 DISTNAME=	icinga-${PORTVERSION}
+PORTREVISION=	1
 
 COMMENT=	Enterprise grade open source monitoring system based on Nagios
 

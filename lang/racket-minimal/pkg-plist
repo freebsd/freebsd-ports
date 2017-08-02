@@ -18,7 +18,7 @@ include/racket/schvers.h
 include/racket/sconfig.h
 include/racket/stypes.h
 include/racket/uconfig.h
-lib/libracket3m-6.9.so
+lib/libracket3m-6.10.so
 lib/libracket3m.so
 lib/racket/buildinfo
 lib/racket/gracket
@@ -199,6 +199,8 @@ man/man1/raco.1.gz
 %%DATADIR%%/collects/ffi/unsafe/compiled/cvector_rkt.zo
 %%DATADIR%%/collects/ffi/unsafe/compiled/define_rkt.dep
 %%DATADIR%%/collects/ffi/unsafe/compiled/define_rkt.zo
+%%DATADIR%%/collects/ffi/unsafe/compiled/global_rkt.dep
+%%DATADIR%%/collects/ffi/unsafe/compiled/global_rkt.zo
 %%DATADIR%%/collects/ffi/unsafe/compiled/nsalloc_rkt.dep
 %%DATADIR%%/collects/ffi/unsafe/compiled/nsalloc_rkt.zo
 %%DATADIR%%/collects/ffi/unsafe/compiled/nsstring_rkt.dep
@@ -210,6 +212,10 @@ man/man1/raco.1.gz
 %%DATADIR%%/collects/ffi/unsafe/custodian.rkt
 %%DATADIR%%/collects/ffi/unsafe/cvector.rkt
 %%DATADIR%%/collects/ffi/unsafe/define.rkt
+%%DATADIR%%/collects/ffi/unsafe/define/compiled/conventions_rkt.dep
+%%DATADIR%%/collects/ffi/unsafe/define/compiled/conventions_rkt.zo
+%%DATADIR%%/collects/ffi/unsafe/define/conventions.rkt
+%%DATADIR%%/collects/ffi/unsafe/global.rkt
 %%DATADIR%%/collects/ffi/unsafe/nsalloc.rkt
 %%DATADIR%%/collects/ffi/unsafe/nsstring.rkt
 %%DATADIR%%/collects/ffi/unsafe/objc.rkt
@@ -981,6 +987,7 @@ man/man1/raco.1.gz
 %%DATADIR%%/collects/racket/private/base.rkt
 %%DATADIR%%/collects/racket/private/case.rkt
 %%DATADIR%%/collects/racket/private/cert.rkt
+%%DATADIR%%/collects/racket/private/check.rkt
 %%DATADIR%%/collects/racket/private/class-c-new.rkt
 %%DATADIR%%/collects/racket/private/class-c-old.rkt
 %%DATADIR%%/collects/racket/private/class-internal.rkt
@@ -996,6 +1003,8 @@ man/man1/raco.1.gz
 %%DATADIR%%/collects/racket/private/compiled/case_rkt.zo
 %%DATADIR%%/collects/racket/private/compiled/cert_rkt.dep
 %%DATADIR%%/collects/racket/private/compiled/cert_rkt.zo
+%%DATADIR%%/collects/racket/private/compiled/check_rkt.dep
+%%DATADIR%%/collects/racket/private/compiled/check_rkt.zo
 %%DATADIR%%/collects/racket/private/compiled/class-c-new_rkt.dep
 %%DATADIR%%/collects/racket/private/compiled/class-c-new_rkt.zo
 %%DATADIR%%/collects/racket/private/compiled/class-c-old_rkt.dep

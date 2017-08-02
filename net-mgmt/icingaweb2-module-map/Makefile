@@ -8,12 +8,13 @@ MAINTAINER=	lme@FreeBSD.org
 COMMENT=	Display hosts on OpenStreetMap
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	icingaweb2>=2.4.1:net-mgmt/icingaweb2
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	nbuchwitz
-GH_TAGNAME=	db8cb8f
+GH_TAGNAME=	68fad2b
 
 NO_BUILD=	yes
 NO_ARCH=	yes

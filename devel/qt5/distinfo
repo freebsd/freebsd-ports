@@ -1,4 +1,4 @@
-TIMESTAMP = 1484477552
+TIMESTAMP = 1498945420
 SHA256 (KDE/Qt/5.7.1/qt3d-opensource-src-5.7.1.tar.xz) = 1d74cf431777b8086d771ab0d4d2c01f9c28eb14cc2d73d7f838a665d1f707ea
 SIZE (KDE/Qt/5.7.1/qt3d-opensource-src-5.7.1.tar.xz) = 19474848
 SHA256 (KDE/Qt/5.7.1/qtbase-opensource-src-5.7.1.tar.xz) = edcdf549d94d98aff08e201dcb3ca25bc3628a37b1309e320d5f556b6b66557e
@@ -47,6 +47,8 @@ SHA256 (KDE/Qt/5.7.1/qttranslations-opensource-src-5.7.1.tar.xz) = 16ecdb0953272
 SIZE (KDE/Qt/5.7.1/qttranslations-opensource-src-5.7.1.tar.xz) = 1206116
 SHA256 (KDE/Qt/5.7.1/qtvirtualkeyboard-opensource-src-5.7.1.tar.xz) = b28b8b937ed15d794c5ebc93e9556d08a0c9761a434864ebf2b454554e652add
 SIZE (KDE/Qt/5.7.1/qtvirtualkeyboard-opensource-src-5.7.1.tar.xz) = 10014088
+SHA256 (KDE/Qt/5.7.1/qtwayland-opensource-src-5.7.1.tar.xz) = f23fc5e180c8af5b38419d84e44f1f342904a197c2382a7b03f83de2136201c7
+SIZE (KDE/Qt/5.7.1/qtwayland-opensource-src-5.7.1.tar.xz) = 291776
 SHA256 (KDE/Qt/5.7.1/qtwebchannel-opensource-src-5.7.1.tar.xz) = 63ab3ac76ff993009cfa978162a764e05b763cacb70d1a862893f8de4492319b
 SIZE (KDE/Qt/5.7.1/qtwebchannel-opensource-src-5.7.1.tar.xz) = 122436
 SHA256 (KDE/Qt/5.7.1/qtwebkit-opensource-src-5.7.1.tar.xz) = a46cf7c89339645f94a5777e8ae5baccf75c5fc87ab52c9dafc25da3327b5f03

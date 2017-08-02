@@ -3,6 +3,7 @@
 
 PORTNAME=	dhttpd
 PORTVERSION=	1.02a
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://bsd-geek.de/FreeBSD/distfiles/
 EXTRACT_SUFX=	.tgz

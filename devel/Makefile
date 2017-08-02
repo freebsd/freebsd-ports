@@ -318,6 +318,7 @@
     SUBDIR += cobf
     SUBDIR += coccinelle
     SUBDIR += codeblocks
+    SUBDIR += codequery
     SUBDIR += codesearch-py
     SUBDIR += codeville
     SUBDIR += codeworker
@@ -3055,6 +3056,7 @@
     SUBDIR += p5-Params-ValidationCompiler
     SUBDIR += p5-Paranoid
     SUBDIR += p5-Paranoid-Log-Email
+    SUBDIR += p5-Paranoid-Log-Syslog
     SUBDIR += p5-Parse-CPAN-Packages
     SUBDIR += p5-Parse-CPAN-Packages-Fast
     SUBDIR += p5-Parse-ErrorString-Perl

@@ -633,6 +633,7 @@
     SUBDIR += opencv-java
     SUBDIR += opendx
     SUBDIR += opengl-man
+    SUBDIR += openicc-config
     SUBDIR += openimageio
     SUBDIR += openjpeg
     SUBDIR += openjpeg15
@@ -925,6 +926,7 @@
     SUBDIR += qt5-opengl
     SUBDIR += qt5-pixeltool
     SUBDIR += qt5-svg
+    SUBDIR += qt5-wayland
     SUBDIR += qtawesome
     SUBDIR += quat
     SUBDIR += quat-gui

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	excon
-PORTVERSION=	0.57.1
+PORTVERSION=	0.58.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
