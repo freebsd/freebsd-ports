@@ -15,7 +15,7 @@
 # was removed.
 #
 # $FreeBSD$
-# $MCom: portlint/portlint.pl,v 1.413 2017/07/22 01:46:20 jclarke Exp $
+# $MCom: portlint/portlint.pl,v 1.417 2017/08/03 12:52:43 jclarke Exp $
 #
 
 use strict;
@@ -50,7 +50,7 @@ $portdir = '.';
 # version variables
 my $major = 2;
 my $minor = 17;
-my $micro = 10;
+my $micro = 11;
 
 # default setting - for FreeBSD
 my $portsdir = '/usr/ports';
@@ -159,7 +159,7 @@ my @varlist =  qw(
 	OPTIONS_GROUP OPTIONS_SUB INSTALLS_OMF USE_RC_SUBR USES DIST_SUBDIR
 	ALLFILES CHECKSUM_ALGORITHMS INSTALLS_ICONS GNU_CONFIGURE
 	CONFIGURE_ARGS MASTER_SITE_SUBDIR LICENSE LICENSE_COMB NO_STAGE
-	DEVELOPER SUB_FILES
+	DEVELOPER SUB_FILES SHEBANG_LANG
 );
 
 my %makevar;
@@ -230,7 +230,7 @@ while (my $mline = <MK>) {
 		}
     }
 }
-if ($uulineno < $ulineno) {
+if ($uulineno > -1 && $ulineno > -1 && $uulineno < $ulineno) {
 	&perror("WARN", 'Makefile', $uulineno, "USE_* seen before USES.  ".
 		"According to the porters-handbook, USES must appear first.");
 }
@@ -2175,7 +2175,7 @@ xargs xmkmf
 	#
 	# whole file: USE_GCC checks
 	#
-	if ($whole =~ /^USE_GCC[?:]?=\s*(.*)$/m) {
+	if ($whole =~ /^USE_GCC[?:]?=\s*([^\s#]*).*$/m) {
 		my $lineno = &linenumber($`);
 		my $gcc_val = $1;
 		if ($gcc_val eq 'any' || $gcc_val eq 'yes') {
@@ -2266,6 +2266,19 @@ xargs xmkmf
 		&perror("WARN", $file, -1, "--build, --mandir, and --infodir ".
 			"are not needed in CONFIGURE_ARGS as they are already set in ".
 			"bsd.port.mk.");
+	}
+
+	#
+	# whole file: check for redundant SHEBANG_LANGs
+	#
+	if ($whole =~ /\nSHEBANG_LANG[?+]?=\s*([^\s#]*).*\n/) {
+		my @shebang_langs = split(/\s+/, $1 // '');
+		foreach my $shebang_lang (@shebang_langs) {
+			if ($makevar{SHEBANG_LANG} =~ /\b$shebang_lang\b/) {
+				&perror("WARN", $file, -1, "$shebang_lang is already included in ".
+					"SHEBANG_LANG.  You should remove this from $file.");
+			}
+		}
 	}
 
 	#

@@ -1,0 +1,15 @@
+bin/form
+bin/tform
+man/man1/form.1.gz
+%%DOXYGEN%%%%DOCSDIR%%/html/manual.css
+%%DOXYGEN%%%%DOCSDIR%%/html/manual.html
+%%DOXYGEN%%%%DOCSDIR%%/html/manual0x.png
+%%DOXYGEN%%%%DOCSDIR%%/html/manual1x.png
+%%DOXYGEN%%%%DOCSDIR%%/html/manual2x.png
+%%DOXYGEN%%%%DOCSDIR%%/html/manual3x.png
+%%DOXYGEN%%%%DOCSDIR%%/html/manual4x.png
+%%DOXYGEN%%%%DOCSDIR%%/html/manual5x.png
+%%DOXYGEN%%%%DOCSDIR%%/html/manual6x.png
+%%DOXYGEN%%%%DOCSDIR%%/html/manual7x.png
+%%DOXYGEN%%%%DOCSDIR%%/html/manual8x.png
+%%DOXYGEN%%%%DOCSDIR%%/manual.pdf

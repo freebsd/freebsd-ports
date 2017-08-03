@@ -5,6 +5,16 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20170803:
+  AFFECTS: users of sysutils/terraform
+  AUTHOR: lifanov@FreeBSD.org
+
+  Terraform was updated to version 0.10.0, which split out provider plugins.
+  Provider plugins are now installed in the project directory the next time
+  "terraform init" is run. Please see the complete upgrading guide:
+
+  https://www.terraform.io/upgrade-guides/0-10.html
+
 20170729:
   AFFECTS: users of net-p2p/bitcoin
   AUTHOR: lwhsu@FreeBSD.org
