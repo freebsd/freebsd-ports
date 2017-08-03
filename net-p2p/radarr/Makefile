@@ -2,7 +2,7 @@
 
 PORTNAME=	radarr
 PORTVERSION=	0.2.0.778
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	net-p2p
 MASTER_SITES=	https://github.com/Radarr/Radarr/releases/download/v${PORTVERSION}/
 DISTNAME=	Radarr.develop.${PORTVERSION}.linux
@@ -23,6 +23,7 @@ NO_BUILD=	YES
 WRKSRC=	${WRKDIR}/Radarr
 
 USERS=	radarr
+GROUPS=	radarr
 
 OPTIONS_DEFINE=	X11
 
