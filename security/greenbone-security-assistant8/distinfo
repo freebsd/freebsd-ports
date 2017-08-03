@@ -1,2 +1,3 @@
-SHA256 (greenbone-security-assistant-6.0.10.tar.gz) = 9581ba04010987ff6f66edc7393595a2e2b05b64d3463886fba9e5d1152cc8df
-SIZE (greenbone-security-assistant-6.0.10.tar.gz) = 1477638
+TIMESTAMP = 1501781383
+SHA256 (openvas8/greenbone-security-assistant-6.0.12.tar.gz) = c2f04884c0053fad58afa9f94f33aa4b47e1b55607266de2c16261fb341863a3
+SIZE (openvas8/greenbone-security-assistant-6.0.12.tar.gz) = 1495351
