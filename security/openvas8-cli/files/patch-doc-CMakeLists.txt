@@ -1,8 +1,8 @@
---- doc/CMakeLists.txt.orig	2015-10-12 12:46:59 UTC
-+++ doc/CMakeLists.txt
-@@ -97,4 +97,4 @@ else (XMLMANTOHTML_EXECUTABLE)
+--- doc/CMakeLists.txt	2016-07-21 01:33:19.000000000 -0500
++++ doc/CMakeLists.txt	2017-08-03 11:48:48.150617000 -0500
+@@ -131,4 +131,4 @@
  endif (XMLMANTOHTML_EXECUTABLE)
  
- install (FILES omp.8
+ install (FILES omp.8 check_omp.8 omp-dialog.8
 -  DESTINATION ${DATADIR}/man/man8 )
-+  DESTINATION man/man8 )
++  DESTINATION ${CMAKE_INSTALL_PREFIX}/man/man8 )
