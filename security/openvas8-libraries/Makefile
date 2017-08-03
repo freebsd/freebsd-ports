@@ -1,14 +1,15 @@
 # Created by: Tomoyuki Sakurai <cherry@trombik.org>
 # $FreeBSD$
 
-PORTNAME=	openvas-libraries
-PORTVERSION=	8.0.7
-PORTREVISION=	2
+PORTNAME?=	openvas8-libraries
+PORTVERSION?=	8.0.9
 CATEGORIES=	security
-MASTER_SITES=	http://wald.intevation.org/frs/download.php/2291/
+MASTER_SITES?=	http://wald.intevation.org/frs/download.php/2433/
+DISTNAME?=	${PORTNAME:S/${OPENVAS_VER}//}-${PORTVERSION}
+DIST_SUBDIR=	openvas${OPENVAS_VER}
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	OpenVAS libraries
+MAINTAINER=	acm@FreeBSD.org
+COMMENT?=	OpenVAS 8 libraries
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING.GPLv2
@@ -22,9 +23,13 @@ LIB_DEPENDS=	libhiredis.so:databases/hiredis \
 		libksba.so:security/libksba \
 		libssh.so:security/libssh
 
+CONFLICTS?=	${PORTNAME:S/${OPENVAS_VER}/9/}-*
+
 USES=		bison cmake:outsource gnome pkgconfig
 USE_LDCONFIG=	yes
 USE_GNOME=	glib20
+
+OPENVAS_VER?=	8
 
 OPTIONS_DEFINE=	LDAP RADIUS
 OPTIONS_DEFAULT=LDAP
