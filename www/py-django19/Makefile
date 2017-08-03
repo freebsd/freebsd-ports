@@ -3,7 +3,7 @@
 
 PORTNAME=	django
 PORTVERSION=	1.9.13
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP \
 		https://www.djangoproject.com/m/releases/${PORTVERSION:R}/
@@ -17,6 +17,8 @@ COMMENT=	High-level Python Web Framework
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytz>0:devel/py-pytz
 
 DEPRECATED=	Unsupported upstream
 EXPIRATION_DATE=2017-09-01
