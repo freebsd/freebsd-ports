@@ -292,8 +292,8 @@ openfire:*:342:
 # free: 348
 # free: 349
 _sabnzbd:*:350:
-# free: 351
-# free: 352
+sonarr:*:351:
+radarr:*:352:
 _iodined:*:353:
 # free: 354
 # free: 355

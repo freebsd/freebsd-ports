@@ -297,8 +297,8 @@ openfire:*:342:342::0:0:Openfire IM Daemon:/nonexistent:/usr/sbin/nologin
 # free: 348
 # free: 349
 _sabnzbd:*:350:350::0:0:sabnzb Daemon:/nonexistent:/usr/sbin/nologin
-sonarr:*:351:65534::0:0:Sonarr PVR:/nonexistent:/usr/sbin/nologin
-radarr:*:352:65534::0:0:Radarr Daemon:/nonexistent:/usr/sbin/nologin
+sonarr:*:351:351::0:0:Sonarr PVR:/nonexistent:/usr/sbin/nologin
+radarr:*:352:352::0:0:Radarr Daemon:/nonexistent:/usr/sbin/nologin
 _iodined:*:353:353::0:0:Iodine Daemon:/nonexistent:/usr/sbin/nologin
 # free: 354
 # free: 355
