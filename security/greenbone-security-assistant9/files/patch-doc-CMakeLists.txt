@@ -1,0 +1,9 @@
+--- doc/CMakeLists.txt.orig	2015-08-03 08:55:54 UTC
++++ doc/CMakeLists.txt
+@@ -102,5 +102,5 @@ endif (XMLMANTOHTML_EXECUTABLE)
+ ## Install
+ 
+ install (FILES gsad.8
+-  DESTINATION ${DATADIR}/man/man8 )
++  DESTINATION man/man8 )
+ 
