@@ -17,6 +17,9 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	swig1.3:devel/swig13
 LIB_DEPENDS=	libgpgme.so:security/gpgme
 
+DEPRECATED=	Merged with GPGme project. Please use security/py-gpgme instead
+EXPIRATION_DATE=	2017-09-03
+
 USES=		gmake python:2
 USE_PYTHON=	distutils
 PYDISTUTILS_PKGNAME=pygpgme
