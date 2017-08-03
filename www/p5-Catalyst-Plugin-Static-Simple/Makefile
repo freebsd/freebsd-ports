@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Catalyst-Plugin-Static-Simple
-PORTVERSION=	0.33
+PORTVERSION=	0.34
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -20,6 +20,7 @@ BUILD_DEPENDS=	p5-Catalyst-Runtime>=5.80008:www/p5-Catalyst-Runtime \
 		p5-namespace-autoclean>=0:devel/p5-namespace-autoclean
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
 
