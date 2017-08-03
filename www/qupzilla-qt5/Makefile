@@ -9,7 +9,7 @@ PKGNAMESUFFIX=	-qt5
 DISTNAME=	QupZilla-${PORTVERSION}
 
 MAINTAINER=	rezny@FreeBSD.org
-COMMENT=	Web browser based on WebKit engine and Qt Framework
+COMMENT=	Web browser based on Qt Webengine
 
 LICENSE=	GPLv3
 
