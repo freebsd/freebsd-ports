@@ -12,6 +12,7 @@ COMMENT=	Cross platform API for managing child processes
 
 LICENSE=	GPLv2 RUBY
 LICENSE_COMB=	dual
+LICENSE_FILE_RUBY=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-open4>=0.4.0:devel/rubygem-open4 \
 		rubygem-platform>=0.4.0:devel/rubygem-platform
