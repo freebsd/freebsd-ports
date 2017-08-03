@@ -4,7 +4,6 @@
 CATEGORIES=	devel lang
 PKGNAMESUFFIX=	-fcl-image
 
-MAINTAINER=	freebsd-fpc@FreeBSD.org
 COMMENT=	Free Pascal image loading and conversion libraries (FCL)
 
 USE_FPC=	fcl-base fcl-res pasjpeg rtl-objpas

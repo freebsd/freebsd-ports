@@ -3,7 +3,6 @@
 CATEGORIES=	devel lang
 PKGNAMESUFFIX=	-fcl-stl
 
-MAINTAINER=	freebsd-fpc@FreeBSD.org
 COMMENT=	Free Pascal generic container library (FCL)
 
 USE_FPC=	yes

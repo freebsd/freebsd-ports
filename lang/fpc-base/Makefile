@@ -6,7 +6,7 @@ PORTVERSION=	3.0.2
 CATEGORIES=	lang
 PKGNAMEPREFIX=	fpc-
 
-MAINTAINER=	freebsd-fpc@FreeBSD.org
+MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Meta package to install all of the Free Pascal base
 
 USES=		metaport

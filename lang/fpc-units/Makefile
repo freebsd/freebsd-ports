@@ -6,7 +6,7 @@ PORTVERSION=	3.0.2
 CATEGORIES=	lang
 PKGNAMEPREFIX=	fpc-
 
-MAINTAINER=	freebsd-fpc@FreeBSD.org
+MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Meta port to install Free Pascal units
 
 ONLY_FOR_ARCHS=	i386 amd64

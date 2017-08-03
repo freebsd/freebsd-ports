@@ -3,7 +3,6 @@
 CATEGORIES=	www lang
 PKGNAMESUFFIX=	-googleapi
 
-MAINTAINER=	freebsd-fpc@FreeBSD.org
 COMMENT=	Free Pascal googleapi unit
 
 USE_FPC=	dblib fastcgi fcl-async fcl-base fcl-db fcl-json fcl-net \
