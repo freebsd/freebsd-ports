@@ -7,7 +7,7 @@ MASTER_SITES?=	http://wald.intevation.org/frs/download.php/2445/
 DISTNAME=	${PORTNAME:S/${OPENVAS_VER}//}-${PORTVERSION}
 DIST_SUBDIR=	openvas${OPENVAS_VER}
 
-MAINTAINER=	acm @FreeBSD.org
+MAINTAINER=	acm@FreeBSD.org
 COMMENT?=	OpenVAS 8 manager
 
 LICENSE=	GPLv2+
