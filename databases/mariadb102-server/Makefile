@@ -179,8 +179,6 @@ post-install:
 		${STAGEDIR}${PREFIX}/bin/mysqlaccess
 	${RM} -r ${STAGEDIR}/${PREFIX}/share/mysql/policy \
 		${STAGEDIR}/${PREFIX}/share/pkgconfig
-# See https://mariadb.atlassian.net/browse/MDEV-9529
-	${RM} ${STAGEDIR}/${PREFIX}/bin/maria_add_gis_sp.sql
 .endif # defined(CLIENT_ONLY)
 
 .if defined(WITH_OPENSSL_PORT)
