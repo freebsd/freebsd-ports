@@ -3,6 +3,7 @@
 
 PORTNAME=	compass
 PORTVERSION=	1.0.3
+PORTREVISION=	1
 CATEGORIES=	textproc ruby
 MASTER_SITES=	RG
 
@@ -17,7 +18,7 @@ RUN_DEPENDS=	rubygem-chunky_png>=1.2:graphics/rubygem-chunky_png \
 		rubygem-compass-import-once>=1.0.5:textproc/rubygem-compass-import-once \
 		rubygem-rb-fsevent>=0.9.3:devel/rubygem-rb-fsevent \
 		rubygem-rb-inotify>=0.9:devel/rubygem-rb-inotify \
-		rubygem-sass>=3.3.13:textproc/rubygem-sass
+		rubygem-sass34>=0:textproc/rubygem-sass34
 
 NO_ARCH=	yes
 USE_RUBY=	yes
