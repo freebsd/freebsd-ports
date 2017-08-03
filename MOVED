@@ -9493,3 +9493,8 @@ multimedia/py-ffmpeg||2017-07-31|Has expired: Depreciated upstream in favour of 
 mail/dovecot|mail/dovecot2|2017-07-31|Has expired: Deprecated by upstream years ago. Use mail/dovecot2 instead
 devel/cloudabi-binutils-aarch64|devel/cloudabi-toolchain|2017-07-31|ELF-toolchain based tools should be used instead
 devel/cloudabi-binutils-x86_64|devel/cloudabi-toolchain|2017-07-31|ELF-toolchain based tools should be used instead
+security/openvas-libraries|security/openvas8-libraries|2017-08-03|Renamed to include openvas 9 ports
+security/openvas-cli|security/openvas8-cli|2017-08-03|Renamed to include openvas 9 ports. It reflects a better name
+security/openvas-manager|security/openvas8-manager|2017-08-03|Renamed to include openvas 9 ports. It reflects a better name
+security/openvas-scanner|security/openvas8-scanner|2017-08-03|Renamed to include openvas 9 ports. It reflects a better name
+security/greenbone-security-assistant|security/greenbone-security-assistant8|2017-08-03|Renamed to include openvas 9 ports. It reflects a better name
