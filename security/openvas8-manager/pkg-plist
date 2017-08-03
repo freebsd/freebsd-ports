@@ -16,7 +16,9 @@ share/openvas/cert/cert_db_init.sql
 share/openvas/cert/dfn_cert_getbyname.xsl
 share/openvas/cert/dfn_cert_update.xsl
 share/openvas/openvas-lsc-rpm-creator.sh
+share/openvas/openvasmd/global_alert_methods/2db07698-ec49-11e5-bcff-28d24461215b/alert
 share/openvas/openvasmd/global_alert_methods/4a398d42-87c0-11e5-a1c0-28d24461215b/alert
+share/openvas/openvasmd/global_alert_methods/9d435134-15d3-11e6-bf5c-28d24461215b/alert
 share/openvas/openvasmd/global_alert_methods/cd1f5a34-6bdc-11e0-9827-002264764cea/alert
 share/openvas/openvasmd/global_alert_methods/f9d97653-f89b-41af-9ba1-0f6ee00e9c1a/alert
 share/openvas/openvasmd/global_report_formats/5057e5cc-b825-11e4-9d0e-28d24461215b/Anonymous_XML.xsl
