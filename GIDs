@@ -919,7 +919,7 @@ radicale:*:974:
 unifi:*:975:
 minetest:*:976:
 # free: 977
-# free: 978
+_dnscrypt-proxy:*:978:
 ums:*:979:
 hbase:*:980:
 uvncrep:*:981:
