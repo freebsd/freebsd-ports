@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	lumina-core
-PORTVERSION=	1.3.0
-PORTREVISION=	201707030836
+PORTVERSION=	1.3.1
+PORTREVISION=	201708031435
 CATEGORIES=	x11
 
 MAINTAINER=	kmoore@FreeBSD.org
@@ -47,7 +47,7 @@ USES=		qmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	trueos
 GH_PROJECT=	lumina
-GH_TAGNAME=	fac572aaa139f470481bb870779ebaa16621f74a
+GH_TAGNAME=	ea4633af10fdc9ad297bb453fd5dd26ac25448ff
 WRKSRC_SUBDIR=	src-qt5/core
 
 #Setup the qmake configuration options

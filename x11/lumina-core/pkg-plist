@@ -1,11 +1,15 @@
+bin/lthemeengine
 bin/lumina-desktop
 bin/lumina-info
 bin/lumina-open
 bin/start-lumina-desktop
 etc/luminaDesktop.conf.dist
+lib/qt5/plugins/platformthemes/liblthemeengine.so
+lib/qt5/plugins/styles/liblthemeengine-style.so
 man/man1/lumina-open.1.gz
 man/man8/lumina-desktop.8.gz
 man/man8/start-lumina-desktop.8.gz
+share/application/lthemeengine.desktop
 share/applications/lumina-info.desktop
 share/applications/lumina-support.desktop
 share/icons/material-design-dark/LICENSE
@@ -1634,6 +1638,12 @@ share/icons/material-design-light/scalable/status/weather-showers.svg
 share/icons/material-design-light/scalable/status/weather-snow.svg
 share/icons/material-design-light/scalable/status/weather-storm.svg
 share/icons/material-design-light/scalable/status/weather-windy.svg
+share/lthemeengine/colors/airy.conf
+share/lthemeengine/colors/darker.conf
+share/lthemeengine/colors/dusk.conf
+share/lthemeengine/colors/sand.conf
+share/lthemeengine/colors/simple.conf
+share/lthemeengine/colors/waves.conf
 share/lumina-desktop/Login.ogg
 share/lumina-desktop/Logout.ogg
 share/lumina-desktop/colors/Black.qss.colors
@@ -1665,6 +1675,7 @@ share/lumina-desktop/i18n/lumina-desktop_da.qm
 share/lumina-desktop/i18n/lumina-desktop_de.qm
 share/lumina-desktop/i18n/lumina-desktop_el.qm
 share/lumina-desktop/i18n/lumina-desktop_en_GB.qm
+share/lumina-desktop/i18n/lumina-desktop_en_AU.qm
 share/lumina-desktop/i18n/lumina-desktop_en_ZA.qm
 share/lumina-desktop/i18n/lumina-desktop_es.qm
 share/lumina-desktop/i18n/lumina-desktop_et.qm
@@ -1731,6 +1742,7 @@ share/lumina-desktop/i18n/lumina-info_da.qm
 share/lumina-desktop/i18n/lumina-info_de.qm
 share/lumina-desktop/i18n/lumina-info_el.qm
 share/lumina-desktop/i18n/lumina-info_en_GB.qm
+share/lumina-desktop/i18n/lumina-info_en_AU.qm
 share/lumina-desktop/i18n/lumina-info_en_ZA.qm
 share/lumina-desktop/i18n/lumina-info_es.qm
 share/lumina-desktop/i18n/lumina-info_et.qm
@@ -1797,6 +1809,7 @@ share/lumina-desktop/i18n/lumina-open_da.qm
 share/lumina-desktop/i18n/lumina-open_de.qm
 share/lumina-desktop/i18n/lumina-open_el.qm
 share/lumina-desktop/i18n/lumina-open_en_GB.qm
+share/lumina-desktop/i18n/lumina-open_en_AU.qm
 share/lumina-desktop/i18n/lumina-open_en_ZA.qm
 share/lumina-desktop/i18n/lumina-open_es.qm
 share/lumina-desktop/i18n/lumina-open_et.qm
