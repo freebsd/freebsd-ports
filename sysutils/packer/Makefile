@@ -8,7 +8,7 @@ CATEGORIES=	sysutils
 MAINTAINER=	lifanov@FreeBSD.org
 COMMENT=	Tool for creating machine images
 
-LICENSE=	MPL
+LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 PLIST_FILES=	bin/${PORTNAME}
