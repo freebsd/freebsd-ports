@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	fpc-
 DISTNAME=	${PORTNAME:S/s//}-pdf
 DIST_SUBDIR=	freepascal/${PORTVERSION}
 
-MAINTAINER=	freebsd-fpc@FreeBSD.org
+MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Free Pascal compiler Adobe Acrobat(tm) documentation
 
 ONLY_FOR_ARCHS=	i386 amd64

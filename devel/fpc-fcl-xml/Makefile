@@ -4,7 +4,6 @@
 CATEGORIES=	devel lang
 PKGNAMESUFFIX=	-fcl-xml
 
-MAINTAINER=	freebsd-fpc@FreeBSD.org
 COMMENT=	Free Pascal XML and DOM library (FCL)
 
 USE_FPC=	fcl-base fcl-res rtl-objpas iconvenc

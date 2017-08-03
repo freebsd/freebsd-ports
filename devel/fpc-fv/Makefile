@@ -4,7 +4,6 @@
 CATEGORIES=	devel lang
 PKGNAMESUFFIX=	-fv
 
-MAINTAINER=	freebsd-fpc@FreeBSD.org
 COMMENT=	FreeVision is a Free Pascal unit for Delphi support
 
 USE_FPC=	rtl-console rtl-extra

@@ -4,7 +4,6 @@
 CATEGORIES=	graphics lang
 PKGNAMESUFFIX=	-graph
 
-MAINTAINER=	freebsd-fpc@FreeBSD.org
 COMMENT=	Free Pascal interface to graphical applications
 
 USE_FPC=	sdl x11 ${ARCH:Mi386:S/i386/pthreads/}

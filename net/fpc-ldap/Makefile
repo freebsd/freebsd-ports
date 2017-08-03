@@ -4,7 +4,6 @@
 CATEGORIES=	net lang
 PKGNAMESUFFIX=	-ldap
 
-MAINTAINER=	freebsd-fpc@FreeBSD.org
 COMMENT=	Free Pascal interface to OpenLDAP
 
 USE_FPC=	yes

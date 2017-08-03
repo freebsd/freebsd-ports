@@ -4,7 +4,6 @@
 CATEGORIES=	sysutils lang
 PKGNAMESUFFIX=	-uuid
 
-MAINTAINER=	freebsd-fpc@FreeBSD.org
 COMMENT=	Free Pascal uuid unit
 
 USE_FPC=	rtl-extra
