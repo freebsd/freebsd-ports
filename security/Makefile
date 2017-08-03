@@ -440,6 +440,7 @@
     SUBDIR += openvas8-scanner
     SUBDIR += openvas9-cli
     SUBDIR += openvas9-libraries
+    SUBDIR += openvas9-manager
     SUBDIR += openvas9-scanner
     SUBDIR += openvpn
     SUBDIR += openvpn-admin

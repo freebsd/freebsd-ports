@@ -1,0 +1,60 @@
+--- tools/greenbone-scapdata-sync.in.orig	2016-11-10 04:58:06.000000000 -0500
++++ tools/greenbone-scapdata-sync.in	2017-07-29 00:09:17.272096000 -0500
+@@ -1080,7 +1080,7 @@
+       then
+         for ovalfile in $oval_files_sorted_private
+         do
+-          filedate=`stat -c "%Y" "$ovalfile" | cut -d " " -f 1 | tr -d "-"`
++          filedate=`stat -c "%m" "$ovalfile" | cut -d " " -f 1 | tr -d "-"`
+           filedate=$(( $filedate - ( $filedate % 60 ) ))
+           if [ $filedate -gt $DB_LASTUPDATE ] || [ 1 = "$REBUILD_OVAL" ]
+           then
+@@ -1208,12 +1208,12 @@
+     CPEBASE="$SCAP_DIR/official-cpe-dictionary_v2.2.xml"
+     if [ -e $CPEBASE ]
+     then
+-      filedate=`stat -c "%Y" "$CPEBASE" | cut -d " " -f 1 | tr -d "-"`
++      filedate=`stat -c "%m" "$CPEBASE" | cut -d " " -f 1 | tr -d "-"`
+       filedate=$(( $filedate - ( $filedate % 60 ) ))
+       if [ $filedate -gt $DB_LASTUPDATE ]
+       then
+         log_info "Updating CPEs"
+-        filesize=`stat -c "%s" "$CPEBASE"`
++        filesize=`stat -f "%z" "$CPEBASE"`
+         if [ "0" -ne "$SPLIT_PART_SIZE" ] && [ "$filesize" -gt $(($SPLIT_PART_SIZE * 1024))  ]
+         then
+           log_info "File is larger than ${SPLIT_PART_SIZE}k. Splitting into multiple parts"
+@@ -1271,13 +1271,13 @@
+       for cvefile in $SCAP_DIR/nvdcve-2.0-*.xml
+       do
+         [ -e "$cvefile" ] || break  # no file found
+-        filedate=`stat -c "%Y" "$cvefile" | cut -d " " -f 1 | tr -d "-"`
++        filedate=`stat -c "%m" "$cvefile" | cut -d " " -f 1 | tr -d "-"`
+         filedate=$(( $filedate - ( $filedate % 60 ) ))
+         if [ $filedate -gt $DB_LASTUPDATE ]
+         then
+           log_info "Updating $cvefile"
+ 
+-          filesize=`stat -c "%s" "$cvefile"`
++          filesize=`stat -f "%z" "$cvefile"`
+           if [ "0" -ne "$SPLIT_PART_SIZE" ] && [ "$filesize" -gt $(($SPLIT_PART_SIZE * 1024)) ]
+           then
+             log_info "File is larger than ${SPLIT_PART_SIZE}k. Splitting into multiple parts"
+@@ -1347,7 +1347,7 @@
+ 
+       for ovalfile in $oval_files_sorted
+       do
+-        filedate=`stat -c "%Y" "$ovalfile" | cut -d " " -f 1 | tr -d "-"`
++        filedate=`stat -c "%m" "$ovalfile" | cut -d " " -f 1 | tr -d "-"`
+         filedate=$(( $filedate - ( $filedate % 60 ) ))
+         if [ $filedate -gt $DB_LASTUPDATE ] || [ 1 = "$REBUILD_OVAL" ]
+         then
+@@ -1635,7 +1635,7 @@
+ then
+   if [ -f "$SCAP_DB" ]
+   then
+-    if [ "$(id -u)" -ne "$(stat -c %u $SCAP_DB)" ]
++    if [ "$(id -u)" -ne "$(stat -f %u $SCAP_DB)" ]
+     then
+         log_err "Not synchronizing or updating the database since the current user is not the owner of the database."
+         echo "Not synchronizing or updating the database since the current user is not the owner of the database."
