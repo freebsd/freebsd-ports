@@ -3,6 +3,7 @@
 PORTNAME=	mastodon
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.5.0
+PORTREVISION=	1
 CATEGORIES=	net-im www
 
 MAINTAINER=	jrm@FreeBSD.org
@@ -13,7 +14,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libidn2.so:dns/libidn2
 RUN_DEPENDS=	ffmpeg>0:multimedia/ffmpeg \
-		libpqtypes>1.5.0:databases/libpqtypes
+		gmake>0:devel/gmake \
+		libpqtypes>1.5.0:databases/libpqtypes \
+		npm>=0:www/npm
 
 # Dependencies below match Gemfile layout
 RUN_DEPENDS+=	rubygem-pkg-config>=1.2.0:devel/rubygem-pkg-config
@@ -82,7 +85,7 @@ RUN_DEPENDS+=	rubygem-active_model_serializers>0:databases/rubygem-active_model_
 RUN_DEPENDS+=	rubygem-lograge-rails5>0:www/rubygem-lograge-rails5 \
 		rubygem-redis-rails-rails5>0:www/rubygem-redis-rails-rails5
 
-USES=		gnome pgsql shebangfix
+USES=		gnome pgsql python:2 shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	tootsuite
 USE_GNOME=	libxml2 libxslt
