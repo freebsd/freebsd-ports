@@ -3,7 +3,7 @@
 
 PORTNAME=	couchpotato
 PORTVERSION=	0.0.20170327
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-p2p python
 
 MAINTAINER=	joshruehlig@gmail.com
@@ -25,6 +25,7 @@ USES=		python:2.7 shebangfix
 SHEBANG_FILES=	CouchPotato.py
 
 USERS=		couchpotato
+GROUPS=		couchpotato
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	CouchPotato

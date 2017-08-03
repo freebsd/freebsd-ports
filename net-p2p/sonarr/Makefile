@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	sonarr
-PORTVERSION=	2.0.0.4855
-PORTREVISION=	0
+PORTVERSION=	2.0.0.4919
+PORTREVISION=	1
 CATEGORIES=	net-p2p
 MASTER_SITES=	http://download.sonarr.tv/v2/master/mono/
 DISTNAME=	NzbDrone.master.${PORTVERSION}.mono
@@ -23,6 +23,7 @@ NO_BUILD=	YES
 WRKSRC=	${WRKDIR}/NzbDrone
 
 USERS=	sonarr
+GROUPS=	sonarr
 
 OPTIONS_DEFINE=	X11
 

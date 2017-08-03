@@ -72,6 +72,7 @@ include/oyranos/oyranos_types.h
 include/oyranos/oyranos_version.h
 lib/cmake/oyranos/OyranosConfig.cmake
 lib/color/modules/liboyranos_CUPS_cmm_module.so
+lib/color/modules/liboyranos_lcms_cmm_module.so
 lib/color/modules/liboyranos_lcm2_cmm_module.so
 lib/color/modules/liboyranos_lraw_cmm_module.so
 lib/color/modules/liboyranos_oJPG_cmm_module.so

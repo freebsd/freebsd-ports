@@ -2,6 +2,7 @@
 
 PORTNAME=	oyranos
 PORTVERSION=	0.9.6
+PORTREVISION=	1
 CATEGORIES=	graphics
 
 MAINTAINER=	bsam@FreeBSD.org
@@ -20,6 +21,7 @@ LIB_DEPENDS=	libraw.so:graphics/libraw \
 		libfltk.so:x11-toolkits/fltk \
 		libcups.so:print/cups \
 		libxdot.so:graphics/graphviz \
+		liblcms.so:graphics/lcms \
 		liblcms2.so:graphics/lcms2 \
 		libXcm.so:x11/libXcm \
 		libltdl.so:devel/libltdl \

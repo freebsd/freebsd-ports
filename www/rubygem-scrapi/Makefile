@@ -9,7 +9,7 @@ MASTER_SITES=	RG
 MAINTAINER=	don@na.rim.or.jp
 COMMENT=	ScrAPI toolkit for Ruby
 
-BUILD_DEPENDS=	${LOCALBASE}/${SPEC_DIR}/tidy-1.1.2.gemspec:textproc/rubygem-tidy \
+BUILD_DEPENDS=	rubygem-tidy>=1.1.0:textproc/rubygem-tidy \
 		tidy:www/tidy-lib
 
 NO_ARCH=	yes
@@ -19,11 +19,9 @@ USE_LDCONFIG=	yes
 USES=		gem
 PLIST_FILES=	${GEM_LIB_DIR}/lib/tidy/libtidy.so
 
-.include <bsd.port.pre.mk>
-
 post-install:
 	${RM} ${LOCALBASE}/${GEM_LIB_DIR}/lib/tidy/libtidy.dll
 	${RM} ${LOCALBASE}/${GEM_LIB_DIR}/lib/tidy/libtidy.so
 	${LN} -sf ${LOCALBASE}/lib/libtidy.so ${STAGEDIR}${PREFIX}/${GEM_LIB_DIR}/lib/tidy/
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

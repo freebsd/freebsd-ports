@@ -15,9 +15,9 @@ RUN_DEPENDS=	rubygem-addressable>=2.4:www/rubygem-addressable \
 		rubygem-openssl>=2.0:security/rubygem-openssl \
 		rubygem-http>=2.0:www/rubygem-http
 
-NO_ARCHE=	yes
+NO_ARCH=	yes
 
-USE_RUBY=	yes
 USES=		gem
+USE_RUBY=	yes
 
 .include <bsd.port.mk>

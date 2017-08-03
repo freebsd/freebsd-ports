@@ -3,7 +3,7 @@
 
 PORTNAME=	dnscrypt-proxy
 PORTVERSION=	1.9.5
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	dns
 MASTER_SITES=	https://download.dnscrypt.org/dnscrypt-proxy/ \
 		http://download.dnscrypt.org/dnscrypt-proxy/ \
@@ -20,6 +20,7 @@ LIB_DEPENDS=	libsodium.so:security/libsodium
 BROKEN_powerpc64=	fails to compile: fpst.c: error: redefinition of typedef 'FPST'
 
 USERS=		_dnscrypt-proxy
+GROUPS=		_dnscrypt-proxy
 
 GNU_CONFIGURE=	yes
 USES=		execinfo gmake

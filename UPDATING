@@ -6,6 +6,21 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 20170803:
+  AFFECTS: users of net/guacamole-client
+  AUTHOR: ultima@FreeBSD.org
+
+  As of version 0.9.13, the configuration directory for guacamole-client
+  has changed from /usr/local/etc/guacamole to
+  /usr/local/etc/guacamole-client.
+
+20170803:
+  AFFECTS: users of net/guacamole-server
+  AUTHOR: ultima@FreeBSD.org
+
+  As of version 0.9.13, the configuration directory for guacamole-server
+  has changed from /usr/local/etc/guacd to /usr/local/etc/guacamole-server.
+
+20170803:
   AFFECTS: users of sysutils/terraform
   AUTHOR: lifanov@FreeBSD.org
 
