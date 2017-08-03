@@ -1,40 +1,28 @@
-# Created by: William Grzybowski <wg@FreeBSD.org>
+#
 # $FreeBSD$
+# $Id$
+#
 
-PORTNAME=	libzfs
-PORTVERSION=	1.0.20170319
-CATEGORIES=	devel python
+PORTNAME=      	libzfs
+PORTVERSION=	1.0
+PORTREVISION=	1
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	wg@FreeBSD.org
-COMMENT=	Python libzfs bindings
+CATEGORIES=	devel
 
-LICENSE=	BSD2CLAUSE
+MAINTAINER=     dev@ixsystems.com
+COMMENT=        Python libzfs bindings
 
-USE_GITHUB=     yes
-GH_ACCOUNT=	freenas
-GH_PROJECT=	py-libzfs
-GH_TAGNAME=	fb5b8f2
-
-USES?=		python
+USES=		python
 USE_PYTHON=	autoplist distutils
+EXTRACT_ONLY=
+BUILD_DEPENDS=  ${LOCALBASE}/bin/cython:lang/cython
 
-MAKE_ENV=	FREEBSD_SRC=${SRC_BASE}
+WRKSRC?=/usr/nas_source/py-libzfs
 
-.include <bsd.port.pre.mk>
+MAKE_ENV=       FREEBSD_SRC=/usr/src TRUEOS=yes
 
-.if ${PYTHON_REL} >= 3306
-BUILD_DEPENDS=	cython3>0:lang/cython3
-.else
-BUILD_DEPENDS=	cython>0:lang/cython
-.endif
+checksum fetch:
+	echo ${.TARGET} not needed because building direct
 
-.if ${PYTHON_REL} < 3400
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}enum34>0:devel/py-enum34
-.endif
-
-.if !exists(${SRC_BASE}/sys/Makefile)
-IGNORE=	requires kernel source files in ${SRC_BASE}
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -1,0 +1,4 @@
+The verboselogs package extends Python logging module to add the log
+levels VERBOSE, NOTICE, and SPAM
+
+WWW: https://verboselogs.readthedocs.io

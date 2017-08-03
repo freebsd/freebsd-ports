@@ -1,0 +1,47 @@
+#!/bin/sh
+#
+# $FreeBSD: head/sysutils/py3-iocage/files/iocage.in 436331 2017-03-17 09:59:15Z araujo $
+#
+
+# PROVIDE: iocage
+# REQUIRE: LOGIN cleanvar sshd ZFS
+# BEFORE:  securelevel
+# KEYWORD: shutdown
+
+# Add the following lines to /etc/rc.conf to enable iocage:
+#
+# iocage_enable="YES"
+#
+#
+
+. /etc/rc.subr
+
+name="iocage"
+rcvar=iocage_enable
+
+# read configuration and set defaults
+load_rc_config "$name"
+: ${iocage_enable="NO"}
+: ${iocage_lang="en_US.UTF-8"}
+
+start_cmd="iocage_start"
+stop_cmd="iocage_stop"
+export LANG=$iocage_lang
+
+iocage_start()
+{
+    if checkyesno ${rcvar}; then
+        echo "* [I|O|C] starting jails... "
+        /usr/local/bin/iocage start --rc
+    fi
+}
+
+iocage_stop()
+{
+    if checkyesno ${rcvar}; then
+        echo "* [I|O|C] stopping jails... "
+        /usr/local/bin/iocage stop --rc
+    fi
+}
+
+run_rc_command "$1"
