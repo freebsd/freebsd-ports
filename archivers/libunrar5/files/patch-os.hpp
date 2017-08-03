@@ -1,8 +1,8 @@
---- os.hpp.orig	2013-12-01 08:10:14 UTC
+--- os.hpp.orig	2017-04-28 17:28:46 UTC
 +++ os.hpp
-@@ -151,6 +151,10 @@
- #include <utime.h>
+@@ -150,6 +150,10 @@
  #include <locale.h>
+ 
  
 +#ifdef OPENSSL_AES
 +#include <openssl/evp.h>
