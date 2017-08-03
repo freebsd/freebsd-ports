@@ -11,6 +11,8 @@
 #
 # dnscrypt_proxy_enable (bool):	Set to NO by default.
 #				Set to YES to enable dnscrypt-proxy.
+# dnscrypt_proxy_conf (str):    Unset by default. Will override all other
+#                               settings and only use the config file.
 # dnscrypt_proxy_uid (str):	Set to "_dnscrypt-proxy" by default.
 #                              	User to switch to after starting.
 # dnscrypt_proxy_resolver (str):Set to "cisco" by default.
@@ -39,7 +41,11 @@ load_rc_config ${name}
 : ${dnscrypt_proxy_logfile=/var/log/dnscrypt-proxy.log} # Path to log file
 
 command=%%PREFIX%%/sbin/dnscrypt-proxy
+if [ ${dnscrypt_proxy_conf} ]; then
+command_args="${dnscrypt_proxy_conf}"
+else
 command_args="-d -p ${dnscrypt_proxy_pidfile} -l ${dnscrypt_proxy_logfile} -u ${dnscrypt_proxy_uid} -R ${dnscrypt_proxy_resolver}"
+fi
 procname=%%PREFIX%%/sbin/dnscrypt-proxy
 pidfile=${dnscrypt_proxy_pidfile}
 
