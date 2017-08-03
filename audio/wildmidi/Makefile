@@ -53,6 +53,11 @@ LIB_DEPENDS+=	libasound.so:audio/alsa-lib
 .  endif
 .endif
 
+# base: r318780, r319651, r319653
+.if ${OPSYS} == FreeBSD && (${OSVERSION} >= 1200031 || (${OSVERSION} >= 1100514 && ${OSVERSION} < 1200000) || (${OSVERSION} >= 1003514 && ${OSVERSION} < 1100000))
+EXTRA_PATCHES=	${FILESDIR}/extra-patch-src_wm__tty.c
+.endif
+
 post-patch:
 	@${GREP} -L ${LOCALBASE} ${WRKSRC}/cfg/wildmidi.cfg | ${XARGS} \
 		${REINPLACE_CMD} -e "/^dir \/usr\/share\//{" \
