@@ -438,6 +438,7 @@
     SUBDIR += openvas8-libraries
     SUBDIR += openvas8-manager
     SUBDIR += openvas8-scanner
+    SUBDIR += openvas9-cli
     SUBDIR += openvas9-libraries
     SUBDIR += openvpn
     SUBDIR += openvpn-admin
