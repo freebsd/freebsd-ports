@@ -26,6 +26,12 @@ CFLAGS+=	-DMDB_PREFIX=\\\"${PREFIX}\\\" -g
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 1100021
+# This port uses CWARNFLAGS.clang to silence warnings which only works
+# in 11.0 and later.
+MAKE_ARGS+=	NO_WERROR=yes
+.endif
+
 .if !exists(${SRC_BASE}/cddl/compat) || !exists(${SRC_BASE}/sys/cddl/compat)
 IGNORE=		requires full source tree with CDDL sources
 .endif
