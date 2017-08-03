@@ -1,10 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	gwenhywfar
-PORTVERSION=	4.15.3
-PORTREVISION?=	1
+PORTVERSION=	4.18.0
+PORTREVISION?=	0
 CATEGORIES=	devel net security
-MASTER_SITES=	http://www.aquamaniac.de/sites/download/download.php?package=01&release=201&file=01&dummy=/
+MASTER_SITES=	http://www.aquamaniac.de/sites/download/download.php?package=01&release=206&file=01&dummy=/
 
 MAINTAINER?=	jhale@FreeBSD.org
 COMMENT?=	Multi-platform helper library for networking and security applications
@@ -65,7 +65,7 @@ CONFIGURE_ARGS+=--with-qt4-includes=${QT_INCDIR} \
 		--with-qt4-uic=${UIC}
 .  elif ${SLAVEPORT}=="qt5"
 USE_GL=		gl
-USE_QT5=	core dbus gui network printsupport qml testlib widgets xml \
+USE_QT5=	core gui widgets \
 		buildtools_build linguisttools_build qmake_build
 QT_NONSTANDARD=	yes
 CONFIGURE_ARGS+=--with-qt5-qmake=${QMAKE} \
