@@ -25,7 +25,7 @@ pidfile="/var/run/${name}/${name}.pid"
 start_precmd="stafproc_precmd"
 procname="%%PREFIX%%/bin/STAFProc"
 command="/usr/sbin/daemon"
-command_args="-p ${pidfile} env PATH=$PATH:%%PREFIX%%/bin ${procname} ${stafproc_config} >> ${stafproc_log} 2>&1"
+command_args="-p ${pidfile} env PATH=$PATH:%%PREFIX%%/bin ${procname} ${stafproc_config} < /dev/null >> ${stafproc_log} 2>&1"
 
 stafproc_precmd()
 {
