@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	icingaweb2-module-map
-PORTVERSION=	0.0.1.20170728
+PORTVERSION=	0.0.1.20170803
 CATEGORIES=	net-mgmt www
 
 MAINTAINER=	lme@FreeBSD.org
@@ -14,7 +14,7 @@ RUN_DEPENDS=	icingaweb2>=2.4.1:net-mgmt/icingaweb2
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	nbuchwitz
-GH_TAGNAME=	68fad2b
+GH_TAGNAME=	a3e3818
 
 NO_BUILD=	yes
 NO_ARCH=	yes
