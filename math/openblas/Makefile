@@ -32,6 +32,7 @@ OPENBLAS_LIBS=	libopenblas libopenblasp
 OPENBLAS_SVER=	0
 OPENBLAS_FILES=	${OPENBLAS_LIBS:S|$|.so|} ${OPENBLAS_LIBS:S|$|.so.${OPENBLAS_SVER}|} ${OPENBLAS_LIBS:S|$|.a|}
 PLIST_FILES=	${OPENBLAS_FILES:S|^|lib/|}
+TEST_TARGET=	tests
 
 OPTIONS_DEFINE=		INTERFACE64 OPENMP
 OPTIONS_DEFINE_i386=	DYNAMIC_ARCH AVX AVX2
@@ -125,11 +126,11 @@ post-patch:
 	-e 's+$${CROSS_SUFFIX}+${LOCALBASE}/bin/+' \
 	-e '/Clang.*OpenMP/g' \
 		${WRKSRC}/Makefile.system
-.if ${PORT_OPTIONS:MOPENMP}
+
+post-patch-OPENMP-on:
 	${REINPLACE_CMD} -e "s+OPENBLAS_NUM_THREADS+OMP_NUM_THREADS+g" \
 		${WRKSRC}/test/Makefile \
 		${WRKSRC}/ctest/Makefile
-.endif
 
 do-build:
 	cd ${WRKSRC} ; ${SETENV} ${BUILDFLAGS} NUM_THREADS=1 USE_THREAD=0 \
