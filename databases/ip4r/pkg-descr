@@ -3,4 +3,4 @@ existing 'inet' and 'cidr' built-in types, providing extra functionality
 and simplicity to IPv4 and IPv6 address lookup within large-scale
 environments.
 
-WWW: http://pgfoundry.org/projects/ip4r/
+WWW: https://github.com/RhodiumToad/ip4r
