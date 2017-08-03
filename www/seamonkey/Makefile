@@ -2,27 +2,27 @@
 # $FreeBSD$
 
 PORTNAME=	seamonkey
-DISTVERSION=	2.46
-MOZILLA_VER=	49 # above + 3
-PORTREVISION=	10
+DISTVERSION=	2.48
+MOZILLA_VER=	51 # above + 3
+PORTREVISION=	0
 CATEGORIES?=	www mail news editors irc ipv6
 MASTER_SITES=	MOZILLA/${PORTNAME}/releases/${DISTVERSION}/source \
-		MOZILLA/${PORTNAME}/candidates/${DISTVERSION}-candidates/build9/source
+		MOZILLA/${PORTNAME}/candidates/${DISTVERSION}-candidates/build1/source
 DISTFILES=	${PORTNAME}-${DISTVERSION}.source${EXTRACT_SUFX}
 EXTRACT_ONLY=	${PORTNAME}-${DISTVERSION}.source${EXTRACT_SUFX}
 
 MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	The open source, standards compliant web browser
 
-BUILD_DEPENDS=	nspr>=4.12:devel/nspr \
-		nss>=3.25:security/nss \
+BUILD_DEPENDS=	nspr>=4.13.1:devel/nspr \
+		nss>=3.28.1:security/nss \
 		libevent>=2.0.21_2:devel/libevent \
-		harfbuzz>=1.2.6:print/harfbuzz \
+		harfbuzz>=1.3.0:print/harfbuzz \
 		graphite2>=1.3.8:graphics/graphite2 \
-		png>=1.6.21:graphics/png \
+		png>=1.6.25:graphics/png \
 		libvorbis>=1.3.5,3:audio/libvorbis \
 		libvpx>=1.5.0:multimedia/libvpx \
-		sqlite3>=3.13:databases/sqlite3 \
+		sqlite3>=3.14.1:databases/sqlite3 \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3 \
 		v4l_compat>0:multimedia/v4l_compat \
 		autoconf-2.13:devel/autoconf213 \

@@ -2,11 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	seamonkey
-DISTVERSION=	2.46
-PORTREVISION=	1
+DISTVERSION=	2.48
 CATEGORIES=	www mail news editors irc ipv6
 MASTER_SITES=	MOZILLA/${PORTNAME}/releases/${DISTVERSION}/linux-i686/en-US \
-		MOZILLA/${PORTNAME}/candidates/${DISTVERSION}-candidates/build9/linux-i686/en-US
+		MOZILLA/${PORTNAME}/candidates/${DISTVERSION}-candidates/build1/linux-i686/en-US
 
 MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	The open source, standards compliant web browser
