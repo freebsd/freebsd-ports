@@ -1,0 +1,7 @@
+Moonlight Embedded is an open source implementation of NVIDIA's
+GameStream, as used by the NVIDIA Shield.
+
+Moonlight Embedded allows you to stream your full collection of games
+from your powerful Windows desktop to your FreeBSD system.
+
+WWW: https://github.com/irtimmer/moonlight-embedded
