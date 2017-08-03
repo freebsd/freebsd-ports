@@ -1,0 +1,25 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: openvassd
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+#
+# Add the following to /etc/rc.conf[.local] to enable this service
+#
+# openvassd_enable="YES"
+#
+
+. /etc/rc.subr
+
+name=openvassd
+rcvar=openvassd_enable
+command="%%PREFIX%%/sbin/openvassd"
+pidfile=/var/run/openvassd.pid
+extra_commands="reload"
+
+: ${openvassd_enable=NO}
+
+load_rc_config $name
+run_rc_command "$1"
