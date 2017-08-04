@@ -1,0 +1,30 @@
+commit 0b9305edf1d0b15913643b132dad02d4ca4fbb43
+Author: John Baldwin <jhb@FreeBSD.org>
+Date:   Wed Jun 28 11:41:41 2017 -0700
+
+    Recognize the recently-added FreeBSD core dump note for LWP info.
+    
+    This core dump note contains the same information returned by the
+    ptrace PT_LWPINFO operation for each LWP belonging to a process.
+    
+    binutils/ChangeLog:
+    
+            * readelf.c (get_freebsd_elfcore_note_type): Handle
+            NT_FREEBSD_PTLWPINFO.
+    
+    include/ChangeLog:
+    
+            * elf/common.h (NT_FREEBSD_PTLWPINFO): Define.
+
+diff --git include/elf/common.h include/elf/common.h
+index 2976c06067..3a144f03bc 100644
+--- include/elf/common.h
++++ include/elf/common.h
+@@ -641,6 +641,7 @@
+ #define	NT_FREEBSD_PROCSTAT_OSREL	14	/* Procstat osreldate data. */
+ #define	NT_FREEBSD_PROCSTAT_PSSTRINGS	15	/* Procstat ps_strings data. */
+ #define	NT_FREEBSD_PROCSTAT_AUXV	16	/* Procstat auxv data. */
++#define	NT_FREEBSD_PTLWPINFO	17	/* Thread ptrace miscellaneous info. */
+ 
+ /* Note segments for core files on NetBSD systems.  Note name
+    must start with "NetBSD-CORE".  */
