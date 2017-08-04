@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	trac
-PORTVERSION=	1.2.1
+PORTVERSION=	1.2.2
 CATEGORIES=	www devel python
 MASTER_SITES=	http://ftp.edgewall.com/pub/trac/ \
 		ftp://ftp.edgewall.com/pub/trac/
@@ -13,8 +13,6 @@ COMMENT=	Enhanced wiki and issue tracking system for software projects
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
-
-PORTSCOUT=	limitw:^1\.2\.[0-9]*
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Babel>=0.9.5:devel/py-babel \
 		${PYTHON_PKGNAMEPREFIX}Genshi>=0.6:textproc/py-genshi
