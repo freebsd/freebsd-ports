@@ -3,8 +3,6 @@
 
     COMMENT = Audio tools
 
-    SUBDIR += HVSC-Update
-    SUBDIR += Maaate
     SUBDIR += aacgain
     SUBDIR += aacplusenc
     SUBDIR += abcde
@@ -311,8 +309,9 @@
     SUBDIR += herrie
     SUBDIR += hexter
     SUBDIR += hs-ALUT
-    SUBDIR += hs-OpenAL
     SUBDIR += hs-libmpd
+    SUBDIR += hs-OpenAL
+    SUBDIR += HVSC-Update
     SUBDIR += hydrogen
     SUBDIR += hydrogen-devel
     SUBDIR += icecast-kh
@@ -329,12 +328,12 @@
     SUBDIR += idjc
     SUBDIR += ifp-line
     SUBDIR += jack
-    SUBDIR += jack-keyboard
-    SUBDIR += jack-rack
-    SUBDIR += jack-smf-utils
     SUBDIR += jack_ghero
     SUBDIR += jack_mixer
     SUBDIR += jack_umidi
+    SUBDIR += jack-keyboard
+    SUBDIR += jack-rack
+    SUBDIR += jack-smf-utils
     SUBDIR += jamin
     SUBDIR += jid3lib
     SUBDIR += jmusic
@@ -470,6 +469,7 @@
     SUBDIR += lua51-mpd
     SUBDIR += lv2
     SUBDIR += lxmusic
+    SUBDIR += Maaate
     SUBDIR += mac
     SUBDIR += madfufw
     SUBDIR += madplay
@@ -494,9 +494,9 @@
     SUBDIR += modplugplay
     SUBDIR += mous
     SUBDIR += mp-player
+    SUBDIR += mp3_check
     SUBDIR += mp3-archive-tools
     SUBDIR += mp32ogg
-    SUBDIR += mp3_check
     SUBDIR += mp3asm
     SUBDIR += mp3blaster
     SUBDIR += mp3burn
@@ -566,18 +566,19 @@
     SUBDIR += p5-Audio-CD
     SUBDIR += p5-Audio-Ecasound
     SUBDIR += p5-Audio-FLAC-Header
+    SUBDIR += p5-Audio-Mixer
     SUBDIR += p5-Audio-MPD
     SUBDIR += p5-Audio-MPD-Common
-    SUBDIR += p5-Audio-Mixer
     SUBDIR += p5-Audio-Musepack
     SUBDIR += p5-Audio-Scan
     SUBDIR += p5-Audio-Scrobbler
-    SUBDIR += p5-Audio-WMA
     SUBDIR += p5-Audio-Wav
+    SUBDIR += p5-Audio-WMA
     SUBDIR += p5-CDDB
-    SUBDIR += p5-CDDB-File
     SUBDIR += p5-CDDB_get
+    SUBDIR += p5-CDDB-File
     SUBDIR += p5-Filesys-Virtual-DAAP
+    SUBDIR += p5-libvorbis
     SUBDIR += p5-MIDI
     SUBDIR += p5-MP3-Find
     SUBDIR += p5-MP3-ID3v1Tag
@@ -595,9 +596,8 @@
     SUBDIR += p5-Ogg-Vorbis-Header
     SUBDIR += p5-Ogg-Vorbis-Header-PurePerl
     SUBDIR += p5-Shout
-    SUBDIR += p5-Test-Corpus-Audio-MPD
-    SUBDIR += p5-libvorbis
     SUBDIR += p5-tagged
+    SUBDIR += p5-Test-Corpus-Audio-MPD
     SUBDIR += p5-xmms2
     SUBDIR += pacpl
     SUBDIR += paman
@@ -696,9 +696,9 @@
     SUBDIR += sbagen
     SUBDIR += schismtracker
     SUBDIR += scrobbler
-    SUBDIR += sdl2_mixer
     SUBDIR += sdl_mixer
     SUBDIR += sdl_sound
+    SUBDIR += sdl2_mixer
     SUBDIR += sfront
     SUBDIR += shairplay
     SUBDIR += shairport

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pc-mixer
-PORTVERSION=	20170621
+PORTVERSION=	20170804
 CATEGORIES=	audio
 
 MAINTAINER=	jmaloney@ixsystems.com
@@ -28,6 +28,6 @@ QMAKE_ARGS=     CONFIG+="configure"
 USE_GITHUB=	yes
 GH_ACCOUNT=	trueos
 GH_PROJECT=	pc-mixer
-GH_TAGNAME=	346b8a31aab293ddcf5ec26163fac2967ff1780e
+GH_TAGNAME=	d8e0220fbca617b15dc5fdf57cb2f640254c82f2
 
 .include <bsd.port.mk>
