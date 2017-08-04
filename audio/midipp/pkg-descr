@@ -5,6 +5,7 @@ with your fingertips. List of supported features:
 - Jack MIDI.
 - Import from lyrics sites (chorded lyrics)
 - Import from GuitarPro v3 and v4 format.
+- Import from MusicXML format.
 - Loading and saving from and to standard v1.0 MIDI files.
 - Realtime MIDI processing.
 - Simple sequence looping.
