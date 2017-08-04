@@ -4,7 +4,6 @@
 CATEGORIES=	sysutils lang
 PKGNAMESUFFIX=	-syslog
 
-MAINTAINER=	freebsd-fpc@FreeBSD.org
 COMMENT=	Free Pascal interface to the system logger
 
 USE_FPC=	yes

@@ -4,7 +4,6 @@
 CATEGORIES=	security lang
 PKGNAMESUFFIX=	-openssl
 
-MAINTAINER=	freebsd-fpc@FreeBSD.org
 COMMENT=	Free Pascal unit for OpenSSL
 
 USE_FPC=	rtl-extra

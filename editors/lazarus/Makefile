@@ -10,7 +10,7 @@ MASTER_SITES=	SF/${PORTNAME}/Lazarus%20Zip%20_%20GZip/Lazarus%20${PORTVERSION:S/
 		LOCAL/acm/freepascal
 DIST_SUBDIR=	freepascal
 
-MAINTAINER?=	freebsd-fpc@FreeBSD.org
+MAINTAINER?=	acm@FreeBSD.org
 COMMENT?=	Portable Delphi-like IDE for the FreePascal compiler
 
 BUILD_DEPENDS?=	#

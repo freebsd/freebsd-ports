@@ -4,7 +4,6 @@
 CATEGORIES=	lang
 PKGNAMESUFFIX=	-lua
 
-MAINTAINER=	freebsd-fpc@FreeBSD.org
 COMMENT=	Free Pascal interface to the lua interpreter
 
 USE_FPC=	yes

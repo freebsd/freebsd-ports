@@ -4,7 +4,6 @@
 CATEGORIES=	databases lang
 PKGNAMESUFFIX=	-postgres
 
-MAINTAINER=	freebsd-fpc@FreeBSD.org
 COMMENT=	Free Pascal interface to PostGreSQL
 
 USE_FPC=	yes

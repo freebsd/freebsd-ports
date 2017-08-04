@@ -1,0 +1,5 @@
+TIMESTAMP = 1501714039
+SHA256 (irtimmer-moonlight-embedded-v2.4.2_GH0.tar.gz) = 263ec71dc552c8e7f9a21a2b04ad563c34d2a422ba8fe6a0ba5dbb2804500314
+SIZE (irtimmer-moonlight-embedded-v2.4.2_GH0.tar.gz) = 136010
+SHA256 (irtimmer-moonlight-common-c-a1bdb36766f8db5dc9cc0694c9a376f0dca3ab59_GH0.tar.gz) = b9fce9621b4b0cf780c3e1e75b52afa3e4493993289f28301b957beb7299d8bb
+SIZE (irtimmer-moonlight-common-c-a1bdb36766f8db5dc9cc0694c9a376f0dca3ab59_GH0.tar.gz) = 64283

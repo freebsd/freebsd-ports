@@ -4,7 +4,6 @@
 CATEGORIES=	net lang
 PKGNAMESUFFIX=	-pcap
 
-MAINTAINER=	freebsd-fpc@FreeBSD.org
 COMMENT=	Free Pascal unit for libpcap library
 
 USE_FPC=	rtl-extra

@@ -4,7 +4,6 @@
 CATEGORIES=	math lang
 PKGNAMESUFFIX=	-numlib
 
-MAINTAINER=	freebsd-fpc@FreeBSD.org
 COMMENT=	Free Pascal unit to numerical methods
 
 USE_FPC=	yes

@@ -6607,7 +6607,7 @@
 %%WWWDIR%%/core/modules/simpletest/tests/src/Unit/PhpUnitErrorTest.php
 %%WWWDIR%%/core/modules/simpletest/tests/src/Unit/SimpletestPhpunitRunCommandTest.php
 %%WWWDIR%%/core/modules/simpletest/tests/src/Unit/TestBaseTest.php
-%%WWWDIR%%/core/modules/simpletest/tests/src/Unit/TestInfoParsingTest.php
+%%WWWDIR%%/core/modules/simpletest/tests/src/Unit/TestDiscoveryTest.php
 %%WWWDIR%%/core/modules/simpletest/tests/src/Unit/TraitAccessTest.php
 %%WWWDIR%%/core/modules/simpletest/tests/src/Unit/WebTestBaseTest.php
 %%WWWDIR%%/core/modules/statistics/config/install/statistics.settings.yml

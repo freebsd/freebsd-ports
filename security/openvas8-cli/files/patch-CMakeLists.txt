@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2015-10-12 12:46:59 UTC
++++ CMakeLists.txt
+@@ -134,7 +134,7 @@ if (NOT LIBDIR)
+ endif (NOT LIBDIR)
+ 
+ if (NOT LOCALSTATEDIR)
+-  set (LOCALSTATEDIR "${CMAKE_INSTALL_PREFIX}/var")
++  set (LOCALSTATEDIR "/var")
+ endif (NOT LOCALSTATEDIR)
+ 
+ if (NOT DATADIR)

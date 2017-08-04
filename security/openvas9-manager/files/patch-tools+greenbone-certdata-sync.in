@@ -1,0 +1,29 @@
+--- tools/greenbone-certdata-sync.in.orig	2016-11-10 04:58:06.000000000 -0500
++++ tools/greenbone-certdata-sync.in	2017-07-29 00:06:06.535930000 -0500
+@@ -766,7 +766,7 @@
+     for certfile in $CERT_DIR/CB-K*.xml
+     do
+       [ -e "$certfile" ] || break  # No file found
+-      filedate=`stat -c "%Y" $certfile | cut -d " " -f 1 | tr -d "-"`
++      filedate=`stat -c "%m" $certfile | cut -d " " -f 1 | tr -d "-"`
+       filedate=$(( $filedate - ( $filedate % 60 ) ))
+       if [ $filedate -gt $DB_LASTUPDATE ]
+       then
+@@ -801,7 +801,7 @@
+     for certfile in $CERT_DIR/dfn-cert-*.xml
+     do
+       [ -e "$certfile" ] || break  # no file found
+-      filedate=`stat -c "%Y" $certfile | cut -d " " -f 1 | tr -d "-"`
++      filedate=`stat -c "%m" $certfile | cut -d " " -f 1 | tr -d "-"`
+       filedate=$(( $filedate - ( $filedate % 60 ) ))
+       if [ $filedate -gt $DB_LASTUPDATE ]
+       then
+@@ -1045,7 +1045,7 @@
+ 
+ if [ -f "$CERT_DB" ]
+ then
+-  if [ "$(id -u)" -ne "$(stat -c %u $CERT_DB)" ]
++  if [ "$(id -u)" -ne "$(stat -f %u $CERT_DB)" ]
+   then
+     log_err "Not synchronizing or updating the database since the current user is not the owner of the database."
+     echo "Not synchronizing or updating the database since the current user is not the owner of the database."

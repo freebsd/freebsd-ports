@@ -4,7 +4,6 @@
 CATEGORIES=	graphics lang
 PKGNAMESUFFIX=	-libpng
 
-MAINTAINER=	freebsd-fpc@FreeBSD.org
 COMMENT=	Free Pascal interface to libpng, for reading PNG image files
 
 USE_FPC=	zlib
