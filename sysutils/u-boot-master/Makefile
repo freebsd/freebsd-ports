@@ -52,7 +52,7 @@ UBOOT_PLIST_OMAP=u-boot.img MLO
 # Overrides for ALLWINNER family
 UBOOT_PLIST_ALLWINNER=u-boot.img u-boot-sunxi-with-spl.bin
 
-# Overrides for ALLWINNER family
+# Overrides for ALLWINNER64 family
 UBOOT_PLIST_ALLWINNER64=u-boot-sunxi-with-spl.bin
 UBOOT_ARCH_ALLWINNER64=aarch64
 
