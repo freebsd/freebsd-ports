@@ -69,6 +69,8 @@ include/groonga/groonga/window_function.h
 %%RUBY%%lib/groonga/plugins/expression_rewriters/optimizer.rb
 lib/groonga/plugins/functions/index_column.a
 lib/groonga/plugins/functions/index_column.so
+lib/groonga/plugins/functions/math.a
+lib/groonga/plugins/functions/math.so
 lib/groonga/plugins/functions/number.a
 lib/groonga/plugins/functions/number.so
 lib/groonga/plugins/functions/string.a
