@@ -2,10 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	goprotobuf
-PORTVERSION=	20151207
-PORTREVISION=	1
+PORTVERSION=	20170527
 CATEGORIES=	devel
-MASTER_SITES=	http://www.c-s.li/ports/
 
 MAINTAINER=	cs@FreeBSD.org
 COMMENT=	Go support for Google's protocol buffers
@@ -19,5 +17,9 @@ GO_PKGNAME=	github.com/golang/protobuf
 GO_TARGET=	${GO_PKGNAME}/proto \
 		${GO_PKGNAME}/protoc-gen-go \
 		${GO_PKGNAME}/jsonpb
+USE_GITHUB=	yes
+GH_ACCOUNT=	golang
+GH_PROJECT=	protobuf
+GH_TAGNAME=	9f174c9
 
 .include <bsd.port.mk>
