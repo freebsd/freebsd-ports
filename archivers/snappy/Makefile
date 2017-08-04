@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	snappy
-PORTVERSION=	1.1.4
+PORTVERSION=	1.1.6
 CATEGORIES=	archivers
 
 MAINTAINER=	vanilla@FreeBSD.org
@@ -23,6 +23,6 @@ GH_ACCOUNT=	google
 BROKEN_sparc64=	Does not compile on sparc64
 
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${LOCALBASE}/lib/libsnappy.so.1.3.1
+	@${STRIP_CMD} ${STAGEDIR}${LOCALBASE}/lib/libsnappy.so.1.1.6
 
 .include <bsd.port.mk>
