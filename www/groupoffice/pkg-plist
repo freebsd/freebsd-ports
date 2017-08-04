@@ -2481,6 +2481,8 @@
 %%WWWDIR%%/modules/email/themes/Group-Office/images/email.png
 %%WWWDIR%%/modules/email/themes/Group-Office/style.css
 %%WWWDIR%%/modules/email/views/Extjs3/LabelDialog.js
+%%WWWDIR%%/modules/email/views/Extjs3/TemplateGridPanel.js
+%%WWWDIR%%/modules/email/views/Extjs3/TemplateSelectionDialog.js
 %%WWWDIR%%/modules/email/views/Responsive/load.php
 %%WWWDIR%%/modules/exactonline/ExactonlineModule.php
 %%WWWDIR%%/modules/exactonline/README.TXT
@@ -7923,6 +7925,7 @@
 %%WWWDIR%%/views/Extjs3/javascript/form/Combo.js
 %%WWWDIR%%/views/Extjs3/javascript/form/ComboBoxMulti.js
 %%WWWDIR%%/views/Extjs3/javascript/form/ComboReset.js
+%%WWWDIR%%/views/Extjs3/javascript/form/DateFieldReset.js
 %%WWWDIR%%/views/Extjs3/javascript/form/DateTime.js
 %%WWWDIR%%/views/Extjs3/javascript/form/DateTimeField.js
 %%WWWDIR%%/views/Extjs3/javascript/form/FieldHelp.js
