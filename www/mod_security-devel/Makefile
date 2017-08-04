@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	mod_security-devel
-PORTVERSION=	3.0.0.g2017072800
+PORTVERSION=	3.0.0.g2017080200
 CATEGORIES=	www security
 
 MAINTAINER=	marius.halden@modirum.com
@@ -24,7 +24,7 @@ GNU_CONFIGURE=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	SpiderLabs
 GH_PROJECT=	ModSecurity
-GH_TAGNAME=	0242646
+GH_TAGNAME=	0508395
 
 GH_TUPLE+=	SpiderLabs:secrules-language-tests:add8f63:secrules_language_tests/test/test-cases/secrules-language-tests
 GH_TUPLE+=	client9:libinjection:da027ab:libinjection/others/libinjection
