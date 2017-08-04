@@ -1,5 +1,6 @@
 bin/form
 bin/tform
+%%OPENMPI%%bin/parform
 man/man1/form.1.gz
 %%DOXYGEN%%%%DOCSDIR%%/html/manual.css
 %%DOXYGEN%%%%DOCSDIR%%/html/manual.html
