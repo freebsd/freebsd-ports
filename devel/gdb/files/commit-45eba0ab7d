@@ -1,0 +1,45 @@
+commit 45eba0ab7d26435121facb68847fbd0cd4a313c1
+Author: Andreas Arnez <arnez@linux.vnet.ibm.com>
+Date:   Thu May 4 11:06:10 2017 +0200
+
+    Remove some superfluous code in corelow.c
+    
+    In corelow.c I stumbled upon an extra semicolon and an xfree of a NULL
+    pointer.  Remove them.
+    
+    gdb/ChangeLog:
+    
+            * corelow.c (sniff_core_bfd): Remove extra semicolon.
+            (get_core_register_section): Remove xfree of NULL pointer.
+
+diff --git gdb/corelow.c gdb/corelow.c
+index 3267c37843..2266f2467a 100644
+--- gdb/corelow.c
++++ gdb/corelow.c
+@@ -129,7 +129,7 @@ sniff_core_bfd (bfd *abfd)
+ {
+   struct core_fns *cf;
+   struct core_fns *yummy = NULL;
+-  int matches = 0;;
++  int matches = 0;
+ 
+   /* Don't sniff if we have support for register sets in
+      CORE_GDBARCH.  */
+@@ -511,7 +511,7 @@ get_core_register_section (struct regcache *regcache,
+ 			   const char *human_name,
+ 			   int required)
+ {
+-  static char *section_name = NULL;
++  static char *section_name;
+   struct bfd_section *section;
+   bfd_size_type size;
+   char *contents;
+@@ -519,8 +519,6 @@ get_core_register_section (struct regcache *regcache,
+ 				&& regset->flags & REGSET_VARIABLE_SIZE);
+   ptid_t ptid = regcache_get_ptid (regcache);
+ 
+-  xfree (section_name);
+-
+   if (ptid_get_lwp (ptid))
+     section_name = xstrprintf ("%s/%ld", name,
+ 			       ptid_get_lwp (ptid));
