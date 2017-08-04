@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Specio
-PORTVERSION=	0.39
+PORTVERSION=	0.40
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:DROLSKY
@@ -18,7 +18,9 @@ BUILD_DEPENDS=	p5-Devel-StackTrace>=0:devel/p5-Devel-StackTrace \
 		p5-Eval-Closure>=0:devel/p5-Eval-Closure \
 		p5-MRO-Compat>=0:devel/p5-MRO-Compat \
 		p5-Module-Runtime>=0:devel/p5-Module-Runtime \
-		p5-Role-Tiny>=1.003003:devel/p5-Role-Tiny
+		p5-Role-Tiny>=1.003003:devel/p5-Role-Tiny \
+		p5-Sub-Quote>=0:devel/p5-Sub-Quote \
+		p5-Try-Tiny>=0:lang/p5-Try-Tiny
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Fatal>=0:devel/p5-Test-Fatal \
 		p5-Test-Needs>=0:devel/p5-Test-Needs \
