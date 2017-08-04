@@ -1,17 +1,26 @@
---- qapi-schema.json.orig	2016-12-20 13:16:49.000000000 -0700
-+++ qapi-schema.json	2017-03-05 08:45:39.490366000 -0700
-@@ -2543,6 +2543,10 @@
- ##
- { 'command': 'netdev_del', 'data': {'id': 'str'} }
+--- qapi-schema.json.orig	2017-07-24 12:07:10 UTC
++++ qapi-schema.json
+@@ -3882,6 +3882,19 @@
+     '*helper': 'str' } }
  
+ ##
++# @NetdevPcapOptions:
++#
++# Use ifname as a source to capture
++#
++# @ifname: #required to determine which interface to capture
++#
++# Since: 1.2
++##
 +{ 'struct': 'NetdevPcapOptions',
 +  'data': {
 +    '*ifname':     'str' } }
 +
- ##
- # @object-add:
++##
+ # @NetdevHubPortOptions:
  #
-@@ -2966,7 +2970,7 @@
+ # Connect two or more net clients through a software hub.
+@@ -3944,7 +3957,7 @@
  ##
  { 'enum': 'NetClientDriver',
    'data': [ 'none', 'nic', 'user', 'tap', 'l2tpv3', 'socket', 'vde', 'dump',
@@ -20,7 +29,7 @@
  
  ##
  # @Netdev:
-@@ -2989,6 +2993,7 @@
+@@ -3967,6 +3980,7 @@
      'nic':      'NetLegacyNicOptions',
      'user':     'NetdevUserOptions',
      'tap':      'NetdevTapOptions',
@@ -28,11 +37,20 @@
      'l2tpv3':   'NetdevL2TPv3Options',
      'socket':   'NetdevSocketOptions',
      'vde':      'NetdevVdeOptions',
-@@ -3033,6 +3038,7 @@
+@@ -4005,7 +4019,7 @@
+ ##
+ { 'enum': 'NetLegacyOptionsType',
+   'data': ['none', 'nic', 'user', 'tap', 'l2tpv3', 'socket', 'vde',
+-           'dump', 'bridge', 'netmap', 'vhost-user'] }
++           'dump', 'bridge', 'netmap', 'vhost-user', 'pcap' ] }
+ 
+ ##
+ # @NetLegacyOptions:
+@@ -4022,6 +4036,7 @@
      'nic':      'NetLegacyNicOptions',
      'user':     'NetdevUserOptions',
      'tap':      'NetdevTapOptions',
-+    'pcap':      'NetdevPcapOptions',
++    'pcap':     'NetdevPcapOptions',
      'l2tpv3':   'NetdevL2TPv3Options',
      'socket':   'NetdevSocketOptions',
      'vde':      'NetdevVdeOptions',
