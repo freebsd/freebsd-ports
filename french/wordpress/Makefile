@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	wordpress
-PORTVERSION=	4.8
-PORTEPOCH=	1
+PORTVERSION=	4.8.1
 DISTVERSIONSUFFIX=	-fr_FR
+PORTEPOCH=	1
 CATEGORIES=	french www
 MASTER_SITES=	http://fr.wordpress.org/
 
@@ -12,8 +12,6 @@ MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	State-of-the-art semantic personal publishing platform
 
 LICENSE=	GPLv2
-
-BROKEN=		size and checksum mismatch
 
 CONFLICTS_INSTALL=	de-wordpress-[0-9].* ja-wordpress-[0-9].* ru-wordpress-[0-9].*
 
