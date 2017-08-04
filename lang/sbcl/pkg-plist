@@ -77,6 +77,7 @@ lib/sbcl/sb-cover/sb-cover.asd
 lib/sbcl/sb-cover/test-data-1.lisp
 lib/sbcl/sb-cover/test-data-2.lisp
 lib/sbcl/sb-cover/test-data-3.lisp
+lib/sbcl/sb-cover/test-data-branching-forms.lisp
 lib/sbcl/sb-cover/tests.lisp
 lib/sbcl/sb-executable/sb-executable.lisp
 lib/sbcl/sb-gmp/bench.lisp
@@ -142,5 +143,6 @@ lib/sbcl/sb-simple-streams/string.lisp
 lib/sbcl/sb-simple-streams/terminal.lisp
 lib/sbcl/sb-sprof/sb-sprof.lisp
 lib/sbcl/sb-sprof/test.lisp
+lib/sbcl/sbcl.mk
 lib/sbcl/sbcl%%CORE_SUFFIX%%
 man/man1/sbcl.1.gz

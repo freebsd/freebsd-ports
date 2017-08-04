@@ -21,7 +21,8 @@ bin/qemu-system-i386
 %%NO_X86_TARGETS%%bin/qemu-system-mips64el
 %%NO_X86_TARGETS%%bin/qemu-system-mipsel
 %%NO_X86_TARGETS%%bin/qemu-system-moxie
-%%NO_X86_TARGETS%%bin/qemu-system-or32
+%%NO_X86_TARGETS%%bin/qemu-system-nios2
+%%NO_X86_TARGETS%%bin/qemu-system-or1k
 %%NO_X86_TARGETS%%bin/qemu-system-ppc
 %%NO_X86_TARGETS%%bin/qemu-system-ppc64
 %%NO_X86_TARGETS%%bin/qemu-system-ppcemb
@@ -38,6 +39,8 @@ bin/qemu-system-x86_64
 bin/qemu-x86_64
 man/man1/qemu.1.gz
 man/man1/qemu-img.1.gz
+man/man7/qemu-ga-ref.7.gz
+man/man7/qemu-qmp-ref.7.gz
 man/man8/qemu-ga.8.gz
 man/man8/qemu-nbd.8.gz
 @sample etc/qemu-ifup.sample

@@ -6,7 +6,7 @@ PORTVERSION=	3.0.3
 CATEGORIES=	www
 MASTER_SITES=	http://builds.piwik.org/
 
-MAINTAINER=	hans@nordhaug.priv.no
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open Source Web Analytics Software Program
 
 LICENSE=	GPLv3
