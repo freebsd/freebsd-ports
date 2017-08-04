@@ -56,6 +56,10 @@ UBOOT_PLIST_ALLWINNER=u-boot.img u-boot-sunxi-with-spl.bin
 UBOOT_PLIST_ALLWINNER64=u-boot-sunxi-with-spl.bin
 UBOOT_ARCH_ALLWINNER64=aarch64
 
+# Overrides for Zynq 7000 family
+UBOOT_PLIST_ZYNQ_7000=u-boot.img boot.bin uEnv.txt
+UBOOT_MOVE_ZYNQ_7000=${WRKSRC}/spl/boot.bin ${.CURDIR}/files/uEnv.txt
+
 # Uboot variables
 .if !defined(UBOOT_VERSION) && defined(UBOOT_VERSION_${FAMILY:tu})
 UBOOT_VERSION=${UBOOT_VERSION_${FAMILY:tu}}
@@ -85,6 +89,10 @@ ARCHFLAGS=ARCH=${UBOOT_ARCH}
 .endif
 COMPILER?=${CROSS_COMPILE}gcc
 
+.if !defined(UBOOT_MOVE) && defined(UBOOT_MOVE_${FAMILY:tu})
+UBOOT_MOVE=${UBOOT_MOVE_${FAMILY:tu}}
+.endif
+
 # Each u-boot family has different files to include, bring them in.
 .for i in ${UBOOT_PLIST}
 PLIST_FILES+= ${UBOOT_DIR}/${i}
@@ -93,6 +101,13 @@ PLIST_FILES+= ${UBOOT_DIR}/README
 
 do-configure:
 	(cd ${WRKSRC}; ${SETENV} ${CONFIGURE_ENV} ${MAKE_CMD} ${BOARD_CONFIG})
+
+# If we need to put anything into WRKSRC, do so now so we can build the PLIST
+# in do-install
+.if defined(UBOOT_MOVE)
+pre-install:
+	${CP} ${UBOOT_MOVE} ${WRKSRC}
+.endif
 
 do-install:
 	${MKDIR} ${STAGEDIR}/${INST}
