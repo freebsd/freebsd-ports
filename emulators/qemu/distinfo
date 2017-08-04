@@ -1,3 +1,5 @@
-TIMESTAMP = 1492017956
-SHA256 (qemu/2.8.1/qemu-2.8.1.tar.bz2) = 018e4c7ed22c220395cf41f835d01505e49d0e579a548bd3d72b03809442bbcd
-SIZE (qemu/2.8.1/qemu-2.8.1.tar.bz2) = 28366270
+TIMESTAMP = 1500663832
+SHA256 (qemu/2.9.0/qemu-2.9.0.tar.bz2) = 00bfb217b1bb03c7a6c3261b819cfccbfb5a58e3e2ceff546327d271773c6c14
+SIZE (qemu/2.9.0/qemu-2.9.0.tar.bz2) = 28720490
+SHA256 (qemu/2.9.0/dtc-v1.4.0.tar.gz) = 39d0713efd82a27adc065ecb9ef36401c53d5ee87ae1764e2bb243fcd97488e3
+SIZE (qemu/2.9.0/dtc-v1.4.0.tar.gz) = 131893

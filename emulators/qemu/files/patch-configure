@@ -1,5 +1,5 @@
---- configure.orig	2016-12-20 13:16:44.000000000 -0700
-+++ configure	2017-03-05 08:10:46.513171000 -0700
+--- configure.orig	2017-04-20 14:57:00 UTC
++++ configure
 @@ -247,7 +247,7 @@
  LDFLAGS_SHARED="-shared"
  modules="no"
