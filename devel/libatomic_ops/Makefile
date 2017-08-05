@@ -12,6 +12,7 @@ COMMENT=	Atomic operations access library
 
 LICENSE=	BSD2CLAUSE GPLv2
 LICENSE_COMB=	multi
+LICENSE_FILE_GPLv2=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libltdl.so:devel/libltdl
 
