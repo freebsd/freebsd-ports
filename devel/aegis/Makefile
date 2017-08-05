@@ -26,6 +26,10 @@ CONFIGURE_ENV=	WISH="${WISH}"
 LDFLAGS+=	-L${LOCALBASE}/lib
 MAKE_JOBS_UNSAFE=	yes
 
+# GCC 6 switched to -std=gnu++14 by default, which breaks the port (bug
+# 219284). Explicitly use the previous default to keep things going.
+USE_CXXSTD=	gnu++03
+
 OPTIONS_DEFINE=	DOCS NLS
 OPTIONS_SUB=	yes
 

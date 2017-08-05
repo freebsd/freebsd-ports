@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	freeswitch
-PORTVERSION=	1.6.13
-PORTREVISION=	3
+PORTVERSION=	1.6.19
 CATEGORIES=	net
 MASTER_SITES=	http://files.freeswitch.org/releases/freeswitch/ \
 		http://files.freeswitch.org/releases/sounds/:sounds
@@ -13,6 +12,8 @@ MAINTAINER=	corsmith@gmail.com
 COMMENT=	Multi-protocol soft switch for telephony applications
 
 LICENSE=	MPL
+
+ONLY_FOR_ARCHS=	amd64
 
 LIB_DEPENDS=	libsqlite3.so:databases/sqlite3 \
 		libcurl.so:ftp/curl \
@@ -26,12 +27,31 @@ LIB_DEPENDS=	libsqlite3.so:databases/sqlite3 \
 		libpng16.so:graphics/png \
 		libjbig.so:graphics/jbigkit
 
+USES=		gmake iconv jpeg libedit libtool lua perl5 pkgconfig shebangfix ssl tar:xz
+USE_LDCONFIG=	yes
+USE_RC_SUBR=	freeswitch
+SHEBANG_FILES=	scripts/fsxs.in
+
 CONFLICTS_BUILD=	xmlrpc-c-*
 
-ONLY_FOR_ARCHS=	amd64
+GNU_CONFIGURE=		yes
+CONFIGURE_ARGS=	--with-pkgconfigdir=${PREFIX}/libdata/pkgconfig \
+		--enable-zrtp
+CFLAGS+=	-Wno-c11-extensions -Wno-deprecated-declarations \
+		-Wno-zero-length-array -Wno-incompatible-pointer-types
 
-USES=		gmake jpeg pkgconfig lua perl5 libtool shebangfix tar:xz iconv libedit ssl
-USE_LDCONFIG=	yes
+USERS=		${PORTNAME}
+GROUPS=		${USERS}
+
+SUB_FILES=	pkg-message
+
+OPTIONS_DEFINE=		ALL_MODULES X11
+OPTIONS_DEFAULT=	8K 16K ENGLISH
+OPTIONS_MULTI=		BITRATE LANGUAGE
+OPTIONS_MULTI_BITRATE=	8K 16K 32K 48K
+OPTIONS_MULTI_LANGUAGE=	ENGLISH FRENCH RUSSIAN
+OPTIONS_SUB=		yes
+NO_OPTIONS_SORT=	yes
 
 ALL_MODULES_DESC=	Build all modules
 X11_DESC=		graphics/ImageMagick[-nox11] dependency
@@ -43,58 +63,41 @@ ENGLISH_DESC=	US English Language Sounds
 FRENCH_DESC=	French Canadian Language Sounds
 RUSSIAN_DESC=	Russian Language Sounds
 
-OPTIONS_DEFINE=		ALL_MODULES X11
-OPTIONS_MULTI=		BITRATE LANGUAGE
-OPTIONS_MULTI_BITRATE=	8K 16K 32K 48K
-OPTIONS_MULTI_LANGUAGE=	ENGLISH FRENCH RUSSIAN
-OPTIONS_DEFAULT=	8K 16K ENGLISH
-NO_OPTIONS_SORT=	yes
-OPTIONS_SUB=		yes
-
-ALL_MODULES_CONFLICTS_BUILD+=	apr
+ALL_MODULES_BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:audio/ladspa \
+				${LOCALBASE}/bin/aclocal:devel/automake
+ALL_MODULES_CONFLICTS_BUILD=	apr
 ALL_MODULES_EXTRA_PATCHES=	${FILESDIR}/extrapatch-modules.conf
+ALL_MODULES_LIB_DEPENDS=	libavformat.so:multimedia/ffmpeg \
+				libopencv_gpu.so:graphics/opencv \
+				libopencv_core.so:graphics/opencv-core \
+				libhiredis.so:databases/hiredis \
+				libmemcached.so:databases/libmemcached \
+				libSoundTouch.so:audio/soundtouch \
+				libasound.so:audio/alsa-lib \
+	     			libportaudio.so:audio/portaudio \
+	      			libmp4v2.so:multimedia/mp4v2 \
+				libshout.so:audio/libshout \
+				libmpg123.so:audio/mpg123 \
+				libmp3lame.so:audio/lame \
+				libnetsnmp.so:net-mgmt/net-snmp \
+				libvlc.so:multimedia/vlc \
+				libyaml.so:textproc/libyaml
+ALL_MODULES_RUN_DEPENDS=	${LOCALBASE}/include/ladspa.h:audio/ladspa
+ALL_MODULES_USE=		XORG=x11 OPENLDAP=yes
 
-GNU_CONFIGURE=		yes
+8K_VARS=	BITRATES+=8000
+16K_VARS=	BITRATES+=16000
+32K_VARS=	BITRATES+=32000
+48K_VARS=	BITRATES+=48000
+
 # install-strip causes `make stage' to fail:
 # libtool: install: strip --strip-debug /wrkdirs/usr/ports/net/freeswitch/work/stage/usr/local/lib/libfreeswitch.a
 # strip: file format not recognized
 # INSTALL_TARGET=		install-strip
-SHEBANG_FILES=		scripts/fsxs.in
-USE_RC_SUBR=		freeswitch
-
-USERS=		${PORTNAME}
-GROUPS=		${USERS}
-SUB_FILES=	pkg-message
-
-CFLAGS+=	-Wno-c11-extensions -Wno-deprecated-declarations \
-		-Wno-zero-length-array -Wno-incompatible-pointer-types
-
-CONFIGURE_ARGS=	--with-pkgconfigdir=${PREFIX}/libdata/pkgconfig \
-		--enable-zrtp
 
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MALL_MODULES}
-USE_XORG=	x11
-BUILD_DEPENDS+=	${LOCALBASE}/include/ladspa.h:audio/ladspa \
-		${LOCALBASE}/bin/aclocal:devel/automake
-RUN_DEPENDS+=	${LOCALBASE}/include/ladspa.h:audio/ladspa
-LIB_DEPENDS+=	libavformat.so:multimedia/ffmpeg \
-		libopencv_gpu.so:graphics/opencv \
-		libopencv_core.so:graphics/opencv-core \
-		libhiredis.so:databases/hiredis \
-		libmemcached.so:databases/libmemcached \
-		libSoundTouch.so:audio/soundtouch \
-		libasound.so:audio/alsa-lib \
-		libportaudio.so:audio/portaudio \
-		libmp4v2.so:multimedia/mp4v2 \
-		libshout.so:audio/libshout \
-		libmpg123.so:audio/mpg123 \
-		libmp3lame.so:audio/lame \
-		libnetsnmp.so:net-mgmt/net-snmp \
-		libvlc.so:multimedia/vlc \
-		libyaml.so:textproc/libyaml
-USE_OPENLDAP=	yes
 .if ${PORT_OPTIONS:MX11}
 LIB_DEPENDS+=	libMagickWand-6.so:graphics/ImageMagick
 .else
@@ -104,22 +107,10 @@ LIB_DEPENDS+=	libMagickWand-6.so:graphics/ImageMagick-nox11
 
 EDPRE=	freeswitch-sounds
 EDPOST=	1.0.51.tar.gz
-
-.if ${PORT_OPTIONS:M8K}
-BITRATES+=	8000
-.endif
-.if ${PORT_OPTIONS:M16K}
-BITRATES+=	16000
-.endif
-.if ${PORT_OPTIONS:M32K}
-BITRATES+=	32000
-.endif
-.if ${PORT_OPTIONS:M48K}
-BITRATES+=	48000
-.endif
+EDPOST_MUSIC=	1.0.52.tar.gz
 
 .for rate in ${BITRATES}
-EXTRADISTFILES+=	${EDPRE}-music-${rate}-${EDPOST}
+EXTRADISTFILES+=	${EDPRE}-music-${rate}-${EDPOST_MUSIC}
 .if ${PORT_OPTIONS:MENGLISH}
 EXTRADISTFILES+=	${EDPRE}-en-us-callie-${rate}-${EDPOST}
 .endif
