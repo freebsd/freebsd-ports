@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gnupg
-PORTVERSION=	2.1.21
-PORTREVISION=	2
+PORTVERSION=	2.1.22
 CATEGORIES=	security
 MASTER_SITES=	GNUPG
 
@@ -12,7 +11,7 @@ COMMENT=	The GNU Privacy Guard (modern version)
 LICENSE=	GPLv3 LGPL3
 LICENSE_COMB=	multi
 LICENSE_FILE_GPLv3=	${WRKSRC}/COPYING
-LICENSE_FILE_LGPL3=	${WRKSRC}/COPYING.LIB
+LICENSE_FILE_LGPL3=	${WRKSRC}/COPYING.LGPL3
 
 LIB_DEPENDS=	libassuan.so:security/libassuan \
 		libgcrypt.so:security/libgcrypt \
@@ -31,6 +30,7 @@ CONFIGURE_ARGS=	--disable-ntbtls --enable-symcryptrun --disable-wks-tools
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 INFO=		gnupg
+TEST_TARGET=	check-all
 
 OPTIONS_DEFINE=	GNUTLS LDAP SCDAEMON NLS DOCS SUID_GPG
 OPTIONS_DEFAULT=GNUTLS SCDAEMON
