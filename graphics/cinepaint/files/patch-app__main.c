@@ -1,5 +1,13 @@
 --- app/main.c.orig
 +++ app/main.c
+@@ -55,7 +55,6 @@
+ 
+ #ifdef HAVE_OY
+ #include <oyranos/oyranos.h>
+-#include <oyranos/oyranos_config.h>
+ #include <oyranos/oyranos_version.h>
+ char *oyranos_temp_path = NULL;
+ void *myAlloc(size_t n) { return calloc(sizeof(char), n); }
 @@ -448,7 +448,8 @@
  #ifdef WIN32
  

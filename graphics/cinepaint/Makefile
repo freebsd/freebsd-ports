@@ -3,7 +3,7 @@
 
 PORTNAME=	cinepaint
 DISTVERSION=	1.0-4
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/CinePaint/CinePaint-${DISTVERSION}
 
@@ -18,7 +18,11 @@ LIB_DEPENDS=	libIlmImf.so:graphics/OpenEXR \
 		liblcms.so:graphics/lcms \
 		libpng.so:graphics/png \
 		libtiff.so:graphics/tiff \
-		libfltk.so:x11-toolkits/fltk
+		libfltk.so:x11-toolkits/fltk \
+		libfontconfig.so:x11-fonts/fontconfig \
+		libfreetype.so:print/freetype2 \
+		libHalf.so:graphics/ilmbase \
+		libXcm.so:x11/libXcm
 
 BROKEN_powerpc64=	fails to link: ld: undefined reference to symbol __gxx_personality_v0(try adding -lstdc++)
 
@@ -29,8 +33,8 @@ PRINT_DESC=	Gutenprint (gimp-print) plugin
 GNU_CONFIGURE=	yes
 USES=		autoreconf desktop-file-utils gettext ghostscript:run \
 		gmake jpeg libtool pkgconfig python
-USE_XORG=	xmu
-USE_GNOME=	gtk20
+USE_XORG=	ice sm x11 xcursor xext xfixes xmu xft xt xinerama xrender
+USE_GNOME=	cairo gdkpixbuf2 gtk20
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 
@@ -42,7 +46,7 @@ PLIST_SUB=	VER="${DISTVERSION}"
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MOYRANOS}
-LIB_DEPENDS+=	liboyranos.so:graphics/oyranos
+LIB_DEPENDS+=	libOyranos.so:graphics/oyranos
 .else
 CONFIGURE_ENV+=	ac_cv_path_OY_CONFIG=no
 .endif
