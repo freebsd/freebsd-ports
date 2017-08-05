@@ -1,6 +1,6 @@
---- build/Makefile.in.orig	2016-03-07 21:11:29 UTC
+--- build/Makefile.in.orig	2017-06-13 13:22:10 UTC
 +++ build/Makefile.in
-@@ -588,76 +588,9 @@ uninstall-am:
+@@ -594,76 +594,9 @@ uninstall-am:
  
  all:
  	@echo " +---------- FreeSWITCH Build Complete ----------+"
@@ -73,7 +73,7 @@
 -	@echo " +                                                 +"
 -	@echo " +-------------------------------------------------+"
 -	@cat $(switch_srcdir)/cluecon2.tmpl
--	@sh $(switch_srcdir)/build/modcheck.sh $(modulesdir)
+-	@sh $(switch_srcdir)/build/modcheck.sh $(DESTDIR)$(modulesdir)
  
  .PHONY: check dvi html info install-data \
          install-dvi install-exec install-html install-info install-pdf install-ps installcheck installdirs pdf \
