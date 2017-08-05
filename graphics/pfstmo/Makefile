@@ -5,7 +5,7 @@ PORTNAME=	pfstmo
 PORTVERSION=	1.5
 PORTREVISION=	5
 CATEGORIES=	graphics
-MASTER_SITES=	SF/pfstools/${PORTNAME}/${PORTVERSION}
+MASTER_SITES=	SF/pfstools/${PORTNAME}_depreciated/${PORTVERSION}
 
 MAINTAINER=	ii@any.com.ru
 COMMENT=	Tone mapping operators
