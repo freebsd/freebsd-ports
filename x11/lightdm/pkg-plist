@@ -3,10 +3,10 @@ etc/apparmor.d/abstractions/lightdm
 etc/apparmor.d/abstractions/lightdm_chromium-browser
 etc/apparmor.d/lightdm-guest-session
 etc/dbus-1/system.d/org.freedesktop.DisplayManager.conf
+%%ETCDIR%%/Xsession
 @sample %%ETCDIR%%/keys.conf.sample
 @sample %%ETCDIR%%/lightdm.conf.sample
 @sample %%ETCDIR%%/users.conf.sample
-%%ETCDIR%%/Xsession
 etc/pam.d/lightdm
 etc/pam.d/lightdm-autologin
 etc/pam.d/lightdm-greeter
@@ -31,19 +31,24 @@ sbin/lightdm
 share/bash-completion/completions/dm-tool
 share/bash-completion/completions/lightdm
 %%VALA%%share/gir-1.0/LightDM-1.gir
-%%PORTDOCS%%share/gtk-doc/html/lightdm-gobject-1/core.html
+%%PORTDOCS%%share/gtk-doc/html/lightdm-gobject-1/LightDMGreeter.html
+%%PORTDOCS%%share/gtk-doc/html/lightdm-gobject-1/LightDMLanguage.html
+%%PORTDOCS%%share/gtk-doc/html/lightdm-gobject-1/LightDMLayout.html
+%%PORTDOCS%%share/gtk-doc/html/lightdm-gobject-1/LightDMSession.html
+%%PORTDOCS%%share/gtk-doc/html/lightdm-gobject-1/LightDMUser.html
+%%PORTDOCS%%share/gtk-doc/html/lightdm-gobject-1/LightDMUserList.html
+%%PORTDOCS%%share/gtk-doc/html/lightdm-gobject-1/annotation-glossary.html
+%%PORTDOCS%%share/gtk-doc/html/lightdm-gobject-1/api-index-full.html
+%%PORTDOCS%%share/gtk-doc/html/lightdm-gobject-1/ch01.html
+%%PORTDOCS%%share/gtk-doc/html/lightdm-gobject-1/deprecated-api-index.html
 %%PORTDOCS%%share/gtk-doc/html/lightdm-gobject-1/home.png
 %%PORTDOCS%%share/gtk-doc/html/lightdm-gobject-1/index.html
 %%PORTDOCS%%share/gtk-doc/html/lightdm-gobject-1/left-insensitive.png
 %%PORTDOCS%%share/gtk-doc/html/lightdm-gobject-1/left.png
-%%PORTDOCS%%share/gtk-doc/html/lightdm-gobject-1/lightdm-gobject-1-Greeter-Interface.html
-%%PORTDOCS%%share/gtk-doc/html/lightdm-gobject-1/lightdm-gobject-1-Keyboard-Layout.html
-%%PORTDOCS%%share/gtk-doc/html/lightdm-gobject-1/lightdm-gobject-1-Languages.html
 %%PORTDOCS%%share/gtk-doc/html/lightdm-gobject-1/lightdm-gobject-1-Power-Management.html
-%%PORTDOCS%%share/gtk-doc/html/lightdm-gobject-1/lightdm-gobject-1-Sessions.html
 %%PORTDOCS%%share/gtk-doc/html/lightdm-gobject-1/lightdm-gobject-1-System-Information.html
-%%PORTDOCS%%share/gtk-doc/html/lightdm-gobject-1/lightdm-gobject-1-User-Accounts.html
 %%PORTDOCS%%share/gtk-doc/html/lightdm-gobject-1/lightdm-gobject-1.devhelp2
+%%PORTDOCS%%share/gtk-doc/html/lightdm-gobject-1/object-tree.html
 %%PORTDOCS%%share/gtk-doc/html/lightdm-gobject-1/right-insensitive.png
 %%PORTDOCS%%share/gtk-doc/html/lightdm-gobject-1/right.png
 %%PORTDOCS%%share/gtk-doc/html/lightdm-gobject-1/style.css

@@ -1,4 +1,4 @@
---- src/process.c.orig	2017-04-12 15:33:03 UTC
+--- src/process.c.orig	2017-01-26 22:04:26 UTC
 +++ src/process.c
 @@ -228,11 +228,16 @@ process_start (Process *process, gboolean block)
  
