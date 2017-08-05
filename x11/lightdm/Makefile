@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	lightdm
-PORTVERSION=	1.20.0
-PORTREVISION=	7
+PORTVERSION=	1.22.0
 CATEGORIES=	x11
 MASTER_SITES=	https://launchpad.net/${PORTNAME}/${PORTVERSION:R}/${PORTVERSION}/+download/
 
@@ -31,6 +30,7 @@ USE_GNOME=	glib20 intlhack
 USE_XORG=	x11 xcb xdmcp
 CONFIGURE_ARGS=	--disable-tests # PAM errors
 INSTALL_TARGET=	install-strip
+USE_LDCONFIG=	yes
 USE_RC_SUBR=	lightdm
 SUB_FILES=	Xsession
 
