@@ -16,10 +16,10 @@ BROKEN_aarch64=		fails to build: undefined reference to sbrk
 BROKEN_mips=		fails to configure: error: Could not find the libwrap library
 BROKEN_mips64=		fails to configure: error: Could not find the libwrap library
 
-OPTIONS_DEFINE=	ASM DB_RELOAD DEBUG DNMALLOC ENCRYPT GNUPG IPV6 KCHECK LIBWRAP \
-		LOGFILE_MONITOR LOGIN_WATCH MAIL MOUNTS_CHECK MYSQL ODBC PGSQL \
-		PORT_CHECK PROCESS_CHECK POSIX_ACL PRELUDE PTRACE SRP STATIC \
-		SUIDCHECK UDP USERFILES XML_LOGS
+OPTIONS_DEFINE=	ASM DB_RELOAD DEBUG DNMALLOC DOCS ENCRYPT GNUPG IPV6 KCHECK \
+		LIBWRAP LOGFILE_MONITOR LOGIN_WATCH MAIL MOUNTS_CHECK MYSQL \
+		ODBC PGSQL PORT_CHECK PROCESS_CHECK POSIX_ACL PRELUDE PTRACE \
+		SRP STATIC SUIDCHECK UDP USERFILES XML_LOGS
 OPTIONS_DEFAULT=ASM DNMALLOC ENCRYPT LIBWRAP MAIL SRP
 
 DB_RELOAD_DESC=	Enable database reload on SIGHUP
@@ -191,10 +191,19 @@ post-install:
 	@${CP} ${WRKSRC}/init/samhain.startFreeBSD ${STAGEDIR}${PREFIX}/etc/rc.d/samhain.sh
 	@${CP} ${WRKSRC}/samhainrc ${STAGEDIR}${PREFIX}/etc/samhainrc.sample
 	@${CHGRP} wheel ${STAGEDIR}${PREFIX}/etc/samhainrc.sample
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/sbin/samhain
 .else
 	@${CP} ${WRKSRC}/init/samhain.startFreeBSD ${STAGEDIR}${PREFIX}/etc/rc.d/yule.sh
 	@${CP} ${WRKSRC}/yulerc ${STAGEDIR}${PREFIX}/etc/yulerc.sample
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/sbin/yule
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/sbin/yulectl
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/sbin/yule_setpwd
 .endif
+.if defined(WITH_CLIENT)
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/sbin/samhain_setpwd
+.endif
+
+post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_MAN} ${WRKSRC}/docs/MANUAL-2_4.pdf ${STAGEDIR}${DOCSDIR}
 	${INSTALL_MAN} ${WRKSRC}/docs/HOWTO-client+server.html ${STAGEDIR}${DOCSDIR}
@@ -207,18 +216,5 @@ post-install:
 	${INSTALL_MAN} ${WRKSRC}/docs/BUGS ${STAGEDIR}${DOCSDIR}
 	${INSTALL_MAN} ${WRKSRC}/docs/sh_mounts.txt ${STAGEDIR}${DOCSDIR}
 	${INSTALL_MAN} ${WRKSRC}/docs/sh_userfiles.txt ${STAGEDIR}${DOCSDIR}
-
-post-stage:
-.if !defined(WITH_SERVER)
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/sbin/samhain
-.endif
-.if defined(WITH_CLIENT)
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/sbin/samhain_setpwd
-.endif
-.if defined(WITH_SERVER)
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/sbin/yule
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/sbin/yulectl
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/sbin/yule_setpwd
-.endif
 
 .include <bsd.port.post.mk>
