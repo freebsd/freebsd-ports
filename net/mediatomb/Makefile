@@ -23,6 +23,12 @@ CONFIGURE_ENV=	PTHREAD_LIBS="-lpthread"
 USES=		compiler:gcc-c++11-lib iconv localbase:ldflags
 USE_RC_SUBR=	mediatomb
 
+# Workaround for FreeBSD 10, whose libc++ does not have an overload for C++14's
+# `operator delete(void*, size_t)'. Since GCC 6 uses -std=gnu++14 by default,
+# linking fails when a dependency (such as taglib) is built with clang and
+# lacking the overload. FreeBSD >= 11 is fine.
+USE_CXXSTD=	gnu++11
+
 USERS=		mediatomb
 GROUPS=		${USERS}
 
