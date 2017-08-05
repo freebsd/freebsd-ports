@@ -26,5 +26,8 @@ CONFIGURE_ENV+=	CPPFLAGS="${PFS_CPPFLAGS} ${DEBUG_FLAGS}" \
 		LDFLAGS="${PFS_LDFLAGS}"
 
 USES=		gmake pkgconfig compiler:openmp
+# GCC 6 defaults to -std=gnu++14, and the port does not build with C++11 or
+# later (bug 219299).
+USE_CXXSTD=	gnu++03
 
 .include <bsd.port.mk>
