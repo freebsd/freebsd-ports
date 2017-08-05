@@ -3,6 +3,7 @@
 
 PORTNAME=	mate-session-manager
 PORTVERSION=	1.18.0
+PORTREVISION=	1
 CATEGORIES=	x11 mate
 MASTER_SITES=	MATE
 DIST_SUBDIR=	mate
@@ -13,7 +14,7 @@ COMMENT=	Session component for the MATE desktop
 LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib \
 		libdbus-1.so:devel/dbus \
 		libupower-glib.so:sysutils/upower
-RUN_DEPENDS=	${LOCALBASE}/sbin/console-kit-daemon:sysutils/consolekit \
+RUN_DEPENDS=	${LOCALBASE}/sbin/console-kit-daemon:sysutils/consolekit2 \
 		${LOCALBASE}/bin/xdpyinfo:x11/xdpyinfo
 
 PORTSCOUT=	limitw:1,even

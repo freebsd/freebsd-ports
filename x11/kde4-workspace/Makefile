@@ -2,14 +2,14 @@
 
 PORTNAME=	kde-workspace
 PORTVERSION=	${KDE4_WORKSPACE_VERSION}
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	x11 kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE Plasma Desktop
 
 LIB_DEPENDS=	libdbus-1.so:devel/dbus \
-		libck-connector.so:sysutils/consolekit \
+		libck-connector.so:sysutils/consolekit2 \
 		libpci.so:devel/libpci \
 		libhal.so:sysutils/hal \
 		libqjson.so:devel/qjson \

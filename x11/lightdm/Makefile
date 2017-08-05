@@ -3,6 +3,7 @@
 
 PORTNAME=	lightdm
 PORTVERSION=	1.22.0
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	https://launchpad.net/${PORTNAME}/${PORTVERSION:R}/${PORTVERSION}/+download/
 
@@ -18,7 +19,7 @@ LICENSE_FILE_GPLv3=	${WRKSRC}/COPYING.GPL3
 
 BUILD_DEPENDS=	itstool:textproc/itstool
 LIB_DEPENDS=	libaccountsservice.so:sysutils/accountsservice \
-		libck-connector.so:sysutils/consolekit \
+		libck-connector.so:sysutils/consolekit2 \
 		libgcrypt.so:security/libgcrypt \
 		libxklavier.so:x11/libxklavier
 
