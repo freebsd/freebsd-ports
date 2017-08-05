@@ -181,7 +181,7 @@
     SUBDIR += conky
     SUBDIR += conky-awesome
     SUBDIR += consolehm
-    SUBDIR += consolekit
+    SUBDIR += consolekit2
     SUBDIR += consul
     SUBDIR += consul-alerts
     SUBDIR += contractor

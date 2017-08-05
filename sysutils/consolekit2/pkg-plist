@@ -1,0 +1,57 @@
+bin/ck-history
+bin/ck-launch-session
+bin/ck-list-sessions
+etc/ConsoleKit/seats.d/00-primary.seat
+etc/X11/xinit/xinitrc.d/90-consolekit
+etc/dbus-1/system.d/ConsoleKit.conf
+etc/logrotate.d/consolekit
+include/ConsoleKit/ck-connector/ck-connector.h
+include/ConsoleKit/libconsolekit.h
+lib/ConsoleKit/scripts/ck-get-x11-display-device
+lib/ConsoleKit/scripts/ck-get-x11-server-pid
+lib/ConsoleKit/scripts/ck-system-hibernate
+lib/ConsoleKit/scripts/ck-system-hybridsleep
+lib/ConsoleKit/scripts/ck-system-restart
+lib/ConsoleKit/scripts/ck-system-stop
+lib/ConsoleKit/scripts/ck-system-suspend
+lib/girepository-1.0/libconsolekit-1.0.typelib
+lib/libck-connector.so
+lib/libck-connector.so.0
+lib/libck-connector.so.0.0.0
+lib/libconsolekit.so
+lib/libconsolekit.so.1
+lib/libconsolekit.so.1.0.0
+lib/pam_ck_connector.so
+libdata/pkgconfig/ck-connector.pc
+libdata/pkgconfig/libconsolekit.pc
+libexec/ck-collect-session-info
+@(,,4755) libexec/ck-get-x11-display-device
+libexec/ck-get-x11-server-pid
+libexec/ck-remove-directory
+man/man1/ck-history.1.gz
+man/man1/ck-launch-session.1.gz
+man/man1/ck-list-sessions.1.gz
+man/man1/console-kit-daemon.1m.gz
+man/man8/pam_ck_connector.8.gz
+sbin/ck-log-system-restart
+sbin/ck-log-system-start
+sbin/ck-log-system-stop
+sbin/console-kit-daemon
+share/dbus-1/interfaces/org.freedesktop.ConsoleKit.Manager.xml
+share/dbus-1/interfaces/org.freedesktop.ConsoleKit.Seat.xml
+share/dbus-1/interfaces/org.freedesktop.ConsoleKit.Session.xml
+share/dbus-1/system-services/org.freedesktop.ConsoleKit.service
+share/gir-1.0/libconsolekit-1.0.gir
+share/locale/bg/LC_MESSAGES/ConsoleKit2.mo
+share/locale/es/LC_MESSAGES/ConsoleKit2.mo
+share/locale/es_419/LC_MESSAGES/ConsoleKit2.mo
+share/locale/ru/LC_MESSAGES/ConsoleKit2.mo
+share/polkit-1/actions/org.freedesktop.consolekit.policy
+@dir etc/ConsoleKit/run-seat.d
+@dir etc/ConsoleKit/run-session.d
+@dir lib/ConsoleKit/run-seat.d
+@dir lib/ConsoleKit/run-session.d
+@dir /var/log/ConsoleKit
+@postexec /usr/bin/touch /var/log/ConsoleKit/history
+@rmtry /var/log/ConsoleKit/history
+@dir /var/run/ConsoleKit
