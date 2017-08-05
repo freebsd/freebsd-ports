@@ -9,7 +9,7 @@ lib/qt5/plugins/styles/liblthemeengine-style.so
 man/man1/lumina-open.1.gz
 man/man8/lumina-desktop.8.gz
 man/man8/start-lumina-desktop.8.gz
-share/application/lthemeengine.desktop
+share/applications/lthemeengine.desktop
 share/applications/lumina-info.desktop
 share/applications/lumina-support.desktop
 share/icons/material-design-dark/LICENSE
