@@ -6,7 +6,7 @@ PORTREVISION=	1
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	jrm@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Compact Language Detection for Ruby
 
 LICENSE=	APACHE20

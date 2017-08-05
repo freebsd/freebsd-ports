@@ -5,7 +5,7 @@ PORTVERSION=	0.6.6
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	jrm@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Rails settings plugin for easily managing key-value pairs table
 
 LICENSE=	MIT

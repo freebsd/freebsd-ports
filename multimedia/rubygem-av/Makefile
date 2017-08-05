@@ -5,7 +5,7 @@ PORTVERSION=	0.9.0
 CATEGORIES=	multimedia rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	jrm@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Programmable Ruby interface for FFMPEG/Libav
 
 LICENSE=	MIT

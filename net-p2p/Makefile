@@ -37,6 +37,7 @@
     SUBDIR += gtk-gnutella
     SUBDIR += gtorrentviewer
     SUBDIR += hs-torrent
+    SUBDIR += jackett
     SUBDIR += jigdo
     SUBDIR += ktorrent
     SUBDIR += libbt

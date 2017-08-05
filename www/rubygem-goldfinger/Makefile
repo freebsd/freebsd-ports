@@ -5,7 +5,7 @@ DISTVERSION=	2.0.0
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	jrm@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Webfinger utility for Ruby
 
 LICENSE=	MIT

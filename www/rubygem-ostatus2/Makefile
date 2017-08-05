@@ -5,7 +5,7 @@ PORTVERSION=	2.0.1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	jrm@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Toolset for interacting with the OStatus2 suite of protocols
 
 LICENSE=	MIT

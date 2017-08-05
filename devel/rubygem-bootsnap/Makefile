@@ -5,7 +5,7 @@ PORTVERSION=	1.1.2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	jrm@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Boot large ruby/rails apps faster
 
 LICENSE=	MIT

@@ -5,7 +5,7 @@ PORTVERSION=	0.6.4
 CATEGORIES=	multimedia rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	jrm@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Audio/Video transcoder for Paperclip using FFMPEG/Avconv
 
 LICENSE=	MIT
