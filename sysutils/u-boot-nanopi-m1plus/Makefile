@@ -1,6 +1,6 @@
 # $FreeBSD$
 
-MAINTAINER=    manuFreeBSD.org
+MAINTAINER=    manu@FreeBSD.org
 MASTERDIR=     ${.CURDIR}/../u-boot-master
 
 MODEL=         nanopi_m1plus
