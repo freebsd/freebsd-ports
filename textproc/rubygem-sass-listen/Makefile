@@ -5,7 +5,7 @@ PORTVERSION=	4.0.0
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	jrm@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Listens to file modifications
 
 LICENSE=	MIT

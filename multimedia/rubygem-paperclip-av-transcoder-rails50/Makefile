@@ -6,7 +6,7 @@ CATEGORIES=	multimedia rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	-rails50
 
-MAINTAINER=	jrm@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Audio/Video transcoder for Paperclip using FFMPEG/Avconv
 
 LICENSE=	MIT

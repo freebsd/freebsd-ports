@@ -5,7 +5,7 @@ PORTVERSION=	0.99.7
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	jrm@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Log outgoing HTTP requests
 
 LICENSE=	MIT

@@ -5,7 +5,7 @@ PORTVERSION=	0.4.2
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	jrm@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Abort requests that are taking too long
 
 LICENSE=	MIT

@@ -5,7 +5,7 @@ PORTVERSION=	0.3.0
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	jrm@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	HMAC-based Key Derivation Function
 
 LICENSE=	MIT

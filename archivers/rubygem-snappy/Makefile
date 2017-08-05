@@ -5,7 +5,7 @@ PORTVERSION=	0.0.15
 CATEGORIES=	archivers rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	jrm@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Snappy binding for Ruby
 
 LICENSE=	MIT

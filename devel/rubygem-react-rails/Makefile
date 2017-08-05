@@ -5,7 +5,7 @@ PORTVERSION=	2.2.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	jrm@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	React/JSX adapter for the Ruby on Rails asset pipeline
 
 LICENSE=	APACHE20

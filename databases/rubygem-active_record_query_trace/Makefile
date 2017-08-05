@@ -5,7 +5,7 @@ PORTVERSION=	1.5.4
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	jrm@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Print stack trace of all queries to the Rails log
 
 LICENSE=	MIT
