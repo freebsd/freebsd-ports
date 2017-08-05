@@ -9498,3 +9498,4 @@ security/openvas-cli|security/openvas8-cli|2017-08-03|Renamed to include openvas
 security/openvas-manager|security/openvas8-manager|2017-08-03|Renamed to include openvas 9 ports. It reflects a better name
 security/openvas-scanner|security/openvas8-scanner|2017-08-03|Renamed to include openvas 9 ports. It reflects a better name
 security/greenbone-security-assistant|security/greenbone-security-assistant8|2017-08-03|Renamed to include openvas 9 ports. It reflects a better name
+sysutils/consolekit|sysutils/consolekit2|2017-08-05|Continuation of the consolekit project
