@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	istatserver
-PORTVERSION=	3.01
-PORTREVISION=	2
+PORTVERSION=	3.02
 CATEGORIES=	sysutils
 MASTER_SITES=	https://s3.amazonaws.com/bjango/files/istatserverlinux/
 
