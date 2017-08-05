@@ -42,11 +42,6 @@ do-build:
 		cd ${GO_WRKSRC}; ${SETENV} ${MAKE_ENV} ${GO_ENV} ${GMAKE} -C $${GO_TARGET} ;\
 	done
 
-post-stage:
-	for GO_TARGET in ${GO_TARGETS}; do \
-		${MKDIR} ${STAGEDIR}/var/db/beats/$${GO_TARGET} ;\
-	done
-
 do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_PROGRAM} \
@@ -61,6 +56,7 @@ do-install:
 			${STAGEDIR}${PREFIX}/etc/$${GO_TARGET}.template.json.sample ;\
 		${INSTALL_DATA} ${WRKSRC}/$${GO_TARGET}/$${GO_TARGET}.template-es2x.json \
 			${STAGEDIR}${PREFIX}/etc/$${GO_TARGET}.template-es2x.json.sample ;\
+		${MKDIR} ${STAGEDIR}/var/db/beats/$${GO_TARGET} ;\
 	done
 
 .include <bsd.port.mk>
