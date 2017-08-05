@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tesseract
-PORTVERSION=	3.05.00
-PORTREVISION=	2
+PORTVERSION=	3.05.01
 CATEGORIES=	graphics
 
 MAINTAINER=	pkubaj@anongoth.pl
