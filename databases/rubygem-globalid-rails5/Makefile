@@ -7,7 +7,7 @@ CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	-rails5
 
-MAINTAINER=	jrm@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	URIs for your models makes it easy to pass references around
 
 LICENSE=	MIT

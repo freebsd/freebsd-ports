@@ -7,7 +7,7 @@ CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	50
 
-MAINTAINER=	jrm@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Full-stack web application framework
 
 LICENSE=	MIT

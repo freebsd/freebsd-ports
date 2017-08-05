@@ -6,7 +6,7 @@ CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	-rails5
 
-MAINTAINER=	jrm@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	jQuery script to edit fields by clicking on them
 
 LICENSE=	MIT

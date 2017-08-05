@@ -7,7 +7,7 @@ CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	-rails50
 
-MAINTAINER=	jrm@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Create JSON structures via a Builder-style DSL
 
 LICENSE=	MIT

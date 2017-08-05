@@ -5,7 +5,7 @@ PORTVERSION=	1.0.6
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	jrm@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Natural language detection for text samples
 
 LICENSE=	MIT

@@ -5,7 +5,7 @@ PORTVERSION=	5.0.4
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	jrm@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Common locale data and translations for Rails i18n
 
 LICENSE=	MIT

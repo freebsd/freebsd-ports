@@ -5,7 +5,7 @@ PORTVERSION=	3.1.1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	jrm@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	jQuery script to edit fields by clicking on them
 
 LICENSE=	MIT

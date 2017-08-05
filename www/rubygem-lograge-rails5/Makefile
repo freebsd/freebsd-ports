@@ -6,7 +6,7 @@ CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	-rails5
 
-MAINTAINER=	jrm@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Tame Rails' multi-line logging into a single line per request
 
 LICENSE=	MIT

@@ -5,7 +5,7 @@ PORTVERSION=	0.0.3
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	jrm@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Run Rails the 12factor way
 
 LICENSE=	MIT

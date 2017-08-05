@@ -6,7 +6,7 @@ CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	-rails50
 
-MAINTAINER=	jrm@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Debugging tool for your Ruby on Rails applications
 
 LICENSE=	MIT

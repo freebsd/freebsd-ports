@@ -5,7 +5,7 @@ PORTVERSION=	5.0.9
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	jrm@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ensure only a single copy of a job is in Redis
 
 LICENSE=	MIT

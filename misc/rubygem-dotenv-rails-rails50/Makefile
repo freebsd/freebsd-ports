@@ -7,7 +7,7 @@ CATEGORIES=	misc rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	-rails50
 
-MAINTAINER=	jrm@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Autoload dotenv in Rails
 
 LICENSE=	MIT
