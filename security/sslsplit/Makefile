@@ -18,7 +18,7 @@ MAKEFILE=	GNUmakefile
 MAKE_ENV=	DESTDIR=${STAGEDIR} MANDIR=man INSTALLUID=${UID} INSTALLGID=${GID}
 PLIST_FILES=	bin/sslsplit man/man1/sslsplit.1.gz
 
-post-stage:
+post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/sslsplit
 
 .include <bsd.port.mk>
