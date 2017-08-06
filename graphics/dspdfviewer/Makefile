@@ -39,4 +39,8 @@ PLIST_FILES=	bin/dspdfviewer \
 CFLAGS+=	-Wno-error=undefined-func-template
 .endif
 
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1200039
+CFLAGS+=	-Wno-error=zero-as-null-pointer-constant
+.endif
+
 .include <bsd.port.post.mk>
