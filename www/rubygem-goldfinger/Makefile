@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	goldfinger
-DISTVERSION=	2.0.1
+PORTVERSION=	2.0.1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -17,7 +17,6 @@ RUN_DEPENDS=	rubygem-addressable>=2.5:www/rubygem-addressable \
 		rubygem-oj>=3.0:devel/rubygem-oj
 
 NO_ARCH=	yes
-
 USES=		gem
 USE_RUBY=	yes
 
