@@ -1,4 +1,4 @@
---- CMakeLists.txt.orig	2017-02-15 02:10:02 UTC
+--- CMakeLists.txt.orig	2017-07-18 14:11:40 UTC
 +++ CMakeLists.txt
 @@ -14,6 +14,7 @@ mark_as_advanced(CLEAR
      CMAKE_INSTALL_BINDIR
@@ -8,7 +8,7 @@
  )
  
  #
-@@ -166,13 +167,24 @@ if(UNITTEST)
+@@ -164,13 +165,24 @@ if(UNITTEST)
      # Find speex library
      #
      message(STATUS "Looking for Speex DSP library.")
@@ -32,5 +32,5 @@
 +        message(FATAL_ERROR "samplerate library not found!")
 +    endif()
  
-     add_subdirectory(unittest)
- endif(UNITTEST)
+     #
+     # Samplerate Library
