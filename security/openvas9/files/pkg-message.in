@@ -1,0 +1,56 @@
+###############################################################################
+
+OpenVAS 9 ports were installed
+
+1) Redis  is a dependency of OpenVAS. Please, configure redis-server for 
+   listening on socket /tmp/redis.sock. openvassd needs it
+
+2) If you installed security/openvas8-manager port (openvasmd) with PostgrSQL 
+   support, please look at: 
+
+   %%LOCALBASE%%/share/docs/openvas-scanner/postgres-HOWTO 
+
+   It will guide you for configure PostgreSQL as OpenVAS database backend 
+   instead of SQLite3
+
+3) The following steps are neccessary before of you can access to OpenVAS web 
+   interface (gsad):
+
+   # openvas-mkcert
+   # openvas-mkcert-client -n -i
+   # openvasmd --rebuild --progress
+   # greenbone-nvt-sync
+   # greenbone-scapdata-sync
+   # greenbone-certdata-sync
+   # openvasmd --create-user=admin --role=Admin
+   # openvasmd --user=admin --new-password=yourpassword
+
+4) Add the following lines to /etc/rc.conf
+ 
+   openvassd_enable="YES"
+   openvasmd_enable="YES"
+   gsad_enable="YES"
+
+5) Start OpenVAS Scanner. It will listen on 127.0.0.1:9391 by default
+
+   # service openvassd restart
+
+6) 5) Start OpenVAS Manager. It will listen on 127.0.0.1:9390 by default
+
+   # service openvasmd restart
+   # openvasmd --rebuild --progress
+
+7) Start OpenVAS web interface. It will listen on http://127.0.0.1:8080 by 
+   default
+
+   # service gsad start
+
+8) gsad can export results to PDF. It needs print/texlive-texmf port
+  
+   # pkg install texlive-texmf
+
+   It will install 1G of data
+
+9) Enjoy it
+
+###############################################################################

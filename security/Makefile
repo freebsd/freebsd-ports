@@ -435,10 +435,12 @@
     SUBDIR += openssl
     SUBDIR += openssl-devel
     SUBDIR += openssl_tpm_engine
+    SUBDIR += openvas8
     SUBDIR += openvas8-cli
     SUBDIR += openvas8-libraries
     SUBDIR += openvas8-manager
     SUBDIR += openvas8-scanner
+    SUBDIR += openvas9
     SUBDIR += openvas9-cli
     SUBDIR += openvas9-libraries
     SUBDIR += openvas9-manager

@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	codec2
-PORTVERSION=	0.6
+PORTVERSION=	0.7
 CATEGORIES=	audio hamradio
 MASTER_SITES=	http://files.freedv.org/codec2/ \
 		LOCAL/db
@@ -26,11 +26,11 @@ TEST_SRCFILES=	cohpsk_ch cohpsk_demod cohpsk_get_test_bits cohpsk_mod\
 		cohpsk_put_test_bits fdmdv_channel freedv_rx freedv_tx\
 		generate_codebook
 TEST_UNITTESTFILES=	c2validate create_interleaver de extract fdmdv_mem\
-			genampdata genlsp genphdata genres lspsync polar2rect\
+			genlsp genres polar2rect\
 			pre raw2h scalarlsptest speexnoisesup t16_8\
 			t16_8_short tcohpsk test_cohpsk_ch tfdmdv tfifo\
-			tinterp tlspsens tnlp tprede tquant vq_train_jvm\
-			vqtrain vqtrainjnd vqtrainph vqtrainsp
+			tnlp tprede vq_train_jvm\
+			vqtrain
 
 SHEBANG_FILES=	${WRKSRC}/octave/fsk_horus_stream.m\
 		${WRKSRC}/script/menu.sh

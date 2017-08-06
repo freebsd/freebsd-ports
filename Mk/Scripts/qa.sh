@@ -527,6 +527,14 @@ proxydeps_suggest_uses() {
 	elif [ ${pkg} = "x11/kf5-plasma-framework" ]; then warn "you need to use USE_KDE+=plasma-framework"
 	elif expr ${pkg} : '.*/kf5-.*' > /dev/null; then
 		warn "you need USE_KDE+=$(echo ${pkg} | sed -E 's|.*/kf5-k||')"
+	# GStreamer 0.10
+	elif [ ${pkg} = "multimedia/gstreamer" ]; then warn "you need to use USE_GSTREAMER+=yes"
+	elif [ ${pkg} = "multimedia/gstreamer-plugins" ]; then warn "you need to use USE_GSTREAMER+=yes"
+	elif [ ${pkg} = "multimedia/gstreamer-plugins-bad" ]; then warn "you need to use USE_GSTREAMER+=bad"
+	# GStreamer 1
+	elif [ ${pkg} = "multimedia/gstreamer1" ]; then warn "you need to use USE_GSTREAMER1+=yes"
+	elif [ ${pkg} = "multimedia/gstreamer1-plugins" ]; then warn "you need to use USE_GSTREAMER1+=yes"
+	elif [ ${pkg} = "multimedia/gstreamer1-plugins-bad" ]; then warn "you need to use USE_GSTREAMER1+=bad"
 	# sdl-related
 	elif [ ${pkg} = 'devel/sdl12' ]; then
 		warn "you need USE_SDL+=sdl"

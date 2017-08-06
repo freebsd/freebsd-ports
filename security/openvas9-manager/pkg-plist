@@ -1,23 +1,27 @@
 bin/openvas-manage-certs
-etc/openvas/openvasmd_log.conf
-etc/openvas/pwpolicy.conf
-etc/rc.d/openvasmd
+@sample etc/openvas/openvasmd_log.conf.sample
+@sample etc/openvas/pwpolicy.conf.sample
+%%PGSQL%%lib/openvasmd/pg/libmanage-pg-server.so
+%%PGSQL%%lib/openvasmd/pg/libmanage-pg-server.so.0
+%%PGSQL%%lib/openvasmd/pg/libmanage-pg-server.so.7.0.2
 man/man8/database-statistics-sqlite.8.gz
 man/man8/greenbone-certdata-sync.8.gz
 man/man8/greenbone-scapdata-sync.8.gz
 man/man8/openvas-migrate-to-postgres.8.gz
 man/man8/openvas-portnames-update.8.gz
 man/man8/openvasmd.8.gz
-sbin/database-statistics-sqlite
+%%SQLITE3%%sbin/database-statistics-sqlite
 sbin/greenbone-certdata-sync
 sbin/greenbone-scapdata-sync
 sbin/openvas-migrate-to-postgres
 sbin/openvas-portnames-update
 sbin/openvasmd
-sbin/openvasmd-sqlite
+%%SQLITE3%%sbin/openvasmd-sqlite
+%%PGSQL%%sbin/openvasmd-pg
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
 %%PORTDOCS%%%%DOCSDIR%%/example-openvas-manage-certs.conf
 %%PORTDOCS%%%%DOCSDIR%%/html/omp.html
+%%PGSQL%%%%PORTDOCS%%%%DOCSDIR%%/postgres-HOWTO
 share/man/man1/openvas-manage-certs.1
 share/openvas/cert/cert_bund_getbyname.xsl
 share/openvas/cert/cert_bund_update.xsl
