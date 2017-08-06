@@ -5,6 +5,16 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20170806:
+  AFFECTS: users of mail/dovecot2-antispam-plugin
+  AUTHOR: adamw@FreeBSD.org
+
+  Development of the antispam plugin ceased years ago, and upstream
+  recommends using pigeonhole (mail/dovecot2-pigeonhole) instead.
+
+  See https://wiki2.dovecot.org/HowTo/AntispamWithSieve for a recipe
+  to replicate the antispam plugin's behaviour.
+
 20170803:
   AFFECTS: users of net/guacamole-client
   AUTHOR: ultima@FreeBSD.org
