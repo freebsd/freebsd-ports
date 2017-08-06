@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	freerdp
-PORTVERSION=	2.0.0.g2016.11.24
-PORTREVISION=	4
+DISTVERSION=	2.0.0-rc0
 CATEGORIES=	net comms ipv6
 
 MAINTAINER=	kevans@FreeBSD.org
@@ -15,7 +14,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USE_GITHUB=	yes
 GH_ACCOUNT=	FreeRDP
 GH_PROJECT=	${GH_ACCOUNT}
-GH_TAGNAME=	2a6dbab
 
 USES=		alias cmake:outsource compiler:c++11-lib cpe execinfo gettext localbase pathfix pkgconfig ssl
 USE_LDCONFIG=	yes
@@ -85,8 +83,6 @@ post-patch:
 		${WRKSRC}/client/X11/CMakeLists.txt
 	@${REINPLACE_CMD} -e 's/NetBSD__)/NetBSD__) || defined(__FreeBSD__)/' \
 		${WRKSRC}/winpr/libwinpr/utils/trio/triodef.h
-	@${REINPLACE_CMD} -e 's|<malloc.h>|<stdlib.h>|' \
-		${WRKSRC}/channels/drive/client/statvfs.c
 	@${RM} ${WRKSRC}/cmake/FindOpenSSL.cmake
 	@${REINPLACE_CMD} -e 's|$${CMAKE_INSTALL_LIBDIR}/cmake|$${CMAKE_INSTALL_PREFIX}/share/cmake/Modules|' \
 		${WRKSRC}/client/CMakeLists.txt \
