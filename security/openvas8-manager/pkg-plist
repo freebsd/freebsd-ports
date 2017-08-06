@@ -1,5 +1,6 @@
-etc/openvas/openvasmd_log.conf
-etc/openvas/pwpolicy.conf
+@sample etc/openvas/openvasmd_log.conf.sample
+@sample etc/openvas/pwpolicy.conf.sample
+%%PGSQL%%lib/openvasmd/pg/libmanage-pg-server.so
 man/man8/openvasmd.8.gz
 sbin/greenbone-certdata-sync
 sbin/greenbone-scapdata-sync
@@ -10,6 +11,7 @@ sbin/openvas-scapdata-sync
 sbin/openvasmd
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
 %%PORTDOCS%%%%DOCSDIR%%/html/omp.html
+%%PORTDOCS%%%%DOCSDIR%%/postgres-HOWTO
 share/openvas/cert/cert_bund_getbyname.xsl
 share/openvas/cert/cert_bund_update.xsl
 share/openvas/cert/cert_db_init.sql

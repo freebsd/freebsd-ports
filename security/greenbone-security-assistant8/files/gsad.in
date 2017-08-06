@@ -8,17 +8,20 @@
 #
 # Add the following to /etc/rc.conf[.local] to enable this service
 #
-# gsad_enable="YES"
+# gsad_enable  (bool):   Set to NO by default.
+#                Set it to YES to enable gsad.
+# gsad_flags (params):   Set params used to start gsad.
 #
 
 . /etc/rc.subr
 
 name=gsad
-rcvar=gsad_enable
+rcvar=${name}_enable
 command="%%PREFIX%%/sbin/gsad"
 pidfile=/var/run/gsad.pid
 
-: ${gsad_enable=NO}
+: ${gsad_enable="NO"}
+: ${gsad_flags="--listen=127.0.0.1 --port=8080 --http-only"}
 
 load_rc_config $name
 run_rc_command "$1"
