@@ -1,5 +1,4 @@
-etc/openvas/gsad_log.conf
-etc/rc.d/gsad
+@sample etc/openvas/gsad_log.conf.sample
 man/man8/gsad.8.gz
 sbin/gsad
 share/openvas/gsa/classic/cpe-icons.xml

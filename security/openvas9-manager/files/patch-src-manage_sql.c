@@ -1,6 +1,6 @@
---- src/manage_sql.c.orig	2016-02-26 13:38:52 UTC
-+++ src/manage_sql.c
-@@ -58,6 +58,7 @@
+--- src/manage_sql.c	2017-06-20 01:32:02.000000000 -0500
++++ src/manage_sql.c	2017-08-05 21:19:08.663354000 -0500
+@@ -57,6 +57,7 @@
  #include <unistd.h>
  #include <sys/time.h>
  #include <grp.h>
@@ -8,7 +8,7 @@
  
  #include <openvas/base/openvas_string.h>
  #include <openvas/base/openvas_file.h>
-@@ -940,7 +941,7 @@ iso_time_internal (time_t *epoch_time, c
+@@ -1061,7 +1062,7 @@
    static char time_string[100];
  
    tm = localtime (epoch_time);
@@ -17,7 +17,34 @@
      {
        if (strftime (time_string, 98, "%FT%TZ", tm) == 0)
          return NULL;
-@@ -42378,12 +42379,12 @@ modify_schedule (const char *schedule_id
+@@ -25384,7 +25385,7 @@
+ {
+   return sql_int ("SELECT count (DISTINCT port) FROM results"
+                   " WHERE report = %llu AND port != ''"
+-                  "  AND port NOT %s 'general/%';",
++                  "  AND port NOT %s 'general/%%';",
+                   report,
+                   sql_ilike_op ());
+ }
+@@ -25400,7 +25401,7 @@
+ {
+   return sql_int ("SELECT count (DISTINCT port) FROM results"
+                   " WHERE report = %llu AND host = '%s'"
+-                  "  AND port NOT %s 'general/%';",
++                  "  AND port NOT %s 'general/%%';",
+                   report,
+                   host,
+                   sql_ilike_op ());
+@@ -35110,7 +35111,7 @@
+                  " WHERE config_preferences.config = %llu"
+                  " AND config_preferences.type = '%s'"
+                  " AND (config_preferences.name = nvt_preferences.name"
+-                 "      OR config_preferences.name LIKE 'timeout.%')"
++                 "      OR config_preferences.name LIKE 'timeout.%%')"
+                  " AND config_preferences.name != 'max_checks'"
+                  " AND config_preferences.name != 'max_hosts'"
+                  " UNION"
+@@ -47821,12 +47822,12 @@
    if (duration == -1)
      duration_string = NULL;
    else
@@ -32,7 +59,7 @@
  
    if ((period_months == -1) || (period_months == 0))
      {
-@@ -42395,12 +42396,12 @@ modify_schedule (const char *schedule_id
+@@ -47838,12 +47839,12 @@
        else
          {
            period_months_string = g_strdup ("0");

@@ -1,4 +1,4 @@
-etc/openvas/gsad_log.conf
+@sample etc/openvas/gsad_log.conf.sample
 man/man8/gsad.8.gz
 sbin/gsad
 share/locale/de/LC_MESSAGES/gsad_xsl.mo
