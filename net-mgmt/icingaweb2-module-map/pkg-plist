@@ -11,6 +11,7 @@
 %%WWWDIR%%/library/Map/ProvidedHook/Monitoring/HostActions.php
 %%WWWDIR%%/module.info
 %%WWWDIR%%/public/css/module.less
+%%WWWDIR%%/public/css/third-party/L.Control.Locate.min.css
 %%WWWDIR%%/public/css/third-party/MarkerCluster.Default.css
 %%WWWDIR%%/public/css/third-party/MarkerCluster.css
 %%WWWDIR%%/public/css/third-party/leaflet.css
@@ -26,12 +27,14 @@
 %%WWWDIR%%/public/img/marker-icon.png
 %%WWWDIR%%/public/img/marker-shadow.png
 %%WWWDIR%%/public/js/module.js
+%%WWWDIR%%/public/js/third-party/L.Control.Locate.min.js
 %%WWWDIR%%/public/js/third-party/leaflet.js
 %%WWWDIR%%/public/js/third-party/leaflet.markercluster.js
 %%WWWDIR%%/run.php
 %%WWWDIR%%/screenshots/clustered-map.png
 %%WWWDIR%%/screenshots/clustered-map2.png
 %%WWWDIR%%/screenshots/configuration-tab.png
+%%WWWDIR%%/screenshots/dashboard.png
 %%WWWDIR%%/screenshots/detailed-map.png
 %%WWWDIR%%/screenshots/host-action.png
 %%WWWDIR%%/screenshots/host-details.png
