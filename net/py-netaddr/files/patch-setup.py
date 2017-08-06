@@ -1,10 +1,10 @@
---- setup.py.orig	2017-04-21 11:40:00 UTC
+--- setup.py.orig	2017-01-11 23:42:52 UTC
 +++ setup.py
-@@ -62,11 +62,6 @@ def main():
-         scripts          = release.scripts,
-         url              = release.url,
-         version          = release.version,
--        options = {
+@@ -174,11 +174,6 @@ def main():
+         scripts=['netaddr/tools/netaddr'],
+         url='https://github.com/drkjam/netaddr/',
+         version=netaddr.__version__,
+-        options={
 -            'build_scripts': {
 -                'executable': '/usr/bin/env python',
 -            },
