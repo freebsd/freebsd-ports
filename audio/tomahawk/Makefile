@@ -31,6 +31,11 @@ CMAKE_ARGS=	-DBUILD_RELEASE="ON"
 CXXFLAGS+=	-Wno-cast-align -I${LOCALBASE}/include
 LDFLAGS+=	-lz
 
+BROKEN=		Does not build against new qtkeychain-0.80.0
+# https://github.com/tomahawk-player/tomahawk/commit/c8389592488c07079f40e7edb9195cfabbc58740
+DEPRECATED=	Project is dead upstream.
+EXPIRATION_DATE=2017-08-31
+
 GH_ACCOUNT=	tomahawk-player
 
 TELEPATHY_LIB_DEPENDS=	libtelepathy-qt4.so:net-im/telepathy-qt4
