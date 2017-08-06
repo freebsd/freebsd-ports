@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	netaddr
-PORTVERSION=	0.7.18
-PORTREVISION=	1
+PORTVERSION=	0.7.19
 CATEGORIES=	net python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,9 +15,11 @@ EXPLICIT_SAFESTACK=		yes
 LICENSE=	BSD3CLAUSE MIT
 LICENSE_COMB=	multi
 
-USES=		python shebangfix
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=2.4.2:devel/py-pytest
+
+USES=		python
 USE_PYTHON=	autoplist concurrent distutils
-SHEBANG_FILES=	netaddr/tools/netaddr
+
 NO_ARCH=	yes
 
 OPTIONS_DEFINE=	DOCS
@@ -30,6 +31,6 @@ post-install-DOCS-on:
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 
 do-test:
-	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYDISTUTILS_SETUP} test
+	@cd ${WRKSRC} && ${PYTHON_CMD} -m pytest
 
 .include <bsd.port.mk>

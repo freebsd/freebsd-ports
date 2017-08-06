@@ -3,6 +3,7 @@
 
 PORTNAME=	certbot
 PORTVERSION=	0.16.0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	security python
 MASTER_SITES=	CHEESESHOP
@@ -14,7 +15,7 @@ COMMENT=	Let's Encrypt client
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}acme==${PKGVERSION}:security/py-acme \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}acme>=${PORTVERSION}:security/py-acme \
 		${PYTHON_PKGNAMEPREFIX}configargparse>=0.9.3:devel/py-configargparse \
 		${PYTHON_PKGNAMEPREFIX}configobj>0:devel/py-configobj \
 		${PYTHON_PKGNAMEPREFIX}cryptography>=1.2:security/py-cryptography \
@@ -28,8 +29,9 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}acme==${PKGVERSION}:security/py-acme \
 		${PYTHON_PKGNAMEPREFIX}zope.interface>0:devel/py-zope.interface
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mock>0:devel/py-mock
 
-USES=		python:-2.7
-USE_PYTHON=	autoplist distutils
+# Actually 2.7,3.3+
+USES=		python
+USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
 

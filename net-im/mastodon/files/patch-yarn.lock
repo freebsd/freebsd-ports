@@ -1,0 +1,11 @@
+--- yarn.lock.orig	2017-08-05 12:54:17 UTC
++++ yarn.lock
+@@ -6587,6 +6587,8 @@ uuid@^3.0.0, uuid@^3.0.1, uuid@^3.1.0:
+ uws@^8.14.0:
+   version "8.14.0"
+   resolved "https://registry.yarnpkg.com/uws/-/uws-8.14.0.tgz#acc1488d13ecb23fe2f942a7eafb06681fa91431"
++  dependencies:
++    node-gyp "^3.3.1"
+ 
+ validate-npm-package-license@^3.0.1:
+   version "3.0.1"
