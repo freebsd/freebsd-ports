@@ -3,8 +3,7 @@
 
 ######################################################################
 # Anytime PORTVERSION changes please bump PORTREVISION of            #
-# mail/dovecot2-pigeonhole and also mail/dovecot2-antispam-plugin.   #
-# Please see ports/135311 and ports/146029 for an explanation.       #
+# mail/dovecot2-pigeonhole. See ports/146029 for an explanation.     #
 #                                                                    #
 # Please be careful when updating this port as changes to this port  #
 # can break mail/dovecot2-pigeonhole. In order to ensure the least   #
@@ -24,8 +23,6 @@ COMMENT=	Secure, fast and powerful IMAP and POP3 server
 
 LICENSE=	LGPL21 MIT
 LICENSE_COMB=	dual
-
-CONFLICTS=	dovecot-1.[0-9]*
 
 USES=		cpe iconv libtool ssl
 USE_RC_SUBR=	dovecot
