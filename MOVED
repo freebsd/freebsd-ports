@@ -9463,7 +9463,7 @@ www/mediawiki126|www/mediawiki127|2017-07-10|Has expired: Upstream support EoL
 devel/libbrotli|archivers/brotli|2017-07-12|meta project no longer required to build libs
 dns/opendnssec13|dns/opendnssec|2017-07-13|Has expired: Approaching EOL, upgrade to opendnssec 1.4 or 2
 multimedia/banshee||2017-07-13|Has expired: Project is not being actively maintained upstream anymore
-www/libhtp-suricata||2017-07-16|No longer required. security/suricata now uses official (not forked) libhtp 
+www/libhtp-suricata||2017-07-16|No longer required. security/suricata now uses official (not forked) libhtp
 databases/py-odbc|databases/py-pyodbc|2017-07-18|Rename to comply with PyPI scheme
 security/sshguard-ipfw|security/sshguard|2017-07-20|Merged with security/sshguard
 security/sshguard-pf|security/sshguard|2017-07-20|Merged with security/sshguard
