@@ -3,7 +3,7 @@
 
 PORTNAME=	gle-graphics
 DISTVERSION=	4.2.4cf
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	graphics print
 MASTER_SITES=	SF/glx/gle4%20%28Current%20Active%20Version%29/${DISTVERSION:C,.$,,1}
 DISTNAME=	${PORTNAME}-${DISTVERSION}-src
@@ -42,7 +42,6 @@ PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 
 REINPLACE_FILES=	configure
 
-USE_GCC=	yes
 USE_GL=	yes
 USE_LDCONFIG=	yes
 USE_QT4=	corelib gui moc network opengl rcc qmake_build
