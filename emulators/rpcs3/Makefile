@@ -2,8 +2,8 @@
 
 PORTNAME=	rpcs3
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.0.3-65
-DISTVERSIONSUFFIX=	-gf613901e
+DISTVERSION=	0.0.3-90
+DISTVERSIONSUFFIX=	-g40d305b3
 CATEGORIES=	emulators
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -44,8 +44,12 @@ PLIST_FILES=	bin/${PORTNAME} \
 		share/icons/hicolor/48x48/apps/${PORTNAME}.png \
 		share/icons/hicolor/scalable/apps/${PORTNAME}.svg \
 
-OPTIONS_DEFINE=	EVDEV GDB LLVM
-OPTIONS_DEFAULT=LLVM
+OPTIONS_DEFINE=	ALSA EVDEV GDB LLVM
+OPTIONS_DEFAULT=ALSA LLVM
+
+ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
+ALSA_RUN_DEPENDS=	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:audio/alsa-plugins
+ALSA_CMAKE_BOOL=	USE_ALSA
 
 EVDEV_DESC=		libevdev-based joystick support
 EVDEV_CMAKE_BOOL=	USE_LIBEVDEV
