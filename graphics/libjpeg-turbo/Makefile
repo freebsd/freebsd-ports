@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PKGNAMEPREFIX=	lib
-PORTREVISION=	1
+PORTREVISION=	0
 
 COMMENT=	SIMD-accelerated JPEG codec library, provides libTurboJPEG
 
