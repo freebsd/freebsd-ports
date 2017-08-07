@@ -586,6 +586,7 @@
     SUBDIR += pgFormatter
     SUBDIR += pgfouine
     SUBDIR += pgloader
+    SUBDIR += pgloader3
     SUBDIR += pglogical
     SUBDIR += pgmodeler
     SUBDIR += pgpool
