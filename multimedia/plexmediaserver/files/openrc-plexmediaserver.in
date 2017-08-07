@@ -58,14 +58,6 @@ stop_pre()
 	fi
 }
 
-stop_post()
-{
-	_PLEX_CHILDREN=$(pgrep -g ${_PLEXPID})
-	einfo "Cleaning up leftover child processes."
-	kill $sig_stop ${_PLEX_CHILDREN}
-	wait_for_pids ${_PLEX_CHILDREN}
-}
-
 depend()
 {
 	keyword -shutdown
