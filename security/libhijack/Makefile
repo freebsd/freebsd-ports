@@ -16,5 +16,7 @@ GH_TAGNAME=	f75bd30
 
 LIBDIR?=	${PREFIX}/lib
 
+USE_HARDENING=	pie relro
+
 .include <bsd.port.mk>
 
