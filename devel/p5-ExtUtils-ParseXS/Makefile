@@ -11,6 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Converts Perl XS code into C code
 
+LICENSE=	ART10
+
 USES=		perl5 shebangfix
 USE_PERL5=	configure
 # Overwrite this here
