@@ -5424,6 +5424,7 @@
     SUBDIR += rubygem-health_check
     SUBDIR += rubygem-highline
     SUBDIR += rubygem-hike
+    SUBDIR += rubygem-hike1
     SUBDIR += rubygem-hitimes
     SUBDIR += rubygem-hoe
     SUBDIR += rubygem-holidays
