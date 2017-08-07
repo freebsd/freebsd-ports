@@ -21,7 +21,7 @@ command="%%PREFIX%%/sbin/gsad"
 pidfile=/var/run/gsad.pid
 
 : ${gsad_enable="NO"}
-: ${gsad_flags="--listen=127.0.0.1 --port=8080 --http-only"}
+: ${gsad_flags="--listen=127.0.0.1 --port=8080 --http-only --munix-socket=/var/run/openvasmd.sock"}
 
 load_rc_config $name
 run_rc_command "$1"

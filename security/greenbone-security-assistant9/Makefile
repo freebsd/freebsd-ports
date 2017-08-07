@@ -2,6 +2,7 @@
 
 PORTNAME=	greenbone-security-assistant9
 PORTVERSION=	7.0.2
+PORTREVISION=	2
 MASTER_SITES=	http://wald.intevation.org/frs/download.php/2429/
 
 COMMENT=	OpenVAS 9 web interface

@@ -22,7 +22,7 @@ pidfile=/var/run/openvasmd.pid
 extra_commands="reload"
 
 : ${openvasmd_enable="NO"}
-: ${openvasmd_flags="--listen=127.0.0.1"}
+: ${openvasmd_flags="--unix-socket=/var/run/${name}.sock --listen=127.0.0.1"}
 
 load_rc_config $name
 run_rc_command "$1"

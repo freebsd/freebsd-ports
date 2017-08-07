@@ -16,12 +16,13 @@ OpenVAS 8 ports were installed
 3) The following steps are neccessary before of you can access to OpenVAS web 
    interface (gsad):
 
+   # openvassd
    # openvas-mkcert
    # openvas-mkcert-client -n -i
-   # openvasmd --rebuild --progress
    # openvas-nvt-sync
    # openvas-scapdata-sync
    # openvas-certdata-sync
+   # openvasmd --rebuild --progress
    # openvasmd --create-user=admin --role=Admin
    # openvasmd --user=admin --new-password=yourpassword
 
