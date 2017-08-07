@@ -8,18 +8,21 @@
 #
 # Add the following to /etc/rc.conf[.local] to enable this service
 #
-# openvassd_enable="YES"
+# openvassd_enable  (bool):   Set to NO by default.
+#                Set it to YES to enable openvassd.
+# openvassd_flags (params):   Set params used to start openvassd.
 #
 
 . /etc/rc.subr
 
 name=openvassd
-rcvar=openvassd_enable
+rcvar=${name}_enable
 command="%%PREFIX%%/sbin/openvassd"
 pidfile=/var/run/openvassd.pid
 extra_commands="reload"
 
 : ${openvassd_enable=NO}
+: ${openvassd_flags="--unix-socket=/var/run/${name}.sock"}
 
 load_rc_config $name
 run_rc_command "$1"

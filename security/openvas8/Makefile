@@ -3,6 +3,7 @@
 
 PORTNAME=	openvas8
 PORTVERSION=	8.0
+PORTREVISION=	1
 CATEGORIES=	security
 
 MAINTAINER=	acm@FreeBSD.org
