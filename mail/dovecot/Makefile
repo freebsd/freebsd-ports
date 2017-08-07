@@ -3,10 +3,10 @@
 
 ######################################################################
 # Anytime PORTVERSION changes please bump PORTREVISION of            #
-# mail/dovecot2-pigeonhole. See ports/146029 for an explanation.     #
+# mail/dovecot-pigeonhole. See ports/146029 for an explanation.      #
 #                                                                    #
 # Please be careful when updating this port as changes to this port  #
-# can break mail/dovecot2-pigeonhole. In order to ensure the least   #
+# can break mail/dovecot-pigeonhole. In order to ensure the least    #
 # amount of breakage possible please consult the maintainer of that  #
 # port before updating this one.                                     #
 ######################################################################
@@ -16,7 +16,6 @@ PORTVERSION=	2.2.31
 PORTREVISION=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	https://www.dovecot.org/releases/2.2/
-PKGNAMESUFFIX=	2
 
 MAINTAINER=	adamw@FreeBSD.org
 COMMENT=	Secure, fast and powerful IMAP and POP3 server

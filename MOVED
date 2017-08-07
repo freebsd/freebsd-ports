@@ -9474,10 +9474,10 @@ devel/ffcall|devel/libffcall|2017-07-28|Project was renamed
 databases/grass|databases/grass6|2017-07-30|Project was renamed to allow for grass7
 net/rubygem-oauth212|net/rubygem-oauth2|2017-07-31|Has expired: Only created for www/gitlab; please use net/rubygem-oauth2 instead
 textproc/rubygem-liquid3|textproc/rubygem-liquid|2017-07-31|Has expired: Use textproc/rubygem-liquid instead
-mail/dovecot2-antispam-plugin|mail/dovecot2-pigeonhole|2017-07-31|Has expired: Use pigeonhole instead. See https://wiki2.dovecot.org/HowTo/AntispamWithSieve
+mail/dovecot2-antispam-plugin|mail/dovecot-pigeonhole|2017-07-31|Has expired: Use pigeonhole instead. See https://wiki2.dovecot.org/HowTo/AntispamWithSieve
 mail/dovecot-antispam|mail/dovecot2-antispam-plugin|2017-07-31|Has expired: Dovecot-1.x is deprecated. Use dovecot2 and dovecot2-antispam-plugin instead
-mail/dovecot-sieve|mail/dovecot2-pigeonhole|2017-07-31|Has expired: Dovecot-1.x is deprecated. Use dovecot2 and dovecot-pigeonhole instead
-mail/dovecot-managesieve|mail/dovecot2-pigeonhole|2017-07-31|Has expired: Dovecot-1.x is deprecated. Use dovecot2 and dovecot-pigeonhole instead
+mail/dovecot-sieve|mail/dovecot-pigeonhole|2017-07-31|Has expired: Dovecot-1.x is deprecated. Use dovecot2 and dovecot-pigeonhole instead
+mail/dovecot-managesieve|mail/dovecot-pigeonhole|2017-07-31|Has expired: Dovecot-1.x is deprecated. Use dovecot2 and dovecot-pigeonhole instead
 www/rubygem-jquery-ui-rails5-rails4|www/rubygem-jquery-ui-rails-rails4|2017-07-31|Has expired: Only created for www/gitlab; please use www/rubygem-jquery-ui-rails-rails4 instead
 security/rubygem-omniauth13|security/rubygem-omniauth|2017-07-31|Has expired: Only created for www/gitlab; please use security/rubygem-omniauth instead
 devel/rubygem-health_check22|devel/rubygem-health_check|2017-07-31|Has expired: Only created for www/gitlab; please use devel/rubygem-health_check instead
@@ -9490,7 +9490,6 @@ multimedia/avbin||2017-07-31|Has expired: Unfetchable for more than six months (
 games/gondola||2017-07-31|Depends on expired multimedia/avbin
 sysutils/flyback||2017-07-31|Unfetchable for more than six months (google code has gone away)
 multimedia/py-ffmpeg||2017-07-31|Has expired: Depreciated upstream in favour of ffpyplayer
-mail/dovecot|mail/dovecot2|2017-07-31|Has expired: Deprecated by upstream years ago. Use mail/dovecot2 instead
 devel/cloudabi-binutils-aarch64|devel/cloudabi-toolchain|2017-07-31|ELF-toolchain based tools should be used instead
 devel/cloudabi-binutils-x86_64|devel/cloudabi-toolchain|2017-07-31|ELF-toolchain based tools should be used instead
 security/openvas-libraries|security/openvas8-libraries|2017-08-03|Renamed to include openvas 9 ports
@@ -9499,3 +9498,5 @@ security/openvas-manager|security/openvas8-manager|2017-08-03|Renamed to include
 security/openvas-scanner|security/openvas8-scanner|2017-08-03|Renamed to include openvas 9 ports. It reflects a better name
 security/greenbone-security-assistant|security/greenbone-security-assistant8|2017-08-03|Renamed to include openvas 9 ports. It reflects a better name
 sysutils/consolekit|sysutils/consolekit2|2017-08-05|Continuation of the consolekit project
+mail/dovecot2|mail/dovecot|2017-08-07|Renamed to mail/dovecot
+mail/dovecot2-pigeonhole|mail/dovecot-pigeonhole|2017-08-07|Renamed to mail/dovecot-pigeonhole
