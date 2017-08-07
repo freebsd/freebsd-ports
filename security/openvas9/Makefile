@@ -3,6 +3,7 @@
 
 PORTNAME=	openvas9
 PORTVERSION=	9.0
+PORTREVISION=	1
 CATEGORIES=	security
 
 MAINTAINER=	acm@FreeBSD.org

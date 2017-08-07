@@ -1,6 +1,18 @@
 --- tools/greenbone-nvt-sync.in	2016-11-10 04:57:55.000000000 -0500
-+++ tools/greenbone-nvt-sync.in	2017-07-28 23:31:16.323079000 -0500
-@@ -577,7 +577,7 @@
++++ tools/greenbone-nvt-sync.in	2017-08-06 13:55:03.833824000 -0500
+@@ -180,11 +180,6 @@
+ 
+ if [ -z "$TMPDIR" ]; then
+   SYNC_TMP_DIR=/tmp
+-  # If we have mktemp, create a temporary dir (safer)
+-  if [ -n "`which mktemp`" ]; then
+-    SYNC_TMP_DIR=`mktemp -t -d greenbone-nvt-sync.XXXXXXXXXX` || { echo "ERROR: Cannot create temporary directory for file download" >&2; exit 1 ; }
+-    trap "rm -rf $SYNC_TMP_DIR" EXIT HUP INT TRAP TERM
+-  fi
+ else
+   SYNC_TMP_DIR="$TMPDIR"
+ fi
+@@ -577,7 +572,7 @@
          log_err "rsync failed, aborting synchronization."
          exit 1
        fi
@@ -9,7 +21,7 @@
        if [ $? -ne 0 ]  ; then
          if [ -n "$retried" ]
          then
-@@ -650,7 +650,7 @@
+@@ -650,7 +645,7 @@
  
  do_self_test ()
  {

@@ -2,7 +2,7 @@
 
 PORTNAME?=	openvas8-manager
 PORTVERSION?=	6.0.11
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES?=	http://wald.intevation.org/frs/download.php/2445/
 DISTNAME=	${PORTNAME:S/${OPENVAS_VER}//}-${PORTVERSION}
@@ -19,7 +19,8 @@ LIB_DEPENDS=	libgnutls.so:security/gnutls \
 		libgpgme.so:security/gpgme \
 		libgcrypt.so:security/libgcrypt \
 		libopenvas_base.so:security/openvas${OPENVAS_VER}-libraries
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS} \
+		wget:ftp/wget
 
 CONFLICTS?=	${PORTNAME:S/${OPENVAS_VER}/9/}-*
 

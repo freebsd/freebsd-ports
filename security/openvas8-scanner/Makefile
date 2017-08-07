@@ -3,7 +3,7 @@
 
 PORTNAME?=	openvas8-scanner
 PORTVERSION?=	5.0.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES?=	http://wald.intevation.org/frs/download.php/2436/
 DISTNAME=	${PORTNAME:S/${OPENVAS_VER}//}-${PORTVERSION}
@@ -20,6 +20,7 @@ LIB_DEPENDS=	libgcrypt.so:security/libgcrypt \
 RUN_DEPENDS=	redis-server:databases/redis \
 		curl:ftp/curl \
 		rsync:net/rsync \
+		wget:ftp/wget \
 		nmap:security/nmap
 
 CONFLICTS?=	${PORTNAME:S/${OPENVAS_VER}/9/}-*

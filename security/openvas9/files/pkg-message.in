@@ -16,12 +16,11 @@ OpenVAS 9 ports were installed
 3) The following steps are neccessary before of you can access to OpenVAS web 
    interface (gsad):
 
-   # openvas-mkcert
-   # openvas-mkcert-client -n -i
-   # openvasmd --rebuild --progress
+   # openvassd
    # greenbone-nvt-sync
    # greenbone-scapdata-sync
    # greenbone-certdata-sync
+   # openvasmd --rebuild --progress
    # openvasmd --create-user=admin --role=Admin
    # openvasmd --user=admin --new-password=yourpassword
 
@@ -31,11 +30,11 @@ OpenVAS 9 ports were installed
    openvasmd_enable="YES"
    gsad_enable="YES"
 
-5) Start OpenVAS Scanner. It will listen on 127.0.0.1:9391 by default
+5) Start OpenVAS Scanner. It will listen on /var/run/openvassd.sock  by default
 
    # service openvassd restart
 
-6) 5) Start OpenVAS Manager. It will listen on 127.0.0.1:9390 by default
+6) 5) Start OpenVAS Manager. It will listen on /var/run/openvasmd.sock by default
 
    # service openvasmd restart
    # openvasmd --rebuild --progress
