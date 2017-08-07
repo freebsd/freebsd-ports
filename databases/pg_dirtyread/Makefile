@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pg_dirtyread
-PORTVERSION=	1.1
+PORTVERSION=	1.2
 CATEGORIES=	databases
 PKGNAMEPREFIX=	postgresql${PGSQL_VER:S/.//}-
 
