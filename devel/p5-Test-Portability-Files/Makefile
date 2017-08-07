@@ -2,15 +2,19 @@
 # $FreeBSD$
 
 PORTNAME=	Test-Portability-Files
-PORTVERSION=	0.06
-PORTREVISION=	1
+PORTVERSION=	0.07
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	culot@FreeBSD.org
-COMMENT=	Test::Portability::Files Check file names portability
+COMMENT=	Check file names portability
 
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+NO_ARCH=	YES
 USES=		perl5
 USE_PERL5=	configure
 
