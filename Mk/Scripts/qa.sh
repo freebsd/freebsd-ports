@@ -830,10 +830,45 @@ no_arch() {
 	return $rc
 }
 
+gemdeps()
+{
+	rc=0
+	if [ "${PKGBASE%%-*}" = "rubygem" ]; then
+		while read -r l; do
+			if [ -n "${l}" ]; then
+				name=${l%% *}
+				vers=${l#* }
+				while read -r v; do
+					if ! while read -r p; do
+						${LOCALBASE}/bin/ruby -e "puts 'OK' if Gem::Dependency.new('${name}','${v}').match?('${name}','${p}')"
+					done | grep -qFx OK; then
+						err RubyGem dependency ${name} ${v} is not satisfied.
+						rc=1
+					fi <<-EOF
+					$(${LOCALBASE}/bin/gem list -e "${name}" \
+						| sed "s|.*(\(.*\))|\1|" \
+						| tr -d ' ' \
+						| tr , '\n')
+					EOF
+				done <<-EOF
+				$(while echo "${vers}" | grep -q '"'; do
+					echo "${vers}" | cut -d '"' -f2
+					vers=$(echo "${vers}"|cut -d '"' -f3-)
+				done)
+				EOF
+			fi
+		done <<-EOF
+		$(grep -a 'add_runtime_dependency' ${STAGEDIR}${PREFIX}/lib/ruby/gems/*/specifications/${PORTNAME}-*.gemspec \
+			| sed 's|.*<\(.*\)>.*\[\(.*\)\])|\1 \2|' \
+			| sort -u)
+		EOF
+	fi
+	return $rc
+}
 
 checks="shebang symlinks paths stripped desktopfileutils sharedmimeinfo"
 checks="$checks suidfiles libtool libperl prefixvar baselibs terminfo"
-checks="$checks proxydeps sonames perlcore no_arch"
+checks="$checks proxydeps sonames perlcore no_arch gemdeps"
 
 ret=0
 cd ${STAGEDIR}
