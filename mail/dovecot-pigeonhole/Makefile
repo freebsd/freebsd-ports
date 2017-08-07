@@ -3,6 +3,7 @@
 
 PORTNAME=	dovecot-pigeonhole
 PORTVERSION=	0.4.19
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://pigeonhole.dovecot.org/releases/${DOVECOTVERSION}/
 DISTNAME=	${PORTNAME:C/-/-${DOVECOTVERSION}-/}-${PORTVERSION}
@@ -12,8 +13,8 @@ COMMENT=	Sieve plugin for the Dovecot 'deliver' LDA and LMTP
 
 LICENSE=	LGPL21
 
-BUILD_DEPENDS=	dovecot2>=2.2.31:mail/dovecot2
-RUN_DEPENDS=	dovecot2>=2.2.31:mail/dovecot2
+BUILD_DEPENDS=	dovecot>=2.2.31:mail/dovecot
+RUN_DEPENDS=	dovecot>=2.2.31:mail/dovecot
 
 DOVECOTVERSION=	2.2
 
@@ -34,7 +35,7 @@ OPTIONS_SINGLE=	GSSAPI
 OPTIONS_SINGLE_GSSAPI=	GSSAPI_NONE GSSAPI_BASE GSSAPI_HEIMDAL GSSAPI_MIT
 OPTIONS_SUB=	yes
 
-GSSAPI_DESC=		GSSAPI Support (*MUST MATCH* mail/dovecot2)
+GSSAPI_DESC=		GSSAPI Support (*MUST MATCH* mail/dovecot)
 GSSAPI_NONE_DESC=	Build without GSSAPI support
 GSSAPI_BASE_DESC=	Use GSSAPI from base
 GSSAPI_HEIMDAL_DESC=	Use Heimdal GSSAPI from security/heimdal

@@ -3,7 +3,7 @@
 
 PORTNAME=	maia
 DISTVERSION=	1.0.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	http://www.purplehat.org/downloads/maia/
 
@@ -168,7 +168,7 @@ WANT_PGSQL=	server
 .endif
 
 .if ${PORT_OPTIONS:MDOVECOT2}
-RUN_DEPENDS+=	dovecot:mail/dovecot2
+RUN_DEPENDS+=	dovecot:mail/dovecot
 .endif
 
 .if ${PORT_OPTIONS:MPOSTFIX}

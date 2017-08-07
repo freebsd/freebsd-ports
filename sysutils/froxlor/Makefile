@@ -3,7 +3,7 @@
 
 PORTNAME=	froxlor
 PORTVERSION=	0.9.38.7
-PORTREVIION=	1
+PORTREVIION=	2
 CATEGORIES=	sysutils www
 MASTER_SITES=	http://files.froxlor.org/releases/
 
@@ -72,7 +72,7 @@ EXIM_RUN_DEPENDS=	exim:mail/exim
 
 DKIM_RUN_DEPENDS=	opendkim:mail/opendkim
 
-DOVECOT2_RUN_DEPENDS=	dovecot2>=2:mail/dovecot2
+DOVECOT2_RUN_DEPENDS=	dovecot>=2:mail/dovecot
 
 COURIER_RUN_DEPENDS=	courier:mail/courier
 
