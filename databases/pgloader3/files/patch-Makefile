@@ -1,0 +1,38 @@
+--- Makefile.orig	2017-07-06 14:53:29 UTC
++++ Makefile
+@@ -84,7 +84,7 @@ $(QLDIR)/local-projects/cl-csv:
+ 
+ $(QLDIR)/setup.lisp:
+ 	mkdir -p $(BUILDDIR)
+-	curl -o $(BUILDDIR)/quicklisp.lisp http://beta.quicklisp.org/quicklisp.lisp
++#	curl -o $(BUILDDIR)/quicklisp.lisp http://beta.quicklisp.org/quicklisp.lisp
+ 	$(CL) $(CL_OPTS) --load $(BUILDDIR)/quicklisp.lisp                        \
+              --load src/getenv.lisp                                               \
+              --eval '(quicklisp-quickstart:install :path "$(BUILDDIR)/quicklisp" :proxy (getenv "http_proxy"))' \
+@@ -97,7 +97,7 @@ clones: $(QLDIR)/local-projects/cl-ixf \
+         $(QLDIR)/local-projects/cl-csv \
+         $(QLDIR)/local-projects/qmynd ;
+ 
+-$(LIBS): $(QLDIR)/setup.lisp clones
++$(LIBS): $(QLDIR)/setup.lisp
+ 	$(CL) $(CL_OPTS) --load $(QLDIR)/setup.lisp                 \
+              --eval '(push "$(PWD)/" asdf:*central-registry*)'      \
+              --eval '(ql:quickload "pgloader")'                     \
+@@ -113,7 +113,7 @@ $(MANIFEST): $(LIBS)
+ 
+ manifest: $(MANIFEST) ;
+ 
+-$(BUILDAPP_CCL): $(QLDIR)/setup.lisp
++$(BUILDAPP_CCL): $(QLDIR)/setup.lisp $(LIBS)
+ 	mkdir -p $(BUILDDIR)/bin
+ 	$(CL) $(CL_OPTS) --load $(QLDIR)/setup.lisp               \
+              --eval '(ql:quickload "buildapp")'                   \
+@@ -176,7 +176,7 @@ $(BUNDLE): $(BUNDLEDIR)
+ 	sed -e s/%VERSION%/$(VERSION)/ < bundle/Makefile > $(BUNDLEDIR)/Makefile
+ 	git archive --format=tar --prefix=pgloader-$(VERSION)/ master \
+ 	     | tar -C $(BUNDLEDIR)/local-projects/ -xf -
+-	make QLDIR=$(BUNDLEDIR) clones
++	make QLDIR=$(BUNDLEDIR)
+ 	tar -C build/bundle 		    \
+             --exclude bin   		    \
+             --exclude test/sqlite           \
