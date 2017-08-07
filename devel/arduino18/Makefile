@@ -2,7 +2,7 @@
 
 PORTNAME=	arduino
 PORTVERSION=	1.8.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel java
 PKGNAMESUFFIX=	18
 DIST_SUBDIR=	${PORTNAME}
@@ -14,7 +14,7 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/../license.txt
 
 LIB_DEPENDS=	liblistSerialsj.so:devel/listserialc \
-		libastyle-arduinoj.so:devel/libastylej-arduino
+		libastylej-arduino.so:devel/libastylej-arduino
 RUN_DEPENDS=	arduino-builder:devel/arduino-builder \
 		arduino-tools>=1.6.12:devel/arduino-tools \
 		bash:shells/bash \
@@ -99,7 +99,7 @@ do-install:
 	${RM} ${STAGEDIR}${PREFIX}/${PORTNAME}/lib/libastylej.so
 	${RM} ${STAGEDIR}${PREFIX}/${PORTNAME}/lib/liblistSerialsj.so
 	${RM} ${STAGEDIR}${PREFIX}/${PORTNAME}/lib/jssc-2.8.0.jar
-	${LN} -s ../../lib/jni/libastyle-arduinoj.so ${STAGEDIR}${PREFIX}/${PORTNAME}/lib/libastylej.so
+	${LN} -s ../../lib/jni/libastylej-arduino.so ${STAGEDIR}${PREFIX}/${PORTNAME}/lib/libastylej.so
 	${LN} -s ../../lib/jni/liblistSerialsj.so ${STAGEDIR}${PREFIX}/${PORTNAME}/lib/liblistSerialsj.so
 	${INSTALL_SCRIPT} ${BUILD_DIR}/arduino ${STAGEDIR}${PREFIX}/${PORTNAME}
 	${LN} -s ../${PORTNAME}/arduino ${STAGEDIR}${PREFIX}/bin/arduino
