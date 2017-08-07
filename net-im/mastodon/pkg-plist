@@ -922,6 +922,7 @@
 %%WWWDIR%%/app/views/layouts/embedded.html.haml
 %%WWWDIR%%/app/views/layouts/error.html.haml
 %%WWWDIR%%/app/views/layouts/mailer.text.erb
+%%WWWDIR%%/app/views/layouts/modal.html.haml
 %%WWWDIR%%/app/views/layouts/public.html.haml
 %%WWWDIR%%/app/views/manifests/show.json.rabl
 %%WWWDIR%%/app/views/notification_mailer/_status.text.erb
