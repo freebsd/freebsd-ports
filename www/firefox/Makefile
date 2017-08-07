@@ -2,26 +2,25 @@
 # $FreeBSD$
 
 PORTNAME=	firefox
-DISTVERSION=	54.0.1
+DISTVERSION=	55.0
 DISTVERSIONSUFFIX=.source
-PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	MOZILLA/${PORTNAME}/releases/${DISTVERSION}/source \
-		MOZILLA/${PORTNAME}/candidates/${DISTVERSION}-candidates/build1/source
+		MOZILLA/${PORTNAME}/candidates/${DISTVERSION}-candidates/build3/source
 
 MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	Web browser based on the browser portion of Mozilla
 
-BUILD_DEPENDS=	nspr>=4.14:devel/nspr \
-		nss>=3.30.2:security/nss \
+BUILD_DEPENDS=	nspr>=4.15:devel/nspr \
+		nss>=3.31:security/nss \
 		libevent>=2.0.22:devel/libevent \
-		harfbuzz>=1.4.3:print/harfbuzz \
+		harfbuzz>=1.4.6:print/harfbuzz \
 		graphite2>=1.3.10:graphics/graphite2 \
 		png>=1.6.28:graphics/png \
 		libvorbis>=1.3.5,3:audio/libvorbis \
 		libvpx>=1.5.0:multimedia/libvpx \
-		sqlite3>=3.17.0:databases/sqlite3 \
+		sqlite3>=3.19.2:databases/sqlite3 \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3 \
 		v4l_compat>0:multimedia/v4l_compat \
 		autoconf-2.13:devel/autoconf213 \
@@ -47,6 +46,7 @@ MOZ_OPTIONS=	--enable-application=browser \
 
 OPTIONS_DEFINE=		RUST
 OPTIONS_DEFAULT=	BUNDLED_CAIRO
+OPTIONS_EXCLUDE=	GNOMEUI
 # XXX lang/rust and devel/cargo currently build only on these platforms
 OPTIONS_DEFAULT_aarch64=RUST
 OPTIONS_DEFAULT_amd64=	RUST
