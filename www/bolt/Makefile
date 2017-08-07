@@ -11,8 +11,9 @@ MAINTAINER=	feld@FreeBSD.org
 COMMENT=	Sophisticated, lightweight & simple CMS
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-USES=	php:web
+USES=		php:web
 
 NO_ARCH=	yes
 NO_BUILD=	yes
@@ -28,7 +29,7 @@ PGSQL_USE=	PHP=pdo_pgsql
 SQLITE_USE=	PHP=pdo_sqlite
 
 do-install:
-	${INSTALL} -d -m 755 ${STAGEDIR}${WWWDIR}
+	${MKDIR} ${STAGEDIR}${WWWDIR}
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} \* ${STAGEDIR}${WWWDIR})
 
 .include <bsd.port.mk>
