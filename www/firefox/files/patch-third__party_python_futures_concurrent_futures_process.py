@@ -1,5 +1,5 @@
---- python/futures/concurrent/futures/process.py.orig	2017-04-11 04:15:19 UTC
-+++ python/futures/concurrent/futures/process.py
+--- third_party/python/futures/concurrent/futures/process.py.orig	2017-04-11 04:15:19 UTC
++++ third_party/python/futures/concurrent/futures/process.py
 @@ -247,7 +247,11 @@ def _check_system_limits():
      _system_limits_checked = True
      try:

@@ -1,0 +1,11 @@
+--- chef.gemspec.orig	2017-08-07 17:07:33 UTC
++++ chef.gemspec
+@@ -46,7 +46,7 @@ Gem::Specification.new do |s|
+       s.add_runtime_dependency(%q<rspec-core>.freeze, ["~> 3.5"])
+       s.add_runtime_dependency(%q<rspec-expectations>.freeze, ["~> 3.5"])
+       s.add_runtime_dependency(%q<rspec-mocks>.freeze, ["~> 3.5"])
+-      s.add_runtime_dependency(%q<rspec_junit_formatter>.freeze, ["~> 0.2.0"])
++      s.add_runtime_dependency(%q<rspec_junit_formatter>.freeze, ["~> 0.2"])
+       s.add_runtime_dependency(%q<serverspec>.freeze, ["~> 2.7"])
+       s.add_runtime_dependency(%q<specinfra>.freeze, ["~> 2.10"])
+       s.add_runtime_dependency(%q<syslog-logger>.freeze, ["~> 1.6"])

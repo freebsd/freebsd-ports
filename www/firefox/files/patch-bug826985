@@ -51,18 +51,6 @@ index b483cd1..f1dd1f0 100644
      # basic stuff for everything
      'include_internal_video_render': 0,
      'clang_use_chrome_plugins': 0,
-diff --git media/webrtc/signaling/test/common.build media/webrtc/signaling/test/common.build
-index b483cd1..f1dd1f0 100644
---- media/webrtc/signaling/test/common.build
-+++ media/webrtc/signaling/test/common.build
-@@ -99,6 +99,7 @@ if CONFIG['JS_SHARED_LIBRARY']:
- 
- USE_LIBS += ['mozglue']
- 
-+OS_LIBS += CONFIG['MOZ_LIBV4L2_LIBS']
- OS_LIBS += CONFIG['MOZ_WEBRTC_X11_LIBS']
- OS_LIBS += CONFIG['REALTIME_LIBS']
- 
 diff --git media/webrtc/trunk/webrtc/modules/video_capture/linux/device_info_linux.cc media/webrtc/trunk/webrtc/modules/video_capture/linux/device_info_linux.cc
 index 239a292..bab496c 100644
 --- media/webrtc/trunk/webrtc/modules/video_capture/linux/device_info_linux.cc
