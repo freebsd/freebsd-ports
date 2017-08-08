@@ -1,0 +1,77 @@
+By Jan Rekorajski, obtained from:
+
+	http://git.pld-linux.org/gitweb.cgi/packages/pstoedit.git/commitdiff/1db94627498886a91a6e6ed80d0a8b2b6da1a16b
+
+and made conditional to still work with IM-7.
+
+(The configure.ac is not currently used by the port.)
+
+--- configure.ac	2014-12-28 21:39:18.000000000 +0100
++++ configure.ac	2016-12-25 22:16:29.147826432 +0100
+@@ -299,7 +299,7 @@
+ else
+       if test -n "$PKG_CONFIG"; then
+         AC_MSG_CHECKING(ImageMagick flags through pkg-config)
+-	PKG_CHECK_MODULES(LIBMAGICK, ImageMagick++, 
++	PKG_CHECK_MODULES(LIBMAGICK, Magick++, 
+ 		HAVE_LIBMAGICK=yes 
+ 		LIBMAGICK_CFLAGS="-DHAVE_MAGIC $LIBMAGICK_CFLAGS" 
+ 		LIBMAGICK_LDFLAGS="$LIBMAGICK_LIBS" , 
+--- src/drvmagick++.cpp	2015-01-01 18:05:33.000000000 +0100
++++ src/drvmagick++.cpp	2017-08-08 16:38:28.879138000 -0400
+@@ -121,5 +121,9 @@ void drvMAGICK::create_vpath(VPathList &
+ 		switch (elem.getType()) {
+ 		case moveto:{
++#if MagickLibVersion < 0x700
+ 				const Point & p = elem.getPoint(0);
++#else /* MAGICK7 */
++				const ::Point & p = elem.getPoint(0);
++#endif /* MAGICK7 */
+ 				const Magick::Coordinate coord(p.x_ + x_offset,
+ 											   currentDeviceHeight - p.y_ + y_offset);
+@@ -128,5 +132,9 @@ void drvMAGICK::create_vpath(VPathList &
+ 			break;
+ 		case lineto:{
++#if MagickLibVersion < 0x700
+ 				const Point & p = elem.getPoint(0);
++#else /* MAGICK7 */
++				const ::Point & p = elem.getPoint(0);
++#endif /* MAGICK7 */
+ 				const Magick::Coordinate coord(p.x_ + x_offset,
+ 											   currentDeviceHeight - p.y_ + y_offset);
+@@ -138,7 +146,13 @@ void drvMAGICK::create_vpath(VPathList &
+ 			break;
+ 		case curveto:{
++#if MagickLibVersion < 0x700
+ 				const Point & p0 = elem.getPoint(0);
+ 				const Point & p1 = elem.getPoint(1);
+ 				const Point & p2 = elem.getPoint(2);
++#else /* MAGICK7 */
++				const ::Point & p0 = elem.getPoint(0);
++				const ::Point & p1 = elem.getPoint(1);
++				const ::Point & p2 = elem.getPoint(2);
++#endif /* MAGICK7 */
+ 				vpath.
+ 					push_back(PathCurvetoAbs
+@@ -279,5 +293,9 @@ void drvMAGICK::show_path()
+ 		}
+ 		dasharray[dp.nrOfEntries] = 0;	// mark last element
++#if MagickLibVersion < 0x700
+ 		drawList.push_back(DrawableDashArray(dasharray));	// pulls a copy, so we are the owner of dasharray
++#else /* MAGICK7 */
++		drawList.push_back(DrawableStrokeDashArray(dasharray));	// pulls a copy, so we are the owner of dasharray
++#endif /* MAGICK7 */
+ //??    DrawableDashOffset
+ 		delete[]dasharray;
+@@ -301,5 +319,11 @@ void drvMAGICK::show_path()
+ 	drawList.push_back(DrawablePopGraphicContext());
+ 	// Draw everything using completed drawing list 
++#if MagickLibVersion < 0x700
+ 	imageptr->draw(drawList);
++#else /* MAGICK7 */
++	std::vector<Magick::Drawable> drawVect;
++	copy(drawList.begin(),drawList.end(),back_inserter(drawVect));
++	imageptr->draw(drawVect);
++#endif /* MAGICK7 */
+ #endif
+ 
