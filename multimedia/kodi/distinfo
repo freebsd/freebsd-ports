@@ -1,6 +1,6 @@
-TIMESTAMP = 1499524428
-SHA256 (xbmc-xbmc-17.3-fc1619b_GH0.tar.gz) = d37923946f556167e2bae57c8ed6fde94e1c9996b2eb907ae2a843da242b2680
-SIZE (xbmc-xbmc-17.3-fc1619b_GH0.tar.gz) = 58455275
+TIMESTAMP = 1501924835
+SHA256 (xbmc-xbmc-17.3-17.3-Krypton_GH0.tar.gz) = 1de8653a3729cefd1baaf09ecde5ace01a1e3a58fbf29d48c1363f2503d331a1
+SIZE (xbmc-xbmc-17.3-17.3-Krypton_GH0.tar.gz) = 58466114
 SHA256 (xbmc-FFmpeg-3.1.6-Krypton_GH0.tar.gz) = 01f914742f6af8afd1d2eb076425975e24c4eed75f5d57f1c816086dc4625192
 SIZE (xbmc-FFmpeg-3.1.6-Krypton_GH0.tar.gz) = 11170735
 SHA256 (xbmc-libdvdcss-2f12236_GH0.tar.gz) = 7affd787569960bcca6a7a83dfbe807b461653ee9793c59551dabb88e640b3f4
