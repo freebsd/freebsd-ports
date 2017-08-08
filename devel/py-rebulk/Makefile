@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rebulk
-PORTVERSION=	0.8.2
+PORTVERSION=	0.9.0
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -18,10 +18,10 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest
 USES=		python
 USE_PYTHON=	autoplist distutils
 
-NO_ARCH=	yes
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	Toilal
+
+NO_ARCH=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e '/setup_requires/d' ${WRKSRC}/${PYSETUP}
