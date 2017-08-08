@@ -2,12 +2,13 @@
 
 PORTNAME=	flowgger
 PORTVERSION=	g20170616
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	tobik@FreeBSD.org
 COMMENT=	Fast data collector
 
-LICENSE=	MPL
+LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		cargo
@@ -23,7 +24,7 @@ PLIST_FILES=	bin/flowgger
 
 CARGO_CRATES=	ansi_term-0.9.0 \
 		atty-0.2.2 \
-		bitflags-0.8.2 \
+		bitflags-0.9.1 \
 		byteorder-0.5.3 \
 		byteorder-1.0.0 \
 		capnp-0.8.10 \
@@ -31,7 +32,7 @@ CARGO_CRATES=	ansi_term-0.9.0 \
 		cargo_metadata-0.2.1 \
 		cfg-if-0.1.0 \
 		chrono-0.3.1 \
-		clap-2.24.1 \
+		clap-2.26.0 \
 		context-1.0.1 \
 		crc-1.4.0 \
 		deque-0.3.2 \
@@ -61,8 +62,8 @@ CARGO_CRATES=	ansi_term-0.9.0 \
 		num-integer-0.1.34 \
 		num-iter-0.1.33 \
 		num-traits-0.1.37 \
-		openssl-0.9.12 \
-		openssl-sys-0.9.12 \
+		openssl-0.9.15 \
+		openssl-sys-0.9.15 \
 		pkg-config-0.3.9 \
 		quine-mc_cluskey-0.2.4 \
 		quote-0.3.15 \
@@ -87,18 +88,19 @@ CARGO_CRATES=	ansi_term-0.9.0 \
 		syn-0.11.11 \
 		synom-0.11.3 \
 		term_size-0.3.0 \
+		textwrap-0.7.0 \
 		time-0.1.37 \
 		toml-0.2.1 \
 		toml-0.4.1 \
 		twox-hash-1.1.0 \
 		unicode-bidi-0.2.5 \
 		unicode-normalization-0.1.4 \
-		unicode-segmentation-1.1.0 \
+		unicode-segmentation-1.2.0 \
 		unicode-width-0.1.4 \
 		unicode-xid-0.0.4 \
 		url-1.4.0 \
 		user32-sys-0.2.0 \
-		vec_map-0.7.0 \
+		vec_map-0.8.0 \
 		winapi-0.2.8 \
 		winapi-build-0.1.1 \
 		ws2_32-sys-0.2.1
