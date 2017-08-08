@@ -38,8 +38,20 @@ you update your ports collection, before attempting any port upgrades.
   and dovecot2-pigeonhole have been renamed to simply dovecot and
   dovecot-pigeonhole.
 
-  Depending upon your local setup, you may need to manually run
-  'pkg delete dovecot2' and 'pkg install dovecot' (or -pigeonhole).
+  pkg should handle the rename automatically, but if you run into
+  trouble, you can point pkg at the new origin via:
+
+  # pkg set -o mail/dovecot2:mail/dovecot
+  # pkg set -o mail/dovecot2-pigeonhole:mail/dovecot-pigeonhole
+
+  Similarly, you can point portmaster at the new location via:
+
+  # portmaster -o mail/dovecot mail/dovecot2
+
+  If all else fails, just remove and reinstall the package:
+
+  # pkg delete dovecot2
+  # pkg install dovecot
 
 20170806:
   AFFECTS: users of mail/dovecot2-antispam-plugin
