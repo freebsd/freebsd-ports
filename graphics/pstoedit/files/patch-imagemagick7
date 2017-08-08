@@ -2,7 +2,7 @@ By Jan Rekorajski, obtained from:
 
 	http://git.pld-linux.org/gitweb.cgi/packages/pstoedit.git/commitdiff/1db94627498886a91a6e6ed80d0a8b2b6da1a16b
 
-and made conditional to still work with IM-7.
+and made conditional to still work with ImageMagick earlier than 7.
 
 (The configure.ac is not currently used by the port.)
 
