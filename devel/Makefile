@@ -1038,8 +1038,8 @@
     SUBDIR += hs-hspec-core
     SUBDIR += hs-hspec-discover
     SUBDIR += hs-hspec-expectations
-    SUBDIR += hs-iostreams
-    SUBDIR += hs-iostreams-haproxy
+    SUBDIR += hs-io-streams
+    SUBDIR += hs-io-streams-haproxy
     SUBDIR += hs-js-flot
     SUBDIR += hs-js-jquery
     SUBDIR += hs-keys
