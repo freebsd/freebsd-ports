@@ -3,7 +3,7 @@
 
 PORTNAME=	capybara
 PORTVERSION=	2.15.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -14,7 +14,6 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/License.txt
 
 RUN_DEPENDS=	rubygem-addressable>=0:www/rubygem-addressable \
-		rubygem-mime-types>=1.16:misc/rubygem-mime-types \
 		rubygem-mini_mime>=0.1.3:mail/rubygem-mini_mime \
 		rubygem-nokogiri>=1.3.3:textproc/rubygem-nokogiri \
 		rubygem-rack>=1.0.0:www/rubygem-rack \
