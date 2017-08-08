@@ -3,7 +3,7 @@
 
 PORTNAME=	pstoedit
 PORTVERSION=	3.70
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	graphics print
 MASTER_SITES=	SF
 
@@ -12,7 +12,8 @@ COMMENT=	Convert PostScript to other vector graphic formats
 
 LICENSE=	GPLv2+
 
-LIB_DEPENDS=	libgd.so:graphics/gd
+LIB_DEPENDS=	libgd.so:graphics/gd	\
+		libzip.so:archivers/libzip
 
 USES=		ghostscript libtool localbase pathfix pkgconfig
 GNU_CONFIGURE=	yes
@@ -32,7 +33,7 @@ EMF_DESC=		WMF/EMF support via libEMF
 EMF_LIB_DEPENDS=	libEMF.so:graphics/libemf
 EMF_CONFIGURE_ON=	--with-libemf-include=${LOCALBASE}/include/libEMF
 EMF_CONFIGURE_OFF=	--without-emf
-MAGICK_LIB_DEPENDS=	libMagick++-6.so:graphics/ImageMagick
+MAGICK_LIB_DEPENDS=	libMagick++-*.so:graphics/ImageMagick
 MAGICK_CONFIGURE_ON=	--with-magick
 MAGICK_CONFIGURE_OFF=	--without-magick
 MING_DESC=		Flash support via Ming
