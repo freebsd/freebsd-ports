@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	js-jquery
-PORTVERSION=	1.11.3
+PORTVERSION=	3.2.1
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org

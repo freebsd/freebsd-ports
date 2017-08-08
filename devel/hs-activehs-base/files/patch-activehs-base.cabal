@@ -1,12 +1,10 @@
---- activehs-base.cabal.orig	2012-09-11 07:56:08 UTC
+--- activehs-base.cabal.orig	2017-07-11 16:35:24 UTC
 +++ activehs-base.cabal
-@@ -21,7 +21,7 @@ Library 
-   Exposed-Modules:
+@@ -22,6 +22,6 @@ Library 
      ActiveHs.Base
    Build-Depends:
--    base >= 4.0 && < 4.7,
--    QuickCheck >= 2.4 && < 2.6
-+    base >= 4.0 && < 4.9,
-+    QuickCheck >= 2.4 && < 2.9
+     base >= 4.0 && < 4.10,
+-    QuickCheck >= 2.4 && < 2.9
++    QuickCheck >= 2.4 && < 2.11
  
  

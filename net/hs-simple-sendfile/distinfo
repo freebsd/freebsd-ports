@@ -1,2 +1,3 @@
-SHA256 (cabal/simple-sendfile-0.2.21.tar.gz) = 61239d6c5e94ec76067d88d8a09589b53ca0a5d1806fd9f3e042d007cc67fd77
-SIZE (cabal/simple-sendfile-0.2.21.tar.gz) = 7469
+TIMESTAMP = 1499623597
+SHA256 (cabal/simple-sendfile-0.2.25.tar.gz) = 0ae68821cd828b29772654b5613d514a421b1b1440d82a4b610339e67a92294d
+SIZE (cabal/simple-sendfile-0.2.25.tar.gz) = 343509

@@ -1,2 +1,3 @@
-SHA256 (cabal/asn1-types-0.3.0.tar.gz) = b998dad88b94f8da7058df52f03936d66c81a2d012549c87affeecac5cb5a8aa
-SIZE (cabal/asn1-types-0.3.0.tar.gz) = 5391
+TIMESTAMP = 1499545858
+SHA256 (cabal/asn1-types-0.3.2.tar.gz) = 0c571fff4a10559c6a630d4851ba3cdf1d558185ce3dcfca1136f9883d647217
+SIZE (cabal/asn1-types-0.3.2.tar.gz) = 6424

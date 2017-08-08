@@ -1,2 +1,3 @@
-SHA256 (cabal/hedis-0.6.9.tar.gz) = ead8c36dcb7093be9e414da900e2b6fa2f4bc8723a3a5346020d316c75e79179
-SIZE (cabal/hedis-0.6.9.tar.gz) = 27140
+TIMESTAMP = 1499619995
+SHA256 (cabal/hedis-0.9.8.tar.gz) = 822e298c2fe55f7edf0e3a005e901fe7b107c4734eb0dd8f1ab6382330d3ae62
+SIZE (cabal/hedis-0.9.8.tar.gz) = 40058

@@ -5,6 +5,31 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20170808:
+  AFFECTS: users of lang/ghc and */hs-*
+  AUTHOR: haskell@FreeBSD.org
+
+  The Glorious Glasgow Haskell Compiler has been updated to version
+  8.0.2.  Hence it is recommended to rebuild or reinstall all the
+  dependent ports and the lang/ghc port itself in one of the following
+  ways:
+
+  # portmaster -w -r ghc
+    or
+  # portupgrade -fr lang/ghc
+
+  In case of pkg(8), it is probably safer to remove all the GHC-dependent
+  packages along with GHC and reinstall everything from scratch.  For
+  example:
+
+  # pkg query "%ro" ghc > ghc-pkgs.txt
+  # pkg delete -y lang/ghc
+
+  In ghc-pkgs.txt, check and remove all the packages that have been moved
+  on the update, then use this command:
+
+  # pkg install -y `cat ghc-pkgs.txt`
+
 20170807:
   AFFECTS: users of mail/dovecot2 and mail/dovecot2-pigeonhole
   AUTHOR: adamw@FreeBSD.org

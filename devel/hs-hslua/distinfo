@@ -1,2 +1,3 @@
-SHA256 (cabal/hslua-0.4.0.tar.gz) = 77a865a3258656c2536c154d18ac38873a371685fde6ba03a3436f65f7bda050
-SIZE (cabal/hslua-0.4.0.tar.gz) = 129883
+TIMESTAMP = 1499627844
+SHA256 (cabal/hslua-0.5.0.tar.gz) = 6b270a14cce6046a443e6700d0b73725bef2dc068dd40aa6a1feb1c84f41171b
+SIZE (cabal/hslua-0.5.0.tar.gz) = 132155

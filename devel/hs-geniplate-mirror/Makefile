@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	geniplate-mirror
-PORTVERSION=	0.7.1
+PORTVERSION=	0.7.5
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org

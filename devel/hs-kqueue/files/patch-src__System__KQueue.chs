@@ -1,14 +1,22 @@
---- ./src/System/KQueue.chs.orig	2012-01-03 14:00:32.000000000 +0100
-+++ ./src/System/KQueue.chs	2012-01-27 07:17:17.000000000 +0100
-@@ -21,6 +21,7 @@
+--- src/System/KQueue.chs.orig	2016-05-30 14:31:11 UTC
++++ src/System/KQueue.chs
+@@ -21,6 +21,7 @@ module System.KQueue
  
  #include <sys/time.h>
  #include <sys/event.h>
 +#include "MachDeps.h"
  
+ #if __GLASGOW_HASKELL__ <= 708
  import Control.Applicative ( (<$>), (<*>) )
- import Control.Exception   ( Exception, throwIO )
-@@ -62,11 +63,19 @@
+@@ -57,6 +58,7 @@ import Foreign.C           ( CInt )
+ import Foreign.C           ( CLong
+                            , CTime
+                            , CULong
++                           , CUInt
+                            )
+ 
+ -- | A kernel event queue.
+@@ -68,11 +70,19 @@ kqueue = KQueue <$> {#call kqueue as kqueue_ #}
  
  -- | A kernel event.
  data KEvent = KEvent
@@ -28,13 +36,13 @@
    , udata    :: Ptr ()  -- ^ User-defined data, passed through unchanged.
    } deriving (Show, Eq)
  
-@@ -122,8 +131,10 @@
+@@ -128,8 +138,10 @@ enum FFlag
    , NoteExit   = NOTE_EXIT
    , NoteFork   = NOTE_FORK
    , NoteExec   = NOTE_EXEC
 +#ifndef __FreeBSD__
    , NoteSignal = NOTE_SIGNAL
-   , NoteReap   = NOTE_REAP
+ //  , NoteReap   = NOTE_REAP
 +#endif
    };
  #endc

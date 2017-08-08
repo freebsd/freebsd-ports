@@ -1,2 +1,3 @@
-SHA256 (cabal/DAV-1.0.7.tar.gz) = a8a9000b544e872296c8597edd9df10d10ceaa097f981d98bd315c1dfb637c2e
-SIZE (cabal/DAV-1.0.7.tar.gz) = 19768
+TIMESTAMP = 1499625369
+SHA256 (cabal/DAV-1.3.1.tar.gz) = 5c80faa58f8bbfb4bbdf7f3db6f23a3a4d26a199831ceb27dd5f69fef21bc009
+SIZE (cabal/DAV-1.3.1.tar.gz) = 20003

@@ -1,3 +1,3 @@
-TIMESTAMP = 1486993392
-SHA256 (cabal/c2hs-0.28.1.tar.gz) = 95b04ef42cf43a1078e9c8a4bf9264dd26e8653b441b3fb7f2296c8b3a0752bb
-SIZE (cabal/c2hs-0.28.1.tar.gz) = 205622
+TIMESTAMP = 1499627824
+SHA256 (cabal/c2hs-0.28.2.tar.gz) = f4171478cafe9f4906735763c2e0bc1ca0a9f56b50e9d59aac07520434920f9e
+SIZE (cabal/c2hs-0.28.2.tar.gz) = 205916

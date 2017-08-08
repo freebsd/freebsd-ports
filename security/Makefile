@@ -241,10 +241,15 @@
     SUBDIR += hs-cryptohash
     SUBDIR += hs-cryptohash-conduit
     SUBDIR += hs-cryptohash-cryptoapi
+    SUBDIR += hs-cryptohash-md5
+    SUBDIR += hs-cryptohash-sha1
+    SUBDIR += hs-cryptohash-sha256
     SUBDIR += hs-cryptonite
     SUBDIR += hs-digest
+    SUBDIR += hs-ed25519
     SUBDIR += hs-entropy
     SUBDIR += hs-gnutls
+    SUBDIR += hs-hackage-security
     SUBDIR += hs-monadcryptorandom
     SUBDIR += hs-nonce
     SUBDIR += hs-pem
@@ -252,6 +257,7 @@
     SUBDIR += hs-pwstore-fast
     SUBDIR += hs-skein
     SUBDIR += hs-tls
+    SUBDIR += hs-tls-session-manager
     SUBDIR += hs-x509
     SUBDIR += hs-x509-store
     SUBDIR += hs-x509-system

@@ -1,0 +1,8 @@
+GhcLibWays = v
+XMLDocWays =
+HADDOCK_DOCS =
+HSCOLOUR_SRCS =
+INTEGER_LIBRARY = integer-simple
+DYNAMIC_GHC_PROGRAMS =
+BIN_DIST_NAME = ghc-%%GHC_VERSION%%-boot
+BIN_DIST_TAR  = ghc-%%GHC_VERSION%%-boot.tar

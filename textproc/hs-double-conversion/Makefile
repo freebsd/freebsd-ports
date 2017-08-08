@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	double-conversion
-PORTVERSION=	2.0.1.0
+PORTVERSION=	2.0.2.0
 CATEGORIES=	textproc haskell
 
 MAINTAINER=	haskell@FreeBSD.org

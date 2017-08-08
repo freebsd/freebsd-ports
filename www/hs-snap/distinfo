@@ -1,2 +1,3 @@
-SHA256 (cabal/snap-0.14.0.6.tar.gz) = fa9ffc7bf5c6729f7e204daecd50765a220a0ffc2feaf3f6b29977370d8db617
-SIZE (cabal/snap-0.14.0.6.tar.gz) = 84164
+TIMESTAMP = 1499625379
+SHA256 (cabal/snap-1.0.0.1.tar.gz) = 293f16c1404793121d3d85abb6287bbb32f5dc1d82b12146d4bb650052322db8
+SIZE (cabal/snap-1.0.0.1.tar.gz) = 81400

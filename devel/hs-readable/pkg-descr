@@ -1,0 +1,4 @@
+Provides a Readable type class for reading data types from ByteString and Text.
+ Also includes efficient implementations for common data types.
+
+WWW: http://hackage.haskell.org/package/readable

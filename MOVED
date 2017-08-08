@@ -9497,3 +9497,8 @@ security/greenbone-security-assistant|security/greenbone-security-assistant8|201
 sysutils/consolekit|sysutils/consolekit2|2017-08-05|Continuation of the consolekit project
 mail/dovecot2|mail/dovecot|2017-08-07|Renamed to mail/dovecot
 mail/dovecot2-pigeonhole|mail/dovecot-pigeonhole|2017-08-07|Renamed to mail/dovecot-pigeonhole
+devel/hs-MonadCatchIO-mtl||2017-08-08|Deprecated in favor of the exceptions package
+devel/hs-MonadCatchIO-transformers||2017-08-08|Deprecated in favor of the exceptions package
+devel/hs-directory||2017-08-08|Part of the bundled packages in ghc
+devel/hs-syb-with-class-instances-text||2017-08-08|Upstream is unmaintained
+textproc/hs-citeproc-hs||2017-08-08|Upstream is unmaintained, use pandoc-citeproc instead

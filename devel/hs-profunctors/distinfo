@@ -1,2 +1,3 @@
-SHA256 (cabal/profunctors-5.1.1.tar.gz) = 873f4478cdadd574c070c00fa790e4b0d8fb6f00577f142bf6e9dacbd48d8253
-SIZE (cabal/profunctors-5.1.1.tar.gz) = 17866
+TIMESTAMP = 1499595371
+SHA256 (cabal/profunctors-5.2.tar.gz) = 87a7e25c4745ea8ff479dd1212ec2e57710abb3d3dd30f948fa16be1d3ee05a4
+SIZE (cabal/profunctors-5.2.tar.gz) = 23236

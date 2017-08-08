@@ -1,0 +1,3 @@
+Parser combinator library designed to be fast. It doesn't support backtracking.
+
+WWW: https://hackage.haskell.org/package/scanner

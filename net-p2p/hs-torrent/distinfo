@@ -1,2 +1,3 @@
-SHA256 (cabal/torrent-10000.0.0.tar.gz) = 5914bc8b4c32c10dc82bfe373ba73745e1e785424a052b0ede5352802aa1140c
-SIZE (cabal/torrent-10000.0.0.tar.gz) = 3549
+TIMESTAMP = 1499623667
+SHA256 (cabal/torrent-10000.1.1.tar.gz) = 2009964210e229ee67254a73fead3413f60299415238887fa7ef30e40e06fa54
+SIZE (cabal/torrent-10000.1.1.tar.gz) = 3977

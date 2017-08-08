@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	utility-ht
-PORTVERSION=	0.0.10
+PORTVERSION=	0.0.14
 PORTREVISION=	2
 CATEGORIES=	devel haskell
 

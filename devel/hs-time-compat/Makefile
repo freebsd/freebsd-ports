@@ -2,7 +2,7 @@
 
 PORTNAME=	time-compat
 PORTVERSION=	0.1.0.3
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org

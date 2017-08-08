@@ -257,6 +257,7 @@
     SUBDIR += hs-happstack-server
     SUBDIR += hs-heist
     SUBDIR += hs-hjsmin
+    SUBDIR += hs-http-api-data
     SUBDIR += hs-http-client
     SUBDIR += hs-http-client-tls
     SUBDIR += hs-http-conduit

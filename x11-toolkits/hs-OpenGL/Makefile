@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	OpenGL
-PORTVERSION=	2.12.0.1
+PORTVERSION=	3.0.2.0
 PORTEPOCH=	1
 CATEGORIES=	x11-toolkits haskell
 

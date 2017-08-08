@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	aws
-PORTVERSION=	0.12.1
+PORTVERSION=	0.16
 CATEGORIES=	net haskell
 
 MAINTAINER=	haskell@FreeBSD.org
