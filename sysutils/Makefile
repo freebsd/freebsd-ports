@@ -452,9 +452,11 @@
     SUBDIR += hptcli
     SUBDIR += hs-angel
     SUBDIR += hs-cpu
+    SUBDIR += hs-disk-free-space
     SUBDIR += hs-ekg
     SUBDIR += hs-ekg-core
     SUBDIR += hs-ekg-json
+    SUBDIR += hs-mountpoints
     SUBDIR += htop
     SUBDIR += httplog
     SUBDIR += hwstat

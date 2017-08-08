@@ -218,7 +218,10 @@
     SUBDIR += hs-data-lens-template
     SUBDIR += hs-distributive
     SUBDIR += hs-erf
+    SUBDIR += hs-fixed
+    SUBDIR += hs-half
     SUBDIR += hs-ieee754
+    SUBDIR += hs-integer-logarithms
     SUBDIR += hs-kan-extensions
     SUBDIR += hs-math-functions
     SUBDIR += hs-mwc-random

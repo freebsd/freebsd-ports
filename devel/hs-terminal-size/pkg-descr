@@ -1,0 +1,3 @@
+Get terminal window height and width without ncurses dependency.
+
+WWW: http://hackage.haskell.org/package/terminal-size

@@ -1,7 +1,0 @@
-citeproc-hs is a library for rendering bibliographic reference citations
-into a variety of styles using a macro language called Citation Style
-Language (CSL) [1].
-
-[1] http://xbiblio.sourceforge.net/
-
-WWW: http://istitutocolli.org/repos/citeproc-hs/

@@ -1,0 +1,3 @@
+Parsing of ISO 8601 dates, originally from aeson.
+
+WWW: http://hackage.haskell.org/package/attoparsec-iso8601

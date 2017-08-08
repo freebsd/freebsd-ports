@@ -1,0 +1,11 @@
+Edison is a library of purely functional data structures written by Chris
+Okasaki.  It is named after Thomas Alva Edison and for the mnemonic value
+EDiSon (Efficient Data Structures).  Edison provides several families of
+abstractions, each with multiple implementations.  The main abstractions
+provided by Edison are: Sequences such as stacks, queues, and dequeues;
+Collections such as sets, bags and heaps; and Associative Collections such
+as finite maps and priority queues where the priority and element are
+distinct.
+
+WWW: http://rwd.rdockins.name/edison/home/
+

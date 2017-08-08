@@ -1,2 +1,3 @@
-SHA256 (cabal/network-multicast-0.1.0.tar.gz) = 18c2db0f8db5b9f4d3b65dbaa19ed77f4ebcf9c97e2d85657b6777f2b0e47a8a
-SIZE (cabal/network-multicast-0.1.0.tar.gz) = 3023
+TIMESTAMP = 1499623594
+SHA256 (cabal/network-multicast-0.2.0.tar.gz) = 0f3b50abc3a401c20cc6a0ec51a49d2a48e5b467d9fbd63b7cf803165fe975f2
+SIZE (cabal/network-multicast-0.2.0.tar.gz) = 2986

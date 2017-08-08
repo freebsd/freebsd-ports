@@ -1,2 +1,3 @@
-SHA256 (cabal/auto-update-0.1.2.2.tar.gz) = 7b3000c330055d4059fe8d9ab044c29e3a57b4dc31b88ea386a75a886b6144db
-SIZE (cabal/auto-update-0.1.2.2.tar.gz) = 6651
+TIMESTAMP = 1499627821
+SHA256 (cabal/auto-update-0.1.4.tar.gz) = 5e96c151024e8bcaf4eaa932e16995872b2017f46124b967e155744d9580b425
+SIZE (cabal/auto-update-0.1.4.tar.gz) = 8607

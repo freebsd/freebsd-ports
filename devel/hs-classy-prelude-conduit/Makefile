@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	classy-prelude-conduit
-PORTVERSION=	0.12.0.1
+PORTVERSION=	1.2.0
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org

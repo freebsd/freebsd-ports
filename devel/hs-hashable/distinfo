@@ -1,2 +1,3 @@
-SHA256 (cabal/hashable-1.2.3.3.tar.gz) = fc923f7d1fdc0062416a61f6ab96b4e1958e1aee1ddf1c71fa2cc6d08154e44e
-SIZE (cabal/hashable-1.2.3.3.tar.gz) = 23944
+TIMESTAMP = 1499444230
+SHA256 (cabal/hashable-1.2.6.1.tar.gz) = 94ca8789e13bc05c1582c46b709f3b0f5aeec2092be634b8606dbd9c5915bb7a
+SIZE (cabal/hashable-1.2.6.1.tar.gz) = 30305

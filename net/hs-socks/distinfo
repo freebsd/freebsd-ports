@@ -1,2 +1,3 @@
-SHA256 (cabal/socks-0.5.4.tar.gz) = e9b5e1ea78592632bb086e5f4d6da523be01921a4a8998ca78552bdc396db4da
-SIZE (cabal/socks-0.5.4.tar.gz) = 8021
+TIMESTAMP = 1499623597
+SHA256 (cabal/socks-0.5.5.tar.gz) = 2647ea93e21ad1dfd77e942c022c8707e468d25e1ff672a88be82508034fc868
+SIZE (cabal/socks-0.5.5.tar.gz) = 10159

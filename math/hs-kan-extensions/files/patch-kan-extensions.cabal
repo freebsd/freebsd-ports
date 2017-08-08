@@ -1,0 +1,10 @@
+--- kan-extensions.cabal.orig	2017-07-09 21:09:48 UTC
++++ kan-extensions.cabal
+@@ -47,7 +47,6 @@ library
+     containers    >= 0.4     && < 0.6,
+     contravariant >= 1       && < 2,
+     distributive  >= 0.2.2   && < 1,
+-    fail          >= 4.9     && < 5,
+     free          >= 4       && < 5,
+     mtl           >= 2.0.1   && < 2.3,
+     semigroupoids >= 4       && < 6,

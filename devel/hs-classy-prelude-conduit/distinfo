@@ -1,2 +1,3 @@
-SHA256 (cabal/classy-prelude-conduit-0.12.0.1.tar.gz) = b12758b3ebe429268ca5a0f18a61ffc9429d6cdc00b4362742ea0717460462f7
-SIZE (cabal/classy-prelude-conduit-0.12.0.1.tar.gz) = 1598
+TIMESTAMP = 1499627826
+SHA256 (cabal/classy-prelude-conduit-1.2.0.tar.gz) = 24090dd042cd74d2663a5870482a60746b9096754f598b5171b800511230ec7f
+SIZE (cabal/classy-prelude-conduit-1.2.0.tar.gz) = 1735

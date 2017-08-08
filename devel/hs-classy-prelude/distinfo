@@ -1,2 +1,3 @@
-SHA256 (cabal/classy-prelude-0.12.1.1.tar.gz) = 670a85ffd10ff467e5eec1164462932c00bb6282cda2987a2b92c82f09ac3d13
-SIZE (cabal/classy-prelude-0.12.1.1.tar.gz) = 10273
+TIMESTAMP = 1499627825
+SHA256 (cabal/classy-prelude-1.2.0.1.tar.gz) = a47ee0c339a73b19fb511e1477fec6a385d2180bcc836a92c157dcb5c91ffa34
+SIZE (cabal/classy-prelude-1.2.0.1.tar.gz) = 12017

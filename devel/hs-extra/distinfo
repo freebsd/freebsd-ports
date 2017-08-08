@@ -1,2 +1,3 @@
-SHA256 (cabal/extra-1.4.1.tar.gz) = e02ca751533eb44b221a8e6250c70a125627be8fc1c9711092dc3d2668f2d001
-SIZE (cabal/extra-1.4.1.tar.gz) = 31235
+TIMESTAMP = 1499627833
+SHA256 (cabal/extra-1.6.tar.gz) = 0766e656fad80cfff4fc4c0370d2fe1712077549a5f8a57c38d2c1b5da7b14df
+SIZE (cabal/extra-1.6.tar.gz) = 36369

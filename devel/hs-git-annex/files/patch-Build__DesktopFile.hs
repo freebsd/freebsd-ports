@@ -1,14 +1,14 @@
---- ./Build/DesktopFile.hs.orig	2014-07-09 22:09:05.000000000 +0200
-+++ ./Build/DesktopFile.hs	2014-07-13 01:40:51.000000000 +0200
-@@ -25,6 +25,7 @@
+--- Build/DesktopFile.hs.orig	2017-06-12 17:56:05 UTC
++++ Build/DesktopFile.hs
+@@ -25,6 +25,7 @@ import System.Environment
  #ifndef mingw32_HOST_OS
  import System.Posix.User
  #endif
 +import System.FilePath.Posix
  import Data.Maybe
- 
- systemwideInstall :: IO Bool
-@@ -48,12 +49,17 @@
+ import Control.Applicative
+ import Prelude
+@@ -50,12 +51,17 @@ writeFDODesktop :: FilePath -> IO ()
  writeFDODesktop command = do
  	systemwide <- systemwideInstall
  

@@ -1,0 +1,16 @@
+From 70a36fbeefd29c9340782d52ba0295014120c82d Mon Sep 17 00:00:00 2001
+From: Adam Bergmark <adam@bergmark.nl>
+Date: Sat, 25 Mar 2017 11:52:44 +0100
+Subject: [PATCH] Allow time 1.6.* and HUnit 1.6.*
+
+--- test-framework-hunit.cabal.orig	2015-09-04 15:42:16 UTC
++++ test-framework-hunit.cabal
+@@ -24,7 +24,7 @@ Flag Base3
+ Library
+         Exposed-Modules:        Test.Framework.Providers.HUnit
+ 
+-        Build-Depends:          test-framework >= 0.2.0, HUnit >= 1.2 && < 1.4, extensible-exceptions >= 0.1.1 && < 0.2.0
++        Build-Depends:          test-framework >= 0.2.0, HUnit >= 1.2 && < 1.7, extensible-exceptions >= 0.1.1 && < 0.2.0
+         if flag(base3)
+                 Build-Depends:          base >= 3 && < 4
+         else

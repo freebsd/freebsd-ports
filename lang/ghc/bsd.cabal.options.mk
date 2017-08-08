@@ -18,21 +18,13 @@ GHC_CMD?=	${LOCALBASE}/bin/ghc
 HADDOCK_CMD?=	${LOCALBASE}/bin/haddock
 HSCOLOUR_CMD?=	${LOCALBASE}/bin/HsColour
 
-GHC_VERSION?=	7.10.2
-LLVM_VERSION=	35
+GHC_VERSION?=	8.0.2
 
-HSCOLOUR_VERSION=	1.23
+HSCOLOUR_VERSION=	1.24.1
 
 HSCOLOUR_DESC?=	Colorize generated documentation by HsColour
 DYNAMIC_DESC?=	Add support for dynamic linking
 PROFILE_DESC?=	Add support for profiling
-LLVM_DESC?=	Use the LLVM backend for code generation
-PCLANG_DESC=		Build with Clang from ports
-BCLANG_DESC=		Build with Clang from base
-
-OPTIONS_SINGLE+=		C_Compiler
-OPTIONS_SINGLE_C_Compiler=	GCC PCLANG BCLANG
-OPTIONS_DEFAULT+=		GCC
 
 .if (!exists(${GHC_CMD}) || exists(${LOCALBASE}/lib/ghc-${GHC_VERSION}/rts/libHSrts-ghc${GHC_VERSION}.so)) && !defined(IGNORE_DYNAMIC)
 OPTIONS_DEFINE+=	DYNAMIC
@@ -41,10 +33,6 @@ OPTIONS_DEFAULT+=	DYNAMIC
 
 .if (!exists(${GHC_CMD}) || exists(${LOCALBASE}/lib/ghc-${GHC_VERSION}/rts/libHSrts_p.a)) && !defined(IGNORE_PROFILE)
 OPTIONS_DEFINE+=	PROFILE
-.endif
-
-.if !defined(IGNORE_LLVM)
-OPTIONS_DEFINE+=	LLVM
 .endif
 
 .if ((!exists(${GHC_CMD}) || exists(${LOCALBASE}/lib/ghc-${GHC_VERSION}/html)) || exists(${HADDOCK_CMD})) && !defined(IGNORE_DOCS)

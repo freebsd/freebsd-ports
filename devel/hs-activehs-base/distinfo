@@ -1,2 +1,3 @@
-SHA256 (cabal/activehs-base-0.3.0.2.tar.gz) = bb65782c7c29a745c435e7857b5f466017c622a57a604ef8ee645fad5cd75973
-SIZE (cabal/activehs-base-0.3.0.2.tar.gz) = 1873
+TIMESTAMP = 1499538392
+SHA256 (cabal/activehs-base-0.3.0.4.tar.gz) = 92d516583737ceb2272807eab8280ebb3b36e679c5a219ca9813d0c695efb13e
+SIZE (cabal/activehs-base-0.3.0.4.tar.gz) = 1881

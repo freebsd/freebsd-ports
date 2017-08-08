@@ -1,2 +1,3 @@
-SHA256 (cabal/vector-instances-3.3.1.tar.gz) = 68c7f154fe4ad53e29433e150c8718b0e74b4cf4c45a79af89940fff83868c59
-SIZE (cabal/vector-instances-3.3.1.tar.gz) = 3726
+TIMESTAMP = 1499627864
+SHA256 (cabal/vector-instances-3.4.tar.gz) = 1b0246ef0cf8372d61d5c7840d857f49299af2304b5107510377255ed4dd5381
+SIZE (cabal/vector-instances-3.4.tar.gz) = 5276

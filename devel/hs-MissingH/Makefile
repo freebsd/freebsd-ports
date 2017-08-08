@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	MissingH
-PORTVERSION=	1.3.0.1
+PORTVERSION=	1.4.0.1
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org

@@ -2,6 +2,7 @@
 
 PORTNAME=	bencode
 PORTVERSION=	0.6.0.0
+PORTREVISION=	1
 CATEGORIES=	textproc haskell
 
 MAINTAINER=	haskell@FreeBSD.org

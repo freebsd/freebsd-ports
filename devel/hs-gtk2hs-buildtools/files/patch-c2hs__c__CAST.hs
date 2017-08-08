@@ -1,4 +1,4 @@
---- c2hs/c/CAST.hs.orig	2017-03-21 18:15:30 UTC
+--- c2hs/c/CAST.hs.orig	2017-01-14 09:17:54 UTC
 +++ c2hs/c/CAST.hs
 @@ -1125,6 +1125,9 @@ instance Binary CStorageSpec where
      put_ bh (CTypedef ae) = do

@@ -1,2 +1,3 @@
-SHA256 (cabal/haddock-library-1.2.1.tar.gz) = 0fb1a09d2b6f5339bc008a8ebf6519f22d27f65cfcc682488a7b67e8ee151056
-SIZE (cabal/haddock-library-1.2.1.tar.gz) = 38606
+TIMESTAMP = 1499448291
+SHA256 (cabal/haddock-library-1.4.3.tar.gz) = f764763f8004715431a184a981493781b8380e13fd89ca0075ac426edc5d445b
+SIZE (cabal/haddock-library-1.4.3.tar.gz) = 38863

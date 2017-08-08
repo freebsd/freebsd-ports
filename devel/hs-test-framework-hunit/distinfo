@@ -1,2 +1,3 @@
-SHA256 (cabal/test-framework-hunit-0.3.0.1.tar.gz) = d3f9fd8e5e7251fa2f4727feb1397d80d9e979a4b086ee962dc239e3662910c0
-SIZE (cabal/test-framework-hunit-0.3.0.1.tar.gz) = 2690
+TIMESTAMP = 1499627859
+SHA256 (cabal/test-framework-hunit-0.3.0.2.tar.gz) = 95cb8ee02a850b164bfdabdf4dbc839d621361f3ac770ad21ea43a8bde360bf8
+SIZE (cabal/test-framework-hunit-0.3.0.2.tar.gz) = 2770

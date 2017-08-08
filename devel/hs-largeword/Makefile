@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	largeword
-PORTVERSION=	1.2.3
-PORTREVISION=	2
+PORTVERSION=	1.2.5
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org

@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	primitive
-PORTVERSION=	0.6
+PORTVERSION=	0.6.2.0
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org

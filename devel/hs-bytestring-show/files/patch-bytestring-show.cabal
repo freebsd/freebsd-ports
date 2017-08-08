@@ -1,0 +1,11 @@
+--- bytestring-show.cabal.orig	2017-07-08 18:54:46 UTC
++++ bytestring-show.cabal
+@@ -16,7 +16,7 @@ flag integer-simple
+         description: use with integer-simple build of GHC
+ 
+ library
+-    build-depends: base < 5, binary < 0.8, bytestring >= 0.9 && <= 1, array < 0.6, containers < 0.6
++    build-depends: base < 5, binary < 0.9, bytestring >= 0.9 && <= 1, array < 0.6, containers < 0.6
+ 
+     exposed-modules:
+         Text.Show.ByteString

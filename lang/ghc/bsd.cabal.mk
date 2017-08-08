@@ -1,4 +1,4 @@
-#
+
 # $FreeBSD$
 #
 # bsd.cabal.mk -- Support for ports based on Haskell Cabal.
@@ -32,8 +32,12 @@ SETUP_CMD?=	./setup
 ALEX_CMD?=	${LOCALBASE}/bin/alex
 HAPPY_CMD?=	${LOCALBASE}/bin/happy
 C2HS_CMD?=	${LOCALBASE}/bin/c2hs
+CPPHS_CMD?=	${LOCALBASE}/bin/cpphs
 
-CABAL_DIRS+=	${DATADIR} ${EXAMPLESDIR} ${CABAL_LIBDIR}/${CABAL_LIBSUBDIR} \
+# ./usr/local/lib/cabal/ghc-8.0.2/x86_64-freebsd-ghc-8.0.2/libHStransformers-compat-0.5.1.4-IuF
+CABAL_DIRS+=	${DATADIR} ${EXAMPLESDIR} \
+		${CABAL_LIBDIR}/${CABAL_LIBSUBDIR} \
+		${CABAL_LIBDIR}/${CABAL_ARCHSUBDIR} \
 		${DOCSDIR}
 
 GHC_HADDOCK_CMD=${LOCALBASE}/bin/haddock-ghc-${GHC_VERSION}
@@ -50,9 +54,18 @@ GHC_LIB_DOCSDIR_REL=	share/doc/ghc-${GHC_VERSION}/html/libraries
 
 CABAL_LIBDIR=		${PREFIX}/lib/cabal/ghc-${GHC_VERSION}
 CABAL_LIBSUBDIR=	${PACKAGE}
+CABAL_ARCH=		x86_64
+.if ("${ARCH}" == "i386")
+CABAL_ARCH=		i386
+.endif
+CABAL_ARCHSUBDIR=	${CABAL_ARCH}-freebsd-ghc-${GHC_VERSION}
 CABAL_LIBDIR_REL=	${CABAL_LIBDIR:S,^${PREFIX}/,,}
 
 CONFIGURE_ARGS+=	--libdir=${CABAL_LIBDIR} --libsubdir=${CABAL_LIBSUBDIR}
+
+# Inherited via lang/ghc we need to depend on iconv and libgmp.so (stage q/a)
+USES+=		iconv:translit
+LIB_DEPENDS+=	libgmp.so:math/gmp
 
 PLIST_SUB+=	GHC_VERSION=${GHC_VERSION} \
 		PORTNAME=${PORTNAME} \
@@ -83,35 +96,15 @@ BUILD_DEPENDS+=	ghc:lang/ghc
 BUILD_DEPENDS+=	ghc>=${GHC_VERSION}:lang/ghc
 .endif
 
-
-.if ${PORT_OPTIONS:MPCLANG}
-BUILD_DEPENDS+=	${LOCALBASE}/bin/clang${LLVM_VERSION}:lang/clang${LLVM_VERSION}
-RUN_DEPENDS+=	${LOCALBASE}/bin/clang${LLVM_VERSION}:lang/clang${LLVM_VERSION}
-CC=		${LOCALBASE}/bin/clang${LLVM_VERSION}
-CXX=		${LOCALBASE}/bin/clang++${LLVM_VERSION}
-CPP=		${LOCALBASE}/bin/clang-cpp${LLVM_VERSION}
-CFLAGS+=	-Qunused-arguments
-LDFLAGS+=	-B${LOCALBASE}/bin
-CONFIGURE_ARGS+=	--ghc-option=-optl=-B${LOCALBASE}/bin
-USE_BINUTILS=	yes
-.elif ${PORT_OPTIONS:MBCLANG}
-CC=		/usr/bin/clang
-CXX=		/usr/bin/clang++
-CPP=		/usr/bin/clang-cpp
-CFLAGS+=	-Qunused-arguments
-.else # GCC
+# LLVM is still not properly supported, further it does not make sense to have
+# to depend on old llvm ports that will be removed from the ports soon.
+# So for now, stick to GCC -- this might change with ghc-8.4.
+# https://ghc.haskell.org/trac/ghc/wiki/Commentary/Compiler/Backends/LLVM/Installing
+# We should however investigate whether base's clang is enough to build ghc&co.
 USE_GCC=	yes
-.endif
+
 
 CONFIGURE_ARGS+=	--with-gcc=${CC} --with-ld=${LD} --with-ar=${AR}
-
-.if ${PORT_OPTIONS:MLLVM}
-CONFIGURE_ARGS+=	--ghc-option=-fllvm \
-			--ghc-option=-pgmlo --ghc-option=${LOCALBASE}/bin/opt${LLVM_VERSION} \
-			--ghc-option=-pgmlc --ghc-option=${LOCALBASE}/bin/llc${LLVM_VERSION}
-
-BUILD_DEPENDS+=		${LOCALBASE}/bin/opt${LLVM_VERSION}:devel/llvm${LLVM_VERSION}
-.endif
 
 .if defined(USE_ALEX)
 BUILD_DEPENDS+=	${ALEX_CMD}:devel/hs-alex
@@ -128,66 +121,72 @@ BUILD_DEPENDS+=	${C2HS_CMD}:devel/hs-c2hs
 CONFIGURE_ARGS+=	--with-c2hs=${C2HS_CMD}
 .endif
 
-.if defined(EXECUTABLE)
-LIB_DEPENDS+=	libgmp.so:math/gmp
-USES+=		iconv
+.if defined(USE_CPPHS)
+BUILD_DEPENDS+=	${CPPHS_CMD}:devel/hs-cpphs
+CONFIGURE_ARGS+=	--with-cpphs=${CPPHS_CMD}
+.endif
 
+.if defined(EXECUTABLE)
 CONFIGURE_ARGS+=	--enable-executable-stripping
 .endif
 
 .if defined(USE_CABAL)
 .include "bsd.hackage.mk"
 
-.for cabal_package in ${USE_CABAL}
+.  for cabal_package in ${USE_CABAL}
 __u_h_r_package=	${cabal_package:C/[<=>].*$//g}
 __u_h_r_port=		${${__u_h_r_package}_port}
 __u_h_r_name=		${__u_h_r_port:C/.*\///g}
 
-.if empty(__u_h_r_port)
-IGNORE?=	dependency fails: ${cabal_package:C/[<=>].*$//g} is not known as a port
-.endif
+.    if empty(__u_h_r_port)
+IGNORE?=	dependency fails: ${cabal_package} -> ${__u_h_r_package} is not known as a port
+.    endif
 
-.if ${__u_h_r_package} == ${cabal_package}
+.    if ${__u_h_r_port} != ${STAGE2_DUMMY}
+.      if ${__u_h_r_package} == ${cabal_package}
 __u_h_r_version:=	>=0
-.else
+.      else
 __u_h_r_version:=	${cabal_package:C/^[^<=>]*//g}
-.endif
+.      endif
 
 dependencies:=	${dependencies} \
 ${HSPREFIX}${__u_h_r_package}${__u_h_r_version}:${__u_h_r_port}
-.endfor
+.    else
+IGNORE?= 	dependency fail: ${__u_h_r_package} is part of lang/ghc
+.    endif
+.  endfor
 
 BUILD_DEPENDS+=	${dependencies}
 
-.if !defined(STANDALONE) || ${PORT_OPTIONS:MDYNAMIC}
+.  if !defined(STANDALONE) || ${PORT_OPTIONS:MDYNAMIC}
 RUN_DEPENDS+=	${dependencies}
-.endif
+.  endif
 
 .endif
 
 .if ${PORT_OPTIONS:MDOCS}
-.if !defined(XMLDOCS)
+.  if !defined(XMLDOCS)
 
-.if defined(HADDOCK_AVAILABLE)
+.    if defined(HADDOCK_AVAILABLE)
 HADDOCK_OPTS=	# empty
 
-.if ${PORT_OPTIONS:MHSCOLOUR}
+.      if ${PORT_OPTIONS:MHSCOLOUR}
 BUILD_DEPENDS+=	HsColour:print/hs-hscolour
 
 HSCOLOUR_DATADIR=	${LOCALBASE}/share/cabal/ghc-${GHC_VERSION}/hscolour-${HSCOLOUR_VERSION}
 HADDOCK_OPTS+=		--hyperlink-source --hscolour-css=${HSCOLOUR_DATADIR}/hscolour.css
-.endif # HSCOLOUR
-.endif # HADDOCK_AVAILABLE
+.      endif # HSCOLOUR
+.    endif # HADDOCK_AVAILABLE
 
-.endif
+.  endif
 
-.if defined(XMLDOCS)
+.  if defined(XMLDOCS)
 BUILD_DEPENDS+=	docbook-xsl>0:textproc/docbook-xsl \
 		${LOCALBASE}/bin/xsltproc:textproc/libxslt
 
 USES+=		gmake
 
-.endif # !XMLDOCS
+.  endif # !XMLDOCS
 
 .endif # DOCS
 
@@ -206,7 +205,7 @@ CONFIGURE_ARGS+=	--disable-shared --disable-executable-dynamic
 .if ${PORT_OPTIONS:MPROFILE}
 CONFIGURE_ARGS+=	--enable-executable-profiling --enable-library-profiling
 .else
-CONFIGURE_ARGS+=	--disable-executable-profiling --disable-library-profiling
+CONFIGURE_ARGS+=	--disable-profiling --disable-library-profiling
 .endif
 
 .SILENT:
@@ -220,7 +219,7 @@ post-patch::
 _BUILD_SETUP=	${GHC_CMD} -o ${SETUP_CMD} -package Cabal --make
 
 .if !defined(METAPORT)
-.if !target(do-configure)
+.  if !target(do-configure)
 do-configure:
 	@${MKDIR} ${TMPDIR}
 	@if [ -f ${WRKSRC}/Setup.hs ]; then \
@@ -237,112 +236,115 @@ do-configure:
 	    exit 1; \
 	fi
 
-.if ${PORT_OPTIONS:MDOCS}
-.if defined(XMLDOCS) && defined(USE_AUTOTOOLS)
+.    if ${PORT_OPTIONS:MDOCS}
+.      if defined(XMLDOCS) && defined(USE_AUTOTOOLS)
 	cd ${WRKSRC}/doc && ${AUTOCONF} && ./configure --prefix=${PREFIX}
-.endif
-.endif # DOCS
-.endif # target(do-configure)
+.      endif
+.    endif # DOCS
+.  endif # target(do-configure)
 .endif # !METAPORT
 
 .if !defined(METAPORT)
-.if !target(do-build)
+.  if !target(do-build)
 do-build:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${SETUP_CMD} build
-.if !defined(STANDALONE)
+.    if !defined(STANDALONE)
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${SETUP_CMD} register --gen-script
-.endif
+.    endif
 
-.if ${PORT_OPTIONS:MDOCS}
-.if defined(HADDOCK_AVAILABLE) && !defined(XMLDOCS) && !defined(STANDALONE) && ${PORT_OPTIONS:MDOCS}
+.    if ${PORT_OPTIONS:MDOCS}
+.      if defined(HADDOCK_AVAILABLE) && !defined(XMLDOCS) && !defined(STANDALONE) && ${PORT_OPTIONS:MDOCS}
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${SETUP_CMD} haddock ${HADDOCK_OPTS}
-.endif # STANDALONE
-.if defined(XMLDOCS)
+.      endif # STANDALONE
+.      if defined(XMLDOCS)
 	@(cd ${WRKSRC}/doc && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} html)
-.endif # XMLDOCS
-.endif # DOCS
-.endif # target(do-build)
+.      endif # XMLDOCS
+.    endif # DOCS
+.  endif # target(do-build)
 .endif # !METAPORT
 
 .for sect in 1 2 3 4 5 6 7 8 9
-.if defined(MAN${sect}PAGES)
-.for man in ${MAN${sect}PAGES}
+.  if defined(MAN${sect}PAGES)
+.    for man in ${MAN${sect}PAGES}
 PLIST_FILES+=	man/man${sect}/${man}.gz
-.endfor
-.endif
+.    endfor
+.  endif
 .endfor
 
 .if !defined(METAPORT)
-.if !target(do-install)
+.  if !target(do-install)
 do-install:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${SETUP_CMD} copy --destdir=${STAGEDIR}
 
-.if !defined(STANDALONE)
+.    if !defined(STANDALONE)
 	@${MKDIR} ${STAGEDIR}${CABAL_LIBDIR}/${CABAL_LIBSUBDIR}
 	cd ${WRKSRC} && ${INSTALL_SCRIPT} register.sh ${STAGEDIR}${CABAL_LIBDIR}/${CABAL_LIBSUBDIR}/register.sh
-.endif
+.    endif
 
-.if !empty(INSTALL_PORTDATA)
+.    if !empty(INSTALL_PORTDATA)
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_PORTDATA}
-.endif
+.    endif
 
-.if !empty(INSTALL_PORTEXAMPLES) && ${PORT_OPTIONS:MEXAMPLES}
+.    if !empty(INSTALL_PORTEXAMPLES) && ${PORT_OPTIONS:MEXAMPLES}
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_PORTEXAMPLES}
-.endif
+.    endif
 
-.for sect in 1 2 3 4 5 6 7 8 9
-.if defined(MAN${sect}SRC)
-.for man in ${MAN${sect}PAGES}
+.    for sect in 1 2 3 4 5 6 7 8 9
+.      if defined(MAN${sect}SRC)
+.        for man in ${MAN${sect}PAGES}
 	@${INSTALL_MAN} ${WRKSRC}/${MAN${sect}SRC}/${man} ${STAGEDIR}${MANPREFIX}/man/man${sect}
-.endfor
-.endif # MAN${sect}SRC
-.endfor
+.        endfor
+.      endif # MAN${sect}SRC
+.    endfor
 
-.if ${PORT_OPTIONS:MDOCS}
-.if !empty(XMLDOCS)
-.for xmldoc in ${XMLDOCS}
+.    if ${PORT_OPTIONS:MDOCS}
+.      if !empty(XMLDOCS)
+.        for xmldoc in ${XMLDOCS}
 	@(cd ${WRKSRC}/${xmldoc:C/:.*$//g} && ${COPYTREE_SHARE} \* ${STAGEDIR}${DOCSDIR}/${xmldoc:C/^.*://g})
-.endfor
-.endif # XMLDOCS
-.endif # DOCS
-.endif # target(do-install)
+.        endfor
+.      endif # XMLDOCS
+.    endif # DOCS
+.  endif # target(do-install)
 .endif # !METAPORT
 
 .if !target(post-install-script)
 post-install-script:
-.if defined(EXECUTABLE)
-.for exe in ${EXECUTABLE}
-	@${ECHO_CMD} 'bin/${exe}' >>${TMPPLIST}
-.endfor
-.endif # EXECUTABLE
-	@for dir in ${CABAL_DIRS}; do if [ -d ${STAGEDIR}$${dir} ]; then ${FIND} -ds ${STAGEDIR}$${dir} \
+.  if defined(EXECUTABLE)
+.    for exe in ${EXECUTABLE}
+	${ECHO_CMD} 'bin/${exe}' >>${TMPPLIST}
+.    endfor
+.  endif # EXECUTABLE
+	for dir in ${CABAL_DIRS}; do if [ -d ${STAGEDIR}$${dir} ]; then ${FIND} -ds ${STAGEDIR}$${dir} \
 		-type f -print | ${SED} -E -e 's,^${STAGEDIR}${PREFIX}/?,,' >> ${TMPPLIST}; fi ; done
+	@${ECHO} "================ CONTENTS OF TMPPLIST =================== "
+	cat ${TMPPLIST}
+	@${ECHO} "========================================================= "
 .endif # target(post-install-script)
 
 .if !defined(METAPORT)
 add-plist-post: add-plist-cabal
 add-plist-cabal:
 
-.if !defined(STANDALONE)
-	@${ECHO_CMD} '@unexec ${LOCALBASE}/bin/ghc-pkg unregister --force ${PORTNAME}-${PORTVERSION}' >> ${TMPPLIST}
-.endif
+.  if !defined(STANDALONE)
+	@${ECHO_CMD} '@postunexec ${LOCALBASE}/bin/ghc-pkg unregister --force ${PORTNAME}-${PORTVERSION}' >> ${TMPPLIST}
+.  endif
 
-.if defined(HADDOCK_AVAILABLE) && ${PORT_OPTIONS:MDOCS}
-	@(${ECHO_CMD} '@unexec ${RM} ${LOCALBASE}/${GHC_LIB_DOCSDIR_REL}/${PACKAGE}' ; \
-	  ${ECHO_CMD} '@unexec cd ${LOCALBASE}/${GHC_LIB_DOCSDIR_REL} && \
-	    ${RM} doc-index*.html && ./gen_contents_index') >> ${TMPPLIST}
-.endif
-
-.if !defined(STANDALONE)
-	@${ECHO_CMD} '@exec ${SH} %D/${CABAL_LIBDIR_REL}/${CABAL_LIBSUBDIR}/register.sh > /dev/null' >> ${TMPPLIST}
-.endif
-
-.if defined(HADDOCK_AVAILABLE) && ${PORT_OPTIONS:MDOCS}
-	@(${ECHO_CMD} '@exec ${LN} -s ${DOCSDIR}/html ${LOCALBASE}/${GHC_LIB_DOCSDIR_REL}/${PACKAGE} && \
+.  if defined(HADDOCK_AVAILABLE) && ${PORT_OPTIONS:MDOCS}
+# GHC_LIB_DOCSDIR_REL=	share/doc/ghc-${GHC_VERSION}/html/libraries
+	(${ECHO} '@postexec ${LN} -s ${DOCSDIR}/html ${LOCALBASE}/${GHC_LIB_DOCSDIR_REL}/${PACKAGE} && \
 	  cd ${LOCALBASE}/${GHC_LIB_DOCSDIR_REL} && \
 	  ${RM} doc-index*.html && ./gen_contents_index') >> ${TMPPLIST}
-.endif
+	(${ECHO} '@postunexec ${RM} -r ${LOCALBASE}/${GHC_LIB_DOCSDIR_REL}/${PACKAGE}' ; \
+	 ${ECHO} '@postunexec cd ${LOCALBASE}/${GHC_LIB_DOCSDIR_REL} && \
+	    ${RM} doc-index*.html && ./gen_contents_index') >> ${TMPPLIST}
+# Don't install index files
+	${ECHO} "@comment share/doc/ghc-%%GHC_VERSION%%/html/libraries/index.html" >> ${TMPPLIST}
+.  endif
+
+.  if !defined(STANDALONE)
+	@${ECHO_CMD} '@postexec ${SH} %D/${CABAL_LIBDIR_REL}/${CABAL_LIBSUBDIR}/register.sh > /dev/null' >> ${TMPPLIST}
+.  endif
 
 .endif # !METAPORT

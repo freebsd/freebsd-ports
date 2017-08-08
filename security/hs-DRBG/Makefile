@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	DRBG
-PORTVERSION=	0.5.4
+PORTVERSION=	0.5.5
 CATEGORIES=	security haskell
 
 MAINTAINER=	haskell@FreeBSD.org

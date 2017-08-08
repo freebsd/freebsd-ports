@@ -1,2 +1,3 @@
-SHA256 (cabal/warp-tls-3.1.1.tar.gz) = 5e9a75cc877f52053c5e1ceb15427ac28bf9937750336af0f71569b4e9e213bd
-SIZE (cabal/warp-tls-3.1.1.tar.gz) = 6426
+TIMESTAMP = 1499625382
+SHA256 (cabal/warp-tls-3.2.4.tar.gz) = 05d1aad58fa1a16a652369d7247d4c68b86af0b8febaea9ab7969c121f956e17
+SIZE (cabal/warp-tls-3.2.4.tar.gz) = 7158
