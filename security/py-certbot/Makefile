@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	certbot
-PORTVERSION=	0.16.0
-PORTREVISION=	1
+PORTVERSION=	0.17.0
 PORTEPOCH=	1
 CATEGORIES=	security python
 MASTER_SITES=	CHEESESHOP
@@ -36,7 +35,7 @@ USE_PYTHON=	autoplist concurrent distutils
 NO_ARCH=	yes
 
 post-patch:
-	${REINPLACE_CMD} \
+	@${REINPLACE_CMD} \
 		-e 's|/etc/|${LOCALBASE}/etc/|' \
 		-e 's|/var/lib|/var/db|' \
 		${WRKSRC}/${PORTNAME}/constants.py
