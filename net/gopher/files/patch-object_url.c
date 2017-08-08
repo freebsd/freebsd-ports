@@ -1,6 +1,6 @@
---- object/url.c.orig	Sun Aug 22 15:54:02 2004
-+++ object/url.c	Sun Aug 22 15:54:25 2004
-@@ -362,7 +362,8 @@
+--- object/url.c.orig	2003-08-18 16:58:57 UTC
++++ object/url.c
+@@ -362,7 +362,8 @@ URLparse(Url *url)
            case ftp:
            case unset:
            case unknown:
