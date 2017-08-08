@@ -7,6 +7,8 @@ CATEGORIES=	security
 MAINTAINER=	shawn.webb@hardenedbsd.org
 COMMENT=	Runtime process infection made easy
 
+LICENSE=	BSD2CLAUSE
+
 MAKE_JOBS_UNSAFE=	yes
 
 USE_GITHUB=	yes
@@ -19,4 +21,3 @@ LIBDIR?=	${PREFIX}/lib
 USE_HARDENING=	pie relro
 
 .include <bsd.port.mk>
-
