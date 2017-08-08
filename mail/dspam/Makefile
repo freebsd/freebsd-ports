@@ -7,7 +7,7 @@
 
 PORTNAME=	dspam
 PORTVERSION=	3.10.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	mail
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -340,7 +340,7 @@ CONFIGURE_ARGS+=	--with-delivery-agent='${LOCALBASE}/cyrus/bin/deliver'
 .endif
 
 .if ${PORT_OPTIONS:MDOVECOT2}
-RUN_DEPENDS+=	${LOCALBASE}/libexec/dovecot/dovecot-lda:mail/dovecot2
+RUN_DEPENDS+=	${LOCALBASE}/libexec/dovecot/dovecot-lda:mail/dovecot
 CONFIGURE_ARGS+=	--with-delivery-agent='${LOCALBASE}/libexec/dovecot/dovecot-lda'
 .endif
 

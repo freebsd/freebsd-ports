@@ -5,6 +5,17 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20170807:
+  AFFECTS: users of mail/dovecot2 and mail/dovecot2-pigeonhole
+  AUTHOR: adamw@FreeBSD.org
+
+  Now that dovecot1 has been removed from the ports tree, dovecot2
+  and dovecot2-pigeonhole have been renamed to simply dovecot and
+  dovecot-pigeonhole.
+
+  Depending upon your local setup, you may need to manually run
+  'pkg delete dovecot2' and 'pkg install dovecot' (or -pigeonhole).
+
 20170806:
   AFFECTS: users of mail/dovecot2-antispam-plugin
   AUTHOR: adamw@FreeBSD.org

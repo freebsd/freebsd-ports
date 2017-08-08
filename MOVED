@@ -1274,7 +1274,6 @@ www/xpi-statusbarclock||2010-10-01|Has expired: Development has been ceased and 
 devel/cego-base|devel/lfc|2010-10-02|Project was renamed
 devel/cego-xml|devel/lfcxml|2010-10-02|Project was renamed
 www/p5-WWW-Pastebin-RafbNet-Create||2010-10-02|http://rafb.net service is dead
-devel/maven||2010-10-03|Has expired: Development has been ceased, superseded by devel/maven2
 games/daimonin-client|games/daimonin|2010-10-04|Renamed
 sysutils/rsyslog55|sysutils/rsyslog5|2010-10-05|Renamed
 sysutils/rsyslog55-dbi|sysutils/rsyslog5-dbi|2010-10-05|Renamed
@@ -8771,7 +8770,6 @@ sysutils/gosa||2016-11-20|Has expired: this version of gosa cannot be fixed (req
 security/krb5-112||2016-11-20|Has expired: EOL twelve months after release of krb5-1.14
 astro/osmium|astro/libosmium|2016-11-23|Rename according to upstream
 deskutils/xfce4-notification-daemon|deskutils/xfce4-notifyd|2016-11-23|Has expired: No longer supported by upstream, replaced with deskutils/xfce4-notifyd
-archivers/brotli|archivers/py-brotli|2016-11-24|Brotli is a python module
 textproc/clucene-qt5||2016-11-25|Reintegrated into devel/qt5-help
 devel/go-shellwords||2016-11-26|Integrated into textproc/fzf build procedure
 www/gecko-sharp20||2016-11-27|Has expired: Broken, no upstream found and no release in 8 years
@@ -8931,7 +8929,6 @@ www/rubygem-activeresource||2017-01-07|Has expired: Upstream support ended
 www/rubygem-responders-rails3||2017-01-07|Has expired: Depends on deprecated www/rubygem-railties
 www/rubygem-jquery-ui-rails||2017-01-07|Has expired: Depends on deprecated www/rubygem-railties
 www/rubygem-haml-rails||2017-01-07|Has expired: Depends on deprecated www/rubygem-actionpack
-www/rubygem-jquery-rails||2017-01-07|Has expired: Depends on deprecated www/rubygem-railties
 www/rubygem-railties||2017-01-07|Has expired: Upstream support ended
 www/rubygem-actionpack||2017-01-07|Has expired: Upstream support ended
 databases/rubygem-rubyrep||2017-01-07|Has expired: Depends on deprecated databases/rubygem-activerecord
@@ -9474,10 +9471,10 @@ devel/ffcall|devel/libffcall|2017-07-28|Project was renamed
 databases/grass|databases/grass6|2017-07-30|Project was renamed to allow for grass7
 net/rubygem-oauth212|net/rubygem-oauth2|2017-07-31|Has expired: Only created for www/gitlab; please use net/rubygem-oauth2 instead
 textproc/rubygem-liquid3|textproc/rubygem-liquid|2017-07-31|Has expired: Use textproc/rubygem-liquid instead
-mail/dovecot2-antispam-plugin|mail/dovecot2-pigeonhole|2017-07-31|Has expired: Use pigeonhole instead. See https://wiki2.dovecot.org/HowTo/AntispamWithSieve
-mail/dovecot-antispam|mail/dovecot2-antispam-plugin|2017-07-31|Has expired: Dovecot-1.x is deprecated. Use dovecot2 and dovecot2-antispam-plugin instead
-mail/dovecot-sieve|mail/dovecot2-pigeonhole|2017-07-31|Has expired: Dovecot-1.x is deprecated. Use dovecot2 and dovecot-pigeonhole instead
-mail/dovecot-managesieve|mail/dovecot2-pigeonhole|2017-07-31|Has expired: Dovecot-1.x is deprecated. Use dovecot2 and dovecot-pigeonhole instead
+mail/dovecot2-antispam-plugin|mail/dovecot-pigeonhole|2017-07-31|Has expired: Use pigeonhole instead. See https://wiki2.dovecot.org/HowTo/AntispamWithSieve
+mail/dovecot-antispam|mail/dovecot-pigeonhole|2017-07-31|Has expired: Dovecot-1.x is deprecated. Use dovecot2 and dovecot2-antispam-plugin instead
+mail/dovecot-sieve|mail/dovecot-pigeonhole|2017-07-31|Has expired: Dovecot-1.x is deprecated. Use dovecot2 and dovecot-pigeonhole instead
+mail/dovecot-managesieve|mail/dovecot-pigeonhole|2017-07-31|Has expired: Dovecot-1.x is deprecated. Use dovecot2 and dovecot-pigeonhole instead
 www/rubygem-jquery-ui-rails5-rails4|www/rubygem-jquery-ui-rails-rails4|2017-07-31|Has expired: Only created for www/gitlab; please use www/rubygem-jquery-ui-rails-rails4 instead
 security/rubygem-omniauth13|security/rubygem-omniauth|2017-07-31|Has expired: Only created for www/gitlab; please use security/rubygem-omniauth instead
 devel/rubygem-health_check22|devel/rubygem-health_check|2017-07-31|Has expired: Only created for www/gitlab; please use devel/rubygem-health_check instead
@@ -9490,7 +9487,6 @@ multimedia/avbin||2017-07-31|Has expired: Unfetchable for more than six months (
 games/gondola||2017-07-31|Depends on expired multimedia/avbin
 sysutils/flyback||2017-07-31|Unfetchable for more than six months (google code has gone away)
 multimedia/py-ffmpeg||2017-07-31|Has expired: Depreciated upstream in favour of ffpyplayer
-mail/dovecot|mail/dovecot2|2017-07-31|Has expired: Deprecated by upstream years ago. Use mail/dovecot2 instead
 devel/cloudabi-binutils-aarch64|devel/cloudabi-toolchain|2017-07-31|ELF-toolchain based tools should be used instead
 devel/cloudabi-binutils-x86_64|devel/cloudabi-toolchain|2017-07-31|ELF-toolchain based tools should be used instead
 security/openvas-libraries|security/openvas8-libraries|2017-08-03|Renamed to include openvas 9 ports
@@ -9499,3 +9495,5 @@ security/openvas-manager|security/openvas8-manager|2017-08-03|Renamed to include
 security/openvas-scanner|security/openvas8-scanner|2017-08-03|Renamed to include openvas 9 ports. It reflects a better name
 security/greenbone-security-assistant|security/greenbone-security-assistant8|2017-08-03|Renamed to include openvas 9 ports. It reflects a better name
 sysutils/consolekit|sysutils/consolekit2|2017-08-05|Continuation of the consolekit project
+mail/dovecot2|mail/dovecot|2017-08-07|Renamed to mail/dovecot
+mail/dovecot2-pigeonhole|mail/dovecot-pigeonhole|2017-08-07|Renamed to mail/dovecot-pigeonhole

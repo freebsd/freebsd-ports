@@ -150,7 +150,7 @@ post-install:
 # FreeBSD base system provides.  sbruno 02Aug2017
 .if ${CC} == /nxb-bin/usr/bin/cc
 	@${REINPLACE_CMD} -e 's=/nxb-bin==' \
-		${STAGEDIR}${PREFIX}/lib/python3.5./_sysconfigdata.py
+		${STAGEDIR}${PREFIX}/lib/python3.5/_sysconfigdata.py
 	@${REINPLACE_CMD} -e 's=/nxb-bin==' \
 		${STAGEDIR}${PREFIX}/lib/python3.5/config-3.5m/Makefile
 .endif

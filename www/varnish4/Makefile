@@ -4,7 +4,6 @@ PORTNAME=	varnish
 PORTVERSION=	4.1.8
 PORTREVISION=	0
 CATEGORIES=	www
-MASTER_SITES=	http://repo.varnish-cache.org/source/
 PKGNAMESUFFIX=	4
 
 MAINTAINER=	feld@FreeBSD.org
@@ -12,6 +11,7 @@ COMMENT=	High-performance HTTP accelerator
 
 LICENSE=	BSD2CLAUSE
 
+BUILD_DEPENDS=	rst2man:textproc/py-docutils
 LIB_DEPENDS=	libpcre.so:devel/pcre
 
 CONFLICTS=	varnish-2.* varnish-3.*
@@ -23,9 +23,13 @@ CPE_VENDOR=	varnish-cache
 CFLAGS+=	-I${LOCALBASE}/include
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=${PREFIX} --enable-tests
-CONFIGURE_ENV=	RST2MAN=true
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	varnishcache
+GH_PROJECT=	varnish-cache
+GH_TAGNAME=	varnish-${PORTVERSION}
 
 USERS=		varnish varnishlog
 GROUPS=		varnish
