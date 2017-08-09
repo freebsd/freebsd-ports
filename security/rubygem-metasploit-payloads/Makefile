@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	metasploit-payloads
-PORTVERSION=	1.2.37
+PORTVERSION=	1.2.46
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
@@ -13,8 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 NO_ARCH=	yes
 STRIP=
-
-USE_RUBY=	yes
 USES=		gem
+USE_RUBY=	yes
 
 .include <bsd.port.mk>
