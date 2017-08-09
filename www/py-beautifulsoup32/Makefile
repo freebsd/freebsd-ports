@@ -12,8 +12,6 @@ DISTNAME=	BeautifulSoup-${PORTVERSION}
 MAINTAINER=	mwm@mired.org
 COMMENT=	HTML/XML Parser for Python
 
-EXPLICIT_SAFESTACK=		yes
-
 USES=		python:2
 USE_PYTHON=	autoplist distutils
 

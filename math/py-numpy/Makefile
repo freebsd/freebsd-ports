@@ -26,8 +26,7 @@ USES=		fortran python
 USE_PYTHON=	concurrent distutils py3kplist
 LDFLAGS+=	-shared
 
-NOPIE_PORTS=	yes
-NORELRO_PORTS=	yes
+USE_HARDENING=	# empty
 
 OPTIONS_DEFINE=		DOCS SUITESPARSE TESTS
 OPTIONS_SINGLE=		BLASLIB

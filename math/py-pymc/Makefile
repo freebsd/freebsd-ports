@@ -28,8 +28,7 @@ RUN_DEPENDS=	${PYNUMPY} \
 USES=		python
 USE_PYTHON=	autoplist distutils
 
-NOPIE_PORTS=	yes
-NORELRO_PORTS=	yes
+USE_HARDENING=	# empty
 
 LDFLAGS+=	-shared
 
