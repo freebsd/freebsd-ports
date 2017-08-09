@@ -17,6 +17,8 @@ BROKEN_powerpc64=	fails to compile: clang: not found
 USES=		gmake compiler:c11
 USE_RC_SUBR=	zerotier
 
+USE_HARDENING=	pie relro safestack
+
 USE_GITHUB=	yes
 GH_PROJECT=	ZeroTierOne
 
