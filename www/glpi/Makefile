@@ -3,7 +3,7 @@
 
 PORTNAME=	glpi
 PORTVERSION=	9.1.2
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/glpi-project/glpi/releases/download/${PORTVERSION}/
@@ -15,7 +15,7 @@ LICENSE=	GPLv2
 
 USES=		cpe gettext php tar:tgz
 CPE_VENDOR=	glpi-project
-USE_PHP=	ctype curl fileinfo filter gd json mbstring mysqli \
+USE_PHP=	ctype curl dom fileinfo filter gd json mbstring mysqli \
 		pcre session simplexml wddx xml xmlrpc zlib
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
