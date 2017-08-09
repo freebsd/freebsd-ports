@@ -36,6 +36,10 @@
     SUBDIR += emerald-themes
     SUBDIR += fluxbox-tenr-styles-pack
     SUBDIR += fvwm-themes
+    SUBDIR += ghostbsd-icons
+    SUBDIR += ghostbsd-mate-themes
+    SUBDIR += ghostbsd-wallpapers
+    SUBDIR += ghostbsd-wallpapers-new
     SUBDIR += gnome-backgrounds
     SUBDIR += gnome-icon-theme-symbolic
     SUBDIR += gnome-icons

@@ -26,6 +26,7 @@
     SUBDIR += evangeline
     SUBDIR += ezbounce
     SUBDIR += fisg
+    SUBDIR += ghostbsd-irc
     SUBDIR += gruftistats
     SUBDIR += gseen.mod
     SUBDIR += hexchat

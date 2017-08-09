@@ -5836,6 +5836,7 @@
     SUBDIR += spin
     SUBDIR += splint
     SUBDIR += srecord
+    SUBDIR += ssft
     SUBDIR += st
     SUBDIR += stack
     SUBDIR += staf

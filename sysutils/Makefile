@@ -290,6 +290,7 @@
     SUBDIR += farbot
     SUBDIR += fastest_cvsup
     SUBDIR += fatback
+    SUBDIR += fbsdupdatecheck
     SUBDIR += fconfig
     SUBDIR += fcron
     SUBDIR += fdupes
@@ -376,6 +377,7 @@
     SUBDIR += gapcmon
     SUBDIR += garcon
     SUBDIR += gather
+    SUBDIR += gbi
     SUBDIR += gcdmaster
     SUBDIR += gcombust
     SUBDIR += gconf-editor
@@ -394,6 +396,8 @@
     SUBDIR += gkrellm2
     SUBDIR += gkrelltop
     SUBDIR += gksu
+    SUBDIR += ghostbsd-bug-report
+    SUBDIR += ghostbsd-grub2-settings
     SUBDIR += gnome_subr
     SUBDIR += gnome-control-center
     SUBDIR += gnome-device-manager
@@ -464,6 +468,7 @@
     SUBDIR += intel-nvmupdate
     SUBDIR += intel-pcm
     SUBDIR += intel-qcu
+    SUBDIR += inxi
     SUBDIR += iocell
     SUBDIR += iogen
     SUBDIR += iograph

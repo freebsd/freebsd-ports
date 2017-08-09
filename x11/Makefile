@@ -29,6 +29,8 @@
     SUBDIR += brightside
     SUBDIR += cinnamon
     SUBDIR += cinnamon-desktop
+    SUBDIR += cinnamon-installed-settings
+    SUBDIR += cinnamon-live-settings
     SUBDIR += cinnamon-menus
     SUBDIR += cinnamon-screensaver
     SUBDIR += cinnamon-session
@@ -74,11 +76,19 @@
     SUBDIR += gcb
     SUBDIR += gdkxft
     SUBDIR += gdm
+    SUBDIR += ghostbsd-gdm-theme
+    SUBDIR += ghostbsd-installed-common-settings
+    SUBDIR += ghostbsd-kdm-theme
+    SUBDIR += ghostbsd-ksplash-theme
+    SUBDIR += ghostbsd-live-common-settings
+    SUBDIR += ghostbsd-slim-theme
     SUBDIR += glproto
     SUBDIR += gmrun
     SUBDIR += gnome-clipboard-daemon
     SUBDIR += gnome-desktop
     SUBDIR += gnome-desktop-reference
+    SUBDIR += gnome-installed-settings
+    SUBDIR += gnome-live-settings
     SUBDIR += gnome-menus
     SUBDIR += gnome-pie
     SUBDIR += gnome-session
@@ -119,6 +129,8 @@
     SUBDIR += kactivitymanagerd
     SUBDIR += kb2mb2
     SUBDIR += kbproto
+    SUBDIR += kde-installed-settings
+    SUBDIR += kde-live-settings
     SUBDIR += kde4
     SUBDIR += kde4-baseapps
     SUBDIR += kde4-runtime
@@ -222,6 +234,8 @@
     SUBDIR += mate-applets
     SUBDIR += mate-base
     SUBDIR += mate-desktop
+    SUBDIR += mate-installed-settings
+    SUBDIR += mate-live-settings
     SUBDIR += mate-menus
     SUBDIR += mate-panel
     SUBDIR += mate-screensaver
@@ -308,6 +322,7 @@
     SUBDIR += sselp
     SUBDIR += stalonetray
     SUBDIR += startup-notification
+    SUBDIR += station-tweak
     SUBDIR += sterm
     SUBDIR += stjerm
     SUBDIR += swarp
@@ -398,6 +413,8 @@
     SUBDIR += xev
     SUBDIR += xextproto
     SUBDIR += xeyes
+    SUBDIR += xfce-installed-settings
+    SUBDIR += xfce-live-settings
     SUBDIR += xf86dga
     SUBDIR += xf86dgaproto
     SUBDIR += xf86driproto

@@ -12,7 +12,9 @@
     SUBDIR += distilator
     SUBDIR += fastest_sites
     SUBDIR += fbsdmon
+    SUBDIR += fbsdpkgupdate
     SUBDIR += freebsd-bugzilla-cli
+    SUBDIR += gbsdserver
     SUBDIR += genpatch
     SUBDIR += genplist
     SUBDIR += hs-porte
@@ -74,6 +76,7 @@
     SUBDIR += symports
     SUBDIR += synth
     SUBDIR += tinderbox
+    SUBDIR += update-station
     SUBDIR += wanted-ports
 
 .include <bsd.port.subdir.mk>
