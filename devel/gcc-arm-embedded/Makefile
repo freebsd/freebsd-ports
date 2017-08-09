@@ -2,7 +2,7 @@
 
 PORTNAME=	gcc-arm-embedded
 PORTVERSION=	6.3.20170628
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://developer.arm.com/-/media/Files/downloads/gnu-rm/6-2017q2/
 DISTNAME=	${ORIGINAL_PACKAGE_NAME}-src
@@ -19,7 +19,7 @@ OPTIONS_DEFINE=	PYGDB EXAMPLES HTML PDF DOCS
 OPTIONS_DEFAULT=PYGDB
 HTML_DESC=	Install HTML documentation
 PDF_DESC=	Install PDF documentation (requires TeX, it is huge)
-PYGDB_DESC=	Build and install pyhon-enabled gdb in addition to standard one
+PYGDB_DESC=	Build and install python-enabled gdb in addition to standard one
 
 PDF_USE=		TEX=base:build,tex:build,dvipsk:build
 PDF_BUILD_DEPENDS=	texi2dvi:print/texinfo
@@ -35,10 +35,9 @@ LIB_DEPENDS=		libexpat.so:textproc/expat2 \
 			libgmp.so:math/gmp \
 			libmpfr.so:math/mpfr \
 			libmpc.so:math/mpc \
-			libisl.so:devel/isl \
-			libelf.so:devel/libelf
+			libisl.so:devel/isl
 
-USES=			bison compiler cpe gmake iconv makeinfo tar:bzip2
+USES=			bison compiler cpe gmake gettext-runtime iconv makeinfo tar:bzip2
 
 GNU_CONFIGURE=	yes
 
