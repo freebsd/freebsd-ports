@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cadabra2
-PORTVERSION=	2.1.4
+PORTVERSION=	2.1.5
 CATEGORIES=	math
 
 MAINTAINER=	yuri@rawbw.com
@@ -23,13 +23,12 @@ LIB_DEPENDS=	libboost_python.so:devel/boost-python-libs \
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/sympy/__init__.py:math/py-sympy \
 		${PYTHON_SITELIBDIR}/matplotlib/__init__.py:math/py-matplotlib
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	kpeeters
-
 OPTIONS_DEFINE=	GUI
 OPTIONS_DEFAULT=GUI
 
 USES=		compiler:c++14-lang cmake gettext-runtime pkgconfig python:2 sqlite
+USE_GITHUB=	yes
+GH_ACCOUNT=	kpeeters
 GUI_USE=	GNOME=gtkmm30,gdkpixbuf2
 USE_TEX=	base texmf texhash
 USE_LDCONFIG=	yes
