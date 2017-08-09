@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Thread-Queue
-PORTVERSION=	3.07
+PORTVERSION=	3.12
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -13,6 +13,7 @@ COMMENT=	Perl5 thread-safe queues
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
+NO_ARCH=	YES
 USES=		perl5
 USE_PERL5=	configure
 
