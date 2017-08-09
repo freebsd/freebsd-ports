@@ -1,8 +1,9 @@
-SHA256 (ghc-7.10.2-src.tar.xz) = 54cd73755b784d78e2f13d5eb161bfa38d3efee9e8a56f7eb6cd9f2d6e2615f5
-SIZE (ghc-7.10.2-src.tar.xz) = 11113204
-SHA256 (hscolour-1.23.tar.gz) = 97167eaecc309eff51317d6e925881bc9f27921bd52692121f0fc5aaee1791b0
-SIZE (hscolour-1.23.tar.gz) = 26027
+TIMESTAMP = 1499672924
+SHA256 (ghc-8.0.2-src.tar.xz) = 11625453e1d0686b3fa6739988f70ecac836cadc30b9f0c8b49ef9091d6118b1
+SIZE (ghc-8.0.2-src.tar.xz) = 10687760
 SHA256 (ghc-7.10.2-boot-i386-freebsd.tar.xz) = 5cadd55316fe6c1bf275d0f44f10b46342096922a15ecb9fb78c80fc293f901a
 SIZE (ghc-7.10.2-boot-i386-freebsd.tar.xz) = 39858716
 SHA256 (ghc-7.10.2-boot-amd64-freebsd.tar.xz) = 4af0ee0795537baa11a96fba23477f8390ccb5f45910cda119d0a16bdebaedc8
 SIZE (ghc-7.10.2-boot-amd64-freebsd.tar.xz) = 49833224
+SHA256 (hscolour-1.24.1.tar.gz) = e46fe3de8ed6f96e2216b94b7608d01919bc86b15dd8d0ec7e71c0e7e5bf79c8
+SIZE (hscolour-1.24.1.tar.gz) = 28717

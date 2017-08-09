@@ -3,6 +3,7 @@
 
 PORTNAME=	fzf
 PORTVERSION=	0.16.10
+PORTREVISION=	1
 CATEGORIES=	textproc
 
 MAINTAINER=	sascha@root-login.org
@@ -23,19 +24,21 @@ GH_TUPLE=	mattn:go-runewidth:14207d2:runwidth/src/github.com/mattn/go-runewidth 
 		gdamore:tcell:44772c1:tcell/src/github.com/gdamore/tcell \
 		golang:crypto:b8a2a83:terminal/src/golang.org/x/crypto
 
+SUB_FILES=	pkg-message
 PLIST_FILES=	bin/fzf man/man1/fzf.1.gz
+PORTEXAMPLES=	shell/completion.bash shell/completion.zsh \
+		shell/key-bindings.bash shell/key-bindings.fish \
+		shell/key-bindings.zsh
 
-STRIP=		# do not strip go binaries
-
-OPTIONS_DEFINE=	TMUX
-TMUX_DESC=	Install fzf-tmux (depends on BASH)
-
+OPTIONS_DEFINE=		EXAMPLES TMUX
 OPTIONS_DEFAULT=	TMUX
+
+TMUX_DESC=	Install fzf-tmux (depends on BASH)
 
 TMUX_RUN_DEPENDS=	bash:shells/bash
 TMUX_PLIST_FILES=	bin/fzf-tmux man/man1/fzf-tmux.1.gz
 
-GOENV=          GOPATH=${WRKSRC} CGO_CFLAGS="${CGO_CFLAGS}" \
+GOENV=		GOPATH=${WRKSRC} CGO_CFLAGS="${CGO_CFLAGS}" \
 		CGO_LDFLAGS="${CGO_LDFLAGS}" GOBIN=""
 
 do-build:
@@ -46,6 +49,9 @@ do-build:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/github.com/${GH_ACCOUNT_DEFAULT}/${PORTNAME}/bin/${PORTNAME} \
 		${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	(cd ${WRKSRC} && \
+	    ${COPYTREE_SHARE} shell ${STAGEDIR}${EXAMPLESDIR})
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/man/man1/fzf.1 ${STAGEDIR}${MANPREFIX}/man/man1

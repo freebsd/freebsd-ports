@@ -2,6 +2,7 @@
 
 PORTNAME=	kodi
 DISTVERSION=	17.3
+PORTREVISION=	1
 CATEGORIES=	multimedia java
 
 MAINTAINER=	mickael.maillot@gmail.com
@@ -58,12 +59,10 @@ LIB_DEPENDS=	libass.so:multimedia/libass \
 		libyajl.so:devel/yajl
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3
 
-USE_GITHUB=	yes
-GH_TUPLE=	xbmc:xbmc:fc1619b \
-		xbmc:FFmpeg:3.1.6-Krypton:ffmpeg/tools/depends/target/ffmpeg \
-		xbmc:libdvdcss:2f12236:libdvdcss/tools/depends/target/libdvdcss/native \
-		xbmc:libdvdnav:981488f:libdvdnav/tools/depends/target/libdvdnav/native \
-		xbmc:libdvdread:17d99db:libdvdread/tools/depends/target/libdvdread/native
+ONLY_FOR_ARCHS=	amd64 armv6 i386
+KODI_ARCH_i386=	x86
+KODI_ARCH_amd64=x86_64
+KODI_ARCH_armv6=armv6
 
 USES=		autoreconf:build compiler:c++11-lib gettext gmake iconv jpeg \
 		libtool pkgconfig python:-2.7 ssl
@@ -76,10 +75,18 @@ NOPRECIOUSMAKEVARS=	yes
 CONFIGURE_ENV=	OPENSSL_LIBS="-L${OPENSSLLIB}" \
 		OPENSSL_CFLAGS="-I${OPENSSLINC}"
 
-ONLY_FOR_ARCHS=	amd64 armv6 i386
-KODI_ARCH_i386=	x86
-KODI_ARCH_amd64=x86_64
-KODI_ARCH_armv6=armv6
+KODI_CODENAME=		Krypton
+FFMPEG_VERS=		3.1.6
+LIBDVDCSS_TAGNAME=	2f12236
+LIBDVDNAV_TAGNAME=	981488f
+LIBDVDREAD_TAGNAME=	17d99db
+
+USE_GITHUB=	yes
+GH_TUPLE=	xbmc:xbmc:${PORTVERSION}-${KODI_CODENAME} \
+		xbmc:FFmpeg:${FFMPEG_VERS}-${KODI_CODENAME}:ffmpeg/tools/depends/target/ffmpeg \
+		xbmc:libdvdcss:${LIBDVDCSS_TAGNAME}:libdvdcss/tools/depends/target/libdvdcss/native \
+		xbmc:libdvdnav:${LIBDVDNAV_TAGNAME}:libdvdnav/tools/depends/target/libdvdnav/native \
+		xbmc:libdvdread:${LIBDVDREAD_TAGNAME}:libdvdread/tools/depends/target/libdvdread/native
 
 PLIST_SUB=	ARCH=${KODI_ARCH_${ARCH}}
 

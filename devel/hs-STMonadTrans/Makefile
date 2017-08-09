@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	STMonadTrans
-PORTVERSION=	0.3.3
+PORTVERSION=	0.4.3
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org

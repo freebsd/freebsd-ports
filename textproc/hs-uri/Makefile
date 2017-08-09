@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	uri
-PORTVERSION=	0.1.6.3
+PORTVERSION=	0.1.6.4
 CATEGORIES=	textproc haskell
 
 MAINTAINER=	haskell@FreeBSD.org

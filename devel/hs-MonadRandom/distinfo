@@ -1,2 +1,3 @@
-SHA256 (cabal/MonadRandom-0.4.tar.gz) = d32f3f7a8390125f43a67b78741c6655452dfc4388009ab4ca5a265ab5b86f93
-SIZE (cabal/MonadRandom-0.4.tar.gz) = 5064
+TIMESTAMP = 1499445934
+SHA256 (cabal/MonadRandom-0.5.1.tar.gz) = 9e3f0f92807285302036dc504066ae6d968c8b0b4c25d9360888f31fe1730d87
+SIZE (cabal/MonadRandom-0.5.1.tar.gz) = 10326

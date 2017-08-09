@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	kqueue
-PORTVERSION=	0.1.2.6
-PORTREVISION=	2
+PORTVERSION=	0.2
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org

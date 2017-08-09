@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	blaze-markup
-PORTVERSION=	0.7.0.2
+PORTVERSION=	0.8.0.0
 CATEGORIES=	textproc haskell
 
 MAINTAINER=	haskell@FreeBSD.org

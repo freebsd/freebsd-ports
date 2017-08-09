@@ -1,2 +1,3 @@
-SHA256 (cabal/utf8-string-1.tar.gz) = 79f388d3f089e0c483c1dc1afad524b06f1abb6e288ed9029f934cffb3b2ba08
-SIZE (cabal/utf8-string-1.tar.gz) = 7707
+TIMESTAMP = 1499444718
+SHA256 (cabal/utf8-string-1.0.1.1.tar.gz) = fb0b9e3acbe0605bcd1c63e51f290a7bbbe6628dfa3294ff453e4235fbaef140
+SIZE (cabal/utf8-string-1.0.1.1.tar.gz) = 8667

@@ -1,2 +1,3 @@
-SHA256 (cabal/blaze-markup-0.7.0.2.tar.gz) = e4068a284834d8fe68df5ec63a037b92b7c956a82c0c72d7beca8d670fd5725c
-SIZE (cabal/blaze-markup-0.7.0.2.tar.gz) = 13440
+TIMESTAMP = 1499624825
+SHA256 (cabal/blaze-markup-0.8.0.0.tar.gz) = 19e1cbb9303803273ed7f9fcf3b8b6938578afbed2bfafe5ea9fcc6d743f540f
+SIZE (cabal/blaze-markup-0.8.0.0.tar.gz) = 14054

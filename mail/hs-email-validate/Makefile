@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	email-validate
-PORTVERSION=	2.1.3
+PORTVERSION=	2.3
 CATEGORIES=	mail haskell
 
 MAINTAINER=	haskell@FreeBSD.org

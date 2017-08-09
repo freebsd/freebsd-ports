@@ -3,14 +3,15 @@ bin/ghci
 bin/ghc-pkg
 bin/runhaskell
 bin/runghc
+%%DOCS%%bin/haddock
 bin/hp2ps
 bin/hpc
 bin/hsc2hs
 bin/ghc-%%GHC_VERSION%%
 bin/ghci-%%GHC_VERSION%%
 bin/ghc-pkg-%%GHC_VERSION%%
-bin/haddock-ghc-%%GHC_VERSION%%
+%%DOCS%%bin/haddock-ghc-%%GHC_VERSION%%
 bin/runghc-%%GHC_VERSION%%
-%%PORTDOCS%%man/man1/ghc.1.gz
-@exec /bin/ln -sf %D/bin/haddock-ghc-%%GHC_VERSION%% %D/bin/haddock || return true
-@unexec /bin/rm -f %D/bin/haddock || return true
+%%DOCS%%man/man1/ghc.1.gz
+%%DOCS%%@postexec /bin/ln -sf %D/bin/haddock-ghc-%%GHC_VERSION%% %D/bin/haddock || return true
+%%DOCS%%@postunexec /bin/rm -f %D/bin/haddock || return true

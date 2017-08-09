@@ -2,7 +2,7 @@
 
 PORTNAME=	regex-posix
 PORTVERSION=	0.95.2
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	textproc haskell
 
 MAINTAINER=	haskell@FreeBSD.org

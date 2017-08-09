@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	snap-server
-PORTVERSION=	0.9.5.1
+PORTVERSION=	1.0.2.2
 CATEGORIES=	www haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -9,11 +9,9 @@ COMMENT=	Fast, iteratee-based, epoll-enabled web server for the Snap Framework
 
 LICENSE=	BSD3CLAUSE
 
-USE_CABAL=	attoparsec>=0.10 attoparsec-enumerator>=0.3 \
-		blaze-builder>=0.2.1.4 blaze-builder-enumerator>=0.2.0 \
-		case-insensitive>=0.3 enumerator>=0.4.15 \
-		MonadCatchIO-transformers>=0.2.1 mtl>=2 network>=2.3 \
-		old-locale snap-core>=0.9.3 text>=0.11 unix-compat>=0.2
+USE_CABAL=	attoparsec blaze-builder case-insensitive clock io-streams \
+		io-streams-haproxy lifted-base mtl network old-locale snap-core \
+		text unix-compat vector
 
 FLAGS_DEFINE=		OPENSSL
 

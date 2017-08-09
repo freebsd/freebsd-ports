@@ -1,2 +1,3 @@
-SHA256 (cabal/x509-validation-1.6.0.tar.gz) = cc07c92402e685fafc31f1fc9d825d6e2775a7f5a423fb0b9b3453ede8349f1e
-SIZE (cabal/x509-validation-1.6.0.tar.gz) = 9691
+TIMESTAMP = 1499594943
+SHA256 (cabal/x509-validation-1.6.5.tar.gz) = d1f73197677b6d19795fc80e4a1fa93e810d567ee4e3edc74e841b3eb20e1ca4
+SIZE (cabal/x509-validation-1.6.5.tar.gz) = 10370

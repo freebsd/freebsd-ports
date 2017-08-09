@@ -1,2 +1,3 @@
-SHA256 (cabal/monad-logger-0.3.13.2.tar.gz) = c1383c4d32e1f276e3437db39418d5a4c3c3670c25c416b4f6c3fe5ad4b5e2b2
-SIZE (cabal/monad-logger-0.3.13.2.tar.gz) = 7402
+TIMESTAMP = 1499595500
+SHA256 (cabal/monad-logger-0.3.24.tar.gz) = 05e579193068769d641cbf6bf6475682497897e64640b3936f6eda66cb36e8e4
+SIZE (cabal/monad-logger-0.3.24.tar.gz) = 9525

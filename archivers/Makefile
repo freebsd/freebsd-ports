@@ -14,6 +14,7 @@
     SUBDIR += brotli
     SUBDIR += bzip
     SUBDIR += bzip2
+    SUBDIR += c-blosc
     SUBDIR += cabextract
     SUBDIR += dact
     SUBDIR += deb2targz

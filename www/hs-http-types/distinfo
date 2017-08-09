@@ -1,2 +1,3 @@
-SHA256 (cabal/http-types-0.8.6.tar.gz) = b03b1893e0148169087f64ef0b1dedcf2382865352f4306d4fa7219d118a36e0
-SIZE (cabal/http-types-0.8.6.tar.gz) = 10796
+TIMESTAMP = 1499625376
+SHA256 (cabal/http-types-0.9.1.tar.gz) = 7bed648cdc1c69e76bf039763dbe1074b55fd2704911dd0cb6b7dfebf1b6f550
+SIZE (cabal/http-types-0.9.1.tar.gz) = 12284

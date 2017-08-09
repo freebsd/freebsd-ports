@@ -2,6 +2,7 @@
 
 PORTNAME=	zlib-bindings
 PORTVERSION=	0.1.1.5
+PORTREVISION=	1
 CATEGORIES=	archivers haskell
 
 MAINTAINER=	haskell@FreeBSD.org

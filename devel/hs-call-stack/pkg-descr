@@ -1,0 +1,3 @@
+Use GHC call-stacks in a backward compatible way.
+
+WWW: https://hackage.haskell.org/package/call-stack

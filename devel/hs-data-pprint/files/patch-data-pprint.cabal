@@ -1,0 +1,10 @@
+--- data-pprint.cabal.orig	2017-07-10 15:51:41 UTC
++++ data-pprint.cabal
+@@ -72,6 +72,6 @@ library
+     pretty >= 1.0 && < 1.2,
+     mtl >= 2.0 && < 2.3,
+     deepseq >= 1.1 && < 1.5,
+-    time >= 1.2 && < 1.6,
++    time >= 1.2 && < 1.7,
+     parallel >= 3.1 && < 3.3
+ 

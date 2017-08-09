@@ -1,2 +1,3 @@
-SHA256 (cabal/memory-0.8.tar.gz) = 7eef7546b1fc9b6f1d09422d36f0218fa582f83a93452c7422e5b267e94db7de
-SIZE (cabal/memory-0.8.tar.gz) = 35030
+TIMESTAMP = 1499444278
+SHA256 (cabal/memory-0.14.6.tar.gz) = c7dec070174756f1753010585a6dcd4f958a4360634142c4e387b3475bffc160
+SIZE (cabal/memory-0.14.6.tar.gz) = 37020

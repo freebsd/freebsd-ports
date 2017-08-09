@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	http2
-PORTVERSION=	1.0.4
+PORTVERSION=	1.6.3
 CATEGORIES=	www haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -9,8 +9,8 @@ COMMENT=	HTTP/2.0 library including frames and HPACK
 
 LICENSE=	BSD3CLAUSE
 
-USE_CABAL=	aeson aeson-pretty hex mwc-random stm text \
-		unordered-containers vector word8
+USE_CABAL=	aeson aeson-pretty case-insensitive hex mwc-random psqueues \
+		stm text unordered-containers vector word8
 
 FLAGS_DISABLE=	devel
 

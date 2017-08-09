@@ -1,2 +1,3 @@
-SHA256 (cabal/optparse-applicative-0.11.0.2.tar.gz) = 31c6923c01cfd6dce0cf83f3430c17d164169f0db6ff2de9b3b294926214255a
-SIZE (cabal/optparse-applicative-0.11.0.2.tar.gz) = 30425
+TIMESTAMP = 1499447048
+SHA256 (cabal/optparse-applicative-0.14.0.0.tar.gz) = b55b32fdd5d101b2d6edb2746a66648fc2cd1b850d7adea185f201ac71b83c1a
+SIZE (cabal/optparse-applicative-0.14.0.0.tar.gz) = 53120

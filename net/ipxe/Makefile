@@ -5,7 +5,7 @@
 
 PORTNAME=	ipxe
 PORTVERSION=	20161208
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 
 MAINTAINER=	tobik@FreeBSD.org
@@ -17,6 +17,9 @@ BUILD_DEPENDS=	${LOCALBASE}/share/syslinux/bios/core/isolinux.bin:sysutils/sysli
 		bash:shells/bash \
 		mkisofs:sysutils/cdrtools
 
+USES=		gmake perl5 shebangfix
+USE_BINUTILS=	yes
+USE_GCC=	yes
 USE_GITHUB=	yes
 GH_PROJECT=	ipxe
 # iPXE hasn't had a release since 2010.
@@ -28,16 +31,21 @@ GH_PROJECT=	ipxe
 #      to be production-ready.  You should always use the latest code.
 #
 GH_TAGNAME=	26050fd4c87c50503d5bd573b2ec91703676e211
+USE_PERL5=	build
 
-USES=		gmake perl5 shebangfix
-USE_BINUTILS=	yes
-USE_GCC=	yes
 MAKE_ARGS=	PERL=${PERL} \
 		CC=${CC} \
 		HOST_CC=${CC} \
+		AS=${AS} \
+		LD=${LD} \
+		SIZE=${SIZE} \
+		AR=${AR} \
+		RANLIB=${RANLIB} \
+		OBJCOPY=${OBJCOPY} \
+		NM=${NM} \
+		OBJDUMP=${OBJDUMP} \
 		NO_WERROR=1 \
 		V=1 \
-		OBJCOPY="${LOCALBASE}/bin/objcopy" \
 		ISOLINUX_BIN="${WRKSRC}/isolinux.bin" \
 		LDLINUX_C32="${LOCALBASE}/share/syslinux/bios/com32/elflink/ldlinux/ldlinux.c32"
 WRKSRC_SUBDIR=	src

@@ -350,6 +350,7 @@
     SUBDIR += hs-cairo
     SUBDIR += hs-dia-base
     SUBDIR += hs-dia-functions
+    SUBDIR += hs-graphviz
     SUBDIR += hs-svgcairo
     SUBDIR += hugin
     SUBDIR += icat

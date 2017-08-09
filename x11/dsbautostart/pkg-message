@@ -1,0 +1,8 @@
+**************************************************************************
+
+Add the following command to your window manager's startup script (e.g.
+~/.config/openbox/autostart.sh or ~/.fluxbox/startup):
+
+	sh ~/.config/DSB/autostart.sh&
+
+**************************************************************************

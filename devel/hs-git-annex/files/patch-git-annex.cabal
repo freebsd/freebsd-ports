@@ -1,10 +1,7 @@
---- git-annex.cabal.orig	2015-07-27 16:25:52 UTC
+--- git-annex.cabal.orig	2017-06-12 17:56:05 UTC
 +++ git-annex.cabal
-@@ -218,9 +218,9 @@ Executable git-annex
-     CPP-Options: -DANDROID_SPLICES
- 
+@@ -446,7 +446,6 @@ Executable git-annex
    if flag(Webapp)
-+    extensions: TemplateHaskell
      Build-Depends:
       yesod (>= 1.2.6), 
 -     yesod-default (>= 1.2.0),

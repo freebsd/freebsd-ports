@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	socks
-PORTVERSION=	0.5.4
-PORTREVISION=	2
+PORTVERSION=	0.5.5
 CATEGORIES=	net haskell
 
 MAINTAINER=	haskell@FreeBSD.org

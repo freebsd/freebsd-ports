@@ -1,2 +1,3 @@
-SHA256 (cabal/QuickCheck-2.8.1.tar.gz) = 7073aa3635660476aa31df7cf0476926a1ac0231235020122eb276070675763b
-SIZE (cabal/QuickCheck-2.8.1.tar.gz) = 38999
+TIMESTAMP = 1499459639
+SHA256 (cabal/QuickCheck-2.10.0.1.tar.gz) = 00d50522cd9550b1e8ae31ccddf2749d39a533807f4207abf1d36f231e00b42e
+SIZE (cabal/QuickCheck-2.10.0.1.tar.gz) = 54415
