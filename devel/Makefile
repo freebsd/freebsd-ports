@@ -5981,6 +5981,7 @@
     SUBDIR += umlgraph
     SUBDIR += unibilium
     SUBDIR += unittest-cpp
+    SUBDIR += universal-ctags
     SUBDIR += universalindentgui
     SUBDIR += upnp
     SUBDIR += upp
