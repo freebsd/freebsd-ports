@@ -2,10 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	javamail
-PORTVERSION=	1.5.1
+PORTVERSION=	1.5.6
 CATEGORIES=	java mail
-MASTER_SITES=	https://java.net/projects/javamail/downloads/download/source/
-DISTNAME=	javaxmail-${PORTVERSION}-src
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	Reference Implementation of JSR 919
@@ -15,13 +13,16 @@ LICENSE_COMB=	dual
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
-USES=		cpe zip
+USE_GITHUB=	yes
+GH_ACCOUNT=	javaee
+GH_TAGNAME=	${PORTNAME:tu}-${PORTVERSION:S/./_/g}
+
+USES=		cpe
 CPE_VENDOR=	sun
 USE_JAVA=	YES
 JAVA_VERSION=	1.6+
 USE_ANT=	YES
-
-WRKSRC=		${WRKDIR}
+NO_ARCH=	yes
 
 PLIST_FILES=	%%JAVAJARDIR%%/mail.jar
 
