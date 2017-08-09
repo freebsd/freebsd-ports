@@ -22,7 +22,6 @@ RUN_DEPENDS=	${LUA_PKGNAMEPREFIX}luafilesystem>=0:devel/luafilesystem-51
 
 USES=		desktop-file-utils gettext-runtime gmake lua:51 pkgconfig sqlite
 USE_GITHUB=	yes
-GH_TAGNAME=	${PORTVERSION}
 USE_GNOME=	cairo gdkpixbuf2 glib20 gtk30
 
 NOT_FOR_ARCHS=	sparc64
