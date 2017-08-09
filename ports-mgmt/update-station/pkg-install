@@ -1,0 +1,58 @@
+#!/bin/sh
+doas_settings()
+{
+    if [ ! -e ${PKG_PREFIX}/etc/doas.conf ] ; then
+        touch ${PKG_PREFIX}/etc/doas.conf
+    fi
+    grep -q 'permit nopass keepenv :wheel cmd fbsdupdatecheck' ${PKG_PREFIX}/etc/doas.conf 2>/dev/null
+    if [ $? -ne 0 ] ; then
+        echo 'permit nopass keepenv :wheel cmd fbsdupdatecheck' >> ${PKG_PREFIX}/etc/doas.conf
+    fi
+    grep -q 'permit nopass keepenv :wheel cmd fbsdpkgupdate' ${PKG_PREFIX}/etc/doas.conf 2>/dev/null
+    if [ $? -ne 0 ] ; then
+        echo 'permit nopass keepenv :wheel cmd fbsdpkgupdate' >> ${PKG_PREFIX}/etc/doas.conf
+    fi
+    grep -q 'permit nopass keepenv :wheel cmd pkg args upgrade -y' ${PKG_PREFIX}/etc/doas.conf 2>/dev/null
+    if [ $? -ne 0 ] ; then
+        echo 'permit nopass keepenv :wheel cmd pkg args upgrade -y' >> ${PKG_PREFIX}/etc/doas.conf
+    fi
+    grep -q 'permit nopass keepenv :wheel cmd pkg args upgrade -Fy' ${PKG_PREFIX}/etc/doas.conf 2>/dev/null
+    if [ $? -ne 0 ] ; then
+        echo 'permit nopass keepenv :wheel cmd pkg args upgrade -Fy' >> ${PKG_PREFIX}/etc/doas.conf
+    fi
+    grep -q 'permit nopass keepenv :wheel cmd pkg args lock' ${PKG_PREFIX}/etc/doas.conf 2>/dev/null
+    if [ $? -ne 0 ] ; then
+        echo 'permit nopass keepenv :wheel cmd pkg args lock' >> ${PKG_PREFIX}/etc/doas.conf
+    fi
+    grep -q 'permit nopass keepenv :wheel cmd pkg args unlock' ${PKG_PREFIX}/etc/doas.conf 2>/dev/null
+    if [ $? -ne 0 ] ; then
+        echo 'permit nopass keepenv :wheel cmd pkg args unlock' >> ${PKG_PREFIX}/etc/doas.conf
+    fi
+    grep -q 'permit nopass keepenv :wheel cmd mkdir args -p /var/db/update-station/' ${PKG_PREFIX}/etc/doas.conf 2>/dev/null
+    if [ $? -ne 0 ] ; then
+        echo 'permit nopass keepenv :wheel cmd mkdir args -p /var/db/update-station/' >> ${PKG_PREFIX}/etc/doas.conf
+    fi
+    grep -q 'permit nopass keepenv :wheel cmd chmod args -R 665 /var/db/update-station/' ${PKG_PREFIX}/etc/doas.conf 2>/dev/null
+    if [ $? -ne 0 ] ; then
+        echo 'permit nopass keepenv :wheel cmd chmod args -R 665 /var/db/update-station/' >> ${PKG_PREFIX}/etc/doas.conf
+    fi
+    grep -q 'permit nopass keepenv :wheel cmd sh args /usr/local/lib/update-station/cleandesktop.sh' ${PKG_PREFIX}/etc/doas.conf 2>/dev/null
+    if [ $? -ne 0 ] ; then
+        echo 'permit nopass keepenv :wheel cmd sh args /usr/local/lib/update-station/cleandesktop.sh' >> ${PKG_PREFIX}/etc/doas.conf
+    fi
+    grep -q 'permit nopass keepenv :wheel cmd shutdown args -r now' ${PKG_PREFIX}/etc/doas.conf 2>/dev/null
+    if [ $? -ne 0 ] ; then
+        echo 'permit nopass keepenv :wheel cmd shutdown args -r now' >> ${PKG_PREFIX}/etc/doas.conf
+    fi
+}
+
+case "$2" in
+    POST-INSTALL)
+    # backup old files from FreeBSD base system
+    doas_settings
+    ;;
+    *)
+    ;;
+esac
+
+exit 0

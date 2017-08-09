@@ -1,0 +1,10 @@
+This is a port of inxi script to ghostbsd.
+inxi script is a reporting tool for console and irc.
+ Inxi script is a tool to get and report various settings from your's
+ computer like hardware configuration network configuration sound
+ configuration Xorg configuration system configuration etc.
+ Inxi output can be to console or in an irc channel.
+ It's very usefull to investigate problems and report users computer
+ configuration.
+:
+WWW: http://www.ghostbsd.org/

@@ -1,0 +1,26 @@
+#!/bin/sh
+
+case "$2" in
+    POST-INSTALL)
+    
+    # copy kde skel to /usr/share/skel
+    cp -Rf /usr/local/share/ghostbsd/kde-settings/etc/skel/.local /usr/share/skel/
+    cp -Rf /usr/local/share/ghostbsd/kde-settings/etc/skel/.kde4 /usr/share/skel/
+
+    # cp dmrc to dot.dmrc under /usr/share/skel
+    cp -af /usr/local/share/ghostbsd/kde-settings/etc/skel/dmrc /usr/share/skel/dot.dmrc
+    
+    # copy grub config 
+    if [ ! -d /usr/local/etc/default ]; then
+        mkdir -p /usr/local/etc/default
+    fi
+    cp -af /usr/local/share/ghostbsd/kde-settings/etc/default/*   /usr/local/etc/default
+    
+    # set x-terminal-emulator alternative 
+    if [ -e /usr/local/bin/konsole ] ; then
+        update-alternatives --altdir /usr/local/etc/alternatives --install /usr/local/bin/x-terminal-emulator x-terminal-emulator /usr/local/bin/konsole 50
+    fi
+    ;;
+esac
+
+exit 0

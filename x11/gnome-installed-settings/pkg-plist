@@ -1,0 +1,15 @@
+share/ghostbsd/gnome-installed-settings/etc/default/grub
+share/ghostbsd/gnome-installed-settings/etc/polkit-1/localauthority/10-vendor.d/10-ghostbsd-gnome-installed-policy.pkla
+share/ghostbsd/gnome-installed-settings/etc/skel/dmrc
+share/glib-2.0/schemas/90_org.gnome.desktop.background.gschema.override
+share/glib-2.0/schemas/90_org.gnome.desktop.input-sources.gschema.override
+share/glib-2.0/schemas/90_org.gnome.desktop.interface.gschema.override
+share/glib-2.0/schemas/90_org.gnome.desktop.notifications.gschema.override
+share/glib-2.0/schemas/90_org.gnome.desktop.screensaver.wallpaper.gschema.override
+share/glib-2.0/schemas/90_org.gnome.desktop.wm.preferences.gschema.override
+share/glib-2.0/schemas/90_org.gnome.nautilus.icon-view.gschema.override
+share/glib-2.0/schemas/90_org.gnome.settings-daemon.plugins.xsettings.gschema.override
+share/glib-2.0/schemas/90_org.gnome.shell.gschema.override
+share/glib-2.0/schemas/90_org.gnome.terminal.legacy.settings.gschema.override
+share/glib-2.0/schemas/90_org.gnome.totem.settings.gschema.override
+share/gnome-background-properties/ghostbsd.xml

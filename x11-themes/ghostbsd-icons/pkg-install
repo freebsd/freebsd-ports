@@ -1,0 +1,28 @@
+#!/bin/sh
+
+[ "$2" = 'POST-INSTALL' ] || exit 0
+    if [ ! -d /usr/local/share/icons/hicolor ] ; then
+        mkdir -p /usr/local/share/icons/hicolor
+    fi
+    # copy icons from ghostbsd dir to hicolor for Glogo in mate panel
+    cp -af /usr/local/share/icons/ghostbsd/* /usr/local/share/icons/hicolor
+
+    # update icon cache for hicolor for G logo in panel
+    gtk-update-icon-cache -f /usr/local/share/icons/hicolor
+
+    # remove unwanted icons
+    rm -rf /usr/local/share/icons/Quid
+    rm -rf /usr/local/share/icons/HighContrast
+    rm -rf /usr/local/share/icons/HighContrast-SVG
+    rm -rf /usr/local/share/icons/HighContrastInverse
+    rm -rf /usr/local/share/icons/HighContrastLargePrint
+    rm -rf /usr/local/share/icons/HighContrastLargePrintInverse
+    rm -rf /usr/local/share/icons/MateLargePrint
+    rm -rf /usr/local/share/icons/LowContrastLargePrint
+    rm -rf /usr/local/share/icons/Fog
+    rm -rf /usr/local/share/icons/matefaenzacd
+    rm -rf /usr/local/share/icons/matefaenzadark
+    rm -rf /usr/local/share/icons/matefaenzagray
+    rm -f /usr/local/share/icons/mate/icon-theme.cache
+
+exit 0

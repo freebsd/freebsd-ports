@@ -1,0 +1,13 @@
+#!/bin/sh
+
+case "$2" in
+    POST-INSTALL)
+    if [ -f /etc/rc.conf ]; then
+        echo 'gdm_enable="YES"' >> /etc/rc.conf
+    fi
+        ;;
+esac
+
+exit 0
+
+

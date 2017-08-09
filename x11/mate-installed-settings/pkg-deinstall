@@ -1,0 +1,26 @@
+#!/bin/sh
+
+[ "$2" = 'POST-DEINSTALL' ] || exit 0
+
+# revert to original freebsd schemas
+if [ -d /usr/local/share/glib-2.0/schemas ] ; then
+     glib-compile-schemas /usr/local/share/glib-2.0/schemas
+fi
+
+# removes x-terminal-alternative needed for gksu
+if [ -e /usr/local/bin/mate-terminal ] ; then
+    update-alternatives --altdir /usr/local/etc/alternatives --remove x-terminal-emulator /usr/local/bin/mate-terminal
+fi
+
+# reverts mate panel layout
+ mv /usr/local/share/mate-panel/layouts/mate.layout /usr/local/share/mate-panel/layouts/default.layout
+
+# reverts mate xml overrides to default
+
+for override in $(ls /usr/local/share/ghostbsd/mate-installed-settings/schemas) ; do 
+     files=$(echo $override | rev | cut -c 5-| rev)
+     mv -f /usr/local/share/ghostbsd/mate-installed-settings/schemas/$files.old\
+     /usr/local/share/glib-2.0/schemas/$files
+done
+
+exit 0

@@ -1,0 +1,3 @@
+bin/inxi
+man/man1/inxi.1.gz
+share/changelogs/inxi/changelog

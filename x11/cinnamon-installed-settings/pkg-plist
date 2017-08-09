@@ -1,0 +1,13 @@
+share/cinnamon-background-properties/ghostbsd.xml
+share/ghostbsd/cinnamon-installed-settings/etc/default/grub
+share/ghostbsd/cinnamon-installed-settings/etc/polkit-1/localauthority/10-vendor.d/10-ghostbsd-cinnamon-installed-policy.pkla
+share/ghostbsd/cinnamon-installed-settings/etc/skel/cinnamon/configs/menu@cinnamon.org/menu@cinnamon.org.json
+share/ghostbsd/cinnamon-installed-settings/etc/skel/dmrc
+share/glib-2.0/schemas/91_org.cinnamon.desktop.background.gschema.override
+share/glib-2.0/schemas/91_org.cinnamon.desktop.interface.gschema.override
+share/glib-2.0/schemas/91_org.cinnamon.settings-daemon.plugins.xsettings.gschema.override
+share/glib-2.0/schemas/91_org.cinnamon.theme.gschema.override
+share/glib-2.0/schemas/91_org.gnome.shell.overrides.gschema.override
+share/glib-2.0/schemas/91_org.gnome.terminal.legacy.settings.gschema.override
+share/glib-2.0/schemas/91_org.gnome.totem.settings.gschema.override
+share/glib-2.0/schemas/91_org.nemo.desktop.gschema.override

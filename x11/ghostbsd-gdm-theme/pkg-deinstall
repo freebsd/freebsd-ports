@@ -1,0 +1,9 @@
+#!/bin/sh
+
+[ "$2" = 'POST-DEINSTALL' ] || exit 0
+
+if [ -f /usr/local/etc/gdm/custom.conf.sample ] ; then
+        cp -af /usr/local/etc/gdm/custom.conf.sample /usr/local/etc/gdm/custom.conf
+fi
+
+exit 0

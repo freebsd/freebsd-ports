@@ -1,0 +1,46 @@
+#!/bin/sh
+
+restore_freebsd()
+{
+    # restore from backup original freebsd files
+    cp -af /usr/local/share/ghostbsd/common-live-settings/base/backup/* /
+}
+
+restore_packages_settings()
+{
+    update-alternatives --altdir /usr/local/etc/alternatives --remove htmlview /usr/local/bin/firefox
+}
+
+remove_files_from()
+{
+    for files in $(ls /usr/local/share/ghostbsd/common-live-settings/etc/rc.d); do
+        rm -f /etc/rc.d/$files
+    done
+}
+
+autologin_revert()
+{
+# removing auto login, startx and X configuration.
+sed -i "" "/ttyv0/s/root/Pc/g" /etc/ttys
+
+# Removing livecd hostname.
+( echo 'g/hostname="licecd"/d' ; echo 'wq' ) | ex -s /etc/rc.conf
+}
+case $2 in
+    DEINSTALL)
+    restore_freebsd
+    restore_packages_settings
+    remove_files_from
+#    autologin_revert
+    ;;
+    POST-DEINSTALL)
+    #rm -Rf /usr/local/share/ghostbsd/common-live-settings/
+    echo "ghostbsd-live-common-settings was uninstalled."
+    ;;
+    *)
+    echo $2
+    ;;
+esac
+
+exit 0
+

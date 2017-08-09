@@ -1,0 +1,10 @@
+#!/bin/sh
+
+[ "$2" = 'POST-INSTALL' ] || exit 0
+
+    #  remove MATE wallpapers
+    if [ -d /usr/local/share/backgrounds/mate ]; then
+        rm -rf /usr/local/share/backgrounds/mate
+    fi
+
+exit 0

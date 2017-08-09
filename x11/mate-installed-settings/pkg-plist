@@ -1,0 +1,17 @@
+share/ghostbsd/mate-installed-settings/etc/default/grub
+share/ghostbsd/mate-installed-settings/etc/polkit-1/localauthority/10-vendor.d/10-desktopbsd-gnome-installed-policy.pkla
+share/ghostbsd/mate-installed-settings/etc/skel/dmrc
+share/ghostbsd/mate-installed-settings/mate-panel/panel-default-layout.mate
+share/ghostbsd/mate-installed-settings/schemas/org.mate.screensaver.gschema.xml
+share/ghostbsd/mate-installed-settings/schemas/org.mate.terminal.gschema.xml
+share/glib-2.0/schemas/92_org.gnome.desktop.screensaver.wallpaper.gschema.override
+share/glib-2.0/schemas/92_org.mate.caja.gschema.override
+share/glib-2.0/schemas/92_org.mate.desktop.background.gschema.override
+share/glib-2.0/schemas/92_org.mate.desktop.interface.gschema.override
+share/glib-2.0/schemas/92_org.mate.font-rendering.gschema.override
+share/glib-2.0/schemas/92_org.mate.marco.gschema.override
+share/glib-2.0/schemas/92_org.mate.panel.menubar.gschema.override
+share/glib-2.0/schemas/92_org.mate.peripherals-keyboard-xkb.kbd.gschema.override
+share/glib-2.0/schemas/92_org.mate.peripherals-touchpad.gschema.override
+share/glib-2.0/schemas/92_org.mate.session.gschema.override
+share/glib-2.0/schemas/92_org.mate.terminal.gschema.override

@@ -1,0 +1,8 @@
+share/apps/plasma-desktop/init/06-ghostbsdWallpaper.js
+share/ghostbsd/kde-settings/etc/default/grub.d/grub
+share/ghostbsd/kde-settings/etc/gtk-2.0/gtkrc
+share/ghostbsd/kde-settings/etc/skel/.kde4/share/config/ksplashrc
+share/ghostbsd/kde-settings/etc/skel/.kde4/share/config/plasmarc
+share/ghostbsd/kde-settings/etc/skel/.local/share/user-places.xbel
+share/ghostbsd/kde-settings/etc/skel/dmrc
+share/ghostbsd/kde-settings/etc/xdg/akonadi/akonadiserverrc

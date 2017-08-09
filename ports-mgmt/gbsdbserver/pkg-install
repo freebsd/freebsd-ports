@@ -1,0 +1,37 @@
+#!/bin/sh
+
+case "$2" in
+    PRE-INSTALL)
+    #creates keys and certificates dirs needed for poudriere signing packages
+    mkdir -p /usr/local/etc/ssl/keys
+    mkdir -p /usr/local/etc/ssl/certs
+    chmod 0600 /usr/local/etc/ssl/keys
+    # generates a 4096 key called poudriere.key and a public key for it
+    if [ -x /usr/bin/openssl ] ; then
+        openssl genrsa -out /usr/local/etc/ssl/keys/poudriere.key 4096
+        openssl rsa -in /usr/local/etc/ssl/keys/poudriere.key -pubout -out /usr/local/etc/ssl/certs/poudriere.cert
+    fi
+    ;;
+    POST-INSTALL)
+    # configures poudriere.conf
+    if [ -f /usr/local/etc/poudriere.conf ] ; then
+        cp /usr/local/etc/poudriere.conf /usr/local/etc/poudriere.conf.ini
+        # for the beginning we'll not use ZFS for poudriere
+        sed -i "" "s@#NO_ZFS=@NO_ZFS=@g" /usr/local/etc/poudriere.conf 
+        # we'll use as default server ftp.freebsd.org 
+        sed -i "" "s@_PROTO_://_CHANGE_THIS_@ftp://ftp.freebsd.org@g" /usr/local/etc/poudriere.conf
+        # we uncomment POUDRIERE_DATA to be sure
+        sed -i "" "s@#POUDRIERE_DATA=@POUDRIERE_DATA=@g" /usr/local/etc/poudriere.conf 
+        # we set some of poudriere build settings
+        sed -i "" "s@#CHECK_CHANGED_OPTIONS=verbose@CHECK_CHANGED_OPTIONS=verbose@g" /usr/local/etc/poudriere.conf 
+        sed -i "" "s@#CHECK_CHANGED_DEPS=yes@CHECK_CHANGED_DEPS=yes@g" /usr/local/etc/poudriere.conf 
+        # we add poudriere signing key
+        sed -i "" "s@#PKG_REPO_SIGNING_KEY=/etc/ssl/keys/repo.key@PKG_REPO_SIGNING_KEY=/usr/local/etc/ssl/keys/poudriere.key@g" /usr/local/etc/poudriere.conf 
+        # we  rewrite URL_BASE
+        sed -i "" "s@#URL_BASE=http://yourdomain.com/poudriere/@URL_BASE=http://127.0.0.1/poudriere/@g" /usr/local/etc/poudriere.conf 
+    fi
+    # 
+    ;;
+esac
+
+exit 0

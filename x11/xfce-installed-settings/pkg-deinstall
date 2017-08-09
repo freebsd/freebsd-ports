@@ -1,0 +1,25 @@
+#!/bin/sh
+
+[ "$2" = 'POST-DEINSTALL' ] || exit 0
+
+# removes dmrc from /usr/share/skel
+    rm -f /usr/share/skel/dot.dmrc
+
+    # removes gtkrc-2.0 from ghostbsd dir to /usr/share/skel
+    rm -f  /usr/share/skel/dot.gtkrc-2.0
+    
+    # removes grub config 
+    rm -f /usr/local/etc/default/grub.d/ghostbsd.cfg
+
+    # removes files from xdg
+    for i in Terminal Thunar orage xfce4 ;do
+    rm -Rf /usr/local/etc/xdg/$i
+    done
+
+# removes x-terminal-alternative needed for gksu
+if [ -e /usr/local/bin/xfce4-terminal ] ; then
+    update-alternatives --altdir /usr/local/etc/alternatives --remove x-terminal-emulator /usr/local/bin/xfce4-terminal
+fi
+
+exit 0
+   

@@ -1,0 +1,28 @@
+#!/bin/sh
+
+case "$2" in
+    POST-INSTALL)
+    GENKDMCONF=/usr/local/bin/genkdmconf
+    KDMCONFDIR=/usr/local/share/config/kdm
+    # Configure KDM if needed.
+    if [ ! -r ${KDMCONFDIR}/kdmrc ]; then
+        echo "Generating KDM configuration."
+        ${GENKDMCONF} --no-old --in ${KDMCONFDIR}
+    fi
+
+    if [ -f /usr/local/share/config/kdm/kdmrc ] ; then
+        sed -i '' -e "s/#AutoLoginEnable=true/AutoLoginEnable=true/g"\
+            -e  "s/#AutoLoginAgain=true/AutoLoginAgain=true/g" \
+            -e  "s/#AutoLoginUser=fred/AutoLoginUser=ghostbsd/g" \
+            -e  "s@Theme=/usr/local/share/apps/kdm/themes/elarun@Theme=/usr/local/share/apps/kdm/themes/ghostbsd@g" \
+            /usr/local/share/config/kdm/kdmrc
+    fi
+    if [ -f /etc/rc.conf ]; then
+        echo 'kdm4_enable="YES"' >> /etc/rc.conf
+    fi
+        ;;
+esac
+
+exit 0
+
+

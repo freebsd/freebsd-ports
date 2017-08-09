@@ -1,0 +1,11 @@
+bin/update-station
+etc/xdg/autostart/update-station.desktop
+%%PYTHON_SITELIBDIR%%/update_station-1.0-py%%PYTHON_VER%%.egg-info/PKG-INFO
+%%PYTHON_SITELIBDIR%%/update_station-1.0-py%%PYTHON_VER%%.egg-info/SOURCES.txt
+%%PYTHON_SITELIBDIR%%/update_station-1.0-py%%PYTHON_VER%%.egg-info/dependency_links.txt
+%%PYTHON_SITELIBDIR%%/update_station-1.0-py%%PYTHON_VER%%.egg-info/requires.txt
+%%PYTHON_SITELIBDIR%%/update_station-1.0-py%%PYTHON_VER%%.egg-info/top_level.txt
+lib/update-station/cleandesktop.sh
+lib/update-station/system-software-update.png
+lib/update-station/updateHandler.py
+share/applications/update-station.desktop

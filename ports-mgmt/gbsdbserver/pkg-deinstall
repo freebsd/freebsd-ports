@@ -1,0 +1,23 @@
+#!/bin/sh
+
+[ "$2" = 'POST-DEINSTALL' ] || exit 0
+
+# revert to original freebsd poudriere conf
+if [ -f /usr/local/etc/poudriere.conf ] ; then
+     mv /usr/local/etc/poudriere.conf.ini \
+     /usr/local/etc/poudriere.conf
+fi
+
+if [ -d /usr/local/etc/ssl/keys ] ; then
+      rm -Rf /usr/local/etc/ssl/keys
+fi
+
+if [ -d /usr/local/etc/ssl/certs ] ; then
+      rm -Rf /usr/local/etc/ssl/certs
+fi
+
+# removes nginx config files
+
+# removes portmaster poudriere nginx
+
+exit 0

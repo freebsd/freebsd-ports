@@ -1,0 +1,37 @@
+/boot/grub/grub.cfg
+/boot/grub/pcbsdfont.pf2
+/boot/grub/themes/ghostbsd/README
+/boot/grub/themes/ghostbsd/blob_w.png
+/boot/grub/themes/ghostbsd/boot_menu_c.png
+/boot/grub/themes/ghostbsd/boot_menu_e.png
+/boot/grub/themes/ghostbsd/boot_menu_n.png
+/boot/grub/themes/ghostbsd/boot_menu_ne.png
+/boot/grub/themes/ghostbsd/boot_menu_nw.png
+/boot/grub/themes/ghostbsd/boot_menu_s.png
+/boot/grub/themes/ghostbsd/boot_menu_se.png
+/boot/grub/themes/ghostbsd/boot_menu_sw.png
+/boot/grub/themes/ghostbsd/boot_menu_w.png
+/boot/grub/themes/ghostbsd/dejavu_10.pf2
+/boot/grub/themes/ghostbsd/dejavu_12.pf2
+/boot/grub/themes/ghostbsd/dejavu_14.pf2
+/boot/grub/themes/ghostbsd/dejavu_16.pf2
+/boot/grub/themes/ghostbsd/dejavu_bold_14.pf2
+/boot/grub/themes/ghostbsd/slider_c.png
+/boot/grub/themes/ghostbsd/slider_n.png
+/boot/grub/themes/ghostbsd/slider_s.png
+/boot/grub/themes/ghostbsd/starfield.png
+/boot/grub/themes/ghostbsd/terminal_box_c.png
+/boot/grub/themes/ghostbsd/terminal_box_e.png
+/boot/grub/themes/ghostbsd/terminal_box_n.png
+/boot/grub/themes/ghostbsd/terminal_box_ne.png
+/boot/grub/themes/ghostbsd/terminal_box_nw.png
+/boot/grub/themes/ghostbsd/terminal_box_s.png
+/boot/grub/themes/ghostbsd/terminal_box_se.png
+/boot/grub/themes/ghostbsd/terminal_box_sw.png
+/boot/grub/themes/ghostbsd/terminal_box_w.png
+/boot/grub/themes/ghostbsd/theme.txt
+etc/default/grub
+@dir /boot/grub/themes/ghostbsd
+@dir /boot/grub/themes
+@dir /boot/grub
+

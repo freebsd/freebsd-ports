@@ -1,0 +1,10 @@
+This is a port of debian ssft.sh script to ghostbsd.
+Shell Scripts Frontend Tool
+ Shell function library useful to build shell script frontends.
+ .
+ The library defines a set of functions to display messages and read values
+ from the user on X (using zenity or kdialog) or console (using dialog or
+ plain text) and has been designed to be used by sourcing the library code
+ from other scripts
+:
+WWW: http://www.ghostbsd.org/

@@ -1,0 +1,48 @@
+#!/bin/sh
+
+case "$2" in
+    PRE-INSTALL)
+    if [ ! -d /usr/local/share/glib-2.0/schemas ] ; then
+        mkdir -p /usr/local/share/glib-2.0/schemas
+    fi
+    ;;
+    POST-INSTALL)
+    # copy dmrc from ghostbsd dir to /usr/share/skel
+    cp -af /usr/local/share/ghostbsd/mate-installed-settings/etc/skel/dmrc /usr/share/skel/dot.dmrc
+
+    # copy grub config 
+    if [ ! -d /usr/local/etc/default ]; then
+        mkdir -p /usr/local/etc/default
+    fi
+    cp -af /usr/local/share/ghostbsd/mate-installed-settings/etc/default/*   /usr/local/etc/default
+
+    #copy local policy 
+    if [ ! -d /usr/local/etc/polkit-1 ]; then
+        mkdir -p /usr/local/etc/polkit-1
+    fi
+    cp -af /usr/local/share/ghostbsd/mate-installed-settings/etc/polkit-1/* /usr/local/etc/polkit-1
+
+    # overrites some of mate xml settings
+    # for override in $(ls /usr/local/share/ghostbsd/mate-installed-settings/schemas) ; do
+    #     mv /usr/local/share/glib-2.0/schemas/$override \
+    #     /usr/local/share/ghostbsd/mate-installed-settings/schemas/$override.old
+    #     cp -af /usr/local/share/ghostbsd/mate-installed-settings/schemas/$override \
+    #     /usr/local/share/glib-2.0/schemas
+    # done
+
+    # compile schemas
+    glib-compile-schemas /usr/local/share/glib-2.0/schemas
+    
+    # set x-terminal-emulator alternative for gksu
+    if [ -e /usr/local/bin/mate-terminal ] ; then
+        update-alternatives --altdir /usr/local/etc/alternatives --install /usr/bin/x-terminal-emulator x-terminal-emulator /usr/local/bin/mate-terminal 50
+    fi
+    
+    # overwrite default mate panel
+    if [ ! -d /usr/local/share/mate-panel/layouts ]; then
+        mkdir -p /usr/local/share/mate-panel/layouts
+    fi
+    ;;
+esac
+
+exit 0

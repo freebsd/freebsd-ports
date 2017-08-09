@@ -1,0 +1,11 @@
+bin/ghostbsd-irc
+share/applications/ghostbsd-irc.desktop
+share/pixmaps/ghostbsd-irc.xpm
+share/pixmaps/ghostbsd-irc-16.xpm
+share/icons/hicolor/16x16/apps/ghostbsd-irc.png
+share/icons/hicolor/22x22/apps/ghostbsd-irc.png
+share/icons/hicolor/32x32/apps/ghostbsd-irc.png
+share/icons/hicolor/48x48/apps/ghostbsd-irc.png
+share/icons/hicolor/64x64/apps/ghostbsd-irc.png
+share/icons/hicolor/128x128/apps/ghostbsd-irc.png
+share/icons/hicolor/scalable/ghostbsd-irc.svg

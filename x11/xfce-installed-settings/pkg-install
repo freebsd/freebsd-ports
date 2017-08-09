@@ -1,0 +1,27 @@
+#!/bin/sh
+
+case "$2" in
+    POST-INSTALL)
+    # copy dmrc from ghostbsd dir to /usr/share/skel
+    cp -af /usr/local/share/ghostbsd/xfce-installed-settings/etc/skel/dmrc /usr/share/skel/dot.dmrc
+
+    # copy gtkrc-2.0 from ghostbsd dir to /usr/share/skel
+    cp -af /usr/local/share/ghostbsd/xfce-installed-settings/etc/skel/gtkrc-2.0 /usr/share/skel/dot.gtkrc-2.0
+    
+    # copy grub config 
+    if [ ! -d /usr/local/etc/default ]; then
+        mkdir -p /usr/local/etc/default
+    fi
+    cp -af /usr/local/share/ghostbsd/xfce-installed-settings/etc/default/*   /usr/local/etc/default
+
+    # copy xdg
+    cp -af /usr/local/share/ghostbsd/xfce-installed-settings/etc/xdg/*   /usr/local/etc/xdg/
+    
+    # set x-terminal-emulator alternative for gksu
+    if [ -e /usr/local/bin/xfce4-terminal ] ; then
+        update-alternatives --altdir /usr/local/etc/alternatives --install /usr/bin/x-terminal-emulator x-terminal-emulator /usr/local/bin/xfce4-terminal 50
+    fi
+    ;;
+esac
+
+exit 0

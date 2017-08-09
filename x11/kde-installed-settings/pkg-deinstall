@@ -1,0 +1,11 @@
+#!/bin/sh
+
+[ "$2" = 'POST-DEINSTALL' ] || exit 0
+
+
+# removes x-terminal-alternative needed for gksu
+if [ -e /usr/local/bin/konsole ] ; then
+    update-alternatives --altdir /usr/local/etc/alternatives --remove x-terminal-emulator /usr/local/bin/konsole
+fi
+
+exit 0

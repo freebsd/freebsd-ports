@@ -1,0 +1,13 @@
+#!/bin/sh
+
+[ "$2" = 'POST-DEINSTALL' ] || exit 0
+
+if [ -e /usr/local/bin/gnome-terminal ] ; then
+    update-alternatives --altdir /usr/local/etc/alternatives --remove x-terminal-emulator /usr/local/bin/gnome-terminal
+fi
+
+if [ -e /usr/local/bin/lxterminal ] ; then
+     update-alternatives --altdir /usr/local/etc/alternatives --remove x-terminal-emulator /usr/local/bin/lxterminal
+fi
+
+exit 0

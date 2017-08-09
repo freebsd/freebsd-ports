@@ -1,0 +1,50 @@
+#!/bin/sh
+
+backup_freebsd()
+{
+    # backup files from etc
+  for tocopy in $(ls /usr/local/share/ghostbsd/common-live-settings/base/override/etc/rc.d) ; do
+    if [ -f /etc/rc.d/$tocopy ]; then
+      cp -af /etc/rc.d/$tocopy /usr/local/share/ghostbsd/common-live-settings/base/backup/etc/rc.d/
+    fi
+  done
+}
+
+freebsd_overrides()
+{
+  cp -af /usr/local/share/ghostbsd/common-live-settings/base/override/* /
+  # rebuild login database because one override was login.conf
+  cap_mkdb /etc/login.conf
+}
+
+copy_files_in()
+{
+    cp -af /usr/local/share/ghostbsd/common-live-settings/etc/* /etc
+}
+
+setup_DM() {
+  if [ -f /usr/local/etc/slim.conf ] ; then
+        sed -i '' -e "s/#auto_login          no/auto_login          yes/g"\
+        -e  "s/#default_user        simone/default_user        root/g" \
+        /usr/local/etc/slim.conf
+        echo 'sessiondir       /usr/local/share/xsessions/' >> /usr/local/etc/slim.conf
+    fi
+}
+
+case "$2" in
+    POST-INSTALL)
+    # backup old files from FreeBSD base system
+    backup_freebsd
+    # copy files from override to FreeBSD base system
+    freebsd_overrides
+    # copy files from base/etc to etc
+    copy_files_in
+    setup_DM
+    ;;
+    *)
+    ;;
+esac
+
+exit 0
+
+

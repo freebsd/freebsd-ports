@@ -1,0 +1,7 @@
+This is a port of siduction-irc package  to ghostbsd.
+Start a suitable IRC client to enter #ghostbsd
+ ghostbsd-irc provides an easy way to choose a nickname and to enter the #ghostbsd irc channel.
+ ghostbsd-irc tries to catch starting an IRC client and offers frontend
+ support for various X and cli IRC clients.
+:
+WWW: http://www.ghostbsd.org/

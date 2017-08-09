@@ -1,0 +1,24 @@
+#!/bin/sh
+
+case "$2" in
+    POST-INSTALL)
+    if [ -f /usr/local/etc/slim.conf ] ; then
+        sed -i '' -e "s/current_theme       default/current_theme       ghostbsd/g" \
+            /usr/local/etc/slim.conf
+        # sed -i '' -e "s/#auto_login          no/auto_login          yes/g"\
+        #     -e  "s/#default_user        simone/default_user        ghostbsd/g" \
+        #     -e  "s/current_theme       default/current_theme       ghostbsd/g" \
+        #    /usr/local/etc/slim.conf
+    #        echo 'sessiondir       /usr/local/share/xsessions/' >> /usr/local/etc/slim.conf
+    fi
+    if [ -f /etc/rc.conf ]; then
+        echo '#slim_enable="YES"' >> /etc/rc.conf
+    fi
+
+    # copy xinitrc from ghostbsd dir to /usr/share/skel
+    cp -af /usr/local/share/ghostbsd/slim/etc/skel/xinitrc /usr/share/skel/dot.xinitrc
+    ;;
+esac
+
+exit 0
+

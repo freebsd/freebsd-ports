@@ -1,0 +1,14 @@
+#!/bin/sh
+
+[ "$2" = 'POST-INSTALL' ] || exit 0
+    # remove unwanted themes
+    cd /usr/local/share/themes
+    rm -rf bubble TraditionalGreen WinMe TraditionalOk ThinIce Splint-Left Splint Spidey-Left Spidey Simply Simple Shiny
+    rm -rf Reverse Redmond Raleigh Quid PrintLarge Mist Metabox LowContrastLargePrint LowContrast LargePrint Inverted
+    rm -rf Industrial HighContrastLargePrintInverse HighContrastLargePrint HighContrastInverse HighContrast GreenLaguna
+    rm -rf Glossy Glider Fog Esco Emacs DustBlue Dopple-Left Dopple Crux ContrastLowLargePrint ContrastHighLargePrint
+    rm -rf ContrastHighInverse ContrastHigh ClearlooksRe ClearlooksClassic Clearlooks Bright Atlanta Atantla AlaDelta
+    rm -rf AgingGorilla
+    cd -
+    
+exit 0
