@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	unicode_util_compat
-PORTVERSION=	0.2.0
-PORTREVISION=	2
+PORTVERSION=	0.3.1
 CATEGORIES=	devel
 PKGNAMEPREFIX=	erlang-
 
