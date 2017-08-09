@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	metasploit
-PORTVERSION=	4.15.0
+PORTVERSION=	4.15.5
 CATEGORIES=	security
 
 MAINTAINER=	tanawts@gmail.com
@@ -26,8 +26,8 @@ RUN_DEPENDS=	nmap:security/nmap \
 		rubygem-metasploit-credential>=0:security/rubygem-metasploit-credential \
 		rubygem-metasploit_data_models>=0:security/rubygem-metasploit_data_models \
 		rubygem-metasploit-model>=0:security/rubygem-metasploit-model \
-		rubygem-metasploit-payloads>=1.2.37:security/rubygem-metasploit-payloads \
-		rubygem-metasploit_payloads-mettle>=0.1.10:security/rubygem-metasploit_payloads-mettle \
+		rubygem-metasploit-payloads>=1.2.46:security/rubygem-metasploit-payloads \
+		rubygem-metasploit_payloads-mettle>=0.1.14:security/rubygem-metasploit_payloads-mettle \
 		rubygem-msgpack1>=0:devel/rubygem-msgpack1 \
 		rubygem-network_interface>=0:net/rubygem-network_interface \
 		rubygem-rubyntlm>=0:net/rubygem-rubyntlm \
@@ -87,8 +87,8 @@ NO_ARCH=	yes
 NO_ARCH_IGNORE=	template_x64_bsd.bin template_x86_bsd.bin CVE-2013-2171.bin
 STRIP=
 
-USE_RUBY=	yes
 USES=		python shebangfix
+USE_RUBY=	yes
 PYTHON_NO_DEPENDS=	yes
 SHEBANG_FILES=	data/exploits/CVE-2017-7494/build.sh \
 		data/exploits/CVE-2017-7494/install-deps.sh \
@@ -98,6 +98,7 @@ SHEBANG_FILES=	data/exploits/CVE-2017-7494/build.sh \
 		external/source/msfJavaToolkit/testCompilation.rb \
 		external/source/metsvc/test.rb \
 		docker/bin/msfvenom \
+		docker/bin/msfvenom-dev \
 		docker/bin/msfconsole \
 		docker/bin/msfconsole-dev \
 		tools/hardware/killerbee_msfrelay \
@@ -112,6 +113,8 @@ RUN_DEPENDS+=	rubygem-xmlrpc>=0:net/rubygem-xmlrpc
 
 post-patch:
 	${REINPLACE_CMD} 's,git ls-files,find . ! -type d | sed "s|^./||", ; \
+		/bcrypt_pbkdf/d ; \
+		/rbnacl/d ; \
 		/rb-readline/d' \
 		${WRKSRC}/metasploit-framework.gemspec
 	${REINPLACE_CMD} "/pg/s|, '0.20.0'||" ${WRKSRC}/metasploit-framework.gemspec
