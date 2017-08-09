@@ -2,8 +2,8 @@
 
 PORTNAME=	rpcs3
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.0.3-90
-DISTVERSIONSUFFIX=	-g40d305b3
+DISTVERSION=	0.0.3-101
+DISTVERSIONSUFFIX=	-ge9b020be
 CATEGORIES=	emulators
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -24,7 +24,7 @@ ONLY_FOR_ARCHS_REASON=	requires int128 and SSSE3
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	RPCS3
-GH_TUPLE=	RPCS3:hidapi:hidapi-0.8.0-rc1-23-gc095a22:hidapi/3rdparty/hidapi \
+GH_TUPLE=	RPCS3:hidapi:hidapi-0.8.0-rc1-25-gca39ce8:hidapi/3rdparty/hidapi \
 		RPCS3:pugixml:f205aaf:pugixml/3rdparty/pugixml \
 		RPCS3:yaml-cpp:release-0.5.3-62-g017626a:yamlcpp/Utilities/yaml-cpp \
 		kobalicek:asmjit:1370fe6:asmjit/asmjit \
