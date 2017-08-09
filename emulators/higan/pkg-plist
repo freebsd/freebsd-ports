@@ -13,8 +13,8 @@ share/applications/higan.desktop
 %%DATADIR%%/PC Engine.sys/manifest.bml
 %%DATADIR%%/Super Famicom.sys/ipl.rom
 %%DATADIR%%/Super Famicom.sys/manifest.bml
+%%DATADIR%%/SuperGrafx.sys/manifest.bml
 %%DATADIR%%/WonderSwan Color.sys/manifest.bml
 %%DATADIR%%/WonderSwan.sys/manifest.bml
-%%DATADIR%%/cheats.bml
 share/icarus/Database/Super Famicom.bml
 share/pixmaps/higan.png
