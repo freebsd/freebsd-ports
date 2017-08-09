@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gitlab
-PORTVERSION=	9.1.9
+PORTVERSION=	9.2.9
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www devel
 
@@ -25,8 +25,8 @@ BUILD_DEPENDS=	gem:devel/ruby-gems
 # only rubygem-pg and rubygem-mysql are defined later as RUN_DEPENDS
 # for the options
 RUN_DEPENDS=	git>=2.8.4:devel/git \
-	gitlab-shell>=5.0.2:devel/gitlab-shell\
-	gitlab-workhorse>=1.4.3:www/gitlab-workhorse \
+	gitlab-shell>=5.0.4:devel/gitlab-shell\
+	gitlab-workhorse>=2.0.0:www/gitlab-workhorse \
 	redis>=2.8.23:databases/redis \
 	npm>=4.3.0:www/npm \
 	yarn>=0.17.0:www/yarn \
@@ -70,13 +70,14 @@ RUN_DEPENDS=	git>=2.8.4:devel/git \
 	rubygem-github-linguist>=4.7.0:textproc/rubygem-github-linguist \
 	rubygem-grape0>=0.19.0:devel/rubygem-grape0 \
 	rubygem-grape-entity>=0.6.0:devel/rubygem-grape-entity \
+	rubygem-hashie-forbidden_attributes>=0:security/rubygem-hashie-forbidden_attributes \
 	rubygem-rack-cors0>=0.4.0:www/rubygem-rack-cors0 \
 	rubygem-kaminari-rails4>=0.17.0:www/rubygem-kaminari-rails4 \
 	rubygem-hamlit>=2.6.1:www/rubygem-hamlit \
-	rubygem-carrierwave>=0.11.0:www/rubygem-carrierwave \
+	rubygem-carrierwave>=1.0:www/rubygem-carrierwave \
 	rubygem-dropzonejs-rails>=0.7.1:www/rubygem-dropzonejs-rails \
 	rubygem-fog-aws0>=0.9:net/rubygem-fog-aws0 \
-	rubygem-fog-core>=1.40:devel/rubygem-fog-core \
+	rubygem-fog-core>=1.44:devel/rubygem-fog-core \
 	rubygem-fog-google>=0.3:net/rubygem-fog-google \
 	rubygem-fog-local>=0.3:net/rubygem-fog-local \
 	rubygem-fog-openstack>=0.1:net/rubygem-fog-openstack \
@@ -104,8 +105,8 @@ RUN_DEPENDS=	git>=2.8.4:devel/git \
 	rubygem-state_machines-activerecord>=0.4.0:databases/rubygem-state_machines-activerecord \
 	rubygem-after_commit_queue>=1.3.0:databases/rubygem-after_commit_queue \
 	rubygem-acts-as-taggable-on>=4.0.0:www/rubygem-acts-as-taggable-on \
-	rubygem-sidekiq4>=4.2.7:devel/rubygem-sidekiq4 \
-	rubygem-sidekiq-cron04>=0.4.4:devel/rubygem-sidekiq-cron04 \
+	rubygem-sidekiq>=5.0.0:devel/rubygem-sidekiq \
+	rubygem-sidekiq-cron>=0.4.4:devel/rubygem-sidekiq-cron \
 	rubygem-redis-namespace>=1.5.2:databases/rubygem-redis-namespace \
 	rubygem-sidekiq-limit_fetch>=3.4:devel/rubygem-sidekiq-limit_fetch \
 	rubygem-rufus-scheduler>=3.1.10:devel/rubygem-rufus-scheduler \
@@ -157,6 +158,10 @@ RUN_DEPENDS=	git>=2.8.4:devel/git \
 	rubygem-base32>=0.3.2:converters/rubygem-base32 \
 	rubygem-sentry-raven>=2.4.0:devel/rubygem-sentry-raven \
 	rubygem-premailer-rails>=1.9.0:mail/rubygem-premailer-rails \
+	rubygem-ruby_parser>=3.8.4:devel/rubygem-ruby_parser \
+	rubygem-gettext_i18n_rails>=1.8.0:devel/rubygem-gettext_i18n_rails \
+	rubygem-gettext_i18n_rails_js>=1.2.0:devel/rubygem-gettext_i18n_rails_js \
+	rubygem-gettext>=3.2.2:devel/rubygem-gettext \
 	rubygem-octokit>=4.6.2:net/rubygem-octokit \
 	rubygem-mail_room>=0.9.1:mail/rubygem-mail_room \
 	rubygem-email_reply_trimmer>=0.1:mail/rubygem-email_reply_trimmer \
@@ -167,7 +172,7 @@ RUN_DEPENDS=	git>=2.8.4:devel/git \
 	rubygem-health_check>=2.6.0:devel/rubygem-health_check \
 	rubygem-vmstat>=2.3.0:sysutils/rubygem-vmstat \
 	rubygem-sys-filesystem>=1.1.6:sysutils/rubygem-sys-filesystem \
-	rubygem-gitaly>=0.5.0:net/rubygem-gitaly \
+	rubygem-gitaly>=0.6.0:net/rubygem-gitaly \
 	rubygem-toml-rb>=0.3.15:www/rubygem-toml-rb \
 	rubygem-rinku>=1.7.3:www/rubygem-rinku
 
