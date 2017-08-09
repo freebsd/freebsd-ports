@@ -9502,3 +9502,4 @@ devel/hs-MonadCatchIO-transformers||2017-08-08|Deprecated in favor of the except
 devel/hs-directory||2017-08-08|Part of the bundled packages in ghc
 devel/hs-syb-with-class-instances-text||2017-08-08|Upstream is unmaintained
 textproc/hs-citeproc-hs||2017-08-08|Upstream is unmaintained, use pandoc-citeproc instead
+sysutils/chvt||2017-08-10|Functionality available in base, using vidcontrol(1)
