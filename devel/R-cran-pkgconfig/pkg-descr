@@ -1,0 +1,5 @@
+Set configuration options on a per-package basis. Options set by a
+given package only apply to that package, other packages are
+unaffected.
+
+WWW: https://cran.r-project.org/web/packages/pkgconfig/
