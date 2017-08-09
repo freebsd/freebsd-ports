@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	citra
-PORTVERSION=	s20170713
+PORTVERSION=	s20170809
 PORTREVISION?=	0
 CATEGORIES=	emulators
 
@@ -26,7 +26,7 @@ ONLY_FOR_ARCHS_REASON=	https://github.com/MerryMage/dynarmic/issues/35
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	citra-emu
-GH_TAGNAME=	5137a198f
+GH_TAGNAME=	792dee47a
 GH_TUPLE=	citra-emu:ext-soundtouch:5274ec4:soundtouch/externals/soundtouch \
 		MerryMage:dynarmic:8f15e3f:dynarmic/externals/dynarmic \
 		fmtlib:fmt:3.0.0-187-gac5484c:fmt/externals/fmt \
@@ -38,6 +38,7 @@ GH_TUPLE=	citra-emu:ext-soundtouch:5274ec4:soundtouch/externals/soundtouch \
 		weidai11:cryptopp:CRYPTOPP_5_6_5-164-g841c37e:cryptopp/externals/cryptopp/cryptopp
 
 USES=		cmake:outsource compiler:c++14-lang iconv localbase:ldflags
+USE_SDL=	sdl2
 CMAKE_ARGS=	-DENABLE_WEB_SERVICE=off # XXX unbundle curl-7.52.1
 CXXFLAGS+=	-D_GLIBCXX_USE_C99 -D_GLIBCXX_USE_C99_MATH_TR1 \
 		-D_DECLARE_C99_LDBL_MATH # XXX ports/193528
@@ -47,7 +48,6 @@ OPTIONS_MULTI_GUI=	QT5 SDL
 OPTIONS_SLAVE?=	SDL
 OPTIONS_EXCLUDE:=	${OPTIONS_MULTI_GUI}
 
-SDL_USE=	SDL=sdl2
 SDL_CMAKE_BOOL=	ENABLE_SDL2
 SDL_PLIST_FILES=bin/${PORTNAME} \
 		man/man6/${PORTNAME}.6.gz
@@ -63,6 +63,7 @@ QT5_PLIST_FILES=bin/${PORTNAME}-qt \
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,share/man,man,' \
+		-e '/check_submodules_present()/d' \
 		${WRKSRC}/CMakeLists.txt
 	@${REINPLACE_CMD} -e 's/@GIT_BRANCH@/master/' \
 		-e 's/@GIT_DESC@/${GH_TAGNAME}/' \

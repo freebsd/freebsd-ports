@@ -18,6 +18,9 @@ RUN_DEPENDS=	rubygem-concurrent-ruby>=1.0.0:devel/rubygem-concurrent-ruby \
 		rubygem-rack-protection>=1.5.0:www/rubygem-rack-protection \
 		rubygem-redis>=3.2.1:databases/rubygem-redis
 
+DEPRECATED=	Use devel/rubygem-sidekiq instead
+EXPIRATION_DATE=2017-08-31
+
 PORTSCOUT=	limit:^4\.
 
 NO_ARCH=	yes

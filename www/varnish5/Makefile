@@ -2,6 +2,7 @@
 
 PORTNAME=	varnish
 PORTVERSION=	5.1.3
+DISTVERSIONPREFIX=	varnish-
 PORTREVISION=	0
 CATEGORIES=	www
 PKGNAMESUFFIX=	5
@@ -29,7 +30,6 @@ INSTALL_TARGET=	install-strip
 USE_GITHUB=	yes
 GH_ACCOUNT=	varnishcache
 GH_PROJECT=	varnish-cache
-GH_TAGNAME=	varnish-${PORTVERSION}
 
 USERS=		varnish varnishlog
 GROUPS=		varnish

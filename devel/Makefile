@@ -585,6 +585,7 @@
     SUBDIR += etcd32
     SUBDIR += etl
     SUBDIR += euca2ools
+    SUBDIR += evemu
     SUBDIR += eventxx
     SUBDIR += evolution-gconf-tools
     SUBDIR += exercisix
@@ -5981,6 +5982,7 @@
     SUBDIR += umlgraph
     SUBDIR += unibilium
     SUBDIR += unittest-cpp
+    SUBDIR += universal-ctags
     SUBDIR += universalindentgui
     SUBDIR += upnp
     SUBDIR += upp
