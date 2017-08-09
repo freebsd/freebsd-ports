@@ -127,7 +127,6 @@ man/man7/groff_ms.7.gz
 man/man7/groff_trace.7.gz
 man/man7/groff_www.7.gz
 man/man7/roff.7.gz
-%%EXAMPLESDIR%%/webpage-17.html
 %%EXAMPLESDIR%%/chem/122/README
 %%EXAMPLESDIR%%/chem/122/ch2a_ethyl.chem
 %%EXAMPLESDIR%%/chem/122/ch2b_benzene.chem
@@ -235,6 +234,7 @@ man/man7/roff.7.gz
 %%HTMLDOCS%%%%EXAMPLESDIR%%/webpage-14.html
 %%HTMLDOCS%%%%EXAMPLESDIR%%/webpage-15.html
 %%HTMLDOCS%%%%EXAMPLESDIR%%/webpage-16.html
+%%HTMLDOCS%%%%EXAMPLESDIR%%/webpage-17.html
 %%HTMLDOCS%%%%EXAMPLESDIR%%/webpage-2.html
 %%HTMLDOCS%%%%EXAMPLESDIR%%/webpage-3.html
 %%HTMLDOCS%%%%EXAMPLESDIR%%/webpage-4.html
