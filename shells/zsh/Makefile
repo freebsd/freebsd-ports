@@ -23,6 +23,8 @@ MAKE_JOBS_UNSAFE=	yes
 
 USES=		iconv ncurses shebangfix tar:xz
 
+USE_HARDENING=	pie relro safestack
+
 SHEBANG_LANG=	zsh
 zsh_OLD_CMD=	zsh	# shebang appears as /bin/zsh and just zsh
 SHEBANG_FILES=	Functions/Calendar/* \
@@ -40,8 +42,6 @@ GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include -DBOOL_DEFINED
 LDFLAGS+=	-L${LOCALBASE}/lib -Wl,--as-needed
 TEST_TARGET=	test
-
-EXPLICIT_SAFESTACK=	yes
 
 OPTIONS_DEFINE=	DEBUG ETCDIR GDBM MEM PCRE STATIC \
 		DOCS EXAMPLES
