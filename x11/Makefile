@@ -52,6 +52,7 @@
     SUBDIR += docker-tray
     SUBDIR += dri2proto
     SUBDIR += dri3proto
+    SUBDIR += dsbautostart
     SUBDIR += dxpc
     SUBDIR += dynamag
     SUBDIR += dzen2
