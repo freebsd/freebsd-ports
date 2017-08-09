@@ -825,7 +825,6 @@ MASTER_SITE_MYSQL+= \
 	ftp://mirror.widexs.nl/pub/mysql/Downloads/%SUBDIR%/ \
 	ftp://mirror.switch.ch/mirror/mysql/Downloads/%SUBDIR%/ \
 	http://mysql.dp.ua/Downloads/%SUBDIR%/ \
-	http://mysql.mirrored.ca/Downloads/%SUBDIR%/ \
 	ftp://mirror.services.wisc.edu/mirrors/mysql/Downloads/%SUBDIR%/ \
 	http://mysql.mirrors.pair.com/Downloads/%SUBDIR%/ \
 	ftp://ftp.linorg.usp.br/mysql/Downloads/%SUBDIR%/ \
