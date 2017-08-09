@@ -18,6 +18,9 @@ RUN_DEPENDS=	rubygem-redis-namespace>=1.5.2:databases/rubygem-redis-namespace \
 		rubygem-rufus-scheduler>=2.0.24:devel/rubygem-rufus-scheduler \
 		rubygem-sidekiq4>=4.2.1:devel/rubygem-sidekiq4
 
+DEPRECATED=	Use devel/rubygem-sidekiq-cron instead
+EXPIRATION_DATE=2017-08-31
+
 PORTSCOUT=	limit:^0\.4\.
 
 NO_ARCH=	yes
