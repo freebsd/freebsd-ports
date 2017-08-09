@@ -154,6 +154,7 @@
     SUBDIR += cfengine38
     SUBDIR += cfengine39
     SUBDIR += chgrep
+    SUBDIR += chvt
     SUBDIR += chyves
     SUBDIR += cinnamon-control-center
     SUBDIR += cinnamon-settings-daemon

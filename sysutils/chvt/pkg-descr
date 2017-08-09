@@ -1,0 +1,4 @@
+The command chvt N makes /dev/ttyv(N-1) the foreground terminal.
+The key combination Ctrl-Alt-FN (with N in the range 1-12) has a similar effect.
+
+WWW: https://lists.debian.org/debian-bsd/2009/11/msg00006.html
