@@ -30,6 +30,8 @@ USES=		autoreconf gmake iconv:translit localbase:ldflags ncurses perl5 tar:xz
 USE_LOCALE=	en_US.UTF-8
 USE_PERL5=	build
 
+USE_HARDENING=	relro
+
 # The configure process accepts,filters and canonicalises
 # the CONFIGURE_TARGET variable. You can read the files
 # ${WRKSRC}/configure and ${WRKSRC}/config.sub.
@@ -74,14 +76,8 @@ BOOT_SUB_LIST_OFF=	HSC2HS=${BOOT_HSC2HS}
 
 DOCS_BUILD_DEPENDS+=	sphinx-build:textproc/py-sphinx
 
-<<<<<<< HEAD
-NOPIE_PORTS=	yes
-
-.include <bsd.port.options.mk>
-=======
 DYNAMIC_SUB_LIST=	WITH_DYNAMIC=""
 DYNAMIC_SUB_LIST_OFF=	WITH_DYNAMIC="\#"
->>>>>>> freebsd/master
 
 PROFILE_SUB_LIST=	WITH_PROFILE=""
 PROFILE_SUB_LIST_OFF=	WITH_PROFILE="\#"
