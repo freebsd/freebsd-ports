@@ -2640,6 +2640,8 @@ gcc-arm-embedded-%%FULL_VERSION%%/share/gcc-%%TARGET%%/libstdcxx/__init__.py
 gcc-arm-embedded-%%FULL_VERSION%%/share/gcc-%%TARGET%%/libstdcxx/v6/__init__.py
 gcc-arm-embedded-%%FULL_VERSION%%/share/gcc-%%TARGET%%/libstdcxx/v6/printers.py
 gcc-arm-embedded-%%FULL_VERSION%%/share/gcc-%%TARGET%%/libstdcxx/v6/xmethods.py
+%%PYGDB%%%%PORTDOCS%%%%DOCSDIR%%/man/man1/%%TARGET%%-gcov-dump.1.gz
+%%PYGDB%%%%PORTDOCS%%%%DOCSDIR%%/man/man1/%%TARGET%%-gcov-tool.1.gz
 %%PYGDB%%%%PORTDOCS%%%%DOCSDIR%%/man/man1/%%TARGET%%-gdb.1-py.gz
 %%PYGDB%%%%PORTDOCS%%%%DOCSDIR%%/man/man1/%%TARGET%%-gdbserver.1-py.gz
 %%PYGDB%%%%PORTDOCS%%%%DOCSDIR%%/man/man5/%%TARGET%%-gdbinit.5-py.gz
