@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	piwik
-PORTVERSION=	3.0.3
+PORTVERSION=	3.0.4
 CATEGORIES=	www
 MASTER_SITES=	http://builds.piwik.org/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	tz@FreeBSD.org
 COMMENT=	Open Source Web Analytics Software Program
 
 LICENSE=	GPLv3
