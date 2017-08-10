@@ -1,6 +1,6 @@
---- deps/v8/src/base/cpu.cc.orig	2017-06-19 14:24:53.928317000 +0000
-+++ deps/v8/src/base/cpu.cc	2017-06-19 14:24:57.294664000 +0000
-@@ -601,6 +601,7 @@
+--- deps/v8/src/base/cpu.cc.orig	2017-08-09 18:48:10 UTC
++++ deps/v8/src/base/cpu.cc
+@@ -607,6 +607,7 @@ CPU::CPU()
  
  #elif V8_HOST_ARCH_ARM64
  
@@ -8,7 +8,7 @@
    CPUInfo cpu_info;
  
    // Extract implementor from the "CPU implementer" field.
-@@ -634,6 +635,8 @@
+@@ -640,6 +641,8 @@ CPU::CPU()
      }
      delete[] part;
    }
