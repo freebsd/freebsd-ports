@@ -21,7 +21,6 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--enable-utf8 \
 		--enable-shared
 
-UNSET=			DOCS
 OPTIONS_DEFINE=		DOCS
 DOCS_CONFIGURE_ENABLE=	docs
 DOCS_CONFIGURE_ON=	--docdir=${DOCSDIR}
