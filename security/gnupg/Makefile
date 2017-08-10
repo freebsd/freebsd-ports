@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gnupg
-PORTVERSION=	2.1.22
+PORTVERSION=	2.1.23
 CATEGORIES=	security
 MASTER_SITES=	GNUPG
 
@@ -26,11 +26,12 @@ CONFLICTS=	gnupg-2.0.* dirmngr-[0-9]*
 CPE_VENDOR=	gnupg
 
 USES=		compiler:c11 cpe gmake iconv pkgconfig readline sqlite tar:bzip2
-CONFIGURE_ARGS=	--disable-ntbtls --enable-symcryptrun --disable-wks-tools
+CONFIGURE_ARGS=	--disable-ntbtls --disable-wks-tools \
+		--enable-gpg-is-gpg2 --enable-symcryptrun
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 INFO=		gnupg
-TEST_TARGET=	check-all
+TEST_TARGET=	check
 
 OPTIONS_DEFINE=	GNUTLS LDAP SCDAEMON NLS DOCS SUID_GPG
 OPTIONS_DEFAULT=GNUTLS SCDAEMON
