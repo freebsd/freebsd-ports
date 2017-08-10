@@ -15,6 +15,7 @@ share/trueos/i18n/FirstBoot_da.qm
 share/trueos/i18n/FirstBoot_de.qm
 share/trueos/i18n/FirstBoot_el.qm
 share/trueos/i18n/FirstBoot_en.qm
+share/trueos/i18n/FirstBoot_en_AU.qm
 share/trueos/i18n/FirstBoot_en_GB.qm
 share/trueos/i18n/FirstBoot_en_US.qm
 share/trueos/i18n/FirstBoot_en_ZA.qm
@@ -86,6 +87,7 @@ share/trueos/i18n/SysInstaller_en.qm
 share/trueos/i18n/SysInstaller_en_GB.qm
 share/trueos/i18n/SysInstaller_en_US.qm
 share/trueos/i18n/SysInstaller_en_ZA.qm
+share/trueos/i18n/SysInstaller_en_AU.qm
 share/trueos/i18n/SysInstaller_es.qm
 share/trueos/i18n/SysInstaller_et.qm
 share/trueos/i18n/SysInstaller_eu.qm
@@ -152,6 +154,7 @@ share/trueos/i18n/XGUISource_de.qm
 share/trueos/i18n/XGUISource_el.qm
 share/trueos/i18n/XGUISource_en_GB.qm
 share/trueos/i18n/XGUISource_en_ZA.qm
+share/trueos/i18n/XGUISource_en_AU.qm
 share/trueos/i18n/XGUISource_es.qm
 share/trueos/i18n/XGUISource_et.qm
 share/trueos/i18n/XGUISource_eu.qm
