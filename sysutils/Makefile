@@ -387,6 +387,8 @@
     SUBDIR += geomWatch
     SUBDIR += getdelta
     SUBDIR += geteltorito
+    SUBDIR += ghostbsd-bug-report
+    SUBDIR += ghostbsd-grub2-settings
     SUBDIR += gigolo
     SUBDIR += gkfreq
     SUBDIR += gkleds2
@@ -396,8 +398,6 @@
     SUBDIR += gkrellm2
     SUBDIR += gkrelltop
     SUBDIR += gksu
-    SUBDIR += ghostbsd-bug-report
-    SUBDIR += ghostbsd-grub2-settings
     SUBDIR += gnome_subr
     SUBDIR += gnome-control-center
     SUBDIR += gnome-device-manager
