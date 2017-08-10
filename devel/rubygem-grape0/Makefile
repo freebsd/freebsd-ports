@@ -22,6 +22,7 @@ RUN_DEPENDS=	rubygem-activesupport4>=0:devel/rubygem-activesupport4 \
 		rubygem-rack-accept>=0:www/rubygem-rack-accept \
 		rubygem-virtus>=1.0.0:devel/rubygem-virtus
 
+CONFLICTS=	rubygem-grape
 PORTSCOUT=	limit:^0\.
 
 NO_ARCH=	yes
