@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ruby_parser
-PORTVERSION=	3.6.6
+PORTVERSION=	3.8.4
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
