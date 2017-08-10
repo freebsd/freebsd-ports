@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	citra
-PORTVERSION=	s20170713
+PORTVERSION=	s20170809
 PORTREVISION?=	0
 CATEGORIES=	emulators
 
@@ -30,7 +30,7 @@ ONLY_FOR_ARCHS_REASON=	https://github.com/MerryMage/dynarmic/issues/35
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	citra-emu
-GH_TAGNAME=	5137a198f
+GH_TAGNAME=	792dee47a
 GH_TUPLE=	citra-emu:ext-soundtouch:5274ec4:soundtouch/externals/soundtouch \
 		MerryMage:dynarmic:8f15e3f:dynarmic/externals/dynarmic \
 		fmtlib:fmt:3.0.0-187-gac5484c:fmt/externals/fmt \
@@ -68,6 +68,7 @@ QT5_PLIST_FILES=bin/${PORTNAME}-qt \
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,share/man,man,' \
+		-e '/check_submodules_present()/d' \
 		${WRKSRC}/CMakeLists.txt
 	@${REINPLACE_CMD} -e 's/@GIT_BRANCH@/master/' \
 		-e 's/@GIT_DESC@/${GH_TAGNAME}/' \
