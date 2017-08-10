@@ -3,7 +3,6 @@ bin/xrdp-genkeymap
 bin/xrdp-keygen
 bin/xrdp-sesadmin
 bin/xrdp-sesrun
-bin/rfxcodectest
 lib/libpainter.a
 lib/libpainter.so
 lib/libpainter.so.0
@@ -19,6 +18,7 @@ include/rfxcodec_encode.h
 include/xrdp_client_info.h
 include/xrdp_constants.h
 include/xrdp_rail.h
+include/xrdp_sockets.h
 lib/pulse-%%PULSE_VERSION%%/modules/module-xrdp-sink.so
 lib/pulse-%%PULSE_VERSION%%/modules/module-xrdp-source.so
 libdata/pkgconfig/libpainter.pc
@@ -30,28 +30,18 @@ lib/xrdp/libcommon.so.0
 lib/xrdp/libcommon.so.0.0.0
 lib/xrdp/libmc.a
 lib/xrdp/libmc.so
-lib/xrdp/libmc.so.0
-lib/xrdp/libmc.so.0.0.0
-lib/xrdp/librdp.a
-lib/xrdp/librdp.so
-lib/xrdp/librdp.so.0
-lib/xrdp/librdp.so.0.0.0
 lib/xrdp/libscp.a
 lib/xrdp/libscp.so
 lib/xrdp/libscp.so.0
 lib/xrdp/libscp.so.0.0.0
 lib/xrdp/libvnc.a
 lib/xrdp/libvnc.so
-lib/xrdp/libvnc.so.0
-lib/xrdp/libvnc.so.0.0.0
 lib/xrdp/libxrdp.a
 lib/xrdp/libxrdp.so
 lib/xrdp/libxrdp.so.0
 lib/xrdp/libxrdp.so.0.0.0
 lib/xrdp/libxup.a
 lib/xrdp/libxup.so
-lib/xrdp/libxup.so.0
-lib/xrdp/libxup.so.0.0.0
 lib/xrdp/libxrdpapi.so
 lib/xrdp/libxrdpapi.a
 lib/xrdp/libxrdpapi.so.0
@@ -80,10 +70,12 @@ etc/rc.d/xrdp
 %%ETCDIR%%/pulse/default.pa
 @postunexec if cmp -s %D/etc/xrdp/sesman.ini.sample %D/etc/xrdp/sesman.ini; then rm -f %D/etc/xrdp/sesman.ini; fi
 @postunexec if cmp -s %D/etc/xrdp/startwm.sh.sample %D/etc/xrdp/startwm.sh; then rm -f %D/etc/xrdp/startwm.sh; fi
+@postunexec if cmp -s %D/etc/xrdp/reconnectwm.sh.sample %D/etc/xrdp/reconnectwm.sh; then rm -f %D/etc/xrdp/reconnectwm.sh; fi
 @postunexec if cmp -s %D/etc/xrdp/xrdp.ini.sample %D/etc/xrdp/xrdp.ini; then rm -f %D/etc/xrdp/xrdp.ini; fi
 @postunexec if cmp -s %D/etc/xrdp/xrdp_keyboard.ini.sample %D/etc/xrdp/xrdp_keyboard.ini; then rm -f %D/etc/xrdp/xrdp_keyboard.ini; fi
 @sample %%ETCDIR%%/sesman.ini.sample
 @sample %%ETCDIR%%/startwm.sh.sample
+@sample %%ETCDIR%%/reconnectwm.sh.sample
 @sample %%ETCDIR%%/xrdp.ini.sample
 @sample %%ETCDIR%%/xrdp_keyboard.ini.sample
 man/man1/xrdp-dis.1.gz
@@ -96,11 +88,9 @@ man/man8/xrdp-keygen.8.gz
 man/man8/xrdp-sesadmin.8.gz
 man/man8/xrdp-sesman.8.gz
 man/man8/xrdp-sesrun.8.gz
-man/man8/xrdp-sessvc.8.gz
 sbin/xrdp
 sbin/xrdp-chansrv
 sbin/xrdp-sesman
-sbin/xrdp-sessvc
 %%DATADIR%%/ad24b.bmp
 %%DATADIR%%/ad256.bmp
 %%DATADIR%%/cursor0.cur
