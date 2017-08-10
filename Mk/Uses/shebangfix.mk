@@ -92,8 +92,7 @@ fix-shebang:
 .endfor
 .else
 	@cd ${WRKSRC}; \
-		${FIND} ${SHEBANG_FILES} -type f \
-		-exec ${SED} -i '' ${_SHEBANG_REINPLACE_ARGS} {} +
+		${ECHO_CMD} ${SHEBANG_FILES} | ${XARGS} ${SED} -i '' ${_SHEBANG_REINPLACE_ARGS}
 .endif
 
 .endif
