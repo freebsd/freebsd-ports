@@ -3,6 +3,7 @@
 
 PORTNAME=	FusionInventory-Agent
 PORTVERSION=	2.3.20
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:GBOUGARD/${PORTNAME}-2320targz
@@ -12,6 +13,7 @@ MAINTAINER=	vg@FreeBSD.org
 COMMENT=	Agent for OCS Inventory server and FusionInventory for GLPI servers
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	p5-File-Which>=0:sysutils/p5-File-Which \
 		p5-libwww>=0:www/p5-libwww \
@@ -73,11 +75,9 @@ DEPLOY_RUN_DEPENDS=	p5-Archive-Extract>=0:archivers/p5-Archive-Extract \
 DMIDECODE_RUN_DEPENDS=	dmidecode:sysutils/dmidecode
 NETDISC_RUN_DEPENDS=	nmap:security/nmap \
 			p5-Net-NBName>=0:net/p5-Net-NBName \
-			p5-Net-SNMP>=0:net-mgmt/p5-Net-SNMP \
-			p5-Thread-Queue>=0:devel/p5-Thread-Queue
+			p5-Net-SNMP>=0:net-mgmt/p5-Net-SNMP
 NETINV_RUN_DEPENDS=	p5-Crypt-DES>=0:security/p5-Crypt-DES \
-			p5-Net-SNMP>=0:net-mgmt/p5-Net-SNMP \
-			p5-Thread-Queue>=0:devel/p5-Thread-Queue
+			p5-Net-SNMP>=0:net-mgmt/p5-Net-SNMP
 PCIUTILS_RUN_DEPENDS+=	lspci:sysutils/pciutils
 SSL_RUN_DEPENDS=	p5-IO-Socket-SSL>=1.14:security/p5-IO-Socket-SSL \
 			p5-LWP-Protocol-https>=0:www/p5-LWP-Protocol-https
