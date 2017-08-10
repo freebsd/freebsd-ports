@@ -207,6 +207,7 @@ bin/zsh-%%ZSH_VER%%
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Debian/_dchroot-dsa
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Debian/_dcut
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Debian/_deb_architectures
+%%DATADIR%%/%%ZSH_VER%%/functions/Completion/Debian/_deb_codenames
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Debian/_deb_packages
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Debian/_debbugs_bugnumber
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Debian/_debchange
@@ -267,6 +268,7 @@ bin/zsh-%%ZSH_VER%%
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Linux/_iwconfig
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Linux/_kpartx
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Linux/_losetup
+%%DATADIR%%/%%ZSH_VER%%/functions/Completion/Linux/_lsblk
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Linux/_lsusb
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Linux/_ltrace
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Linux/_mdadm
@@ -343,6 +345,7 @@ bin/zsh-%%ZSH_VER%%
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_attr
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_augeas
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_awk
+%%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_basename
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_baudrates
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_baz
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_beep
@@ -368,6 +371,7 @@ bin/zsh-%%ZSH_VER%%
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_chown
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_chsh
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_clay
+%%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_cmdambivalent
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_cmdstring
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_cmp
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_comm
@@ -414,6 +418,7 @@ bin/zsh-%%ZSH_VER%%
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_elm
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_email_addresses
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_enscript
+%%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_entr
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_env
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_espeak
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_etags
@@ -429,6 +434,7 @@ bin/zsh-%%ZSH_VER%%
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_finger
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_flasher
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_flex
+%%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_fmt
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_fortune
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_fsh
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_fuser
@@ -544,6 +550,7 @@ bin/zsh-%%ZSH_VER%%
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_openstack
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_other_accounts
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_pack
+%%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_paste
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_patch
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_patchutils
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_path_commands
@@ -627,6 +634,8 @@ bin/zsh-%%ZSH_VER%%
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_subversion
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_sudo
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_surfraw
+%%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_swaks
+%%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_swift
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_sys_calls
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_sysctl
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_tail
@@ -661,6 +670,7 @@ bin/zsh-%%ZSH_VER%%
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_ttys
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_twidge
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_twisted
+%%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_umountable
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_unace
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_uname
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_unexpand
@@ -925,6 +935,7 @@ bin/zsh-%%ZSH_VER%%
 %%DATADIR%%/%%ZSH_VER%%/functions/Prompts/prompt_bart_setup
 %%DATADIR%%/%%ZSH_VER%%/functions/Prompts/prompt_bigfade_setup
 %%DATADIR%%/%%ZSH_VER%%/functions/Prompts/prompt_clint_setup
+%%DATADIR%%/%%ZSH_VER%%/functions/Prompts/prompt_default_setup
 %%DATADIR%%/%%ZSH_VER%%/functions/Prompts/prompt_elite2_setup
 %%DATADIR%%/%%ZSH_VER%%/functions/Prompts/prompt_elite_setup
 %%DATADIR%%/%%ZSH_VER%%/functions/Prompts/prompt_fade_setup
@@ -933,6 +944,7 @@ bin/zsh-%%ZSH_VER%%
 %%DATADIR%%/%%ZSH_VER%%/functions/Prompts/prompt_oliver_setup
 %%DATADIR%%/%%ZSH_VER%%/functions/Prompts/prompt_pws_setup
 %%DATADIR%%/%%ZSH_VER%%/functions/Prompts/prompt_redhat_setup
+%%DATADIR%%/%%ZSH_VER%%/functions/Prompts/prompt_restore_setup
 %%DATADIR%%/%%ZSH_VER%%/functions/Prompts/prompt_special_chars
 %%DATADIR%%/%%ZSH_VER%%/functions/Prompts/prompt_suse_setup
 %%DATADIR%%/%%ZSH_VER%%/functions/Prompts/prompt_walters_setup
@@ -997,6 +1009,7 @@ bin/zsh-%%ZSH_VER%%
 %%DATADIR%%/%%ZSH_VER%%/functions/VCS_Info/VCS_INFO_realpath
 %%DATADIR%%/%%ZSH_VER%%/functions/VCS_Info/VCS_INFO_reposub
 %%DATADIR%%/%%ZSH_VER%%/functions/VCS_Info/VCS_INFO_set
+%%DATADIR%%/%%ZSH_VER%%/functions/VCS_Info/VCS_INFO_set-patch-format
 %%DATADIR%%/%%ZSH_VER%%/functions/VCS_Info/vcs_info
 %%DATADIR%%/%%ZSH_VER%%/functions/VCS_Info/vcs_info_hookadd
 %%DATADIR%%/%%ZSH_VER%%/functions/VCS_Info/vcs_info_hookdel
