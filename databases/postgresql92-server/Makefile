@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME?=	postgresql
-DISTVERSION?=	9.2.21
+DISTVERSION?=	9.2.22
 PORTREVISION?=	1
 CATEGORIES?=	databases
 MASTER_SITES=	PGSQL/source/v${DISTVERSION}
@@ -61,7 +61,7 @@ INSTALL_TARGET?=install-strip
 SERVER_ONLY=	yes
 COMPONENT=	-server
 USE_RC_SUBR=	postgresql
-USES+=		pgsql:${DISTVERSION:C/([0-9][0-9]*\.[0-9][0-9]*).*/\1/g}
+USES+=		pgsql:${DISTVERSION:C/([0-9]\.?[0-9]).*/\1/g}
 USERS=		${PG_USER}
 GROUPS=	${PG_GROUP}
 SUB_FILES+=	502.pgsql
@@ -83,9 +83,11 @@ DTRACE_DESC=	Build with DTrace probes
 TZDATA_DESC=	Use internal timezone database
 XML_DESC=	Build with XML data type
 
+.if ${DISTVERSION:C/([0-9]*).*/\1/} != 10
 # See http://people.freebsd.org/~girgen/postgresql-icu/README.html for more info
 OPTIONS_DEFINE+=	ICU
 ICU_DESC=	Use ICU for unicode collation
+.endif
 
 # See http://www.freebsd.org/cgi/query-pr.cgi?pr=ports/76999 for more info
 # (requires dump/restore if modified.)
@@ -96,8 +98,10 @@ OPTIONS_DEFAULT+=	XML TZDATA INTDATE
 
 .if !defined(SLAVE_ONLY)
 OPTIONS_DEFINE+=	NLS PAM GSSAPI OPTIMIZED_CFLAGS DEBUG
-OPTIONS_RADIO= KRB5
-OPTIONS_RADIO_KRB5= MIT_KRB5 HEIMDAL_KRB5
+. if ${DISTVERSION:R} == 9.2 || ${DISTVERSION:R} == 9.3
+  OPTIONS_RADIO= KRB5
+  OPTIONS_RADIO_KRB5= MIT_KRB5 HEIMDAL_KRB5
+. endif
 
 KRB5_DESC=       Build with kerberos provider support
 NLS_DESC=	Use internationalized messages
