@@ -1,0 +1,32 @@
+--- src/BUILD.orig	2017-07-31 10:06:21.426927000 +0200
++++ src/BUILD	2017-07-31 10:06:44.279345000 +0200
+@@ -179,7 +179,7 @@
+             "//src/java_tools/singlejar:SingleJar_deploy.jar",
+         ],
+         "//conditions:default": [
+-            "//src/tools/singlejar:singlejar",
++            "//src/java_tools/singlejar:SingleJar_deploy.jar",
+         ],
+     }) + select({
+         "//tools/jdk:jdk7": [],
+--- src/main/cpp/blaze_util_posix.cc.orig
++++ src/main/cpp/blaze_util_posix.cc
+@@ -29,6 +29,7 @@
+ #include <sys/resource.h>
+ #include <sys/wait.h>
+ #include <unistd.h>
++#include <time.h>
+ 
+ #include <cassert>
+ #include <cinttypes>
+@@ -648,8 +649,8 @@
+ }
+ 
+ void TrySleep(unsigned int milliseconds) {
+-  unsigned int seconds_part = milliseconds / 1000;
+-  unsigned int nanoseconds_part = (milliseconds % 1000) * 1000 * 1000;
++  time_t seconds_part = (time_t) (milliseconds / 1000);
++  long nanoseconds_part = ((long)(milliseconds % 1000)) * 1000 * 1000;
+   struct timespec sleeptime = {seconds_part, nanoseconds_part};
+   nanosleep(&sleeptime, NULL);
+ }
