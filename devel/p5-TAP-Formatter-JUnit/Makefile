@@ -2,7 +2,7 @@
 
 PORTNAME=	TAP-Formatter-JUnit
 PORTVERSION=	0.11
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -18,7 +18,6 @@ RUN_DEPENDS=	\
 	p5-MooseX-NonMoose>0:devel/p5-MooseX-NonMoose \
 	p5-File-Slurp>0:devel/p5-File-Slurp \
 	p5-XML-Generator>0:textproc/p5-XML-Generator \
-	p5-Test-Harness>3.12:devel/p5-Test-Harness \
 	p5-List-MoreUtils>0:lang/p5-List-MoreUtils
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 TEST_DEPENDS=	p5-IO-stringy>=0:devel/p5-IO-stringy

@@ -15,13 +15,13 @@
  gccProgram = (simpleProgram "gcc") {
 -    programFindVersion = findProgramVersion "-dumpversion" id
 -  }
-+     programFindLocation = \v p -> findProgramOnSearchPath v p "cc"
++     programFindLocation = \v p -> findProgramOnSearchPath v p "%%CC%%"
 +}
  
  arProgram :: Program
 -arProgram = simpleProgram "ar"
 +arProgram = (simpleProgram "ar") {
-+     programFindLocation = \v p -> findProgramOnSearchPath v p "ar"
++     programFindLocation = \v p -> findProgramOnSearchPath v p "%%AR%%"
 +}
  
  stripProgram :: Program
@@ -32,7 +32,7 @@
  ldProgram :: Program
 -ldProgram = simpleProgram "ld"
 +ldProgram = (simpleProgram "ld") {
-+    programFindLocation = \v p -> findProgramOnSearchPath v p "ld"
++    programFindLocation = \v p -> findProgramOnSearchPath v p "%%LD%%"
 +  }
  
  tarProgram :: Program
