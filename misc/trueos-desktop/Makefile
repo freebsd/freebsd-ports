@@ -46,12 +46,6 @@ RUN_DEPENDS=	${LOCALBASE}/sbin/PCDMd:x11/pcdm \
 		git:devel/git \
 		xv>=0:graphics/xv \
 		tor>=0:security/tor \
-		fcitx-m17n>=0:textproc/fcitx-m17n \
-		fcitx-qt5>=0:textproc/fcitx-qt5 \
-		ja-fcitx-mozc>=0:japanese/fcitx-mozc \
-		ko-fcitx-hangul>=0:korean/fcitx-hangul \
-		zh-fcitx-configtool>=0:chinese/fcitx-configtool \
-		zh-fcitx-chewing>=0:chinese/fcitx-chewing \
 		socat>=0:net/socat \
 		mesa-demos>=0:graphics/mesa-demos \
 		dhcpcd>=0:net/dhcpcd \
