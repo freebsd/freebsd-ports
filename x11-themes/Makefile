@@ -65,7 +65,6 @@
     SUBDIR += gnome-themes-extras
     SUBDIR += gnome-themes-standard
     SUBDIR += greybird-theme
-    SUBDIR += gtk-E17-theme
     SUBDIR += gtk-aluminumalloy-cryogenic-theme
     SUBDIR += gtk-aluminumalloy-smog-theme
     SUBDIR += gtk-aluminumalloy-toxic-theme
@@ -77,6 +76,7 @@
     SUBDIR += gtk-cleanice-engine
     SUBDIR += gtk-digital-cream-theme
     SUBDIR += gtk-digital-harmony-theme
+    SUBDIR += gtk-E17-theme
     SUBDIR += gtk-engines2
     SUBDIR += gtk-envy-theme
     SUBDIR += gtk-equinox-engine
@@ -131,6 +131,7 @@
     SUBDIR += kf5-kemoticons
     SUBDIR += kf5-kiconthemes
     SUBDIR += kf5-oxygen-icons5
+    SUBDIR += lumina-themes
     SUBDIR += lxappearance
     SUBDIR += lxde-icon-theme
     SUBDIR += mate-backgrounds
@@ -154,8 +155,8 @@
     SUBDIR += numix-theme
     SUBDIR += openbox-themes
     SUBDIR += plank-theme-moka
-    SUBDIR += qt4-style-Kvantum
     SUBDIR += qt4-style-float
+    SUBDIR += qt4-style-Kvantum
     SUBDIR += qt4-style-phase
     SUBDIR += qt4-style-quantumstyle
     SUBDIR += qt5-style-Kvantum
