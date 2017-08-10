@@ -330,6 +330,7 @@
     SUBDIR += libgnomesu
     SUBDIR += libgpg-error
     SUBDIR += libgringotts
+    SUBDIR += libhijack
     SUBDIR += libident
     SUBDIR += libkpass
     SUBDIR += libksba
