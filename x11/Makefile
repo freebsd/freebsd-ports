@@ -413,14 +413,14 @@
     SUBDIR += xev
     SUBDIR += xextproto
     SUBDIR += xeyes
-    SUBDIR += xfce-installed-settings
-    SUBDIR += xfce-live-settings
     SUBDIR += xf86dga
     SUBDIR += xf86dgaproto
     SUBDIR += xf86driproto
     SUBDIR += xf86miscproto
     SUBDIR += xf86rushproto
     SUBDIR += xf86vidmodeproto
+    SUBDIR += xfce-installed-settings
+    SUBDIR += xfce-live-settings
     SUBDIR += xfce4-clipman-plugin
     SUBDIR += xfce4-conf
     SUBDIR += xfce4-dashboard

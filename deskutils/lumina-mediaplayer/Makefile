@@ -2,14 +2,17 @@
 # $FreeBSD$
 
 PORTNAME=	lumina-mediaplayer
-PORTVERSION=	1.3.1
-PORTREVISION=	201708050824
+PORTVERSION=	1.3.2
+PORTREVISION=	201708111414
 CATEGORIES=	deskutils
 
 MAINTAINER=	kmoore@FreeBSD.org
 COMMENT=	Streaming media player from the Lumina Desktop
 
 LICENSE=	BSD3CLAUSE
+
+RUN_DEPENDS=	gstreamer1-qt5>=0:multimedia/gstreamer1-qt5 \
+		gstreamer1-plugins-gl>=0:graphics/gstreamer1-plugins-gl
 
 OPTIONS_DEFINE=	I18N
 OPTIONS_DEFAULT=	I18N
@@ -19,13 +22,13 @@ I18N_DESC= Install localization files
 
 MAKE_JOBS_UNSAFE=yes
 
+USES=		qmake
 USE_QT5=	core gui widgets network svg \
 		buildtools_build x11extras multimedia concurrent
-USES=		qmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	trueos
 GH_PROJECT=	lumina
-GH_TAGNAME=	c55d13f9f07d6f9486343b1a3aac71cb62f58c36
+GH_TAGNAME=	1af2a44d36acf8d78b583520e09bba5deb04bf4e
 WRKSRC_SUBDIR=	src-qt5/desktop-utils/${PORTNAME}
 
 .if${PORT_OPTIONS:MI18N}
