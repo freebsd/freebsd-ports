@@ -24,7 +24,6 @@ RUN_DEPENDS=	${LOCALBASE}/sbin/PCDMd:x11/pcdm \
 		${LOCALBASE}/bin/sysadm-client:sysutils/sysadm-client \
 		${LOCALBASE}/bin/lpreserver:sysutils/life-preserver \
 		${LOCALBASE}/bin/personacrypt:sysutils/personacrypt \
-		${LOCALBASE}/bin/pc-pdfviewer:graphics/pc-pdfviewer \
 		${LOCALBASE}/bin/pc-webkitviewer:www/pc-webkitviewer \
 		${LOCALBASE}/sbin/beadm:sysutils/beadm \
 		${LOCALBASE}/bin/xdg-open:devel/xdg-utils \
