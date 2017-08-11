@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	cyrus-imapd
-PORTVERSION=	3.0.2
+PORTVERSION=	3.0.3
 #PORTREVISION=	0
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.cyrusimap.org/cyrus-imapd/ \
