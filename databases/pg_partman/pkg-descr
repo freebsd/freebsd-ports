@@ -1,0 +1,10 @@
+pg_partman is an extension to create and manage both time-based and
+serial-based table partition sets. Sub-partitoning is also supported. 
+Child table & trigger function creation is all managed by the extension 
+itself. Tables with existing data can also have their data partitioned in 
+easily managed smaller batches. Optional retention policy can automatically 
+drop partitions no longer needed. A background worker (BGW) process is 
+included to automatically run partition maintenance without the need of an 
+external scheduler (cron, etc) in most cases.
+
+WWW: https://github.com/keithf4/pg_partman
