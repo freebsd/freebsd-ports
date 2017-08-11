@@ -3,7 +3,7 @@
 
 PORTNAME=	lldpd
 PORTVERSION=	0.9.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://media.luffy.cx/files/${PORTNAME}/ \
 		http://mirror.1labs.ch/${PORTNAME}/
@@ -32,7 +32,7 @@ USERS=	_lldpd
 GROUPS=	_lldpd
 
 OPTIONS_DEFINE=		BASH DOCS DTRACE JSON PIE PROPRIETARY READLINE SNMP XML ZSH
-OPTIONS_DEFAULT=	BASH JSON PROPRIETARY SNMP XML
+OPTIONS_DEFAULT=	BASH JSON PROPRIETARY SNMP XML ZSH
 OPTIONS_SUB=	yes
 
 DTRACE_DESC=		DTrace support
@@ -57,6 +57,9 @@ XML_LIB_DEPENDS=	libxml2.so:textproc/libxml2
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/etc|${PREFIX}|g' ${WRKSRC}/src/daemon/lldpd.8.in
+	@${REINPLACE_CMD} -e 's|vendor-completions|site-functions|g' \
+		${WRKSRC}/src/client/Makefile.am \
+		${WRKSRC}/src/client/Makefile.in
 
 post-install:
 	${INSTALL_DATA} ${FILESDIR}/README.bsd ${STAGEDIR}${DOCSDIR}
