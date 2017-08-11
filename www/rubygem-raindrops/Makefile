@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	raindrops
-PORTVERSION=	0.18.0
+PORTVERSION=	0.19.0
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
