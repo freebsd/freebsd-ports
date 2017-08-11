@@ -2,7 +2,7 @@
 
 PORTNAME=	anvil
 PORTVERSION=	0.0.10
-PORTREVISON=	1
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	dvl@FreeBSD.org
@@ -29,6 +29,10 @@ WGET_DESC=	Use wget, not fetch
 
 CURL_RUN_DEPENDS=	curl:ftp/curl
 WGET_RUN_DEPENDS=	wget:ftp/wget
+
+FETCH_FETCH_TOOL=	fetch
+CURL_FETCH_TOOL=	curl
+WGET_FETCH_TOOL=	wget
 
 do-install:
 	${MKDIR} ${STAGEDIR}${ETCDIR}

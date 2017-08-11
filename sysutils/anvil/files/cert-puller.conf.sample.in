@@ -1,3 +1,4 @@
 CERT_SERVER="https://certs.example.org/certs"
 MYCERTS="services.example.org"
 SERVICES="nginx"
+FETCH_TOOL="%%FETCH_TOOL%%"
