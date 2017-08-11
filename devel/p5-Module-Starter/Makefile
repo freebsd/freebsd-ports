@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Module-Starter
-PORTVERSION=	1.72
+PORTVERSION=	1.73
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -12,6 +12,10 @@ COMMENT=	Simple starter kit for any Perl module
 
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+BUILD_DEPENDS=	p5-Module-Runtime>=0:devel/p5-Module-Runtime
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PORTSCOUT=	skipv:1.470
 
