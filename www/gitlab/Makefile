@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gitlab
-PORTVERSION=	9.2.9
-PORTREVISION=	1
+PORTVERSION=	9.2.10
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www devel
 
@@ -25,7 +24,7 @@ BUILD_DEPENDS=	gem:devel/ruby-gems
 # which makes maintaining this long list much easier!
 # only rubygem-pg and rubygem-mysql are defined later as RUN_DEPENDS
 # for the options
-RUN_DEPENDS=	git>=2.8.4:devel/git \
+RUN_DEPENDS=	git>=2.14.1:devel/git \
 	gitlab-shell>=5.0.4:devel/gitlab-shell\
 	gitlab-workhorse>=2.0.0:www/gitlab-workhorse \
 	redis>=2.8.23:databases/redis \

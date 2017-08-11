@@ -11,7 +11,7 @@ COMMENT=	The contrib utilities from the PostgreSQL distribution
 LIB_DEPENDS=	libxslt.so:textproc/libxslt \
 		libxml2.so:textproc/libxml2
 
-MASTERDIR=	${.CURDIR}/../postgresql96-server
+MASTERDIR=	${.CURDIR}/../postgresql10-server
 
 USES=		bison pgsql:10
 

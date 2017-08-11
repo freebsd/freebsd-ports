@@ -3,6 +3,7 @@ lib/libargtable2.a
 lib/libargtable2.so
 lib/libargtable2.so.0
 lib/libargtable2.so.0.1.8
+libdata/pkgconfig/argtable2.pc
 man/man3/argtable2.3.gz
 %%PORTDOCS%%%%DOCSDIR%%/arg_int.gif
 %%PORTDOCS%%%%DOCSDIR%%/argtable2-advanced.html

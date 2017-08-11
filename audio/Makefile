@@ -393,6 +393,7 @@
     SUBDIR += liblastfm
     SUBDIR += liblo
     SUBDIR += liblscp
+    SUBDIR += libltc
     SUBDIR += libmad
     SUBDIR += libmatemixer
     SUBDIR += libmikmod
@@ -861,6 +862,7 @@
     SUBDIR += xwave
     SUBDIR += yell
     SUBDIR += zinf
+    SUBDIR += zita-convolver
     SUBDIR += zita-resampler
     SUBDIR += zynaddsubfx
 

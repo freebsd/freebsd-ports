@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nginx
-PORTVERSION=	1.13.3
+PORTVERSION=	1.13.4
 CATEGORIES=	www
 MASTER_SITES=	http://nginx.org/download/
 MASTER_SITES+=	LOCAL/osa
@@ -241,9 +241,9 @@ WANT_GNOME=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MX11}
-IMAGEMAGICK_LIB_DEPENDS= libMagickWand-6.so:graphics/ImageMagick
+IMAGEMAGICK_LIB_DEPENDS=	libMagickWand-6.so:graphics/ImageMagick
 .else
-IMAGEMAGICK_LIB_DEPENDS= libMagickWand-6.so:graphics/ImageMagick-nox11
+IMAGEMAGICK_LIB_DEPENDS=	libMagickWand-6.so:graphics/ImageMagick-nox11
 .endif
 
 .if ${PORT_OPTIONS:MPASSENGER}
@@ -262,10 +262,10 @@ HTTP_PORT?=	80
 NGINX_ACCESSLOG?=	${NGINX_LOGDIR}/access.log
 NGINX_ERRORLOG?=	${NGINX_LOGDIR}/error.log
 
-CONFLICTS?=     nginx-1.* \
-                nginx-full-1.* \
-                nginx-lite-1.* \
-                nginx-naxsi-1.*
+CONFLICTS?=	nginx-1.* \
+			nginx-full-1.* \
+			nginx-lite-1.* \
+			nginx-naxsi-1.*
 USE_RC_SUBR=	nginx
 SUB_FILES=	pkg-message
 SUB_LIST+=	WWWOWN=${WWWOWN} \
@@ -467,11 +467,11 @@ EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-ngx_http_echo_request_info.c
 .endif
 
 .if ${PORT_OPTIONS:MFASTDFS}
-NGINX_FASTDFS_VERSION=     5a8110f
-GH_ACCOUNT+=    happyfish100:fastdfs
-GH_PROJECT+=    fastdfs-nginx-module:fastdfs
-GH_TAGNAME+=    ${NGINX_FASTDFS_VERSION}:fastdfs
-EXTRA_PATCHES+= ${PATCHDIR}/extra-patch-fastdfs-src-config
+NGINX_FASTDFS_VERSION=	5a8110f
+GH_ACCOUNT+=	happyfish100:fastdfs
+GH_PROJECT+=	fastdfs-nginx-module:fastdfs
+GH_TAGNAME+=	${NGINX_FASTDFS_VERSION}:fastdfs
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-fastdfs-src-config
 BUILD_DEPENDS+=	${LOCALBASE}/include/fastcommon/logger.h:devel/libfastcommon \
 		${LOCALBASE}/include/fastdfs/fdfs_client.h:ftp/fastdfs
 LIB_DEPENDS+=	libfastcommon.so:devel/libfastcommon \
@@ -763,7 +763,7 @@ EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-ngx_http_sticky_misc.c
 
 .if ${PORT_OPTIONS:MHTTP_VIDEO_THUMBEXTRACTOR}
 NGINX_VIDEO_THUMBEXTRACTOR_VERSION=	0.7.0
-LIB_DEPENDS+= 	libavformat.so:multimedia/ffmpeg \
+LIB_DEPENDS+=	libavformat.so:multimedia/ffmpeg \
 		libavcodec.so:multimedia/ffmpeg \
 		libavutil.so:multimedia/ffmpeg \
 		libswscale.so:multimedia/ffmpeg
