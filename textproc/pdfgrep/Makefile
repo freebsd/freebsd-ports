@@ -2,23 +2,25 @@
 # $FreeBSD$
 
 PORTNAME=	pdfgrep
-PORTVERSION=	1.4.1
-PORTREVISION=	4
+PORTVERSION=	2.0.1
 CATEGORIES=	textproc
 MASTER_SITES=	https://pdfgrep.org/download/
 
 MAINTAINER=	michael@ranner.eu
 COMMENT=	Tool to search text in PDF files
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libpoppler.so:graphics/poppler
+LIB_DEPENDS=	libpcre.so:devel/pcre \
+		libpoppler.so:graphics/poppler \
+		libgcrypt.so:security/libgcrypt \
+		libgpg-error.so:security/libgpg-error
 
 BROKEN_powerpc64=	fails to link: pdfgrep.cc: undefined reference to poppler::set_debug_error_function
 
 GNU_CONFIGURE=	yes
-USES=		compiler:c++11-lib gmake pkgconfig
-CONFIGURE_ARGS=	poppler_CFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/poppler"
+USES=		pkgconfig
 
 PLIST_FILES=	bin/pdfgrep man/man1/pdfgrep.1.gz \
 		share/bash-completion/completions/pdfgrep \
