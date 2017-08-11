@@ -2,15 +2,12 @@
 
 PORTNAME=	mpc-qt
 DISTVERSIONPREFIX=	v
-DISTVERSION=	17.07
-PORTREVISION=	2
+DISTVERSION=	17.07-34
+DISTVERSIONSUFFIX=	-gec7ef77
 CATEGORIES=	multimedia audio
 MASTER_SITES=	https://aur.archlinux.org/cgit/aur.git/plain/${PORTNAME}.desktop?h=${PORTNAME}-git&id=b1a6b91&dummy=/:desktop
 DISTFILES=	${PORTNAME}.desktop:desktop
 EXTRACT_ONLY=	${DISTFILES:N*\:desktop:C/:.*//}
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES=	b1644dfe782b.patch:-p1
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Qt 5 clone of Media Player Classic based on libmpv
