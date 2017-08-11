@@ -1,0 +1,29 @@
+# $FreeBSD$
+
+PKGNAMESUFFIX=	-sql
+
+COMMENT=	SASL SQL plugins
+
+OPTIONS_DEFINE=	MYSQL PGSQL
+OPTIONS_RADIO=	SQLITE
+OPTIONS_RADIO_SQLITE=	SQLITE2 SQLITE3
+
+OPTIONS_DEFAULT=	MYSQL
+OPTIONS_SUB=	yes
+
+MYSQL_USES=	mysql
+MYSQL_CONFIGURE_ON=	--with-mysql=${LOCALBASE}
+MYSQL_CONFIGURE_OFF=	--without-mysql
+PGSQL_USES=	pgsql
+PGSQL_CONFIGURE_ON=	--with-pgsql=${LOCALBASE}
+PGSQL_CONFIGURE_OFF=	--without-pgsql
+SQLITE2_USES=	sqlite:2
+SQLITE2_CONFIGURE_ON=	--with-sqlite=${LOCALBASE}
+SQLITE2_CONFIGURE_OFF=	--without-sqlite
+SQLITE3_USES=	sqlite:3
+SQLITE3_CONFIGURE_ON=	--with-sqlite3=${LOCALBASE}
+SQLITE3_CONFIGURE_OFF=	--without-sqlite3
+
+CONFIGURE_ARGS+=	--enable-sql
+
+.include "${.CURDIR}/../../security/cyrus-sasl2/Makefile.common"
