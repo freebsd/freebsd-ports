@@ -1,0 +1,7 @@
+include/ltc.h
+lib/libltc.a
+lib/libltc.so
+lib/libltc.so.11
+lib/libltc.so.11.0.5
+libdata/pkgconfig/ltc.pc
+man/man3/ltc.h.3.gz
