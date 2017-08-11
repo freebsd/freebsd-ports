@@ -819,6 +819,7 @@
     SUBDIR += wmsmixer
     SUBDIR += workman
     SUBDIR += wxguitar
+    SUBDIR += x42-plugins-lv2
     SUBDIR += xanalyser
     SUBDIR += xcd
     SUBDIR += xcdplayer

@@ -1,6 +1,6 @@
---- Makefile.in.orig	2016-08-01 15:40:47 UTC
-+++ Makefile.in
-@@ -188,13 +188,13 @@ _$(1).cc :
+--- Makefile.in.orig	2017-08-08 20:00:25.889361000 +0100
++++ Makefile.in	2017-08-08 20:06:41.633896000 +0100
+@@ -187,13 +187,13 @@
  
  # Build the object files for this subproject
  
@@ -14,6 +14,6 @@
 -$$($(2)_pch) : %.h.gch : %.h
 +$(2)_deps += $$(patsubst %.hpp, %.h.d, $$($(2)_precompiled_hdrs))
 +$$($(2)_pch) : %.h.gch : %.hpp
- 	$(COMPILE) $$< -o $$@
+ 	$(COMPILE) -x c++-header $$< -o $$@
  # If using clang, don't depend (and thus don't build) precompiled headers
  $$($(2)_objs) : %.o : %.cc $$($(2)_gen_hdrs) $(if $(filter-out clang,$(CC)),$$($(2)_pch))

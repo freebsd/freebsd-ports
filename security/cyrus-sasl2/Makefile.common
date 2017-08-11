@@ -96,20 +96,12 @@ SASLDB_NAME=	sasldb2
 SASLDB=	"@comment "
 .endif
 
-.if ${PORT_OPTIONS:MMYSQL} || ${PORT_OPTIONS:MPGSQL} || \
-    ${PORT_OPTIONS:MSQLITE2} || ${PORT_OPTIONS:MSQLITE3}
-CONFIGURE_ARGS+=--enable-sql
-.else
-SQL=	"@comment "
-.endif
-
 SUB_FILES=	pkg-deinstall pkg-install pkg-message
 SUB_LIST=	CYRUS_USER=${CYRUS_USER} CYRUS_GROUP=${CYRUS_GROUP} \
 		SASLDB_NAME=${SASLDB_NAME}
 
 PLIST_SUB+=	PREFIX=${PREFIX} \
 		SASLDB=${SASLDB} \
-		SQL=${SQL} \
 		DOCSDIR=${DOCSDIR:S/^${PREFIX}\///}
 
 post-patch:
