@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mycli
-PORTVERSION=	1.12.0
+PORTVERSION=	1.12.1
 CATEGORIES=	databases python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,7 +13,7 @@ COMMENT=	CLI for MySQL Database with auto-completion and syntax highlighting
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cli-helpers>=0.2.0:devel/py-cli-helpers \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cli-helpers>=0.2.3:devel/py-cli-helpers \
 		${PYTHON_PKGNAMEPREFIX}click>=4.1:devel/py-click \
 		${PYTHON_PKGNAMEPREFIX}configobj>=5.0.5:devel/py-configobj \
 		${PYTHON_PKGNAMEPREFIX}cryptography>=1.0.0:security/py-cryptography \
