@@ -861,6 +861,7 @@
     SUBDIR += xwave
     SUBDIR += yell
     SUBDIR += zinf
+    SUBDIR += zita-convolver
     SUBDIR += zita-resampler
     SUBDIR += zynaddsubfx
 
