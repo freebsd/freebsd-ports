@@ -1063,6 +1063,8 @@ man/man7/gitworkflows.7.gz
 %%HTMLDOCS%%%%DOCSDIR%%/gitrepository-layout.txt
 %%HTMLDOCS%%%%DOCSDIR%%/gitrevisions.html
 %%HTMLDOCS%%%%DOCSDIR%%/gitrevisions.txt
+%%HTMLDOCS%%%%DOCSDIR%%/gitsubmodules.html
+%%HTMLDOCS%%%%DOCSDIR%%/gitsubmodules.txt
 %%HTMLDOCS%%%%DOCSDIR%%/gittutorial-2.html
 %%HTMLDOCS%%%%DOCSDIR%%/gittutorial-2.txt
 %%HTMLDOCS%%%%DOCSDIR%%/gittutorial.html
@@ -1143,12 +1145,12 @@ man/man7/gitworkflows.7.gz
 %%HTMLDOCS%%%%DOCSDIR%%/technical/api-gitattributes.txt
 %%HTMLDOCS%%%%DOCSDIR%%/technical/api-grep.html
 %%HTMLDOCS%%%%DOCSDIR%%/technical/api-grep.txt
-%%HTMLDOCS%%%%DOCSDIR%%/technical/api-hashmap.html
-%%HTMLDOCS%%%%DOCSDIR%%/technical/api-hashmap.txt
 %%HTMLDOCS%%%%DOCSDIR%%/technical/api-history-graph.html
 %%HTMLDOCS%%%%DOCSDIR%%/technical/api-history-graph.txt
 %%HTMLDOCS%%%%DOCSDIR%%/technical/api-index-skel.txt
 %%HTMLDOCS%%%%DOCSDIR%%/technical/api-index.html
+%%HTMLDOCS%%%%DOCSDIR%%/technical/api-sub-process.html
+%%HTMLDOCS%%%%DOCSDIR%%/technical/api-sub-process.txt
 %%HTMLDOCS%%%%DOCSDIR%%/technical/api-index.txt
 %%HTMLDOCS%%%%DOCSDIR%%/technical/api-merge.html
 %%HTMLDOCS%%%%DOCSDIR%%/technical/api-merge.txt
