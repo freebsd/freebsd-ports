@@ -28,4 +28,6 @@ BUILD_DEPENDS+=	p5-Alien-Gimp>=0.01:graphics/p5-Alien-Gimp
 USES=		perl5
 USE_PERL5=	configure
 
+MAKE_JOBS_UNSAFE=	yes
+
 .include <bsd.port.mk>
