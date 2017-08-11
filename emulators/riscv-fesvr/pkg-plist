@@ -1,5 +1,4 @@
 bin/elf2hex
-include/fesvr/configstring.h
 include/fesvr/context.h
 include/fesvr/device.h
 include/fesvr/dtm.h
