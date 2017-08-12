@@ -1,4 +1,4 @@
---- dynare++/kord/journal.cweb.orig	2013-11-08 16:37:59 UTC
+--- dynare++/kord/journal.cweb.orig	2017-07-24 09:58:59 UTC
 +++ dynare++/kord/journal.cweb
 @@ -5,6 +5,8 @@
  @c
@@ -38,7 +38,7 @@
  	gettimeofday(&now, NULL);
  	elapsed = now.tv_sec-start.tv_sec + (now.tv_usec-start.tv_usec)*1.0e-6;
  
-@@ -107,7 +122,11 @@ void SystemResources::getRUS(double& loa
+@@ -111,7 +126,11 @@ void SystemResources::getRUS(double& loa
  	load_avg = -1.0;
  #endif
  
