@@ -3,7 +3,7 @@
 
 PORTNAME=	openlierox
 DISTVERSION=	0.58_rc3
-PORTREVISION=	11
+PORTREVISION=	12
 PORTEPOCH=	1
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/OpenLieroX%20${DISTVERSION:C/_/%20/}
@@ -19,7 +19,6 @@ LIB_DEPENDS=	libgd.so:graphics/gd \
 USES=		tar:bzip2 cmake openal:al,alut pkgconfig
 USE_SDL=	sdl image
 USE_GNOME=	libxml2
-USE_GCC=	any # too many gcc'isms
 
 CFLAGS+=	-I${LOCALBASE}/include
 CXXFLAGS+=	-I${LOCALBASE}/include
@@ -60,6 +59,9 @@ post-patch:
 		s|/usr/local|${LOCALBASE}|' ${WRKSRC}/CMakeOlxCommon.cmake
 	@${FIND} ${WRKSRC} \( -name "*.cpp" -o -name "*.h" -o -name "*.cc" \) -print0 | ${XARGS} -0 -n1 \
 		${REINPLACE_CMD} -e '/include.*curl\/types.h/ d'
+# Convert the static_assert calls to regular, C++ ones.
+	@${FIND} ${WRKSRC} \( -name "*.cpp" -o -name "*.h" -o -name "*.cc" \) -print0 | ${XARGS} -0 -n1 \
+		${REINPLACE_CMD} -E -e 's/static_assert\((.+), (.+)\)/static_assert\(\1, "\2"\)/g'
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/openlierox ${STAGEDIR}${PREFIX}/bin/
