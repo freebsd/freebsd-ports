@@ -17,7 +17,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}more-itertools>=2.2:devel/py-more-itertools \
 		${PYTHON_PKGNAMEPREFIX}pdf2>=1.24:print/py-pdf2
 
-USES=		python:2.7+
+USES=		python:2.7
 USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>
