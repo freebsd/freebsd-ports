@@ -15,6 +15,9 @@ COMMENT=	Powerful RAW image processing application
 
 LICENSE=	GPLv3
 
+IGNORE=		use graphics/rawtherapee instead, it is newer
+DEPRECATED=	use graphcis/rawtherapee instead, it is newer
+
 LIB_DEPENDS=	libcanberra-gtk.so:audio/libcanberra \
 		libcanberra-gtk3.so:audio/libcanberra-gtk3 \
 		libexpat.so:textproc/expat2 \
