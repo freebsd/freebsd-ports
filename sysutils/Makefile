@@ -856,6 +856,7 @@
     SUBDIR += puppet-lint
     SUBDIR += puppet-mode.el
     SUBDIR += puppet4
+    SUBDIR += puppet5
     SUBDIR += puppetserver
     SUBDIR += pv
     SUBDIR += pwd_unmkdb
