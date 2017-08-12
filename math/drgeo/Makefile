@@ -3,7 +3,7 @@
 
 PORTNAME=	drgeo
 PORTVERSION=	1.1.0
-PORTREVISION=	19
+PORTREVISION=	20
 CATEGORIES=	math
 MASTER_SITES=	SF/ofset/${PORTNAME}/${PORTVERSION}
 
@@ -17,7 +17,6 @@ USES=		gettext gmake pkgconfig pathfix
 USE_GNOME=	gnomeprefix intlhack libglade2
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-USE_GCC=	yes # segfaults when built with clang
 
 PORTDATA=	*
 
