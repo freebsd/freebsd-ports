@@ -736,8 +736,10 @@
     SUBDIR += proftpd-mod_sql_tds
     SUBDIR += puppetdb-terminus3
     SUBDIR += puppetdb-terminus4
+    SUBDIR += puppetdb-terminus5
     SUBDIR += puppetdb3
     SUBDIR += puppetdb4
+    SUBDIR += puppetdb5
     SUBDIR += pure-sql3
     SUBDIR += puredb
     SUBDIR += pxlib

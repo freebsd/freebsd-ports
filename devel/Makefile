@@ -5464,6 +5464,7 @@
     SUBDIR += rubygem-hike
     SUBDIR += rubygem-hike1
     SUBDIR += rubygem-hitimes
+    SUBDIR += rubygem-hocon
     SUBDIR += rubygem-hoe
     SUBDIR += rubygem-holidays
     SUBDIR += rubygem-http_accept_language
