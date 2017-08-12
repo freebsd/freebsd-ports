@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	db6
-PORTVERSION=	6.2.23
-PORTREVISION=	2
+PORTVERSION=	6.2.32
 CATEGORIES=	databases java
 MASTER_SITES=	http://download.oracle.com/berkeley-db/
 PKGNAMEPREFIX?=

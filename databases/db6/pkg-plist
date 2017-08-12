@@ -1,5 +1,6 @@
 bin/db%%BDBMAJ%%/db_archive
 bin/db%%BDBMAJ%%/db_checkpoint
+bin/db%%BDBMAJ%%/db_convert
 bin/db%%BDBMAJ%%/db_deadlock
 bin/db%%BDBMAJ%%/db_dump
 bin/db%%BDBMAJ%%/db_dump185
@@ -18,6 +19,7 @@ bin/db%%BDBMAJ%%/db_verify
 %%SQL%%bin/db%%BDBMAJ%%/dbsql
 bin/db_archive-%%BDBVER%%
 bin/db_checkpoint-%%BDBVER%%
+bin/db_convert-%%BDBVER%%
 bin/db_deadlock-%%BDBVER%%
 bin/db_dump-%%BDBVER%%
 bin/db_dump185-%%BDBVER%%
