@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	syncthing
-PORTVERSION=	0.14.32
+PORTVERSION=	0.14.36
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net
 
@@ -21,9 +21,8 @@ USERS=		syncthing
 GROUPS=		syncthing
 
 do-build:
-	# timestamp here refers to source, not build time
 	@cd ${WRKSRC}/src/github.com/${PORTNAME}/${PORTNAME} ; \
-		${SETENV} GOPATH=${WRKSRC} go run build.go -no-upgrade=true -version v${PORTVERSION}
+		${SETENV} go run build.go -no-upgrade=true -version v${PORTVERSION}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/github.com/${PORTNAME}/${PORTNAME}/bin/syncthing \
