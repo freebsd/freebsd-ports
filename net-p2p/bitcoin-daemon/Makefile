@@ -1,7 +1,6 @@
 # $FreeBSD$
 
 MASTERDIR=	${.CURDIR}/../bitcoin
-PORTREVISION=	7
 PKGNAMESUFFIX=	-daemon
 
 COMMENT=	Virtual Peer-to-Peer Currency (Daemon)
@@ -23,7 +22,8 @@ CONFIGURE_ARGS=	--with-daemon \
 		--without-qrencode \
 		--without-utils
 
-PLIST_FILES=	bin/bitcoind
+PLIST_FILES=	bin/bitcoind \
+		man/man1/bitcoind.1.gz
 
 USE_RC_SUBR=	bitcoind
 
