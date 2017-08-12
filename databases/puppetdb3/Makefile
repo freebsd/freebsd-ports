@@ -13,12 +13,11 @@ LICENSE=	APACHE20
 
 RUN_DEPENDS=	bash:shells/bash \
 		puppet:sysutils/puppet4
-BUILD_DEPENDS=	rubygem-facter>=0:sysutils/rubygem-facter \
-		rubygem-rake>=0:devel/rubygem-rake
+BUILD_DEPENDS=	rubygem-rake>=0:devel/rubygem-rake
 
 USE_RC_SUBR=	puppetdb
 
-CONFLICTS_INSTALL=	puppetdb-* puppetdb4-*
+CONFLICTS_INSTALL=	puppetdb4-* puppetdb5-*
 USE_JAVA=	yes
 NO_BUILD=	yes
 JAVA_VERSION=	1.7+
