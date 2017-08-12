@@ -1,0 +1,41 @@
+Revert bug 1323303 to unbreak build on big-endian architectures.
+
+--- toolkit/moz.configure.orig	2017-07-31 16:20:54 UTC
++++ toolkit/moz.configure
+@@ -771,11 +771,11 @@
+ # ==============================================================
+ option('--disable-skia', help='Disable use of Skia')
+ 
+-@depends('--disable-skia')
+-def skia(value):
+-    if not value:
+-        die('--disable-skia is not supported anymore')
+-    else:
++@depends('--disable-skia', target)
++def skia(value, target):
++    if value.origin == 'default' and target.endianness == 'big':
++        return None
++    if value:
+         return True
+ 
+ set_config('MOZ_ENABLE_SKIA', skia)
+--- gfx/2d/ScaledFontBase.cpp.orig	2017-07-31 16:20:54 UTC
++++ gfx/2d/ScaledFontBase.cpp
+@@ -212,14 +212,16 @@ ScaledFontBase::CopyGlyphsToBuilder(const GlyphBuffer 
+     cairoPath->AppendPathToBuilder(builder);
+     return;
+   }
++#endif
++#ifdef USE_SKIA
+   if (backendType == BackendType::RECORDING) {
+     SkPath skPath = GetSkiaPathForGlyphs(aBuffer);
+     RefPtr<Path> path = MakeAndAddRef<PathSkia>(skPath, FillRule::FILL_WINDING);
+     path->StreamToSink(aBuilder);
+     return;
+   }
+-  MOZ_ASSERT(false, "Path not being copied");
+ #endif
++  MOZ_ASSERT(false, "Path not being copied");
+ }
+ 
+ void

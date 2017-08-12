@@ -1,3 +1,9 @@
-TIMESTAMP = 1491234945
-SHA256 (jack-audio-connection-kit-0.125.0.tar.gz) = 3517b5bff82139a76b2b66fe2fd9a3b34b6e594c184f95a988524c575b11d444
-SIZE (jack-audio-connection-kit-0.125.0.tar.gz) = 1217977
+TIMESTAMP = 1500250305
+SHA256 (jackaudio-jack1-0.125.0-90f9dd3_GH0.tar.gz) = e0ba7dcf58fa934af51329cd329f466fe8d2bc180d07e4ab8be21ed80c60aa8a
+SIZE (jackaudio-jack1-0.125.0-90f9dd3_GH0.tar.gz) = 392822
+SHA256 (jackaudio-headers-07f1ecf_GH0.tar.gz) = 04a3bb87d278923985ba44045b7a27439c90776cc5d4a6016d062fc7a6aa5023
+SIZE (jackaudio-headers-07f1ecf_GH0.tar.gz) = 36704
+SHA256 (jackaudio-tools-8d13c31_GH0.tar.gz) = 23e6bc60c8cef4283677206f2687a408367203a725c091c923f48554ae6e8cc8
+SIZE (jackaudio-tools-8d13c31_GH0.tar.gz) = 45544
+SHA256 (jackaudio-example-clients-7fa0890_GH0.tar.gz) = 79e2ac1d38d7d77b1afb71aa97414c339e8c00613a5d9b725861232b5c995223
+SIZE (jackaudio-example-clients-7fa0890_GH0.tar.gz) = 16174
