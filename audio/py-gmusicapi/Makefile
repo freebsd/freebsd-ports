@@ -28,11 +28,11 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}appdirs>=1.3.0:devel/py-appdirs \
 		${PYTHON_PKGNAMEPREFIX}openssl>0:security/py-openssl \
 		${PYTHON_PKGNAMEPREFIX}pyasn1>0:devel/py-pyasn1
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	simon-weber
-
 USES=		python
 USE_PYTHON=	distutils autoplist
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	simon-weber
 
 NO_ARCH=	yes
 
