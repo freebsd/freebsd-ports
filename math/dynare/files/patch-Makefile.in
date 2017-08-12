@@ -1,6 +1,6 @@
 --- Makefile.in.orig	2014-07-31 12:30:46 UTC
 +++ Makefile.in
-@@ -827,9 +827,9 @@
+@@ -827,9 +827,9 @@ dist-hook:
  install-exec-local:
  	$(MKDIR_P) $(DESTDIR)$(pkglibdir)/contrib/ms-sbvar/TZcode
  	cp -r examples $(DESTDIR)$(pkglibdir)
