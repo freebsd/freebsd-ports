@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	bitcoin
-PORTVERSION=	0.12.1
+PORTVERSION=	0.14.2
 DISTVERSIONPREFIX=	v
-PORTREVISION=	12
 CATEGORIES=	net-p2p finance
 
 MAINTAINER=	robbak@robbak.com
@@ -17,7 +16,7 @@ LIB_DEPENDS=	libboost_date_time.so:devel/boost-libs \
 
 BROKEN_powerpc64=	fails to compile: util.cpp: undefined reference to boost::program_options::to_internal
 
-USES=		autoreconf compiler:c++0x gmake libtool pkgconfig shebangfix ssl
+USES=		autoreconf compiler:c++11-lib gmake libtool pkgconfig shebangfix ssl
 SHEBANG_FILES=	src/test/*.py
 USE_GITHUB=	yes
 GNU_CONFIGURE=	yes
@@ -26,13 +25,13 @@ SLAVE_PORT?=	no
 
 .if defined(SLAVE_PORT) && ${SLAVE_PORT} == "no"
 USES+=		desktop-file-utils
-USE_QT4=	corelib gui moc_build linguisttools_build network qmake_build \
-		rcc_build uic_build
+USE_QT5=	core gui network widgets \
+		buildtools_build linguisttools_build qmake_build
 
 BUILD_DEPENDS+=	protoc:devel/protobuf
 LIB_DEPENDS+=	libprotobuf.so:devel/protobuf
 
-TESTS_USE=		QT4=testlib
+TESTS_USE=		QT5=testlib
 TESTS_PLIST_FILES=	bin/test_bitcoin-qt \
 			bin/test_bitcoin
 .endif
@@ -47,8 +46,8 @@ TESTS_DESC=	Build test binary and unit tests
 WALLET_DESC=	Wallet Management Support
 ZMQ_DESC=	Block and transaction broadcasting with ZeroMQ
 
-DBUS_CONFIGURE_WITH=	qtdbus
-DBUS_USE=		QT4=dbus
+DBUS_CONFIGURE_WITH=	dbus
+DBUS_USE=		QT5=dbus
 
 DEBUG_CONFIGURE_ENABLE=		debug
 DEBUG_INSTALL_TARGET_OFF=	install-strip
@@ -81,7 +80,7 @@ ZMQ_RUN_DEPENDS=	libzmq4>0:net/libzmq4
 GH_ACCOUNT=	bitcoin
 
 CONFIGURE_ARGS?=	--without-libs \
-			--with-gui=qt4 \
+			--with-gui=qt5 \
 			--without-daemon \
 			--without-utils
 
@@ -90,8 +89,8 @@ CONFIGURE_ENV=	CRYPTO_CFLAGS="-I${OPENSSLINC}" CRYPTO_LIBS="-L${OPENSSLLIB} -lcr
 		OBJCXX="${CXX}" OBJCXXFLAGS="${CXXFLAGS}"
 MAKE_ENV+=	V=1
 
-PLIST_FILES?=	bin/bitcoin-qt share/applications/bitcoin-qt.desktop \
-		share/pixmaps/bitcoin128.png
+PLIST_FILES?=	bin/bitcoin-qt man/man1/bitcoin-qt.1.gz \
+		share/applications/bitcoin-qt.desktop share/pixmaps/bitcoin128.png
 
 .if defined(SLAVE_PORT) && ${SLAVE_PORT} == "no"
 
