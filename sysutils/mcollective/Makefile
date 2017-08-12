@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mcollective
-PORTVERSION=	2.9.0
+PORTVERSION=	2.11.1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://downloads.puppetlabs.com/${PORTNAME}/
 
@@ -47,7 +47,7 @@ do-patch:
 do-install:
 	cd ${WRKSRC} ; ${RUBY} install.rb --destdir=${STAGEDIR} --configdir=${ETCDIR} --plugindir=${DATADIR}
 .for cfg in ${CFG_FILES}
-	mv ${STAGEDIR}${ETCDIR}/${cfg} ${STAGEDIR}${ETCDIR}/${cfg}.sample
+	${MV} ${STAGEDIR}${ETCDIR}/${cfg} ${STAGEDIR}${ETCDIR}/${cfg}.sample
 .endfor
 
 .include <bsd.port.mk>

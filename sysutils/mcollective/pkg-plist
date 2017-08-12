@@ -155,6 +155,7 @@ bin/mco
 %%RUBY_SITELIBDIR%%/mcollective/vendor.rb
 %%RUBY_SITELIBDIR%%/mcollective/vendor/load_systemu.rb
 %%RUBY_SITELIBDIR%%/mcollective/vendor/require_vendored.rb
+%%RUBY_SITELIBDIR%%/mcollective/vendor/systemu/BSDL
 %%RUBY_SITELIBDIR%%/mcollective/vendor/systemu/LICENSE
 %%RUBY_SITELIBDIR%%/mcollective/vendor/systemu/README
 %%RUBY_SITELIBDIR%%/mcollective/vendor/systemu/README.erb
@@ -167,5 +168,7 @@ bin/mco
 %%RUBY_SITELIBDIR%%/mcollective/vendor/systemu/samples/e.rb
 %%RUBY_SITELIBDIR%%/mcollective/vendor/systemu/samples/f.rb
 %%RUBY_SITELIBDIR%%/mcollective/vendor/systemu/systemu.gemspec
+%%RUBY_SITELIBDIR%%/mcollective/vendor/systemu/test/systemu_test.rb
+%%RUBY_SITELIBDIR%%/mcollective/vendor/systemu/test/testing.rb
 %%RUBY_SITELIBDIR%%/mcollective/windows_daemon.rb
 @dir %%DATADIR%%
