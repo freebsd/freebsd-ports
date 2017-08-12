@@ -3,17 +3,29 @@
 
 PORTNAME=	dynare
 PORTVERSION=	4.4.3
-PORTREVISION=	9
+PORTREVISION=	11
 CATEGORIES=	math
 MASTER_SITES=	http://www.dynare.org/release/source/
 
 MAINTAINER=	fernando.apesteguia@gmail.com
 COMMENT=	Software platform for handling a wide class of economic models
 
+LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/unordered_set.hpp:devel/boost-libs \
 		ctangle:devel/cweb
 LIB_DEPENDS=	libumfpack.so:math/suitesparse \
-		libmatio.so:math/matio
+		libmatio.so:math/matio \
+		libhdf5.so:science/hdf5 \
+		libopenblas.so:math/openblas \
+		libopenblasp.so:math/openblas \
+		libfftw3_threads.so:math/fftw3 \
+		libfftw3.so:math/fftw3 \
+		libfftw3f_threads.so:math/fftw3-float \
+		libfftw3f.so:math/fftw3-float \
+		liblapack.so:math/lapack \
+		libblas.so:math/blas
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 GNU_CONFIGURE=	yes

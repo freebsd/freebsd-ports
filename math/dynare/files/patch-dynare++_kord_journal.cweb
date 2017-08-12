@@ -1,5 +1,5 @@
---- dynare++/kord/journal.cweb.orig	2011-08-21 20:56:09.000000000 +0200
-+++ dynare++/kord/journal.cweb	2011-08-21 23:02:31.000000000 +0200
+--- dynare++/kord/journal.cweb.orig	2013-11-08 16:37:59 UTC
++++ dynare++/kord/journal.cweb
 @@ -5,6 +5,8 @@
  @c
  #include "journal.h"
@@ -9,7 +9,7 @@
  
  #if !defined(__MINGW32__)
  # include <sys/resource.h>
-@@ -72,7 +74,16 @@
+@@ -72,7 +74,16 @@ long int SystemResources::onlineProcesso
  @<|SystemResources::availableMemory| code@>=
  long int SystemResources::availableMemory()
  {
@@ -27,7 +27,7 @@
  }
  
  @ Here we read the current values of resource usage. For MinGW, we
-@@ -84,6 +95,10 @@
+@@ -84,6 +95,10 @@ void SystemResources::getRUS(double& loa
  							 long int& idrss, long int& majflt)
  {
  	struct timeval now;
@@ -38,7 +38,7 @@
  	gettimeofday(&now, NULL);
  	elapsed = now.tv_sec-start.tv_sec + (now.tv_usec-start.tv_usec)*1.0e-6;
  
-@@ -107,7 +122,11 @@
+@@ -107,7 +122,11 @@ void SystemResources::getRUS(double& loa
  	load_avg = -1.0;
  #endif
  
