@@ -636,6 +636,7 @@
     SUBDIR += py-eyed3
     SUBDIR += py-fmoo-audiotools
     SUBDIR += py-gmusicapi
+    SUBDIR += py-gmusicproxy
     SUBDIR += py-hsaudiotag
     SUBDIR += py-id3
     SUBDIR += py-karaoke
