@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	semaphore
-PORTVERSION=	2.2.0
-PORTREVISION=	1
+PORTVERSION=	2.4.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net-mgmt
 
@@ -22,27 +21,34 @@ GH_TUPLE=	ansible-semaphore:semaphore-vendor:dcb3abe:vendor/public/vendor \
 		swills:semaphore-node_modules:v${PORTVERSION}:modules/public/node_modules \
 		swills:semaphore-rendered_files:v${PORTVERSION}:render/public.rendered \
 		bugsnag:bugsnag-go:70e1420:bugsnag/src/github.com/bugsnag/bugsnag-go \
-		bugsnag:panicwrap:aa7703c:panicwrap/src/github.com/bugsnag/panicwrap \
-		gin-gonic:gin:e2212d4:gonic/src/github.com/gin-gonic/gin \
-		go-sql-driver:mysql:9dee4ca:gomysql/src/github.com/go-sql-driver/mysql \
-		golang:protobuf:c9c7427:protobuf/src/github.com/golang/protobuf \
-		google:go-github:d683a1c:gogithub/src/github.com/google/go-github \
+		bugsnag:panicwrap:8a46439:panicwrap/src/github.com/bugsnag/panicwrap \
+		go-sql-driver:mysql:8fefef0:gomysql/src/github.com/go-sql-driver/mysql \
+		golang:protobuf:6a1fa94:protobuf/src/github.com/golang/protobuf \
+		google:go-github:4c4aea2:gogithub/src/github.com/google/go-github \
 		google:go-querystring:53e6ce1:querystring/src/github.com/google/go-querystring \
 		gorilla:securecookie:e59506c:securecookie/src/github.com/gorilla/securecookie \
-		gorilla:websocket:a91eba7:websocket/src/github.com/gorilla/websocket \
-		kardianos:osext:9d302b5:osext/src/github.com/kardianos/osext \
+		gorilla:websocket:7a8dacf:websocket/src/github.com/gorilla/websocket \
+		kardianos:osext:ae77be6:osext/src/github.com/kardianos/osext \
 		manucorporat:sse:ee05b12:sse/src/github.com/manucorporat/sse \
-		masterminds:squirrel:20f1922:squirrel/src/github.com/masterminds/squirrel \
+		masterminds:squirrel:36d675d:squirrel/src/github.com/masterminds/squirrel \
 		lann:builder:f22ce00:builder/src/github.com/lann/builder \
 		lann:ps:62de8c4:ps/src/github.com/lann/ps \
 		mattn:go-isatty:fc9e8d8:go_isatty/src/github.com/mattn/go-isatty \
-		russross:blackfriday:5f33e7b:blackfriday/src/github.com/russross/blackfriday \
-		shurcooL:sanitized_anchor_name:1dba4b3:sanitized/src/github.com/shurcooL/sanitized_anchor_name \
-		golang:net:6c23252:net/src/golang.org/x/net \
-		golang:crypto:459e265:crypto/src/golang.org/x/crypto \
-		go-playground:validator:5f57d22:playground/src/gopkg.in/go-playground/validator.v8 \
-		go-gorp:gorp:c87af80:gorp/src/gopkg.in/gorp.v1 \
-		go-yaml:yaml:a3f3340:yaml/src/gopkg.in/yaml.v2
+		russross:blackfriday:0ba0f2b:blackfriday/src/github.com/russross/blackfriday \
+		shurcooL:sanitized_anchor_name:541ff5e:sanitized/src/github.com/shurcooL/sanitized_anchor_name \
+		golang:net:1f92242:net/src/golang.org/x/net \
+		golang:crypto:5ef0053:crypto/src/golang.org/x/crypto \
+		go-playground:validator:fb68f39:playground/src/gopkg.in/go-playground/validator.v8 \
+		go-gorp:gorp:2ae7d17:gorp/src/gopkg.in/gorp.v1 \
+		go-yaml:yaml:e72f935:yaml/src/gopkg.in/yaml.v2 \
+		Sirupsen:logrus:e66f229:logrus/src/github.com/Sirupsen/logrus \
+		castawaylabs:mulekick:3a31c4b:mulekick/src/github.com/castawaylabs/mulekick \
+		gorilla:context:aed02d1:context/src/github.com/gorilla/context \
+		gorilla:mux:8c683ee:mux/src/github.com/gorilla/mux \
+		gorilla:handlers:a4d79d4:handlers/src/github.com/gorilla/handlers \
+		golang:sys:0e01648:sys/src/golang.org/x/sys \
+		go-ldap:ldap:37f35d7:ldap2/src/gopkg.in/ldap.v2 \
+		go-asn1-ber:asn1-ber:379148c:asn1/src/gopkg.in/asn1-ber.v1
 
 PLIST_FILES=	bin/semaphore \
 		"@sample etc/semaphore/semaphore_config.json.sample"
