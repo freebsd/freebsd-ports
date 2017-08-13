@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	qcad
-PORTVERSION=	3.17.1.0
+PORTVERSION=	3.17.3.6
 DISTVERSIONPREFIX=	v
 #PORTREVISION=	1
 CATEGORIES=	cad
@@ -43,7 +43,7 @@ RESDIR=		${WRKSRC}/release
 SHRLIBS=	qcadcore qcadecmaapi qcadentity qcadgrid qcadgui qcadoperations	\
 		qcadsnap qcadspatialindex qcadstemmer spatialindexnavel qcadzip
 STALIBS=	dxflib stemmer
-SHRDIR=		fonts libraries patterns plugins scripts ts
+SHRDIR=		fonts libraries linetypes patterns plugins scripts ts
 #QSCRIPTS should not be installed to avoid conflicts with texlive-base
 QSCRIPTS=	bbox dwg2bmp dwg2pdf dwg2svg
 

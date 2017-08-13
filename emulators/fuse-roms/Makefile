@@ -8,7 +8,7 @@ CATEGORIES=	emulators
 MASTER_SITES=	ftp://mirror.switch.ch/pool/4/mirror/rpmfusion/${FC_SUBDIR}/:1 \
 		ftp://ftp.ntua.gr/pub/linux/rpmfusion/${FC_SUBDIR}/:1 \
 		ftp://ftp.pbone.net/mirror/rpmfusion.org/${FC_SUBDIR}/:1 \
-		ftp://ftp.icm.edu.pl/vol/rzm5/linux-rpmfusion/${FC_SUBDIR}/:1 \
+		ftp://ftp.icm.edu.pl/vol/rzm6/linux-rpmfusion/${FC_SUBDIR}/:1 \
 		http://zxspectrum.it.omegahg.com/rom/:2 \
 		https://rene-ladan.nl/distfiles/
 DISTFILES=	fuse-emulator-roms-0.9.0-6.fc${FCVER}.noarch.rpm:1,DEFAULT \
@@ -20,7 +20,7 @@ COMMENT=	Spectrum ROM files, for use with the Fuse emulator
 
 LICENSE=	NONE
 
-FCVER=		25
+FCVER=		26
 FC_SUBDIR=	nonfree/fedora/releases/${FCVER}/Everything/x86_64/os/Packages/f
 NO_ARCH=	yes
 NO_BUILD=	yes
