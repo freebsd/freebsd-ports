@@ -209,6 +209,7 @@
     SUBDIR += hashcat
     SUBDIR += hashcat-legacy
     SUBDIR += heimdal
+    SUBDIR += highwayhash
     SUBDIR += hitch
     SUBDIR += hlfl
     SUBDIR += hmap
