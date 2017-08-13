@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	shairport-sync
-DISTVERSION=	3.1d16
+PORTVERSION=	3.1
 CATEGORIES=	audio
 
 MAINTAINER=	ehaupt@FreeBSD.org
