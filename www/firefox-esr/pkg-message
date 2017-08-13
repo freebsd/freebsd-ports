@@ -1,5 +1,15 @@
 ======================================================================
 
+Some features available on other platforms are not implemented:
+- Native audio (OSS backend is incomplete, doesn't support WebRTC)
+- Encrypted Media Extensions (requires Widevine CDM binary)
+- Process sandboxing (requires Capsicum backend)
+- Reduced memory usage (requires mozjemalloc)
+- Performance profiling (requires GeckoProfiler)
+- Gamepad API (requires libusbhid backend)
+
+======================================================================
+
 smb:// issues (Gvfs/GIO option):
 Network group, machine, and share browsing does not work correctly.
 
