@@ -14,9 +14,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libjansson.so:devel/jansson
 
-USES=		apache:2.4+ autoreconf libtool ssl
+USES=		autoreconf libtool ssl
 USE_GITHUB=	yes
-USE_APACHE=	24
+USE_APACHE=	24+
 
 GH_ACCOUNT=	icing
 GH_PROJECT=	mod_md
