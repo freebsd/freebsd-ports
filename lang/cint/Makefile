@@ -22,6 +22,10 @@ USES=		gmake readline tar:tgz
 USE_LDCONFIG=	${PREFIX}/lib/cint
 ALL_TARGET=
 
+# The port does not build with C++11/C++14, so explicitly use an older
+# standard.
+USE_CXXSTD=	gnu++03
+
 INSTALL_ARGS=	--bindir=${STAGEDIR}${PREFIX}/bin\
 		--libdir=${STAGEDIR}${PREFIX}/lib/cint\
 		--mandir=${STAGEDIR}${PREFIX}/man\
