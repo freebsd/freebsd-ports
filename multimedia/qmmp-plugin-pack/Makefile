@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	qmmp-plugin-pack
-PORTVERSION=	0.10.2
-PORTREVISION=	1
+PORTVERSION=	0.10.3
 CATEGORIES=	multimedia
 MASTER_SITES=	http://qmmp.ylsoftware.com/files/plugins/ \
 	SF/qmmp-dev/${PORTNAME}/
@@ -11,9 +10,7 @@ MAINTAINER=	liangtai.s16@gmail.com
 COMMENT=	Additional plug-ins for QMMP (Qt4)
 
 LICENSE=	GPLv2
-
-CONFLICTS=	${PORTNAME}-qt5-1.*
-PORTSCOUT=	limit:^0.*
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libqmmpui.so:multimedia/qmmp
 BUILD_DEPENDS=	qmmp>=0.10.0:multimedia/qmmp
@@ -22,11 +19,13 @@ USES=		cmake:outsource localbase pkgconfig tar:bzip2
 USE_QT4=	corelib gui linguisttools_build moc_build qmake_build rcc_build
 USE_LDCONFIG=	yes
 
-OPTIONS_SUB=	yes
+CONFLICTS=	${PORTNAME}-qt5-1.*
+PORTSCOUT=	limit:^0.*
 
+OPTIONS_DEFAULT=	FFAP MPG123 XMP
 OPTIONS_MULTI=	PLUGINS
 OPTIONS_MULTI_PLUGINS=	FFAP MPG123 SRCONV XMP
-OPTIONS_DEFAULT=	FFAP MPG123 XMP
+OPTIONS_SUB=	yes
 
 FFAP_DESC=		Support APE sound file
 FFAP_LIB_DEPENDS=	libtag.so:audio/taglib
