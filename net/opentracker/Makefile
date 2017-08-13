@@ -1,11 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	opentracker
-PORTVERSION=	0.2010.05.30
-PORTREVISION=	1
+PORTVERSION=	0.2017.08.13
 CATEGORIES=	net
 MASTER_SITES=	http://www.bayofrum.net/dist/${PORTNAME}/ \
-		https://www.glenbarber.us/ports/net/${PORTNAME}/
 
 MAINTAINER=	crees@FreeBSD.org
 COMMENT=	Free lightweight bittorrent tracker using libowfat
