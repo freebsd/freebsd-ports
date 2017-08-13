@@ -1,0 +1,5 @@
+This toolkit contains libraries that wrap the LV2 C API and extensions into
+easy to use C++ classes. The original work for this was mostly done by
+Lars Luthman in lv2-c++-tools.
+
+WWW: https://github.com/lvtk/lvtk
