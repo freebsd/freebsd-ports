@@ -44,9 +44,6 @@ _SSL_RUN_DEP=	1
 .if exists(/usr/lib/libtls.so)
 # analogous to CLANG_IS_CC
 LIBRESSL_IS_OPENSSL=   yes
-.  if ${SSL_DEFAULT} == libressl
-SSL_DEFAULT=           base
-.  endif
 .endif
 
 .if ${SSL_DEFAULT} == base
