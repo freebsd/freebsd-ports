@@ -2,8 +2,7 @@
 
 PORTNAME=	mpc-qt
 DISTVERSIONPREFIX=	v
-DISTVERSION=	17.07-34
-DISTVERSIONSUFFIX=	-gec7ef77
+DISTVERSION=	17.08
 CATEGORIES=	multimedia audio
 MASTER_SITES=	https://aur.archlinux.org/cgit/aur.git/plain/${PORTNAME}.desktop?h=${PORTNAME}-git&id=b1a6b91&dummy=/:desktop
 DISTFILES=	${PORTNAME}.desktop:desktop

@@ -1,9 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	ceres-solver
-DISTVERSION=	1.12.0
-PORTREVISION=	3
+DISTVERSION=	1.13.0
 CATEGORIES=	math
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES=	f58eacf082dd.patch:-p1
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Nonlinear least squares minimizer
