@@ -133,9 +133,9 @@ include/freeradius/vqp.h
 %%LIBDIR%%/rlm_dynamic_clients.a
 %%LIBDIR%%/rlm_dynamic_clients.la
 %%LIBDIR%%/rlm_dynamic_clients.so
-%%EXPM%%%%LIBDIR%%/rlm_idn.a
-%%EXPM%%%%LIBDIR%%/rlm_idn.la
-%%EXPM%%%%LIBDIR%%/rlm_idn.so
+%%RLMIDN%%%%LIBDIR%%/rlm_idn.a
+%%RLMIDN%%%%LIBDIR%%/rlm_idn.la
+%%RLMIDN%%%%LIBDIR%%/rlm_idn.so
 %%LIBDIR%%/rlm_eap.a
 %%LIBDIR%%/rlm_eap.la
 %%LIBDIR%%/rlm_eap.so
