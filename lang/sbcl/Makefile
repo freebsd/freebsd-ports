@@ -3,6 +3,7 @@
 PORTNAME=	sbcl
 PORTVERSION=	1.3.20
 DISTVERSIONSUFFIX=	-source
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	lang lisp
 MASTER_SITES=	SF/sbcl/sbcl/${PORTVERSION} \
@@ -43,6 +44,8 @@ MAKE_SH_ARGS?=	--prefix="${PREFIX}" \
 .if defined(DYNAMIC_SPACE_SIZE)
 MAKE_SH_ARGS+=	--dynamic-space-size=${DYNAMIC_SPACE_SIZE}
 .endif
+
+SUB_FILES=	sbclrc
 
 # All options explained into file: ${WRKSRC}/base-target-features.lisp-expr
 OPTIONS_DEFINE=	DOCS QSHOW RENAME SAFEPOINT THREADS UNICODE XREF ZLIB
@@ -128,6 +131,12 @@ CORE=	sbcl_core
 post-patch-RENAME-on:
 	${GREP} -Frl '.core' ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} -e 's|\.core|_core|g'
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|/etc|${PREFIX}/etc|' \
+		${WRKSRC}/src/code/toplevel.lisp \
+		${WRKSRC}/doc/sbcl.1 \
+		${WRKSRC}/doc/manual/start-stop.texinfo
+
 do-build:
 	(cd ${WRKSRC} && ${SH} make.sh ${MAKE_SH_ARGS})
 
@@ -143,6 +152,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/contrib/${M}/*.[la]* \
 		${STAGEDIR}${PREFIX}/lib/sbcl/${M}/
 .endfor
+	${INSTALL_DATA} ${WRKDIR}/sbclrc ${STAGEDIR}${PREFIX}/etc/sbclrc.sample
 
 post-build-DOCS-on:
 	${DO_MAKE_BUILD} -C ${WRKSRC}/doc/manual info html

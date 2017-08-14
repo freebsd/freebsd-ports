@@ -1,0 +1,6 @@
+(require "asdf")
+
+(setf asdf:*central-registry*
+       (list* '*default-pathname-defaults*
+              #p"%%PREFIX%%/lib/common-lisp/system-registry/"
+              asdf:*central-registry*))

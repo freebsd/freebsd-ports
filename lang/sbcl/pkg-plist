@@ -146,3 +146,4 @@ lib/sbcl/sb-sprof/test.lisp
 lib/sbcl/sbcl.mk
 lib/sbcl/sbcl%%CORE_SUFFIX%%
 man/man1/sbcl.1.gz
+@sample etc/sbclrc.sample
