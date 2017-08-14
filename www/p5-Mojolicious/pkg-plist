@@ -95,6 +95,7 @@ bin/morbo
 %%SITE_PERL%%/Mojolicious/Guides/Growing.pod
 %%SITE_PERL%%/Mojolicious/Guides/Rendering.pod
 %%SITE_PERL%%/Mojolicious/Guides/Routing.pod
+%%SITE_PERL%%/Mojolicious/Guides/Testing.pod
 %%SITE_PERL%%/Mojolicious/Guides/Tutorial.pod
 %%SITE_PERL%%/Mojolicious/Lite.pm
 %%SITE_PERL%%/Mojolicious/Plugin.pm
@@ -233,6 +234,7 @@ bin/morbo
 %%PERL5_MAN3%%/Mojolicious::Guides::Growing.3.gz
 %%PERL5_MAN3%%/Mojolicious::Guides::Rendering.3.gz
 %%PERL5_MAN3%%/Mojolicious::Guides::Routing.3.gz
+%%PERL5_MAN3%%/Mojolicious::Guides::Testing.3.gz
 %%PERL5_MAN3%%/Mojolicious::Guides::Tutorial.3.gz
 %%PERL5_MAN3%%/Mojolicious::Lite.3.gz
 %%PERL5_MAN3%%/Mojolicious::Plugin.3.gz
