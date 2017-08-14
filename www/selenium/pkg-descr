@@ -1,6 +1,9 @@
-Selenium is a test tool for web applications. Selenium tests run
-directly in a browsers, just as real users do. And they run in Internet
-Explorer, Mozilla and Firefox on Windows, Linux and Macintosh. No other
-test tool covers such a wide array of platforms.
+Selenium Standalone Server allows browser testing. It automates browsers.
 
-WWW: http://selenium.thoughtworks.com/
+Selenium tests run directly in a browsers, just as real users do.
+
+What you do with that power is entirely up to you.
+Primarily, it is for automating web applications for testing purposes,
+but is certainly not limited to just that.
+
+WWW: http://www.seleniumhq.org
