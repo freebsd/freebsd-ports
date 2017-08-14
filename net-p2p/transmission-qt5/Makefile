@@ -1,26 +1,25 @@
 # $FreeBSD$
 
-PORTREVISION=	5
-PKGNAMESUFFIX=	-qt4
+PORTREVISION=	0
+PKGNAMESUFFIX=	-qt5
 
 MAINTAINER=	crees@FreeBSD.org
-COMMENT=	Fast and lightweight Qt4 BitTorrent client
+COMMENT=	Fast and lightweight Qt5 BitTorrent client
 
 LIB_DEPENDS=	${GEN_LIB_DEPENDS} \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2
 RUN_DEPENDS=	${GEN_RUN_DEPENDS}
 
-CONFLICTS_INSTALL=	transmission-qt5-[0-9]*
+CONFLICTS_INSTALL=	transmission-qt4-[0-9]*
 
 DESCR=		${.CURDIR}/pkg-descr
 MASTERDIR=	${.CURDIR}/../transmission-cli
 PLIST=		${.CURDIR}/pkg-plist
-SLAVEPORT=	qt4
+SLAVEPORT=	qt5
 
 QT_NONSTANDARD=	yes
-USE_QT4=	moc_build qmake_build uic_build rcc_build \
-		corelib gui dbus network xml
+USE_QT5=	buildtools_build qmake_build core dbus gui network widgets
 USES=		compiler:c++11-lib desktop-file-utils
 
 EXTRA_CONF_ARGS=--disable-cli \
@@ -43,9 +42,10 @@ do-install:
 		${SETENV} INSTALL_ROOT=${STAGEDIR}${PREFIX} ${MAKE_CMD} install)
 
 post-install: general-install
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/transmission-qt
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/qt/README.txt \
-		${STAGEDIR}${DOCSDIR}/README-qt4
+		${STAGEDIR}${DOCSDIR}/README-qt5
 	@${INSTALL_DATA} ${WRKSRC}/qt/transmission-qt.desktop \
 		${STAGEDIR}${PREFIX}/share/applications/
 	@${INSTALL_DATA} ${WRKSRC}/qt/icons/transmission.png \

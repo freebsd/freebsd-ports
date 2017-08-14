@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	timescaledb
-PORTVERSION=	0.2.0
+PORTVERSION=	0.3.0
 CATEGORIES=	databases
 
 MAINTAINER=	kbowling@FreeBSD.org
@@ -10,19 +10,21 @@ COMMENT=	Time-series database built on PostgreSQL
 
 LICENSE=	APACHE20
 
+USES=		compiler:c11 gmake pgsql:9.6
+USE_LDCONFIG=	yes
+
 USE_GITHUB=	YES
 GH_ACCOUNT=	timescale
 
 MAKE_ARGS=	PG_CONFIG=${LOCALBASE}/bin/pg_config USE_PGXS=1 \
 		install_bin=/usr/bin/install
-USE_LDCONFIG=	yes
-USES=		compiler:c11 gmake pgsql:9.6
 
 WANT_PGSQL=	server
 
 PLIST_FILES=	lib/postgresql/timescaledb.so \
 		share/postgresql/extension/timescaledb--0.1.0--0.2.0.sql \
-		share/postgresql/extension/timescaledb--0.2.0.sql \
+		share/postgresql/extension/timescaledb--0.2.0--0.3.0.sql \
+		share/postgresql/extension/timescaledb--0.3.0.sql \
 		share/postgresql/extension/timescaledb.control
 
 post-install:
