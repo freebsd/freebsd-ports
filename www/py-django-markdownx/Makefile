@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	django-markdownx
-PORTVERSION=	1.7.2
-DISTVERSIONPREFIX=	v.
+PORTVERSION=	2.0.21
+DISTVERSIONPREFIX=	v
 CATEGORIES=	www python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -17,7 +17,7 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/django/bin/django-admin.py:www/py-django18 \
 
 USE_GITHUB=	yes
 
-GH_ACCOUNT=	adi-
+GH_ACCOUNT=	neutronX
 USES=		python
 USE_PYTHON=	autoplist distutils
 
