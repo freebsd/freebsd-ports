@@ -71,6 +71,7 @@ USES+=		libedit
 USES+=mysql:56p
 
 CONFLICTS_INSTALL=	mysql*-server-* \
+			mysqlwsrep* \
 			mariadb*-server-* \
 			percona5[0-57-9]-server-*
 

@@ -113,6 +113,7 @@ DATADIR=	${PREFIX}/share/mysql
 CONFLICTS_INSTALL=	mariadb5*-${PKGNAMESUFFIX:C/^[0-9]*-//}-* \
 			mariadb10[013-9]-${PKGNAMESUFFIX:C/^[0-9]*-//}-* \
 			mysql[0-9]*-${PKGNAMESUFFIX:C/^[0-9]*-//}-* \
+			mysqlwsrep* \
 			percona[0-9]*-${PKGNAMESUFFIX:C/^[0-9]*-//}-*
 
 FASTMTX_CMAKE_ON=	-DWITH_FAST_MUTEXES=1
