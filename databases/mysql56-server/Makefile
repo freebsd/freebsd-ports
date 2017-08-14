@@ -78,6 +78,7 @@ USES+=		mysql:56
 
 CONFLICTS_INSTALL=	mysql5[0-57-9]-server-* \
 			mysql[0-46-9][0-9]-server-* \
+			mysqlwsrep* \
 			mariadb[0-9][0-9]-server-* \
 			percona[0-9][0-9]-server-*
 
