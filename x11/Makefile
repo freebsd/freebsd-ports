@@ -291,6 +291,7 @@
     SUBDIR += rxvt-unicode
     SUBDIR += sakura
     SUBDIR += sbxkb
+    SUBDIR += screen-message
     SUBDIR += scripts
     SUBDIR += scrnsaverproto
     SUBDIR += sessreg
