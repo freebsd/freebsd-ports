@@ -1,6 +1,6 @@
---- poller_maintenance.php.orig	2017-04-26 00:30:09 UTC
+--- poller_maintenance.php.orig	2017-08-13 04:06:37 UTC
 +++ poller_maintenance.php
-@@ -175,13 +175,13 @@ function logrotate_rotatenow () {
+@@ -197,14 +197,14 @@ function logrotate_rotatenow () {
  
  	$log = read_config_option('path_cactilog');
  	if ($log == '') {
@@ -9,6 +9,7 @@
  	}
  
  	set_config_option('logrotate_lastrun', time());
+ 
  	clearstatcache();
  
 -	if (is_writable(dirname($log) . '/') && is_writable($log)) {

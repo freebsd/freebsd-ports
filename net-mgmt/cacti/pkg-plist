@@ -1094,6 +1094,7 @@
 %%CACTIDIR%%/install/upgrades/1_1_8.php
 %%CACTIDIR%%/install/upgrades/1_1_11.php
 %%CACTIDIR%%/install/upgrades/1_1_14.php
+%%CACTIDIR%%/install/upgrades/1_1_17.php
 %%CACTIDIR%%/install/upgrades/index.php
 %%CACTIDIR%%/lib/aggregate.php
 %%CACTIDIR%%/lib/api_aggregate.php
