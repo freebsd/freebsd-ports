@@ -75,6 +75,7 @@ USE_LDCONFIG|=	${PREFIX}/lib/mysql/plugin
 CONFLICTS_INSTALL=	mariadb5[0-46-9]-server-* \
 			mariadb1*-server-* \
 			mysql[0-9]*-server-* \
+			mysqlwsrep* \
 			percona[0-9]*-server-*
 
 USE_RC_SUBR=	mysql-server
