@@ -1188,7 +1188,7 @@ LLD_IS_LD=	no
 .endif
 
 .if !defined(LLD_IS_LD)
-LINKER!=	${READLINK} /usr/bin/ld
+LINKER!=	${READLINK} -f /usr/bin/ld
 .if !empty(LINKER) && ${LINKER:M*ld.lld}
 LLD_IS_LD=	yes
 .else
