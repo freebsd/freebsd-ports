@@ -1,0 +1,5 @@
+Strong (well-distributed and unpredictable) hashes:
+* Portable implementation of SipHash
+* HighwayHash, a 5x faster SIMD hash with security claims
+
+WWW: https://github.com/google/highwayhash

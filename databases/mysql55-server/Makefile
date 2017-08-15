@@ -63,6 +63,7 @@ USE_MYSQL=	yes
 WANT_MYSQL_VER=	55
 
 CONFLICTS_INSTALL=	mysql5[0-46-9]-server-* \
+			mysqlwsrep* \
 			mariadb*-server-* \
 			percona*-server-*
 

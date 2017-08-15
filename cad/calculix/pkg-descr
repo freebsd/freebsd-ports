@@ -1,13 +1,16 @@
-A Three-Dimensional Structural Finite Element Program
+CalculiX GraphiX
 
-CalculiX Finite Element Models can be build, calculated and
+CalculiX Finite Element Models can be built, calculated, and
 post-processed. The pre- and post-processor is an interactive 3D-tool
-using the openGL API.
+using the OpenGL API.
 
-Notice: The authors acknowledge that naming conventions and input style
-formats for CalculiX are based on those used by ABAQUS, a proprietary,
-general purpose finite element code developed and supported by Hibbitt,
-Karlsson & Sorensen, Inc (HKS) and are used with kind permission from HKS.
-Results obtained from CalculiX are in no way connected to ABAQUS.
+Supported solvers
+
+	* CalculiX ccx, Abaqus FEM (pre, post)
+	* Nastran FEM (pre)
+	* Ansys FEM (pre)
+	* DUNS-CFD (pre, post)
+	* ISAAC-CFD (pre, post)
+	* OpenFOAM (pre, post)
 
 WWW: http://www.calculix.de/

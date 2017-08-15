@@ -750,6 +750,7 @@
     SUBDIR += git-modes
     SUBDIR += git-review
     SUBDIR += git-subversion
+    SUBDIR += gitaly
     SUBDIR += gitblit
     SUBDIR += gitflow
     SUBDIR += gitg

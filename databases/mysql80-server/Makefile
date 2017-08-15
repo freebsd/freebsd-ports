@@ -80,6 +80,7 @@ USES+=		mysql:80
 
 CONFLICTS_INSTALL=	mysql8[1-9]-server-* \
 			mysql[0-79][0-9]-server-* \
+			mysqlwsrep* \
 			mariadb[0-9][0-9]-server-* \
 			percona[0-9][0-9]-server-*
 

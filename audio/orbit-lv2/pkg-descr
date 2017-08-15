@@ -1,0 +1,24 @@
+Several LV2 plugin bundled together:
+* Beatbox
+  Creates MIDI events based on LV2 time position events, e.g. to drive a
+  drum machine. Bars and beats can be disabled/enabled separately.
+* Cargoship
+  Record/Playback of arbitrary LV2 atoms to/from disk. Record all incoming atom
+  messages with sample accuracy and play them back later from disk. Stored atom
+  event data is part of the plugin state and is preserved across instantiations.
+* Click
+  Synthesizes click tracks based on LV2 time position events (bars and beats).
+  Bars and beats can be disabled/enabled separately.
+* Looper
+  Loops arbitrary LV2 atom events on a ping-pong buffer. E.g. loops MIDI, OSC
+  or anything else that can be packed into LV2 atoms with sample accuracy.
+  Needs to be driven by LV2 time position events.
+* Pacemaker
+  Creates LV2 time position events from scratch to drive other plugins.
+* Quantum
+  Quantizes incoming events to whole beats.
+* Subspace
+  Subdivide or multiply incoming time signals by whole fractions, e.g. to speed
+  up time x2, x3, ... or slow it down to x1/2, x1/3, ... 
+
+WWW: https://open-music-kontrollers.ch/lv2/orbit/

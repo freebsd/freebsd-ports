@@ -3,6 +3,7 @@
 
 PORTNAME=	freeradius
 DISTVERSION=	3.0.15
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.freeradius.org/pub/freeradius/%SUBDIR%/ \
 		ftp://ftp.ntua.gr/pub/net/radius/freeradius/%SUBDIR%/ \
@@ -321,7 +322,8 @@ CONFIGURE_ARGS+=--with-logdir=${LOGDIR} \
 		--without-rlm_securid \
 		--without-rlm_cache_memcached \
 		--with-vmps \
-		--with-collectdclient-lib-dir=/dev/null
+		--with-collectdclient-lib-dir=/dev/null \
+		--disable-openssl-version-check
 
 .if ${ARCH} == amd64
 CONFIGURE_ARGS+=--with-pic

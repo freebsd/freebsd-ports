@@ -1,24 +1,7 @@
-# Created by: Muhammad Moinur Rahman <bofh@FreeBSD.org>
 # $FreeBSD$
 
-PORTNAME=	pytz
-PORTVERSION=	2016.10
-PORTEPOCH=	1
-CATEGORIES=	devel python
-MASTER_SITES=	CHEESESHOP
-PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+MASTERDIR=	${.CURDIR}/../py-pytz
 
-MAINTAINER=	bofh@FreeBSD.org
-COMMENT=	World Timezone Definitions for Python
+USES=		python:3.3+ zip
 
-LICENSE=	MIT
-LICENSE_FILE=	${WRKSRC}/LICENSE.txt
-
-USES=		python:3.3+ tar:bzip2
-USE_PYTHON=	autoplist distutils
-NO_ARCH=	yes
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|=True|=False|' ${WRKSRC}/${PYSETUP}
-
-.include <bsd.port.mk>
+.include "${MASTERDIR}/Makefile"

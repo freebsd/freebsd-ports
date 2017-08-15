@@ -9,6 +9,8 @@ COMMENT=	Runtime process infection made easy
 
 LICENSE=	BSD2CLAUSE
 
+ONLY_FOR_ARCHS=	amd64
+
 MAKE_JOBS_UNSAFE=	yes
 
 USE_GITHUB=	yes

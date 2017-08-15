@@ -1,0 +1,9 @@
+mod_md a module for Apache httpd that adds support for Let's Encrypt 
+(and other ACME CAs) as an early experience version.
+
+This port is here to help people review and comment and test before
+it is put into the main Apache httpd repository. Issues you can raise
+on the project's website. General discussion is probably best at the 
+apache httpd-dev mailing list.
+
+WWW: https://github.com/icing/mod_md

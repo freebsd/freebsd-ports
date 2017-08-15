@@ -470,6 +470,7 @@
     SUBDIR += lpac
     SUBDIR += lua51-mpd
     SUBDIR += lv2
+    SUBDIR += lvtk
     SUBDIR += lxmusic
     SUBDIR += mac
     SUBDIR += madfufw
@@ -559,6 +560,7 @@
     SUBDIR += opus
     SUBDIR += opus-tools
     SUBDIR += opusfile
+    SUBDIR += orbit-lv2
     SUBDIR += osalp
     SUBDIR += osd-lyrics
     SUBDIR += osdmixer

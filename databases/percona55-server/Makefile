@@ -60,6 +60,7 @@ CMAKE_ARGS+=	-DWITH_FAST_MUTEXES=1
 USES+=mysql:55p
 
 CONFLICTS_INSTALL=	mysql*-server-* \
+			mysqlwsrep* \
 			mariadb*-server-* \
 			percona5[0-46-9]-server-*
 
