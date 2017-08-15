@@ -13,7 +13,7 @@
 
 PORTNAME=	dovecot
 PORTVERSION=	2.2.31
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail ipv6
 MASTER_SITES=	https://www.dovecot.org/releases/2.2/
 

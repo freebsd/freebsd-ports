@@ -1,0 +1,7 @@
+To ensure binaries built with this toolchain find appropriate versions
+of the necessary run-time libraries, you may want to link using
+
+  -Wl,-rpath=%%TARGLIB%%
+
+For ports leveraging USE_GCC, USES=compiler, or USES=fortran this happens
+transparently.
