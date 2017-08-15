@@ -165,6 +165,7 @@
     SUBDIR += py-scikit-sparse
     SUBDIR += py-scimath
     SUBDIR += py-scipy
+    SUBDIR += py-tensorflow
     SUBDIR += py-ws2300
     SUBDIR += pybrain
     SUBDIR += pycdf

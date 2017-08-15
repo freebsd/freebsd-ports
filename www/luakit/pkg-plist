@@ -1,7 +1,6 @@
+/you/have/to/check/what/makeplist/gives/you
 bin/luakit
-etc/xdg/luakit/binds.lua
 etc/xdg/luakit/globals.lua
-etc/xdg/luakit/modes.lua
 etc/xdg/luakit/rc.lua
 etc/xdg/luakit/theme.lua
 etc/xdg/luakit/webview.lua
@@ -38,6 +37,7 @@ share/applications/luakit.desktop
 %%PORTDOCS%%%%DOCSDIR%%/index.html
 %%PORTDOCS%%%%DOCSDIR%%/modules/adblock.html
 %%PORTDOCS%%%%DOCSDIR%%/modules/adblock_chrome.html
+%%PORTDOCS%%%%DOCSDIR%%/modules/binds.html
 %%PORTDOCS%%%%DOCSDIR%%/modules/bookmarks.html
 %%PORTDOCS%%%%DOCSDIR%%/modules/bookmarks_chrome.html
 %%PORTDOCS%%%%DOCSDIR%%/modules/chrome.html
@@ -61,6 +61,7 @@ share/applications/luakit.desktop
 %%PORTDOCS%%%%DOCSDIR%%/modules/image_css.html
 %%PORTDOCS%%%%DOCSDIR%%/modules/introspector_chrome.html
 %%PORTDOCS%%%%DOCSDIR%%/modules/ipc.html
+%%PORTDOCS%%%%DOCSDIR%%/modules/log_chrome.html
 %%PORTDOCS%%%%DOCSDIR%%/modules/lousy.bind.html
 %%PORTDOCS%%%%DOCSDIR%%/modules/lousy.load.html
 %%PORTDOCS%%%%DOCSDIR%%/modules/lousy.mode.html
@@ -71,6 +72,7 @@ share/applications/luakit.desktop
 %%PORTDOCS%%%%DOCSDIR%%/modules/lousy.util.html
 %%PORTDOCS%%%%DOCSDIR%%/modules/lousy.widget.html
 %%PORTDOCS%%%%DOCSDIR%%/modules/luakit.html
+%%PORTDOCS%%%%DOCSDIR%%/modules/modes.html
 %%PORTDOCS%%%%DOCSDIR%%/modules/msg.html
 %%PORTDOCS%%%%DOCSDIR%%/modules/newtab_chrome.html
 %%PORTDOCS%%%%DOCSDIR%%/modules/noscript.html
@@ -96,11 +98,16 @@ share/applications/luakit.desktop
 %%PORTDOCS%%%%DOCSDIR%%/modules/viewpdf.html
 %%PORTDOCS%%%%DOCSDIR%%/modules/webinspector.html
 %%PORTDOCS%%%%DOCSDIR%%/modules/xdg.html
-%%PORTDOCS%%%%DOCSDIR%%/pages/Authors.html
-%%PORTDOCS%%%%DOCSDIR%%/pages/Tests.html
+%%PORTDOCS%%%%DOCSDIR%%/pages/01-authors.html
+%%PORTDOCS%%%%DOCSDIR%%/pages/02-faq.html
+%%PORTDOCS%%%%DOCSDIR%%/pages/03-quick-start-guide.html
+%%PORTDOCS%%%%DOCSDIR%%/pages/04-migration-guide.html
+%%PORTDOCS%%%%DOCSDIR%%/pages/05-configuration.html
+%%PORTDOCS%%%%DOCSDIR%%/pages/06-tests.html
 %%DATADIR%%/%%LUA_LIBDIR%%/adblock.lua
 %%DATADIR%%/%%LUA_LIBDIR%%/adblock_chrome.lua
 %%DATADIR%%/%%LUA_LIBDIR%%/adblock_wm.lua
+%%DATADIR%%/%%LUA_LIBDIR%%/binds.lua
 %%DATADIR%%/%%LUA_LIBDIR%%/bookmarks.lua
 %%DATADIR%%/%%LUA_LIBDIR%%/bookmarks_chrome.lua
 %%DATADIR%%/%%LUA_LIBDIR%%/chrome.lua
@@ -130,6 +137,7 @@ share/applications/luakit.desktop
 %%DATADIR%%/%%LUA_LIBDIR%%/image_css_wm.lua
 %%DATADIR%%/%%LUA_LIBDIR%%/introspector_chrome.lua
 %%DATADIR%%/%%LUA_LIBDIR%%/jquery.min.js
+%%DATADIR%%/%%LUA_LIBDIR%%/log_chrome.lua
 %%DATADIR%%/%%LUA_LIBDIR%%/lousy/bind.lua
 %%DATADIR%%/%%LUA_LIBDIR%%/lousy/init.lua
 %%DATADIR%%/%%LUA_LIBDIR%%/lousy/load.lua
@@ -151,8 +159,10 @@ share/applications/luakit.desktop
 %%DATADIR%%/%%LUA_LIBDIR%%/lousy/widget/tabi.lua
 %%DATADIR%%/%%LUA_LIBDIR%%/lousy/widget/tablist.lua
 %%DATADIR%%/%%LUA_LIBDIR%%/lousy/widget/uri.lua
+%%DATADIR%%/%%LUA_LIBDIR%%/lousy/widget/zoom.lua
 %%DATADIR%%/%%LUA_LIBDIR%%/markdown.lua
 %%DATADIR%%/%%LUA_LIBDIR%%/markdown.lua.bak
+%%DATADIR%%/%%LUA_LIBDIR%%/modes.lua
 %%DATADIR%%/%%LUA_LIBDIR%%/newtab_chrome.lua
 %%DATADIR%%/%%LUA_LIBDIR%%/noscript.lua
 %%DATADIR%%/%%LUA_LIBDIR%%/open_editor.lua

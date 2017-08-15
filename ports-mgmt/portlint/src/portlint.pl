@@ -15,7 +15,7 @@
 # was removed.
 #
 # $FreeBSD$
-# $MCom: portlint/portlint.pl,v 1.417 2017/08/03 12:52:43 jclarke Exp $
+# $MCom: portlint/portlint.pl,v 1.424 2017/08/15 12:38:42 jclarke Exp $
 #
 
 use strict;
@@ -50,7 +50,7 @@ $portdir = '.';
 # version variables
 my $major = 2;
 my $minor = 17;
-my $micro = 11;
+my $micro = 12;
 
 # default setting - for FreeBSD
 my $portsdir = '/usr/ports';
@@ -865,6 +865,11 @@ sub checkplist {
 				"accordingly.") unless ($check_xxxdir_ok{$3} eq $1);
 		}
 
+		if ($_ =~ m#share/man/#) {
+			&perror("FATAL", $file, $., "Man pages must be installed into ".
+				"``man'' not ``share/man''.");
+		}
+
 		if ($_ =~ m#man/([^/]+/)?man[1-9ln]/([^\.]+\.[1-9ln])(\.gz)?$#) {
 			if (!$3) {
 				&perror("FATAL", $file, $., "Unpacked man file $2 listed.  ".
@@ -1302,7 +1307,7 @@ sub checkmakefile {
 				"indentation");
 		}
 		if ($usetabs) {
-			if (m/^[A-Za-z0-9_-]+.?= /) {
+			if (m/^[A-Za-z0-9_-]+.?=\t*? \t*?/) {
 				if (m/[?+]=/) {
 					&perror("WARN", $file, $., "use a tab (not space) after a ".
 						"variable name");
@@ -1358,7 +1363,7 @@ sub checkmakefile {
 	#
 	if ($parenwarn) {
 		print "OK: checking for \$(VARIABLE).\n" if ($verbose);
-		if ($whole =~ /\$\([\w\d]+\)/) {
+		if ($whole =~ /[^\$]\$\([\w\d]+\)/) {
 			my $lineno = &linenumber($`);
 			&perror("WARN", $file, $lineno, "use \${VARIABLE}, instead of ".
 				"\$(VARIABLE).");
@@ -1624,6 +1629,16 @@ sub checkmakefile {
 		}
 		if ($makevar{PLIST_DIRS}) {
 			foreach my $i (split(/\s+/, $makevar{PLIST_DIRS})) {
+				while ($i =~ /\%\%([^%]+)\%\%/g) {
+					push @popt, $1;
+				}
+			}
+		}
+		if (-f 'pkg-plist') {
+			open(PL, 'pkg-plist');
+			my @pcontents = <PL>;
+			close(PL);
+			foreach my $i (@pcontents) {
 				while ($i =~ /\%\%([^%]+)\%\%/g) {
 					push @popt, $1;
 				}
@@ -2989,9 +3004,31 @@ MAINTAINER COMMENT
 	}
 
 	#
-	# section 6: *_DEPENDS (may not be there)
+	# section 6: BROKEN/IGNORE/DEPRECATED (may not be there)
 	#
-	print "OK: checking fifth section of $file (*_DEPENDS).\n"
+	print "OK: checking sixth section of $file (BROKEN/IGNORE/DEPRECATED).\n"
+		if ($verbose);
+	$tmp = $sections[$idx] // '';
+
+	@linestocheck = qw(
+DEPRECATED EXPIRATION_DATE FORBIDDEN BROKEN(_\w+)? IGNORE(_\w+)?
+ONLY_FOR_ARCHS ONLY_FOR_ARCHS_REASON(_\w+)?
+NOT_FOR_ARCHS NOT_FOR_ARCHS_REASON(_\w+)?
+	);
+
+	my $brokenpattern = "^(" . join("|", @linestocheck) . ")[?+:]?=";
+
+	if ($tmp =~ /$brokenpattern/) {
+		$idx++;
+	}
+
+	push(@varnames, @linestocheck);
+	&checkearlier($file, $tmp, @varnames);
+
+	#
+	# section 7: *_DEPENDS (may not be there)
+	#
+	print "OK: checking seventh section of $file (*_DEPENDS).\n"
 		if ($verbose);
 	$tmp = $sections[$idx] // '';
 
@@ -3357,8 +3394,8 @@ sub checkearlier {
 
 	print "OK: checking items that has to appear earlier.\n" if ($verbose);
 	foreach my $i (@varnames) {
-		if ($str =~ /\n$i\??=/) {
-			&perror("WARN", $file, -1, "\"$i\" has to appear earlier.");
+		if ($str =~ /\n($i)\??=/) {
+			&perror("WARN", $file, -1, "\"$1\" has to appear earlier.");
 		}
 	}
 }
@@ -3369,7 +3406,7 @@ sub linenumber {
 
 	@lines = split /\n/, $text;
 
-	return scalar(@lines);
+	return scalar(@lines) - 1;
 }
 
 sub abspathname {
@@ -3400,6 +3437,11 @@ sub abspathname {
 
 			if ($pre =~ /MASTER_SITE_SUBDIR/) {
 				# MASTER_SITE_SUBDIR lines are ok.
+				$i = '';
+			}
+			if ($s =~ /\$\{[^}]*?$i/) {
+				# If we're inside a make variable, we probably do not have
+				# an absolute path.
 				$i = '';
 			}
 		}
