@@ -1,0 +1,4 @@
+To use RocksDB please use "rocksdb" as a name for a Storage Engine.
+
+For more options use:
+mongod --help
