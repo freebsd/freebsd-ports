@@ -2,8 +2,7 @@
 
 name=sndiod
 command="/usr/local/bin/sndiod"
-SYSCTL="/sbin/sysctl"
-: ${sndiod_dev="rsnd/$($SYSCTL -n hw.snd.default_unit)"}
+: ${sndiod_dev="rsnd/$(sysctl -n hw.snd.default_unit)"}
 : ${sndiod_flags="-f ${sndiod_dev} -c 0:7 -j off -s default -m mon -s monitor"}
 command_args=${sndiod_flags}
 
