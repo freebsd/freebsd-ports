@@ -560,6 +560,7 @@
     SUBDIR += opus
     SUBDIR += opus-tools
     SUBDIR += opusfile
+    SUBDIR += orbit-lv2
     SUBDIR += osalp
     SUBDIR += osd-lyrics
     SUBDIR += osdmixer
