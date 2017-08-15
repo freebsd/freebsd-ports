@@ -1,5 +1,5 @@
---- src/wireless.c.orig	2004-03-09 20:39:17.000000000 +0100
-+++ src/wireless.c	2007-11-01 17:58:13.170763665 +0100
+--- src/wireless.c.orig	2004-03-09 19:39:17 UTC
++++ src/wireless.c
 @@ -25,7 +25,13 @@
  #include <net/if_mib.h>
  #include <net/if_var.h>
@@ -14,7 +14,14 @@
  #else
  #error "sorry, your OS is not supported yet"
  #endif
-@@ -143,6 +149,7 @@
+@@ -138,11 +144,13 @@ int get_wlaniface(int old, int dir)
+ 	int i, max, step, found, index;
+ 	struct ifmibdata ifmd;
+ 	struct ifmediareq ifmr;
+-	int name[6], len, s;
++	int name[6], s;
++	size_t len;
+ 	char *iface[IFNAMSIZ];
  
  	max = get_max_ifs();
  	step = 0;
@@ -22,7 +29,7 @@
  
  	if (old > max)
  		old = max; /* just be sure to not be out of bounds */
-@@ -178,8 +185,8 @@
+@@ -178,8 +186,8 @@ int get_wlaniface(int old, int dir)
  		len = sizeof(ifmd);
  		sysctl(name, 6, &ifmd, &len, NULL, 0);
  
@@ -33,7 +40,7 @@
  			continue;
  
  		s = socket(AF_INET, SOCK_DGRAM, IPPROTO_UDP);
-@@ -193,9 +200,11 @@
+@@ -193,9 +201,11 @@ int get_wlaniface(int old, int dir)
  
  		if (ioctl(s, SIOCGIFMEDIA, (caddr_t) &ifmr) < 0)
  		{
@@ -47,7 +54,7 @@
  		}
  		close(s);
  		/* we cannot monitor interfaces in hostap mode, so just
-@@ -207,6 +216,10 @@
+@@ -207,12 +217,17 @@ int get_wlaniface(int old, int dir)
  			found++;
  		}
  	}
@@ -58,7 +65,21 @@
  	return index;
  }
  /* how many interfaces do we have? this includes non-wireless! */
-@@ -224,9 +237,18 @@
+ int get_max_ifs(void)
+ {
+-	int count, len;
++	int count;
++	size_t len;
+ 
+ 	len = sizeof(count);
+ 	sysctlbyname("net.link.generic.system.ifcount", &count, &len, NULL, 0);
+@@ -220,13 +235,23 @@ int get_max_ifs(void)
+ }
+ int wifi_info(struct wifi *wfi)
+ {
+-	int name[6], len;		/* interface name */
++	int name[6];			/* interface name */
++	size_t len;
  	struct ifmibdata ifmd;
  
  	struct ifreq ifr;		/* interface stats */
@@ -77,7 +98,7 @@
  	/* lets find the current interface name */
  	name[0] = CTL_NET;
  	name[1] = PF_LINK;
-@@ -247,13 +269,38 @@
+@@ -247,13 +272,38 @@ int wifi_info(struct wifi *wfi)
  		perror("socket");
  		exit(1);
  	}
@@ -117,7 +138,7 @@
  	strncpy(ifr.ifr_name, wfi->ifname, strlen(wfi->ifname));
  	wireq.wi_type	= WI_RID_COMMS_QUALITY;
  	wireq.wi_len	= WI_MAX_DATALEN;
-@@ -272,7 +319,7 @@
+@@ -272,7 +322,7 @@ int wifi_info(struct wifi *wfi)
  	 * wi_val[2] = noise
  	 */
  	wfi->link = (int) wireq.wi_val[1];
