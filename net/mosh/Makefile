@@ -5,7 +5,7 @@ PORTNAME=	mosh
 PORTVERSION=	1.3.2
 CATEGORIES=	net
 MASTER_SITES=	http://mosh.mit.edu/ \
-		http://mirrors.rit.edu/zi/
+		ZI
 
 MAINTAINER=	zi@FreeBSD.org
 COMMENT=	Mobile terminal that supports intermittent connectivity

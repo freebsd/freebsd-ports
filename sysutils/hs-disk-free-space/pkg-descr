@@ -1,0 +1,4 @@
+A cross-platform library for retrieving information about disk space usage.
+
+WWW: http://hackage.haskell.org/package/disk-free-space
+

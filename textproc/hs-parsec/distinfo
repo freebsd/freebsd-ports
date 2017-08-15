@@ -1,2 +1,3 @@
-SHA256 (cabal/parsec-3.1.9.tar.gz) = 71f711d24c89581a43b8bc2d3ed56a1a802bbf1cd0b083bc34636c232b0342c9
-SIZE (cabal/parsec-3.1.9.tar.gz) = 29668
+TIMESTAMP = 1499618976
+SHA256 (cabal/parsec-3.1.11.tar.gz) = 6f87251cb1d11505e621274dec15972de924a9074f07f7430a18892064c2676e
+SIZE (cabal/parsec-3.1.11.tar.gz) = 32412

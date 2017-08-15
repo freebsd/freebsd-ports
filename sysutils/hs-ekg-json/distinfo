@@ -1,2 +1,3 @@
-SHA256 (cabal/ekg-json-0.1.0.0.tar.gz) = 52c455ee7d1b54f530ba9243027e5bb332925589d9209dcdfc24bd16a5a218da
-SIZE (cabal/ekg-json-0.1.0.0.tar.gz) = 2969
+TIMESTAMP = 1499546477
+SHA256 (cabal/ekg-json-0.1.0.5.tar.gz) = 0cd5ecae57a156a5c779acff70d0fa3b02c52cb05283c0effb62a2902ebe8556
+SIZE (cabal/ekg-json-0.1.0.5.tar.gz) = 3092

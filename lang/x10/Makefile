@@ -25,6 +25,8 @@ COMMENT=	Object-oriented parallel programming language
 
 LICENSE=	EPL
 
+BROKEN=		Fails to build with modern compilers (cf. PR 219282)
+
 USES=	tar:bzip2
 USE_JAVA=	yes
 JAVA_VERSION=	1.6 1.7

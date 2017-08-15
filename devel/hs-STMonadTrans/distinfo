@@ -1,2 +1,3 @@
-SHA256 (cabal/STMonadTrans-0.3.3.tar.gz) = d9911c7634c42b94f57ac7c2a6d523f6d7124870b35fc3030cb72109ba3aa315
-SIZE (cabal/STMonadTrans-0.3.3.tar.gz) = 4820
+TIMESTAMP = 1499627815
+SHA256 (cabal/STMonadTrans-0.4.3.tar.gz) = 574fd56cf74036c20d00a09d815659dbbb0ae51c8103d00c93cd9558ad3322db
+SIZE (cabal/STMonadTrans-0.4.3.tar.gz) = 5786

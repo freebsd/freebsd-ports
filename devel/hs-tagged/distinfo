@@ -1,2 +1,3 @@
-SHA256 (cabal/tagged-0.8.1.tar.gz) = 5bdd98389fcca3aa9c9902d1fb209fd431685ba6530f3051ebe1960fe1c782c1
-SIZE (cabal/tagged-0.8.1.tar.gz) = 8088
+TIMESTAMP = 1499459567
+SHA256 (cabal/tagged-0.8.5.tar.gz) = e47c51c955ed77b0fa36897f652df990aa0a8c4eb278efaddcd604be00fc8d99
+SIZE (cabal/tagged-0.8.5.tar.gz) = 10860

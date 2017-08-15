@@ -1,5 +1,5 @@
---- include/qemu/atomic.h.orig	2016-12-20 13:16:47.000000000 -0700
-+++ include/qemu/atomic.h	2017-03-05 08:15:48.793780000 -0700
+--- include/qemu/atomic.h.orig	2017-04-20 14:57:00 UTC
++++ include/qemu/atomic.h
 @@ -182,10 +182,12 @@
  /* Provide shorter names for GCC atomic builtins, return old value */
  #define atomic_fetch_inc(ptr)  __atomic_fetch_add(ptr, 1, __ATOMIC_SEQ_CST)

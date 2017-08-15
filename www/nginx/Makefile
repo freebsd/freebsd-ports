@@ -3,6 +3,7 @@
 
 PORTNAME=	nginx
 PORTVERSION=	1.12.1
+PORTREVISION?=	1
 PORTEPOCH=	2
 CATEGORIES=	www
 MASTER_SITES=	http://nginx.org/download/
@@ -112,6 +113,7 @@ OPTIONS_DEFINE=	\
 	LUA \
 	MEMC \
 	MODSECURITY \
+	MODSECURITY_DEVEL \
 	NAXSI \
 	PASSENGER \
 	POSTGRES \
@@ -226,6 +228,7 @@ LET_DESC=			3rd party let module
 LUA_DESC=			3rd party lua module
 MEMC_DESC=			3rd party memc (memcached) module
 MODSECURITY_DESC=		3rd party mod_security module
+MODSECURITY_DEVEL_DESC=		3rd party mod_security v3 module
 NAXSI_DESC=			3rd party naxsi module
 PASSENGER_DESC=			3rd party passenger module
 POSTGRES_DESC=			3rd party postgres module
@@ -770,7 +773,7 @@ EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-ngx_http_sticky_misc.c
 
 .if ${PORT_OPTIONS:MHTTP_VIDEO_THUMBEXTRACTOR}
 NGINX_VIDEO_THUMBEXTRACTOR_VERSION=	0.7.0
-LIB_DEPENDS+= 	libavformat.so:multimedia/ffmpeg \
+LIB_DEPENDS+=	libavformat.so:multimedia/ffmpeg \
 		libavcodec.so:multimedia/ffmpeg \
 		libavutil.so:multimedia/ffmpeg \
 		libswscale.so:multimedia/ffmpeg
@@ -904,6 +907,12 @@ DISTFILES+=	modsecurity-${NGINX_MODSECURITY_VERSION}.tar.gz:modsecurity
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/modsecurity-${NGINX_MODSECURITY_VERSION}/nginx/modsecurity
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-nginx-modsecurity-configure \
 		${PATCHDIR}/extra-patch-ngx_http_modsecurity.c
+.endif
+
+.if ${PORT_OPTIONS:MMODSECURITY_DEVEL}
+LIB_DEPENDS+=	libmodsecurity.so.3:www/mod_security-devel
+GH_TUPLE+=	SiderLaps:ModSecurity-nginx:abbf2c4:modsec
+CONFIGURE_ARGS+=--add-dynamic-module=${WRKSRC_modsec}
 .endif
 
 .if ${PORT_OPTIONS:MNAXSI}

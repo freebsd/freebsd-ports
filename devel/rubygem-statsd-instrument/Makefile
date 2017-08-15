@@ -5,7 +5,7 @@ PORTVERSION=	2.1.4
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	jrm@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	StatsD client for Ruby applications
 
 LICENSE=	MIT

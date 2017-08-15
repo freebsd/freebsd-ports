@@ -1,6 +1,6 @@
---- unittest/CMakeLists.txt.orig	2017-01-30 20:52:36 UTC
+--- unittest/CMakeLists.txt.orig	2017-06-12 01:04:28 UTC
 +++ unittest/CMakeLists.txt
-@@ -118,7 +118,10 @@ add_executable(tnewamp1 tnewamp1.c ../sr
+@@ -91,7 +91,10 @@ add_executable(tnewamp1 tnewamp1.c ../sr
  target_link_libraries(tnewamp1 codec2)
  
  add_executable(tsrc tsrc.c)

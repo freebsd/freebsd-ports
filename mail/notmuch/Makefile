@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	notmuch
-PORTVERSION=	0.24.2
+PORTVERSION=	0.25
 CATEGORIES=	mail
 MASTER_SITES=	http://notmuchmail.org/releases/
 
@@ -21,31 +21,35 @@ TEST_DEPENDS=	bash:shells/bash \
 		dtach:misc/dtach \
 		gdate:sysutils/coreutils \
 		gbase64:sysutils/coreutils \
-		gwc:sysutils/coreutils \
-		gsed:sysutils/coreutils \
+		gsed:textproc/gsed \
 		gsha256sum:sysutils/coreutils \
 		gpg:security/gnupg \
+		gwc:sysutils/coreutils \
 		${LOCALBASE}/bin/gdb:devel/gdb
 
 BROKEN_powerpc64=	Does not build
 
 HAS_CONFIGURE=	yes
-USES=		gmake pkgconfig python:build
+USES=		gmake pkgconfig python:build,test
 USE_GNOME=	glib20
 CONFIGURE_ARGS=	--prefix=${PREFIX} --mandir=${MANPREFIX}/man
 USE_LDCONFIG=	yes
 
 MAKE_ENV+=	PYTHONCMD=${PYTHON_CMD}
 
-TEST_ENV+=	NOTMUCH_SKIP_TESTS="basic count insert smime atomicity \
-		message-property new regexp-query tagging" \
+TEST_ENV+=	NOTMUCH_SKIP_TESTS="address basic count crypto db-features \
+		database-modified dump-restore emacs emacs-large-search-buffer \
+		from-guessing insert json lib-error new parse-time-string \
+		python search search-output sexp smime symbol-hiding tagging \
+		thread-order thread-search" \
 		V=1 \
 		TEST_CFLAGS="-g -O0 -I${LOCALBASE}/include -L${LOCALBASE}/lib" \
 		BSD_GDB=${LOCALBASE}/bin/gdb
 
 TEST_TARGET=	test
 
-OPTIONS_DEFINE=	BASH DOXYGEN EMACS MANPAGES MUTT RUBY ZSH
+OPTIONS_DEFINE=	BASH DESKTOP DOXYGEN EMACS MANPAGES MUTT RUBY ZSH
+DESKTOP_DESC=	Install desktop file
 EMACS_DESC=	Install EMACS lisp files (requires emacs)
 MUTT_DESC=	Install notmuch-mutt script
 OPTIONS_SUB=	yes
@@ -53,6 +57,8 @@ OPTIONS_SUB=	yes
 BASH_BUILD_DEPENDS=	bash-completion>=1.90:shells/bash-completion
 BASH_RUN_DEPENDS=	${BASH_BUILD_DEPENDS}
 BASH_CONFIGURE_WITH=	bash-completion
+DESKTOP_CONFIGURE_WITH=	desktop
+DESKTOP_USES=		desktop-file-utils
 DOXYGEN_CONFIGURE_WITH=	api-docs
 DOXYGEN_BUILD_DEPENDS=	doxygen:devel/doxygen
 EMACS_CONFIGURE_WITH=	emacs
@@ -64,7 +70,7 @@ MUTT_RUN_DEPENDS=	p5-Term-ReadLine-Gnu>0:devel/p5-Term-ReadLine-Gnu \
 			p5-Mail-Tools>0:mail/p5-Mail-Tools \
 			p5-Mail-Box>0:mail/p5-Mail-Box \
 			p5-String-ShellQuote>0:textproc/p5-String-ShellQuote
-MUTT_USE=	PERL=yes
+MUTT_USES=	perl5
 RUBY_USE=	RUBY=yes
 ZSH_CONFIGURE_WITH=	zsh-completion
 
@@ -78,6 +84,6 @@ do-install-MUTT-on:
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/notmuch
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libnotmuch.so.4.4.0
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libnotmuch.so.5.0.0
 
 .include <bsd.port.mk>

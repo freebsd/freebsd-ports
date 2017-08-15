@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	racktables
-DISTVERSION=	0.20.13
+DISTVERSION=	0.20.14
 CATEGORIES?=	sysutils www
 MASTER_SITES=	SF/${PORTNAME}/
 DISTNAME=	RackTables-${DISTVERSION}
 
-MAINTAINER=	zi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Server room asset management suite
 
 LICENSE=	GPLv2

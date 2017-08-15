@@ -2,22 +2,32 @@
 # $FreeBSD$
 
 PORTNAME=	dynare
-PORTVERSION=	4.4.3
-PORTREVISION=	9
+PORTVERSION=	4.5.1
 CATEGORIES=	math
 MASTER_SITES=	http://www.dynare.org/release/source/
 
 MAINTAINER=	fernando.apesteguia@gmail.com
 COMMENT=	Software platform for handling a wide class of economic models
 
+LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/unordered_set.hpp:devel/boost-libs \
 		ctangle:devel/cweb
 LIB_DEPENDS=	libumfpack.so:math/suitesparse \
-		libmatio.so:math/matio
+		libmatio.so:math/matio \
+		libhdf5.so:science/hdf5 \
+		libopenblas.so:math/openblas \
+		libopenblasp.so:math/openblas \
+		libfftw3_threads.so:math/fftw3 \
+		libfftw3.so:math/fftw3 \
+		libfftw3f_threads.so:math/fftw3-float \
+		libfftw3f.so:math/fftw3-float
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 GNU_CONFIGURE=	yes
-USES=		fortran gmake pkgconfig tar:xz
+USES=		fortran gmake pkgconfig tar:xz shebangfix
+SHEBANG_FILES=	matlab/modules/reporting/success.sh
 
 INFO=		dynare
 
@@ -33,11 +43,6 @@ OCTAVE_BUILD_DEPENDS=		octave:math/octave
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-pre-configure:
-# fix matio detection
-	${REINPLACE_CMD} 's,-lmatio .*$$LIBS,`pkgconf --libs matio`,' \
-		${WRKSRC}/configure ${WRKSRC}/mex/build/octave/configure
-
 post-configure:
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} ""
@@ -48,4 +53,11 @@ post-configure:
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} ""
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+post-install:
+.if ${ARCH} == "amd64"
+	${REINPLACE_CMD} -e 's|preprocessor32|preprocessor64|g' ${TMPPLIST}
+.endif
+
+.include <bsd.port.post.mk>

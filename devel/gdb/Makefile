@@ -3,6 +3,7 @@
 
 PORTNAME=	gdb
 PORTVERSION=	8.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	GNU
 
@@ -34,7 +35,20 @@ CFLAGS:=	${CFLAGS:C/ +$//}	# blanks at EOL creep in sometimes
 CFLAGS+=	-DRL_NO_COMPAT -Wno-unused-function -Wno-unused-variable
 EXCLUDE=	dejagnu expect sim texinfo intl
 EXTRACT_AFTER_ARGS=	${EXCLUDE:S/^/--exclude /}
-EXTRA_PATCHES=	${FILESDIR}/commit-b5430a3ced
+EXTRA_PATCHES=	${FILESDIR}/commit-45eba0ab7d \
+		${FILESDIR}/commit-3c3ae77e68 \
+		${FILESDIR}/commit-b5430a3ced \
+		${FILESDIR}/commit-762c974a09 \
+		${FILESDIR}/commit-929edea98d \
+		${FILESDIR}/commit-6e5eab33ab \
+		${FILESDIR}/commit-382b69bbb7 \
+		${FILESDIR}/commit-2af9fc4432 \
+		${FILESDIR}/commit-0b9305edf1 \
+		${FILESDIR}/commit-e6f3b9c319 \
+		${FILESDIR}/commit-4b654465bf \
+		${FILESDIR}/commit-b30ff123fb \
+		${FILESDIR}/commit-48aeef91c2 \
+		${FILESDIR}/commit-0aa37b654c
 LIB_DEPENDS+=	libexpat.so:textproc/expat2
 
 VER=		${PORTVERSION:S/.//g}

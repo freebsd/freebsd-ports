@@ -1,4 +1,3 @@
-SHA256 (cabal/Agda-2.4.2.3.tar.gz) = bc6def45e32498f51863d67acfbe048c039d630c6a36761ed27e99a5f68d7b27
-SIZE (cabal/Agda-2.4.2.3.tar.gz) = 990268
-SHA256 (cabal/Primitive.agdai.2.4.2.3) = a5b2353a50256f24c87f20b7892faabc99b9bad8f9b5cc68c24343707c1accf8
-SIZE (cabal/Primitive.agdai.2.4.2.3) = 2627
+TIMESTAMP = 1500999185
+SHA256 (cabal/Agda-2.5.2.tar.gz) = d812cec3bf7f03c4b27248572475c7e060154102771a8434cc11ba89f5691439
+SIZE (cabal/Agda-2.5.2.tar.gz) = 1240885

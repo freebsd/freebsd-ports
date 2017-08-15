@@ -504,6 +504,8 @@ include/wine/windows/mfapi.h
 include/wine/windows/mferror.h
 include/wine/windows/mfobjects.h
 include/wine/windows/mfobjects.idl
+include/wine/windows/mfreadwrite.h
+include/wine/windows/mfreadwrite.idl
 include/wine/windows/midles.h
 include/wine/windows/mimeinfo.h
 include/wine/windows/mimeinfo.idl
@@ -950,6 +952,7 @@ lib32/libxcb-dri3.so.0
 lib32/libxcb-glx.so.0
 lib32/libxcb-present.so.0
 lib32/libxcb-sync.so.1
+lib32/libxcb-xfixes.so.0
 lib32/libxcb.so.1
 lib32/libxml2.so.2
 lib32/libxshmfence.so.1

@@ -322,6 +322,8 @@ lib/libstemmer.a
 %%DATADIR%%/libraries/templates/metric/iso_en_a4_metric_portrait_aec.rdf
 %%DATADIR%%/libraries/templates/metric/title_block_80mm_x_80mm.dxf
 %%DATADIR%%/libraries/templates/metric/title_block_80mm_x_80mm.rdf
+%%DATADIR%%/linetypes/imperial/qcad.lin
+%%DATADIR%%/linetypes/metric/qcadiso.lin
 %%DATADIR%%/patterns/imperial/acad_iso02w100.pat
 %%DATADIR%%/patterns/imperial/acad_iso03w100.pat
 %%DATADIR%%/patterns/imperial/acad_iso04w100.pat
@@ -487,46 +489,46 @@ lib/libstemmer.a
 %%DATADIR%%/plugins/libqcaddxf.so
 %%DATADIR%%/plugins/libqcaddxf_debug.so
 %%DATADIR%%/plugins/printsupport/readme.txt
-%%DATADIR%%/plugins/script/libqcadqtscript_core.so
-%%DATADIR%%/plugins/script/libqcadqtscript_core.so.1
-%%DATADIR%%/plugins/script/libqcadqtscript_core.so.1.0
-%%DATADIR%%/plugins/script/libqcadqtscript_core.so.1.0.0
-%%DATADIR%%/plugins/script/libqcadqtscript_gui.so
-%%DATADIR%%/plugins/script/libqcadqtscript_gui.so.1
-%%DATADIR%%/plugins/script/libqcadqtscript_gui.so.1.0
-%%DATADIR%%/plugins/script/libqcadqtscript_gui.so.1.0.0
-%%DATADIR%%/plugins/script/libqcadqtscript_network.so
-%%DATADIR%%/plugins/script/libqcadqtscript_network.so.1
-%%DATADIR%%/plugins/script/libqcadqtscript_network.so.1.0
-%%DATADIR%%/plugins/script/libqcadqtscript_network.so.1.0.0
-%%DATADIR%%/plugins/script/libqcadqtscript_opengl.so
-%%DATADIR%%/plugins/script/libqcadqtscript_opengl.so.1
-%%DATADIR%%/plugins/script/libqcadqtscript_opengl.so.1.0
-%%DATADIR%%/plugins/script/libqcadqtscript_opengl.so.1.0.0
-%%DATADIR%%/plugins/script/libqcadqtscript_sql.so
-%%DATADIR%%/plugins/script/libqcadqtscript_sql.so.1
-%%DATADIR%%/plugins/script/libqcadqtscript_sql.so.1.0
-%%DATADIR%%/plugins/script/libqcadqtscript_sql.so.1.0.0
-%%DATADIR%%/plugins/script/libqcadqtscript_svg.so
-%%DATADIR%%/plugins/script/libqcadqtscript_svg.so.1
-%%DATADIR%%/plugins/script/libqcadqtscript_svg.so.1.0
-%%DATADIR%%/plugins/script/libqcadqtscript_svg.so.1.0.0
-%%DATADIR%%/plugins/script/libqcadqtscript_uitools.so
-%%DATADIR%%/plugins/script/libqcadqtscript_uitools.so.1
-%%DATADIR%%/plugins/script/libqcadqtscript_uitools.so.1.0
-%%DATADIR%%/plugins/script/libqcadqtscript_uitools.so.1.0.0
-%%DATADIR%%/plugins/script/libqcadqtscript_webkit.so
-%%DATADIR%%/plugins/script/libqcadqtscript_webkit.so.1
-%%DATADIR%%/plugins/script/libqcadqtscript_webkit.so.1.0
-%%DATADIR%%/plugins/script/libqcadqtscript_webkit.so.1.0.0
-%%DATADIR%%/plugins/script/libqcadqtscript_xml.so
-%%DATADIR%%/plugins/script/libqcadqtscript_xml.so.1
-%%DATADIR%%/plugins/script/libqcadqtscript_xml.so.1.0
-%%DATADIR%%/plugins/script/libqcadqtscript_xml.so.1.0.0
-%%DATADIR%%/plugins/script/libqcadqtscript_xmlpatterns.so
-%%DATADIR%%/plugins/script/libqcadqtscript_xmlpatterns.so.1
-%%DATADIR%%/plugins/script/libqcadqtscript_xmlpatterns.so.1.0
-%%DATADIR%%/plugins/script/libqcadqtscript_xmlpatterns.so.1.0.0
+%%DATADIR%%/plugins/script/libqtscript_core.so
+%%DATADIR%%/plugins/script/libqtscript_core.so.1
+%%DATADIR%%/plugins/script/libqtscript_core.so.1.0
+%%DATADIR%%/plugins/script/libqtscript_core.so.1.0.0
+%%DATADIR%%/plugins/script/libqtscript_gui.so
+%%DATADIR%%/plugins/script/libqtscript_gui.so.1
+%%DATADIR%%/plugins/script/libqtscript_gui.so.1.0
+%%DATADIR%%/plugins/script/libqtscript_gui.so.1.0.0
+%%DATADIR%%/plugins/script/libqtscript_network.so
+%%DATADIR%%/plugins/script/libqtscript_network.so.1
+%%DATADIR%%/plugins/script/libqtscript_network.so.1.0
+%%DATADIR%%/plugins/script/libqtscript_network.so.1.0.0
+%%DATADIR%%/plugins/script/libqtscript_opengl.so
+%%DATADIR%%/plugins/script/libqtscript_opengl.so.1
+%%DATADIR%%/plugins/script/libqtscript_opengl.so.1.0
+%%DATADIR%%/plugins/script/libqtscript_opengl.so.1.0.0
+%%DATADIR%%/plugins/script/libqtscript_sql.so
+%%DATADIR%%/plugins/script/libqtscript_sql.so.1
+%%DATADIR%%/plugins/script/libqtscript_sql.so.1.0
+%%DATADIR%%/plugins/script/libqtscript_sql.so.1.0.0
+%%DATADIR%%/plugins/script/libqtscript_svg.so
+%%DATADIR%%/plugins/script/libqtscript_svg.so.1
+%%DATADIR%%/plugins/script/libqtscript_svg.so.1.0
+%%DATADIR%%/plugins/script/libqtscript_svg.so.1.0.0
+%%DATADIR%%/plugins/script/libqtscript_uitools.so
+%%DATADIR%%/plugins/script/libqtscript_uitools.so.1
+%%DATADIR%%/plugins/script/libqtscript_uitools.so.1.0
+%%DATADIR%%/plugins/script/libqtscript_uitools.so.1.0.0
+%%DATADIR%%/plugins/script/libqtscript_webkit.so
+%%DATADIR%%/plugins/script/libqtscript_webkit.so.1
+%%DATADIR%%/plugins/script/libqtscript_webkit.so.1.0
+%%DATADIR%%/plugins/script/libqtscript_webkit.so.1.0.0
+%%DATADIR%%/plugins/script/libqtscript_xml.so
+%%DATADIR%%/plugins/script/libqtscript_xml.so.1
+%%DATADIR%%/plugins/script/libqtscript_xml.so.1.0
+%%DATADIR%%/plugins/script/libqtscript_xml.so.1.0.0
+%%DATADIR%%/plugins/script/libqtscript_xmlpatterns.so
+%%DATADIR%%/plugins/script/libqtscript_xmlpatterns.so.1
+%%DATADIR%%/plugins/script/libqtscript_xmlpatterns.so.1.0
+%%DATADIR%%/plugins/script/libqtscript_xmlpatterns.so.1.0.0
 %%DATADIR%%/plugins/sqldrivers/libqsqlite.so
 %%DATADIR%%/plugins/sqldrivers/readme.txt
 %%DATADIR%%/scripts/.gitignore
@@ -592,6 +594,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Block/AddBlock/ts/AddBlock_sl.ts
 %%DATADIR%%/scripts/Block/AddBlock/ts/AddBlock_sv.qm
 %%DATADIR%%/scripts/Block/AddBlock/ts/AddBlock_sv.ts
+%%DATADIR%%/scripts/Block/AddBlock/ts/AddBlock_tr.qm
+%%DATADIR%%/scripts/Block/AddBlock/ts/AddBlock_tr.ts
 %%DATADIR%%/scripts/Block/AddBlock/ts/AddBlock_zh_CN.qm
 %%DATADIR%%/scripts/Block/AddBlock/ts/AddBlock_zh_CN.ts
 %%DATADIR%%/scripts/Block/AddBlock/ts/AddBlock_zh_TW.qm
@@ -677,6 +681,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Block/CreateBlock/ts/CreateBlock_sl.ts
 %%DATADIR%%/scripts/Block/CreateBlock/ts/CreateBlock_sv.qm
 %%DATADIR%%/scripts/Block/CreateBlock/ts/CreateBlock_sv.ts
+%%DATADIR%%/scripts/Block/CreateBlock/ts/CreateBlock_tr.qm
+%%DATADIR%%/scripts/Block/CreateBlock/ts/CreateBlock_tr.ts
 %%DATADIR%%/scripts/Block/CreateBlock/ts/CreateBlock_zh_CN.qm
 %%DATADIR%%/scripts/Block/CreateBlock/ts/CreateBlock_zh_CN.ts
 %%DATADIR%%/scripts/Block/CreateBlock/ts/CreateBlock_zh_TW.qm
@@ -738,6 +744,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Block/CreateLibraryItem/ts/CreateLibraryItem_sl.ts
 %%DATADIR%%/scripts/Block/CreateLibraryItem/ts/CreateLibraryItem_sv.qm
 %%DATADIR%%/scripts/Block/CreateLibraryItem/ts/CreateLibraryItem_sv.ts
+%%DATADIR%%/scripts/Block/CreateLibraryItem/ts/CreateLibraryItem_tr.qm
+%%DATADIR%%/scripts/Block/CreateLibraryItem/ts/CreateLibraryItem_tr.ts
 %%DATADIR%%/scripts/Block/CreateLibraryItem/ts/CreateLibraryItem_zh_CN.qm
 %%DATADIR%%/scripts/Block/CreateLibraryItem/ts/CreateLibraryItem_zh_CN.ts
 %%DATADIR%%/scripts/Block/CreateLibraryItem/ts/CreateLibraryItem_zh_TW.qm
@@ -796,6 +804,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Block/DeselectBlockReferences/ts/DeselectBlockReferences_sl.ts
 %%DATADIR%%/scripts/Block/DeselectBlockReferences/ts/DeselectBlockReferences_sv.qm
 %%DATADIR%%/scripts/Block/DeselectBlockReferences/ts/DeselectBlockReferences_sv.ts
+%%DATADIR%%/scripts/Block/DeselectBlockReferences/ts/DeselectBlockReferences_tr.qm
+%%DATADIR%%/scripts/Block/DeselectBlockReferences/ts/DeselectBlockReferences_tr.ts
 %%DATADIR%%/scripts/Block/DeselectBlockReferences/ts/DeselectBlockReferences_zh_CN.qm
 %%DATADIR%%/scripts/Block/DeselectBlockReferences/ts/DeselectBlockReferences_zh_CN.ts
 %%DATADIR%%/scripts/Block/DeselectBlockReferences/ts/DeselectBlockReferences_zh_TW.qm
@@ -860,6 +870,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Block/EditBlock/ts/EditBlock_sl.ts
 %%DATADIR%%/scripts/Block/EditBlock/ts/EditBlock_sv.qm
 %%DATADIR%%/scripts/Block/EditBlock/ts/EditBlock_sv.ts
+%%DATADIR%%/scripts/Block/EditBlock/ts/EditBlock_tr.qm
+%%DATADIR%%/scripts/Block/EditBlock/ts/EditBlock_tr.ts
 %%DATADIR%%/scripts/Block/EditBlock/ts/EditBlock_zh_CN.qm
 %%DATADIR%%/scripts/Block/EditBlock/ts/EditBlock_zh_CN.ts
 %%DATADIR%%/scripts/Block/EditBlock/ts/EditBlock_zh_TW.qm
@@ -926,6 +938,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Block/EditFromReference/ts/EditFromReference_sl.ts
 %%DATADIR%%/scripts/Block/EditFromReference/ts/EditFromReference_sv.qm
 %%DATADIR%%/scripts/Block/EditFromReference/ts/EditFromReference_sv.ts
+%%DATADIR%%/scripts/Block/EditFromReference/ts/EditFromReference_tr.qm
+%%DATADIR%%/scripts/Block/EditFromReference/ts/EditFromReference_tr.ts
 %%DATADIR%%/scripts/Block/EditFromReference/ts/EditFromReference_zh_CN.qm
 %%DATADIR%%/scripts/Block/EditFromReference/ts/EditFromReference_zh_CN.ts
 %%DATADIR%%/scripts/Block/EditFromReference/ts/EditFromReference_zh_TW.qm
@@ -987,6 +1001,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Block/EditMainDrawing/ts/EditMainDrawing_sl.ts
 %%DATADIR%%/scripts/Block/EditMainDrawing/ts/EditMainDrawing_sv.qm
 %%DATADIR%%/scripts/Block/EditMainDrawing/ts/EditMainDrawing_sv.ts
+%%DATADIR%%/scripts/Block/EditMainDrawing/ts/EditMainDrawing_tr.qm
+%%DATADIR%%/scripts/Block/EditMainDrawing/ts/EditMainDrawing_tr.ts
 %%DATADIR%%/scripts/Block/EditMainDrawing/ts/EditMainDrawing_zh_CN.qm
 %%DATADIR%%/scripts/Block/EditMainDrawing/ts/EditMainDrawing_zh_CN.ts
 %%DATADIR%%/scripts/Block/EditMainDrawing/ts/EditMainDrawing_zh_TW.qm
@@ -1048,6 +1064,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Block/HideAllBlocks/ts/HideAllBlocks_sl.ts
 %%DATADIR%%/scripts/Block/HideAllBlocks/ts/HideAllBlocks_sv.qm
 %%DATADIR%%/scripts/Block/HideAllBlocks/ts/HideAllBlocks_sv.ts
+%%DATADIR%%/scripts/Block/HideAllBlocks/ts/HideAllBlocks_tr.qm
+%%DATADIR%%/scripts/Block/HideAllBlocks/ts/HideAllBlocks_tr.ts
 %%DATADIR%%/scripts/Block/HideAllBlocks/ts/HideAllBlocks_zh_CN.qm
 %%DATADIR%%/scripts/Block/HideAllBlocks/ts/HideAllBlocks_zh_CN.ts
 %%DATADIR%%/scripts/Block/HideAllBlocks/ts/HideAllBlocks_zh_TW.qm
@@ -1142,6 +1160,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Block/InsertBlock/ts/InsertBlock_sl.ts
 %%DATADIR%%/scripts/Block/InsertBlock/ts/InsertBlock_sv.qm
 %%DATADIR%%/scripts/Block/InsertBlock/ts/InsertBlock_sv.ts
+%%DATADIR%%/scripts/Block/InsertBlock/ts/InsertBlock_tr.qm
+%%DATADIR%%/scripts/Block/InsertBlock/ts/InsertBlock_tr.ts
 %%DATADIR%%/scripts/Block/InsertBlock/ts/InsertBlock_zh_CN.qm
 %%DATADIR%%/scripts/Block/InsertBlock/ts/InsertBlock_zh_CN.ts
 %%DATADIR%%/scripts/Block/InsertBlock/ts/InsertBlock_zh_TW.qm
@@ -1196,6 +1216,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Block/InsertBlockItem/ts/InsertBlockItem_sl.ts
 %%DATADIR%%/scripts/Block/InsertBlockItem/ts/InsertBlockItem_sv.qm
 %%DATADIR%%/scripts/Block/InsertBlockItem/ts/InsertBlockItem_sv.ts
+%%DATADIR%%/scripts/Block/InsertBlockItem/ts/InsertBlockItem_tr.qm
+%%DATADIR%%/scripts/Block/InsertBlockItem/ts/InsertBlockItem_tr.ts
 %%DATADIR%%/scripts/Block/InsertBlockItem/ts/InsertBlockItem_zh_CN.qm
 %%DATADIR%%/scripts/Block/InsertBlockItem/ts/InsertBlockItem_zh_CN.ts
 %%DATADIR%%/scripts/Block/InsertBlockItem/ts/InsertBlockItem_zh_TW.qm
@@ -1239,6 +1261,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Block/InsertScriptItem/ts/InsertScriptItem_sl.ts
 %%DATADIR%%/scripts/Block/InsertScriptItem/ts/InsertScriptItem_sv.qm
 %%DATADIR%%/scripts/Block/InsertScriptItem/ts/InsertScriptItem_sv.ts
+%%DATADIR%%/scripts/Block/InsertScriptItem/ts/InsertScriptItem_tr.qm
+%%DATADIR%%/scripts/Block/InsertScriptItem/ts/InsertScriptItem_tr.ts
 %%DATADIR%%/scripts/Block/InsertScriptItem/ts/InsertScriptItem_zh_CN.qm
 %%DATADIR%%/scripts/Block/InsertScriptItem/ts/InsertScriptItem_zh_CN.ts
 %%DATADIR%%/scripts/Block/InsertScriptItem/ts/InsertScriptItem_zh_TW.qm
@@ -1304,6 +1328,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Block/RemoveBlock/ts/RemoveBlock_sl.ts
 %%DATADIR%%/scripts/Block/RemoveBlock/ts/RemoveBlock_sv.qm
 %%DATADIR%%/scripts/Block/RemoveBlock/ts/RemoveBlock_sv.ts
+%%DATADIR%%/scripts/Block/RemoveBlock/ts/RemoveBlock_tr.qm
+%%DATADIR%%/scripts/Block/RemoveBlock/ts/RemoveBlock_tr.ts
 %%DATADIR%%/scripts/Block/RemoveBlock/ts/RemoveBlock_zh_CN.qm
 %%DATADIR%%/scripts/Block/RemoveBlock/ts/RemoveBlock_zh_CN.ts
 %%DATADIR%%/scripts/Block/RemoveBlock/ts/RemoveBlock_zh_TW.qm
@@ -1368,6 +1394,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Block/RenameBlock/ts/RenameBlock_sl.ts
 %%DATADIR%%/scripts/Block/RenameBlock/ts/RenameBlock_sv.qm
 %%DATADIR%%/scripts/Block/RenameBlock/ts/RenameBlock_sv.ts
+%%DATADIR%%/scripts/Block/RenameBlock/ts/RenameBlock_tr.qm
+%%DATADIR%%/scripts/Block/RenameBlock/ts/RenameBlock_tr.ts
 %%DATADIR%%/scripts/Block/RenameBlock/ts/RenameBlock_zh_CN.qm
 %%DATADIR%%/scripts/Block/RenameBlock/ts/RenameBlock_zh_CN.ts
 %%DATADIR%%/scripts/Block/RenameBlock/ts/RenameBlock_zh_TW.qm
@@ -1426,6 +1454,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Block/SelectBlockReferences/ts/SelectBlockReferences_sl.ts
 %%DATADIR%%/scripts/Block/SelectBlockReferences/ts/SelectBlockReferences_sv.qm
 %%DATADIR%%/scripts/Block/SelectBlockReferences/ts/SelectBlockReferences_sv.ts
+%%DATADIR%%/scripts/Block/SelectBlockReferences/ts/SelectBlockReferences_tr.qm
+%%DATADIR%%/scripts/Block/SelectBlockReferences/ts/SelectBlockReferences_tr.ts
 %%DATADIR%%/scripts/Block/SelectBlockReferences/ts/SelectBlockReferences_zh_CN.qm
 %%DATADIR%%/scripts/Block/SelectBlockReferences/ts/SelectBlockReferences_zh_CN.ts
 %%DATADIR%%/scripts/Block/SelectBlockReferences/ts/SelectBlockReferences_zh_TW.qm
@@ -1487,6 +1517,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Block/ShowAllBlocks/ts/ShowAllBlocks_sl.ts
 %%DATADIR%%/scripts/Block/ShowAllBlocks/ts/ShowAllBlocks_sv.qm
 %%DATADIR%%/scripts/Block/ShowAllBlocks/ts/ShowAllBlocks_sv.ts
+%%DATADIR%%/scripts/Block/ShowAllBlocks/ts/ShowAllBlocks_tr.qm
+%%DATADIR%%/scripts/Block/ShowAllBlocks/ts/ShowAllBlocks_tr.ts
 %%DATADIR%%/scripts/Block/ShowAllBlocks/ts/ShowAllBlocks_zh_CN.qm
 %%DATADIR%%/scripts/Block/ShowAllBlocks/ts/ShowAllBlocks_zh_CN.ts
 %%DATADIR%%/scripts/Block/ShowAllBlocks/ts/ShowAllBlocks_zh_TW.qm
@@ -1548,6 +1580,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Block/ToggleBlockVisibility/ts/ToggleBlockVisibility_sl.ts
 %%DATADIR%%/scripts/Block/ToggleBlockVisibility/ts/ToggleBlockVisibility_sv.qm
 %%DATADIR%%/scripts/Block/ToggleBlockVisibility/ts/ToggleBlockVisibility_sv.ts
+%%DATADIR%%/scripts/Block/ToggleBlockVisibility/ts/ToggleBlockVisibility_tr.qm
+%%DATADIR%%/scripts/Block/ToggleBlockVisibility/ts/ToggleBlockVisibility_tr.ts
 %%DATADIR%%/scripts/Block/ToggleBlockVisibility/ts/ToggleBlockVisibility_zh_CN.qm
 %%DATADIR%%/scripts/Block/ToggleBlockVisibility/ts/ToggleBlockVisibility_zh_CN.ts
 %%DATADIR%%/scripts/Block/ToggleBlockVisibility/ts/ToggleBlockVisibility_zh_TW.qm
@@ -1595,6 +1629,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Block/ts/Block_sl.ts
 %%DATADIR%%/scripts/Block/ts/Block_sv.qm
 %%DATADIR%%/scripts/Block/ts/Block_sv.ts
+%%DATADIR%%/scripts/Block/ts/Block_tr.qm
+%%DATADIR%%/scripts/Block/ts/Block_tr.ts
 %%DATADIR%%/scripts/Block/ts/Block_zh_CN.qm
 %%DATADIR%%/scripts/Block/ts/Block_zh_CN.ts
 %%DATADIR%%/scripts/Block/ts/Block_zh_TW.qm
@@ -1686,6 +1722,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Draw/Arc/Arc2PA/ts/Arc2PA_sl.ts
 %%DATADIR%%/scripts/Draw/Arc/Arc2PA/ts/Arc2PA_sv.qm
 %%DATADIR%%/scripts/Draw/Arc/Arc2PA/ts/Arc2PA_sv.ts
+%%DATADIR%%/scripts/Draw/Arc/Arc2PA/ts/Arc2PA_tr.qm
+%%DATADIR%%/scripts/Draw/Arc/Arc2PA/ts/Arc2PA_tr.ts
 %%DATADIR%%/scripts/Draw/Arc/Arc2PA/ts/Arc2PA_zh_CN.qm
 %%DATADIR%%/scripts/Draw/Arc/Arc2PA/ts/Arc2PA_zh_CN.ts
 %%DATADIR%%/scripts/Draw/Arc/Arc2PA/ts/Arc2PA_zh_TW.qm
@@ -1749,6 +1787,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Draw/Arc/Arc2PH/ts/Arc2PH_sl.ts
 %%DATADIR%%/scripts/Draw/Arc/Arc2PH/ts/Arc2PH_sv.qm
 %%DATADIR%%/scripts/Draw/Arc/Arc2PH/ts/Arc2PH_sv.ts
+%%DATADIR%%/scripts/Draw/Arc/Arc2PH/ts/Arc2PH_tr.qm
+%%DATADIR%%/scripts/Draw/Arc/Arc2PH/ts/Arc2PH_tr.ts
 %%DATADIR%%/scripts/Draw/Arc/Arc2PH/ts/Arc2PH_zh_CN.qm
 %%DATADIR%%/scripts/Draw/Arc/Arc2PH/ts/Arc2PH_zh_CN.ts
 %%DATADIR%%/scripts/Draw/Arc/Arc2PH/ts/Arc2PH_zh_TW.qm
@@ -1825,6 +1865,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Draw/Arc/Arc2PL/ts/Arc2PL_sl.ts
 %%DATADIR%%/scripts/Draw/Arc/Arc2PL/ts/Arc2PL_sv.qm
 %%DATADIR%%/scripts/Draw/Arc/Arc2PL/ts/Arc2PL_sv.ts
+%%DATADIR%%/scripts/Draw/Arc/Arc2PL/ts/Arc2PL_tr.qm
+%%DATADIR%%/scripts/Draw/Arc/Arc2PL/ts/Arc2PL_tr.ts
 %%DATADIR%%/scripts/Draw/Arc/Arc2PL/ts/Arc2PL_zh_CN.qm
 %%DATADIR%%/scripts/Draw/Arc/Arc2PL/ts/Arc2PL_zh_CN.ts
 %%DATADIR%%/scripts/Draw/Arc/Arc2PL/ts/Arc2PL_zh_TW.qm
@@ -1910,6 +1952,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Draw/Arc/Arc2PR/ts/Arc2PR_sl.ts
 %%DATADIR%%/scripts/Draw/Arc/Arc2PR/ts/Arc2PR_sv.qm
 %%DATADIR%%/scripts/Draw/Arc/Arc2PR/ts/Arc2PR_sv.ts
+%%DATADIR%%/scripts/Draw/Arc/Arc2PR/ts/Arc2PR_tr.qm
+%%DATADIR%%/scripts/Draw/Arc/Arc2PR/ts/Arc2PR_tr.ts
 %%DATADIR%%/scripts/Draw/Arc/Arc2PR/ts/Arc2PR_zh_CN.qm
 %%DATADIR%%/scripts/Draw/Arc/Arc2PR/ts/Arc2PR_zh_CN.ts
 %%DATADIR%%/scripts/Draw/Arc/Arc2PR/ts/Arc2PR_zh_TW.qm
@@ -1982,6 +2026,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Draw/Arc/Arc3P/ts/Arc3P_sl.ts
 %%DATADIR%%/scripts/Draw/Arc/Arc3P/ts/Arc3P_sv.qm
 %%DATADIR%%/scripts/Draw/Arc/Arc3P/ts/Arc3P_sv.ts
+%%DATADIR%%/scripts/Draw/Arc/Arc3P/ts/Arc3P_tr.qm
+%%DATADIR%%/scripts/Draw/Arc/Arc3P/ts/Arc3P_tr.ts
 %%DATADIR%%/scripts/Draw/Arc/Arc3P/ts/Arc3P_zh_CN.qm
 %%DATADIR%%/scripts/Draw/Arc/Arc3P/ts/Arc3P_zh_CN.ts
 %%DATADIR%%/scripts/Draw/Arc/Arc3P/ts/Arc3P_zh_TW.qm
@@ -2061,6 +2107,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Draw/Arc/ArcCPA/ts/ArcCPA_sl.ts
 %%DATADIR%%/scripts/Draw/Arc/ArcCPA/ts/ArcCPA_sv.qm
 %%DATADIR%%/scripts/Draw/Arc/ArcCPA/ts/ArcCPA_sv.ts
+%%DATADIR%%/scripts/Draw/Arc/ArcCPA/ts/ArcCPA_tr.qm
+%%DATADIR%%/scripts/Draw/Arc/ArcCPA/ts/ArcCPA_tr.ts
 %%DATADIR%%/scripts/Draw/Arc/ArcCPA/ts/ArcCPA_zh_CN.qm
 %%DATADIR%%/scripts/Draw/Arc/ArcCPA/ts/ArcCPA_zh_CN.ts
 %%DATADIR%%/scripts/Draw/Arc/ArcCPA/ts/ArcCPA_zh_TW.qm
@@ -2134,6 +2182,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Draw/Arc/ArcConcentric/ts/ArcConcentric_sl.ts
 %%DATADIR%%/scripts/Draw/Arc/ArcConcentric/ts/ArcConcentric_sv.qm
 %%DATADIR%%/scripts/Draw/Arc/ArcConcentric/ts/ArcConcentric_sv.ts
+%%DATADIR%%/scripts/Draw/Arc/ArcConcentric/ts/ArcConcentric_tr.qm
+%%DATADIR%%/scripts/Draw/Arc/ArcConcentric/ts/ArcConcentric_tr.ts
 %%DATADIR%%/scripts/Draw/Arc/ArcConcentric/ts/ArcConcentric_zh_CN.qm
 %%DATADIR%%/scripts/Draw/Arc/ArcConcentric/ts/ArcConcentric_zh_CN.ts
 %%DATADIR%%/scripts/Draw/Arc/ArcConcentric/ts/ArcConcentric_zh_TW.qm
@@ -2207,6 +2257,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Draw/Arc/ArcConcentricThrough/ts/ArcConcentricThrough_sl.ts
 %%DATADIR%%/scripts/Draw/Arc/ArcConcentricThrough/ts/ArcConcentricThrough_sv.qm
 %%DATADIR%%/scripts/Draw/Arc/ArcConcentricThrough/ts/ArcConcentricThrough_sv.ts
+%%DATADIR%%/scripts/Draw/Arc/ArcConcentricThrough/ts/ArcConcentricThrough_tr.qm
+%%DATADIR%%/scripts/Draw/Arc/ArcConcentricThrough/ts/ArcConcentricThrough_tr.ts
 %%DATADIR%%/scripts/Draw/Arc/ArcConcentricThrough/ts/ArcConcentricThrough_zh_CN.qm
 %%DATADIR%%/scripts/Draw/Arc/ArcConcentricThrough/ts/ArcConcentricThrough_zh_CN.ts
 %%DATADIR%%/scripts/Draw/Arc/ArcConcentricThrough/ts/ArcConcentricThrough_zh_TW.qm
@@ -2277,6 +2329,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Draw/Arc/ArcTPR/ts/ArcTPR_sl.ts
 %%DATADIR%%/scripts/Draw/Arc/ArcTPR/ts/ArcTPR_sv.qm
 %%DATADIR%%/scripts/Draw/Arc/ArcTPR/ts/ArcTPR_sv.ts
+%%DATADIR%%/scripts/Draw/Arc/ArcTPR/ts/ArcTPR_tr.qm
+%%DATADIR%%/scripts/Draw/Arc/ArcTPR/ts/ArcTPR_tr.ts
 %%DATADIR%%/scripts/Draw/Arc/ArcTPR/ts/ArcTPR_zh_CN.qm
 %%DATADIR%%/scripts/Draw/Arc/ArcTPR/ts/ArcTPR_zh_CN.ts
 %%DATADIR%%/scripts/Draw/Arc/ArcTPR/ts/ArcTPR_zh_TW.qm
@@ -2350,6 +2404,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Draw/Arc/ArcTangential/ts/ArcTangential_sl.ts
 %%DATADIR%%/scripts/Draw/Arc/ArcTangential/ts/ArcTangential_sv.qm
 %%DATADIR%%/scripts/Draw/Arc/ArcTangential/ts/ArcTangential_sv.ts
+%%DATADIR%%/scripts/Draw/Arc/ArcTangential/ts/ArcTangential_tr.qm
+%%DATADIR%%/scripts/Draw/Arc/ArcTangential/ts/ArcTangential_tr.ts
 %%DATADIR%%/scripts/Draw/Arc/ArcTangential/ts/ArcTangential_zh_CN.qm
 %%DATADIR%%/scripts/Draw/Arc/ArcTangential/ts/ArcTangential_zh_CN.ts
 %%DATADIR%%/scripts/Draw/Arc/ArcTangential/ts/ArcTangential_zh_TW.qm
@@ -2397,6 +2453,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Draw/Arc/ts/Arc_sl.ts
 %%DATADIR%%/scripts/Draw/Arc/ts/Arc_sv.qm
 %%DATADIR%%/scripts/Draw/Arc/ts/Arc_sv.ts
+%%DATADIR%%/scripts/Draw/Arc/ts/Arc_tr.qm
+%%DATADIR%%/scripts/Draw/Arc/ts/Arc_tr.ts
 %%DATADIR%%/scripts/Draw/Arc/ts/Arc_zh_CN.qm
 %%DATADIR%%/scripts/Draw/Arc/ts/Arc_zh_CN.ts
 %%DATADIR%%/scripts/Draw/Arc/ts/Arc_zh_TW.qm
@@ -2474,6 +2532,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Draw/Circle/Circle2P/ts/Circle2P_sl.ts
 %%DATADIR%%/scripts/Draw/Circle/Circle2P/ts/Circle2P_sv.qm
 %%DATADIR%%/scripts/Draw/Circle/Circle2P/ts/Circle2P_sv.ts
+%%DATADIR%%/scripts/Draw/Circle/Circle2P/ts/Circle2P_tr.qm
+%%DATADIR%%/scripts/Draw/Circle/Circle2P/ts/Circle2P_tr.ts
 %%DATADIR%%/scripts/Draw/Circle/Circle2P/ts/Circle2P_zh_CN.qm
 %%DATADIR%%/scripts/Draw/Circle/Circle2P/ts/Circle2P_zh_CN.ts
 %%DATADIR%%/scripts/Draw/Circle/Circle2P/ts/Circle2P_zh_TW.qm
@@ -2552,6 +2612,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Draw/Circle/Circle2PR/ts/Circle2PR_sl.ts
 %%DATADIR%%/scripts/Draw/Circle/Circle2PR/ts/Circle2PR_sv.qm
 %%DATADIR%%/scripts/Draw/Circle/Circle2PR/ts/Circle2PR_sv.ts
+%%DATADIR%%/scripts/Draw/Circle/Circle2PR/ts/Circle2PR_tr.qm
+%%DATADIR%%/scripts/Draw/Circle/Circle2PR/ts/Circle2PR_tr.ts
 %%DATADIR%%/scripts/Draw/Circle/Circle2PR/ts/Circle2PR_zh_CN.qm
 %%DATADIR%%/scripts/Draw/Circle/Circle2PR/ts/Circle2PR_zh_CN.ts
 %%DATADIR%%/scripts/Draw/Circle/Circle2PR/ts/Circle2PR_zh_TW.qm
@@ -2625,6 +2687,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Draw/Circle/Circle2TP/ts/Circle2TP_sl.ts
 %%DATADIR%%/scripts/Draw/Circle/Circle2TP/ts/Circle2TP_sv.qm
 %%DATADIR%%/scripts/Draw/Circle/Circle2TP/ts/Circle2TP_sv.ts
+%%DATADIR%%/scripts/Draw/Circle/Circle2TP/ts/Circle2TP_tr.qm
+%%DATADIR%%/scripts/Draw/Circle/Circle2TP/ts/Circle2TP_tr.ts
 %%DATADIR%%/scripts/Draw/Circle/Circle2TP/ts/Circle2TP_zh_CN.qm
 %%DATADIR%%/scripts/Draw/Circle/Circle2TP/ts/Circle2TP_zh_CN.ts
 %%DATADIR%%/scripts/Draw/Circle/Circle2TP/ts/Circle2TP_zh_TW.qm
@@ -2697,6 +2761,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Draw/Circle/Circle2TR/ts/Circle2TR_sl.ts
 %%DATADIR%%/scripts/Draw/Circle/Circle2TR/ts/Circle2TR_sv.qm
 %%DATADIR%%/scripts/Draw/Circle/Circle2TR/ts/Circle2TR_sv.ts
+%%DATADIR%%/scripts/Draw/Circle/Circle2TR/ts/Circle2TR_tr.qm
+%%DATADIR%%/scripts/Draw/Circle/Circle2TR/ts/Circle2TR_tr.ts
 %%DATADIR%%/scripts/Draw/Circle/Circle2TR/ts/Circle2TR_zh_CN.qm
 %%DATADIR%%/scripts/Draw/Circle/Circle2TR/ts/Circle2TR_zh_CN.ts
 %%DATADIR%%/scripts/Draw/Circle/Circle2TR/ts/Circle2TR_zh_TW.qm
@@ -2769,6 +2835,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Draw/Circle/Circle3P/ts/Circle3P_sl.ts
 %%DATADIR%%/scripts/Draw/Circle/Circle3P/ts/Circle3P_sv.qm
 %%DATADIR%%/scripts/Draw/Circle/Circle3P/ts/Circle3P_sv.ts
+%%DATADIR%%/scripts/Draw/Circle/Circle3P/ts/Circle3P_tr.qm
+%%DATADIR%%/scripts/Draw/Circle/Circle3P/ts/Circle3P_tr.ts
 %%DATADIR%%/scripts/Draw/Circle/Circle3P/ts/Circle3P_zh_CN.qm
 %%DATADIR%%/scripts/Draw/Circle/Circle3P/ts/Circle3P_zh_CN.ts
 %%DATADIR%%/scripts/Draw/Circle/Circle3P/ts/Circle3P_zh_TW.qm
@@ -2844,6 +2912,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Draw/Circle/Circle3T/ts/Circle3T_sl.ts
 %%DATADIR%%/scripts/Draw/Circle/Circle3T/ts/Circle3T_sv.qm
 %%DATADIR%%/scripts/Draw/Circle/Circle3T/ts/Circle3T_sv.ts
+%%DATADIR%%/scripts/Draw/Circle/Circle3T/ts/Circle3T_tr.qm
+%%DATADIR%%/scripts/Draw/Circle/Circle3T/ts/Circle3T_tr.ts
 %%DATADIR%%/scripts/Draw/Circle/Circle3T/ts/Circle3T_zh_CN.qm
 %%DATADIR%%/scripts/Draw/Circle/Circle3T/ts/Circle3T_zh_CN.ts
 %%DATADIR%%/scripts/Draw/Circle/Circle3T/ts/Circle3T_zh_TW.qm
@@ -2915,6 +2985,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Draw/Circle/CircleCD/ts/CircleCD_sl.ts
 %%DATADIR%%/scripts/Draw/Circle/CircleCD/ts/CircleCD_sv.qm
 %%DATADIR%%/scripts/Draw/Circle/CircleCD/ts/CircleCD_sv.ts
+%%DATADIR%%/scripts/Draw/Circle/CircleCD/ts/CircleCD_tr.qm
+%%DATADIR%%/scripts/Draw/Circle/CircleCD/ts/CircleCD_tr.ts
 %%DATADIR%%/scripts/Draw/Circle/CircleCD/ts/CircleCD_zh_CN.qm
 %%DATADIR%%/scripts/Draw/Circle/CircleCD/ts/CircleCD_zh_CN.ts
 %%DATADIR%%/scripts/Draw/Circle/CircleCD/ts/CircleCD_zh_TW.qm
@@ -2987,6 +3059,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Draw/Circle/CircleCP/ts/CircleCP_sl.ts
 %%DATADIR%%/scripts/Draw/Circle/CircleCP/ts/CircleCP_sv.qm
 %%DATADIR%%/scripts/Draw/Circle/CircleCP/ts/CircleCP_sv.ts
+%%DATADIR%%/scripts/Draw/Circle/CircleCP/ts/CircleCP_tr.qm
+%%DATADIR%%/scripts/Draw/Circle/CircleCP/ts/CircleCP_tr.ts
 %%DATADIR%%/scripts/Draw/Circle/CircleCP/ts/CircleCP_zh_CN.qm
 %%DATADIR%%/scripts/Draw/Circle/CircleCP/ts/CircleCP_zh_CN.ts
 %%DATADIR%%/scripts/Draw/Circle/CircleCP/ts/CircleCP_zh_TW.qm
@@ -3062,6 +3136,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Draw/Circle/CircleCR/ts/CircleCR_sl.ts
 %%DATADIR%%/scripts/Draw/Circle/CircleCR/ts/CircleCR_sv.qm
 %%DATADIR%%/scripts/Draw/Circle/CircleCR/ts/CircleCR_sv.ts
+%%DATADIR%%/scripts/Draw/Circle/CircleCR/ts/CircleCR_tr.qm
+%%DATADIR%%/scripts/Draw/Circle/CircleCR/ts/CircleCR_tr.ts
 %%DATADIR%%/scripts/Draw/Circle/CircleCR/ts/CircleCR_zh_CN.qm
 %%DATADIR%%/scripts/Draw/Circle/CircleCR/ts/CircleCR_zh_CN.ts
 %%DATADIR%%/scripts/Draw/Circle/CircleCR/ts/CircleCR_zh_TW.qm
@@ -3135,6 +3211,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Draw/Circle/CircleConcentric/ts/CircleConcentric_sl.ts
 %%DATADIR%%/scripts/Draw/Circle/CircleConcentric/ts/CircleConcentric_sv.qm
 %%DATADIR%%/scripts/Draw/Circle/CircleConcentric/ts/CircleConcentric_sv.ts
+%%DATADIR%%/scripts/Draw/Circle/CircleConcentric/ts/CircleConcentric_tr.qm
+%%DATADIR%%/scripts/Draw/Circle/CircleConcentric/ts/CircleConcentric_tr.ts
 %%DATADIR%%/scripts/Draw/Circle/CircleConcentric/ts/CircleConcentric_zh_CN.qm
 %%DATADIR%%/scripts/Draw/Circle/CircleConcentric/ts/CircleConcentric_zh_CN.ts
 %%DATADIR%%/scripts/Draw/Circle/CircleConcentric/ts/CircleConcentric_zh_TW.qm
@@ -3208,6 +3286,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Draw/Circle/CircleConcentricThrough/ts/CircleConcentricThrough_sl.ts
 %%DATADIR%%/scripts/Draw/Circle/CircleConcentricThrough/ts/CircleConcentricThrough_sv.qm
 %%DATADIR%%/scripts/Draw/Circle/CircleConcentricThrough/ts/CircleConcentricThrough_sv.ts
+%%DATADIR%%/scripts/Draw/Circle/CircleConcentricThrough/ts/CircleConcentricThrough_tr.qm
+%%DATADIR%%/scripts/Draw/Circle/CircleConcentricThrough/ts/CircleConcentricThrough_tr.ts
 %%DATADIR%%/scripts/Draw/Circle/CircleConcentricThrough/ts/CircleConcentricThrough_zh_CN.qm
 %%DATADIR%%/scripts/Draw/Circle/CircleConcentricThrough/ts/CircleConcentricThrough_zh_CN.ts
 %%DATADIR%%/scripts/Draw/Circle/CircleConcentricThrough/ts/CircleConcentricThrough_zh_TW.qm
@@ -3277,6 +3357,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Draw/Circle/CircleT2P/ts/CircleT2P_sl.ts
 %%DATADIR%%/scripts/Draw/Circle/CircleT2P/ts/CircleT2P_sv.qm
 %%DATADIR%%/scripts/Draw/Circle/CircleT2P/ts/CircleT2P_sv.ts
+%%DATADIR%%/scripts/Draw/Circle/CircleT2P/ts/CircleT2P_tr.qm
+%%DATADIR%%/scripts/Draw/Circle/CircleT2P/ts/CircleT2P_tr.ts
 %%DATADIR%%/scripts/Draw/Circle/CircleT2P/ts/CircleT2P_zh_CN.qm
 %%DATADIR%%/scripts/Draw/Circle/CircleT2P/ts/CircleT2P_zh_CN.ts
 %%DATADIR%%/scripts/Draw/Circle/CircleT2P/ts/CircleT2P_zh_TW.qm
@@ -3347,6 +3429,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Draw/Circle/CircleTPR/ts/CircleTPR_sl.ts
 %%DATADIR%%/scripts/Draw/Circle/CircleTPR/ts/CircleTPR_sv.qm
 %%DATADIR%%/scripts/Draw/Circle/CircleTPR/ts/CircleTPR_sv.ts
+%%DATADIR%%/scripts/Draw/Circle/CircleTPR/ts/CircleTPR_tr.qm
+%%DATADIR%%/scripts/Draw/Circle/CircleTPR/ts/CircleTPR_tr.ts
 %%DATADIR%%/scripts/Draw/Circle/CircleTPR/ts/CircleTPR_zh_CN.qm
 %%DATADIR%%/scripts/Draw/Circle/CircleTPR/ts/CircleTPR_zh_CN.ts
 %%DATADIR%%/scripts/Draw/Circle/CircleTPR/ts/CircleTPR_zh_TW.qm
@@ -3394,6 +3478,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Draw/Circle/ts/Circle_sl.ts
 %%DATADIR%%/scripts/Draw/Circle/ts/Circle_sv.qm
 %%DATADIR%%/scripts/Draw/Circle/ts/Circle_sv.ts
+%%DATADIR%%/scripts/Draw/Circle/ts/Circle_tr.qm
+%%DATADIR%%/scripts/Draw/Circle/ts/Circle_tr.ts
 %%DATADIR%%/scripts/Draw/Circle/ts/Circle_zh_CN.qm
 %%DATADIR%%/scripts/Draw/Circle/ts/Circle_zh_CN.ts
 %%DATADIR%%/scripts/Draw/Circle/ts/Circle_zh_TW.qm
@@ -3470,6 +3556,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Draw/Dimension/DimAligned/ts/DimAligned_sl.ts
 %%DATADIR%%/scripts/Draw/Dimension/DimAligned/ts/DimAligned_sv.qm
 %%DATADIR%%/scripts/Draw/Dimension/DimAligned/ts/DimAligned_sv.ts
+%%DATADIR%%/scripts/Draw/Dimension/DimAligned/ts/DimAligned_tr.qm
+%%DATADIR%%/scripts/Draw/Dimension/DimAligned/ts/DimAligned_tr.ts
 %%DATADIR%%/scripts/Draw/Dimension/DimAligned/ts/DimAligned_zh_CN.qm
 %%DATADIR%%/scripts/Draw/Dimension/DimAligned/ts/DimAligned_zh_CN.ts
 %%DATADIR%%/scripts/Draw/Dimension/DimAligned/ts/DimAligned_zh_TW.qm
@@ -3545,6 +3633,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Draw/Dimension/DimAngular/ts/DimAngular_sl.ts
 %%DATADIR%%/scripts/Draw/Dimension/DimAngular/ts/DimAngular_sv.qm
 %%DATADIR%%/scripts/Draw/Dimension/DimAngular/ts/DimAngular_sv.ts
+%%DATADIR%%/scripts/Draw/Dimension/DimAngular/ts/DimAngular_tr.qm
+%%DATADIR%%/scripts/Draw/Dimension/DimAngular/ts/DimAngular_tr.ts
 %%DATADIR%%/scripts/Draw/Dimension/DimAngular/ts/DimAngular_zh_CN.qm
 %%DATADIR%%/scripts/Draw/Dimension/DimAngular/ts/DimAngular_zh_CN.ts
 %%DATADIR%%/scripts/Draw/Dimension/DimAngular/ts/DimAngular_zh_TW.qm
@@ -3620,6 +3710,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Draw/Dimension/DimDiametric/ts/DimDiametric_sl.ts
 %%DATADIR%%/scripts/Draw/Dimension/DimDiametric/ts/DimDiametric_sv.qm
 %%DATADIR%%/scripts/Draw/Dimension/DimDiametric/ts/DimDiametric_sv.ts
+%%DATADIR%%/scripts/Draw/Dimension/DimDiametric/ts/DimDiametric_tr.qm
+%%DATADIR%%/scripts/Draw/Dimension/DimDiametric/ts/DimDiametric_tr.ts
 %%DATADIR%%/scripts/Draw/Dimension/DimDiametric/ts/DimDiametric_zh_CN.qm
 %%DATADIR%%/scripts/Draw/Dimension/DimDiametric/ts/DimDiametric_zh_CN.ts
 %%DATADIR%%/scripts/Draw/Dimension/DimDiametric/ts/DimDiametric_zh_TW.qm
@@ -3684,6 +3776,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Draw/Dimension/DimHorizontal/ts/DimHorizontal_sl.ts
 %%DATADIR%%/scripts/Draw/Dimension/DimHorizontal/ts/DimHorizontal_sv.qm
 %%DATADIR%%/scripts/Draw/Dimension/DimHorizontal/ts/DimHorizontal_sv.ts
+%%DATADIR%%/scripts/Draw/Dimension/DimHorizontal/ts/DimHorizontal_tr.qm
+%%DATADIR%%/scripts/Draw/Dimension/DimHorizontal/ts/DimHorizontal_tr.ts
 %%DATADIR%%/scripts/Draw/Dimension/DimHorizontal/ts/DimHorizontal_zh_CN.qm
 %%DATADIR%%/scripts/Draw/Dimension/DimHorizontal/ts/DimHorizontal_zh_CN.ts
 %%DATADIR%%/scripts/Draw/Dimension/DimHorizontal/ts/DimHorizontal_zh_TW.qm
@@ -3756,6 +3850,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Draw/Dimension/DimOrdinate/ts/DimOrdinate_sl.ts
 %%DATADIR%%/scripts/Draw/Dimension/DimOrdinate/ts/DimOrdinate_sv.qm
 %%DATADIR%%/scripts/Draw/Dimension/DimOrdinate/ts/DimOrdinate_sv.ts
+%%DATADIR%%/scripts/Draw/Dimension/DimOrdinate/ts/DimOrdinate_tr.qm
+%%DATADIR%%/scripts/Draw/Dimension/DimOrdinate/ts/DimOrdinate_tr.ts
 %%DATADIR%%/scripts/Draw/Dimension/DimOrdinate/ts/DimOrdinate_zh_CN.qm
 %%DATADIR%%/scripts/Draw/Dimension/DimOrdinate/ts/DimOrdinate_zh_CN.ts
 %%DATADIR%%/scripts/Draw/Dimension/DimOrdinate/ts/DimOrdinate_zh_TW.qm
@@ -3831,6 +3927,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Draw/Dimension/DimRadial/ts/DimRadial_sl.ts
 %%DATADIR%%/scripts/Draw/Dimension/DimRadial/ts/DimRadial_sv.qm
 %%DATADIR%%/scripts/Draw/Dimension/DimRadial/ts/DimRadial_sv.ts
+%%DATADIR%%/scripts/Draw/Dimension/DimRadial/ts/DimRadial_tr.qm
+%%DATADIR%%/scripts/Draw/Dimension/DimRadial/ts/DimRadial_tr.ts
 %%DATADIR%%/scripts/Draw/Dimension/DimRadial/ts/DimRadial_zh_CN.qm
 %%DATADIR%%/scripts/Draw/Dimension/DimRadial/ts/DimRadial_zh_CN.ts
 %%DATADIR%%/scripts/Draw/Dimension/DimRadial/ts/DimRadial_zh_TW.qm
@@ -3892,6 +3990,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Draw/Dimension/DimRegen/ts/DimRegen_sl.ts
 %%DATADIR%%/scripts/Draw/Dimension/DimRegen/ts/DimRegen_sv.qm
 %%DATADIR%%/scripts/Draw/Dimension/DimRegen/ts/DimRegen_sv.ts
+%%DATADIR%%/scripts/Draw/Dimension/DimRegen/ts/DimRegen_tr.qm
+%%DATADIR%%/scripts/Draw/Dimension/DimRegen/ts/DimRegen_tr.ts
 %%DATADIR%%/scripts/Draw/Dimension/DimRegen/ts/DimRegen_zh_CN.qm
 %%DATADIR%%/scripts/Draw/Dimension/DimRegen/ts/DimRegen_zh_CN.ts
 %%DATADIR%%/scripts/Draw/Dimension/DimRegen/ts/DimRegen_zh_TW.qm
@@ -3965,6 +4065,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Draw/Dimension/DimRotated/ts/DimRotated_sl.ts
 %%DATADIR%%/scripts/Draw/Dimension/DimRotated/ts/DimRotated_sv.qm
 %%DATADIR%%/scripts/Draw/Dimension/DimRotated/ts/DimRotated_sv.ts
+%%DATADIR%%/scripts/Draw/Dimension/DimRotated/ts/DimRotated_tr.qm
+%%DATADIR%%/scripts/Draw/Dimension/DimRotated/ts/DimRotated_tr.ts
 %%DATADIR%%/scripts/Draw/Dimension/DimRotated/ts/DimRotated_zh_CN.qm
 %%DATADIR%%/scripts/Draw/Dimension/DimRotated/ts/DimRotated_zh_CN.ts
 %%DATADIR%%/scripts/Draw/Dimension/DimRotated/ts/DimRotated_zh_TW.qm
@@ -4029,6 +4131,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Draw/Dimension/DimVertical/ts/DimVertical_sl.ts
 %%DATADIR%%/scripts/Draw/Dimension/DimVertical/ts/DimVertical_sv.qm
 %%DATADIR%%/scripts/Draw/Dimension/DimVertical/ts/DimVertical_sv.ts
+%%DATADIR%%/scripts/Draw/Dimension/DimVertical/ts/DimVertical_tr.qm
+%%DATADIR%%/scripts/Draw/Dimension/DimVertical/ts/DimVertical_tr.ts
 %%DATADIR%%/scripts/Draw/Dimension/DimVertical/ts/DimVertical_zh_CN.qm
 %%DATADIR%%/scripts/Draw/Dimension/DimVertical/ts/DimVertical_zh_CN.ts
 %%DATADIR%%/scripts/Draw/Dimension/DimVertical/ts/DimVertical_zh_TW.qm
@@ -4113,6 +4217,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Draw/Dimension/Leader/ts/Leader_sl.ts
 %%DATADIR%%/scripts/Draw/Dimension/Leader/ts/Leader_sv.qm
 %%DATADIR%%/scripts/Draw/Dimension/Leader/ts/Leader_sv.ts
+%%DATADIR%%/scripts/Draw/Dimension/Leader/ts/Leader_tr.qm
+%%DATADIR%%/scripts/Draw/Dimension/Leader/ts/Leader_tr.ts
 %%DATADIR%%/scripts/Draw/Dimension/Leader/ts/Leader_zh_CN.qm
 %%DATADIR%%/scripts/Draw/Dimension/Leader/ts/Leader_zh_CN.ts
 %%DATADIR%%/scripts/Draw/Dimension/Leader/ts/Leader_zh_TW.qm
@@ -4180,6 +4286,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Draw/Dimension/ts/Dimension_sl.ts
 %%DATADIR%%/scripts/Draw/Dimension/ts/Dimension_sv.qm
 %%DATADIR%%/scripts/Draw/Dimension/ts/Dimension_sv.ts
+%%DATADIR%%/scripts/Draw/Dimension/ts/Dimension_tr.qm
+%%DATADIR%%/scripts/Draw/Dimension/ts/Dimension_tr.ts
 %%DATADIR%%/scripts/Draw/Dimension/ts/Dimension_zh_CN.qm
 %%DATADIR%%/scripts/Draw/Dimension/ts/Dimension_zh_CN.ts
 %%DATADIR%%/scripts/Draw/Dimension/ts/Dimension_zh_TW.qm
@@ -4270,6 +4378,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Draw/Ellipse/EllipseArcCPPA/ts/EllipseArcCPPA_sl.ts
 %%DATADIR%%/scripts/Draw/Ellipse/EllipseArcCPPA/ts/EllipseArcCPPA_sv.qm
 %%DATADIR%%/scripts/Draw/Ellipse/EllipseArcCPPA/ts/EllipseArcCPPA_sv.ts
+%%DATADIR%%/scripts/Draw/Ellipse/EllipseArcCPPA/ts/EllipseArcCPPA_tr.qm
+%%DATADIR%%/scripts/Draw/Ellipse/EllipseArcCPPA/ts/EllipseArcCPPA_tr.ts
 %%DATADIR%%/scripts/Draw/Ellipse/EllipseArcCPPA/ts/EllipseArcCPPA_zh_CN.qm
 %%DATADIR%%/scripts/Draw/Ellipse/EllipseArcCPPA/ts/EllipseArcCPPA_zh_CN.ts
 %%DATADIR%%/scripts/Draw/Ellipse/EllipseArcCPPA/ts/EllipseArcCPPA_zh_TW.qm
@@ -4342,6 +4452,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Draw/Ellipse/EllipseCPP/ts/EllipseCPP_sl.ts
 %%DATADIR%%/scripts/Draw/Ellipse/EllipseCPP/ts/EllipseCPP_sv.qm
 %%DATADIR%%/scripts/Draw/Ellipse/EllipseCPP/ts/EllipseCPP_sv.ts
+%%DATADIR%%/scripts/Draw/Ellipse/EllipseCPP/ts/EllipseCPP_tr.qm
+%%DATADIR%%/scripts/Draw/Ellipse/EllipseCPP/ts/EllipseCPP_tr.ts
 %%DATADIR%%/scripts/Draw/Ellipse/EllipseCPP/ts/EllipseCPP_zh_CN.qm
 %%DATADIR%%/scripts/Draw/Ellipse/EllipseCPP/ts/EllipseCPP_zh_CN.ts
 %%DATADIR%%/scripts/Draw/Ellipse/EllipseCPP/ts/EllipseCPP_zh_TW.qm
@@ -4396,6 +4508,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Draw/Ellipse/EllipseDD/ts/EllipseDD_sl.ts
 %%DATADIR%%/scripts/Draw/Ellipse/EllipseDD/ts/EllipseDD_sv.qm
 %%DATADIR%%/scripts/Draw/Ellipse/EllipseDD/ts/EllipseDD_sv.ts
+%%DATADIR%%/scripts/Draw/Ellipse/EllipseDD/ts/EllipseDD_tr.qm
+%%DATADIR%%/scripts/Draw/Ellipse/EllipseDD/ts/EllipseDD_tr.ts
 %%DATADIR%%/scripts/Draw/Ellipse/EllipseDD/ts/EllipseDD_zh_CN.qm
 %%DATADIR%%/scripts/Draw/Ellipse/EllipseDD/ts/EllipseDD_zh_CN.ts
 %%DATADIR%%/scripts/Draw/Ellipse/EllipseDD/ts/EllipseDD_zh_TW.qm
@@ -4465,6 +4579,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Draw/Ellipse/EllipseInscribedQuad/ts/EllipseInscribedQuad_sl.ts
 %%DATADIR%%/scripts/Draw/Ellipse/EllipseInscribedQuad/ts/EllipseInscribedQuad_sv.qm
 %%DATADIR%%/scripts/Draw/Ellipse/EllipseInscribedQuad/ts/EllipseInscribedQuad_sv.ts
+%%DATADIR%%/scripts/Draw/Ellipse/EllipseInscribedQuad/ts/EllipseInscribedQuad_tr.qm
+%%DATADIR%%/scripts/Draw/Ellipse/EllipseInscribedQuad/ts/EllipseInscribedQuad_tr.ts
 %%DATADIR%%/scripts/Draw/Ellipse/EllipseInscribedQuad/ts/EllipseInscribedQuad_zh_CN.qm
 %%DATADIR%%/scripts/Draw/Ellipse/EllipseInscribedQuad/ts/EllipseInscribedQuad_zh_CN.ts
 %%DATADIR%%/scripts/Draw/Ellipse/EllipseInscribedQuad/ts/EllipseInscribedQuad_zh_TW.qm
@@ -4538,6 +4654,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Draw/Ellipse/EllipseOffset/ts/EllipseOffset_sl.ts
 %%DATADIR%%/scripts/Draw/Ellipse/EllipseOffset/ts/EllipseOffset_sv.qm
 %%DATADIR%%/scripts/Draw/Ellipse/EllipseOffset/ts/EllipseOffset_sv.ts
+%%DATADIR%%/scripts/Draw/Ellipse/EllipseOffset/ts/EllipseOffset_tr.qm
+%%DATADIR%%/scripts/Draw/Ellipse/EllipseOffset/ts/EllipseOffset_tr.ts
 %%DATADIR%%/scripts/Draw/Ellipse/EllipseOffset/ts/EllipseOffset_zh_CN.qm
 %%DATADIR%%/scripts/Draw/Ellipse/EllipseOffset/ts/EllipseOffset_zh_CN.ts
 %%DATADIR%%/scripts/Draw/Ellipse/EllipseOffset/ts/EllipseOffset_zh_TW.qm
@@ -4611,6 +4729,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Draw/Ellipse/EllipseOffsetThrough/ts/EllipseOffsetThrough_sl.ts
 %%DATADIR%%/scripts/Draw/Ellipse/EllipseOffsetThrough/ts/EllipseOffsetThrough_sv.qm
 %%DATADIR%%/scripts/Draw/Ellipse/EllipseOffsetThrough/ts/EllipseOffsetThrough_sv.ts
+%%DATADIR%%/scripts/Draw/Ellipse/EllipseOffsetThrough/ts/EllipseOffsetThrough_tr.qm
+%%DATADIR%%/scripts/Draw/Ellipse/EllipseOffsetThrough/ts/EllipseOffsetThrough_tr.ts
 %%DATADIR%%/scripts/Draw/Ellipse/EllipseOffsetThrough/ts/EllipseOffsetThrough_zh_CN.qm
 %%DATADIR%%/scripts/Draw/Ellipse/EllipseOffsetThrough/ts/EllipseOffsetThrough_zh_CN.ts
 %%DATADIR%%/scripts/Draw/Ellipse/EllipseOffsetThrough/ts/EllipseOffsetThrough_zh_TW.qm
@@ -4665,6 +4785,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Draw/Ellipse/EllipseRR/ts/EllipseRR_sl.ts
 %%DATADIR%%/scripts/Draw/Ellipse/EllipseRR/ts/EllipseRR_sv.qm
 %%DATADIR%%/scripts/Draw/Ellipse/EllipseRR/ts/EllipseRR_sv.ts
+%%DATADIR%%/scripts/Draw/Ellipse/EllipseRR/ts/EllipseRR_tr.qm
+%%DATADIR%%/scripts/Draw/Ellipse/EllipseRR/ts/EllipseRR_tr.ts
 %%DATADIR%%/scripts/Draw/Ellipse/EllipseRR/ts/EllipseRR_zh_CN.qm
 %%DATADIR%%/scripts/Draw/Ellipse/EllipseRR/ts/EllipseRR_zh_CN.ts
 %%DATADIR%%/scripts/Draw/Ellipse/EllipseRR/ts/EllipseRR_zh_TW.qm
@@ -4715,6 +4837,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Draw/Ellipse/ts/Ellipse_sl.ts
 %%DATADIR%%/scripts/Draw/Ellipse/ts/Ellipse_sv.qm
 %%DATADIR%%/scripts/Draw/Ellipse/ts/Ellipse_sv.ts
+%%DATADIR%%/scripts/Draw/Ellipse/ts/Ellipse_tr.qm
+%%DATADIR%%/scripts/Draw/Ellipse/ts/Ellipse_tr.ts
 %%DATADIR%%/scripts/Draw/Ellipse/ts/Ellipse_zh_CN.qm
 %%DATADIR%%/scripts/Draw/Ellipse/ts/Ellipse_zh_CN.ts
 %%DATADIR%%/scripts/Draw/Ellipse/ts/Ellipse_zh_TW.qm
@@ -4823,6 +4947,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Draw/Hatch/HatchFromSelection/ts/HatchFromSelection_sl.ts
 %%DATADIR%%/scripts/Draw/Hatch/HatchFromSelection/ts/HatchFromSelection_sv.qm
 %%DATADIR%%/scripts/Draw/Hatch/HatchFromSelection/ts/HatchFromSelection_sv.ts
+%%DATADIR%%/scripts/Draw/Hatch/HatchFromSelection/ts/HatchFromSelection_tr.qm
+%%DATADIR%%/scripts/Draw/Hatch/HatchFromSelection/ts/HatchFromSelection_tr.ts
 %%DATADIR%%/scripts/Draw/Hatch/HatchFromSelection/ts/HatchFromSelection_zh_CN.qm
 %%DATADIR%%/scripts/Draw/Hatch/HatchFromSelection/ts/HatchFromSelection_zh_CN.ts
 %%DATADIR%%/scripts/Draw/Hatch/HatchFromSelection/ts/HatchFromSelection_zh_TW.qm
@@ -4862,6 +4988,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Draw/Hatch/ts/Hatch_sl.ts
 %%DATADIR%%/scripts/Draw/Hatch/ts/Hatch_sv.qm
 %%DATADIR%%/scripts/Draw/Hatch/ts/Hatch_sv.ts
+%%DATADIR%%/scripts/Draw/Hatch/ts/Hatch_tr.qm
+%%DATADIR%%/scripts/Draw/Hatch/ts/Hatch_tr.ts
 %%DATADIR%%/scripts/Draw/Hatch/ts/Hatch_zh_CN.qm
 %%DATADIR%%/scripts/Draw/Hatch/ts/Hatch_zh_CN.ts
 %%DATADIR%%/scripts/Draw/Hatch/ts/Hatch_zh_TW.qm
@@ -4940,6 +5068,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Draw/Image/ts/Image_sl.ts
 %%DATADIR%%/scripts/Draw/Image/ts/Image_sv.qm
 %%DATADIR%%/scripts/Draw/Image/ts/Image_sv.ts
+%%DATADIR%%/scripts/Draw/Image/ts/Image_tr.qm
+%%DATADIR%%/scripts/Draw/Image/ts/Image_tr.ts
 %%DATADIR%%/scripts/Draw/Image/ts/Image_zh_CN.qm
 %%DATADIR%%/scripts/Draw/Image/ts/Image_zh_CN.ts
 %%DATADIR%%/scripts/Draw/Image/ts/Image_zh_TW.qm
@@ -5057,6 +5187,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Draw/Line/Line2P/ts/Line2P_sl.ts
 %%DATADIR%%/scripts/Draw/Line/Line2P/ts/Line2P_sv.qm
 %%DATADIR%%/scripts/Draw/Line/Line2P/ts/Line2P_sv.ts
+%%DATADIR%%/scripts/Draw/Line/Line2P/ts/Line2P_tr.qm
+%%DATADIR%%/scripts/Draw/Line/Line2P/ts/Line2P_tr.ts
 %%DATADIR%%/scripts/Draw/Line/Line2P/ts/Line2P_zh_CN.qm
 %%DATADIR%%/scripts/Draw/Line/Line2P/ts/Line2P_zh_CN.ts
 %%DATADIR%%/scripts/Draw/Line/Line2P/ts/Line2P_zh_TW.qm
@@ -5134,6 +5266,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Draw/Line/LineAngle/ts/LineAngle_sl.ts
 %%DATADIR%%/scripts/Draw/Line/LineAngle/ts/LineAngle_sv.qm
 %%DATADIR%%/scripts/Draw/Line/LineAngle/ts/LineAngle_sv.ts
+%%DATADIR%%/scripts/Draw/Line/LineAngle/ts/LineAngle_tr.qm
+%%DATADIR%%/scripts/Draw/Line/LineAngle/ts/LineAngle_tr.ts
 %%DATADIR%%/scripts/Draw/Line/LineAngle/ts/LineAngle_zh_CN.qm
 %%DATADIR%%/scripts/Draw/Line/LineAngle/ts/LineAngle_zh_CN.ts
 %%DATADIR%%/scripts/Draw/Line/LineAngle/ts/LineAngle_zh_TW.qm
@@ -5212,6 +5346,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Draw/Line/LineBisector/ts/LineBisector_sl.ts
 %%DATADIR%%/scripts/Draw/Line/LineBisector/ts/LineBisector_sv.qm
 %%DATADIR%%/scripts/Draw/Line/LineBisector/ts/LineBisector_sv.ts
+%%DATADIR%%/scripts/Draw/Line/LineBisector/ts/LineBisector_tr.qm
+%%DATADIR%%/scripts/Draw/Line/LineBisector/ts/LineBisector_tr.ts
 %%DATADIR%%/scripts/Draw/Line/LineBisector/ts/LineBisector_zh_CN.qm
 %%DATADIR%%/scripts/Draw/Line/LineBisector/ts/LineBisector_zh_CN.ts
 %%DATADIR%%/scripts/Draw/Line/LineBisector/ts/LineBisector_zh_TW.qm
@@ -5284,6 +5420,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Draw/Line/LineFreehand/ts/LineFreehand_sl.ts
 %%DATADIR%%/scripts/Draw/Line/LineFreehand/ts/LineFreehand_sv.qm
 %%DATADIR%%/scripts/Draw/Line/LineFreehand/ts/LineFreehand_sv.ts
+%%DATADIR%%/scripts/Draw/Line/LineFreehand/ts/LineFreehand_tr.qm
+%%DATADIR%%/scripts/Draw/Line/LineFreehand/ts/LineFreehand_tr.ts
 %%DATADIR%%/scripts/Draw/Line/LineFreehand/ts/LineFreehand_zh_CN.qm
 %%DATADIR%%/scripts/Draw/Line/LineFreehand/ts/LineFreehand_zh_CN.ts
 %%DATADIR%%/scripts/Draw/Line/LineFreehand/ts/LineFreehand_zh_TW.qm
@@ -5349,6 +5487,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Draw/Line/LineHorizontal/ts/LineHorizontal_sl.ts
 %%DATADIR%%/scripts/Draw/Line/LineHorizontal/ts/LineHorizontal_sv.qm
 %%DATADIR%%/scripts/Draw/Line/LineHorizontal/ts/LineHorizontal_sv.ts
+%%DATADIR%%/scripts/Draw/Line/LineHorizontal/ts/LineHorizontal_tr.qm
+%%DATADIR%%/scripts/Draw/Line/LineHorizontal/ts/LineHorizontal_tr.ts
 %%DATADIR%%/scripts/Draw/Line/LineHorizontal/ts/LineHorizontal_zh_CN.qm
 %%DATADIR%%/scripts/Draw/Line/LineHorizontal/ts/LineHorizontal_zh_CN.ts
 %%DATADIR%%/scripts/Draw/Line/LineHorizontal/ts/LineHorizontal_zh_TW.qm
@@ -5422,6 +5562,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Draw/Line/LineOrthogonal/ts/LineOrthogonal_sl.ts
 %%DATADIR%%/scripts/Draw/Line/LineOrthogonal/ts/LineOrthogonal_sv.qm
 %%DATADIR%%/scripts/Draw/Line/LineOrthogonal/ts/LineOrthogonal_sv.ts
+%%DATADIR%%/scripts/Draw/Line/LineOrthogonal/ts/LineOrthogonal_tr.qm
+%%DATADIR%%/scripts/Draw/Line/LineOrthogonal/ts/LineOrthogonal_tr.ts
 %%DATADIR%%/scripts/Draw/Line/LineOrthogonal/ts/LineOrthogonal_zh_CN.qm
 %%DATADIR%%/scripts/Draw/Line/LineOrthogonal/ts/LineOrthogonal_zh_CN.ts
 %%DATADIR%%/scripts/Draw/Line/LineOrthogonal/ts/LineOrthogonal_zh_TW.qm
@@ -5491,6 +5633,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Draw/Line/LineOrthogonalTangent/ts/LineOrthogonalTangent_sl.ts
 %%DATADIR%%/scripts/Draw/Line/LineOrthogonalTangent/ts/LineOrthogonalTangent_sv.qm
 %%DATADIR%%/scripts/Draw/Line/LineOrthogonalTangent/ts/LineOrthogonalTangent_sv.ts
+%%DATADIR%%/scripts/Draw/Line/LineOrthogonalTangent/ts/LineOrthogonalTangent_tr.qm
+%%DATADIR%%/scripts/Draw/Line/LineOrthogonalTangent/ts/LineOrthogonalTangent_tr.ts
 %%DATADIR%%/scripts/Draw/Line/LineOrthogonalTangent/ts/LineOrthogonalTangent_zh_CN.qm
 %%DATADIR%%/scripts/Draw/Line/LineOrthogonalTangent/ts/LineOrthogonalTangent_zh_CN.ts
 %%DATADIR%%/scripts/Draw/Line/LineOrthogonalTangent/ts/LineOrthogonalTangent_zh_TW.qm
@@ -5567,6 +5711,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Draw/Line/LineParallel/ts/LineParallel_sl.ts
 %%DATADIR%%/scripts/Draw/Line/LineParallel/ts/LineParallel_sv.qm
 %%DATADIR%%/scripts/Draw/Line/LineParallel/ts/LineParallel_sv.ts
+%%DATADIR%%/scripts/Draw/Line/LineParallel/ts/LineParallel_tr.qm
+%%DATADIR%%/scripts/Draw/Line/LineParallel/ts/LineParallel_tr.ts
 %%DATADIR%%/scripts/Draw/Line/LineParallel/ts/LineParallel_zh_CN.qm
 %%DATADIR%%/scripts/Draw/Line/LineParallel/ts/LineParallel_zh_CN.ts
 %%DATADIR%%/scripts/Draw/Line/LineParallel/ts/LineParallel_zh_TW.qm
@@ -5643,6 +5789,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Draw/Line/LineParallelThrough/ts/LineParallelThrough_sl.ts
 %%DATADIR%%/scripts/Draw/Line/LineParallelThrough/ts/LineParallelThrough_sv.qm
 %%DATADIR%%/scripts/Draw/Line/LineParallelThrough/ts/LineParallelThrough_sv.ts
+%%DATADIR%%/scripts/Draw/Line/LineParallelThrough/ts/LineParallelThrough_tr.qm
+%%DATADIR%%/scripts/Draw/Line/LineParallelThrough/ts/LineParallelThrough_tr.ts
 %%DATADIR%%/scripts/Draw/Line/LineParallelThrough/ts/LineParallelThrough_zh_CN.qm
 %%DATADIR%%/scripts/Draw/Line/LineParallelThrough/ts/LineParallelThrough_zh_CN.ts
 %%DATADIR%%/scripts/Draw/Line/LineParallelThrough/ts/LineParallelThrough_zh_TW.qm
@@ -5716,6 +5864,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Draw/Line/LineRelativeAngle/ts/LineRelativeAngle_sl.ts
 %%DATADIR%%/scripts/Draw/Line/LineRelativeAngle/ts/LineRelativeAngle_sv.qm
 %%DATADIR%%/scripts/Draw/Line/LineRelativeAngle/ts/LineRelativeAngle_sv.ts
+%%DATADIR%%/scripts/Draw/Line/LineRelativeAngle/ts/LineRelativeAngle_tr.qm
+%%DATADIR%%/scripts/Draw/Line/LineRelativeAngle/ts/LineRelativeAngle_tr.ts
 %%DATADIR%%/scripts/Draw/Line/LineRelativeAngle/ts/LineRelativeAngle_zh_CN.qm
 %%DATADIR%%/scripts/Draw/Line/LineRelativeAngle/ts/LineRelativeAngle_zh_CN.ts
 %%DATADIR%%/scripts/Draw/Line/LineRelativeAngle/ts/LineRelativeAngle_zh_TW.qm
@@ -5790,6 +5940,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Draw/Line/LineTangent1/ts/LineTangent1_sl.ts
 %%DATADIR%%/scripts/Draw/Line/LineTangent1/ts/LineTangent1_sv.qm
 %%DATADIR%%/scripts/Draw/Line/LineTangent1/ts/LineTangent1_sv.ts
+%%DATADIR%%/scripts/Draw/Line/LineTangent1/ts/LineTangent1_tr.qm
+%%DATADIR%%/scripts/Draw/Line/LineTangent1/ts/LineTangent1_tr.ts
 %%DATADIR%%/scripts/Draw/Line/LineTangent1/ts/LineTangent1_zh_CN.qm
 %%DATADIR%%/scripts/Draw/Line/LineTangent1/ts/LineTangent1_zh_CN.ts
 %%DATADIR%%/scripts/Draw/Line/LineTangent1/ts/LineTangent1_zh_TW.qm
@@ -5864,6 +6016,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Draw/Line/LineTangent2/ts/LineTangent2_sl.ts
 %%DATADIR%%/scripts/Draw/Line/LineTangent2/ts/LineTangent2_sv.qm
 %%DATADIR%%/scripts/Draw/Line/LineTangent2/ts/LineTangent2_sv.ts
+%%DATADIR%%/scripts/Draw/Line/LineTangent2/ts/LineTangent2_tr.qm
+%%DATADIR%%/scripts/Draw/Line/LineTangent2/ts/LineTangent2_tr.ts
 %%DATADIR%%/scripts/Draw/Line/LineTangent2/ts/LineTangent2_zh_CN.qm
 %%DATADIR%%/scripts/Draw/Line/LineTangent2/ts/LineTangent2_zh_CN.ts
 %%DATADIR%%/scripts/Draw/Line/LineTangent2/ts/LineTangent2_zh_TW.qm
@@ -5928,6 +6082,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Draw/Line/LineVertical/ts/LineVertical_sl.ts
 %%DATADIR%%/scripts/Draw/Line/LineVertical/ts/LineVertical_sv.qm
 %%DATADIR%%/scripts/Draw/Line/LineVertical/ts/LineVertical_sv.ts
+%%DATADIR%%/scripts/Draw/Line/LineVertical/ts/LineVertical_tr.qm
+%%DATADIR%%/scripts/Draw/Line/LineVertical/ts/LineVertical_tr.ts
 %%DATADIR%%/scripts/Draw/Line/LineVertical/ts/LineVertical_zh_CN.qm
 %%DATADIR%%/scripts/Draw/Line/LineVertical/ts/LineVertical_zh_CN.ts
 %%DATADIR%%/scripts/Draw/Line/LineVertical/ts/LineVertical_zh_TW.qm
@@ -5987,6 +6143,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Draw/Line/ts/Line_sl.ts
 %%DATADIR%%/scripts/Draw/Line/ts/Line_sv.qm
 %%DATADIR%%/scripts/Draw/Line/ts/Line_sv.ts
+%%DATADIR%%/scripts/Draw/Line/ts/Line_tr.qm
+%%DATADIR%%/scripts/Draw/Line/ts/Line_tr.ts
 %%DATADIR%%/scripts/Draw/Line/ts/Line_zh_CN.qm
 %%DATADIR%%/scripts/Draw/Line/ts/Line_zh_CN.ts
 %%DATADIR%%/scripts/Draw/Line/ts/Line_zh_TW.qm
@@ -6064,6 +6222,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Draw/Point/Point1P/ts/Point1P_sl.ts
 %%DATADIR%%/scripts/Draw/Point/Point1P/ts/Point1P_sv.qm
 %%DATADIR%%/scripts/Draw/Point/Point1P/ts/Point1P_sv.ts
+%%DATADIR%%/scripts/Draw/Point/Point1P/ts/Point1P_tr.qm
+%%DATADIR%%/scripts/Draw/Point/Point1P/ts/Point1P_tr.ts
 %%DATADIR%%/scripts/Draw/Point/Point1P/ts/Point1P_zh_CN.qm
 %%DATADIR%%/scripts/Draw/Point/Point1P/ts/Point1P_zh_CN.ts
 %%DATADIR%%/scripts/Draw/Point/Point1P/ts/Point1P_zh_TW.qm
@@ -6111,6 +6271,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Draw/Point/ts/Point_sl.ts
 %%DATADIR%%/scripts/Draw/Point/ts/Point_sv.qm
 %%DATADIR%%/scripts/Draw/Point/ts/Point_sv.ts
+%%DATADIR%%/scripts/Draw/Point/ts/Point_tr.qm
+%%DATADIR%%/scripts/Draw/Point/ts/Point_tr.ts
 %%DATADIR%%/scripts/Draw/Point/ts/Point_zh_CN.qm
 %%DATADIR%%/scripts/Draw/Point/ts/Point_zh_CN.ts
 %%DATADIR%%/scripts/Draw/Point/ts/Point_zh_TW.qm
@@ -6196,6 +6358,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Draw/Polyline/DrawPolyline/ts/DrawPolyline_sl.ts
 %%DATADIR%%/scripts/Draw/Polyline/DrawPolyline/ts/DrawPolyline_sv.qm
 %%DATADIR%%/scripts/Draw/Polyline/DrawPolyline/ts/DrawPolyline_sv.ts
+%%DATADIR%%/scripts/Draw/Polyline/DrawPolyline/ts/DrawPolyline_tr.qm
+%%DATADIR%%/scripts/Draw/Polyline/DrawPolyline/ts/DrawPolyline_tr.ts
 %%DATADIR%%/scripts/Draw/Polyline/DrawPolyline/ts/DrawPolyline_zh_CN.qm
 %%DATADIR%%/scripts/Draw/Polyline/DrawPolyline/ts/DrawPolyline_zh_CN.ts
 %%DATADIR%%/scripts/Draw/Polyline/DrawPolyline/ts/DrawPolyline_zh_TW.qm
@@ -6247,6 +6411,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Draw/Polyline/ts/Polyline_sl.ts
 %%DATADIR%%/scripts/Draw/Polyline/ts/Polyline_sv.qm
 %%DATADIR%%/scripts/Draw/Polyline/ts/Polyline_sv.ts
+%%DATADIR%%/scripts/Draw/Polyline/ts/Polyline_tr.qm
+%%DATADIR%%/scripts/Draw/Polyline/ts/Polyline_tr.ts
 %%DATADIR%%/scripts/Draw/Polyline/ts/Polyline_zh_CN.qm
 %%DATADIR%%/scripts/Draw/Polyline/ts/Polyline_zh_CN.ts
 %%DATADIR%%/scripts/Draw/Polyline/ts/Polyline_zh_TW.qm
@@ -6310,6 +6476,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Draw/Shape/ShapePolygonAFCP/ts/ShapePolygonAFCP_sl.ts
 %%DATADIR%%/scripts/Draw/Shape/ShapePolygonAFCP/ts/ShapePolygonAFCP_sv.qm
 %%DATADIR%%/scripts/Draw/Shape/ShapePolygonAFCP/ts/ShapePolygonAFCP_sv.ts
+%%DATADIR%%/scripts/Draw/Shape/ShapePolygonAFCP/ts/ShapePolygonAFCP_tr.qm
+%%DATADIR%%/scripts/Draw/Shape/ShapePolygonAFCP/ts/ShapePolygonAFCP_tr.ts
 %%DATADIR%%/scripts/Draw/Shape/ShapePolygonAFCP/ts/ShapePolygonAFCP_zh_CN.qm
 %%DATADIR%%/scripts/Draw/Shape/ShapePolygonAFCP/ts/ShapePolygonAFCP_zh_CN.ts
 %%DATADIR%%/scripts/Draw/Shape/ShapePolygonAFCP/ts/ShapePolygonAFCP_zh_TW.qm
@@ -6369,6 +6537,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Draw/Shape/ShapePolygonAFPP/ts/ShapePolygonAFPP_sl.ts
 %%DATADIR%%/scripts/Draw/Shape/ShapePolygonAFPP/ts/ShapePolygonAFPP_sv.qm
 %%DATADIR%%/scripts/Draw/Shape/ShapePolygonAFPP/ts/ShapePolygonAFPP_sv.ts
+%%DATADIR%%/scripts/Draw/Shape/ShapePolygonAFPP/ts/ShapePolygonAFPP_tr.qm
+%%DATADIR%%/scripts/Draw/Shape/ShapePolygonAFPP/ts/ShapePolygonAFPP_tr.ts
 %%DATADIR%%/scripts/Draw/Shape/ShapePolygonAFPP/ts/ShapePolygonAFPP_zh_CN.qm
 %%DATADIR%%/scripts/Draw/Shape/ShapePolygonAFPP/ts/ShapePolygonAFPP_zh_CN.ts
 %%DATADIR%%/scripts/Draw/Shape/ShapePolygonAFPP/ts/ShapePolygonAFPP_zh_TW.qm
@@ -6446,6 +6616,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Draw/Shape/ShapePolygonCP/ts/ShapePolygonCP_sl.ts
 %%DATADIR%%/scripts/Draw/Shape/ShapePolygonCP/ts/ShapePolygonCP_sv.qm
 %%DATADIR%%/scripts/Draw/Shape/ShapePolygonCP/ts/ShapePolygonCP_sv.ts
+%%DATADIR%%/scripts/Draw/Shape/ShapePolygonCP/ts/ShapePolygonCP_tr.qm
+%%DATADIR%%/scripts/Draw/Shape/ShapePolygonCP/ts/ShapePolygonCP_tr.ts
 %%DATADIR%%/scripts/Draw/Shape/ShapePolygonCP/ts/ShapePolygonCP_zh_CN.qm
 %%DATADIR%%/scripts/Draw/Shape/ShapePolygonCP/ts/ShapePolygonCP_zh_CN.ts
 %%DATADIR%%/scripts/Draw/Shape/ShapePolygonCP/ts/ShapePolygonCP_zh_TW.qm
@@ -6523,6 +6695,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Draw/Shape/ShapePolygonPP/ts/ShapePolygonPP_sl.ts
 %%DATADIR%%/scripts/Draw/Shape/ShapePolygonPP/ts/ShapePolygonPP_sv.qm
 %%DATADIR%%/scripts/Draw/Shape/ShapePolygonPP/ts/ShapePolygonPP_sv.ts
+%%DATADIR%%/scripts/Draw/Shape/ShapePolygonPP/ts/ShapePolygonPP_tr.qm
+%%DATADIR%%/scripts/Draw/Shape/ShapePolygonPP/ts/ShapePolygonPP_tr.ts
 %%DATADIR%%/scripts/Draw/Shape/ShapePolygonPP/ts/ShapePolygonPP_zh_CN.qm
 %%DATADIR%%/scripts/Draw/Shape/ShapePolygonPP/ts/ShapePolygonPP_zh_CN.ts
 %%DATADIR%%/scripts/Draw/Shape/ShapePolygonPP/ts/ShapePolygonPP_zh_TW.qm
@@ -6597,6 +6771,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Draw/Shape/ShapeRectanglePP/ts/ShapeRectanglePP_sl.ts
 %%DATADIR%%/scripts/Draw/Shape/ShapeRectanglePP/ts/ShapeRectanglePP_sv.qm
 %%DATADIR%%/scripts/Draw/Shape/ShapeRectanglePP/ts/ShapeRectanglePP_sv.ts
+%%DATADIR%%/scripts/Draw/Shape/ShapeRectanglePP/ts/ShapeRectanglePP_tr.qm
+%%DATADIR%%/scripts/Draw/Shape/ShapeRectanglePP/ts/ShapeRectanglePP_tr.ts
 %%DATADIR%%/scripts/Draw/Shape/ShapeRectanglePP/ts/ShapeRectanglePP_zh_CN.qm
 %%DATADIR%%/scripts/Draw/Shape/ShapeRectanglePP/ts/ShapeRectanglePP_zh_CN.ts
 %%DATADIR%%/scripts/Draw/Shape/ShapeRectanglePP/ts/ShapeRectanglePP_zh_TW.qm
@@ -6673,6 +6849,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Draw/Shape/ShapeRectangleSize/ts/ShapeRectangleSize_sl.ts
 %%DATADIR%%/scripts/Draw/Shape/ShapeRectangleSize/ts/ShapeRectangleSize_sv.qm
 %%DATADIR%%/scripts/Draw/Shape/ShapeRectangleSize/ts/ShapeRectangleSize_sv.ts
+%%DATADIR%%/scripts/Draw/Shape/ShapeRectangleSize/ts/ShapeRectangleSize_tr.qm
+%%DATADIR%%/scripts/Draw/Shape/ShapeRectangleSize/ts/ShapeRectangleSize_tr.ts
 %%DATADIR%%/scripts/Draw/Shape/ShapeRectangleSize/ts/ShapeRectangleSize_zh_CN.qm
 %%DATADIR%%/scripts/Draw/Shape/ShapeRectangleSize/ts/ShapeRectangleSize_zh_CN.ts
 %%DATADIR%%/scripts/Draw/Shape/ShapeRectangleSize/ts/ShapeRectangleSize_zh_TW.qm
@@ -6712,6 +6890,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Draw/Shape/ts/Shape_sl.ts
 %%DATADIR%%/scripts/Draw/Shape/ts/Shape_sv.qm
 %%DATADIR%%/scripts/Draw/Shape/ts/Shape_sv.ts
+%%DATADIR%%/scripts/Draw/Shape/ts/Shape_tr.qm
+%%DATADIR%%/scripts/Draw/Shape/ts/Shape_tr.ts
 %%DATADIR%%/scripts/Draw/Shape/ts/Shape_zh_CN.qm
 %%DATADIR%%/scripts/Draw/Shape/ts/Shape_zh_CN.ts
 %%DATADIR%%/scripts/Draw/Shape/ts/Shape_zh_TW.qm
@@ -6799,6 +6979,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Draw/Spline/SplineControlPoints/ts/SplineControlPoints_sl.ts
 %%DATADIR%%/scripts/Draw/Spline/SplineControlPoints/ts/SplineControlPoints_sv.qm
 %%DATADIR%%/scripts/Draw/Spline/SplineControlPoints/ts/SplineControlPoints_sv.ts
+%%DATADIR%%/scripts/Draw/Spline/SplineControlPoints/ts/SplineControlPoints_tr.qm
+%%DATADIR%%/scripts/Draw/Spline/SplineControlPoints/ts/SplineControlPoints_tr.ts
 %%DATADIR%%/scripts/Draw/Spline/SplineControlPoints/ts/SplineControlPoints_zh_CN.qm
 %%DATADIR%%/scripts/Draw/Spline/SplineControlPoints/ts/SplineControlPoints_zh_CN.ts
 %%DATADIR%%/scripts/Draw/Spline/SplineControlPoints/ts/SplineControlPoints_zh_TW.qm
@@ -6846,6 +7028,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Draw/Spline/ts/Spline_sl.ts
 %%DATADIR%%/scripts/Draw/Spline/ts/Spline_sv.qm
 %%DATADIR%%/scripts/Draw/Spline/ts/Spline_sv.ts
+%%DATADIR%%/scripts/Draw/Spline/ts/Spline_tr.qm
+%%DATADIR%%/scripts/Draw/Spline/ts/Spline_tr.ts
 %%DATADIR%%/scripts/Draw/Spline/ts/Spline_zh_CN.qm
 %%DATADIR%%/scripts/Draw/Spline/ts/Spline_zh_CN.ts
 %%DATADIR%%/scripts/Draw/Spline/ts/Spline_zh_TW.qm
@@ -6884,16 +7068,26 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Draw/Text/Tests/required/Text02_000.dxf
 %%DATADIR%%/scripts/Draw/Text/Tests/required/Text03_000.dxf
 %%DATADIR%%/scripts/Draw/Text/Tests/required/Text04_000.dxf
+%%DATADIR%%/scripts/Draw/Text/Tests/required/Text04_001.dxf
 %%DATADIR%%/scripts/Draw/Text/Tests/required/Text05_000.dxf
+%%DATADIR%%/scripts/Draw/Text/Tests/required/Text05_001.dxf
 %%DATADIR%%/scripts/Draw/Text/Tests/required/Text06_000.dxf
+%%DATADIR%%/scripts/Draw/Text/Tests/required/Text06_001.dxf
 %%DATADIR%%/scripts/Draw/Text/Tests/required/Text07_000.dxf
 %%DATADIR%%/scripts/Draw/Text/Tests/required/Text08_000.dxf
+%%DATADIR%%/scripts/Draw/Text/Tests/required/Text08_001.dxf
 %%DATADIR%%/scripts/Draw/Text/Tests/required/Text09_000.dxf
+%%DATADIR%%/scripts/Draw/Text/Tests/required/Text09_001.dxf
 %%DATADIR%%/scripts/Draw/Text/Tests/required/Text10_000.dxf
+%%DATADIR%%/scripts/Draw/Text/Tests/required/Text10_001.dxf
 %%DATADIR%%/scripts/Draw/Text/Tests/required/Text11_000.dxf
+%%DATADIR%%/scripts/Draw/Text/Tests/required/Text11_001.dxf
 %%DATADIR%%/scripts/Draw/Text/Tests/required/Text12_000.dxf
+%%DATADIR%%/scripts/Draw/Text/Tests/required/Text12_001.dxf
 %%DATADIR%%/scripts/Draw/Text/Tests/required/Text13_000.dxf
+%%DATADIR%%/scripts/Draw/Text/Tests/required/Text13_001.dxf
 %%DATADIR%%/scripts/Draw/Text/Tests/required/Text14_000.dxf
+%%DATADIR%%/scripts/Draw/Text/Tests/required/Text14_001.dxf
 %%DATADIR%%/scripts/Draw/Text/Text-inverse.svg
 %%DATADIR%%/scripts/Draw/Text/Text.js
 %%DATADIR%%/scripts/Draw/Text/Text.pro
@@ -7022,6 +7216,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Draw/Text/ts/Text_sl.ts
 %%DATADIR%%/scripts/Draw/Text/ts/Text_sv.qm
 %%DATADIR%%/scripts/Draw/Text/ts/Text_sv.ts
+%%DATADIR%%/scripts/Draw/Text/ts/Text_tr.qm
+%%DATADIR%%/scripts/Draw/Text/ts/Text_tr.ts
 %%DATADIR%%/scripts/Draw/Text/ts/Text_zh_CN.qm
 %%DATADIR%%/scripts/Draw/Text/ts/Text_zh_CN.ts
 %%DATADIR%%/scripts/Draw/Text/ts/Text_zh_TW.qm
@@ -7068,6 +7264,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Draw/ts/Draw_sl.ts
 %%DATADIR%%/scripts/Draw/ts/Draw_sv.qm
 %%DATADIR%%/scripts/Draw/ts/Draw_sv.ts
+%%DATADIR%%/scripts/Draw/ts/Draw_tr.qm
+%%DATADIR%%/scripts/Draw/ts/Draw_tr.ts
 %%DATADIR%%/scripts/Draw/ts/Draw_zh_CN.qm
 %%DATADIR%%/scripts/Draw/ts/Draw_zh_CN.ts
 %%DATADIR%%/scripts/Draw/ts/Draw_zh_TW.qm
@@ -7117,6 +7315,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Edit/AppPreferences/GraphicsViewPreferences/BehaviorPreferences/ts/BehaviorPreferences_sl.ts
 %%DATADIR%%/scripts/Edit/AppPreferences/GraphicsViewPreferences/BehaviorPreferences/ts/BehaviorPreferences_sv.qm
 %%DATADIR%%/scripts/Edit/AppPreferences/GraphicsViewPreferences/BehaviorPreferences/ts/BehaviorPreferences_sv.ts
+%%DATADIR%%/scripts/Edit/AppPreferences/GraphicsViewPreferences/BehaviorPreferences/ts/BehaviorPreferences_tr.qm
+%%DATADIR%%/scripts/Edit/AppPreferences/GraphicsViewPreferences/BehaviorPreferences/ts/BehaviorPreferences_tr.ts
 %%DATADIR%%/scripts/Edit/AppPreferences/GraphicsViewPreferences/BehaviorPreferences/ts/BehaviorPreferences_zh_CN.qm
 %%DATADIR%%/scripts/Edit/AppPreferences/GraphicsViewPreferences/BehaviorPreferences/ts/BehaviorPreferences_zh_CN.ts
 %%DATADIR%%/scripts/Edit/AppPreferences/GraphicsViewPreferences/BehaviorPreferences/ts/BehaviorPreferences_zh_TW.qm
@@ -7159,6 +7359,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Edit/AppPreferences/GraphicsViewPreferences/ColorPreferences/ts/ColorPreferences_sl.ts
 %%DATADIR%%/scripts/Edit/AppPreferences/GraphicsViewPreferences/ColorPreferences/ts/ColorPreferences_sv.qm
 %%DATADIR%%/scripts/Edit/AppPreferences/GraphicsViewPreferences/ColorPreferences/ts/ColorPreferences_sv.ts
+%%DATADIR%%/scripts/Edit/AppPreferences/GraphicsViewPreferences/ColorPreferences/ts/ColorPreferences_tr.qm
+%%DATADIR%%/scripts/Edit/AppPreferences/GraphicsViewPreferences/ColorPreferences/ts/ColorPreferences_tr.ts
 %%DATADIR%%/scripts/Edit/AppPreferences/GraphicsViewPreferences/ColorPreferences/ts/ColorPreferences_zh_CN.qm
 %%DATADIR%%/scripts/Edit/AppPreferences/GraphicsViewPreferences/ColorPreferences/ts/ColorPreferences_zh_CN.ts
 %%DATADIR%%/scripts/Edit/AppPreferences/GraphicsViewPreferences/ColorPreferences/ts/ColorPreferences_zh_TW.qm
@@ -7201,6 +7403,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Edit/AppPreferences/GraphicsViewPreferences/FontPreferences/ts/FontPreferences_sl.ts
 %%DATADIR%%/scripts/Edit/AppPreferences/GraphicsViewPreferences/FontPreferences/ts/FontPreferences_sv.qm
 %%DATADIR%%/scripts/Edit/AppPreferences/GraphicsViewPreferences/FontPreferences/ts/FontPreferences_sv.ts
+%%DATADIR%%/scripts/Edit/AppPreferences/GraphicsViewPreferences/FontPreferences/ts/FontPreferences_tr.qm
+%%DATADIR%%/scripts/Edit/AppPreferences/GraphicsViewPreferences/FontPreferences/ts/FontPreferences_tr.ts
 %%DATADIR%%/scripts/Edit/AppPreferences/GraphicsViewPreferences/FontPreferences/ts/FontPreferences_zh_CN.qm
 %%DATADIR%%/scripts/Edit/AppPreferences/GraphicsViewPreferences/FontPreferences/ts/FontPreferences_zh_CN.ts
 %%DATADIR%%/scripts/Edit/AppPreferences/GraphicsViewPreferences/FontPreferences/ts/FontPreferences_zh_TW.qm
@@ -7245,6 +7449,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Edit/AppPreferences/GraphicsViewPreferences/GridPreferences/ts/GridPreferences_sl.ts
 %%DATADIR%%/scripts/Edit/AppPreferences/GraphicsViewPreferences/GridPreferences/ts/GridPreferences_sv.qm
 %%DATADIR%%/scripts/Edit/AppPreferences/GraphicsViewPreferences/GridPreferences/ts/GridPreferences_sv.ts
+%%DATADIR%%/scripts/Edit/AppPreferences/GraphicsViewPreferences/GridPreferences/ts/GridPreferences_tr.qm
+%%DATADIR%%/scripts/Edit/AppPreferences/GraphicsViewPreferences/GridPreferences/ts/GridPreferences_tr.ts
 %%DATADIR%%/scripts/Edit/AppPreferences/GraphicsViewPreferences/GridPreferences/ts/GridPreferences_zh_CN.qm
 %%DATADIR%%/scripts/Edit/AppPreferences/GraphicsViewPreferences/GridPreferences/ts/GridPreferences_zh_CN.ts
 %%DATADIR%%/scripts/Edit/AppPreferences/GraphicsViewPreferences/GridPreferences/ts/GridPreferences_zh_TW.qm
@@ -7284,6 +7490,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Edit/AppPreferences/GraphicsViewPreferences/ts/GraphicsViewPreferences_sl.ts
 %%DATADIR%%/scripts/Edit/AppPreferences/GraphicsViewPreferences/ts/GraphicsViewPreferences_sv.qm
 %%DATADIR%%/scripts/Edit/AppPreferences/GraphicsViewPreferences/ts/GraphicsViewPreferences_sv.ts
+%%DATADIR%%/scripts/Edit/AppPreferences/GraphicsViewPreferences/ts/GraphicsViewPreferences_tr.qm
+%%DATADIR%%/scripts/Edit/AppPreferences/GraphicsViewPreferences/ts/GraphicsViewPreferences_tr.ts
 %%DATADIR%%/scripts/Edit/AppPreferences/GraphicsViewPreferences/ts/GraphicsViewPreferences_zh_CN.qm
 %%DATADIR%%/scripts/Edit/AppPreferences/GraphicsViewPreferences/ts/GraphicsViewPreferences_zh_CN.ts
 %%DATADIR%%/scripts/Edit/AppPreferences/GraphicsViewPreferences/ts/GraphicsViewPreferences_zh_TW.qm
@@ -7327,6 +7535,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Edit/AppPreferences/InputPreferences/ts/InputPreferences_sl.ts
 %%DATADIR%%/scripts/Edit/AppPreferences/InputPreferences/ts/InputPreferences_sv.qm
 %%DATADIR%%/scripts/Edit/AppPreferences/InputPreferences/ts/InputPreferences_sv.ts
+%%DATADIR%%/scripts/Edit/AppPreferences/InputPreferences/ts/InputPreferences_tr.qm
+%%DATADIR%%/scripts/Edit/AppPreferences/InputPreferences/ts/InputPreferences_tr.ts
 %%DATADIR%%/scripts/Edit/AppPreferences/InputPreferences/ts/InputPreferences_zh_CN.qm
 %%DATADIR%%/scripts/Edit/AppPreferences/InputPreferences/ts/InputPreferences_zh_CN.ts
 %%DATADIR%%/scripts/Edit/AppPreferences/InputPreferences/ts/InputPreferences_zh_TW.qm
@@ -7369,6 +7579,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Edit/AppPreferences/LanguagePreferences/ts/LanguagePreferences_sl.ts
 %%DATADIR%%/scripts/Edit/AppPreferences/LanguagePreferences/ts/LanguagePreferences_sv.qm
 %%DATADIR%%/scripts/Edit/AppPreferences/LanguagePreferences/ts/LanguagePreferences_sv.ts
+%%DATADIR%%/scripts/Edit/AppPreferences/LanguagePreferences/ts/LanguagePreferences_tr.qm
+%%DATADIR%%/scripts/Edit/AppPreferences/LanguagePreferences/ts/LanguagePreferences_tr.ts
 %%DATADIR%%/scripts/Edit/AppPreferences/LanguagePreferences/ts/LanguagePreferences_zh_CN.qm
 %%DATADIR%%/scripts/Edit/AppPreferences/LanguagePreferences/ts/LanguagePreferences_zh_CN.ts
 %%DATADIR%%/scripts/Edit/AppPreferences/LanguagePreferences/ts/LanguagePreferences_zh_TW.qm
@@ -7411,6 +7623,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Edit/AppPreferences/LayerCompatibility/ts/LayerCompatibility_sl.ts
 %%DATADIR%%/scripts/Edit/AppPreferences/LayerCompatibility/ts/LayerCompatibility_sv.qm
 %%DATADIR%%/scripts/Edit/AppPreferences/LayerCompatibility/ts/LayerCompatibility_sv.ts
+%%DATADIR%%/scripts/Edit/AppPreferences/LayerCompatibility/ts/LayerCompatibility_tr.qm
+%%DATADIR%%/scripts/Edit/AppPreferences/LayerCompatibility/ts/LayerCompatibility_tr.ts
 %%DATADIR%%/scripts/Edit/AppPreferences/LayerCompatibility/ts/LayerCompatibility_zh_CN.qm
 %%DATADIR%%/scripts/Edit/AppPreferences/LayerCompatibility/ts/LayerCompatibility_zh_CN.ts
 %%DATADIR%%/scripts/Edit/AppPreferences/LayerCompatibility/ts/LayerCompatibility_zh_TW.qm
@@ -7453,6 +7667,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Edit/AppPreferences/ScriptingPreferences/ts/ScriptingPreferences_sl.ts
 %%DATADIR%%/scripts/Edit/AppPreferences/ScriptingPreferences/ts/ScriptingPreferences_sv.qm
 %%DATADIR%%/scripts/Edit/AppPreferences/ScriptingPreferences/ts/ScriptingPreferences_sv.ts
+%%DATADIR%%/scripts/Edit/AppPreferences/ScriptingPreferences/ts/ScriptingPreferences_tr.qm
+%%DATADIR%%/scripts/Edit/AppPreferences/ScriptingPreferences/ts/ScriptingPreferences_tr.ts
 %%DATADIR%%/scripts/Edit/AppPreferences/ScriptingPreferences/ts/ScriptingPreferences_zh_CN.qm
 %%DATADIR%%/scripts/Edit/AppPreferences/ScriptingPreferences/ts/ScriptingPreferences_zh_CN.ts
 %%DATADIR%%/scripts/Edit/AppPreferences/ScriptingPreferences/ts/ScriptingPreferences_zh_TW.qm
@@ -7495,6 +7711,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Edit/AppPreferences/StartupPreferences/ts/StartupPreferences_sl.ts
 %%DATADIR%%/scripts/Edit/AppPreferences/StartupPreferences/ts/StartupPreferences_sv.qm
 %%DATADIR%%/scripts/Edit/AppPreferences/StartupPreferences/ts/StartupPreferences_sv.ts
+%%DATADIR%%/scripts/Edit/AppPreferences/StartupPreferences/ts/StartupPreferences_tr.qm
+%%DATADIR%%/scripts/Edit/AppPreferences/StartupPreferences/ts/StartupPreferences_tr.ts
 %%DATADIR%%/scripts/Edit/AppPreferences/StartupPreferences/ts/StartupPreferences_zh_CN.qm
 %%DATADIR%%/scripts/Edit/AppPreferences/StartupPreferences/ts/StartupPreferences_zh_CN.ts
 %%DATADIR%%/scripts/Edit/AppPreferences/StartupPreferences/ts/StartupPreferences_zh_TW.qm
@@ -7537,6 +7755,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Edit/AppPreferences/TextPreferences/ts/TextPreferences_sl.ts
 %%DATADIR%%/scripts/Edit/AppPreferences/TextPreferences/ts/TextPreferences_sv.qm
 %%DATADIR%%/scripts/Edit/AppPreferences/TextPreferences/ts/TextPreferences_sv.ts
+%%DATADIR%%/scripts/Edit/AppPreferences/TextPreferences/ts/TextPreferences_tr.qm
+%%DATADIR%%/scripts/Edit/AppPreferences/TextPreferences/ts/TextPreferences_tr.ts
 %%DATADIR%%/scripts/Edit/AppPreferences/TextPreferences/ts/TextPreferences_zh_CN.qm
 %%DATADIR%%/scripts/Edit/AppPreferences/TextPreferences/ts/TextPreferences_zh_CN.ts
 %%DATADIR%%/scripts/Edit/AppPreferences/TextPreferences/ts/TextPreferences_zh_TW.qm
@@ -7579,6 +7799,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Edit/AppPreferences/ThemePreferences/ts/ThemePreferences_sl.ts
 %%DATADIR%%/scripts/Edit/AppPreferences/ThemePreferences/ts/ThemePreferences_sv.qm
 %%DATADIR%%/scripts/Edit/AppPreferences/ThemePreferences/ts/ThemePreferences_sv.ts
+%%DATADIR%%/scripts/Edit/AppPreferences/ThemePreferences/ts/ThemePreferences_tr.qm
+%%DATADIR%%/scripts/Edit/AppPreferences/ThemePreferences/ts/ThemePreferences_tr.ts
 %%DATADIR%%/scripts/Edit/AppPreferences/ThemePreferences/ts/ThemePreferences_zh_CN.qm
 %%DATADIR%%/scripts/Edit/AppPreferences/ThemePreferences/ts/ThemePreferences_zh_CN.ts
 %%DATADIR%%/scripts/Edit/AppPreferences/ThemePreferences/ts/ThemePreferences_zh_TW.qm
@@ -7621,6 +7843,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Edit/AppPreferences/ToolBarPreferences/ts/ToolBarPreferences_sl.ts
 %%DATADIR%%/scripts/Edit/AppPreferences/ToolBarPreferences/ts/ToolBarPreferences_sv.qm
 %%DATADIR%%/scripts/Edit/AppPreferences/ToolBarPreferences/ts/ToolBarPreferences_sv.ts
+%%DATADIR%%/scripts/Edit/AppPreferences/ToolBarPreferences/ts/ToolBarPreferences_tr.qm
+%%DATADIR%%/scripts/Edit/AppPreferences/ToolBarPreferences/ts/ToolBarPreferences_tr.ts
 %%DATADIR%%/scripts/Edit/AppPreferences/ToolBarPreferences/ts/ToolBarPreferences_zh_CN.qm
 %%DATADIR%%/scripts/Edit/AppPreferences/ToolBarPreferences/ts/ToolBarPreferences_zh_CN.ts
 %%DATADIR%%/scripts/Edit/AppPreferences/ToolBarPreferences/ts/ToolBarPreferences_zh_TW.qm
@@ -7672,6 +7896,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Edit/AppPreferences/ts/AppPreferences_sl.ts
 %%DATADIR%%/scripts/Edit/AppPreferences/ts/AppPreferences_sv.qm
 %%DATADIR%%/scripts/Edit/AppPreferences/ts/AppPreferences_sv.ts
+%%DATADIR%%/scripts/Edit/AppPreferences/ts/AppPreferences_tr.qm
+%%DATADIR%%/scripts/Edit/AppPreferences/ts/AppPreferences_tr.ts
 %%DATADIR%%/scripts/Edit/AppPreferences/ts/AppPreferences_zh_CN.qm
 %%DATADIR%%/scripts/Edit/AppPreferences/ts/AppPreferences_zh_CN.ts
 %%DATADIR%%/scripts/Edit/AppPreferences/ts/AppPreferences_zh_TW.qm
@@ -7729,6 +7955,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Edit/ConvertUnit/ts/ConvertUnit_sl.ts
 %%DATADIR%%/scripts/Edit/ConvertUnit/ts/ConvertUnit_sv.qm
 %%DATADIR%%/scripts/Edit/ConvertUnit/ts/ConvertUnit_sv.ts
+%%DATADIR%%/scripts/Edit/ConvertUnit/ts/ConvertUnit_tr.qm
+%%DATADIR%%/scripts/Edit/ConvertUnit/ts/ConvertUnit_tr.ts
 %%DATADIR%%/scripts/Edit/ConvertUnit/ts/ConvertUnit_zh_CN.qm
 %%DATADIR%%/scripts/Edit/ConvertUnit/ts/ConvertUnit_zh_CN.ts
 %%DATADIR%%/scripts/Edit/ConvertUnit/ts/ConvertUnit_zh_TW.qm
@@ -7812,6 +8040,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Edit/Copy/ts/Copy_sl.ts
 %%DATADIR%%/scripts/Edit/Copy/ts/Copy_sv.qm
 %%DATADIR%%/scripts/Edit/Copy/ts/Copy_sv.ts
+%%DATADIR%%/scripts/Edit/Copy/ts/Copy_tr.qm
+%%DATADIR%%/scripts/Edit/Copy/ts/Copy_tr.ts
 %%DATADIR%%/scripts/Edit/Copy/ts/Copy_zh_CN.qm
 %%DATADIR%%/scripts/Edit/Copy/ts/Copy_zh_CN.ts
 %%DATADIR%%/scripts/Edit/Copy/ts/Copy_zh_TW.qm
@@ -7884,6 +8114,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Edit/CopyWithReference/ts/CopyWithReference_sl.ts
 %%DATADIR%%/scripts/Edit/CopyWithReference/ts/CopyWithReference_sv.qm
 %%DATADIR%%/scripts/Edit/CopyWithReference/ts/CopyWithReference_sv.ts
+%%DATADIR%%/scripts/Edit/CopyWithReference/ts/CopyWithReference_tr.qm
+%%DATADIR%%/scripts/Edit/CopyWithReference/ts/CopyWithReference_tr.ts
 %%DATADIR%%/scripts/Edit/CopyWithReference/ts/CopyWithReference_zh_CN.qm
 %%DATADIR%%/scripts/Edit/CopyWithReference/ts/CopyWithReference_zh_CN.ts
 %%DATADIR%%/scripts/Edit/CopyWithReference/ts/CopyWithReference_zh_TW.qm
@@ -7948,6 +8180,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Edit/Cut/ts/Cut_sl.ts
 %%DATADIR%%/scripts/Edit/Cut/ts/Cut_sv.qm
 %%DATADIR%%/scripts/Edit/Cut/ts/Cut_sv.ts
+%%DATADIR%%/scripts/Edit/Cut/ts/Cut_tr.qm
+%%DATADIR%%/scripts/Edit/Cut/ts/Cut_tr.ts
 %%DATADIR%%/scripts/Edit/Cut/ts/Cut_zh_CN.qm
 %%DATADIR%%/scripts/Edit/Cut/ts/Cut_zh_CN.ts
 %%DATADIR%%/scripts/Edit/Cut/ts/Cut_zh_TW.qm
@@ -8012,6 +8246,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Edit/CutWithReference/ts/CutWithReference_sl.ts
 %%DATADIR%%/scripts/Edit/CutWithReference/ts/CutWithReference_sv.qm
 %%DATADIR%%/scripts/Edit/CutWithReference/ts/CutWithReference_sv.ts
+%%DATADIR%%/scripts/Edit/CutWithReference/ts/CutWithReference_tr.qm
+%%DATADIR%%/scripts/Edit/CutWithReference/ts/CutWithReference_tr.ts
 %%DATADIR%%/scripts/Edit/CutWithReference/ts/CutWithReference_zh_CN.qm
 %%DATADIR%%/scripts/Edit/CutWithReference/ts/CutWithReference_zh_CN.ts
 %%DATADIR%%/scripts/Edit/CutWithReference/ts/CutWithReference_zh_TW.qm
@@ -8075,6 +8311,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Edit/Delete/ts/Delete_sl.ts
 %%DATADIR%%/scripts/Edit/Delete/ts/Delete_sv.qm
 %%DATADIR%%/scripts/Edit/Delete/ts/Delete_sv.ts
+%%DATADIR%%/scripts/Edit/Delete/ts/Delete_tr.qm
+%%DATADIR%%/scripts/Edit/Delete/ts/Delete_tr.ts
 %%DATADIR%%/scripts/Edit/Delete/ts/Delete_zh_CN.qm
 %%DATADIR%%/scripts/Edit/Delete/ts/Delete_zh_CN.ts
 %%DATADIR%%/scripts/Edit/Delete/ts/Delete_zh_TW.qm
@@ -8123,6 +8361,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Edit/DrawingPreferences/ColorSettings/ts/ColorSettings_sl.ts
 %%DATADIR%%/scripts/Edit/DrawingPreferences/ColorSettings/ts/ColorSettings_sv.qm
 %%DATADIR%%/scripts/Edit/DrawingPreferences/ColorSettings/ts/ColorSettings_sv.ts
+%%DATADIR%%/scripts/Edit/DrawingPreferences/ColorSettings/ts/ColorSettings_tr.qm
+%%DATADIR%%/scripts/Edit/DrawingPreferences/ColorSettings/ts/ColorSettings_tr.ts
 %%DATADIR%%/scripts/Edit/DrawingPreferences/ColorSettings/ts/ColorSettings_zh_CN.qm
 %%DATADIR%%/scripts/Edit/DrawingPreferences/ColorSettings/ts/ColorSettings_zh_CN.ts
 %%DATADIR%%/scripts/Edit/DrawingPreferences/ColorSettings/ts/ColorSettings_zh_TW.qm
@@ -8165,6 +8405,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Edit/DrawingPreferences/DimensionSettings/ts/DimensionSettings_sl.ts
 %%DATADIR%%/scripts/Edit/DrawingPreferences/DimensionSettings/ts/DimensionSettings_sv.qm
 %%DATADIR%%/scripts/Edit/DrawingPreferences/DimensionSettings/ts/DimensionSettings_sv.ts
+%%DATADIR%%/scripts/Edit/DrawingPreferences/DimensionSettings/ts/DimensionSettings_tr.qm
+%%DATADIR%%/scripts/Edit/DrawingPreferences/DimensionSettings/ts/DimensionSettings_tr.ts
 %%DATADIR%%/scripts/Edit/DrawingPreferences/DimensionSettings/ts/DimensionSettings_zh_CN.qm
 %%DATADIR%%/scripts/Edit/DrawingPreferences/DimensionSettings/ts/DimensionSettings_zh_CN.ts
 %%DATADIR%%/scripts/Edit/DrawingPreferences/DimensionSettings/ts/DimensionSettings_zh_TW.qm
@@ -8211,6 +8453,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Edit/DrawingPreferences/GridSettings/ts/GridSettings_sl.ts
 %%DATADIR%%/scripts/Edit/DrawingPreferences/GridSettings/ts/GridSettings_sv.qm
 %%DATADIR%%/scripts/Edit/DrawingPreferences/GridSettings/ts/GridSettings_sv.ts
+%%DATADIR%%/scripts/Edit/DrawingPreferences/GridSettings/ts/GridSettings_tr.qm
+%%DATADIR%%/scripts/Edit/DrawingPreferences/GridSettings/ts/GridSettings_tr.ts
 %%DATADIR%%/scripts/Edit/DrawingPreferences/GridSettings/ts/GridSettings_zh_CN.qm
 %%DATADIR%%/scripts/Edit/DrawingPreferences/GridSettings/ts/GridSettings_zh_CN.ts
 %%DATADIR%%/scripts/Edit/DrawingPreferences/GridSettings/ts/GridSettings_zh_TW.qm
@@ -8253,6 +8497,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Edit/DrawingPreferences/LinetypeSettings/ts/LinetypeSettings_sl.ts
 %%DATADIR%%/scripts/Edit/DrawingPreferences/LinetypeSettings/ts/LinetypeSettings_sv.qm
 %%DATADIR%%/scripts/Edit/DrawingPreferences/LinetypeSettings/ts/LinetypeSettings_sv.ts
+%%DATADIR%%/scripts/Edit/DrawingPreferences/LinetypeSettings/ts/LinetypeSettings_tr.qm
+%%DATADIR%%/scripts/Edit/DrawingPreferences/LinetypeSettings/ts/LinetypeSettings_tr.ts
 %%DATADIR%%/scripts/Edit/DrawingPreferences/LinetypeSettings/ts/LinetypeSettings_zh_CN.qm
 %%DATADIR%%/scripts/Edit/DrawingPreferences/LinetypeSettings/ts/LinetypeSettings_zh_CN.ts
 %%DATADIR%%/scripts/Edit/DrawingPreferences/LinetypeSettings/ts/LinetypeSettings_zh_TW.qm
@@ -8295,6 +8541,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Edit/DrawingPreferences/PageSettings/ts/PageSettings_sl.ts
 %%DATADIR%%/scripts/Edit/DrawingPreferences/PageSettings/ts/PageSettings_sv.qm
 %%DATADIR%%/scripts/Edit/DrawingPreferences/PageSettings/ts/PageSettings_sv.ts
+%%DATADIR%%/scripts/Edit/DrawingPreferences/PageSettings/ts/PageSettings_tr.qm
+%%DATADIR%%/scripts/Edit/DrawingPreferences/PageSettings/ts/PageSettings_tr.ts
 %%DATADIR%%/scripts/Edit/DrawingPreferences/PageSettings/ts/PageSettings_zh_CN.qm
 %%DATADIR%%/scripts/Edit/DrawingPreferences/PageSettings/ts/PageSettings_zh_CN.ts
 %%DATADIR%%/scripts/Edit/DrawingPreferences/PageSettings/ts/PageSettings_zh_TW.qm
@@ -8358,6 +8606,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Edit/DrawingPreferences/PointDisplaySettings/ts/PointDisplaySettings_sl.ts
 %%DATADIR%%/scripts/Edit/DrawingPreferences/PointDisplaySettings/ts/PointDisplaySettings_sv.qm
 %%DATADIR%%/scripts/Edit/DrawingPreferences/PointDisplaySettings/ts/PointDisplaySettings_sv.ts
+%%DATADIR%%/scripts/Edit/DrawingPreferences/PointDisplaySettings/ts/PointDisplaySettings_tr.qm
+%%DATADIR%%/scripts/Edit/DrawingPreferences/PointDisplaySettings/ts/PointDisplaySettings_tr.ts
 %%DATADIR%%/scripts/Edit/DrawingPreferences/PointDisplaySettings/ts/PointDisplaySettings_zh_CN.qm
 %%DATADIR%%/scripts/Edit/DrawingPreferences/PointDisplaySettings/ts/PointDisplaySettings_zh_CN.ts
 %%DATADIR%%/scripts/Edit/DrawingPreferences/PointDisplaySettings/ts/PointDisplaySettings_zh_TW.qm
@@ -8400,6 +8650,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Edit/DrawingPreferences/UnitSettings/ts/UnitSettings_sl.ts
 %%DATADIR%%/scripts/Edit/DrawingPreferences/UnitSettings/ts/UnitSettings_sv.qm
 %%DATADIR%%/scripts/Edit/DrawingPreferences/UnitSettings/ts/UnitSettings_sv.ts
+%%DATADIR%%/scripts/Edit/DrawingPreferences/UnitSettings/ts/UnitSettings_tr.qm
+%%DATADIR%%/scripts/Edit/DrawingPreferences/UnitSettings/ts/UnitSettings_tr.ts
 %%DATADIR%%/scripts/Edit/DrawingPreferences/UnitSettings/ts/UnitSettings_zh_CN.qm
 %%DATADIR%%/scripts/Edit/DrawingPreferences/UnitSettings/ts/UnitSettings_zh_CN.ts
 %%DATADIR%%/scripts/Edit/DrawingPreferences/UnitSettings/ts/UnitSettings_zh_TW.qm
@@ -8442,6 +8694,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Edit/DrawingPreferences/ViewportSettings/ts/ViewportSettings_sl.ts
 %%DATADIR%%/scripts/Edit/DrawingPreferences/ViewportSettings/ts/ViewportSettings_sv.qm
 %%DATADIR%%/scripts/Edit/DrawingPreferences/ViewportSettings/ts/ViewportSettings_sv.ts
+%%DATADIR%%/scripts/Edit/DrawingPreferences/ViewportSettings/ts/ViewportSettings_tr.qm
+%%DATADIR%%/scripts/Edit/DrawingPreferences/ViewportSettings/ts/ViewportSettings_tr.ts
 %%DATADIR%%/scripts/Edit/DrawingPreferences/ViewportSettings/ts/ViewportSettings_zh_CN.qm
 %%DATADIR%%/scripts/Edit/DrawingPreferences/ViewportSettings/ts/ViewportSettings_zh_CN.ts
 %%DATADIR%%/scripts/Edit/DrawingPreferences/ViewportSettings/ts/ViewportSettings_zh_TW.qm
@@ -8494,6 +8748,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Edit/DrawingPreferences/ts/DrawingPreferences_sl.ts
 %%DATADIR%%/scripts/Edit/DrawingPreferences/ts/DrawingPreferences_sv.qm
 %%DATADIR%%/scripts/Edit/DrawingPreferences/ts/DrawingPreferences_sv.ts
+%%DATADIR%%/scripts/Edit/DrawingPreferences/ts/DrawingPreferences_tr.qm
+%%DATADIR%%/scripts/Edit/DrawingPreferences/ts/DrawingPreferences_tr.ts
 %%DATADIR%%/scripts/Edit/DrawingPreferences/ts/DrawingPreferences_zh_CN.qm
 %%DATADIR%%/scripts/Edit/DrawingPreferences/ts/DrawingPreferences_zh_CN.ts
 %%DATADIR%%/scripts/Edit/DrawingPreferences/ts/DrawingPreferences_zh_TW.qm
@@ -8564,6 +8820,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Edit/Duplicate/ts/Duplicate_sl.ts
 %%DATADIR%%/scripts/Edit/Duplicate/ts/Duplicate_sv.qm
 %%DATADIR%%/scripts/Edit/Duplicate/ts/Duplicate_sv.ts
+%%DATADIR%%/scripts/Edit/Duplicate/ts/Duplicate_tr.qm
+%%DATADIR%%/scripts/Edit/Duplicate/ts/Duplicate_tr.ts
 %%DATADIR%%/scripts/Edit/Duplicate/ts/Duplicate_zh_CN.qm
 %%DATADIR%%/scripts/Edit/Duplicate/ts/Duplicate_zh_CN.ts
 %%DATADIR%%/scripts/Edit/Duplicate/ts/Duplicate_zh_TW.qm
@@ -8626,6 +8884,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Edit/Esc/ts/Esc_sl.ts
 %%DATADIR%%/scripts/Edit/Esc/ts/Esc_sv.qm
 %%DATADIR%%/scripts/Edit/Esc/ts/Esc_sv.ts
+%%DATADIR%%/scripts/Edit/Esc/ts/Esc_tr.qm
+%%DATADIR%%/scripts/Edit/Esc/ts/Esc_tr.ts
 %%DATADIR%%/scripts/Edit/Esc/ts/Esc_zh_CN.qm
 %%DATADIR%%/scripts/Edit/Esc/ts/Esc_zh_CN.ts
 %%DATADIR%%/scripts/Edit/Esc/ts/Esc_zh_TW.qm
@@ -8713,6 +8973,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Edit/Paste/ts/Paste_sl.ts
 %%DATADIR%%/scripts/Edit/Paste/ts/Paste_sv.qm
 %%DATADIR%%/scripts/Edit/Paste/ts/Paste_sv.ts
+%%DATADIR%%/scripts/Edit/Paste/ts/Paste_tr.qm
+%%DATADIR%%/scripts/Edit/Paste/ts/Paste_tr.ts
 %%DATADIR%%/scripts/Edit/Paste/ts/Paste_zh_CN.qm
 %%DATADIR%%/scripts/Edit/Paste/ts/Paste_zh_CN.ts
 %%DATADIR%%/scripts/Edit/Paste/ts/Paste_zh_TW.qm
@@ -8774,6 +9036,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Edit/Redo/ts/Redo_sl.ts
 %%DATADIR%%/scripts/Edit/Redo/ts/Redo_sv.qm
 %%DATADIR%%/scripts/Edit/Redo/ts/Redo_sv.ts
+%%DATADIR%%/scripts/Edit/Redo/ts/Redo_tr.qm
+%%DATADIR%%/scripts/Edit/Redo/ts/Redo_tr.ts
 %%DATADIR%%/scripts/Edit/Redo/ts/Redo_zh_CN.qm
 %%DATADIR%%/scripts/Edit/Redo/ts/Redo_zh_CN.ts
 %%DATADIR%%/scripts/Edit/Redo/ts/Redo_zh_TW.qm
@@ -8835,6 +9099,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Edit/Undo/ts/Undo_sl.ts
 %%DATADIR%%/scripts/Edit/Undo/ts/Undo_sv.qm
 %%DATADIR%%/scripts/Edit/Undo/ts/Undo_sv.ts
+%%DATADIR%%/scripts/Edit/Undo/ts/Undo_tr.qm
+%%DATADIR%%/scripts/Edit/Undo/ts/Undo_tr.ts
 %%DATADIR%%/scripts/Edit/Undo/ts/Undo_zh_CN.qm
 %%DATADIR%%/scripts/Edit/Undo/ts/Undo_zh_CN.ts
 %%DATADIR%%/scripts/Edit/Undo/ts/Undo_zh_TW.qm
@@ -8885,6 +9151,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Edit/ts/Edit_sl.ts
 %%DATADIR%%/scripts/Edit/ts/Edit_sv.qm
 %%DATADIR%%/scripts/Edit/ts/Edit_sv.ts
+%%DATADIR%%/scripts/Edit/ts/Edit_tr.qm
+%%DATADIR%%/scripts/Edit/ts/Edit_tr.ts
 %%DATADIR%%/scripts/Edit/ts/Edit_zh_CN.qm
 %%DATADIR%%/scripts/Edit/ts/Edit_zh_CN.ts
 %%DATADIR%%/scripts/Edit/ts/Edit_zh_TW.qm
@@ -8931,6 +9199,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/File/AutoSave/ts/AutoSave_sl.ts
 %%DATADIR%%/scripts/File/AutoSave/ts/AutoSave_sv.qm
 %%DATADIR%%/scripts/File/AutoSave/ts/AutoSave_sv.ts
+%%DATADIR%%/scripts/File/AutoSave/ts/AutoSave_tr.qm
+%%DATADIR%%/scripts/File/AutoSave/ts/AutoSave_tr.ts
 %%DATADIR%%/scripts/File/AutoSave/ts/AutoSave_zh_CN.qm
 %%DATADIR%%/scripts/File/AutoSave/ts/AutoSave_zh_CN.ts
 %%DATADIR%%/scripts/File/AutoSave/ts/AutoSave_zh_TW.qm
@@ -9003,6 +9273,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/File/BitmapExport/ts/BitmapExport_sl.ts
 %%DATADIR%%/scripts/File/BitmapExport/ts/BitmapExport_sv.qm
 %%DATADIR%%/scripts/File/BitmapExport/ts/BitmapExport_sv.ts
+%%DATADIR%%/scripts/File/BitmapExport/ts/BitmapExport_tr.qm
+%%DATADIR%%/scripts/File/BitmapExport/ts/BitmapExport_tr.ts
 %%DATADIR%%/scripts/File/BitmapExport/ts/BitmapExport_zh_CN.qm
 %%DATADIR%%/scripts/File/BitmapExport/ts/BitmapExport_zh_CN.ts
 %%DATADIR%%/scripts/File/BitmapExport/ts/BitmapExport_zh_TW.qm
@@ -9064,6 +9336,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/File/CloseFile/ts/CloseFile_sl.ts
 %%DATADIR%%/scripts/File/CloseFile/ts/CloseFile_sv.qm
 %%DATADIR%%/scripts/File/CloseFile/ts/CloseFile_sv.ts
+%%DATADIR%%/scripts/File/CloseFile/ts/CloseFile_tr.qm
+%%DATADIR%%/scripts/File/CloseFile/ts/CloseFile_tr.ts
 %%DATADIR%%/scripts/File/CloseFile/ts/CloseFile_zh_CN.qm
 %%DATADIR%%/scripts/File/CloseFile/ts/CloseFile_zh_CN.ts
 %%DATADIR%%/scripts/File/CloseFile/ts/CloseFile_zh_TW.qm
@@ -9121,6 +9395,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/File/ImportFile/ts/ImportFile_sl.ts
 %%DATADIR%%/scripts/File/ImportFile/ts/ImportFile_sv.qm
 %%DATADIR%%/scripts/File/ImportFile/ts/ImportFile_sv.ts
+%%DATADIR%%/scripts/File/ImportFile/ts/ImportFile_tr.qm
+%%DATADIR%%/scripts/File/ImportFile/ts/ImportFile_tr.ts
 %%DATADIR%%/scripts/File/ImportFile/ts/ImportFile_zh_CN.qm
 %%DATADIR%%/scripts/File/ImportFile/ts/ImportFile_zh_CN.ts
 %%DATADIR%%/scripts/File/ImportFile/ts/ImportFile_zh_TW.qm
@@ -9187,6 +9463,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/File/NewFile/ts/NewFile_sl.ts
 %%DATADIR%%/scripts/File/NewFile/ts/NewFile_sv.qm
 %%DATADIR%%/scripts/File/NewFile/ts/NewFile_sv.ts
+%%DATADIR%%/scripts/File/NewFile/ts/NewFile_tr.qm
+%%DATADIR%%/scripts/File/NewFile/ts/NewFile_tr.ts
 %%DATADIR%%/scripts/File/NewFile/ts/NewFile_zh_CN.qm
 %%DATADIR%%/scripts/File/NewFile/ts/NewFile_zh_CN.ts
 %%DATADIR%%/scripts/File/NewFile/ts/NewFile_zh_TW.qm
@@ -9248,6 +9526,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/File/OpenFile/ts/OpenFile_sl.ts
 %%DATADIR%%/scripts/File/OpenFile/ts/OpenFile_sv.qm
 %%DATADIR%%/scripts/File/OpenFile/ts/OpenFile_sv.ts
+%%DATADIR%%/scripts/File/OpenFile/ts/OpenFile_tr.qm
+%%DATADIR%%/scripts/File/OpenFile/ts/OpenFile_tr.ts
 %%DATADIR%%/scripts/File/OpenFile/ts/OpenFile_zh_CN.qm
 %%DATADIR%%/scripts/File/OpenFile/ts/OpenFile_zh_CN.ts
 %%DATADIR%%/scripts/File/OpenFile/ts/OpenFile_zh_TW.qm
@@ -9308,6 +9588,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/File/PdfExport/ts/PdfExport_sl.ts
 %%DATADIR%%/scripts/File/PdfExport/ts/PdfExport_sv.qm
 %%DATADIR%%/scripts/File/PdfExport/ts/PdfExport_sv.ts
+%%DATADIR%%/scripts/File/PdfExport/ts/PdfExport_tr.qm
+%%DATADIR%%/scripts/File/PdfExport/ts/PdfExport_tr.ts
 %%DATADIR%%/scripts/File/PdfExport/ts/PdfExport_zh_CN.qm
 %%DATADIR%%/scripts/File/PdfExport/ts/PdfExport_zh_CN.ts
 %%DATADIR%%/scripts/File/PdfExport/ts/PdfExport_zh_TW.qm
@@ -9367,6 +9649,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/File/Print/ts/Print_sl.ts
 %%DATADIR%%/scripts/File/Print/ts/Print_sv.qm
 %%DATADIR%%/scripts/File/Print/ts/Print_sv.ts
+%%DATADIR%%/scripts/File/Print/ts/Print_tr.qm
+%%DATADIR%%/scripts/File/Print/ts/Print_tr.ts
 %%DATADIR%%/scripts/File/Print/ts/Print_zh_CN.qm
 %%DATADIR%%/scripts/File/Print/ts/Print_zh_CN.ts
 %%DATADIR%%/scripts/File/Print/ts/Print_zh_TW.qm
@@ -9428,6 +9712,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/File/PrintCurrentView/ts/PrintCurrentView_sl.ts
 %%DATADIR%%/scripts/File/PrintCurrentView/ts/PrintCurrentView_sv.qm
 %%DATADIR%%/scripts/File/PrintCurrentView/ts/PrintCurrentView_sv.ts
+%%DATADIR%%/scripts/File/PrintCurrentView/ts/PrintCurrentView_tr.qm
+%%DATADIR%%/scripts/File/PrintCurrentView/ts/PrintCurrentView_tr.ts
 %%DATADIR%%/scripts/File/PrintCurrentView/ts/PrintCurrentView_zh_CN.qm
 %%DATADIR%%/scripts/File/PrintCurrentView/ts/PrintCurrentView_zh_CN.ts
 %%DATADIR%%/scripts/File/PrintCurrentView/ts/PrintCurrentView_zh_TW.qm
@@ -9518,6 +9804,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/File/PrintPreview/ts/PrintPreview_sl.ts
 %%DATADIR%%/scripts/File/PrintPreview/ts/PrintPreview_sv.qm
 %%DATADIR%%/scripts/File/PrintPreview/ts/PrintPreview_sv.ts
+%%DATADIR%%/scripts/File/PrintPreview/ts/PrintPreview_tr.qm
+%%DATADIR%%/scripts/File/PrintPreview/ts/PrintPreview_tr.ts
 %%DATADIR%%/scripts/File/PrintPreview/ts/PrintPreview_zh_CN.qm
 %%DATADIR%%/scripts/File/PrintPreview/ts/PrintPreview_zh_CN.ts
 %%DATADIR%%/scripts/File/PrintPreview/ts/PrintPreview_zh_TW.qm
@@ -9576,6 +9864,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/File/Quit/ts/Quit_sl.ts
 %%DATADIR%%/scripts/File/Quit/ts/Quit_sv.qm
 %%DATADIR%%/scripts/File/Quit/ts/Quit_sv.ts
+%%DATADIR%%/scripts/File/Quit/ts/Quit_tr.qm
+%%DATADIR%%/scripts/File/Quit/ts/Quit_tr.ts
 %%DATADIR%%/scripts/File/Quit/ts/Quit_zh_CN.qm
 %%DATADIR%%/scripts/File/Quit/ts/Quit_zh_CN.ts
 %%DATADIR%%/scripts/File/Quit/ts/Quit_zh_TW.qm
@@ -9618,6 +9908,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/File/RecentFiles/ts/RecentFiles_sl.ts
 %%DATADIR%%/scripts/File/RecentFiles/ts/RecentFiles_sv.qm
 %%DATADIR%%/scripts/File/RecentFiles/ts/RecentFiles_sv.ts
+%%DATADIR%%/scripts/File/RecentFiles/ts/RecentFiles_tr.qm
+%%DATADIR%%/scripts/File/RecentFiles/ts/RecentFiles_tr.ts
 %%DATADIR%%/scripts/File/RecentFiles/ts/RecentFiles_zh_CN.qm
 %%DATADIR%%/scripts/File/RecentFiles/ts/RecentFiles_zh_CN.ts
 %%DATADIR%%/scripts/File/RecentFiles/ts/RecentFiles_zh_TW.qm
@@ -9678,6 +9970,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/File/Save/ts/Save_sl.ts
 %%DATADIR%%/scripts/File/Save/ts/Save_sv.qm
 %%DATADIR%%/scripts/File/Save/ts/Save_sv.ts
+%%DATADIR%%/scripts/File/Save/ts/Save_tr.qm
+%%DATADIR%%/scripts/File/Save/ts/Save_tr.ts
 %%DATADIR%%/scripts/File/Save/ts/Save_zh_CN.qm
 %%DATADIR%%/scripts/File/Save/ts/Save_zh_CN.ts
 %%DATADIR%%/scripts/File/Save/ts/Save_zh_TW.qm
@@ -9739,6 +10033,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/File/SaveAs/ts/SaveAs_sl.ts
 %%DATADIR%%/scripts/File/SaveAs/ts/SaveAs_sv.qm
 %%DATADIR%%/scripts/File/SaveAs/ts/SaveAs_sv.ts
+%%DATADIR%%/scripts/File/SaveAs/ts/SaveAs_tr.qm
+%%DATADIR%%/scripts/File/SaveAs/ts/SaveAs_tr.ts
 %%DATADIR%%/scripts/File/SaveAs/ts/SaveAs_zh_CN.qm
 %%DATADIR%%/scripts/File/SaveAs/ts/SaveAs_zh_CN.ts
 %%DATADIR%%/scripts/File/SaveAs/ts/SaveAs_zh_TW.qm
@@ -9802,6 +10098,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/File/SvgImport/ts/SvgImport_sl.ts
 %%DATADIR%%/scripts/File/SvgImport/ts/SvgImport_sv.qm
 %%DATADIR%%/scripts/File/SvgImport/ts/SvgImport_sv.ts
+%%DATADIR%%/scripts/File/SvgImport/ts/SvgImport_tr.qm
+%%DATADIR%%/scripts/File/SvgImport/ts/SvgImport_tr.ts
 %%DATADIR%%/scripts/File/SvgImport/ts/SvgImport_zh_CN.qm
 %%DATADIR%%/scripts/File/SvgImport/ts/SvgImport_zh_CN.ts
 %%DATADIR%%/scripts/File/SvgImport/ts/SvgImport_zh_TW.qm
@@ -9849,6 +10147,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/File/ts/File_sl.ts
 %%DATADIR%%/scripts/File/ts/File_sv.qm
 %%DATADIR%%/scripts/File/ts/File_sv.ts
+%%DATADIR%%/scripts/File/ts/File_tr.qm
+%%DATADIR%%/scripts/File/ts/File_tr.ts
 %%DATADIR%%/scripts/File/ts/File_zh_CN.qm
 %%DATADIR%%/scripts/File/ts/File_zh_CN.ts
 %%DATADIR%%/scripts/File/ts/File_zh_TW.qm
@@ -9905,6 +10205,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Help/About/ts/About_sl.ts
 %%DATADIR%%/scripts/Help/About/ts/About_sv.qm
 %%DATADIR%%/scripts/Help/About/ts/About_sv.ts
+%%DATADIR%%/scripts/Help/About/ts/About_tr.qm
+%%DATADIR%%/scripts/Help/About/ts/About_tr.ts
 %%DATADIR%%/scripts/Help/About/ts/About_zh_CN.qm
 %%DATADIR%%/scripts/Help/About/ts/About_zh_CN.ts
 %%DATADIR%%/scripts/Help/About/ts/About_zh_TW.qm
@@ -9948,6 +10250,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Help/BrowseUserManual/ts/BrowseUserManual_sl.ts
 %%DATADIR%%/scripts/Help/BrowseUserManual/ts/BrowseUserManual_sv.qm
 %%DATADIR%%/scripts/Help/BrowseUserManual/ts/BrowseUserManual_sv.ts
+%%DATADIR%%/scripts/Help/BrowseUserManual/ts/BrowseUserManual_tr.qm
+%%DATADIR%%/scripts/Help/BrowseUserManual/ts/BrowseUserManual_tr.ts
 %%DATADIR%%/scripts/Help/BrowseUserManual/ts/BrowseUserManual_zh_CN.qm
 %%DATADIR%%/scripts/Help/BrowseUserManual/ts/BrowseUserManual_zh_CN.ts
 %%DATADIR%%/scripts/Help/BrowseUserManual/ts/BrowseUserManual_zh_TW.qm
@@ -10000,6 +10304,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Help/CheckForUpdates/ts/CheckForUpdates_sl.ts
 %%DATADIR%%/scripts/Help/CheckForUpdates/ts/CheckForUpdates_sv.qm
 %%DATADIR%%/scripts/Help/CheckForUpdates/ts/CheckForUpdates_sv.ts
+%%DATADIR%%/scripts/Help/CheckForUpdates/ts/CheckForUpdates_tr.qm
+%%DATADIR%%/scripts/Help/CheckForUpdates/ts/CheckForUpdates_tr.ts
 %%DATADIR%%/scripts/Help/CheckForUpdates/ts/CheckForUpdates_zh_CN.qm
 %%DATADIR%%/scripts/Help/CheckForUpdates/ts/CheckForUpdates_zh_CN.ts
 %%DATADIR%%/scripts/Help/CheckForUpdates/ts/CheckForUpdates_zh_TW.qm
@@ -10052,6 +10358,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Help/FAQ/ts/FAQ_sl.ts
 %%DATADIR%%/scripts/Help/FAQ/ts/FAQ_sv.qm
 %%DATADIR%%/scripts/Help/FAQ/ts/FAQ_sv.ts
+%%DATADIR%%/scripts/Help/FAQ/ts/FAQ_tr.qm
+%%DATADIR%%/scripts/Help/FAQ/ts/FAQ_tr.ts
 %%DATADIR%%/scripts/Help/FAQ/ts/FAQ_zh_CN.qm
 %%DATADIR%%/scripts/Help/FAQ/ts/FAQ_zh_CN.ts
 %%DATADIR%%/scripts/Help/FAQ/ts/FAQ_zh_TW.qm
@@ -10104,6 +10412,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Help/Forum/ts/Forum_sl.ts
 %%DATADIR%%/scripts/Help/Forum/ts/Forum_sv.qm
 %%DATADIR%%/scripts/Help/Forum/ts/Forum_sv.ts
+%%DATADIR%%/scripts/Help/Forum/ts/Forum_tr.qm
+%%DATADIR%%/scripts/Help/Forum/ts/Forum_tr.ts
 %%DATADIR%%/scripts/Help/Forum/ts/Forum_zh_CN.qm
 %%DATADIR%%/scripts/Help/Forum/ts/Forum_zh_CN.ts
 %%DATADIR%%/scripts/Help/Forum/ts/Forum_zh_TW.qm
@@ -10158,6 +10468,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Help/ReportBug/ts/ReportBug_sl.ts
 %%DATADIR%%/scripts/Help/ReportBug/ts/ReportBug_sv.qm
 %%DATADIR%%/scripts/Help/ReportBug/ts/ReportBug_sv.ts
+%%DATADIR%%/scripts/Help/ReportBug/ts/ReportBug_tr.qm
+%%DATADIR%%/scripts/Help/ReportBug/ts/ReportBug_tr.ts
 %%DATADIR%%/scripts/Help/ReportBug/ts/ReportBug_zh_CN.qm
 %%DATADIR%%/scripts/Help/ReportBug/ts/ReportBug_zh_CN.ts
 %%DATADIR%%/scripts/Help/ReportBug/ts/ReportBug_zh_TW.qm
@@ -10202,6 +10514,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Help/ReportTranslationError/ts/ReportTranslationError_sl.ts
 %%DATADIR%%/scripts/Help/ReportTranslationError/ts/ReportTranslationError_sv.qm
 %%DATADIR%%/scripts/Help/ReportTranslationError/ts/ReportTranslationError_sv.ts
+%%DATADIR%%/scripts/Help/ReportTranslationError/ts/ReportTranslationError_tr.qm
+%%DATADIR%%/scripts/Help/ReportTranslationError/ts/ReportTranslationError_tr.ts
 %%DATADIR%%/scripts/Help/ReportTranslationError/ts/ReportTranslationError_zh_CN.qm
 %%DATADIR%%/scripts/Help/ReportTranslationError/ts/ReportTranslationError_zh_CN.ts
 %%DATADIR%%/scripts/Help/ReportTranslationError/ts/ReportTranslationError_zh_TW.qm
@@ -10247,6 +10561,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Help/ShowReadme/ts/ShowReadme_sl.ts
 %%DATADIR%%/scripts/Help/ShowReadme/ts/ShowReadme_sv.qm
 %%DATADIR%%/scripts/Help/ShowReadme/ts/ShowReadme_sv.ts
+%%DATADIR%%/scripts/Help/ShowReadme/ts/ShowReadme_tr.qm
+%%DATADIR%%/scripts/Help/ShowReadme/ts/ShowReadme_tr.ts
 %%DATADIR%%/scripts/Help/ShowReadme/ts/ShowReadme_zh_CN.qm
 %%DATADIR%%/scripts/Help/ShowReadme/ts/ShowReadme_zh_CN.ts
 %%DATADIR%%/scripts/Help/ShowReadme/ts/ShowReadme_zh_TW.qm
@@ -10299,6 +10615,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Help/Website/ts/Website_sl.ts
 %%DATADIR%%/scripts/Help/Website/ts/Website_sv.qm
 %%DATADIR%%/scripts/Help/Website/ts/Website_sv.ts
+%%DATADIR%%/scripts/Help/Website/ts/Website_tr.qm
+%%DATADIR%%/scripts/Help/Website/ts/Website_tr.ts
 %%DATADIR%%/scripts/Help/Website/ts/Website_zh_CN.qm
 %%DATADIR%%/scripts/Help/Website/ts/Website_zh_CN.ts
 %%DATADIR%%/scripts/Help/Website/ts/Website_zh_TW.qm
@@ -10340,6 +10658,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Help/ts/Help_sl.ts
 %%DATADIR%%/scripts/Help/ts/Help_sv.qm
 %%DATADIR%%/scripts/Help/ts/Help_sv.ts
+%%DATADIR%%/scripts/Help/ts/Help_tr.qm
+%%DATADIR%%/scripts/Help/ts/Help_tr.ts
 %%DATADIR%%/scripts/Help/ts/Help_zh_CN.qm
 %%DATADIR%%/scripts/Help/ts/Help_zh_CN.ts
 %%DATADIR%%/scripts/Help/ts/Help_zh_TW.qm
@@ -10414,6 +10734,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Information/InfoAngle/ts/InfoAngle_sl.ts
 %%DATADIR%%/scripts/Information/InfoAngle/ts/InfoAngle_sv.qm
 %%DATADIR%%/scripts/Information/InfoAngle/ts/InfoAngle_sv.ts
+%%DATADIR%%/scripts/Information/InfoAngle/ts/InfoAngle_tr.qm
+%%DATADIR%%/scripts/Information/InfoAngle/ts/InfoAngle_tr.ts
 %%DATADIR%%/scripts/Information/InfoAngle/ts/InfoAngle_zh_CN.qm
 %%DATADIR%%/scripts/Information/InfoAngle/ts/InfoAngle_zh_CN.ts
 %%DATADIR%%/scripts/Information/InfoAngle/ts/InfoAngle_zh_TW.qm
@@ -10481,6 +10803,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Information/InfoArcCircleArea/ts/InfoArcCircleArea_sl.ts
 %%DATADIR%%/scripts/Information/InfoArcCircleArea/ts/InfoArcCircleArea_sv.qm
 %%DATADIR%%/scripts/Information/InfoArcCircleArea/ts/InfoArcCircleArea_sv.ts
+%%DATADIR%%/scripts/Information/InfoArcCircleArea/ts/InfoArcCircleArea_tr.qm
+%%DATADIR%%/scripts/Information/InfoArcCircleArea/ts/InfoArcCircleArea_tr.ts
 %%DATADIR%%/scripts/Information/InfoArcCircleArea/ts/InfoArcCircleArea_zh_CN.qm
 %%DATADIR%%/scripts/Information/InfoArcCircleArea/ts/InfoArcCircleArea_zh_CN.ts
 %%DATADIR%%/scripts/Information/InfoArcCircleArea/ts/InfoArcCircleArea_zh_TW.qm
@@ -10557,6 +10881,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Information/InfoArea/ts/InfoArea_sl.ts
 %%DATADIR%%/scripts/Information/InfoArea/ts/InfoArea_sv.qm
 %%DATADIR%%/scripts/Information/InfoArea/ts/InfoArea_sv.ts
+%%DATADIR%%/scripts/Information/InfoArea/ts/InfoArea_tr.qm
+%%DATADIR%%/scripts/Information/InfoArea/ts/InfoArea_tr.ts
 %%DATADIR%%/scripts/Information/InfoArea/ts/InfoArea_zh_CN.qm
 %%DATADIR%%/scripts/Information/InfoArea/ts/InfoArea_zh_CN.ts
 %%DATADIR%%/scripts/Information/InfoArea/ts/InfoArea_zh_TW.qm
@@ -10637,6 +10963,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Information/InfoDistanceEE/ts/InfoDistanceEE_sl.ts
 %%DATADIR%%/scripts/Information/InfoDistanceEE/ts/InfoDistanceEE_sv.qm
 %%DATADIR%%/scripts/Information/InfoDistanceEE/ts/InfoDistanceEE_sv.ts
+%%DATADIR%%/scripts/Information/InfoDistanceEE/ts/InfoDistanceEE_tr.qm
+%%DATADIR%%/scripts/Information/InfoDistanceEE/ts/InfoDistanceEE_tr.ts
 %%DATADIR%%/scripts/Information/InfoDistanceEE/ts/InfoDistanceEE_zh_CN.qm
 %%DATADIR%%/scripts/Information/InfoDistanceEE/ts/InfoDistanceEE_zh_CN.ts
 %%DATADIR%%/scripts/Information/InfoDistanceEE/ts/InfoDistanceEE_zh_TW.qm
@@ -10709,6 +11037,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Information/InfoDistanceEP/ts/InfoDistanceEP_sl.ts
 %%DATADIR%%/scripts/Information/InfoDistanceEP/ts/InfoDistanceEP_sv.qm
 %%DATADIR%%/scripts/Information/InfoDistanceEP/ts/InfoDistanceEP_sv.ts
+%%DATADIR%%/scripts/Information/InfoDistanceEP/ts/InfoDistanceEP_tr.qm
+%%DATADIR%%/scripts/Information/InfoDistanceEP/ts/InfoDistanceEP_tr.ts
 %%DATADIR%%/scripts/Information/InfoDistanceEP/ts/InfoDistanceEP_zh_CN.qm
 %%DATADIR%%/scripts/Information/InfoDistanceEP/ts/InfoDistanceEP_zh_CN.ts
 %%DATADIR%%/scripts/Information/InfoDistanceEP/ts/InfoDistanceEP_zh_TW.qm
@@ -10781,6 +11111,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Information/InfoDistancePP/ts/InfoDistancePP_sl.ts
 %%DATADIR%%/scripts/Information/InfoDistancePP/ts/InfoDistancePP_sv.qm
 %%DATADIR%%/scripts/Information/InfoDistancePP/ts/InfoDistancePP_sv.ts
+%%DATADIR%%/scripts/Information/InfoDistancePP/ts/InfoDistancePP_tr.qm
+%%DATADIR%%/scripts/Information/InfoDistancePP/ts/InfoDistancePP_tr.ts
 %%DATADIR%%/scripts/Information/InfoDistancePP/ts/InfoDistancePP_zh_CN.qm
 %%DATADIR%%/scripts/Information/InfoDistancePP/ts/InfoDistancePP_zh_CN.ts
 %%DATADIR%%/scripts/Information/InfoDistancePP/ts/InfoDistancePP_zh_TW.qm
@@ -10847,6 +11179,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Information/InfoPolylineArea/ts/InfoPolylineArea_sl.ts
 %%DATADIR%%/scripts/Information/InfoPolylineArea/ts/InfoPolylineArea_sv.qm
 %%DATADIR%%/scripts/Information/InfoPolylineArea/ts/InfoPolylineArea_sv.ts
+%%DATADIR%%/scripts/Information/InfoPolylineArea/ts/InfoPolylineArea_tr.qm
+%%DATADIR%%/scripts/Information/InfoPolylineArea/ts/InfoPolylineArea_tr.ts
 %%DATADIR%%/scripts/Information/InfoPolylineArea/ts/InfoPolylineArea_zh_CN.qm
 %%DATADIR%%/scripts/Information/InfoPolylineArea/ts/InfoPolylineArea_zh_CN.ts
 %%DATADIR%%/scripts/Information/InfoPolylineArea/ts/InfoPolylineArea_zh_TW.qm
@@ -10908,6 +11242,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Information/InfoPosition/ts/InfoPosition_sl.ts
 %%DATADIR%%/scripts/Information/InfoPosition/ts/InfoPosition_sv.qm
 %%DATADIR%%/scripts/Information/InfoPosition/ts/InfoPosition_sv.ts
+%%DATADIR%%/scripts/Information/InfoPosition/ts/InfoPosition_tr.qm
+%%DATADIR%%/scripts/Information/InfoPosition/ts/InfoPosition_tr.ts
 %%DATADIR%%/scripts/Information/InfoPosition/ts/InfoPosition_zh_CN.qm
 %%DATADIR%%/scripts/Information/InfoPosition/ts/InfoPosition_zh_CN.ts
 %%DATADIR%%/scripts/Information/InfoPosition/ts/InfoPosition_zh_TW.qm
@@ -10966,6 +11302,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Information/InfoPositionPol/ts/InfoPositionPol_sl.ts
 %%DATADIR%%/scripts/Information/InfoPositionPol/ts/InfoPositionPol_sv.qm
 %%DATADIR%%/scripts/Information/InfoPositionPol/ts/InfoPositionPol_sv.ts
+%%DATADIR%%/scripts/Information/InfoPositionPol/ts/InfoPositionPol_tr.qm
+%%DATADIR%%/scripts/Information/InfoPositionPol/ts/InfoPositionPol_tr.ts
 %%DATADIR%%/scripts/Information/InfoPositionPol/ts/InfoPositionPol_zh_CN.qm
 %%DATADIR%%/scripts/Information/InfoPositionPol/ts/InfoPositionPol_zh_CN.ts
 %%DATADIR%%/scripts/Information/InfoPositionPol/ts/InfoPositionPol_zh_TW.qm
@@ -11024,6 +11362,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Information/InfoPositionPolRel/ts/InfoPositionPolRel_sl.ts
 %%DATADIR%%/scripts/Information/InfoPositionPolRel/ts/InfoPositionPolRel_sv.qm
 %%DATADIR%%/scripts/Information/InfoPositionPolRel/ts/InfoPositionPolRel_sv.ts
+%%DATADIR%%/scripts/Information/InfoPositionPolRel/ts/InfoPositionPolRel_tr.qm
+%%DATADIR%%/scripts/Information/InfoPositionPolRel/ts/InfoPositionPolRel_tr.ts
 %%DATADIR%%/scripts/Information/InfoPositionPolRel/ts/InfoPositionPolRel_zh_CN.qm
 %%DATADIR%%/scripts/Information/InfoPositionPolRel/ts/InfoPositionPolRel_zh_CN.ts
 %%DATADIR%%/scripts/Information/InfoPositionPolRel/ts/InfoPositionPolRel_zh_TW.qm
@@ -11082,6 +11422,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Information/InfoPositionRel/ts/InfoPositionRel_sl.ts
 %%DATADIR%%/scripts/Information/InfoPositionRel/ts/InfoPositionRel_sv.qm
 %%DATADIR%%/scripts/Information/InfoPositionRel/ts/InfoPositionRel_sv.ts
+%%DATADIR%%/scripts/Information/InfoPositionRel/ts/InfoPositionRel_tr.qm
+%%DATADIR%%/scripts/Information/InfoPositionRel/ts/InfoPositionRel_tr.ts
 %%DATADIR%%/scripts/Information/InfoPositionRel/ts/InfoPositionRel_zh_CN.qm
 %%DATADIR%%/scripts/Information/InfoPositionRel/ts/InfoPositionRel_zh_CN.ts
 %%DATADIR%%/scripts/Information/InfoPositionRel/ts/InfoPositionRel_zh_TW.qm
@@ -11138,6 +11480,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Information/ts/Information_sl.ts
 %%DATADIR%%/scripts/Information/ts/Information_sv.qm
 %%DATADIR%%/scripts/Information/ts/Information_sv.ts
+%%DATADIR%%/scripts/Information/ts/Information_tr.qm
+%%DATADIR%%/scripts/Information/ts/Information_tr.ts
 %%DATADIR%%/scripts/Information/ts/Information_zh_CN.qm
 %%DATADIR%%/scripts/Information/ts/Information_zh_CN.ts
 %%DATADIR%%/scripts/Information/ts/Information_zh_TW.qm
@@ -11207,6 +11551,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Layer/AddLayer/ts/AddLayer_sl.ts
 %%DATADIR%%/scripts/Layer/AddLayer/ts/AddLayer_sv.qm
 %%DATADIR%%/scripts/Layer/AddLayer/ts/AddLayer_sv.ts
+%%DATADIR%%/scripts/Layer/AddLayer/ts/AddLayer_tr.qm
+%%DATADIR%%/scripts/Layer/AddLayer/ts/AddLayer_tr.ts
 %%DATADIR%%/scripts/Layer/AddLayer/ts/AddLayer_zh_CN.qm
 %%DATADIR%%/scripts/Layer/AddLayer/ts/AddLayer_zh_CN.ts
 %%DATADIR%%/scripts/Layer/AddLayer/ts/AddLayer_zh_TW.qm
@@ -11265,6 +11611,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Layer/DeselectLayer/ts/DeselectLayer_sl.ts
 %%DATADIR%%/scripts/Layer/DeselectLayer/ts/DeselectLayer_sv.qm
 %%DATADIR%%/scripts/Layer/DeselectLayer/ts/DeselectLayer_sv.ts
+%%DATADIR%%/scripts/Layer/DeselectLayer/ts/DeselectLayer_tr.qm
+%%DATADIR%%/scripts/Layer/DeselectLayer/ts/DeselectLayer_tr.ts
 %%DATADIR%%/scripts/Layer/DeselectLayer/ts/DeselectLayer_zh_CN.qm
 %%DATADIR%%/scripts/Layer/DeselectLayer/ts/DeselectLayer_zh_CN.ts
 %%DATADIR%%/scripts/Layer/DeselectLayer/ts/DeselectLayer_zh_TW.qm
@@ -11325,6 +11673,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Layer/EditLayer/ts/EditLayer_sl.ts
 %%DATADIR%%/scripts/Layer/EditLayer/ts/EditLayer_sv.qm
 %%DATADIR%%/scripts/Layer/EditLayer/ts/EditLayer_sv.ts
+%%DATADIR%%/scripts/Layer/EditLayer/ts/EditLayer_tr.qm
+%%DATADIR%%/scripts/Layer/EditLayer/ts/EditLayer_tr.ts
 %%DATADIR%%/scripts/Layer/EditLayer/ts/EditLayer_zh_CN.qm
 %%DATADIR%%/scripts/Layer/EditLayer/ts/EditLayer_zh_CN.ts
 %%DATADIR%%/scripts/Layer/EditLayer/ts/EditLayer_zh_TW.qm
@@ -11386,6 +11736,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Layer/HideAllLayers/ts/HideAllLayers_sl.ts
 %%DATADIR%%/scripts/Layer/HideAllLayers/ts/HideAllLayers_sv.qm
 %%DATADIR%%/scripts/Layer/HideAllLayers/ts/HideAllLayers_sv.ts
+%%DATADIR%%/scripts/Layer/HideAllLayers/ts/HideAllLayers_tr.qm
+%%DATADIR%%/scripts/Layer/HideAllLayers/ts/HideAllLayers_tr.ts
 %%DATADIR%%/scripts/Layer/HideAllLayers/ts/HideAllLayers_zh_CN.qm
 %%DATADIR%%/scripts/Layer/HideAllLayers/ts/HideAllLayers_zh_CN.ts
 %%DATADIR%%/scripts/Layer/HideAllLayers/ts/HideAllLayers_zh_TW.qm
@@ -11454,6 +11806,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Layer/LockAllLayers/ts/LockAllLayers_sl.ts
 %%DATADIR%%/scripts/Layer/LockAllLayers/ts/LockAllLayers_sv.qm
 %%DATADIR%%/scripts/Layer/LockAllLayers/ts/LockAllLayers_sv.ts
+%%DATADIR%%/scripts/Layer/LockAllLayers/ts/LockAllLayers_tr.qm
+%%DATADIR%%/scripts/Layer/LockAllLayers/ts/LockAllLayers_tr.ts
 %%DATADIR%%/scripts/Layer/LockAllLayers/ts/LockAllLayers_zh_CN.qm
 %%DATADIR%%/scripts/Layer/LockAllLayers/ts/LockAllLayers_zh_CN.ts
 %%DATADIR%%/scripts/Layer/LockAllLayers/ts/LockAllLayers_zh_TW.qm
@@ -11514,6 +11868,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Layer/RemoveLayer/ts/RemoveLayer_sl.ts
 %%DATADIR%%/scripts/Layer/RemoveLayer/ts/RemoveLayer_sv.qm
 %%DATADIR%%/scripts/Layer/RemoveLayer/ts/RemoveLayer_sv.ts
+%%DATADIR%%/scripts/Layer/RemoveLayer/ts/RemoveLayer_tr.qm
+%%DATADIR%%/scripts/Layer/RemoveLayer/ts/RemoveLayer_tr.ts
 %%DATADIR%%/scripts/Layer/RemoveLayer/ts/RemoveLayer_zh_CN.qm
 %%DATADIR%%/scripts/Layer/RemoveLayer/ts/RemoveLayer_zh_CN.ts
 %%DATADIR%%/scripts/Layer/RemoveLayer/ts/RemoveLayer_zh_TW.qm
@@ -11570,6 +11926,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Layer/SelectLayer/ts/SelectLayer_sl.ts
 %%DATADIR%%/scripts/Layer/SelectLayer/ts/SelectLayer_sv.qm
 %%DATADIR%%/scripts/Layer/SelectLayer/ts/SelectLayer_sv.ts
+%%DATADIR%%/scripts/Layer/SelectLayer/ts/SelectLayer_tr.qm
+%%DATADIR%%/scripts/Layer/SelectLayer/ts/SelectLayer_tr.ts
 %%DATADIR%%/scripts/Layer/SelectLayer/ts/SelectLayer_zh_CN.qm
 %%DATADIR%%/scripts/Layer/SelectLayer/ts/SelectLayer_zh_CN.ts
 %%DATADIR%%/scripts/Layer/SelectLayer/ts/SelectLayer_zh_TW.qm
@@ -11631,6 +11989,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Layer/ShowActiveLayer/ts/ShowActiveLayer_sl.ts
 %%DATADIR%%/scripts/Layer/ShowActiveLayer/ts/ShowActiveLayer_sv.qm
 %%DATADIR%%/scripts/Layer/ShowActiveLayer/ts/ShowActiveLayer_sv.ts
+%%DATADIR%%/scripts/Layer/ShowActiveLayer/ts/ShowActiveLayer_tr.qm
+%%DATADIR%%/scripts/Layer/ShowActiveLayer/ts/ShowActiveLayer_tr.ts
 %%DATADIR%%/scripts/Layer/ShowActiveLayer/ts/ShowActiveLayer_zh_CN.qm
 %%DATADIR%%/scripts/Layer/ShowActiveLayer/ts/ShowActiveLayer_zh_CN.ts
 %%DATADIR%%/scripts/Layer/ShowActiveLayer/ts/ShowActiveLayer_zh_TW.qm
@@ -11692,6 +12052,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Layer/ShowAllLayers/ts/ShowAllLayers_sl.ts
 %%DATADIR%%/scripts/Layer/ShowAllLayers/ts/ShowAllLayers_sv.qm
 %%DATADIR%%/scripts/Layer/ShowAllLayers/ts/ShowAllLayers_sv.ts
+%%DATADIR%%/scripts/Layer/ShowAllLayers/ts/ShowAllLayers_tr.qm
+%%DATADIR%%/scripts/Layer/ShowAllLayers/ts/ShowAllLayers_tr.ts
 %%DATADIR%%/scripts/Layer/ShowAllLayers/ts/ShowAllLayers_zh_CN.qm
 %%DATADIR%%/scripts/Layer/ShowAllLayers/ts/ShowAllLayers_zh_CN.ts
 %%DATADIR%%/scripts/Layer/ShowAllLayers/ts/ShowAllLayers_zh_TW.qm
@@ -11753,6 +12115,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Layer/ToggleLayerVisibility/ts/ToggleLayerVisibility_sl.ts
 %%DATADIR%%/scripts/Layer/ToggleLayerVisibility/ts/ToggleLayerVisibility_sv.qm
 %%DATADIR%%/scripts/Layer/ToggleLayerVisibility/ts/ToggleLayerVisibility_sv.ts
+%%DATADIR%%/scripts/Layer/ToggleLayerVisibility/ts/ToggleLayerVisibility_tr.qm
+%%DATADIR%%/scripts/Layer/ToggleLayerVisibility/ts/ToggleLayerVisibility_tr.ts
 %%DATADIR%%/scripts/Layer/ToggleLayerVisibility/ts/ToggleLayerVisibility_zh_CN.qm
 %%DATADIR%%/scripts/Layer/ToggleLayerVisibility/ts/ToggleLayerVisibility_zh_CN.ts
 %%DATADIR%%/scripts/Layer/ToggleLayerVisibility/ts/ToggleLayerVisibility_zh_TW.qm
@@ -11814,6 +12178,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Layer/UnlockAllLayers/ts/UnlockAllLayers_sl.ts
 %%DATADIR%%/scripts/Layer/UnlockAllLayers/ts/UnlockAllLayers_sv.qm
 %%DATADIR%%/scripts/Layer/UnlockAllLayers/ts/UnlockAllLayers_sv.ts
+%%DATADIR%%/scripts/Layer/UnlockAllLayers/ts/UnlockAllLayers_tr.qm
+%%DATADIR%%/scripts/Layer/UnlockAllLayers/ts/UnlockAllLayers_tr.ts
 %%DATADIR%%/scripts/Layer/UnlockAllLayers/ts/UnlockAllLayers_zh_CN.qm
 %%DATADIR%%/scripts/Layer/UnlockAllLayers/ts/UnlockAllLayers_zh_CN.ts
 %%DATADIR%%/scripts/Layer/UnlockAllLayers/ts/UnlockAllLayers_zh_TW.qm
@@ -11866,6 +12232,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Layer/ts/Layer_sl.ts
 %%DATADIR%%/scripts/Layer/ts/Layer_sv.qm
 %%DATADIR%%/scripts/Layer/ts/Layer_sv.ts
+%%DATADIR%%/scripts/Layer/ts/Layer_tr.qm
+%%DATADIR%%/scripts/Layer/ts/Layer_tr.ts
 %%DATADIR%%/scripts/Layer/ts/Layer_zh_CN.qm
 %%DATADIR%%/scripts/Layer/ts/Layer_zh_CN.ts
 %%DATADIR%%/scripts/Layer/ts/Layer_zh_TW.qm
@@ -12498,6 +12866,36 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Misc/MiscDraw/PointPowerCenter/ts/PointPowerCenter_sk.ts
 %%DATADIR%%/scripts/Misc/MiscDraw/PointPowerCenter/ts/PointPowerCenter_sl.qm
 %%DATADIR%%/scripts/Misc/MiscDraw/PointPowerCenter/ts/PointPowerCenter_sl.ts
+%%DATADIR%%/scripts/Misc/MiscDraw/TextAlong/Clockwise-inverse.svg
+%%DATADIR%%/scripts/Misc/MiscDraw/TextAlong/Clockwise.svg
+%%DATADIR%%/scripts/Misc/MiscDraw/TextAlong/CounterClockwise-inverse.svg
+%%DATADIR%%/scripts/Misc/MiscDraw/TextAlong/CounterClockwise.svg
+%%DATADIR%%/scripts/Misc/MiscDraw/TextAlong/TextAlong-inverse.svg
+%%DATADIR%%/scripts/Misc/MiscDraw/TextAlong/TextAlong.js
+%%DATADIR%%/scripts/Misc/MiscDraw/TextAlong/TextAlong.pro
+%%DATADIR%%/scripts/Misc/MiscDraw/TextAlong/TextAlong.svg
+%%DATADIR%%/scripts/Misc/MiscDraw/TextAlong/TextAlong.ui
+%%DATADIR%%/scripts/Misc/MiscDraw/TextAlong/TextAlongInit.js
+%%DATADIR%%/scripts/Misc/MiscDraw/TextAlong/doc/AlongArc.png
+%%DATADIR%%/scripts/Misc/MiscDraw/TextAlong/doc/AlongLine.png
+%%DATADIR%%/scripts/Misc/MiscDraw/TextAlong/doc/AlongToolbarOptions.png
+%%DATADIR%%/scripts/Misc/MiscDraw/TextAlong/doc/Clockwise.png
+%%DATADIR%%/scripts/Misc/MiscDraw/TextAlong/doc/CounterClockwise.png
+%%DATADIR%%/scripts/Misc/MiscDraw/TextAlong/doc/TextAlong.png
+%%DATADIR%%/scripts/Misc/MiscDraw/TextAlong/doc/TextAlong.txt
+%%DATADIR%%/scripts/Misc/MiscDraw/TextAlong/doc/TextAlong_desc_en.html
+%%DATADIR%%/scripts/Misc/MiscDraw/TextAlong/doc/TextAlong_en.html
+%%DATADIR%%/scripts/Misc/MiscDraw/TextAlong/doc/TextAlong_proc_en.html
+%%DATADIR%%/scripts/Misc/MiscDraw/TextAlong/ts/TextAlong_de.qm
+%%DATADIR%%/scripts/Misc/MiscDraw/TextAlong/ts/TextAlong_de.ts
+%%DATADIR%%/scripts/Misc/MiscDraw/TextAlong/ts/TextAlong_it.qm
+%%DATADIR%%/scripts/Misc/MiscDraw/TextAlong/ts/TextAlong_it.ts
+%%DATADIR%%/scripts/Misc/MiscDraw/TextAlong/ts/TextAlong_ru.qm
+%%DATADIR%%/scripts/Misc/MiscDraw/TextAlong/ts/TextAlong_ru.ts
+%%DATADIR%%/scripts/Misc/MiscDraw/TextAlong/ts/TextAlong_sk.qm
+%%DATADIR%%/scripts/Misc/MiscDraw/TextAlong/ts/TextAlong_sk.ts
+%%DATADIR%%/scripts/Misc/MiscDraw/TextAlong/ts/TextAlong_sl.qm
+%%DATADIR%%/scripts/Misc/MiscDraw/TextAlong/ts/TextAlong_sl.ts
 %%DATADIR%%/scripts/Misc/MiscDraw/XLineHorizontal/XLineHorizontal-inverse.svg
 %%DATADIR%%/scripts/Misc/MiscDraw/XLineHorizontal/XLineHorizontal.js
 %%DATADIR%%/scripts/Misc/MiscDraw/XLineHorizontal/XLineHorizontal.pro
@@ -12821,6 +13219,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Misc/ts/Misc_sl.ts
 %%DATADIR%%/scripts/Misc/ts/Misc_sv.qm
 %%DATADIR%%/scripts/Misc/ts/Misc_sv.ts
+%%DATADIR%%/scripts/Misc/ts/Misc_tr.qm
+%%DATADIR%%/scripts/Misc/ts/Misc_tr.ts
 %%DATADIR%%/scripts/Misc/ts/Misc_zh_CN.qm
 %%DATADIR%%/scripts/Misc/ts/Misc_zh_CN.ts
 %%DATADIR%%/scripts/Misc/ts/Misc_zh_TW.qm
@@ -12838,7 +13238,12 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Modify/AutoTrim/Tests/AutoTrimTest04.js
 %%DATADIR%%/scripts/Modify/AutoTrim/Tests/AutoTrimTest05.js
 %%DATADIR%%/scripts/Modify/AutoTrim/Tests/AutoTrimTest06.js
+%%DATADIR%%/scripts/Modify/AutoTrim/Tests/AutoTrimTest07.js
+%%DATADIR%%/scripts/Modify/AutoTrim/Tests/AutoTrimTest08.js
+%%DATADIR%%/scripts/Modify/AutoTrim/Tests/AutoTrimTest09.js
 %%DATADIR%%/scripts/Modify/AutoTrim/Tests/actual/.gitignore
+%%DATADIR%%/scripts/Modify/AutoTrim/Tests/data/ellipses.dxf
+%%DATADIR%%/scripts/Modify/AutoTrim/Tests/data/line.dxf
 %%DATADIR%%/scripts/Modify/AutoTrim/Tests/data/line_arc_circle.dxf
 %%DATADIR%%/scripts/Modify/AutoTrim/Tests/data/line_xline_ray.bak000.dxf
 %%DATADIR%%/scripts/Modify/AutoTrim/Tests/data/line_xline_ray.dxf
@@ -12851,6 +13256,9 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Modify/AutoTrim/Tests/required/AutoTrimTest04_000.dxf
 %%DATADIR%%/scripts/Modify/AutoTrim/Tests/required/AutoTrimTest05_000.dxf
 %%DATADIR%%/scripts/Modify/AutoTrim/Tests/required/AutoTrimTest06_000.dxf
+%%DATADIR%%/scripts/Modify/AutoTrim/Tests/required/AutoTrimTest07_000.dxf
+%%DATADIR%%/scripts/Modify/AutoTrim/Tests/required/AutoTrimTest08_000.dxf
+%%DATADIR%%/scripts/Modify/AutoTrim/Tests/required/AutoTrimTest09_000.dxf
 %%DATADIR%%/scripts/Modify/AutoTrim/doc/AutoTrim.png
 %%DATADIR%%/scripts/Modify/AutoTrim/doc/AutoTrim_de.html
 %%DATADIR%%/scripts/Modify/AutoTrim/doc/AutoTrim_desc_de.html
@@ -12911,6 +13319,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Modify/AutoTrim/ts/AutoTrim_sl.ts
 %%DATADIR%%/scripts/Modify/AutoTrim/ts/AutoTrim_sv.qm
 %%DATADIR%%/scripts/Modify/AutoTrim/ts/AutoTrim_sv.ts
+%%DATADIR%%/scripts/Modify/AutoTrim/ts/AutoTrim_tr.qm
+%%DATADIR%%/scripts/Modify/AutoTrim/ts/AutoTrim_tr.ts
 %%DATADIR%%/scripts/Modify/AutoTrim/ts/AutoTrim_zh_CN.qm
 %%DATADIR%%/scripts/Modify/AutoTrim/ts/AutoTrim_zh_CN.ts
 %%DATADIR%%/scripts/Modify/AutoTrim/ts/AutoTrim_zh_TW.qm
@@ -13004,6 +13414,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Modify/Bevel/ts/Bevel_sl.ts
 %%DATADIR%%/scripts/Modify/Bevel/ts/Bevel_sv.qm
 %%DATADIR%%/scripts/Modify/Bevel/ts/Bevel_sv.ts
+%%DATADIR%%/scripts/Modify/Bevel/ts/Bevel_tr.qm
+%%DATADIR%%/scripts/Modify/Bevel/ts/Bevel_tr.ts
 %%DATADIR%%/scripts/Modify/Bevel/ts/Bevel_zh_CN.qm
 %%DATADIR%%/scripts/Modify/Bevel/ts/Bevel_zh_CN.ts
 %%DATADIR%%/scripts/Modify/Bevel/ts/Bevel_zh_TW.qm
@@ -13115,6 +13527,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Modify/BreakOut/ts/BreakOut_sl.ts
 %%DATADIR%%/scripts/Modify/BreakOut/ts/BreakOut_sv.qm
 %%DATADIR%%/scripts/Modify/BreakOut/ts/BreakOut_sv.ts
+%%DATADIR%%/scripts/Modify/BreakOut/ts/BreakOut_tr.qm
+%%DATADIR%%/scripts/Modify/BreakOut/ts/BreakOut_tr.ts
 %%DATADIR%%/scripts/Modify/BreakOut/ts/BreakOut_zh_CN.qm
 %%DATADIR%%/scripts/Modify/BreakOut/ts/BreakOut_zh_CN.ts
 %%DATADIR%%/scripts/Modify/BreakOut/ts/BreakOut_zh_TW.qm
@@ -13172,6 +13586,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Modify/BreakOutGap/ts/BreakOutGap_sl.ts
 %%DATADIR%%/scripts/Modify/BreakOutGap/ts/BreakOutGap_sv.qm
 %%DATADIR%%/scripts/Modify/BreakOutGap/ts/BreakOutGap_sv.ts
+%%DATADIR%%/scripts/Modify/BreakOutGap/ts/BreakOutGap_tr.qm
+%%DATADIR%%/scripts/Modify/BreakOutGap/ts/BreakOutGap_tr.ts
 %%DATADIR%%/scripts/Modify/BreakOutGap/ts/BreakOutGap_zh_CN.qm
 %%DATADIR%%/scripts/Modify/BreakOutGap/ts/BreakOutGap_zh_CN.ts
 %%DATADIR%%/scripts/Modify/BreakOutGap/ts/BreakOutGap_zh_TW.qm
@@ -13236,6 +13652,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Modify/BreakOutManual/ts/BreakOutManual_sl.ts
 %%DATADIR%%/scripts/Modify/BreakOutManual/ts/BreakOutManual_sv.qm
 %%DATADIR%%/scripts/Modify/BreakOutManual/ts/BreakOutManual_sv.ts
+%%DATADIR%%/scripts/Modify/BreakOutManual/ts/BreakOutManual_tr.qm
+%%DATADIR%%/scripts/Modify/BreakOutManual/ts/BreakOutManual_tr.ts
 %%DATADIR%%/scripts/Modify/BreakOutManual/ts/BreakOutManual_zh_CN.qm
 %%DATADIR%%/scripts/Modify/BreakOutManual/ts/BreakOutManual_zh_CN.ts
 %%DATADIR%%/scripts/Modify/BreakOutManual/ts/BreakOutManual_zh_TW.qm
@@ -13312,6 +13730,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Modify/Divide/ts/Divide_sl.ts
 %%DATADIR%%/scripts/Modify/Divide/ts/Divide_sv.qm
 %%DATADIR%%/scripts/Modify/Divide/ts/Divide_sv.ts
+%%DATADIR%%/scripts/Modify/Divide/ts/Divide_tr.qm
+%%DATADIR%%/scripts/Modify/Divide/ts/Divide_tr.ts
 %%DATADIR%%/scripts/Modify/Divide/ts/Divide_zh_CN.qm
 %%DATADIR%%/scripts/Modify/Divide/ts/Divide_zh_CN.ts
 %%DATADIR%%/scripts/Modify/Divide/ts/Divide_zh_TW.qm
@@ -13381,6 +13801,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Modify/EditHatch/ts/EditHatch_sl.ts
 %%DATADIR%%/scripts/Modify/EditHatch/ts/EditHatch_sv.qm
 %%DATADIR%%/scripts/Modify/EditHatch/ts/EditHatch_sv.ts
+%%DATADIR%%/scripts/Modify/EditHatch/ts/EditHatch_tr.qm
+%%DATADIR%%/scripts/Modify/EditHatch/ts/EditHatch_tr.ts
 %%DATADIR%%/scripts/Modify/EditHatch/ts/EditHatch_zh_CN.qm
 %%DATADIR%%/scripts/Modify/EditHatch/ts/EditHatch_zh_CN.ts
 %%DATADIR%%/scripts/Modify/EditHatch/ts/EditHatch_zh_TW.qm
@@ -13450,6 +13872,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Modify/EditText/ts/EditText_sl.ts
 %%DATADIR%%/scripts/Modify/EditText/ts/EditText_sv.qm
 %%DATADIR%%/scripts/Modify/EditText/ts/EditText_sv.ts
+%%DATADIR%%/scripts/Modify/EditText/ts/EditText_tr.qm
+%%DATADIR%%/scripts/Modify/EditText/ts/EditText_tr.ts
 %%DATADIR%%/scripts/Modify/EditText/ts/EditText_zh_CN.qm
 %%DATADIR%%/scripts/Modify/EditText/ts/EditText_zh_CN.ts
 %%DATADIR%%/scripts/Modify/EditText/ts/EditText_zh_TW.qm
@@ -13465,7 +13889,9 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Modify/Explode/Tests/ExplodeTest01.js
 %%DATADIR%%/scripts/Modify/Explode/Tests/ExplodeTest02.js
 %%DATADIR%%/scripts/Modify/Explode/Tests/ExplodeTest03.js
+%%DATADIR%%/scripts/Modify/Explode/Tests/ExplodeTest04.js
 %%DATADIR%%/scripts/Modify/Explode/Tests/actual/.gitignore
+%%DATADIR%%/scripts/Modify/Explode/Tests/data/attributes.dxf
 %%DATADIR%%/scripts/Modify/Explode/Tests/data/block.dxf
 %%DATADIR%%/scripts/Modify/Explode/Tests/data/explodable.dxf
 %%DATADIR%%/scripts/Modify/Explode/Tests/data/splines.dxf
@@ -13473,6 +13899,7 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Modify/Explode/Tests/required/ExplodeTest01_000.dxf
 %%DATADIR%%/scripts/Modify/Explode/Tests/required/ExplodeTest02_000.dxf
 %%DATADIR%%/scripts/Modify/Explode/Tests/required/ExplodeTest03_000.dxf
+%%DATADIR%%/scripts/Modify/Explode/Tests/required/ExplodeTest04_000.dxf
 %%DATADIR%%/scripts/Modify/Explode/doc/Explode.png
 %%DATADIR%%/scripts/Modify/Explode/doc/Explode_de.html
 %%DATADIR%%/scripts/Modify/Explode/doc/Explode_desc_de.html
@@ -13533,6 +13960,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Modify/Explode/ts/Explode_sl.ts
 %%DATADIR%%/scripts/Modify/Explode/ts/Explode_sv.qm
 %%DATADIR%%/scripts/Modify/Explode/ts/Explode_sv.ts
+%%DATADIR%%/scripts/Modify/Explode/ts/Explode_tr.qm
+%%DATADIR%%/scripts/Modify/Explode/ts/Explode_tr.ts
 %%DATADIR%%/scripts/Modify/Explode/ts/Explode_zh_CN.qm
 %%DATADIR%%/scripts/Modify/Explode/ts/Explode_zh_CN.ts
 %%DATADIR%%/scripts/Modify/Explode/ts/Explode_zh_TW.qm
@@ -13587,6 +14016,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Modify/FlipHorizontal/ts/FlipHorizontal_sl.ts
 %%DATADIR%%/scripts/Modify/FlipHorizontal/ts/FlipHorizontal_sv.qm
 %%DATADIR%%/scripts/Modify/FlipHorizontal/ts/FlipHorizontal_sv.ts
+%%DATADIR%%/scripts/Modify/FlipHorizontal/ts/FlipHorizontal_tr.qm
+%%DATADIR%%/scripts/Modify/FlipHorizontal/ts/FlipHorizontal_tr.ts
 %%DATADIR%%/scripts/Modify/FlipHorizontal/ts/FlipHorizontal_zh_CN.qm
 %%DATADIR%%/scripts/Modify/FlipHorizontal/ts/FlipHorizontal_zh_CN.ts
 %%DATADIR%%/scripts/Modify/FlipHorizontal/ts/FlipHorizontal_zh_TW.qm
@@ -13641,6 +14072,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Modify/FlipVertical/ts/FlipVertical_sl.ts
 %%DATADIR%%/scripts/Modify/FlipVertical/ts/FlipVertical_sv.qm
 %%DATADIR%%/scripts/Modify/FlipVertical/ts/FlipVertical_sv.ts
+%%DATADIR%%/scripts/Modify/FlipVertical/ts/FlipVertical_tr.qm
+%%DATADIR%%/scripts/Modify/FlipVertical/ts/FlipVertical_tr.ts
 %%DATADIR%%/scripts/Modify/FlipVertical/ts/FlipVertical_zh_CN.qm
 %%DATADIR%%/scripts/Modify/FlipVertical/ts/FlipVertical_zh_CN.ts
 %%DATADIR%%/scripts/Modify/FlipVertical/ts/FlipVertical_zh_TW.qm
@@ -13724,6 +14157,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Modify/Lengthen/ts/Lengthen_sl.ts
 %%DATADIR%%/scripts/Modify/Lengthen/ts/Lengthen_sv.qm
 %%DATADIR%%/scripts/Modify/Lengthen/ts/Lengthen_sv.ts
+%%DATADIR%%/scripts/Modify/Lengthen/ts/Lengthen_tr.qm
+%%DATADIR%%/scripts/Modify/Lengthen/ts/Lengthen_tr.ts
 %%DATADIR%%/scripts/Modify/Lengthen/ts/Lengthen_zh_CN.qm
 %%DATADIR%%/scripts/Modify/Lengthen/ts/Lengthen_zh_CN.ts
 %%DATADIR%%/scripts/Modify/Lengthen/ts/Lengthen_zh_TW.qm
@@ -13803,6 +14238,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Modify/Mirror/ts/Mirror_sl.ts
 %%DATADIR%%/scripts/Modify/Mirror/ts/Mirror_sv.qm
 %%DATADIR%%/scripts/Modify/Mirror/ts/Mirror_sv.ts
+%%DATADIR%%/scripts/Modify/Mirror/ts/Mirror_tr.qm
+%%DATADIR%%/scripts/Modify/Mirror/ts/Mirror_tr.ts
 %%DATADIR%%/scripts/Modify/Mirror/ts/Mirror_zh_CN.qm
 %%DATADIR%%/scripts/Modify/Mirror/ts/Mirror_zh_CN.ts
 %%DATADIR%%/scripts/Modify/Mirror/ts/Mirror_zh_TW.qm
@@ -13886,6 +14323,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Modify/Offset/ts/Offset_sl.ts
 %%DATADIR%%/scripts/Modify/Offset/ts/Offset_sv.qm
 %%DATADIR%%/scripts/Modify/Offset/ts/Offset_sv.ts
+%%DATADIR%%/scripts/Modify/Offset/ts/Offset_tr.qm
+%%DATADIR%%/scripts/Modify/Offset/ts/Offset_tr.ts
 %%DATADIR%%/scripts/Modify/Offset/ts/Offset_zh_CN.qm
 %%DATADIR%%/scripts/Modify/Offset/ts/Offset_zh_CN.ts
 %%DATADIR%%/scripts/Modify/Offset/ts/Offset_zh_TW.qm
@@ -13956,6 +14395,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Modify/OffsetThrough/ts/OffsetThrough_sl.ts
 %%DATADIR%%/scripts/Modify/OffsetThrough/ts/OffsetThrough_sv.qm
 %%DATADIR%%/scripts/Modify/OffsetThrough/ts/OffsetThrough_sv.ts
+%%DATADIR%%/scripts/Modify/OffsetThrough/ts/OffsetThrough_tr.qm
+%%DATADIR%%/scripts/Modify/OffsetThrough/ts/OffsetThrough_tr.ts
 %%DATADIR%%/scripts/Modify/OffsetThrough/ts/OffsetThrough_zh_CN.qm
 %%DATADIR%%/scripts/Modify/OffsetThrough/ts/OffsetThrough_zh_CN.ts
 %%DATADIR%%/scripts/Modify/OffsetThrough/ts/OffsetThrough_zh_TW.qm
@@ -14021,6 +14462,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Modify/Reverse/ts/Reverse_sl.ts
 %%DATADIR%%/scripts/Modify/Reverse/ts/Reverse_sv.qm
 %%DATADIR%%/scripts/Modify/Reverse/ts/Reverse_sv.ts
+%%DATADIR%%/scripts/Modify/Reverse/ts/Reverse_tr.qm
+%%DATADIR%%/scripts/Modify/Reverse/ts/Reverse_tr.ts
 %%DATADIR%%/scripts/Modify/Reverse/ts/Reverse_zh_CN.qm
 %%DATADIR%%/scripts/Modify/Reverse/ts/Reverse_zh_CN.ts
 %%DATADIR%%/scripts/Modify/Reverse/ts/Reverse_zh_TW.qm
@@ -14102,6 +14545,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Modify/Rotate/ts/Rotate_sl.ts
 %%DATADIR%%/scripts/Modify/Rotate/ts/Rotate_sv.qm
 %%DATADIR%%/scripts/Modify/Rotate/ts/Rotate_sv.ts
+%%DATADIR%%/scripts/Modify/Rotate/ts/Rotate_tr.qm
+%%DATADIR%%/scripts/Modify/Rotate/ts/Rotate_tr.ts
 %%DATADIR%%/scripts/Modify/Rotate/ts/Rotate_zh_CN.qm
 %%DATADIR%%/scripts/Modify/Rotate/ts/Rotate_zh_CN.ts
 %%DATADIR%%/scripts/Modify/Rotate/ts/Rotate_zh_TW.qm
@@ -14198,6 +14643,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Modify/Rotate2/ts/Rotate2_sl.ts
 %%DATADIR%%/scripts/Modify/Rotate2/ts/Rotate2_sv.qm
 %%DATADIR%%/scripts/Modify/Rotate2/ts/Rotate2_sv.ts
+%%DATADIR%%/scripts/Modify/Rotate2/ts/Rotate2_tr.qm
+%%DATADIR%%/scripts/Modify/Rotate2/ts/Rotate2_tr.ts
 %%DATADIR%%/scripts/Modify/Rotate2/ts/Rotate2_zh_CN.qm
 %%DATADIR%%/scripts/Modify/Rotate2/ts/Rotate2_zh_CN.ts
 %%DATADIR%%/scripts/Modify/Rotate2/ts/Rotate2_zh_TW.qm
@@ -14277,6 +14724,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Modify/Round/ts/Round_sl.ts
 %%DATADIR%%/scripts/Modify/Round/ts/Round_sv.qm
 %%DATADIR%%/scripts/Modify/Round/ts/Round_sv.ts
+%%DATADIR%%/scripts/Modify/Round/ts/Round_tr.qm
+%%DATADIR%%/scripts/Modify/Round/ts/Round_tr.ts
 %%DATADIR%%/scripts/Modify/Round/ts/Round_zh_CN.qm
 %%DATADIR%%/scripts/Modify/Round/ts/Round_zh_CN.ts
 %%DATADIR%%/scripts/Modify/Round/ts/Round_zh_TW.qm
@@ -14299,11 +14748,13 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Modify/Scale/Tests/ScaleTest05.js
 %%DATADIR%%/scripts/Modify/Scale/Tests/ScaleTest06.js
 %%DATADIR%%/scripts/Modify/Scale/Tests/ScaleTest07.js
+%%DATADIR%%/scripts/Modify/Scale/Tests/ScaleTest08.js
 %%DATADIR%%/scripts/Modify/Scale/Tests/actual/.gitignore
 %%DATADIR%%/scripts/Modify/Scale/Tests/data/arcs.dxf
 %%DATADIR%%/scripts/Modify/Scale/Tests/data/circles.dxf
 %%DATADIR%%/scripts/Modify/Scale/Tests/data/ellipses_ellipse_arcs.dxf
 %%DATADIR%%/scripts/Modify/Scale/Tests/data/lines.dxf
+%%DATADIR%%/scripts/Modify/Scale/Tests/data/mtext.dxf
 %%DATADIR%%/scripts/Modify/Scale/Tests/data/points.dxf
 %%DATADIR%%/scripts/Modify/Scale/Tests/data/polyline.dxf
 %%DATADIR%%/scripts/Modify/Scale/Tests/data/spline.dxf
@@ -14316,6 +14767,7 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Modify/Scale/Tests/required/ScaleTest05_000.dxf
 %%DATADIR%%/scripts/Modify/Scale/Tests/required/ScaleTest06_000.dxf
 %%DATADIR%%/scripts/Modify/Scale/Tests/required/ScaleTest07_000.dxf
+%%DATADIR%%/scripts/Modify/Scale/Tests/required/ScaleTest08_000.dxf
 %%DATADIR%%/scripts/Modify/Scale/doc/ByMouse.png
 %%DATADIR%%/scripts/Modify/Scale/doc/KeepProportionsOff.png
 %%DATADIR%%/scripts/Modify/Scale/doc/KeepProportionsOn.png
@@ -14380,6 +14832,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Modify/Scale/ts/Scale_sl.ts
 %%DATADIR%%/scripts/Modify/Scale/ts/Scale_sv.qm
 %%DATADIR%%/scripts/Modify/Scale/ts/Scale_sv.ts
+%%DATADIR%%/scripts/Modify/Scale/ts/Scale_tr.qm
+%%DATADIR%%/scripts/Modify/Scale/ts/Scale_tr.ts
 %%DATADIR%%/scripts/Modify/Scale/ts/Scale_zh_CN.qm
 %%DATADIR%%/scripts/Modify/Scale/ts/Scale_zh_CN.ts
 %%DATADIR%%/scripts/Modify/Scale/ts/Scale_zh_TW.qm
@@ -14391,11 +14845,13 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Modify/Stretch/StretchInit.js
 %%DATADIR%%/scripts/Modify/Stretch/Tests/StretchTest00.js
 %%DATADIR%%/scripts/Modify/Stretch/Tests/StretchTest01.js
+%%DATADIR%%/scripts/Modify/Stretch/Tests/StretchTest02.js
 %%DATADIR%%/scripts/Modify/Stretch/Tests/actual/.gitignore
 %%DATADIR%%/scripts/Modify/Stretch/Tests/data/entities0.dxf
 %%DATADIR%%/scripts/Modify/Stretch/Tests/data/entities1.dxf
 %%DATADIR%%/scripts/Modify/Stretch/Tests/required/StretchTest00_000.dxf
 %%DATADIR%%/scripts/Modify/Stretch/Tests/required/StretchTest01_000.dxf
+%%DATADIR%%/scripts/Modify/Stretch/Tests/required/StretchTest02_000.dxf
 %%DATADIR%%/scripts/Modify/Stretch/doc/Stretch.png
 %%DATADIR%%/scripts/Modify/Stretch/doc/StretchFigure.dxf
 %%DATADIR%%/scripts/Modify/Stretch/doc/StretchFigure.png
@@ -14459,6 +14915,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Modify/Stretch/ts/Stretch_sl.ts
 %%DATADIR%%/scripts/Modify/Stretch/ts/Stretch_sv.qm
 %%DATADIR%%/scripts/Modify/Stretch/ts/Stretch_sv.ts
+%%DATADIR%%/scripts/Modify/Stretch/ts/Stretch_tr.qm
+%%DATADIR%%/scripts/Modify/Stretch/ts/Stretch_tr.ts
 %%DATADIR%%/scripts/Modify/Stretch/ts/Stretch_zh_CN.qm
 %%DATADIR%%/scripts/Modify/Stretch/ts/Stretch_zh_CN.ts
 %%DATADIR%%/scripts/Modify/Stretch/ts/Stretch_zh_TW.qm
@@ -14528,6 +14986,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Modify/ToBack/ts/ToBack_sl.ts
 %%DATADIR%%/scripts/Modify/ToBack/ts/ToBack_sv.qm
 %%DATADIR%%/scripts/Modify/ToBack/ts/ToBack_sv.ts
+%%DATADIR%%/scripts/Modify/ToBack/ts/ToBack_tr.qm
+%%DATADIR%%/scripts/Modify/ToBack/ts/ToBack_tr.ts
 %%DATADIR%%/scripts/Modify/ToBack/ts/ToBack_zh_CN.qm
 %%DATADIR%%/scripts/Modify/ToBack/ts/ToBack_zh_CN.ts
 %%DATADIR%%/scripts/Modify/ToBack/ts/ToBack_zh_TW.qm
@@ -14597,6 +15057,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Modify/ToFront/ts/ToFront_sl.ts
 %%DATADIR%%/scripts/Modify/ToFront/ts/ToFront_sv.qm
 %%DATADIR%%/scripts/Modify/ToFront/ts/ToFront_sv.ts
+%%DATADIR%%/scripts/Modify/ToFront/ts/ToFront_tr.qm
+%%DATADIR%%/scripts/Modify/ToFront/ts/ToFront_tr.ts
 %%DATADIR%%/scripts/Modify/ToFront/ts/ToFront_zh_CN.qm
 %%DATADIR%%/scripts/Modify/ToFront/ts/ToFront_zh_CN.ts
 %%DATADIR%%/scripts/Modify/ToFront/ts/ToFront_zh_TW.qm
@@ -14681,6 +15143,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Modify/Translate/ts/Translate_sl.ts
 %%DATADIR%%/scripts/Modify/Translate/ts/Translate_sv.qm
 %%DATADIR%%/scripts/Modify/Translate/ts/Translate_sv.ts
+%%DATADIR%%/scripts/Modify/Translate/ts/Translate_tr.qm
+%%DATADIR%%/scripts/Modify/Translate/ts/Translate_tr.ts
 %%DATADIR%%/scripts/Modify/Translate/ts/Translate_zh_CN.qm
 %%DATADIR%%/scripts/Modify/Translate/ts/Translate_zh_CN.ts
 %%DATADIR%%/scripts/Modify/Translate/ts/Translate_zh_TW.qm
@@ -14765,6 +15229,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Modify/TranslateRotate/ts/TranslateRotate_sl.ts
 %%DATADIR%%/scripts/Modify/TranslateRotate/ts/TranslateRotate_sv.qm
 %%DATADIR%%/scripts/Modify/TranslateRotate/ts/TranslateRotate_sv.ts
+%%DATADIR%%/scripts/Modify/TranslateRotate/ts/TranslateRotate_tr.qm
+%%DATADIR%%/scripts/Modify/TranslateRotate/ts/TranslateRotate_tr.ts
 %%DATADIR%%/scripts/Modify/TranslateRotate/ts/TranslateRotate_zh_CN.qm
 %%DATADIR%%/scripts/Modify/TranslateRotate/ts/TranslateRotate_zh_CN.ts
 %%DATADIR%%/scripts/Modify/TranslateRotate/ts/TranslateRotate_zh_TW.qm
@@ -14867,6 +15333,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Modify/Trim/ts/Trim_sl.ts
 %%DATADIR%%/scripts/Modify/Trim/ts/Trim_sv.qm
 %%DATADIR%%/scripts/Modify/Trim/ts/Trim_sv.ts
+%%DATADIR%%/scripts/Modify/Trim/ts/Trim_tr.qm
+%%DATADIR%%/scripts/Modify/Trim/ts/Trim_tr.ts
 %%DATADIR%%/scripts/Modify/Trim/ts/Trim_zh_CN.qm
 %%DATADIR%%/scripts/Modify/Trim/ts/Trim_zh_CN.ts
 %%DATADIR%%/scripts/Modify/Trim/ts/Trim_zh_TW.qm
@@ -14955,6 +15423,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Modify/TrimBoth/ts/TrimBoth_sl.ts
 %%DATADIR%%/scripts/Modify/TrimBoth/ts/TrimBoth_sv.qm
 %%DATADIR%%/scripts/Modify/TrimBoth/ts/TrimBoth_sv.ts
+%%DATADIR%%/scripts/Modify/TrimBoth/ts/TrimBoth_tr.qm
+%%DATADIR%%/scripts/Modify/TrimBoth/ts/TrimBoth_tr.ts
 %%DATADIR%%/scripts/Modify/TrimBoth/ts/TrimBoth_zh_CN.qm
 %%DATADIR%%/scripts/Modify/TrimBoth/ts/TrimBoth_zh_CN.ts
 %%DATADIR%%/scripts/Modify/TrimBoth/ts/TrimBoth_zh_TW.qm
@@ -15002,6 +15472,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Modify/ts/Modify_sl.ts
 %%DATADIR%%/scripts/Modify/ts/Modify_sv.qm
 %%DATADIR%%/scripts/Modify/ts/Modify_sv.ts
+%%DATADIR%%/scripts/Modify/ts/Modify_tr.qm
+%%DATADIR%%/scripts/Modify/ts/Modify_tr.ts
 %%DATADIR%%/scripts/Modify/ts/Modify_zh_CN.qm
 %%DATADIR%%/scripts/Modify/ts/Modify_zh_CN.ts
 %%DATADIR%%/scripts/Modify/ts/Modify_zh_TW.qm
@@ -15044,6 +15516,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Navigation/DefaultNavigation/ts/DefaultNavigation_sl.ts
 %%DATADIR%%/scripts/Navigation/DefaultNavigation/ts/DefaultNavigation_sv.qm
 %%DATADIR%%/scripts/Navigation/DefaultNavigation/ts/DefaultNavigation_sv.ts
+%%DATADIR%%/scripts/Navigation/DefaultNavigation/ts/DefaultNavigation_tr.qm
+%%DATADIR%%/scripts/Navigation/DefaultNavigation/ts/DefaultNavigation_tr.ts
 %%DATADIR%%/scripts/Navigation/DefaultNavigation/ts/DefaultNavigation_zh_CN.qm
 %%DATADIR%%/scripts/Navigation/DefaultNavigation/ts/DefaultNavigation_zh_CN.ts
 %%DATADIR%%/scripts/Navigation/DefaultNavigation/ts/DefaultNavigation_zh_TW.qm
@@ -15158,6 +15632,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Projection/IsometricProjection/IsoProject/ts/IsoProject_sl.ts
 %%DATADIR%%/scripts/Projection/IsometricProjection/IsoProject/ts/IsoProject_sv.qm
 %%DATADIR%%/scripts/Projection/IsometricProjection/IsoProject/ts/IsoProject_sv.ts
+%%DATADIR%%/scripts/Projection/IsometricProjection/IsoProject/ts/IsoProject_tr.qm
+%%DATADIR%%/scripts/Projection/IsometricProjection/IsoProject/ts/IsoProject_tr.ts
 %%DATADIR%%/scripts/Projection/IsometricProjection/IsoProject/ts/IsoProject_zh_CN.qm
 %%DATADIR%%/scripts/Projection/IsometricProjection/IsoProject/ts/IsoProject_zh_CN.ts
 %%DATADIR%%/scripts/Projection/IsometricProjection/IsoProject/ts/IsoProject_zh_TW.qm
@@ -15198,6 +15674,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Projection/IsometricProjection/ts/IsometricProjection_sl.ts
 %%DATADIR%%/scripts/Projection/IsometricProjection/ts/IsometricProjection_sv.qm
 %%DATADIR%%/scripts/Projection/IsometricProjection/ts/IsometricProjection_sv.ts
+%%DATADIR%%/scripts/Projection/IsometricProjection/ts/IsometricProjection_tr.qm
+%%DATADIR%%/scripts/Projection/IsometricProjection/ts/IsometricProjection_tr.ts
 %%DATADIR%%/scripts/Projection/IsometricProjection/ts/IsometricProjection_zh_CN.qm
 %%DATADIR%%/scripts/Projection/IsometricProjection/ts/IsometricProjection_zh_CN.ts
 %%DATADIR%%/scripts/Projection/IsometricProjection/ts/IsometricProjection_zh_TW.qm
@@ -15242,6 +15720,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Projection/ts/Projection_sl.ts
 %%DATADIR%%/scripts/Projection/ts/Projection_sv.qm
 %%DATADIR%%/scripts/Projection/ts/Projection_sv.ts
+%%DATADIR%%/scripts/Projection/ts/Projection_tr.qm
+%%DATADIR%%/scripts/Projection/ts/Projection_tr.ts
 %%DATADIR%%/scripts/Projection/ts/Projection_zh_CN.qm
 %%DATADIR%%/scripts/Projection/ts/Projection_zh_CN.ts
 %%DATADIR%%/scripts/Projection/ts/Projection_zh_TW.qm
@@ -15304,6 +15784,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Reset/ts/Reset_sl.ts
 %%DATADIR%%/scripts/Reset/ts/Reset_sv.qm
 %%DATADIR%%/scripts/Reset/ts/Reset_sv.ts
+%%DATADIR%%/scripts/Reset/ts/Reset_tr.qm
+%%DATADIR%%/scripts/Reset/ts/Reset_tr.ts
 %%DATADIR%%/scripts/Reset/ts/Reset_zh_CN.qm
 %%DATADIR%%/scripts/Reset/ts/Reset_zh_CN.ts
 %%DATADIR%%/scripts/Reset/ts/Reset_zh_TW.qm
@@ -15367,6 +15849,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Select/DeselectAll/ts/DeselectAll_sl.ts
 %%DATADIR%%/scripts/Select/DeselectAll/ts/DeselectAll_sv.qm
 %%DATADIR%%/scripts/Select/DeselectAll/ts/DeselectAll_sv.ts
+%%DATADIR%%/scripts/Select/DeselectAll/ts/DeselectAll_tr.qm
+%%DATADIR%%/scripts/Select/DeselectAll/ts/DeselectAll_tr.ts
 %%DATADIR%%/scripts/Select/DeselectAll/ts/DeselectAll_zh_CN.qm
 %%DATADIR%%/scripts/Select/DeselectAll/ts/DeselectAll_zh_CN.ts
 %%DATADIR%%/scripts/Select/DeselectAll/ts/DeselectAll_zh_TW.qm
@@ -15428,6 +15912,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Select/InvertSelection/ts/InvertSelection_sl.ts
 %%DATADIR%%/scripts/Select/InvertSelection/ts/InvertSelection_sv.qm
 %%DATADIR%%/scripts/Select/InvertSelection/ts/InvertSelection_sv.ts
+%%DATADIR%%/scripts/Select/InvertSelection/ts/InvertSelection_tr.qm
+%%DATADIR%%/scripts/Select/InvertSelection/ts/InvertSelection_tr.ts
 %%DATADIR%%/scripts/Select/InvertSelection/ts/InvertSelection_zh_CN.qm
 %%DATADIR%%/scripts/Select/InvertSelection/ts/InvertSelection_zh_CN.ts
 %%DATADIR%%/scripts/Select/InvertSelection/ts/InvertSelection_zh_TW.qm
@@ -15493,6 +15979,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Select/SelectAll/ts/SelectAll_sl.ts
 %%DATADIR%%/scripts/Select/SelectAll/ts/SelectAll_sv.qm
 %%DATADIR%%/scripts/Select/SelectAll/ts/SelectAll_sv.ts
+%%DATADIR%%/scripts/Select/SelectAll/ts/SelectAll_tr.qm
+%%DATADIR%%/scripts/Select/SelectAll/ts/SelectAll_tr.ts
 %%DATADIR%%/scripts/Select/SelectAll/ts/SelectAll_zh_CN.qm
 %%DATADIR%%/scripts/Select/SelectAll/ts/SelectAll_zh_CN.ts
 %%DATADIR%%/scripts/Select/SelectAll/ts/SelectAll_zh_TW.qm
@@ -15563,6 +16051,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Select/SelectContour/ts/SelectContour_sl.ts
 %%DATADIR%%/scripts/Select/SelectContour/ts/SelectContour_sv.qm
 %%DATADIR%%/scripts/Select/SelectContour/ts/SelectContour_sv.ts
+%%DATADIR%%/scripts/Select/SelectContour/ts/SelectContour_tr.qm
+%%DATADIR%%/scripts/Select/SelectContour/ts/SelectContour_tr.ts
 %%DATADIR%%/scripts/Select/SelectContour/ts/SelectContour_zh_CN.qm
 %%DATADIR%%/scripts/Select/SelectContour/ts/SelectContour_zh_CN.ts
 %%DATADIR%%/scripts/Select/SelectContour/ts/SelectContour_zh_TW.qm
@@ -15633,6 +16123,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Select/SelectIntersectedEntities/ts/SelectIntersectedEntities_sl.ts
 %%DATADIR%%/scripts/Select/SelectIntersectedEntities/ts/SelectIntersectedEntities_sv.qm
 %%DATADIR%%/scripts/Select/SelectIntersectedEntities/ts/SelectIntersectedEntities_sv.ts
+%%DATADIR%%/scripts/Select/SelectIntersectedEntities/ts/SelectIntersectedEntities_tr.qm
+%%DATADIR%%/scripts/Select/SelectIntersectedEntities/ts/SelectIntersectedEntities_tr.ts
 %%DATADIR%%/scripts/Select/SelectIntersectedEntities/ts/SelectIntersectedEntities_zh_CN.qm
 %%DATADIR%%/scripts/Select/SelectIntersectedEntities/ts/SelectIntersectedEntities_zh_CN.ts
 %%DATADIR%%/scripts/Select/SelectIntersectedEntities/ts/SelectIntersectedEntities_zh_TW.qm
@@ -15703,6 +16195,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Select/SelectLayerByEntity/ts/SelectLayerByEntity_sl.ts
 %%DATADIR%%/scripts/Select/SelectLayerByEntity/ts/SelectLayerByEntity_sv.qm
 %%DATADIR%%/scripts/Select/SelectLayerByEntity/ts/SelectLayerByEntity_sv.ts
+%%DATADIR%%/scripts/Select/SelectLayerByEntity/ts/SelectLayerByEntity_tr.qm
+%%DATADIR%%/scripts/Select/SelectLayerByEntity/ts/SelectLayerByEntity_tr.ts
 %%DATADIR%%/scripts/Select/SelectLayerByEntity/ts/SelectLayerByEntity_zh_CN.qm
 %%DATADIR%%/scripts/Select/SelectLayerByEntity/ts/SelectLayerByEntity_zh_CN.ts
 %%DATADIR%%/scripts/Select/SelectLayerByEntity/ts/SelectLayerByEntity_zh_TW.qm
@@ -15773,6 +16267,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Select/SelectRectangle/ts/SelectRectangle_sl.ts
 %%DATADIR%%/scripts/Select/SelectRectangle/ts/SelectRectangle_sv.qm
 %%DATADIR%%/scripts/Select/SelectRectangle/ts/SelectRectangle_sv.ts
+%%DATADIR%%/scripts/Select/SelectRectangle/ts/SelectRectangle_tr.qm
+%%DATADIR%%/scripts/Select/SelectRectangle/ts/SelectRectangle_tr.ts
 %%DATADIR%%/scripts/Select/SelectRectangle/ts/SelectRectangle_zh_CN.qm
 %%DATADIR%%/scripts/Select/SelectRectangle/ts/SelectRectangle_zh_CN.ts
 %%DATADIR%%/scripts/Select/SelectRectangle/ts/SelectRectangle_zh_TW.qm
@@ -15841,6 +16337,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Select/ts/Select_sl.ts
 %%DATADIR%%/scripts/Select/ts/Select_sv.qm
 %%DATADIR%%/scripts/Select/ts/Select_sv.ts
+%%DATADIR%%/scripts/Select/ts/Select_tr.qm
+%%DATADIR%%/scripts/Select/ts/Select_tr.ts
 %%DATADIR%%/scripts/Select/ts/Select_zh_CN.qm
 %%DATADIR%%/scripts/Select/ts/Select_zh_CN.ts
 %%DATADIR%%/scripts/Select/ts/Select_zh_TW.qm
@@ -15904,6 +16402,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Snap/LockRelativeZero/ts/LockRelativeZero_sl.ts
 %%DATADIR%%/scripts/Snap/LockRelativeZero/ts/LockRelativeZero_sv.qm
 %%DATADIR%%/scripts/Snap/LockRelativeZero/ts/LockRelativeZero_sv.ts
+%%DATADIR%%/scripts/Snap/LockRelativeZero/ts/LockRelativeZero_tr.qm
+%%DATADIR%%/scripts/Snap/LockRelativeZero/ts/LockRelativeZero_tr.ts
 %%DATADIR%%/scripts/Snap/LockRelativeZero/ts/LockRelativeZero_zh_CN.qm
 %%DATADIR%%/scripts/Snap/LockRelativeZero/ts/LockRelativeZero_zh_CN.ts
 %%DATADIR%%/scripts/Snap/LockRelativeZero/ts/LockRelativeZero_zh_TW.qm
@@ -15954,6 +16454,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Snap/RestrictAngleLength/ts/RestrictAngleLength_sl.ts
 %%DATADIR%%/scripts/Snap/RestrictAngleLength/ts/RestrictAngleLength_sv.qm
 %%DATADIR%%/scripts/Snap/RestrictAngleLength/ts/RestrictAngleLength_sv.ts
+%%DATADIR%%/scripts/Snap/RestrictAngleLength/ts/RestrictAngleLength_tr.qm
+%%DATADIR%%/scripts/Snap/RestrictAngleLength/ts/RestrictAngleLength_tr.ts
 %%DATADIR%%/scripts/Snap/RestrictAngleLength/ts/RestrictAngleLength_zh_CN.qm
 %%DATADIR%%/scripts/Snap/RestrictAngleLength/ts/RestrictAngleLength_zh_CN.ts
 %%DATADIR%%/scripts/Snap/RestrictAngleLength/ts/RestrictAngleLength_zh_TW.qm
@@ -16015,6 +16517,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Snap/RestrictHorizontal/ts/RestrictHorizontal_sl.ts
 %%DATADIR%%/scripts/Snap/RestrictHorizontal/ts/RestrictHorizontal_sv.qm
 %%DATADIR%%/scripts/Snap/RestrictHorizontal/ts/RestrictHorizontal_sv.ts
+%%DATADIR%%/scripts/Snap/RestrictHorizontal/ts/RestrictHorizontal_tr.qm
+%%DATADIR%%/scripts/Snap/RestrictHorizontal/ts/RestrictHorizontal_tr.ts
 %%DATADIR%%/scripts/Snap/RestrictHorizontal/ts/RestrictHorizontal_zh_CN.qm
 %%DATADIR%%/scripts/Snap/RestrictHorizontal/ts/RestrictHorizontal_zh_CN.ts
 %%DATADIR%%/scripts/Snap/RestrictHorizontal/ts/RestrictHorizontal_zh_TW.qm
@@ -16076,6 +16580,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Snap/RestrictOff/ts/RestrictOff_sl.ts
 %%DATADIR%%/scripts/Snap/RestrictOff/ts/RestrictOff_sv.qm
 %%DATADIR%%/scripts/Snap/RestrictOff/ts/RestrictOff_sv.ts
+%%DATADIR%%/scripts/Snap/RestrictOff/ts/RestrictOff_tr.qm
+%%DATADIR%%/scripts/Snap/RestrictOff/ts/RestrictOff_tr.ts
 %%DATADIR%%/scripts/Snap/RestrictOff/ts/RestrictOff_zh_CN.qm
 %%DATADIR%%/scripts/Snap/RestrictOff/ts/RestrictOff_zh_CN.ts
 %%DATADIR%%/scripts/Snap/RestrictOff/ts/RestrictOff_zh_TW.qm
@@ -16137,6 +16643,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Snap/RestrictOrthogonal/ts/RestrictOrthogonal_sl.ts
 %%DATADIR%%/scripts/Snap/RestrictOrthogonal/ts/RestrictOrthogonal_sv.qm
 %%DATADIR%%/scripts/Snap/RestrictOrthogonal/ts/RestrictOrthogonal_sv.ts
+%%DATADIR%%/scripts/Snap/RestrictOrthogonal/ts/RestrictOrthogonal_tr.qm
+%%DATADIR%%/scripts/Snap/RestrictOrthogonal/ts/RestrictOrthogonal_tr.ts
 %%DATADIR%%/scripts/Snap/RestrictOrthogonal/ts/RestrictOrthogonal_zh_CN.qm
 %%DATADIR%%/scripts/Snap/RestrictOrthogonal/ts/RestrictOrthogonal_zh_CN.ts
 %%DATADIR%%/scripts/Snap/RestrictOrthogonal/ts/RestrictOrthogonal_zh_TW.qm
@@ -16198,6 +16706,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Snap/RestrictVertical/ts/RestrictVertical_sl.ts
 %%DATADIR%%/scripts/Snap/RestrictVertical/ts/RestrictVertical_sv.qm
 %%DATADIR%%/scripts/Snap/RestrictVertical/ts/RestrictVertical_sv.ts
+%%DATADIR%%/scripts/Snap/RestrictVertical/ts/RestrictVertical_tr.qm
+%%DATADIR%%/scripts/Snap/RestrictVertical/ts/RestrictVertical_tr.ts
 %%DATADIR%%/scripts/Snap/RestrictVertical/ts/RestrictVertical_zh_CN.qm
 %%DATADIR%%/scripts/Snap/RestrictVertical/ts/RestrictVertical_zh_CN.ts
 %%DATADIR%%/scripts/Snap/RestrictVertical/ts/RestrictVertical_zh_TW.qm
@@ -16267,6 +16777,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Snap/SetRelativeZero/ts/SetRelativeZero_sl.ts
 %%DATADIR%%/scripts/Snap/SetRelativeZero/ts/SetRelativeZero_sv.qm
 %%DATADIR%%/scripts/Snap/SetRelativeZero/ts/SetRelativeZero_sv.ts
+%%DATADIR%%/scripts/Snap/SetRelativeZero/ts/SetRelativeZero_tr.qm
+%%DATADIR%%/scripts/Snap/SetRelativeZero/ts/SetRelativeZero_tr.ts
 %%DATADIR%%/scripts/Snap/SetRelativeZero/ts/SetRelativeZero_zh_CN.qm
 %%DATADIR%%/scripts/Snap/SetRelativeZero/ts/SetRelativeZero_zh_CN.ts
 %%DATADIR%%/scripts/Snap/SetRelativeZero/ts/SetRelativeZero_zh_TW.qm
@@ -16333,6 +16845,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Snap/SnapAuto/ts/SnapAuto_sl.ts
 %%DATADIR%%/scripts/Snap/SnapAuto/ts/SnapAuto_sv.qm
 %%DATADIR%%/scripts/Snap/SnapAuto/ts/SnapAuto_sv.ts
+%%DATADIR%%/scripts/Snap/SnapAuto/ts/SnapAuto_tr.qm
+%%DATADIR%%/scripts/Snap/SnapAuto/ts/SnapAuto_tr.ts
 %%DATADIR%%/scripts/Snap/SnapAuto/ts/SnapAuto_zh_CN.qm
 %%DATADIR%%/scripts/Snap/SnapAuto/ts/SnapAuto_zh_CN.ts
 %%DATADIR%%/scripts/Snap/SnapAuto/ts/SnapAuto_zh_TW.qm
@@ -16397,6 +16911,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Snap/SnapCenter/ts/SnapCenter_sl.ts
 %%DATADIR%%/scripts/Snap/SnapCenter/ts/SnapCenter_sv.qm
 %%DATADIR%%/scripts/Snap/SnapCenter/ts/SnapCenter_sv.ts
+%%DATADIR%%/scripts/Snap/SnapCenter/ts/SnapCenter_tr.qm
+%%DATADIR%%/scripts/Snap/SnapCenter/ts/SnapCenter_tr.ts
 %%DATADIR%%/scripts/Snap/SnapCenter/ts/SnapCenter_zh_CN.qm
 %%DATADIR%%/scripts/Snap/SnapCenter/ts/SnapCenter_zh_CN.ts
 %%DATADIR%%/scripts/Snap/SnapCenter/ts/SnapCenter_zh_TW.qm
@@ -16470,6 +16986,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Snap/SnapCoordinate/ts/SnapCoordinate_sl.ts
 %%DATADIR%%/scripts/Snap/SnapCoordinate/ts/SnapCoordinate_sv.qm
 %%DATADIR%%/scripts/Snap/SnapCoordinate/ts/SnapCoordinate_sv.ts
+%%DATADIR%%/scripts/Snap/SnapCoordinate/ts/SnapCoordinate_tr.qm
+%%DATADIR%%/scripts/Snap/SnapCoordinate/ts/SnapCoordinate_tr.ts
 %%DATADIR%%/scripts/Snap/SnapCoordinate/ts/SnapCoordinate_zh_CN.qm
 %%DATADIR%%/scripts/Snap/SnapCoordinate/ts/SnapCoordinate_zh_CN.ts
 %%DATADIR%%/scripts/Snap/SnapCoordinate/ts/SnapCoordinate_zh_TW.qm
@@ -16543,6 +17061,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Snap/SnapCoordinatePolar/ts/SnapCoordinatePolar_sl.ts
 %%DATADIR%%/scripts/Snap/SnapCoordinatePolar/ts/SnapCoordinatePolar_sv.qm
 %%DATADIR%%/scripts/Snap/SnapCoordinatePolar/ts/SnapCoordinatePolar_sv.ts
+%%DATADIR%%/scripts/Snap/SnapCoordinatePolar/ts/SnapCoordinatePolar_tr.qm
+%%DATADIR%%/scripts/Snap/SnapCoordinatePolar/ts/SnapCoordinatePolar_tr.ts
 %%DATADIR%%/scripts/Snap/SnapCoordinatePolar/ts/SnapCoordinatePolar_zh_CN.qm
 %%DATADIR%%/scripts/Snap/SnapCoordinatePolar/ts/SnapCoordinatePolar_zh_CN.ts
 %%DATADIR%%/scripts/Snap/SnapCoordinatePolar/ts/SnapCoordinatePolar_zh_TW.qm
@@ -16608,6 +17128,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Snap/SnapDistance/ts/SnapDistance_sl.ts
 %%DATADIR%%/scripts/Snap/SnapDistance/ts/SnapDistance_sv.qm
 %%DATADIR%%/scripts/Snap/SnapDistance/ts/SnapDistance_sv.ts
+%%DATADIR%%/scripts/Snap/SnapDistance/ts/SnapDistance_tr.qm
+%%DATADIR%%/scripts/Snap/SnapDistance/ts/SnapDistance_tr.ts
 %%DATADIR%%/scripts/Snap/SnapDistance/ts/SnapDistance_zh_CN.qm
 %%DATADIR%%/scripts/Snap/SnapDistance/ts/SnapDistance_zh_CN.ts
 %%DATADIR%%/scripts/Snap/SnapDistance/ts/SnapDistance_zh_TW.qm
@@ -16672,6 +17194,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Snap/SnapDistanceManual/ts/SnapDistanceManual_sl.ts
 %%DATADIR%%/scripts/Snap/SnapDistanceManual/ts/SnapDistanceManual_sv.qm
 %%DATADIR%%/scripts/Snap/SnapDistanceManual/ts/SnapDistanceManual_sv.ts
+%%DATADIR%%/scripts/Snap/SnapDistanceManual/ts/SnapDistanceManual_tr.qm
+%%DATADIR%%/scripts/Snap/SnapDistanceManual/ts/SnapDistanceManual_tr.ts
 %%DATADIR%%/scripts/Snap/SnapDistanceManual/ts/SnapDistanceManual_zh_CN.qm
 %%DATADIR%%/scripts/Snap/SnapDistanceManual/ts/SnapDistanceManual_zh_CN.ts
 %%DATADIR%%/scripts/Snap/SnapDistanceManual/ts/SnapDistanceManual_zh_TW.qm
@@ -16736,6 +17260,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Snap/SnapEnd/ts/SnapEnd_sl.ts
 %%DATADIR%%/scripts/Snap/SnapEnd/ts/SnapEnd_sv.qm
 %%DATADIR%%/scripts/Snap/SnapEnd/ts/SnapEnd_sv.ts
+%%DATADIR%%/scripts/Snap/SnapEnd/ts/SnapEnd_tr.qm
+%%DATADIR%%/scripts/Snap/SnapEnd/ts/SnapEnd_tr.ts
 %%DATADIR%%/scripts/Snap/SnapEnd/ts/SnapEnd_zh_CN.qm
 %%DATADIR%%/scripts/Snap/SnapEnd/ts/SnapEnd_zh_CN.ts
 %%DATADIR%%/scripts/Snap/SnapEnd/ts/SnapEnd_zh_TW.qm
@@ -16797,6 +17323,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Snap/SnapFree/ts/SnapFree_sl.ts
 %%DATADIR%%/scripts/Snap/SnapFree/ts/SnapFree_sv.qm
 %%DATADIR%%/scripts/Snap/SnapFree/ts/SnapFree_sv.ts
+%%DATADIR%%/scripts/Snap/SnapFree/ts/SnapFree_tr.qm
+%%DATADIR%%/scripts/Snap/SnapFree/ts/SnapFree_tr.ts
 %%DATADIR%%/scripts/Snap/SnapFree/ts/SnapFree_zh_CN.qm
 %%DATADIR%%/scripts/Snap/SnapFree/ts/SnapFree_zh_CN.ts
 %%DATADIR%%/scripts/Snap/SnapFree/ts/SnapFree_zh_TW.qm
@@ -16858,6 +17386,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Snap/SnapGrid/ts/SnapGrid_sl.ts
 %%DATADIR%%/scripts/Snap/SnapGrid/ts/SnapGrid_sv.qm
 %%DATADIR%%/scripts/Snap/SnapGrid/ts/SnapGrid_sv.ts
+%%DATADIR%%/scripts/Snap/SnapGrid/ts/SnapGrid_tr.qm
+%%DATADIR%%/scripts/Snap/SnapGrid/ts/SnapGrid_tr.ts
 %%DATADIR%%/scripts/Snap/SnapGrid/ts/SnapGrid_zh_CN.qm
 %%DATADIR%%/scripts/Snap/SnapGrid/ts/SnapGrid_zh_CN.ts
 %%DATADIR%%/scripts/Snap/SnapGrid/ts/SnapGrid_zh_TW.qm
@@ -16941,6 +17471,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Snap/SnapIntersection/ts/SnapIntersection_sl.ts
 %%DATADIR%%/scripts/Snap/SnapIntersection/ts/SnapIntersection_sv.qm
 %%DATADIR%%/scripts/Snap/SnapIntersection/ts/SnapIntersection_sv.ts
+%%DATADIR%%/scripts/Snap/SnapIntersection/ts/SnapIntersection_tr.qm
+%%DATADIR%%/scripts/Snap/SnapIntersection/ts/SnapIntersection_tr.ts
 %%DATADIR%%/scripts/Snap/SnapIntersection/ts/SnapIntersection_zh_CN.qm
 %%DATADIR%%/scripts/Snap/SnapIntersection/ts/SnapIntersection_zh_CN.ts
 %%DATADIR%%/scripts/Snap/SnapIntersection/ts/SnapIntersection_zh_TW.qm
@@ -17018,6 +17550,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Snap/SnapIntersectionManual/ts/SnapIntersectionManual_sl.ts
 %%DATADIR%%/scripts/Snap/SnapIntersectionManual/ts/SnapIntersectionManual_sv.qm
 %%DATADIR%%/scripts/Snap/SnapIntersectionManual/ts/SnapIntersectionManual_sv.ts
+%%DATADIR%%/scripts/Snap/SnapIntersectionManual/ts/SnapIntersectionManual_tr.qm
+%%DATADIR%%/scripts/Snap/SnapIntersectionManual/ts/SnapIntersectionManual_tr.ts
 %%DATADIR%%/scripts/Snap/SnapIntersectionManual/ts/SnapIntersectionManual_zh_CN.qm
 %%DATADIR%%/scripts/Snap/SnapIntersectionManual/ts/SnapIntersectionManual_zh_CN.ts
 %%DATADIR%%/scripts/Snap/SnapIntersectionManual/ts/SnapIntersectionManual_zh_TW.qm
@@ -17082,6 +17616,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Snap/SnapMiddle/ts/SnapMiddle_sl.ts
 %%DATADIR%%/scripts/Snap/SnapMiddle/ts/SnapMiddle_sv.qm
 %%DATADIR%%/scripts/Snap/SnapMiddle/ts/SnapMiddle_sv.ts
+%%DATADIR%%/scripts/Snap/SnapMiddle/ts/SnapMiddle_tr.qm
+%%DATADIR%%/scripts/Snap/SnapMiddle/ts/SnapMiddle_tr.ts
 %%DATADIR%%/scripts/Snap/SnapMiddle/ts/SnapMiddle_zh_CN.qm
 %%DATADIR%%/scripts/Snap/SnapMiddle/ts/SnapMiddle_zh_CN.ts
 %%DATADIR%%/scripts/Snap/SnapMiddle/ts/SnapMiddle_zh_TW.qm
@@ -17157,6 +17693,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Snap/SnapMiddleManual/ts/SnapMiddleManual_sl.ts
 %%DATADIR%%/scripts/Snap/SnapMiddleManual/ts/SnapMiddleManual_sv.qm
 %%DATADIR%%/scripts/Snap/SnapMiddleManual/ts/SnapMiddleManual_sv.ts
+%%DATADIR%%/scripts/Snap/SnapMiddleManual/ts/SnapMiddleManual_tr.qm
+%%DATADIR%%/scripts/Snap/SnapMiddleManual/ts/SnapMiddleManual_tr.ts
 %%DATADIR%%/scripts/Snap/SnapMiddleManual/ts/SnapMiddleManual_zh_CN.qm
 %%DATADIR%%/scripts/Snap/SnapMiddleManual/ts/SnapMiddleManual_zh_CN.ts
 %%DATADIR%%/scripts/Snap/SnapMiddleManual/ts/SnapMiddleManual_zh_TW.qm
@@ -17221,6 +17759,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Snap/SnapOnEntity/ts/SnapOnEntity_sl.ts
 %%DATADIR%%/scripts/Snap/SnapOnEntity/ts/SnapOnEntity_sv.qm
 %%DATADIR%%/scripts/Snap/SnapOnEntity/ts/SnapOnEntity_sv.ts
+%%DATADIR%%/scripts/Snap/SnapOnEntity/ts/SnapOnEntity_tr.qm
+%%DATADIR%%/scripts/Snap/SnapOnEntity/ts/SnapOnEntity_tr.ts
 %%DATADIR%%/scripts/Snap/SnapOnEntity/ts/SnapOnEntity_zh_CN.qm
 %%DATADIR%%/scripts/Snap/SnapOnEntity/ts/SnapOnEntity_zh_CN.ts
 %%DATADIR%%/scripts/Snap/SnapOnEntity/ts/SnapOnEntity_zh_TW.qm
@@ -17282,6 +17822,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Snap/SnapPerpendicular/ts/SnapPerpendicular_sl.ts
 %%DATADIR%%/scripts/Snap/SnapPerpendicular/ts/SnapPerpendicular_sv.qm
 %%DATADIR%%/scripts/Snap/SnapPerpendicular/ts/SnapPerpendicular_sv.ts
+%%DATADIR%%/scripts/Snap/SnapPerpendicular/ts/SnapPerpendicular_tr.qm
+%%DATADIR%%/scripts/Snap/SnapPerpendicular/ts/SnapPerpendicular_tr.ts
 %%DATADIR%%/scripts/Snap/SnapPerpendicular/ts/SnapPerpendicular_zh_CN.qm
 %%DATADIR%%/scripts/Snap/SnapPerpendicular/ts/SnapPerpendicular_zh_CN.ts
 %%DATADIR%%/scripts/Snap/SnapPerpendicular/ts/SnapPerpendicular_zh_TW.qm
@@ -17346,6 +17888,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Snap/SnapReference/ts/SnapReference_sl.ts
 %%DATADIR%%/scripts/Snap/SnapReference/ts/SnapReference_sv.qm
 %%DATADIR%%/scripts/Snap/SnapReference/ts/SnapReference_sv.ts
+%%DATADIR%%/scripts/Snap/SnapReference/ts/SnapReference_tr.qm
+%%DATADIR%%/scripts/Snap/SnapReference/ts/SnapReference_tr.ts
 %%DATADIR%%/scripts/Snap/SnapReference/ts/SnapReference_zh_CN.qm
 %%DATADIR%%/scripts/Snap/SnapReference/ts/SnapReference_zh_CN.ts
 %%DATADIR%%/scripts/Snap/SnapReference/ts/SnapReference_zh_TW.qm
@@ -17397,6 +17941,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Snap/SnapSelectionCenter/ts/SnapSelectionCenter_sl.ts
 %%DATADIR%%/scripts/Snap/SnapSelectionCenter/ts/SnapSelectionCenter_sv.qm
 %%DATADIR%%/scripts/Snap/SnapSelectionCenter/ts/SnapSelectionCenter_sv.ts
+%%DATADIR%%/scripts/Snap/SnapSelectionCenter/ts/SnapSelectionCenter_tr.qm
+%%DATADIR%%/scripts/Snap/SnapSelectionCenter/ts/SnapSelectionCenter_tr.ts
 %%DATADIR%%/scripts/Snap/SnapSelectionCenter/ts/SnapSelectionCenter_zh_CN.qm
 %%DATADIR%%/scripts/Snap/SnapSelectionCenter/ts/SnapSelectionCenter_zh_CN.ts
 %%DATADIR%%/scripts/Snap/SnapSelectionCenter/ts/SnapSelectionCenter_zh_TW.qm
@@ -17455,6 +18001,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Snap/SnapTangential/ts/SnapTangential_sl.ts
 %%DATADIR%%/scripts/Snap/SnapTangential/ts/SnapTangential_sv.qm
 %%DATADIR%%/scripts/Snap/SnapTangential/ts/SnapTangential_sv.ts
+%%DATADIR%%/scripts/Snap/SnapTangential/ts/SnapTangential_tr.qm
+%%DATADIR%%/scripts/Snap/SnapTangential/ts/SnapTangential_tr.ts
 %%DATADIR%%/scripts/Snap/SnapTangential/ts/SnapTangential_zh_CN.qm
 %%DATADIR%%/scripts/Snap/SnapTangential/ts/SnapTangential_zh_CN.ts
 %%DATADIR%%/scripts/Snap/SnapTangential/ts/SnapTangential_zh_TW.qm
@@ -17513,6 +18061,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Snap/SnapXManual/ts/SnapXManual_sl.ts
 %%DATADIR%%/scripts/Snap/SnapXManual/ts/SnapXManual_sv.qm
 %%DATADIR%%/scripts/Snap/SnapXManual/ts/SnapXManual_sv.ts
+%%DATADIR%%/scripts/Snap/SnapXManual/ts/SnapXManual_tr.qm
+%%DATADIR%%/scripts/Snap/SnapXManual/ts/SnapXManual_tr.ts
 %%DATADIR%%/scripts/Snap/SnapXManual/ts/SnapXManual_zh_CN.qm
 %%DATADIR%%/scripts/Snap/SnapXManual/ts/SnapXManual_zh_CN.ts
 %%DATADIR%%/scripts/Snap/SnapXManual/ts/SnapXManual_zh_TW.qm
@@ -17567,6 +18117,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Snap/SnapYManual/ts/SnapYManual_sl.ts
 %%DATADIR%%/scripts/Snap/SnapYManual/ts/SnapYManual_sv.qm
 %%DATADIR%%/scripts/Snap/SnapYManual/ts/SnapYManual_sv.ts
+%%DATADIR%%/scripts/Snap/SnapYManual/ts/SnapYManual_tr.qm
+%%DATADIR%%/scripts/Snap/SnapYManual/ts/SnapYManual_tr.ts
 %%DATADIR%%/scripts/Snap/SnapYManual/ts/SnapYManual_zh_CN.qm
 %%DATADIR%%/scripts/Snap/SnapYManual/ts/SnapYManual_zh_CN.ts
 %%DATADIR%%/scripts/Snap/SnapYManual/ts/SnapYManual_zh_TW.qm
@@ -17614,6 +18166,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Snap/ts/Snap_sl.ts
 %%DATADIR%%/scripts/Snap/ts/Snap_sv.qm
 %%DATADIR%%/scripts/Snap/ts/Snap_sv.ts
+%%DATADIR%%/scripts/Snap/ts/Snap_tr.qm
+%%DATADIR%%/scripts/Snap/ts/Snap_tr.ts
 %%DATADIR%%/scripts/Snap/ts/Snap_zh_CN.qm
 %%DATADIR%%/scripts/Snap/ts/Snap_zh_CN.ts
 %%DATADIR%%/scripts/Snap/ts/Snap_zh_TW.qm
@@ -17678,6 +18232,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/View/AntialiasingMode/ts/AntialiasingMode_sl.ts
 %%DATADIR%%/scripts/View/AntialiasingMode/ts/AntialiasingMode_sv.qm
 %%DATADIR%%/scripts/View/AntialiasingMode/ts/AntialiasingMode_sv.ts
+%%DATADIR%%/scripts/View/AntialiasingMode/ts/AntialiasingMode_tr.qm
+%%DATADIR%%/scripts/View/AntialiasingMode/ts/AntialiasingMode_tr.ts
 %%DATADIR%%/scripts/View/AntialiasingMode/ts/AntialiasingMode_zh_CN.qm
 %%DATADIR%%/scripts/View/AntialiasingMode/ts/AntialiasingMode_zh_CN.ts
 %%DATADIR%%/scripts/View/AntialiasingMode/ts/AntialiasingMode_zh_TW.qm
@@ -17736,6 +18292,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/View/CommandLineFocus/ts/CommandLineFocus_sl.ts
 %%DATADIR%%/scripts/View/CommandLineFocus/ts/CommandLineFocus_sv.qm
 %%DATADIR%%/scripts/View/CommandLineFocus/ts/CommandLineFocus_sv.ts
+%%DATADIR%%/scripts/View/CommandLineFocus/ts/CommandLineFocus_tr.qm
+%%DATADIR%%/scripts/View/CommandLineFocus/ts/CommandLineFocus_tr.ts
 %%DATADIR%%/scripts/View/CommandLineFocus/ts/CommandLineFocus_zh_CN.qm
 %%DATADIR%%/scripts/View/CommandLineFocus/ts/CommandLineFocus_zh_CN.ts
 %%DATADIR%%/scripts/View/CommandLineFocus/ts/CommandLineFocus_zh_TW.qm
@@ -17785,6 +18343,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/View/DisplayDistanceAngle/ts/DisplayDistanceAngle_sl.ts
 %%DATADIR%%/scripts/View/DisplayDistanceAngle/ts/DisplayDistanceAngle_sv.qm
 %%DATADIR%%/scripts/View/DisplayDistanceAngle/ts/DisplayDistanceAngle_sv.ts
+%%DATADIR%%/scripts/View/DisplayDistanceAngle/ts/DisplayDistanceAngle_tr.qm
+%%DATADIR%%/scripts/View/DisplayDistanceAngle/ts/DisplayDistanceAngle_tr.ts
 %%DATADIR%%/scripts/View/DisplayDistanceAngle/ts/DisplayDistanceAngle_zh_CN.qm
 %%DATADIR%%/scripts/View/DisplayDistanceAngle/ts/DisplayDistanceAngle_zh_CN.ts
 %%DATADIR%%/scripts/View/DisplayDistanceAngle/ts/DisplayDistanceAngle_zh_TW.qm
@@ -17845,6 +18405,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/View/DraftMode/ts/DraftMode_sl.ts
 %%DATADIR%%/scripts/View/DraftMode/ts/DraftMode_sv.qm
 %%DATADIR%%/scripts/View/DraftMode/ts/DraftMode_sv.ts
+%%DATADIR%%/scripts/View/DraftMode/ts/DraftMode_tr.qm
+%%DATADIR%%/scripts/View/DraftMode/ts/DraftMode_tr.ts
 %%DATADIR%%/scripts/View/DraftMode/ts/DraftMode_zh_CN.qm
 %%DATADIR%%/scripts/View/DraftMode/ts/DraftMode_zh_CN.ts
 %%DATADIR%%/scripts/View/DraftMode/ts/DraftMode_zh_TW.qm
@@ -17896,6 +18458,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/View/IsometricView/IsometricGridLeft/ts/IsometricGridLeft_sl.ts
 %%DATADIR%%/scripts/View/IsometricView/IsometricGridLeft/ts/IsometricGridLeft_sv.qm
 %%DATADIR%%/scripts/View/IsometricView/IsometricGridLeft/ts/IsometricGridLeft_sv.ts
+%%DATADIR%%/scripts/View/IsometricView/IsometricGridLeft/ts/IsometricGridLeft_tr.qm
+%%DATADIR%%/scripts/View/IsometricView/IsometricGridLeft/ts/IsometricGridLeft_tr.ts
 %%DATADIR%%/scripts/View/IsometricView/IsometricGridLeft/ts/IsometricGridLeft_zh_CN.qm
 %%DATADIR%%/scripts/View/IsometricView/IsometricGridLeft/ts/IsometricGridLeft_zh_CN.ts
 %%DATADIR%%/scripts/View/IsometricView/IsometricGridLeft/ts/IsometricGridLeft_zh_TW.qm
@@ -17947,6 +18511,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/View/IsometricView/IsometricGridOff/ts/IsometricGridOff_sl.ts
 %%DATADIR%%/scripts/View/IsometricView/IsometricGridOff/ts/IsometricGridOff_sv.qm
 %%DATADIR%%/scripts/View/IsometricView/IsometricGridOff/ts/IsometricGridOff_sv.ts
+%%DATADIR%%/scripts/View/IsometricView/IsometricGridOff/ts/IsometricGridOff_tr.qm
+%%DATADIR%%/scripts/View/IsometricView/IsometricGridOff/ts/IsometricGridOff_tr.ts
 %%DATADIR%%/scripts/View/IsometricView/IsometricGridOff/ts/IsometricGridOff_zh_CN.qm
 %%DATADIR%%/scripts/View/IsometricView/IsometricGridOff/ts/IsometricGridOff_zh_CN.ts
 %%DATADIR%%/scripts/View/IsometricView/IsometricGridOff/ts/IsometricGridOff_zh_TW.qm
@@ -17998,6 +18564,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/View/IsometricView/IsometricGridRight/ts/IsometricGridRight_sl.ts
 %%DATADIR%%/scripts/View/IsometricView/IsometricGridRight/ts/IsometricGridRight_sv.qm
 %%DATADIR%%/scripts/View/IsometricView/IsometricGridRight/ts/IsometricGridRight_sv.ts
+%%DATADIR%%/scripts/View/IsometricView/IsometricGridRight/ts/IsometricGridRight_tr.qm
+%%DATADIR%%/scripts/View/IsometricView/IsometricGridRight/ts/IsometricGridRight_tr.ts
 %%DATADIR%%/scripts/View/IsometricView/IsometricGridRight/ts/IsometricGridRight_zh_CN.qm
 %%DATADIR%%/scripts/View/IsometricView/IsometricGridRight/ts/IsometricGridRight_zh_CN.ts
 %%DATADIR%%/scripts/View/IsometricView/IsometricGridRight/ts/IsometricGridRight_zh_TW.qm
@@ -18049,6 +18617,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/View/IsometricView/IsometricGridTop/ts/IsometricGridTop_sl.ts
 %%DATADIR%%/scripts/View/IsometricView/IsometricGridTop/ts/IsometricGridTop_sv.qm
 %%DATADIR%%/scripts/View/IsometricView/IsometricGridTop/ts/IsometricGridTop_sv.ts
+%%DATADIR%%/scripts/View/IsometricView/IsometricGridTop/ts/IsometricGridTop_tr.qm
+%%DATADIR%%/scripts/View/IsometricView/IsometricGridTop/ts/IsometricGridTop_tr.ts
 %%DATADIR%%/scripts/View/IsometricView/IsometricGridTop/ts/IsometricGridTop_zh_CN.qm
 %%DATADIR%%/scripts/View/IsometricView/IsometricGridTop/ts/IsometricGridTop_zh_CN.ts
 %%DATADIR%%/scripts/View/IsometricView/IsometricGridTop/ts/IsometricGridTop_zh_TW.qm
@@ -18089,6 +18659,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/View/IsometricView/ts/IsometricView_sl.ts
 %%DATADIR%%/scripts/View/IsometricView/ts/IsometricView_sv.qm
 %%DATADIR%%/scripts/View/IsometricView/ts/IsometricView_sv.ts
+%%DATADIR%%/scripts/View/IsometricView/ts/IsometricView_tr.qm
+%%DATADIR%%/scripts/View/IsometricView/ts/IsometricView_tr.ts
 %%DATADIR%%/scripts/View/IsometricView/ts/IsometricView_zh_CN.qm
 %%DATADIR%%/scripts/View/IsometricView/ts/IsometricView_zh_CN.ts
 %%DATADIR%%/scripts/View/IsometricView/ts/IsometricView_zh_TW.qm
@@ -18147,6 +18719,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/View/LinetypeMode/ts/LinetypeMode_sl.ts
 %%DATADIR%%/scripts/View/LinetypeMode/ts/LinetypeMode_sv.qm
 %%DATADIR%%/scripts/View/LinetypeMode/ts/LinetypeMode_sv.ts
+%%DATADIR%%/scripts/View/LinetypeMode/ts/LinetypeMode_tr.qm
+%%DATADIR%%/scripts/View/LinetypeMode/ts/LinetypeMode_tr.ts
 %%DATADIR%%/scripts/View/LinetypeMode/ts/LinetypeMode_zh_CN.qm
 %%DATADIR%%/scripts/View/LinetypeMode/ts/LinetypeMode_zh_CN.ts
 %%DATADIR%%/scripts/View/LinetypeMode/ts/LinetypeMode_zh_TW.qm
@@ -18196,6 +18770,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/View/OptionsToolBarFocus/ts/OptionsToolBarFocus_sl.ts
 %%DATADIR%%/scripts/View/OptionsToolBarFocus/ts/OptionsToolBarFocus_sv.qm
 %%DATADIR%%/scripts/View/OptionsToolBarFocus/ts/OptionsToolBarFocus_sv.ts
+%%DATADIR%%/scripts/View/OptionsToolBarFocus/ts/OptionsToolBarFocus_tr.qm
+%%DATADIR%%/scripts/View/OptionsToolBarFocus/ts/OptionsToolBarFocus_tr.ts
 %%DATADIR%%/scripts/View/OptionsToolBarFocus/ts/OptionsToolBarFocus_zh_CN.qm
 %%DATADIR%%/scripts/View/OptionsToolBarFocus/ts/OptionsToolBarFocus_zh_CN.ts
 %%DATADIR%%/scripts/View/OptionsToolBarFocus/ts/OptionsToolBarFocus_zh_TW.qm
@@ -18258,6 +18834,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/View/ToggleGrid/ts/ToggleGrid_sl.ts
 %%DATADIR%%/scripts/View/ToggleGrid/ts/ToggleGrid_sv.qm
 %%DATADIR%%/scripts/View/ToggleGrid/ts/ToggleGrid_sv.ts
+%%DATADIR%%/scripts/View/ToggleGrid/ts/ToggleGrid_tr.qm
+%%DATADIR%%/scripts/View/ToggleGrid/ts/ToggleGrid_tr.ts
 %%DATADIR%%/scripts/View/ToggleGrid/ts/ToggleGrid_zh_CN.qm
 %%DATADIR%%/scripts/View/ToggleGrid/ts/ToggleGrid_zh_CN.ts
 %%DATADIR%%/scripts/View/ToggleGrid/ts/ToggleGrid_zh_TW.qm
@@ -18303,6 +18881,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/View/ViewToolBars/ts/ViewToolBars_sl.ts
 %%DATADIR%%/scripts/View/ViewToolBars/ts/ViewToolBars_sv.qm
 %%DATADIR%%/scripts/View/ViewToolBars/ts/ViewToolBars_sv.ts
+%%DATADIR%%/scripts/View/ViewToolBars/ts/ViewToolBars_tr.qm
+%%DATADIR%%/scripts/View/ViewToolBars/ts/ViewToolBars_tr.ts
 %%DATADIR%%/scripts/View/ViewToolBars/ts/ViewToolBars_zh_CN.qm
 %%DATADIR%%/scripts/View/ViewToolBars/ts/ViewToolBars_zh_CN.ts
 %%DATADIR%%/scripts/View/ViewToolBars/ts/ViewToolBars_zh_TW.qm
@@ -18364,6 +18944,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/View/Zoom/AutoZoom/ts/AutoZoom_sl.ts
 %%DATADIR%%/scripts/View/Zoom/AutoZoom/ts/AutoZoom_sv.qm
 %%DATADIR%%/scripts/View/Zoom/AutoZoom/ts/AutoZoom_sv.ts
+%%DATADIR%%/scripts/View/Zoom/AutoZoom/ts/AutoZoom_tr.qm
+%%DATADIR%%/scripts/View/Zoom/AutoZoom/ts/AutoZoom_tr.ts
 %%DATADIR%%/scripts/View/Zoom/AutoZoom/ts/AutoZoom_zh_CN.qm
 %%DATADIR%%/scripts/View/Zoom/AutoZoom/ts/AutoZoom_zh_CN.ts
 %%DATADIR%%/scripts/View/Zoom/AutoZoom/ts/AutoZoom_zh_TW.qm
@@ -18425,6 +19007,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/View/Zoom/PanZoom/ts/PanZoom_sl.ts
 %%DATADIR%%/scripts/View/Zoom/PanZoom/ts/PanZoom_sv.qm
 %%DATADIR%%/scripts/View/Zoom/PanZoom/ts/PanZoom_sv.ts
+%%DATADIR%%/scripts/View/Zoom/PanZoom/ts/PanZoom_tr.qm
+%%DATADIR%%/scripts/View/Zoom/PanZoom/ts/PanZoom_tr.ts
 %%DATADIR%%/scripts/View/Zoom/PanZoom/ts/PanZoom_zh_CN.qm
 %%DATADIR%%/scripts/View/Zoom/PanZoom/ts/PanZoom_zh_CN.ts
 %%DATADIR%%/scripts/View/Zoom/PanZoom/ts/PanZoom_zh_TW.qm
@@ -18486,6 +19070,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/View/Zoom/PreviousView/ts/PreviousView_sl.ts
 %%DATADIR%%/scripts/View/Zoom/PreviousView/ts/PreviousView_sv.qm
 %%DATADIR%%/scripts/View/Zoom/PreviousView/ts/PreviousView_sv.ts
+%%DATADIR%%/scripts/View/Zoom/PreviousView/ts/PreviousView_tr.qm
+%%DATADIR%%/scripts/View/Zoom/PreviousView/ts/PreviousView_tr.ts
 %%DATADIR%%/scripts/View/Zoom/PreviousView/ts/PreviousView_zh_CN.qm
 %%DATADIR%%/scripts/View/Zoom/PreviousView/ts/PreviousView_zh_CN.ts
 %%DATADIR%%/scripts/View/Zoom/PreviousView/ts/PreviousView_zh_TW.qm
@@ -18560,6 +19146,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/View/Zoom/WindowZoom/ts/WindowZoom_sl.ts
 %%DATADIR%%/scripts/View/Zoom/WindowZoom/ts/WindowZoom_sv.qm
 %%DATADIR%%/scripts/View/Zoom/WindowZoom/ts/WindowZoom_sv.ts
+%%DATADIR%%/scripts/View/Zoom/WindowZoom/ts/WindowZoom_tr.qm
+%%DATADIR%%/scripts/View/Zoom/WindowZoom/ts/WindowZoom_tr.ts
 %%DATADIR%%/scripts/View/Zoom/WindowZoom/ts/WindowZoom_zh_CN.qm
 %%DATADIR%%/scripts/View/Zoom/WindowZoom/ts/WindowZoom_zh_CN.ts
 %%DATADIR%%/scripts/View/Zoom/WindowZoom/ts/WindowZoom_zh_TW.qm
@@ -18625,6 +19213,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/View/Zoom/ZoomIn/ts/ZoomIn_sl.ts
 %%DATADIR%%/scripts/View/Zoom/ZoomIn/ts/ZoomIn_sv.qm
 %%DATADIR%%/scripts/View/Zoom/ZoomIn/ts/ZoomIn_sv.ts
+%%DATADIR%%/scripts/View/Zoom/ZoomIn/ts/ZoomIn_tr.qm
+%%DATADIR%%/scripts/View/Zoom/ZoomIn/ts/ZoomIn_tr.ts
 %%DATADIR%%/scripts/View/Zoom/ZoomIn/ts/ZoomIn_zh_CN.qm
 %%DATADIR%%/scripts/View/Zoom/ZoomIn/ts/ZoomIn_zh_CN.ts
 %%DATADIR%%/scripts/View/Zoom/ZoomIn/ts/ZoomIn_zh_TW.qm
@@ -18686,6 +19276,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/View/Zoom/ZoomOut/ts/ZoomOut_sl.ts
 %%DATADIR%%/scripts/View/Zoom/ZoomOut/ts/ZoomOut_sv.qm
 %%DATADIR%%/scripts/View/Zoom/ZoomOut/ts/ZoomOut_sv.ts
+%%DATADIR%%/scripts/View/Zoom/ZoomOut/ts/ZoomOut_tr.qm
+%%DATADIR%%/scripts/View/Zoom/ZoomOut/ts/ZoomOut_tr.ts
 %%DATADIR%%/scripts/View/Zoom/ZoomOut/ts/ZoomOut_zh_CN.qm
 %%DATADIR%%/scripts/View/Zoom/ZoomOut/ts/ZoomOut_zh_CN.ts
 %%DATADIR%%/scripts/View/Zoom/ZoomOut/ts/ZoomOut_zh_TW.qm
@@ -18747,6 +19339,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/View/Zoom/ZoomToSelection/ts/ZoomToSelection_sl.ts
 %%DATADIR%%/scripts/View/Zoom/ZoomToSelection/ts/ZoomToSelection_sv.qm
 %%DATADIR%%/scripts/View/Zoom/ZoomToSelection/ts/ZoomToSelection_sv.ts
+%%DATADIR%%/scripts/View/Zoom/ZoomToSelection/ts/ZoomToSelection_tr.qm
+%%DATADIR%%/scripts/View/Zoom/ZoomToSelection/ts/ZoomToSelection_tr.ts
 %%DATADIR%%/scripts/View/Zoom/ZoomToSelection/ts/ZoomToSelection_zh_CN.qm
 %%DATADIR%%/scripts/View/Zoom/ZoomToSelection/ts/ZoomToSelection_zh_CN.ts
 %%DATADIR%%/scripts/View/Zoom/ZoomToSelection/ts/ZoomToSelection_zh_TW.qm
@@ -18786,6 +19380,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/View/Zoom/ts/Zoom_sl.ts
 %%DATADIR%%/scripts/View/Zoom/ts/Zoom_sv.qm
 %%DATADIR%%/scripts/View/Zoom/ts/Zoom_sv.ts
+%%DATADIR%%/scripts/View/Zoom/ts/Zoom_tr.qm
+%%DATADIR%%/scripts/View/Zoom/ts/Zoom_tr.ts
 %%DATADIR%%/scripts/View/Zoom/ts/Zoom_zh_CN.qm
 %%DATADIR%%/scripts/View/Zoom/ts/Zoom_zh_CN.ts
 %%DATADIR%%/scripts/View/Zoom/ts/Zoom_zh_TW.qm
@@ -18834,6 +19430,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/View/ts/View_sl.ts
 %%DATADIR%%/scripts/View/ts/View_sv.qm
 %%DATADIR%%/scripts/View/ts/View_sv.ts
+%%DATADIR%%/scripts/View/ts/View_tr.qm
+%%DATADIR%%/scripts/View/ts/View_tr.ts
 %%DATADIR%%/scripts/View/ts/View_zh_CN.qm
 %%DATADIR%%/scripts/View/ts/View_zh_CN.ts
 %%DATADIR%%/scripts/View/ts/View_zh_TW.qm
@@ -18902,6 +19500,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Widgets/BlockList/ts/BlockList_sl.ts
 %%DATADIR%%/scripts/Widgets/BlockList/ts/BlockList_sv.qm
 %%DATADIR%%/scripts/Widgets/BlockList/ts/BlockList_sv.ts
+%%DATADIR%%/scripts/Widgets/BlockList/ts/BlockList_tr.qm
+%%DATADIR%%/scripts/Widgets/BlockList/ts/BlockList_tr.ts
 %%DATADIR%%/scripts/Widgets/BlockList/ts/BlockList_zh_CN.qm
 %%DATADIR%%/scripts/Widgets/BlockList/ts/BlockList_zh_CN.ts
 %%DATADIR%%/scripts/Widgets/BlockList/ts/BlockList_zh_TW.qm
@@ -18947,6 +19547,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Widgets/CadToolBar/ts/CadToolBar_sl.ts
 %%DATADIR%%/scripts/Widgets/CadToolBar/ts/CadToolBar_sv.qm
 %%DATADIR%%/scripts/Widgets/CadToolBar/ts/CadToolBar_sv.ts
+%%DATADIR%%/scripts/Widgets/CadToolBar/ts/CadToolBar_tr.qm
+%%DATADIR%%/scripts/Widgets/CadToolBar/ts/CadToolBar_tr.ts
 %%DATADIR%%/scripts/Widgets/CadToolBar/ts/CadToolBar_zh_CN.qm
 %%DATADIR%%/scripts/Widgets/CadToolBar/ts/CadToolBar_zh_CN.ts
 %%DATADIR%%/scripts/Widgets/CadToolBar/ts/CadToolBar_zh_TW.qm
@@ -18991,6 +19593,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Widgets/CadToolMatrix/ts/CadToolMatrix_sl.ts
 %%DATADIR%%/scripts/Widgets/CadToolMatrix/ts/CadToolMatrix_sv.qm
 %%DATADIR%%/scripts/Widgets/CadToolMatrix/ts/CadToolMatrix_sv.ts
+%%DATADIR%%/scripts/Widgets/CadToolMatrix/ts/CadToolMatrix_tr.qm
+%%DATADIR%%/scripts/Widgets/CadToolMatrix/ts/CadToolMatrix_tr.ts
 %%DATADIR%%/scripts/Widgets/CadToolMatrix/ts/CadToolMatrix_zh_CN.qm
 %%DATADIR%%/scripts/Widgets/CadToolMatrix/ts/CadToolMatrix_zh_CN.ts
 %%DATADIR%%/scripts/Widgets/CadToolMatrix/ts/CadToolMatrix_zh_TW.qm
@@ -19055,6 +19659,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Widgets/CommandLine/ts/CommandLine_sl.ts
 %%DATADIR%%/scripts/Widgets/CommandLine/ts/CommandLine_sv.qm
 %%DATADIR%%/scripts/Widgets/CommandLine/ts/CommandLine_sv.ts
+%%DATADIR%%/scripts/Widgets/CommandLine/ts/CommandLine_tr.qm
+%%DATADIR%%/scripts/Widgets/CommandLine/ts/CommandLine_tr.ts
 %%DATADIR%%/scripts/Widgets/CommandLine/ts/CommandLine_zh_CN.qm
 %%DATADIR%%/scripts/Widgets/CommandLine/ts/CommandLine_zh_CN.ts
 %%DATADIR%%/scripts/Widgets/CommandLine/ts/CommandLine_zh_TW.qm
@@ -19096,6 +19702,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Widgets/CoordinateDisplay/ts/CoordinateDisplay_sl.ts
 %%DATADIR%%/scripts/Widgets/CoordinateDisplay/ts/CoordinateDisplay_sv.qm
 %%DATADIR%%/scripts/Widgets/CoordinateDisplay/ts/CoordinateDisplay_sv.ts
+%%DATADIR%%/scripts/Widgets/CoordinateDisplay/ts/CoordinateDisplay_tr.qm
+%%DATADIR%%/scripts/Widgets/CoordinateDisplay/ts/CoordinateDisplay_tr.ts
 %%DATADIR%%/scripts/Widgets/CoordinateDisplay/ts/CoordinateDisplay_zh_CN.qm
 %%DATADIR%%/scripts/Widgets/CoordinateDisplay/ts/CoordinateDisplay_zh_CN.ts
 %%DATADIR%%/scripts/Widgets/CoordinateDisplay/ts/CoordinateDisplay_zh_TW.qm
@@ -19141,6 +19749,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Widgets/DirectoryList/ts/DirectoryList_sl.ts
 %%DATADIR%%/scripts/Widgets/DirectoryList/ts/DirectoryList_sv.qm
 %%DATADIR%%/scripts/Widgets/DirectoryList/ts/DirectoryList_sv.ts
+%%DATADIR%%/scripts/Widgets/DirectoryList/ts/DirectoryList_tr.qm
+%%DATADIR%%/scripts/Widgets/DirectoryList/ts/DirectoryList_tr.ts
 %%DATADIR%%/scripts/Widgets/DirectoryList/ts/DirectoryList_zh_CN.qm
 %%DATADIR%%/scripts/Widgets/DirectoryList/ts/DirectoryList_zh_CN.ts
 %%DATADIR%%/scripts/Widgets/DirectoryList/ts/DirectoryList_zh_TW.qm
@@ -19184,6 +19794,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Widgets/FirstStart/ts/FirstStart_sl.ts
 %%DATADIR%%/scripts/Widgets/FirstStart/ts/FirstStart_sv.qm
 %%DATADIR%%/scripts/Widgets/FirstStart/ts/FirstStart_sv.ts
+%%DATADIR%%/scripts/Widgets/FirstStart/ts/FirstStart_tr.qm
+%%DATADIR%%/scripts/Widgets/FirstStart/ts/FirstStart_tr.ts
 %%DATADIR%%/scripts/Widgets/FirstStart/ts/FirstStart_zh_CN.qm
 %%DATADIR%%/scripts/Widgets/FirstStart/ts/FirstStart_zh_CN.ts
 %%DATADIR%%/scripts/Widgets/FirstStart/ts/FirstStart_zh_TW.qm
@@ -19247,6 +19859,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Widgets/LayerList/ts/LayerList_sl.ts
 %%DATADIR%%/scripts/Widgets/LayerList/ts/LayerList_sv.qm
 %%DATADIR%%/scripts/Widgets/LayerList/ts/LayerList_sv.ts
+%%DATADIR%%/scripts/Widgets/LayerList/ts/LayerList_tr.qm
+%%DATADIR%%/scripts/Widgets/LayerList/ts/LayerList_tr.ts
 %%DATADIR%%/scripts/Widgets/LayerList/ts/LayerList_zh_CN.qm
 %%DATADIR%%/scripts/Widgets/LayerList/ts/LayerList_zh_CN.ts
 %%DATADIR%%/scripts/Widgets/LayerList/ts/LayerList_zh_TW.qm
@@ -19384,6 +19998,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Widgets/LibraryBrowser/ts/LibraryBrowser_sl.ts
 %%DATADIR%%/scripts/Widgets/LibraryBrowser/ts/LibraryBrowser_sv.qm
 %%DATADIR%%/scripts/Widgets/LibraryBrowser/ts/LibraryBrowser_sv.ts
+%%DATADIR%%/scripts/Widgets/LibraryBrowser/ts/LibraryBrowser_tr.qm
+%%DATADIR%%/scripts/Widgets/LibraryBrowser/ts/LibraryBrowser_tr.ts
 %%DATADIR%%/scripts/Widgets/LibraryBrowser/ts/LibraryBrowser_zh_CN.qm
 %%DATADIR%%/scripts/Widgets/LibraryBrowser/ts/LibraryBrowser_zh_CN.ts
 %%DATADIR%%/scripts/Widgets/LibraryBrowser/ts/LibraryBrowser_zh_TW.qm
@@ -19432,6 +20048,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Widgets/PenToolBar/ts/PenToolBar_sl.ts
 %%DATADIR%%/scripts/Widgets/PenToolBar/ts/PenToolBar_sv.qm
 %%DATADIR%%/scripts/Widgets/PenToolBar/ts/PenToolBar_sv.ts
+%%DATADIR%%/scripts/Widgets/PenToolBar/ts/PenToolBar_tr.qm
+%%DATADIR%%/scripts/Widgets/PenToolBar/ts/PenToolBar_tr.ts
 %%DATADIR%%/scripts/Widgets/PenToolBar/ts/PenToolBar_zh_CN.qm
 %%DATADIR%%/scripts/Widgets/PenToolBar/ts/PenToolBar_zh_CN.ts
 %%DATADIR%%/scripts/Widgets/PenToolBar/ts/PenToolBar_zh_TW.qm
@@ -19499,6 +20117,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Widgets/PropertyEditor/ts/PropertyEditor_sl.ts
 %%DATADIR%%/scripts/Widgets/PropertyEditor/ts/PropertyEditor_sv.qm
 %%DATADIR%%/scripts/Widgets/PropertyEditor/ts/PropertyEditor_sv.ts
+%%DATADIR%%/scripts/Widgets/PropertyEditor/ts/PropertyEditor_tr.qm
+%%DATADIR%%/scripts/Widgets/PropertyEditor/ts/PropertyEditor_tr.ts
 %%DATADIR%%/scripts/Widgets/PropertyEditor/ts/PropertyEditor_zh_CN.qm
 %%DATADIR%%/scripts/Widgets/PropertyEditor/ts/PropertyEditor_zh_CN.ts
 %%DATADIR%%/scripts/Widgets/PropertyEditor/ts/PropertyEditor_zh_TW.qm
@@ -19540,6 +20160,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Widgets/SelectionDisplay/ts/SelectionDisplay_sl.ts
 %%DATADIR%%/scripts/Widgets/SelectionDisplay/ts/SelectionDisplay_sv.qm
 %%DATADIR%%/scripts/Widgets/SelectionDisplay/ts/SelectionDisplay_sv.ts
+%%DATADIR%%/scripts/Widgets/SelectionDisplay/ts/SelectionDisplay_tr.qm
+%%DATADIR%%/scripts/Widgets/SelectionDisplay/ts/SelectionDisplay_tr.ts
 %%DATADIR%%/scripts/Widgets/SelectionDisplay/ts/SelectionDisplay_zh_CN.qm
 %%DATADIR%%/scripts/Widgets/SelectionDisplay/ts/SelectionDisplay_zh_CN.ts
 %%DATADIR%%/scripts/Widgets/SelectionDisplay/ts/SelectionDisplay_zh_TW.qm
@@ -19586,6 +20208,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Widgets/StatusBar/ts/StatusBar_sl.ts
 %%DATADIR%%/scripts/Widgets/StatusBar/ts/StatusBar_sv.qm
 %%DATADIR%%/scripts/Widgets/StatusBar/ts/StatusBar_sv.ts
+%%DATADIR%%/scripts/Widgets/StatusBar/ts/StatusBar_tr.qm
+%%DATADIR%%/scripts/Widgets/StatusBar/ts/StatusBar_tr.ts
 %%DATADIR%%/scripts/Widgets/StatusBar/ts/StatusBar_zh_CN.qm
 %%DATADIR%%/scripts/Widgets/StatusBar/ts/StatusBar_zh_CN.ts
 %%DATADIR%%/scripts/Widgets/StatusBar/ts/StatusBar_zh_TW.qm
@@ -19629,6 +20253,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Widgets/TabBar/ts/TabBar_sl.ts
 %%DATADIR%%/scripts/Widgets/TabBar/ts/TabBar_sv.qm
 %%DATADIR%%/scripts/Widgets/TabBar/ts/TabBar_sv.ts
+%%DATADIR%%/scripts/Widgets/TabBar/ts/TabBar_tr.qm
+%%DATADIR%%/scripts/Widgets/TabBar/ts/TabBar_tr.ts
 %%DATADIR%%/scripts/Widgets/TabBar/ts/TabBar_zh_CN.qm
 %%DATADIR%%/scripts/Widgets/TabBar/ts/TabBar_zh_CN.ts
 %%DATADIR%%/scripts/Widgets/TabBar/ts/TabBar_zh_TW.qm
@@ -19684,6 +20310,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Widgets/ViewportWidget/ts/ViewportWidget_sl.ts
 %%DATADIR%%/scripts/Widgets/ViewportWidget/ts/ViewportWidget_sv.qm
 %%DATADIR%%/scripts/Widgets/ViewportWidget/ts/ViewportWidget_sv.ts
+%%DATADIR%%/scripts/Widgets/ViewportWidget/ts/ViewportWidget_tr.qm
+%%DATADIR%%/scripts/Widgets/ViewportWidget/ts/ViewportWidget_tr.ts
 %%DATADIR%%/scripts/Widgets/ViewportWidget/ts/ViewportWidget_zh_CN.qm
 %%DATADIR%%/scripts/Widgets/ViewportWidget/ts/ViewportWidget_zh_CN.ts
 %%DATADIR%%/scripts/Widgets/ViewportWidget/ts/ViewportWidget_zh_TW.qm
@@ -19724,6 +20352,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Widgets/ts/Widgets_sl.ts
 %%DATADIR%%/scripts/Widgets/ts/Widgets_sv.qm
 %%DATADIR%%/scripts/Widgets/ts/Widgets_sv.ts
+%%DATADIR%%/scripts/Widgets/ts/Widgets_tr.qm
+%%DATADIR%%/scripts/Widgets/ts/Widgets_tr.ts
 %%DATADIR%%/scripts/Widgets/ts/Widgets_zh_CN.qm
 %%DATADIR%%/scripts/Widgets/ts/Widgets_zh_CN.ts
 %%DATADIR%%/scripts/Widgets/ts/Widgets_zh_TW.qm
@@ -19786,6 +20416,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Window/CloseAll/ts/CloseAll_sl.ts
 %%DATADIR%%/scripts/Window/CloseAll/ts/CloseAll_sv.qm
 %%DATADIR%%/scripts/Window/CloseAll/ts/CloseAll_sv.ts
+%%DATADIR%%/scripts/Window/CloseAll/ts/CloseAll_tr.qm
+%%DATADIR%%/scripts/Window/CloseAll/ts/CloseAll_tr.ts
 %%DATADIR%%/scripts/Window/CloseAll/ts/CloseAll_zh_CN.qm
 %%DATADIR%%/scripts/Window/CloseAll/ts/CloseAll_zh_CN.ts
 %%DATADIR%%/scripts/Window/CloseAll/ts/CloseAll_zh_TW.qm
@@ -19847,6 +20479,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Window/NextWindow/ts/NextWindow_sl.ts
 %%DATADIR%%/scripts/Window/NextWindow/ts/NextWindow_sv.qm
 %%DATADIR%%/scripts/Window/NextWindow/ts/NextWindow_sv.ts
+%%DATADIR%%/scripts/Window/NextWindow/ts/NextWindow_tr.qm
+%%DATADIR%%/scripts/Window/NextWindow/ts/NextWindow_tr.ts
 %%DATADIR%%/scripts/Window/NextWindow/ts/NextWindow_zh_CN.qm
 %%DATADIR%%/scripts/Window/NextWindow/ts/NextWindow_zh_CN.ts
 %%DATADIR%%/scripts/Window/NextWindow/ts/NextWindow_zh_TW.qm
@@ -19908,6 +20542,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Window/PreviousWindow/ts/PreviousWindow_sl.ts
 %%DATADIR%%/scripts/Window/PreviousWindow/ts/PreviousWindow_sv.qm
 %%DATADIR%%/scripts/Window/PreviousWindow/ts/PreviousWindow_sv.ts
+%%DATADIR%%/scripts/Window/PreviousWindow/ts/PreviousWindow_tr.qm
+%%DATADIR%%/scripts/Window/PreviousWindow/ts/PreviousWindow_tr.ts
 %%DATADIR%%/scripts/Window/PreviousWindow/ts/PreviousWindow_zh_CN.qm
 %%DATADIR%%/scripts/Window/PreviousWindow/ts/PreviousWindow_zh_CN.ts
 %%DATADIR%%/scripts/Window/PreviousWindow/ts/PreviousWindow_zh_TW.qm
@@ -19956,6 +20592,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Window/ts/Window_sl.ts
 %%DATADIR%%/scripts/Window/ts/Window_sv.qm
 %%DATADIR%%/scripts/Window/ts/Window_sv.ts
+%%DATADIR%%/scripts/Window/ts/Window_tr.qm
+%%DATADIR%%/scripts/Window/ts/Window_tr.ts
 %%DATADIR%%/scripts/Window/ts/Window_zh_CN.qm
 %%DATADIR%%/scripts/Window/ts/Window_zh_CN.ts
 %%DATADIR%%/scripts/Window/ts/Window_zh_TW.qm
@@ -20021,26 +20659,14 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/ts/Scripts_sl.ts
 %%DATADIR%%/scripts/ts/Scripts_sv.qm
 %%DATADIR%%/scripts/ts/Scripts_sv.ts
+%%DATADIR%%/scripts/ts/Scripts_tr.qm
+%%DATADIR%%/scripts/ts/Scripts_tr.ts
 %%DATADIR%%/scripts/ts/Scripts_zh_CN.qm
 %%DATADIR%%/scripts/ts/Scripts_zh_CN.ts
 %%DATADIR%%/scripts/ts/Scripts_zh_TW.qm
 %%DATADIR%%/scripts/ts/Scripts_zh_TW.ts
 %%DATADIR%%/scripts/ts/ts.pro
 %%DATADIR%%/ts/Makefile
-%%DATADIR%%/ts/assistant_cs.qm
-%%DATADIR%%/ts/assistant_da.qm
-%%DATADIR%%/ts/assistant_de.qm
-%%DATADIR%%/ts/assistant_fr.qm
-%%DATADIR%%/ts/assistant_hu.qm
-%%DATADIR%%/ts/assistant_ja.qm
-%%DATADIR%%/ts/assistant_ko.qm
-%%DATADIR%%/ts/assistant_pl.qm
-%%DATADIR%%/ts/assistant_ru.qm
-%%DATADIR%%/ts/assistant_sk.qm
-%%DATADIR%%/ts/assistant_sl.qm
-%%DATADIR%%/ts/assistant_uk.qm
-%%DATADIR%%/ts/assistant_zh_CN.qm
-%%DATADIR%%/ts/assistant_zh_TW.qm
 %%DATADIR%%/ts/qcadcore_cs.qm
 %%DATADIR%%/ts/qcadcore_cs.ts
 %%DATADIR%%/ts/qcadcore_de.qm
@@ -20149,59 +20775,5 @@ lib/libstemmer.a
 %%DATADIR%%/ts/qcadgui_zh_CN.ts
 %%DATADIR%%/ts/qcadgui_zh_TW.qm
 %%DATADIR%%/ts/qcadgui_zh_TW.ts
-%%DATADIR%%/ts/qt_ar.qm
-%%DATADIR%%/ts/qt_ca.qm
-%%DATADIR%%/ts/qt_cs.qm
-%%DATADIR%%/ts/qt_da.qm
-%%DATADIR%%/ts/qt_de.qm
-%%DATADIR%%/ts/qt_es.qm
-%%DATADIR%%/ts/qt_fa.qm
-%%DATADIR%%/ts/qt_fi.qm
-%%DATADIR%%/ts/qt_fr.qm
-%%DATADIR%%/ts/qt_gl.qm
-%%DATADIR%%/ts/qt_he.qm
-%%DATADIR%%/ts/qt_help_cs.qm
-%%DATADIR%%/ts/qt_help_da.qm
-%%DATADIR%%/ts/qt_help_de.qm
-%%DATADIR%%/ts/qt_help_fr.qm
-%%DATADIR%%/ts/qt_help_gl.qm
-%%DATADIR%%/ts/qt_help_hu.qm
-%%DATADIR%%/ts/qt_help_it.qm
-%%DATADIR%%/ts/qt_help_ja.qm
-%%DATADIR%%/ts/qt_help_ko.qm
-%%DATADIR%%/ts/qt_help_pl.qm
-%%DATADIR%%/ts/qt_help_ru.qm
-%%DATADIR%%/ts/qt_help_sk.qm
-%%DATADIR%%/ts/qt_help_sl.qm
-%%DATADIR%%/ts/qt_help_uk.qm
-%%DATADIR%%/ts/qt_help_zh_CN.qm
-%%DATADIR%%/ts/qt_help_zh_TW.qm
-%%DATADIR%%/ts/qt_hu.qm
-%%DATADIR%%/ts/qt_it.qm
-%%DATADIR%%/ts/qt_ja.qm
-%%DATADIR%%/ts/qt_ko.qm
-%%DATADIR%%/ts/qt_lt.qm
-%%DATADIR%%/ts/qt_pl.qm
-%%DATADIR%%/ts/qt_pt.qm
-%%DATADIR%%/ts/qt_ru.qm
-%%DATADIR%%/ts/qt_sk.qm
-%%DATADIR%%/ts/qt_sl.qm
-%%DATADIR%%/ts/qt_sv.qm
-%%DATADIR%%/ts/qt_uk.qm
-%%DATADIR%%/ts/qt_zh_CN.qm
-%%DATADIR%%/ts/qt_zh_TW.qm
-%%DATADIR%%/ts/qtbase_ca.qm
-%%DATADIR%%/ts/qtbase_cs.qm
-%%DATADIR%%/ts/qtbase_de.qm
-%%DATADIR%%/ts/qtbase_fi.qm
-%%DATADIR%%/ts/qtbase_fr.qm
-%%DATADIR%%/ts/qtbase_he.qm
-%%DATADIR%%/ts/qtbase_hu.qm
-%%DATADIR%%/ts/qtbase_it.qm
-%%DATADIR%%/ts/qtbase_ja.qm
-%%DATADIR%%/ts/qtbase_ko.qm
-%%DATADIR%%/ts/qtbase_lv.qm
-%%DATADIR%%/ts/qtbase_ru.qm
 %%DATADIR%%/ts/qtbase_sk.qm
-%%DATADIR%%/ts/qtbase_uk.qm
 %%DATADIR%%/ts/ts.pro

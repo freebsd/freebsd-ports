@@ -1,2 +1,3 @@
-SHA256 (cabal/hexpat-0.20.9.tar.gz) = 5d1c075f1ae00be2e80c0018b522a351b2f4ef73b9baca1113ee80e554449d9d
-SIZE (cabal/hexpat-0.20.9.tar.gz) = 132649
+TIMESTAMP = 1499624829
+SHA256 (cabal/hexpat-0.20.13.tar.gz) = 46e1a0e651c1603c1f064c6ca8d4c66cb27e7a66974bfb45ecaa8f9ccc753fd1
+SIZE (cabal/hexpat-0.20.13.tar.gz) = 143733

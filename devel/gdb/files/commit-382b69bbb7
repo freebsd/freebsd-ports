@@ -1,0 +1,220 @@
+commit 382b69bbb7a4fec5213d2382fe70a68d7a46b3e7
+Author: John Baldwin <jhb@FreeBSD.org>
+Date:   Wed Jun 28 11:11:20 2017 -0700
+
+    Add a new gdbarch method to fetch signal information from core files.
+    
+    Previously the core_xfer_partial method used core_get_siginfo to handle
+    TARGET_OBJECT_SIGNAL_INFO requests.  However, core_get_siginfo looked for
+    Linux-specific sections in the core file.  To support fetching siginfo
+    from cores on other systems, add a new gdbarch method (`core_xfer_siginfo`)
+    and move the body of the existing core_get_siginfo into a
+    linux_core_xfer_siginfo implementation of this method in linux-tdep.c.
+    
+    gdb/ChangeLog:
+    
+            * corelow.c (get_core_siginfo): Remove.
+            (core_xfer_partial): Use the gdbarch "core_xfer_siginfo" method
+            instead of get_core_siginfo.
+            * gdbarch.sh (core_xfer_siginfo): New gdbarch callback.
+            * gdbarch.h: Re-generate.
+            * gdbarch.c: Re-generate.
+            * linux-tdep.c (linux_core_xfer_siginfo): New.
+            (linux_init_abi): Install gdbarch "core_xfer_siginfo" method.
+
+diff --git gdb/corelow.c gdb/corelow.c
+index 578c910bb5..5dbabc79e6 100644
+--- gdb/corelow.c
++++ gdb/corelow.c
+@@ -668,25 +668,6 @@ add_to_spuid_list (bfd *abfd, asection *asect, void *list_p)
+   list->pos += 4;
+ }
+ 
+-/* Read siginfo data from the core, if possible.  Returns -1 on
+-   failure.  Otherwise, returns the number of bytes read.  ABFD is the
+-   core file's BFD; READBUF, OFFSET, and LEN are all as specified by
+-   the to_xfer_partial interface.  */
+-
+-static LONGEST
+-get_core_siginfo (bfd *abfd, gdb_byte *readbuf, ULONGEST offset, ULONGEST len)
+-{
+-  thread_section_name section_name (".note.linuxcore.siginfo", inferior_ptid);
+-  asection *section = bfd_get_section_by_name (abfd, section_name.c_str ());
+-  if (section == NULL)
+-    return -1;
+-
+-  if (!bfd_get_section_contents (abfd, section, readbuf, offset, len))
+-    return -1;
+-
+-  return len;
+-}
+-
+ static enum target_xfer_status
+ core_xfer_partial (struct target_ops *ops, enum target_object object,
+ 		   const char *annex, gdb_byte *readbuf,
+@@ -874,12 +855,20 @@ core_xfer_partial (struct target_ops *ops, enum target_object object,
+     case TARGET_OBJECT_SIGNAL_INFO:
+       if (readbuf)
+ 	{
+-	  LONGEST l = get_core_siginfo (core_bfd, readbuf, offset, len);
+-
+-	  if (l > 0)
++	  if (core_gdbarch
++	      && gdbarch_core_xfer_siginfo_p (core_gdbarch))
+ 	    {
+-	      *xfered_len = len;
+-	      return TARGET_XFER_OK;
++	      LONGEST l = gdbarch_core_xfer_siginfo  (core_gdbarch, readbuf,
++						      offset, len);
++
++	      if (l >= 0)
++		{
++		  *xfered_len = l;
++		  if (l == 0)
++		    return TARGET_XFER_EOF;
++		  else
++		    return TARGET_XFER_OK;
++		}
+ 	    }
+ 	}
+       return TARGET_XFER_E_IO;
+diff --git gdb/gdbarch.c gdb/gdbarch.c
+index e5efdfbb26..24521b5e23 100644
+--- gdb/gdbarch.c
++++ gdb/gdbarch.c
+@@ -287,6 +287,7 @@ struct gdbarch
+   gdbarch_core_xfer_shared_libraries_aix_ftype *core_xfer_shared_libraries_aix;
+   gdbarch_core_pid_to_str_ftype *core_pid_to_str;
+   gdbarch_core_thread_name_ftype *core_thread_name;
++  gdbarch_core_xfer_siginfo_ftype *core_xfer_siginfo;
+   const char * gcore_bfd_target;
+   int vtable_function_descriptors;
+   int vbit_in_delta;
+@@ -646,6 +647,7 @@ verify_gdbarch (struct gdbarch *gdbarch)
+   /* Skip verify of core_xfer_shared_libraries_aix, has predicate.  */
+   /* Skip verify of core_pid_to_str, has predicate.  */
+   /* Skip verify of core_thread_name, has predicate.  */
++  /* Skip verify of core_xfer_siginfo, has predicate.  */
+   /* Skip verify of gcore_bfd_target, has predicate.  */
+   /* Skip verify of vtable_function_descriptors, invalid_p == 0 */
+   /* Skip verify of vbit_in_delta, invalid_p == 0 */
+@@ -884,6 +886,12 @@ gdbarch_dump (struct gdbarch *gdbarch, struct ui_file *file)
+                       "gdbarch_dump: core_xfer_shared_libraries_aix = <%s>\n",
+                       host_address_to_string (gdbarch->core_xfer_shared_libraries_aix));
+   fprintf_unfiltered (file,
++                      "gdbarch_dump: gdbarch_core_xfer_siginfo_p() = %d\n",
++                      gdbarch_core_xfer_siginfo_p (gdbarch));
++  fprintf_unfiltered (file,
++                      "gdbarch_dump: core_xfer_siginfo = <%s>\n",
++                      host_address_to_string (gdbarch->core_xfer_siginfo));
++  fprintf_unfiltered (file,
+                       "gdbarch_dump: decr_pc_after_break = %s\n",
+                       core_addr_to_string_nz (gdbarch->decr_pc_after_break));
+   fprintf_unfiltered (file,
+@@ -3797,6 +3805,30 @@ set_gdbarch_core_thread_name (struct gdbarch *gdbarch,
+ }
+ 
+ int
++gdbarch_core_xfer_siginfo_p (struct gdbarch *gdbarch)
++{
++  gdb_assert (gdbarch != NULL);
++  return gdbarch->core_xfer_siginfo != NULL;
++}
++
++LONGEST
++gdbarch_core_xfer_siginfo (struct gdbarch *gdbarch, gdb_byte *readbuf, ULONGEST offset, ULONGEST len)
++{
++  gdb_assert (gdbarch != NULL);
++  gdb_assert (gdbarch->core_xfer_siginfo != NULL);
++  if (gdbarch_debug >= 2)
++    fprintf_unfiltered (gdb_stdlog, "gdbarch_core_xfer_siginfo called\n");
++  return gdbarch->core_xfer_siginfo (gdbarch,  readbuf, offset, len);
++}
++
++void
++set_gdbarch_core_xfer_siginfo (struct gdbarch *gdbarch,
++                               gdbarch_core_xfer_siginfo_ftype core_xfer_siginfo)
++{
++  gdbarch->core_xfer_siginfo = core_xfer_siginfo;
++}
++
++int
+ gdbarch_gcore_bfd_target_p (struct gdbarch *gdbarch)
+ {
+   gdb_assert (gdbarch != NULL);
+diff --git gdb/gdbarch.h gdb/gdbarch.h
+index ab7561f851..1c95301f6f 100644
+--- gdb/gdbarch.h
++++ gdb/gdbarch.h
+@@ -933,6 +933,16 @@ typedef const char * (gdbarch_core_thread_name_ftype) (struct gdbarch *gdbarch,
+ extern const char * gdbarch_core_thread_name (struct gdbarch *gdbarch, struct thread_info *thr);
+ extern void set_gdbarch_core_thread_name (struct gdbarch *gdbarch, gdbarch_core_thread_name_ftype *core_thread_name);
+ 
++/* Read offset OFFSET of TARGET_OBJECT_SIGNAL_INFO signal information
++   from core file into buffer READBUF with length LEN.  Return the number
++   of bytes read (zero indicates EOF, a negative value indicates failure). */
++
++extern int gdbarch_core_xfer_siginfo_p (struct gdbarch *gdbarch);
++
++typedef LONGEST (gdbarch_core_xfer_siginfo_ftype) (struct gdbarch *gdbarch, gdb_byte *readbuf, ULONGEST offset, ULONGEST len);
++extern LONGEST gdbarch_core_xfer_siginfo (struct gdbarch *gdbarch, gdb_byte *readbuf, ULONGEST offset, ULONGEST len);
++extern void set_gdbarch_core_xfer_siginfo (struct gdbarch *gdbarch, gdbarch_core_xfer_siginfo_ftype *core_xfer_siginfo);
++
+ /* BFD target to use when generating a core file. */
+ 
+ extern int gdbarch_gcore_bfd_target_p (struct gdbarch *gdbarch);
+diff --git gdb/gdbarch.sh gdb/gdbarch.sh
+index 22f5715037..3aab17f958 100755
+--- gdb/gdbarch.sh
++++ gdb/gdbarch.sh
+@@ -755,6 +755,11 @@ M;const char *;core_pid_to_str;ptid_t ptid;ptid
+ # How the core target extracts the name of a thread from a core file.
+ M;const char *;core_thread_name;struct thread_info *thr;thr
+ 
++# Read offset OFFSET of TARGET_OBJECT_SIGNAL_INFO signal information
++# from core file into buffer READBUF with length LEN.  Return the number
++# of bytes read (zero indicates EOF, a negative value indicates failure).
++M;LONGEST;core_xfer_siginfo;gdb_byte *readbuf, ULONGEST offset, ULONGEST len; readbuf, offset, len
++
+ # BFD target to use when generating a core file.
+ V;const char *;gcore_bfd_target;;;0;0;;;pstring (gdbarch->gcore_bfd_target)
+ 
+diff --git gdb/linux-tdep.c gdb/linux-tdep.c
+index 2792cbd4c8..5c7f8a0758 100644
+--- gdb/linux-tdep.c
++++ gdb/linux-tdep.c
+@@ -1127,6 +1127,26 @@ linux_core_info_proc (struct gdbarch *gdbarch, const char *args,
+     error (_("unable to handle request"));
+ }
+ 
++/* Read siginfo data from the core, if possible.  Returns -1 on
++   failure.  Otherwise, returns the number of bytes read.  READBUF,
++   OFFSET, and LEN are all as specified by the to_xfer_partial
++   interface.  */
++
++static LONGEST
++linux_core_xfer_siginfo (struct gdbarch *gdbarch, gdb_byte *readbuf,
++			 ULONGEST offset, ULONGEST len)
++{
++  thread_section_name section_name (".note.linuxcore.siginfo", inferior_ptid);
++  asection *section = bfd_get_section_by_name (core_bfd, section_name.c_str ());
++  if (section == NULL)
++    return -1;
++
++  if (!bfd_get_section_contents (core_bfd, section, readbuf, offset, len))
++    return -1;
++
++  return len;
++}
++
+ typedef int linux_find_memory_region_ftype (ULONGEST vaddr, ULONGEST size,
+ 					    ULONGEST offset, ULONGEST inode,
+ 					    int read, int write,
+@@ -2516,6 +2536,7 @@ linux_init_abi (struct gdbarch_info info, struct gdbarch *gdbarch)
+   set_gdbarch_core_pid_to_str (gdbarch, linux_core_pid_to_str);
+   set_gdbarch_info_proc (gdbarch, linux_info_proc);
+   set_gdbarch_core_info_proc (gdbarch, linux_core_info_proc);
++  set_gdbarch_core_xfer_siginfo (gdbarch, linux_core_xfer_siginfo);
+   set_gdbarch_find_memory_regions (gdbarch, linux_find_memory_regions);
+   set_gdbarch_make_corefile_notes (gdbarch, linux_make_corefile_notes);
+   set_gdbarch_has_shared_address_space (gdbarch,

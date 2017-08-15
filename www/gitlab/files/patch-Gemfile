@@ -1,10 +1,10 @@
---- Gemfile.orig	2017-07-19 22:34:22 UTC
-+++ Gemfile
+--- Gemfile.orig	2017-07-20 19:20:16.056471000 +0200
++++ Gemfile	2017-07-20 19:28:14.691625000 +0200
 @@ -1,48 +1,43 @@
  source 'https://rubygems.org'
  
 -gem 'rails', '4.2.8'
-+gem 'rails', '>= 4.2.8'
++gem 'rails', '>=4.2.8'
  gem 'rails-deprecated_sanitizer', '~> 1.0.3'
  
  # Responders respond_to and respond_with
@@ -14,13 +14,12 @@
 +gem 'sprockets', '>= 3.7.0'
  
  # Default values for AR models
--gem 'default_value_for', '~> 3.0.0'
--
+ gem 'default_value_for', '~> 3.0.0'
+ 
 -# Supported DBs
 -gem 'mysql2', '~> 0.3.16', group: :mysql
 -gem 'pg', '~> 0.18.2', group: :postgres
-+gem 'default_value_for', '>= 3.0.0'
- 
+-
  gem 'rugged', '~> 0.25.1.1'
  
 -gem 'faraday', '~> 0.11.0'
@@ -58,7 +57,7 @@
  gem 'akismet', '~> 2.0'
  
  # Two-factor authentication
-@@ -68,7 +63,7 @@ gem 'gollum-lib', '~> 4.2', require: fal
+@@ -68,7 +63,7 @@
  gem 'gollum-rugged_adapter', '~> 0.4.4', require: false
  
  # Language detection
@@ -67,7 +66,7 @@
  
  # API
  gem 'grape', '~> 0.19.0'
-@@ -79,13 +74,13 @@ gem 'rack-cors', '~> 0.4.0', require: 'r
+@@ -82,13 +77,13 @@
  gem 'kaminari', '~> 0.17.0'
  
  # HAML
@@ -75,8 +74,8 @@
 +gem 'hamlit', '>= 2.6.1'
  
  # Files attachments
--gem 'carrierwave', '~> 0.11.0'
-+gem 'carrierwave', '>= 0.11.0'
+-gem 'carrierwave', '~> 1.0'
++gem 'carrierwave', '>= 1.0'
  
  # Drag and Drop UI
 -gem 'dropzonejs-rails', '~> 0.7.1'
@@ -84,7 +83,7 @@
  
  # for backups
  gem 'fog-aws', '~> 0.9'
-@@ -96,7 +91,7 @@ gem 'fog-openstack', '~> 0.1'
+@@ -99,7 +94,7 @@
  gem 'fog-rackspace', '~> 0.1.1'
  
  # for Google storage
@@ -93,13 +92,13 @@
  
  # for aws storage
  gem 'unf', '~> 0.1.4'
-@@ -106,34 +101,34 @@ gem 'seed-fu', '~> 2.3.5'
+@@ -109,34 +104,34 @@
  
  # Markdown and HTML processing
  gem 'html-pipeline', '~> 1.11.0'
 -gem 'deckar01-task_list', '1.0.6', require: 'task_list/railtie'
 -gem 'gitlab-markup', '~> 1.5.1'
-+gem 'deckar01-task_list', '>= 1.0.6', require: 'task_list/railtie'
++gem 'deckar01-task_list', '>=1.0.6', require: 'task_list/railtie'
 +gem 'gitlab-markup', '>= 1.5.1'
  gem 'redcarpet', '~> 3.4'
  gem 'RedCloth', '~> 4.3.2'
@@ -107,17 +106,17 @@
  gem 'org-ruby', '~> 0.9.12'
  gem 'creole', '~> 0.5.0'
 -gem 'wikicloth', '0.8.1'
-+gem 'wikicloth', '>= 0.8.1'
++gem 'wikicloth', '>=0.8.1'
  gem 'asciidoctor', '~> 1.5.2'
 -gem 'asciidoctor-plantuml', '0.0.7'
-+gem 'asciidoctor-plantuml', '>= 0.0.7'
++gem 'asciidoctor-plantuml', '>=0.0.7'
  gem 'rouge', '~> 2.0'
  gem 'truncato', '~> 0.7.8'
  
  # See https://groups.google.com/forum/#!topic/ruby-security-ann/aSbgDiwb24s
  # and https://groups.google.com/forum/#!topic/ruby-security-ann/Dy7YiKb_pMM
 -gem 'nokogiri', '~> 1.6.7', '>= 1.6.7.2'
-+gem 'nokogiri', '>= 1.6.7.2'
++gem 'nokogiri', '>= 1.6.7', '>= 1.6.7.2'
  
  # Diffs
 -gem 'diffy', '~> 3.1.0'
@@ -136,7 +135,13 @@
  # Run events after state machine commits
  gem 'after_commit_queue', '~> 1.3.0'
  
-@@ -147,13 +142,13 @@ gem 'redis-namespace', '~> 1.5.2'
+@@ -145,18 +140,18 @@
+ 
+ # Background jobs
+ gem 'sidekiq', '~> 5.0'
+-gem 'sidekiq-cron', '~> 0.4.4'
++gem 'sidekiq-cron', '>= 0.4.4'
+ gem 'redis-namespace', '~> 1.5.2'
  gem 'sidekiq-limit_fetch', '~> 3.4'
  
  # Cron Parser
@@ -153,7 +158,7 @@
  
  # GitLab settings
  gem 'settingslogic', '~> 2.0.9'
-@@ -163,7 +158,7 @@ gem 're2', '~> 1.0.0'
+@@ -166,7 +161,7 @@
  
  # Misc
  
@@ -162,12 +167,12 @@
  
  # Cache
  gem 'redis-rails', '~> 5.0.1'
-@@ -173,10 +168,10 @@ gem 'redis', '~> 3.2'
+@@ -176,10 +171,10 @@
  gem 'connection_pool', '~> 2.0'
  
  # HipChat integration
 -gem 'hipchat', '~> 1.5.0'
-+gem 'hipchat', '~> 1.5'
++gem 'hipchat', '>= 1.5.0'
  
  # JIRA integration
 -gem 'jira-ruby', '~> 1.1.2'
@@ -175,7 +180,7 @@
  
  # Flowdock integration
  gem 'gitlab-flowdock-git-hook', '~> 1.0.1'
-@@ -194,7 +189,7 @@ gem 'asana', '~> 0.6.0'
+@@ -197,7 +192,7 @@
  gem 'ruby-fogbugz', '~> 0.2.1'
  
  # Kubernetes integration
@@ -184,7 +189,7 @@
  
  # d3
  gem 'd3_rails', '~> 3.5.0'
-@@ -203,7 +198,7 @@ gem 'd3_rails', '~> 3.5.0'
+@@ -206,7 +201,7 @@
  gem 'underscore-rails', '~> 1.8.0'
  
  # Sanitize user input
@@ -193,7 +198,7 @@
  gem 'babosa', '~> 1.0.2'
  
  # Sanitizes SVG input
-@@ -213,7 +208,7 @@ gem 'loofah', '~> 2.0.3'
+@@ -216,7 +211,7 @@
  gem 'licensee', '~> 8.7.0'
  
  # Protect against bruteforcing
@@ -202,7 +207,7 @@
  
  # Ace editor
  gem 'ace-rails-ap', '~> 4.1.0'
-@@ -232,122 +227,41 @@ gem 'chronic', '~> 0.10.2'
+@@ -235,129 +230,47 @@
  gem 'chronic_duration', '~> 0.10.6'
  
  gem 'webpack-rails', '~> 0.9.10'
@@ -236,6 +241,13 @@
 +gem 'sentry-raven', '>= 2.4.0'
  
  gem 'premailer-rails', '~> 1.9.0'
+ 
+ # I18n
+ gem 'ruby_parser', '~> 3.8.4', require: false
+ gem 'gettext_i18n_rails', '~> 1.8.0'
+-gem 'gettext_i18n_rails_js', '~> 1.2.0'
++gem 'gettext_i18n_rails_js', '>= 1.2.0'
+ gem 'gettext', '~> 3.2.2', require: false, group: :development
  
 -# Metrics
 -group :metrics do
@@ -274,6 +286,7 @@
 -  gem 'spinach-rails', '~> 0.2.1'
 -  gem 'spinach-rerun-reporter', '~> 0.0.2'
 -  gem 'rspec_profiling', '~> 0.0.5'
+-  gem 'rspec-set', '~> 0.1.3'
 -
 -  # Prevent occasions where minitest is not bundled in packaged versions of ruby (see #3826)
 -  gem 'minitest', '~> 5.7.0'
@@ -335,11 +348,16 @@
  
  # Soft deletion
  gem 'paranoia', '~> 2.2'
-@@ -362,4 +276,6 @@ gem 'sys-filesystem', '~> 1.1.6'
+@@ -366,10 +279,11 @@
+ gem 'health_check', '~> 2.6.0'
+ 
+ # System information
++gem 'rinku'
+ gem 'vmstat', '~> 2.3.0'
+ gem 'sys-filesystem', '~> 1.1.6'
+ 
  # Gitaly GRPC client
- gem 'gitaly', '~> 0.5.0'
+ gem 'gitaly', '~> 0.6.0'
  
 -gem 'toml-rb', '~> 0.3.15', require: false
 +gem 'toml-rb', '>= 0.3.15', require: false
-+
-+gem 'rinku'

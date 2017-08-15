@@ -1,26 +1,37 @@
 --- data/pam/lightdm.orig	2015-08-09 23:30:00 UTC
 +++ data/pam/lightdm
-@@ -1,13 +1,13 @@
- #%PAM-1.0
+@@ -1,20 +1,18 @@
+-#%PAM-1.0
++#
++# PAM configuration for the "lightdm" service
++#
  
- # Block login if they are globally disabled
+-# Block login if they are globally disabled
 -auth      required pam_nologin.so
-+account      required pam_nologin.so
++# auth
++auth		sufficient	pam_self.so		no_warn
++auth		include		system
  
- # Load environment from /etc/environment and ~/.pam_environment
+-# Load environment from /etc/environment and ~/.pam_environment
 -auth      required pam_env.so
-+#auth      required pam_env.so
++# account
++account		requisite	pam_securetty.so
++account		required	pam_nologin.so
++account		include		system
  
- # Use /etc/passwd and /etc/shadow for passwords
+-# Use /etc/passwd and /etc/shadow for passwords
 -auth      required pam_unix.so
-+auth      required pam_unix.so        no_warn try_first_pass
++# session
++session		include		system
  
- # Check account is active, change password if required
- account   required pam_unix.so
-@@ -16,5 +16,4 @@ account   required pam_unix.so
- password  required pam_unix.so
- 
- # Setup session
+-# Check account is active, change password if required
+-account   required pam_unix.so
+-
+-# Allow password to be changed
+-password  required pam_unix.so
+-
+-# Setup session
 -session   required pam_unix.so
 -session   optional pam_systemd.so
-+session   required pam_permit.so
++# password
++password	include		system

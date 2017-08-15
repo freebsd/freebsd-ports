@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	putty
-PORTVERSION=	0.69
-PORTREVISION=	1
+PORTVERSION=	0.70
 CATEGORIES=	security ipv6
 MASTER_SITES=	http://the.earth.li/~sgtatham/putty/${PORTVERSION}/ \
 		ftp://ftp.chiark.greenend.org.uk/users/sgtatham/putty-latest/
@@ -24,8 +23,11 @@ CPE_VENDOR=	simon_tatham
 PLIST_FILES=	bin/plink bin/pscp bin/psftp bin/puttygen
 PLIST_FILES+=	man/man1/plink.1.gz man/man1/pscp.1.gz man/man1/psftp.1.gz man/man1/puttygen.1.gz
 
-OPTIONS_DEFINE=	GSSAPI GTK3
-OPTIONS_DEFAULT=GSSAPI GTK3
+OPTIONS_DEFINE=	GTK3
+OPTIONS_DEFAULT=GSSAPI_BASE GTK3
+OPTIONS_SINGLE=	GSSAPI_SELECT
+OPTIONS_SINGLE_GSSAPI_SELECT=	GSSAPI_NONE GSSAPI_BASE GSSAPI_HEIMDAL \
+				GSSAPI_MIT
 
 CONFLICTS_INSTALL?=	pssh-[0-9]* putty-nogtk-[0-9]*
 
@@ -52,9 +54,17 @@ DESKTOP_ENTRIES="PuTTY" \
 MAKE_ARGS+=	GTK_CONFIG=:
 .endif
 
-.if ${PORT_OPTIONS:MGSSAPI}
+.if ${PORT_OPTIONS:MGSSAPI_BASE}
 _COMPAT=		-DSTATIC_GSSAPI
 USES+=		gssapi:base,flags
+MAKE_ARGS+=	KRB5CONFIG=${KRB5CONFIG}
+.elif ${PORT_OPTIONS:MGSSAPI_HEIMDAL}
+_COMPAT=		-DSTATIC_GSSAPI
+USES+=		gssapi:heimdal,flags
+MAKE_ARGS+=	KRB5CONFIG=${KRB5CONFIG}
+.elif ${PORT_OPTIONS:MGSSAPI_MIT}
+_COMPAT=		-DSTATIC_GSSAPI
+USES+=		gssapi:mit,flags
 MAKE_ARGS+=	KRB5CONFIG=${KRB5CONFIG}
 .else
 _COMPAT=		-DNO_GSSAPI

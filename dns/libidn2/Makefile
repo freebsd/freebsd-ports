@@ -12,11 +12,11 @@ COMMENT=	Implementation of IDNA2008 internationalized domain names
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	ronn:textproc/rubygem-ronn
 LIB_DEPENDS=	libunistring.so:devel/libunistring
 
 CONFIGURE_ARGS=	--disable-nls \
-		--with-libunistring-prefix=${LOCALBASE}
+		--with-libunistring-prefix=${LOCALBASE} \
+		ac_cv_prog_RONN=${TRUE}
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes

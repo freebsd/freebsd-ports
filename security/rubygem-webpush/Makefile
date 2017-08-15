@@ -6,7 +6,7 @@ PORTREVISION=	1
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	jrm@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Encryption utilities for Web Push payload
 
 LICENSE=	MIT

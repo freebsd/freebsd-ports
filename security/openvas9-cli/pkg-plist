@@ -1,0 +1,6 @@
+bin/omp
+bin/omp-dialog
+libexec/nagios/check_omp
+man/man8/check_omp.8.gz
+man/man8/omp-dialog.8.gz
+man/man8/omp.8.gz

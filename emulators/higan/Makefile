@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	higan
-PORTVERSION=	102
-PORTREVISION=	1
+PORTVERSION=	103
 CATEGORIES=	emulators
 MASTER_SITES=	http://download.byuu.org/ \
 		http://www.cyberbotx.com/higan/
@@ -12,16 +11,17 @@ DISTNAME=	${PORTNAME}_v${PORTVERSION}-source
 MAINTAINER=	cyberbotx@cyberbotx.com
 COMMENT=	Nintendo multi-system emulator
 
+ONLY_FOR_ARCHS=	amd64 i386
+
 USES=		7z:p7zip compiler:c++14-lang gmake pkgconfig
 USE_LDCONFIG=	yes
 USE_XORG=	x11 xext
 USE_CSTD=	c99
 USE_CXXSTD=	c++14
 USE_GCC=	yes
-MAKEFILE=	GNUmakefile
 
-ONLY_FOR_ARCHS=	i386 amd64
-MAKE_ENV+=	compiler="${CXX}"
+MAKEFILE=	GNUmakefile
+MAKE_ENV=	compiler="${CXX}"
 
 OPTIONS_DEFINE=		DEBUG
 OPTIONS_SINGLE=		GUI
@@ -100,7 +100,6 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/higan/data/higan.png ${STAGEDIR}${PREFIX}/share/pixmaps/
 	${INSTALL_DATA} ${WRKSRC}/higan/data/higan.desktop ${STAGEDIR}${PREFIX}/share/applications/
 	(cd ${WRKSRC}/higan/systems && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}/)
-	${INSTALL_DATA} ${WRKSRC}/higan/data/cheats.bml ${STAGEDIR}${DATADIR}/
 	(cd ${WRKSRC}/icarus/Database && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/share/icarus/Database/)
 
 .include <bsd.port.mk>

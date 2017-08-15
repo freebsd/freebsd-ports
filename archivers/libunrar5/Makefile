@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libunrar5
-PORTVERSION=	5.4.5
-PORTREVISION=	1
+PORTVERSION=	5.5.7
 CATEGORIES=	archivers
 MASTER_SITES=	http://www.rarlab.com/rar/
 DISTNAME=	unrarsrc-${PORTVERSION}
@@ -18,7 +17,7 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 USES=		gmake
 USE_LDCONFIG=	yes
 
-ALL_TARGET=	lib liba
+ALL_TARGET=	lib
 MAKEFILE=	makefile
 MAKE_ARGS=	AR="${AR}" \
 		CXX="${CXX}" \
@@ -37,6 +36,7 @@ OPENSSL_AES_DESC=	Use OpenSSL implementation of AES
 OPENSSL_AES_CPPFLAGS=	-DOPENSSL_AES -I${OPENSSLINC}
 OPENSSL_AES_LDFLAGS=	-L${OPENSSLLIB} -lcrypto
 OPENSSL_AES_USES=	ssl
+OPENSSL_AES_VARS=	BROKEN_SSL=openssl-devel
 
 PLIST_FILES=	lib/libunrar.a \
 		lib/libunrar.so \
@@ -50,10 +50,4 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/include/libunrar5
 	${INSTALL_DATA} ${WRKSRC}/dll.hpp ${STAGEDIR}${PREFIX}/include/libunrar5/dll.hpp
 
-.include <bsd.port.pre.mk>
-
-.if ${PORT_OPTIONS:MOPENSSL_AES} && ${SSL_DEFAULT:Mopenssl-devel}
-BROKEN=		OPENSSL_AES option does not build with openssl-devel
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

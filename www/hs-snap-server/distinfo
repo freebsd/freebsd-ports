@@ -1,2 +1,3 @@
-SHA256 (cabal/snap-server-0.9.5.1.tar.gz) = af8f2344b90f701dd1924743d6073546206384d5a904a1338bb784e18c8d3ea3
-SIZE (cabal/snap-server-0.9.5.1.tar.gz) = 59062
+TIMESTAMP = 1499544292
+SHA256 (cabal/snap-server-1.0.2.2.tar.gz) = 27de5fb962e88fbc4285015c2e7f7abf0e06dac64e8f9737ad6ece6074fa837f
+SIZE (cabal/snap-server-1.0.2.2.tar.gz) = 74372

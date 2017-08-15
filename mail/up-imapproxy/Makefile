@@ -3,7 +3,7 @@
 
 PORTNAME=	imapproxy
 PORTVERSION=	1.2.7
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	mail
 MASTER_SITES=	SF/squirrelmail/imap_proxy/${PORTVERSION}
 PKGNAMEPREFIX=	up-
@@ -33,7 +33,7 @@ SBIN=		in.imapproxyd pimpstat
 
 .if ${PORT_OPTIONS:MDOVECOT}
 SUB_LIST+=	DOVECOT="dovecot"
-RUN_DEPENDS+=	dovecot:mail/dovecot2
+RUN_DEPENDS+=	dovecot:mail/dovecot
 .else
 SUB_LIST+=	DOVECOT=""
 .endif

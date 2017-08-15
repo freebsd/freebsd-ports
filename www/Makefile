@@ -257,6 +257,7 @@
     SUBDIR += hs-happstack-server
     SUBDIR += hs-heist
     SUBDIR += hs-hjsmin
+    SUBDIR += hs-http-api-data
     SUBDIR += hs-http-client
     SUBDIR += hs-http-client-tls
     SUBDIR += hs-http-conduit
@@ -462,6 +463,7 @@
     SUBDIR += mod_log_sql2
     SUBDIR += mod_log_sql2-dtc
     SUBDIR += mod_macro22
+    SUBDIR += mod_md-devel
     SUBDIR += mod_memcache
     SUBDIR += mod_memcache_block
     SUBDIR += mod_mono

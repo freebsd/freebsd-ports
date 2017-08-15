@@ -2,7 +2,7 @@
 # $FreeBSD$
 #
 # Do not forget to update the following gemspec patches:
-# - security/rubygem-ezcrypto/files/patch-ezcrypto.gemspec
+# - security/rubygem-ezcrypto/files/patch-gemspec
 # - www/rubygem-gitlab-grack/files/patch-gemspec
 
 PORTNAME=	gems

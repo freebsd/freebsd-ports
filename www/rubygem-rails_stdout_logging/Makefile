@@ -5,7 +5,7 @@ PORTVERSION=	0.0.5
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	jrm@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Overrides Rails' built in logger to send all logs to stdout
 
 LICENSE=	MIT

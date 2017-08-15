@@ -92,7 +92,7 @@ QT_DIST=		3d base canvas3d charts connectivity datavis3d declarative \
 				declarative-render2d gamepad graphicaleffects imageformats \
 				location multimedia quickcontrols quickcontrols2 script scxml \
 				sensors serialbus serialport svg tools translations \
-				virtualkeyboard webchannel webkit websockets x11extras \
+				virtualkeyboard wayland webchannel webkit websockets x11extras \
 				xmlpatterns
 .		endif
 .  endif
@@ -320,7 +320,7 @@ _USE_QT5_ONLY=	3d buildtools canvas3d charts concurrent connectivity \
 				graphicaleffects location paths phonon4 plugininfo printsupport \
 				qdbus qdoc qdoc-data qev qml quick quickcontrols \
 				quickcontrols2 scxml sensors serialbus serialport \
-				sql-tds uiplugin uitools virtualkeyboard webchannel \
+				sql-tds uiplugin uitools virtualkeyboard wayland webchannel \
 				websockets websockets-qml widgets x11extras
 
 3d_PORT=		graphics/${_QT_RELNAME}-3d

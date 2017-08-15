@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	wine
-PORTVERSION=	2.13
+PORTVERSION=	2.14
 PORTEPOCH=	1
 CATEGORIES=	emulators
 MASTER_SITES=	LOCAL/dbn/repos/wine/${DIST_SUBDIR}/
@@ -43,7 +43,7 @@ USES=		tar:xz desktop-file-utils
 BUNDLE_LIBS=	yes
 
 GECKO_RUN_DEPENDS=	${DATADIR}/gecko/wine_gecko-2.47-x86.msi:emulators/wine-gecko-devel
-MONO_RUN_DEPENDS=	${DATADIR}/mono/wine-mono-4.7.0.msi:emulators/wine-mono-devel
+MONO_RUN_DEPENDS=	${DATADIR}/mono/wine-mono-4.7.1.msi:emulators/wine-mono-devel
 
 # Included for OPSYS and OSVERSION
 .include <bsd.port.pre.mk>

@@ -6,7 +6,7 @@ PORTVERSION=	0.5
 PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://tools.ltb-project.org/attachments/download/629/ \
-		http://mirrors.rit.edu/zi/
+		ZI
 PKGNAMEPREFIX=	nagios-
 DISTNAME=	ltb-project-nagios-plugins-${PORTVERSION}
 

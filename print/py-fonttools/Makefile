@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fonttools
-PORTVERSION=	3.13.1
+PORTVERSION=	3.14.0
 CATEGORIES=	print python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -18,8 +18,6 @@ GH_ACCOUNT=	behdad
 USES?=		python
 USE_PYTHON=	autoplist concurrent distutils
 NO_ARCH=	yes
-
-OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|share/man/man1|man/man1|g' ${WRKSRC}/setup.py

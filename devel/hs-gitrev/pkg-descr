@@ -1,0 +1,6 @@
+Some handy Template Haskell splices for including the current git hash and
+branch in the code of your project.  Useful for including in panic messages,
+--version output, or diagnostic info for more informative bug reports.
+
+WWW: https://github.com/acfoltzer/gitrev
+

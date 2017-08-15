@@ -5,7 +5,7 @@ PORTVERSION=	3.1.6
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	jrm@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Pagination plugin for web frameworks and other apps
 
 LICENSE=	MIT

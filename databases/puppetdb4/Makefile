@@ -16,7 +16,7 @@ RUN_DEPENDS=	bash:shells/bash \
 
 USE_RC_SUBR=	puppetdb
 
-CONFLICTS_INSTALL=	puppetdb-* puppetdb3-*
+CONFLICTS_INSTALL=	puppetdb3-* puppetdb5-*
 USES=		shebangfix
 SHEBANG_FILES=	ext/bin/puppetdb \
 		ext/cli/anonymize \

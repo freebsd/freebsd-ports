@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	automatic_addressbook
-PORTVERSION=	0.4.2
+PORTVERSION=	0.4.3
 CATEGORIES=	mail
 PKGNAMEPREFIX=	roundcube-
 
@@ -12,11 +12,11 @@ LICENSE=	GPLv3
 
 RUN_DEPENDS=	roundcube>=0.8:mail/roundcube
 
-NO_BUILD=	yes
-NO_ARCH=	yes
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	sblaisot
+
+NO_BUILD=	yes
+NO_ARCH=	yes
 
 RCDIR=		${PREFIX}/www/roundcube
 WWWDIR=		${RCDIR}/plugins/automatic_addressbook

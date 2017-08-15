@@ -1,11 +1,18 @@
 --- csv.3.orig	2013-01-10 00:04:17 UTC
 +++ csv.3
-@@ -1,4 +1,4 @@
+@@ -1,10 +1,10 @@
 -.TH CSV 3 "9 January 2013"
-+.TH CSV 3 "2 January 2016"
++.TH CSV 3 "21 July 2017"
  .SH NAME
  csv \- CSV parser and writer library
  .SH SYNOPSIS
+ .nf
+ .ft B
+-#include <libcsv/csv.h>
++#include <csv.h>
+ .LP
+ .fi
+ .ft B
 @@ -36,6 +36,9 @@ void csv_free(struct csv_parser *\fIp\fB
  
  unsigned char csv_get_delim(struct csv_parser *\fIp\fB);

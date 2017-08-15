@@ -1,2 +1,3 @@
-SHA256 (cabal/svgcairo-0.13.0.3.tar.gz) = 9fd94d9aad09a26c4b6d4abf979d68d12b7265fbc8171093db448c620df96c49
-SIZE (cabal/svgcairo-0.13.0.3.tar.gz) = 14349
+TIMESTAMP = 1501530095
+SHA256 (cabal/svgcairo-0.13.1.1.tar.gz) = cda662acf9084ef1d16da987bde2fa01c9efc87101e7179da0f566ab05c3a54f
+SIZE (cabal/svgcairo-0.13.1.1.tar.gz) = 5311

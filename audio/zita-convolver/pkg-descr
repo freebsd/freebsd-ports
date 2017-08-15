@@ -1,0 +1,5 @@
+A C++ library implementing a real-time convolution matrix for up to 64 inputs
+and outputs. It uses multiple partition sizes to provide both low delay and
+efficient CPU use.
+
+WWW: http://kokkinizita.linuxaudio.org/linuxaudio/

@@ -3,10 +3,10 @@ man/man1/iccexamin.1.gz
 share/applications/iccexamin.desktop
 share/fonts/FreeSans.ttf
 share/icons/hicolor/128x128/apps/iccexamin.png
-share/locale/cs/LC_MESSAGES/icc_examin.mo
-share/locale/de/LC_MESSAGES/icc_examin.mo
-share/locale/eo/LC_MESSAGES/icc_examin.mo
-share/locale/eu/LC_MESSAGES/icc_examin.mo
-share/locale/fr/LC_MESSAGES/icc_examin.mo
+share/locale/cs/LC_MESSAGES/icc-examin.mo
+share/locale/de/LC_MESSAGES/icc-examin.mo
+share/locale/eo/LC_MESSAGES/icc-examin.mo
+share/locale/eu/LC_MESSAGES/icc-examin.mo
+share/locale/fr/LC_MESSAGES/icc-examin.mo
 share/pixmaps/hicolor/scalable/iccexamin.svg
 share/pixmaps/iccexamin.png

@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	guacamole-client
-PORTVERSION=	0.9.12
+PORTVERSION=	0.9.13
 DISTVERSIONSUFFIX=	-incubating
-PORTREVISION=	1
 CATEGORIES=	www java
 MASTER_SITES+=	https://sourceforge.net/projects/distfiles/files/${PORTNAME}/:repo \
 		http://sourceforge.net/projects/distfiles/files/${PORTNAME}/:repo
@@ -19,30 +18,32 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${LOCALBASE}/share/java/maven33/bin/mvn:devel/maven33
 
+USES=		tar:xz
+USE_JAVA=	yes
+JAVA_VERSION=	1.8+
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	apache
 GH_PROJECT=	incubator-guacamole-client
 
 MVN=		mvn
 MVN_ARGS=	package -Duser.home=${WRKDIR}
-USE_JAVA=	yes
-JAVA_VERSION=	1.8+
 NO_ARCH=	yes
 
-OPTIONS_SUB=	yes
 SUB_FILES=	pkg-message
 
 OPTIONS_DEFINE=		MK_LINK SERVER TOMCAT
 OPTIONS_DEFAULT=	MK_LINK SERVER TOMCAT
+OPTIONS_SUB=		yes
+
 MK_LINK_DESC=		Make sybolic links
-TOMCAT_RUN_DEPENDS=	${LOCALBASE}/apache-tomcat-8.0/bin/bootstrap.jar:www/tomcat8
+SERVER_DESC=		Include Guacamole Server
 TOMCAT_DESC=		Use Tomcat as your servlet
 
+TOMCAT_RUN_DEPENDS=	${LOCALBASE}/apache-tomcat-8.0/bin/bootstrap.jar:www/tomcat8
 SERVER_RUN_DEPENDS=	guacd:net/guacamole-server
-SERVER_DESC=		Include Guacamole Server
 
-GUACAMOLE_CONF=	${PREFIX}/etc/guacamole
-GUACAMOLE_DATA=	${PREFIX}/share/${PORTNAME}
+AUTH_EXTENSION=	duo cas header ldap noauth
 
 .include <bsd.port.pre.mk>
 
@@ -50,29 +51,28 @@ do-build:
 		cd ${WRKSRC} && ${MVN} ${MVN_ARGS}
 
 do-install:
-		@${MKDIR} ${STAGEDIR}${GUACAMOLE_DATA}
-		@${MKDIR} ${STAGEDIR}${GUACAMOLE_CONF}
+		@${MKDIR} ${STAGEDIR}${DATADIR}
+		@${MKDIR} ${STAGEDIR}${ETCDIR}
 
-		@${CP} ${WRKSRC}/guacamole/target/guacamole-${DISTVERSIONFULL}.war \
-			${STAGEDIR}${GUACAMOLE_DATA}/guacamole.war
-		@${CP} ${WRKSRC}/extensions/guacamole-auth-duo/target/guacamole-auth-duo-${DISTVERSIONFULL}.tar.gz \
-			${STAGEDIR}/${GUACAMOLE_DATA}/guacamole-auth-duo.tar.gz
-		@${CP} ${WRKSRC}/extensions/guacamole-auth-jdbc/modules/guacamole-auth-jdbc-dist/target/guacamole-auth-jdbc-${DISTVERSIONFULL}.tar.gz \
-			${STAGEDIR}/${GUACAMOLE_DATA}/guacamole-auth-jdbc.tar.gz
-		@${CP} ${WRKSRC}/extensions/guacamole-auth-ldap/target/guacamole-auth-ldap-${DISTVERSIONFULL}.tar.gz \
-			 ${STAGEDIR}/${GUACAMOLE_DATA}/guacamole-auth-ldap.tar.gz
-		@${CP} ${WRKSRC}/extensions/guacamole-auth-noauth/target/guacamole-auth-noauth-${DISTVERSIONFULL}.tar.gz \
-			 ${STAGEDIR}/${GUACAMOLE_DATA}/guacamole-auth-noauth.tar.gz
+		${INSTALL_DATA} ${WRKSRC}/guacamole/target/guacamole-${DISTVERSIONFULL}.war \
+			${STAGEDIR}${DATADIR}/guacamole.war
+.for i in ${AUTH_EXTENSION}
+		${INSTALL_DATA} ${WRKSRC}/extensions/guacamole-auth-$i/target/guacamole-auth-$i-${DISTVERSIONFULL}.tar.gz \
+			${STAGEDIR}/${DATADIR}/guacamole-auth-$i.tar.gz
+.endfor
+		${INSTALL_DATA} ${WRKSRC}/extensions/guacamole-auth-jdbc/modules/guacamole-auth-jdbc-dist/target/guacamole-auth-jdbc-${DISTVERSIONFULL}.tar.gz \
+			${STAGEDIR}/${DATADIR}/guacamole-auth-jdbc.tar.gz
+		${INSTALL_DATA} ${FILESDIR}/user-mapping.xml.sample ${STAGEDIR}${ETCDIR}/
+		${INSTALL_DATA} ${FILESDIR}/logback.xml.sample ${STAGEDIR}${ETCDIR}/
+		${INSTALL_DATA} ${FILESDIR}/guacamole.properties.sample ${STAGEDIR}${ETCDIR}/
 
-.if ${PORT_OPTIONS:MMK_LINK}
+do-install-MK_LINK-on:
 		@${MKDIR} ${STAGEDIR}/root
+		${RLN} ${STAGEDIR}/${ETCDIR} ${STAGEDIR}/root/.guacamole
+.if ${PORT_OPTIONS:MTOMCAT}
 		@${MKDIR} ${STAGEDIR}${PREFIX}/apache-tomcat-8.0/webapps
-		@${LN} -s ..${GUACAMOLE_CONF} ${STAGEDIR}/root/.guacamole
-		@${LN} -s ../../share/${PORTNAME}/guacamole.war \
-			${STAGEDIR}${PREFIX}/apache-tomcat-8.0/webapps/
+		${RLN} ${STAGEDIR}${DATADIR}/guacamole.war \
+			${STAGEDIR}${PREFIX}/apache-tomcat-8.0/webapps
 .endif
-		@${CP} ${FILESDIR}/user-mapping.xml.sample ${STAGEDIR}${GUACAMOLE_CONF}/
-		@${CP} ${FILESDIR}/logback.xml.sample ${STAGEDIR}${GUACAMOLE_CONF}/
-		@${CP} ${FILESDIR}/guacamole.properties.sample ${STAGEDIR}${GUACAMOLE_CONF}/
 
 .include <bsd.port.post.mk>

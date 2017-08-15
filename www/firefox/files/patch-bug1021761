@@ -122,7 +122,18 @@ index 57bcb4c13652..68be024f4a68 100644
  
  static int
  validate_stream_params(cubeb_stream_params * input_stream_params,
-@@ -138,6 +141,9 @@ cubeb_init(cubeb ** context, char const * context_name)
+@@ -155,6 +158,10 @@ cubeb_init(cubeb ** context, char const * context_name, char const * backend_nam
+ #if defined(USE_KAI)
+       init_oneshot = kai_init;
+ #endif
++    } else if (!strcmp(backend_name, "oss")) {
++#if defined(USE_OSS)
++      init_oneshot = oss_init;
++#endif
+     } else {
+       /* Already set */
+     }
+@@ -196,6 +203,9 @@ cubeb_init(cubeb ** context, char const * context_name, char const * backend_nam
  #if defined(USE_KAI)
      kai_init,
  #endif
@@ -246,7 +257,7 @@ index 05ad27fef53b..3ea78e994f59 100644
 +    char * buftail = stm->buffer + WRAP(snd_pcm_frames_to_bytes)(stm->pcm, stm->bufframes);
  
      /* Correct read size to the other stream available frames */
-     if (stm->other_stream && got > stm->other_stream->bufframes) {
+     if (stm->other_stream && got > (snd_pcm_sframes_t) stm->other_stream->bufframes) {
 @@ -372,8 +421,8 @@ alsa_process_stream(cubeb_stream * stm)
      long drain_frames = avail - stm->bufframes;
      double drain_time = (double) drain_frames / stm->params.rate;
@@ -579,7 +590,7 @@ index 05ad27fef53b..3ea78e994f59 100644
 +  r = WRAP(snd_pcm_poll_descriptors)(stm->pcm, stm->saved_fds, stm->nfds);
    assert((nfds_t) r == stm->nfds);
  
-   r = pthread_cond_init(&stm->cond, NULL);
+   if (alsa_register_stream(ctx, stm) != 0) {
 @@ -1048,7 +1156,7 @@ alsa_stream_destroy(cubeb_stream * stm)
    pthread_mutex_lock(&stm->mutex);
    if (stm->pcm) {
@@ -1182,29 +1193,14 @@ diff --git media/libcubeb/update.sh media/libcubeb/update.sh
 index b139b8f497fd..d1f8a223c6d8 100755
 --- media/libcubeb/update.sh
 +++ media/libcubeb/update.sh
-@@ -17,6 +17,7 @@ cp $1/src/cubeb_audiounit.cpp src
- cp $1/src/cubeb_osx_run_loop.h src
- cp $1/src/cubeb_jack.cpp src
+@@ -20,6 +20,7 @@ cp $1/src/cubeb_log.h src
+ cp $1/src/cubeb_mixer.cpp src
+ cp $1/src/cubeb_mixer.h src
  cp $1/src/cubeb_opensl.c src
 +cp $1/src/cubeb_oss.c src
- cp $1/src/cubeb_array_queue.h src
+ cp $1/src/cubeb_osx_run_loop.h src
  cp $1/src/cubeb_panner.cpp src
  cp $1/src/cubeb_panner.h src
-diff --git media/webrtc/signaling/test/common.build media/webrtc/signaling/test/common.build
-index 3e5450f5d63a..dd45427f655a 100644
---- media/webrtc/signaling/test/common.build
-+++ media/webrtc/signaling/test/common.build
-@@ -99,8 +99,8 @@ USE_LIBS += ['mozglue']
- OS_LIBS += CONFIG['MOZ_WEBRTC_X11_LIBS']
- OS_LIBS += CONFIG['REALTIME_LIBS']
- 
--if CONFIG['MOZ_ALSA']:
--    OS_LIBS += CONFIG['MOZ_ALSA_LIBS']
-+if CONFIG['MOZ_OSS']:
-+    OS_LIBS += CONFIG['MOZ_OSS_LIBS']
- 
- if CONFIG['MOZ_SYSTEM_JPEG']:
-     OS_LIBS += CONFIG['MOZ_JPEG_LIBS']
 diff --git toolkit/library/moz.build toolkit/library/moz.build
 index a61c689c83c3..7764df6f8a6b 100644
 --- toolkit/library/moz.build

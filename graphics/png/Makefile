@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	png
-PORTVERSION=	1.6.29
+PORTVERSION=	1.6.31
 CATEGORIES=	graphics
 MASTER_SITES=	SF/lib${PORTNAME}/lib${PORTNAME}16/${PORTVERSION} \
 		ftp://ftp.simplesystems.org/pub/lib${PORTNAME}/${PORTNAME}/src/lib${PORTNAME}16/
@@ -17,8 +17,6 @@ LICENSE_GROUPS=	FSF GPL OSI
 LICENSE_NAME=	libpng License
 LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
-
-PORTSCOUT=	skipv:1.6.30
 
 USES=		cpe libtool tar:xz
 CPE_PRODUCT=	libpng

@@ -2,7 +2,7 @@
 
 PORTNAME=	cryptocipher
 PORTVERSION=	0.6.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security haskell
 
 MAINTAINER=	haskell@FreeBSD.org

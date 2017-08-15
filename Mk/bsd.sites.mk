@@ -825,7 +825,6 @@ MASTER_SITE_MYSQL+= \
 	ftp://mirror.widexs.nl/pub/mysql/Downloads/%SUBDIR%/ \
 	ftp://mirror.switch.ch/mirror/mysql/Downloads/%SUBDIR%/ \
 	http://mysql.dp.ua/Downloads/%SUBDIR%/ \
-	http://mysql.mirrored.ca/Downloads/%SUBDIR%/ \
 	ftp://mirror.services.wisc.edu/mirrors/mysql/Downloads/%SUBDIR%/ \
 	http://mysql.mirrors.pair.com/Downloads/%SUBDIR%/ \
 	ftp://ftp.linorg.usp.br/mysql/Downloads/%SUBDIR%/ \
@@ -1234,6 +1233,13 @@ MASTER_SITE_KERNEL_ORG+= \
 	http://ftp.yandex.ru/pub/%SUBDIR%/ \
 	http://ftp.heanet.ie/pub/%SUBDIR%/ \
 	http://slackware.cs.utah.edu/pub/kernel.org/pub/%SUBDIR%/
+.endif
+
+.if !defined(IGNORE_MASTER_SITE_ZI)
+MASTER_SITE_ZI+= \
+	https://mirrors.rit.edu/zi/ \
+	https://blackened.zi0r.com/mirrors/ \
+	${MASTER_SITE_LOCAL:S/%SUBDIR%/zi/}
 .endif
 
 # Macro magic

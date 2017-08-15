@@ -2,7 +2,7 @@
 
 PORTNAME=	crypto-random-api
 PORTVERSION=	0.2.0
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	security haskell
 
 MAINTAINER=	haskell@FreeBSD.org

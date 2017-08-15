@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ExtUtils-ParseXS
-PORTVERSION=	3.24
-PORTREVISION=	1
+PORTVERSION=	3.35
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:SMUELLER
@@ -11,6 +10,8 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Converts Perl XS code into C code
+
+LICENSE=	ART10
 
 USES=		perl5 shebangfix
 USE_PERL5=	configure

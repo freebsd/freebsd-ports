@@ -1,2 +1,3 @@
-SHA256 (cabal/shake-0.15.5.tar.gz) = 2c806824c9e8a619f364c3ec6bb910d7b1d0b0d3ba39ab472bffb60311f373a3
-SIZE (cabal/shake-0.15.5.tar.gz) = 507883
+TIMESTAMP = 1499544643
+SHA256 (cabal/shake-0.15.11.tar.gz) = 05520d833ce9563977aa57d777a644b2a2322366a9f54c1004d83967e826b1bb
+SIZE (cabal/shake-0.15.11.tar.gz) = 513926

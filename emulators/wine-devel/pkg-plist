@@ -145,6 +145,8 @@ include/wine/windows/cierror.h
 include/wine/windows/clusapi.h
 include/wine/windows/cmdbas.idl
 include/wine/windows/cmdtxt.idl
+include/wine/windows/cmnquery.h
+include/wine/windows/cmnquery.idl
 include/wine/windows/colinf.idl
 include/wine/windows/comcat.h
 include/wine/windows/comcat.idl
@@ -738,6 +740,8 @@ include/wine/windows/uiautomationclient.idl
 include/wine/windows/uiautomationcore.h
 include/wine/windows/uiautomationcore.idl
 include/wine/windows/uiautomationcoreapi.h
+include/wine/windows/uiribbon.h
+include/wine/windows/uiribbon.idl
 include/wine/windows/unknwn.h
 include/wine/windows/unknwn.idl
 include/wine/windows/urlhist.h
@@ -1250,6 +1254,7 @@ lib/wine/dpvoice.dll.so
 lib/wine/dpwsockx.dll.so
 lib/wine/drmclien.dll.so
 lib/wine/dsound.dll.so
+lib/wine/dsquery.dll.so
 lib/wine/dssenh.dll.so
 lib/wine/dswave.dll.so
 lib/wine/dwmapi.dll.so
@@ -1633,6 +1638,7 @@ lib/wine/fakedlls/dpvoice.dll
 lib/wine/fakedlls/dpwsockx.dll
 lib/wine/fakedlls/drmclien.dll
 lib/wine/fakedlls/dsound.dll
+lib/wine/fakedlls/dsquery.dll
 lib/wine/fakedlls/dssenh.dll
 lib/wine/fakedlls/dswave.dll
 lib/wine/fakedlls/dwmapi.dll
@@ -1930,6 +1936,7 @@ lib/wine/fakedlls/rsabase.dll
 lib/wine/fakedlls/rsaenh.dll
 lib/wine/fakedlls/rstrtmgr.dll
 lib/wine/fakedlls/rtutils.dll
+%%STAGING%%lib/wine/fakedlls/runas.exe
 %%WINE32%%lib/wine/fakedlls/rundll.exe16
 lib/wine/fakedlls/rundll32.exe
 lib/wine/fakedlls/samlib.dll
@@ -1999,6 +2006,7 @@ lib/wine/fakedlls/twain_32.dll
 %%WINE32%%lib/wine/fakedlls/typelib.dll16
 lib/wine/fakedlls/ucrtbase.dll
 lib/wine/fakedlls/uiautomationcore.dll
+lib/wine/fakedlls/uiribbon.dll
 lib/wine/fakedlls/unicows.dll
 lib/wine/fakedlls/uninstaller.exe
 lib/wine/fakedlls/unlodctr.exe
@@ -2585,6 +2593,7 @@ lib/wine/rsabase.dll.so
 lib/wine/rsaenh.dll.so
 lib/wine/rstrtmgr.dll.so
 lib/wine/rtutils.dll.so
+%%STAGING%%lib/wine/runas.exe.so
 %%WINE32%%lib/wine/rundll.exe16.so
 lib/wine/rundll32.exe.so
 lib/wine/samlib.dll.so
@@ -2654,6 +2663,7 @@ lib/wine/twain_32.dll.so
 %%WINE32%%lib/wine/typelib.dll16.so
 lib/wine/ucrtbase.dll.so
 lib/wine/uiautomationcore.dll.so
+lib/wine/uiribbon.dll.so
 lib/wine/unicows.dll.so
 lib/wine/uninstaller.exe.so
 lib/wine/unlodctr.exe.so

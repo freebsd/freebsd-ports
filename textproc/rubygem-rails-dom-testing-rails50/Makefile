@@ -7,7 +7,7 @@ CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	-rails50
 
-MAINTAINER=	jrm@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Analyse and compare DOMs using Nokogiri
 
 LICENSE=	MIT

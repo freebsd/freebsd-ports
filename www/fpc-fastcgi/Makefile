@@ -4,7 +4,6 @@
 CATEGORIES=	www lang
 PKGNAMESUFFIX=	-fastcgi
 
-MAINTAINER=	freebsd-fpc@FreeBSD.org
 COMMENT=	Free Pascal fastcgi unit
 
 USE_FPC=	yes

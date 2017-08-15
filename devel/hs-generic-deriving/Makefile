@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	generic-deriving
-PORTVERSION=	1.8.0
+PORTVERSION=	1.11.2
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org

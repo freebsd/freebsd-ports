@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	suricata
-PORTVERSION=	3.2.3
+PORTVERSION=	4.0.0
 CATEGORIES=	security
 MASTER_SITES=	http://www.openinfosecfoundation.org/download/
 
@@ -110,8 +110,7 @@ REDIS_CONFIGURE_ON=		--enable-hiredis \
 				--with-libhiredis-libraries=${LOCALBASE}/lib
 
 SC_USES=			python
-SC_CONFIGURE_ENV=		ac_cv_path_HAVE_PYTHON_CONFIG=yes
-SC_CONFIGURE_ENV_OFF=		ac_cv_path_HAVE_PYTHON_CONFIG=no
+SC_CONFIGURE_ENABLE=		python
 
 TESTS_CONFIGURE_ENABLE=		unittests
 
@@ -136,8 +135,6 @@ RULES_FILES=	app-layer-events.rules decoder-events.rules dns-events.rules files.
 		tls-events.rules
 LOGS_DIR?=	/var/log/${PORTNAME}
 
-.include <bsd.port.pre.mk>
-
 pre-patch:
 	${CP} ${FILESDIR}/ax_check_compile_flag.m4 ${WRKSRC}/m4
 
@@ -145,19 +142,16 @@ post-install:
 	${MKDIR} ${STAGEDIR}${CONFIG_DIR}
 	${MKDIR} ${STAGEDIR}${RULES_DIR}
 	${MKDIR} ${STAGEDIR}${LOGS_DIR}
-
 .for f in ${CONFIG_FILES}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${CONFIG_DIR}/${f}.sample
 .endfor
-
 .for f in ${RULES_FILES}
 	${INSTALL_DATA} ${WRKSRC}/rules/${f} ${STAGEDIR}${RULES_DIR}/${f}
 .endfor
 
-.if ${PORT_OPTIONS:MSC}
+post-install-SC-on:
 	(cd ${STAGEDIR}${PREFIX} \
 	&& ${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py \
 	-d ${PYTHONPREFIX_SITELIBDIR} -f ${PYTHONPREFIX_SITELIBDIR:S;${PREFIX}/;;})
-.endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

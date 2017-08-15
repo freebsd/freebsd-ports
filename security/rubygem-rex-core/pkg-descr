@@ -1,4 +1,4 @@
-The Ruby Exploitation(rex) Core Gem contains the odds and ends of code that so
+The Ruby Exploitation (rex) Core Gem contains the odds and ends of code that so
 many other pieces of Rex rely upon, but that are too small to be put into their
 own seperate gems. This include some of the ruby cross-platform compatibility
 and file utility code.

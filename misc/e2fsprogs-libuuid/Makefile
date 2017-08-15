@@ -7,6 +7,9 @@ PKGNAMESUFFIX=	-libuuid
 
 COMMENT=	UUID library from e2fsprogs package
 
+LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${INSTALL_WRKSRC}/COPYING
+
 CONFIGURE_ARGS=	--enable-elf-shlibs
 
 OPTIONS_EXCLUDE=	NLS

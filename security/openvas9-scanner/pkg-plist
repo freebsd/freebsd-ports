@@ -1,0 +1,12 @@
+etc/rc.d/openvassd
+man/man8/greenbone-nvt-sync.8.gz
+man/man8/openvassd.8.gz
+sbin/greenbone-nvt-sync
+sbin/openvassd
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/example_redis_2_4.conf
+%%PORTDOCS%%%%DOCSDIR%%/example_redis_2_6.conf
+@dir /var/cache/openvas
+@dir /var/lib/openvas/plugins
+@dir /var/lib/openvas
+@dir /var/lib

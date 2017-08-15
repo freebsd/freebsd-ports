@@ -1,0 +1,53 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: selenium
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+
+. /etc/rc.subr
+
+name="selenium"
+rcvar=selenium_enable
+
+load_rc_config "${name}"
+
+: ${selenium_enable="NO"}
+: ${selenium_args=""}
+: ${selenium_java_home="%%JAVA_HOME%%"}
+: ${selenium_java_opts=""}
+: ${selenium_user="selenium"}
+: ${selenium_group="selenium"}
+: ${selenium_jar="%%DATADIR%%/selenium-server-standalone-%%SELENIUM_VERSION%%.jar"}
+: ${selenium_log_file="/var/log/selenium.log"}
+
+pidfile="/var/run/selenium/selenium.pid"
+command="/usr/sbin/daemon"
+java_cmd="${selenium_java_home}/bin/java"
+procname="${java_cmd}"
+command_args="-p ${pidfile} ${java_cmd} ${selenium_java_opts} -jar ${selenium_jar} ${selenium_args} >> ${selenium_log_file} 2>&1"
+required_files="${java_cmd}"
+
+start_precmd="selenium_prestart"
+start_cmd="selenium_start"
+
+selenium_prestart() {
+        if [ ! -f "${selenium_log_file}" ]; then
+                touch "${selenium_log_file}"
+                chown "${selenium_user}:${selenium_group}" "${selenium_log_file}"
+                chmod 644 "${selenium_log_file}"
+        fi
+        if [ ! -d "/var/run/selenium" ]; then
+                install -d -o "${selenium_user}" -g "${selenium_group}" -m 750 "/var/run/selenium"
+        fi
+}
+
+selenium_start()
+{
+        check_startmsgs && echo "Starting ${name}."
+        su -l ${selenium_user} -c "exec ${command} ${command_args}"
+}
+
+run_rc_command "$1"
+

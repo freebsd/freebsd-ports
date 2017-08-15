@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	guacamole-server
-PORTVERSION=	0.9.12
+PORTVERSION=	0.9.13
 DISTVERSIONSUFFIX=	-incubating
-PORTREVISION=	2
 CATEGORIES=	net
 
 MAINTAINER=	ultima@FreeBSD.org
@@ -18,50 +17,60 @@ LIB_DEPENDS=	libossp-uuid.so:misc/ossp-uuid \
 
 CONFLICTS_BUILD=pulseaudio-*+jack_* ffmpeg-*+jack_*
 
+USES=		autoreconf jpeg libtool localbase \
+		pkgconfig shebangfix ssl
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	apache
 GH_PROJECT=	incubator-guacamole-server
 
-USES=		autoreconf gettext-runtime jpeg libtool localbase \
-		pkgconfig shebangfix ssl
 USE_GNOME=	cairo
+USE_LDCONFIG=	yes
+USE_RC_SUBR=	guacd
 SHEBANG_FILES=	${WRKSRC}/src/protocols/rdp/keymaps/generate.pl
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=	--with-guacd-conf=${PREFIX}/etc/guacd/guacd.conf
-USE_LDCONFIG=	yes
+CONFIGURE_ARGS=	--with-guacd-conf=${ETCDIR}/guacd.conf
 INSTALL_TARGET=	install-strip
 
 USERS=		guacamole
 GROUPS=		guacamole
 
-USE_RC_SUBR=	guacd
-SUB_LIST+=	GUACD_USER=${USERS} \
+SUB_LIST=	GUACD_USER=${USERS} \
 		GUACD_GROUP=${GROUPS}
 
-OPTIONS_DEFINE=		RDP SSH VNC VORBIS PULSEAUDIO WEBP GUACENC
+OPTIONS_DEFINE=		WEBP GUACENC NLS
 OPTIONS_DEFAULT=	RDP SSH VNC VORBIS PULSEAUDIO WEBP GUACENC
+OPTIONS_GROUP=		SP AUDIO
+OPTIONS_GROUP_SP=	RDP SSH VNC
+OPTIONS_GROUP_AUDIO=	VORBIS PULSEAUDIO
 OPTIONS_SUB=		yes
+
+AUDIO_DESC=		Audio Support
+GUACENC_DESC=		Video Encoding Utility
+PULSEAUDIO_DESC=	VNC audio support (Experimental)
+RDP_DESC=		RDP protocol support
+SP_DESC=		Supported Protocols
+VNC_DESC=		VNC protocol support
+
 GUACENC_LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg
-GUACENC_DESC?=		Video Encoding Utility
+NLS_USES=		gettext-runtime
 PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
-PULSEAUDIO_DESC?=	VNC audio support (Experimental)
 RDP_LIB_DEPENDS=	libfreerdp1.so:net/freerdp1
-RDP_DESC?=		RDP Protocal Support
 SSH_LIB_DEPENDS=	libssh2.so:security/libssh2
 SSH_USE=		GNOME=pango
-SSH_DESC?=		SSH Support
 VNC_LIB_DEPENDS=	libvncserver.so:net/libvncserver
-VNC_DESC?=		VNC Protocol Support
 VORBIS_LIB_DEPENDS=	libvorbis.so:audio/libvorbis \
 			libogg.so:audio/libogg
-VORBIS_DESC?=		Ogg Vorbis for compression
 WEBP_LIB_DEPENDS=	libwebp.so:graphics/webp
-WEBP_DESC?=		WebP support
 
 post-patch:
 	@${REINPLACE_CMD} 's|/etc/ssl|${PREFIX}/etc/ssl|g ; \
 			 s|/etc/guacamole|${PREFIX}/etc/guacd|g' \
 			 ${WRKSRC}/src/guacd/man/guacd.conf.5
+
+post-install:
+	@${MKDIR} ${STAGEDIR}${ETCDIR}
+	${INSTALL_DATA} ${FILESDIR}/guacd.conf.sample ${STAGEDIR}${ETCDIR}
 
 .include <bsd.port.mk>

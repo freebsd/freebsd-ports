@@ -19,6 +19,7 @@
 . /etc/rc.subr
 
 name="npcd"
+desc="Nagios performance C daemon"
 rcvar=npcd_enable
 
 command="%%PREFIX%%/bin/npcd"

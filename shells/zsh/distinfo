@@ -1,5 +1,5 @@
-TIMESTAMP = 1482410948
-SHA256 (zsh-5.3.1.tar.xz) = fc886cb2ade032d006da8322c09a7e92b2309177811428b121192d44832920da
-SIZE (zsh-5.3.1.tar.xz) = 2928832
-SHA256 (zsh-5.3.1-doc.tar.xz) = d51762fcb5699c332da8a4e404cb9eb8d5de8fa4e0235a08bcf252c915bda6ed
-SIZE (zsh-5.3.1-doc.tar.xz) = 3161408
+TIMESTAMP = 1502363252
+SHA256 (zsh-5.4.1.tar.xz) = 94cbd57508287e8faa081424509738d496f5f41e32ed890e3a5498ce05d3633b
+SIZE (zsh-5.4.1.tar.xz) = 2972824
+SHA256 (zsh-5.4.1-doc.tar.xz) = b8b1a40aeec852806ad2b74b0a0c534320bf517e2fe2a087c0c9d39e75dc29f1
+SIZE (zsh-5.4.1-doc.tar.xz) = 3197560

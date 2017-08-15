@@ -1,14 +1,11 @@
---- Makefile.in.orig	2014-07-31 12:30:46 UTC
+--- Makefile.in.orig	2017-07-24 14:31:29 UTC
 +++ Makefile.in
-@@ -827,9 +827,9 @@
- install-exec-local:
- 	$(MKDIR_P) $(DESTDIR)$(pkglibdir)/contrib/ms-sbvar/TZcode
- 	cp -r examples $(DESTDIR)$(pkglibdir)
--	cp -r matlab $(DESTDIR)$(pkglibdir)
- 	rm -f $(DESTDIR)$(pkglibdir)/matlab/dynare_m
--	cp preprocessor/dynare_m $(DESTDIR)$(pkglibdir)/matlab
-+	cp -r matlab $(DESTDIR)$(pkglibdir)
-+	$(INSTALL_PROGRAM) preprocessor/dynare_m $(DESTDIR)$(pkglibdir)/matlab
- 	cp -r contrib/ms-sbvar/TZcode/MatlabFiles $(DESTDIR)$(pkglibdir)/contrib/ms-sbvar/TZcode
+@@ -844,7 +844,7 @@ install-exec-local:
+ 	  ARCH="64"; \
+ 	fi; \
+ 	mkdir -p $(DESTDIR)$(pkglibdir)/matlab/preprocessor$$ARCH; \
+-	cp preprocessor/dynare_m $(DESTDIR)$(pkglibdir)/matlab/preprocessor$$ARCH; \
++	$(INSTALL_PROGRAM) preprocessor/dynare_m $(DESTDIR)$(pkglibdir)/matlab/preprocessor$$ARCH; \
+ 	}
  
  uninstall-local:

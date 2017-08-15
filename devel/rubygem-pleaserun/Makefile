@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	pleaserun
-PORTVERSION=	0.0.29
+PORTVERSION=	0.0.30
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -24,6 +24,6 @@ USES=		gem
 PLIST_FILES=	bin/please-manage-user bin/pleaserun
 
 post-patch:
-	@${REINPLACE_CMD} -e 's/= 0\.99\.8/>= 0.99.8/' ${WRKSRC}/pleaserun.gemspec
+	@${REINPLACE_CMD} -e '/mustache/ s|= 0\.99\.8|>&|' ${WRKSRC}/${GEMSPEC}
 
 .include <bsd.port.mk>

@@ -96,8 +96,8 @@
     SUBDIR += dkimproxy
     SUBDIR += dma
     SUBDIR += dot-forward
-    SUBDIR += dovecot2
-    SUBDIR += dovecot2-pigeonhole
+    SUBDIR += dovecot
+    SUBDIR += dovecot-pigeonhole
     SUBDIR += drac
     SUBDIR += dracmail
     SUBDIR += dspam
@@ -618,6 +618,7 @@
     SUBDIR += rubygem-mail_room
     SUBDIR += rubygem-mailboxer
     SUBDIR += rubygem-mailfactory
+    SUBDIR += rubygem-mini_mime
     SUBDIR += rubygem-pony
     SUBDIR += rubygem-premailer
     SUBDIR += rubygem-premailer-rails

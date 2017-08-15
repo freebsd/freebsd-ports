@@ -5,7 +5,7 @@ PORTVERSION=	0.10.6
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	jrm@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Conventions-based JSON generation for Rails
 
 LICENSE=	MIT

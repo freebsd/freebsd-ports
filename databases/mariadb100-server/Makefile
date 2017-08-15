@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME?=	mariadb
-PORTVERSION=	10.0.31
-PORTREVISION?=	1
+PORTVERSION=	10.0.32
+PORTREVISION?=	0
 CATEGORIES=	databases ipv6
 MASTER_SITES=	http://ftp.osuosl.org/pub/${SITESDIR}/ \
 		http://mirrors.supportex.net/${SITESDIR}/ \
@@ -71,6 +71,7 @@ DATADIR=	${PREFIX}/share/mysql
 CONFLICTS_INSTALL=	mariadb5*-${PKGNAMESUFFIX:C/^[0-9]*-//}-* \
 			mariadb10[1-9]-${PKGNAMESUFFIX:C/^[0-9]*-//}-* \
 			mysql[0-9]*-${PKGNAMESUFFIX:C/^[0-9]*-//}-* \
+			mysqlwsrep* \
 			percona[0-9]*-${PKGNAMESUFFIX:C/^[0-9]*-//}-* \
 
 .if !defined(CLIENT_ONLY)

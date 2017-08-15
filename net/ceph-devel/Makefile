@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ceph
-DISTVERSION=	wip.v2017-05-01
+DISTVERSION=	wip.v2017-07-27-1
 CATEGORIES=	net
 PKGNAMESUFFIX=	-devel
 
@@ -17,7 +17,8 @@ BUILD_DEPENDS=	\
 	pkgconf:devel/pkgconf \
 	cython>=0.25.2:lang/cython \
 	sphinx-build:textproc/py-sphinx \
-	${LOCALBASE}/lib/libatomic_ops.a:devel/libatomic_ops
+	${LOCALBASE}/lib/libatomic_ops.a:devel/libatomic_ops \
+	gperf:devel/gperf
 LIB_DEPENDS=	\
 	libboost_python.so:devel/boost-python-libs \
 	libboost_thread.so:devel/boost-libs \
@@ -41,24 +42,28 @@ RUN_DEPENDS=	\
 	flock:sysutils/flock \
 	virtualenv:devel/py-virtualenv
 
+USES=	gmake cmake:outsource,noninja python:2.7 fuse gettext-runtime shebangfix
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	wjwithagen:DEFAULT
-GH_TUPLE+=	facebook:rocksdb:2.7.fb-4991-g9f2cc5:rocksdb/src/rocksdb
-GH_TUPLE+=	ceph:ceph-erasure-code-corpus:master:cepherasurecodecorpus/ceph-erasure-code-corpus
-GH_TUPLE+=	ceph:ceph-object-corpus:master:cephobjectcorpus/ceph-object-corpus
-GH_TUPLE+=	ceph:civetweb:v1.5-1809-g7f9f5d1:civetweb/src/civetweb
-GH_TUPLE+=	ceph:jerasure:v2-ceph:jerasure/src/erasure-code/jerasure/jerasure
-GH_TUPLE+=	ceph:gf-complete:v3-ceph:gfcomplete/src/erasure-code/jerasure/gf-complete
-GH_TUPLE+=	ceph:googletest:ceph-release-1.7.x:googletest/src/googletest
-GH_TUPLE+=	ceph:spdk:v17.03-34-g5742e9b9:spdk/src/spdk
-GH_TUPLE+=	ceph:xxHash:v0.5.1-2-g1f40c65:xxHash/src/xxHash
-GH_TUPLE+=	ceph:isa-l:v2.16.0:isal/src/isa-l
-GH_TUPLE+=	ceph:lua:5.3.2-2-g1fce39c:lua/src/lua
-GH_TUPLE+=	ceph:Beast:999e2fa:Beast/src/Beast
-GH_TUPLE+=	boostorg:boost:boost-1.61.0-275-g1790aff:boost/src/boost
-GH_TUPLE+=	ceph:dpdk:v16.11:dpd/src/dpd
-GH_TUPLE+=	facebook:zstd:v1.1.2:zstd/src/zstd
-GH_TUPLE+=	01org:isa-l_crypto:603529a:isalcrypto/src/crypto/isa-l/isa-l_crypto
+GH_TUPLE+=	ceph:ceph-erasure-code-corpus:2d7d78b:ceph_erasure_code_corpus/ceph-erasure-code-corpus
+GH_TUPLE+=	ceph:ceph-object-corpus:f0ba19f:ceph_object_corpus/ceph-object-corpus
+GH_TUPLE+=	ceph:Beast:d8db5f1:Beast/src/Beast
+GH_TUPLE+=	ceph:blkin:f24ceec:blkin/src/blkin
+GH_TUPLE+=	boostorg:boost:1790aff:boost/src/boost
+GH_TUPLE+=	ceph:civetweb:de23828:civetweb/src/civetweb
+GH_TUPLE+=	01org:isa-l_crypto:603529a:isa_l_crypto/src/crypto/isa-l/isa-l_crypto
+GH_TUPLE+=	ceph:dpdk:d3bfeaa:dpdk/src/dpdk
+GH_TUPLE+=	ceph:gf-complete:7e61b44:gf_complete/src/erasure-code/jerasure/gf-complete
+GH_TUPLE+=	ceph:jerasure:96c76b8:jerasure/src/erasure-code/jerasure/jerasure
+GH_TUPLE+=	ceph:googletest:fdb8504:googletest/src/googletest
+GH_TUPLE+=	ceph:isa-l:7e1a337:isa_l/src/isa-l
+GH_TUPLE+=	ceph:lua:1fce39c:lua/src/lua
+GH_TUPLE+=	ceph:rapidjson:f54b0e4:rapidjson/src/rapidjson
+GH_TUPLE+=	ceph:rocksdb:e15382c:rocksdb/src/rocksdb
+GH_TUPLE+=	ceph:spdk:5742e9b:spdk/src/spdk
+GH_TUPLE+=	ceph:xxHash:1f40c65:xxHash/src/xxHash
+GH_TUPLE+=	facebook:zstd:dc99312:zstd/src/zstd
 
 CMAKE_BUILD_TYPE=	Release
 CMAKE_ARGS=	\
@@ -66,6 +71,7 @@ CMAKE_ARGS=	\
 	-D WITH_SYSTEM_BOOST:BOOL=ON \
 	-D CEPH_MAN_DIR:STRING=man \
 	-D WITH_LTTNG:BOOL=OFF \
+	-D WITH_BABELTRACE:BOOL=OFF \
 	-D WITH_FUSE:BOOL=ON \
 	-D WITH_KRBD:BOOL=OFF \
 	-D WITH_XFS:BOOL=OFF \
@@ -74,7 +80,6 @@ CMAKE_ARGS=	\
 	-D WITH_CEPHFS:BOOL=OFF \
 	-D WITH_EMBEDDED:BOOL=OFF
 
-USES=	gmake cmake:outsource,noninja python:2.7 fuse gettext-runtime shebangfix
 SHEBANG_FILES=src/rbdmap src/ceph-post-file.in src/rbd-replay-many \
 	src/brag/client/ceph-brag src/ceph-rest-api \
 	src/tools/ceph-monstore-update-crush.sh src/mount.fuse.ceph \
@@ -94,6 +99,7 @@ pre-configure:
 	${LN} -s ${CONFIGURE_WRKSRC} ${WRKSRC}/build
 
 post-install:
+	# create directory infra used by ceph daemons
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/ceph
 	${MKDIR} ${STAGEDIR}/var/lib/ceph/bootstrap-mds
 	${MKDIR} ${STAGEDIR}/var/lib/ceph/bootstrap-osd
@@ -107,12 +113,6 @@ post-install:
 	${MKDIR} ${STAGEDIR}/var/lib/ceph/radosgw
 	${MKDIR} ${STAGEDIR}/var/log/ceph
 	${MKDIR} ${STAGEDIR}/var/run/ceph
-	${CHOWN} -R 167:167 ${STAGEDIR}/var/lib/ceph
-	${CHOWN} 167:167 ${STAGEDIR}/var/log/ceph
-	${CHOWN} 167:167 ${STAGEDIR}/var/run/ceph
-	${CHMOD} -R 750 ${STAGEDIR}/var/lib/ceph
-	${CHOWN} 750 ${STAGEDIR}/var/log/ceph
-	${CHOWN} 750 ${STAGEDIR}/var/run/ceph
 	# Use the Ceph init.d script as the interface to regular
 	# starting and stopping deamons. rc.d work is done thru
 	# a separate rc.d/ceph script calling init-ceph again.

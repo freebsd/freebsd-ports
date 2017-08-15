@@ -1,5 +1,6 @@
 include/qt5keychain/keychain.h
 include/qt5keychain/qkeychain_export.h
+%%QT_MKSPECDIR%%/modules/qt_Qt5Keychain.pri
 lib/cmake/Qt5Keychain/Qt5KeychainConfig.cmake
 lib/cmake/Qt5Keychain/Qt5KeychainConfigVersion.cmake
 lib/cmake/Qt5Keychain/Qt5KeychainLibraryDepends-%%CMAKE_BUILD_TYPE%%.cmake

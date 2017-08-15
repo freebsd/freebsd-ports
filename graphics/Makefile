@@ -350,6 +350,7 @@
     SUBDIR += hs-cairo
     SUBDIR += hs-dia-base
     SUBDIR += hs-dia-functions
+    SUBDIR += hs-graphviz
     SUBDIR += hs-svgcairo
     SUBDIR += hugin
     SUBDIR += icat
@@ -633,6 +634,7 @@
     SUBDIR += opencv-java
     SUBDIR += opendx
     SUBDIR += opengl-man
+    SUBDIR += openicc-config
     SUBDIR += openimageio
     SUBDIR += openjpeg
     SUBDIR += openjpeg15
@@ -926,6 +928,7 @@
     SUBDIR += qt5-opengl
     SUBDIR += qt5-pixeltool
     SUBDIR += qt5-svg
+    SUBDIR += qt5-wayland
     SUBDIR += qtawesome
     SUBDIR += quat
     SUBDIR += quat-gui
@@ -936,7 +939,6 @@
     SUBDIR += raster3d
     SUBDIR += rawstudio
     SUBDIR += rawtherapee
-    SUBDIR += rawtherapee-devel
     SUBDIR += rayshade
     SUBDIR += reallyslick
     SUBDIR += recoverjpeg

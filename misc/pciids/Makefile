@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pciids
-PORTVERSION=	20170701
+PORTVERSION=	20170727
 CATEGORIES=	misc
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -17,7 +17,7 @@ NO_BUILD=	yes
 PLIST_FILES=	%%DATADIR%%/pci.ids
 
 GH_ACCOUNT=	pciutils
-GH_TAGNAME=	4b1dcfe
+GH_TAGNAME=	8a1d51e
 USE_GITHUB=	yes
 
 do-install:

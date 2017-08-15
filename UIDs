@@ -72,7 +72,7 @@ zabbix:*:122:122::0:0:Zabbix NMS:/nonexistent:/bin/sh
 _ntp:*:123:123::0:0:NTP Daemon:/var/empty:/usr/sbin/nologin
 fetchmail:*:124:124::0:0:Fetchmail mail-retrieval daemon:/nonexistent:/usr/sbin/nologin
 postfix:*:125:125::0:0:Postfix Mail System:/var/spool/postfix:/usr/sbin/nologin
-synapse:*:126:65534::0:0:Synapse Daemon:/nonexistent:/usr/sbin/nologin
+synapse:*:126:141::0:0:Synapse Daemon:/nonexistent:/usr/sbin/nologin
 navcron:*:127:127::0:0:Network Administration Visualized:/usr/local/nav:/usr/sbin/nologin
 sd-agent:*:128:128::0:0:ServerDensity Agent:/nonexistent:/usr/sbin/nologin
 # free: 129
@@ -297,9 +297,10 @@ openfire:*:342:342::0:0:Openfire IM Daemon:/nonexistent:/usr/sbin/nologin
 # free: 348
 # free: 349
 _sabnzbd:*:350:350::0:0:sabnzb Daemon:/nonexistent:/usr/sbin/nologin
-sonarr:*:351:65534::0:0:Sonarr PVR:/nonexistent:/usr/sbin/nologin
-radarr:*:352:65534::0:0:Radarr Daemon:/nonexistent:/usr/sbin/nologin
+sonarr:*:351:351::0:0:Sonarr PVR:/nonexistent:/usr/sbin/nologin
+radarr:*:352:352::0:0:Radarr Daemon:/nonexistent:/usr/sbin/nologin
 _iodined:*:353:353::0:0:Iodine Daemon:/nonexistent:/usr/sbin/nologin
+jackett:*:354:354::0:0:Jackett Torznab Proxy Daemon:/nonexistent:/usr/sbin/nologin
 # free: 354
 # free: 355
 # free: 356
@@ -896,7 +897,7 @@ mediatomb:*:946:946::0:0:Mediatomb UPnP AV MediaServer:/nonexistent:/usr/sbin/no
 mapred:*:947:955::0:0:Hadoop MapReduce user:/nonexistent:/usr/sbin/nologin
 dnrd:*:948:948::0:0:& user:/nonexistent:/usr/sbin/nologin
 _lldpd:*:949:949::0:0:lldpd user:/nonexistent:/usr/sbin/nologin
-couchpotato:*:950:65534::0:0:couchpotato user:/nonexistent:/usr/sbin/nologin
+couchpotato:*:950:954::0:0:couchpotato user:/nonexistent:/usr/sbin/nologin
 openerpd:*:951:951::0:0:Openerpd user:/nonexistent:/usr/sbin/nologin
 bitten-slave:*:952:952:daemon:0:0:Bitten slave user:/var/lib/bitten-slave:/usr/sbin/nologin
 _neubot:*:953:953::0:0:neubot daemon:/nonexistent:/usr/sbin/nologin
@@ -924,7 +925,7 @@ radicale:*:974:974::0:0:Radicale daemon:/nonexistent:/usr/sbin/nologin
 unifi:*:975:975::0:0:Unifi Wireless Controller:/nonexistent:/usr/sbin/nologin
 minetest:*:976:976::0:0:& server:/nonexistent:/usr/sbin/nologin
 tests:*:977:65534::0:0:Unprivileged user for tests:/nonexistent:/usr/sbin/nologin
-_dnscrypt-proxy:*:978:65534::0:0:dnscrypt-proxy user:/var/empty:/usr/sbin/nologin
+_dnscrypt-proxy:*:978:978::0:0:dnscrypt-proxy user:/var/empty:/usr/sbin/nologin
 ums:*:979:979::0:0:Universal Media Server:/nonexistent:/usr/sbin/nologin
 hbase:*:980:980::0:0:HBase user:/nonexistent:/usr/sbin/nologin
 uvncrep:*:981:981::0:0:UltraVNC Repeater daemon:/nonexistent:/usr/sbin/nologin

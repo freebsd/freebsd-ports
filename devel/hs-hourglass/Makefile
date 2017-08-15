@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	hourglass
-PORTVERSION=	0.2.9
+PORTVERSION=	0.2.10
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org

@@ -1,8 +1,11 @@
---- heroku.gemspec.orig	2017-05-05 13:02:56 UTC
+--- heroku.gemspec.orig	2017-08-07 17:59:56 UTC
 +++ heroku.gemspec
-@@ -26,12 +26,12 @@ Gem::Specification.new do |s|
+@@ -24,14 +24,14 @@ Gem::Specification.new do |s|
+     s.specification_version = 4
+ 
      if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
-       s.add_runtime_dependency(%q<heroku-api>.freeze, ["= 0.4.2"])
+-      s.add_runtime_dependency(%q<heroku-api>.freeze, ["= 0.4.2"])
++      s.add_runtime_dependency(%q<heroku-api>.freeze, [">= 0.4.2"])
        s.add_runtime_dependency(%q<launchy>.freeze, ["= 2.4.3"])
 -      s.add_runtime_dependency(%q<netrc>.freeze, ["= 0.10.3"])
 -      s.add_runtime_dependency(%q<rest-client>.freeze, ["= 1.6.8"])

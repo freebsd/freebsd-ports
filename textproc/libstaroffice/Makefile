@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libstaroffice
-PORTVERSION=	0.0.3
+PORTVERSION=	0.0.4
 CATEGORIES=	textproc
 MASTER_SITES=	LODEV
 MASTER_SITE_SUBDIR=	#
@@ -9,7 +9,7 @@ MASTER_SITE_SUBDIR=	#
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Library to build a filter for old StarOffice's documents
 
-LICENSE=	LGPL21+ MPL
+LICENSE=	LGPL21+ MPL20
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:devel/boost-libs

@@ -1,2 +1,3 @@
-SHA256 (cabal/nonce-1.0.2.tar.gz) = 1004184996ea797b43189a0e73eab0b939f129cafc776341ca82289edb329cd0
-SIZE (cabal/nonce-1.0.2.tar.gz) = 2872
+TIMESTAMP = 1499537845
+SHA256 (cabal/nonce-1.0.4.tar.gz) = 51661ae3dda7263f1772d628f9a7c08a319dc221b3936ceabea3b2a50f086ef6
+SIZE (cabal/nonce-1.0.4.tar.gz) = 2788

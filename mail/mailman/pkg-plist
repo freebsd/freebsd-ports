@@ -2220,6 +2220,7 @@
 %%MMDIR%%/tests/bounces/simple_38.txt
 %%MMDIR%%/tests/bounces/simple_39.txt
 %%MMDIR%%/tests/bounces/simple_40.txt
+%%MMDIR%%/tests/bounces/simple_41.txt
 %%MMDIR%%/tests/bounces/sina_01.txt
 %%MMDIR%%/tests/bounces/smtp32_01.txt
 %%MMDIR%%/tests/bounces/smtp32_02.txt

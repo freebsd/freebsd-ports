@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mysql2
-PORTVERSION=	0.4.8
+PORTVERSION=	0.4.9
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 

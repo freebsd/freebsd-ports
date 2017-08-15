@@ -6,7 +6,7 @@ PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	jrm@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	General ruby templating with json, bson, xml and msgpack support
 
 LICENSE=	MIT

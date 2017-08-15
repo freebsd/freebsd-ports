@@ -14,7 +14,6 @@ bin/grpc_ruby_plugin
 bin/grpc_verify_jwt
 include/benchmark/benchmark.h
 include/benchmark/benchmark_api.h
-include/benchmark/macros.h
 include/benchmark/reporter.h
 include/grpc++/alarm.h
 include/grpc++/channel.h
@@ -153,6 +152,10 @@ include/grpc/support/tls_msvc.h
 include/grpc/support/tls_pthread.h
 include/grpc/support/useful.h
 include/grpc/support/workaround_list.h
+lib/cmake/benchmark/benchmarkConfig.cmake
+lib/cmake/benchmark/benchmarkConfigVersion.cmake
+lib/cmake/benchmark/benchmarkTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/benchmark/benchmarkTargets.cmake
 lib/cmake/gRPC/gRPCConfig.cmake
 lib/cmake/gRPC/gRPCConfigVersion.cmake
 lib/libbenchmark.so

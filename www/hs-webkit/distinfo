@@ -1,2 +1,3 @@
-SHA256 (cabal/webkit-0.13.1.3.tar.gz) = 068c23b5ceebb725f113d519dadb30deaa5bc747c656264eb32e1bda8b210902
-SIZE (cabal/webkit-0.13.1.3.tar.gz) = 152548
+TIMESTAMP = 1499625383
+SHA256 (cabal/webkit-0.14.2.1.tar.gz) = b80ef2a7d9def4245ec85f6065f62fc19fafe7ca3379a5def86e98eeaea1f550
+SIZE (cabal/webkit-0.14.2.1.tar.gz) = 150595

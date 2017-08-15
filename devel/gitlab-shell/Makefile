@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gitlab-shell
-PORTVERSION=	5.0.2
+PORTVERSION=	5.0.4
 CATEGORIES=	devel
 MASTER_SITES=	https://gitlab.com/gitlab-org/${PORTNAME}/repository/archive.tar.gz?ref=v${PORTVERSION}&dummy=/
 DISTNAME=	${PORTNAME}-v${PORTVERSION}

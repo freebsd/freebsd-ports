@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	e2fsprogs
-PORTVERSION=	1.43.4
+PORTVERSION=	1.43.5
 PORTREVISION?=	0
 CATEGORIES?=	sysutils
 MASTER_SITES=	KERNEL_ORG/linux/kernel/people/tytso/${PORTNAME}/v${PORTVERSION}
@@ -10,7 +10,11 @@ MASTER_SITES=	KERNEL_ORG/linux/kernel/people/tytso/${PORTNAME}/v${PORTVERSION}
 MAINTAINER?=	mandree@FreeBSD.org
 COMMENT?=	Utilities & library to manipulate ext2/3/4 filesystems
 
-LICENSE=	GPLv2
+LICENSE?=	GPLv2+
+.if !defined(_no_license_file)
+LICENSE_FILE?=	${WRKSRC}/NOTICE
+.endif
+LICENSE_DISTFILES_GPLv2=	${DISTNAME}${EXTRACT_SUFX}
 
 PORTSCOUT=	ignore	# cannot handle the version in the directory
 
@@ -32,10 +36,10 @@ OPTIONS_EXCLUDE+=	EXAMPLES
 BUILD_DEPENDS+=	gdd:sysutils/coreutils
 
 BROKEN_aarch64=		fails to link: missing sbrk
-BROKEN_armv6=		fails self-tests: Running e2fsprogs test suite...failed: f_pre_1970_date_encoding
-BROKEN_mips=		fails self-tests: Running e2fsprogs test suite...failed: f_pre_1970_date_encoding
-BROKEN_mips64=		fails self-tests: Running e2fsprogs test suite...failed: f_pre_1970_date_encoding
-BROKEN_powerpc64=	fails self-tests: Running e2fsprogs test suite...Signal (11) SIGSEGV
+#BROKEN_armv6=		fails self-tests: Running e2fsprogs test suite...failed: f_pre_1970_date_encoding
+#BROKEN_mips=		fails self-tests: Running e2fsprogs test suite...failed: f_pre_1970_date_encoding
+#BROKEN_mips64=		fails self-tests: Running e2fsprogs test suite...failed: f_pre_1970_date_encoding
+#BROKEN_powerpc64=	fails self-tests: Running e2fsprogs test suite...Signal (11) SIGSEGV
 
 PORTDOCS=	NOTICE README RELEASE-NOTES SUBMITTING-PATCHES
 
@@ -190,7 +194,7 @@ post-build:
 	@${ECHO_CMD} '===>  Running e2fsprogs self-test suite'
 # do not add -j options unconditionally to ${MAKE_CMD} below, this might break
 # due to excessive disk space use.
-	cd ${WRKSRC}/tests && ulimit -t 60 && ${MKDIR} ${WRKDIR}/tmp && ${SETENV} e2fsprogs_inhibit_SIGINFO=1 ${MAKE_CMD} check ${_CHECK_JOBS} ${_checkaddargs} \
+	cd ${WRKSRC}/tests && ulimit -t 60 && ${MKDIR} ${WRKDIR}/tmp && ${SETENV} e2fsprogs_inhibit_SIGINFO=1 BLKID_FILE=${WRKDIR}/tmp/blkid.tab ${MAKE_CMD} check ${_CHECK_JOBS} ${_checkaddargs} \
 	    || { head -n30000 ${WRKSRC}/tests/*.failed 2>/dev/null ; exit 1 ; }
 .else
 	@${ECHO_CMD} '===>  SKIPPING e2fsprogs self-test suite (DISCOURAGED!)'

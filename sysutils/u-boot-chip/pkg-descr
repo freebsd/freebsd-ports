@@ -5,13 +5,10 @@ dd if=/usr/local/share/u-boot/u-boot-chip/u-boot-sunxi-with-spl.bin of=/path/to/
 
 This version is patched so that:
  * ELF and API features are enabled.
- * The default environment is trimmed to just what's needed to boot.
- * The saveenv command writes to the file u-boot.env on the FAT partition.
- * The DTB file name is chosen based on the board model and passed to ubldr.bin
-   using the fdtfile env variable. ubldr.bin loads the DTB from /boot/dtb/ on
-   the FreeBSD partition.
- * By default, it loads PIE ubldr.bin from file ubldr.bin on the FAT partition
-   to address 0x42000000, and launches it.
+ * The distroboot command knows how to load FreeBSD loader(8)
+ * By default, it loads ubldr.bin (PIE) from file ubldr.bin on the FAT
+   partition to address 0x42000000, and launches it. If ubldr.bin is
+   not found, it falls back on ubldr
 
 For information about running FreeBSD on Allwinner boards, see
  https://wiki.freebsd.org/FreeBSD/arm/Allwinner

@@ -1,2 +1,3 @@
-SHA256 (cabal/threadscope-0.2.7.tar.gz) = cc5653831252d55b3ba7506ea648e770b2c4489cdf4d78828f07dc24ea7ffdb6
-SIZE (cabal/threadscope-0.2.7.tar.gz) = 79966
+TIMESTAMP = 1501147826
+SHA256 (cabal/threadscope-0.2.8.tar.gz) = c27e15011d4630b77ed51e725e7668e06f6e06b73c2b9b601560af0e60e3f218
+SIZE (cabal/threadscope-0.2.8.tar.gz) = 79624

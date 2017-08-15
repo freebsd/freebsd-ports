@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	torrent
-PORTVERSION=	10000.0.0
+PORTVERSION=	10000.1.1
 CATEGORIES=	net-p2p haskell
 
 MAINTAINER=	haskell@FreeBSD.org

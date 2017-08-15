@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	safe
-PORTVERSION=	0.3.9
+PORTVERSION=	0.3.15
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org

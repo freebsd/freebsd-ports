@@ -1,2 +1,3 @@
-SHA256 (cabal/warp-3.1.3.tar.gz) = f65d32e374da0c1c1a44624e9744e4e2b5e325ca1e24a6aeae5719ee48c2b8e3
-SIZE (cabal/warp-3.1.3.tar.gz) = 64154
+TIMESTAMP = 1499625382
+SHA256 (cabal/warp-3.2.13.tar.gz) = 92395bf42d012e5c4deaea7f9e1fc2271a63c5380b4c5bc1cf16b7c53aa2c424
+SIZE (cabal/warp-3.2.13.tar.gz) = 78441

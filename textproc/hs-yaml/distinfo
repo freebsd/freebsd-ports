@@ -1,2 +1,3 @@
-SHA256 (cabal/yaml-0.8.13.tar.gz) = f366bdd6ddbc5f94f3f783b502178dcd27afc257bdf5e8d67fcf9246aeed0f7a
-SIZE (cabal/yaml-0.8.13.tar.gz) = 74369
+TIMESTAMP = 1499546173
+SHA256 (cabal/yaml-0.8.23.1.tar.gz) = 4a9bc0b540b25db0edafea58e1c7fe5f00770bd599c9c94f16b92210bf0f606b
+SIZE (cabal/yaml-0.8.23.1.tar.gz) = 81569

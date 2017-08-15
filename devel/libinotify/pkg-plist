@@ -3,3 +3,11 @@ lib/libinotify.a
 lib/libinotify.so
 lib/libinotify.so.0
 lib/libinotify.so.0.0.0
+libdata/pkgconfig/libinotify.pc
+man/man3/inotify_add_watch.3.gz
+man/man3/inotify_event.3.gz
+man/man3/inotify_init.3.gz
+man/man3/inotify_init1.3.gz
+man/man3/inotify_rm_watch.3.gz
+man/man3/inotify_set_param.3.gz
+man/man3/libinotify.3.gz

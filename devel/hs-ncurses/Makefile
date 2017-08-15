@@ -3,7 +3,7 @@
 
 PORTNAME=	ncurses
 PORTVERSION=	0.2.16
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -11,7 +11,8 @@ COMMENT=	Modernised Haskell binding to GNU ncurses
 
 LICENSE=	GPLv3
 
-USE_CABAL=	c2hs>=0.15
+USE_C2HS=	yes
+USE_CABAL=	text
 
 USES=		ncurses
 

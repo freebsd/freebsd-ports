@@ -2,13 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	rails
-PORTVERSION=	5.1.2
-PORTREVISION=	1
+PORTVERSION=	5.1.3
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	5
 
-MAINTAINER=	jrm@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Full-stack web application framework
 
 LICENSE=	MIT
@@ -34,8 +33,12 @@ RUN_DEPENDS+=	rubygem-bindex>=0.5.0:devel/rubygem-bindex \
 		rubygem-execjs>=2.7.0:devel/rubygem-execjs \
 		rubygem-jbuilder-rails5>=2.6.3:devel/rubygem-jbuilder-rails5 \
 		rubygem-jquery-rails-rails5>=4.3.1:www/rubygem-jquery-rails-rails5 \
+		rubygem-mini_mime>=0:mail/rubygem-mini_mime \
 		rubygem-multi_json>=1.12.1:devel/rubygem-multi_json \
 		rubygem-puma>=3.8.2:www/rubygem-puma \
+		rubygem-rb-fsevent>=0.10.2:devel/rubygem-rb-fsevent \
+		rubygem-rb-inotify>=0.9.10:devel/rubygem-rb-inotify \
+		rubygem-sass-listen>=4.0.0:textproc/rubygem-sass-listen \
 		rubygem-sass-rails-rails5>=5.0.3:textproc/rubygem-sass-rails-rails5 \
 		rubygem-sass>=3.4.23:textproc/rubygem-sass \
 		rubygem-selenium-webdriver>=3.4.0:www/rubygem-selenium-webdriver \
@@ -48,8 +51,9 @@ RUN_DEPENDS+=	rubygem-bindex>=0.5.0:devel/rubygem-bindex \
 		rubygem-web-console>=3.5.0:devel/rubygem-web-console
 
 NO_ARCH=	yes
-USE_RUBY=	yes
+
 USES=		gem
+USE_RUBY=	yes
 
 CPE_VENDOR=	rubyonrails
 CPE_PRODUCT=	ruby_on_rails

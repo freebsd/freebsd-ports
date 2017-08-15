@@ -4,7 +4,6 @@
 CATEGORIES=	databases lang
 PKGNAMESUFFIX=	-oracle
 
-MAINTAINER=	freebsd-fpc@FreeBSD.org
 COMMENT=	Free Pascal interface to Oracle
 
 USE_FPC=	yes

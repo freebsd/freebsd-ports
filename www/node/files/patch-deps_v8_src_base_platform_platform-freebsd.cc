@@ -1,8 +1,8 @@
---- deps/v8/src/base/platform/platform-freebsd.cc.orig	2017-06-15 11:55:21 UTC
+--- deps/v8/src/base/platform/platform-freebsd.cc.orig	2017-08-09 18:48:10 UTC
 +++ deps/v8/src/base/platform/platform-freebsd.cc
-@@ -35,6 +35,48 @@
- namespace v8 {
- namespace base {
+@@ -48,6 +48,48 @@ void* OS::Allocate(const size_t requested, size_t* all
+   return mbase;
+ }
  
 +#ifdef __arm__
 +
@@ -47,5 +47,5 @@
 +#endif  // def __arm__
 +
  
- const char* OS::LocalTimezone(double time, TimezoneCache* cache) {
-   if (std::isnan(time)) return "";
+ static unsigned StringToLong(char* buffer) {
+   return static_cast<unsigned>(strtol(buffer, NULL, 16));  // NOLINT

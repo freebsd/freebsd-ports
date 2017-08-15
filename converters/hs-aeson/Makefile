@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	aeson
-PORTVERSION=	0.8.0.2
+PORTVERSION=	1.2.1.0
 CATEGORIES=	converters haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -9,9 +9,9 @@ COMMENT=	Fast JSON parsing and encoding
 
 LICENSE=	BSD3CLAUSE
 
-USE_CABAL=	attoparsec>=0.11.3.4 dlist>=0.2 hashable>=1.1.2.0 mtl \
-		old-locale scientific>=0.3.1 syb text>=1.1.1.0 \
-		unordered-containers>=0.2.3.0 vector>=0.7.1
+USE_CABAL=	attoparsec>=0.13.0.1 base-compat>=0.9.1 dlist>=0.6 hashable>=1.1.2.0 \
+		scientific>=0.3.1 syb tagged text>=1.1.1.0  time-locale-compat>=0.1.1 \
+		unordered-containers>=0.2.3.0 uuid-types>=1.0.3  vector>=0.8
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

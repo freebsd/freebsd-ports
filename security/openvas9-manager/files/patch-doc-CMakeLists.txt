@@ -1,0 +1,9 @@
+--- doc/CMakeLists.txt.orig	2016-11-10 04:58:06.000000000 -0500
++++ doc/CMakeLists.txt	2017-07-28 23:45:09.724252000 -0500
+@@ -208,5 +208,5 @@
+ install (FILES openvasmd.8 greenbone-certdata-sync.8 greenbone-scapdata-sync.8
+                database-statistics-sqlite.8 openvas-migrate-to-postgres.8
+ 			   openvas-portnames-update.8
+-  DESTINATION share/man/man8/
++  DESTINATION man/man8/
+   COMPONENT doc)

@@ -6,7 +6,7 @@ PORTVERSION=	0.7.1b
 PORTREVISION=	4
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://buhacoff.net/software/check_email_delivery/archive/ \
-		http://mirrors.rit.edu/zi/
+		ZI
 PKGNAMEPREFIX=	nagios-
 
 MAINTAINER=	zi@FreeBSD.org

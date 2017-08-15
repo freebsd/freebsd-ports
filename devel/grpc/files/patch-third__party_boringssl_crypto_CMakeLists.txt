@@ -1,6 +1,6 @@
---- third_party/boringssl/crypto/CMakeLists.txt.orig	2017-06-29 20:12:53 UTC
+--- third_party/boringssl/crypto/CMakeLists.txt.orig	2017-08-08 09:40:29 UTC
 +++ third_party/boringssl/crypto/CMakeLists.txt
-@@ -212,62 +212,3 @@ SET_TARGET_PROPERTIES(crypto PROPERTIES 
+@@ -212,64 +212,3 @@ SET_TARGET_PROPERTIES(crypto PROPERTIES 
  if(NOT MSVC AND NOT ANDROID)
    target_link_libraries(crypto pthread)
  endif()
@@ -52,6 +52,8 @@
 -  test/file_test_gtest.cc
 -  thread_test.cc
 -  x509/x509_test.cc
+-  x509v3/tab_test.cc
+-  x509v3/v3name_test.cc
 -
 -  $<TARGET_OBJECTS:crypto_test_data>
 -  $<TARGET_OBJECTS:gtest_main>

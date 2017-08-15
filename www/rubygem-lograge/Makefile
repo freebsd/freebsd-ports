@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	lograge
-PORTVERSION=	0.5.1
+PORTVERSION=	0.6.0
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -12,7 +12,8 @@ LICENSE=	MIT
 
 RUN_DEPENDS=	rubygem-actionpack4>=4:www/rubygem-actionpack4 \
 		rubygem-activesupport4>=4:devel/rubygem-activesupport4 \
-		rubygem-railties4>=4:www/rubygem-railties4
+		rubygem-railties4>=4:www/rubygem-railties4 \
+		rubygem-request_store>=1.0:devel/rubygem-request_store
 
 NO_ARCH=	yes
 USE_RUBY=	yes

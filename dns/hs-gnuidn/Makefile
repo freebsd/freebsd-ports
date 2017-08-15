@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gnuidn
-PORTVERSION=	0.2.1
-PORTREVISION=	3
+PORTVERSION=	0.2.2
 CATEGORIES=	dns haskell
 
 MAINTAINER=	haskell@FreeBSD.org

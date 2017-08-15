@@ -5,7 +5,6 @@ PORTREVISION=	1
 CATEGORIES=	graphics lang
 PKGNAMESUFFIX=	-opengl
 
-MAINTAINER=	freebsd-fpc@FreeBSD.org
 COMMENT=	Free Pascal interface to the OpenGL library
 
 USE_FPC=	x11

@@ -1,2 +1,3 @@
-SHA256 (cabal/tls-1.3.1.tar.gz) = 747f840677115d077ef548b4da54acb479253ce3cb58ad3a03275fe2b452d5d0
-SIZE (cabal/tls-1.3.1.tar.gz) = 74668
+TIMESTAMP = 1499542268
+SHA256 (cabal/tls-1.3.11.tar.gz) = 3f008eb942874f8114f9a332f9669c44d72825ba39ce0fad89f0f8dfa6fb2703
+SIZE (cabal/tls-1.3.11.tar.gz) = 94342

@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	cmark
-PORTVERSION=	0.4.0.1
+PORTVERSION=	0.5.5.1
 CATEGORIES=	textproc haskell
 
 MAINTAINER=	haskell@FreeBSD.org

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gecode
-PORTVERSION=	5.0.0
+PORTVERSION=	5.1.0
 CATEGORIES=	devel
 MASTER_SITES=	http://www.gecode.org/download/
 
@@ -39,7 +39,7 @@ CONFIGURE_ARGS=	--disable-static \
 		--with-mpfr-lib=${LOCALBASE}/lib
 USE_LDCONFIG=	yes
 MAKE_JOBS_UNSAFE=yes
-PLIST_SUB=	SHLIB_VERSION=43
+PLIST_SUB=	SHLIB_VERSION=44
 
 OPTIONS_DEFINE=	GIST
 OPTIONS_SUB=	yes

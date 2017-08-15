@@ -1,2 +1,3 @@
-SHA256 (cabal/gitit-0.11.1.tar.gz) = 29bbb782e2066bf831ad1aff471208e928310fc9ab6bfb32a775cd7521f19d1b
-SIZE (cabal/gitit-0.11.1.tar.gz) = 275587
+TIMESTAMP = 1499625373
+SHA256 (cabal/gitit-0.12.2.1.tar.gz) = 15114e589f90bb4361fda3cbaec23c82c2a765f4e09debc93b2b46ac698053f4
+SIZE (cabal/gitit-0.12.2.1.tar.gz) = 271239

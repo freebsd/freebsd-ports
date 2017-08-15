@@ -19,4 +19,10 @@ USE_PERL5=	configure
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Data/Alias/Alias.so
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} >= 502501
+BROKEN=		Does not build, op_sibling usage. https://rt.cpan.org/Public/Bug/Display.html?id=114544
+.endif
+
+.include <bsd.port.post.mk>

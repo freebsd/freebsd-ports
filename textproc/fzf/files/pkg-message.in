@@ -1,0 +1,5 @@
+Various shell key bindings and completion files
+have been installed to %%EXAMPLESDIR%%/shell.
+To use these include them in your shell
+configuration.
+

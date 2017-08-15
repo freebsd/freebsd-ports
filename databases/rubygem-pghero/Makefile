@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	pghero
-PORTVERSION=	1.7.0
+PORTVERSION=	2.0.2
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 RUN_DEPENDS=	rubygem-activerecord4>=0:databases/rubygem-activerecord4
 
 NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
+USE_RUBY=	yes
 
 .include <bsd.port.mk>

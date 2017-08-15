@@ -107,10 +107,6 @@ USE_RC_SUBR=	vboxheadless vboxwatchdog
 
 .include <bsd.port.options.mk>
 
-.if ${OPSYS}${OSREL:R} == FreeBSD12
-BUILD_DEPENDS+=	${LOCALBASE}/bin/ar:devel/binutils
-.endif
-
 .if ${SLAVE_PORT} == no
 CONFLICTS_INSTALL+=	virtualbox-ose-nox11-[0-9]*
 OPTIONS_DEFAULT+=	PYTHON
@@ -319,10 +315,6 @@ post-patch:
 	@${SED} -e 's|GXX3|VBoxGccFreeBSD|g' \
 	    ${LOCALBASE}/share/kBuild/tools/GXX3.kmk > \
 	    ${WRKSRC}/tools/kBuildTools/VBoxGccFreeBSD.kmk
-.endif
-.if ${OPSYS}${OSREL:R} == FreeBSD12
-	@${ECHO} 'TOOL_GXX3_AR = ${LOCALBASE}/bin/ar' >> \
-	    ${WRKSRC}/LocalConfig.kmk
 .endif
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
 	    ${WRKSRC}/Config.kmk ${WRKSRC}/configure \

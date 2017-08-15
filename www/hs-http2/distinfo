@@ -1,2 +1,3 @@
-SHA256 (cabal/http2-1.0.4.tar.gz) = 727fc0d39a62b02b677189f9ef745e3c8fd574334736594139767940dc4647b7
-SIZE (cabal/http2-1.0.4.tar.gz) = 35760
+TIMESTAMP = 1499625378
+SHA256 (cabal/http2-1.6.3.tar.gz) = 61620eca0f57875a6a9bd24f9cc04c301b5c3c668bf98f85e9989aad5d069c43
+SIZE (cabal/http2-1.6.3.tar.gz) = 5138268

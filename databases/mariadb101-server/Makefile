@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME?=	mariadb
-PORTVERSION=	10.1.25
+PORTVERSION=	10.1.26
 PORTREVISION?=	0
 CATEGORIES=	databases ipv6
 MASTER_SITES=	http://ftp.osuosl.org/pub/${SITESDIR}/ \
@@ -28,7 +28,7 @@ SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 SLAVEDIRS=	databases/mariadb101-client
-USES=		bison:build cmake compiler:c++11-lib cpe execinfo ncurses \
+USES=		bison:build cmake compiler:c++11-lib cpe execinfo libedit ncurses \
 		shebangfix ssl
 USE_LDCONFIG=	${PREFIX}/lib/mysql
 SHEBANG_FILES=	scripts/*.sh
@@ -102,6 +102,7 @@ DATADIR=	${PREFIX}/share/mysql
 CONFLICTS_INSTALL=	mariadb5*-${PKGNAMESUFFIX:C/^[0-9]*-//}-* \
 			mariadb10[02-9]-${PKGNAMESUFFIX:C/^[0-9]*-//}-* \
 			mysql[0-9]*-${PKGNAMESUFFIX:C/^[0-9]*-//}-* \
+			mysqlwsrep* \
 			percona[0-9]*-${PKGNAMESUFFIX:C/^[0-9]*-//}-*
 
 FASTMTX_CMAKE_ON=	-DWITH_FAST_MUTEXES=1

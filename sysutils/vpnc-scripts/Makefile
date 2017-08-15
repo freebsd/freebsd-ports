@@ -5,7 +5,7 @@ PORTNAME=	vpnc-scripts
 PORTVERSION=	20161215
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.infradead.org/pub/${PORTNAME}/ \
-		http://mirrors.rit.edu/zi/
+		ZI
 
 MAINTAINER=	zi@FreeBSD.org
 COMMENT=	Collection of scripts to setup routes and other changes for a VPN

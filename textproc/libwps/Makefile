@@ -2,15 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	libwps
-PORTVERSION=	0.4.6
-PORTREVISION=	1
+PORTVERSION=	0.4.7
 CATEGORIES=	textproc
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Microsoft file word processor format import filter library
 
-LICENSE=	LGPL21 MPL
+LICENSE=	LGPL21+ MPL20
 LICENSE_COMB=	dual
 
 LIB_DEPENDS=	librevenge-0.0.so:textproc/librevenge

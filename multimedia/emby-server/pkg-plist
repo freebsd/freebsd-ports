@@ -16,10 +16,9 @@ lib/emby-server/Emby.Photos.dll
 lib/emby-server/Emby.Photos.dll.mdb
 lib/emby-server/Emby.Server.CinemaMode.dll
 lib/emby-server/Emby.Server.Connect.dll
-lib/emby-server/Emby.Server.Core.dll
-lib/emby-server/Emby.Server.Core.dll.mdb
 lib/emby-server/Emby.Server.Implementations.dll
 lib/emby-server/Emby.Server.Implementations.dll.mdb
+lib/emby-server/Emby.Server.MediaEncoding.dll
 lib/emby-server/Emby.Server.Sync.dll
 lib/emby-server/Emby.XmlTv.dll
 lib/emby-server/ImageMagickSharp.dll
@@ -29,7 +28,6 @@ lib/emby-server/MediaBrowser.Common.dll
 lib/emby-server/MediaBrowser.Controller.dll
 lib/emby-server/MediaBrowser.IsoMounting.Linux.dll
 lib/emby-server/MediaBrowser.LocalMetadata.dll
-lib/emby-server/MediaBrowser.MediaEncoding.dll
 lib/emby-server/MediaBrowser.Model.dll
 lib/emby-server/MediaBrowser.Model.dll.mdb
 lib/emby-server/MediaBrowser.Naming.dll
@@ -62,8 +60,6 @@ lib/emby-server/TagLib.Portable.dll
 lib/emby-server/dashboard-ui/addplugin.html
 lib/emby-server/dashboard-ui/appservices.html
 lib/emby-server/dashboard-ui/autoorganizelog.html
-lib/emby-server/dashboard-ui/autoorganizesmart.html
-lib/emby-server/dashboard-ui/autoorganizetv.html
 lib/emby-server/dashboard-ui/bower_components/Sortable/Sortable.html
 lib/emby-server/dashboard-ui/bower_components/Sortable/Sortable.min.js
 lib/emby-server/dashboard-ui/bower_components/Sortable/index.html
@@ -133,7 +129,6 @@ lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/confirm/confirm
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/confirm/nativeconfirm.js
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/datetime.js
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/deletehelper.js
-lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/dialog/dialog.css
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/dialog/dialog.js
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/dialog/dialog.template.html
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/dialoghelper/dialoghelper.css
@@ -149,7 +144,6 @@ lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/emby-collapse/e
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/emby-connect/connecthelper.js
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/emby-input/emby-input.css
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/emby-input/emby-input.js
-lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/emby-itemrefreshindicator/emby-itemrefreshindicator.css
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/emby-itemrefreshindicator/emby-itemrefreshindicator.js
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/emby-itemscontainer/emby-itemscontainer.js
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/emby-progressring/emby-progressring.css
@@ -173,6 +167,8 @@ lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/filedownloader.
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/filesystem.js
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/flexstyles.css
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/focusmanager.js
+lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/fonts/fonts.css
+lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/fonts/fonts.sized.css
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/fonts/material-icons/2fcryfnatjcs6g4u3t-y5ewrjpiaoeww8aihgqwrjao.woff
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/fonts/material-icons/2fcryfnatjcs6g4u3t-y5zjzjt5fdej140u2djyc3my.woff2
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/fonts/material-icons/style.css
@@ -192,7 +188,8 @@ lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/homescreensetti
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/homescreensettings/homescreensettings.template.html
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/homescreensettings/homescreensettingsdialog.js
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/homescreensettings/homescreensettingsdialog.template.html
-lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/homesections.js
+lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/homesections/homesections.css
+lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/homesections/homesections.js
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/htmlaudioplayer/blank.mp3
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/htmlaudioplayer/plugin.js
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/htmlvideoplayer/htmlmediahelper.js
@@ -293,7 +290,6 @@ lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/recordingcreato
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/recordingcreator/seriesrecordingeditor.template.html
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/refreshdialog/refreshdialog.js
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/registrationservices/registrationservices.js
-lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/registrationservices/style.css
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/require/requirecss.js
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/require/requirehtml.js
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/require/requiretext.js
@@ -325,6 +321,7 @@ lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/sharing/social-
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/sharing/social-share-kit-1.0.10/dist/js/social-share-kit.min.js
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/shell.js
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/shortcuts.js
+lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/skinmanager.js
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/slideshow/slideshow.js
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/slideshow/style.css
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/staticbackdrops.js
@@ -380,6 +377,28 @@ lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/sync/sync.js
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/sync/syncjobeditor.js
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/sync/syncjoblist.js
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/thememediaplayer.js
+lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/themes/appletv/logo.png
+lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/themes/appletv/theme.css
+lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/themes/dark-green/logo.png
+lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/themes/dark-green/theme.css
+lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/themes/dark-red/logo.png
+lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/themes/dark-red/theme.css
+lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/themes/dark/logo.png
+lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/themes/dark/theme.css
+lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/themes/light-blue/logo.png
+lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/themes/light-blue/theme.css
+lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/themes/light-green/logo.png
+lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/themes/light-green/theme.css
+lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/themes/light-pink/logo.png
+lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/themes/light-pink/theme.css
+lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/themes/light-purple/logo.png
+lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/themes/light-purple/theme.css
+lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/themes/light-red/logo.png
+lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/themes/light-red/theme.css
+lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/themes/light/logo.png
+lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/themes/light/theme.css
+lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/themes/wmc/logo.png
+lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/themes/wmc/theme.css
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/toast/toast.css
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/toast/toast.js
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/touchhelper.js
@@ -453,8 +472,6 @@ lib/emby-server/dashboard-ui/components/directorybrowser/directorybrowser.js
 lib/emby-server/dashboard-ui/components/dockedtabs/dockedtabs.css
 lib/emby-server/dashboard-ui/components/dockedtabs/dockedtabs.js
 lib/emby-server/dashboard-ui/components/favoriteitems.js
-lib/emby-server/dashboard-ui/components/fileorganizer/fileorganizer.js
-lib/emby-server/dashboard-ui/components/fileorganizer/fileorganizer.template.html
 lib/emby-server/dashboard-ui/components/filterdialog/filterdialog.js
 lib/emby-server/dashboard-ui/components/filterdialog/filterdialog.template.html
 lib/emby-server/dashboard-ui/components/filterdialog/style.css
@@ -484,7 +501,6 @@ lib/emby-server/dashboard-ui/components/tvproviders/xmltv.js
 lib/emby-server/dashboard-ui/components/tvproviders/xmltv.template.html
 lib/emby-server/dashboard-ui/components/viewcontainer-lite.js
 lib/emby-server/dashboard-ui/connectlogin.html
-lib/emby-server/dashboard-ui/css/autoorganizetable.css
 lib/emby-server/dashboard-ui/css/dashboard.css
 lib/emby-server/dashboard-ui/css/detailtable.css
 lib/emby-server/dashboard-ui/css/images/ani_equalizer_black.gif
@@ -572,9 +588,6 @@ lib/emby-server/dashboard-ui/css/site.css
 lib/emby-server/dashboard-ui/css/videoosd.css
 lib/emby-server/dashboard-ui/dashboard.html
 lib/emby-server/dashboard-ui/dashboard/aboutpage.js
-lib/emby-server/dashboard-ui/dashboard/autoorganizelog.js
-lib/emby-server/dashboard-ui/dashboard/autoorganizesmart.js
-lib/emby-server/dashboard-ui/dashboard/autoorganizetv.js
 lib/emby-server/dashboard-ui/dashboard/cinemamodeconfiguration.js
 lib/emby-server/dashboard-ui/dashboard/dashboardgeneral.js
 lib/emby-server/dashboard-ui/dashboard/dashboardhosting.js
@@ -740,6 +753,7 @@ lib/emby-server/dashboard-ui/scripts/supporterkeypage.js
 lib/emby-server/dashboard-ui/scripts/syncactivity.js
 lib/emby-server/dashboard-ui/scripts/syncsettings.js
 lib/emby-server/dashboard-ui/scripts/taskbutton.js
+lib/emby-server/dashboard-ui/scripts/themeloader.js
 lib/emby-server/dashboard-ui/scripts/tvgenres.js
 lib/emby-server/dashboard-ui/scripts/tvlatest.js
 lib/emby-server/dashboard-ui/scripts/tvrecommended.js
@@ -784,7 +798,6 @@ lib/emby-server/dashboard-ui/strings/es.json
 lib/emby-server/dashboard-ui/strings/fa.json
 lib/emby-server/dashboard-ui/strings/fi.json
 lib/emby-server/dashboard-ui/strings/fr-ca.json
-lib/emby-server/dashboard-ui/strings/fr-fr.json
 lib/emby-server/dashboard-ui/strings/fr.json
 lib/emby-server/dashboard-ui/strings/gsw.json
 lib/emby-server/dashboard-ui/strings/he.json
@@ -820,15 +833,10 @@ lib/emby-server/dashboard-ui/themes/halloween/style.css
 lib/emby-server/dashboard-ui/themes/halloween/theme.js
 lib/emby-server/dashboard-ui/themes/holiday/style.css
 lib/emby-server/dashboard-ui/themes/holiday/theme.js
-lib/emby-server/dashboard-ui/thirdparty/jquerymobile-1.4.5/jqm.listview.css
 lib/emby-server/dashboard-ui/thirdparty/jquerymobile-1.4.5/jqm.panel.css
 lib/emby-server/dashboard-ui/thirdparty/jquerymobile-1.4.5/jqm.panel.js
 lib/emby-server/dashboard-ui/thirdparty/jquerymobile-1.4.5/jqm.popup.css
 lib/emby-server/dashboard-ui/thirdparty/jquerymobile-1.4.5/jqm.popup.js
-lib/emby-server/dashboard-ui/thirdparty/jquerymobile-1.4.5/jqm.slider.css
-lib/emby-server/dashboard-ui/thirdparty/jquerymobile-1.4.5/jqm.slider.js
-lib/emby-server/dashboard-ui/thirdparty/jquerymobile-1.4.5/jqm.table.css
-lib/emby-server/dashboard-ui/thirdparty/jquerymobile-1.4.5/jqm.table.js
 lib/emby-server/dashboard-ui/thirdparty/jquerymobile-1.4.5/jqm.widget.js
 lib/emby-server/dashboard-ui/thirdparty/jstree/themes/default/32px.png
 lib/emby-server/dashboard-ui/thirdparty/jstree/themes/default/40px.png

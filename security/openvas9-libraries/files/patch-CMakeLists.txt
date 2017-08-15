@@ -1,0 +1,57 @@
+--- CMakeLists.txt.orig	2017-03-14 10:42:29.104715000 -0500
++++ CMakeLists.txt	2017-03-14 10:46:19.999930000 -0500
+@@ -151,7 +151,7 @@
+ endif (NOT LIBDIR)
+ 
+ if (NOT LOCALSTATEDIR)
+-  set (LOCALSTATEDIR "${CMAKE_INSTALL_PREFIX}/var")
++  set (LOCALSTATEDIR "/var")
+ endif (NOT LOCALSTATEDIR)
+ 
+ if (NOT INCLUDEDIR)
+@@ -238,7 +238,7 @@
+     OUTPUT_STRIP_TRAILING_WHITESPACE)
+ 
+   message (STATUS "Looking for netsnmp...")
+-  find_library (SNMP snmp)
++  find_library (SNMP netsnmp)
+   message (STATUS "Looking for netsnmp... ${SNMP}")
+   if (SNMP)
+     execute_process (COMMAND net-snmp-config --libs
+@@ -262,7 +262,7 @@
+ 
+ endif (NOT MINGW)
+ 
+-set (HARDENING_FLAGS "-Wformat -Wformat-security -O2 -D_FORTIFY_SOURCE=2 -fstack-protector")
++set (HARDENING_FLAGS "-Wformat -Wformat-security -Wl,-z,relro -Wl,-z,now")
+ set (LINKER_HARDENING_FLAGS "-Wl,-z,relro -Wl,-z,now")
+ set (CMAKE_C_FLAGS_DEBUG "${CMAKE_C_FLAGS_DEBUG} -Werror")
+ 
+@@ -306,20 +306,20 @@
+ ## Install
+ 
+ install (FILES doc/openvas-nasl.1
+-         DESTINATION ${DATADIR}/man/man1 )
++         DESTINATION man/man1 )
+ install (FILES doc/openvas-nasl-lint.1
+-         DESTINATION ${DATADIR}/man/man1 )
++         DESTINATION man/man1 )
+ 
+ install (FILES ${CMAKE_BINARY_DIR}/libopenvas_base.pc
+-         DESTINATION ${LIBDIR}/pkgconfig)
++         DESTINATION libdata/pkgconfig)
+ install (FILES ${CMAKE_BINARY_DIR}/libopenvas_omp.pc
+-         DESTINATION ${LIBDIR}/pkgconfig)
++         DESTINATION libdata/pkgconfig)
+ install (FILES ${CMAKE_BINARY_DIR}/libopenvas_misc.pc
+-         DESTINATION ${LIBDIR}/pkgconfig)
++         DESTINATION libdata/pkgconfig)
+ install (FILES ${CMAKE_BINARY_DIR}/libopenvas_nasl.pc
+-         DESTINATION ${LIBDIR}/pkgconfig)
++         DESTINATION libdata/pkgconfig)
+ install (FILES ${CMAKE_BINARY_DIR}/libopenvas_osp.pc
+-         DESTINATION ${LIBDIR}/pkgconfig)
++         DESTINATION libdata/pkgconfig)
+ 
+ install (DIRECTORY DESTINATION ${OPENVAS_LOG_DIR})
+ install (DIRECTORY DESTINATION ${OPENVAS_DATA_DIR})

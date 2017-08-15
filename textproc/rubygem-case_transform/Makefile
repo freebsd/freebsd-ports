@@ -5,7 +5,7 @@ PORTVERSION=	0.2
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	jrm@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Extraction of the key_transform abilities of ActiveModelSerializers
 
 LICENSE=	MIT

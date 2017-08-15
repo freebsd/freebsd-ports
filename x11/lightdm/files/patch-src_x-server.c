@@ -1,6 +1,6 @@
 --- src/x-server.c.orig	2016-06-17 04:53:18 UTC
 +++ src/x-server.c
-@@ -143,7 +143,7 @@ x_server_connect_session (DisplayServer 
+@@ -143,7 +143,7 @@ x_server_connect_session (DisplayServer *display_serve
      {
          gchar *t;
  

@@ -135,12 +135,14 @@
     SUBDIR += cfengine
     SUBDIR += cfengine-masterfiles
     SUBDIR += cfengine-masterfiles310
+    SUBDIR += cfengine-masterfiles311
     SUBDIR += cfengine-masterfiles36
     SUBDIR += cfengine-masterfiles37
     SUBDIR += cfengine-masterfiles38
     SUBDIR += cfengine-masterfiles39
     SUBDIR += cfengine22
     SUBDIR += cfengine310
+    SUBDIR += cfengine311
     SUBDIR += cfengine32
     SUBDIR += cfengine33
     SUBDIR += cfengine34
@@ -177,7 +179,7 @@
     SUBDIR += conky
     SUBDIR += conky-awesome
     SUBDIR += consolehm
-    SUBDIR += consolekit
+    SUBDIR += consolekit2
     SUBDIR += consul
     SUBDIR += consul-alerts
     SUBDIR += contractor
@@ -238,12 +240,14 @@
     SUBDIR += docker-compose
     SUBDIR += docker-freebsd
     SUBDIR += docker-machine
+    SUBDIR += doctl
     SUBDIR += doinkd
     SUBDIR += dolly
     SUBDIR += downtime
     SUBDIR += downtimed
     SUBDIR += dsbbatmon
     SUBDIR += dsbdriverd
+    SUBDIR += dsblogoutmgr
     SUBDIR += dsbmc
     SUBDIR += dsbmc-cli
     SUBDIR += dsbmd
@@ -453,9 +457,11 @@
     SUBDIR += hptcli
     SUBDIR += hs-angel
     SUBDIR += hs-cpu
+    SUBDIR += hs-disk-free-space
     SUBDIR += hs-ekg
     SUBDIR += hs-ekg-core
     SUBDIR += hs-ekg-json
+    SUBDIR += hs-mountpoints
     SUBDIR += htop
     SUBDIR += httplog
     SUBDIR += hwstat
@@ -860,6 +866,7 @@
     SUBDIR += puppet-lint
     SUBDIR += puppet-mode.el
     SUBDIR += puppet4
+    SUBDIR += puppet5
     SUBDIR += puppetserver
     SUBDIR += pv
     SUBDIR += pwd_unmkdb
@@ -1197,6 +1204,9 @@
     SUBDIR += u-boot-duovero
     SUBDIR += u-boot-imx-serial-loader
     SUBDIR += u-boot-master
+    SUBDIR += u-boot-nanopi-m1plus
+    SUBDIR += u-boot-nanopi-neo
+    SUBDIR += u-boot-nanopi-neo-air
     SUBDIR += u-boot-olimex-a20-som-evb
     SUBDIR += u-boot-olinuxino-lime
     SUBDIR += u-boot-orangepi-one
@@ -1210,6 +1220,8 @@
     SUBDIR += u-boot-sinovoip-bpi-m3
     SUBDIR += u-boot-utilite
     SUBDIR += u-boot-wandboard
+    SUBDIR += u-boot-zedboard
+    SUBDIR += u-boot-zybo
     SUBDIR += ua
     SUBDIR += ucspi-ipc
     SUBDIR += ucspi-proxy

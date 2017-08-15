@@ -6,7 +6,7 @@ CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	-rails5
 
-MAINTAINER=	jrm@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Doorkeeper is an OAuth 2 provider for Rails and Grape
 
 LICENSE=	MIT

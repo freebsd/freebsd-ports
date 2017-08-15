@@ -13,8 +13,6 @@ COMMENT=	Simple template engine
 BUILD_DEPENDS=	${PEARDIR}/.channels/pear.phpunit.de.reg:devel/pear-channel-phpunit
 RUN_DEPENDS=	${PEARDIR}/.channels/pear.phpunit.de.reg:devel/pear-channel-phpunit
 
-BROKEN=		unfetchable, redirects to https://phpunit.de/
-
 USES=	pear
 PEAR_CHANNEL=	phpunit
 

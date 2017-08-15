@@ -8,6 +8,9 @@ PKGNAMESUFFIX=	-libss
 MAINTAINER=	kaduk-fbsd@mit.edu
 COMMENT=	Command-line interface parsing library from e2fsprogs
 
+LICENSE=	MIT
+LICENSE_FILE=	${INSTALL_WRKSRC}/ss.h
+
 CONFLICTS=	heimdal-[0-9]*
 CONFLICTS+=	krb4-[0-9]*
 

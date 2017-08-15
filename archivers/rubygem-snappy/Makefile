@@ -1,19 +1,25 @@
 # $FreeBSD$
 
 PORTNAME=	snappy
-PORTVERSION=	0.0.15
+PORTVERSION=	0.0.17
+PORTREVISION=	1
 CATEGORIES=	archivers rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	jrm@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Snappy binding for Ruby
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-LIB_DEPENDS=	libsnappy.so:archivers/snappy
+LIB_DEPENDS=	libsnappy.so:archivers/snappy \
+		libunwind.so:devel/libunwind
 
+USES=		gem shebangfix
 USE_RUBY=	yes
-USES=		gem
+
+SHEBANG_FILES=	smoke.sh \
+		vendor/snappy/config.status \
+		vendor/snappy/libtool
 
 .include <bsd.port.mk>
