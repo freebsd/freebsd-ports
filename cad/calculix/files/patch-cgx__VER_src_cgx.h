@@ -1,4 +1,4 @@
---- cgx_2.12/src/cgx.h.orig	2017-03-30 18:38:08 UTC
+--- cgx_2.12/src/cgx.h.orig	2017-04-28 10:12:50 UTC
 +++ cgx_2.12/src/cgx.h
 @@ -89,8 +89,8 @@ rendering is done in the index-mode.
      "/usr/local/CalculiX/ccx_2.12/doc/ccx/ccx.html",\

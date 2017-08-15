@@ -14,6 +14,7 @@
     SUBDIR += brickutils
     SUBDIR += brlcad
     SUBDIR += calculix
+    SUBDIR += calculix-ccx
     SUBDIR += cascade
     SUBDIR += chipvault
     SUBDIR += cider
