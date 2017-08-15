@@ -1,5 +1,5 @@
---- ccx_2.12/src/Makefile.orig	2017-04-02 12:59:26 UTC
-+++ ccx_2.12/src/Makefile
+--- Makefile.orig	2017-04-02 12:59:26 UTC
++++ Makefile
 @@ -1,9 +1,9 @@
  
 -CFLAGS = -Wall -O3 -fopenmp -I ../../../SPOOLES.2.2 -DARCH="Linux" -DSPOOLES -DARPACK -DMATRIXSTORAGE -DNETWORKOUT
