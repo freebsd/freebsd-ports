@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	luakit
-PORTVERSION=	2017.07.26
+PORTVERSION=	2017.08.10
 CATEGORIES=	www
 
 MAINTAINER=	ports@textmail.me
-COMMENT=	Fast, small, webkit based browser framework extensible by Lua
+COMMENT=	Fast, small, webkit2 based browser framework extensible by Lua
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING.GPLv3
@@ -25,7 +25,7 @@ USE_GITHUB=	yes
 USE_GNOME=	cairo gdkpixbuf2 glib20 gtk30
 
 NOT_FOR_ARCHS=	sparc64
-ONLY_FOR_ARCHS_REASON_sparc64=	Does not install on sparc64
+NOT_FOR_ARCHS_REASON_sparc64=	Does not install on sparc64
 
 MAKE_ARGS+=	DEVELOPMENT_PATHS=0
 
