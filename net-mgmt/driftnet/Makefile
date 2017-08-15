@@ -2,12 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	driftnet
-PORTVERSION=	1.0
-PORTREVISION=	1
+PORTVERSION=	1.1.5
 CATEGORIES=	net-mgmt
-MASTER_SITES=	http://ftp.openbsd.org/pub/OpenBSD/distfiles/ \
-		LOCAL/ehaupt
-DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Tool to grab images out of (your) TCP connections
@@ -21,14 +17,15 @@ BUILD_DEPENDS=	makedepend:devel/makedepend
 
 GNU_CONFIGURE=	yes
 USES=		autoreconf gettext-runtime gmake jpeg localbase:ldflags pkgconfig
-USE_CSTD=	gnu89
+USE_GITHUB=	yes
 USE_GNOME=	gtk20
 USE_XORG=	x11 xext xi
 
+GH_ACCOUNT=	deiv
+GH_TAGNAME=	upstream/${PORTVERSION}
+
 PLIST_FILES=	bin/driftnet man/man1/driftnet.1.gz
 PORTDOCS=	*
-
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 INSTALL_TARGET=	install-strip
 

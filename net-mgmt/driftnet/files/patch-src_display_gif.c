@@ -1,15 +1,19 @@
---- src/display/gif.c.orig	2013-05-12 15:16:43 UTC
+--- src/display/gif.c.orig	2014-09-14 19:16:31 UTC
 +++ src/display/gif.c
-@@ -22,7 +22,7 @@
-  */
+@@ -25,12 +25,7 @@
  int gif_load_hdr(img I) {
      GifFileType *g;
+ 
+-/* GIFLIB_MAJOR is not defined until version 5 of libgif */
+-#if defined GIFLIB_MAJOR && GIFLIB_MAJOR >= 5
+     g = I->us = DGifOpenFileHandle(fileno(I->fp), NULL);
+-#else
 -    g = I->us = DGifOpenFileHandle(fileno(I->fp));
-+    g = I->us = DGifOpenFileHandle(fileno(I->fp), NULL);
+-#endif
+ 
      if (!I->us) {
          I->err = IE_HDRFORMAT;
-         return 0;
-@@ -38,7 +38,7 @@ int gif_load_hdr(img I) {
+@@ -47,7 +42,7 @@ int gif_load_hdr(img I) {
   * Abort loading a GIF file after the header is done.
   */
  int gif_abort_load(img I) {
@@ -18,7 +22,7 @@
      return 1;
  }
  
-@@ -116,7 +116,7 @@ int gif_load_img(img I) {
+@@ -125,7 +120,7 @@ int gif_load_img(img I) {
      ret = 1;
  fail:
  
