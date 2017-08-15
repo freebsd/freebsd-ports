@@ -1,0 +1,38 @@
+From: Jan Beulich <jbeulich@suse.com>
+Subject: gnttab: correct pin status fixup for copy
+
+Regardless of copy operations only setting GNTPIN_hst*, GNTPIN_dev*
+also need to be taken into account when deciding whether to clear
+_GTF_{read,writ}ing. At least for consistency with code elsewhere the
+read part better doesn't use any mask at all.
+
+This is XSA-230.
+
+Signed-off-by: Jan Beulich <jbeulich@suse.com>
+Reviewed-by: Andrew Cooper <andrew.cooper3@citrix.com>
+diff --git a/xen/common/grant_table.c b/xen/common/grant_table.c
+index ae34547..9c9d33c 100644
+--- a/xen/common/grant_table.c
++++ b/xen/common/grant_table.c
+@@ -2107,10 +2107,10 @@ __release_grant_for_copy(
+ static void __fixup_status_for_copy_pin(const struct active_grant_entry *act,
+                                    uint16_t *status)
+ {
+-    if ( !(act->pin & GNTPIN_hstw_mask) )
++    if ( !(act->pin & (GNTPIN_hstw_mask | GNTPIN_devw_mask)) )
+         gnttab_clear_flag(_GTF_writing, status);
+ 
+-    if ( !(act->pin & GNTPIN_hstr_mask) )
++    if ( !act->pin )
+         gnttab_clear_flag(_GTF_reading, status);
+ }
+ 
+@@ -2318,7 +2318,7 @@ __acquire_grant_for_copy(
+  
+  unlock_out_clear:
+     if ( !(readonly) &&
+-         !(act->pin & GNTPIN_hstw_mask) )
++         !(act->pin & (GNTPIN_hstw_mask | GNTPIN_devw_mask)) )
+         gnttab_clear_flag(_GTF_writing, status);
+ 
+     if ( !act->pin )
