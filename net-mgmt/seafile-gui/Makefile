@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	seafile-gui
-PORTVERSION=	${SEAFILE_CLIENT_VER}
 DISTVERSIONPREFIX=	v
+DISTVERSION=	${SEAFILE_CLIENT_VER}
 CATEGORIES=	net-mgmt devel
 
 MAINTAINER=	ultima@FreeBSD.org
@@ -19,22 +19,25 @@ LIB_DEPENDS=	libsearpc.so:devel/libsearpc \
 		libevent.so:devel/libevent \
 		libuuid.so:misc/e2fsprogs-libuuid
 
+USES=		compiler:c++11-lang cmake pkgconfig shebangfix ssl
+SHEBANG_FILES=	extensions/*.sh scripts/*.sh fsplugin/*.sh \
+		scripts/*.py
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	haiwen
 GH_PROJECT=	seafile-client
 
-USES=		compiler:c++11-lang cmake gettext pkgconfig shebangfix ssl
-SHEBANG_FILES=	extensions/*.sh scripts/*.sh fsplugin/*.sh \
-		scripts/*.py
 USE_GNOME=	glib20
 USE_QT5=	core dbus gui network testlib widgets \
 		qmake_build buildtools_build linguisttools_build
 INSTALLS_ICONS=	yes
-CMAKE_ARGS+=	-DCMAKE_INCLUDE_PATH:PATH=include/glib-2.0 \
+CMAKE_ARGS=	-DCMAKE_INCLUDE_PATH:PATH=include/glib-2.0 \
 		-DOPENSSL_INCLUDE_DIRS=${OPENSSLINC} \
 		-DOPENSSL_LIBRARIES="-L${OPENSSLLIB} -lcrypto"
 
-OPTIONS_DEFINE=		DEBUG
+OPTIONS_DEFINE=	DEBUG NLS
+
+NLS_USES=	gettext
 
 # Note that per PR 197984, cairo must be built with X11 and XCB options
 # otherwise configure fails with "cairo needs x11 enabled" message
