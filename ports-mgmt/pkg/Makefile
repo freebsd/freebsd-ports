@@ -27,7 +27,7 @@ CONFIGURE_ARGS+= \
 USE_SUBMAKE=	yes
 CFLAGS+=	-Wno-error
 
-USE_HARDENING=	pie:configure relro safestack:configure
+USE_HARDENING=	pie:configure relro nosafestack
 
 .if !exists(/usr/include/jail.h)
 EXTRA_PATCHES=	${FILESDIR}/extra-patch-docs_pkg.8
