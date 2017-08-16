@@ -1,5 +1,5 @@
 # Created by: Mario S F Ferreira <lioux@linf.unb.br>
-# $FreeBSD$
+# $FreeBSD: head/mail/qmail/Makefile 444251 2017-06-25 00:29:09Z linimon $
 
 PORTNAME=	${QMAIL_PORTNAME}
 PORTVERSION?=	${QMAIL_VERSION}
@@ -404,6 +404,7 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch-utmpx
 .endif
 
 .if defined(SLAVE_TLS)
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-qmail-tls-LibreSSL
 CFLAGS+=	-I${OPENSSLBASE}/include -L${OPENSSLBASE}/lib -DTLS=${TLS_PATCH_DATE}
 . if ${PORT_OPTIONS:MTLS_DEBUG}
 CFLAGS+=	-DDEBUG
