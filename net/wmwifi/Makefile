@@ -18,14 +18,10 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 USES=		gmake localbase
 USE_XORG=	x11 xext xpm
 
-<<<<<<< HEAD
-NOPIE_PORTS=	yes
-
-CPPFLAGS+=	-I${LOCALBASE}/include
-=======
 CONFIGURE_ENV=	X_CFLAGS="${CFLAGS}"
 GNU_CONFIGURE=	yes
->>>>>>> freebsd/master
+
+USE_HARDENING=	relro
 
 PLIST_FILES=	bin/wmwifi
 
