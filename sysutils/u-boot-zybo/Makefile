@@ -2,6 +2,7 @@
 
 MAINTAINER=     imp@FreeBSD.org
 MASTERDIR=      ${.CURDIR}/../u-boot-master
+PATCHDIR=	${.CURDIR}/files
 
 MODEL=          zybo
 BOARD_CONFIG=   zynq_zybo_defconfig
