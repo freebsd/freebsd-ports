@@ -23,7 +23,7 @@ osqueryd_enable=${osqueryd_enable-"NO"}
 osqueryd_flags=${osqueryd_flags-""}
 osqueryd_config=${osqueryd_config-"%%PREFIX%%/etc/osquery.conf"}
 required_files=${osqueryd_config}
-command_args="--pidfile /var/run/osqueryd.pid --disable_watchdog --daemonize=true --database_path /var/db/osquery/osqueryd --tls_server_certs /etc/ssl/cert.pem --flagfile %%PREFIX%%/etc/osquery.flags --config_path=${osqueryd_config}"
+command_args="--pidfile /var/run/osqueryd.pid --daemonize=true --database_path /var/db/osquery/osqueryd --tls_server_certs /etc/ssl/cert.pem --flagfile %%PREFIX%%/etc/osquery.flags --config_path=${osqueryd_config}"
 extra_commands="configtest"
 configtest_cmd="configtest"
 pidfile="/var/run/osqueryd.pid"
