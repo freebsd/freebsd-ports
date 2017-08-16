@@ -531,8 +531,14 @@ DISTNAME:=	${DISTNAME}_GH${_GITHUB_REV}
 .  endif
 _GITHUB_EXTRACT_SUFX=	.tar.gz
 # Put the DEFAULT distfile first
+_GITHUB_CLONE_DIR?=	${WRKDIR}/git-clone
+_PORTS_DIRECTORIES+=	${_GITHUB_CLONE_DIR}
 .  if !${USE_GITHUB:Mnodefault} && defined(_GITHUB_MUST_SET_DISTNAME)
 DISTFILES+=	${DISTNAME}${_GITHUB_EXTRACT_SUFX}
+git-clone: git-clone-DEFAULT
+git-clone-DEFAULT: ${_GITHUB_CLONE_DIR}
+	@git clone https://github.com/${GH_ACCOUNT_DEFAULT}/${GH_PROJECT_DEFAULT}.git ${_GITHUB_CLONE_DIR}/${GH_PROJECT_DEFAULT}
+	@${ECHO_MSG} "Cloned the default github repository into ${_GITHUB_CLONE_DIR}/${GH_PROJECT_DEFAULT}" | ${FMT_80}
 .  endif
 .  if !empty(GH_SUBDIR)
 _SITES_extract:=	690:post-extract-gh-DEFAULT
@@ -566,6 +572,10 @@ post-extract-gh-${_group}:
 	@${MV} ${WRKSRC_${_group}} ${WRKSRC}/${GH_SUBDIR_${_group}}
 	@ln -s ${WRKSRC:T}/${GH_SUBDIR_${_group}} ${WRKSRC_${_group}}
 .      endif
+git-clone: git-clone-${_group}
+git-clone-${_group}: ${_GITHUB_CLONE_DIR}
+	@git clone https://github.com/${GH_ACCOUNT_${_group}}/${GH_PROJECT_${_group}}.git ${_GITHUB_CLONE_DIR}/${GH_PROJECT_${_group}}
+	@${ECHO_MSG} "Cloned the ${_group} github repository into ${_GITHUB_CLONE_DIR}/${GH_PROJECT_${_group}}" | ${FMT_80}
 .    endfor
 .  endif
 convert-to-gh-tuple:
