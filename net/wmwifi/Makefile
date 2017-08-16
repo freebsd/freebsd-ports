@@ -4,7 +4,7 @@
 PORTNAME=	wmwifi
 PORTVERSION=	0.4
 DISTVERSIONSUFFIX=-bsd
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net
 MASTER_SITES=	http://digitalssg.net/debian/ \
 		LOCAL/uqs
@@ -12,13 +12,20 @@ MASTER_SITES=	http://digitalssg.net/debian/ \
 MAINTAINER=	uqs@FreeBSD.org
 COMMENT=	Dockapp displaying the signal strength of WiFi connection
 
-GNU_CONFIGURE=	yes
-USE_XORG=	x11 xpm
-USES=		gmake
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
+USES=		gmake localbase
+USE_XORG=	x11 xext xpm
+
+<<<<<<< HEAD
 NOPIE_PORTS=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
+=======
+CONFIGURE_ENV=	X_CFLAGS="${CFLAGS}"
+GNU_CONFIGURE=	yes
+>>>>>>> freebsd/master
 
 PLIST_FILES=	bin/wmwifi
 

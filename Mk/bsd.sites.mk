@@ -936,9 +936,7 @@ _PERL_CPAN_ID=	${MASTER_SITE_SUBDIR:C/^CPAN:(.)(.)(.*)$/\1\/\1\2\/\1\2\3/}
 #
 .if !defined(IGNORE_MASTER_SITE_PGSQL)
 MASTER_SITE_PGSQL+= \
-	http://ftp.postgresql.org/pub/%SUBDIR%/ \
-	https://ftp.postgresql.org/pub/%SUBDIR%/ \
-	ftp://ftp.postgresql.org/pub/%SUBDIR%/
+	https://ftp.postgresql.org/pub/%SUBDIR%/
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_PHP)

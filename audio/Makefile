@@ -483,6 +483,7 @@
     SUBDIR += mcplay
     SUBDIR += mctoolame-decoder
     SUBDIR += mctoolame-encoder
+    SUBDIR += mda-lv2
     SUBDIR += mhwaveedit
     SUBDIR += midipp
     SUBDIR += mikmod

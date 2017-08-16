@@ -1,4 +1,4 @@
---- cgx_2.12/src/userFunction.c.orig	2017-07-01 17:49:32 UTC
+--- cgx_2.12/src/userFunction.c.orig	2017-04-30 15:13:54 UTC
 +++ cgx_2.12/src/userFunction.c
 @@ -57,7 +57,12 @@ void sendFacesNodes( char *setname );
  /*                                                                       */
