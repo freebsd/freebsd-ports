@@ -662,6 +662,7 @@
     SUBDIR += postgis21
     SUBDIR += postgis22
     SUBDIR += postgis23
+    SUBDIR += postgres-xl
     SUBDIR += postgresql-cstore_fdw
     SUBDIR += postgresql-jdbc
     SUBDIR += postgresql-libpgeasy
@@ -677,7 +678,6 @@
     SUBDIR += postgresql-repmgr
     SUBDIR += postgresql-repmgr2
     SUBDIR += postgresql-tds_fdw
-    SUBDIR += postgresql-xl
     SUBDIR += postgresql-zhparser
     SUBDIR += postgresql10-client
     SUBDIR += postgresql10-contrib
