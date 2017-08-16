@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	osquery
-PORTVERSION=	2.6.0
+PORTVERSION=	2.6.1
 CATEGORIES=	sysutils
 
 MAINTAINER=	zi@FreeBSD.org
@@ -41,7 +41,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	facebook ${PORTNAME}:tp
 GH_PROJECT=	third-party:tp
 GH_SUBDIR=	third-party:tp
-GH_TAGNAME=	2.5.2:tp
+GH_TAGNAME=	${PORTVERSION}:tp
 
 NOPIE_PORTS=	yes
 
