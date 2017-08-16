@@ -677,6 +677,7 @@
     SUBDIR += postgresql-repmgr
     SUBDIR += postgresql-repmgr2
     SUBDIR += postgresql-tds_fdw
+    SUBDIR += postgresql-xl
     SUBDIR += postgresql-zhparser
     SUBDIR += postgresql10-client
     SUBDIR += postgresql10-contrib
