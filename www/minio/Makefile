@@ -1,8 +1,7 @@
-# $FreeBSD$
+# $FreeBSD: head/www/minio/Makefile 437792 2017-04-05 15:12:19Z swills $
 
 PORTNAME=	minio
 PORTVERSION=	${GH_TAGNAME:S/RELEASE.//:S/Z//:S/T/-/:S/-/./g}
-PORTREVISION=	1
 CATEGORIES=	www
 
 MAINTAINER=	swills@FreeBSD.org
@@ -16,10 +15,9 @@ BUILD_DEPENDS=	go>=1.7:lang/go \
 USES=		compiler gmake
 
 USE_GITHUB=	yes
-GH_TAGNAME=	RELEASE.2017-03-16T21-50-32Z
+GH_TAGNAME=	RELEASE.2017-08-05T00-00-53Z
 GH_SUBDIR=	src/github.com/${PORTNAME}/${PORTNAME}
-GH_TUPLE=	\
-		minio:mc:RELEASE.2017-02-06T20-16-19Z:mc/src/github.com/minio/mc \
+GH_TUPLE=	minio:mc:RELEASE.2017-06-15T03-38-43Z:mc/src/github.com/minio/mc \
 		hashicorp:go-version:03c5bf6:go_version/src/github.com/hashicorp/go-version
 MAKE_ENV=	GOPATH=${WRKSRC} GOROOT=${LOCALBASE}/go
 
@@ -33,8 +31,14 @@ GROUPS=		minio
 SUB_LIST=	USER="${USERS}" \
 		GROUP="${GROUPS}"
 
+do-build:
+	@cd ${WRKSRC}/src/github.com/minio/minio; \
+	${SETENV} ${BUILD_ENV} GOPATH=${WRKSRC} go build -v -x \
+		-ldflags "-X main.GitDescribe=${DISTVERSIONFULL}" -o bin/minio
+
+
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/src/github.com/${GH_ACCOUNT}/${PORTNAME}/bin/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.pre.mk>
 

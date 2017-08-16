@@ -1,17 +1,8 @@
---- Makefile.orig	2016-10-24 20:34:01 UTC
+--- Makefile.orig	2017-08-04 23:51:20 UTC
 +++ Makefile
-@@ -95,7 +95,7 @@ cyclo:
- 	@GO15VENDOREXPERIMENT=1 ${GOPATH}/bin/gocyclo -over 65 cmd
- 	@GO15VENDOREXPERIMENT=1 ${GOPATH}/bin/gocyclo -over 65 pkg
- 
--build: getdeps verifiers $(UI_ASSETS)
-+build: $(UI_ASSETS)
- 
- deadcode:
- 	@GO15VENDOREXPERIMENT=1 ${GOPATH}/bin/deadcode
-@@ -131,10 +131,10 @@ pkg-list:
- 
- install: gomake-all
+@@ -91,10 +91,10 @@ install: build
+ 	@cp $(PWD)/minio $(GOPATH)/bin/minio
+ 	@echo "Check 'minio -h' for help."
  
 -release: verifiers
 +release:
