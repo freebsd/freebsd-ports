@@ -1,5 +1,5 @@
---- program/lib/Roundcube/rcube_session.php.orig	2016-05-22 11:06:47 UTC
-+++ program/lib/Roundcube/rcube_session.php
+--- program/lib/Roundcube/rcube_session.php.orig	2017-06-26 20:56:48.000000000 +0200
++++ program/lib/Roundcube/rcube_session.php	2017-06-30 10:20:36.890382000 +0200
 @@ -39,7 +39,6 @@ abstract class rcube_session
      protected $time_diff    = 0;
      protected $reloaded     = false;
@@ -17,7 +17,7 @@
              return $this->update($key, $newvars, $oldvars);
          }
          else {
-@@ -180,39 +179,6 @@ abstract class rcube_session
+@@ -198,39 +197,6 @@ abstract class rcube_session
      }
  
      /**
@@ -57,7 +57,7 @@
       * Execute registered garbage collector routines
       */
      public function gc($maxlifetime)
-@@ -321,11 +287,6 @@ abstract class rcube_session
+@@ -339,11 +305,6 @@ abstract class rcube_session
          }
  
          $this->appends[] = $path;
@@ -69,7 +69,7 @@
      }
  
      /**
-@@ -340,8 +301,6 @@ abstract class rcube_session
+@@ -358,8 +319,6 @@ abstract class rcube_session
              return $this->destroy(session_id());
          }
  
@@ -78,7 +78,7 @@
          if (isset($_SESSION[$var])) {
              unset($_SESSION[$var]);
          }
-@@ -387,21 +346,6 @@ abstract class rcube_session
+@@ -405,21 +364,6 @@ abstract class rcube_session
  
          if ($data) {
              session_decode($data);

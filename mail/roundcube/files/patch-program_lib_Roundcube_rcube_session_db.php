@@ -1,5 +1,5 @@
---- program/lib/Roundcube/rcube_session_db.php.orig	2016-05-22 11:06:47 UTC
-+++ program/lib/Roundcube/rcube_session_db.php
+--- program/lib/Roundcube/rcube_session_db.php.orig	2017-06-26 20:56:48.000000000 +0200
++++ program/lib/Roundcube/rcube_session_db.php	2017-06-30 10:21:12.859240000 +0200
 @@ -32,6 +32,7 @@ class rcube_session_db extends rcube_ses
  {
      private $db;
@@ -26,17 +26,17 @@
 +            $this->vars      = $this->_decode($sql_arr['vars']);
              $this->key       = $key;
  
-             return !empty($this->vars) ? (string) $this->vars : '';
-@@ -126,7 +130,7 @@ class rcube_session_db extends rcube_ses
+             $this->db->reset();
+@@ -128,7 +132,7 @@ class rcube_session_db extends rcube_ses
          $this->db->query("INSERT INTO {$this->table_name}"
-             . " (`sess_id`, `vars`, `ip`, `created`, `changed`)"
-             . " VALUES (?, ?, ?, $now, $now)",
+             . " (`sess_id`, `vars`, `ip`, `changed`)"
+             . " VALUES (?, ?, ?, $now)",
 -            $key, base64_encode($vars), (string)$this->ip);
 +            $key, $this->_encode($vars), (string)$this->ip);
  
          return true;
      }
-@@ -150,7 +154,7 @@ class rcube_session_db extends rcube_ses
+@@ -152,7 +156,7 @@ class rcube_session_db extends rcube_ses
          if ($newvars !== $oldvars) {
              $this->db->query("UPDATE {$this->table_name} "
                  . "SET `changed` = $now, `vars` = ? WHERE `sess_id` = ?",
@@ -45,7 +45,7 @@
          }
          else if ($ts - $this->changed + $this->time_diff > $this->lifetime / 2) {
              $this->db->query("UPDATE {$this->table_name} SET `changed` = $now"
-@@ -173,4 +177,23 @@ class rcube_session_db extends rcube_ses
+@@ -175,4 +179,23 @@ class rcube_session_db extends rcube_ses
              . date('Y-m-d H:i:s', time() - $this->gc_enabled)
              . '; rows = ' . intval($this->db->affected_rows()));
      }
