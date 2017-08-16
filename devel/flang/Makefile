@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	flang
-DISTVERSION=	4.0-20170717
+DISTVERSION=	4.0-20170812
 CATEGORIES=	devel
 
 MAINTAINER=	jmd@FreeBSD.org
@@ -32,7 +32,7 @@ USES+=		${_USES_PYTHON}
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	flang-compiler
-GH_TAGNAME=	cd44bcd
+GH_TAGNAME=	f7af78c
 
 CMAKE_ARGS+=	-DLLVM_CONFIG=${LOCALBASE}/bin/llvm-config40 \
 		-DCMAKE_CXX_COMPILER=${LOCALBASE}flang/bin/clang++ \

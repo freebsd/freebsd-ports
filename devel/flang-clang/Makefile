@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	flang-clang
-DISTVERSION=	4.0-20170612
+DISTVERSION=	4.0-20170812
 CATEGORIES=	devel lang
 
 MAINTAINER=	jmd@FreeBSD.org
@@ -18,6 +18,9 @@ BUILD_DEPENDS=	llvm40>=0:devel/llvm40 \
 RUN_DEPENDS=	llvm40>=0:devel/llvm40 \
 		openmp>=0:devel/openmp
 
+ONLY_FOR_ARCHS=	amd64
+ONLY_FOR_ARCHS_REASON_amd64=	for now only builds and is supported on amd64
+
 USE_LDCONFIG=	${PREFIX}/flang/lib
 USES=		cmake:outsource compiler:c++11-lib libedit tar:xz perl5 \
 		python shebangfix
@@ -31,7 +34,7 @@ SHEBANG_FILES=	tools/scan-view/bin/scan-view \
 USE_GITHUB=	yes
 GH_ACCOUNT=	flang-compiler
 GH_PROJECT=	clang
-GH_TAGNAME=	17f4427
+GH_TAGNAME=	79d1970
 
 CMAKE_ARGS+=	-DLLVM_CONFIG=${LOCALBASE}/bin/llvm-config40
 
