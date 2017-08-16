@@ -15,6 +15,7 @@
 %%WWWDIR%%/public/css/vendor/L.Control.Locate.min.css
 %%WWWDIR%%/public/css/vendor/MarkerCluster.Default.css
 %%WWWDIR%%/public/css/vendor/MarkerCluster.css
+%%WWWDIR%%/public/css/vendor/easy-button.css
 %%WWWDIR%%/public/css/vendor/leaflet.css
 %%WWWDIR%%/public/img/layers-2x.png
 %%WWWDIR%%/public/img/layers.png
@@ -31,6 +32,7 @@
 %%WWWDIR%%/public/js/vendor/L.Control.Locate.js
 %%WWWDIR%%/public/js/vendor/L.Control.Locate.min.js
 %%WWWDIR%%/public/js/vendor/Leaflet.LICENSE
+%%WWWDIR%%/public/js/vendor/easy-button.js
 %%WWWDIR%%/public/js/vendor/leaflet-src.js
 %%WWWDIR%%/public/js/vendor/leaflet.js
 %%WWWDIR%%/public/js/vendor/leaflet.markercluster-src.js
