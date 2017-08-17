@@ -3,8 +3,8 @@
 
 PORTNAME=	motion
 PORTVERSION=	4.0.1
-PORTREVISION=	3
 DISTVERSIONPREFIX=	release-
+PORTREVISION=	4
 CATEGORIES=	multimedia
 
 MAINTAINER=	ports@FreeBSD.org
@@ -13,10 +13,11 @@ COMMENT=	Motion detection application
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+USES=		autoreconf gmake jpeg localbase pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	Motion-Project
+USE_RC_SUBR=	${PORTNAME}
 
-USES=		autoreconf gmake jpeg localbase pkgconfig
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-linuxthreads \
 		--without-jpeg-mmx
@@ -26,7 +27,6 @@ KMODDIR?=	/boot/modules
 KMODDIR=	/boot/modules
 .endif
 
-USE_RC_SUBR=	${PORTNAME}
 SUB_FILES=	pkg-message
 
 PLIST_FILES=	bin/motion \
