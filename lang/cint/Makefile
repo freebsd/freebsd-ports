@@ -3,7 +3,7 @@
 
 PORTNAME=	cint
 PORTVERSION=	5.18.00
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	lang
 MASTER_SITES=	http://root.cern.ch/drupal/sites/default/files/
 
@@ -15,7 +15,8 @@ BROKEN_powerpc64=	does not build: cint/include/iosenum.h: segmentation fault (co
 BUILD_DEPENDS=	bash:shells/bash
 
 HAS_CONFIGURE=	yes
-CONFIGURE_ENV=	CC="${CC}" CXX="${CXX}" LDFLAGS="${LDFLAGS}"
+CONFIGURE_ENV=	CC="${CC}" CXX="${CXX}" LDFLAGS="${LDFLAGS}" \
+		CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS}"
 USE_GCC=	yes
 USES=		gmake readline tar:tgz
 USE_LDCONFIG=	${PREFIX}/lib/cint
