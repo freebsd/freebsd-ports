@@ -42,10 +42,10 @@ bin/rt-mailgate
 %%SITE_PERL%%/RT/Action/SLA_SetStarts.pm
 %%SITE_PERL%%/RT/Action/SendEmail.pm
 %%SITE_PERL%%/RT/Action/SendForward.pm
+%%SITE_PERL%%/RT/Action/SetCustomFieldToNow.pm
 %%SITE_PERL%%/RT/Action/SetPriority.pm
 %%SITE_PERL%%/RT/Action/SetStatus.pm
 %%SITE_PERL%%/RT/Action/UpdateParentTimeWorked.pm
-%%SITE_PERL%%/RT/Action/UpdateUserTimeWorked.pm
 %%SITE_PERL%%/RT/Action/UserDefined.pm
 %%SITE_PERL%%/RT/Approval.pm
 %%SITE_PERL%%/RT/Approval/Rule.pm
@@ -98,6 +98,9 @@ bin/rt-mailgate
 %%SITE_PERL%%/RT/CustomField.pm
 %%SITE_PERL%%/RT/CustomFieldValue.pm
 %%SITE_PERL%%/RT/CustomFieldValues.pm
+%%SITE_PERL%%/RT/CustomFieldValues/Canonicalizer.pm
+%%SITE_PERL%%/RT/CustomFieldValues/Canonicalizer/Lowercase.pm
+%%SITE_PERL%%/RT/CustomFieldValues/Canonicalizer/Uppercase.pm
 %%SITE_PERL%%/RT/CustomFieldValues/External.pm
 %%SITE_PERL%%/RT/CustomFieldValues/Groups.pm
 %%SITE_PERL%%/RT/CustomFields.pm
@@ -310,6 +313,7 @@ sbin/standalone_httpd
 %%PORTDOCS%%%%DOCSDIR%%/customizing/assets/tutorial.pod
 %%PORTDOCS%%%%DOCSDIR%%/customizing/assets/tutorialdata
 %%PORTDOCS%%%%DOCSDIR%%/customizing/lifecycles.pod
+%%PORTDOCS%%%%DOCSDIR%%/customizing/scrip_conditions_and_action.pod
 %%PORTDOCS%%%%DOCSDIR%%/customizing/search_result_columns.pod
 %%PORTDOCS%%%%DOCSDIR%%/customizing/sla.pod
 %%PORTDOCS%%%%DOCSDIR%%/customizing/styling_rt.pod
@@ -330,6 +334,7 @@ sbin/standalone_httpd
 %%PORTDOCS%%%%DOCSDIR%%/images/added-terms.png
 %%PORTDOCS%%%%DOCSDIR%%/images/advanced-search.png
 %%PORTDOCS%%%%DOCSDIR%%/images/complicated-search-arrows.png
+%%PORTDOCS%%%%DOCSDIR%%/images/create-setowner-action.png
 %%PORTDOCS%%%%DOCSDIR%%/images/current-search.png
 %%PORTDOCS%%%%DOCSDIR%%/images/customize-dashboards-menu.png
 %%PORTDOCS%%%%DOCSDIR%%/images/dashboard-chart.png
@@ -352,6 +357,7 @@ sbin/standalone_httpd
 %%PORTDOCS%%%%DOCSDIR%%/images/search-criteria.png
 %%PORTDOCS%%%%DOCSDIR%%/images/search-results.png
 %%PORTDOCS%%%%DOCSDIR%%/images/sorting-display-columns.png
+%%PORTDOCS%%%%DOCSDIR%%/images/status-change-condition.png
 %%PORTDOCS%%%%DOCSDIR%%/images/subscriptions.png
 %%PORTDOCS%%%%DOCSDIR%%/images/theme_editor_defaults.png
 %%PORTDOCS%%%%DOCSDIR%%/images/with-created-before.png
@@ -576,6 +582,12 @@ sbin/standalone_httpd
 %%PORTDOCS%%%%DOCSDIR%%/upgrade/4.3.8/schema.mysql
 %%PORTDOCS%%%%DOCSDIR%%/upgrade/4.3.9/content
 %%PORTDOCS%%%%DOCSDIR%%/upgrade/4.4.1/content
+%%PORTDOCS%%%%DOCSDIR%%/upgrade/4.4.2/content
+%%PORTDOCS%%%%DOCSDIR%%/upgrade/4.4.2/indexes
+%%PORTDOCS%%%%DOCSDIR%%/upgrade/4.4.2/schema.Oracle
+%%PORTDOCS%%%%DOCSDIR%%/upgrade/4.4.2/schema.Pg
+%%PORTDOCS%%%%DOCSDIR%%/upgrade/4.4.2/schema.SQLite
+%%PORTDOCS%%%%DOCSDIR%%/upgrade/4.4.2/schema.mysql
 %%PORTDOCS%%%%DOCSDIR%%/upgrade/generate-rtaddressregexp
 %%PORTDOCS%%%%DOCSDIR%%/upgrade/sanity-check-stylesheets
 %%PORTDOCS%%%%DOCSDIR%%/upgrade/shrink-cgm-table
@@ -594,6 +606,12 @@ sbin/standalone_httpd
 %%DATADIR%%/fonts/Droid.README
 %%DATADIR%%/fonts/DroidSans.ttf
 %%DATADIR%%/fonts/DroidSansFallback.ttf
+%%DATADIR%%/html/Admin/Actions/Create.html
+%%DATADIR%%/html/Admin/Actions/Display.html
+%%DATADIR%%/html/Admin/Actions/Elements/EditBasics
+%%DATADIR%%/html/Admin/Actions/Elements/ShowBasics
+%%DATADIR%%/html/Admin/Actions/Modify.html
+%%DATADIR%%/html/Admin/Actions/autohandler
 %%DATADIR%%/html/Admin/Articles/Classes/CustomFields.html
 %%DATADIR%%/html/Admin/Articles/Classes/GroupRights.html
 %%DATADIR%%/html/Admin/Articles/Classes/Modify.html
@@ -605,6 +623,7 @@ sbin/standalone_httpd
 %%DATADIR%%/html/Admin/Articles/index.html
 %%DATADIR%%/html/Admin/Assets/Catalogs/Create.html
 %%DATADIR%%/html/Admin/Assets/Catalogs/CustomFields.html
+%%DATADIR%%/html/Admin/Assets/Catalogs/DefaultValues.html
 %%DATADIR%%/html/Admin/Assets/Catalogs/Elements/EditBasics
 %%DATADIR%%/html/Admin/Assets/Catalogs/GroupRights.html
 %%DATADIR%%/html/Admin/Assets/Catalogs/Modify.html
@@ -612,6 +631,12 @@ sbin/standalone_httpd
 %%DATADIR%%/html/Admin/Assets/Catalogs/UserRights.html
 %%DATADIR%%/html/Admin/Assets/Catalogs/index.html
 %%DATADIR%%/html/Admin/Assets/index.html
+%%DATADIR%%/html/Admin/Conditions/Create.html
+%%DATADIR%%/html/Admin/Conditions/Display.html
+%%DATADIR%%/html/Admin/Conditions/Elements/EditBasics
+%%DATADIR%%/html/Admin/Conditions/Elements/ShowBasics
+%%DATADIR%%/html/Admin/Conditions/Modify.html
+%%DATADIR%%/html/Admin/Conditions/autohandler
 %%DATADIR%%/html/Admin/CustomFields/GroupRights.html
 %%DATADIR%%/html/Admin/CustomFields/Modify.html
 %%DATADIR%%/html/Admin/CustomFields/Objects.html
@@ -623,8 +648,11 @@ sbin/standalone_httpd
 %%DATADIR%%/html/Admin/Elements/AddCustomFieldValue
 %%DATADIR%%/html/Admin/Elements/ConfigureDashboardsInMenu
 %%DATADIR%%/html/Admin/Elements/ConfigureMyRT
+%%DATADIR%%/html/Admin/Elements/EditActions
+%%DATADIR%%/html/Admin/Elements/EditConditions
 %%DATADIR%%/html/Admin/Elements/EditCustomField
 %%DATADIR%%/html/Admin/Elements/EditCustomFieldValues
+%%DATADIR%%/html/Admin/Elements/EditCustomFieldValuesCanonicalizer
 %%DATADIR%%/html/Admin/Elements/EditCustomFieldValuesSource
 %%DATADIR%%/html/Admin/Elements/EditCustomFields
 %%DATADIR%%/html/Admin/Elements/EditQueueWatcherGroup
@@ -652,6 +680,8 @@ sbin/standalone_httpd
 %%DATADIR%%/html/Admin/Elements/ShowKeyInfo
 %%DATADIR%%/html/Admin/Elements/UpgradeHistory
 %%DATADIR%%/html/Admin/Elements/UpgradeHistoryRow
+%%DATADIR%%/html/Admin/Global/Actions.html
+%%DATADIR%%/html/Admin/Global/Conditions.html
 %%DATADIR%%/html/Admin/Global/CustomFields/Catalog-Assets.html
 %%DATADIR%%/html/Admin/Global/CustomFields/Class-Article.html
 %%DATADIR%%/html/Admin/Global/CustomFields/Groups.html
@@ -907,6 +937,8 @@ sbin/standalone_httpd
 %%DATADIR%%/html/Elements/RT__Queue/ColumnMap
 %%DATADIR%%/html/Elements/RT__SavedSearch/ColumnMap
 %%DATADIR%%/html/Elements/RT__Scrip/ColumnMap
+%%DATADIR%%/html/Elements/RT__ScripAction/ColumnMap
+%%DATADIR%%/html/Elements/RT__ScripCondition/ColumnMap
 %%DATADIR%%/html/Elements/RT__Template/ColumnMap
 %%DATADIR%%/html/Elements/RT__Ticket/ColumnMap
 %%DATADIR%%/html/Elements/RT__Transaction/ColumnMap
@@ -1068,6 +1100,10 @@ sbin/standalone_httpd
 %%DATADIR%%/html/REST/1.0/ticket/comment
 %%DATADIR%%/html/REST/1.0/ticket/link
 %%DATADIR%%/html/REST/1.0/ticket/merge
+%%DATADIR%%/html/Reports/CreatedByDates.html
+%%DATADIR%%/html/Reports/ResolvedByDates.html
+%%DATADIR%%/html/Reports/ResolvedByOwner.html
+%%DATADIR%%/html/Reports/index.html
 %%DATADIR%%/html/Search/Article.html
 %%DATADIR%%/html/Search/Build.html
 %%DATADIR%%/html/Search/Bulk.html
@@ -1194,6 +1230,7 @@ sbin/standalone_httpd
 %%DATADIR%%/html/Tools/index.html
 %%DATADIR%%/html/User/Elements/AssetList
 %%DATADIR%%/html/User/Elements/Portlets/ActiveTickets
+%%DATADIR%%/html/User/Elements/Portlets/CreateAsset
 %%DATADIR%%/html/User/Elements/Portlets/CreateTicket
 %%DATADIR%%/html/User/Elements/Portlets/ExtraInfo
 %%DATADIR%%/html/User/Elements/Portlets/InactiveTickets
@@ -1656,6 +1693,7 @@ sbin/standalone_httpd
 %%DATADIR%%/static/images/jquery_ui/ui-icons_888888_256x240.png
 %%DATADIR%%/static/images/jquery_ui/ui-icons_cd0a0a_256x240.png
 %%DATADIR%%/static/images/pause.png
+%%DATADIR%%/static/images/request-tracker-logo.png
 %%DATADIR%%/static/images/star-empty.png
 %%DATADIR%%/static/images/star-full.png
 %%DATADIR%%/static/images/stopwatch.png
