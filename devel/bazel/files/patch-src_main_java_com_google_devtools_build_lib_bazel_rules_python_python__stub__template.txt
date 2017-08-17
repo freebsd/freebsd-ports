@@ -1,6 +1,6 @@
---- src/main/java/com/google/devtools/build/lib/bazel/rules/python/stub_template.txt.orig	2017-03-31 21:28:24 UTC
-+++ src/main/java/com/google/devtools/build/lib/bazel/rules/python/stub_template.txt
-@@ -32,7 +32,7 @@ if IsWindows() and not PYTHON_BINARY.end
+--- src/main/java/com/google/devtools/build/lib/bazel/rules/python/python_stub_template.txt.orig	2017-07-25 04:58:01 UTC
++++ src/main/java/com/google/devtools/build/lib/bazel/rules/python/python_stub_template.txt
+@@ -38,7 +38,7 @@ if IsWindows() and not PYTHON_BINARY.end
  
  # Find a file in a given search path.
  def SearchPath(name):
