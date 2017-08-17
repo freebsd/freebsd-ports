@@ -3,7 +3,7 @@
 
 PORTNAME=	postgresql
 CATEGORIES=	databases tcl
-PKGNAMESUFFIX?=	${DISTVERSION:R:S/.//}${COMPONENT}
+PKGNAMESUFFIX?=	${WANT_PGSQL_VER:S/.//}${COMPONENT}
 
 MAINTAINER=	pgsql@FreeBSD.org
 COMMENT=	Module for using Tcl to write SQL functions
