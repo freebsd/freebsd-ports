@@ -485,6 +485,7 @@
     SUBDIR += mctoolame-encoder
     SUBDIR += mda-lv2
     SUBDIR += mhwaveedit
+    SUBDIR += midi-matrix-lv2
     SUBDIR += midipp
     SUBDIR += mikmod
     SUBDIR += milkytracker
