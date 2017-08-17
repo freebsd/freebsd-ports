@@ -5,7 +5,7 @@
    /* if there's a separate xcursors dir, add that as well */
    if (strcmp (XCURSOR_ICONDIR, top_theme_dir_string) &&
 -      strcmp (XCURSOR_ICONDIR, "/usr/share/icons")) {
-+      strcmp (XCURSOR_ICONDIR, "%%LOCALBASE%%/lib/X11/icons")) {
++      strcmp (XCURSOR_ICONDIR, "%%LOCALBASE%%/share/icons")) {
      top_theme_dir = g_file_new_for_path (XCURSOR_ICONDIR);
      add_top_icon_theme_dir_monitor (top_theme_dir, 1, NULL);
      g_object_unref (top_theme_dir);
