@@ -1,4 +1,4 @@
---- drivers/oss/oss_driver.c.orig	2016-02-23 15:13:53 UTC
+--- drivers/oss/oss_driver.c.orig	2017-01-10 10:20:51 UTC
 +++ drivers/oss/oss_driver.c
 @@ -23,6 +23,7 @@
  
@@ -83,7 +83,20 @@
  			dstidx += chcount;
  		}
  		break;
-@@ -441,19 +454,7 @@ static int oss_driver_start (oss_driver_
+@@ -429,7 +442,11 @@ static int oss_driver_detach (oss_driver
+ 
+ static int oss_driver_start (oss_driver_t *driver)
+ {
+-	int flags = 0;
++#if defined(OPTION_COOKEDMODE)
++	int cookedmode = 1;
++#else
++	int cookedmode = 0;
++#endif
+ 	int format;
+ 	int channels;
+ 	int samplerate;
+@@ -441,19 +458,7 @@ static int oss_driver_start (oss_driver_
  	const char *indev = driver->indev;
  	const char *outdev = driver->outdev;
  
@@ -104,7 +117,52 @@
  	driver->trigger = 0;
  	if (strcmp (indev, outdev) != 0) {
  		if (driver->capture_channels > 0) {
-@@ -705,7 +706,9 @@ static int oss_driver_start (oss_driver_
+@@ -464,7 +469,7 @@ static int oss_driver_start (oss_driver_
+ 					indev, __FILE__, __LINE__, errno);
+ 			}
+ #ifndef OSS_NO_COOKED_MODE
+-			ioctl (infd, SNDCTL_DSP_COOKEDMODE, &flags);
++			ioctl (infd, SNDCTL_DSP_COOKEDMODE, &cookedmode);
+ #endif
+ 			fragsize = driver->period_size *
+ 				   driver->capture_channels * samplesize;
+@@ -479,7 +484,7 @@ static int oss_driver_start (oss_driver_
+ 					outdev, __FILE__, __LINE__, errno);
+ 			}
+ #ifndef OSS_NO_COOKED_MODE
+-			ioctl (outfd, SNDCTL_DSP_COOKEDMODE, &flags);
++			ioctl (outfd, SNDCTL_DSP_COOKEDMODE, &cookedmode);
+ #endif
+ 			fragsize = driver->period_size *
+ 				   driver->playback_channels * samplesize;
+@@ -497,7 +502,7 @@ static int oss_driver_start (oss_driver_
+ 				return -1;
+ 			}
+ #ifndef OSS_NO_COOKED_MODE
+-			ioctl (infd, SNDCTL_DSP_COOKEDMODE, &flags);
++			ioctl (infd, SNDCTL_DSP_COOKEDMODE, &cookedmode);
+ #endif
+ 		} else if (driver->capture_channels == 0 &&
+ 			   driver->playback_channels != 0) {
+@@ -510,7 +515,7 @@ static int oss_driver_start (oss_driver_
+ 				return -1;
+ 			}
+ #ifndef OSS_NO_COOKED_MODE
+-			ioctl (outfd, SNDCTL_DSP_COOKEDMODE, &flags);
++			ioctl (outfd, SNDCTL_DSP_COOKEDMODE, &cookedmode);
+ #endif
+ 		} else {
+ 			infd = outfd = open (indev, O_RDWR | O_EXCL);
+@@ -521,7 +526,7 @@ static int oss_driver_start (oss_driver_
+ 				return -1;
+ 			}
+ #ifndef OSS_NO_COOKED_MODE
+-			ioctl (infd, SNDCTL_DSP_COOKEDMODE, &flags);
++			ioctl (infd, SNDCTL_DSP_COOKEDMODE, &cookedmode);
+ #endif
+ 		}
+ 		if (infd >= 0 && outfd >= 0) {
+@@ -705,7 +710,9 @@ static int oss_driver_start (oss_driver_
  		sem_post (&driver->sem_start);
  	}
  
@@ -115,7 +173,7 @@
  	driver->next_periodtime = 0;
  	driver->iodelay = 0.0F;
  
-@@ -1143,6 +1146,23 @@ jack_driver_t * driver_initialize (jack_
+@@ -1143,6 +1150,23 @@ jack_driver_t * driver_initialize (jack_
  		pnode = jack_slist_next (pnode);
  	}
  
@@ -139,7 +197,7 @@
  	driver->sample_rate = sample_rate;
  	driver->period_size = period_size;
  	driver->nperiods = nperiods;
-@@ -1163,58 +1183,6 @@ jack_driver_t * driver_initialize (jack_
+@@ -1163,58 +1187,6 @@ jack_driver_t * driver_initialize (jack_
  	}
  	driver->infd = -1;
  	driver->outfd = -1;
