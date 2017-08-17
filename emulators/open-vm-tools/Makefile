@@ -8,7 +8,7 @@ PORTEPOCH=		2
 PORTREVISION=		1
 CATEGORIES=		emulators
 
-MAINTAINER=		swills@FreeBSD.org
+MAINTAINER=		jpaetzel@FreeBSD.org
 COMMENT?=		Open VMware tools for FreeBSD VMware guests
 
 LICENSE=		LGPL21
