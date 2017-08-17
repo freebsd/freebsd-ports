@@ -1,0 +1,12 @@
+--- Makefile.orig	2014-04-06 11:34:47 UTC
++++ Makefile
+@@ -1,6 +1,6 @@
+-CFLAGS = -O3 -Wall -Wextra --std=c99 `pkg-config --cflags argtable2 sndfile lilv-0`
+-LDLIBS = `pkg-config --libs argtable2 sndfile lilv-0` -lm
+-BINDIR = $(DESTDIR)/usr/bin
++CFLAGS += -Wall -Wextra --std=c99 `pkg-config --cflags argtable2 sndfile lilv-0`
++LDLIBS += `pkg-config --libs argtable2 sndfile lilv-0` -lm
++BINDIR = $(DESTDIR)/$(PREFIX)/bin
+ INSTALL_PROGRAM = install
+ 
+ all: lv2file

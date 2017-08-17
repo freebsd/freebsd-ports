@@ -473,6 +473,7 @@
     SUBDIR += lpac
     SUBDIR += lua51-mpd
     SUBDIR += lv2
+    SUBDIR += lv2file
     SUBDIR += lvtk
     SUBDIR += lxmusic
     SUBDIR += mac
