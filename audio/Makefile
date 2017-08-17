@@ -55,6 +55,7 @@
     SUBDIR += beep
     SUBDIR += beets
     SUBDIR += blop
+    SUBDIR += blop-lv2
     SUBDIR += boodler
     SUBDIR += bristol
     SUBDIR += calf
