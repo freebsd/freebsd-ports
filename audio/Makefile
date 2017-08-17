@@ -336,6 +336,7 @@
     SUBDIR += jack_ghero
     SUBDIR += jack_mixer
     SUBDIR += jack_umidi
+    SUBDIR += jalv
     SUBDIR += jamin
     SUBDIR += jid3lib
     SUBDIR += jmusic

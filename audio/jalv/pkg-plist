@@ -1,0 +1,9 @@
+bin/jalv
+bin/jalv.gtk
+bin/jalv.gtk3
+bin/jalv.gtkmm
+bin/jalv.qt5
+man/man1/jalv.1.gz
+man/man1/jalv.gtk.1.gz
+man/man1/jalv.gtkmm.1.gz
+man/man1/jalv.qt.1.gz
