@@ -3,7 +3,7 @@
 
 PORTNAME=	gforth
 PORTVERSION=	0.7.3
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	lang
 MASTER_SITES=	http://www.complang.tuwien.ac.at/forth/gforth/ \
 		GNU
@@ -11,18 +11,20 @@ MASTER_SITES=	http://www.complang.tuwien.ac.at/forth/gforth/ \
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Fast and portable Forth system
 
-LIB_DEPENDS=	libffi.so.6:devel/libffi \
-		libltdl.so:devel/libltdl
-BUILD_DEPENDS=	${LOCALBASE}/include/avcall.h:devel/libffcall
+LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-GNU_CONFIGURE=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include
-LIBS+=		-L${LOCALBASE}/lib
-CONFIGURE_ENV+=	GFORTHHIST=${WRKSRC}
-MAKE_ENV+=	GFORTHHIST=${WRKSRC}
-USES=		gmake libtool:build makeinfo
+LIB_DEPENDS=	libavcall.so:devel/libffcall \
+		libffi.so:devel/libffi \
+		libltdl.so:devel/libltdl
+
+USES=		gmake libtool:build localbase makeinfo
 USE_GCC=	any
 USE_LDCONFIG=	${PREFIX}/lib/gforth/${PORTVERSION}/libcc-named
+
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	GFORTHHIST=${WRKSRC}
+MAKE_ENV=	GFORTHHIST=${WRKSRC}
 ALL_TARGET=	kernel/version.fs more info
 MAKE_JOBS_UNSAFE=yes
 
@@ -64,7 +66,7 @@ install-doc:
 .if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 . for filename in ${PORTDOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${filename} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${filename} ${STAGEDIR}${DOCSDIR}
 . endfor
 .endif
 
