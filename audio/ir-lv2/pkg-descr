@@ -1,0 +1,10 @@
+LV2 Impulse response (convolution) plugin (for reverb and cabinet simulation).
+This fork adds LV2 State extenstion support for proper storing of internal
+plugin data.
+
+IR is a no-latency/low-latency, realtime, high performance signal
+convolver especially for creating reverb effects. Supports impulse
+responses with 1, 2 or 4 channels, in any soundfile format supported
+by libsndfile.
+
+WWW: https://github.com/Anchakor/ir.lv2
