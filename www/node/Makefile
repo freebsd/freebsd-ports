@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	node
-PORTVERSION=	8.3.0
+PORTVERSION=	8.4.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 MASTER_SITES=	http://nodejs.org/dist/v${PORTVERSION}/
@@ -33,6 +33,8 @@ BUNDLED_SSL_RUN_DEPENDS_OFF=	ca_root_nss>=0:security/ca_root_nss
 
 NLS_CONFIGURE_ON=	--with-intl=system-icu
 NLS_LIB_DEPENDS=	libicui18n.so:devel/icu
+
+DTRACE_CONFIGURE_ON=	--with-dtrace
 
 USES=		compiler:c++11-lib execinfo gmake python:2,build pkgconfig \
 		localbase shebangfix
@@ -82,10 +84,6 @@ CONFIGURE_ARGS+=--openssl-no-asm
 .if ${COMPILER_TYPE} == gcc
 # GCC does not expose std::snprintf() without this define
 CXXFLAGS+=	-D_GLIBCXX_USE_C99
-.endif
-
-.if ${PORT_OPTIONS:MDTRACE}
-CONFIGURE_ARGS+=	--with-dtrace
 .endif
 
 post-patch:
