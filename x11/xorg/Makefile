@@ -15,7 +15,7 @@ RUN_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/dri.pc:graphics/mesa-dri
 
 # data
 RUN_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/xbitmaps.pc:x11/xbitmaps \
-		${LOCALBASE}/lib/X11/icons/handhelds/cursors/X_cursor:x11-themes/xcursor-themes
+		${LOCALBASE}/share/icons/handhelds/cursors/X_cursor:x11-themes/xcursor-themes
 
 OPTIONS_DEFINE=	DOCS
 

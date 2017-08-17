@@ -4,9 +4,9 @@ PKGMESSAGE?=	${.CURDIR}/../../x11-themes/cursor-chameleon-white/pkg-message
 
 do-install:
 .for i in Large Regular Small
-	${MKDIR} ${STAGEDIR}${PREFIX}/lib/X11/icons/${PORTNAME}${PKGNAMESUFFIX}-${i:tl}
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/${PORTNAME}${PKGNAMESUFFIX}-${i:tl}
 	cd ${WRKDIR}/Chameleon-${THEME}-${i}-${PORTVERSION} && \
 		${RM} -f build.info COPYRIGHT LICENSE && \
 		${COPYTREE_SHARE} \* \
-		${STAGEDIR}${PREFIX}/lib/X11/icons/${PORTNAME}${PKGNAMESUFFIX}-${i:tl}
+		${STAGEDIR}${PREFIX}/share/icons/${PORTNAME}${PKGNAMESUFFIX}-${i:tl}
 .endfor
