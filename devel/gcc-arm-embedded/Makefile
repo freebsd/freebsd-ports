@@ -2,7 +2,7 @@
 
 PORTNAME=	gcc-arm-embedded
 PORTVERSION=	6.3.20170223
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://developer.arm.com/-/media/Files/downloads/gnu-rm/6_1-2017q1/
 DISTNAME=	${ORIGINAL_PACKAGE_NAME}-src
@@ -20,7 +20,7 @@ OPTIONS_DEFAULT=PYGDB
 PURE_DESC=	Use all libraries from bundle, do not depend on anything
 HTML_DESC=	Install HTML documentation
 PDF_DESC=	Install PDF documentation (requires TeX, it is huge)
-PYGDB_DESC=	Build and install pyhon-enabled gdb in addition to standard one
+PYGDB_DESC=	Build and install python-enabled gdb in addition to standard one
 
 PURE_LIB_DEPENDS_OFF=	\
 			libexpat.so:textproc/expat2 \
@@ -40,7 +40,13 @@ NOT_FOR_ARCHS=		aarch64 arm armeb armv6 \
 			mips mips64 mips64el mipsel mipsn32
 NOT_FOR_ARCHS_REASON=	Very slow to build on emulator
 
-USES=			bison compiler cpe gmake iconv makeinfo tar:bzip2
+LIB_DEPENDS=		libexpat.so:textproc/expat2 \
+			libgmp.so:math/gmp \
+			libmpfr.so:math/mpfr \
+			libmpc.so:math/mpc \
+			libisl.so:devel/isl
+
+USES=			bison compiler cpe gmake gettext-runtime iconv makeinfo tar:bzip2
 
 GNU_CONFIGURE=	yes
 
