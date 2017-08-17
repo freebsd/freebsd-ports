@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pgrouting
-PORTVERSION=	2.4.1
+PORTVERSION=	2.4.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	databases geography
 
@@ -14,7 +14,7 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs\
 		libCGAL.so:math/cgal \
 		libgmp.so:math/gmp
-RUN_DEPENDS=	${LOCALBASE}/share/postgresql/contrib/postgis-2.1/postgis.sql:databases/postgis21
+RUN_DEPENDS=	${LOCALBASE}/share/postgresql/contrib/postgis-2.2/postgis.sql:databases/postgis22
 
 USES=		compiler:c++11-lib cmake:outsource localbase pgsql:9.1+ pkgconfig
 USE_LDCONFIG=	yes

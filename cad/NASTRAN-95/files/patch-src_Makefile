@@ -1,5 +1,5 @@
---- sb/Makefile.orig	2015-12-27 21:50:03 UTC
-+++ sb/Makefile
+--- src/Makefile.orig	2016-09-08 21:25:12 UTC
++++ src/Makefile
 @@ -1,6 +1,6 @@
  # Declaration of variables
 -FC = gfortran
