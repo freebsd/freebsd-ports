@@ -1,22 +1,40 @@
-diff --git configure.ac configure.ac
-index 5c73168a..abbf4135 100644
---- configure.ac
+--- configure.ac.orig	2017-07-14 12:22:02 UTC
 +++ configure.ac
-@@ -138,8 +138,15 @@ AC_CHECK_FUNC(dlopen, [],
+@@ -152,11 +152,35 @@ AC_CHECK_FUNC(dlopen, [],
  AC_SUBST(DLOPEN_LIBS)
-
+ 
  # checking for openssl
--PKG_CHECK_MODULES([OPENSSL], [openssl >= 0], [],
--  [AC_MSG_ERROR([please install libssl-dev or openssl-devel])])
+-PKG_CHECK_MODULES([OPENSSL], [openssl >= 0.9.8], [],
 +if test "x$freebsd" = "xyes"; then
-+  # FreeBSD base doesn't supply "*.pc"
-+  AC_CHECK_HEADER([openssl/rc4.h], [],
-+    [AC_MSG_ERROR([please install libssl-dev or openssl-devel])],
-+    [#include <stdlib.h>])
++  # FreeBSD may have two OpenSSL, base and port however
++  # base OpenSSL doesn.t have openssl.pc file.
++  PKG_CHECK_MODULES(
++                    [OPENSSL],
++                    [openssl >= 0],
++                    [freebsd_openssl=port],
++                    [
++		     AC_CHECK_HEADER(
++		       [openssl/rc4.h],
++		       [freebsd_openssl=base],
++		       [AC_MSG_ERROR([please install libssl-dev or openssl-devel])],
++		       [#include <stdlib.h>])
++		    ]
++                   )
++
++  if test "x$freebsd_openssl" = "xport"; then
++    OPENSSL_BIN=`$PKG_CONFIG --variable=exec_prefix openssl`/bin
++  elif test "x$freebsd_openssl" = "xbase"; then
++    OPENSSL_BIN=/usr/bin
++  fi
 +else
++  # OpenSSL detection for other OS
 +  PKG_CHECK_MODULES([OPENSSL], [openssl >= 0], [],
-+    [AC_MSG_ERROR([please install libssl-dev or openssl-devel])])
+   [AC_MSG_ERROR([please install libssl-dev or openssl-devel])])
++  OPENSSL_BIN=`$PKG_CONFIG --variable=exec_prefix openssl`/bin
 +fi
-
+ 
+ # look for openssl binary
+-OPENSSL_BIN=`$PKG_CONFIG --variable=exec_prefix openssl`/bin
+ AC_PATH_PROGS([OPENSSL], [openssl], [:], [$OPENSSL_BIN:$PATH])
+ 
  # checking for pam variation
- # Linux-PAM is used in Linux systems
