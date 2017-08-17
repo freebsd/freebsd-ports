@@ -40,8 +40,10 @@ bin/nastran
 %%NASTHOME%%/um/SUBS.TXT
 %%NASTHOME%%/um/UMFL.TXT
 %%NASTHOME%%/um/nasthelp.exe
-%%PORTDOCS%%%%DOCSDIR%%/NASTRAN Programmers Manual.pdf
-%%PORTDOCS%%%%DOCSDIR%%/NASTRAN Users Manual 2.pdf
+%%PORTDOCS%%%%DOCSDIR%%/NASA-SP-221(06) The NASTRAN Theoretical Manual.pdf
+%%PORTDOCS%%%%DOCSDIR%%/NASA-SP-222(08) NASTRAN Users Manual Vol I.pdf
+%%PORTDOCS%%%%DOCSDIR%%/NASA-SP-222(08) NASTRAN Users Manual Vol II.pdf
+%%PORTDOCS%%%%DOCSDIR%%/NASA-SP-223(05) NASTRAN Programmers Manual.pdf
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demoout/d01000a.out
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demoout/d01001a.out
