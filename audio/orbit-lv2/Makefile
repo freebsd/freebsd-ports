@@ -16,7 +16,6 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	lv2>0:audio/lv2
 
 USES=		cmake pkgconfig
-CMAKE_ARGS=	-DCMAKE_BUILD_TYPE="Release"
 PLIST_FILES=	lib/lv2/orbit.lv2/manifest.ttl \
 		lib/lv2/orbit.lv2/orbit.so \
 		lib/lv2/orbit.lv2/orbit.ttl
