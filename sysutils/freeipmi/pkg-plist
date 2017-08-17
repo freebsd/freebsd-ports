@@ -265,8 +265,8 @@ lib/libipmidetect.so.0
 lib/libipmidetect.so.0.0.0
 lib/libipmimonitoring.a
 lib/libipmimonitoring.so
-lib/libipmimonitoring.so.5
-lib/libipmimonitoring.so.5.0.6
+lib/libipmimonitoring.so.6
+lib/libipmimonitoring.so.6.0.6
 libdata/pkgconfig/libfreeipmi.pc
 libdata/pkgconfig/libipmiconsole.pc
 libdata/pkgconfig/libipmidetect.pc
