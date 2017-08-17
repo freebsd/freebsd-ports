@@ -92,7 +92,7 @@ QT_DIST=		3d base canvas3d charts connectivity datavis3d declarative \
 				declarative-render2d gamepad graphicaleffects imageformats \
 				location multimedia quickcontrols quickcontrols2 script scxml \
 				sensors serialbus serialport svg tools translations \
-				virtualkeyboard wayland webchannel webkit websockets x11extras \
+				virtualkeyboard wayland webchannel websockets x11extras \
 				xmlpatterns
 .		endif
 .  endif
