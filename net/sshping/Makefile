@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libssh.so:security/libssh
 
-USES=		compiler:c++14-lang localbase:ldflags
+USES=		localbase:ldflags
 USE_GITHUB=	yes
 
 GH_ACCOUNT=	spook
@@ -23,6 +23,13 @@ LDFLAGS+=	-lssh
 
 PLIST_FILES=	bin/sshping
 
+.include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} <= 1100511
+BUILD_DEPENDS=	clang40:devel/llvm40
+CXX=		clang++40
+.endif
+
 do-build:
 	${CXX} ${CXXFLAGS} ${LDFLAGS} -I ${WRKSRC}/ext \
 		${WRKSRC}/src/sshping.cxx -o ${WRKSRC}/bin/sshping
@@ -30,4 +37,4 @@ do-build:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
