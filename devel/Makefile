@@ -4678,6 +4678,7 @@
     SUBDIR += py-pyperclip
     SUBDIR += py-pypugjs
     SUBDIR += py-pyqi
+    SUBDIR += py-pyral
     SUBDIR += py-pyrfc3339
     SUBDIR += py-pyro
     SUBDIR += py-pyshapelib
