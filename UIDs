@@ -771,7 +771,7 @@ openacs:*:820:820::0:0:OpenACS Daemon User:/nonexistent:/usr/sbin/nologin
 dotlrn:*:821:821::0:0:.LRN Daemon User:/nonexistent:/usr/sbin/nologin
 titus:*:822:65533::0:0:Titus Daemon User:/nonexistent:/usr/sbin/nologin
 titus-keys:*:823:65533::0:0:Titus Keyserver User:/nonexistent:/usr/sbin/nologin
-# free: 824
+selenium:*:824:824::0:0:Selenium Daemon User:/usr/local/selenium:/bin/sh
 polw:*:825:825::0:0:Policyd-weight Cache Owner:/nonexistent:/sbin/nologin
 statsd:*:826:826::0:0:Statsd Daemon:/nonexistent:/sbin/nologin
 # free: 827
