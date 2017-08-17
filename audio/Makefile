@@ -672,6 +672,7 @@
     SUBDIR += py3-pylast
     SUBDIR += pytone
     SUBDIR += qjackctl
+    SUBDIR += qmidiarp
     SUBDIR += qmpdclient
     SUBDIR += qsampler
     SUBDIR += qsynth
