@@ -751,6 +751,7 @@
     SUBDIR += splaytk
     SUBDIR += squash
     SUBDIR += sratom
+    SUBDIR += stk
     SUBDIR += streamripper
     SUBDIR += streamtranscoder
     SUBDIR += stymulator
