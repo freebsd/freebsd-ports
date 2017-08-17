@@ -495,6 +495,7 @@
     SUBDIR += mma
     SUBDIR += moc
     SUBDIR += modplugplay
+    SUBDIR += moony-lv2
     SUBDIR += mous
     SUBDIR += mp-player
     SUBDIR += mp3-archive-tools
