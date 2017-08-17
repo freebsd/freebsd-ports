@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xournal
-PORTVERSION=	0.4.8
-PORTREVISION=	6
+PORTVERSION=	0.4.8.2016
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
@@ -12,10 +11,13 @@ COMMENT=	Notetaking application that can annotate PDFs
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libpoppler-glib.so:graphics/poppler-glib
+LIB_DEPENDS=	libpoppler-glib.so:graphics/poppler-glib \
+		libfontconfig.so:x11-fonts/fontconfig \
+		libfreetype.so:print/freetype2
 
-USES=		pkgconfig desktop-file-utils shared-mime-info
-USE_GNOME=	libgnomecanvas
+USES=		pkgconfig
+USE_GNOME=	cairo libgnomecanvas
+USE_XORG=	x11
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--docdir="${DOCSDIR}"
 INSTALLS_ICONS=	yes
