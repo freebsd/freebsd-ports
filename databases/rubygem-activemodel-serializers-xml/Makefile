@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	activemodel-serializers-xml
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.2
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
@@ -13,7 +13,6 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
 RUN_DEPENDS=	rubygem-activemodel5>=5.0:databases/rubygem-activemodel5 \
-		rubygem-activerecord5>=5.0:databases/rubygem-activerecord5 \
 		rubygem-activesupport5>=5.0:devel/rubygem-activesupport5 \
 		rubygem-builder>=3.1:devel/rubygem-builder
 
