@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	moonlight-embedded
-PORTVERSION=	2.4.2
+PORTVERSION=	2.4.3
 DISTVERSIONPREFIX=	v
 CATEGORIES=	games
 
