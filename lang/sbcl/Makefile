@@ -1,33 +1,35 @@
 # $FreeBSD$
 
 PORTNAME=	sbcl
-PORTVERSION=	1.3.20
+DISTVERSION=	1.3.20
 DISTVERSIONSUFFIX=	-source
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	lang lisp
-MASTER_SITES=	SF/sbcl/sbcl/${PORTVERSION} \
-		LOCAL/marino:binaries
-DISTFILES=	sbcl-${PORTVERSION}-source.tar.bz2
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${DISTVERSION} \
+		SF/${PORTNAME}/${PORTNAME}/${BOOTVERSION}:binaries
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	krion@FreeBSD.org
 COMMENT=	Common Lisp development system derived from the CMU CL system
 
-LICENSE=	sbcl
+LICENSE=	${PORTNAME}
 LICENSE_NAME=	public domain | FreeBSD
 LICENSE_FILE=	${WRKSRC}/COPYING
 LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept dist-sell pkg-sell
 
+ONLY_FOR_ARCHS=	amd64 i386
+
 LIB_DEPENDS=	libgmp.so:math/gmp \
 		libmpfr.so:math/mpfr
+RUN_DEPENDS=	cl-asdf>=0:devel/cl-asdf
 
 USES=		gmake makeinfo tar:bzip2
 
-ONLY_FOR_ARCHS=	i386 amd64
-
-SBCL_BOOT_LIST=	1.0.31-amd64-freebsd8 \
-		1.0.31-i386-freebsd8 \
-		1.2.9-x86_64-dragonfly4
+BOOTVERSION=	1.2.7
+SBCL_BOOT_LIST=	${BOOTVERSION}-x86-64-freebsd \
+		${BOOTVERSION}-x86-freebsd \
+		${BOOTVERSION}-x86-64-dragonfly
 
 CONMODULES=	asdf sb-aclrepl sb-bsd-sockets sb-cltl2 sb-concurrency \
 		sb-cover sb-executable sb-gmp sb-grovel sb-introspect \
@@ -91,7 +93,7 @@ SAFEPOINT_VARS_OFF=	MAKE_SH_ARGS+="--without-sb-safepoint --without-sb-thruption
 SAFEPOINT_IMPLIES=	THREADS
 
 SBCL_VARS=		XC_HOST="${BOOT_WRKSRC}/src/runtime/sbcl --core ${BOOT_WRKSRC}/output/${CORE} --noinform --disable-debugger --no-sysinit --no-userinit"
-SBCL_DISTFILES=		sbcl-${SBCL_BOOT_LIST:M${ARCHOS_PATTERN}}-binary.tar.bz2:binaries
+SBCL_DISTFILES=		${PORTNAME}-${SBCL_BOOT_LIST:M${ARCHOS_PATTERN}}-binary${EXTRACT_SUFX}:binaries
 
 THREADS_VARS=		MAKE_SH_ARGS+="--with-sb-thread --with-restore-fs-segment-register-from-tls"
 THREADS_VARS_OFF=	MAKE_SH_ARGS+="--without-sb-thread --without-restore-fs-segment-register-from-tls"
@@ -109,14 +111,14 @@ PORTDOCS=	*
 
 .include <bsd.port.options.mk>
 
-ARCHOS_PATTERN=	*-${ARCH}-${OPSYS:tl}*
-BOOT_WRKSRC=	${WRKDIR}/sbcl-${SBCL_BOOT_LIST:M${ARCHOS_PATTERN}}
+ARCHOS_PATTERN=	*-${ARCH:S/amd64/x86-64/:S/i386/x86/}-${OPSYS:tl}*
+BOOT_WRKSRC=	${WRKDIR}/${PORTNAME}-${SBCL_BOOT_LIST:M${ARCHOS_PATTERN}}
 
 # for port maintenance, invoke "make makesum PLUS_BOOTSTRAPS=1"
 .if defined (PLUS_BOOTSTRAPS)
 . for B in ${SBCL_BOOT_LIST}
 .  if ! ${DISTFILES:Msbcl-${B}-*}
-DISTFILES:=	${DISTFILES} sbcl-${B}-binary.tar.bz2:binaries
+DISTFILES:=	${DISTFILES} ${PORTNAME}-${B}-binary${EXTRACT_SUFX}:binaries
 .  endif
 . endfor
 .endif
@@ -134,7 +136,7 @@ post-patch-RENAME-on:
 post-patch:
 	@${REINPLACE_CMD} -e 's|/etc|${PREFIX}/etc|' \
 		${WRKSRC}/src/code/toplevel.lisp \
-		${WRKSRC}/doc/sbcl.1 \
+		${WRKSRC}/doc/${PORTNAME}.1 \
 		${WRKSRC}/doc/manual/start-stop.texinfo
 
 do-build:
@@ -148,9 +150,9 @@ do-install:
 	DOC_DIR="${STAGEDIR}${DOCSDIR}" \
 	${SH} install.sh)
 .for M in ${CONMODULES}
-	${MKDIR} ${STAGEDIR}${PREFIX}/lib/sbcl/${M}
+	${MKDIR} ${STAGEDIR}${PREFIX}/lib/${PORTNAME}/${M}
 	${INSTALL_DATA} ${WRKSRC}/contrib/${M}/*.[la]* \
-		${STAGEDIR}${PREFIX}/lib/sbcl/${M}/
+		${STAGEDIR}${PREFIX}/lib/${PORTNAME}/${M}/
 .endfor
 	${INSTALL_DATA} ${WRKDIR}/sbclrc ${STAGEDIR}${PREFIX}/etc/sbclrc.sample
 
@@ -158,7 +160,7 @@ post-build-DOCS-on:
 	${DO_MAKE_BUILD} -C ${WRKSRC}/doc/manual info html
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/sbcl
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 post-install-DOCS-on:
 	${RM} ${STAGEDIR}${PREFIX}/${INFO_PATH}/dir # don't requered with INFO=
