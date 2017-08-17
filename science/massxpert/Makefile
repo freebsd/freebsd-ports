@@ -3,7 +3,7 @@
 
 PORTNAME=	massxpert
 PORTVERSION=	3.4.0
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	science
 MASTER_SITES=	http://download.tuxfamily.org/massxpert/source/
 
