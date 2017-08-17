@@ -41,9 +41,7 @@ OPTIONS_SUB=	yes
 
 BHYVE_CONFIGURE_WITH=	bhyve
 
-QEMU_CONFIGURE_WITH=	qemu yajl
-QEMU_CFLAGS=	-I${LOCALBASE}/include
-QEMU_LIB_DEPENDS=	libyajl.so:devel/yajl
+QEMU_CONFIGURE_WITH=	qemu
 QEMU_RUN_DEPENDS=	dmidecode:sysutils/dmidecode \
 			qemu-io:emulators/qemu
 
@@ -111,6 +109,11 @@ SUB_FILES=	pkg-message
 SUB_LIST+=	PORTVERSION="-${PORTVERSION}"
 
 .include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MQEMU} || ${PORT_OPTIONS:MNSS}
+LIB_DEPENDS+=		libyajl.so:devel/yajl
+CONFIGURE_ARGS+=	--with-yajl=${LOCALBASE}
+.endif
 
 .if !${PLIST_SUB:MXEN}
 PLIST_SUB+=	XEN="@comment "
