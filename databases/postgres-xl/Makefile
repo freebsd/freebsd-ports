@@ -11,8 +11,7 @@ COMMENT=	Scalable open source PostgreSQL-based database cluster
 
 LICENSE=	PostgreSQL
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/bash:shells/bash
-BUILD_DEPENDS=	${LOCALBASE}/bin/bash:shells/bash
+BUILD_DEPENDS=	bash:shells/bash
 
 CONFLICTS=	postgresql[^${PORTVERSION:R:R}]?-client* \
 		postgresql${COMPONENT}-[^${PORTVERSION:R:R}].* \
