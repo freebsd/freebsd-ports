@@ -1,5 +1,5 @@
---- src/cmd/auxstats/FreeBSD.c.orig	2010-03-18 01:25:34.000000000 +0300
-+++ src/cmd/auxstats/FreeBSD.c	2014-10-02 23:43:36.000000000 +0400
+--- src/cmd/auxstats/FreeBSD.c.orig	2017-07-23 11:11:56 UTC
++++ src/cmd/auxstats/FreeBSD.c
 @@ -8,20 +8,15 @@
  #include <sys/time.h>
  #include <sys/dkstat.h>
@@ -22,7 +22,7 @@
  void xapm(int);
  void xloadavg(int);
  void xcpu(int);
-@@ -45,7 +40,6 @@
+@@ -45,7 +40,6 @@ void (*statfn[])(int) =
  static kvm_t *kvm;
  
  static struct nlist nl[] = {
@@ -30,7 +30,7 @@
  	{ "_cp_time" },
  	{ "" }
  };
-@@ -86,45 +80,28 @@
+@@ -86,45 +80,28 @@ kread(ulong addr, char *buf, int size)
  void
  xnet(int first)
  {
