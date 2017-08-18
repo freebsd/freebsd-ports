@@ -1,6 +1,6 @@
-TIMESTAMP = 1501162350
-SHA256 (wjwithagen-ceph-wip.v2017-07-27-1_GH0.tar.gz) = 0c9ca0dee5ad347a6e3d3cd147bb36aae1acaa8d8b4ad6ea4317a4c706543caf
-SIZE (wjwithagen-ceph-wip.v2017-07-27-1_GH0.tar.gz) = 16773256
+TIMESTAMP = 1502801493
+SHA256 (wjwithagen-ceph-wip.v2017-08-15-1_GH0.tar.gz) = 171b8f5314e888c810289e282e7bffdbb9e1b1acb659b5e1d3530faea4e5eeeb
+SIZE (wjwithagen-ceph-wip.v2017-08-15-1_GH0.tar.gz) = 17068265
 SHA256 (ceph-ceph-erasure-code-corpus-2d7d78b_GH0.tar.gz) = 466f7185015df8d13f8b2b9a17ee30ab419bcd667284ce2b6d32a1128c4640f1
 SIZE (ceph-ceph-erasure-code-corpus-2d7d78b_GH0.tar.gz) = 3634266
 SHA256 (ceph-ceph-object-corpus-f0ba19f_GH0.tar.gz) = 90e4052c6dca0e272bdca492216e62fdc0d19719e121451798295799bdf95499

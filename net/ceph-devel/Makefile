@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ceph
-DISTVERSION=	wip.v2017-07-27-1
+DISTVERSION=	wip.v2017-08-15-1
 CATEGORIES=	net
 PKGNAMESUFFIX=	-devel
 
@@ -131,6 +131,12 @@ post-install:
 	${RM} ${STAGEDIR}${PREFIX}/bin/ceph_tpbench
 	${RM} ${STAGEDIR}${PREFIX}/bin/ceph_xattr_bench
 	${RM} ${STAGEDIR}${PREFIX}/sbin/ceph-disk-udev
+	# ceph-volume does not support ZFS
+	${RM} -rf ${STAGEDIR}${PYTHON_SITELIBDIR}/ceph_volume-*
+	${RM} -rf ${STAGEDIR}${PYTHON_SITELIBDIR}/ceph_volume/
+	${RM} ${STAGEDIR}${PREFIX}/sbin/ceph-volume
+	${RM} ${STAGEDIR}${PREFIX}/sbin/ceph-volume-systemd
+
 	${RMDIR} ${STAGEDIR}${PREFIX}/etc/init.d
 	${INSTALL_DATA} ${WRKSRC}/src/sample.ceph.conf ${STAGEDIR}${PREFIX}/etc/ceph/ceph.conf.sample
 
