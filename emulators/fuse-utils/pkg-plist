@@ -14,10 +14,12 @@ bin/tape2pulses
 bin/tape2wav
 bin/tapeconv
 bin/tzxlist
+man/man1/audio2tape.1.gz
 man/man1/createhdf.1.gz
 man/man1/fmfconv.1.gz
 man/man1/fuse-utils.1.gz
 man/man1/listbasic.1.gz
+man/man1/profile2map.1.gz
 man/man1/raw2hdf.1.gz
 man/man1/rzxcheck.1.gz
 man/man1/rzxdump.1.gz
@@ -25,12 +27,10 @@ man/man1/rzxtool.1.gz
 man/man1/scl2trd.1.gz
 man/man1/snap2tzx.1.gz
 man/man1/snapconv.1.gz
-man/man1/tapeconv.1.gz
-man/man1/tzxlist.1.gz
-man/man1/profile2map.1.gz
-man/man1/audio2tape.1.gz
 man/man1/tape2pulses.1.gz
 man/man1/tape2wav.1.gz
+man/man1/tapeconv.1.gz
+man/man1/tzxlist.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/README

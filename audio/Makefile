@@ -55,6 +55,7 @@
     SUBDIR += beep
     SUBDIR += beets
     SUBDIR += blop
+    SUBDIR += blop-lv2
     SUBDIR += boodler
     SUBDIR += bristol
     SUBDIR += calf
@@ -328,6 +329,7 @@
     SUBDIR += id3v2
     SUBDIR += idjc
     SUBDIR += ifp-line
+    SUBDIR += ir-lv2
     SUBDIR += jack
     SUBDIR += jack-keyboard
     SUBDIR += jack-rack
@@ -335,6 +337,7 @@
     SUBDIR += jack_ghero
     SUBDIR += jack_mixer
     SUBDIR += jack_umidi
+    SUBDIR += jalv
     SUBDIR += jamin
     SUBDIR += jid3lib
     SUBDIR += jmusic
@@ -470,6 +473,7 @@
     SUBDIR += lpac
     SUBDIR += lua51-mpd
     SUBDIR += lv2
+    SUBDIR += lv2file
     SUBDIR += lvtk
     SUBDIR += lxmusic
     SUBDIR += mac
@@ -485,6 +489,7 @@
     SUBDIR += mctoolame-encoder
     SUBDIR += mda-lv2
     SUBDIR += mhwaveedit
+    SUBDIR += midi-matrix-lv2
     SUBDIR += midipp
     SUBDIR += mikmod
     SUBDIR += milkytracker
@@ -495,6 +500,7 @@
     SUBDIR += mma
     SUBDIR += moc
     SUBDIR += modplugplay
+    SUBDIR += moony-lv2
     SUBDIR += mous
     SUBDIR += mp-player
     SUBDIR += mp3-archive-tools
@@ -667,6 +673,7 @@
     SUBDIR += py3-pylast
     SUBDIR += pytone
     SUBDIR += qjackctl
+    SUBDIR += qmidiarp
     SUBDIR += qmpdclient
     SUBDIR += qsampler
     SUBDIR += qsynth
@@ -751,6 +758,7 @@
     SUBDIR += splaytk
     SUBDIR += squash
     SUBDIR += sratom
+    SUBDIR += stk
     SUBDIR += streamripper
     SUBDIR += streamtranscoder
     SUBDIR += stymulator

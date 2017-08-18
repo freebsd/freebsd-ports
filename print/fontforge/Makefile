@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fontforge
-PORTVERSION=	20161005
-PORTREVISION=	2
+PORTVERSION=	20170731
 CATEGORIES=	print
 DISTFILES=	# Empty but needed because of the freetype distfile
 
@@ -62,7 +61,7 @@ MASTER_SITES+=	http://savannah.nongnu.org/download/freetype/:freetype \
 		http://www.funet.fi/pub/mirrors/ftp.freetype.org/freetype2/:freetype \
 		http://ftp.sunet.se/pub/text-processing/freetype/freetype2/:freetype \
 		ftp://ftp.freetype.org/freetype/freetype2/:freetype
-FREETYPE_VERSION=	2.6.3
+FREETYPE_VERSION=	2.8
 FREETYPE_SRC=	freetype-${FREETYPE_VERSION}.tar.bz2
 DISTFILES+=	${FREETYPE_SRC:C/$/:freetype/}
 CONFIGURE_ARGS+=	--enable-freetype-debugger=${WRKDIR}/freetype-${FREETYPE_VERSION}

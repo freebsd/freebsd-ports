@@ -47,6 +47,7 @@ include/fontforge/gwwiconv.h
 include/fontforge/intl.h
 include/fontforge/libffstamp.h
 include/fontforge/lookups.h
+include/fontforge/mem.h
 include/fontforge/mm.h
 include/fontforge/namehash.h
 include/fontforge/nonlineartrans.h
@@ -135,7 +136,9 @@ share/applications/fontforge.desktop
 %%DATADIR%%/pixmaps/OFL.txt
 %%DATADIR%%/pixmaps/changeweight.png
 %%DATADIR%%/pixmaps/charviewicon.xbm
+%%DATADIR%%/pixmaps/check_off_disabled.png
 %%DATADIR%%/pixmaps/check_off.png
+%%DATADIR%%/pixmaps/check_on_disabled.png
 %%DATADIR%%/pixmaps/check_on.png
 %%DATADIR%%/pixmaps/chooseraudio.png
 %%DATADIR%%/pixmaps/chooserback.png
@@ -394,7 +397,9 @@ share/applications/fontforge.desktop
 %%DATADIR%%/pixmaps/ptinfohvcurve.png
 %%DATADIR%%/pixmaps/ptinfotangent.png
 %%DATADIR%%/pixmaps/python.png
+%%DATADIR%%/pixmaps/radio_off_disabled.png
 %%DATADIR%%/pixmaps/radio_off.png
+%%DATADIR%%/pixmaps/radio_on_disabled.png
 %%DATADIR%%/pixmaps/radio_on.png
 %%DATADIR%%/pixmaps/resources
 %%DATADIR%%/pixmaps/rmoverlap.png
@@ -489,12 +494,14 @@ share/applications/fontforge.desktop
 %%PYTHON%%%%DATADIR%%/python/simple/expand-a.py
 %%PYTHON%%%%DATADIR%%/python/simple/load-font-and-show-name.py
 %%PYTHON%%%%DATADIR%%/python/test.sfd
+share/icons/hicolor/128x128/apps/fontforge.png
 share/icons/hicolor/16x16/apps/fontforge.png
 share/icons/hicolor/22x22/apps/fontforge.png
 share/icons/hicolor/24x24/apps/fontforge.png
 share/icons/hicolor/256x256/apps/fontforge.png
 share/icons/hicolor/32x32/apps/fontforge.png
 share/icons/hicolor/48x48/apps/fontforge.png
+share/icons/hicolor/64x64/apps/fontforge.png
 share/icons/hicolor/scalable/apps/fontforge.svg
 share/locale/ca/LC_MESSAGES/FontForge.mo
 share/locale/de/LC_MESSAGES/FontForge.mo

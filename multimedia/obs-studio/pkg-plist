@@ -134,6 +134,7 @@ share/obs/obs-plugins/frontend-tools/locale/ca-ES.ini
 share/obs/obs-plugins/frontend-tools/locale/cs-CZ.ini
 share/obs/obs-plugins/frontend-tools/locale/da-DK.ini
 share/obs/obs-plugins/frontend-tools/locale/de-DE.ini
+share/obs/obs-plugins/frontend-tools/locale/el-GR.ini
 share/obs/obs-plugins/frontend-tools/locale/en-US.ini
 share/obs/obs-plugins/frontend-tools/locale/es-ES.ini
 share/obs/obs-plugins/frontend-tools/locale/et-EE.ini
@@ -201,6 +202,7 @@ share/obs/obs-plugins/image-source/locale/sv-SE.ini
 share/obs/obs-plugins/image-source/locale/th-TH.ini
 share/obs/obs-plugins/image-source/locale/tr-TR.ini
 share/obs/obs-plugins/image-source/locale/uk-UA.ini
+share/obs/obs-plugins/image-source/locale/vi-VN.ini
 share/obs/obs-plugins/image-source/locale/zh-CN.ini
 share/obs/obs-plugins/image-source/locale/zh-TW.ini
 share/obs/obs-plugins/linux-capture/locale/ar-SA.ini
@@ -316,6 +318,7 @@ share/obs/obs-plugins/linux-pulseaudio/locale/sr-SP.ini
 share/obs/obs-plugins/linux-pulseaudio/locale/sv-SE.ini
 share/obs/obs-plugins/linux-pulseaudio/locale/th-TH.ini
 share/obs/obs-plugins/linux-pulseaudio/locale/tr-TR.ini
+share/obs/obs-plugins/linux-pulseaudio/locale/vi-VN.ini
 share/obs/obs-plugins/linux-pulseaudio/locale/uk-UA.ini
 share/obs/obs-plugins/linux-pulseaudio/locale/zh-CN.ini
 share/obs/obs-plugins/linux-pulseaudio/locale/zh-TW.ini
@@ -355,6 +358,7 @@ share/obs/obs-plugins/linux-v4l2/locale/sr-SP.ini
 share/obs/obs-plugins/linux-v4l2/locale/sv-SE.ini
 share/obs/obs-plugins/linux-v4l2/locale/th-TH.ini
 share/obs/obs-plugins/linux-v4l2/locale/tr-TR.ini
+share/obs/obs-plugins/linux-v4l2/locale/vi-VN.ini
 share/obs/obs-plugins/linux-v4l2/locale/uk-UA.ini
 share/obs/obs-plugins/linux-v4l2/locale/zh-CN.ini
 share/obs/obs-plugins/linux-v4l2/locale/zh-TW.ini
@@ -445,6 +449,7 @@ share/obs/obs-plugins/obs-filters/locale/sr-CS.ini
 share/obs/obs-plugins/obs-filters/locale/sr-SP.ini
 share/obs/obs-plugins/obs-filters/locale/sv-SE.ini
 share/obs/obs-plugins/obs-filters/locale/tr-TR.ini
+share/obs/obs-plugins/obs-filters/locale/vi-VN.ini
 share/obs/obs-plugins/obs-filters/locale/uk-UA.ini
 share/obs/obs-plugins/obs-filters/locale/zh-CN.ini
 share/obs/obs-plugins/obs-filters/locale/zh-TW.ini
@@ -486,6 +491,7 @@ share/obs/obs-plugins/obs-libfdk/locale/sr-SP.ini
 share/obs/obs-plugins/obs-libfdk/locale/sv-SE.ini
 share/obs/obs-plugins/obs-libfdk/locale/th-TH.ini
 share/obs/obs-plugins/obs-libfdk/locale/tr-TR.ini
+share/obs/obs-plugins/obs-libfdk/locale/vi-VN.ini
 share/obs/obs-plugins/obs-libfdk/locale/uk-UA.ini
 share/obs/obs-plugins/obs-libfdk/locale/ur-PK.ini
 share/obs/obs-plugins/obs-libfdk/locale/zh-CN.ini
@@ -563,6 +569,7 @@ share/obs/obs-plugins/obs-transitions/locale/sr-CS.ini
 share/obs/obs-plugins/obs-transitions/locale/sr-SP.ini
 share/obs/obs-plugins/obs-transitions/locale/sv-SE.ini
 share/obs/obs-plugins/obs-transitions/locale/tr-TR.ini
+share/obs/obs-plugins/obs-transitions/locale/vi-VN.ini
 share/obs/obs-plugins/obs-transitions/locale/uk-UA.ini
 share/obs/obs-plugins/obs-transitions/locale/zh-CN.ini
 share/obs/obs-plugins/obs-transitions/locale/zh-TW.ini
@@ -681,6 +688,7 @@ share/obs/obs-plugins/rtmp-services/locale/sr-SP.ini
 share/obs/obs-plugins/rtmp-services/locale/sv-SE.ini
 share/obs/obs-plugins/rtmp-services/locale/th-TH.ini
 share/obs/obs-plugins/rtmp-services/locale/tr-TR.ini
+share/obs/obs-plugins/rtmp-services/locale/vi-VN.ini
 share/obs/obs-plugins/rtmp-services/locale/uk-UA.ini
 share/obs/obs-plugins/rtmp-services/locale/ur-PK.ini
 share/obs/obs-plugins/rtmp-services/locale/zh-CN.ini
@@ -722,12 +730,14 @@ share/obs/obs-plugins/text-freetype2/locale/sr-SP.ini
 share/obs/obs-plugins/text-freetype2/locale/sv-SE.ini
 share/obs/obs-plugins/text-freetype2/locale/th-TH.ini
 share/obs/obs-plugins/text-freetype2/locale/tr-TR.ini
+share/obs/obs-plugins/text-freetype2/locale/vi-VN.ini
 share/obs/obs-plugins/text-freetype2/locale/uk-UA.ini
 share/obs/obs-plugins/text-freetype2/locale/zh-CN.ini
 share/obs/obs-plugins/text-freetype2/locale/zh-TW.ini
 share/obs/obs-plugins/text-freetype2/text_default.effect
 share/obs/obs-studio/license/gplv2.txt
 share/obs/obs-studio/locale.ini
+share/obs/obs-studio/locale/af-ZA.ini
 share/obs/obs-studio/locale/ar-SA.ini
 share/obs/obs-studio/locale/bg-BG.ini
 share/obs/obs-studio/locale/bn-BD.ini
@@ -770,6 +780,28 @@ share/obs/obs-studio/locale/uk-UA.ini
 share/obs/obs-studio/locale/vi-VN.ini
 share/obs/obs-studio/locale/zh-CN.ini
 share/obs/obs-studio/locale/zh-TW.ini
+share/obs/obs-studio/themes/Rachni.qss
+share/obs/obs-studio/themes/Rachni/checkbox_checked.png
+share/obs/obs-studio/themes/Rachni/checkbox_checked_disabled.png
+share/obs/obs-studio/themes/Rachni/checkbox_checked_focus.png
+share/obs/obs-studio/themes/Rachni/checkbox_unchecked.png
+share/obs/obs-studio/themes/Rachni/checkbox_unchecked_disabled.png
+share/obs/obs-studio/themes/Rachni/checkbox_unchecked_focus.png
+share/obs/obs-studio/themes/Rachni/down_arrow.png
+share/obs/obs-studio/themes/Rachni/down_arrow_disabled.png
+share/obs/obs-studio/themes/Rachni/left_arrow.png
+share/obs/obs-studio/themes/Rachni/left_arrow_disabled.png
+share/obs/obs-studio/themes/Rachni/radio_checked.png
+share/obs/obs-studio/themes/Rachni/radio_checked_disabled.png
+share/obs/obs-studio/themes/Rachni/radio_checked_focus.png
+share/obs/obs-studio/themes/Rachni/radio_unchecked.png
+share/obs/obs-studio/themes/Rachni/radio_unchecked_disabled.png
+share/obs/obs-studio/themes/Rachni/radio_unchecked_focus.png
+share/obs/obs-studio/themes/Rachni/right_arrow.png
+share/obs/obs-studio/themes/Rachni/right_arrow_disabled.png
+share/obs/obs-studio/themes/Rachni/sizegrip.png
+share/obs/obs-studio/themes/Rachni/up_arrow.png
+share/obs/obs-studio/themes/Rachni/up_arrow_disabled.png
 share/obs/obs-studio/themes/Dark.qss
 share/obs/obs-studio/themes/Dark/cogwheel.png
 share/obs/obs-studio/themes/Dark/down_arrow.png

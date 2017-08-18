@@ -1,0 +1,11 @@
+--- wscript.orig	2017-08-04 04:48:22 UTC
++++ wscript
+@@ -61,7 +61,7 @@ def configure(conf):
+                       atleast_version='0.6.0', mandatory=True)
+     autowaf.check_pkg(conf, 'sratom-0', uselib_store='SRATOM',
+                       atleast_version='0.6.0', mandatory=True)
+-    if Options.options.portaudio:
++    if False and Options.options.portaudio:
+         autowaf.check_pkg(conf, 'portaudio-2.0', uselib_store='PORTAUDIO',
+                           atleast_version='2.0.0', mandatory=False)
+     else:

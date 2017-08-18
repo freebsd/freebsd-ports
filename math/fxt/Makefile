@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fxt
-DISTVERSION=	2017.06.27
+DISTVERSION=	2017.07.25
 CATEGORIES=	math
 MASTER_SITES=	http://www.jjj.de/fxt/
 
