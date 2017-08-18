@@ -33,6 +33,7 @@
     SUBDIR += cinnamon-screensaver
     SUBDIR += cinnamon-session
     SUBDIR += cl-clx
+    SUBDIR += cl-clx-sbcl
     SUBDIR += compositeproto
     SUBDIR += controllermap
     SUBDIR += cool-retro-term
