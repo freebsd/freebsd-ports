@@ -24,9 +24,3 @@ lib/libopenal.so.1.18.0
 lib/libopenal.so.1
 lib/libopenal.so
 libdata/pkgconfig/openal.pc
-%%EXAMPLES%%bin/alffplay
-%%EXAMPLES%%bin/alhrtf
-%%EXAMPLES%%bin/allatency
-%%EXAMPLES%%bin/alloopback
-%%EXAMPLES%%bin/alreverb
-%%EXAMPLES%%bin/alstream
