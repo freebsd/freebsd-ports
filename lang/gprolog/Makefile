@@ -40,7 +40,7 @@ FD_CONFIGURE_OFF=	--disable-fd-solver
 # See: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=852008
 .include <bsd.port.pre.mk>
 .if ${ARCH} == i386
-CONFIGURE_ARGS=		--disable-regs
+CONFIGURE_ARGS+=		--disable-regs
 .endif
 
 post-configure:
