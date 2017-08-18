@@ -2,6 +2,10 @@ bin/sysadm
 bin/sysadm-client
 share/applications/sysadm-client.desktop
 share/applications/sysadm-moused.desktop
+share/applications/sysadm-devicemanager.desktop
+share/applications/sysadm-servicemanager.desktop
+share/applications/sysadm-taskmanager.desktop
+share/applications/sysadm-usermanager.desktop
 share/applications/sysadm-updatemanager.desktop
 share/applications/pccontrol.desktop
 share/applications/appcafe.desktop
