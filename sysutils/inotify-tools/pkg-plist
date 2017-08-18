@@ -1,5 +1,7 @@
 bin/inotifywait
 bin/inotifywatch
+%%STATIC%%bin/inotifywait.static
+%%STATIC%%bin/inotifywatch.static
 include/inotifytools/inotify-nosys.h
 include/inotifytools/inotify.h
 include/inotifytools/inotifytools.h

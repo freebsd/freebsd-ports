@@ -16,6 +16,7 @@
 # milteropendkim_enable (bool):   Set to "NO" by default.
 #                             Set it to "YES" to enable dkim-milter
 # milteropendkim_uid (str):       Set username to run milter.
+# milteropendkim_gid (str):       Set group to run milter.
 # milteropendkim_profiles (list): Set to "" by default.
 #                             Define your profiles here.
 # milteropendkim_cfgfile (str):   Configuration file. See opendkim.conf(5)
@@ -38,9 +39,11 @@ rcvar=milteropendkim_enable
 
 extra_commands="reload"
 start_precmd="dkim_prepcmd"
+start_postcmd="dkim_start_postcmd"
 stop_postcmd="dkim_postcmd"
 command="%%PREFIX%%/sbin/opendkim"
 _piddir="/var/run/milteropendkim"
+_piddir_perms="0755"
 pidfile="${_piddir}/pid"
 sig_reload="USR1"
 
@@ -51,6 +54,7 @@ load_rc_config $name
 #
 : ${milteropendkim_enable="NO"}
 : ${milteropendkim_uid="mailnull"}
+: ${milteropendkim_gid="mailnull"}
 : ${milteropendkim_cfgfile="%%PREFIX%%/etc/mail/opendkim.conf"}
 
 # Options other than above can be set with $milteropendkim_flags.
@@ -82,6 +86,9 @@ if [ -n "$2" ]; then
 	fi
 	if [ "x${milteropendkim_uid}" != "x" ];then
 	    _uid_prefix="-u"
+	    if [ "x${milteropendkim_gid}" != "x" ];then
+		milteropendkim_uid=${milteropendkim_uid}:${milteropendkim_gid}
+	    fi
 	fi
 	if [ "x${milteropendkim_domain}" != "x" ];then
 	    milteropendkim_domain="-d ${milteropendkim_domain}"
@@ -127,6 +134,9 @@ else
 	fi
 	if [ "x${milteropendkim_uid}" != "x" ];then
 	    _uid_prefix="-u"
+	    if [ "x${milteropendkim_gid}" != "x" ];then
+		milteropendkim_uid=${milteropendkim_uid}:${milteropendkim_gid}
+	    fi
 	fi
 	if [ "x${milteropendkim_domain}" != "x" ];then
 	    milteropendkim_domain="-d ${milteropendkim_domain}"
@@ -156,6 +166,22 @@ dkim_prepcmd ()
     fi
     if [ -n "${milteropendkim_uid}" ] ; then
 	chown ${milteropendkim_uid} ${_piddir}
+    fi
+    if [ -n "${milteropendkim_gid}" ] ; then
+       chgrp ${milteropendkim_gid} ${_piddir}
+       _piddir_perms="0775"
+    fi
+    chmod ${_piddir_perms} ${_piddir}
+}
+
+dkim_start_postcmd ()
+{
+    # postcmd is executed too fast and socket is not created before checking...
+    sleep 1
+    if [ -S ${milteropendkim_socket##local:} ] ; then
+        chmod ${_piddir_perms} ${milteropendkim_socket##local:}
+    elif [ -S ${milteropendkim_socket##unix:} ] ; then
+        chmod ${_piddir_perms} ${milteropendkim_socket##unix:}
     fi
 }
 

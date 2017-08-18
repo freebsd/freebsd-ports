@@ -113,6 +113,11 @@ lib/ceph/mgr/restful/api/__init__.py
 lib/ceph/mgr/restful/hooks.py
 lib/ceph/mgr/restful/decorators.py
 lib/ceph/mgr/dashboard/HACKING.rst
+lib/ceph/mgr/dashboard/rbd_iscsi.html
+lib/ceph/mgr/dashboard/rbd_iscsi.py
+lib/ceph/mgr/dashboard/rbd_mirroring.html
+lib/ceph/mgr/dashboard/rbd_mirroring.py
+lib/ceph/mgr/dashboard/rbd_pool.html
 lib/ceph/mgr/dashboard/static/Ceph_Logo_Standard_RGB_White_120411_fa.png
 lib/ceph/mgr/dashboard/static/logo-mini.png
 lib/ceph/mgr/dashboard/static/AdminLTE-2.3.7/.gitignore
@@ -1168,7 +1173,6 @@ lib/ceph/mgr/dashboard/static/favicon.ico
 lib/ceph/mgr/dashboard/static/rivets.bundled.min.js
 lib/ceph/mgr/dashboard/static/underscore-min.js
 lib/ceph/mgr/dashboard/servers.html
-lib/ceph/mgr/dashboard/rbd.html
 lib/ceph/mgr/dashboard/clients.html
 lib/ceph/mgr/dashboard/osd_perf.html
 lib/ceph/mgr/dashboard/remote_view_cache.py
@@ -1182,6 +1186,8 @@ lib/ceph/mgr/dashboard/README.rst
 lib/ceph/mgr/dashboard/filesystem.html
 lib/ceph/mgr/dashboard/types.py
 lib/ceph/mgr/dashboard/__init__.py
+lib/ceph/mgr/prometheus/__init__.py
+lib/ceph/mgr/prometheus/module.py
 lib/ceph/mgr/zabbix/module.py
 lib/ceph/mgr/zabbix/zabbix_template.xml
 lib/ceph/mgr/zabbix/__init__.py
