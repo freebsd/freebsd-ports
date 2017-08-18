@@ -39,6 +39,11 @@ MAKE_ENV=	STDCCFLAGS+="-I${LOCALBASE}"
 CPPFLAGS+=	-O1 -I${WRKSRC}/include -I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
+# The port does not build with C++11 or later (bug 219275), and it also uses
+# CFLAGS instead of CXXFLAGS in parts of the build system, so we cannot just
+# use USE_CXXSTD.
+CFLAGS+=	-std=gnu++03
+
 CONFIGURE_ENV+=	ATOMICITY_H="<ext/atomicity.h>"
 
 SDL_USE=	SDL=sdl
