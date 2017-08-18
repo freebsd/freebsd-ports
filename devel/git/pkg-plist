@@ -636,6 +636,7 @@ man/man7/gitworkflows.7.gz
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.13.0.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.13.1.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.13.2.txt
+%%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.13.3.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.2.0.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.2.1.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.2.2.txt
@@ -1248,7 +1249,8 @@ share/emacs/site-lisp/git/git.el
 %%CONTRIB%%share/git-core/contrib/credential/wincred/git-credential-wincred.c
 %%CONTRIB%%share/git-core/contrib/diff-highlight/Makefile
 %%CONTRIB%%share/git-core/contrib/diff-highlight/README
-%%CONTRIB%%share/git-core/contrib/diff-highlight/diff-highlight
+%%CONTRIB%%share/git-core/contrib/diff-highlight/DiffHighlight.pm
+%%CONTRIB%%share/git-core/contrib/diff-highlight/diff-highlight.perl
 @comment share/git-core/contrib/diff-highlight/t/.gitignore
 %%CONTRIB%%share/git-core/contrib/diff-highlight/t/Makefile
 %%CONTRIB%%share/git-core/contrib/diff-highlight/t/t9400-diff-highlight.sh
