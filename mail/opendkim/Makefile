@@ -3,7 +3,7 @@
 
 PORTNAME=		opendkim
 PORTVERSION=		2.10.3
-PORTREVISION=		6
+PORTREVISION=		7
 CATEGORIES=		mail security
 MASTER_SITES=		SF/${PORTNAME} \
 			SF/${PORTNAME}/Previous%20Releases \
