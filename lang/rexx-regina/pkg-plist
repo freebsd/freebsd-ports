@@ -10,6 +10,7 @@ lib/Regina-REXX/addons/librxtest2.so
 lib/libregina.a
 lib/libregina.so
 man/man1/regina.1.gz
+man/man1/rexx.1.gz
 man/man1/regina-config.1.gz
 man/man1/rxqueue.1.gz
 man/man1/rxstack.1.gz
