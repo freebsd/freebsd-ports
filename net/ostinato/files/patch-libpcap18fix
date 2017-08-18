@@ -1,0 +1,24 @@
+Patch to fix building with libpcap 1.8 branch which doesn't properly
+ensure HAVE_REMOTE declarations are only for WIN32 systems
+--- rpc/pbrpc.pro.orig	2017-08-18 15:00:23 UTC
++++ rpc/pbrpc.pro
+@@ -1,7 +1,7 @@
+ TEMPLATE = lib
+ CONFIG += qt staticlib
+ QT += network
+-DEFINES += HAVE_REMOTE
++#DEFINES += HAVE_REMOTE
+ LIBS += -lprotobuf
+ HEADERS += rpcserver.h rpcconn.h pbrpccontroller.h pbrpcchannel.h pbqtio.h
+ SOURCES += rpcserver.cpp rpcconn.cpp pbrpcchannel.cpp
+--- server/drone.pro.orig	2017-08-18 15:00:47 UTC
++++ server/drone.pro
+@@ -2,7 +2,7 @@ TEMPLATE = app
+ CONFIG += qt ver_info
+ QT += network script xml
+ QT -= gui
+-DEFINES += HAVE_REMOTE WPCAP
++#DEFINES += HAVE_REMOTE WPCAP
+ linux*:system(grep -q IFLA_STATS64 /usr/include/linux/if_link.h): \
+     DEFINES += HAVE_IFLA_STATS64
+ INCLUDEPATH += "../rpc"
