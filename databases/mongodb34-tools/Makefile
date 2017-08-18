@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	mongodb34-tools
-PORTVERSION=	3.4.5
+PORTVERSION=	3.4.7
 DISTVERSIONPREFIX=	r
 CATEGORIES=	databases net
 
@@ -11,6 +11,8 @@ COMMENT=	Tools for MongoDB
 LICENSE=	APACHE20
 
 BUILD_DEPENDS=	go>0:lang/go
+
+USES=	localbase
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	mongodb
@@ -25,7 +27,7 @@ SASL_LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2
 SSL_USES=	ssl
 SSL_USE=	my_tags=ssl
 
-ONLY_FOR_ARCHS=	i386 amd64
+ONLY_FOR_ARCHS=	amd64 i386
 ONLY_FOR_ARCHS_REASON=	"not yet ported to anything other than i386 and amd64"
 
 STRIP=		# Stripping can break go binaries
@@ -36,7 +38,6 @@ MAKE_ENV=	GOPATH="${WRKSRC}/.gopath:${WRKSRC}/vendor" \
 		CGO_CFLAGS="${CFLAGS}" CGO_CPPFLAGS="${CPPFLAGS}" \
 		CGO_CXXFLAGS="${CXXFLAGS}" CGO_LDFLAGS="-L${LOCALBASE}/lib ${LDFLAGS}"
 
-USES=	localbase
 MY_TAGS=	-tags "${USE_MY_TAGS}"
 
 post-patch:

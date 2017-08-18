@@ -4,6 +4,7 @@
 %%MACRODIR%%/ax_add_am_macro.m4
 %%MACRODIR%%/ax_add_am_macro_static.m4
 %%MACRODIR%%/ax_add_am_trilinos_makefile_export.m4
+%%MACRODIR%%/ax_add_fortify_source.m4
 %%MACRODIR%%/ax_add_recursive_am_macro.m4
 %%MACRODIR%%/ax_add_recursive_am_macro_static.m4
 %%MACRODIR%%/ax_afs.m4
@@ -49,7 +50,6 @@
 %%MACRODIR%%/ax_c99_inline.m4
 %%MACRODIR%%/ax_c___attribute__.m4
 %%MACRODIR%%/ax_c_arithmetic_rshift.m4
-%%MACRODIR%%/ax_c_bigendian_cross.m4
 %%MACRODIR%%/ax_c_compile_value.m4
 %%MACRODIR%%/ax_c_declare_block.m4
 %%MACRODIR%%/ax_c_float_words_bigendian.m4
@@ -202,7 +202,7 @@
 %%MACRODIR%%/ax_cxx_compile_stdcxx_0x.m4
 %%MACRODIR%%/ax_cxx_compile_stdcxx_11.m4
 %%MACRODIR%%/ax_cxx_compile_stdcxx_14.m4
-%%MACRODIR%%/ax_cxx_compiler_vendor.m4
+%%MACRODIR%%/ax_cxx_compile_stdcxx_17.m4
 %%MACRODIR%%/ax_cxx_complex_math_in_namespace_std.m4
 %%MACRODIR%%/ax_cxx_const_cast.m4
 %%MACRODIR%%/ax_cxx_cppflags_std_lang.m4
@@ -306,6 +306,7 @@
 %%MACRODIR%%/ax_ext.m4
 %%MACRODIR%%/ax_ext_check_header.m4
 %%MACRODIR%%/ax_ext_have_lib.m4
+%%MACRODIR%%/ax_extend_srcdir.m4
 %%MACRODIR%%/ax_extra_dist.m4
 %%MACRODIR%%/ax_f77_cmain_fflags.m4
 %%MACRODIR%%/ax_f90_header.m4
@@ -335,11 +336,9 @@
 %%MACRODIR%%/ax_gcc_func_attribute.m4
 %%MACRODIR%%/ax_gcc_lib.m4
 %%MACRODIR%%/ax_gcc_libgcc_eh.m4
-%%MACRODIR%%/ax_gcc_libraries_dir.m4
 %%MACRODIR%%/ax_gcc_libsupcxx.m4
 %%MACRODIR%%/ax_gcc_malloc_call.m4
 %%MACRODIR%%/ax_gcc_var_attribute.m4
-%%MACRODIR%%/ax_gcc_version.m4
 %%MACRODIR%%/ax_gcc_warn_unused_result.m4
 %%MACRODIR%%/ax_gcc_x86_avx_xgetbv.m4
 %%MACRODIR%%/ax_gcc_x86_cpu_supports.m4
@@ -348,7 +347,6 @@
 %%MACRODIR%%/ax_gnu_autotest.m4
 %%MACRODIR%%/ax_have_adns.m4
 %%MACRODIR%%/ax_have_epoll.m4
-%%MACRODIR%%/ax_have_opengl.m4
 %%MACRODIR%%/ax_have_poll.m4
 %%MACRODIR%%/ax_have_qt.m4
 %%MACRODIR%%/ax_have_select.m4
@@ -436,6 +434,7 @@
 %%MACRODIR%%/ax_prog_crontab.m4
 %%MACRODIR%%/ax_prog_cxx_for_build.m4
 %%MACRODIR%%/ax_prog_cxx_mpi.m4
+%%MACRODIR%%/ax_prog_dotnetcore_version.m4
 %%MACRODIR%%/ax_prog_doxygen.m4
 %%MACRODIR%%/ax_prog_f77_mpi.m4
 %%MACRODIR%%/ax_prog_fasm.m4

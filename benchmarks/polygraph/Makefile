@@ -21,6 +21,9 @@ SHEBANG_FILES=	tools/*.pl
 USE_GCC=	any
 GNU_CONFIGURE=	yes
 
+# The port does not build with C++11 or later (bug 219275).
+USE_CXXSTD=	gnu++03
+
 CONFLICTS=	ltrace-0*
 
 OPTIONS_DEFINE=		DOCS GNUPLOT GSSAPI LDNS PERL SSL ZLIB

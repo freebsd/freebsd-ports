@@ -11,7 +11,7 @@ MAINTAINER=	kwm@FreeBSD.org
 COMMENT=	Set of useful GNU Autoconf macros
 
 USES=		makeinfo tar:xz
-DISTDATE=	2016.09.16
+DISTDATE=	2017.03.21
 GNU_CONFIGURE=	yes
 INFO=		${PORTNAME}
 
