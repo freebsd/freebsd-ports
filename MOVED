@@ -4820,7 +4820,6 @@ news/lottanzb||2013-08-27|Has expired: Broken for more than 6 months
 textproc/xaira||2013-08-27|Has expired: Broken for more than 6 months
 graphics/f90gl||2013-08-27|Has expired: Broken for more than 6 months
 multimedia/linux-gspca-kmod||2013-08-27|Has expired: Broken for more than 6 months
-x11/cl-clx-sbcl||2013-08-27|Has expired: Broken for more than 6 months
 math/dislin||2013-08-27|Has expired: Broken for more than 6 months
 irc/smuxi||2013-08-27|Has expired: Broken for more than 6 months
 java/icedtea6-stubs||2013-08-27|Has expired: Broken for more than 6 months
@@ -6030,7 +6029,6 @@ lang/pnetlib||2014-05-04|Has expired: Alpha-quality abandonware - Decommissioned
 lang/pnet-base||2014-05-04|Has expired: Alpha-quality abandonware - Decommissioned Dec 2012 - Use mono
 benchmarks/pnetmark||2014-05-04|Has expired: PNET dependency decommissioned Dec 2012
 lang/pnet||2014-05-04|Has expired: Alpha-quality abandonware - Decommissioned Dec 2012 - Use mono
-x11-wm/stumpwm||2014-05-04|Has expired: Broken for more than 4 months
 sysutils/cpupowerd||2014-05-04|Has expired: Not maintained from upstream anymore and only supports ancient AMD K8
 net/pchar||2014-05-04|Has expired: Obsolete, abandoned
 x11-fonts/texcm-ttf||2014-05-04|Has expired: Should be replaced by x11-fonts/stix-fonts

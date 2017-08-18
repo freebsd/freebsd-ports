@@ -5,6 +5,6 @@ MASTERDIR=	${.CURDIR}/../py-fonttools
 
 PORTSCOUT=	ignore:1
 
-USES=		python:3
+USES=		python:3 zip
 
 .include "${MASTERDIR}/Makefile"

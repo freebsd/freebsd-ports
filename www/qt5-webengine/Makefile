@@ -16,6 +16,7 @@
 
 PORTNAME=	webengine
 DISTVERSION=	${QT5_VERSION}
+PORTREVISION=	1
 CATEGORIES=	www
 PKGNAMEPREFIX=	qt5-
 
@@ -24,9 +25,8 @@ COMMENT=	Qt 5 library to render web content
 
 BUILD_DEPENDS=	bison:devel/bison \
 		ninja:devel/ninja \
-		python:lang/python \
 		yasm:devel/yasm \
-		/usr/local/include/linux/videodev2.h:multimedia/v4l_compat
+		${LOCALBASE}/include/linux/videodev2.h:multimedia/v4l_compat
 LIB_DEPENDS=	libdbus-1.so:devel/dbus \
 		libevent.so:devel/libevent \
 		libfontconfig.so:x11-fonts/fontconfig \
@@ -49,7 +49,6 @@ OPTIONS_DEFAULT=	ALSA
 AUDIO_DESC=		Audio backend
 
 ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
-ALSA_RUN_DEPENDS=	alsa-plugins>=0:audio/alsa-plugins
 ALSA_QMAKE_ON=		QT_CONFIG+=alsa
 PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
 PULSEAUDIO_QMAKE_ON=	QT_CONFIG+=pulseaudio
@@ -83,14 +82,10 @@ ALL_TARGET=	first
 # some configuration tests.
 # Since we use USES=qmake:norecursive, we also need to pass some variables to
 # MAKE_ENV because part of the configuration process happens during the build.
-CONFIGURE_ENV+= NINJAFLAGS="-j${MAKE_JOBS_NUMBER}" \
-		NINJA_PATH="${LOCALBASE}/bin/ninja"
+CONFIGURE_ENV+=	NINJAFLAGS="-j${MAKE_JOBS_NUMBER}" \
+		NINJA_PATH="${LOCALBASE}/bin/ninja"  \
+		PATH=${CONFIGURE_WRKSRC}/bin:${PATH}
 MAKE_ENV+=	CC="${CC}" CXX="${CXX}" ${CONFIGURE_ENV}
-
-# Do not depend on the master distinfo file devel/qt5/distinfo
-# as we will probably always require some more time to update webengine
-# than the rest of Qt5.
-DISTINFO_FILE=		${MASTERDIR}/distinfo
 
 post-extract:
 # Install FreeBSD's freebsd.pri file.
@@ -104,7 +99,14 @@ post-extract:
 		${WRKSRC}/src/3rdparty/chromium/third_party/libxml/libxml.gyp
 
 post-patch:
+# Too many occurrences to keep in a patch in files/.
 	${REINPLACE_CMD} -e 's,OS == "linux",(OS == "linux" or OS == "freebsd"),g' \
 		${WRKSRC}/src/3rdparty/chromium/third_party/ffmpeg/ffmpeg_generated.gypi
+
+pre-configure:
+# Link in ${PYTHON_CMD} to ${CONFIGURE_WRKSRC}/bin -- the scripts hardcode 'python' 
+# in too many places to reasonably patch. So just link in ${PYTHON_CMD} to work around
+# $LOCALBASE/bin/python being python3 if the default versions is set to 3.x.
+	${MKDIR} ${CONFIGURE_WRKSRC}/bin && ${LN} -s ${PYTHON_CMD} ${CONFIGURE_WRKSRC}/bin/python
 
 .include <bsd.port.mk>

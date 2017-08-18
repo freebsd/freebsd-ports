@@ -26,7 +26,7 @@
 ### Digest::base                                perl std
 ### Digest::MD5 2.27                            perl std
 ### Digest::SHA                                 perl std
-### Email::Address 1.897
+### Email::Address 1.908
 ### Email::Address::List 0.02
 ### Encode 2.64                                 perl std (needs newer version)
 ### Errno                                       perl std
@@ -58,7 +58,6 @@
 ### MIME::Types
 ### Module::Refresh 0.03
 ### Module::Versions::Report 1.05
-### Encode 2.64
 ### Net::CIDR
 ### Net::IP
 ### Plack 1.0002

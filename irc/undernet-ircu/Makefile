@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	undernet-ircu
-PORTVERSION=	2.10.12.16
+PORTVERSION=	2.10.12.17
 CATEGORIES=	irc net
 MASTER_SITES=	SF/${PORTNAME}/ircu/ircu${PORTVERSION} \
 		ftp://ftpmirror.uk/freebsd-ports/undernet-ircu/
@@ -13,6 +13,8 @@ COMMENT=	Undernet IRCU irc daemon
 
 LICENSE=	GPLv1
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+BROKEN_aarch64=		Fails to compile: undefined reference to .mcount
 
 CONFLICTS=	ircd-hybrid-7.[0-9]*
 
@@ -58,8 +60,6 @@ LEAKDETECT_CONFIGURE_WITH=	leak-detect
 .if !defined(NO_PROFILE)
 CONFIGURE_ARGS+=	--enable-profile
 .endif
-
-BROKEN_aarch64=		Fails to compile: undefined reference to .mcount
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ircd/ircd ${STAGEDIR}${PREFIX}/sbin

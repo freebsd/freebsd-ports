@@ -25,6 +25,9 @@ DOS2UNIX_FILES=	${MAKEFILE}
 
 PORTDOCS=	FastDB.htm
 
+# The port does not build with C++11 or later (bug 219275).
+USE_CXXSTD=	gnu++03
+
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/FastDB.htm ${STAGEDIR}${DOCSDIR}

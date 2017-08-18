@@ -765,7 +765,7 @@ openacs:*:820:
 dotlrn:*:821:
 # free: 822
 # free: 823
-# free: 824
+selenium:*:824:
 polw:*:825:
 statsd:*:826:
 # free: 827

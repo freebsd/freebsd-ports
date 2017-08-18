@@ -1,0 +1,17 @@
+QMidiArp is an advanced MIDI arpeggiator, programmable step sequencer and LFO.
+It can hold any number of arpeggiator, sequencer, or LFO modules running in
+parallel.
+
+Arpeggiator modules produce sequences depending on the notes sent to their input
+port, which is typically connected to a keyboard or another sequencer.
+
+Step sequencer modules allow you to create simple linear, monophonic and
+globally transposable sequences similar to the first analog sequencers.
+
+MIDI LFO modules independently produce MIDI controller data of adjustable
+waveform, time resolution, amplitude and duration.
+
+A Global Storage Tool can store different setups and switch between them at a
+given time. It allows you to dynamically combine patterns and LFO wave forms.
+
+WWW: http://qmidiarp.sourceforge.net/

@@ -1,9 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	ccnet-client
-PORTVERSION=	${SEAFILE_CLIENT_VER}
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
+DISTVERSION=	${SEAFILE_CLIENT_VER}
 CATEGORIES=	net-mgmt devel
 
 MAINTAINER=	ultima@FreeBSD.org
@@ -20,9 +19,7 @@ LIB_DEPENDS=	libsearpc.so:devel/libsearpc \
 		libevent.so:devel/libevent \
 		libjansson.so:devel/jansson
 
-CONFLICTS=	ccnet-server-[0-9]*
-
-USES=		autoreconf gettext libtool localbase pathfix pkgconfig \
+USES=		autoreconf libtool localbase pathfix pkgconfig \
 		python:-2.7 ssl
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
@@ -31,9 +28,15 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	haiwen
 GH_PROJECT=	ccnet
 
+CONFLICTS=	ccnet-server-[0-9]*
+
 CONFIGURE_ENV=	SSL_CFLAGS="${OPENSSLINC}" SSL_LIBS="-L${OPENSSLLIB} -lssl -lcrypto"
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
+
+OPTIONS_DEFINE=	NLS
+
+NLS_USES=	gettext
 
 .include "${.CURDIR}/../seafile-client/Makefile.include"
 

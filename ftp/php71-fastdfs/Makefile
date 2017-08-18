@@ -1,14 +1,14 @@
 # $FreeBSD$
 
 PORTNAME=	fastdfs
-PORTVERSION=	5.0.10
+PORTVERSION=	5.0.11
 CATEGORIES=	ftp
 PKGNAMEPREFIX=	php71-
 
 MAINTAINER=	daniel@blodan.se
 COMMENT=	PHP 7.1 module for accessing a FastDFS cluster
 
-LICENSE=	GPLv3
+LICENSE=	GPLv3+
 
 LIB_DEPENDS=	libfastcommon.so:devel/libfastcommon \
 		libfdfsclient.so:ftp/fastdfs
@@ -16,7 +16,7 @@ LIB_DEPENDS=	libfastcommon.so:devel/libfastcommon \
 USE_GITHUB=	yes
 GH_ACCOUNT=	happyfish100
 GH_PROJECT=	fastdfs
-GH_TAGNAME=	bcb7c56
+GH_TAGNAME=	1e50b4f
 
 USES=			php:ext
 IGNORE_WITH_PHP=	56 70

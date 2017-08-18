@@ -40,6 +40,8 @@ CLANG38_DESC=	Use clang38 as default crosstool
 CLANG38_BUILD_DEPENDS=	clang38:devel/llvm38
 CLANG38_RUN_DEPENDS=	clang38:devel/llvm38
 
+STRIP=	# The bazel binary is also a zip archive (extracted by the elf part), it must not be stripped
+
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "i386"
@@ -73,8 +75,7 @@ do-build:
 	${LOCALBASE}/bin/bash ./compile.sh)
 
 do-install:
-	# The bazel binary is also a zip archive (extracted by the elf part), hence cannot be stripped
-	${CP} ${WRKSRC}/output/bazel ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/output/bazel ${STAGEDIR}${PREFIX}/bin
 	@${MKDIR} ${STAGEDIR}${ETCDIR}
 	${INSTALL_DATA} ${WRKSRC}/scripts/packages/debian/bazel.bazelrc ${STAGEDIR}${ETCDIR}/bazel.bazelrc.sample
 

@@ -2,11 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	NASTRAN-95
-PORTVERSION=	20151227
-PORTREVISION=	3
+PORTVERSION=	20160908
 CATEGORIES=	cad science
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	pfg@FreeBSD.org
 COMMENT=	NASA Structural Analysis System
 
 LICENSE=	NOSA
@@ -16,29 +15,28 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	twuerfl
-GH_TAGNAME=	0e77a84
+GH_TAGNAME=	a73c57a
 
 USES=		fortran gmake
 
 ALL_TARGET=	# empty
 INSTALL_TARGET=	install-strip
 
-NASTHOME= 	${PREFIX}/libexec/${PORTNAME}
+NASTHOME=	${PREFIX}/libexec/${PORTNAME}
 PLIST_SUB=	NASTHOME=${NASTHOME}
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
 pre-build:
 	@${REINPLACE_CMD} -e 's+%%FC%%+${FC}+g ; s+%%FFLAGS%%+${FFLAGS}+g;' \
-		${WRKSRC}/sb/Makefile \
+		${WRKSRC}/src/Makefile \
 		${WRKSRC}/um/Makefile
-# Version string limited to 7 characters so ${OPSYS:tu} would result in
-# "DRAGONF VERSON" for DF.  It's best to leave it hardcoded to FreeBSD
+# Version string limited to 7 characters
 	@${REINPLACE_CMD} -e 's+LINUX  +FREEBSD+g;' \
-		${WRKSRC}/sb/btstrp.f
+		${WRKSRC}/src/btstrp.f
 
 do-build:
-	@(cd ${WRKSRC}/sb; ${MAKE_CMD} ${ALL_TARGET})
+	@(cd ${WRKSRC}/src; ${MAKE_CMD} ${ALL_TARGET})
 	@(cd ${WRKSRC}/um; ${MAKE_CMD} ${ALL_TARGET})
 	@(cd ${WRKSRC}/utility; ${FC} -o chkfil.exe ${FFLAGS} chkfil.f ${LDFLAGS})
 
@@ -47,7 +45,7 @@ do-install:
 		${WRKSRC}/bin/nastran
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/nastran ${STAGEDIR}${PREFIX}/bin/
 	@${MKDIR} ${STAGEDIR}${NASTHOME}/bin
-	${INSTALL} ${WRKSRC}/sb/nastran.exe ${STAGEDIR}${NASTHOME}/bin/nastrn.exe
+	${INSTALL} ${WRKSRC}/src/nastran.exe ${STAGEDIR}${NASTHOME}/bin/nastrn.exe
 	${INSTALL} ${WRKSRC}/utility/chkfil.exe ${STAGEDIR}${NASTHOME}/bin/
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} "rf" ${STAGEDIR}${NASTHOME})
 	@${MKDIR} ${STAGEDIR}${NASTHOME}/um/
@@ -57,7 +55,7 @@ do-install:
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/*.pdf	${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/*.pdf	${STAGEDIR}${DOCSDIR}
 
 do-install-EXAMPLES-on:
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} "demoout inp test" ${STAGEDIR}${EXAMPLESDIR})

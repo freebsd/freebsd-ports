@@ -19,6 +19,9 @@ LICENSE_FILE_GPLv2+ =	${WRKSRC}/COPYING.GNU
 USE_GCC=	yes
 GNU_CONFIGURE=	yes
 
+# The port does not build with C++11 or later (GCC 6 defaults to -std=gnu++14).
+USE_CXXSTD=	gnu++03
+
 PORTDOCS=	INSTALL README *.pdf
 
 PLIST_FILES=	bin/annoyance-filter \

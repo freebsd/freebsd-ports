@@ -10,8 +10,6 @@ man/man1/softhsm2-dump-file.1.gz
 man/man1/softhsm2-keyconv.1.gz
 man/man1/softhsm2-util.1.gz
 man/man5/softhsm2.conf.5.gz
-@dir lib/softhsm
-@dir var/lib/softhsm/tokens
-@dir var/lib/softhsm
-@dir var/lib
-@dir var
+@dir /var/lib/softhsm/tokens
+@dir /var/lib/softhsm
+@dir /var/lib

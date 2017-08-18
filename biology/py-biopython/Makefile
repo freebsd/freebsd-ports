@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	biopython
-PORTVERSION=	1.69
+PORTVERSION=	1.70
 CATEGORIES=	biology python
 MASTER_SITES=	http://www.biopython.org/DIST/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

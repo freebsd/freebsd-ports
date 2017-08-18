@@ -3,6 +3,7 @@
 
 PORTNAME=	driftnet
 PORTVERSION=	1.1.5
+DISTVERSIONPREFIX=	upstream/
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	ehaupt@FreeBSD.org
@@ -22,7 +23,6 @@ USE_GNOME=	gtk20
 USE_XORG=	x11 xext xi
 
 GH_ACCOUNT=	deiv
-GH_TAGNAME=	upstream/${PORTVERSION}
 
 PLIST_FILES=	bin/driftnet man/man1/driftnet.1.gz
 PORTDOCS=	*

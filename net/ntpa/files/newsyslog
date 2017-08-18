@@ -1,0 +1,1 @@
+/var/log/ntpa/ntpa.log	root:ntpa	660  10	   *	@T00  C     /var/run/ntpa/ntpa.pid SIGUSR2

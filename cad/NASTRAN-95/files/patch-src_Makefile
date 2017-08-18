@@ -1,0 +1,11 @@
+--- src/Makefile.orig	2016-09-08 21:25:12 UTC
++++ src/Makefile
+@@ -1,6 +1,6 @@
+ # Declaration of variables
+-FC = gfortran
+-FFLAGS =  -w -fno-range-check -fno-automatic -fcray-pointer -std=legacy 
++FC = %%FC%%
++FFLAGS =  %%FFLAGS%% -w -fno-range-check -fno-automatic -fcray-pointer -std=legacy 
+ 
+ # file names
+ EXEC=nastran.exe

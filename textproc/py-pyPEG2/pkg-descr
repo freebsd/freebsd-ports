@@ -1,0 +1,7 @@
+PyPEG2 is a parser-interpreter for Parsing Expression Grammars (PEGs).
+
+PEGs look similar to context-free grammars (CFGs), except that the choice
+operator always picks the first matching option. This allows for parsing
+in linear time.
+
+WWW: https://fdik.org/pyPEG/

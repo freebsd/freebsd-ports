@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	amath
-PORTVERSION=	1.8.2
+PORTVERSION=	1.8.3
 CATEGORIES=	math
 MASTER_SITES=	http://dist1.innolan.net/ \
 		http://dist2.innolan.net/ \

@@ -3,7 +3,7 @@
 
 PORTNAME=	libXcursor
 PORTVERSION=	1.1.14
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11
 
 MAINTAINER=	x11@FreeBSD.org
@@ -19,6 +19,7 @@ USES+=	cpe
 CPE_PRODUCT=	libxcursor
 CPE_VENDOR=	x
 
-CONFIGURE_ARGS=	--with-icondir=${PREFIX}/lib/X11/icons
+CONFIGURE_ARGS=	--with-icondir=${PREFIX}/share/icons
+INSTALL_TARGET=	install-strip
 
 .include <bsd.port.mk>
