@@ -111,6 +111,7 @@
     SUBDIR += selectwm
     SUBDIR += simple-ccsm
     SUBDIR += spectrwm
+    SUBDIR += stumpwm
     SUBDIR += subtle
     SUBDIR += swm
     SUBDIR += tinywm
