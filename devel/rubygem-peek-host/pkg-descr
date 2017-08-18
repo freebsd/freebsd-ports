@@ -1,0 +1,8 @@
+Take a peek into the host which serves your reuest.
+
+Things this peek view provides:
+- Hostname of the instance which served your request.
+
+Its an addition to the Peek profiling tool.
+
+WWW: https://github.com/jacobbednarz/peek-host

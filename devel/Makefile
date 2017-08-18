@@ -5591,6 +5591,7 @@
     SUBDIR += rubygem-pathutil
     SUBDIR += rubygem-peek
     SUBDIR += rubygem-peek-gc
+    SUBDIR += rubygem-peek-host
     SUBDIR += rubygem-piston
     SUBDIR += rubygem-pkg-config
     SUBDIR += rubygem-platform
