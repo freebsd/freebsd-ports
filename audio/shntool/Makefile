@@ -26,20 +26,16 @@ LPAC_DESC=	LPAC audio format support
 OFR_DESC=	OptimFROG audio format support
 SHN_DESC=	Shorten audio compressor support
 
-RDEP_MAPPING=	AIFF:sox ALAC:alac APE:mac FLAC KXS:kexis \
-		LA:laudio:linux-laudio LPAC OFR:ofr:optimfrog \
-		SHN:shorten TTA:ttaenc:tta WAVPACK
-
-.include <bsd.port.options.mk>
-
-.for o in ${PORT_OPTIONS}
-m=	${RDEP_MAPPING:M${o}*}
-.if ${m}
-b=	${m:C/^[A-Z]*://:C/:.*//:tl}
-p=	${m:C/^[A-Z]*://:C/.*://:tl}
-RUN_DEPENDS+=	${b}:audio/${p}
-RUN_DEPENDS:=	${RUN_DEPENDS}
-.endif
-.endfor
+AIFF_RUN_DEPENDS=	sox:audio/sox
+ALAC_RUN_DEPENDS=	alacconvert:audio/alac
+APE_RUN_DEPENDS=	mac:audio/mac
+FLAC_RUN_DEPENDS=	flac:audio/flac
+KXS_RUN_DEPENDS=	kexis:audio/kexis
+LA_RUN_DEPENDS=		laudio:audio/linux-laudio
+LPAC_RUN_DEPENDS=	lpac:audio/lpac
+OFR_RUN_DEPENDS=	ofr:audio/optimfrog
+SHN_RUN_DEPENDS=	shorten:audio/shorten
+TTA_RUN_DEPENDS=	ttaenc:audio/tta
+WAVPACK_RUN_DEPENDS=	wavpack:audio/wavpack
 
 .include <bsd.port.mk>
