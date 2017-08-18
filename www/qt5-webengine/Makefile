@@ -16,6 +16,7 @@
 
 PORTNAME=	webengine
 DISTVERSION=	${QT5_VERSION}
+PORTREVISION=	1
 CATEGORIES=	www
 PKGNAMEPREFIX=	qt5-
 
@@ -24,7 +25,6 @@ COMMENT=	Qt 5 library to render web content
 
 BUILD_DEPENDS=	bison:devel/bison \
 		ninja:devel/ninja \
-		python:lang/python \
 		yasm:devel/yasm \
 		${LOCALBASE}/include/linux/videodev2.h:multimedia/v4l_compat
 LIB_DEPENDS=	libdbus-1.so:devel/dbus \
@@ -83,7 +83,8 @@ ALL_TARGET=	first
 # Since we use USES=qmake:norecursive, we also need to pass some variables to
 # MAKE_ENV because part of the configuration process happens during the build.
 CONFIGURE_ENV+=	NINJAFLAGS="-j${MAKE_JOBS_NUMBER}" \
-		NINJA_PATH="${LOCALBASE}/bin/ninja"
+		NINJA_PATH="${LOCALBASE}/bin/ninja"  \
+		PATH=${CONFIGURE_WRKSRC}/bin:${PATH}
 MAKE_ENV+=	CC="${CC}" CXX="${CXX}" ${CONFIGURE_ENV}
 
 post-extract:
@@ -101,5 +102,11 @@ post-patch:
 # Too many occurrences to keep in a patch in files/.
 	${REINPLACE_CMD} -e 's,OS == "linux",(OS == "linux" or OS == "freebsd"),g' \
 		${WRKSRC}/src/3rdparty/chromium/third_party/ffmpeg/ffmpeg_generated.gypi
+
+pre-configure:
+# Link in ${PYTHON_CMD} to ${CONFIGURE_WRKSRC}/bin -- the scripts hardcode 'python' 
+# in too many places to reasonably patch. So just link in ${PYTHON_CMD} to work around
+# $LOCALBASE/bin/python being python3 if the default versions is set to 3.x.
+	${MKDIR} ${CONFIGURE_WRKSRC}/bin && ${LN} -s ${PYTHON_CMD} ${CONFIGURE_WRKSRC}/bin/python
 
 .include <bsd.port.mk>
