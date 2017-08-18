@@ -8,6 +8,12 @@ etc/rc.d/zeronet
 %%DATADIR%%/plugins/AnnounceZero/__init__.py
 %%DATADIR%%/plugins/AnnounceZero/__init__.pyc
 %%DATADIR%%/plugins/AnnounceZero/__init__.pyo
+%%DATADIR%%/plugins/Cors/CorsPlugin.py
+%%DATADIR%%/plugins/Cors/CorsPlugin.pyc
+%%DATADIR%%/plugins/Cors/CorsPlugin.pyo
+%%DATADIR%%/plugins/Cors/__init__.py
+%%DATADIR%%/plugins/Cors/__init__.pyc
+%%DATADIR%%/plugins/Cors/__init__.pyo
 %%DATADIR%%/plugins/CryptMessage/CryptMessage.py
 %%DATADIR%%/plugins/CryptMessage/CryptMessage.pyc
 %%DATADIR%%/plugins/CryptMessage/CryptMessage.pyo
@@ -425,6 +431,9 @@ etc/rc.d/zeronet
 %%DATADIR%%/src/Test/TestRateLimit.py
 %%DATADIR%%/src/Test/TestRateLimit.pyc
 %%DATADIR%%/src/Test/TestRateLimit.pyo
+%%DATADIR%%/src/Test/TestSafeRe.py
+%%DATADIR%%/src/Test/TestSafeRe.pyc
+%%DATADIR%%/src/Test/TestSafeRe.pyo
 %%DATADIR%%/src/Test/TestSite.py
 %%DATADIR%%/src/Test/TestSite.pyc
 %%DATADIR%%/src/Test/TestSite.pyo
@@ -547,6 +556,7 @@ etc/rc.d/zeronet
 %%DATADIR%%/src/Ui/media/lib/jquery.cssanim.js
 %%DATADIR%%/src/Ui/media/lib/jquery.csslater.coffee
 %%DATADIR%%/src/Ui/media/lib/jquery.easing.1.3.js
+%%DATADIR%%/src/Ui/template/site_add.html
 %%DATADIR%%/src/Ui/template/wrapper.html
 %%DATADIR%%/src/User/User.py
 %%DATADIR%%/src/User/User.pyc
@@ -924,6 +934,9 @@ etc/rc.d/zeronet
 %%DATADIR%%/src/util/RateLimit.py
 %%DATADIR%%/src/util/RateLimit.pyc
 %%DATADIR%%/src/util/RateLimit.pyo
+%%DATADIR%%/src/util/SafeRe.py
+%%DATADIR%%/src/util/SafeRe.pyc
+%%DATADIR%%/src/util/SafeRe.pyo
 %%DATADIR%%/src/util/SocksProxy.py
 %%DATADIR%%/src/util/SocksProxy.pyc
 %%DATADIR%%/src/util/SocksProxy.pyo
