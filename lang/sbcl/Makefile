@@ -26,20 +26,12 @@ RUN_DEPENDS=	cl-asdf>=0:devel/cl-asdf
 
 USES=		gmake makeinfo tar:bzip2
 
-<<<<<<< HEAD
-NOPIE_PORTS=	yes
+USE_HARDENING=	relro
 
-ONLY_FOR_ARCHS=	i386 amd64
-
-SBCL_BOOT_LIST=	1.0.31-amd64-freebsd8 \
-		1.0.31-i386-freebsd8 \
-		1.2.9-x86_64-dragonfly4
-=======
 BOOTVERSION=	1.2.7
 SBCL_BOOT_LIST=	${BOOTVERSION}-x86-64-freebsd \
 		${BOOTVERSION}-x86-freebsd \
 		${BOOTVERSION}-x86-64-dragonfly
->>>>>>> freebsd/master
 
 CONMODULES=	asdf sb-aclrepl sb-bsd-sockets sb-cltl2 sb-concurrency \
 		sb-cover sb-executable sb-gmp sb-grovel sb-introspect \
