@@ -3,6 +3,7 @@
 
 PORTNAME=	softhsm
 PORTVERSION=	2.3.0
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://dist.opendnssec.org/source/ \
 		http://dist.opendnssec.org/source/testing/
@@ -15,13 +16,16 @@ LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--localstatedir="${PREFIX}/var"
 INSTALL_TARGET=	install-strip
-USES=		libtool ssl
+USES=		libtool ssl pkgconfig
+
+SUB_FILES=	pkg-message
 
 CONFLICTS=	softhsm-1.*
 
 USE_LDCONFIG=	yes
+
+LIB_DEPENDS+=		libcppunit.so:devel/cppunit
 
 OPTIONS_DEFINE=		SQLITE
 OPTIONS_SUB=		yes
@@ -46,6 +50,10 @@ CRYP_OPEN_CONFIGURE_ON=	--with-crypto-backend=openssl
 .include <bsd.port.options.mk>
 
 .if ${SSL_DEFAULT:Mlibressl*} || ${SSL_DEFAULT:Mopenssl-devel}
+CONFIGURE_ARGS+=	--disable-gost
+.endif
+
+.if ${SSL_DEFAULT:Mopenssl-devel}
 CONFIGURE_ARGS+=	--disable-gost
 .endif
 
