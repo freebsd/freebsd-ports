@@ -3,6 +3,7 @@
 
 PORTNAME=	git
 DISTVERSION=	2.13.3
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	KERNEL_ORG/software/scm/git
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
@@ -42,7 +43,6 @@ SHEBANG_FILES=	*.perl */*.perl */*/*.perl */*.pl */*/*.pl */*/*/*.pl \
 		contrib/remote-helpers/git-remote-bzr \
 		contrib/remote-helpers/git-remote-hg \
 		contrib/credential/netrc/git-credential-netrc \
-		contrib/diff-highlight/diff-highlight.perl \
 		contrib/buildsystems/generate contrib/contacts/git-contacts \
 		contrib/svn-fe/svnrdump_sim.py
 TEST_TARGET=	test
@@ -155,6 +155,10 @@ post-patch:
 .endfor
 	@${REINPLACE_CMD} -e 's|share/man/man3|man/man3|' ${WRKSRC}/perl/Makefile.PL
 
+post-patch-CONTRIB-on:
+	@${REINPLACE_CMD} -e "s,/usr/bin/perl,${PERL}," \
+		${WRKSRC}/contrib/diff-highlight/Makefile
+
 post-patch-CVS-off:
 	@${REINPLACE_CMD} -e '/git-cvsexportcommit.perl/d; \
 		/git-cvsimport.perl/d; \
@@ -179,6 +183,10 @@ post-patch-P4-off:
 post-build:
 	@${FIND} ${WRKSRC} -name "*.bak" -delete
 .endif
+
+post-build-CONTRIB-on:
+	${SETENV} ${MAKE_ENV} ${MAKE_CMD} -C ${WRKSRC}/contrib/diff-highlight
+	${RM} ${WRKSRC}/contrib/diff-highlight/shebang.perl
 
 post-install:
 	(cd ${WRKDIR}/man1/ && ${COPYTREE_SHARE} . ${STAGEDIR}${MANPREFIX}/man/man1)
