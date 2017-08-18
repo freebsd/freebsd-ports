@@ -919,6 +919,7 @@
 %%SEAHUBDIR%%/seahub/base/management/commands/__init__.py
 %%SEAHUBDIR%%/seahub/base/management/commands/changepassword.py
 %%SEAHUBDIR%%/seahub/base/management/commands/createsuperuser.py
+%%SEAHUBDIR%%/seahub/base/management/commands/export_users.py
 %%SEAHUBDIR%%/seahub/base/middleware.py
 %%SEAHUBDIR%%/seahub/base/mixins.py
 %%SEAHUBDIR%%/seahub/base/models.py
