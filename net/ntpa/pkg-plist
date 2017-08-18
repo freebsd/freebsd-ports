@@ -19,6 +19,11 @@ libexec/ntpa/Ntp.Common.dll
 libexec/ntpa/Ntp.Data.dll
 libexec/ntpa/Ntp.Data.Provider.dll
 man/man1/ntpa.1.gz
+%%DOCSDIR%%/CHANGES
+%%DOCSDIR%%/DATABASE
+%%DOCSDIR%%/INSTALL
+@dir etc/newsyslog.conf.d
+@sample %%ETCDIR%%/ntpa.newsyslog etc/newsyslog.conf.d/ntpa
 @sample(,ntpa,640) %%ETCDIR%%/ntpa.conf.sample
 @owner www
 @group www
