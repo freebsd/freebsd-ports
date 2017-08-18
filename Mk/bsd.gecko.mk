@@ -252,6 +252,7 @@ MOZ_OPTIONS+=	\
 		--enable-chrome-format=${MOZ_CHROME} \
 		--enable-default-toolkit=${MOZ_TOOLKIT} \
 		--enable-update-channel=${MOZ_CHANNEL} \
+		--disable-updater \
 		--enable-pie \
 		--with-pthreads
 # Configure options for install
