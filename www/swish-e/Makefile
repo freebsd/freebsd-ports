@@ -10,11 +10,9 @@ MASTER_SITES=	http://swish-e.org/distribution/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple web indexing for humans - enhanced
 
-BROKEN_FreeBSD_12=	fails to compile: zlib.h: conflicting types for 'uncompress2'
-
+USES=		gmake libtool perl5 shebangfix
 USE_LDCONFIG=	yes
 USE_GNOME=	libxml2
-USES=		gmake libtool perl5 shebangfix
 SHEBANG_FILES=	src/swishspider
 GNU_CONFIGURE=	yes
 MAKE_ARGS+=	pkgconfigdir="${PREFIX}/libdata/pkgconfig" \
@@ -36,5 +34,8 @@ post-patch:
 		${WRKSRC}/${p}/Makefile.in
 .endfor
 .endif
+	# Rename uncompress2 to swishe_uncompress2 to fix building with newer zlib which exports
+	# its own uncompress2
+	${FIND} ${WRKSRC}/src -type f -exec ${REINPLACE_CMD} 's,uncompress2,swishe_uncompress2,g' {} \+
 
 .include <bsd.port.mk>
