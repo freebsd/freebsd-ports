@@ -1,7 +1,7 @@
-TIMESTAMP = 1502396019
-SHA256 (git-2.14.1.tar.xz) = 6f724c6d0e9e13114ab35db6f67e1b2c1934b641e89366e6a0e37618231f2cc6
-SIZE (git-2.14.1.tar.xz) = 4791876
-SHA256 (git-manpages-2.14.1.tar.xz) = 7ebce1e0e862af1367e24f14765c7b67f08b63fb01b80949f55479c562d414f2
-SIZE (git-manpages-2.14.1.tar.xz) = 410400
-SHA256 (git-htmldocs-2.14.1.tar.xz) = 9c1970c7f87f37c8b3044e01e0500d84d8bc4eb4dfa5ca881c32c351f20769fb
-SIZE (git-htmldocs-2.14.1.tar.xz) = 1115176
+TIMESTAMP = 1498482405
+SHA256 (git-2.13.2.tar.xz) = 0d10ac3751466f81652b62cbda83cc8d8ffd014911462138e039f176e413dde5
+SIZE (git-2.13.2.tar.xz) = 4751380
+SHA256 (git-manpages-2.13.2.tar.xz) = 30e1e1313000eb81f0e348e5083758a33703941a60ab111057b46c3dad968b6e
+SIZE (git-manpages-2.13.2.tar.xz) = 407684
+SHA256 (git-htmldocs-2.13.2.tar.xz) = 54f0d36d375e7f71441994e60c18b6e2cc43581d5827e806e0bddb6904e17dfc
+SIZE (git-htmldocs-2.13.2.tar.xz) = 1109048
