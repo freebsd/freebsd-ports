@@ -1,0 +1,10 @@
+--- lash-1.0.pc.in.orig	2007-01-13 20:44:09 UTC
++++ lash-1.0.pc.in
+@@ -5,7 +5,6 @@ includedir=@includedir@
+ 
+ Name: LASH
+ Description: Audio session management
+-Requires: @PC_REQUIRES@
+ Version: @PACKAGE_VERSION@
+ Libs: -llash
+ Libs.static: -lpthread -luuid

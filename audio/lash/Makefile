@@ -3,7 +3,7 @@
 
 PORTNAME=	lash
 PORTVERSION=	0.5.4
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	audio
 MASTER_SITES=	SAVANNAH
 
@@ -15,10 +15,12 @@ LICENSE_COMB=	dual
 
 LIB_DEPENDS=	libjack.so:audio/jack \
 		libdssialsacompat.so:audio/libdssialsacompat \
+		libfreetype.so:print/freetype2 \
+		libfontconfig.so:x11-fonts/fontconfig \
 		libuuid.so:misc/e2fsprogs-libuuid
 
 USES=		gmake pathfix pkgconfig libtool
-USE_GNOME=	gtk20 libxml2
+USE_GNOME=	gtk20 libxml2 gdkpixbuf2 cairo
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-alsa-midi
 USE_LDCONFIG=	yes
@@ -35,7 +37,7 @@ OPTIONS_SUB=	yes
 PYTHON_DESC=	Build pylash
 PYTHON_USES=	python
 PYTHON_BUILD_DEPENDS=	swig:devel/swig13
-PYTHON_CONFIGURE_OFF=	--disable-pylash
+PYTHON_CONFIGURE_ENABLE=pylash
 
 READLINE_USES=		readline
 READLINE_CONFIGURE_ENV_OFF=	vl_cv_lib_readline=no
