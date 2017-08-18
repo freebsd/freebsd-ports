@@ -1,3 +1,3 @@
-TIMESTAMP = 1498750923
-SHA256 (docker-2.4.2.tar.gz) = 216ffa6daaecf55895f2207ebff84e48e554fe95826de6d95fa60081e8347486
-SIZE (docker-2.4.2.tar.gz) = 152554
+TIMESTAMP = 1503063310
+SHA256 (docker-2.5.0.tar.gz) = 9db0769feac3a64ed447d44f756ab04de74aa05c4c69e891a93ec238276c4eed
+SIZE (docker-2.5.0.tar.gz) = 154950
