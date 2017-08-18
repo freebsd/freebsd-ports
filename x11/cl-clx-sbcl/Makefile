@@ -1,0 +1,24 @@
+# Created by: Anonymous
+# $FreeBSD$
+
+PORTNAME=	clx
+PORTVERSION=	0.7.4
+CATEGORIES=	x11 lisp
+PKGNAMEPREFIX=	cl-
+PKGNAMESUFFIX=	-sbcl
+DISTFILES=	# none
+
+MAINTAINER=	jrm@FreeBSD.org
+COMMENT=	X11 client library for Common Lisp
+
+LICENSE=	MIT
+
+BUILD_DEPENDS=	${PKGNAMEPREFIX}${PORTNAME}>=0:x11/${PKGNAMEPREFIX}${PORTNAME}
+RUN_DEPENDS=	${PKGNAMEPREFIX}${PORTNAME}>=0:x11/${PKGNAMEPREFIX}${PORTNAME}
+
+USE_ASDF_FASL=	yes
+FASL_TARGET=	sbcl
+FASL_BUILD=	yes
+
+.include "${.CURDIR}/../../devel/cl-asdf/bsd.cl-asdf.mk"
+.include <bsd.port.mk>
