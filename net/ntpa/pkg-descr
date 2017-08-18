@@ -5,4 +5,4 @@ NTP Analyzer collects data from ntp daemons and can be configured
 to generate graphs and web pages to visualize the activities of
 supervised hosts and peers.
 
-WWW: https://bitbucket.org/anguist/ntpa
+WWW: http://ntpa.innolan.net/
