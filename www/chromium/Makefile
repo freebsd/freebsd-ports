@@ -131,6 +131,8 @@ GN_ARGS+=	google_api_key="AIzaSyBsp9n41JLW8jCokwn7vhoaMejDFRd1mp8" \
 		google_default_client_id="996322985003.apps.googleusercontent.com" \
 		google_default_client_secret="IR1za9-1VK0zZ0f_O8MVFicn"
 
+USE_HARDENING=	pie
+
 .if !defined(GN_ONLY)
 SUB_FILES=	chromium-browser.desktop chrome
 SUB_LIST+=	COMMENT="${COMMENT}"
@@ -190,11 +192,7 @@ SNDIO_LIB_DEPENDS=	libsndio.so:audio/sndio
 SNDIO_VARS=		GN_ARGS+=use_sndio=true
 SNDIO_VARS_OFF=		GN_ARGS+=use_sndio=false
 
-<<<<<<< HEAD
-NORELRO_PORTS=	yes
-=======
 .endif
->>>>>>> upstream/master
 
 .include "Makefile.tests"
 TEST_ALL_TARGET=	${TEST_TARGETS}
