@@ -21,11 +21,11 @@ include/libftdi1/ftdi.h
 lib/libftdi1.a
 lib/libftdi1.so
 lib/libftdi1.so.2
-lib/libftdi1.so.2.3.0
+lib/libftdi1.so.2.4.0
 %%BOOST%%lib/libftdipp1.a
 %%BOOST%%lib/libftdipp1.so
-%%BOOST%%lib/libftdipp1.so.2
-%%BOOST%%lib/libftdipp1.so.2.3.0
+%%BOOST%%lib/libftdipp1.so.3
+%%BOOST%%lib/libftdipp1.so.2.4.0
 %%PORTDOCS%%%%DOCSDIR%%/example.conf
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/_ftdi1.so
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/ftdi1.py

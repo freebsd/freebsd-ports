@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libftdi1
-PORTVERSION=	1.3
-PORTREVISION=	3
+PORTVERSION=	1.4
 CATEGORIES=	devel
 MASTER_SITES=	http://www.intra2net.com/en/developer/libftdi/download/
 
@@ -22,7 +21,7 @@ PYTHON_DESC=	Build Python bindings
 
 BROKEN_sparc64=		Does not build: fails to link
 
-USES=		cmake pkgconfig tar:bzip2
+USES=		cmake gettext-runtime pkgconfig tar:bzip2
 USE_LDCONFIG=	yes
 
 PORTDOCS=	COPYING.LIB ChangeLog README
