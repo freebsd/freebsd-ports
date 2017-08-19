@@ -17,7 +17,7 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 
 USES=		autoreconf libtool ssl
 USE_GITHUB=	yes
-USE_APACHE=	2.4+
+USE_APACHE=	24+
 
 GH_ACCOUNT=	icing
 GH_PROJECT=	mod_md
