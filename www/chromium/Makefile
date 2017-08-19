@@ -4,32 +4,36 @@
 PORTNAME=	chromium
 PORTVERSION=	59.0.3071.115
 PORTREVISION=	2
-CATEGORIES=	www
+CATEGORIES?=	www
 MASTER_SITES=	https://commondatastorage.googleapis.com/chromium-browser-official/:source1 \
 		LOCAL/cpm:source2
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:source1 \
 		${PORTNAME}-freetype2${EXTRACT_SUFX}:source2
 
-MAINTAINER=	chromium@FreeBSD.org
-COMMENT=	Google web browser based on WebKit
+MAINTAINER?=	chromium@FreeBSD.org
+COMMENT?=	Google web browser based on WebKit
 
 LICENSE=	BSD3CLAUSE LGPL21 MPL
 LICENSE_COMB=	multi
 
-BUILD_DEPENDS=	gperf:devel/gperf \
+BUILD_DEPENDS=	python:lang/python \
+		bash:shells/bash \
+		${PYTHON_PKGNAMEPREFIX}Jinja2>0:devel/py-Jinja2 \
+		${PYTHON_PKGNAMEPREFIX}ply>0:devel/py-ply \
+
+.if !defined(GN_ONLY)
+BUILD_DEPENDS+=	gperf:devel/gperf \
 		clang40:devel/llvm40 \
 		yasm:devel/yasm \
-		python:lang/python \
 		ffmpeg>=3.2.2,1:multimedia/ffmpeg \
-		bash:shells/bash \
 		flock:sysutils/flock \
 		node:www/node \
 		${LOCALBASE}/include/linux/videodev2.h:multimedia/v4l_compat \
 		${LOCALBASE}/share/usbids/usb.ids:misc/usbids \
-		${PYTHON_PKGNAMEPREFIX}Jinja2>0:devel/py-Jinja2 \
-		${PYTHON_PKGNAMEPREFIX}ply>0:devel/py-ply \
 		${PYTHON_PKGNAMEPREFIX}html5lib>0:www/py-html5lib
+.endif
 
+.if !defined(GN_ONLY)
 LIB_DEPENDS=	libspeechd.so:accessibility/speech-dispatcher \
 		libsnappy.so:archivers/snappy \
 		libFLAC.so:audio/flac \
@@ -62,9 +66,17 @@ RUN_DEPENDS=	xdg-open:devel/xdg-utils \
 		droid-fonts-ttf>0:x11-fonts/droid-fonts-ttf
 
 ONLY_FOR_ARCHS=	amd64 i386
-USES=		bison cpe desktop-file-utils execinfo jpeg ninja perl5 \
-		pkgconfig python:2,build shebangfix tar:xz
+.endif
 
+.if defined(GN_ONLY)
+USES=	compiler:c++11-lib ninja pkgconfig python:2,build shebangfix tar:xz
+.else
+USES=	bison cpe desktop-file-utils execinfo jpeg ninja perl5 \
+		pkgconfig python:2,build shebangfix tar:xz
+.endif
+MAKE_ARGS=	-C out/${BUILDTYPE}
+
+.if !defined(GN_ONLY)
 CPE_VENDOR=	google
 CPE_PRODUCT=	chrome
 USE_LDCONFIG=	${DATADIR}
@@ -72,13 +84,14 @@ USE_PERL5=	build
 USE_XORG=	scrnsaverproto x11 xcb xcomposite xcursor xext xdamage xfixes xi \
 		xproto xrandr xrender xscrnsaver xtst
 USE_GNOME=	atk dconf glib20 gtk20 gtk30 libxml2 libxslt
-MAKE_ARGS=	-C out/${BUILDTYPE}
 SHEBANG_FILES=	chrome/tools/build/linux/chrome-wrapper
 ALL_TARGET=	chrome
 INSTALLS_ICONS=	yes
 
 CC=		clang40
 CXX=		clang++40
+.endif
+
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-clang
 
 # TODO bz@ : install libwidevinecdm.so (see third_party/widevine/cdm/BUILD.gn)
@@ -118,6 +131,7 @@ GN_ARGS+=	google_api_key="AIzaSyBsp9n41JLW8jCokwn7vhoaMejDFRd1mp8" \
 		google_default_client_id="996322985003.apps.googleusercontent.com" \
 		google_default_client_secret="IR1za9-1VK0zZ0f_O8MVFicn"
 
+.if !defined(GN_ONLY)
 SUB_FILES=	chromium-browser.desktop chrome
 SUB_LIST+=	COMMENT="${COMMENT}"
 
@@ -176,6 +190,8 @@ SNDIO_LIB_DEPENDS=	libsndio.so:audio/sndio
 SNDIO_VARS=		GN_ARGS+=use_sndio=true
 SNDIO_VARS_OFF=		GN_ARGS+=use_sndio=false
 
+.endif
+
 .include "Makefile.tests"
 TEST_ALL_TARGET=	${TEST_TARGETS}
 TEST_DISTFILES=		${PORTNAME}-${DISTVERSION}-testdata${EXTRACT_SUFX}:source1
@@ -192,6 +208,7 @@ MAKE_ENV+=	C_INCLUDE_PATH=${LOCALBASE}/include \
 GN_ARGS+=	extra_cxxflags="-D_LIBCPP_TRIVIAL_PAIR_COPY_CTOR=1"
 .endif
 
+.if !defined(GN_ONLY)
 pre-everything::
 	@${ECHO_MSG}
 	@${ECHO_MSG} "To build Chromium, you should have around 2GB of memory"
@@ -215,18 +232,21 @@ pre-configure:
 	cd ${WRKSRC} && ${PYTHON_CMD} \
 		./build/linux/unbundle/replace_gn_files.py --system-libraries \
 		ffmpeg flac harfbuzz-ng libwebp libxml libxslt snappy yasm || ${FALSE}
+.endif
 
 do-configure:
 	# GN generator bootstrapping and generating ninja files
 	cd ${WRKSRC} && ${SETENV} CC=${CC} CXX=${CXX} LD=${CXX} \
 		READELF=${READELF} AR=${AR} NM=${NM} ${PYTHON_CMD} \
 		./tools/gn/bootstrap/bootstrap.py ${GN_BOOTSTRAP_FLAGS}
+.if !defined(GN_ONLY)
 	cd ${WRKSRC} && ${SETENV} ./out/${BUILDTYPE}/gn \
 		gen --args='${GN_ARGS}' out/${BUILDTYPE}
 
 	# Setup nodejs dependency
 	@${MKDIR} ${WRKSRC}/third_party/node/linux/node-linux-x64/bin
 	${LN} -sf ${LOCALBASE}/bin/node ${WRKSRC}/third_party/node/linux/node-linux-x64/bin/node
+.endif
 
 do-test-TEST-on:
 .for t in ${TEST_TARGETS}
@@ -234,6 +254,7 @@ do-test-TEST-on:
 		./${t} --gtest_filter=-${EXCLUDE_${t}:ts:} || ${TRUE}
 .endfor
 
+.if !defined(GN_ONLY)
 do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_MAN} ${WRKSRC}/out/${BUILDTYPE}/chrome.1 ${STAGEDIR}${MANPREFIX}/man/man1
@@ -277,5 +298,5 @@ post-install-DEBUG-on:
 post-install-DRIVER-on:
 	${INSTALL_PROGRAM} ${WRKSRC}/out/${BUILDTYPE}/chromedriver \
 		${STAGEDIR}${PREFIX}/bin
-
+.endif
 .include <bsd.port.mk>
