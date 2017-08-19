@@ -3,6 +3,7 @@
 
 PORTNAME=       papilio-loader
 PORTVERSION=    2.8
+PORTREVISION=	1
 CATEGORIES=     devel
 
 MAINTAINER=     mr@FreeBSD.org
