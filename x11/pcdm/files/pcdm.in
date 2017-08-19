@@ -6,6 +6,7 @@ name=PCDMd
 command="/usr/local/sbin/PCDMd"
 pidfile=/var/run/PCDMd.pid
 description="TrueOS Display Manager"
+supervisor="supervise-daemon"
 
 start_pre() {
   # Check if boot-loader set option to skip xorg
