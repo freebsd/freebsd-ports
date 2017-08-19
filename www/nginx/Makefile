@@ -911,8 +911,8 @@ EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-nginx-modsecurity-configure \
 
 .if ${PORT_OPTIONS:MMODSECURITY_DEVEL}
 LIB_DEPENDS+=	libmodsecurity.so.3:www/mod_security-devel
-GH_TUPLE+=	SiderLaps:ModSecurity-nginx:abbf2c4:modsec
-CONFIGURE_ARGS+=--add-dynamic-module=${WRKSRC_modsec}
+GH_TUPLE+=	SpiderLabs:ModSecurity-nginx:abbf2c4:modsec
+CONFIGURE_ARGS+=--add-module=${WRKSRC_modsec}
 .endif
 
 .if ${PORT_OPTIONS:MNAXSI}
