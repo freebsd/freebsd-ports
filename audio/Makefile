@@ -765,6 +765,7 @@
     SUBDIR += suil
     SUBDIR += supercollider
     SUBDIR += sweep
+    SUBDIR += swh-lv2
     SUBDIR += swhplugins
     SUBDIR += taglib
     SUBDIR += taglib-extras
