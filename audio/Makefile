@@ -696,6 +696,7 @@
     SUBDIR += rosegarden
     SUBDIR += rplay
     SUBDIR += rsynth
+    SUBDIR += rtmidi
     SUBDIR += rubberband
     SUBDIR += ruby-smf
     SUBDIR += ruby-taglib
