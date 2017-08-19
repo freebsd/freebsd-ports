@@ -19,8 +19,10 @@ name="ntpd"
 command=%%PREFIX%%/sbin/ntpd
 required_files=$openntpd_config
 pidfile=/var/run/ntpd.pid
-command_args="$ntpd_args -f $openntpd_config -p ${pidfile} -s"
+command_args="$ntpd_args -f $openntpd_config -d -s"
 description="Network Time Protocol Daemon"
+supervisor=supervise-daemon
+supervise_daemon_args="-1 /var/log/openntpd.log -2 /var/log/openntpd.log"
 
 depend()
 {
