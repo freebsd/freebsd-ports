@@ -11,6 +11,8 @@ COMMENT=	Display Control Panel for X NVidia driver
 
 LICENSE=	GPLv2
 
+BUILD_DEPENDS=	${LOCALBASE}/include/dbus-1.0/dbus/dbus.h:devel/dbus
+
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
 		libjansson.so:devel/jansson \
