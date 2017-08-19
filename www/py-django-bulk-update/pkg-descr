@@ -1,0 +1,6 @@
+Simple bulk update over Django ORM or with helper function.
+
+This project aims to bulk update the given objects using a single query
+over Django ORM.
+
+WWW: https://github.com/aykut/django-bulk-update
