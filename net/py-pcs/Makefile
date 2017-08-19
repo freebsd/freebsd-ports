@@ -3,6 +3,7 @@
 
 PORTNAME=	pcs
 PORTVERSION=	0.6
+PORTREVISION=	1
 CATEGORIES=	net python
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/Beta-${PORTVERSION}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,13 +12,14 @@ MAINTAINER=	gnn@FreeBSD.org
 COMMENT=	Protocol Construction Set
 
 LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/COPYRIGHT
+
+BUILD_DEPENDS=	cython>=0.11.2:lang/cython
 
 PORTDOCS=	pcs.pdf
 PORTEXAMPLES=	*
 
-BUILD_DEPENDS=	cython>=0.11.2:lang/cython
-
-USES=		python
+USES=		python:2.7
 USE_PYTHON=	distutils pythonprefix
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
@@ -29,5 +31,10 @@ post-install-DOCS-on:
 post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	cd ${WRKSRC}/scripts && ${INSTALL_DATA} ${PORTEXAMPLES} ${STAGEDIR}${EXAMPLESDIR}
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/bpf.so \
+		${STAGEDIR}${PYTHON_SITELIBDIR}/pcs/clock.so \
+		${STAGEDIR}${PYTHON_SITELIBDIR}/pcs/pcap.so
 
 .include <bsd.port.mk>

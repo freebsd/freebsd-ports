@@ -648,6 +648,7 @@
     SUBDIR += py-gmusicproxy
     SUBDIR += py-hsaudiotag
     SUBDIR += py-id3
+    SUBDIR += py-jack
     SUBDIR += py-karaoke
     SUBDIR += py-mad
     SUBDIR += py-mpd
@@ -695,6 +696,7 @@
     SUBDIR += rosegarden
     SUBDIR += rplay
     SUBDIR += rsynth
+    SUBDIR += rtmidi
     SUBDIR += rubberband
     SUBDIR += ruby-smf
     SUBDIR += ruby-taglib
@@ -715,6 +717,7 @@
     SUBDIR += shairplay
     SUBDIR += shairport
     SUBDIR += shairport-sync
+    SUBDIR += sherlock-lv2
     SUBDIR += shntool
     SUBDIR += shorten
     SUBDIR += shout
@@ -765,6 +768,7 @@
     SUBDIR += suil
     SUBDIR += supercollider
     SUBDIR += sweep
+    SUBDIR += swh-lv2
     SUBDIR += swhplugins
     SUBDIR += taglib
     SUBDIR += taglib-extras

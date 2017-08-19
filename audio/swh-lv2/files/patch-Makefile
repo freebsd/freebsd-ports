@@ -1,0 +1,29 @@
+--- Makefile.orig	2016-04-14 12:55:22 UTC
++++ Makefile
+@@ -1,5 +1,5 @@
+-PREFIX = /usr/local
+-INSTALL_DIR = $(PREFIX)/lib/lv2
++PREFIX ?= /usr/local
++INSTALL_DIR = $(DESTDIR)$(PREFIX)/lib/lv2
+ 
+ VERSION = 1.0.16
+ 
+@@ -59,7 +59,7 @@ OBJECTS = $(shell echo $(BUILD_PLUGINS) 
+ all: util gverb $(OBJECTS)
+ 
+ gverb: gverb/gverb.c gverb/gverbdsp.c gverb/gverb.o gverb/gverbdsp.o
+-	(cd gverb && make -w CFLAGS="$(PLUGIN_CFLAGS)" LDFLAGS="$(PLUGIN_LDFLAGS)")
++	(cd gverb && $(MAKE) -w CFLAGS="$(PLUGIN_CFLAGS)" LDFLAGS="$(PLUGIN_LDFLAGS)")
+ 
+ util/pitchscale.o:
+ 	$(CC) $(PLUGIN_CFLAGS) $(fftw3_CFLAGS) $*.c -c -o $@
+@@ -92,8 +92,7 @@ dist-clean:
+ real-clean:
+ 	rm -f plugins/*/*.{c,ttl,$(EXT),o,in} util/*.o gverb/*.o
+ 
+-install:
+-	@echo 'use install-user to install in home or install-system to install system wide'
++install: install-system
+ 
+ install-system: INSTALL_DIR_REALLY=$(INSTALL_DIR)
+ install-system: all install-really

@@ -1,0 +1,7 @@
+include/rtmidi/RtMidi.h
+include/rtmidi/rtmidi_c.h
+lib/librtmidi.a
+lib/librtmidi.so
+lib/librtmidi.so.3
+lib/librtmidi.so.3.0.0
+libdata/pkgconfig/rtmidi.pc

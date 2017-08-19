@@ -6,7 +6,7 @@ PORTVERSION=	5.18.10
 CATEGORIES=	devel
 MASTER_SITES=	GNU/${PORTNAME}/rel${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Tool designed to simplify the creation and maintenance of programs
 
 LICENSE=	GPLv2
@@ -16,16 +16,17 @@ RUN_DEPENDS=	bash:shells/bash
 LIB_DEPENDS=	libguile-2.0.so:lang/guile2 \
 		libgc-threaded.so:devel/boehm-gc-threaded
 
-USES=		gmake libtool pathfix perl5 pkgconfig shebangfix tar:xz
-USE_PERL5=	build
-USE_GNOME=	libxml2
+CONFIGURE_ARGS=	--datadir=${PREFIX}/share --with-libguile=yes --with-libxml2=yes
+CONFIGURE_ENV=	CONFIG_SHELL=${LOCALBASE}/bin/bash
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-libguile=yes --with-libxml2=yes \
-		--datadir=${PREFIX}/share CONFIG_SHELL=${PREFIX}/bin/bash
-USE_LDCONFIG=	yes
-SHEBANG_FILES=	autoopts/tpl/*.pl
 INSTALL_TARGET=	install-strip
+USE_GNOME=	libxml2
+USE_LDCONFIG=	yes
+USE_PERL5=	build
+USES=		gmake libtool pathfix perl5 pkgconfig shebangfix tar:xz
 
 INFO=		autogen
+
+SHEBANG_FILES=	autoopts/tpl/*.pl
 
 .include <bsd.port.mk>
