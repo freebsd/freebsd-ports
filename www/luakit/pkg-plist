@@ -1,4 +1,3 @@
-/you/have/to/check/what/makeplist/gives/you
 bin/luakit
 etc/xdg/luakit/globals.lua
 etc/xdg/luakit/rc.lua
