@@ -6,6 +6,7 @@ man/man1/fio_generate_plots.1.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/aio-read.fio
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/backwards-read.fio
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/basic-verify.fio
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/butterfly.fio
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/cpuio.fio
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dev-dax.fio
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/disk-zone-profile.fio
