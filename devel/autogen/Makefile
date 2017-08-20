@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	autogen
-PORTVERSION=	5.18.10
+PORTVERSION=	5.18.12
 CATEGORIES=	devel
 MASTER_SITES=	GNU/${PORTNAME}/rel${PORTVERSION}
 
@@ -12,9 +12,8 @@ COMMENT=	Tool designed to simplify the creation and maintenance of programs
 LICENSE=	GPLv2
 
 BUILD_DEPENDS=	bash:shells/bash
-RUN_DEPENDS=	bash:shells/bash
-LIB_DEPENDS=	libguile-2.0.so:lang/guile2 \
-		libgc-threaded.so:devel/boehm-gc-threaded
+LIB_DEPENDS=	libguile-2.0.so:lang/guile2
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 CONFIGURE_ARGS=	--datadir=${PREFIX}/share --with-libguile=yes --with-libxml2=yes
 CONFIGURE_ENV=	CONFIG_SHELL=${LOCALBASE}/bin/bash
@@ -23,7 +22,7 @@ INSTALL_TARGET=	install-strip
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
 USE_PERL5=	build
-USES=		gmake libtool pathfix perl5 pkgconfig shebangfix tar:xz
+USES=		gmake gnome libtool pathfix perl5 pkgconfig shebangfix tar:xz
 
 INFO=		autogen
 
