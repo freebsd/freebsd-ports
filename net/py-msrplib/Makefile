@@ -3,7 +3,7 @@
 
 PORTNAME=	msrplib
 PORTVERSION=	0.14.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net python
 MASTER_SITES=	http://download.ag-projects.com/SipClient/ \
 		http://www.grosbein.net/python/
@@ -18,11 +18,12 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gnutls>=1.1.6:security/py-gnutls \
 		${PYTHON_PKGNAMEPREFIX}eventlet>=0.9.15:net/py-eventlet \
-		${PYTHON_PKGNAMEPREFIX}application>=1.1.0:devel/py-application
+		${PYTHON_PKGNAMEPREFIX}application>=1.1.0:devel/py-application \
+		${PYTHON_PKGNAMEPREFIX}twisted>=0:devel/py-twisted
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes
-USES=		python twisted:names
+USES=		python
 USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>
