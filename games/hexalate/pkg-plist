@@ -1,6 +1,6 @@
 bin/hexalate
-share/appdata/hexalate.appdata.xml
 share/applications/hexalate.desktop
+share/metainfo/hexalate.appdata.xml
 %%DATADIR%%/translations/hexalate_ca.qm
 %%DATADIR%%/translations/hexalate_cs.qm
 %%DATADIR%%/translations/hexalate_de.qm
