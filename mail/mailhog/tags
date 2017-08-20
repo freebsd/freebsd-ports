@@ -1,0 +1,18 @@
+!_TAG_FILE_SORTED	2	/0=unsorted, 1=sorted, 2=foldcase/
+CATEGORIES	/usr/home/ricky/FreeBSD/ports/mail/mailhog/Makefile	/^CATEGORIES=	mail devel$/;"	m	language:Make
+COMMENT	/usr/home/ricky/FreeBSD/ports/mail/mailhog/Makefile	/^COMMENT=	MailHog development mail server$/;"	m	language:Make
+DISTVERSION	/usr/home/ricky/FreeBSD/ports/mail/mailhog/Makefile	/^DISTVERSION=	1.0.0$/;"	m	language:Make
+DISTVERSIONPREFIX	/usr/home/ricky/FreeBSD/ports/mail/mailhog/Makefile	/^DISTVERSIONPREFIX=	v$/;"	m	language:Make
+GH_ACCOUNT	/usr/home/ricky/FreeBSD/ports/mail/mailhog/Makefile	/^GH_ACCOUNT=	mailhog$/;"	m	language:Make
+GH_SUBDIR	/usr/home/ricky/FreeBSD/ports/mail/mailhog/Makefile	/^GH_SUBDIR=	src\/github.com\/mailhog\/MailHog$/;"	m	language:Make
+GH_TUPLE	/usr/home/ricky/FreeBSD/ports/mail/mailhog/Makefile	/^GH_TUPLE=	gorilla:pat:cf955c3:pat\/src\/github.com\/gorilla\/pat \\$/;"	m	language:Make
+LICENSE	/usr/home/ricky/FreeBSD/ports/mail/mailhog/Makefile	/^LICENSE=	MIT$/;"	m	language:Make
+LICENSE_FILE	/usr/home/ricky/FreeBSD/ports/mail/mailhog/Makefile	/^LICENSE_FILE=	${WRKSRC}\/LICENSE.md$/;"	m	language:Make
+MAINTAINER	/usr/home/ricky/FreeBSD/ports/mail/mailhog/Makefile	/^MAINTAINER=	mops@punkt.de$/;"	m	language:Make
+PLIST_FILES	/usr/home/ricky/FreeBSD/ports/mail/mailhog/Makefile	/^PLIST_FILES=	bin\/${PORTNAME}$/;"	m	language:Make
+PORTNAME	/usr/home/ricky/FreeBSD/ports/mail/mailhog/Makefile	/^PORTNAME=	mailhog$/;"	m	language:Make
+SUB_FILES	/usr/home/ricky/FreeBSD/ports/mail/mailhog/Makefile	/^SUB_FILES=	pkg-message$/;"	m	language:Make
+USES	/usr/home/ricky/FreeBSD/ports/mail/mailhog/Makefile	/^USES=		go$/;"	m	language:Make
+USE_GITHUB	/usr/home/ricky/FreeBSD/ports/mail/mailhog/Makefile	/^USE_GITHUB=	yes$/;"	m	language:Make
+USE_RC_SUBR	/usr/home/ricky/FreeBSD/ports/mail/mailhog/Makefile	/^USE_RC_SUBR=	mailhog$/;"	m	language:Make
+WRKSRC	/usr/home/ricky/FreeBSD/ports/mail/mailhog/Makefile	/^WRKSRC=		${WRKDIR}\/MailHog-${DISTVERSION}$/;"	m	language:Make
