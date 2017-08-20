@@ -2,6 +2,7 @@
 
 PORTNAME=	deluge
 PORTVERSION=	1.3.15
+PORTREVISION=	1
 PKGNAMESUFFIX=	-cli
 CATEGORIES=	net-p2p python
 MASTER_SITES=	http://download.deluge-torrent.org/source/
@@ -17,13 +18,14 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}xdg>=0.18:devel/py-xdg \
 		${PYTHON_PKGNAMEPREFIX}libtorrent-rasterbar>=0:net-p2p/libtorrent-rasterbar-python \
 		${PYTHON_PKGNAMEPREFIX}openssl>=0.8:security/py-openssl \
 		${PYTHON_PKGNAMEPREFIX}chardet>=1.0.1:textproc/py-chardet \
-		${PYTHON_PKGNAMEPREFIX}mako>=0.2.5:textproc/py-mako
+		${PYTHON_PKGNAMEPREFIX}mako>=0.2.5:textproc/py-mako \
+		${PYTHON_PKGNAMEPREFIX}twisted>=0:devel/py-twisted
 
 USE_RC_SUBR=	deluged deluge_web
 SUB_LIST+=	PYTHON_CMD=${PYTHON_CMD}
 
 NO_ARCH=	yes
-USES=		gettext python:-2.7 tar:xz twisted:run,web
+USES=		gettext python:-2.7 tar:xz
 USE_PYTHON=	autoplist distutils
 
 OPTIONS_DEFINE=	DOCS
