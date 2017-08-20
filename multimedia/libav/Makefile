@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libav
-PORTVERSION=	11.8
-PORTREVISION=	2
+PORTVERSION=	12.1
 CATEGORIES=	multimedia audio ipv6 net
 MASTER_SITES=	http://libav.org/releases/
 
@@ -11,13 +10,13 @@ COMMENT=	Realtime audio/video conversion library
 
 LICENSE=	GPLv2+
 
+BROKEN_armv6=		fails to compile: cc: warning: joined argument expects additional value: -mcpu=
+
 BUILD_DEPENDS=	yasm:devel/yasm
 LIB_DEPENDS=	libopencv_core.so:graphics/opencv-core \
 		libgmp.so:math/gmp \
 		libvdpau.so:multimedia/libvdpau \
 		libhogweed.so:security/nettle
-
-BROKEN_armv6=		fails to compile: cc: warning: joined argument expects additional value: -mcpu=
 
 USES=		cpe gmake perl5 pkgconfig tar:xz
 USE_XORG=	x11
@@ -226,10 +225,10 @@ post-configure-DOCS-off:
 	@${REINPLACE_CMD} -e 's|CONFIG_TEXI2HTML=yes|!CONFIG_TEXI2HTML=yes|' ${WRKSRC}/config.mak
 
 post-install:
-.for a in bin/avconv bin/avprobe lib/libav/libavdevice.so.55.0.0\
-	lib/libav/libavfilter.so.5.0.0 lib/libav/libavformat.so.56.1.0\
-	lib/libav/libavcodec.so.56.1.0 lib/libav/libavresample.so.2.1.0\
-	lib/libav/libswscale.so.3.0.0 lib/libav/libavutil.so.54.3.0
+.for a in bin/avconv bin/avprobe lib/libav/libavcodec.so.57.25.0\
+	lib/libav/libavdevice.so.56.1.0 lib/libav/libavfilter.so.6.7.0\
+	lib/libav/libavformat.so.57.7.2 lib/libav/libavresample.so.3.0.0\
+	lib/libav/libavutil.so.55.20.0 lib/libav/libswscale.so.4.0.0
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/${a}
 .endfor
 

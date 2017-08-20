@@ -966,6 +966,7 @@
     SUBDIR += rmonitor
     SUBDIR += roottail
     SUBDIR += rovclock
+    SUBDIR += rpi-firmware
     SUBDIR += rsnapshot
     SUBDIR += rsyncbackup
     SUBDIR += rsyncrypto

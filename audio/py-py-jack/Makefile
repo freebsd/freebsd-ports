@@ -1,15 +1,14 @@
 # Created by: Yuri Victorovich <yuri@rawbw.com>
 # $FreeBSD$
 
-PORTNAME=	jack
+PORTNAME=	py-jack
 PORTVERSION=	0.5.2
 CATEGORIES=	audio python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	py-${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	yuri@rawbw.com
-COMMENT=	PyJack is a Python bindings for the Jack Audio Server
+COMMENT=	Python bindings for the Jack Audio Server
 
 LICENSE=	GPLv2
 

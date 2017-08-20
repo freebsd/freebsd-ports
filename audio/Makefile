@@ -648,7 +648,6 @@
     SUBDIR += py-gmusicproxy
     SUBDIR += py-hsaudiotag
     SUBDIR += py-id3
-    SUBDIR += py-jack
     SUBDIR += py-karaoke
     SUBDIR += py-mad
     SUBDIR += py-mpd
@@ -658,6 +657,7 @@
     SUBDIR += py-mutagen
     SUBDIR += py-ogg
     SUBDIR += py-openal
+    SUBDIR += py-py-jack
     SUBDIR += py-pyacoustid
     SUBDIR += py-pyaudio
     SUBDIR += py-pylast

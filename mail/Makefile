@@ -213,6 +213,7 @@
     SUBDIR += mailfromd
     SUBDIR += mailfront
     SUBDIR += mailgraph
+    SUBDIR += mailhog
     SUBDIR += mailman
     SUBDIR += mailmgr
     SUBDIR += mailpile
