@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	powder-toy
-PORTVERSION=	92.0
+PORTVERSION=	92.1
 DISTVERSIONPREFIX=	v
-DISTVERSIONSUFFIX=	.331 # build number, not part of official version
+DISTVERSIONSUFFIX=	.332 # build number, not part of official version
 CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org
