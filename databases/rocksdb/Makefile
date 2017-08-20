@@ -14,15 +14,15 @@ LICENSE_COMB=	dual
 LICENSE_FILE_APACHE20=	${WRKSRC}/LICENSE.Apache
 LICENSE_FILE_GPLv2=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	bash:shells/bash
-LIB_DEPENDS=	libgflags.so:devel/gflags \
-		libsnappy.so:archivers/snappy
-
 BROKEN_DragonFly=	does not build on DragonFly BSD using GCC with -Werror
 BROKEN_aarch64=	does not build: the clang compiler does not support -march=native
 BROKEN_armv6=	does not build: the clang compiler does not support -march=native
 BROKEN_powerpc64=	does not build: the clang compiler does not support -march=native
 BROKEN_sparc64=	cannot build: uses unknown compiler flags
+
+BUILD_DEPENDS=	bash:shells/bash
+LIB_DEPENDS=	libgflags.so:devel/gflags \
+		libsnappy.so:archivers/snappy
 
 OPTIONS_DEFINE=	DEBUG LZ4 ZSTD
 OPTIONS_DEFAULT=LZ4
