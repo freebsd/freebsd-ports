@@ -17,6 +17,9 @@ LICENSE=	MIT
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyasn1>=0.0.9a:devel/py-pyasn1
 
+DEPRECATED=	Use devel/py-twisted instead
+EXPIRATION_DATE=2017-09-30
+
 NO_ARCH=	yes
 USE_PYTHON=	autoplist distutils
 USES=		python:2 tar:bzip2 twisted
