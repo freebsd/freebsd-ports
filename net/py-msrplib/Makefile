@@ -10,7 +10,7 @@ MASTER_SITES=	http://download.ag-projects.com/SipClient/ \
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	python-${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	eugen@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python MSRP client library
 
 LICENSE=	GPLv2
