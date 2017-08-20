@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tetzle
-PORTVERSION=	2.1.0
-PORTREVISION=	2
+PORTVERSION=	2.1.1
 CATEGORIES=	games
 MASTER_SITES=	http://gottcode.org/tetzle/ \
 		http://mirror.amdmi3.ru/distfiles/
