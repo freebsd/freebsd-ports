@@ -1,0 +1,4 @@
+Qt WebKit is the port of WebKit on top of Qt.
+This is a project aiming to upgrade QtWebKit to modern WebKit code base.
+
+WWW: https://github.com/annulen/webkit
