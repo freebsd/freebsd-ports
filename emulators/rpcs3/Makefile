@@ -2,8 +2,8 @@
 
 PORTNAME=	rpcs3
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.0.3-171
-DISTVERSIONSUFFIX=	-g334327df
+DISTVERSION=	0.0.3-191
+DISTVERSIONSUFFIX=	-gfff62df6
 CATEGORIES=	emulators
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -36,7 +36,6 @@ USES=		cmake compiler:c++14-lang iconv:wchar_t localbase:ldflags \
 USE_GL=		gl glew
 USE_QT5=	qmake_build buildtools_build core gui widgets
 CMAKE_ARGS+=	-DUSE_SYSTEM_LIBPNG=on -DUSE_SYSTEM_FFMPEG=on
-CXXFLAGS+=	-DBRANCH=${GH_ACCOUNT}/${GH_PROJECT}/master
 CXXFLAGS+=	-D_GLIBCXX_USE_C99 # XXX ports/193528
 CXXFLAGS+=	-Wno-macro-redefined # __STDC_*_MACROS sys/cdefs.h vs. llvm-config
 LDFLAGS+=	-Wl,--as-needed # GLU
