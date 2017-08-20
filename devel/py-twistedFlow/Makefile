@@ -14,6 +14,9 @@ COMMENT=	Generator based asynchronous result flows
 
 LICENSE=	MIT
 
+DEPRECATED=	Use devel/py-twisted instead
+EXPIRATION_DATE=2017-09-30
+
 WRKSRC=		${WRKDIR}/TwistedFlow-${PORTVERSION}
 
 USES=		python tar:bzip2 twisted
