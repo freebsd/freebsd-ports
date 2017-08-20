@@ -3,8 +3,7 @@
 
 PORTNAME=	qgis
 DISTVERSIONPREFIX=	final-
-DISTVERSION=	2_18_7
-PORTREVISION=	3
+DISTVERSION=	2_18_12
 CATEGORIES=	graphics geography
 
 MAINTAINER=	rhurlin@gwdg.de
@@ -23,13 +22,15 @@ LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libqscintilla2.so:devel/qscintilla2 \
 		libqwt.so:x11-toolkits/qwt5 \
 		libspatialindex.so:devel/spatialindex \
-		libspatialite.so:databases/spatialite
+		libspatialite.so:databases/spatialite \
+		libxerces-c-3.1.so:textproc/xerces-c3
+
+USES=		bison cmake compiler:features cpe desktop-file-utils \
+		execinfo fortran gmake pyqt:4 python:2.7 sqlite:3
 
 USE_GITHUB=	yes
 GH_PROJECT=	${PORTNAME:tu}
 
-USES=		bison cmake compiler:features cpe desktop-file-utils \
-		execinfo fortran gmake pyqt:4 python:2.7 sqlite
 USE_PYQT=	core gui network qscintilla2 sip sql svg xml webkit_run
 
 USE_QT4=	corelib designer doc gui linguist_build moc_build \
@@ -76,14 +77,14 @@ CUSTOMWIDGETS_CMAKE_OFF=	-DWITH_CUSTOM_WIDGETS:BOOL=FALSE
 DEBUG_CMAKE_ON=		-DCMAKE_BUILD_TYPE=Debug
 DEBUG_CMAKE_OFF=	-DCMAKE_BUILD_TYPE=Release
 
-GRASS_BUILD_DEPENDS=	grass64:databases/grass6
-GRASS_RUN_DEPENDS=	grass64:databases/grass6
-GRASS_CMAKE_ON=		-DWITH_GRASS:BOOL=TRUE -DGRASS_PREFIX=${LOCALBASE}/grass-6.4.6
+GRASS_BUILD_DEPENDS=	grass72:databases/grass7
+GRASS_RUN_DEPENDS=	grass72:databases/grass7
+GRASS_CMAKE_ON=		-DWITH_GRASS7:BOOL=TRUE -DGRASS_PREFIX7=${LOCALBASE}/grass-7.2.1
 GRASS_FORCE_MAKE_JOBS=	NO
-GRASS_CMAKE_OFF=	-DWITH_GRASS:BOOL=FALSE
+GRASS_CMAKE_OFF=	-DWITH_GRASS7:BOOL=FALSE
 
-POSTGIS_USES=		pgsql
-POSTGIS_LIB_DEPENDS=	liblwgeom.so:databases/postgis22
+#POSTGIS_USES=		pgsql
+#POSTGIS_LIB_DEPENDS=	liblwgeom.so:databases/postgis22
 POSTGIS_CMAKE_ON=	-DWITH_POSTGRESQL:BOOL=TRUE
 POSTGIS_CMAKE_OFF=	-DWITH_POSTGRESQL:BOOL=FALSE
 
