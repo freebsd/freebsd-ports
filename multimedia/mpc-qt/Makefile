@@ -2,11 +2,9 @@
 
 PORTNAME=	mpc-qt
 DISTVERSIONPREFIX=	v
-DISTVERSION=	17.08
+DISTVERSION=	17.08-13
+DISTVERSIONSUFFIX=	-gaf00b5b
 CATEGORIES=	multimedia audio
-MASTER_SITES=	https://aur.archlinux.org/cgit/aur.git/plain/${PORTNAME}.desktop?h=${PORTNAME}-git&id=b1a6b91&dummy=/:desktop
-DISTFILES=	${PORTNAME}.desktop:desktop
-EXTRACT_ONLY=	${DISTFILES:N*\:desktop:C/:.*//}
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Qt 5 clone of Media Player Classic based on libmpv
@@ -17,6 +15,7 @@ LIB_DEPENDS=	libmpv.so:multimedia/mpv
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	cmdrkotori
+GH_TUPLE=	Argon-:mpv-stats:1.1-24-g6a37a6d:mpv_stats/external/mpv-stats
 
 USES=		compiler:c++11-lib desktop-file-utils pkgconfig qmake
 USE_QT5=	qmake_build buildtools_build linguisttools_build \
@@ -24,20 +23,5 @@ USE_QT5=	qmake_build buildtools_build linguisttools_build \
 USE_GL=		gl
 CXXFLAGS+=	-D_GLIBCXX_USE_C99 -D_GLIBCXX_USE_C99_MATH_TR1 \
 		-D_DECLARE_C99_LDBL_MATH # XXX ports/193528
-PLIST_FILES=	bin/${PORTNAME} \
-		share/applications/${PORTNAME}.desktop \
-		share/pixmaps/${PORTNAME}.svg
-
-post-patch:
-	@${REINPLACE_CMD} -e 's,/usr,${PREFIX},' \
-		${WRKSRC}/platform/resources_paths.h
-
-do-install:
-	${INSTALL_PROGRAM} ${INSTALL_WRKSRC}/${PORTNAME} \
-		${STAGEDIR}${PREFIX}/bin
-	${INSTALL_DATA} ${_DISTDIR}/${PORTNAME}.desktop \
-		${STAGEDIR}${PREFIX}/share/applications
-	${INSTALL_DATA} ${WRKSRC}/images/icon/logo.svg \
-		${STAGEDIR}${PREFIX}/share/pixmaps/${PORTNAME}.svg
 
 .include <bsd.port.mk>
