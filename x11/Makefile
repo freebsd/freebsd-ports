@@ -8,6 +8,7 @@
     SUBDIR += 9menu
     SUBDIR += alacritty
     SUBDIR += alltray
+    SUBDIR += alttab
     SUBDIR += altyo
     SUBDIR += antimicro
     SUBDIR += appres
