@@ -13,11 +13,11 @@ COMMENT=	Library and tools to support IPMI-capable hardware
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+ONLY_FOR_ARCHS=	amd64 i386
+ONLY_FOR_ARCHS_REASON=	invokes i386 asm
+
 LIB_DEPENDS=	libargp.so:devel/argp-standalone \
 		libgcrypt.so:security/libgcrypt
-
-ONLY_FOR_ARCHS=	i386 amd64
-ONLY_FOR_ARCHS_REASON=	invokes i386 asm
 
 OPTIONS_DEFINE=	DEBUG DOCS IOPERM
 IOPERM_DESC=	Use i386_set_ioperm
