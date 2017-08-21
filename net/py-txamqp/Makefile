@@ -3,20 +3,21 @@
 
 PORTNAME=	txamqp
 PORTVERSION=	0.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net python
 MASTER_SITES=	http://launchpadlibrarian.net/30388120/ \
 		# http://launchpad.net/txamqp/trunk/${PORTVERSION}/+download/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	python-${PORTNAME}_${PORTVERSION}.orig
 
-MAINTAINER=	horus.li@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Twisted Python library for the AMQP messaging protocol
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}thrift>0:devel/py-thrift
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}thrift>0:devel/py-thrift \
+		${PYTHON_PKGNAMEPREFIX}twisted>=0:devel/py-twisted
 
 NO_ARCH=	yes
-USES=		python:2 twisted
+USES=		python:2
 USE_PYTHON=	distutils autoplist
 
 WRKSRC=		${WRKDIR}/python-${PORTNAME}-${PORTVERSION}
