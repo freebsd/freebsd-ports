@@ -7,11 +7,9 @@ DISTVERSIONPREFIX=	v
 PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	math python
-MASTER_SITES=	GH:source \
-		http://docs.scipy.org/doc/${PORTNAME}-${PORTVERSION:C/\.[0-9]+$/.0/}/:doc
+MASTER_SITES=	http://docs.scipy.org/doc/${PORTNAME}-${PORTVERSION:C/\.[0-9]+$/.0/}/:doc
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:source \
-		${PORTNAME}-ref-${PORTVERSION:C/\.[0-9]+$/.0/}.pdf:doc \
+DISTFILES=	${PORTNAME}-ref-${PORTVERSION:C/\.[0-9]+$/.0/}.pdf:doc \
 		${PORTNAME}-user-${PORTVERSION:C/\.[0-9]+$/.0/}.pdf:doc
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
