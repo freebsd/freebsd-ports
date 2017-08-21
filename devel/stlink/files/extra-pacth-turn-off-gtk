@@ -1,14 +1,14 @@
---- CMakeLists.txt.orig	2017-01-31 16:20:32.995425000 +0300
-+++ CMakeLists.txt	2017-01-31 16:20:46.354608000 +0300
-@@ -19,10 +19,10 @@
+--- CMakeLists.txt.orig	2017-07-01 17:41:54.000000000 +0300
++++ CMakeLists.txt	2017-08-21 18:28:07.992623000 +0300
+@@ -21,10 +21,10 @@ include(cmake/CFlags.cmake)
  # Dependencies
  ###
  find_package(LibUSB REQUIRED)
--if (NOT APPLE AND NOT WIN32)
+-if (NOT APPLE AND NOT WIN32 AND NOT CMAKE_CROSSCOMPILING)
 -	find_package(PkgConfig)
 -	pkg_check_modules(gtk gtk+-3.0)
 -endif ()
-+#if (NOT APPLE AND NOT WIN32)
++#if (NOT APPLE AND NOT WIN32 AND NOT CMAKE_CROSSCOMPILING)
 +#	find_package(PkgConfig)
 +#	pkg_check_modules(gtk gtk+-3.0)
 +#endif ()
