@@ -778,6 +778,7 @@
     SUBDIR += tagtool
     SUBDIR += tagutil
     SUBDIR += tap-plugins
+    SUBDIR += tap-plugins-lv2
     SUBDIR += tcd
     SUBDIR += tclmidi
     SUBDIR += teamspeak3-server
