@@ -61,6 +61,7 @@
     SUBDIR += calf
     SUBDIR += cam
     SUBDIR += cantata
+    SUBDIR += caps-lv2
     SUBDIR += caps-plugins
     SUBDIR += ccaudio2
     SUBDIR += cd-console

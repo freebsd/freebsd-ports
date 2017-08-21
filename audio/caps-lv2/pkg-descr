@@ -1,0 +1,7 @@
+The C* Audio Plugin Suite, is a collection of highly refined LV2
+units capable of (and intended for) realtime operation. The suite
+includes DSP units emulating instrument amplifiers, stomp-box
+classics, versatile 'virtual analogue' oscillators, fractal
+oscillation, reverb, equalization and others.
+
+WWW: https://github.com/moddevices/caps-lv2
