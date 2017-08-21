@@ -770,6 +770,7 @@
     SUBDIR += sweep
     SUBDIR += swh-lv2
     SUBDIR += swhplugins
+    SUBDIR += synthpod-lv2
     SUBDIR += taglib
     SUBDIR += taglib-extras
     SUBDIR += taglib-sharp
