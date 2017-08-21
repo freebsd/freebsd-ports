@@ -2,39 +2,41 @@
 # $FreeBSD$
 
 PORTNAME=	bro
-PORTVERSION=	2.4.1
-PORTREVISION=	3
+PORTVERSION=	2.5.1
 CATEGORIES=	security
-MASTER_SITES=	http://www.bro.org/downloads/release/
+MASTER_SITES=	https://www.bro.org/downloads/:source1 \
+		https://codeload.github.com/${GH_ACCOUNT}/${GH_PROJECT}/tar.gz/${PORTVERSION2}?dummy=/:source2
+DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}:source1 \
+		${GH_ACCOUNT}-${GH_PROJECT}-${PORTVERSION2}_GH0${EXTRACT_SUFX}:source2
 
 MAINTAINER=	leres@ee.lbl.gov
 COMMENT=	System for detecting network intruders in real-time
 
 LICENSE=	BSD3CLAUSE
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/bison:devel/bison \
-		${LOCALBASE}/bin/swig:devel/swig13
-LIB_DEPENDS=	libGeoIP.so:net/GeoIP
-
 BROKEN_powerpc64=	Does not build: error: zero-size array 'names'
 
-USES=		cmake:outsource compiler:c++11-lang perl5 python shebangfix ssl
+LIB_DEPENDS=	libGeoIP.so:net/GeoIP
 
-CMAKE_ARGS+=	-D PYTHON_EXECUTABLE:PATH=${PYTHON_CMD}
-CXXFLAGS+=	-std=c++11 -Wextra -Wall -pedantic
+GH_ACCOUNT=	actor-framework
+GH_PROJECT=	${GH_ACCOUNT}
+
+USES=		bison cmake:outsource compiler:c++11-lang ninja perl5 python shebangfix ssl
+
+CMAKE_ARGS+=	-DPYTHON_EXECUTABLE:PATH=${PYTHON_CMD}
+CXXFLAGS+=	-std=c++11 -Wall
+
+PORTVERSION2=	0.14.6
+WRKSRC2=	${WRKDIR}/${GH_PROJECT}-${PORTVERSION2}
+STAGEDIR2=	${STAGEDIR}-caf
 
 SHEBANG_FILES=	aux/broctl/aux/trace-summary/trace-summary
 
 SUB_FILES=	pkg-message
 NO_MTREE=	yes
 
-.if defined(BRO_PREFIX)
-PREFIX=${BRO_PREFIX}
-PLIST_SUB+=	CLEANUP_PREFIX=""
-.else
-PLIST_SUB+=	CLEANUP_PREFIX="@comment "
-.endif
-CMAKE_ARGS+=	-D CMAKE_INSTALL_PREFIX:PATH=${PREFIX} \
+CMAKE_ARGS+=	-GNinja \
+		-D CMAKE_INSTALL_PREFIX:PATH=${PREFIX} \
 		-D BRO_ROOT_DIR:PATH=${PREFIX} \
 		-D PY_MOD_INSTALL_DIR:PATH=${PREFIX}/lib/broctl \
 		-D BRO_SCRIPT_INSTALL_PATH:PATH=${PREFIX}/share/bro \
@@ -55,7 +57,7 @@ PLIST_SUB+=	BROUSER=${BROUSER} \
 USERS=		${BROUSER}
 GROUPS=		${BROGROUP}
 
-OPTIONS_DEFINE= BROCCOLI BROCTL BROKER DEBUG IPSUMDUMP LBL_CF LBL_HF PERFTOOLS
+OPTIONS_DEFINE=	BROCCOLI BROCTL BROKER DEBUG IPSUMDUMP LBL_CF LBL_HF PERFTOOLS
 OPTIONS_DEFAULT=BROCCOLI BROCTL IPSUMDUMP LBL_CF LBL_HF
 OPTIONS_SUB=	yes
 
@@ -71,7 +73,8 @@ BROCTL_IMPLIES=		BROCCOLI IPSUMDUMP
 
 BROCCOLI_LIB_DEPENDS=	libbroccoli.so:security/broccoli
 BROCTL_BUILD_DEPENDS=	${LOCALBASE}/bin/bash:shells/bash \
-			${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3
+			${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3 \
+			swig3.0:devel/swig30
 BROCTL_RUN_DEPENDS=	${LOCALBASE}/bin/bash:shells/bash \
 			${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3
 BROCTL_CMAKE_BOOL=	INSTALL_BROCTL
@@ -79,20 +82,56 @@ BROCTL_USE=		LDCONFIG=yes
 IPSUMDUMP_BUILD_DEPENDS=ipsumdump:net/ipsumdump
 IPSUMDUMP_RUN_DEPENDS=	ipsumdump:net/ipsumdump
 BROKER_CMAKE_BOOL=	ENABLE_BROKER
-BROKER_BUILD_DEPENDS=	caf>=0.14.1:devel/caf
+BROKER_BUILD_DEPENDS=	swig3.0:devel/swig30
+BROKER_CMAKE_ON+=	-DCAF_ROOT_DIR=${STAGEDIR2}${PREFIX}
 DEBUG_CMAKE_BOOL=	ENABLE_DEBUG
 LBL_HF_RUN_DEPENDS=	${LOCALBASE}/bin/hf:sysutils/lbl-hf
 LBL_CF_RUN_DEPENDS=	${LOCALBASE}/bin/cf:sysutils/lbl-cf
 PERFTOOLS_CMAKE_BOOL=	ENABLE_PERFTOOLS
 PERFTOOLS_RUN_DEPENDS=	${LOCALBASE}/bin/pprof:devel/google-perftools
+PYTHON_BUILD_DEPENDS=	swig3.0:devel/swig30
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MBROCTL}
+USE_RC_SUBR=	bro
+.endif
+
+CMAKE_ARGS2=		-GNinja \
+			-D CMAKE_INSTALL_PREFIX:PATH=${STAGEDIR2}${PREFIX} \
+			-D CAF_BUILD_STATIC_ONLY:BOOL=yes \
+			-D CAF_LOG_LEVEL:STRING=0 \
+			-D CAF_NO_EXAMPLES:BOOL=yes \
+			-D CAF_NO_OPENCL:BOOL=yes \
+			-D CAF_NO_UNIT_TESTS:BOOL=yes
+
+CMAKE_SOURCE_PATH2=	${WRKSRC2}
+
+CONFIGURE_WRKSRC2=	${WRKDIR}/.build-caf
+BUILD_WRKSRC2=		${CONFIGURE_WRKSRC2}
+INSTALL_WRKSRC2=	${CONFIGURE_WRKSRC2}
+
+# Build the version of caf this version of bro requires
+pre-configure-BROKER-on:
+	${MKDIR} ${CONFIGURE_WRKSRC2}
+	(cd ${CONFIGURE_WRKSRC2} && \
+	    ${CMAKE_BIN} ${CMAKE_ARGS2} ${CMAKE_SOURCE_PATH2})
+	${MKDIR} ${STAGEDIR2}
+	(cd ${BUILD_WRKSRC2} && \
+	    ${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} ${_MAKE_JOBS} install)
+	${LN} -s libcaf_core_static.a ${STAGEDIR2}${PREFIX}/lib/libcaf_core.a
+	${LN} -s libcaf_io_static.a ${STAGEDIR2}${PREFIX}/lib/libcaf_io.a
 
 post-install-BROCTL-on:
-	@${MKDIR} ${STAGEDIR}${PREFIX}/logs
-	@${MKDIR} ${STAGEDIR}${PREFIX}/spool/tmp
-	@${MKDIR} ${STAGEDIR}${PREFIX}/spool/installed-scripts-do-not-touch/auto
-	@${MKDIR} ${STAGEDIR}${PREFIX}/spool/installed-scripts-do-not-touch/site
+	${MKDIR} ${STAGEDIR}${PREFIX}/logs
+	${MKDIR} ${STAGEDIR}${PREFIX}/spool/tmp
+	${MKDIR} ${STAGEDIR}${PREFIX}/spool/installed-scripts-do-not-touch/auto
+	${MKDIR} ${STAGEDIR}${PREFIX}/spool/installed-scripts-do-not-touch/site
 .for F in broctl.cfg networks.cfg node.cfg
-	@${MV} ${STAGEDIR}${PREFIX}/etc/${F} ${STAGEDIR}${PREFIX}/etc/${F}.example
+	${MV} ${STAGEDIR}${PREFIX}/etc/${F} ${STAGEDIR}${PREFIX}/etc/${F}.example
 .endfor
+
+pre-install-BROCTL-on:
+	${MKDIR} ${STAGEDIR}${PREFIX}/etc/rc.d
 
 .include <bsd.port.mk>
