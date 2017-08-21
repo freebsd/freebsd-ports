@@ -5,6 +5,15 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20170820:
+  AFFECTS: users of www/uwsgi
+  AUTHOR: ultima@FreeBSD.org
+
+  The default socket owner and mode had been changed from www:www 600
+  to uwsgi:www 660. This should resolve issue #1471[1] on github.
+
+  [1] https://github.com/unbit/uwsgi/issues/1471
+
 20170808:
   AFFECTS: users of lang/ghc and */hs-*
   AUTHOR: haskell@FreeBSD.org

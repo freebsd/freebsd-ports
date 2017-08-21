@@ -13,19 +13,25 @@
 # uwsgi_socket (path/str):	Set the path to the uwsgi unix socket
 #				Default is /tmp/uwsgi.sock.
 # uwsgi_socket_mode (int):	Set the mode of the socket.
-#				Default is 600.
+#				Default is 660.
 # uwsgi_socket_owner (str):	Set the owner of the socket.
-#				Default is www:www.
+#				Default is uwsgi:www.
+# uwsgi_emperor (bool):		Set it to "YES" to run uwsgi in emperor mode
+#				Default is "NO".
+# uwsgi_configfile (path):	Set the path to the config file
+#				Default is %%PREFIX%%/etc/uwsgi/uwsgi.ini.
+# uwsgi_vassals_dir (path):	Set the path to the vassals directory
+#				Default is %%PREFIX%%/etc/uwsgi/vassals.
 # uwsgi_logfile (path):		Set the path to the uwsgi log file
 #				Default is /var/log/uwsgi.log.
 # uwsgi_pidfile (path):		Set the path to the uwsgi pid file
 #				Default is /var/run/uwsgi.pid.
 # uwsgi_uid (int):		Set the UID of the process to run with
-#				Default is 165 (uwsgi).
+#				Default is uwsgi.
 # uwsgi_gid (int):		Set the GID of the process to run with
-#				Default is 165 (uwsgi).
+#				Default is uwsgi.
 # uwsgi_flags (str):		Set the uwsgi command line arguments
-#				Default is "-M -L".
+#				Default is "-L".
 # uwsgi_procname (str):		Define to "uWSGI" if you start uwsgi with
 #				--auto-procname option.
 #
@@ -46,28 +52,31 @@ rcvar=uwsgi_enable
 load_rc_config $name
 
 command=%%PREFIX%%/bin/uwsgi
+
 : ${uwsgi_enable="NO"}
-: ${uwsgi_profiles=""}
 : ${uwsgi_socket="/tmp/${name}.sock"}
 : ${uwsgi_socket_mode="660"}
-: ${uwsgi_socket_owner="www:www"}
+: ${uwsgi_socket_owner="uwsgi:www"}
+: ${uwsgi_configfile="%%PREFIX%%/etc/uwsgi/uwsgi.ini"}
+: ${uwsgi_profiles=""}
 : ${uwsgi_logfile="/var/log/${name}.log"}
 : ${uwsgi_pidfile="/var/run/${name}.pid"}
-: ${uwsgi_uid="165"}
-: ${uwsgi_gid="165"}
-: ${uwsgi_flags="-M -L"}
-: ${uwsgi_procname="${command}"}
+: ${uwsgi_uid="uwsgi"}
+: ${uwsgi_gid="uwsgi"}
+: ${uwsgi_flags="-L"}
+: ${uwsgi_emperor="NO"}
+: ${uwsgi_vassals_dir="%%PREFIX%%/etc/uwsgi/vassals"}
 
 is_uwsgi_profile() {
-    local profile
+	local profile
 
-    for profile in $uwsgi_profiles; do
-        if [ "$profile" = "$1" ]; then
-            return 0
-        fi
-    done
+	for profile in $uwsgi_profiles; do
+		if [ "$profile" = "$1" ]; then
+			return 0
+		fi
+	done
 
-    return 1
+	return 1
 }
 
 if [ -n "${uwsgi_profiles}" ]; then
@@ -78,32 +87,55 @@ if [ -n "${uwsgi_profiles}" ]; then
 		        exit 1
 		fi
 		eval uwsgi_socket=\${uwsgi_${profile}_socket:-"/tmp/${name}-${profile}.sock"}
-		eval uwsgi_socket_mode=\${uwsgi_${profile}_socket_mode:-"660"}
-		eval uwsgi_socket_owner=\${uwsgi_${profile}_socket_owner:-"www:www"}
+		eval uwsgi_socket_mode=\${uwsgi_${profile}_socket_mode:-${uwsgi_socket_mode}
+		eval uwsgi_socket_owner=\${uwsgi_${profile}_socket_owner:-${uwsgi_socket_owner}}
 		eval uwsgi_logfile=\${uwsgi_${profile}_logfile:-"/var/log/${name}-${profile}.log"}
 		eval uwsgi_pidfile=\${uwsgi_${profile}_pidfile:-"/var/run/${name}-${profile}.pid"}
 		eval uwsgi_uid=\${uwsgi_${profile}_uid:-"${uwsgi_uid}"}
 		eval uwsgi_gid=\${uwsgi_${profile}_gid:-"${uwsgi_uid}"}
 		eval uwsgi_flags=\${uwsgi_${profile}_flags:-"${uwsgi_flags}"}
 		eval uwsgi_procname=\${uwsgi_${profile}_procname:-"${uwsgi_procname}"}
+		eval uwsgi_emperor=\${uwsgi_${profile}_emperor:-"${uwsgi_emperor}"}
+		eval uwsgi_vassals_dir=\${uwsgi_${profile}_vassals_dir:-"${uwsgi_vassals_dir}"}
+		eval uwsgi_configfile=\${uwsgi_${profile}_configfile:-"${uwsgi_configfile}"}
 	elif [ -n "$1" ]; then
 		for profile in ${uwsgi_profiles}; do
-	            echo "Processing ${name} profile: ${profile}"
-	            %%PREFIX%%/etc/rc.d/uwsgi $1 ${profile}
-	        done
-	        exit 0
+			echo "Processing ${name} profile: ${profile}"
+			%%PREFIX%%/etc/rc.d/uwsgi $1 ${profile}
+		done
+		exit 0
 	fi
 fi
 
-command=%%PREFIX%%/bin/uwsgi
-command_args="--pidfile ${uwsgi_pidfile} -s ${uwsgi_socket} --chmod-socket=${uwsgi_socket_mode} --chown-socket=${uwsgi_socket_owner} -d ${uwsgi_logfile} --uid ${uwsgi_uid} --gid ${uwsgi_gid}"
 pidfile=${uwsgi_pidfile}
+start_precmd=start_precmd
 stop_postcmd=stop_postcmd
 reload_precmd=reload_precmd
 brutalreload_cmd=brutalreload_cmd
 sig_stop="INT"
 extra_commands="reload brutalreload"
 procname=${uwsgi_procname}
+
+start_precmd()
+{
+	rc_flags=""
+	if [ -e ${uwsgi_configfile} ]; then
+		rc_flags="--ini ${uwsgi_configfile} "
+	fi
+
+	if checkyesno uwsgi_emperor; then
+		echo "Running uWSGI as Emperor. Vassals loaded from "$uwsgi_vassals_dir
+		required_dirs=${uwsgi_vassals_dir}
+		rc_flags=${rc_flags}"--emperor-pidfile ${uwsgi_pidfile} -d ${uwsgi_logfile} --emperor ${uwsgi_vassals_dir}"
+		rc_flags=${rc_flags}" --vassals-set uid=${uwsgi_uid} --vassals-set gid=${uwsgi_gid}"
+		rc_flags=${rc_flags}" --vassals-set chmod-socket=${uwsgi_socket_mode} --vassals-set chown-socket=${uwsgi_socket_owner}"
+	else
+		rc_flags=${rc_flags}"--master  --uid ${uwsgi_uid} --gid ${uwsgi_gid} --pidfile ${uwsgi_pidfile} -d ${uwsgi_logfile}"
+		rc_flags=${rc_flags}" -s ${uwsgi_socket} --chmod-socket=${uwsgi_socket_mode} --chown-socket=${uwsgi_socket_owner}"
+	fi
+
+	rc_flags=${rc_flags}" ${uwsgi_flags}"
+}
 
 stop_postcmd()
 {
