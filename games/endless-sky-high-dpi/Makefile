@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	endless-sky-high-dpi
-PORTVERSION=	0.9.6
+PORTVERSION=	0.9.8
 DISTVERSIONPREFIX=	v
 CATEGORIES=	games
 
