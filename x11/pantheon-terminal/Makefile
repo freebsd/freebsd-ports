@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pantheon-terminal
-PORTVERSION=	0.4.2
-PORTREVISION=	1
+PORTVERSION=	0.4.3
 CATEGORIES=	x11
 
 MAINTAINER=	amdmi3@FreeBSD.org
