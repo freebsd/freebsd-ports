@@ -4,6 +4,7 @@
 PORTNAME=		open-vm-tools
 PORTVERSION=		${RELEASE_VER}
 PORTEPOCH=		2
+PORTREVISION=		1
 CATEGORIES=		emulators
 
 MAINTAINER=		swills@FreeBSD.org

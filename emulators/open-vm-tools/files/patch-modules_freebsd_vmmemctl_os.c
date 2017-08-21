@@ -1,5 +1,5 @@
---- modules/freebsd/vmmemctl/os.c.orig	2017-02-24 22:15:37 UTC
-+++ modules/freebsd/vmmemctl/os.c
+--- modules/freebsd/vmmemctl/os.c.orig	2017-02-24 14:15:37.000000000 -0800
++++ modules/freebsd/vmmemctl/os.c	2017-08-15 13:54:03.813152000 -0700
 @@ -37,9 +37,11 @@
  #include <sys/param.h>
  #include <sys/systm.h>
@@ -50,13 +50,10 @@
  
 -   if ( !vm_page_lookup(state->vmobject, page->pindex) ) {
 -      return;
--   }
 +//   if ( !vm_page_lookup(state->vmobject, page->pindex) ) {
 +//      return;
 +//   }
- 
--   os_pmap_putindex(pmap, page->pindex);
--   vm_page_free(page);
++
 +//   os_pmap_putindex(pmap, page->pindex);
 +//   vm_page_free(page);
 +#if __FreeBSD_version > 1000029
@@ -77,7 +74,10 @@
 +#else
 +       vm_page_unlock_queues();
 +#endif
-+   }
+    }
+-
+-   os_pmap_putindex(pmap, page->pindex);
+-   vm_page_free(page);
 +#if __FreeBSD_version > 1000029
 +   VM_OBJECT_WUNLOCK(state->vmobject);
 +#else
@@ -106,18 +106,18 @@
        return NULL;
     }
  
-@@ -504,6 +550,11 @@ os_kmem_alloc(int alloc_normal_failed) /
- 
+@@ -505,6 +551,11 @@ os_kmem_alloc(int alloc_normal_failed) /
     if (!page) {
        os_pmap_putindex(pmap, pindex);
+    }
 +#if __FreeBSD_version > 1000029
 +   VM_OBJECT_WUNLOCK(state->vmobject);
 +#else
 +   VM_OBJECT_UNLOCK(state->vmobject);
 +#endif
-    }
  
     return page;
+ }
 @@ -847,7 +898,7 @@ vmmemctl_sysctl(SYSCTL_HANDLER_ARGS)
  static void
  vmmemctl_init_sysctl(void)
