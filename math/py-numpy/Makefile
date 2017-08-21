@@ -3,15 +3,17 @@
 
 PORTNAME=	numpy
 PORTVERSION=	1.13.1
+DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	math python
-MASTER_SITES=	CHEESESHOP:source \
-		SF/${PORTNAME}/NumPy/${PORTVERSION}/:doc
+MASTER_SITES=	GH:source \
+		http://docs.scipy.org/doc/${PORTNAME}-${PORTVERSION:C/\.[0-9]+$/.0/}/:doc
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTFILES=	numpy-${PORTVERSION:S/r/rc/}${EXTRACT_SUFX}:source \
-		reference.pdf:doc \
-		userguide.pdf:doc
-EXTRACT_ONLY=	numpy-${PORTVERSION:S/r/rc/}${EXTRACT_SUFX}
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:source \
+		${PORTNAME}-ref-${PORTVERSION:C/\.[0-9]+$/.0/}.pdf:doc \
+		${PORTNAME}-user-${PORTVERSION:C/\.[0-9]+$/.0/}.pdf:doc
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	The New Numeric Extension to Python
@@ -21,7 +23,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 PYDISTUTILS_BUILDARGS=		--fcompiler=gnu95
 PYDISTUTILS_CONFIGUREARGS=	--fcompiler=gnu95
-USES=		fortran python zip
+USES=		fortran python
+USE_GITHUB=	yes
 USE_PYTHON=	concurrent distutils py3kplist
 LDFLAGS+=	-shared
 
@@ -34,7 +37,6 @@ TESTS_DESC=		Install test suite requirements
 
 PLIST_SUB=	PYTHON_VER=${PYTHON_VER}
 PORTDOCS=	*
-WRKSRC=		${WRKDIR}/${DISTNAME:S/r/rc/}
 
 GCCLIBDIR_CMDS=	${FC} -print-file-name=libgfortran.so | ${SED} -e s/libgfortran.so//
 
@@ -44,6 +46,8 @@ NETLIB_LIB_DEPENDS=	libcblas.so:math/cblas
 OPENBLAS_USES=	blaslapack:openblas
 SUITESPARSE_LIB_DEPENDS=libumfpack.so:math/suitesparse
 TESTS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>=0:devel/py-nose
+
+BUILD_DEPENDS+=	cython:lang/cython
 
 .include <bsd.port.pre.mk>
 
@@ -95,7 +99,7 @@ post-install:
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${DISTDIR}/reference.pdf ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${DISTDIR}/userguide.pdf ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${DISTDIR}/${PORTNAME}-ref-${PORTVERSION:C/\.[0-9]+$/.0/}.pdf ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${DISTDIR}/${PORTNAME}-user-${PORTVERSION:C/\.[0-9]+$/.0/}.pdf ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.post.mk>
