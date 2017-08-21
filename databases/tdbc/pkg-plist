@@ -33,6 +33,7 @@ man/mann/tdbc_tokenize.n.gz
 %%PGSQL%%lib/tdbcpostgres%%VERSION%%/libtdbcpostgres%%VERSION%%.so
 %%PGSQL%%lib/tdbcpostgres%%VERSION%%/tdbcpostgres.tcl
 %%PGSQL%%lib/tdbcpostgres%%VERSION%%/pkgIndex.tcl
+%%PGSQL%%man/mann/tdbc_postgres.n.gz
 @comment SQLITE
 %%SQLITE%%lib/tcl%%TCL_MAJ%%/%%TCL_VER%%/tdbc/sqlite3-%%VERSION%%.tm
 %%SQLITE%%man/mann/tdbc_sqlite3.n.gz
