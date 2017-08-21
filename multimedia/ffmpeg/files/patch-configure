@@ -1,6 +1,14 @@
---- configure.orig	2017-04-13 01:55:54 UTC
+--- configure.orig	2017-07-29 17:49:29 UTC
 +++ configure
-@@ -3262,12 +3262,7 @@ target_os_default=$(tolower $(uname -s))
+@@ -1875,6 +1875,7 @@ HEADERS_LIST="
+     machine_ioctl_meteor_h
+     malloc_h
+     opencv2_core_core_c_h
++    openjpeg_2_2_openjpeg_h
+     openjpeg_2_1_openjpeg_h
+     openjpeg_2_0_openjpeg_h
+     openjpeg_1_5_openjpeg_h
+@@ -3262,12 +3263,7 @@ target_os_default=$(tolower $(uname -s))
  host_os=$target_os_default
  
  # machine
@@ -14,7 +22,21 @@
  cpu="generic"
  intrinsics="none"
  
-@@ -6295,6 +6290,9 @@ elif enabled llvm_gcc; then
+@@ -5803,10 +5799,12 @@ enabled libopencore_amrwb && require lib
+ enabled libopencv         && { check_header opencv2/core/core_c.h &&
+                                { use_pkg_config opencv opencv2/core/core_c.h cvCreateImageHeader ||
+                                  require opencv opencv2/core/core_c.h cvCreateImageHeader -lopencv_core -lopencv_imgproc; } ||
+-                               require_pkg_config opencv opencv/cxcore.h cvCreateImageHeader; }
++                               require_pkg_config opencv-core-core opencv/cxcore.h cvCreateImageHeader; }
+ enabled libopenh264       && require_pkg_config openh264 wels/codec_api.h WelsGetCodecVersion
+ enabled libopenjpeg       && { { check_lib openjpeg-2.1/openjpeg.h opj_version -lopenjp2 -DOPJ_STATIC && add_cppflags -DOPJ_STATIC; } ||
+                                check_lib openjpeg-2.1/openjpeg.h opj_version -lopenjp2 ||
++			       { check_lib openjpeg-2.2/openjpeg.h opj_version -lopenjp2 -DOPJ_STATIC && add_cppflags -DOPJ_STATIC; } ||
++                               check_lib openjpeg-2.2/openjpeg.h opj_version -lopenjp2 ||
+                                { check_lib openjpeg-2.0/openjpeg.h opj_version -lopenjp2 -DOPJ_STATIC && add_cppflags -DOPJ_STATIC; } ||
+                                { check_lib openjpeg-1.5/openjpeg.h opj_version -lopenjpeg -DOPJ_STATIC && add_cppflags -DOPJ_STATIC; } ||
+                                { check_lib openjpeg.h opj_version -lopenjpeg -DOPJ_STATIC && add_cppflags -DOPJ_STATIC; } ||
+@@ -6295,6 +6293,9 @@ elif enabled llvm_gcc; then
  elif enabled clang; then
      check_cflags -mllvm -stack-alignment=16
      check_cflags -mstack-alignment=16
@@ -24,7 +46,7 @@
      check_cflags -Qunused-arguments
      check_cflags -Werror=implicit-function-declaration
      check_cflags -Werror=missing-prototypes
-@@ -6900,7 +6898,7 @@ exec_prefix=\${prefix}
+@@ -6900,7 +6901,7 @@ exec_prefix=\${prefix}
  libdir=$libdir
  includedir=$incdir
  
@@ -33,7 +55,7 @@
  Description: $comment
  Version: $version
  Requires: $(enabled shared || echo $requires)
-@@ -6914,10 +6912,10 @@ EOF
+@@ -6914,10 +6915,10 @@ EOF
  mkdir -p doc/examples/pc-uninstalled
  includedir=${source_path}
  [ "$includedir" = . ] && includedir="\${pcfiledir}/../../.."
