@@ -22,10 +22,10 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libzmq=${LOCALBASE} \
 		--with-pkgconfigdir=${LOCALBASE}/libdata/pkgconfig
 
-MAKE_ENV=	V=1
 INSTALL_TARGET=	install-strip
+TEST_TARGET=	check
 
-regression-test: build
-	@cd ${WRKSRC} && ${MAKE} check
+MAKE_ENV=	V=1
+CPPFLAGS+=	-Wno-error
 
 .include <bsd.port.mk>
