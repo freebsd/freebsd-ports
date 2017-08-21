@@ -1,14 +1,16 @@
 --- libavcodec/libopenjpegenc.c.orig	2017-07-29 17:49:30 UTC
 +++ libavcodec/libopenjpegenc.c
-@@ -32,6 +32,8 @@
+@@ -32,7 +32,9 @@
  #include "avcodec.h"
  #include "internal.h"
  
+-#if HAVE_OPENJPEG_2_1_OPENJPEG_H
 +#if HAVE_OPENJPEG_2_2_OPENJPEG_H
 +#  include <openjpeg-2.2/openjpeg.h>
- #if HAVE_OPENJPEG_2_1_OPENJPEG_H
++#elif HAVE_OPENJPEG_2_1_OPENJPEG_H
  #  include <openjpeg-2.1/openjpeg.h>
  #elif HAVE_OPENJPEG_2_0_OPENJPEG_H
+ #  include <openjpeg-2.0/openjpeg.h>
 @@ -42,7 +44,7 @@
  #  include <openjpeg.h>
  #endif
