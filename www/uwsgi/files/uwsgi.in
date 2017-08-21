@@ -87,7 +87,7 @@ if [ -n "${uwsgi_profiles}" ]; then
 		        exit 1
 		fi
 		eval uwsgi_socket=\${uwsgi_${profile}_socket:-"/tmp/${name}-${profile}.sock"}
-		eval uwsgi_socket_mode=\${uwsgi_${profile}_socket_mode:-${uwsgi_socket_mode}
+		eval uwsgi_socket_mode=\${uwsgi_${profile}_socket_mode:-${uwsgi_socket_mode}}
 		eval uwsgi_socket_owner=\${uwsgi_${profile}_socket_owner:-${uwsgi_socket_owner}}
 		eval uwsgi_logfile=\${uwsgi_${profile}_logfile:-"/var/log/${name}-${profile}.log"}
 		eval uwsgi_pidfile=\${uwsgi_${profile}_pidfile:-"/var/run/${name}-${profile}.pid"}
