@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cenon
-PORTVERSION=	4.0.2
-PORTREVISION=	3
+PORTVERSION=	4.0.3
 CATEGORIES=	graphics gnustep
 MASTER_SITES=	http://www.cenon.zone/download/source/
 DISTNAME=	Cenon-${MAINVERSION}
@@ -15,15 +14,19 @@ MAINTAINER=	theraven@FreeBSD.org
 COMMENT=	Vector graphics tool for GNUstep
 
 USES=	tar:bzip2 gnustep
-USE_GNUSTEP=	back build
+USE_GNUSTEP=	gui base build
 
 WRKSRC=		${WRKDIR}/Cenon
-MAINVERSION=	4.0.2
+MAINVERSION=	4.0.5
 FULLVERSION=	4.0.0
 CENON_LIB_DIR=	${GNUSTEP_SYSTEM_ROOT}/Library/Cenon
 
 OPTIONS_DEFINE=	FULL_LIBRARY
 FULL_LIBRARY_DESC=	Install complete Cenon Library
+
+# Work around the fact that GNUstep doesn't define a constant for a higher
+# version of AppKit that it supports.
+OBJCFLAGS+=-DNSAppKitVersionNumber10_8=1200
 
 .include <bsd.port.options.mk>
 
@@ -38,5 +41,9 @@ pre-install:
 	${TAR} -xyvf ${_DISTDIR}/CenonLibrary-${FULLVERSION}-1${EXTRACT_SUFX} \
 		-C ${STAGEDIR}${GNUSTEP_SYSTEM_ROOT}/Library/ \
 		--exclude COPYING --exclude '._*'
+
+post-stage:
+	${RM} ${STAGEDIR}${GNUSTEP_SYSTEM_ROOT}/Library/README
+	${RM} ${STAGEDIR}${GNUSTEP_SYSTEM_ROOT}/Library/._README
 
 .include <bsd.port.mk>

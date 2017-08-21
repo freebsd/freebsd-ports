@@ -1,4 +1,4 @@
---- SpaceTimeViewer/DrawView+Finding.m.orig	2006-10-29 20:52:48.000000000 +0100
+--- SpaceTimeViewer/DrawView+Finding.m.orig	2006-10-29 19:52:48 UTC
 +++ SpaceTimeViewer/DrawView+Finding.m
 @@ -24,7 +24,9 @@
  #include "DrawView.h"

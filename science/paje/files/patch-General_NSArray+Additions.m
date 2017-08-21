@@ -1,5 +1,5 @@
---- General/NSArray+Additions.m.orig	2006-01-24 14:10:07.000000000 +0100
-+++ General/NSArray+Additions.m	2008-05-03 08:13:11.000000000 +0200
+--- General/NSArray+Additions.m.orig	2007-02-14 23:28:57 UTC
++++ General/NSArray+Additions.m
 @@ -19,6 +19,7 @@
  */
  

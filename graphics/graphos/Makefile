@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	graphos
-PORTVERSION=	0.5
-PORTREVISION=	3
+PORTVERSION=	0.6
 CATEGORIES=	graphics gnustep
 MASTER_SITES=	SAVANNAH/gap
 DISTNAME=	Graphos-${PORTVERSION}
@@ -13,7 +12,7 @@ COMMENT=	Vector drawing application centered around bezier paths
 LICENSE=	GPLv2
 
 USES=		gnustep
-USE_GNUSTEP=	back build
+USE_GNUSTEP=	build base gui
 USE_LDCONFIG=	${GNUSTEP_LOCAL_LIBRARIES}
 
 .include <bsd.port.mk>

@@ -13,6 +13,7 @@ GNUstep/System/Applications/Cenon.app/Resources/CropMarks/middledown.cenon/docum
 GNUstep/System/Applications/Cenon.app/Resources/CropMarks/middledown.cenon/output
 GNUstep/System/Applications/Cenon.app/Resources/CropMarks/rightup.cenon/document
 GNUstep/System/Applications/Cenon.app/Resources/CropMarks/rightup.cenon/output
+GNUstep/System/Applications/Cenon.app/Resources/InspectorPanel.nib/._keyedobjects.nib
 GNUstep/System/Applications/Cenon.app/Resources/English.lproj/Contour.nib/classes.nib
 GNUstep/System/Applications/Cenon.app/Resources/English.lproj/Contour.nib/info.nib
 GNUstep/System/Applications/Cenon.app/Resources/English.lproj/Contour.nib/keyedobjects.nib
@@ -53,6 +54,8 @@ GNUstep/System/Applications/Cenon.app/Resources/English.lproj/IPGroup.nib/keyedo
 GNUstep/System/Applications/Cenon.app/Resources/English.lproj/IPImage.nib/classes.nib
 GNUstep/System/Applications/Cenon.app/Resources/English.lproj/IPImage.nib/info.nib
 GNUstep/System/Applications/Cenon.app/Resources/English.lproj/IPImage.nib/keyedobjects.nib
+GNUstep/System/Applications/Cenon.app/Resources/English.lproj/IPLine3D.nib/data.classes
+GNUstep/System/Applications/Cenon.app/Resources/English.lproj/IPLine3D.nib/objects.nib
 GNUstep/System/Applications/Cenon.app/Resources/English.lproj/IPLine.nib/classes.nib
 GNUstep/System/Applications/Cenon.app/Resources/English.lproj/IPLine.nib/info.nib
 GNUstep/System/Applications/Cenon.app/Resources/English.lproj/IPLine.nib/keyedobjects.nib
@@ -206,6 +209,8 @@ GNUstep/System/Applications/Cenon.app/Resources/German.lproj/IPGroup.nib/keyedob
 GNUstep/System/Applications/Cenon.app/Resources/German.lproj/IPImage.nib/classes.nib
 GNUstep/System/Applications/Cenon.app/Resources/German.lproj/IPImage.nib/info.nib
 GNUstep/System/Applications/Cenon.app/Resources/German.lproj/IPImage.nib/keyedobjects.nib
+GNUstep/System/Applications/Cenon.app/Resources/German.lproj/IPLine3D.nib/data.classes
+GNUstep/System/Applications/Cenon.app/Resources/German.lproj/IPLine3D.nib/objects.nib
 GNUstep/System/Applications/Cenon.app/Resources/German.lproj/IPLine.nib/classes.nib
 GNUstep/System/Applications/Cenon.app/Resources/German.lproj/IPLine.nib/info.nib
 GNUstep/System/Applications/Cenon.app/Resources/German.lproj/IPLine.nib/keyedobjects.nib
@@ -326,7 +331,8 @@ GNUstep/System/Applications/Cenon.app/Resources/InspectorPanel.nib/classes.nib
 GNUstep/System/Applications/Cenon.app/Resources/InspectorPanel.nib/info.nib
 GNUstep/System/Applications/Cenon.app/Resources/InspectorPanel.nib/keyedobjects.nib
 GNUstep/System/Applications/Cenon.app/Resources/SinkingMetrics.plist
-GNUstep/System/Applications/Cenon.app/Resources/ToolPanel.xib
+GNUstep/System/Applications/Cenon.app/Resources/English.lproj/ToolPanel.xib
+GNUstep/System/Applications/Cenon.app/Resources/German.lproj/ToolPanel.xib
 GNUstep/System/Applications/Cenon.app/Resources/alignHCenter.tiff
 GNUstep/System/Applications/Cenon.app/Resources/alignHLeft.tiff
 GNUstep/System/Applications/Cenon.app/Resources/alignHRight.tiff
@@ -589,6 +595,4 @@ GNUstep/System/Library/Devices/hpgl/.dir.tiff
 GNUstep/System/Library/Devices/hpgl/hpgl_8Pen.dev
 GNUstep/System/Library/Projects/.dir.tiff
 GNUstep/System/Library/Projects/Cenon.cenon/document
-GNUstep/System/Library/Projects/Cenon.cenon/output
-GNUstep/System/Library/README
 GNUstep/System/Tools/Cenon
