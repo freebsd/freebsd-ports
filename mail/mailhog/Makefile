@@ -16,6 +16,7 @@ USES=		go
 USE_RC_SUBR=	mailhog
 USE_GITHUB=	yes
 GH_ACCOUNT=	mailhog
+GH_PROJECT=	MailHog
 GH_SUBDIR=	src/github.com/mailhog/MailHog
 GH_TUPLE=	gorilla:pat:cf955c3:pat/src/github.com/gorilla/pat \
 		gorilla:context:08b5f42:context/src/github.com/gorilla/context \
@@ -37,8 +38,6 @@ GH_TUPLE=	gorilla:pat:cf955c3:pat/src/github.com/gorilla/pat \
 		philhofer:fwd:1612a29:fwd/src/github.com/philhofer/fwd \
 		golang:crypto:eb71ad9:crypto/src/golang.org/x/crypto \
 		go-mgo:mgo:3f83fa5:mgo/src/gopkg.in/mgo.v2
-
-WRKSRC=		${WRKDIR}/MailHog-${DISTVERSION}
 
 PLIST_FILES=	bin/${PORTNAME}
 SUB_FILES=	pkg-message
