@@ -3,7 +3,7 @@
 
 PORTNAME=	edenmath
 PORTVERSION=	1.1.1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	math gnustep
 MASTER_SITES=	http://www.eskimo.com/~pburns/EdenMath/files/
 DISTNAME=	EdenMath_GNUstep-${PORTVERSION}

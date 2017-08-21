@@ -1,11 +1,11 @@
---- Modules/Keyboard/GNUmakefile.orig	2014-07-30 00:10:57.436168949 +0800
-+++ Modules/Keyboard/GNUmakefile	2014-07-30 00:11:06.363171068 +0800
+--- Modules/Keyboard/GNUmakefile.orig	2002-02-12 04:49:55 UTC
++++ Modules/Keyboard/GNUmakefile
 @@ -3,7 +3,7 @@ include $(GNUSTEP_MAKEFILES)/common.make
  BUNDLE_NAME=		Keyboard
  BUNDLE_EXTENSION=	.prefs
  
 -BUNDLE_INSTALL_DIR=	$(GNUSTEP_SYSTEM_ROOT)/Library/Preferences
-+BUNDLE_INSTALL_DIR=	$(DESTDIR)$(GNUSTEP_SYSTEM_ROOT)/Library/Preferences
++BUNDLE_INSTALL_DIR=	$(DESTDIR)/$(GNUSTEP_SYSTEM_LIBRARY)/Preferences
  
  Keyboard_RESOURCE_FILES= \
  	Keyboard.gorm
