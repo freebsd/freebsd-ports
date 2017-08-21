@@ -1,4 +1,5 @@
 bin/facter
+include/facter/cwrapper.hpp
 include/facter/export.h
 include/facter/facts/array_value.hpp
 include/facter/facts/collection.hpp
