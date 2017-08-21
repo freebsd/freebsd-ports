@@ -13,10 +13,10 @@ COMMENT=	Component for handling accounts-sso user interactions
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libaccounts-qt5.so:${PORTSDIR}/net-im/libaccounts-qt5 \
-		libnotify.so:${PORTSDIR}/devel/libnotify \
-		libsignon-qt5.so:${PORTSDIR}/sysutils/signon-qt5 \
-		libproxy.so:${PORTSDIR}/net/libproxy
+LIB_DEPENDS=	libaccounts-qt5.so:net-im/libaccounts-qt5 \
+		libnotify.so:devel/libnotify \
+		libsignon-qt5.so:sysutils/signon-qt5 \
+		libproxy.so:net/libproxy
 
 USES=		pkgconfig python qmake tar:bz2
 USE_QT5=	buildtools_build qmake_build webkit widgets
