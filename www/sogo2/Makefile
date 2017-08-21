@@ -3,6 +3,7 @@
 
 PORTNAME=		sogo2
 PORTVERSION=		2.3.22
+PORTREVISION=	1
 CATEGORIES=		www gnustep
 MASTER_SITES=		http://www.sogo.nu/files/downloads/SOGo/Sources/
 DISTNAME=		SOGo-${PORTVERSION}

@@ -1,4 +1,4 @@
---- NickSpace.bproj/NickSpaceView.m.orig	2005-06-27 18:53:04.000000000 -0500
+--- NickSpace.bproj/NickSpaceView.m.orig	2005-06-27 23:53:04 UTC
 +++ NickSpace.bproj/NickSpaceView.m
 @@ -1,6 +1,8 @@
  #import "NickSpaceView.h"

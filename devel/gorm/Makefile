@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gorm
-PORTVERSION=	1.2.22
+PORTVERSION=	1.2.23
 CATEGORIES=	devel gnustep
 MASTER_SITES=	GNUSTEP/dev-apps
 

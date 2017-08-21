@@ -41,7 +41,7 @@ ICU_CONFIGURE_WITH=	icu
 ICU_LIB_DEPENDS=	libicuuc.so:devel/icu
 OPENSSL_CONFIGURE_WITH=	ssl
 
-WRKSRC=			${WRKDIR}/${PORTNAME}-stable-${RELEASE_VER}/open-vm-tools/
+WRKSRC_SUBDIR=		open-vm-tools
 
 GNU_CONFIGURE=		yes
 USE_GNOME=		glib20

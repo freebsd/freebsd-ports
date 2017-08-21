@@ -1,0 +1,11 @@
+--- GNUmakefile.orig	2017-08-13 18:43:49 UTC
++++ GNUmakefile
+@@ -28,8 +28,6 @@
+ 
+ #GNUSTEP_INSTALLATION_DIR = $(GNUSTEP_SYSTEM_ROOT)
+ 
+-GNUSTEP_MAKEFILES = $(GNUSTEP_SYSTEM_ROOT)/Library/Makefiles
+-
+ NeXTGo_MAIN_MODEL_FILE = NeXTGo.gorm
+ 
+ include $(GNUSTEP_MAKEFILES)/common.make

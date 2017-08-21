@@ -1,6 +1,6 @@
-TIMESTAMP = 1503216575
-SHA256 (mailhog-mailhog-v1.0.0_GH0.tar.gz) = 472bf0895f33d49ec8f9bf665fdbda317e57855e846e38e6a6b8dcecdacd7bc5
-SIZE (mailhog-mailhog-v1.0.0_GH0.tar.gz) = 140803
+TIMESTAMP = 1503321114
+SHA256 (mailhog-MailHog-v1.0.0_GH0.tar.gz) = 472bf0895f33d49ec8f9bf665fdbda317e57855e846e38e6a6b8dcecdacd7bc5
+SIZE (mailhog-MailHog-v1.0.0_GH0.tar.gz) = 140803
 SHA256 (gorilla-pat-cf955c3_GH0.tar.gz) = 7c6dacd45161d6446496c94459398e991f3e717a479bff87c88520c4b0920840
 SIZE (gorilla-pat-cf955c3_GH0.tar.gz) = 4499
 SHA256 (gorilla-context-08b5f42_GH0.tar.gz) = 27045aa6da0128aded8e81242630f59a90e0b1840000d31a3b7c5c4e57559df6

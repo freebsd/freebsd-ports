@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gnustep-gui
-PORTVERSION=	0.24.1
-PORTREVISION=	6
+PORTVERSION=	0.25.1
 CATEGORIES=	x11-toolkits gnustep
 MASTER_SITES=	GNUSTEP/core
 
@@ -19,7 +18,7 @@ LIB_DEPENDS+=	libgif.so:graphics/giflib
 LIB_DEPENDS+=	libicui18n.so:devel/icu
 LIB_DEPENDS+=	libsndfile.so:audio/libsndfile
 LIB_DEPENDS+=	libao.so:audio/libao
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libflite.a:audio/flite
+LIB_DEPENDS+=	libflite.so:audio/flite
 
 BROKEN_armv6=		fails to package: chmod: GSSpeechServer.desktop: No such file or directory
 

@@ -1,4 +1,4 @@
---- SpaceTimeViewer/DrawView+Drawing.m.orig	Mon Jan  9 02:13:30 2006
+--- SpaceTimeViewer/DrawView+Drawing.m.orig	2007-02-16 13:23:30 UTC
 +++ SpaceTimeViewer/DrawView+Drawing.m
 @@ -23,7 +23,11 @@
  
@@ -11,4 +11,4 @@
 +#  endif
  #endif
  
- @implementation DrawView (Drawing)
+ #include "../General/Association.h"
