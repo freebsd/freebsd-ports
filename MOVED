@@ -9503,3 +9503,4 @@ textproc/hs-citeproc-hs||2017-08-08|Upstream is unmaintained, use pandoc-citepro
 sysutils/chvt||2017-08-10|Functionality available in base, using vidcontrol(1)
 graphics/rawtherapee-devel|graphics/rawtherapee|2017-08-12|Removed test release in favor of the newer stable release
 audio/py-jack|audio/py-py-jack|2017-08-20|Renamed to py-py-jack to match PyPI package name.
+lang/whitespace||2017-08-21|Has expired: Mastersite disappeared
