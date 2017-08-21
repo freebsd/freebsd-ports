@@ -1001,7 +1001,6 @@
     SUBDIR += sqlite2
     SUBDIR += sqlite3
     SUBDIR += sqlitebrowser
-    SUBDIR += sqlitebrowser-qt5
     SUBDIR += sqliteconvert
     SUBDIR += sqliteman
     SUBDIR += sqlitemanager
