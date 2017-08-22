@@ -5,7 +5,6 @@ PORTNAME=	lr
 PORTVERSION=	0.4
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
-PKGNAMESUFFIX=	files
 
 MAINTAINER=	tobik@FreeBSD.org
 COMMENT=	List files, recursively
