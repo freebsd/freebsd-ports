@@ -2,13 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	squirrelmail
-PORTVERSION=	20161030
+PORTVERSION=	20170705
 CATEGORIES=	mail www
-MASTER_SITES=	LOCAL/adamw/squirrelmail
+MASTER_SITES=	http://snapshots.squirrelmail.org/ \
+	http://freebsd.uzsolt.hu/src/
 DISTNAME=	${PORTNAME}-${PORTVERSION}_0200-SVN.stable
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	uzsolt@uzsolt.hu
 COMMENT=	Webmail system which accesses mail over IMAP
 
 LICENSE=	GPLv2+
