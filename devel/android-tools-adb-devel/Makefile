@@ -1,9 +1,8 @@
 # $FreeBSD$
 
-# Hint: git describe --abbrev=12 --match android-o-preview-2
-DISTVERSION=	o-preview-2-332
-DISTVERSIONSUFFIX=	-gd1e9e7bc06f0
-PORTREVISION=	1
+# Hint: git describe --abbrev=12 --match android-o-preview-4
+DISTVERSION=	o-preview-4-185
+DISTVERSIONSUFFIX=	-g2066e0585e9d
 PKGNAMESUFFIX=	-devel
 
 CONFLICTS_INSTALL=	${PORTNAME}-[0-9]*
@@ -14,6 +13,6 @@ EXTRA_PATCHES=	${.CURDIR}/files/patch-*
 
 GH_MYTAG=	${DISTVERSIONPREFIX}${DISTVERSION:C/-[0-9]*$//}
 
-TEST_PYTHON_GH_TAGNAME=	${GH_MYTAG}-83-gc5efdcc74:development
+TEST_PYTHON_GH_TAGNAME=	${GH_MYTAG}-62-g417a8e237642:development
 
 .include "${MASTERDIR}/Makefile"
