@@ -5,6 +5,9 @@ PKGNAMESUFFIX=	5-client-static
 
 COMMENT=	Network backup solution (static client)
 
+DEPRECATED=	No upstream commits since 2013. Use sysutils/bacula-client-static
+EXPIRATION_DATE=	2017-10-04
+
 CONFLICTS=	bacula-client-static-*
 
 PLIST=		${.CURDIR}/pkg-plist
