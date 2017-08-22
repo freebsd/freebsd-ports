@@ -235,6 +235,7 @@ etc/periodic/daily/111.clean-squirrelmail
 %%SQUIRRELDIR%%/plugins/squirrelspell/js/init.js
 %%SQUIRRELDIR%%/plugins/squirrelspell/modules/.htaccess
 %%SQUIRRELDIR%%/plugins/squirrelspell/modules/WHATISTHIS
+%%SQUIRRELDIR%%/plugins/squirrelspell/modules/change_main_options.mod
 %%SQUIRRELDIR%%/plugins/squirrelspell/modules/check_me.mod
 %%SQUIRRELDIR%%/plugins/squirrelspell/modules/crypto.mod
 %%SQUIRRELDIR%%/plugins/squirrelspell/modules/crypto_badkey.mod
