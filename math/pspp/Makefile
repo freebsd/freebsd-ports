@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pspp
-PORTVERSION=	0.10.2
-PORTREVISION=	3
+PORTVERSION=	1.0.0
 CATEGORIES=	math
 MASTER_SITES=	GNU
 
@@ -51,7 +50,7 @@ PGSQL_CONFIGURE_WITH=	libpq
 
 post-patch:
 	@${REINPLACE_CMD} -e \
-		's|: $$(INSTALL_DATA_HOOKS)|:|' ${WRKSRC}/Makefile.in
+		's|: $$(INSTALL_DATA_HOOKS)|:|g' ${WRKSRC}/Makefile.in
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/pspp-mode.el \
