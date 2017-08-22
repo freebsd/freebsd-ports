@@ -2,21 +2,21 @@
 # $FreeBSD$
 
 PORTNAME=	igraph
-PORTREVISION=	1
-DISTVERSION=	1.0.1
+DISTVERSION=	1.1.2
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Network Analysis and Visualization
 
-LICENSE=	GPLv2 GPLv3
-LICENSE_COMB=	dual
+LICENSE=	GPLv2+
 
 LIB_DEPENDS=	libgmp.so:math/gmp
-RUN_DEPENDS=	R-cran-magrittr>0:devel/R-cran-magrittr \
-		R-cran-NMF>0:math/R-cran-NMF \
-		R-cran-irlba>0:math/R-cran-irlba
+CRAN_DEPENDS=	R-cran-irlba>0:math/R-cran-irlba \
+		R-cran-magrittr>0:devel/R-cran-magrittr \
+		R-cran-pkgconfig>=2.0.0:devel/R-cran-pkgconfig
+BUILD_DEPENDS=	${CRAN_DEPENDS}
+RUN_DEPENDS=	${CRAN_DEPENDS}
 
 USES=		cran:auto-plist,compiles
 USE_GNOME=	libxml2
