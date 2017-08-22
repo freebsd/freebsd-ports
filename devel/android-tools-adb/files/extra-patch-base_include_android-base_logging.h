@@ -4,8 +4,8 @@
  // DCHECKs are debug variants of CHECKs only enabled in debug builds. Generally
  // CHECK should be used unless profiling identifies a CHECK as being in
  // performance critical code.
--#if defined(NDEBUG) && !defined(__clang_analyzer__)
-+#if defined(NDEBUG) && !defined(__clang_analyzer__) || !defined(__ANDROID__)
+-#if defined(NDEBUG)
++#if defined(NDEBUG) || !defined(__ANDROID__)
  static constexpr bool kEnableDChecks = false;
  #else
  static constexpr bool kEnableDChecks = true;
