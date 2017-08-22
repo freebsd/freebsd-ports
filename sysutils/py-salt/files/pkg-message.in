@@ -23,5 +23,14 @@ To configure a Salt Proxy Minion, do the following:
   o sysrc salt_proxy_list=""
   o Update the salt_proxy_list with the proxy minion name(s)
 
+---------------------------------------------------------------------------------------------------
+
+To change the Transport method from the default option of Zeromq to either TCP or RAET:
+
+  o Re-build the port with the desired options enabled to install the correct runtime dependencies
+  o Ensure the master and minions all have salt installed with these same options and dependencies
+  o Add the line 'transport: [tcp|raet]' to both the master and minion configuration files
+  o Restart salt on the master and minions
+
 ===================================================================================================
 
