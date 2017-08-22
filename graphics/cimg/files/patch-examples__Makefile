@@ -1,4 +1,4 @@
---- examples/Makefile.orig	2017-05-29 13:37:28 UTC
+--- examples/Makefile.orig	2017-08-19 21:27:17 UTC
 +++ examples/Makefile
 @@ -84,7 +84,7 @@ CIMG_EXTRA_FILES = use_tiff_stream use_j
  # Set correct variables and paths
@@ -18,15 +18,21 @@
  LIBS         = -lm
  endif
  
-@@ -127,7 +127,7 @@ CIMG_VT100_CFLAGS = -Dcimg_use_vt100
+@@ -127,12 +127,12 @@ CIMG_VT100_CFLAGS = -Dcimg_use_vt100
  
  # Flags to enable code optimization by the compiler.
  ifeq ($(notdir $(CXX)),g++)
--CIMG_OPT_CFLAGS = -O2 -mtune=generic
+-CIMG_OPT_CFLAGS = -O3 -mtune=generic
 +CIMG_OPT_CFLAGS = -mtune=generic
  else
  ifeq ($(notdir $(CXX)),icpc)
  CIMG_OPT_CFLAGS = -fast
+ else
+-CIMG_OPT_CFLAGS = -O3
++CIMG_OPT_CFLAGS = # -O3 - handled by the port CFLAGS
+ endif
+ endif
+ 
 @@ -147,7 +147,7 @@ endif
  
  # Flags to enable OpenCV support.
