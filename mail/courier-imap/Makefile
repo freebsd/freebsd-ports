@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	courier-imap
-PORTVERSION=	4.18.0
+PORTVERSION=	4.18.1
 PORTEPOCH=	2
 CATEGORIES=	mail ipv6
 MASTER_SITES=	SF/courier/imap/${PORTVERSION}
@@ -15,17 +15,18 @@ RUN_DEPENDS=	courierauthconfig:security/courier-authlib-base \
 		${LOCALBASE}/share/sysconftool/sysconftool:devel/sysconftool
 LIB_DEPENDS=	libcourier-unicode.so:devel/courier-unicode
 
-USES=		gmake perl5 ssl tar:bzip2
+USES=		gmake localbase:ldflags perl5 ssl tar:bzip2
 GNU_CONFIGURE=	yes
 USE_RC_SUBR=	courier-imap-imapd courier-imap-imapd-ssl \
 		courier-imap-pop3d courier-imap-pop3d-ssl
 
-CPPFLAGS+=	-I${LOCALBASE}/include -I${PREFIX}/include
-LDFLAGS+=	-L${LOCALBASE}/lib -L${PREFIX}/lib
 CONFIGURE_ENV=	REHASH=${SCRIPTDIR}/c_rehash
 
 MAKE_ENV:=	${CONFIGURE_ENV}
 ALL_TARGET=	all makeimapaccess makedat
+
+SUB_FILES=	pkg-message
+SUB_LIST=	CONFDIR=${CONFDIR}
 
 #
 # options available:
@@ -59,13 +60,14 @@ CONFIGURE_ARGS=	--sysconfdir=${CONFDIR} \
 		--with-locking-method=fcntl \
 		COURIERAUTHCONFIG=${PREFIX}/bin/courierauthconfig
 
-.include <bsd.port.options.mk>
+GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls \
+			libgcrypt.so:security/libgcrypt
+GNUTLS_CONFIGURE_WITH=	gnutls
+GNUTLS_USES=		pkgconfig
 
-.if ${PORT_OPTIONS:MGNUTLS}
-CONFIGURE_ARGS+=--with-gnutls
-LIB_DEPENDS+=	libgnutls.so:security/gnutls
-USES+=		pkgconfig
-.endif
+IPV6_CONFIGURE_OFF=	--without-ipv6
+
+TRASHQUOTA_CONFIGURE_ON=--with-trashquota
 
 .include <bsd.port.pre.mk>
 
@@ -86,19 +88,6 @@ CONFIGURE_ARGS+=--with-db=db  --with-userdb=${USERDB}
 .endif
 .endif
 
-.if ! ${PORT_OPTIONS:MIPV6}
-CONFIGURE_ARGS+=--without-ipv6
-.endif
-
-.if ${PORT_OPTIONS:MTRASHQUOTA}
-CONFIGURE_ARGS+=--with-trashquota
-.endif
-
-.if ${PORT_OPTIONS:MFAM}
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-.endif
-
 EXTRA_DOCS=	AUTHORS INSTALL NEWS \
 		libs/imap/ChangeLog \
 		libs/imap/README \
@@ -109,11 +98,11 @@ EXTRA_DOCS=	AUTHORS INSTALL NEWS \
 		libs/maildir/README.sharedfolders.txt \
 		libs/tcpd/README.couriertls \
 
-post-patch:
-.if ! ${PORT_OPTIONS:MFAM}
+post-patch-FAM-off:
 	@${REINPLACE_CMD} -e 's|$$LIBFAM||g; s|HAVE_FAM|DO_NOT_HAVE_FAM|g' \
 		${WRKSRC}/libs/maildir/configure
-.endif
+
+post-patch:
 	@${REINPLACE_CMD} -e 's|^case x$$lockmethod in|${TEST} \&\& &|g' \
 		${WRKSRC}/libs/liblock/configure
 	@${REINPLACE_CMD} -e 's|%%INSTALL_MAN%%|${INSTALL_MAN}|' \
@@ -132,18 +121,5 @@ post-install:
 .for a in ${EXTRA_DOCS}
 	${INSTALL_DATA} ${WRKSRC}/${a} ${STAGEDIR}${DOCSDIR}
 .endfor
-
-	@${ECHO_MSG} "In case you use authpam, you should put the following lines"
-	@${ECHO_MSG} "in your /etc/pam.d/imap"
-	@${ECHO_MSG} "auth    required    pam_unix.so         try_first_pass"
-	@${ECHO_MSG} "account required    pam_unix.so         try_first_pass"
-	@${ECHO_MSG} "session required    pam_permit.so"
-
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "You will have to run ${DATADIR}/mkimapdcert to create"
-	@${ECHO_MSG} "a self-signed certificate if you want to use imapd-ssl."
-	@${ECHO_MSG} "And you will have to copy and edit the *.dist files to *"
-	@${ECHO_MSG} "in ${CONFDIR}."
-	@${ECHO_MSG} ""
 
 .include <bsd.port.post.mk>
