@@ -1,6 +1,6 @@
---- ./src/txamqp/codec.py.orig	2009-08-16 19:25:45.000000000 +0800
-+++ ./src/txamqp/codec.py	2013-05-30 13:54:50.000000000 +0800
-@@ -25,12 +25,12 @@
+--- src/txamqp/codec.py.orig	2009-08-16 11:25:45 UTC
++++ src/txamqp/codec.py
+@@ -25,12 +25,12 @@ fields.
  """
  
  from cStringIO import StringIO
@@ -15,7 +15,7 @@
  
    def __init__(self, stream):
      self.stream = stream
-@@ -153,6 +153,13 @@
+@@ -153,6 +153,13 @@ class Codec:
    def decode_longstr(self):
      return self.dec_str("!L")
  
@@ -29,7 +29,7 @@
    # table
    def encode_table(self, tbl):
      enc = StringIO()
-@@ -180,6 +187,10 @@
+@@ -180,6 +187,10 @@ class Codec:
          value = self.decode_longstr()
        elif type == "I":
          value = self.decode_long()
