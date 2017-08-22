@@ -37,7 +37,7 @@ CONFLICTS_INSTALL?=	${PORTNAME}-devel-*
 USES=		compiler:c++11-lib pkgconfig uidfix
 BUILD_WRKSRC=	${WRKSRC}/fastboot
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
-MAKEFILE=	${.CURDIR}/files/Makefile # XXX ?= when bmake-only
+MAKEFILE?=	${.CURDIR}/files/Makefile
 MAKE_ENV=	BINDIR="${PREFIX}/bin" EXTRADIR="${FILESDIR}" \
 		FILESDIR="${DOCSDIR}" REVISION="${GH_REVISION}" \
 		MANDIR="${PREFIX}/man/man" \
