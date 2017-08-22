@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cone
-PORTVERSION=	0.96
+PORTVERSION=	0.96.1
 CATEGORIES=	mail
 # This is for beta versions, leave it in please:
 #MASTER_SITES=	http://www.courier-mta.org/beta/${PORTNAME}/ \
