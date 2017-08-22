@@ -2,4 +2,4 @@ Kippo is a medium interaction SSH honeypot designed to log brute force
 attacks and, most importantly, the entire shell interaction performed
 by the attacker.
 
-WWW: http://code.google.com/p/kippo/
+WWW: https://github.com/desaster/kippo
