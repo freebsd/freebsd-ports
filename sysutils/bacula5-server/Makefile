@@ -12,6 +12,9 @@ PKGNAMESUFFIX?=	5-server
 MAINTAINER=	dan@langille.org
 COMMENT?=	Network backup solution (server)
 
+DEPRECATED=	No upstream commits since 2013. Use sysutils/bacula-server
+EXPIRATION_DATE=	2017-10-04
+
 USES+=		libtool:keepla shebangfix
 SHEBANG_FILES=	scripts/dvd-handler.in
 python_OLD_CMD=	@PYTHON@

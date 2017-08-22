@@ -7,6 +7,9 @@ PORTREVISION=	6
 
 COMMENT=	Network backup solution (GUI)
 
+DEPRECATED=	No upstream commits since 2013. Use sysutils/bacula-bat
+EXPIRATION_DATE=	2017-10-04
+
 LIB_DEPENDS+=	libqwt.so:x11-toolkits/qwt5 \
 		libbac.so:sysutils/bacula5-client
 
