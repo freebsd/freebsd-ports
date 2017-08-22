@@ -17,6 +17,9 @@ LICENSE=	BSD3CLAUSE
 CONFLICTS=	milter-greylist-[0-9]*.*
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
+DEPRECATED=     mail/milter-greylist provides same version and options
+EXPIRATION_DATE=	2017-09-21
+
 USES=		tar:tgz
 
 MAKE_JOBS_UNSAFE=	yes
