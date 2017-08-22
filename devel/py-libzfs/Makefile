@@ -5,7 +5,7 @@
 
 PORTNAME=      	libzfs
 PORTVERSION=	1.0
-PORTREVISION=	1
+PORTREVISION=	2
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 CATEGORIES=	devel
@@ -20,7 +20,7 @@ BUILD_DEPENDS=  ${LOCALBASE}/bin/cython:lang/cython
 
 WRKSRC?=/usr/nas_source/py-libzfs
 
-MAKE_ENV=       FREEBSD_SRC=/usr/src TRUEOS=yes
+MAKE_ENV=       FREEBSD_SRC=/usr/src TRUEOS=yes EXPERIMENTAL=yes
 
 checksum fetch:
 	echo ${.TARGET} not needed because building direct
