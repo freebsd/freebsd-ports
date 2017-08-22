@@ -3,6 +3,7 @@
 
 PORTNAME=	nagios-check_cpu_usage
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	# none
 DISTFILES=	# none
