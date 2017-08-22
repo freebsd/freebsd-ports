@@ -1,9 +1,16 @@
 bin/ss-local
+bin/ss-manager
 bin/ss-server
 bin/ss-tunnel
 include/shadowsocks.h
-lib/libshadowsocks.a
-lib/libshadowsocks.la
+lib/libshadowsocks-libev.a
+lib/libshadowsocks-libev.la
 libdata/pkgconfig/shadowsocks-libev.pc
+man/man1/ss-local.1.gz
+man/man1/ss-manager.1.gz
+man/man1/ss-nat.1.gz
+man/man1/ss-redir.1.gz
+man/man1/ss-server.1.gz
+man/man1/ss-tunnel.1.gz
 man/man8/shadowsocks-libev.8.gz
 @sample etc/shadowsocks-libev/config.json.sample
