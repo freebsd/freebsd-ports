@@ -34,7 +34,7 @@ CONFLICTS_INSTALL?=	${PORTNAME}-devel-*
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-base_include_android-base_logging.h
 .endif
 
-USES+=		compiler:c++14-lang pkgconfig ssl uidfix
+USES=		compiler:c++14-lang pkgconfig ssl uidfix
 BUILD_WRKSRC=	${WRKSRC}/adb
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
 TEST_WRKSRC=	${BUILD_WRKSRC}
