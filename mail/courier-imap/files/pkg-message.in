@@ -1,0 +1,11 @@
+In case you use authpam, you should put the following lines
+in your /etc/pam.d/imap:
+
+auth    required    pam_unix.so         try_first_pass
+account required    pam_unix.so         try_first_pass
+session required    pam_permit.so
+
+You will have to run %%DATADIR%%/mkimapdcert to create
+a self-signed certificate if you want to use imapd-ssl.
+And you will have to copy and edit the *.dist files to *
+in %%CONFDIR%%.
