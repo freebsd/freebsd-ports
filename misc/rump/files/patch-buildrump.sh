@@ -1,10 +1,10 @@
---- buildrump.sh.orig	2013-12-14 09:51:57 UTC
+--- buildrump.sh.orig	2017-03-28 02:35:28 UTC
 +++ buildrump.sh
-@@ -893,6 +893,7 @@ evaltarget ()
+@@ -1059,6 +1059,7 @@ evaltoolchain ()
  		;;
- 	"freebsd")
+ 	*-freebsd*)
  		RUMPKERN_UNDEF='-U__FreeBSD__'
 +		${KERNONLY} || EXTRA_RUMPCLIENT='-lpthread'
  		;;
- 	"linux")
- 		RUMPKERN_UNDEF='-Ulinux -U__linux -U__linux__ -U__gnu_linux__'
+ 	*-sun-solaris*|*-pc-solaris*)
+ 		RUMPKERN_UNDEF='-U__sun__ -U__sun -Usun'
