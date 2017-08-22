@@ -5,7 +5,4 @@ features, such as being able to choose the speed at which it
 scrolls, pause, dynamic speed up, the ability to highlight lines
 that contain a specified string, and much more.
 
-WWW: http://lazyread.sourceforge.net
-
-	- Michael L. Hostbaek
-	mich@FreeBSD.org
+WWW: http://lazyread.sourceforge.net/
