@@ -377,6 +377,7 @@
     SUBDIR += kibana43
     SUBDIR += kibana44
     SUBDIR += kibana45
+    SUBDIR += kibana46
     SUBDIR += kibana5
     SUBDIR += kibana5-search-guard
     SUBDIR += kibana5-x-pack

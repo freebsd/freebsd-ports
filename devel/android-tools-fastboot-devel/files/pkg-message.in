@@ -1,7 +1,0 @@
-The port installed fastboot(1) under %%PREFIX%%/bin. However, there's
-a different fastboot(8) under /sbin. To avoid accidentally invoking
-the wrong command make sure either to
-
-- adjust PATH environment variable to have fastboot(1) found first
-- create a shell alias with absolute path to fastboot(1)
-- create a symlink with different name in PATH e.g., under ~/bin

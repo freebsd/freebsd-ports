@@ -3,7 +3,7 @@
 
 PORTNAME=	knot
 PORTVERSION=	1.6.8
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	dns ipv6
 MASTER_SITES=	https://secure.nic.cz/files/knot-dns/ \
 		http://dns-lab.com/downloads/knot-dns/
@@ -23,7 +23,9 @@ USES=		alias bison libtool pkgconfig ssl tar:xz
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-storage=/var/db/knot \
 		--with-rundir=/var/run/knot \
-		--with-openssl=${OPENSSLBASE}
+		--with-openssl=${OPENSSLBASE} \
+		--enable-recvmmsg=no
+
 USE_LDCONFIG=	yes
 
 INSTALL_TARGET=	install-strip

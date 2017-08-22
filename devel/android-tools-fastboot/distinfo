@@ -1,10 +1,10 @@
 TIMESTAMP = 1495068953
 SHA256 (fastboot.1?id=706e754) = 2af01b064440952a82f1602691a0fecc030302722a71444946fb70d9c423d283
 SIZE (fastboot.1?id=706e754) = 5906
-SHA256 (android-platform_system_core-android-7.1.2_r17_GH0.tar.gz) = fb8d053d846f439951c651f205c9c914531d8dace86da60474f6675a92576449
-SIZE (android-platform_system_core-android-7.1.2_r17_GH0.tar.gz) = 1596372
-SHA256 (jbeich-platform_system_extras-android-7.1.2_r17_GH0.tar.gz) = ee97ae3df4eecc0d7fc16d3cb6f016ae1b1f81d7e450e678473c9b4618676b42
-SIZE (jbeich-platform_system_extras-android-7.1.2_r17_GH0.tar.gz) = 79621709
+SHA256 (android-platform_system_core-android-8.0.0_r4_GH0.tar.gz) = 3eb686edb1ccaa7312fb195b65c413823a6d60442d519c499c18b2d18c3094a9
+SIZE (android-platform_system_core-android-8.0.0_r4_GH0.tar.gz) = 5115403
+SHA256 (jbeich-platform_system_extras-android-8.0.0_r4_GH0.tar.gz) = 83d4a27f5ffa434688b62d00fcc33edd352bdc523f8b7fcbc3e8d0c1453b1c41
+SIZE (jbeich-platform_system_extras-android-8.0.0_r4_GH0.tar.gz) = 192575526
 SHA256 (jbeich-platform_external_libselinux-android-7.1.2_r17_GH0.tar.gz) = 659e43d3e14b4f4fe8955975ad268310bfad0529f408fb33342ed70ae0d456c7
 SIZE (jbeich-platform_external_libselinux-android-7.1.2_r17_GH0.tar.gz) = 59763
 SHA256 (mbrubeck-android-completion-c1b0656_GH0.tar.gz) = ca3311ba47a5edd56c929ac9aae57c02c2c3f1636519c5f67abb00b6e3ecd75c
