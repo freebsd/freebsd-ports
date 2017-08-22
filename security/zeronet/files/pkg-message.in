@@ -16,10 +16,12 @@ To run ZeroNet commands:
 For example, to create a new ZeroNet site:
 # su -m %%USER%% zeronet siteCreate
 
-For Tor integration (recommended) please have these items:
-* option TOR=on in zeronet package
-* make sure %%LOCALBASE%%/etc/tor/torrc has "ControlPort 9051"
-* make sure tor service runs (service tor start)
+For Tor integration (recommended) please make sure:
+* Tor is installed:
+  # pkg install tor
+* %%LOCALBASE%%/etc/tor/torrc has "ControlPort 9051"
+* Tor service runs:
+  # service tor start
 * zeronet_args in /etc/rc.conf has "--tor enable" or "--tor always"
 
 Without the Tor integration, you need to make sure that your router
