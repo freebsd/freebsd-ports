@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	asterisk-flite
-PORTVERSION=	2.3
+PORTVERSION=	3.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	audio
 
@@ -12,12 +12,12 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libflite.so:audio/flite
 
+USES=		compiler gmake localbase
+INSTALL_TARGET=	install samples
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	zaf
 GH_PROJECT=	Asterisk-Flite
-
-USES=		compiler gmake localbase
-INSTALL_TARGET=	install samples
 
 OPTIONS_SINGLE=	ASTVER
 OPTIONS_SINGLE_ASTVER=	ASTERISK11 ASTERISK13
