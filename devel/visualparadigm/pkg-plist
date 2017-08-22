@@ -150,6 +150,8 @@
 %%DATADIR%%/Application/lib/platforminstaller.jar
 %%DATADIR%%/Application/lib/startsde.jar
 %%DATADIR%%/Application/lib/vpplatform.jar
+%%DATADIR%%/Application/lib/vpserver.jar
+%%DATADIR%%/Application/lib/vpserverres.jar
 %%DATADIR%%/Application/lib/winpack.jar
 %%DATADIR%%/Application/lib/xalan.jar
 %%DATADIR%%/Application/ormlib/antlr-2.7.7.jar
@@ -166,8 +168,11 @@
 %%DATADIR%%/Application/ormlib/orm.jar
 %%DATADIR%%/Application/ormlib/php/doctrine.zip
 %%DATADIR%%/Application/ormlib/php/phporm.zip
+%%DATADIR%%/Application/resources/BaggageSchemas.vpp
 %%DATADIR%%/Application/resources/DocComposerTemplateSchema.xsd
 %%DATADIR%%/Application/resources/ProductSelector.png
+%%DATADIR%%/Application/resources/UserExperienceImprovement.rtf
+%%DATADIR%%/Application/resources/VP_Server_Linux64.tar.gz
 %%DATADIR%%/Application/resources/Visual_Paradigm_Patch_Update
 %%DATADIR%%/Application/resources/am.png
 %%DATADIR%%/Application/resources/appConfig_sample.properties
@@ -261,6 +266,11 @@
 %%DATADIR%%/Application/resources/dict/sents.vrb
 %%DATADIR%%/Application/resources/dict/verb.Framestext
 %%DATADIR%%/Application/resources/dict/verb.exc
+%%DATADIR%%/Application/resources/guide-through-process/bmm/mapping.xml
+%%DATADIR%%/Application/resources/guide-through-process/project-management/basic/mapping.xml
+%%DATADIR%%/Application/resources/guide-through-process/project-management/high/mapping.xml
+%%DATADIR%%/Application/resources/guide-through-process/project-management/low/mapping.xml
+%%DATADIR%%/Application/resources/guide-through-process/project-management/medium/mapping.xml
 %%DATADIR%%/Application/resources/instantgenerator/actionscript/ActionScriptAssociationClass_Get.vm
 %%DATADIR%%/Application/resources/instantgenerator/actionscript/ActionScriptAssociationClass_Set.vm
 %%DATADIR%%/Application/resources/instantgenerator/actionscript/ActionScriptAssociation_Add.vm
@@ -538,6 +548,10 @@
 %%DATADIR%%/Application/resources/instantgenerator/xsd/XsdPackage.vm
 %%DATADIR%%/Application/resources/instantgenerator/xsd/XsdSimpleType.vm
 %%DATADIR%%/Application/resources/instantgenerator/xsd/XsdXmlNode.vm
+%%DATADIR%%/Application/resources/jit-agile-process/project-management/basic/mapping.xml
+%%DATADIR%%/Application/resources/jit-agile-process/project-management/high/mapping.xml
+%%DATADIR%%/Application/resources/jit-agile-process/project-management/low/mapping.xml
+%%DATADIR%%/Application/resources/jit-agile-process/project-management/medium/mapping.xml
 %%DATADIR%%/Application/resources/jit1.dat
 %%DATADIR%%/Application/resources/jit2a.dat
 %%DATADIR%%/Application/resources/jit2b.dat
@@ -548,6 +562,7 @@
 %%DATADIR%%/Application/resources/no_installer.txt
 %%DATADIR%%/Application/resources/proc1.dat
 %%DATADIR%%/Application/resources/proc2.dat
+%%DATADIR%%/Application/resources/proc3.dat
 %%DATADIR%%/Application/resources/product_edition.properties
 %%DATADIR%%/Application/resources/productselector.ico
 %%DATADIR%%/Application/resources/setup/feature_vp.xml
