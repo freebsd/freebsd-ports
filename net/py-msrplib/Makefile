@@ -10,20 +10,19 @@ MASTER_SITES=	http://download.ag-projects.com/SipClient/ \
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	python-${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	python@FreeBSD.org
 COMMENT=	Python MSRP client library
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gnutls>=1.1.6:security/py-gnutls \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}application>=1.1.0:devel/py-application \
 		${PYTHON_PKGNAMEPREFIX}eventlet>=0.9.15:net/py-eventlet \
-		${PYTHON_PKGNAMEPREFIX}application>=1.1.0:devel/py-application \
+		${PYTHON_PKGNAMEPREFIX}gnutls>=1.1.6:security/py-gnutls \
 		${PYTHON_PKGNAMEPREFIX}twisted>=0:devel/py-twisted
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes
 USES=		python
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>

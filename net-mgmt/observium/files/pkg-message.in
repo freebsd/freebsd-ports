@@ -56,7 +56,20 @@ sudo -u www %%WWWDIR%%/poller.php -h all -d
 
 5: Install the above crontabs.
 
+6: Edit the file
+
+   %%PREFIX%%/%%APACHEETCDIR%%/Includes/observium.conf
+   
+   and fill out a port number and hostname. 
+
+7: restart the webserver with 
+
+       apachectl restart
+
+   or stop/start if in case of IP or SSL changes.
+
 6: log in with a web browser; using the username 'admin' and the
    password 'SomeInsecureAdminPassword'.
 
    Hosts can be added from the webinterface or from the commandline.
+

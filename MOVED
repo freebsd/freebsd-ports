@@ -9505,3 +9505,4 @@ graphics/rawtherapee-devel|graphics/rawtherapee|2017-08-12|Removed test release 
 audio/py-jack|audio/py-py-jack|2017-08-20|Renamed to py-py-jack to match PyPI package name
 lang/whitespace||2017-08-21|Has expired: Mastersite disappeared
 databases/sqlitebrowser-qt5|databases/sqlitebrowser|2017-08-22|sqlitebrowser now uses QT5
+misc/lr|misc/lazyread|2017-08-22|Renamed to reflect upstream name
