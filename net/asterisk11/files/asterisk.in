@@ -17,6 +17,8 @@
 # 				Default is "-n"
 # asterisk_pidfile (string):	Location of the asterisk pid file
 #				Default is /var/run/asterisk/asterisk.pid
+# asterisk_stopsleep (int):	Number of seconds to sleep before sending stop command
+#				Default is 0, which disables it
 #
 
 . /etc/rc.subr
@@ -31,6 +33,7 @@ load_rc_config $name
 : ${asterisk_user:=%%ASTERISK_USER%%}
 : ${asterisk_args=-n}
 : ${asterisk_pidfile:=/var/run/asterisk/asterisk.pid}
+: ${asterisk_stopsleep:=0}
 
 extra_commands=reload
 
@@ -52,13 +55,26 @@ asterisk_precmd()
 
 asterisk_stop()
 {
-	echo 'Stopping asterisk'
+	if [ -z "$rc_pid" ]; then
+		[ -n "$rc_fast" ] && return 0
+		_run_rc_notrunning
+		return 1
+	fi
+	echo 'Stopping asterisk.'
+	if [ ${asterisk_stopsleep} > 0 ]; then
+		sleep ${asterisk_stopsleep}
+	fi
 	$command -nqrx 'core stop now'
+	wait_for_pids $rc_pid
 }
 
 asterisk_reload()
 {
-	echo 'Reloading asterisk'
+	if [ -z "$rc_pid" ]; then
+		_run_rc_notrunning
+		return 1
+	fi
+	echo 'Reloading asterisk.'
 	$command -nqrx 'reload'
 }
 
