@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- cmake/cflags.cmake.orig
 +++ cmake/cflags.cmake
 @@ -2,7 +2,7 @@
