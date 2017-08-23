@@ -3,8 +3,9 @@
 
 PORTNAME=	megatools
 PORTVERSION=	1.9.98
+PORTREVISION=	1
 CATEGORIES=	net
-MASTER_SITES=	http://megatools.megous.com/builds/
+MASTER_SITES=	https://megatools.megous.com/builds/
 
 MAINTAINER=	max@kostikov.co
 COMMENT=	Command line tools for MEGA.NZ cloud drive
@@ -14,7 +15,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libcurl.so:ftp/curl
 BUILD_DEPENDS=	asciidoc:textproc/asciidoc
-RUN_DEPENDS=	glib-networking>=2.32.0:net/glib-networking
 
 CONFIGURE_ENV=	OPENSSL_CFLAGS="-I${OPENSSLINC}" \
 		OPENSSL_LIBS="-L${OPENSSLLIB} -lcrypto -lssl"
