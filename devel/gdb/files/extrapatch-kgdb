@@ -1,5 +1,5 @@
 diff --git gdb/Makefile.in gdb/Makefile.in
-index 6e96a88a98..98c5fd2664 100644
+index cf59ae7143..0dd72d35d1 100644
 --- gdb/Makefile.in
 +++ gdb/Makefile.in
 @@ -227,7 +227,8 @@ INCGNU = -I$(srcdir)/gnulib/import -I$(GNULIB_BUILDDIR)/import
@@ -12,7 +12,15 @@ index 6e96a88a98..98c5fd2664 100644
  
  #
  # CLI sub directory definitons
-@@ -758,6 +759,7 @@ ALL_64_TARGET_OBS = \
+@@ -745,6 +746,7 @@ TARGET_OBS = @TARGET_OBS@
+ # All target-dependent objects files that require 64-bit CORE_ADDR
+ # (used with --enable-targets=all --enable-64-bit-bfd).
+ ALL_64_TARGET_OBS = \
++	aarch64-fbsd-kern.o \
+ 	aarch64-fbsd-tdep.o \
+ 	aarch64-insn.o \
+ 	aarch64-linux-tdep.o \
+@@ -759,6 +761,7 @@ ALL_64_TARGET_OBS = \
  	amd64-darwin-tdep.o \
  	amd64-dicos-tdep.o \
  	amd64-fbsd-tdep.o \
@@ -20,7 +28,7 @@ index 6e96a88a98..98c5fd2664 100644
  	amd64-linux-tdep.o \
  	amd64-nbsd-tdep.o \
  	amd64-obsd-tdep.o \
-@@ -769,6 +771,7 @@ ALL_64_TARGET_OBS = \
+@@ -770,6 +773,7 @@ ALL_64_TARGET_OBS = \
  	ia64-vms-tdep.o \
  	mips64-obsd-tdep.o \
  	sparc64-fbsd-tdep.o \
@@ -28,7 +36,7 @@ index 6e96a88a98..98c5fd2664 100644
  	sparc64-linux-tdep.o \
  	sparc64-nbsd-tdep.o \
  	sparc64-obsd-tdep.o \
-@@ -796,6 +799,9 @@ ALL_TARGET_OBS = \
+@@ -797,6 +801,9 @@ ALL_TARGET_OBS = \
  	cris-linux-tdep.o \
  	cris-tdep.o \
  	dicos-tdep.o \
@@ -38,7 +46,7 @@ index 6e96a88a98..98c5fd2664 100644
  	fbsd-tdep.o \
  	frv-linux-tdep.o \
  	frv-tdep.o \
-@@ -812,6 +818,7 @@ ALL_TARGET_OBS = \
+@@ -813,6 +820,7 @@ ALL_TARGET_OBS = \
  	i386-darwin-tdep.o \
  	i386-dicos-tdep.o \
  	i386-fbsd-tdep.o \
@@ -46,7 +54,7 @@ index 6e96a88a98..98c5fd2664 100644
  	i386-gnu-tdep.o \
  	i386-go32-tdep.o \
  	i386-linux-tdep.o \
-@@ -836,6 +843,7 @@ ALL_TARGET_OBS = \
+@@ -837,6 +845,7 @@ ALL_TARGET_OBS = \
  	mep-tdep.o \
  	microblaze-linux-tdep.o \
  	microblaze-tdep.o \
@@ -54,7 +62,7 @@ index 6e96a88a98..98c5fd2664 100644
  	mips-fbsd-tdep.o \
  	mips-linux-tdep.o \
  	mips-nbsd-tdep.o \
-@@ -853,6 +861,7 @@ ALL_TARGET_OBS = \
+@@ -854,6 +863,7 @@ ALL_TARGET_OBS = \
  	nto-tdep.o \
  	obsd-tdep.o \
  	ppc-fbsd-tdep.o \
@@ -62,7 +70,7 @@ index 6e96a88a98..98c5fd2664 100644
  	ppc-linux-tdep.o \
  	ppc-nbsd-tdep.o \
  	ppc-obsd-tdep.o \
-@@ -1870,7 +1879,7 @@ generated_files = \
+@@ -1871,7 +1881,7 @@ generated_files = \
  # Flags needed to compile Python code
  PYTHON_CFLAGS = @PYTHON_CFLAGS@
  
@@ -71,7 +79,7 @@ index 6e96a88a98..98c5fd2664 100644
  	@$(MAKE) $(FLAGS_TO_PASS) DO=all "DODIRS=`echo $(SUBDIRS) | sed 's/testsuite//'`" subdir_do
  
  # Rule for compiling .c files in the top-level gdb directory.
-@@ -2209,6 +2218,12 @@ gdb$(EXEEXT): gdb.o $(LIBGDB_OBS) $(ADD_DEPS) $(CDEPS) $(TDEPLIBS)
+@@ -2210,6 +2220,12 @@ gdb$(EXEEXT): gdb.o $(LIBGDB_OBS) $(ADD_DEPS) $(CDEPS) $(TDEPLIBS)
  		-o gdb$(EXEEXT) gdb.o $(LIBGDB_OBS) \
  		$(TDEPLIBS) $(TUI_LIBRARY) $(CLIBS) $(LOADLIBES)
  
@@ -84,7 +92,7 @@ index 6e96a88a98..98c5fd2664 100644
  # Convenience rule to handle recursion.
  $(LIBGNU) $(GNULIB_H): all-lib
  all-lib: $(GNULIB_BUILDDIR)/Makefile
-@@ -2253,7 +2268,7 @@ clean mostlyclean: $(CONFIG_CLEAN)
+@@ -2254,7 +2270,7 @@ clean mostlyclean: $(CONFIG_CLEAN)
  	@$(MAKE) $(FLAGS_TO_PASS) DO=clean "DODIRS=$(CLEANDIRS)" subdir_do
  	rm -f *.o *.a $(ADD_FILES) *~ init.c-tmp init.l-tmp version.c-tmp
  	rm -f init.c version.c observer.h observer.inc
@@ -93,7 +101,15 @@ index 6e96a88a98..98c5fd2664 100644
  	rm -f gdb[0-9]$(EXEEXT)
  	rm -f test-cp-name-parser$(EXEEXT)
  	rm -f xml-builtin.c stamp-xml
-@@ -2475,6 +2490,7 @@ ALLDEPFILES = \
+@@ -2461,6 +2477,7 @@ MAKEOVERRIDES =
+ 
+ ALLDEPFILES = \
+ 	aarch64-fbsd-nat.c \
++	aarch64-fbsd-kern.c \
+ 	aarch64-fbsd-tdep.c \
+ 	aarch64-linux-nat.c \
+ 	aarch64-linux-tdep.c \
+@@ -2478,6 +2495,7 @@ ALLDEPFILES = \
  	amd64-bsd-nat.c \
  	amd64-darwin-tdep.c \
  	amd64-dicos-tdep.c \
@@ -101,7 +117,7 @@ index 6e96a88a98..98c5fd2664 100644
  	amd64-fbsd-nat.c \
  	amd64-fbsd-tdep.c \
  	amd64-linux-nat.c \
-@@ -2510,6 +2526,9 @@ ALLDEPFILES = \
+@@ -2513,6 +2531,9 @@ ALLDEPFILES = \
  	dcache.c \
  	dicos-tdep.c \
  	exec.c \
@@ -111,7 +127,7 @@ index 6e96a88a98..98c5fd2664 100644
  	fbsd-nat.c \
  	fbsd-tdep.c \
  	fork-child.c \
-@@ -2531,6 +2550,7 @@ ALLDEPFILES = \
+@@ -2534,6 +2555,7 @@ ALLDEPFILES = \
  	i386-darwin-nat.c \
  	i386-darwin-tdep.c \
  	i386-dicos-tdep.c \
@@ -119,7 +135,7 @@ index 6e96a88a98..98c5fd2664 100644
  	i386-fbsd-nat.c \
  	i386-fbsd-tdep.c \
  	i386-gnu-nat.c \
-@@ -2572,6 +2592,7 @@ ALLDEPFILES = \
+@@ -2575,6 +2597,7 @@ ALLDEPFILES = \
  	mingw-hdep.c \
  	mips-fbsd-nat.c \
  	mips-fbsd-tdep.c \
@@ -127,7 +143,7 @@ index 6e96a88a98..98c5fd2664 100644
  	mips-linux-nat.c \
  	mips-linux-tdep.c \
  	mips-nbsd-nat.c \
-@@ -2589,6 +2610,7 @@ ALLDEPFILES = \
+@@ -2592,6 +2615,7 @@ ALLDEPFILES = \
  	obsd-nat.c \
  	obsd-tdep.c \
  	posix-hdep.c \
@@ -135,7 +151,7 @@ index 6e96a88a98..98c5fd2664 100644
  	ppc-fbsd-nat.c \
  	ppc-fbsd-tdep.c \
  	ppc-linux-nat.c \
-@@ -2633,6 +2655,7 @@ ALLDEPFILES = \
+@@ -2636,6 +2660,7 @@ ALLDEPFILES = \
  	sparc-sol2-nat.c \
  	sparc-sol2-tdep.c \
  	sparc-tdep.c \
@@ -143,7 +159,7 @@ index 6e96a88a98..98c5fd2664 100644
  	sparc64-fbsd-nat.c \
  	sparc64-fbsd-tdep.c \
  	sparc64-linux-nat.c \
-@@ -2664,6 +2687,12 @@ ALLDEPFILES = \
+@@ -2667,6 +2692,12 @@ ALLDEPFILES = \
  	xtensa-linux-tdep.c \
  	xtensa-tdep.c \
  	xtensa-xtregs.c \
@@ -156,7 +172,7 @@ index 6e96a88a98..98c5fd2664 100644
  	common/mingw-strerror.c \
  	common/posix-strerror.c
  
-@@ -2925,7 +2954,7 @@ endif
+@@ -2928,7 +2959,7 @@ endif
  
  # A list of all the objects we might care about in this build, for
  # dependency tracking.
@@ -277,10 +293,10 @@ index 50f6f592ba..89cdc9cc8e 100644
  
  # GDB may fork/exec the iconv program to get the list of supported character
 diff --git gdb/configure.tgt gdb/configure.tgt
-index fdcb7b1d69..d99aa325ab 100644
+index f72a0dbbc1..2d73300961 100644
 --- gdb/configure.tgt
 +++ gdb/configure.tgt
-@@ -198,7 +198,13 @@ i[34567]86-*-dicos*)
+@@ -203,7 +203,13 @@ i[34567]86-*-dicos*)
  i[34567]86-*-freebsd* | i[34567]86-*-kfreebsd*-gnu)
  	# Target: FreeBSD/i386
  	gdb_target_obs="i386-tdep.o i387-tdep.o i386-bsd-tdep.o i386-fbsd-tdep.o \
@@ -295,7 +311,7 @@ index fdcb7b1d69..d99aa325ab 100644
  	;;
  i[34567]86-*-netbsd* | i[34567]86-*-knetbsd*-gnu)
  	# Target: NetBSD/i386
-@@ -372,7 +378,8 @@ mips*-*-netbsd* | mips*-*-knetbsd*-gnu)
+@@ -377,7 +383,8 @@ mips*-*-netbsd* | mips*-*-knetbsd*-gnu)
  	;;
  mips*-*-freebsd*)
  	# Target: MIPS running FreeBSD
@@ -305,7 +321,7 @@ index fdcb7b1d69..d99aa325ab 100644
  	gdb_sim=../sim/mips/libsim.a
  	;;
  mips64*-*-openbsd*)
-@@ -431,7 +438,8 @@ powerpc*-*-freebsd*)
+@@ -436,7 +443,8 @@ powerpc*-*-freebsd*)
  	# Target: FreeBSD/powerpc
  	gdb_target_obs="rs6000-tdep.o ppc-sysv-tdep.o ppc64-tdep.o \
  		        ppc-fbsd-tdep.o fbsd-tdep.o solib-svr4.o \
@@ -315,7 +331,7 @@ index fdcb7b1d69..d99aa325ab 100644
  	;;
  
  powerpc-*-netbsd* | powerpc-*-knetbsd*-gnu)
-@@ -555,7 +563,8 @@ sparc*-*-freebsd* | sparc*-*-kfreebsd*-gnu)
+@@ -560,7 +568,8 @@ sparc*-*-freebsd* | sparc*-*-kfreebsd*-gnu)
  	# Target: FreeBSD/sparc64
  	gdb_target_obs="sparc-tdep.o sparc64-tdep.o sparc64-fbsd-tdep.o \
  			fbsd-tdep.o solib-svr4.o \
@@ -325,7 +341,7 @@ index fdcb7b1d69..d99aa325ab 100644
  	;;
  sparc-*-netbsd* | sparc-*-knetbsd*-gnu)
  	# Target: NetBSD/sparc
-@@ -686,7 +695,9 @@ x86_64-*-freebsd* | x86_64-*-kfreebsd*-gnu)
+@@ -691,7 +700,9 @@ x86_64-*-freebsd* | x86_64-*-kfreebsd*-gnu)
  	# Target: FreeBSD/amd64
  	gdb_target_obs="amd64-tdep.o amd64-fbsd-tdep.o i386-tdep.o \
  			i387-tdep.o i386-bsd-tdep.o i386-fbsd-tdep.o \
