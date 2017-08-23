@@ -1,16 +1,15 @@
 # Created by: Boris Samorodov <bsam@FreeBSD.org>
 # $FreeBSD$
 
-PORTNAME=	pycharm
+PORTNAME=	pycharm-ce
 PORTVERSION=	2017.2.1
-CATEGORIES=	java devel python
+CATEGORIES=	devel java python
 MASTER_SITES=	https://download.jetbrains.com/python/ \
 		http://download.jetbrains.com/python/
-DISTNAME=	${PORTNAME}-community-${PORTVERSION}
-PKGNAMEPREFIX=	intellij-
+DISTNAME=	pycharm-community-${PORTVERSION}
 
 MAINTAINER=	bsam@FreeBSD.org
-COMMENT=	IntelliJ PyCharm Community Edition
+COMMENT=	JetBrains PyCharm Community Edition IDE
 
 LICENSE=	APACHE20
 
@@ -25,18 +24,16 @@ SHEBANG_FILES=	bin/printenv.py bin/restart.py
 NO_ARCH=	yes
 NO_BUILD=	yes
 
-.include "${.CURDIR}/../intellij/common.mk"
+.include "${.CURDIR}/../../java/intellij/common.mk"
 
-SUB_FILES+=	pkg-message pycharm pycharm-ce.desktop
+SUB_FILES+=	pkg-message pycharm ${PORTNAME}.desktop
 SUB_LIST+=	IDEA_HOME=${IDEA_HOME}
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	@${TAR} -czf - -C ${WRKSRC} . | ${TAR} xzf - -C ${STAGEDIR}${DATADIR}
 # Linux/Windows/OS X only so remove them
-	@${RM} ${STAGEDIR}${DATADIR}/bin/fsnotifier \
-		${STAGEDIR}${DATADIR}/bin/fsnotifier-arm \
-		${STAGEDIR}${DATADIR}/bin/fsnotifier64
+	@${RM} ${STAGEDIR}${DATADIR}/bin/*fsnotifier*
 # Remove the bundled native Pty4J support libraries, they are replaced
 # by java/intellij-pty4j
 	@${RM} -r ${STAGEDIR}${DATADIR}/lib/libpty
@@ -45,7 +42,7 @@ do-install:
 	@${RM} -r ${STAGEDIR}${DATADIR}/helpers/pydev/pydevd_attach_to_process
 	@${RM} ${STAGEDIR}${DATADIR}/lib/pty4j-0.5.jar
 	${INSTALL_SCRIPT} ${WRKDIR}/pycharm ${STAGEDIR}${PREFIX}/bin/
-	${INSTALL_DATA} ${WRKDIR}/pycharm-ce.desktop ${STAGEDIR}${PREFIX}/share/applications/
+	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}.desktop ${STAGEDIR}${PREFIX}/share/applications/
 	#cd ${WRKSRC}/lib && ${JAVA_HOME}/bin/jar xf icons.jar
 # TODO: Remove and enable fsnotifier when devel/libinotify is fixed
 # Disable filewatcher warning message on IDEA startup

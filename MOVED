@@ -9522,3 +9522,4 @@ devel/insight||2017-08-23|Has expired: Broken for more than 6 months
 devel/gdb66||2017-08-23|Has expired: Broken for more than 6 months
 biology/biojava||2017-08-23|Has expired: Broken for more than 6 months
 games/xroach||2017-08-23|Has expired: Broken for more than 6 months
+java/intellij-pycharm|devel/pycharm-ce|2017-08-23|Renamed to reflect upstream name. Use a more appropriate origin (devel for development tools, IDE)

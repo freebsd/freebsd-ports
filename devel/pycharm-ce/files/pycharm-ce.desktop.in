@@ -2,8 +2,8 @@
 Version=1.0
 Encoding=UTF-8
 Type=Application
-Name=IntelliJ PyCharm Community Edition
-GenericName=IntelliJ PyCharm Community Edition
+Name=JetBrains PyCharm Community Edition IDE
+GenericName=JetBrains PyCharm Community Edition IDE
 Icon=%%DATADIR%%/bin/pycharm.png
 Exec=%%DATADIR%%/bin/pycharm.sh
 Comment=Develop with pleasure!
