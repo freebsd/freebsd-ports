@@ -3,7 +3,7 @@
 
 PORTNAME=		R
 PORTVERSION=		3.4.1
-PORTREVISION=		4
+PORTREVISION=		5
 CATEGORIES=		math lang
 MASTER_SITES=		CRAN/src/base/R-${PORTVERSION:C|\..*||}
 
@@ -23,7 +23,7 @@ CONFIGURE_ARGS=		--disable-java \
 GNU_CONFIGURE=		yes
 INSTALL_TARGET=		install-strip
 ONLY_FOR_ARCHS=		aarch64 amd64 i386
-USES=			gmake iconv libtool localbase objc:compiler \
+USES=			gmake iconv libtool localbase \
 			pathfix perl5 readline:port
 
 USE_PERL5=		build
