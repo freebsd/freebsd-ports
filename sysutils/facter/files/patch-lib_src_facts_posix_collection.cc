@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- lib/src/facts/posix/collection.cc.orig
 +++ lib/src/facts/posix/collection.cc
 @@ -29,6 +29,8 @@
