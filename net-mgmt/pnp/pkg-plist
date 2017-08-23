@@ -319,9 +319,8 @@ man/man8/npcd.8.gz
 %%WWWDIR%%/application/models/rrdtool.php
 %%WWWDIR%%/application/models/system.php
 %%WWWDIR%%/application/vendor/fpdf/filters/FilterASCII85.php
-%%WWWDIR%%/application/vendor/fpdf/filters/FilterASCII85_FPDI.php
+%%WWWDIR%%/application/vendor/fpdf/filters/FilterASCIIHexDecode.php
 %%WWWDIR%%/application/vendor/fpdf/filters/FilterLZW.php
-%%WWWDIR%%/application/vendor/fpdf/filters/FilterLZW_FPDI.php
 %%WWWDIR%%/application/vendor/fpdf/font/courier.php
 %%WWWDIR%%/application/vendor/fpdf/font/courierb.php
 %%WWWDIR%%/application/vendor/fpdf/font/courierbi.php
@@ -339,7 +338,7 @@ man/man8/npcd.8.gz
 %%WWWDIR%%/application/vendor/fpdf/fpdf.php
 %%WWWDIR%%/application/vendor/fpdf/fpdf_tpl.php
 %%WWWDIR%%/application/vendor/fpdf/fpdi.php
-%%WWWDIR%%/application/vendor/fpdf/fpdi2tcpdf_bridge.php
+%%WWWDIR%%/application/vendor/fpdf/fpdi_bridge.php
 %%WWWDIR%%/application/vendor/fpdf/fpdi_pdf_parser.php
 %%WWWDIR%%/application/vendor/fpdf/pdf_context.php
 %%WWWDIR%%/application/vendor/fpdf/pdf_parser.php
@@ -654,6 +653,7 @@ man/man8/npcd.8.gz
 %%WWWDIR%%/templates.dist/check_tcp.php
 %%WWWDIR%%/templates.dist/check_users.php
 %%WWWDIR%%/templates.dist/default.php
+%%WWWDIR%%/templates.dist/icinga.php
 %%WWWDIR%%/templates.dist/integer.php
 %%WWWDIR%%/templates.dist/nagiostats.php
 %%WWWDIR%%/templates.dist/pnp-runtime.php
@@ -662,9 +662,9 @@ man/man8/npcd.8.gz
 %%WWWDIR%%/templates.special/advanced_loop.php-sample
 %%WWWDIR%%/templates.special/loop.php-sample
 %%WWWDIR%%/templates.special/static.php-sample
+@dir %%ETCDIR%%/config.d
 @dir %%WWWDIR%%/application/cache
 @dir %%WWWDIR%%/application/hooks
-@dir %%ETCDIR%%/config.d
 @dir %%WWWDIR%%/templates
 @dir(%%NAGIOSUSER%%,%%NAGIOSGROUP%%,755) /var/log/kohana
 @dir(%%NAGIOSUSER%%,%%NAGIOSGROUP%%,755) /var/log/stats
