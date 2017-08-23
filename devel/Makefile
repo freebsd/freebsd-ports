@@ -5101,6 +5101,7 @@
     SUBDIR += py36-setuptools
     SUBDIR += py_static_check
     SUBDIR += pybugz
+    SUBDIR += pycharm-ce
     SUBDIR += pychecker
     SUBDIR += pycount
     SUBDIR += pydbus-common
