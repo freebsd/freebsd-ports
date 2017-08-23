@@ -5593,6 +5593,7 @@
     SUBDIR += rubygem-peek
     SUBDIR += rubygem-peek-gc
     SUBDIR += rubygem-peek-host
+    SUBDIR += rubygem-peek-performance_bar
     SUBDIR += rubygem-piston
     SUBDIR += rubygem-pkg-config
     SUBDIR += rubygem-platform
