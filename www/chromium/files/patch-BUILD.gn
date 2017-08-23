@@ -1,33 +1,24 @@
---- BUILD.gn.orig	2017-06-05 19:03:00 UTC
-+++ BUILD.gn
-@@ -95,7 +95,7 @@ group("gn_all") {
+--- BUILD.gn.orig	2017-07-25 21:04:48.000000000 +0200
++++ BUILD.gn	2017-07-29 00:52:25.378843000 +0200
+@@ -92,7 +92,7 @@
      ]
    }
  
--  if (!is_ios && !is_android && !is_chromecast) {
-+  if (!is_ios && !is_android && !is_bsd && !is_chromecast) {
+-  if (!is_ios && !is_android && !is_chromecast && !is_fuchsia) {
++  if (!is_ios && !is_android && !is_bsd && !is_chromecast && !is_fuchsia) {
      deps += [
        "//chrome",
        "//chrome/test:browser_tests",
-@@ -153,7 +153,7 @@ group("gn_all") {
+@@ -151,7 +151,7 @@
      ]
    }
  
--  if (!is_ios) {
-+  if (!is_ios && !is_bsd) {
-     # TODO(GYP): Figure out which of these should actually build on iOS,
-     # and whether there should be other targets that are iOS-only and missing.
+-  if (!is_ios && !is_fuchsia) {
++  if (!is_ios && !is_bsd && !is_fuchsia) {
      deps += [
-@@ -199,7 +199,7 @@ group("gn_all") {
-       "//ui/touch_selection:ui_touch_selection_unittests",
-       "//url/ipc:url_ipc_unittests",
-     ]
--  } else {
-+  } else if (!is_bsd) {
-     deps += [ "//ios:all" ]
-   }
- 
-@@ -359,7 +359,7 @@ group("gn_all") {
+       "//cc:cc_unittests",
+       "//chrome/test:telemetry_perf_unittests",
+@@ -363,7 +363,7 @@
      ]
    }
  
@@ -36,7 +27,7 @@
      # The following are definitely linux-only.
      deps += [
        "//chrome:manpage",
-@@ -382,9 +382,16 @@ group("gn_all") {
+@@ -386,9 +386,16 @@
        # TODO(dpranke): add the linux_dump_symbols flag?
        deps += [ "//chrome:linux_symbols" ]
      }
@@ -54,7 +45,7 @@
      deps += [
        "//base:base_i18n_perftests",
        "//base:base_perftests",
-@@ -455,7 +462,7 @@ group("gn_all") {
+@@ -459,7 +466,7 @@
      if (enable_nacl) {
        deps += [ "//components/nacl/loader:nacl_loader_unittests" ]
  
@@ -63,16 +54,16 @@
          # TODO(dpranke): Figure out what platforms should actually have this.
          deps += [ "//components/nacl/loader:nacl_helper" ]
  
-@@ -557,7 +564,7 @@ group("gn_all") {
+@@ -557,7 +564,7 @@
        deps +=
            [ "//chrome/installer/mini_installer:next_version_mini_installer" ]
      }
--  } else if (!is_android && !is_ios) {
-+  } else if (!is_android && !is_ios && !is_bsd) {
+-  } else if (!is_android && !is_ios && !is_fuchsia) {
++  } else if (!is_android && !is_ios && !is_bsd && !is_fuchsia) {
      deps += [ "//breakpad:symupload($host_toolchain)" ]
    }
  
-@@ -595,7 +602,7 @@ group("gn_all") {
+@@ -588,7 +595,7 @@
      deps += [ "//components/proximity_auth:proximity_auth_unittests" ]
    }
  
@@ -81,7 +72,7 @@
      deps += [
        "//mash:all",
        "//media/mojo/services:media_service_unittests",
-@@ -620,7 +627,7 @@ group("gn_all") {
+@@ -606,7 +613,7 @@
      }
    }
  
@@ -90,7 +81,7 @@
      # TODO(GYP): Figure out if any of these should be in gn_all
      # and figure out how cross-platform they are
      deps += [
-@@ -659,7 +666,7 @@ group("gn_all") {
+@@ -644,7 +651,7 @@
      }
  
      if (target_cpu == "x86" || target_cpu == "x64") {
@@ -99,7 +90,7 @@
          deps += [ "//chrome/test:load_library_perf_tests" ]
        }
        deps += [
-@@ -667,7 +674,7 @@ group("gn_all") {
+@@ -652,13 +659,13 @@
          "//third_party/libjpeg_turbo:simd_asm",
        ]
      }
@@ -108,8 +99,6 @@
        deps += [ "//v8:v8_shell" ]
      }
    }
-@@ -677,7 +684,7 @@ group("gn_all") {
-   }
  
    if ((is_linux && !is_chromeos && !is_chromecast) || (is_win && use_drfuzz) ||
 -      (use_libfuzzer && is_mac)) {
@@ -117,25 +106,25 @@
      deps += [
        "//testing/libfuzzer/fuzzers",
        "//testing/libfuzzer/tests:libfuzzer_tests",
-@@ -828,7 +835,7 @@ if (is_chromeos) {
+@@ -677,7 +684,7 @@
+     deps += [ "//native_client_sdk/src:nacl_core_sdk" ]
+   }
  
- group("gn_mojo_targets") {
-   testonly = true
--  if (is_linux && !is_chromeos) {
-+  if ((is_linux || is_bsd) && !is_chromeos) {
-     # TODO(GYP): Figure out if any of these should be in gn_all
-     # and figure out how cross-platform they are
-     deps = [
-@@ -854,7 +861,7 @@ group("gn_visibility") {
+-  if (is_linux && use_ozone) {
++  if ((is_linux || is_bsd ) && use_ozone) {
+     deps += [
+       "//headless",
+       "//headless:headless_tests",
+@@ -811,7 +818,7 @@
    }
  }
  
--if (!is_ios) {
-+if (!is_ios || !is_bsd) {
+-if (!is_ios && !is_fuchsia) {
++if (!is_ios && !is_bsd && !is_fuchsia) {
    # This group includes all of the targets needed to build and test Blink,
    # including running the layout tests (see below).
    group("blink_tests") {
-@@ -921,7 +928,7 @@ if (!is_ios) {
+@@ -879,7 +886,7 @@
        data_deps += [ "//content/shell:content_shell_crash_service" ]
      }
  
@@ -144,7 +133,7 @@
        data_deps += [ "//breakpad:minidump_stackwalk($host_toolchain)" ]
      }
  
-@@ -929,7 +936,7 @@ if (!is_ios) {
+@@ -887,7 +894,7 @@
        data_deps += [ "//breakpad:dump_syms($host_toolchain)" ]
      }
  
@@ -153,16 +142,16 @@
        data_deps += [ "//breakpad:dump_syms($host_toolchain)" ]
      }
  
-@@ -979,7 +986,7 @@ group("chromium_swarm_tests") {
+@@ -941,7 +948,7 @@
  group("chromium_builder_perf") {
    testonly = true
  
--  if (!is_ios && !is_android && !is_chromecast) {
-+  if (!is_ios && !is_android && !is_chromecast && !is_bsd) {
+-  if (!is_ios && !is_android && !is_chromecast && !is_fuchsia) {
++  if (!is_ios && !is_android && !is_bsd && !is_chromecast && !is_fuchsia) {
      data_deps = [
        "//cc:cc_perftests",
        "//chrome/test:load_library_perf_tests",
-@@ -1009,7 +1016,7 @@ group("chromium_builder_perf") {
+@@ -975,7 +982,7 @@
          "//chrome/installer/mini_installer:mini_installer",
          "//chrome/test:angle_perftests",
        ]
