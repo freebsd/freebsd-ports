@@ -10,7 +10,6 @@
     SUBDIR += bcftools
     SUBDIR += bedtools
     SUBDIR += biococoa
-    SUBDIR += biojava
     SUBDIR += blat
     SUBDIR += bowtie
     SUBDIR += bowtie2

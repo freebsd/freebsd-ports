@@ -41,7 +41,6 @@ astah-community-*.zip	devel/astah-community	License restrictions -- See http://a
 atari800/*		emulators/atari800	xf25 contains copyright ROMs and cannot be distributed
 baudline_*		audio/baudline		No redistribution allowed
 BCWipe-*		security/bcwipe		Non-commercial distribution and use only
-bdc*			security/bdc		License does not allow redistribution
 bicom*			archivers/bicom		Contact author personally regarding commercial use
 boodler-*		audio/boodler		Not for commercial use
 Browser*.tar.gz		net/ldapbrowser		No reply from author regarding redistribution licensing
@@ -160,7 +159,6 @@ mindterm-*		security/mindterm-binary Do not sell for profit
 molden*			biology/molden		Free for academic, non-profit usage; do not redistribute source and executable
 ncftpd-*		ftp/ncftpd		30 day evaluation license
 nero2_linux_*		games/linux-nerogame	Freeware, but license terms are unclear
-NeroDigitalAudio.zip	audio/linux-neroaaccodec Redistribution forbidden
 NetComponents-*		java/netcomponents	No redistribution except as part of a substantially different product
 nntpcache-*		news/nntpcache		Free for individuals and non-military, non-profit organisations only
 nttcp-*			benchmarks/nttcp	No commercial use
