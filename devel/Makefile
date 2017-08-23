@@ -826,6 +826,7 @@
     SUBDIR += godot-tools
     SUBDIR += goffice
     SUBDIR += goffice010
+    SUBDIR += gogland-eap
     SUBDIR += google-gdata
     SUBDIR += google-perftools
     SUBDIR += google-styleguide
