@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	salt
-PORTVERSION=	2016.11.6
-PORTREVISION=	1
+PORTVERSION=	2017.7.1
 CATEGORIES=	sysutils python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,33 +13,18 @@ COMMENT=	Distributed remote execution and configuration management system
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}yaml>0:devel/py-yaml \
-		${PYTHON_PKGNAMEPREFIX}Jinja2>0:devel/py-Jinja2 \
-		${PYTHON_PKGNAMEPREFIX}msgpack-python>=0.3:devel/py-msgpack-python \
-		${PYTHON_PKGNAMEPREFIX}libcloud>=0.14.0:net/py-libcloud \
-		${PYTHON_PKGNAMEPREFIX}botocore>0:devel/py-botocore \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Jinja2>0:devel/py-Jinja2 \
 		${PYTHON_PKGNAMEPREFIX}MarkupSafe>0:textproc/py-MarkupSafe \
-		${PYTHON_PKGNAMEPREFIX}requests>=1.0.0:www/py-requests \
-		${PYTHON_PKGNAMEPREFIX}enum34>0:devel/py-enum34 \
-		${PYTHON_PKGNAMEPREFIX}progressbar>0:misc/py-progressbar \
+		${PYTHON_PKGNAMEPREFIX}botocore>0:devel/py-botocore \
 		${PYTHON_PKGNAMEPREFIX}futures>=2.0:devel/py-futures \
-		${PYTHON_PKGNAMEPREFIX}tornado>=4.2.1:www/py-tornado
+		${PYTHON_PKGNAMEPREFIX}libcloud>=0.14.0:net/py-libcloud \
+		${PYTHON_PKGNAMEPREFIX}msgpack-python>=0.3:devel/py-msgpack-python \
+		${PYTHON_PKGNAMEPREFIX}progressbar>0:misc/py-progressbar \
+		${PYTHON_PKGNAMEPREFIX}requests>=1.0.0:www/py-requests \
+		${PYTHON_PKGNAMEPREFIX}tornado>=4.2.1:www/py-tornado \
+		${PYTHON_PKGNAMEPREFIX}yaml>0:devel/py-yaml
 
-OPTIONS_DEFINE=	ZEROMQ RAET
-OPTIONS_DEFAULT=	ZEROMQ
-
-ZEROMQ_DESC=	Enable ZeroMQ transport
-RAET_DESC=	Enable RAET transport
-
-ZEROMQ_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyzmq>=2.2.0:net/py-pyzmq
-ZEROMQ_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyzmq>=2.2.0:net/py-pyzmq \
-		${PYTHON_PKGNAMEPREFIX}pycrypto>=2.6.1:security/py-pycrypto
-
-RAET_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}libnacl>=1.0.0:security/py-libnacl \
-		${PYTHON_PKGNAMEPREFIX}ioflo>=1.1.7:devel/py-ioflo \
-		${PYTHON_PKGNAMEPREFIX}raet>=0.6.0:net/py-raet
-
-USES=		cpe python:2
+USES=		cpe python:2.7+
 CPE_VENDOR=	saltstack
 CPE_PRODUCT=	salt
 USE_PYTHON=	autoplist distutils
@@ -71,6 +55,30 @@ SUB_LIST+=	PYTHON_CMD=${PYTHON_CMD}
 
 SUB_FILES=	pkg-message
 
+OPTIONS_DEFINE=	RAET TCP ZEROMQ
+OPTIONS_DEFAULT=ZEROMQ
+
+RAET_DESC=	Install dependencies required for RAET transport
+TCP_DESC=	Install dependencies required for TCP transport
+ZEROMQ_DESC=	Install dependencies required for ZeroMQ transport
+
+RAET_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}libnacl>=1.0.0:security/py-libnacl \
+			${PYTHON_PKGNAMEPREFIX}ioflo>=1.1.7:devel/py-ioflo \
+			${PYTHON_PKGNAMEPREFIX}raet>=0.6.0:net/py-raet
+
+TCP_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pycrypto>=2.6.1:security/py-pycrypto
+
+ZEROMQ_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyzmq>=2.2.0:net/py-pyzmq
+ZEROMQ_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyzmq>=2.2.0:net/py-pyzmq \
+			${PYTHON_PKGNAMEPREFIX}pycrypto>=2.6.1:security/py-pycrypto
+
+.include <bsd.port.pre.mk>
+
+# Python 2.7-3.3 require enum34, unnecessary for Python 3.4+
+.if ${PYTHON_REL} < 3400
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}enum34>0:devel/py-enum34
+.endif
+
 post-patch:
 .for file in conf/minion conf/master doc/man/salt-key.1 \
 	doc/man/salt-cp.1 doc/man/salt-minion.1 doc/man/salt-syndic.1 \
@@ -89,4 +97,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/conf/master ${STAGEDIR}${ETCDIR}/master.sample
 	${INSTALL_DATA} ${WRKSRC}/conf/minion ${STAGEDIR}${ETCDIR}/minion.sample
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
