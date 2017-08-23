@@ -1,0 +1,470 @@
+diff --git gdb/Makefile.in gdb/Makefile.in
+index 1d2dbaf3f7..d8e2b49523 100644
+--- gdb/Makefile.in
++++ gdb/Makefile.in
+@@ -745,6 +745,7 @@ TARGET_OBS = @TARGET_OBS@
+ # All target-dependent objects files that require 64-bit CORE_ADDR
+ # (used with --enable-targets=all --enable-64-bit-bfd).
+ ALL_64_TARGET_OBS = \
++	aarch64-fbsd-tdep.o \
+ 	aarch64-insn.o \
+ 	aarch64-linux-tdep.o \
+ 	aarch64-newlib-tdep.o \
+@@ -2458,6 +2459,8 @@ force_update:
+ MAKEOVERRIDES =
+ 
+ ALLDEPFILES = \
++	aarch64-fbsd-nat.c \
++	aarch64-fbsd-tdep.c \
+ 	aarch64-linux-nat.c \
+ 	aarch64-linux-tdep.c \
+ 	aarch64-newlib-tdep.c \
+diff --git gdb/aarch64-fbsd-nat.c gdb/aarch64-fbsd-nat.c
+new file mode 100644
+index 0000000000..f7855b9c0b
+--- /dev/null
++++ gdb/aarch64-fbsd-nat.c
+@@ -0,0 +1,133 @@
++/* Native-dependent code for FreeBSD/aarch64.
++
++   Copyright (C) 2017 Free Software Foundation, Inc.
++
++   This file is part of GDB.
++
++   This program is free software; you can redistribute it and/or modify
++   it under the terms of the GNU General Public License as published by
++   the Free Software Foundation; either version 3 of the License, or
++   (at your option) any later version.
++
++   This program is distributed in the hope that it will be useful,
++   but WITHOUT ANY WARRANTY; without even the implied warranty of
++   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
++   GNU General Public License for more details.
++
++   You should have received a copy of the GNU General Public License
++   along with this program.  If not, see <http://www.gnu.org/licenses/>.  */
++
++#include "defs.h"
++#include "target.h"
++
++#include <sys/types.h>
++#include <sys/ptrace.h>
++#include <machine/reg.h>
++
++#include "fbsd-nat.h"
++#include "aarch64-tdep.h"
++#include "aarch64-fbsd-tdep.h"
++#include "inf-ptrace.h"
++
++/* Determine if PT_GETREGS fetches REGNUM.  */
++
++static bool
++getregs_supplies (struct gdbarch *gdbarch, int regnum)
++{
++  return (regnum >= AARCH64_X0_REGNUM && regnum <= AARCH64_CPSR_REGNUM);
++}
++
++/* Determine if PT_GETFPREGS fetches REGNUM.  */
++
++static bool
++getfpregs_supplies (struct gdbarch *gdbarch, int regnum)
++{
++  return (regnum >= AARCH64_V0_REGNUM && regnum <= AARCH64_FPCR_REGNUM);
++}
++
++/* Fetch register REGNUM from the inferior.  If REGNUM is -1, do this
++   for all registers.  */
++
++static void
++aarch64_fbsd_fetch_inferior_registers (struct target_ops *ops,
++				       struct regcache *regcache, int regnum)
++{
++  pid_t pid = get_ptrace_pid (regcache_get_ptid (regcache));
++
++  struct gdbarch *gdbarch = get_regcache_arch (regcache);
++  if (regnum == -1 || getregs_supplies (gdbarch, regnum))
++    {
++      struct reg regs;
++
++      if (ptrace (PT_GETREGS, pid, (PTRACE_TYPE_ARG3) &regs, 0) == -1)
++	perror_with_name (_("Couldn't get registers"));
++
++      regcache_supply_regset (&aarch64_fbsd_gregset, regcache, regnum, &regs,
++			      sizeof (regs));
++    }
++
++  if (regnum == -1 || getfpregs_supplies (gdbarch, regnum))
++    {
++      struct fpreg fpregs;
++
++      if (ptrace (PT_GETFPREGS, pid, (PTRACE_TYPE_ARG3) &fpregs, 0) == -1)
++	perror_with_name (_("Couldn't get floating point status"));
++
++      regcache_supply_regset (&aarch64_fbsd_fpregset, regcache, regnum, &fpregs,
++			      sizeof (fpregs));
++    }
++}
++
++/* Store register REGNUM back into the inferior.  If REGNUM is -1, do
++   this for all registers.  */
++
++static void
++aarch64_fbsd_store_inferior_registers (struct target_ops *ops,
++				       struct regcache *regcache, int regnum)
++{
++  pid_t pid = get_ptrace_pid (regcache_get_ptid (regcache));
++
++  struct gdbarch *gdbarch = get_regcache_arch (regcache);
++  if (regnum == -1 || getregs_supplies (gdbarch, regnum))
++    {
++      struct reg regs;
++
++      if (ptrace (PT_GETREGS, pid, (PTRACE_TYPE_ARG3) &regs, 0) == -1)
++	perror_with_name (_("Couldn't get registers"));
++
++      regcache_collect_regset (&aarch64_fbsd_gregset, regcache, regnum, &regs,
++			       sizeof (regs));
++
++      if (ptrace (PT_SETREGS, pid, (PTRACE_TYPE_ARG3) &regs, 0) == -1)
++	perror_with_name (_("Couldn't write registers"));
++    }
++
++  if (regnum == -1 || getfpregs_supplies (gdbarch, regnum))
++    {
++      struct fpreg fpregs;
++
++      if (ptrace (PT_GETFPREGS, pid, (PTRACE_TYPE_ARG3) &fpregs, 0) == -1)
++	perror_with_name (_("Couldn't get floating point status"));
++
++      regcache_collect_regset (&aarch64_fbsd_fpregset, regcache, regnum, &fpregs,
++			       sizeof (fpregs));
++
++      if (ptrace (PT_SETFPREGS, pid, (PTRACE_TYPE_ARG3) &fpregs, 0) == -1)
++	perror_with_name (_("Couldn't write floating point status"));
++    }
++}
++
++
++/* Provide a prototype to silence -Wmissing-prototypes.  */
++void _initialize_aarch64_fbsd_nat (void);
++
++void
++_initialize_aarch64_fbsd_nat (void)
++{
++  struct target_ops *t;
++
++  t = inf_ptrace_target ();
++  t->to_fetch_registers = aarch64_fbsd_fetch_inferior_registers;
++  t->to_store_registers = aarch64_fbsd_store_inferior_registers;
++  fbsd_nat_add_target (t);
++}
+diff --git gdb/aarch64-fbsd-tdep.c gdb/aarch64-fbsd-tdep.c
+new file mode 100644
+index 0000000000..f8ce627282
+--- /dev/null
++++ gdb/aarch64-fbsd-tdep.c
+@@ -0,0 +1,208 @@
++/* Target-dependent code for FreeBSD/aarch64.
++
++   Copyright (C) 2017 Free Software Foundation, Inc.
++
++   This file is part of GDB.
++
++   This program is free software; you can redistribute it and/or modify
++   it under the terms of the GNU General Public License as published by
++   the Free Software Foundation; either version 3 of the License, or
++   (at your option) any later version.
++
++   This program is distributed in the hope that it will be useful,
++   but WITHOUT ANY WARRANTY; without even the implied warranty of
++   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
++   GNU General Public License for more details.
++
++   You should have received a copy of the GNU General Public License
++   along with this program.  If not, see <http://www.gnu.org/licenses/>.  */
++
++#include "defs.h"
++
++#include "gdbarch.h"
++#include "fbsd-tdep.h"
++#include "aarch64-tdep.h"
++#include "aarch64-fbsd-tdep.h"
++#include "osabi.h"
++#include "solib-svr4.h"
++#include "target.h"
++#include "tramp-frame.h"
++#include "trad-frame.h"
++
++/* In a signal frame, sp points to a 'struct sigframe' which is
++   defined as:
++
++   struct sigframe {
++	   siginfo_t	sf_si;
++	   ucontext_t	sf_uc;
++   };
++
++   ucontext_t is defined as:
++
++   struct __ucontext {
++	   sigset_t	uc_sigmask;
++	   mcontext_t	uc_mcontext;
++	   ...
++   };
++
++   The mcontext_t contains the general purpose register set followed
++   by the floating point register set.  The floating point register
++   set is only valid if the _MC_FP_VALID flag is set in mc_flags.  */
++
++#define AARCH64_MCONTEXT_REG_SIZE               8
++#define AARCH64_MCONTEXT_FPREG_SIZE             16
++#define AARCH64_SIGFRAME_UCONTEXT_OFFSET	80
++#define AARCH64_UCONTEXT_MCONTEXT_OFFSET	16
++#define	AARCH64_MCONTEXT_FPREGS_OFFSET		272
++#define	AARCH64_MCONTEXT_FLAGS_OFFSET		800
++#define AARCH64_MCONTEXT_FLAG_FP_VALID		0x1
++
++/* Implement the "init" method of struct tramp_frame.  */
++
++static void
++aarch64_fbsd_sigframe_init (const struct tramp_frame *self,
++			     struct frame_info *this_frame,
++			     struct trad_frame_cache *this_cache,
++			     CORE_ADDR func)
++{
++  struct gdbarch *gdbarch = get_frame_arch (this_frame);
++  enum bfd_endian byte_order = gdbarch_byte_order (gdbarch);
++  CORE_ADDR sp = get_frame_register_unsigned (this_frame, AARCH64_SP_REGNUM);
++  CORE_ADDR mcontext_addr =
++    sp
++    + AARCH64_SIGFRAME_UCONTEXT_OFFSET
++    + AARCH64_UCONTEXT_MCONTEXT_OFFSET;
++  gdb_byte buf[4];
++  int i;
++
++  for (i = 0; i < 30; i++)
++    {
++      trad_frame_set_reg_addr (this_cache,
++			       AARCH64_X0_REGNUM + i,
++			       mcontext_addr + i * AARCH64_MCONTEXT_REG_SIZE);
++    }
++  trad_frame_set_reg_addr (this_cache, AARCH64_LR_REGNUM,
++			   mcontext_addr + 30 * AARCH64_MCONTEXT_REG_SIZE);
++  trad_frame_set_reg_addr (this_cache, AARCH64_SP_REGNUM,
++			   mcontext_addr + 31 * AARCH64_MCONTEXT_REG_SIZE);
++  trad_frame_set_reg_addr (this_cache, AARCH64_PC_REGNUM,
++			   mcontext_addr + 32 * AARCH64_MCONTEXT_REG_SIZE);
++  trad_frame_set_reg_addr (this_cache, AARCH64_CPSR_REGNUM,
++			   mcontext_addr + 33 * AARCH64_MCONTEXT_REG_SIZE);
++
++  if (target_read_memory (mcontext_addr + AARCH64_MCONTEXT_FLAGS_OFFSET, buf,
++			  4) == 0
++      && (extract_unsigned_integer (buf, 4, byte_order)
++	  & AARCH64_MCONTEXT_FLAG_FP_VALID))
++    {
++      for (i = 0; i < 32; i++)
++	{
++	  trad_frame_set_reg_addr (this_cache, AARCH64_V0_REGNUM + i,
++				   mcontext_addr
++				   + AARCH64_MCONTEXT_FPREGS_OFFSET
++				   + i * AARCH64_MCONTEXT_FPREG_SIZE);
++	}
++      trad_frame_set_reg_addr (this_cache, AARCH64_FPSR_REGNUM,
++			       mcontext_addr + AARCH64_MCONTEXT_FPREGS_OFFSET
++			       + 32 * AARCH64_MCONTEXT_FPREG_SIZE);
++      trad_frame_set_reg_addr (this_cache, AARCH64_FPCR_REGNUM,
++			       mcontext_addr + AARCH64_MCONTEXT_FPREGS_OFFSET
++			       + 32 * AARCH64_MCONTEXT_FPREG_SIZE + 4);
++    }
++
++  trad_frame_set_id (this_cache, frame_id_build (sp, func));
++}
++
++static const struct tramp_frame aarch64_fbsd_sigframe =
++{
++  SIGTRAMP_FRAME,
++  4,
++  {
++    {0x910003e0, -1},		/* mov  x0, sp  */
++    {0x91014000, -1},		/* add  x0, x0, #SF_UC  */
++    {0xd2803428, -1},		/* mov  x8, #SYS_sigreturn  */
++    {0xd4000001, -1},		/* svc  0x0  */
++    {TRAMP_SENTINEL_INSN, -1}
++  },
++  aarch64_fbsd_sigframe_init
++};
++
++/* Register maps.  */
++
++static const struct regcache_map_entry aarch64_fbsd_gregmap[] =
++  {
++    { 30, AARCH64_X0_REGNUM, 8 }, /* x0 ... x29 */
++    { 1, AARCH64_LR_REGNUM, 8 },
++    { 1, AARCH64_SP_REGNUM, 8 },
++    { 1, AARCH64_PC_REGNUM, 8 },
++    { 1, AARCH64_CPSR_REGNUM, 4 },
++    { 0 }
++  };
++
++static const struct regcache_map_entry aarch64_fbsd_fpregmap[] =
++  {
++    { 32, AARCH64_V0_REGNUM, 16 }, /* v0 ... v31 */
++    { 1, AARCH64_FPSR_REGNUM, 4 },
++    { 1, AARCH64_FPCR_REGNUM, 4 },
++    { 0 }
++  };
++
++/* Register set definitions.  */
++
++const struct regset aarch64_fbsd_gregset =
++  {
++    aarch64_fbsd_gregmap,
++    regcache_supply_regset, regcache_collect_regset
++  };
++
++const struct regset aarch64_fbsd_fpregset =
++  {
++    aarch64_fbsd_fpregmap,
++    regcache_supply_regset, regcache_collect_regset
++  };
++
++/* Implement the "regset_from_core_section" gdbarch method.  */
++
++static void
++aarch64_fbsd_iterate_over_regset_sections (struct gdbarch *gdbarch,
++					   iterate_over_regset_sections_cb *cb,
++					   void *cb_data,
++					   const struct regcache *regcache)
++{
++  cb (".reg", AARCH64_FBSD_SIZEOF_GREGSET, &aarch64_fbsd_gregset,
++      NULL, cb_data);
++  cb (".reg2", AARCH64_FBSD_SIZEOF_FPREGSET, &aarch64_fbsd_fpregset,
++      NULL, cb_data);
++}
++
++/* Implement the 'init_osabi' method of struct gdb_osabi_handler.  */
++
++static void
++aarch64_fbsd_init_abi (struct gdbarch_info info, struct gdbarch *gdbarch)
++{
++  struct gdbarch_tdep *tdep = gdbarch_tdep (gdbarch);
++
++  /* Generic FreeBSD support.  */
++  fbsd_init_abi (info, gdbarch);
++
++  set_solib_svr4_fetch_link_map_offsets (gdbarch,
++					 svr4_lp64_fetch_link_map_offsets);
++
++  tramp_frame_prepend_unwinder (gdbarch, &aarch64_fbsd_sigframe);
++
++  /* Enable longjmp.  */
++  tdep->jb_pc = 13;
++
++  set_gdbarch_iterate_over_regset_sections
++    (gdbarch, aarch64_fbsd_iterate_over_regset_sections);
++}
++
++/* Provide a prototype to silence -Wmissing-prototypes.  */
++extern initialize_file_ftype _initialize_aarch64_fbsd_tdep;
++
++void
++_initialize_aarch64_fbsd_tdep (void)
++{
++  gdbarch_register_osabi (bfd_arch_aarch64, 0, GDB_OSABI_FREEBSD,
++			  aarch64_fbsd_init_abi);
++}
+diff --git gdb/aarch64-fbsd-tdep.h gdb/aarch64-fbsd-tdep.h
+new file mode 100644
+index 0000000000..0f66dd3925
+--- /dev/null
++++ gdb/aarch64-fbsd-tdep.h
+@@ -0,0 +1,33 @@
++/* FreeBSD/aarch64 target support, prototypes.
++
++   Copyright (C) 2017 Free Software Foundation, Inc.
++
++   This file is part of GDB.
++
++   This program is free software; you can redistribute it and/or modify
++   it under the terms of the GNU General Public License as published by
++   the Free Software Foundation; either version 3 of the License, or
++   (at your option) any later version.
++
++   This program is distributed in the hope that it will be useful,
++   but WITHOUT ANY WARRANTY; without even the implied warranty of
++   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
++   GNU General Public License for more details.
++
++   You should have received a copy of the GNU General Public License
++   along with this program.  If not, see <http://www.gnu.org/licenses/>.  */
++
++#include "regset.h"
++
++/* The general-purpose regset consists of 30 X registers, plus LR, SP,
++   ELR, and SPSR registers.  SPSR is 32 bits but the structure is
++   passed to 64 bit alignment.  */
++#define AARCH64_FBSD_SIZEOF_GREGSET  (34 * X_REGISTER_SIZE)
++
++/* The fp regset consists of 32 V registers, plus FPSR and FPCR which
++   are 4 bytes wide each, and the whole structure is padded to 128 bit
++   alignment.  */
++#define AARCH64_FBSD_SIZEOF_FPREGSET (33 * V_REGISTER_SIZE)
++
++extern const struct regset aarch64_fbsd_gregset;
++extern const struct regset aarch64_fbsd_fpregset;
+diff --git gdb/config/aarch64/fbsd.mh gdb/config/aarch64/fbsd.mh
+new file mode 100644
+index 0000000000..4171987bc9
+--- /dev/null
++++ gdb/config/aarch64/fbsd.mh
+@@ -0,0 +1,23 @@
++#  Host: Freebsd/aarch64
++#
++#  Copyright (C) 2017 Free Software Foundation, Inc.
++#
++#  This file is part of GDB.
++#
++#  This program is free software; you can redistribute it and/or modify
++#  it under the terms of the GNU General Public License as published by
++#  the Free Software Foundation; either version 3 of the License, or
++#  (at your option) any later version.
++#
++#  This program is distributed in the hope that it will be useful,
++#  but WITHOUT ANY WARRANTY; without even the implied warranty of
++#  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
++#  GNU General Public License for more details.
++#
++#  You should have received a copy of the GNU General Public License
++#  along with this program.  If not, see <http://www.gnu.org/licenses/>.
++
++NATDEPFILES= inf-ptrace.o fork-child.o aarch64-fbsd-nat.o fbsd-nat.o 
++HAVE_NATIVE_GCORE_HOST = 1
++
++LOADLIBES= -lkvm
+diff --git gdb/configure.host gdb/configure.host
+index d74fd04934..304675f137 100644
+--- gdb/configure.host
++++ gdb/configure.host
+@@ -84,6 +84,7 @@ case "${host}" in
+ *-*-darwin*)		gdb_host=darwin ;;
+ 
+ aarch64*-*-linux*)	gdb_host=linux ;;
++aarch64*-*-freebsd*)	gdb_host=fbsd ;;
+ 
+ alpha*-*-linux*)	gdb_host=alpha-linux ;;
+ alpha*-*-netbsd* | alpha*-*-knetbsd*-gnu)
+diff --git gdb/configure.tgt gdb/configure.tgt
+index fdcb7b1d69..f72a0dbbc1 100644
+--- gdb/configure.tgt
++++ gdb/configure.tgt
+@@ -44,6 +44,11 @@ aarch64*-*-elf | aarch64*-*-rtems*)
+ 	gdb_target_obs="aarch64-tdep.o aarch64-newlib-tdep.o aarch64-insn.o"
+ 	;;
+ 
++aarch64*-*-freebsd*)
++	# Target: FreeBSD/aarch64
++	gdb_target_obs="aarch64-tdep.o aarch64-fbsd-tdep.o aarch64-insn.o"
++	;;
++
+ aarch64*-*-linux*)
+ 	# Target: AArch64 linux
+ 	gdb_target_obs="aarch64-tdep.o aarch64-linux-tdep.o aarch64-insn.o \

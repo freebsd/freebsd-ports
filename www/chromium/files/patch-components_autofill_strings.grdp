@@ -1,0 +1,11 @@
+--- components/autofill_strings.grdp.orig	2017-08-01 23:47:48.599746000 +0200
++++ components/autofill_strings.grdp	2017-08-01 23:48:08.253668000 +0200
+@@ -207,7 +207,7 @@
+       Do you want Chromium to save this card?
+     </message>
+   </if>
+-  <if expr="is_linux and not is_chromeos">
++  <if expr="is_posix and not is_chromeos">
+     <then>
+       <message name="IDS_AUTOFILL_SAVE_CARD_PROMPT_TITLE_TO_CLOUD" desc="Title text for the Autofill save card prompt when the card is to be saved by uploading it to Google Payments and also saved locally. The prompt can be either a bubble or an infobar.">
+         Do you want to save this card to your Google Account?

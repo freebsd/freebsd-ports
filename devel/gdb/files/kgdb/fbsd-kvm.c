@@ -50,6 +50,7 @@ __FBSDID("$FreeBSD$");
 #include <inferior.h>
 #include <language.h>
 #include "objfiles.h"
+#include "osabi.h"
 #include <regcache.h>
 #include <solib.h>
 #include <target.h>
@@ -185,9 +186,30 @@ fbsd_kernel_osabi_sniffer(bfd *abfd)
 	bfd_byte buf[sizeof(KERNEL_INTERP)];
 	bfd_byte *bufp;
 
-	/* FreeBSD ELF kernels have a FreeBSD/ELF OS ABI. */
-	if (elf_elfheader(abfd)->e_ident[EI_OSABI] != ELFOSABI_FREEBSD)
+	/* First, determine if this is a FreeBSD/ELF binary. */
+	switch (elf_elfheader(abfd)->e_ident[EI_OSABI]) {
+	case ELFOSABI_FREEBSD:
+		break;
+	case ELFOSABI_NONE: {
+		enum gdb_osabi osabi = GDB_OSABI_UNKNOWN;
+
+		bfd_map_over_sections (abfd,
+		    generic_elf_osabi_sniff_abi_tag_sections,
+		    &osabi);
+
+		/*
+		 * aarch64 kernels don't have the right note tag for
+		 * kernels so just look for /red/herring anyway.
+		 */
+		if (osabi == GDB_OSABI_UNKNOWN &&
+		    elf_elfheader(abfd)->e_machine == EM_AARCH64)
+			break;
+		if (osabi != GDB_OSABI_FREEBSD)
+			return (GDB_OSABI_UNKNOWN);
+	}
+	default:
 		return (GDB_OSABI_UNKNOWN);
+	}
 
 	/* FreeBSD ELF kernels have an interpreter path of "/red/herring". */
 	bufp = buf;
