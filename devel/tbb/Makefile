@@ -2,13 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	tbb
-PORTVERSION=	2017.5
+PORTVERSION=	2017.7
 CATEGORIES=	devel
 
 MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	Library that provides thread building blocks
 
-LICENSE=	GPLv2
+LICENSE=	APACHE20
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	01org
@@ -23,7 +23,7 @@ SUB_LIST=	prefix="${PREFIX}" \
 OPTIONS_DEFINE=	DOCS
 PORTDOCS=	*
 
-ONLY_FOR_ARCHS=		amd64 i386
+ONLY_FOR_ARCHS=		amd64 i386 armv6
 ONLY_FOR_ARCHS_REASON=	has not been ported to this platform
 
 USE_LDCONFIG=	yes
