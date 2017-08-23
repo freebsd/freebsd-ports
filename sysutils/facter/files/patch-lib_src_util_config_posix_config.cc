@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- lib/src/util/config/posix/config.cc.orig
 +++ lib/src/util/config/posix/config.cc
 @@ -7,6 +7,6 @@

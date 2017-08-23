@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- lib/src/facts/posix/cache.cc.orig
 +++ lib/src/facts/posix/cache.cc
 @@ -3,7 +3,7 @@

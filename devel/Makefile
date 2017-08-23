@@ -672,7 +672,6 @@
     SUBDIR += gconfmm26
     SUBDIR += gcvs
     SUBDIR += gdb
-    SUBDIR += gdb66
     SUBDIR += gdbmods
     SUBDIR += gdcm
     SUBDIR += geany
@@ -1186,7 +1185,6 @@
     SUBDIR += iniparser
     SUBDIR += initutil
     SUBDIR += injeqt
-    SUBDIR += insight
     SUBDIR += ioncube
     SUBDIR += ipython
     SUBDIR += ireport

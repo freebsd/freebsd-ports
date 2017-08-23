@@ -755,7 +755,6 @@
     SUBDIR += pipenightdreams
     SUBDIR += pipepanic
     SUBDIR += pipewalker
-    SUBDIR += plee-the-bear
     SUBDIR += plutocracy
     SUBDIR += pmars
     SUBDIR += pmars-sdl
@@ -1157,7 +1156,6 @@
     SUBDIR += xrally
     SUBDIR += xrick
     SUBDIR += xrisk
-    SUBDIR += xroach
     SUBDIR += xrobots
     SUBDIR += xrot
     SUBDIR += xrubik

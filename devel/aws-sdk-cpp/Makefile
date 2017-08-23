@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	aws-sdk-cpp
-PORTVERSION=	1.1.31
+PORTVERSION=	1.1.33
 CATEGORIES=	devel
 
 MAINTAINER=	ports@FreeBSD.org

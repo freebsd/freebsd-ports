@@ -460,7 +460,6 @@
     SUBDIR += linux-genpuid
     SUBDIR += linux-laudio
     SUBDIR += linux-mbrola
-    SUBDIR += linux-neroaaccodec
     SUBDIR += linux-skype_oss_wrapper
     SUBDIR += linuxsampler
     SUBDIR += listener
