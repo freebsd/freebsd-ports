@@ -1,6 +1,15 @@
---- gpu/ipc/client/BUILD.gn.orig	2017-04-19 19:06:34 UTC
-+++ gpu/ipc/client/BUILD.gn
-@@ -44,6 +44,7 @@ source_set("ipc_client_sources") {
+--- gpu/ipc/client/BUILD.gn.orig	2017-08-03 00:05:13.000000000 +0200
++++ gpu/ipc/client/BUILD.gn	2017-08-10 04:16:23.803613000 +0200
+@@ -35,7 +35,7 @@
+       "gpu_process_hosted_ca_layer_tree_params.h",
+     ]
+   }
+-  if (is_linux) {
++  if (is_linux || is_bsd) {
+     sources += [
+       "gpu_memory_buffer_impl_native_pixmap.cc",
+       "gpu_memory_buffer_impl_native_pixmap.h",
+@@ -44,6 +44,7 @@
    configs += [
      "//build/config/compiler:no_size_t_to_int_warning",
      "//gpu:gpu_implementation",
