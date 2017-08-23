@@ -1,0 +1,11 @@
+Take a peek into the window.performance timing behind your app.
+
+Things this peek view provides:
+- Frontend
+- Latency / Receiving
+- Backend
+- TCP / SSL
+- Redirect
+- DNS Lookup
+
+WWW: https://github.com/peek/peek-performance_bar
