@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	void-zones-tools
-DISTVERSION=	0.1a
-PORTREVISION=	1
+DISTVERSIONPREFIX=	v
+DISTVERSION=	1.0.2
 CATEGORIES=	dns
 
 MAINTAINER=	vidar@karlsen.tech
@@ -14,7 +14,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		compiler:c11
 USE_GITHUB=	yes
 GH_ACCOUNT=	cyclaero
-GH_TAGNAME=	e6c5ef1
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/hosts2zones ${STAGEDIR}${PREFIX}/bin
