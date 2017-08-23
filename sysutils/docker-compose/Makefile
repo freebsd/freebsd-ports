@@ -2,6 +2,7 @@
 
 PORTNAME=		docker-compose
 PORTVERSION=		1.15.0
+PORTREVISION=		1
 CATEGORIES=		sysutils python
 MASTER_SITES=		CHEESESHOP
 
