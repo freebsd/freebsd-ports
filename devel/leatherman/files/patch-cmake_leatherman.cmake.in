@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- cmake/leatherman.cmake.in.orig
 +++ cmake/leatherman.cmake.in
 @@ -83,11 +83,6 @@
