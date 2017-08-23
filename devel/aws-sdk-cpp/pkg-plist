@@ -5024,6 +5024,7 @@ include/aws/firehose/model/DeleteDeliveryStreamRequest.h
 include/aws/firehose/model/DeleteDeliveryStreamResult.h
 include/aws/firehose/model/DeliveryStreamDescription.h
 include/aws/firehose/model/DeliveryStreamStatus.h
+include/aws/firehose/model/DeliveryStreamType.h
 include/aws/firehose/model/DescribeDeliveryStreamRequest.h
 include/aws/firehose/model/DescribeDeliveryStreamResult.h
 include/aws/firehose/model/DestinationDescription.h
@@ -5038,7 +5039,11 @@ include/aws/firehose/model/EncryptionConfiguration.h
 include/aws/firehose/model/ExtendedS3DestinationConfiguration.h
 include/aws/firehose/model/ExtendedS3DestinationDescription.h
 include/aws/firehose/model/ExtendedS3DestinationUpdate.h
+include/aws/firehose/model/GetKinesisStreamRequest.h
+include/aws/firehose/model/GetKinesisStreamResult.h
 include/aws/firehose/model/KMSEncryptionConfig.h
+include/aws/firehose/model/KinesisStreamSourceConfiguration.h
+include/aws/firehose/model/KinesisStreamSourceDescription.h
 include/aws/firehose/model/ListDeliveryStreamsRequest.h
 include/aws/firehose/model/ListDeliveryStreamsResult.h
 include/aws/firehose/model/NoEncryptionConfig.h
@@ -5062,6 +5067,8 @@ include/aws/firehose/model/S3BackupMode.h
 include/aws/firehose/model/S3DestinationConfiguration.h
 include/aws/firehose/model/S3DestinationDescription.h
 include/aws/firehose/model/S3DestinationUpdate.h
+include/aws/firehose/model/SessionCredentials.h
+include/aws/firehose/model/SourceDescription.h
 include/aws/firehose/model/UpdateDestinationRequest.h
 include/aws/firehose/model/UpdateDestinationResult.h
 include/aws/gamelift/GameLiftClient.h
@@ -9056,6 +9063,7 @@ include/aws/ssm/model/AssociationFilterKey.h
 include/aws/ssm/model/AssociationOverview.h
 include/aws/ssm/model/AssociationStatus.h
 include/aws/ssm/model/AssociationStatusName.h
+include/aws/ssm/model/AssociationVersionInfo.h
 include/aws/ssm/model/AutomationExecution.h
 include/aws/ssm/model/AutomationExecutionFilter.h
 include/aws/ssm/model/AutomationExecutionFilterKey.h
@@ -9242,6 +9250,8 @@ include/aws/ssm/model/InventoryResultItem.h
 include/aws/ssm/model/LastResourceDataSyncStatus.h
 include/aws/ssm/model/ListAssociationsRequest.h
 include/aws/ssm/model/ListAssociationsResult.h
+include/aws/ssm/model/ListAssociationVersionsRequest.h
+include/aws/ssm/model/ListAssociationVersionsResult.h
 include/aws/ssm/model/ListCommandInvocationsRequest.h
 include/aws/ssm/model/ListCommandInvocationsResult.h
 include/aws/ssm/model/ListCommandsRequest.h
