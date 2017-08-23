@@ -588,7 +588,6 @@
     SUBDIR += rlytest
     SUBDIR += rmilter
     SUBDIR += roundcube
-    SUBDIR += roundcube-air
     SUBDIR += roundcube-automatic_addressbook
     SUBDIR += roundcube-carddav
     SUBDIR += roundcube-contextmenu
