@@ -367,6 +367,7 @@ lib/ipsec/libtls.so.0.0.0
 @dir etc/ipsec.d/private
 @dir etc/ipsec.d/reqs
 %%SWANCTL%%@dir etc/swanctl/bliss
+%%SWANCTL%%@dir etc/swanctl/conf.d
 %%SWANCTL%%@dir etc/swanctl/ecdsa
 %%SWANCTL%%@dir etc/swanctl/pkcs12
 %%SWANCTL%%@dir etc/swanctl/pkcs8
