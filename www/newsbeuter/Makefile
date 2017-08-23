@@ -3,9 +3,10 @@
 
 PORTNAME=	newsbeuter
 PORTVERSION=	2.9
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www
-MASTER_SITES=	http://newsbeuter.org/downloads/
+MASTER_SITES=	https://newsbeuter.org/downloads/ \
+		http://newsbeuter.org/downloads/
 
 MAINTAINER=	arved@FreeBSD.org
 COMMENT=	RSS feed reader for the text console
@@ -23,7 +24,7 @@ OPTIONS_SUB=	yes
 PODCAST_DESC=	Podcast client (podbeuter)
 
 USES=		compiler:c++11-lib gettext gmake iconv:translit ncurses perl5 \
-		pkgconfig sqlite shebangfix
+		pkgconfig sqlite shebangfix ssl
 USE_CXXSTD=	gnu++11
 USE_PERL5=	build
 SHEBANG_FILES=	txt2h.pl
