@@ -5597,6 +5597,7 @@
     SUBDIR += rubygem-peek-gc
     SUBDIR += rubygem-peek-host
     SUBDIR += rubygem-peek-performance_bar
+    SUBDIR += rubygem-peek-rails4
     SUBDIR += rubygem-peek-rblineprof
     SUBDIR += rubygem-peek-redis
     SUBDIR += rubygem-peek-sidekiq
