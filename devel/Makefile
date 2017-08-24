@@ -5358,6 +5358,7 @@
     SUBDIR += rubygem-ddplugin
     SUBDIR += rubygem-debug_inspector
     SUBDIR += rubygem-debugger-linecache
+    SUBDIR += rubygem-debugger-ruby_core_source
     SUBDIR += rubygem-debugger-xml
     SUBDIR += rubygem-declarative
     SUBDIR += rubygem-declarative-option
@@ -5596,6 +5597,9 @@
     SUBDIR += rubygem-peek-gc
     SUBDIR += rubygem-peek-host
     SUBDIR += rubygem-peek-performance_bar
+    SUBDIR += rubygem-peek-rails4
+    SUBDIR += rubygem-peek-rblineprof
+    SUBDIR += rubygem-peek-redis
     SUBDIR += rubygem-peek-sidekiq
     SUBDIR += rubygem-piston
     SUBDIR += rubygem-pkg-config
@@ -5642,6 +5646,7 @@
     SUBDIR += rubygem-rb-fsevent
     SUBDIR += rubygem-rb-inotify
     SUBDIR += rubygem-rb-kqueue
+    SUBDIR += rubygem-rblineprof
     SUBDIR += rubygem-rbtrace
     SUBDIR += rubygem-rdoc
     SUBDIR += rubygem-re2
