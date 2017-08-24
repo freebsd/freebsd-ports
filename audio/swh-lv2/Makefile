@@ -20,7 +20,6 @@ LIB_DEPENDS=	libfftw3f.so:math/fftw3-float
 
 USES=		gmake pkgconfig localbase
 USE_GITHUB=	yes
-GH_ACCOUNT=	swh
 GH_PROJECT=	lv2
 
 post-install:
