@@ -1,0 +1,7 @@
+Take a peek into the Redis calls made within your Rails application.
+
+Things this peek view provides:
+- Total number of Redis commands called during the request
+- The duration of the calls made during the request
+
+WWW: https://github.com/peek/peek-redis
