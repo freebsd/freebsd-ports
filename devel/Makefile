@@ -207,6 +207,7 @@
     SUBDIR += bossa
     SUBDIR += bouml-doc
     SUBDIR += bpython
+    SUBDIR += breakpad
     SUBDIR += bsdbuild
     SUBDIR += bsdcflow
     SUBDIR += bsdowl
