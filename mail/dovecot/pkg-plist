@@ -75,6 +75,7 @@ include/dovecot/base64.h
 include/dovecot/bits.h
 include/dovecot/bsearch-insert-pos.h
 include/dovecot/buffer.h
+include/dovecot/byteorder.h
 include/dovecot/charset-utf8.h
 include/dovecot/child-wait.h
 include/dovecot/client-common.h
