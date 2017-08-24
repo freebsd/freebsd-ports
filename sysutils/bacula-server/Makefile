@@ -3,7 +3,7 @@
 
 PORTNAME=	bacula
 PORTVERSION=	7.4.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES?=	sysutils
 MASTER_SITES=	SF/bacula/bacula/${PORTVERSION}
 PKGNAMEPREFIX?=	#
@@ -31,9 +31,16 @@ USE_LDCONFIG=	yes
 CPPFLAGS+=	-I/usr/include/readline -I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-OPTIONS_DEFINE?=	SQLITE3 MYSQL PGSQL MTX PYTHON NLS IPV6
-OPTIONS_DEFAULT?=	PGSQL
+OPTIONS_DEFINE?=	MTX PYTHON NLS IPV6
 MTX_DESC=		Install mtx for control of autochanger devices
+
+.if ${PKGNAMESUFFIX} == "-server"
+OPTIONS_MULTI=		BACKEND
+OPTIONS_MULTI_BACKEND=	SQLITE3 MYSQL PGSQL
+OPTIONS_DEFAULT+=	PGSQL
+.endif
+
+OPTIONS_SUB=		yes
 
 .if ${PKGNAMESUFFIX} == "-client" || ${PKGNAMESUFFIX} == "-server"  #Till end of the file
 
@@ -110,27 +117,14 @@ CONFFILES=		sd dir
 # Server default database
 
 MYSQL_CONFIGURE_ON=	--with-mysql=yes
-MYSQL_USE=		MYSQL=yes
+MYSQL_USES=		mysql
 SQLITE3_CONFIGURE_ON=	--with-sqlite3=yes
-SQLITE3_LIB_DEPENDS=	libsqlite3.so:databases/sqlite3
+SQLITE3_USES=		sqlite:3
 PGSQL_CONFIGURE_ON=	--with-postgresql=yes
-PGSQL_USE=		USES+=pgsql
+PGSQL_USES=		pgsql
 
 MTX_RUN_DEPENDS=	${LOCALBASE}/sbin/mtx:misc/mtx
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MMYSQL}
-DBTYPE=			mysql
-SUB_LIST+=		REQ_MYSQL=mysql REQ_PGSQL=""
-.elif ${PORT_OPTIONS:MSQLITE3}
-DBTYPE=			sqlite3
-.else
-DBTYPE=			postgresql
-SUB_LIST+=		REQ_MYSQL="" REQ_PGSQL=postgresql
-USES+=  pgsql
-.endif
-PLIST_SUB+=		DBTYPE=${DBTYPE}
 .endif
 
 .include <bsd.port.pre.mk>
@@ -190,6 +184,9 @@ post-patch:
 
 .if !target(post-install)
 post-install:
+.if ! ${PORT_OPTIONS:MPYTHON}
+	${RM} ${STAGEDIR}${DATADIR}/dvd-handler
+.endif
 .if defined(WITH_CLIENT_ONLY)
 	${MV} ${STAGEDIR}${ETCDIR}/bconsole.conf ${STAGEDIR}${ETCDIR}/bconsole.conf.sample
 	${INSTALL_DATA} ${WRKSRC}/examples/sample-query.sql ${STAGEDIR}${LOCALBASE}/share/bacula/query.sql.sample
