@@ -450,6 +450,7 @@
     SUBDIR += mod_fileiri
     SUBDIR += mod_flickr
     SUBDIR += mod_geoip2
+    SUBDIR += mod_gnutls
     SUBDIR += mod_gzip2
     SUBDIR += mod_h264_streaming
     SUBDIR += mod_hosts_access

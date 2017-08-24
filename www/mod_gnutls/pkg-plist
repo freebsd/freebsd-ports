@@ -1,0 +1,5 @@
+%%APACHEMODDIR%%/%%AP_MODULE%%
+@postexec %D/sbin/apxs -e %%AP_MOD_EN%% -n %%AP_NAME%% %D/%F
+@postunexec %%SED%% -i '' -E '/LoadModule[[:blank:]]+%%AP_NAME%%_module/d' %D/%%APACHEETCDIR%%/httpd.conf
+@postunexec echo "Don't forget to remove all mod_%%AP_NAME%%-related directives in your httpd.conf"
+@dir(%%WWWOWN%%,%%WWWGRP%%,750) var/db/mod_%%AP_NAME%%
