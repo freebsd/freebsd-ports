@@ -2,7 +2,7 @@ bin/aix-perf.pl
 bin/difffolded.pl
 bin/files.pl
 bin/flamegraph.pl
-bin/pkgsplit-perf.sh
+bin/pkgsplit-perf.pl
 bin/range-perf.pl
 bin/stackcollapse-aix.pl
 bin/stackcollapse-elfutils.pl
@@ -15,5 +15,6 @@ bin/stackcollapse-perf.pl
 bin/stackcollapse-pmc.pl
 bin/stackcollapse-recursive.pl
 bin/stackcollapse-stap.pl
+bin/stackcollapse-vsprof.pl
 bin/stackcollapse-vtune.pl
 bin/stackcollapse.pl
