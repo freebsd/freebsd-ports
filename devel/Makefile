@@ -5358,6 +5358,7 @@
     SUBDIR += rubygem-ddplugin
     SUBDIR += rubygem-debug_inspector
     SUBDIR += rubygem-debugger-linecache
+    SUBDIR += rubygem-debugger-ruby_core_source
     SUBDIR += rubygem-debugger-xml
     SUBDIR += rubygem-declarative
     SUBDIR += rubygem-declarative-option
