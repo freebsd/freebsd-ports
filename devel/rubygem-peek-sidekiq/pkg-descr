@@ -1,0 +1,7 @@
+Provide a peek into the Sidekiq calls made within your Rails application.
+
+Things this peek view provides:
+- Duration spent in Sidekiq calls
+- Number of calls this page created
+
+WWW: https://github.com/suranyami/peek-sidekiq

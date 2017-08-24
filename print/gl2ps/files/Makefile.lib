@@ -1,5 +1,5 @@
 CFLAGS+=	-DHAVE_ZLIB -O3 -fPIC -I${LOCALBASE}/include
-LDFLAGS=	-shared -E -lGL -L${LOCALBASE}/lib -lX11 -lXi -lXmu -lm -lz
+LDFLAGS=	-shared -E -lGL -L${LOCALBASE}/lib -L/usr/lib -lX11 -lXi -lXmu -lm -lz
 
 all: libgl2ps.so libgl2ps.a
 

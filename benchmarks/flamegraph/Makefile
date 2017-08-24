@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	flamegraph
-PORTVERSION=	g20170308
+PORTVERSION=	g20170824
 PORTREVISION=	1
 CATEGORIES=	benchmarks
 
@@ -18,7 +18,7 @@ RUN_DEPENDS=	bash>=0:shells/bash
 USE_GITHUB=	yes
 GH_ACCOUNT=	brendangregg
 GH_PROJECT=	FlameGraph
-GH_TAGNAME=	74764af
+GH_TAGNAME=	a8d807a
 
 USES=		shebangfix perl5
 NO_BUILD=	yes
@@ -29,7 +29,7 @@ SOURCE_FILES=	aix-perf.pl \
 		difffolded.pl \
 		files.pl \
 		flamegraph.pl \
-		pkgsplit-perf.sh \
+		pkgsplit-perf.pl \
 		range-perf.pl \
 		stackcollapse-aix.pl \
 		stackcollapse-elfutils.pl \
@@ -42,6 +42,7 @@ SOURCE_FILES=	aix-perf.pl \
 		stackcollapse-pmc.pl \
 		stackcollapse-recursive.pl \
 		stackcollapse-stap.pl \
+		stackcollapse-vsprof.pl \
 		stackcollapse-vtune.pl \
 		stackcollapse.pl
 
