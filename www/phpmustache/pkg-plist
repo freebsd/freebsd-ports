@@ -1,3 +1,7 @@
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/anchored_dot_notation/AnchoredDotNotation.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/anchored_dot_notation/anchored_dot_notation.mustache
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/anchored_dot_notation/anchored_dot_notation.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/anchored_dot_notation/partials/genre.mustache
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/blocks/Blocks.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/blocks/blocks.mustache
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/blocks/blocks.txt
