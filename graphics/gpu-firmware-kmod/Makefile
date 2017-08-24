@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gpu-firmware-kmod
-PORTVERSION=	g20170403
+PORTVERSION=	g20170822
 PORTREVISION=	1
 CATEGORIES=	graphics
 
@@ -17,7 +17,7 @@ NO_PACKAGE=	Distribution in binary form without license file not allowed
 USE_GITHUB=	yes
 GH_ACCOUNT=	FreeBSDDesktop
 GH_PROJECT=	kms-firmware
-GH_TAGNAME=	b4b4257
+GH_TAGNAME=	39de0f1
 
 USES=		kmod
 
