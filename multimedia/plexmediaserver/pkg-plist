@@ -996,6 +996,7 @@
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/mytv.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/nala.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/nat_geo_wild.png
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/national geographic.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/national_general_pictures.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/nbc.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/nbc_universal.png
@@ -1006,7 +1007,6 @@
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/new_world_pictures.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/new_zealand_film_commission.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/newmarket.png
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/ngc.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/nick_at_nite.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/nick_jr.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/nickelodeon.png
@@ -1022,8 +1022,10 @@
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/oddlot.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/oko.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/only_vegas.png
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/openroad.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/oprah_winfrey_network.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/orf.png
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/original_film.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/orion.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/overturefilms.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/pa_works.png
@@ -1455,10 +1457,10 @@
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/desktop/ios/startup-iphone-portrait@2x.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/desktop/ios/startup-iphone5-portrait@2x.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/index.html
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/js/main-0-99755cd0d68fb34ec303-plex-3.9.1-85417e0.js
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/js/vendors-1-05ee7eb11f0adf375042-plex-3.9.1-85417e0.js
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/main.571a2c1e67571148c8a3e747308c8c7d.css
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/main.v3.9353e9cd31668f10add16b224dfe5d78.css
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/js/main-0-112e300e3d124ec05f6a-plex-3.14.1-2f399c1.js
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/js/vendors-1-f5ff042617091386d6a7-plex-3.14.1-2f399c1.js
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/main.d97149241b0a39e8f645824b418a30b8.css
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/main.v3.59282ce80ac2696e9f28ed512c3563cd.css
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/setup.html
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/swf/jwplayer/jwplayer.swf
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/swf/jwplayer/plex.xml
@@ -1544,6 +1546,7 @@
 %%DATADIR%%/Resources/Profiles/RokuDLNA-6000X-7.x.xml
 %%DATADIR%%/Resources/Profiles/Safari.xml
 %%DATADIR%%/Resources/Profiles/Samsung SmartTV.xml
+%%DATADIR%%/Resources/Profiles/Samsung Tizen.xml
 %%DATADIR%%/Resources/Profiles/Samsung.xml
 %%DATADIR%%/Resources/Profiles/Sony Blu-ray 2013.xml
 %%DATADIR%%/Resources/Profiles/Sony Blu-ray.xml
@@ -2386,6 +2389,7 @@
 %%DATADIR%%/Resources/Python/lib/python2.7/xmllib.py
 %%DATADIR%%/Resources/Python/lib/python2.7/xmlrpclib.py
 %%DATADIR%%/Resources/Python/lib/python2.7/zipfile.py
+%%DATADIR%%/Resources/RegionProviders.xml
 %%DATADIR%%/Resources/StatusItemTemplate.png
 %%DATADIR%%/Resources/StatusItemTemplate@2x.png
 %%DATADIR%%/Resources/Tuner/Private/README.md
