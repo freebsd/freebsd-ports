@@ -702,6 +702,7 @@
     SUBDIR += openomf
     SUBDIR += openpref
     SUBDIR += openra
+    SUBDIR += openrct2
     SUBDIR += opensfx
     SUBDIR += opensonic
     SUBDIR += openspades
