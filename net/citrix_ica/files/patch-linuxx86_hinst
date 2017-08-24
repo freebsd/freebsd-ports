@@ -1,4 +1,4 @@
---- linuxx86/hinst.orig	2016-08-19 13:26:47 UTC
+--- linuxx86/hinst.orig	2017-06-30 17:48:55 UTC
 +++ linuxx86/hinst
 @@ -1,4 +1,7 @@
  #!/bin/sh
@@ -17,7 +17,7 @@
  
  #  Default CDROM mount point
  DefaultCDSourceDir=/cdrom
-@@ -1481,7 +1478,7 @@ REQUIRE_LICENSE=
+@@ -1485,7 +1488,7 @@ REQUIRE_LICENSE=
  set_require_ICA_license()
  {
      REQUIRE_LICENSE=
@@ -26,7 +26,7 @@
      then
  	TRY1=`"$ECHO_CMD" -l`
  	sleep 1
-@@ -1504,14 +1501,14 @@ set_license()
+@@ -1508,14 +1511,14 @@ set_license()
  	# a license file.
  
  	if [ -n "$SU_INSTALL" ] ; then
@@ -46,7 +46,7 @@
  	fi
  }
  ###############################################################################
-@@ -1554,7 +1551,7 @@ install_ICA_client()
+@@ -1559,7 +1562,7 @@ install_ICA_client()
  
  	echo_no_nl "$instica4"
  
@@ -55,7 +55,7 @@
  	if [ "$ANSWER" != "$INSTALLER_YES" ]
  	then
  		"$ECHO_CMD" $instica5
-@@ -1578,9 +1575,8 @@ install_ICA_client()
+@@ -1583,9 +1586,8 @@ install_ICA_client()
  
  		if [ "$PORT" != "uclibc" ]
  		then 
@@ -66,25 +66,25 @@
  	else
  	   COR_SELECTED=false
  	fi
-@@ -1795,7 +1791,7 @@ setCDSourceDir()
- 	while [ "$got_directory" = "false" ]
- 	do
- 		echo_no_nl "$dirutil1a $ICAInstDir] $dirutil1b"
+@@ -1803,7 +1805,7 @@ setCDSourceDir()
+ 		echo_no_nl "$dirutil1a"
+ 		echo_no_nl "-i" "$ICAInstDir" 
+ 		echo_no_nl "] $dirutil1b"
 -		read newCDSourceDir
 +		newCDSOurceDir=${DefaultInstallDir}
  		if [ "x$newCDSourceDir" != "x" ]
  		then
  			CDSourceDir="$newCDSourceDir"
-@@ -1867,7 +1863,7 @@ setICAInstDir()
- 	while [ "$got_directory" = "false" ]
- 	do
- 		echo_no_nl "$dirutil4a $ICAInstDir] $dirutil4b"
+@@ -1876,7 +1878,7 @@ setICAInstDir()
+ 		echo_no_nl "$dirutil4a "
+ 		echo_no_nl "-i" "$ICAInstDir"
+ 		echo_no_nl "] $dirutil4b"
 -		read newICAInstDir
 +		newICAInstDir=${DefaultInstallDir}
  		if [ "`echo x$newICAInstDir | tolower`" = "x$INSTALLER_QUIT" ]
  		then
  			FAIL_MSG=$dirutil13
-@@ -2457,7 +2453,7 @@ install_packages(){
+@@ -2468,7 +2470,7 @@ install_packages(){
  	then
  		:
  	else
@@ -93,7 +93,7 @@
  		return 
  	fi
  
-@@ -2531,7 +2527,7 @@ install_packages(){
+@@ -2542,7 +2544,7 @@ install_packages(){
  		fi
  	fi
  
@@ -102,7 +102,7 @@
  }
  
  #!/bin/sh
-@@ -2672,26 +2668,18 @@ esac
+@@ -2663,26 +2665,18 @@ esac
  
  netscape_integrate()
  {
@@ -133,7 +133,7 @@
  	user_prompt "$integrate_netscape2"
   	getyesno $INSTALLER_NO
  	if [ "$ANSWER" = "$INSTALLER_YES" ]
-@@ -2700,7 +2688,8 @@ netscape_integrate()
+@@ -2691,7 +2685,8 @@ netscape_integrate()
  	else
    		user_echo $integrate_netscape6
  	fi
@@ -143,7 +143,7 @@
    fi
  
    # Create utility script files in install root.
-@@ -4424,8 +4413,8 @@ main_install_menu(){
+@@ -4334,8 +4329,8 @@ main_install_menu(){
  		    "$ECHO_CMD" $menus5
  		    return 0
  		fi
@@ -154,7 +154,7 @@
  			#
  			# Get the Function the user wants to perform
  			#
-@@ -4439,7 +4428,7 @@ main_install_menu(){
+@@ -4349,7 +4344,7 @@ main_install_menu(){
  			fi
  			echo_no_nl "$menus2 1-$menuItems [$keyDefault]: "
  			
@@ -163,7 +163,7 @@
  
  			if test "x$keynum" = "x"
  			then 
-@@ -4504,7 +4493,7 @@ main_install_menu(){
+@@ -4414,7 +4409,7 @@ main_install_menu(){
  				# After any action make exit the default
  				keyDefault=3
  			fi

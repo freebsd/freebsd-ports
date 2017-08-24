@@ -1,15 +1,15 @@
---- setupwfc.orig	2016-08-19 13:26:37 UTC
+--- setupwfc.orig	2017-06-30 17:48:52 UTC
 +++ setupwfc
-@@ -547,6 +547,12 @@ get_OS(){
- 		PLATFORM=hp
- 		DISP_PLATFORM="Hewlett-Packard (HP-UX)"
- 		;;
+@@ -519,6 +519,12 @@ get_OS(){
+ 
+ 	opsys=`uname -s`
+ 	case $opsys in
 +	*BSD)
 +		if uname -m | grep "i[3456]86\|amd64" 2>&1 >/dev/null ; then
 +			PLATFORM=linuxx86
 +			DISP_PLATFORM="Linux (x86)"
 +		fi
-+		;;
++               ;;
  	Linux)
                 # We use uname -m to report processor type. If we
                 # see 64 we assume a 64 bit Intel processor, if we see
