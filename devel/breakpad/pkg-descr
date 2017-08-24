@@ -1,0 +1,4 @@
+Breakpad is a set of client and server components which implement
+a crash-reporting system.
+
+WWW: https://github.com/google/breakpad
