@@ -1,5 +1,7 @@
 # Created by: Jose Alonso Cardenas Marquez <acardenas@bsd.org.pe>
 # $FreeBSD$
+#
+# Remember to update www/py-django along with this port.
 
 PORTNAME=	django
 PORTVERSION=	1.11.4
