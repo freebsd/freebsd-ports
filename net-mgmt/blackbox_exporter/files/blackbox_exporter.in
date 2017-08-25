@@ -38,8 +38,8 @@ pidfile=/var/run/blackbox_exporter.pid
 command="/usr/sbin/daemon"
 procname="%%PREFIX%%/bin/blackbox_exporter"
 command_args="-p ${pidfile} /usr/bin/env ${procname} \
-    -web.listen-address=${blackbox_exporter_listen_address} \
-    -config.file=${blackbox_exporter_config} \
+    --web.listen-address=${blackbox_exporter_listen_address} \
+    --config.file=${blackbox_exporter_config} \
     ${blackbox_exporter_args}"
 
 start_precmd=blackbox_exporter_startprecmd

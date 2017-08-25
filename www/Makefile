@@ -1791,6 +1791,7 @@
     SUBDIR += py-pysearch
     SUBDIR += py-python-digitalocean
     SUBDIR += py-pywebdav
+    SUBDIR += py-pyweblib
     SUBDIR += py-pywikibot
     SUBDIR += py-qp
     SUBDIR += py-qpy
@@ -1862,7 +1863,6 @@
     SUBDIR += pycarddav
     SUBDIR += pydio
     SUBDIR += pyjamas
-    SUBDIR += pyweblib
     SUBDIR += qdecoder
     SUBDIR += qooxdoo
     SUBDIR += qt4-webkit
