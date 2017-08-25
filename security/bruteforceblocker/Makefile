@@ -3,7 +3,7 @@
 
 PORTNAME=	bruteforceblocker
 PORTVERSION=	1.2.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	http://danger.rulez.sk/projects/bruteforceblocker/ \
 		LOCAL/pav
