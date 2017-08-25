@@ -9,6 +9,11 @@ CATEGORIES=	science
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	C++ library for machine-independent, array-oriented data access
 
+LICENSE=	UCAR_UNIDATA
+LICENSE_FILE=	${WRKSRC}/COPYRIGHT
+LICENSE_NAME=	University Corporation for Atmospheric Research/Unidata
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+
 LIB_DEPENDS=	libnetcdf.so:science/netcdf
 
 CONFLICTS=	netcdf-3.* netcdf-4.[0-2].*
