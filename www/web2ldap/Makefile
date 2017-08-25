@@ -2,12 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	web2ldap
-PORTVERSION=	1.2.71
-PORTREVISION=	1
+PORTVERSION=	1.2.93
 CATEGORIES=	www
 MASTER_SITES=	http://www.web2ldap.de/download/ \
-		http://www.sfr-fresh.com/unix/www/ \
-		LOCAL/bsam
+		http://www.sfr-fresh.com/unix/www/
 
 MAINTAINER=	bsam@FreeBSD.org
 COMMENT=	Python-based WWW gateway to LDAP servers
