@@ -1364,6 +1364,7 @@ lib/calibre/calibre/utils/test_lock.py
 lib/calibre/calibre/utils/text2int.py
 lib/calibre/calibre/utils/threadpool.py
 lib/calibre/calibre/utils/titlecase.py
+lib/calibre/calibre/utils/unicode_getpass.py
 lib/calibre/calibre/utils/unrar.py
 lib/calibre/calibre/utils/unsmarten.py
 lib/calibre/calibre/utils/winreg/__init__.py
@@ -1741,6 +1742,7 @@ lib/calibre/tinycss/version.py
 %%DATADIR%%/localization/pykakasi/kanadict2.pickle
 %%DATADIR%%/localization/pykakasi/kanwadict2.pickle
 %%DATADIR%%/localization/stats.pickle
+%%DATADIR%%/localization/website-languages.txt
 %%DATADIR%%/metadata_sqlite.sql
 %%DATADIR%%/mime.types
 %%DATADIR%%/mozilla-ca-certs.pem
