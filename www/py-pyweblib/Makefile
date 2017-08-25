@@ -2,9 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	pyweblib
-PORTVERSION=	1.3.12
+PORTVERSION=	1.3.13
 CATEGORIES=	www
-MASTER_SITES=	http://www.stroeder.com/pylib/
+MASTER_SITES=	CHEESESHOP
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	bsam@FreeBSD.org
 COMMENT=	Yet another web programming framework for Python
