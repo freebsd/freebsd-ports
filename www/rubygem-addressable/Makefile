@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	addressable
-PORTVERSION=	2.5.1
-PORTREVISION=	1
+PORTVERSION=	2.5.2
 CATEGORIES=	www devel rubygems
 MASTER_SITES=	RG
 
@@ -13,7 +12,7 @@ COMMENT=	Replacement for the URI implementation
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	rubygem-public_suffix2>=2.0.2:dns/rubygem-public_suffix2
+RUN_DEPENDS=	rubygem-public_suffix>=2.0.2:dns/rubygem-public_suffix
 
 NO_ARCH=	yes
 USE_RUBY=	yes
