@@ -13,3 +13,4 @@ etc/xdg/autostart/sysadm-client-auto.desktop
 share/pixmaps/sysadm.svg
 share/pixmaps/appcafe.png
 share/pixmaps/trueos.png
+man/man8/sysadm.8.gz
