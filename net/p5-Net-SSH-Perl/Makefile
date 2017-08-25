@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Net-SSH-Perl
-PORTVERSION=	2.12
-PORTREVISION=	1
+PORTVERSION=	2.14
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,6 +13,8 @@ COMMENT=	Perl5 module implementing both the SSH1 and SSH2 protocols
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+BROKEN_powerpc64=	fails to compile: src/chacha/poly1305.c: subscripted value is neither array nor pointer
 
 BUILD_DEPENDS=	p5-Crypt-Curve25519>=0.05:security/p5-Crypt-Curve25519 \
 		p5-Crypt-DES>0:security/p5-Crypt-DES \
@@ -26,8 +27,6 @@ BUILD_DEPENDS=	p5-Crypt-Curve25519>=0.05:security/p5-Crypt-Curve25519 \
 		p5-Math-GMP>=1.04:math/p5-Math-GMP \
 		p5-String-CRC32>=1.2:devel/p5-String-CRC32
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-
-BROKEN_powerpc64=	fails to compile: src/chacha/poly1305.c: subscripted value is neither array nor pointer
 
 CONFIGURE_ENV=	PERL_MM_USE_DEFAULT="1"
 USES=		perl5
