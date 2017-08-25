@@ -4,8 +4,8 @@ Keybinder works with GTK-based applications using the X Window System.
 The port provides the following:
 
   - A C library, libkeybinder
-  - Lua bindings, lua-keybinder
+  - Lua bindings, lua-keybinder (off by default)
   - Python bindings, python-keybinder
-  - An examples directory with programs in C, Lua, Python, and Vala
+  - Example programs in C, Lua, Python, and Vala
 
 WWW: https://github.com/engla/keybinder
