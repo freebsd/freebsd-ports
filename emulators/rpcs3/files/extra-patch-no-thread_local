@@ -1,0 +1,95 @@
+FreeBSD 10.3 lacks __cxa_thread_atexit, so revert
+https://github.com/RPCS3/rpcs3/commit/c1450ad61627
+
+--- Utilities/Log.cpp.orig	2017-08-24 18:20:18 UTC
++++ Utilities/Log.cpp
+@@ -246,7 +246,7 @@ void logs::message::broadcast(const char* fmt, const f
+ 	}
+ 
+ 	// Get text
+-	thread_local std::string text; text.clear();
++	std::string text;
+ 	fmt::raw_append(text, fmt, sup, args);
+ 	std::string prefix = g_tls_log_prefix();
+ 
+@@ -266,7 +266,7 @@ void logs::message::broadcast(const char* fmt, const f
+ 			}
+ 
+ 			// Store message additionally
+-			g_messages.emplace_back(stored_message{*this, stamp, std::move(prefix), text});
++			g_messages.emplace_back(stored_message{*this, stamp, std::move(prefix), std::move(text)});
+ 		}
+ 	}
+ 	
+@@ -348,7 +348,7 @@ logs::file_listener::file_listener(const std::string& 
+ 
+ void logs::file_listener::log(u64 stamp, const logs::message& msg, const std::string& prefix, const std::string& _text)
+ {
+-	thread_local std::string text;
++	std::string text; text.reserve(prefix.size() + _text.size() + 200);
+ 
+ 	// Used character: U+00B7 (Middle Dot)
+ 	switch (msg.sev)
+--- Utilities/types.h.orig	2017-08-24 18:20:18 UTC
++++ Utilities/types.h
+@@ -32,6 +32,7 @@
+ #define SAFE_BUFFERS
+ #define NEVER_INLINE __attribute__((noinline))
+ #define FORCE_INLINE __attribute__((always_inline)) inline
++#define thread_local __thread
+ #endif
+ 
+ #define CHECK_SIZE(type, size) static_assert(sizeof(type) == size, "Invalid " #type " type size")
+--- rpcs3/Emu/System.cpp.orig	2017-08-24 18:20:18 UTC
++++ rpcs3/Emu/System.cpp
+@@ -797,20 +797,26 @@ void Emulator::Stop()
+ 
+ s32 error_code::error_report(const fmt_type_info* sup, u64 arg, const fmt_type_info* sup2, u64 arg2)
+ {
+-	static thread_local std::unordered_map<std::string, std::size_t> g_tls_error_stats;
+-	static thread_local std::string g_tls_error_str;
++	static thread_local std::unordered_map<std::string, std::size_t>* g_tls_error_stats{};
++	static thread_local std::string* g_tls_error_str{};
+ 
+-	if (g_tls_error_stats.empty())
++	if (!g_tls_error_stats)
+ 	{
++		g_tls_error_stats = new std::unordered_map<std::string, std::size_t>;
++		g_tls_error_str   = new std::string;
++
+ 		thread_ctrl::atexit([]
+ 		{
+-			for (auto&& pair : g_tls_error_stats)
++			for (auto&& pair : *g_tls_error_stats)
+ 			{
+ 				if (pair.second > 3)
+ 				{
+ 					LOG_ERROR(GENERAL, "Stat: %s [x%u]", pair.first, pair.second);
+ 				}
+ 			}
++
++			delete g_tls_error_stats;
++			delete g_tls_error_str;
+ 		});
+ 	}
+ 
+@@ -840,15 +846,15 @@ s32 error_code::error_report(const fmt_type_info* sup,
+ 	}
+ 
+ 	// Format log message (use preallocated buffer)
+-	g_tls_error_str.clear();
+-	fmt::append(g_tls_error_str, "'%s' failed with 0x%08x%s%s%s%s", func, arg, sup ? " : " : "", std::make_pair(sup, arg), sup2 ? ", " : "", std::make_pair(sup2, arg2));
++	g_tls_error_str->clear();
++	fmt::append(*g_tls_error_str, "'%s' failed with 0x%08x%s%s%s%s", func, arg, sup ? " : " : "", std::make_pair(sup, arg), sup2 ? ", " : "", std::make_pair(sup2, arg2));
+ 
+ 	// Update stats and check log threshold
+-	const auto stat = ++g_tls_error_stats[g_tls_error_str];
++	const auto stat = ++(*g_tls_error_stats)[*g_tls_error_str];
+ 
+ 	if (stat <= 3)
+ 	{
+-		channel->format(level, "%s [%u]", g_tls_error_str, stat);
++		channel->format(level, "%s [%u]", *g_tls_error_str, stat);
+ 	}
+ 
+ 	return static_cast<s32>(arg);

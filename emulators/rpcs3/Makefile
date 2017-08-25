@@ -2,8 +2,8 @@
 
 PORTNAME=	rpcs3
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.0.3-191
-DISTVERSIONSUFFIX=	-gfff62df6
+DISTVERSION=	0.0.3-208
+DISTVERSIONSUFFIX=	-g00339cb9
 CATEGORIES=	emulators
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -35,6 +35,8 @@ USES=		cmake compiler:c++14-lang iconv:wchar_t localbase:ldflags \
 		openal:soft pkgconfig
 USE_GL=		gl glew
 USE_QT5=	qmake_build buildtools_build core gui widgets
+EXTRA_PATCHES+=	${EXTRA_PATCHES_${OPSYS}_${OSREL}}
+EXTRA_PATCHES_FreeBSD_10.3=	${PATCHDIR}/extra-patch-no-thread_local
 CMAKE_ARGS+=	-DUSE_SYSTEM_LIBPNG=on -DUSE_SYSTEM_FFMPEG=on
 CXXFLAGS+=	-D_GLIBCXX_USE_C99 # XXX ports/193528
 CXXFLAGS+=	-Wno-macro-redefined # __STDC_*_MACROS sys/cdefs.h vs. llvm-config
@@ -44,7 +46,7 @@ PLIST_FILES=	bin/${PORTNAME} \
 		share/icons/hicolor/48x48/apps/${PORTNAME}.png \
 		share/icons/hicolor/scalable/apps/${PORTNAME}.svg \
 
-OPTIONS_DEFINE=	ALSA EVDEV GDB LLVM
+OPTIONS_DEFINE=	ALSA EVDEV GDB LLVM PULSEAUDIO
 OPTIONS_DEFAULT=ALSA LLVM
 
 ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
@@ -61,6 +63,9 @@ GDB_CMAKE_BOOL=		WITH_GDB
 LLVM_DESC=		LLVM-based PPU recompiler
 LLVM_BUILD_DEPENDS=	llvm40>0:devel/llvm40
 LLVM_CMAKE_BOOL_OFF=	WITHOUT_LLVM
+
+PULSEAUDIO_LIB_DEPENDS=	libpulse-simple.so:audio/pulseaudio
+PULSEAUDIO_CMAKE_BOOL=	USE_PULSE
 
 post-patch:
 	@${REINPLACE_CMD} -e 's/"unknown"/"${GH_TAGNAME}"/' \
