@@ -1,5 +1,3 @@
-%%SOFTMMU%%bin/ivshmem-client
-%%SOFTMMU%%bin/ivshmem-server
 %%SOFTMMU%%bin/qemu-ga
 %%SOFTMMU%%bin/qemu-img
 %%SOFTMMU%%bin/qemu-io
