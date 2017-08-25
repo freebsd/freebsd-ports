@@ -15,7 +15,7 @@ COMMENT=	Python-based WWW gateway to LDAP servers
 LICENSE=	GPLv2
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ldap>=2.4.0:net/py-ldap \
-		${PYTHON_SITELIBDIR}/pyweblib/__init__.py:www/pyweblib \
+		${PYTHON_SITELIBDIR}/pyweblib/__init__.py:www/py-pyweblib \
 		${PYTHON_PKGNAMEPREFIX}ipaddr>0:devel/py-ipaddr \
 		${LOCALBASE}/etc/mime.types:misc/mime-support
 
