@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	trueos-utils
-PORTVERSION=	201706210953
+PORTVERSION=	201708251126
 CATEGORIES=	sysutils
 
 MAINTAINER=	jmaloney@ixsystems.com
@@ -26,6 +26,6 @@ CONFLICTS=      pcbsd-utils*
 USE_GITHUB=	yes
 GH_ACCOUNT=	trueos
 GH_PROJECT=	trueos-utils
-GH_TAGNAME=	44586a60313eae88bd374212bf1c8ea7b16f7d24
+GH_TAGNAME=	0d037f67f1e0cad1fe6a862e2494192c9139a5ac
 
 .include <bsd.port.mk>
