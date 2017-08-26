@@ -1,6 +1,6 @@
-TIMESTAMP = 1499164867
-SHA256 (influxdata-influxdb-v1.3.0_GH0.tar.gz) = dc4d90ba69581122e74a9a6a4486840668f1ac9352f546895b1e3467d69b02e7
-SIZE (influxdata-influxdb-v1.3.0_GH0.tar.gz) = 1067205
+TIMESTAMP = 1502885041
+SHA256 (influxdata-influxdb-v1.3.3_GH0.tar.gz) = 4efe9e1fec6fc618d532107001743fbce14da29e87eb3446995a78d2a512dfb4
+SIZE (influxdata-influxdb-v1.3.3_GH0.tar.gz) = 1075167
 SHA256 (BurntSushi-toml-9906417_GH0.tar.gz) = a980407edcf8275d58651f9af3c74dc802f0aaf702936c78b36059289421de8c
 SIZE (BurntSushi-toml-9906417_GH0.tar.gz) = 39914
 SHA256 (bmizerany-pat-c068ca2_GH0.tar.gz) = 1bff463e4313717c5561a97020e5b6ae8095560fa834aa565c488b85b5549433
