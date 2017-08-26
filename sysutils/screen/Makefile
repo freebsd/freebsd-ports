@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	screen
-PORTVERSION=	4.5.0
-PORTREVISION=	3
+PORTVERSION=	4.6.1
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://ftp.gnu.org/gnu/screen/ \
 		ftp://ftp.gnu.org/gnu/screen/ \
@@ -37,7 +37,7 @@ SYSTEM_SCREENRC_DESC=	Install system screenrc with helpful status line
 
 OPTIONS_SUB=
 
-USES=		gmake cpe ncurses
+USES=		gmake cpe ncurses:base
 
 CPE_VENDOR=	gnu
 
