@@ -3,6 +3,7 @@
 
 PORTNAME=	smfsav
 PORTVERSION=	2.1
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://smf-sav.anw.at/
 PKGNAMESUFFIX=	-devel
@@ -27,7 +28,7 @@ LDFLAGS+=	-lmilter -lpthread
 SMFSAV_RUN_DIR?=/var/run/smfs
 PLIST_SUB=	SMFSAV_RUN_DIR=${SMFSAV_RUN_DIR}
 SUB_FILES+=	pkg-message
-SUB_LIST=	${PLIST_SUB}
+SUB_LIST=	SMFSAV_RUN_DIR=${SMFSAV_RUN_DIR}
 
 CONFLICTS=	smfsav
 
