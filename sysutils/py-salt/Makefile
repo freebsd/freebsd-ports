@@ -3,6 +3,7 @@
 
 PORTNAME=	salt
 PORTVERSION=	2017.7.1
+PORTREVISION=	1
 CATEGORIES=	sysutils python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,7 +17,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Jinja2>0:devel/py-Jinja2 \
 		${PYTHON_PKGNAMEPREFIX}MarkupSafe>0:textproc/py-MarkupSafe \
 		${PYTHON_PKGNAMEPREFIX}botocore>0:devel/py-botocore \
-		${PYTHON_PKGNAMEPREFIX}futures>=2.0:devel/py-futures \
 		${PYTHON_PKGNAMEPREFIX}libcloud>=0.14.0:net/py-libcloud \
 		${PYTHON_PKGNAMEPREFIX}msgpack-python>=0.3:devel/py-msgpack-python \
 		${PYTHON_PKGNAMEPREFIX}progressbar>0:misc/py-progressbar \
@@ -77,6 +77,11 @@ ZEROMQ_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyzmq>=2.2.0:net/py-pyzmq \
 # Python 2.7-3.3 require enum34, unnecessary for Python 3.4+
 .if ${PYTHON_REL} < 3400
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}enum34>0:devel/py-enum34
+.endif
+
+# Python 3+ comes with futures built-in
+.if ${PYTHON_REL} < 3200
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}futures>=2.0:devel/py-futures
 .endif
 
 post-patch:
