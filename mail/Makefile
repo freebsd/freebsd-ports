@@ -643,6 +643,7 @@
     SUBDIR += slapd-cyrus
     SUBDIR += sma
     SUBDIR += smfsav
+    SUBDIR += smfsav-devel
     SUBDIR += smtp-cli
     SUBDIR += smtp-gated
     SUBDIR += smtpfeed

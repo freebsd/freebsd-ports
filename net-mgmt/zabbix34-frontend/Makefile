@@ -1,16 +1,11 @@
 # Created by: Pakhom Golynga <pg@pakhom.spb.ru>
 # $FreeBSD$
 
-PORTNAME=	zabbix3
+PORTNAME=	zabbix34
 CATEGORIES=	net-mgmt
 PKGNAMESUFFIX=	-frontend
 
-MAINTAINER=	pg@pakhom.spb.ru
-COMMENT=	Enterprise-class open source distributed monitoring (${PKGNAMESUFFIX:S/^-//}) LTS
-
-LICENSE=	GPLv2
-
-MASTERDIR=	${.CURDIR}/../zabbix3-server
+MASTERDIR=	${.CURDIR}/../zabbix34-server
 
 NO_BUILD=	yes
 NO_ARCH=	yes
@@ -19,8 +14,7 @@ PLIST=		${PKGDIR}/pkg-plist.frontend
 
 USE_PHP=	bcmath ctype dom gd gettext json ldap mbstring pcre \
 		session simplexml snmp sockets xml xmlreader xmlwriter
-
-USES=	php:web gettext
+USES+=		php:web
 
 OPTIONS_DEFINE=		MYSQL MYSQLI PGSQL SQLITE ORACLE
 OPTIONS_DEFAULT=	MYSQLI
@@ -47,7 +41,6 @@ USE_PHP+=	sqlite3
 .endif
 
 .if ${PORT_OPTIONS:MORACLE}
-ZABBIX_REQUIRE=
 CONFIGURE_ARGS+=	--with-oracle
 .endif
 

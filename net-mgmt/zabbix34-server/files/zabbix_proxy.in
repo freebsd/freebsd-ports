@@ -1,0 +1,65 @@
+#!/bin/sh
+
+# PROVIDE: zabbix_proxy
+# REQUIRE: DAEMON
+%%PGSQL%%# REQUIRE: postgresql
+%%MYSQL%%# REQUIRE: mysql-server
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf to
+# enable zabbix_proxy:
+#
+# zabbix_proxy_enable (bool): Set to NO by default.  Set it to YES to
+#         enable zabbix_proxy.
+# zabbix_proxy_config (string): Set to the standard config file path by
+#         default.
+# zabbix_proxy_pidfile (string):    Location of the zabbix_proxy pid file
+#                               Default is /var/run/zabbix/zabbix_proxy.pid
+# zabbix_proxy_paths (string): Set to standard path by default.  Set a search
+#         if you have custom userparams that need binaries elsewhere.
+#
+
+. /etc/rc.subr
+
+name="zabbix_proxy"
+rcvar=zabbix_proxy_enable
+
+load_rc_config $name
+
+: ${zabbix_proxy_enable:=NO}
+: ${zabbix_proxy_config:=%%ETCDIR%%/${name}.conf}
+: ${zabbix_proxy_pidfile:=/var/run/zabbix/zabbix_proxy.pid}
+
+command="%%PREFIX%%/sbin/${name}"
+required_files="${zabbix_proxy_config}"
+
+start_cmd=zabbix_proxy_cmd
+start_precmd=zabbix_proxy_precmd 
+status_precmd=zabbix_proxy_precmd
+stop_precmd=zabbix_proxy_precmd
+
+zabbix_proxy_precmd()
+{
+	if get_pidfile_from_conf PidFile ${zabbix_proxy_config}; then
+		pidfile="$_pidfile_from_conf"
+	else
+		pidfile=${zabbix_proxy_pidfile}
+		local rundir=${zabbix_proxy_pidfile%/*}
+		if [ ! -d $rundir ] ; then
+			install -d -m 0755 -o zabbix -g zabbix $rundir
+		fi
+	fi
+
+	# This shouldn't be necessary with pidfile, but empirically it was the
+	# only way to reap the parent PID instead of all PIDs from
+	# check_process, which may leak SysV IPC objects and prevent restart
+	# and/or race condition on restart.
+	rc_pid=$(check_pidfile ${pidfile} ${command})
+}
+
+zabbix_proxy_cmd()
+{
+	PATH=$zabbix_proxy_paths $command -c $zabbix_proxy_config
+}
+
+run_rc_command "$1"
