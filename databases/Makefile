@@ -1042,6 +1042,7 @@
     SUBDIR += xapian-core10
     SUBDIR += xapian-core12
     SUBDIR += xtrabackup
+    SUBDIR += zabbix22-libzbxpgsql
     SUBDIR += zabbix3-libzbxpgsql
     SUBDIR += zodb3
 
