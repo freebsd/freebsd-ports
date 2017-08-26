@@ -827,9 +827,6 @@ GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources
 GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/W-SU
 GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/WET
 GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/Zulu
-%%OPENSSL%%GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/SSL.bundle/Resources/Info-gnustep.plist
-%%OPENSSL%%GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/SSL.bundle/SSL
-%%OPENSSL%%GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/SSL.bundle/stamp.make
 GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/Spanish.lproj/Localizable.strings
 GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/TraditionalChinese.lproj/Localizable.strings
 GNUstep/System/Library/Libraries/libgnustep-base.so
