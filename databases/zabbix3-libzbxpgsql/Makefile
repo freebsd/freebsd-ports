@@ -25,7 +25,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	cavaliercoder
 
 GNU_CONFIGURE=	yes
-GET_ZBX_WRKSRC=	cd ${.CURDIR:H:H}/net-mgmt/zabbix3-agent && make -V WRKSRC
+GET_ZBX_WRKSRC=	cd ${.CURDIR:H:H}/net-mgmt/${PKGNAMEPREFIX}agent && make -V WRKSRC
 CONFIGURE_ARGS=	--with-zabbix=$$(${GET_ZBX_WRKSRC})
 
 USE_LDCONFIG=	yes
