@@ -2,17 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	smfsav
-PORTVERSION=	1.4.0
-PORTREVISION=	3
+PORTVERSION=	2.1
 CATEGORIES=	mail
-MASTER_SITES=	SF/smfs
-DISTNAME=	smf-sav-${PORTVERSION}
-DIST_SUBDIR=	${PORTNAME}
+MASTER_SITES=	http://smf-sav.anw.at/
+PKGNAMESUFFIX=	-devel
+DISTNAME=	smf-sav-reloaded-${PORTVERSION}
 
 MAINTAINER=	sasaki@fcc.ad.jp
 COMMENT=	Sendmail Sender Address Validator
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USERS=		smfs
@@ -28,8 +27,9 @@ LDFLAGS+=	-lmilter -lpthread
 SMFSAV_RUN_DIR?=/var/run/smfs
 PLIST_SUB=	SMFSAV_RUN_DIR=${SMFSAV_RUN_DIR}
 SUB_FILES+=	pkg-message
+SUB_LIST=	${PLIST_SUB}
 
-CONFLICTS=	smfsav-devel
+CONFLICTS=	smfsav
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/mail/sendmail/bsd.milter.mk"
