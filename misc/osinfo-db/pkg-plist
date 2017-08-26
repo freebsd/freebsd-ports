@@ -102,6 +102,7 @@ share/osinfo/os/debian.org/debian-5.xml
 share/osinfo/os/debian.org/debian-6.xml
 share/osinfo/os/debian.org/debian-7.xml
 share/osinfo/os/debian.org/debian-8.xml
+share/osinfo/os/debian.org/debian-9.xml                                                                                                                                                           
 share/osinfo/os/debian.org/debian-testing.xml
 share/osinfo/os/fedoraproject.org/fedora-1.xml
 share/osinfo/os/fedoraproject.org/fedora-10.xml
@@ -121,6 +122,7 @@ share/osinfo/os/fedoraproject.org/fedora-22.xml
 share/osinfo/os/fedoraproject.org/fedora-23.xml
 share/osinfo/os/fedoraproject.org/fedora-24.xml
 share/osinfo/os/fedoraproject.org/fedora-25.xml
+share/osinfo/os/fedoraproject.org/fedora-26.xml                                                                                                                                                   
 share/osinfo/os/fedoraproject.org/fedora-3.xml
 share/osinfo/os/fedoraproject.org/fedora-4.xml
 share/osinfo/os/fedoraproject.org/fedora-5.xml
@@ -134,6 +136,8 @@ share/osinfo/os/freebsd.org/freebsd-10.0.xml
 share/osinfo/os/freebsd.org/freebsd-10.1.xml
 share/osinfo/os/freebsd.org/freebsd-10.2.xml
 share/osinfo/os/freebsd.org/freebsd-10.3.xml
+share/osinfo/os/freebsd.org/freebsd-11.0.xml
+share/osinfo/os/freebsd.org/freebsd-11.1.xml                                                                                                                                                      
 share/osinfo/os/freebsd.org/freebsd-2.0.5.xml
 share/osinfo/os/freebsd.org/freebsd-2.0.xml
 share/osinfo/os/freebsd.org/freebsd-2.2.8.xml
@@ -178,7 +182,6 @@ share/osinfo/os/freebsd.org/freebsd-9.0.xml
 share/osinfo/os/freebsd.org/freebsd-9.1.xml
 share/osinfo/os/freebsd.org/freebsd-9.2.xml
 share/osinfo/os/freebsd.org/freebsd-9.3.xml
-share/osinfo/os/freebsd.org/freebsd-11.0.xml
 share/osinfo/os/gnome.org/gnome-3.6.xml
 share/osinfo/os/gnome.org/gnome-3.8.xml
 share/osinfo/os/gnome.org/gnome-continuous-3.10.xml
@@ -189,6 +192,7 @@ share/osinfo/os/mageia.org/mageia-2.xml
 share/osinfo/os/mageia.org/mageia-3.xml
 share/osinfo/os/mageia.org/mageia-4.xml
 share/osinfo/os/mageia.org/mageia-5.xml
+share/osinfo/os/mageia.org/mageia-6.xml                                                                                                                                                           
 share/osinfo/os/mandriva.com/mandrake-10.0.xml
 share/osinfo/os/mandriva.com/mandrake-10.1.xml
 share/osinfo/os/mandriva.com/mandrake-10.2.xml
@@ -349,6 +353,7 @@ share/osinfo/os/redhat.com/rhel-7.0.xml
 share/osinfo/os/redhat.com/rhel-7.1.xml
 share/osinfo/os/redhat.com/rhel-7.2.xml
 share/osinfo/os/redhat.com/rhel-7.3.xml
+share/osinfo/os/redhat.com/rhel-7.4.xml                                                                                                                                                           
 share/osinfo/os/redhat.com/rhel-atomic-7.0.xml
 share/osinfo/os/redhat.com/rhel-atomic-7.1.xml
 share/osinfo/os/redhat.com/rhel-atomic-7.2.xml
@@ -417,6 +422,7 @@ share/osinfo/os/ubuntu.com/ubuntu-15.04.xml
 share/osinfo/os/ubuntu.com/ubuntu-15.10.xml
 share/osinfo/os/ubuntu.com/ubuntu-16.04.xml
 share/osinfo/os/ubuntu.com/ubuntu-16.10.xml
+share/osinfo/os/ubuntu.com/ubuntu-17.04.xml 
 share/osinfo/os/ubuntu.com/ubuntu-4.10.xml
 share/osinfo/os/ubuntu.com/ubuntu-5.04.xml
 share/osinfo/os/ubuntu.com/ubuntu-5.10.xml
