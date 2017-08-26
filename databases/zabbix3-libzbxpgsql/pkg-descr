@@ -4,6 +4,4 @@ natively compiled Zabbix agent module, written in C.
 The module enables discovery and monitoring of tablespaces, databases,
 namespaces, tables, indexes, etc.
 
-A preconfigured Zabbix Template is also included for your convenience.
-
 WWW: http://cavaliercoder.com/libzbxpgsql/

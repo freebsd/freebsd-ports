@@ -2,29 +2,41 @@
 # $FreeBSD$
 
 PORTNAME=	libzbxpgsql
-PORTVERSION=	1.0.0
-PORTREVISION=	1
+PORTVERSION=	1.1.0
+DISTVERSIONPREFIX=	v
 CATEGORIES=	databases
-MASTER_SITES=	http://s3.cavaliercoder.com/libzbxpgsql/
+PKGNAMEPREFIX=	zabbix3-
 
 MAINTAINER=	martin@waschbuesch.de
 COMMENT=	Zabbix agent module for comprehensive monitoring of PostgreSQL servers
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	${NONEXISTENT}:net-mgmt/zabbix3-agent:patch
-RUN_DEPENDS=	${LOCALBASE}/sbin/zabbix_agentd:net-mgmt/zabbix3-agent
+BUILD_DEPENDS=	${NONEXISTENT}:net-mgmt/${PKGNAMEPREFIX}agent:patch
+RUN_DEPENDS=	zabbix_agentd:net-mgmt/${PKGNAMEPREFIX}agent
+LIB_DEPENDS=	libconfig.so:devel/libconfig
+
+CONFLICTS=	zabbix[0-9][0-9]-libzbxpgsql
 
 USES=		autoreconf gmake libtool pgsql
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	cavaliercoder
+
 GNU_CONFIGURE=	yes
 GET_ZBX_WRKSRC=	cd ${.CURDIR:H:H}/net-mgmt/zabbix3-agent && make -V WRKSRC
 CONFIGURE_ARGS=	--with-zabbix=$$(${GET_ZBX_WRKSRC})
 
 USE_LDCONFIG=	yes
 
+OPTIONS_DEFINE=	EXAMPLES
+
 do-install:
 		${INSTALL_LIB} ${WRKSRC}/src/.libs/libzbxpgsql.so ${STAGEDIR}${PREFIX}/lib/libzbxpgsql.so
+
+do-install-EXAMPLES-on:
 		${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-		${INSTALL_MAN} ${WRKSRC}/template_postgresql_server.xml ${STAGEDIR}${EXAMPLESDIR}/template_postgresql_server.xml.sample
+		${INSTALL_DATA} ${WRKSRC}/templates/*.xml ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>

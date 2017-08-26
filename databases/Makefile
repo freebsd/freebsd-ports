@@ -159,7 +159,6 @@
     SUBDIR += libpbl
     SUBDIR += libpqtypes
     SUBDIR += libsdb
-    SUBDIR += libzbxpgsql
     SUBDIR += libzdb
     SUBDIR += linux-c6-sqlite3
     SUBDIR += linux-c7-sqlite3
@@ -1043,6 +1042,7 @@
     SUBDIR += xapian-core10
     SUBDIR += xapian-core12
     SUBDIR += xtrabackup
+    SUBDIR += zabbix3-libzbxpgsql
     SUBDIR += zodb3
 
 .include <bsd.port.subdir.mk>
