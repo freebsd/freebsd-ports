@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	gnumail
-PORTVERSION=	1.2.2
-PORTREVISION=	3
+PORTVERSION=	1.2.3
 CATEGORIES=	mail gnustep
-MASTER_SITES=	http://download.gna.org/gnustep-nonfsf/
+MASTER_SITES=	SAVANNAH/gnustep-nonfsf/
 DISTNAME=	GNUMail-${PORTVERSION}
 
 MAINTAINER=	theraven@FreeBSD.org
