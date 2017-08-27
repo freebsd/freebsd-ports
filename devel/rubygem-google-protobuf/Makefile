@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	google-protobuf
-PORTVERSION=	3.4.0
+PORTVERSION=	3.4.0.2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
