@@ -19,6 +19,7 @@ lib/rivet/packages/dtcl/dtcl.tcl
 lib/rivet/packages/entities/entities.tcl
 lib/rivet/packages/form/form.tcl
 lib/rivet/packages/form/form2.tcl
+lib/rivet/packages/formbroker/formbroker.tcl
 lib/rivet/packages/rivet_ncgi/rivet_ncgi.tcl
 lib/rivet/packages/session/README.txt
 lib/rivet/packages/session/session-class.tcl
