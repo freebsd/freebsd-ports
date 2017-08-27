@@ -1,4 +1,4 @@
---- cmake/cflags.cmake.orig
+--- cmake/cflags.cmake.orig	2017-08-25 18:32:21 UTC
 +++ cmake/cflags.cmake
 @@ -2,7 +2,7 @@
  # Each of our project dirs sets CMAKE_CXX_FLAGS based on these. We do
@@ -9,7 +9,7 @@
  
      # Clang warns that 'register' is deprecated; 'register' is used throughout boost, so it can't be an error yet.
      # The warning flag is different on different clang versions so we need to extract the clang version.
-@@ -41,7 +41,7 @@
+@@ -41,7 +41,7 @@ elseif ("${CMAKE_CXX_COMPILER_ID}" STREQ
      set(CMAKE_CXX_FLAGS "-Wno-maybe-uninitialized ${CMAKE_CXX_FLAGS}")
  
      # missing-field-initializers is disabled because GCC can't make up their mind how to treat C++11 initializers
