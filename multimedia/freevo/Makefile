@@ -3,7 +3,7 @@
 
 PORTNAME=	freevo
 PORTVERSION=	1.9.0
-PORTREVISION=	15
+PORTREVISION=	16
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/${PORTNAME}/Freevo%20releases/${PORTVERSION}
 
@@ -23,7 +23,8 @@ RUN_DEPENDS=	mplayer:multimedia/mplayer \
 		${PYTHON_SITELIBDIR}/BeautifulSoup.py:www/py-beautifulsoup32 \
 		${PYTHON_SITELIBDIR}/pygame/__init__.py:devel/py-game \
 		${PYTHON_PKGNAMEPREFIX}pillow>0:graphics/py-pillow \
-		${PYTHON_SITELIBDIR}/Numeric/Numeric_headers/__init__.py:math/py-numeric
+		${PYTHON_SITELIBDIR}/Numeric/Numeric_headers/__init__.py:math/py-numeric \
+		${PYTHON_PKGNAMEPREFIX}twisted>=0:devel/py-twisted
 
 FREEVO_USER=	freevo
 FREEVO_GROUP=	${FREEVO_USER}
@@ -38,7 +39,7 @@ SUB_LIST+=	PYTHON_VERSION=${PYTHON_DEFAULT_VERSION} \
 SUB_FILES=	pkg-message pkg-deinstall
 
 NO_ARCH=	yes
-USES=		python:2 shebangfix twisted:web
+USES=		python:2 shebangfix
 USE_PYTHON=	distutils noegginfo
 PYDISTUTILS_INSTALLNOSINGLE=	yes
 PYDISTUTILS_SETUP=	${PYSETUP}
