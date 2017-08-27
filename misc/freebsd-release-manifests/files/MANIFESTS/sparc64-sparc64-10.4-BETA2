@@ -1,0 +1,6 @@
+base.txz	d3f2192c0d18db6ece0b849c85ea687d19e993627224107d535989e7783330e3	20339	base	"Base system (MANDATORY)"	on
+doc.txz	4910e0bd15f609b109ba56c4255439adf5da9a3e6078b4d4a0bce267e9d83e0e	121	doc	"Additional documentation"	off
+games.txz	57fc858231b11d96cba5da2170c13fc1cbfb2aa11bda1c7b169f5537fb7c4c49	53	games	"Games (fortune, etc.)"	on
+kernel.txz	946635e1f3f7d7e15a203a152a67dd2a6559b6f5aa76d0ea49c56bdba7cc77cf	1043	kernel	"Kernel (MANDATORY)"	on
+ports.txz	10dc2f6b7a1ee85e7b608bec5c2b6867d4c7aaaccab705b148acd6aba546c55d	166766	ports	"Ports tree"	on
+src.txz	8399ef78fc47564f2b1bcfbf442da9afd825600d1a0edf47b8ab9158c1802157	71823	src	"System source code"	off
