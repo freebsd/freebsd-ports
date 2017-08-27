@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	timescaledb
-PORTVERSION=	0.3.0
+PORTVERSION=	0.4.0
 CATEGORIES=	databases
 
 MAINTAINER=	kbowling@FreeBSD.org
@@ -24,7 +24,8 @@ WANT_PGSQL=	server
 PLIST_FILES=	lib/postgresql/timescaledb.so \
 		share/postgresql/extension/timescaledb--0.1.0--0.2.0.sql \
 		share/postgresql/extension/timescaledb--0.2.0--0.3.0.sql \
-		share/postgresql/extension/timescaledb--0.3.0.sql \
+		share/postgresql/extension/timescaledb--0.3.0--0.4.0.sql \
+		share/postgresql/extension/timescaledb--0.4.0.sql \
 		share/postgresql/extension/timescaledb.control
 
 post-install:
