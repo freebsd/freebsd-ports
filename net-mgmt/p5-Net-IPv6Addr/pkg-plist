@@ -1,2 +1,3 @@
 %%PERL5_MAN3%%/Net::IPv6Addr.3.gz
 %%SITE_PERL%%/Net/IPv6Addr.pm
+%%SITE_PERL%%/Net/IPv6Addr.pod
