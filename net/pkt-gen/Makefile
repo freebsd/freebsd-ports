@@ -2,6 +2,7 @@
 
 PORTNAME=	pkt-gen
 PORTVERSION=	g2017.08.06
+PORTREVISION=	1
 CATEGORIES=	net
 
 MAINTAINER=	shurd@freebsd.org
