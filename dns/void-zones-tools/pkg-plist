@@ -1,3 +1,4 @@
 bin/hosts2zones
 bin/void-zones-update.sh
 @dir etc/void-zones
+%%PORTDOCS%%%%DOCSDIR%%/README.md
