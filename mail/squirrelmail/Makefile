@@ -19,6 +19,7 @@ USES=		cpe gettext perl5 php:web tar:bzip2
 USE_PHP=	session hash gettext mbstring pcre openssl xml
 USE_PERL5=	run
 NO_ARCH=	yes
+PORTSCOUT=	ignore
 
 WRKSRC=		${WRKDIR}/${PORTNAME}.stable/${PORTNAME}
 
