@@ -1,6 +1,14 @@
 --- pkt-gen/pkt-gen.c.orig	2017-08-06 18:26:36 UTC
 +++ pkt-gen/pkt-gen.c
-@@ -186,6 +186,7 @@ const char *indirect_payload="netmap pkt
+@@ -62,6 +62,7 @@
+ #endif
+ #include <assert.h>
+ #include <math.h>
++#include <inttypes.h>
+ 
+ #include <pthread.h>
+ 
+@@ -186,6 +187,7 @@ const char *indirect_payload="netmap pkt
  	"http://info.iet.unipi.it/~luigi/netmap/ ";
  
  int verbose = 0;
@@ -8,7 +16,7 @@
  
  #define VIRT_HDR_1	10	/* length of a base vnet-hdr */
  #define VIRT_HDR_2	12	/* length of the extenede vnet-hdr */
-@@ -204,12 +205,12 @@ struct pkt {
+@@ -204,12 +206,12 @@ struct pkt {
  			struct ip ip;
  			struct udphdr udp;
  			uint8_t body[MAX_BODYSIZE];	/* hardwired */
@@ -23,7 +31,7 @@
  	};
  } __attribute__((__packed__));
  
-@@ -752,39 +753,39 @@ dump_payload(const char *_p, int len, st
+@@ -752,39 +754,39 @@ dump_payload(const char *_p, int len, st
  static void
  update_ip(struct pkt *pkt, struct glob_arg *g)
  {
@@ -77,7 +85,7 @@
  	} while (0);
  	/* update checksums if needed */
  	if (oaddr != naddr) {
-@@ -798,29 +799,29 @@ update_ip(struct pkt *pkt, struct glob_a
+@@ -798,29 +800,29 @@ update_ip(struct pkt *pkt, struct glob_a
  		udp_sum = cksum_add(udp_sum, nport);
  	}
  	do {
@@ -117,7 +125,7 @@
  	} while (0);
  	/* update checksums */
  	if (oaddr != naddr) {
-@@ -834,11 +835,13 @@ update_ip(struct pkt *pkt, struct glob_a
+@@ -834,11 +836,13 @@ update_ip(struct pkt *pkt, struct glob_a
  		udp_sum = cksum_add(udp_sum, nport);
  	}
  	if (udp_sum != 0)
@@ -134,7 +142,7 @@
  }
  
  #ifndef s6_addr16
-@@ -847,41 +850,41 @@ update_ip(struct pkt *pkt, struct glob_a
+@@ -847,41 +851,41 @@ update_ip(struct pkt *pkt, struct glob_a
  static void
  update_ip6(struct pkt *pkt, struct glob_arg *g)
  {
@@ -190,7 +198,7 @@
  	} while (0);
  	/* update checksums if needed */
  	if (oaddr != naddr)
-@@ -891,29 +894,29 @@ update_ip6(struct pkt *pkt, struct glob_
+@@ -891,29 +895,29 @@ update_ip6(struct pkt *pkt, struct glob_
  		    cksum_add(~oport, nport));
  	do {
  		group = g->dst_ip.ipv6.egroup;
@@ -230,7 +238,7 @@
  	} while (0);
  	/* update checksums */
  	if (oaddr != naddr)
-@@ -923,7 +926,9 @@ update_ip6(struct pkt *pkt, struct glob_
+@@ -923,7 +927,9 @@ update_ip6(struct pkt *pkt, struct glob_
  		udp_sum = cksum_add(udp_sum,
  		    cksum_add(~oport, nport));
  	if (udp_sum != 0)
@@ -241,7 +249,7 @@
  }
  
  static void
-@@ -944,9 +949,10 @@ initialize_packet(struct targ *targ)
+@@ -944,9 +950,10 @@ initialize_packet(struct targ *targ)
  {
  	struct pkt *pkt = &targ->pkt;
  	struct ether_header *eh;
@@ -255,7 +263,7 @@
  	uint16_t paylen;
  	uint32_t csum;
  	const char *payload = targ->g->options & OPT_INDIRECT ?
-@@ -978,7 +984,7 @@ initialize_packet(struct targ *targ)
+@@ -978,7 +985,7 @@ initialize_packet(struct targ *targ)
  #endif
  
  	paylen = targ->g->pkt_size - sizeof(*eh) -
@@ -264,7 +272,7 @@
  
  	/* create a nice NUL-terminated string */
  	for (i = 0; i < paylen; i += l0) {
-@@ -995,56 +1001,61 @@ initialize_packet(struct targ *targ)
+@@ -995,56 +1002,61 @@ initialize_packet(struct targ *targ)
  
  	if (targ->g->af == AF_INET) {
  		eh->ether_type = htons(ETHERTYPE_IP);
@@ -359,7 +367,25 @@
  
  	bzero(&pkt->vh, sizeof(pkt->vh));
  	// dump_payload((void *)pkt, targ->g->pkt_size, NULL, 0);
-@@ -1864,6 +1875,7 @@ txseq_body(void *data)
+@@ -1324,7 +1336,7 @@ ping_body(void *data)
+ 					ts.tv_nsec += 1000000000;
+ 					ts.tv_sec--;
+ 				}
+-				if (0) D("seq %d/%lu delta %d.%09d", seq, sent,
++				if (0) D("seq %d/%" PRIu64 " delta %d.%09d", seq, sent,
+ 					(int)ts.tv_sec, (int)ts.tv_nsec);
+ 				t_cur = ts.tv_sec * 1000000000UL + ts.tv_nsec;
+ 				if (t_cur < t_min)
+@@ -1409,7 +1421,7 @@ pong_body(void *data)
+ 		return NULL;
+ 	}
+ 	if (n > 0)
+-		D("understood ponger %lu but don't know how to do it", n);
++		D("understood ponger %" PRIu64 " but don't know how to do it", n);
+ 	while (!targ->cancel && (n == 0 || sent < n)) {
+ 		uint32_t txcur, txavail;
+ //#define BUSYWAIT
+@@ -1864,6 +1876,7 @@ txseq_body(void *data)
  		unsigned int space;
  		unsigned int head;
  		int fcnt;
@@ -367,7 +393,7 @@
  
  		if (!rate_limit) {
  			budget = targ->g->burst;
-@@ -1910,19 +1922,19 @@ txseq_body(void *data)
+@@ -1910,19 +1923,19 @@ txseq_body(void *data)
  				sent < limit; sent++, sequence++) {
  			struct netmap_slot *slot = &ring->slot[head];
  			char *p = NETMAP_BUF(ring, slot->buf_idx);
@@ -392,7 +418,7 @@
  			nm_pkt_copy(frame, p, size);
  			if (fcnt == frags) {
  				update_addresses(pkt, targ->g);
-@@ -1952,6 +1964,7 @@ txseq_body(void *data)
+@@ -1952,6 +1965,7 @@ txseq_body(void *data)
  				budget--;
  			}
  		}
@@ -400,7 +426,7 @@
  
  		ring->cur = ring->head = head;
  
-@@ -2209,7 +2222,7 @@ tx_output(struct my_ctrs *cur, double de
+@@ -2209,7 +2223,7 @@ tx_output(struct my_ctrs *cur, double de
  	abs = cur->pkts / (double)(cur->events);
  
  	printf("Speed: %spps Bandwidth: %sbps (raw %sbps). Average batch: %.2f pkts\n",
@@ -409,7 +435,7 @@
  }
  
  static void
-@@ -2219,38 +2232,72 @@ usage(void)
+@@ -2219,38 +2233,72 @@ usage(void)
  	fprintf(stderr,
  		"Usage:\n"
  		"%s arguments\n"
@@ -513,7 +539,7 @@
  	exit(0);
  }
  
-@@ -2405,13 +2452,13 @@ main_thread(struct glob_arg *g)
+@@ -2405,13 +2453,13 @@ main_thread(struct glob_arg *g)
  			ppsdev = sqrt(ppsdev);
  
  			snprintf(b4, sizeof(b4), "[avg/std %s/%s pps]",
@@ -531,7 +557,7 @@
  			(unsigned long long)usec,
  			abs, (int)cur.min_space);
  		prev = cur;
-@@ -2589,7 +2636,7 @@ main(int arc, char **argv)
+@@ -2589,7 +2637,7 @@ main(int arc, char **argv)
  	g.virt_header = 0;
  	g.wait_link = 2;
  
@@ -540,7 +566,7 @@
  	    "T:w:WvR:XC:H:e:E:m:rP:zZA")) != -1) {
  
  		switch(ch) {
-@@ -2606,6 +2653,10 @@ main(int arc, char **argv)
+@@ -2606,6 +2654,10 @@ main(int arc, char **argv)
  			g.af = AF_INET6;
  			break;
  
@@ -551,7 +577,7 @@
  		case 'n':
  			g.npackets = strtoull(optarg, NULL, 10);
  			break;
-@@ -2633,7 +2684,7 @@ main(int arc, char **argv)
+@@ -2633,7 +2685,7 @@ main(int arc, char **argv)
  			break;
  
  		case 'o':	/* data generation options */
@@ -560,3 +586,14 @@
  			break;
  
  		case 'a':       /* force affinity */
+@@ -2973,8 +3025,8 @@ out:
+ 		g.tx_period.tv_nsec = g.tx_period.tv_nsec % 1000000000;
+ 	}
+ 	if (g.td_type == TD_TYPE_SENDER)
+-	    D("Sending %d packets every  %ld.%09ld s",
+-			g.burst, g.tx_period.tv_sec, g.tx_period.tv_nsec);
++	    D("Sending %d packets every  %jd.%09ld s",
++			g.burst, (intmax_t)g.tx_period.tv_sec, g.tx_period.tv_nsec);
+ 	/* Install ^C handler. */
+ 	global_nthreads = g.nthreads;
+ 	sigemptyset(&ss);
