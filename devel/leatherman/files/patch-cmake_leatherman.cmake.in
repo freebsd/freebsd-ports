@@ -1,6 +1,6 @@
---- cmake/leatherman.cmake.in.orig
+--- cmake/leatherman.cmake.in.orig	2017-08-25 18:32:21 UTC
 +++ cmake/leatherman.cmake.in
-@@ -83,11 +83,6 @@
+@@ -83,11 +83,6 @@ macro(leatherman_install)
          RUNTIME DESTINATION bin
          LIBRARY DESTINATION lib${LIB_SUFFIX}
          ARCHIVE DESTINATION lib${LIB_SUFFIX})
