@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Net-Ifconfig-Wrapper
-PORTVERSION=	0.14
+PORTVERSION=	0.15
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -12,6 +12,7 @@ COMMENT=	Provides a unified way to configure network interfaces
 
 LICENSE=	ARTPERL10
 
+NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
 
