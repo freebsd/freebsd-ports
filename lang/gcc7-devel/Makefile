@@ -14,13 +14,9 @@ COMMENT=	GNU Compiler Collection 7
 LICENSE=	GPLv3 GPLv3RLE
 LICENSE_COMB=	multi
 
-<<<<<<< HEAD
-NOPIE_PORTS=	yes
-NORELRO_PORTS=	yes
+USE_HARDENING=	# empty
 
-=======
 ONLY_FOR_ARCHS=	aarch64 amd64 arm armv6 i386 powerpc powerpc64 sparc64
->>>>>>> upstream/master
 LIB_DEPENDS=	libgmp.so:math/gmp \
 		libmpfr.so:math/mpfr \
 		libmpc.so:math/mpc
