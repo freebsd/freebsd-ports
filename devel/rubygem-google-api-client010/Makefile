@@ -23,6 +23,9 @@ RUN_DEPENDS=	rubygem-addressable>=2.3:www/rubygem-addressable \
 
 BROKEN_powerpc64=	fails to package: call-i.ri: No such file or directory
 
+# bin/generate-api
+CONFLICTS_INSTALL=	rubygem-google-api-client
+
 PORTSCOUT=	limit:^0\.10\.
 
 NO_ARCH=	yes
