@@ -11,6 +11,9 @@ COMMENT=	Airtunes emulator
 LIB_DEPENDS=	libao.so:audio/libao
 RUN_DEPENDS=	avahi-publish-service:net/avahi-app
 
+DEPRECATED=	Officially unmaintained upstream. Use audio/shairport-sync instead
+EXPIRATION_DATE=2017-11-28
+
 USES=		gmake pkgconfig ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	abrasive
