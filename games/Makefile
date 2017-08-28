@@ -32,6 +32,7 @@
     SUBDIR += agame
     SUBDIR += ags
     SUBDIR += aisleriot
+    SUBDIR += aklabeth
     SUBDIR += alephone
     SUBDIR += alephone-data
     SUBDIR += alephone-scenarios
