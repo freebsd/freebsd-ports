@@ -5,6 +5,19 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20170828
+  AFFECTS: users of security/gnupg
+  AUTHOR: adamw@FreeBSD.org
+
+  security/gnupg22 has become the new stable version of GnuPG. This is
+  an LTS branch, and is directly analogous to security/gnupg20. gnupg20
+  will reach EOL at the end of the year, and all gnupg20 users should
+  migrate to gnupg22.
+
+  See https://gnupg.org/faq/whats-new-in-2.1.html for important changes.
+
+  The security/gnupg port will become GnuPG 2.3.x soon.
+
 20170820:
   AFFECTS: users of www/uwsgi
   AUTHOR: ultima@FreeBSD.org
