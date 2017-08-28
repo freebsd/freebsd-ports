@@ -11,7 +11,8 @@
 
 command=%%PREFIX%%/sbin/sshd
 command_args=$opensshd_args
-pidfile=@VARBASE@/run/opensshd.pid
+pidfile=/var/run/opensshd.pid
+command_args_background="-o PidFile=${pidfile}"
 required_files=%%PREFIX%%/etc/ssh/sshd_config
 
 depend() {
@@ -34,36 +35,36 @@ start_pre() {
 		eerror "%%PREFIX%%/bin/ssh-keygen does not exist."
 
 	if [ -f %%ETCDIR%%/ssh_host_dsa_key ]; then
-		echo "You already have a DSA host key" \
+		eerror "You already have a DSA host key" \
 			"in %%ETCDIR%%/ssh_host_dsa_key"
-		echo "Skipping protocol version 2 DSA Key Generation"
+		eerror "Skipping protocol version 2 DSA Key Generation"
 	else
 		%%PREFIX%%/bin/ssh-keygen -t dsa \
 			-f %%ETCDIR%%/ssh_host_dsa_key -N ''
 	fi
 
 	if [ -f %%ETCDIR%%/ssh_host_rsa_key ]; then
-		echo "You already have a RSA host key" \
+		eerror "You already have a RSA host key" \
 			"in %%ETCDIR%%/ssh_host_rsa_key"
-		echo "Skipping protocol version 2 RSA Key Generation"
+		eerror "Skipping protocol version 2 RSA Key Generation"
 	else
 		%%PREFIX%%/bin/ssh-keygen -t rsa \
 			-f %%ETCDIR%%/ssh_host_rsa_key -N ''
 	fi
 
 	if [ -f %%ETCDIR%%/ssh_host_ecdsa_key ]; then
-		echo "You already have a Elliptic Curve DSA host key" \
+		eerror "You already have a Elliptic Curve DSA host key" \
 			"in %%ETCDIR%%/ssh_host_ecdsa_key"
-		echo "Skipping protocol version 2 Elliptic Curve DSA Key Generation"
+		eerror "Skipping protocol version 2 Elliptic Curve DSA Key Generation"
 	else
 		%%PREFIX%%/bin/ssh-keygen -t ecdsa \
 			-f %%ETCDIR%%/ssh_host_ecdsa_key -N ''
 	fi
 
 	if [ -f %%ETCDIR%%/ssh_host_ed25519_key ]; then
-		echo "You already have a Elliptic Curve ED25519 host key" \
+		eerror "You already have a Elliptic Curve ED25519 host key" \
 			"in %%ETCDIR%%/ssh_host_ed25519_key"
-		echo "Skipping protocol version 2 Elliptic Curve ED25519 Key Generation"
+		eerror "Skipping protocol version 2 Elliptic Curve ED25519 Key Generation"
 	else
 		%%PREFIX%%/bin/ssh-keygen -t ed25519 \
 			-f %%ETCDIR%%/ssh_host_ed25519_key -N ''
