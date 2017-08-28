@@ -4,6 +4,7 @@ PORTNAME=	gnupg
 PORTVERSION=	2.2.0
 CATEGORIES=	security
 MASTER_SITES=	GNUPG
+PKGNAMESUFFIX=	22
 
 MAINTAINER=	adamw@FreeBSD.org
 COMMENT=	The GNU Privacy Guard (modern version)
