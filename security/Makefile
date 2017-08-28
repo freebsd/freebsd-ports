@@ -179,6 +179,7 @@
     SUBDIR += gnupg
     SUBDIR += gnupg1
     SUBDIR += gnupg20
+    SUBDIR += gnupg22
     SUBDIR += gnutls
     SUBDIR += go.crypto
     SUBDIR += go-cve-dictionary
