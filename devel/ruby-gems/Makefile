@@ -6,7 +6,7 @@
 # - www/rubygem-gitlab-grack/files/patch-gemspec
 
 PORTNAME=	gems
-PORTVERSION=	2.6.12
+PORTVERSION=	2.6.13
 CATEGORIES=	devel ruby
 MASTER_SITES=	http://production.cf.rubygems.org/rubygems/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
