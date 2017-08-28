@@ -14,6 +14,9 @@ COMMENT=	The Database Toolkit for Ruby
 
 LICENSE=	MIT
 
+DEPRECATED=	Use devel/rubygem-sequel instead
+EXPIRATION_DATE=2017-08-31
+
 PORTSCOUT=	limit:^3
 
 NO_ARCH=	yes
