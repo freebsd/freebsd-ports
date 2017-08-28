@@ -12,6 +12,8 @@ COMMENT=	Persistent key-value database with built-in net interface
 
 LICENSE=	BSD3CLAUSE
 
+BROKEN_FreeBSD_10_i386=	undefined reference to __atomic_fetch_add_8
+
 USES=		execinfo
 
 OPTIONS_DEFINE=	TESTS TRIB
