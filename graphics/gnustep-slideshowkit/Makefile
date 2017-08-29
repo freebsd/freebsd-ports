@@ -6,10 +6,12 @@ PORTREVISION=	20050213
 CATEGORIES=	graphics gnustep
 MASTER_SITES=	http://download.gna.org/gsimageapps/
 PKGNAMEPREFIX=	gnustep-
-DISTNAME=	SlideShowKit-20050212
+DISTNAME=	SlideShowKit-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SlideShow Framework
+
+LICENSE=	NONE
 
 USES=		gnustep
 USE_GNUSTEP=	back build
