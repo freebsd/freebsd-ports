@@ -67,7 +67,7 @@ _USE_HARDENING+=	static
 
 .for h in ${USE_HARDENING}
 _h:=		${h:C/\:.*//}
-.if ${_h} == "pie" || ${_h} == "relro" || ${_h} == "safestack"
+.if ${_h} == "pie" || ${_h} == "relro" || ${_h} == "safestack" || ${_h} == "cfi"
 .if !defined(${_h}_ARGS)
 USE_HARDENING:=	${USE_HARDENING:N${h}} ${_h}
 ${_h}_ARGS:=	${h:C/^[^\:]*(\:|\$)//:S/,/ /g}
@@ -194,7 +194,7 @@ OPTIONS_GROUP_HARDENING+=SAFESTACK
 USE_HARDENING+=		nocfi
 .endif
 
-CFIHARDEN_DESC=		Build with CFI (Requires lld 4.0.0 in base)
+CFIHARDEN_DESC=		Build with CFI (Requires lld 4.0.0 or later in base)
 CFIHARDEN_USES=		cfi
 
 .if ${_USE_HARDENING:Mbatch} == ""
