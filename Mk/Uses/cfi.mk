@@ -10,12 +10,13 @@
 .if !defined(_INCLUDE_USES_CFI_MK)
 _INCLUDE_USES_CFI_MK=    yes
 
-.if !empty(cfi_ARGS)
-IGNORE=	USES=cfi does not require args
-.endif
+.if ${cfi_ARGS:Mconfigure}
+CONFIGURE_ARGS+=	--enable-cfi
+.else
 
 CFLAGS+=	-fsanitize=cfi -fvisibility=hidden -flto
 CXXFLAGS+=	-fsanitize=cfi -fvisibility=hidden -flto
 LDFLAGS+=	-fsanitize=cfi -fvisibility=hidden -flto
+.endif
 
 .endif
