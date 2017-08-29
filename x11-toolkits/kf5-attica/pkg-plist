@@ -1,3 +1,4 @@
+etc/xdg/attica.categories
 include/KF5/Attica/Attica/AccountBalance
 include/KF5/Attica/Attica/Achievement
 include/KF5/Attica/Attica/Activity

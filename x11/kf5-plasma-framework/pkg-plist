@@ -142,6 +142,7 @@ lib/libKF5PlasmaQuick.so.%%KDE_FRAMEWORKS_VERSION%%
 %%QT_QMLDIR%%/QtQuick/Controls/Styles/Plasma/private/ButtonShadow.qml
 %%QT_QMLDIR%%/QtQuick/Controls/Styles/Plasma/private/RoundShadow.qml
 %%QT_QMLDIR%%/QtQuick/Controls/Styles/Plasma/private/TextFieldFocus.qml
+%%QT_QMLDIR%%/QtQuick/Controls/Styles/Plasma/private/Util.js
 %%QT_QMLDIR%%/QtQuick/Controls/Styles/Plasma/qmldir
 %%QT_QMLDIR%%/org/kde/plasma/accessdenied/qmldir
 %%QT_QMLDIR%%/org/kde/plasma/calendar/CalendarToolbar.qml
@@ -216,7 +217,6 @@ lib/libKF5PlasmaQuick.so.%%KDE_FRAMEWORKS_VERSION%%
 %%QT_QMLDIR%%/org/kde/plasma/components/libplasmacomponentsplugin.so
 %%QT_QMLDIR%%/org/kde/plasma/components/plugins.qmltypes
 %%QT_QMLDIR%%/org/kde/plasma/components/private/AppManager.js
-%%QT_QMLDIR%%/org/kde/plasma/components/private/Config.js
 %%QT_QMLDIR%%/org/kde/plasma/components/private/DualStateButton.qml
 %%QT_QMLDIR%%/org/kde/plasma/components/private/InlineDialog.qml
 %%QT_QMLDIR%%/org/kde/plasma/components/private/PageStack.js
