@@ -5,7 +5,6 @@ PORTNAME=		open-vm-tools
 PORTVERSION=		${RELEASE_VER}
 DISTVERSIONPREFIX=	stable-
 PORTEPOCH=		2
-PORTREVISION=		1
 CATEGORIES=		emulators
 
 MAINTAINER=		jpaetzel@FreeBSD.org
@@ -14,12 +13,14 @@ COMMENT?=		Open VMware tools for FreeBSD VMware guests
 LICENSE=		LGPL21
 LICENSE_FILE=		${WRKSRC}/COPYING
 
+ONLY_FOR_ARCHS=		amd64 i386
+
 LIB_DEPENDS=		libmspack.so:archivers/libmspack \
 			libxerces-c.so:textproc/xerces-c3 \
 			libxml-security-c.so:security/apache-xml-security-c
 
-RELEASE_VER=		10.1.5
-BUILD_VER=		5055683
+RELEASE_VER=		10.1.10
+BUILD_VER=		6082533
 
 OPTIONS_DEFINE=		DNET ICU LIBNOTIFY OPENSSL X11
 OPTIONS_DEFAULT=	DNET ICU LIBNOTIFY OPENSSL X11
@@ -44,8 +45,8 @@ OPENSSL_CONFIGURE_WITH=	ssl
 WRKSRC_SUBDIR=		open-vm-tools
 
 GNU_CONFIGURE=		yes
-USE_GNOME=		glib20
 USES=			autoreconf:-iv fuse gettext-runtime kmod libtool localbase pathfix pkgconfig
+USE_GNOME=		glib20
 
 USE_GITHUB=		yes
 GH_ACCOUNT=		vmware
@@ -72,8 +73,6 @@ CONFLICTS=		open-vm-tools-nox11-[0-9]*
 .else
 CONFLICTS=		open-vm-tools-[0-9]*
 .endif
-
-ONLY_FOR_ARCHS=		i386 amd64
 
 CONFIGURE_ENV+=		SYSDIR=${SRC_BASE}/sys
 
