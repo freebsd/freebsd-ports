@@ -1,7 +1,7 @@
 # $FreeBSD: head/sysutils/nomad/Makefile 434121 2017-02-14 16:06:10Z amdmi3 $
 
 PORTNAME=	nomad
-PORTVERSION=	0.5.5
+PORTVERSION=	0.6.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 
