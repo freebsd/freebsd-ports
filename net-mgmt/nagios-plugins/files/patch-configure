@@ -1,20 +1,18 @@
---- configure.orig	2017-04-19 18:03:27.000000000 +0200
-+++ configure	
-@@ -22004,7 +22004,7 @@
- $as_echo "$ac_cv_ps_command" >&6; }
+--- configure.orig	2017-04-19 16:03:27 UTC
++++ configure
+@@ -21973,6 +21973,15 @@ $as_echo "$as_me: error: I don't know ho
+ 	fi
  
- elif ps -axwwo 'stat comm vsz rss user uid pid ppid args' 2>/dev/null | \
--	egrep -i "^ *STAT +[UCOMAND]+ +VSZ +RSS +USER +UID +PID +PPID +COMMAND" > /dev/null
-+	egrep -i "^ *STAT +COMMAND +VSZ +RSS +USER +UID +PID +PPID +COMMAND" > /dev/null
+ 
++elif ps -axwo 'stat comm vsz rss user uid pid ppid jid args' 2>/dev/null | \
++	egrep -i "^ *STAT +COMMAND +VSZ +RSS +USER +UID +PID +PPID +JID +COMMAND" > /dev/null
++then
++	ac_cv_ps_varlist="procstat,&procuid,&procpid,&procppid,&procjid,&procvsz,&procrss,&procpcpu,procprog,&pos"
++	ac_cv_ps_command="$PATH_TO_PS -axwo 'stat uid pid ppid jid vsz rss pcpu comm args'"
++	ac_cv_ps_format="%s %d %d %d %d %d %d %f %s %n"
++	ac_cv_ps_cols=10
++ 	{ $as_echo "$as_me:$LINENO: result: $ac_cv_ps_command" >&5
++ $as_echo "$ac_cv_ps_command" >&6; }
+ elif ps axwwo 'stat comm vsz rss user uid pid ppid args cgroup:256' 2>/dev/null | \
+ 	egrep -i "^ *STAT +[UCOMAND]+ +VSZ +RSS +USER +UID +PID +PPID +COMMAND +CGROUP" > /dev/null
  then
- 	ac_cv_ps_varlist="procstat,&procuid,&procpid,&procppid,&procvsz,&procrss,&procpcpu,procprog,&pos"
- 	ac_cv_ps_command="$PATH_TO_PS -axwwo 'stat uid pid ppid vsz rss pcpu comm args'"
-@@ -23798,7 +23798,7 @@
- 
- 	if $PATH_TO_SWAPINFO -k 2>/dev/null | egrep -i "^Device +1K-blocks +Used +Avail" >/dev/null
- 	then
--		ac_cv_swap_format="%*s %f %*d %f"
-+		ac_cv_swap_format="%*s %lf %*d %lf"
- 		ac_cv_swap_conv=1024
- 		{ $as_echo "$as_me:$LINENO: result: using FreeBSD format swapinfo" >&5
- $as_echo "using FreeBSD format swapinfo" >&6; }
