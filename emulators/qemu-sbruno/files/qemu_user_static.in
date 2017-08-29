@@ -84,7 +84,7 @@ list_cmd="${BINMISCCTL} list"
 	else
 		echo "$0: interpreter ${interpreter} not found, cannot register."
 	fi
-	# register mipsle interpreter styled 'mipsle'
+	# register mipsle interpreter styled 'mipsel'
 	interpreter=${QEMU_DIR}/${QEMU_PREFIX}mipsel${QEMU_SUFFIX}
 	if [ -x "${interpreter}" ]; then
 		${BINMISCCTL} add mipsel --interpreter "${interpreter}" \
