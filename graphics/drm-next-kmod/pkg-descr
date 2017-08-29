@@ -1,0 +1,4 @@
+amdgpu, i915, and radeon DRM modules for the linuxkpi-based KMS components.
+Currently corresponding to linux 4.9 DRM.
+
+WWW: https://github.com/FreeBSDDesktop/kms-drm
