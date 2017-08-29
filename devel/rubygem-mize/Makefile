@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mize
-PORTVERSION=	0.3.2
+PORTVERSION=	0.3.3
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
