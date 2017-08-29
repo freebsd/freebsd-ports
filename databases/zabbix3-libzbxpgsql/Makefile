@@ -32,6 +32,8 @@ USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	EXAMPLES
 
+PORTSCOUT=	skipv:latest,gh-pages
+
 do-install:
 		${INSTALL_LIB} ${WRKSRC}/src/.libs/libzbxpgsql.so ${STAGEDIR}${PREFIX}/lib/libzbxpgsql.so
 
