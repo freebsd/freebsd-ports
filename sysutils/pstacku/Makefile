@@ -7,7 +7,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	https://kib.kiev.ua/kib/${PORTNAME}/ \
 		http://kib.kiev.ua/kib/${PORTNAME}/
 
-MAINTAINER=	luca.pizzamiglio@gmail.com
+MAINTAINER=	pizzamig@FreeBSD.org
 COMMENT=	Retrieve process stack traces
 
 LICENSE=	BSD2CLAUSE

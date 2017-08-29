@@ -7,7 +7,7 @@ CATEGORIES=	benchmarks
 MASTER_SITES=	http://www.tux.org/~mayer/linux/
 DISTNAME=	${PORTNAME}-byte-${PORTVERSION}
 
-MAINTAINER=	luca.pizzamiglio@gmail.com
+MAINTAINER=	pizzamig@FreeBSD.org
 COMMENT=	BYTE Magazine's native benchmarks
 
 ALL_TARGET=	# empty

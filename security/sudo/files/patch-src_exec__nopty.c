@@ -1,26 +1,17 @@
---- src/exec_nopty.c.orig	2017-08-09 17:20:41 UTC
-+++ src/exec_nopty.c
-@@ -201,7 +201,7 @@ exec_nopty(struct command_details *details, struct com
- 	sudo_warn(U_("unable to set handler for signal %d"), SIGCHLD);
-     if (sudo_sigaction(SIGCONT, &sa, NULL) != 0)
- 	sudo_warn(U_("unable to set handler for signal %d"), SIGCONT);
--#ifdef SIGINFO
-+#if defined(SIGINFO) && !defined(__FreeBSD__)
-     if (sudo_sigaction(SIGINFO, &sa, NULL) != 0)
- 	sudo_warn(U_("unable to set handler for signal %d"), SIGINFO);
- #endif
-@@ -222,6 +222,14 @@ exec_nopty(struct command_details *details, struct com
- 	sudo_warn(U_("unable to set handler for signal %d"), SIGQUIT);
-     if (sudo_sigaction(SIGTSTP, &sa, NULL) != 0)
- 	sudo_warn(U_("unable to set handler for signal %d"), SIGTSTP);
+--- src/exec_nopty.c.orig	2017-08-28 20:07:24.296708000 -0700
++++ src/exec_nopty.c	2017-08-28 20:17:50.768102000 -0700
+@@ -134,6 +134,14 @@ signal_cb_nopty(int signo, int what, void *v)
+ 	    sudo_ev_loopexit(ec->evbase);
+ 	}
+ 	debug_return;
 +#if defined(SIGINFO) && defined(__FreeBSD__)
 +    /*
-+     * FreeBSD's ^T will generate a SIGINFO to the controlling terminal's
-+     * process group.
++     * FreeBSD's ^T (terminal STATUS) will send a kernel-generated SIGINFO
++     * to the controlling terminal's process group that should not be
++     * forwarded.
 +     */
-+    if (sudo_sigaction(SIGINFO, &sa, NULL) != 0)
-+	sudo_warn(U_("unable to set handler for signal %d"), SIGINFO);
++    case SIGINFO:
 +#endif
- 
-     /*
-      * The policy plugin's session init must be run before we fork
+     case SIGINT:
+     case SIGQUIT:
+     case SIGTSTP:
