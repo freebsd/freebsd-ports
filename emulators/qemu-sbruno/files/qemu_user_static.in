@@ -141,6 +141,7 @@ list_cmd="${BINMISCCTL} list"
 	${BINMISCCTL} remove mips64
 	${BINMISCCTL} remove arm
 	${BINMISCCTL} remove armv6
+	${BINMISCCTL} remove armv7
 	${BINMISCCTL} remove aarch64
 	${BINMISCCTL} remove mips
 	${BINMISCCTL} remove mipsel
