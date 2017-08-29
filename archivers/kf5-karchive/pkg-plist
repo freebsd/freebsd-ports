@@ -1,3 +1,4 @@
+etc/xdg/karchive.categories
 include/KF5/KArchive/K7Zip
 include/KF5/KArchive/KAr
 include/KF5/KArchive/KArchive

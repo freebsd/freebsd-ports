@@ -2,10 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	kirigami2
-PORTVERSION=	2.2.0
-CATEGORIES=	x11-toolkits kde # kde-framework
-MASTER_SITES=	KDE/stable/${PORTNAME:C/2//}
-DIST_SUBDIR=	KDE/kirigami
+PORTVERSION=	${KDE_FRAMEWORKS_VERSION}
+CATEGORIES=	x11-toolkits kde kde-frameworks
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	QtQuick based components set
