@@ -1,0 +1,10 @@
+The drm-next-kmod port requires explicit loading of its drm.ko kernel
+module prior to loading either amdgpu (for AMD GPUs starting with 
+the HD7000 series / Tahiti) or i915kms (for Intel APUs starting with
+HD3000 / Sandy Bridge) through kld_list in /etc/rc.conf.
+
+For example: kld_list="/boot/modules/drm.ko /boot/modules/amdgpu.ko"
+or kld_list="/boot/modules/drm.ko /boot/modules/i915kms.ko"
+
+Older generations are supported by the kms modules (radeonkms / 
+i915kms) in base.
