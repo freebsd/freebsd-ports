@@ -46,6 +46,7 @@ lib/elixir/lib/ex_doc/lib/ex_doc/formatter/html/templates/head_template.eex
 lib/elixir/lib/ex_doc/lib/ex_doc/formatter/html/templates/module_template.eex
 lib/elixir/lib/ex_doc/lib/ex_doc/formatter/html/templates/not_found_template.eex
 lib/elixir/lib/ex_doc/lib/ex_doc/formatter/html/templates/redirect_template.eex
+lib/elixir/lib/ex_doc/lib/ex_doc/formatter/html/templates/search_template.eex 
 lib/elixir/lib/ex_doc/lib/ex_doc/formatter/html/templates/sidebar_template.eex
 lib/elixir/lib/ex_doc/lib/ex_doc/formatter/html/templates/summary_item_template.eex
 lib/elixir/lib/ex_doc/lib/ex_doc/formatter/html/templates/summary_template.eex
@@ -59,9 +60,11 @@ lib/elixir/lib/ex_doc/priv/ex_doc/formatter/epub/assets/dist/app-75ab88af99.js
 lib/elixir/lib/ex_doc/priv/ex_doc/formatter/epub/assets/dist/epub-3f654f2a47.css
 lib/elixir/lib/ex_doc/priv/ex_doc/formatter/epub/assets/metainfo/com.apple.ibooks.display-options.xml
 lib/elixir/lib/ex_doc/priv/ex_doc/formatter/epub/assets/metainfo/container.xml
+lib/elixir/lib/ex_doc/priv/ex_doc/formatter/html/assets/dist/app-5b9e160cec.css
+lib/elixir/lib/ex_doc/priv/ex_doc/formatter/html/assets/dist/app-da04b39d0c.js
+lib/elixir/lib/ex_doc/priv/ex_doc/formatter/html/assets/dist/app-da04b39d0c.js.map
 lib/elixir/lib/ex_doc/priv/ex_doc/formatter/html/assets/fonts/icomoon.eot
 lib/elixir/lib/ex_doc/priv/ex_doc/formatter/html/assets/fonts/icomoon.svg
 lib/elixir/lib/ex_doc/priv/ex_doc/formatter/html/assets/fonts/icomoon.ttf
 lib/elixir/lib/ex_doc/priv/ex_doc/formatter/html/assets/fonts/icomoon.woff
-lib/elixir/lib/ex_doc/priv/ex_doc/formatter/html/templates/dist/app-4dfb6411b0.css
 %%PORTDOCS%%%%DOCSDIR%%/README.md
