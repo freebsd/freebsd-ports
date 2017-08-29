@@ -5,7 +5,7 @@ PORTNAME=	breakpad
 DISTVERSION=	g20170811
 CATEGORIES=	devel
 
-MAINTAINER=	luca.pizzamiglio@gmail.com
+MAINTAINER=	pizzamig@FreeBSD.org
 COMMENT=	Client/server based crash-reporting system
 
 LICENSE=	BSD3CLAUSE

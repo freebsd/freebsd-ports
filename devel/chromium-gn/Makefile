@@ -3,7 +3,7 @@
 CATEGORIES=	devel www
 PKGNAMESUFFIX=	-gn
 
-MAINTAINER=	luca.pizzamiglio@gmail.com
+MAINTAINER=	pizzamig@FreeBSD.org
 COMMENT=	Gn meta build framework
 
 MASTERDIR=	${.CURDIR}/../../www/chromium

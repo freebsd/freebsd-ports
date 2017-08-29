@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	textproc kde
 MASTER_SITES=	SF
 
-MAINTAINER=	luca.pizzamiglio@gmail.com
+MAINTAINER=	pizzamig@FreeBSD.org
 COMMENT=	KDE4 graphical frontend for diff
 
 LICENSE=	GPLv2

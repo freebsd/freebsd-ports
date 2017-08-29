@@ -7,7 +7,7 @@ PORTREVISION=	2
 CATEGORIES=	devel textproc www
 MASTER_SITES=	SF
 
-MAINTAINER=	luca.pizzamiglio@gmail.com
+MAINTAINER=	pizzamig@FreeBSD.org
 COMMENT=	C and C++ Code Counter
 
 LICENSE=	GPLv2+
