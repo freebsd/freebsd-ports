@@ -529,6 +529,7 @@
     SUBDIR += proxsmtp
     SUBDIR += py-Products.MailHost
     SUBDIR += py-Products.SecureMailHost
+    SUBDIR += py-aiosmtpd
     SUBDIR += py-apolicy
     SUBDIR += py-authres
     SUBDIR += py-cyruslib
