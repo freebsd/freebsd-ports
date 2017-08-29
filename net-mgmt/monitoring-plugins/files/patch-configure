@@ -1,11 +1,19 @@
 --- configure.orig	2016-11-29 08:48:11 UTC
 +++ configure
-@@ -16748,7 +16748,7 @@ then
+@@ -16747,6 +16747,16 @@ then
+ 	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_ps_command" >&5
  $as_echo "$ac_cv_ps_command" >&6; }
  
++elif ps -axwo 'stat comm vsz rss user uid pid ppid args jid' 2>/dev/null | \
++	egrep -i "^ *STAT +COMMAND +VSZ +RSS +USER +UID +PID +PPID +COMMAND +JID" > /dev/null
++then
++	ac_cv_ps_varlist="procstat,&procuid,&procpid,&procppid,&procvsz,&procrss,&procpcpu,procprog,&pos"
++	ac_cv_ps_command="$PATH_TO_PS -axwo 'stat uid pid ppid vsz rss pcpu comm args'"
++	ac_cv_ps_format="%s %d %d %d %d %d %f %s %n"
++	ac_cv_ps_cols=9
++	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_ps_command" >&5
++$as_echo "$ac_cv_ps_command" >&6; }
++
  elif ps -axwo 'stat comm vsz rss user uid pid ppid args' 2>/dev/null | \
--	egrep -i "^ *STAT +[UCOMAND]+ +VSZ +RSS +USER +UID +PID +PPID +COMMAND" > /dev/null
-+	egrep -i "^ *STAT +COMMAND +VSZ +RSS +USER +UID +PID +PPID +COMMAND" > /dev/null
+ 	egrep -i "^ *STAT +[UCOMAND]+ +VSZ +RSS +USER +UID +PID +PPID +COMMAND" > /dev/null
  then
- 	ac_cv_ps_varlist="procstat,&procuid,&procpid,&procppid,&procvsz,&procrss,&procpcpu,procprog,&pos"
- 	ac_cv_ps_command="$PATH_TO_PS -axwo 'stat uid pid ppid vsz rss pcpu comm args'"
