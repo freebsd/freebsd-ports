@@ -74,6 +74,7 @@ share/locale/de/LC_MESSAGES/libkirigami2plugin_qt.qm
 share/locale/el/LC_MESSAGES/libkirigami2plugin_qt.qm
 share/locale/en_GB/LC_MESSAGES/libkirigami2plugin_qt.qm
 share/locale/es/LC_MESSAGES/libkirigami2plugin_qt.qm
+share/locale/fi/LC_MESSAGES/libkirigami2plugin_qt.qm
 share/locale/fr/LC_MESSAGES/libkirigami2plugin_qt.qm
 share/locale/gl/LC_MESSAGES/libkirigami2plugin_qt.qm
 share/locale/hu/LC_MESSAGES/libkirigami2plugin_qt.qm
@@ -87,7 +88,12 @@ share/locale/pt_BR/LC_MESSAGES/libkirigami2plugin_qt.qm
 share/locale/ru/LC_MESSAGES/libkirigami2plugin_qt.qm
 share/locale/sk/LC_MESSAGES/libkirigami2plugin_qt.qm
 share/locale/sl/LC_MESSAGES/libkirigami2plugin_qt.qm
+share/locale/sr/LC_MESSAGES/libkirigami2plugin_qt.qm
+share/locale/sr@ijekavian/LC_MESSAGES/libkirigami2plugin_qt.qm
+share/locale/sr@ijekavianlatin/LC_MESSAGES/libkirigami2plugin_qt.qm
+share/locale/sr@latin/LC_MESSAGES/libkirigami2plugin_qt.qm
 share/locale/sv/LC_MESSAGES/libkirigami2plugin_qt.qm
+share/locale/tr/LC_MESSAGES/libkirigami2plugin_qt.qm
 share/locale/uk/LC_MESSAGES/libkirigami2plugin_qt.qm
 share/locale/zh_CN/LC_MESSAGES/libkirigami2plugin_qt.qm
 share/locale/zh_TW/LC_MESSAGES/libkirigami2plugin_qt.qm

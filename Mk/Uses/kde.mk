@@ -65,7 +65,7 @@ KDE4_APPLICATIONS_VERSION?=	15.04.3
 KDE4_BRANCH?=			stable
 
 # Current KDE desktop.
-KDE_FRAMEWORKS_VERSION?=	5.36.0
+KDE_FRAMEWORKS_VERSION?=	5.37.0
 KDE_FRAMEWORKS_BRANCH?= 	stable
 
 # Current KDE applications.
@@ -216,9 +216,9 @@ _USE_KDE4_ALL+=		akonadi attica automoc4 ontologies qimageblitz soprano \
 # that our list of frameworks matches the structure offered upstream.
 _USE_FRAMEWORKS_TIER1=	apidox archive attica5 breeze-icons codecs config \
 			coreaddons dbusaddons dnssd i18n idletime itemmodels \
-			itemviews oxygen-icons5 plotting prison solid sonnet \
-			syntaxhighlighting threadweaver wayland widgetsaddons \
-			windowsystem
+			itemviews kirigami2 oxygen-icons5 plotting prison solid \
+			sonnet syntaxhighlighting threadweaver wayland \
+			widgetsaddons windowsystem
 # NOT LISTED TIER1: modemmanagerqt networkmanagerqt (not applicable)
 
 _USE_FRAMEWORKS_TIER2=	auth completion crash doctools filemetadata5 \
@@ -239,11 +239,6 @@ _USE_FRAMEWORKS_TIER4= 	frameworkintegration
 # kdelibs 4 to KDE Frameworks 5. Code should aim to port away from this framework,
 # new projects should avoid using these libraries.
 _USE_FRAMEWORKS_PORTING=js jsembed kdelibs4support khtml mediaplayer kross
-
-# These are weird items: not officially released as Frameworks, but
-# required by them (and from KDE).
-#  - kirigami https://dot.kde.org/2016/03/30/kde-proudly-presents-kirigami-ui
-_USE_FRAMEWORKS_EXTRA=	kirigami kirigami2
 
 _USE_FRAMEWORKS_ALL=	ecm \
 			${_USE_FRAMEWORKS_TIER1} \
@@ -513,10 +508,7 @@ kimageformats_TYPE=	run
 kio_PORT=		devel/kf5-kio
 kio_LIB=		libKF5KIOCore.so
 
-kirigami_PORT=		x11-toolkits/kirigami
-kirigami_PATH=		${QT_QMLDIR}/org/kde/kirigami/libkirigamiplugin.so
-
-kirigami2_PORT=		x11-toolkits/kirigami2
+kirigami2_PORT=		x11-toolkits/kf5-kirigami2
 kirigami2_PATH=		${QT_QMLDIR}/org/kde/kirigami.2/libkirigamiplugin.so
 
 kross_PORT=		lang/kf5-kross

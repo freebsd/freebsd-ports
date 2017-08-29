@@ -42,6 +42,7 @@ include/KF5/KWidgetsAddons/KPageWidget
 include/KF5/KWidgetsAddons/KPageWidgetItem
 include/KF5/KWidgetsAddons/KPageWidgetModel
 include/KF5/KWidgetsAddons/KPasswordDialog
+include/KF5/KWidgetsAddons/KPasswordLineEdit
 include/KF5/KWidgetsAddons/KPixmapRegionSelectorDialog
 include/KF5/KWidgetsAddons/KPixmapRegionSelectorWidget
 include/KF5/KWidgetsAddons/KPixmapSequence
@@ -110,6 +111,7 @@ include/KF5/KWidgetsAddons/kpageview.h
 include/KF5/KWidgetsAddons/kpagewidget.h
 include/KF5/KWidgetsAddons/kpagewidgetmodel.h
 include/KF5/KWidgetsAddons/kpassworddialog.h
+include/KF5/KWidgetsAddons/kpasswordlineedit.h
 include/KF5/KWidgetsAddons/kpixmapregionselectordialog.h
 include/KF5/KWidgetsAddons/kpixmapregionselectorwidget.h
 include/KF5/KWidgetsAddons/kpixmapsequence.h
