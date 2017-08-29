@@ -1,0 +1,6 @@
+aptly is a swiss army knife for Debian repository management: it allows you to
+mirror remote repositories, manage local package repositories, take snapshots,
+pull new versions of packages along with dependencies, publish as Debian
+repository.
+
+WWW: https://www.aptly.info/
