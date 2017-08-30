@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	drm-next-kmod
-PORTVERSION=	g20170825
+PORTVERSION=	g20170829
 CATEGORIES=	graphics
 
 MAINTAINER=	jmd@FreeBSD.org
@@ -23,7 +23,7 @@ USES=		kmod uidfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	FreeBSDDesktop
 GH_PROJECT=	kms-drm
-GH_TAGNAME=	4ee5acb
+GH_TAGNAME=	fc90953
 
 .include <bsd.port.options.mk>
 
