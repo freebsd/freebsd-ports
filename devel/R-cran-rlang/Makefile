@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	rlang
-PORTVERSION=	0.1.1
+PORTVERSION=	0.1.2
 CATEGORIES=	devel
-DISTNAME=	${PORTNAME}_${DISTVERSION}
+DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Functions for Base Types and Core R and 'Tidyverse' Features
