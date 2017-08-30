@@ -1,0 +1,5 @@
+The Python Shapefile Library (pyshp) provides read and write support for the
+Esri Shapefile format. The Shapefile format is a popular Geographic Information
+System vector data format created by Esri.
+
+WWW: https://github.com/GeospatialPython/pyshp
