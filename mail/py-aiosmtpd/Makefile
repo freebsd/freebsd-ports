@@ -2,6 +2,7 @@
 
 PORTNAME=	aiosmtpd
 PORTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	mail python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,7 +12,7 @@ COMMENT=	Asyncio based SMTP server
 
 LICENSE=	APACHE20
 
-USES=		python:3
+USES=		python:3.5+
 USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>
