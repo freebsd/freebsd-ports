@@ -164,7 +164,7 @@ kyototycoon:*:214:214::0:0:kyototycoon user:/var/empty:/usr/sbin/nologin
 opendnssec:*:215:215::0:0:Opendnssec Pseudo User:/nonexistent:/usr/sbin/nologin
 nsd:*:216:216::0:0:NSD DNS Server:/nonexistent:/usr/sbin/nologin
 anvil:*:217:217::0:0:anvil certificate dropper:/var/db/anvil:/bin/sh
-# free: 218
+zap:*:218:218::0:0:zap user:/usr/local/zap:/bin/sh
 # free: 219
 bs:*:220:220::0:0:Big Sister:/usr/local/bigsister:/bin/sh
 # free: 221

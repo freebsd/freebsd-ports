@@ -159,7 +159,7 @@ kyototycoon:*:214:
 opendnssec:*:215:
 nsd:*:216:
 anvil:*:217:
-# free: 218
+zap:*:218:
 # free: 219
 bs:*:220:
 # free: 221
