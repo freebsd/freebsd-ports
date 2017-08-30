@@ -3,13 +3,14 @@
 
 PORTNAME=	gnatcoll
 PORTVERSION=	2016	# branch: gpl-for-gps-2016
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNAT Component Collection from Adacore
 
 LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/COPYING3
 
 BUILD_DEPENDS=	gprbuild:devel/gprbuild \
 		gnat_util>=20140422:lang/gnat_util
@@ -17,12 +18,14 @@ LIB_DEPENDS=	libgtkada.so:x11-toolkits/gtkada3 \
 		libgmp.so:math/gmp
 RUN_DEPENDS=	gnat_util>=20140422:lang/gnat_util
 
-USES=		ada gmake pkgconfig python
-USE_GNOME=	pygobject3
 USE_GITHUB=	yes
 GH_ACCOUNT=	AdaCore
 GH_PROJECT=	gprbuild:libgpr
 GH_TAGNAME=	858f72c a2e9066:libgpr
+
+USES=		ada gmake pkgconfig python shebangfix
+SHEBANG_FILES=	src/dborm.py
+USE_GNOME=	pygobject3
 
 PYCOMPILE=	${PREFIX}/lib/${PYTHON_VERSION}/compileall.py
 GNU_CONFIGURE=	yes
@@ -60,8 +63,6 @@ PGSQL_USES=		pgsql
 PGSQL_CONFIGURE_ON=	--with-postgresql=${PREFIX}
 PGSQL_CONFIGURE_OFF=	--without-postgresql
 
-.include <bsd.port.options.mk>
-
 post-patch:
 	@${REINPLACE_CMD} -e "s|@PREFIX@|${PREFIX}|g" \
 	    ${WRKSRC}/src/gnatcoll_readline.gpr.in
@@ -82,8 +83,8 @@ post-install:
 	${RM} -r ${STAGEDIR}${DOCSDIR}/html/_sources
 	${RM} -r ${STAGEDIR}${PREFIX}/share/gps
 	${RM} -r ${STAGEDIR}${EXAMPLESDIR}/library
-.if ! ${PORT_OPTIONS:MEXAMPLES}
+
+post-install-EXAMPLES-off:
 	${RM} -r ${STAGEDIR}${EXAMPLESDIR}
-.endif
 
 .include <bsd.port.mk>
