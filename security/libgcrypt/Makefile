@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libgcrypt
-PORTVERSION=	1.8.0
+PORTVERSION=	1.8.1
 CATEGORIES=	security
 MASTER_SITES=	GNUPG
 
@@ -40,7 +40,6 @@ CONFIGURE_ARGS+=	--disable-asm
 post-patch:
 	@${RM} ${WRKSRC}/doc/gcrypt.info*
 	@${REINPLACE_CMD} -e 's|ALIGN (3)|ALIGN (2)|g' ${WRKSRC}/mpi/i386/*.S
-	@${REINPLACE_CMD} -e 's|-O0/'\''|-O0/g'\''|g' ${WRKSRC}/random/Makefile.*
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/${PORTNAME}.so
