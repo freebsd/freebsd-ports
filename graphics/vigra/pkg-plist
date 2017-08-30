@@ -183,6 +183,7 @@ lib/vigra/vigra-targets.cmake
 %%NUMPY%%%%PYTHON_SITELIBDIR%%/vigra/arraytypes.py
 %%NUMPY%%%%PYTHON_SITELIBDIR%%/vigra/colors.so
 %%NUMPY%%%%PYTHON_SITELIBDIR%%/vigra/filters.so
+%%NUMPY%%%%PYTHON_SITELIBDIR%%/vigra/fourier.so
 %%NUMPY%%%%PYTHON_SITELIBDIR%%/vigra/geometry.so
 %%NUMPY%%%%PYTHON_SITELIBDIR%%/vigra/impex.so
 %%NUMPY%%%%PYTHON_SITELIBDIR%%/vigra/learning.so
