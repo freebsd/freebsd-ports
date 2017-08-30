@@ -4,7 +4,7 @@
 PORTNAME=	bacula
 CATEGORIES=	net-mgmt
 PKGNAMEPREFIX=	nagios-check_
-PKGNAMESUFFIX=	#
+PKGNAMESUFFIX=	9
 
 MAINTAINER=	dvl@FreeBSD.org
 COMMENT=	Nagios plugin for Bacula
