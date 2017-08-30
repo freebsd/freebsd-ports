@@ -5,7 +5,7 @@
 # Vadim Zhukov <zhuk@openbsd.org>
 
 PORTNAME=	intellij
-PORTVERSION=	2017.2.2
+PORTVERSION=	2017.2.3
 CATEGORIES=	java devel
 MASTER_SITES=	https://download.jetbrains.com/idea/ \
 		http://download.jetbrains.com/idea/
@@ -28,7 +28,7 @@ NO_ARCH=	yes
 NO_BUILD=	yes
 INSTALL_TARGET=	install-strip
 
-WRKSRC=		${WRKDIR}/idea-IC-172.3757.52
+WRKSRC=		${WRKDIR}/idea-IC-172.3968.16
 
 .include "common.mk"
 
