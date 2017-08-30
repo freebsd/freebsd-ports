@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	shiny
-PORTVERSION=	1.0.3
+PORTVERSION=	1.0.5
 CATEGORIES=	www
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -12,7 +12,7 @@ COMMENT=	Web Application Framework for R
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-CRAN_DEPENDS=	R-cran-httpuv>=1.3.3:www/R-cran-httpuv \
+CRAN_DEPENDS=	R-cran-httpuv>=1.3.5:www/R-cran-httpuv \
 		R-cran-mime>=0.3:misc/R-cran-mime \
 		R-cran-jsonlite>=0.9.16:converters/R-cran-jsonlite \
 		R-cran-xtable>0:textproc/R-cran-xtable \
