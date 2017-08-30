@@ -2,18 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	chromium
-PORTVERSION=	59.0.3071.115
-PORTREVISION=	2
+PORTVERSION=	60.0.3112.101
 CATEGORIES=	www
-MASTER_SITES=	https://commondatastorage.googleapis.com/chromium-browser-official/:source1 \
-		LOCAL/cpm:source2
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:source1 \
-		${PORTNAME}-freetype2${EXTRACT_SUFX}:source2
+MASTER_SITES=	https://commondatastorage.googleapis.com/chromium-browser-official/
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	chromium@FreeBSD.org
 COMMENT=	Google web browser based on WebKit
 
-LICENSE=	BSD3CLAUSE LGPL21 MPL
+LICENSE=	BSD3CLAUSE LGPL21 MPL11
 LICENSE_COMB=	multi
 
 BUILD_DEPENDS=	gperf:devel/gperf \
@@ -48,7 +45,6 @@ LIB_DEPENDS=	libspeechd.so:accessibility/speech-dispatcher \
 		libwebp.so:graphics/webp \
 		libavcodec.so:multimedia/ffmpeg \
 		libcups.so:print/cups \
-		libfreetype.so:print/freetype2 \
 		libharfbuzz.so:print/harfbuzz \
 		libharfbuzz-icu.so:print/harfbuzz-icu \
 		libgcrypt.so:security/libgcrypt \
@@ -71,7 +67,7 @@ USE_LDCONFIG=	${DATADIR}
 USE_PERL5=	build
 USE_XORG=	scrnsaverproto x11 xcb xcomposite xcursor xext xdamage xfixes xi \
 		xproto xrandr xrender xscrnsaver xtst
-USE_GNOME=	atk dconf glib20 gtk20 gtk30 libxml2 libxslt
+USE_GNOME=	atk dconf glib20 gtk30 libxml2 libxslt
 MAKE_ARGS=	-C out/${BUILDTYPE}
 SHEBANG_FILES=	chrome/tools/build/linux/chrome-wrapper
 ALL_TARGET=	chrome
@@ -88,7 +84,6 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch-clang
 # replace_gn_files.py script, some parts just turned on/off for target host
 # OS "target_os == is_bsd", like libusb, libpci.
 GN_ARGS+=	clang_use_chrome_plugins=false \
-		enable_media_router=true \
 		enable_nacl=false \
 		enable_one_click_signin=true \
 		enable_remoting=false \
@@ -98,9 +93,9 @@ GN_ARGS+=	clang_use_chrome_plugins=false \
 		toolkit_views=true \
 		treat_warnings_as_errors=false \
 		use_allocator="none" \
+		use_allocator_shim=false \
 		use_aura=true \
 		use_cups=true \
-		use_experimental_allocator_shim=false \
 		use_gtk3=true \
 		use_lld=true \
 		use_sysroot=false \
@@ -169,8 +164,7 @@ PULSEAUDIO_VARS_OFF=	GN_ARGS+=use_pulseaudio=false
 
 # With SNDIO=on we exclude audio_manager_linux from the build (see
 # media/audio/BUILD.gn) and use audio_manager_openbsd which does not
-# support falling back to ALSA.  In theory it supports falling back to
-# PulseAudio, but this is untested.
+# support falling back to ALSA or PulseAudio.
 SNDIO_PREVENTS=		ALSA PULSEAUDIO
 SNDIO_LIB_DEPENDS=	libsndio.so:audio/sndio
 SNDIO_VARS=		GN_ARGS+=use_sndio=true
@@ -178,7 +172,7 @@ SNDIO_VARS_OFF=		GN_ARGS+=use_sndio=false
 
 .include "Makefile.tests"
 TEST_ALL_TARGET=	${TEST_TARGETS}
-TEST_DISTFILES=		${PORTNAME}-${DISTVERSION}-testdata${EXTRACT_SUFX}:source1
+TEST_DISTFILES=		${PORTNAME}-${DISTVERSION}-testdata${EXTRACT_SUFX}
 
 .include <bsd.port.options.mk>
 
@@ -198,9 +192,6 @@ pre-everything::
 	@${ECHO_MSG} "and ${WANTSPACE}."
 	@${ECHO_MSG}
 
-post-extract:
-	@${MV} ${WRKDIR}/freetype2 ${WRKSRC}/third_party/freetype/src
-
 post-patch-SNDIO-on:
 	@${MKDIR} ${WRKSRC}/media/audio/sndio ${WRKSRC}/media/audio/openbsd
 	@${CP} ${FILESDIR}/sndio_output.* ${WRKSRC}/media/audio/sndio
@@ -209,7 +200,7 @@ post-patch-SNDIO-on:
 
 pre-configure:
 	# We used to remove bundled libraries to be sure that chromium uses
-	# system libraries and not shippen ones.
+	# system libraries and not shipped ones.
 	# cd ${WRKSRC} && ${PYTHON_CMD} \
 	#./build/linux/unbundle/remove_bundled_libraries.py [list of preserved]
 	cd ${WRKSRC} && ${PYTHON_CMD} \
@@ -225,8 +216,8 @@ do-configure:
 		gen --args='${GN_ARGS}' out/${BUILDTYPE}
 
 	# Setup nodejs dependency
-	@${MKDIR} ${WRKSRC}/third_party/node/linux/node-linux-x64/bin
-	${LN} -sf ${LOCALBASE}/bin/node ${WRKSRC}/third_party/node/linux/node-linux-x64/bin/node
+	@${MKDIR} ${WRKSRC}/third_party/node/freebsd/node-freebsd-x64/bin
+	${LN} -sf ${LOCALBASE}/bin/node ${WRKSRC}/third_party/node/freebsd/node-freebsd-x64/bin/node
 
 do-test-TEST-on:
 .for t in ${TEST_TARGETS}

@@ -1,6 +1,6 @@
---- device/battery/BUILD.gn.orig	2017-06-05 19:03:07 UTC
-+++ device/battery/BUILD.gn
-@@ -48,7 +48,7 @@ if (!is_android) {
+--- services/device/battery/BUILD.gn.orig	2017-08-10 00:52:26.222691000 +0200
++++ services/device/battery/BUILD.gn	2017-08-10 00:54:24.988698000 +0200
+@@ -51,7 +51,7 @@
        ]
      }
  

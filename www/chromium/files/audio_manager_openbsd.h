@@ -17,10 +17,9 @@ namespace media {
 
 class MEDIA_EXPORT AudioManagerOpenBSD : public AudioManagerBase {
  public:
-  AudioManagerOpenBSD(
-      scoped_refptr<base::SingleThreadTaskRunner> task_runner,
-      scoped_refptr<base::SingleThreadTaskRunner> worker_task_runner,
-      AudioLogFactory* audio_log_factory);
+  AudioManagerOpenBSD(std::unique_ptr<AudioThread> audio_thread,
+                   AudioLogFactory* audio_log_factory);
+  ~AudioManagerOpenBSD() override;
 
   // Implementation of AudioManager.
   bool HasAudioOutputDevices() override;
@@ -50,8 +49,6 @@ class MEDIA_EXPORT AudioManagerOpenBSD : public AudioManagerBase {
       const LogCallback& log_callback) override;
 
  protected:
-  ~AudioManagerOpenBSD() override;
-
   AudioParameters GetPreferredOutputStreamParameters(
       const std::string& output_device_id,
       const AudioParameters& input_params) override;

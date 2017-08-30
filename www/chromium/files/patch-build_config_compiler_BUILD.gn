@@ -1,6 +1,6 @@
---- build/config/compiler/BUILD.gn.orig	2017-06-05 21:03:01.000000000 +0200
-+++ build/config/compiler/BUILD.gn	2017-06-13 16:28:04.062660000 +0200
-@@ -37,7 +37,7 @@
+--- build/config/compiler/BUILD.gn.orig	2017-08-03 00:05:04.000000000 +0200
++++ build/config/compiler/BUILD.gn	2017-08-10 00:34:22.540754000 +0200
+@@ -45,7 +45,7 @@
    # only two architectures that are currently checked in). Turn this off when
    # you are using a custom toolchain and need to control -B in cflags.
    linux_use_bundled_binutils =
@@ -9,7 +9,7 @@
        (current_cpu == "x64" || current_cpu == "x86")
    binutils_path = rebase_path("//third_party/binutils/Linux_x64/Release/bin",
                                root_build_dir)
-@@ -156,7 +156,7 @@
+@@ -166,7 +166,7 @@
      configs += [ "//build/config/win:compiler" ]
    } else if (is_android) {
      configs += [ "//build/config/android:compiler" ]
@@ -18,52 +18,26 @@
      configs += [ "//build/config/linux:compiler" ]
    } else if (is_nacl) {
      configs += [ "//build/config/nacl:compiler" ]
-@@ -207,7 +207,7 @@
- 
+@@ -219,7 +219,7 @@
      # Linker warnings.
      if (fatal_linker_warnings && !(is_chromeos && current_cpu == "arm") &&
--        !(is_android && use_order_profiling) && !is_mac && !is_ios) {
-+        !(is_android && use_order_profiling) && !is_mac && !is_ios && !is_bsd) {
+         !(is_android && use_order_profiling) && !is_mac && !is_ios &&
+-        current_os != "aix") {
++        current_os != "aix" && !is_bsd) {
        # TODO(jochen): Enable this on chromeos on arm. http://crbug.com/356580
        # TODO(lizeb,pasko): Fix link errors when linking with order_profiling=1
        # crbug.com/485542
-@@ -304,7 +304,7 @@
+@@ -316,7 +316,7 @@
  
    # Linux/Android common flags setup.
    # ---------------------------------
--  if (is_linux || is_android) {
-+  if (is_linux || is_bsd || is_android) {
+-  if (is_linux || is_android || is_fuchsia) {
++  if (is_linux || is_android || is_bsd || is_fuchsia) {
      if (use_pic) {
        cflags += [ "-fPIC" ]
        ldflags += [ "-fPIC" ]
-@@ -319,7 +319,7 @@
-       "-Wl,-z,relro",
-     ]
-     if (!using_sanitizer) {
--      if (!use_cfi_diag) {
-+      if (!use_cfi_diag && !is_bsd) {
-         ldflags += [ "-Wl,-z,defs" ]
-       }
- 
-@@ -429,14 +429,14 @@
-   # clang-cl (used if is_win) doesn't expose this flag.
-   # Currently disabled for nacl since its toolchain lacks this flag (too old).
-   # TODO(zforman): Once nacl's toolchain is updated, remove check.
--  if (is_clang && is_linux && strip_absolute_paths_from_debug_symbols) {
-+  if (is_clang && (is_linux || is_bsd) && strip_absolute_paths_from_debug_symbols) {
-     absolute_path = rebase_path("//.")
-     cflags += [ "-fdebug-prefix-map=$absolute_path=." ]
-   }
- 
-   # C++11 compiler flags setup.
-   # ---------------------------
--  if (is_linux || is_android || (is_nacl && is_clang)) {
-+  if (is_linux || is_bsd || is_android || (is_nacl && is_clang)) {
-     # gnu++11 instead of c++11 is needed because some code uses typeof() (a
-     # GNU extension).
-     # TODO(thakis): Eventually switch this to c++11 instead,
 @@ -493,7 +493,7 @@
-       ]
+       ldflags += [ "-flto" ]
  
        # Apply a lower LTO optimization level as the default is too slow.
 -      if (is_linux) {
@@ -71,16 +45,16 @@
          if (use_lld) {
            ldflags += [ "-Wl,--lto-O1" ]
          } else {
-@@ -513,7 +513,7 @@
-     # targeting ARM, without this flag, LTO produces a .text section that is
-     # larger than the maximum call displacement, preventing the linker from
-     # relocating calls (http://llvm.org/PR22999).
+@@ -516,7 +516,7 @@
+     # Also, when targeting ARM, without this flag, LTO produces a .text section
+     # that is larger than the maximum call displacement, preventing the linker
+     # from relocating calls (http://llvm.org/PR22999).
 -    if (is_linux) {
 +    if (is_linux || is_bsd) {
-       ldflags += [ "-Wl,-plugin-opt,-function-sections" ]
-     }
-   }
-@@ -781,7 +781,7 @@
+       if (use_lld) {
+         ldflags += [
+           "-Wl,-mllvm,-function-sections",
+@@ -794,7 +794,7 @@
  #   configs -= [ "//build/config/compiler:clang_stackrealign" ]
  # See https://crbug.com/556393 for details of where it must be avoided.
  config("clang_stackrealign") {
@@ -89,7 +63,7 @@
      cflags = [
        # Align the stack on 16-byte boundaries, http://crbug.com/418554.
        "-mstack-alignment=16",
-@@ -835,7 +835,7 @@
+@@ -848,7 +848,7 @@
    # smaller.
    if (is_win) {
      configs += [ "//build/config/win:runtime_library" ]
@@ -98,7 +72,7 @@
      configs += [ "//build/config/linux:runtime_library" ]
    } else if (is_ios) {
      configs += [ "//build/config/ios:runtime_library" ]
-@@ -1097,7 +1097,7 @@
+@@ -1111,7 +1111,7 @@
          "-Wno-address-of-packed-member",
  
          # TODO(hans): https://crbug.com/681136
@@ -107,25 +81,16 @@
  
          # TODO(thakis ): https://crbug.com/683349
          "-Wno-user-defined-warnings",
-@@ -1137,7 +1137,7 @@
+@@ -1162,7 +1162,7 @@
      ]
  
      if (!is_debug && !using_sanitizer &&
--        (!is_linux || !is_clang || is_official_build)) {
-+        (!is_linux || !is_bsd || !is_clang || is_official_build)) {
+-        (!is_linux || !is_clang || is_official_build) &&
++        (!is_linux || !is_bsd || !is_clang || is_official_build) &&
+         current_cpu != "s390x" && current_cpu != "s390" &&
+         current_cpu != "ppc64" && current_cpu != "ppc64") {
        # _FORTIFY_SOURCE isn't really supported by Clang now, see
-       # http://llvm.org/bugs/show_bug.cgi?id=16821.
-       # It seems to work fine with Ubuntu 12 headers though, so use it in
-@@ -1196,7 +1196,7 @@
-     ]
-   }
- 
--  if (is_linux || is_android) {
-+  if (is_linux || is_bsd || is_android) {
-     cflags_cc += [
-       # Don't warn about hash_map in third-party code.
-       "-Wno-deprecated",
-@@ -1644,7 +1644,7 @@
+@@ -1669,7 +1669,7 @@
          "-g2",
        ]
      } else {

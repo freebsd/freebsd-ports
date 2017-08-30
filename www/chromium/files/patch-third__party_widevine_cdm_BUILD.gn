@@ -1,6 +1,6 @@
---- third_party/widevine/cdm/BUILD.gn.orig	2017-06-05 19:03:29 UTC
-+++ third_party/widevine/cdm/BUILD.gn
-@@ -36,7 +36,7 @@ if (is_android) {
+--- third_party/widevine/cdm/BUILD.gn.orig	2017-07-25 21:05:18.000000000 +0200
++++ third_party/widevine/cdm/BUILD.gn	2017-08-02 16:23:19.012976000 +0200
+@@ -26,7 +26,7 @@
      widevine_cdm_version_h_file =
          "chromeos/$widevine_arch/widevine_cdm_version.h"
      widevine_cdm_binary_files = [ "chromeos/$widevine_arch/libwidevinecdm.so" ]
@@ -9,21 +9,21 @@
      widevine_cdm_version_h_file = "linux/$widevine_arch/widevine_cdm_version.h"
      widevine_cdm_binary_files = [ "linux/$widevine_arch/libwidevinecdm.so" ]
    } else if (is_win) {
-@@ -208,7 +208,7 @@ if ((is_chrome_branded || enable_widevine) && enable_p
+@@ -165,7 +165,7 @@
        ":widevinecdm",
      ]
  
--    if (is_linux && !use_stub_cdm_for_chrome) {
-+    if ((is_linux || is_bsd) && !use_stub_cdm_for_chrome) {
+-    if (is_linux) {
++    if (is_linux || is_bsd) {
        ldflags =
            [ rebase_path("$root_out_dir/$widevine_cdm_path/libwidevinecdm.so",
                          root_build_dir) ]
-@@ -231,7 +231,7 @@ if ((is_chrome_branded || enable_widevine) && enable_p
+@@ -188,7 +188,7 @@
  # This target exists for tests to depend on that pulls in a runtime dependency
  # on the license server.
  source_set("widevine_test_license_server") {
 -  if (is_chrome_branded && is_linux) {
-+  if (is_chrome_branded && is_linux || is_bsd) {
++  if (is_chrome_branded && (is_linux || is_bsd)) {
      deps = [
        # TODO(jrummell)
        # This target should be removed and targets should have data_deps on this target:
