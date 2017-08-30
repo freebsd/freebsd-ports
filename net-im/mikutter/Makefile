@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mikutter
-PORTVERSION=	3.5.7
+PORTVERSION=	3.5.9
 CATEGORIES=	net-im ruby
 MASTER_SITES=	http://mikutter.hachune.net/bin/ \
 		LOCAL/tota/${PORTNAME}
@@ -14,22 +14,23 @@ COMMENT=	Simple, powerful, and moeful Twitter client
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-gtk2>=3.0.8:x11-toolkits/rubygem-gtk2 \
+RUN_DEPENDS=	rubygem-gtk2>=3.1.8:x11-toolkits/rubygem-gtk2 \
 		rubygem-cairo>=1.12.9:graphics/rubygem-cairo \
-		rubygem-addressable>=2.5.0:www/rubygem-addressable \
+		rubygem-addressable>=2.5.1:www/rubygem-addressable \
 		rubygem-delayer>=0.0.2:devel/rubygem-delayer \
 		rubygem-delayer-deferred>=1.0.4:devel/rubygem-delayer-deferred \
 		rubygem-gettext>=3.0.9:devel/rubygem-gettext \
 		rubygem-gio2>=3.1.0:devel/rubygem-gio2 \
 		rubygem-httpclient>=2.7.1:www/rubygem-httpclient \
 		rubygem-instance_storage>=1.0.0:devel/rubygem-instance_storage \
-		rubygem-json_pure1>=1.8:devel/rubygem-json_pure1 \
+		rubygem-json_pure1>=1.8.6:devel/rubygem-json_pure1 \
 		rubygem-locale>=2.1.1:devel/rubygem-locale \
-		rubygem-memoist>=0.15.0:devel/rubygem-memoist \
+		rubygem-memoist>=0.16.0:devel/rubygem-memoist \
 		rubygem-moneta>=0.7:devel/rubygem-moneta \
 		rubygem-nokogiri>=1.6.7:textproc/rubygem-nokogiri \
-		rubygem-oauth>=0.5.1:net/rubygem-oauth \
+		rubygem-oauth>=0.5.3:net/rubygem-oauth \
 		rubygem-pluggaloid>=1.1.1:devel/rubygem-pluggaloid \
+		rubygem-public_suffix>=2.0.5:dns/rubygem-public_suffix \
 		rubygem-ruby-hmac>=0.4.0:security/rubygem-ruby-hmac \
 		rubygem-text>=1.3.1:textproc/rubygem-text \
 		rubygem-totoridipjp>=0.1.0:www/rubygem-totoridipjp \
