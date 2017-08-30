@@ -1,0 +1,6 @@
+The lazr.delegates package makes it easy to write objects that delegate
+behavior to another object. The new object adds some property or behavior on
+to the other object, while still providing the underlying interface, and
+delegating behavior.
+
+WWW: https://launchpad.net/lazr.delegates
