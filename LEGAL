@@ -99,7 +99,6 @@ giftool*		graphics/giftool	Do not redistribute for profit
 gishdemo-*		games/gish-demo		(c) Copyright 2004 Chronic Logic All rights reserved
 gnome2/mcitymicrogui-default* x11-themes/metacity-theme-microgui Themes may contain artwork not done by the author.  Keep FreeBSD safe if the theme author violated copyrights
 GoogleEarthLinux-*	astro/google-earth	Not really sure about the redistribution terms
-gpu-firmware-kmod-*	graphics/gpu-firmware-kmod	Distribution in binary form without license file not allowed.
 groupoffice-com-*	www/groupoffice		Free for personal use only
 gsview*			print/gsview		Can only be distributed for free
 HeroesOfMightAndMagic-*	games/HeroesOfMightAndMagic	Software is commercial
