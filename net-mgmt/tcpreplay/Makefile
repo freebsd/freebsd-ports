@@ -4,7 +4,7 @@
 PORTNAME=	tcpreplay
 PORTVERSION=	4.2.6
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	ehaupt@FreeBSD.org
@@ -29,8 +29,8 @@ CONFIGURE_ARGS=	--program-transform-name='s|.*\(tcp.*\)|\1|' \
 CONFIGURE_ARGS+=	--disable-local-libopts --disable-libopts-install
 
 OPTIONS_DEFINE=	LIBPCAP_BASE LIBPCAP_PORTS
-LIBPCAP_BASE=	Build with libpcap from the base OS
-LIBPCAP_PORTS=	Build with net/libpcap
+LIBPCAP_BASE_DESC=	Build with libpcap from the base OS
+LIBPCAP_PORTS_DESC=	Build with net/libpcap
 
 OPTIONS_SINGLE=	SG1
 OPTIONS_SINGLE=	LIBPCAP_BASE LIBPCAP_PORTS
