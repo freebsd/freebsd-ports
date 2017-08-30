@@ -4380,6 +4380,7 @@
     SUBDIR += py-flask-babel
     SUBDIR += py-flexmock
     SUBDIR += py-flufl.i18n
+    SUBDIR += py-flufl.lock
     SUBDIR += py-foolscap
     SUBDIR += py-fortran
     SUBDIR += py-freebsd
