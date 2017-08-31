@@ -25,7 +25,7 @@ OPTIONS_DEFAULT=	INFO MAN NETHACK XTERM_256 SOCKETS SYSTEM_SCREENRC \
 			NCURSES_DEFAULT
 OPTIONS_SINGLE=		IPC NCURSES
 OPTIONS_SINGLE_IPC=	SOCKETS NAMED_PIPES
-OPTIONS_SINGLE_NCURSES=	NCURSES_DEFAULT NCURSES_BASE NCURSES_PORTS
+OPTIONS_SINGLE_NCURSES=	NCURSES_DEFAULT NCURSES_BASE NCURSES_PORT
 INFO_DESC=		Build and install info documentation
 MAN_DESC=		Build and install man pages
 NETHACK_DESC=		Enable nethack-style messages
@@ -36,11 +36,11 @@ NAMED_PIPES_DESC=	Use legacy (4.0.3) named pipes for IPC (override)
 SYSTEM_SCREENRC_DESC=	Install system screenrc with helpful status line
 NCURSES_DEFAULT_DESC=	Depend on ncurses (ports if installed, otherwise base)
 NCURSES_BASE_DESC=	Depend on ncurses in base
-NCURSES_PORTS_DESC=	Depend on devel/ncurses in ports
+NCURSES_PORT_DESC=	Depend on devel/ncurses in ports
 
 NCURSES_DEFAULT_USES=	ncurses
 NCURSES_BASE_USES=	ncurses:base
-NCURSES_PORTS_USES=	ncurses:ports
+NCURSES_PORT_USES=	ncurses:port
 
 OPTIONS_SUB=
 
