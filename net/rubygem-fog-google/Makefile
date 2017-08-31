@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fog-google
-PORTVERSION=	0.5.4
+PORTVERSION=	0.5.5
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
