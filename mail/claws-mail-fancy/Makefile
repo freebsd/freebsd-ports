@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fancy
-PORTREVISION=	1
+PORTREVISION=	0
 
 COMMENT=	Webkit based HTML renderer plugin for Claws Mail
 
