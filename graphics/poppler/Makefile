@@ -118,7 +118,7 @@ PLIST_SUB+=	CURL="@comment "
 CONFIGURE_ARGS+=--enable-libopenjpeg=openjpeg2
 LIB_DEPENDS+=	libopenjp2.so:graphics/openjpeg
 .else
-CONFIGURE_ARGS+=--disable-libopenjpeg
+CONFIGURE_ARGS+=--enable-libopenjpeg=none
 .endif
 .endif # end of options
 
