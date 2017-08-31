@@ -20,7 +20,7 @@ CONFLICTS_INSTALL=	haproxy-[1234567890]\*
 USES=		cpe gmake
 USE_RC_SUBR=	haproxy
 
-DEVICEATLAS_VERSION=	2.1.2_1
+DEVICEATLAS_VERSION=	2.1.2_2
 DEVICEATLAS_DISTFILE=	deviceatlas-enterprise-c-${DEVICEATLAS_VERSION}
 DEVICEATLAS_REGISTRATION_URL=	https://deviceatlas.com/deviceatlas-haproxy-module
 
