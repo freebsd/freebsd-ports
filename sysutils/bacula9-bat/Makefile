@@ -7,7 +7,7 @@ PKGNAMESUFFIX=	9-bat
 COMMENT=	Network backup solution (GUI)
 
 LIB_DEPENDS+=	libqwt.so:x11-toolkits/qwt5 \
-		libbac.so:sysutils/bacula-client
+		libbac.so:sysutils/bacula9-client
 
 USES=		pkgconfig
 USE_QT4=	qmake_build uic_build moc_build rcc_build
@@ -16,7 +16,7 @@ WITH_BAT=	yes
 PLIST=		${.CURDIR}/pkg-plist
 MAKE_ENV+=	MAKEOBJDIRPREFIX=/
 
-MASTERDIR=	${.CURDIR}/../../sysutils/bacula-server
+MASTERDIR=	${.CURDIR}/../../sysutils/bacula9-server
 
 CONFIGURE_ARGS+=	--enable-bat \
 			--with-qwt=${LOCALBASE}/lib \
