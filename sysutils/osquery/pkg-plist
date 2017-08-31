@@ -19,6 +19,7 @@ include/osquery/sql.h
 include/osquery/status.h
 include/osquery/system.h
 include/osquery/tables.h
+include/osquery/query.h
 lib/libosquery.a
 sbin/osqueryd
 @sample etc/osquery.conf.sample
