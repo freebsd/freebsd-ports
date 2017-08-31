@@ -1,5 +1,5 @@
---- makefile.orig	2001-03-23 11:44:58.000000000 +0100
-+++ makefile	2016-11-19 13:49:38.970838000 +0100
+--- makefile.orig	2001-03-23 10:44:58 UTC
++++ makefile
 @@ -50,15 +50,15 @@
  # -DUSE_SELECT to use select() system call
  # -DUSE_NBIO   to use non-blocking read()
@@ -21,17 +21,17 @@
  DBG     = -O
  RM      = rm -f
  
-@@ -79,7 +79,8 @@
+@@ -79,7 +79,8 @@ default:
  	@echo "where <system> can be:"
  	@echo "	386bsd, 3b1, 3b1_asm, aix370, aix386, amix-68k-gcc, apollo,"
  	@echo "	apollo-gcc, atari,aux(*), aux-gcc, bsd, bsdgcc, convexos,"
 -	@echo "	dgux, djgpp, encore, freebsd, hpux-68k(*), hpux-68k-ansi,"
 +	@echo "	dgux, djgpp, encore, hpux-68k(*), hpux-68k-ansi,"
-+	@echo "	freebsd-{alpha,i386,sparc64,ia64,amd64,powerpc,armv6,mips,mips64},"
++	@echo "	freebsd-{alpha,i386,sparc64,ia64,amd64,powerpc,armv6,armv7,mips,mips64},"
  	@echo "	hpux-68k-gcc, hpux-pa(*), hpux-pa-ansi, hpux-pa-gcc, hpux9-pa-ansi,"
  	@echo "	irix, irix_asm, isc, isc_asm, linux, linux-aout, linux-68k,"
  	@echo "	machten, mach_386, mips-ultrix, netbsd, netbsd_68k, newsasm,"
-@@ -175,11 +176,54 @@
+@@ -175,9 +176,56 @@ linux-68k:
  	$(MAKE) all CC=gcc LD=gcc \
  	CFLAGS="$(RSAINCDIR) -O2 -DHIGHFIRST -DUNIX -DPORTABLE -DIDEA32"
  
@@ -40,8 +40,8 @@
  	$(MAKE) all LD="$(CC) -s" OBJS_EXT="_80386.o _zmatch.o" \
 -	CFLAGS="$(RSAINCDIR) -O2 -fno-strength-reduce -DUNIX -DIDEA32 -DASM \
 +	CFLAGS="$(RSAINCDIR) $(OS_CFLAGS) -DUNIX -DIDEA32 -DASM \
- 	-DMAX_NAMELEN=255"
- 
++	-DMAX_NAMELEN=255"
++
 +freebsd-alpha:
 +	$(MAKE) all LD="$(CC) -s" \
 +	CFLAGS="$(RSAINCDIR) $(OS_CFLAGS) -DPORTABLE -DUNIX -DIDEA32 \
@@ -68,6 +68,10 @@
 +	$(MAKE) all LD="$(CC) -s" \
 +	CFLAGS="$(RSAINCDIR) $(OS_CFLAGS) -DPORTABLE -DUNIX -DIDEA32 \
 +	-DMAX_NAMELEN=255"
++freebsd-armv7:
++	$(MAKE) all LD="$(CC) -s" \
++	CFLAGS="$(RSAINCDIR) $(OS_CFLAGS) -DPORTABLE -DUNIX -DIDEA32 \
++	-DMAX_NAMELEN=255"
 +freebsd-mips:
 +	$(MAKE) all LD="$(CC) -s" \
 +	CFLAGS="$(RSAINCDIR) $(OS_CFLAGS) -DPORTABLE -DUNIX -DIDEA32 \
@@ -83,8 +87,6 @@
 +freebsd-powerpc64:
 +	$(MAKE) all LD="$(CC) -s" \
 +	CFLAGS="$(RSAINCDIR) $(OS_CFLAGS) -DPORTABLE -DUNIX -DIDEA32 \
-+	-DMAX_NAMELEN=255"
-+
+ 	-DMAX_NAMELEN=255"
+ 
  386bsd:
- 	$(MAKE) all CC=gcc LD=gcc OBJS_EXT="_80386.o _zmatch.o" \
- 	CFLAGS="$(RSAINCDIR) -O -DUNIX -DIDEA32 -DASM -DMAX_NAMELEN=255"
