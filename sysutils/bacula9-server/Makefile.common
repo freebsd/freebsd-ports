@@ -6,7 +6,7 @@ post-build:
 .endif
 
 do-install:
-.if ${PKGNAMESUFFIX} == "-bat"
+.if ${PKGNAMESUFFIX} == "9-bat"
 # Install config files and preserve existing ones
 	${MKDIR} ${STAGEDIR}${ETCDIR}
 	${INSTALL_SCRIPT}  ${WRKSRC}/src/qt-console/bat.conf ${STAGEDIR}${PREFIX}/etc/bacula/bat.conf.sample
