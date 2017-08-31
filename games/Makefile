@@ -255,6 +255,7 @@
     SUBDIR += entombed
     SUBDIR += enygma
     SUBDIR += epiar
+    SUBDIR += epiphany-game
     SUBDIR += etracer
     SUBDIR += euchre
     SUBDIR += evilfinder
