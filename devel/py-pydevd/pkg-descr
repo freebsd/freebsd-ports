@@ -1,0 +1,5 @@
+The sources for the PyDev.Debugger (used in PyDev & PyCharm)
+
+It is available so that it can be installed for doing remote debugging.
+
+WWW: https://pypi.python.org/pypi/pydevd
