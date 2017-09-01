@@ -11,6 +11,8 @@ COMMENT=	English stemming implementation in Elixir
 
 LICENSE=	MIT
 
+BROKEN=		fails to build
+
 USES=		elixir
 USE_GITHUB=	yes
 GH_ACCOUNT=	fredwu
