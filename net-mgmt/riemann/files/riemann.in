@@ -30,9 +30,9 @@ rcvar=riemann_enable
 load_rc_config $name
 
 : ${riemann_enable="NO"}
-: ${riemann_user:="%%RIEMANN_USER%%"}
-: ${riemann_group:="%%RIEMANN_GROUP%%"}
-: ${riemann_config:="%%PREFIX%%/etc/riemann/riemann.config.sample"}
+: ${riemann_user:="riemann"}
+: ${riemann_group:="riemann"}
+: ${riemann_config:="%%ETCDIR%%/riemann/riemann.config"}
 : ${riemann_jarfile:="%%JAVAJARDIR%%/riemann.jar"}
 : ${riemann_java_home:="%%JAVA_HOME%%"}
 : ${riemann_min_mem:="256m"}
@@ -40,7 +40,7 @@ load_rc_config $name
 : ${riemann_java_classpath:=${riemann_jarfile}}
 : ${riemann_java_opts:=" -server \
 	-cp ${riemann_java_classpath} \
-        -Dapp=${name} \
+        -Dapp=riemann \
         -Xms${riemann_min_mem} \
         -Xmx${riemann_max_mem} \
         -Xss256k \
@@ -58,19 +58,20 @@ load_rc_config $name
         -XX:+UseParNewGC \
         -XX:CMSInitiatingOccupancyFraction=75 "}
 
-pidfile="%%RIEMANN_PIDFILE%%"
-command="/usr/sbin/daemon"
-command_args="-f -t ${name} -c -r -P ${pidfile} \
-    ${riemann_java_home}/bin/java \
-    ${riemann_java_opts} \
-    riemann.bin start ${riemann_config}"
-required_files="${java_cmd} ${riemann_config}"
+pidfile="/var/run/riemann.pid"
+start_precmd="install -o ${riemann_user} /dev/null ${pidfile}"
 
-riemann_prestart()
-{
-    	install -o ${riemann_user} /dev/null ${pidfile}
-}
-start_precmd="${name}_prestart"
+command="/usr/sbin/daemon"
+command_args=" \
+	-c \
+	-t riemann \
+	-r \
+	-P ${pidfile} \
+	${riemann_java_home}/bin/java \
+	${riemann_java_opts} \
+	riemann.bin start ${riemann_config}"
+
+required_files="${java_cmd} ${riemann_config}"
 
 # support SIGHUP to reload config file using pkill. parent pid
 # is that of daemon(8) and not of riemann's JVM instance
