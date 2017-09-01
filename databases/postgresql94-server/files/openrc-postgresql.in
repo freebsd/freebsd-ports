@@ -20,9 +20,7 @@
 : ${postgresql_class:="default"}
 : ${postgresql_profiles:=""}
 : ${postgresql_user:="%%PG_USER%%"}
-
-# Performs tilde expansion for home directory
-eval : ${postgresql_data:="~${postgresql_user}/data"}
+: ${postgresql_data:="/usr/home/${postgresql_user}/data"}
 
 # If you have any profiles defined in /etc/conf.d/postgres, e.g.:
 #   postgresql_profiles="profile1"
