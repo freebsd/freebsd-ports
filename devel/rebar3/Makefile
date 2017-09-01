@@ -1,15 +1,15 @@
 # $FreeBSD$
 
 PORTNAME=	rebar3
-PORTVERSION=	3.4.2
+PORTVERSION=	3.4.3
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES+=	LOCAL/olgeni:deps \
 		http://olgeni.olgeni.com/~olgeni/distfiles/:deps \
 		https://s3.amazonaws.com/s3.hex.pm/tarballs/:hex
-DISTFILES=	rebar3-cache-12${EXTRACT_SUFX}:deps
+DISTFILES=	rebar3-cache-13${EXTRACT_SUFX}:deps
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX} \
-		rebar3-cache-12${EXTRACT_SUFX}
+		rebar3-cache-13${EXTRACT_SUFX}
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Build tool for Erlang
@@ -33,15 +33,15 @@ ZSH_PLIST_FILES=	share/zsh/site-functions/_rebar3
 
 # from rebar.config
 REBAR_DEPS=	bbmustache-1.3.0 \
-		certifi-0.4.0 \
+		certifi-2.0.0 \
 		cf-0.2.2 \
-		cth_readable-1.2.6 \
+		cth_readable-1.3.0 \
 		erlware_commons-1.0.0 \
 		eunit_formatters-0.3.1 \
 		getopt-0.8.2 \
 		providers-1.6.0 \
 		relx-3.23.1 \
-		ssl_verify_fun-1.1.1
+		ssl_verify_fun-1.1.2
 
 .for _dep in ${REBAR_DEPS} ${REBAR_PLUGINS}
 DISTFILES+=	${_dep}.tar:hex

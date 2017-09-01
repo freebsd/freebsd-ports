@@ -29,10 +29,13 @@ LICENSE_NAME=	lsof
 LICENSE_FILE=	${FILESDIR}/LICENSE
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
+<<<<<<< HEAD
 EXPLICIT_SAFESTACK=		yes
 
 BROKEN_powerpc64=	fails to compile: sys/pcpu.h: error: size of array '__assert_0' is negative
 
+=======
+>>>>>>> upstream/master
 #Please leave the below line in for the next clean up.
 FIXUP_RELEASE=	YES
 .if defined(FIXUP_RELEASE)
