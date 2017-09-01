@@ -66,7 +66,7 @@ X11_LIB_DEPENDS+=	libXtst.so.6:x11/libXtst
 BUILD_DEPENDS+=	${UNZIP_CMD}:archivers/unzip
 .endif
 
-ONLY_FOR_ARCHS=	amd64 armv6 i386 powerpc powerpc64
+ONLY_FOR_ARCHS=	amd64 armv6 armv7 i386 powerpc powerpc64
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 DOS2UNIX_FILES= jdk/src/bsd/doc/man/appletviewer.1 \
@@ -214,8 +214,8 @@ JRE_IMAGEDIR=	${JDK_BUILDDIR}/images/j2sdk-image/jre
 .else
 JRE_IMAGEDIR=	${JDK_BUILDDIR}/images/j2re-image
 .endif
-JDK_JVMDIR=	lib/${ARCH:C/armv6.*/arm/:S/powerpc64/ppc64/}
-JDK_OSARCH=	bsd-${ARCH:S/amd64/x86_64/:C/armv6.*/arm/:S/i386/x86/:S/powerpc64/ppc64/}
+JDK_JVMDIR=	lib/${ARCH:C/armv.*/arm/:S/powerpc64/ppc64/}
+JDK_OSARCH=	bsd-${ARCH:S/amd64/x86_64/:C/armv.*/arm/:S/i386/x86/:S/powerpc64/ppc64/}
 INSTALLDIR=	${PREFIX}/${PKGBASE}
 
 NO_CCACHE=		yes
@@ -256,8 +256,10 @@ CONFIGURE_WRKSRC=	${WRKSRC}/common/autoconf
 
 OPTIONS_DEFINE=		ALSA POLICY TZUPDATE X11
 OPTIONS_DEFINE_armv6=	FPUHACK
+OPTIONS_DEFINE_armv7=	FPUHACK
 OPTIONS_DEFAULT=	ALSA POLICY TZUPDATE X11
 OPTIONS_DEFAULT_armv6=	FPUHACK
+OPTIONS_DEFAULT_armv7=	FPUHACK
 FPUHACK_DESC=		Hack denormalized numbers in flush-to-zero mode
 POLICY_DESC=		Install the Unlimited Strength Policy Files
 TZUPDATE_DESC=		Update the time zone data
@@ -315,13 +317,13 @@ CONFIGURE_ARGS+=	--with-tools-dir="${TOOLS_DIR:u:S/ /:/g}"
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "armv6" || ${ARCH} == "i386"
+.if ${ARCH} == armv6 || ${ARCH} == armv7 || ${ARCH} == i386
 # XXX We must limit max heap size for 32-bit targets.
 CONFIGURE_ARGS+=	--with-boot-jdk-jvmargs="-Xmx768m"
 MAKE_ENV+=	JAVADOC_CMD_MEM="-Xmx768m"
 .endif
 
-.if ${ARCH} == "amd64" || ${ARCH} == "i386" || ${ARCH} == "powerpc64"
+.if ${ARCH} == amd64 || ${ARCH} == i386 || ${ARCH} == powerpc64
 JDK_BUILD_JVM=	server
 .else
 JDK_BUILD_JVM=	zero
@@ -330,7 +332,7 @@ LIB_DEPENDS+=	libffi.so:devel/libffi
 
 BOOTSTRAP_JDKS=	${LOCALBASE}/openjdk8 \
 		${LOCALBASE}/openjdk7
-.if ${ARCH} == "armv6"
+.if ${ARCH} == armv6 || ${ARCH} == armv7
 BOOTSTRAP_JDKS+=	${LOCALBASE}/bootstrap-openjdk
 .endif
 
@@ -343,7 +345,7 @@ BOOTSTRAPJDKDIR=	${BJDK}
 
 # if no valid jdk found, set dependency
 .if !defined(BOOTSTRAPJDKDIR)
-.  if ${ARCH} == "armv6"
+.  if ${ARCH} == armv6 || ${ARCH} == armv7
 # bootstrap-openjdk is based on openjdk7 and can compile openjdk8
 BOOTSTRAPJDKDIR?=	${LOCALBASE}/bootstrap-openjdk
 BUILD_DEPENDS+=		${BOOTSTRAPJDKDIR}/bin/javac:java/bootstrap-openjdk
