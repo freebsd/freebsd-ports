@@ -13,6 +13,8 @@ COMMENT=	ClickHouse is an column-oriented database management system
 
 LICENSE=	APACHE20
 
+BROKEN=		fails to build
+
 BUILD_DEPENDS=	bash:shells/bash \
 				sparsehash>=0:devel/sparsehash
 LIB_DEPENDS=	libtcmalloc.so:devel/google-perftools \
