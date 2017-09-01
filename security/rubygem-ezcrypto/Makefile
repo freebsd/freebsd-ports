@@ -12,8 +12,6 @@ COMMENT=	Wrapper for the poorly documented OpenSSL ruby library
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
-BROKEN=		fails to patch
-
 NO_ARCH=	yes
 USE_RUBY=	yes
 USES=		gem
