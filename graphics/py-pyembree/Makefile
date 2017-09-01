@@ -12,6 +12,8 @@ COMMENT=	Python wrapper for Embree
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		fails to configure
+
 BUILD_DEPENDS=	cython:lang/cython \
 		${PYNUMPY}
 LIB_DEPENDS=	libembree.so:graphics/embree
