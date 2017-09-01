@@ -5557,6 +5557,7 @@
     SUBDIR += rubygem-mixlib-shellout
     SUBDIR += rubygem-mize
     SUBDIR += rubygem-mkrf
+    SUBDIR += rubygem-mmap2
     SUBDIR += rubygem-mocha
     SUBDIR += rubygem-moneta
     SUBDIR += rubygem-moneta06
