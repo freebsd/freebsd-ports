@@ -4,6 +4,7 @@
 PORTNAME=	qgis
 DISTVERSIONPREFIX=	final-
 DISTVERSION=	2_18_12
+PORTREVISION=	1
 CATEGORIES=	graphics geography
 
 MAINTAINER=	rhurlin@gwdg.de
@@ -23,7 +24,7 @@ LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libqwt.so:x11-toolkits/qwt5 \
 		libspatialindex.so:devel/spatialindex \
 		libspatialite.so:databases/spatialite \
-		libxerces-c-3.1.so:textproc/xerces-c3
+		libxerces-c.so:textproc/xerces-c3
 
 USES=		bison cmake compiler:features cpe desktop-file-utils \
 		execinfo fortran gmake pyqt:4 python:2.7 sqlite:3

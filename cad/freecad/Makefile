@@ -2,6 +2,7 @@
 
 PORTNAME=	FreeCAD
 DISTVERSION=	0.17.g20170616
+PORTREVISION=	1
 CATEGORIES=	cad
 
 MAINTAINER=	tj+freebsd_ports@a13.fr
@@ -23,7 +24,7 @@ LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libvtkFiltersTexture-6.2.so:math/vtk6 \
 		libTKernel.so:cad/opencascade \
 		libSoQt.so:x11-toolkits/soqt \
-		libxerces-c-3.1.so:textproc/xerces-c3 \
+		libxerces-c.so:textproc/xerces-c3 \
 		libboost_thread.so:devel/boost-libs \
 		libarea.so:devel/libarea \
 		libmed.so:french/med \
