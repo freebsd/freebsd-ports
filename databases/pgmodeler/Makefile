@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pgmodeler
-PORTVERSION=	0.8.2
-PORTREVISION=	2
+PORTVERSION=	0.9.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	databases
 
@@ -13,9 +12,9 @@ COMMENT=	PostgreSQL Database Modeler
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+USES=		compiler:c++11-lib execinfo pgsql qmake pkgconfig gmake
 USE_GITHUB=	yes
 
-USES=		compiler:c++11-lib execinfo pgsql qmake pkgconfig gmake
 USE_GNOME=	libxml2
 USE_QT5=	gui network sql svg printsupport widgets core buildtools_build uitools testlib
 USE_GL=		gl

@@ -54,6 +54,7 @@ lib/pgmodeler/plugins/xml2object/xml2object.png
 %%DATADIR%%/conf/dtd/relationships.dtd
 %%DATADIR%%/conf/dtd/snippets.dtd
 %%DATADIR%%/conf/dtd/source-code-highlight.dtd
+%%DATADIR%%/conf/dtd/sql-history.dtd
 %%DATADIR%%/conf/example.dbm
 %%DATADIR%%/conf/objects-style.conf
 %%DATADIR%%/conf/pattern-highlight.conf
@@ -62,6 +63,7 @@ lib/pgmodeler/plugins/xml2object/xml2object.png
 %%DATADIR%%/conf/pgmodeler_logo.png
 %%DATADIR%%/conf/relationships.conf
 %%DATADIR%%/conf/schemas/application-dbm.sch
+%%DATADIR%%/conf/schemas/commands.sch
 %%DATADIR%%/conf/schemas/connections.sch
 %%DATADIR%%/conf/schemas/desktop.sch
 %%DATADIR%%/conf/schemas/file.sch
@@ -71,6 +73,7 @@ lib/pgmodeler/plugins/xml2object/xml2object.png
 %%DATADIR%%/conf/schemas/relationships.sch
 %%DATADIR%%/conf/schemas/snippet.sch
 %%DATADIR%%/conf/schemas/snippets.sch
+%%DATADIR%%/conf/schemas/sql-history.sch
 %%DATADIR%%/conf/schemas/widget.sch
 %%DATADIR%%/conf/snippets.conf
 %%DATADIR%%/conf/sql-highlight.conf
@@ -86,6 +89,7 @@ lib/pgmodeler/plugins/xml2object/xml2object.png
 %%DATADIR%%/lang/pt_BR.ts
 %%DATADIR%%/lang/zh_CN.qm
 %%DATADIR%%/lang/zh_CN.ts
+%%DATADIR%%/samples/3dcitydb.dbm
 %%DATADIR%%/samples/demo.dbm
 %%DATADIR%%/samples/oldsample.dbm
 %%DATADIR%%/samples/pagila.dbm
@@ -133,6 +137,7 @@ lib/pgmodeler/plugins/xml2object/xml2object.png
 %%DATADIR%%/schemas/catalog/rule.sch
 %%DATADIR%%/schemas/catalog/schema.sch
 %%DATADIR%%/schemas/catalog/sequence.sch
+%%DATADIR%%/schemas/catalog/server.sch
 %%DATADIR%%/schemas/catalog/table.sch
 %%DATADIR%%/schemas/catalog/tablespace.sch
 %%DATADIR%%/schemas/catalog/template.sch
@@ -155,6 +160,7 @@ lib/pgmodeler/plugins/xml2object/xml2object.png
 %%DATADIR%%/schemas/sql/excelement.sch
 %%DATADIR%%/schemas/sql/extension.sch
 %%DATADIR%%/schemas/sql/function.sch
+%%DATADIR%%/schemas/sql/genericsql.sch
 %%DATADIR%%/schemas/sql/idxelement.sch
 %%DATADIR%%/schemas/sql/index.sch
 %%DATADIR%%/schemas/sql/language.sch
@@ -203,6 +209,7 @@ lib/pgmodeler/plugins/xml2object/xml2object.png
 %%DATADIR%%/schemas/xml/dtd/eventtrigger.dtd
 %%DATADIR%%/schemas/xml/dtd/extension.dtd
 %%DATADIR%%/schemas/xml/dtd/function.dtd
+%%DATADIR%%/schemas/xml/dtd/genericsql.dtd
 %%DATADIR%%/schemas/xml/dtd/index.dtd
 %%DATADIR%%/schemas/xml/dtd/label.dtd
 %%DATADIR%%/schemas/xml/dtd/language.dtd
@@ -228,6 +235,7 @@ lib/pgmodeler/plugins/xml2object/xml2object.png
 %%DATADIR%%/schemas/xml/excelement.sch
 %%DATADIR%%/schemas/xml/extension.sch
 %%DATADIR%%/schemas/xml/function.sch
+%%DATADIR%%/schemas/xml/genericsql.sch
 %%DATADIR%%/schemas/xml/idxelement.sch
 %%DATADIR%%/schemas/xml/index.sch
 %%DATADIR%%/schemas/xml/info.sch
