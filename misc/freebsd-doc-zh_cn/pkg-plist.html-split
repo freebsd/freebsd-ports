@@ -2,6 +2,11 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/contributing/index.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/contributing/ix01.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/contributing/trademarks.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/leap-seconds/index.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/leap-seconds/leapseconds-cautions.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/leap-seconds/leapseconds-conclusion.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/leap-seconds/leapseconds-posix.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/leap-seconds/leapseconds-testing.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/linux-users/commands.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/linux-users/conclusion.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/linux-users/firewall.html
