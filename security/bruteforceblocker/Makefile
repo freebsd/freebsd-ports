@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	bruteforceblocker
-PORTVERSION=	1.2.3
-PORTREVISION=	2
+PORTVERSION=	1.2.4
 CATEGORIES=	security
-MASTER_SITES=	http://danger.rulez.sk/projects/bruteforceblocker/ \
-		LOCAL/pav
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	dgerzo
 
 MAINTAINER=	danger@FreeBSD.org
 COMMENT=	Checks for SSH bruteforce and blocks given IPs
