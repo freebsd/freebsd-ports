@@ -25,6 +25,13 @@ CONFIGURE_ARGS?=--enable-trans --enable-utmp \
 		--enable-xim --with-theme-update \
 		--with-backspace=bs --without-terminfo \
 		--enable-multi-charset
+
+.if exists(/usr/libexec/gdb)
+CONFIGURE_ENV=	GDB=/usr/libexec/gdb
+.else
+CONFIGURE_ENV=	GDB=/usr/bin/gdb
+.endif
+
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 USES=		iconv libtool shebangfix

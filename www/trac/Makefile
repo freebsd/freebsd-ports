@@ -14,10 +14,10 @@ COMMENT=	Enhanced wiki and issue tracking system for software projects
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Babel>=0.9.5:devel/py-babel \
-		${PYTHON_PKGNAMEPREFIX}Genshi>=0.6:textproc/py-genshi
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Babel>=0.9.5:devel/py-babel \
-		${PYTHON_PKGNAMEPREFIX}Genshi>=0.6:textproc/py-genshi
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Babel>=2.3.4:devel/py-babel \
+		${PYTHON_PKGNAMEPREFIX}Genshi>=0.7:textproc/py-genshi
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Babel>=2.3.4:devel/py-babel \
+		${PYTHON_PKGNAMEPREFIX}Genshi>=0.7:textproc/py-genshi
 
 USES=		python:-2.7 shebangfix
 SHEBANG_FILES=	trac/tests/functional/better_twill.py trac/tests/functional/tester.py \
@@ -31,6 +31,8 @@ SUB_LIST=	PYTHON_CMD=${PYTHON_CMD}
 PORTEXAMPLES=	*
 PORTDATA=	*
 
+NO_ARCH=	yes
+
 OPTIONS_DEFINE=		DOCUTILS PYGMENTS TZ SVN EXAMPLES
 OPTIONS_DEFAULT=	DOCUTILS PYGMENTS TZ SVN SQLITE
 OPTIONS_RADIO=		DATABASE
@@ -39,8 +41,8 @@ DOCUTILS_DESC=		Allow additional text markup
 PYGMENTS_DESC=		Use generic syntax highlighter
 TZ_DESC=		Process Time Zones
 
-DOCUTILS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}docutils>=0.3.9:textproc/py-docutils
-PYGMENTS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pygments>0:textproc/py-pygments
+DOCUTILS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}docutils>=0.14:textproc/py-docutils
+PYGMENTS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pygments>=2.2.0:textproc/py-pygments
 TZ_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}pytz>0:devel/py-pytz
 PGSQL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}psycopg2>0:databases/py-psycopg2
 SQLITE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3

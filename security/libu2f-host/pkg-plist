@@ -6,6 +6,6 @@ include/u2f-host/u2f-host.h
 lib/libu2f-host.a
 lib/libu2f-host.so
 lib/libu2f-host.so.0
-lib/libu2f-host.so.0.1.3
+lib/libu2f-host.so.0.1.4
 libdata/pkgconfig/u2f-host.pc
 man/man1/u2f-host.1.gz
