@@ -10,6 +10,7 @@ bin/SABnzbd.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/database.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/decoder.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/decorators.py
+%%PYTHON_SITELIBDIR%%/sabnzbd/directunpacker.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/dirscanner.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/downloader.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/emailer.py
@@ -33,7 +34,6 @@ bin/SABnzbd.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/sabtraylinux.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/scheduler.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/skintext.py
-%%PYTHON_SITELIBDIR%%/sabnzbd/trylist.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/tvsort.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/urlgrabber.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/utils/__init__.py
@@ -53,6 +53,7 @@ bin/SABnzbd.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/utils/rsslib.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/utils/servertests.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/utils/sslinfo.py
+%%PYTHON_SITELIBDIR%%/sabnzbd/utils/subprocess_fix.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/utils/systrayiconthread.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/utils/upload.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/version.py
@@ -110,7 +111,13 @@ bin/SABnzbd.py
 %%DATADIR%%/cherrypy/wsgiserver/ssl_pyopenssl.py
 %%DATADIR%%/cherrypy/wsgiserver/test_wsgiserver.py
 %%DATADIR%%/gntp/__init__.py
+%%DATADIR%%/gntp/cli.py
+%%DATADIR%%/gntp/config.py
+%%DATADIR%%/gntp/core.py
+%%DATADIR%%/gntp/errors.py
 %%DATADIR%%/gntp/notifier.py
+%%DATADIR%%/gntp/shim.py
+%%DATADIR%%/gntp/version.py
 %%DATADIR%%/interfaces/Config/README.txt
 %%DATADIR%%/interfaces/Config/templates/_inc_footer_uc.tmpl
 %%DATADIR%%/interfaces/Config/templates/_inc_header_uc.tmpl
@@ -132,6 +139,7 @@ bin/SABnzbd.py
 %%DATADIR%%/interfaces/Config/templates/staticcfg/bootstrap/fonts/glyphicons-halflings-regular.svg
 %%DATADIR%%/interfaces/Config/templates/staticcfg/bootstrap/fonts/glyphicons-halflings-regular.ttf
 %%DATADIR%%/interfaces/Config/templates/staticcfg/bootstrap/js/bootstrap.min.js
+%%DATADIR%%/interfaces/Config/templates/staticcfg/css/chartist.min.css
 %%DATADIR%%/interfaces/Config/templates/staticcfg/css/login.css
 %%DATADIR%%/interfaces/Config/templates/staticcfg/css/style.css
 %%DATADIR%%/interfaces/Config/templates/staticcfg/ico/android-192x192.png
@@ -144,6 +152,7 @@ bin/SABnzbd.py
 %%DATADIR%%/interfaces/Config/templates/staticcfg/images/logo-arrow.svg
 %%DATADIR%%/interfaces/Config/templates/staticcfg/images/logo-full.svg
 %%DATADIR%%/interfaces/Config/templates/staticcfg/images/logo-small.svg
+%%DATADIR%%/interfaces/Config/templates/staticcfg/js/chartist.min.js
 %%DATADIR%%/interfaces/Config/templates/staticcfg/js/jquery-3.1.1.min.js
 %%DATADIR%%/interfaces/Config/templates/staticcfg/js/jquery-ui.min.js
 %%DATADIR%%/interfaces/Config/templates/staticcfg/js/jquery.tablesort.min.js
@@ -314,6 +323,7 @@ bin/SABnzbd.py
 %%DATADIR%%/locale/es/LC_MESSAGES/SABnzbd.mo
 %%DATADIR%%/locale/fi/LC_MESSAGES/SABnzbd.mo
 %%DATADIR%%/locale/fr/LC_MESSAGES/SABnzbd.mo
+%%DATADIR%%/locale/he/LC_MESSAGES/SABnzbd.mo
 %%DATADIR%%/locale/nb/LC_MESSAGES/SABnzbd.mo
 %%DATADIR%%/locale/nl/LC_MESSAGES/SABnzbd.mo
 %%DATADIR%%/locale/pl/LC_MESSAGES/SABnzbd.mo
@@ -330,6 +340,7 @@ bin/SABnzbd.py
 %%DATADIR%%/po/email/es.po
 %%DATADIR%%/po/email/fi.po
 %%DATADIR%%/po/email/fr.po
+%%DATADIR%%/po/email/he.po
 %%DATADIR%%/po/email/nb.po
 %%DATADIR%%/po/email/nl.po
 %%DATADIR%%/po/email/pl.po
@@ -346,6 +357,7 @@ bin/SABnzbd.py
 %%DATADIR%%/po/main/es.po
 %%DATADIR%%/po/main/fi.po
 %%DATADIR%%/po/main/fr.po
+%%DATADIR%%/po/main/he.po
 %%DATADIR%%/po/main/nb.po
 %%DATADIR%%/po/main/nl.po
 %%DATADIR%%/po/main/pl.po
@@ -362,6 +374,7 @@ bin/SABnzbd.py
 %%DATADIR%%/po/nsis/es.po
 %%DATADIR%%/po/nsis/fi.po
 %%DATADIR%%/po/nsis/fr.po
+%%DATADIR%%/po/nsis/he.po
 %%DATADIR%%/po/nsis/nb.po
 %%DATADIR%%/po/nsis/nl.po
 %%DATADIR%%/po/nsis/pl.po
