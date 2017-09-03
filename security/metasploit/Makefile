@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	metasploit
-PORTVERSION=	4.16.2
+PORTVERSION=	4.16.4
 CATEGORIES=	security
 
 MAINTAINER=	tanawts@gmail.com
@@ -27,7 +27,7 @@ RUN_DEPENDS=	nmap:security/nmap \
 		rubygem-metasploit_data_models>=0:security/rubygem-metasploit_data_models \
 		rubygem-metasploit-model>=0:security/rubygem-metasploit-model \
 		rubygem-metasploit-payloads>=1.3.1:security/rubygem-metasploit-payloads \
-		rubygem-metasploit_payloads-mettle>=0.2.0:security/rubygem-metasploit_payloads-mettle \
+		rubygem-metasploit_payloads-mettle>=0.2.2:security/rubygem-metasploit_payloads-mettle \
 		rubygem-msgpack1>=0:devel/rubygem-msgpack1 \
 		rubygem-network_interface>=0:net/rubygem-network_interface \
 		rubygem-rubyntlm>=0:net/rubygem-rubyntlm \
@@ -66,7 +66,6 @@ RUN_DEPENDS=	nmap:security/nmap \
 		rubygem-rex-struct2>=0:security/rubygem-rex-struct2 \
 		rubygem-rex-text>=0:security/rubygem-rex-text \
 		rubygem-rex-zip>=0:security/rubygem-rex-zip \
-		rubygem-robots>=0:www/rubygem-robots \
 		rubygem-rubyzip>=0:archivers/rubygem-rubyzip \
 		rubygem-sqlite3>=0:databases/rubygem-sqlite3 \
 		rubygem-tzinfo>=0:devel/rubygem-tzinfo \
