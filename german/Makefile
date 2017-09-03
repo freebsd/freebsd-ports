@@ -21,7 +21,6 @@
     SUBDIR += libreoffice
     SUBDIR += mediathekview
     SUBDIR += mythes
-    SUBDIR += phone
     SUBDIR += php_doc
     SUBDIR += schwobifyer
     SUBDIR += selfhtml
