@@ -1,11 +1,7 @@
-TIMESTAMP = 1491478341
-SHA256 (ssh-vault-ssh-vault-0.11.0_GH0.tar.gz) = 81f599e4a65840ae4ccbf0dd07605afdf42517652cb487635d5237e5ec2d3884
-SIZE (ssh-vault-ssh-vault-0.11.0_GH0.tar.gz) = 15090
+TIMESTAMP = 1503309777
+SHA256 (ssh-vault-ssh-vault-0.11.4_GH0.tar.gz) = a007ec0790c0768761cd7c5747e3434ab6c9e06af29e9e3c336a79e0e179604a
+SIZE (ssh-vault-ssh-vault-0.11.4_GH0.tar.gz) = 16766
 SHA256 (ssh-vault-crypto-ae180e0_GH0.tar.gz) = fe73e39078ecd1d077ddfdfb296c00eaa19c149856443259fe8964ff0951423f
 SIZE (ssh-vault-crypto-ae180e0_GH0.tar.gz) = 2062
-SHA256 (ssh-vault-ssh2pem-e6a4e6a_GH0.tar.gz) = 0e95ecd47c7a53015ba4a9ae398dae6bed361966d61bee4fae444a74c8036078
-SIZE (ssh-vault-ssh2pem-e6a4e6a_GH0.tar.gz) = 1280
-SHA256 (kr-pty-ce7fa45_GH0.tar.gz) = fc650f9aff13d91773731f8c2e83bf73ea04bb38091f96e48f11478bee7b148f
-SIZE (kr-pty-ce7fa45_GH0.tar.gz) = 4326
-SHA256 (keybase-go-keychain-fc62173_GH0.tar.gz) = f7220d91bd822f6edd794864ba7816e799a004ead07bb4b21515417c185766de
-SIZE (keybase-go-keychain-fc62173_GH0.tar.gz) = 2524740
+SHA256 (ssh-vault-ssh2pem-bcc6846_GH0.tar.gz) = b11c21626f5f69794220405a63637abd324b139a88d032f4e2b52d769160a30c
+SIZE (ssh-vault-ssh2pem-bcc6846_GH0.tar.gz) = 1521
