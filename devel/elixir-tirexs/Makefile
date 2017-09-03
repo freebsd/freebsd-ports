@@ -11,6 +11,8 @@ COMMENT=	ElasticSearch client library for Elixir
 
 LICENSE=	APACHE20
 
+IGNORE=		does not build with Elixir 1.5
+
 USES=		elixir
 USE_GITHUB=	yes
 GH_ACCOUNT=	Zatvobor
