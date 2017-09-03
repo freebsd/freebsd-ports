@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	zeal
-PORTVERSION=	0.3.1
-PORTREVISION=	3
+PORTVERSION=	0.4.0
 DISTVERSIONPREFIX=v
 CATEGORIES=	devel
 
@@ -15,13 +14,14 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libxcb.so:x11/libxcb \
 		libxcb-keysyms.so:x11/xcb-util-keysyms
 
-USES=		compiler:c++11-lib desktop-file-utils libarchive \
-		pkgconfig qmake:outsource
+USES=		cmake:outsource compiler:c++11-lib desktop-file-utils \
+		kde:5 libarchive pkgconfig sqlite
 USE_GL=		gl  # Dependency added by qt5-gui.
 USE_GITHUB=	yes
-USE_QT5=	concurrent core gui network sql webkit widgets x11extras \
-		buildtools_build sql-sqlite3_run
-USE_XORG=	x11 xcb
+USE_KDE=	ecm
+USE_QT5=	concurrent core gui network webkit widgets x11extras \
+		buildtools_build qmake_build
+USE_XORG=	ice sm x11 xcb xext
 
 GH_ACCOUNT=	zealdocs
 INSTALLS_ICONS=	yes
