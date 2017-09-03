@@ -443,6 +443,8 @@ include/wine/windows/icftypes.idl
 include/wine/windows/icm.h
 include/wine/windows/icmpapi.h
 include/wine/windows/idispids.h
+include/wine/windows/ieautomation.h
+include/wine/windows/ieautomation.idl
 include/wine/windows/iextag.h
 include/wine/windows/iextag.idl
 include/wine/windows/ifdef.h
@@ -647,6 +649,7 @@ include/wine/windows/opnrst.idl
 include/wine/windows/optary.h
 include/wine/windows/optary.idl
 include/wine/windows/patchapi.h
+%%STAGING%%include/wine/windows/pathcch.h
 include/wine/windows/pdh.h
 include/wine/windows/pdhmsg.h
 include/wine/windows/perhist.h
@@ -1799,6 +1802,7 @@ lib32/wine/fakedlls/iccvid.dll
 lib32/wine/fakedlls/icinfo.exe
 lib32/wine/fakedlls/icmp.dll
 lib32/wine/fakedlls/ieframe.dll
+lib32/wine/fakedlls/ieproxy.dll
 %%STAGING%%lib32/wine/fakedlls/iertutil.dll
 lib32/wine/fakedlls/iexplore.exe
 lib32/wine/fakedlls/ifsmgr.vxd
@@ -2246,6 +2250,7 @@ lib32/wine/iccvid.dll.so
 lib32/wine/icinfo.exe.so
 lib32/wine/icmp.dll.so
 lib32/wine/ieframe.dll.so
+lib32/wine/ieproxy.dll.so
 %%STAGING%%lib32/wine/iertutil.dll.so
 lib32/wine/iexplore.exe.so
 lib32/wine/ifsmgr.vxd.so
@@ -2346,6 +2351,7 @@ lib32/wine/libiphlpapi.def
 lib32/wine/libjsproxy.def
 lib32/wine/libkernel.def
 lib32/wine/libkernel32.def
+%%STAGING%%lib32/wine/libkernelbase.def
 lib32/wine/libloadperf.def
 lib32/wine/liblz32.def
 lib32/wine/libmapi32.def
