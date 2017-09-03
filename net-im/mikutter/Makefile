@@ -14,7 +14,7 @@ COMMENT=	Simple, powerful, and moeful Twitter client
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-gtk2>=3.1.8:x11-toolkits/rubygem-gtk2 \
+RUN_DEPENDS=	rubygem-gtk2>=3.1.4:x11-toolkits/rubygem-gtk2 \
 		rubygem-cairo>=1.12.9:graphics/rubygem-cairo \
 		rubygem-addressable>=2.5.1:www/rubygem-addressable \
 		rubygem-delayer>=0.0.2:devel/rubygem-delayer \
