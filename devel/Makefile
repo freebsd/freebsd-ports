@@ -5047,7 +5047,6 @@
     SUBDIR += py3-dbus
     SUBDIR += py3-defusedxml
     SUBDIR += py3-docopt
-    SUBDIR += py3-enum34
     SUBDIR += py3-flake8
     SUBDIR += py3-flake8-builtins
     SUBDIR += py3-flake8-docstrings
@@ -5107,7 +5106,6 @@
     SUBDIR += py3-wcwidth
     SUBDIR += py3-xdg
     SUBDIR += py3-yaml
-    SUBDIR += py33-setuptools
     SUBDIR += py34-setuptools
     SUBDIR += py35-setuptools
     SUBDIR += py36-setuptools
