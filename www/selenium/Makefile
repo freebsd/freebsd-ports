@@ -1,14 +1,14 @@
 # $FreeBSD$
 
 PORTNAME=	selenium
-PORTVERSION=	3.4.0
+PORTVERSION=	3.5.2
 CATEGORIES=	www devel java
-MASTER_SITES=	http://selenium-release.storage.googleapis.com/3.4/
+MASTER_SITES=	http://selenium-release.storage.googleapis.com/3.5/
 DISTNAME=	selenium-server-standalone-${PORTVERSION}
 EXTRACT_SUFX=	.jar
 EXTRACT_ONLY=
 
-MAINTAINER=	kaworu@users.sourceforge.jp
+MAINTAINER=	daniel@blodan.se
 COMMENT=	Selenium Standalone Server, allows browser testing
 
 LICENSE=	APACHE20
