@@ -1,3 +1,0 @@
-sbin/fbsdmon
-etc/periodic/weekly/600.fbsdmon
-@dir /var/db/fbsdmon

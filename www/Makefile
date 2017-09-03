@@ -1618,7 +1618,6 @@
     SUBDIR += py-django110
     SUBDIR += py-django111
     SUBDIR += py-django18
-    SUBDIR += py-django19
     SUBDIR += py-django_compressor
     SUBDIR += py-django_openstack_auth
     SUBDIR += py-django_polymorphic
@@ -2199,7 +2198,6 @@
     SUBDIR += sogo3-activesync
     SUBDIR += spawn-fcgi
     SUBDIR += spdylay
-    SUBDIR += speedtest-mini
     SUBDIR += spreadlogd
     SUBDIR += sqstat
     SUBDIR += squid
