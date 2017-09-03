@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	openjdk6
-PORTVERSION=	b43
+PORTVERSION=	b44
 PORTEPOCH=	1
 CATEGORIES=	java devel
 MASTER_SITES=	APACHE/ant/binaries/:ant \
@@ -13,7 +13,8 @@ DISTFILES=	${ANTFILE}:ant \
 		${JDK_SRC_DISTFILE}${EXTRACT_SUFX}:jdk
 EXTRACT_ONLY=	${JDK_SRC_DISTFILE}${EXTRACT_SUFX} ${ANTFILE}
 PATCHFILES=	patch-6-b42.xz \
-		patch-6-b43.xz
+		patch-6-b43.xz \
+		patch-6-b44.xz
 
 MAINTAINER=	java@FreeBSD.org
 COMMENT?=	Oracle's Java 6 virtual machine release under the GPL v2
