@@ -12,8 +12,11 @@ lib/erlang/lib/sbroker-%%VERSION%%/ebin/sbroker_handlers.beam
 lib/erlang/lib/sbroker-%%VERSION%%/ebin/sbroker_meter.beam
 lib/erlang/lib/sbroker-%%VERSION%%/ebin/sbroker_overload_meter.beam
 lib/erlang/lib/sbroker-%%VERSION%%/ebin/sbroker_queue.beam
+lib/erlang/lib/sbroker-%%VERSION%%/ebin/sbroker_server_sup.beam
 lib/erlang/lib/sbroker-%%VERSION%%/ebin/sbroker_sup.beam
 lib/erlang/lib/sbroker-%%VERSION%%/ebin/sbroker_timeout_queue.beam
+lib/erlang/lib/sbroker-%%VERSION%%/ebin/sbroker_user.beam
+lib/erlang/lib/sbroker-%%VERSION%%/ebin/sbroker_user_sup.beam
 lib/erlang/lib/sbroker-%%VERSION%%/ebin/sbroker_util.beam
 lib/erlang/lib/sbroker-%%VERSION%%/ebin/sprotector.beam
 lib/erlang/lib/sbroker-%%VERSION%%/ebin/sprotector_pie_meter.beam
@@ -22,9 +25,11 @@ lib/erlang/lib/sbroker-%%VERSION%%/ebin/srand.beam
 lib/erlang/lib/sbroker-%%VERSION%%/ebin/sregulator.beam
 lib/erlang/lib/sbroker-%%VERSION%%/ebin/sregulator_codel_valve.beam
 lib/erlang/lib/sbroker-%%VERSION%%/ebin/sregulator_open_valve.beam
+lib/erlang/lib/sbroker-%%VERSION%%/ebin/sregulator_rate_valve.beam
 lib/erlang/lib/sbroker-%%VERSION%%/ebin/sregulator_relative_valve.beam
 lib/erlang/lib/sbroker-%%VERSION%%/ebin/sregulator_underload_meter.beam
 lib/erlang/lib/sbroker-%%VERSION%%/ebin/sregulator_update_meter.beam
+lib/erlang/lib/sbroker-%%VERSION%%/ebin/sregulator_user.beam
 lib/erlang/lib/sbroker-%%VERSION%%/ebin/sregulator_valve.beam
 lib/erlang/lib/sbroker-%%VERSION%%/ebin/sscheduler.beam
 lib/erlang/lib/sbroker-%%VERSION%%/src/sbetter.erl
@@ -41,8 +46,11 @@ lib/erlang/lib/sbroker-%%VERSION%%/src/sbroker_handlers.erl
 lib/erlang/lib/sbroker-%%VERSION%%/src/sbroker_meter.erl
 lib/erlang/lib/sbroker-%%VERSION%%/src/sbroker_overload_meter.erl
 lib/erlang/lib/sbroker-%%VERSION%%/src/sbroker_queue.erl
+lib/erlang/lib/sbroker-%%VERSION%%/src/sbroker_server_sup.erl
 lib/erlang/lib/sbroker-%%VERSION%%/src/sbroker_sup.erl
 lib/erlang/lib/sbroker-%%VERSION%%/src/sbroker_timeout_queue.erl
+lib/erlang/lib/sbroker-%%VERSION%%/src/sbroker_user.erl
+lib/erlang/lib/sbroker-%%VERSION%%/src/sbroker_user_sup.erl
 lib/erlang/lib/sbroker-%%VERSION%%/src/sbroker_util.erl
 lib/erlang/lib/sbroker-%%VERSION%%/src/sprotector.erl
 lib/erlang/lib/sbroker-%%VERSION%%/src/sprotector_pie_meter.erl
@@ -51,9 +59,11 @@ lib/erlang/lib/sbroker-%%VERSION%%/src/srand.erl
 lib/erlang/lib/sbroker-%%VERSION%%/src/sregulator.erl
 lib/erlang/lib/sbroker-%%VERSION%%/src/sregulator_codel_valve.erl
 lib/erlang/lib/sbroker-%%VERSION%%/src/sregulator_open_valve.erl
+lib/erlang/lib/sbroker-%%VERSION%%/src/sregulator_rate_valve.erl
 lib/erlang/lib/sbroker-%%VERSION%%/src/sregulator_relative_valve.erl
 lib/erlang/lib/sbroker-%%VERSION%%/src/sregulator_underload_meter.erl
 lib/erlang/lib/sbroker-%%VERSION%%/src/sregulator_update_meter.erl
+lib/erlang/lib/sbroker-%%VERSION%%/src/sregulator_user.erl
 lib/erlang/lib/sbroker-%%VERSION%%/src/sregulator_valve.erl
 lib/erlang/lib/sbroker-%%VERSION%%/src/sscheduler.erl
 %%PORTDOCS%%%%DOCSDIR%%/README.md
