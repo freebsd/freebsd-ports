@@ -3,6 +3,7 @@ lib/libtclstub%%TCL_VER%%.a
 lib/libtcl%%TCL_VER%%.so
 lib/libtcl%%PKGNAMESUFFIX%%.so
 lib/libtcl%%PKGNAMESUFFIX%%.so.1
+include/tcl%%TCL_VER%%/doc/man.macros
 include/tcl%%TCL_VER%%/tcl.h
 include/tcl%%TCL_VER%%/tclDecls.h
 include/tcl%%TCL_VER%%/tclOO.h
@@ -10,7 +11,7 @@ include/tcl%%TCL_VER%%/tclOODecls.h
 include/tcl%%TCL_VER%%/tclPlatDecls.h
 include/tcl%%TCL_VER%%/tclTomMath.h
 include/tcl%%TCL_VER%%/tclTomMathDecls.h
-%%MODULES%%lib/tcl%%TCL_VER%%/http-2.8.11.tm
+%%MODULES%%lib/tcl%%TCL_VER%%/http-2.8.12.tm
 %%MODULES%%lib/tcl%%TCL_VER%%/http1.0/http.tcl
 %%MODULES%%lib/tcl%%TCL_VER%%/http1.0/pkgIndex.tcl
 %%MODULES%%lib/tcl%%TCL_VER%%/msgcat-1.6.0.tm
