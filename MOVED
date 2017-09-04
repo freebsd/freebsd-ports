@@ -9539,7 +9539,7 @@ german/phone||2017-09-03|Has expired: Out of date
 ports-mgmt/fbsdmon||2017-09-03|Has expired: no longer maintained, web site it sends data to has been taken over by cybersquatters
 security/py-pyme|security/py-gpgme|2017-09-03|Has expired: Merged with GPGme project. Please use security/py-gpgme instead
 lang/python33||2017-09-03|Has expired: No longer receives bug fixes, only security updates. Please update to Python 3.6
-databases/py33-gdbm||2017-09-03|Removed,  please update to Python 3.6
+databases/py33-gdbm||2017-09-03|Removed, please update to Python 3.6
 databases/py33-sqlite3||2017-09-03|Removed, please update to Python 3.6
 devel/py33-setuptools||2017-09-03|Removed, please update to Python 3.6
 x11-toolkits/py33-tkinter||2017-09-03|Removed, please update to Python 3.6
