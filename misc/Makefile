@@ -369,6 +369,7 @@
     SUBDIR += posixtestsuite
     SUBDIR += proxyper
     SUBDIR += pspresent
+    SUBDIR += ptsort
     SUBDIR += py-YABT
     SUBDIR += py-cinder
     SUBDIR += py-crudini
