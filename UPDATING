@@ -5,6 +5,14 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20170904
+  AFFECTS: users of net-mgmt/seafile-server
+  AUTHOR: ultima@FreeBSD.org
+
+  Users using MySQL updating to 6.1.2 need to verify table's collation
+  are utf8_unicode_ci. Upstream has set collation type to be implicit
+  and will cause all libraries to disappear if set to incorrect collation.
+
 20170828
   AFFECTS: users of security/gnupg
   AUTHOR: adamw@FreeBSD.org

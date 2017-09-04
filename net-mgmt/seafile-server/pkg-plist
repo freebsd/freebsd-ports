@@ -4,6 +4,7 @@ include/seafile/seafile-object.h
 libdata/pkgconfig/libseafile.pc
 %%SEAFILE_SERVER%%/breakpad.py
 %%SEAFILE_SERVER%%/check_init_admin.py
+%%SEAFILE_SERVER%%/export-users.sh
 %%SEAFILE_SERVER%%/migrate-to-ceph.sh
 %%SEAFILE_SERVER%%/reset-admin.sh
 %%SEAFILE_SERVER%%/seaf-cli-wrapper.sh
