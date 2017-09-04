@@ -3,14 +3,14 @@
 
 PORTNAME=	heartbeat
 PORTVERSION=	2.1.4
-PORTREVISION=	28
+PORTREVISION=	29
 CATEGORIES=	sysutils
 #MASTER_SITES=	http://hg.linux-ha.org/lha-2.1/archive/STABLE-2.1.4.tar.bz2
 MASTER_SITES=	LOCAL/kuriyama/heartbeat
 DISTNAME=	STABLE-${PORTVERSION}
 DIST_SUBDIR=	heartbeat
 
-MAINTAINER=	ports@encarnate.com
+MAINTAINER=	grembo@FreeBSD.org
 COMMENT=	Subsystem for High-Availability Clustering
 
 LICENSE=	GPLv2 LGPL21
@@ -54,7 +54,7 @@ CONFIGURE_ARGS=	--localstatedir=/var \
 		--disable-dopd \
 		--disable-fatal-warnings
 
-SUB_FILES=	pkg-install pkg-message
+SUB_FILES=	pkg-message
 
 PKGDEINSTALL=	${PKGINSTALL}
 
