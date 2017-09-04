@@ -420,87 +420,28 @@ GH_PROJECT?=	${GH_PROJECT_DEFAULT}
 # Use full PREFIX/SUFFIX and converted DISTVERSION
 GH_TAGNAME_DEFAULT=	${DISTVERSIONFULL}
 GH_TAGNAME?=	${GH_TAGNAME_DEFAULT}
-# Iterate over GH_ACCOUNT, GH_PROJECT and GH_TAGNAME to extract groups
+# Iterate over GH_ACCOUNT, GH_PROJECT, GH_TAGNAME and GH_SUBDIR to extract groups
 _GITHUB_GROUPS= DEFAULT
-.  for _A in ${GH_ACCOUNT}
-_S_TEMP=	${_A:S/^${_A:C@:[^/:]+$@@}//:S/^://}
-.    if !empty(_S_TEMP)
-.      for _group in ${_S_TEMP:S/,/ /g}
-_G_TEMP=	${_group}
-.        if ${_G_TEMP} == all || ${_G_TEMP} == ALL || ${_G_TEMP} == default
+.  for _gh_v in GH_ACCOUNT GH_PROJECT GH_TAGNAME GH_SUBDIR
+.    for _v_ex in ${${_gh_v}}
+_GH_GROUPS=	${_v_ex:S/^${_v_ex:C@:[^/:]+$@@}//:S/^://}
+.      if !empty(_GH_GROUPS)
+.        for _group in ${_GH_GROUPS:S/,/ /g}
+.          if ${_group} == all || ${_group} == ALL || ${_group} == default
 check-makevars::
 		@${ECHO_MSG} "Makefile error: the words all, ALL and default are reserved and cannot be"
-		@${ECHO_MSG} "used in group definitions. Please fix your GH_ACCOUNT"
+		@${ECHO_MSG} "used in group definitions. Please fix your ${_gh_v}"
 		@${FALSE}
-.        endif
-.        if !${_GITHUB_GROUPS:M${_group}}
+.          endif
+.          if !${_GITHUB_GROUPS:M${_group}}
 _GITHUB_GROUPS+=	${_group}
-.         endif
-GH_ACCOUNT_${_group}=	${_A:C@^(.*):[^/:]+$@\1@}
-.      endfor
-.    else
-GH_ACCOUNT_DEFAULT=	${_A:C@^(.*):[^/:]+$@\1@}
-.    endif
-.  endfor
-.  for _P in ${GH_PROJECT}
-_S_TEMP=	${_P:S/^${_P:C@:[^/:]+$@@}//:S/^://}
-.    if !empty(_S_TEMP)
-.      for _group in ${_S_TEMP:S/,/ /g}
-_G_TEMP=	${_group}
-.        if ${_G_TEMP} == all || ${_G_TEMP} == ALL || ${_G_TEMP} == default
-check-makevars::
-		@${ECHO_MSG} "Makefile error: the words all, ALL and default are reserved and cannot be"
-		@${ECHO_MSG} "used in group definitions. Please fix your GH_PROJECT"
-		@${FALSE}
-.        endif
-.        if !${_GITHUB_GROUPS:M${_group}}
-_GITHUB_GROUPS+=	${_group}
-.         endif
-GH_PROJECT_${_group}=	${_P:C@^(.*):[^/:]+$@\1@}
-.      endfor
-.    else
-GH_PROJECT_DEFAULT=	${_P:C@^(.*):[^/:]+$@\1@}
-.    endif
-.  endfor
-.  for _T in ${GH_TAGNAME}
-_S_TEMP=	${_T:S/^${_T:C@:[^/:]+$@@}//:S/^://}
-.    if !empty(_S_TEMP)
-.      for _group in ${_S_TEMP:S/,/ /g}
-_G_TEMP=	${_group}
-.        if ${_G_TEMP} == all || ${_G_TEMP} == ALL || ${_G_TEMP} == default
-check-makevars::
-		@${ECHO_MSG} "Makefile error: the words all, ALL and default are reserved and cannot be"
-		@${ECHO_MSG} "used in group definitions. Please fix your GH_TAGNAME"
-		@${FALSE}
-.        endif
-.        if !${_GITHUB_GROUPS:M${_group}}
-_GITHUB_GROUPS+=	${_group}
-.         endif
-GH_TAGNAME_${_group}=	${_T:C@^(.*):[^/:]+$@\1@}
-.      endfor
-.    else
-GH_TAGNAME_DEFAULT=	${_T:C@^(.*):[^/:]+$@\1@}
-.    endif
-.  endfor
-.  for _S in ${GH_SUBDIR}
-_S_SEMP=	${_S:S/^${_S:C@:[^/:]+$@@}//:S/^://}
-.    if !empty(_S_SEMP)
-.      for _group in ${_S_SEMP:S/,/ /g}
-_G_SEMP=	${_group}
-.        if ${_G_SEMP} == all || ${_G_SEMP} == ALL || ${_G_SEMP} == default
-check-makevars::
-		@${ECHO_MSG} "Makefile error: the words all, ALL and default are reserved and cannot be"
-		@${ECHO_MSG} "used in group definitions. Please fix your GH_SUBDIR"
-		@${FALSE}
-.        endif
-.        if !${_GITHUB_GROUPS:M${_group}}
-_GITHUB_GROUPS+=	${_group}
-.         endif
-GH_SUBDIR_${_group}=	${_S:C@^(.*):[^/:]+$@\1@}
-.      endfor
-.    else
-GH_SUBDIR_DEFAULT=	${_S:C@^(.*):[^/:]+$@\1@}
-.    endif
+.          endif
+${_gh_v}_${_group}=	${_v_ex:C@^(.*):[^/:]+$@\1@}
+.        endfor
+.      else
+${_gh_v}_DEFAULT=	${_v_ex:C@^(.*):[^/:]+$@\1@}
+.      endif
+.    endfor
 .  endfor
 # Put the default values back into the variables so that the *default* behavior
 # is not changed.

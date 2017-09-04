@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	seafile-server
-PORTVERSION=	${SEAFILE_VER}
 DISTVERSIONPREFIX=	v
+DISTVERSION=	${SEAFILE_VER}
 DISTVERSIONSUFFIX=	-server
 CATEGORIES=	net-mgmt
 
@@ -28,31 +28,31 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3 \
 
 CONFLICTS=	seafile-[0-9]*
 
+USES=		autoreconf iconv libarchive libtool localbase mysql \
+		pathfix pgsql pkgconfig python:-2.7 shebangfix sqlite ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	haiwen
-
-USES=		autoreconf gettext iconv libarchive libtool mysql pathfix \
-		pgsql pkgconfig python:-2.7 shebangfix sqlite ssl
 USE_GNOME=	glib20
+USE_LDCONFIG=	yes
+USE_RC_SUBR=	seafile
+
 SHEBANG_FILES=	scripts/*.sh scripts/upgrade/*.sh *.sh scripts/build/*.py \
 		scripts/*.py scripts/upgrade/*.py tools/seafile-admin
 GNU_CONFIGURE=	yes
-USE_LDCONFIG=	yes
 CONFIGURE_ENV=	SSL_CFLAGS="${OPENSSLINC}" SSL_LIBS="-L${OPENSSLLIB} -lssl -lcrypto"
 
 PATHFIX_MAKEFILEIN=	Makefile.am
 
 INSTALL_TARGET=	install-strip
-CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/evhtp
-LDFLAGS+=	-L${LOCALBASE}/lib
-
-USE_RC_SUBR=	seafile
+CPPFLAGS+=	-I${LOCALBASE}/include/evhtp
 
 SUB_FILES=	pkg-message
 
 MAKE_JOBS_UNSAFE=	yes
 
-OPTIONS_DEFINE=		FUSE
+OPTIONS_DEFINE=		FUSE NLS
+OPTIONS_DEFAULT=	FUSE
+OPTIONS_EXCLUDE_DragonFly=	FUSE
 OPTIONS_SUB=		yes
 
 FUSE_DESC=		Use file system in userspace
@@ -60,8 +60,7 @@ FUSE_DESC=		Use file system in userspace
 FUSE_CONFIGURE_ENABLE=	fuse
 FUSE_LIB_DEPENDS=	libfuse.so:sysutils/fusefs-libs
 
-OPTIONS_DEFAULT=	FUSE
-OPTIONS_EXCLUDE_DragonFly=	FUSE
+NLS_USES=		gettext
 
 .include <bsd.port.options.mk>
 
