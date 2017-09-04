@@ -765,7 +765,6 @@ share/applications/emacs.desktop
 %%DATADIR%%/%%EMACS_VER%%/etc/org/OrgOdtContentTemplate.xml
 %%DATADIR%%/%%EMACS_VER%%/etc/org/OrgOdtStyles.xml
 %%DATADIR%%/%%EMACS_VER%%/etc/org/README
-%%DATADIR%%/%%EMACS_VER%%/etc/org/library-of-babel.org
 %%DATADIR%%/%%EMACS_VER%%/etc/package-keyring.gpg
 %%DATADIR%%/%%EMACS_VER%%/etc/ps-prin0.ps
 %%DATADIR%%/%%EMACS_VER%%/etc/ps-prin1.ps
@@ -1451,6 +1450,8 @@ share/applications/emacs.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/dirtrack.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/disp-table.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/disp-table.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/display-line-numbers.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/display-line-numbers.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/dnd.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/dnd.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/doc-view.el.gz
@@ -3342,6 +3343,10 @@ share/applications/emacs.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/f90.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/flymake.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/flymake.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/flymake-proc.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/flymake-proc.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/flymake-ui.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/flymake-ui.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/fortran.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/fortran.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/gdb-mi.el.gz
@@ -3531,6 +3536,8 @@ share/applications/emacs.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/term/internal.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/term/iris-ansi.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/term/iris-ansi.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/term/konsole.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/term/konsole.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/term/linux.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/term/linux.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/term/lk201.el.gz
@@ -3587,6 +3594,8 @@ share/applications/emacs.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/textmodes/flyspell.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/textmodes/ispell.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/textmodes/ispell.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/textmodes/less-css-mode.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/textmodes/less-css-mode.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/textmodes/makeinfo.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/textmodes/makeinfo.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/textmodes/mhtml-mode.el.gz
