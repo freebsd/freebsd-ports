@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	selenium
-PORTVERSION=	3.5.2
+PORTVERSION=	3.5.3
 CATEGORIES=	www devel java
 MASTER_SITES=	http://selenium-release.storage.googleapis.com/3.5/
 DISTNAME=	selenium-server-standalone-${PORTVERSION}
