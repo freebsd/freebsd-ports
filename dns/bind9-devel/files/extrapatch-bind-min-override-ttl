@@ -1,15 +1,21 @@
---- bin/named/config.c.orig	2017-08-21 08:20:10 UTC
+--- bin/named/config.c.orig	2017-09-04 08:22:52 UTC
 +++ bin/named/config.c
-@@ -156,6 +156,8 @@ options {\n\
- 	lame-ttl 600;\n\
- 	servfail-ttl 1;\n\
- 	max-ncache-ttl 10800; /* 3 hours */\n\
-+       override-cache-ttl 0; /* do not override */\n\
-+       min-cache-ttl 0; /* no minimal, zero is allowed */\n\
- 	max-cache-ttl 604800; /* 1 week */\n\
- 	transfer-format many-answers;\n\
- 	max-cache-size 90%;\n\
---- bin/named/server.c.orig	2017-08-21 08:20:10 UTC
+@@ -176,12 +176,14 @@ options {\n\
+ 	max-recursion-depth 7;\n\
+ 	max-recursion-queries 75;\n\
+ 	message-compression yes;\n\
++	min-cache-ttl 0; /* no minimal, zero is allowed */\n\
+ #	min-roots <obsolete>;\n\
+ 	minimal-any false;\n\
+ 	minimal-responses true;\n\
+ 	notify-source *;\n\
+ 	notify-source-v6 *;\n\
+ 	nsec3-test-zone no;\n\
++	override-cache-ttl 0; /* do not override */\n\
+ 	provide-ixfr true;\n\
+ 	query-source address *;\n\
+ 	query-source-v6 address *;\n\
+--- bin/named/server.c.orig	2017-09-04 08:22:52 UTC
 +++ bin/named/server.c
 @@ -3722,6 +3722,16 @@ configure_view(dns_view_t *view, dns_vie
  	}
@@ -28,9 +34,9 @@
  	result = ns_config_get(maps, "max-cache-ttl", &obj);
  	INSIST(result == ISC_R_SUCCESS);
  	view->maxcachettl = cfg_obj_asuint32(obj);
---- lib/dns/include/dns/view.h.orig	2017-08-21 08:20:10 UTC
+--- lib/dns/include/dns/view.h.orig	2017-09-04 08:22:52 UTC
 +++ lib/dns/include/dns/view.h
-@@ -144,6 +144,8 @@ struct dns_view {
+@@ -145,6 +145,8 @@ struct dns_view {
  	isc_boolean_t			requestnsid;
  	isc_boolean_t			sendcookie;
  	dns_ttl_t			maxcachettl;
@@ -39,9 +45,9 @@
  	dns_ttl_t			maxncachettl;
  	isc_uint32_t			nta_lifetime;
  	isc_uint32_t			nta_recheck;
---- lib/dns/resolver.c.orig	2017-08-21 08:20:10 UTC
+--- lib/dns/resolver.c.orig	2017-09-04 08:22:52 UTC
 +++ lib/dns/resolver.c
-@@ -5687,6 +5687,18 @@ cache_name(fetchctx_t *fctx, dns_name_t 
+@@ -5723,6 +5723,18 @@ cache_name(fetchctx_t *fctx, dns_name_t 
  		}
  
  		/*
@@ -60,9 +66,9 @@
  		 * Enforce the configure maximum cache TTL.
  		 */
  		if (rdataset->ttl > res->view->maxcachettl)
---- lib/isccfg/namedconf.c.orig	2017-08-21 08:20:10 UTC
+--- lib/isccfg/namedconf.c.orig	2017-09-04 08:22:52 UTC
 +++ lib/isccfg/namedconf.c
-@@ -1896,6 +1896,8 @@ view_clauses[] = {
+@@ -1894,6 +1894,8 @@ view_clauses[] = {
  	{ "max-acache-size", &cfg_type_sizenodefault,
  	  CFG_CLAUSEFLAG_OBSOLETE },
  	{ "max-cache-size", &cfg_type_sizeorpercent, 0 },
