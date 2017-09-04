@@ -3,6 +3,7 @@
 
 PORTNAME=	nevow
 PORTVERSION=	0.14.0
+PORTREVISION=	1
 CATEGORIES=	www python devel
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,8 +15,10 @@ COMMENT=	Web application templating system, based on the Twisted Woven
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}twisted>=0:devel/py-twisted
+
 USE_PYTHON=	autoplist distutils
-USES=		gettext python twisted:web
+USES=		gettext python
 NO_ARCH=	yes
 
 SUB_FILES=	pkg-message
