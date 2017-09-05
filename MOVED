@@ -9535,7 +9535,6 @@ devel/rubygem-webpacker1-rails5|devel/rubygem-webpacker-rails5|2017-09-03|Has ex
 devel/rubygem-sidekiq-cron04|devel/rubygem-sidekiq-cron|2017-09-03|Has expired: Use devel/rubygem-sidekiq-cron instead
 www/py-django19||2017-09-03|Has expired: Unsupported upstream
 mail/movemail||2017-09-03|Has expired: Out of date
-german/phone||2017-09-03|Has expired: Out of date
 ports-mgmt/fbsdmon||2017-09-03|Has expired: no longer maintained, web site it sends data to has been taken over by cybersquatters
 security/py-pyme|security/py-gpgme|2017-09-03|Has expired: Merged with GPGme project. Please use security/py-gpgme instead
 lang/python33||2017-09-03|Has expired: No longer receives bug fixes, only security updates. Please update to Python 3.6

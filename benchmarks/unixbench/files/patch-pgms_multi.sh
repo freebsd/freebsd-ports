@@ -1,4 +1,4 @@
---- pgms/multi.sh.orig	1995-11-28 00:19:10 UTC
+--- pgms/multi.sh.orig	2015-06-04 17:20:18 UTC
 +++ pgms/multi.sh
 @@ -14,6 +14,7 @@
  #
@@ -7,4 +7,4 @@
 +cd ${TMPDIR}
  instance=1
  while [ $instance -le $1 ]; do
- 	/bin/sh $BINDIR/tst.sh &
+ 	/bin/sh "$UB_BINDIR/tst.sh" &

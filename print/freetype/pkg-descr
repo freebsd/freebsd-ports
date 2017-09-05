@@ -6,4 +6,4 @@ Notice that  FreeType is a *library*.   It is *not*  a font server
 for  your preferred environment,  even though  it was  designed to
 allow the design of many font servers.
 
-WWW: http://www.freetype.org/
+WWW: https://www.freetype.org/

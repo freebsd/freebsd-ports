@@ -1,5 +1,6 @@
 UNetbootin allows to create bootable Live USB drives for Ubuntu, Fedora,
 and other Linux distributions without burning a CD.  This is useful when
-supplied ISO image cannot be directly written to USB drive or SD card.
+supplied ISO image cannot be directly written to USB drive or SD card to
+get a bootable media.
 
 WWW: http://unetbootin.sourceforge.net/
