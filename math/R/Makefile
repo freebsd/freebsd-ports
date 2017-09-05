@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=		R
-PORTVERSION=		3.4.1
-PORTREVISION=		5
+DISTVERSION=		3.4.1
+PORTREVISION=		6
 CATEGORIES=		math lang
 MASTER_SITES=		CRAN/src/base/R-${PORTVERSION:C|\..*||}
 
@@ -11,6 +11,8 @@ MAINTAINER=		jrm@FreeBSD.org
 COMMENT=		Language for statistical computing and graphics
 
 LICENSE=		GPLv2
+
+ONLY_FOR_ARCHS=		aarch64 amd64 i386
 
 LIB_DEPENDS=		libcurl.so:ftp/curl \
 			libpcre.so:devel/pcre
@@ -22,10 +24,8 @@ CONFIGURE_ARGS=		--disable-java \
 			rdocdir=${DOCSDIR}
 GNU_CONFIGURE=		yes
 INSTALL_TARGET=		install-strip
-ONLY_FOR_ARCHS=		aarch64 amd64 i386
 USES=			gmake iconv libtool localbase \
 			pathfix perl5 readline:port
-
 USE_PERL5=		build
 USE_LDCONFIG=		${PREFIX}/lib/R/lib
 
@@ -128,7 +128,7 @@ RBLAS_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-src_extra_blas_Makefile.in \
 			${PATCHDIR}/extra-patch-src_modules_lapack_Makefile.in
 RPROF_CONFIGURE_ENABLE=	R-profiling
 TCLTK_IMPLIES=		X11
-TCLTK_USES=		tcl tk:84+
+TCLTK_USES=		tcl tk
 TCLTK_CONFIGURE_WITH=	tcltk
 .for i in KPSEWHICH MAKEINDEX PDFLATEX PDFTEX TEX TEXI2DVI
 TEXDOCS_CONFIGURE_ENV_OFF+=	ac_cv_path_${i}=""
