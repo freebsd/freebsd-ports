@@ -4,6 +4,7 @@
 PORTNAME=	openvsp
 PORTVERSION=	3.13.1
 DISTVERSIONPREFIX=	${GH_PROJECT}_
+PORTREVISION=	1
 CATEGORIES=	cad
 
 MAINTAINER=	fernando.apesteguia@gmail.com
@@ -26,13 +27,14 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libopenNURBS.a:graphics/opennurbs \
 		${LOCALBASE}/include/glm/glm.hpp:math/glm \
 		${LOCALBASE}/libdata/pkgconfig/pthread-stubs.pc:devel/libpthread-stubs
 
+CMAKE_SOURCE_PATH=	${WRKSRC}/SuperProject
+CMAKE_INSTALL_PREFIX=	${STAGEDIR}${PREFIX}
+
+USES=		cmake:outsource,noninja jpeg
+
 USE_GITHUB=	yes
 GH_PROJECT=	OpenVSP
 GH_ACCOUNT=	${GH_PROJECT}
-
-CMAKE_SOURCE_PATH=	${WRKSRC}/SuperProject
-CMAKE_INSTALL_PREFIX=	${STAGEDIR}${PREFIX}
-USES=		cmake:outsource,noninja compiler:gcc-c++11-lib jpeg
 
 # On FreeBSD < 11 libc++ lacks support for sized delete operators.
 # GCC dropped the builtin version of these operators in 6+ by
@@ -56,6 +58,22 @@ USE_GL=		gl glu
 
 USE_GNOME=	libxml2
 CFLAGS+=	-I${LOCALBASE}/include/openNURBS
+
+.include <bsd.port.options.mk>
+
+# In 12 gcc can not compile the port so switch to clang 5.0.0 in base.
+# But wait! It crashes while compiling so apply a patch to avoid weird asm code
+# that makes clang die
+# For details see:
+# https://lists.freebsd.org/pipermail/freebsd-hackers/2017-August/051352.html
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1200000
+USES+=	compiler:c++11-lib
+EXTRA_PATCHES=	${FILESDIR}/extra-src_external_angelscript_sdk_angelscript_source_as__callfunc__x86.cpp
+CFLAGS+=	-I${LOCALBASE}/include
+.else
+USES+=	compiler:gcc-c++11-lib
+.endif
 
 BUILD_PREFIX=	OpenVSP-prefix/src/OpenVSP-build/_CPack_Packages/FreeBSD/ZIP/OpenVSP-${PORTVERSION}-FreeBSD
 
