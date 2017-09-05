@@ -3,8 +3,8 @@
 #   $MCom: ports/trunk/graphics/gthumb/Makefile 19823 2014-08-20 09:28:14Z gusi $
 
 PORTNAME=	gthumb
-PORTVERSION=	3.4.5
-PORTREVISION=	3
+PORTVERSION=	3.5.2
+PORTREVISION=	0
 CATEGORIES=	graphics
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -21,6 +21,7 @@ LIB_DEPENDS=	libclutter-1.0.so:graphics/clutter \
 		libgstreamer-1.0.so:multimedia/gstreamer1 \
 		liblcms2.so:graphics/lcms2 \
 		liboauth.so:net/liboauth \
+		libomp.so:devel/openmp \
 		libpng16.so:graphics/png \
 		libsoup-2.4.so:devel/libsoup \
 		libtiff.so:graphics/tiff
@@ -41,7 +42,7 @@ INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
 
-PLIST_SUB=	GTHUMB_VER="3.4"
+PLIST_SUB=	GTHUMB_VER="3.5"
 
 GLIB_SCHEMAS=	org.gnome.gthumb.change-date.gschema.xml \
 		org.gnome.gthumb.comments.gschema.xml \

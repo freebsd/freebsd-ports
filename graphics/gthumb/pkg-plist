@@ -10,10 +10,12 @@ include/gthumb-%%GTHUMB_VER%%/gthumb/gio-utils.h
 include/gthumb-%%GTHUMB_VER%%/gthumb/glib-utils.h
 include/gthumb-%%GTHUMB_VER%%/gthumb/gnome-desktop-thumbnail.h
 include/gthumb-%%GTHUMB_VER%%/gthumb/gsignature.h
+include/gthumb-%%GTHUMB_VER%%/gthumb/gth-accel-button.h
 include/gthumb-%%GTHUMB_VER%%/gthumb/gth-async-task.h
 include/gthumb-%%GTHUMB_VER%%/gthumb/gth-auto-paned.h
 include/gthumb-%%GTHUMB_VER%%/gthumb/gth-browser.h
 include/gthumb-%%GTHUMB_VER%%/gthumb/gth-buffer-data.h
+include/gthumb-%%GTHUMB_VER%%/gthumb/gth-color-manager.h
 include/gthumb-%%GTHUMB_VER%%/gthumb/gth-color-scale.h
 include/gthumb-%%GTHUMB_VER%%/gthumb/gth-delete-task.h
 include/gthumb-%%GTHUMB_VER%%/gthumb/gth-dumb-notebook.h
@@ -42,6 +44,7 @@ include/gthumb-%%GTHUMB_VER%%/gthumb/gth-grid-view.h
 include/gthumb-%%GTHUMB_VER%%/gthumb/gth-histogram-view.h
 include/gthumb-%%GTHUMB_VER%%/gthumb/gth-histogram.h
 include/gthumb-%%GTHUMB_VER%%/gthumb/gth-hook.h
+include/gthumb-%%GTHUMB_VER%%/gthumb/gth-icc-profile.h
 include/gthumb-%%GTHUMB_VER%%/gthumb/gth-icon-cache.h
 include/gthumb-%%GTHUMB_VER%%/gthumb/gth-image-dragger.h
 include/gthumb-%%GTHUMB_VER%%/gthumb/gth-image-history.h
@@ -85,6 +88,7 @@ include/gthumb-%%GTHUMB_VER%%/gthumb/gth-string-list.h
 include/gthumb-%%GTHUMB_VER%%/gthumb/gth-tags-entry.h
 include/gthumb-%%GTHUMB_VER%%/gthumb/gth-tags-file.h
 include/gthumb-%%GTHUMB_VER%%/gthumb/gth-task.h
+include/gthumb-%%GTHUMB_VER%%/gthumb/gth-test-aspect-ratio.h
 include/gthumb-%%GTHUMB_VER%%/gthumb/gth-test-category.h
 include/gthumb-%%GTHUMB_VER%%/gthumb/gth-test-chain.h
 include/gthumb-%%GTHUMB_VER%%/gthumb/gth-test-selector.h
@@ -293,6 +297,7 @@ share/applications/gthumb.desktop
 %%DATADIR%%/icons/hicolor/16x16/actions/emblem-flag-red.svg
 %%DATADIR%%/icons/hicolor/16x16/actions/emblem-flag-symbolic.svg
 %%DATADIR%%/icons/hicolor/16x16/actions/export-symbolic.svg
+%%DATADIR%%/icons/hicolor/16x16/actions/eyedropper-symbolic.svg
 %%DATADIR%%/icons/hicolor/16x16/actions/file-catalog-symbolic.svg
 %%DATADIR%%/icons/hicolor/16x16/actions/file-library-symbolic.svg
 %%DATADIR%%/icons/hicolor/16x16/actions/file-search-symbolic.svg
@@ -344,6 +349,7 @@ share/applications/gthumb.desktop
 %%DATADIR%%/ui/catalog-properties.ui
 %%DATADIR%%/ui/change-date.ui
 %%DATADIR%%/ui/code-selector.ui
+%%DATADIR%%/ui/color-picker-options.ui
 %%DATADIR%%/ui/comments-preferences.ui
 %%DATADIR%%/ui/contact-sheet-theme-properties.ui
 %%DATADIR%%/ui/contact-sheet.ui
@@ -403,6 +409,7 @@ share/applications/gthumb.desktop
 %%DATADIR%%/ui/tag-chooser.ui
 %%DATADIR%%/ui/tga-options.ui
 %%DATADIR%%/ui/tiff-options.ui
+%%DATADIR%%/ui/toolbar-zoom-menu.ui
 %%DATADIR%%/ui/web-album-exporter.ui
 %%DATADIR%%/ui/webp-options.ui
 share/help/C/gthumb/attributes.page
