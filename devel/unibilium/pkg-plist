@@ -2,7 +2,7 @@ include/unibilium.h
 lib/libunibilium.a
 lib/libunibilium.so
 lib/libunibilium.so.0
-lib/libunibilium.so.0.3.0
+lib/libunibilium.so.0.3.1
 libdata/pkgconfig/unibilium.pc
 man/man3/unibi_add_ext_bool.3.gz
 man/man3/unibi_add_ext_num.3.gz
