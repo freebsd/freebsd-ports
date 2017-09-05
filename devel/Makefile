@@ -4517,6 +4517,7 @@
     SUBDIR += py-log4py
     SUBDIR += py-logan
     SUBDIR += py-logbook
+    SUBDIR += py-logfury
     SUBDIR += py-logilab-common
     SUBDIR += py-logutils
     SUBDIR += py-louie
