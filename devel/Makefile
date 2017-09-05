@@ -31,6 +31,7 @@
     SUBDIR += R-cran-gbm
     SUBDIR += R-cran-gdata
     SUBDIR += R-cran-glmnet
+    SUBDIR += R-cran-glue
     SUBDIR += R-cran-gmodels
     SUBDIR += R-cran-gsubfn
     SUBDIR += R-cran-gtools
@@ -45,6 +46,7 @@
     SUBDIR += R-cran-plyr
     SUBDIR += R-cran-praise
     SUBDIR += R-cran-proto
+    SUBDIR += R-cran-purrr
     SUBDIR += R-cran-randomForest
     SUBDIR += R-cran-registry
     SUBDIR += R-cran-repr

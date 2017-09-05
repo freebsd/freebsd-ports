@@ -1,8 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	z3
-PORTVERSION=	4.5.0
 DISTVERSIONPREFIX=	${PORTNAME}-
+DISTVERSION=	4.5.0
+PORTREVISION=	1
 CATEGORIES=	math
 
 MAINTAINER=	6yearold@gmail.com
@@ -25,9 +26,10 @@ OPTIONS_SUB=		yes
 
 DEBUG_CONFIGURE_ON=	--debug
 
-PYTHON_DESC= 		Enable python bindings
+PYTHON_DESC=		Enable python bindings
 PYTHON_CONFIGURE_ON=	--python
 PYTHON_USES=		python
+PYTHON_USES_OFF=	python:build
 
 STATIC_DESC=		Build static z3 library
 STATIC_CONFIGURE_ON=	--staticlib
