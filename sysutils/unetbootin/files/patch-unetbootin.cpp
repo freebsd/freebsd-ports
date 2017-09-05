@@ -24,10 +24,10 @@
 +		struct statfs *fslist;
 +
 +		/*
-+		 * Find out VFS number assigned by kernel for MSDOSFS,
-+		 * because it's faster to compare numbers than strings.
-+		 * This also helps to ensure that it is configured in
-+		 * the kernel.
++		 * Find out VFS number assigned by kernel for MSDOSFS.
++		 * This helps to ensure that it is configured with the
++		 * kernel.  As a nice side effect, this also allows to
++		 * compare a number instead of "msdosfs" string later.
 +		 */
 +		if (getvfsbyname("msdosfs", &fsconf) == -1)
 +			goto out;
@@ -81,7 +81,21 @@
  	return fulldrivelist;
  }
  
-@@ -3412,21 +3469,36 @@ void unetbootin::instIndvfl(QString srcfName, QString 
+@@ -1100,7 +1157,12 @@ bool unetbootin::checkifoutofspace(QString destindir)
+ 	struct statfs diskstatS;
+ 	if (!statfs(QString(destindir+"/.").toAscii(), &diskstatS))
+ 	{
+-		if (diskstatS.f_bavail * diskstatS.f_bfree < 1024)
++		/*
++		 * Refuse to work if available disk space is less than 1MB
++		 * (1024KB).  Even this seems very low, but original value
++		 * of 1024 bytes was simply ridiculous.
++		 */
++		if (diskstatS.f_bsize / 1024 * diskstatS.f_bavail < 1024)
+ 			outofspace = true;
+ 	}
+ 	#endif
+@@ -3412,21 +3474,36 @@ void unetbootin::instIndvfl(QString srcfName, QString 
  				srcF.setFileName(QFile::exists("/usr/share/syslinux/memdisk") ? "/usr/share/syslinux/memdisk" : "/usr/lib/syslinux/memdisk");
  	else if (srcfName == "menu.c32")
  	{
@@ -118,7 +132,7 @@
  	}
      else if (srcfName == "mbr.bin")
  	{
-@@ -3516,11 +3588,19 @@ void unetbootin::runinst()
+@@ -3516,11 +3593,19 @@ void unetbootin::runinst()
  	}
  	if (installType == tr("USB Drive"))
  	{
@@ -138,7 +152,7 @@
  	}
  #ifdef Q_OS_LINUX
  	if (targetDev.contains(QRegExp("p\\d$")))
-@@ -3528,7 +3608,7 @@ void unetbootin::runinst()
+@@ -3528,7 +3613,7 @@ void unetbootin::runinst()
  	else
  		rawtargetDev = QString(targetDev).remove(QRegExp("\\d$"));
  #endif
@@ -147,7 +161,7 @@
  	rawtargetDev = QString(targetDev).remove(QRegExp("s\\d$"));
  #endif
  	#endif
-@@ -4281,21 +4361,47 @@ void unetbootin::runinstusb()
+@@ -4281,21 +4366,47 @@ void unetbootin::runinstusb()
              instIndvfl("libutil.c32", QString("%1libutil.c32").arg(targetPath));
              instIndvfl("libcom32.c32", QString("%1libcom32.c32").arg(targetPath));
          }
@@ -206,7 +220,7 @@
  	if (this->persistenceSpaceMB > 0)
  	{
  		pdesc1->setText(tr("Setting up persistence"));
-@@ -4334,6 +4440,20 @@ void unetbootin::fininstall()
+@@ -4334,6 +4445,20 @@ void unetbootin::fininstall()
  		rmFile(mke2fscommand);
  #endif
  	}
