@@ -32,19 +32,3 @@ build: don't force SSE on i386
  #define CPUPBA_USE_SSE
  #include <xmmintrin.h>
  #include <emmintrin.h>
---- src/ext/SiftGPU/CMakeLists.txt.orig	2017-06-15 14:32:01 UTC
-+++ src/ext/SiftGPU/CMakeLists.txt
-@@ -1,13 +1,9 @@
- set(SIFT_GPU_ENABLE_OPENCL FALSE)
--set(SIFT_GPU_ENABLE_SSE TRUE)
- set(SIFT_GPU_ENABLE_DEVIL FALSE)
- set(SIFT_GPU_PREFER_GLUT TRUE)
- 
- if(NOT IS_MSVC)
-     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fPIC")
--    if(SIFT_GPU_ENABLE_SSE)
--        set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -march=core2 -mfpmath=sse")
--    endif()
- endif()
- 
- if(SIFT_GPU_PREFER_GLUT)
