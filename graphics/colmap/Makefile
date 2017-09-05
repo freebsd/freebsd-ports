@@ -1,9 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	colmap
-DISTVERSION=	3.1-4
-DISTVERSIONSUFFIX=	-g542ce21 # doc fixes
-PORTREVISION=	1
+DISTVERSION=	3.2
 CATEGORIES=	graphics
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -28,7 +26,7 @@ LIB_DEPENDS=	libboost_filesystem.so:devel/boost-libs \
 
 USES=		cmake compiler:${OPENMP}c++11-lib fortran localbase sqlite
 USE_GITHUB=	yes
-USE_GL=		gl glew glut
+USE_GL=		gl glew
 USE_QT5=	qmake_build buildtools_build core gui opengl_build widgets
 EXCLUDE=	SQLite
 EXTRACT_AFTER_ARGS=	${EXCLUDE:S,^,--exclude src/ext/,}
