@@ -3,6 +3,7 @@
 
 PORTNAME=	unetbootin
 PORTVERSION=	655
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/${PORTNAME}/UNetbootin/${PORTVERSION}
 DISTNAME=	${PORTNAME}-source-${PORTVERSION}
@@ -16,11 +17,11 @@ RUN_DEPENDS=	7z:archivers/p7zip \
 		syslinux:sysutils/syslinux \
 		mke2fs:sysutils/e2fsprogs
 
-NO_WRKSUBDIR=	yes
-
-USE_QT4=	moc_build qmake_build linguisttools_build uic_build \
+USE_QT4=	linguisttools_build moc_build qmake_build uic_build \
 		corelib gui network
 QMAKE_ARGS=	DEFINES+=LOCALBASE=\\\\\\\"${LOCALBASE}\\\\\\\"
+
+NO_WRKSUBDIR=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,/usr/share,${PREFIX}/share,g' \
