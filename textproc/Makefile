@@ -1389,11 +1389,13 @@
     SUBDIR += py3-asciinema
     SUBDIR += py3-chardet
     SUBDIR += py3-docutils
+    SUBDIR += py3-feedparser
     SUBDIR += py3-humanfriendly
     SUBDIR += py3-hunspell
     SUBDIR += py3-libxml2
     SUBDIR += py3-numpydoc
     SUBDIR += py3-pager
+    SUBDIR += py3-pyPEG2
     SUBDIR += py3-pygments
     SUBDIR += py3-pystemmer
     SUBDIR += py3-snowballstemmer

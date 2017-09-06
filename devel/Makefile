@@ -5100,6 +5100,7 @@
     SUBDIR += py3-six
     SUBDIR += py3-tabulate
     SUBDIR += py3-threema-msgapi
+    SUBDIR += py3-toposort
     SUBDIR += py3-tox
     SUBDIR += py3-tzlocal
     SUBDIR += py3-urwid

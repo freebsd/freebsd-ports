@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pulseaudio-module-sndio
-PORTVERSION=	9.0
-PORTREVISION=	1
+DISTVERSION=	10.99.1
 CATEGORIES=	audio
 
 MAINTAINER=	tobik@FreeBSD.org
@@ -19,9 +18,8 @@ USES=		pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	t6
 
-MAKE_ARGS=	STAGEDIR="${STAGEDIR}"
-
 PULSE_MODDIR=	`pkg-config --variable=modlibexecdir libpulse`
 PLIST_FILES=	${PULSE_MODDIR}/module-sndio.so
+SUB_FILES=	pkg-message
 
 .include <bsd.port.mk>

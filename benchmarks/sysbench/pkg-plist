@@ -61,6 +61,8 @@ bin/sysbench
 %%DATADIR%%/tests/t/opt_version.t
 %%DATADIR%%/tests/t/script_bulk_insert_mysql.t
 %%DATADIR%%/tests/t/script_bulk_insert_pgsql.t
+%%DATADIR%%/tests/t/script_oltp_delete_mysql.t
+%%DATADIR%%/tests/t/script_oltp_delete_pgsql.t
 %%DATADIR%%/tests/t/script_oltp_help.t
 %%DATADIR%%/tests/t/script_oltp_insert_mysql.t
 %%DATADIR%%/tests/t/script_oltp_insert_pgsql.t
