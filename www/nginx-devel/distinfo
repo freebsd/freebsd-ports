@@ -1,4 +1,4 @@
-TIMESTAMP = 1502363751
+TIMESTAMP = 1504728041
 SHA256 (nginx-1.13.4.tar.gz) = de21f3c49ba65c611329d8759a63d72e5fcf719bc6f2a3270e2541348ef1fbba
 SIZE (nginx-1.13.4.tar.gz) = 988415
 SHA256 (ngx_cache_purge-2.3.tar.gz) = 279e0d8a46d3b1521fd43b3f78bc1c08b263899142a7cc5058c1c0361a92c89c
@@ -121,8 +121,8 @@ SHA256 (kaltura-nginx-vod-module-1.18_GH0.tar.gz) = cba0673725f66279671d9dc0ac7b
 SIZE (kaltura-nginx-vod-module-1.18_GH0.tar.gz) = 388548
 SHA256 (openresty-xss-nginx-module-v0.05_GH0.tar.gz) = 958bd8de773601d8d3138501cc4be0420f1c818a3987a70cc9c0023371e432cf
 SIZE (openresty-xss-nginx-module-v0.05_GH0.tar.gz) = 11477
-SHA256 (nginx-njs-753ebe6_GH0.tar.gz) = 43fc7a307ee98b9c55283374b36f1f4576cbf529a4101176cb94ab73f3110f67
-SIZE (nginx-njs-753ebe6_GH0.tar.gz) = 191124
+SHA256 (nginx-njs-bd40aea_GH0.tar.gz) = 0fea9022d79db2b74d2da1b44f6366a3c60fe47475b77a80c506ef02ad976151
+SIZE (nginx-njs-bd40aea_GH0.tar.gz) = 203897
 SHA256 (openresty-array-var-nginx-module-v0.05_GH0.tar.gz) = c949d4be6f3442c8e2937046448dc8d8def25c0e0fa6f4e805144cea45eabe80
 SIZE (openresty-array-var-nginx-module-v0.05_GH0.tar.gz) = 11280
 SHA256 (google-ngx_brotli-12529813_GH0.tar.gz) = 788b25c4a3285b34d06e48a469fd0d0cb52d43b43edccd2935e22802dcfd2d69
