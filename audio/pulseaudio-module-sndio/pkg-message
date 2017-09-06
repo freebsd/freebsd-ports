@@ -1,9 +1,0 @@
-To use the sndio PulseAudio module load it with
-
-    pacmd load-module module-sndio
-
-You can use audio/pavucontrol or pacmd to switch a specific stream
-over to use it.  Unloading the OSS module will send all streams over
-sndio:
-
-    pacmd unload-module module-oss

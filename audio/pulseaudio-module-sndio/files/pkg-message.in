@@ -1,0 +1,3 @@
+The sndio module can be loaded via %%LOCALBASE%%/etc/pulse/default.pa:
+
+  load-module module-sndio device=snd/0
