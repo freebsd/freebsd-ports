@@ -60,6 +60,7 @@
     SUBDIR += R-cran-sourcetools
     SUBDIR += R-cran-tibble
     SUBDIR += R-cran-tidyr
+    SUBDIR += R-cran-tidyselect
     SUBDIR += SpecTcl
     SUBDIR += aap
     SUBDIR += aarch64-binutils

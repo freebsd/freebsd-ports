@@ -42,7 +42,7 @@
 %%DATADIR%%/ADDITIONS/quota_usage.pl
 %%DATADIR%%/ADDITIONS/squirrelmail-plugin/INSTALL
 %%DATADIR%%/ADDITIONS/squirrelmail-plugin/LICENSE.txt
-%%DATADIR%%/ADDITIONS/squirrelmail-plugin/README
+%%DATADIR%%/ADDITIONS/squirrelmail-plugin/README.md
 %%DATADIR%%/ADDITIONS/squirrelmail-plugin/common.php
 %%DATADIR%%/ADDITIONS/squirrelmail-plugin/config.php.sample
 %%DATADIR%%/ADDITIONS/squirrelmail-plugin/debian/README.Debian
@@ -84,6 +84,7 @@
 %%DATADIR%%/GPL-LICENSE.TXT
 %%DATADIR%%/INSTALL.TXT
 %%DATADIR%%/LICENSE.TXT
+%%DATADIR%%/README.md
 %%DATADIR%%/VIRTUAL_VACATION/FILTER_README
 %%DATADIR%%/VIRTUAL_VACATION/INSTALL.TXT
 %%DATADIR%%/VIRTUAL_VACATION/index.php
@@ -107,6 +108,7 @@
 %%WWWDIR%%/delete.php
 %%WWWDIR%%/edit.php
 %%WWWDIR%%/editactive.php
+%%WWWDIR%%/favicon.ico
 %%WWWDIR%%/functions.inc.php
 %%WWWDIR%%/images/arrow-l.png
 %%WWWDIR%%/images/arrow-r.png
@@ -447,7 +449,6 @@
 %%WWWDIR%%/users/password.php
 %%WWWDIR%%/users/vacation.php
 %%WWWDIR%%/vacation.php
-%%WWWDIR%%/variables.inc.php
 %%WWWDIR%%/viewlog.php
 %%WWWDIR%%/xmlrpc.php
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/templates_c

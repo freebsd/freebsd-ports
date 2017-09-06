@@ -1,0 +1,6 @@
+A backend for the selecting functions of the 'tidyverse'. It makes
+it easy to implement select-like functions in your own packages in
+a way that is consistent with other 'tidyverse' interfaces for
+selection.
+
+WWW: https://cran.r-project.org/web/packages/tidyselect/
