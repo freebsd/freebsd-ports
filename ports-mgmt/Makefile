@@ -14,7 +14,7 @@
     SUBDIR += fbsdmon
     SUBDIR += fbsdpkgupdate
     SUBDIR += freebsd-bugzilla-cli
-    SUBDIR += gbsdserver
+    SUBDIR += gbsdbserver
     SUBDIR += genpatch
     SUBDIR += genplist
     SUBDIR += hs-porte
