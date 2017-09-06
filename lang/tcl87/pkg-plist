@@ -14,7 +14,7 @@ include/tcl%%TCL_VER%%/tclTomMathDecls.h
 %%MODULES%%lib/tcl%%TCL_VER%%/http-2.8.12.tm
 %%MODULES%%lib/tcl%%TCL_VER%%/http1.0/http.tcl
 %%MODULES%%lib/tcl%%TCL_VER%%/http1.0/pkgIndex.tcl
-%%MODULES%%lib/tcl%%TCL_VER%%/msgcat-1.6.0.tm
+%%MODULES%%lib/tcl%%TCL_VER%%/msgcat-1.6.1.tm
 %%MODULES%%lib/tcl%%TCL_VER%%/opt0.4/optparse.tcl
 %%MODULES%%lib/tcl%%TCL_VER%%/opt0.4/pkgIndex.tcl
 %%MODULES%%lib/tcl%%TCL_VER%%/platform-1.0.14.tm

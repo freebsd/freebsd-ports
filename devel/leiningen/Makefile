@@ -33,7 +33,7 @@ SHEBANG_FILES=	bin/lein-pkg
 bash_CMD=	/bin/sh
 
 post-patch:
-	@${REINPLACE_CMD} -E -e 's|function (.*) {|\1() {|' \
+	@${REINPLACE_CMD} -E -e 's|function (.*) \{|\1() {|' \
 		-e 's|(local )-i |\1|' \
 		-e 's|^if \[\[ (.*) \]\];|if [ \1 ];|' \
 		-e 's|(BOOTCLASSPATH)\[@\]|\1|' \

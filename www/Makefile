@@ -543,6 +543,8 @@
     SUBDIR += node4
     SUBDIR += node6
     SUBDIR += nostromo
+    SUBDIR += novnc
+    SUBDIR += novnc-websockify
     SUBDIR += npapi-vlc
     SUBDIR += npapi-xine
     SUBDIR += npc
