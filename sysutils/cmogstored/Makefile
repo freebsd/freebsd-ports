@@ -9,15 +9,10 @@ MASTER_SITES=	http://bogomips.org/cmogstored/files/
 MAINTAINER=	trociny@FreeBSD.org
 COMMENT=	Alternative mogstored implementation for MogileFS
 
-<<<<<<< HEAD
-NOPIE_PORTS=	yes
-NORELRO_PORTS=	yes
-
-LICENSE=	GPLv3
-=======
 LICENSE=	GPLv3+
->>>>>>> upstream/master
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+USE_HARDENING=	# empty
 
 BROKEN_powerpc64=	Does not build: internal compiler error: Segmentation fault
 
