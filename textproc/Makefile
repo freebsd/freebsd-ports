@@ -14,6 +14,7 @@
     SUBDIR += R-cran-htmltools
     SUBDIR += R-cran-markdown
     SUBDIR += R-cran-pystr
+    SUBDIR += R-cran-readr
     SUBDIR += R-cran-rmarkdown
     SUBDIR += R-cran-stringi
     SUBDIR += R-cran-stringr
