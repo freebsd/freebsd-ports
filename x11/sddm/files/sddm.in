@@ -1,0 +1,75 @@
+#!/bin/sh
+# $FreeBSD$
+#
+# PROVIDE: sddm
+# REQUIRE: LOGIN cleanvar moused syscons dbus hald
+# KEYWORD: shutdown
+#
+# Add the following to /etc/rc.conf to start SDDM at boot time:
+#
+# sddm_enable="YES"
+
+. /etc/rc.subr
+
+name=sddm
+rcvar=sddm_enable
+
+load_rc_config ${name}
+
+: ${sddm_lang="en_US"} # .UTF-8 suffix will be added later to comply with locale format
+
+command="/usr/local/bin/sddm"
+pidfile="/var/run/sddm.pid"
+start_cmd="sddm_start"
+stop_cmd="sddm_stop"
+
+# Creates /etc/sddm.conf after `sddm --example-config` if it's not there already.
+sddm_genconf()
+{
+	if [ ! -r /etc/sddm.conf ]; then
+		echo "Generating SDDM configuration."
+		${command} --example-config > /etc/sddm.conf
+	fi
+}
+
+sddm_start()
+{
+	echo "Starting ${name}."
+	local iter
+	sddm_genconf
+
+	( iter=0
+	while ! ps -axoargs | grep "^/usr/libexec/getty" | grep -qv grep > /dev/null 2>&1; do
+		if [ ${iter} -eq 60 ]; then
+			break
+		fi
+		sleep 1
+		iter=$((${iter} + 1))
+	done
+
+	if checkyesno hald_enable; then
+		if [ ! -x /usr/local/sbin/hald ]; then
+			err 1 "Hald does not seem to be installed."
+		fi
+
+		iter=0
+		while [ ${iter} -lt 60 ] &&
+			!pgrep -f "^/usr/local/sbin/hald" > /dev/null 2>&1; do
+			sleep 1
+			iter=$((${iter} + 1))
+		done
+	fi
+
+	LANG=${sddm_lang}.UTF-8 ${command} ${sddm_flags} ) &
+}
+
+# Only takes the user back to the sddm screen when run from X
+sddm_stop()
+{
+	echo "Stopping ${name}."
+	/bin/kill -9 $(/bin/cat "${pidfile}")
+	pkill -9 -U ${name}
+	pkill -9 X
+}
+
+run_rc_command "$1"

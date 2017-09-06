@@ -2122,3 +2122,4 @@ share/polkit-1/actions/org.kde.ksysguard.processlisthelper.policy
 share/sounds/pop.wav
 share/wallpapers/stripes.png
 share/wallpapers/stripes.png.desktop
+share/xsessions/kde4.desktop

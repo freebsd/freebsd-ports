@@ -296,6 +296,7 @@
     SUBDIR += screen-message
     SUBDIR += scripts
     SUBDIR += scrnsaverproto
+    SUBDIR += sddm
     SUBDIR += sessreg
     SUBDIR += setlayout
     SUBDIR += setxkbmap
