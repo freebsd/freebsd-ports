@@ -4,17 +4,19 @@
 # Please update update atril-lite also
 
 PORTNAME=	atril
-PORTVERSION=	1.18.0
-PORTREVISION?=	1
+PORTVERSION=	1.18.1
+PORTREVISION?=	0
 CATEGORIES=	graphics print mate
 MASTER_SITES=	MATE
 DIST_SUBDIR=	mate
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT?=	MATE multi-format document viewer
+COMMENT=	MATE multi-format document viewer
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	itstool:textproc/itstool
-
 LIB_DEPENDS=	libpoppler-glib.so:graphics/poppler-glib \
 		libsoup-2.4.so:devel/libsoup \
 		libfontconfig.so:x11-fonts/fontconfig \
