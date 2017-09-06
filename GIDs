@@ -160,7 +160,7 @@ opendnssec:*:215:
 nsd:*:216:
 anvil:*:217:
 zap:*:218:
-# free: 219
+sddm:*:219:
 bs:*:220:
 # free: 221
 rtpproxy:*:222:

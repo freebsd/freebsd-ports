@@ -1,0 +1,16 @@
+1) On FreeBSD X is normally started on VT9.
+2) The shutdown command uses '-p' and not '-P' on FreeBSD.
+
+--- CMakeLists.txt.orig	2016-08-28 11:54:03 UTC
++++ CMakeLists.txt
+@@ -143,8 +143,8 @@ if(SYSTEMD_FOUND)
+     set(REBOOT_COMMAND "/usr/bin/systemctl reboot")
+ else()
+     set(SYSTEMD_FOUND 0)
+-    set(MINIMUM_VT 7)
+-    set(HALT_COMMAND "/sbin/shutdown -h -P now")
++    set(MINIMUM_VT 9)
++    set(HALT_COMMAND "/sbin/shutdown -h -p now")
+     set(REBOOT_COMMAND "/sbin/shutdown -r now")
+ endif()
+ add_feature_info("systemd" SYSTEMD_FOUND "systemd support")

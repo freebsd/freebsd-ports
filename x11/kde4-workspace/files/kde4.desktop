@@ -1,0 +1,7 @@
+[Desktop Entry]
+Encoding=UTF-8
+Type=XSession
+Exec=/usr/local/bin/startkde
+TryExec=/usr/local/bin/startkde
+DesktopNames=KDE
+Name=KDE4
