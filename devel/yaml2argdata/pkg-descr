@@ -1,0 +1,15 @@
+Argdata is a binary serialisation format similar to FreeBSD's nvlists.
+It differs from nvlists in that it uses data types that are more similar
+to YAML.
+
+Argdata is used by CloudABI as a replacement for string command line
+arguments and environment variables. CloudABI processes can start new
+processes by passing them a YAML-like tree of arguments, having file
+descriptors of resources annotated to the tree.
+
+This package provides a series of helper classes that are used by
+utilities like cloudabi-run to parse and translate YAML to Argdata.
+These classes are useful when building custom utilities for launching
+CloudABI processes, such as CloudABI's Kubernetes daemon.
+
+WWW: https://github.com/NuxiNL/yaml2argdata
