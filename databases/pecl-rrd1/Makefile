@@ -3,6 +3,7 @@
 PORTNAME=	rrd
 DISTVERSION=	1.1.3
 CATEGORIES=	databases pear
+PKGNAMESUFFIX=	1
 
 MAINTAINER=	daniel@blodan.se
 COMMENT=	PHP bindings to rrd tool system
