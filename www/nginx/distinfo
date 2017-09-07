@@ -1,4 +1,4 @@
-TIMESTAMP = 1501239413
+TIMESTAMP = 1504807697
 SHA256 (nginx-1.12.1.tar.gz) = 8793bf426485a30f91021b6b945a9fd8a84d87d17b566562c3797aba8fac76fb
 SIZE (nginx-1.12.1.tar.gz) = 981093
 SHA256 (ngx_cache_purge-2.3.tar.gz) = 279e0d8a46d3b1521fd43b3f78bc1c08b263899142a7cc5058c1c0361a92c89c
@@ -17,8 +17,8 @@ SHA256 (modsecurity-2.9.1.tar.gz) = 958cc5a7a7430f93fac0fd6f8b9aa92fc1801efce0cd
 SIZE (modsecurity-2.9.1.tar.gz) = 4261212
 SHA256 (SpiderLabs-ModSecurity-nginx-abbf2c4_GH0.tar.gz) = 3d216e7c282213cd64b4671fe86d9057a3f318f692f4f906c695eee619c82228
 SIZE (SpiderLabs-ModSecurity-nginx-abbf2c4_GH0.tar.gz) = 25917
-SHA256 (passenger-5.1.5.tar.gz) = ea4139d2f0d9f7aa6488be966ffbfe602f80764a47b7077892d92324bff5eb47
-SIZE (passenger-5.1.5.tar.gz) = 5126337
+SHA256 (passenger-5.1.8.tar.gz) = fef10e4a34c3faa48306c21c0789ee4d4d56fc0e30205cc470a91b486b7a4a7d
+SIZE (passenger-5.1.8.tar.gz) = 5234529
 SHA256 (ngx_slowfs_cache-1.10.tar.gz) = 1e81453942e5b0877de1f1f06c56ae82918ea9818255cb935bcb673c95a758a1
 SIZE (ngx_slowfs_cache-1.10.tar.gz) = 11809
 SHA256 (giom-nginx_accept_language_module-2f69842_GH0.tar.gz) = 5534ca63cdfc2a7dc4e1cbf9c2d54d3ed3f0e6c86b4a95be48ec0a3f41cc1eb0
