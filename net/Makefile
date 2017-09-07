@@ -136,6 +136,7 @@
     SUBDIR += exaddos
     SUBDIR += fb
     SUBDIR += findmtu
+    SUBDIR += flower
     SUBDIR += flowgrep
     SUBDIR += fonulator
     SUBDIR += foreman-proxy
