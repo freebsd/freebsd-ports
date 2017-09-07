@@ -3,7 +3,7 @@
 
 PORTNAME=	lablgl
 PORTVERSION=	1.05
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://wwwfun.kurims.kyoto-u.ac.jp/soft/lsl/dist/ \
@@ -17,7 +17,7 @@ LICENSE=	BSD3CLAUSE
 
 CONFLICTS=	ocaml-nox11-[0-9]*
 
-USES=		gmake tk:84,85
+USES=		gmake tk:85
 USE_XORG=	x11 xext xmu
 USE_GL=		glut
 USE_OCAML=	yes
