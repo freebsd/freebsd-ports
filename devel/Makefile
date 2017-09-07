@@ -35,6 +35,7 @@
     SUBDIR += R-cran-gmodels
     SUBDIR += R-cran-gsubfn
     SUBDIR += R-cran-gtools
+    SUBDIR += R-cran-hms
     SUBDIR += R-cran-iterators
     SUBDIR += R-cran-itertools
     SUBDIR += R-cran-magrittr
