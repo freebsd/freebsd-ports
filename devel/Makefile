@@ -133,6 +133,7 @@
     SUBDIR += arm-none-eabi-gdb
     SUBDIR += arm-none-eabi-newlib
     SUBDIR += aros-sdk
+    SUBDIR += arpc
     SUBDIR += art
     SUBDIR += artifactory
     SUBDIR += as31
