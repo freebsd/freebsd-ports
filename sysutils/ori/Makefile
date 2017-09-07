@@ -3,9 +3,12 @@
 
 PORTNAME=	ori
 PORTVERSION=	0.8.1
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	sysutils net
 MASTER_SITES=	http://cdn.bitbucket.org/orifs/ori/downloads/
+
+PATCH_SITES=	https://bitbucket.org/orifs/ori/commits/
+PATCHFILES=	48862f2477b1/raw:-p1
 
 MAINTAINER=	mashti@cs.stanford.edu
 COMMENT=	Ori distributed file system
@@ -13,7 +16,7 @@ COMMENT=	Ori distributed file system
 LIB_DEPENDS=	libevent.so:devel/libevent \
 		libboost_date_time.so:devel/boost-libs
 
-USES=		execinfo fuse pkgconfig scons ssl tar:xz
+USES=		compiler:c++11-lib execinfo fuse pkgconfig scons ssl tar:xz
 CPPFLAGS+=	-I${OPENSSLINC}
 LDFLAGS+=	-L${OPENSSLLIB} -lcrypto
 MAKE_ARGS=	VERBOSE=1
