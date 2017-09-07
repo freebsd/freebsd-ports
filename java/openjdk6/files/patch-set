@@ -1140,14 +1140,16 @@
  const char * os::Bsd::_glibc_version = NULL;
  const char * os::Bsd::_libpthread_version = NULL;
  #endif
-@@ -205,6 +224,28 @@
+@@ -205,6 +224,30 @@
  
  julong os::Bsd::available_memory() {
  #ifdef _ALLBSD_SOURCE
 +#ifdef __FreeBSD__
 +  static const char *vm_stats[] = {
 +    "vm.stats.vm.v_free_count",
++#if __FreeBSD_version < 1200016
 +    "vm.stats.vm.v_cache_count",
++#endif
 +    "vm.stats.vm.v_inactive_count"
 +  };
 +  size_t size;
@@ -1169,7 +1171,7 @@
    // XXXBSD: this is just a stopgap implementation
    return physical_memory() >> 2;
  #else
-@@ -221,6 +262,17 @@
+@@ -221,6 +264,17 @@
  }
  
  julong os::allocatable_physical_memory(julong size) {
@@ -1187,7 +1189,7 @@
  #ifdef _LP64
    return size;
  #else
-@@ -308,16 +360,22 @@
+@@ -308,16 +362,22 @@
  #define COMPILER_VARIANT "client"
  #endif
  
@@ -1214,7 +1216,7 @@
    int rslt = syscall(SYS_gettid);
    if (rslt == -1) {
       // old kernel, no NPTL support
-@@ -325,6 +383,7 @@
+@@ -325,6 +385,7 @@
    } else {
       return (pid_t)rslt;
    }
@@ -1222,7 +1224,7 @@
  }
  
  // Most versions of bsd have a bug where the number of processors are
-@@ -337,7 +396,35 @@
+@@ -337,7 +398,35 @@
                       "environment on Bsd when /proc filesystem is not mounted.";
  #endif
  
@@ -1259,7 +1261,7 @@
  void os::Bsd::initialize_system_info() {
    int mib[2];
    size_t len;
-@@ -452,7 +539,7 @@
+@@ -452,7 +541,7 @@
   *        7: The default directories, normally /lib and /usr/lib.
   */
  #ifndef DEFAULT_LIBPATH
@@ -1268,7 +1270,7 @@
  #endif
  
  #define EXTENSIONS_DIR  "/lib/ext"
-@@ -997,7 +1084,7 @@
+@@ -997,7 +1086,7 @@
      return NULL;
    }
  
@@ -1277,7 +1279,7 @@
  #ifdef __APPLE__
    // thread_id is mach thread on macos
    osthread->set_thread_id(::mach_thread_self());
-@@ -1009,6 +1096,7 @@
+@@ -1009,6 +1098,7 @@
    // thread_id is kernel thread id (similar to Solaris LWP id)
    osthread->set_thread_id(os::Bsd::gettid());
  
@@ -1285,7 +1287,7 @@
    if (UseNUMA) {
      int lgrp_id = os::numa_get_group_id();
      if (lgrp_id != -1) {
-@@ -1016,6 +1104,7 @@
+@@ -1016,6 +1106,7 @@
      }
    }
  #endif
@@ -1293,7 +1295,7 @@
    // initialize signal mask for this thread
    os::Bsd::hotspot_sigmask(thread);
  
-@@ -1105,7 +1194,7 @@
+@@ -1105,7 +1196,7 @@
      // let pthread_create() pick the default value.
    }
  
@@ -1302,7 +1304,7 @@
    // glibc guard page
    pthread_attr_setguardsize(&attr, os::Bsd::default_guard_size(thr_type));
  #endif
-@@ -1194,7 +1283,7 @@
+@@ -1194,7 +1285,7 @@
    }
  
    // Store pthread info into the OSThread
@@ -1311,7 +1313,7 @@
  #ifdef __APPLE__
    osthread->set_thread_id(::mach_thread_self());
  #else
-@@ -1630,7 +1719,10 @@
+@@ -1630,7 +1721,10 @@
  }
  #endif
  
@@ -1323,7 +1325,7 @@
  #ifndef SYS_clock_getres
  
  #if defined(IA32) || defined(AMD64)
-@@ -1644,6 +1736,7 @@
+@@ -1644,6 +1738,7 @@
  #else
  #define sys_clock_getres(x,y)  ::syscall(SYS_clock_getres, x, y)
  #endif
@@ -1331,7 +1333,7 @@
  
  void os::Bsd::fast_thread_clock_init() {
    if (!UseBsdPosixThreadCPUClocks) {
-@@ -1814,8 +1907,10 @@
+@@ -1814,8 +1909,10 @@
  }
  
  intx os::current_thread_id() {
@@ -1343,7 +1345,7 @@
  #else
    return (intx)::pthread_self();
  #endif
-@@ -2338,14 +2433,16 @@
+@@ -2338,14 +2435,16 @@
  }
  
  void os::print_os_info_brief(outputStream* st) {
@@ -1362,7 +1364,7 @@
  
    os::Posix::print_uname_info(st);
  
-@@ -2363,7 +2460,23 @@
+@@ -2363,7 +2462,23 @@
    st->print("Memory:");
    st->print(" %dk page", os::vm_page_size()>>10);
  
@@ -1387,7 +1389,7 @@
    // values in struct sysinfo are "unsigned long"
    struct sysinfo si;
    sysinfo(&si);
-@@ -2373,17 +2486,22 @@
+@@ -2373,17 +2488,22 @@
              os::physical_memory() >> 10);
    st->print("(" UINT64_FORMAT "k free)",
              os::available_memory() >> 10);
@@ -1412,7 +1414,7 @@
    st->cr();
  }
  
-@@ -2396,7 +2514,7 @@
+@@ -2396,7 +2516,7 @@
  
  const char *fpe_names[] = { "FPE0", "FPE_INTDIV", "FPE_INTOVF", "FPE_FLTDIV",
                            "FPE_FLTOVF", "FPE_FLTUND", "FPE_FLTRES",
@@ -1421,7 +1423,7 @@
  
  const char *segv_names[] = { "SEGV0", "SEGV_MAPERR", "SEGV_ACCERR" };
  
-@@ -2422,7 +2540,7 @@
+@@ -2422,7 +2542,7 @@
      st->print(", si_addr=" PTR_FORMAT, si->si_addr);
      break;
    case SIGFPE:
@@ -1430,7 +1432,7 @@
      st->print(", si_addr=" PTR_FORMAT, si->si_addr);
      break;
    case SIGSEGV:
-@@ -2531,10 +2649,17 @@
+@@ -2531,10 +2651,17 @@
          jrelib_p = buf + len;
  
          // Add the appropriate library subdir
@@ -1448,7 +1450,7 @@
  
          // Add the appropriate client or server subdir
          len = strlen(buf);
-@@ -2752,7 +2877,7 @@
+@@ -2752,7 +2879,7 @@
        if (::write(fd, "", 1) == 1) {
          mmap(base, size,
               PROT_READ|PROT_WRITE|PROT_EXEC,
@@ -1457,7 +1459,7 @@
        }
      }
      ::close(fd);
-@@ -2815,7 +2940,7 @@
+@@ -2815,7 +2942,7 @@
  }
  
  void os::free_memory(char *addr, size_t bytes, size_t alignment_hint) {
@@ -1466,7 +1468,7 @@
  }
  
  void os::numa_make_global(char *addr, size_t bytes) {
-@@ -2962,7 +3087,7 @@
+@@ -2962,7 +3089,7 @@
    return ::mprotect(addr, size, PROT_NONE) == 0;
  #else
    uintptr_t res = (uintptr_t) ::mmap(addr, size, PROT_NONE,
@@ -1475,7 +1477,7 @@
    return res  != (uintptr_t) MAP_FAILED;
  #endif
  }
-@@ -2989,15 +3114,16 @@
+@@ -2989,15 +3116,16 @@
    char * addr;
    int flags;
  
@@ -1496,7 +1498,7 @@
                         flags, -1, 0);
  
    if (addr != MAP_FAILED) {
-@@ -3242,9 +3368,11 @@
+@@ -3242,9 +3370,11 @@
  #endif
  
  char* os::reserve_memory_special(size_t bytes, char* req_addr, bool exec) {
@@ -1508,7 +1510,7 @@
  
    key_t key = IPC_PRIVATE;
    char *addr;
-@@ -3319,11 +3447,19 @@
+@@ -3319,11 +3449,19 @@
  // with SysV SHM the entire memory region must be allocated as shared
  // memory.
  bool os::can_commit_large_page_memory() {
@@ -1528,7 +1530,7 @@
  }
  
  // Reserve memory at an arbitrary address, only if that area is
-@@ -3652,8 +3788,8 @@
+@@ -3652,8 +3790,8 @@
    return OS_OK;
  #else
    int ret = setpriority(PRIO_PROCESS, thread->osthread()->thread_id(), newpri);
@@ -1538,7 +1540,7 @@
  }
  
  OSReturn os::get_native_priority(const Thread* const thread, int *priority_ptr) {
-@@ -4169,7 +4305,7 @@
+@@ -4169,7 +4307,7 @@
    }
  }
  
@@ -1547,7 +1549,7 @@
  // This is the fastest way to get thread cpu time on Bsd.
  // Returns cpu time (user+sys) for any thread, not only for current.
  // POSIX compliant clocks are implemented in the kernels 2.6.16+.
-@@ -4186,6 +4322,7 @@
+@@ -4186,6 +4324,7 @@
  }
  #endif
  
@@ -1555,7 +1557,7 @@
  /////
  // glibc on Bsd platform uses non-documented flag
  // to indicate, that some special sort of signal
-@@ -4196,6 +4333,7 @@
+@@ -4196,6 +4335,7 @@
  #undef SIGNIFICANT_SIGNAL_MASK
  #endif
  #define SIGNIFICANT_SIGNAL_MASK (~0x04000000)
@@ -1563,7 +1565,7 @@
  
  static const char* get_signal_handler_name(address handler,
                                             char* buf, int buflen) {
-@@ -4220,8 +4358,10 @@
+@@ -4220,8 +4360,10 @@
  
    sigaction(sig, NULL, &sa);
  
@@ -1574,7 +1576,7 @@
  
    st->print("%s: ", os::exception_name(sig, buf, buflen));
  
-@@ -4243,7 +4383,11 @@
+@@ -4243,7 +4385,11 @@
    // May be, handler was resetted by VMError?
    if(rh != NULL) {
      handler = rh;
@@ -1586,7 +1588,7 @@
    }
  
    st->print(", sa_flags="   PTR32_FORMAT, sa.sa_flags);
-@@ -4318,7 +4462,9 @@
+@@ -4318,7 +4464,9 @@
    os_sigaction(sig, (struct sigaction*)NULL, &act);
  
  
@@ -1596,7 +1598,7 @@
  
    address thisHandler = (act.sa_flags & SA_SIGINFO)
      ? CAST_FROM_FN_PTR(address, act.sa_sigaction)
-@@ -4379,6 +4525,14 @@
+@@ -4379,6 +4527,14 @@
  
  extern bool signal_name(int signo, char* buf, size_t len);
  
@@ -1611,7 +1613,7 @@
  const char* os::exception_name(int exception_code, char* buf, size_t size) {
    if (0 < exception_code && exception_code <= SIGRTMAX) {
      // signal
-@@ -4448,7 +4602,7 @@
+@@ -4448,7 +4604,7 @@
  // this is called _after_ the global arguments have been parsed
  jint os::init_2(void)
  {
@@ -1620,7 +1622,7 @@
    Bsd::fast_thread_clock_init();
  #endif
  
-@@ -4632,6 +4786,20 @@
+@@ -4632,6 +4788,20 @@
  
  int os::active_processor_count() {
  #ifdef _ALLBSD_SOURCE
@@ -1641,7 +1643,7 @@
    return _processor_count;
  #else
    // Bsd doesn't yet have a (official) notion of processor sets,
-@@ -5031,7 +5199,7 @@
+@@ -5031,7 +5201,7 @@
    return munmap(addr, bytes) == 0;
  }
  
@@ -1650,7 +1652,7 @@
  static jlong slow_thread_cpu_time(Thread *thread, bool user_sys_cpu_time);
  
  static clockid_t thread_cpu_clockid(Thread* thread) {
-@@ -5055,7 +5223,7 @@
+@@ -5055,7 +5225,7 @@
  jlong os::current_thread_cpu_time() {
  #ifdef __APPLE__
    return os::thread_cpu_time(Thread::current(), true /* user + sys */);
@@ -1659,7 +1661,7 @@
    if (os::Bsd::supports_fast_thread_cpu_time()) {
      return os::Bsd::fast_thread_cpu_time(CLOCK_THREAD_CPUTIME_ID);
    } else {
-@@ -5066,7 +5234,7 @@
+@@ -5066,7 +5236,7 @@
  }
  
  jlong os::thread_cpu_time(Thread* thread) {
@@ -1668,7 +1670,7 @@
    // consistent with what current_thread_cpu_time() returns
    if (os::Bsd::supports_fast_thread_cpu_time()) {
      return os::Bsd::fast_thread_cpu_time(thread_cpu_clockid(thread));
-@@ -5079,7 +5247,7 @@
+@@ -5079,7 +5249,7 @@
  jlong os::current_thread_cpu_time(bool user_sys_cpu_time) {
  #ifdef __APPLE__
    return os::thread_cpu_time(Thread::current(), user_sys_cpu_time);
@@ -1677,7 +1679,7 @@
    if (user_sys_cpu_time && os::Bsd::supports_fast_thread_cpu_time()) {
      return os::Bsd::fast_thread_cpu_time(CLOCK_THREAD_CPUTIME_ID);
    } else {
-@@ -5108,7 +5276,7 @@
+@@ -5108,7 +5278,7 @@
    } else {
      return ((jlong)tinfo.user_time.seconds * 1000000000) + ((jlong)tinfo.user_time.microseconds * (jlong)1000);
    }
@@ -1686,7 +1688,7 @@
    if (user_sys_cpu_time && os::Bsd::supports_fast_thread_cpu_time()) {
      return os::Bsd::fast_thread_cpu_time(thread_cpu_clockid(thread));
    } else {
-@@ -5117,12 +5285,15 @@
+@@ -5117,12 +5287,15 @@
  #endif
  }
  
@@ -1703,7 +1705,7 @@
    static bool proc_pid_cpu_avail = true;
    static bool proc_task_unchecked = true;
    static const char *proc_stat_path = "/proc/%d/stat";
-@@ -5206,6 +5377,7 @@
+@@ -5206,6 +5379,7 @@
    } else {
      return (jlong)user_time * (1000000000 / clock_tics_per_sec);
    }
@@ -1711,7 +1713,7 @@
  }
  #endif
  
-@@ -5224,7 +5396,7 @@
+@@ -5224,7 +5398,7 @@
  }
  
  bool os::is_thread_cpu_time_supported() {
@@ -1720,7 +1722,7 @@
    return true;
  #elif defined(_ALLBSD_SOURCE)
    return false;
-@@ -5799,3 +5971,30 @@
+@@ -5799,3 +5973,30 @@
  
      return true;
  }
@@ -10993,14 +10995,16 @@
      clk_tck = 100;
  #endif
      if (clk_tck == -1) {
-@@ -244,32 +310,79 @@
+@@ -244,32 +310,81 @@
  Java_com_sun_management_UnixOperatingSystem_getFreePhysicalMemorySize
    (JNIEnv *env, jobject mbean)
  {
 +#if defined (__FreeBSD__)
 +    static const char *vm_stats[] = {
 +	"vm.stats.vm.v_free_count",
++#if __FreeBSD_version < 1200016
 +	"vm.stats.vm.v_cache_count",
++#endif
 +	/* "vm.stats.vm.v_inactive_count", */
 +	NULL
 +    };
@@ -11073,7 +11077,7 @@
  
      // iterate through directory entries, skipping '.' and '..'
      // each entry represents an open file descriptor.
-@@ -282,6 +395,7 @@
+@@ -282,6 +397,7 @@
      closedir(dirp);
      // subtract by 1 which was the fd open for this implementation
      return (fds - 1);
