@@ -1,16 +1,15 @@
 # $FreeBSD$
 
 PORTNAME=	rrd
-DISTVERSION=	2.0.1
-PORTREVISION=	1
+DISTVERSION=	1.1.3
 CATEGORIES=	databases pear
 
-MAINTAINER=	flo@FreeBSD.org
+MAINTAINER=	daniel@blodan.se
 COMMENT=	PHP bindings to rrd tool system
 
 LICENSE=	PHP301
 
-IGNORE_WITH_PHP=56
+IGNORE_WITH_PHP=70 71
 LIB_DEPENDS=	librrd.so:databases/rrdtool
 USES=		php:pecl localbase pkgconfig
 
