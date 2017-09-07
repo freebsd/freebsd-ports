@@ -16,7 +16,7 @@ LIB_DEPENDS=	libpoppler-glib.so:graphics/poppler-glib \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2
 
-USES=		pkgconfig
+USES=		pkgconfig desktop-file-utils shared-mime-info
 USE_GNOME=	cairo libgnomecanvas
 USE_XORG=	x11
 GNU_CONFIGURE=	yes
@@ -29,6 +29,7 @@ GHOSTSCRIPT_DESC=	Install ghostscript (PS/PDF as bitmap bg)
 OPTIONS_DEFAULT=	GHOSTSCRIPT
 
 GHOSTSCRIPT_USES=	ghostscript:run
+MAKE_ENV+=		DATADIR=${DATADIR}
 
 PORTDOCS_MAIN=	AUTHORS \
 		ChangeLog \
@@ -67,11 +68,6 @@ PORTDOCS=	${PORTDOCS_MAIN} \
 		html-doc/pixmaps/shapes.png \
 		html-doc/pixmaps/black.png \
 		html-doc/pixmaps/text-tool.png
-
-post-patch:
-	@${REINPLACE_CMD} \
-		-e 's|$$(DESTDIR)/usr/share/|$$(DESTDIR)$$$$desktopdir/|g' \
-		${WRKSRC}/Makefile.in
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
