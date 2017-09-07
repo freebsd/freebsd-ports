@@ -180,7 +180,7 @@ _hfm:*:227:227::0:0:hfm daemon:/nonexistent:/usr/sbin/nologin
 # free: 231
 # free: 232
 # free: 233
-# free: 234
+kafka:*:234:234::0:0:Apache Kafka user:/nonexistent:/usr/sbin/nologin
 # free: 235
 # free: 236
 # free: 237
@@ -818,7 +818,7 @@ chronyd:*:849:849::0:0:chronyd user:/nonexistent:/usr/sbin/nologin
 # free: 868
 # free: 869
 # free: 870
-# free: 871
+archiva:*:871:871::0:0:Apache Archiva Daemon:/nonexistent:/usr/sbin/nologin
 # free: 872
 # free: 873
 # free: 874
