@@ -555,6 +555,7 @@
     SUBDIR += pecl-mongodb
     SUBDIR += pecl-pdo_user
     SUBDIR += pecl-redis
+    SUBDIR += pecl-rrd1
     SUBDIR += pecl-rrd
     SUBDIR += pecl-tokyo_tyrant
     SUBDIR += percona-pam-for-mysql
