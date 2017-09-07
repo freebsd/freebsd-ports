@@ -3,6 +3,7 @@
 
 PORTNAME=	syslog-ng
 DISTVERSION=	3.11.1
+PORTREVISION=	1
 CATEGORIES=	sysutils
 DISTFILES=	syslog-ng-${DISTVERSION}.tar.gz
 MASTER_SITES=	https://github.com/balabit/syslog-ng/releases/download/syslog-ng-${DISTVERSION}/
@@ -15,15 +16,14 @@ COMMENT=	Powerful syslogd replacement
 
 LIB_DEPENDS=	libpcre.so:devel/pcre \
 		libuuid.so:misc/e2fsprogs-libuuid \
-		libbson-1.0.so:devel/libbson \
-		libevtlog.so:sysutils/eventlog
+		libbson-1.0.so:devel/libbson
 
 BROKEN_powerpc64=	fails to link: Internal error: Segmentation fault (program ld)
 BROKEN_sparc64=		fails to link: Internal error: Segmentation fault (program ld)
 
 CONFLICTS?=	syslog-ng-[0-9]* syslog-ng[0-9]-[0-9]* \
 		syslog-ng[0-9][0-9]-[0-9]* \
-		syslog-ng-devel-[0-9]*
+		syslog-ng-devel-[0-9]* eventlog*
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 
 MAKE_JOBS_UNSAFE=	yes
