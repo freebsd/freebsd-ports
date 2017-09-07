@@ -1188,8 +1188,8 @@ LLD_IS_LD=	no
 .endif
 
 .if !defined(LLD_IS_LD)
-LINKER!=	${READLINK} -f /usr/bin/ld
-.if !empty(LINKER) && ${LINKER:M*ld.lld}
+_TEST_LD=/usr/bin/ld
+.if ${_TEST_LD:tA} == "/usr/bin/ld.lld"
 LLD_IS_LD=	yes
 .else
 LLD_IS_LD=	no
