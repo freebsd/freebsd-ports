@@ -1,0 +1,74 @@
+#!/bin/sh
+# $FreeBSD$
+#
+# PROVIDE: kafka
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add kafka_enable="YES" to /etc/rc.conf to enable Kafka:
+#
+# Additional variables you can define are:
+#
+# kafka_user:		Username to run Kafka
+#			Default: %%USERS%%
+# kafka_group:		Groupname to run Kafka
+#			Default: %%GROUPS%%
+# kafka_config:		Configuration file to run Kafka
+#			Default: %%ETCDIR%%/server.properties
+# kafka_log4jprofile:	Profile for Kafka logging
+#			Default: %%ETCDIR%%/log4j.properties
+# kafka_logdir:		Directory to store Kafka logs
+#			Default: %%KAFKA_LOGDIR%%
+# kafka_jvmopts:	Options passed to JVM to start Kafka
+#			Default: None
+# kafka_pidfile:	Full path of the Kafka process PID file
+#			Default: %%KAFKA_RUNDIR%%/kafka.pid
+# kafka_outfile:	File to store Kafka's stdout and stderr
+#			Default: $kafka_logdir/kafkaServer.out
+
+. /etc/rc.subr
+
+name=kafka
+rcvar=kafka_enable
+
+load_rc_config "${name}"
+
+: ${kafka_enable:=NO}
+: ${kafka_user:=%%USERS%%}
+: ${kafka_group:=%%GROUPS%%}
+: ${kafka_config:=%%ETCDIR%%/server.properties}
+: ${kafka_log4jpropfile:=%%ETCDIR%%/log4j.properties}
+: ${kafka_logdir:=%%KAFKA_LOGDIR%%}
+: ${kafka_jvmopts:=}
+: ${kafka_outfile:=$kafka_logdir/kafkaServer.out}
+: ${kafka_pidfile:=%%KAFKA_RUNDIR%%/kafka.pid}
+
+JAVA=%%JAVA%%
+
+CLASSPATH=":%%DATADIR%%/libs/*"
+
+kafka_logopts="-Dkafka.logs.dir=${kafka_logdir} -Dlog4j.configuration=file:${kafka_log4jpropfile}"
+kafka_main="$kafka_jvmopts $kafka_logopts -cp $CLASSPATH"
+pidfile=${kafka_pidfile}
+procname=${JAVA}
+required_files="${kafka_config} ${kafka_log4jpropfile}"
+
+daemon_head=""
+daemon_tail=" > $kafka_outfile 2>&1 < /dev/null"
+
+if [ -z $kafka_outfile ]; then
+	daemon_head="-f"
+	daemon_tail=""
+fi
+
+command="/usr/sbin/daemon"
+command_args="${daemon_head} -p ${pidfile} ${JAVA} ${kafka_main} kafka.Kafka ${kafka_config} ${daemon_tail}"
+
+start_precmd="kafka_init"
+
+kafka_init()
+{
+	chown ${kafka_user}:${kafka_group} ${pidfile%/*} ${kafka_logdir} ${kafka_outfile}
+}
+
+run_rc_command "$1"
