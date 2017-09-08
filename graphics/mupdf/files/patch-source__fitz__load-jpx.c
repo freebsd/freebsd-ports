@@ -16,7 +16,7 @@
  #define USE_JPIP
  
 -#include <openjpeg.h>
-+#include <openjpeg-2.1/openjpeg.h>
++#include <openjpeg-2.2/openjpeg.h>
  
  struct fz_jpxd_s
  {

@@ -86,13 +86,12 @@
     SUBDIR += kf5-kconfigwidgets
     SUBDIR += kf5-kdesignerplugin
     SUBDIR += kf5-kguiaddons
+    SUBDIR += kf5-kirigami2
     SUBDIR += kf5-kitemviews
     SUBDIR += kf5-kjobwidgets
     SUBDIR += kf5-ktextwidgets
     SUBDIR += kf5-kwidgetsaddons
     SUBDIR += kf5-kxmlgui
-    SUBDIR += kirigami
-    SUBDIR += kirigami2
     SUBDIR += kproperty
     SUBDIR += lesstif
     SUBDIR += libXaw
@@ -219,7 +218,6 @@
     SUBDIR += py-wxPython28-common
     SUBDIR += py-wxPython30
     SUBDIR += py-xlib
-    SUBDIR += py33-tkinter
     SUBDIR += py34-tkinter
     SUBDIR += py35-tkinter
     SUBDIR += py36-tkinter

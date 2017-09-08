@@ -2,10 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	libtorrent-rasterbar
-PORTVERSION=	1.1.3
-PORTREVISION=	1
+PORTVERSION=	1.1.4
 CATEGORIES?=	net-p2p ipv6
 MASTER_SITES=	https://github.com/arvidn/libtorrent/releases/download/libtorrent-${PORTVERSION:S/./_/g}/
+
+PATCH_SITES=	https://github.com/arvidn/libtorrent/commit/
+PATCHFILES=	7eb3cf6bc6db.patch:-p1
 
 MAINTAINER=	rezny@FreeBSD.org
 COMMENT?=	C++ library implementing a BitTorrent client

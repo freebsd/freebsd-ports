@@ -1,0 +1,13 @@
+[Desktop Entry]
+Version=1.0
+Encoding=UTF-8
+Type=Application
+Name=JetBrains Gogland IDE (Preview Edition)
+GenericName=JetBrains Gogland IDE (Preview Edition)
+Icon=%%DATADIR%%/bin/gogland.png
+Exec=%%DATADIR%%/bin/gogland.sh
+Comment=Develop with pleasure!
+Terminal=false
+StartupNotify=true
+StartupWMClass=jetbrains-gogland-eap
+Categories=Application;Development;IDE;

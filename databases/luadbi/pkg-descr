@@ -1,4 +1,4 @@
 LuaDBI is a database interface library for Lua.
 It is designed to provide a RDBMS agnostic API for handling database operations.
 
-WWW: http://code.google.com/p/luadbi/
+WWW: https://github.com/mwild1/luadbi

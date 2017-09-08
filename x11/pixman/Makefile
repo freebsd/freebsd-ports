@@ -25,6 +25,11 @@ MAKE_ARGS=      SUBDIRS=pixman
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "armv6"
+BUILD_DEPENDS+=	${LOCALBASE}/bin/as:devel/binutils
+CONFIGURE_ENV+=	CCASFLAGS="${CFLAGS} -no-integrated-as"
+.endif
+
 .if ${ARCH} == "powerpc64" || ${ARCH} == "powerpc"
 CONFIGURE_ARGS+=	--disable-vmx
 .endif

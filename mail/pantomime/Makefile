@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	pantomime
-PORTVERSION=	1.2.2
+PORTVERSION=	1.2.3
 CATEGORIES=	mail gnustep
-MASTER_SITES=	http://download.gna.org/gnustep-nonfsf/
+MASTER_SITES=	SAVANNAH/gnustep-nonfsf/
 DISTNAME=	Pantomime-${PORTVERSION}
 
 MAINTAINER=	theraven@FreeBSD.org

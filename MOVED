@@ -6872,7 +6872,6 @@ www/lusca-head||2014-09-01|Not staged
 www/mod_auth_form||2014-09-01|Not staged
 www/mod_auth_mellon||2014-09-01|Not staged
 www/mod_ftp||2014-09-01|Not staged
-www/mod_gnutls||2014-09-01|Not staged
 www/mod_log_dbd||2014-09-01|Not staged
 www/mod_pagespeed||2014-09-01|Not staged
 www/moodle24||2014-09-01|Not staged
@@ -9502,3 +9501,45 @@ devel/hs-syb-with-class-instances-text||2017-08-08|Upstream is unmaintained
 textproc/hs-citeproc-hs||2017-08-08|Upstream is unmaintained, use pandoc-citeproc instead
 sysutils/chvt||2017-08-10|Functionality available in base, using vidcontrol(1)
 graphics/rawtherapee-devel|graphics/rawtherapee|2017-08-12|Removed test release in favor of the newer stable release
+audio/py-jack|audio/py-py-jack|2017-08-20|Renamed to py-py-jack to match PyPI package name
+lang/whitespace||2017-08-21|Has expired: Mastersite disappeared
+databases/sqlitebrowser-qt5|databases/sqlitebrowser|2017-08-22|sqlitebrowser now uses QT5
+misc/lr|misc/lazyread|2017-08-22|Renamed to reflect upstream name
+mail/roundcube-air||2017-08-23|Removed, does not work with main port
+games/plee-the-bear||2017-08-23|Has expired: Broken for more than 6 months
+x11-themes/kde-icons-umicons||2017-08-23|Has expired: Broken for more than 6 months
+lang/bigloo||2017-08-23|Has expired: Broken for more than 6 months
+audio/linux-neroaaccodec||2017-08-23|Has expired: Broken for more than 6 months
+x11-themes/kde-icons-dark-glass||2017-08-23|Has expired: Broken for more than 6 months
+misc/fortune-mod-ferengi_rules_of_acquisition||2017-08-23|Has expired: Broken for more than 6 months
+misc/fortune-mod-culmea-culmilor||2017-08-23|Has expired: Broken for more than 6 months
+misc/xyzcmd||2017-08-23|Has expired: Broken for more than 6 months
+russian/fortuneru||2017-08-23|Has expired: Broken for more than 6 months
+security/bdc||2017-08-23|Has expired: Broken for more than 6 months
+x11-themes/kde-icons-icosx||2017-08-23|Has expired: Broken for more than 6 months
+devel/insight||2017-08-23|Has expired: Broken for more than 6 months
+devel/gdb66||2017-08-23|Has expired: Broken for more than 6 months
+biology/biojava||2017-08-23|Has expired: Broken for more than 6 months
+games/xroach||2017-08-23|Has expired: Broken for more than 6 months
+java/intellij-pycharm|devel/pycharm-ce|2017-08-23|Renamed to reflect upstream name. Use a more appropriate origin (devel for development tools, IDE)
+www/pyweblib|www/py-pyweblib|2017-08-25|Rename to comply with PyPI scheme
+databases/libzbxpgsql|databases/zabbix3-libzbxpgsql|2017-08-26|Rename to allow multiple versions of libzbxpgsql to coexist
+x11-toolkits/kirigami||2017-08-28|Not needed by anything
+x11-toolkits/kirigami2|x11-toolkits/kf5-kirigami2|2017-08-28|Became an official framework
+www/speedtest-mini||2017-09-03|Has expired: Discontinued upstream (on June 30, 2017)
+devel/rubygem-sequel3|devel/rubygem-sequel|2017-09-03|Has expired: Use devel/rubygem-sequel instead
+audio/tomahawk||2017-09-03|Has expired: Project is dead upstream.
+mail/rubygem-larch||2017-09-03|Has expired: Unmaintained by upstream, no changes since 2013
+devel/rubygem-sidekiq4|devel/rubygem-sidekiq|2017-09-03|Has expired: Use devel/rubygem-sidekiq instead
+devel/rubygem-webpacker1-rails5|devel/rubygem-webpacker-rails5|2017-09-03|Has expired: Use devel/rubygem-webpacker-rails5 instead
+devel/rubygem-sidekiq-cron04|devel/rubygem-sidekiq-cron|2017-09-03|Has expired: Use devel/rubygem-sidekiq-cron instead
+www/py-django19||2017-09-03|Has expired: Unsupported upstream
+mail/movemail||2017-09-03|Has expired: Out of date
+ports-mgmt/fbsdmon||2017-09-03|Has expired: no longer maintained, web site it sends data to has been taken over by cybersquatters
+security/py-pyme|security/py-gpgme|2017-09-03|Has expired: Merged with GPGme project. Please use security/py-gpgme instead
+lang/python33||2017-09-03|Has expired: No longer receives bug fixes, only security updates. Please update to Python 3.6
+databases/py33-gdbm||2017-09-03|Removed, please update to Python 3.6
+databases/py33-sqlite3||2017-09-03|Removed, please update to Python 3.6
+devel/py33-setuptools||2017-09-03|Removed, please update to Python 3.6
+x11-toolkits/py33-tkinter||2017-09-03|Removed, please update to Python 3.6
+devel/py3-enum34||2017-09-03|Removed, Python 3.3 only

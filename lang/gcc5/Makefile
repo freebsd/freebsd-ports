@@ -14,6 +14,9 @@ COMMENT=	GNU Compiler Collection 5
 LICENSE=	GPLv3 GPLv3RLE
 LICENSE_COMB=	multi
 
+ONLY_FOR_ARCHS=	aarch64 amd64 arm armv6 i386 powerpc powerpc64 sparc64
+BROKEN_sparc64=	Does not build: bootstrap comparison failure
+
 LIB_DEPENDS=	libgmp.so:math/gmp \
 		libmpfr.so:math/mpfr \
 		libmpc.so:math/mpc
@@ -29,7 +32,6 @@ CPE_VENDOR=	gnu
 
 GCC_VERSION=	${PORTVERSION}
 SUFFIX=		${PORTVERSION:C/([0-9]+).*/\1/}
-ONLY_FOR_ARCHS=	aarch64 amd64 arm armv6 i386 powerpc powerpc64 sparc64
 USES=		compiler cpe gmake iconv libtool makeinfo perl5 tar:bzip2
 USE_BINUTILS=	yes
 USE_PERL5=	build
@@ -78,7 +80,6 @@ MAKE_ARGS+=STAGE1_CXXFLAGS=-fbracket-depth=512
 . endif
 .endif
 
-BROKEN_sparc64=	Does not build: bootstrap comparison failure
 LANGUAGES:=	c,c++,objc,fortran
 TARGLIB=	${PREFIX}/lib/gcc${SUFFIX}
 LIBEXEC=	${PREFIX}/libexec/gcc${SUFFIX}

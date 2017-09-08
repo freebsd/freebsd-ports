@@ -1,5 +1,5 @@
---- ./common/autoconf/build-performance.m4	Mon Feb 27 11:15:51 2017 -0800
-+++ ./common/autoconf/build-performance.m4	Tue Apr 18 21:21:31 2017 -0700
+--- ./common/autoconf/build-performance.m4	Tue Jul 11 23:50:55 2017 -0700
++++ ./common/autoconf/build-performance.m4	Sat Aug 26 21:38:11 2017 -0700
 @@ -41,6 +41,10 @@
      # Looks like a MacOSX system
      NUM_CORES=`/usr/sbin/system_profiler -detailLevel full SPHardwareDataType | grep 'Cores' | awk  '{print [$]5}'`
@@ -38,8 +38,8 @@
        AC_MSG_RESULT([no, disabling ccache])
        CCACHE=
      else
---- ./common/autoconf/generated-configure.sh	Mon Feb 27 11:15:51 2017 -0800
-+++ ./common/autoconf/generated-configure.sh	Tue Apr 18 21:21:31 2017 -0700
+--- ./common/autoconf/generated-configure.sh	Tue Jul 11 23:50:55 2017 -0700
++++ ./common/autoconf/generated-configure.sh	Sat Aug 26 21:38:11 2017 -0700
 @@ -646,6 +646,8 @@
  LIBM
  LIBZIP_CAN_USE_MMAP
@@ -685,8 +685,8 @@
        { $as_echo "$as_me:${as_lineno-$LINENO}: result: no, disabling ccache" >&5
  $as_echo "no, disabling ccache" >&6; }
        CCACHE=
---- ./common/autoconf/jdk-options.m4	Mon Feb 27 11:15:51 2017 -0800
-+++ ./common/autoconf/jdk-options.m4	Tue Apr 18 21:21:31 2017 -0700
+--- ./common/autoconf/jdk-options.m4	Tue Jul 11 23:50:55 2017 -0700
++++ ./common/autoconf/jdk-options.m4	Sat Aug 26 21:38:11 2017 -0700
 @@ -159,7 +159,7 @@
      INCLUDE_SA=false
    fi
@@ -717,8 +717,8 @@
    # Enable or disable the elliptic curve crypto implementation
    #
    AC_DEFUN_ONCE([JDKOPT_DETECT_INTREE_EC],
---- ./common/autoconf/libraries.m4	Mon Feb 27 11:15:51 2017 -0800
-+++ ./common/autoconf/libraries.m4	Tue Apr 18 21:21:31 2017 -0700
+--- ./common/autoconf/libraries.m4	Tue Jul 11 23:50:55 2017 -0700
++++ ./common/autoconf/libraries.m4	Sat Aug 26 21:38:11 2017 -0700
 @@ -69,9 +69,15 @@
    fi
  
@@ -856,8 +856,8 @@
 +
    AC_SUBST(LIBCXX)
  ])
---- ./common/autoconf/platform.m4	Mon Feb 27 11:15:51 2017 -0800
-+++ ./common/autoconf/platform.m4	Tue Apr 18 21:21:31 2017 -0700
+--- ./common/autoconf/platform.m4	Tue Jul 11 23:50:55 2017 -0700
++++ ./common/autoconf/platform.m4	Sat Aug 26 21:38:11 2017 -0700
 @@ -30,7 +30,7 @@
  [
    # First argument is the cpu name from the trip/quad
@@ -917,8 +917,8 @@
      OPENJDK_TARGET_CPU_OSARCH="i386"
    elif test "x$OPENJDK_TARGET_OS" != xmacosx && test "x$OPENJDK_TARGET_CPU" = xx86_64; then
      # On all platforms except macosx, we replace x86_64 with amd64.
---- ./common/autoconf/spec.gmk.in	Mon Feb 27 11:15:51 2017 -0800
-+++ ./common/autoconf/spec.gmk.in	Tue Apr 18 21:21:31 2017 -0700
+--- ./common/autoconf/spec.gmk.in	Tue Jul 11 23:50:55 2017 -0700
++++ ./common/autoconf/spec.gmk.in	Sat Aug 26 21:38:11 2017 -0700
 @@ -76,6 +76,7 @@
  OPENJDK_TARGET_OS:=@OPENJDK_TARGET_OS@
  OPENJDK_TARGET_OS_API:=@OPENJDK_TARGET_OS_API@
@@ -955,8 +955,8 @@
  USE_EXTERNAL_LIBZ:=@USE_EXTERNAL_LIBZ@
  LIBZIP_CAN_USE_MMAP:=@LIBZIP_CAN_USE_MMAP@
  MSVCR_DLL:=@MSVCR_DLL@
---- ./common/autoconf/toolchain.m4	Mon Feb 27 11:15:51 2017 -0800
-+++ ./common/autoconf/toolchain.m4	Tue Apr 18 21:21:31 2017 -0700
+--- ./common/autoconf/toolchain.m4	Tue Jul 11 23:50:55 2017 -0700
++++ ./common/autoconf/toolchain.m4	Sat Aug 26 21:38:11 2017 -0700
 @@ -72,7 +72,7 @@
    else
      COMPILER_VERSION_TEST=`$COMPILER --version 2>&1 | $HEAD -n 1`
@@ -1074,16 +1074,16 @@
    fi
    if test "x$DEBUG_LEVEL" = xrelease; then
      CCXXFLAGS_JDK="$CCXXFLAGS_JDK -DNDEBUG"
---- ./configure	Mon Feb 27 11:15:51 2017 -0800
-+++ ./configure	Tue Apr 18 21:21:31 2017 -0700
+--- ./configure	Tue Jul 11 23:50:55 2017 -0700
++++ ./configure	Sat Aug 26 21:38:11 2017 -0700
 @@ -1,4 +1,4 @@
 -#!/bin/bash
 +#!/bin/sh
  #
  # Copyright (c) 2012, Oracle and/or its affiliates. All rights reserved.
  # DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
---- ./make/Javadoc.gmk	Mon Feb 27 11:15:51 2017 -0800
-+++ ./make/Javadoc.gmk	Tue Apr 18 21:21:31 2017 -0700
+--- ./make/Javadoc.gmk	Tue Jul 11 23:50:55 2017 -0700
++++ ./make/Javadoc.gmk	Sat Aug 26 21:38:11 2017 -0700
 @@ -46,8 +46,18 @@
  
  BUILD_NUMBER=$(JDK_BUILD_NUMBER)
@@ -1104,8 +1104,8 @@
      -Djava.awt.headless=true \
      $(NEW_JAVADOC) \
      -bootclasspath $(JDK_OUTPUTDIR)/classes
---- ./make/Main.gmk	Mon Feb 27 11:15:51 2017 -0800
-+++ ./make/Main.gmk	Tue Apr 18 21:21:31 2017 -0700
+--- ./make/Main.gmk	Tue Jul 11 23:50:55 2017 -0700
++++ ./make/Main.gmk	Sat Aug 26 21:38:11 2017 -0700
 @@ -58,7 +58,11 @@
  
  # Setup number of jobs to use. -jN is unfortunately not available for us to parse from the command line,
@@ -1118,8 +1118,8 @@
  
  ### Main targets
  
---- ./make/common/MakeBase.gmk	Mon Feb 27 11:15:51 2017 -0800
-+++ ./make/common/MakeBase.gmk	Tue Apr 18 21:21:31 2017 -0700
+--- ./make/common/MakeBase.gmk	Tue Jul 11 23:50:55 2017 -0700
++++ ./make/common/MakeBase.gmk	Sat Aug 26 21:38:11 2017 -0700
 @@ -338,7 +338,7 @@
      # (and causing a crash on Cygwin).
      # Default shell seems to always be /bin/sh. Must override with bash to get this to work on Solaris.
@@ -1140,8 +1140,8 @@
  endef
  
  # Make directory without forking mkdir if not needed
---- ./make/common/NativeCompilation.gmk	Mon Feb 27 11:15:51 2017 -0800
-+++ ./make/common/NativeCompilation.gmk	Tue Apr 18 21:21:31 2017 -0700
+--- ./make/common/NativeCompilation.gmk	Tue Jul 11 23:50:55 2017 -0700
++++ ./make/common/NativeCompilation.gmk	Sat Aug 26 21:38:11 2017 -0700
 @@ -151,9 +151,9 @@
    #   CC the compiler to use, default is $(CC)
    #   LDEXE the linker to use for linking executables, default is $(LDEXE)
@@ -1155,8 +1155,8 @@
  
    ifneq (,$$($1_BIN))
      $$(error BIN has been replaced with OBJECT_DIR)
---- ./hotspot/agent/make/Makefile	Mon Feb 27 11:16:11 2017 -0800
-+++ ./hotspot/agent/make/Makefile	Tue Apr 18 21:21:39 2017 -0700
+--- ./hotspot/agent/make/Makefile	Tue Jul 11 23:51:17 2017 -0700
++++ ./hotspot/agent/make/Makefile	Sat Aug 26 21:38:23 2017 -0700
 @@ -50,6 +50,7 @@
  sun.jvm.hotspot.debugger.amd64 \
  sun.jvm.hotspot.debugger.bsd \
@@ -1235,8 +1235,8 @@
  sun/jvm/hotspot/runtime/solaris_amd64/*.java \
  sun/jvm/hotspot/runtime/solaris_sparc/*.java \
  sun/jvm/hotspot/runtime/solaris_x86/*.java \
---- ./hotspot/agent/src/os/bsd/BsdDebuggerLocal.c	Mon Feb 27 11:16:11 2017 -0800
-+++ ./hotspot/agent/src/os/bsd/BsdDebuggerLocal.c	Tue Apr 18 21:21:39 2017 -0700
+--- ./hotspot/agent/src/os/bsd/BsdDebuggerLocal.c	Tue Jul 11 23:51:17 2017 -0700
++++ ./hotspot/agent/src/os/bsd/BsdDebuggerLocal.c	Sat Aug 26 21:38:23 2017 -0700
 @@ -42,6 +42,10 @@
  #include "sun_jvm_hotspot_debugger_sparc_SPARCThreadContext.h"
  #endif
@@ -1305,8 +1305,8 @@
  
    (*env)->ReleaseLongArrayElements(env, array, regs, JNI_COMMIT);
    return array;
---- ./hotspot/agent/src/os/bsd/symtab.c	Mon Feb 27 11:16:11 2017 -0800
-+++ ./hotspot/agent/src/os/bsd/symtab.c	Tue Apr 18 21:21:39 2017 -0700
+--- ./hotspot/agent/src/os/bsd/symtab.c	Tue Jul 11 23:51:17 2017 -0700
++++ ./hotspot/agent/src/os/bsd/symtab.c	Sat Aug 26 21:38:23 2017 -0700
 @@ -211,6 +211,10 @@
  
    // Reading of elf header
@@ -1347,8 +1347,8 @@
  
          key.data = sym_name;
          key.size = strlen(sym_name) + 1;
---- ./hotspot/agent/src/share/classes/sun/jvm/hotspot/HotSpotAgent.java	Mon Feb 27 11:16:11 2017 -0800
-+++ ./hotspot/agent/src/share/classes/sun/jvm/hotspot/HotSpotAgent.java	Tue Apr 18 21:21:39 2017 -0700
+--- ./hotspot/agent/src/share/classes/sun/jvm/hotspot/HotSpotAgent.java	Tue Jul 11 23:51:17 2017 -0700
++++ ./hotspot/agent/src/share/classes/sun/jvm/hotspot/HotSpotAgent.java	Sat Aug 26 21:38:23 2017 -0700
 @@ -33,6 +33,7 @@
  import sun.jvm.hotspot.debugger.JVMDebugger;
  import sun.jvm.hotspot.debugger.MachineDescription;
@@ -1367,7 +1367,7 @@
              if (LinuxDebuggerLocal.getAddressSize()==8) {
                      machDesc = new MachineDescriptionSPARC64Bit();
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ ./hotspot/agent/src/share/classes/sun/jvm/hotspot/debugger/MachineDescriptionPPC64.java	Tue Apr 18 21:21:39 2017 -0700
++++ ./hotspot/agent/src/share/classes/sun/jvm/hotspot/debugger/MachineDescriptionPPC64.java	Sat Aug 26 21:38:23 2017 -0700
 @@ -0,0 +1,43 @@
 +/*
 + * Copyright (c) 2014, Oracle and/or its affiliates. All rights reserved.
@@ -1412,8 +1412,8 @@
 +      return false;
 +  }
 +}
---- ./hotspot/agent/src/share/classes/sun/jvm/hotspot/debugger/bsd/BsdCDebugger.java	Mon Feb 27 11:16:11 2017 -0800
-+++ ./hotspot/agent/src/share/classes/sun/jvm/hotspot/debugger/bsd/BsdCDebugger.java	Tue Apr 18 21:21:39 2017 -0700
+--- ./hotspot/agent/src/share/classes/sun/jvm/hotspot/debugger/bsd/BsdCDebugger.java	Tue Jul 11 23:51:17 2017 -0700
++++ ./hotspot/agent/src/share/classes/sun/jvm/hotspot/debugger/bsd/BsdCDebugger.java	Sat Aug 26 21:38:23 2017 -0700
 @@ -30,8 +30,10 @@
  import sun.jvm.hotspot.debugger.cdbg.*;
  import sun.jvm.hotspot.debugger.x86.*;
@@ -1439,8 +1439,8 @@
      } else {
         throw new DebuggerException(cpu + " is not yet supported");
      }
---- ./hotspot/agent/src/share/classes/sun/jvm/hotspot/debugger/bsd/BsdThreadContextFactory.java	Mon Feb 27 11:16:11 2017 -0800
-+++ ./hotspot/agent/src/share/classes/sun/jvm/hotspot/debugger/bsd/BsdThreadContextFactory.java	Tue Apr 18 21:21:39 2017 -0700
+--- ./hotspot/agent/src/share/classes/sun/jvm/hotspot/debugger/bsd/BsdThreadContextFactory.java	Tue Jul 11 23:51:17 2017 -0700
++++ ./hotspot/agent/src/share/classes/sun/jvm/hotspot/debugger/bsd/BsdThreadContextFactory.java	Sat Aug 26 21:38:23 2017 -0700
 @@ -27,6 +27,7 @@
  import sun.jvm.hotspot.debugger.*;
  import sun.jvm.hotspot.debugger.bsd.amd64.*;
@@ -1459,7 +1459,7 @@
           throw new RuntimeException("cpu " + cpu + " is not yet supported");
        }
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ ./hotspot/agent/src/share/classes/sun/jvm/hotspot/debugger/bsd/ppc64/BsdPPC64CFrame.java	Tue Apr 18 21:21:39 2017 -0700
++++ ./hotspot/agent/src/share/classes/sun/jvm/hotspot/debugger/bsd/ppc64/BsdPPC64CFrame.java	Sat Aug 26 21:38:23 2017 -0700
 @@ -0,0 +1,79 @@
 +/*
 + * Copyright (c) 2014, Oracle and/or its affiliates. All rights reserved.
@@ -1541,7 +1541,7 @@
 +  private BsdDebugger dbg;
 +}
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ ./hotspot/agent/src/share/classes/sun/jvm/hotspot/debugger/bsd/ppc64/BsdPPC64ThreadContext.java	Tue Apr 18 21:21:39 2017 -0700
++++ ./hotspot/agent/src/share/classes/sun/jvm/hotspot/debugger/bsd/ppc64/BsdPPC64ThreadContext.java	Sat Aug 26 21:38:23 2017 -0700
 @@ -0,0 +1,46 @@
 +/*
 + * Copyright (c) 2014, Oracle and/or its affiliates. All rights reserved.
@@ -1590,7 +1590,7 @@
 +  }
 +}
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ ./hotspot/agent/src/share/classes/sun/jvm/hotspot/debugger/ppc64/PPC64ThreadContext.java	Tue Apr 18 21:21:39 2017 -0700
++++ ./hotspot/agent/src/share/classes/sun/jvm/hotspot/debugger/ppc64/PPC64ThreadContext.java	Sat Aug 26 21:38:23 2017 -0700
 @@ -0,0 +1,123 @@
 +/*
 + * Copyright (c) 2014, Oracle and/or its affiliates. All rights reserved.
@@ -1715,8 +1715,8 @@
 +  public abstract Address getRegisterAsAddress(int index);
 +
 +}
---- ./hotspot/agent/src/share/classes/sun/jvm/hotspot/debugger/proc/ProcDebuggerLocal.java	Mon Feb 27 11:16:11 2017 -0800
-+++ ./hotspot/agent/src/share/classes/sun/jvm/hotspot/debugger/proc/ProcDebuggerLocal.java	Tue Apr 18 21:21:39 2017 -0700
+--- ./hotspot/agent/src/share/classes/sun/jvm/hotspot/debugger/proc/ProcDebuggerLocal.java	Tue Jul 11 23:51:17 2017 -0700
++++ ./hotspot/agent/src/share/classes/sun/jvm/hotspot/debugger/proc/ProcDebuggerLocal.java	Sat Aug 26 21:38:23 2017 -0700
 @@ -32,7 +32,9 @@
  import sun.jvm.hotspot.debugger.cdbg.*;
  import sun.jvm.hotspot.debugger.proc.amd64.*;
@@ -1739,7 +1739,7 @@
            try {
              Class tfc = Class.forName("sun.jvm.hotspot.debugger.proc." +
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ ./hotspot/agent/src/share/classes/sun/jvm/hotspot/debugger/proc/ppc64/ProcPPC64Thread.java	Tue Apr 18 21:21:39 2017 -0700
++++ ./hotspot/agent/src/share/classes/sun/jvm/hotspot/debugger/proc/ppc64/ProcPPC64Thread.java	Sat Aug 26 21:38:23 2017 -0700
 @@ -0,0 +1,86 @@
 +/*
 + * Copyright (c) 2014, Oracle and/or its affiliates. All rights reserved.
@@ -1828,7 +1828,7 @@
 +  }
 +}
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ ./hotspot/agent/src/share/classes/sun/jvm/hotspot/debugger/proc/ppc64/ProcPPC64ThreadContext.java	Tue Apr 18 21:21:39 2017 -0700
++++ ./hotspot/agent/src/share/classes/sun/jvm/hotspot/debugger/proc/ppc64/ProcPPC64ThreadContext.java	Sat Aug 26 21:38:23 2017 -0700
 @@ -0,0 +1,46 @@
 +/*
 + * Copyright (c) 2014, Oracle and/or its affiliates. All rights reserved.
@@ -1877,7 +1877,7 @@
 +  }
 +}
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ ./hotspot/agent/src/share/classes/sun/jvm/hotspot/debugger/proc/ppc64/ProcPPC64ThreadFactory.java	Tue Apr 18 21:21:39 2017 -0700
++++ ./hotspot/agent/src/share/classes/sun/jvm/hotspot/debugger/proc/ppc64/ProcPPC64ThreadFactory.java	Sat Aug 26 21:38:23 2017 -0700
 @@ -0,0 +1,44 @@
 +/*
 + * Copyright (c) 2014, Oracle and/or its affiliates. All rights reserved.
@@ -1923,8 +1923,8 @@
 +    return new ProcPPC64Thread(debugger, id);
 +  }
 +}
---- ./hotspot/agent/src/share/classes/sun/jvm/hotspot/debugger/remote/RemoteDebuggerClient.java	Mon Feb 27 11:16:11 2017 -0800
-+++ ./hotspot/agent/src/share/classes/sun/jvm/hotspot/debugger/remote/RemoteDebuggerClient.java	Tue Apr 18 21:21:39 2017 -0700
+--- ./hotspot/agent/src/share/classes/sun/jvm/hotspot/debugger/remote/RemoteDebuggerClient.java	Tue Jul 11 23:51:17 2017 -0700
++++ ./hotspot/agent/src/share/classes/sun/jvm/hotspot/debugger/remote/RemoteDebuggerClient.java	Sat Aug 26 21:38:23 2017 -0700
 @@ -33,6 +33,7 @@
  import sun.jvm.hotspot.debugger.remote.sparc.*;
  import sun.jvm.hotspot.debugger.remote.x86.*;
@@ -1946,7 +1946,7 @@
          try {
            Class tf = Class.forName("sun.jvm.hotspot.debugger.remote." +
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ ./hotspot/agent/src/share/classes/sun/jvm/hotspot/debugger/remote/ppc64/RemotePPC64Thread.java	Tue Apr 18 21:21:39 2017 -0700
++++ ./hotspot/agent/src/share/classes/sun/jvm/hotspot/debugger/remote/ppc64/RemotePPC64Thread.java	Sat Aug 26 21:38:23 2017 -0700
 @@ -0,0 +1,53 @@
 +/*
 + * Copyright (c) 2014, Oracle and/or its affiliates. All rights reserved.
@@ -2002,7 +2002,7 @@
 +  }
 +}
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ ./hotspot/agent/src/share/classes/sun/jvm/hotspot/debugger/remote/ppc64/RemotePPC64ThreadContext.java	Tue Apr 18 21:21:39 2017 -0700
++++ ./hotspot/agent/src/share/classes/sun/jvm/hotspot/debugger/remote/ppc64/RemotePPC64ThreadContext.java	Sat Aug 26 21:38:23 2017 -0700
 @@ -0,0 +1,50 @@
 +/*
 + * Copyright (c) 2014, Oracle and/or its affiliates. All rights reserved.
@@ -2055,7 +2055,7 @@
 +  }
 +}
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ ./hotspot/agent/src/share/classes/sun/jvm/hotspot/debugger/remote/ppc64/RemotePPC64ThreadFactory.java	Tue Apr 18 21:21:39 2017 -0700
++++ ./hotspot/agent/src/share/classes/sun/jvm/hotspot/debugger/remote/ppc64/RemotePPC64ThreadFactory.java	Sat Aug 26 21:38:23 2017 -0700
 @@ -0,0 +1,44 @@
 +/*
 + * Copyright (c) 2014, Oracle and/or its affiliates. All rights reserved.
@@ -2101,8 +2101,8 @@
 +    return new RemotePPC64Thread(debugger, id);
 +  }
 +}
---- ./hotspot/agent/src/share/classes/sun/jvm/hotspot/runtime/Threads.java	Mon Feb 27 11:16:11 2017 -0800
-+++ ./hotspot/agent/src/share/classes/sun/jvm/hotspot/runtime/Threads.java	Tue Apr 18 21:21:39 2017 -0700
+--- ./hotspot/agent/src/share/classes/sun/jvm/hotspot/runtime/Threads.java	Tue Jul 11 23:51:17 2017 -0700
++++ ./hotspot/agent/src/share/classes/sun/jvm/hotspot/runtime/Threads.java	Sat Aug 26 21:38:23 2017 -0700
 @@ -37,6 +37,7 @@
  import sun.jvm.hotspot.runtime.linux_sparc.LinuxSPARCJavaThreadPDAccess;
  import sun.jvm.hotspot.runtime.bsd_x86.BsdX86JavaThreadPDAccess;
@@ -2121,7 +2121,7 @@
          } else if (os.equals("darwin")) {
              if (cpu.equals("amd64") || cpu.equals("x86_64")) {
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ ./hotspot/agent/src/share/classes/sun/jvm/hotspot/runtime/bsd_ppc64/BsdPPC64JavaThreadPDAccess.java	Tue Apr 18 21:21:39 2017 -0700
++++ ./hotspot/agent/src/share/classes/sun/jvm/hotspot/runtime/bsd_ppc64/BsdPPC64JavaThreadPDAccess.java	Sat Aug 26 21:38:23 2017 -0700
 @@ -0,0 +1,132 @@
 +/*
 + * Copyright (c) 2014, Oracle and/or its affiliates. All rights reserved.
@@ -2256,7 +2256,7 @@
 +  }
 +}
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ ./hotspot/agent/src/share/classes/sun/jvm/hotspot/runtime/ppc64/PPC64CurrentFrameGuess.java	Tue Apr 18 21:21:39 2017 -0700
++++ ./hotspot/agent/src/share/classes/sun/jvm/hotspot/runtime/ppc64/PPC64CurrentFrameGuess.java	Sat Aug 26 21:38:23 2017 -0700
 @@ -0,0 +1,176 @@
 +/*
 + * Copyright (c) 2014, Oracle and/or its affiliates. All rights reserved.
@@ -2435,7 +2435,7 @@
 +  }
 +}
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ ./hotspot/agent/src/share/classes/sun/jvm/hotspot/runtime/ppc64/PPC64Frame.java	Tue Apr 18 21:21:39 2017 -0700
++++ ./hotspot/agent/src/share/classes/sun/jvm/hotspot/runtime/ppc64/PPC64Frame.java	Sat Aug 26 21:38:23 2017 -0700
 @@ -0,0 +1,508 @@
 +/*
 + * Copyright (c) 2014, Oracle and/or its affiliates. All rights reserved.
@@ -2946,7 +2946,7 @@
 +  }
 +}
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ ./hotspot/agent/src/share/classes/sun/jvm/hotspot/runtime/ppc64/PPC64JavaCallWrapper.java	Tue Apr 18 21:21:39 2017 -0700
++++ ./hotspot/agent/src/share/classes/sun/jvm/hotspot/runtime/ppc64/PPC64JavaCallWrapper.java	Sat Aug 26 21:38:23 2017 -0700
 @@ -0,0 +1,43 @@
 +/*
 + * Copyright (c) 2014, Oracle and/or its affiliates. All rights reserved.
@@ -2992,7 +2992,7 @@
 +
 +}
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ ./hotspot/agent/src/share/classes/sun/jvm/hotspot/runtime/ppc64/PPC64RegisterMap.java	Tue Apr 18 21:21:39 2017 -0700
++++ ./hotspot/agent/src/share/classes/sun/jvm/hotspot/runtime/ppc64/PPC64RegisterMap.java	Sat Aug 26 21:38:23 2017 -0700
 @@ -0,0 +1,51 @@
 +/*
 + * Copyright (c) 20014, Oracle and/or its affiliates. All rights reserved.
@@ -3045,8 +3045,8 @@
 +  protected void initializeFromPD(RegisterMap map) {}
 +  protected Address getLocationPD(VMReg reg) { return null; }
 +}
---- ./hotspot/agent/src/share/classes/sun/jvm/hotspot/utilities/PlatformInfo.java	Mon Feb 27 11:16:11 2017 -0800
-+++ ./hotspot/agent/src/share/classes/sun/jvm/hotspot/utilities/PlatformInfo.java	Tue Apr 18 21:21:39 2017 -0700
+--- ./hotspot/agent/src/share/classes/sun/jvm/hotspot/utilities/PlatformInfo.java	Tue Jul 11 23:51:17 2017 -0700
++++ ./hotspot/agent/src/share/classes/sun/jvm/hotspot/utilities/PlatformInfo.java	Sat Aug 26 21:38:23 2017 -0700
 @@ -61,7 +61,7 @@
        return "x86";
      } else if (cpu.equals("sparc") || cpu.equals("sparcv9")) {
@@ -3056,8 +3056,8 @@
        return cpu;
      } else {
        try {
---- ./hotspot/make/bsd/Makefile	Mon Feb 27 11:16:11 2017 -0800
-+++ ./hotspot/make/bsd/Makefile	Tue Apr 18 21:21:39 2017 -0700
+--- ./hotspot/make/bsd/Makefile	Tue Jul 11 23:51:17 2017 -0700
++++ ./hotspot/make/bsd/Makefile	Sat Aug 26 21:38:23 2017 -0700
 @@ -66,6 +66,10 @@
      FORCE_TIERED=1
    endif
@@ -3069,8 +3069,8 @@
  
  ifdef LP64
    ifeq ("$(filter $(LP64_ARCH),$(BUILDARCH))","")
---- ./hotspot/make/bsd/makefiles/build_vm_def.sh	Mon Feb 27 11:16:11 2017 -0800
-+++ ./hotspot/make/bsd/makefiles/build_vm_def.sh	Tue Apr 18 21:21:39 2017 -0700
+--- ./hotspot/make/bsd/makefiles/build_vm_def.sh	Tue Jul 11 23:51:17 2017 -0700
++++ ./hotspot/make/bsd/makefiles/build_vm_def.sh	Sat Aug 26 21:38:23 2017 -0700
 @@ -1,12 +1,28 @@
  #!/bin/sh
  
@@ -3106,8 +3106,8 @@
 +        if ($3 ~ /^_ZN9Arguments17SharedArchivePathE$/) print "\t" $3 ";"
 +    }' | sort -u ;;
 +esac
---- ./hotspot/make/bsd/makefiles/debug.make	Mon Feb 27 11:16:11 2017 -0800
-+++ ./hotspot/make/bsd/makefiles/debug.make	Tue Apr 18 21:21:39 2017 -0700
+--- ./hotspot/make/bsd/makefiles/debug.make	Tue Jul 11 23:51:17 2017 -0700
++++ ./hotspot/make/bsd/makefiles/debug.make	Sat Aug 26 21:38:23 2017 -0700
 @@ -35,7 +35,10 @@
  # to inhibit the effect of the previous line on CFLAGS.
  
@@ -3120,8 +3120,8 @@
  
  VERSION = debug
  SYSDEFS += -DASSERT
---- ./hotspot/make/bsd/makefiles/defs.make	Mon Feb 27 11:16:11 2017 -0800
-+++ ./hotspot/make/bsd/makefiles/defs.make	Tue Apr 18 21:21:39 2017 -0700
+--- ./hotspot/make/bsd/makefiles/defs.make	Tue Jul 11 23:51:17 2017 -0700
++++ ./hotspot/make/bsd/makefiles/defs.make	Sat Aug 26 21:38:23 2017 -0700
 @@ -29,7 +29,15 @@
  SLASH_JAVA ?= /java
  
@@ -3220,8 +3220,8 @@
  ADD_SA_BINARIES/ia64  =
  ADD_SA_BINARIES/arm   =
  ADD_SA_BINARIES/zero  =
---- ./hotspot/make/bsd/makefiles/fastdebug.make	Mon Feb 27 11:16:11 2017 -0800
-+++ ./hotspot/make/bsd/makefiles/fastdebug.make	Tue Apr 18 21:21:39 2017 -0700
+--- ./hotspot/make/bsd/makefiles/fastdebug.make	Tue Jul 11 23:51:17 2017 -0700
++++ ./hotspot/make/bsd/makefiles/fastdebug.make	Sat Aug 26 21:38:23 2017 -0700
 @@ -56,7 +56,10 @@
  # to inhibit the effect of the previous line on CFLAGS.
  
@@ -3234,8 +3234,8 @@
  
  VERSION = fastdebug
  SYSDEFS += -DASSERT -DCHECK_UNHANDLED_OOPS
---- ./hotspot/make/bsd/makefiles/gcc.make	Mon Feb 27 11:16:11 2017 -0800
-+++ ./hotspot/make/bsd/makefiles/gcc.make	Tue Apr 18 21:21:39 2017 -0700
+--- ./hotspot/make/bsd/makefiles/gcc.make	Tue Jul 11 23:51:17 2017 -0700
++++ ./hotspot/make/bsd/makefiles/gcc.make	Sat Aug 26 21:38:23 2017 -0700
 @@ -168,6 +168,9 @@
    CFLAGS += -DDONT_USE_PRECOMPILED_HEADER
  endif
@@ -3277,7 +3277,7 @@
    ifeq ($(USE_CLANG),)
      WARNING_FLAGS += -Wconversion
    endif
-@@ -421,53 +427,43 @@
+@@ -421,53 +427,44 @@
    CFLAGS += -flimit-debug-info
  endif
  
@@ -3300,6 +3300,7 @@
 +    STABS_CFLAGS/ia64  = -g
 +    STABS_CFLAGS/arm   = -g
 +    STABS_CFLAGS/ppc   = -g
++    STABS_CFLAGS/amd64 = -g
 +    ifeq ($(STABS_CFLAGS/$(BUILDARCH)),)
 +      STABS_CFLAGS += -gstabs
 +    else
@@ -3362,7 +3363,7 @@
  endif
  
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ ./hotspot/make/bsd/makefiles/launcher.make	Tue Apr 18 21:21:39 2017 -0700
++++ ./hotspot/make/bsd/makefiles/launcher.make	Sat Aug 26 21:38:23 2017 -0700
 @@ -0,0 +1,117 @@
 +#
 +# Copyright (c) 2005, 2012, Oracle and/or its affiliates. All rights reserved.
@@ -3481,8 +3482,8 @@
 +	$(QUIETLY) sed -e 's/@@LIBARCH@@/$(LIBARCH)/g' $< > $@
 +	$(QUIETLY) chmod +x $@
 +
---- ./hotspot/make/bsd/makefiles/mapfile-vers-debug	Mon Feb 27 11:16:11 2017 -0800
-+++ ./hotspot/make/bsd/makefiles/mapfile-vers-debug	Tue Apr 18 21:21:39 2017 -0700
+--- ./hotspot/make/bsd/makefiles/mapfile-vers-debug	Tue Jul 11 23:51:17 2017 -0700
++++ ./hotspot/make/bsd/makefiles/mapfile-vers-debug	Sat Aug 26 21:38:23 2017 -0700
 @@ -21,246 +21,254 @@
  # questions.
  #
@@ -3970,7 +3971,7 @@
 +                *;
 +};
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ ./hotspot/make/bsd/makefiles/mapfile-vers-debug.macosx	Tue Apr 18 21:21:39 2017 -0700
++++ ./hotspot/make/bsd/makefiles/mapfile-vers-debug.macosx	Sat Aug 26 21:38:23 2017 -0700
 @@ -0,0 +1,266 @@
 +#
 +# Copyright (c) 2002, 2014, Oracle and/or its affiliates. All rights reserved.
@@ -4238,8 +4239,8 @@
 +
 +                # INSERT VTABLE SYMBOLS HERE
 +
---- ./hotspot/make/bsd/makefiles/mapfile-vers-product	Mon Feb 27 11:16:11 2017 -0800
-+++ ./hotspot/make/bsd/makefiles/mapfile-vers-product	Tue Apr 18 21:21:39 2017 -0700
+--- ./hotspot/make/bsd/makefiles/mapfile-vers-product	Tue Jul 11 23:51:17 2017 -0700
++++ ./hotspot/make/bsd/makefiles/mapfile-vers-product	Sat Aug 26 21:38:23 2017 -0700
 @@ -21,241 +21,249 @@
  # questions.
  #
@@ -4718,7 +4719,7 @@
 +                *;
 +};
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ ./hotspot/make/bsd/makefiles/mapfile-vers-product.macosx	Tue Apr 18 21:21:39 2017 -0700
++++ ./hotspot/make/bsd/makefiles/mapfile-vers-product.macosx	Sat Aug 26 21:38:23 2017 -0700
 @@ -0,0 +1,261 @@
 +#
 +# Copyright (c) 2002, 2014, Oracle and/or its affiliates. All rights reserved.
@@ -4981,8 +4982,8 @@
 +
 +                # INSERT VTABLE SYMBOLS HERE
 +
---- ./hotspot/make/bsd/makefiles/optimized.make	Mon Feb 27 11:16:11 2017 -0800
-+++ ./hotspot/make/bsd/makefiles/optimized.make	Tue Apr 18 21:21:39 2017 -0700
+--- ./hotspot/make/bsd/makefiles/optimized.make	Tue Jul 11 23:51:17 2017 -0700
++++ ./hotspot/make/bsd/makefiles/optimized.make	Sat Aug 26 21:38:23 2017 -0700
 @@ -38,6 +38,9 @@
  # to inhibit the effect of the previous line on CFLAGS.
  
@@ -4995,7 +4996,7 @@
  
  VERSION = optimized
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ ./hotspot/make/bsd/makefiles/ppc64.make	Tue Apr 18 21:21:39 2017 -0700
++++ ./hotspot/make/bsd/makefiles/ppc64.make	Sat Aug 26 21:38:23 2017 -0700
 @@ -0,0 +1,51 @@
 +#
 +# Copyright (c) 2004, 2013, Oracle and/or its affiliates. All rights reserved.
@@ -5048,8 +5049,8 @@
 +  # Use Power8, this is the first CPU to support PPC64 LE with ELFv2 ABI.
 +  CFLAGS += -mcpu=power7 -mtune=power8 -minsert-sched-nops=regroup_exact -mno-multiple -mno-string
 +endif
---- ./hotspot/make/bsd/makefiles/product.make	Mon Feb 27 11:16:11 2017 -0800
-+++ ./hotspot/make/bsd/makefiles/product.make	Tue Apr 18 21:21:39 2017 -0700
+--- ./hotspot/make/bsd/makefiles/product.make	Tue Jul 11 23:51:17 2017 -0700
++++ ./hotspot/make/bsd/makefiles/product.make	Sat Aug 26 21:38:23 2017 -0700
 @@ -38,7 +38,10 @@
  # to inhibit the effect of the previous line on CFLAGS.
  
@@ -5062,8 +5063,8 @@
  
  SYSDEFS += -DPRODUCT
  VERSION = optimized
---- ./hotspot/make/bsd/makefiles/rules.make	Mon Feb 27 11:16:11 2017 -0800
-+++ ./hotspot/make/bsd/makefiles/rules.make	Tue Apr 18 21:21:39 2017 -0700
+--- ./hotspot/make/bsd/makefiles/rules.make	Tue Jul 11 23:51:17 2017 -0700
++++ ./hotspot/make/bsd/makefiles/rules.make	Sat Aug 26 21:38:23 2017 -0700
 @@ -34,7 +34,7 @@
  CC_COMPILE       = $(CC) $(CXXFLAGS) $(CFLAGS)
  CXX_COMPILE      = $(CXX) $(CXXFLAGS) $(CFLAGS)
@@ -5073,8 +5074,8 @@
  
  COMPILE.CC       = $(CC_COMPILE) -c
  GENASM.CC        = $(CC_COMPILE) -S
---- ./hotspot/make/bsd/makefiles/sa.make	Mon Feb 27 11:16:11 2017 -0800
-+++ ./hotspot/make/bsd/makefiles/sa.make	Tue Apr 18 21:21:39 2017 -0700
+--- ./hotspot/make/bsd/makefiles/sa.make	Tue Jul 11 23:51:17 2017 -0700
++++ ./hotspot/make/bsd/makefiles/sa.make	Sat Aug 26 21:38:23 2017 -0700
 @@ -1,5 +1,5 @@
  #
 -# Copyright (c) 2003, 2015, Oracle and/or its affiliates. All rights reserved.
@@ -5189,8 +5190,8 @@
  	rm -rf $(AGENT_FILES_LIST)
 +
 +-include $(HS_ALT_MAKE)/bsd/makefiles/sa-rules.make
---- ./hotspot/make/bsd/makefiles/saproc.make	Mon Feb 27 11:16:11 2017 -0800
-+++ ./hotspot/make/bsd/makefiles/saproc.make	Tue Apr 18 21:21:39 2017 -0700
+--- ./hotspot/make/bsd/makefiles/saproc.make	Tue Jul 11 23:51:17 2017 -0700
++++ ./hotspot/make/bsd/makefiles/saproc.make	Sat Aug 26 21:38:23 2017 -0700
 @@ -99,10 +99,10 @@
  endif
  
@@ -5230,8 +5231,8 @@
 +	 cp -f $(LIBSAPROC) $(DEST_SAPROC) && echo "Done"
  
  .PHONY: install_saproc
---- ./hotspot/make/bsd/makefiles/vm.make	Mon Feb 27 11:16:11 2017 -0800
-+++ ./hotspot/make/bsd/makefiles/vm.make	Tue Apr 18 21:21:39 2017 -0700
+--- ./hotspot/make/bsd/makefiles/vm.make	Tue Jul 11 23:51:17 2017 -0700
++++ ./hotspot/make/bsd/makefiles/vm.make	Sat Aug 26 21:38:23 2017 -0700
 @@ -107,7 +107,7 @@
  # File specific flags
  CXXFLAGS += $(CXXFLAGS/BYFILE)
@@ -5242,7 +5243,7 @@
  endif
  
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ ./hotspot/make/bsd/platform_ppc64	Tue Apr 18 21:21:39 2017 -0700
++++ ./hotspot/make/bsd/platform_ppc64	Sat Aug 26 21:38:23 2017 -0700
 @@ -0,0 +1,17 @@
 +os_family = bsd
 +
@@ -5261,8 +5262,8 @@
 +gnu_dis_arch = ppc64
 +
 +sysdefs = -DBSD -D_ALLBSD_SOURCE -D_GNU_SOURCE -DPPC64
---- ./hotspot/make/sa.files	Mon Feb 27 11:16:11 2017 -0800
-+++ ./hotspot/make/sa.files	Tue Apr 18 21:21:39 2017 -0700
+--- ./hotspot/make/sa.files	Tue Jul 11 23:51:17 2017 -0700
++++ ./hotspot/make/sa.files	Sat Aug 26 21:38:23 2017 -0700
 @@ -45,6 +45,7 @@
  $(AGENT_SRC_DIR)/sun/jvm/hotspot/debugger/amd64/*.java \
  $(AGENT_SRC_DIR)/sun/jvm/hotspot/debugger/bsd/*.java \
@@ -5303,8 +5304,8 @@
  $(AGENT_SRC_DIR)/sun/jvm/hotspot/tools/*.java \
  $(AGENT_SRC_DIR)/sun/jvm/hotspot/tools/jcore/*.java \
  $(AGENT_SRC_DIR)/sun/jvm/hotspot/tools/soql/*.java \
---- ./hotspot/src/cpu/ppc/vm/bytes_ppc.hpp	Mon Feb 27 11:16:11 2017 -0800
-+++ ./hotspot/src/cpu/ppc/vm/bytes_ppc.hpp	Tue Apr 18 21:21:39 2017 -0700
+--- ./hotspot/src/cpu/ppc/vm/bytes_ppc.hpp	Tue Jul 11 23:51:17 2017 -0700
++++ ./hotspot/src/cpu/ppc/vm/bytes_ppc.hpp	Sat Aug 26 21:38:23 2017 -0700
 @@ -277,5 +277,9 @@
  #if defined(TARGET_OS_ARCH_linux_ppc)
  #include "bytes_linux_ppc.inline.hpp"
@@ -5315,8 +5316,8 @@
 +
  
  #endif // CPU_PPC_VM_BYTES_PPC_HPP
---- ./hotspot/src/cpu/ppc/vm/interpreter_ppc.cpp	Mon Feb 27 11:16:11 2017 -0800
-+++ ./hotspot/src/cpu/ppc/vm/interpreter_ppc.cpp	Tue Apr 18 21:21:39 2017 -0700
+--- ./hotspot/src/cpu/ppc/vm/interpreter_ppc.cpp	Tue Jul 11 23:51:17 2017 -0700
++++ ./hotspot/src/cpu/ppc/vm/interpreter_ppc.cpp	Sat Aug 26 21:38:23 2017 -0700
 @@ -307,6 +307,8 @@
    // Although AIX runs on big endian CPU, float is in most significant
    // word of an argument slot.
@@ -5326,8 +5327,8 @@
  #else
  #error "unknown OS"
  #endif
---- ./hotspot/src/cpu/ppc/vm/sharedRuntime_ppc.cpp	Mon Feb 27 11:16:11 2017 -0800
-+++ ./hotspot/src/cpu/ppc/vm/sharedRuntime_ppc.cpp	Tue Apr 18 21:21:39 2017 -0700
+--- ./hotspot/src/cpu/ppc/vm/sharedRuntime_ppc.cpp	Tue Jul 11 23:51:17 2017 -0700
++++ ./hotspot/src/cpu/ppc/vm/sharedRuntime_ppc.cpp	Sat Aug 26 21:38:23 2017 -0700
 @@ -778,6 +778,8 @@
        // Although AIX runs on big endian CPU, float is in the most
        // significant word of an argument slot.
@@ -5337,8 +5338,8 @@
  #else
  #error "unknown OS"
  #endif
---- ./hotspot/src/cpu/x86/vm/jni_x86.h	Mon Feb 27 11:16:11 2017 -0800
-+++ ./hotspot/src/cpu/x86/vm/jni_x86.h	Tue Apr 18 21:21:39 2017 -0700
+--- ./hotspot/src/cpu/x86/vm/jni_x86.h	Tue Jul 11 23:51:17 2017 -0700
++++ ./hotspot/src/cpu/x86/vm/jni_x86.h	Sat Aug 26 21:38:23 2017 -0700
 @@ -34,7 +34,7 @@
  #ifndef __has_attribute
    #define __has_attribute(x) 0
@@ -5348,8 +5349,8 @@
    #define JNIEXPORT     __attribute__((visibility("default")))
    #define JNIIMPORT     __attribute__((visibility("default")))
  #else
---- ./hotspot/src/cpu/x86/vm/sharedRuntime_x86_32.cpp	Mon Feb 27 11:16:11 2017 -0800
-+++ ./hotspot/src/cpu/x86/vm/sharedRuntime_x86_32.cpp	Tue Apr 18 21:21:39 2017 -0700
+--- ./hotspot/src/cpu/x86/vm/sharedRuntime_x86_32.cpp	Tue Jul 11 23:51:17 2017 -0700
++++ ./hotspot/src/cpu/x86/vm/sharedRuntime_x86_32.cpp	Sat Aug 26 21:38:23 2017 -0700
 @@ -2266,7 +2266,7 @@
    if (!is_critical_native) {
      // reset handle block
@@ -5359,8 +5360,8 @@
  
      // Any exception pending?
      __ cmpptr(Address(thread, in_bytes(Thread::pending_exception_offset())), (int32_t)NULL_WORD);
---- ./hotspot/src/cpu/x86/vm/sharedRuntime_x86_64.cpp	Mon Feb 27 11:16:11 2017 -0800
-+++ ./hotspot/src/cpu/x86/vm/sharedRuntime_x86_64.cpp	Tue Apr 18 21:21:39 2017 -0700
+--- ./hotspot/src/cpu/x86/vm/sharedRuntime_x86_64.cpp	Tue Jul 11 23:51:17 2017 -0700
++++ ./hotspot/src/cpu/x86/vm/sharedRuntime_x86_64.cpp	Sat Aug 26 21:38:23 2017 -0700
 @@ -23,9 +23,12 @@
   */
  
@@ -5375,8 +5376,8 @@
  #include "asm/macroAssembler.hpp"
  #include "asm/macroAssembler.inline.hpp"
  #include "code/debugInfoRec.hpp"
---- ./hotspot/src/cpu/x86/vm/templateInterpreter_x86_32.cpp	Mon Feb 27 11:16:11 2017 -0800
-+++ ./hotspot/src/cpu/x86/vm/templateInterpreter_x86_32.cpp	Tue Apr 18 21:21:39 2017 -0700
+--- ./hotspot/src/cpu/x86/vm/templateInterpreter_x86_32.cpp	Tue Jul 11 23:51:17 2017 -0700
++++ ./hotspot/src/cpu/x86/vm/templateInterpreter_x86_32.cpp	Sat Aug 26 21:38:23 2017 -0700
 @@ -1293,7 +1293,7 @@
  
    // reset handle block
@@ -5386,8 +5387,8 @@
  
    // If result was an oop then unbox and save it in the frame
    { Label L;
---- ./hotspot/src/cpu/x86/vm/x86_32.ad	Mon Feb 27 11:16:11 2017 -0800
-+++ ./hotspot/src/cpu/x86/vm/x86_32.ad	Tue Apr 18 21:21:39 2017 -0700
+--- ./hotspot/src/cpu/x86/vm/x86_32.ad	Tue Jul 11 23:51:17 2017 -0700
++++ ./hotspot/src/cpu/x86/vm/x86_32.ad	Sat Aug 26 21:38:23 2017 -0700
 @@ -1250,6 +1250,7 @@
  
  
@@ -5396,8 +5397,8 @@
  }
  
  #ifndef PRODUCT
---- ./hotspot/src/os/aix/vm/os_aix.cpp	Mon Feb 27 11:16:11 2017 -0800
-+++ ./hotspot/src/os/aix/vm/os_aix.cpp	Tue Apr 18 21:21:39 2017 -0700
+--- ./hotspot/src/os/aix/vm/os_aix.cpp	Tue Jul 11 23:51:17 2017 -0700
++++ ./hotspot/src/os/aix/vm/os_aix.cpp	Sat Aug 26 21:38:23 2017 -0700
 @@ -5236,6 +5236,10 @@
      return 0;
    }
@@ -5410,7 +5411,7 @@
  }
  
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ ./hotspot/src/os/bsd/vm/decoder_bsd.cpp	Tue Apr 18 21:21:39 2017 -0700
++++ ./hotspot/src/os/bsd/vm/decoder_bsd.cpp	Sat Aug 26 21:38:23 2017 -0700
 @@ -0,0 +1,53 @@
 +/*
 + * Copyright (c) 1997, 2012, Oracle and/or its affiliates. All rights reserved.
@@ -5465,8 +5466,8 @@
 +  return false;
 +}
 +#endif
---- ./hotspot/src/os/bsd/vm/jsig.c	Mon Feb 27 11:16:11 2017 -0800
-+++ ./hotspot/src/os/bsd/vm/jsig.c	Tue Apr 18 21:21:39 2017 -0700
+--- ./hotspot/src/os/bsd/vm/jsig.c	Tue Jul 11 23:51:17 2017 -0700
++++ ./hotspot/src/os/bsd/vm/jsig.c	Sat Aug 26 21:38:23 2017 -0700
 @@ -165,9 +165,8 @@
  }
  
@@ -5479,8 +5480,8 @@
  
  static int call_os_sigaction(int sig, const struct sigaction  *act,
                               struct sigaction *oact) {
---- ./hotspot/src/os/bsd/vm/jvm_bsd.cpp	Mon Feb 27 11:16:11 2017 -0800
-+++ ./hotspot/src/os/bsd/vm/jvm_bsd.cpp	Tue Apr 18 21:21:39 2017 -0700
+--- ./hotspot/src/os/bsd/vm/jvm_bsd.cpp	Tue Jul 11 23:51:17 2017 -0700
++++ ./hotspot/src/os/bsd/vm/jvm_bsd.cpp	Sat Aug 26 21:38:23 2017 -0700
 @@ -50,6 +50,7 @@
      case INTERRUPT_SIGNAL:
      case SIGFPE:
@@ -5590,8 +5591,8 @@
 +  jio_snprintf(buf, len, "SIG%s", signame);
 +  return true;
  }
---- ./hotspot/src/os/bsd/vm/jvm_bsd.h	Mon Feb 27 11:16:11 2017 -0800
-+++ ./hotspot/src/os/bsd/vm/jvm_bsd.h	Tue Apr 18 21:21:39 2017 -0700
+--- ./hotspot/src/os/bsd/vm/jvm_bsd.h	Tue Jul 11 23:51:17 2017 -0700
++++ ./hotspot/src/os/bsd/vm/jvm_bsd.h	Sat Aug 26 21:38:23 2017 -0700
 @@ -112,20 +112,6 @@
  #define SHUTDOWN2_SIGNAL SIGINT
  #define SHUTDOWN3_SIGNAL SIGTERM
@@ -5613,8 +5614,8 @@
  #endif /* JVM_MD_H */
  
  #endif // OS_BSD_VM_JVM_BSD_H
---- ./hotspot/src/os/bsd/vm/osThread_bsd.cpp	Mon Feb 27 11:16:11 2017 -0800
-+++ ./hotspot/src/os/bsd/vm/osThread_bsd.cpp	Tue Apr 18 21:21:39 2017 -0700
+--- ./hotspot/src/os/bsd/vm/osThread_bsd.cpp	Tue Jul 11 23:51:17 2017 -0700
++++ ./hotspot/src/os/bsd/vm/osThread_bsd.cpp	Sat Aug 26 21:38:23 2017 -0700
 @@ -30,7 +30,7 @@
  
  void OSThread::pd_initialize() {
@@ -5624,8 +5625,8 @@
    _thread_id        = 0;
  #else
    _thread_id        = NULL;
---- ./hotspot/src/os/bsd/vm/os_bsd.cpp	Mon Feb 27 11:16:11 2017 -0800
-+++ ./hotspot/src/os/bsd/vm/os_bsd.cpp	Tue Apr 18 21:21:39 2017 -0700
+--- ./hotspot/src/os/bsd/vm/os_bsd.cpp	Tue Jul 11 23:51:17 2017 -0700
++++ ./hotspot/src/os/bsd/vm/os_bsd.cpp	Sat Aug 26 21:38:23 2017 -0700
 @@ -97,16 +97,31 @@
  # include <sys/shm.h>
  #ifndef __APPLE__
@@ -5716,7 +5717,16 @@
  #elif defined(SPARC)
  #  ifdef _LP64
  static char cpu_arch[] = "sparcv9";
-@@ -411,12 +451,21 @@
+@@ -272,6 +312,8 @@
+ 
+ #if defined (HW_MEMSIZE) // Apple
+   mib[1] = HW_MEMSIZE;
++#elif defined(HW_PHYSMEM64) // OpenBSD & NetBSD
++  mib[1] = HW_PHYSMEM64;
+ #elif defined(HW_PHYSMEM) // Most of BSD
+   mib[1] = HW_PHYSMEM;
+ #elif defined(HW_REALMEM) // Old FreeBSD
+@@ -411,12 +453,21 @@
      const char *v = ::getenv("LD_LIBRARY_PATH");
      const char *v_colon = ":";
      if (v == NULL) { v = ""; v_colon = ""; }
@@ -5738,7 +5748,7 @@
      Arguments::set_library_path(ld_library_path);
      FREE_C_HEAP_ARRAY(char, ld_library_path, mtInternal);
    }
-@@ -591,6 +640,9 @@
+@@ -591,6 +642,9 @@
    sigaddset(&unblocked_sigs, SIGSEGV);
    sigaddset(&unblocked_sigs, SIGBUS);
    sigaddset(&unblocked_sigs, SIGFPE);
@@ -5748,7 +5758,7 @@
    sigaddset(&unblocked_sigs, SR_signum);
  
    if (!ReduceSignalUsage) {
-@@ -983,6 +1035,13 @@
+@@ -983,6 +1037,13 @@
  bool os::vtime_enabled()  { return false; }
  
  double os::elapsedVTime() {
@@ -5762,7 +5772,7 @@
    // better than nothing, but not much
    return elapsedTime();
  }
-@@ -1008,11 +1067,15 @@
+@@ -1008,11 +1069,15 @@
  void os::Bsd::clock_init() {
    struct timespec res;
    struct timespec tp;
@@ -5778,7 +5788,7 @@
  }
  #endif
  
-@@ -1048,7 +1111,7 @@
+@@ -1048,7 +1113,7 @@
  jlong os::javaTimeNanos() {
    if (Bsd::supports_monotonic_clock()) {
      struct timespec tp;
@@ -5787,7 +5797,7 @@
      assert(status == 0, "gettime error");
      jlong result = jlong(tp.tv_sec) * (1000 * 1000 * 1000) + jlong(tp.tv_nsec);
      return result;
-@@ -1190,35 +1253,38 @@
+@@ -1190,35 +1255,38 @@
  pid_t os::Bsd::gettid() {
    int retval = -1;
  
@@ -5838,7 +5848,7 @@
  #else
    return (intx)::pthread_self();
  #endif
-@@ -1696,14 +1762,14 @@
+@@ -1696,14 +1764,14 @@
  }
  
  void os::print_os_info_brief(outputStream* st) {
@@ -5855,7 +5865,7 @@
  
    os::Posix::print_uname_info(st);
  
-@@ -1716,6 +1782,29 @@
+@@ -1716,6 +1784,29 @@
    // Nothing to do for now.
  }
  
@@ -5885,7 +5895,7 @@
  void os::print_memory_info(outputStream* st) {
  
    st->print("Memory:");
-@@ -1725,11 +1814,14 @@
+@@ -1725,11 +1816,14 @@
              os::physical_memory() >> 10);
    st->print("(" UINT64_FORMAT "k free)",
              os::available_memory() >> 10);
@@ -5905,7 +5915,7 @@
    st->cr();
  }
  
-@@ -1768,6 +1860,9 @@
+@@ -1768,6 +1862,9 @@
    print_signal_handler(st, SHUTDOWN2_SIGNAL , buf, buflen);
    print_signal_handler(st, SHUTDOWN3_SIGNAL , buf, buflen);
    print_signal_handler(st, BREAK_SIGNAL, buf, buflen);
@@ -5915,7 +5925,7 @@
  }
  
  static char saved_jvm_path[MAXPATHLEN] = {0};
-@@ -1965,7 +2060,7 @@
+@@ -1965,7 +2062,7 @@
      os_semaphore_t _semaphore;
  };
  
@@ -5924,7 +5934,7 @@
    SEM_INIT(_semaphore, 0);
  }
  
-@@ -2153,7 +2248,7 @@
+@@ -2153,7 +2250,7 @@
        if (::write(fd, "", 1) == 1) {
          mmap(base, size,
               PROT_READ|PROT_WRITE|PROT_EXEC,
@@ -5933,7 +5943,7 @@
        }
      }
      ::close(fd);
-@@ -2263,7 +2358,7 @@
+@@ -2263,7 +2360,7 @@
    return ::mprotect(addr, size, PROT_NONE) == 0;
  #else
    uintptr_t res = (uintptr_t) ::mmap(addr, size, PROT_NONE,
@@ -5942,7 +5952,7 @@
    return res  != (uintptr_t) MAP_FAILED;
  #endif
  }
-@@ -2290,7 +2385,7 @@
+@@ -2290,7 +2387,7 @@
    char * addr;
    int flags;
  
@@ -5951,7 +5961,7 @@
    if (fixed) {
      assert((uintptr_t)requested_addr % os::Bsd::page_size() == 0, "unaligned address");
      flags |= MAP_FIXED;
-@@ -2779,6 +2874,7 @@
+@@ -2779,6 +2876,7 @@
    return OS_OK;
  #elif defined(__FreeBSD__)
    int ret = pthread_setprio(thread->osthread()->pthread_id(), newpri);
@@ -5959,7 +5969,7 @@
  #elif defined(__APPLE__) || defined(__NetBSD__)
    struct sched_param sp;
    int policy;
-@@ -3325,6 +3421,9 @@
+@@ -3325,6 +3423,9 @@
      set_signal_handler(SIGBUS, true);
      set_signal_handler(SIGILL, true);
      set_signal_handler(SIGFPE, true);
@@ -5969,7 +5979,7 @@
      set_signal_handler(SIGXFSZ, true);
  
  #if defined(__APPLE__)
-@@ -3373,18 +3472,6 @@
+@@ -3373,18 +3474,6 @@
    }
  }
  
@@ -5988,7 +5998,7 @@
  static const char* get_signal_handler_name(address handler,
                                             char* buf, int buflen) {
    int offset;
-@@ -3408,9 +3495,6 @@
+@@ -3408,9 +3497,6 @@
  
    sigaction(sig, NULL, &sa);
  
@@ -5998,7 +6008,7 @@
    st->print("%s: ", os::exception_name(sig, buf, buflen));
  
    address handler = (sa.sa_flags & SA_SIGINFO)
-@@ -3432,7 +3516,7 @@
+@@ -3432,7 +3518,7 @@
    // May be, handler was resetted by VMError?
    if(rh != NULL) {
      handler = rh;
@@ -6007,7 +6017,7 @@
    }
  
    st->print(", sa_flags=");
-@@ -3474,6 +3558,9 @@
+@@ -3474,6 +3560,9 @@
    DO_SIGNAL_CHECK(SIGBUS);
    DO_SIGNAL_CHECK(SIGPIPE);
    DO_SIGNAL_CHECK(SIGXFSZ);
@@ -6017,7 +6027,7 @@
  
  
    // ReduceSignalUsage allows the user to override these handlers
-@@ -3508,8 +3595,6 @@
+@@ -3508,8 +3597,6 @@
    os_sigaction(sig, (struct sigaction*)NULL, &act);
  
  
@@ -6026,7 +6036,7 @@
    address thisHandler = (act.sa_flags & SA_SIGINFO)
      ? CAST_FROM_FN_PTR(address, act.sa_sigaction)
      : CAST_FROM_FN_PTR(address, act.sa_handler) ;
-@@ -3574,6 +3659,14 @@
+@@ -3574,6 +3661,14 @@
  
  extern bool signal_name(int signo, char* buf, size_t len);
  
@@ -6041,7 +6051,7 @@
  const char* os::exception_name(int exception_code, char* buf, size_t size) {
    if (0 < exception_code && exception_code <= SIGRTMAX) {
      // signal
-@@ -3622,6 +3715,25 @@
+@@ -3622,6 +3717,25 @@
    Bsd::clock_init();
    initial_time_count = javaTimeNanos();
  
@@ -6067,7 +6077,7 @@
  #ifdef __APPLE__
    // XXXDARWIN
    // Work around the unaligned VM callbacks in hotspot's
-@@ -3770,6 +3882,19 @@
+@@ -3770,6 +3884,19 @@
  };
  
  int os::active_processor_count() {
@@ -6087,7 +6097,7 @@
    return _processor_count;
  }
  
-@@ -3981,7 +4106,10 @@
+@@ -3981,7 +4108,10 @@
    }
    int fd;
    int o_delete = (oflag & O_DELETE);
@@ -6099,7 +6109,7 @@
  
    fd = ::open(path, oflag, mode);
    if (fd == -1) return -1;
-@@ -4026,7 +4154,7 @@
+@@ -4026,7 +4156,7 @@
       * 4843136: (process) pipe file descriptor from Runtime.exec not being closed
       * 6339493: (process) Runtime.exec does not close all file descriptors on Solaris 9
       */
@@ -6108,7 +6118,7 @@
      {
          int flags = ::fcntl(fd, F_GETFD);
          if (flags != -1)
-@@ -4166,8 +4294,9 @@
+@@ -4166,8 +4296,9 @@
  #ifdef __APPLE__
    return os::thread_cpu_time(Thread::current(), true /* user + sys */);
  #else
@@ -6120,7 +6130,7 @@
  #endif
  }
  
-@@ -4175,8 +4304,9 @@
+@@ -4175,8 +4306,9 @@
  #ifdef __APPLE__
    return os::thread_cpu_time(thread, true /* user + sys */);
  #else
@@ -6132,7 +6142,7 @@
  #endif
  }
  
-@@ -4184,8 +4314,9 @@
+@@ -4184,8 +4316,9 @@
  #ifdef __APPLE__
    return os::thread_cpu_time(Thread::current(), user_sys_cpu_time);
  #else
@@ -6144,7 +6154,7 @@
  #endif
  }
  
-@@ -4210,8 +4341,41 @@
+@@ -4210,8 +4343,41 @@
      return ((jlong)tinfo.user_time.seconds * 1000000000) + ((jlong)tinfo.user_time.microseconds * (jlong)1000);
    }
  #else
@@ -6188,7 +6198,7 @@
  #endif
  }
  
-@@ -4234,7 +4398,7 @@
+@@ -4234,7 +4400,7 @@
  #ifdef __APPLE__
    return true;
  #else
@@ -6197,7 +6207,7 @@
  #endif
  }
  
-@@ -4332,21 +4496,36 @@
+@@ -4332,21 +4498,36 @@
  
  static struct timespec* compute_abstime(struct timespec* abstime, jlong millis) {
    if (millis < 0)  millis = 0;
@@ -6243,7 +6253,7 @@
    return abstime;
  }
  
-@@ -4438,7 +4617,7 @@
+@@ -4438,7 +4619,7 @@
      status = os::Bsd::safe_cond_timedwait(_cond, _mutex, &abst);
      if (status != 0 && WorkAroundNPTLTimedWaitHang) {
        pthread_cond_destroy (_cond);
@@ -6252,7 +6262,7 @@
      }
      assert_status(status == 0 || status == EINTR ||
                    status == ETIMEDOUT,
-@@ -4539,32 +4718,50 @@
+@@ -4539,32 +4720,50 @@
  
  static void unpackTime(struct timespec* absTime, bool isAbsolute, jlong time) {
    assert (time > 0, "convertTime");
@@ -6323,7 +6333,7 @@
        if (absTime->tv_nsec >= NANOSECS_PER_SEC) {
          absTime->tv_nsec -= NANOSECS_PER_SEC;
          ++absTime->tv_sec; // note: this must be <= max_secs
-@@ -4644,15 +4841,19 @@
+@@ -4644,15 +4843,19 @@
    jt->set_suspend_equivalent();
    // cleared by handle_special_suspend_equivalent_condition() or java_suspend_self()
  
@@ -6347,7 +6357,7 @@
    assert_status(status == 0 || status == EINTR ||
                  status == ETIMEDOUT,
                  status, "cond_timedwait");
-@@ -4681,17 +4882,26 @@
+@@ -4681,17 +4884,26 @@
    s = _counter;
    _counter = 1;
    if (s < 1) {
@@ -6383,7 +6393,7 @@
    } else {
      pthread_mutex_unlock(_mutex);
      assert (status == 0, "invariant") ;
-@@ -4822,13 +5032,29 @@
+@@ -4822,13 +5034,29 @@
  
  // Get the default path to the core file
  // Returns the length of the string
@@ -6420,8 +6430,8 @@
  }
  
  #ifndef PRODUCT
---- ./hotspot/src/os/bsd/vm/os_bsd.hpp	Mon Feb 27 11:16:11 2017 -0800
-+++ ./hotspot/src/os/bsd/vm/os_bsd.hpp	Tue Apr 18 21:21:39 2017 -0700
+--- ./hotspot/src/os/bsd/vm/os_bsd.hpp	Tue Jul 11 23:51:17 2017 -0700
++++ ./hotspot/src/os/bsd/vm/os_bsd.hpp	Sat Aug 26 21:38:23 2017 -0700
 @@ -58,12 +58,16 @@
    // For signal flags diagnostics
    static int sigflags[MAXSIGNUM];
@@ -6510,8 +6520,8 @@
      }
  };
  
---- ./hotspot/src/os/bsd/vm/vmError_bsd.cpp	Mon Feb 27 11:16:11 2017 -0800
-+++ ./hotspot/src/os/bsd/vm/vmError_bsd.cpp	Tue Apr 18 21:21:39 2017 -0700
+--- ./hotspot/src/os/bsd/vm/vmError_bsd.cpp	Tue Jul 11 23:51:17 2017 -0700
++++ ./hotspot/src/os/bsd/vm/vmError_bsd.cpp	Sat Aug 26 21:38:23 2017 -0700
 @@ -33,30 +33,50 @@
  #include <sys/syscall.h>
  #include <unistd.h>
@@ -6573,8 +6583,8 @@
        os::fork_and_exec(buf);
        yes = false;
      }
---- ./hotspot/src/os/linux/vm/os_linux.cpp	Mon Feb 27 11:16:11 2017 -0800
-+++ ./hotspot/src/os/linux/vm/os_linux.cpp	Tue Apr 18 21:21:39 2017 -0700
+--- ./hotspot/src/os/linux/vm/os_linux.cpp	Tue Jul 11 23:51:17 2017 -0700
++++ ./hotspot/src/os/linux/vm/os_linux.cpp	Sat Aug 26 21:38:23 2017 -0700
 @@ -6199,6 +6199,10 @@
      return 0;
    }
@@ -6586,8 +6596,8 @@
    return strlen(buffer);
  }
  
---- ./hotspot/src/os/posix/vm/os_posix.cpp	Mon Feb 27 11:16:11 2017 -0800
-+++ ./hotspot/src/os/posix/vm/os_posix.cpp	Tue Apr 18 21:21:39 2017 -0700
+--- ./hotspot/src/os/posix/vm/os_posix.cpp	Tue Jul 11 23:51:17 2017 -0700
++++ ./hotspot/src/os/posix/vm/os_posix.cpp	Sat Aug 26 21:38:23 2017 -0700
 @@ -53,12 +53,11 @@
    n = get_core_path(buffer, bufferSize);
  
@@ -6650,8 +6660,8 @@
      // Linux specific
  #ifdef SI_TKILL
      { SI_TKILL,     "SI_TKILL",    "Signal sent by tkill (pthread_kill)" },
---- ./hotspot/src/os/solaris/vm/os_solaris.cpp	Mon Feb 27 11:16:11 2017 -0800
-+++ ./hotspot/src/os/solaris/vm/os_solaris.cpp	Tue Apr 18 21:21:39 2017 -0700
+--- ./hotspot/src/os/solaris/vm/os_solaris.cpp	Tue Jul 11 23:51:17 2017 -0700
++++ ./hotspot/src/os/solaris/vm/os_solaris.cpp	Sat Aug 26 21:38:23 2017 -0700
 @@ -6375,6 +6375,10 @@
      return 0;
    }
@@ -6664,7 +6674,7 @@
  }
  
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ ./hotspot/src/os_cpu/bsd_ppc/vm/atomic_bsd_ppc.inline.hpp	Tue Apr 18 21:21:39 2017 -0700
++++ ./hotspot/src/os_cpu/bsd_ppc/vm/atomic_bsd_ppc.inline.hpp	Sat Aug 26 21:38:23 2017 -0700
 @@ -0,0 +1,400 @@
 +/*
 + * Copyright (c) 1997, 2013, Oracle and/or its affiliates. All rights reserved.
@@ -7067,7 +7077,7 @@
 +
 +#endif // OS_CPU_BSD_PPC_VM_ATOMIC_BSD_PPC_INLINE_HPP
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ ./hotspot/src/os_cpu/bsd_ppc/vm/bytes_bsd_ppc.inline.hpp	Tue Apr 18 21:21:39 2017 -0700
++++ ./hotspot/src/os_cpu/bsd_ppc/vm/bytes_bsd_ppc.inline.hpp	Sat Aug 26 21:38:23 2017 -0700
 @@ -0,0 +1,39 @@
 +/*
 + * Copyright (c) 2002, 2013, Oracle and/or its affiliates. All rights reserved.
@@ -7109,7 +7119,7 @@
 +
 +#endif // OS_CPU_BSD_PPC_VM_BYTES_BSD_PPC_INLINE_HPP
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ ./hotspot/src/os_cpu/bsd_ppc/vm/globals_bsd_ppc.hpp	Tue Apr 18 21:21:39 2017 -0700
++++ ./hotspot/src/os_cpu/bsd_ppc/vm/globals_bsd_ppc.hpp	Sat Aug 26 21:38:23 2017 -0700
 @@ -0,0 +1,54 @@
 +/*
 + * Copyright (c) 2002, 2013, Oracle and/or its affiliates. All rights reserved.
@@ -7166,7 +7176,7 @@
 +
 +#endif // OS_CPU_BSD_PPC_VM_GLOBALS_BSD_PPC_HPP
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ ./hotspot/src/os_cpu/bsd_ppc/vm/orderAccess_bsd_ppc.inline.hpp	Tue Apr 18 21:21:39 2017 -0700
++++ ./hotspot/src/os_cpu/bsd_ppc/vm/orderAccess_bsd_ppc.inline.hpp	Sat Aug 26 21:38:23 2017 -0700
 @@ -0,0 +1,149 @@
 +/*
 + * Copyright (c) 1997, 2013, Oracle and/or its affiliates. All rights reserved.
@@ -7318,7 +7328,7 @@
 +
 +#endif // OS_CPU_BSD_PPC_VM_ORDERACCESS_BSD_PPC_INLINE_HPP
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ ./hotspot/src/os_cpu/bsd_ppc/vm/os_bsd_ppc.cpp	Tue Apr 18 21:21:39 2017 -0700
++++ ./hotspot/src/os_cpu/bsd_ppc/vm/os_bsd_ppc.cpp	Sat Aug 26 21:38:23 2017 -0700
 @@ -0,0 +1,666 @@
 +/*
 + * Copyright (c) 2003, 2013, Oracle and/or its affiliates. All rights reserved.
@@ -7987,7 +7997,7 @@
 +}
 +#endif
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ ./hotspot/src/os_cpu/bsd_ppc/vm/os_bsd_ppc.hpp	Tue Apr 18 21:21:39 2017 -0700
++++ ./hotspot/src/os_cpu/bsd_ppc/vm/os_bsd_ppc.hpp	Sat Aug 26 21:38:23 2017 -0700
 @@ -0,0 +1,35 @@
 +/*
 + * Copyright (c) 2002, 2013, Oracle and/or its affiliates. All rights reserved.
@@ -8025,7 +8035,7 @@
 +
 +#endif // OS_CPU_BSD_PPC_VM_OS_BSD_PPC_HPP
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ ./hotspot/src/os_cpu/bsd_ppc/vm/prefetch_bsd_ppc.inline.hpp	Tue Apr 18 21:21:39 2017 -0700
++++ ./hotspot/src/os_cpu/bsd_ppc/vm/prefetch_bsd_ppc.inline.hpp	Sat Aug 26 21:38:23 2017 -0700
 @@ -0,0 +1,50 @@
 +/*
 + * Copyright (c) 1997, 2013, Oracle and/or its affiliates. All rights reserved.
@@ -8078,7 +8088,7 @@
 +
 +#endif // OS_CPU_BSD_PPC_VM_PREFETCH_BSD_PPC_INLINE_HPP
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ ./hotspot/src/os_cpu/bsd_ppc/vm/threadLS_bsd_ppc.cpp	Tue Apr 18 21:21:39 2017 -0700
++++ ./hotspot/src/os_cpu/bsd_ppc/vm/threadLS_bsd_ppc.cpp	Sat Aug 26 21:38:23 2017 -0700
 @@ -0,0 +1,39 @@
 +/*
 + * Copyright (c) 1997, 2013, Oracle and/or its affiliates. All rights reserved.
@@ -8120,7 +8130,7 @@
 +  os::thread_local_storage_at_put(ThreadLocalStorage::thread_index(), thread);
 +}
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ ./hotspot/src/os_cpu/bsd_ppc/vm/threadLS_bsd_ppc.hpp	Tue Apr 18 21:21:39 2017 -0700
++++ ./hotspot/src/os_cpu/bsd_ppc/vm/threadLS_bsd_ppc.hpp	Sat Aug 26 21:38:23 2017 -0700
 @@ -0,0 +1,36 @@
 +/*
 + * Copyright (c) 2000, 2013, Oracle and/or its affiliates. All rights reserved.
@@ -8159,7 +8169,7 @@
 +
 +#endif // OS_CPU_BSD_PPC_VM_THREADLS_BSD_PPC_HPP
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ ./hotspot/src/os_cpu/bsd_ppc/vm/thread_bsd_ppc.cpp	Tue Apr 18 21:21:39 2017 -0700
++++ ./hotspot/src/os_cpu/bsd_ppc/vm/thread_bsd_ppc.cpp	Sat Aug 26 21:38:23 2017 -0700
 @@ -0,0 +1,36 @@
 +/*
 + * Copyright (c) 1997, 2013, Oracle and/or its affiliates. All rights reserved.
@@ -8198,7 +8208,7 @@
 +
 +void JavaThread::cache_global_variables() { }
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ ./hotspot/src/os_cpu/bsd_ppc/vm/thread_bsd_ppc.hpp	Tue Apr 18 21:21:39 2017 -0700
++++ ./hotspot/src/os_cpu/bsd_ppc/vm/thread_bsd_ppc.hpp	Sat Aug 26 21:38:23 2017 -0700
 @@ -0,0 +1,83 @@
 +/*
 + * Copyright (c) 2000, 2013, Oracle and/or its affiliates. All rights reserved.
@@ -8284,7 +8294,7 @@
 +
 +#endif // OS_CPU_BSD_PPC_VM_THREAD_BSD_PPC_HPP
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ ./hotspot/src/os_cpu/bsd_ppc/vm/vmStructs_bsd_ppc.hpp	Tue Apr 18 21:21:39 2017 -0700
++++ ./hotspot/src/os_cpu/bsd_ppc/vm/vmStructs_bsd_ppc.hpp	Sat Aug 26 21:38:23 2017 -0700
 @@ -0,0 +1,55 @@
 +/*
 + * Copyright (c) 2000, 2013, Oracle and/or its affiliates. All rights reserved.
@@ -8341,8 +8351,8 @@
 +#define VM_LONG_CONSTANTS_OS_CPU(declare_constant, declare_preprocessor_constant, declare_c1_constant, declare_c2_constant, declare_c2_preprocessor_constant)
 +
 +#endif // OS_CPU_BSD_PPC_VM_VMSTRUCTS_BSD_PPC_HPP
---- ./hotspot/src/os_cpu/bsd_x86/vm/os_bsd_x86.cpp	Mon Feb 27 11:16:11 2017 -0800
-+++ ./hotspot/src/os_cpu/bsd_x86/vm/os_bsd_x86.cpp	Tue Apr 18 21:21:39 2017 -0700
+--- ./hotspot/src/os_cpu/bsd_x86/vm/os_bsd_x86.cpp	Tue Jul 11 23:51:17 2017 -0700
++++ ./hotspot/src/os_cpu/bsd_x86/vm/os_bsd_x86.cpp	Sat Aug 26 21:38:23 2017 -0700
 @@ -594,7 +594,11 @@
            stub = SharedRuntime::continuation_for_implicit_exception(thread, pc, SharedRuntime::IMPLICIT_NULL);
        }
@@ -8355,8 +8365,30 @@
                 thread->doing_unsafe_access()) {
          stub = StubRoutines::handler_for_unsafe_access();
      }
---- ./hotspot/src/share/vm/opto/node.cpp	Mon Feb 27 11:16:11 2017 -0800
-+++ ./hotspot/src/share/vm/opto/node.cpp	Tue Apr 18 21:21:39 2017 -0700
+--- ./hotspot/src/share/vm/opto/lcm.cpp	Tue Jul 11 23:51:17 2017 -0700
++++ ./hotspot/src/share/vm/opto/lcm.cpp	Sat Aug 26 21:38:23 2017 -0700
+@@ -49,7 +49,7 @@
+ // Check whether val is not-null-decoded compressed oop,
+ // i.e. will grab into the base of the heap if it represents NULL.
+ static bool accesses_heap_base_zone(Node *val) {
+-  if (Universe::narrow_oop_base() > 0) { // Implies UseCompressedOops.
++  if (Universe::narrow_oop_base() != NULL) { // Implies UseCompressedOops.
+     if (val && val->is_Mach()) {
+       if (val->as_Mach()->ideal_Opcode() == Op_DecodeN) {
+         // This assumes all Decodes with TypePtr::NotNull are matched to nodes that
+--- ./hotspot/src/share/vm/opto/loopPredicate.cpp	Tue Jul 11 23:51:17 2017 -0700
++++ ./hotspot/src/share/vm/opto/loopPredicate.cpp	Sat Aug 26 21:38:23 2017 -0700
+@@ -869,7 +869,7 @@
+       Node*          idx    = cmp->in(1);
+       assert(!invar.is_invariant(idx), "index is variant");
+       Node* rng = cmp->in(2);
+-      assert(rng->Opcode() == Op_LoadRange || _igvn.type(rng)->is_int() >= 0, "must be");
++      assert(rng->Opcode() == Op_LoadRange || _igvn.type(rng)->is_int()->_lo >= 0, "must be");
+       assert(invar.is_invariant(rng), "range must be invariant");
+       int scale    = 1;
+       Node* offset = zero;
+--- ./hotspot/src/share/vm/opto/node.cpp	Tue Jul 11 23:51:17 2017 -0700
++++ ./hotspot/src/share/vm/opto/node.cpp	Sat Aug 26 21:38:23 2017 -0700
 @@ -286,6 +286,10 @@
  #ifdef _MSC_VER // the IDX_INIT hack falls foul of warning C4355
  #pragma warning( disable:4355 ) // 'this' : used in base member initializer list
@@ -8379,8 +8411,8 @@
  
  //------------------------------clone------------------------------------------
  // Clone a Node.
---- ./hotspot/src/share/vm/runtime/atomic.inline.hpp	Mon Feb 27 11:16:11 2017 -0800
-+++ ./hotspot/src/share/vm/runtime/atomic.inline.hpp	Tue Apr 18 21:21:39 2017 -0700
+--- ./hotspot/src/share/vm/runtime/atomic.inline.hpp	Tue Jul 11 23:51:17 2017 -0700
++++ ./hotspot/src/share/vm/runtime/atomic.inline.hpp	Sat Aug 26 21:38:23 2017 -0700
 @@ -63,6 +63,9 @@
  #endif
  
@@ -8391,8 +8423,8 @@
  #ifdef TARGET_OS_ARCH_bsd_x86
  # include "atomic_bsd_x86.inline.hpp"
  #endif
---- ./hotspot/src/share/vm/runtime/globals.hpp	Mon Feb 27 11:16:11 2017 -0800
-+++ ./hotspot/src/share/vm/runtime/globals.hpp	Tue Apr 18 21:21:39 2017 -0700
+--- ./hotspot/src/share/vm/runtime/globals.hpp	Tue Jul 11 23:51:17 2017 -0700
++++ ./hotspot/src/share/vm/runtime/globals.hpp	Sat Aug 26 21:38:23 2017 -0700
 @@ -94,6 +94,9 @@
  #ifdef TARGET_OS_ARCH_aix_ppc
  # include "globals_aix_ppc.hpp"
@@ -8403,8 +8435,8 @@
  #ifdef TARGET_OS_ARCH_bsd_x86
  # include "globals_bsd_x86.hpp"
  #endif
---- ./hotspot/src/share/vm/runtime/orderAccess.inline.hpp	Mon Feb 27 11:16:11 2017 -0800
-+++ ./hotspot/src/share/vm/runtime/orderAccess.inline.hpp	Tue Apr 18 21:21:39 2017 -0700
+--- ./hotspot/src/share/vm/runtime/orderAccess.inline.hpp	Tue Jul 11 23:51:17 2017 -0700
++++ ./hotspot/src/share/vm/runtime/orderAccess.inline.hpp	Sat Aug 26 21:38:23 2017 -0700
 @@ -64,6 +64,9 @@
  #endif
  
@@ -8415,8 +8447,8 @@
  #ifdef TARGET_OS_ARCH_bsd_x86
  # include "orderAccess_bsd_x86.inline.hpp"
  #endif
---- ./hotspot/src/share/vm/runtime/os.cpp	Mon Feb 27 11:16:11 2017 -0800
-+++ ./hotspot/src/share/vm/runtime/os.cpp	Tue Apr 18 21:21:39 2017 -0700
+--- ./hotspot/src/share/vm/runtime/os.cpp	Tue Jul 11 23:51:17 2017 -0700
++++ ./hotspot/src/share/vm/runtime/os.cpp	Sat Aug 26 21:38:23 2017 -0700
 @@ -426,15 +426,6 @@
      if (_native_java_library == NULL) {
        vm_exit_during_initialization("Unable to load native library", ebuf);
@@ -8433,8 +8465,8 @@
    }
    static jboolean onLoaded = JNI_FALSE;
    if (onLoaded) {
---- ./hotspot/src/share/vm/runtime/os.hpp	Mon Feb 27 11:16:11 2017 -0800
-+++ ./hotspot/src/share/vm/runtime/os.hpp	Tue Apr 18 21:21:39 2017 -0700
+--- ./hotspot/src/share/vm/runtime/os.hpp	Tue Jul 11 23:51:17 2017 -0700
++++ ./hotspot/src/share/vm/runtime/os.hpp	Sat Aug 26 21:38:23 2017 -0700
 @@ -843,6 +843,9 @@
  #ifdef TARGET_OS_ARCH_aix_ppc
  # include "os_aix_ppc.hpp"
@@ -8445,8 +8477,8 @@
  #ifdef TARGET_OS_ARCH_bsd_x86
  # include "os_bsd_x86.hpp"
  #endif
---- ./hotspot/src/share/vm/runtime/prefetch.inline.hpp	Mon Feb 27 11:16:11 2017 -0800
-+++ ./hotspot/src/share/vm/runtime/prefetch.inline.hpp	Tue Apr 18 21:21:39 2017 -0700
+--- ./hotspot/src/share/vm/runtime/prefetch.inline.hpp	Tue Jul 11 23:51:17 2017 -0700
++++ ./hotspot/src/share/vm/runtime/prefetch.inline.hpp	Sat Aug 26 21:38:23 2017 -0700
 @@ -63,6 +63,9 @@
  #endif
  
@@ -8457,8 +8489,8 @@
  #ifdef TARGET_OS_ARCH_bsd_x86
  # include "prefetch_bsd_x86.inline.hpp"
  #endif
---- ./hotspot/src/share/vm/runtime/thread.hpp	Mon Feb 27 11:16:11 2017 -0800
-+++ ./hotspot/src/share/vm/runtime/thread.hpp	Tue Apr 18 21:21:39 2017 -0700
+--- ./hotspot/src/share/vm/runtime/thread.hpp	Tue Jul 11 23:51:17 2017 -0700
++++ ./hotspot/src/share/vm/runtime/thread.hpp	Sat Aug 26 21:38:23 2017 -0700
 @@ -1732,6 +1732,9 @@
  #ifdef TARGET_OS_ARCH_aix_ppc
  # include "thread_aix_ppc.hpp"
@@ -8469,8 +8501,8 @@
  #ifdef TARGET_OS_ARCH_bsd_x86
  # include "thread_bsd_x86.hpp"
  #endif
---- ./hotspot/src/share/vm/runtime/threadLocalStorage.hpp	Mon Feb 27 11:16:11 2017 -0800
-+++ ./hotspot/src/share/vm/runtime/threadLocalStorage.hpp	Tue Apr 18 21:21:39 2017 -0700
+--- ./hotspot/src/share/vm/runtime/threadLocalStorage.hpp	Tue Jul 11 23:51:17 2017 -0700
++++ ./hotspot/src/share/vm/runtime/threadLocalStorage.hpp	Sat Aug 26 21:38:23 2017 -0700
 @@ -75,6 +75,9 @@
  #ifdef TARGET_OS_ARCH_aix_ppc
  # include "threadLS_aix_ppc.hpp"
@@ -8481,8 +8513,19 @@
  #ifdef TARGET_OS_ARCH_bsd_x86
  # include "threadLS_bsd_x86.hpp"
  #endif
---- ./hotspot/src/share/vm/runtime/vmStructs.cpp	Mon Feb 27 11:16:11 2017 -0800
-+++ ./hotspot/src/share/vm/runtime/vmStructs.cpp	Tue Apr 18 21:21:39 2017 -0700
+--- ./hotspot/src/share/vm/runtime/virtualspace.cpp	Tue Jul 11 23:51:17 2017 -0700
++++ ./hotspot/src/share/vm/runtime/virtualspace.cpp	Sat Aug 26 21:38:23 2017 -0700
+@@ -342,7 +342,7 @@
+                 (UseCompressedOops && (Universe::narrow_oop_base() != NULL) &&
+                  Universe::narrow_oop_use_implicit_null_checks()) ?
+                   lcm(os::vm_page_size(), alignment) : 0) {
+-  if (base() > 0) {
++  if (base() != NULL) {
+     MemTracker::record_virtual_memory_type((address)base(), mtJavaHeap);
+   }
+ 
+--- ./hotspot/src/share/vm/runtime/vmStructs.cpp	Tue Jul 11 23:51:17 2017 -0700
++++ ./hotspot/src/share/vm/runtime/vmStructs.cpp	Sat Aug 26 21:38:23 2017 -0700
 @@ -146,6 +146,9 @@
  #ifdef TARGET_OS_ARCH_aix_ppc
  # include "vmStructs_aix_ppc.hpp"
@@ -8493,7 +8536,7 @@
  #ifdef TARGET_OS_ARCH_bsd_x86
  # include "vmStructs_bsd_x86.hpp"
  #endif
-@@ -2555,6 +2558,8 @@
+@@ -2556,6 +2559,8 @@
    /**********************/                                                \
    /* frame              */                                                \
    /**********************/                                                \
@@ -8502,8 +8545,8 @@
                                                                            \
    NOT_ZERO(X86_ONLY(declare_constant(frame::entry_frame_call_wrapper_offset)))      \
    declare_constant(frame::pc_return_offset)                               \
---- ./hotspot/src/share/vm/utilities/globalDefinitions_gcc.hpp	Mon Feb 27 11:16:11 2017 -0800
-+++ ./hotspot/src/share/vm/utilities/globalDefinitions_gcc.hpp	Tue Apr 18 21:21:39 2017 -0700
+--- ./hotspot/src/share/vm/utilities/globalDefinitions_gcc.hpp	Tue Jul 11 23:51:17 2017 -0700
++++ ./hotspot/src/share/vm/utilities/globalDefinitions_gcc.hpp	Sat Aug 26 21:38:23 2017 -0700
 @@ -30,6 +30,11 @@
  // This file holds compiler-dependent includes,
  // globally used constants & types, class (forward)
@@ -8535,8 +8578,8 @@
  #define CAN_USE_NAN_DEFINE 1
  #endif
  
---- ./hotspot/src/share/vm/utilities/vmError.cpp	Mon Feb 27 11:16:11 2017 -0800
-+++ ./hotspot/src/share/vm/utilities/vmError.cpp	Tue Apr 18 21:21:39 2017 -0700
+--- ./hotspot/src/share/vm/utilities/vmError.cpp	Tue Jul 11 23:51:17 2017 -0700
++++ ./hotspot/src/share/vm/utilities/vmError.cpp	Sat Aug 26 21:38:23 2017 -0700
 @@ -22,7 +22,6 @@
   *
   */
@@ -8545,8 +8588,8 @@
  #include "precompiled.hpp"
  #include "compiler/compileBroker.hpp"
  #include "gc_interface/collectedHeap.hpp"
---- ./jdk/make/CompileDemos.gmk	Tue Feb 28 14:44:01 2017 +0300
-+++ ./jdk/make/CompileDemos.gmk	Tue Apr 18 21:21:47 2017 -0700
+--- ./jdk/make/CompileDemos.gmk	Tue Jul 11 23:52:06 2017 -0700
++++ ./jdk/make/CompileDemos.gmk	Sat Aug 26 22:08:20 2017 -0700
 @@ -323,7 +323,7 @@
  $(eval $(call SetupJVMTIDemo,hprof, java_crw_demo, \
      -I$(JDK_TOPDIR)/src/share/npt -I$(JDK_TOPDIR)/src/$(OPENJDK_TARGET_OS_API_DIR)/npt \
@@ -8556,8 +8599,8 @@
  
  $(eval $(call SetupJVMTIDemo,minst, agent_util java_crw_demo))
  $(eval $(call SetupJVMTIDemo,mtrace, agent_util java_crw_demo))
---- ./jdk/make/CompileJavaClasses.gmk	Tue Feb 28 14:44:01 2017 +0300
-+++ ./jdk/make/CompileJavaClasses.gmk	Tue Apr 18 21:21:47 2017 -0700
+--- ./jdk/make/CompileJavaClasses.gmk	Tue Jul 11 23:52:06 2017 -0700
++++ ./jdk/make/CompileJavaClasses.gmk	Sat Aug 26 22:08:20 2017 -0700
 @@ -128,23 +128,32 @@
        sun/nio/fs/LinuxFileStore.java \
        sun/nio/fs/LinuxFileSystem.java \
@@ -8659,8 +8702,8 @@
          $(CLOSED_SRC_DIRS), \
      INCLUDES := $(SECURITY_PKGS), \
      EXCLUDES := $(EXCLUDES), \
---- ./jdk/make/CompileLaunchers.gmk	Tue Feb 28 14:44:01 2017 +0300
-+++ ./jdk/make/CompileLaunchers.gmk	Tue Apr 18 21:21:47 2017 -0700
+--- ./jdk/make/CompileLaunchers.gmk	Tue Jul 11 23:52:06 2017 -0700
++++ ./jdk/make/CompileLaunchers.gmk	Sat Aug 26 22:08:20 2017 -0700
 @@ -49,7 +49,7 @@
    ORIGIN_ROOT := /..
  endif
@@ -8765,8 +8808,8 @@
    BUILD_JSPAWNHELPER := 1
  endif
  
---- ./jdk/make/CopyFiles.gmk	Tue Feb 28 14:44:01 2017 +0300
-+++ ./jdk/make/CopyFiles.gmk	Tue Apr 18 21:21:47 2017 -0700
+--- ./jdk/make/CopyFiles.gmk	Tue Jul 11 23:52:06 2017 -0700
++++ ./jdk/make/CopyFiles.gmk	Sat Aug 26 22:08:20 2017 -0700
 @@ -29,6 +29,8 @@
  
  ifeq ($(OPENJDK_TARGET_OS), windows)
@@ -8809,8 +8852,8 @@
              endif
            endif
          endif
---- ./jdk/make/Images.gmk	Tue Feb 28 14:44:01 2017 +0300
-+++ ./jdk/make/Images.gmk	Tue Apr 18 21:21:47 2017 -0700
+--- ./jdk/make/Images.gmk	Tue Jul 11 23:52:06 2017 -0700
++++ ./jdk/make/Images.gmk	Sat Aug 26 22:08:20 2017 -0700
 @@ -236,11 +236,11 @@
  endif
  
@@ -8881,7 +8924,7 @@
  
  ################################################################################
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ ./jdk/make/data/classlist/classlist.bsd	Tue Apr 18 21:21:47 2017 -0700
++++ ./jdk/make/data/classlist/classlist.bsd	Sat Aug 26 22:08:20 2017 -0700
 @@ -0,0 +1,2559 @@
 +java/lang/Object
 +java/lang/String
@@ -11442,8 +11485,8 @@
 +java/awt/MenuBar
 +sun/awt/X11/XErrorEvent
 +# eea35d9d56e0006e
---- ./jdk/make/gendata/GendataFontConfig.gmk	Tue Feb 28 14:44:01 2017 +0300
-+++ ./jdk/make/gendata/GendataFontConfig.gmk	Tue Apr 18 21:21:47 2017 -0700
+--- ./jdk/make/gendata/GendataFontConfig.gmk	Tue Jul 11 23:52:06 2017 -0700
++++ ./jdk/make/gendata/GendataFontConfig.gmk	Sat Aug 26 22:08:20 2017 -0700
 @@ -73,6 +73,13 @@
    GENDATA_FONT_CONFIG_SRC_PREFIX := aix.
  endif
@@ -11458,8 +11501,8 @@
  ###
  
  $(GENDATA_FONT_CONFIG_DST)/%.src: \
---- ./jdk/make/lib/Awt2dLibraries.gmk	Tue Feb 28 14:44:01 2017 +0300
-+++ ./jdk/make/lib/Awt2dLibraries.gmk	Tue Apr 18 21:21:47 2017 -0700
+--- ./jdk/make/lib/Awt2dLibraries.gmk	Tue Jul 11 23:52:06 2017 -0700
++++ ./jdk/make/lib/Awt2dLibraries.gmk	Sat Aug 26 22:08:20 2017 -0700
 @@ -309,7 +309,7 @@
      debug_trace.c \
      debug_util.c
@@ -11584,8 +11627,8 @@
    else	# .. all other Unixes can use X_LIBS
      LIBSPLASHSCREEN_LDFLAGS_SUFFIX += $(X_LIBS) -lX11 -lXext $(LIBM) -lpthread
    endif
---- ./jdk/make/lib/CoreLibraries.gmk	Tue Feb 28 14:44:01 2017 +0300
-+++ ./jdk/make/lib/CoreLibraries.gmk	Tue Apr 18 21:21:47 2017 -0700
+--- ./jdk/make/lib/CoreLibraries.gmk	Tue Jul 11 23:52:06 2017 -0700
++++ ./jdk/make/lib/CoreLibraries.gmk	Sat Aug 26 22:08:20 2017 -0700
 @@ -82,7 +82,7 @@
  endif
  
@@ -11672,8 +11715,8 @@
      LDFLAGS_macosx := -liconv, \
      LDFLAGS_SUFFIX_windows := -export:nptInitialize -export:nptTerminate, \
      LDFLAGS_SUFFIX_solaris := -lc, \
---- ./jdk/make/lib/NetworkingLibraries.gmk	Tue Feb 28 14:44:01 2017 +0300
-+++ ./jdk/make/lib/NetworkingLibraries.gmk	Tue Apr 18 21:21:47 2017 -0700
+--- ./jdk/make/lib/NetworkingLibraries.gmk	Tue Jul 11 23:52:06 2017 -0700
++++ ./jdk/make/lib/NetworkingLibraries.gmk	Sat Aug 26 22:08:20 2017 -0700
 @@ -42,7 +42,7 @@
    LIBNET_EXCLUDE_FILES += linux_close.c
  endif
@@ -11702,8 +11745,8 @@
      LDFLAGS_SUFFIX_windows := ws2_32.lib jvm.lib secur32.lib iphlpapi.lib \
          delayimp.lib $(WIN_JAVA_LIB) advapi32.lib \
          -DELAYLOAD:secur32.dll -DELAYLOAD:iphlpapi.dll, \
---- ./jdk/make/lib/NioLibraries.gmk	Tue Feb 28 14:44:01 2017 +0300
-+++ ./jdk/make/lib/NioLibraries.gmk	Tue Apr 18 21:21:47 2017 -0700
+--- ./jdk/make/lib/NioLibraries.gmk	Tue Jul 11 23:52:06 2017 -0700
++++ ./jdk/make/lib/NioLibraries.gmk	Sat Aug 26 22:08:20 2017 -0700
 @@ -77,9 +77,28 @@
        UnixNativeDispatcher.c
  endif
@@ -11764,8 +11807,8 @@
    endif
 +  endif
  endif
---- ./jdk/make/lib/ServiceabilityLibraries.gmk	Tue Feb 28 14:44:01 2017 +0300
-+++ ./jdk/make/lib/ServiceabilityLibraries.gmk	Tue Apr 18 21:21:47 2017 -0700
+--- ./jdk/make/lib/ServiceabilityLibraries.gmk	Tue Jul 11 23:52:06 2017 -0700
++++ ./jdk/make/lib/ServiceabilityLibraries.gmk	Sat Aug 26 22:08:20 2017 -0700
 @@ -34,7 +34,7 @@
  ifneq ($(OPENJDK_TARGET_OS), linux)
    LIBATTACH_EXCLUDE_FILES += LinuxVirtualMachine.c
@@ -11855,8 +11898,8 @@
    ifeq ($(ENABLE_DEBUG_SYMBOLS), true)
      LIBHPROF_OPTIMIZATION := LOW
    endif
---- ./jdk/make/lib/SoundLibraries.gmk	Tue Feb 28 14:44:01 2017 +0300
-+++ ./jdk/make/lib/SoundLibraries.gmk	Tue Apr 18 21:21:47 2017 -0700
+--- ./jdk/make/lib/SoundLibraries.gmk	Tue Jul 11 23:52:06 2017 -0700
++++ ./jdk/make/lib/SoundLibraries.gmk	Sat Aug 26 22:08:20 2017 -0700
 @@ -75,6 +75,13 @@
    LIBJSOUND_CFLAGS += -DX_PLATFORM=X_AIX
  endif # OPENJDK_TARGET_OS aix
@@ -11888,8 +11931,8 @@
        LDFLAGS_SUFFIX := $(ALSA_LIBS) -ljava -ljvm, \
        OBJECT_DIR := $(JDK_OUTPUTDIR)/objs/libjsoundalsa, \
        DEBUG_SYMBOLS := $(DEBUG_ALL_BINARIES)))
---- ./jdk/make/mapfiles/launchers/mapfile-ppc64	Tue Feb 28 14:44:01 2017 +0300
-+++ ./jdk/make/mapfiles/launchers/mapfile-ppc64	Tue Apr 18 21:21:47 2017 -0700
+--- ./jdk/make/mapfiles/launchers/mapfile-ppc64	Tue Jul 11 23:52:06 2017 -0700
++++ ./jdk/make/mapfiles/launchers/mapfile-ppc64	Sat Aug 26 22:08:20 2017 -0700
 @@ -33,6 +33,7 @@
  		environ;	# Public symbols and required by Java run time
  		_environ;
@@ -11898,8 +11941,8 @@
  
  	local:
  		*;
---- ./jdk/make/mapfiles/launchers/mapfile-x86	Tue Feb 28 14:44:01 2017 +0300
-+++ ./jdk/make/mapfiles/launchers/mapfile-x86	Tue Apr 18 21:21:47 2017 -0700
+--- ./jdk/make/mapfiles/launchers/mapfile-x86	Tue Jul 11 23:52:06 2017 -0700
++++ ./jdk/make/mapfiles/launchers/mapfile-x86	Sat Aug 26 22:08:20 2017 -0700
 @@ -33,6 +33,7 @@
  		environ;	# Public symbols and required by Java run time
  		_environ;
@@ -11908,8 +11951,8 @@
  		___Argv;	# The following are private, but as they are
  		_start;		# exported from ctr1/crtn, the clever hacker
  		_init;		# might know about them.  However note, that
---- ./jdk/make/mapfiles/launchers/mapfile-x86_64	Tue Feb 28 14:44:01 2017 +0300
-+++ ./jdk/make/mapfiles/launchers/mapfile-x86_64	Tue Apr 18 21:21:47 2017 -0700
+--- ./jdk/make/mapfiles/launchers/mapfile-x86_64	Tue Jul 11 23:52:06 2017 -0700
++++ ./jdk/make/mapfiles/launchers/mapfile-x86_64	Sat Aug 26 22:08:20 2017 -0700
 @@ -33,6 +33,7 @@
  		environ;	# Public symbols and required by Java run time
  		_environ;
@@ -11919,7 +11962,7 @@
  	local:
  		*;
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ ./jdk/make/mapfiles/libattach/mapfile-bsd	Tue Apr 18 21:21:47 2017 -0700
++++ ./jdk/make/mapfiles/libattach/mapfile-bsd	Sat Aug 26 22:08:20 2017 -0700
 @@ -0,0 +1,42 @@
 +#
 +# Copyright (c) 2005, Oracle and/or its affiliates. All rights reserved.
@@ -11964,7 +12007,7 @@
 +		*;
 +};
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ ./jdk/make/mapfiles/libnio/mapfile-bsd	Tue Apr 18 21:21:47 2017 -0700
++++ ./jdk/make/mapfiles/libnio/mapfile-bsd	Sat Aug 26 22:08:20 2017 -0700
 @@ -0,0 +1,195 @@
 +#
 +# Copyright (c) 2001, 2013, Oracle and/or its affiliates. All rights reserved.
@@ -12161,8 +12204,8 @@
 +	local:
 +		*;
 +};
---- ./jdk/make/mapfiles/libunpack/mapfile-vers-unpack200	Tue Feb 28 14:44:01 2017 +0300
-+++ ./jdk/make/mapfiles/libunpack/mapfile-vers-unpack200	Tue Apr 18 21:21:47 2017 -0700
+--- ./jdk/make/mapfiles/libunpack/mapfile-vers-unpack200	Tue Jul 11 23:52:06 2017 -0700
++++ ./jdk/make/mapfiles/libunpack/mapfile-vers-unpack200	Sat Aug 26 22:08:20 2017 -0700
 @@ -26,6 +26,9 @@
  # Define library interface.
  
@@ -12174,7 +12217,7 @@
  	    *;
  };
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ ./jdk/make/netbeans/common/bsd-sources.ent	Tue Apr 18 21:21:47 2017 -0700
++++ ./jdk/make/netbeans/common/bsd-sources.ent	Sat Aug 26 22:08:20 2017 -0700
 @@ -0,0 +1,45 @@
 +<?xml version="1.0" encoding="UTF-8"?>
 +
@@ -12222,7 +12265,7 @@
 +    <location>${root}/src/bsd/classes</location>
 +</source-folder>
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ ./jdk/make/netbeans/common/bsd-view.ent	Tue Apr 18 21:21:47 2017 -0700
++++ ./jdk/make/netbeans/common/bsd-view.ent	Sat Aug 26 22:08:20 2017 -0700
 @@ -0,0 +1,39 @@
 +<?xml version="1.0" encoding="UTF-8"?>
 +
@@ -12263,8 +12306,8 @@
 +    <includes>${includes}</includes>
 +    <excludes>${excludes}</excludes>
 +</source-folder>
---- ./jdk/make/netbeans/common/java-data-native.ent	Tue Feb 28 14:44:01 2017 +0300
-+++ ./jdk/make/netbeans/common/java-data-native.ent	Tue Apr 18 21:21:47 2017 -0700
+--- ./jdk/make/netbeans/common/java-data-native.ent	Tue Jul 11 23:52:06 2017 -0700
++++ ./jdk/make/netbeans/common/java-data-native.ent	Sat Aug 26 22:08:20 2017 -0700
 @@ -34,6 +34,7 @@
  <java-data xmlns="http://www.netbeans.org/ns/freeform-project-java/4">
      <compilation-unit>
@@ -12273,8 +12316,8 @@
          <package-root>${root}/src/macosx/classes</package-root>
          <package-root>${root}/src/solaris/classes</package-root>
          <package-root>${root}/src/windows/classes</package-root>
---- ./jdk/make/netbeans/common/make.xml	Tue Feb 28 14:44:01 2017 +0300
-+++ ./jdk/make/netbeans/common/make.xml	Tue Apr 18 21:21:47 2017 -0700
+--- ./jdk/make/netbeans/common/make.xml	Tue Jul 11 23:52:06 2017 -0700
++++ ./jdk/make/netbeans/common/make.xml	Sat Aug 26 22:08:20 2017 -0700
 @@ -32,16 +32,21 @@
  -->
  
@@ -12309,8 +12352,8 @@
      <macrodef name="make-run">
              <attribute name="target"/>
              <attribute name="dir"/>
---- ./jdk/make/netbeans/j2se/nbproject/project.xml	Tue Feb 28 14:44:01 2017 +0300
-+++ ./jdk/make/netbeans/j2se/nbproject/project.xml	Tue Apr 18 21:21:47 2017 -0700
+--- ./jdk/make/netbeans/j2se/nbproject/project.xml	Tue Jul 11 23:52:06 2017 -0700
++++ ./jdk/make/netbeans/j2se/nbproject/project.xml	Sat Aug 26 22:08:20 2017 -0700
 @@ -34,6 +34,7 @@
  <!DOCTYPE project [
      <!ENTITY properties SYSTEM "../../common/properties.ent">
@@ -12343,8 +12386,8 @@
                      &macosx-view;
                      &unix-view;
                      &windows-view;
---- ./jdk/make/netbeans/world/nbproject/project.xml	Tue Feb 28 14:44:01 2017 +0300
-+++ ./jdk/make/netbeans/world/nbproject/project.xml	Tue Apr 18 21:21:47 2017 -0700
+--- ./jdk/make/netbeans/world/nbproject/project.xml	Tue Jul 11 23:52:06 2017 -0700
++++ ./jdk/make/netbeans/world/nbproject/project.xml	Sat Aug 26 22:08:20 2017 -0700
 @@ -34,12 +34,14 @@
  <!DOCTYPE project [
      <!ENTITY properties SYSTEM "../../common/properties.ent">
@@ -12377,7 +12420,7 @@
                      &unix-view;
                      &windows-view;
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ ./jdk/src/bsd/classes/java/net/DefaultInterface.java	Tue Apr 18 21:21:47 2017 -0700
++++ ./jdk/src/bsd/classes/java/net/DefaultInterface.java	Sat Aug 26 22:08:20 2017 -0700
 @@ -0,0 +1,97 @@
 +/*
 + * Copyright (c) 2011, 2013, Oracle and/or its affiliates. All rights reserved.
@@ -12477,7 +12520,7 @@
 +    }
 +}
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ ./jdk/src/bsd/classes/sun/nio/ch/DefaultSelectorProvider.java	Tue Apr 18 21:21:47 2017 -0700
++++ ./jdk/src/bsd/classes/sun/nio/ch/DefaultSelectorProvider.java	Sat Aug 26 22:08:20 2017 -0700
 @@ -0,0 +1,48 @@
 +/*
 + * Copyright (c) 2011, 2012, Oracle and/or its affiliates. All rights reserved.
@@ -12528,7 +12571,7 @@
 +
 +}
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ ./jdk/src/bsd/classes/sun/nio/ch/KQueueArrayWrapper.java	Tue Apr 18 21:21:47 2017 -0700
++++ ./jdk/src/bsd/classes/sun/nio/ch/KQueueArrayWrapper.java	Sat Aug 26 22:08:20 2017 -0700
 @@ -0,0 +1,213 @@
 +/*
 + * Copyright (c) 2011, 2013, Oracle and/or its affiliates. All rights reserved.
@@ -12744,7 +12787,7 @@
 +    private static native void interrupt(int fd);
 +}
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ ./jdk/src/bsd/classes/sun/nio/ch/KQueueSelectorImpl.java	Tue Apr 18 21:21:47 2017 -0700
++++ ./jdk/src/bsd/classes/sun/nio/ch/KQueueSelectorImpl.java	Sat Aug 26 22:08:20 2017 -0700
 @@ -0,0 +1,263 @@
 +/*
 + * Copyright (c) 2011, 2015, Oracle and/or its affiliates. All rights reserved.
@@ -13010,7 +13053,7 @@
 +    }
 +}
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ ./jdk/src/bsd/classes/sun/nio/ch/KQueueSelectorProvider.java	Tue Apr 18 21:21:47 2017 -0700
++++ ./jdk/src/bsd/classes/sun/nio/ch/KQueueSelectorProvider.java	Sat Aug 26 22:08:20 2017 -0700
 @@ -0,0 +1,44 @@
 +/*
 + * Copyright (c) 2011, 2012, Oracle and/or its affiliates. All rights reserved.
@@ -13056,8 +13099,8 @@
 +        return new KQueueSelectorImpl(this);
 +    }
 +}
---- ./jdk/src/bsd/doc/man/javah.1	Tue Feb 28 14:44:01 2017 +0300
-+++ ./jdk/src/bsd/doc/man/javah.1	Tue Apr 18 21:21:47 2017 -0700
+--- ./jdk/src/bsd/doc/man/javah.1	Tue Jul 11 23:52:06 2017 -0700
++++ ./jdk/src/bsd/doc/man/javah.1	Sat Aug 26 22:08:20 2017 -0700
 @@ -8,7 +8,7 @@
  .\"
  .\" This code is distributed in the hope that it will be useful, but WITHOUT
@@ -13076,8 +13119,8 @@
  
  \fIWindows\fR:
  
---- ./jdk/src/bsd/doc/man/rmic.1	Tue Feb 28 14:44:01 2017 +0300
-+++ ./jdk/src/bsd/doc/man/rmic.1	Tue Apr 18 21:21:47 2017 -0700
+--- ./jdk/src/bsd/doc/man/rmic.1	Tue Jul 11 23:52:06 2017 -0700
++++ ./jdk/src/bsd/doc/man/rmic.1	Sat Aug 26 22:08:20 2017 -0700
 @@ -8,7 +8,7 @@
  .\"
  .\" This code is distributed in the hope that it will be useful, but WITHOUT
@@ -13105,8 +13148,8 @@
  .SH SEE\ ALSO    
  .TP 0.2i    
  \(bu
---- ./jdk/src/bsd/doc/man/rmid.1	Tue Feb 28 14:44:01 2017 +0300
-+++ ./jdk/src/bsd/doc/man/rmid.1	Tue Apr 18 21:21:47 2017 -0700
+--- ./jdk/src/bsd/doc/man/rmid.1	Tue Jul 11 23:52:06 2017 -0700
++++ ./jdk/src/bsd/doc/man/rmid.1	Sat Aug 26 22:08:20 2017 -0700
 @@ -8,7 +8,7 @@
  .\"
  .\" This code is distributed in the hope that it will be useful, but WITHOUT
@@ -13126,7 +13169,7 @@
  .TP 0.2i    
  \(bu
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ ./jdk/src/bsd/native/sun/nio/ch/KQueueArrayWrapper.c	Tue Apr 18 21:21:47 2017 -0700
++++ ./jdk/src/bsd/native/sun/nio/ch/KQueueArrayWrapper.c	Sat Aug 26 22:08:20 2017 -0700
 @@ -0,0 +1,171 @@
 +/*
 + * Copyright (c) 2011, 2012, Oracle and/or its affiliates. All rights reserved.
@@ -13299,7 +13342,7 @@
 +    }
 +}
 +
---- ./jdk/src/macosx/classes/java/net/DefaultInterface.java	Tue Feb 28 14:44:01 2017 +0300
+--- ./jdk/src/macosx/classes/java/net/DefaultInterface.java	Tue Jul 11 23:52:06 2017 -0700
 +++ /dev/null	Thu Jan 01 00:00:00 1970 +0000
 @@ -1,97 +0,0 @@
 -/*
@@ -13399,7 +13442,7 @@
 -        return (ppp != null) ? ppp : loopback;
 -    }
 -}
---- ./jdk/src/macosx/classes/sun/nio/ch/DefaultSelectorProvider.java	Tue Feb 28 14:44:01 2017 +0300
+--- ./jdk/src/macosx/classes/sun/nio/ch/DefaultSelectorProvider.java	Tue Jul 11 23:52:06 2017 -0700
 +++ /dev/null	Thu Jan 01 00:00:00 1970 +0000
 @@ -1,48 +0,0 @@
 -/*
@@ -13450,7 +13493,7 @@
 -    }
 -
 -}
---- ./jdk/src/macosx/classes/sun/nio/ch/KQueueArrayWrapper.java	Tue Feb 28 14:44:01 2017 +0300
+--- ./jdk/src/macosx/classes/sun/nio/ch/KQueueArrayWrapper.java	Tue Jul 11 23:52:06 2017 -0700
 +++ /dev/null	Thu Jan 01 00:00:00 1970 +0000
 @@ -1,213 +0,0 @@
 -/*
@@ -13666,7 +13709,7 @@
 -                               long timeout);
 -    private static native void interrupt(int fd);
 -}
---- ./jdk/src/macosx/classes/sun/nio/ch/KQueueSelectorImpl.java	Tue Feb 28 14:44:01 2017 +0300
+--- ./jdk/src/macosx/classes/sun/nio/ch/KQueueSelectorImpl.java	Tue Jul 11 23:52:06 2017 -0700
 +++ /dev/null	Thu Jan 01 00:00:00 1970 +0000
 @@ -1,263 +0,0 @@
 -/*
@@ -13932,7 +13975,7 @@
 -        return this;
 -    }
 -}
---- ./jdk/src/macosx/classes/sun/nio/ch/KQueueSelectorProvider.java	Tue Feb 28 14:44:01 2017 +0300
+--- ./jdk/src/macosx/classes/sun/nio/ch/KQueueSelectorProvider.java	Tue Jul 11 23:52:06 2017 -0700
 +++ /dev/null	Thu Jan 01 00:00:00 1970 +0000
 @@ -1,44 +0,0 @@
 -/*
@@ -13979,7 +14022,7 @@
 -        return new KQueueSelectorImpl(this);
 -    }
 -}
---- ./jdk/src/macosx/native/sun/nio/ch/KQueueArrayWrapper.c	Tue Feb 28 14:44:01 2017 +0300
+--- ./jdk/src/macosx/native/sun/nio/ch/KQueueArrayWrapper.c	Tue Jul 11 23:52:06 2017 -0700
 +++ /dev/null	Thu Jan 01 00:00:00 1970 +0000
 @@ -1,171 +0,0 @@
 -/*
@@ -14153,8 +14196,8 @@
 -    }
 -}
 -
---- ./jdk/src/share/bin/jli_util.h	Tue Feb 28 14:44:01 2017 +0300
-+++ ./jdk/src/share/bin/jli_util.h	Tue Apr 18 21:21:47 2017 -0700
+--- ./jdk/src/share/bin/jli_util.h	Tue Jul 11 23:52:06 2017 -0700
++++ ./jdk/src/share/bin/jli_util.h	Sat Aug 26 22:08:20 2017 -0700
 @@ -87,7 +87,7 @@
  #define _LARGFILE64_SOURCE
  #define JLI_Lseek                       lseek64
@@ -14164,8 +14207,8 @@
  #define JLI_Lseek                       lseek
  #endif
  #ifdef _AIX
---- ./jdk/src/share/classes/sun/awt/FontConfiguration.java	Tue Feb 28 14:44:01 2017 +0300
-+++ ./jdk/src/share/classes/sun/awt/FontConfiguration.java	Tue Apr 18 21:21:47 2017 -0700
+--- ./jdk/src/share/classes/sun/awt/FontConfiguration.java	Tue Jul 11 23:52:06 2017 -0700
++++ ./jdk/src/share/classes/sun/awt/FontConfiguration.java	Sat Aug 26 22:08:20 2017 -0700
 @@ -1146,7 +1146,7 @@
       */
      HashMap<String, Boolean> existsMap;
@@ -14175,8 +14218,8 @@
              return false;
          } else if (existsMap == null) {
             existsMap = new HashMap<String, Boolean>();
---- ./jdk/src/share/classes/sun/awt/OSInfo.java	Tue Feb 28 14:44:01 2017 +0300
-+++ ./jdk/src/share/classes/sun/awt/OSInfo.java	Tue Apr 18 21:21:47 2017 -0700
+--- ./jdk/src/share/classes/sun/awt/OSInfo.java	Tue Jul 11 23:52:06 2017 -0700
++++ ./jdk/src/share/classes/sun/awt/OSInfo.java	Sat Aug 26 22:08:20 2017 -0700
 @@ -39,6 +39,7 @@
          WINDOWS,
          LINUX,
@@ -14196,8 +14239,8 @@
              if (osName.contains("OS X")) {
                  return MACOSX;
              }
---- ./jdk/src/share/classes/sun/font/FontUtilities.java	Tue Feb 28 14:44:01 2017 +0300
-+++ ./jdk/src/share/classes/sun/font/FontUtilities.java	Tue Apr 18 21:21:47 2017 -0700
+--- ./jdk/src/share/classes/sun/font/FontUtilities.java	Tue Jul 11 23:52:06 2017 -0700
++++ ./jdk/src/share/classes/sun/font/FontUtilities.java	Sat Aug 26 22:08:20 2017 -0700
 @@ -48,6 +48,8 @@
  
      public static boolean isLinux;
@@ -14216,8 +14259,8 @@
                  isMacOSX = osName.contains("OS X"); // TODO: MacOSX
  
                  String t2kStr = System.getProperty("sun.java2d.font.scaler");
---- ./jdk/src/share/classes/sun/font/SunFontManager.java	Tue Feb 28 14:44:01 2017 +0300
-+++ ./jdk/src/share/classes/sun/font/SunFontManager.java	Tue Apr 18 21:21:47 2017 -0700
+--- ./jdk/src/share/classes/sun/font/SunFontManager.java	Tue Jul 11 23:52:06 2017 -0700
++++ ./jdk/src/share/classes/sun/font/SunFontManager.java	Sat Aug 26 22:08:20 2017 -0700
 @@ -418,7 +418,7 @@
                           * registerFonts method as on-screen these JRE fonts
                           * always go through the T2K rasteriser.
@@ -14227,8 +14270,8 @@
                              /* Linux font configuration uses these fonts */
                              registerFontDir(jreFontDirName);
                          }
---- ./jdk/src/share/classes/sun/nio/cs/ext/ExtendedCharsets.java	Tue Feb 28 14:44:01 2017 +0300
-+++ ./jdk/src/share/classes/sun/nio/cs/ext/ExtendedCharsets.java	Tue Apr 18 21:21:47 2017 -0700
+--- ./jdk/src/share/classes/sun/nio/cs/ext/ExtendedCharsets.java	Tue Jul 11 23:52:06 2017 -0700
++++ ./jdk/src/share/classes/sun/nio/cs/ext/ExtendedCharsets.java	Sat Aug 26 22:08:20 2017 -0700
 @@ -1306,7 +1306,7 @@
          String osName = AccessController.doPrivileged(
              new GetPropertyAction("os.name"));
@@ -14238,8 +14281,8 @@
              charset("x-COMPOUND_TEXT", "COMPOUND_TEXT",
                      new String[] {
                          "COMPOUND_TEXT",        // JDK historical
---- ./jdk/src/share/classes/sun/print/PSPrinterJob.java	Tue Feb 28 14:44:01 2017 +0300
-+++ ./jdk/src/share/classes/sun/print/PSPrinterJob.java	Tue Apr 18 21:21:47 2017 -0700
+--- ./jdk/src/share/classes/sun/print/PSPrinterJob.java	Tue Jul 11 23:52:06 2017 -0700
++++ ./jdk/src/share/classes/sun/print/PSPrinterJob.java	Sat Aug 26 22:08:20 2017 -0700
 @@ -1587,9 +1587,31 @@
          }
  
@@ -14274,8 +14317,8 @@
              if ((pFlags & PRINTER) != 0) {
                  execCmd[n++] = "-P" + printer;
              }
---- ./jdk/src/share/classes/sun/security/jgss/GSSManagerImpl.java	Tue Feb 28 14:44:01 2017 +0300
-+++ ./jdk/src/share/classes/sun/security/jgss/GSSManagerImpl.java	Tue Apr 18 21:21:47 2017 -0700
+--- ./jdk/src/share/classes/sun/security/jgss/GSSManagerImpl.java	Tue Jul 11 23:52:06 2017 -0700
++++ ./jdk/src/share/classes/sun/security/jgss/GSSManagerImpl.java	Sat Aug 26 22:08:20 2017 -0700
 @@ -48,6 +48,7 @@
                      public Boolean run() {
                              String osname = System.getProperty("os.name");
@@ -14284,8 +14327,8 @@
                                  osname.contains("OS X") ||
                                  osname.startsWith("Linux")) {
                                  return new Boolean(System.getProperty
---- ./jdk/src/share/classes/sun/security/jgss/wrapper/SunNativeProvider.java	Tue Feb 28 14:44:01 2017 +0300
-+++ ./jdk/src/share/classes/sun/security/jgss/wrapper/SunNativeProvider.java	Tue Apr 18 21:21:47 2017 -0700
+--- ./jdk/src/share/classes/sun/security/jgss/wrapper/SunNativeProvider.java	Tue Jul 11 23:52:06 2017 -0700
++++ ./jdk/src/share/classes/sun/security/jgss/wrapper/SunNativeProvider.java	Sat Aug 26 22:08:20 2017 -0700
 @@ -90,6 +90,12 @@
                                      "libgssapi_krb5.so",
                                      "libgssapi_krb5.so.2",
@@ -14299,8 +14342,8 @@
                              } else if (osname.contains("OS X")) {
                                  gssLibs = new String[]{
                                      "libgssapi_krb5.dylib",
---- ./jdk/src/share/classes/sun/tools/attach/META-INF/services/com.sun.tools.attach.spi.AttachProvider	Tue Feb 28 14:44:01 2017 +0300
-+++ ./jdk/src/share/classes/sun/tools/attach/META-INF/services/com.sun.tools.attach.spi.AttachProvider	Tue Apr 18 21:21:47 2017 -0700
+--- ./jdk/src/share/classes/sun/tools/attach/META-INF/services/com.sun.tools.attach.spi.AttachProvider	Tue Jul 11 23:52:06 2017 -0700
++++ ./jdk/src/share/classes/sun/tools/attach/META-INF/services/com.sun.tools.attach.spi.AttachProvider	Sat Aug 26 22:08:20 2017 -0700
 @@ -31,4 +31,5 @@
  #[windows]sun.tools.attach.WindowsAttachProvider
  #[linux]sun.tools.attach.LinuxAttachProvider
@@ -14308,8 +14351,8 @@
 +#[bsd]sun.tools.attach.BsdAttachProvider
  #[aix]sun.tools.attach.AixAttachProvider
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ ./jdk/src/share/lib/security/java.security-bsd	Tue Apr 18 21:21:47 2017 -0700
-@@ -0,0 +1,801 @@
++++ ./jdk/src/share/lib/security/java.security-bsd	Sat Aug 26 22:08:20 2017 -0700
+@@ -0,0 +1,845 @@
 +#
 +# This is the "master security properties file".
 +#
@@ -14521,6 +14564,8 @@
 +               com.sun.org.apache.xalan.internal.xsltc.trax.,\
 +               com.sun.org.apache.xalan.internal.xsltc.util.,\
 +               com.sun.org.apache.xml.internal.res.,\
++               com.sun.org.apache.xml.internal.resolver.helpers.,\
++               com.sun.org.apache.xml.internal.resolver.readers.,\
 +               com.sun.org.apache.xml.internal.security.,\
 +               com.sun.org.apache.xml.internal.serializer.utils.,\
 +               com.sun.org.apache.xml.internal.utils.,\
@@ -14568,6 +14613,8 @@
 +                   com.sun.org.apache.xalan.internal.xsltc.trax.,\
 +                   com.sun.org.apache.xalan.internal.xsltc.util.,\
 +                   com.sun.org.apache.xml.internal.res.,\
++                   com.sun.org.apache.xml.internal.resolver.helpers.,\
++                   com.sun.org.apache.xml.internal.resolver.readers.,\
 +                   com.sun.org.apache.xml.internal.security.,\
 +                   com.sun.org.apache.xml.internal.serializer.utils.,\
 +                   com.sun.org.apache.xml.internal.utils.,\
@@ -14734,9 +14781,7 @@
 +# describes the mechanism for disabling algorithms based on algorithm name
 +# and/or key length.  This includes algorithms used in certificates, as well
 +# as revocation information such as CRLs and signed OCSP Responses.
-+#
-+# The syntax of the disabled algorithm string is described as this Java
-+# BNF-style:
++# The syntax of the disabled algorithm string is described as follows:
 +#   DisabledAlgorithms:
 +#       " DisabledAlgorithm { , DisabledAlgorithm } "
 +#
@@ -14747,25 +14792,26 @@
 +#       (see below)
 +#
 +#   Constraint:
-+#       KeySizeConstraint, CertConstraint
++#       KeySizeConstraint | CAConstraint | DenyAfterConstraint |
++#       UsageConstraint
 +#
 +#   KeySizeConstraint:
-+#       keySize Operator DecimalInteger
++#       keySize Operator KeyLength
 +#
 +#   Operator:
 +#       <= | < | == | != | >= | >
 +#
-+#   DecimalInteger:
-+#       DecimalDigits
++#   KeyLength:
++#       Integer value of the algorithm's key length in bits
 +#
-+#   DecimalDigits:
-+#       DecimalDigit {DecimalDigit}
-+#
-+#   DecimalDigit: one of
-+#       1 2 3 4 5 6 7 8 9 0
-+#
-+#   CertConstraint
++#   CAConstraint:
 +#       jdkCA
++#
++#   DenyAfterConstraint:
++#       denyAfter YYYY-MM-DD
++#
++#   UsageConstraint:
++#       usage [TLSServer] [TLSClient] [SignedJAR]
 +#
 +# The "AlgorithmName" is the standard algorithm name of the disabled
 +# algorithm. See "Java Cryptography Architecture Standard Algorithm Name
@@ -14779,27 +14825,55 @@
 +# that rely on DSA, such as NONEwithDSA, SHA1withDSA.  However, the assertion
 +# will not disable algorithms related to "ECDSA".
 +#
-+# A "Constraint" provides further guidance for the algorithm being specified.
-+# The "KeySizeConstraint" requires a key of a valid size range if the
-+# "AlgorithmName" is of a key algorithm.  The "DecimalInteger" indicates the
-+# key size specified in number of bits.  For example, "RSA keySize <= 1024"
-+# indicates that any RSA key with key size less than or equal to 1024 bits
-+# should be disabled, and "RSA keySize < 1024, RSA keySize > 2048" indicates
-+# that any RSA key with key size less than 1024 or greater than 2048 should
-+# be disabled. Note that the "KeySizeConstraint" only makes sense to key
-+# algorithms.
++# A "Constraint" defines restrictions on the keys and/or certificates for
++# a specified AlgorithmName:
 +#
-+# "CertConstraint" specifies additional constraints for
-+# certificates that contain algorithms that are restricted:
++#   KeySizeConstraint:
++#     keySize Operator KeyLength
++#       The constraint requires a key of a valid size range if the
++#       "AlgorithmName" is of a key algorithm.  The "KeyLength" indicates
++#       the key size specified in number of bits.  For example,
++#       "RSA keySize <= 1024" indicates that any RSA key with key size less
++#       than or equal to 1024 bits should be disabled, and
++#       "RSA keySize < 1024, RSA keySize > 2048" indicates that any RSA key
++#       with key size less than 1024 or greater than 2048 should be disabled.
++#       This constraint is only used on algorithms that have a key size.
 +#
-+#   "jdkCA" prohibits the specified algorithm only if the algorithm is used
-+#     in a certificate chain that terminates at a marked trust anchor in the
-+#     lib/security/cacerts keystore.  All other chains are not affected.
-+#     If the jdkCA constraint is not set, then all chains using the
-+#     specified algorithm are restricted.  jdkCA may only be used once in
-+#     a DisabledAlgorithm expression.
-+#     Example:  To apply this constraint to SHA-1 certificates, include
-+#     the following:  "SHA1 jdkCA"
++#   CAConstraint:
++#     jdkCA
++#       This constraint prohibits the specified algorithm only if the
++#       algorithm is used in a certificate chain that terminates at a marked
++#       trust anchor in the lib/security/cacerts keystore.  If the jdkCA
++#       constraint is not set, then all chains using the specified algorithm
++#       are restricted.  jdkCA may only be used once in a DisabledAlgorithm
++#       expression.
++#       Example:  To apply this constraint to SHA-1 certificates, include
++#       the following:  "SHA1 jdkCA"
++#
++#   DenyAfterConstraint:
++#     denyAfter YYYY-MM-DD
++#       This constraint prohibits a certificate with the specified algorithm
++#       from being used after the date regardless of the certificate's
++#       validity.  JAR files that are signed and timestamped before the
++#       constraint date with certificates containing the disabled algorithm
++#       will not be restricted.  The date is processed in the UTC timezone.
++#       This constraint can only be used once in a DisabledAlgorithm
++#       expression.
++#       Example:  To deny usage of RSA 2048 bit certificates after Feb 3 2020,
++#       use the following:  "RSA keySize == 2048 & denyAfter 2020-02-03"
++#
++#   UsageConstraint:
++#     usage [TLSServer] [TLSClient] [SignedJAR]
++#       This constraint prohibits the specified algorithm for
++#       a specified usage.  This should be used when disabling an algorithm
++#       for all usages is not practical. 'TLSServer' restricts the algorithm
++#       in TLS server certificate chains when server authentication is
++#       performed. 'TLSClient' restricts the algorithm in TLS client
++#       certificate chains when client authentication is performed.
++#       'SignedJAR' constrains use of certificates in signed jar files.
++#       The usage type follows the keyword and more than one usage type can
++#       be specified with a whitespace delimiter.
++#       Example:  "SHA1 usage TLSServer TLSClient"
 +#
 +# When an algorithm must satisfy more than one constraint, it must be
 +# delimited by an ampersand '&'.  For example, to restrict certificates in a
@@ -14812,6 +14886,9 @@
 +# before larger keysize constraints of the same algorithm.  For example:
 +# "RSA keySize < 1024 & jdkCA, RSA keySize < 2048".
 +#
++# Note: The algorithm restrictions do not apply to trust anchors or
++# self-signed certificates.
++#
 +# Note: This property is currently used by Oracle's PKIX implementation. It
 +# is not guaranteed to be examined and used by other implementations.
 +#
@@ -14819,9 +14896,10 @@
 +#   jdk.certpath.disabledAlgorithms=MD2, DSA, RSA keySize < 2048
 +#
 +#
-+jdk.certpath.disabledAlgorithms=MD2, MD5, RSA keySize < 1024, \
-+    DSA keySize < 1024, EC keySize < 224
++jdk.certpath.disabledAlgorithms=MD2, MD5, SHA1 jdkCA & usage TLSServer, \
++    RSA keySize < 1024, DSA keySize < 1024, EC keySize < 224
 +
++#
 +# Algorithm restrictions for signed JAR files
 +#
 +# In some environments, certain algorithms or key lengths may be undesirable
@@ -14836,16 +14914,19 @@
 +#       " DisabledAlgorithm { , DisabledAlgorithm } "
 +#
 +#   DisabledAlgorithm:
-+#       AlgorithmName [Constraint]
++#       AlgorithmName [Constraint] { '&' Constraint }
 +#
 +#   AlgorithmName:
 +#       (see below)
 +#
 +#   Constraint:
-+#       KeySizeConstraint
++#       KeySizeConstraint | DenyAfterConstraint
 +#
 +#   KeySizeConstraint:
 +#       keySize Operator KeyLength
++#
++#   DenyAfterConstraint:
++#       denyAfter YYYY-MM-DD
 +#
 +#   Operator:
 +#       <= | < | == | != | >= | >
@@ -14857,8 +14938,11 @@
 +# implementation. It is not guaranteed to be examined and used by other
 +# implementations.
 +#
-+jdk.jar.disabledAlgorithms=MD2, RSA keySize < 1024
++# See "jdk.certpath.disabledAlgorithms" for syntax descriptions.
++#
++jdk.jar.disabledAlgorithms=MD2, MD5, RSA keySize < 1024
 +
++#
 +# Algorithm restrictions for Secure Socket Layer/Transport Layer Security
 +# (SSL/TLS) processing
 +#
@@ -14879,6 +14963,9 @@
 +#
 +# See the specification of "jdk.certpath.disabledAlgorithms" for the
 +# syntax of the disabled algorithm string.
++#
++# Note: The algorithm restrictions do not apply to trust anchors or
++# self-signed certificates.
 +#
 +# Note: This property is currently used by the JDK Reference implementation.
 +# It is not guaranteed to be examined and used by other implementations.
@@ -15111,8 +15198,8 @@
 +#    java.rmi.dgc.VMID;\
 +#    java.rmi.dgc.Lease;\
 +#    maxdepth=5;maxarray=10000
---- ./jdk/src/share/native/com/sun/java/util/jar/pack/zip.cpp	Tue Feb 28 14:44:01 2017 +0300
-+++ ./jdk/src/share/native/com/sun/java/util/jar/pack/zip.cpp	Tue Apr 18 21:21:47 2017 -0700
+--- ./jdk/src/share/native/com/sun/java/util/jar/pack/zip.cpp	Tue Jul 11 23:52:06 2017 -0700
++++ ./jdk/src/share/native/com/sun/java/util/jar/pack/zip.cpp	Sat Aug 26 22:08:20 2017 -0700
 @@ -62,7 +62,7 @@
  
  #endif // End of ZLIB
@@ -15122,8 +15209,8 @@
  #define SWAP_BYTES(a) \
      ((((a) << 8) & 0xff00) | 0x00ff) & (((a) >> 8) | 0xff00)
  #else
---- ./jdk/src/share/native/com/sun/media/sound/DirectAudioDevice.c	Tue Feb 28 14:44:01 2017 +0300
-+++ ./jdk/src/share/native/com/sun/media/sound/DirectAudioDevice.c	Tue Apr 18 21:21:47 2017 -0700
+--- ./jdk/src/share/native/com/sun/media/sound/DirectAudioDevice.c	Tue Jul 11 23:52:06 2017 -0700
++++ ./jdk/src/share/native/com/sun/media/sound/DirectAudioDevice.c	Sat Aug 26 22:08:20 2017 -0700
 @@ -121,7 +121,7 @@
  }
  
@@ -15151,8 +15238,8 @@
  #define MAP_NATIVE2LE16(a) (a)
  #define MAP_NATIVE2BE16(a) MAP_SWAP16_impl(a)
  #define MAP_NATIVE2LE32(a) (a)
---- ./jdk/src/share/native/com/sun/media/sound/Utilities.c	Tue Feb 28 14:44:01 2017 +0300
-+++ ./jdk/src/share/native/com/sun/media/sound/Utilities.c	Tue Apr 18 21:21:47 2017 -0700
+--- ./jdk/src/share/native/com/sun/media/sound/Utilities.c	Tue Jul 11 23:52:06 2017 -0700
++++ ./jdk/src/share/native/com/sun/media/sound/Utilities.c	Sat Aug 26 22:08:20 2017 -0700
 @@ -28,7 +28,7 @@
  
  
@@ -15162,8 +15249,8 @@
      return 0;
  #else
      return 1;
---- ./jdk/src/share/native/java/lang/fdlibm/include/fdlibm.h	Tue Feb 28 14:44:01 2017 +0300
-+++ ./jdk/src/share/native/java/lang/fdlibm/include/fdlibm.h	Tue Apr 18 21:21:47 2017 -0700
+--- ./jdk/src/share/native/java/lang/fdlibm/include/fdlibm.h	Tue Jul 11 23:52:06 2017 -0700
++++ ./jdk/src/share/native/java/lang/fdlibm/include/fdlibm.h	Sat Aug 26 22:08:20 2017 -0700
 @@ -40,7 +40,7 @@
  #endif
  #endif
@@ -15173,8 +15260,8 @@
  #define __HI(x) *(1+(int*)&x)
  #define __LO(x) *(int*)&x
  #define __HIp(x) *(1+(int*)x)
---- ./jdk/src/share/native/sun/awt/image/awt_parseImage.c	Tue Feb 28 14:44:01 2017 +0300
-+++ ./jdk/src/share/native/sun/awt/image/awt_parseImage.c	Tue Apr 18 21:21:47 2017 -0700
+--- ./jdk/src/share/native/sun/awt/image/awt_parseImage.c	Tue Jul 11 23:52:06 2017 -0700
++++ ./jdk/src/share/native/sun/awt/image/awt_parseImage.c	Sat Aug 26 22:08:20 2017 -0700
 @@ -624,7 +624,7 @@
      switch(type) {
          case java_awt_image_BufferedImage_TYPE_INT_ARGB:
@@ -15202,8 +15289,8 @@
              colorOrder[0] = 2;
              colorOrder[1] = 1;
              colorOrder[2] = 0;
---- ./jdk/src/share/native/sun/awt/medialib/awt_ImagingLib.c	Tue Feb 28 14:44:01 2017 +0300
-+++ ./jdk/src/share/native/sun/awt/medialib/awt_ImagingLib.c	Tue Apr 18 21:21:47 2017 -0700
+--- ./jdk/src/share/native/sun/awt/medialib/awt_ImagingLib.c	Tue Jul 11 23:52:06 2017 -0700
++++ ./jdk/src/share/native/sun/awt/medialib/awt_ImagingLib.c	Sat Aug 26 22:08:20 2017 -0700
 @@ -1176,7 +1176,7 @@
  
  #define NLUT 8
@@ -15213,8 +15300,8 @@
  #define INDEXES    { 3, 2, 1, 0, 7, 6, 5, 4 }
  #else
  #define INDEXES    { 0, 1, 2, 3, 4, 5, 6, 7 }
---- ./jdk/src/share/native/sun/awt/medialib/mlib_ImageConv2x2_f.c	Tue Feb 28 14:44:01 2017 +0300
-+++ ./jdk/src/share/native/sun/awt/medialib/mlib_ImageConv2x2_f.c	Tue Apr 18 21:21:47 2017 -0700
+--- ./jdk/src/share/native/sun/awt/medialib/mlib_ImageConv2x2_f.c	Tue Jul 11 23:52:06 2017 -0700
++++ ./jdk/src/share/native/sun/awt/medialib/mlib_ImageConv2x2_f.c	Sat Aug 26 22:08:20 2017 -0700
 @@ -86,7 +86,7 @@
  #endif /* MLIB_USE_FTOI_CLAMPING */
  
@@ -15254,8 +15341,8 @@
  
  #endif /* _NO_LONGLONG */
  
---- ./jdk/src/share/native/sun/awt/medialib/mlib_ImageConv_16ext.c	Tue Feb 28 14:44:01 2017 +0300
-+++ ./jdk/src/share/native/sun/awt/medialib/mlib_ImageConv_16ext.c	Tue Apr 18 21:21:47 2017 -0700
+--- ./jdk/src/share/native/sun/awt/medialib/mlib_ImageConv_16ext.c	Tue Jul 11 23:52:06 2017 -0700
++++ ./jdk/src/share/native/sun/awt/medialib/mlib_ImageConv_16ext.c	Sat Aug 26 22:08:20 2017 -0700
 @@ -126,7 +126,7 @@
  #define D2I(x) CLAMP_S32((x) SAT_OFF)
  
@@ -15295,8 +15382,8 @@
  #endif /* _NO_LONGLONG */
  
  /***************************************************************/
---- ./jdk/src/share/native/sun/awt/medialib/mlib_ImageConv_16nw.c	Tue Feb 28 14:44:01 2017 +0300
-+++ ./jdk/src/share/native/sun/awt/medialib/mlib_ImageConv_16nw.c	Tue Apr 18 21:21:47 2017 -0700
+--- ./jdk/src/share/native/sun/awt/medialib/mlib_ImageConv_16nw.c	Tue Jul 11 23:52:06 2017 -0700
++++ ./jdk/src/share/native/sun/awt/medialib/mlib_ImageConv_16nw.c	Sat Aug 26 22:08:20 2017 -0700
 @@ -94,7 +94,7 @@
  #define D2I(x) CLAMP_S32((x) SAT_OFF)
  
@@ -15336,8 +15423,8 @@
  #endif /* _NO_LONGLONG */
  
  /***************************************************************/
---- ./jdk/src/share/native/sun/awt/medialib/mlib_ImageConv_8ext.c	Tue Feb 28 14:44:01 2017 +0300
-+++ ./jdk/src/share/native/sun/awt/medialib/mlib_ImageConv_8ext.c	Tue Apr 18 21:21:47 2017 -0700
+--- ./jdk/src/share/native/sun/awt/medialib/mlib_ImageConv_8ext.c	Tue Jul 11 23:52:06 2017 -0700
++++ ./jdk/src/share/native/sun/awt/medialib/mlib_ImageConv_8ext.c	Sat Aug 26 22:08:20 2017 -0700
 @@ -126,7 +126,7 @@
  #define D2I(x) CLAMP_S32((x) SAT_OFF)
  
@@ -15377,8 +15464,8 @@
  #endif /* _NO_LONGLONG */
  
  /***************************************************************/
---- ./jdk/src/share/native/sun/awt/medialib/mlib_ImageConv_8nw.c	Tue Feb 28 14:44:01 2017 +0300
-+++ ./jdk/src/share/native/sun/awt/medialib/mlib_ImageConv_8nw.c	Tue Apr 18 21:21:47 2017 -0700
+--- ./jdk/src/share/native/sun/awt/medialib/mlib_ImageConv_8nw.c	Tue Jul 11 23:52:06 2017 -0700
++++ ./jdk/src/share/native/sun/awt/medialib/mlib_ImageConv_8nw.c	Sat Aug 26 22:08:20 2017 -0700
 @@ -95,7 +95,7 @@
  #define D2I(x) CLAMP_S32((x) SAT_OFF)
  
@@ -15418,8 +15505,8 @@
  #endif /* _NO_LONGLONG */
  
  /***************************************************************/
---- ./jdk/src/share/native/sun/awt/medialib/mlib_ImageConv_u16ext.c	Tue Feb 28 14:44:01 2017 +0300
-+++ ./jdk/src/share/native/sun/awt/medialib/mlib_ImageConv_u16ext.c	Tue Apr 18 21:21:47 2017 -0700
+--- ./jdk/src/share/native/sun/awt/medialib/mlib_ImageConv_u16ext.c	Tue Jul 11 23:52:06 2017 -0700
++++ ./jdk/src/share/native/sun/awt/medialib/mlib_ImageConv_u16ext.c	Sat Aug 26 22:08:20 2017 -0700
 @@ -126,7 +126,7 @@
  #define D2I(x) CLAMP_S32((x) SAT_OFF)
  
@@ -15459,8 +15546,8 @@
  #endif /* _NO_LONGLONG */
  
  /***************************************************************/
---- ./jdk/src/share/native/sun/awt/medialib/mlib_ImageConv_u16nw.c	Tue Feb 28 14:44:01 2017 +0300
-+++ ./jdk/src/share/native/sun/awt/medialib/mlib_ImageConv_u16nw.c	Tue Apr 18 21:21:47 2017 -0700
+--- ./jdk/src/share/native/sun/awt/medialib/mlib_ImageConv_u16nw.c	Tue Jul 11 23:52:06 2017 -0700
++++ ./jdk/src/share/native/sun/awt/medialib/mlib_ImageConv_u16nw.c	Sat Aug 26 22:08:20 2017 -0700
 @@ -94,7 +94,7 @@
  #define D2I(x) CLAMP_S32((x) SAT_OFF)
  
@@ -15500,8 +15587,8 @@
  #endif /* _NO_LONGLONG */
  
  /***************************************************************/
---- ./jdk/src/share/native/sun/awt/medialib/mlib_ImageCopy_Bit.c	Tue Feb 28 14:44:01 2017 +0300
-+++ ./jdk/src/share/native/sun/awt/medialib/mlib_ImageCopy_Bit.c	Tue Apr 18 21:21:47 2017 -0700
+--- ./jdk/src/share/native/sun/awt/medialib/mlib_ImageCopy_Bit.c	Tue Jul 11 23:52:06 2017 -0700
++++ ./jdk/src/share/native/sun/awt/medialib/mlib_ImageCopy_Bit.c	Sat Aug 26 22:08:20 2017 -0700
 @@ -95,7 +95,7 @@
      dst = dp[0];
      if (ld_offset + size < 32) {
@@ -15721,8 +15808,8 @@
    }
  
  #else  /* _LONGLONG */
---- ./jdk/src/share/native/sun/awt/medialib/mlib_ImageLookUp_64.c	Tue Feb 28 14:44:01 2017 +0300
-+++ ./jdk/src/share/native/sun/awt/medialib/mlib_ImageLookUp_64.c	Tue Apr 18 21:21:47 2017 -0700
+--- ./jdk/src/share/native/sun/awt/medialib/mlib_ImageLookUp_64.c	Tue Jul 11 23:52:06 2017 -0700
++++ ./jdk/src/share/native/sun/awt/medialib/mlib_ImageLookUp_64.c	Sat Aug 26 22:08:20 2017 -0700
 @@ -168,7 +168,7 @@
  }
  
@@ -16003,8 +16090,8 @@
        dp[12] = t0;
        dp[13] = t1;
        dp[14] = t2;
---- ./jdk/src/share/native/sun/awt/medialib/mlib_ImageLookUp_Bit.c	Tue Feb 28 14:44:01 2017 +0300
-+++ ./jdk/src/share/native/sun/awt/medialib/mlib_ImageLookUp_Bit.c	Tue Apr 18 21:21:47 2017 -0700
+--- ./jdk/src/share/native/sun/awt/medialib/mlib_ImageLookUp_Bit.c	Tue Jul 11 23:52:06 2017 -0700
++++ ./jdk/src/share/native/sun/awt/medialib/mlib_ImageLookUp_Bit.c	Sat Aug 26 22:08:20 2017 -0700
 @@ -88,7 +88,7 @@
  } d64_2_f32;
  
@@ -16156,8 +16243,8 @@
  
    ((mlib_u32*)lh)[0] = l;  ((mlib_u32*)lh)[1] = l;
    ((mlib_u32*)lh)[2] = l;  ((mlib_u32*)lh)[3] = h;
---- ./jdk/src/share/native/sun/awt/medialib/mlib_ImageUtils.c	Tue Feb 28 14:44:01 2017 +0300
-+++ ./jdk/src/share/native/sun/awt/medialib/mlib_ImageUtils.c	Tue Apr 18 21:21:47 2017 -0700
+--- ./jdk/src/share/native/sun/awt/medialib/mlib_ImageUtils.c	Tue Jul 11 23:52:06 2017 -0700
++++ ./jdk/src/share/native/sun/awt/medialib/mlib_ImageUtils.c	Sat Aug 26 22:08:20 2017 -0700
 @@ -30,7 +30,7 @@
  typedef union {
    mlib_d64 db;
@@ -16167,8 +16254,8 @@
      mlib_s32 int1, int0;
  #else
      mlib_s32 int0, int1;
---- ./jdk/src/share/native/sun/awt/medialib/mlib_c_ImageCopy.c	Tue Feb 28 14:44:01 2017 +0300
-+++ ./jdk/src/share/native/sun/awt/medialib/mlib_c_ImageCopy.c	Tue Apr 18 21:21:47 2017 -0700
+--- ./jdk/src/share/native/sun/awt/medialib/mlib_c_ImageCopy.c	Tue Jul 11 23:52:06 2017 -0700
++++ ./jdk/src/share/native/sun/awt/medialib/mlib_c_ImageCopy.c	Sat Aug 26 22:08:20 2017 -0700
 @@ -275,11 +275,11 @@
        for (i = 0; j <= (b_size - 4); j += 4, i++) {
          src0 = src1;
@@ -16267,8 +16354,8 @@
          s0 = s1;
          dp += SIZE;
          sp += SIZE;
---- ./jdk/src/share/native/sun/awt/medialib/mlib_c_ImageLookUp_f.c	Tue Feb 28 14:44:01 2017 +0300
-+++ ./jdk/src/share/native/sun/awt/medialib/mlib_c_ImageLookUp_f.c	Tue Apr 18 21:21:47 2017 -0700
+--- ./jdk/src/share/native/sun/awt/medialib/mlib_c_ImageLookUp_f.c	Tue Jul 11 23:52:06 2017 -0700
++++ ./jdk/src/share/native/sun/awt/medialib/mlib_c_ImageLookUp_f.c	Sat Aug 26 22:08:20 2017 -0700
 @@ -120,7 +120,7 @@
    }                                                               \
  }
@@ -17501,8 +17588,8 @@
        dp[12] = t0;
        dp[13] = t1;
        dp[14] = t2;
---- ./jdk/src/share/native/sun/awt/medialib/mlib_image.h	Tue Feb 28 14:44:01 2017 +0300
-+++ ./jdk/src/share/native/sun/awt/medialib/mlib_image.h	Tue Apr 18 21:21:47 2017 -0700
+--- ./jdk/src/share/native/sun/awt/medialib/mlib_image.h	Tue Jul 11 23:52:06 2017 -0700
++++ ./jdk/src/share/native/sun/awt/medialib/mlib_image.h	Sat Aug 26 22:08:20 2017 -0700
 @@ -27,9 +27,6 @@
  #ifndef MLIB_IMAGE_H
  #define MLIB_IMAGE_H
@@ -17513,8 +17600,8 @@
  #include <mlib_types.h>
  #include <mlib_status.h>
  #include <mlib_sys.h>
---- ./jdk/src/share/native/sun/awt/medialib/mlib_sys.c	Tue Feb 28 14:44:01 2017 +0300
-+++ ./jdk/src/share/native/sun/awt/medialib/mlib_sys.c	Tue Apr 18 21:21:47 2017 -0700
+--- ./jdk/src/share/native/sun/awt/medialib/mlib_sys.c	Tue Jul 11 23:52:06 2017 -0700
++++ ./jdk/src/share/native/sun/awt/medialib/mlib_sys.c	Sat Aug 26 22:08:20 2017 -0700
 @@ -29,7 +29,7 @@
  #ifdef MACOSX
  #include <unistd.h>
@@ -17534,8 +17621,8 @@
  #else
    return (void *) memalign(8, size);
  #endif /* _MSC_VER */
---- ./jdk/src/share/native/sun/font/layout/LEStandalone.h	Tue Feb 28 14:44:01 2017 +0300
-+++ ./jdk/src/share/native/sun/font/layout/LEStandalone.h	Tue Apr 18 21:21:47 2017 -0700
+--- ./jdk/src/share/native/sun/font/layout/LEStandalone.h	Tue Jul 11 23:52:06 2017 -0700
++++ ./jdk/src/share/native/sun/font/layout/LEStandalone.h	Sat Aug 26 22:08:20 2017 -0700
 @@ -136,7 +136,7 @@
  #define U_CAPI extern "C"
  
@@ -17545,8 +17632,8 @@
          #define U_IS_BIG_ENDIAN 0
      #endif
  #endif
---- ./jdk/src/share/native/sun/java2d/cmm/lcms/LCMS.c	Tue Feb 28 14:44:01 2017 +0300
-+++ ./jdk/src/share/native/sun/java2d/cmm/lcms/LCMS.c	Tue Apr 18 21:21:47 2017 -0700
+--- ./jdk/src/share/native/sun/java2d/cmm/lcms/LCMS.c	Tue Jul 11 23:52:06 2017 -0700
++++ ./jdk/src/share/native/sun/java2d/cmm/lcms/LCMS.c	Sat Aug 26 22:08:20 2017 -0700
 @@ -182,7 +182,7 @@
          return 0L;
      }
@@ -17556,8 +17643,8 @@
      /* Reversing data packed into int for LE archs */
      if (isInIntPacked) {
          inFormatter ^= DOSWAP_SH(1);
---- ./jdk/src/share/native/sun/management/DiagnosticCommandImpl.c	Tue Feb 28 14:44:01 2017 +0300
-+++ ./jdk/src/share/native/sun/management/DiagnosticCommandImpl.c	Tue Apr 18 21:21:47 2017 -0700
+--- ./jdk/src/share/native/sun/management/DiagnosticCommandImpl.c	Tue Jul 11 23:52:06 2017 -0700
++++ ./jdk/src/share/native/sun/management/DiagnosticCommandImpl.c	Sat Aug 26 22:08:20 2017 -0700
 @@ -27,6 +27,7 @@
  #include <jni.h>
  #include "management.h"
@@ -17566,8 +17653,8 @@
  
  JNIEXPORT void JNICALL Java_sun_management_DiagnosticCommandImpl_setNotificationEnabled
  (JNIEnv *env, jobject dummy, jboolean enabled) {
---- ./jdk/src/solaris/back/util_md.h	Tue Feb 28 14:44:01 2017 +0300
-+++ ./jdk/src/solaris/back/util_md.h	Tue Apr 18 21:21:47 2017 -0700
+--- ./jdk/src/solaris/back/util_md.h	Tue Jul 11 23:52:06 2017 -0700
++++ ./jdk/src/solaris/back/util_md.h	Sat Aug 26 22:08:20 2017 -0700
 @@ -51,7 +51,7 @@
  
  /* On little endian machines, convert java big endian numbers. */
@@ -17577,8 +17664,8 @@
  
  #define HOST_TO_JAVA_CHAR(x) (((x & 0xff) << 8) | ((x >> 8) & (0xff)))
  #define HOST_TO_JAVA_SHORT(x) (((x & 0xff) << 8) | ((x >> 8) & (0xff)))
---- ./jdk/src/solaris/bin/ergo_i586.c	Tue Feb 28 14:44:01 2017 +0300
-+++ ./jdk/src/solaris/bin/ergo_i586.c	Tue Apr 18 21:21:47 2017 -0700
+--- ./jdk/src/solaris/bin/ergo_i586.c	Tue Jul 11 23:52:06 2017 -0700
++++ ./jdk/src/solaris/bin/ergo_i586.c	Sat Aug 26 22:08:20 2017 -0700
 @@ -106,7 +106,7 @@
  
  #endif /* __solaris__ */
@@ -17597,8 +17684,8 @@
  
  /*
   * Routines shared by solaris-i586 and linux-i586.
---- ./jdk/src/solaris/bin/java_md_solinux.c	Tue Feb 28 14:44:01 2017 +0300
-+++ ./jdk/src/solaris/bin/java_md_solinux.c	Tue Apr 18 21:21:47 2017 -0700
+--- ./jdk/src/solaris/bin/java_md_solinux.c	Tue Jul 11 23:52:06 2017 -0700
++++ ./jdk/src/solaris/bin/java_md_solinux.c	Sat Aug 26 22:08:20 2017 -0700
 @@ -35,6 +35,9 @@
  #include <sys/stat.h>
  #include <unistd.h>
@@ -17690,8 +17777,8 @@
  }
  
  int
---- ./jdk/src/solaris/bin/java_md_solinux.h	Tue Feb 28 14:44:01 2017 +0300
-+++ ./jdk/src/solaris/bin/java_md_solinux.h	Tue Apr 18 21:21:47 2017 -0700
+--- ./jdk/src/solaris/bin/java_md_solinux.h	Tue Jul 11 23:52:06 2017 -0700
++++ ./jdk/src/solaris/bin/java_md_solinux.h	Sat Aug 26 22:08:20 2017 -0700
 @@ -26,17 +26,26 @@
  #ifndef JAVA_MD_SOLINUX_H
  #define JAVA_MD_SOLINUX_H
@@ -17732,8 +17819,8 @@
  #else /* !__solaris__, i.e. Linux, AIX,.. */
  static const char *system_dir   = "/usr/java";
  static const char *user_dir     = "/java";
---- ./jdk/src/solaris/classes/java/lang/UNIXProcess.java	Tue Feb 28 14:44:01 2017 +0300
-+++ ./jdk/src/solaris/classes/java/lang/UNIXProcess.java	Tue Apr 18 21:21:47 2017 -0700
+--- ./jdk/src/solaris/classes/java/lang/UNIXProcess.java	Tue Jul 11 23:52:06 2017 -0700
++++ ./jdk/src/solaris/classes/java/lang/UNIXProcess.java	Sat Aug 26 22:08:20 2017 -0700
 @@ -82,6 +82,8 @@
  
          LINUX(LaunchMechanism.VFORK, LaunchMechanism.FORK),
@@ -17781,8 +17868,8 @@
              case BSD:
              case AIX:
                  // There is a risk that pid will be recycled, causing us to
---- ./jdk/src/solaris/classes/sun/awt/X11FontManager.java	Tue Feb 28 14:44:01 2017 +0300
-+++ ./jdk/src/solaris/classes/sun/awt/X11FontManager.java	Tue Apr 18 21:21:47 2017 -0700
+--- ./jdk/src/solaris/classes/sun/awt/X11FontManager.java	Tue Jul 11 23:52:06 2017 -0700
++++ ./jdk/src/solaris/classes/sun/awt/X11FontManager.java	Sat Aug 26 22:08:20 2017 -0700
 @@ -234,7 +234,7 @@
          if (fontID != null) {
              fileName = (String)fontNameMap.get(fontID);
@@ -17810,8 +17897,8 @@
               (!mFontConfig.foundOsSpecificFile() ||
                !mFontConfig.fontFilesArePresent()) ||
               (FontUtilities.isSolaris && !mFontConfig.fontFilesArePresent()))) {
---- ./jdk/src/solaris/classes/sun/awt/fontconfigs/bsd.fontconfig.properties	Tue Feb 28 14:44:01 2017 +0300
-+++ ./jdk/src/solaris/classes/sun/awt/fontconfigs/bsd.fontconfig.properties	Tue Apr 18 21:21:47 2017 -0700
+--- ./jdk/src/solaris/classes/sun/awt/fontconfigs/bsd.fontconfig.properties	Tue Jul 11 23:52:06 2017 -0700
++++ ./jdk/src/solaris/classes/sun/awt/fontconfigs/bsd.fontconfig.properties	Sat Aug 26 22:08:20 2017 -0700
 @@ -26,134 +26,134 @@
  
  # Version
@@ -18074,8 +18161,8 @@
 +filename.NanumGothic_Bold=/usr/local/lib/X11/fonts/nanum-ttf/NanumGothicBold.ttf
 +filename.NanumMyeongjo=/usr/local/lib/X11/fonts/nanum-ttf/NanumMyeongjo.ttf
 +filename.NanumMyeongjo_Bold=/usr/local/lib/X11/fonts/nanum-ttf/NanumMyeongjoBold.ttf
---- ./jdk/src/solaris/classes/sun/net/PortConfig.java	Tue Feb 28 14:44:01 2017 +0300
-+++ ./jdk/src/solaris/classes/sun/net/PortConfig.java	Tue Apr 18 21:21:47 2017 -0700
+--- ./jdk/src/solaris/classes/sun/net/PortConfig.java	Tue Jul 11 23:52:06 2017 -0700
++++ ./jdk/src/solaris/classes/sun/net/PortConfig.java	Sat Aug 26 22:08:20 2017 -0700
 @@ -52,7 +52,7 @@
                      } else if (os.startsWith("SunOS")) {
                          defaultLower = 32768;
@@ -18085,8 +18172,8 @@
                          defaultLower = 49152;
                          defaultUpper = 65535;
                      } else if (os.startsWith("AIX")) {
---- ./jdk/src/solaris/classes/sun/nio/ch/DefaultAsynchronousChannelProvider.java	Tue Feb 28 14:44:01 2017 +0300
-+++ ./jdk/src/solaris/classes/sun/nio/ch/DefaultAsynchronousChannelProvider.java	Tue Apr 18 21:21:47 2017 -0700
+--- ./jdk/src/solaris/classes/sun/nio/ch/DefaultAsynchronousChannelProvider.java	Tue Jul 11 23:52:06 2017 -0700
++++ ./jdk/src/solaris/classes/sun/nio/ch/DefaultAsynchronousChannelProvider.java	Sat Aug 26 22:08:20 2017 -0700
 @@ -66,7 +66,7 @@
              return createProvider("sun.nio.ch.SolarisAsynchronousChannelProvider");
          if (osname.equals("Linux"))
@@ -18096,8 +18183,8 @@
              return createProvider("sun.nio.ch.BsdAsynchronousChannelProvider");
          if (osname.equals("AIX"))
              return createProvider("sun.nio.ch.AixAsynchronousChannelProvider");
---- ./jdk/src/solaris/classes/sun/nio/fs/BsdFileSystemProvider.java	Tue Feb 28 14:44:01 2017 +0300
-+++ ./jdk/src/solaris/classes/sun/nio/fs/BsdFileSystemProvider.java	Tue Apr 18 21:21:47 2017 -0700
+--- ./jdk/src/solaris/classes/sun/nio/fs/BsdFileSystemProvider.java	Tue Jul 11 23:52:06 2017 -0700
++++ ./jdk/src/solaris/classes/sun/nio/fs/BsdFileSystemProvider.java	Sat Aug 26 22:08:20 2017 -0700
 @@ -25,10 +25,14 @@
  
  package sun.nio.fs;
@@ -18131,8 +18218,8 @@
 +                     new MagicFileTypeDetector());
 +    }
  }
---- ./jdk/src/solaris/classes/sun/nio/fs/DefaultFileSystemProvider.java	Tue Feb 28 14:44:01 2017 +0300
-+++ ./jdk/src/solaris/classes/sun/nio/fs/DefaultFileSystemProvider.java	Tue Apr 18 21:21:47 2017 -0700
+--- ./jdk/src/solaris/classes/sun/nio/fs/DefaultFileSystemProvider.java	Tue Jul 11 23:52:06 2017 -0700
++++ ./jdk/src/solaris/classes/sun/nio/fs/DefaultFileSystemProvider.java	Sat Aug 26 22:08:20 2017 -0700
 @@ -61,6 +61,8 @@
              return createProvider("sun.nio.fs.SolarisFileSystemProvider");
          if (osname.equals("Linux"))
@@ -18142,8 +18229,8 @@
          if (osname.contains("OS X"))
              return createProvider("sun.nio.fs.MacOSXFileSystemProvider");
          if (osname.equals("AIX"))
---- ./jdk/src/solaris/classes/sun/print/UnixPrintServiceLookup.java	Tue Feb 28 14:44:01 2017 +0300
-+++ ./jdk/src/solaris/classes/sun/print/UnixPrintServiceLookup.java	Tue Apr 18 21:21:47 2017 -0700
+--- ./jdk/src/solaris/classes/sun/print/UnixPrintServiceLookup.java	Tue Jul 11 23:52:06 2017 -0700
++++ ./jdk/src/solaris/classes/sun/print/UnixPrintServiceLookup.java	Sat Aug 26 22:08:20 2017 -0700
 @@ -161,6 +161,7 @@
  
      static boolean isBSD() {
@@ -18167,8 +18254,8 @@
          "/usr/sbin/lpc status all | grep -E '^[ 0-9a-zA-Z_-]*@' | awk -F'@' '{print $1}' | sort"
      };
  
---- ./jdk/src/solaris/classes/sun/tools/attach/BsdVirtualMachine.java	Tue Feb 28 14:44:01 2017 +0300
-+++ ./jdk/src/solaris/classes/sun/tools/attach/BsdVirtualMachine.java	Tue Apr 18 21:21:47 2017 -0700
+--- ./jdk/src/solaris/classes/sun/tools/attach/BsdVirtualMachine.java	Tue Jul 11 23:52:06 2017 -0700
++++ ./jdk/src/solaris/classes/sun/tools/attach/BsdVirtualMachine.java	Sat Aug 26 22:08:20 2017 -0700
 @@ -273,7 +273,7 @@
              try {
                  b = s.getBytes("UTF-8");
@@ -18178,8 +18265,8 @@
              }
              BsdVirtualMachine.write(fd, b, 0, b.length);
          }
---- ./jdk/src/solaris/native/com/sun/media/sound/PLATFORM_API_LinuxOS_ALSA_PCM.c	Tue Feb 28 14:44:01 2017 +0300
-+++ ./jdk/src/solaris/native/com/sun/media/sound/PLATFORM_API_LinuxOS_ALSA_PCM.c	Tue Apr 18 21:21:47 2017 -0700
+--- ./jdk/src/solaris/native/com/sun/media/sound/PLATFORM_API_LinuxOS_ALSA_PCM.c	Tue Jul 11 23:52:06 2017 -0700
++++ ./jdk/src/solaris/native/com/sun/media/sound/PLATFORM_API_LinuxOS_ALSA_PCM.c	Sat Aug 26 22:08:20 2017 -0700
 @@ -675,6 +675,7 @@
              return -1;
          }
@@ -18196,8 +18283,8 @@
      } else if (err == -EAGAIN) {
          TRACE0("xrun_recovery: EAGAIN try again flag.\n");
          return 0;
---- ./jdk/src/solaris/native/com/sun/media/sound/PLATFORM_API_SolarisOS_PCM.c	Tue Feb 28 14:44:01 2017 +0300
-+++ ./jdk/src/solaris/native/com/sun/media/sound/PLATFORM_API_SolarisOS_PCM.c	Tue Apr 18 21:21:47 2017 -0700
+--- ./jdk/src/solaris/native/com/sun/media/sound/PLATFORM_API_SolarisOS_PCM.c	Tue Jul 11 23:52:06 2017 -0700
++++ ./jdk/src/solaris/native/com/sun/media/sound/PLATFORM_API_SolarisOS_PCM.c	Sat Aug 26 22:08:20 2017 -0700
 @@ -140,7 +140,7 @@
                                        (float) ((int) sr->samp_rates[s]),
                                        DAUDIO_PCM, /* encoding - let's only do PCM */
@@ -18207,8 +18294,8 @@
                                        FALSE /* little endian */
  #else
                                        (bits[b] > 8)?TRUE:FALSE  /* big endian */
---- ./jdk/src/solaris/native/common/jni_util_md.c	Tue Feb 28 14:44:01 2017 +0300
-+++ ./jdk/src/solaris/native/common/jni_util_md.c	Tue Apr 18 21:21:47 2017 -0700
+--- ./jdk/src/solaris/native/common/jni_util_md.c	Tue Jul 11 23:52:06 2017 -0700
++++ ./jdk/src/solaris/native/common/jni_util_md.c	Sat Aug 26 22:08:20 2017 -0700
 @@ -28,6 +28,7 @@
  #include "jni.h"
  #include "jni_util.h"
@@ -18217,8 +18304,8 @@
  
  jstring nativeNewStringPlatform(JNIEnv *env, const char *str) {
      return NULL;
---- ./jdk/src/solaris/native/java/lang/java_props_md.c	Tue Feb 28 14:44:01 2017 +0300
-+++ ./jdk/src/solaris/native/java/lang/java_props_md.c	Tue Apr 18 21:21:47 2017 -0700
+--- ./jdk/src/solaris/native/java/lang/java_props_md.c	Tue Jul 11 23:52:06 2017 -0700
++++ ./jdk/src/solaris/native/java/lang/java_props_md.c	Sat Aug 26 22:08:20 2017 -0700
 @@ -151,7 +151,7 @@
      lc = setlocale(cat, NULL);
  #endif
@@ -18253,8 +18340,8 @@
  
      /* user properties */
      {
---- ./jdk/src/solaris/native/java/net/Inet4AddressImpl.c	Tue Feb 28 14:44:01 2017 +0300
-+++ ./jdk/src/solaris/native/java/net/Inet4AddressImpl.c	Tue Apr 18 21:21:47 2017 -0700
+--- ./jdk/src/solaris/native/java/net/Inet4AddressImpl.c	Tue Jul 11 23:52:06 2017 -0700
++++ ./jdk/src/solaris/native/java/net/Inet4AddressImpl.c	Sat Aug 26 22:08:20 2017 -0700
 @@ -36,20 +36,13 @@
  #include <stdlib.h>
  #include <ctype.h>
@@ -18295,8 +18382,8 @@
      error = getaddrinfo(hostname, NULL, &hints, &res);
  
      if (error) {
---- ./jdk/src/solaris/native/java/net/Inet6AddressImpl.c	Tue Feb 28 14:44:01 2017 +0300
-+++ ./jdk/src/solaris/native/java/net/Inet6AddressImpl.c	Tue Apr 18 21:21:47 2017 -0700
+--- ./jdk/src/solaris/native/java/net/Inet6AddressImpl.c	Tue Jul 11 23:52:06 2017 -0700
++++ ./jdk/src/solaris/native/java/net/Inet6AddressImpl.c	Sat Aug 26 22:08:20 2017 -0700
 @@ -33,7 +33,7 @@
  #include <strings.h>
  #include <stdlib.h>
@@ -18338,8 +18425,8 @@
  #ifdef AF_INET6
      /* Try once, with our static buffer. */
      memset(&hints, 0, sizeof(hints));
---- ./jdk/src/solaris/native/java/net/NetworkInterface.c	Tue Feb 28 14:44:01 2017 +0300
-+++ ./jdk/src/solaris/native/java/net/NetworkInterface.c	Tue Apr 18 21:21:47 2017 -0700
+--- ./jdk/src/solaris/native/java/net/NetworkInterface.c	Tue Jul 11 23:52:06 2017 -0700
++++ ./jdk/src/solaris/native/java/net/NetworkInterface.c	Sat Aug 26 22:08:20 2017 -0700
 @@ -62,14 +62,19 @@
  #include <sys/param.h>
  #include <sys/ioctl.h>
@@ -18362,8 +18449,8 @@
  
  #include "jvm.h"
  #include "jni_util.h"
---- ./jdk/src/solaris/native/java/net/PlainDatagramSocketImpl.c	Tue Feb 28 14:44:01 2017 +0300
-+++ ./jdk/src/solaris/native/java/net/PlainDatagramSocketImpl.c	Tue Apr 18 21:21:47 2017 -0700
+--- ./jdk/src/solaris/native/java/net/PlainDatagramSocketImpl.c	Tue Jul 11 23:52:06 2017 -0700
++++ ./jdk/src/solaris/native/java/net/PlainDatagramSocketImpl.c	Sat Aug 26 22:08:20 2017 -0700
 @@ -2222,7 +2222,7 @@
                  }
              }
@@ -18373,8 +18460,8 @@
              if (family == AF_INET6 && index == 0) {
                  index = getDefaultScopeID(env);
              }
---- ./jdk/src/solaris/native/java/net/PlainSocketImpl.c	Tue Feb 28 14:44:01 2017 +0300
-+++ ./jdk/src/solaris/native/java/net/PlainSocketImpl.c	Tue Apr 18 21:21:47 2017 -0700
+--- ./jdk/src/solaris/native/java/net/PlainSocketImpl.c	Tue Jul 11 23:52:06 2017 -0700
++++ ./jdk/src/solaris/native/java/net/PlainSocketImpl.c	Sat Aug 26 22:08:20 2017 -0700
 @@ -212,6 +212,7 @@
      }
  
@@ -18391,8 +18478,8 @@
  #endif /* AF_INET6 */
  
      /*
---- ./jdk/src/solaris/native/java/net/bsd_close.c	Tue Feb 28 14:44:01 2017 +0300
-+++ ./jdk/src/solaris/native/java/net/bsd_close.c	Tue Apr 18 21:21:47 2017 -0700
+--- ./jdk/src/solaris/native/java/net/bsd_close.c	Tue Jul 11 23:52:06 2017 -0700
++++ ./jdk/src/solaris/native/java/net/bsd_close.c	Sat Aug 26 22:08:20 2017 -0700
 @@ -316,11 +316,8 @@
  }
  
@@ -18490,8 +18577,8 @@
      }
 +#endif
  }
---- ./jdk/src/solaris/native/java/net/net_util_md.c	Tue Feb 28 14:44:01 2017 +0300
-+++ ./jdk/src/solaris/native/java/net/net_util_md.c	Tue Apr 18 21:21:47 2017 -0700
+--- ./jdk/src/solaris/native/java/net/net_util_md.c	Tue Jul 11 23:52:06 2017 -0700
++++ ./jdk/src/solaris/native/java/net/net_util_md.c	Sat Aug 26 22:08:20 2017 -0700
 @@ -45,6 +45,10 @@
  #endif
  #endif
@@ -18512,8 +18599,8 @@
      static jclass ni_class = NULL;
      static jfieldID ni_defaultIndexID;
      if (ni_class == NULL) {
---- ./jdk/src/solaris/native/java/net/net_util_md.h	Tue Feb 28 14:44:01 2017 +0300
-+++ ./jdk/src/solaris/native/java/net/net_util_md.h	Tue Apr 18 21:21:47 2017 -0700
+--- ./jdk/src/solaris/native/java/net/net_util_md.h	Tue Jul 11 23:52:06 2017 -0700
++++ ./jdk/src/solaris/native/java/net/net_util_md.h	Sat Aug 26 22:08:20 2017 -0700
 @@ -47,7 +47,7 @@
     close subroutine does not return until the select call returns.
     ...
@@ -18523,8 +18610,8 @@
  extern int NET_Timeout(int s, long timeout);
  extern int NET_Read(int s, void* buf, size_t len);
  extern int NET_RecvFrom(int s, void *buf, int len, unsigned int flags,
---- ./jdk/src/solaris/native/java/util/TimeZone_md.c	Tue Feb 28 14:44:01 2017 +0300
-+++ ./jdk/src/solaris/native/java/util/TimeZone_md.c	Tue Apr 18 21:21:47 2017 -0700
+--- ./jdk/src/solaris/native/java/util/TimeZone_md.c	Tue Jul 11 23:52:06 2017 -0700
++++ ./jdk/src/solaris/native/java/util/TimeZone_md.c	Sat Aug 26 22:08:20 2017 -0700
 @@ -56,7 +56,11 @@
  #endif
  
@@ -18588,8 +18675,8 @@
  }
 -#endif /* MACOSX */
 +#endif /* _ALLBSD_SOURCE */
---- ./jdk/src/solaris/native/sun/awt/awt_Font.c	Tue Feb 28 14:44:01 2017 +0300
-+++ ./jdk/src/solaris/native/sun/awt/awt_Font.c	Tue Apr 18 21:21:47 2017 -0700
+--- ./jdk/src/solaris/native/sun/awt/awt_Font.c	Tue Jul 11 23:52:06 2017 -0700
++++ ./jdk/src/solaris/native/sun/awt/awt_Font.c	Sat Aug 26 22:08:20 2017 -0700
 @@ -255,7 +255,7 @@
              if (strcmp(style, "regular") == 0) {
                  altstyle = "roman";
@@ -18599,8 +18686,8 @@
              if (!strcmp(family, "lucidasans")) {
                  family = "lucida";
              }
---- ./jdk/src/solaris/native/sun/awt/awt_GraphicsEnv.c	Tue Feb 28 14:44:01 2017 +0300
-+++ ./jdk/src/solaris/native/sun/awt/awt_GraphicsEnv.c	Tue Apr 18 21:21:47 2017 -0700
+--- ./jdk/src/solaris/native/sun/awt/awt_GraphicsEnv.c	Tue Jul 11 23:52:06 2017 -0700
++++ ./jdk/src/solaris/native/sun/awt/awt_GraphicsEnv.c	Sat Aug 26 22:08:20 2017 -0700
 @@ -121,7 +121,7 @@
   */
  
@@ -18685,8 +18772,8 @@
  #endif /* HEADLESS */
      return point;
  }
---- ./jdk/src/solaris/native/sun/awt/awt_InputMethod.c	Tue Feb 28 14:44:01 2017 +0300
-+++ ./jdk/src/solaris/native/sun/awt/awt_InputMethod.c	Tue Apr 18 21:21:47 2017 -0700
+--- ./jdk/src/solaris/native/sun/awt/awt_InputMethod.c	Tue Jul 11 23:52:06 2017 -0700
++++ ./jdk/src/solaris/native/sun/awt/awt_InputMethod.c	Sat Aug 26 22:08:20 2017 -0700
 @@ -52,7 +52,7 @@
                                  XIMPreeditDrawCallbackStruct *);
  static void PreeditCaretCallback(XIC, XPointer,
@@ -18906,8 +18993,8 @@
      AWT_LOCK();
      adjustStatusWindow(window);
      AWT_UNLOCK();
---- ./jdk/src/solaris/native/sun/awt/awt_Robot.c	Tue Feb 28 14:44:01 2017 +0300
-+++ ./jdk/src/solaris/native/sun/awt/awt_Robot.c	Tue Apr 18 21:21:47 2017 -0700
+--- ./jdk/src/solaris/native/sun/awt/awt_Robot.c	Tue Jul 11 23:52:06 2017 -0700
++++ ./jdk/src/solaris/native/sun/awt/awt_Robot.c	Sat Aug 26 22:08:20 2017 -0700
 @@ -45,7 +45,7 @@
  #include "wsutils.h"
  #include "list.h"
@@ -18917,8 +19004,8 @@
  #include <sys/socket.h>
  #endif
  
---- ./jdk/src/solaris/native/sun/awt/extutil.h	Tue Feb 28 14:44:01 2017 +0300
-+++ ./jdk/src/solaris/native/sun/awt/extutil.h	Tue Apr 18 21:21:47 2017 -0700
+--- ./jdk/src/solaris/native/sun/awt/extutil.h	Tue Jul 11 23:52:06 2017 -0700
++++ ./jdk/src/solaris/native/sun/awt/extutil.h	Sat Aug 26 22:08:20 2017 -0700
 @@ -58,7 +58,7 @@
   */
  /* $XFree86: xc/include/extensions/extutil.h,v 1.5 2001/01/17 17:53:20 dawes Exp $ */
@@ -18934,8 +19021,8 @@
  
 -#endif /* __linux__ || MACOSX */
 +#endif /* __linux__ || _ALLBSD_SOURCE */
---- ./jdk/src/solaris/native/sun/awt/fontpath.c	Tue Feb 28 14:44:01 2017 +0300
-+++ ./jdk/src/solaris/native/sun/awt/fontpath.c	Tue Apr 18 21:21:47 2017 -0700
+--- ./jdk/src/solaris/native/sun/awt/fontpath.c	Tue Jul 11 23:52:06 2017 -0700
++++ ./jdk/src/solaris/native/sun/awt/fontpath.c	Sat Aug 26 22:08:20 2017 -0700
 @@ -23,9 +23,9 @@
   * questions.
   */
@@ -19024,8 +19111,8 @@
                  && (strcmp((char*)fontformat, "Type 1") != 0)
  #endif
               ) {
---- ./jdk/src/solaris/native/sun/java2d/j2d_md.h	Tue Feb 28 14:44:01 2017 +0300
-+++ ./jdk/src/solaris/native/sun/java2d/j2d_md.h	Tue Apr 18 21:21:47 2017 -0700
+--- ./jdk/src/solaris/native/sun/java2d/j2d_md.h	Tue Jul 11 23:52:06 2017 -0700
++++ ./jdk/src/solaris/native/sun/java2d/j2d_md.h	Sat Aug 26 22:08:20 2017 -0700
 @@ -28,11 +28,11 @@
  #include <sys/types.h>
  
@@ -19041,8 +19128,8 @@
  
  typedef unsigned char   jubyte;
  typedef unsigned short  jushort;
---- ./jdk/src/solaris/native/sun/java2d/loops/mlib_ImageZoom_NN.c	Tue Feb 28 14:44:01 2017 +0300
-+++ ./jdk/src/solaris/native/sun/java2d/loops/mlib_ImageZoom_NN.c	Tue Apr 18 21:21:47 2017 -0700
+--- ./jdk/src/solaris/native/sun/java2d/loops/mlib_ImageZoom_NN.c	Tue Jul 11 23:52:06 2017 -0700
++++ ./jdk/src/solaris/native/sun/java2d/loops/mlib_ImageZoom_NN.c	Sat Aug 26 22:08:20 2017 -0700
 @@ -63,9 +63,6 @@
   *    MLIB_EDGE_SRC_PADDED
   */
@@ -19147,8 +19234,8 @@
          LOGIC(da[0], dtmp, dtmp1, |);
        }
        else {                                               /* aligned */
---- ./jdk/src/solaris/native/sun/java2d/loops/vis_FuncArray.c	Tue Feb 28 14:44:01 2017 +0300
-+++ ./jdk/src/solaris/native/sun/java2d/loops/vis_FuncArray.c	Tue Apr 18 21:21:47 2017 -0700
+--- ./jdk/src/solaris/native/sun/java2d/loops/vis_FuncArray.c	Tue Jul 11 23:52:06 2017 -0700
++++ ./jdk/src/solaris/native/sun/java2d/loops/vis_FuncArray.c	Sat Aug 26 22:08:20 2017 -0700
 @@ -804,7 +804,7 @@
  static int initialized;
  static int usevis = JNI_TRUE;
@@ -19159,7 +19246,7 @@
  #else
  #   define ULTRA_CHIP   "sun4u"
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ ./jdk/src/solaris/native/sun/management/BsdOperatingSystem.c	Tue Apr 18 21:21:47 2017 -0700
++++ ./jdk/src/solaris/native/sun/management/BsdOperatingSystem.c	Sat Aug 26 22:08:20 2017 -0700
 @@ -0,0 +1,42 @@
 +/*
 + * Copyright (c) 2011, 2013, Oracle and/or its affiliates. All rights reserved.
@@ -19203,8 +19290,8 @@
 +{
 +    return (jdouble) -1;
 +}
---- ./jdk/src/solaris/native/sun/management/OperatingSystemImpl.c	Tue Feb 28 14:44:01 2017 +0300
-+++ ./jdk/src/solaris/native/sun/management/OperatingSystemImpl.c	Tue Apr 18 21:21:47 2017 -0700
+--- ./jdk/src/solaris/native/sun/management/OperatingSystemImpl.c	Tue Jul 11 23:52:06 2017 -0700
++++ ./jdk/src/solaris/native/sun/management/OperatingSystemImpl.c	Sat Aug 26 22:08:20 2017 -0700
 @@ -56,6 +56,9 @@
  #include <limits.h>
  #include <stdlib.h>
@@ -19369,8 +19456,8 @@
          return -1;
      }
  
---- ./jdk/src/solaris/native/sun/net/portconfig.c	Tue Feb 28 14:44:01 2017 +0300
-+++ ./jdk/src/solaris/native/sun/net/portconfig.c	Tue Apr 18 21:21:47 2017 -0700
+--- ./jdk/src/solaris/native/sun/net/portconfig.c	Tue Jul 11 23:52:06 2017 -0700
++++ ./jdk/src/solaris/native/sun/net/portconfig.c	Sat Aug 26 22:08:20 2017 -0700
 @@ -67,6 +67,24 @@
          range->lower = net_getParam("/dev/tcp", "tcp_smallest_anon_port");
          return 0;
@@ -19396,8 +19483,8 @@
  #elif defined(_ALLBSD_SOURCE)
      {
          int ret;
---- ./jdk/src/solaris/native/sun/nio/ch/sctp/Sctp.h	Tue Feb 28 14:44:01 2017 +0300
-+++ ./jdk/src/solaris/native/sun/nio/ch/sctp/Sctp.h	Tue Apr 18 21:21:47 2017 -0700
+--- ./jdk/src/solaris/native/sun/nio/ch/sctp/Sctp.h	Tue Jul 11 23:52:06 2017 -0700
++++ ./jdk/src/solaris/native/sun/nio/ch/sctp/Sctp.h	Sat Aug 26 22:08:20 2017 -0700
 @@ -67,7 +67,7 @@
  
  
@@ -19446,8 +19533,8 @@
  jboolean loadSocketExtensionFuncs(JNIEnv* env);
  
  #endif /* !SUN_NIO_CH_SCTP_H */
---- ./jdk/src/solaris/native/sun/nio/ch/sctp/SctpNet.c	Tue Feb 28 14:44:01 2017 +0300
-+++ ./jdk/src/solaris/native/sun/nio/ch/sctp/SctpNet.c	Tue Apr 18 21:21:47 2017 -0700
+--- ./jdk/src/solaris/native/sun/nio/ch/sctp/SctpNet.c	Tue Jul 11 23:52:06 2017 -0700
++++ ./jdk/src/solaris/native/sun/nio/ch/sctp/SctpNet.c	Sat Aug 26 22:08:20 2017 -0700
 @@ -58,6 +58,7 @@
   */
  jboolean loadSocketExtensionFuncs
@@ -19464,8 +19551,8 @@
  
      funcsLoaded = JNI_TRUE;
      return JNI_TRUE;
---- ./jdk/src/solaris/native/sun/nio/fs/MagicFileTypeDetector.c	Tue Feb 28 14:44:01 2017 +0300
-+++ ./jdk/src/solaris/native/sun/nio/fs/MagicFileTypeDetector.c	Tue Apr 18 21:21:47 2017 -0700
+--- ./jdk/src/solaris/native/sun/nio/fs/MagicFileTypeDetector.c	Tue Jul 11 23:52:06 2017 -0700
++++ ./jdk/src/solaris/native/sun/nio/fs/MagicFileTypeDetector.c	Sat Aug 26 22:08:20 2017 -0700
 @@ -31,6 +31,12 @@
  #include <dlfcn.h>
  #include <string.h>
@@ -19488,8 +19575,8 @@
          if (magic_handle == NULL) {
              return JNI_FALSE;
          }
---- ./jdk/src/solaris/native/sun/security/pkcs11/j2secmod_md.c	Tue Feb 28 14:44:01 2017 +0300
-+++ ./jdk/src/solaris/native/sun/security/pkcs11/j2secmod_md.c	Tue Apr 18 21:21:47 2017 -0700
+--- ./jdk/src/solaris/native/sun/security/pkcs11/j2secmod_md.c	Tue Jul 11 23:52:06 2017 -0700
++++ ./jdk/src/solaris/native/sun/security/pkcs11/j2secmod_md.c	Sat Aug 26 22:08:20 2017 -0700
 @@ -54,7 +54,7 @@
      }
  
@@ -19499,8 +19586,8 @@
      void *hModule = dlopen(libName, RTLD_LAZY);
  #else
      void *hModule = dlopen(libName, RTLD_NOLOAD);
---- ./jdk/src/solaris/native/sun/tools/attach/BsdVirtualMachine.c	Tue Feb 28 14:44:01 2017 +0300
-+++ ./jdk/src/solaris/native/sun/tools/attach/BsdVirtualMachine.c	Tue Apr 18 21:21:47 2017 -0700
+--- ./jdk/src/solaris/native/sun/tools/attach/BsdVirtualMachine.c	Tue Jul 11 23:52:06 2017 -0700
++++ ./jdk/src/solaris/native/sun/tools/attach/BsdVirtualMachine.c	Sat Aug 26 22:08:20 2017 -0700
 @@ -37,7 +37,9 @@
  #include <sys/types.h>
  #include <sys/socket.h>
@@ -19511,8 +19598,8 @@
  #include <sys/un.h>
  #include <fcntl.h>
  
---- ./jdk/src/solaris/native/sun/xawt/XWindow.c	Tue Feb 28 14:44:01 2017 +0300
-+++ ./jdk/src/solaris/native/sun/xawt/XWindow.c	Tue Apr 18 21:21:47 2017 -0700
+--- ./jdk/src/solaris/native/sun/xawt/XWindow.c	Tue Jul 11 23:52:06 2017 -0700
++++ ./jdk/src/solaris/native/sun/xawt/XWindow.c	Sat Aug 26 22:08:20 2017 -0700
 @@ -886,7 +886,7 @@
  {
      KeySym originalKeysym = *keysym;
@@ -19522,8 +19609,8 @@
      /* The following code on Linux will cause the keypad keys
       * not to echo on JTextField when the NumLock is on. The
       * keysyms will be 0, because the last parameter 2 is not defined.
---- ./jdk/src/windows/native/com/sun/media/sound/PLATFORM_API_WinOS_DirectSound.cpp	Tue Feb 28 14:44:01 2017 +0300
-+++ ./jdk/src/windows/native/com/sun/media/sound/PLATFORM_API_WinOS_DirectSound.cpp	Tue Apr 18 21:21:47 2017 -0700
+--- ./jdk/src/windows/native/com/sun/media/sound/PLATFORM_API_WinOS_DirectSound.cpp	Tue Jul 11 23:52:06 2017 -0700
++++ ./jdk/src/windows/native/com/sun/media/sound/PLATFORM_API_WinOS_DirectSound.cpp	Sat Aug 26 22:08:20 2017 -0700
 @@ -308,7 +308,7 @@
                                        DAUDIO_PCM,
                                        (bitsArray[bitIndex]==8)?FALSE:TRUE,  /* signed */

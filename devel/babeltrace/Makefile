@@ -1,11 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	babeltrace
-PORTVERSION=	1.5.2
+PORTVERSION=	1.5.3
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
-MAINTAINER=	luca.pizzamiglio@gmail.com
+MAINTAINER=	pizzamig@FreeBSD.org
 COMMENT=	Tool and library to read, write and convert execution traces
 
 # license is complicated

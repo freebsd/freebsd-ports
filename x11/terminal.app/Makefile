@@ -2,13 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	terminal.app
-PORTVERSION=	0.9.8
-PORTREVISION=	3
+PORTVERSION=	0.9.9
 CATEGORIES=	x11 gnustep
 MASTER_SITES=	SAVANNAH/gap
 DISTNAME=	Terminal-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	theraven@FreeBSD.org
 COMMENT=	Terminal Emulator for GNUstep
 
 LICENSE=	GPLv2 # only

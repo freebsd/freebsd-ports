@@ -210,9 +210,6 @@ def gendiff(path, wrksrc, outfile = ''):
 		if (outfile != ''):
 			outbuf[0] = '--- %s\n' % path_orig
 			outbuf[1] = '+++ %s\n' % path
-			outbuf.insert(0, '\n')
-			outbuf.insert(0, '$%s$\n' % Vars.CVS_ID)
-			outbuf.insert(0, '\n')
 			open(outfile, 'w').writelines(outbuf)
 		else:
 			sys.stdout.writelines(outbuf)

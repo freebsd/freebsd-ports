@@ -29,6 +29,7 @@ share/icons/hicolor/32x32/apps/tiled.png
 share/icons/hicolor/32x32/mimetypes/application-x-tiled.png
 share/icons/hicolor/scalable/apps/tiled.svg
 share/icons/hicolor/scalable/mimetypes/application-x-tiled.svg
+share/metainfo/tiled.appdata.xml
 share/mime/packages/tiled.xml
 share/thumbnailers/tiled.thumbnailer
 %%DATADIR%%/translations/tiled_ar_DZ.qm

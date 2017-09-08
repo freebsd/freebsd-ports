@@ -3,11 +3,11 @@
 
 PORTNAME=	gdb
 PORTVERSION=	8.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	GNU
 
-MAINTAINER=	luca.pizzamiglio@gmail.com
+MAINTAINER=	pizzamig@FreeBSD.org
 COMMENT=	GNU GDB of newer version than comes with the system
 
 LICENSE=	GPLv3
@@ -55,7 +55,7 @@ VER=		${PORTVERSION:S/.//g}
 PLIST_SUB=	VER=${VER}
 
 # untested elsewhere, might work
-ONLY_FOR_ARCHS=		amd64 armv6 i386 mips powerpc powerpc64	
+ONLY_FOR_ARCHS=	aarch64 amd64 armv6 i386 mips powerpc powerpc64	
 
 OPTIONS_DEFINE=	DEBUG GDB_LINK GUILE KGDB PYTHON TUI
 

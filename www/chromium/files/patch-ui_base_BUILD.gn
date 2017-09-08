@@ -1,7 +1,7 @@
---- ui/base/BUILD.gn.orig	2017-06-05 19:03:30 UTC
-+++ ui/base/BUILD.gn
-@@ -361,7 +361,7 @@ component("base") {
-     sources += [ "touch/touch_device_android.cc" ]
+--- ui/base/BUILD.gn.orig	2017-08-10 15:44:20.348174000 +0200
++++ ui/base/BUILD.gn	2017-08-10 15:50:46.788601000 +0200
+@@ -365,7 +365,7 @@
+     sources -= [ "touch/touch_device_util.cc" ]
    } else if (is_ios) {
      sources += [ "touch/touch_device_ios.cc" ]
 -  } else if (is_linux) {
@@ -9,7 +9,7 @@
      sources += [ "touch/touch_device_linux.cc" ]
    } else {
      # Empty implementation for all other cases.
-@@ -471,11 +471,11 @@ component("base") {
+@@ -476,11 +476,11 @@
      ]
    }
  
@@ -23,16 +23,16 @@
      deps += [ "//build/linux:fontconfig" ]
    }
  
-@@ -488,7 +488,7 @@ component("base") {
-     ]
+@@ -498,7 +498,7 @@
+     sources -= [ "idle/idle_linux.cc" ]
    }
  
--  if (is_linux) {
-+  if (is_linux || is_bsd) {
-     if (!toolkit_views && !use_aura) {
-       sources -= [
-         "dragdrop/drag_utils.cc",
-@@ -844,7 +844,7 @@ test("ui_base_unittests") {
+-  if (is_chromeos || (use_aura && ((is_linux && !use_x11) || is_android))) {
++  if (is_chromeos || (use_aura && (((is_linux || is_bsd) && !use_x11) || is_android))) {
+     sources += [
+       "dragdrop/os_exchange_data_provider_aura.cc",
+       "dragdrop/os_exchange_data_provider_aura.h",
+@@ -841,7 +841,7 @@
        "ime/win/imm32_manager_unittest.cc",
        "ime/win/tsf_input_scope_unittest.cc",
      ]
@@ -41,7 +41,7 @@
        sources += [ "ime/input_method_auralinux_unittest.cc" ]
      }
      if (use_x11) {
-@@ -967,7 +967,7 @@ test("ui_base_unittests") {
+@@ -964,7 +964,7 @@
      ]
    }
  
@@ -50,7 +50,7 @@
      # TODO(brettw): We should be able to depend on //ui/resources:ui_test_pak
      # instead of depending directly on the non-test .pak files, but depending
      # on ui_test_pak seems to have no effect.
-@@ -980,7 +980,7 @@ test("ui_base_unittests") {
+@@ -977,7 +977,7 @@
        "//third_party/mesa:osmesa",
      ]
    }

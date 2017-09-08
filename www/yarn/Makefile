@@ -6,7 +6,7 @@ DISTVERSION=	0.27.5
 CATEGORIES=	www
 MASTER_SITES=	https://yarnpkg.com/downloads/${PORTVERSION}/
 
-MAINTAINER=	luca.pizzamiglio@gmail.com
+MAINTAINER=	pizzamig@FreeBSD.org
 COMMENT=	Package manager for node, alternative to npm
 
 LICENSE=	BSD2CLAUSE

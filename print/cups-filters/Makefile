@@ -2,6 +2,7 @@
 
 PORTNAME=	cups-filters
 PORTVERSION=	1.16.0
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	http://www.openprinting.org/download/cups-filters/
 

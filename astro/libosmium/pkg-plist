@@ -1,13 +1,17 @@
 include/gdalcpp.hpp
 include/osmium/area/assembler.hpp
 include/osmium/area/assembler_config.hpp
+include/osmium/area/assembler_legacy.hpp
 include/osmium/area/detail/basic_assembler.hpp
+include/osmium/area/detail/basic_assembler_with_tags.hpp
 include/osmium/area/detail/node_ref_segment.hpp
 include/osmium/area/detail/proto_ring.hpp
 include/osmium/area/detail/segment_list.hpp
 include/osmium/area/detail/vector.hpp
 include/osmium/area/geom_assembler.hpp
 include/osmium/area/multipolygon_collector.hpp
+include/osmium/area/multipolygon_manager.hpp
+include/osmium/area/multipolygon_manager_legacy.hpp
 include/osmium/area/problem_reporter.hpp
 include/osmium/area/problem_reporter_exception.hpp
 include/osmium/area/problem_reporter_ogr.hpp
@@ -60,6 +64,7 @@ include/osmium/index/map/dense_file_array.hpp
 include/osmium/index/map/dense_mem_array.hpp
 include/osmium/index/map/dense_mmap_array.hpp
 include/osmium/index/map/dummy.hpp
+include/osmium/index/map/flex_mem.hpp
 include/osmium/index/map/sparse_file_array.hpp
 include/osmium/index/map/sparse_mem_array.hpp
 include/osmium/index/map/sparse_mem_map.hpp
@@ -123,6 +128,7 @@ include/osmium/io/writer_options.hpp
 include/osmium/io/xml_input.hpp
 include/osmium/io/xml_output.hpp
 include/osmium/memory/buffer.hpp
+include/osmium/memory/callback_buffer.hpp
 include/osmium/memory/collection.hpp
 include/osmium/memory/item.hpp
 include/osmium/memory/item_iterator.hpp
@@ -154,6 +160,11 @@ include/osmium/osm/way.hpp
 include/osmium/relations/collector.hpp
 include/osmium/relations/detail/member_meta.hpp
 include/osmium/relations/detail/relation_meta.hpp
+include/osmium/relations/manager_util.hpp
+include/osmium/relations/members_database.hpp
+include/osmium/relations/relations_database.hpp
+include/osmium/relations/relations_manager.hpp
+include/osmium/storage/item_stash.hpp
 include/osmium/tags/filter.hpp
 include/osmium/tags/matcher.hpp
 include/osmium/tags/regex_filter.hpp

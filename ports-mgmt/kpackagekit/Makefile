@@ -13,6 +13,9 @@ COMMENT=	KDE interface for PackageKit
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Skipped for more than 5 years
+EXPIRATION_DATE=	2017-09-27
+
 LIB_DEPENDS=	libpackagekit-qt.so:ports-mgmt/packagekit-qt4
 
 USES=		cmake gettext kde:4 pkgconfig tar:bzip2

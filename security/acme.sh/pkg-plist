@@ -2,7 +2,7 @@ sbin/acme.sh
 %%EXAMPLESDIR%%/acme.sh
 %%EXAMPLESDIR%%/deploy/README.md
 %%EXAMPLESDIR%%/deploy/apache.sh
-%%EXAMPLESDIR%%/deploy/cpanel.sh
+%%EXAMPLESDIR%%/deploy/cpanel_uapi.sh
 %%EXAMPLESDIR%%/deploy/dovecot.sh
 %%EXAMPLESDIR%%/deploy/exim4.sh
 %%EXAMPLESDIR%%/deploy/haproxy.sh
@@ -13,6 +13,7 @@ sbin/acme.sh
 %%EXAMPLESDIR%%/deploy/nginx.sh
 %%EXAMPLESDIR%%/deploy/opensshd.sh
 %%EXAMPLESDIR%%/deploy/pureftpd.sh
+%%EXAMPLESDIR%%/deploy/unifi.sh
 %%EXAMPLESDIR%%/deploy/vsftpd.sh
 %%EXAMPLESDIR%%/dnsapi/README.md
 %%EXAMPLESDIR%%/dnsapi/dns_ad.sh
@@ -26,10 +27,13 @@ sbin/acme.sh
 %%EXAMPLESDIR%%/dnsapi/dns_dnsimple.sh
 %%EXAMPLESDIR%%/dnsapi/dns_do.sh
 %%EXAMPLESDIR%%/dnsapi/dns_dp.sh
+%%EXAMPLESDIR%%/dnsapi/dns_duckdns.sh
+%%EXAMPLESDIR%%/dnsapi/dns_dyn.sh
 %%EXAMPLESDIR%%/dnsapi/dns_dynu.sh
 %%EXAMPLESDIR%%/dnsapi/dns_freedns.sh
 %%EXAMPLESDIR%%/dnsapi/dns_gandi_livedns.sh
 %%EXAMPLESDIR%%/dnsapi/dns_gd.sh
+%%EXAMPLESDIR%%/dnsapi/dns_he.sh
 %%EXAMPLESDIR%%/dnsapi/dns_infoblox.sh
 %%EXAMPLESDIR%%/dnsapi/dns_ispconfig.sh
 %%EXAMPLESDIR%%/dnsapi/dns_knot.sh
@@ -38,8 +42,10 @@ sbin/acme.sh
 %%EXAMPLESDIR%%/dnsapi/dns_lua.sh
 %%EXAMPLESDIR%%/dnsapi/dns_me.sh
 %%EXAMPLESDIR%%/dnsapi/dns_myapi.sh
+%%EXAMPLESDIR%%/dnsapi/dns_namecom.sh
 %%EXAMPLESDIR%%/dnsapi/dns_nsone.sh
 %%EXAMPLESDIR%%/dnsapi/dns_nsupdate.sh
 %%EXAMPLESDIR%%/dnsapi/dns_ovh.sh
 %%EXAMPLESDIR%%/dnsapi/dns_pdns.sh
 %%EXAMPLESDIR%%/dnsapi/dns_vscale.sh
+%%EXAMPLESDIR%%/dnsapi/dns_yandex.sh

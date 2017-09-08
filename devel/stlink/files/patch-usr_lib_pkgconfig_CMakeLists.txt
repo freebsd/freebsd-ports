@@ -1,9 +1,9 @@
---- usr/lib/pkgconfig/CMakeLists.txt.orig	2017-01-30 06:06:25 UTC
-+++ usr/lib/pkgconfig/CMakeLists.txt
+--- usr/lib/pkgconfig/CMakeLists.txt.orig	2017-07-01 17:41:54.000000000 +0300
++++ usr/lib/pkgconfig/CMakeLists.txt	2017-08-21 18:28:07.997277000 +0300
 @@ -10,5 +10,5 @@ configure_file(
  )
  
  install(FILES "${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}.pc"
--	DESTINATION lib/${CMAKE_LIBRARY_PATH}/pkgconfig/
+-	DESTINATION ${STLINK_LIBRARY_PATH}/pkgconfig/
 +	DESTINATION libdata/pkgconfig/
  )

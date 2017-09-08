@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Algorithm-Cluster
-PORTVERSION=	1.52
-PORTREVISION=	1
+PORTVERSION=	1.53
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:MDEHOON
@@ -16,5 +15,8 @@ MAKE_JOBS_UNSAFE=	yes
 
 USES=		perl5
 USE_PERL5=	configure
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Algorithm/Cluster/Cluster.so
 
 .include <bsd.port.mk>

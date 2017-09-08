@@ -5,6 +5,7 @@ share/applications/gxkb.desktop
 %%DATADIR%%/flags/bg.png
 %%DATADIR%%/flags/by.png
 %%DATADIR%%/flags/cz.png
+%%DATADIR%%/flags/cz_qwerty.png
 %%DATADIR%%/flags/de.png
 %%DATADIR%%/flags/ee.png
 %%DATADIR%%/flags/es.png

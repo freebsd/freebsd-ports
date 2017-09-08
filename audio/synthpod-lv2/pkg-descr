@@ -1,0 +1,18 @@
+Synthpod is an LV2 host. It can be run as a standalone app and be used as a
+tool for live performances or general audio and event filtering.
+
+It was conceptualized to fill the gap between pure textual (e.g. SuperCollider)
+and pure visual flow (e.g. Pure Data) audio programming paradigms.
+
+Potential fields of application may include:
+* Live audio synthesis
+* Real-time event scripting
+* Non-linear signal routing
+* Advanced control automation
+* Advanced event filtering
+* Live mixing
+* Live coding
+* Algorithmic composition
+* Interfacing to expressive controllers
+
+WWW: https://open-music-kontrollers.ch/lv2/synthpod

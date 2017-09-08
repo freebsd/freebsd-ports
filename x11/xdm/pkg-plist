@@ -1,23 +1,23 @@
 bin/xdm
 %%XDMSHELL%%bin/xdmshell
+@sample etc/X11/xdm/GiveConsole.sample
+@sample etc/X11/xdm/TakeConsole.sample
+@sample etc/X11/xdm/Xaccess.sample
+@sample etc/X11/xdm/Xreset.sample
+@sample etc/X11/xdm/Xresources.sample
+@sample etc/X11/xdm/Xservers.sample
+@sample etc/X11/xdm/Xsession.sample
+@sample etc/X11/xdm/Xsetup_0.sample
+@sample etc/X11/xdm/Xstartup.sample
+@sample etc/X11/xdm/Xwilling.sample
+@sample etc/X11/xdm/xdm-config.sample
 lib/X11/xdm/chooser
 lib/X11/xdm/libXdmGreet.so
-lib/X11/xdm/pixmaps/xorg-bw.xpm
-lib/X11/xdm/pixmaps/xorg.xpm
 man/man1/xdm.1.gz
 %%XDMSHELL%%man/man1/xdmshell.1.gz
 share/X11/app-defaults/Chooser
-@sample lib/X11/xdm/GiveConsole.sample
-@sample lib/X11/xdm/TakeConsole.sample
-@sample lib/X11/xdm/Xaccess.sample
-@sample lib/X11/xdm/Xreset.sample
-@sample lib/X11/xdm/Xresources.sample
-@sample lib/X11/xdm/Xservers.sample
-@sample lib/X11/xdm/Xsession.sample
-@sample lib/X11/xdm/Xsetup_0.sample
-@sample lib/X11/xdm/Xstartup.sample
-@sample lib/X11/xdm/Xwilling.sample
-@sample lib/X11/xdm/xdm-config.sample
+share/pixmaps/xorg-bw.xpm
+share/pixmaps/xorg.xpm
 @postunexec rm -rf /var/db/xdm/* 2>/dev/null || true
 @dir /var/db/xdm
 @dir /var/db

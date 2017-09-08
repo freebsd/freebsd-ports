@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	bruteforceblocker
-PORTVERSION=	1.2.3
-PORTREVISION=	1
+PORTVERSION=	1.2.4
 CATEGORIES=	security
-MASTER_SITES=	http://danger.rulez.sk/projects/bruteforceblocker/ \
-		LOCAL/pav
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	dgerzo
 
 MAINTAINER=	danger@FreeBSD.org
 COMMENT=	Checks for SSH bruteforce and blocks given IPs
@@ -22,7 +22,7 @@ USE_PERL5=	run
 
 OPTIONS_DEFINE=	DOCS
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 SUB_FILES=	pkg-message
 SHEBANG_FILES=	${PORTNAME}.pl
 

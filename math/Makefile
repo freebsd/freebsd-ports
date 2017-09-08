@@ -86,6 +86,7 @@
     SUBDIR += acalc
     SUBDIR += add
     SUBDIR += algae
+    SUBDIR += alglib
     SUBDIR += algotutor
     SUBDIR += alt-ergo
     SUBDIR += amath

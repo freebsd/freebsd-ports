@@ -26,7 +26,6 @@ GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 INSTALL_TARGET=	install-strip
 
 post-install:

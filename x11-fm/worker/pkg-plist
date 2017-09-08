@@ -6,6 +6,7 @@ share/pixmaps/WorkerIcon.xpm
 share/pixmaps/WorkerIcon16.xpm
 share/pixmaps/WorkerIcon32.xpm
 share/pixmaps/WorkerIcon48.xpm
+share/appdata/worker.appdata.xml
 share/applications/worker.desktop
 %%DATADIR%%/catalogs/cesky.catalog
 %%DATADIR%%/catalogs/cesky.catalog.utf8

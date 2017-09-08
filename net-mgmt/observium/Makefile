@@ -3,7 +3,7 @@
 
 PORTNAME=	observium
 PORTVERSION=	0.16.10.8128
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.observium.org/
 DISTNAME=	${PORTNAME}-community-latest
@@ -12,47 +12,55 @@ DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 MAINTAINER=	dirkx@webweaving.org
 COMMENT=	Autodiscovering PHP/MySQL/SNMP based network monitoring
 
-LICENSE=	GPLv3
+LICENSE=        EULA
+LICENSE_NAME=	"Observium License Version 1.0"
+LICENSE_FILE=	${WRKSRC}/LICENSE.COMMUNITY
+LICENSE_PERMS=  dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USES=		php:cli python shebangfix
-SHEBANG_FILES=	mibs/process.pl \
-	scripts/agent-local/areca-hw \
-	scripts/agent-local/asterisk \
-	scripts/agent-local/bind \
-	scripts/agent-local/crashplan \
-	scripts/agent-local/edac \
-	scripts/agent-local/exim-mailqueue.sh \
-	scripts/agent-local/hdarray \
-	scripts/agent-local/ipmitool-sensor \
-	scripts/agent-local/kamailio \
-	scripts/agent-local/ksm \
-	scripts/agent-local/lighttpd \
-	scripts/agent-local/lmsensors \
-	scripts/agent-local/lvs_stats \
-	scripts/agent-local/postfix_mailgraph \
-	scripts/agent-local/postfix_qshape \
-	scripts/agent-local/postgresql.pl \
-	scripts/agent-local/proxmox-qemu \
-	scripts/agent-local/sabnzbd-qstatus \
-	scripts/agent-local/temperature \
-	scripts/agent-local/virt-what \
-	scripts/agent-local/vmwaretools \
-	scripts/agent-local/zimbra \
-	scripts/add_ds.pl \
-	scripts/add_ds_to_rrd.pl \
-	scripts/get-geshi.sh \
-	scripts/get-jpgraph.sh \
-	scripts/ifAlias \
-	scripts/ifAlias_persist \
-	scripts/makecss.sh \
-	scripts/observium_agent \
-	scripts/removespikes.php \
-	scripts/removespikes.pl \
-	scripts/rename-mibs.pl \
-	scripts/rrdtoolx.py \
-	poller-wrapper.py
+SHEBANG_FILES=	\
+		mibs/process.pl \
+		poller-wrapper.py \
+		scripts/add_ds_to_rrd.pl \
+		scripts/add_ds.pl \
+		scripts/agent-local/areca-hw \
+		scripts/agent-local/asterisk \
+		scripts/agent-local/bind \
+		scripts/agent-local/crashplan \
+		scripts/agent-local/edac \
+		scripts/agent-local/exim-mailqueue.sh \
+		scripts/agent-local/hdarray \
+		scripts/agent-local/ipmitool-sensor \
+		scripts/agent-local/kamailio \
+		scripts/agent-local/ksm \
+		scripts/agent-local/lighttpd \
+		scripts/agent-local/lmsensors \
+		scripts/agent-local/lvs_stats \
+		scripts/agent-local/memcached \
+		scripts/agent-local/nginx \
+		scripts/agent-local/postfix_mailgraph \
+		scripts/agent-local/postfix_qshape \
+		scripts/agent-local/postgresql.pl \
+		scripts/agent-local/proxmox-qemu \
+		scripts/agent-local/sabnzbd-qstatus \
+		scripts/agent-local/temperature \
+		scripts/agent-local/virt-what \
+		scripts/agent-local/vmwaretools \
+		scripts/agent-local/zimbra \
+		scripts/get-geshi.sh \
+		scripts/get-jpgraph.sh \
+		scripts/glue.py \
+		scripts/ifAlias \
+		scripts/ifAlias_persist \
+		scripts/logparser \
+		scripts/makecss.sh \
+		scripts/observium_agent \
+		scripts/removespikes.php \
+		scripts/removespikes.pl \
+		scripts/rename-mibs.pl \
+		scripts/rrdtoolx.py
 
 USE_PHP=	ctype filter gd iconv json mcrypt mysqli openssl posix session snmp tokenizer xml zlib
 IGNORE_WITH_PHP=	71
@@ -88,7 +96,7 @@ WMIC_RUN_DEPENDS=	wmic:net-mgmt/wmi-client
 
 .include <bsd.port.options.mk>
 
-SUB_FILES+=	pkg-message
+SUB_FILES+=	pkg-message observium.conf.sample
 SUB_LIST+=	PHP="${PHPBASE}/bin/php" PYTHON=${PHPBASE}/bin/python
 
 ROOT_FILES=	rename_device.php snmptrap.php add_device.php \
@@ -100,9 +108,11 @@ ROOT_DIRS=	html scripts includes update mibs libs
 PORTDOCS=	INSTALL README
 PORTEXAMPLES=	snmp.conf.example snmpd.conf.example
 
-.if ${PORT_OPTIONS:MAPACHEMOD} && !defined(PACKAGE_BUILDING)
-USES+=	php:mod
+.if ${PORT_OPTIONS:MAPACHEMOD}
 USE_APACHE_RUN=	22+
+.endif
+.if !defined(PACKAGE_BUILDING)
+USES+=	php:mod
 .else
 # Package builder doesn't create php5 with module
 USES+=	php:web
@@ -118,7 +128,7 @@ post-patch:
 	${REINPLACE_CMD} 's|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/poller-wrapper.py ${WRKSRC}/poller.php
 
 do-install:
-	${MKDIR} ${STAGEDIR}/${WWWDIR}
+	${MKDIR} ${STAGEDIR}/${WWWDIR} ${STAGEDIR}/${PREFIX}/${APACHEETCDIR}/Includes
 .for dir in ${ROOT_DIRS}
 	${MKDIR} ${STAGEDIR}/${WWWDIR}/${dir}
 	cd ${WRKSRC}/${dir} && ${COPYTREE_SHARE} . ${STAGEDIR}/${WWWDIR}/${dir}
@@ -147,5 +157,6 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}/${EXAMPLESDIR}
 .endfor
 .endif
+	${INSTALL_DATA} ${WRKDIR}/observium.conf.sample ${STAGEDIR}/${PREFIX}/${APACHEETCDIR}/Includes
 
 .include <bsd.port.mk>

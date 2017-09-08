@@ -1,0 +1,4 @@
+GN is a meta-build system that generates NinjaBuild files so that you can build
+Chromium with Ninja.
+
+WWW: https://chromium.googlesource.com/chromium/src/tools/gn/

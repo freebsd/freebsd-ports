@@ -1,3 +1,3 @@
-TIMESTAMP = 1484659684
-SHA256 (KDE/Qt/5.7.1/qtwebkit-opensource-src-5.7.1.tar.xz) = a46cf7c89339645f94a5777e8ae5baccf75c5fc87ab52c9dafc25da3327b5f03
-SIZE (KDE/Qt/5.7.1/qtwebkit-opensource-src-5.7.1.tar.xz) = 35298736
+TIMESTAMP = 1502177654
+SHA256 (qtwebkit-5.212.0-alpha2.tar.xz) = f8f901de567e11fc5659402b6b827eac75505ff9c5072d8e919aa306003f8f8a
+SIZE (qtwebkit-5.212.0-alpha2.tar.xz) = 12456284

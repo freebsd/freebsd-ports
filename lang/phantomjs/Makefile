@@ -32,7 +32,6 @@ GH_TUPLE=	Vitallium:phantomjs-3rdparty-win:19051aa:msvc2013/src/qt/3rdparty \
 		Vitallium:qtbase:b5cc008:qtbase/src/qt/qtbase \
 		Vitallium:qtwebkit:e7b7433:qtwebkit/src/qt/qtwebkit
 RUBY_NO_RUN_DEPENDS=	yes
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 PLIST_FILES=	bin/phantomjs
 NO_CCACHE=	yes
 

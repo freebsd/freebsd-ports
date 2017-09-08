@@ -4,6 +4,7 @@
     COMMENT = Security tools
 
     SUBDIR += 0d1n
+    SUBDIR += 1password-client
     SUBDIR += ADMsmb
     SUBDIR += ADMsnmp
     SUBDIR += R-cran-ROAuth
@@ -38,7 +39,6 @@
     SUBDIR += base
     SUBDIR += bcrypt
     SUBDIR += bcwipe
-    SUBDIR += bdc
     SUBDIR += bdes
     SUBDIR += bearssl
     SUBDIR += beecrypt
@@ -180,6 +180,7 @@
     SUBDIR += gnupg
     SUBDIR += gnupg1
     SUBDIR += gnupg20
+    SUBDIR += gnupg22
     SUBDIR += gnutls
     SUBDIR += go.crypto
     SUBDIR += go-cve-dictionary
@@ -934,7 +935,6 @@
     SUBDIR += py-pyelliptic
     SUBDIR += py-pylibacl
     SUBDIR += py-pymacaroons-pynacl
-    SUBDIR += py-pyme
     SUBDIR += py-pynacl
     SUBDIR += py-pyotp
     SUBDIR += py-pyptlib
@@ -1043,6 +1043,7 @@
     SUBDIR += rubygem-encryptor
     SUBDIR += rubygem-ezcrypto
     SUBDIR += rubygem-googleauth
+    SUBDIR += rubygem-gpgme
     SUBDIR += rubygem-gpgr
     SUBDIR += rubygem-gssapi
     SUBDIR += rubygem-hkdf

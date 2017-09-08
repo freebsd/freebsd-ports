@@ -8,6 +8,7 @@
     SUBDIR += 9menu
     SUBDIR += alacritty
     SUBDIR += alltray
+    SUBDIR += alttab
     SUBDIR += altyo
     SUBDIR += antimicro
     SUBDIR += appres
@@ -313,6 +314,7 @@
     SUBDIR += screen-message
     SUBDIR += scripts
     SUBDIR += scrnsaverproto
+    SUBDIR += sddm
     SUBDIR += sessreg
     SUBDIR += setlayout
     SUBDIR += setxkbmap

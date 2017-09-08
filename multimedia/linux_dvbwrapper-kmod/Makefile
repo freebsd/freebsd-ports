@@ -19,7 +19,7 @@ PLIST_FILES=	${KMODDIR}/linux_dvbwrapper.ko
 CFLAGS+=	${DEBUG_FLAGS}
 
 do-extract:
-	${MKDIR} ${WRKSRC}
-	${CP} ${FILESDIR}/Makefile ${FILESDIR}/*.[ch] ${WRKSRC}
+	@${MKDIR} ${WRKSRC}
+	@${CP} ${FILESDIR}/Makefile ${FILESDIR}/*.[ch] ${WRKSRC}
 
 .include <bsd.port.mk>

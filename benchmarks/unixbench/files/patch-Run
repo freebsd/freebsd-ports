@@ -1,61 +1,71 @@
---- Run.orig	1999-07-28 22:04:47 UTC
+--- Run.orig	2017-09-04 20:35:19 UTC
 +++ Run
-@@ -88,11 +88,11 @@ else
- fi
+@@ -91,10 +91,10 @@ chomp($BASEDIR);
+ my $BINDIR = getDir('UB_BINDIR', $BASEDIR . "/pgms");
  
- # check that the required files are in the proper places
--if make check; then
--        :
--else
--	make all
--fi
-+#if make check; then
-+#        :
-+#else
-+#	make all
-+#fi
+ # Temp directory, for temp files.
+-my $TMPDIR = getDir('UB_TMPDIR', $BASEDIR . "/tmp");
++my $TMPDIR = "/tmp";
+ 
+ # Directory to put results in.
+-my $RESULTDIR = getDir('UB_RESULTDIR', $BASEDIR . "/results");
++my $RESULTDIR = "/tmp";
+ 
+ # Directory where the tests are executed.
+ my $TESTDIR = getDir('UB_TESTDIR', $BASEDIR . "/testdir");
+@@ -735,12 +735,10 @@ sub getSystemInfo {
+ 
+     # Get the language info.
+     my $lang = getCmdOutput("printenv LANG");
+-    my $map = getCmdOutput("locale -k LC_CTYPE | grep charmap");
++    my $map = getCmdOutput("locale -k | grep charmap");
+     $map =~ s/.*=//;
+-    my $coll = getCmdOutput("locale -k LC_COLLATE | grep collate-codeset");
+-    $coll =~ s/.*=//;
+-    $info->{'language'} = sprintf "%s (charmap=%s, collate=%s)",
+-                                   $lang, $map, $coll;
++    $info->{'language'} = sprintf "%s (charmap=%s)",
++                                   $lang, $map;
+ 
+     # Get details on the CPUs, if possible.
+     my $cpus = getCpuInfo();
+@@ -750,10 +748,9 @@ sub getSystemInfo {
+     }
+ 
+     # Get graphics hardware info.
+-    $info->{'graphics'} = getCmdOutput("3dinfo | cut -f1 -d\'(\'");
++    # $info->{'graphics'} = getCmdOutput("3dinfo | cut -f1 -d\'(\'");
+ 
+     # Get system run state, load and usage info.
+-    $info->{'runlevel'} = getCmdOutput("runlevel | cut -f2 -d\" \"");
+     $info->{'load'} = getCmdOutput("uptime");
+     $info->{'numUsers'} = getCmdOutput("who | wc -l");
+ 
+@@ -781,6 +778,7 @@ sub abortRun {
+ 
+ # Do checks that everything's ready for testing.
+ sub preChecks {
++    return;
+     # Set the language.
+     $ENV{'LANG'} = $language;
+ 
+@@ -1386,7 +1384,7 @@ sub displaySystem {
+     }
+ 
+     # Display system load and usage info.
+-    printf $fd "   %s; runlevel %s\n\n", $info->{'load'}, $info->{'runlevel'};
++    printf $fd "   %s; \n\n", $info->{'load'};
+ }
  
  
- # establish full paths to directories
-@@ -114,7 +114,7 @@ cd $SCRPDIR
- SCRPDIR=`pwd`
- cd $_WD
+@@ -1603,8 +1601,8 @@ sub displaySystemHtml {
+     # Display system runlevel, load and usage info.
+     printf $fd "<tr>\n";
+     printf $fd "   <td><b>Uptime:</b></td>\n";
+-    printf $fd "   <td colspan=2>%s; runlevel %s</td>\n",
+-                   $info->{'load'}, $info->{'runlevel'};
++    printf $fd "   <td colspan=2>%s</td>\n",
++                   $info->{'load'};
+     printf $fd "</tr>\n";
  
--TMPDIR=${HOMEDIR}/tmp
-+TMPDIR=${TMPDIR-${HOMEDIR}/tmp}
- cd $TMPDIR
- TMPDIR=`pwd`
- cd $_WD
-@@ -367,10 +367,11 @@ do				# line argument processing
- 	C)  
- 		logmsg="C Compiler Throughput"
- 		prog="looper ${looper-60} ${CC} cctest.c"
-+		prog="looper ${looper-60} ${CC} cctest.c -o ${TMPDIR}/a.out"
- 		stdout=/dev/null
- 		repeat="$shortloop"
- 		cleanopt="-m $TMPTIMES"
--		rm -f ${TESTDIR}/cctest.o ${TESTDIR}/a.out
-+		rm -f ${TESTDIR}/cctest.o ${TMPDIR}/a.out
- 		;;
- 
- 	arithoh)
-@@ -385,8 +386,8 @@ do				# line argument processing
- 
- 	dc)  
- 		logmsg="Dc: sqrt(2) to 99 decimal places"
--		prog="looper ${looper-30} dc"
--		stdin=dc.dat
-+		prog="looper ${looper-30} \"dc < ${TESTDIR}/dc.dat\""
-+		stdin=
- 		stdout=/dev/null
- 		cleanopt="-m $TMPTIMES"
- 		;;
-@@ -508,7 +509,7 @@ do				# line argument processing
-     ########### some specific cleanup routines ##############
-     case $bench in
-       C)
--      rm -f ${TESTDIR}/cctest.o ${TESTDIR}/a.out
-+      rm -f ${TESTDIR}/cctest.o ${TMPDIR}/a.out
-       ;;
- 
-       fstime | fsbuffer | fsdisk)
+     printf $fd "</table></p>\n\n";

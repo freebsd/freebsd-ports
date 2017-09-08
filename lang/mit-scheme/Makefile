@@ -3,7 +3,7 @@
 
 PORTNAME=	mit-scheme
 PORTVERSION=	9.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang scheme
 MASTER_SITES=	GNU/mit-scheme/stable.pkg/${PORTVERSION}
 DISTNAME=	${PORTNAME}-${PORTVERSION}-${MIT_SCHEME_ARCH}
@@ -87,6 +87,9 @@ MIT_SCHEME_ARCH=${ARCH}
 .endif
 
 PLIST_SUB+=	MIT_SCHEME_ARCH=${MIT_SCHEME_ARCH}
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|-export-dynamic|-rdynamic|g' ${WRKSRC}/microcode/configure ${WRKSRC}/microcode/configure.ac
 
 post-build:
 	@${FIND} ${WRKDIR} -type d -empty -delete

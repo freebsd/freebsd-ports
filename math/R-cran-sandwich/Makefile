@@ -2,15 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	sandwich
-DISTVERSION=	2.3-4
+DISTVERSION=	2.4-0
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Robust Covariance Matrix Estimators
 
-LICENSE=	GPLv2 GPLv3
-LICENSE_COMB=	dual
+LICENSE=	GPLv2+
 
 RUN_DEPENDS=	R-cran-zoo>0:math/R-cran-zoo
 

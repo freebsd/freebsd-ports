@@ -1,11 +1,11 @@
---- Makefile.in.orig	2017-04-12 11:14:48.226620000 +0200
-+++ Makefile.in	2017-04-12 11:15:12.061124000 +0200
-@@ -449,7 +449,7 @@
+--- Makefile.in.orig	2017-09-02 09:47:13 UTC
++++ Makefile.in
+@@ -451,7 +451,7 @@ target_alias = @target_alias@
  top_build_prefix = @top_build_prefix@
  top_builddir = @top_builddir@
  top_srcdir = @top_srcdir@
 -SUBDIRS = gdk-pixbuf po docs thumbnailer tests contrib win32
-+SUBDIRS = gdk-pixbuf po thumbnailer contrib win32
- EXTRA_DIST = \
- 	config.h.win32 		\
- 	glib-tap.mk		\
++SUBDIRS = gdk-pixbuf po thumbnailer tests contrib win32
+ meson_files = \
+ 	meson.build \
+ 	meson_options.txt \

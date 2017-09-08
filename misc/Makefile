@@ -94,9 +94,7 @@
     SUBDIR += floatator
     SUBDIR += fortune-mod-bible
     SUBDIR += fortune-mod-bofh
-    SUBDIR += fortune-mod-culmea-culmilor
     SUBDIR += fortune-mod-epictetus
-    SUBDIR += fortune-mod-ferengi_rules_of_acquisition
     SUBDIR += fortune-mod-futurama
     SUBDIR += fortune-mod-psalms
     SUBDIR += fortuneit
@@ -240,6 +238,7 @@
     SUBDIR += ktouch
     SUBDIR += kwordquiz
     SUBDIR += latex-mk
+    SUBDIR += lazyread
     SUBDIR += lc
     SUBDIR += lesspipe
     SUBDIR += libeatmydata
@@ -255,7 +254,6 @@
     SUBDIR += localedata
     SUBDIR += logsurfer
     SUBDIR += loop
-    SUBDIR += lr
     SUBDIR += lv
     SUBDIR += lxde-common
     SUBDIR += magicpoint
@@ -370,6 +368,8 @@
     SUBDIR += posixtestsuite
     SUBDIR += proxyper
     SUBDIR += pspresent
+    SUBDIR += ptsort
+    SUBDIR += py-YABT
     SUBDIR += py-cinder
     SUBDIR += py-crudini
     SUBDIR += py-fuzzy
@@ -516,7 +516,6 @@
     SUBDIR += xtail
     SUBDIR += xtar
     SUBDIR += xtypo
-    SUBDIR += xyzcmd
     SUBDIR += yaunc
     SUBDIR += ytree
     SUBDIR += zoneinfo

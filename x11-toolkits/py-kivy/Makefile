@@ -14,6 +14,8 @@ COMMENT=	Python NUI library for rapid application development
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		fails to build
+
 BUILD_DEPENDS=	cython:lang/cython
 LIB_DEPENDS=	libmtdev.so:devel/libmtdev
 TEST_DEPENDS=	nosetests-${PYTHON_VER}:devel/py-nose

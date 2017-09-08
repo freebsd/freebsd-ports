@@ -7297,6 +7297,7 @@
 %%WWWDIR%%/core/modules/system/tests/modules/entity_test/src/Entity/EntityTestNoBundle.php
 %%WWWDIR%%/core/modules/system/tests/modules/entity_test/src/Entity/EntityTestNoId.php
 %%WWWDIR%%/core/modules/system/tests/modules/entity_test/src/Entity/EntityTestNoLabel.php
+%%WWWDIR%%/core/modules/system/tests/modules/entity_test/src/Entity/EntityTestNoUuid.php
 %%WWWDIR%%/core/modules/system/tests/modules/entity_test/src/Entity/EntityTestRev.php
 %%WWWDIR%%/core/modules/system/tests/modules/entity_test/src/Entity/EntityTestStringId.php
 %%WWWDIR%%/core/modules/system/tests/modules/entity_test/src/Entity/EntityTestViewBuilder.php

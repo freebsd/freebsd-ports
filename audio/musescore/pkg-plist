@@ -1,11 +1,20 @@
 bin/mscore
+bin/musescore
 man/man1/mscore.1.gz
+man/man1/musescore.1.gz
 share/applications/mscore.desktop
+share/icons/hicolor/128x128/apps/mscore.png
+share/icons/hicolor/16x16/apps/mscore.png
+share/icons/hicolor/24x24/apps/mscore.png
+share/icons/hicolor/32x32/apps/mscore.png
+share/icons/hicolor/48x48/apps/mscore.png
 share/icons/hicolor/48x48/mimetypes/application-vnd.recordare.musicxml+xml.png
 share/icons/hicolor/48x48/mimetypes/application-vnd.recordare.musicxml.png
 share/icons/hicolor/48x48/mimetypes/application-x-musescore+xml.png
 share/icons/hicolor/48x48/mimetypes/application-x-musescore.png
+share/icons/hicolor/512x512/apps/mscore.png
 share/icons/hicolor/64x64/apps/mscore.png
+share/icons/hicolor/96x96/apps/mscore.png
 share/icons/hicolor/scalable/apps/mscore.svg
 share/icons/hicolor/scalable/mimetypes/application-vnd.recordare.musicxml+xml.svg
 share/icons/hicolor/scalable/mimetypes/application-vnd.recordare.musicxml.svg
@@ -18,6 +27,9 @@ share/mime/packages/musescore.xml
 %%DATADIR%%/instruments/instruments.xml
 %%DATADIR%%/locale/instruments_af.qm
 %%DATADIR%%/locale/instruments_ar.qm
+%%DATADIR%%/locale/instruments_ar_DZ.qm
+%%DATADIR%%/locale/instruments_ar_EG.qm
+%%DATADIR%%/locale/instruments_ar_SD.qm
 %%DATADIR%%/locale/instruments_ast.qm
 %%DATADIR%%/locale/instruments_be.qm
 %%DATADIR%%/locale/instruments_bg.qm
@@ -38,6 +50,8 @@ share/mime/packages/musescore.xml
 %%DATADIR%%/locale/instruments_fi.qm
 %%DATADIR%%/locale/instruments_fo.qm
 %%DATADIR%%/locale/instruments_fr.qm
+%%DATADIR%%/locale/instruments_ga.qm
+%%DATADIR%%/locale/instruments_gd.qm
 %%DATADIR%%/locale/instruments_gl.qm
 %%DATADIR%%/locale/instruments_he.qm
 %%DATADIR%%/locale/instruments_hi_IN.qm
@@ -50,6 +64,7 @@ share/mime/packages/musescore.xml
 %%DATADIR%%/locale/instruments_ko.qm
 %%DATADIR%%/locale/instruments_lt.qm
 %%DATADIR%%/locale/instruments_lv.qm
+%%DATADIR%%/locale/instruments_ml.qm
 %%DATADIR%%/locale/instruments_mn_MN.qm
 %%DATADIR%%/locale/instruments_nb.qm
 %%DATADIR%%/locale/instruments_nl.qm
@@ -62,6 +77,7 @@ share/mime/packages/musescore.xml
 %%DATADIR%%/locale/instruments_sk.qm
 %%DATADIR%%/locale/instruments_sl.qm
 %%DATADIR%%/locale/instruments_sr.qm
+%%DATADIR%%/locale/instruments_sr_RS.qm
 %%DATADIR%%/locale/instruments_sv.qm
 %%DATADIR%%/locale/instruments_th.qm
 %%DATADIR%%/locale/instruments_tr.qm
@@ -73,6 +89,9 @@ share/mime/packages/musescore.xml
 %%DATADIR%%/locale/languages.xml
 %%DATADIR%%/locale/mscore_af.qm
 %%DATADIR%%/locale/mscore_ar.qm
+%%DATADIR%%/locale/mscore_ar_DZ.qm
+%%DATADIR%%/locale/mscore_ar_EG.qm
+%%DATADIR%%/locale/mscore_ar_SD.qm
 %%DATADIR%%/locale/mscore_ast.qm
 %%DATADIR%%/locale/mscore_be.qm
 %%DATADIR%%/locale/mscore_bg.qm
@@ -93,6 +112,8 @@ share/mime/packages/musescore.xml
 %%DATADIR%%/locale/mscore_fi.qm
 %%DATADIR%%/locale/mscore_fo.qm
 %%DATADIR%%/locale/mscore_fr.qm
+%%DATADIR%%/locale/mscore_ga.qm
+%%DATADIR%%/locale/mscore_gd.qm
 %%DATADIR%%/locale/mscore_gl.qm
 %%DATADIR%%/locale/mscore_he.qm
 %%DATADIR%%/locale/mscore_hi_IN.qm
@@ -105,6 +126,7 @@ share/mime/packages/musescore.xml
 %%DATADIR%%/locale/mscore_ko.qm
 %%DATADIR%%/locale/mscore_lt.qm
 %%DATADIR%%/locale/mscore_lv.qm
+%%DATADIR%%/locale/mscore_ml.qm
 %%DATADIR%%/locale/mscore_mn_MN.qm
 %%DATADIR%%/locale/mscore_nb.qm
 %%DATADIR%%/locale/mscore_nl.qm
@@ -117,6 +139,7 @@ share/mime/packages/musescore.xml
 %%DATADIR%%/locale/mscore_sk.qm
 %%DATADIR%%/locale/mscore_sl.qm
 %%DATADIR%%/locale/mscore_sr.qm
+%%DATADIR%%/locale/mscore_sr_RS.qm
 %%DATADIR%%/locale/mscore_sv.qm
 %%DATADIR%%/locale/mscore_th.qm
 %%DATADIR%%/locale/mscore_tr.qm
@@ -146,6 +169,7 @@ share/mime/packages/musescore.xml
 %%DATADIR%%/locale/qt_lt.qm
 %%DATADIR%%/locale/qt_nb.qm
 %%DATADIR%%/locale/qt_nl.qm
+%%DATADIR%%/locale/qt_nl_BE.qm
 %%DATADIR%%/locale/qt_pl.qm
 %%DATADIR%%/locale/qt_pt.qm
 %%DATADIR%%/locale/qt_pt_BR.qm
@@ -208,6 +232,7 @@ share/mime/packages/musescore.xml
 %%DATADIR%%/manual/plugins/measure.html
 %%DATADIR%%/manual/plugins/measurebase.html
 %%DATADIR%%/manual/plugins/mscore.png
+%%DATADIR%%/manual/plugins/mtext.html
 %%DATADIR%%/manual/plugins/musescore.html
 %%DATADIR%%/manual/plugins/note.html
 %%DATADIR%%/manual/plugins/notedot.html
@@ -246,7 +271,6 @@ share/mime/packages/musescore.xml
 %%DATADIR%%/manual/plugins/system.html
 %%DATADIR%%/manual/plugins/tbox.html
 %%DATADIR%%/manual/plugins/tempotext.html
-%%DATADIR%%/manual/plugins/text.html
 %%DATADIR%%/manual/plugins/textline.html
 %%DATADIR%%/manual/plugins/textlinesegment.html
 %%DATADIR%%/manual/plugins/tie.html
@@ -313,7 +337,15 @@ share/mime/packages/musescore.xml
 %%DATADIR%%/templates/05-Jazz/02-Big_Band.mscz
 %%DATADIR%%/templates/05-Jazz/03-Jazz_Combo.mscz
 %%DATADIR%%/templates/06-Popular/01-Rock_Band.mscz
-%%DATADIR%%/templates/07-Band/01-Concert_Band.mscz
+%%DATADIR%%/templates/06-Popular/02-Bluegrass_Band.mscz
+%%DATADIR%%/templates/07-Band_and_Percussion/01-Concert_Band.mscz
+%%DATADIR%%/templates/07-Band_and_Percussion/02-Small_Concert_Band.mscz
+%%DATADIR%%/templates/07-Band_and_Percussion/03-Brass_Band.mscz
+%%DATADIR%%/templates/07-Band_and_Percussion/04-Marching_Band.mscz
+%%DATADIR%%/templates/07-Band_and_Percussion/05-Small_Marching_Band.mscz
+%%DATADIR%%/templates/07-Band_and_Percussion/06-Battery_Percussion.mscz
+%%DATADIR%%/templates/07-Band_and_Percussion/07-Large_Pit_Percussion.mscz
+%%DATADIR%%/templates/07-Band_and_Percussion/08-Small_Pit_Percussion.mscz
 %%DATADIR%%/templates/08-Orchestral/01-Classical_Orchestra.mscz
 %%DATADIR%%/templates/08-Orchestral/02-Concert_Orchestra.mscz
 %%DATADIR%%/templates/08-Orchestral/03-String_Orchestra.mscz

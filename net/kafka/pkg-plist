@@ -1,0 +1,156 @@
+%%PORTDOCS%%%%DOCSDIR%%/site-docs/api.html
+%%PORTDOCS%%%%DOCSDIR%%/site-docs/configuration.html
+%%PORTDOCS%%%%DOCSDIR%%/site-docs/connect.html
+%%PORTDOCS%%%%DOCSDIR%%/site-docs/design.html
+%%PORTDOCS%%%%DOCSDIR%%/site-docs/documentation.html
+%%PORTDOCS%%%%DOCSDIR%%/site-docs/documentation/streams.html
+%%PORTDOCS%%%%DOCSDIR%%/site-docs/ecosystem.html
+%%PORTDOCS%%%%DOCSDIR%%/site-docs/generated/admin_client_config.html
+%%PORTDOCS%%%%DOCSDIR%%/site-docs/generated/connect_config.html
+%%PORTDOCS%%%%DOCSDIR%%/site-docs/generated/connect_transforms.html
+%%PORTDOCS%%%%DOCSDIR%%/site-docs/generated/consumer_config.html
+%%PORTDOCS%%%%DOCSDIR%%/site-docs/generated/consumer_metrics.html
+%%PORTDOCS%%%%DOCSDIR%%/site-docs/generated/kafka_config.html
+%%PORTDOCS%%%%DOCSDIR%%/site-docs/generated/producer_config.html
+%%PORTDOCS%%%%DOCSDIR%%/site-docs/generated/protocol_api_keys.html
+%%PORTDOCS%%%%DOCSDIR%%/site-docs/generated/protocol_errors.html
+%%PORTDOCS%%%%DOCSDIR%%/site-docs/generated/protocol_messages.html
+%%PORTDOCS%%%%DOCSDIR%%/site-docs/generated/streams_config.html
+%%PORTDOCS%%%%DOCSDIR%%/site-docs/generated/topic_config.html
+%%PORTDOCS%%%%DOCSDIR%%/site-docs/images/consumer-groups.png
+%%PORTDOCS%%%%DOCSDIR%%/site-docs/images/kafka-apis.png
+%%PORTDOCS%%%%DOCSDIR%%/site-docs/images/kafka_log.png
+%%PORTDOCS%%%%DOCSDIR%%/site-docs/images/kafka_multidc.png
+%%PORTDOCS%%%%DOCSDIR%%/site-docs/images/kafka_multidc_complex.png
+%%PORTDOCS%%%%DOCSDIR%%/site-docs/images/log_anatomy.png
+%%PORTDOCS%%%%DOCSDIR%%/site-docs/images/log_cleaner_anatomy.png
+%%PORTDOCS%%%%DOCSDIR%%/site-docs/images/log_compaction.png
+%%PORTDOCS%%%%DOCSDIR%%/site-docs/images/log_consumer.png
+%%PORTDOCS%%%%DOCSDIR%%/site-docs/images/mirror-maker.png
+%%PORTDOCS%%%%DOCSDIR%%/site-docs/images/producer_consumer.png
+%%PORTDOCS%%%%DOCSDIR%%/site-docs/images/streams-architecture-overview.jpg
+%%PORTDOCS%%%%DOCSDIR%%/site-docs/images/streams-architecture-states.jpg
+%%PORTDOCS%%%%DOCSDIR%%/site-docs/images/streams-architecture-tasks.jpg
+%%PORTDOCS%%%%DOCSDIR%%/site-docs/images/streams-architecture-threads.jpg
+%%PORTDOCS%%%%DOCSDIR%%/site-docs/images/streams-architecture-topology.jpg
+%%PORTDOCS%%%%DOCSDIR%%/site-docs/images/streams-concepts-topology.jpg
+%%PORTDOCS%%%%DOCSDIR%%/site-docs/images/streams-table-duality-01.png
+%%PORTDOCS%%%%DOCSDIR%%/site-docs/images/streams-table-duality-02.png
+%%PORTDOCS%%%%DOCSDIR%%/site-docs/images/streams-table-duality-03.png
+%%PORTDOCS%%%%DOCSDIR%%/site-docs/images/streams-table-updates-01.png
+%%PORTDOCS%%%%DOCSDIR%%/site-docs/images/streams-table-updates-02.png
+%%PORTDOCS%%%%DOCSDIR%%/site-docs/images/tracking_high_level.png
+%%PORTDOCS%%%%DOCSDIR%%/site-docs/implementation.html
+%%PORTDOCS%%%%DOCSDIR%%/site-docs/introduction.html
+%%PORTDOCS%%%%DOCSDIR%%/site-docs/js/templateData.js
+%%PORTDOCS%%%%DOCSDIR%%/site-docs/migration.html
+%%PORTDOCS%%%%DOCSDIR%%/site-docs/ops.html
+%%PORTDOCS%%%%DOCSDIR%%/site-docs/protocol.html
+%%PORTDOCS%%%%DOCSDIR%%/site-docs/quickstart.html
+%%PORTDOCS%%%%DOCSDIR%%/site-docs/security.html
+%%PORTDOCS%%%%DOCSDIR%%/site-docs/streams.html
+%%PORTDOCS%%%%DOCSDIR%%/site-docs/toc.html
+%%PORTDOCS%%%%DOCSDIR%%/site-docs/upgrade.html
+%%PORTDOCS%%%%DOCSDIR%%/site-docs/uses.html
+%%DATADIR%%/bin/connect-distributed.sh
+%%DATADIR%%/bin/connect-standalone.sh
+%%DATADIR%%/bin/kafka-acls.sh
+%%DATADIR%%/bin/kafka-broker-api-versions.sh
+%%DATADIR%%/bin/kafka-configs.sh
+%%DATADIR%%/bin/kafka-console-consumer.sh
+%%DATADIR%%/bin/kafka-console-producer.sh
+%%DATADIR%%/bin/kafka-consumer-groups.sh
+%%DATADIR%%/bin/kafka-consumer-offset-checker.sh
+%%DATADIR%%/bin/kafka-consumer-perf-test.sh
+%%DATADIR%%/bin/kafka-delete-records.sh
+%%DATADIR%%/bin/kafka-mirror-maker.sh
+%%DATADIR%%/bin/kafka-preferred-replica-election.sh
+%%DATADIR%%/bin/kafka-producer-perf-test.sh
+%%DATADIR%%/bin/kafka-reassign-partitions.sh
+%%DATADIR%%/bin/kafka-replay-log-producer.sh
+%%DATADIR%%/bin/kafka-replica-verification.sh
+%%DATADIR%%/bin/kafka-run-class.sh
+%%DATADIR%%/bin/kafka-server-start.sh
+%%DATADIR%%/bin/kafka-server-stop.sh
+%%DATADIR%%/bin/kafka-simple-consumer-shell.sh
+%%DATADIR%%/bin/kafka-streams-application-reset.sh
+%%DATADIR%%/bin/kafka-topics.sh
+%%DATADIR%%/bin/kafka-verifiable-consumer.sh
+%%DATADIR%%/bin/kafka-verifiable-producer.sh
+%%DATADIR%%/libs/aopalliance-repackaged-2.5.0-b05.jar
+%%DATADIR%%/libs/argparse4j-0.7.0.jar
+%%DATADIR%%/libs/commons-lang3-3.5.jar
+%%DATADIR%%/libs/connect-api-%%PORTVERSION%%.jar
+%%DATADIR%%/libs/connect-file-%%PORTVERSION%%.jar
+%%DATADIR%%/libs/connect-json-%%PORTVERSION%%.jar
+%%DATADIR%%/libs/connect-runtime-%%PORTVERSION%%.jar
+%%DATADIR%%/libs/connect-transforms-%%PORTVERSION%%.jar
+%%DATADIR%%/libs/guava-20.0.jar
+%%DATADIR%%/libs/hk2-api-2.5.0-b05.jar
+%%DATADIR%%/libs/hk2-locator-2.5.0-b05.jar
+%%DATADIR%%/libs/hk2-utils-2.5.0-b05.jar
+%%DATADIR%%/libs/jackson-annotations-2.8.5.jar
+%%DATADIR%%/libs/jackson-core-2.8.5.jar
+%%DATADIR%%/libs/jackson-databind-2.8.5.jar
+%%DATADIR%%/libs/jackson-jaxrs-base-2.8.5.jar
+%%DATADIR%%/libs/jackson-jaxrs-json-provider-2.8.5.jar
+%%DATADIR%%/libs/jackson-module-jaxb-annotations-2.8.5.jar
+%%DATADIR%%/libs/javassist-3.21.0-GA.jar
+%%DATADIR%%/libs/javax.annotation-api-1.2.jar
+%%DATADIR%%/libs/javax.inject-1.jar
+%%DATADIR%%/libs/javax.inject-2.5.0-b05.jar
+%%DATADIR%%/libs/javax.servlet-api-3.1.0.jar
+%%DATADIR%%/libs/javax.ws.rs-api-2.0.1.jar
+%%DATADIR%%/libs/jersey-client-2.24.jar
+%%DATADIR%%/libs/jersey-common-2.24.jar
+%%DATADIR%%/libs/jersey-container-servlet-2.24.jar
+%%DATADIR%%/libs/jersey-container-servlet-core-2.24.jar
+%%DATADIR%%/libs/jersey-guava-2.24.jar
+%%DATADIR%%/libs/jersey-media-jaxb-2.24.jar
+%%DATADIR%%/libs/jersey-server-2.24.jar
+%%DATADIR%%/libs/jetty-continuation-9.2.15.v20160210.jar
+%%DATADIR%%/libs/jetty-http-9.2.15.v20160210.jar
+%%DATADIR%%/libs/jetty-io-9.2.15.v20160210.jar
+%%DATADIR%%/libs/jetty-security-9.2.15.v20160210.jar
+%%DATADIR%%/libs/jetty-server-9.2.15.v20160210.jar
+%%DATADIR%%/libs/jetty-servlet-9.2.15.v20160210.jar
+%%DATADIR%%/libs/jetty-servlets-9.2.15.v20160210.jar
+%%DATADIR%%/libs/jetty-util-9.2.15.v20160210.jar
+%%DATADIR%%/libs/jopt-simple-5.0.3.jar
+%%DATADIR%%/libs/kafka-clients-%%PORTVERSION%%.jar
+%%DATADIR%%/libs/kafka-log4j-appender-%%PORTVERSION%%.jar
+%%DATADIR%%/libs/kafka-streams-%%PORTVERSION%%.jar
+%%DATADIR%%/libs/kafka-streams-examples-%%PORTVERSION%%.jar
+%%DATADIR%%/libs/kafka-tools-%%PORTVERSION%%.jar
+%%DATADIR%%/libs/kafka_2.12-%%PORTVERSION%%.jar
+%%DATADIR%%/libs/log4j-1.2.17.jar
+%%DATADIR%%/libs/lz4-1.3.0.jar
+%%DATADIR%%/libs/maven-artifact-3.5.0.jar
+%%DATADIR%%/libs/metrics-core-2.2.0.jar
+%%DATADIR%%/libs/osgi-resource-locator-1.0.1.jar
+%%DATADIR%%/libs/plexus-utils-3.0.24.jar
+%%DATADIR%%/libs/reflections-0.9.11.jar
+%%DATADIR%%/libs/rocksdbjni-5.0.1.jar
+%%DATADIR%%/libs/scala-library-2.12.2.jar
+%%DATADIR%%/libs/scala-parser-combinators_2.12-1.0.4.jar
+%%DATADIR%%/libs/slf4j-api-1.7.25.jar
+%%DATADIR%%/libs/slf4j-log4j12-1.7.25.jar
+%%DATADIR%%/libs/snappy-java-1.1.2.6.jar
+%%DATADIR%%/libs/validation-api-1.1.0.Final.jar
+%%DATADIR%%/libs/zkclient-0.10.jar
+%%DATADIR%%/libs/zookeeper-3.4.10.jar
+@dir(%%USERS%%,%%GROUPS%%,755) %%KAFKA_DATADIR%%
+@dir(%%USERS%%,%%GROUPS%%,755) %%KAFKA_LOGDIR%%
+@dir(%%USERS%%,%%GROUPS%%,755) %%KAFKA_RUNDIR%%
+@sample %%ETCDIR%%/connect-console-sink.properties.sample
+@sample %%ETCDIR%%/connect-console-source.properties.sample
+@sample %%ETCDIR%%/connect-distributed.properties.sample
+@sample %%ETCDIR%%/connect-file-sink.properties.sample
+@sample %%ETCDIR%%/connect-file-source.properties.sample
+@sample %%ETCDIR%%/connect-log4j.properties.sample
+@sample %%ETCDIR%%/connect-standalone.properties.sample
+@sample %%ETCDIR%%/consumer.properties.sample
+@sample %%ETCDIR%%/log4j.properties.sample
+@sample %%ETCDIR%%/producer.properties.sample
+@sample %%ETCDIR%%/server.properties.sample
+@sample %%ETCDIR%%/tools-log4j.properties.sample

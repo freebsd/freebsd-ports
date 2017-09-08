@@ -1,0 +1,26 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: google_network_setup
+# BEFORE: LOGIN
+# REQUIRE: NETWORKING syslogd google_instance_setup
+#
+# google_network_setup_enable (bool):	Set to NO by default.
+#					Set it to YES to enable google_network_setup.
+#
+
+. /etc/rc.subr
+
+name="google_network_setup"
+rcvar="google_network_setup_enable"
+
+load_rc_config "${name}"
+
+: ${google_network_setup_enable:="NO"}
+
+command_interpreter="%%PYTHON_CMD%%"
+command=%%PREFIX%%/bin/${name}
+pidfile=/var/run/${name}.pid
+
+run_rc_command "$1"

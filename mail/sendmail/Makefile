@@ -44,24 +44,27 @@ SENDMAIL=	${PREFIX}/sbin/sendmail
 BASEMAIL=	/usr/libexec/sendmail/sendmail
 MILTER_SOVER?=	6
 
-OPTIONS_DEFINE?=	SHMEM SEM LA NIS IPV6 TLS SASL SASLAUTHD LDAP BDB SOCKETMAP CYRUSLOOKUP PICKY_HELO_CHECK MILTER DOCS
-OPTIONS_DEFAULT?=	SHMEM SEM LA NIS TLS SASL SASLAUTHD PICKY_HELO_CHECK MILTER
+OPTIONS_DEFINE?=	SHMEM SEM LA NIS IPV6 TLS SASL SASLAUTHD LDAP BDB GDBM SOCKETMAP CYRUSLOOKUP PICKY_HELO_CHECK MILTER DOCS
+OPTIONS_DEFAULT?=	SHMEM SEM LA NIS TLS SASL SASLAUTHD PICKY_HELO_CHECK MILTER BDB1
 NO_OPTIONS_SORT=yes
 SHMEM_DESC=		System V shared memory support
 LA_DESC=		load averages support
 TLS_DESC=		SMTP-TLS and SMTPS support
 SASLAUTHD_DESC=		SASLAUTHD support
-BDB_DESC=		Berkeley DB version 4 support
+BDB_DESC=		Berkeley DB version 4+ support
+GDBM_DESC=		GNU dbm library support (option COMPAT needed)
 SOCKETMAP_DESC=		Enable socketmap feature
 CYRUSLOOKUP_DESC=	Enable cyruslookup feature
 PICKY_HELO_CHECK_DESC=	Enable picky HELO check
 MILTER_DESC=		Enable milter support
 
-BDB_USES=	bdb
 TLS_USES=	ssl
-LDAP_USE=	OPENLDAP=yes
 SASL_LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2
 SASLAUTHD_RUN_DEPENDS=	${LOCALBASE}/sbin/saslauthd:security/cyrus-sasl2-saslauthd
+LDAP_USE=	OPENLDAP=yes
+BDB_USES=	bdb
+GDBM_LIB_DEPENDS=	libgdbm.so:databases/gdbm
+GDBM_CONFIGURE_WITH=	compat
 
 .include <bsd.port.options.mk>
 .if ${PORT_OPTIONS:MSHMEM} && !defined(BUILDING_INDEX)
@@ -73,15 +76,15 @@ IGNORE=		your system does not support sysvipc
 
 .if ${PORT_OPTIONS:MBDB}
 BDB_SUFFIX=	+${BDB_INCLUDE_DIR:S,^${LOCALBASE}/include/,,}
-CONFLICTS+=	sendmail-ldap-8.* sendmail-sasl-8.* sendmail-sasl2-8.* sendmail-tls-8.*
+CONFLICTS+=	sendmail-ldap-8.* sendmail-sasl2-8.* sendmail-tls-8.*
 .endif
 .if ${PORT_OPTIONS:MLDAP}
 LDAP_SUFFIX?=	+ldap
-CONFLICTS+=	sendmail-sasl-8.* sendmail-sasl2-8.* sendmail-tls-8.*
+CONFLICTS+=	sendmail-sasl2-8.* sendmail-tls-8.*
 .endif
 .if ${PORT_OPTIONS:MSASL}
 SASL_SUFFIX?=	+sasl2
-CONFLICTS+=	sendmail-ldap-8.* sendmail-sasl-8.* sendmail-tls-8.*
+CONFLICTS+=	sendmail-ldap-8.* sendmail-tls-8.*
 .endif
 .if ${PORT_OPTIONS:MCYRUSLOOKUP}
 .if ! ${PORT_OPTIONS:MSOCKETMAP}
@@ -92,13 +95,13 @@ EXTRA_PATCHES+=	${FILESDIR}/cyruslookup.patch
 .endif
 .if ${PORT_OPTIONS:MTLS}
 TLS_SUFFIX?=	+tls
-CONFLICTS+=	sendmail-ldap-8.* sendmail-sasl-8.* sendmail-sasl2-8.*
+CONFLICTS+=	sendmail-ldap-8.* sendmail-sasl2-8.*
 .endif
 
 MAKE_PKGNAMES=	for i in "" +tls; do \
-	for j in "" +sasl +sasl1 +sasl2; do \
+	for j in "" +sasl2; do \
 	for k in "" +ldap; do \
-	for l in "" +db2 +db3 +db4 +db41 +db42 +db43 +db44 +db45 +db46 +db47 +db48 +db49; do \
+	for l in "" +db48 +db5 +db6; do \
 	echo "sendmail$${i}$${j}$${k}$${l}-8.*" ;\
 	done done done done
 
@@ -120,6 +123,10 @@ SITE+=	${FILESDIR}/site.config.m4.ldap
 .if ${PORT_OPTIONS:MMILTER}
 SITE+=	${FILESDIR}/site.config.m4.milter
 .endif
+.if ${PORT_OPTIONS:MGDBM}
+NO_PACKAGE=	GPLv3 license conflict
+SITE+=	${FILESDIR}/site.config.m4.gdbm
+.endif
 
 SED_SCRIPT=	-e "s|\`-O\'|\`${CFLAGS}\'|" \
 		-e 's|%%CC%%|${CC}|' -e 's|%%LD%%|${LD}|'
@@ -135,6 +142,12 @@ post-patch:
 		${PKGDIR}/pkg-message > ${WRKSRC}/pkg-message
 
 do-configure:
+.if ${PORT_OPTIONS:MGDBM}
+	@(if [ ! -e "${LOCALBASE}/lib/libgdbm_compat.so" ] ; then \
+	  ${ECHO_MSG} "===> option COMPAT is missing in databases/gdbm."; \
+          ${FALSE}; \
+          fi)
+.endif
 	${REINPLACE_CMD} ${SED_SCRIPT} ${WRKSRC}/devtools/OS/FreeBSD
 	${SED} -e "s=%%PREFIX%%=${PREFIX}=g" \
 		-e "s=%%LOCALBASE%%=${LOCALBASE}=g" \

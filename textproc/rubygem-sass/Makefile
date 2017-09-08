@@ -14,6 +14,9 @@ LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
 RUN_DEPENDS=	rubygem-sass-listen>=4.0.0:textproc/rubygem-sass-listen
 
+# bin/sass bin/sass-convert bin/scss
+CONFLICTS_INSTALL=	rubygem-sass34
+
 NO_ARCH=	yes
 USES=		gem shebangfix
 USE_RUBY=	yes

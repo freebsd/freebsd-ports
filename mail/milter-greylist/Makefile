@@ -3,6 +3,7 @@
 
 PORTNAME=	milter-greylist
 PORTVERSION=	4.6.2
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.espci.fr/pub/milter-greylist/ \
 		http://fossies.org/unix/privat/
@@ -30,12 +31,15 @@ USES=		tar:tgz
 # installed port preference over it.
 ##
 
-OPTIONS_DEFINE=		SPF GEOIP CURL LDAP P0F POSTFIX DOCS EXAMPLES
+OPTIONS_DEFINE=		DKIM SPF GEOIP CURL LDAP P0F POSTFIX DOCS EXAMPLES
+OPTIONS_DEFAULT=	DKIM SPF GEOIP CURL
+DKIM_DESC=		DKIM support
 SPF_DESC=		SPF support
 CURL_DESC=		curl support
 P0F_DESC=		P0F support
 POSTFIX_DESC=		Use Postfix instead of Sendmail
 
+DKIM_LIB_DEPENDS=	libopendkim.so:mail/opendkim
 P0F_RUN_DEPENDS=	p0f:net-mgmt/p0f
 SPF_LIB_DEPENDS=	libspf2.so:mail/libspf2
 CURL_LIB_DEPENDS=	libcurl.so:ftp/curl
@@ -47,6 +51,8 @@ POSTFIX_LIBS_OFF=		${SENDMAIL_LDADD}
 
 P0F_CONFIGURE_ENABLE=		p0f306
 
+DKIM_CONFIGURE_ON=		--with-libopendkim=${LOCALBASE}
+DKIM_USES=			ssl
 SPF_CONFIGURE_ON=		--with-libspf2=${LOCALBASE}
 GEOIP_CONFIGURE_ON=		--with-libGeoIP=${LOCALBASE}
 CURL_CONFIGURE_ON=		--with-libcurl=${LOCALBASE}

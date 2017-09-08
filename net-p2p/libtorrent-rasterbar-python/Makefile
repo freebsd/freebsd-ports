@@ -1,7 +1,6 @@
 # Created by: Doug Barton <dougb@FreeBSD.org>
 # $FreeBSD$
 
-PORTREVISION=	1
 CATEGORIES=	net-p2p python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 

@@ -1,26 +1,25 @@
---- Makefile.orig	2017-01-17 13:29:35 UTC
+--- Makefile.orig	2017-07-28 13:40:22 UTC
 +++ Makefile
 @@ -1,6 +1,7 @@
  REBAR ?= "$(CURDIR)/rebar"
  PREFIX ?= /usr/local
  SHARE_PREFIX ?= $(PREFIX)/share
 +MAN_PREFIX ?= $(PREFIX)/man
- CANONICAL :=
+ CANONICAL := v1.5/
  ELIXIRC := bin/elixirc --verbose --ignore-module-conflict
  ERLC := erlc -I lib/elixir/include
-@@ -251,9 +252,10 @@ clean_man:
- 	rm -f man/iex.1
-
+@@ -267,9 +268,9 @@ clean_man:
+ 	rm -f man/iex.1.bak
+ 
  install_man: build_man
 -	$(Q) mkdir -p $(DESTDIR)$(SHARE_PREFIX)/man/man1
 -	$(Q) $(INSTALL_DATA) man/elixir.1  $(DESTDIR)$(SHARE_PREFIX)/man/man1
 -	$(Q) $(INSTALL_DATA) man/elixirc.1 $(DESTDIR)$(SHARE_PREFIX)/man/man1
 -	$(Q) $(INSTALL_DATA) man/iex.1     $(DESTDIR)$(SHARE_PREFIX)/man/man1
 -	$(Q) $(INSTALL_DATA) man/mix.1     $(DESTDIR)$(SHARE_PREFIX)/man/man1
-+	$(Q) mkdir -p $(DESTDIR)$(MAN_PREFIX)/man1
-+	$(Q) $(INSTALL_DATA) man/elixir.1  $(DESTDIR)$(MAN_PREFIX)/man1
-+	$(Q) $(INSTALL_DATA) man/elixirc.1 $(DESTDIR)$(MAN_PREFIX)/man1
-+	$(Q) $(INSTALL_DATA) man/iex.1     $(DESTDIR)$(MAN_PREFIX)/man1
-+	$(Q) $(INSTALL_DATA) man/mix.1     $(DESTDIR)$(MAN_PREFIX)/man1
-+	gzip $(DESTDIR)$(MAN_PREFIX)/man1/*
++	$(Q) mkdir -p $(DESTDIR)$(MAN_PREFIX)/man/man1
++	$(Q) $(INSTALL_DATA) man/elixir.1  $(DESTDIR)$(MAN_PREFIX)/man/man1
++	$(Q) $(INSTALL_DATA) man/elixirc.1 $(DESTDIR)$(MAN_PREFIX)/man/man1
++	$(Q) $(INSTALL_DATA) man/iex.1     $(DESTDIR)$(MAN_PREFIX)/man/man1
++	$(Q) $(INSTALL_DATA) man/mix.1     $(DESTDIR)$(MAN_PREFIX)/man/man1
  	$(MAKE) clean_man

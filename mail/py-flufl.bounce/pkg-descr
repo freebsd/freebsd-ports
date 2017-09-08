@@ -1,0 +1,5 @@
+The flufl.bounce library provides a set of heuristics and an API for detecting 
+the original bouncing email addresses from a bounce message. Many formats 
+found in the wild are supported, as are VERP and RFC 3464 (DSN).
+
+WWW: https://fluflbounce.readthedocs.io

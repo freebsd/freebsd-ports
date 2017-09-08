@@ -12,6 +12,8 @@ COMMENT=	Image Processing SciKit (Toolbox for SciPy)
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+BROKEN=		fails to configure
+
 BUILD_DEPENDS=	${PYNUMPY} \
 		${LOCALBASE}/bin/cython:lang/cython \
 		${PYTHON_PKGNAMEPREFIX}six>=1.4:devel/py-six \

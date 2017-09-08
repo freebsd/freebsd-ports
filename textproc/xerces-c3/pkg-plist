@@ -95,6 +95,7 @@ include/xercesc/dom/impl/DOMLSOutputImpl.hpp
 include/xercesc/dom/impl/DOMLSSerializerImpl.hpp
 include/xercesc/dom/impl/DOMLocatorImpl.hpp
 include/xercesc/dom/impl/DOMNamedNodeMapImpl.hpp
+include/xercesc/dom/impl/DOMNodeBase.hpp
 include/xercesc/dom/impl/DOMNodeIDMap.hpp
 include/xercesc/dom/impl/DOMNodeImpl.hpp
 include/xercesc/dom/impl/DOMNodeIteratorImpl.hpp

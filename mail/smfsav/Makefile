@@ -29,6 +29,8 @@ SMFSAV_RUN_DIR?=/var/run/smfs
 PLIST_SUB=	SMFSAV_RUN_DIR=${SMFSAV_RUN_DIR}
 SUB_FILES+=	pkg-message
 
+CONFLICTS=	smfsav-devel
+
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/mail/sendmail/bsd.milter.mk"
 

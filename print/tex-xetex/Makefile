@@ -2,7 +2,7 @@
 
 PORTNAME=	xetex
 PORTVERSION=	0.99992
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	print
 MASTER_SITES=	ftp://tug.org/historic/systems/texlive/2015/
 PKGNAMEPREFIX=	tex-

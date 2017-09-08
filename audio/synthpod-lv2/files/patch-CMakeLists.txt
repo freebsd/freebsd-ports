@@ -1,0 +1,39 @@
+--- CMakeLists.txt.orig	2017-08-06 12:24:04 UTC
++++ CMakeLists.txt
+@@ -34,6 +34,15 @@ include_directories(${PROJECT_SOURCE_DIR
+ include_directories(${PROJECT_SOURCE_DIR}/zero_worker.lv2)
+ include_directories(${PROJECT_SOURCE_DIR}/zero_writer.lv2)
+ 
++# FreeBSD: clock_nanosleep was missing and was added to 11-STABLE in r317618
++CHECK_FUNCTION_EXISTS(clock_nanosleep HAVE_CLOCK_NANOSLEEP_FUNCTION)
++if(${HAVE_CLOCK_NANOSLEEP_FUNCTION})
++  MESSAGE("-- FreeBSD: clock_nanosleep exists")
++else()
++  MESSAGE("-- FreeBSD: clock_nanosleep DOES NOT EXIST and will be replaced with nanosleep")
++  execute_process(COMMAND sed -i'.bak' -E "s|clock_nanosleep\\\(CLOCK_[A-Z]+, TIMER_ABSTIME, |nanosleep\\\(|" bin/synthpod_dummy.c bin/synthpod_sandbox_show.c bin/synthpod_sandbox_kx.c)
++endif()
++
+ set(SYNTHPOD_BIN_DIR "bin")
+ add_definitions("-DSYNTHPOD_BIN_DIR=\"${CMAKE_INSTALL_PREFIX}/${SYNTHPOD_BIN_DIR}/\"")
+ 
+@@ -92,16 +101,16 @@ option(BUILD_DUMMY "Build DUMMY standalo
+ 
+ option(BUILD_DOT "Build Dot exporter" OFF)
+ 
+-option(BUILD_UI "Build graphical user interface(s)" ON)
++option(BUILD_UI "Build graphical user interface(s)" OFF)
+ 
+ include(CMakeDependentOption)
+-cmake_dependent_option(BUILD_SANDBOX_X11 "Build X11 sandbox" ON "BUILD_UI" OFF)
++cmake_dependent_option(BUILD_SANDBOX_X11 "Build X11 sandbox" OFF "BUILD_UI" OFF)
+ cmake_dependent_option(BUILD_SANDBOX_GTK2 "Build GTK-2 sandbox" OFF "BUILD_UI" OFF)
+ cmake_dependent_option(BUILD_SANDBOX_GTK3 "Build GTK-3 sandbox" OFF "BUILD_UI" OFF)
+ cmake_dependent_option(BUILD_SANDBOX_QT4 "Build Qt-4 sandbox" OFF "BUILD_UI" OFF)
+ cmake_dependent_option(BUILD_SANDBOX_QT5 "Build Qt-5 sandbox" OFF "BUILD_UI" OFF)
+-cmake_dependent_option(BUILD_SANDBOX_SHOW "Build show-iface sandbox" ON "BUILD_UI" OFF)
+-cmake_dependent_option(BUILD_SANDBOX_KX "Build external-ui sandbox" ON "BUILD_UI" OFF)
++cmake_dependent_option(BUILD_SANDBOX_SHOW "Build show-iface sandbox" OFF "BUILD_UI" OFF)
++cmake_dependent_option(BUILD_SANDBOX_KX "Build external-ui sandbox" OFF "BUILD_UI" OFF)
+ 
+ if(BUILD_SANDBOX_X11)
+ 	add_definitions("-DSANDBOX_X11")

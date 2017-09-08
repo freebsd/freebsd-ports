@@ -3,6 +3,7 @@
 
 PORTNAME=		sogo2
 PORTVERSION=		2.3.22
+PORTREVISION=	1
 CATEGORIES=		www gnustep
 MASTER_SITES=		http://www.sogo.nu/files/downloads/SOGo/Sources/
 DISTNAME=		SOGo-${PORTVERSION}
@@ -11,6 +12,8 @@ MAINTAINER=		euan@potensol.com
 COMMENT=		Groupware server with a focus on scalability and open standards
 
 LICENSE=		GPLv2
+
+BROKEN=			fails to package
 
 LIB_DEPENDS=		libmemcached.so:databases/libmemcached \
 			libcurl.so:ftp/curl \

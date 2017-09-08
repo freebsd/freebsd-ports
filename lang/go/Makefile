@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	go
-PORTVERSION=	1.8.3
+PORTVERSION=	1.9
 PORTEPOCH=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://golang.org/dl/
@@ -74,5 +74,16 @@ do-install:
 
 regression-test: build
 	cd ${WRKSRC}/src && GOROOT=${WRKSRC} PATH=${WRKSRC}/bin:${PATH} ${SH} run.bash --no-rebuild --banner
+
+pkg-plist: stage
+	${RM} ${WRKDIR}/pkg-plist
+.for command in go gofmt
+	${ECHO_CMD} bin/${command} >> ${WRKDIR}/pkg-plist
+.endfor
+	cd ${WRKDIR} && ${FIND} go -type f | \
+		${SED} -e "s/\/${OPSYS:tl}_${GOARCH}\//\/%%opsys_ARCH%%\//g" | \
+		${SORT} >> ${WRKDIR}/pkg-plist
+	${ECHO_CMD} "@dir go/pkg/obj/%%opsys_ARCH%%" >> ${WRKDIR}/pkg-plist
+	${CP} ${WRKDIR}/pkg-plist ${.CURDIR}/pkg-plist
 
 .include <bsd.port.post.mk>

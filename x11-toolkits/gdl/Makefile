@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 PORTSCOUT=	limitw:1,even
 
-USE_GNOME=	cairo gdkpixbuf2 gtk30 intltool introspection:build libxml2 
+USE_GNOME=	cairo gdkpixbuf2 gtk30 intltool introspection:build libxml2
 USES=		gettext gmake gnome libtool localbase pathfix pkgconfig tar:xz
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

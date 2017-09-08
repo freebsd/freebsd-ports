@@ -1,9 +1,10 @@
 # Created by: Jose Alonso Cardenas Marquez <acardenas@bsd.org.pe>
 # $FreeBSD$
+#
+# Remember to update www/py-django along with this port.
 
 PORTNAME=	django
-PORTVERSION=	1.11.4
-PORTREVISION=	1
+PORTVERSION=	1.11.5
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP \
 		https://www.djangoproject.com/m/releases/${PORTVERSION}/

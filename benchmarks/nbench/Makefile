@@ -4,10 +4,10 @@
 PORTNAME=	nbench
 PORTVERSION=	2.2.3
 CATEGORIES=	benchmarks
-MASTER_SITES=	http://www.tux.org/~mayer/linux/
+MASTER_SITES=	http://www.math.utah.edu/~mayer/linux/
 DISTNAME=	${PORTNAME}-byte-${PORTVERSION}
 
-MAINTAINER=	luca.pizzamiglio@gmail.com
+MAINTAINER=	pizzamig@FreeBSD.org
 COMMENT=	BYTE Magazine's native benchmarks
 
 ALL_TARGET=	# empty

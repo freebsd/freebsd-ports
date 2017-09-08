@@ -1,9 +1,9 @@
---- Makefile.in.orig	2017-01-17 11:28:29.361404481 -0800
-+++ Makefile.in	2017-01-18 04:51:33.277671000 -0800
+--- Makefile.in.orig	2017-07-10 12:26:25.000000000 -0700
++++ Makefile.in	2017-08-25 20:19:07.289437000 -0700
 @@ -83,19 +83,13 @@
  	    $(OPTIONS) $(CFLAGS) $<
  
- install_bin: .version screen
+ install_bin: .version screen installdirs
 -	-if [ -f $(DESTDIR)$(bindir)/$(SCREEN) ] && [ ! -f $(DESTDIR)$(bindir)/$(SCREEN).old ]; \
 -		then mv $(DESTDIR)$(bindir)/$(SCREEN) $(DESTDIR)$(bindir)/$(SCREEN).old; fi
 -	$(INSTALL_PROGRAM) screen $(DESTDIR)$(bindir)/$(SCREEN)
@@ -12,9 +12,9 @@
 -	-if [ -f $(DESTDIR)$(bindir)/screen ] && [ ! -f $(DESTDIR)$(bindir)/screen.old ]; then mv $(DESTDIR)$(bindir)/screen $(DESTDIR)$(bindir)/screen.old; fi
 -	rm -f $(DESTDIR)$(bindir)/screen
 -	(cd $(DESTDIR)$(bindir) && ln -f -s $(SCREEN) screen)
+ 	cp $(srcdir)/utf8encodings/?? $(DESTDIR)$(SCREENENCODINGS)
 +	$(INSTALL_PROGRAM) screen $(DESTDIR)$(bindir)/screen
 +	-chown root:wheel $(DESTDIR)$(bindir)/screen && chmod 4755 $(DESTDIR)$(bindir)/screen
- 	cp $(srcdir)/utf8encodings/?? $(DESTDIR)$(SCREENENCODINGS)
  
  ###############################################################################
  install: installdirs install_bin

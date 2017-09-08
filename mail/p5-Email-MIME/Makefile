@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	Email-MIME
-PORTVERSION=	1.945
+PORTVERSION=	1.946
 CATEGORIES=	mail perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,7 +14,7 @@ LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	p5-Email-Address-XS>=0:mail/p5-Email-Address-XS \
-		p5-Email-MIME-ContentType>=1.016:mail/p5-Email-MIME-ContentType \
+		p5-Email-MIME-ContentType>=1.022:mail/p5-Email-MIME-ContentType \
 		p5-Email-MIME-Encodings>=1.314:mail/p5-Email-MIME-Encodings \
 		p5-Email-MessageID>=0:mail/p5-Email-MessageID \
 		p5-Email-Simple>=2.212:mail/p5-Email-Simple \

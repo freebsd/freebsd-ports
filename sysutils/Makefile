@@ -39,6 +39,7 @@
     SUBDIR += apachetop
     SUBDIR += apcpwr
     SUBDIR += apcupsd
+    SUBDIR += aptly
     SUBDIR += arcconf
     SUBDIR += archivemount
     SUBDIR += areca-cli
@@ -74,6 +75,11 @@
     SUBDIR += bacula5-client-static
     SUBDIR += bacula5-docs
     SUBDIR += bacula5-server
+    SUBDIR += bacula9-bat
+    SUBDIR += bacula9-client
+    SUBDIR += bacula9-client-static
+    SUBDIR += bacula9-docs
+    SUBDIR += bacula9-server
     SUBDIR += baloo
     SUBDIR += baloo-widgets
     SUBDIR += bamf
@@ -679,6 +685,7 @@
     SUBDIR += nbosd
     SUBDIR += ncdu
     SUBDIR += ndmpd
+    SUBDIR += neofetch
     SUBDIR += nepomuk-core
     SUBDIR += nepomuk-widgets
     SUBDIR += nfcutils
@@ -890,6 +897,7 @@
     SUBDIR += py-freenas.cli
     SUBDIR += py-glances
     SUBDIR += py-gmailfs-fuse
+    SUBDIR += py-google-compute-engine
     SUBDIR += py-halite
     SUBDIR += py-honcho
     SUBDIR += py-iowait
@@ -974,6 +982,7 @@
     SUBDIR += rmonitor
     SUBDIR += roottail
     SUBDIR += rovclock
+    SUBDIR += rpi-firmware
     SUBDIR += rsnapshot
     SUBDIR += rsyncbackup
     SUBDIR += rsyncrypto
@@ -1145,6 +1154,8 @@
     SUBDIR += syslog-ng36
     SUBDIR += syslog-ng37
     SUBDIR += syslog-ng39
+    SUBDIR += syslog-ng310
+    SUBDIR += syslog-ng311
     SUBDIR += syslogger
     SUBDIR += sysrc
     SUBDIR += system-tools-backends
@@ -1235,6 +1246,7 @@
     SUBDIR += ufs_copy
     SUBDIR += uhidd
     SUBDIR += uif2iso
+    SUBDIR += unetbootin
     SUBDIR += unieject
     SUBDIR += uniutils
     SUBDIR += unquote

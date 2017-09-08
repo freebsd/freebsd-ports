@@ -1,11 +1,6 @@
 bin/simsu
 man/man6/simsu.6.gz
-share/appdata/simsu.appdata.xml
 share/applications/simsu.desktop
-%%PORTDOCS%%%%DOCSDIR%%/CREDITS
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
-%%PORTDOCS%%%%DOCSDIR%%/NEWS
-%%PORTDOCS%%%%DOCSDIR%%/README
 share/icons/hicolor/1024x1024/apps/simsu.png
 share/icons/hicolor/128x128/apps/simsu.png
 share/icons/hicolor/16x16/apps/simsu.png
@@ -17,6 +12,7 @@ share/icons/hicolor/48x48/apps/simsu.png
 share/icons/hicolor/512x512/apps/simsu.png
 share/icons/hicolor/64x64/apps/simsu.png
 share/icons/hicolor/scalable/apps/simsu.svg
+share/metainfo/simsu.appdata.xml
 share/pixmaps/simsu.xpm
 %%NLS%%%%DATADIR%%/translations/simsu_bg.qm
 %%NLS%%%%DATADIR%%/translations/simsu_ca.qm
@@ -38,3 +34,4 @@ share/pixmaps/simsu.xpm
 %%NLS%%%%DATADIR%%/translations/simsu_ru.qm
 %%NLS%%%%DATADIR%%/translations/simsu_tr.qm
 %%NLS%%%%DATADIR%%/translations/simsu_uk.qm
+%%NLS%%%%DATADIR%%/translations/simsu_zh_TW.qm

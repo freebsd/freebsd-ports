@@ -1,22 +1,22 @@
---- content/browser/child_process_launcher_helper_linux.cc.orig	2017-06-05 19:03:06 UTC
-+++ content/browser/child_process_launcher_helper_linux.cc
-@@ -66,6 +66,7 @@ ChildProcessLauncherHelper::LaunchProcessOnLauncherThr
+--- content/browser/child_process_launcher_helper_linux.cc.orig	2017-07-25 21:04:55.000000000 +0200
++++ content/browser/child_process_launcher_helper_linux.cc	2017-08-02 00:41:59.942814000 +0200
+@@ -66,6 +66,7 @@
      int* launch_result) {
    *is_synchronous_launch = true;
  
 +#if !defined(OS_BSD)
-   ZygoteHandle* zygote_handle =
-       base::CommandLine::ForCurrentProcess()->HasSwitch(switches::kNoZygote) ?
-       nullptr : delegate_->GetZygote();
-@@ -85,6 +86,7 @@ ChildProcessLauncherHelper::LaunchProcessOnLauncherThr
-     process.zygote = *zygote_handle;
+   ZygoteHandle zygote_handle =
+       base::CommandLine::ForCurrentProcess()->HasSwitch(switches::kNoZygote)
+           ? nullptr
+@@ -82,6 +83,7 @@
+     process.zygote = zygote_handle;
      return process;
    }
 +#endif
  
    Process process;
    process.process = base::LaunchProcess(*command_line(), options);
-@@ -103,10 +105,12 @@ base::TerminationStatus ChildProcessLauncherHelper::Ge
+@@ -100,10 +102,12 @@
      const ChildProcessLauncherHelper::Process& process,
      bool known_dead,
      int* exit_code) {
@@ -29,7 +29,7 @@
    if (known_dead) {
      return base::GetKnownDeadTerminationStatus(
          process.process.Handle(), exit_code);
-@@ -125,13 +129,17 @@ void ChildProcessLauncherHelper::ForceNormalProcessTer
+@@ -122,13 +126,17 @@
      ChildProcessLauncherHelper::Process process) {
    process.process.Terminate(RESULT_CODE_NORMAL_EXIT, false);
    // On POSIX, we must additionally reap the child.
@@ -46,4 +46,4 @@
 +#endif
  }
  
- void ChildProcessLauncherHelper::SetProcessBackgroundedOnLauncherThread(
+ void ChildProcessLauncherHelper::SetProcessPriorityOnLauncherThread(

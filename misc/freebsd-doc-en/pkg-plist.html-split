@@ -107,6 +107,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/freebsd-releng/releng-prep.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/freebsd-releng/releng-stable.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/freebsd-releng/releng-terms.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/freebsd-releng/releng-website.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/freebsd-releng/releng-wrapup.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/freebsd-releng/trademarks.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/freebsd-update-server/Configuration.html
@@ -950,6 +951,17 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/porting-checksum.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/porting-dads.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/porting-desc.html
+%%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/porting-order-broken.html
+%%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/porting-order-depends.html
+%%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/porting-order-license.html
+%%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/porting-order-maintainer.html
+%%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/porting-order-options.html
+%%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/porting-order-patch.html
+%%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/porting-order-rest.html
+%%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/porting-order-targets.html
+%%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/porting-order-uses.html
+%%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/porting-order-variables.html
+%%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/porting-order.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/porting-portlint.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/porting-prefix.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/porting-restrictions.html

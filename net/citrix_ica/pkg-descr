@@ -19,4 +19,4 @@ your /etc/make.conf:
 It will then automatically be installed and removed with the normal FreeBSD
 package tools.
 
-WWW: http://www.citrix.com/products/receiver/overview.html
+WWW: http://www.citrix.com/products/receiver/

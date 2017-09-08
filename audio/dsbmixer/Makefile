@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	dsbmixer
-PORTVERSION=	1.1
+PORTVERSION=	1.2
 CATEGORIES=	audio
 MASTER_SITES=	http://freeshell.de/~mk/download/
 
@@ -16,7 +16,7 @@ RUN_DEPENDS=	dsbwrtsysctl:sysutils/dsbwrtsysctl
 USES=		tar:tgz qmake
 
 USE_GL=		gl
-USE_QT5=	buildtools core gui linguisttools widgets
+USE_QT5=	buildtools_build core gui linguisttools_build widgets
 
 QMAKE_ARGS=	PORTS=1
 

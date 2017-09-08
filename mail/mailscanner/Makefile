@@ -73,11 +73,10 @@ SUB_LIST=	DATADIR=${DATADIR} \
 		ETC_FILES="${ETC_FILES}" \
 		MCP_FILES="${MCP_FILES}"
 
-OPTIONS_DEFINE=		SPAMASSASSIN CLAMAV CLAMAVMODULE BDC DOCS
+OPTIONS_DEFINE=		SPAMASSASSIN CLAMAV CLAMAVMODULE DOCS
 SPAMASSASSIN_DESC=	Install SpamAssassin
 CLAMAV_DESC=		Install ClamAV
 CLAMAVMODULE_DESC=	Install ClamAV Module
-BDC_DESC=		Install BitDefender
 
 OPTIONS_DEFAULT=	SPAMASSASSIN CLAMAV
 
@@ -104,10 +103,6 @@ RUN_DEPENDS+=	unrar:archivers/unrar \
 		unarj:archivers/unarj \
 		unace:archivers/unace \
 		lha:archivers/lha
-.endif
-
-.if ${PORT_OPTIONS:MBDC}
-RUN_DEPENDS+=	bdc:security/bdc
 .endif
 
 # backwards compatibility

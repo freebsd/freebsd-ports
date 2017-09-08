@@ -1,0 +1,13 @@
+A cross-platform numerical analysis and data processing library. It supports
+several programming languages (C++, C#, Pascal, VBA) and several operating
+systems. ALGLIB features include:
+* Data analysis (classification/regression, including neural networks)
+* Optimization and nonlinear solvers
+* Interpolation and linear/nonlinear least-squares fitting
+* Linear algebra (direct algorithms, EVD/SVD), direct and iterative linear
+  solvers, Fast Fourier Transform and many other algorithms (numerical
+  integration, ODEs, statistics, special functions)
+
+This is a free edition of alglib.
+
+WWW: http://www.alglib.net

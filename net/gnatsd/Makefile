@@ -2,6 +2,7 @@
 
 PORTNAME=	gnatsd
 PORTVERSION=	1.0.2
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net
 
@@ -20,7 +21,7 @@ USE_RC_SUBR=	gnatsd.sh
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc
-	${INSTALL_SCRIPT} ${FILESDIR}/gnatsd.conf ${STAGEDIR}${PREFIX}/etc/gnatsd.conf.sample
+	${INSTALL_DATA} ${FILESDIR}/gnatsd.conf ${STAGEDIR}${PREFIX}/etc/gnatsd.conf.sample
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README.md ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC}/server && ${COPYTREE_SHARE} configs ${STAGEDIR}${DOCSDIR}

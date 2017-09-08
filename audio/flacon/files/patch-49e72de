@@ -1,0 +1,62 @@
+diff --git a/formats/format.cpp b/formats/format.cpp
+index 53f7ed0..89abaf9 100644
+--- formats/format.cpp.orig
++++ formats/format.cpp
+@@ -32,7 +32,14 @@
+ #include <QByteArray>
+ #include <QFile>
+ 
+-AudioFormatList AudioFormat::mAllFormats;
++/************************************************
++ *
++ ************************************************/
++AudioFormatList &formatList()
++{
++    static AudioFormatList *afl = new AudioFormatList();
++    return *afl;
++}
+ 
+ 
+ /************************************************
+@@ -43,9 +50,9 @@ bool AudioFormat::registerFormat(const AudioFormat &f)
+     // Some formats can be embedded as a chunk of RIFF stream.
+     // So the WAV format should be last and be checked in the last turn.
+     if (f.ext() == "wav")
+-        mAllFormats.append(&f);
++        formatList().append(&f);
+     else
+-        mAllFormats.insert(0, &f);
++        formatList().insert(0, &f);
+     return true;
+ }
+ 
+@@ -71,7 +78,7 @@ AudioFormat::~AudioFormat()
+  ************************************************/
+ const AudioFormatList &AudioFormat::allFormats()
+ {
+-    return mAllFormats;
++    return formatList();
+ }
+ 
+ 
+diff --git a/formats/format.h b/formats/format.h
+index b159b7a..0f9fcb6 100644
+--- formats/format.h.orig
++++ formats/format.h
+@@ -70,8 +70,6 @@ class AudioFormat
+ protected:
+     virtual bool checkMagic(const QByteArray &data) const;
+ 
+-private:
+-    static QList<const AudioFormat*> mAllFormats;
+ };
+ 
+ 
+@@ -79,6 +77,6 @@ class AudioFormat
+ 
+ #define REGISTER_FORMAT(FORMAT) \
+     static FORMAT static_##FORMAT##_Instance; \
+-    static bool  is_##FORMAT##_loaded = AudioFormat::registerFormat(static_##FORMAT##_Instance);
++    static bool is_##FORMAT##_loaded = AudioFormat::registerFormat(static_##FORMAT##_Instance);
+ 
+ #endif // FORMAT_H

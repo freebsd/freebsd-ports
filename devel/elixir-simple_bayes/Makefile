@@ -11,6 +11,8 @@ COMMENT=	Naive Bayes machine learning implementation in Elixir
 
 LICENSE=	MIT
 
+BROKEN=		fails to build
+
 USES=		elixir
 USE_GITHUB=	yes
 GH_ACCOUNT=	fredwu

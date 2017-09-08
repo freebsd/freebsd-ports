@@ -1,6 +1,6 @@
-TIMESTAMP = 1492544786
-SHA256 (hashicorp-nomad-v0.5.6_GH0.tar.gz) = e5f223d6309b7eecd8c3269f4c375ffedf0db8e5a9230b4b287d2de63c461616
-SIZE (hashicorp-nomad-v0.5.6_GH0.tar.gz) = 17675007
+TIMESTAMP = 1503965415
+SHA256 (hashicorp-nomad-v0.6.1_GH0.tar.gz) = 0c81b4f74c034db96f12386115ac5e549113a80a80fb34b7edc31b139ef6bf17
+SIZE (hashicorp-nomad-v0.6.1_GH0.tar.gz) = 17232937
 SHA256 (armon-go-radix-4239b77_GH0.tar.gz) = 7aca5d599d3014f98c01f9c59f638f031d7c3779a491f861d0fe9d7ac8840e61
 SIZE (armon-go-radix-4239b77_GH0.tar.gz) = 5481
 SHA256 (axw-gocov-c77561c_GH0.tar.gz) = 47451bdf1a1704f3c08dc66b24572ead4f76b5bd21f802ed0ec7a3e049ebf3f9

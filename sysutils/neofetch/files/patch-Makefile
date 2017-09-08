@@ -1,0 +1,24 @@
+--- Makefile.orig	2017-06-21 00:58:09 UTC
++++ Makefile
+@@ -1,16 +1,16 @@
+-PREFIX = /usr
++PREFIX ?= /usr
+ 
+ all:
+ 	@echo Run \'make install\' to install Neofetch
+ 
+ install:
+ 	mkdir -p $(DESTDIR)$(PREFIX)/bin
+-	mkdir -p $(DESTDIR)$(PREFIX)/share/man/man1
+-	mkdir -p $(DESTDIR)/etc/neofetch
++	mkdir -p $(DESTDIR)$(PREFIX)/man/man1
++	mkdir -p $(DESTDIR)$(PREFIX)/etc/neofetch
+ 	mkdir -p $(DESTDIR)$(PREFIX)/share/neofetch/ascii/distro
+ 	cp -p neofetch $(DESTDIR)$(PREFIX)/bin/neofetch
+-	cp -p neofetch.1 $(DESTDIR)$(PREFIX)/share/man/man1/neofetch.1
+-	cp -p config/config $(DESTDIR)/etc/neofetch/config
++	cp -p neofetch.1 $(DESTDIR)$(PREFIX)/man/man1/neofetch.1
++	cp -p config/config $(DESTDIR)$(PREFIX)/etc/neofetch/config
+ 	cp -p ascii/distro/* $(DESTDIR)$(PREFIX)/share/neofetch/ascii/distro
+ 
+ uninstall:

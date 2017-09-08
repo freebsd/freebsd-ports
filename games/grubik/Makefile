@@ -2,7 +2,7 @@
 
 PORTNAME=	grubik
 PORTVERSION=	0.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	games gnustep
 MASTER_SITES=	http://debian.uni-essen.de/misc/GNUstep/Apps/Recreational/
 DISTNAME=	GRubik
@@ -17,8 +17,6 @@ USE_GNUSTEP=	back build
 
 post-patch:
 	${RM} -r ${WRKSRC}/GRubik.app/ix86
-	${REINPLACE_CMD} -e 's|^//|# //|' \
-		-e "/GNUSTEP_INSTALLATION_DIR/d" ${WRKSRC}/GNUmakefile
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/GNUstep/System/Applications/GRubik.app/GRubik

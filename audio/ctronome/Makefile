@@ -6,7 +6,7 @@ PORTVERSION=	0.5.6
 CATEGORIES=	audio
 MASTER_SITES=	http://ctronome.kign.org/source/
 
-MAINTAINER=	luca.pizzamiglio@gmail.com
+MAINTAINER=	pizzamig@FreeBSD.org
 COMMENT=	Programmable console-based metronome
 
 LICENSE=	GPLv2

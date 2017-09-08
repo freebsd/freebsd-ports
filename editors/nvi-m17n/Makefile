@@ -3,7 +3,7 @@
 
 PORTNAME=	nvi
 PORTVERSION=	1.79.20040608
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	1
 CATEGORIES?=	editors
 MASTER_SITES=	ftp://ftp.mk.bsdclub.org/pub/FreeBSD/distfiles/	\

@@ -153,7 +153,6 @@
 %%CACTIDIR%%/docs/html/template-import.html
 %%CACTIDIR%%/docs/html/templates.html
 %%CACTIDIR%%/docs/html/testing-script-in-script-server.html
-%%CACTIDIR%%/docs/html/unix-apply-patches.html
 %%CACTIDIR%%/docs/html/unix-configure-%%CACTIUSER%%.html
 %%CACTIDIR%%/docs/html/unix-configure-httpd.html
 %%CACTIDIR%%/docs/html/unix-configure-mysql.html
@@ -1095,6 +1094,7 @@
 %%CACTIDIR%%/install/upgrades/1_1_11.php
 %%CACTIDIR%%/install/upgrades/1_1_14.php
 %%CACTIDIR%%/install/upgrades/1_1_17.php
+%%CACTIDIR%%/install/upgrades/1_1_20.php
 %%CACTIDIR%%/install/upgrades/index.php
 %%CACTIDIR%%/lib/aggregate.php
 %%CACTIDIR%%/lib/api_aggregate.php

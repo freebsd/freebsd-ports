@@ -6,7 +6,7 @@ PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://bitbucket.org/rpaulo/pructl/get/
 
-MAINTAINER=	rpaulo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utilities to interface with PRUs
 
 LICENSE=	BSD2CLAUSE

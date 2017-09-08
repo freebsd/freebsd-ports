@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	archiveopteryx
-PORTVERSION=	3.2.99.20160129
-PORTREVISION=	3
+PORTVERSION=	3.2.99.20170718
+PORTREVISION=	0
 CATEGORIES=	mail
 PKGNAMESUFFIX=	-devel
 
@@ -19,7 +19,7 @@ BROKEN_powerpc64=	Does not build: /bin/sh: clang: not found
 USE_GITHUB=	yes
 GH_ACCOUNT=	aox
 GH_PROJECT=	aox
-GH_TAGNAME=	e10c73a
+GH_TAGNAME=	f9c2e40
 
 USES=		perl5 ssl
 USE_PERL5=	build

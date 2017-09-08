@@ -48,15 +48,13 @@ REINPLACE_FILES=	libguile/smob.c libguile/filesys.c libguile/gc.c \
 
 INFO=		guile r5rs
 
-.include <bsd.port.options.mk>
-
 post-patch:
 	@cd ${WRKSRC} ; \
 	  ${REINPLACE_CMD} -e 's|<malloc\.h>|<stdlib.h>|g' ${REINPLACE_FILES}
 	@${REINPLACE_CMD} -e 's|sys/time.h sys/timeb.h|sys/time.h |g' \
 		${WRKSRC}/configure
-.if ${PORT_OPTIONS:MTHREADS}
+
+post-patch-THREADS-on:
 	@${REINPLACE_CMD} -e 's|bdw-gc|bdw-gc-threaded|g' ${WRKSRC}/configure
-.endif
 
 .include <bsd.port.mk>

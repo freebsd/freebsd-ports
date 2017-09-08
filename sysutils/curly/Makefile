@@ -7,15 +7,15 @@ CATEGORIES=	sysutils
 MASTER_SITES=   ftp://ftp.physics.purdue.edu/pub/pundits/ \
 		http://www.komquats.com/distfiles/ \
 		http://people.freebsd.org/~cy/distfiles/
-
 DISTNAME=	xapply-${PORTVERSION}
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Generalize listed filenames to csh-extended glob patterns
 
 BUILD_DEPENDS=	makeme:devel/msrc0 \
 		mkcmd:devel/mkcmd
+
+USES=		tar:tgz
 
 MAKE_FLAGS=
 MAKEFILE=
@@ -32,7 +32,7 @@ do-install:
 	( cd ${WRKSRC}/bin/curly && ${SETENV} ${MAKENV} makeme \
 	    ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${INSTALL_TARGET} )
 	${INSTALL_MAN} ${WRKSRC}/bin/${PORTNAME}/${PORTNAME}.man \
-	    ${STAGEDIR}${PREFIX}/man/man1/${PORTNAME}.1
-	${LN} -s ${PREFIX}/man/man1/${PORTNAME}.1 ${STAGEDIR}${PREFIX}/man/man1/un${PORTNAME}.1
+	    ${STAGEDIR}${MANPREFIX}/man/man1/${PORTNAME}.1
+	${LN} -s ${PORTNAME}.1 ${STAGEDIR}${MANPREFIX}/man/man1/un${PORTNAME}.1
 
 .include <bsd.port.mk>

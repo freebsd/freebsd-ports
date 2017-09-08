@@ -1,0 +1,18 @@
+--- AggregatingFilter/GNUmakefile.orig	2007-02-15 13:56:33 UTC
++++ AggregatingFilter/GNUmakefile
+@@ -1,8 +1,4 @@
+-ifeq "$(GNUSTEP_SYSTEM_ROOT)" ""
+-  include Makefile
+-else
+-
+-BUNDLE_INSTALL_DIR=$(GNUSTEP_INSTALLATION_DIR)/Library/Bundles/Paje
++BUNDLE_INSTALL_DIR=$(DESTDIR)/$(GNUSTEP_SYSTEM_LIBRARY)/Bundles/Paje
+ 
+ include $(GNUSTEP_MAKEFILES)/common.make
+ 
+@@ -38,5 +34,3 @@ h.template
+ -include GNUmakefile.preamble
+ include $(GNUSTEP_MAKEFILES)/bundle.make
+ -include GNUmakefile.postamble
+-
+-endif

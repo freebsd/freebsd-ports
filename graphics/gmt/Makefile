@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gmt
-PORTVERSION=	4.5.15
+PORTVERSION=	4.5.16
 DISTVERSIONSUFFIX=	-src
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.soest.hawaii.edu/%SUBDIR%/ \
@@ -24,8 +24,6 @@ LICENSE=	GPLv2 LGPL3
 LICENSE_COMB=	multi
 LICENSE_DISTFILES_GPLv2=	${DISTNAME}${EXTRACT_SUFX}
 LICENSE_DISTFILES_LGPL3=	${GSHHG_DISTNAME}${EXTRACT_SUFX}
-
-BROKEN=		fails to build
 
 LIB_DEPENDS=	libnetcdf.so:science/netcdf
 RUN_DEPENDS=	bash:shells/bash
@@ -84,7 +82,7 @@ STRIP_BINS=	blockmean blockmedian blockmode filter1d fitcircle \
 STRIP_LIBS=	libgmt.so.4 libgmtps.so.4 libpsl.so.4
 
 # http://www.soest.hawaii.edu/pwessel/gshhg/
-GSHHG_DISTNAME=	gshhg-gmt-2.3.4
+GSHHG_DISTNAME=	gshhg-gmt-2.3.7
 
 pre-configure:
 	@(cd ${CONFIGURE_WRKSRC} && ${SETENV} AUTOHEADER="${TRUE}" \

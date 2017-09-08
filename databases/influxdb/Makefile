@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	influxdb
-PORTVERSION=	1.3.0
+PORTVERSION=	1.3.3
 DISTVERSIONPREFIX=	v
 CATEGORIES=	databases net-mgmt
 
@@ -9,25 +9,16 @@ MAINTAINER=	cheffo@freebsd-bg.org
 COMMENT=	Open-source distributed time series database
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+ONLY_FOR_ARCHS=	amd64 armv6 i386
 
 BUILD_DEPENDS=	go>=1.8.1:lang/go
-
-OPTIONS_DEFINE=	MANPAGES
-OPTIONS_DEFAULT=	MANPAGES
-
-MANPAGES_BUILD_DEPENDS=	xmlto:textproc/xmlto \
-		asciidoc:textproc/asciidoc \
-		docbook-xml>0:textproc/docbook-xml
-MANPAGES_USES=	gmake
-OPTIONS_SUB=	yes
-
-ONLY_FOR_ARCHS=	i386 amd64 armv6
 
 USE_RC_SUBR=	influxd
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	influxdata:DEFAULT
-
 GH_TUPLE=	BurntSushi:toml:9906417:toml/src/github.com/BurntSushi/toml \
 		bmizerany:pat:c068ca2:pat/src/github.com/bmizerany/pat \
 		boltdb:bolt:4b1ebc1:bolt/src/github.com/boltdb/bolt \
@@ -50,7 +41,7 @@ GH_TUPLE=	BurntSushi:toml:9906417:toml/src/github.com/BurntSushi/toml \
 		golang:crypto:9477e0b:crypto/src/golang.org/x/crypto
 
 SUB_FILES=	influxd
-SUB_LIST+=	INFLUXD_USER=${INFLUXD_USER} \
+SUB_LIST=	INFLUXD_USER=${INFLUXD_USER} \
 		INFLUXD_GROUP=${INFLUXD_GROUP} \
 		INFLUXD_DBDIR=${INFLUXD_DBDIR} \
 		INFLUXD_PIDDIR=${INFLUXD_PIDDIR} \
@@ -62,17 +53,24 @@ PLIST_SUB=	INFLUXD_USER=${INFLUXD_USER} \
 		INFLUXD_PIDDIR=${INFLUXD_PIDDIR} \
 		INFLUXD_LOGDIR=${INFLUXD_LOGDIR}
 
-INFLUXD_USER?=	influxd
-INFLUXD_GROUP?=	influxd
-
-INFLUXD_DBDIR=	/var/db/${PORTNAME}/
-INFLUXD_LOGDIR=	/var/log/${PORTNAME}/
-INFLUXD_PIDDIR=	/var/run/${PORTNAME}/
+INFLUXD_USER=	influxd
+INFLUXD_GROUP=	influxd
 
 USERS=		${INFLUXD_USER}
 GROUPS=		${INFLUXD_GROUP}
 
-STRIP=		# stripping can break go binaries
+OPTIONS_DEFINE=	MANPAGES
+OPTIONS_DEFAULT=	MANPAGES
+OPTIONS_SUB=	yes
+
+MANPAGES_BUILD_DEPENDS=	xmlto:textproc/xmlto \
+		asciidoc:textproc/asciidoc \
+		docbook-xml>0:textproc/docbook-xml
+MANPAGES_USES=	gmake
+
+INFLUXD_DBDIR=	/var/db/${PORTNAME}/
+INFLUXD_LOGDIR=	/var/log/${PORTNAME}/
+INFLUXD_PIDDIR=	/var/run/${PORTNAME}/
 
 post-patch:
 	@${MKDIR} ${WRKSRC}/src/github.com/${GH_ACCOUNT_DEFAULT}/${PORTNAME}
@@ -83,7 +81,7 @@ post-patch:
 		Dockerfile_build_ubuntu32 Dockerfile_build_ubuntu64 \
 		Dockerfile_build_ubuntu64_git Dockerfile_test_ubuntu32 \
 		errors.go etc gobuild.sh Godeps importer influxdb.go influxql \
-		internal LICENSE LICENSE_OF_DEPENDENCIES.md Makefile man models \
+		internal LICENSE_OF_DEPENDENCIES.md Makefile man models \
 		monitor nightly.sh node.go pkg QUERIES.md README.md \
 		scripts services stress tcp test.sh tests TODO.md toml tsdb uuid \
  		${WRKSRC}/src/github.com/${GH_ACCOUNT_DEFAULT}/${PORTNAME}

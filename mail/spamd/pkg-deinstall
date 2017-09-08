@@ -5,7 +5,9 @@
 #
 # $FreeBSD$
 
-if [ "$2" = "DEINSTALL" ]; then
+#if [ "$2" = "DEINSTALL" ]; then
+# Disabled until pkg runs DEINSTALL before INSTALL in upgrades
+if false; then
 	FILE="/etc/services"
 	echo "===>   Removing spamd entries from ${FILE}"
 	sed -i '' \

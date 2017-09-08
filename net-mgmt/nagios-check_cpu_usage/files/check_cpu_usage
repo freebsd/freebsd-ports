@@ -101,7 +101,7 @@ fi
 warn=$1
 crit=$3
 
-cpu_all=$( vmstat -c 2 -n 0 | tail -n 1 | awk '{print $15 " " $16 " " $17}' )
+cpu_all=$( iostat -c 2 -t proc | tail -n 1 | awk '{print $3 " " $5 " " $7}' )
 cpu_user=$( echo $cpu_all | awk '{print $1}')
 cpu_sys=$(  echo $cpu_all | awk '{print $2}')
 cpu_idle=$( echo $cpu_all | awk '{print $3}')

@@ -1,20 +1,20 @@
---- bin/sbt.orig	2016-10-28 17:46:00 UTC
+--- bin/sbt.orig	2017-08-29 21:39:02 UTC
 +++ bin/sbt
-@@ -62,7 +62,7 @@ cygwinpath() {
+@@ -63,7 +63,7 @@ cygwinpath() {
  
  declare -r noshare_opts="-Dsbt.global.base=project/.sbtboot -Dsbt.boot.directory=project/.boot -Dsbt.ivy.home=project/.ivy"
  declare -r sbt_opts_file=".sbtopts"
--declare -r etc_sbt_opts_file="${sbt_home}/conf/sbtopts"
-+declare -r etc_sbt_opts_file="${sbt_home}/etc/sbtopts"
+-declare -r etc_sbt_opts_file="/etc/sbt/sbtopts"
++declare -r etc_sbt_opts_file="%%PREFIX%%/etc/sbtopts"
+ declare -r dist_sbt_opts_file="${sbt_home}/conf/sbtopts"
  declare -r win_sbt_opts_file="${sbt_home}/conf/sbtconfig.txt"
  
- usage() {
-@@ -99,7 +99,7 @@ Usage: $script_name [options]
+@@ -101,7 +101,7 @@ Usage: $script_name [options]
    SBT_OPTS           environment variable, if unset uses "$default_sbt_opts"
    .sbtopts           if this file exists in the current directory, its contents
                       are prepended to the runner args
 -  /etc/sbt/sbtopts   if this file exists, it is prepended to the runner args
-+  ${sbt_home}/etc/sbtopts   if this file exists, it is prepended to the runner args
++  %%PREFIX%%/etc/sbtopts   if this file exists, it is prepended to the runner args
    -Dkey=val          pass -Dkey=val directly to the java runtime
    -J-X               pass option -X directly to the java runtime 
                       (-J is stripped)

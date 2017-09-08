@@ -1,6 +1,6 @@
---- commands/tui.go.orig	2017-06-23 15:51:48 UTC
+--- commands/tui.go.orig	2017-08-16 11:55:56 UTC
 +++ commands/tui.go
-@@ -94,12 +94,12 @@ func (p *TuiCmd) SetFlags(f *flag.FlagSe
+@@ -107,12 +107,12 @@ func (p *TuiCmd) SetFlags(f *flag.FlagSe
  		"sqlite3",
  		"DB type for fetching CVE dictionary (sqlite3, mysql or postgres)")
  
@@ -15,12 +15,3 @@
  
  	f.StringVar(
  		&p.cveDictionaryURL,
-@@ -153,7 +153,7 @@ func (p *TuiCmd) Execute(_ context.Conte
- 		if p.refreshCve || needToRefreshCve(r) {
- 			if c.Conf.CveDBType == "sqlite3" {
- 				if _, err := os.Stat(c.Conf.CveDBPath); os.IsNotExist(err) {
--					log.Errorf("SQLite3 DB(CVE-Dictionary) is not exist: %s",
-+					log.Errorf("SQLite3 DB(CVE-Dictionary) does not exist: %s",
- 						c.Conf.CveDBPath)
- 					return subcommands.ExitFailure
- 				}

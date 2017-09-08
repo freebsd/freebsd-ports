@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	puppet
-PORTVERSION=	5.0.1
+PORTVERSION=	5.1.0
 CATEGORIES=	sysutils
 MASTER_SITES=	http://downloads.puppetlabs.com/puppet/
 PKGNAMESUFFIX=	5

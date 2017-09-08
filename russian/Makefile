@@ -9,7 +9,6 @@
     SUBDIR += d1489
     SUBDIR += emkatic
     SUBDIR += eric6
-    SUBDIR += fortuneru
     SUBDIR += gd
     SUBDIR += gimp-help
     SUBDIR += hunspell

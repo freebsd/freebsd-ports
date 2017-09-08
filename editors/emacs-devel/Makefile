@@ -15,14 +15,14 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 CONFLICTS=	emacs25-[0-9]* emacs-nox11-[0-9]*
 
-BROKEN_aarch64=		Fails to link: missing sbrk
+BROKEN_aarch64=		Segfaults during build
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	emacs-mirror
-GH_TAGNAME=	01a98e9
+GH_TAGNAME=	1b492fa
 
 EMACS_VER=	26.0.50
-EMACS_REV=	20170712
+EMACS_REV=	20170903
 GNU_CONFIGURE=	yes
 USES=		autoreconf:build cpe gmake makeinfo ncurses pkgconfig
 INFO_PATH=	${DATADIR_REL}/info

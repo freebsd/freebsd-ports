@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	freebsd-bugzilla-cli
-PORTVERSION=	0.15.0
+PORTVERSION=	0.15.1
 CATEGORIES=	ports-mgmt
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Interact with the FreeBSD bugzilla instance
 
 LICENSE=	APACHE20

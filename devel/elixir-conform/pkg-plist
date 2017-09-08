@@ -45,7 +45,7 @@ lib/elixir/lib/conform/lib/mix/tasks/conform.configure.ex
 lib/elixir/lib/conform/lib/mix/tasks/conform.effective.ex
 lib/elixir/lib/conform/lib/mix/tasks/conform.new.ex
 lib/elixir/lib/conform/priv/bin/conform
+lib/elixir/lib/conform/priv/bin/post_configure.sh
 lib/elixir/lib/conform/priv/bin/post_upgrade.sh
-lib/elixir/lib/conform/priv/bin/pre_configure.sh
 lib/elixir/lib/conform/priv/bin/pre_upgrade.sh
 %%PORTDOCS%%%%DOCSDIR%%/README.md

@@ -1,0 +1,9 @@
+This package provides a high level, convenient API for managing 
+internationalization translation contexts in Python application. There is a 
+simple API for single-context applications, such as command line scripts which 
+only need to translate into one language during the entire course of their 
+execution. There is a more flexible, but still convenient API for multi-context
+applications, such as servers, which may need to switch language contexts for 
+different tasks.
+
+WWW: https://flufli18n.readthedocs.io

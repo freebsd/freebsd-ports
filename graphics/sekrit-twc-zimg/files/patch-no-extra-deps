@@ -1,13 +1,13 @@
---- Makefile.am.orig	2016-08-17 04:57:11 UTC
+--- Makefile.am.orig	2017-09-05 14:18:57 UTC
 +++ Makefile.am
-@@ -250,30 +250,12 @@ endif # TESTAPP
+@@ -280,31 +280,13 @@ endif # TESTAPP
  if UNIT_TEST
  TESTS = test/unit_test
  
 -check_LTLIBRARIES = test/libmusl_m.la
  check_PROGRAMS = test/unit_test
  
--test_libmusl_m_la_CFLAGS = $(AM_CFLAGS) -Wno-sign-compare -Wno-unused-variable -Wno-unused-but-set-variable
+-test_libmusl_m_la_CFLAGS = $(AM_CFLAGS) -std=c99 -Wno-sign-compare -Wno-unused-variable -Wno-unused-but-set-variable
 -
 -test_libmusl_m_la_SOURCES = \
 -	test/extra/musl-libm/__cos.c \
@@ -24,6 +24,7 @@
 -	test/extra/musl-libm/sin.c
 -
  test_unit_test_CPPFLAGS = \
+ 	$(AM_CPPFLAGS) \
  	-I$(srcdir)/src/zimg \
  	-I$(srcdir)/test \
 -	-I$(srcdir)/test/extra \
@@ -32,8 +33,8 @@
  
  test_unit_test_SOURCES = \
  	test/main.cpp \
-@@ -272,9 +255,6 @@ test_unit_test_SOURCES = \
- 	test/colorspace/colorspace_test.cpp \
+@@ -313,9 +295,6 @@ test_unit_test_SOURCES = \
+ 	test/colorspace/gamma_test.cpp \
  	test/depth/depth_convert_test.cpp \
  	test/depth/dither_test.cpp \
 -	test/extra/sha1/config.h \
@@ -42,8 +43,8 @@
  	test/graph/audit_buffer.cpp \
  	test/graph/audit_buffer.h \
  	test/graph/basic_filter_test.cpp \
-@@ -302,7 +282,6 @@ test_unit_test_SOURCES += \
- endif #X86SIMD
+@@ -355,7 +334,6 @@ test_unit_test_SOURCES += \
+ endif # X86SIMD_AVX512
  
  test_unit_test_LDADD = \
 -	test/extra/googletest/googletest/lib/libgtest.la \

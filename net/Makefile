@@ -67,6 +67,7 @@
     SUBDIR += c3270
     SUBDIR += cagibi
     SUBDIR += ccxstream
+    SUBDIR += ceph
     SUBDIR += ceph-devel
     SUBDIR += cf
     SUBDIR += chrony
@@ -135,6 +136,7 @@
     SUBDIR += exaddos
     SUBDIR += fb
     SUBDIR += findmtu
+    SUBDIR += flower
     SUBDIR += flowgrep
     SUBDIR += fonulator
     SUBDIR += foreman-proxy
@@ -293,6 +295,7 @@
     SUBDIR += jsch
     SUBDIR += jumpgate
     SUBDIR += jwhois
+    SUBDIR += kafka
     SUBDIR += kafkacat
     SUBDIR += kamailio
     SUBDIR += kdenetwork4
@@ -946,6 +949,7 @@
     SUBDIR += pipsecd
     SUBDIR += pjsip
     SUBDIR += pjsip-extsrtp
+    SUBDIR += pkt-gen
     SUBDIR += pktanon
     SUBDIR += pload
     SUBDIR += plugdaemon

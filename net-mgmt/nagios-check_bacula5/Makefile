@@ -9,6 +9,9 @@ PKGNAMESUFFIX=	5
 MAINTAINER=	freebsd@troback.com
 COMMENT=	Nagios plugin for Bacula
 
+DEPRECATED=	No upstream commits since 2013. Use net-mgmt/nagios-check_bacula
+EXPIRATION_DATE=	2017-10-04
+
 LIB_DEPENDS+=	libbac.so:sysutils/bacula5-client
 
 PLIST=		${.CURDIR}/pkg-plist

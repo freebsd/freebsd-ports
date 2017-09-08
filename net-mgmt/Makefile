@@ -131,6 +131,7 @@
     SUBDIR += nagios-certexp-plugin
     SUBDIR += nagios-check_bacula
     SUBDIR += nagios-check_bacula5
+    SUBDIR += nagios-check_bacula9
     SUBDIR += nagios-check_clamav
     SUBDIR += nagios-check_cpu_usage
     SUBDIR += nagios-check_dhcp.pl
@@ -381,5 +382,9 @@
     SUBDIR += zabbix32-frontend
     SUBDIR += zabbix32-proxy
     SUBDIR += zabbix32-server
+    SUBDIR += zabbix34-agent
+    SUBDIR += zabbix34-frontend
+    SUBDIR += zabbix34-proxy
+    SUBDIR += zabbix34-server
 
 .include <bsd.port.subdir.mk>

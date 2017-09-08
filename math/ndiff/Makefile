@@ -7,7 +7,7 @@ PORTREVISION=	4
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.math.utah.edu/pub/misc/
 
-MAINTAINER=	luca.pizzamiglio@gmail.com
+MAINTAINER=	pizzamig@FreeBSD.org
 COMMENT=	Compare files, ignoring numeric differences
 
 LICENSE=	GPLv2

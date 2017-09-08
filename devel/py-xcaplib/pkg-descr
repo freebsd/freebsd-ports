@@ -6,4 +6,4 @@ XCAP clients to store data like presence policy in combination with a SIP
 Presence server that supports PUBLISH/SUBSCRIBE/NOTIFY SIP methods can
 provide a complete SIP SIMPLE solution.
 
-WWW: http://sipsimpleclient.com/wiki/xcapclient
+WWW: http://openxcap.org/clients/
