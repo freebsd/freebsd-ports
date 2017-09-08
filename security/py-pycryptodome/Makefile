@@ -13,7 +13,7 @@ COMMENT=	Cryptographic library for Python
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.rst
 
-USES=		python
+USES?=		python
 USE_PYTHON=	autoplist distutils
 
 post-install:
