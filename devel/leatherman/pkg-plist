@@ -34,6 +34,7 @@ include/leatherman/util/scoped_resource.hpp
 include/leatherman/util/strings.hpp
 include/leatherman/util/time.hpp
 include/leatherman/util/timer.hpp
+include/leatherman/util/uri.hpp
 include/leatherman/util/windows/scoped_handle.hpp
 include/leatherman/vendor/catch.hpp
 include/leatherman/vendor/rapidjson/allocators.h
