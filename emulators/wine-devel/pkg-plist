@@ -434,6 +434,7 @@ include/wine/windows/ks.h
 include/wine/windows/ksguid.h
 include/wine/windows/ksmedia.h
 include/wine/windows/ksuuids.h
+include/wine/windows/libloaderapi.h
 include/wine/windows/lm.h
 include/wine/windows/lmaccess.h
 include/wine/windows/lmapibuf.h
@@ -1074,6 +1075,7 @@ lib/wine/api-ms-win-dx-d3dkmt-l1-1-0.dll.so
 lib/wine/api-ms-win-eventing-classicprovider-l1-1-0.dll.so
 lib/wine/api-ms-win-eventing-consumer-l1-1-0.dll.so
 lib/wine/api-ms-win-eventing-controller-l1-1-0.dll.so
+lib/wine/api-ms-win-eventing-legacy-l1-1-0.dll.so
 lib/wine/api-ms-win-eventing-provider-l1-1-0.dll.so
 lib/wine/api-ms-win-eventlog-legacy-l1-1-0.dll.so
 lib/wine/api-ms-win-mm-misc-l1-1-1.dll.so
@@ -1458,6 +1460,7 @@ lib/wine/fakedlls/api-ms-win-dx-d3dkmt-l1-1-0.dll
 lib/wine/fakedlls/api-ms-win-eventing-classicprovider-l1-1-0.dll
 lib/wine/fakedlls/api-ms-win-eventing-consumer-l1-1-0.dll
 lib/wine/fakedlls/api-ms-win-eventing-controller-l1-1-0.dll
+lib/wine/fakedlls/api-ms-win-eventing-legacy-l1-1-0.dll
 lib/wine/fakedlls/api-ms-win-eventing-provider-l1-1-0.dll
 lib/wine/fakedlls/api-ms-win-eventlog-legacy-l1-1-0.dll
 lib/wine/fakedlls/api-ms-win-mm-misc-l1-1-1.dll
@@ -2110,6 +2113,7 @@ lib/wine/fakedlls/wmi.dll
 lib/wine/fakedlls/wmic.exe
 lib/wine/fakedlls/wmiutils.dll
 lib/wine/fakedlls/wmp.dll
+lib/wine/fakedlls/wmphoto.dll
 lib/wine/fakedlls/wmplayer.exe
 lib/wine/fakedlls/wmvcore.dll
 lib/wine/fakedlls/wnaspi32.dll
@@ -2769,6 +2773,7 @@ lib/wine/wmi.dll.so
 lib/wine/wmic.exe.so
 lib/wine/wmiutils.dll.so
 lib/wine/wmp.dll.so
+lib/wine/wmphoto.dll.so
 lib/wine/wmplayer.exe.so
 lib/wine/wmvcore.dll.so
 lib/wine/wnaspi32.dll.so
