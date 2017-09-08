@@ -14,11 +14,11 @@ COMMENT=	Perl Interface to the Google LevelDB NoSQL database
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-LIB_DEPENDS=	libleveldb.so:databases/leveldb
-
-BROKEN_aarch64=		does not build: error: Please implement AtomicPointer for this platform
+BROKEN_aarch64=	does not build: error: Please implement AtomicPointer for this platform
 BROKEN_powerpc64=	does not build: error: unrecognized command line option -std=c++0x
-BROKEN_sparc64=		does not build: unrecognized command line options
+BROKEN_sparc64=	does not build: unrecognized command line options
+
+LIB_DEPENDS=	libleveldb.so:databases/leveldb
 
 MAKE_ARGS=	CC="${CXX}"
 USE_PERL5=	configure

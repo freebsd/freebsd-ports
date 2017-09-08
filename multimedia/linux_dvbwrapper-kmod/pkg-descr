@@ -4,4 +4,4 @@ so that Linux apps can talk to DVB/ATSC tuners via /dev/dvb/adapterX.
 Note this port does not contain actual DVB drivers, those are
 provided by e.g. the multimedia/webcamd port.
 
-WWW: http://people.freebsd.org/~nox/dvb/
+WWW: https://people.freebsd.org/~nox/dvb/

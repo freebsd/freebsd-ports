@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	ccnet-server
-PORTVERSION=	${SEAFILE_VER}
 DISTVERSIONPREFIX=	v
+DISTVERSION=	${SEAFILE_VER}
 DISTVERSIONSUFFIX=	-server
 CATEGORIES=	net-mgmt devel
 
@@ -20,21 +20,24 @@ LIB_DEPENDS=	libsearpc.so:devel/libsearpc \
 		libevent.so:devel/libevent \
 		libjansson.so:devel/jansson
 
-CONFLICT=	ccnet-[0-9]*
-
+USES=		autoreconf libtool localbase mysql:client pathfix \
+		pgsql pkgconfig python:-2.7 shebangfix ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	haiwen
-
-USES=		autoreconf gettext libtool localbase mysql:client \
-       		pathfix pgsql pkgconfig python:-2.7 shebangfix ssl
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
 USE_OPENLDAP=	yes
+
+CONFLICT=	ccnet-[0-9]*
 
 CONFIGURE_ENV=	SSL_CFLAGS="${OPENSSLINC}" SSL_LIBS="-L${OPENSSLLIB} -lssl -lcrypto"
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--enable-ldap
 INSTALL_TARGET=	install-strip
+
+OPTIONS_DEFINE=	NLS
+
+NLS_USES=	gettext
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/${SEABIN} ${STAGEDIR}${PREFIX}/${SEALIB}

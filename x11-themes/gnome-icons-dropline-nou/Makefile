@@ -9,6 +9,9 @@ DISTNAME=	Nou-${PORTVERSION}
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Dropline Nou Icons for Gnome
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/Nou/COPYING
+
 USES=		tar:bzip2
 NO_WRKSUBDIR=	yes
 

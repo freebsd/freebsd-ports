@@ -1,2 +1,3 @@
-SHA256 (mbgtools-fbsd-dev-2013-06-26.tar.gz) = a676d5bf431e6bd9ed399c831a12d31f1ee9f466412534d439108c7aa4261c0a
-SIZE (mbgtools-fbsd-dev-2013-06-26.tar.gz) = 345665
+TIMESTAMP = 1503933202
+SHA256 (mbgtools-fbsd-1.0.0.tar.gz) = 807f5ea0da495be2d4f29d47d8ad2b2554948d8ac71fcca592615ab510772a09
+SIZE (mbgtools-fbsd-1.0.0.tar.gz) = 563563

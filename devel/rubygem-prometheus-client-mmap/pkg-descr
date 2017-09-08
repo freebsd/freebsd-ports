@@ -1,0 +1,8 @@
+This Prometheus library is fork of Prometheus Ruby Client that uses mmap'ed
+files to share metrics from multiple processes.  This allows efficient metrics
+processing for Ruby web apps running in multiprocess setups like Unicorn.
+
+A suite of instrumentation metric primitives for Ruby that can be exposed
+through a HTTP interface. Intended to be used together with a Prometheus server.
+
+WWW: https://gitlab.com/gitlab-org/prometheus-client-mmap

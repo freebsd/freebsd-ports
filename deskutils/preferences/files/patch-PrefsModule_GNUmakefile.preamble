@@ -1,0 +1,21 @@
+--- PrefsModule/GNUmakefile.preamble.orig	2002-02-12 05:02:11 UTC
++++ PrefsModule/GNUmakefile.preamble
+@@ -2,10 +2,10 @@
+ ADDITIONAL_CPPFLAGS +=
+ 
+ # Additional flags to pass to the Objective-C compiler
+-ADDITIONAL_OBJCFLAGS += -Wall -Werror
++ADDITIONAL_OBJCFLAGS += -Wall
+ 
+ # Additional flags to pass to the C compiler
+-ADDITIONAL_CFLAGS += -Wall -Werror
++ADDITIONAL_CFLAGS += -Wall
+ 
+ # Additional include directories the compiler should search
+ ADDITIONAL_INCLUDE_DIRS +=
+@@ -34,5 +34,4 @@ ADDITIONAL_WO_LIBS +=
+ #
+ # Flags dealing with installing and uninstalling
+ #
+-GNUSTEP_INSTALLATION_DIR=$(GNUSTEP_SYSTEM_ROOT)
+ # Additional directories to be created during installation

@@ -1,6 +1,0 @@
-Submit system and ports statistics to fbsdmon.org.
-
-Statistics can be sent from command line, from rc script
-or from periodic script.
-
-WWW: http://fbsdmon.org/

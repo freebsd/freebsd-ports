@@ -38,6 +38,7 @@
 %%WEBPLUGIN_DIR%%/config/wfclient.template
 %%WEBPLUGIN_DIR%%/desktop/Citrix-mime_types.xml
 %%WEBPLUGIN_DIR%%/eula.txt
+%%WEBPLUGIN_DIR%%/gtk/glade/instrumentation.glade
 %%WEBPLUGIN_DIR%%/gtk/glade/about.glade
 %%WEBPLUGIN_DIR%%/gtk/glade/aboutAdditional.glade
 %%WEBPLUGIN_DIR%%/gtk/glade/authdialogbox.glade
@@ -191,7 +192,6 @@
 %%WEBPLUGIN_DIR%%/lib/libcoreavc_sdk.so
 %%WEBPLUGIN_DIR%%/lib/libkcph.so
 %%WEBPLUGIN_DIR%%/lib/libkcpm.so
-%%WEBPLUGIN_DIR%%/libctxssl.so
 %%WEBPLUGIN_DIR%%/libproxy.so
 %%WEBPLUGIN_DIR%%/nls/C
 %%WEBPLUGIN_DIR%%/nls/de.UTF-8/XCapture
@@ -502,6 +502,12 @@
 %%WEBPLUGIN_DIR%%/usb/ctxusbd.rc
 %%WEBPLUGIN_DIR%%/usb/ica-usb.rules
 %%WEBPLUGIN_DIR%%/usb/usb.conf
+@(,,00555) %%WEBPLUGIN_DIR%%/util/gst_play0.10
+@(,,00555) %%WEBPLUGIN_DIR%%/util/gst_play1.0
+@(,,00555) %%WEBPLUGIN_DIR%%/util/gst_read0.10
+@(,,00555) %%WEBPLUGIN_DIR%%/util/gst_read1.0
+@(,,00555) %%WEBPLUGIN_DIR%%/util/libgstflatstm0.10.so
+@(,,00555) %%WEBPLUGIN_DIR%%/util/libgstflatstm1.0.so
 @(,,00555) %%WEBPLUGIN_DIR%%/util/DeleteCompleteFlashCache.sh
 @(,,00555) %%WEBPLUGIN_DIR%%/util/configmgr
 @(,,00555) %%WEBPLUGIN_DIR%%/util/conncenter
@@ -510,12 +516,9 @@
 @(,,00555) %%WEBPLUGIN_DIR%%/util/echo_cmd
 @(,,00555) %%WEBPLUGIN_DIR%%/util/gst_aud_play
 @(,,00555) %%WEBPLUGIN_DIR%%/util/gst_aud_read
-@(,,00555) %%WEBPLUGIN_DIR%%/util/gst_play
-@(,,00555) %%WEBPLUGIN_DIR%%/util/gst_read
 @(,,00555) %%WEBPLUGIN_DIR%%/util/hdxcheck.sh
 @(,,00555) %%WEBPLUGIN_DIR%%/util/hinst
 @(,,00555) %%WEBPLUGIN_DIR%%/util/icalicense.sh
-@(,,00555) %%WEBPLUGIN_DIR%%/util/libgstflatstm.so
 @(,,00555) %%WEBPLUGIN_DIR%%/util/lurdump
 @(,,00555) %%WEBPLUGIN_DIR%%/util/new_store
 @(,,00555) %%WEBPLUGIN_DIR%%/util/nslaunch

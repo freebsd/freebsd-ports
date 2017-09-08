@@ -1,0 +1,12 @@
+#!/bin/sh
+#
+# Runs the user's .xinitrc (at this point, .xsession has already
+# been sourced).
+
+RC="$HOME/.xinitrc"
+
+test -f "$RC" || exit 1
+
+test -x "$RC" && exec "$RC"
+test -f "$RC" && exec /bin/sh "$RC"
+

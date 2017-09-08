@@ -1,11 +1,15 @@
---- base/third_party/libevent/BUILD.gn.orig	2017-04-19 19:06:28 UTC
-+++ base/third_party/libevent/BUILD.gn
-@@ -50,6 +50,9 @@ static_library("libevent") {
+--- base/third_party/libevent/BUILD.gn.orig	2017-08-03 00:05:03.000000000 +0200
++++ base/third_party/libevent/BUILD.gn	2017-08-03 14:47:35.196280000 +0200
+@@ -50,6 +50,13 @@
        "linux/event-config.h",
      ]
      include_dirs = [ "linux" ]
 +  } else if (is_bsd) {
-+    sources += [ "kqueue.c" ]
++    sources += [ 
++      "kqueue.c",
++      "freebsd/config.h",
++      "freebsd/event-config.h",
++    ]
 +    include_dirs = [ "freebsd" ]
    } else if (is_android) {
      sources += [

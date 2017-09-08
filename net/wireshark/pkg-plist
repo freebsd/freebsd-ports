@@ -18,13 +18,13 @@ bin/tshark
 %%TEXT2PCAP%%
 lib/libwireshark.so
 lib/libwireshark.so.10
-lib/libwireshark.so.10.0.0
+lib/libwireshark.so.10.0.1
 lib/libwiretap.so
 lib/libwiretap.so.7
-lib/libwiretap.so.7.0.0
+lib/libwiretap.so.7.0.1
 %%GUI%%lib/libwscodecs.so
-%%GUI%%lib/libwscodecs.so.0
-%%GUI%%lib/libwscodecs.so.0.0.0
+%%GUI%%lib/libwscodecs.so.1
+%%GUI%%lib/libwscodecs.so.1.1.0
 lib/libwsutil.so
 lib/libwsutil.so.8
 lib/libwsutil.so.8.0.0
@@ -53,6 +53,7 @@ man/man1/dumpcap.1.gz
 %%MERGECAP_MAN%%man/man1/mergecap.1.gz
 %%RAWSHARK_MAN%%man/man1/rawshark.1.gz
 %%TEXT2PCAP_MAN%%man/man1/text2pcap.1.gz
+%%UDPDUMP_MAN%%man/man1/udpdump.1.gz
 %%DFTEST_MAN%%man/man1/dftest.1.gz
 %%RANDPKT_MAN%%man/man1/randpkt.1.gz
 %%RANDPKTDUMP_MAN%%man/man1/randpktdump.1.gz
@@ -359,6 +360,7 @@ man/man4/wireshark-filter.4.gz
 %%DATADIR%%/tshark.html
 %%DATADIR%%/text2pcap.html
 %%DATADIR%%/tpncp/tpncp.dat
+%%DATADIR%%/udpdump.html
 %%DATADIR%%/wimaxasncp/dictionary.dtd
 %%DATADIR%%/wimaxasncp/dictionary.xml
 %%DATADIR%%/wireshark-filter.html

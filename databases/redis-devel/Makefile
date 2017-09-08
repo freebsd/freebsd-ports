@@ -12,7 +12,7 @@ COMMENT=	Persistent key-value database with built-in net interface
 
 LICENSE=	BSD3CLAUSE
 
-BROKEN_FreeBSD_10_i386=	undefined reference to __atomic_fetch_add_8
+BROKEN_i386=	undefined reference to __atomic_fetch_add_8
 
 USES=		execinfo
 
@@ -26,6 +26,11 @@ TESTS_DESC=	Install lang/tcl for redis unit tests
 TRIB_DESC=	Install redis-trib.rb (lang/ruby req.)
 
 .include <bsd.port.options.mk>
+
+.if ${ARCH} == i386 && ! ${CFLAGS:M-march=*}
+# Needed for __atomic_fetch_add_8
+CFLAGS+=	-march=i586
+.endif
 
 .if ${PORT_OPTIONS:MTRIB}
 CATEGORIES+=	ruby

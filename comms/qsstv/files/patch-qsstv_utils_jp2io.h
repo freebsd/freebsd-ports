@@ -4,7 +4,7 @@
  #ifndef JP2READER_H
  #define JP2READER_H
 -#include "openjpeg.h"
-+#include "openjpeg-2.1/openjpeg.h"
++#include "openjpeg-2.2/openjpeg.h"
  
  #include <QString>
  #include <QImage>

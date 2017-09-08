@@ -8,7 +8,6 @@ FILESDIR?=${DOCDIR}/${PROG}
 FILES= *.[Tt][Xx][Tt]
 
 SRCS+= adb.cpp
-SRCS+= adb_auth.cpp
 SRCS+= adb_auth_host.cpp
 SRCS+= adb_client.cpp
 SRCS+= adb_io.cpp
@@ -24,51 +23,62 @@ SRCS+= file_sync_client.cpp
 SRCS+= line_printer.cpp
 SRCS+= services.cpp
 SRCS+= shell_service_protocol.cpp
+SRCS+= socket_spec.cpp
 SRCS+= ../adb/sockets.cpp
 SRCS+= sysdeps_unix.cpp
 SRCS+= transport.cpp
 SRCS+= transport_local.cpp
+SRCS+= transport_mdns${MDNSEXT}.cpp
 SRCS+= transport_usb.cpp
 
 TEST_SRCS+= adb_io_test.cpp
+TEST_SRCS+= adb_listeners_test.cpp
 TEST_SRCS+= adb_utils_test.cpp
 TEST_SRCS+= bugreport_test.cpp
 TEST_SRCS+= fdevent_test.cpp
 TEST_SRCS+= shell_service_protocol_test.cpp
+TEST_SRCS+= socket_spec_test.cpp
 TEST_SRCS+= socket_test.cpp
 TEST_SRCS+= sysdeps_test.cpp
 TEST_SRCS+= transport_test.cpp
 
 .PATH: ${.CURDIR}/client
 SRCS+= main.cpp
+SRCS+= usb_libusb.cpp
 
 .PATH: ${.CURDIR}/sysdeps
+SRCS+= errno.cpp
 TEST_SRCS+= stat_test.cpp
 
-.PATH: ${EXTRADIR}
-SRCS+= get_my_path_freebsd.cpp
-SRCS+= usb_libusb.cpp
+.PATH: ${.CURDIR}/sysdeps/posix
+SRCS+= network.cpp
 
 .PATH: ${.CURDIR}/../base
 SRCS+= file.cpp
 SRCS+= logging.cpp
 SRCS+= parsenetaddress.cpp
+SRCS+= quick_exit.cpp
 SRCS+= stringprintf.cpp
 SRCS+= strings.cpp
 TEST_SRCS+= file_test.cpp
 TEST_SRCS+= logging_test.cpp
 TEST_SRCS+= parsenetaddress_test.cpp
+TEST_SRCS+= quick_exit_test.cpp
 TEST_SRCS+= stringprintf_test.cpp
 TEST_SRCS+= strings_test.cpp
 TEST_SRCS+= test_main.cpp
 TEST_SRCS+= test_utils.cpp
 
+.PATH: ${.CURDIR}/../libcrypto_utils
+SRCS+= android_pubkey.c
+
+.PATH: ${.CURDIR}/../libcrypto_utils/tests
+TEST_SRCS+= android_pubkey_test.cpp
+
 .PATH: ${.CURDIR}/../libcutils
 SRCS+= socket_inaddr_any_server_unix.c
 SRCS+= socket_local_client_unix.c
 SRCS+= socket_local_server_unix.c
-SRCS+= socket_loopback_client_unix.c
-SRCS+= socket_loopback_server_unix.c
 SRCS+= socket_network_client_unix.c
 SRCS+= ../libcutils/sockets.cpp
 SRCS+= load_file.c
@@ -78,13 +88,16 @@ CPPFLAGS.sockets.cpp+= -o ${.TARGET}
 
 # required by base/file.cpp
 .PATH: ${.CURDIR}/../liblog
+SRCS+= config_read.c
 SRCS+= config_write.c
 SRCS+= fake_log_device.c
 SRCS+= fake_writer.c
+SRCS+= local_logger.c
 SRCS+= logger_lock.c
 SRCS+= logger_name.c
 SRCS+= logger_write.c
-CPPFLAGS.config_write.c+= -DFAKE_LOG_DEVICE=1
+SRCS+= logprint.c
+SRCS+= stderr_write.c
 
 REVISION?= $$(${GIT} rev-parse --short=12 HEAD 2>/dev/null || echo unknown)
 
@@ -95,13 +108,15 @@ CPPFLAGS+= -DHAVE_SYMLINKS
 CPPFLAGS+= -DHAVE_TERMIO_H
 CPPFLAGS+= -DHAVE_SYS_SOCKET_H
 CPPFLAGS+= -D_FILE_OFFSET_BITS=64
+CPPFLAGS+= -DFAKE_LOG_DEVICE=1
 CPPFLAGS+= -I${.CURDIR}
 CPPFLAGS+= -I${.CURDIR}/../include
 CPPFLAGS+= -I${.CURDIR}/../base/include
+CPPFLAGS+= -I${.CURDIR}/../libcrypto_utils/include
 CPPFLAGS+= ${CPPFLAGS.${.IMPSRC:T}}
 CPPFLAGS+= $$(${PKG_CONFIG} libcrypto --cflags 2>/dev/null)
 CPPFLAGS+= $$(${PKG_CONFIG} libusb-1.0 --cflags 2>/dev/null)
-CXXFLAGS+= -std=gnu++11
+CXXFLAGS+= -std=gnu++14
 
 .ifndef COMPILE.c
 CFLAGS+= ${CPPFLAGS}

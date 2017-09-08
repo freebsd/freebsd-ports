@@ -1,0 +1,9 @@
+
+=====================================================================================
+1. Inspect and edit the %%PREFIX%%/etc/smfsav.conf file
+2. Add these lines to your Sendmail configuration file (usually sendmail.mc):
+    define(`confMILTER_MACROS_HELO', confMILTER_MACROS_HELO`, {verify}')dnl
+    INPUT_MAIL_FILTER(`smf-sav', `S=unix:%%SMFSAV_RUN_DIR%%/smf-sav.sock, T=S:30s;R:4m')dnl
+3. Put line smfsav_enable="YES" to /etc/rc.conf file
+4. Run `service smfsav start`
+=====================================================================================

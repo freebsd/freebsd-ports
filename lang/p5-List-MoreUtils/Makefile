@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	List-MoreUtils
-PORTVERSION=	0.419
+PORTVERSION=	0.425
 CATEGORIES=	lang perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -13,8 +13,10 @@ COMMENT=	Provide the stuff missing in List::Util
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	p5-Exporter-Tiny>=0.038:devel/p5-Exporter-Tiny
+BUILD_DEPENDS=	p5-Exporter-Tiny>=0.038:devel/p5-Exporter-Tiny \
+		p5-List-MoreUtils-XS>=0.423:lang/p5-List-MoreUtils-XS
 RUN_DEPENDS:=	${BUILD_DEPENDS}
+TEST_DEPENDS=	p5-Test-LeakTrace>=0:devel/p5-Test-LeakTrace
 
 NO_ARCH=	yes
 USES=		perl5

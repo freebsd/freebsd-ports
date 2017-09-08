@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Config-Model-Tester
-PORTVERSION=	3.001
+PORTVERSION=	3.002
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -23,8 +23,6 @@ BUILD_DEPENDS=	p5-File-Copy-Recursive>=0:devel/p5-File-Copy-Recursive \
 		p5-Test-Memory-Cycle>=0:devel/p5-Test-Memory-Cycle \
 		p5-Test-Warn>=0:devel/p5-Test-Warn
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-
-CONFLICTS_INSTALL=	p5-Config-Model-2.0[0-3][0-9] p5-Config-Model-2.040
 
 NO_ARCH=	yes
 USE_PERL5=	modbuild

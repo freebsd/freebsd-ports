@@ -64,7 +64,6 @@ LDFLAGS+=		-L${OPENSSLLIB}
 
 USE_RC_SUBR=		kpropd
 OPTIONS_SUB=		yes
-WRKSRC=			${WRKDIR}/${PORTNAME}-${HASH}
 WRKSRC_SUBDIR=		src
 PORTEXAMPLES=		kdc.conf krb5.conf services.append
 

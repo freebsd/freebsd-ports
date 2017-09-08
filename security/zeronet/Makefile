@@ -4,6 +4,7 @@
 PORTNAME=	zeronet
 PORTVERSION=	0.5.7
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	security net-p2p
 
 MAINTAINER=	yuri@rawbw.com
@@ -13,7 +14,8 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}msgpack-python>0:devel/py-msgpack-python \
-		${PYTHON_PKGNAMEPREFIX}gevent>=1.0.2:devel/py-gevent
+		${PYTHON_PKGNAMEPREFIX}gevent>=1.0.2:devel/py-gevent \
+		${PYTHON_PKGNAMEPREFIX}stem>0:security/py-stem
 
 SUB_FILES=	zeronet-service zeronet-cmd pkg-message
 SUB_LIST=	LOCALBASE=${LOCALBASE} USER=${USER} GROUP=${GROUP}
@@ -27,22 +29,14 @@ GH_ACCOUNT=	HelloZeroNet
 GH_PROJECT=	ZeroNet
 NO_ARCH=	yes
 
-OPTIONS_DEFINE=	TOR DEBUG
-TOR_DESC=	Enable TOR anonymity network integration
+OPTIONS_DEFINE=	DEBUG
 
-TOR_RUN_DEPENDS=tor:security/tor \
-		${PYTHON_PKGNAMEPREFIX}stem>0:security/py-stem
 DEBUG_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}werkzeug>0:www/py-werkzeug
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MTOR}
-USER=		_tor
-GROUP=		_tor
-.else
 USER=		nobody
 GROUP=		nobody
-.endif
 
 do-build:
 	@(cd ${WRKSRC} && \

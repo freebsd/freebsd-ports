@@ -162,6 +162,7 @@
     SUBDIR += pdfcube
     SUBDIR += pdflib
     SUBDIR += pdflib-perl
+    SUBDIR += pdfstitch
     SUBDIR += pdftk
     SUBDIR += pear-File_PDF
     SUBDIR += pecl-haru

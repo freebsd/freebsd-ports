@@ -12,6 +12,8 @@ COMMENT=	Reference implementation of OGC KML 2.2
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_powerpc64=	fails to compile: iomem_simple.h: redefinition of typedef 'open_file_func'
+
 BUILD_DEPENDS=	boost-libs>=1.44.0:devel/boost-libs \
 		googletest>=1.7.0:devel/googletest \
 		minizip>=1.2.8:archivers/minizip
@@ -20,8 +22,6 @@ LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 		libgtest.so:devel/googletest \
 		libminizip.so:archivers/minizip \
 		liburiparser.so:net/uriparser
-
-BROKEN_powerpc64=	fails to compile: iomem_simple.h: redefinition of typedef 'open_file_func'
 
 OPTIONS_DEFINE=	EXAMPLES
 

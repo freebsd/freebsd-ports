@@ -1,2 +1,5 @@
-SHA256 (bro-2.4.1.tar.gz) = d8b99673a5024630f6bae820c4f8c3ca9029f1167f9e5729c914c66e1fc7c8f6
-SIZE (bro-2.4.1.tar.gz) = 15010455
+TIMESTAMP = 1501017316
+SHA256 (bro-2.5.1.tar.gz) = 2c6ce502864bee9323c3e46213a21cfe9281a65cbedf81d5ab6160a437a89511
+SIZE (bro-2.5.1.tar.gz) = 18521029
+SHA256 (actor-framework-actor-framework-0.14.6_GH0.tar.gz) = cbc2033896fe41e42604de2f74673971718a40684996650157484485755f7720
+SIZE (actor-framework-actor-framework-0.14.6_GH0.tar.gz) = 1239451

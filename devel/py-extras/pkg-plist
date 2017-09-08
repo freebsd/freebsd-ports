@@ -1,9 +1,0 @@
-%%PYTHON_SITELIBDIR%%/extras/__init__.py
-%%PYTHON_SITELIBDIR%%/extras/__init__.pyc
-%%PYTHON_SITELIBDIR%%/extras/__init__.pyo
-%%PYTHON_SITELIBDIR%%/extras/tests/__init__.py
-%%PYTHON_SITELIBDIR%%/extras/tests/__init__.pyc
-%%PYTHON_SITELIBDIR%%/extras/tests/__init__.pyo
-%%PYTHON_SITELIBDIR%%/extras/tests/test_extras.py
-%%PYTHON_SITELIBDIR%%/extras/tests/test_extras.pyc
-%%PYTHON_SITELIBDIR%%/extras/tests/test_extras.pyo

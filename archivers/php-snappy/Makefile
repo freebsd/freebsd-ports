@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	snappy
-PORTVERSION=	0.1.7
+PORTVERSION=	0.1.8
 CATEGORIES=	archivers
 PKGNAMEPREFIX=	php-
 
@@ -11,7 +11,7 @@ COMMENT=	PHP extension for the snappy compression algorithm
 
 LICENSE=	BSD3CLAUSE PHP301
 LICENSE_COMB=	multi
-LICENSE_FILE_BSD3CLAUSE=${WRKSRC}/COPYING.snappy
+LICENSE_FILE_BSD3CLAUSE=	${WRKSRC}/COPYING.snappy
 LICENSE_FILE_PHP301=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libsnappy.so:archivers/snappy

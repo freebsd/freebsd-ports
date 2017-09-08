@@ -36,6 +36,13 @@ OPTIONS_SUB=		yes
 FD_DESC=		Enable finite domain constraint solver
 FD_CONFIGURE_OFF=	--disable-fd-solver
 
+# Disable registers on i386. This fixes build with gcc6.
+# See: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=852008
+.include <bsd.port.pre.mk>
+.if ${ARCH} == i386
+CONFIGURE_ARGS+=		--disable-regs
+.endif
+
 post-configure:
 	${REINPLACE_CMD} \
 		-E 's|^(INSTALL_PROGRAM *= *install +-s +-m) 555|\1 755|g' \
@@ -51,4 +58,4 @@ post-install-EXAMPLES-off:
 post-install-DOCS-off:
 	${RM} -r ${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

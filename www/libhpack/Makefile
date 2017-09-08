@@ -15,9 +15,9 @@ COMMENT=	Implementation of HPACK (Header compression for HTTP/2.0)
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libcheck.so:devel/check
+BROKEN_armv6=	fails to compile: Can't define TIME_MAX #'
 
-BROKEN_armv6=		fails to compile: Can't define TIME_MAX
+LIB_DEPENDS=	libcheck.so:devel/check
 
 CMAKE_ARGS=	-DBUILD_DOCS=OFF \
 		-DBUILD_TESTS=OFF \

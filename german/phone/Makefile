@@ -2,26 +2,22 @@
 # $FreeBSD$
 
 PORTNAME=	phone
-PORTVERSION=	1.0
+PORTVERSION=	1.20170802
 CATEGORIES=	german
-MASTER_SITES=	http://wolfram.schneider.org/src/
-DISTNAME=	avon-1996
-EXTRACT_SUFX=	.gz
+MASTER_SITES=	ftp://ftp.dinoex.org/pub/avon/
+DISTNAME=	NVONB.INTERNET.20170802.ONB
 
-MAINTAINER=	wosch@FreeBSD.org
+MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	German phone code / Deutsche Telefonvorwahl (AVON)
 
-DEPRECATED=	Out of date
-EXPIRATION_DATE=	2017-09-01
+LICENSE=	PD
 
-PLIST_FILES=	share/misc/de.phone
+USES=		zip dos2unix
 NO_WRKSUBDIR=	YES
-EXTRACT_CMD=	${GZCAT}
-EXTRACT_BEFORE_ARGS=	# None
-EXTRACT_AFTER_ARGS=	> ${WRKSRC}/de.phone
 NO_BUILD=	YES
+PLIST_FILES=	share/misc/de.phone
 
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/de.phone ${STAGEDIR}${PREFIX}/share/misc
+	${INSTALL_DATA} ${WRKSRC}/${DISTNAME}.csv ${STAGEDIR}${PREFIX}/share/misc/de.phone
 
 .include <bsd.port.mk>

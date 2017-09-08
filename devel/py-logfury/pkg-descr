@@ -1,0 +1,4 @@
+Logfury is for python library maintainers. It allows for responsible,
+low-boilerplate logging of method calls.
+
+WWW: https://github.com/ppolewicz/logfury

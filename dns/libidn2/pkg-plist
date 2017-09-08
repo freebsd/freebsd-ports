@@ -3,7 +3,7 @@ include/idn2.h
 lib/libidn2.a
 lib/libidn2.so
 lib/libidn2.so.0
-lib/libidn2.so.0.3.2
+lib/libidn2.so.0.3.3
 libdata/pkgconfig/libidn2.pc
 man/man1/idn2.1.gz
 man/man3/idn2_check_version.3.gz

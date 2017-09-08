@@ -13,6 +13,9 @@ CONFLICTS=	bacula-*
 MAINTAINER=	dan@langille.org
 COMMENT=	Bacula document set
 
+DEPRECATED=	No upstream commits since 2013. Use sysutils/bacula-docs
+EXPIRATION_DATE=	2017-10-04
+
 USES=		tar:bz2
 NO_BUILD=	yes
 

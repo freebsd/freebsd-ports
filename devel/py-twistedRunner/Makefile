@@ -15,6 +15,9 @@ COMMENT=	Runner has process management, including an inetd replacement
 
 LICENSE=	MIT
 
+DEPRECATED=	Use devel/py-twisted instead
+EXPIRATION_DATE=2017-09-30
+
 USE_PYTHON=	autoplist distutils
 USES=		python:2 tar:bzip2 twisted
 

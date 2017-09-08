@@ -1,7 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	elixir-estree
-PORTVERSION=	2.6.0
+PORTVERSION=	2.6.1
+DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
 MAINTAINER=	olgeni@FreeBSD.org

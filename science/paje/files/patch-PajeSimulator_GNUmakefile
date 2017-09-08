@@ -1,0 +1,11 @@
+--- PajeSimulator/GNUmakefile.orig	2006-10-30 02:45:37 UTC
++++ PajeSimulator/GNUmakefile
+@@ -24,7 +24,7 @@ include $(GNUSTEP_MAKEFILES)/common.make
+ PACKAGE_NAME=PajeSimulator
+ BUNDLE_NAME=PajeSimulator
+ BUNDLE_EXTENSION=.bundle
+-BUNDLE_INSTALL_DIR=$(GNUSTEP_INSTALLATION_DIR)/Library/Bundles/Paje
++BUNDLE_INSTALL_DIR=$(DESTDIR)/$(GNUSTEP_SYSTEM_LIBRARY)/Bundles/Paje
+ PajeSimulator_PRINCIPAL_CLASS=PajeSimul
+ 
+ 

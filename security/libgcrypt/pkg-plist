@@ -6,6 +6,6 @@ include/gcrypt.h
 lib/libgcrypt.a
 lib/libgcrypt.so
 lib/libgcrypt.so.20
-lib/libgcrypt.so.20.2.0
+lib/libgcrypt.so.20.2.1
 man/man1/hmac256.1.gz
 share/aclocal/libgcrypt.m4

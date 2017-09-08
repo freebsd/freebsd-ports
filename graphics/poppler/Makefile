@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	poppler
-PORTVERSION=	0.50.0
+PORTVERSION=	0.57.0
 CATEGORIES=	graphics print
 MASTER_SITES=	http://poppler.freedesktop.org/
 
@@ -118,7 +118,7 @@ PLIST_SUB+=	CURL="@comment "
 CONFIGURE_ARGS+=--enable-libopenjpeg=openjpeg2
 LIB_DEPENDS+=	libopenjp2.so:graphics/openjpeg
 .else
-CONFIGURE_ARGS+=--disable-libopenjpeg
+CONFIGURE_ARGS+=--enable-libopenjpeg=none
 .endif
 .endif # end of options
 

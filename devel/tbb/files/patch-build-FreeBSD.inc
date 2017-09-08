@@ -1,6 +1,12 @@
---- build/FreeBSD.inc.orig	2017-03-06 12:36:15.780368000 +0000
-+++ build/FreeBSD.inc	2017-03-06 12:37:56.563219000 +0000
-@@ -29,14 +29,14 @@
+--- build/FreeBSD.inc.orig	2017-06-07 09:54:02.000000000 +0200
++++ build/FreeBSD.inc	2017-08-20 18:12:29.329258000 +0200
+@@ -26,17 +26,20 @@
+         ifeq ($(shell uname -m),amd64)
+                 export arch:=intel64
+         endif
++        ifeq ($(shell uname -m),arm)
++                export arch:=armv7
++        endif
  endif
  
  ifndef runtime
@@ -18,7 +24,7 @@
  debugger ?= gdb
  
  CMD=$(SHELL) -c
-@@ -46,7 +46,7 @@
+@@ -46,7 +49,7 @@
  MD?=mkdir -p
  NUL= /dev/null
  SLASH=/

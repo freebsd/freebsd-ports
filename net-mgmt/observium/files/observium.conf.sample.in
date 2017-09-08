@@ -1,0 +1,66 @@
+
+# Observium cannot be ran on a sub-uri (See the FAQ
+# http://observium.org/docs/faq/). Hence this strawman
+# config runs it as a virtual host on port 8080.
+#
+# Replace the '*:8080' by the actual virtual host(name)
+# you will be using; and consider enabling SSL. An example 
+# can be fund at e /usr/local/etc/apache24/extra/httpd-ssl.conf
+#
+
+Listen *:8080
+<VirtualHost *:8080>
+  Documentroot "%%WWWDIR%%/html"
+  AddHandler application/x-httpd-php .php
+  #
+  # CustomLog "/var/log/httpd-observium-access.log" common
+
+  DirectoryIndex index.php
+  <Directory "%%WWWDIR%%/html">
+     Options Indexes FollowSymLinks Multiviews
+     AllowOverride None
+
+     # These:w statement mirror the .htaccess
+     # files that are part of the normal
+     # Observium distribution. See the URL:
+     #
+     # https://httpd.apache.org/docs/current/howto/htaccess.html#when
+     #
+     # for the various reasons to promote 
+     # these to an apache config file.
+     #
+     RedirectMatch 404 /\.
+
+     RewriteEngine on
+     RewriteBase /
+
+     # Block access to hidden files/dirs
+     RewriteRule ^\..*$ - [F,L]
+     # Don't favicon!
+     RewriteCond %{REQUEST_FILENAME} !^favicon\.ico
+     RewriteCond %{REQUEST_FILENAME} !-f
+     RewriteCond %{REQUEST_FILENAME} !-d
+     RewriteCond %{REQUEST_URI} !\.(js|ico|txt|gif|jpg|png|css|php)
+     RewriteCond %{REQUEST_URI} !^api/
+     RewriteCond %{REQUEST_URI} !^rrd/
+     RewriteCond %{REQUEST_URI} !=/server-status
+     RewriteRule ^(.*)$ index.php/$1/
+
+     AcceptPathInfo On
+     Require all granted
+  </directory>
+
+  <Directory "%%WWWDIR%%/pages">
+      deny from all
+  </Directory>
+
+  <Directory "%%WWWDIR%%/html/print">
+      deny from all
+  </Directory>
+
+  <Directory "%%WWWDIR%%/includes">
+      deny from all
+  </Directory>
+
+</VirtualHost>
+

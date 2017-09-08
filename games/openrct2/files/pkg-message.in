@@ -1,0 +1,10 @@
+================================================================================
+
+To complete the installation of this port, you need to download the file
+https://github.com/OpenRCT2/title-sequences/releases/download/%%DISTVERSIONPREFIX%%%%DISTVERSION%%/title-sequence-%%DISTVERSIONPREFIX%%%%DISTVERSION%%.zip
+and unpack it to %%PREFIX%%/share/%%PORTNAME%%/title.
+
+You need to follow https://openrct2.website/getting-started/index.html
+to finish installation.
+
+================================================================================

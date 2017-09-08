@@ -65,6 +65,7 @@ lib/libexec/kauth/kauth_ktexteditor_helper
 %%QT_MKSPECDIR%%/modules/qt_KTextEditor.pri
 share/dbus-1/system-services/org.kde.ktexteditor.katetextbuffer.service
 share/katepart5/script/README.md
+share/kdevappwizard/templates/ktexteditor-plugin.tar.bz2
 share/kservices5/katepart.desktop
 share/kservicetypes5/ktexteditor.desktop
 share/kservicetypes5/ktexteditorplugin.desktop

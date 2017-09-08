@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sqlite3
-PORTVERSION=	3.20.0
-PORTREVISION=	2
+PORTVERSION=	3.20.1
 CATEGORIES=	databases
 MASTER_SITES=	https://www.sqlite.org/2017/ http://www2.sqlite.org/2017/ http://www3.sqlite.org/2017/
 DISTNAME=	sqlite-autoconf-${PORTVERSION:C/\.([[:digit:]])[[:>:]]/0\1/g:S/.//g}00
@@ -200,9 +199,6 @@ NULL_TRIM_CPPFLAGS=	-DSQLITE_ENABLE_NULL_TRIM=1
 .include <bsd.port.options.mk>
 
 # Platform Configuration
-.if !defined(WITH_DEBUG)
-CFLAGS+=	-Os
-.endif
 CPPFLAGS+=	-DHAVE_ISNAN=1 -DHAVE_MALLOC_USABLE_SIZE=1 -DHAVE_GMTIME_R=1 -DHAVE_LOCALTIME_R=1 -DHAVE_USLEEP=1 -DHAVE_STRCHRNUL=1
 
 post-configure:
@@ -221,7 +217,11 @@ post-install:
 	${RM} ${STAGEDIR}${PREFIX}/include/msvc.h
 
 # for compares with checksum from of the site
-sha1:
+sha1: fetch
+.if defined(SHA1) && !empty(SHA1)
+	@sha1 -c ${SHA1} ${DISTDIR}/${ALLFILES}
+.else
 	@sha1 ${DISTDIR}/${ALLFILES}
+.endif
 
 .include <bsd.port.mk>

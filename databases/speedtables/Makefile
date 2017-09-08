@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	speedtables
-PORTVERSION=	1.13.2
-DISTVERSIONPREFIX=	v
+PORTVERSION=	1.13.3
+#DISTVERSIONPREFIX=	v
 PORTREVISION=	0
 CATEGORIES=	databases
 
@@ -34,8 +34,14 @@ PGSQL_LIB_DEPENDS=	libpgtcl2.0.0.so:databases/postgresql94-pgtcl
 CASSANDRA_CONFIGURE_ON=	--with-casstcl=${LOCALBASE}
 CASSANDRA_LIB_DEPENDS=	libcasstcl.so:databases/casstcl
 
+post-patch:
+	# https://github.com/flightaware/speedtables/commit/33d3d
+	${REINPLACE_CMD} -e 's|fixed-defaults|fixed-default|' \
+	    ${WRKSRC}/ctables/tests/Makefile.in
+
 post-configure:
 	${CHMOD} a+x ${WRKSRC}/ctable_server/sttp
+
 post-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC}/ctables/docs/manual && \

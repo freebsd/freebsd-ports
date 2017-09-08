@@ -354,6 +354,7 @@ bin/zsh-%%ZSH_VER%%
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_bison
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_bittorrent
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_bogofilter
+%%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_bpf_filters
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_bpython
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_bzip2
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_bzr
@@ -536,6 +537,7 @@ bin/zsh-%%ZSH_VER%%
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_net_interfaces
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_netcat
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_newsgroups
+%%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_ngrep
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_nice
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_nkf
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_nl
@@ -602,6 +604,7 @@ bin/zsh-%%ZSH_VER%%
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_ri
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_rlogin
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_rm
+%%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_route
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_rrdtool
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_rsync
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_rubber
@@ -689,12 +692,14 @@ bin/zsh-%%ZSH_VER%%
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_vorbis
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_vorbiscomment
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_vux
+%%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_w
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_w3m
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_watch
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_wc
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_webbrowser
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_wget
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_whereis
+%%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_who
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_whois
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_wiggle
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_xargs

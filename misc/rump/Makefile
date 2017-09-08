@@ -2,11 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	rump
-PORTVERSION=	20131213
-PORTREVISION=	2
+PORTVERSION=	20170822
 CATEGORIES=	misc
-MASTER_SITES=	ftp://ftp.netbsd.org/pub/NetBSD/misc/stacktic/
-DISTNAME=	buildrump-${PORTVERSION}
 
 MAINTAINER=	vanilla@FreeBSD.org
 COMMENT=	Virtualized NetBSD kernel components in userspace
@@ -16,6 +13,11 @@ LICENSE=	BSD2CLAUSE
 NOT_FOR_ARCHS=	aarch64 armv6 mips mips64 powerpc powerpc64 sparc64
 NOT_FOR_ARCHS_REASON=	not yet ported to FreeBSD on this architecture
 
+USE_GITHUB=	yes
+GH_ACCOUNT=	rumpkernel
+GH_PROJECT=	buildrump.sh
+GH_TAGNAME=	b914579
+GH_TUPLE= 	rumpkernel:src-netbsd:82f3a69:netbsd/src
 USE_LDCONFIG=	yes
 USE_GCC=	any
 

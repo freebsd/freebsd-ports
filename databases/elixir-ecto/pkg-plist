@@ -41,6 +41,7 @@ lib/elixir/lib/ecto/ebin/Elixir.Ecto.Embedded.beam
 lib/elixir/lib/ecto/ebin/Elixir.Ecto.InvalidChangesetError.beam
 lib/elixir/lib/ecto/ebin/Elixir.Ecto.InvalidURLError.beam
 lib/elixir/lib/ecto/ebin/Elixir.Ecto.LogEntry.beam
+lib/elixir/lib/ecto/ebin/Elixir.Ecto.Migration.Command.beam
 lib/elixir/lib/ecto/ebin/Elixir.Ecto.Migration.Constraint.beam
 lib/elixir/lib/ecto/ebin/Elixir.Ecto.Migration.Index.beam
 lib/elixir/lib/ecto/ebin/Elixir.Ecto.Migration.Reference.beam
@@ -52,6 +53,7 @@ lib/elixir/lib/ecto/ebin/Elixir.Ecto.Migration.beam
 lib/elixir/lib/ecto/ebin/Elixir.Ecto.MigrationError.beam
 lib/elixir/lib/ecto/ebin/Elixir.Ecto.Migrator.beam
 lib/elixir/lib/ecto/ebin/Elixir.Ecto.Multi.beam
+lib/elixir/lib/ecto/ebin/Elixir.Ecto.MultiplePrimaryKeyError.beam
 lib/elixir/lib/ecto/ebin/Elixir.Ecto.MultipleResultsError.beam
 lib/elixir/lib/ecto/ebin/Elixir.Ecto.NoPrimaryKeyFieldError.beam
 lib/elixir/lib/ecto/ebin/Elixir.Ecto.NoPrimaryKeyValueError.beam
@@ -87,6 +89,7 @@ lib/elixir/lib/ecto/ebin/Elixir.Ecto.Queryable.Ecto.Query.beam
 lib/elixir/lib/ecto/ebin/Elixir.Ecto.Queryable.Ecto.SubQuery.beam
 lib/elixir/lib/ecto/ebin/Elixir.Ecto.Queryable.Tuple.beam
 lib/elixir/lib/ecto/ebin/Elixir.Ecto.Queryable.beam
+lib/elixir/lib/ecto/ebin/Elixir.Ecto.Registry.beam
 lib/elixir/lib/ecto/ebin/Elixir.Ecto.Repo.Assoc.beam
 lib/elixir/lib/ecto/ebin/Elixir.Ecto.Repo.Preloader.beam
 lib/elixir/lib/ecto/ebin/Elixir.Ecto.Repo.Queryable.beam
@@ -180,6 +183,7 @@ lib/elixir/lib/ecto/lib/ecto/query/builder/update.ex
 lib/elixir/lib/ecto/lib/ecto/query/inspect.ex
 lib/elixir/lib/ecto/lib/ecto/query/planner.ex
 lib/elixir/lib/ecto/lib/ecto/queryable.ex
+lib/elixir/lib/ecto/lib/ecto/registry.ex
 lib/elixir/lib/ecto/lib/ecto/repo.ex
 lib/elixir/lib/ecto/lib/ecto/repo/assoc.ex
 lib/elixir/lib/ecto/lib/ecto/repo/preloader.ex

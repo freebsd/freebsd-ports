@@ -5,8 +5,8 @@ PORTNAME=	freefilesync
 PORTVERSION=	8.3
 PORTREVISION=	5
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.freefilesync.org/download/ \
-		http://www.freefilesync.org/archive/
+MASTER_SITES=	https://www.freefilesync.org/download/ \
+		https://www.freefilesync.org/archive/
 DISTNAME=	FreeFileSync_${PORTVERSION}_Source
 
 MAINTAINER=	ports@FreeBSD.org

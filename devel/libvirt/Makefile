@@ -58,7 +58,7 @@ NSS_CONFIGURE_WITH=	nss-plugin
 READLINE_CONFIGURE_WITH=	readline
 READLINE_USES=		readline
 
-SASL_CONFIGURE_WITH=	sasl
+SASL_CONFIGURE_WITH=	sasl=${LOCALBASE}
 SASL_LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2
 
 XEN_CONFIGURE_WITH=	libxl

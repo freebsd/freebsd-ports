@@ -7,7 +7,9 @@ man/man1/vifm-pause.1.gz
 man/man1/vifm-screen-split.1.gz
 man/man1/vifm.1.gz
 share/applications/vifm.desktop
+share/bash-completion/completions/vifm
 share/pixmaps/vifm.png
+share/zsh/site-functions/_vifm
 %%DATADIR%%/colors/astrell-root.vifm
 %%DATADIR%%/colors/astrell-user.vifm
 %%DATADIR%%/colors/dmilith-root.vifm

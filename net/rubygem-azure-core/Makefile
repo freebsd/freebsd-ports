@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	azure-core
-PORTVERSION=	0.1.9
+PORTVERSION=	0.1.11
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
@@ -13,7 +13,7 @@ LICENSE=	APACHE20
 
 RUN_DEPENDS=	rubygem-faraday>=0.9:www/rubygem-faraday \
 		rubygem-faraday_middleware>=0.10:www/rubygem-faraday_middleware \
-		rubygem-nokogiri>=1.7:textproc/rubygem-nokogiri
+		rubygem-nokogiri>=1.6:textproc/rubygem-nokogiri
 
 NO_ARCH=	yes
 USE_RUBY=	yes

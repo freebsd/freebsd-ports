@@ -1,7 +1,11 @@
-TIMESTAMP = 1495068953
-SHA256 (android-platform_system_core-android-7.1.2_r17_GH0.tar.gz) = fb8d053d846f439951c651f205c9c914531d8dace86da60474f6675a92576449
-SIZE (android-platform_system_core-android-7.1.2_r17_GH0.tar.gz) = 1596372
+TIMESTAMP = 1498603192
+SHA256 (android-platform_system_core-android-8.0.0_r4_GH0.tar.gz) = 3eb686edb1ccaa7312fb195b65c413823a6d60442d519c499c18b2d18c3094a9
+SIZE (android-platform_system_core-android-8.0.0_r4_GH0.tar.gz) = 5115403
 SHA256 (mbrubeck-android-completion-c1b0656_GH0.tar.gz) = ca3311ba47a5edd56c929ac9aae57c02c2c3f1636519c5f67abb00b6e3ecd75c
 SIZE (mbrubeck-android-completion-c1b0656_GH0.tar.gz) = 5967
-SHA256 (b4cff495a1f9.patch) = cfb45f82866c7b46bdb9aa62aa0f856c243c13083f37e93b07c4491ad2b7db50
-SIZE (b4cff495a1f9.patch) = 2066
+SHA256 (android-platform_development-android-8.0.0_r4_GH0.tar.gz) = b6399cc349a332ef818f5041dd39742322bcf96d54663ec8a11e38cb5271096c
+SIZE (android-platform_development-android-8.0.0_r4_GH0.tar.gz) = 93751770
+SHA256 (46de1d7f03b7.patch) = 93bf49a9a93f2b660f39041f8dbd179ea8f1170c1bebeee42f7df1dc1c393579
+SIZE (46de1d7f03b7.patch) = 12346
+SHA256 (5d002b8d6ae0.patch) = 0d105587abea3afbfd320a95be3f8532f213778a6f699150c4d4477334c9eef2
+SIZE (5d002b8d6ae0.patch) = 1385

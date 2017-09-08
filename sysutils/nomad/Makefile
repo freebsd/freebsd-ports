@@ -1,18 +1,18 @@
 # $FreeBSD$
 
 PORTNAME=	nomad
-PORTVERSION=	0.5.6
+PORTVERSION=	0.6.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 
 MAINTAINER=	jhixson@gmail.com
 COMMENT=	Cluster manager and scheduler
 
-LICENSE=	MPL
-
-BUILD_DEPENDS=	go>=1.8:lang/go
+LICENSE=	MPL20
 
 ONLY_FOR_ARCHS=	amd64
+
+BUILD_DEPENDS=	go>=1.8:lang/go
 
 USES=		compiler
 

@@ -12,10 +12,8 @@ PATCH_SITES=	SOURCEFORGE_JP/jnethack/58545
 PATCHFILES=	jnethack-${PORTVERSION}-0.11.diff.gz
 PATCH_DIST_STRIP=	-p1
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	CQG00620@nifty.ne.jp
 COMMENT=	Japanized NetHack
-
-BROKEN_FreeBSD_12=	fails to build: stdlib.h: conflicting types for 'srandom'
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 

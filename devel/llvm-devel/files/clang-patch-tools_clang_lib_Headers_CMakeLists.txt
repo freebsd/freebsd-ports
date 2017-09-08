@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- tools/clang/lib/Headers/CMakeLists.txt.orig
 +++ tools/clang/lib/Headers/CMakeLists.txt
 @@ -44,7 +44,6 @@

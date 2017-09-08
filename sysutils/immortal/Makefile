@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	immortal
-PORTVERSION=	0.14.0
+PORTVERSION=	0.15.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	nbari@tequila.io
@@ -13,12 +13,12 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		go
 USE_RC_SUBR=	immortaldir
 USE_GITHUB=	yes
-GH_TUPLE=	immortal:logrotate:3691ab5:logrotate/src/github.com/immortal/logrotate \
+GH_TUPLE=	immortal:logrotate:8591051:logrotate/src/github.com/immortal/logrotate \
 		immortal:multiwriter:2555774:multiwriter/src/github.com/immortal/multiwriter \
 		immortal:natcasesort:69368b7:natcasesort/src/github.com/immortal/natcasesort \
 		immortal:xtime:fb1aca1:xtime/src/github.com/immortal/xtime \
 		nbari:violetear:13cb9a6:nbari/src/github.com/nbari/violetear \
-		go-yaml:yaml:1be3d31:yaml/src/github.com/go-yaml/yaml
+		go-yaml:yaml:25c4ec8:yaml/src/github.com/go-yaml/yaml
 GH_SUBDIR=	src/github.com/${PORTNAME}/${PORTNAME}
 
 do-build:

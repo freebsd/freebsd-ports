@@ -14,6 +14,7 @@
     SUBDIR += R-cran-htmltools
     SUBDIR += R-cran-markdown
     SUBDIR += R-cran-pystr
+    SUBDIR += R-cran-readr
     SUBDIR += R-cran-rmarkdown
     SUBDIR += R-cran-stringi
     SUBDIR += R-cran-stringr
@@ -377,6 +378,7 @@
     SUBDIR += kibana43
     SUBDIR += kibana44
     SUBDIR += kibana45
+    SUBDIR += kibana46
     SUBDIR += kibana5
     SUBDIR += kibana5-search-guard
     SUBDIR += kibana5-x-pack
@@ -1351,6 +1353,7 @@
     SUBDIR += py-sphinxcontrib-fulltoc
     SUBDIR += py-sphinxcontrib-httpdomain
     SUBDIR += py-sphinxcontrib-programoutput
+    SUBDIR += py-sphinxcontrib-websupport
     SUBDIR += py-stemming
     SUBDIR += py-syck
     SUBDIR += py-tabletext
@@ -1387,11 +1390,13 @@
     SUBDIR += py3-asciinema
     SUBDIR += py3-chardet
     SUBDIR += py3-docutils
+    SUBDIR += py3-feedparser
     SUBDIR += py3-humanfriendly
     SUBDIR += py3-hunspell
     SUBDIR += py3-libxml2
     SUBDIR += py3-numpydoc
     SUBDIR += py3-pager
+    SUBDIR += py3-pyPEG2
     SUBDIR += py3-pygments
     SUBDIR += py3-pystemmer
     SUBDIR += py3-snowballstemmer

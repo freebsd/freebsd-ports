@@ -1,5 +1,3 @@
-$FreeBSD$
-
 We don't use inetd-- that involves messing with inetd.conf.  May as well
 just launch as a daemon, which also deals with rpcbind dependency.
 

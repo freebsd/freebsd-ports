@@ -2,7 +2,7 @@
 
 PORTNAME=	highlighterkit
 PORTVERSION=	0.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	devel gnustep
 MASTER_SITES=	http://download.gna.org/pmanager/0.2/
 DISTNAME=	HighlighterKit-${PORTVERSION}

@@ -1,0 +1,11 @@
+--- doc/Makefile.in.orig	2016-11-18 15:53:57 UTC
++++ doc/Makefile.in
+@@ -522,7 +522,7 @@ CLEANFILES = yat2m mkdefsinc defs.inc
+ DISTCLEANFILES = gnupg.tmp gnupg.ops yat2m-stamp.tmp yat2m-stamp \
+                  gnupg-card-architecture.eps \
+                  gnupg-module-overview.eps \
+-		 $(myman_pages) gpg-zip.1 gnupg.7
++		 $(myman_pages) gnupg.7
+ 
+ all: $(BUILT_SOURCES)
+ 	$(MAKE) $(AM_MAKEFLAGS) all-am

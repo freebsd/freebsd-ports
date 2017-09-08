@@ -6,7 +6,7 @@ PORTVERSION=	0.11.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net
 
-MAINTAINER=	luca.pizzamiglio@gmail.com
+MAINTAINER=	pizzamig@FreeBSD.org
 COMMENT=	Apache Kafka C/C++ library
 
 LICENSE=	BSD2CLAUSE

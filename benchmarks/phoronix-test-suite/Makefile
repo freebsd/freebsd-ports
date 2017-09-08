@@ -6,7 +6,7 @@ PORTVERSION=	7.0.1
 CATEGORIES=	benchmarks
 MASTER_SITES=	http://www.phoronix-test-suite.com/releases/
 
-MAINTAINER=	luca.pizzamiglio@gmail.com
+MAINTAINER=	pizzamig@FreeBSD.org
 COMMENT=	Phoronix Benchmarking Suite
 
 LICENSE=	GPLv3

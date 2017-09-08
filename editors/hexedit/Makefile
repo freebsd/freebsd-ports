@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	hexedit
-PORTVERSION=	1.3
+PORTVERSION=	1.4.1
 CATEGORIES=	editors
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -21,5 +21,9 @@ USE_GITHUB=	yes
 
 post-build:
 	m4 -DVERSION=${PORTVERSION} ${WRKSRC}/hexedit.1.in > ${WRKSRC}/hexedit.1
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${PREFIX}/man/man1/
 
 .include <bsd.port.mk>

@@ -1,5 +1,4 @@
 lib/elixir/lib/timex/ebin/Elixir.Enumerable.Timex.Interval.beam
-lib/elixir/lib/timex/ebin/Elixir.Inspect.DateTime.beam
 lib/elixir/lib/timex/ebin/Elixir.Inspect.Timex.AmbiguousDateTime.beam
 lib/elixir/lib/timex/ebin/Elixir.Inspect.Timex.AmbiguousTimezoneInfo.beam
 lib/elixir/lib/timex/ebin/Elixir.Inspect.Timex.Duration.beam

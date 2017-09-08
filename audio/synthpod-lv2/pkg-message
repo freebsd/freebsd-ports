@@ -1,0 +1,16 @@
+======================================================================
+You installed SynthPod: Lightweight Nonlinear LV2 Plugin Container
+
+The major way to run it is to plug the LV2 plugin container to the
+Jack sound server:
+
+$ synthpod_jack -g
+
+This shows you the design window where you can arrange plugins to
+achieve the topology you like.
+
+Please don't forget to connect SynthPod input and output in Jack. You
+can normally do this with the UI command qjackctl from audio/qjackctl.
+
+SynthPod is currently in alpha stage.
+======================================================================

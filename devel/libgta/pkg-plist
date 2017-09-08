@@ -1,11 +1,4 @@
-include/gta/gta.h
-include/gta/gta.hpp
-include/gta/gta_version.h
-lib/libgta.a
-lib/libgta.so
-lib/libgta.so.0
-libdata/pkgconfig/gta.pc
-%%PORTDOCS%%%%DOCSDIR%%/FindGTA.cmake
+%%DATADIR%%/cmake/FindGTA.cmake
 %%PORTDOCS%%%%DOCSDIR%%/example-basic.c
 %%PORTDOCS%%%%DOCSDIR%%/example-basic.cpp
 %%PORTDOCS%%%%DOCSDIR%%/example-block-io.c
@@ -14,3 +7,10 @@ libdata/pkgconfig/gta.pc
 %%PORTDOCS%%%%DOCSDIR%%/example-stream-io.cpp
 %%PORTDOCS%%%%DOCSDIR%%/example-tags.c
 %%PORTDOCS%%%%DOCSDIR%%/example-tags.cpp
+include/gta/gta_version.h
+include/gta/gta.h
+include/gta/gta.hpp
+lib/libgta.a
+lib/libgta.so
+lib/libgta.so.0
+libdata/pkgconfig/gta.pc

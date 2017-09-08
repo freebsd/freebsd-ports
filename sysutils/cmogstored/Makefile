@@ -9,7 +9,7 @@ MASTER_SITES=	http://bogomips.org/cmogstored/files/
 MAINTAINER=	trociny@FreeBSD.org
 COMMENT=	Alternative mogstored implementation for MogileFS
 
-LICENSE=	GPLv3
+LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BROKEN_powerpc64=	Does not build: internal compiler error: Segmentation fault
@@ -17,12 +17,9 @@ BROKEN_powerpc64=	Does not build: internal compiler error: Segmentation fault
 PLIST_FILES=	sbin/cmogstored \
 		man/man1/cmogstored.1.gz
 
-HAS_CONFIGURE=	yes
-CONFIGURE_ARGS+=--bindir=${PREFIX}/sbin \
-		--mandir=${PREFIX}/man
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--bindir=${PREFIX}/sbin
 USE_RC_SUBR=	cmogstored
-
-regression-test: build
-	${MAKE} -C ${WRKSRC} check
+TEST_TARGET=	check
 
 .include <bsd.port.mk>

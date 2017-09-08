@@ -35,7 +35,7 @@ TEST_ENV=	${MAKE_ENV} TEST_JOBS=${MAKE_JOBS_NUMBER} \
 USE_GITHUB=	yes
 GH_ACCOUNT=	Perl
 GH_PROJECT=	perl5
-GH_TAGNAME=	v5.27.2-140-g7b0b49a
+GH_TAGNAME=	v5.27.3-35-g97fcda7
 
 OPTIONS_DEFINE=	DEBUG GDBM PERL_64BITINT MULTIPLICITY SITECUSTOMIZE \
 		THREADS PERL_MALLOC DTRACE DOT_INC
@@ -45,7 +45,7 @@ OPTIONS_EXCLUDE_FreeBSD_10=	DTRACE
 .if !exists(/usr/sbin/dtrace)
 OPTIONS_EXCLUDE+=	DTRACE
 .endif
-.for a in aarch64 arm armeb armv6 mips mips64 mips64el mipsel mipsn32 powerpc \
+.for a in aarch64 arm armeb armv6 armv7 mips mips64 mips64el mipsel mipsn32 powerpc \
 	powerpc64 sparc64
 OPTIONS_EXCLUDE_${a}=	DTRACE
 .endfor

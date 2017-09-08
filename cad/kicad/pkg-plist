@@ -55,7 +55,7 @@ lib/kicad/plugins/netlist_form_pads-pcb.xsl
 %%PORTDOCS%%%%DOCSDIR%%/development/coding-style-policy.md
 %%PORTDOCS%%%%DOCSDIR%%/development/compiling.md
 %%PORTDOCS%%%%DOCSDIR%%/development/road-map.md
-%%PORTDOCS%%%%DOCSDIR%%/development/stable-%%CMAKE_BUILD_TYPE%%-policy.md
+%%PORTDOCS%%%%DOCSDIR%%/development/stable-release-policy.md
 %%PORTDOCS%%%%DOCSDIR%%/guidelines/UIpolicies.txt
 %%PORTDOCS%%%%DOCSDIR%%/interactive_router/build.sh
 %%PORTDOCS%%%%DOCSDIR%%/interactive_router/interactive_router.mmd

@@ -1,25 +1,23 @@
 # $FreeBSD$
 
-PORTNAME=       ssh-vault
-PORTVERSION=    0.11.0
-CATEGORIES=     security
+PORTNAME=	ssh-vault
+PORTVERSION=	0.11.4
+CATEGORIES=	security
 
-MAINTAINER=     nbari@tequila.io
-COMMENT=        Encrypt/decrypt using ssh keys
+MAINTAINER=	nbari@tequila.io
+COMMENT=	Encrypt/decrypt using ssh keys
 
-LICENSE=        BSD3CLAUSE
-LICENSE_FILE=   ${WRKSRC}/LICENSE
+LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=  go>=1.7:lang/go \
+BUILD_DEPENDS=	go>=1.7:lang/go \
 		go.crypto>=20160709:security/go.crypto
 
-USES=           go
+USES=		go
 
-USE_GITHUB=     yes
+USE_GITHUB=	yes
 GH_TUPLE=	ssh-vault:crypto:ae180e0:crypto/src/github.com/ssh-vault/crypto \
-		ssh-vault:ssh2pem:e6a4e6a:ssh2pem/src/github.com/ssh-vault/ssh2pem \
-		kr:pty:ce7fa45:pty \
-		keybase:go-keychain:fc62173:keychain
+		ssh-vault:ssh2pem:bcc6846:ssh2pem/src/github.com/ssh-vault/ssh2pem
 GH_SUBDIR=	src/github.com/${PORTNAME}/${PORTNAME}
 
 STRIP=		# stripping can break go binaries
@@ -27,7 +25,7 @@ STRIP=		# stripping can break go binaries
 PLIST_FILES=	bin/ssh-vault
 
 post-patch:
-	@${MKDIR} ${WRKSRC}/src/golang.org 
+	@${MKDIR} ${WRKSRC}/src/golang.org
 	@${LN} -sf ${LOCALBASE}/share/go/src/golang.org/x ${WRKSRC}/src/golang.org/x
 
 do-build:

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	florist-gpl
-PORTVERSION=	2016
+PORTVERSION=	2017
 CATEGORIES=	devel
 MASTER_SITES=	http://downloads.dragonlace.net/src/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src

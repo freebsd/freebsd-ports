@@ -13,6 +13,9 @@ DISTFILES=	${PORTNAME}-src-build${SVN_REV}${EXTRACT_SUFX} \
 MAINTAINER=	nemysis@FreeBSD.org
 COMMENT=	Game based on the Sonic the Hedgehog universe
 
+DEPRECATED=	Depends on expired and unfetchable x11-fonts/alfont
+EXPIRATION_DATE=2017-11-01
+
 LICENSE=	GPLv2+ CC-BY-SA-3.0
 LICENSE_COMB=	multi
 LICENSE_FILE_GPLv2+ =	${WRKSRC}/licenses/GPLv2.txt

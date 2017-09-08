@@ -92,7 +92,7 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 GNOME_LOCALSTATEDIR=	/var
 
 OPTIONS_DEFINE=	IPV6
-KEYRING_RUN_DEPENDS=	${LOCALBASE}/lib/pam_gnome_keyring.so:${PORTSDIR}/security/gnome-keyring
+KEYRING_RUN_DEPENDS=	${LOCALBASE}/lib/pam_gnome_keyring.so:security/gnome-keyring
 
 IPV6_CONFIGURE_ENABLE=	ipv6
 

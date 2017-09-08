@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	riemann
-PORTVERSION=	0.2.12
-PORTREVISION=	1
+PORTVERSION=	0.2.14
 CATEGORIES=	net-mgmt java
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${PORTVERSION}/
 
@@ -16,47 +15,27 @@ USES=		tar:bzip2
 NO_BUILD=	yes
 NO_ARCH=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	1.7+
+JAVA_VERSION=	1.8+
 
-SUB_LIST=	JAVA_HOME=${JAVA_HOME} \
-		RIEMANN_USER=${RIEMANN_USER} \
-		RIEMANN_GROUP=${RIEMANN_GROUP} \
-		RIEMANN_PIDFILE=${RIEMANN_PIDFILE} \
-		RIEMANN_LOGDIR=${RIEMANN_LOGDIR}
+SUB_LIST=	JAVA_HOME=${JAVA_HOME}
 
-PLIST_SUB=	JAVA_HOME=${JAVA_HOME} \
-		RIEMANN_USER=${RIEMANN_USER} \
-		RIEMANN_GROUP=${RIEMANN_GROUP} \
-		RIEMANN_PIDFILE=${RIEMANN_PIDFILE} \
-		RIEMANN_LOGDIR=${RIEMANN_LOGDIR}
+PLIST_SUB=	JAVA_HOME=${JAVA_HOME}
 
-RIEMANN_USER?=	${PORTNAME}
-RIEMANN_GROUP?=	${PORTNAME}
+USERS=	riemann
+GROUPS=	riemann
 
-.if ${RIEMANN_USER} == "${PORTNAME}"
-USERS=	${PORTNAME}
-.endif
-.if ${RIEMANN_GROUP} == "${PORTNAME}"
-GROUPS=	${PORTNAME}
-.endif
-
-USE_RC_SUBR=	${PORTNAME}
-
-RIEMANN_LOGDIR=	/var/log/${PORTNAME}/
-RIEMANN_PIDFILE=	/var/run/${PORTNAME}.pid
+USE_RC_SUBR=	riemann
 
 do-install:
-	${MKDIR} \
-		${STAGEDIR}${JAVAJARDIR} \
+	${MKDIR} ${STAGEDIR}${JAVAJARDIR} \
 		${STAGEDIR}${ETCDIR} \
 		${STAGEDIR}${ETCDIR}/conf.d \
-		${STAGEDIR}${RIEMANN_LOGDIR}
-	${INSTALL_DATA} \
-				${WRKSRC}/lib/${PORTNAME}.jar \
-		${STAGEDIR}${JAVAJARDIR}/${PORTNAME}.jar
-	${SED} -i -e "s:riemann.log:${RIEMANN_LOGDIR}${PORTNAME}.log:g" \
-		${WRKSRC}/etc/${PORTNAME}.config
-	${INSTALL_DATA} ${WRKSRC}/etc/${PORTNAME}.config \
-		${STAGEDIR}${ETCDIR}/${PORTNAME}.config.sample
+		${STAGEDIR}/var/log/riemann
+	${INSTALL_DATA} ${WRKSRC}/lib/riemann.jar \
+		${STAGEDIR}${JAVAJARDIR}/riemann.jar
+	${SED} -i -e "s:riemann.log:/var/log/riemann.log:g" \
+		${WRKSRC}/etc/riemann.config
+	${INSTALL_DATA} ${WRKSRC}/etc/riemann.config \
+		${STAGEDIR}${ETCDIR}/riemann.config.sample
 
 .include <bsd.port.mk>

@@ -1,5 +1,5 @@
 @comment cannot use @dir because this is home directory of smmsp
-@exec chmod 770 /var/spool/clientmqueue
+@postexec chmod 770 /var/spool/clientmqueue
 bin/hoststat
 bin/mailq
 bin/newaliases

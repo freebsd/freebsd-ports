@@ -1,0 +1,10 @@
+
+----------------------------------------------------------------------------
+To run mailhog server on startup, add mailhog_enable="YES" to /etc/rc.conf.
+
+The SMTP server listens to 127.0.0.1:1025 by default while the web UI can
+be reached at http://127.0.0.1:8025/
+
+To change this look at the rc.conf variables in %%PREFIX%%/etc/rc.d/mailhog.
+----------------------------------------------------------------------------
+

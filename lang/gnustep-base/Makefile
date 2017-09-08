@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gnustep-base
-PORTVERSION=	1.24.8
-PORTREVISION=	6
+PORTVERSION=	1.25.0
 CATEGORIES=	lang devel gnustep
 MASTER_SITES=	GNUSTEP/core
 
@@ -22,7 +21,7 @@ LIB_DEPENDS+=	libgcrypt.so:security/libgcrypt
 RUN_DEPENDS+=	${LOCALBASE}/GNUstep/System/Library/Makefiles/GNUstep.sh:devel/gnustep-make
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-procfs --disable-mixedabi
+CONFIGURE_ARGS=	--disable-procfs --disable-mixedabi --with-installation-domain=SYSTEM
 CONFIGURE_ENV=	OBJCFLAGS='-fobjc-runtime=gnustep-1.7 -fblocks'
 USES=		pkgconfig iconv gnustep
 USE_GNUSTEP=	build
@@ -35,9 +34,8 @@ STAGEHEADER=	${STAGEDIR}${PREFIX}/GNUstep/System/Library/Headers
 
 PLIST_SUB+=	BASEVERSION=${PORTVERSION:R}
 
-OPTIONS_DEFINE=		ICU
-OPTIONS_RADIO=		SSL ZEROCONF
-OPTIONS_RADIO_SSL=	GNUTLS OPENSSL
+OPTIONS_DEFINE=		ICU GNUTLS
+OPTIONS_RADIO=		ZEROCONF
 OPTIONS_RADIO_ZEROCONF=	AVAHI MDNS
 OPTIONS_DEFAULT=	ICU GNUTLS AVAHI
 OPTIONS_SUB=		yes
@@ -50,10 +48,7 @@ ICU_LIB_DEPENDS=	libicuuc.so:devel/icu
 ICU_CONFIGURE_OFF=	--disable-icu
 
 GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls
-GNUTLS_CONFIGURE_ENABLE=tls
-
-OPENSSL_USES=		ssl
-OPENSSL_CONFIGURE_OFF=	--disable-openssl
+GNUTLS_CONFIGURE_OFF=	--disable-tls
 
 .include <bsd.port.options.mk>
 
@@ -73,7 +68,5 @@ post-extract:
 
 post-install:
 	${INSTALL_DATA} ${FILESDIR}/gdomap_if ${STAGEDIR}${ETCDIR}
-	${RMDIR} ${STAGEHEADER}/gnustep/base
-	${RMDIR} ${STAGEHEADER}/GNUstepBase/unicode
 
 .include <bsd.port.mk>

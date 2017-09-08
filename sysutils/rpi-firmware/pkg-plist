@@ -1,0 +1,11 @@
+%%DATADIR%%/bootcode.bin
+%%DATADIR%%/fixup.dat
+%%DATADIR%%/fixup_cd.dat
+%%DATADIR%%/fixup_db.dat
+%%DATADIR%%/fixup_x.dat
+%%DATADIR%%/start.elf
+%%DATADIR%%/start_cd.elf
+%%DATADIR%%/start_db.elf
+%%DATADIR%%/start_x.elf
+%%DATADIR%%/config.txt
+%%DATADIR%%/LICENCE.broadcom

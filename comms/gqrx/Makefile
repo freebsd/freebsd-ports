@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	gqrx
-PORTVERSION=	2.6.1
+PORTVERSION=	2.7
 DISTVERSIONPREFIX=	v
-PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	comms hamradio
 
@@ -19,12 +18,9 @@ LIB_DEPENDS=	libgnuradio-runtime.so:comms/gnuradio \
 		libgnuradio-blocks.so:comms/gnuradio \
 		libgnuradio-filter.so:comms/gnuradio \
 		libgnuradio-fft.so:comms/gnuradio \
-		libgnuradio-audio.so:comms/gnuradio \
 		libgnuradio-digital.so:comms/gnuradio \
 		libgnuradio-pmt.so:comms/gnuradio \
 		libgnuradio-osmosdr.so:comms/gr-osmosdr \
-		libpulse.so:audio/pulseaudio \
-		libpulse-simple.so:audio/pulseaudio \
 		libboost_system.so:devel/boost-libs \
 		libboost_program_options.so:devel/boost-libs
 
@@ -35,6 +31,19 @@ USES=		pkgconfig qmake
 
 USE_GL=		gl
 USE_QT5=	buildtools_build core gui svg network widgets
+
+OPTIONS_RADIO=	AUDIO
+AUDIO_DESC=	Audio backend
+OPTIONS_RADIO_AUDIO=	PULSEAUDIO PORTAUDIO GRAUDIO
+OPTIONS_DEFAULT=	AUDIO PULSEAUDIO
+PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio \
+			libpulse-simple.so:audio/pulseaudio
+PULSEAUDIO_QMAKE_ON=	AUDIO_BACKEND=pulseaudio
+PORTAUDIO_LIB_DEPENDS=	libportaudio.so:audio/portaudio
+PORTAUDIO_QMAKE_ON=	AUDIO_BACKEND=portaudio
+GRAUDIO_LIB_DEPENDS=	libgnuradio-audio.so:comms/gnuradio
+GRAUDIO_QMAKE_ON=	AUDIO_BACKEND=gr-audio
+GRAUDIO_DESC=	GNU Radio audio library support
 
 PLIST_FILES=	bin/gqrx share/applications/gqrx.desktop
 

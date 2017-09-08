@@ -3,7 +3,7 @@
 
 PORTNAME=		oolite
 PORTVERSION=		1.84
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=		games gnustep
 MASTER_SITES=		https://github.com/OoliteProject/oolite/releases/download/1.84/
 DISTNAME=		${PORTNAME}-source-${PORTVERSION}

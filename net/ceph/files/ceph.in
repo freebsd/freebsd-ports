@@ -1,0 +1,36 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: ceph
+# REQUIRE: LOGIN
+# BEFORE:  securelevel
+# KEYWORD: shutdown
+
+# Add the following lines to /etc/rc.conf to enable `ceph':
+#
+# ceph_enable="YES"
+#
+
+. /etc/rc.subr
+
+PATH=$PATH:%%PREFIX%%/bin:%%PREFIX%%/sbin
+
+name="ceph"
+rcvar=${name}_enable
+extra_commands="condrestart"
+
+load_rc_config ${name}
+
+# read configuration and set defaults
+: ${ceph_enable="NO"}
+: ${ceph_configfile:=%%PREFIX%%/etc/ceph/ceph.conf}
+
+start_cmd="%%PREFIX%%/bin/init-ceph $*"
+stop_cmd="%%PREFIX%%/bin/init-ceph $*"
+restart_cmd="%%PREFIX%%/bin/init-ceph $*"
+condrestart_cmd="%%PREFIX%%/bin/init-ceph $*"
+
+run_rc_command "$1" 
+

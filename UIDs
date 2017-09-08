@@ -164,8 +164,8 @@ kyototycoon:*:214:214::0:0:kyototycoon user:/var/empty:/usr/sbin/nologin
 opendnssec:*:215:215::0:0:Opendnssec Pseudo User:/nonexistent:/usr/sbin/nologin
 nsd:*:216:216::0:0:NSD DNS Server:/nonexistent:/usr/sbin/nologin
 anvil:*:217:217::0:0:anvil certificate dropper:/var/db/anvil:/bin/sh
-# free: 218
-# free: 219
+zap:*:218:218::0:0:zap user:/usr/local/zap:/bin/sh
+sddm:*:219:219::0:0:SDDM Display Manager user:/usr/local/etc/sddm/home:/usr/sbin/nologin
 bs:*:220:220::0:0:Big Sister:/usr/local/bigsister:/bin/sh
 # free: 221
 rtpproxy:*:222:222::0:0:& user:/nonexistent:/sbin/nologin
@@ -180,7 +180,7 @@ _hfm:*:227:227::0:0:hfm daemon:/nonexistent:/usr/sbin/nologin
 # free: 231
 # free: 232
 # free: 233
-# free: 234
+kafka:*:234:234::0:0:Apache Kafka user:/nonexistent:/usr/sbin/nologin
 # free: 235
 # free: 236
 # free: 237
@@ -718,7 +718,7 @@ _dnscrypt-wrapper:*:718:65534::0:0:dnscrypt-wrapper user:/var/empty:/usr/sbin/no
 # free: 768
 # free: 769
 postgres:*:770:770::0:0:PostgreSQL Daemon:/var/db/postgres:/bin/sh
-# free: 771
+cockroach:*:771:771::0:0:CockroachDB Daemon:/var/db/cockroach:/usr/sbin/nologin
 # free: 772
 # free: 773
 # free: 774
@@ -818,7 +818,7 @@ chronyd:*:849:849::0:0:chronyd user:/nonexistent:/usr/sbin/nologin
 # free: 868
 # free: 869
 # free: 870
-# free: 871
+archiva:*:871:871::0:0:Apache Archiva Daemon:/nonexistent:/usr/sbin/nologin
 # free: 872
 # free: 873
 # free: 874

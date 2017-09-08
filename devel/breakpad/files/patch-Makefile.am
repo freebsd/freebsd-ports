@@ -1,0 +1,115 @@
+--- Makefile.am.orig	2017-07-12 17:53:15 UTC
++++ Makefile.am
+@@ -69,7 +69,7 @@ dist_doc_DATA = \
+ 	README.md
+ 
+ ## Headers
+-if LINUX_HOST
++#if LINUX_HOST
+ includeclhdir = $(includedir)/$(PACKAGE)/client/linux/handler
+ includeclh_HEADERS = $(top_srcdir)/src/client/linux/handler/*.h
+ 
+@@ -82,12 +82,14 @@ includeclm_HEADERS = $(top_srcdir)/src/c
+ includeclcdir = $(includedir)/$(PACKAGE)/client/linux/crash_generation
+ includeclc_HEADERS = $(top_srcdir)/src/client/linux/crash_generation/*.h
+ 
++if LINUX_HOST
+ includelssdir = $(includedir)/$(PACKAGE)/third_party/lss
+ includelss_HEADERS = $(top_srcdir)/src/third_party/lss/*.h
++endif
+ 
+ includecldir = $(includedir)/$(PACKAGE)/common/linux
+ includecl_HEADERS = $(top_srcdir)/src/common/linux/*.h
+-endif
++#endif
+ 
+ includegbcdir = $(includedir)/$(PACKAGE)/google_breakpad/common
+ includegbc_HEADERS = $(top_srcdir)/src/google_breakpad/common/*.h
+@@ -344,6 +346,9 @@ bin_PROGRAMS += \
+ 	src/processor/minidump_stackwalk
+ endif !DISABLE_PROCESSOR
+ 
++bin_PROGRAMS += \
++	src/tools/linux/dump_syms/dump_syms
++
+ if LINUX_HOST
+ EXTRA_PROGRAMS += \
+ 	src/client/linux/linux_dumper_unittest_helper
+@@ -353,7 +358,6 @@ CLEANFILES += \
+ if !DISABLE_TOOLS
+ bin_PROGRAMS += \
+ 	src/tools/linux/core2md/core2md \
+-	src/tools/linux/dump_syms/dump_syms \
+ 	src/tools/linux/md2core/minidump-2-core \
+ 	src/tools/linux/symupload/minidump_upload \
+ 	src/tools/linux/symupload/sym_upload
+@@ -448,6 +452,34 @@ else
+ LOG_DRIVER = $(top_srcdir)/autotools/test-driver
+ endif
+ 
++src_tools_linux_dump_syms_dump_syms_SOURCES = \
++	src/common/dwarf_cfi_to_module.cc \
++	src/common/dwarf_cu_to_module.cc \
++	src/common/dwarf_line_to_module.cc \
++	src/common/language.cc \
++	src/common/module.cc \
++	src/common/stabs_reader.cc \
++	src/common/stabs_to_module.cc \
++	src/common/dwarf/bytereader.cc \
++	src/common/dwarf/dwarf2diehandler.cc \
++	src/common/dwarf/dwarf2reader.cc \
++	src/common/dwarf/elf_reader.cc \
++	src/common/linux/crc32.cc \
++	src/common/linux/dump_symbols.cc \
++	src/common/linux/dump_symbols.h \
++	src/common/linux/elf_symbols_to_module.cc \
++	src/common/linux/elf_symbols_to_module.h \
++	src/common/linux/elfutils.cc \
++	src/common/linux/file_id.cc \
++	src/common/linux/linux_libc_support.cc \
++	src/common/linux/memory_mapped_file.cc \
++	src/common/linux/safe_readlink.cc \
++	src/tools/linux/dump_syms/dump_syms.cc
++src_tools_linux_dump_syms_dump_syms_CXXFLAGS = \
++	$(RUST_DEMANGLE_CFLAGS)
++src_tools_linux_dump_syms_dump_syms_LDADD = \
++	$(RUST_DEMANGLE_LIBS)
++
+ if LINUX_HOST
+ src_client_linux_linux_dumper_unittest_helper_SOURCES = \
+ 	src/client/linux/minidump_writer/linux_dumper_unittest_helper.cc
+@@ -562,34 +594,6 @@ src_tools_linux_core2md_core2md_SOURCES 
+ src_tools_linux_core2md_core2md_LDADD = \
+ 	src/client/linux/libbreakpad_client.a
+ 
+-src_tools_linux_dump_syms_dump_syms_SOURCES = \
+-	src/common/dwarf_cfi_to_module.cc \
+-	src/common/dwarf_cu_to_module.cc \
+-	src/common/dwarf_line_to_module.cc \
+-	src/common/language.cc \
+-	src/common/module.cc \
+-	src/common/stabs_reader.cc \
+-	src/common/stabs_to_module.cc \
+-	src/common/dwarf/bytereader.cc \
+-	src/common/dwarf/dwarf2diehandler.cc \
+-	src/common/dwarf/dwarf2reader.cc \
+-	src/common/dwarf/elf_reader.cc \
+-	src/common/linux/crc32.cc \
+-	src/common/linux/dump_symbols.cc \
+-	src/common/linux/dump_symbols.h \
+-	src/common/linux/elf_symbols_to_module.cc \
+-	src/common/linux/elf_symbols_to_module.h \
+-	src/common/linux/elfutils.cc \
+-	src/common/linux/file_id.cc \
+-	src/common/linux/linux_libc_support.cc \
+-	src/common/linux/memory_mapped_file.cc \
+-	src/common/linux/safe_readlink.cc \
+-	src/tools/linux/dump_syms/dump_syms.cc
+-src_tools_linux_dump_syms_dump_syms_CXXFLAGS = \
+-	$(RUST_DEMANGLE_CFLAGS)
+-src_tools_linux_dump_syms_dump_syms_LDADD = \
+-	$(RUST_DEMANGLE_LIBS)
+-
+ src_tools_linux_md2core_minidump_2_core_SOURCES = \
+ 	src/common/linux/memory_mapped_file.cc \
+ 	src/tools/linux/md2core/minidump-2-core.cc \

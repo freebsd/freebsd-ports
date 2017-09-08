@@ -1,0 +1,11 @@
+--- sandbox/BUILD.gn.orig	2017-08-02 15:41:12.498502000 +0200
++++ sandbox/BUILD.gn	2017-08-02 15:42:43.975385000 +0200
+@@ -24,7 +24,7 @@
+       "//sandbox/mac:sandbox",
+       "//sandbox/mac:seatbelt",
+     ]
+-  } else if (is_linux || is_android) {
++  } else if ((is_linux && !is_bsd) || is_android) {
+     public_deps = [
+       "//sandbox/linux:sandbox",
+     ]

@@ -1,0 +1,157 @@
+--- config.h.in.orig	2017-07-14 08:21:19 UTC
++++ config.h.in
+@@ -456,6 +456,9 @@
+ /* Define if OpenJPEG 2.1 is used */
+ #undef HAVE_OPENJPEG_2_1
+ 
++/* Define if OpenJPEG 2.2 is used */
++#undef HAVE_OPENJPEG_2_2
++
+ /* Define to enable openni2 library (used by openni2). */
+ #undef HAVE_OPENNI2
+ 
+--- configure.orig	2017-07-14 08:21:19 UTC
++++ configure
+@@ -773,6 +773,8 @@ USE_OPENJPEG_TRUE
+ HAVE_OPENJPEG
+ OPENJPEG_2_1_LIBS
+ OPENJPEG_2_1_CFLAGS
++OPENJPEG_2_2_LIBS
++OPENJPEG_2_2_CFLAGS
+ OPENJPEG_LIBS
+ OPENJPEG_CFLAGS
+ USE_OPENH264_FALSE
+@@ -2039,6 +2041,8 @@ OPENJPEG_CFLAGS
+ OPENJPEG_LIBS
+ OPENJPEG_2_1_CFLAGS
+ OPENJPEG_2_1_LIBS
++OPENJPEG_2_2_CFLAGS
++OPENJPEG_2_2_LIBS
+ OPENNI2_CFLAGS
+ OPENNI2_LIBS
+ OPUS_CFLAGS
+@@ -48827,10 +48831,110 @@ $as_echo "yes" >&6; }
+ fi
+ 
+ 
+-    if test x"$HAVE_OPENJPEG" = x"yes"; then
++    if test x"$HAVE_OPENJPEG_2_1" = x"yes"; then
+ 
+ $as_echo "#define HAVE_OPENJPEG_2_1 1" >>confdefs.h
+ 
++
++  which="libopenjp2 >= 2.2"
++    required="no"
++
++
++pkg_failed=no
++{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for OPENJPEG_2_2" >&5
++$as_echo_n "checking for OPENJPEG_2_2... " >&6; }
++
++if test -n "$PKG_CONFIG"; then
++    if test -n "$OPENJPEG_2_2_CFLAGS"; then
++        pkg_cv_OPENJPEG_2_2_CFLAGS="$OPENJPEG_2_2_CFLAGS"
++    else
++        if test -n "$PKG_CONFIG" && \
++    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"\$which\""; } >&5
++  ($PKG_CONFIG --exists --print-errors "$which") 2>&5
++  ac_status=$?
++  $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
++  test $ac_status = 0; }; then
++  pkg_cv_OPENJPEG_2_2_CFLAGS=`$PKG_CONFIG --cflags "$which" 2>/dev/null`
++else
++  pkg_failed=yes
++fi
++    fi
++else
++	pkg_failed=untried
++fi
++if test -n "$PKG_CONFIG"; then
++    if test -n "$OPENJPEG_2_2_LIBS"; then
++        pkg_cv_OPENJPEG_2_2_LIBS="$OPENJPEG_2_2_LIBS"
++    else
++        if test -n "$PKG_CONFIG" && \
++    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"\$which\""; } >&5
++  ($PKG_CONFIG --exists --print-errors "$which") 2>&5
++  ac_status=$?
++  $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
++  test $ac_status = 0; }; then
++  pkg_cv_OPENJPEG_2_2_LIBS=`$PKG_CONFIG --libs "$which" 2>/dev/null`
++else
++  pkg_failed=yes
++fi
++    fi
++else
++	pkg_failed=untried
++fi
++
++
++
++if test $pkg_failed = yes; then
++
++if $PKG_CONFIG --atleast-pkgconfig-version 0.20; then
++        _pkg_short_errors_supported=yes
++else
++        _pkg_short_errors_supported=no
++fi
++        if test $_pkg_short_errors_supported = yes; then
++	        OPENJPEG_2_2_PKG_ERRORS=`$PKG_CONFIG --short-errors --errors-to-stdout --print-errors "$which"`
++        else
++	        OPENJPEG_2_2_PKG_ERRORS=`$PKG_CONFIG --errors-to-stdout --print-errors "$which"`
++        fi
++	# Put the nasty error message in config.log where it belongs
++	echo "$OPENJPEG_2_2_PKG_ERRORS" >&5
++
++	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
++$as_echo "no" >&6; }
++
++      HAVE_OPENJPEG_2_2="no"
++      if test "x$required" = "xyes"; then
++        as_fn_error $? "$OPENJPEG_2_2_PKG_ERRORS" "$LINENO" 5
++      else
++        { $as_echo "$as_me:${as_lineno-$LINENO}: $OPENJPEG_2_2_PKG_ERRORS" >&5
++$as_echo "$as_me: $OPENJPEG_2_2_PKG_ERRORS" >&6;}
++      fi
++
++elif test $pkg_failed = untried; then
++
++      HAVE_OPENJPEG_2_2="no"
++      if test "x$required" = "xyes"; then
++        as_fn_error $? "$OPENJPEG_2_2_PKG_ERRORS" "$LINENO" 5
++      else
++        { $as_echo "$as_me:${as_lineno-$LINENO}: $OPENJPEG_2_2_PKG_ERRORS" >&5
++$as_echo "$as_me: $OPENJPEG_2_2_PKG_ERRORS" >&6;}
++      fi
++
++else
++	OPENJPEG_2_2_CFLAGS=$pkg_cv_OPENJPEG_2_2_CFLAGS
++	OPENJPEG_2_2_LIBS=$pkg_cv_OPENJPEG_2_2_LIBS
++        { $as_echo "$as_me:${as_lineno-$LINENO}: result: yes" >&5
++$as_echo "yes" >&6; }
++
++      HAVE_OPENJPEG_2_2="yes"
++
++fi
++
++
++        if test x"$HAVE_OPENJPEG_2_2" = x"yes"; then
++
++$as_echo "#define HAVE_OPENJPEG_2_2 1" >>confdefs.h
++
++        fi
+     fi
+   else
+     # Fallback to v1.5
+--- ext/openjpeg/gstopenjpeg.h.orig	2017-05-15 15:46:30 UTC
++++ ext/openjpeg/gstopenjpeg.h
+@@ -38,7 +38,9 @@
+ #define OPJ_CPRL CPRL
+ #else
+ #include <stdio.h>
+-# ifdef HAVE_OPENJPEG_2_1
++# if defined(HAVE_OPENJPEG_2_2)
++#  include <openjpeg-2.2/openjpeg.h>
++# elif defined(HAVE_OPENJPEG_2_1)
+ #  include <openjpeg-2.1/openjpeg.h>
+ # else
+ #  include <openjpeg-2.0/openjpeg.h>

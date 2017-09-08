@@ -1,5 +1,4 @@
 bin/tetzle
-share/appdata/tetzle.appdata.xml
 share/applications/tetzle.desktop
 share/icons/hicolor/1024x1024/apps/tetzle.png
 share/icons/hicolor/128x128/apps/tetzle.png
@@ -13,6 +12,7 @@ share/icons/hicolor/512x512/apps/tetzle.png
 share/icons/hicolor/64x64/apps/tetzle.png
 share/icons/hicolor/scalable/apps/tetzle.svg
 share/man/man6/tetzle.6
+share/metainfo/tetzle.appdata.xml
 share/pixmaps/tetzle.xpm
 %%DATADIR%%/translations/tetzle_cs.qm
 %%DATADIR%%/translations/tetzle_de.qm

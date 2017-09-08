@@ -14,11 +14,3 @@
  
  #ifndef F_INTERFACE
  #define REALNAME ASMNAME
-@@ -105,7 +112,6 @@ static inline int blas_quickdivide(blasi
- #define PROLOGUE \
- 	.arm		 ;\
- 	.global	REALNAME ;\
--	.func	REALNAME  ;\
- REALNAME:
- 
- #define EPILOGUE

@@ -12,9 +12,9 @@ COMMENT=	C++ wrapper for libcurl
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/doc/LICENSE
 
-LIB_DEPENDS=	libcurl.so:ftp/curl
-
 BROKEN_powerpc64=	fails to configure: error: A compiler with support for C++11 language features is required
+
+LIB_DEPENDS=	libcurl.so:ftp/curl
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 

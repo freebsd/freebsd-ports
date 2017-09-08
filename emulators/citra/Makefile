@@ -26,8 +26,8 @@ ONLY_FOR_ARCHS_REASON=	https://github.com/MerryMage/dynarmic/issues/35
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	citra-emu
-GH_TAGNAME=	792dee47a
-GH_TUPLE=	citra-emu:ext-soundtouch:5274ec4:soundtouch/externals/soundtouch \
+GH_TAGNAME=	3fd864d67
+GH_TUPLE=	citra-emu:ext-soundtouch:019d208:soundtouch/externals/soundtouch \
 		MerryMage:dynarmic:8f15e3f:dynarmic/externals/dynarmic \
 		fmtlib:fmt:3.0.0-187-gac5484c:fmt/externals/fmt \
 		herumi:xbyak:v5.40:xbyak/externals/xbyak \
@@ -35,7 +35,7 @@ GH_TUPLE=	citra-emu:ext-soundtouch:5274ec4:soundtouch/externals/soundtouch \
 		neobrain:nihstro:7e24743:nihstro/externals/nihstro \
 		philsquared:Catch:v1.9.4:catch/externals/catch \
 		svn2github:inih:603729d:inih/externals/inih/inih \
-		weidai11:cryptopp:CRYPTOPP_5_6_5-164-g841c37e:cryptopp/externals/cryptopp/cryptopp
+		weidai11:cryptopp:CRYPTOPP_5_6_5-610-g24bc2b8:cryptopp/externals/cryptopp/cryptopp
 
 USES=		cmake:outsource compiler:c++14-lang iconv localbase:ldflags
 USE_SDL=	sdl2

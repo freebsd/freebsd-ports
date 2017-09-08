@@ -48,6 +48,7 @@ nrpe2_prestart()
 {
 	find_pidfile
 	install -d -o ${nrpe_user:-nagios} ${pidfile%/*}
+	rm -f ${pidfile}
 }
 
 run_rc_command "$1"
