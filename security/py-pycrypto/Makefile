@@ -1,20 +1,24 @@
 # Created by: nbm
 # $FreeBSD$
 
-PORTNAME=	pycrypto
-PORTVERSION=	2.6.1
-PORTREVISION=	1
-CATEGORIES=	security python
-MASTER_SITES=	CHEESESHOP
-PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+PORTNAME=		pycrypto
+PORTVERSION=		2.6.1
+PORTREVISION=		1
+CATEGORIES=		security python
+MASTER_SITES=		CHEESESHOP
+PKGNAMEPREFIX=		${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	koobs@FreeBSD.org
-COMMENT=	Python Cryptography Toolkit
+MAINTAINER=		koobs@FreeBSD.org
+COMMENT=		Python Cryptography Toolkit
 
-USES?=		python
-USE_PYTHON=	distutils autoplist
+LICENSE=		PD
 
-GNU_CONFIGURE=	yes
+CONFLICTS=		${PYTHON_PKGNAMEPREFIX}pycryptodome-*
+
+USES?=			python
+USE_PYTHON=		distutils autoplist
+
+GNU_CONFIGURE=		yes
 
 OPTIONS_DEFINE=		GMP
 OPTIONS_DEFAULT=	GMP
