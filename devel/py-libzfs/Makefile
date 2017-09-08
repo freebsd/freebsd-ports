@@ -1,42 +1,39 @@
-# Created by: William Grzybowski <wg@FreeBSD.org>
+#
 # $FreeBSD$
+# $Id$
+#
 
-PORTNAME=	libzfs
-PORTVERSION=	1.0.20170814
-CATEGORIES=	devel python
+PORTNAME=      	libzfs
+PORTVERSION=	1.0
+PORTREVISION=	2
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	wg@FreeBSD.org
-COMMENT=	Python libzfs bindings
+CATEGORIES=	devel
 
-LICENSE=	BSD2CLAUSE
-
-BROKEN_powerpc64=	fails to build: libzfs.c: error: convert_for_assignment: incompatible type for argument 3 of zfs_path_to_zhandle
-
-USE_GITHUB=     yes
-GH_ACCOUNT=	freenas
-GH_PROJECT=	py-libzfs
-GH_TAGNAME=	7e65770	
+MAINTAINER=     dev@ixsystems.com
+COMMENT=        Python libzfs bindings
 
 USES?=		python
 USE_PYTHON=	autoplist distutils
+EXTRACT_ONLY=
 
-MAKE_ENV=	FREEBSD_SRC=${SRC_BASE}
+WRKSRC?=/usr/nas_source/py-libzfs
+
+MAKE_ENV=       FREEBSD_SRC=/usr/src TRUEOS=yes EXPERIMENTAL=yes
 
 .include <bsd.port.pre.mk>
 
 .if ${PYTHON_REL} >= 3306
-BUILD_DEPENDS=	cython3>0:lang/cython3
+BUILD_DEPENDS=  cython3>0:lang/cython3
 .else
-BUILD_DEPENDS=	cython>0:lang/cython
+BUILD_DEPENDS=  cython>0:lang/cython
 .endif
 
 .if ${PYTHON_REL} < 3400
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}enum34>0:devel/py-enum34
+RUN_DEPENDS+=   ${PYTHON_PKGNAMEPREFIX}enum34>0:devel/py-enum34
 .endif
 
-.if !exists(${SRC_BASE}/sys/Makefile)
-IGNORE=	requires kernel source files in ${SRC_BASE}
-.endif
+checksum fetch:
+	echo ${.TARGET} not needed because building direct
 
 .include <bsd.port.post.mk>
