@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	azure
-PORTVERSION=	0.7.9
+PORTVERSION=	0.7.10
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
@@ -17,7 +17,7 @@ RUN_DEPENDS=	rubygem-addressable>=2.3:www/rubygem-addressable \
 		rubygem-faraday>=0.9:www/rubygem-faraday \
 		rubygem-faraday_middleware>=0.10:www/rubygem-faraday_middleware \
 		rubygem-mime-types>=1:misc/rubygem-mime-types \
-		rubygem-nokogiri>=1.7:textproc/rubygem-nokogiri \
+		rubygem-nokogiri>=1.6:textproc/rubygem-nokogiri \
 		rubygem-systemu>=2.6:devel/rubygem-systemu \
 		rubygem-thor>=0.19:devel/rubygem-thor
 
