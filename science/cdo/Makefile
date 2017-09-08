@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	cdo
-PORTVERSION=	1.8.2
-PORTREVISION=	1
+PORTVERSION=	1.9.0
 CATEGORIES=	science
-MASTER_SITES=	https://code.zmaw.de/attachments/download/14686/ \
+MASTER_SITES=	https://code.zmaw.de/attachments/download/15187/ \
 		LOCAL/sunpoet
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -35,9 +34,11 @@ CONFIGURE_ARGS=	--disable-data \
 		--with-zlib=/usr
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
+MAKE_JOBS_UNSAFE=	yes
 TEST_TARGET=	check
+USE_CXXSTD=	c++11
 USE_LDCONFIG=	yes
-USES=		execinfo gmake libtool localbase pathfix
+USES=		compiler:c++11-lib execinfo gmake libtool localbase pathfix
 
 CGRIBEX_CONFIGURE_WITH=	cgribex
 CGRIBEX_LIB_DEPENDS=	libcgribex.so:science/cgribex
