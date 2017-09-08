@@ -79,6 +79,7 @@ include/libtorrent/file.hpp
 include/libtorrent/file_pool.hpp
 include/libtorrent/file_storage.hpp
 include/libtorrent/fingerprint.hpp
+include/libtorrent/fwd.hpp
 include/libtorrent/gzip.hpp
 include/libtorrent/hasher.hpp
 include/libtorrent/heterogeneous_queue.hpp
