@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	net2ftp
-PORTVERSION=	1.0
+PORTVERSION=	1.1
 CATEGORIES=	ftp
 MASTER_SITES=	http://www.net2ftp.com/download/
 DISTNAME=	${PORTNAME}_v${PORTVERSION}
@@ -12,11 +12,10 @@ COMMENT=	Web-based FTP client written in PHP
 
 LICENSE=	GPLv2
 
-USES=		zip
-IGNORE_WITH_PHP=	70
+USES=		php zip
 NO_BUILD=	YES
 .if !defined(WITHOUT_PHP_DEPENDS)
-USE_PHP=	ftp mysql pcre session zlib
+USE_PHP=	ftp mysqli pcre session zlib
 .endif
 
 SUB_FILES+=	pkg-message
