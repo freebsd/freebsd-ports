@@ -746,6 +746,7 @@
     SUBDIR += puredb
     SUBDIR += pxlib
     SUBDIR += pxtools
+    SUBDIR += py27-sqlite3
     SUBDIR += py-Elixir
     SUBDIR += py-MySQLdb
     SUBDIR += py-MySQLdb55
