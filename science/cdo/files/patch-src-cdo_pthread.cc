@@ -1,5 +1,5 @@
---- src/cdo_pthread.c.orig	2017-01-19 08:25:24 UTC
-+++ src/cdo_pthread.c
+--- src/cdo_pthread.cc.orig	2017-07-03 08:59:29 UTC
++++ src/cdo_pthread.cc
 @@ -32,8 +32,10 @@ void print_pthread_info()
  {
  #if defined(HAVE_LIBPTHREAD)

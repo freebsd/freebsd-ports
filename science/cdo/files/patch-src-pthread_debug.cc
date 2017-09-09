@@ -1,5 +1,5 @@
---- src/pthread_debug.c.orig	2016-06-10 08:14:45 UTC
-+++ src/pthread_debug.c
+--- src/pthread_debug.cc.orig	2017-07-03 08:59:29 UTC
++++ src/pthread_debug.cc
 @@ -76,6 +76,7 @@ void print_pthread_attr(const char *call
  }
  
