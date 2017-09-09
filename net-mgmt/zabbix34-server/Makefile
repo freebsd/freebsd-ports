@@ -25,6 +25,7 @@ ZABBIX_BUILD=	${PKGNAMESUFFIX:S/^-//}
 
 .if ${ZABBIX_BUILD} != "frontend" # frontend only needs the version/distribution settings
 .if ${ZABBIX_BUILD} != "agent"
+LIB_DEPENDS+=	libevent.so:devel/libevent
 USE_RC_SUBR=	zabbix_${ZABBIX_BUILD}
 .else
 USE_RC_SUBR=	zabbix_${ZABBIX_BUILD}d
@@ -42,7 +43,6 @@ PLIST_SUB=	PROXY=""
 .endif
 
 .if ${ZABBIX_BUILD} == "server"
-LIB_DEPENDS+=	libevent.so:devel/libevent
 PLIST_SUB+=	SERVER=""
 .else
 PLIST_SUB+=	SERVER="@comment "
