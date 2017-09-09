@@ -27,17 +27,12 @@ USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	NuxiNL
 
+USE_HARDENING=	# empty
+
 .include <bsd.port.pre.mk>
 
 .if ${OPSYS} == FreeBSD && ${OSVERSION} < 1100511
 IGNORE=		requires various C++17 features
 .endif
 
-<<<<<<< HEAD
-NOPIE_PORTS=	yes
-NORELRO_PORTS=	yes
-
-.include <bsd.port.mk>
-=======
 .include <bsd.port.post.mk>
->>>>>>> freebsd/master
