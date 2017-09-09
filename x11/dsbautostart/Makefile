@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	dsbautostart
-PORTVERSION=	1.0.2
+PORTVERSION=	1.1
 CATEGORIES=	x11
 MASTER_SITES=	http://freeshell.de/~mk/download/
 
@@ -14,6 +14,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		tar:tgz qmake
 
 USE_GL=		gl
-USE_QT5=	buildtools_build core gui linguisttools widgets
+USE_QT5=	buildtools_build core gui linguisttools_build widgets
 
 .include <bsd.port.mk>
