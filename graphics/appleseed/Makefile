@@ -3,7 +3,7 @@
 
 PORTNAME=	appleseed
 DISTVERSION=	1.5.2-beta
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	graphics
 
 MAINTAINER=	danfe@FreeBSD.org
@@ -43,7 +43,7 @@ SUB_FILES=	pkg-message
 SUB_LIST:=	${PLIST_SUB}
 
 OPTIONS_DEFINE=	EXAMPLES OSL DISNEY
-OPTIONS_DEFAULT=	OSL DISNEY
+OPTIONS_DEFAULT=	DISNEY
 OPTIONS_SUB=	yes
 
 OSL_DESC=	Open Shading Language support
@@ -53,6 +53,8 @@ EXAMPLES_CMAKE_OFF=	-DWITH_SAMPLES:BOOL=OFF
 
 OSL_CMAKE_ON=	-DWITH_OSL:BOOL=ON
 OSL_LIB_DEPENDS=	liboslexec.so:graphics/openshadinglanguage
+# src/appleseed/libappleseed.so: undefined reference to `typeinfo for OSL::RendererServices'
+OSL_BROKEN=	fails to build against openshadinglanguage-1.8.10
 
 DISNEY_CMAKE_ON=	-DWITH_DISNEY_MATERIAL:BOOL=ON
 DISNEY_LIB_DEPENDS=	libOpenImageIO.so:graphics/openimageio \
