@@ -70,6 +70,7 @@ USE_LDCONFIG=	${QT_LIBDIR}
 QT_DIST=	${PORTNAME}
 
 QMAKE_ARGS=	WEBENGINE_CONFIG+=use_nss \
+		WEBENGINE_CONFIG+=use_openssl=1 \
 		WEBENGINE_CONFIG+=use_proprietary_codecs \
 		WEBENGINE_CONFIG+=use_system_libevent
 

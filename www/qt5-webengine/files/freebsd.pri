@@ -6,6 +6,7 @@ GYP_CONFIG +=   disable_nacl=1          \
                 enable_webrtc=0         \
                 enable_hidpi=1          \
                 use_dbus=1              \
+                use_openssl=1           \
                 use_pulseaudio=0
 
 # Once the port works better, we can think about readding the diverse `use_system_<foo>`
