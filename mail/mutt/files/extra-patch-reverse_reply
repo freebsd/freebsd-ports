@@ -1,10 +1,10 @@
---- PATCHES.orig	2017-06-03 23:21:18 UTC
+--- PATCHES.orig	2017-09-04 23:35:30 UTC
 +++ PATCHES
 @@ -0,0 +1 @@
 +patch-1.5.6.cb.reverse_reply.2
---- init.h.orig	2017-06-03 23:21:18 UTC
+--- init.h.orig	2017-09-04 23:35:27 UTC
 +++ init.h
-@@ -2588,6 +2588,13 @@ struct option_t MuttVars[] = {
+@@ -2687,6 +2687,13 @@ struct option_t MuttVars[] = {
    ** possibly including eventual real names.  When it is \fIunset\fP, mutt will
    ** override any such real names with the setting of the $$realname variable.
    */
@@ -18,9 +18,9 @@
    { "rfc2047_parameters", DT_BOOL, R_NONE, OPTRFC2047PARAMS, 0 },
    /*
    ** .pp
---- mutt.h.orig	2017-06-03 23:21:23 UTC
+--- mutt.h.orig	2017-09-04 23:35:27 UTC
 +++ mutt.h
-@@ -440,6 +440,7 @@ enum
+@@ -448,6 +448,7 @@ enum
    OPTREVALIAS,
    OPTREVNAME,
    OPTREVREAL,
@@ -28,7 +28,7 @@
    OPTRFC2047PARAMS,
    OPTSAVEADDRESS,
    OPTSAVEEMPTY,
---- protos.h.orig	2017-05-30 19:27:53 UTC
+--- protos.h.orig	2017-09-04 23:35:27 UTC
 +++ protos.h
 @@ -93,6 +93,7 @@ ADDRESS *mutt_get_address (ENVELOPE *, c
  ADDRESS *mutt_lookup_alias (const char *s);
@@ -38,9 +38,9 @@
  ADDRESS *mutt_expand_aliases (ADDRESS *);
  ADDRESS *mutt_parse_adrlist (ADDRESS *, const char *);
  
---- send.c.orig	2017-05-30 19:27:53 UTC
+--- send.c.orig	2017-09-04 23:35:27 UTC
 +++ send.c
-@@ -585,6 +585,10 @@ void mutt_fix_reply_recipients (ENVELOPE
+@@ -598,6 +598,10 @@ void mutt_fix_reply_recipients (ENVELOPE
    /* the CC field can get cluttered, especially with lists */
    env->to = mutt_remove_duplicates (env->to);
    env->cc = mutt_remove_duplicates (env->cc);
@@ -51,9 +51,9 @@
    env->cc = mutt_remove_xrefs (env->to, env->cc);
    
    if (env->cc && !env->to)
---- sendlib.c.orig	2017-05-30 19:27:53 UTC
+--- sendlib.c.orig	2017-09-04 23:35:27 UTC
 +++ sendlib.c
-@@ -2714,6 +2714,35 @@ static void set_noconv_flags (BODY *b, s
+@@ -2753,6 +2753,35 @@ static void set_noconv_flags (BODY *b, s
    }
  }
  
