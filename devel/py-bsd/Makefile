@@ -10,8 +10,6 @@ COMMENT=	Python wrappers for various BSD libc and system calls
 
 LICENSE=	BSD3CLAUSE
 
-BROKEN=		fails to build
-
 BUILD_DEPENDS=	cython>0:lang/cython \
 		${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six
