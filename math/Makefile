@@ -7,7 +7,9 @@
     SUBDIR += PDL
     SUBDIR += R
     SUBDIR += R-cran-Amelia
+    SUBDIR += R-cran-CVST
     SUBDIR += R-cran-ChangeAnomalyDetection
+    SUBDIR += R-cran-DEoptimR
     SUBDIR += R-cran-DRR
     SUBDIR += R-cran-Formula
     SUBDIR += R-cran-KFAS
@@ -33,10 +35,8 @@
     SUBDIR += R-cran-car
     SUBDIR += R-cran-coda
     SUBDIR += R-cran-combinat
-    SUBDIR += R-cran-CVST
     SUBDIR += R-cran-deldir
-    SUBDIR += R-cran-demRed
-    SUBDIR += R-cran-DEoptimR
+    SUBDIR += R-cran-dimRed
     SUBDIR += R-cran-dlmodeler
     SUBDIR += R-cran-dplyr
     SUBDIR += R-cran-expm
