@@ -48,6 +48,7 @@
     SUBDIR += R-cran-inline
     SUBDIR += R-cran-irlba
     SUBDIR += R-cran-labeling
+    SUBDIR += R-cran-lava
     SUBDIR += R-cran-lazyeval
     SUBDIR += R-cran-lme4
     SUBDIR += R-cran-maxLik
@@ -62,6 +63,7 @@
     SUBDIR += R-cran-numDeriv
     SUBDIR += R-cran-outliers
     SUBDIR += R-cran-pbkrtest
+    SUBDIR += R-cran-prodlim
     SUBDIR += R-cran-psych
     SUBDIR += R-cran-quadprog
     SUBDIR += R-cran-qualityTools
