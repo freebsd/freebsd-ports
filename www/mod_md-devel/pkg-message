@@ -1,8 +1,10 @@
-/!\ This is an early experience non-production-ready version /!\
+/!\   This is an early experience non-production-ready version   /!\
 
-This module requires a patched Apache mod_ssl. Apply the mod_ssl patch
-from https://github.com/icing/mod_md/tree/master/patches to the
-www/apache24 port and rebuild/reinstall apache.
+####################################################################
+# This module requires a patched Apache mod_ssl. Apply the mod_ssl #
+# patch from https://github.com/icing/mod_md/tree/master/patches   #
+# to the www/apache24 port and rebuild/reinstall apache.           #
+####################################################################
 
 If you want to have the md module enabled in your apache installation,
 you need to add
@@ -15,3 +17,5 @@ somewhere in your config files and add a line like
 
 Full documentation in the project's wiki 
 	https://github.com/icing/mod_md/wiki
+and for most directives in Apache trunk documentation
+	https://httpd.apache.org/docs/trunk/mod/mod_md.html
