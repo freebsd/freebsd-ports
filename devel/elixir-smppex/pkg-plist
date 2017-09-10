@@ -24,6 +24,7 @@ lib/elixir/lib/smppex/ebin/Elixir.SMPPEX.Protocol.Unpack.beam
 lib/elixir/lib/smppex/ebin/Elixir.SMPPEX.Protocol.beam
 lib/elixir/lib/smppex/ebin/Elixir.SMPPEX.RawPdu.beam
 lib/elixir/lib/smppex/ebin/Elixir.SMPPEX.SMPPTimers.beam
+lib/elixir/lib/smppex/ebin/Elixir.SMPPEX.Session.AutoPduHandler.beam
 lib/elixir/lib/smppex/ebin/Elixir.SMPPEX.Session.Defaults.beam
 lib/elixir/lib/smppex/ebin/Elixir.SMPPEX.Session.beam
 lib/elixir/lib/smppex/ebin/Elixir.SMPPEX.TransportSession.beam
@@ -56,6 +57,7 @@ lib/elixir/lib/smppex/lib/smppex/protocol/unpack.ex
 lib/elixir/lib/smppex/lib/smppex/protocol/unpack/helpers.ex
 lib/elixir/lib/smppex/lib/smppex/raw_pdu.ex
 lib/elixir/lib/smppex/lib/smppex/session.ex
+lib/elixir/lib/smppex/lib/smppex/session/auto_pdu_handler.ex
 lib/elixir/lib/smppex/lib/smppex/session/defaults.ex
 lib/elixir/lib/smppex/lib/smppex/smpp_timers.ex
 lib/elixir/lib/smppex/lib/smppex/transport_session.ex

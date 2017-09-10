@@ -38,6 +38,7 @@
     SUBDIR += R-cran-hms
     SUBDIR += R-cran-iterators
     SUBDIR += R-cran-itertools
+    SUBDIR += R-cran-lubridate
     SUBDIR += R-cran-magrittr
     SUBDIR += R-cran-memoise
     SUBDIR += R-cran-microbenchmark
@@ -5205,6 +5206,7 @@
     SUBDIR += qtscriptgenerator
     SUBDIR += quickcheck++
     SUBDIR += quilt
+    SUBDIR += R-cran-withr
     SUBDIR += racer
     SUBDIR += radare2
     SUBDIR += ragel

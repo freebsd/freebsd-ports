@@ -1,4 +1,4 @@
---- src/md_crypt.c.orig	2017-08-09 13:30:59 UTC
+--- src/md_crypt.c.orig	2017-09-08 14:09:36 UTC
 +++ src/md_crypt.c
 @@ -116,6 +116,425 @@ static void seed_RAND(int pid)
  
@@ -426,8 +426,8 @@
  
  apr_status_t md_crypt_init(apr_pool_t *pool)
  {
-@@ -328,7 +747,7 @@ apr_status_t md_pkey_gen_rsa(md_pkey_t *
-     return rv;
+@@ -409,7 +828,7 @@ apr_status_t md_pkey_gen(md_pkey_t **ppk
+     }
  }
  
 -#if OPENSSL_VERSION_NUMBER < 0x10100000L
