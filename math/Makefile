@@ -8,6 +8,7 @@
     SUBDIR += R
     SUBDIR += R-cran-Amelia
     SUBDIR += R-cran-ChangeAnomalyDetection
+    SUBDIR += R-cran-DRR
     SUBDIR += R-cran-Formula
     SUBDIR += R-cran-KFAS
     SUBDIR += R-cran-LearnBayes
