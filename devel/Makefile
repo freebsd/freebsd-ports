@@ -5206,6 +5206,7 @@
     SUBDIR += qtscriptgenerator
     SUBDIR += quickcheck++
     SUBDIR += quilt
+    SUBDIR += R-cran-withr
     SUBDIR += racer
     SUBDIR += radare2
     SUBDIR += ragel
