@@ -3,6 +3,7 @@
 
 PORTNAME=	mailman
 DISTVERSION=	2.1.24
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	GNU \
 		SF/${PORTNAME}/Mailman%202.1%20%28stable%29/${PORTVERSION} \
@@ -34,7 +35,9 @@ CONFIGURE_ARGS+=--with-python=${PYTHON_CMD} \
 		--with-username=${MM_USERNAME} \
 		--with-groupname=${MM_GROUPNAME} \
 		--with-mail-gid=${MAIL_GID} --with-cgi-gid=${CGI_GID} \
-		--with-permcheck=no
+		--with-permcheck=no \
+		--with-mailhost=// \
+		--with-urlhost=//
 
 # The Mailman port supports a number of variables that may be tweaked at
 # build time.  Getting the values of some of them right is crucial!
