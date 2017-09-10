@@ -2,7 +2,7 @@
 
 PORTNAME=	bsdisks
 PORTVERSION=	0.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	https://bitbucket.org/arrowd/bsdisks/downloads/
 

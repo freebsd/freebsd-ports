@@ -3,7 +3,7 @@
 
 PORTNAME=	libflame
 DISTVERSION=	r7421
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	math
 MASTER_SITES=	http://www.cs.utexas.edu/users/%SUBDIR%/:1,2 LOCAL/bf:3
 MASTER_SITE_SUBDIR=	flame/snapshots/:1 field/docs/:2

@@ -3,7 +3,7 @@
 
 PORTNAME=	knot
 PORTVERSION=	2.5.3
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	dns ipv6
 MASTER_SITES=	https://secure.nic.cz/files/knot-dns/ \
 		http://dns-lab.com/downloads/knot-dns/

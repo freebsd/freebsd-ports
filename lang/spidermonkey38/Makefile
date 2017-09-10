@@ -3,7 +3,7 @@
 
 PORTNAME=	spidermonkey38
 PORTVERSION=	38.8.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang
 MASTER_SITES=	MOZILLA/firefox/releases/${PORTVERSION}esr/source
 DISTNAME=	firefox-${PORTVERSION}esr.source

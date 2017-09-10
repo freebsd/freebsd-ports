@@ -3,6 +3,7 @@
 
 PORTNAME=	kxmlrpcclient
 PORTVERSION=	${KDE_FRAMEWORKS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	net kde kde-frameworks
 
 MAINTAINER=	kde@FreeBSD.org

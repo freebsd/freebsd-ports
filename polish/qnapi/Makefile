@@ -3,6 +3,7 @@
 
 PORTNAME=	qnapi
 PORTVERSION=	0.2.3
+PORTREVISION=	1
 CATEGORIES=	polish multimedia
 
 MAINTAINER=	pawel@FreeBSD.org

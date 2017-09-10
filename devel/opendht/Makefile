@@ -3,7 +3,7 @@
 
 PORTNAME=	opendht
 PORTVERSION=	0.5.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel net
 
 MAINTAINER=	yuri@rawbw.com

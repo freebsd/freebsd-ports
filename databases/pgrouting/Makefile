@@ -3,6 +3,7 @@
 
 PORTNAME=	pgrouting
 PORTVERSION=	2.4.2
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	databases geography
 

@@ -3,7 +3,7 @@
 
 PORTNAME=	taucs
 PORTVERSION=	2.2
-PORTREVISION=	15
+PORTREVISION=	16
 CATEGORIES=	math
 MASTER_SITES=	http://www.tau.ac.il/~stoledo/taucs/${PORTVERSION}/ \
 		LOCAL/bf

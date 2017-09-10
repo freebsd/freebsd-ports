@@ -3,7 +3,7 @@
 
 PORTNAME=	mod_spdy
 PORTVERSION=	0.9.4.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www
 MASTER_SITES=	http://www.club.kyutech.ac.jp/~masaki/ports/:mod_spdy \
 		APACHE_HTTPD:apache22

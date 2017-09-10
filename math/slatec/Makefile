@@ -3,7 +3,7 @@
 
 PORTNAME=	slatec
 PORTVERSION=	4.1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	math
 MASTER_SITES=	NL/slatec/:slatec NL/blas/:blas
 # Get d1mach.f, i1mach.f, r1mach.f from BLAS, rather than from Slatec:

@@ -2,7 +2,7 @@
 
 PORTNAME=	gmic
 PORTVERSION=	1.6.9
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	graphics
 MASTER_SITES=	http://gmic.eu/files/source/
 PKGNAMEPREFIX=	gimp-

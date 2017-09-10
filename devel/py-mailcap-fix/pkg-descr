@@ -1,5 +1,5 @@
 This package patches the python standard library's mailcap module in order to 
-correctly handle windcard entries.
+correctly handle wildcard entries.
 
 The bug is documented on the bug tracker here: issue 14977
 

@@ -2,7 +2,7 @@
 
 PORTNAME=	seqtools
 PORTVERSION=	4.44.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	biology
 MASTER_SITES=	ftp://ftp.sanger.ac.uk/pub4/resources/software/seqtools/PRODUCTION/
 

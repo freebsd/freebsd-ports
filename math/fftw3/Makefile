@@ -3,7 +3,7 @@
 
 PORTNAME=	fftw3
 DISTVERSION=	3.3.6-pl2
-PORTREVISION?=	0
+PORTREVISION?=	2
 CATEGORIES=	math
 MASTER_SITES=	http://www.fftw.org/ \
 		ftp://ftp.fftw.org/pub/fftw/

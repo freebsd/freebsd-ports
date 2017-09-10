@@ -3,6 +3,7 @@
 
 PORTNAME=	bro
 PORTVERSION=	2.5.1
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	https://www.bro.org/downloads/:source1 \
 		https://codeload.github.com/${GH_ACCOUNT}/${GH_PROJECT}/tar.gz/${PORTVERSION2}?dummy=/:source2

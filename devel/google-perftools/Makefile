@@ -3,6 +3,7 @@
 
 PORTNAME=	google-perftools
 PORTVERSION=	2.6.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/gperftools/gperftools/releases/download/gperftools-${PORTVERSION}/
 DISTNAME=	gperftools-${PORTVERSION}

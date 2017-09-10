@@ -3,7 +3,7 @@
 
 PORTNAME=	flowcanvas
 PORTVERSION=	0.7.1
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://download.drobilla.net/
 

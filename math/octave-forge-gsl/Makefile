@@ -3,7 +3,7 @@
 
 PORTNAME=	octave-forge-gsl
 PORTVERSION=	2.0.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org

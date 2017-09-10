@@ -3,7 +3,7 @@
 
 PORTNAME?=	lapack
 PORTVERSION=	3.5.0
-PORTREVISION?=	2	# Never remove this line, keep PORTREVISION?=0 in case.
+PORTREVISION?=	3	# Never remove this line, keep PORTREVISION?=0 in case.
 CATEGORIES=	math
 MASTER_SITES=	NL/lapack/
 DISTFILES=	lapack-${PORTVERSION}.tgz

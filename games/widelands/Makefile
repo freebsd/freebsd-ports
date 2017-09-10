@@ -3,6 +3,7 @@
 
 PORTNAME=	widelands
 DISTVERSION=	build19
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	https://launchpad.net/widelands/${DISTVERSION}/${DISTVERSION}/+download/ \
 		http://mirror.amdmi3.ru/distfiles/

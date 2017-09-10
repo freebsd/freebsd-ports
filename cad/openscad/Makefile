@@ -3,7 +3,7 @@
 
 PORTNAME=	openscad
 PORTVERSION=	2015.03
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	cad
 MASTER_SITES=	http://files.openscad.org/
 DISTNAME=	openscad-${PORTVERSION}.src

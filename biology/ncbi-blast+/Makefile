@@ -3,7 +3,7 @@
 
 PORTNAME=	blast+
 PORTVERSION=	2.5.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	biology
 MASTER_SITES=	http://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/${PORTVERSION}/ \
 		http://acadix.biz/Ports/distfiles/

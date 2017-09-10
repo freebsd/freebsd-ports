@@ -3,7 +3,7 @@
 
 PORTNAME=	tigcc
 PORTVERSION=	0.96.b8
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	devel
 MASTER_SITES=		GCC/snapshots/4.1-20060728:gcc \
 			GNU/binutils:gas \
