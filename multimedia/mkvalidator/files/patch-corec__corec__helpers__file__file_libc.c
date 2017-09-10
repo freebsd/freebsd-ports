@@ -1,5 +1,5 @@
---- ./corec/corec/helpers/file/file_libc.c.orig	2011-09-25 11:25:46.000000000 +0200
-+++ ./corec/corec/helpers/file/file_libc.c	2011-09-28 16:25:02.262950715 +0200
+--- corec/corec/helpers/file/file_libc.c.orig	2012-12-16 10:29:34 UTC
++++ corec/corec/helpers/file/file_libc.c
 @@ -40,7 +40,7 @@
  #include <unistd.h>
  #include <dirent.h>
