@@ -3,9 +3,10 @@
 
 PORTNAME=	sgwi
 PORTVERSION=	1.1.8
+PORTREVISION=	1
 CATEGORIES=	mail www
 MASTER_SITES=	http://www.vanheusden.com/sgwi/ \
-		http://lukasz.wasikowski.net/files/
+		https://www.freebsd.systems/files/
 DISTNAME=	sqlgreywebinterface-${PORTVERSION}
 
 MAINTAINER=	lukasz@wasikowski.net
@@ -13,7 +14,7 @@ COMMENT=	PHP web interface to SQLGrey
 
 LICENSE=	GPLv2
 
-USES=		tar:tgz
+USES=		tar:tgz php:web
 NO_BUILD=	yes
 SUB_FILES+=	pkg-message pkg-install
 SUB_LIST=	WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
@@ -27,11 +28,9 @@ SQLITE3_DESC=	SQLite3 back-end (use pgsql PHP extension)
 
 OPTIONS_DEFAULT=MYSQL
 
-MYSQL_USE=	PHP=mysql
+MYSQL_USE=	PHP=mysqli
 PGSQL_USE=	PHP=pgsql
 SQLITE3_USE=	PHP=sqlite3
-
-WANT_PHP_WEB=	yes
 
 post-patch:
 		${FIND} ${WRKSRC} -name '*.orig' -delete
