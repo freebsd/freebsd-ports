@@ -3,7 +3,7 @@
 
 PORTNAME=	worker
 PORTVERSION=	3.11.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-fm
 MASTER_SITES=	http://www.boomerangsworld.de/cms/worker/downloads/
 

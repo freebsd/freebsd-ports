@@ -3,6 +3,7 @@
 
 PORTNAME=	stonesoup
 PORTVERSION=	0.20.1
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	https://crawl.develz.org/release/%SUBDIR%/ \
 		http://crawl.develz.org/release/%SUBDIR%/

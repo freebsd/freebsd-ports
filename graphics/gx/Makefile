@@ -3,7 +3,7 @@
 
 PORTNAME=	gx
 PORTVERSION=	0.4.0
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	graphics
 MASTER_SITES=	http://BSDforge.com/projects/source/graphics/gx/
 

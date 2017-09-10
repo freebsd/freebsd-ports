@@ -3,7 +3,7 @@
 
 PORTNAME=	papi
 PORTVERSION=	5.4.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel
 MASTER_SITES=	http://icl.cs.utk.edu/projects/papi/downloads/
 
