@@ -46,6 +46,7 @@
     SUBDIR += R-cran-igraph
     SUBDIR += R-cran-influenceR
     SUBDIR += R-cran-inline
+    SUBDIR += R-cran-ipred
     SUBDIR += R-cran-irlba
     SUBDIR += R-cran-labeling
     SUBDIR += R-cran-lava
