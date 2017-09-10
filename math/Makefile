@@ -8,6 +8,7 @@
     SUBDIR += R
     SUBDIR += R-cran-Amelia
     SUBDIR += R-cran-ChangeAnomalyDetection
+    SUBDIR += R-cran-DRR
     SUBDIR += R-cran-Formula
     SUBDIR += R-cran-KFAS
     SUBDIR += R-cran-LearnBayes
@@ -32,6 +33,7 @@
     SUBDIR += R-cran-car
     SUBDIR += R-cran-coda
     SUBDIR += R-cran-combinat
+    SUBDIR += R-cran-CVST
     SUBDIR += R-cran-deldir
     SUBDIR += R-cran-dlmodeler
     SUBDIR += R-cran-dplyr
@@ -46,6 +48,7 @@
     SUBDIR += R-cran-igraph
     SUBDIR += R-cran-influenceR
     SUBDIR += R-cran-inline
+    SUBDIR += R-cran-ipred
     SUBDIR += R-cran-irlba
     SUBDIR += R-cran-labeling
     SUBDIR += R-cran-lava
