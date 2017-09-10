@@ -3,6 +3,7 @@
 
 PORTNAME=	treesheets
 PORTVERSION=	0.0.20170806
+PORTREVISION=	1
 CATEGORIES=	deskutils
 
 MAINTAINER=	lightside@gmx.com

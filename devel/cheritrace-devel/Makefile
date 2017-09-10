@@ -3,7 +3,7 @@
 
 PORTNAME=	cheritrace
 PORTVERSION=	0.0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel security
 
 MAINTAINER=	theraven@FreeBSD.org

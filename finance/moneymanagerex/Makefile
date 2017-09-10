@@ -4,7 +4,7 @@
 PORTNAME=	mmex
 PORTVERSION=	1.2.7
 DISTVERSIONPREFIX=	v
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	finance
 MASTER_SITES=	https://github.com/vslavik/bakefile/releases/download/v0.2.9/:bakefile
 DISTFILES=	bakefile-0.2.9${EXTRACT_SUFX}:bakefile

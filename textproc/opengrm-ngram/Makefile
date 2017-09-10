@@ -3,7 +3,7 @@
 
 PORTNAME=	opengrm-ngram
 PORTVERSION=	1.3.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 MASTER_SITES=	http://openfst.cs.nyu.edu/twiki/pub/GRM/NGramDownload/
 

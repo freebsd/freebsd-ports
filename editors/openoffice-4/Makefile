@@ -3,7 +3,7 @@
 
 PORTNAME=	apache-openoffice
 PORTVERSION=	${AOOVERSION}
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	editors java
 MASTER_SITES=	APACHE/openoffice/${PORTVERSION}/source \
 		http://tools.openoffice.org/unowinreg_prebuild/680/:unoreg \

@@ -4,7 +4,7 @@
 PORTNAME=	gtkguitune
 PORTVERSION=	0.8
 DISTVERSIONPREFIX=	gtk2-
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	audio
 MASTER_SITES=	GENTOO \
 		http://www.oocities.org/harpin_floh/mysoft/

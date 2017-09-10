@@ -3,7 +3,7 @@
 
 PORTNAME=	alliance
 DISTVERSION=	5.0-20120515
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	cad
 MASTER_SITES=	http://ftp.lyx.org/lip6/softs/alliance/distribution/5.0/ \
 		http://ftp.jussieu.fr/lip6/softs/alliance/distribution/5.0/ \

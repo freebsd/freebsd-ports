@@ -2,7 +2,7 @@
 
 .include "${.CURDIR}/Makefile.common"
 
-PORTREVISION=	0
+PORTREVISION=	1
 MASTER_SITES=	http://download.documentfoundation.org/libreoffice/src/${PORTVERSION}/ \
 		http://dev-www.libreoffice.org/src/:src \
 		http://dev-www.libreoffice.org/extern/:ext

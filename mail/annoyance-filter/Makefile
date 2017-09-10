@@ -3,7 +3,7 @@
 
 PORTNAME=	annoyance-filter
 PORTVERSION=	1.0d
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	mail
 MASTER_SITES=	SF/annoyancefilter/annoyancefilter/${PORTVERSION} \
 		http://www.fourmilab.ch/annoyance-filter/

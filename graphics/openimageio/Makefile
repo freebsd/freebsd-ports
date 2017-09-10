@@ -3,6 +3,7 @@
 
 PORTNAME=	openimageio
 PORTVERSION=	1.7.17
+PORTREVISION=	1
 DISTVERSIONPREFIX=	Release-
 CATEGORIES?=	graphics multimedia
 

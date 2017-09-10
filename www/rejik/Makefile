@@ -3,7 +3,7 @@
 
 PORTNAME=	rejik
 PORTVERSION=	3.2.11
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www
 MASTER_SITES=	http://www.rejik.ru/download/
 DISTNAME=	redirector-${PORTVERSION}_squid_3.4

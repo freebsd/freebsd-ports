@@ -3,7 +3,7 @@
 
 PORTNAME=	icu
 DISTVERSION=	58_2
-PORTREVISION?=	2 # keep for icu-lx
+PORTREVISION?=	3 # keep for icu-lx
 PORTEPOCH?=	1
 CATEGORIES?=	devel
 MASTER_SITES=	http://download.icu-project.org/files/icu4c/${PORTVERSION}/

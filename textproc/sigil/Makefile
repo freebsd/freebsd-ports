@@ -3,6 +3,7 @@
 
 PORTNAME=	sigil
 PORTVERSION=	0.9.8
+PORTREVISION=	1
 CATEGORIES=	textproc
 
 MAINTAINER=	ports@FreeBSD.org

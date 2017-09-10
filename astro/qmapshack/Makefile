@@ -3,6 +3,7 @@
 
 PORTNAME=	qmapshack
 PORTVERSION=	1.8.1
+PORTREVISION=	1
 CATEGORIES=	astro
 MASTER_SITES=	https://bitbucket.org/maproom/qmapshack/downloads/
 
