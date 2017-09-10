@@ -77,6 +77,7 @@
     SUBDIR += R-cran-qualityTools
     SUBDIR += R-cran-quantreg
     SUBDIR += R-cran-RcppRoll
+    SUBDIR += R-cran-recipes
     SUBDIR += R-cran-rgenoud
     SUBDIR += R-cran-sandwich
     SUBDIR += R-cran-sf
