@@ -35,6 +35,7 @@
     SUBDIR += R-cran-combinat
     SUBDIR += R-cran-CVST
     SUBDIR += R-cran-deldir
+    SUBDIR += R-cran-demRed
     SUBDIR += R-cran-dlmodeler
     SUBDIR += R-cran-dplyr
     SUBDIR += R-cran-expm

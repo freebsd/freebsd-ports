@@ -1,0 +1,4 @@
+A collection of dimensionality reduction techniques from R packages
+and provides a common interface for calling the methods.
+
+WWW: https://cran.r-project.org/web/packages/dimRed/
