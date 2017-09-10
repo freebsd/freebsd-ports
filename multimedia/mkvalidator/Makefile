@@ -12,6 +12,7 @@ LICENSE=	BSD3CLAUSE BSD4CLAUSE GPLv2
 LICENSE_COMB=	multi
 
 BROKEN_powerpc64=	does not compile: mkvtree.c: error: dereferencing pointer to incomplete type
+BROKEN_sparc64=	build broken on big endian architectures
 
 BUILD_WRKSRC=	${WRKSRC}/${PORTNAME}
 
@@ -24,8 +25,6 @@ CFLAGS+=	-I${ICONV_PREFIX}/include
 LIBS+=		-L${ICONV_PREFIX}/lib ${ICONV_LIB}
 
 PLIST_FILES=	bin/mkvalidator bin/mkvtree
-
-BROKEN_sparc64=	Build broken on big endian architectures
 
 MAKE_JOBS_UNSAFE=	yes
 
