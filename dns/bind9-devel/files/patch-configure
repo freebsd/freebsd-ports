@@ -1,6 +1,6 @@
---- configure.orig	2017-09-05 01:10:49 UTC
+--- configure.orig	2017-09-10 01:10:23 UTC
 +++ configure
-@@ -14434,27 +14434,9 @@ done
+@@ -14403,27 +14403,9 @@ done
  		# problems start to show up.
  		saved_libs="$LIBS"
  		for TRY_LIBS in \
@@ -9,9 +9,9 @@
 -		    "-lgssapi_krb5 -lkrb5 -lk5crypto -lcom_err -lresolv" \
 -		    "-lgssapi" \
 -		    "-lgssapi -lkrb5 -ldes -lcrypt -lasn1 -lroken -lcom_err" \
--		    "-lgssapi -lkrb5 -lcrypto -lcrypt -lasn1 -lroken -lcom_err" \
--		    "-lgssapi -lkrb5 -lgssapi_krb5 -lcrypto -lcrypt -lasn1 -lroken -lcom_err" \
--		    "-lgssapi -lkrb5 -lhx509 -lcrypto -lcrypt -lasn1 -lroken -lcom_err" \
+-		    "-lgssapi -lkrb5 -lcrypt -lasn1 -lroken -lcom_err" \
+-		    "-lgssapi -lkrb5 -lgssapi_krb5 -lcrypt -lasn1 -lroken -lcom_err" \
+-		    "-lgssapi -lkrb5 -lhx509 -lcrypt -lasn1 -lroken -lcom_err" \
 -		    "-lgss -lkrb5"
 +		    "$($KRB5CONFIG gssapi --libs)"; \
  		do
@@ -22,15 +22,15 @@
 -		    # when you are trying to build with KTH in /usr/lib.
 -		    if test "/usr" = "$use_gssapi"
 -		    then
--			    LIBS="$TRY_LIBS"
+-			    LIBS="$TRY_LIBS $ISC_OPENSSL_LIBS"
 -		    else
--			    LIBS="-L$use_gssapi/lib $TRY_LIBS"
+-			    LIBS="-L$use_gssapi/lib $TRY_LIBS $ISC_OPENSSL_LIBS"
 -		    fi
 +		    LIBS="$TRY_LIBS"
  		    { $as_echo "$as_me:${as_lineno-$LINENO}: checking linking as $TRY_LIBS" >&5
  $as_echo_n "checking linking as $TRY_LIBS... " >&6; }
  		    cat confdefs.h - <<_ACEOF >conftest.$ac_ext
-@@ -14497,47 +14479,7 @@ $as_echo "no" >&6; } ;;
+@@ -14466,47 +14448,7 @@ $as_echo "no" >&6; } ;;
  		no) as_fn_error $? "could not determine proper GSSAPI linkage" "$LINENO" 5 ;;
  		esac
  
@@ -79,7 +79,7 @@
  		DNS_GSSAPI_LIBS="$LIBS"
  
  		{ $as_echo "$as_me:${as_lineno-$LINENO}: result: using GSSAPI from $use_gssapi/lib and $use_gssapi/include" >&5
-@@ -23023,7 +22965,7 @@ $as_echo "" >&6; }
+@@ -22701,7 +22643,7 @@ $as_echo "" >&6; }
  			# Check other locations for includes.
  			# Order is important (sigh).
  
