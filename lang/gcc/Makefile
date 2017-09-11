@@ -3,7 +3,7 @@
 
 PORTNAME=	gcc
 PORTVERSION=	5.4.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	lang java
 MASTER_SITES=	# not applicable
 DISTFILES=	# not applicable
