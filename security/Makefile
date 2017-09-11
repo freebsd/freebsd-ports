@@ -927,6 +927,7 @@
     SUBDIR += py-pow
     SUBDIR += py-pyaes
     SUBDIR += py-pyaff4
+    SUBDIR += py-pyaxo
     SUBDIR += py-pyclamd
     SUBDIR += py-pycrypto
     SUBDIR += py-pycryptodome
