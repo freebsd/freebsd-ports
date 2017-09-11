@@ -191,6 +191,7 @@
     SUBDIR += consolehm
     SUBDIR += consolekit2
     SUBDIR += consul
+    SUBDIR += consul_exporter
     SUBDIR += consul-alerts
     SUBDIR += contractor
     SUBDIR += copytape
