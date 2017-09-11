@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 # Hint: git describe --abbrev=12 --match android-o-preview-4
-DISTVERSION=	o-preview-4-185
-DISTVERSIONSUFFIX=	-g2066e0585e9d
+DISTVERSION=	o-preview-4-4407
+DISTVERSIONSUFFIX=	-gcfadedb1391f
 PKGNAMESUFFIX=	-devel
 
 CONFLICTS_INSTALL=	${PORTNAME}-[0-9]*
