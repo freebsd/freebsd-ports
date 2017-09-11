@@ -2,17 +2,18 @@
 # $FreeBSD$
 
 PORTNAME=	tvheadend
-PORTVERSION=	4.0.8
+PORTVERSION=	4.2.3
 DISTVERSIONPREFIX=	v
-PORTREVISION=	5
 CATEGORIES=	multimedia
 
 MAINTAINER=	decke@FreeBSD.org
-COMMENT=	TV streaming server supporting DVB, IPTV and V4L
+COMMENT=	TV streaming server supporting DVB, IPTV, SAT>IP and more
 
 LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 BUILD_DEPENDS=	bash:shells/bash \
+		cmake:devel/cmake \
 		${LOCALBASE}/include/linux/videodev2.h:multimedia/v4l_compat
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		liburiparser.so:net/uriparser
@@ -22,9 +23,9 @@ BROKEN_mips=		fails to configure: No C compiler found
 BROKEN_mips64=		fails to configure: No C compiler found
 BROKEN_powerpc64=	fails to configure: No C compiler found
 
+USES=		execinfo gettext gmake pkgconfig python shebangfix ssl
 USE_GITHUB=	yes
 
-USES=		execinfo gmake pkgconfig python shebangfix
 GNU_CONFIGURE=	yes
 MAKE_JOBS_UNSAFE=	yes
 USE_RC_SUBR=	${PORTNAME}
@@ -45,7 +46,8 @@ SUB_LIST+=	TVHUSER="${TVHUSER}" \
 		TVHGROUP="${TVHGROUP}"
 
 CONFIGURE_ENV+=	PLATFORM=freebsd
-CONFIGURE_ARGS+=--disable-dvbscan --disable-zlib
+CONFIGURE_ARGS+=--disable-dvbscan --disable-zlib --disable-hdhomerun_static \
+		--disable-bintray_cache --disable-ffmpeg_static --disable-pie
 CFLAGS+=	-I${LOCALBASE}/include -Wno-conversion -Wno-int-to-pointer-cast
 LDFLAGS+=	-L${LOCALBASE}/lib -lexecinfo -lssl -lcrypto -lz
 
@@ -73,27 +75,15 @@ TRANSCODING_CONFIGURE_ENABLE=	libav
 
 XMLTV_RUN_DEPENDS=	p5-xmltv>=0:textproc/p5-xmltv
 
-# CLANG also needs -Wno-microsoft which GCC 4.2 does not know
-CFLAGS+=	-Wno-microsoft \
-		-Wno-tautological-constant-out-of-range-compare
+.include <bsd.port.pre.mk>
 
 post-patch:
-	@${REINPLACE_CMD} 's|0.0.0~unknown|${PORTVERSION}-${GH_TAGNAME}|' \
-		${WRKSRC}/support/version
-	@${REINPLACE_CMD} 's|-g||' \
-		${WRKSRC}/Makefile
 	@${REINPLACE_CMD} 's|-ldl||' \
 		${WRKSRC}/Makefile
-	# ignore gcc warnings on FreeBSD 9.X, and clang warnings on FreeBSD 10+
 	@${REINPLACE_CMD} 's|-Werror||' \
 		${WRKSRC}/Makefile
-	# Remove -Wunused-result because gcc 4.2 on FreeBSD 9.x does not know it
-	@${REINPLACE_CMD} 's|-Wunused-result||' \
-		${WRKSRC}/Makefile
-	# to suppress clang CC flags on FreeBSD 10+
-	# @${REINPLACE_CMD} 's|clang|clang-options-disabled|' \
-	# to enable clang CC flags, because clang is identified as 'cc' on FreeBSD 10+
-	@${REINPLACE_CMD} 's|clang|cc|' \
-		${WRKSRC}/Makefile
 
-.include <bsd.port.mk>
+post-install:
+	${STRIP_CMD} ${STAGEDIR}/${PREFIX}/bin/tvheadend
+
+.include <bsd.port.post.mk>
