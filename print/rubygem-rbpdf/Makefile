@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rbpdf
-PORTVERSION=	1.19.2
+PORTVERSION=	1.19.3
 CATEGORIES=	print rubygems
 MASTER_SITES=	RG
 
