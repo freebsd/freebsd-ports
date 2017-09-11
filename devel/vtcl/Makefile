@@ -10,6 +10,10 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/1.6.1.a1
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Application Development Environment for Tcl/Tk
 
+DEPRECATED=		This port depends on Tcl/Tk 8.4 , which is no longer\
+			maintained. Please port it to 8.5+
+EXPIRATION_DATE=	2017-10-15
+
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
