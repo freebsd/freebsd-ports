@@ -11,6 +11,10 @@ DISTNAME=	XPVM.src.${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphical console and monitor for PVM
 
+DEPRECATED=		This port depends on Tcl/Tk 8.4 , which is no longer\
+			maintained. Please port it to 8.5+
+EXPIRATION_DATE=	2017-10-15
+
 LIB_DEPENDS=	libpvm3.so:net/pvm
 
 USES=		tk:84 tar:tgz

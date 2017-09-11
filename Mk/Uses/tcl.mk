@@ -144,9 +144,13 @@ _TCLTK_WANTED_VERSION:=	${_v}
 .endfor
 
 #
-# If we couldn't find any wanted version installed, depend on the highest one.
+# If we couldn't find any wanted version installed, depend on the default or the highest one.
 .if !defined(_TCLTK_WANTED_VERSION)
+.  if ${_TCLTK_WANTED_VERSIONS:M${_TCLTK_DEFAULT_VERSION}}
+_TCLTK_WANTED_VERSION:=	${_TCLTK_DEFAULT_VERSION}
+.  else
 _TCLTK_WANTED_VERSION:= ${_TCLTK_HIGHEST_VERSION}
+.  endif
 .endif
 
 #
