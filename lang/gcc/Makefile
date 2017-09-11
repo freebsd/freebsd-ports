@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gcc
-PORTVERSION=	5.4.0
-PORTREVISION=	3
+PORTVERSION=	${GCC_DEFAULT}
 CATEGORIES=	lang java
 MASTER_SITES=	# not applicable
 DISTFILES=	# not applicable
