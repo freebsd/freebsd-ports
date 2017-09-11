@@ -11,6 +11,9 @@ DISTNAME=	${PORTNAME}${PORTVERSION}-src
 MAINTAINER=	tcltk@FreeBSD.org
 COMMENT=	Graphical toolkit for Tcl
 
+DEPRECATED=		Tcl/Tk 8.4 is no longer maintained, please use 8.5+
+EXPIRATION_DATE=	2017-10-15
+
 LICENSE=	TclTk
 LICENSE_NAME=	Tcl/Tk License
 LICENSE_FILE=	${WRKSRC}/../license.terms

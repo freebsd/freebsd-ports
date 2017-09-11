@@ -10,6 +10,10 @@ MASTER_SITES=	http://beepcore-tcl.sourceforge.net/
 MAINTAINER=	dsh@vlink.ru
 COMMENT=	Tcl/Tk library to detect idle periods of an X session
 
+DEPRECATED=		This port depends on Tcl/Tk 8.4 , which is no longer\
+			maintained. Please port it to 8.5+
+EXPIRATION_DATE=	2017-10-15
+
 USES=		libtool tk:84,tea tar:tgz
 USE_XORG=	xt xscrnsaver
 USE_LDCONFIG=	yes
