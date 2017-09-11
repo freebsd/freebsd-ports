@@ -1684,5 +1684,3 @@ lib/tcl%%TCL_VER%%/word.tcl
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/WET
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Zulu
 libdata/pkgconfig/tcl.pc
-
-
