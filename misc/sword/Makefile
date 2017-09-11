@@ -3,7 +3,7 @@
 
 PORTNAME=	sword
 PORTVERSION=	1.7.4
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.crosswire.org/pub/sword/source/v${PORTVERSION:R}/ \
 		http://crosswire.org/ftpmirror/pub/sword/source/v${PORTVERSION:R}/
@@ -21,7 +21,8 @@ BROKEN_powerpc64=	does not compile: libicui18n.so: undefined reference to __cxa_
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-conf --with-zlib
 INSTALL_TARGET=	install-strip
-USES=		gmake libtool pathfix pkgconfig
+USES=		compiler:c++11-lib gmake libtool pathfix pkgconfig
+USE_CXXSTD=	gnu++11
 USE_LDCONFIG=	yes
 SUB_FILES=	pkg-message
 
