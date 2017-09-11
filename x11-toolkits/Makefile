@@ -269,6 +269,7 @@
     SUBDIR += tk84
     SUBDIR += tk85
     SUBDIR += tk86
+    SUBDIR += tk87
     SUBDIR += tkdnd
     SUBDIR += tkshape
     SUBDIR += tktable

@@ -1,0 +1,34 @@
+--- Makefile.in.orig	2017-09-03 10:29:26 UTC
++++ Makefile.in
+@@ -92,7 +94,7 @@ HTML_DIR		= @HTML_DIR@
+ HTML_INSTALL_DIR	= $(INSTALL_ROOT)$(HTML_DIR)
+ 
+ # Directory in which to install the configuration file tkConfig.sh:
+-CONFIG_INSTALL_DIR	= $(INSTALL_ROOT)$(libdir)
++CONFIG_INSTALL_DIR	= $(SCRIPT_INSTALL_DIR)
+ 
+ # Directory in which to install the demo files:
+ DEMO_INSTALL_DIR	= $(INSTALL_ROOT)$(TK_LIBRARY)/demos
+@@ -699,8 +708,7 @@ INSTALL_DOC_TARGETS = install-doc
+ INSTALL_DEV_TARGETS = install-headers
+ INSTALL_DEMO_TARGETS = install-demos
+ INSTALL_EXTRA_TARGETS = @EXTRA_INSTALL@
+-INSTALL_TARGETS = $(INSTALL_BASE_TARGETS) $(INSTALL_DOC_TARGETS) $(INSTALL_DEV_TARGETS) \
+-		$(INSTALL_DEMO_TARGETS) $(INSTALL_EXTRA_TARGETS)
++INSTALL_TARGETS = $(INSTALL_BASE_TARGETS) $(INSTALL_DEV_TARGETS) $(INSTALL_EXTRA_TARGETS)
+ 
+ install: $(INSTALL_TARGETS)
+ 
+@@ -755,9 +766,9 @@ install-binaries: $(TK_STUB_LIB_FILE) $(
+ 	    @INSTALL_STUB_LIB@ ; \
+ 	fi
+ 	@EXTRA_INSTALL_BINARIES@
+-	@echo "Installing pkg-config file to $(LIB_INSTALL_DIR)/pkgconfig/"
+-	@$(INSTALL_DATA_DIR) $(LIB_INSTALL_DIR)/pkgconfig
+-	@$(INSTALL_DATA) tk.pc $(LIB_INSTALL_DIR)/pkgconfig/tk.pc
++	@echo "Installing pkg-config file to $(INSTALL_ROOT)$(prefix)/libdata/pkgconfig/"
++	@$(INSTALL_DATA_DIR) $(INSTALL_ROOT)$(prefix)/libdata/pkgconfig
++	@$(INSTALL_DATA) tk.pc $(INSTALL_ROOT)$(prefix)/libdata/pkgconfig/tk.pc
+ 
+ install-libraries: libraries
+ 	@for i in "$(SCRIPT_INSTALL_DIR)" "$(SCRIPT_INSTALL_DIR)/images" \
