@@ -1,22 +1,21 @@
 # $FreeBSD$
 
-PORTNAME=	smppex
-PORTVERSION=	2.2.0
+PORTNAME=	gen_stage
+PORTVERSION=	0.12.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 PKGNAMEPREFIX=	elixir-
 
 MAINTAINER=	olgeni@FreeBSD.org
-COMMENT=	SMPP 3.4 library for Elixir
+COMMENT=	Producer and consumer pipelines with back-pressure for Elixir
 
-LICENSE=	MIT
+LICENSE=	APACHE20
 
 USES=		elixir
 USE_GITHUB=	yes
-GH_ACCOUNT=	savonarola
+GH_ACCOUNT=	elixir-lang
 
-MIX_BUILD_DEPS=	net/erlang-ranch
-MIX_RUN_DEPS:=	${MIX_BUILD_DEPS}
+ELIXIR_APP_NAME=gen_stage
 MIX_REWRITE=	yes
 
 .include <bsd.port.mk>
