@@ -514,6 +514,7 @@
     SUBDIR += elixir-exjsx
     SUBDIR += elixir-exprotobuf
     SUBDIR += elixir-exrm
+    SUBDIR += elixir-gen_stage
     SUBDIR += elixir-gen_state_machine
     SUBDIR += elixir-gettext
     SUBDIR += elixir-hex
