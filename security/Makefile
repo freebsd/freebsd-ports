@@ -182,8 +182,8 @@
     SUBDIR += gnupg20
     SUBDIR += gnupg22
     SUBDIR += gnutls
-    SUBDIR += go.crypto
     SUBDIR += go-cve-dictionary
+    SUBDIR += go.crypto
     SUBDIR += goptlib
     SUBDIR += gorilla
     SUBDIR += govpn

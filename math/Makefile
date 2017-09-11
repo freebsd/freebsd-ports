@@ -24,8 +24,8 @@
     SUBDIR += R-cran-RSvgDevice
     SUBDIR += R-cran-RcppArmadillo
     SUBDIR += R-cran-RcppEigen
+    SUBDIR += R-cran-RcppRoll
     SUBDIR += R-cran-Rmpfr
-    SUBDIR += R-cran-robustbase
     SUBDIR += R-cran-Rsolnp
     SUBDIR += R-cran-SparseM
     SUBDIR += R-cran-VGAM
@@ -76,9 +76,9 @@
     SUBDIR += R-cran-quadprog
     SUBDIR += R-cran-qualityTools
     SUBDIR += R-cran-quantreg
-    SUBDIR += R-cran-RcppRoll
     SUBDIR += R-cran-recipes
     SUBDIR += R-cran-rgenoud
+    SUBDIR += R-cran-robustbase
     SUBDIR += R-cran-sandwich
     SUBDIR += R-cran-sf
     SUBDIR += R-cran-sm

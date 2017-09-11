@@ -195,8 +195,8 @@
     SUBDIR += ng_ipacct
     SUBDIR += nitpicker
     SUBDIR += nrpe
-    SUBDIR += nrpe3
     SUBDIR += nrpe-ssl
+    SUBDIR += nrpe3
     SUBDIR += nsca
     SUBDIR += nsca-client
     SUBDIR += nsca-ng
