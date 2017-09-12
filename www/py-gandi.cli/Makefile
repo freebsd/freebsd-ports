@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gandi.cli
-PORTVERSION=	0.19
+PORTVERSION=	0.21
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,6 +18,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}yaml>0:devel/py-yaml \
 		${PYTHON_PKGNAMEPREFIX}requests>0:www/py-requests \
 		${PYTHON_PKGNAMEPREFIX}ipy>0:net-mgmt/py-ipy
 
+# Actually 2.6-3.6(+)
 USES=		python
 USE_PYTHON=	autoplist concurrent distutils
 
@@ -28,10 +29,6 @@ NO_ARCH=	yes
 .if ${PYTHON_REL} < 3300
 TEST_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}mock>0:devel/py-mock
 .endif
-
-post-extract:
-	${FIND} ${WRKSRC} -type d -name __pycache__ -exec ${RM} -r {} + && \
-	${FIND} ${WRKSRC} -type f -name '*.py[co]' -exec ${RM} {} +
 
 do-test:
 	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYDISTUTILS_SETUP} test
