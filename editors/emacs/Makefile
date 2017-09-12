@@ -3,7 +3,6 @@
 
 PORTNAME=	emacs
 PORTVERSION=	${EMACS_VER}
-PORTREVISION=	2
 PORTEPOCH=	3
 CATEGORIES=	editors ipv6
 MASTER_SITES=	GNU
@@ -21,7 +20,7 @@ CONFLICTS_INSTALL?=	emacs-devel-[0-9]* emacs-nox11-[0-9]*
 
 BROKEN_aarch64=		Fails to link: missing sbrk
 
-EMACS_VER=	25.2
+EMACS_VER=	25.3
 GNU_CONFIGURE=	yes
 USES=		cpe gmake makeinfo ncurses pkgconfig tar:xz
 # Building with GCC 4.6+ requires it; remove after 9.3 EOL

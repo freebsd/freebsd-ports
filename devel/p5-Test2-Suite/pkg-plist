@@ -26,12 +26,14 @@
 %%SITE_PERL%%/Test2/Compare/String.pm
 %%SITE_PERL%%/Test2/Compare/Undef.pm
 %%SITE_PERL%%/Test2/Compare/Wildcard.pm
+%%SITE_PERL%%/Test2/Event/Times.pm
 %%SITE_PERL%%/Test2/Mock.pm
 %%SITE_PERL%%/Test2/Plugin.pm
 %%SITE_PERL%%/Test2/Plugin/BailOnFail.pm
 %%SITE_PERL%%/Test2/Plugin/DieOnFail.pm
 %%SITE_PERL%%/Test2/Plugin/ExitSummary.pm
 %%SITE_PERL%%/Test2/Plugin/SRand.pm
+%%SITE_PERL%%/Test2/Plugin/Times.pm
 %%SITE_PERL%%/Test2/Plugin/UTF8.pm
 %%SITE_PERL%%/Test2/Require.pm
 %%SITE_PERL%%/Test2/Require/AuthorTesting.pm
@@ -67,6 +69,7 @@
 %%SITE_PERL%%/Test2/Util/Table/Cell.pm
 %%SITE_PERL%%/Test2/Util/Table/LineBreak.pm
 %%SITE_PERL%%/Test2/Util/Term.pm
+%%SITE_PERL%%/Test2/Util/Times.pm
 %%SITE_PERL%%/Test2/V0.pm
 %%PERL5_MAN3%%/Test2::Bundle.3.gz
 %%PERL5_MAN3%%/Test2::Bundle::Extended.3.gz
@@ -102,6 +105,7 @@
 %%PERL5_MAN3%%/Test2::Plugin::DieOnFail.3.gz
 %%PERL5_MAN3%%/Test2::Plugin::ExitSummary.3.gz
 %%PERL5_MAN3%%/Test2::Plugin::SRand.3.gz
+%%PERL5_MAN3%%/Test2::Plugin::Times.3.gz
 %%PERL5_MAN3%%/Test2::Plugin::UTF8.3.gz
 %%PERL5_MAN3%%/Test2::Require.3.gz
 %%PERL5_MAN3%%/Test2::Require::AuthorTesting.3.gz
@@ -135,4 +139,5 @@
 %%PERL5_MAN3%%/Test2::Util::Sub.3.gz
 %%PERL5_MAN3%%/Test2::Util::Table.3.gz
 %%PERL5_MAN3%%/Test2::Util::Table::LineBreak.3.gz
+%%PERL5_MAN3%%/Test2::Util::Times.3.gz
 %%PERL5_MAN3%%/Test2::V0.3.gz

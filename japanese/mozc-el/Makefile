@@ -1,6 +1,7 @@
 # Created by: TAKANO, Yuji
 # $FreeBSD$
 
+PORTREVISION=	1
 PKGNAMESUFFIX=	-el-${EMACS_PORT_NAME}
 
 COMMENT=	Emacs input method for Mozc

@@ -8,12 +8,15 @@ MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	IPy-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Python module for handling IPv4 and IPv6 Addresses and Networks
 
-USES=		python
-USE_PYTHON=	distutils autoplist
+LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 NO_ARCH=	yes
+USE_PYTHON=	autoplist concurrent distutils
+USES=		python
 
 do-test:
 	${PYTHON_CMD} ${WRKSRC}/test/test_IPy.py

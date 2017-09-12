@@ -1,7 +1,6 @@
 Index: modules/ssl/ssl_engine_init.c
-24c84dc from https://github.com/icing/mod_md/blob/master/patches/mod_ssl_md-2.4.x-v4.diff
 ===================================================================
---- modules/ssl/ssl_engine_init.c	(revision 1807228)
+--- modules/ssl/ssl_engine_init.c	(revision 1808124)
 +++ modules/ssl/ssl_engine_init.c	(working copy)
 @@ -164,6 +164,41 @@
                   modver, AP_SERVER_BASEVERSION, incver);
@@ -45,7 +44,7 @@ Index: modules/ssl/ssl_engine_init.c
  /*
   *  Per-module initialization
   */
-@@ -204,6 +224,18 @@
+@@ -204,6 +239,18 @@
      ssl_config_global_create(base_server); /* just to avoid problems */
      ssl_config_global_fix(mc);
  
@@ -64,7 +63,7 @@ Index: modules/ssl/ssl_engine_init.c
      /*
       *  try to fix the configuration and open the dedicated SSL
       *  logfile as early as possible
-@@ -1606,6 +1638,57 @@
+@@ -1606,6 +1653,57 @@
          return APR_EGENERAL;
      }
  
@@ -97,11 +96,12 @@ Index: modules/ssl/ssl_engine_init.c
 +            }
 +            
 +            if (key_file && cert_file) {
++                ap_log_error(APLOG_MARK, APLOG_TRACE1, 0, s, 
++                             "%s: installing key=%s, cert=%s, chain=%s", 
++                             ssl_util_vhostid(p, s), key_file, cert_file, chain_file);
 +                APR_ARRAY_PUSH(pks->key_files, const char *) = key_file;
 +                APR_ARRAY_PUSH(pks->cert_files, const char *) = cert_file;
-+                if (chain_file) {
-+                    sc->server->cert_chain = chain_file;
-+                }
++                sc->server->cert_chain = chain_file;
 +            }
 +            
 +            if (APR_STATUS_IS_EAGAIN(rv)) {
@@ -111,7 +111,6 @@ Index: modules/ssl/ssl_engine_init.c
 +                             "host is part of a Managed Domain, but no SSL certificate is "
 +                             "available (yet).", ssl_util_vhostid(p, s));
 +                pks->service_unavailable = 1;
-+                return APR_SUCCESS;
 +            }
 +            else if (rv != APR_SUCCESS) {
 +                return rv;
@@ -124,7 +123,7 @@ Index: modules/ssl/ssl_engine_init.c
      }
 Index: modules/ssl/ssl_engine_kernel.c
 ===================================================================
---- modules/ssl/ssl_engine_kernel.c	(revision 1807581)
+--- modules/ssl/ssl_engine_kernel.c	(revision 1808124)
 +++ modules/ssl/ssl_engine_kernel.c	(working copy)
 @@ -264,6 +264,15 @@
          return DECLINED;
@@ -198,9 +197,9 @@ Index: modules/ssl/ssl_engine_kernel.c
          /*
 Index: modules/ssl/ssl_private.h
 ===================================================================
---- modules/ssl/ssl_private.h	(revision 1807581)
+--- modules/ssl/ssl_private.h	(revision 1808124)
 +++ modules/ssl/ssl_private.h	(working copy)
-@@ -505,6 +505,7 @@
+@@ -524,6 +524,7 @@
      server_rec *server;
      
      const char *cipher_suite; /* cipher suite used in last reneg */
@@ -208,7 +207,7 @@ Index: modules/ssl/ssl_private.h
  } SSLConnRec;
  
  /* BIG FAT WARNING: SSLModConfigRec has unusual memory lifetime: it is
-@@ -581,6 +582,9 @@
+@@ -600,6 +601,9 @@
       * sent in the CertificateRequest message: */
      const char  *ca_name_path;
      const char  *ca_name_file;
@@ -218,7 +217,7 @@ Index: modules/ssl/ssl_private.h
  } modssl_pk_server_t;
  
  typedef struct {
-@@ -1046,6 +1050,9 @@
+@@ -1063,6 +1067,9 @@
   * memory. */
  DH *modssl_get_dh_params(unsigned keylen);
  
@@ -230,7 +229,7 @@ Index: modules/ssl/ssl_private.h
  
 Index: modules/ssl/ssl_util_ssl.c
 ===================================================================
---- modules/ssl/ssl_util_ssl.c	(revision 1807581)
+--- modules/ssl/ssl_util_ssl.c	(revision 1808124)
 +++ modules/ssl/ssl_util_ssl.c	(working copy)
 @@ -115,6 +115,33 @@
      return rc;
@@ -268,7 +267,7 @@ Index: modules/ssl/ssl_util_ssl.c
  **  Smart shutdown
 Index: modules/ssl/ssl_util_ssl.h
 ===================================================================
---- modules/ssl/ssl_util_ssl.h	(revision 1807581)
+--- modules/ssl/ssl_util_ssl.h	(revision 1808124)
 +++ modules/ssl/ssl_util_ssl.h	(working copy)
 @@ -65,6 +65,7 @@
  void       *modssl_get_app_data2(SSL *);
