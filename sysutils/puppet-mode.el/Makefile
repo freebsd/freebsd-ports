@@ -3,7 +3,7 @@
 
 PORTNAME=	puppet-mode.el
 PORTVERSION=	0.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils elisp
 
 MAINTAINER=	demon@FreeBSD.org
