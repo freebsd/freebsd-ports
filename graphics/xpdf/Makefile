@@ -2,7 +2,7 @@
 
 PORTNAME=	xpdf
 PORTVERSION=	3.04
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	graphics print
 MASTER_SITES=	http://mirrors.rit.edu/zi/ \
 		ftp://ftp.foolabs.com/pub/xpdf/ \
@@ -59,7 +59,8 @@ post-install:
 .for file in ANNOUNCE CHANGES README misc/hello.pdf
 	${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${DOCSDIR}
 .endfor
-	${LN} -sf ${PREFIX}/libexec/xpdf/xpdf ${STAGEDIR}${PREFIX}/bin/xpdf
+	@cd ${STAGEDIR}${PREFIX}; \
+	${LN} -sf libexec/xpdf/xpdf bin/xpdf
 	${INSTALL_DATA} ${WRKDIR}/xpdf-man.conf \
 		${STAGEDIR}${PREFIX}/etc/man.d/xpdf.conf
 
