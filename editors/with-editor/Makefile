@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	with-editor
-PORTVERSION=	2.5.11
+PORTVERSION=	2.6.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	editors elisp
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
@@ -11,9 +11,6 @@ MAINTAINER=	yasu@utahime.org
 COMMENT=	Use the Emacsclient as the $EDITOR of child processes
 
 LICENSE=	GPLv3
-
-BUILD_DEPENDS=	dash.el>0:devel/dash.el
-RUN_DEPENDS=	dash.el>0:devel/dash.el
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	magit
