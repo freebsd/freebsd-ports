@@ -3,7 +3,7 @@
 
 PORTNAME=	intl
 PORTVERSION=	3.0.0
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	devel pear
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -14,7 +14,6 @@ LICENSE=	PHP301
 LIB_DEPENDS=	libicui18n.so:devel/icu
 
 IGNORE_WITH_PHP=70 71
-USES=		compiler:c++11-lib php:pecl
-USE_CXXSTD=	gnu++11
+USES=		php:pecl
 
 .include <bsd.port.mk>

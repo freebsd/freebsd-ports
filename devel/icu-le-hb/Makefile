@@ -3,7 +3,7 @@
 PORTNAME=	icu-le-hb
 DISTVERSION=	1.0.3-3
 DISTVERSIONSUFFIX=	-gb8a3163
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel print
 
 MAINTAINER=	office@FreeBSD.org
@@ -20,8 +20,7 @@ LIB_DEPENDS=	libicuuc.so:devel/icu \
 USE_GITHUB=	yes
 GH_ACCOUNT=	behdad
 
-USES=		autoreconf compiler:c++11-lib gmake libtool pathfix pkgconfig
-USE_CXXSTD=	gnu++11
+USES=		autoreconf gmake libtool pathfix pkgconfig
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip

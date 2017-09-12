@@ -2,7 +2,7 @@
 
 PORTNAME=	phantomjs
 PORTVERSION=	2.1.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	lang
 
 MAINTAINER=	feld@FreeBSD.org
@@ -22,9 +22,7 @@ BROKEN_sparc64=		does not link on sparc64
 NOT_FOR_ARCHS=		armv6
 NOT_FOR_ARCHS_REASON=	Platform.h: Not supported ARM architecture
 
-USES=		bison:build compiler:c++11-lib gmake gperf jpeg perl5 \
-		pkgconfig python:build ssl sqlite
-USE_CXXSTD=	gnu++11
+USES=		bison:build compiler:c++11-lang gmake gperf jpeg perl5 pkgconfig python:build ssl sqlite
 USE_GNOME+=	libxml2
 USE_PERL5=	build
 USE_RUBY=	yes

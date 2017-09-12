@@ -3,7 +3,7 @@
 
 PORTNAME=	pyicu
 PORTVERSION=	1.9.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,17 +15,14 @@ COMMENT=	Python extension wrapping IBM's ICU C++ API #'
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libicudata.so:devel/icu
-
 USES?=		python
-USES+=		compiler:c++11-lib
-USE_CXXSTD=	gnu++11
 USE_PYTHON=	distutils autoplist
 
-MAKE_ENV+=	PYICU_INCLUDES="${LOCALBASE}/include" \
-		PYICU_CFLAGS="${CXXFLAGS:ts:}" \
-		PYICU_LFLAGS="-L${LOCALBASE}/lib"
-CFLAGS+=	-w -DPYICU_VER=\"${PORTVERSION}\"
+MAKE_ENV+=	PYICU_INCLUDES="${PREFIX}/include" \
+		PYICU_CFLAGS="-w:-DPYICU_VER=\"${PORTVERSION}\"" \
+		PYICU_LFLAGS="-L${PREFIX}/lib"
+
+LIB_DEPENDS+=	libicudata.so:devel/icu
 
 pre-configure:
 	@if [ ! -e ${LOCALBASE}/lib/libicule.so ]; then \

@@ -2,7 +2,7 @@
 
 PORTNAME=	cppcms
 PORTVERSION=	1.0.5
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	www
 MASTER_SITES=	SF/cppcms/${PORTNAME}/${PORTVERSION}
 
@@ -15,8 +15,7 @@ LIB_DEPENDS=	libpcre.so:devel/pcre
 
 BROKEN_powerpc64=	Does not build: error: 'localeconv_l' was not declared in this scope
 
-USES=		cmake compiler:c++11-lib python:2 shebangfix tar:bzip2 ssl
-USE_CXXSTD=	gnu++11
+USES=		cmake python:2 shebangfix tar:bzip2 ssl
 USE_LDCONFIG=	yes
 SHEBANG_FILES=	bin/cppcms_tmpl_cc
 
