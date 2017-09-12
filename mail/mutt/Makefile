@@ -3,7 +3,7 @@
 
 PORTNAME=	mutt
 PORTVERSION=	1.9.0
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES+=	mail ipv6
 MASTER_SITES=	ftp://ftp.mutt.org/pub/mutt/ \
 		ftp://ftp.fu-berlin.de/pub/unix/mail/mutt/ \
@@ -201,7 +201,6 @@ NNTP_PATCHFILES=	patch-${VVV_PATCH_VERSION}.vvv.nntp.gz:-p1:vvv
 NNTP_CONFIGURE_ON=	--enable-nntp
 NNTP_VARS=	XML_NEEDED=yes
 NNTP_CATEGORIES=	news
-NNTP_BROKEN=	NNTP fails to apply to 1.9.0
 
 SIDEBAR_CONFIGURE_ENABLE=	sidebar
 
@@ -210,7 +209,7 @@ DOCS_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-doc-ref
 .include <bsd.port.options.mk>
 
 # un/comment as each VERSION is created for PORTVERSION
-VVV_PATCH_VERSION=	1.8.3
+#VVV_PATCH_VERSION=	1.8.3
 #GREETING_PATCH_VERSION=	1.8.3
 
 .if !defined(VVV_PATCH_VERSION)
