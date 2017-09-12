@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	speedtables
-PORTVERSION=	1.13.3
-#DISTVERSIONPREFIX=	v
-PORTREVISION=	0
+PORTVERSION=	1.13.4
+DISTVERSIONPREFIX=	v
 CATEGORIES=	databases
 
 MAINTAINER=	gahr@FreeBSD.org
@@ -17,13 +16,13 @@ LIB_DEPENDS=	libtclx8.4.so:lang/tclX \
 		libboost_graph.so:devel/boost-libs
 RUN_DEPENDS=	${LOCALBASE}/lib/tcllib/ncgi/ncgi.tcl:devel/tcllib
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	flightaware
-
 USES=		autoreconf tcl:tea
 CONFIGURE_ARGS=	--with-boost=${LOCALBASE}
 MAKE_ENV=	TCLSH=${TCLSH}
 TEST_TARGET=	test
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	flightaware
 
 PORTDOCS=	*
 
@@ -33,14 +32,6 @@ PGSQL_CONFIGURE_ON=	--with-pgsql=${LOCALBASE}
 PGSQL_LIB_DEPENDS=	libpgtcl2.0.0.so:databases/postgresql94-pgtcl
 CASSANDRA_CONFIGURE_ON=	--with-casstcl=${LOCALBASE}
 CASSANDRA_LIB_DEPENDS=	libcasstcl.so:databases/casstcl
-
-post-patch:
-	# https://github.com/flightaware/speedtables/commit/33d3d
-	${REINPLACE_CMD} -e 's|fixed-defaults|fixed-default|' \
-	    ${WRKSRC}/ctables/tests/Makefile.in
-
-post-configure:
-	${CHMOD} a+x ${WRKSRC}/ctable_server/sttp
 
 post-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
