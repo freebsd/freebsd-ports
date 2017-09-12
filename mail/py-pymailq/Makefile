@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pymailq
-PORTVERSION=	0.5.4
+PORTVERSION=	0.8.0
 CATEGORIES=	mail python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -27,8 +27,9 @@ PLIST_FILES+=	man/man1/pqshell.1.gz
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/sbin/postqueue|${LOCALBASE}/sbin/postqueue|' \
-		${WRKSRC}/pymailq/store.py
+	@${REINPLACE_CMD} -e \
+		's|%%DOCSDIR%%|${DOCSDIR}|g; s|%%EXAMPLESDIR%%|${EXAMPLESDIR}|g' \
+		${WRKSRC}/setup.py
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/man/pqshell.1 ${STAGEDIR}${MANPREFIX}/man/man1/pqshell-${PYTHON_VER}.1
