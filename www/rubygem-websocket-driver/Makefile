@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	websocket-driver
-PORTVERSION=	0.6.5
-PORTREVISION=	1
+PORTVERSION=	0.7.0
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
