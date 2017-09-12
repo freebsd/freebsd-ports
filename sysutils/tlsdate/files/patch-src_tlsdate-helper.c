@@ -1,5 +1,14 @@
 --- src/tlsdate-helper.c.orig	2015-05-28 18:49:40 UTC
 +++ src/tlsdate-helper.c
+@@ -374,7 +374,7 @@ void
+ openssl_time_callback (const SSL* ssl, int where, int ret)
+ {
+   if (where == SSL_CB_CONNECT_LOOP &&
+-      (ssl->state == SSL3_ST_CR_SRVR_HELLO_A || ssl->state == SSL3_ST_CR_SRVR_HELLO_B))
++      (SSL_get_state(ssl) == SSL3_ST_CR_SRVR_HELLO_A || SSL_get_state(ssl) == SSL3_ST_CR_SRVR_HELLO_B))
+   {
+     // XXX TODO: If we want to trust the remote system for time,
+     // can we just read that time out of the remote system and if the
 @@ -1133,10 +1133,12 @@ run_ssl (uint32_t *time_map, int time_is
    {
      verb ("V: using SSLv23_client_method()");
