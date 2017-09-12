@@ -4,7 +4,7 @@
 PORTNAME=		open-vm-tools
 PORTVERSION=		${RELEASE_VER}
 DISTVERSIONPREFIX=	stable-
-PORTREVISION=		1
+PORTREVISION=		2
 PORTEPOCH=		2
 CATEGORIES=		emulators
 
@@ -46,9 +46,7 @@ OPENSSL_CONFIGURE_WITH=	ssl
 WRKSRC_SUBDIR=		open-vm-tools
 
 GNU_CONFIGURE=		yes
-USES=			autoreconf:-iv compiler:c++11-lib fuse gettext-runtime \
-			kmod libtool localbase pathfix pkgconfig
-USE_CXXSTD=		gnu++11
+USES=			autoreconf:-iv fuse gettext-runtime kmod libtool localbase pathfix pkgconfig
 USE_GNOME=		glib20
 
 USE_GITHUB=		yes

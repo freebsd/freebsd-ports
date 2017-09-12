@@ -7,7 +7,7 @@ PORTNAME=	perl
 DISTVERSIONPREFIX=	v
 DISTVERSION=	${GH_TAGNAME:C/^v//:C/-g[0-9a-f]*$//}
 DISTVERSIONSUFFIX=	${GH_TAGNAME:C/.*-g/-g/}
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	lang devel perl5
 # XXX Leave only CPAN.
 MASTER_SITES=	LOCAL/mat/perl GH
@@ -125,6 +125,10 @@ CONFIGURE_ARGS=	-sde -Dprefix=${PREFIX} \
 CONFIGURE_ARGS+=	\
 	-Alddlflags='-L${WRKSRC} -L${PREFIX}/${_ARCH_LIB}/CORE -lperl' \
 	-Dshrpldflags='$$(LDDLFLAGS:N-L${WRKSRC}:N-L${PREFIX}/${_ARCH_LIB}/CORE:N-lperl) -Wl,-soname,$$(LIBPERL)'
+
+# XXX should be fixed soon.
+CONFIGURE_ARGS+= \
+	 -Accflags=-DNO_USE_ATFUNCTIONS
 
 # Give a hint of where libperl.so can be found.
 USE_LDCONFIG=	${PREFIX}/${_ARCH_LIB}/CORE
