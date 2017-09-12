@@ -1,8 +1,8 @@
---- PATCHES.orig	2017-04-09 21:00:46 UTC
+--- PATCHES.orig	2017-09-10 21:57:09 UTC
 +++ PATCHES
 @@ -0,0 +1 @@
 +patch-1.5.7.ust.maildir-mtime.2
---- browser.c.orig	2017-04-09 20:49:44 UTC
+--- browser.c.orig	2017-09-10 21:56:59 UTC
 +++ browser.c
 @@ -35,6 +35,7 @@
  #ifdef USE_NNTP
@@ -43,8 +43,8 @@
          !mutt_strcmp (tmp->realpath, Context->realpath))
      {
 @@ -737,6 +754,7 @@ static int examine_mailboxes (MUTTMENU *
-     strfcpy (buffer, NONULL(tmp->path), sizeof (buffer));
-     mutt_pretty_mailbox (buffer, sizeof (buffer));
+ 	s.st_mtime = st2.st_mtime;
+     }
  
 +    check_maildir_times (tmp, &s);
      add_folder (menu, state, buffer, &s, tmp, NULL);
