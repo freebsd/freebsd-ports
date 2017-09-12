@@ -1,8 +1,6 @@
 #!/bin/sh
 
 user="%%LOGCHECK_USER%%"
-group="%%LOGCHECK_GROUP%%"
-configfiles="logcheck.conf logcheck.logfiles"
 
 case $2 in
 POST-INSTALL)
@@ -10,22 +8,22 @@ POST-INSTALL)
 	if [ -f %%EXAMPLESDIR%%/crontab.in ] ; then
 		if /usr/bin/crontab -u "${user}" -l >/tmp/logchecktab$$ 2>&1 ; then
 			if test -s /tmp/logchecktab$$; then
-				echo "---> \"${user}\" already has a crontab.  Not overwriting it"
-				echo "---> Please merge any changes from the standard crontab file"
-				echo "--->     %%EXAMPLESDIR%%/crontab.in"
+				echo "==> \"${user}\" already has a crontab.  Not overwriting it"
+				echo "==> Please merge any changes from the standard crontab file"
+				echo "==>     %%EXAMPLESDIR%%/crontab.in"
 			else
 				/usr/bin/crontab -u "${user}" "%%EXAMPLESDIR%%/crontab.in" || exit 1
-				echo "---> Installed crontab(5) file for user \"${user}\""
+				echo "==> Installed crontab(5) file for user \"${user}\""
 			fi
 		else
 			if grep -q "are not allowed to use this program" /tmp/logchecktab$$ ; then
-				echo "---> The logcheck user is not allowed to run crontab."
-				echo "---> Please check the contents of /var/cron/allow and /var/cron/deny"
-				echo "---> and grant access, if necessary."
+				echo "==> The logcheck user is not allowed to run crontab."
+				echo "==> Please check the contents of /var/cron/allow and /var/cron/deny"
+				echo "==> and grant access, if necessary."
 				exit 1
 			else
 				/usr/bin/crontab -u "${user}" "%%EXAMPLESDIR%%/crontab.in" || exit 1
-				echo "---> Created crontab(5) file for user \"${user}\""
+				echo "==> Created crontab(5) file for user \"${user}\""
 			fi
 		fi
 		rm -f /tmp/logchecktab$$
@@ -33,17 +31,9 @@ POST-INSTALL)
     else
         echo "---> Crontab file was not installed for user \"${user}\""
         if [ -f %%EXAMPLESDIR%%/crontab.in ]; then
-            echo "---> A sample crontab file can be found in %%EXAMPLESDIR%%/crontab.in"
-            echo "---> for manual installation."
+            echo "==> A sample crontab file can be found in %%EXAMPLESDIR%%/crontab.in"
+            echo "==> for manual installation."
         fi
     fi
-
-	for f in ${configfiles}; do
-		if [ ! -e %%PREFIX%%/etc/logcheck/${f} ]; then
-			echo "---> It seems you have no previous version of %%PREFIX%%/etc/logcheck/${f}"
-			cp %%PREFIX%%/etc/logcheck/${f}.sample %%PREFIX%%/etc/logcheck/${f}
-			echo "---> Created one from ${f}.sample"
-		fi
-	done
 ;;
 esac

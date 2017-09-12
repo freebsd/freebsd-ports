@@ -1,5 +1,23 @@
 --- docs/logcheck-test.1.orig	2017-01-25 21:08:04 UTC
 +++ docs/logcheck-test.1
+@@ -4,7 +4,7 @@ logcheck-test \- test new logcheck rules
+ .SH SYNOPSIS
+ .B logcheck\-test
+ .RB [ \-q | \-i ]
+-.RB [ \-a | \-s | \-l
++.RB [ \-a | \-m | \-l
+ .IR FILE ]
+ .RB [ \-e ]
+ .RB [ \-P
+@@ -15,7 +15,7 @@ logcheck-test \- test new logcheck rules
+ .br
+ .B logcheck\-test
+ .RB [ \-q | \-i ]
+-.RB [ \-a | \-s | \-l
++.RB [ \-a | \-m | \-l
+ .IR FILE ]
+ .B \-r
+ .I RULEFILE
 @@ -38,8 +38,8 @@ Show usage information
  .B \-a, \-\-auth.log
  Parse /var/log/auth.log for matching lines
