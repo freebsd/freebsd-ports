@@ -1351,6 +1351,7 @@
     SUBDIR += zfstools
     SUBDIR += zidrav
     SUBDIR += zisofs-tools
+    SUBDIR += znapzend
     SUBDIR += zogftw
     SUBDIR += zrep
     SUBDIR += zsd

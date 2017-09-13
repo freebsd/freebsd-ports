@@ -3,23 +3,32 @@
 
 PORTNAME=	Git
 PORTVERSION=	1.2.0
+PORTREVISION=	1
 CATEGORIES=	devel pear
-MASTER_SITES=	http://pear.phpunit.de/get/
 PKGNAMEPREFIX=	pear-SebastianBergmann_
 
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Simple wrapper for Git
 
 LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	pear>=1.9.4:devel/pear \
-		${PEARDIR}/.channels/pear.phpunit.de.reg:devel/pear-channel-phpunit
-RUN_DEPENDS=	pear>=1.9.4:devel/pear \
-		${PEARDIR}/.channels/pear.phpunit.de.reg:devel/pear-channel-phpunit
+BUILD_DEPENDS=	pear>=1.9.4:devel/pear
+RUN_DEPENDS=	pear>=1.9.4:devel/pear
 
-BROKEN=		unfetchable, redirects to https://phpunit.de/
+USE_GITHUB=	yes
+GH_ACCOUNT=	sebastianbergmann
+GH_PROJECT=	git
 
-USES=	pear
-PEAR_CHANNEL=	phpunit
+NO_BUILD=	yes
+
+PHP_DIR=	share/PHP
+
+PLIST_FILES=	${PHP_DIR}/${PORTNAME}/Git.php
+
+do-install:
+	${MKDIR} ${STAGEDIR}${PREFIX}/${PHP_DIR}/${PORTNAME}
+	${INSTALL_SCRIPT} ${WRKSRC}/src/Git.php \
+		${STAGEDIR}${PREFIX}/${PHP_DIR}/${PORTNAME}
 
 .include <bsd.port.mk>
