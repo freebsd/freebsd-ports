@@ -2,7 +2,7 @@
 
 PORTNAME=	xpdf
 PORTVERSION=	4.00
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics print
 MASTER_SITES=	http://www.xpdfreader.com/dl/
 .if !defined(MASTERDIR)
@@ -45,7 +45,7 @@ GUI_USE=		QT5=buildtools_build,qmake_build,concurrent,core,gui,widgets,printsupp
 
 post-install:
 		@cd ${STAGEDIR}${PREFIX}; \
-		${LN} -sf libexec/xpdf/xpdf bin/xpdf
+		${LN} -sf ../libexec/xpdf/xpdf bin/xpdf
 
 		${INSTALL_DATA} ${WRKSRC}/doc/sample-xpdfrc ${STAGEDIR}${PREFIX}/etc/xpdfrc.sample
 		${INSTALL_DATA} ${WRKDIR}/xpdf-man.conf \
