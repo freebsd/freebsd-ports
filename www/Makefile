@@ -424,6 +424,7 @@
     SUBDIR += mod_auth_mysql2
     SUBDIR += mod_auth_mysql_another
     SUBDIR += mod_auth_openid
+    SUBDIR += mod_auth_openidc
     SUBDIR += mod_auth_pam2
     SUBDIR += mod_auth_pgsql2
     SUBDIR += mod_auth_pubtkt
