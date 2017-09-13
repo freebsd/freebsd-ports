@@ -1,5 +1,5 @@
---- Gemfile.orig	2017-07-20 19:20:16.056471000 +0200
-+++ Gemfile	2017-07-20 19:28:14.691625000 +0200
+--- Gemfile.orig	2017-08-09 13:53:30 UTC
++++ Gemfile
 @@ -1,48 +1,43 @@
  source 'https://rubygems.org'
  
@@ -57,7 +57,7 @@
  gem 'akismet', '~> 2.0'
  
  # Two-factor authentication
-@@ -68,7 +63,7 @@
+@@ -68,7 +63,7 @@ gem 'gollum-lib', '~> 4.2', require: fal
  gem 'gollum-rugged_adapter', '~> 0.4.4', require: false
  
  # Language detection
@@ -66,7 +66,7 @@
  
  # API
  gem 'grape', '~> 0.19.0'
-@@ -82,13 +77,13 @@
+@@ -82,13 +77,13 @@ gem 'hashie-forbidden_attributes'
  gem 'kaminari', '~> 0.17.0'
  
  # HAML
@@ -83,8 +83,12 @@
  
  # for backups
  gem 'fog-aws', '~> 0.9'
-@@ -99,7 +94,7 @@
+@@ -97,10 +92,10 @@ gem 'fog-google', '~> 0.5'
+ gem 'fog-local', '~> 0.3'
+ gem 'fog-openstack', '~> 0.1'
  gem 'fog-rackspace', '~> 0.1.1'
+-gem 'fog-aliyun', '~> 0.1.0'
++gem 'fog-aliyun', '>= 0.1.0'
  
  # for Google storage
 -gem 'google-api-client', '~> 0.8.6'
@@ -92,13 +96,13 @@
  
  # for aws storage
  gem 'unf', '~> 0.1.4'
-@@ -109,34 +104,34 @@
+@@ -110,34 +105,34 @@ gem 'seed-fu', '~> 2.3.5'
  
  # Markdown and HTML processing
  gem 'html-pipeline', '~> 1.11.0'
--gem 'deckar01-task_list', '1.0.6', require: 'task_list/railtie'
+-gem 'deckar01-task_list', '2.0.0'
 -gem 'gitlab-markup', '~> 1.5.1'
-+gem 'deckar01-task_list', '>=1.0.6', require: 'task_list/railtie'
++gem 'deckar01-task_list', '>= 2.0.0'
 +gem 'gitlab-markup', '>= 1.5.1'
  gem 'redcarpet', '~> 3.4'
  gem 'RedCloth', '~> 4.3.2'
@@ -106,17 +110,17 @@
  gem 'org-ruby', '~> 0.9.12'
  gem 'creole', '~> 0.5.0'
 -gem 'wikicloth', '0.8.1'
-+gem 'wikicloth', '>=0.8.1'
++gem 'wikicloth', '>= 0.8.1'
  gem 'asciidoctor', '~> 1.5.2'
 -gem 'asciidoctor-plantuml', '0.0.7'
-+gem 'asciidoctor-plantuml', '>=0.0.7'
++gem 'asciidoctor-plantuml', '>= 0.0.7'
  gem 'rouge', '~> 2.0'
  gem 'truncato', '~> 0.7.8'
  
  # See https://groups.google.com/forum/#!topic/ruby-security-ann/aSbgDiwb24s
  # and https://groups.google.com/forum/#!topic/ruby-security-ann/Dy7YiKb_pMM
 -gem 'nokogiri', '~> 1.6.7', '>= 1.6.7.2'
-+gem 'nokogiri', '>= 1.6.7', '>= 1.6.7.2'
++gem 'nokogiri', '>= 1.6.7.2'
  
  # Diffs
 -gem 'diffy', '~> 3.1.0'
@@ -135,18 +139,8 @@
  # Run events after state machine commits
  gem 'after_commit_queue', '~> 1.3.0'
  
-@@ -145,18 +140,18 @@
- 
- # Background jobs
- gem 'sidekiq', '~> 5.0'
--gem 'sidekiq-cron', '~> 0.4.4'
-+gem 'sidekiq-cron', '>= 0.4.4'
- gem 'redis-namespace', '~> 1.5.2'
- gem 'sidekiq-limit_fetch', '~> 3.4'
- 
- # Cron Parser
--gem 'rufus-scheduler', '~> 3.1.10'
-+gem 'rufus-scheduler', '>= 3.1.10'
+@@ -154,10 +149,10 @@ gem 'sidekiq-limit_fetch', '~> 3.4'
+ gem 'rufus-scheduler', '~> 3.4'
  
  # HTTP requests
 -gem 'httparty', '~> 0.13.3'
@@ -158,7 +152,7 @@
  
  # GitLab settings
  gem 'settingslogic', '~> 2.0.9'
-@@ -166,7 +161,7 @@
+@@ -167,7 +162,7 @@ gem 're2', '~> 1.0.0'
  
  # Misc
  
@@ -167,7 +161,7 @@
  
  # Cache
  gem 'redis-rails', '~> 5.0.1'
-@@ -176,10 +171,10 @@
+@@ -177,10 +172,10 @@ gem 'redis', '~> 3.2'
  gem 'connection_pool', '~> 2.0'
  
  # HipChat integration
@@ -180,7 +174,7 @@
  
  # Flowdock integration
  gem 'gitlab-flowdock-git-hook', '~> 1.0.1'
-@@ -197,7 +192,7 @@
+@@ -198,7 +193,7 @@ gem 'asana', '~> 0.6.0'
  gem 'ruby-fogbugz', '~> 0.2.1'
  
  # Kubernetes integration
@@ -189,7 +183,7 @@
  
  # d3
  gem 'd3_rails', '~> 3.5.0'
-@@ -206,7 +201,7 @@
+@@ -207,7 +202,7 @@ gem 'd3_rails', '~> 3.5.0'
  gem 'underscore-rails', '~> 1.8.0'
  
  # Sanitize user input
@@ -198,7 +192,7 @@
  gem 'babosa', '~> 1.0.2'
  
  # Sanitizes SVG input
-@@ -216,7 +211,7 @@
+@@ -217,7 +212,7 @@ gem 'loofah', '~> 2.0.3'
  gem 'licensee', '~> 8.7.0'
  
  # Protect against bruteforcing
@@ -207,7 +201,7 @@
  
  # Ace editor
  gem 'ace-rails-ap', '~> 4.1.0'
-@@ -235,129 +230,47 @@
+@@ -236,143 +231,63 @@ gem 'chronic', '~> 0.10.2'
  gem 'chronic_duration', '~> 0.10.6'
  
  gem 'webpack-rails', '~> 0.9.10'
@@ -240,7 +234,7 @@
 -gem 'sentry-raven', '~> 2.4.0'
 +gem 'sentry-raven', '>= 2.4.0'
  
- gem 'premailer-rails', '~> 1.9.0'
+ gem 'premailer-rails', '~> 1.9.7'
  
  # I18n
  gem 'ruby_parser', '~> 3.8.4', require: false
@@ -249,13 +243,28 @@
 +gem 'gettext_i18n_rails_js', '>= 1.2.0'
  gem 'gettext', '~> 3.2.2', require: false, group: :development
  
--# Metrics
--group :metrics do
+ # Perf bar
+ gem 'peek', '~> 1.0.1'
+ gem 'peek-gc', '~> 0.0.2'
+ gem 'peek-host', '~> 1.0.0'
+-gem 'peek-mysql2', '~> 1.1.0', group: :mysql
+-gem 'peek-performance_bar', '~> 1.2.1'
+-gem 'peek-pg', '~> 1.3.0', group: :postgres
++gem 'peek-performance_bar', '>= 1.2.1'
+ gem 'peek-rblineprof', '~> 0.2.0'
+ gem 'peek-redis', '~> 1.2.0'
+ gem 'peek-sidekiq', '~> 1.0.3'
+ 
+ # Metrics
+ group :metrics do
 -  gem 'allocations', '~> 1.0', require: false, platform: :mri
 -  gem 'method_source', '~> 0.8', require: false
 -  gem 'influxdb', '~> 0.2', require: false
--end
 -
+   # Prometheus
+   gem 'prometheus-client-mmap', '~>0.7.0.beta5'
+ end
+ 
 -group :development do
 -  gem 'foreman', '~> 0.78.0'
 -  gem 'brakeman', '~> 3.6.0', require: false
@@ -330,7 +339,7 @@
 -  gem 'timecop', '~> 0.8.0'
 -  gem 'concurrent-ruby', '~> 1.0.5'
 -end
--
+ 
 -gem 'octokit', '~> 4.6.2'
 +gem 'octokit', '>= 4.6.2'
  
@@ -348,16 +357,15 @@
  
  # Soft deletion
  gem 'paranoia', '~> 2.2'
-@@ -366,10 +279,11 @@
- gem 'health_check', '~> 2.6.0'
- 
- # System information
-+gem 'rinku'
- gem 'vmstat', '~> 2.3.0'
- gem 'sys-filesystem', '~> 1.1.6'
- 
+@@ -387,8 +302,10 @@ gem 'sys-filesystem', '~> 1.1.6'
  # Gitaly GRPC client
- gem 'gitaly', '~> 0.6.0'
+ gem 'gitaly', '~> 0.8.0'
  
 -gem 'toml-rb', '~> 0.3.15', require: false
 +gem 'toml-rb', '>= 0.3.15', require: false
+ 
+ # Feature toggles
+ gem 'flipper', '~> 0.10.2'
+ gem 'flipper-active_record', '~> 0.10.2'
++
++gem 'rinku'

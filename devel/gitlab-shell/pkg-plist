@@ -1,8 +1,10 @@
+%%DATADIR%%/.codeclimate.yml
 %%DATADIR%%/.gitignore
 %%DATADIR%%/.gitlab-ci.yml
 %%DATADIR%%/.rspec
 %%DATADIR%%/.rubocop.yml
 %%DATADIR%%/CHANGELOG
+%%DATADIR%%/CONTRIBUTING.md
 %%DATADIR%%/Gemfile
 %%DATADIR%%/Gemfile.lock
 %%DATADIR%%/Guardfile
@@ -12,7 +14,10 @@
 %%DATADIR%%/VERSION
 @(,,555) %%DATADIR%%/bin/authorized_keys
 @(,,555) %%DATADIR%%/bin/check
+@(,,555) %%DATADIR%%/bin/compile
 @(,,555) %%DATADIR%%/bin/create-hooks
+@(,,555) %%DATADIR%%/bin/gitaly-upload-pack
+@(,,555) %%DATADIR%%/bin/gitaly-receive-pack
 @(,,555) %%DATADIR%%/bin/gitlab-keys
 @(,,555) %%DATADIR%%/bin/gitlab-projects
 @(,,555) %%DATADIR%%/bin/gitlab-shell
@@ -23,7 +28,6 @@
 @(,,555) %%DATADIR%%/hooks/update
 %%DATADIR%%/lib/gitlab_access.rb
 %%DATADIR%%/lib/gitlab_access_status.rb
-%%DATADIR%%/lib/gitlab_authorized_keys.rb
 %%DATADIR%%/lib/gitlab_config.rb
 %%DATADIR%%/lib/gitlab_custom_hook.rb
 %%DATADIR%%/lib/gitlab_init.rb
@@ -77,19 +81,24 @@
 %%DATADIR%%/spec/vcr_cassettes/broadcast_message-none.yml
 %%DATADIR%%/spec/vcr_cassettes/broadcast_message-ok.yml
 %%DATADIR%%/spec/vcr_cassettes/check-ok.yml
-%%DATADIR%%/spec/vcr_cassettes/denied-pull.yml
-%%DATADIR%%/spec/vcr_cassettes/denied-push-with-user.yml
-%%DATADIR%%/spec/vcr_cassettes/denied-push.yml
 %%DATADIR%%/spec/vcr_cassettes/discover-ok.yml
-%%DATADIR%%/spec/vcr_cassettes/http-access-disabled.yml
+%%DATADIR%%/spec/vcr_cassettes/http-pull-disabled.yml
+%%DATADIR%%/spec/vcr_cassettes/http-push-disabled.yml
 %%DATADIR%%/spec/vcr_cassettes/lfs-authenticate-ok.yml
 %%DATADIR%%/spec/vcr_cassettes/notify-post-receive.yml
-%%DATADIR%%/spec/vcr_cassettes/ssh-access-disabled.yml
 %%DATADIR%%/spec/vcr_cassettes/ssh-key-not-found.yml
 %%DATADIR%%/spec/vcr_cassettes/ssh-key-not-implemented.yml
 %%DATADIR%%/spec/vcr_cassettes/ssh-key-ok.yml
+%%DATADIR%%/spec/vcr_cassettes/ssh-pull-disabled.yml
+%%DATADIR%%/spec/vcr_cassettes/ssh-pull-project-denied.yml
+%%DATADIR%%/spec/vcr_cassettes/ssh-push-disabled.yml
+%%DATADIR%%/spec/vcr_cassettes/ssh-push-project-denied-with-user.yml
+%%DATADIR%%/spec/vcr_cassettes/ssh-push-project-denied.yml
 %%DATADIR%%/spec/vcr_cassettes/two-factor-recovery-codes-fail.yml
 %%DATADIR%%/spec/vcr_cassettes/two-factor-recovery-codes.yml
+%%DATADIR%%/support/go-format
+%%DATADIR%%/support/go-test
+%%DATADIR%%/support/go_build.rb
 %%DATADIR%%/support/rewrite-hooks.sh
 %%DATADIR%%/support/truncate_repositories.sh
 @dir(git,,755) /var/log/gitlab-shell
