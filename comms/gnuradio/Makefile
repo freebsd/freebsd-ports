@@ -58,7 +58,7 @@ DOCSDIR=	share/doc/${PORTNAME}-${PORTVERSION}
 USE_GNOME=	pygtk2
 USE_PYQT=	core gui opengl
 USE_WX=		3.0+
-USE_QT4=	corelib gui xml qmake moc rcc uic
+USE_QT4=	corelib gui xml qmake moc_build rcc_build uic_build
 WX_COMPS=	wx wx:build wx:run python:build python:run
 USE_LDCONFIG=	yes
 PLIST_SUB+=	MAJOR_VERSION="3"
