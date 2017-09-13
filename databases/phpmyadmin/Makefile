@@ -3,6 +3,7 @@
 
 PORTNAME=	phpMyAdmin
 DISTVERSION=	4.7.4
+PORTREVISION=	1
 CATEGORIES=	databases www
 MASTER_SITES=	https://files.phpmyadmin.net/${PORTNAME}/${DISTVERSION}/
 DISTNAME=	${PORTNAME}-${DISTVERSION}-all-languages
@@ -25,12 +26,11 @@ USE_PHP=	ctype session filter mbstring json spl mysqli
 # want this, either turn off GD in the config dialog, or else turn off
 # FONTCONFIG in the graphics/gd port options.
 
-OPTIONS_DEFINE=		BZ2 GD MCRYPT OPENSSL PDF XML ZIP ZLIB
-OPTIONS_DEFAULT=	BZ2 GD MCRYPT OPENSSL XML ZIP ZLIB
+OPTIONS_DEFINE=		BZ2 GD OPENSSL PDF XML ZIP ZLIB
+OPTIONS_DEFAULT=	BZ2 GD OPENSSL XML ZIP ZLIB
 
 BZ2_DESC=	PHP bzip2 library support
 GD_DESC=	PHP GD library support (requires X11)
-MCRYPT_DESC=	PHP MCrypt library support
 OPENSSL_DESC=	PHP OpenSSL support
 PDF_DESC=	PHP PDFlib support
 XML_DESC=	PHP XML support (Export to OpenDoc)
