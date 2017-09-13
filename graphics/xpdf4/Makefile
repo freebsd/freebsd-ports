@@ -5,7 +5,9 @@ PORTVERSION=	4.00
 PORTREVISION=	1
 CATEGORIES=	graphics print
 MASTER_SITES=	http://www.xpdfreader.com/dl/
+.if !defined(MASTERDIR)
 PKGNAMESUFFIX=	4
+.endif
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Display PDF files and convert them to other formats
