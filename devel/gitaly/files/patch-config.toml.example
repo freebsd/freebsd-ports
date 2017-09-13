@@ -1,0 +1,10 @@
+--- config.toml.example.orig	2017-09-01 10:24:38 UTC
++++ config.toml.example
+@@ -1,6 +1,6 @@
+ # Example Gitaly configuration file
+ 
+-socket_path = "/home/git/gitlab/tmp/sockets/private/gitaly.socket"
++socket_path = "/usr/local/www/gitlab/tmp/sockets/private/gitaly.socket"
+ 
+ # # Optional: listen on a TCP socket. This is insecure (no authentication)
+ # listen_addr = "localhost:9999"
