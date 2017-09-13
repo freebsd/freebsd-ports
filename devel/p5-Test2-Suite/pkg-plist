@@ -55,6 +55,7 @@
 %%SITE_PERL%%/Test2/Tools/Event.pm
 %%SITE_PERL%%/Test2/Tools/Exception.pm
 %%SITE_PERL%%/Test2/Tools/Exports.pm
+%%SITE_PERL%%/Test2/Tools/GenTemp.pm
 %%SITE_PERL%%/Test2/Tools/Grab.pm
 %%SITE_PERL%%/Test2/Tools/Mock.pm
 %%SITE_PERL%%/Test2/Tools/Ref.pm
@@ -127,6 +128,7 @@
 %%PERL5_MAN3%%/Test2::Tools::Event.3.gz
 %%PERL5_MAN3%%/Test2::Tools::Exception.3.gz
 %%PERL5_MAN3%%/Test2::Tools::Exports.3.gz
+%%PERL5_MAN3%%/Test2::Tools::GenTemp.3.gz
 %%PERL5_MAN3%%/Test2::Tools::Grab.3.gz
 %%PERL5_MAN3%%/Test2::Tools::Mock.3.gz
 %%PERL5_MAN3%%/Test2::Tools::Ref.3.gz
