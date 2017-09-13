@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	google-auth
-PORTVERSION=	1.0.2
+PORTVERSION=	1.1.0
 CATEGORIES=	security python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -20,7 +20,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cachetools>=2.0.0:devel/py-cachetools \
 		${PYTHON_PKGNAMEPREFIX}six>=1.9.0:devel/py-six
 
 NO_ARCH=	yes
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	autoplist concurrent distutils
 USES=		python
 
 .include <bsd.port.mk>
