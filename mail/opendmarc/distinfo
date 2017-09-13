@@ -1,2 +1,3 @@
-SHA256 (opendmarc-1.3.1.tar.gz) = a0c0cf74de68454cbdce16a3095b96e70fc16614325052ea230878d1ca64da6b
-SIZE (opendmarc-1.3.1.tar.gz) = 640151
+TIMESTAMP = 1500636334
+SHA256 (opendmarc-1.3.2.tar.gz) = 213c4b01a9ff5dcdf331f7bd1dd6a382077abbf8ee9111852f2101ec917c2ffb
+SIZE (opendmarc-1.3.2.tar.gz) = 593448
