@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	io
-PORTVERSION=	2015.11.11
-PORTREVISION=	7
+PORTVERSION=	2017.09.06
 CATEGORIES=	lang
 
 MAINTAINER=	gahr@FreeBSD.org
@@ -13,11 +12,11 @@ LICENSE=	BSD3CLAUSE
 
 BROKEN_armv6=		fails to compile: ucontext.h: expected parameter declarator
 
+USES=		cmake:outsource,noninja compiler:c11 ssl
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	stevedekorte
-GH_TAGNAME=	23afbcc
 
-USES=		cmake:outsource,noninja compiler:c11
 MAKE_JOBS_UNSAFE=yes
 USE_LDCONFIG=	yes
 
@@ -47,5 +46,9 @@ post-install:
 	cd ${WRKSRC}/docs && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
 	${MKDIR}  ${STAGEDIR}${EXAMPLESDIR}
 	cd ${WRKSRC}/samples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}
+
+do-test:
+	cd ${BUILD_WRKSRC} && \
+	    ./_build/binaries/io ${WRKSRC}/libs/iovm/tests/correctness/run.io
 
 .include <bsd.port.mk>
