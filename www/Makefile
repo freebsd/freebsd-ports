@@ -424,6 +424,7 @@
     SUBDIR += mod_auth_mysql2
     SUBDIR += mod_auth_mysql_another
     SUBDIR += mod_auth_openid
+    SUBDIR += mod_auth_openidc
     SUBDIR += mod_auth_pam2
     SUBDIR += mod_auth_pgsql2
     SUBDIR += mod_auth_pubtkt
@@ -1082,6 +1083,7 @@
     SUBDIR += p5-MediaWiki-API
     SUBDIR += p5-Mobile-UserAgent
     SUBDIR += p5-ModPerl-VersionUtil
+    SUBDIR += p5-Mojo-IOLoop-ForkCall
     SUBDIR += p5-Mojo-Server-FastCGI
     SUBDIR += p5-MojoMojo
     SUBDIR += p5-MojoX-Log-Dispatch-Simple

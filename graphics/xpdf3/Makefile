@@ -8,6 +8,9 @@ MASTER_SITES=	http://mirrors.rit.edu/zi/ \
 		ftp://ftp.foolabs.com/pub/xpdf/ \
 		TEX_CTAN/support/xpdf \
 		http://komquats.com/distfiles/
+.if !defined(MASTERDIR)
+PKGNAMESUFFIX=  3
+.endif
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Display PDF files and convert them to other formats
