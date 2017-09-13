@@ -18,13 +18,12 @@ LIB_DEPENDS=	libcjose.so:devel/cjose \
 		libjansson.so:devel/jansson \
 		libpcre.so:devel/pcre
 
+USES=		autoreconf:autoconf gmake libtool pkgconfig ssl
+USE_APACHE=	22+
 USE_GITHUB=	yes
 GH_ACCOUNT=	pingidentity
 
 PLIST_FILES=	${APACHEMODDIR}/mod_auth_openidc.so
-
-USE_APACHE=	22+
-USES=		autoreconf:autoconf gmake libtool pkgconfig ssl
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-hiredis
 CONFIGURE_ENV+=	OPENSSL_CFLAGS="-I${OPENSSLINC}" OPENSSL_LIBS="-L${OPENSSLLIB} -lcrypto" \
