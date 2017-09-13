@@ -44,8 +44,7 @@ MASTER_SITE_PORTS_JP+= \
 .if !defined(IGNORE_MASTER_SITE_AFTERSTEP)
 MASTER_SITE_AFTERSTEP+= \
 	ftp://ftp.afterstep.org/%SUBDIR%/ \
-	ftp://ftp.kddlabs.co.jp/X11/AfterStep/%SUBDIR%/ \
-	ftp://ftp.dti.ad.jp/pub/X/AfterStep/%SUBDIR%/
+	ftp://ftp.kddlabs.co.jp/X11/AfterStep/%SUBDIR%/
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_APACHE)
@@ -287,8 +286,7 @@ MASTER_SITE_FREEBSD_ORG+= \
 	ftp://ftp.se.FreeBSD.org/pub/FreeBSD/%SUBDIR%/ \
 	ftp://ftp.jp.FreeBSD.org/pub/FreeBSD/%SUBDIR%/ \
 	ftp://ftp.uk.FreeBSD.org/pub/FreeBSD/%SUBDIR%/ \
-	ftp://ftp.ru.FreeBSD.org/pub/FreeBSD/%SUBDIR%/ \
-	ftp://ftp.dti.ad.jp/pub/FreeBSD/%SUBDIR%/
+	ftp://ftp.ru.FreeBSD.org/pub/FreeBSD/%SUBDIR%/
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_FRUGALWARE)
@@ -533,7 +531,6 @@ MASTER_SITE_GNOME+= \
 	ftp://ftp.cse.buffalo.edu/pub/Gnome/%SUBDIR%/ \
 	http://fr2.rpmfind.net/linux/gnome.org/%SUBDIR%/ \
 	http://www.gtlib.gatech.edu/pub/gnome/%SUBDIR%/ \
-	ftp://ftp.dti.ad.jp/pub/X/gnome/%SUBDIR%/ \
 	http://linorg.usp.br/gnome/%SUBDIR%/ \
 	http://mirror.aarnet.edu.au/pub/gnome/%SUBDIR%/ \
 	ftp://ftp.kddlabs.co.jp/pub/GNOME/%SUBDIR%/ \
@@ -560,7 +557,6 @@ MASTER_SITE_GNU+= \
 	http://www.gtlib.gatech.edu/pub/gnu/gnu/%SUBDIR%/ \
 	http://mirrors.kernel.org/gnu/%SUBDIR%/ \
 	ftp://ftp.kddlabs.co.jp/GNU/gnu/%SUBDIR%/ \
-	ftp://ftp.dti.ad.jp/pub/GNU/%SUBDIR%/ \
 	ftp://ftp.mirrorservice.org/sites/ftp.gnu.org/gnu/%SUBDIR%/ \
 	ftp://ftp.informatik.hu-berlin.de/pub/gnu/gnu/%SUBDIR%/ \
 	ftp://ftp.informatik.rwth-aachen.de/pub/mirror/ftp.gnu.org/pub/gnu/%SUBDIR%/ \
@@ -643,7 +639,6 @@ MASTER_SITE_ISC+= \
 	ftp://ftp.ciril.fr/pub/isc/%SUBDIR%/ \
 	ftp://ftp.freenet.de/pub/ftp.isc.org/isc/%SUBDIR%/ \
 	ftp://ftp.iij.ad.jp/pub/network/isc/%SUBDIR%/ \
-	ftp://ftp.dti.ad.jp/pub/net/isc/%SUBDIR%/ \
 	ftp://ftp.u-aizu.ac.jp/pub/net/isc/%SUBDIR%/ \
 	ftp://ftp.task.gda.pl/mirror/ftp.isc.org/isc/%SUBDIR%/ \
 	ftp://ftp.sunet.se/pub/network/isc/%SUBDIR%/ \
@@ -795,7 +790,6 @@ MASTER_SITE_NETBSD+= \
 	ftp://sunsite.uio.no/bsd/unix/NetBSD/packages/distfiles/%SUBDIR%/ \
 	ftp://ftp.sunet.se/pub/NetBSD/packages/distfiles/%SUBDIR%/ \
 	ftp://ftp.demon.co.uk/pub/mirrors/NetBSD/packages/distfiles/%SUBDIR%/ \
-	ftp://ftp.dti.ad.jp/pub/NetBSD/packages/distfiles/%SUBDIR%/ \
 	ftp://ftp.funet.fi/pub/NetBSD/packages/distfiles/%SUBDIR%/
 .endif
 
@@ -1133,7 +1127,6 @@ MASTER_SITE_XCONTRIB+= \
 	ftp://ftp.gwdg.de/pub/x11/x.org/contrib/%SUBDIR%/ \
 	ftp://ftp.x.org/contrib/%SUBDIR%/ \
 	ftp://ftp.sunet.se/pub/X11/ftp.x.org/contrib/%SUBDIR%/ \
-	ftp://ftp.dti.ad.jp/pub/X/XFree86/mirror/X.Org/contrib/%SUBDIR%/ \
 	ftp://ftp.kddlabs.co.jp/X11/ftp.x.org/contrib/%SUBDIR%/ \
 	ftp://ftp2.x.org/contrib/%SUBDIR%/
 .endif
