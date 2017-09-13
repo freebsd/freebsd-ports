@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	gitlab
-PORTVERSION=	9.2.10
+PORTVERSION=	9.3.10
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
 CATEGORIES=	www devel
 
 MAINTAINER=	tz@FreeBSD.org
@@ -83,11 +82,12 @@ RUN_DEPENDS=	git>=2.14.1:devel/git \
 	rubygem-fog-local>=0.3:net/rubygem-fog-local \
 	rubygem-fog-openstack>=0.1:net/rubygem-fog-openstack \
 	rubygem-fog-rackspace>=0.1.1:net/rubygem-fog-rackspace \
+	rubygem-fog-aliyun>=0.1.0:net/rubygem-fog-aliyun \
 	rubygem-google-api-client010>=0.8.6:devel/rubygem-google-api-client010 \
 	rubygem-unf>=0.1.4:textproc/rubygem-unf \
 	rubygem-seed-fu>=2.3.5:databases/rubygem-seed-fu \
 	rubygem-html-pipeline1>=1.11.0:textproc/rubygem-html-pipeline1 \
-	rubygem-deckar01-task_list1>=1.0.6:www/rubygem-deckar01-task_list1 \
+	rubygem-deckar01-task_list>=2.0.0:www/rubygem-deckar01-task_list \
 	rubygem-gitlab-markup>=1.5.1:textproc/rubygem-gitlab-markup \
 	rubygem-redcarpet>=3.4:textproc/rubygem-redcarpet \
 	rubygem-redcloth>=4.3.2:www/rubygem-redcloth \
@@ -107,10 +107,10 @@ RUN_DEPENDS=	git>=2.14.1:devel/git \
 	rubygem-after_commit_queue>=1.3.0:databases/rubygem-after_commit_queue \
 	rubygem-acts-as-taggable-on>=4.0.0:www/rubygem-acts-as-taggable-on \
 	rubygem-sidekiq>=5.0.0:devel/rubygem-sidekiq \
-	rubygem-sidekiq-cron>=0.4.4:devel/rubygem-sidekiq-cron \
+	rubygem-sidekiq-cron>=0.6.0:devel/rubygem-sidekiq-cron \
 	rubygem-redis-namespace>=1.5.2:databases/rubygem-redis-namespace \
 	rubygem-sidekiq-limit_fetch>=3.4:devel/rubygem-sidekiq-limit_fetch \
-	rubygem-rufus-scheduler>=3.1.10:devel/rubygem-rufus-scheduler \
+	rubygem-rufus-scheduler>=3.4.0:devel/rubygem-rufus-scheduler \
 	rubygem-httparty>=0.13.3:www/rubygem-httparty \
 	rubygem-rainbow>=2.1.0:devel/rubygem-rainbow \
 	rubygem-settingslogic>=2.0.9:devel/rubygem-settingslogic \
@@ -158,11 +158,19 @@ RUN_DEPENDS=	git>=2.14.1:devel/git \
 	rubygem-net-ssh>=3.0.1:security/rubygem-net-ssh \
 	rubygem-base32>=0.3.2:converters/rubygem-base32 \
 	rubygem-sentry-raven>=2.4.0:devel/rubygem-sentry-raven \
-	rubygem-premailer-rails>=1.9.0:mail/rubygem-premailer-rails \
+	rubygem-premailer-rails>=1.9.7:mail/rubygem-premailer-rails \
 	rubygem-ruby_parser>=3.8.4:devel/rubygem-ruby_parser \
 	rubygem-gettext_i18n_rails>=1.8.0:devel/rubygem-gettext_i18n_rails \
 	rubygem-gettext_i18n_rails_js>=1.2.0:devel/rubygem-gettext_i18n_rails_js \
 	rubygem-gettext>=3.2.2:devel/rubygem-gettext \
+	rubygem-peek>=1.0.1:devel/rubygem-peek \
+	rubygem-peek-gc>=0.0.2:devel/rubygem-peek-gc \
+	rubygem-peek-host>=1.0.0:devel/rubygem-peek-host \
+	rubygem-peek-performance_bar>=1.2.1:devel/rubygem-peek-performance_bar \
+	rubygem-peek-rblineprof>=0.2.0:devel/rubygem-peek-rblineprof \
+	rubygem-peek-redis>=1.2.0:devel/rubygem-peek-redis \
+	rubygem-peek-sidekiq>=1.0.3:devel/rubygem-peek-sidekiq \
+	rubygem-prometheus-client-mmap>=0.7.0.beta5:devel/rubygem-prometheus-client-mmap \
 	rubygem-octokit>=4.6.2:net/rubygem-octokit \
 	rubygem-mail_room>=0.9.1:mail/rubygem-mail_room \
 	rubygem-email_reply_trimmer>=0.1:mail/rubygem-email_reply_trimmer \
@@ -173,12 +181,16 @@ RUN_DEPENDS=	git>=2.14.1:devel/git \
 	rubygem-health_check>=2.6.0:devel/rubygem-health_check \
 	rubygem-vmstat>=2.3.0:sysutils/rubygem-vmstat \
 	rubygem-sys-filesystem>=1.1.6:sysutils/rubygem-sys-filesystem \
-	rubygem-gitaly>=0.6.0:net/rubygem-gitaly \
+	rubygem-gitaly>=0.8.0:net/rubygem-gitaly \
 	rubygem-toml-rb>=0.3.15:www/rubygem-toml-rb \
+	rubygem-flipper>=0.10.2:devel/rubygem-flipper \
+	rubygem-flipper-active_record>=0.10.2:databases/rubygem-flipper-active_record \
 	rubygem-rinku>=1.7.3:www/rubygem-rinku
 
-PGSQL_RUN_DEPENDS=	rubygem-pg>=0.18.2:databases/rubygem-pg
-MYSQL_RUN_DEPENDS=	rubygem-mysql2>=0.4.5:databases/rubygem-mysql2
+PGSQL_RUN_DEPENDS=	rubygem-pg>=0.18.2:databases/rubygem-pg \
+	rubygem-peek-pg>=1.3.0:databases/rubygem-peek-pg
+MYSQL_RUN_DEPENDS=	rubygem-mysql2>=0.4.5:databases/rubygem-mysql2 \
+	rubygem-peek-mysql2>=1.1.0:databases/rubygem-peek-mysql2
 
 USE_RUBY=	yes
 
@@ -195,10 +207,12 @@ NO_BUILD=	yes
 
 post-patch-MYSQL-on:
 	${ECHO} "gem 'mysql2', '>= 0.3.16', group: :mysql" >> ${WRKSRC}/Gemfile
+	${ECHO} "gem 'peek-mysql2', '~> 1.1.0', group: :mysql" >> ${WRKSRC}/Gemfile
 	${CP} ${WRKSRC}/config/database.yml.mysql ${WRKSRC}/config/database.yml.sample
 
 post-patch-PGSQL-on:
 	${ECHO} "gem 'pg', '>= 0.18.2', group: :postgres" >> ${WRKSRC}/Gemfile
+	${ECHO} "gem 'peek-pg', '~> 1.3.0', group: :postgres" >> ${WRKSRC}/Gemfile
 	${CP} ${WRKSRC}/config/database.yml.postgresql ${WRKSRC}/config/database.yml.sample
 
 do-install:
