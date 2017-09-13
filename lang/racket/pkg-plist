@@ -20,7 +20,7 @@ bin/setup-plt
 bin/slatex
 bin/slideshow
 bin/swindle
-lib/libracket3m-6.10.so
+lib/libracket3m-6.10.1.so
 %%ETCDIR%%/config.rktd
 include/racket/escheme.h
 include/racket/ext.exp
