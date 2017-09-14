@@ -294,6 +294,7 @@
     SUBDIR += pushgateway
     SUBDIR += py-ipcalc
     SUBDIR += py-ipy
+    SUBDIR += py-pdagent
     SUBDIR += py-pyang
     SUBDIR += py-pysmi
     SUBDIR += py-pyzabbix
