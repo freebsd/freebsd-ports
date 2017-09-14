@@ -11,6 +11,7 @@ MAINTAINER=	crwhipp@gmail.com
 COMMENT=	Lightweight opensource gps moving map application
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libexif.so:graphics/libexif \
