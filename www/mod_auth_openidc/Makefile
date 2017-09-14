@@ -18,17 +18,24 @@ LIB_DEPENDS=	libcjose.so:devel/cjose \
 		libjansson.so:devel/jansson \
 		libpcre.so:devel/pcre
 
-USES=		autoreconf:autoconf gmake libtool pkgconfig ssl
+USES=		autoreconf:autoconf cpe gmake libtool pkgconfig ssl
 USE_APACHE=	22+
 USE_GITHUB=	yes
 GH_ACCOUNT=	pingidentity
+CPE_VENDOR=	${GH_ACCOUNT}
 
 PLIST_FILES=	${APACHEMODDIR}/mod_auth_openidc.so
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--without-hiredis
 CONFIGURE_ENV+=	OPENSSL_CFLAGS="-I${OPENSSLINC}" OPENSSL_LIBS="-L${OPENSSLLIB} -lcrypto" \
 		PKG_CONFIG_PATH="${LOCALBASE}/libdata/pkgconfig"
 SUB_FILES=	pkg-message
+
+OPTIONS_DEFINE=		HIREDIS
+HIREDIS_DESC=		Enable using redis to store session data
+HIREDIS_LIB_DEPENDS=	libhiredis.so:databases/hiredis
+HIREDIS_CONFIGURE_WITH=	hiredis
+
+.include <bsd.port.options.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e \
