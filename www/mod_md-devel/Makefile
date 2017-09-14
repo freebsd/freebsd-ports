@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mod_md-devel
-PORTVERSION=	0.9.4
+PORTVERSION=	0.9.5
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 
@@ -23,7 +23,8 @@ GH_ACCOUNT=	icing
 GH_PROJECT=	mod_md
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--program-prefix=ext-
+CONFIGURE_ARGS=	--program-prefix=ext- \
+		--with-openssl=${OPENSSLBASE}
 CONFIGURE_ENV=	CONFIG_SHELL=/bin/sh
 
 MODULENAME=	${GH_PROJECT}
