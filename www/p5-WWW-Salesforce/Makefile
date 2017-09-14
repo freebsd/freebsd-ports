@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=       WWW-Salesforce
-PORTVERSION=    0.25
+PORTVERSION=    0.301
 CATEGORIES=     www perl5
 MASTER_SITES=   CPAN
 PKGNAMEPREFIX=  p5-
