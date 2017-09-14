@@ -12,6 +12,7 @@ LICENSE=	BSD3CLAUSE
 
 BROKEN_armv6=		fails to compile: ucontext.h: expected parameter declarator
 IGNORE_FreeBSD_10_i386=	needs SSE instructions
+IGNORE_FreeBSD_11_i386=	needs MMX instructions
 
 USES=		cmake:outsource,noninja compiler:c11 ssl
 
