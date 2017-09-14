@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gitlab
-PORTVERSION=	9.3.10
+PORTVERSION=	9.3.11
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www devel
 
@@ -43,7 +43,7 @@ RUN_DEPENDS=	git>=2.14.1:devel/git \
 	rubygem-omniauth>=1.4.2:security/rubygem-omniauth \
 	rubygem-omniauth-auth0>=1.4.1:net/rubygem-omniauth-auth0 \
 	rubygem-omniauth-azure-oauth2>=0.0.6:net/rubygem-omniauth-azure-oauth2 \
-	rubygem-omniauth-cas3>=1.1.2:security/rubygem-omniauth-cas3 \
+	rubygem-omniauth-cas3>=1.1.4:security/rubygem-omniauth-cas3 \
 	rubygem-omniauth-facebook>=4.0.0:net/rubygem-omniauth-facebook \
 	rubygem-omniauth-github11>=1.1.1:net/rubygem-omniauth-github11 \
 	rubygem-omniauth-gitlab>=1.0.2:security/rubygem-omniauth-gitlab \
@@ -98,8 +98,8 @@ RUN_DEPENDS=	git>=2.14.1:devel/git \
 	rubygem-asciidoctor>=1.5.2:textproc/rubygem-asciidoctor \
 	rubygem-asciidoctor-plantuml>=0.0.7:textproc/rubygem-asciidoctor-plantuml \
 	rubygem-rouge>=2.0:textproc/rubygem-rouge \
-	rubygem-truncato>=0.7.8:textproc/rubygem-truncato \
-	rubygem-nokogiri>=1.6.7.2:textproc/rubygem-nokogiri  \
+	rubygem-truncato>=0.7.9:textproc/rubygem-truncato \
+	rubygem-nokogiri>=1.8.0:textproc/rubygem-nokogiri  \
 	rubygem-diffy>=3.1.0:textproc/rubygem-diffy \
 	rubygem-unicorn>=5.1.0:www/rubygem-unicorn \
 	rubygem-unicorn-worker-killer>=0.4.4:www/rubygem-unicorn-worker-killer \
@@ -148,7 +148,7 @@ RUN_DEPENDS=	git>=2.14.1:devel/git \
 	rubygem-addressable>=2.3.8:www/rubygem-addressable \
 	rubygem-bootstrap-sass>=3.3.0:www/rubygem-bootstrap-sass \
 	rubygem-font-awesome-rails-rails4>=4.7:devel/rubygem-font-awesome-rails-rails4 \
-	rubygem-gemojione>=3:graphics/rubygem-gemojione \
+	rubygem-gemojione>=3.3:graphics/rubygem-gemojione \
 	rubygem-gon>=6.1.0:www/rubygem-gon \
 	rubygem-jquery-atwho-rails>=1.3.2:www/rubygem-jquery-atwho-rails \
 	rubygem-jquery-rails>=4.1.0:www/rubygem-jquery-rails \

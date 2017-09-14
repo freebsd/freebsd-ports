@@ -1,10 +1,10 @@
---- Gemfile.orig	2017-08-09 13:53:30 UTC
+--- Gemfile.orig	2017-09-06 21:34:31 UTC
 +++ Gemfile
 @@ -1,48 +1,43 @@
  source 'https://rubygems.org'
  
 -gem 'rails', '4.2.8'
-+gem 'rails', '>=4.2.8'
++gem 'rails', '>= 4.2.8'
  gem 'rails-deprecated_sanitizer', '~> 1.0.3'
  
  # Responders respond_to and respond_with
@@ -33,7 +33,7 @@
 +gem 'omniauth', '>= 1.4.2'
  gem 'omniauth-auth0', '~> 1.4.1'
  gem 'omniauth-azure-oauth2', '~> 0.0.6'
- gem 'omniauth-cas3', '~> 1.1.2'
+ gem 'omniauth-cas3', '~> 1.1.4'
  gem 'omniauth-facebook', '~> 4.0.0'
  gem 'omniauth-github', '~> 1.1.1'
  gem 'omniauth-gitlab', '~> 1.0.2'
@@ -96,7 +96,7 @@
  
  # for aws storage
  gem 'unf', '~> 0.1.4'
-@@ -110,34 +105,34 @@ gem 'seed-fu', '~> 2.3.5'
+@@ -110,31 +105,31 @@ gem 'seed-fu', '~> 2.3.5'
  
  # Markdown and HTML processing
  gem 'html-pipeline', '~> 1.11.0'
@@ -115,12 +115,8 @@
 -gem 'asciidoctor-plantuml', '0.0.7'
 +gem 'asciidoctor-plantuml', '>= 0.0.7'
  gem 'rouge', '~> 2.0'
- gem 'truncato', '~> 0.7.8'
- 
- # See https://groups.google.com/forum/#!topic/ruby-security-ann/aSbgDiwb24s
- # and https://groups.google.com/forum/#!topic/ruby-security-ann/Dy7YiKb_pMM
--gem 'nokogiri', '~> 1.6.7', '>= 1.6.7.2'
-+gem 'nokogiri', '>= 1.6.7.2'
+ gem 'truncato', '~> 0.7.9'
+ gem 'nokogiri', '~> 1.8.0'
  
  # Diffs
 -gem 'diffy', '~> 3.1.0'
@@ -139,7 +135,7 @@
  # Run events after state machine commits
  gem 'after_commit_queue', '~> 1.3.0'
  
-@@ -154,10 +149,10 @@ gem 'sidekiq-limit_fetch', '~> 3.4'
+@@ -151,10 +146,10 @@ gem 'sidekiq-limit_fetch', '~> 3.4'
  gem 'rufus-scheduler', '~> 3.4'
  
  # HTTP requests
@@ -152,7 +148,7 @@
  
  # GitLab settings
  gem 'settingslogic', '~> 2.0.9'
-@@ -167,7 +162,7 @@ gem 're2', '~> 1.0.0'
+@@ -164,7 +159,7 @@ gem 're2', '~> 1.0.0'
  
  # Misc
  
@@ -161,7 +157,7 @@
  
  # Cache
  gem 'redis-rails', '~> 5.0.1'
-@@ -177,10 +172,10 @@ gem 'redis', '~> 3.2'
+@@ -174,10 +169,10 @@ gem 'redis', '~> 3.2'
  gem 'connection_pool', '~> 2.0'
  
  # HipChat integration
@@ -174,7 +170,7 @@
  
  # Flowdock integration
  gem 'gitlab-flowdock-git-hook', '~> 1.0.1'
-@@ -198,7 +193,7 @@ gem 'asana', '~> 0.6.0'
+@@ -195,7 +190,7 @@ gem 'asana', '~> 0.6.0'
  gem 'ruby-fogbugz', '~> 0.2.1'
  
  # Kubernetes integration
@@ -183,7 +179,7 @@
  
  # d3
  gem 'd3_rails', '~> 3.5.0'
-@@ -207,7 +202,7 @@ gem 'd3_rails', '~> 3.5.0'
+@@ -204,7 +199,7 @@ gem 'd3_rails', '~> 3.5.0'
  gem 'underscore-rails', '~> 1.8.0'
  
  # Sanitize user input
@@ -192,7 +188,7 @@
  gem 'babosa', '~> 1.0.2'
  
  # Sanitizes SVG input
-@@ -217,7 +212,7 @@ gem 'loofah', '~> 2.0.3'
+@@ -214,7 +209,7 @@ gem 'loofah', '~> 2.0.3'
  gem 'licensee', '~> 8.7.0'
  
  # Protect against bruteforcing
@@ -201,7 +197,7 @@
  
  # Ace editor
  gem 'ace-rails-ap', '~> 4.1.0'
-@@ -236,143 +231,63 @@ gem 'chronic', '~> 0.10.2'
+@@ -233,143 +228,62 @@ gem 'chronic', '~> 0.10.2'
  gem 'chronic_duration', '~> 0.10.6'
  
  gem 'webpack-rails', '~> 0.9.10'
@@ -217,7 +213,7 @@
 +gem 'addressable', '>= 2.3.8'
  gem 'bootstrap-sass', '~> 3.3.0'
  gem 'font-awesome-rails', '~> 4.7'
- gem 'gemojione', '~> 3.0'
+ gem 'gemojione', '~> 3.3'
  gem 'gon', '~> 6.1.0'
  gem 'jquery-atwho-rails', '~> 1.3.2'
 -gem 'jquery-rails', '~> 4.1.0'
@@ -339,7 +335,7 @@
 -  gem 'timecop', '~> 0.8.0'
 -  gem 'concurrent-ruby', '~> 1.0.5'
 -end
- 
+-
 -gem 'octokit', '~> 4.6.2'
 +gem 'octokit', '>= 4.6.2'
  
@@ -357,7 +353,7 @@
  
  # Soft deletion
  gem 'paranoia', '~> 2.2'
-@@ -387,8 +302,10 @@ gem 'sys-filesystem', '~> 1.1.6'
+@@ -384,8 +298,10 @@ gem 'sys-filesystem', '~> 1.1.6'
  # Gitaly GRPC client
  gem 'gitaly', '~> 0.8.0'
  
