@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	xpdf
-PORTVERSION=	4.00
-PORTREVISION=	2
+PORTVERSION=	4.02
 CATEGORIES=	graphics print
 MASTER_SITES=	http://www.xpdfreader.com/dl/
 .if !defined(MASTERDIR)
@@ -11,6 +10,7 @@ PKGNAMESUFFIX=	4
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Display PDF files and convert them to other formats
+WRKSRC=		${WRKDIR}/${PORTNAME}-4.00
 
 LICENSE=	GPLv2
 
