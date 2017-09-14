@@ -410,6 +410,7 @@
     SUBDIR += gturing
     SUBDIR += gtypist
     SUBDIR += gunfudeadlands
+    SUBDIR += gzdoom
     SUBDIR += hangman
     SUBDIR += hedgewars
     SUBDIR += help_hannahs_horse
