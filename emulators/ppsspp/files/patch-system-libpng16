@@ -1,8 +1,10 @@
 Make build glue accept libpng 1.6.x and don't hardcode suffix
 
---- CMakeLists.txt.orig	2015-11-19 15:07:48 UTC
+One hunk in src/CMakeLists.txt was added to fix target generation with ninja.
+
+--- CMakeLists.txt.orig	2017-05-27 09:58:05 UTC
 +++ CMakeLists.txt
-@@ -709,9 +709,10 @@ else()
+@@ -582,9 +582,10 @@ else()
  	set(LIBZIP_LIBRARY libzip)
  endif()
  
@@ -16,9 +18,25 @@ Make build glue accept libpng 1.6.x and don't hardcode suffix
  find_package(PackageHandleStandardArgs)
  find_package_handle_standard_args(PNG REQUIRED_VARS PNG_LIBRARY PNG_PNG_INCLUDE_DIR)
  if (PNG_FOUND)
---- Core/Screenshot.cpp.orig	2015-02-26 20:05:06 UTC
+@@ -1618,12 +1619,11 @@ endif()
+ 
+ setup_target_project(${CoreLibName} Core)
+ 
+-# Generate git-version.cpp at build time.
+-add_custom_target(GitVersion ALL
+-	DEPENDS something_that_never_exists)
+-add_custom_command(OUTPUT something_that_never_exists
++add_custom_command(OUTPUT ${CMAKE_CURRENT_SOURCE_DIR}/git-version.cpp
+ 	COMMAND ${CMAKE_COMMAND} -DSOURCE_DIR=${CMAKE_CURRENT_SOURCE_DIR}
+ 		-P ${CMAKE_CURRENT_SOURCE_DIR}/git-version.cmake)
++# Generate git-version.cpp at build time.
++add_custom_target(GitVersion DEPENDS ${CMAKE_CURRENT_SOURCE_DIR}/git-version.cpp)
+ 
+ set_source_files_properties(${CMAKE_CURRENT_SOURCE_DIR}/git-version.cpp
+ 	PROPERTIES GENERATED TRUE)
+--- Core/Screenshot.cpp.orig	2017-05-27 09:58:05 UTC
 +++ Core/Screenshot.cpp
-@@ -18,7 +18,7 @@
+@@ -21,7 +21,7 @@
  #ifdef USING_QT_UI
  #include <QtGui/QImage>
  #else
@@ -27,7 +45,7 @@ Make build glue accept libpng 1.6.x and don't hardcode suffix
  #include "ext/jpge/jpge.h"
  #endif
  
---- ext/native/image/png_load.cpp.orig	2015-09-06 20:37:59 UTC
+--- ext/native/image/png_load.cpp.orig	2017-05-27 09:58:05 UTC
 +++ ext/native/image/png_load.cpp
 @@ -5,7 +5,7 @@
  #ifdef USING_QT_UI
@@ -38,7 +56,7 @@ Make build glue accept libpng 1.6.x and don't hardcode suffix
  #endif
  
  #include "png_load.h"
---- Core/TextureReplacer.cpp.orig	2016-05-03 00:47:54 UTC
+--- Core/TextureReplacer.cpp.orig	2017-05-27 09:58:05 UTC
 +++ Core/TextureReplacer.cpp
 @@ -16,7 +16,7 @@
  // https://github.com/hrydgard/ppsspp and http://www.ppsspp.org/.

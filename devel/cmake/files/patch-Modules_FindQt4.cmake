@@ -1,6 +1,6 @@
---- Modules/FindQt4.cmake.orig	2014-07-27 16:08:51.000000000 +0300
-+++ Modules/FindQt4.cmake	2014-07-27 16:10:01.000000000 +0300
-@@ -701,14 +701,7 @@
+--- Modules/FindQt4.cmake.orig	2017-05-31 14:00:09 UTC
++++ Modules/FindQt4.cmake
+@@ -706,14 +706,7 @@ if (QT_QMAKE_EXECUTABLE AND
    # ask qmake for the plugins directory
    if (QT_LIBRARY_DIR AND NOT QT_PLUGINS_DIR  OR  QT_QMAKE_CHANGED)
      _qt4_query_qmake(QT_INSTALL_PLUGINS qt_plugins_dir)
@@ -16,7 +16,7 @@
    endif ()
  
    # ask qmake for the translations directory
-@@ -721,16 +714,7 @@
+@@ -726,16 +719,7 @@ if (QT_QMAKE_EXECUTABLE AND
    if (QT_LIBRARY_DIR AND NOT QT_IMPORTS_DIR OR QT_QMAKE_CHANGED)
      _qt4_query_qmake(QT_INSTALL_IMPORTS qt_imports_dir)
      if(qt_imports_dir)
