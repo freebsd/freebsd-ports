@@ -11,6 +11,7 @@ COMMENT=	Small prototype-based programming language
 LICENSE=	BSD3CLAUSE
 
 BROKEN_armv6=		fails to compile: ucontext.h: expected parameter declarator
+IGNORE_FreeBSD_10_i386=	needs SSE instructions
 
 USES=		cmake:outsource,noninja compiler:c11 ssl
 
