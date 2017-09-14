@@ -9,6 +9,9 @@ DISTNAME=	Neu-${PORTVERSION}-PR3
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Dropline Neu Icons for Gnome
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/Neu/COPYING
+
 USES=		tar:bzip2
 NO_WRKSUBDIR=	yes
 
