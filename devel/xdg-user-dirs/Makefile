@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	xdg-user-dirs
-PORTVERSION=	0.15
-PORTREVISION=	2
+PORTVERSION=	0.16
 CATEGORIES=	devel
 MASTER_SITES=	http://user-dirs.freedesktop.org/releases/
 
