@@ -144,6 +144,7 @@
     SUBDIR += py-telepot
     SUBDIR += py-toxcore-c
     SUBDIR += py-twistedWords
+    SUBDIR += py-unmessage
     SUBDIR += py-xmpppy
     SUBDIR += py-xmpppy-irc
     SUBDIR += py-xmpppy-yahoo
