@@ -203,6 +203,7 @@
     SUBDIR += nsca-ng-client
     SUBDIR += nsca27
     SUBDIR += nsca27-client
+    SUBDIR += nstat
     SUBDIR += nstreams
     SUBDIR += observium
     SUBDIR += ocsinventory-agent
