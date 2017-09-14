@@ -25,7 +25,6 @@ load_rc_config $name
 
 pidfile="/var/run/pdagent/pdagentd.pid"
 command="%%PREFIX%%/bin/pdagentd.py"
-command_args="${rc_arg}"
 start_precmd=pdagentd_precmd
 procname=%%PYTHON_CMD%%
 
