@@ -1,6 +1,6 @@
---- Modules/FindwxWidgets.cmake.orig	2015-07-23 15:59:33.000000000 +0200
-+++ Modules/FindwxWidgets.cmake	2015-08-10 20:04:36.068295000 +0200
-@@ -741,7 +741,7 @@
+--- Modules/FindwxWidgets.cmake.orig	2017-05-31 14:00:09 UTC
++++ Modules/FindwxWidgets.cmake
+@@ -747,7 +747,7 @@ else()
      #-----------------------------------------------------------------
      # Support cross-compiling, only search in the target platform.
      find_program(wxWidgets_CONFIG_EXECUTABLE

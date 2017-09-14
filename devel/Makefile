@@ -323,7 +323,6 @@
     SUBDIR += cmake-doc
     SUBDIR += cmake-fedora
     SUBDIR += cmake-gui
-    SUBDIR += cmake-modules
     SUBDIR += cmake-modules-webos
     SUBDIR += cmph
     SUBDIR += cmunge
