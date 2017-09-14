@@ -18,6 +18,11 @@
 # influxd_group (str):		influxd daemon group
 #				Default: influxd
 # influxd_flags (str):		Extra flags passed to influxd
+#
+# influxd_facility (str):       Syslog facility to use
+#                               Default: daemon
+# influxd_priority (str):       Syslog priority to use
+#                               Default: info
 
 . /etc/rc.subr
 
@@ -29,19 +34,35 @@ load_rc_config $name
 : ${influxd_user:="%%INFLUXD_USER%%"}
 : ${influxd_group:="%%INFLUXD_GROUP%%"}
 : ${influxd_flags:=""}
+: ${influxd_facility:="daemon"}
+: ${influxd_priority:="info"}
 : ${influxd_conf:="%%PREFIX%%/etc/${name}.conf"}
-: ${influxd_options:="${influxdb_flags} -config=${influxd_conf} 2> %%INFLUXD_LOGDIR%%/influxdb.log"}
+: ${influxd_options:="${influxdb_flags} -config=${influxd_conf}"}
 
 # daemon
 influxd_pidfile="%%INFLUXD_PIDDIR%%${name}.pid"
 procname="%%PREFIX%%/bin/${name}"
 command=/usr/sbin/daemon
-command_args="-c -p ${influxd_pidfile} ${procname} ${influxd_options}"
 start_precmd="influxd_precmd"
+start_cmd="influxd_startcmd_%%INFLUXD_LOGCMD%%"        
 
 influxd_precmd()
 {
     install -d -o ${influxd_user} %%INFLUXD_PIDDIR%%
 }
+
+influxd_startcmd_daemon()                      
+{   
+    echo "Starting ${name}."                   
+    /usr/sbin/daemon -c -p ${influxd_pidfile} -S -s ${influxd_priority} -l ${influxd_facility} \
+        -u ${influxd_user} ${procname} ${influxd_options}
+}                                              
+
+influxd_startcmd_logger()                      
+{   
+    echo "Starting ${name}."                   
+    /usr/sbin/daemon -c -p ${influxd_pidfile} -u ${influxd_user} /bin/sh -c "${procname} ${influxd_options} 2>&1 \
+        | /usr/bin/logger -t ${name} -p ${influxd_facility}.${influxd_priority}"
+}                                              
 
 run_rc_command "$1"
