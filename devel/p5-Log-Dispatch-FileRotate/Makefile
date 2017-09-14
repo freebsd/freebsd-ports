@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Log-Dispatch-FileRotate
-PORTVERSION=	1.30
+PORTVERSION=	1.34
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,8 +15,7 @@ LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	p5-Date-Manip>=0:devel/p5-Date-Manip \
-		p5-Log-Dispatch>=0:devel/p5-Log-Dispatch \
-		p5-Params-Validate>=0:devel/p5-Params-Validate
+		p5-Log-Dispatch>=0:devel/p5-Log-Dispatch
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Path-Tiny>=0.018:devel/p5-Path-Tiny \
 		p5-Test-Warn>=0:devel/p5-Test-Warn
