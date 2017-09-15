@@ -1,6 +1,6 @@
---- default.mk.orig	2017-06-14 12:34:54 UTC
+--- default.mk.orig	2017-09-13 10:42:03 UTC
 +++ default.mk
-@@ -85,14 +85,6 @@ ELGS = magit-autoloads.el magit-version.
+@@ -87,14 +87,6 @@ ELGS = magit-autoloads.el magit-version.
  
  ## Versions ##########################################################
  
@@ -12,6 +12,6 @@
 -  (load-file \"magit-version.el\")\
 -  (princ magit-version))")
 -
- MAGIT_VERSION       = 2.10
- ASYNC_VERSION       = 1.9
+ MAGIT_VERSION       = 2.11
+ ASYNC_VERSION       = 1.9.2
  DASH_VERSION        = 2.13.0

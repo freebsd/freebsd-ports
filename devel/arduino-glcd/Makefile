@@ -1,4 +1,4 @@
-# Created by: Craig Leres <leres@ee.lbl.gov>
+# Created by: Craig Leres <leres@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	arduino-glcd
@@ -8,7 +8,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://glcd-arduino.googlecode.com/files/
 DISTNAME=	glcd-20111205
 
-MAINTAINER=	leres@ee.lbl.gov
+MAINTAINER=	leres@FreeBSD.org
 COMMENT=	GLCD Graphical LCD Library
 
 LICENSE=	LGPL21

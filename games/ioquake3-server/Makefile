@@ -4,7 +4,7 @@
 PORTNAME=	ioquake3
 PKGNAMESUFFIX=	-server
 
-MAINTAINER=	kami@FreeBSD.org
+MAINTAINER=	kamikaze@bsdforen.de
 COMMENT=	Ioquake3 dedicated server
 
 LICENSE=	GPLv2

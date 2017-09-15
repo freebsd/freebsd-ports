@@ -1,4 +1,4 @@
-# Created by: Craig Leres <leres@ee.lbl.gov>
+# Created by: Craig Leres <leres@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	hf
@@ -8,7 +8,7 @@ MASTER_SITES=	ftp://ee.lbl.gov/ \
 		http://www.mmnt.net/db/0/3/ftp.ee.lbl.gov/
 PKGNAMEPREFIX=	lbl-
 
-MAINTAINER=	leres@ee.lbl.gov
+MAINTAINER=	leres@FreeBSD.org
 COMMENT=	Address to hostname filter
 
 LICENSE=	BSD3CLAUSE

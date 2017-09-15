@@ -1,4 +1,4 @@
-# Created by: Craig Leres <leres@ee.lbl.gov>
+# Created by: Craig Leres <leres@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	create-cert
@@ -6,7 +6,7 @@ PORTVERSION=	2.5
 CATEGORIES=	security
 MASTER_SITES=	ftp://ee.lbl.gov/
 
-MAINTAINER=	leres@ee.lbl.gov
+MAINTAINER=	leres@FreeBSD.org
 COMMENT=	Create openssl client key and certificates
 
 LICENSE=	BSD3CLAUSE

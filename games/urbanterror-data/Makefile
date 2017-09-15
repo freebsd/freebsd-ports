@@ -12,7 +12,7 @@ DISTNAME=	UrbanTerror${URT_VER}_full${URT_REV}
 EXTRACT_SUFX=	.zip
 EXTRACT_ONLY=
 
-MAINTAINER=	kami@FreeBSD.org
+MAINTAINER=	kamikaze@bsdforen.de
 COMMENT=	Standalone realism based mod originally for Quake III Arena
 
 NO_BUILD=	yes

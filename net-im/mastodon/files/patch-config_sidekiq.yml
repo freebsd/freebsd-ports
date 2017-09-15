@@ -1,7 +1,7 @@
---- config/sidekiq.yml.orig	2017-07-28 00:35:29 UTC
+--- config/sidekiq.yml.orig	2017-09-06 12:59:04 UTC
 +++ config/sidekiq.yml
-@@ -21,3 +21,4 @@
-   user_cleanup_scheduler:
-     cron: '4 5 * * *'
-     class: Scheduler::UserCleanupScheduler
+@@ -24,3 +24,4 @@
+   subscriptions_cleanup_scheduler:
+     cron: '2 2 * * 0'
+     class: Scheduler::SubscriptionsCleanupScheduler
 +:pidfile: tmp/mastodon_workers.pid

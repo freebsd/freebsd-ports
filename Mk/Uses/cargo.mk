@@ -46,10 +46,10 @@ DISTFILES+=	${CARGO_DIST_SUBDIR}/${_crate}.tar.gz:cargo_${_crate:S/-//g:S/.//g}
 
 CARGO_BUILDDEP?=	yes
 .if ${CARGO_BUILDDEP:tl} == "yes"
-BUILD_DEPENDS+=	 cargo:devel/cargo rustc:lang/rust
+BUILD_DEPENDS+=	 rust>=1.19.0:lang/rust
 .endif
 
-# Location of cargo binary (default to devel/cargo binary)
+# Location of cargo binary (default to lang/rust's Cargo binary)
 CARGO_CARGO_BIN?=	${LOCALBASE}/bin/cargo
 
 # Location of the cargo output directory.
