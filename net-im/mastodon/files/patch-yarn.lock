@@ -1,6 +1,63 @@
---- yarn.lock.orig	2017-08-05 12:54:17 UTC
+--- yarn.lock.orig	2017-09-10 13:10:03 UTC
 +++ yarn.lock
-@@ -6587,6 +6587,8 @@ uuid@^3.0.0, uuid@^3.0.1, uuid@^3.1.0:
+@@ -1289,8 +1289,6 @@ chokidar@^1.6.0, chokidar@^1.7.0:
+     is-glob "^2.0.0"
+     path-is-absolute "^1.0.0"
+     readdirp "^2.0.0"
+-  optionalDependencies:
+-    fsevents "^1.0.0"
+ 
+ cipher-base@^1.0.0, cipher-base@^1.0.1, cipher-base@^1.0.3:
+   version "1.0.4"
+@@ -1442,8 +1440,6 @@ compression-webpack-plugin@^0.4.0:
+   dependencies:
+     async "0.2.x"
+     webpack-sources "^0.1.0"
+-  optionalDependencies:
+-    node-zopfli "^2.0.0"
+ 
+ compression@^1.5.2:
+   version "1.7.0"
+@@ -2646,13 +2642,6 @@ fs.realpath@^1.0.0:
+   version "1.0.0"
+   resolved "https://registry.yarnpkg.com/fs.realpath/-/fs.realpath-1.0.0.tgz#1504ad2523158caa40db4a2787cb01411994ea4f"
+ 
+-fsevents@*, fsevents@^1.0.0:
+-  version "1.1.2"
+-  resolved "https://registry.yarnpkg.com/fsevents/-/fsevents-1.1.2.tgz#3282b713fb3ad80ede0e9fcf4611b5aa6fc033f4"
+-  dependencies:
+-    nan "^2.3.0"
+-    node-pre-gyp "^0.6.36"
+-
+ fstream-ignore@^1.0.5:
+   version "1.0.5"
+   resolved "https://registry.yarnpkg.com/fstream-ignore/-/fstream-ignore-1.0.5.tgz#9c31dae34767018fe1d249b24dada67d092da105"
+@@ -4051,7 +4040,7 @@ node-forge@0.6.33:
+ 
+ node-gyp@^3.3.1:
+   version "3.6.2"
+-  resolved "https://registry.yarnpkg.com/node-gyp/-/node-gyp-3.6.2.tgz#9bfbe54562286284838e750eac05295853fa1c60"
++  resolved "https://registry.yarnpkg.com/node-gyp/-/node-gyp-3.6.2.tgz#04669fb2b0ce0dd24d769015dc78a07f2895e6b3"
+   dependencies:
+     fstream "^1.0.0"
+     glob "^7.0.3"
+@@ -4132,15 +4121,6 @@ node-sass@^4.5.2:
+     sass-graph "^2.1.1"
+     stdout-stream "^1.4.0"
+ 
+-node-zopfli@^2.0.0:
+-  version "2.0.2"
+-  resolved "https://registry.yarnpkg.com/node-zopfli/-/node-zopfli-2.0.2.tgz#a7a473ae92aaea85d4c68d45bbf2c944c46116b8"
+-  dependencies:
+-    commander "^2.8.1"
+-    defaults "^1.0.2"
+-    nan "^2.0.0"
+-    node-pre-gyp "^0.6.4"
+-
+ "nopt@2 || 3":
+   version "3.0.6"
+   resolved "https://registry.yarnpkg.com/nopt/-/nopt-3.0.6.tgz#c6465dbf08abcd4db359317f79ac68a646b28ff9"
+@@ -6581,6 +6561,8 @@ uuid@^3.0.0, uuid@^3.0.1, uuid@^3.1.0:
  uws@^8.14.0:
    version "8.14.0"
    resolved "https://registry.yarnpkg.com/uws/-/uws-8.14.0.tgz#acc1488d13ecb23fe2f942a7eafb06681fa91431"
