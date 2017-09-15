@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN=		tries to clone git repository during build phase
 
-BUILD_DEPENDS=	cargo>0:devel/cargo \
+BUILD_DEPENDS=	rust>=1.19.0:lang/rust \
 		portaudio>0:audio/portaudio
 
 USES=		localbase pathfix pkgconfig shebangfix

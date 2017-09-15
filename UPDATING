@@ -5,6 +5,13 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20170915:
+  AFFECTS: users of devel/cargo
+  AUTHOR: rust@FreeBSD.org
+
+  Starting with version 1.19.0, Cargo is provided with Rust. Therefore,
+  devel/cargo was merged into lang/rust.
+
 20170914:
   AFFECTS: users of CMake
   AUTHOR: adridg@freebsd.org

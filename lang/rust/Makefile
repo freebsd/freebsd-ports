@@ -3,7 +3,7 @@
 
 PORTNAME=	rust
 PORTVERSION?=	1.19.0
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES=	lang
 MASTER_SITES=	http://static.rust-lang.org/dist/:src \
 		https://static.rust-lang.org/dist/:rust_bootstrap \
@@ -13,20 +13,14 @@ MASTER_SITES=	http://static.rust-lang.org/dist/:src \
 		LOCAL/dumbbell/rust:cargo_bootstrap \
 		LOCAL/marino:bootstrap
 DISTNAME?=	${PORTNAME}c-${PORTVERSION}-src
-BOOTSTRAP_FILES=${RUSTC_BOOTSTRAP}:rust_bootstrap \
+DISTFILES?=	${DISTNAME}${EXTRACT_SUFX}:src \
+		${RUSTC_BOOTSTRAP}:rust_bootstrap \
 		${RUST_STD_BOOTSTRAP}:rust_bootstrap \
 		${CARGO_BOOTSTRAP}:cargo_bootstrap
-DISTFILES?=	${DISTNAME}${EXTRACT_SUFX}:src \
-		${BOOTSTRAP_FILES}
-.if !defined(SKIP_CARGO_REGISTRY)
-MASTER_SITES+=	LOCAL/riggs/rust:registry \
-		LOCAL/dumbbell/rust:registry
-DISTFILES+=	${CARGO_REGISTRY}:registry
-.endif
 DIST_SUBDIR?=	rust
 EXTRACT_ONLY?=	${DISTFILES:N*\:*bootstrap:C/:.*//}
 
-MAINTAINER?=	rust@FreeBSD.org
+MAINTAINER=	rust@FreeBSD.org
 COMMENT=	Language with a focus on memory safety and concurrency
 
 LICENSE=	APACHE20 \
@@ -36,6 +30,8 @@ LICENSE_COMB=	dual
 LICENSE_FILE_MIT=	${WRKSRC}/LICENSE-MIT
 
 BUILD_DEPENDS=		cmake:devel/cmake
+LIB_DEPENDS=		libcurl.so:ftp/curl \
+			libssh2.so:security/libssh2
 
 ONLY_FOR_ARCHS?=	aarch64 amd64 i386
 ONLY_FOR_ARCHS_REASON=	requires prebuilt bootstrap compiler
@@ -58,7 +54,6 @@ RUST_STD_BOOTSTRAP=		${BOOTSTRAPS_DATE_${ARCH}:U${BOOTSTRAPS_DATE}}/rust-std-${R
 CARGO_BOOTSTRAP_VERSION?=	0.19.0
 CARGO_BOOTSTRAP_VERSION_aarch64?=0.19.0
 CARGO_BOOTSTRAP=		${BOOTSTRAPS_DATE_${ARCH}:U${BOOTSTRAPS_DATE}}/cargo-${CARGO_BOOTSTRAP_VERSION_${ARCH}:U${CARGO_BOOTSTRAP_VERSION}}-${RUST_TARGET}${EXTRACT_SUFX}
-CARGO_REGISTRY=			${PORTNAME}-registry-${DISTVERSIONFULL}.tar.xz
 
 RUST_CHANNEL=	${PKGNAMESUFFIX:Ustable:S/^-//}
 
@@ -70,11 +65,12 @@ RUST_ARCH_x86_64=	x86_64 # dragonfly
 RUST_TARGET=		${RUST_ARCH_${ARCH}}-unknown-${OPSYS:tl}
 PLIST_SUB+=		RUST_TARGET=${RUST_TARGET}
 
-USES=		compiler gmake libedit python:2.7,build
+USES=		compiler gmake libedit pkgconfig python:2.7,build ssl
 
-OPTIONS_DEFINE=		DOCS GDB LLNEXTGEN PORT_LLVM
+OPTIONS_DEFINE=		DOCS GDB LLNEXTGEN PORT_LLVM SOURCES
 GDB_DESC=		Install ports gdb (necessary for debugging rust programs)
 LLNEXTGEN_DESC=		Build with grammar verification
+SOURCES_DESC=		Install source files
 
 GDB_RUN_DEPENDS=		${LOCALBASE}/bin/gdb:devel/gdb
 LLNEXTGEN_BUILD_DEPENDS=	LLnextgen:devel/llnextgen
@@ -89,21 +85,29 @@ LLVM_CONFIG=			${LOCALBASE}/bin/llvm-config${LLVM_VER}
 # We use them in:
 #     - pre-install to cleanup the ${STAGEDIR}
 #     - post-install to populate the ${TMPPLIST}
-RUST_MANIFESTS=		lib/rustlib/manifest-rustc \
+RUST_MANIFESTS=		lib/rustlib/manifest-cargo \
+			lib/rustlib/manifest-rustc \
+			lib/rustlib/manifest-rust-analysis-${RUST_TARGET} \
 			lib/rustlib/manifest-rust-std-${RUST_TARGET}
-RUST_DOCS_MANIFESTS=	lib/rustlib/manifest-rust-docs
-DOCS_VARS=		rust_manifests+=${RUST_DOCS_MANIFESTS}
+RUST_DOCS_MANIFEST=	lib/rustlib/manifest-rust-docs
+RUST_SRC_MANIFEST=	lib/rustlib/manifest-rust-src
+DOCS_VARS=		rust_manifests+=${RUST_DOCS_MANIFEST}
+SOURCES_VARS=		rust_manifests+=${RUST_SRC_MANIFEST}
 
 PLIST_FILES=		lib/rustlib/components \
 			lib/rustlib/rust-installer-version
 
 .include <bsd.port.pre.mk>
 .if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1200031
-EXTRA_PATCHES+=        ${PATCHDIR}/extra-patch-ino64
+EXTRA_PATCHES+=		${PATCHDIR}/extra-patch-ino64
 .endif
 
-X_PY_ENV =	HOME=${WRKDIR}
-X_PY_CMD =	${PYTHON_CMD} ${WRKSRC}/x.py
+X_PY_ENV=	HOME="${WRKDIR}" \
+		OPENSSL_DIR="${OPENSSLBASE}"
+X_PY_CMD=	${PYTHON_CMD} ${WRKSRC}/x.py
+
+CRATES_PATCHED_BY_FBSD10_FIX=	src/vendor/libssh2-sys \
+				src/vendor/lzma-sys
 
 pre-fetch:
 	# FIXME: This is the same check for CONFLICTS as the standard
@@ -161,6 +165,9 @@ post-extract:
 post-patch:
 	@${REINPLACE_CMD} -e 's|gdb|${LOCALBASE}/bin/gdb|' \
 		${WRKSRC}/src/etc/rust-gdb
+# If we override the versions and date of the bootstraps (for instance
+# on aarch64 where we provide our own bootstraps), we need to update
+# places where they are recorded.
 	@if test "${BOOTSTRAPS_DATE_${ARCH}}"; then \
 		${REINPLACE_CMD} -e \
 		's|^date:.*|date: ${BOOTSTRAPS_DATE_${ARCH}:U${BOOTSTRAPS_DATE}}|' \
@@ -179,6 +186,26 @@ post-patch:
 		's|cargo-nightly-|cargo-${CARGO_BOOTSTRAP_VERSION_${ARCH}:U${CARGO_BOOTSTRAP_VERSION}}-|' \
 		${WRKSRC}/src/bootstrap/bootstrap.py; \
 	fi
+# `extra-patch-ino64` may be applied. If that's the case, we need to
+# update `.cargo-checksum.json` to reflect the new checksums verified by
+# Cargo.
+	@cd "${WRKSRC}/src/vendor/libc"; \
+	for file in $$(${FIND} * -name "*.orig"); do \
+		old_checksum=$$(${SHA256} -q "$$file"); \
+		new_checksum=$$(${SHA256} -q "$${file%%.orig}"); \
+		regex="$$regex -e s|\"$${file%%.orig}\":\"$$old_checksum\"|\"$${file%%.orig}\":\"$$new_checksum\"|"; \
+	done; \
+	if test "$$regex"; then \
+		${REINPLACE_CMD} -E $$regex .cargo-checksum.json; \
+	fi
+# We make a backup of a few files before the FreeBSD 10 autotools
+# fix is applied. We'll need them in `do-configure` to update the
+# `.cargo-checksum.json` files.
+	@for crate in ${CRATES_PATCHED_BY_FBSD10_FIX}; do \
+		for file in $$(${FIND} "${WRKSRC}/$$crate" -name "config.rpath"); do \
+			${CP} "$$file" "$$file.orig"; \
+		done; \
+	done
 
 do-configure:
 	${SED} -E \
@@ -190,6 +217,20 @@ do-configure:
 		-e 's,%TARGET%,${RUST_TARGET},' \
 		< ${FILESDIR}/config.toml \
 		> ${WRKSRC}/config.toml
+# The FreeBSD 10 autotools fix may modify some files just before
+# `do-configure`. Like after `extra-path-ino64`, we need to update
+# `.cargo-checksum.json`.
+	@for crate in ${CRATES_PATCHED_BY_FBSD10_FIX}; do \
+		cd "${WRKSRC}/$$crate"; \
+		for file in $$(${FIND} * -name "*.orig"); do \
+			old_checksum=$$(${SHA256} -q "$$file"); \
+			new_checksum=$$(${SHA256} -q "$${file%%.orig}"); \
+			regex="$$regex -e s|\"$${file%%.orig}\":\"$$old_checksum\"|\"$${file%%.orig}\":\"$$new_checksum\"|"; \
+		done; \
+		if test "$$regex"; then \
+			${REINPLACE_CMD} -E $$regex .cargo-checksum.json; \
+		fi; \
+	done
 
 post-configure-DOCS-on:
 	${REINPLACE_CMD} -e 's,%DOCS%,true,' ${WRKSRC}/config.toml
@@ -216,7 +257,7 @@ do-build:
 # new ones. Otherwise, the staging directory is polluted with unneeded
 # files.
 pre-install:
-	@for f in ${RUST_MANIFESTS} ${RUST_DOCS_MANIFESTS}; do \
+	@for f in ${RUST_MANIFESTS} ${RUST_DOCS_MANIFEST} ${RUST_SRC_MANIFEST}; do \
 	    if test -f "${STAGEDIR}${PREFIX}/$$f"; then \
 	        ${SED} -E -e 's,^(file|dir):,${STAGEDIR},' \
 	            < "${STAGEDIR}${PREFIX}/$$f" \
@@ -243,6 +284,12 @@ do-install:
 # on the absolute path of the source files. As it is user-specific, we
 # can't know their filename in advance.
 #
+# Both rustc and Cargo components install the same README.md and LICENSE
+# files. The install process backs up the first copy to install the
+# second. Thus here, we need to remove those backups. We also need to
+# dedup the entries in the generated PLIST, because both components'
+# manifests list them.
+#
 # We fix manpage entries in the generated manifests because Rust
 # installs them uncompressed but the Ports framework compresses them.
 post-install:
@@ -266,16 +313,34 @@ post-install:
 	        }' \
 	        ${STAGEDIR}${PREFIX}/$$f >> ${TMPPLIST}; \
 	done
+	${RM} ${STAGEDIR}${PREFIX}/share/doc/rust/*.old
+	${SORT} -u < ${TMPPLIST} > ${TMPPLIST}.uniq
+	${MV} ${TMPPLIST}.uniq ${TMPPLIST}
 	@${RM} \
 	    ${STAGEDIR}${PREFIX}/lib/rustlib/install.log \
 	    ${STAGEDIR}${PREFIX}/lib/rustlib/uninstall.sh
 # FIXME: Static libraries in lib/rustlib/*/lib/*.rlib are not stripped,
 # but they contain non-object files which make strip(1) unhappy.
 	@${STRIP_CMD} \
+		${STAGEDIR}${PREFIX}/bin/cargo \
 		${STAGEDIR}${PREFIX}/bin/rustc \
 		${STAGEDIR}${PREFIX}/bin/rustdoc \
 		${STAGEDIR}${PREFIX}/lib/*.so \
 		${STAGEDIR}${PREFIX}/lib/rustlib/*/lib/*.so
+
+# We set `extended = true` in config.toml because we want to build
+# Cargo at the same time. However, this installs the rust-src component
+# as well. If the user doesn't want that, I don't know how to prevent
+# its install. So for now, use the rust-src manifest to remove it from
+# ${STAGEDIR}.
+post-install-SOURCES-off:
+	if test -f "${STAGEDIR}${PREFIX}/${RUST_SRC_MANIFEST}"; then \
+	    ${SED} -E -e 's,^(file|dir):,,' \
+	        < "${STAGEDIR}${PREFIX}/${RUST_SRC_MANIFEST}" \
+	        | ${XARGS} ${RM} -r; \
+	    ${RM} "${STAGEDIR}${PREFIX}/${RUST_SRC_MANIFEST}"; \
+	    ${RM} -r "${STAGEDIR}${PREFIX}/lib/rustlib/src"; \
+	fi
 
 # Note that make test does not work when rust is already installed.
 do-test:
@@ -288,22 +353,3 @@ do-test:
 		--jobs ${MAKE_JOBS_NUMBER}
 
 .include <bsd.port.post.mk>
-
-# "make gen-registry" is a special target to ease this port update.
-#
-# After changing the version number and the Git revision, you can run
-# "make gen-registry" to update the distinfo and create a new snapshot of
-# the registry. The new registry is written to ${DISTDIR} and can be
-# uploaded.
-
-gen-registry:
-	${MAKE} -C${.CURDIR} -DSKIP_CARGO_REGISTRY makesum
-	${MAKE} -C${.CURDIR} -DSKIP_CARGO_REGISTRY
-	${TAR} cJvf ${DISTDIR}/${DIST_SUBDIR}/${CARGO_REGISTRY} -C${WRKDIR} \
-		--uid 0 --gid 0 \
-		--exclude 'src/*/benches/' \
-		--exclude 'src/*/ci/' \
-		--exclude 'src/*/examples/' \
-		--exclude 'index/github.com-*/.git/' \
-		.cargo
-	${MAKE} -C${.CURDIR} makesum

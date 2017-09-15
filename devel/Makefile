@@ -255,7 +255,6 @@
     SUBDIR += calibrator
     SUBDIR += capstone3
     SUBDIR += capstone4
-    SUBDIR += cargo
     SUBDIR += cask
     SUBDIR += catch
     SUBDIR += cbrowser
