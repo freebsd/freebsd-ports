@@ -10,7 +10,7 @@ PKGNAMEPREFIX=		p5-
 MAINTAINER=		skalmanman@gmail.com
 COMMENT=		Mojo::IOLoop::ForkCall
 
-LICENSE=		ART10 GPLv1
+LICENSE=		ART10 GPLv1+
 LICENSE_COMB=		dual
 
 RUN_DEPENDS=		p5-Mojolicious>=5.08:www/p5-Mojolicious \

@@ -13,7 +13,7 @@ PKGNAMESUFFIX=	10
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Catalyst model for Search::Xapian
 
-LICENSE=	ART10 GPLv1
+LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Catalyst-Runtime>=5.30:www/p5-Catalyst-Runtime \

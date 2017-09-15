@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	espen@tagestad.no
 COMMENT=	Data::Record - "split" on steroids
 
-LICENSE=	ART10 GPLv1
+LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 RUN_DEPENDS=	p5-MRO-Compat>=0.09:devel/p5-MRO-Compat \

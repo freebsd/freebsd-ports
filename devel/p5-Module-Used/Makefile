@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	tsucchi@cpan.org
 COMMENT=	Find modules loaded by Perl code without running it
 
-LICENSE=	ART10 GPLv1
+LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 RUN_DEPENDS=	p5-File-Next>=1.02:sysutils/p5-File-Next \

@@ -13,7 +13,7 @@ DISTNAME=	Period-${PORTVERSION}
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Perl module that contains code to deal with time periods
 
-LICENSE=	ART10 GPLv1
+LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 USES=		perl5

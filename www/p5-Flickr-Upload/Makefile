@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S|0$||}
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Upload images to flickr.com
 
-LICENSE=	ART10 GPLv1
+LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Flickr-API>=0:www/p5-Flickr-API \
