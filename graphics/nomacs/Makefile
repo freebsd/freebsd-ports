@@ -12,6 +12,8 @@ COMMENT=	Small, fast, and free image viewer
 
 LICENSE=	GPLv3
 
+BROKEN=		Does not build with CMake 3.9, needs update
+
 LIB_DEPENDS=	libexiv2.so:graphics/exiv2 \
 		libsysinfo.so:devel/libsysinfo \
 		libopencv_core.so:graphics/opencv-core

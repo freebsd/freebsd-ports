@@ -203,6 +203,7 @@
     SUBDIR += nsca-ng-client
     SUBDIR += nsca27
     SUBDIR += nsca27-client
+    SUBDIR += nstat
     SUBDIR += nstreams
     SUBDIR += observium
     SUBDIR += ocsinventory-agent
@@ -294,6 +295,7 @@
     SUBDIR += pushgateway
     SUBDIR += py-ipcalc
     SUBDIR += py-ipy
+    SUBDIR += py-pdagent
     SUBDIR += py-pyang
     SUBDIR += py-pysmi
     SUBDIR += py-pyzabbix

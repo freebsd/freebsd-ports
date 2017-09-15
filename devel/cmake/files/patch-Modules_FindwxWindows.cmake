@@ -1,6 +1,6 @@
---- Modules/FindwxWindows.cmake.orig	2012-11-06 21:41:36.000000000 +0200
-+++ Modules/FindwxWindows.cmake	2012-11-27 22:39:17.000000000 +0200
-@@ -598,7 +598,7 @@
+--- Modules/FindwxWindows.cmake.orig	2017-05-31 14:00:09 UTC
++++ Modules/FindwxWindows.cmake
+@@ -617,7 +617,7 @@ else()
  
      # wx-config should be in your path anyhow, usually no need to set WXWIN or
      # search in ../wx or ../../wx

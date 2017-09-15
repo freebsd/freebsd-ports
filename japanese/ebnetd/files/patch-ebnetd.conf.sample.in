@@ -1,5 +1,5 @@
---- ebnetd.conf.sample.in.orig	2003-06-15 20:39:55.000000000 +0900
-+++ ebnetd.conf.sample.in	2014-11-30 18:17:51.227415186 +0900
+--- ebnetd.conf.sample.in.orig	2003-06-15 11:39:55 UTC
++++ ebnetd.conf.sample.in
 @@ -17,11 +17,11 @@
  
  ### Owner of the server process.

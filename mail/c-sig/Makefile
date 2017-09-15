@@ -12,7 +12,7 @@ DISTNAME=	${PORTNAME}.${PORTVERSION}
 MAINTAINER=	yasu@utahime.org
 COMMENT=	Signature insertion tool for Emacs
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
 
 USE_EMACS=	yes
 
