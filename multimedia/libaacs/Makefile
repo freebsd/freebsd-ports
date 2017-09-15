@@ -7,7 +7,7 @@ CATEGORIES=	multimedia
 MASTER_SITES=	ftp://ftp.videolan.org/pub/videolan/${PORTNAME}/${PORTVERSION}/ \
 		http://blu.opsec.eu/
 
-MAINTAINER=	kami@FreeBSD.org
+MAINTAINER=	kamikaze@bsdforen.de
 COMMENT=	Advanced Access Content System implementation
 
 LICENSE=	LGPL21
