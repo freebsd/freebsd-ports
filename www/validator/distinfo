@@ -1,4 +1,3 @@
-SHA256 (validator-1_3.tar.gz) = 741cb3eb7b4e61e57d0caa47114553af2dcecacb7ccc957890df54bcebb464ea
-SIZE (validator-1_3.tar.gz) = 2552323
-SHA256 (sgml-lib-1_3.tar.gz) = d067d8f598570657188db9b20bec5988e79b5887b24a745566aa8259308cd41e
-SIZE (sgml-lib-1_3.tar.gz) = 596664
+TIMESTAMP = 1505267857
+SHA256 (w3c-markup-validator-1.3-validator-1_3-release_GH0.tar.gz) = a1d2bf4e9bd3e0a9ba811ecc2e1738da5e3f4496f5cb5ddd451309fcc945d9cf
+SIZE (w3c-markup-validator-1.3-validator-1_3-release_GH0.tar.gz) = 3073571
