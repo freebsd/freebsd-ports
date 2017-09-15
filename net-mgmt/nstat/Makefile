@@ -2,12 +2,15 @@
 
 PORTNAME=	nstat
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	# empty
 DISTFILES=	# empty
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Replacement for bw/netstat/vmstat/pcm-memory.x
+
+RUN_DEPENDS=	pcm.x:sysutils/intel-pcm
 
 NO_FETCH=	yes
 
