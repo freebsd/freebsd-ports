@@ -8,7 +8,8 @@ COMMENT=	HardenedBSD Security Administration - Kernel module
 USES=		kmod
 KMOD=		yes
 
-USE_GITHUB=	yes
+HARDENING_OFF= relro pie safestack
+
 pre-build:
 	(cd ${WRKSRC}; make depend)
 
