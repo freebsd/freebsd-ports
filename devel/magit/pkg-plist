@@ -11,6 +11,8 @@
 %%ELISPDIR%%/magit-bisect.elc
 %%ELISPDIR%%/magit-blame.el
 %%ELISPDIR%%/magit-blame.elc
+%%ELISPDIR%%/magit-bookmark.el
+%%ELISPDIR%%/magit-bookmark.elc
 %%ELISPDIR%%/magit-branch.el
 %%ELISPDIR%%/magit-branch.elc
 %%ELISPDIR%%/magit-commit.el
@@ -27,6 +29,8 @@
 %%ELISPDIR%%/magit-files.elc
 %%ELISPDIR%%/magit-git.el
 %%ELISPDIR%%/magit-git.elc
+%%ELISPDIR%%/magit-imenu.el
+%%ELISPDIR%%/magit-imenu.elc
 %%ELISPDIR%%/magit-log.el
 %%ELISPDIR%%/magit-log.elc
 %%ELISPDIR%%/magit-margin.el
