@@ -1,6 +1,5 @@
 # $FreeBSD$
 
-PORTREVISION=	2
 PKGNAMESUFFIX=	-kmod
 MASTERDIR=	${.CURDIR}/../secadm
 

@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	secadm
-PORTVERSION=	0.3
-PORTREVISION?=	5
+PORTVERSION=	0.5
 CATEGORIES=	hardenedbsd
 
 MAINTAINER=	shawn.webb@hardenedbsd.org
@@ -17,7 +16,7 @@ MAKE_JOBS_UNSAFE=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	HardenedBSD
 GH_PROJECT=	secadm
-GH_TAGNAME=	4a4f31f
+GH_TAGNAME=	252ca3f
 
 .if defined(KMOD)
 MAKE_ENV+=	WITHOUT_CLI=YES
