@@ -210,6 +210,7 @@
     SUBDIR += ocsinventory-ng
     SUBDIR += omping
     SUBDIR += onionlauncher
+    SUBDIR += openbmp
     SUBDIR += openlldp
     SUBDIR += openvmps
     SUBDIR += p0f
