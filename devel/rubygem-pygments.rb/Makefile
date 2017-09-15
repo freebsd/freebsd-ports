@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pygments.rb
-PORTVERSION=	1.1.2
+PORTVERSION=	1.2.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -16,8 +16,21 @@ RUN_DEPENDS=	rubygem-multi_json>=1.0.0:devel/rubygem-multi_json
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USES=		gem
+USES=		gem shebangfix
 
-PLIST_FILES=	%%GEM_LIB_DIR%%/vendor/pygments-main/scripts/find_error.py
+SHEBANG_FILES=	vendor/pygments-main/external/autopygmentize
+
+post-patch:
+	@${REINPLACE_CMD} -e '1d' \
+		${WRKSRC}/lib/pygments/mentos.py \
+		${WRKSRC}/vendor/pygments-main/external/lasso-builtins-generator-9.lasso \
+		${WRKSRC}/vendor/pygments-main/pygmentize \
+		${WRKSRC}/vendor/pygments-main/pygments/util.py \
+		${WRKSRC}/vendor/pygments-main/scripts/check_sources.py \
+		${WRKSRC}/vendor/pygments-main/scripts/debug_lexer.py \
+		${WRKSRC}/vendor/pygments-main/scripts/vim2pygments.py \
+		${WRKSRC}/vendor/pygments-main/setup.py \
+		${WRKSRC}/vendor/simplejson/scripts/make_docs.py \
+		${WRKSRC}/vendor/simplejson/setup.py
 
 .include <bsd.port.mk>
