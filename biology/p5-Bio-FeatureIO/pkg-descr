@@ -1,0 +1,19 @@
+Bio::FeatureIO is an iterator subsystem for genomic sequence features.
+
+Bio::FeatureIO is a handler module for the formats in the FeatureIO set (eg,
+Bio::FeatureIO::GFF). It is the officially sanctioned way of getting at the
+format objects, which most people should use.
+
+The Bio::FeatureIO system can be thought of like biological file handles. They
+are attached to filehandles with smart formatting rules (eg, GFF format, or BED
+format) and can either read or write feature objects (Bio::SeqFeature objects,
+or more correctly, Bio::FeatureHolderI implementing objects, of which
+Bio::SeqFeature is one such object). If you want to know what to do with a
+Bio::SeqFeatureI object, read Bio::SeqFeatureI.
+
+The idea is that you request a stream object for a particular format. All the
+stream objects have a notion of an internal file that is read from or written
+to. A particular FeatureIO object instance is configured for either input or
+output. A specific example of a stream object is the Bio::FeatureIO::gff object.
+
+WWW: http://search.cpan.org/dist/Bio-FeatureIO/
