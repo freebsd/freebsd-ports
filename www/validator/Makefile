@@ -3,14 +3,16 @@
 
 PORTNAME=	validator
 PORTVERSION=	1.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
-MASTER_SITES=	http://validator.w3.org/dist/ \
-		http://www.cyberbotx.com/w3c-validator/
-DISTFILES=	validator-${PORTVERSION:S/./_/g}.tar.gz sgml-lib-${PORTVERSION:S/./_/g}.tar.gz
 
 MAINTAINER=	cyberbotx@cyberbotx.com
 COMMENT=	Markup Validation Service from the World Wide Web Consortium (W3C)
+
+LICENSE=	W3C2002
+LICENSE_NAME=	W3C Software Notice and License (2002/12/31)
+LICENSE_TEXT=	See https://www.w3.org/Consortium/Legal/2002/copyright-software-20021231
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 RUN_DEPENDS=	onsgmls:textproc/opensp \
 		p5-CGI.pm>=0:www/p5-CGI.pm \
@@ -27,6 +29,10 @@ RUN_DEPENDS=	onsgmls:textproc/opensp \
 		p5-URI>=0:net/p5-URI \
 		p5-XML-LibXML>=0:textproc/p5-XML-LibXML
 
+USE_GITHUB=	yes
+GH_ACCOUNT=	w3c
+GH_PROJECT=	markup-validator
+GH_TAGNAME=	${PORTNAME}-${PORTVERSION:S,.,_,}-release
 USES=		perl5 shebangfix
 NO_ARCH=	yes
 NO_BUILD=	yes
