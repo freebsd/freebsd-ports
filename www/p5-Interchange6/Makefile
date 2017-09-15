@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	hvo.pm@xs4all.nl
 COMMENT=	Open Source Shop Machine
 
-LICENSE=	ART10 GPLv1
+LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Interchange6-Schema>=0:databases/p5-Interchange6-Schema \

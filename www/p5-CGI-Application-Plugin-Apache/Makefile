@@ -17,7 +17,7 @@ BUILD_DEPENDS=	p5-CGI-Application>=3.22:www/p5-CGI-Application \
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 LICENSE_COMB=	dual
-LICENSE=	ART10 GPLv1
+LICENSE=	ART10 GPLv1+
 
 USES=		perl5
 USE_PERL5=	modbuild

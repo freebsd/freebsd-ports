@@ -12,7 +12,7 @@ MAINTAINER=	matthew@FreeBSD.org
 COMMENT=	RT extension to import users from an LDAP store
 
 LICENSE_COMB=	dual
-LICENSE=	ART10 GPLv1
+LICENSE=	ART10 GPLv1+
 
 BUILD_DEPENDS=	p5-perl-ldap>0:net/p5-perl-ldap \
 		p5-Class-Accessor>0:devel/p5-Class-Accessor

@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	Alan@Wave2.org
 COMMENT=	Upgrade and downgrade database schemas to a specified version
 
-LICENSE=	ART10 GPLv1
+LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-DBD-SQLite>=1.31:databases/p5-DBD-SQLite \

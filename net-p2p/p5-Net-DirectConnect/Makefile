@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	proler@gmail.com
 COMMENT=	Perl Direct Connect lib and client
 
-LICENSE=	ART10 GPLv1
+LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-DBD-SQLite>=0:databases/p5-DBD-SQLite \

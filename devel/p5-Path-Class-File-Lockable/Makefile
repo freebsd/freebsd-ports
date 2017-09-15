@@ -12,7 +12,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ml+freebsd@tatsuya.info
 COMMENT=	Lock your files with Path::Class::File
 
-LICENSE=	ART10 GPLv1
+LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-File-NFSLock>0:devel/p5-File-NFSLock \

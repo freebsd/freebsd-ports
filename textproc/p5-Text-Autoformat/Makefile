@@ -13,7 +13,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:C/0\.(000)$//}
 MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	Automatic and manual text wrapping and reformating formatting
 
-LICENSE=	ART10 GPLv1
+LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Text-Reform>=1.11:textproc/p5-Text-Reform

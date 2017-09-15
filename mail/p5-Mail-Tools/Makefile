@@ -11,7 +11,7 @@ DISTNAME=	MailTools-${PORTVERSION}
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl5 modules for dealing with Internet e-mail messages
 
-LICENSE=	ART10 GPLv1
+LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 RUN_DEPENDS=	p5-TimeDate>=0:devel/p5-TimeDate

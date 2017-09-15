@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Application agent for working with File::KeePass objects
 
-LICENSE=	ART10 GPLv1
+LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-File-KeePass>=2.03:security/p5-File-KeePass \

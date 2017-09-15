@@ -13,7 +13,7 @@ COMMENT=	Perl implementation of a DHCP client API
 
 RUN_DEPENDS=	p5-Net-RawIP>=0:net/p5-Net-RawIP
 
-LICENSE=	ART10 GPLv1
+LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 USES=		perl5

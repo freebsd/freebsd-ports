@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	Olivier.Girard@univ-angers.fr
 COMMENT=	Deal with RFC 2047 encoded words (improved)
 
-LICENSE=	ART10 GPLv1
+LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-MIME-Charset>=1.010.1:mail/p5-MIME-Charset

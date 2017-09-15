@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ivan@serezhkin.com
 COMMENT=	Collection of handy Perl::Critic policies
 
-LICENSE=	ART10 GPLv1
+LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Perl-Critic>=0:textproc/p5-Perl-Critic

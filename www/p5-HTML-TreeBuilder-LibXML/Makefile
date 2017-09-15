@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	markun@onohara.to
 COMMENT=	HTML::TreeBuilder::XPath compatible interface with libxml
 
-LICENSE=	ART10 GPLv1
+LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 # Do not add p5-Web-Query and p5-Web-Scraper to TEST_DEPENDS to avoid cyclic dependency loop
