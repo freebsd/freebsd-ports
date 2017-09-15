@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pgcli
-PORTVERSION=	1.7.0
+PORTVERSION=	1.8.0
 CATEGORIES=	databases python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -22,8 +22,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cli-helpers>=0.2.0:devel/py-cli-helpers \
 		${PYTHON_PKGNAMEPREFIX}psycopg2>=2.5.4:databases/py-psycopg2 \
 		${PYTHON_PKGNAMEPREFIX}pygments>=2.0:textproc/py-pygments \
 		${PYTHON_PKGNAMEPREFIX}setproctitle>=1.1.9:devel/py-setproctitle \
-		${PYTHON_PKGNAMEPREFIX}sqlparse>=0.2.2:databases/py-sqlparse \
-		${PYTHON_PKGNAMEPREFIX}wcwidth>=0.1.6:devel/py-wcwidth
+		${PYTHON_PKGNAMEPREFIX}sqlparse>=0.2.2:databases/py-sqlparse
 
 NO_ARCH=	yes
 USE_PYTHON=	autoplist concurrent distutils
