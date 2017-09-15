@@ -13,7 +13,7 @@ EXTRACT_SUFX=	# empty
 MAINTAINER=	yasu@utahime.org
 COMMENT=	Subversion interface for Emacs
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
 
 RUN_DEPENDS=	svn:devel/subversion
 
