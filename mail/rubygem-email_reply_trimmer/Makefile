@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	email_reply_trimmer
-PORTVERSION=	0.1.7
+PORTVERSION=	0.1.8
 CATEGORIES=	mail rubygems
 MASTER_SITES=	RG
 
