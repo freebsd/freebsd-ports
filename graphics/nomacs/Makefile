@@ -1,42 +1,37 @@
 # $FreeBSD$
 
 PORTNAME=	nomacs
-PORTVERSION=	2.2.0
-PORTREVISION=	8
+PORTVERSION=	3.6.1
 CATEGORIES=	graphics
-MASTER_SITES=	SF/nomacs/nomacs-${PORTVERSION}/
-DISTNAME=	${PORTNAME}-${PORTVERSION}-source
 
 MAINTAINER=	bsd@tuxproject.de
 COMMENT=	Small, fast, and free image viewer
 
 LICENSE=	GPLv3
 
-BROKEN=		Does not build with CMake 3.9, needs update
-
 LIB_DEPENDS=	libexiv2.so:graphics/exiv2 \
 		libsysinfo.so:devel/libsysinfo \
-		libopencv_core.so:graphics/opencv-core
-USES=		cmake desktop-file-utils dos2unix pkgconfig tar:bzip2
-USE_QT4=	gui network linguist_build moc_build \
-		qmake_build rcc_build uic_build
-DOS2UNIX_REGEX=	.*\.(cpp|h|txt)
+		libopencv_highgui.so:graphics/opencv \
+		libopencv_core.so:graphics/opencv-core \
+		liblcms2.so:graphics/lcms2 \
+		libtbb.so:devel/tbb
 
-WRKTOP=		${WRKDIR}
-WRKSUBDIR=	${DISTNAME:S,-source,,}
-WRKSRC=		${WRKTOP}/${WRKSUBDIR}
+USES=		cmake desktop-file-utils dos2unix pkgconfig tar:bzip2
+USE_QT5=        concurrent core gui network printsupport svg widgets \
+		buildtools_build linguisttools_build qmake_build
+
+DOS2UNIX_REGEX=	.*\.(cpp|h|txt)
 
 OPTIONS_DEFINE=	RAW TIFF
 OPTIONS_DEFAULT=	RAW TIFF
 
 RAW_LIB_DEPENDS=	libraw.so:graphics/libraw
-RAW_CMAKE_OFF=		-DENABLE_RAW=0
+RAW_CMAKE_BOOL=		ENABLE_RAW
 
 TIFF_LIB_DEPENDS=	libtiff.so:graphics/tiff
-TIFF_CMAKE_OFF=		-DENABLE_TIFF=0
+TIFF_CMAKE_BOOL=		ENABLE_TIFF
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|share/man/man1|man/man1|' \
-		${WRKSRC}/CMakeLists.txt
+USE_GITHUB=	yes
+WRKSRC_SUBDIR=	ImageLounge
 
 .include <bsd.port.mk>
