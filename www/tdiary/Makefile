@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME}-full-v${PORTVERSION}
 MAINTAINER=	yasu@utahime.org
 COMMENT=	Web-based diary system (like weblog) written in Ruby
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-bundler>=1.14.6:sysutils/rubygem-bundler \
