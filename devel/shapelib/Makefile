@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	shapelib
-PORTVERSION=	1.4.0
+PORTVERSION=	1.4.1
 CATEGORIES=	devel geography
 MASTER_SITES=	http://download.osgeo.org/shapelib/ \
 		ftp://ftp.remotesensing.org/shapelib/ \
@@ -12,6 +12,7 @@ MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	C API for reading and writing ArcView Shapefiles
 
 LICENSE=	LGPL20
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 OPTIONS_DEFINE=	DOCS PROJ
 OPTIONS_SUB=	yes
@@ -21,8 +22,6 @@ GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 USES=		libtool localbase pathfix
-
-PORTDOCS=	*
 
 PROJ_CONFIGURE_OFF=	--with-proj-cflags="" --with-proj-libs=""
 PROJ_LIB_DEPENDS=	libproj.so:graphics/proj
