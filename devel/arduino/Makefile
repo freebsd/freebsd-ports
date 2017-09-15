@@ -9,7 +9,7 @@ CATEGORIES=	devel java lang
 MASTER_SITES=	http://arduino.cc/download.php?f=/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-linux32
 
-MAINTAINER=	leres@ee.lbl.gov
+MAINTAINER=	leres@FreeBSD.org
 COMMENT=	Open-source electronics prototyping platform
 
 LICENSE=	GPLv2 LGPL21
