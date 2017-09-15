@@ -9,7 +9,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	pi@FreeBSD.org
 COMMENT=	Test network connectivity before functional tests
 
-LICENSE=	ART10 GPLv1
+LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 USES=	perl5

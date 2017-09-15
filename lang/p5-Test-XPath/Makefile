@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Test XML and HTML content and structure with XPath expressions
 
-LICENSE=	ART10 GPLv1
+LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 RUN_DEPENDS=	p5-XML-LibXML>=1.70:textproc/p5-XML-LibXML

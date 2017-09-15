@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	hvo.pm@xs4all.nl
 COMMENT=	DBIx::Class interface for Dancer2 applications
 
-LICENSE=	ART10 GPLv1
+LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-DBIx-Class>=0:databases/p5-DBIx-Class\

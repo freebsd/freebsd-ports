@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Fine grained cloning support for Moose objects
 
-LICENSE=	ART10 GPLv1
+LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 RUN_DEPENDS=	p5-Data-Visitor>=0.24:devel/p5-Data-Visitor \

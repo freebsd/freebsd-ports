@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	Olivier.Girard@univ-angers.fr
 COMMENT=	Charset Informations for MIME
 
-LICENSE=	ART10 GPLv1
+LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 NO_ARCH=	yes

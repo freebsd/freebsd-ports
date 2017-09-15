@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	slaven@rezic.de
 COMMENT=	Perl module that changes configuration of a running xterm
 
-LICENSE=	ART10 GPLv1
+LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Term-ReadKey>=2.32:devel/p5-Term-ReadKey

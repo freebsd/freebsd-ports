@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	dgeo@centrale-marseille.fr
 COMMENT=	Abstract implementation of the cron(8) scheduling algorithm
 
-LICENSE=	ART10 GPLv1
+LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS:=	p5-Time-timegm>=0:devel/p5-Time-timegm

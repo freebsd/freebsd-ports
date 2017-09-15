@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	douglas@douglasthrift.net
 COMMENT=	Perl cross-platform interface to ICMP "ping" utilities
 
-LICENSE=	ART10 GPLv1
+LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 USES=		perl5

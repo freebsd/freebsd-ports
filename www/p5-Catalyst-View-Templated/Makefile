@@ -12,7 +12,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Generic base class for template-based views
 
-LICENSE=	ART10 GPLv1
+LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Catalyst-Component-ACCEPT_CONTEXT>=0:www/p5-Catalyst-Component-ACCEPT_CONTEXT \

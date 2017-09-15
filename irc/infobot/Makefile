@@ -11,7 +11,7 @@ MASTER_SITES=	http://www.infobot.org/src/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Bot written in Perl with a rabid AI
 
-LICENSE=	ART10 GPLv1
+LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 USES=		perl5 shebangfix

@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	anes@anes.su
 COMMENT=	Custom prefetches for DBIx::Class
 
-LICENSE=	ART10 GPLv1
+LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Module-Load>=0:devel/p5-Module-Load \

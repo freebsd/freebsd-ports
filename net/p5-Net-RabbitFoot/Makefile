@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	bill.brinzer@gmail.com
 COMMENT=	Synchronous interface to AnyEvent::RabbitMQ
 
-LICENSE=	ART10 GPLv1
+LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-AnyEvent-RabbitMQ>=0:net/p5-AnyEvent-RabbitMQ \

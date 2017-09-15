@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	hvo.pm@xs4all.nl
 COMMENT=	List a directory using Path::Class
 
-LICENSE=	ART10 GPLv1
+LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 TEST_DEPENDS=	p5-Path-Tiny>=0:devel/p5-Path-Tiny

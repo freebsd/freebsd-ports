@@ -9,7 +9,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	eserte12@yahoo.de
 COMMENT=	Perl module implementing fast binary heaps/priority queues
 
-LICENSE=	ART10 GPLv1
+LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Canary-Stability>=0:devel/p5-Canary-Stability

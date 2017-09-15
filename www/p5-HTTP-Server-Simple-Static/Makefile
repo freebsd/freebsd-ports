@@ -9,7 +9,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Serve static files with HTTP::Server::Simple
 
-LICENSE=	ART10 GPLv1
+LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 RUN_DEPENDS=	p5-File-LibMagic>=0:devel/p5-File-LibMagic \

@@ -12,7 +12,7 @@ DISTNAME=	PerlVision-${PORTVERSION}
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Perl5 library for text-mode user interface widgets
 
-LICENSE=	ART10 GPLv1
+LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 RUN_DEPENDS=	p5-Curses>=0:devel/p5-Curses

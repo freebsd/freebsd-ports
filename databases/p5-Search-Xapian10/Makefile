@@ -12,7 +12,7 @@ PKGNAMESUFFIX=	10
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl XS frontend to the Xapian C++ search library
 
-LICENSE=	ART10 GPLv1
+LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	xapian-core10>=1.0.22:databases/xapian-core10
