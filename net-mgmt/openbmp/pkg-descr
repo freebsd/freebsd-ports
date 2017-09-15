@@ -1,0 +1,6 @@
+OpenBMP is part of the Open BGP Monitoring Protocol collection framework.
+OpenBMP is an open source project that implements draft-ietf-grow-bmp-17.
+BMP protocol version 3 is defined in draft 08, while versions 1 and 2 are
+defined in the previous revisions of the draft.
+
+WWW: https://github.com/OpenBMP/openbmp
