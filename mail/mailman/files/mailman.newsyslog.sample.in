@@ -1,0 +1,11 @@
+# logfilename				[owner:group]   mode count	size when	flags	[/pid_file] [sig_num]
+%%MAILMANDIR%%/logs/bounce		%%USER%%:%%GROUP%%	660  10		2000 *		X	%%MAILMANDIR%%/data/master-qrunner.pid
+%%MAILMANDIR%%/logs/error		%%USER%%:%%GROUP%% 660  10		2000 *		X	%%MAILMANDIR%%/data/master-qrunner.pid
+%%MAILMANDIR%%/logs/locks		%%USER%%:%%GROUP%% 660  10		2000 *		X	%%MAILMANDIR%%/data/master-qrunner.pid
+%%MAILMANDIR%%/logs/mischief	%%USER%%:%%GROUP%% 660  10		2000 *		X	%%MAILMANDIR%%/data/master-qrunner.pid
+%%MAILMANDIR%%/logs/post		%%USER%%:%%GROUP%% 660  10		2000 *		X	%%MAILMANDIR%%/data/master-qrunner.pid
+%%MAILMANDIR%%/logs/qrunner		%%USER%%:%%GROUP%% 660  10		2000 *		X	%%MAILMANDIR%%/data/master-qrunner.pid
+%%MAILMANDIR%%/logs/smtp		%%USER%%:%%GROUP%% 660  10		2000 *		X	%%MAILMANDIR%%/data/master-qrunner.pid
+%%MAILMANDIR%%/logs/smtp-failure	%%USER%%:%%GROUP%% 660  10		2000 *		X	%%MAILMANDIR%%/data/master-qrunner.pid
+%%MAILMANDIR%%/logs/subscribe	%%USER%%:%%GROUP%% 660  10		2000 *		X	%%MAILMANDIR%%/data/master-qrunner.pid
+%%MAILMANDIR%%/logs/vette		%%USER%%:%%GROUP%% 660  10		2000 *		X	%%MAILMANDIR%%/data/master-qrunner.pid
