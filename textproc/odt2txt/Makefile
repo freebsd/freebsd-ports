@@ -14,12 +14,12 @@ LICENSE_FILE=	${WRKSRC}/GPL-2
 
 USES=		gmake iconv localbase
 
+USE_HARDENING=	relro
+
 PLIST_FILES=	bin/odt2txt man/man1/odt2txt.1.gz
 
 GH_ACCOUNT=	dstosberg
 USE_GITHUB=	yes
-
-NOPIE_PORTS=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g; s|-liconv|${ICONV_LIB}|' ${WRKSRC}/Makefile

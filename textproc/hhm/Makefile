@@ -14,9 +14,9 @@ LIB_DEPENDS=	liblzxcomp.so:archivers/liblzxcomp
 USES=		uidfix
 MAKEFILE=	${FILESDIR}/Makefile
 
-PLIST_FILES=	bin/hhm
+USE_HARDENING=	relro
 
-NOPIE_PORTS=	yes
+PLIST_FILES=	bin/hhm
 
 post-patch:
 	${REINPLACE_CMD} -e 's!^typedef unsigned.*$$!!' ${WRKSRC}/hhm.c

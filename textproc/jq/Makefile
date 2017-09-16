@@ -24,7 +24,7 @@ USE_LDCONFIG=	yes
 USES=		gmake libtool
 INSTALL_TARGET=	install-strip
 
-NOPIE_PORTS=	yes
+USE_HARDENING=	relro
 
 PORTDOCS=	*
 

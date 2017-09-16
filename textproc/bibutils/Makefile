@@ -13,7 +13,7 @@ LICENSE=	GPLv2
 
 USES=	gmake tar:tgz
 
-NOPIE_PORTS=	yes
+USE_HARDENING=	relro
 
 WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION}
 
