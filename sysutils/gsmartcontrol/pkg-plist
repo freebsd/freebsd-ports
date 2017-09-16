@@ -1,7 +1,7 @@
-bin/gsmartcontrol
 bin/gsmartcontrol-root
 man/man1/gsmartcontrol-root.1.gz
 man/man1/gsmartcontrol.1.gz
+sbin/gsmartcontrol
 share/applications/gsmartcontrol.desktop
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS.txt
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
@@ -25,3 +25,4 @@ share/icons/hicolor/64x64/apps/gsmartcontrol.png
 share/metainfo/gsmartcontrol.appdata.xml
 share/pixmaps/gsmartcontrol.png
 share/pixmaps/gsmartcontrol.xpm
+share/polkit-1/actions/org.gsmartcontrol.policy
