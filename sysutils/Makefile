@@ -312,7 +312,7 @@
     SUBDIR += ffs2recov
     SUBDIR += file
     SUBDIR += filedupe
-    SUBDIR += filelight-kde4
+    SUBDIR += filelight
     SUBDIR += fileprune
     SUBDIR += fileschanged
     SUBDIR += filetype
