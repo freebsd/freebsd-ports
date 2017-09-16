@@ -2,18 +2,18 @@
 # $FreeBSD$
 
 PORTNAME=	exiftran
-DISTNAME=	fbida-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}
 PORTVERSION=	2.12
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.kraxel.org/releases/fbida/
+DISTNAME=	fbida-${PORTVERSION}
 
 MAINTAINER=	mm@FreeBSD.org
 COMMENT=	Command line utility to transform jpeg files
 
-LIB_DEPENDS=	libexif.so:graphics/libexif
-
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+LIB_DEPENDS=	libexif.so:graphics/libexif
 
 USES=		jpeg uidfix
 MAKE_ARGS+=	WRKSRC=${WRKSRC} BINDIR=${PREFIX}/bin MANDIR=${MANPREFIX}/man
@@ -30,7 +30,7 @@ post-patch:
 		${WRKSRC}/build/thumbnail.cgi/Makefile
 
 post-install:
-	@${INSTALL_MAN} ${WRKSRC}/exiftran.man \
+	${INSTALL_MAN} ${WRKSRC}/exiftran.man \
 		${STAGEDIR}${PREFIX}/man/man1/exiftran.1
 
 .include <bsd.port.mk>
