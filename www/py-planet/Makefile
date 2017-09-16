@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	planet
-PORTVERSION=	1.0.1
+PORTVERSION=	1.1.0
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,6 +16,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}click>=0:devel/py-click \
 		${PYTHON_PKGNAMEPREFIX}requests>=0:www/py-requests \
 		${PYTHON_PKGNAMEPREFIX}requests-futures>=0:www/py-requests-futures
 
+NO_ARCH=	yes
 USE_PYTHON=	autoplist concurrent distutils
 USES=		python
 
