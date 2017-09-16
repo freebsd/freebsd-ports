@@ -1,9 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	qbs
-PORTVERSION=	1.8.1
-PORTREVISION=	1
 DISTVERSIONPREFIX=	src-
+DISTVERSION=	1.9.0
 CATEGORIES=	devel
 MASTER_SITES=	QT/official_releases/${PORTNAME}/${PORTVERSION}
 DIST_SUBDIR=	KDE/Qt/qbs
@@ -14,11 +13,13 @@ COMMENT=	Qt Build Suite
 LICENSE=	GPLv3 LGPL21
 LICENSE_COMB=	dual
 
-USES=		compiler:c++11-lib qmake:outsource
+USES=		compiler:c++11-lib python:run qmake:outsource shebangfix
 USE_GL=		gl
 USE_LDCONFIG=	yes
 USE_QT5=	buildtools_build core concurrent gui network script testlib \
 		widgets xml
+
+SHEBANG_FILES=	src/3rdparty/python/bin/dmgbuild
 
 QMAKE_SOURCE_PATH=	${WRKSRC}/qbs.pro
 
@@ -34,6 +35,8 @@ DOCS_INSTALL_TARGET=	install_docs
 
 PLIST_SUB=		SHLIB_VERSION="${PORTVERSION}"
 
+WRKSRC=			${WRKDIR}/dist/${DISTNAME}
+
 pre-configure:
 # We piggyback on QMAKE_LIBDIR_FLAGS to make sure -L${WRKSRC}/lib is passed to
 # the linker before -L/usr/local/lib. By default, the opposite happens, which
@@ -46,7 +49,7 @@ pre-configure:
 	${MKDIR} ${CONFIGURE_WRKSRC}
 	${ECHO_CMD} 'QMAKE_LIBDIR_FLAGS = -L${CONFIGURE_WRKSRC}/lib' >> ${CONFIGURE_WRKSRC}/.qmake.cache
 
-# The file in question is not used on FreeBSD. To silence stage-qa, remove it from stage-dir. 
+# The file in question is not used on FreeBSD. To silence stage-qa, remove it from stage-dir.
 post-install:
 	${RM} ${STAGEDIR}${DATADIR}/modules/bundle/update-specs.sh
 
