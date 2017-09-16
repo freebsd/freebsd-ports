@@ -2,4 +2,4 @@ The GNOME Accessibility Toolkit (ATK) contains accessibility widgets,
 just like GTK contains GUI element widgets.  However, ATK's widgets
 are platform-independent, so they can be used with Qt, Motif, etc.
 
-WWW: http://developer.gnome.org/projects/gap/
+WWW: https://developer.gnome.org/atk/
