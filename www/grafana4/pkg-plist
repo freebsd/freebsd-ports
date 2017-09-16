@@ -7,7 +7,7 @@ bin/grafana-server
 %%DATADIR%%/public/app/app.js.map
 %%DATADIR%%/public/app/app.ts
 %%DATADIR%%/public/app/app_bundle.js
-%%DATADIR%%/public/app/boot.74ebeed4.js
+%%DATADIR%%/public/app/boot.07485e0c.js
 %%DATADIR%%/public/app/boot.js
 %%DATADIR%%/public/app/core/app_events.d.ts
 %%DATADIR%%/public/app/core/app_events.js
@@ -1307,14 +1307,14 @@ bin/grafana-server
 %%DATADIR%%/public/css/fonts.min.css.map
 %%DATADIR%%/public/css/grafana.dark.css
 %%DATADIR%%/public/css/grafana.dark.css.map
-%%DATADIR%%/public/css/grafana.dark.min.4ef341a4.css
-%%DATADIR%%/public/css/grafana.dark.min.4ef341a4.css.map
+%%DATADIR%%/public/css/grafana.dark.min.af13213c.css
+%%DATADIR%%/public/css/grafana.dark.min.af13213c.css.map
 %%DATADIR%%/public/css/grafana.dark.min.css
 %%DATADIR%%/public/css/grafana.dark.min.css.map
 %%DATADIR%%/public/css/grafana.light.css
 %%DATADIR%%/public/css/grafana.light.css.map
-%%DATADIR%%/public/css/grafana.light.min.4c4f8ca2.css
-%%DATADIR%%/public/css/grafana.light.min.4c4f8ca2.css.map
+%%DATADIR%%/public/css/grafana.light.min.c5edc7d4.css
+%%DATADIR%%/public/css/grafana.light.min.c5edc7d4.css.map
 %%DATADIR%%/public/css/grafana.light.min.css
 %%DATADIR%%/public/css/grafana.light.min.css.map
 %%DATADIR%%/public/dashboards/default.json
