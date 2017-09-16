@@ -1,6 +1,6 @@
---- scripts/pkginstall.sh.orig	2007-01-16 19:14:46.000000000 +0900
-+++ scripts/pkginstall.sh	2014-03-10 15:36:47.962245461 +0900
-@@ -52,7 +52,7 @@
+--- scripts/pkginstall.sh.orig	2007-01-16 10:14:46 UTC
++++ scripts/pkginstall.sh
+@@ -52,7 +52,7 @@ find_origins() {
  
  	# pkg_info might fail if the listed package isn't present
  	set +e
@@ -9,7 +9,7 @@
  	retval=$?
  	set -e
  	if [ ${retval} -eq 0 ]; then
-@@ -84,7 +84,7 @@
+@@ -84,7 +84,7 @@ find_deps() {
      touch deps
      echo -n "Finding dependencies... "
      while read pkg; do
@@ -18,7 +18,7 @@
  	for dep in ${deps}; do
  	    echo ${dep} >> tmp_deps
  	done      
-@@ -142,7 +142,7 @@
+@@ -142,7 +142,7 @@ copy_packages() {
      export PACKAGE_BUILDING=yo
      chrootpkgpath=${CHROOTWD#$BASEDIR}
      pkgfile=${WORKDIR}/sortpkg
@@ -27,7 +27,7 @@
      totpkg=$(wc -l $pkgfile | awk '{print $1}')
      echo "Copying ${totpkg} packages"
      cd ${CHROOTWD}
-@@ -159,7 +159,11 @@
+@@ -159,7 +159,11 @@ copy_packages() {
  	count=$((${count} + 1))
  
  	echo "Running pkg_create -b ${pkg} ${CHROOTWD}/${pkg}.tar" >> ${LOGFILE}
@@ -40,7 +40,7 @@
  
  	echo "Running $pkgaddcmd ${chrootpkgpath}/${pkg}.tar" >> ${LOGFILE}
  	$pkgaddcmd ${chrootpkgpath}/${pkg}.tar >> ${LOGFILE} 2>&1
-@@ -168,12 +172,17 @@
+@@ -168,12 +172,17 @@ copy_packages() {
  
      done < $pkgfile
      echo "]"
@@ -59,32 +59,3 @@
  }
  
  # Deletes workdirs
---- scripts/pkgselect.sh.orig	2014-02-16 02:43:17.000000000 +0000
-+++ scripts/pkgselect.sh	2014-02-25 20:55:34.000000000 +0000
-@@ -21,7 +21,7 @@
- 
- # Check if there are packages installed on the system
- check_pkgs() {
--    count=$(pkg_info -Qoa | wc -l)
-+    count=$(pkg query -a "%n-%v:%o" | wc -l)
-     if [ ${count} -eq 0 ]; then
- 	/usr/bin/dialog --title "FreeSBIE Packages selection" --clear \
- 	--msgbox "Sorry, you don't have any packages installed.\n\nPlease install at least the packages you want\nto include in your distribution." 10 50
-@@ -40,7 +40,7 @@
-     # Create a different file for each category. Each row in each file
-     # will look like:
-     # PKGNAME PKGNAME-version    
--    pkg_info -Qoa | awk \
-+    pkg query -a "%n-%v:%o" | awk \
- ' BEGIN { FS=":|/" } 
- { 
-     a=$1;
-@@ -63,7 +63,7 @@
- 
- 	    # pkg_info might fail if the listed package isn't present
- 	    set +e
--	    origins=$(pkg_info -QoX "^$(escape_pkg ${pkg})($|-[^-]+$)")
-+	    origins=$(pkg query -x "%n-%v:%o" "^$(escape_pkg ${pkg})($|-[^-]+$)")
- 	    retval=$?
- 	    set -e
- 	    if [ ${retval} -eq 0 ]; then

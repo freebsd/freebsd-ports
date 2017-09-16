@@ -3,6 +3,7 @@
 PORTNAME=	mastodon
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.6.0
+PORTREVISION=	1
 CATEGORIES=	net-im www
 
 MAINTAINER=	jrm@FreeBSD.org
@@ -140,13 +141,11 @@ do-install:
 	${INSTALL_DATA} ${WRKDIR}/nginx-include.conf \
 		${STAGEDIR}${WWWDIR}/nginx-include.conf.sample
 	${INSTALL_DATA} ${WRKSRC}/.env.production.sample ${WRKSRC}/app.json \
-			${WRKSRC}/config.ru ${WRKSRC}/Gemfile \
-			${WRKSRC}/LICENSE ${WRKSRC}/package.json \
-			${WRKSRC}/Rakefile \
+			${WRKSRC}/config.ru ${WRKSRC}/Gemfile ${WRKSRC}/LICENSE \
+			${WRKSRC}/package.json ${WRKSRC}/Rakefile \
 		${STAGEDIR}${WWWDIR}
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} \
-		"app config db lib log node_modules public spec \
-		streaming vendor" \
+		"app bin config db lib log node_modules public spec streaming vendor" \
 		${STAGEDIR}${WWWDIR})
 
 .include <bsd.port.pre.mk>

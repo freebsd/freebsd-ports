@@ -3,7 +3,7 @@
 
 PORTNAME=	mailman
 DISTVERSION=	2.1.24
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	GNU \
 		SF/${PORTNAME}/Mailman%202.1%20%28stable%29/${PORTVERSION} \
@@ -57,7 +57,7 @@ GROUPS=		${MM_GROUPNAME}
 
 MAILMANDIR=	${PREFIX}/${MM_DIR}
 PLIST_SUB=	MMDIR=${MM_DIR} IMGDIR=${IMGDIR} MM_USERNAME=${MM_USERNAME} MM_GROUPNAME=${MM_GROUPNAME}
-SUB_FILES=	pkg-message pkg-install pkg-deinstall
+SUB_FILES=	pkg-message pkg-install pkg-deinstall mailman.newsyslog.sample
 SUB_LIST=	MAILMANDIR=${MAILMANDIR} USER=${MM_USERNAME} GROUP=${MM_GROUPNAME} PYTHON_CMD="${PYTHON_CMD}"
 
 PORTDOCS=	ACKNOWLEDGMENTS BUGS FAQ INSTALL NEWS README README-I18N.en \
@@ -82,6 +82,12 @@ NAMAZU2_DESC=	Make private archives searchable with namazu2
 MTA_DESC=	Integrate with which MTA?
 
 .include <bsd.port.options.mk>
+
+# enforce EXAMPLES option, necessary so that @sample
+# can install the newsyslog file
+.if empty(PORT_OPTIONS:MEXAMPLES)
+PORT_OPTIONS+=	EXAMPLES
+.endif
 
 .if ${PORT_OPTIONS:MNLS}
 USES+=		gettext
@@ -170,6 +176,8 @@ pre-configure:
 .endif
 
 post-install:
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKDIR}/mailman.newsyslog.sample ${STAGEDIR}${EXAMPLESDIR}
 .for i in admindb admin confirm create edithtml listinfo options private \
 	rmlist roster subscribe
 	${STRIP_CMD} ${STAGEDIR}${MAILMANDIR}/cgi-bin/${i}
