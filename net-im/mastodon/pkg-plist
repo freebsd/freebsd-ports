@@ -139,6 +139,7 @@
 @dir %%WWWDIR%%/app/workers/admin
 @dir %%WWWDIR%%/app/workers/pubsubhubbub
 @dir %%WWWDIR%%/app/workers/scheduler
+@dir %%WWWDIR%%/bin
 @dir %%WWWDIR%%/config
 @dir %%WWWDIR%%/config/environments
 @dir %%WWWDIR%%/config/initializers
@@ -3250,6 +3251,14 @@
 %%WWWDIR%%/app/workers/unfavourite_worker.rb
 %%WWWDIR%%/app/workers/unmerge_worker.rb
 %%WWWDIR%%/app/workers/web_push_notification_worker.rb
+%%WWWDIR%%/bin/bundle
+%%WWWDIR%%/bin/rails
+%%WWWDIR%%/bin/rake
+%%WWWDIR%%/bin/rspec
+%%WWWDIR%%/bin/setup
+%%WWWDIR%%/bin/update
+%%WWWDIR%%/bin/webpack
+%%WWWDIR%%/bin/webpack-dev-server
 %%WWWDIR%%/config.ru
 %%WWWDIR%%/config/application.rb
 %%WWWDIR%%/config/boot.rb
