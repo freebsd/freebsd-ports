@@ -31,10 +31,9 @@ ALL_TARGET=	all
 INSTALL_TARGET=	rename
 EXTRACT_AFTER_ARGS=--exclude fftw --exclude windows --exclude macosx
 
-SUB_FILES=	pkg-message
+USE_HARDENING=	# empty
 
-NOPIE_PORTS=	yes
-NORELRO_PORTS=	yes
+SUB_FILES=	pkg-message
 
 .include <bsd.port.options.mk>
 

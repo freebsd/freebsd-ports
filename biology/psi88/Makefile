@@ -14,14 +14,14 @@ COMMENT=	Plotting wavefunctions (molecular orbitals) in 3D
 USES=		fortran tar:Z
 MAKE_ARGS=	BIN=${STAGEDIR}${PREFIX}/bin
 
+USE_HARDENING=	relro
+
 PLIST_FILES=	bin/PSI1 bin/PSICON bin/PSI2CT bin/PSI2HP bin/PSI2PS bin/PSI2 \
 		bin/PREPLOT bin/preplot bin/rpsi1 bin/rpsi2 bin/rpsicon
 PORTDOCS=	README psi88.doc
 PORTEXAMPLES=	*
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
-
-NOPIE_PORTS=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's/f77/$${FC}/' -e 's/LFLAGS/LDFLAGS/' \

@@ -15,9 +15,9 @@ ONLY_FOR_ARCHS=	amd64 i386
 
 USES=		cmake:outsource
 
-CFLAGS+=	-DNDEBUG
+USE_HARDENING=	relro
 
-NOPIE_PORTS=	yes
+CFLAGS+=	-DNDEBUG
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	bbuchfink

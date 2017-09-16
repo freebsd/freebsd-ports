@@ -17,7 +17,7 @@ MAKE_ARGS=	CC="${CC}" CPP="${CXX}"
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 PLIST_FILES=	bin/primer3
 
-NOPIE_PORTS=	yes
+USE_HARDENING=	relro
 
 post-patch:
 	@${REINPLACE_CMD} \
