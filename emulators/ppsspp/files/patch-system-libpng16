@@ -1,7 +1,5 @@
 Make build glue accept libpng 1.6.x and don't hardcode suffix
 
-One hunk in src/CMakeLists.txt was added to fix target generation with ninja.
-
 --- CMakeLists.txt.orig	2017-05-27 09:58:05 UTC
 +++ CMakeLists.txt
 @@ -582,9 +582,10 @@ else()
@@ -18,22 +16,6 @@ One hunk in src/CMakeLists.txt was added to fix target generation with ninja.
  find_package(PackageHandleStandardArgs)
  find_package_handle_standard_args(PNG REQUIRED_VARS PNG_LIBRARY PNG_PNG_INCLUDE_DIR)
  if (PNG_FOUND)
-@@ -1618,12 +1619,11 @@ endif()
- 
- setup_target_project(${CoreLibName} Core)
- 
--# Generate git-version.cpp at build time.
--add_custom_target(GitVersion ALL
--	DEPENDS something_that_never_exists)
--add_custom_command(OUTPUT something_that_never_exists
-+add_custom_command(OUTPUT ${CMAKE_CURRENT_SOURCE_DIR}/git-version.cpp
- 	COMMAND ${CMAKE_COMMAND} -DSOURCE_DIR=${CMAKE_CURRENT_SOURCE_DIR}
- 		-P ${CMAKE_CURRENT_SOURCE_DIR}/git-version.cmake)
-+# Generate git-version.cpp at build time.
-+add_custom_target(GitVersion DEPENDS ${CMAKE_CURRENT_SOURCE_DIR}/git-version.cpp)
- 
- set_source_files_properties(${CMAKE_CURRENT_SOURCE_DIR}/git-version.cpp
- 	PROPERTIES GENERATED TRUE)
 --- Core/Screenshot.cpp.orig	2017-05-27 09:58:05 UTC
 +++ Core/Screenshot.cpp
 @@ -21,7 +21,7 @@
