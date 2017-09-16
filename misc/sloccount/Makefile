@@ -10,6 +10,8 @@ MASTER_SITES=	http://www.dwheeler.com/sloccount/
 MAINTAINER=	freaky@aagh.net
 COMMENT=	Counts physical Source Lines of Code (SLOC)
 
+EXPLICIT_SAFESTACK=	yes
+
 USES=		perl5 shebangfix
 SHEBANG_FILES=	asm_count break_filelist cobol_count count_extensions \
 		f90_count fortran_count generic_count get_sloc \
