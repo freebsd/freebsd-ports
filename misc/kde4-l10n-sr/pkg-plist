@@ -911,7 +911,6 @@ share/locale/sr/LC_MESSAGES/dolphin.mo
 share/locale/sr/LC_MESSAGES/domtreeviewer.mo
 share/locale/sr/LC_MESSAGES/dragonplayer.mo
 share/locale/sr/LC_MESSAGES/drkonqi.mo
-share/locale/sr/LC_MESSAGES/filelight.mo
 share/locale/sr/LC_MESSAGES/filetypes.mo
 share/locale/sr/LC_MESSAGES/freespacenotifier.mo
 share/locale/sr/LC_MESSAGES/fsview.mo
@@ -1614,7 +1613,6 @@ share/locale/sr@ijekavian/LC_MESSAGES/dolphin.mo
 share/locale/sr@ijekavian/LC_MESSAGES/domtreeviewer.mo
 share/locale/sr@ijekavian/LC_MESSAGES/dragonplayer.mo
 share/locale/sr@ijekavian/LC_MESSAGES/drkonqi.mo
-share/locale/sr@ijekavian/LC_MESSAGES/filelight.mo
 share/locale/sr@ijekavian/LC_MESSAGES/filetypes.mo
 share/locale/sr@ijekavian/LC_MESSAGES/freespacenotifier.mo
 share/locale/sr@ijekavian/LC_MESSAGES/fsview.mo
@@ -2317,7 +2315,6 @@ share/locale/sr@ijekavianlatin/LC_MESSAGES/dolphin.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/domtreeviewer.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/dragonplayer.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/drkonqi.mo
-share/locale/sr@ijekavianlatin/LC_MESSAGES/filelight.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/filetypes.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/freespacenotifier.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/fsview.mo
@@ -3020,7 +3017,6 @@ share/locale/sr@latin/LC_MESSAGES/dolphin.mo
 share/locale/sr@latin/LC_MESSAGES/domtreeviewer.mo
 share/locale/sr@latin/LC_MESSAGES/dragonplayer.mo
 share/locale/sr@latin/LC_MESSAGES/drkonqi.mo
-share/locale/sr@latin/LC_MESSAGES/filelight.mo
 share/locale/sr@latin/LC_MESSAGES/filetypes.mo
 share/locale/sr@latin/LC_MESSAGES/freespacenotifier.mo
 share/locale/sr@latin/LC_MESSAGES/fsview.mo
