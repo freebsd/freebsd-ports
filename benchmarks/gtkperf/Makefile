@@ -16,7 +16,7 @@ USES=		gmake pkgconfig
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk20 gnomeprefix
 
-NOPIE_PORTS=	yes
+USE_HARDENING=	relro
 
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes
