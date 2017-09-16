@@ -15,11 +15,11 @@ LICENSE_FILE_MIT=	${WRKSRC}/expat/COPYING
 
 TDOMBASE=	${PREFIX}/lib/tdom${PORTVERSION}
 
-NORELRO_PORTS=	yes
-
 USES=		gmake tar:tgz tcl:tea
 USE_GITHUB=	yes
 CONFIGURE_ARGS=	--enable-threads --disable-tdomalloc
+
+USE_HARDENING=	relro
 
 TEST_TARGET=	test
 

@@ -18,9 +18,9 @@ LICENSE=	MIT
 USES=		gmake
 WRKSRC=		${WRKDIR}/purge
 
-PLIST_FILES=	sbin/purge
+USE_HARDENING=	relro
 
-NOPIE_PORTS=	yes
+PLIST_FILES=	sbin/purge
 
 post-patch:
 	${REINPLACE_CMD} -e 's|= g++|= ${CXX}|g' ${WRKSRC}/Makefile

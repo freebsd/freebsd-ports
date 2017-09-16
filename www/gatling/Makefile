@@ -18,10 +18,10 @@ BROKEN_powerpc64=	fails to compile: dirfd.c: error: expected ';', ',' or ')' bef
 USES=		gmake ssl tar:xz
 USE_RC_SUBR=	gatling
 
+USE_HARDENING=	relro
+
 CFLAGS+=	-I${LOCALBASE}/include/libowfat -I${OPENSSLINC} -I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -L${OPENSSLLIB}
-
-NOPIE_PORTS=	yes
 
 MAKEFILE=	GNUmakefile
 

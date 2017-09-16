@@ -12,9 +12,9 @@ MASTER_SITES=	http://www.Awfulhak.org/httptunnel/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tunnel a TCP/IP connection through a HTTP/TCP/IP connection
 
-EXPLICIT_SAFESTACK=		yes
-
 OPTIONS_DEFINE=	DEBUG
+
+USE_HARDENING=	pie relro safestack
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--quiet

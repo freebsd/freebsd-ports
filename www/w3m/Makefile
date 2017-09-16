@@ -8,8 +8,6 @@ CATEGORIES+=	www ipv6
 MAINTAINER?=	nobutaka@FreeBSD.org
 COMMENT?=	Pager/text-based WWW browser
 
-EXPLICIT_SAFESTACK=		yes
-
 LICENSE=	w3m
 LICENSE_NAME=	w3m
 LICENSE_FILE=	${WRKSRC}/doc/README
@@ -19,6 +17,8 @@ LIB_DEPENDS=	libgc.so:devel/boehm-gc
 
 USES=		iconv pkgconfig perl5 ssl
 USE_GITHUB=	yes
+
+USE_HARDENING=	pie relro safestack
 
 GH_ACCOUNT=	tats
 GH_PROJECT=	w3m

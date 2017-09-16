@@ -16,11 +16,11 @@ LIB_DEPENDS=	libevent.so:devel/libevent
 
 USES=		bdb pkgconfig
 
+USE_HARDENING=	relro
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libevent --program-transform-name=''
 CONFIGURE_ENV=	EVENTINC="`pkgconf --cflags libevent`" EVENTLIB="`pkgconf --libs libevent`"
-
-NOPIE_PORTS=	yes
 
 OPTIONS_DEFINE=	EXAMPLES
 

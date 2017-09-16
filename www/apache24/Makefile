@@ -17,8 +17,6 @@ LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libapr-1.so:devel/apr1 \
 		libpcre.so:devel/pcre
 
-EXPLICIT_SAFESTACK=	yes
-
 CONFLICTS_INSTALL=	caudium14-1.* \
 			apache-*-2.2.* apache22-*
 
@@ -27,6 +25,8 @@ USES=		autoreconf cpe iconv libtool perl5 tar:bzip2
 USE_PERL5=	run
 USE_RC_SUBR=	apache24 htcacheclean
 GNU_CONFIGURE=	yes
+
+USE_HARDENING=	pie relro safestack
 
 CPE_VENDOR=	apache
 CPE_PRODUCT=	http_server

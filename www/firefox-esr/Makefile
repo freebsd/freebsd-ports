@@ -39,10 +39,10 @@ MOZ_PKGCONFIG_FILES=	# empty
 USE_MOZILLA=	-soundtouch
 MOZILLA_NAME=	Firefox
 
-NOPIE_PORTS=	yes
-
 USE_GL=		gl
 USES=		tar:xz
+
+USE_HARDENING=	relro
 
 FIREFOX_ICON=		${MOZILLA}.png
 FIREFOX_ICON_SRC=	${PREFIX}/lib/${MOZILLA}/browser/chrome/icons/default/default48.png
