@@ -1,0 +1,16 @@
+--- Makefile.orig	2017-09-12 15:30:26 UTC
++++ Makefile
+@@ -21,7 +21,11 @@ CFLAGS+=	-L${.CURDIR} -lhyverem
+ SUBDIR=		examples
+ 
+ bhyve-patch:
+-	cp patches/bhyve_vncserver.patch /usr/src/usr.sbin/bhyve/
+-	cd /usr/src/usr.sbin/bhyve/ ;  patch < bhyve_vncserver.patch ; make clean; make; make install
++	mkdir -p /tmp/bhyve-remote/usr.sbin/
++	ln -s /usr/src/share /tmp/bhyve-remote/
++	cp -R /usr/src/usr.sbin/bhyve /tmp/bhyve-remote/usr.sbin/
++	cp /usr/src/usr.sbin/Makefile* /tmp/bhyve-remote/usr.sbin/
++	cp patches/bhyve_vncserver.patch /tmp/bhyve-remote/usr.sbin/bhyve/
++	cd /tmp/bhyve-remote/usr.sbin/bhyve/ ; patch < bhyve_vncserver.patch ; make clean; make; make install
+ 
+ .include <bsd.lib.mk>
