@@ -3,7 +3,7 @@
 
 PORTNAME=	newsbeuter
 PORTVERSION=	2.9
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	www
 MASTER_SITES=	https://newsbeuter.org/downloads/ \
 		http://newsbeuter.org/downloads/
