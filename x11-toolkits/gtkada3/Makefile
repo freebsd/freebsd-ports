@@ -43,8 +43,7 @@ ALL_TARGET=	tools static relocatable
 PORTDOCS=	gtkada_ug
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-NOPIE_PORTS=	yes
-NORELRO_PORTS=	yes
+USE_HARDENING=	# empty
 
 MAKE_ARGS=	PROCESSORS=${MAKE_JOBS_NUMBER}
 

@@ -28,7 +28,7 @@ INSTALLS_ICONS=	yes
 INSTALL_TARGET=	install-strip
 SHEBANG_FILES=	configure
 
-NOPIE_PORTS=	yes
+USE_HARDENING=	relro
 
 PORTDOCS=	*
 

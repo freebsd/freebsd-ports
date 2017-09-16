@@ -10,8 +10,6 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X Transparent Lock
 
-EXPLICIT_SAFESTACK=		yes
-
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/GPL-3.txt
 
@@ -19,6 +17,8 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USES=		localbase
 USE_XORG=	x11
+
+USE_HARDENING=	pie relro safestack
 
 LIBS+=		-lX11 -lcrypt
 

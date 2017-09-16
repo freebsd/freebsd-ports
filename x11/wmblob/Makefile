@@ -15,8 +15,7 @@ USE_GNOME=	gtk20
 USES=		pkgconfig tar:xz
 GNU_CONFIGURE=	yes
 
-NOPIE_PORTS=	yes
-NORELRO_PORTS=	yes
+USE_HARDENING=	# empty
 
 PLIST_FILES=	bin/wmblob man/man1/wmblob.1.gz
 

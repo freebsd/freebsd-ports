@@ -11,8 +11,6 @@ COMMENT=	PCMan File Manager
 
 LICENSE=	GPLv2
 
-EXPLICIT_SAFESTACK=	yes
-
 LIB_DEPENDS=	libfm-gtk.so:x11/libfm \
 	libfontconfig.so:x11-fonts/fontconfig \
 	libfreetype.so:print/freetype2
@@ -22,6 +20,8 @@ USES=		desktop-file-utils gettext gmake libtool localbase pkgconfig \
 GNU_CONFIGURE=	yes
 USE_GNOME=	glib20 gtk20 cairo pango gdkpixbuf2 intltool intlhack
 USE_XORG=	x11
+
+USE_HARDENING=	pie relro safestack
 
 CONFIGURE_ARGS=--with-gtk=2
 

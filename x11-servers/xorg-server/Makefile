@@ -34,9 +34,7 @@ OPTIONS_EXCLUDE_sparc64=	HAL
 # HardenedBSD note:
 # Due to how xorg handles loadable modules, it cannot be compiled
 # with RELRO + BIND_NOW.
-NORELRO_PORTS=	yes
-
-EXPLICIT_SAFESTACK=	yes
+USE_HARDENING=	pie safestack
 
 .include <bsd.port.options.mk>
 

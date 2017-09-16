@@ -10,11 +10,11 @@ MASTER_SITES=	http://www.muhri.net/
 MAINTAINER=	oleg@bsdpower.com
 COMMENT=	Command line tool for switching GTK+ 2.0 themes
 
-EXPLICIT_SAFESTACK=		yes
-
 USES=		gmake pkgconfig
 USE_XORG=	x11
 USE_GNOME=	gtk20
+
+USE_HARDENING=	pie relro safestack
 
 PLIST_FILES=	bin/switch2 man/man1/switch2.1.gz
 

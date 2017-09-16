@@ -16,7 +16,7 @@ BUILD_DEPENDS=	gsed:textproc/gsed
 USES=		gmake
 USE_XORG=	x11 xext
 
-NOPIE_PORTS=	yes
+USE_HARDENING=	relro
 
 PLIST_FILES=	bin/${PORTNAME}
 

@@ -12,13 +12,13 @@ COMMENT=	EFL Terminal Emulator
 
 LICENSE=	BSD2CLAUSE
 
-EXPLICIT_SAFESTACK=	yes
-
 LIB_DEPENDS=	libefl.so:devel/efl
 
 DIST_SUBDIR=	enlightenment
 GNU_CONFIGURE=	yes
 USES=		compiler:c11 pkgconfig tar:xz
+
+USE_HARDENING=	pie relro safestack
 
 OPTIONS_DEFINE=		NLS
 OPTIONS_SUB=		yes

@@ -17,7 +17,7 @@ USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--with-html-dir=${PREFIX}/share/doc
 INSTALL_TARGET=	install-strip
 
-NOPIE_PORTS=	yes
+USE_HARDENING=	relro
 
 OPTIONS_DEFINE=	DOCS
 

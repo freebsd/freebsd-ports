@@ -33,6 +33,8 @@ USE_XORG=	x11 xorg-server xext
 USE_GL=		gl
 USE_LDCONFIG=	yes
 
+USE_HARDENING=	# empty
+
 # NVIDIA_ROOT is not set in src/Makefile, which results in bogus -I/src
 # passed to compiler and broken build on HEAD since r221320 when option
 # -Wmissing-include-dirs was added for kernel sources.  Until properly
@@ -97,9 +99,6 @@ FREEBSD_AGP_DESC=	Use FreeBSD AGP GART driver
 
 PLIST_SUB+=	LINUXBASE=${LINUXBASE} SHLIB_VERSION=${PORTVERSION} \
 		MODULESDIR=${MODULESDIR}
-
-NOPIE_PORTS=	yes
-NORELRO_PORTS=	yes
 
 .include <bsd.port.options.mk>
 

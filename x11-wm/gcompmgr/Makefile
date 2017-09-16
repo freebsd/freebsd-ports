@@ -20,7 +20,7 @@ USES=		autoreconf libtool pkgconfig
 USE_GNOME=	gtkmm24
 USE_XORG=	x11
 
-NOPIE_PORTS=	yes
+USE_HARDENING=	relro
 
 DESKTOP_ENTRIES="gcompmgr" \
 		"Configure window effects" \

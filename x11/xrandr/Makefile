@@ -7,12 +7,12 @@ CATEGORIES=	x11
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Primitive command line interface to the RandR extension
 
-EXPLICIT_SAFESTACK=		yes
-
 LICENSE=	MIT
 
 XORG_CAT=	app
 USE_XORG=	xrandr xrender x11
+
+USE_HARDENING=	pie relro safestack
 
 PLIST_FILES=	bin/xrandr \
 		bin/xkeystone \

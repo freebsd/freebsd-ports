@@ -12,8 +12,6 @@ COMMENT=	Slightly improved screen locker based on slock
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-EXPLICIT_SAFESTACK=	yes
-
 LIB_DEPENDS=	libcairo.so:graphics/cairo \
 		libxcb-keysyms.so:x11/xcb-util-keysyms \
 		libxcb-image.so:x11/xcb-util-image \
@@ -32,6 +30,8 @@ PLIST_FILES=	"@(,,4755) bin/i3lock" \
 LDFLAGS+=	${ICONV_LIB}
 USE_XORG=	x11 xcb xt xproto xext
 USES=		gmake iconv pkgconfig tar:bzip2
+
+USE_HARDENING=	pie relro safestack
 
 PORTDOCS=	CHANGELOG README.md
 

@@ -12,8 +12,6 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:src1 \
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Terminal emulator for the X Window System
 
-EXPLICIT_SAFESTACK=		yes
-
 LICENSE=	MIT
 
 CONFLICTS=	x11iraf-[0-9]*
@@ -22,6 +20,8 @@ USES=		cpe ncurses tar:tgz
 CPE_VENDOR=	invisible-island
 USE_XORG=	xft xmu xt x11 xpm ice
 GNU_CONFIGURE=	yes
+
+USE_HARDENING=	pie relro safestack
 
 CONFIGURE_ARGS+=	--with-utempter --enable-narrowproto
 

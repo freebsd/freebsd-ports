@@ -21,7 +21,7 @@ USE_WX=		2.8
 USE_XORG=	x11
 WX_CONF_ARGS=	absolute
 
-NOPIE_PORTS=	yes
+USE_HARDENING=	relro
 
 WRKSRC=		${WRKDIR}/trunk
 
