@@ -3,7 +3,6 @@
 
 PORTNAME=	llvm
 PORTVERSION=	${LLVM_MAJOR}.d${SNAPDATE}
-PORTREVISION=	1
 CATEGORIES=	devel lang
 PKGNAMESUFFIX=	-devel
 
@@ -100,11 +99,10 @@ LLDB_VARS=		_USES_PYTHON=python
 OPENMP_DESC=		Install libomp, the LLVM OpenMP runtime library
 OPENMP_CONFLICTS_INSTALL=	libiomp5-devel-*
 OPENMP_GH_PROJECT=	openmp:openmp
-OPENMP_GH_SUBDIR=	runtimes/openmp:openmp
+OPENMP_GH_SUBDIR=	projects/openmp:openmp
 OPENMP_GH_TAGNAME=	${OPENMP_COMMIT}:openmp
 OPENMP_EXTRA_PATCHES= \
-	${PATCHDIR}/openmp-patch-bug32279 \
-	${PATCHDIR}/openmp-patch-tools_openmp_libomptarget_CMakeLists.txt
+	${PATCHDIR}/openmp-patch-bug32279
 GOLD_DESC=		Build the LLVM Gold plugin for LTO
 GOLD_CMAKE_ON=		-DLLVM_BINUTILS_INCDIR=${LOCALBASE}/include
 GOLD_BUILD_DEPENDS=	${LOCALBASE}/bin/ld.gold:devel/binutils
@@ -129,6 +127,7 @@ COMMANDS=	bugpoint \
 		llvm-cvtres \
 		llvm-diff \
 		llvm-dis \
+		llvm-dlltool \
 		llvm-dwarfdump \
 		llvm-dwp \
 		llvm-extract \
@@ -136,11 +135,16 @@ COMMANDS=	bugpoint \
 		llvm-mc \
 		llvm-mcmarkup \
 		llvm-modextract \
+		llvm-mt \
 		llvm-nm \
+		llvm-objcopy \
 		llvm-objdump \
 		llvm-opt-report \
+		llvm-pdbutil \
 		llvm-profdata \
 		llvm-ranlib \
+		llvm-rc \
+		llvm-readelf \
 		llvm-readobj \
 		llvm-rtdyld \
 		llvm-size \
@@ -246,6 +250,7 @@ MAN1SRCS+=	bugpoint.1 llc.1 lli.1 llvm-ar.1 llvm-as.1 \
 		llvm-bcanalyzer.1 llvm-build.1 llvm-config.1 llvm-cov.1 \
 		llvm-diff.1 llvm-dis.1 llvm-dwarfdump.1 \
 		llvm-extract.1 llvm-lib.1 llvm-link.1 llvm-nm.1 \
+		llvm-pdbutil.1 \
 		llvm-profdata.1 llvm-readobj.1 llvm-stress.1 llvm-symbolizer.1 \
 		opt.1 tblgen.1
 
@@ -277,6 +282,9 @@ _COMPILER_RT_LIBS= \
 	libclang_rt.tsan-x86_64.a.syms \
 	libclang_rt.tsan_cxx-x86_64.a \
 	libclang_rt.tsan_cxx-x86_64.a.syms \
+	libclang_rt.ubsan_minimal-x86_64.a \
+	libclang_rt.ubsan_minimal-x86_64.a.syms \
+	libclang_rt.ubsan_minimal-x86_64.so \
 	libclang_rt.ubsan_standalone-x86_64.a \
 	libclang_rt.ubsan_standalone-x86_64.a.syms \
 	libclang_rt.ubsan_standalone-x86_64.so \
@@ -291,12 +299,17 @@ _COMPILER_RT_LIBS+= \
 	libclang_rt.asan-preinit-i386.a \
 	libclang_rt.asan_cxx-i386.a \
 	libclang_rt.builtins-i386.a \
+	libclang_rt.lsan-i386.a \
 	libclang_rt.profile-i386.a \
 	libclang_rt.safestack-i386.a \
 	libclang_rt.stats-i386.a \
 	libclang_rt.stats_client-i386.a \
+	libclang_rt.ubsan_minimal-i386.a \
+	libclang_rt.ubsan_minimal-i386.so \
 	libclang_rt.ubsan_standalone-i386.a \
-	libclang_rt.ubsan_standalone_cxx-i386.a
+	libclang_rt.ubsan_standalone-i386.so \
+	libclang_rt.ubsan_standalone_cxx-i386.a \
+	libclang_rt.ubsan_standalone_cxx-i386.so
 .endif
 
 .if ${PORT_OPTIONS:MEXTRAS}
@@ -318,10 +331,6 @@ post-patch:
 	    ${WRKSRC}/utils/lit/lit.py ${WRKSRC}/utils/lit/lit/*.py
 	${REINPLACE_CMD} -e 's,/usr/local/,${LOCALBASE}/,' \
 	    ${WRKSRC}/CMakeLists.txt
-
-post-patch-COMPILER_RT-on:
-	cd ${WRKSRC_compiler_rt} && patch < ${PATCHDIR}/compiler-rt-patch-ino64
-	cd ${WRKSRC_compiler_rt} && patch < ${PATCHDIR}/compiler-rt-patch-canonical-syscalls
 
 post-build-COMPILER_RT-on:
 	${MKDIR} ${WRKDIR}/compiler-rt-build
@@ -386,6 +395,9 @@ post-install-LIT-on:
 	    ${STAGEDIR}${LLVM_PREFIX}/bin/
 	${LN} -f ${STAGEDIR}${LLVM_PREFIX}/bin/FileCheck \
 	    ${STAGEDIR}${PREFIX}/bin/FileCheck${LLVM_SUFFIX}
+
+post-install-LLDB-on:
+	${RMDIR} ${STAGEDIR}${LLVM_PREFIX}/include/lldb/API
 
 TEST_CMD=	'(cd ${WRKSRC}/test; ${SETENV} ${MAKE_ENV} LD_LIBRARY_PATH=${WRKSRC}/Release/lib ${MAKE_CMD} check-local-lit)'
 regression-test: ${BUILD_COOKIE}
