@@ -9,6 +9,9 @@ DISTNAME=	Gion-${PORTVERSION}
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Gion Icons for Gnome
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/Gion/COPYING
+
 USES=		tar:bzip2
 NO_WRKSUBDIR=	yes
 
