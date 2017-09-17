@@ -4054,6 +4054,7 @@
     SUBDIR += picp
     SUBDIR += picprog
     SUBDIR += pig
+    SUBDIR += pijul
     SUBDIR += piklab
     SUBDIR += pinba_engine
     SUBDIR += pipestatus
