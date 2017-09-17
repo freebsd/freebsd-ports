@@ -3,7 +3,7 @@
 
 PORTNAME=	cnews
 PORTVERSION=	cr.g
-PORTREVISION=	17
+PORTREVISION=	18
 CATEGORIES=	news
 MASTER_SITES=	ftp://ftp.cs.toronto.edu/pub/c-news/ \
 		ftp://ftp.funet.fi/pub/unix/news/cnews/ \
@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.cs.toronto.edu/pub/c-news/ \
 		ftp://ftp.dinoex.org/pub/c-news/:pgp
 DISTNAME=	c-news
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		pgpverify-1.12:pgp
+		pgpverify-1.29:pgp
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 PATCH_SITES=	ftp://ftp.dinoex.org/pub/c-news/
@@ -26,8 +26,7 @@ PATCHFILES=	c-news-patch-fileart.c c-news-patch-namelen \
 		c-news-patch-y2k-2 \
 		c-news-patch-inews-path \
 		c-news-patch-gawk3 \
-		c-news-patch-ansi \
-		c-news-patch-pgpverify-1.12-perl4
+		c-news-patch-ansi
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	News server
@@ -71,17 +70,21 @@ PLIST_SUB+=	NEWSCTL_FILES="${NEWSCTL_FILES}"
 OPTIONS_DEFINE=	SENDMAIL EXAMPLES
 OPTIONS_DEFAULT=PGPGPG
 OPTIONS_SINGLE=	VERIFY
-OPTIONS_SINGLE_VERIFY=	PGPIN PGPGPG
+OPTIONS_SINGLE_VERIFY=	PGPIN PGPGPG GPGPV
 SENDMAIL_DESC=	use sendmail instead of /bin/mail
 PGPIN_DESC=	use pgp-2.6.3in for control messages
 PGPGPG_DESC=	use pgpgpg for control messages
+GPGPV_DESC=	use gpgv from gnupg1 for control messages
+PGPIN_RUN_DEPENDS=	pgpin:security/pgpin
+PGPGPG_RUN_DEPENDS=	pgpgpg:security/pgpgpg
+GPGPV_RUN_DEPENDS=	gpgv:security/gnupg1
 
 VARBASE?=	/var
 NEWSBIN?=	${PREFIX}/libexec/cnews
 NEWSCTL?=	${VARBASE}/lib/news
 NEWSARTS?=	${VARBASE}/news
 NEWSOV?=	${VARBASE}/news/over.view
-PGPVERIFY?=	pgpverify-1.12
+PGPVERIFY?=	pgpverify-1.29
 
 .include <bsd.port.options.mk>
 
@@ -115,6 +118,10 @@ pre-configure:
 .endif
 .if ${PORT_OPTIONS:MPGPGPG}
 	${REINPLACE_CMD} -e "s|'/usr/local/bin/pgp'|'/usr/local/bin/pgpgpg'|" \
+		${WRKSRC}/${PGPVERIFY}
+.endif
+.if ${PORT_OPTIONS:MGPGPV}
+	${REINPLACE_CMD} -e "s|^# $$gpgv|$$gpgv|" \
 		${WRKSRC}/${PGPVERIFY}
 .endif
 
