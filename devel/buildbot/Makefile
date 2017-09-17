@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	buildbot
-PORTVERSION=	0.9.5
-PORTREVISION=	1
+PORTVERSION=	0.9.10
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 
@@ -23,12 +22,12 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}twisted>=14.0.1:devel/py-twisted \
 		${PYTHON_PKGNAMEPREFIX}ramlfications>0:devel/py-ramlfications \
 		${PYTHON_PKGNAMEPREFIX}sqlalchemy-migrate>=0.7:databases/py-sqlalchemy-migrate \
 		${PYTHON_PKGNAMEPREFIX}sqlalchemy10>=0.6:databases/py-sqlalchemy10 \
-		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3
+		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3 \
+		${PYTHON_PKGNAMEPREFIX}treq>0:www/py-treq
 TEST_DEPENDS=	trial:devel/py-twisted \
 		buildbot-worker>=${PORTVERSION}:devel/buildbot-worker \
 		${PYTHON_PKGNAMEPREFIX}mock>0.8.0:devel/py-mock \
-		${PYTHON_PKGNAMEPREFIX}boto3>0:www/py-boto3 \
-		${PYTHON_PKGNAMEPREFIX}txrequests>0:www/py-txrequests
+		${PYTHON_PKGNAMEPREFIX}boto3>0:www/py-boto3
 
 USE_RC_SUBR=	buildbot
 USES=		python:-2.7

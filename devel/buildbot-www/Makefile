@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	buildbot-www
-PORTVERSION=	0.9.5
+PORTVERSION=	0.9.10
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 
@@ -17,13 +17,13 @@ MY_DEPENDS=	buildbot>=${PORTVERSION}:devel/buildbot \
 BUILD_DEPENDS=	${MY_DEPENDS}
 RUN_DEPENDS=	${MY_DEPENDS} \
 		buildbot-console-view>=${PORTVERSION}:devel/buildbot-console-view \
-		buildbot-waterfall-view>=${PORTVERSION}:devel/buildbot-waterfall-view
+		buildbot-waterfall-view>=${PORTVERSION}:devel/buildbot-waterfall-view \
+		${PYTHON_PKGNAMEPREFIX}service_identity>=16.0.0:security/py-service_identity
 TEST_DEPENDS=	trial:devel/py-twisted \
 		buildbot-worker>=${PORTVERSION}:devel/buildbot-worker \
 		${PYTHON_PKGNAMEPREFIX}mock>0.8.0:devel/py-mock \
 		${PYTHON_PKGNAMEPREFIX}boto3>0:www/py-boto3 \
-		${PYTHON_PKGNAMEPREFIX}service_identity>=16.0.0:security/py-service_identity \
-		${PYTHON_PKGNAMEPREFIX}txrequests>0:www/py-txrequests
+		${PYTHON_PKGNAMEPREFIX}treq>0:www/py-treq
 
 USES=		python:-2.7
 USE_PYTHON=	autoplist distutils
