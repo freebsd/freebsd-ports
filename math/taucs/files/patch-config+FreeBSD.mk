@@ -1,6 +1,6 @@
---- config/FreeBSD.mk.orig	2003-08-28 11:13:38.000000000 -0400
-+++ config/FreeBSD.mk	2012-07-10 07:43:24.000000000 -0400
-@@ -9,30 +9,24 @@
+--- config/FreeBSD.mk.orig	2003-08-28 15:13:38 UTC
++++ config/FreeBSD.mk
+@@ -9,30 +9,24 @@ PATHSEP=/
  DEFFLG=-D
  
  FC        ?= f77

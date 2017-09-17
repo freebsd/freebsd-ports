@@ -1,6 +1,6 @@
---- src/taucs_timer.c.orig	2003-09-01 06:28:54.000000000 -0400
-+++ src/taucs_timer.c	2012-07-10 07:24:08.000000000 -0400
-@@ -245,36 +245,35 @@
+--- src/taucs_timer.c.orig	2003-09-01 10:28:54 UTC
++++ src/taucs_timer.c
+@@ -245,36 +245,35 @@ double timer()
  #include <sys/time.h>
  #include <sys/resource.h>
  #include <sys/types.h>                                                 
