@@ -4710,6 +4710,7 @@
     SUBDIR += py-pytest-asyncio
     SUBDIR += py-pytest-cache
     SUBDIR += py-pytest-capturelog
+    SUBDIR += py-pytest-cov
     SUBDIR += py-pytest-django
     SUBDIR += py-pytest-localserver
     SUBDIR += py-pytest-mock
