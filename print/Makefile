@@ -43,6 +43,7 @@
     SUBDIR += enscript-letter
     SUBDIR += enscript-letterdj
     SUBDIR += epson-inkjet-printer-201401w
+    SUBDIR += epson-inkjet-printer-201601w
     SUBDIR += epson-inkjet-printer-escpr
     SUBDIR += epsonepl
     SUBDIR += fig2dev
