@@ -13,14 +13,18 @@ you update your ports collection, before attempting any port upgrades.
   devel/cargo was merged into lang/rust.
 
 20170914:
-  AFFECTS: users of CMake
+  AFFECTS: users of CMake & CMake Modules
   AUTHOR: adridg@freebsd.org
 
-  The ports devel/cmake and devel/cmake-modules have been merged into
-  devel/cmake. The benefit of being able to update the modules without
-  the binary is outweighed by the issues caused by having the binary
-  out-of-sync with the modules.
+  The devel/cmake-modules port has been merged into devel/cmake.
 
+  The benefit of being able to update the modules without the binary
+  is outweighed by the issues caused by having the binary out-of-sync
+  with the modules.
+
+  Users should delete the devel/cmake-modules package and then
+  upgrade or reinstall devel/cmake.
+ 
   All ports have been updated to depend only on CMake.
 
 20170904
