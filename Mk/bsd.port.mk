@@ -1061,6 +1061,11 @@ MINIMAL_PKG_VERSION=	1.6.0
 _PORTS_DIRECTORIES+=	${PKG_DBDIR} ${PREFIX} ${WRKDIR} ${EXTRACT_WRKDIR} \
 						${STAGEDIR}${PREFIX} ${WRKDIR}/pkg
 
+# Ensure .CURDIR contains an absolute path without a trailing slash.  Failed
+# builds can occur when PORTSDIR is a symbolic link, or with something like
+# make -C /usr/ports/category/port/.
+.CURDIR:=		${.CURDIR:tA}
+
 # make sure bmake treats -V as expected
 .MAKE.EXPAND_VARIABLES= yes
 
