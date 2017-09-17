@@ -1,5 +1,5 @@
---- build/config/BUILDCONFIG.gn.orig	2017-08-03 00:05:04.000000000 +0200
-+++ build/config/BUILDCONFIG.gn	2017-08-09 23:42:27.032065000 +0200
+--- build/config/BUILDCONFIG.gn.orig	2017-09-05 21:05:11.000000000 +0200
++++ build/config/BUILDCONFIG.gn	2017-09-06 17:04:08.044575000 +0200
 @@ -131,13 +131,13 @@
    is_official_build = false
  
@@ -11,12 +11,12 @@
    # to configure warnings.
    is_clang =
        current_os == "mac" || current_os == "ios" || current_os == "chromeos" ||
--      current_os == "fuchsia" ||
-+      current_os == "fuchsia" || current_os == "bsd" ||
+-      current_os == "fuchsia" || current_os == "android" ||
++      current_os == "fuchsia" || current_os == "android" || current_os == "bsd" ||
        (current_os == "linux" && current_cpu != "s390x" &&
-        current_cpu != "s390" && current_cpu != "ppc64" && current_cpu != "ppc")
- 
-@@ -189,8 +189,8 @@
+        current_cpu != "s390" && current_cpu != "ppc64" &&
+        current_cpu != "ppc" && current_cpu != "mips" && current_cpu != "mips64")
+@@ -190,8 +190,8 @@
    # TODO(dpranke): Add some sort of assert here that verifies that
    # no toolchain omitted host_toolchain from its toolchain_args().
  
@@ -27,7 +27,7 @@
        # TODO(dpranke) - is_clang normally applies only to the target
        # build, and there is no way to indicate that you want to override
        # it for both the target build *and* the host build. Do we need to
-@@ -228,7 +228,7 @@
+@@ -229,7 +229,7 @@
    } else {
      _default_toolchain = "//build/toolchain/android:android_$target_cpu"
    }
@@ -36,7 +36,7 @@
    # See comments in build/toolchain/cros/BUILD.gn about board compiles.
    if (is_clang) {
      _default_toolchain = "//build/toolchain/linux:clang_$target_cpu"
-@@ -378,8 +378,18 @@
+@@ -379,8 +379,18 @@
    is_nacl = false
    is_posix = true
    is_win = false
@@ -56,7 +56,7 @@
  # =============================================================================
  # SOURCES FILTERS
  # =============================================================================
-@@ -449,7 +459,7 @@
+@@ -450,7 +460,7 @@
  if (!is_mac && !is_ios) {
    sources_assignment_filter += [ "*.mm" ]
  }

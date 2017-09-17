@@ -1,9 +1,9 @@
---- headless/lib/browser/headless_content_browser_client.h.orig	2017-06-05 19:03:08 UTC
-+++ headless/lib/browser/headless_content_browser_client.h
-@@ -28,7 +28,7 @@ class HeadlessContentBrowserClient : public content::C
+--- headless/lib/browser/headless_content_browser_client.h.orig	2017-09-05 21:05:20.000000000 +0200
++++ headless/lib/browser/headless_content_browser_client.h	2017-09-06 20:33:27.212197000 +0200
+@@ -30,7 +30,7 @@
        content::BrowserContext* context,
        content::StoragePartition* partition,
-       const storage::OptionalQuotaSettingsCallback& callback) override;
+       storage::OptionalQuotaSettingsCallback callback) override;
 -#if defined(OS_POSIX) && !defined(OS_MACOSX)
 +#if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_BSD)
    void GetAdditionalMappedFilesForChildProcess(

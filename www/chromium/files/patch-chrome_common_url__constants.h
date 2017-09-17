@@ -1,6 +1,6 @@
---- chrome/common/url_constants.h.orig	2017-06-05 19:03:03 UTC
-+++ chrome/common/url_constants.h
-@@ -131,7 +131,7 @@ extern const char kChromeUICleanupToolURL[];
+--- chrome/common/url_constants.h.orig	2017-09-05 21:05:14.000000000 +0200
++++ chrome/common/url_constants.h	2017-09-07 14:48:59.551106000 +0200
+@@ -133,7 +133,7 @@
  extern const char kChromeUIMetroFlowURL[];
  #endif
  
@@ -9,16 +9,25 @@
  extern const char kChromeUITabModalConfirmDialogURL[];
  #endif
  
-@@ -146,7 +146,7 @@ extern const char kChromeUICastURL[];
+@@ -150,7 +150,7 @@
+ extern const char kChromeUICastURL[];
  #endif
+ 
+-#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX)
++#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || defined(OS_BSD)
+ extern const char kChromeUIDiscardsURL[];
+ #endif
+ 
+@@ -265,7 +265,7 @@
+ extern const char kChromeUISigninDiceInternalsHost[];
  #endif
  
 -#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX)
 +#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || defined(OS_BSD)
  extern const char kChromeUIDiscardsHost[];
- extern const char kChromeUIDiscardsURL[];
  #endif
-@@ -318,7 +318,7 @@ extern const char kChromeUICleanupToolHost[];
+ 
+@@ -326,7 +326,7 @@
  extern const char kChromeUIMetroFlowHost[];
  #endif
  

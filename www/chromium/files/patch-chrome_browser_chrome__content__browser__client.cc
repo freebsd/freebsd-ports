@@ -1,15 +1,15 @@
---- chrome/browser/chrome_content_browser_client.cc.orig	2017-06-15 21:03:01.000000000 +0200
-+++ chrome/browser/chrome_content_browser_client.cc	2017-06-18 04:59:41.793684000 +0200
-@@ -249,7 +249,7 @@
- #include "mash/public/interfaces/launchable.mojom.h"
- #include "services/service_manager/public/cpp/interface_factory.h"
+--- chrome/browser/chrome_content_browser_client.cc.orig	2017-09-05 21:05:12.000000000 +0200
++++ chrome/browser/chrome_content_browser_client.cc	2017-09-06 17:56:29.888034000 +0200
+@@ -258,7 +258,7 @@
+ #include "chromeos/chromeos_switches.h"
+ #include "components/user_manager/user_manager.h"
  #include "services/service_manager/public/interfaces/interface_provider_spec.mojom.h"
 -#elif defined(OS_LINUX)
 +#elif defined(OS_LINUX) || defined(OS_BSD)
  #include "chrome/browser/chrome_browser_main_linux.h"
  #elif defined(OS_ANDROID)
  #include "chrome/browser/android/app_hooks.h"
-@@ -266,7 +266,7 @@
+@@ -286,7 +286,7 @@
  #include "chrome/browser/payments/payment_request_factory.h"
  #endif
  
@@ -18,7 +18,7 @@
  #include "chrome/browser/webshare/share_service_impl.h"
  #endif
  
-@@ -294,7 +294,7 @@
+@@ -300,7 +300,7 @@
  #include "chrome/browser/ui/views/chrome_browser_main_extra_parts_views.h"
  #endif
  
@@ -27,7 +27,7 @@
  #include "chrome/browser/ui/views/chrome_browser_main_extra_parts_views_linux.h"
  #endif
  
-@@ -711,7 +711,7 @@
+@@ -548,7 +548,7 @@
    return false;
  }
  
@@ -36,7 +36,7 @@
  breakpad::CrashHandlerHostLinux* CreateCrashHandlerHost(
      const std::string& process_type) {
    base::FilePath dumps_path;
-@@ -761,7 +761,7 @@
+@@ -598,7 +598,7 @@
  
    return -1;
  }
@@ -45,7 +45,7 @@
  
  void SetApplicationLocaleOnIOThread(const std::string& locale) {
    DCHECK_CURRENTLY_ON(BrowserThread::IO);
-@@ -1038,7 +1038,7 @@
+@@ -876,7 +876,7 @@
    main_parts = new ChromeBrowserMainPartsMac(parameters);
  #elif defined(OS_CHROMEOS)
    main_parts = new chromeos::ChromeBrowserMainPartsChromeos(parameters);
@@ -54,7 +54,7 @@
    main_parts = new ChromeBrowserMainPartsLinux(parameters);
  #elif defined(OS_ANDROID)
    main_parts = new ChromeBrowserMainPartsAndroid(parameters);
-@@ -1054,7 +1054,7 @@
+@@ -892,7 +892,7 @@
    // Construct additional browser parts. Stages are called in the order in
    // which they are added.
  #if defined(TOOLKIT_VIEWS)
@@ -63,7 +63,7 @@
    main_parts->AddParts(new ChromeBrowserMainExtraPartsViewsLinux());
  #else
    main_parts->AddParts(new ChromeBrowserMainExtraPartsViews());
-@@ -1704,7 +1704,7 @@
+@@ -1540,7 +1540,7 @@
      command_line->AppendSwitchASCII(switches::kMetricsClientID,
                                      client_info->client_id);
    }
@@ -72,7 +72,7 @@
    if (breakpad::IsCrashReporterEnabled()) {
      std::string switch_value;
      std::unique_ptr<metrics::ClientInfo> client_info =
-@@ -2982,7 +2982,7 @@
+@@ -2710,7 +2710,7 @@
    }
  }
  
@@ -81,7 +81,7 @@
  void ChromeContentBrowserClient::GetAdditionalMappedFilesForChildProcess(
      const base::CommandLine& command_line,
      int child_process_id,
-@@ -3011,7 +3011,7 @@
+@@ -2752,7 +2752,7 @@
    }
  #endif  // defined(OS_ANDROID)
  }
@@ -90,12 +90,12 @@
  
  #if defined(OS_WIN)
  base::string16 ChromeContentBrowserClient::GetAppContainerSidForSandboxType(
-@@ -3219,7 +3219,7 @@
-   }
+@@ -3316,7 +3316,7 @@
+ #if defined(OS_ANDROID)
+   frame_interfaces_parameterized_->AddInterface(base::Bind(
+       &ForwardToJavaWebContentsRegistry<blink::mojom::ShareService>));
+-#elif defined(OS_LINUX) || defined(OS_WIN)
++#elif defined(OS_LINUX) || defined(OS_WIN) || defined(OS_BSD)
+   frame_interfaces_->AddInterface(base::Bind(&ShareServiceImpl::Create));
  #endif
  
--#if defined(OS_LINUX) || defined(OS_WIN)
-+#if defined(OS_LINUX) || defined(OS_WIN) || defined(OS_BSD)
-   if (!ChromeOriginTrialPolicy().IsFeatureDisabled("WebShare")) {
-     registry->AddInterface(base::Bind(&ShareServiceImpl::Create));
-   }

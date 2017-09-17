@@ -1,13 +1,14 @@
---- third_party/WebKit/Source/platform/wtf/StackUtil.cpp.orig	2017-06-05 19:03:26 UTC
-+++ third_party/WebKit/Source/platform/wtf/StackUtil.cpp
-@@ -8,6 +8,10 @@
- #include "platform/wtf/Threading.h"
- #include "platform/wtf/WTFThreadData.h"
+--- third_party/WebKit/Source/platform/wtf/StackUtil.cpp.orig	2017-09-05 21:05:41.000000000 +0200
++++ third_party/WebKit/Source/platform/wtf/StackUtil.cpp	2017-09-06 22:25:12.873520000 +0200
+@@ -16,6 +16,11 @@
+ extern "C" void* __libc_stack_end;  // NOLINT
+ #endif
  
-+#if OS(FREEBSD)
++#if defined(OS_FREEBSD)
++#include <sys/signal.h>
 +#include <pthread_np.h>
 +#endif
 +
- #if OS(WIN)
- #include <stddef.h>
- #include <windows.h>
+ namespace WTF {
+ 
+ size_t GetUnderestimatedStackSize() {
