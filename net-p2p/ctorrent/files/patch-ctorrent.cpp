@@ -1,6 +1,6 @@
---- ctorrent.cpp.orig	2009-11-13 10:20:39.377057366 +0300
-+++ ctorrent.cpp	2009-11-13 10:21:01.916290662 +0300
-@@ -98,11 +98,11 @@
+--- ctorrent.cpp.orig	2008-06-15 00:00:19 UTC
++++ ctorrent.cpp
+@@ -98,11 +98,11 @@ int main(int argc, char **argv)
      exit(0);
    }
  
@@ -14,4 +14,3 @@
    if( BTCONTENT.InitialFromMI(arg_metainfo_file, arg_save_as) < 0){
      CONSOLE.Warning(1, "error, initial meta info failed.");
      exit(1);
-
