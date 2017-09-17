@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mrboom
-PORTVERSION=	3.6
+PORTVERSION=	3.7
 CATEGORIES=	games
 
 MAINTAINER=	ehaupt@FreeBSD.org
