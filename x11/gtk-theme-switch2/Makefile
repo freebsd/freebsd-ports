@@ -14,7 +14,7 @@ USES=		gmake pkgconfig
 USE_XORG=	x11
 USE_GNOME=	gtk20
 
-USE_HARDENING=	pie relro safestack
+USE_HARDENING=	safestack
 
 PLIST_FILES=	bin/switch2 man/man1/switch2.1.gz
 

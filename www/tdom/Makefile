@@ -19,7 +19,7 @@ USES=		gmake tar:tgz tcl:tea
 USE_GITHUB=	yes
 CONFIGURE_ARGS=	--enable-threads --disable-tdomalloc
 
-USE_HARDENING=	relro
+USE_HARDENING=	pie:off
 
 TEST_TARGET=	test
 

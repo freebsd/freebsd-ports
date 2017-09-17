@@ -29,7 +29,7 @@ LICENSE_NAME=	lsof
 LICENSE_FILE=	${FILESDIR}/LICENSE
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-USE_HARDENING=	pie relro safestack
+USE_HARDENING=	safestack
 
 #Please leave the below line in for the next clean up.
 FIXUP_RELEASE=	YES

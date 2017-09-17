@@ -32,7 +32,7 @@ USE_XORG=	pixman x11 xcb xcursor xfixes
 USE_GL=		egl gbm glesv2
 USE_GNOME=	cairo
 
-USE_HARDENING=	pie relro safestack
+USE_HARDENING=	safestack
 
 USE_LDCONFIG=	yes
 

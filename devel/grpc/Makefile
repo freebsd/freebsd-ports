@@ -36,6 +36,6 @@ CMAKE_ARGS=	-DgRPC_ZLIB_PROVIDER:STRING="package" \
 		-DBENCHMARK_USE_LIBCXX=ON \
 		-DBUILD_SHARED_LIBS=ON
 
-USE_HARDENING=	# empty
+USE_HARDENING=	pie:off relro:off
 
 .include <bsd.port.mk>

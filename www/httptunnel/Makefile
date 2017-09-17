@@ -14,7 +14,7 @@ COMMENT=	Tunnel a TCP/IP connection through a HTTP/TCP/IP connection
 
 OPTIONS_DEFINE=	DEBUG
 
-USE_HARDENING=	pie relro safestack
+USE_HARDENING=	safestack
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--quiet

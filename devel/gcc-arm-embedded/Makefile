@@ -15,7 +15,7 @@ LICENSE_COMB=	multi
 
 BROKEN_powerpc64=	does not build: __adjust.c: internal compiler error: Segmentation fault
 
-USE_HARDENING=	# empty
+USE_HARDENING=	pie:off relro:off
 
 OPTIONS_DEFINE=	PYGDB EXAMPLES HTML PDF DOCS
 OPTIONS_DEFAULT=PYGDB

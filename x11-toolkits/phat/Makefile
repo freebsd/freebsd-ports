@@ -17,7 +17,7 @@ USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--with-html-dir=${PREFIX}/share/doc
 INSTALL_TARGET=	install-strip
 
-USE_HARDENING=	relro
+USE_HARDENING=	pie:off
 
 OPTIONS_DEFINE=	DOCS
 

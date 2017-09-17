@@ -25,7 +25,7 @@ CONFIGURE_ENV=	TOR_CPPFLAGS_libevent="-I${LOCALBASE}/include" \
 		TOR_LDFLAGS_libevent="-L${LOCALBASE}/lib/" \
 		TOR_LIBEVENT_LIBS="${TOR_LIBEVENT_LIBS}"
 
-USE_HARDENING=	cfi:configure pie relro safestack
+USE_HARDENING=	cfi:configure safestack
 USE_AUTOTOOLS=	aclocal
 
 OPTIONS_DEFINE=	MANPAGES DOCS STATIC_TOR TCMALLOC TOR2WEB

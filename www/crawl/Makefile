@@ -16,7 +16,7 @@ LIB_DEPENDS=	libevent.so:devel/libevent
 
 USES=		bdb pkgconfig
 
-USE_HARDENING=	relro
+USE_HARDENING=	pie:off
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libevent --program-transform-name=''

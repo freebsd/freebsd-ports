@@ -30,7 +30,7 @@ CONFIGURE_ARGS+=--with-zlib --libdir="${PREFIX}/etc" \
 CPE_VERSION=	${PORTVERSION:R}
 CPE_UPDATE=	rel.${PORTVERSION:E}
 
-USE_HARDENING=	pie relro safestack
+USE_HARDENING=	safestack
 
 MAKEFILE=	makefile
 L_HELP=		${PREFIX}/share/lynx_help

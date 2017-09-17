@@ -20,7 +20,7 @@ CAUDIUMVERSION=	1.4.18
 
 USES=		gmake tar:bzip2
 
-USE_HARDENING=	pie
+USE_HARDENING=	relro:off
 
 # Pike version included from lang/pike78
 SUB_LIST+=	PIKEVERSION=${PIKEVERSION}

@@ -22,7 +22,7 @@ USE_RC_SUBR=	${PORTNAME}
 
 GNU_CONFIGURE=	yes
 
-USE_HARDENING=	pie:configure relro safestack
+USE_HARDENING=	pie:configure safestack
 
 CPE_VENDOR=	openinfosecfoundation
 

@@ -21,7 +21,7 @@ OPTIONS_DEFINE=	DOCS
 USE_PYTHON=	distutils
 USES+=		gettext desktop-file-utils python
 
-USE_HARDENING=	pie relro safestack
+USE_HARDENING=	safestack
 
 PORTDOCS=	ChangeLog NEWS README TODO
 

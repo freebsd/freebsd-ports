@@ -20,8 +20,6 @@ LIB_DEPENDS=	libltdl.so:devel/libltdl \
 		libexpat.so:textproc/expat2 \
 		libgd.so:${GD_PORT}
 
-USE_HARDENING=	pie relro
-
 USES=		bison cpe gmake jpeg libtool:keepla pkgconfig pathfix shebangfix
 GNU_CONFIGURE=	yes
 # sincos is broken on armv6, see ports/220591

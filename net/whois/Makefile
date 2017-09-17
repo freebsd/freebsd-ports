@@ -9,14 +9,14 @@ CATEGORIES=	net
 MAINTAINER=	coco@executive-computing.de
 COMMENT=	Marco d'Itri whois client
 
-USE_HARDENING=	pie relro safestack
-
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		iconv gmake perl5
 USE_PERL5=	build
 MAKE_ARGS=	BASEDIR="${STAGEDIR}"
+
+USE_HARDENING=	safestack
 
 OPTIONS_DEFINE=	NLS
 

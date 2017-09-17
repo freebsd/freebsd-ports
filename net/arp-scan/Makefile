@@ -14,6 +14,6 @@ LICENSE=	GPLv3
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
-USE_HARDENING=	pie relro safestack
+USE_HARDENING=	safestack
 
 .include <bsd.port.mk>

@@ -43,7 +43,7 @@ SHEBANG_FILES=	\
 	dev/ci/run-tests-natively \
 	dev/ci/setup-host
 
-USE_HARDENING=	# empty
+USE_HARDENING=	pie:off relro:off
 
 NOPORTDOCS=	yes
 

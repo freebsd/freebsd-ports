@@ -21,7 +21,7 @@ USE_XORG=	x11 xext xpm
 CONFIGURE_ENV=	X_CFLAGS="${CFLAGS}"
 GNU_CONFIGURE=	yes
 
-USE_HARDENING=	relro
+USE_HARDENING=	pie:off
 
 PLIST_FILES=	bin/wmwifi
 

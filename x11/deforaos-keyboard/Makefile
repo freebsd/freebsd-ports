@@ -24,7 +24,7 @@ USES=		desktop-file-utils pkgconfig
 USE_XORG=	x11 xtst
 MAKE_ARGS+=	PREFIX=${PREFIX}
 
-USE_HARDENING=	relro
+USE_HARDENING=	pie:off
 
 OPTIONS_DEFINE=	DOCS NLS
 OPTIONS_SUB=	yes

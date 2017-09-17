@@ -19,7 +19,7 @@ MAKEFILE=	makefile.freebsd
 USES=		webplugin:native tar:Z
 WEBPLUGIN_FILES=dummyflash.so
 
-USE_HARDENING=	# empty
+USE_HARDENING=	pie:off relro:off
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${WEBPLUGIN_DIR}

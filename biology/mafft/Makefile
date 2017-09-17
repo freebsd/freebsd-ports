@@ -21,7 +21,7 @@ INSTALL_WRKSRC=	${WRKSRC}/core
 
 USES=		gmake shebangfix tar:tgz
 
-USE_HARDENING=	# empty
+USE_HARDENING=	pie:off relro:off
 
 SHEBANG_FILES=	core/*.tmpl
 

@@ -31,7 +31,7 @@ USES=		autoreconf gmake iconv:translit localbase:ldflags ncurses perl5 tar:xz
 USE_LOCALE=	en_US.UTF-8
 USE_PERL5=	build
 
-USE_HARDENING=	relro
+USE_HARDENING=	pie:off
 
 # The configure process accepts,filters and canonicalises
 # the CONFIGURE_TARGET variable. You can read the files

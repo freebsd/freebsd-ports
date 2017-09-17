@@ -28,7 +28,7 @@ RUN_DEPENDS=	${PYNUMPY} \
 USES=		python
 USE_PYTHON=	autoplist distutils
 
-USE_HARDENING=	# empty
+USE_HARDENING=	pie:off relro:off
 
 LDFLAGS+=	-shared
 

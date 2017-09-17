@@ -12,7 +12,7 @@ LICENSE=	MIT
 XORG_CAT=	app
 USE_XORG=	xrandr xrender x11
 
-USE_HARDENING=	pie relro safestack
+USE_HARDENING=	safestack
 
 PLIST_FILES=	bin/xrandr \
 		bin/xkeystone \

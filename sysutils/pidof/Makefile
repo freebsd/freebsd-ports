@@ -12,7 +12,7 @@ COMMENT=	Tool which prints PID of given process name
 
 LICENSE=	BSD2CLAUSE
 
-USE_HARDENING=	pie relro safestack
+USE_HARDENING=	safestack
 
 CONFLICTS=	psmisc-1*
 

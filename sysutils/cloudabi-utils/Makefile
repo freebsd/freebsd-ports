@@ -27,7 +27,7 @@ USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	NuxiNL
 
-USE_HARDENING=	# empty
+USE_HARDENING=	pie:off relro:off
 
 .include <bsd.port.pre.mk>
 

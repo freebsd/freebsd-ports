@@ -11,7 +11,7 @@ COMMENT=	Improved dynamic tiling window manager
 
 LICENSE=	BSD3CLAUSE
 
-USE_HARDENING=	pie relro safestack
+USE_HARDENING=	safestack
 
 LIB_DEPENDS=	libstartup-notification-1.so:x11/startup-notification \
 		libxcb-util.so:x11/xcb-util \
