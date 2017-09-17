@@ -719,7 +719,7 @@ cockroach:*:771:
 # free: 775
 # free: 776
 openxpki:*:777:
-# free: 778
+litecoin:*:778:
 bitcoin:*:779:
 zetacoin:*:780:
 # free: 781

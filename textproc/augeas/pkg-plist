@@ -6,7 +6,7 @@ include/fa.h
 lib/libaugeas.a
 lib/libaugeas.so
 lib/libaugeas.so.0
-lib/libaugeas.so.0.21.1
+lib/libaugeas.so.0.22.1
 lib/libfa.a
 lib/libfa.so
 lib/libfa.so.1
@@ -165,6 +165,7 @@ man/man1/augtool.1.gz
 %%DATADIR%%/lenses/dist/qpid.aug
 %%DATADIR%%/lenses/dist/quote.aug
 %%DATADIR%%/lenses/dist/rabbitmq.aug
+%%DATADIR%%/lenses/dist/radicale.aug
 %%DATADIR%%/lenses/dist/redis.aug
 %%DATADIR%%/lenses/dist/reprepro_uploaders.aug
 %%DATADIR%%/lenses/dist/resolv.aug
@@ -356,6 +357,7 @@ man/man1/augtool.1.gz
 %%DATADIR%%/lenses/dist/tests/test_qpid.aug
 %%DATADIR%%/lenses/dist/tests/test_quote.aug
 %%DATADIR%%/lenses/dist/tests/test_rabbitmq.aug
+%%DATADIR%%/lenses/dist/tests/test_radicale.aug
 %%DATADIR%%/lenses/dist/tests/test_redis.aug
 %%DATADIR%%/lenses/dist/tests/test_reprepro_uploaders.aug
 %%DATADIR%%/lenses/dist/tests/test_resolv.aug
