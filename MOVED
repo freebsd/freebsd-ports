@@ -8082,7 +8082,6 @@ databases/py32-sqlite3||2016-02-02|Has expired: Full EOL reached. Please update 
 x11-toolkits/py32-tkinter||2016-02-02|Has expired: Full EOL reached. Please update to Python 3.5
 sysutils/puppet|sysutils/puppet38|2016-02-05|Renamed
 devel/etcdctl|devel/etcd|2016-02-06|Has expired: etcdctl is now part of etcd, following the change from the upstream
-graphics/py-graphviz|graphics/py-pygraphviz|2016-02-07|Renamed to match upstream (PyPI) name
 security/polarssl||2016-02-07|Has expired: Upstream is ending support for 1.2.x
 multimedia/xbmc-addon-pvr||2016-02-12|Has expired: Does not work with multimedia/kodi 15.x and newer
 security/py-openid|security/py-python-openid|2016-02-13|Renamed to match upstream (PyPI) name
