@@ -6,10 +6,10 @@ PORTVERSION=	3.1.2
 CATEGORIES=	net ipv6
 PORTREVISION=	7
 MASTER_SITES=	http://rsync.samba.org/ftp/rsync/ \
-		ftp://ftp.samba.org/pub/rsync/ \
-		ftp://ftp.sunet.se/pub/unix/admin/rsync/  \
+		https://rsync.samba.org/ftp/rsync/ \
 		ftp://ftp.fu-berlin.de/pub/unix/network/rsync/ \
 		http://www.mirrorservice.org/sites/rsync.samba.org/ \
+		https://www.mirrorservice.org/sites/rsync.samba.org/ \
 		LOCAL/ehaupt/rsync
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
