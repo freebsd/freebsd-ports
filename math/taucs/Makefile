@@ -12,10 +12,15 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C library of sparse linear solvers
 
+LICENSE=        TAUCS
+LICENSE_NAME=   TAUCS License
+LICENSE_FILE=   ${FILESDIR}/TAUCS-license.txt
+LICENSE_PERMS=  dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+
 LIB_DEPENDS=	libmetis.so:math/metis4
 
 HAS_CONFIGURE=	yes
-USES=		fortran tar:tgz
+USES=		blaslapack fortran tar:tgz
 USE_LDCONFIG=	yes
 NO_WRKSUBDIR=	yes
 
@@ -25,27 +30,10 @@ OPTIONS_DEFINE=	DOCS
 
 LDFLAGS+=	-L${LOCALBASE}/lib
 LIBMETIS?=	-lmetis
-MAKE_ENV+=	LIBBLAS="${BLAS}" LIBLAPACK="${LAPACK}" LIBMETIS="${LIBMETIS}"
+MAKE_ENV+=	LIBBLAS="${BLASLIB}" LIBLAPACK="${LAPACKLIB}" LIBMETIS="${LIBMETIS}"
 
 BINS?=		direct iter taucs_run
-TESTS ?=	complex stack timer linsolve memory
-
-.if exists(${LOCALBASE}/lib/libatlas.so)
-WITH_BLAS?=	atlas
-.else
-WITH_BLAS?=	reference
-.endif
-
-.if ${WITH_BLAS} == atlas
-LIB_DEPENDS+=	libatlas.so:math/atlas
-BLAS=		-lf77blas
-LAPACK=		-lalapack -lcblas
-.elif ${WITH_BLAS} == reference
-LIB_DEPENDS+=	liblapack.so:math/lapack
-LIB_DEPENDS+=	libblas.so:math/blas
-BLAS=		-lblas
-LAPACK=		-llapack
-.endif
+TESTS?=		complex stack timer linsolve memory
 
 .if ${ARCH} == "sparc64"
 PICFLAG?=	-fPIC
@@ -58,9 +46,6 @@ post-patch:
 		${WRKSRC}/progs/taucs_blas_underscore_test.c
 	@${REINPLACE_CMD} -e 's/SUCCEDD/SUCCEED/' \
 		${WRKSRC}/progs/test_linsolve.c
-
-do-configure:
-	(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${SH} ./configure)
 
 post-configure:
 	@${CP} -r ${WRKSRC} ${WRKSRC}_SHARED
@@ -75,7 +60,7 @@ archives: configure
 lib: archives
 	@${PRINTF} "\n\n%s\n\n\n" "Building shared library:"
 	(cd ${WRKSRC}_SHARED/lib/FreeBSD && \
-		${FC} ${FFLAGS} ${PICFLAG} ${LDFLAGS} -shared \
+		${FC} ${CFLAGS} ${PICFLAG} ${LDFLAGS} -shared \
 		-o libtaucs.so.1 -Wl,-x -Wl,-soname,libtaucs.so.1 \
 		-Wl,--whole-archive libtaucs.a -Wl,--no-whole-archive)
 	${STRIP_CMD} ${WRKSRC}_SHARED/lib/FreeBSD/libtaucs.so.1
@@ -114,7 +99,7 @@ check test: build
 	${LDFLAGS} -o bin/FreeBSD/test_${t} \
 	`${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_ARGS} -V STDDEFS` \
 	`${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_ARGS} -V STDINCS` \
-	progs/test_${t}.c -ltaucs ${LAPACK} ${BLAS} ${LIBMETIS}
+	progs/test_${t}.c -ltaucs ${LAPACKLIB} ${BLASLIB} ${LIBMETIS}
 	@${PRINTF} "\n%s\n\n\n" "Running test_${t}:"
 	-@cd ${WRKSRC}_SHARED ; \
 	${SETENV} LD_LIBRARY_PATH="lib/FreeBSD:/lib:/usr/lib:${LOCALBASE}/lib" \

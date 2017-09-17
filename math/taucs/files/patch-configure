@@ -1,6 +1,6 @@
---- configure.orig	Sun Aug 24 10:11:33 2003
-+++ configure	Sat Feb 26 22:24:56 2005
-@@ -29,7 +29,7 @@
+--- configure.orig	2003-08-24 10:11:33 UTC
++++ configure
+@@ -29,7 +29,7 @@ fi
  # Solaris, OSTYPE=solaris but uname returns SunOS.
  
  if [ ${OSTYPE:-fail} = "fail" ] ; then
