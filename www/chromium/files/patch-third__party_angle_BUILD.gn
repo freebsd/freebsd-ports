@@ -1,41 +1,14 @@
---- third_party/angle/BUILD.gn.orig	2017-06-05 19:04:15 UTC
-+++ third_party/angle/BUILD.gn
-@@ -22,6 +22,12 @@ if (ozone_platform_gbm) {
-   }
- }
- 
-+if (use_x11) {
-+  pkg_config("x11") {
-+    packages = [ "x11", "xi", "xext" ]
-+  }
-+}
-+
- angle_git_is_present = exec_script("src/commit_id.py",
-                                    [
-                                      "check",
-@@ -427,11 +433,7 @@ static_library("libANGLE") {
-     if (use_x11) {
-       sources += rebase_path(gles_gypi.libangle_gl_glx_sources, ".", "src")
-       deps += [ "src/third_party/libXNVCtrl:libXNVCtrl" ]
--      libs += [
--        "X11",
--        "Xi",
--        "Xext",
--      ]
-+      configs += [ ":x11" ]
+--- third_party/angle/BUILD.gn.orig	2017-09-05 21:06:47.000000000 +0200
++++ third_party/angle/BUILD.gn	2017-09-10 02:30:29.868194000 +0200
+@@ -239,6 +239,7 @@
+         "X11",
+         "Xi",
+         "Xext",
++        "GL",
+       ]
      }
-     if (is_mac) {
-       sources += rebase_path(gles_gypi.libangle_gl_cgl_sources, ".", "src")
-@@ -636,7 +638,7 @@ util_gypi = exec_script("//build/gypi_to_gn.py",
- 
- config("angle_util_config") {
-   include_dirs = [ "util" ]
--  if (is_linux && use_x11) {
-+  if ((is_linux || is_bsd) && use_x11) {
-     libs = [ "X11" ]
    }
- }
-@@ -663,7 +665,7 @@ foreach(is_shared_library,
+@@ -677,7 +678,7 @@
        sources += rebase_path(util_gypi.util_win32_sources, ".", "util")
      }
  

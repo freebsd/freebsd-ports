@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	chromium
-PORTVERSION=	60.0.3112.113
-PORTREVISION=	1
+PORTVERSION=	61.0.3163.79
 CATEGORIES?=	www
 MASTER_SITES=	https://commondatastorage.googleapis.com/chromium-browser-official/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
@@ -62,11 +61,11 @@ LIB_DEPENDS=	libspeechd.so:accessibility/speech-dispatcher \
 RUN_DEPENDS=	xdg-open:devel/xdg-utils \
 		droid-fonts-ttf>0:x11-fonts/droid-fonts-ttf
 
-ONLY_FOR_ARCHS=	amd64 i386
+ONLY_FOR_ARCHS=	aarch64 amd64 i386
 .endif
 
 .if defined(GN_ONLY)
-USES=		compiler:c++11-lib ninja pkgconfig python:2,build shebangfix tar:xz
+USES=		compiler:c++14-lang ninja pkgconfig python:2,build shebangfix tar:xz
 .else
 USES=		bison cpe desktop-file-utils execinfo jpeg ninja perl5 pkgconfig \
 		python:2,build shebangfix tar:xz
@@ -201,6 +200,13 @@ MAKE_ENV+=	C_INCLUDE_PATH=${LOCALBASE}/include \
 # Work around base r261801
 .if ${OPSYS} == FreeBSD && ${OSVERSION} < 1100508
 GN_ARGS+=	extra_cxxflags="-D_LIBCPP_TRIVIAL_PAIR_COPY_CTOR=1"
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-libc++-old
+.else
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-libc++-new
+.endif
+
+.if ${ARCH} == aarch64
+GN_ARGS+=	use_vulcanize=false
 .endif
 
 .if !defined(GN_ONLY)

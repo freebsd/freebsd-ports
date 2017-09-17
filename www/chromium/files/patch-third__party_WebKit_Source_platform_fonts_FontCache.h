@@ -1,20 +1,20 @@
---- third_party/WebKit/Source/platform/fonts/FontCache.h.orig	2017-06-05 19:03:26 UTC
-+++ third_party/WebKit/Source/platform/fonts/FontCache.h
-@@ -144,7 +144,7 @@ class PLATFORM_EXPORT FontCache {
+--- third_party/WebKit/Source/platform/fonts/FontCache.h.orig	2017-09-05 21:05:41.000000000 +0200
++++ third_party/WebKit/Source/platform/fonts/FontCache.h	2017-09-06 21:34:33.301287000 +0200
+@@ -165,7 +165,7 @@
  #else
    static const AtomicString& LegacySystemFontFamily();
  #endif
--#if OS(LINUX) || OS(ANDROID)
-+#if OS(LINUX) || OS(ANDROID) || OS(FREEBSD)
+-#if defined(OS_LINUX) || defined(OS_ANDROID)
++#if defined(OS_LINUX) || defined(OS_ANDROID) || defined(OS_BSD)
    static void SetSystemFontFamily(const AtomicString&);
  #endif
  
-@@ -259,7 +259,7 @@ class PLATFORM_EXPORT FontCache {
+@@ -282,7 +282,7 @@
                                     const FontFaceCreationParams&,
                                     CString& name);
  
--#if OS(ANDROID) || OS(LINUX)
-+#if OS(ANDROID) || OS(LINUX) || OS(FREEBSD)
+-#if defined(OS_ANDROID) || defined(OS_LINUX)
++#if defined(OS_ANDROID) || defined(OS_LINUX) || defined(OS_BSD)
    static AtomicString GetFamilyNameForCharacter(SkFontMgr*,
                                                  UChar32,
                                                  const FontDescription&,

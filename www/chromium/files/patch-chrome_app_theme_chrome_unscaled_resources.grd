@@ -1,0 +1,11 @@
+--- chrome/app/theme/chrome_unscaled_resources.grd.orig	2017-09-07 19:07:10.298267000 +0200
++++ chrome/app/theme/chrome_unscaled_resources.grd	2017-09-07 19:07:26.024168000 +0200
+@@ -80,7 +80,7 @@
+         <include name="IDR_PROFILE_AVATAR_2X_25" file="default_200_percent/common/profile_avatar_sun_cloud.png" type="BINDATA" />
+         <include name="IDR_PROFILE_AVATAR_2X_26" file="default_200_percent/common/profile_avatar_placeholder.png" type="BINDATA" />
+       </if>
+-      <if expr="is_linux and enable_app_list">
++      <if expr="is_posix and enable_app_list">
+         <!-- App Launcher icons for desktop icon. -->
+         <if expr="_google_chrome">
+           <then>

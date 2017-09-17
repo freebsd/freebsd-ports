@@ -1,24 +1,24 @@
---- content/shell/BUILD.gn.orig	2017-06-05 19:03:07 UTC
-+++ content/shell/BUILD.gn
-@@ -298,7 +298,7 @@ static_library("content_shell_lib") {
+--- content/shell/BUILD.gn.orig	2017-09-05 21:05:19.000000000 +0200
++++ content/shell/BUILD.gn	2017-09-07 03:19:12.063954000 +0200
+@@ -313,7 +313,7 @@
      ]
    }
  
 -  if (is_linux) {
 +  if (is_linux || is_bsd) {
      deps += [
-       "//build/linux:fontconfig",
+       "//third_party/fontconfig",
        "//ui/gfx:test_support",
-@@ -322,7 +322,7 @@ static_library("content_shell_lib") {
+@@ -337,7 +337,7 @@
      ]
    }
  
--  if (is_posix && !is_mac) {
-+  if (is_posix && !is_mac && !is_bsd) {
+-  if (is_posix && !is_mac && !is_fuchsia) {
++  if (is_posix && !is_mac && !is_fuchsia && !is_bsd) {
      deps += [
        "//components/crash/content/app",
        "//components/crash/content/browser",
-@@ -371,7 +371,7 @@ static_library("content_shell_lib") {
+@@ -385,7 +385,7 @@
      ]
    }
  
@@ -27,7 +27,7 @@
      deps += [ "//third_party/freetype" ]
    }
  
-@@ -543,7 +543,7 @@ if (is_android) {
+@@ -560,7 +560,7 @@
        }
      }
  
