@@ -40,7 +40,6 @@ start_precmd=consul_startprecmd
 restart_precmd=consul_checkconfig
 reload_precmd=consul_checkconfig
 configtest_cmd=consul_checkconfig
-upgrade_precmd=consul_checkconfig
 
 consul_startprecmd()
 {
