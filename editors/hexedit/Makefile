@@ -19,6 +19,8 @@ PLIST_FILES=	bin/hexedit man/man1/hexedit.1.gz
 GH_ACCOUNT=	pixel
 USE_GITHUB=	yes
 
+EXPLICIT_SAFESTACK=	yes
+
 post-build:
 	m4 -DVERSION=${PORTVERSION} ${WRKSRC}/hexedit.1.in > ${WRKSRC}/hexedit.1
 

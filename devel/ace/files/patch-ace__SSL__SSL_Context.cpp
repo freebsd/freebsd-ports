@@ -1,6 +1,15 @@
---- ace/SSL/SSL_Context.cpp.orig	2015-09-17 06:55:18 UTC
+--- ace/SSL/SSL_Context.cpp.orig	2016-05-02 07:59:38 UTC
 +++ ace/SSL/SSL_Context.cpp
-@@ -683,7 +683,7 @@ ACE_SSL_Context::random_seed (const char
+@@ -352,7 +352,7 @@ ACE_SSL_Context::filter_versions (const 
+ bool
+ ACE_SSL_Context::check_host (const ACE_INET_Addr &host, SSL *peerssl)
+ {
+-#if defined (OPENSSL_VERSION_NUMBER) && (OPENSSL_VERSION_NUMBER >= 0x10002001L)
++#if defined (OPENSSL_VERSION_NUMBER) && (OPENSSL_VERSION_NUMBER >= 0x10002001L) && !defined(LIBRE_VERSION_NUMBER)
+ 
+   this->check_context ();
+ 
+@@ -629,7 +629,7 @@ ACE_SSL_Context::random_seed (const char
  int
  ACE_SSL_Context::egd_file (const char * socket_file)
  {

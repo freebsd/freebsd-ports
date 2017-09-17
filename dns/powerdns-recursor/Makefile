@@ -26,6 +26,8 @@ GNU_CONFIGURE=	YES
 CXXFLAGS+=	-D_GLIBCXX_USE_C99
 CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc/pdns
 
+NOPIE_PORTS=	yes
+
 CPE_VENDOR=	powerdns
 
 USE_RC_SUBR=	pdns-recursor

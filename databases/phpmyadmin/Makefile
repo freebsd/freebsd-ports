@@ -16,6 +16,9 @@ LICENSE=	GPLv2
 USES=		cpe php:web tar:xz
 CPE_PRODUCT=	${PORTNAME:tl}
 
+NOPIE_PORTS=	yes
+NORELRO_PORTS=	yes
+
 NO_ARCH=	yes
 NO_BUILD=	yes
 .if !defined(WITHOUT_PHP_DEPENDS)

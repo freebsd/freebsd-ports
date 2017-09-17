@@ -9,6 +9,8 @@ MASTER_SITES=	http://www.ivarch.com/programs/sources/
 MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	Pipe throughput monitor
 
+EXPLICIT_SAFESTACK=		yes
+
 LICENSE=	ART20
 
 CONFLICTS=	waon-[0-9]*

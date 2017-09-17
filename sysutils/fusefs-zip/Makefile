@@ -15,6 +15,8 @@ BUILD_DEPENDS=	libzip>=0.11.1:archivers/libzip
 
 USES=		gmake fuse pkgconfig
 
+NOPIE_PORTS=	yes
+
 PLIST_FILES=	bin/${PORTNAME} man/man1/${PORTNAME}.1.gz
 PORTDOCS=	README changelog
 

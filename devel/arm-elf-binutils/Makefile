@@ -16,6 +16,9 @@ CONFIGURE_ARGS=	--target=${PKGNAMEPREFIX:S/-$//} --disable-werror \
 		--disable-nls CFLAGS="-I/usr/local/include"
 INFO_PATH=	${PKGNAMEPREFIX:S/-$//}/info
 
+NOPIE_PORTS=	yes
+NORELRO_PORTS=	yes
+
 post-install:
 .for F in addr2line c++filt elfedit gprof objcopy objdump readelf size strings
 	${LN} -f ${STAGEDIR}${PREFIX}/bin/${PKGNAMEPREFIX}$F  \

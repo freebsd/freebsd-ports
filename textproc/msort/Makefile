@@ -25,6 +25,8 @@ CONFIGURE_ENV=	ac_cv_lib_tre_regwcomp=yes
 GNU_CONFIGURE=	yes
 TEST_TARGET=	test
 
+USE_HARDENING=	pie:off relro:off
+
 PLIST_FILES=	bin/msg bin/msort man/man1/msort.1.gz
 
 post-patch:

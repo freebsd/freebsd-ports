@@ -44,6 +44,9 @@ CONFIGURE_ARGS+=	--enable-fullscreen --enable-ipv6 \
 			--enable-external-ffmpeg \
 			--disable-dependency-tracking
 
+NOPIE_PORTS=	yes
+NORELRO_PORTS=	yes
+
 LMLINKS=	vice.1 x64.1 \
 		vice.1 x128.1 \
 		vice.1 xvic.1 \

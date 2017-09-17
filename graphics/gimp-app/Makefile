@@ -54,6 +54,8 @@ LIBS+=		-lexecinfo
 CPE_PRODUCT=	gimp
 CPE_VENDOR=	gnu
 
+EXPLICIT_SAFESTACK=	yes
+
 SHEBANG_FILES=	plug-ins/pygimp/plug-ins/*.py
 
 PLIST_SUB+=	LIBVER=0.800.${PORTVERSION:E}
@@ -136,4 +138,5 @@ post-patch:
 		-e 's|x86_64|amd64|g' \
 		${WRKSRC}/configure
 
+NORELRO_PORTS=	yes
 .include <bsd.port.mk>

@@ -34,6 +34,8 @@ DESCR?=		${.CURDIR}/pkg-descr
 MAKE_ARGS+=	V=1 CROSS_COMPILE=${CROSS_COMPILE} DTC=${LOCALBASE}/bin/dtc ${ARCHFLAGS}
 
 NO_ARCH=	yes
+NOPIE_PORTS=	yes
+NORELRO_PORTS=	yes
 
 # Sanity checks
 .if !defined(MODEL)

@@ -18,6 +18,8 @@ USE_LDCONFIG=	yes
 CONFIGURE_SCRIPT=	updateminiupnpcstrings.sh
 MAKE_ENV+=	INSTALLPREFIX=${PREFIX}
 
+EXPLICIT_SAFESTACK=	yes
+
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_DEBUG)

@@ -27,6 +27,8 @@ USE_LDCONFIG=	yes
 
 USE_RC_SUBR=	sockd
 
+NOPIE_PORTS=	yes
+
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
 post-install:

@@ -17,6 +17,8 @@ MAKE_ARGS=	CC="${CC}" CPP="${CXX}"
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 PLIST_FILES=	bin/primer3
 
+USE_HARDENING=	pie:off
+
 post-patch:
 	@${REINPLACE_CMD} \
 		-e 's#^CFLAGS.*#CFLAGS  += \$$\(CC_OPTS\)#;' \

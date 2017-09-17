@@ -62,6 +62,9 @@ ADDRSTD_VARS=		WANT_PGSQL+=contrib
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
+NOPIE_PORTS=	yes
+NORELRO_PORTS=	yes
+
 .include <bsd.port.pre.mk>
 
 post-patch:

@@ -24,6 +24,8 @@ LIB_DEPENDS=	libgcrypt.so:security/libgcrypt
 
 CONFLICTS_INSTALL=	keepassx-0.* keepassx-devel-* keepassxc-*
 
+EXPLICIT_SAFESTACK=	yes
+
 USES=		cmake compiler:features desktop-file-utils shared-mime-info
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes

@@ -28,6 +28,9 @@ LDFLAGS+=	${ncurses_ARGS:Mport:C/.+/-ltinfo/}
 INFO_PATH=	${DATADIR_REL}/info
 CPE_VENDOR=	gnu
 
+NOPIE_PORTS=	yes
+NORELRO_PORTS=	yes
+
 SUB_FILES=	sources.el
 SUB_LIST+=	ARCHLIBDIR=${PREFIX}/libexec/emacs/${EMACS_VER}/${CONFIGURE_TARGET}
 SUB_LIST+=	EMACS_VER=${EMACS_VER} # sources.el

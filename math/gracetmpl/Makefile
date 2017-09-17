@@ -31,6 +31,9 @@ ALL_TARGET=	all pythonwrap
 INSTALL_TARGET=	install
 USE_GCC=	yes
 
+NOPIE_PORTS=	yes
+NORELRO_PORTS=	yes
+
 PLIST_SUB+=	PYTHON_VER=${PYTHON_VER}
 
 post-extract:

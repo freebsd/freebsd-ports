@@ -18,6 +18,8 @@ PLIST_FILES=	bin/ncp bin/npush bin/npoll man/man1/ncp.1.gz man/man1/npush.1.gz
 CFLAGS+=	-I${LOCALBASE}/include/libowfat -I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
+NOPIE_PORTS=	yes
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|^CC=gcc|CC=${CC}|' \
 		${WRKSRC}/Makefile

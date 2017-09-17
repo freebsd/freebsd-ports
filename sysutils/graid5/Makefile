@@ -22,6 +22,9 @@ MAKE_ENV+=	KMODDIR=${KMODDIR} SRC_BASE=${SRC_BASE}
 
 USES=		tar:bzip2 kmod uidfix
 
+NOPIE_PORTS=	yes
+NORELRO_PORTS=	yes
+
 .include <bsd.port.pre.mk>
 
 .if !exists(${SRC_BASE}/sbin/geom/Makefile)

@@ -40,6 +40,8 @@ CONFIGURE_ENV+=	LIBS="-L${LOCALBASE}/lib"
 CPPFLAGS+=	-I${LOCALBASE}/include
 MAKE_JOBS_UNSAFE=	yes
 
+NOPIE_PORTS=	yes
+
 CPE_VENDOR=	cmu
 CPE_PRODUCT=	cyrus_imap_server
 

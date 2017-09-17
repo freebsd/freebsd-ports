@@ -31,6 +31,8 @@ LDFLAGS+=	${ICONV_LIB}
 USE_XORG=	x11 xcb xt xproto xext
 USES=		gmake iconv pkgconfig tar:bzip2
 
+USE_HARDENING=	safestack
+
 PORTDOCS=	CHANGELOG README.md
 
 OPTIONS_DEFINE=	DOCS

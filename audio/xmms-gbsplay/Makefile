@@ -24,10 +24,13 @@ USE_CSTD=	gnu89
 
 OPTIONS_DEFINE=	NLS
 
+NOPIE_PORTS=	yes
+NORELRO_PORTS=	yes
+
 NLS_CONFIGURE_OFF=	--disable-i18n
 NLS_USES=		gettext-runtime
 
-CONFIGURE_ARGS=	--disable-nas --prefix=${PREFIX}
+CONFIGURE_ARGS=		--disable-nas --prefix=${PREFIX}
 
 PLIST_FILES=	lib/xmms/Input/gbsxmms.so
 

@@ -19,4 +19,6 @@ LIBS+=		-L${LOCALBASE}/lib
 
 PLIST_FILES=	bin/nokryptia man/man1/${PORTNAME}.1.gz
 
+NOPIE_PORTS=	yes
+
 .include <bsd.port.mk>

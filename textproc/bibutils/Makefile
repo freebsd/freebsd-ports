@@ -13,6 +13,8 @@ LICENSE=	GPLv2
 
 USES=	gmake tar:tgz
 
+USE_HARDENING=	pie:off
+
 WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION}
 
 HAS_CONFIGURE=	yes

@@ -29,6 +29,9 @@ CONFIGURE_ARGS=	--enable-optimize="${CXXFLAGS}"
 MAKE_ARGS=	CP="${CP} -R -f"
 ALL_TARGET=	${PORTNAME:tu}
 
+NOPIE_PORTS=	yes
+NORELRO_PORTS=	yes
+
 SHEBANG_FILES=	plugins/asymptote/bin/* plugins/dratex/bin/* \
 		plugins/eukleides/bin/* plugins/feynmf/bin/* \
 		plugins/mupad/bin/* plugins/texgraph/bin/* \

@@ -27,6 +27,9 @@ PLIST_FILES=	bin/flute bin/multis_flute
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
+NOPIE_PORTS=	yes
+NORELRO_PORTS=	yes
+
 post-patch:
 	@${FIND} ${WRKSRC} -name Makefile | ${XARGS} \
 		${REINPLACE_CMD} -e '/CC/s| =| ?=|; \

@@ -10,6 +10,8 @@ MASTER_SITES=	http://feh.finalrewind.org/ \
 MAINTAINER=	zeising@FreeBSD.org
 COMMENT=	Image viewer that utilizes Imlib2
 
+EXPLICIT_SAFESTACK=		yes
+
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 

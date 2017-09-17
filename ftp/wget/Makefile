@@ -13,6 +13,8 @@ COMMENT=	Retrieve files from the Net via HTTP(S) and FTP
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+EXPLICIT_SAFESTACK=	yes
+
 TEST_DEPENDS=	p5-HTTP-Daemon>=0:www/p5-HTTP-Daemon \
 		p5-IO-Socket-SSL>=0:security/p5-IO-Socket-SSL
 

@@ -28,6 +28,9 @@ USE_GCC=	any
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-optimize
 
+NOPIE_PORTS=	yes
+NORELRO_PORTS=	yes
+
 CPPFLAGS+=	$$(libpng-config --I_opts) $$(curl-config --cflags) \
 		-I${LOCALBASE}/include
 LDFLAGS+=	$$(libpng-config --L_opts) $$(curl-config --libs) \

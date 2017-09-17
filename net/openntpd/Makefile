@@ -19,6 +19,8 @@ GROUPS=		_ntp
 
 USES=		ssl
 
+EXPLICIT_SAFESTACK=	yes
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-cacert=${LOCALBASE}/etc/ssl/cert.pem
 

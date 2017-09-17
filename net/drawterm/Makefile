@@ -24,6 +24,8 @@ MAKE_ARGS=	CONF=pthread
 
 OPTIONS_DEFINE=	DOCS
 
+NOPIE_PORTS=	yes
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/drawterm ${STAGEDIR}${PREFIX}/bin
 

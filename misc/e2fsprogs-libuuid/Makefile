@@ -24,6 +24,8 @@ USE_RC_SUBR=	uuidd
 
 PKGDIR=		${.CURDIR}
 
+NOPIE_PORTS=	yes
+
 post-patch::
 	${REINPLACE_CMD} -e 's,/var/lib/libuuid,/var/run/libuuid,g' \
 	    -e 's,/usr/sbin/uuidd,${PREFIX}/sbin/uuidd,' \

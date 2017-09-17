@@ -29,6 +29,9 @@ CONFIGURE_ARGS=	--disable-optimize
 CPPFLAGS+=	$$(libpng-config --I_opts)
 LDFLAGS+=	$$(libpng-config --L_opts)
 
+NOPIE_PORTS=	yes
+NORELRO_PORTS=	yes
+
 DATADIR=	${PREFIX}/share/Shaaft
 
 PLIST_FILES=	bin/Packer bin/shaaft %%DATADIR%%/resource.dat \

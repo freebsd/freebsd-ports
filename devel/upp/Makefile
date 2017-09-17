@@ -16,6 +16,8 @@ LICENSE_FILE=	${BUILD_WRKSRC}/Core/Copying
 
 USES=		compiler:c++11-lib execinfo
 
+NOPIE_PORTS=	yes
+
 WRKSRC=		${WRKDIR}/${DISTNAME}
 BUILD_WRKSRC=	${WRKSRC}/uppsrc
 

@@ -29,6 +29,8 @@ MAKE_JOBS_UNSAFE=	yes
 CFLAGS+=	-I${OPENSSLINC}
 LDFLAGS+=	-L${OPENSSLLIB}
 
+USE_HARDENING=	pie:off
+
 pre-configure:
 	@${RM} ${WRKSRC}/src/config.cache
 

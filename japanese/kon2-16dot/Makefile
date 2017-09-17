@@ -13,6 +13,8 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		jiskan16.bdf 8x16rk.bdf
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
+NOPIE_PORTS=	yes
+
 # '+=' is for slave ports
 MAINTAINER=	TsurutaniNaoki@gmail.com
 COMMENT=	Kanji On Console -- Display kanji characters on your own console

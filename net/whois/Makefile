@@ -16,6 +16,8 @@ USES=		iconv gmake perl5
 USE_PERL5=	build
 MAKE_ARGS=	BASEDIR="${STAGEDIR}"
 
+USE_HARDENING=	safestack
+
 OPTIONS_DEFINE=	NLS
 
 OPTIONS_SUB=	yes

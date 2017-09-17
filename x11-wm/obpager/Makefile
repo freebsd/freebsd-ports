@@ -16,6 +16,8 @@ BUILD_DEPENDS=	gsed:textproc/gsed
 USES=		gmake
 USE_XORG=	x11 xext
 
+USE_HARDENING=	pie:off
+
 PLIST_FILES=	bin/${PORTNAME}
 
 post-patch:

@@ -16,6 +16,9 @@ USES=		fortran
 NO_WRKSUBDIR=	yes
 MAKEFILE=	makefile.lnx
 
+NOPIE_PORTS=	yes
+NORELRO_PORTS=	yes
+
 PLIST_FILES=	bin/x12a
 
 OPTIONS_DEFINE=	DOCS

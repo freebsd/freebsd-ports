@@ -28,6 +28,9 @@ USES=		fortran libtool localbase makeinfo pathfix
 GH_ACCOUNT=	Unidata
 USE_GITHUB=	yes
 
+NOPIE_PORTS=	yes
+NORELRO_PORTS=	yes
+
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libnetcdff.so.6.1.1
 

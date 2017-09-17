@@ -22,6 +22,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	AdaCore
 GH_TUPLE=	AdaCore:templates-parser:${PORTVERSION}:tp/templates_parser
 
+USE_HARDENING=	pie:off relro:off
+
 GNU_CONFIGURE=	yes
 NO_MTREE=	yes
 DOTBUILD=	release

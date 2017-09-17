@@ -20,6 +20,8 @@ USE_PERL5=	run
 SHEBANG_FILES=	scripts/getresults
 PLIST_SUB=	LMBENCH_OS=${ARCH}-${OPSYS:tl}${OSREL}
 
+USE_HARDENING=	pie:off
+
 test: build
 	@(cd ${WRKSRC}; make results)
 

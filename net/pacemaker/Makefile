@@ -47,6 +47,9 @@ CONFIGURE_ARGS=	--disable-fatal-warnings \
 		--without-heartbeat
 INSTALL_TARGET=	install-strip
 
+NOPIE_PORTS=	yes
+NORELRO_PORTS=	yes
+
 PATHFIX_MAKEFILEIN=	Makefile.am
 
 SHEBANG_LANG=	sh

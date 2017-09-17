@@ -23,6 +23,8 @@ CONFIGURE_ARGS=	--with-ada-include=${PREFIX}/include/adacurses \
 PORTDOCS=	ada Ada95.html
 PLIST_SUB=	atic=adacurses/terminal_interface-curses
 
+NOPIE_PORTS=	yes
+
 OPTIONS_DEFINE=	DOCS
 
 MAKE_JOBS_UNSAFE=	yes

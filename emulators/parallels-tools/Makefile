@@ -12,6 +12,9 @@ COMMENT=	Parallels Desktop Tools for FreeBSD
 
 USES=		kmod tar:bzip2 uidfix
 
+NOPIE_PORTS=	yes
+NORELRO_PORTS=	yes
+
 ONLY_FOR_ARCHS=	amd64 i386
 
 PLIST_FILES=	${KMODDIR}/if_pvmnet.ko

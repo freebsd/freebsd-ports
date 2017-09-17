@@ -21,6 +21,8 @@ GNU_CONFIGURE=	yes
 USE_GNOME=	glib20 gtk20 cairo pango gdkpixbuf2 intltool intlhack
 USE_XORG=	x11
 
+USE_HARDENING=	safestack
+
 CONFIGURE_ARGS=--with-gtk=2
 
 OPTIONS_DEFINE=	NLS

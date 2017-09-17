@@ -22,6 +22,8 @@ MAKE_JOBS_UNSAFE=	yes
 
 USES=		autoreconf iconv ncurses shebangfix tar:xz
 
+USE_HARDENING=	safestack
+
 SHEBANG_LANG=	zsh
 zsh_OLD_CMD=	zsh	# shebang appears as /bin/zsh and just zsh
 SHEBANG_FILES=	Functions/Calendar/* \

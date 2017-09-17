@@ -25,6 +25,8 @@ CONFIGURE_ARGS=	OPENSSL_CFLAGS="-I${OPENSSLINC}" OPENSSL_LIBS="-L${OPENSSLLIB} -
 GH_ACCOUNT=	mattn
 GNU_CONFIGURE=	yes
 
+NOPIE_PORTS=	yes
+
 INSTALL_TARGET=	install-strip
 
 LIBNOTIFY_DESC=		Use notify-osd for libnotify display plugin

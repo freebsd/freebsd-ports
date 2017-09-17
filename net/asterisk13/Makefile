@@ -31,6 +31,9 @@ USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	asterisk
 
+NOPIE_PORTS=	yes
+NORELRO_PORTS=	yes
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--datarootdir=${DATADIR} \
 			--with-ilbc=internal \

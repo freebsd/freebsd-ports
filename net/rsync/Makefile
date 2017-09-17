@@ -24,6 +24,8 @@ SHEBANG_FILES=	support/rrsync
 CPE_VENDOR=	samba
 CPE_PRODUCT=	rsync
 
+EXPLICIT_SAFESTACK=	yes
+
 PATCH_STRIP=	-p1
 GNU_CONFIGURE=	yes
 USE_RC_SUBR=	rsyncd

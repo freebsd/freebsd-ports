@@ -22,6 +22,8 @@ BITMAP_IMAGES_USES=	jpeg
 
 CONFIGURE_ARGS=	--with-extrafonts=yes --with-qt=${QT_ARCHDIR}
 
+NOPIE_PORTS=	yes
+
 ALL_TARGET=	all
 
 DOCS_ALL_TARGET=	doc

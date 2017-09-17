@@ -24,6 +24,7 @@ SUBDIR += ftp
 SUBDIR += games
 SUBDIR += german
 SUBDIR += graphics
+SUBDIR += hardenedbsd
 SUBDIR += hebrew
 SUBDIR += hungarian
 SUBDIR += irc

@@ -18,6 +18,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	google
 GC_TAGNAME=	6d01e82
 
+NOPIE_PORTS=	yes
+
 OPTIONS_DEFINE=	EXAMPLES
 
 # inplace replacement to remove relative binary path in examples scripts

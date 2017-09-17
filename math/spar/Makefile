@@ -16,6 +16,8 @@ GNU_CONFIGURE=	yes
 USE_CSTD=	gnu89
 USE_LDCONFIG=	yes
 
+NOPIE_PORTS=	yes
+
 post-patch:
 	@${REINPLACE_CMD} -e "s,-ldl,,g" \
 		${WRKSRC}/lib/Makefile.in ${WRKSRC}/lib/module/Makefile.in

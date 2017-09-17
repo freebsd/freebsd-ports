@@ -23,6 +23,8 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-ldns-includes=${LOCALBASE}/include \
 		--with-ldns-libraries=${LOCALBASE}/lib
 
+NOPIE_PORTS=	yes
+
 USE_RC_SUBR=	passivedns
 
 do-install:

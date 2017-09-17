@@ -57,6 +57,8 @@ EXTRA_CONF_ARGS?=--enable-cli \
 		 --disable-mac \
 		 --disable-nls
 
+EXPLICIT_SAFESTACK=	yes
+
 EXTRA_PATCHES=	${PATCHDIR}/disable-web
 
 OPTIONS_DEFINE+=	DOCS LITE

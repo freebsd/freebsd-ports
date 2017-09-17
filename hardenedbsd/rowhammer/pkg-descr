@@ -1,0 +1,6 @@
+rowhammer
+=========
+
+Google's PoC test code for the RowHammer vulnerability.
+
+WWW: http://googleprojectzero.blogspot.de/2015/03/exploiting-dram-rowhammer-bug-to-gain.html

@@ -20,6 +20,8 @@ IGNORE_WITH_MYSQL=	41
 
 ZABBIX_BUILD=	${PKGNAMESUFFIX:S/^-//}
 
+USE_HARDENING=	safestack
+
 .if ${ZABBIX_BUILD} != "frontend" # frontend only needs the version/distribution settings
 .if ${ZABBIX_BUILD} != "agent"
 USE_RC_SUBR=	zabbix_${ZABBIX_BUILD}

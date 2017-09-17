@@ -31,6 +31,8 @@ CONFIGURE_ARGS+=	--mandir=${MANPREFIX}/man \
 
 CFLAGS+=	-I${LOCALBASE}/include
 
+EXPLICIT_SAFESTACK=	yes
+
 post-patch:
 	@${REINPLACE_CMD} -e \
 		"s|$$[{]LIBDIRNAME[}]/pkgconfig|libdata/pkgconfig| ; \

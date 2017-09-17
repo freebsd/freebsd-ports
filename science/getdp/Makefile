@@ -20,6 +20,8 @@ LIB_DEPENDS=	libgsl.so:math/gsl	\
 USES=		fortran tar:tgz cmake
 WANT_PERL=	yes
 
+NOPIE_PORTS=	yes
+
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
 .include <bsd.port.pre.mk>

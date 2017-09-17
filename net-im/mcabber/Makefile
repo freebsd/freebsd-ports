@@ -9,6 +9,8 @@ MASTER_SITES=	http://www.lilotux.net/~mikael/mcabber/files/
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Small Jabber console client
 
+EXPLICIT_SAFESTACK=		yes
+
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 

@@ -9,6 +9,8 @@ CATEGORIES=	net gnome
 MAINTAINER=	woodsb02@FreeBSD.org
 COMMENT=	GTK+ Remote Desktop Client
 
+EXPLICIT_SAFESTACK=	yes
+
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 

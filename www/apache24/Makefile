@@ -26,6 +26,8 @@ USE_PERL5=	run
 USE_RC_SUBR=	apache24 htcacheclean
 GNU_CONFIGURE=	yes
 
+USE_HARDENING=	safestack
+
 CPE_VENDOR=	apache
 CPE_PRODUCT=	http_server
 

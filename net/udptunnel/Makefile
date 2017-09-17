@@ -10,6 +10,8 @@ MASTER_SITES=	http://www.cs.columbia.edu/~lennox/udptunnel/
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Tunnel UDP packets over a TCP connection
 
+EXPLICIT_SAFESTACK=		yes
+
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 

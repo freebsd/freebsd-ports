@@ -39,6 +39,8 @@ USE_CXXSTD=	c++11
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -lssl -lcrypto
 
+NOPIE_PORTS=	yes
+
 OPTIONS_DEFINE=	EDITOR DOCS VIEWER
 OPTIONS_SUB=	yes
 EDITOR_DESC=	Install MegaGlest Editor

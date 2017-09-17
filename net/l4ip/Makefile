@@ -16,6 +16,8 @@ LICENSE=	NONE
 USES=		gmake ssl tar:tgz
 WRKSRC=		${WRKDIR}/${PORTNAME}/src
 
+NOPIE_PORTS=	yes
+
 OPTIONS_DEFINE=	EXAMPLES
 
 post-patch:

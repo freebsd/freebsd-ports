@@ -19,6 +19,8 @@ USES=		autoreconf dos2unix gmake tar:bzip2
 DOS2UNIX_FILES=	*.h *.cpp
 USE_SDL=	sdl image mixer
 
+NOPIE_PORTS=	yes
+
 DESKTOP_ENTRIES="XLogical" \
 		"" \
 		"" \

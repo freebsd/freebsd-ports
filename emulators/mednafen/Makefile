@@ -28,6 +28,9 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 WRKSRC=	${WRKDIR}/${PORTNAME}
 SUB_FILES=	pkg-message
 
+NOPIE_PORTS=	yes
+NORELRO_PORTS=	yes
+
 CONFIGURE_ARGS+=--disable-alsa --disable-alsatest \
 		--with-sdl-prefix=${LOCALBASE}
 

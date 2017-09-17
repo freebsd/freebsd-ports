@@ -15,6 +15,8 @@ ONLY_FOR_ARCHS=	amd64 i386
 
 USES=		cmake:outsource
 
+USE_HARDENING=	pie:off
+
 CFLAGS+=	-DNDEBUG
 
 USE_GITHUB=	yes

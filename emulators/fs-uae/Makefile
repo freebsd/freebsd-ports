@@ -23,6 +23,9 @@ USE_GNOME=	glib20
 INSTALLS_ICONS=	yes
 MAKE_ARGS+=	prefix=${PREFIX}
 
+NOPIE_PORTS=	yes
+NORELRO_PORTS=	yes
+
 OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.mk>

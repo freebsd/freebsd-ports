@@ -31,6 +31,8 @@ ALL_TARGET=	all
 INSTALL_TARGET=	rename
 EXTRACT_AFTER_ARGS=--exclude fftw --exclude windows --exclude macosx
 
+USE_HARDENING=	pie:off relro:off
+
 SUB_FILES=	pkg-message
 
 .include <bsd.port.options.mk>

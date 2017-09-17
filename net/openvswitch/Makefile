@@ -23,6 +23,9 @@ CONFIGURE_ARGS=	--enable-shared --localstatedir=/var \
 USE_RC_SUBR=	ovs-vswitchd ovsdb-server
 LDFLAGS+=	-lpthread
 
+NOPIE_PORTS=	yes
+NORELRO_PORTS=	yes
+
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/vswitchd/vswitch.ovsschema ${STAGEDIR}${PREFIX}/share/openvswitch/
 

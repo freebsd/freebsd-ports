@@ -19,6 +19,8 @@ USE_GITHUB=	yes
 PLIST_FILES=	bin/ucpp man/man1/ucpp.1.gz
 USES=		gmake
 
+NOPIE_PORTS=	yes
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
 	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${PREFIX}/man/man1/

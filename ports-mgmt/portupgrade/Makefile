@@ -13,6 +13,8 @@ MASTER_SITES=	LOCAL/bdrewery/${PORTNAME}/ \
 MAINTAINER=	bdrewery@FreeBSD.org
 COMMENT=	FreeBSD ports/packages administration and management tool suite
 
+EXPLICIT_SAFESTACK=		yes
+
 LICENSE=	BSD3CLAUSE
 
 OPTIONS_DEFINE=	DOCS

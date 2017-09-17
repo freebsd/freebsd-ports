@@ -16,6 +16,8 @@ USES=		gmake pkgconfig
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk20 gnomeprefix
 
+USE_HARDENING=	pie:off
+
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes
 

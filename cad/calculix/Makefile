@@ -30,6 +30,9 @@ USES=		gmake tar:bzip2
 USE_XORG=	ice sm x11 xext xi xmu xt
 USE_GL= 	gl glu # uses its own glut
 
+NOPIE_PORTS=	yes
+NORELRO_PORTS=	yes
+
 BROWSER?=	firefox
 PSVIEWER?=	gv
 

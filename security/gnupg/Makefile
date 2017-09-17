@@ -23,6 +23,9 @@ BUILD_DEPENDS=	libassuan>=2.4.3:security/libassuan \
 		libgpg-error>=1.16:security/libgpg-error
 RUN_DEPENDS=	pinentry:security/pinentry
 
+EXPLICIT_SAFESTACK=	yes
+CPPFLAGS+=	-fPIC
+
 CONFLICTS=	gnupg-2.0.* gnupg-2.2.* dirmngr-[0-9]*
 CPE_VENDOR=	gnupg
 

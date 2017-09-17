@@ -11,6 +11,8 @@ MASTER_SITES=	http://linuxbrit.co.uk/downloads/ \
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Screen capture utility that utilizes Imlib2
 
+EXPLICIT_SAFESTACK=		yes
+
 LIB_DEPENDS=	libgiblib.so:graphics/giblib
 
 GNU_CONFIGURE=	yes

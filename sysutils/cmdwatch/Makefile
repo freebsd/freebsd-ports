@@ -13,4 +13,6 @@ COMMENT=	Watches the output from a command at specified intervals
 USES=		ncurses
 PLIST_FILES=	bin/cmdwatch man/man1/cmdwatch.1.gz
 
+NOPIE_PORTS=	yes
+
 .include <bsd.port.mk>

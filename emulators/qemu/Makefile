@@ -26,6 +26,9 @@ USE_GNOME+=	cairo glib20
 ONLY_FOR_ARCHS=	amd64 i386 powerpc powerpc64 # XXX someone wants to debug sparc64 hosts?
 .endif
 
+NOPIE_PORTS=	yes
+NORELRO_PORTS=	yes
+
 BROKEN_powerpc64=	fails to compile: In function aio_bh_poll: internal compiler error: Segmentation fault
 
 OPTIONS_DEFINE=	SAMBA X11 GTK2 OPENGL GNUTLS SASL JPEG PNG CURL \

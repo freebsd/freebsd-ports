@@ -16,6 +16,9 @@ LICENSE_COMB=	dual
 
 LIB_DEPENDS=	libgmp.so:math/gmp
 
+NOPIE_PORTS=	yes
+NORELRO_PORTS=	yes
+
 CONFLICTS=	yap-6.2.*
 
 OPTIONS_DEFINE=	DOCS MYDDAS

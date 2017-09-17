@@ -23,4 +23,6 @@ PLIST_FILES=	bin/sdr-wspr share/applications/sdr-wspr.desktop \
 		share/icons/sdr-wspr.svg
 CMAKE_ARGS=	-DCMAKE_INSTALL_RPATH:STRING="${LOCALBASE}/lib/gcc${_GCC_VER}"
 
+NOPIE_PORTS=	yes
+
 .include <bsd.port.mk>

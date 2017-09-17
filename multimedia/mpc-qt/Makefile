@@ -17,6 +17,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	cmdrkotori
 GH_TUPLE=	Argon-:mpv-stats:1.1-24-g6a37a6d:mpv_stats/external/mpv-stats
 
+EXPLICIT_SAFESTACK=	yes
+
 USES=		compiler:c++11-lib desktop-file-utils pkgconfig qmake
 USE_QT5=	qmake_build buildtools_build linguisttools_build \
 		core dbus gui network svg_run widgets x11extras

@@ -11,6 +11,8 @@ COMMENT=	Modular IRC client with many features
 
 LICENSE=	GPLv2
 
+EXPLICIT_SAFESTACK=	yes
+
 USES=		cpe gettext-runtime gmake libtool ncurses pkgconfig tar:xz
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip

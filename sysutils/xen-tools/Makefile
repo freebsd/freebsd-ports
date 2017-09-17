@@ -23,6 +23,9 @@ BUILD_DEPENDS=	dev86>0:devel/dev86 \
 		seabios>0:misc/seabios \
 		markdown>0:textproc/markdown
 
+NOPIE_PORTS=	yes
+NORELRO_PORTS=	yes
+
 OPTIONS_DEFINE=	DOCS
 
 ONLY_FOR_ARCHS=	amd64

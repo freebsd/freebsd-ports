@@ -28,6 +28,8 @@ SUB_FILES=	pkg-message
 
 ALL_TARGET=	default
 
+NOPIE_PORTS=	yes
+
 pre-everything::
 	@${ECHO_MSG}
 	@${ECHO_MSG} "If your PVM is not installed in the default directory,"

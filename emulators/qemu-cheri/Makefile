@@ -26,6 +26,11 @@ USE_GNOME+=	glib20
 #MAKE_ENV+=	BSD_MAKE="${MAKE}"
 ONLY_FOR_ARCHS=	amd64 i386 powerpc powerpc64
 
+NOPIE_PORTS=	yes
+NORELRO_PORTS=	yes
+
+CONFLICTS_INSTALL=	qemu-[0-9]* qemu-devel-[0-9]* qemu-sbruno-[0-9]*
+
 .include "Makefile.snapshot"
 
 CONFIGURE_ARGS+= \

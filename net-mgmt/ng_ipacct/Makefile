@@ -23,6 +23,9 @@ USE_RC_SUBR=	ng_ipacct
 SUB_FILES=	pkg-message
 CFLAGS+=	-DMEM_USE_ZONE
 
+NOPIE_PORTS=	yes
+NORELRO_PORTS=	yes
+
 post-patch:
 	@${REINPLACE_CMD} 's,{MANDIR},{DESTDIR}$$&,' ${WRKSRC}/man_ru/Makefile
 

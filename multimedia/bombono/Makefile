@@ -40,6 +40,9 @@ MAKE_ARGS=	DVDREAD_INCLUDE=${LOCALBASE}/include \
 		CXXFLAGS="${CXXFLAGS}" LDFLAGS="${LDFLAGS}" \
 		CC="${CC}" CXX="${CXX}" USE_EXT_BOOST=true
 
+NOPIE_PORTS=	yes
+NORELRO_PORTS=	yes
+
 .include <bsd.port.options.mk>
 
 .if ${OPSYS} == FreeBSD && ${OSVERSION} > 1000023

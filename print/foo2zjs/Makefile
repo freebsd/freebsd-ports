@@ -15,6 +15,8 @@ PATCHFILES=	hbpl1-20160830.patch.xz:-p1
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Driver for printers that use the ZjStream wire protocol
 
+EXPLICIT_SAFESTACK=		yes
+
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 

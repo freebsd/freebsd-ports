@@ -27,6 +27,8 @@ BROKEN_sparc64=		fails to build: fails to compile dwarf_begin_elf.c
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes
 
+NOPIE_PORTS=	yes
+
 NLS_USES=	gettext
 NLS_CONFIGURE_ENABLE=	nls
 

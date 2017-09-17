@@ -29,7 +29,7 @@ post-install:
 
 .include <bsd.port.pre.mk>
 
-.if ${SSL_DEFAULT:Mlibressl*}
+.if ${SSL_DEFAULT:Mlibressl*} || defined(LIBRESSL_IS_OPENSSL)
 IGNORE=	Required CMS is disabled on LibreSSL
 .endif
 

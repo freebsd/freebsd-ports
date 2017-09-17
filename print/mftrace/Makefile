@@ -28,6 +28,8 @@ GNU_CONFIGURE=	yes
 USES=		gmake python
 MAKEFILE=	GNUmakefile
 
+NOPIE_PORTS=	yes
+NORELRO_PORTS=	yes
 
 PLIST_FILES=	\
 		bin/gf2pbm \

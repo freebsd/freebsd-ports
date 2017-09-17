@@ -24,6 +24,9 @@ USE_RC_SUBR=	oss
 SUB_FILES=	pkg-install pkg-deinstall
 ONLY_FOR_ARCHS=	amd64 i386
 
+NOPIE_PORTS=	yes
+NORELRO_PORTS=	yes
+
 KMODDIR=	${PREFIX}/lib/oss/modules
 
 OSS_CONF_FILES=	oss_audigyls oss_audioloop oss_cs461x oss_emu10k1x \

@@ -25,6 +25,8 @@ EXTRACT_AFTER_ARGS+=	--exclude "md5*"
 
 WRKSRC=		${WRKDIR}/multicoreware-${PORTNAME}-3037c1448549/source
 
+NOPIE_PORTS=	yes
+
 do-test:
 	${WRKSRC}/test/TestBench
 

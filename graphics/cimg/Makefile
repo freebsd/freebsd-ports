@@ -27,6 +27,8 @@ GH_ACCOUNT=	dtschump
 GH_PROJECT=	CImg
 GH_TAGNAME=	v.${DISTVERSION:S/.//g}
 
+NOPIE_PORTS=	yes
+
 .if !defined(WITHOUT_LAPACK)
 . if defined(WITH_ATLAS)
 USES+=		blaslapack:atlas

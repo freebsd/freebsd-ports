@@ -20,6 +20,8 @@ GH_ACCOUNT=	bderrly
 
 LDFLAGS+=	-L${LOCALBASE}/lib -lncurses
 
+NOPIE_PORTS=	yes
+
 OPTIONS_DEFINE=	DOCS
 
 do-build:

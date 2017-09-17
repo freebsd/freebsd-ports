@@ -59,6 +59,9 @@ GLIB_SCHEMAS=	org.freedesktop.Tracker.DB.gschema.xml \
 		org.freedesktop.Tracker.gschema.xml
 SHEBANG_FILES=	tests/tracker-writeback/01-writeback.py
 
+NOPIE_PORTS=	yes
+NORELRO_PORTS=	yes
+
 PLIST_SUB=	TRACKER_VER="1.0" LIBVER=601
 
 OPTIONS_DEFINE=		AUDIO_MINERS DOCUMENT_MINERS GRAPHIC_MINERS \

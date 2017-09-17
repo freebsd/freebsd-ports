@@ -54,6 +54,7 @@ CONFIGURE_ARGS+=	--without-bash-malloc \
 			--with-libiconv-prefix=${ICONV_PREFIX}
 
 .if empty(PKGNAMESUFFIX)
+EXPLICIT_SAFESTACK=		yes
 CONFLICTS+=		bash-static-[0-9]*
 .else
 CONFLICTS+=		bash-[0-9]*
@@ -62,6 +63,8 @@ CONFLICTS+=		bash-[0-9]*
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSTATIC} || defined(NO_DYNAMICROOT) || (defined(NOSHARED) && ${NOSHARED:tl} != "no")
+NOPIE_PORTS=		yes
+NORELRO_PORTS=		yes
 CONFIGURE_ARGS+=	--enable-static-link
 .else
 CONFIGURE_ARGS+=	--disable-static-link

@@ -20,6 +20,8 @@ USE_GITHUB=	yes
 
 GNU_CONFIGURE=	yes
 
+EXPLICIT_SAFESTACK=	yes
+
 OPTIONS_SUB=	yes
 SHEBANG_FILES=	contrib/smime_keys
 

@@ -61,7 +61,7 @@ MAKE_ENV+=	CC.host=${CC} CXX.host=${CXX} LINK.host=${CXX} LINK.target=${CXX}
 LIB_DEPENDS+=	libcares.so:dns/c-ares\
 		libuv.so:devel/libuv
 
-.include <bsd.port.options.mk>
+.include <bsd.port.pre.mk>
 
 .if empty(PORT_OPTIONS:MBUNDLED_SSL)
 
@@ -69,13 +69,11 @@ LIB_DEPENDS+=	libcares.so:dns/c-ares\
 IGNORE=		node.js requires openssl 1.0.2, add DEFAULT_VERSIONS+=ssl=openssl to /etc/make.conf or enable BUNDLED_SSL option
 .endif
 
-.if !empty(SSL_DEFAULT:Mlibressl*)
+.if !empty(SSL_DEFAULT:Mlibressl*) || ( defined(LIBRESSL_IS_OPENSSL) && empty(SSL_DEFAULT:Mopenssl*) )
 IGNORE=		cannot build node.js with LibreSSL. You must enable BUNDLED_SSL
 .endif
 
 .endif
-
-.include <bsd.port.pre.mk>
 
 .if ${ARCH} == "armv6"
 CONFIGURE_ARGS+=--openssl-no-asm

@@ -28,6 +28,9 @@ CONFIGURE_ARGS=	--enable-max-performance \
 		--disable-myddas
 USES=		gmake localbase readline
 
+NOPIE_PORTS=	yes
+NORELRO_PORTS=	yes
+
 DOCSDIR=	${PREFIX}/share/doc/Yap
 DATADIR=	${PREFIX}/share/Yap
 

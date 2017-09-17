@@ -10,6 +10,8 @@ MASTER_SITES=	SF/osace/${PORTNAME}/${PORTNAME}%20${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Asynchronous TCP and UDP port scanner
 
+EXPLICIT_SAFESTACK=		yes
+
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	libnet.so:net/libnet

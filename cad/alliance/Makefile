@@ -25,6 +25,8 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 
 USES=		bison gmake libtool motif
 
+NOPIE_PORTS=	yes
+
 USE_GCC=	any
 HAS_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip

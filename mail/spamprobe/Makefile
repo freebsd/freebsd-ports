@@ -25,6 +25,9 @@ PBL_DESC=		PBL database support (author's recommended data store)
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
+NOPIE_PORTS=	yes
+NORELRO_PORTS=	yes
+
 # PBL support
 PBL_BUILD_DEPENDS=	${LOCALBASE}/lib/libpbl.a:databases/libpbl
 PBL_RUN_DEPENDS+=	${PBL_BUILD_DEPENDS}

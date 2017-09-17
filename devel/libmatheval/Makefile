@@ -19,6 +19,9 @@ USE_LDCONFIG=	yes
 USES=		libtool localbase makeinfo pathfix
 INSTALL_TARGET=	install-strip
 
+NOPIE_PORTS=	yes
+NORELRO_PORTS=	yes
+
 INFO=		libmatheval
 
 post-patch:

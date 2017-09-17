@@ -81,6 +81,8 @@ PORT_LLVM_BUILD_DEPENDS=	${LOCALBASE}/bin/FileCheck${LLVM_VER}:devel/llvm${LLVM_
 LLVM_VER?=			40
 LLVM_CONFIG=			${LOCALBASE}/bin/llvm-config${LLVM_VER}
 
+NOPIE_PORTS=	yes
+
 # Rust manifests list all files and directories installed by rust-installer.
 # We use them in:
 #     - pre-install to cleanup the ${STAGEDIR}

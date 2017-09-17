@@ -14,6 +14,8 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX} \
 MAINTAINER=	garga@FreeBSD.org
 COMMENT?=	Distributed source code management tool
 
+EXPLICIT_SAFESTACK=	yes
+
 LICENSE=	GPLv2
 
 CONFLICTS_INSTALL?=	git-gui-[0-9]* git-subversion-[0-9]* git-lite-[0-9]*

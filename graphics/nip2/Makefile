@@ -46,6 +46,8 @@ GSL_DESC=		Use gsl for numeric functions
 GSL_LIB_DEPENDS=	libgsl.so:math/gsl
 GSL_CONFIGURE_WITH=	gsl
 
+EXPLICIT_SAFESTACK=	yes
+
 post-install:
 	(cd ${WRKDIR} && ${INSTALL_SCRIPT} run-nip2.sh \
 		${STAGEDIR}/${PREFIX}/bin)

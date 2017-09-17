@@ -15,6 +15,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		gmake
 
+NOPIE_PORTS=	yes
+
 ELFBINS=	ebfc elfls elftoc infect objres rebind sstrip
 PORTDOCS=	COPYING Changelog README
 

@@ -27,6 +27,9 @@ GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 INSTALL_TARGET=	install-strip
 
+NOPIE_PORTS=	yes
+NORELRO_PORTS=	yes
+
 GLIB_SCHEMAS=	org.gnome.Goobox.gschema.xml
 
 OPTIONS_DEFINE=	NOTIFY

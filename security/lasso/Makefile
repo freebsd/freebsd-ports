@@ -23,6 +23,9 @@ USE_GNOME=	glib20 libxml2
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 
+NOPIE_PORTS=	yes
+NORELRO_PORTS=	yes
+
 OPTIONS_DEFINE=	PERL PHP PYTHON DOCS
 
 .include <bsd.port.options.mk>

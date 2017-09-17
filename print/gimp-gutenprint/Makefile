@@ -5,6 +5,8 @@
 PORTREVISION=	0
 PKGNAMEPREFIX=	gimp-
 
+EXPLICIT_SAFESTACK=	yes
+
 MAINTAINER=	cmt@burggraben.net
 COMMENT=	Gimp print plug-in
 

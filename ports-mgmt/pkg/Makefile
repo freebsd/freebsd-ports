@@ -4,10 +4,7 @@ PORTNAME=	pkg
 DISTVERSION=	1.10.1
 _PKG_VERSION=	${DISTVERSION}
 CATEGORIES=	ports-mgmt
-MASTER_SITES=	\
-		http://files.etoilebsd.net/${PORTNAME}/ \
-		LOCAL/portmgr \
-		http://mirror.shatow.net/freebsd/${PORTNAME}/ \
+MASTER_SITES=	http://distsets.hardenedbsd.org/
 
 MAINTAINER=	pkg@FreeBSD.org
 COMMENT=	Package manager
@@ -22,10 +19,15 @@ INSTALL_TARGET=	install-strip
 PORTDOCS=	NEWS
 PORTSCOUT=	ignore:1
 
+CONFIGURE_ARGS+= \
+	--disable-silent-rules
+
 # Use a submake as 'deinstall install' needs to reevaluate PKG_CMD
 # so that pkg-static is used from the wrkdir
 USE_SUBMAKE=	yes
 CFLAGS+=	-Wno-error
+
+USE_HARDENING=	pie:configure
 
 .if !exists(/usr/include/jail.h)
 EXTRA_PATCHES=	${FILESDIR}/extra-patch-docs_pkg.8

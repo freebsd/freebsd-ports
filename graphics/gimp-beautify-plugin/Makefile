@@ -36,6 +36,8 @@ PLUGINS=	beautify \
 		simple-border \
 		skin-whitening
 
+EXPLICIT_SAFESTACK=	yes
+
 # installed files
 .for plugin in ${PLUGINS}
 PLIST_FILES+=	${PLUGIN_DIR}/${plugin}

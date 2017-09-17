@@ -13,6 +13,8 @@ PLIST_FILES=	bin/dos2unix bin/unix2dos \
 		man/man1/unix2dos.1.gz man/man1/dos2unix.1.gz
 NO_WRKSUBDIR=	yes
 
+EXPLICIT_SAFESTACK=	yes
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/unix2dos ${STAGEDIR}${PREFIX}/bin/unix2dos
 	${LN} -f ${STAGEDIR}${PREFIX}/bin/unix2dos ${STAGEDIR}${PREFIX}/bin/dos2unix

@@ -31,6 +31,8 @@ PORTVERSION2=	0.14.6
 WRKSRC2=	${WRKDIR}/${GH_PROJECT}-${PORTVERSION2}
 STAGEDIR2=	${STAGEDIR}-caf
 
+EXPLICIT_SAFESTACK=	yes
+
 SHEBANG_FILES=	aux/broctl/aux/trace-summary/trace-summary
 
 SUB_FILES=	pkg-message

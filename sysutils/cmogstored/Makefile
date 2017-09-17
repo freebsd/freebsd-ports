@@ -12,6 +12,8 @@ COMMENT=	Alternative mogstored implementation for MogileFS
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+USE_HARDENING=	pie:off relro:off
+
 BROKEN_powerpc64=	Does not build: internal compiler error: Segmentation fault
 
 PLIST_FILES=	sbin/cmogstored \

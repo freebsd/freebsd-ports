@@ -19,6 +19,8 @@ USE_GNOME=	gtk20 intltool libxslt
 INSTALLS_ICONS=	yes
 INSTALL_TARGET=	install-strip
 
+NOPIE_PORTS=	yes
+
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes
 NLS_CONFIGURE_ENABLE=	nls

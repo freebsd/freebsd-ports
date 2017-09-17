@@ -19,6 +19,9 @@ USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-static
 
+NOPIE_PORTS=	yes
+NORELRO_PORTS=	yes
+
 PLIST_FILES=	lib/xmms/Output/libnas.so
 
 post-install:

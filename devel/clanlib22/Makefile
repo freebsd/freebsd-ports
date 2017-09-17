@@ -42,6 +42,9 @@ CONFIGURE_ARGS=	--disable-docs \
 		--enable-clanVorbis \
 		--enable-getaddr
 
+NOPIE_PORTS=	yes
+NORELRO_PORTS=	yes
+
 INSTALL_TARGET=	install-strip
 PLIST_SUB+=	VER=${PORTVERSION:R} \
 		SWRENDER=${ARCH:N*86:Namd64:C/.+/"@comment "/} \

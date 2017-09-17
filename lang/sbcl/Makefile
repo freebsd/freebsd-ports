@@ -25,6 +25,8 @@ RUN_DEPENDS=	cl-asdf>=0:devel/cl-asdf
 
 USES=		gmake makeinfo tar:bzip2
 
+USE_HARDENING=	pie:off
+
 BOOTVERSION=	1.2.7
 SBCL_BOOT_LIST=	${BOOTVERSION}-x86-64-freebsd \
 		${BOOTVERSION}-x86-freebsd \

@@ -9,6 +9,8 @@ CATEGORIES=	dns
 MAINTAINER=	rihaz.jerrin@gmail.com
 COMMENT=	DNS enumeration tool
 
+EXPLICIT_SAFESTACK=		yes
+
 LICENSE=	GPLv2
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dnspython>=0:dns/py-dnspython \

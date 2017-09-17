@@ -15,6 +15,8 @@ USE_GNOME=	gtk20
 USES=		pkgconfig tar:xz
 GNU_CONFIGURE=	yes
 
+USE_HARDENING=	pie:off relro:off
+
 PLIST_FILES=	bin/wmblob man/man1/wmblob.1.gz
 
 do-install:

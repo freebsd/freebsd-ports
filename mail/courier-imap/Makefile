@@ -22,6 +22,9 @@ USE_RC_SUBR=	courier-imap-imapd courier-imap-imapd-ssl \
 
 CONFIGURE_ENV=	REHASH=${SCRIPTDIR}/c_rehash
 
+NOPIE_PORTS=	yes
+NORELRO_PORTS=	yes
+
 MAKE_ENV:=	${CONFIGURE_ENV}
 ALL_TARGET=	all makeimapaccess makedat
 

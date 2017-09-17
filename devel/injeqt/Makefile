@@ -19,6 +19,8 @@ USES=		cmake compiler:c++11-lib pathfix
 USE_QT5=	core buildtools_build qmake_build testlib_build
 USE_LDCONFIG=	yes
 
+NOPIE_PORTS=	yes
+
 CMAKE_ARGS=	-DDISABLE_EXAMPLES:BOOL=ON \
 		-DDISABLE_COVERAGE:BOOL=ON
 

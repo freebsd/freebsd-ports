@@ -23,6 +23,9 @@ CONFIGURE_ARGS+=--with-mhash \
 
 LDFLAGS+=	-lpthread
 
+NORELRO_PORTS=	yes
+NOPIE_PORTS=	yes
+
 SUB_FILES=	pkg-message
 
 post-install:

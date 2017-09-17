@@ -81,6 +81,9 @@ GL2PS_DESC=	Install support conversion OpenGL to PostScript
 
 VERMAJORMINOR=	${PORTVERSION:R}
 
+NOPIE_PORTS=	yes
+NORELRO_PORTS=	yes
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MOSMESA}

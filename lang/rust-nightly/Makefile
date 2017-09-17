@@ -10,6 +10,9 @@ MASTERDIR=	${.CURDIR}/../rust
 PATCHDIR=	${.CURDIR}/files
 DISTINFO_FILE=	${.CURDIR}/distinfo
 
+NOPIE_PORTS=	yes
+NORELRO_PORTS=	yes
+
 USE_GITHUB=	yes
 GH_TUPLE=	rust-lang:rust:282fa87 \
 		rust-lang:compiler-rt:d30da54:compiler_rt/src/compiler-rt \

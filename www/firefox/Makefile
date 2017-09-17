@@ -40,6 +40,8 @@ MOZILLA_NAME=	Firefox
 USE_GL=		gl
 USES=		tar:xz
 
+USE_HARDENING=	pie:configure
+
 FIREFOX_ICON=		${MOZILLA}.png
 FIREFOX_ICON_SRC=	${PREFIX}/lib/${MOZILLA}/browser/chrome/icons/default/default48.png
 MOZ_OPTIONS=	--enable-application=browser \

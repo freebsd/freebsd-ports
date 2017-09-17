@@ -24,6 +24,8 @@ USE_XORG=	x11 xext xextproto xft xpm xrandr
 USES=		gmake pkgconfig
 GNU_CONFIGURE=	yes
 
+USE_HARDENING=	safestack
+
 PORTDATA=	*
 PORTDOCS=	*
 

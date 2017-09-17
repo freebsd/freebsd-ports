@@ -17,6 +17,8 @@ USE_GL=		egl gl
 USE_LDCONFIG=	yes
 USE_XORG=	x11 xcb
 
+NOPIE_PORTS=	yes
+
 DOCSDIR=	${PREFIX}/share/doc/waffle1
 
 CMAKE_ARGS+=	-Dwaffle_has_glx=ON \

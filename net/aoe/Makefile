@@ -23,6 +23,9 @@ KMODDIR=	${PREFIX}/lib/aoe
 
 USE_RC_SUBR=	aoe
 
+NOPIE_PORTS=	yes
+NORELRO_PORTS=	yes
+
 do-install:
 	${INSTALL_KLD} ${WRKSRC}/aoe.ko ${STAGEDIR}${PREFIX}/lib/aoe
 	${INSTALL_MAN} ${WRKDIR}/aoe.4 ${STAGEDIR}${PREFIX}/man/man4/

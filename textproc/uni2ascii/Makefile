@@ -15,6 +15,8 @@ LICENSE=	GPLv3
 USES=		tar:bzip2
 GNU_CONFIGURE=	yes
 
+USE_HARDENING=	pie:off relro:off
+
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
 
 PLIST_FILES=	bin/uni2ascii bin/ascii2uni man/man1/uni2ascii.1.gz \

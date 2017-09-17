@@ -18,4 +18,7 @@ USE_GCC=	yes
 USES=		python
 USE_PYTHON=	distutils autoplist
 
+NORELRO_PORTS=	yes
+NOPIE_PORTS=	yes
+
 .include <bsd.port.mk>

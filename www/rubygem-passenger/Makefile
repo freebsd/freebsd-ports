@@ -43,6 +43,8 @@ SHEBANG_FILES=	\
 	dev/ci/run-tests-natively \
 	dev/ci/setup-host
 
+USE_HARDENING=	pie:off relro:off
+
 NOPORTDOCS=	yes
 
 APACHE22_USE=	APACHE=22+

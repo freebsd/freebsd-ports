@@ -23,6 +23,8 @@ USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 LDFLAGS+=	-lm
 
+NOPIE_PORTS=	yes
+
 DESKTOP_ENTRIES="pdnMesh" "${COMMENT}" "" "${PORTNAME}" "" true
 
 ATLAS_USES=		blaslapack:atlas

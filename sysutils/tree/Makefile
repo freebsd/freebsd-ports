@@ -9,6 +9,8 @@ MASTER_SITES=	ftp://mama.indstate.edu/linux/tree/
 MAINTAINER=	gb@unistra.fr
 COMMENT=	Display a tree-view of directories with optional color or HTML output
 
+EXPLICIT_SAFESTACK=		yes
+
 LICENSE=	GPLv2
 
 MAKE_ENV+=	MKDIR="${MKDIR}"

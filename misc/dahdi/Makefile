@@ -25,6 +25,9 @@ PATCH_WRKSRC=	${WRKDIR}/${DISTNAME}
 USE_LDCONFIG=	yes
 MAKE_ENV=	HOST_CC=${CC}
 
+NOPIE_PORTS=	yes
+NORELRO_PORTS=	yes
+
 CONFLICTS=	zaptel-[0-9]*
 
 post-patch:

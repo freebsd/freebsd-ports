@@ -9,6 +9,8 @@ CATEGORIES=	net security
 MAINTAINER=	yuri@rawbw.com
 COMMENT=	Easy way to make any app work through Tor
 
+EXPLICIT_SAFESTACK=		yes
+
 LICENSE=	GPLv2
 
 USE_GITHUB=	yes

@@ -18,6 +18,8 @@ DIST_SUBDIR=	enlightenment
 GNU_CONFIGURE=	yes
 USES=		compiler:c11 pkgconfig tar:xz
 
+USE_HARDENING=	safestack
+
 OPTIONS_DEFINE=		NLS
 OPTIONS_SUB=		yes
 

@@ -21,6 +21,8 @@ PORTDOCS=	index-ja.html index.html
 
 OPTIONS_DEFINE=	DOCS
 
+NOPIE_PORTS=	yes
+
 post-patch:
 	@${REINPLACE_CMD} -e \
 		'/^pkgconfigdir/s!=.*!= ${PREFIX}/libdata/pkgconfig!' \

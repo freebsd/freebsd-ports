@@ -10,6 +10,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:C/\./_/g}-src
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Tool to normalize the gain of MP3 files
 
+EXPLICIT_SAFESTACK=	yes
+
 LICENSE=	LGPL21
 
 USES=		zip dos2unix uidfix

@@ -9,7 +9,7 @@ Subject: [PATCH] Fix building with libressl.
 
 diff --git a/src/hitch.c b/src/hitch.c
 index 5b48680..03b4580 100644
---- src/hitch.c.orig	2016-12-22 13:48:49 UTC
+--- src/hitch.c.orig	2017-12-22 13:48:49 UTC
 +++ src/hitch.c
 @@ -683,7 +683,7 @@ load_privatekey(SSL_CTX *ctx, const char
  		return NULL;

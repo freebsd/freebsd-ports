@@ -28,6 +28,8 @@ USE_SDL=	image mixer sdl
 USE_GL=		glu
 GNU_CONFIGURE=	yes
 
+NOPIE_PORTS=	yes
+
 PORTDOCS=	AUTHORS ChangeLog README
 OPTIONS_DEFINE=	DOCS
 

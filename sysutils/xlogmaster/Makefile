@@ -19,6 +19,9 @@ INFO=		xlogmaster
 CPPFLAGS+=	-I${LOCALBASE}/include -DHAVE_DECL_GETOPT
 LDFLAGS+=	-L${LOCALBASE}/lib
 
+NOPIE_PORTS=	yes
+NORELRO_PORTS=	yes
+
 post-patch:
 	@${FIND} ${WRKSRC} -name Makefile.in -exec ${REINPLACE_CMD} -E \
 	'/(SHELL|cp -f|mkinstalldirs)/ s,XLM_(DB|HOME|LIB),DESTDIR)$$(&,g' {} \;

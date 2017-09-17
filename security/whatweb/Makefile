@@ -9,6 +9,8 @@ CATEGORIES=	security www
 MAINTAINER=	rm@FreeBSD.org
 COMMENT=	Tool to fingerprint web site components
 
+EXPLICIT_SAFESTACK=		yes
+
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 

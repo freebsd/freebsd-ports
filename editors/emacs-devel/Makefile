@@ -33,6 +33,9 @@ SUB_LIST=	EMACS_VER=${EMACS_VER}
 
 CONFIGURE_ARGS=	--with-gameuser=games:games
 
+NOPIE_PORTS=	yes
+NORELRO_PORTS=	yes
+
 PLIST_SUB=	EMACS_VER=${EMACS_VER} GNU_HOST=${CONFIGURE_TARGET}
 
 INFO=	ada-mode auth autotype bovine calc ccmode cl dbus dired-x ebrowse ede	\

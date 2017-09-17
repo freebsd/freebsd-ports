@@ -36,6 +36,8 @@ COMMENT?=	Java Development Kit ${JDK_MAJOR_VERSION}
 
 LICENSE=	GPLv2
 
+USE_HARDENING=	pie:java
+
 BUILD_DEPENDS=	zip:archivers/zip \
 		${LOCALBASE}/include/cups/cups.h:print/cups \
 		bash:shells/bash

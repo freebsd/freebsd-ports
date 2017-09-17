@@ -9,6 +9,8 @@ MASTER_SITES=	http://bsd-geek.de/FreeBSD/distfiles/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Bluetooth traffic dumper, similar to tcpdump
 
+EXPLICIT_SAFESTACK=		yes
+
 LICENSE=	GPLv2
 
 USES=		uidfix

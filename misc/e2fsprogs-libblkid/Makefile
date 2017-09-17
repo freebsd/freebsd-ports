@@ -21,6 +21,9 @@ ALL_TARGET=	libs
 INSTALL_TARGET=	install install-shlibs
 INSTALL_WRKSRC=	${WRKSRC}/lib/blkid
 
+NOPIE_PORTS=	yes
+NORELRO_PORTS=	yes
+
 PKGDIR=		${.CURDIR}
 
 BROKEN_aarch64=		Fails to build: No targets specified and no makefile found

@@ -37,6 +37,8 @@ PORTDOCS=	CDF_copyright.txt CHANGES.txt Release.notes Welcome.txt
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
+NOPIE_PORTS=	yes
+
 post-patch:
 .for def in ${DEFS}
 	@${REINPLACE_CMD} -e 's|<path>|${PREFIX}|' \

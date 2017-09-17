@@ -15,6 +15,9 @@ COMMENT=	GNU Compiler Collection 4.7
 LICENSE=	GPLv3 GPLv3RLE
 LICENSE_COMB=	multi
 
+NOPIE_PORTS=	yes
+NORELRO_PORTS=	yes
+
 LIB_DEPENDS=	libgmp.so:math/gmp \
 		libmpfr.so:math/mpfr \
 		libmpc.so:math/mpc

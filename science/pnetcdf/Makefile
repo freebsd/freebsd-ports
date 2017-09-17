@@ -28,6 +28,9 @@ MAKE_JOBS_UNSAFE=	yes
 USE_PERL5=	build
 USES=		fortran gmake pathfix perl5 tar:bzip2
 
+NOPIE_PORTS=	yes
+NORELRO_PORTS=	yes
+
 PORTDOCS=	COPYRIGHT INSTALL README
 
 MPICH2_CONFIGURE_ON=	--with-mpi=${LOCALBASE}

@@ -16,6 +16,9 @@ LICENSE=	GPLv2
 USES=		gmake
 GNU_CONFIGURE=	yes
 
+NOPIE_PORTS=	yes
+NORELRO_PORTS=	yes
+
 PLIST_FILES=	bin/nvclock bin/smartdimmer man/man1/nvclock.1.gz
 PORTDOCS=	ABOUT AUTHORS ChangeLog FAQ README
 

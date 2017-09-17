@@ -43,6 +43,8 @@ ALL_TARGET=	tools static relocatable
 PORTDOCS=	gtkada_ug
 LDFLAGS+=	-L${LOCALBASE}/lib
 
+USE_HARDENING=	pie:off relro:off
+
 MAKE_ARGS=	PROCESSORS=${MAKE_JOBS_NUMBER}
 
 CONFLICTS_INSTALL=	gtkada-*

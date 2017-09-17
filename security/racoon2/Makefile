@@ -14,6 +14,8 @@ USES=		perl5 tar:tgz ssl
 CONFIGURE_ARGS+=	--disable-kinkd
 PLIST_SUB+=	KINK="@comment "
 
+NOPIE_PORTS=	yes
+
 USE_AUTOTOOLS=	autoconf
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--prefix=${STAGEDIR}${PREFIX}

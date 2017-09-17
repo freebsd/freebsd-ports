@@ -47,6 +47,8 @@ PLIST_SUB+=	TT_USER=${USERS} \
 
 OPTIONS_DEFINE=	DEBUG
 
+NOPIE_PORTS=	yes
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDEBUG}

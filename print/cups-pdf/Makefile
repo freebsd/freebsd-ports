@@ -15,6 +15,8 @@ COMMENT=	Virtual printer for CUPS to produce PDF files
 LICENSE=GPLv2
 LICENSE_FILE=${WRKSRC}/COPYING
 
+EXPLICIT_SAFESTACK=	yes
+
 RUN_DEPENDS=	${LOCALBASE}/sbin/cupsd:print/cups
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

@@ -26,6 +26,8 @@ CONFIGURE_ARGS+=--program-prefix=''
 CFLAGS+=	-I${OPENSSLINC}
 LDFLAGS+=	-L${OPENSSLLIB}
 
+NOPIE_PORTS=	yes
+
 post-patch:
 	@${REINPLACE_CMD} 's;/usr/include/event;${LOCALBASE}/include;g' \
 		${WRKSRC}/configure

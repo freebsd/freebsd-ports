@@ -68,7 +68,7 @@ LIB_DEPENDS+=	libcares.so:dns/c-ares\
 IGNORE=		node.js requires openssl 1.0.2, add DEFAULT_VERSIONS+=ssl=openssl to /etc/make.conf or enable BUNDLED_SSL option
 .endif
 
-.if !empty(SSL_DEFAULT:Mlibressl*)
+.if !empty(SSL_DEFAULT:Mlibressl*) || defined(LIBRESSL_IS_OPENSSL)
 IGNORE=		cannot build node.js with LibreSSL. You must enable BUNDLED_SSL
 .endif
 

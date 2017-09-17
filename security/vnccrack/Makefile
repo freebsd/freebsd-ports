@@ -10,6 +10,8 @@ DISTNAME=	VNCcrack-${PORTVERSION}
 MAINTAINER=	pankov_p@mail.ru
 COMMENT=	Fast offline password cracker for VNC passwords
 
+EXPLICIT_SAFESTACK=		yes
+
 USES=		ssl tar:tgz
 GNU_CONFIGURE=	yes
 CFLAGS+=	-I${OPENSSLINC}

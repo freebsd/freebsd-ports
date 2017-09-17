@@ -18,6 +18,8 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USES=		localbase
 USE_XORG=	x11
 
+USE_HARDENING=	safestack
+
 LIBS+=		-lX11 -lcrypt
 
 post-patch:

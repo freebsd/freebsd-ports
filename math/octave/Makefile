@@ -48,6 +48,9 @@ USE_QT4=	corelib gui network opengl uic_build moc_build rcc_build linguist_build
 USE_XORG=	x11 xext xfixes xft
 USE_GL=		gl glu 
 
+NOPIE_PORTS=	yes
+NORELRO_PORTS=	yes
+
 OCTAVE_VERSION=	${PORTVERSION}
 GNU_HOST=	${ARCH}-portbld-freebsd${OSREL}
 PLIST_SUB=	OCTAVE_VERSION=${OCTAVE_VERSION} GNU_HOST=${GNU_HOST}

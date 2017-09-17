@@ -30,6 +30,8 @@ GH_TUPLE=	omf2097:libShadowDive:b2c34a6:shadow \
 USES=		cmake compiler:c++11-lang gettext openal
 USE_SDL=	sdl2
 
+NOPIE_PORTS=	yes
+
 DESKTOP_ENTRIES="OpenOMF" "" \
 		"${PREFIX}/share/openomf/openomf_icon.png " \
 		"openomf" "Game;ArcadeGame;" false

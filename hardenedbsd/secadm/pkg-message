@@ -1,0 +1,19 @@
+======================================================================
+
+When you running on custom kernel config, please consult with the 
+kernel's source tree, especially with UPDATING-HardenedBSD file.
+
+If you have any other question, you can inform on FreeNode's IRC
+#hardenedbsd channel.
+
+Keywords:
+
+ options PAX_CONTROL_ACL
+ options PAX_CONTROL_ACL_OVERRIDE_SUPPORT
+ options PAX_CONTROL_EXTATTR
+
+ hbsdcontrol secadm
+
+ https://github.com/HardenedBSD/hardenedBSD/blob/hardened/current/master/UPDATING-HardenedBSD#L1
+
+======================================================================

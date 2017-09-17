@@ -18,6 +18,9 @@ RUN_DEPENDS=	gpg:security/gnupg
 USES=		tar:bzip2
 
 GNU_CONFIGURE=	yes
+
+NOPIE_PORTS=	yes
+
 TEST_TARGET=	tests
 
 PLIST_FILES=	bin/aespipe man/man1/aespipe.1.gz

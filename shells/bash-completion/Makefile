@@ -9,6 +9,8 @@ CATEGORIES=	shells
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Programmable completion library for Bash
 
+EXPLICIT_SAFESTACK=		yes
+
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 

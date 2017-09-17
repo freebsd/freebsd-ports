@@ -9,6 +9,8 @@ CATEGORIES=	security
 MAINTAINER=	gavin@FreeBSD.org
 COMMENT=	SSLScan is a fast SSL port scanner
 
+EXPLICIT_SAFESTACK=		yes
+
 LICENSE=	GPLv3
 
 USES=		gmake ssl

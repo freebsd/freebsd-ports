@@ -11,6 +11,8 @@ COMMENT=	Transparent and scalable SSL/TLS interception
 
 LICENSE=	BSD2CLAUSE
 
+EXPLICIT_SAFESTACK=		yes
+
 LIB_DEPENDS=	libevent.so:devel/libevent
 
 USES=		gmake pkgconfig tar:bzip2 uidfix ssl

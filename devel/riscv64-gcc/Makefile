@@ -26,6 +26,9 @@ GH_ACCOUNT=	freebsd-riscv
 GH_PROJECT=	riscv-gcc
 GH_TAGNAME=	b2cdb72
 
+NOPIE_PORTS=	yes
+NORELRO_PORTS=	yes
+
 GCC_TARGET=	${PKGNAMEPREFIX}unknown-${OPSYS:tl}${OSREL}
 
 GNU_CONFIGURE=	yes

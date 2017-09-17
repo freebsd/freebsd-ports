@@ -10,6 +10,8 @@ MASTER_SITES=	http://www.openprinting.org/download/foomatic/
 MAINTAINER=	jrm@FreeBSD.org
 COMMENT=	Foomatic wrapper scripts
 
+EXPLICIT_SAFESTACK=		yes
+
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 

@@ -15,6 +15,9 @@ USES=		gettext
 GNU_CONFIGURE=	yes
 SUB_FILES=	pkg-message
 
+NOPIE_PORTS=	yes
+NORELRO_PORTS=	yes
+
 OPTIONS_DEFINE=	SSL NLS DOCS
 OPTIONS_DEFAULT=SSL
 SSL_DESC=	Use netUstad with SSL support

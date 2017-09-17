@@ -21,4 +21,6 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 USE_XORG=	x11 xext
 PLIST_FILES=	bin/pacman
 
+NOPIE_PORTS=	yes
+
 .include <bsd.port.mk>

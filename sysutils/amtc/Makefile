@@ -20,6 +20,8 @@ GH_TAGNAME=	e7822e8
 USE_PERL5=	build
 SHEBANG_FILES=	${WRKSRC}/../amtc-web/cli/amtc-web.phpsh
 
+NOPIE_PORTS=	yes
+
 WRKSRC_SUBDIR=	src
 
 post-install:

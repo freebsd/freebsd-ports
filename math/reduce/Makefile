@@ -30,6 +30,8 @@ ALL_TARGET=
 
 MAKE_JOBS_UNSAFE=	yes
 
+NOPIE_PORTS=	yes
+
 OPTIONS_SINGLE=		SGLSP
 OPTIONS_SINGLE_SGLSP=	CSL PSL
 CSL_DESC=	Codemist Standard Lisp - redcsl (portable, X11)

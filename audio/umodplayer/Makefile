@@ -18,6 +18,8 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libaiff.a:audio/libaiff
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX}
 
+NOPIE_PORTS=	yes
+
 PLIST_FILES=	bin/${PORTNAME} \
 		man/man1/${PORTNAME}.1.gz
 

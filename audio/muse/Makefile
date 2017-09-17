@@ -26,6 +26,8 @@ CONFIGURE_ARGS=	--disable-debug --disable-lubrify --disable-rpath
 CPPFLAGS+=	-I${LOCALBASE}/include -DHAVE_SYS_UIO_H
 LDFLAGS+=	-lpthread -L${LOCALBASE}/lib -lintl
 
+NOPIE_PORTS=	yes
+
 PORTDOCS=	AUTHORS ChangeLog NEWS KNOWN-BUGS README TODO USAGE
 
 LAME_LIB_DEPENDS=	libmp3lame.so:audio/lame

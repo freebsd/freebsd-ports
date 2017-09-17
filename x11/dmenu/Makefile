@@ -17,6 +17,8 @@ COMMENT=	X11 menu application designed for the dwm window manager
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+USE_HARDENING=	safestack
+
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig
 
 OPTIONS_DEFINE=	XINERAMA

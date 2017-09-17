@@ -1,5 +1,5 @@
 # Created by: Stephane Legrand
-# $FreeBSD$
+# $FreeBSD: head/ftp/proftpd/Makefile 433053 2017-02-01 17:05:18Z marino $
 
 PORTNAME?=	proftpd
 .if !defined(DISTVERSION)

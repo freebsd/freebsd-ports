@@ -21,4 +21,6 @@ GNU_CONFIGURE=	yes
 USE_SDL=	sdl2 mixer2
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
+NOPIE_PORTS=	yes
+
 .include <bsd.port.mk>

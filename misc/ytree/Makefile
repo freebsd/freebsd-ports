@@ -18,6 +18,8 @@ ALL_TARGET=	ytree
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-lreadline
 
+NOPIE_PORTS=	yes
+
 OPTIONS_DEFINE=	DOCS
 
 do-install:

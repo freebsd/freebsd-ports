@@ -28,6 +28,9 @@ ONLY_FOR_ARCHS=		amd64 powerpc powerpc64 # XXX someone wants to debug sparc64 ho
 BROKEN_i386=		aarch64 system target is currently broken for i386 hosts, disable for now while dealing with upstream
 BROKEN_powerpc64=	fails to build: async.c: internal compiler error: Segmentation fault
 
+NOPIE_PORTS=	yes
+NORELRO_PORTS=	yes
+
 OPTIONS_DEFINE=	SAMBA X11 GTK2 OPENGL GNUTLS SASL JPEG PNG CURL \
 		CDROM_DMA PCAP USBREDIR X86_TARGETS BSD_USER \
 		STATIC_LINK DOCS

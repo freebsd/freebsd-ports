@@ -17,6 +17,9 @@ ONLY_FOR_ARCHS_REASON=	not relevant for most non-x86-derived architectures
 
 USES=		kmod
 
+NOPIE_PORTS=	yes
+NORELRO_PORTS=	yes
+
 post-patch:
 	@${REINPLACE_CMD} -e 's,/sys,$${SYSDIR},' ${WRKSRC}/Makefile
 

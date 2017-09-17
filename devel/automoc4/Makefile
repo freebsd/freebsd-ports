@@ -14,4 +14,6 @@ COMMENT=	Automatic moc for Qt 4 packages
 USE_QT4=	corelib moc qmake_build rcc_build uic_build
 USES=		cmake tar:bzip2
 
+NORELRO_PORTS=	yes
+
 .include <bsd.port.mk>

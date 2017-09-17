@@ -24,6 +24,8 @@ INSTALL_TARGET=	install-strip
 OPTIONS_DEFINE=	GTKDOC
 GTKDOC_DESC=	Enable GTK html documentation
 
+NOPIE_PORTS=	yes
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGTKDOC}

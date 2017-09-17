@@ -17,6 +17,8 @@ USE_LDCONFIG=	yes
 
 CFLAGS+=	-lm
 
+NOPIE_PORTS=	yes
+
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/bitcollider/plugins/*.bcp
 

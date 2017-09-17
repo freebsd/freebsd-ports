@@ -28,6 +28,8 @@ SUB_FILES=	pkg-message
 
 MAKE_JOBS_UNSAFE=	yes
 
+NOPIE_PORTS=	yes
+
 ALL_TARGET=	bsf
 
 # This port must have the same SSL settings as mail/cclient, which it depends on

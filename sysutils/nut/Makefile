@@ -17,6 +17,9 @@ GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USES=		gmake pkgconfig libtool
 
+NOPIE_PORTS=	yes
+NORELRO_PORTS=	yes
+
 NUT_USER?=	uucp
 NUT_GROUP?=	uucp
 STATEDIR?=	/var/db/nut

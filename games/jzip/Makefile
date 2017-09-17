@@ -14,6 +14,8 @@ NO_WRKSUBDIR=	yes
 
 USES=		ncurses zip
 
+NOPIE_PORTS=	yes
+
 CPPFLAGS+=	-DPOSIX -DHAVE_GETOPT
 
 PORTDOCS=	Jzip.doc

@@ -25,6 +25,8 @@ CONFIGURE_ARGS=	--prefix=${STAGEDIR}${PREFIX} \
 		--no-libs-here
 USE_LDCONFIG=	yes
 
+NOPIE_PORTS=	yes
+
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 

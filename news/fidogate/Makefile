@@ -19,6 +19,8 @@ USES=		gmake perl5
 MAKE_ARGS=	OWNER=${UID} GROUP=$$(id -g)
 PLIST_SUB=	FIDOGATE_USER=${FIDOGATE_RUNAS}
 
+NOPIE_PORTS=	yes
+
 FIXDEST=	. doc doc/gatebau doc/html scripts/areas \
 		scripts/maintenance scripts/misc scripts/nodelist \
 		scripts/outbound scripts/run scripts/www src/areafix \

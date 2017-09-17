@@ -20,6 +20,8 @@ USE_GNOME=	libglade2 intlhack gnomeprefix
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
 
+NOPIE_PORTS=	yes
+
 OPTIONS_DEFINE=	MP3 OGG DVD
 DVD_DESC=	DVD+RW support
 MP3_LIB_DEPENDS=	libmad.so:audio/libmad \

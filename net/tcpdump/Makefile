@@ -16,6 +16,8 @@ LIB_DEPENDS=	libpcap.so.1:net/libpcap
 GNU_CONFIGURE=	yes
 USES=		gmake
 
+EXPLICIT_SAFESTACK=	yes
+
 UNPRIV_USER?=	nobody
 CHROOTDIR?=	/var/run/tcpdump
 

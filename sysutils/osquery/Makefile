@@ -45,6 +45,8 @@ GH_PROJECT=	third-party:tp
 GH_SUBDIR=	third-party:tp
 GH_TAGNAME=	${PORTVERSION}:tp
 
+NOPIE_PORTS=	yes
+
 # Some options for things that bring in many dependencies
 OPTIONS_DEFINE=	TSK AWS YARA LLDPD
 

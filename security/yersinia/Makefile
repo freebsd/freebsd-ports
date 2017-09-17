@@ -10,6 +10,8 @@ MASTER_SITES=	http://www.yersinia.net/download/
 MAINTAINER=	ayu@commun.jp
 COMMENT=	Layer 2 vulnerability scanner (switches, spanning tree, 802.1q ...)
 
+EXPLICIT_SAFESTACK=		yes
+
 LIB_DEPENDS=	libnet.so:net/libnet
 
 .if !defined(WITHOUT_GTK)

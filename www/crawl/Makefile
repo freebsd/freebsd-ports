@@ -16,6 +16,8 @@ LIB_DEPENDS=	libevent.so:devel/libevent
 
 USES=		bdb pkgconfig
 
+USE_HARDENING=	pie:off
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libevent --program-transform-name=''
 CONFIGURE_ENV=	EVENTINC="`pkgconf --cflags libevent`" EVENTLIB="`pkgconf --libs libevent`"

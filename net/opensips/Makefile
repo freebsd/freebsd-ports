@@ -43,6 +43,9 @@ USE_RC_SUBR=		opensips
 USES=			gmake ncurses perl5 pkgconfig shebangfix ssl
 USE_GCC=		yes
 
+NOPIE_PORTS=		yes
+NORELRO_PORTS=		yes
+
 NOPRECIOUSMAKEVARS=	yes
 
 OPTIONS_DEFINE=		DEBUG DOCS EXAMPLES GEOIP HTTP LDAP MEMCACHED MYSQL \

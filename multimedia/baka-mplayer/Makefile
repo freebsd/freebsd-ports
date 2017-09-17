@@ -30,6 +30,8 @@ NLS_QMAKE_ON=	CONFIG+="install_translations"
 NOTO_DESC=	Original look with Noto Sans font
 NOTO_RUN_DEPENDS=	noto>0:x11-fonts/noto
 
+EXPLICIT_SAFESTACK=	yes
+
 post-patch:
 	${REINPLACE_CMD} '/^Comment/s,=.*,=${COMMENT},' \
 		${WRKSRC}/etc/${PORTNAME}.desktop

@@ -26,6 +26,9 @@ LICENSE=	EPL
 
 OPTIONS_DEFINE=	EXAMPLES STATIC
 
+NOPIE_PORTS=	yes
+NORELRO_PORTS=	yes
+
 FETCH_ENV=	HTTP_AUTH=basic:*:I\ accept\ www.opensource.org/licenses/cpl:.
 LDFLAGS+=	-lm
 MAKE_ENV=	CCFLAGS="${CFLAGS}"

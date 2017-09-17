@@ -26,6 +26,9 @@ USE_GCC=	yes
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS+=	--with-pthreads
 
+NOPIE_PORTS=	yes
+NORELRO_PORTS=	yes
+
 USE_GL=		glut
 USE_XORG=	sm ice xmu xi x11
 

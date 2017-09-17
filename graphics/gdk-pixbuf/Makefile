@@ -30,6 +30,9 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-html-dir=${PREFIX}/share/doc \
 		--disable-gtk-doc
 
+NOPIE_PORTS=	yes
+NORELRO_PORTS=	yes
+
 post-patch:
 	@${REINPLACE_CMD} '/confexecdir =/s/=.*/= $$(sysconfdir)/' \
 		${WRKSRC}/Makefile.in

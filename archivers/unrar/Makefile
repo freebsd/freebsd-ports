@@ -17,6 +17,8 @@ LICENSE_FILE=	${WRKSRC}/license.txt
 LICENSE_NAME=	UnRAR license
 LICENSE_PERMS=	auto-accept dist-mirror pkg-mirror
 
+EXPLICIT_SAFESTACK=		yes
+
 BROKEN_SSL=	openssl-devel
 
 OPTIONS_DEFINE=	OPENSSL_AES
@@ -37,6 +39,8 @@ SLAVEDIRS=	archivers/unrar-iconv chinese/unrar
 OPENSSL_AES_CPPFLAGS=	-DOPENSSL_AES -I${OPENSSLINC}
 OPENSSL_AES_LDFLAGS=	-L${OPENSSLLIB} -lcrypto
 OPENSSL_AES_USES=	ssl
+
+NOPIE_PORTS=	yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/unrar ${STAGEDIR}${PREFIX}/bin/

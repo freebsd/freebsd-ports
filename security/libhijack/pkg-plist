@@ -1,0 +1,4 @@
+include/hijack.h
+lib/libhijack.so
+lib/libhijack.so.1
+sbin/hijack

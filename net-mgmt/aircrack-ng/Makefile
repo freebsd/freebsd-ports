@@ -9,6 +9,8 @@ MASTER_SITES=	http://download.aircrack-ng.org/
 MAINTAINER=	lme@FreeBSD.org
 COMMENT=	802.11 WEP and WPA-PSK keys cracking program
 
+EXPLICIT_SAFESTACK=		yes
+
 LICENSE=	GPLv2 BSD3CLAUSE APACHE20
 LICENSE_COMB=	dual
 

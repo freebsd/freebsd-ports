@@ -27,6 +27,8 @@ LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 		libenet.so:net/enet \
 		libtiff.so:graphics/tiff
 
+NOPIE_PORTS=	yes
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-alpha
 BUILD_WRKSRC=	${WRKSRC}/build/workspaces/gcc
 MAKE_ARGS=	config=release

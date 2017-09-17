@@ -13,4 +13,6 @@ USES=		uidfix
 PLIST_FILES=	bin/urelay \
 		man/man1/urelay.1.gz
 
+NOPIE_PORTS=	yes
+
 .include <bsd.port.mk>

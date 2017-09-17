@@ -30,6 +30,8 @@ ZIP_CONFIGURE_OFF=	--disable-zip
 NLS_USES=		gettext
 NLS_CONFIGURE_ENABLE=	nls
 
+NOPIE_PORTS=	yes
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|<ming.h>|<ming/ming.h>|g' ${WRKSRC}/*.c ${WRKSRC}/configure
 

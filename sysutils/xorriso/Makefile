@@ -23,6 +23,9 @@ SHEBANG_FILES=	frontend/xorriso-tcltk
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 
+NOPIE_PORTS=	yes
+NORELRO_PORTS=	yes
+
 INFO=		xorrecord xorriso xorrisofs
 
 post-patch:

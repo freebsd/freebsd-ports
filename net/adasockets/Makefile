@@ -16,6 +16,9 @@ USES=		ada gmake libtool
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS+=--disable-doc --disable-shared
 
+NOPIE_PORTS=	yes
+NORELRO_PORTS=	yes
+
 post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/include/adasockets \
 		${STAGEDIR}${PREFIX}/lib/gnat

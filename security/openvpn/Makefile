@@ -15,6 +15,8 @@ LICENSE=		GPLv2
 
 CONFLICTS_INSTALL=	openvpn-2.[!4].* openvpn-[!2].* openvpn-beta-[0-9]* openvpn-devel-[0-9]*
 
+USE_HARDENING=		cfi safestack
+
 GNU_CONFIGURE=		yes
 USES=			cpe libtool pkgconfig shebangfix tar:xz
 SHEBANG_FILES=		sample/sample-scripts/verify-cn \

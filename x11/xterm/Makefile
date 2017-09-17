@@ -21,6 +21,8 @@ CPE_VENDOR=	invisible-island
 USE_XORG=	xft xmu xt x11 xpm ice
 GNU_CONFIGURE=	yes
 
+USE_HARDENING=	safestack
+
 CONFIGURE_ARGS+=	--with-utempter --enable-narrowproto
 
 CPPFLAGS+=	-I${LOCALBASE}/include

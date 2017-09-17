@@ -19,6 +19,9 @@ GH_TAGNAME= 571db38
 
 USES=		gmake dos2unix
 
+NOPIE_PORTS=	yes
+NORELRO_PORTS=	yes
+
 PLIST_FILES=	bin/fowsr
 
 post-patch:

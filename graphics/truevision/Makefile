@@ -27,6 +27,9 @@ CPPFLAGS+=	$$(pkg-config --cflags gtkglext-1.0) \
 LIBS+=		$$(pkg-config --libs gtkglext-1.0) \
 		-L${LOCALBASE}/lib -lz
 
+NOPIE_PORTS=	yes
+NORELRO_PORTS=	yes
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|CXXFLAGS=""||g ; \
 		 s|-I/usr/include/gtkglext-1.0/||g ; \

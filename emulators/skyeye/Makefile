@@ -19,6 +19,9 @@ USE_GCC=	any
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_func_working_mktime=yes
 
+NOPIE_PORTS=	yes
+NORELRO_PORTS=	yes
+
 PLIST_FILES=	bin/skyeye
 
 .include <bsd.port.mk>
