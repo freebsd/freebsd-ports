@@ -1,0 +1,6 @@
+An HTTP library inspired by requests but written on top of Twisted's Agents.
+
+It provides a simple, higher level API for making HTTP requests when using
+Twisted.
+
+WWW: https://github.com/twisted/treq
