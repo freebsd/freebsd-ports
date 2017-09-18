@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	tumbler
-PORTVERSION=	0.1.31
-PORTREVISION=	6
+PORTVERSION=	0.2.0
 CATEGORIES=	deskutils xfce
-MASTER_SITES=	XFCE
+MASTER_SITES=	XFCE/src/xfce/${PORTNAME}/${PORTVERSION:R}/
 PKGNAMEPREFIX=	xfce4-
 DIST_SUBDIR=	xfce4
 
@@ -16,13 +15,14 @@ LICENSE=	GPLv2+ LGPL20+
 LICENSE_COMB=	multi
 LICENSE_FILE_GPLv2+ =	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libpng.so:graphics/png \
-		libdbus-glib-1.so:devel/dbus-glib
+LIB_DEPENDS=	libpng.so:graphics/png
 
-USES=		pathfix pkgconfig gmake libtool gettext-tools xfce tar:bzip2
+USES=		gettext-tools gmake libtool localbase:ldflags pathfix \
+		pkgconfig tar:bzip2 xfce
 GNU_CONFIGURE=	yes
-USE_GNOME=	glib20 intltool intlhack gdkpixbuf2 librsvg2
+USE_GNOME=	glib20 intltool gdkpixbuf2 librsvg2 cairo libgsf
 USE_LDCONFIG=	yes
+INSTALL_TARGET=	install-strip
 
 CONFIGURE_ARGS=	--enable-xdg-cache \
 		--enable-pixbuf-thumbnailer \
@@ -34,8 +34,8 @@ OPTIONS_DEFINE=	NLS FONTS JPEG FFMPEG POPPLER \
 OPTIONS_DEFAULT=	FONTS JPEG POPPLER GSTREAMER ODF
 
 FONTS_DESC=	Fonts thumbnailer plugin
-COVER_DESC=	Open Movie Database thumbnailer plugin
-GSTREAMER_DESC=	GStreamer (1.0) thumbnailer plugin
+COVER_DESC=	Open Movie Database plugin (check pkg-message)
+GSTREAMER_DESC=	GStreamer thumbnailer plugin
 
 NLS_USES=	gettext-runtime
 NLS_CONFIGURE_ENABLE=	nls
