@@ -1,7 +1,7 @@
---- config/sidekiq.yml.orig	2017-09-06 12:59:04 UTC
+--- config/sidekiq.yml.orig	2017-09-17 13:23:44 UTC
 +++ config/sidekiq.yml
-@@ -24,3 +24,4 @@
-   subscriptions_cleanup_scheduler:
-     cron: '2 2 * * 0'
-     class: Scheduler::SubscriptionsCleanupScheduler
+@@ -27,3 +27,4 @@
+   ip_cleanup_scheduler:
+     cron: '<%= Random.rand(0..59) %> <%= Random.rand(3..5) %> * * *'
+     class: Scheduler::IpCleanupScheduler
 +:pidfile: tmp/mastodon_workers.pid
