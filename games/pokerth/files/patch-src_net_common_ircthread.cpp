@@ -1,5 +1,5 @@
---- src/net/common/ircthread.cpp.orig	2013-04-07 14:04:27.006209000 +0200
-+++ src/net/common/ircthread.cpp	2013-04-21 11:26:39.764765351 +0200
+--- src/net/common/ircthread.cpp.orig	2014-01-10 21:18:20 UTC
++++ src/net/common/ircthread.cpp
 @@ -32,14 +32,15 @@
  #include <net/socket_helper.h>
  #include <net/ircthread.h>
