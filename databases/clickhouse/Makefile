@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	clickhouse
-PORTVERSION=	1.1.54245
-PORTREVISION=	1
+PORTVERSION=	1.1.54289
 DISTVERSIONPREFIX=	v
 DISTVERSIONSUFFIX=	-stable
+#DISTVERSIONSUFFIX=	-testing
 #PORTREVISION=	1
 CATEGORIES=	databases
 
@@ -14,20 +14,23 @@ COMMENT=	ClickHouse is an column-oriented database management system
 
 LICENSE=	APACHE20
 
-BROKEN=		fails to build
-
 BUILD_DEPENDS=	bash:shells/bash \
-				sparsehash>=0:devel/sparsehash
+				sparsehash>=0:devel/sparsehash \
+				cctz>=0:devel/cctz
+
 LIB_DEPENDS=	libtcmalloc.so:devel/google-perftools \
 		libodbc.so:databases/unixODBC \
 		libltdl.so:devel/libltdl \
 		libicudata.so:devel/icu \
+		libboost_program_options.so:devel/boost-libs \
 		libzookeeper_mt.so:devel/libzookeeper \
 		libre2.so:devel/re2 \
 		libdouble-conversion.so:devel/libdouble-conversion \
 		libzstd.so:archivers/zstd \
 		liblz4.so:archivers/liblz4 \
-		libPocoNet.so:devel/poco
+		libPocoNet.so:devel/poco \
+		libcpuid.so:sysutils/libcpuid \
+		libunwind.so:devel/libunwind
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	yandex
@@ -40,13 +43,12 @@ BROKEN_FreeBSD_10=	Builds but does not work
 
 USES=		compiler:c++14-lang cmake iconv mysql ssl readline
 USE_LDCONFIG=	yes
-# Bug 218841: use bundled boost 1.62 to avoid 1.64 bustage
 CMAKE_ARGS=	-DUNBUNDLED=1 \
-		-DUSE_INTERNAL_BOOST_LIBRARY=1 \
 		-DUSE_STATIC_LIBRARIES=0 \
 		-DNO_WERROR=1 \
 		-DENABLE_TESTS=0 \
-		-DCXX11_ABI=
+		-DCXX11_ABI= \
+		-DCOMPILER_FLAGS="-DLZ4_DISABLE_DEPRECATE_WARNINGS=1"
 
 USE_RC_SUBR=	${PORTNAME}
 USERS=		clickhouse
