@@ -2302,7 +2302,7 @@ llvm%%LLVM_LIB_VER%%/include/llvm/XRay/YAMLXRayRecord.h
 %%COMPILER_RT%%llvm%%LLVM_LIB_VER%%/include/sanitizer/tsan_interface.h
 %%COMPILER_RT%%llvm%%LLVM_LIB_VER%%/include/sanitizer/tsan_interface_atomic.h
 %%COMPILER_RT%%llvm%%LLVM_LIB_VER%%/include/xray/xray_interface.h
-llvm%%LLVM_LIB_VER%%/include/xray/xray_log_interface.h
+%%COMPILER_RT%%llvm%%LLVM_LIB_VER%%/include/xray/xray_log_interface.h
 llvm%%LLVM_LIB_VER%%/lib/BugpointPasses.so
 llvm%%LLVM_LIB_VER%%/lib/LLVMHello.so
 %%GOLD%%llvm%%LLVM_LIB_VER%%/lib/LLVMgold.so
