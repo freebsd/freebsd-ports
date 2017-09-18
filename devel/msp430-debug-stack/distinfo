@@ -1,7 +1,7 @@
 TIMESTAMP = 1483806815
-SHA256 (msp430-debug-stack-3.9.1.2/slac460s.zip) = db9e82f177f86ef15d8f0a120f2f2a8e5132a34d592c0d9536df52c874106a9e
-SIZE (msp430-debug-stack-3.9.1.2/slac460s.zip) = 2077426
-SHA256 (msp430-debug-stack-3.9.1.2/slau320x.pdf) = bea0f4efd29bd8f8cff58a77903f8234ddf31a5cf195f016e01c00dc68574c0c
-SIZE (msp430-debug-stack-3.9.1.2/slau320x.pdf) = 829163
-SHA256 (msp430-debug-stack-3.9.1.2/slau656b.pdf) = a27303bf1060a598bab53481cdee05642dbb3cde7804786c5ab31cb1e911df0c
-SIZE (msp430-debug-stack-3.9.1.2/slau656b.pdf) = 487655
+SHA256 (msp430-debug-stack-3.10.001.000/slac460v.zip) = 37b49f06ff4700f7eb43cc470bd5203a92955572fd9b43003630febfa0264e01
+SIZE (msp430-debug-stack-3.10.001.000/slac460v.zip) = 2208148
+SHA256 (msp430-debug-stack-3.10.001.000/slau320z.pdf) = 9573279e6338082a140d484465d5aabade9b535338cf7ad3748d3f94e71d6957
+SIZE (msp430-debug-stack-3.10.001.000/slau320z.pdf) = 813001
+SHA256 (msp430-debug-stack-3.10.001.000/slau656b.pdf) = a27303bf1060a598bab53481cdee05642dbb3cde7804786c5ab31cb1e911df0c
+SIZE (msp430-debug-stack-3.10.001.000/slau656b.pdf) = 487655
