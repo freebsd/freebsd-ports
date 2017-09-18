@@ -13,6 +13,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/demos/boolean/fillet2.geo
 %%PORTDOCS%%%%DOCSDIR%%/demos/boolean/fillet3.geo
 %%PORTDOCS%%%%DOCSDIR%%/demos/boolean/fragment_numbering.geo
+%%PORTDOCS%%%%DOCSDIR%%/demos/boolean/hybrid_occ_builtin.geo
 %%PORTDOCS%%%%DOCSDIR%%/demos/boolean/import.geo
 %%PORTDOCS%%%%DOCSDIR%%/demos/boolean/import2.geo
 %%PORTDOCS%%%%DOCSDIR%%/demos/boolean/intersect_line_volume.geo
@@ -46,8 +47,6 @@
 %%PORTDOCS%%%%DOCSDIR%%/demos/post_processing/view_groups.geo
 %%PORTDOCS%%%%DOCSDIR%%/demos/simple_geo/antenna.geo
 %%PORTDOCS%%%%DOCSDIR%%/demos/simple_geo/antenna.i1
-%%PORTDOCS%%%%DOCSDIR%%/demos/simple_geo/component8.step
-%%PORTDOCS%%%%DOCSDIR%%/demos/simple_geo/component8_in_a_box.geo
 %%PORTDOCS%%%%DOCSDIR%%/demos/simple_geo/cone.geo
 %%PORTDOCS%%%%DOCSDIR%%/demos/simple_geo/cube.geo
 %%PORTDOCS%%%%DOCSDIR%%/demos/simple_geo/fields.geo
