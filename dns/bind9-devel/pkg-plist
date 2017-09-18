@@ -9,6 +9,15 @@ bin/mdig
 bin/named-rrchecker
 bin/nslookup
 bin/nsupdate
+etc/mtree/BIND.chroot.dist
+etc/mtree/BIND.chroot.local.dist
+%%ETCDIR%%/bind.keys
+%%ETCDIR%%/master/empty.db
+%%ETCDIR%%/master/localhost-forward.db
+%%ETCDIR%%/master/localhost-reverse.db
+@sample %%ETCDIR%%/named.conf.sample
+%%ETCDIR%%/named.root
+%%ETCDIR%%/rndc.conf.sample
 include/bind9/check.h
 include/bind9/getaddresses.h
 include/bind9/version.h
@@ -32,6 +41,7 @@ include/dns/dispatch.h
 include/dns/dlz.h
 include/dns/dlz_dlopen.h
 include/dns/dns64.h
+include/dns/dnsrps.h
 include/dns/dnssec.h
 include/dns/dnstap.h
 %%DNSTAP%%include/dns/dnstap.pb-c.h
@@ -55,6 +65,7 @@ include/dns/keyflags.h
 include/dns/keytable.h
 include/dns/keyvalues.h
 include/dns/lib.h
+include/dns/librpz.h
 include/dns/log.h
 include/dns/lookup.h
 include/dns/master.h
@@ -145,6 +156,7 @@ include/isc/eventclass.h
 include/isc/file.h
 include/isc/formatcheck.h
 include/isc/fsaccess.h
+include/isc/fuzz.h
 include/isc/hash.h
 include/isc/heap.h
 include/isc/hex.h
@@ -241,6 +253,20 @@ include/isccfg/grammar.h
 include/isccfg/log.h
 include/isccfg/namedconf.h
 include/isccfg/version.h
+include/ns/client.h
+include/ns/interfacemgr.h
+include/ns/lib.h
+include/ns/listenlist.h
+include/ns/log.h
+include/ns/notify.h
+include/ns/query.h
+include/ns/server.h
+include/ns/sortlist.h
+include/ns/stats.h
+include/ns/types.h
+include/ns/update.h
+include/ns/version.h
+include/ns/xfrout.h
 include/pk11/constants.h
 include/pk11/internal.h
 include/pk11/pk11.h
@@ -327,16 +353,6 @@ sbin/nsec3hash
 sbin/rndc
 sbin/rndc-confgen
 sbin/tsig-keygen
-%%ETCDIR%%/rndc.conf.sample
-%%ETCDIR%%/bind.keys
-etc/mtree/BIND.chroot.dist
-etc/mtree/BIND.chroot.local.dist
-@sample %%ETCDIR%%/named.conf.sample
-%%ETCDIR%%/named.root
-%%ETCDIR%%/master/empty.db
-%%ETCDIR%%/master/localhost-forward.db
-%%ETCDIR%%/master/localhost-reverse.db
 @dir(bind,bind,) %%ETCDIR%%/dynamic
-@dir %%ETCDIR%%/master
 @dir(bind,bind,) %%ETCDIR%%/slave
 @dir(bind,bind,) %%ETCDIR%%/working
