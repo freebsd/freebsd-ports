@@ -4,6 +4,7 @@ include/garcon-1/garcon/garcon-environment.h
 include/garcon-1/garcon/garcon-marshal.h
 include/garcon-1/garcon/garcon-menu-directory.h
 include/garcon-1/garcon/garcon-menu-element.h
+include/garcon-1/garcon/garcon-menu-item-action.h
 include/garcon-1/garcon/garcon-menu-item-cache.h
 include/garcon-1/garcon/garcon-menu-item-pool.h
 include/garcon-1/garcon/garcon-menu-item.h
@@ -16,14 +17,20 @@ include/garcon-1/garcon/garcon-menu.h
 include/garcon-1/garcon/garcon.h
 include/garcon-gtk2-1/garcon-gtk/garcon-gtk-menu.h
 include/garcon-gtk2-1/garcon-gtk/garcon-gtk.h
+include/garcon-gtk3-1/garcon-gtk/garcon-gtk-menu.h
+include/garcon-gtk3-1/garcon-gtk/garcon-gtk.h
 lib/libgarcon-1.so
 lib/libgarcon-1.so.0
 lib/libgarcon-1.so.0.0.0
 lib/libgarcon-gtk2-1.so
 lib/libgarcon-gtk2-1.so.0
 lib/libgarcon-gtk2-1.so.0.0.0
+lib/libgarcon-gtk3-1.so
+lib/libgarcon-gtk3-1.so.0
+lib/libgarcon-gtk3-1.so.0.0.0
 libdata/pkgconfig/garcon-1.pc
 libdata/pkgconfig/garcon-gtk2-1.pc
+libdata/pkgconfig/garcon-gtk3-1.pc
 share/desktop-directories/xfce-accessories.directory
 share/desktop-directories/xfce-development.directory
 share/desktop-directories/xfce-education.directory
@@ -38,6 +45,7 @@ share/desktop-directories/xfce-personal.directory
 share/desktop-directories/xfce-screensavers.directory
 share/desktop-directories/xfce-settings.directory
 share/desktop-directories/xfce-system.directory
+%%NLS%%share/locale/am/LC_MESSAGES/garcon.mo
 %%NLS%%share/locale/ar/LC_MESSAGES/garcon.mo
 %%NLS%%share/locale/ast/LC_MESSAGES/garcon.mo
 %%NLS%%share/locale/bg/LC_MESSAGES/garcon.mo
