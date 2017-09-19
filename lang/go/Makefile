@@ -49,7 +49,6 @@ IGNORE=		unknown arch ${ARCH}
 .endif
 
 .if ${PORT_OPTIONS:MGO387}
-.error wat
 GO386=387
 .endif
 
