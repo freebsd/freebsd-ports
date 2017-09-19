@@ -1,5 +1,5 @@
---- include/ssl.h.org	2017-09-19 00:19:05.225986634 +0300
-+++ include/ssl.h	2017-09-19 00:19:05.225986634 +0300
+--- include/ssl.h.org	2017-09-18 21:19:05 UTC
++++ include/ssl.h
 @@ -34,7 +34,7 @@
   * For more excellent information on the topic, see this blog post
   * https://www.happyassassin.net/2015/01/12/a-note-about-ssltls-trusted-certificate-stores-and-platforms/
