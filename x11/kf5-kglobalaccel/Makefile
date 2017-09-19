@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	kglobalaccel
-PORTVERSION=	${KDE_FRAMEWORKS_VERSION}
+PORTVERSION=	5.38.1
 CATEGORIES=	x11 kde kde-frameworks
 
 MAINTAINER=	kde@FreeBSD.org
