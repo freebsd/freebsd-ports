@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ansible
-PORTVERSION?=	2.3.2.0
+PORTVERSION?=	2.4.0.0
 PORTREVISION?=	0
 CATEGORIES=	sysutils python
 MASTER_SITES=	http://releases.ansible.com/ansible/
@@ -30,9 +30,11 @@ CPE_VENDOR=	ansibleworks
 SUB_FILES=	pkg-message
 SUB_LIST+=	PYTHON_CMD=${PYTHON_CMD}
 
-PLIST_FILES?=	man/man1/ansible-console.1.gz \
+PLIST_FILES?=	man/man1/ansible-config.1.gz \
+		man/man1/ansible-console.1.gz \
 		man/man1/ansible-doc.1.gz \
 		man/man1/ansible-galaxy.1.gz \
+		man/man1/ansible-inventory.1.gz \
 		man/man1/ansible-playbook.1.gz \
 		man/man1/ansible-pull.1.gz \
 		man/man1/ansible-vault.1.gz \
@@ -43,14 +45,10 @@ PORTEXAMPLES=	ansible.cfg hosts
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
 post-patch:
-.for f in bin/ansible docs/man/man1/* examples/* lib/ansible/*.py \
-	lib/ansible/*/*.py lib/ansible/*/*/*.py lib/ansible/*/*/*/*.py
-	@${REINPLACE_CMD} -e 's|/etc/ansible|${ETCDIR}|' ${WRKSRC}/${f}
-.endfor
-
-.for f in docs/man/man1/* examples/* lib/ansible/*.py lib/ansible/*/*.py
-	@${REINPLACE_CMD} -e 's|/usr/share/ansible|${DATADIR}|' ${WRKSRC}/${f}
-.endfor
+	${FIND} ${WRKSRC} -type f | ${XARGS} ${REINPLACE_CMD} \
+		-e 's|/usr/bin/python|${PYTHON_CMD}|'
+		-e 's|/etc/ansible|${ETCDIR}|' \
+		-e 's|/usr/share/ansible|${DATADIR}|'
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${MAN1PREFIX}/man/man1
