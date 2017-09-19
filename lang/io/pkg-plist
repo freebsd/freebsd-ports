@@ -4,6 +4,15 @@ lib/libbasekit.so
 lib/libcoroutine.so
 lib/libgarbagecollector.so
 lib/libiovmall.so
+%%DATADIR%%/SyntaxHighlighters/Emacs/io-mode-old.el
+%%DATADIR%%/SyntaxHighlighters/Emacs/io-mode.el
+%%DATADIR%%/SyntaxHighlighters/IntelliJ/Io.xml
+%%DATADIR%%/SyntaxHighlighters/IntelliJ/readme.txt
+%%DATADIR%%/SyntaxHighlighters/JEdit/_ReadMe.txt
+%%DATADIR%%/SyntaxHighlighters/JEdit/io.xml
+%%DATADIR%%/SyntaxHighlighters/Kate/io.xml
+%%DATADIR%%/SyntaxHighlighters/Scintilla/Io.properties
+%%DATADIR%%/SyntaxHighlighters/Vim/io.vim
 %%AsyncRequest%%lib/io/addons/AsyncRequest/_build/dll/libIoAsyncRequest.so
 %%AsyncRequest%%lib/io/addons/AsyncRequest/CMakeLists.txt
 %%AsyncRequest%%lib/io/addons/AsyncRequest/depends
