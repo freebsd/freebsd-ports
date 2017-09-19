@@ -11,6 +11,7 @@ COMMENT=	Open-source fulltext search engine for MySQL
 
 LICENSE=	LGPL21
 
+BUILD_DEPENDS=	${NONEXISTENT}:${_MYSQL_SERVER}:patch
 LIB_DEPENDS=	libgroonga.so:textproc/groonga
 
 USES=		libtool mysql pkgconfig
@@ -24,8 +25,5 @@ INSTALL_TARGET=	install-strip
 SUB_FILES=	pkg-message
 
 OPTIONS_DEFINE=		DOCS
-
-pre-fetch:
-	cd ${PORTSDIR}/${_MYSQL_SERVER}; ${MAKE} patch
 
 .include <bsd.port.mk>
