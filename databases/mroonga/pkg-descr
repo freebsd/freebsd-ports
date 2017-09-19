@@ -1,0 +1,5 @@
+Mroonga is a storage engine for MySQL. It provides fast fulltext search
+feature for all languages including Chinese, Japanese and Korean to all
+MySQL users. Mroonga was called Groonga storage engine.
+
+WWW: http://mroonga.org/
