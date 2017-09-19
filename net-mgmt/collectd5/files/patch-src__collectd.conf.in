@@ -1,0 +1,70 @@
+--- src/collectd.conf.in.orig	2017-01-23 07:53:57 UTC
++++ src/collectd.conf.in
+@@ -12,7 +12,7 @@
+ 
+ #Hostname    "localhost"
+ #FQDNLookup   true
+-#BaseDir     "@localstatedir@/lib/@PACKAGE_NAME@"
++#BaseDir     "/var/db/@PACKAGE_NAME@"
+ #PIDFile     "@localstatedir@/run/@PACKAGE_NAME@.pid"
+ #PluginDir   "@libdir@/@PACKAGE_NAME@"
+ #TypesDB     "@prefix@/share/@PACKAGE_NAME@/types.db"
+@@ -123,6 +123,7 @@
+ #@BUILD_PLUGIN_FHCOUNT_TRUE@LoadPlugin fhcount
+ #@BUILD_PLUGIN_FILECOUNT_TRUE@LoadPlugin filecount
+ #@BUILD_PLUGIN_FSCACHE_TRUE@LoadPlugin fscache
++#@BUILD_PLUGIN_GEOM_STAT_TRUE@LoadPlugin geom_stat
+ #@BUILD_PLUGIN_GMOND_TRUE@LoadPlugin gmond
+ #@BUILD_PLUGIN_GPS_TRUE@LoadPlugin gps
+ #@BUILD_PLUGIN_GRPC_TRUE@LoadPlugin grpc
+@@ -155,6 +156,7 @@
+ #@BUILD_PLUGIN_NETLINK_TRUE@LoadPlugin netlink
+ @LOAD_PLUGIN_NETWORK@LoadPlugin network
+ #@BUILD_PLUGIN_NFS_TRUE@LoadPlugin nfs
++#@BUILD_PLUGIN_NFS_TRUE@LoadPlugin nfsstat
+ #@BUILD_PLUGIN_NGINX_TRUE@LoadPlugin nginx
+ #@BUILD_PLUGIN_NOTIFY_DESKTOP_TRUE@LoadPlugin notify_desktop
+ #@BUILD_PLUGIN_NOTIFY_EMAIL_TRUE@LoadPlugin notify_email
+@@ -218,6 +220,7 @@
+ #@BUILD_PLUGIN_XENCPU_TRUE@LoadPlugin xencpu
+ #@BUILD_PLUGIN_XMMS_TRUE@LoadPlugin xmms
+ #@BUILD_PLUGIN_ZFS_ARC_TRUE@LoadPlugin zfs_arc
++#@BUILD_PLUGIN_ZFS_ARC_V2_TRUE@LoadPlugin zfs_arc_v2
+ #@BUILD_PLUGIN_ZONE_TRUE@LoadPlugin zone
+ #@BUILD_PLUGIN_ZOOKEEPER_TRUE@LoadPlugin zookeeper
+ 
+@@ -361,7 +364,7 @@
+ #</Plugin>
+ #
+ #<Plugin csv>
+-#	DataDir "@localstatedir@/lib/@PACKAGE_NAME@/csv"
++#	DataDir "/var/db/@PACKAGE_NAME@/csv"
+ #	StoreRates false
+ #</Plugin>
+ 
+@@ -1129,14 +1132,14 @@
+ 
+ #<Plugin rrdcached>
+ #	DaemonAddress "unix:/tmp/rrdcached.sock"
+-#	DataDir "@localstatedir@/lib/@PACKAGE_NAME@/rrd"
++#	DataDir "/var/db/@PACKAGE_NAME@/rrd"
+ #	CreateFiles true
+ #	CreateFilesAsync false
+ #	CollectStatistics true
+ #</Plugin>
+ 
+ #<Plugin rrdtool>
+-#	DataDir "@localstatedir@/lib/@PACKAGE_NAME@/rrd"
++#	DataDir "/var/db/@PACKAGE_NAME@/rrd"
+ #	CreateFilesAsync false
+ #	CacheTimeout 120
+ #	CacheFlush   900
+@@ -1371,7 +1374,7 @@
+ #</Plugin>
+ 
+ #<Plugin unixsock>
+-#	SocketFile "@prefix@/var/run/@PACKAGE_NAME@-unixsock"
++#	SocketFile "/var/run/@PACKAGE_NAME@-unixsock"
+ #	SocketGroup "collectd"
+ #	SocketPerms "0660"
+ #	DeleteSocket false
