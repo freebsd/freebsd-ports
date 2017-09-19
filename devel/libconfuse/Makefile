@@ -18,7 +18,7 @@ LICENSE=	ISCL
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-nls --enable-shared
 INSTALL_TARGET=	install-strip
-USES=		autoreconf iconv pathfix pkgconfig libtool
+USES=		autoreconf gettext-tools iconv pathfix pkgconfig libtool
 USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>
