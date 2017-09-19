@@ -34,8 +34,6 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR})
 	@${MKDIR} ${STAGEDIR}/var/log/gitlab-shell
-
-post-install:
 	${STRIP_CMD} ${STAGEDIR}${DATADIR}/bin/gitaly-upload-pack
 	${STRIP_CMD} ${STAGEDIR}${DATADIR}/bin/gitaly-receive-pack
 
