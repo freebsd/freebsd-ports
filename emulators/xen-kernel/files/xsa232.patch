@@ -1,0 +1,23 @@
+From: Andrew Cooper <andrew.cooper3@citrix.com>
+Subject: grant_table: fix GNTTABOP_cache_flush handling
+
+Don't fall over a NULL grant_table pointer when the owner of the domain
+is a system domain (DOMID_{XEN,IO} etc).
+
+This is XSA-232.
+
+Reported-by: Matthew Daley <mattd@bugfuzz.com>
+Signed-off-by: Andrew Cooper <andrew.cooper3@citrix.com>
+Reviewed-by: Jan Beulich <jbeulich@suse.com>
+
+--- a/xen/common/grant_table.c
++++ b/xen/common/grant_table.c
+@@ -3053,7 +3053,7 @@ static int cache_flush(gnttab_cache_flus
+ 
+     page = mfn_to_page(mfn);
+     owner = page_get_owner_and_reference(page);
+-    if ( !owner )
++    if ( !owner || !owner->grant_table )
+     {
+         rcu_unlock_domain(d);
+         return -EPERM;
