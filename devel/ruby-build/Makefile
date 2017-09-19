@@ -1,11 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	ruby-build
-PORTVERSION=	20170726
+PORTVERSION=	20170914
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel ruby
 
-MAINTAINER=	meta+ports@vmeta.jp
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Compile and install different ruby versions
 
 LICENSE=	MIT
