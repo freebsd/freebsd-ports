@@ -64,6 +64,7 @@ bin/sancov%%LLVM_SUFFIX%%
 %%EXTRAS%%bin/clang-tidy%%LLVM_SUFFIX%%
 %%EXTRAS%%bin/find-all-symbols%%LLVM_SUFFIX%%
 %%EXTRAS%%bin/modularize%%LLVM_SUFFIX%%
+%%EXTRAS%%bin/pp-trace%%LLVM_SUFFIX%%
 %%LLD%%bin/lld%%LLVM_SUFFIX%%
 %%LLD%%bin/lld-link%%LLVM_SUFFIX%%
 %%LIT%%bin/lit%%LLVM_SUFFIX%%
