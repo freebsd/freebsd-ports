@@ -36,7 +36,7 @@ lib/gutenprint/5.2/modules/print-ps.so
 lib/gutenprint/5.2/modules/print-raw.so
 lib/libgutenprint.so
 lib/libgutenprint.so.2
-lib/libgutenprint.so.2.5.0
+lib/libgutenprint.so.2.6.0
 libdata/pkgconfig/gutenprint.pc
 libexec/cups/backend/gutenprint52+usb
 libexec/cups/driver/gutenprint.5.2
@@ -200,6 +200,7 @@ share/cups/usb/net.sf.gimp-print.usb-quirks
 %%DATADIR%%/5.2/xml/escp2/model/model_126.xml
 %%DATADIR%%/5.2/xml/escp2/model/model_127.xml
 %%DATADIR%%/5.2/xml/escp2/model/model_128.xml
+%%DATADIR%%/5.2/xml/escp2/model/model_129.xml
 %%DATADIR%%/5.2/xml/escp2/model/model_13.xml
 %%DATADIR%%/5.2/xml/escp2/model/model_14.xml
 %%DATADIR%%/5.2/xml/escp2/model/model_15.xml
