@@ -1,6 +1,6 @@
 --- Gemfile.orig	2017-09-06 21:34:31 UTC
 +++ Gemfile
-@@ -1,48 +1,43 @@
+@@ -1,12 +1,12 @@
  source 'https://rubygems.org'
  
 -gem 'rails', '4.2.8'
@@ -15,11 +15,8 @@
  
  # Default values for AR models
  gem 'default_value_for', '~> 3.0.0'
+@@ -17,32 +17,31 @@ gem 'pg', '~> 0.18.2', group: :postgres
  
--# Supported DBs
--gem 'mysql2', '~> 0.3.16', group: :mysql
--gem 'pg', '~> 0.18.2', group: :postgres
--
  gem 'rugged', '~> 0.25.1.1'
  
 -gem 'faraday', '~> 0.11.0'
@@ -57,7 +54,7 @@
  gem 'akismet', '~> 2.0'
  
  # Two-factor authentication
-@@ -68,7 +63,7 @@ gem 'gollum-lib', '~> 4.2', require: fal
+@@ -68,7 +67,7 @@ gem 'gollum-lib', '~> 4.2', require: fal
  gem 'gollum-rugged_adapter', '~> 0.4.4', require: false
  
  # Language detection
@@ -66,7 +63,7 @@
  
  # API
  gem 'grape', '~> 0.19.0'
-@@ -82,13 +77,13 @@ gem 'hashie-forbidden_attributes'
+@@ -82,13 +81,13 @@ gem 'hashie-forbidden_attributes'
  gem 'kaminari', '~> 0.17.0'
  
  # HAML
@@ -83,7 +80,7 @@
  
  # for backups
  gem 'fog-aws', '~> 0.9'
-@@ -97,10 +92,10 @@ gem 'fog-google', '~> 0.5'
+@@ -97,10 +96,10 @@ gem 'fog-google', '~> 0.5'
  gem 'fog-local', '~> 0.3'
  gem 'fog-openstack', '~> 0.1'
  gem 'fog-rackspace', '~> 0.1.1'
@@ -96,7 +93,7 @@
  
  # for aws storage
  gem 'unf', '~> 0.1.4'
-@@ -110,31 +105,31 @@ gem 'seed-fu', '~> 2.3.5'
+@@ -110,31 +109,31 @@ gem 'seed-fu', '~> 2.3.5'
  
  # Markdown and HTML processing
  gem 'html-pipeline', '~> 1.11.0'
@@ -135,7 +132,7 @@
  # Run events after state machine commits
  gem 'after_commit_queue', '~> 1.3.0'
  
-@@ -151,10 +146,10 @@ gem 'sidekiq-limit_fetch', '~> 3.4'
+@@ -151,10 +150,10 @@ gem 'sidekiq-limit_fetch', '~> 3.4'
  gem 'rufus-scheduler', '~> 3.4'
  
  # HTTP requests
@@ -148,7 +145,7 @@
  
  # GitLab settings
  gem 'settingslogic', '~> 2.0.9'
-@@ -164,7 +159,7 @@ gem 're2', '~> 1.0.0'
+@@ -164,7 +163,7 @@ gem 're2', '~> 1.0.0'
  
  # Misc
  
@@ -157,7 +154,7 @@
  
  # Cache
  gem 'redis-rails', '~> 5.0.1'
-@@ -174,10 +169,10 @@ gem 'redis', '~> 3.2'
+@@ -174,10 +173,10 @@ gem 'redis', '~> 3.2'
  gem 'connection_pool', '~> 2.0'
  
  # HipChat integration
@@ -170,7 +167,7 @@
  
  # Flowdock integration
  gem 'gitlab-flowdock-git-hook', '~> 1.0.1'
-@@ -195,7 +190,7 @@ gem 'asana', '~> 0.6.0'
+@@ -195,7 +194,7 @@ gem 'asana', '~> 0.6.0'
  gem 'ruby-fogbugz', '~> 0.2.1'
  
  # Kubernetes integration
@@ -179,7 +176,7 @@
  
  # d3
  gem 'd3_rails', '~> 3.5.0'
-@@ -204,7 +199,7 @@ gem 'd3_rails', '~> 3.5.0'
+@@ -204,7 +203,7 @@ gem 'd3_rails', '~> 3.5.0'
  gem 'underscore-rails', '~> 1.8.0'
  
  # Sanitize user input
@@ -188,7 +185,7 @@
  gem 'babosa', '~> 1.0.2'
  
  # Sanitizes SVG input
-@@ -214,7 +209,7 @@ gem 'loofah', '~> 2.0.3'
+@@ -214,7 +213,7 @@ gem 'loofah', '~> 2.0.3'
  gem 'licensee', '~> 8.7.0'
  
  # Protect against bruteforcing
@@ -197,7 +194,7 @@
  
  # Ace editor
  gem 'ace-rails-ap', '~> 4.1.0'
-@@ -233,143 +228,62 @@ gem 'chronic', '~> 0.10.2'
+@@ -233,34 +232,34 @@ gem 'chronic', '~> 0.10.2'
  gem 'chronic_duration', '~> 0.10.6'
  
  gem 'webpack-rails', '~> 0.9.10'
@@ -240,16 +237,16 @@
  gem 'gettext', '~> 3.2.2', require: false, group: :development
  
  # Perf bar
- gem 'peek', '~> 1.0.1'
+@@ -268,7 +267,7 @@ gem 'peek', '~> 1.0.1'
  gem 'peek-gc', '~> 0.0.2'
  gem 'peek-host', '~> 1.0.0'
--gem 'peek-mysql2', '~> 1.1.0', group: :mysql
+ gem 'peek-mysql2', '~> 1.1.0', group: :mysql
 -gem 'peek-performance_bar', '~> 1.2.1'
--gem 'peek-pg', '~> 1.3.0', group: :postgres
 +gem 'peek-performance_bar', '>= 1.2.1'
+ gem 'peek-pg', '~> 1.3.0', group: :postgres
  gem 'peek-rblineprof', '~> 0.2.0'
  gem 'peek-redis', '~> 1.2.0'
- gem 'peek-sidekiq', '~> 1.0.3'
+@@ -276,100 +275,21 @@ gem 'peek-sidekiq', '~> 1.0.3'
  
  # Metrics
  group :metrics do
@@ -353,7 +350,7 @@
  
  # Soft deletion
  gem 'paranoia', '~> 2.2'
-@@ -384,8 +298,10 @@ gem 'sys-filesystem', '~> 1.1.6'
+@@ -384,8 +304,10 @@ gem 'sys-filesystem', '~> 1.1.6'
  # Gitaly GRPC client
  gem 'gitaly', '~> 0.8.0'
  
