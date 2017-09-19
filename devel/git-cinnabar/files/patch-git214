@@ -1,0 +1,807 @@
+Backport of https://github.com/glandium/git-cinnabar/commit/0fad12ddedc5
+
+--- helper/cinnabar-fast-import.c.orig	2017-06-15 22:31:50 UTC
++++ helper/cinnabar-fast-import.c
+@@ -92,7 +92,7 @@ extern off_t real_find_pack_entry_one(const unsigned c
+ off_t find_pack_entry_one(const unsigned char *sha1, struct packed_git *p)
+ {
+ 	if (p == pack_data) {
+-		struct object_entry *oe = find_object((unsigned char *)sha1);
++		struct object_entry *oe = get_object_entry(sha1);
+ 		if (oe && oe->idx.offset > 1)
+ 			return oe->idx.offset;
+ 		return 0;
+@@ -102,7 +102,9 @@ off_t find_pack_entry_one(const unsigned char *sha1, s
+ 
+ void *get_object_entry(const unsigned char *sha1)
+ {
+-	return find_object((unsigned char *)sha1);
++	struct object_id oid;
++	hashcpy(oid.hash, sha1);
++	return find_object(&oid);
+ }
+ 
+ /* Mostly copied from fast-import.c's cmd_main() */
+@@ -204,10 +206,10 @@ static void end_packfile()
+ 	real_end_packfile();
+ }
+ 
+-const unsigned char empty_tree[20] = {
++const struct object_id empty_tree = { {
+ 	0x4b, 0x82, 0x5d, 0xc6, 0x42, 0xcb, 0x6e, 0xb9, 0xa0, 0x60,
+ 	0xe5, 0x4b, 0xf8, 0xd6, 0x92, 0x88, 0xfb, 0xee, 0x49, 0x04,
+-};
++} };
+ 
+ /* Override fast-import.c's parse_mark_ref to allow a syntax for
+  * mercurial sha1s, resolved through hg2git. Hack: it uses a fixed
+@@ -217,7 +219,7 @@ const unsigned char empty_tree[20] = {
+ static uintmax_t parse_mark_ref(const char *p, char **endptr)
+ {
+ 	struct object_id oid;
+-	const unsigned char *note;
++	const struct object_id *note;
+ 	struct object_entry *e;
+ 
+ 	assert(*p == ':');
+@@ -227,25 +229,25 @@ static uintmax_t parse_mark_ref(const char *p, char **
+ 		die("Invalid sha1");
+ 
+ 	ensure_notes(&hg2git);
+-	note = get_note(&hg2git, oid.hash);
++	note = get_note(&hg2git, &oid);
+ 	*endptr = (char *)p + 42;
+ 	if (**endptr == ':') {
+ 		char *path_end = strpbrk(++(*endptr), " \n");
+ 		if (path_end) {
+ 			unsigned mode;
+ 			char *path = xstrndup(*endptr, path_end - *endptr);
+-			if (!get_tree_entry(note, path, oid.hash, &mode))
+-				note = oid.hash;
++			if (!get_tree_entry(note->hash, path, oid.hash, &mode))
++				note = &oid;
+ 			else
+-				note = empty_tree;
++				note = &empty_tree;
+ 			free(path);
+ 			*endptr = path_end;
+ 		}
+ 	}
+-	e = find_object((unsigned char *)note);
++	e = find_object((struct object_id *)note);
+ 	if (!e) {
+-		e = insert_object((unsigned char *)note);
+-		e->type = sha1_object_info(note, NULL);
++		e = insert_object((struct object_id *)note);
++		e->type = sha1_object_info(note->hash, NULL);
+ 		e->pack_id = MAX_PACK_ID;
+ 		e->idx.offset = 1;
+ 	}
+@@ -299,10 +301,10 @@ void maybe_reset_notes(const char *branch)
+ 	}
+ 	if (notes) {
+ 		struct branch *b = lookup_branch(branch);
+-		if (!is_null_sha1(b->sha1)) {
++		if (!is_null_oid(&b->oid)) {
+ 			if (notes->initialized)
+ 				free_notes(notes);
+-			init_notes(notes, sha1_to_hex(b->sha1),
++			init_notes(notes, oid_to_hex(&b->oid),
+ 				   combine_notes_ignore, 0);
+ 		}
+ 	}
+@@ -370,7 +372,7 @@ static void add_head(struct oid_array *heads, const st
+ 	int pos;
+ 
+ 	ensure_heads(heads);
+-	c = lookup_commit(oid->hash);
++	c = lookup_commit(oid);
+ 	parse_commit_or_die(c);
+ 
+ 	for (parent = c->parents; parent; parent = parent->next) {
+@@ -395,14 +397,14 @@ static void handle_changeset_conflict(struct object_id
+ 	 * we find a commit that doesn't map to another changeset.
+ 	 */
+ 	struct strbuf buf = STRBUF_INIT;
+-	const unsigned char *note;
++	const struct object_id *note;
+ 
+ 	ensure_notes(&git2hg);
+-	while ((note = get_note(&git2hg, git_id->hash))) {
++	while ((note = get_note(&git2hg, git_id))) {
+ 		struct object_id oid;
+ 		enum object_type type;
+ 		unsigned long len;
+-		char *content = read_sha1_file_extended(note, &type, &len, 0);
++		char *content = read_sha1_file_extended(note->hash, &type, &len, 0);
+ 		if (len < 50 || !starts_with(content, "changeset ") ||
+ 		    get_oid_hex(&content[10], &oid))
+ 			die("Invalid git2hg note for %s", oid_to_hex(git_id));
+@@ -421,7 +423,7 @@ static void handle_changeset_conflict(struct object_id
+ 		}
+ 
+ 		strbuf_addch(&buf, '\0');
+-		store_object(OBJ_COMMIT, &buf, NULL, git_id->hash, 0);
++		store_object(OBJ_COMMIT, &buf, NULL, git_id, 0);
+ 	}
+ 	strbuf_release(&buf);
+ 
+@@ -463,16 +465,16 @@ static void do_set(struct string_list *args)
+ 	if (args->items[2].string[0] == ':') {
+ 		uintmax_t mark = parse_mark_ref_eol(args->items[2].string);
+ 		struct object_entry *oe = find_mark(mark);
+-		hashcpy(git_id.hash, oe->idx.sha1);
++		oidcpy(&git_id, &oe->idx.oid);
+ 	} else if (get_oid_hex(args->items[2].string, &git_id))
+ 		die("Invalid sha1");
+ 
+ 	if (notes == &git2hg) {
+-		const unsigned char *note;
++		const struct object_id *note;
+ 		ensure_notes(&hg2git);
+-		note = get_note(&hg2git, hg_id.hash);
++		note = get_note(&hg2git, &hg_id);
+ 		if (note)
+-			hashcpy(hg_id.hash, note);
++			oidcpy(&hg_id, note);
+ 		else if (!is_null_oid(&git_id))
+ 			die("Invalid sha1");
+ 	}
+@@ -485,21 +487,21 @@ static void do_set(struct string_list *args)
+ 	} else {
+ 		if (is_changeset)
+ 			handle_changeset_conflict(&hg_id, &git_id);
+-		add_note(notes, hg_id.hash, git_id.hash, NULL);
++		add_note(notes, &hg_id, &git_id, NULL);
+ 		if (heads)
+ 			add_head(heads, &git_id);
+ 	}
+ }
+ 
+-static int store_each_note(const unsigned char *object_sha1,
+-                           const unsigned char *note_sha1, char *note_path,
++static int store_each_note(const struct object_id *object_oid,
++                           const struct object_id *note_oid, char *note_path,
+                            void *data)
+ {
+ 	int mode;
+ 	size_t len;
+ 	struct tree_entry *tree = (struct tree_entry *)data;
+ 
+-	switch (sha1_object_info(note_sha1, NULL)) {
++	switch (sha1_object_info(note_oid->hash, NULL)) {
+ 	case OBJ_BLOB:
+ 		mode = S_IFREG | 0644;
+ 		break;
+@@ -517,7 +519,7 @@ static int store_each_note(const unsigned char *object
+ 	default:
+ 		die("Unexpected object type in notes tree");
+ 	}
+-	tree_content_set(tree, note_path, note_sha1, mode, NULL);
++	tree_content_set(tree, note_path, note_oid, mode, NULL);
+ 	return 0;
+ }
+ 
+@@ -534,23 +536,26 @@ static void store_notes(struct notes_tree *notes, stru
+ 		                  store_each_note, tree))
+ 			die("Failed to store notes");
+ 		store_tree(tree);
+-		hashcpy(result->hash, tree->versions[1].sha1);
++		oidcpy(result, &tree->versions[1].oid);
+ 		release_tree_entry(tree);
+ 	}
+ }
+ 
+ void hg_file_store(struct hg_file *file, struct hg_file *reference)
+ {
+-	unsigned char sha1[20];
++	struct object_id file_oid;
++	struct object_id oid;
+ 	struct last_object last_blob = { STRBUF_INIT, 0, 0, 1 };
+ 	struct object_entry *oe = NULL;
+ 
+ 	ENSURE_INIT();
+ 
++        hashcpy(file_oid.hash, file->sha1);
++
+ 	if (file->metadata.buf) {
+-		store_object(OBJ_BLOB, &file->metadata, NULL, sha1, 0);
++		store_object(OBJ_BLOB, &file->metadata, NULL, &oid, 0);
+ 		ensure_notes(&files_meta);
+-		add_note(&files_meta, file->sha1, sha1, NULL);
++		add_note(&files_meta, &file_oid, &oid, NULL);
+ 	}
+ 
+ 	if (reference)
+@@ -562,11 +567,11 @@ void hg_file_store(struct hg_file *file, struct hg_fil
+ 		last_blob.offset = oe->idx.offset;
+ 		last_blob.depth = oe->depth;
+ 	}
+-	store_object(OBJ_BLOB, &file->content, &last_blob, sha1, 0);
++	store_object(OBJ_BLOB, &file->content, &last_blob, &oid, 0);
+ 	ensure_notes(&hg2git);
+-	add_note(&hg2git, file->sha1, sha1, NULL);
++	add_note(&hg2git, &file_oid, &oid, NULL);
+ 
+-	file->content_oe = find_object(sha1);
++	file->content_oe = find_object(&oid);
+ }
+ 
+ static void store_file(struct rev_chunk *chunk)
+--- helper/cinnabar-helper.c.orig	2017-06-15 22:31:50 UTC
++++ helper/cinnabar-helper.c
+@@ -51,6 +51,7 @@
+ #include "cache.h"
+ #include "blob.h"
+ #include "commit.h"
++#include "config.h"
+ #include "diff.h"
+ #include "diffcore.h"
+ #include "exec_cmd.h"
+@@ -240,7 +241,9 @@ static int fill_ls_tree(const unsigned char *sha1, str
+ 	if (S_ISGITLINK(mode)) {
+ 		type = commit_type;
+ 	} else if (S_ISDIR(mode)) {
+-		object_list_insert((struct object *)lookup_tree(sha1),
++		struct object_id oid;
++		hashcpy(oid.hash, sha1);
++		object_list_insert((struct object *)lookup_tree(&oid),
+ 		                   &ctx->list);
+ 		if (ctx->recursive)
+ 			return READ_TREE_RECURSIVE;
+@@ -256,7 +259,7 @@ static int fill_ls_tree(const unsigned char *sha1, str
+ 
+ static void do_ls_tree(struct string_list *args)
+ {
+-	unsigned char sha1[20];
++	struct object_id oid;
+ 	struct tree *tree = NULL;
+ 	struct ls_tree_context ctx = { STRBUF_INIT, NULL, 0 };
+ 	struct pathspec match_all;
+@@ -268,10 +271,10 @@ static void do_ls_tree(struct string_list *args)
+ 	} else if (args->nr != 1)
+ 		goto not_found;
+ 
+-	if (get_sha1(args->items[0].string, sha1))
++	if (get_oid(args->items[0].string, &oid))
+ 		goto not_found;
+ 
+-	tree = parse_tree_indirect(sha1);
++	tree = parse_tree_indirect(&oid);
+ 	if (!tree)
+ 		goto not_found;
+ 
+@@ -402,9 +405,9 @@ static void do_diff_tree(struct string_list *args)
+ 	if (revs.pending.nr != 2)
+ 		die("diff-tree needs two revs");
+ 
+-	diff_tree_sha1(revs.pending.objects[0].item->oid.hash,
+-	               revs.pending.objects[1].item->oid.hash,
+-	               "", &revs.diffopt);
++	diff_tree_oid(&revs.pending.objects[0].item->oid,
++	              &revs.pending.objects[1].item->oid,
++	              "", &revs.diffopt);
+ 	log_tree_diff_flush(&revs);
+ 	send_buffer(&buf);
+ 	strbuf_release(&buf);
+@@ -414,7 +417,8 @@ static void do_diff_tree(struct string_list *args)
+ static void do_get_note(struct notes_tree *t, struct string_list *args)
+ {
+ 	unsigned char sha1[20];
+-	const unsigned char *note;
++	struct object_id oid;
++	const struct object_id *note;
+ 
+ 	if (args->nr != 1)
+ 		goto not_found;
+@@ -424,11 +428,12 @@ static void do_get_note(struct notes_tree *t, struct s
+ 	if (get_sha1_committish(args->items[0].string, sha1))
+ 		goto not_found;
+ 
+-	note = get_note(t, lookup_replace_object(sha1));
++	hashcpy(oid.hash, lookup_replace_object(sha1));
++	note = get_note(t, &oid);
+ 	if (!note)
+ 		goto not_found;
+ 
+-	send_object(note);
++	send_object(note->hash);
+ 	return;
+ 
+ not_found:
+@@ -488,8 +493,8 @@ struct int_node {
+ };
+ 
+ struct leaf_node {
+-	unsigned char key_sha1[20];
+-	unsigned char val_sha1[20];
++	struct object_id key_oid;
++	struct object_id val_oid;
+ };
+ 
+ #define PTR_TYPE_NULL     0
+@@ -533,57 +538,57 @@ static struct leaf_node *note_tree_abbrev_find(struct 
+ 	default:
+ 		{
+ 			struct leaf_node *node = CLR_PTR_TYPE(p);
+-			if (node && !abbrev_sha1_cmp(node->key_sha1, key_sha1,
+-			                             len))
++			if (node && !abbrev_sha1_cmp(node->key_oid.hash,
++			                             key_sha1, len))
+ 				return node;
+ 			return NULL;
+ 		}
+ 	}
+ }
+ 
+-const unsigned char *get_abbrev_note(struct notes_tree *t,
+-		const unsigned char *object_sha1, size_t len)
++const struct object_id *get_abbrev_note(struct notes_tree *t,
++		const struct object_id *object_oid, size_t len)
+ {
+ 	struct leaf_node *found;
+ 
+ 	if (!t)
+ 		t = &default_notes_tree;
+ 	assert(t->initialized);
+-	found = note_tree_abbrev_find(t, t->root, 0, object_sha1, len);
+-	return found ? found->val_sha1 : NULL;
++	found = note_tree_abbrev_find(t, t->root, 0, object_oid->hash, len);
++	return found ? &found->val_oid : NULL;
+ }
+ 
+ 
+-static const unsigned char *resolve_hg2git(const unsigned char *sha1,
+-                                           size_t len)
++static const struct object_id *resolve_hg2git(const struct object_id *oid,
++                                              size_t len)
+ {
+-	const unsigned char *note;
++	const struct object_id *note;
+ 
+ 	ensure_notes(&hg2git);
+ 
+-	note = get_note(&hg2git, sha1);
++	note = get_note(&hg2git, oid);
+ 	if (len == 40)
+ 		return note;
+ 
+-	return get_abbrev_note(&hg2git, sha1, len);
++	return get_abbrev_note(&hg2git, oid, len);
+ }
+ 
+ static void do_hg2git(struct string_list *args)
+ {
+-	unsigned char sha1[20];
+-	const unsigned char *note;
++        struct object_id oid;
++	const struct object_id *note;
+ 	size_t sha1_len;
+ 
+ 	if (args->nr != 1)
+ 		goto not_found;
+ 
+-	sha1_len =  get_abbrev_sha1_hex(args->items[0].string, sha1);
++	sha1_len =  get_abbrev_sha1_hex(args->items[0].string, oid.hash);
+ 	if (!sha1_len)
+ 		goto not_found;
+ 
+-	note = resolve_hg2git(sha1, sha1_len);
++	note = resolve_hg2git(&oid, sha1_len);
+ 	if (note) {
+-		write_or_die(1, sha1_to_hex(note), 40);
++		write_or_die(1, oid_to_hex(note), 40);
+ 		write_or_die(1, "\n", 1);
+ 		return;
+ 	}
+@@ -622,8 +627,8 @@ static const char *hgattr(unsigned int mode)
+  * parallel to generate the original manifest data.
+  */
+ struct manifest_tree {
+-	unsigned char git[20];
+-	unsigned char hg[20];
++	struct object_id git;
++	struct object_id hg;
+ };
+ 
+ static void track_tree(struct tree *tree, struct object_list **tree_list)
+@@ -648,8 +653,8 @@ static int get_manifest_tree(struct tree *tree,
+ 	/* If the tree is empty, return an empty tree for both git
+ 	 * and hg. */
+ 	if (!tree->size) {
+-		hashcpy(result->git, tree->object.oid.hash);
+-		hashcpy(result->hg, tree->object.oid.hash);
++		oidcpy(&result->git, &tree->object.oid);
++		oidcpy(&result->hg, &tree->object.oid);
+ 		return 0;
+ 	}
+ 
+@@ -659,14 +664,14 @@ static int get_manifest_tree(struct tree *tree,
+ 		goto not_found;
+ 	if (strcmp(entry.path, "git"))
+ 		goto not_found;
+-	hashcpy(result->git, entry.oid->hash);
++	oidcpy(&result->git, entry.oid);
+ 
+ 	/* The second entry in the manifest tree is the hg subtree. */
+ 	if (!tree_entry(&desc, &entry))
+ 		goto not_found;
+ 	if (strcmp(entry.path, "hg"))
+ 		goto not_found;
+-	hashcpy(result->hg, entry.oid->hash);
++	oidcpy(&result->hg, entry.oid);
+ 
+ 	/* There shouldn't be any other entry. */
+ 	if (tree_entry(&desc, &entry))
+@@ -687,12 +692,12 @@ static int manifest_tree_state_init(const struct manif
+                                     struct manifest_tree_state *result,
+                                     struct object_list **tree_list)
+ {
+-	result->tree_git = parse_tree_indirect(tree->git);
++	result->tree_git = parse_tree_indirect(&tree->git);
+ 	if (!result->tree_git)
+ 		return -1;
+ 	track_tree(result->tree_git, tree_list);
+ 
+-	result->tree_hg = parse_tree_indirect(tree->hg);
++	result->tree_hg = parse_tree_indirect(&tree->hg);
+ 	if (!result->tree_hg)
+ 		return -1;
+ 	track_tree(result->tree_hg, tree_list);
+@@ -705,8 +710,8 @@ static int manifest_tree_state_init(const struct manif
+ }
+ 
+ struct manifest_entry {
+-	const unsigned char *sha1;
+-	const unsigned char *other_sha1;
++	const struct object_id *oid;
++	const struct object_id *other_oid;
+ 	const char *path;
+ 	unsigned int mode;
+ };
+@@ -725,7 +730,7 @@ static int manifest_tree_entry(struct manifest_tree_st
+ 		return 0;
+ 	}
+ 
+-	result->sha1 = entry_hg.oid->hash;
++	result->oid = entry_hg.oid;
+ 	result->path = entry_hg.path;
+ 	result->mode = entry_git.mode;
+ 	if (strcmp(entry_hg.path, entry_git.path))
+@@ -734,7 +739,7 @@ static int manifest_tree_entry(struct manifest_tree_st
+ 		if (entry_git.mode != entry_hg.mode)
+ 			goto corrupted;
+ 	}
+-	result->other_sha1 = entry_git.oid->hash;
++	result->other_oid = entry_git.oid;
+ 	return 1;
+ corrupted:
+ 	die("Corrupted metadata");
+@@ -759,14 +764,14 @@ static void recurse_manifest(const struct manifest_tre
+ 				strbuf_add(&dir, base, base_len);
+ 			strbuf_addstr(&dir, entry.path);
+ 			strbuf_addch(&dir, '/');
+-			hashcpy(subtree.git, entry.other_sha1);
+-			hashcpy(subtree.hg, entry.sha1);
++			oidcpy(&subtree.git, entry.other_oid);
++			oidcpy(&subtree.hg, entry.oid);
+ 			recurse_manifest(&subtree, manifest, dir.buf, tree_list);
+ 			strbuf_release(&dir);
+ 			continue;
+ 		}
+ 		strbuf_addf(manifest, "%s%s%c%s%s\n", base, entry.path,
+-		            '\0', sha1_to_hex(entry.sha1), hgattr(entry.mode));
++		            '\0', oid_to_hex(entry.oid), hgattr(entry.mode));
+ 	}
+ 
+ 	return;
+@@ -786,12 +791,12 @@ static int manifest_entry_equal(const struct manifest_
+ {
+ 	if (e1->mode != e2->mode)
+ 		return 0;
+-	if (hashcmp(e1->sha1, e2->sha1))
++	if (oidcmp(e1->oid, e2->oid))
+ 		return 0;
+ 	if (!S_ISDIR(e1->mode))
+ 		return 1;
+ 	/* For trees, both sha1 need to match */
+-	return hashcmp(e1->other_sha1, e2->other_sha1) == 0;
++	return oidcmp(e1->other_oid, e2->other_oid) == 0;
+ }
+ 
+ /* Return whether base + name matches path */
+@@ -874,7 +879,7 @@ static void recurse_manifest2(const struct manifest_tr
+ 		if (!S_ISDIR(cur_entry.mode)) {
+ 			strbuf_addf(manifest, "%s%s%c%s%s\n", base,
+ 			            cur_entry.path, '\0',
+-			            sha1_to_hex(cur_entry.sha1),
++			            oid_to_hex(cur_entry.oid),
+ 			            hgattr(cur_entry.mode));
+ 			continue;
+ 		}
+@@ -883,11 +888,11 @@ static void recurse_manifest2(const struct manifest_tr
+ 			strbuf_add(&dir, base, base_len);
+ 		strbuf_addstr(&dir, cur_entry.path);
+ 		strbuf_addch(&dir, '/');
+-		hashcpy(cur_subtree.git, cur_entry.other_sha1);
+-		hashcpy(cur_subtree.hg, cur_entry.sha1);
++		oidcpy(&cur_subtree.git, cur_entry.other_oid);
++		oidcpy(&cur_subtree.hg, cur_entry.oid);
+ 		if (cmp == 0 && S_ISDIR(ref_entry.mode)) {
+-			hashcpy(ref_subtree.git, ref_entry.other_sha1);
+-			hashcpy(ref_subtree.hg, ref_entry.sha1);
++			oidcpy(&ref_subtree.git, ref_entry.other_oid);
++			oidcpy(&ref_subtree.hg, ref_entry.oid);
+ 			recurse_manifest2(&ref_subtree, ref_manifest,
+ 				          &cur_subtree, manifest, dir.buf,
+ 			                  tree_list);
+@@ -927,6 +932,8 @@ static struct strbuf *generate_manifest(const unsigned
+ 	struct strbuf content = STRBUF_INIT;
+ 	struct object_list *tree_list = NULL;
+ 	struct tree *tree = NULL;
++	struct object_id oid;
++	hashcpy(oid.hash, git_sha1);
+ 
+ 	/* We keep a list of all the trees we've seen while generating the
+ 	 * previous manifest. Each tree is marked as SEEN at that time.
+@@ -940,7 +947,7 @@ static struct strbuf *generate_manifest(const unsigned
+ 		previous_list = previous_list->next;
+ 	}
+ 
+-	tree = parse_tree_indirect(git_sha1);
++	tree = parse_tree_indirect(&oid);
+ 	if (!tree)
+ 		goto not_found;
+ 
+@@ -959,8 +966,8 @@ static struct strbuf *generate_manifest(const unsigned
+ 		recurse_manifest(&manifest_tree, &content, "", &tree_list);
+ 	}
+ 
+-	hashcpy(generated_manifest.tree.git, manifest_tree.git);
+-	hashcpy(generated_manifest.tree.hg, manifest_tree.hg);
++	oidcpy(&generated_manifest.tree.git, &manifest_tree.git);
++	oidcpy(&generated_manifest.tree.hg, &manifest_tree.hg);
+ 	strbuf_swap(&content, &generated_manifest.content);
+ 	strbuf_release(&content);
+ 
+@@ -983,8 +990,8 @@ not_found:
+ 
+ static void do_manifest(struct string_list *args)
+ {
+-	unsigned char sha1[20];
+-	const unsigned char *manifest_sha1;
++	struct object_id oid;
++	const struct object_id *manifest_oid;
+ 	struct strbuf *manifest = NULL;
+ 	size_t sha1_len;
+ 
+@@ -992,20 +999,20 @@ static void do_manifest(struct string_list *args)
+ 		goto not_found;
+ 
+ 	if (!strncmp(args->items[0].string, "git:", 4)) {
+-		if (get_sha1_hex(args->items[0].string + 4, sha1))
++		if (get_oid_hex(args->items[0].string + 4, &oid))
+ 			goto not_found;
+-		manifest_sha1 = sha1;
++		manifest_oid = &oid;
+ 	} else {
+-		sha1_len = get_abbrev_sha1_hex(args->items[0].string, sha1);
++		sha1_len = get_abbrev_sha1_hex(args->items[0].string, oid.hash);
+ 		if (!sha1_len)
+ 			goto not_found;
+ 
+-		manifest_sha1 = resolve_hg2git(sha1, sha1_len);
+-		if (!manifest_sha1)
++		manifest_oid = resolve_hg2git(&oid, sha1_len);
++		if (!manifest_oid)
+ 			goto not_found;
+ 	}
+ 
+-	manifest = generate_manifest(manifest_sha1);
++	manifest = generate_manifest(manifest_oid->hash);
+ 	if (!manifest)
+ 		goto not_found;
+ 
+@@ -1058,8 +1065,9 @@ static void hg_sha1(struct strbuf *data, const unsigne
+ 
+ static void do_check_manifest(struct string_list *args)
+ {
+-	unsigned char sha1[20], parent1[20], parent2[20], result[20];
+-	const unsigned char *manifest_sha1;
++	unsigned char parent1[20], parent2[20], result[20];
++	struct object_id oid;
++	const struct object_id *manifest_oid;
+ 	const struct commit *manifest_commit;
+ 	struct strbuf *manifest = NULL;
+ 
+@@ -1067,23 +1075,23 @@ static void do_check_manifest(struct string_list *args
+ 		goto error;
+ 
+ 	if (!strncmp(args->items[0].string, "git:", 4)) {
+-		if (get_sha1_hex(args->items[0].string + 4, sha1))
++		if (get_oid_hex(args->items[0].string + 4, &oid))
+ 			goto error;
+-		manifest_sha1 = sha1;
++		manifest_oid = &oid;
+ 	} else {
+-		if (get_sha1_hex(args->items[0].string, sha1))
++		if (get_oid_hex(args->items[0].string, &oid))
+ 			goto error;
+ 
+-		manifest_sha1 = resolve_hg2git(sha1, 40);
+-		if (!manifest_sha1)
++		manifest_oid = resolve_hg2git(&oid, 40);
++		if (!manifest_oid)
+ 			goto error;
+ 	}
+ 
+-	manifest = generate_manifest(manifest_sha1);
++	manifest = generate_manifest(manifest_oid->hash);
+ 	if (!manifest)
+ 		goto error;
+ 
+-	manifest_commit = lookup_commit(manifest_sha1);
++	manifest_commit = lookup_commit(manifest_oid);
+ 	if (!manifest_commit)
+ 		goto error;
+ 
+@@ -1101,10 +1109,10 @@ static void do_check_manifest(struct string_list *args
+ 
+ 	hg_sha1(manifest, parent1, parent2, result);
+ 
+-	if (manifest_sha1 == sha1)
+-		get_manifest_sha1(manifest_commit, sha1);
++	if (manifest_oid == &oid)
++		get_manifest_sha1(manifest_commit, oid.hash);
+ 
+-	if (hashcmp(result, sha1) == 0) {
++	if (hashcmp(result, oid.hash) == 0) {
+ 		write_or_die(1, "ok\n", 3);
+ 		return;
+ 	}
+@@ -1462,7 +1470,7 @@ static void upgrade_files(const struct manifest_tree *
+ 	struct manifest_tree_state state;
+ 	struct manifest_entry entry;
+ 
+-	state.tree_hg = lookup_tree(tree->hg);
++	state.tree_hg = lookup_tree(&tree->hg);
+ 	if (!state.tree_hg)
+ 		goto corrupted;
+ 
+@@ -1476,34 +1484,34 @@ static void upgrade_files(const struct manifest_tree *
+ 		struct object_id oid;
+ 		if (S_ISDIR(entry.mode)) {
+ 			struct manifest_tree subtree;
+-			hashcpy(subtree.git, entry.other_sha1);
+-			hashcpy(subtree.hg, entry.sha1);
++			oidcpy(&subtree.git, entry.other_oid);
++			oidcpy(&subtree.hg, entry.oid);
+ 			upgrade_files(&subtree, track);
+ 			continue;
+ 		}
+ 
+-		hashcpy(oid.hash, entry.sha1);
++		oidcpy(&oid, entry.oid);
+ 		if (oidset_insert(&track->set, &oid))
+ 			continue;
+ 
+-		const unsigned char *note = get_note(&hg2git, entry.sha1);
+-		if (!note && !is_empty_hg_file(entry.sha1))
++		const struct object_id *note = get_note(&hg2git, entry.oid);
++		if (!note && !is_empty_hg_file(entry.oid->hash))
+ 			goto corrupted;
+-		if (note && hashcmp(note, entry.other_sha1)) {
++		if (note && oidcmp(note, entry.other_oid)) {
+ 			struct hg_file file;
+ 			struct strbuf buf = STRBUF_INIT;
+ 			unsigned long len;
+ 			enum object_type t;
+ 			char *content;
+-			content = read_sha1_file_extended(note, &t, &len, 0);
++			content = read_sha1_file_extended(note->hash, &t, &len, 0);
+ 			strbuf_attach(&buf, content, len, len);
+ 			hg_file_init(&file);
+-			hg_file_from_memory(&file, entry.sha1, &buf);
+-			remove_note(&hg2git, entry.sha1);
++			hg_file_from_memory(&file, entry.oid->hash, &buf);
++			remove_note(&hg2git, entry.oid->hash);
+ 			hg_file_store(&file, NULL);
+ 			hg_file_release(&file);
+-			note = get_note(&hg2git, entry.sha1);
+-			if (hashcmp(note, entry.other_sha1))
++			note = get_note(&hg2git, entry.oid);
++			if (oidcmp(note, entry.other_oid))
+ 				goto corrupted;
+ 		}
+ 		display_progress(track->progress, track->set.map.size);
+@@ -1523,7 +1531,7 @@ static int revs_add_each_head(const struct object_id *
+ {
+ 	struct rev_info *revs = (struct rev_info *)data;
+ 
+-	add_pending_sha1(revs, oid_to_hex(oid), oid->hash, 0);
++	add_pending_oid(revs, oid_to_hex(oid), oid, 0);
+ 
+ 	return 0;
+ }
+@@ -1581,7 +1589,7 @@ static void do_seen(struct string_list *args)
+ 	if (!strcmp(args->items[0].string, "hg2git"))
+ 		seen = oidset_insert(&hg2git_seen, &oid);
+ 	else if (!strcmp(args->items[0].string, "git2hg")) {
+-		struct commit *c = lookup_commit(oid.hash);
++		struct commit *c = lookup_commit(&oid);
+ 		if (!c)
+ 			die("Unknown commit");
+ 		seen = c->object.flags & FSCK_SEEN;
+@@ -1600,21 +1608,21 @@ struct dangling_data {
+ 	int exclude_blobs;
+ };
+ 
+-static int dangling_note(const unsigned char *object_sha1,
+-                         const unsigned char *note_sha1, char *note_path,
++static int dangling_note(const struct object_id *object_oid,
++                         const struct object_id *note_oid, char *note_path,
+                          void *cb_data)
+ {
+ 	struct dangling_data *data = (struct dangling_data *)cb_data;
+ 	struct object_id oid;
+ 	int is_dangling = 0;
+ 
+-	hashcpy(oid.hash, object_sha1);
++	oidcpy(&oid, object_oid);
+ 	if (data->notes == &hg2git) {
+ 		if (!data->exclude_blobs ||
+-		    (sha1_object_info(note_sha1, NULL) != OBJ_BLOB))
++		    (sha1_object_info(note_oid->hash, NULL) != OBJ_BLOB))
+ 			is_dangling = !oidset_contains(&hg2git_seen, &oid);
+ 	} else if (data->notes == &git2hg) {
+-		struct commit *c = lookup_commit(oid.hash);
++		struct commit *c = lookup_commit(&oid);
+ 		is_dangling = !c || !(c->object.flags & FSCK_SEEN);
+ 	}
+ 
+--- helper/hg-data.c.orig	2017-06-15 22:31:50 UTC
++++ helper/hg-data.c
+@@ -24,7 +24,8 @@ void _hg_file_split(struct hg_file *result, size_t met
+ 
+ void hg_file_load(struct hg_file *result, const unsigned char *sha1)
+ {
+-	const unsigned char *note;
++	const struct object_id *note;
++	struct object_id oid;
+ 	char *content;
+ 	enum object_type type;
+ 	unsigned long len;
+@@ -36,10 +37,11 @@ void hg_file_load(struct hg_file *result, const unsign
+ 	if (is_empty_hg_file(sha1))
+ 		return;
+ 
++	hashcpy(oid.hash, sha1);
+ 	ensure_notes(&files_meta);
+-	note = get_note(&files_meta, sha1);
++	note = get_note(&files_meta, &oid);
+ 	if (note) {
+-		content = read_sha1_file_extended(note, &type, &len, 0);
++		content = read_sha1_file_extended(note->hash, &type, &len, 0);
+ 		strbuf_add(&result->file, "\1\n", 2);
+ 		strbuf_add(&result->file, content, len);
+ 		strbuf_add(&result->file, "\1\n", 2);
+@@ -49,16 +51,16 @@ void hg_file_load(struct hg_file *result, const unsign
+ 	metadata_len = result->file.len;
+ 
+ 	ensure_notes(&hg2git);
+-	note = get_note(&hg2git, sha1);
++	note = get_note(&hg2git, &oid);
+ 	if (!note)
+ 		die("Missing data");
+ 
+-	content = read_sha1_file_extended(note, &type, &len, 0);
++	content = read_sha1_file_extended(note->hash, &type, &len, 0);
+ 	strbuf_add(&result->file, content, len);
+ 	free(content);
+ 
+ 	// Note this duplicates work read_sha1_file already did.
+-	result->content_oe = get_object_entry((unsigned char*) note);
++	result->content_oe = get_object_entry(note->hash);
+ 
+ 	_hg_file_split(result, metadata_len);
+ }
