@@ -10,6 +10,7 @@ MAINTAINER=	office@FreeBSD.org
 COMMENT=	Library and tools for parsing Corel Draw file format
 
 LICENSE=	MPL20
+LICENSE_FILE=	${WRKSRC}/COPYING.MPL
 
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/optional.hpp:devel/boost-libs
 LIB_DEPENDS=	libicui18n.so:devel/icu \
