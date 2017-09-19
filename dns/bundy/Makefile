@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	bundy
-PORTVERSION=	0.20160125
+PORTVERSION=	0.20170618
 PORTREVISION=	9
 CATEGORIES=	dns
 MASTER_SITES=	LOCAL/mat/bundy SF/boost/boost/1.55.0:boost
@@ -30,7 +30,7 @@ BROKEN_powerpc64=	fails to configure: checking for botan/botan.h... no
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	bundy-dns
-GH_TAGNAME=	d310c5d
+GH_TAGNAME=	e640032
 
 USES=	compiler:c++11-lang pathfix pkgconfig libtool python:3 autoreconf ssl
 
