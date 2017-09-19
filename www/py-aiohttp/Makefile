@@ -14,7 +14,7 @@ LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 BUILD_DEPENDS=	cython:lang/cython
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}chardet>0:textproc/py3-chardet \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}chardet>0:textproc/py-chardet \
 		${PYTHON_PKGNAMEPREFIX}multidict>0:www/py-multidict \
 		${PYTHON_PKGNAMEPREFIX}yarl>0:www/py-yarl \
 		${PYTHON_PKGNAMEPREFIX}async_timeout>0:devel/py-async_timeout

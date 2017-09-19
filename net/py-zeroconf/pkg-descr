@@ -1,0 +1,3 @@
+A pure python implementation of multicast DNS service discovery
+
+WWW: https://github.com/jstasiak/python-zeroconf

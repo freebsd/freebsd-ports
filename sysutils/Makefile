@@ -1084,6 +1084,7 @@
     SUBDIR += searchmonkey
     SUBDIR += seatools
     SUBDIR += sec
+    SUBDIR += sedutil
     SUBDIR += serf
     SUBDIR += setcdboot
     SUBDIR += setquota
@@ -1163,6 +1164,7 @@
     SUBDIR += terraform
     SUBDIR += testdisk
     SUBDIR += thefish
+    SUBDIR += throttle
     SUBDIR += timelimit
     SUBDIR += timemon
     SUBDIR += titlefix
