@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libcdr
-PORTVERSION=	0.1.3
-PORTREVISION=	8
+PORTVERSION=	0.1.4
 CATEGORIES=	graphics devel
 MASTER_SITES=	LODEV
 PKGNAMESUFFIX=	01
@@ -10,8 +9,7 @@ PKGNAMESUFFIX=	01
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Library and tools for parsing Corel Draw file format
 
-LICENSE=	LGPL21 MPL GPLv2
-LICENSE_COMB=	dual
+LICENSE=	MPL20
 
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/optional.hpp:devel/boost-libs
 LIB_DEPENDS=	libicui18n.so:devel/icu \
