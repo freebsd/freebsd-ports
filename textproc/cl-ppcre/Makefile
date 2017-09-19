@@ -10,7 +10,10 @@ MASTER_SITES=	LOCAL/olgeni
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Portable Perl-Compatible Regular Expression for Common Lisp
 
+LICENSE=	BSD2CLAUSE
+
 NO_BUILD=	yes
+NO_ARCH=	yes
 
 USE_ASDF=	yes
 
