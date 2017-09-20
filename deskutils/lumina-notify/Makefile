@@ -3,7 +3,8 @@
 
 PORTNAME=	lumina-notify
 DISTVERSIONPREFIX=      v
-DISTVERSION=    1.3.0-p1
+DISTVERSION=    1.3.0
+DISTVERSIONSUFFIX=	-p1
 CATEGORIES=	deskutils
 
 MAINTAINER=	kmoore@FreeBSD.org
