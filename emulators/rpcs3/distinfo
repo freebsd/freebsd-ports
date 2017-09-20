@@ -13,7 +13,3 @@ SHA256 (Microsoft-GSL-fc5fce4_GH0.tar.gz) = 2df1538ff240bf4dd3ef44ba8c832451376f
 SIZE (Microsoft-GSL-fc5fce4_GH0.tar.gz) = 38809
 SHA256 (USCiLab-cereal-v1.2.0_GH0.tar.gz) = 1ccf3ed205a7a2f0d6a060415b123f1ae0d984cd4435db01af8de11a2eda49c1
 SIZE (USCiLab-cereal-v1.2.0_GH0.tar.gz) = 299883
-SHA256 (KhronosGroup-glslang-3.0-1379-g0e07119a_GH0.tar.gz) = f1caf9c76c0104d46128426e3bfd731938b3bf8b4b8cd9bf0102ac59cc4ea90f
-SIZE (KhronosGroup-glslang-3.0-1379-g0e07119a_GH0.tar.gz) = 1786108
-SHA256 (KhronosGroup-Vulkan-LoaderAndValidationLayers-sdk-1.0.30.0-1550-g115665a3_GH0.tar.gz) = d59f98eba91ed5b37f138a353c4e1cdff769a23e529650b0bf07b456dfedee58
-SIZE (KhronosGroup-Vulkan-LoaderAndValidationLayers-sdk-1.0.30.0-1550-g115665a3_GH0.tar.gz) = 3808601
