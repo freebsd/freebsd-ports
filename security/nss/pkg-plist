@@ -23,6 +23,7 @@ bin/strsclnt
 bin/symkeyutil
 bin/vfychain
 bin/vfyserv
+include/nss/nss/sslexp.h
 include/nss/nss/base64.h
 include/nss/nss/blapit.h
 include/nss/nss/cert.h
