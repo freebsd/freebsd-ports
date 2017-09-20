@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	lograge
-PORTVERSION=	0.6.0
+PORTVERSION=	0.7.1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	-rails5
@@ -16,8 +16,9 @@ RUN_DEPENDS=	rubygem-activesupport5>=4:devel/rubygem-activesupport5 \
 		rubygem-railties5>=4:www/rubygem-railties5 \
 		rubygem-request_store>=1.0:devel/rubygem-request_store
 
-NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
+USE_RUBY=	yes
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
