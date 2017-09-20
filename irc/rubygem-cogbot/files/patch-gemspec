@@ -1,10 +1,12 @@
---- cogbot.gemspec.orig	2017-08-17 13:37:15 UTC
+--- cogbot.gemspec.orig	2017-09-20 14:46:05 UTC
 +++ cogbot.gemspec
-@@ -24,7 +24,7 @@ Gem::Specification.new do |s|
+@@ -23,8 +23,8 @@ Gem::Specification.new do |s|
+     s.specification_version = 4
  
      if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
-       s.add_runtime_dependency(%q<cinch>.freeze, ["= 2.3.3"])
+-      s.add_runtime_dependency(%q<cinch>.freeze, ["= 2.3.3"])
 -      s.add_runtime_dependency(%q<thor>.freeze, ["~> 0.19.4"])
++      s.add_runtime_dependency(%q<cinch>.freeze, ["~> 2.3.3"])
 +      s.add_runtime_dependency(%q<thor>.freeze, ["~> 0.19", ">= 0.19.4"])
        s.add_runtime_dependency(%q<eventmachine>.freeze, ["~> 1.2.3"])
        s.add_runtime_dependency(%q<eventmachine_httpserver>.freeze, ["~> 0.2.1"])
