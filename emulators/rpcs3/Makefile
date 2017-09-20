@@ -38,7 +38,7 @@ USE_QT5=	qmake_build buildtools_build core dbus gui widgets
 USE_XORG=	x11
 EXTRA_PATCHES+=	${EXTRA_PATCHES_${OPSYS}_${OSREL}}
 EXTRA_PATCHES_FreeBSD_10.3=	${PATCHDIR}/extra-patch-no-thread_local
-CMAKE_ARGS+=	-DUSE_SYSTEM_LIBPNG=on -DUSE_SYSTEM_FFMPEG=on
+CMAKE_ARGS+=	-DCMAKE_SKIP_RPATH=on -DUSE_SYSTEM_LIBPNG=on -DUSE_SYSTEM_FFMPEG=on
 CXXFLAGS+=	-D_GLIBCXX_USE_C99 # XXX ports/193528
 CXXFLAGS+=	-Wno-macro-redefined # __STDC_*_MACROS sys/cdefs.h vs. llvm-config
 LDFLAGS+=	-Wl,--as-needed # GLU
