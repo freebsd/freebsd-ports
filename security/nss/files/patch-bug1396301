@@ -1,0 +1,14 @@
+--- lib/freebl/verified/kremlib.h.orig	2017-09-20 06:47:27 UTC
++++ lib/freebl/verified/kremlib.h
+@@ -82,6 +82,11 @@ typedef void *Prims_pos, *Prims_nat, *Prims_nonzero, *
+ #if defined(__linux__) || defined(__CYGWIN__)
+ #include <endian.h>
+ 
++// ... for BSDs
++#elif defined(__DragonFly__) || defined(__FreeBSD__) \
++    || defined(__NetBSD__) || defined(__OpenBSD__)
++#include <sys/endian.h>
++
+ // ... for OSX
+ #elif defined(__APPLE__)
+ #include <libkern/OSByteOrder.h>
