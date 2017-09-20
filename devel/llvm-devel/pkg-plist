@@ -67,6 +67,7 @@ bin/sancov-devel
 %%EXTRAS%%bin/clang-tidy-devel
 %%EXTRAS%%bin/find-all-symbols-devel
 %%EXTRAS%%bin/modularize-devel
+%%EXTRAS%%bin/pp-trace-devel
 %%LLD%%bin/lld-devel
 %%LLD%%bin/lld-link-devel
 %%LIT%%bin/lit-devel
@@ -722,6 +723,7 @@ llvm-devel/bin/yaml2obj
 %%LLDB%%llvm-devel/include/lldb/Breakpoint/BreakpointLocation.h
 %%LLDB%%llvm-devel/include/lldb/Breakpoint/BreakpointLocationCollection.h
 %%LLDB%%llvm-devel/include/lldb/Breakpoint/BreakpointLocationList.h
+%%LLDB%%llvm-devel/include/lldb/Breakpoint/BreakpointName.h
 %%LLDB%%llvm-devel/include/lldb/Breakpoint/BreakpointOptions.h
 %%LLDB%%llvm-devel/include/lldb/Breakpoint/BreakpointResolver.h
 %%LLDB%%llvm-devel/include/lldb/Breakpoint/BreakpointResolverAddress.h
@@ -871,6 +873,7 @@ llvm-devel/bin/yaml2obj
 %%LLDB%%llvm-devel/include/lldb/Host/SocketAddress.h
 %%LLDB%%llvm-devel/include/lldb/Host/StringConvert.h
 %%LLDB%%llvm-devel/include/lldb/Host/Symbols.h
+%%LLDB%%llvm-devel/include/lldb/Host/TaskPool.h
 %%LLDB%%llvm-devel/include/lldb/Host/Terminal.h
 %%LLDB%%llvm-devel/include/lldb/Host/ThreadLauncher.h
 %%LLDB%%llvm-devel/include/lldb/Host/Time.h
@@ -1110,7 +1113,6 @@ llvm-devel/bin/yaml2obj
 %%LLDB%%llvm-devel/include/lldb/Utility/StringLexer.h
 %%LLDB%%llvm-devel/include/lldb/Utility/StringList.h
 %%LLDB%%llvm-devel/include/lldb/Utility/StructuredData.h
-%%LLDB%%llvm-devel/include/lldb/Utility/TaskPool.h
 %%LLDB%%llvm-devel/include/lldb/Utility/TildeExpressionResolver.h
 %%LLDB%%llvm-devel/include/lldb/Utility/Timeout.h
 %%LLDB%%llvm-devel/include/lldb/Utility/Timer.h
@@ -1729,6 +1731,7 @@ llvm-devel/include/llvm/IR/DebugInfoMetadata.h
 llvm-devel/include/llvm/IR/DebugLoc.h
 llvm-devel/include/llvm/IR/DerivedTypes.h
 llvm-devel/include/llvm/IR/DerivedUser.h
+llvm-devel/include/llvm/IR/DiagnosticHandler.h
 llvm-devel/include/llvm/IR/DiagnosticInfo.h
 llvm-devel/include/llvm/IR/DiagnosticPrinter.h
 llvm-devel/include/llvm/IR/Dominators.h

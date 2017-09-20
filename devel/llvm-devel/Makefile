@@ -60,6 +60,9 @@ CLANG_DESC=	Build clang
 CLANG_EXTRA_PATCHES= \
 	${PATCHDIR}/clang-patch-fformat_extensions.diff \
 	${PATCHDIR}/clang-patch-fopenmp.diff \
+	${PATCHDIR}/clang-patch-tools_clang_tools_clang-format_clang-format.py \
+	${PATCHDIR}/clang-patch-tools_clang_tools_clang-format_clang-format-sublime.py \
+	${PATCHDIR}/clang-patch-tools_clang_tools_clang-format_git-clang-format \
 	${PATCHDIR}/clang-patch-tools_clang_lib_Headers_CMakeLists.txt
 CLANG_CONFLICTS_INSTALL=	clang-devel-3.[1234567]*
 CLANG_GH_PROJECT=	clang:clang
@@ -261,7 +264,7 @@ CMAKE_BUILD_TYPE=	RelWithDebInfo
 STRIP=
 .endif
 
-_CRTLIBDIR=	${LLVM_PREFIX:S|${PREFIX}/||}/lib/freebsd
+_CRTLIBDIR=	${LLVM_PREFIX:S|${PREFIX}/||}/lib/clang/${LLVM_RELEASE}/lib/freebsd
 .if ${ARCH} == "amd64"
 _COMPILER_RT_LIBS= \
 	libclang_rt.asan-preinit-x86_64.a \
@@ -332,6 +335,12 @@ post-patch:
 	${REINPLACE_CMD} -e 's,/usr/local/,${LOCALBASE}/,' \
 	    ${WRKSRC}/CMakeLists.txt
 
+post-patch-CLANG-on:
+	${REINPLACE_CMD} -e 's|%%LLVM_SUFFIX%%|${LLVM_SUFFIX}|' \
+	    ${PATCH_WRKSRC}/tools/clang/tools/clang-format/clang-format.py \
+	    ${PATCH_WRKSRC}/tools/clang/tools/clang-format/clang-format-sublime.py \
+	    ${PATCH_WRKSRC}/tools/clang/tools/clang-format/git-clang-format
+
 post-build-COMPILER_RT-on:
 	${MKDIR} ${WRKDIR}/compiler-rt-build
 	cd ${WRKDIR}/compiler-rt-build && \
@@ -374,10 +383,14 @@ post-install-CLANG-on:
 
 post-install-COMPILER_RT-on:
 	cd ${WRKDIR}/compiler-rt-build && \
-	${MAKE_ENV} ${MAKE_CMD} ${INSTALL_TARGET}
+	    ${MAKE_ENV} ${MAKE_CMD} ${INSTALL_TARGET}
 .if ${ARCH} == "amd64"
 	${RM} ${STAGEDIR}${LLVM_PREFIX}/lib/freebsd/libclang_rt*i386*
 .endif
+	${MKDIR} ${STAGEDIR}${PREFIX}/${_CRTLIBDIR}
+	${MV} ${STAGEDIR}${LLVM_PREFIX}/lib/freebsd/* \
+	    ${STAGEDIR}${PREFIX}/${_CRTLIBDIR}
+	${RMDIR} ${STAGEDIR}${LLVM_PREFIX}/lib/freebsd
 
 post-install-LIT-on:
 	${INSTALL_SCRIPT} ${PATCH_WRKSRC}/utils/lit/lit.py \
