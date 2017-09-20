@@ -1,6 +1,6 @@
-TIMESTAMP = 1505065599
-SHA256 (RPCS3-rpcs3-v0.0.3-305-gf0358f85_GH0.tar.gz) = e39b8db110c9a97fab347319b102507c7643b3e5b5ac7a20c0a9841f39ec6db1
-SIZE (RPCS3-rpcs3-v0.0.3-305-gf0358f85_GH0.tar.gz) = 4166246
+TIMESTAMP = 1505822827
+SHA256 (RPCS3-rpcs3-v0.0.3-348-g5c93acef_GH0.tar.gz) = b283e036663f52f88845b4fdc0d6ccd55361015914a481e96d4e419631b8263e
+SIZE (RPCS3-rpcs3-v0.0.3-348-g5c93acef_GH0.tar.gz) = 4169501
 SHA256 (RPCS3-hidapi-hidapi-0.8.0-rc1-25-gca39ce8_GH0.tar.gz) = e50e4f4e9035e891e16867e995f44aac87ce734a9dde169f02fc9719b2ce3642
 SIZE (RPCS3-hidapi-hidapi-0.8.0-rc1-25-gca39ce8_GH0.tar.gz) = 105623
 SHA256 (RPCS3-pugixml-f205aaf_GH0.tar.gz) = 3b2a7e21625d8cbeb3aa1841b8816f6cab0752e89008b9fc67a325c800f153b5
@@ -13,3 +13,7 @@ SHA256 (Microsoft-GSL-fc5fce4_GH0.tar.gz) = 2df1538ff240bf4dd3ef44ba8c832451376f
 SIZE (Microsoft-GSL-fc5fce4_GH0.tar.gz) = 38809
 SHA256 (USCiLab-cereal-v1.2.0_GH0.tar.gz) = 1ccf3ed205a7a2f0d6a060415b123f1ae0d984cd4435db01af8de11a2eda49c1
 SIZE (USCiLab-cereal-v1.2.0_GH0.tar.gz) = 299883
+SHA256 (KhronosGroup-glslang-3.0-1379-g0e07119a_GH0.tar.gz) = f1caf9c76c0104d46128426e3bfd731938b3bf8b4b8cd9bf0102ac59cc4ea90f
+SIZE (KhronosGroup-glslang-3.0-1379-g0e07119a_GH0.tar.gz) = 1786108
+SHA256 (KhronosGroup-Vulkan-LoaderAndValidationLayers-sdk-1.0.30.0-1550-g115665a3_GH0.tar.gz) = d59f98eba91ed5b37f138a353c4e1cdff769a23e529650b0bf07b456dfedee58
+SIZE (KhronosGroup-Vulkan-LoaderAndValidationLayers-sdk-1.0.30.0-1550-g115665a3_GH0.tar.gz) = 3808601
