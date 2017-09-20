@@ -72,12 +72,10 @@ PULSEAUDIO_LIB_DEPENDS=	libpulse-simple.so:audio/pulseaudio
 PULSEAUDIO_CMAKE_BOOL=	USE_PULSE
 
 VULKAN_DESC=		Vulkan renderer
-# XXX Unbundle via CMAKE_ARGS+=-DVULKAN_PREBUILT=on
-VULKAN_VARS=		LICENSE+=APACHE20
-VULKAN_GH_TUPLE=	KhronosGroup:glslang:3.0-1379-g0e07119a:glslang/Vulkan/glslang \
-			KhronosGroup:Vulkan-LoaderAndValidationLayers:sdk-1.0.30.0-1550-g115665a3:vulkan_icd/Vulkan/Vulkan-LoaderAndValidationLayers
+VULKAN_BUILD_DEPENDS=	${LOCALBASE}/lib/libglslang.a:devel/glslang
 VULKAN_LIB_DEPENDS=	libvulkan.so:graphics/vulkan-sdk
 VULKAN_CMAKE_BOOL=	USE_VULKAN
+VULKAN_CMAKE_ON=	-DVULKAN_PREBUILT=on
 
 post-patch:
 	@${REINPLACE_CMD} -e '/GIT_BRANCH/s/unknown/master/' \
