@@ -2,7 +2,7 @@
 
 PORTNAME=	llvm
 DISTVERSION=	5.0.0
-PORTREVISON=	1
+PORTREVISON=	2
 CATEGORIES=	devel lang
 MASTER_SITES=	http://llvm.org/${PRE_}releases/${LLVM_RELEASE}/${RCDIR}
 PKGNAMESUFFIX=	${LLVM_SUFFIX}
@@ -174,8 +174,7 @@ EXTRAS_COMMANDS+= \
 		clang-reorder-fields \
 		clang-tidy \
 		find-all-symbols \
-		modularize \
-		pp-trace
+		modularize
 EXTRAS_LIBS=	libclangApplyReplacements \
 		libclangChangeNamespace \
 		libclangIncludeFixer \
