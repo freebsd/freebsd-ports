@@ -55,6 +55,8 @@ plexpy/data/interfaces/default/images/chevron.png
 plexpy/data/interfaces/default/images/cover.png
 plexpy/data/interfaces/default/images/favicon.ico
 plexpy/data/interfaces/default/images/favicon.png
+plexpy/data/interfaces/default/images/flattr-badge-large.png
+plexpy/data/interfaces/default/images/gold-rect-paypal-34px.png
 plexpy/data/interfaces/default/images/gravatar-default-80x80.png
 plexpy/data/interfaces/default/images/gravatar-default.png
 plexpy/data/interfaces/default/images/home-stat_most-concurrent.png
@@ -920,6 +922,7 @@ plexpy/data/interfaces/default/js/highcharts/js/themes/skies.js
 plexpy/data/interfaces/default/js/jquery-2.1.4.min.js
 plexpy/data/interfaces/default/js/jquery-ui.min.js
 plexpy/data/interfaces/default/js/jquery.dataTables.min.js
+plexpy/data/interfaces/default/js/jquery.qrcode.min.js
 plexpy/data/interfaces/default/js/jquery.rateit.min.js
 plexpy/data/interfaces/default/js/moment-duration-format.js
 plexpy/data/interfaces/default/js/moment-with-locale.js
