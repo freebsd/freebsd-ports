@@ -2,8 +2,8 @@
 
 PORTNAME=	rpcs3
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.0.3-305
-DISTVERSIONSUFFIX=	-gf0358f85
+DISTVERSION=	0.0.3-348
+DISTVERSIONSUFFIX=	-g5c93acef
 CATEGORIES=	emulators
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -34,7 +34,8 @@ GH_TUPLE=	RPCS3:hidapi:hidapi-0.8.0-rc1-25-gca39ce8:hidapi/3rdparty/hidapi \
 USES=		cmake compiler:c++14-lang iconv:wchar_t localbase:ldflags \
 		openal:soft pkgconfig
 USE_GL=		gl glew
-USE_QT5=	qmake_build buildtools_build core gui widgets
+USE_QT5=	qmake_build buildtools_build core dbus gui widgets
+USE_XORG=	x11
 EXTRA_PATCHES+=	${EXTRA_PATCHES_${OPSYS}_${OSREL}}
 EXTRA_PATCHES_FreeBSD_10.3=	${PATCHDIR}/extra-patch-no-thread_local
 CMAKE_ARGS+=	-DUSE_SYSTEM_LIBPNG=on -DUSE_SYSTEM_FFMPEG=on
@@ -46,8 +47,11 @@ PLIST_FILES=	bin/${PORTNAME} \
 		share/icons/hicolor/48x48/apps/${PORTNAME}.png \
 		share/icons/hicolor/scalable/apps/${PORTNAME}.svg \
 
-OPTIONS_DEFINE=	ALSA EVDEV GDB LLVM PULSEAUDIO
-OPTIONS_DEFAULT=ALSA LLVM
+OPTIONS_DEFINE=	ALSA EVDEV GDB LLVM PULSEAUDIO VULKAN
+OPTIONS_DEFAULT=ALSA LLVM VULKAN
+.if !exists(${.CURDIR:H:H}/graphics/vulkan-sdk)
+OPTIONS_EXCLUDE=VULKAN # XXX ports/222175
+.endif
 
 ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
 ALSA_RUN_DEPENDS=	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:audio/alsa-plugins
@@ -67,8 +71,17 @@ LLVM_CMAKE_BOOL_OFF=	WITHOUT_LLVM
 PULSEAUDIO_LIB_DEPENDS=	libpulse-simple.so:audio/pulseaudio
 PULSEAUDIO_CMAKE_BOOL=	USE_PULSE
 
+VULKAN_DESC=		Vulkan renderer
+# XXX Unbundle via CMAKE_ARGS+=-DVULKAN_PREBUILT=on
+VULKAN_VARS=		LICENSE+=APACHE20
+VULKAN_GH_TUPLE=	KhronosGroup:glslang:3.0-1379-g0e07119a:glslang/Vulkan/glslang \
+			KhronosGroup:Vulkan-LoaderAndValidationLayers:sdk-1.0.30.0-1550-g115665a3:vulkan_icd/Vulkan/Vulkan-LoaderAndValidationLayers
+VULKAN_LIB_DEPENDS=	libvulkan.so:graphics/vulkan-sdk
+VULKAN_CMAKE_BOOL=	USE_VULKAN
+
 post-patch:
-	@${REINPLACE_CMD} -e 's/"unknown"/"${GH_TAGNAME}"/' \
+	@${REINPLACE_CMD} -e '/GIT_BRANCH/s/unknown/master/' \
+		-e '/GIT_VERSION/s/unknown/${GH_TAGNAME:C/[^-]*-//}/' \
 		${WRKSRC}/${PORTNAME}/git-version.cmake
 
 .include <bsd.port.mk>
