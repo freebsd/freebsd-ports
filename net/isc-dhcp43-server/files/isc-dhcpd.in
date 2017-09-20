@@ -13,6 +13,12 @@
 
 . /etc/rc.subr
 
+# service(8) does not create an authentic environment, try to guess,
+# and as of 10.3-RELEASE-p0, it will not find the indented name=
+# assignments below. So give it a default.
+# Trailing semicolon also for service(8)'s benefit:
+name="$file" ;
+
 case $0 in
 /etc/rc*)
 	# during boot (shutdown) $0 is /etc/rc (/etc/rc.shutdown),
@@ -24,7 +30,11 @@ case $0 in
 	;;
 esac
 
+# default name to "dhcpd" if guessing failed
+# Trailing semicolon also for service(8)'s benefit:
+name="${name:-dhcpd}" ;
 name=${name##*/isc-}
+
 paranoia=%%PARANOIA%%				# compiled in paranoia?
 
 load_rc_config ${name}
@@ -308,7 +318,7 @@ check_chroot ()
 	fi
 }
 
-rcvar_chuser ()
+_rcvar_chuser ()
 {
 	if checkyesno paranoia && checkyesno ${name}_chuser_enable; then
 		eval "${name}_piddir=\${__dhcpd_piddir}/\${name}"
@@ -318,7 +328,7 @@ rcvar_chuser ()
 	fi
 }
 
-rcvar_chroot ()
+_rcvar_chroot ()
 {
 	if ! checkyesno paranoia || ! checkyesno ${name}_chroot_enable; then
 		eval "${name}_rootdir="
@@ -328,7 +338,7 @@ rcvar_chroot ()
 	fi
 }
 
-rcvar_pidnleases ()
+_rcvar_pidnleases ()
 {
 	if ! checkyesno ${name}_chuser_enable; then
 		eval "${name}_piddir=\${__dhcpd_piddir}"
@@ -340,7 +350,7 @@ rcvar_pidnleases ()
 	eval "${name}_confdir=\$(dirname \${${name}_conffile})"
 }
 
-rcvar_rooted ()
+_rcvar_rooted ()
 {
 	eval "_dhcpd_rootdir=\${${name}_rootdir}"
 	eval "_dhcpd_devdir=\${${name}_rootdir}\${${name}_devdir}"
@@ -460,10 +470,10 @@ dhcpd_check ()
 
 dhcpd_rcvar ()
 {
-	rcvar_chuser
-	rcvar_chroot
-	rcvar_pidnleases
-	rcvar_rooted
+	_rcvar_chuser
+	_rcvar_chroot
+	_rcvar_pidnleases
+	_rcvar_rooted
 }
 
 dhcpd_precmd ()
