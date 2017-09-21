@@ -44,6 +44,7 @@ share/icons/terminology.png
 %%DATADIR%%/themes/solarized.edj
 %%DATADIR%%/themes/solarized_light.edj
 %%NLS%%share/locale/ca/LC_MESSAGES/terminology.mo
+%%NLS%%share/locale/da/LC_MESSAGES/terminology.mo
 %%NLS%%share/locale/de/LC_MESSAGES/terminology.mo
 %%NLS%%share/locale/el/LC_MESSAGES/terminology.mo
 %%NLS%%share/locale/eo/LC_MESSAGES/terminology.mo

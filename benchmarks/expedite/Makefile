@@ -30,4 +30,6 @@ OPENGL_CONFIGURE_ENABLE=	opengl-x11
 SDL_CONFIGURE_ENABLE=		software-sdl
 X11_CONFIGURE_ENABLE=		software-x11 xrender-x11
 
+BROKEN=		Do not build with devel/efl 1.19.x
+
 .include <bsd.port.mk>

@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	terminology
-PORTVERSION=	1.0.0
-PORTREVISION=	3
+PORTVERSION=	1.1.1
 CATEGORIES=	x11 enlightenment
 MASTER_SITES=	http://download.enlightenment.org/rel/apps/${PORTNAME}/
 
@@ -12,7 +11,8 @@ COMMENT=	EFL Terminal Emulator
 
 LICENSE=	BSD2CLAUSE
 
-LIB_DEPENDS=	libefl.so:devel/efl
+LIB_DEPENDS=	libefl.so:devel/efl \
+		libintl.so:devel/gettext-runtime
 
 DIST_SUBDIR=	enlightenment
 GNU_CONFIGURE=	yes
