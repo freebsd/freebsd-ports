@@ -1,3 +1,3 @@
-TIMESTAMP = 1502274035
-SHA256 (prometheus-blackbox_exporter-v0.8.1_GH0.tar.gz) = 6a9abef7575fc666c0c456f95e9d0410600e0832e679f8bed8c2069345d60d7e
-SIZE (prometheus-blackbox_exporter-v0.8.1_GH0.tar.gz) = 1347185
+TIMESTAMP = 1505986258
+SHA256 (prometheus-blackbox_exporter-v0.9.0_GH0.tar.gz) = 22308de850a6c629fdd8d4517da3f827d740bbf9c413b795c4ccbe9b5cb1c083
+SIZE (prometheus-blackbox_exporter-v0.9.0_GH0.tar.gz) = 529019
