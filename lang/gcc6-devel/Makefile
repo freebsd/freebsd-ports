@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gcc
-PORTVERSION=	6.4.1.s20170913
+PORTVERSION=	6.4.1.s20170920
 CATEGORIES=	lang java
 MASTER_SITES=	GCC/snapshots/${DIST_VERSION}
 PKGNAMESUFFIX=	${SUFFIX}-devel
@@ -50,7 +50,7 @@ OPTIONS_EXCLUDE_DragonFly=	JAVA
 BOOTSTRAP_DESC=		Build using a full bootstrap
 GRAPHITE_DESC=		Support for Graphite loop optimizations
 
-JAVA_USES=	python shebangfix
+JAVA_USES=	python:build shebangfix
 SHEBANG_FILES=	libjava/contrib/aot-compile.in
 
 .if exists(/usr/lib32/libc.so)
