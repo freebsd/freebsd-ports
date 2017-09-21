@@ -34,11 +34,12 @@ lib/liblttoolbox3-%%APVER%%.so.0
 lib/liblttoolbox3-%%APVER%%.so.0.0.0
 lib/liblttoolbox3.a
 lib/liblttoolbox3.so
-%%DATADIR%%/acx.xsd
-%%DATADIR%%/dix.xsd
-%%DATADIR%%/dix.dtd
 %%DATADIR%%/acx.rng
+%%DATADIR%%/acx.xsd
+%%DATADIR%%/dix.dtd
+%%DATADIR%%/dix.rnc
 %%DATADIR%%/dix.rng
+%%DATADIR%%/dix.xsd
 man/man1/lt-comp.1.gz
 man/man1/lt-expand.1.gz
 man/man1/lt-print.1.gz
