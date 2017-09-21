@@ -67,7 +67,6 @@ bin/sancov-devel
 %%EXTRAS%%bin/clang-tidy-devel
 %%EXTRAS%%bin/find-all-symbols-devel
 %%EXTRAS%%bin/modularize-devel
-%%EXTRAS%%bin/pp-trace-devel
 %%LLD%%bin/lld-devel
 %%LLD%%bin/lld-link-devel
 %%LIT%%bin/lit-devel
