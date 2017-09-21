@@ -1,7 +1,3 @@
-TIMESTAMP = 1486368778
-SHA256 (mpfr-3.1.5/mpfr-3.1.5.tar.xz) = 015fde82b3979fbe5f83501986d328331ba8ddf008c1ff3da3c238f49ca062bc
-SIZE (mpfr-3.1.5/mpfr-3.1.5.tar.xz) = 1126668
-SHA256 (mpfr-3.1.5/patch01) = dfd62a42a239c427bb44087b4a520edbcd65bae6ad1fbe07303c96ee8696afbd
-SIZE (mpfr-3.1.5/patch01) = 2608
-SHA256 (mpfr-3.1.5/patch02) = 88dfefa6d39c9fd5a26a40d9bbc73df8da93f946c65c06038026261d78d919f5
-SIZE (mpfr-3.1.5/patch02) = 3447
+TIMESTAMP = 1505979200
+SHA256 (mpfr-3.1.6/mpfr-3.1.6.tar.xz) = 7a62ac1a04408614fccdc506e4844b10cf0ad2c2b1677097f8f35d3a1344a950
+SIZE (mpfr-3.1.6/mpfr-3.1.6.tar.xz) = 1133672
