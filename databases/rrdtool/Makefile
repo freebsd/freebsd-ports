@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rrdtool
-PORTVERSION=	1.6.0
-PORTREVISION=	1
+PORTVERSION=	1.7.0
 CATEGORIES=	databases graphics
 MASTER_SITES=	http://oss.oetiker.ch/rrdtool/pub/
 
@@ -21,12 +20,10 @@ USE_RC_SUBR=	rrdcached
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 USES=		gmake groff libtool pathfix pkgconfig shebangfix
-SHEBANG_FILES=	examples/rrdcached/rrdcached-size.pl
 USE_GNOME=	glib20 libxml2
 INSTALL_TARGET=	install-strip
 
-PORTEXAMPLES=	4charts.pl bigtops.pl cgi-demo.cgi minmax.pl perftest.pl \
-		piped-demo.pl shared-demo.pl stripes.pl
+PORTEXAMPLES=	cgi-demo.cgi
 
 OPTIONS_DEFINE=	DEJAVU GRAPH MMAP NLS PERL PYTHON \
 		RUBY EXAMPLES DOCS
@@ -57,6 +54,19 @@ PYTHON_USES=		python
 RUBY_CONFIGURE_ENABLE=	ruby
 RUBY_USE=		RUBY=yes
 
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MPERL}
+SHEBANG_FILES=	examples/rrdcached/rrdcached-size.pl
+PORTEXAMPLES+=	4charts.pl bigtops.pl minmax.pl perftest.pl \
+		piped-demo.pl shared-demo.pl stripes.pl \
+		rrdcached/RRDCached.pm rrdcached/rrdcached-size.pl
+.endif
+.if ${PORT_OPTIONS:MPYTHON}
+SHEBANG_FILES+=	examples/stripes.py
+PORTEXAMPLES+=	stripes.py
+.endif
+
 post-extract:
 	@${REINPLACE_CMD} -E 's|(^rrdcached_LDADD = librrd_th.la)|\1 $$\(ALL_LIBS\)|' \
 		${WRKSRC}/src/Makefile.in
@@ -83,8 +93,15 @@ post-install-EXAMPLES-on:
 post-install-PERL-on:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/RRDs/RRDs.so
 
+post-install-PERL-off:
+	${RM} ${STAGEDIR}${EXAMPLESDIR}/*.pl
+	${RM} -r ${STAGEDIR}${EXAMPLESDIR}/rrdcached
+
 post-install-PYTHON-on:
 	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/rrdtool.so
+
+post-install-PYTHON-off:
+	${RM} ${STAGEDIR}${EXAMPLESDIR}/stripes.py
 
 post-install-RUBY-on:
 	${STRIP_CMD} ${STAGEDIR}${RUBY_SITEARCHLIBDIR}/RRD.so

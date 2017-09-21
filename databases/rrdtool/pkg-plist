@@ -10,7 +10,15 @@ include/rrd_format.h
 lib/librrd.a
 lib/librrd.so
 lib/librrd.so.8
-lib/librrd.so.8.0.0
+lib/librrd.so.8.1.0
+%%PERL%%%%SITE_PERL%%/RRDp.pm
+%%PERL%%%%SITE_ARCH%%/RRDs.pm
+%%PERL%%%%SITE_ARCH%%/auto/RRDs/RRDs.so
+%%PERL%%%%PERL5_MAN3%%/RRDp.3.gz
+%%PERL%%%%PERL5_MAN3%%/RRDs.3.gz
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/rrdtool-0.1.10-py%%PYTHON_VER%%.egg-info
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/rrdtool.so
+%%RUBY%%%%RUBY_SITEARCHLIBDIR%%/RRD.so
 libdata/pkgconfig/librrd.pc
 %%PORTDOCS%%man/man1/bin_dec_hex.1.gz
 %%PORTDOCS%%man/man1/cdeftutorial.1.gz
@@ -32,6 +40,7 @@ libdata/pkgconfig/librrd.pc
 %%PORTDOCS%%man/man1/rrdinfo.1.gz
 %%PORTDOCS%%man/man1/rrdlast.1.gz
 %%PORTDOCS%%man/man1/rrdlastupdate.1.gz
+%%PORTDOCS%%man/man1/rrdlist.1.gz
 %%PORTDOCS%%man/man1/rrdresize.1.gz
 %%PORTDOCS%%man/man1/rrdrestore.1.gz
 %%PORTDOCS%%man/man1/rrdthreads.1.gz
@@ -41,17 +50,6 @@ libdata/pkgconfig/librrd.pc
 %%PORTDOCS%%man/man1/rrdupdate.1.gz
 %%PORTDOCS%%man/man1/rrdxport.1.gz
 %%PORTDOCS%%man/man3/librrd.3.gz
-%%PERL%%%%PERL5_MAN3%%/RRDp.3.gz
-%%PERL%%%%PERL5_MAN3%%/RRDs.3.gz
-%%PERL%%%%SITE_ARCH%%/auto/RRDs/RRDs.so
-%%PERL%%%%SITE_ARCH%%/RRDs.pm
-%%PERL%%%%SITE_PERL%%/RRDp.pm
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/py_rrdtool-0.2.2-py%%PYTHON_VER%%.egg-info
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/rrdtool.so
-%%RUBY%%%%RUBY_SITEARCHLIBDIR%%/RRD.so
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rrdcached/RRDCached.pm
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rrdcached/rrdcached-size.pl
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/stripes.py
 %%PORTDOCS%%%%DOCSDIR%%/html/RRDp.html
 %%PORTDOCS%%%%DOCSDIR%%/html/RRDs.html
 %%PORTDOCS%%%%DOCSDIR%%/html/bin_dec_hex.html
@@ -76,6 +74,7 @@ libdata/pkgconfig/librrd.pc
 %%PORTDOCS%%%%DOCSDIR%%/html/rrdinfo.html
 %%PORTDOCS%%%%DOCSDIR%%/html/rrdlast.html
 %%PORTDOCS%%%%DOCSDIR%%/html/rrdlastupdate.html
+%%PORTDOCS%%%%DOCSDIR%%/html/rrdlist.html
 %%PORTDOCS%%%%DOCSDIR%%/html/rrdresize.html
 %%PORTDOCS%%%%DOCSDIR%%/html/rrdrestore.html
 %%PORTDOCS%%%%DOCSDIR%%/html/rrdthreads.html
@@ -125,6 +124,8 @@ libdata/pkgconfig/librrd.pc
 %%PORTDOCS%%%%DOCSDIR%%/txt/rrdlast.txt
 %%PORTDOCS%%%%DOCSDIR%%/txt/rrdlastupdate.pod
 %%PORTDOCS%%%%DOCSDIR%%/txt/rrdlastupdate.txt
+%%PORTDOCS%%%%DOCSDIR%%/txt/rrdlist.pod
+%%PORTDOCS%%%%DOCSDIR%%/txt/rrdlist.txt
 %%PORTDOCS%%%%DOCSDIR%%/txt/rrdresize.pod
 %%PORTDOCS%%%%DOCSDIR%%/txt/rrdresize.txt
 %%PORTDOCS%%%%DOCSDIR%%/txt/rrdrestore.pod
@@ -141,3 +142,4 @@ libdata/pkgconfig/librrd.pc
 %%PORTDOCS%%%%DOCSDIR%%/txt/rrdupdate.txt
 %%PORTDOCS%%%%DOCSDIR%%/txt/rrdxport.pod
 %%PORTDOCS%%%%DOCSDIR%%/txt/rrdxport.txt
+share/locale/hu/LC_MESSAGES/rrdtool.mo
