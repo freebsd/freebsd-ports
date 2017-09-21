@@ -3,8 +3,8 @@
 
 PORTNAME=	gcc
 PORTVERSION=	5.4.0
-PORTREVISION=	3
-CATEGORIES=	lang java
+PORTREVISION=	4
+CATEGORIES=	lang
 MASTER_SITES=	GCC/releases/gcc-${DISTVERSION}
 PKGNAMESUFFIX=	${SUFFIX}
 
@@ -38,18 +38,9 @@ USE_PERL5=	build
 SSP_UNSAFE=	yes
 
 OPTIONS_DEFINE=		BOOTSTRAP GRAPHITE
-OPTIONS_DEFINE_i386=	JAVA
-OPTIONS_DEFINE_amd64=	JAVA
-OPTIONS_DEFINE_powerpc64=	JAVA
 OPTIONS_DEFAULT=	BOOTSTRAP
-OPTIONS_DEFAULT_i386=	JAVA
-OPTIONS_DEFAULT_amd64=	JAVA
-OPTIONS_EXCLUDE_DragonFly=	JAVA
 BOOTSTRAP_DESC=		Build using a full bootstrap
 GRAPHITE_DESC=		Support for Graphite loop optimizations
-
-JAVA_USES=	python:build shebangfix
-SHEBANG_FILES=	libjava/contrib/aot-compile.in
 
 .if exists(/usr/lib32/libc.so)
 OPTIONS_DEFINE_powerpc64+=	MULTILIB
@@ -92,6 +83,7 @@ CONFIGURE_ARGS+=--with-build-config=bootstrap-debug
 ALL_TARGET=	bootstrap-lean
 .endif
 CONFIGURE_ARGS+=--disable-nls \
+		--disable-libgcj \
 		--enable-gnu-indirect-function \
 		--libdir=${TARGLIB} \
 		--libexecdir=${LIBEXEC} \
@@ -114,10 +106,9 @@ INFO=		gcc${SUFFIX}/cpp \
 		gcc${SUFFIX}/gccinstall \
 		gcc${SUFFIX}/gccint \
 		gcc${SUFFIX}/gfortran \
-		gcc${SUFFIX}/libgomp
-# Release tarballs (as opposed to snapshots) always carry this.
-INFO+=		gcc${SUFFIX}/libquadmath \
-		gcc${SUFFIX}/libitm
+		gcc${SUFFIX}/libgomp \
+		gcc${SUFFIX}/libitm \
+		gcc${SUFFIX}/libquadmath
 SUB_FILES=	pkg-message
 SUB_LIST+=	TARGLIB=${TARGLIB}
 
@@ -126,21 +117,6 @@ LIB_DEPENDS+=	libisl.so:devel/isl
 CONFIGURE_ARGS+=--with-isl=${LOCALBASE}
 .endif
 
-.if ${PORT_OPTIONS:MJAVA}
-ECJ_JAR=	${LOCALBASE}/share/java/ecj-4.5.jar
-BUILD_DEPENDS+=	${ECJ_JAR}:lang/gcc-ecj45 \
-		zip:archivers/zip
-RUN_DEPENDS+=	${ECJ_JAR}:lang/gcc-ecj45
-EXTRA_PATCHES+=	${FILESDIR}/java-patch-hier
-CONFIGURE_ARGS+=--with-ecj-jar=${ECJ_JAR}
-LANGUAGES:=	${LANGUAGES},java
-INFO+=		gcc${SUFFIX}/cp-tools \
-		gcc${SUFFIX}/gcj
-PLIST_SUB+=	JAVA=""
-.else
-CONFIGURE_ARGS+=--disable-libgcj
-PLIST_SUB+=	JAVA="@comment "
-.endif
 CONFIGURE_ARGS+=--enable-languages=${LANGUAGES}
 
 pre-everything::
@@ -158,12 +134,10 @@ full-regression-test: build
 
 post-stage:
 	${RM} ${STAGEDIR}${PREFIX}/man/man7/*
-	${RM} ${STAGEDIR}${PREFIX}/bin/rebuild-gcj-db${SUFFIX} \
-	         ${STAGEDIR}${PREFIX}/man/man1/rebuild-gcj-db${SUFFIX}.1
 	${RM} -r ${STAGEDIR}${TARGLIB}/gcc/*/${GCC_VERSION}/include-fixed/
 	# Add target libraries and include files to packaging list.
 	${RM} ${WRKDIR}/PLIST.lib
-.for d in ${TARGLIB:S/^${PREFIX}\///} ${LIBEXEC:S/^${PREFIX}\///} include/gcj include/gnu include/java include/javax
+.for d in ${TARGLIB:S/^${PREFIX}\///} ${LIBEXEC:S/^${PREFIX}\///}
 	cd ${STAGEDIR}${PREFIX} ; if [ -d $d ]; then \
 	    ${FIND} $d -type f -o -type l >>${WRKDIR}/PLIST.lib ;\
 	fi
