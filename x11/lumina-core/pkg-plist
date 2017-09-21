@@ -300,6 +300,7 @@ share/icons/material-design-dark/scalable/actions/object-rotate-right.svg
 share/icons/material-design-dark/scalable/actions/process-stop.svg
 share/icons/material-design-dark/scalable/actions/quickopen-file.svg
 share/icons/material-design-dark/scalable/actions/quickopen.svg
+share/icons/material-design-dark/scalable/actions/screencast.svg
 share/icons/material-design-dark/scalable/actions/source-branch.svg
 share/icons/material-design-dark/scalable/actions/source-commit-end-local.svg
 share/icons/material-design-dark/scalable/actions/source-commit-end.svg
@@ -1113,6 +1114,7 @@ share/icons/material-design-light/scalable/actions/object-rotate-right.svg
 share/icons/material-design-light/scalable/actions/process-stop.svg
 share/icons/material-design-light/scalable/actions/quickopen-file.svg
 share/icons/material-design-light/scalable/actions/quickopen.svg
+share/icons/material-design-light/scalable/actions/screencast.svg
 share/icons/material-design-light/scalable/actions/source-branch.svg
 share/icons/material-design-light/scalable/actions/source-commit-end-local.svg
 share/icons/material-design-light/scalable/actions/source-commit-end.svg
@@ -1644,6 +1646,9 @@ share/lthemeengine/colors/dusk.conf
 share/lthemeengine/colors/sand.conf
 share/lthemeengine/colors/simple.conf
 share/lthemeengine/colors/waves.conf
+share/lthemeengine/desktop_qss/DarkGlass.qss
+share/lthemeengine/desktop_qss/Glass.qss
+share/lthemeengine/qss/scrollbar-simple.qss
 share/lumina-desktop/Login.ogg
 share/lumina-desktop/Logout.ogg
 share/lumina-desktop/colors/Black.qss.colors
