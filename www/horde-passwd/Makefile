@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	passwd
-PORTVERSION=	5.0.6
+PORTVERSION=	5.0.7
 CATEGORIES=	www pear
 PKGNAMEPREFIX=	horde-
 
