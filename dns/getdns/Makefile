@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	getdns
-PORTVERSION=	1.1.2
+PORTVERSION=	1.1.3
 CATEGORIES=	dns ipv6
 MASTER_SITES=	https://getdnsapi.net/dist/ \
 		ZI \
@@ -24,7 +24,7 @@ USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libidn=${LOCALBASE} --docdir=${DOCSDIR} \
 		--with-trust-anchor=${LOCALBASE}/etc/unbound/root.key
-SOVERSION=	6.1.0
+SOVERSION=	6.1.1
 SOMAJVER=	${SOVERSION:C/([0-9]).*/\1/1}
 MAKE_JOBS_UNSAFE=yes
 
@@ -51,7 +51,6 @@ post-patch:
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libgetdns*.so.*
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/getdns_query \
-		${STAGEDIR}${PREFIX}/bin/stubby
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/getdns_query
 
 .include <bsd.port.mk>
