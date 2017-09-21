@@ -19,7 +19,7 @@ CONFLICTS?=			*samba3[2-6]-3.* samba4-4.0.* samba4[1-46-9]-4.* p5-Parse-Pidl-4.*
 
 SAMBA4_BASENAME=		samba
 SAMBA4_PORTNAME=		${SAMBA4_BASENAME}4
-SAMBA4_VERSION=			4.5.12
+SAMBA4_VERSION=			4.5.14
 SAMBA4_DISTNAME=		${SAMBA4_BASENAME}-${SAMBA4_VERSION:S|.p|pre|:S|.r|rc|:S|.t|tp|:S|.a|alpha|}
 
 WRKSRC?=			${WRKDIR}/${DISTNAME}
