@@ -1,5 +1,5 @@
-TIMESTAMP = 1505898481
-SHA256 (drwetter-testssl.sh-v2.9.5_GH0.tar.gz) = 3cd2d14b9b324545ff91d63e4261113f6ff0c6e32232cf49438b9fd2f3c8de3e
-SIZE (drwetter-testssl.sh-v2.9.5_GH0.tar.gz) = 8955393
+TIMESTAMP = 1505985513
+SHA256 (drwetter-testssl.sh-v2.9.5-1_GH0.tar.gz) = 505ba9400e1a49759ba84d0cf6ae79f3787f111c64a319094de69635b786c72a
+SIZE (drwetter-testssl.sh-v2.9.5-1_GH0.tar.gz) = 8955528
 SHA256 (drwetter-openssl-pm-snapshot-a9396aaef81d5c1ed714fc625b593522d25914b1_GH0.tar.gz) = 798230c8dc8d7723fff5f6687b1150a3165254eb65c4f6875b7b6b66a53f9c47
 SIZE (drwetter-openssl-pm-snapshot-a9396aaef81d5c1ed714fc625b593522d25914b1_GH0.tar.gz) = 5491000
