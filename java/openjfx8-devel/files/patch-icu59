@@ -1,0 +1,77 @@
+------------------------------------------------------------------------
+r216187 | annulen@yandex.ru | 2017-05-05 00:33:41 +0900 (Fri, 05 May 2017) | 28 lines
+
+Fix compilation with ICU 59.1
+https://bugs.webkit.org/show_bug.cgi?id=171612
+
+Reviewed by Mark Lam.
+
+ICU 59.1 has broken source compatibility. Now it defines UChar as
+char16_t, which does not allow automatic type conversion from unsigned
+short in C++ code.
+
+--- modules/web/src/main/native/Source/JavaScriptCore/API/JSStringRef.cpp.orig	2017-07-22 15:59:03 UTC
++++ modules/web/src/main/native/Source/JavaScriptCore/API/JSStringRef.cpp
+@@ -37,7 +37,7 @@ using namespace WTF::Unicode;
+ JSStringRef JSStringCreateWithCharacters(const JSChar* chars, size_t numChars)
+ {
+     initializeThreading();
+-    return &OpaqueJSString::create(chars, numChars).leakRef();
++    return &OpaqueJSString::create(reinterpret_cast<const UChar*>(chars), numChars).leakRef();
+ }
+ 
+ JSStringRef JSStringCreateWithUTF8CString(const char* string)
+@@ -62,7 +62,7 @@ JSStringRef JSStringCreateWithUTF8CString(const char* 
+ JSStringRef JSStringCreateWithCharactersNoCopy(const JSChar* chars, size_t numChars)
+ {
+     initializeThreading();
+-    return OpaqueJSString::create(StringImpl::createWithoutCopying(chars, numChars)).leakRef();
++    return OpaqueJSString::create(StringImpl::createWithoutCopying(reinterpret_cast<const UChar*>(chars), numChars)).leakRef();
+ }
+ 
+ JSStringRef JSStringRetain(JSStringRef string)
+@@ -87,7 +87,7 @@ const JSChar* JSStringGetCharactersPtr(JSStringRef str
+ {
+     if (!string)
+         return nullptr;
+-    return string->characters();
++    return reinterpret_cast<const JSChar*>(string->characters());
+ }
+ 
+ size_t JSStringGetMaximumUTF8CStringSize(JSStringRef string)
+--- modules/web/src/main/native/Source/JavaScriptCore/runtime/DateConversion.cpp.orig	2017-07-22 15:59:03 UTC
++++ modules/web/src/main/native/Source/JavaScriptCore/runtime/DateConversion.cpp
+@@ -107,7 +107,8 @@ String formatDateTime(const GregorianDateTime& t, Date
+ #if OS(WINDOWS)
+             TIME_ZONE_INFORMATION timeZoneInformation;
+             GetTimeZoneInformation(&timeZoneInformation);
+-            const WCHAR* timeZoneName = t.isDST() ? timeZoneInformation.DaylightName : timeZoneInformation.StandardName;
++            const WCHAR* winTimeZoneName = t.isDST() ? timeZoneInformation.DaylightName : timeZoneInformation.StandardName;
++            String timeZoneName(reinterpret_cast<const UChar*>(winTimeZoneName));
+ #else
+             struct tm gtm = t;
+             char timeZoneName[70];
+--- modules/web/src/main/native/Source/WTF/wtf/unicode/java/UnicodeJava.h.orig	2017-07-22 15:59:03 UTC
++++ modules/web/src/main/native/Source/WTF/wtf/unicode/java/UnicodeJava.h
+@@ -15,21 +15,6 @@
+ 
+ #define CharProp(p) java_lang_Character_##p
+ 
+-#if PLATFORM(JAVA) && OS(WINDOWS)
+-typedef wchar_t UChar;
+-#else
+-typedef uint16_t UChar;
+-#endif
+-
+-// #ifdef UChar32
+-// #undef UChar32
+-// #endif
+-
+-#ifndef __UMACHINE_H__ //XXX: recheck
+-typedef uint32_t UChar32;
+-#endif
+-
+-#define U_MASK(x) ((uint32_t)1<<(x))
+ #define USE_FAST_PATH(c, fast, slow) ((c) <= 0x7F ? fast((char)c) : slow(c))
+ 
+ #define CHECK_PROPERTY(c, mask, isSet) \
