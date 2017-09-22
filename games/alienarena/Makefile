@@ -8,7 +8,7 @@ CATEGORIES=	games
 MASTER_SITES=	SF/alienarena.mirror/Alien%20Arena%207.66/ \
 		http://icculus.org/alienarena/Files/ \
 		http://red.planetarena.org/files/ \
-		${MASTER_SITE_GENTOO:S|$|distfiles/|}
+		GENTOO
 DISTNAME=	${PORTNAME}-7.66-linux20130827
 
 MAINTAINER=	acm@FreeBSD.org
