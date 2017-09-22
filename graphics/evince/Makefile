@@ -127,8 +127,7 @@ PLIST_SUB+=		COMICS="@comment "
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|execinfo.h|#|g' \
-		-e 's|" == "|" = "|g' \
+	@${REINPLACE_CMD} -e 's|" == "|" = "|g' \
 		-e 's|-Werror||g' \
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e '/^DOC_MODULE_VERSION/d' \
