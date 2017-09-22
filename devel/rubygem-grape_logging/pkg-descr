@@ -1,0 +1,5 @@
+This gem provides simple request logging for Grape with just few lines of code
+you have to put in your project! In return you will get response codes, paths,
+parameters and more!
+
+WWW: https://github.com/aserafin/grape_logging
