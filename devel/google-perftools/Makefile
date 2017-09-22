@@ -28,8 +28,7 @@ USES=		compiler gmake libtool
 USE_LDCONFIG=	yes
 TEST_TARGET=	check
 
-CPPFLAGS+=	-I${LOCALBASE}/include
-LIBS+=		-L${LOCALBASE}/lib -lexecinfo
+LIBS+=		-lexecinfo
 
 OPTIONS_DEFINE=	DOCS
 OPTIONS_DEFAULT=PAGE8K ALIGN16

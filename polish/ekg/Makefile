@@ -21,8 +21,7 @@ CONFIGURE_ARGS= --without-libungif \
 		--without-libjpeg \
 		--disable-ui-gtk
 
-CFLAGS+=	-I/usr/include -I${LOCALBASE}/include
-LDFLAGS+=	-lncurses -L${LOCALBASE}/lib -lexecinfo -pthread
+LDFLAGS+=	-lncurses -lexecinfo -pthread
 
 OPTIONS_DEFINE=		ASPELL OPENSSL
 OPTIONS_DEFAULT=	OPENSSL

@@ -25,8 +25,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-compile-optim=no
 INSTALL_TARGET=	install-strip
 
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib -lexecinfo
+LDFLAGS+=	-lexecinfo
 
 OPTIONS_DEFINE=	DOCS
 

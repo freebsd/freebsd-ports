@@ -29,9 +29,7 @@ USES=		compiler:c++11-lang gettext gmake jpeg openal:soft pkgconfig \
 		python:build tar:bzip2
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--enable-release --target-os=freebsd
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-lpthread -L${LOCALBASE}/lib -lexecinfo
-CFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-lpthread -lexecinfo
 
 DATADIR=	share/${PORTNAME}
 SUB_FILES=	pkg-message

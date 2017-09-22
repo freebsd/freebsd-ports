@@ -90,10 +90,6 @@ LLVM40_VARS=	LLVM_CONFIG=llvm-config40 \
 
 .include <bsd.port.pre.mk>
 
-.if !exists(/usr/lib/libexecinfo.so)
-CONFIGURE_ARGS+=	--with-opt-dir "${LOCALBASE}"
-.endif
-
 .if ${ARCH} == "sparc64"
 BROKEN=		Does not compile on sparc64
 .elif ${ARCH} == "amd64"

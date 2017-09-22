@@ -5,7 +5,7 @@
  
  LIBS_PRIVATE      = ../libAfterConf/libAfterConf.a ../libAfterStep/libAfterStep.a\
 -		    ../libAfterImage/libAfterImage.a ../libAfterBase/libAfterBase.a
-+		    ../libAfterImage/libAfterImage.a ../libAfterBase/libAfterBase.a -L%%LOCALBASE%%/lib -lexecinfo
++		    ../libAfterImage/libAfterImage.a ../libAfterBase/libAfterBase.a -lexecinfo
  
  LIB_INCS= afterconf.h
  

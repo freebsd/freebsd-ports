@@ -49,7 +49,7 @@ CONFIGURE_ENV=	FCFLAGS="${FFLAGS}" \
 .if ${FFLAGS} == "-O"
 FFLAGS=		-O2
 .endif
-LDFLAGS+=	-lpthread -L${LOCALBASE}/lib -lexecinfo
+LDFLAGS+=	-lpthread -lexecinfo
 
 MAKE_ENV=	CCACHE_DISABLE=yes PACKAGE=${PORTNAME}
 NOCCACHE=	yes

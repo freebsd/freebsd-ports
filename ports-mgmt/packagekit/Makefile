@@ -28,8 +28,7 @@ SHEBANG_FILES=	backends/test/helpers/search-name.sh \
 USE_GNOME=	glib20 intltool introspection
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include
-LIBS+=		-L${LOCALBASE}/lib -lexecinfo
+LIBS+=		-lexecinfo
 CONFIGURE_ARGS+=--with-security-framework=polkit \
 		--localstatedir=/var \
 		--disable-static \

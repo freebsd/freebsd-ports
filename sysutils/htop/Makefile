@@ -13,8 +13,7 @@ LICENSE=	GPLv2
 RUN_DEPENDS=	lsof:sysutils/lsof
 
 GNU_CONFIGURE=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include
-LIBS+=		-L${LOCALBASE}/lib -lexecinfo
+LIBS+=		-lexecinfo
 
 CONFIGURE_ARGS=	--enable-unicode
 USES=		autoreconf libtool ncurses
