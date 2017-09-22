@@ -19,7 +19,7 @@ RUN_DEPENDS=	${LOCALBASE}/sbin/console-kit-daemon:sysutils/consolekit2 \
 
 PORTSCOUT=	limitw:1,even
 
-USES=		execinfo gettext gmake localbase libtool pathfix \
+USES=		gettext gmake localbase libtool pathfix \
 		pkgconfig tar:xz
 USE_MATE=	desktop
 USE_XORG=	ice sm x11 xau xext xrandr xrender xtrans xtst

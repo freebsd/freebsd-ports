@@ -17,7 +17,7 @@ LIB_DEPENDS=	libpcrecpp.so:devel/pcre
 USE_GITHUB=	yes
 GH_ACCOUNT=	tstack
 
-USES=		autoreconf compiler:c++14-lang execinfo gmake ncurses sqlite readline
+USES=		autoreconf compiler:c++14-lang gmake ncurses sqlite readline
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-static
 

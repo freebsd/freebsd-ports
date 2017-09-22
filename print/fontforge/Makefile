@@ -25,7 +25,7 @@ LIB_DEPENDS=	libuninameslist.so:textproc/libuninameslist \
 
 USE_GITHUB=	yes
 
-USES=		autoreconf:build compiler desktop-file-utils execinfo gettext \
+USES=		autoreconf:build compiler desktop-file-utils gettext \
 		gmake iconv jpeg libtool pkgconfig python readline:port \
 		shared-mime-info shebangfix
 SHEBANG_FILES=	pycontrib/gdraw/__init__.py \

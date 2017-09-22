@@ -11,7 +11,7 @@ COMMENT=	Qt-based GDS2 Viewer
 
 LICENSE=	GPLv2
 
-USES=		compiler:c++0x execinfo gmake python
+USES=		compiler:c++0x gmake python
 USE_RUBY=	yes
 USE_QT4=	corelib designer gui network moc_build sql uic_build \
 		rcc_build qt3support xml

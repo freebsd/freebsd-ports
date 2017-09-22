@@ -14,7 +14,7 @@ LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	dual
 
 GNU_CONFIGURE=	yes
-USES=		compiler:c11 desktop-file-utils execinfo gettext gmake iconv libtool \
+USES=		compiler:c11 desktop-file-utils gettext gmake iconv libtool \
 		pkgconfig shebangfix tar:bzip2
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--disable-alsa --disable-nullout --disable-static

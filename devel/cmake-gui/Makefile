@@ -20,7 +20,7 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		librhash.so:security/rhash
 
 USE_QT5=	core gui widgets buildtools_build qmake_build
-USES=		cmake:run desktop-file-utils execinfo libarchive \
+USES=		cmake:run desktop-file-utils libarchive \
 		shared-mime-info
 CMAKE_ARGS=	-DBUILD_QtDialog:bool=on \
 		-DBUILD_CursesDialog:BOOL=OFF \

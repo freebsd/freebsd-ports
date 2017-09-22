@@ -37,7 +37,7 @@ SASL_MAKE_ARGS=		--use-sasl-client
 SSL_USE=	yes
 SSL_MAKE_ARGS=	--ssl
 
-USES=		compiler cpe execinfo python:build scons
+USES=		compiler cpe python:build scons
 
 MAKE_ARGS=	--prefix=${STAGEDIR}${PREFIX} \
 		--use-system-pcre --use-system-snappy \

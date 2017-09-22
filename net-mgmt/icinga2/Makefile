@@ -17,7 +17,7 @@ LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 		libyajl.so:devel/yajl
 RUN_DEPENDS=	${LOCALBASE}/bin/bash:shells/bash
 
-USES=		alias bison cmake execinfo libedit
+USES=		alias bison cmake libedit
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	icinga

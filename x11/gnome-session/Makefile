@@ -19,7 +19,7 @@ RUN_DEPENDS=	${LOCALBASE}/sbin/console-kit-daemon:sysutils/consolekit2 \
 
 PORTSCOUT=	limitw:1,even
 
-USES=		execinfo gettext gmake gnome pathfix pkgconfig tar:xz
+USES=		gettext gmake gnome pathfix pkgconfig tar:xz
 USE_GNOME=	gnomedesktop3 gtk30 intlhack intlhack libxslt:build
 USE_XORG=	ice sm xau xext xtst xrender xtrans xcomposite
 USE_GL=		gl

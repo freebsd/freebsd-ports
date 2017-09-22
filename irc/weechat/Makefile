@@ -46,7 +46,6 @@ ASPELL_CMAKE_BOOLL=	ENABLE_ASPELL
 ASPELL_LIB_DEPENDS=	libaspell.so:textproc/aspell
 
 BACKTRACE_CMAKE_BOOL=	ENABLE_BACKTRACE
-BACKTRACE_USES=		execinfo
 
 CA_BUNDLE_CMAKE_ON=	-DCA_FILE=${LOCALBASE}/share/certs/ca-root-nss.crt
 CA_BUNDLE_RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss

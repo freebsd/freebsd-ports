@@ -585,9 +585,6 @@ proxydeps_suggest_uses() {
 	# bdb
 	elif expr ${pkg} : "^databases/db[456]" > /dev/null; then
 		warn "you need USES+=bdb"
-	# execinfo
-	elif [ ${pkg} = "devel/libexecinfo" ]; then
-		warn "you need USES+=execinfo"
 	# fam/gamin
 	elif [ ${pkg} = "devel/fam" -o ${pkg} = "devel/gamin" ]; then
 		warn "you need USES+=fam"

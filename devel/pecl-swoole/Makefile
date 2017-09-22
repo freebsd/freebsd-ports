@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN_powerpc64=	fails to build: swoole_config.h: error GCC 4.4 or later required
 
-USES=		execinfo php:pecl ssl
+USES=		php:pecl ssl
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 USE_PHP=	pcre

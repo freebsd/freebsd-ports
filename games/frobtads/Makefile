@@ -15,7 +15,7 @@ LIB_DEPENDS=	libcurl.so:ftp/curl
 
 CONFLICTS=	tads-2.*
 
-USES=		autoreconf execinfo gmake localbase ncurses
+USES=		autoreconf gmake localbase ncurses
 GNU_CONFIGURE=	yes
 
 LIBS+=		-lcompat

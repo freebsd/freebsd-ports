@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS?=	libevent.so:devel/libevent
 TEST_DEPENDS=	memcached:databases/memcached
 
-USES=		autoreconf execinfo gmake libtool localbase pathfix pkgconfig
+USES=		autoreconf gmake libtool localbase pathfix pkgconfig
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes

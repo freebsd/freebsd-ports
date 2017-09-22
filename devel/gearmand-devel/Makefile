@@ -25,7 +25,7 @@ BROKEN_sparc64=		Does not build: cannot link with boost
 
 USE_PERL5=	build
 GNU_CONFIGURE=	yes
-USES=		pathfix perl5 gmake gperf libtool execinfo python:build
+USES=		pathfix perl5 gmake gperf libtool python:build
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	gearmand
 SUB_LIST+=	USERS=${USERS} GROUPS=${GROUPS}

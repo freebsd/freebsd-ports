@@ -18,7 +18,7 @@ GH_ACCOUNT=	FreeRDP
 GH_PROJECT=	${GH_ACCOUNT}
 GH_TAGNAME=	f5ff6e1
 
-USES=		alias cmake:outsource compiler:c++11-lib cpe execinfo gettext localbase pathfix pkgconfig ssl
+USES=		alias cmake:outsource compiler:c++11-lib cpe gettext localbase pathfix pkgconfig ssl
 USE_LDCONFIG=	yes
 CPE_VENDOR=	freerdp_project
 

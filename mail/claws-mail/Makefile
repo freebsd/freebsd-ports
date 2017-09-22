@@ -18,7 +18,7 @@ RUN_DEPENDS=	mime-support>0:misc/mime-support
 
 USE_XORG=	ice sm
 USE_GNOME=	cairo gtk20 librsvg2
-USES=		cpe desktop-file-utils execinfo pathfix shebangfix ssl
+USES=		cpe desktop-file-utils pathfix shebangfix ssl
 SHEBANG_FILES=	tools/*.pl tools/*.py tools/tb2claws-mail
 python_CMD=	${LOCALBASE}/bin/python2
 INSTALLS_ICONS=	yes

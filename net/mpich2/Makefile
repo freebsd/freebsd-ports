@@ -21,7 +21,7 @@ BUILD_DEPENDS=	bash:shells/bash
 RUN_DEPENDS=	bash:shells/bash
 
 GNU_CONFIGURE=	yes
-USES=		execinfo libtool:keepla localbase fortran perl5 \
+USES=		libtool:keepla localbase fortran perl5 \
 		pkgconfig python
 USE_GCC=	yes
 USE_LDCONFIG=	yes

@@ -29,7 +29,7 @@ BUNDLED_SSL_CONFIGURE_OFF=	--shared-openssl
 NLS_CONFIGURE_ON=	--with-intl=system-icu
 NLS_LIB_DEPENDS=	libicui18n.so:devel/icu
 
-USES=		compiler:c++11-lib execinfo gmake python:2 pkgconfig localbase
+USES=		compiler:c++11-lib gmake python:2 pkgconfig localbase
 HAS_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 

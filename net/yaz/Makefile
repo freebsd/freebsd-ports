@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libicuuc.so:devel/icu \
 		libgnutls.so:security/gnutls
 
-USES=		execinfo iconv libtool ncurses pathfix pkgconfig readline \
+USES=		iconv libtool ncurses pathfix pkgconfig readline \
 		shebangfix tcl
 SHEBANG_FILES=	util/yaz-asncomp
 GNU_CONFIGURE=	yes
