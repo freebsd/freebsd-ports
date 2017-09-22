@@ -25,6 +25,8 @@ LICENSE_NAME_IPL=	Intel Proprietary License
 LICENSE_FILE_IPL=	${WRKSRC}/license.txt
 LICENSE_PERMS_IPL=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
+BROKEN=		Does not fetch.
+
 WRKSRC=			${WRKDIR}/XL710/FreeBSDx64
 NO_BUILD=		yes
 ONLY_FOR_ARCHS=		amd64
