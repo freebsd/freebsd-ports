@@ -1664,6 +1664,7 @@
 %%WWWDIR%%/test/fixtures/files/import_dates.csv
 %%WWWDIR%%/test/fixtures/files/import_iso8859-1.csv
 %%WWWDIR%%/test/fixtures/files/import_issues.csv
+%%WWWDIR%%/test/fixtures/files/invalid-Shift_JIS.csv
 %%WWWDIR%%/test/fixtures/files/iso8859-1.txt
 %%WWWDIR%%/test/fixtures/files/japanese-utf-8.txt
 %%WWWDIR%%/test/fixtures/files/testfile.txt
@@ -1990,6 +1991,7 @@
 %%WWWDIR%%/test/unit/lib/redmine/scm/adapters/git_adapter_test.rb
 %%WWWDIR%%/test/unit/lib/redmine/scm/adapters/mercurial_adapter_test.rb
 %%WWWDIR%%/test/unit/lib/redmine/scm/adapters/subversion_adapter_test.rb
+%%WWWDIR%%/test/unit/lib/redmine/syntax_highlighting/coderay_test.rb
 %%WWWDIR%%/test/unit/lib/redmine/themes_test.rb
 %%WWWDIR%%/test/unit/lib/redmine/unified_diff_test.rb
 %%WWWDIR%%/test/unit/lib/redmine/utils/date_calculation.rb
@@ -2053,13 +2055,14 @@
 @(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/tmp/pdf/empty
 @(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/tmp/test/empty
 @(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/tmp/thumbnails/empty
-@dir %%WWWDIR%%/test/fixtures/mailer
-@dir %%WWWDIR%%/test/mocks/development
-@dir %%WWWDIR%%/test/mocks/test
+@dir(%%WWWOWN%%,%%WWWGRP%%,)  %%WWWDIR%%/test/fixtures/mailer
+@dir(%%WWWOWN%%,%%WWWGRP%%,)  %%WWWDIR%%/test/mocks/development
+@dir(%%WWWOWN%%,%%WWWGRP%%,)  %%WWWDIR%%/test/mocks/test
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/tmp/cache
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/tmp/imports
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/tmp/pids
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/tmp/sessions
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/tmp/sockets
-@(%%WWWOWN%%,%%WWWGRP%%,0664) %%WWWDIR%%/log/development.log
-@dir %%WWWDIR%%/vendor
+@(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/log/development.log
+@dir(%%WWWOWN%%,%%WWWGRP%%,)  %%WWWDIR%%/vendor
+@dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/log
