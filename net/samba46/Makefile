@@ -104,28 +104,23 @@ RUN_DEPENDS+=		${PYTHON_PKGNAMEPREFIX}dnspython2>=1.9.4:dns/py-dnspython2
 # Using the bundled versions. Will make this conditional later.
 
 # talloc
-BUILD_DEPENDS+=		talloc>=2.1.9:devel/talloc
-RUN_DEPENDS+=		talloc>=2.1.9:devel/talloc
+BUILD_DEPENDS+=		talloc>=2.1.10:devel/talloc
+RUN_DEPENDS+=		talloc>=2.1.10:devel/talloc
 SAMBA4_BUNDLED_LIBS+=	!talloc
 
 # tevent
-BUILD_DEPENDS+=		tevent>=0.9.31:devel/tevent
-RUN_DEPENDS+=		tevent>=0.9.31:devel/tevent
+BUILD_DEPENDS+=		tevent>=0.9.33:devel/tevent
+RUN_DEPENDS+=		tevent>=0.9.33:devel/tevent
 SAMBA4_BUNDLED_LIBS+=	!tevent
 
 # tdb
-BUILD_DEPENDS+=		tdb>=1.3.12:databases/tdb
-RUN_DEPENDS+=		tdb>=1.3.12:databases/tdb
+BUILD_DEPENDS+=		tdb>=1.3.15:databases/tdb
+RUN_DEPENDS+=		tdb>=1.3.15:databases/tdb
 SAMBA4_BUNDLED_LIBS+=	!tdb
 
-# ntdb
-BUILD_DEPENDS+=		ntdb>=1.0:databases/ntdb
-RUN_DEPENDS+=		ntdb>=1.0:databases/ntdb
-SAMBA4_BUNDLED_LIBS+=	!ntdb
-
 # ldb
-BUILD_DEPENDS+=		ldb>=1.1.29:databases/ldb
-RUN_DEPENDS+=		ldb>=1.1.29:databases/ldb
+BUILD_DEPENDS+=		ldb>=1.2.2:databases/ldb
+RUN_DEPENDS+=		ldb>=1.2.2:databases/ldb
 SAMBA4_BUNDLED_LIBS+=	!ldb
 
 # Don't use external libcom_err
