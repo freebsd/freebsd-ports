@@ -1,101 +1,101 @@
+@sample(netdata,netdata,0640) %%ETCDIR%%/apps_groups.conf.sample
+@sample(netdata,netdata,0640) %%ETCDIR%%/charts.d.conf.sample
+@sample(netdata,netdata,0640) %%ETCDIR%%/charts.d/ap.conf.sample
+@sample(netdata,netdata,0640) %%ETCDIR%%/charts.d/apache.conf.sample
+@sample(netdata,netdata,0640) %%ETCDIR%%/charts.d/apcupsd.conf.sample
+@sample(netdata,netdata,0640) %%ETCDIR%%/charts.d/cpu_apps.conf.sample
+@sample(netdata,netdata,0640) %%ETCDIR%%/charts.d/cpufreq.conf.sample
+@sample(netdata,netdata,0640) %%ETCDIR%%/charts.d/example.conf.sample
+@sample(netdata,netdata,0640) %%ETCDIR%%/charts.d/exim.conf.sample
+@sample(netdata,netdata,0640) %%ETCDIR%%/charts.d/hddtemp.conf.sample
+@sample(netdata,netdata,0640) %%ETCDIR%%/charts.d/load_average.conf.sample
+@sample(netdata,netdata,0640) %%ETCDIR%%/charts.d/mem_apps.conf.sample
+@sample(netdata,netdata,0640) %%ETCDIR%%/charts.d/mysql.conf.sample
+@sample(netdata,netdata,0640) %%ETCDIR%%/charts.d/nginx.conf.sample
+@sample(netdata,netdata,0640) %%ETCDIR%%/charts.d/nut.conf.sample
+@sample(netdata,netdata,0640) %%ETCDIR%%/charts.d/opensips.conf.sample
+@sample(netdata,netdata,0640) %%ETCDIR%%/charts.d/phpfpm.conf.sample
+@sample(netdata,netdata,0640) %%ETCDIR%%/charts.d/postfix.conf.sample
+@sample(netdata,netdata,0640) %%ETCDIR%%/charts.d/sensors.conf.sample
+@sample(netdata,netdata,0640) %%ETCDIR%%/charts.d/squid.conf.sample
+@sample(netdata,netdata,0640) %%ETCDIR%%/charts.d/tomcat.conf.sample
+@sample(netdata,netdata,0640) %%ETCDIR%%/fping.conf.sample
+@sample(netdata,netdata,0640) %%ETCDIR%%/health.d/apache.conf.sample
+@sample(netdata,netdata,0640) %%ETCDIR%%/health.d/backend.conf.sample
+@sample(netdata,netdata,0640) %%ETCDIR%%/health.d/bind_rndc.conf.sample
+@sample(netdata,netdata,0640) %%ETCDIR%%/health.d/elasticsearch.conf.sample
+@sample(netdata,netdata,0640) %%ETCDIR%%/health.d/fping.conf.sample
+@sample(netdata,netdata,0640) %%ETCDIR%%/health.d/haproxy.conf.sample
+@sample(netdata,netdata,0640) %%ETCDIR%%/health.d/ipfs.conf.sample
+@sample(netdata,netdata,0640) %%ETCDIR%%/health.d/ipmi.conf.sample
+@sample(netdata,netdata,0640) %%ETCDIR%%/health.d/isc_dhcpd.conf.sample
+@sample(netdata,netdata,0640) %%ETCDIR%%/health.d/lighttpd.conf.sample
+@sample(netdata,netdata,0640) %%ETCDIR%%/health.d/mdstat.conf.sample
+@sample(netdata,netdata,0640) %%ETCDIR%%/health.d/memcached.conf.sample
+@sample(netdata,netdata,0640) %%ETCDIR%%/health.d/mongodb.conf.sample
+@sample(netdata,netdata,0640) %%ETCDIR%%/health.d/mysql.conf.sample
+@sample(netdata,netdata,0640) %%ETCDIR%%/health.d/named.conf.sample
+@sample(netdata,netdata,0640) %%ETCDIR%%/health.d/nginx.conf.sample
+@sample(netdata,netdata,0640) %%ETCDIR%%/health.d/postgres.conf.sample
+@sample(netdata,netdata,0640) %%ETCDIR%%/health.d/redis.conf.sample
+@sample(netdata,netdata,0640) %%ETCDIR%%/health.d/retroshare.conf.sample
+@sample(netdata,netdata,0640) %%ETCDIR%%/health.d/squid.conf.sample
+@sample(netdata,netdata,0640) %%ETCDIR%%/health.d/varnish.conf.sample
+@sample(netdata,netdata,0640) %%ETCDIR%%/health.d/web_log.conf.sample
+@sample(netdata,netdata,0640) %%ETCDIR%%/health.d/zfs.conf.sample
+@sample(netdata,netdata,0640) %%ETCDIR%%/health_alarm_notify.conf.sample
+@sample(netdata,netdata,0640) %%ETCDIR%%/health_email_recipients.conf.sample
+@sample(netdata,netdata,0640) %%ETCDIR%%/node.d.conf.sample
 @mode 0640
 @owner netdata
 @group netdata
-%%ETCDIR%%/apps_groups.conf
-%%ETCDIR%%/charts.d.conf
-%%ETCDIR%%/charts.d/ap.conf
-%%ETCDIR%%/charts.d/apache.conf
-%%ETCDIR%%/charts.d/apcupsd.conf
-%%ETCDIR%%/charts.d/cpu_apps.conf
-%%ETCDIR%%/charts.d/cpufreq.conf
-%%ETCDIR%%/charts.d/example.conf
-%%ETCDIR%%/charts.d/exim.conf
-%%ETCDIR%%/charts.d/hddtemp.conf
-%%ETCDIR%%/charts.d/load_average.conf
-%%ETCDIR%%/charts.d/mem_apps.conf
-%%ETCDIR%%/charts.d/mysql.conf
-%%ETCDIR%%/charts.d/nginx.conf
-%%ETCDIR%%/charts.d/nut.conf
-%%ETCDIR%%/charts.d/opensips.conf
-%%ETCDIR%%/charts.d/phpfpm.conf
-%%ETCDIR%%/charts.d/postfix.conf
-%%ETCDIR%%/charts.d/sensors.conf
-%%ETCDIR%%/charts.d/squid.conf
-%%ETCDIR%%/charts.d/tomcat.conf
-%%ETCDIR%%/fping.conf
-%%ETCDIR%%/health.d/apache.conf
-%%ETCDIR%%/health.d/backend.conf
-%%ETCDIR%%/health.d/bind_rndc.conf
-%%ETCDIR%%/health.d/elasticsearch.conf
-%%ETCDIR%%/health.d/fping.conf
-%%ETCDIR%%/health.d/haproxy.conf
-%%ETCDIR%%/health.d/ipfs.conf
-%%ETCDIR%%/health.d/ipmi.conf
-%%ETCDIR%%/health.d/isc_dhcpd.conf
-%%ETCDIR%%/health.d/lighttpd.conf
-%%ETCDIR%%/health.d/mdstat.conf
-%%ETCDIR%%/health.d/memcached.conf
-%%ETCDIR%%/health.d/mongodb.conf
-%%ETCDIR%%/health.d/mysql.conf
-%%ETCDIR%%/health.d/named.conf
-%%ETCDIR%%/health.d/nginx.conf
-%%ETCDIR%%/health.d/postgres.conf
-%%ETCDIR%%/health.d/redis.conf
-%%ETCDIR%%/health.d/retroshare.conf
-%%ETCDIR%%/health.d/squid.conf
-%%ETCDIR%%/health.d/varnish.conf
-%%ETCDIR%%/health.d/web_log.conf
-%%ETCDIR%%/health.d/zfs.conf
-%%ETCDIR%%/health_alarm_notify.conf
-%%ETCDIR%%/health_email_recipients.conf
-%%ETCDIR%%/node.d.conf
 %%ETCDIR%%/node.d/README.md
 %%ETCDIR%%/node.d/fronius.conf.md
 %%ETCDIR%%/node.d/named.conf.md
 %%ETCDIR%%/node.d/sma_webbox.conf.md
 %%ETCDIR%%/node.d/snmp.conf.md
-%%ETCDIR%%/python.d.conf
-%%ETCDIR%%/python.d/apache.conf
-%%ETCDIR%%/python.d/apache_cache.conf
-%%ETCDIR%%/python.d/bind_rndc.conf
-%%ETCDIR%%/python.d/cpufreq.conf
-%%ETCDIR%%/python.d/dovecot.conf
-%%ETCDIR%%/python.d/dns_query_time.conf
-%%ETCDIR%%/python.d/elasticsearch.conf
-%%ETCDIR%%/python.d/example.conf
-%%ETCDIR%%/python.d/exim.conf
-%%ETCDIR%%/python.d/fail2ban.conf
-%%ETCDIR%%/python.d/freeradius.conf
-%%ETCDIR%%/python.d/go_expvar.conf
-%%ETCDIR%%/python.d/haproxy.conf
-%%ETCDIR%%/python.d/hddtemp.conf
-%%ETCDIR%%/python.d/ipfs.conf
-%%ETCDIR%%/python.d/isc_dhcpd.conf
-%%ETCDIR%%/python.d/mdstat.conf
-%%ETCDIR%%/python.d/memcached.conf
-%%ETCDIR%%/python.d/mongodb.conf
-%%ETCDIR%%/python.d/mysql.conf
-%%ETCDIR%%/python.d/nginx.conf
-%%ETCDIR%%/python.d/nsd.conf
-%%ETCDIR%%/python.d/ovpn_status_log.conf
-%%ETCDIR%%/python.d/phpfpm.conf
-%%ETCDIR%%/python.d/postfix.conf
-%%ETCDIR%%/python.d/postgres.conf
-%%ETCDIR%%/python.d/rabbitmq.conf
-%%ETCDIR%%/python.d/redis.conf
-%%ETCDIR%%/python.d/retroshare.conf
-%%ETCDIR%%/python.d/samba.conf
-%%ETCDIR%%/python.d/sensors.conf
-%%ETCDIR%%/python.d/smartd_log.conf
-%%ETCDIR%%/python.d/squid.conf
-%%ETCDIR%%/python.d/tomcat.conf
-%%ETCDIR%%/python.d/varnish.conf
-%%ETCDIR%%/python.d/web_log.conf
-%%ETCDIR%%/statsd.d/example.conf
-%%ETCDIR%%/stream.conf
 @mode
 @owner
 @group
+@sample(netdata,netdata,0640) %%ETCDIR%%/python.d.conf.sample
+@sample(netdata,netdata,0640) %%ETCDIR%%/python.d/apache.conf.sample
+@sample(netdata,netdata,0640) %%ETCDIR%%/python.d/apache_cache.conf.sample
+@sample(netdata,netdata,0640) %%ETCDIR%%/python.d/bind_rndc.conf.sample
+@sample(netdata,netdata,0640) %%ETCDIR%%/python.d/cpufreq.conf.sample
+@sample(netdata,netdata,0640) %%ETCDIR%%/python.d/dovecot.conf.sample
+@sample(netdata,netdata,0640) %%ETCDIR%%/python.d/dns_query_time.conf.sample
+@sample(netdata,netdata,0640) %%ETCDIR%%/python.d/elasticsearch.conf.sample
+@sample(netdata,netdata,0640) %%ETCDIR%%/python.d/example.conf.sample
+@sample(netdata,netdata,0640) %%ETCDIR%%/python.d/exim.conf.sample
+@sample(netdata,netdata,0640) %%ETCDIR%%/python.d/fail2ban.conf.sample
+@sample(netdata,netdata,0640) %%ETCDIR%%/python.d/freeradius.conf.sample
+@sample(netdata,netdata,0640) %%ETCDIR%%/python.d/go_expvar.conf.sample
+@sample(netdata,netdata,0640) %%ETCDIR%%/python.d/haproxy.conf.sample
+@sample(netdata,netdata,0640) %%ETCDIR%%/python.d/hddtemp.conf.sample
+@sample(netdata,netdata,0640) %%ETCDIR%%/python.d/ipfs.conf.sample
+@sample(netdata,netdata,0640) %%ETCDIR%%/python.d/isc_dhcpd.conf.sample
+@sample(netdata,netdata,0640) %%ETCDIR%%/python.d/mdstat.conf.sample
+@sample(netdata,netdata,0640) %%ETCDIR%%/python.d/memcached.conf.sample
+@sample(netdata,netdata,0640) %%ETCDIR%%/python.d/mongodb.conf.sample
+@sample(netdata,netdata,0640) %%ETCDIR%%/python.d/mysql.conf.sample
+@sample(netdata,netdata,0640) %%ETCDIR%%/python.d/nginx.conf.sample
+@sample(netdata,netdata,0640) %%ETCDIR%%/python.d/nsd.conf.sample
+@sample(netdata,netdata,0640) %%ETCDIR%%/python.d/ovpn_status_log.conf.sample
+@sample(netdata,netdata,0640) %%ETCDIR%%/python.d/phpfpm.conf.sample
+@sample(netdata,netdata,0640) %%ETCDIR%%/python.d/postfix.conf.sample
+@sample(netdata,netdata,0640) %%ETCDIR%%/python.d/postgres.conf.sample
+@sample(netdata,netdata,0640) %%ETCDIR%%/python.d/rabbitmq.conf.sample
+@sample(netdata,netdata,0640) %%ETCDIR%%/python.d/redis.conf.sample
+@sample(netdata,netdata,0640) %%ETCDIR%%/python.d/retroshare.conf.sample
+@sample(netdata,netdata,0640) %%ETCDIR%%/python.d/samba.conf.sample
+@sample(netdata,netdata,0640) %%ETCDIR%%/python.d/sensors.conf.sample
+@sample(netdata,netdata,0640) %%ETCDIR%%/python.d/smartd_log.conf.sample
+@sample(netdata,netdata,0640) %%ETCDIR%%/python.d/squid.conf.sample
+@sample(netdata,netdata,0640) %%ETCDIR%%/python.d/tomcat.conf.sample
+@sample(netdata,netdata,0640) %%ETCDIR%%/python.d/varnish.conf.sample
+@sample(netdata,netdata,0640) %%ETCDIR%%/python.d/web_log.conf.sample
+@sample(netdata,netdata,0640) %%ETCDIR%%/statsd.d/example.conf.sample
+@sample(netdata,netdata,0640) %%ETCDIR%%/stream.conf.sample
 libexec/netdata/charts.d/README.md
 libexec/netdata/charts.d/ap.chart.sh
 libexec/netdata/charts.d/apache.chart.sh
