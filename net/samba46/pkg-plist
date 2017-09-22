@@ -387,9 +387,6 @@ lib/pam_winbind.so
 %%PYTHON_SITELIBDIR%%/samba/tests/upgradeprovisionneeddc.py
 %%PYTHON_SITELIBDIR%%/samba/tests/xattr.py
 %%PYTHON_SITELIBDIR%%/samba/third_party/__init__.py
-%%PYTHON_SITELIBDIR%%/samba/third_party/iso8601/__init__.py
-%%PYTHON_SITELIBDIR%%/samba/third_party/iso8601/iso8601.py
-%%PYTHON_SITELIBDIR%%/samba/third_party/iso8601/test_iso8601.py
 %%PYTHON_SITELIBDIR%%/samba/upgrade.py
 %%PYTHON_SITELIBDIR%%/samba/upgradehelpers.py
 %%PYTHON_SITELIBDIR%%/samba/web_server/__init__.py
@@ -922,6 +919,10 @@ share/ctdb/tests/eventscripts/05.system.monitor.015.sh
 share/ctdb/tests/eventscripts/05.system.monitor.016.sh
 share/ctdb/tests/eventscripts/05.system.monitor.017.sh
 share/ctdb/tests/eventscripts/05.system.monitor.018.sh
+share/ctdb/tests/eventscripts/06.nfs.releaseip.001.sh
+share/ctdb/tests/eventscripts/06.nfs.releaseip.002.sh
+share/ctdb/tests/eventscripts/06.nfs.takeip.001.sh
+share/ctdb/tests/eventscripts/06.nfs.takeip.002.sh
 share/ctdb/tests/eventscripts/10.interface.init.001.sh
 share/ctdb/tests/eventscripts/10.interface.init.002.sh
 share/ctdb/tests/eventscripts/10.interface.init.021.sh
@@ -1038,6 +1039,7 @@ share/ctdb/tests/eventscripts/60.nfs.monitor.105.sh
 share/ctdb/tests/eventscripts/60.nfs.monitor.106.sh
 share/ctdb/tests/eventscripts/60.nfs.monitor.107.sh
 share/ctdb/tests/eventscripts/60.nfs.monitor.108.sh
+share/ctdb/tests/eventscripts/60.nfs.monitor.109.sh
 share/ctdb/tests/eventscripts/60.nfs.monitor.111.sh
 share/ctdb/tests/eventscripts/60.nfs.monitor.112.sh
 share/ctdb/tests/eventscripts/60.nfs.monitor.113.sh
@@ -1057,6 +1059,14 @@ share/ctdb/tests/eventscripts/60.nfs.monitor.161.sh
 share/ctdb/tests/eventscripts/60.nfs.monitor.162.sh
 share/ctdb/tests/eventscripts/60.nfs.multi.001.sh
 share/ctdb/tests/eventscripts/60.nfs.multi.002.sh
+share/ctdb/tests/eventscripts/60.nfs.releaseip.001.sh
+share/ctdb/tests/eventscripts/60.nfs.releaseip.002.sh
+share/ctdb/tests/eventscripts/60.nfs.shutdown.001.sh
+share/ctdb/tests/eventscripts/60.nfs.shutdown.002.sh
+share/ctdb/tests/eventscripts/60.nfs.startup.001.sh
+share/ctdb/tests/eventscripts/60.nfs.startup.002.sh
+share/ctdb/tests/eventscripts/60.nfs.takeip.001.sh
+share/ctdb/tests/eventscripts/60.nfs.takeip.002.sh
 share/ctdb/tests/eventscripts/91.lvs.001.sh
 share/ctdb/tests/eventscripts/91.lvs.ipreallocated.011.sh
 share/ctdb/tests/eventscripts/91.lvs.ipreallocated.012.sh
@@ -1353,6 +1363,10 @@ share/ctdb/tests/tool/ctdb.natgw.007.sh
 share/ctdb/tests/tool/ctdb.natgw.008.sh
 share/ctdb/tests/tool/ctdb.nodestatus.001.sh
 share/ctdb/tests/tool/ctdb.nodestatus.002.sh
+share/ctdb/tests/tool/ctdb.nodestatus.003.sh
+share/ctdb/tests/tool/ctdb.nodestatus.004.sh
+share/ctdb/tests/tool/ctdb.nodestatus.005.sh
+share/ctdb/tests/tool/ctdb.nodestatus.006.sh
 share/ctdb/tests/tool/ctdb.ping.001.sh
 share/ctdb/tests/tool/ctdb.pnn.001.sh
 share/ctdb/tests/tool/ctdb.process-exists.001.sh
