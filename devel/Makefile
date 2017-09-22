@@ -1374,7 +1374,6 @@
     SUBDIR += libevt
     SUBDIR += libevtx
     SUBDIR += libewf
-    SUBDIR += libexecinfo
     SUBDIR += libexplain
     SUBDIR += libfaketime
     SUBDIR += libfastcommon

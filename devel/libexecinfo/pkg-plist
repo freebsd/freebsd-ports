@@ -1,4 +1,0 @@
-include/execinfo.h
-lib/libexecinfo.a
-lib/libexecinfo.so
-lib/libexecinfo.so.1
