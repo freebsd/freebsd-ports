@@ -45,6 +45,7 @@
     SUBDIR += viewglob
     SUBDIR += vshnu
     SUBDIR += wcd
+    SUBDIR += xonsh
     SUBDIR += zsh
     SUBDIR += zsh-navigation-tools
 
