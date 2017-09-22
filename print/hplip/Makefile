@@ -3,6 +3,7 @@
 
 PORTNAME=	hplip
 PORTVERSION=	3.17.7
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	SF
 
@@ -129,7 +130,8 @@ post-patch:
 		${WRKSRC}/prnt/hpijs/hpcupsfax.cpp \
 		${WRKSRC}/prnt/hpijs/hpijs.cpp \
 		${WRKSRC}/ui/devmgr4.py \
-		${WRKSRC}/ui4/devmgr5.py
+		${WRKSRC}/ui4/devmgr5.py \
+		${WRKSRC}/ui5/devmgr5.py
 	@${REINPLACE_CMD} -e 's/umask(0)/umask(0o022)/' \
 		-e 's/umask(0o111)/umask(0o133)/' \
 		${WRKSRC}/base/os_utils.py \
