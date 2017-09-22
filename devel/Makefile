@@ -6062,6 +6062,7 @@
     SUBDIR += xtl
     SUBDIR += xtoolchain-llvm-devel
     SUBDIR += xtoolchain-llvm40
+    SUBDIR += xtoolchain-llvm50
     SUBDIR += xwpe
     SUBDIR += xxgdb
     SUBDIR += xxhash
