@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	piglit
-PORTVERSION=	20160809
-PORTREVISION=	3
+PORTVERSION=	20170922
 CATEGORIES=	graphics
 
 MAINTAINER=	x11@FreeBSD.org
@@ -28,7 +27,7 @@ RUN_DEPENDS=	${PYNUMPY} \
 USE_GITHUB=	yes
 GH_ACCOUNT=	dumbbell
 GH_PROJECT=	piglit
-GH_TAGNAME=	ca5350b4056ae63a93c4c207087b7634873b2ce2
+GH_TAGNAME=	60996b829c85f3df192bc6228108c0a8eaa38afd
 
 USES=		cmake:outsource compiler:c11 pkgconfig python:2
 USE_GL=		egl gbm gl glu
