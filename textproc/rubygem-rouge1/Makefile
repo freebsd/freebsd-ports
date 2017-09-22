@@ -12,6 +12,9 @@ COMMENT=	Simple, easy-to-extend drop-in replacement for pygments
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Use textproc/rubygem-rouge instead
+EXPIRATION_DATE=2017-10-31
+
 NO_ARCH=	yes
 USE_RUBY=	yes
 USES=		gem
