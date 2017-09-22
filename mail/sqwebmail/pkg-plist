@@ -9,8 +9,8 @@ libexec/sqwebmail/reformime
 libexec/sqwebmail/sqwebmaild
 @(%%MAILOWN%%,%%MAILGRP%%,2755) libexec/sqwebmail/sqwebpasswd
 libexec/sqwebmaild.rc
-man/man1/maildirmake.1.gz
-man/man8/deliverquota.8.gz
+man/man1/maildirmake.sqwebmail.1.gz
+man/man8/deliverquota.sqwebmail.8.gz
 %%CACHE%%@unexec %D/share/sqwebmail/cleancache.pl
 sbin/sharedindexinstall.sqwebmail
 sbin/sharedindexsplit.sqwebmail
