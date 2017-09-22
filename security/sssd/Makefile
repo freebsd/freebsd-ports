@@ -69,7 +69,7 @@ OPTIONS_SUB=	yes
 
 SMB_DESC=		Install IPA and AD providers (requires Samba4)
 #SMB_USES=		samba:lib # libndr-krb5pac libndr-nbt libndr libsamba-util
-SMB_BUILD_DEPENDS=      samba46>=4.6.0:${PORTSDIR}/net/samba46
+SMB_BUILD_DEPENDS=      samba47>=4.7.0:${PORTSDIR}/net/samba47
 SMB_CONFIGURE_WITH=	samba
 
 post-patch:
