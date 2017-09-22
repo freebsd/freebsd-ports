@@ -142,4 +142,4 @@ libdata/pkgconfig/librrd.pc
 %%PORTDOCS%%%%DOCSDIR%%/txt/rrdupdate.txt
 %%PORTDOCS%%%%DOCSDIR%%/txt/rrdxport.pod
 %%PORTDOCS%%%%DOCSDIR%%/txt/rrdxport.txt
-share/locale/hu/LC_MESSAGES/rrdtool.mo
+%%NLS%%share/locale/hu/LC_MESSAGES/rrdtool.mo
