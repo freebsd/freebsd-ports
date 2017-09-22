@@ -8,6 +8,9 @@ CATEGORIES=	sysutils
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Environment variable manager for your shell
 
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE.md
+
 BUILD_DEPENDS=	${LOCALBASE}/bin/go:lang/go
 
 USE_GITHUB=	yes
@@ -16,8 +19,6 @@ GH_ACCOUNT=	zimbatm
 USES=		gmake
 
 PLIST_FILES=	bin/direnv man/man1/direnv.1.gz man/man1/direnv-stdlib.1.gz
-
-.include <bsd.port.options.mk>
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/direnv \
