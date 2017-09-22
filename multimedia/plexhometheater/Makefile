@@ -69,7 +69,7 @@ GH_ACCOUNT=	plexinc
 GH_PROJECT=	plex-home-theater-public
 BUNDLE_LIBS=	yes
 
-USES=		cmake:outsource execinfo iconv:wchar_t jpeg pkgconfig python:2
+USES=		cmake:outsource iconv:wchar_t jpeg pkgconfig python:2
 CMAKE_ARGS+=	-DENABLE_AUTOUPDATE:BOOL=false
 CMAKE_ARGS+=	-DENABLE_DUMP_SYMBOLS:BOOL=false
 CMAKE_ARGS+=	-DENABLE_PYTHON:BOOL=false

@@ -32,7 +32,7 @@ USE_XORG=	x11 xcursor
 USE_LDCONFIG=	yes
 DOS2UNIX_GLOB=	*.h *.hpp *.cpp
 
-USES=		execinfo cmake compiler:c++11-lib dos2unix openal:al tar:lzma
+USES=		cmake compiler:c++11-lib dos2unix openal:al tar:lzma
 USES+=		desktop-file-utils shared-mime-info
 CMAKE_ARGS=	-DDATADIR:STRING="share/${PORTNAME}" \
 		-DAI_TYPES:STRING="NATIVE" \

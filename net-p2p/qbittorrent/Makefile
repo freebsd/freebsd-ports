@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libtorrent-rasterbar.so:net-p2p/libtorrent-rasterbar \
 		libboost_system.so:devel/boost-libs
 
-USES=		compiler:c++11-lib execinfo pkgconfig tar:xz
+USES=		compiler:c++11-lib pkgconfig tar:xz
 GNU_CONFIGURE=	yes
 USE_QT5=	core network xml qmake_build buildtools_build linguisttools_build
 QT_NONSTANDARD=	yes

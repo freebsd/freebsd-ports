@@ -38,7 +38,6 @@ ICONV_USES=	iconv
 NLS_USES=	gettext-runtime
 NLS_CONFIGURE_OFF=	--disable-nls
 NLS_EXTRA_PATCHES_OFF=	${FILESDIR}/extra-patch-Makefile
-EXECINFO_USES=	execinfo
 OPTIONS_SUB=	yes
 EXECINFO_DESC=	Build with libexecinfo support
 

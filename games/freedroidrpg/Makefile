@@ -35,7 +35,6 @@ OPTIONS_DEFAULT=BACKTRACE OPENGL SOUND
 OPTIONS_SUB=	yes
 
 BACKTRACE_DESC=	Use backtrace() to generate nice bug reports
-BACKTRACE_USES=			execinfo
 BACKTRACE_CONFIGURE_ENABLE=	backtrace
 BACKTRACE_VARS=			STRIP= # empty
 

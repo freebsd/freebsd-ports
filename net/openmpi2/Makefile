@@ -24,7 +24,7 @@ BROKEN_sparc64=		fails to compile on sparc64
 HAS_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 # :keepla because port uses lt_dlopen
-USES=		execinfo fortran gmake libtool:keepla localbase perl5 \
+USES=		fortran gmake libtool:keepla localbase perl5 \
 		pkgconfig tar:bzip2
 USE_PERL5=	build
 

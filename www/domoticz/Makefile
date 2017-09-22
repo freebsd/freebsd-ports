@@ -34,7 +34,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	domoticz
 GH_PROJECT=	domoticz
 
-USES=		cmake iconv pkgconfig execinfo ssl
+USES=		cmake iconv pkgconfig ssl
 
 USE_RC_SUBR=	domoticz
 

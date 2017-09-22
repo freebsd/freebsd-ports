@@ -25,7 +25,7 @@ ALL_TARGET=	all lang
 USE_GL=		yes
 USE_SDL=	sdl image mixer ttf
 USE_CXXSTD=	c++11
-USES=		compiler:c++11-lang execinfo gettext gmake jpeg openal:soft pkgconfig \
+USES=		compiler:c++11-lang gettext gmake jpeg openal:soft pkgconfig \
 		python:build tar:bzip2
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--enable-release --target-os=freebsd

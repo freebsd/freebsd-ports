@@ -14,7 +14,7 @@ COMMENT=	Text-mode Gadu-Gadu client
 LIB_DEPENDS=	libgadu.so:polish/libgadu
 
 GNU_CONFIGURE=	yes
-USES=		execinfo gmake ncurses pathfix pkgconfig
+USES=		gmake ncurses pathfix pkgconfig
 USE_LDCONFIG=	yes
 
 CONFIGURE_ARGS= --without-libungif \

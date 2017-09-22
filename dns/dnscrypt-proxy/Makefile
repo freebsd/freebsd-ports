@@ -23,7 +23,7 @@ USERS=		_dnscrypt-proxy
 GROUPS=		_dnscrypt-proxy
 
 GNU_CONFIGURE=	yes
-USES=		execinfo gmake
+USES=		gmake
 
 INSTALL_TARGET=	install-strip
 

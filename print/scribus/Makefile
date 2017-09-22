@@ -29,7 +29,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tkinter>0:x11-toolkits/py-tkinter \
 
 USE_QT4=	corelib gui linguist_build moc_build qmake_build rcc_build uic_build xml network
 USE_GNOME=	libartlgpl2 libxml2
-USES=		cmake:outsource desktop-file-utils execinfo ghostscript:run jpeg \
+USES=		cmake:outsource desktop-file-utils ghostscript:run jpeg \
 		pkgconfig python shared-mime-info tar:xz
 USE_LDCONFIG=	yes
 

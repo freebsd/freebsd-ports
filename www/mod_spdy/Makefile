@@ -26,7 +26,7 @@ BUILD_DEPENDS=	python:lang/python \
 
 ONLY_FOR_ARCHS=	amd64 i386
 USE_APACHE=	22
-USES=		compiler execinfo gmake python:2 ssl tar:xz
+USES=		compiler gmake python:2 ssl tar:xz
 REINPLACE_ARGS=	-i ""
 
 WRKSRC=		${WRKDIR}/${PORTNAME}_source_${PORTVERSION}/mod_spdy/src

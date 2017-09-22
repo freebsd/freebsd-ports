@@ -20,7 +20,7 @@ LIB_DEPENDS=	libboost_regex.so:devel/boost-libs \
 MAJOR_VERSION=	2.2
 MINOR_VERSION=	3
 
-USES=		desktop-file-utils execinfo gmake iconv pkgconfig perl5 \
+USES=		desktop-file-utils gmake iconv pkgconfig perl5 \
 		python:2 shebangfix tar:xz
 USE_QT5=	core concurrent gui svg widgets buildtools_build qmake_build
 GNU_CONFIGURE=	yes
@@ -34,8 +34,6 @@ SHEBANG_FILES=	lib/configure.py \
 		lib/lyx2lyx/lyx2lyx \
 		lib/scripts/listerrors
 
-CPPFLAGS+=	${EXECINFO_CPPFLAGS}
-LDFLAGS+=	${EXECINFO_LDFLAGS}
 LIBS+=		-lexecinfo
 
 OPTIONS_DEFINE=		ASPELL ENCHANT HUNSPELL NLS

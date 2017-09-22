@@ -18,7 +18,7 @@ DATADIR=	${PREFIX}/share/${PORTNAME}${LLVM_SUFFIX}
 
 WRKSRC=		${WRKDIR}/llvm-${DISTVERSION}.src
 
-USES=		compiler:c++11-lib execinfo gmake perl5 tar:xz libedit \
+USES=		compiler:c++11-lib gmake perl5 tar:xz libedit \
 		shebangfix
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_PREFIX=	${LLVM_PREFIX}

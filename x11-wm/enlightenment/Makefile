@@ -17,7 +17,7 @@ LIB_DEPENDS=	libefl.so:devel/efl \
 		libxcb-keysyms.so:x11/xcb-util-keysyms
 
 GNU_CONFIGURE=	yes
-USES=		alias autoreconf desktop-file-utils execinfo gettext-tools \
+USES=		alias autoreconf desktop-file-utils gettext-tools \
 		gmake iconv libtool pathfix pkgconfig tar:xz
 USE_XORG=	xcb
 USE_LDCONFIG=	yes

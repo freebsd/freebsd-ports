@@ -24,7 +24,7 @@ WRKSRC=		${WRKDIR}/gperftools-${PORTVERSION}
 DOCSDIR=	${PREFIX}/share/doc/gperftools
 
 GNU_CONFIGURE=	yes
-USES=		compiler execinfo gmake libtool
+USES=		compiler gmake libtool
 USE_LDCONFIG=	yes
 TEST_TARGET=	check
 

@@ -16,7 +16,7 @@ COMMENT=	Ori distributed file system
 LIB_DEPENDS=	libevent.so:devel/libevent \
 		libboost_date_time.so:devel/boost-libs
 
-USES=		compiler:c++11-lib execinfo fuse pkgconfig scons ssl tar:xz
+USES=		compiler:c++11-lib fuse pkgconfig scons ssl tar:xz
 CPPFLAGS+=	-I${OPENSSLINC}
 LDFLAGS+=	-L${OPENSSLLIB} -lcrypto
 MAKE_ARGS=	VERBOSE=1

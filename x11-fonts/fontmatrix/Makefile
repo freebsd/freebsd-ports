@@ -18,7 +18,7 @@ LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 USE_GITHUB=	yes
 GH_ACCOUNT=	fontmatrix
 
-USES=		cmake execinfo
+USES=		cmake
 USE_QT4=	corelib xml gui svg network moc_build uic_build rcc_build qmake_build \
 		linguisttools_build opengl sql webkit
 INSTALLS_ICONS=	yes

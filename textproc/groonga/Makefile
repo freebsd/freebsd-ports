@@ -12,7 +12,7 @@ LICENSE=	LGPL21
 
 LIB_DEPENDS=	libpcre.so:devel/pcre
 
-USES=		execinfo gmake libedit libtool pathfix pkgconfig
+USES=		gmake libedit libtool pathfix pkgconfig
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-benchmark \
 		--disable-document \

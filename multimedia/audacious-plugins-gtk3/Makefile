@@ -28,7 +28,7 @@ DISTINFO_FILE=	${.CURDIR}/distinfo
 FILESDIR=	${MASTERDIR}/files
 
 GNU_CONFIGURE=	yes
-USES=		compiler:c++11-lib execinfo gettext-tools gmake iconv \
+USES=		compiler:c++11-lib gettext-tools gmake iconv \
 	localbase pkgconfig tar:bzip2
 USE_LDCONFIG=	yes
 USE_GNOME=	gtk30 glib20 libxml2 cairo gdkpixbuf2

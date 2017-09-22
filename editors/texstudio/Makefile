@@ -15,7 +15,7 @@ LIB_DEPENDS=	libhunspell-1.6.so:textproc/hunspell \
 BROKEN_aarch64=		fails to compile: error: no member named mc_eip in __mcontext
 BROKEN_armv6=		fails to compile: error: no member named mc_eip in __mcontext
 
-USES=		desktop-file-utils dos2unix execinfo ghostscript:run \
+USES=		desktop-file-utils dos2unix ghostscript:run \
 		pkgconfig qmake
 DOS2UNIX_FILES=	${PORTNAME}.pro
 

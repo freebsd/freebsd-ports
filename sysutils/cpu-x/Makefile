@@ -22,7 +22,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	X0rg
 GH_PROJECT=	${PORTNAME:tu}
 
-USES=		cmake execinfo gettext ncurses pkgconfig
+USES=		cmake gettext ncurses pkgconfig
 
 PORTDOCS=	ChangeLog README.md
 

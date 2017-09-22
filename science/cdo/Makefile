@@ -39,7 +39,7 @@ MAKE_JOBS_UNSAFE=	yes
 TEST_TARGET=	check
 USE_CXXSTD=	c++11
 USE_LDCONFIG=	yes
-USES=		compiler:c++11-lib execinfo gmake libtool localbase pathfix
+USES=		compiler:c++11-lib gmake libtool localbase pathfix
 
 CGRIBEX_CONFIGURE_WITH=	cgribex
 CGRIBEX_LIB_DEPENDS=	libcgribex.so:science/cgribex
