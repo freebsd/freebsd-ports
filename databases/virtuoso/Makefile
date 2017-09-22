@@ -41,8 +41,8 @@ CONFIGURE_ARGS=	--with-readline\
 		--with-layout=freebsd\
 		--datadir="${PREFIX}"\
 		--localstatedir="${PREFIX}"
-CPPFLAGS+=	-std=gnu89 ${IODBC_CPPFLAGS} -I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib -lexecinfo
+CPPFLAGS+=	-std=gnu89 ${IODBC_CPPFLAGS}
+LDFLAGS+=	-lexecinfo
 MAKE_ENV=	PATH=${LOCALBASE}/bin:${PATH}\
 		ISQL=isql-vt
 USE_RC_SUBR=	virtuoso

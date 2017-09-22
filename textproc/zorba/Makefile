@@ -50,12 +50,6 @@ PLIST_SUB+=	FULLVERSION=${PORTVERSION} \
 		MIDVERSION=${PORTVERSION:R} \
 		MINVERSION=${PORTVERSION:R:R}
 
-.if exists(/usr/lib/libexecinfo.so)
-LOC_EXECINFO=	/usr/lib/libexecinfo.so
-.else
-LOC_EXECINFO=	${LOCALBASE}/lib/libexecinfo.so
-.endif
-
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPHP}
@@ -91,7 +85,7 @@ BUILD_DEPENDS+=	swig2.0:devel/swig20
 .endif
 
 post-patch:
-	${REINPLACE_CMD} -e 's|%%LIBEXECINFO%%|${LOC_EXECINFO}|' \
+	${REINPLACE_CMD} \
 		-e 's|FreeBSD|${OPSYS}|g' ${WRKSRC}/CMakeLists.txt
 	${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 		${WRKSRC}/cmake_modules/FindPHP5.cmake

@@ -18,8 +18,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-ssl --without-pmshell --without-atheos --without-fb
 
 CFLAGS+=	-Wno-error=return-type
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib -lexecinfo
+LDFLAGS+=	-lexecinfo
 
 CONFLICTS=	links-[0-9]*
 

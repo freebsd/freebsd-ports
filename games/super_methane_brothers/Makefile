@@ -19,8 +19,7 @@ USES=		gmake pkgconfig tar:tgz
 MAKE_ENV=	METHANE_FLAGS="${CPPFLAGS}" METHANE_LIBS="${LIBS}"
 MAKE_JOBS_UNSAFE=	yes
 
-CPPFLAGS+=	-I${LOCALBASE}/include
-LIBS+=		-L${LOCALBASE}/lib -lexecinfo
+LIBS+=		-lexecinfo
 
 DATADIR=	${PREFIX}/share/methane
 

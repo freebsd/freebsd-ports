@@ -16,8 +16,7 @@ GH_ACCOUNT=	twitter
 
 USES=		autoreconf libtool
 
-CFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib -lexecinfo
+LDFLAGS+=	-lexecinfo
 
 PLIST_FILES=	sbin/nutcracker \
 		man/man8/nutcracker.8.gz \

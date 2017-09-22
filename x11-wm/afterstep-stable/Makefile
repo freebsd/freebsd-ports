@@ -56,10 +56,6 @@ PLIST_SUB+=	GNOME=""
 PLIST_SUB+=	GNOME="@comment "
 .endif
 
-.if !exists(/usr/lib/libexecinfo.so)
-STATIC_LIBEXECINFO=	${LOCALBASE}/lib/libexecinfo.a
-.endif
-
 post-extract:
 	${CP} ${FILESDIR}/monitor_bsd.xpm \
 		${WRKSRC}/afterstep/desktop/icons/xml/monitor-bsd.xpm
@@ -85,9 +81,6 @@ post-patch:
 	@${REINPLACE_CMD} -e 's,%%LOCALBASE%%,${LOCALBASE},g' \
 		${WRKSRC}/${f}
 .endfor
-	@${REINPLACE_CMD} \
-		-e 's,%%STATIC_LIBEXECINFO%%,${STATIC_LIBEXECINFO},g' \
-		${WRKSRC}/configure
 
 .if exists(${PREFIX}/share/gnome/wm-properties)
 pre-install:

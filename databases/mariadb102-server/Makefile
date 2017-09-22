@@ -93,7 +93,6 @@ CMAKE_ARGS+=	-DINSTALL_DOCDIR="share/doc/mysql" \
 		-DCURSES_CURSES_LIBRARY="/usr/lib/libcurses.so" \
 		-DCURSES_FORM_LIBRARY="/usr/lib/libform.so" \
 		-DCURSES_CURSES_LIBRARY="/usr/lib/libncurses.so" \
-		-DEXECINFO_ROOT="${LOCALBASE}" \
 		-DICONV_LIBRARIES="${ICONV_LIB_PATH}" \
 		-DKRB5_CONFIG="${KRB5CONFIG}" \
 		-DCURSES_NCURSES_LIBRARY="${NCURSESLIB}/libncurses.so" \

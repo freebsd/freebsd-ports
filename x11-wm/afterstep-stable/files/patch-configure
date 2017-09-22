@@ -5,7 +5,7 @@
  
  if test "x$enable_staticlibs" = "xyes"; then
 -   AFTERBASE_LIB="../../libAfterBase/libAfterBase.a"
-+   AFTERBASE_LIB="../../libAfterBase/libAfterBase.a %%STATIC_LIBEXECINFO%%"
++   AFTERBASE_LIB="../../libAfterBase/libAfterBase.a
     AFTERIMAGE_LIB="../../libAfterImage/libAfterImage.a"
     AFTERSTEP_LIB="../../libAfterStep/libAfterStep.a"
     AFTERCONF_LIB="../../libAfterConf/libAfterConf.a"
@@ -14,7 +14,7 @@
     		LIBINSTALL="install.cyg"
  	else
 -   		AFTERBASE_LIB="../../libAfterBase/libAfterBase.so"
-+   		AFTERBASE_LIB="../../libAfterBase/libAfterBase.so %%STATIC_LIBEXECINFO%%"
++   		AFTERBASE_LIB="../../libAfterBase/libAfterBase.so
     		AFTERIMAGE_LIB="../../libAfterImage/libAfterImage.so"
     		AFTERSTEP_LIB="../../libAfterStep/libAfterStep.so"
     		AFTERCONF_LIB="../../libAfterConf/libAfterConf.so"
@@ -23,7 +23,7 @@
  fi
  
 -AFTERBASE_STATIC_LIB="../../libAfterBase/libAfterBase.a"
-+AFTERBASE_STATIC_LIB="../../libAfterBase/libAfterBase.a %%STATIC_LIBEXECINFO%%"
++AFTERBASE_STATIC_LIB="../../libAfterBase/libAfterBase.a
  AFTERIMAGE_STATIC_LIB="../../libAfterImage/libAfterImage.a"
  AFTERSTEP_STATIC_LIB="../../libAfterStep/libAfterStep.a"
  AFTERCONF_STATIC_LIB="../../libAfterConf/libAfterConf.a"

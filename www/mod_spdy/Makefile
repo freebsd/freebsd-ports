@@ -38,7 +38,7 @@ GYP_DEFINES+=	\
 		system_include_path_httpd=${LOCALBASE}/include/apache22 \
 		system_include_path_apr=${LOCALBASE}/include/apr-1 \
 		system_include_path_aprutil=${LOCALBASE}/include/apr-1 \
-		system_include_path_execinfo=${LOCALBASE}/include \
+		system_include_path_execinfo=/usr/include \
 		include_dirs=${LOCALBASE}/include
 
 SUB_FILES+=	mod_spdy.conf
