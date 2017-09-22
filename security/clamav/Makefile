@@ -3,7 +3,7 @@
 
 PORTNAME=	clamav
 PORTVERSION=	0.99.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	security
 MASTER_SITES=	http://www.clamav.net/downloads/production/
 
