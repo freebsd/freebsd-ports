@@ -18,7 +18,6 @@ NO_ARCH=	yes
 USES=		python
 USE_PYTHON=	autoplist concurrent distutils
 
-DOCSDIR=	${PREFIX}/share/doc/${PYTHON_PKGNAMEPREFIX}${PORTNAME}
 PORTDOCS=	README.md
 
 post-install-DOCS-on:
