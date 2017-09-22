@@ -2,4 +2,4 @@ GLib provides a simple, abstract, and highly portable set of C support
 routines such as lists, trees, hashes, memory allocation, and much, much
 more.  It is a foundation for writing portable applications.
 
-WWW: http://www.gtk.org/
+WWW: https://www.gtk.org/
