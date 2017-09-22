@@ -4,6 +4,7 @@
 PORTNAME=	github-backup-utils
 PORTVERSION=	2.8.3
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	zi@FreeBSD.org
@@ -13,6 +14,9 @@ LICENSE=	MIT
 
 RUN_DEPENDS=	git>0:devel/git \
 		rsync>0:net/rsync
+
+USES=	shebangfix
+SHEBANG_FILES=	share/github-backup-utils/*
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	github
