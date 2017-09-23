@@ -47,6 +47,7 @@
     SUBDIR += gcin
     SUBDIR += gcin-gtk3
     SUBDIR += gcin-qt4
+    SUBDIR += gcin-qt5
     SUBDIR += gimp-help-zh_CN
     SUBDIR += gydict
     SUBDIR += hc
