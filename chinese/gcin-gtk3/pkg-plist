@@ -1,0 +1,3 @@
+lib/gtk-3.0/immodules/im-gcin.so
+@postexec %%LOCALBASE%%/bin/gtk-query-immodules-3.0 --update-cache
+@postunexec %%LOCALBASE%%/bin/gtk-query-immodules-3.0 --update-cache
