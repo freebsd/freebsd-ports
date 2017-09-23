@@ -37,10 +37,9 @@ USE_BINUTILS=	yes
 USE_PERL5=	build
 SSP_UNSAFE=	yes
 
-OPTIONS_DEFINE=		BOOTSTRAP GRAPHITE
+OPTIONS_DEFINE=		BOOTSTRAP
 OPTIONS_DEFAULT=	BOOTSTRAP
 BOOTSTRAP_DESC=		Build using a full bootstrap
-GRAPHITE_DESC=		Support for Graphite loop optimizations
 
 .if exists(/usr/lib32/libc.so)
 OPTIONS_DEFINE_powerpc64+=	MULTILIB
@@ -111,11 +110,6 @@ INFO=		gcc${SUFFIX}/cpp \
 		gcc${SUFFIX}/libquadmath
 SUB_FILES=	pkg-message
 SUB_LIST+=	TARGLIB=${TARGLIB}
-
-.if ${PORT_OPTIONS:MGRAPHITE}
-LIB_DEPENDS+=	libisl.so:devel/isl
-CONFIGURE_ARGS+=--with-isl=${LOCALBASE}
-.endif
 
 CONFIGURE_ARGS+=--enable-languages=${LANGUAGES}
 
