@@ -23,8 +23,6 @@ TEST_TARGET=	check
 USE_LDCONFIG=	yes
 USES=		libtool localbase pathfix
 
-PORTDOCS=	*
-
 GH_ACCOUNT=	google
 USE_GITHUB=	yes
 
