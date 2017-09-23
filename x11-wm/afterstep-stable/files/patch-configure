@@ -1,33 +1,6 @@
---- configure	Sat Jun 24 21:55:24 2006
-+++ configure.orig	Sat Jun 24 21:54:41 2006
-@@ -7955,7 +7955,7 @@
- fi
- 
- if test "x$enable_staticlibs" = "xyes"; then
--   AFTERBASE_LIB="../../libAfterBase/libAfterBase.a"
-+   AFTERBASE_LIB="../../libAfterBase/libAfterBase.a
-    AFTERIMAGE_LIB="../../libAfterImage/libAfterImage.a"
-    AFTERSTEP_LIB="../../libAfterStep/libAfterStep.a"
-    AFTERCONF_LIB="../../libAfterConf/libAfterConf.a"
-@@ -7974,7 +7974,7 @@
-    		LIBPROG='$(LIB_SHARED_CYG)'
-    		LIBINSTALL="install.cyg"
- 	else
--   		AFTERBASE_LIB="../../libAfterBase/libAfterBase.so"
-+   		AFTERBASE_LIB="../../libAfterBase/libAfterBase.so
-    		AFTERIMAGE_LIB="../../libAfterImage/libAfterImage.so"
-    		AFTERSTEP_LIB="../../libAfterStep/libAfterStep.so"
-    		AFTERCONF_LIB="../../libAfterConf/libAfterConf.so"
-@@ -7985,7 +7985,7 @@
- 	fi
- fi
- 
--AFTERBASE_STATIC_LIB="../../libAfterBase/libAfterBase.a"
-+AFTERBASE_STATIC_LIB="../../libAfterBase/libAfterBase.a
- AFTERIMAGE_STATIC_LIB="../../libAfterImage/libAfterImage.a"
- AFTERSTEP_STATIC_LIB="../../libAfterStep/libAfterStep.a"
- AFTERCONF_STATIC_LIB="../../libAfterConf/libAfterConf.a"
-@@ -7660,7 +7660,7 @@
+--- configure.orig	2013-05-01 13:34:11 UTC
++++ configure
+@@ -7660,7 +7660,7 @@ _ACEOF
  
  fi
  
