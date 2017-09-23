@@ -9548,3 +9548,4 @@ sysutils/filelight-kde4|sysutils/filelight|2017-09-16|Renamed to sysutils/fileli
 security/gnupg22|security/gnupg|2017-09-19|Removed, security/gnupg is now gnupg22
 mail/milter-greylist-devel|mail/milter-greylist|2017-09-22|Has expired: mail/milter-greylist provides same version and options
 devel/libexecinfo||2017-09-22|Is present in the base system of all supported releases
+games/ember||2017-09-23|Removed, it is BROKEN and no longer developed since 2014
