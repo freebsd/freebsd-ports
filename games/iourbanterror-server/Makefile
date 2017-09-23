@@ -4,7 +4,7 @@
 PORTNAME=	iourbanterror
 PKGNAMESUFFIX=	-server
 
-MAINTAINER=	kamikaze@bsdforen.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Urban Terror dedicated server
 
 LICENSE=	GPLv2

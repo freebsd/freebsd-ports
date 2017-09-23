@@ -5,7 +5,7 @@ PORTNAME=	automounter
 PORTVERSION=	1.5.1
 CATEGORIES=	sysutils
 
-MAINTAINER=	kamikaze@bsdforen.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Provides scripts to dynamically configure amd
 
 LICENSE=	BSD2CLAUSE

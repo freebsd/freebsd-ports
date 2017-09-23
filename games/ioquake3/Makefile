@@ -9,7 +9,7 @@ MASTER_SITES?=	http://ioquake3.org/files/${DISTVERSION}/
 # Using zip this way enables slaves to override it.
 EXTRACT_SUFX?=	.zip
 
-MAINTAINER?=	kamikaze@bsdforen.de
+MAINTAINER?=	ports@FreeBSD.org
 COMMENT?=	Cleaned-up and enhanced version of Quake 3
 
 LICENSE?=	GPLv2

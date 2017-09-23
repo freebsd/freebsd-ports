@@ -11,7 +11,7 @@ MASTER_SITES=	SF/oarena:data \
 DISTFILES=	${OA_DATA}:data
 EXTRACT_ONLY=
 
-MAINTAINER=	kamikaze@bsdforen.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OpenArena game data files
 
 LICENSE=	GPLv2

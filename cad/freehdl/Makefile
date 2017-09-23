@@ -7,7 +7,7 @@ PORTREVISION=	4
 CATEGORIES=	cad
 MASTER_SITES=	http://freehdl.seul.org/~enaroska/
 
-MAINTAINER=	kamikaze@bsdforen.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Free VHDL simulator
 
 USES=		gmake pathfix libtool makeinfo perl5 pkgconfig

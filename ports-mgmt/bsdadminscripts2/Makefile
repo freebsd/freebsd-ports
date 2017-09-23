@@ -4,7 +4,7 @@ PORTNAME=	bsdadminscripts2
 DISTVERSION=	0.2.0
 CATEGORIES=	ports-mgmt
 
-MAINTAINER=	kamikaze@bsdforen.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Collection of administration scripts
 
 LICENSE=	ISCL

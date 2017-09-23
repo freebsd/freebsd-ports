@@ -10,7 +10,7 @@ DISTNAME=	net.sourceforge.${PORTNAME}_${PORTVERSION}
 EXTRACT_SUFX=	.jar
 EXTRACT_ONLY=
 
-MAINTAINER=	kamikaze@bsdforen.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Verilog and VHDL editor plugin for eclipse
 
 RUN_DEPENDS=	eclipse:java/eclipse
