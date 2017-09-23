@@ -3,6 +3,7 @@
 
 PORTNAME=	gcin
 PORTVERSION=	2.8.5
+PORTREVISION=	1
 CATEGORIES=	chinese textproc gnome
 MASTER_SITES=	http://hyperrate.com/gcin-source/
 EXTRACT_ONLY=	gcin-${PORTVERSION}.tar.xz
@@ -13,21 +14,16 @@ COMMENT=	Traditional Chinese input utility in X
 LICENSE=	LGPL21
 
 HAS_CONFIGURE=	YES
-CONFIGURE_ARGS+=	--use_gtk3=N --use_qt3=N
+CONFIGURE_ARGS+=	--use_gtk3=N --use_qt3=N --use_qt4=N --use_qt5=N
 USE_GNOME=	gtk20
 USES=		gmake pkgconfig tar:xz
 USE_XORG=	x11 xtst xext
 INSTALLS_ICONS=	YES
-USE_LDCONFIG=	YES
+USE_LDCONFIG=	${PREFIX}/lib/gcin
 
-OPTIONS_DEFINE=	ANTHY QT_IM_MODULE DOCS
+OPTIONS_DEFINE=	ANTHY DOCS
 OPTIONS_SUB=	yes
 ANTHY_DESC=	Japanese anthy IM module
-QT_IM_MODULE_DESC=	QT IM module
-
-QT_IM_MODULE_USE=	QT4=inputmethods,qmake_build,moc_build,corelib,gui
-QT_IM_MODULE_LIB_DEPENDS=	libmng.so:graphics/libmng
-QT_IM_MODULE_CONFIGURE_OFF=	--use_qt4=N
 
 ANTHY_BUILD_DEPENDS=	${LOCALBASE}/include/anthy/anthy.h:japanese/anthy
 ANTHY_LIB_DEPENDS=	libanthy.so:japanese/anthy
@@ -35,13 +31,9 @@ ANTHY_CONFIGURE_OFF=	--use_anthy=N
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,&,,; 1 s,##!/bin/bash,#!/bin/sh,; \
-		s,QT_IM_DIR=/usr,QT_IM_DIR=$$prefix,g; \
-		s,QT4_IM_DIR=/usr,QT4_IM_DIR=$$prefix,g; \
 		s,-ldl,,; \
 		s,mandir=$$datadir,mandir=$$prefix,; \
 		s,/usr/share,$$prefix/share,; \
-		s,/usr/bin/moc,${MOC},; \
-		s,%%MOC%%,${MOC},; \
 		1, 300 s,gcc,$$CC,; s,gcin-$$GCIN_VERSION,gcin,; \
 		/GCIN_DEBUG/ d' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's,\/usr\/share,$$(prefix)\/share,; \
