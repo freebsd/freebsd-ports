@@ -48,8 +48,8 @@ SUB_LIST+=	TVHUSER="${TVHUSER}" \
 CONFIGURE_ENV+=	PLATFORM=freebsd
 CONFIGURE_ARGS+=--disable-dvbscan --disable-zlib --disable-hdhomerun_static \
 		--disable-bintray_cache --disable-ffmpeg_static --disable-pie
-CFLAGS+=	-Wno-conversion -Wno-int-to-pointer-cast
-LDFLAGS+=	-lexecinfo -lssl -lcrypto -lz
+CFLAGS+=	-I${LOCALBASE}/include -Wno-conversion -Wno-int-to-pointer-cast
+LDFLAGS+=	-L${LOCALBASE}/lib -lexecinfo -lssl -lcrypto -lz
 
 OPTIONS_DEFINE=	AVAHI DVBCSA HDHOMERUN INOTIFY TRANSCODING XMLTV
 OPTIONS_DEFAULT=DVBCSA HDHOMERUN INOTIFY
