@@ -1,0 +1,35 @@
+https://hg.libsdl.org/SDL/rev/b48d8a98e261 regressed Clang 3.9 + -O2 builds.
+<X11/Xmd.h> defines BOOL as unsigned char while <X11/Xdefs.h> defines Bool as int.
+
+(gdb) bt
+#0  0x000000080120025d in X11_InitXinput2Multitouch (_this=0x802000000)
+    at .../SDL2-2.0.6/src/video/x11/SDL_x11xinput2.c:206
+#1  0x00000008011fccf9 in X11_VideoInit (_this=<optimized out>)
+    at .../SDL2-2.0.6/src/video/x11/SDL_x11video.c:451
+#2  0x00000008011e9641 in SDL_VideoInit_REAL (driver_name=<optimized out>)
+    at .../SDL2-2.0.6/src/video/SDL_video.c:532
+#3  0x0000000801161cec in SDL_InitSubSystem_REAL (flags=<optimized out>)
+    at .../SDL2-2.0.6/src/SDL.c:170
+
+--- src/video/x11/SDL_x11keyboard.c.orig	2017-09-22 18:51:01 UTC
++++ src/video/x11/SDL_x11keyboard.c
+@@ -266,7 +266,7 @@ X11_InitKeyboard(_THIS)
+     int best_distance;
+     int best_index;
+     int distance;
+-    BOOL xkb_repeat = 0;
++    Bool xkb_repeat = 0;
+     
+     X11_XAutoRepeatOn(data->display);
+ 
+--- src/video/x11/SDL_x11sym.h.orig	2017-09-22 18:51:01 UTC
++++ src/video/x11/SDL_x11sym.h
+@@ -180,7 +180,7 @@ SDL_X11_SYM(Status,XkbGetUpdatedMap,(Display* a,unsign
+ SDL_X11_SYM(XkbDescPtr,XkbGetMap,(Display* a,unsigned int b,unsigned int c),(a,b,c),return)
+ SDL_X11_SYM(void,XkbFreeClientMap,(XkbDescPtr a,unsigned int b, Bool c),(a,b,c),)
+ SDL_X11_SYM(void,XkbFreeKeyboard,(XkbDescPtr a,unsigned int b, Bool c),(a,b,c),)
+-SDL_X11_SYM(BOOL,XkbSetDetectableAutoRepeat,(Display* a, BOOL b, BOOL* c),(a,b,c),return)
++SDL_X11_SYM(Bool,XkbSetDetectableAutoRepeat,(Display* a, Bool b, Bool* c),(a,b,c),return)
+ #endif
+ 
+ #if NeedWidePrototypes
