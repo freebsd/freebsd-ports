@@ -1,0 +1,51 @@
+--- Makefile.orig	2015-10-17 02:08:40 UTC
++++ Makefile
+@@ -1,18 +1,20 @@
+-include ../config.mak
++#include ../config.mak
++prefix=/usr/local
++libdir=$(prefix)/lib
+ QT=qt5
++QT5_MOC=/usr/local/lib/qt5/bin/moc
+ QTIM=$(QT)/plugins/platforminputcontexts
+-IMMODULES=$(libdir)/$(DEB_BUILD_MULTIARCH)/$(QTIM)
++IMMODULES=$(libdir)/$(QTIM)
+ 
+-INCS=-I../im-client -I/usr/include/X11 `pkg-config Qt5Core Qt5Gui Qt5PlatformSupport QtDBus --cflags`
++INCS=-I../im-client -I$(prefix)/include -I$(prefix)/include/qt5 `pkg-config Qt5Core Qt5Gui Qt5DBus --cflags`
+ MODVERSION=`pkg-config --modversion Qt5Gui`
+ QTINC=`pkg-config --variable=includedir Qt5Gui`
+ INCS+=-I$(QTINC)/QtGui/$(MODVERSION)/QtGui
+-#INCS+=-I/usr/include/i386-linux-gnu/qt5/QtGui/$(MODVERSION)/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtGui/$(MODVERSION)/QtGui
+ 
+-CXXFLAGS=$(OPTFLAGS) $(INCS) -Wall -D_REENTRANT -DUNIX=1 -fPIC  -DQT5 -DQT_SHARED -DQT_IMMODULE -DPIC -DDEBUG="0$(GCIN_DEBUG)"
++CXXFLAGS+=$(INCS) -Wall -D_REENTRANT -DUNIX=1 -fPIC  -DQT5 -DQT_SHARED -DQT_IMMODULE -DPIC -DDEBUG="0$(GCIN_DEBUG)"
+ OBJS= moc_gcin-qt5.o gcin-qt5.o gcin-imcontext-qt5.o moc_qgcinplatforminputcontext.o
+ .SUFFIXES:	.c .cpp .a .so .E .h
+-LDFLAGS=-L../im-client -lgcin-im-client `pkg-config Qt5Core Qt5Gui Qt5PlatformSupport --libs`
++LDFLAGS=-L$(prefix)/lib -L$(prefix)/lib/gcin -lgcin-im-client `pkg-config Qt5Core Qt5Gui --libs`
+ 
+ GCIN_QT5 = libgcinplatforminputcontextplugin.so
+ 
+@@ -32,17 +34,13 @@ $(GCIN_QT5): $(OBJS)
+ 	$(CXX) $(gcc_ld_run_path) -fno-exceptions -shared -o $@ $(OBJS) $(LDFLAGS)
+ 	rm -f core.*
+ install:
+-	if [ $(prefix) = /usr/local ]; then \
+-		install -d $(DESTDIR)/$(QT5_IM_DIR); \
+-		install -m 755 $(GCIN_QT5) $(DESTDIR)/$(QT5_IM_DIR); \
+-	else \
+-		install -d $(IMMODULES); \
+-                install -m 755 $(GCIN_QT5) $(IMMODULES); \
+-	fi
++	$(MKDIR) $(DESTDIR)/$(IMMODULES)
++	$(INSTALL_PROGRAM) -m 755 $(GCIN_QT5) $(DESTDIR)/$(IMMODULES)
++
+ clean:
+ 	rm -f $(OBJS) $(GCIN_QT5) *~ core.* *moc*.cpp *.E .depend
+ 
+ .depend:
+ 	$(CXX) $(CXXFLAGS) -MM *.cpp > $@
+ 
+-include .depend
++#include .depend
