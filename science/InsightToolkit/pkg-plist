@@ -3104,6 +3104,7 @@ include/ITK-%%ITK_VER%%/itk_compiler_detection.h
 include/ITK-%%ITK_VER%%/itk_hdf5.h
 include/ITK-%%ITK_VER%%/itk_jpeg.h
 include/ITK-%%ITK_VER%%/itk_kwiml.h
+include/ITK-%%ITK_VER%%/itk_nifti_mangle.h
 include/ITK-%%ITK_VER%%/itk_png.h
 include/ITK-%%ITK_VER%%/itk_zlib.h
 include/ITK-%%ITK_VER%%/itkfdstream/fdstream.hpp
