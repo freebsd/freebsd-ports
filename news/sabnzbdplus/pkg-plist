@@ -26,6 +26,7 @@ bin/SABnzbd.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/nzbstuff.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/osxmenu.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/panic.py
+%%PYTHON_SITELIBDIR%%/sabnzbd/par2file.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/postproc.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/powersup.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/rating.py
@@ -52,7 +53,6 @@ bin/SABnzbd.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/utils/rarfile.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/utils/rsslib.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/utils/servertests.py
-%%PYTHON_SITELIBDIR%%/sabnzbd/utils/sslinfo.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/utils/subprocess_fix.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/utils/systrayiconthread.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/utils/upload.py
@@ -109,7 +109,6 @@ bin/SABnzbd.py
 %%DATADIR%%/cherrypy/wsgiserver/__init__.py
 %%DATADIR%%/cherrypy/wsgiserver/ssl_builtin.py
 %%DATADIR%%/cherrypy/wsgiserver/ssl_pyopenssl.py
-%%DATADIR%%/cherrypy/wsgiserver/test_wsgiserver.py
 %%DATADIR%%/gntp/__init__.py
 %%DATADIR%%/gntp/cli.py
 %%DATADIR%%/gntp/config.py
@@ -153,7 +152,7 @@ bin/SABnzbd.py
 %%DATADIR%%/interfaces/Config/templates/staticcfg/images/logo-full.svg
 %%DATADIR%%/interfaces/Config/templates/staticcfg/images/logo-small.svg
 %%DATADIR%%/interfaces/Config/templates/staticcfg/js/chartist.min.js
-%%DATADIR%%/interfaces/Config/templates/staticcfg/js/jquery-3.1.1.min.js
+%%DATADIR%%/interfaces/Config/templates/staticcfg/js/jquery-3.2.1.min.js
 %%DATADIR%%/interfaces/Config/templates/staticcfg/js/jquery-ui.min.js
 %%DATADIR%%/interfaces/Config/templates/staticcfg/js/jquery.tablesort.min.js
 %%DATADIR%%/interfaces/Config/templates/staticcfg/js/script.js
