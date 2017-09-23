@@ -1021,6 +1021,7 @@
 %%WWWDIR%%/rainloop/v/%%VER%%/app/localization/admin/pl_PL.yml
 %%WWWDIR%%/rainloop/v/%%VER%%/app/localization/admin/pt_BR.yml
 %%WWWDIR%%/rainloop/v/%%VER%%/app/localization/admin/ru_RU.yml
+%%WWWDIR%%/rainloop/v/%%VER%%/app/localization/admin/sk_SK.yml
 %%WWWDIR%%/rainloop/v/%%VER%%/app/localization/admin/sl_SI.yml
 %%WWWDIR%%/rainloop/v/%%VER%%/app/localization/admin/sv_SE.yml
 %%WWWDIR%%/rainloop/v/%%VER%%/app/localization/admin/zh_CN.yml
