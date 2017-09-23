@@ -8,7 +8,7 @@ PORTREVISION=	3
 CATEGORIES=	www
 PKGNAMEPREFIX=	xpi-
 
-MAINTAINER=	kamikaze@bsdforen.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Firefox extension to view HTTP headers
 
 XPI_NUM=	3829

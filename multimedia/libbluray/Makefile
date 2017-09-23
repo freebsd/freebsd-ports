@@ -8,7 +8,7 @@ CATEGORIES=	multimedia
 MASTER_SITES=	ftp://ftp.videolan.org/pub/videolan/${PORTNAME}/${PORTVERSION}/ \
 		http://blu.opsec.eu/
 
-MAINTAINER=	kamikaze@bsdforen.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Blu-Ray discs playback library for media players
 
 LICENSE=	LGPL21

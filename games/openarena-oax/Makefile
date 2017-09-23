@@ -8,7 +8,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://files.poulsander.com/~poul19/public_files/eliminationSource/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
-MAINTAINER=	kamikaze@bsdforen.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OpenArena Mod: OpenArena Xpanded
 
 LICENSE=	GPLv2

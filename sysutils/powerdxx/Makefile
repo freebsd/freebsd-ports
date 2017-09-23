@@ -5,7 +5,7 @@ PORTVERSION=	0.2.5
 PORTREVISION=	1
 CATEGORIES=	sysutils
 
-MAINTAINER=	kamikaze@bsdforen.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	CPU clock speed/frequency daemon
 
 LICENSE=	ISCL

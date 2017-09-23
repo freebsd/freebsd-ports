@@ -10,7 +10,7 @@ MASTER_SITES=	SF/oarena/src \
 DISTNAME=	${PORTNAME}-engine-source-${GAMEVERSION}
 EXTRACT_SUFX=	.tar.bz2 # override master port
 
-MAINTAINER=	kamikaze@bsdforen.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Quake3 total conversion based on the ioquake3 engine
 
 LICENSE?=	GPLv2

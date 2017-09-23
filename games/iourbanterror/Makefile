@@ -8,7 +8,7 @@ PORTEPOCH=	1
 CATEGORIES=	games
 DISTNAME=	ioquake3-${IOQUAKE3VER}
 
-MAINTAINER=	kamikaze@bsdforen.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Quake 3 engine modified for Urban Terror (based on ioquake3)
 
 RUN_DEPENDS=	urbanterror-data>0:games/urbanterror-data
