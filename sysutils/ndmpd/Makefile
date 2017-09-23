@@ -2,16 +2,15 @@
 
 PORTNAME=	ndmpd
 PORTVERSION=	1.0
-DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
+MASTER_SITES=	https://bitbucket.org/araujobsd/ndmp-freebsd/get/
 
-MAINTAINER=	lifanov@FreeBSD.org
+MAINTAINER=	araujo@FreeBSD.org
 COMMENT=	Network Data Management Protocol daemon
 
 LICENSE=	BSD3CLAUSE
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	lifanov
+WRKSRC=		${WRKDIR}/araujobsd-ndmp-freebsd-daa00f9dc732
 
 ONLY_FOR_ARCHS=	amd64 i386
 PLIST_FILES=	sbin/ndmpd etc/ndmpd.conf.example
