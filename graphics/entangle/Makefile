@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	entangle
-PORTVERSION=	0.7.1
-PORTREVISION=	3
+PORTVERSION=	0.7.2
 CATEGORIES=	graphics
 MASTER_SITES=	http://entangle-photo.org/download/sources/
 
@@ -25,7 +24,9 @@ RUN_DEPENDS:=	${BUILD_DEPENDS:Nitstool*} \
 
 USES=		gettext-tools gmake libtool pkgconfig python:3
 GNU_CONFIGURE=	yes
-USE_GNOME=	gtk30 intltool introspection:build
+USE_GNOME=	cairo gtk30 intltool introspection
+USE_GSTREAMER1=	core
+USE_XORG=	xext
 GLIB_SCHEMAS=	org.entangle-photo.manager.gschema.xml
 INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
