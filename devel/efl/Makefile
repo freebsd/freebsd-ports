@@ -22,7 +22,7 @@ LIB_DEPENDS=	libgif.so:graphics/giflib \
 		libsndfile.so:audio/libsndfile
 
 GNU_CONFIGURE=	yes
-USES=		autoreconf compiler:c++11-lib gettext-tools gmake iconv jpeg \
+USES=		autoreconf compiler:c++14-lang gettext-tools gmake iconv jpeg \
 		libtool pathfix pkgconfig shared-mime-info tar:xz
 USE_XORG=	x11 xcursor xcomposite xdamage xext xfixes xi xinerama xp \
 		xrandr xrender xtst xscrnsaver
