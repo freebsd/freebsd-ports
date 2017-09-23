@@ -3,7 +3,7 @@
 
 PORTNAME=	gcc
 PORTVERSION=	4.7.4
-PORTREVISION=	5
+PORTREVISION=	6
 PORTEPOCH=	1
 CATEGORIES=	lang
 MASTER_SITES=	GCC/releases/gcc-${PORTVERSION}
@@ -14,6 +14,8 @@ COMMENT=	GNU Compiler Collection 4.7
 
 LICENSE=	GPLv3 GPLv3RLE
 LICENSE_COMB=	multi
+
+ONLY_FOR_ARCHS=	amd64 i386 powerpc sparc64
 
 LIB_DEPENDS=	libgmp.so:math/gmp \
 		libmpfr.so:math/mpfr \
@@ -27,11 +29,8 @@ BUILD_DEPENDS+=	runtest:misc/dejagnu
 
 CPE_VENDOR=	gnu
 
-# GCC_VERSION and SUFFIX relate to names of executables and directories
-# once installed.
 GCC_VERSION=	${PORTVERSION}
 SUFFIX=		${PORTVERSION:C/([0-9]+).([0-9]+).*/\1\2/}
-ONLY_FOR_ARCHS=	amd64 i386 powerpc sparc64
 USES=		cpe gmake iconv libtool makeinfo perl5 tar:bzip2
 USE_BINUTILS=	yes
 USE_PERL5=	build
@@ -42,7 +41,7 @@ BOOTSTRAP_DESC=		Build using a full bootstrap
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "amd64"
+.if ${ARCH} == amd64
 CONFIGURE_TARGET=	x86_64-portbld-${OPSYS:tl}${OSREL}
 .endif
 
@@ -107,6 +106,7 @@ full-regression-test: build
 
 post-stage:
 	${RM} ${STAGEDIR}${PREFIX}/man/man7/*
+	${RM} -r ${STAGEDIR}${TARGLIB}/gcc/*/${GCC_VERSION}/include-fixed/
 	# Add target libraries and include files to packaging list.
 	${RM} ${WRKDIR}/PLIST.lib
 .for d in ${TARGLIB:S/^${PREFIX}\///} ${LIBEXEC:S/^${PREFIX}\///}
