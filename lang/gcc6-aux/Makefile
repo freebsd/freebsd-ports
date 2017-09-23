@@ -267,6 +267,7 @@ do-install:
 		${STAGEDIR}${PREFIX}/share/dejagnu/baseboards
 
 post-stage:
+	${RM} -r ${STAGEDIR}${PKG_PREFIX}/lib/gcc/${BLD_TARGET}/${GCC_VERSION}/include-fixed/
 	(cd ${STAGEDIR}${PKG_PREFIX}; ${FIND} * -type d -empty | \
 		${SORT} -dr | ${XARGS} ${RMDIR})
 	(cd ${STAGEDIR}${PREFIX}; ${FIND} ${PORTNAME} share \
@@ -279,7 +280,6 @@ post-stage:
 	${CP} -a ${STAGEDIR}${PKG_PREFIX}/include ${NEWBSDIR}/
 	${CP} -a ${STAGEDIR}${PKG_PREFIX}/libexec ${NEWBSDIR}/
 	${RM} ${NEWBSDIR}/bin/${GARCH}*
-	${RM} -r ${NEWBSDIR}/lib/gcc/${BLD_TARGET}/${GCC_VERSION}/include-fixed
 	(cd ${NEWBSDIR}/.. ; ${TAR} -cyf ${BSFILENAME} bootstrap)
 .endif
 
