@@ -14,7 +14,8 @@ LICENSE=	PSFL
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools_scm>0:devel/py-setuptools_scm
 
-USES=		python
+NO_ARCH=	yes
+USES=		python:2.7
 USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>
