@@ -9,10 +9,9 @@ MASTER_SITES=	RG
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Various Ruby artificial intelligence algorithm implementations
 
-LICENSE=	MPL
+LICENSE=	MPL11
 
 NO_ARCH=	yes
-
 USE_RUBY=	yes
 USES=		gem
 
