@@ -16,7 +16,7 @@ EXTRACT_ONLY=	${PORTNAME}${DISTVERSION}.zip
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Implementation of JavaScript written in Java
 
-LICENSE=	MPL
+LICENSE=	MPL20
 
 ALL_TARGET=	jar
 
