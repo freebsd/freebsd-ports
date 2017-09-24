@@ -1,6 +1,6 @@
---- ejabberdctl.template.orig	2017-07-15 11:43:57 UTC
+--- ejabberdctl.template.orig	2017-09-17 17:17:31 UTC
 +++ ejabberdctl.template
-@@ -49,8 +49,8 @@ done
+@@ -56,8 +56,8 @@ done
  
  # define ejabberd variables if not already defined from the command line
  : ${ETC_DIR:={{sysconfdir}}/ejabberd}
@@ -11,22 +11,8 @@
  : ${EJABBERD_CONFIG_PATH:="$ETC_DIR"/ejabberd.yml}
  : ${EJABBERDCTL_CONFIG_PATH:="$ETC_DIR"/ejabberdctl.cfg}
  [ -f "$EJABBERDCTL_CONFIG_PATH" ] && . "$EJABBERDCTL_CONFIG_PATH"
-@@ -62,17 +62,18 @@ done
- # define erl parameters
- ERLANG_OPTS="+K $POLL -smp $SMP +P $ERL_PROCESSES $ERL_OPTIONS"
- if [ "$FIREWALL_WINDOW" != "" ] ; then
--    ERLANG_OPTS="$ERLANG_OPTS -kernel " \
--        "inet_dist_listen_min ${FIREWALL_WINDOW%-*} " \
--        "inet_dist_listen_max ${FIREWALL_WINDOW#*-}"
-+    ERLANG_OPTS="$ERLANG_OPTS -kernel \
-+        inet_dist_listen_min ${FIREWALL_WINDOW%-*} \
-+        inet_dist_listen_max ${FIREWALL_WINDOW#*-}"
- fi
- if [ "$INET_DIST_INTERFACE" != "" ] ; then
-     INET_DIST_INTERFACE2=$("$ERL" -noshell -eval 'case inet:parse_address("'$INET_DIST_INTERFACE'") of {ok,IP} -> io:format("~p",[IP]); _ -> ok end.' -s erlang halt)
-     if [ "$INET_DIST_INTERFACE2" != "" ] ; then
--        ERLANG_OPTS="$ERLANG_OPTS -kernel inet_dist_use_interface \"$INET_DIST_INTERFACE2\""
-+        ERLANG_OPTS="$ERLANG_OPTS -kernel inet_dist_use_interface $INET_DIST_INTERFACE2"
+@@ -77,7 +77,8 @@ if [ "$INET_DIST_INTERFACE" != "" ] ; th
+         ERLANG_OPTS="$ERLANG_OPTS -kernel inet_dist_use_interface $INET_DIST_INTERFACE2"
      fi
  fi
 -ERL_LIBS={{libdir}}
