@@ -3,8 +3,11 @@
 
 PORTNAME=	vigra
 DISTVERSION=	1.11.0
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	graphics
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES=	18675a51fca2.patch:-p1
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	VIGRA stands for "Vision with Generic Algorithms"
