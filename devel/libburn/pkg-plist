@@ -3,6 +3,6 @@ include/libburn/libburn.h
 lib/libburn.a
 lib/libburn.so
 lib/libburn.so.4
-lib/libburn.so.4.99.0
+lib/libburn.so.4.101.0
 libdata/pkgconfig/libburn-1.pc
 man/man1/cdrskin.1.gz
