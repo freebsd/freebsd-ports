@@ -13,7 +13,7 @@ EXTRACT_ONLY=	# empty
 MAINTAINER=	citrin@citrin.ru
 COMMENT=	The Yahoo! JavaScript and CSS Compressor
 
-LICENSE=	BSD3CLAUSE MPL
+LICENSE=	BSD3CLAUSE MPL20
 LICENSE_COMB=	multi
 
 NO_WRKSUBDIR=	yes
