@@ -4,7 +4,8 @@
 PORTNAME=	sagittarius
 PORTVERSION=	0.8.6
 CATEGORIES=	lang
-MASTER_SITES=	https://bitbucket.org/ktakashi/sagittarius-scheme/downloads/
+MASTER_SITES=	https://bitbucket.org/ktakashi/sagittarius-scheme/downloads/ \
+		LOCAL/ashish
 PKGNAMESUFFIX=	-scheme
 
 MAINTAINER=	ashish@FreeBSD.org
