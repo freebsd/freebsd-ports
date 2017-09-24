@@ -9,6 +9,9 @@ MASTER_SITES=	MOZILLA/${PORTNAME}/releases/v${PORTVERSION}/src
 MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	Platform-neutral API for system level and libc like functions
 
+LICENSE=	MPL20
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
 USES=		cpe gmake pathfix
 CPE_VENDOR=	mozilla
 CPE_PRODUCT=	netscape_portable_runtime
