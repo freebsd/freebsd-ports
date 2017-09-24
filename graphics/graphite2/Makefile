@@ -7,7 +7,7 @@ CATEGORIES=	graphics print
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Rendering capabilities for complex non-Roman writing systems
 
-LICENSE=	GPLv2 LGPL21 MPL
+LICENSE=	GPLv2 LGPL21 MPL20
 LICENSE_COMB=	dual
 
 USE_GITHUB=	yes
