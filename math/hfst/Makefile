@@ -3,9 +3,12 @@
 
 PORTNAME=	hfst
 PORTVERSION=	3.8.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	math
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/source
+
+PATCH_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/commit/
+PATCHFILES=	134d5a5aac3f.patch:-p1
 
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	A toolkit for for processing natural language morphologies
