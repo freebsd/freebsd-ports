@@ -99,9 +99,9 @@ do-build:
 .endif
 
 do-install:
-	@${INSTALL_MAN} ${WRKSRC}/doc/sane-epkowa.5.gz ${STAGEDIR}${PREFIX}/man/man5
+	${INSTALL_MAN} ${WRKSRC}/doc/sane-epkowa.5.gz ${STAGEDIR}${PREFIX}/man/man5
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/sane ${STAGEDIR}${PREFIX}/etc/sane.d
-	@${INSTALL_DATA} ${WRKSRC}/backend/.libs/libsane-epkowa.so.1 \
+	${INSTALL_LIB} ${WRKSRC}/backend/.libs/libsane-epkowa.so.1 \
 		${STAGEDIR}${PREFIX}/lib/sane/
 	@(cd ${STAGEDIR}${PREFIX}/lib/sane; ${LN} -s libsane-epkowa.so.1 libsane-epkowa.so )
 	@echo "usb /dev/uscanner0" > ${STAGEDIR}${PREFIX}/etc/sane.d/epkowa.conf.sample
