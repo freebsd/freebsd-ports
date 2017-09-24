@@ -1,4 +1,4 @@
 # Mk/Uses/python.mk includes this file, don't remove it!
 # $FreeBSD$
 
-PYTHON_PORTVERSION=	2.7.13
+PYTHON_PORTVERSION=	2.7.14
