@@ -9,7 +9,7 @@ DISTNAME=	nss-${VERSION_NSS}${NSS_SUFFIX}
 MAINTAINER=	ports-secteam@FreeBSD.org
 COMMENT=	Root certificate bundle from the Mozilla Project
 
-LICENSE=	MPL
+LICENSE=	MPL20
 
 OPTIONS_DEFINE=		ETCSYMLINK
 OPTIONS_DEFAULT=	ETCSYMLINK
