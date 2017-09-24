@@ -11,7 +11,7 @@ COMMENT=	Signing utility for UEFI secure boot
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libefivar.so:devel/efivar \
+LIB_DEPENDS=	libefivar.so.0:devel/efivar \
 		libnspr4.so:devel/nspr \
 		libnss3.so:security/nss \
 		libpopt.so:devel/popt \
