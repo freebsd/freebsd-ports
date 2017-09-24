@@ -12,6 +12,8 @@ COMMENT=	Tools to deal with SCEP and PKCS7 messages
 
 LICENSE=	APACHE20
 
+BROKEN_SSL=	openssl-devel
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	openxpki
 
@@ -26,10 +28,4 @@ post-install:
 	@${MV} ${STAGEDIR}${PREFIX}/man/man1/${f} ${STAGEDIR}${PREFIX}/man/man1/openca-${f}
 .endfor
 
-.include <bsd.port.pre.mk>
-
-.if ${SSL_DEFAULT:Mopenssl-devel}
-BROKEN=		Does not build with openssl-devel
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
