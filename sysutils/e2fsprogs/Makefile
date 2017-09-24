@@ -3,7 +3,7 @@
 
 PORTNAME=	e2fsprogs
 PORTVERSION=	1.43.6
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES?=	sysutils
 MASTER_SITES=	KERNEL_ORG/linux/kernel/people/tytso/${PORTNAME}/v${PORTVERSION}
 
@@ -18,40 +18,39 @@ LICENSE_DISTFILES_GPLv2=	${DISTNAME}${EXTRACT_SUFX}
 
 PORTSCOUT=	ignore	# cannot handle the version in the directory
 
+BROKEN_aarch64=		fails to link: missing sbrk
+
 USES=		cpe gmake pkgconfig tar:xz
 CPE_VENDOR=	e2fsprogs_project
 USE_CSTD=	gnu99
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=--disable-fsck --disable-e2initrd-helper \
+CONFIGURE_ARGS+=--disable-fsck \
+		--disable-e2initrd-helper \
+		--enable-libuuid \
 		--with-root-prefix='${PREFIX}'
 CPPFLAGS+=	-I${WRKSRC}/lib -I${LOCALBASE}/include # -D_EXT2_USE_C_VERSIONS
 MAKE_ARGS+=	LDFLAGS='${LDFLAGS} -L${LOCALBASE}/lib' pkgconfigdir='${PREFIX}/libdata/pkgconfig'
 MAKE_ENV+=	CHECK_CMD=@true
 
 .if !defined(MASTERDIR)
-OPTIONS_DEFINE=		DOCS NLS
+OPTIONS_DEFINE=		DOCS NLS FUSEFS PARALLELTESTS
 OPTIONS_EXCLUDE+=	EXAMPLES
+OPTIONS_SUB=		yes
 
-BUILD_DEPENDS+=	gdd:sysutils/coreutils
-
-BROKEN_aarch64=		fails to link: missing sbrk
-#BROKEN_armv6=		fails self-tests: Running e2fsprogs test suite...failed: f_pre_1970_date_encoding
-#BROKEN_mips=		fails self-tests: Running e2fsprogs test suite...failed: f_pre_1970_date_encoding
-#BROKEN_mips64=		fails self-tests: Running e2fsprogs test suite...failed: f_pre_1970_date_encoding
-#BROKEN_powerpc64=	fails self-tests: Running e2fsprogs test suite...Signal (11) SIGSEGV
-
-PORTDOCS=	NOTICE README RELEASE-NOTES SUBMITTING-PATCHES
-
-OPTIONS_DEFINE=			PARALLELTESTS
 OPTIONS_SINGLE=			SELFTEST
 OPTIONS_SINGLE_SELFTEST=	NOTESTS SMALLTESTS ALLTESTS
 OPTIONS_DEFAULT=		SMALLTESTS
+FUSEFS_DESC=	Build user-land ext2/3/4 FUSE module (slow!)
 SELFTEST_DESC=	Choose which set of self-tests to run
-NOTESTS_DESC=	Do not run any self-tests (only Tier-1 & DISCOURAGED)
-SMALLTESTS_DESC=Run tests that fit into 500 MB disk space (DEFAULT)
-ALLTESTS_DESC=	Run most self-tests (requires more RAM & disk space)
-PARALLELTESTS_DESC=	Run self-tests in parallel (requires more disk space)
+NOTESTS_DESC=	Do not run any self-tests (Tier-1, DISCOURAGED)
+SMALLTESTS_DESC=Run tests that need <500 MB disk space (DEFAULT)
+ALLTESTS_DESC=	Run most self-tests (needs more RAM/disk space)
+PARALLELTESTS_DESC=	Parallelize self-tests (needs more disk space)
+
+BUILD_DEPENDS+=	gdd:sysutils/coreutils
+
+PORTDOCS=	NOTICE README RELEASE-NOTES SUBMITTING-PATCHES
 .endif
 
 PKGDEINSTALL=	${PKGINSTALL}
@@ -59,6 +58,12 @@ PKGDEINSTALL=	${PKGINSTALL}
 MAKE_ARGS+=	V=1
 
 .include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MFUSEFS}
+USES+=		fuse
+CONFIGURE_ARGS+=--enable-fuse2fs
+LDFLAGS+=	-L${LOCALBASE}/lib
+.endif
 
 .if ${PORT_OPTIONS:MNLS}
 USES+=		gettext iconv:build
@@ -72,7 +77,6 @@ USE_PERL5=	build
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MNLS}
-PLIST_SUB=	NLS=""
 . if empty(ICONV_LIB)
 libintl=	"${LOCALBASE}/lib/libintl.a"
 . else
@@ -80,7 +84,6 @@ libintl=	"${LOCALBASE}/lib/libintl.a ${LOCALBASE}/lib/libiconv.a"
 . endif
 .else
 CONFIGURE_ARGS+=--disable-nls
-PLIST_SUB=	NLS="@comment "
 libintl=
 .endif
 
@@ -162,9 +165,9 @@ post-build:
 # else we're in trouble if e2fsck is needed for boot:
 # (we don't use e2fsck.static, since we can link libc.so dynamically)
 	cd ${WRKSRC}/e2fsck && ${RM} e2fsck \
-		&& ${MAKE_CMD} e2fsck \
+		&& ${MAKE_CMD} e2fsck V=1 \
 		STATIC_LIBS="../lib/libext2fs.a ../lib/libcom_err.a \
-		../lib/libblkid.a  ../lib/libuuid.a" \
+		../lib/libblkid.a ../lib/libuuid.a" \
 		LIBINTL=${libintl} LIBMAGIC=/usr/lib/libmagic.a\ -lz
 # Regression check: avoid a port (not upstream!) regression from 1.40.5,
 # check that e2fsck isn't dynalinked against anything but libc.so:
