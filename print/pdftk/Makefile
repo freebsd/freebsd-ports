@@ -16,7 +16,7 @@ LICENSE=	GPLv2
 # Get GCC version suffix without the dot in USE_GCC
 CSUFF=		${_USE_GCC:S/.//}
 
-USE_GCC=	6
+USE_GCC=	6	# Only GCC 6 provides Java (GCJ and libgcj).
 USES=		iconv gmake zip
 
 # gcj/libgcj don't exist on some platforms
