@@ -512,6 +512,7 @@ share/pixmaps/stellarium.xpm
 %%DATADIR%%/nebulae/default/n869-884spano.png
 %%DATADIR%%/nebulae/default/n891oleg.png
 %%DATADIR%%/nebulae/default/names.dat
+%%DATADIR%%/nebulae/default/outlines.dat
 %%DATADIR%%/nebulae/default/pleiades.png
 %%DATADIR%%/nebulae/default/rcw158-trev.png
 %%DATADIR%%/nebulae/default/rho-a00.png
@@ -1270,8 +1271,8 @@ share/pixmaps/stellarium.xpm
 %%DATADIR%%/skycultures/western/ara.png
 %%DATADIR%%/skycultures/western/argonavis.png
 %%DATADIR%%/skycultures/western/aries.png
+%%DATADIR%%/skycultures/western/asterism_lines.fab
 %%DATADIR%%/skycultures/western/asterism_names.eng.fab
-%%DATADIR%%/skycultures/western/asterismship.fab
 %%DATADIR%%/skycultures/western/auriga.png
 %%DATADIR%%/skycultures/western/bootes.png
 %%DATADIR%%/skycultures/western/caelum.png
@@ -1413,6 +1414,7 @@ share/pixmaps/stellarium.xpm
 %%DATADIR%%/textures/dione.png
 %%DATADIR%%/textures/earth-clouds.png
 %%DATADIR%%/textures/earth-shadow.png
+%%DATADIR%%/textures/earth-shadow-new.png
 %%DATADIR%%/textures/earth_cmap.png
 %%DATADIR%%/textures/earthmap.png
 %%DATADIR%%/textures/enceladus.png
@@ -1513,6 +1515,7 @@ share/pixmaps/stellarium.xpm
 %%SCRIPTS%%%%DATADIR%%/translations/stellarium-remotecontrol/sl.qm
 %%SCRIPTS%%%%DATADIR%%/translations/stellarium-remotecontrol/sr.qm
 %%SCRIPTS%%%%DATADIR%%/translations/stellarium-remotecontrol/sv.qm
+%%SCRIPTS%%%%DATADIR%%/translations/stellarium-remotecontrol/sw.qm
 %%SCRIPTS%%%%DATADIR%%/translations/stellarium-remotecontrol/th.qm
 %%SCRIPTS%%%%DATADIR%%/translations/stellarium-remotecontrol/tr.qm
 %%SCRIPTS%%%%DATADIR%%/translations/stellarium-remotecontrol/tt.qm
