@@ -2,7 +2,7 @@
 
 PORTNAME=	kdenetwork-strigi-analyzers
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	net kde kde-kde4
 
 MAINTAINER=	kde@FreeBSD.org

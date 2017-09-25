@@ -3,7 +3,7 @@
 
 PORTNAME=	spring
 PORTVERSION=	98.0
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	games
 MASTER_SITES=	SF/springrts/springrts/${PORTNAME}-${PORTVERSION} \
 		http://springrts.com/dl/
@@ -13,6 +13,8 @@ MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Project aiming to create a new and versatile RTS Engine
 
 LICENSE=	GPLv2
+
+BROKEN_FreeBSD_10=	fails to build with boost 1.65, see bug 220762
 
 LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libboost_thread.so:devel/boost-libs \

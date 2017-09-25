@@ -3,7 +3,7 @@
 
 PORTNAME=	tcpflow
 PORTVERSION=	1.4.5
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net
 MASTER_SITES=	http://digitalcorpora.org/downloads/${PORTNAME}/
 

@@ -3,7 +3,7 @@
 
 PORTNAME=	stp
 PORTVERSION=	1436
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	math
 MASTER_SITES=	http://intara.arrowdodger.ru/
 

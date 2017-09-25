@@ -3,7 +3,7 @@
 
 PORTNAME=	libopkele
 PORTVERSION=	2.0.4
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	devel
 MASTER_SITES=	http://kin.klever.net/dist/
 
