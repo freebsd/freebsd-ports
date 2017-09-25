@@ -1,19 +1,25 @@
 ===========================================================================
 
-This port installs the "standalone" Python client only, which does not use and
+This port installs the "standalone" client only, which does not use and
 is not the certbot-auto bootstrap/wrapper script.
 
-To obtain certificates, use the 'certonly' command as follows:
+The simplest form of usage to obtain certificates is:
 
- # sudo certbot certonly --standalone -d [server FQDN]
+ # sudo certbot certonly --standalone -d <domain>, [domain2, ... domainN]>
 
-Note: The client currently requires the ability to bind on TCP port 80. If
-you have a server running on this port, it will need to be temporarily stopped
-so that the standalone server can listen on that port to complete
-authentication.
+NOTE:
+
+The client requires the ability to bind on TCP port 80 or 443 (depending
+on the --preferred-challenges option used). If a server is running on that
+port, it will need to be temporarily stopped so that the standalone server
+can listen on that port to complete the challenge authentication process.
+
+For more information on the 'standalone' mode, see:
+
+  https://certbot.eff.org/docs/using.html#standalone
 
 The certbot plugins to support apache and nginx certificate installation
-will be made available soon in the following ports:
+will be made available in the following ports:
 
  * Apache plugin: security/py-certbot-apache
  * Nginx plugin: security/py-certbot-nginx
