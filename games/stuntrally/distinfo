@@ -3,3 +3,5 @@ SHA256 (stuntrally-stuntrally-2.6_GH0.tar.gz) = 8cc309d27d26f78dcc596440547d68b5
 SIZE (stuntrally-stuntrally-2.6_GH0.tar.gz) = 651577187
 SHA256 (stuntrally-tracks-2.6_GH0.tar.gz) = 4bce700516a2a178ac04cfbf7df2887ba42225802f5a3e670f770ea01345687b
 SIZE (stuntrally-tracks-2.6_GH0.tar.gz) = 355793120
+SHA256 (f7703d8d3f30.patch) = 25d881ab7e21b438cfedd2a9c7c813e93c7143e87b7a99ef734025d998444282
+SIZE (f7703d8d3f30.patch) = 5343
