@@ -20,13 +20,14 @@ LIB_DEPENDS=	libIlmImf.so:graphics/OpenEXR \
 		libtiff.so:graphics/tiff
 RUN_DEPENDS=	bash:shells/bash
 
-BROKEN=		fails to build against Boost with C++11 features, see bug 220787
 BROKEN_sparc64=	Fails to build: cannot link with boost
 
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 USE_LDCONFIG=	yes
-USES=		cmake:outsource desktop-file-utils shared-mime-info shebangfix
+USES=		cmake:outsource compiler:c++11-lib desktop-file-utils \
+		shared-mime-info shebangfix
+USE_CXXSTD=	gnu++11
 SHEBANG_FILES=	examples/*/*/*.sh \
 		tools/neqsus/houdini/post.sh \
 		distribution/linux/*.sh
