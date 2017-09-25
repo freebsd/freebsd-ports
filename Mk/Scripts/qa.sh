@@ -105,26 +105,6 @@ shebang() {
 	    -type f -perm +111 2>/dev/null)
 	EOF
 
-	# Split stat(1) result into 2 lines and read each line separately to
-	# retain spaces in filenames.
-	while read l; do
-		# No results presents a blank line
-		[ -z "${l}" ] && continue
-		read link
-
-		case "${link}" in
-		/*) f="${STAGEDIR}${link}" ;;
-		*) f="${l%/*}/${link}" ;;
-		esac
-		if [ -f "${f}" ]; then
-			shebangonefile "${f}" || rc=1
-		fi
-	# Use heredoc to avoid losing rc from find|while subshell
-	done <<-EOF
-	$(find ${STAGEDIR}${PREFIX} \
-	    -type l -exec stat -f "%N${LF}%Y" {} + 2>/dev/null)
-	EOF
-
 	return ${rc}
 }
 
