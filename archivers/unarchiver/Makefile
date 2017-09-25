@@ -3,7 +3,7 @@
 
 PORTNAME=	unar
 PORTVERSION=	1.10.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	archivers gnustep
 MASTER_SITES=	http://wakaba.c3.cx/releases/TheUnarchiver/
 DISTNAME=	${PORTNAME}${PORTVERSION}_src

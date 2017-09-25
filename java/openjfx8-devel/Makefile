@@ -3,7 +3,7 @@
 
 PORTNAME=	openjfx8
 PORTVERSION=	20170722
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	java x11-toolkits devel
 MASTER_SITES=	https://bitbucket.org/tobik/openjfx-rt/get/freebsd${PORTVERSION}${EXTRACT_SUFX}?dummy=/
 PKGNAMESUFFIX=	-devel

@@ -4,7 +4,7 @@
 PORTNAME=	seamonkey
 DISTVERSION=	2.48
 MOZILLA_VER=	51 # above + 3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES?=	www mail news editors irc ipv6
 MASTER_SITES=	MOZILLA/${PORTNAME}/releases/${DISTVERSION}/source \
 		MOZILLA/${PORTNAME}/candidates/${DISTVERSION}-candidates/build1/source
