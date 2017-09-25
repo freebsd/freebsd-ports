@@ -3,7 +3,7 @@
 
 PORTNAME=	arx-libertatis
 PORTVERSION=	1.1.2
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	games
 MASTER_SITES=	http://downloads.sourceforge.net/arx/ \
 		http://arx-libertatis.org/files/

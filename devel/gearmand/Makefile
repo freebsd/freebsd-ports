@@ -3,7 +3,7 @@
 
 PORTNAME=	gearmand
 PORTVERSION=	1.0.6
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	devel
 MASTER_SITES=	http://launchpad.net/gearmand/1.0/${PORTVERSION}/+download/
 

@@ -4,7 +4,8 @@ MAKE_CMD=	bjam
 MAKEFILE=	#
 MAKE_FLAGS=	#
 ALL_TARGET=	stage
-USES+=		compiler:features
+USES+=		compiler:c++11-lib
+USE_CXXSTD=	gnu++11
 
 PLIST_SUB+=	BOOST_SHARED_LIB_VER=${PORTVERSION}
 

@@ -3,6 +3,7 @@
 
 PORTNAME=	ceph
 DISTVERSION=	v12.2.0
+PORTREVISION=	1
 CATEGORIES=	net
 
 MAINTAINER=	wjw@digiware.nl

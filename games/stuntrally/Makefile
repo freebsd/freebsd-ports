@@ -3,6 +3,7 @@
 
 PORTNAME=	stuntrally
 PORTVERSION=	2.6
+PORTREVISION=	1
 CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -10,6 +11,8 @@ COMMENT=	3D racing game based on VDrift and OGRE with track editor
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/License.txt
+
+BROKEN=		fails to build against Boost with C++11 features, see bug 222189
 
 LIB_DEPENDS=	libboost_thread.so:devel/boost-libs
 

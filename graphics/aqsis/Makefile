@@ -3,7 +3,7 @@
 
 PORTNAME=	aqsis
 PORTVERSION=	1.8.2
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-source/${PORTVERSION}
 
@@ -20,6 +20,7 @@ LIB_DEPENDS=	libIlmImf.so:graphics/OpenEXR \
 		libtiff.so:graphics/tiff
 RUN_DEPENDS=	bash:shells/bash
 
+BROKEN=		fails to build against Boost with C++11 features, see bug 220787
 BROKEN_sparc64=	Fails to build: cannot link with boost
 
 LDFLAGS+=	-L${LOCALBASE}/lib

@@ -3,7 +3,7 @@
 
 PORTNAME=	highlight
 PORTVERSION=	3.36
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	3
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.andre-simon.de/zip/

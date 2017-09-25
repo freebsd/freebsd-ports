@@ -3,7 +3,7 @@
 
 PORTNAME=	inkscape
 PORTVERSION=	0.92.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics gnome
 MASTER_SITES=	https://launchpadlibrarian.net/306309537/ \
 		LOCAL/kwm
