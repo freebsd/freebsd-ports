@@ -1,10 +1,11 @@
---- tools/src/hfst-commandline.cc.orig	2014-07-04 18:13:51.000000000 +0400
-+++ tools/src/hfst-commandline.cc	2014-07-04 18:14:35.000000000 +0400
-@@ -21,6 +21,7 @@
- #  include <config.h>
+--- tools/src/hfst-commandline.cc.orig	2017-09-25 13:48:38.560155000 +0300
++++ tools/src/hfst-commandline.cc	2017-09-25 13:48:46.814581000 +0300
+@@ -24,6 +24,8 @@
+ #  define PACKAGE_BUGREPORT ""
  #endif
  
 +#define _WITH_GETLINE
++
  #include <cassert>
  #include <climits>
  #include <cmath>

@@ -1,4 +1,5 @@
-SHA256 (hfst-3.8.2.tar.gz) = bdae235271368a8d13db4a224fe8a53cf7266b8fce194cf63c96031e007e3d63
-SIZE (hfst-3.8.2.tar.gz) = 3158251
+TIMESTAMP = 1506332455
+SHA256 (hfst-hfst-3.13.0-c187d5a_GH0.tar.gz) = 5d90d1d7e6ebdf6010532a097ae1d7e170be9ab82a43d3d6018e42fb0c51cc90
+SIZE (hfst-hfst-3.13.0-c187d5a_GH0.tar.gz) = 23840495
 SHA256 (134d5a5aac3f.patch) = 9f7eacf517002af2cb1eb3d48d095d0f5d2f3100adfc4edf24279245f7d7d542
 SIZE (134d5a5aac3f.patch) = 1027
