@@ -27,8 +27,8 @@ RUN_DEPENDS=	p5-IPC-Run>=0:devel/p5-IPC-Run \
 		p5-Try-Tiny>=0:lang/p5-Try-Tiny \
 		p5-AnyEvent-I3>=0:devel/p5-AnyEvent-I3
 
-USE_XORG=	xcb
 USES=		pkgconfig gmake iconv perl5 tar:bzip2
+USE_XORG=	xcb
 GNU_CONFIGURE=	yes
 CONFIGURE_OUTSOURCE=	yes
 CONFIGURE_ENV=	ac_cv_path_PATH_ASCIIDOC=""
@@ -37,7 +37,6 @@ LDFLAGS+=	-L${LOCALBASE}/lib ${ICONV_LIB}
 INSTALL_TARGET=	install-strip
 
 post-install:
-	@${INSTALL_DATA} ${WRKSRC}/man/*.1 ${STAGEDIR}${MANPREFIX}/man/man1/
-
+	${INSTALL_DATA} ${WRKSRC}/man/*.1 ${STAGEDIR}${MANPREFIX}/man/man1/
 
 .include <bsd.port.mk>
