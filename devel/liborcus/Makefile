@@ -2,7 +2,7 @@
 
 PORTNAME=	liborcus
 PORTVERSION=	0.12.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel misc
 MASTER_SITES=	http://kohei.us/files/orcus/src/
 

@@ -2,7 +2,7 @@
 
 PORTNAME=	sdcc
 PORTVERSION=	3.6.1.2016.07.08
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	lang
 MASTER_SITES=	SF/sdcc/snapshot_builds/sdcc-src/ \
 		http://tijl.fastmail.com/mirror/

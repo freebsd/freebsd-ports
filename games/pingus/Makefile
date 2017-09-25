@@ -3,7 +3,7 @@
 
 PORTNAME=	pingus
 PORTVERSION=	0.7.6
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	games
 MASTER_SITES=	http://mirror.amdmi3.ru/distfiles/
 

@@ -12498,6 +12498,9 @@ lib/libboost_date_time.a
 lib/libboost_date_time.so
 lib/libboost_date_time.so.%%BOOST_SHARED_LIB_VER%%
 lib/libboost_exception.a
+%%FIBER%%lib/libboost_fiber.a
+%%FIBER%%lib/libboost_fiber.so
+%%FIBER%%lib/libboost_fiber.so.%%BOOST_SHARED_LIB_VER%%
 lib/libboost_filesystem.a
 lib/libboost_filesystem.so
 lib/libboost_filesystem.so.%%BOOST_SHARED_LIB_VER%%
