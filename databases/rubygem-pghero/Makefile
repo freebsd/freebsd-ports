@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	pghero
-PORTVERSION=	2.0.5
+PORTVERSION=	2.0.6
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
