@@ -3,7 +3,7 @@
 
 PORTNAME=	ansible
 PORTVERSION?=	2.4.0.0
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES=	sysutils python
 MASTER_SITES=	http://releases.ansible.com/ansible/
 
@@ -46,7 +46,6 @@ OPTIONS_DEFINE=	DOCS EXAMPLES
 
 post-patch:
 	${FIND} ${WRKSRC} -type f | ${XARGS} ${REINPLACE_CMD} \
-		-e 's|/usr/bin/python|${PYTHON_CMD}|g' \
 		-e 's|/etc/ansible|${ETCDIR}|g' \
 		-e 's|/usr/share/ansible|${DATADIR}|g'
 
