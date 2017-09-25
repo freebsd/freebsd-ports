@@ -1,3 +1,4 @@
+# Created by: Kevin Lo <kevlo@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	owncloud
@@ -5,7 +6,7 @@ PORTVERSION=	10.0.2
 CATEGORIES=	www
 MASTER_SITES=	http://download.owncloud.org/community/
 
-MAINTAINER=	kevlo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Personal cloud which runs on your own server
 
 LICENSE=	AGPLv3
