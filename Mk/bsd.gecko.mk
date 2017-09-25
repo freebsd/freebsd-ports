@@ -389,7 +389,7 @@ post-patch-SNDIO-on:
 .endif
 
 .if ${PORT_OPTIONS:MRUST}
-BUILD_DEPENDS+=	rust>=1.19.0:${RUST_PORT}
+BUILD_DEPENDS+=	rust>=1.19.0_2:${RUST_PORT}
 RUST_PORT?=		lang/rust
 MOZ_OPTIONS+=	--enable-rust
 .else
