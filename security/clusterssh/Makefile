@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	clusterssh
-PORTVERSION=	4.09
+DISTVERSION=	4.10_02
 CATEGORIES=	security net
 
 MAINTAINER=	lx@FreeBSD.org
