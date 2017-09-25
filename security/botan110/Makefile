@@ -3,7 +3,7 @@
 
 PORTNAME=	botan
 PORTVERSION=	1.10.13
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	security
 MASTER_SITES=	http://botan.randombit.net/releases/
 PKGNAMESUFFIX=	110
@@ -47,6 +47,7 @@ MAKE_ARGS+=	LDFLAGS="-L${LOCALBASE}/lib"
 .endif
 
 .if ${PORT_OPTIONS:MECC}
+BROKEN=		fails to build with boost 1.65, see bug 220760
 BUILD_DEPENDS+=	${LOCALBASE}/include/boost/tr1/memory.hpp:devel/boost-libs
 CONFIGURE_ARGS+=--with-tr1-implementation=boost
 CXXFLAGS+=	-I${LOCALBASE}/include

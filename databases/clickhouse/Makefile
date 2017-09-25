@@ -6,7 +6,7 @@ PORTVERSION=	1.1.54289
 DISTVERSIONPREFIX=	v
 DISTVERSIONSUFFIX=	-stable
 #DISTVERSIONSUFFIX=	-testing
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	databases
 
 MAINTAINER=	proler@gmail.com
@@ -22,7 +22,6 @@ LIB_DEPENDS=	libtcmalloc.so:devel/google-perftools \
 		libodbc.so:databases/unixODBC \
 		libltdl.so:devel/libltdl \
 		libicudata.so:devel/icu \
-		libboost_program_options.so:devel/boost-libs \
 		libzookeeper_mt.so:devel/libzookeeper \
 		libre2.so:devel/re2 \
 		libdouble-conversion.so:devel/libdouble-conversion \
@@ -43,7 +42,9 @@ BROKEN_FreeBSD_10=	Builds but does not work
 
 USES=		compiler:c++14-lang cmake iconv mysql ssl readline
 USE_LDCONFIG=	yes
+# Bug 222439: use bundled boost 1.65.0 to avoid 1.65.1 bustage
 CMAKE_ARGS=	-DUNBUNDLED=1 \
+		-DUSE_INTERNAL_BOOST_LIBRARY=1 \
 		-DUSE_STATIC_LIBRARIES=0 \
 		-DNO_WERROR=1 \
 		-DENABLE_TESTS=0 \

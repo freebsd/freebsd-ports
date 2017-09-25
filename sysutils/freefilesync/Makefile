@@ -3,7 +3,7 @@
 
 PORTNAME=	freefilesync
 PORTVERSION=	8.3
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	sysutils
 MASTER_SITES=	https://www.freefilesync.org/download/ \
 		https://www.freefilesync.org/archive/

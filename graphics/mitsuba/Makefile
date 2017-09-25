@@ -3,7 +3,7 @@
 
 PORTNAME=	mitsuba
 PORTVERSION=	0.5.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	graphics
 MASTER_SITES=	https://www.mitsuba-renderer.org/repos/mitsuba/archive/${HG_REVISION}${EXTRACT_SUFX}?dummy=
 DISTNAME=	${PORTNAME}-${HG_REVISION}
@@ -12,6 +12,8 @@ MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Research-oriented physically based rendering system
 
 LICENSE=	GPLv3
+
+BROKEN=		fails to build with boost 1.65, see bug 220719
 
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/eigen3.pc:math/eigen3
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs \

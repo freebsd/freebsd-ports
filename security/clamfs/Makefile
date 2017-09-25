@@ -3,7 +3,7 @@
 
 PORTNAME=	clamfs
 PORTVERSION=	1.0.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	security
 MASTER_SITES=	SF
 
@@ -11,6 +11,8 @@ MAINTAINER=	anastasios@mageirias.com
 COMMENT=	User-space fs with on-access antivirus scanning
 
 LICENSE=	GPLv2
+
+BROKEN=		fails to build with boost 1.65, see bug 220725
 
 LIB_DEPENDS=	libccgnu2.so:devel/commoncpp \
 		libPocoNet.so:devel/poco-ssl \

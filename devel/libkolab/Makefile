@@ -2,7 +2,7 @@
 
 PORTNAME=	libkolab
 PORTVERSION=	0.6.3
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	devel kde
 MASTER_SITES=	http://mirror.kolabsys.com/pub/releases/
 

@@ -3,7 +3,7 @@
 
 PORTNAME=	mongodb
 PORTVERSION=	2.6.12
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases net
 MASTER_SITES=	http://downloads.mongodb.org/src/
 DISTNAME=	${PORTNAME}-src-r${PORTVERSION}
