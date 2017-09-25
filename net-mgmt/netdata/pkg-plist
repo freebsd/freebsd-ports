@@ -23,23 +23,36 @@
 @sample(netdata,netdata,0640) %%ETCDIR%%/health.d/apache.conf.sample
 @sample(netdata,netdata,0640) %%ETCDIR%%/health.d/backend.conf.sample
 @sample(netdata,netdata,0640) %%ETCDIR%%/health.d/bind_rndc.conf.sample
+@sample(netdata,netdata,0640) %%ETCDIR%%/health.d/cpu.conf.sample
+@sample(netdata,netdata,0640) %%ETCDIR%%/health.d/disks.conf.sample
 @sample(netdata,netdata,0640) %%ETCDIR%%/health.d/elasticsearch.conf.sample
+@sample(netdata,netdata,0640) %%ETCDIR%%/health.d/entropy.conf.sample
 @sample(netdata,netdata,0640) %%ETCDIR%%/health.d/fping.conf.sample
 @sample(netdata,netdata,0640) %%ETCDIR%%/health.d/haproxy.conf.sample
+@sample(netdata,netdata,0640) %%ETCDIR%%/health.d/ipc.conf.sample
 @sample(netdata,netdata,0640) %%ETCDIR%%/health.d/ipfs.conf.sample
 @sample(netdata,netdata,0640) %%ETCDIR%%/health.d/ipmi.conf.sample
 @sample(netdata,netdata,0640) %%ETCDIR%%/health.d/isc_dhcpd.conf.sample
 @sample(netdata,netdata,0640) %%ETCDIR%%/health.d/lighttpd.conf.sample
 @sample(netdata,netdata,0640) %%ETCDIR%%/health.d/mdstat.conf.sample
 @sample(netdata,netdata,0640) %%ETCDIR%%/health.d/memcached.conf.sample
+@sample(netdata,netdata,0640) %%ETCDIR%%/health.d/memory.conf.sample
 @sample(netdata,netdata,0640) %%ETCDIR%%/health.d/mongodb.conf.sample
 @sample(netdata,netdata,0640) %%ETCDIR%%/health.d/mysql.conf.sample
 @sample(netdata,netdata,0640) %%ETCDIR%%/health.d/named.conf.sample
+@sample(netdata,netdata,0640) %%ETCDIR%%/health.d/net.conf.sample
+@sample(netdata,netdata,0640) %%ETCDIR%%/health.d/netfilter.conf.sample
 @sample(netdata,netdata,0640) %%ETCDIR%%/health.d/nginx.conf.sample
 @sample(netdata,netdata,0640) %%ETCDIR%%/health.d/postgres.conf.sample
+@sample(netdata,netdata,0640) %%ETCDIR%%/health.d/qos.conf.sample
+@sample(netdata,netdata,0640) %%ETCDIR%%/health.d/ram.conf.sample
 @sample(netdata,netdata,0640) %%ETCDIR%%/health.d/redis.conf.sample
 @sample(netdata,netdata,0640) %%ETCDIR%%/health.d/retroshare.conf.sample
+@sample(netdata,netdata,0640) %%ETCDIR%%/health.d/softnet.conf.sample
 @sample(netdata,netdata,0640) %%ETCDIR%%/health.d/squid.conf.sample
+@sample(netdata,netdata,0640) %%ETCDIR%%/health.d/swap.conf.sample
+@sample(netdata,netdata,0640) %%ETCDIR%%/health.d/tcp_resets.conf.sample
+@sample(netdata,netdata,0640) %%ETCDIR%%/health.d/udp_errors.conf.sample
 @sample(netdata,netdata,0640) %%ETCDIR%%/health.d/varnish.conf.sample
 @sample(netdata,netdata,0640) %%ETCDIR%%/health.d/web_log.conf.sample
 @sample(netdata,netdata,0640) %%ETCDIR%%/health.d/zfs.conf.sample
@@ -54,6 +67,7 @@
 %%ETCDIR%%/node.d/named.conf.md
 %%ETCDIR%%/node.d/sma_webbox.conf.md
 %%ETCDIR%%/node.d/snmp.conf.md
+%%ETCDIR%%/node.d/stiebeleltron.conf.md
 @mode
 @owner
 @group
@@ -61,6 +75,7 @@
 @sample(netdata,netdata,0640) %%ETCDIR%%/python.d/apache.conf.sample
 @sample(netdata,netdata,0640) %%ETCDIR%%/python.d/apache_cache.conf.sample
 @sample(netdata,netdata,0640) %%ETCDIR%%/python.d/bind_rndc.conf.sample
+@sample(netdata,netdata,0640) %%ETCDIR%%/python.d/chrony.conf.sample
 @sample(netdata,netdata,0640) %%ETCDIR%%/python.d/cpufreq.conf.sample
 @sample(netdata,netdata,0640) %%ETCDIR%%/python.d/dovecot.conf.sample
 @sample(netdata,netdata,0640) %%ETCDIR%%/python.d/dns_query_time.conf.sample
@@ -119,18 +134,19 @@ libexec/netdata/charts.d/tomcat.chart.sh
 libexec/netdata/node.d/README.md
 libexec/netdata/node.d/fronius.node.js
 libexec/netdata/node.d/named.node.js
-libexec/netdata/node.d/node_modules/asn1.js
-libexec/netdata/node.d/node_modules/ber/errors.js
-libexec/netdata/node.d/node_modules/ber/index.js
-libexec/netdata/node.d/node_modules/ber/reader.js
-libexec/netdata/node.d/node_modules/ber/types.js
-libexec/netdata/node.d/node_modules/ber/writer.js
+libexec/netdata/node.d/node_modules/asn1-ber.js
 libexec/netdata/node.d/node_modules/extend.js
+libexec/netdata/node.d/node_modules/lib/ber/errors.js
+libexec/netdata/node.d/node_modules/lib/ber/index.js
+libexec/netdata/node.d/node_modules/lib/ber/reader.js
+libexec/netdata/node.d/node_modules/lib/ber/types.js
+libexec/netdata/node.d/node_modules/lib/ber/writer.js
 libexec/netdata/node.d/node_modules/net-snmp.js
 libexec/netdata/node.d/node_modules/netdata.js
 libexec/netdata/node.d/node_modules/pixl-xml.js
 libexec/netdata/node.d/sma_webbox.node.js
 libexec/netdata/node.d/snmp.node.js
+libexec/netdata/node.d/stiebeleltron.node.js
 libexec/netdata/plugins.d/README.md
 libexec/netdata/plugins.d/alarm-email.sh
 libexec/netdata/plugins.d/alarm-notify.sh
@@ -148,6 +164,7 @@ libexec/netdata/python.d/README.md
 libexec/netdata/python.d/apache.chart.py
 libexec/netdata/python.d/apache_cache.chart.py
 libexec/netdata/python.d/bind_rndc.chart.py
+libexec/netdata/python.d/chrony.chart.py
 libexec/netdata/python.d/cpufreq.chart.py
 libexec/netdata/python.d/cpuidle.chart.py
 libexec/netdata/python.d/dns_query_time.chart.py
@@ -211,6 +228,42 @@ libexec/netdata/python.d/python_modules/pyyaml3/resolver.py
 libexec/netdata/python.d/python_modules/pyyaml3/scanner.py
 libexec/netdata/python.d/python_modules/pyyaml3/serializer.py
 libexec/netdata/python.d/python_modules/pyyaml3/tokens.py
+libexec/netdata/python.d/python_modules/urllib3/__init__.py
+libexec/netdata/python.d/python_modules/urllib3/_collections.py
+libexec/netdata/python.d/python_modules/urllib3/connection.py
+libexec/netdata/python.d/python_modules/urllib3/connectionpool.py
+libexec/netdata/python.d/python_modules/urllib3/contrib/__init__.py
+libexec/netdata/python.d/python_modules/urllib3/contrib/_securetransport/__init__.py
+libexec/netdata/python.d/python_modules/urllib3/contrib/_securetransport/bindings.py
+libexec/netdata/python.d/python_modules/urllib3/contrib/_securetransport/low_level.py
+libexec/netdata/python.d/python_modules/urllib3/contrib/appengine.py
+libexec/netdata/python.d/python_modules/urllib3/contrib/ntlmpool.py
+libexec/netdata/python.d/python_modules/urllib3/contrib/%%PYTHON_PYOEXTENSION%%penssl.py
+libexec/netdata/python.d/python_modules/urllib3/contrib/securetransport.py
+libexec/netdata/python.d/python_modules/urllib3/contrib/socks.py
+libexec/netdata/python.d/python_modules/urllib3/exceptions.py
+libexec/netdata/python.d/python_modules/urllib3/fields.py
+libexec/netdata/python.d/python_modules/urllib3/filepost.py
+libexec/netdata/python.d/python_modules/urllib3/packages/__init__.py
+libexec/netdata/python.d/python_modules/urllib3/packages/backports/__init__.py
+libexec/netdata/python.d/python_modules/urllib3/packages/backports/makefile.py
+libexec/netdata/python.d/python_modules/urllib3/packages/ordered_dict.py
+libexec/netdata/python.d/python_modules/urllib3/packages/six.py
+libexec/netdata/python.d/python_modules/urllib3/packages/ssl_match_hostname/__init__.py
+libexec/netdata/python.d/python_modules/urllib3/packages/ssl_match_hostname/_implementation.py
+libexec/netdata/python.d/python_modules/urllib3/poolmanager.py
+libexec/netdata/python.d/python_modules/urllib3/request.py
+libexec/netdata/python.d/python_modules/urllib3/response.py
+libexec/netdata/python.d/python_modules/urllib3/util/__init__.py
+libexec/netdata/python.d/python_modules/urllib3/util/connection.py
+libexec/netdata/python.d/python_modules/urllib3/util/request.py
+libexec/netdata/python.d/python_modules/urllib3/util/response.py
+libexec/netdata/python.d/python_modules/urllib3/util/retry.py
+libexec/netdata/python.d/python_modules/urllib3/util/selectors.py
+libexec/netdata/python.d/python_modules/urllib3/util/ssl_.py
+libexec/netdata/python.d/python_modules/urllib3/util/timeout.py
+libexec/netdata/python.d/python_modules/urllib3/util/url.py
+libexec/netdata/python.d/python_modules/urllib3/util/wait.py
 libexec/netdata/python.d/rabbitmq.chart.py
 libexec/netdata/python.d/redis.chart.py
 libexec/netdata/python.d/retroshare.chart.py
