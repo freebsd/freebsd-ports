@@ -2,9 +2,9 @@
 
 PORTNAME=	swift
 PORTVERSION=	3.1.1
-PORTREVISION=	1
 DISTVERSIONPREFIX=	swift-
 DISTVERSIONSUFFIX=	-RELEASE
+PORTREVISION=	2
 CATEGORIES=	lang
 
 MAINTAINER=	swills@FreeBSD.org
@@ -44,6 +44,7 @@ USE_AUTOTOOLS=	autoconf:env
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
 ONLY_FOR_ARCHS=	amd64
+BROKEN=		fails to build with ICU 59, see bug 222428
 BROKEN_FreeBSD_10=	Builds but does not work
 CONFLICTS_BUILD=	googletest
 LDFLAGS+=	-lobjc
