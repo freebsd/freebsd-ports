@@ -6,7 +6,7 @@ PORTVERSION=	10.0.2
 CATEGORIES=	www
 MASTER_SITES=	http://download.owncloud.org/community/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Personal cloud which runs on your own server
 
 LICENSE=	AGPLv3
