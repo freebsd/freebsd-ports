@@ -22,6 +22,7 @@ bin/azpainter
 %%DATADIR%%/brush/circle1.png
 %%DATADIR%%/brush/ellipse.png
 %%DATADIR%%/brush-2.dat
+%%DATADIR%%/coltype.png
 %%DATADIR%%/grad.dat
 %%DATADIR%%/icon.png
 %%DATADIR%%/palette-2.dat
