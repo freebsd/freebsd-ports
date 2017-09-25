@@ -3,6 +3,7 @@
 
 PORTNAME=	virtualbox-ose
 PORTVERSION=	5.1.28
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	http://download.virtualbox.org/virtualbox/${PORTVERSION}/
 DISTFILES=	VirtualBox-${PORTVERSION}${EXTRACT_SUFX} ${GUESTADDITIONS}
@@ -227,7 +228,11 @@ KMK_FLAGS+=	-j${MAKE_JOBS_NUMBER}
 PATCH_DEPENDS+=	${LOCALBASE}/share/kBuild/tools/GXX3.kmk:devel/kBuild
 EXTRA_PATCHES+=	${PATCHDIR}/extrapatch-Config.kmk \
 		${PATCHDIR}/extrapatch-src-VBox-Devices-PC-ipxe-Makefile.kmk \
-		${PATCHDIR}/extrapatch-src-recompiler-Makefile.kmk
+		${PATCHDIR}/extrapatch-src_recompiler_dyngen-exec.h \
+		${PATCHDIR}/extrapatch-src_recompiler_tcg_i386_tcg-target.h
+.if ${COMPILER_VERSION} < 35
+EXTRA_PATCHES+=	${PATCHDIR}/extrapatch-src-recompiler-Makefile.kmk
+.endif
 .endif
 
 .if ${PYTHON_MAJOR_VER} >= 3
