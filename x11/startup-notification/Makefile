@@ -11,6 +11,9 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Library that supports startup notification spec from freedesktop.org
 
+LICENSE=	LGPL20 MIT
+LICENSE_COMB=	multi
+
 LIB_DEPENDS=	libxcb-util.so:x11/xcb-util
 
 USE_XORG=	x11
