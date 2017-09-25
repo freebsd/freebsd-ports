@@ -1,4 +1,4 @@
---- Configure.orig	2016-07-14 19:08:07 UTC
+--- Configure.orig	2017-09-22 14:26:35 UTC
 +++ Configure
 @@ -940,6 +940,7 @@ lddlflags=''
  usedl=''
@@ -8,7 +8,7 @@
  ebcdic=''
  fflushNULL=''
  fflushall=''
-@@ -8140,10 +8141,19 @@ while $test 1 ; do
+@@ -8154,10 +8155,19 @@ while $test 1 ; do
  
  	if $test -f $dtrace
  	then
@@ -29,7 +29,7 @@
  			echo " "
  			echo "Good: your $dtrace knows about the -h flag."
  		else
-@@ -8157,6 +8167,17 @@ while $test 1 ; do
+@@ -8171,6 +8181,17 @@ while $test 1 ; do
  EOM
  			exit 1
  		fi
@@ -47,7 +47,7 @@
  		break;
  	fi
  
-@@ -20756,7 +20777,11 @@ $define)
+@@ -20770,7 +20791,11 @@ $define)
          dtraceobject=$define
          ;;
      ' '|'')
@@ -60,7 +60,7 @@
          $cat >try.c <<EOM
  #include "perldtrace.h"
  int main(void) {
-@@ -20766,14 +20791,14 @@ int main(void) {
+@@ -20780,14 +20805,14 @@ int main(void) {
  EOM
          dtraceobject=$undef
          if $cc -c -o try.o $optimize $ccflags try.c \
@@ -77,7 +77,7 @@
  esac
  
  : Determine if this is an EBCDIC system
-@@ -24722,6 +24747,7 @@ drand01='$drand01'
+@@ -24736,6 +24761,7 @@ drand01='$drand01'
  drand48_r_proto='$drand48_r_proto'
  dtrace='$dtrace'
  dtraceobject='$dtraceobject'
@@ -85,7 +85,7 @@
  dynamic_ext='$dynamic_ext'
  eagain='$eagain'
  ebcdic='$ebcdic'
---- Makefile.SH.orig	2016-07-16 10:52:42 UTC
+--- Makefile.SH.orig	2017-07-15 18:00:51 UTC
 +++ Makefile.SH
 @@ -390,8 +390,13 @@ VG_TEST  ?= ./perl -e 1 2>/dev/null
  	;;
@@ -153,7 +153,7 @@
 +
 +$spitshell >>$Makefile <<'!NO!SUBS!'
 +
- perltoc_pod_prereqs = extra.pods pod/perl5242delta.pod pod/perlapi.pod pod/perlintern.pod pod/perlmodlib.pod pod/perluniprops.pod
+ perltoc_pod_prereqs = extra.pods pod/perl5243delta.pod pod/perlapi.pod pod/perlintern.pod pod/perlmodlib.pod pod/perluniprops.pod
  generated_pods = pod/perltoc.pod $(perltoc_pod_prereqs)
  generated_headers = uudmap.h bitcount.h mg_data.h
 @@ -860,19 +908,32 @@ mydtrace.h: $(DTRACE_H)
@@ -220,7 +220,7 @@
  	-@rm -f miniperl.xok
  !NO!SUBS!
  
---- Porting/Glossary.orig	2016-07-14 19:06:55 UTC
+--- Porting/Glossary.orig	2017-06-30 21:03:20 UTC
 +++ Porting/Glossary
 @@ -2949,6 +2949,11 @@ dtrace (usedtrace.U):
  dtraceobject (dtraceobject.U):
@@ -234,7 +234,7 @@
  dynamic_ext (Extensions.U):
  	This variable holds a list of XS extension files we want to
  	link dynamically into the package.  It is used by Makefile.
---- ext/XS-APItest/Makefile.PL.orig	2016-07-14 19:08:07 UTC
+--- ext/XS-APItest/Makefile.PL.orig	2017-06-30 21:03:22 UTC
 +++ ext/XS-APItest/Makefile.PL
 @@ -58,7 +58,8 @@ sub MY::postamble
  DTRACE_D = ../../perldtrace.d
@@ -246,7 +246,7 @@
  POSTAMBLE
  
      return $post;
---- hints/freebsd.sh.orig	2016-07-14 19:07:39 UTC
+--- hints/freebsd.sh.orig	2017-06-30 21:03:22 UTC
 +++ hints/freebsd.sh
 @@ -105,6 +105,15 @@ case "$osvers" in
  	;;
