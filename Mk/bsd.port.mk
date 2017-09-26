@@ -1056,6 +1056,9 @@ SCRIPTSDIR?=	${PORTSDIR}/Mk/Scripts
 LIB_DIRS?=		/lib /usr/lib ${LOCALBASE}/lib
 STAGEDIR?=	${WRKDIR}/stage
 NOTPHONY?=
+FLAVORS?=
+FLAVOR?=
+PORTS_FEATURES+=	FLAVORS
 MINIMAL_PKG_VERSION=	1.6.0
 
 _PORTS_DIRECTORIES+=	${PKG_DBDIR} ${PREFIX} ${WRKDIR} ${EXTRACT_WRKDIR} \
@@ -1070,6 +1073,21 @@ _PORTS_DIRECTORIES+=	${PKG_DBDIR} ${PREFIX} ${WRKDIR} ${EXTRACT_WRKDIR} \
 .MAKE.EXPAND_VARIABLES= yes
 
 .include "${PORTSDIR}/Mk/bsd.commands.mk"
+
+.if !empty(FLAVOR)
+.  if empty(FLAVORS)
+IGNORE=	FLAVOR is defined while this port does not have FLAVORS.
+.  elif ! ${FLAVORS:M${FLAVOR}}
+IGNORE=	Unknown flavor '${FLAVOR}', possible flavors: ${FLAVORS}.
+.  endif
+.endif
+
+.if !empty(FLAVORS) && empty(FLAVOR)
+FLAVOR=	${FLAVORS:[1]}
+.endif
+
+# Do not leak flavors to childs make
+.MAKEOVERRIDES:=	${MAKEOVERRIDES:NFLAVOR=*}
 
 .if defined(CROSS_TOOLCHAIN)
 .if !defined(CROSS_SYSROOT)
@@ -1508,6 +1526,11 @@ PKG_NOTES+=	expiration_date
 PKG_NOTE_expiration_date=	${EXPIRATION_DATE}
 .endif
 
+.if !empty(FLAVOR)
+PKG_NOTES+=	flavor
+PKG_NOTE_flavor=	${FLAVOR}
+.endif
+
 TEST_ARGS?=		${MAKE_ARGS}
 TEST_ENV?=		${MAKE_ENV}
 
@@ -1576,7 +1599,13 @@ MAKE_ENV+=		NM=${NM} \
 CONFIGURE_ENV+=	PKG_CONFIG_SYSROOT_DIR="${CROSS_SYSROOT}"
 .endif
 
-WRKDIR?=		${WRKDIRPREFIX}${.CURDIR}/work
+.if empty(FLAVOR)
+_WRKDIR=	work
+.else
+_WRKDIR=	work-${FLAVOR}
+.endif
+
+WRKDIR?=		${WRKDIRPREFIX}${.CURDIR}/${_WRKDIR}
 .if !defined(IGNORE_MASTER_SITE_GITHUB) && defined(USE_GITHUB) && empty(USE_GITHUB:Mnodefault)
 WRKSRC?=		${WRKDIR}/${GH_PROJECT}-${GH_TAGNAME_EXTRACT}
 .endif
@@ -3680,18 +3709,57 @@ do-clean:
 .endif
 
 .if !target(clean)
-clean:
+pre-clean: clean-msg
+clean-msg:
+	@${ECHO_MSG} "===>  Cleaning for ${PKGNAME}"
+
+.if empty(FLAVORS)
+CLEAN_DEPENDENCIES=
 .if !defined(NOCLEANDEPENDS)
+CLEAN_DEPENDENCIES+=	limited-clean-depends-noflavor
+limited-clean-depends-noflavor:
 	@cd ${.CURDIR} && ${MAKE} limited-clean-depends
 .endif
-	@${ECHO_MSG} "===>  Cleaning for ${PKGNAME}"
 .if target(pre-clean)
-	@cd ${.CURDIR} && ${MAKE} pre-clean
+CLEAN_DEPENDENCIES+=	pre-clean-noflavor
+pre-clean-noflavor:
+	@cd ${.CURDIR} && ${SETENV} ${MAKE} pre-clean
 .endif
-	@cd ${.CURDIR} && ${MAKE} do-clean
+CLEAN_DEPENDENCIES+=	do-clean-noflavor
+do-clean-noflavor:
+	@cd ${.CURDIR} && ${SETENV} ${MAKE} do-clean
 .if target(post-clean)
-	@cd ${.CURDIR} && ${MAKE} post-clean
+CLEAN_DEPENDENCIES+=	post-clean-noflavor
+post-clean-${_f}:
+	@cd ${.CURDIR} &&  ${SETENV} ${MAKE} post-clean
 .endif
+.ORDER: ${CLEAN_DEPENDENCIES}
+clean: ${CLEAN_DEPENDENCIES}
+.endif
+
+.for _f in ${FLAVORS}
+CLEAN_DEPENDENCIES=
+.if !defined(NOCLEANDEPENDS)
+CLEAN_DEPENDENCIES+=	limited-clean-depends-${_f}
+limited-clean-depends-${_f}:
+	@cd ${.CURDIR} && ${MAKE} FLAVOR=${_f} limited-clean-depends
+.endif
+.if target(pre-clean)
+CLEAN_DEPENDENCIES+=	pre-clean-${_f}
+pre-clean-${_f}:
+	@cd ${.CURDIR} && ${SETENV} FLAVOR=${_f} ${MAKE} pre-clean
+.endif
+CLEAN_DEPENDENCIES+=	do-clean-${_f}
+do-clean-${_f}:
+	@cd ${.CURDIR} && ${SETENV} FLAVOR=${_f} ${MAKE} do-clean
+.if target(post-clean)
+CLEAN_DEPENDENCIES+=	post-clean-${_f}
+post-clean-${_f}:
+	@cd ${.CURDIR} &&  ${SETENV} FLAVOR=${_f} ${MAKE} post-clean
+.endif
+.ORDER: ${CLEAN_DEPENDENCIES}
+clean: ${CLEAN_DEPENDENCIES}
+.endfor
 .endif
 
 .if !target(distclean)
@@ -4217,12 +4285,12 @@ missing-packages:
 # first to avoid gratuitous breakage.
 
 . if !target(describe)
-_EXTRACT_DEPENDS=${EXTRACT_DEPENDS:C/^[^ :]+:([^ :]+)(:[^ :]+)?/\1/:O:u:C,(^[^/]),${PORTSDIR}/\1,}
-_PATCH_DEPENDS=${PATCH_DEPENDS:C/^[^ :]+:([^ :]+)(:[^ :]+)?/\1/:O:u:C,(^[^/]),${PORTSDIR}/\1,}
-_FETCH_DEPENDS=${FETCH_DEPENDS:C/^[^ :]+:([^ :]+)(:[^ :]+)?/\1/:O:u:C,(^[^/]),${PORTSDIR}/\1,}
-_LIB_DEPENDS=${LIB_DEPENDS:C/^[^ :]+:([^ :]+)(:[^ :]+)?/\1/:O:u:C,(^[^/]),${PORTSDIR}/\1,}
-_BUILD_DEPENDS=${BUILD_DEPENDS:C/^[^ :]+:([^ :]+)(:[^ :]+)?/\1/:O:u:C,(^[^/]),${PORTSDIR}/\1,} ${_LIB_DEPENDS}
-_RUN_DEPENDS=${RUN_DEPENDS:C/^[^ :]+:([^ :]+)(:[^ :]+)?/\1/:O:u:C,(^[^/]),${PORTSDIR}/\1,} ${_LIB_DEPENDS}
+_EXTRACT_DEPENDS=${EXTRACT_DEPENDS:C/^[^ :]+:([^ :@]+)(@[^ :]+)?(:[^ :]+)?/\1/:O:u:C,(^[^/]),${PORTSDIR}/\1,}
+_PATCH_DEPENDS=${PATCH_DEPENDS:C/^[^ :]+:([^ :@]+)(@[^ :]+)?(:[^ :]+)?/\1/:O:u:C,(^[^/]),${PORTSDIR}/\1,}
+_FETCH_DEPENDS=${FETCH_DEPENDS:C/^[^ :]+:([^ :@]+)(@[^ :]+)?(:[^ :]+)?/\1/:O:u:C,(^[^/]),${PORTSDIR}/\1,}
+_LIB_DEPENDS=${LIB_DEPENDS:C/^[^ :]+:([^ :@]+)(@[^ :]+)?(:[^ :]+)?/\1/:O:u:C,(^[^/]),${PORTSDIR}/\1,}
+_BUILD_DEPENDS=${BUILD_DEPENDS:C/^[^ :]+:([^ :@]+)(@[^ :]+)?(:[^ :]+)?/\1/:O:u:C,(^[^/]),${PORTSDIR}/\1,} ${_LIB_DEPENDS}
+_RUN_DEPENDS=${RUN_DEPENDS:C/^[^ :]+:([^ :@]+)(@[^ :]+)?(:[^ :]+)?/\1/:O:u:C,(^[^/]),${PORTSDIR}/\1,} ${_LIB_DEPENDS}
 . if exists(${DESCR})
 _DESCR=${DESCR}
 . else

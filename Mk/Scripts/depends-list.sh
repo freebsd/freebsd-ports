@@ -59,8 +59,13 @@ check_dep() {
 		IFS=${myifs}
 
 		case "${2}" in
-			/*) d=${2} ;;
-			*) d=${PORTSDIR}/${2} ;;
+		/*) d=${2} ;;
+		*) d=${PORTSDIR}/${2} ;;
+		esac
+
+		case "${d}" in
+		*@*/*) ;; # Ignore @ in the path which would not be a flavor
+		*@*) d=${d%@*} ;;
 		esac
 
 		case " ${checked} " in
