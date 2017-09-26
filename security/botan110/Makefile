@@ -3,7 +3,7 @@
 
 PORTNAME=	botan
 PORTVERSION=	1.10.13
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	security
 MASTER_SITES=	http://botan.randombit.net/releases/
 PKGNAMESUFFIX=	110
@@ -15,14 +15,14 @@ COMMENT=	Portable, easy to use, and efficient C++ crypto library
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/doc/license.txt
 
-OPTIONS_DEFINE=		SSL GMP ECC DOCS
-OPTIONS_DEFAULT=	SSL GMP ECC
-ECC_DESC=	ECC support
+OPTIONS_DEFINE=		SSL GMP DOCS
+OPTIONS_DEFAULT=	SSL GMP
 
 USES=		compiler gmake python:build tar:tgz
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	configure.py
-CONFIGURE_ARGS=	--prefix=${PREFIX} --with-bzip2 --with-zlib
+CONFIGURE_ARGS=	--prefix=${PREFIX} --cc ${CHOSEN_COMPILER_TYPE} \
+		--with-tr1-implementation=system --with-bzip2 --with-zlib
 MAKE_ARGS=	CXX="${CXX}" LIB_OPT="${CXXFLAGS}"
 USE_LDCONFIG=	yes
 PLIST_FILES=	bin/botan-config-1.10 lib/libbotan-1.10.a lib/libbotan-1.10.so lib/libbotan-1.10.so.1 \
@@ -41,23 +41,12 @@ CONFIGURE_ARGS+=--with-openssl
 .endif
 
 .if ${PORT_OPTIONS:MGMP}
+USES+=		localbase:ldflags
 LIB_DEPENDS+=	libgmp.so:math/gmp
 CONFIGURE_ARGS+=--with-gnump
-MAKE_ARGS+=	LDFLAGS="-L${LOCALBASE}/lib"
-.endif
-
-.if ${PORT_OPTIONS:MECC}
-BROKEN=		fails to build with boost 1.65, see bug 220760
-BUILD_DEPENDS+=	${LOCALBASE}/include/boost/tr1/memory.hpp:devel/boost-libs
-CONFIGURE_ARGS+=--with-tr1-implementation=boost
-CXXFLAGS+=	-I${LOCALBASE}/include
-.else
-CONFIGURE_ARGS+=--with-tr1-implementation=none
 .endif
 
 .include <bsd.port.pre.mk>
-
-CONFIGURE_ARGS+=--cc ${COMPILER_TYPE}
 
 post-patch:
 	${REINPLACE_CMD} -e "s|#!/usr/bin/env python|#!${PYTHON_CMD}|" \
