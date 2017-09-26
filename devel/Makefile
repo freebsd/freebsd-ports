@@ -1398,6 +1398,7 @@
     SUBDIR += libgee
     SUBDIR += libgee06
     SUBDIR += libgetline
+    SUBDIR += libght
     SUBDIR += libghthash
     SUBDIR += libgit2
     SUBDIR += libgit2-glib
