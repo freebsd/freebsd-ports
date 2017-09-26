@@ -1,5 +1,0 @@
-lib/postgresql/pointcloud.so
-share/postgresql/extension/pointcloud--1.0.1.sql
-share/postgresql/extension/pointcloud.control
-share/postgresql/extension/pointcloud_postgis--1.0.sql
-share/postgresql/extension/pointcloud_postgis.control
