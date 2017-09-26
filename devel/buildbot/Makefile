@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	buildbot
-PORTVERSION=	0.9.10
+PORTVERSION=	0.9.11
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 
@@ -24,13 +24,13 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}twisted>=14.0.1:devel/py-twisted \
 		${PYTHON_PKGNAMEPREFIX}sqlalchemy10>=0.6:databases/py-sqlalchemy10 \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3 \
 		${PYTHON_PKGNAMEPREFIX}treq>0:www/py-treq
-TEST_DEPENDS=	trial:devel/py-twisted \
-		buildbot-worker>=${PORTVERSION}:devel/buildbot-worker \
+TEST_DEPENDS=	buildbot-worker>=${PORTVERSION}:devel/buildbot-worker \
+		buildbot-www>=${PORTVERSION}:devel/buildbot-www \
 		${PYTHON_PKGNAMEPREFIX}mock>0.8.0:devel/py-mock \
 		${PYTHON_PKGNAMEPREFIX}boto3>0:www/py-boto3
 
+USES=		python:2.7
 USE_RC_SUBR=	buildbot
-USES=		python:-2.7
 USE_PYTHON=	autoplist distutils
 
 SUB_LIST+=	PYTHON_CMD=${PYTHON_CMD}
@@ -43,6 +43,7 @@ post-patch:
 	@${FIND} ${WRKSRC} -name \*.bak -delete
 
 do-test:
-	@cd ${WRKSRC} && trial buildbot
+	${MKDIR} ${WRKDIR}/tmp
+	cd ${WRKDIR}/tmp && ${PYTHON_CMD} -m twisted.trial buildbot.test
 
 .include <bsd.port.mk>

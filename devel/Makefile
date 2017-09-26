@@ -4259,6 +4259,7 @@
     SUBDIR += py-boto
     SUBDIR += py-botocore
     SUBDIR += py-bsd
+    SUBDIR += py-buildbot-grid-view
     SUBDIR += py-cached-property
     SUBDIR += py-cachetools
     SUBDIR += py-calendar
