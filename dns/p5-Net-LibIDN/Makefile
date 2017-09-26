@@ -11,7 +11,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	This module provides access to the libidn library
 
-LICENSE=	ART10
+LICENSE=	ART10 GPLv1+
+LICENSE_COMB=	dual
+LICENSE_FILE_ART10=	${WRKSRC}/Artistic
 
 LIB_DEPENDS=	libidn.so:dns/libidn
 
