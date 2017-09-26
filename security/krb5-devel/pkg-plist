@@ -49,7 +49,9 @@ include/krb5/ccselect_plugin.h
 include/krb5/certauth_plugin.h
 include/krb5/clpreauth_plugin.h
 include/krb5/hostrealm_plugin.h
+include/krb5/kadm5_auth_plugin.h
 include/krb5/kadm5_hook_plugin.h
+include/krb5/kdcpolicy_plugin.h
 include/krb5/kdcpreauth_plugin.h
 include/krb5/localauth_plugin.h
 include/krb5/krb5.h
