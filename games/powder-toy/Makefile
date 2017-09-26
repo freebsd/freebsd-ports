@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	powder-toy
-PORTVERSION=	92.1
+PORTVERSION=	92.5
 DISTVERSIONPREFIX=	v
-DISTVERSIONSUFFIX=	.332 # build number, not part of official version
 CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -17,7 +16,7 @@ LIB_DEPENDS=	libfftw3f.so:math/fftw3-float \
 		libfftw3.so:math/fftw3
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	simtr
+GH_ACCOUNT=	ThePowderToy
 GH_PROJECT=	The-Powder-Toy
 
 USES=		scons localbase:ldflags lua:51
