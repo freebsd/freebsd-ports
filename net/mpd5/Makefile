@@ -12,7 +12,7 @@ DIST_SUBDIR=	mpd5
 MAINTAINER=	eugen@FreeBSD.org
 COMMENT=	Multi-link PPP daemon based on netgraph(4)
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 OPTIONS_DEFINE=	NG_IPACCT
 NG_IPACCT_DESC=	Use ng_ipacct kernel module from port
