@@ -660,7 +660,6 @@
     SUBDIR += phppgadmin
     SUBDIR += pldebugger
     SUBDIR += plpgsql_check
-#    SUBDIR += pointcloud
     SUBDIR += postgis-jdbc
     SUBDIR += postgis20
     SUBDIR += postgis21
