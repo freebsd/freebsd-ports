@@ -3730,7 +3730,7 @@ do-clean-noflavor:
 	@cd ${.CURDIR} && ${SETENV} ${MAKE} do-clean
 .if target(post-clean)
 CLEAN_DEPENDENCIES+=	post-clean-noflavor
-post-clean-${_f}:
+post-clean-noflavor:
 	@cd ${.CURDIR} &&  ${SETENV} ${MAKE} post-clean
 .endif
 .ORDER: ${CLEAN_DEPENDENCIES}
