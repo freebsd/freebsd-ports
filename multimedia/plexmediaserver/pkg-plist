@@ -1457,8 +1457,8 @@
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/desktop/ios/startup-iphone-portrait@2x.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/desktop/ios/startup-iphone5-portrait@2x.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/index.html
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/js/main-0-30205f137753d0a20df0-plex-3.20.5-d2e4fde.js
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/js/vendors-1-e9cc46758dcf94ba1c5e-plex-3.20.5-d2e4fde.js
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/js/main-0-d7947b2fee1af32eaaf2-plex-3.20.8-3826ed9.js
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/js/vendors-1-3ac296738498f2e339a6-plex-3.20.8-3826ed9.js
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/main.8883144fb7acc2430ef50eda6c1a41c8.css
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/main.v3.3a6aa4986f36a5810792d74118deda14.css
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/setup.html
