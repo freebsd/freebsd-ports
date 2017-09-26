@@ -54,6 +54,7 @@
     SUBDIR += kf5-karchive
     SUBDIR += kzip
     SUBDIR += laszip
+    SUBDIR += lazperf
     SUBDIR += lbrate
     SUBDIR += lbzip2
     SUBDIR += lcab
