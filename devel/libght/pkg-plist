@@ -1,0 +1,6 @@
+bin/las2ght
+include/ght.h
+include/ght_core.h
+lib/libght.a
+lib/libght.so
+lib/libght.so.0.1.0
