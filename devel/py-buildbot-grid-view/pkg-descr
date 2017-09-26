@@ -1,4 +1,4 @@
-This port is the Console View Plugin for BuildBot. For the buildmaster,
+This port is the Grid View Plugin for BuildBot. For the buildmaster,
 install the devel/buildbot port.
 
 For more information, please see: https://buildbot.net/trac

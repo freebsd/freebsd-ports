@@ -1,13 +1,12 @@
-# Created by: Michael Gmelin <grembo@FreeBSD.org>
 # $FreeBSD$
 
-PORTNAME=	buildbot-console-view
+PORTNAME=	buildbot-grid-view
 PORTVERSION=	0.9.11
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 
-MAINTAINER=	grembo@FreeBSD.org
-COMMENT=	Continuous Integration Framework (Console View)
+MAINTAINER=	rodrigc@FreeBSD.org
+COMMENT=	Continuous Integration Framework (Grid View)
 
 LICENSE=	GPLv2
 
