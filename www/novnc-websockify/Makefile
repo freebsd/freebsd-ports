@@ -24,7 +24,6 @@ NO_ARCH=	yes
 TARGET_DIR=	${PREFIX}/libexec/novnc/utils/websockify
 
 do-install:
-	${MKDIR} ${TARGET_DIR}
 	${MKDIR} ${STAGEDIR}${TARGET_DIR}
 	cd ${WRKSRC} && ${RM} .gitignore .gitmodules .travis.yml
 	cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${TARGET_DIR}
