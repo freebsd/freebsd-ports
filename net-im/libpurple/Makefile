@@ -121,7 +121,7 @@ PLIST_SUB+=		PERL:="@comment not installed: " \
 			PERLMAN:="@comment not installed: "
 .endif
 
-.if !defined(PIDGIN_SLAVE)
+.if defined(WITH_GTKUI) && !defined(PIDGIN_SLAVE)
 USE_GNOME+=	gconf2
 GCONF_SCHEMAS=	purple.schemas
 .endif
