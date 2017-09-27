@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	filerunner
-PORTVERSION=	14.06.18.10
+PORTVERSION=	17.04.01.19
 CATEGORIES=	x11-fm tk
 MASTER_SITES=	SF/${PORTNAME}/release-${PORTVERSION}
 DISTNAME=	fr-${PORTVERSION}
@@ -23,7 +23,7 @@ post-patch:
 do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	cd ${WRKSRC} && ${COPYTREE_SHARE} \* ${STAGEDIR}${DATADIR}
-.for file in fr frftp frcolor.tcl
+.for file in fr frftp 
 	@${CHMOD} ${BINMODE} ${STAGEDIR}${DATADIR}/${file}
 .endfor
 	@${LN} -sf ${DATADIR}/fr ${STAGEDIR}${PREFIX}/bin/fr
