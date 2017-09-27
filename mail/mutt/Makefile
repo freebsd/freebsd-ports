@@ -3,7 +3,7 @@
 
 PORTNAME=	mutt
 PORTVERSION=	1.9.1
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES+=	mail ipv6
 MASTER_SITES=	ftp://ftp.mutt.org/pub/mutt/ \
 		ftp://ftp.fu-berlin.de/pub/unix/mail/mutt/ \
@@ -36,7 +36,7 @@ CONFIGURE_ENV=	CC="${CC} -I${LOCALBASE}/include"
 CONFIGURE_ARGS=	--disable-fcntl --with-ssl=${OPENSSLBASE} \
 		--with-docdir=${DOCSDIR} --sysconfdir=${PREFIX}/etc \
 		--enable-external-dotlock --enable-pop --enable-imap \
-		--enable-compressed
+		--enable-compressed --enable-sidebar
 
 USES+=		cpe ncurses shebangfix ssl
 SHEBANG_FILES=	doc/gen-map-doc smime_keys.pl contrib/smime_keys_test.pl
@@ -45,9 +45,7 @@ SHEBANG_FILES=	doc/gen-map-doc smime_keys.pl contrib/smime_keys_test.pl
 CONFIGURE_ARGS+=	${MUTT_CONFIGURE_ARGS}
 .endif
 
-USES+=		autoreconf
 GNU_CONFIGURE=	yes
-AUTOMAKE_ARGS=	--add-missing --foreign
 
 OPTIONS_SUB=	yes
 
@@ -57,7 +55,7 @@ OPTIONS_EXCLUDE=	NLS DOCS EXAMPLES
 OPTIONS_DEFINE=	SASL DEBUG DOCS EXAMPLES FLOCK \
 		FORCEBASE64 GPGME GREETING_PATCH HTML ICONV IDN IFDEF_PATCH \
 		LOCALES_FIX MAILBOX_MANPAGES MAILDIR_MTIME_PATCH \
-		NLS NNTP QUOTE_PATCH REVERSE_REPLY_PATCH SIDEBAR SMART_DATE \
+		NLS NNTP QUOTE_PATCH REVERSE_REPLY_PATCH SMART_DATE \
 		SMIME_OUTLOOK_COMPAT SMTP URLVIEW XML
 
 OPTIONS_SINGLE=	GSSAPI HCACHE SCREEN
@@ -83,7 +81,6 @@ NCURSES_DESC=	Ncurses support
 NLS_DESC=	Native language support (implies ICONV)
 QUOTE_PATCH_DESC=	Extended quoting
 REVERSE_REPLY_PATCH_DESC=	Reverse_reply
-SIDEBAR_DESC=	Sidebar support
 SLANG_DESC=	SLANG support
 SMART_DATE_DESC=	Dynamic date formatting with "%@"
 SMIME_OUTLOOK_COMPAT_DESC=	SMIME outlook compatibility
@@ -202,8 +199,6 @@ NNTP_CONFIGURE_ON=	--enable-nntp
 NNTP_VARS=	XML_NEEDED=yes
 NNTP_CATEGORIES=	news
 
-SIDEBAR_CONFIGURE_ENABLE=	sidebar
-
 DOCS_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-doc-ref
 
 .include <bsd.port.options.mk>
@@ -219,21 +214,12 @@ VVV_PATCH_VERSION=	${PORTVERSION}
 GREETING_PATCH_VERSION=	${PORTVERSION}
 .endif
 
-# XXX
-# this should be done automagically by aclocal but ....
-# for now, this will have to do
-pre-build::
-	@${REINPLACE_CMD} -E -e "s|^(ACLOCAL = ).+|\1${ACLOCAL}|" \
-			-e "s|^(AUTOCONF = ).+|\1${AUTOCONF}|" \
-			-e "s|^(AUTOMAKE = ).+|\1${AUTOMAKE}|" \
-			-e "s|^(AUTOHEADER = ).+|\1${AUTOHEADER}|" \
-		${BUILD_WRKSRC}/Makefile
-
 LDFLAGS+=		-L${LOCALBASE}/lib -Wl,-rpath=${LOCALBASE}/lib:/usr/lib -ltinfow
-CFLAGS+=		${CFLAGS_ADD}
-LDFLAGS+=		${LDFLAGS_ADD}
 
 post-patch-NNTP-on:
+# Restore timestamps for autotools sources
+	@${TOUCH} -r ${WRKSRC}/configure.ac.orig ${WRKSRC}/configure.ac
+	@${TOUCH} -r ${WRKSRC}/Makefile.am.orig ${WRKSRC}/Makefile.am
 .if ${PORT_OPTIONS:MMAILDIR_MTIME_PATCH}
 	@${PATCH} -d ${PATCH_WRKSRC} ${PATCH_ARGS} -p1 < ${PATCHDIR}/extra-patch-maildir-mtime-nntp
 .endif
@@ -258,6 +244,8 @@ post-install-NNTP-on:
 WRKSRC=		${WRKDIR}/${DISTNAME:S/i$//}
 
 pre-configure::
+	@${REINPLACE_CMD} -e 's,?eimdal\*),?eimdal*|\"FreeBSD heimdal\"*),' \
+		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 	@${REINPLACE_CMD} -e 's,/usr/bin/gpg,${LOCALBASE}/bin/gpg,g' \
 		${WRKSRC}/contrib/gpg.rc
 	@${REINPLACE_CMD} -e 's,pgp6,pgp,g' \
@@ -270,19 +258,11 @@ pre-configure::
 		${WRKSRC}/INSTALL \
 		${WRKSRC}/init.h
 	@${REINPLACE_CMD} -e 's#$$(docdir)/samples#${EXAMPLESDIR}#g' \
-		${WRKSRC}/contrib/Makefile.am
-
-pre-configure::
-	@${RM} ${WRKSRC}/missing
-.if defined(WITH_KRB5_SYS)
-	@${ECHO_CMD} "#define HAVE_HEIMDAL" >> ${WRKSRC}/config.h.in
-	@${REINPLACE_CMD} -e 's|<gssapi/gssapi\.h>|<gssapi.h>|' \
-		${WRKSRC}/imap/auth_gss.c
-.endif
+		${WRKSRC}/contrib/Makefile.in
 
 pre-configure-HCACHE_BDB-on:
 	@${REINPLACE_CMD} -E -e 's/BDB_VERSIONS="/&${BDB_LIB_NAME} db${BDB_VER} /' \
-		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}.ac
+		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 
 .if defined (XML_NEEDED) && ${PORT_OPTIONS:MXML}
 BUILD_DEPENDS+=	xsltproc:textproc/libxslt \
@@ -290,7 +270,8 @@ BUILD_DEPENDS+=	xsltproc:textproc/libxslt \
 		lynx:www/lynx
 .else
 pre-build::
-	@${REINPLACE_CMD} -E -e 's|-xsltproc|@-true xsltproc|g' \
+	@${REINPLACE_CMD} \
+		-e 's,manual.html stamp-doc-rc stamp-doc-chunked manual.txt,stamp-doc-rc,' \
 		${WRKSRC}/doc/Makefile
 .endif
 
