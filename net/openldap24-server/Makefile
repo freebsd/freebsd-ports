@@ -29,7 +29,6 @@ CONFLICTS=		${PKGNAMEPREFIX}${PORTNAME}-client-2.[0-3].* \
 .else
 PKGNAMESUFFIX?=		-server
 .endif
-EXTRACT_SUFX=		.tgz
 
 MAINTAINER=		delphij@FreeBSD.org
 COMMENT?=		Open source LDAP server implementation
@@ -41,7 +40,7 @@ LICENSE_PERMS=		dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 GNU_CONFIGURE=		yes
 # :keepla because port uses lt_dlopen
-USES=			cpe libtool:keepla ssl
+USES=			cpe libtool:keepla ssl tar:tgz
 .if !defined(CLIENT_ONLY)
 USERS=			ldap
 GROUPS=			ldap
