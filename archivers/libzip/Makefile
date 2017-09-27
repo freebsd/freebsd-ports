@@ -5,7 +5,7 @@ PORTNAME=	libzip
 PORTVERSION=	1.1.3
 PORTREVISION=	1
 CATEGORIES=	archivers devel
-MASTER_SITES=	http://www.nih.at/libzip/
+MASTER_SITES=	https://www.nih.at/libzip/
 
 MAINTAINER=	rakuco@FreeBSD.org
 COMMENT=	C library for reading, creating, and modifying ZIP archives
