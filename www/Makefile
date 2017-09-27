@@ -1668,6 +1668,7 @@
     SUBDIR += py-goobook
     SUBDIR += py-google
     SUBDIR += py-google-api-python-client
+    SUBDIR += py-google-auth
     SUBDIR += py-graphite-api
     SUBDIR += py-graphite-web
     SUBDIR += py-grequests
