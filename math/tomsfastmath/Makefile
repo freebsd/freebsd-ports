@@ -2,7 +2,7 @@
 
 PORTNAME=	tomsfastmath
 PORTVERSION=	0.12
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	math
 MASTER_SITES=	http://libtom.net/files/
 DISTNAME=	tfm-${PORTVERSION}
@@ -16,6 +16,7 @@ USES=		compiler:features gmake tar:bzip2
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 MAKEFILE=	makefile
 ALL_TARGET=	default
+CFLAGS+=	-fPIC
 
 PLIST_FILES=	include/tfm.h lib/libtfm.a
 
