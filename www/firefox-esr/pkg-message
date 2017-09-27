@@ -12,7 +12,7 @@ Some features available on other platforms are not implemented:
 
 To select non-default audio backend open about:config page and create
 media.cubeb.backend preference. Supported values are: alsa, jack,
-pulse, oss, sndio. Currently, selected backend can be inspected on
+pulse, oss, sndio. Currently selected backend can be inspected on
 about:support page.
 
 ======================================================================
