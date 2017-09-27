@@ -3,6 +3,7 @@
 
 PORTNAME=	libzip
 PORTVERSION=	1.1.3
+PORTREVISION=	1
 CATEGORIES=	archivers devel
 MASTER_SITES=	http://www.nih.at/libzip/
 
