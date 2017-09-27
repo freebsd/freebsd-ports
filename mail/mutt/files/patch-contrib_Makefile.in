@@ -1,9 +1,8 @@
---- contrib/Makefile.am.orig	2017-04-12 23:01:05 UTC
-+++ contrib/Makefile.am
-@@ -2,7 +2,7 @@
- 
+Index: contrib/Makefile.in
+@@ -270,7 +270,7 @@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
  subdir = contrib
- 
 -SAMPLES = Mush.rc Pine.rc gpg.rc pgp2.rc pgp5.rc pgp6.rc Tin.rc \
 +SAMPLES = Mush.rc Pine.rc gpg.rc pgp2.rc pgp6.rc Tin.rc \
  	sample.mailcap sample.muttrc sample.muttrc-sidebar sample.muttrc-tlr \
