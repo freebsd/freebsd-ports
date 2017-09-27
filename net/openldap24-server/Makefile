@@ -56,7 +56,7 @@ BROKEN=			incompatible OpenLDAP version: ${WANT_OPENLDAP_VER}
 .endif
 
 PORTREVISION_CLIENT=	0
-PORTREVISION_SERVER=	0
+PORTREVISION_SERVER=	1
 OPENLDAP_SHLIB_MAJOR=	2
 OPENLDAP_SHLIB_MINOR=	10.8
 OPENLDAP_MAJOR=		${DISTVERSION:R}
@@ -75,6 +75,7 @@ OPTIONS_DEFINE+=	REFINT RETCODE RWM SEQMOD SSSVLV SYNCPROV TRANSLUCENT
 OPTIONS_DEFINE+=	UNIQUE VALSORT SMBPWD SHA2 DYNAMIC_BACKENDS SASL
 OPTIONS_DEFINE+=	LMPASSWD
 OPTIONS_DEFINE+=	OUTLOOK
+OPTIONS_DEFINE+=	LASTBIND
 
 OPTIONS_DEFAULT=	MDB SYNCPROV DYNAMIC_BACKENDS
 
@@ -119,6 +120,7 @@ SHA2_DESC=		With SHA2 Password hashes overlay
 LMPASSWD_DESC=		With LM hash password support (DEPRECATED)
 DYNAMIC_BACKENDS_DESC=	Build dynamic backends
 OUTLOOK_DESC=		Force caseIgnoreOrderingMatch on name attribute (experimental)
+LASTBIND_DESC=		With lastbind overlay
 .endif
 
 .if defined(CLIENT_ONLY)
@@ -351,6 +353,10 @@ CONFIGURE_ARGS+=	--enable-aci
 CONFIGURE_ARGS+=	--enable-dynacl
 .endif
 
+.if ${PORT_OPTIONS:MLASTBIND}
+CONFIGURE_ARGS+=	--enable-lastbind
+.endif
+
 .if !${PORT_OPTIONS:MBDB}
 CONFIGURE_ARGS+=	--disable-bdb \
 			--disable-hdb
@@ -447,6 +453,12 @@ PLIST_SUB+=		SMBPWD="@comment "
 PLIST_SUB+=		SHA2=""
 .else
 PLIST_SUB+=		SHA2="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MLASTBIND}
+PLIST_SUB+=		LASTBIND=""
+.else
+PLIST_SUB+=		LASTBIND="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MRLOOKUPS}
@@ -552,6 +564,11 @@ post-build:
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} \
 		${MAKE_ARGS} prefix="${PREFIX}" all)
 .endif
+.if ${PORT_OPTIONS:MLASTBIND}
+	@(cd ${BUILD_WRKSRC}/contrib/slapd-modules/lastbind && \
+		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} \
+		${MAKE_ARGS} prefix="${PREFIX}" all)
+.endif
 .endif
 
 pre-install:
@@ -587,6 +604,12 @@ post-install:
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} \
 		${MAKE_ARGS} prefix="${PREFIX}" install)
 	${RM} ${STAGEDIR}${PREFIX}/libexec/openldap/pw-sha2.a
+.endif
+.if ${PORT_OPTIONS:MLASTBIND}
+	@(cd ${WRKSRC}/contrib/slapd-modules/lastbind && \
+		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} \
+		${MAKE_ARGS} prefix="${PREFIX}" install)
+	${RM} ${STAGEDIR}${PREFIX}/libexec/openldap/lastbind.a
 .endif
 .if ${PORT_OPTIONS:MDYNAMIC_BACKENDS} || ${PORT_OPTIONS:MSMBPWD} || ${PORT_OPTIONS:MSHA2}
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/libexec/openldap/*.so
