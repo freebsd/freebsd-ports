@@ -34,7 +34,6 @@
 %%SLAPI%%lib/libslapi.a
 %%SLAPI%%lib/libslapi.la
 %%SLAPI%%lib/libslapi.so
-%%MODULES%%@preexec mkdir -p %D/libexec/openldap
 %%BACK_BDB%%libexec/openldap/back_bdb-%%OPENLDAP_MAJOR%%.so.%%SHLIB_MAJOR%%
 %%BACK_BDB%%libexec/openldap/back_bdb-%%OPENLDAP_MAJOR%%.so.%%SHLIB_MAJOR%%.%%SHLIB_MINOR%%
 %%BACK_BDB%%libexec/openldap/back_bdb.la
