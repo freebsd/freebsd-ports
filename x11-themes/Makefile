@@ -161,6 +161,7 @@
     SUBDIR += qtcurve-utils
     SUBDIR += rezlooks
     SUBDIR += sawfish-themes
+    SUBDIR += sddm-freebsd-black-theme
     SUBDIR += slim-themes
     SUBDIR += thewidgetfactory
     SUBDIR += ubuntulooks
