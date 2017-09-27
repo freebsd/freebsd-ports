@@ -612,6 +612,9 @@ post-install:
 .if ${PORT_OPTIONS:MDYNAMIC_BACKENDS} || ${PORT_OPTIONS:MSMBPWD} || ${PORT_OPTIONS:MSHA2}
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/libexec/openldap/*.so
 .endif
+.if ${PORT_OPTIONS:MDYNAMIC_BACKENDS} || ${PORT_OPTIONS:MSLAPI}
+	${MKDIR} ${STAGEDIR}${PREFIX}/libexec/openldap
+.endif
 .endif # defined(CLIENT_ONLY)
 
 .include <bsd.port.post.mk>
