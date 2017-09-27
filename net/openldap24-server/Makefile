@@ -571,46 +571,46 @@ post-build:
 
 pre-install:
 .if !defined(CLIENT_ONLY)
-	@${MKDIR} ${STAGEDIR}${DATABASEDIR}
+	${MKDIR} ${STAGEDIR}${DATABASEDIR}
 .endif
 
 post-install:
 .if defined(CLIENT_ONLY)
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/CHANGES ${STAGEDIR}${DOCSDIR}
-	@for dir in drafts rfc; do \
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/CHANGES ${STAGEDIR}${DOCSDIR}
+	for dir in drafts rfc; do \
 		${MKDIR} ${STAGEDIR}${DOCSDIR}/$${dir}; \
 		${INSTALL_DATA} ${WRKSRC}/doc/$${dir}/* ${STAGEDIR}${DOCSDIR}/$${dir}; \
 	done
-	@for prog in ldapcompare ldapdelete ldapexop ldapmodify ldapmodrdn ldappasswd ldapsearch ldapurl ldapwhoami; do\
+	for prog in ldapcompare ldapdelete ldapexop ldapmodify ldapmodrdn ldappasswd ldapsearch ldapurl ldapwhoami; do\
 		${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/$${prog}; \
 	done
 
-	@for library in lber ldap ldap_r; do \
+	for library in lber ldap ldap_r; do \
 		${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/lib$${library}-${OPENLDAP_MAJOR}.so.${OPENLDAP_SHLIB_MAJOR}; \
 	done
 .else
-	@${MKDIR} ${STAGEDIR}${LDAP_RUN_DIR}
+	${MKDIR} ${STAGEDIR}${LDAP_RUN_DIR}
 .if ${PORT_OPTIONS:MSMBPWD}
-	@(cd ${WRKSRC}/contrib/slapd-modules/smbk5pwd && \
+	(cd ${WRKSRC}/contrib/slapd-modules/smbk5pwd && \
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} \
 		${MAKE_ARGS} prefix="${PREFIX}" install)
 	${RM} ${STAGEDIR}${PREFIX}/libexec/openldap/smbk5pwd.a
 .endif
 .if ${PORT_OPTIONS:MSHA2}
-	@(cd ${WRKSRC}/contrib/slapd-modules/passwd/sha2 && \
+	(cd ${WRKSRC}/contrib/slapd-modules/passwd/sha2 && \
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} \
 		${MAKE_ARGS} prefix="${PREFIX}" install)
 	${RM} ${STAGEDIR}${PREFIX}/libexec/openldap/pw-sha2.a
 .endif
 .if ${PORT_OPTIONS:MLASTBIND}
-	@(cd ${WRKSRC}/contrib/slapd-modules/lastbind && \
+	(cd ${WRKSRC}/contrib/slapd-modules/lastbind && \
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} \
 		${MAKE_ARGS} prefix="${PREFIX}" install)
 	${RM} ${STAGEDIR}${PREFIX}/libexec/openldap/lastbind.a
 .endif
 .if ${PORT_OPTIONS:MDYNAMIC_BACKENDS} || ${PORT_OPTIONS:MSMBPWD} || ${PORT_OPTIONS:MSHA2}
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/libexec/openldap/*.so
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/libexec/openldap/*.so
 .endif
 .endif # defined(CLIENT_ONLY)
 
