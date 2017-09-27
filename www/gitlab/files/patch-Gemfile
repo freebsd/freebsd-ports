@@ -1,6 +1,6 @@
 --- Gemfile.orig	2017-09-06 21:34:31 UTC
 +++ Gemfile
-@@ -1,12 +1,12 @@
+@@ -1,48 +1,47 @@
  source 'https://rubygems.org'
  
 -gem 'rails', '4.2.8'
@@ -15,7 +15,12 @@
  
  # Default values for AR models
  gem 'default_value_for', '~> 3.0.0'
-@@ -17,32 +17,31 @@ gem 'pg', '~> 0.18.2', group: :postgres
+ 
+ # Supported DBs
+-gem 'mysql2', '~> 0.3.16', group: :mysql
+-gem 'pg', '~> 0.18.2', group: :postgres
++gem 'mysql2', '>= 0.3.16', group: :mysql
++gem 'pg', '>= 0.18.2', group: :postgres
  
  gem 'rugged', '~> 0.25.1.1'
  
