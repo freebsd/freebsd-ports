@@ -1,6 +1,6 @@
---- ./config/search.orig	2013-11-20 01:26:52.000000000 +0000
-+++ ./config/search	2013-11-20 18:03:47.000000000 +0000
-@@ -16,6 +16,12 @@
+--- config/search.orig	2015-08-30 11:56:26 UTC
++++ config/search
+@@ -16,6 +16,12 @@ text=Web Search
  uri=http://www.google.com/search?q=%s
  token=g
  
