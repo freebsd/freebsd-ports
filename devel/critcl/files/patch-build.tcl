@@ -1,6 +1,6 @@
---- build.tcl.orig	2017-08-25 03:29:15 UTC
-+++ build.tcl
-@@ -323,7 +323,7 @@ proc _install {args} {
+--- build.tcl.orig	2017-08-25 03:29:15.000000000 +0000
++++ build.tcl	2017-09-27 10:53:21.223065000 +0000
+@@ -323,7 +323,7 @@
  	set dsta [file dirname [file dirname [file normalize [info nameofexecutable]/___]]]
      } else {
  	set dstl [lindex $args 0]
@@ -9,7 +9,7 @@
      }
  
      set selfdir [file dirname $me]
-@@ -369,7 +369,7 @@ proc _install {args} {
+@@ -369,7 +369,7 @@
  	set theapp [critapp $dsta]
  
  	set    c [open $theapp w]
@@ -18,3 +18,11 @@
  	close $c
  	+x $theapp
  
+@@ -395,6 +395,7 @@
+ 	    lappend cmd [info nameofexecutable]
+ 	}
+ 	lappend cmd $theapp
++	lappend cmd -cache [file join $selfdir cache]
+ 	if {$target ne {}} {
+ 	    lappend cmd -target $target
+ 	}
