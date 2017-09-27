@@ -8,6 +8,7 @@
     SUBDIR += berkeley-db
     SUBDIR += bluej
     SUBDIR += bootstrap-openjdk
+    SUBDIR += bootstrap-openjdk6
     SUBDIR += bouncycastle
     SUBDIR += bouncycastle15
     SUBDIR += cacao
