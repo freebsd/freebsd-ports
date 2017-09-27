@@ -13,30 +13,41 @@ MASTER_SITES=		ftp://ftp.OpenLDAP.org/pub/OpenLDAP/%SUBDIR%/ \
 			ftp://sunsite.cnlab-switch.ch/mirror/OpenLDAP/%SUBDIR%/ \
 			http://www.openldap.org/software/download/OpenLDAP/%SUBDIR%/
 MASTER_SITE_SUBDIR=	openldap-release
-
 .if defined(CLIENT_ONLY)
 .if ${CLIENT_ONLY} == sasl
 PKGNAMESUFFIX=		-sasl-client
-COMMENT=		Open source LDAP client implementation with SASL2 support
-CONFLICTS=		${PKGNAMEPREFIX}${PORTNAME}-client-2.* \
-			${PKGNAMEPREFIX}${PORTNAME}-sasl-client-2.[0-3].*
 .else
 PKGNAMESUFFIX=		-client
-COMMENT=		Open source LDAP client implementation
-CONFLICTS=		${PKGNAMEPREFIX}${PORTNAME}-client-2.[0-3].* \
-			${PKGNAMEPREFIX}${PORTNAME}-sasl-client-2.*
 .endif
 .else
 PKGNAMESUFFIX?=		-server
 .endif
 
 MAINTAINER=		delphij@FreeBSD.org
-COMMENT?=		Open source LDAP server implementation
+.if defined(CLIENT_ONLY)
+.if ${CLIENT_ONLY} == sasl
+COMMENT=		Open source LDAP client implementation with SASL2 support
+.else
+COMMENT=		Open source LDAP client implementation
+.endif
+.else
+COMMENT=		Open source LDAP server implementation
+.endif
 
 LICENSE=		OPENLDAP
 LICENSE_NAME=		OpenLDAP Public License
 LICENSE_FILE=		${WRKSRC}/LICENSE
 LICENSE_PERMS=		dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+
+.if defined(CLIENT_ONLY)
+.if ${CLIENT_ONLY} == sasl
+CONFLICTS=		${PKGNAMEPREFIX}${PORTNAME}-client-2.* \
+			${PKGNAMEPREFIX}${PORTNAME}-sasl-client-2.[0-3].*
+.else
+CONFLICTS=		${PKGNAMEPREFIX}${PORTNAME}-client-2.[0-3].* \
+			${PKGNAMEPREFIX}${PORTNAME}-sasl-client-2.*
+.endif
+.endif
 
 GNU_CONFIGURE=		yes
 # :keepla because port uses lt_dlopen
