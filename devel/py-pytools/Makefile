@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	pytools
-PORTVERSION=	2017.4
+PORTVERSION=	2017.6
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,7 +18,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}appdirs>=1.4.0:devel/py-appdirs \
 		${PYTHON_PKGNAMEPREFIX}six>=1.8.0:devel/py-six
 
 NO_ARCH=	yes
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	autoplist concurrent distutils
 USES=		python
 
 .include <bsd.port.mk>
