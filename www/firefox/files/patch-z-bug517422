@@ -110,7 +110,7 @@ index 93ecda4319af..ff674c64ea07 100644
    , mDumpFile(nullptr)
    , mState(INITIALIZED)
    , mDataSource(aSource)
-@@ -130,9 +132,11 @@ AudioStream::~AudioStream()
+@@ -135,9 +137,11 @@ AudioStream::~AudioStream()
    if (mDumpFile) {
      fclose(mDumpFile);
    }
@@ -119,9 +119,9 @@ index 93ecda4319af..ff674c64ea07 100644
      soundtouch::destroySoundTouchObj(mTimeStretcher);
    }
 +#endif
- }
- 
- size_t
+ #if defined(XP_WIN)
+   if (XRE_IsContentProcess()) {
+     audio::AudioNotificationReceiver::Unregister(this);
 @@ -151,7 +155,11 @@ nsresult AudioStream::EnsureTimeStretcherInitializedUnlocked()
  {
    mMonitor.AssertCurrentThreadOwns();

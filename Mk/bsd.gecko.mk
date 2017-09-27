@@ -388,10 +388,12 @@ post-patch-SNDIO-on:
 		${MOZSRC}/media/webrtc/signaling/test/common.build
 .endif
 
-.if ${PORT_OPTIONS:MRUST}
+.if ${PORT_OPTIONS:MRUST} || ${MOZILLA_VER:R:R} >= 54
 BUILD_DEPENDS+=	rust>=1.19.0_2:${RUST_PORT}
 RUST_PORT?=		lang/rust
+. if ${MOZILLA_VER:R:R} < 54
 MOZ_OPTIONS+=	--enable-rust
+. endif
 .else
 MOZ_OPTIONS+=	--disable-rust
 .endif
@@ -401,6 +403,9 @@ MOZ_OPTIONS+=	--enable-debug --disable-release
 STRIP=	# ports/184285
 .else
 MOZ_OPTIONS+=	--disable-debug --disable-debug-symbols --enable-release
+. if ${MOZILLA_VER:R:R} >= 56
+MOZ_OPTIONS+=	--enable-rust-simd
+. endif
 .endif
 
 .if ${PORT_OPTIONS:MDTRACE}

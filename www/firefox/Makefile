@@ -2,30 +2,31 @@
 # $FreeBSD$
 
 PORTNAME=	firefox
-DISTVERSION=	55.0.3
+DISTVERSION=	56.0
 DISTVERSIONSUFFIX=.source
-PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	MOZILLA/${PORTNAME}/releases/${DISTVERSION}/source \
-		MOZILLA/${PORTNAME}/candidates/${DISTVERSION}-candidates/build2/source
+		MOZILLA/${PORTNAME}/candidates/${DISTVERSION}-candidates/build6/source
 
 MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	Web browser based on the browser portion of Mozilla
 
-BUILD_DEPENDS=	nspr>=4.15:devel/nspr \
-		nss>=3.31.1:security/nss \
-		libevent>=2.0.22:devel/libevent \
-		harfbuzz>=1.4.6:print/harfbuzz \
+BUILD_DEPENDS=	nspr>=4.16:devel/nspr \
+		nss>=3.32.1:security/nss \
+		icu>=59.1,1:devel/icu \
+		libevent>=2.1.8:devel/libevent \
+		harfbuzz>=1.4.7:print/harfbuzz \
 		graphite2>=1.3.10:graphics/graphite2 \
-		png>=1.6.28:graphics/png \
+		png>=1.6.31:graphics/png \
 		libvorbis>=1.3.5,3:audio/libvorbis \
 		libvpx>=1.5.0:multimedia/libvpx \
-		sqlite3>=3.19.2:databases/sqlite3 \
+		sqlite3>=3.19.3:databases/sqlite3 \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3 \
 		v4l_compat>0:multimedia/v4l_compat \
 		autoconf-2.13:devel/autoconf213 \
 		yasm:devel/yasm \
+		llvm40>0:devel/llvm40 \
 		zip:archivers/zip
 #		soundtouch>=1.9.0:audio/soundtouch \
 
@@ -42,16 +43,13 @@ USES=		tar:xz
 
 FIREFOX_ICON=		${MOZILLA}.png
 FIREFOX_ICON_SRC=	${PREFIX}/lib/${MOZILLA}/browser/chrome/icons/default/default48.png
+MOZ_EXPORT=	BINDGEN_CFLAGS="-isystem${LOCALBASE}/include/nspr \
+			-isystem${LOCALBASE}/include/pixman-1" # XXX bug 1341234
 MOZ_OPTIONS=	--enable-application=browser \
 		--enable-official-branding
 
-OPTIONS_DEFINE=		RUST
 OPTIONS_DEFAULT=	BUNDLED_CAIRO
 OPTIONS_EXCLUDE=	GNOMEUI
-# XXX lang/rust currently builds only on these platforms
-OPTIONS_DEFAULT_aarch64=RUST
-OPTIONS_DEFAULT_amd64=	RUST
-OPTIONS_DEFAULT_i386=	RUST
 
 .include "${.CURDIR}/../../www/firefox/Makefile.options"
 
