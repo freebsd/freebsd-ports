@@ -14,7 +14,8 @@ LICENSE=	GPLv2
 
 ONLY_FOR_ARCHS=	amd64 i386
 
-RUN_DEPENDS=	java-zoneinfo>0:java/java-zoneinfo
+RUN_DEPENDS=	java-zoneinfo>0:java/java-zoneinfo \
+		${LOCALBASE}/lib/libfreetype.so.6:print/freetype2
 
 DISTINFO_FILE=	${.CURDIR}/distinfo.${ARCH}
 DISTVERSION_amd64=	r450701
