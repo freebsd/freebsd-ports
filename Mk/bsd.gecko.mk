@@ -359,12 +359,7 @@ MOZ_OPTIONS+=	--enable-alsa
 .endif
 
 .if ${PORT_OPTIONS:MPULSEAUDIO}
-. if ${PORT_OPTIONS:MALSA}
-BUILD_DEPENDS+=	pulseaudio>0:audio/pulseaudio
-. else
-# pull pulse package if we cannot fallback to another backend
-LIB_DEPENDS+=	libpulse.so:audio/pulseaudio
-. endif
+BUILD_DEPENDS+=	${LOCALBASE}/include/pulse/pulseaudio.h:audio/pulseaudio
 MOZ_OPTIONS+=	--enable-pulseaudio
 .else
 MOZ_OPTIONS+=	--disable-pulseaudio
