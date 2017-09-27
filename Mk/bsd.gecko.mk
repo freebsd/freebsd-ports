@@ -358,6 +358,11 @@ RUN_DEPENDS+=	alsa-lib>=1.1.1_1:audio/alsa-lib
 MOZ_OPTIONS+=	--enable-alsa
 .endif
 
+.if ${PORT_OPTIONS:MJACK}
+BUILD_DEPENDS+=	${LOCALBASE}/include/jack/jack.h:audio/jack
+MOZ_OPTIONS+=	--enable-jack
+.endif
+
 .if ${PORT_OPTIONS:MPULSEAUDIO}
 BUILD_DEPENDS+=	${LOCALBASE}/include/pulse/pulseaudio.h:audio/pulseaudio
 MOZ_OPTIONS+=	--enable-pulseaudio
