@@ -8,7 +8,7 @@ CATEGORIES=	security
 MASTER_SITES=	http://libtom.net/files/
 DISTNAME=	crypt-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	Comprehensive, modular, and portable cryptographic toolkit
 
 LICENSE=	PD
