@@ -1,4 +1,4 @@
-@unexec %%RC_DIR%%/etc/rc.d/slapd stop 2>&1 >/dev/null || true
+@preunexec %%RC_DIR%%/etc/rc.d/slapd stop 2>&1 >/dev/null || true
 %%ETCDIR%%/schema/README
 %%ETCDIR%%/schema/collective.ldif
 @sample %%ETCDIR%%/schema/collective.schema.sample
