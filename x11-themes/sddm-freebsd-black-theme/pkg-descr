@@ -1,0 +1,7 @@
+Simple SDDM theme inspired on the FBSD SLiM theme.
+
+This theme was created to make available an option to have a
+branded x11/sddm. It is following the official FreeBSD logo and
+colors. The FBSD SLiM theme was used as inpiration.
+
+WWW: https://github.com/lebarondemerde/sddm-freebsd-black-theme
