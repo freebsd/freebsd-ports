@@ -1,3 +1,4 @@
 bin/charmtimetracker
 share/applications/charmtimetracker.desktop
+%%DOCSDIR%%/ReadMe.txt
 share/icons/hicolor/128x128/apps/Charm-128x128.png
