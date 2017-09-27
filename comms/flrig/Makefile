@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	flrig
-PORTVERSION=	1.3.34
+PORTVERSION=	1.3.35
 CATEGORIES=	comms hamradio
 MASTER_SITES=	SF/fldigi/${PORTNAME}
 
