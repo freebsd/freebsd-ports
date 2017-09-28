@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gcc
-PORTVERSION=	6.4.1.s20170920
+PORTVERSION=	6.4.1.s20170927
 CATEGORIES=	lang java
 MASTER_SITES=	GCC/snapshots/${DIST_VERSION}
 PKGNAMESUFFIX=	${SUFFIX}-devel
@@ -25,6 +25,8 @@ RUN_DEPENDS+=	${LOCALBASE}/bin/as:devel/binutils
 .if defined(MAINTAINER_MODE)
 BUILD_DEPENDS+=	runtest:misc/dejagnu
 .endif
+
+CONFLICTS=	gcc6-6.*
 
 CPE_VENDOR=	gnu
 CPE_VERSION=	${GCC_VERSION}
