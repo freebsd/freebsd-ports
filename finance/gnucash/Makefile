@@ -2,8 +2,8 @@
 #   $MCom: ports/finance/gnucash/Makefile,v 1.26 2008/12/31 03:25:18 mezz Exp $
 
 PORTNAME=	gnucash
-PORTVERSION=	2.6.17
-PORTREVISION=	2
+PORTVERSION=	2.6.18
+DISTVERSIONSUFFIX=-1
 CATEGORIES=	finance gnome
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20%28stable%29/${PORTVERSION}
 
@@ -64,9 +64,9 @@ GUILE2_LIB_DEPENDS=     libguile-2.0.so:lang/guile2
 GUILE2_BUILD_DEPENDS=	slib-guile2>0:lang/slib-guile2
 GUILE2_RUN_DEPENDS=	slib-guile2>0:lang/slib-guile2
 
-USE_XORG=	x11
 USES=		compiler:c++11-lib desktop-file-utils gettext gmake libtool localbase \
 		perl5 pkgconfig shebangfix tar:bzip2
+USE_XORG=	x11
 USE_CXXSTD=	c++11
 INSTALLS_ICONS=	yes
 USE_GNOME+=	cairo gtk20 intltool libgnomecanvas libxml2 libxslt
@@ -75,6 +75,7 @@ USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--disable-error-on-warning \
 		--disable-doxygen
 SHEBANG_FILES=	src/gnc-test-env.pl src/quotes/gnc-fq-dump
+WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 
 GLIB_SCHEMAS=	org.gnucash.dialogs.business.gschema.xml \
 		org.gnucash.dialogs.checkprinting.gschema.xml \

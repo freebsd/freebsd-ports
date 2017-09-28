@@ -1,6 +1,6 @@
---- configure.orig	2016-12-17 19:13:08 UTC
+--- configure.orig	2017-09-22 22:13:51 UTC
 +++ configure
-@@ -20532,6 +20532,7 @@ $as_echo_n "checking for guile-2.0 >= 2.
+@@ -21090,6 +21090,7 @@ $as_echo_n "checking for guile-2.0 >= 2.0.0... " >&6; 
              { $as_echo "$as_me:${as_lineno-$LINENO}: result: yes" >&5
  $as_echo "yes" >&6; }
              succeeded=yes
