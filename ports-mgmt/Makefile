@@ -16,7 +16,6 @@
     SUBDIR += genplist
     SUBDIR += hs-porte
     SUBDIR += jailaudit
-    SUBDIR += kpackagekit
     SUBDIR += lsknobs
     SUBDIR += managepkg
     SUBDIR += mkreadmes
@@ -25,7 +24,6 @@
     SUBDIR += p5-FreeBSD-Ports
     SUBDIR += p5-FreeBSD-Ports-INDEXhash
     SUBDIR += packagekit
-    SUBDIR += packagekit-qt4
     SUBDIR += pchecker
     SUBDIR += pkg
     SUBDIR += pkg-devel
