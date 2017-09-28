@@ -2,7 +2,7 @@
 
 PORTNAME=	yarn
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.0.1
+DISTVERSION=	1.0.2
 CATEGORIES=	www
 MASTER_SITES=	https://yarnpkg.com/downloads/${PORTVERSION}/
 
@@ -27,7 +27,7 @@ NODE_RUN_DEPENDS=	node>=0.8.0:www/node
 NODE6_RUN_DEPENDS=	node6>=0.8.0:www/node6
 NODE4_RUN_DEPENDS=	node4>=0.8.0:www/node4
 
-HADOOPCOMPAT_CONFLICTS_OFF=	hadoop2*
+HADOOPCOMPAT_CONFLICTS_INSTALL_OFF=	hadoop2*
 
 NO_ARCH=	yes
 NO_BUILD=	yes
@@ -37,8 +37,6 @@ post-patch:
 	@${REINPLACE_CMD} -i '' \
 		-e 's|"installationMethod": "tar"|"installationMethod": "pkg"|g' \
 		${WRKSRC}/package.json
-	@${REINPLACE_CMD} -i '' -e 's%Linux)%Linux|FreeBSD)%g' \
-		${WRKSRC}/bin/yarn
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/lib/node_modules/yarn
