@@ -1,4 +1,6 @@
-@sample(%%MAILOWN%%,%%MAILGRP%%,660) etc/authlib/authldaprc.sample
-@sample etc/openldap/schema/authldap.schema.sample
+@postunexec if cmp -s %D/etc/authlib/authldaprc.dist %D/etc/authlib/authldaprc; then rm -f %D/etc/authlib/authldaprc; fi
+@(%%MAILOWN%%,%%MAILGRP%%,660) etc/authlib/authldaprc.dist
+@postexec %%LOCALBASE%%/share/sysconftool/sysconftool %D/etc/authlib/authldaprc
+@sample etc/openldap/schema/authldap.schema.dist
 lib/courier-authlib/libauthldap.so
 %%PORTDOCS%%%%DOCSDIR%%/README.ldap
