@@ -315,6 +315,23 @@ TOOLS_DIR+=	${${t}:S|/${BUILD_${t}}$||}
 CONFIGURE_ARGS+=	--with-tools-dir="${TOOLS_DIR:u:S/ /:/g}"
 .endif
 
+BOOTSTRAP_JDKS=	${LOCALBASE}/openjdk8 \
+		${LOCALBASE}/openjdk7 \
+		${LOCALBASE}/bootstrap-openjdk8
+
+# do we have valid native jdk installed?
+.for BJDK in ${BOOTSTRAP_JDKS}
+.  if !defined(BOOTSTRAPJDKDIR) && exists(${BJDK}/bin/javac)
+BOOTSTRAPJDKDIR=	${BJDK}
+.  endif
+.endfor
+
+# if no valid jdk found, set dependency
+.if !defined(BOOTSTRAPJDKDIR)
+BOOTSTRAPJDKDIR?=	${LOCALBASE}/bootstrap-openjdk8
+BUILD_DEPENDS+=		${BOOTSTRAPJDKDIR}/bin/javac:java/bootstrap-openjdk8
+.endif
+
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == armv6 || ${ARCH} == armv7 || ${ARCH} == i386
@@ -328,31 +345,6 @@ JDK_BUILD_JVM=	server
 .else
 JDK_BUILD_JVM=	zero
 LIB_DEPENDS+=	libffi.so:devel/libffi
-.endif
-
-BOOTSTRAP_JDKS=	${LOCALBASE}/openjdk8 \
-		${LOCALBASE}/openjdk7
-.if ${ARCH} == armv6 || ${ARCH} == armv7
-BOOTSTRAP_JDKS+=	${LOCALBASE}/bootstrap-openjdk
-.endif
-
-# do we have valid native jdk installed?
-.for BJDK in ${BOOTSTRAP_JDKS}
-.  if !defined(BOOTSTRAPJDKDIR) && exists(${BJDK}/bin/javac)
-BOOTSTRAPJDKDIR=	${BJDK}
-.  endif
-.endfor
-
-# if no valid jdk found, set dependency
-.if !defined(BOOTSTRAPJDKDIR)
-.  if ${ARCH} == armv6 || ${ARCH} == armv7
-# bootstrap-openjdk is based on openjdk7 and can compile openjdk8
-BOOTSTRAPJDKDIR?=	${LOCALBASE}/bootstrap-openjdk
-BUILD_DEPENDS+=		${BOOTSTRAPJDKDIR}/bin/javac:java/bootstrap-openjdk
-.  else
-BOOTSTRAPJDKDIR?=	${LOCALBASE}/openjdk7
-BUILD_DEPENDS+=		${BOOTSTRAPJDKDIR}/bin/javac:java/openjdk7
-.  endif
 .endif
 
 .if ${COMPILER_TYPE} == clang
