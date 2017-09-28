@@ -157,34 +157,19 @@ post-extract:
 	${INSTALL_DATA} ${FILESDIR}/vietnamese_viscii.vim ${WRKSRC}/runtime/keymap
 
 post-patch:
-	@${FIND} ${WRKSRC}/ -name 'Makefile' | ${XARGS} ${REINPLACE_CMD} -e 's| $$<| $$>|'
-	@${REINPLACE_CMD} -e 's|-liconv|${ICONV_LIB}|g' ${WRKSRC}/src/auto/configure
 	@${ECHO_CMD} '#define SYS_VIMRC_FILE "'${ETCDIR}'/vimrc"' >> ${WRKSRC}/src/feature.h
 	@${ECHO_CMD} '#define SYS_GVIMRC_FILE "'${ETCDIR}'/gvimrc"' >> ${WRKSRC}/src/feature.h
-.if empty(PORT_OPTIONS:MPYTHON)
-	@${REINPLACE_CMD} -e 1d ${WRKSRC}/runtime/tools/demoserver.py
-.endif
-
-post-patch-EXUBERANT_CTAGS-off:
-	@${FIND} ${WRKSRC}/runtime/ -name 'menu*.vim' -print0 | ${XARGS} -0 ${REINPLACE_CMD} -e 's|ctags -R \.|${FIND} . -type f \\\| ${XARGS} ctags|g'
-
-post-patch-EXUBERANT_CTAGS-on:
-	@${FIND} ${WRKSRC}/runtime/ -name 'menu*.vim' -print0 | ${XARGS} -0 ${REINPLACE_CMD} -e 's|ctags -R \.|exctags -R .|g'
+	@${REINPLACE_CMD} -e 's|-liconv|${ICONV_LIB}|g; s|/usr/local|${LOCALBASE}|g' \
+		${WRKSRC}/src/auto/configure
 
 pre-configure:
 	@${CP} ${WRKSRC}/src/config.mk.dist ${WRKSRC}/src/auto/config.mk
 	@${DO_MAKE_BUILD} -C ${WRKSRC}/src distclean
-	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
-		-e 's|\$$gtk_config_prefix/bin/gtk-config|\$${GTK_CONFIG}|g' \
-		-e 's|\$$gtk_config_exec_prefix/bin/gtk-config|\$${GTK_CONFIG}|g' \
-		-e 's|set dummy lua;|set dummy ${LUA_CMD};|g' ${WRKSRC}/src/auto/configure
-
-pre-configure-XTERM_SAVE-on:
-	@${REINPLACE_CMD} -e '/FEAT_XTERM_SAVE/ s|.*|#define FEAT_XTERM_SAVE|' ${WRKSRC}/src/feature.h
 
 post-configure:
 	@${DO_MAKE_BUILD} -C ${WRKSRC}/src scratch config
-	@${REINPLACE_CMD} -e 's|#define HAVE_SYSINFO 1|/* #undef HAVE_SYSINFO */|' ${WRKSRC}/src/auto/config.h
+# Needed when devel/libsysinfo is installed:
+	@${REINPLACE_CMD} -e '/#define HAVE_SYSINFO 1/ d' ${WRKSRC}/src/auto/config.h
 
 post-install:
 	@${RM} ${STAGEDIR}${PREFIX}/bin/ex
@@ -192,6 +177,23 @@ post-install:
 .for F in eview evim gview gvim gvimdiff rgview rgvim rview rvim vimdiff
 	${LN} -sf vim ${STAGEDIR}${PREFIX}/bin/$F
 .endfor
+
+# OPTIONS
+post-patch-EXUBERANT_CTAGS-off:
+	@${FIND} ${WRKSRC}/runtime/ -name 'menu*.vim' -print0 | ${XARGS} -0 ${REINPLACE_CMD} -e 's!ctags -R \.!${FIND} . -type f \\| ${XARGS} ctags!g'
+
+post-patch-EXUBERANT_CTAGS-on:
+	@${FIND} ${WRKSRC}/runtime/ -name 'menu*.vim' -print0 | ${XARGS} -0 ${REINPLACE_CMD} -e 's|ctags -R \.|exctags -R .|g'
+
+post-patch-LUA-on:
+	@${REINPLACE_CMD} -e 's|set dummy lua;|set dummy ${LUA_CMD};|g' ${WRKSRC}/src/auto/configure
+
+post-patch-PYTHON-off:
+# Work around qa-check shebang error
+	@${REINPLACE_CMD} -e 1d ${WRKSRC}/runtime/tools/demoserver.py
+
+post-patch-XTERM_SAVE-on:
+	@${REINPLACE_CMD} -e '/FEAT_XTERM_SAVE/ s|.*|#define FEAT_XTERM_SAVE|' ${WRKSRC}/src/feature.h
 
 post-install-DEFAULT_VIMRC-on:
 	@${MKDIR} ${STAGEDIR}${ETCDIR}
