@@ -162,6 +162,7 @@ sbin/sserver
 sbin/uuserver
 share/et/et_c.awk
 share/et/et_h.awk
+%%NLS%%share/locale/de/LC_MESSAGES/mit-krb5.mo
 %%NLS%%share/locale/en_US/LC_MESSAGES/mit-krb5.mo
 %%LDAP%%%%DATADIR%%/kerberos.schema
 %%LDAP%%%%DATADIR%%/kerberos.ldif
