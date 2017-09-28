@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Geo-Coder-OpenCage
-PORTVERSION=	0.11
+PORTVERSION=	0.12
 CATEGORIES=	misc geography perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,7 +15,6 @@ LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	p5-JSON>=2.53:converters/p5-JSON \
-		p5-List-MoreUtils>=0.33:lang/p5-List-MoreUtils \
 		p5-URI>=1.60:net/p5-URI
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Exception>=0.32:devel/p5-Test-Exception \
