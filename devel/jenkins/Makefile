@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	jenkins
-PORTVERSION=	2.80
+PORTVERSION=	2.81
 CATEGORIES=	devel java
 MASTER_SITES=	http://mirrors.jenkins-ci.org/war/${PORTVERSION}/
 DISTNAME=	jenkins
@@ -13,8 +13,6 @@ MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	Open-source continuous integration server
 
 LICENSE=	MIT
-
-IGNORE=	have been identified a critical regression in 2.80, and are preparing a 2.81
 
 CONFLICTS=	jenkins-lts-[0-9]*
 USE_JAVA=	yes
