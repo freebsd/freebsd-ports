@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	react-rails
-PORTVERSION=	2.2.1
+PORTVERSION=	2.3.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -14,11 +14,10 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	rubygem-babel-transpiler>=0.7.0:textproc/rubygem-babel-transpiler \
 		rubygem-connection_pool>=0:net/rubygem-connection_pool \
 		rubygem-execjs>=0:devel/rubygem-execjs \
-		rubygem-railties4>0:www/rubygem-railties4 \
+		rubygem-railties4>=3.2:www/rubygem-railties4 \
 		rubygem-tilt>=0:devel/rubygem-tilt
 
 NO_ARCH=	yes
-
 USE_RUBY=	yes
 USES=		gem
 
