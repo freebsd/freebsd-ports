@@ -1,6 +1,14 @@
---- src/python/grpcio/grpc_core_dependencies.py.orig	2017-04-27 21:44:50 UTC
+--- src/python/grpcio/grpc_core_dependencies.py.orig	2017-09-27 21:43:56 UTC
 +++ src/python/grpcio/grpc_core_dependencies.py
-@@ -630,53 +630,4 @@ CORE_SOURCE_FILES = [
+@@ -610,7 +610,6 @@ CORE_SOURCE_FILES = [
+   'third_party/boringssl/ssl/ssl_file.c',
+   'third_party/boringssl/ssl/ssl_lib.c',
+   'third_party/boringssl/ssl/ssl_privkey.c',
+-  'third_party/boringssl/ssl/ssl_privkey_cc.cc',
+   'third_party/boringssl/ssl/ssl_session.c',
+   'third_party/boringssl/ssl/ssl_stat.c',
+   'third_party/boringssl/ssl/ssl_transcript.c',
+@@ -638,53 +637,4 @@ CORE_SOURCE_FILES = [
    'third_party/zlib/trees.c',
    'third_party/zlib/uncompr.c',
    'third_party/zlib/zutil.c',
