@@ -25,9 +25,6 @@ PATCH_SITES=	ftp://ftp.netbsd.org/pub/pkgsrc/current/pkgsrc/audio/festival/patch
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Multi-lingual speech synthesis system
 
-BROKEN_aarch64=		Fails to link: arm64_unknown.mak: No such file or directory
-BROKEN_powerpc64=	Fails to link: powerpc_unknown.mak: No such file or directory
-
 OPTIONS_DEFINE=	NAS ESD
 OPTIONS_DEFAULT=NAS ESD
 ESD_DESC=	${ESOUND_DESC}
@@ -83,7 +80,7 @@ do-configure:
 		${FALSE}; \
 	fi
 	# This step helps non-i386 systems and is harmless on i386
-	-${LN} -s ix86_FreeBSD.mak ${WRKDIR}/$d/config/systems/${ARCH:S/armv6/arm/}_unknown.mak
+	-${LN} -s ix86_FreeBSD.mak ${WRKDIR}/$d/config/systems/${MACHINE}_unknown.mak
 .endfor
 	@${REINPLACE_CMD} \
 	    -e '/^CFLAGS *=/s|$$| ${CFLAGS}|' \
