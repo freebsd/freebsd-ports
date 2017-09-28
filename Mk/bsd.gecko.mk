@@ -107,6 +107,10 @@ USES+=		compiler:c++11-lang
 USE_XORG+=	xcb
 .endif
 
+.if ${OPSYS} == FreeBSD && ${OSREL} == 11.1
+LLD_UNSAFE=	yes
+.endif
+
 MOZILLA_SUFX?=	none
 MOZSRC?=	${WRKSRC}
 WRKSRC?=	${WRKDIR}/mozilla
