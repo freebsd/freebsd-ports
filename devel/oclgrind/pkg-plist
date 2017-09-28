@@ -9,11 +9,13 @@ include/oclgrind/Program.h
 include/oclgrind/Queue.h
 include/oclgrind/WorkGroup.h
 include/oclgrind/WorkItem.h
-include/oclgrind/clc.h
-include/oclgrind/clc32.pch
-include/oclgrind/clc64.pch
 include/oclgrind/common.h
 include/oclgrind/half.h
+include/oclgrind/opencl-c-1.2-32.pch
+include/oclgrind/opencl-c-1.2-64.pch
+include/oclgrind/opencl-c-2.0-32.pch
+include/oclgrind/opencl-c-2.0-64.pch
+include/oclgrind/opencl-c.h
 lib/liboclgrind-rt-icd.so
 lib/liboclgrind-rt.so
 lib/liboclgrind.so
