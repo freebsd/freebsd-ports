@@ -18,7 +18,9 @@ LICENSE_DISTFILES_GPLv2=	${DISTNAME}${EXTRACT_SUFX}
 
 PORTSCOUT=	ignore	# cannot handle the version in the directory
 
+.if !defined(MASTERDIR)
 BROKEN_aarch64=		fails to link: missing sbrk
+.endif
 
 USES=		cpe gmake pkgconfig tar:xz
 CPE_VENDOR=	e2fsprogs_project
