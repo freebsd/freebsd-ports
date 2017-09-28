@@ -6,10 +6,10 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 20170928:
-  AFFECTS: users of security/courier-authlib and it's modules
+  AFFECTS: users of security/courier-authlib and its modules
   AUTHOR: madpilot@FreeBSD.org
 
-  The affected ports have been modified to follow the upstrem
+  The affected ports have been modified to follow the upstream
   suggested best practice to use the sysconftool on installation.
 
   Please make sure your configuration files include all the comments
