@@ -8,7 +8,7 @@ PKGNAMEPREFIX=	bootstrap-
 DISTNAME=	${PORTNAME}-${ARCH}-${PORTVERSION}
 
 MAINTAINER=	jkim@FreeBSD.org
-COMMENT=	Oracle\'s Java 6 virtual machine release under the GPL v2
+COMMENT=	Java Development Kit 6
 
 LICENSE=	GPLv2
 
