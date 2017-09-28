@@ -14,15 +14,37 @@ LICENSE_NAME=	VIM License
 LICENSE_FILE=	${WRKSRC}/runtime/doc/uganda.txt
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-OPTIONS_DEFINE=		CSCOPE DEFAULT_VIMRC EXUBERANT_CTAGS NLS XTERM_SAVE
+USES=		cpe iconv ncurses pkgconfig shebangfix
+MAKE_JOBS_UNSAFE=	yes
+
+USE_GITHUB=	yes
+SHEBANG_FILES=	runtime/tools/demoserver.py runtime/tools/efm_perl.pl
+CPE_VERSION=	${PORTVERSION:R}
+PORTSCOUT=	site:https://github.com/vim/vim/releases
+
+PLIST_SUB=	VIM_VER=${VIM_VER}
+PORTDATA=	${VIM_VER}
+SLAVEDIRS=	editors/vim-lite
+REINPLACE_ARGS=	-i ''
+VIM_VER=	${PORTNAME}${PORTVERSION:R:S|.||g}
+
+ALL_TARGET=	# empty
+MAKE_ARGS+=	CC="${CC}" \
+		CONF_ARGS="--prefix=${PREFIX} ${CSCOPE_ARG}" \
+		STRIP="${STRIP_CMD}" \
+		VIMRUNTIMEDIR=${PREFIX}/share/vim/${VIM_VER} \
+		VIMRCLOC=${ETCDIR} \
+		CONF_OPT_MULTIBYTE=--enable-multibyte \
+		CONF_TERM_LIB=--with-tlib=ncurses
+
+# OPTIONS
+OPTIONS_DEFAULT=	CSCOPE DEFAULT_VIMRC EXUBERANT_CTAGS GTK2 LUA PERL PYTHON RUBY TCL
+OPTIONS_DEFINE=		CSCOPE DEFAULT_VIMRC EXUBERANT_CTAGS LITE NLS XTERM_SAVE
 OPTIONS_SINGLE=		UI
 OPTIONS_SINGLE_UI=	ATHENA CONSOLE GNOME GTK2 GTK3 MOTIF X11
 OPTIONS_GROUP=		LANGBIND
 OPTIONS_GROUP_LANGBIND=	LUA PERL PYTHON RUBY TCL
 OPTIONS_SUB=		yes
-
-# BROKEN: ruby.h: error: wrong number of arguments specified for 'deprecated' attribute
-OPTIONS_EXCLUDE_powerpc64=	RUBY
 
 DEFAULT_VIMRC_DESC=	Install bundled vimrc as default setting
 EXUBERANT_CTAGS_DESC=	Use exctags instead of ctags
@@ -35,53 +57,31 @@ CONSOLE_DESC=		Console/terminal mode
 
 LANGBIND_DESC=		Optional language bindings
 
-ALL_TARGET=	# empty
-MAKE_ARGS+=	CC="${CC}" CONF_ARGS="--prefix=${PREFIX} ${CSCOPE_ARG}" STRIP="${STRIP_CMD}"
-MAKE_ARGS+=	VIMRUNTIMEDIR=${PREFIX}/share/vim/${VIM_VER} VIMRCLOC=${ETCDIR}
-MAKE_ARGS+=	CONF_OPT_MULTIBYTE=--enable-multibyte CONF_TERM_LIB=--with-tlib=ncurses
-REINPLACE_ARGS=	-i ''
-USES=		cpe iconv ncurses pkgconfig shebangfix
-MAKE_JOBS_UNSAFE=	yes
-
-PLIST_SUB=	VIM_VER=${VIM_VER}
-PORTDATA=	${VIM_VER}
-VIM_VER=	${PORTNAME}${PORTVERSION:R:S|.||g}
-SLAVEDIRS=	editors/vim-lite
-
-USE_GITHUB=	yes
-SHEBANG_FILES=	runtime/tools/demoserver.py runtime/tools/efm_perl.pl
-CPE_VERSION=	${PORTVERSION:R}
-PORTSCOUT=	site:https://github.com/vim/vim/releases
+# BROKEN: ruby.h: error: wrong number of arguments specified for 'deprecated' attribute
+OPTIONS_EXCLUDE_powerpc64=	RUBY
 
 .if defined(LITE)
-PKGNAMESUFFIX+=	-lite
-CONFLICTS_INSTALL=	vim-[0-9]*
 OPTIONS_DEFAULT=DEFAULT_VIMRC
-OPTIONS_SLAVE=	CONSOLE
-OPTIONS_EXCLUDE:=	${OPTIONS_DEFINE:NDEFAULT_VIMRC} \
+OPTIONS_SLAVE=	CONSOLE LITE
+OPTIONS_EXCLUDE:=	${OPTIONS_DEFINE:NDEFAULT_VIMRC:NLITE} \
 			${OPTIONS_SINGLE_UI:NCONSOLE} \
 			${OPTIONS_GROUP_LANGBIND}
-MAKE_ARGS+=	CONF_OPT_GUI="--enable-gui=no --without-x" \
-		CONF_OPT_LUA=--disable-luainterp \
-		CONF_OPT_PERL=--disable-perlinterp \
-		CONF_OPT_PYTHON="--disable-pythoninterp --disable-python3interp" \
-		CONF_OPT_RUBY=--disable-rubyinterp \
-		CONF_OPT_TCL=--disable-tclinterp
-PLIST_SUB+=	NON_LITE="@comment "
 .else
-CONFLICTS_INSTALL=	vim-lite-[0-9]*
-OPTIONS_DEFAULT=CSCOPE DEFAULT_VIMRC EXUBERANT_CTAGS GTK2 LUA PERL PYTHON RUBY TCL
-MAKE_ARGS+=	CONF_OPT_FEAT=--with-features=huge \
-		CONF_OPT_INPUT=--enable-xim \
-		CONF_OPT_OUTPUT=--enable-fontset
-PLIST_SUB+=	NON_LITE=""
+OPTIONS_EXCLUDE=LITE
 .endif
 
 # GENERAL OPTIONS
 CSCOPE_MAKE_ARGS=	CONF_OPT_CSCOPE=--enable-cscope
+CSCOPE_MAKE_ARGS_OFF=	CONF_OPT_CSCOPE=--disable-cscope
 CSCOPE_RUN_DEPENDS=	cscope:devel/cscope
 
 EXUBERANT_CTAGS_RUN_DEPENDS=	exctags:devel/ctags
+
+LITE_CONFLICTS_INSTALL=		vim-[0-9]*
+LITE_CONFLICTS_INSTALL_OFF=	vim-lite-[0-9]*
+LITE_MAKE_ARGS_OFF=		CONF_OPT_FEAT=--with-features=huge \
+				CONF_OPT_INPUT=--enable-xim \
+				CONF_OPT_OUTPUT=--enable-fontset
 
 NLS_MAKE_ARGS=		CONF_OPT_NLS=--enable-nls
 NLS_MAKE_ARGS_OFF=	CONF_OPT_NLS=--disable-nls
@@ -125,17 +125,22 @@ X11_USE=		XORG=ice,sm,x11,xt
 
 # LANGUAGE BINDINGS
 LUA_MAKE_ARGS=		CONF_OPT_LUA=--enable-luainterp=dynamic CONF_OPT_LUA_PREFIX=--with-lua-prefix=${LOCALBASE}
+LUA_MAKE_ARGS_OFF=	CONF_OPT_LUA=--disable-luainterp
 LUA_USES=		lua
 
 PERL_MAKE_ARGS=		CONF_OPT_PERL=--enable-perlinterp
+PERL_MAKE_ARGS_OFF=	CONF_OPT_PERL=--disable-perlinterp
 PERL_USES=		perl5
 
+PYTHON_MAKE_ARGS_OFF=	CONF_OPT_PYTHON="--disable-pythoninterp --disable-python3interp"
 PYTHON_USES=		python
 
 RUBY_MAKE_ARGS=		CONF_OPT_RUBY=--enable-rubyinterp
+RUBY_MAKE_ARGS_OFF=	CONF_OPT_RUBY=--disable-rubyinterp
 RUBY_USE=		RUBY=yes
 
 TCL_MAKE_ARGS=		CONF_OPT_TCL="--enable-tclinterp --with-tclsh=tclsh${TCL_VER}"
+TCL_MAKE_ARGS_OFF=	CONF_OPT_TCL=--disable-tclinterp
 TCL_USES=		tcl:85+
 
 .include <bsd.port.pre.mk>
