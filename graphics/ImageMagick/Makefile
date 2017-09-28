@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	ImageMagick
-DISTVERSION=	6.9.8-9
-PORTREVISION=	1
+DISTVERSION=	6.9.9-15
 PORTEPOCH=	1
 CATEGORIES=	graphics perl5
 MASTER_SITES=	http://www.imagemagick.org/download/ \
@@ -36,7 +35,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libltdl.so:devel/libltdl
 
-PORTSCOUT?=	limit:6.*$$
+PORTSCOUT?=	limit:^6\.9\.
 
 CONFLICTS_INSTALL=	execline-[0-9]* # bin/import
 CONFLICTS_INSTALL+=	ImageMagick7 ImageMagick7-nox11 # bin/Magick++-config
@@ -62,10 +61,10 @@ PLIST_SUB=	PORTVERSION=${PORTVERSION:R}
 OPTIONS_DEFINE=	BZIP2 DOCS DJVU FFTW FONTCONFIG FPX FREETYPE \
 		GRAPHVIZ GSLIB JPEG2000 JBIG JPEG LCMS2 LZMA LQR MODULES \
 		OPENEXR OPENMP PANGO PDF PERL PNG SVG TESTS TIFF WEBP WMF \
-		THREADS X11 16BIT_PIXEL HDRI
-OPTIONS_DEFAULT=	16BIT_PIXEL BZIP2 FFTW FONTCONFIG FPX FREETYPE \
+		THREADS X11 16BIT_PIXEL HDRI RAW
+OPTIONS_DEFAULT=	16BIT_PIXEL BZIP2 FFTW FONTCONFIG FREETYPE \
 		JPEG2000 JBIG JPEG LCMS2 LZMA LQR MODULES PDF PERL PNG SVG \
-		TIFF WEBP WMF THREADS X11
+		TIFF WEBP WMF THREADS X11 RAW
 
 16BIT_PIXEL_DESC=	16bit pixel support
 JPEG2000_DESC=		OpenJPEG 2000 support via openjpeg
@@ -77,6 +76,12 @@ SVG_DESC=		SVG vector image format support (via librsvg)
 TESTS_DESC=		Run bundled self-tests after build
 #SIMD_CONFIGURE_WITH=	gcc-arch
 CONFIGURE_ARGS+=	--without-gcc-arch
+
+# libraw is by default liked to lcms2, whichs also ends up in IM regardless
+# of the IM LCMS option.
+RAW_CONFIGURE_WITH=	raw
+RAW_LIB_DEPENDS=	libraw_r.so:graphics/libraw \
+			liblcms2.so:graphics/lcms2
 
 .include <bsd.port.options.mk>
 
