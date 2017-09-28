@@ -1,4 +1,6 @@
-@sample(%%MAILOWN%%,%%MAILGRP%%,660) etc/authlib/authmysqlrc.sample
+@postunexec if cmp -s %D/etc/authlib/authmysqlrc.dist %D/etc/authlib/authmysqlrc; then rm -f %D/etc/authlib/authmysqlrc; fi
+@(%%MAILOWN%%,%%MAILGRP%%,660) etc/authlib/authmysqlrc.dist
+@postexec %%LOCALBASE%%/share/sysconftool/sysconftool %D/etc/authlib/authmysqlrc
 lib/courier-authlib/libauthmysql.so
 %%PORTDOCS%%%%DOCSDIR%%/README.authmysql.html
 %%PORTDOCS%%%%DOCSDIR%%/README.authmysql.myownquery

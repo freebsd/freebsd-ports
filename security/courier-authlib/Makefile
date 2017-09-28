@@ -3,7 +3,7 @@
 
 PORTNAME=	courier-authlib
 PORTVERSION=	0.68.0
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES?=	security mail
 .if defined(PKGNAMESUFFIX)
 MASTER_SITES=	SF/courier/authlib/${PORTVERSION}
@@ -34,7 +34,7 @@ OPTIONS_DEFINE+=	GDBM
 LIB_DEPENDS+=	libltdl.so:devel/libltdl \
 		libcourier-unicode.so:devel/courier-unicode
 
-USES=		iconv gmake libtool perl5 tar:bzip2
+USES=		iconv gmake libtool localbase perl5 tar:bzip2
 GNU_CONFIGURE=	yes
 USE_SUBMAKE=	yes
 
@@ -45,9 +45,6 @@ AUTHDAEMONVAR=	${LOCALSTATEDIR}/run/authdaemond
 
 VPOPMAILDIR?=	${LOCALBASE}/vpopmail
 USERDB?=	${PREFIX}/etc/userdb
-
-CPPFLAGS+=	-I${LOCALBASE}/include
-LIBS+=		-L${LOCALBASE}/lib
 
 CONFIGURE_ARGS=	--enable-unicode \
 		--disable-static \
@@ -71,6 +68,8 @@ PLIST_SUB+=	MAILOWN=${MAILOWN} MAILGRP=${MAILGRP}
 AUTHMOD=	auth${PKGNAMESUFFIX:S/-//:S/gdbm/db/}
 
 .if ${AUTHMOD} == authbase
+RUN_DEPENDS+=	${LOCALBASE}/share/sysconftool/sysconftool:devel/sysconftool
+
 CONFIGURE_ARGS+=--with-base --with-authpam --with-authpipe
 
 USERS=		${MAILOWN}
@@ -108,6 +107,7 @@ REMOVE_SUBDIRS+=makedat userdb
 .endif
 
 .if ${AUTHMOD} == authldap
+RUN_DEPENDS+=	${LOCALBASE}/share/sysconftool/sysconftool:devel/sysconftool
 DOCS=		README.ldap
 USE_OPENLDAP=	yes
 CONFIGURE_ARGS+=--with-authldap
@@ -116,6 +116,7 @@ CONFIGURE_ARGS+=--without-authldap
 .endif
 
 .if ${AUTHMOD} == authmysql
+RUN_DEPENDS+=	${LOCALBASE}/share/sysconftool/sysconftool:devel/sysconftool
 DOCS=		README.authmysql.html README.authmysql.myownquery
 USE_MYSQL=	yes
 CONFIGURE_ARGS+=--with-authmysql \
@@ -126,6 +127,7 @@ CONFIGURE_ARGS+=--without-authmysql
 .endif
 
 .if ${AUTHMOD} == authpgsql
+RUN_DEPENDS+=	${LOCALBASE}/share/sysconftool/sysconftool:devel/sysconftool
 DOCS=		README.authpostgres.html
 USES+=		pgsql
 CONFIGURE_ARGS+=--with-authpgsql
