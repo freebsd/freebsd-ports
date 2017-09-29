@@ -49,6 +49,7 @@
     SUBDIR += jakarta-commons-discovery
     SUBDIR += jakarta-commons-httpclient
     SUBDIR += jakarta-commons-lang
+    SUBDIR += jakarta-commons-lang3
     SUBDIR += jakarta-commons-logging
     SUBDIR += jakarta-commons-pool
     SUBDIR += jakarta-commons-primitives
