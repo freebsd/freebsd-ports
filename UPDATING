@@ -5,6 +5,26 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20170930:
+  AFFECTS: users of PHP and its modules
+  AUTHOR: eugen@FreeBSD.org
+
+  All lang/php* ports switched to depend on devel/oniguruma6
+  instead of previous oniguruma version some time ago.
+
+  If you have not moved from devel/oniguruma5 before and
+  have troubles updating PHP,
+
+  for users of portmaster:
+	portmaster -o devel/oniguruma6 devel/oniguruma5
+	portmaster -r devel/oniguruma6
+
+  for users of portupgrade:
+	portupgrade -o devel/oniguruma6 devel/oniguruma5
+	portupgrade -fr devel/oniguruma6
+
+  pkg should handle this automatically.
+
 20170928:
   AFFECTS: users of security/courier-authlib and its modules
   AUTHOR: madpilot@FreeBSD.org
