@@ -5,6 +5,6 @@ RESULTDIR=${RESULTDIR-/tmp}
 
 export TMPDIR RESULTDIR
 
-cd %%PREFIX%%/lib/unixbench
+cd %%PREFIX%%/libexec/unixbench
 
 exec ./Run "$@"
