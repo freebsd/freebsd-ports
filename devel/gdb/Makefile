@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gdb
-PORTVERSION=	8.0
-PORTREVISION=	3
+PORTVERSION=	8.0.1
 CATEGORIES=	devel
 MASTER_SITES=	GNU
 
@@ -11,6 +10,10 @@ MAINTAINER=	pizzamig@FreeBSD.org
 COMMENT=	GNU GDB of newer version than comes with the system
 
 LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/COPYING3
+
+# untested on sparc64, might work
+ONLY_FOR_ARCHS=	aarch64 amd64 armv6 i386 mips powerpc powerpc64
 
 TEST_DEPENDS=	runtest:misc/dejagnu
 
@@ -54,9 +57,6 @@ LIB_DEPENDS+=	libexpat.so:textproc/expat2
 
 VER=		${PORTVERSION:S/.//g}
 PLIST_SUB=	VER=${VER}
-
-# untested elsewhere, might work
-ONLY_FOR_ARCHS=	aarch64 amd64 armv6 i386 mips powerpc powerpc64	
 
 OPTIONS_DEFINE=	DEBUG GDB_LINK GUILE KGDB PYTHON TUI
 

@@ -1,4 +1,4 @@
---- include/libiberty.h
+--- include/libiberty.h 2017-09-14 09:28:17 UTC
 +++ include/libiberty.h
 @@ -109,7 +109,7 @@
   || defined (__FreeBSD__) || defined (__OpenBSD__) || defined (__NetBSD__) \

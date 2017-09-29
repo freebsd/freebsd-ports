@@ -1,7 +1,4 @@
-diff --git gdb/arm-fbsd-nat.c gdb/arm-fbsd-nat.c
-new file mode 100644
-index 0000000000..b883411ceb
---- /dev/null
+--- gdb/arm-fbsd-nat.c.orig 2017-09-14 09:28:17 UTC
 +++ gdb/arm-fbsd-nat.c
 @@ -0,0 +1,215 @@
 +/* Native-dependent code for BSD Unix running on ARM's, for GDB.

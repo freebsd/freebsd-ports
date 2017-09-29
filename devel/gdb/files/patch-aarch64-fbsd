@@ -1,6 +1,4 @@
-diff --git gdb/Makefile.in gdb/Makefile.in
-index 1d2dbaf3f7..d8e2b49523 100644
---- gdb/Makefile.in
+--- gdb/Makefile.in.orig 2017-09-14 09:28:17 UTC
 +++ gdb/Makefile.in
 @@ -745,6 +745,7 @@ TARGET_OBS = @TARGET_OBS@
  # All target-dependent objects files that require 64-bit CORE_ADDR

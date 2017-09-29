@@ -1,6 +1,4 @@
-diff --git gdb/gdb.c gdb/gdb.c
-index e554015..dcb9925 100644
---- gdb/gdb.c
+--- gdb/gdb.c.orig 2017-09-14 09:28:17 UTC
 +++ gdb/gdb.c
 @@ -28,6 +28,12 @@ main (int argc, char **argv)
    memset (&args, 0, sizeof args);

@@ -1,6 +1,4 @@
-diff --git gdb/amd64-bsd-nat.c gdb/amd64-bsd-nat.c
-index ca61a3551b..0f875f8296 100644
---- gdb/amd64-bsd-nat.c
+--- gdb/amd64-bsd-nat.c.orig 2017-09-14 09:28:17 UTC
 +++ gdb/amd64-bsd-nat.c
 @@ -28,6 +28,7 @@
  #include <sys/types.h>

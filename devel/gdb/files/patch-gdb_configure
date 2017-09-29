@@ -1,6 +1,4 @@
-diff --git gdb/configure gdb/configure
-index 9f05b4bb7e..e14886b67d 100755
---- gdb/configure
+--- gdb/configure.orig 2017-09-14 09:28:17 UTC
 +++ gdb/configure
 @@ -15103,12 +15103,10 @@ if test "${ERROR_ON_WARNING}" = yes ; then
      WERROR_CFLAGS="-Werror"
@@ -14,7 +12,7 @@ index 9f05b4bb7e..e14886b67d 100755
 --Wempty-body -Wunused-but-set-parameter -Wunused-but-set-variable \
 --Wno-sign-compare -Wno-narrowing"
 +-Wno-unused -Wno-switch -Wno-char-subscripts \
-+-Wempty-body -Wno-sign-compare -Wno-narrowing"
++-Wempty-body -Wno-sign-compare -Wno-narrowing -Wno-mismatched-tags"
  
  # Enable -Wno-format by default when using gcc on mingw since many
  # GCC versions complain about %I64.

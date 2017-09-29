@@ -1,6 +1,4 @@
-diff --git gdb/gnulib/import/stddef.in.h gdb/gnulib/import/stddef.in.h
-index f4c4a1070d..023ea2064d 100644
---- gdb/gnulib/import/stddef.in.h
+--- gdb/gnulib/import/stddef.in.h.orig 2017-09-14 09:28:17 UTC
 +++ gdb/gnulib/import/stddef.in.h
 @@ -84,7 +84,7 @@
  /* Some platforms lack max_align_t.  The check for _GCC_MAX_ALIGN_T is

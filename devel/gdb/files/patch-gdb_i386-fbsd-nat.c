@@ -1,6 +1,4 @@
-diff --git gdb/i386-fbsd-nat.c gdb/i386-fbsd-nat.c
-index dca6c0162b..6629950feb 100644
---- gdb/i386-fbsd-nat.c
+--- gdb/i386-fbsd-nat.c 2017-09-14 09:28:17 UTC
 +++ gdb/i386-fbsd-nat.c
 @@ -163,7 +163,6 @@ _initialize_i386fbsd_nat (void)
    t->to_read_description = i386fbsd_read_description;

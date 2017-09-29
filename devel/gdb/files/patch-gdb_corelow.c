@@ -1,5 +1,5 @@
---- gdb/corelow.c.orig	2017-07-29 11:06:52.922688000 -0700
-+++ gdb/corelow.c	2017-07-29 11:07:23.883255000 -0700
+--- gdb/corelow.c.orig	2017-07-29 11:06:52 UTC
++++ gdb/corelow.c
 @@ -517,7 +517,7 @@ get_core_register_section (struct regcache *regcache,
    bool variable_size_section = (regset != NULL
  				&& regset->flags & REGSET_VARIABLE_SIZE);
