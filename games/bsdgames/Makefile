@@ -92,5 +92,8 @@ dist:
 	mv DragonFlyBSD-${PORTVERSION}/games bsdgames-${PORTVERSION}
 	tar -cvf bsdgames-${PORTVERSION}.tar bsdgames-${PORTVERSION}
 	xz -v bsdgames-${PORTVERSION}.tar
+	@echo
+	@echo 'UPLOAD THE DISTFILE BEFORE YOU FORGET'
+	@echo '====================================='
 
 .include <bsd.port.post.mk>
