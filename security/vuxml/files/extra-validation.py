@@ -4,10 +4,13 @@
 import datetime
 import xml.etree.ElementTree as ET
 import sys
+import re
 
 if len(sys.argv) != 2:
     print("Usage: %s vuln.xml" % (sys.argv[0]))
     sys.exit(1)
+
+re_date = re.compile(r'^(19|20)[0-9]{2}-[0-9]{2}-[0-9]{2}$')
 
 tree = ET.parse(sys.argv[1])
 root = tree.getroot()
@@ -69,5 +72,11 @@ for vuln in root:
             if not (dateof(discovery.text) <= dateof(entry.text) <= dateof(modified.text)):
                 print("Error: dates are insane : {0}".format(vid))
                 ret = 1
+
+        # Make sure the dates are in YYYY-MM-DD format (quick hack by expecting 6 chars)
+        datelist = [discovery.text, entry.text] + ([modified.text] if modified is not None else [])
+        for d in datelist:
+            if not re_date.match(d):
+                print("Warning: dates must be in YYYY-MM-DD format: {0}".format(d))
 
 sys.exit(ret)
