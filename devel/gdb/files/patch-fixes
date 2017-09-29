@@ -1,6 +1,4 @@
-diff --git gdb/compile/compile-loc2c.c gdb/compile/compile-loc2c.c
-index a53214f2e5..67af62bb58 100644
---- gdb/compile/compile-loc2c.c
+--- gdb/compile/compile-loc2c.c.orig 2017-09-14 09:28:17 UTC
 +++ gdb/compile/compile-loc2c.c
 @@ -669,6 +669,7 @@ do_compile_dwarf_expr_to_c (int indent, string_file &stream,
        uint64_t uoffset, reg;

@@ -1,6 +1,4 @@
-diff --git gdb/python/python-config.py gdb/python/python-config.py
-index c2b2969..39af8d9 100644
---- gdb/python/python-config.py
+--- gdb/python/python-config.py 2017-09-14 09:28:17 UTC
 +++ gdb/python/python-config.py
 @@ -59,6 +59,8 @@ for opt in opt_flags:
  
