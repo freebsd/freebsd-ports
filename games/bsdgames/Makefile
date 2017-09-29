@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	bsdgames
-PORTVERSION=	4.6.1
+PORTVERSION=	4.8.1
 PORTEPOCH=	1
 CATEGORIES=	games
 MASTER_SITES=	LOCAL/adamw
@@ -15,7 +15,7 @@ LICENSE=	BSD3CLAUSE
 CONFLICTS=	hangman-[0-9]*
 
 USES=		ncurses tar:xz uidfix
-MAKE_ENV+=	NO_WERROR=1
+MAKE_ENV=	NO_WERROR=1
 MAKE_ARGS=	BINGRP=${BINGRP}
 
 # contain /usr/share/games
@@ -65,12 +65,8 @@ post-patch:
 		${REINPLACE_CMD} -e 's/HIDEGAME/SGIDGAME/' \
 			${WRKSRC}/$${f}/Makefile; \
 	done
-	@${REINPLACE_CMD} -e "s/getline/get_line/g" ${WRKSRC}/cribbage/io.c \
-		${WRKSRC}/cribbage/crib.c ${WRKSRC}/cribbage/cribbage.h
-.if ${OPSYS} == "FreeBSD"
 	@${FIND} ${WRKSRC} -type f -name Makefile \
 		| ${XARGS} ${REINPLACE_CMD} -e 's/-lprivate_ncurses/-lncurses/'
-.endif
 
 pre-install:
 .for d in atc larn quiz.db
