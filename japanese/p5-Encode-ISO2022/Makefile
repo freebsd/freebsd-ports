@@ -8,7 +8,7 @@ MASTER_SITES=	CPAN
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension for ISO/IEC 2022 character encoding scheme
 
-LICENSE=	ART10 GPLv1
+LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 USES=		perl5

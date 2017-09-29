@@ -14,6 +14,8 @@
 #                               Set it to user to run gitlab_runner under
 # gitlab_runner_group (str):    Set to "gitlab-runner" by default.
 #                               Set it to group to run gitlab-runner under
+# gitlab_runner_syslogtag (str):Set to "gitlab-runner" by default.
+#                               Set it to tag to be used by syslog
 #
 
 . /etc/rc.subr
@@ -27,13 +29,14 @@ load_rc_config $name
 : ${gitlab_runner_dir:="/var/tmp/gitlab_runner"}
 : ${gitlab_runner_user:="gitlab-runner"}
 : ${gitlab_runner_group:="gitlab-runner"}
+: ${gitlab_runner_syslogtag:="gitlab-runner"}
 
 export HOME=${gitlab_runner_dir}
 export PATH=${PATH}:%%PREFIX%%/bin
 
 pidfile="/var/run/${name}.pid"
 command="/usr/sbin/daemon"
-command_args="-f -p ${pidfile} %%PREFIX%%/bin/gitlab-runner run"
+command_args="-f -p ${pidfile} %%PREFIX%%/bin/gitlab-runner run --syslog --service ${gitlab_runner_syslogtag}"
 gitlab_runner_chdir="${gitlab_runner_dir}"
 
 procname=%%PREFIX%%/bin/gitlab-runner

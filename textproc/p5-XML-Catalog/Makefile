@@ -12,7 +12,7 @@ DISTNAME=	${PORTNAME}-v${PORTVERSION}
 MAINTAINER=	culot@FreeBSD.org
 COMMENT=	Resolve public identifiers and remap system identifiers
 
-LICENSE=	ART10 GPLv1
+LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-URI>=0:net/p5-URI \

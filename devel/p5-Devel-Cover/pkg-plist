@@ -18,6 +18,7 @@ bin/gcov2perl
 %%SITE_ARCH%%/Devel/Cover/DB/Digests.pm
 %%SITE_ARCH%%/Devel/Cover/DB/File.pm
 %%SITE_ARCH%%/Devel/Cover/DB/IO.pm
+%%SITE_ARCH%%/Devel/Cover/DB/IO/Base.pm
 %%SITE_ARCH%%/Devel/Cover/DB/IO/JSON.pm
 %%SITE_ARCH%%/Devel/Cover/DB/IO/Sereal.pm
 %%SITE_ARCH%%/Devel/Cover/DB/IO/Storable.pm
@@ -66,6 +67,7 @@ bin/gcov2perl
 %%PERL5_MAN3%%/Devel::Cover::DB::Digests.3.gz
 %%PERL5_MAN3%%/Devel::Cover::DB::File.3.gz
 %%PERL5_MAN3%%/Devel::Cover::DB::IO.3.gz
+%%PERL5_MAN3%%/Devel::Cover::DB::IO::Base.3.gz
 %%PERL5_MAN3%%/Devel::Cover::DB::IO::JSON.3.gz
 %%PERL5_MAN3%%/Devel::Cover::DB::IO::Sereal.3.gz
 %%PERL5_MAN3%%/Devel::Cover::DB::IO::Storable.3.gz

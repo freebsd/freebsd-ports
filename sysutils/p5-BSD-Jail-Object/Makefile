@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	mahlon@martini.nu
 COMMENT=	Object oriented perl interface to jail(2)
 
-LICENSE=	ART10 GPLv1
+LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Inline>=0.44:devel/p5-Inline \

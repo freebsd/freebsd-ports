@@ -863,6 +863,7 @@
     SUBDIR += py-graph
     SUBDIR += py-graph-core
     SUBDIR += py-graph-dot
+    SUBDIR += py-graphviz
     SUBDIR += py-graphy
     SUBDIR += py-gvgen
     SUBDIR += py-imageio
@@ -1096,6 +1097,8 @@
     SUBDIR += xournal
     SUBDIR += xpaint
     SUBDIR += xpdf
+    SUBDIR += xpdf3
+    SUBDIR += xpdf4
     SUBDIR += xpeps
     SUBDIR += xpx
     SUBDIR += xsane

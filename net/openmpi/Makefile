@@ -5,6 +5,7 @@
 
 PORTNAME=	openmpi
 PORTVERSION=	1.10.7
+PORTREVISION=	1
 CATEGORIES=	net parallel
 MASTER_SITES=	http://www.open-mpi.org/software/ompi/v${PORTVERSION:R}/downloads/
 
@@ -21,7 +22,7 @@ LIB_DEPENDS=	libhwloc.so:devel/hwloc \
 HAS_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 # :keepla because port uses lt_dlopen
-USES=		execinfo fortran gmake libtool:keepla perl5 pkgconfig tar:bzip2
+USES=		fortran gmake libtool:keepla perl5 pkgconfig tar:bzip2
 USE_PERL5=	build
 
 MPIBASE?=	mpi

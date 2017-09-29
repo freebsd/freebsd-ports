@@ -35,6 +35,7 @@ share/icons/hicolor/48x48/apps/inkscape.png
 %%DATADIR%%/branding/README
 %%DATADIR%%/branding/inkscape-flat.svg
 %%DATADIR%%/branding/inkscape-text.svg
+%%DATADIR%%/branding/inkscape.logo.svg
 %%DATADIR%%/branding/inkscape.svg
 %%DATADIR%%/branding/sodipodi.svg
 %%DATADIR%%/branding/tux.svg
@@ -568,7 +569,6 @@ share/icons/hicolor/48x48/apps/inkscape.png
 %%DATADIR%%/extensions/xaml2svg/transform.xsl
 %%DATADIR%%/filters/README
 %%DATADIR%%/filters/filters.svg
-%%DATADIR%%/filters/filters.svg.h
 %%DATADIR%%/fonts/README
 %%DATADIR%%/gradients/README
 %%DATADIR%%/icons/OCAL.png
@@ -644,14 +644,12 @@ share/icons/hicolor/48x48/apps/inkscape.png
 %%DATADIR%%/palettes/Ubuntu.gpl
 %%DATADIR%%/palettes/echo-palette.gpl
 %%DATADIR%%/palettes/inkscape.gpl
-%%DATADIR%%/palettes/palettes.h
 %%DATADIR%%/palettes/svg.gpl
 %%DATADIR%%/palettes/webhex.gpl
 %%DATADIR%%/palettes/websafe22.gpl
 %%DATADIR%%/palettes/windowsXP.gpl
 %%DATADIR%%/patterns/README
 %%DATADIR%%/patterns/patterns.svg
-%%DATADIR%%/patterns/patterns.svg.h
 %%DATADIR%%/screens/README
 %%DATADIR%%/screens/about.svg
 %%DATADIR%%/symbols/AigaSymbols.svg
@@ -660,7 +658,6 @@ share/icons/hicolor/48x48/apps/inkscape.png
 %%DATADIR%%/symbols/LogicSymbols.svg
 %%DATADIR%%/symbols/MapSymbolsNPS.svg
 %%DATADIR%%/symbols/README
-%%DATADIR%%/symbols/symbols.h
 %%DATADIR%%/templates/CD_label_120x120.svg
 %%DATADIR%%/templates/LaTeX_Beamer.svg
 %%DATADIR%%/templates/README
@@ -690,7 +687,6 @@ share/icons/hicolor/48x48/apps/inkscape.png
 %%DATADIR%%/templates/default_pt.svg
 %%DATADIR%%/templates/default_px.svg
 %%DATADIR%%/templates/no_layers.svg
-%%DATADIR%%/templates/templates.h
 %%DATADIR%%/tutorials/README
 %%DATADIR%%/tutorials/edge3d.svg
 %%DATADIR%%/tutorials/gpl-2.svg

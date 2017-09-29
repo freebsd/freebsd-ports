@@ -3,7 +3,7 @@
 
 PORTNAME=	pinot
 PORTVERSION=	1.09
-PORTREVISION=	4
+PORTREVISION=	7
 CATEGORIES=	deskutils
 
 MAINTAINER=	thierry@FreeBSD.org
@@ -46,7 +46,7 @@ CONFIGURE_ENV=	MKDIR_P="${MKDIR}" TEXTCAT_LIBS="-lexttextcat-2.0"
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib -lboost_system
 
-USES=		compiler:c++11-lang autoreconf execinfo gettext libarchive \
+USES=		compiler:c++11-lang autoreconf gettext libarchive \
 		libtool pkgconfig python shebangfix sqlite:3 ssl
 USE_CXXSTD=	c++11
 USE_XORG=	pixman

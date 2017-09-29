@@ -3,7 +3,7 @@
 
 PORTNAME=	mpich2
 DISTVERSION=	1.5
-PORTREVISION=	6
+PORTREVISION=	8
 PORTEPOCH=	5
 CATEGORIES=	net java parallel
 MASTER_SITES=	http://www.mcs.anl.gov/research/projects/mpich2/downloads/tarballs/${DISTVERSION}/
@@ -21,7 +21,7 @@ BUILD_DEPENDS=	bash:shells/bash
 RUN_DEPENDS=	bash:shells/bash
 
 GNU_CONFIGURE=	yes
-USES=		execinfo libtool:keepla localbase fortran perl5 \
+USES=		libtool:keepla localbase fortran perl5 \
 		pkgconfig python
 USE_GCC=	yes
 USE_LDCONFIG=	yes
@@ -49,7 +49,7 @@ CONFIGURE_ENV=	FCFLAGS="${FFLAGS}" \
 .if ${FFLAGS} == "-O"
 FFLAGS=		-O2
 .endif
-LDFLAGS+=	-lpthread -L${LOCALBASE}/lib -lexecinfo
+LDFLAGS+=	-lpthread -lexecinfo
 
 MAKE_ENV=	CCACHE_DISABLE=yes PACKAGE=${PORTNAME}
 NOCCACHE=	yes

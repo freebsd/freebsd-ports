@@ -12,7 +12,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	feld@FreeBSD.org
 COMMENT=	BitTorrent bencode serialisation format
 
-LICENSE=	ART10 GPLv1
+LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Exporter-Tidy>0:devel/p5-Exporter-Tidy

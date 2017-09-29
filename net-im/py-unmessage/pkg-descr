@@ -1,0 +1,15 @@
+unMessage is a peer-to-peer instant messaging application designed to enhance
+privacy and anonymity.
+
+Features:
+* Transport makes use of Twisted, Tor Onion Services and txtorcon
+* Encryption is performed using the Double Ratchet Algorithm implemented in
+  pyaxo (using PyNaCl)
+* Authentication makes use of the Socialist Millionaire Protocol implemented
+  in Cryptully
+* Transport metadata is minimized by Tor and application metadata by the
+  unMessage protocol
+* User interfaces are created with Tkinter (graphical) and curses
+  (command-line)
+
+WWW: https://github.com/AnemoneLabs/unmessage

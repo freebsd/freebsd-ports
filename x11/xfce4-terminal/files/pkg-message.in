@@ -1,9 +1,17 @@
-To reduce the height of tabs, add the hidden 'MiscSlimTabs' option
-in ~/.config/xfce4/terminal/terminalrc.
+Some options could need manual change to ~/.config/xfce4/terminal/terminalrc:
+
+To reduce the height of tabs, add the hidden 'MiscSlimTabs' option:
 
 MiscSlimTabs=TRUE
 
 By default this option is not defined.
+
+If you have configured a custom color cursor you will also need to add:
+
+ColorCursorUseDefault=FALSE
+
+to have such configuration still working, otherwise reconfigure the color
+in the GUI.
 
 Keep in mind, when you change an option in Preferences window, this file
 is overwritten. 

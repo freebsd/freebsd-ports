@@ -3,7 +3,7 @@
 
 PORTNAME=	tulip
 PORTVERSION=	4.10.0
-PORTREVISION=	1
+PORTREVISION=	2
 DISTVERSIONSUFFIX=	_src
 CATEGORIES=	graphics
 MASTER_SITES=	SF/auber/${PORTNAME}/${PORTNAME}-${PORTVERSION}
@@ -22,7 +22,7 @@ BROKEN_powerpc64=	fails to link: libOGDF.so: undefined reference to CoinPackedVe
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-USES=		cmake:outsource,noninja compiler:c++11-lib dos2unix execinfo jpeg python \
+USES=		cmake:outsource,noninja compiler:c++11-lib dos2unix jpeg python \
 		shebangfix
 SHEBANG_FILES=	tulip-config.in
 DOS2UNIX_FILES=	software/tulip/src/main.cpp

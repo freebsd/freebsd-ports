@@ -3,7 +3,7 @@
 
 PORTNAME=	erlang
 PORTVERSION=	18.3.4.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang parallel java
 MASTER_SITES=	http://www.erlang.org/download/:erlangorg		\
 		http://erlang.stacken.kth.se/download/:erlangorg	\

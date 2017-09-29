@@ -3,6 +3,7 @@
 
 PORTNAME=	tdiary
 PORTVERSION=	5.0.5
+PORTREVISION=	1
 CATEGORIES?=	www ruby
 MASTER_SITES=	https://github.com/tdiary/tdiary-core/releases/download/v${PORTVERSION}/
 DISTNAME=	${PORTNAME}-full-v${PORTVERSION}
@@ -10,7 +11,7 @@ DISTNAME=	${PORTNAME}-full-v${PORTVERSION}
 MAINTAINER=	yasu@utahime.org
 COMMENT=	Web-based diary system (like weblog) written in Ruby
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-bundler>=1.14.6:sysutils/rubygem-bundler \

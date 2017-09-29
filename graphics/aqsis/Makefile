@@ -3,7 +3,7 @@
 
 PORTNAME=	aqsis
 PORTVERSION=	1.8.2
-PORTREVISION=	13
+PORTREVISION=	15
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-source/${PORTVERSION}
 
@@ -25,7 +25,9 @@ BROKEN_sparc64=	Fails to build: cannot link with boost
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 USE_LDCONFIG=	yes
-USES=		cmake:outsource desktop-file-utils shared-mime-info shebangfix
+USES=		cmake:outsource compiler:c++11-lib desktop-file-utils \
+		shared-mime-info shebangfix
+USE_CXXSTD=	gnu++11
 SHEBANG_FILES=	examples/*/*/*.sh \
 		tools/neqsus/houdini/post.sh \
 		distribution/linux/*.sh

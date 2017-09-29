@@ -3,6 +3,7 @@
 
 PORTNAME=	upp
 PORTVERSION=	10804
+PORTREVISION=	1
 CATEGORIES=	devel x11-toolkits
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/2017.1/
 DISTNAME=	${PORTNAME}-x11-src-${PORTVERSION}
@@ -13,7 +14,7 @@ COMMENT=	Ultimate++, a BSD-licensed, cross-platform, C/C++ RAD suite
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${BUILD_WRKSRC}/Core/Copying
 
-USES=		compiler:c++11-lib execinfo
+USES=		compiler:c++11-lib
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 BUILD_WRKSRC=	${WRKSRC}/uppsrc

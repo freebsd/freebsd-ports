@@ -12,7 +12,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:C/0+$//}
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl5 module for simple serial port control
 
-LICENSE=	ART10 GPLv1
+LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 USES=		perl5

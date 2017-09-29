@@ -1,9 +1,9 @@
 FreeBSD 10.3 lacks __cxa_thread_atexit, so revert
 https://github.com/RPCS3/rpcs3/commit/c1450ad61627
 
---- Utilities/Log.cpp.orig	2017-08-24 18:20:18 UTC
+--- Utilities/Log.cpp.orig	2017-09-19 12:07:07 UTC
 +++ Utilities/Log.cpp
-@@ -246,7 +246,7 @@ void logs::message::broadcast(const char* fmt, const f
+@@ -255,7 +255,7 @@ void logs::message::broadcast(const char* fmt, const f
  	}
  
  	// Get text
@@ -12,16 +12,16 @@ https://github.com/RPCS3/rpcs3/commit/c1450ad61627
  	fmt::raw_append(text, fmt, sup, args);
  	std::string prefix = g_tls_log_prefix();
  
-@@ -266,7 +266,7 @@ void logs::message::broadcast(const char* fmt, const f
+@@ -275,7 +275,7 @@ void logs::message::broadcast(const char* fmt, const f
  			}
  
  			// Store message additionally
--			g_messages.emplace_back(stored_message{*this, stamp, std::move(prefix), text});
-+			g_messages.emplace_back(stored_message{*this, stamp, std::move(prefix), std::move(text)});
+-			get_logger()->messages.emplace_back(stored_message{*this, stamp, std::move(prefix), text});
++			get_logger()->messages.emplace_back(stored_message{*this, stamp, std::move(prefix), std::move(text)});
  		}
  	}
- 	
-@@ -348,7 +348,7 @@ logs::file_listener::file_listener(const std::string& 
+ 
+@@ -405,7 +405,7 @@ logs::file_listener::file_listener(const std::string& 
  
  void logs::file_listener::log(u64 stamp, const logs::message& msg, const std::string& prefix, const std::string& _text)
  {

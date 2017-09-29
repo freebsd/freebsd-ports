@@ -1,13 +1,12 @@
 # $FreeBSD$
 
 PORTNAME=	ejabberd
-PORTVERSION=	17.07
-PORTREVISION=	1
+PORTVERSION=	17.08
 CATEGORIES=	net-im
 MASTER_SITES=	http://www.process-one.net/downloads/${PORTNAME}/${PORTVERSION}/:p1 \
 		http://distfiles.pirateparty.in/ashish/:deps \
 		LOCAL/ashish:deps
-DISTFILES+=	${DISTNAME}.tgz:p1 ejabberd-deps-12.tar.xz:deps
+DISTFILES+=	${DISTNAME}.tgz:p1 ejabberd-deps-13.tar.xz:deps
 
 MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	Free and Open Source distributed fault-tolerant Jabber server

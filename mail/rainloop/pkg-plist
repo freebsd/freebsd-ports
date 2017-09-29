@@ -1,8 +1,3 @@
-@owner %%WWWOWN%%
-@group %%WWWGRP%%
-%%WWWDIR%%/data/EMPTY
-%%WWWDIR%%/data/VERSION
-%%WWWDIR%%/index.php
 %%WWWDIR%%/rainloop/v/%%VER%%/app/domains/default.ini.dist
 %%WWWDIR%%/rainloop/v/%%VER%%/app/domains/disabled
 %%WWWDIR%%/rainloop/v/%%VER%%/app/domains/gmail.com.ini
@@ -1021,6 +1016,7 @@
 %%WWWDIR%%/rainloop/v/%%VER%%/app/localization/admin/pl_PL.yml
 %%WWWDIR%%/rainloop/v/%%VER%%/app/localization/admin/pt_BR.yml
 %%WWWDIR%%/rainloop/v/%%VER%%/app/localization/admin/ru_RU.yml
+%%WWWDIR%%/rainloop/v/%%VER%%/app/localization/admin/sk_SK.yml
 %%WWWDIR%%/rainloop/v/%%VER%%/app/localization/admin/sl_SI.yml
 %%WWWDIR%%/rainloop/v/%%VER%%/app/localization/admin/sv_SE.yml
 %%WWWDIR%%/rainloop/v/%%VER%%/app/localization/admin/zh_CN.yml
@@ -1545,3 +1541,9 @@
 %%WWWDIR%%/rainloop/v/%%VER%%/themes/Xv/images/background.png
 %%WWWDIR%%/rainloop/v/%%VER%%/themes/Xv/images/preview.png
 %%WWWDIR%%/rainloop/v/%%VER%%/themes/Xv/styles.less
+%%WWWDIR%%/data/EMPTY
+%%WWWDIR%%/data/VERSION
+%%WWWDIR%%/index.php
+@owner %%WWWOWN%%
+@group %%WWWGRP%%
+@dir %%WWWDIR%%/data

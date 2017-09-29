@@ -12,7 +12,7 @@ DISTNAME=	SVK-v${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Distributed Version Control System
 
-LICENSE=	ART10 GPLv1
+LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-List-MoreUtils>=0:lang/p5-List-MoreUtils \

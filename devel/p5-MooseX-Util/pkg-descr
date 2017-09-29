@@ -1,0 +1,6 @@
+MooseX::Util is a utility module that handles all of the same functions that
+Moose::Util handles. In fact, most of the functions exported by this package are
+simply re-exports from Moose::Util, so you're recommended to read the
+documentation of that module for a comprehensive view.
+
+WWW: http://search.cpan.org/dist/MooseX-Util/

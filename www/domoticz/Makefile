@@ -2,6 +2,7 @@
 
 PORTNAME=	domoticz
 PORTVERSION=	3.${DOMOTICZ_REL}
+PORTREVISION=	2
 CATEGORIES=	www
 
 MAINTAINER=	kiwi@oav.net
@@ -34,7 +35,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	domoticz
 GH_PROJECT=	domoticz
 
-USES=		cmake iconv pkgconfig execinfo ssl
+USES=		cmake iconv pkgconfig ssl
 
 USE_RC_SUBR=	domoticz
 

@@ -43,7 +43,7 @@ ICONV_LIB_PATH=		/usr/lib/libc.so
 
 .if exists(${LOCALBASE}/include/iconv.h)
 # Check that libiconv iconv.h is recent enough for LIBICONV_PLUG to work.
-BUILD_DEPENDS+=	libiconv>=1.14_9:converters/libiconv
+BUILD_DEPENDS+=	libiconv>=1.14_11:converters/libiconv
 .endif
 
 # LIBICONV_PLUG makes libiconv iconv.h act like libc iconv.h.

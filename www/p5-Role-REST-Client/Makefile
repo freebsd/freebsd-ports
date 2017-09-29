@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	amontalban@gmail.com
 COMMENT=	Perl extension for Rest Client Role
 
-LICENSE=	ART10 GPLv1
+LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 RUN_DEPENDS=	p5-Data-Serializer>=0.60:devel/p5-Data-Serializer \

@@ -55,11 +55,6 @@ CONFIGURE_ARGS+=	--enable-${ZABBIX_BUILD} \
 			--with-iconv=${ICONV_PREFIX}
 
 .if ${ZABBIX_BUILD} != "agent"
-USES+=		execinfo
-
-CPPFLAGS+=	${EXECINFO_CPPFLAGS}
-LDFLAGS+=	${EXECINFO_LDFLAGS}
-
 SUB_FILES=	pkg-message
 
 CONFIGURE_ARGS+=	--with-net-snmp

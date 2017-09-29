@@ -1,0 +1,11 @@
+--- toolkit/moz.configure.orig	2017-08-08 06:07:58 UTC
++++ toolkit/moz.configure
+@@ -620,7 +620,7 @@ def stylo_config(value, _, target):
+ 
+     # If nothing is specified, default to building stylo where possible.
+     if value.origin == 'default':
+-        if target.os == 'GNU' and target.bitness == 32:
++        if target.os != 'WINNT' and target.bitness == 32:
+             # The clang setup we use in automation is a little unusual, and
+             # doesn't play well with bindgen on 32-bit Linux.
+             pass

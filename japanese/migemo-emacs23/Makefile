@@ -1,6 +1,7 @@
 # Created by: MANTANI Nobutaka <nobutaka@FreeBSD.org>
 # $FreeBSD$
 
+PORTREVISION=	1
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 COMMENT=	Japanese incremental search tool for emacs
 MASTERDIR=	${.CURDIR}/../../japanese/migemo

@@ -1,0 +1,11 @@
+--- Makefile.freebsd.orig	2017-05-01 15:10:07 UTC
++++ Makefile.freebsd
+@@ -34,8 +34,6 @@ GIT := git
+ GZIP := gzip
+ ECHO := /bin/echo
+ 
+-export NO_YUBI := yes
+-
+ GPG := /usr/local/bin/gpg
+ GPG_SIGN := $(GPG) --detach-sign --default-key $(GPG_KEY)
+ SIGN_CMD := $(foreach file, $(wildcard $(RELEASEDIR)/*$(RELEASENAME)*), $(GPG_SIGN) $(file); )

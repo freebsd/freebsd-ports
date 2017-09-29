@@ -15,6 +15,8 @@ COMMENT?=	40 gigabit FreeBSD Base Driver for Intel(R) Network Connections
 
 LICENSE=	BSD2CLAUSE
 
+BROKEN=		Does not fetch.
+
 # Present version of net/intel-em-kmod has issues building with netmap(4)
 # support on 11+. Narrowing netmap(4) support to this port only
 .if ${PORTNAME} == ixl

@@ -3,7 +3,7 @@
 
 PORTNAME=	ibus
 PORTVERSION=	1.5.14
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	textproc
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${PORTVERSION}/:DEFAULT \
 		https://raw.githubusercontent.com/Ranks/emojione/${EMOJIONE_TAG}/:emojione

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Mail_Mime
-PORTVERSION=	1.10.0
+PORTVERSION=	1.10.1
 PORTEPOCH=	2
 CATEGORIES=	mail www pear
 

@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.clovery.jp/tiarra/archive/2010/02/
 MAINTAINER=	ume@FreeBSD.org
 COMMENT=	IRC Proxy software
 
-LICENSE=	ART10 GPLv1
+LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 RUN_DEPENDS=	p5-IO-Socket-INET6>=0:net/p5-IO-Socket-INET6

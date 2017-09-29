@@ -12,7 +12,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	bill.brinzer@gmail.com
 COMMENT=	Library for sending email
 
-LICENSE=	ART10 GPLv1
+LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Email-Abstract>=3.006:mail/p5-Email-Abstract \

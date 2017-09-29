@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	vivek@khera.org
 COMMENT=	Template Toolkit interface to Text::Autoformat module
 
-LICENSE=	ART10 GPLv1
+LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 RUN_DEPENDS=	p5-Template-Toolkit>=2.22:www/p5-Template-Toolkit \

@@ -19,7 +19,7 @@ BUILD_DEPENDS=	${NONEXISTENT}:${LIBUNRAR_PORT}:patch
 USE_GITHUB=	yes
 GH_ACCOUNT=	hasse69
 
-USES=		autoreconf execinfo gmake fuse
+USES=		autoreconf gmake fuse
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-static-unrar \

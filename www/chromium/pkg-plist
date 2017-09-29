@@ -144,6 +144,7 @@ share/applications/chromium-browser.desktop
 %%DATADIR%%/resources/inspector/cm_modes/cm_modes_module.js
 %%DATADIR%%/resources/inspector/color_picker/color_picker_module.js
 %%DATADIR%%/resources/inspector/console/console_module.js
+%%DATADIR%%/resources/inspector/console_test_runner/console_test_runner_module.js
 %%DATADIR%%/resources/inspector/cookie_table/cookie_table_module.js
 %%DATADIR%%/resources/inspector/coverage/coverage_module.js
 %%DATADIR%%/resources/inspector/data_grid/data_grid_module.js
@@ -152,6 +153,7 @@ share/applications/chromium-browser.desktop
 %%DATADIR%%/resources/inspector/devtools_extension_api.js
 %%DATADIR%%/resources/inspector/diff/diff_module.js
 %%DATADIR%%/resources/inspector/elements/elements_module.js
+%%DATADIR%%/resources/inspector/elements_test_runner/elements_test_runner_module.js
 %%DATADIR%%/resources/inspector/emulated_devices/Nexus5X-landscape.svg
 %%DATADIR%%/resources/inspector/emulated_devices/Nexus5X-portrait.svg
 %%DATADIR%%/resources/inspector/emulated_devices/Nexus6P-landscape.svg
@@ -191,15 +193,20 @@ share/applications/chromium-browser.desktop
 %%DATADIR%%/resources/inspector/emulated_devices/iPhone6Plus-portrait.svg
 %%DATADIR%%/resources/inspector/event_listeners/event_listeners_module.js
 %%DATADIR%%/resources/inspector/formatter_worker.js
+%%DATADIR%%/resources/inspector/formatter/formatter_module.js
 %%DATADIR%%/resources/inspector/gonzales/gonzales_module.js
+%%DATADIR%%/resources/inspector/har_importer/har_importer_module.js
 %%DATADIR%%/resources/inspector/heap_snapshot_model/heap_snapshot_model_module.js
 %%DATADIR%%/resources/inspector/heap_snapshot_worker.js
 %%DATADIR%%/resources/inspector/inline_editor/inline_editor_module.js
 %%DATADIR%%/resources/inspector/inspector.html
 %%DATADIR%%/resources/inspector/inspector.js
+%%DATADIR%%/resources/inspector/integration_test_runner.html
+%%DATADIR%%/resources/inspector/integration_test_runner.js
 %%DATADIR%%/resources/inspector/layer_viewer/layer_viewer_module.js
 %%DATADIR%%/resources/inspector/layers/layers_module.js
 %%DATADIR%%/resources/inspector/network/network_module.js
+%%DATADIR%%/resources/inspector/network_priorities/network_priorities_module.js
 %%DATADIR%%/resources/inspector/object_ui/object_ui_module.js
 %%DATADIR%%/resources/inspector/perf_ui/perf_ui_module.js
 %%DATADIR%%/resources/inspector/product_registry/product_registry_module.js
@@ -224,7 +231,6 @@ share/applications/chromium-browser.desktop
 %%DATADIR%%/resources/inspector/toolbox.js
 %%DATADIR%%/resources/inspector/unit_test_runner.html
 %%DATADIR%%/resources/inspector/unit_test_runner.js
-%%DATADIR%%/resources/inspector/utility_shared_worker.js
 %%DATADIR%%/resources/inspector/workspace_diff/workspace_diff_module.js
 %%DATADIR%%/snapshot_blob.bin
 %%DATADIR%%/test_ime_driver.service

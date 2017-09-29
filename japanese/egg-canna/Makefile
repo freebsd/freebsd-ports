@@ -3,7 +3,7 @@
 
 PORTNAME=	egg-canna
 PORTVERSION=	20011110
-PORTREVISION=	17
+PORTREVISION=	18
 CATEGORIES=	japanese editors elisp
 MASTER_SITES=	http://cgi18.plala.or.jp/nyy/canna/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}

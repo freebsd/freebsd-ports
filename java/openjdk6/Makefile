@@ -86,7 +86,7 @@ NOPRECIOUSMAKEVARS=	yes
 ONLY_FOR_ARCHS=	amd64 i386
 
 BOOTSTRAP_JDKS=	${LOCALBASE}/openjdk6 \
-		${LOCALBASE}/bootstrap-openjdk
+		${LOCALBASE}/bootstrap-openjdk6
 
 # do we have valid native jdk installed?
 .for CJDK in ${BOOTSTRAP_JDKS}
@@ -97,8 +97,8 @@ BOOTSTRAPJDKDIR=	${CJDK}
 
 # if no valid jdk found, set dependency
 .if !defined(BOOTSTRAPJDKDIR)
-BOOTSTRAPJDKDIR?=	${LOCALBASE}/bootstrap-openjdk
-BUILD_DEPENDS+=		${BOOTSTRAPJDKDIR}/bin/javac:java/bootstrap-openjdk
+BOOTSTRAPJDKDIR?=	${LOCALBASE}/bootstrap-openjdk6
+BUILD_DEPENDS+=		${BOOTSTRAPJDKDIR}/bin/javac:java/bootstrap-openjdk6
 .endif
 
 MAKE_ENV=	OS= \

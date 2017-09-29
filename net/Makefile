@@ -1079,6 +1079,7 @@
     SUBDIR += py-upnp-inspector
     SUBDIR += py-uritemplate
     SUBDIR += py-urllib3
+    SUBDIR += py-wmi-query
     SUBDIR += py-wolframalpha
     SUBDIR += py-xmlrpc
     SUBDIR += py-zope.proxy
@@ -1193,6 +1194,7 @@
     SUBDIR += rubygem-fog-xenserver
     SUBDIR += rubygem-geoip
     SUBDIR += rubygem-gitaly
+    SUBDIR += rubygem-gitaly-proto
     SUBDIR += rubygem-gitlab_omniauth-ldap
     SUBDIR += rubygem-gitlab_omniauth-ldap1
     SUBDIR += rubygem-grpc

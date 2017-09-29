@@ -1,3 +1,3 @@
-TIMESTAMP = 1470226088
-SHA256 (python-statsd-2.0.0.tar.gz) = 54ed1a223eef8d735661c26f830ca9beaf307a56322532cebeea8c805b40a19a
-SIZE (python-statsd-2.0.0.tar.gz) = 10374
+TIMESTAMP = 1506347421
+SHA256 (python-statsd-2.1.0.tar.gz) = d2c573d325d0f015b4d79f0d0f8c88dd8413d7b9ef890c09076a9b6089ab301c
+SIZE (python-statsd-2.1.0.tar.gz) = 10834

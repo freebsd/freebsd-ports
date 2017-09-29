@@ -344,6 +344,8 @@ include/wine/windows/errrec.idl
 include/wine/windows/evcode.h
 include/wine/windows/evntprov.h
 include/wine/windows/evntrace.h
+include/wine/windows/evr.h
+include/wine/windows/evr.idl
 include/wine/windows/excpt.h
 include/wine/windows/exdisp.h
 include/wine/windows/exdisp.idl
@@ -541,6 +543,7 @@ include/wine/windows/msxml6.idl
 include/wine/windows/msxml6did.h
 include/wine/windows/msxmldid.h
 include/wine/windows/mtxdm.h
+include/wine/windows/multimon.h
 include/wine/windows/nb30.h
 include/wine/windows/ncrypt.h
 include/wine/windows/ndrtypes.h
@@ -982,6 +985,7 @@ lib/wine/api-ms-win-core-localization-l1-2-1.dll.so
 lib/wine/api-ms-win-core-localization-l2-1-0.dll.so
 lib/wine/api-ms-win-core-localization-obsolete-l1-1-0.dll.so
 lib/wine/api-ms-win-core-localization-obsolete-l1-2-0.dll.so
+lib/wine/api-ms-win-core-localization-obsolete-l1-3-0.dll.so
 lib/wine/api-ms-win-core-localization-private-l1-1-0.dll.so
 lib/wine/api-ms-win-core-localregistry-l1-1-0.dll.so
 lib/wine/api-ms-win-core-memory-l1-1-0.dll.so
@@ -1020,6 +1024,7 @@ lib/wine/api-ms-win-core-string-obsolete-l1-1-0.dll.so
 lib/wine/api-ms-win-core-stringansi-l1-1-0.dll.so
 lib/wine/api-ms-win-core-synch-l1-1-0.dll.so
 lib/wine/api-ms-win-core-synch-l1-2-0.dll.so
+lib/wine/api-ms-win-core-synch-l1-2-1.dll.so
 lib/wine/api-ms-win-core-sysinfo-l1-1-0.dll.so
 lib/wine/api-ms-win-core-sysinfo-l1-2-0.dll.so
 lib/wine/api-ms-win-core-sysinfo-l1-2-1.dll.so
@@ -1367,6 +1372,7 @@ lib/wine/fakedlls/api-ms-win-core-localization-l1-2-1.dll
 lib/wine/fakedlls/api-ms-win-core-localization-l2-1-0.dll
 lib/wine/fakedlls/api-ms-win-core-localization-obsolete-l1-1-0.dll
 lib/wine/fakedlls/api-ms-win-core-localization-obsolete-l1-2-0.dll
+lib/wine/fakedlls/api-ms-win-core-localization-obsolete-l1-3-0.dll
 lib/wine/fakedlls/api-ms-win-core-localization-private-l1-1-0.dll
 lib/wine/fakedlls/api-ms-win-core-localregistry-l1-1-0.dll
 lib/wine/fakedlls/api-ms-win-core-memory-l1-1-0.dll
@@ -1405,6 +1411,7 @@ lib/wine/fakedlls/api-ms-win-core-string-obsolete-l1-1-0.dll
 lib/wine/fakedlls/api-ms-win-core-stringansi-l1-1-0.dll
 lib/wine/fakedlls/api-ms-win-core-synch-l1-1-0.dll
 lib/wine/fakedlls/api-ms-win-core-synch-l1-2-0.dll
+lib/wine/fakedlls/api-ms-win-core-synch-l1-2-1.dll
 lib/wine/fakedlls/api-ms-win-core-sysinfo-l1-1-0.dll
 lib/wine/fakedlls/api-ms-win-core-sysinfo-l1-2-0.dll
 lib/wine/fakedlls/api-ms-win-core-sysinfo-l1-2-1.dll

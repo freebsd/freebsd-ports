@@ -1,0 +1,10 @@
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Remember to set these environment varibles (such as your ~/.xinitrc):
+
+  export XMODIFIERS='@im=gcin'
+  export QT_IM_MODULE=gcin
+
+  # Finally, to start the GCIN input method daemon, use command:
+  exec gcin &
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=

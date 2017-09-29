@@ -3,7 +3,7 @@
 
 PORTNAME=	webp
 PORTVERSION=	0.6.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
 MASTER_SITES=	http://downloads.webmproject.org/releases/webp/
 DISTNAME=	lib${PORTNAME}-${PORTVERSION}

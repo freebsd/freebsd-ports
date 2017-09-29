@@ -1,3 +1,4 @@
+sbin/escapesrc
 sbin/icupkg
 sbin/gensprep
 sbin/gennorm2
@@ -44,6 +45,8 @@ include/unicode/bytestrie.h
 include/unicode/bytestriebuilder.h
 include/unicode/calendar.h
 include/unicode/caniter.h
+include/unicode/casemap.h
+include/unicode/char16ptr.h
 include/unicode/chariter.h
 include/unicode/choicfmt.h
 include/unicode/coleitr.h
@@ -63,6 +66,7 @@ include/unicode/dtitvfmt.h
 include/unicode/dtitvinf.h
 include/unicode/dtptngen.h
 include/unicode/dtrule.h
+include/unicode/edits.h
 include/unicode/enumset.h
 include/unicode/errorcode.h
 include/unicode/fieldpos.h

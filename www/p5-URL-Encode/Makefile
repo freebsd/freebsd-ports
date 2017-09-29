@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	dgeo@centrale-marseille.fr
 COMMENT=	Encoding and decoding of application/x-www-form-urlencoded encoding
 
-LICENSE=	ART10 GPLv1
+LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 OPTIONS_DEFINE=	XS

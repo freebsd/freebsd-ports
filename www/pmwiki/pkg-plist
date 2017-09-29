@@ -39,6 +39,15 @@
 %%PMWIKIDIR%%/pub/skins/print/print.css
 %%PMWIKIDIR%%/pub/skins/print/print.php
 %%PMWIKIDIR%%/pub/skins/print/print.tmpl
+%%PMWIKIDIR%%/pub/skins/pmwiki-responsive/README
+%%PMWIKIDIR%%/pub/skins/pmwiki-responsive/skin.css
+%%PMWIKIDIR%%/pub/skins/pmwiki-responsive/skin.js
+%%PMWIKIDIR%%/pub/skins/pmwiki-responsive/skin.php
+%%PMWIKIDIR%%/pub/skins/pmwiki-responsive/skin.tmpl
+%%PMWIKIDIR%%/pub/skins/pmwiki-responsive/xclose.svg
+%%PMWIKIDIR%%/pub/skins/pmwiki-responsive/xmenu.svg
+%%PMWIKIDIR%%/pub/skins/pmwiki-responsive/xsearch.svg
+%%PMWIKIDIR%%/pub/skins/pmwiki-responsive/xwrench.svg
 %%PMWIKIDIR%%/sample-config.php
 %%PMWIKIDIR%%/scripts/.htaccess
 %%PMWIKIDIR%%/scripts/author.php

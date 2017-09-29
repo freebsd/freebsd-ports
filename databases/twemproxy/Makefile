@@ -14,10 +14,9 @@ LICENSE=	APACHE20
 USE_GITHUB=	yes
 GH_ACCOUNT=	twitter
 
-USES=		execinfo autoreconf libtool
+USES=		autoreconf libtool
 
-CFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib -lexecinfo
+LDFLAGS+=	-lexecinfo
 
 PLIST_FILES=	sbin/nutcracker \
 		man/man8/nutcracker.8.gz \

@@ -9,10 +9,10 @@ MASTER_SITES=	RG
 MAINTAINER=	joe@thrallingpenguin.com
 COMMENT=	Internal HashiCorp service to check version information
 
-LICENSE=	MPL
+LICENSE=	MPL20
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 NO_ARCH=	yes
-
 USE_RUBY=	yes
 USES=		gem
 

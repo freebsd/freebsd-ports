@@ -3,6 +3,7 @@
 
 PORTNAME=	pgmodeler
 PORTVERSION=	0.9.0
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	databases
 
@@ -12,7 +13,7 @@ COMMENT=	PostgreSQL Database Modeler
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		compiler:c++11-lib execinfo pgsql qmake pkgconfig gmake
+USES=		compiler:c++11-lib pgsql qmake pkgconfig gmake
 USE_GITHUB=	yes
 
 USE_GNOME=	libxml2

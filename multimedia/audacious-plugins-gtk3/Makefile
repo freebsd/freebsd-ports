@@ -3,7 +3,7 @@
 
 PORTNAME=	audacious-plugins
 PORTVERSION=	3.8.2
-PORTREVISION=	4
+PORTREVISION=	5
 DISTVERSIONSUFFIX=	-gtk3
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://distfiles.audacious-media-player.org/
@@ -28,7 +28,7 @@ DISTINFO_FILE=	${.CURDIR}/distinfo
 FILESDIR=	${MASTERDIR}/files
 
 GNU_CONFIGURE=	yes
-USES=		compiler:c++11-lib execinfo gettext-tools gmake iconv \
+USES=		compiler:c++11-lib gettext-tools gmake iconv \
 	localbase pkgconfig tar:bzip2
 USE_LDCONFIG=	yes
 USE_GNOME=	gtk30 glib20 libxml2 cairo gdkpixbuf2

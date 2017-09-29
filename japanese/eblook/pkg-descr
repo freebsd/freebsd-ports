@@ -1,4 +1,4 @@
-Interactive EB interface command for seraching words in CD-ROM books.
+Interactive EB interface command for searching words in CD-ROM books.
 
 Eblook supports to access CD-ROM books of EB, EBG, EBXA and EPWING formats
 directly.  CD-ROM books of those formats are popular in Japan.
@@ -7,4 +7,4 @@ you can mount the discs by the same way as other ISO 9660 discs.
 
 You can get more information from ja-eblook.info.
 
-WWW: http://openlab.ring.gr.jp/lookup/eblook/
+WWW: http://openlab.ring.gr.jp/edict/eblook/index.html.ja

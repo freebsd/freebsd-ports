@@ -1,4 +1,6 @@
 bin/skrooge
+bin/skrooge-sabb.py
+bin/skrooge-yahoodl.py
 bin/skroogeconvert
 etc/xdg/skrooge_monthly.knsrc
 etc/xdg/skrooge_unit.knsrc
@@ -379,6 +381,9 @@ share/kservices5/org.kde.skg-plugin-selectall.desktop
 share/kservices5/org.kde.skg-plugin-statistic.desktop
 share/kservices5/org.kde.skg-plugin-undoredo.desktop
 share/kservices5/org.kde.skrooge-import-afb120.desktop
+share/kservices5/org.kde.skrooge-import-backend-aqbanking.desktop
+share/kservices5/org.kde.skrooge-import-backend-weboob.desktop
+share/kservices5/org.kde.skrooge-import-backend-weboob0g.desktop
 share/kservices5/org.kde.skrooge-import-backend.desktop
 share/kservices5/org.kde.skrooge-import-csv.desktop
 share/kservices5/org.kde.skrooge-import-gnc.desktop
@@ -408,6 +413,7 @@ share/kservices5/org.kde.skrooge-plugin-search.desktop
 share/kservices5/org.kde.skrooge-plugin-tracker.desktop
 share/kservices5/org.kde.skrooge-plugin-unit.desktop
 share/kservicetypes5/org.kde.skg-plugin.desktop
+share/kservicetypes5/org.kde.skrooge-import-backend-type.desktop
 share/kservicetypes5/org.kde.skrooge-import-plugin.desktop
 share/kxmlgui5/skg/skgmainpanel.rc
 share/kxmlgui5/skg_advice/skg_advice.rc
@@ -477,8 +483,6 @@ share/locale/zh_CN/LC_MESSAGES/skrooge.mo
 share/locale/zh_TW/LC_MESSAGES/skrooge.mo
 share/metainfo/org.kde.skrooge.appdata.xml
 share/mime/packages/x-skg.xml
-%%DATADIR%%/backends/weboob.backend
-%%DATADIR%%/backends/weboob0g.backend
 %%DATADIR%%/categories/fr/associations.qif
 %%DATADIR%%/categories/fr/liberal.qif
 %%DATADIR%%/categories/fr/plan_comptable.qif
@@ -690,14 +694,14 @@ share/mime/packages/x-skg.xml
 %%DATADIR%%/currency/zwl.desktop
 %%DATADIR%%/extractors/allo_pneus.extractor
 %%DATADIR%%/extractors/bebe_au_naturel.extractor
-%%DATADIR%%/extractors/biofan.extractor
 %%DATADIR%%/extractors/easycartouche.extractor
 %%DATADIR%%/extractors/engie.extractor
 %%DATADIR%%/extractors/etikolo.extractor
 %%DATADIR%%/extractors/free.extractor
 %%DATADIR%%/extractors/free_mobile.extractor
 %%DATADIR%%/extractors/ldlc.extractor
-%%DATADIR%%/extractors/oscaro.extractor
+%%DATADIR%%/extractors/oscaro_v1.extractor
+%%DATADIR%%/extractors/oscaro_v2.extractor
 %%DATADIR%%/extractors/oxybul.extractor
 %%DATADIR%%/extractors/pixmania.extractor
 %%DATADIR%%/extractors/sarenza.extractor
@@ -764,6 +768,7 @@ share/mime/packages/x-skg.xml
 %%DATADIR%%/images/logo/caisse_epargne.png
 %%DATADIR%%/images/logo/capitec__470010.png
 %%DATADIR%%/images/logo/cic__30066.png
+%%DATADIR%%/images/logo/citadele.png
 %%DATADIR%%/images/logo/citibank.png
 %%DATADIR%%/images/logo/cnp.png
 %%DATADIR%%/images/logo/commonwealth.png
@@ -790,6 +795,7 @@ share/mime/packages/x-skg.xml
 %%DATADIR%%/images/logo/hellobank.png
 %%DATADIR%%/images/logo/home_credit_bank.png
 %%DATADIR%%/images/logo/hsbc.png
+%%DATADIR%%/images/logo/humanis.png
 %%DATADIR%%/images/logo/ing_direct__14559.png
 %%DATADIR%%/images/logo/ing_direct__30438.png
 %%DATADIR%%/images/logo/investec__580105.png
@@ -817,6 +823,7 @@ share/mime/packages/x-skg.xml
 %%DATADIR%%/images/logo/medicinos_bankas.png
 %%DATADIR%%/images/logo/merrill_lynch.png
 %%DATADIR%%/images/logo/monabanq.png
+%%DATADIR%%/images/logo/morning.png
 %%DATADIR%%/images/logo/national_bank.png
 %%DATADIR%%/images/logo/nationwide.png
 %%DATADIR%%/images/logo/natwest.png
@@ -852,6 +859,7 @@ share/mime/packages/x-skg.xml
 %%DATADIR%%/images/logo/westpac.png
 %%DATADIR%%/images/logo/woori_bank.png
 %%DATADIR%%/images/splash.png
+%%DATADIR%%/quotes/BitcoinAverage.txt
 %%DATADIR%%/quotes/BitcoinCharts.txt
 %%DATADIR%%/quotes/GrandTrunk.txt
 %%DATADIR%%/quotes/Skrooge.txt

@@ -725,7 +725,7 @@ cockroach:*:771:771::0:0:CockroachDB Daemon:/var/db/cockroach:/usr/sbin/nologin
 # free: 775
 # free: 776
 openxpki:*:777:777::0:0:OpenXPKI Owner:/nonexistent:/usr/sbin/nologin
-# free: 778
+litecoin:*:778:778::0:0:litecoin Daemon:/var/db/litecoin:/usr/sbin/nologin
 bitcoin:*:779:779::0:0:bitcoin Daemon:/var/db/bitcoin:/usr/sbin/nologin
 zetacoin:*:780:780::0:0:ZetaCoin Daemon:/nonexistent:/usr/sbin/nologin
 # free: 781

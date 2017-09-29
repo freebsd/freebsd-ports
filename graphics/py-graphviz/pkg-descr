@@ -1,0 +1,13 @@
+This package facilitates the creation and rendering of graph descriptions in the
+DOT language of the Graphviz graph drawing software (repo) from Python.
+
+Create a graph object, assemble the graph by adding nodes and edges, and
+retrieve its DOT source code string. Save the source code to a file and render
+it with the Graphviz installation of your system.
+
+Use the view option/method to directly inspect the resulting (PDF, PNG, SVG,
+etc.) file with its default application. Graphs can also be rendered and
+displayed within Jupyter notebooks (a.k.a. IPython notebooks, example) as well
+as the Jupyter Qt Console.
+
+WWW: https://github.com/xflr6/graphviz

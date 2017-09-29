@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	hexedit
-PORTVERSION=	1.4.1
+PORTVERSION=	1.4.2
 CATEGORIES=	editors
 
 MAINTAINER=	sunpoet@FreeBSD.org

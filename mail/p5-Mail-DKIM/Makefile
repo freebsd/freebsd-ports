@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Mail-DKIM
-PORTVERSION=	0.42
+PORTVERSION=	0.43
 CATEGORIES=	mail perl5
 MASTER_SITES=	CPAN \
 		http://jason.long.name/dkimproxy/
@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl5 module to process and/or create DKIM email
 
-LICENSE=	ART10 GPLv1
+LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Crypt-OpenSSL-RSA>=0:security/p5-Crypt-OpenSSL-RSA \

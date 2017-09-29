@@ -9,6 +9,10 @@ MASTER_SITES=	SF/tkgames/${PORTNAME}/main
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tessellation puzzle game
 
+DEPRECATED=		This port depends on Tcl/Tk 8.4 , which is no longer\
+			maintained. Please port it to 8.5+
+EXPIRATION_DATE=	2017-10-15
+
 USES= 		tar:tgz tk:84,run
 WRKSRC=		${WRKDIR}/${PORTNAME}
 NO_BUILD=	yes

@@ -3,7 +3,7 @@
 
 PORTNAME=	mod_spdy
 PORTVERSION=	0.9.4.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www
 MASTER_SITES=	http://www.club.kyutech.ac.jp/~masaki/ports/:mod_spdy \
 		APACHE_HTTPD:apache22
@@ -26,7 +26,7 @@ BUILD_DEPENDS=	python:lang/python \
 
 ONLY_FOR_ARCHS=	amd64 i386
 USE_APACHE=	22
-USES=		compiler execinfo gmake python:2 ssl tar:xz
+USES=		compiler gmake python:2 ssl tar:xz
 REINPLACE_ARGS=	-i ""
 
 WRKSRC=		${WRKDIR}/${PORTNAME}_source_${PORTVERSION}/mod_spdy/src
@@ -38,7 +38,7 @@ GYP_DEFINES+=	\
 		system_include_path_httpd=${LOCALBASE}/include/apache22 \
 		system_include_path_apr=${LOCALBASE}/include/apr-1 \
 		system_include_path_aprutil=${LOCALBASE}/include/apr-1 \
-		system_include_path_execinfo=${LOCALBASE}/include \
+		system_include_path_execinfo=/usr/include \
 		include_dirs=${LOCALBASE}/include
 
 SUB_FILES+=	mod_spdy.conf

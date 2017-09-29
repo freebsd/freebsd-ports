@@ -2,7 +2,7 @@
 
 PORTNAME=	core
 DISTVERSION=	${QT5_VERSION}
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 PKGNAMEPREFIX=	qt5-
 
@@ -12,7 +12,6 @@ COMMENT=	Qt core non-graphical module
 LIB_DEPENDS=	libicui18n.so:devel/icu \
 		libpcre.so:devel/pcre
 
-USES=		execinfo
 USE_GNOME=	glib20
 USE_QT5=	qmake_build buildtools_build
 QT_DIST=	base

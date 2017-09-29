@@ -1,8 +1,14 @@
 %%SITE_PERL%%/MooseX/AttributeShortcuts.pm
 %%SITE_PERL%%/MooseX/AttributeShortcuts/Trait/Attribute.pm
 %%SITE_PERL%%/MooseX/AttributeShortcuts/Trait/Attribute/HasAnonBuilder.pm
+%%SITE_PERL%%/MooseX/AttributeShortcuts/Trait/Method/Builder.pm
+%%SITE_PERL%%/MooseX/AttributeShortcuts/Trait/Method/HasDefinitionContext.pm
 %%SITE_PERL%%/MooseX/AttributeShortcuts/Trait/Role/Attribute.pm
+%%SITE_PERL%%/MooseX/AttributeShortcuts/Trait/Role/Method/Builder.pm
 %%PERL5_MAN3%%/MooseX::AttributeShortcuts.3.gz
 %%PERL5_MAN3%%/MooseX::AttributeShortcuts::Trait::Attribute.3.gz
 %%PERL5_MAN3%%/MooseX::AttributeShortcuts::Trait::Attribute::HasAnonBuilder.3.gz
+%%PERL5_MAN3%%/MooseX::AttributeShortcuts::Trait::Method::Builder.3.gz
+%%PERL5_MAN3%%/MooseX::AttributeShortcuts::Trait::Method::HasDefinitionContext.3.gz
 %%PERL5_MAN3%%/MooseX::AttributeShortcuts::Trait::Role::Attribute.3.gz
+%%PERL5_MAN3%%/MooseX::AttributeShortcuts::Trait::Role::Method::Builder.3.gz

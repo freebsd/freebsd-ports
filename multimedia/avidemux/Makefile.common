@@ -20,7 +20,7 @@ USE_QT4=	# empty
 OPTIONS_FILE=	${PORT_DBDIR}/${OPTIONS_NAME:C/-.*//}/options
 
 USES=		cmake:outsource,noninja pkgconfig iconv gmake compiler:features sqlite
-USES+=		dos2unix execinfo
+USES+=		dos2unix
 DOS2UNIX_FILES=	cmake/admCheckMiscLibs.cmake \
 		avidemux_core/ADM_coreVideoCodec/include/ADM_coreVideoCodec6_export.h \
 		avidemux_core/ADM_coreVideoCodec/include/ADM_ffmp43.h
@@ -76,13 +76,8 @@ CFLAGS+=	-fno-omit-frame-pointer
 #MAKE_ENV+=	ARCH=x86_64
 #CONFIGURE_ENV+=	ARCH=x86_64
 .endif
-.if !exists(/usr/lib/libexecinfo.so)
-CMAKE_ARGS+=	-DLIBEXECINFO_INCLUDE_DIR=${LOCALBASE}/include
-CMAKE_ARGS+=	-DLIBEXECINFO_LIBRARY_DIR=${LOCALBASE}/lib/libexecinfo.so
-.else
 CMAKE_ARGS+=	-DLIBEXECINFO_INCLUDE_DIR=/usr/include
 CMAKE_ARGS+=	-DLIBEXECINFO_LIBRARY_DIR=-lexecinfo
-.endif
 
 # We haven't ALSA(Never) & Aften(Yet) on FreeBSD
 CMAKE_ARGS+=	-DARTS:BOOL=OFF -DALSA:BOOL=OFF -DAFTEN:BOOL=OFF

@@ -3,7 +3,7 @@
 
 PORTNAME=	apel
 PORTVERSION=	${APEL_VER}
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	editors elisp
 MASTER_SITES=	http://git.chise.org/elisp/dist/apel/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}

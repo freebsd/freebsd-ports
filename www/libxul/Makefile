@@ -3,7 +3,7 @@
 
 PORTNAME=	libxul
 DISTVERSION=	45.9.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES?=	www devel
 MASTER_SITES=	MOZILLA/firefox/releases/${DISTVERSION}esr/source \
 		MOZILLA/firefox/candidates/${DISTVERSION}esr-candidates/build3/source
@@ -58,6 +58,7 @@ OPTIONS_SINGLE+=	TOOLKIT
 OPTIONS_SINGLE_TOOLKIT=	GTK2 GTK3
 
 .include "${.CURDIR}/../../www/firefox/Makefile.options"
+OPTIONS_MULTI_AUDIO:=	${OPTIONS_MULTI_AUDIO:NJACK}
 
 .if ${USE_MOZILLA:M-nss}
 MOZ_PKGCONFIG_FILES+=	mozilla-nss

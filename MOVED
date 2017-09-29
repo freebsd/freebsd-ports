@@ -4718,7 +4718,6 @@ security/kovpn||2013-07-26|Has expired: Depends on Qt 3.x
 security/kssh||2013-07-26|Has expired: Depends on Qt 3.x
 security/qca-tls||2013-07-26|Has expired: Depends on Qt 3.x
 security/qtfw||2013-07-26|Has expired: Depends on Qt 3.x
-sysutils/filelight||2013-07-26|Has expired: Depends on Qt 3.x
 sysutils/k3b||2013-07-26|Has expired: Depends on Qt 3.x
 sysutils/kcpuload||2013-07-26|Has expired: Depends on Qt 3.x
 sysutils/kdeadmin3||2013-07-26|Has expired: Depends on Qt 3.x
@@ -8082,7 +8081,6 @@ databases/py32-sqlite3||2016-02-02|Has expired: Full EOL reached. Please update 
 x11-toolkits/py32-tkinter||2016-02-02|Has expired: Full EOL reached. Please update to Python 3.5
 sysutils/puppet|sysutils/puppet38|2016-02-05|Renamed
 devel/etcdctl|devel/etcd|2016-02-06|Has expired: etcdctl is now part of etcd, following the change from the upstream
-graphics/py-graphviz|graphics/py-pygraphviz|2016-02-07|Renamed to match upstream (PyPI) name
 security/polarssl||2016-02-07|Has expired: Upstream is ending support for 1.2.x
 multimedia/xbmc-addon-pvr||2016-02-12|Has expired: Does not work with multimedia/kodi 15.x and newer
 security/py-openid|security/py-python-openid|2016-02-13|Renamed to match upstream (PyPI) name
@@ -9543,3 +9541,13 @@ databases/py33-sqlite3||2017-09-03|Removed, please update to Python 3.6
 devel/py33-setuptools||2017-09-03|Removed, please update to Python 3.6
 x11-toolkits/py33-tkinter||2017-09-03|Removed, please update to Python 3.6
 devel/py3-enum34||2017-09-03|Removed, Python 3.3 only
+security/clambc||2017-09-14|Has expired: Practically unmaintained, featuring issues elsewhere solved 6 years ago
+devel/cmake-modules||2017-09-14|Deleted, merged into devel/cmake
+devel/cargo|lang/rust|2017-09-15|Merged with lang/rust
+sysutils/filelight-kde4|sysutils/filelight|2017-09-16|Renamed to sysutils/filelight
+security/gnupg22|security/gnupg|2017-09-19|Removed, security/gnupg is now gnupg22
+mail/milter-greylist-devel|mail/milter-greylist|2017-09-22|Has expired: mail/milter-greylist provides same version and options
+devel/libexecinfo||2017-09-22|Is present in the base system of all supported releases
+games/ember||2017-09-23|Removed, it is BROKEN and no longer developed since 2014
+ports-mgmt/packagekit-qt4||2017-09-28|Has expired: Ignored for more than 5 years
+ports-mgmt/kpackagekit||2017-09-28|Has expired: Skipped for more than 5 years

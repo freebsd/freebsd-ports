@@ -1,0 +1,3 @@
+# Tcl package index file, version 1.0
+
+package ifneeded Tk%%THREADS_SUFFIX%% %%TCLPATCHLEVEL%% "[list load "[file join [file dirname $dir] libtk86%%THREADS_SUFFIX%%.so.1]" Tk]%%TK_PROVIDE%%"

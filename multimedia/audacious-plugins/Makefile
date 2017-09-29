@@ -3,7 +3,7 @@
 
 PORTNAME=	audacious-plugins
 PORTVERSION=	3.8.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://distfiles.audacious-media-player.org/
 
@@ -22,7 +22,7 @@ RUN_DEPENDS=	audacious:multimedia/audacious
 CONFLICTS_INSTALL=	audacious-plugins-gtk3-3.*
 
 GNU_CONFIGURE=	yes
-USES=		compiler:c++11-lib execinfo gettext-tools gmake iconv \
+USES=		compiler:c++11-lib gettext-tools gmake iconv \
 	localbase pkgconfig tar:bzip2
 USE_LDCONFIG=	yes
 USE_GNOME=	gtk20 glib20 libxml2 cairo gdkpixbuf2

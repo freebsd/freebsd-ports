@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	hplip-plugin
-PORTVERSION=	3.17.7
+PORTVERSION=	3.17.9
 CATEGORIES=	print
 MASTER_SITES=	http://hplipopensource.com/hplip-web/plugin/
 DISTNAME=	hplip-${DISTVERSION}-plugin

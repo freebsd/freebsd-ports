@@ -39,7 +39,7 @@ CONFLICTS_INSTALL=	awesome-[0-9]*
 DEPRECATED=	Awesome WM 3.x is deprecated use 4.x instead
 EXPIRATION_DATE=2017-10-10
 
-USES=		cmake execinfo gettext iconv pkgconfig lua tar:xz
+USES=		cmake gettext iconv pkgconfig lua tar:xz
 CMAKE_ARGS+=	-DSYSCONFDIR=${PREFIX}/etc
 USE_GNOME=	glib20 pango gdkpixbuf2
 USE_XORG=	pixman x11 xau xcb xdmcp xext xft xinerama xrandr xrender \

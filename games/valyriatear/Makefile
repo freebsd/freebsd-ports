@@ -3,6 +3,7 @@
 
 PORTNAME=	valyriatear
 PORTVERSION=	1.0.0
+PORTREVISION=	2
 CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org

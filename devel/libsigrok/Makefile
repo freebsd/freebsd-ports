@@ -3,7 +3,7 @@
 
 PORTNAME=	libsigrok
 PORTVERSION=	0.3.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://sigrok.org/download/source/libsigrok/
 

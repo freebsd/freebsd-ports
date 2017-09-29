@@ -1,0 +1,58 @@
+.\" Copyright (c) 2017
+.\"		Netflix Inc.
+.\"
+.\" Redistribution and use in source and binary forms, with or without
+.\" modification, are permitted provided that the following conditions
+.\" are met:
+.\" 1. Redistributions of source code must retain the above copyright
+.\"    notice, this list of conditions and the following disclaimer.
+.\" 2. Redistributions in binary form must reproduce the above copyright
+.\"    notice, this list of conditions and the following disclaimer in the
+.\"    documentation and/or other materials provided with the distribution.
+.\"
+.\" THIS SOFTWARE IS PROVIDED BY THE REGENTS AND CONTRIBUTORS ``AS IS'' AND
+.\" ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+.\" IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+.\" ARE DISCLAIMED.  IN NO EVENT SHALL THE REGENTS OR CONTRIBUTORS BE LIABLE
+.\" FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+.\" DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+.\" OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+.\" HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+.\" LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+.\" OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+.\" SUCH DAMAGE.
+.\"
+.\" $FreeBSD$
+.\"
+.Dd May 22, 2017
+.Dt NSTAT 1
+.Os
+.Sh NAME
+.Nm nstat
+.Nd Display various stats.
+.Sh SYNOPSIS
+.Nm
+.Op Fl m 
+.Op wait
+.Sh DESCRIPTION
+The
+.Nm
+utility will display system stats similar to netstat and vmstat. 
+
+.Pp
+The options are as follows:
+.Bl -tag -width indent
+.Fl m
+run pcm-memory.x and report memory bandwidth statistics
+.Pp
+.Sh EXAMPLES
+The command:
+.Dl netstat -m 10
+will print what the system is doing every 10
+seconds, including reporting memory bandwith.
+
+.Sh SEE ALSO
+.Xr netstat 1 ,
+.Xr vmstat 8 ,
+.Xr pcm-memory.x 1
+

@@ -11,13 +11,6 @@ MASTER_SITES=	http://www.alhem.net/Sockets/ \
 MAINTAINER=	ml@netfence.it
 COMMENT=	C++ wrapper for BSD-style sockets
 
-#execinfo is optional and currently not configured (would need to patch source's #ifdef LINUX)
-#LIB_DEPENDS=	execinfo.1:devel/libexecinfo
-
-#Not needed without execinfo or xml
-#CFLAGS+=	-I${LOCALBASE}/include
-#LDFLAGS+=	-L${LOCALBASE}/lib
-
 USES+=		gmake ssl
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes

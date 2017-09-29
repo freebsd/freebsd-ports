@@ -1,0 +1,6 @@
+Provides fast and efficient routines for common rolling / windowed
+operations. Routines for the efficient computation of windowed mean,
+median, sum, product, minimum, maximum, standard deviation and
+variance are provided.
+
+WWW: https://cran.r-project.org/web/packages/RcppRoll/

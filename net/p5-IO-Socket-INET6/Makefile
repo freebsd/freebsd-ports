@@ -12,7 +12,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	jmohacsi@bsd.hu
 COMMENT=	Perl module with object interface to AF_INET6 domain sockets
 
-LICENSE=	ART10 GPLv1
+LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Socket6>=0.12:net/p5-Socket6

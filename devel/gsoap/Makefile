@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gsoap
-PORTVERSION=	2.8.50
+PORTVERSION=	2.8.54
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}2/gsoap-2.8
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -34,7 +34,7 @@ post-patch:
 	    -e 's|-DSOAPCPP_IMPORT_PATH=|-DSOAPCPP2_IMPORT_PATH=|' \
 	    -e 's|-DWSDL_IMPORT_PATH=|-DWSDL2H_IMPORT_PATH=|' \
 	    ${WRKSRC}/configure.ac
-	${REINPLACE_CMD} -e 's|$$(libdir)|$$(libdir)data|' \
+	@${REINPLACE_CMD} -e 's|$$(libdir)|$$(libdir)data|' \
 	    ${WRKSRC}/Makefile.am
 
 post-install:

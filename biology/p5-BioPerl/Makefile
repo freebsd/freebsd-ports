@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	BioPerl
-PORTVERSION=	1.007001
-PORTREVISION=	2
+PORTVERSION=	1.007002
 CATEGORIES=	biology perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:CJFIELDS
@@ -12,7 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Collection of Perl modules for bioinformatics
 
-LICENSE=	ART10 GPLv1
+LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Algorithm-Munkres>=0:math/p5-Algorithm-Munkres \

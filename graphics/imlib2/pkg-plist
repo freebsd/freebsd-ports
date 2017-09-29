@@ -27,7 +27,7 @@ lib/imlib2/loaders/xpm.so
 lib/imlib2/loaders/zlib.so
 lib/libImlib2.so
 lib/libImlib2.so.1
-lib/libImlib2.so.1.4.9
+lib/libImlib2.so.1.4.10
 libdata/pkgconfig/imlib2.pc
 %%DATADIR%%/data/fonts/cinema.ttf
 %%DATADIR%%/data/fonts/grunge.ttf

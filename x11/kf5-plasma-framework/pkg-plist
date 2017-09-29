@@ -180,6 +180,10 @@ lib/libKF5PlasmaQuick.so.%%KDE_FRAMEWORKS_VERSION%%
 %%QT_QMLDIR%%/org/kde/plasma/components.3/TextField.qml
 %%QT_QMLDIR%%/org/kde/plasma/components.3/ToolBar.qml
 %%QT_QMLDIR%%/org/kde/plasma/components.3/ToolButton.qml
+%%QT_QMLDIR%%/org/kde/plasma/components.3/private/ButtonShadow.qml
+%%QT_QMLDIR%%/org/kde/plasma/components.3/private/DefaultListItemBackground.qml
+%%QT_QMLDIR%%/org/kde/plasma/components.3/private/RoundShadow.qml
+%%QT_QMLDIR%%/org/kde/plasma/components.3/private/TextFieldFocus.qml
 %%QT_QMLDIR%%/org/kde/plasma/components.3/qmldir
 %%QT_QMLDIR%%/org/kde/plasma/components/BusyIndicator.qml
 %%QT_QMLDIR%%/org/kde/plasma/components/Button.qml
@@ -287,6 +291,7 @@ share/locale/el/LC_MESSAGES/libplasma5.mo
 share/locale/en_GB/LC_MESSAGES/libplasma5.mo
 share/locale/es/LC_MESSAGES/libplasma5.mo
 share/locale/et/LC_MESSAGES/libplasma5.mo
+share/locale/eu/LC_MESSAGES/libplasma5.mo
 share/locale/fi/LC_MESSAGES/libplasma5.mo
 share/locale/fr/LC_MESSAGES/libplasma5.mo
 share/locale/gd/LC_MESSAGES/libplasma5.mo

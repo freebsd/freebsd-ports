@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sagittarius
-PORTVERSION=	0.8.0
-PORTREVISION=	1
+PORTVERSION=	0.8.6
 CATEGORIES=	lang
 MASTER_SITES=	https://bitbucket.org/ktakashi/sagittarius-scheme/downloads/ \
 		LOCAL/ashish
@@ -48,8 +47,5 @@ post-patch-ODBC-off:
 
 post-install:
 	@${LN} -sf ${PREFIX}/bin/sagittarius ${STAGEDIR}${PREFIX}/bin/sash
-
-post-build:
-	@${SETENV} ${MAKE_ENV} ${MAKE_CMD} -C ${WRKSRC} doc
 
 .include <bsd.port.post.mk>

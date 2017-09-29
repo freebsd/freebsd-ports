@@ -2,6 +2,7 @@
 
 PORTNAME=	0ad
 PORTVERSION=	0.0.22
+PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	http://releases.wildfiregames.com/ \
 		SF/zero-ad/releases
@@ -29,7 +30,7 @@ LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-alpha
 BUILD_WRKSRC=	${WRKSRC}/build/workspaces/gcc
 MAKE_ARGS=	config=release
-USES=		compiler:c++11-lib dos2unix execinfo gmake iconv jpeg openal:al \
+USES=		compiler:c++11-lib dos2unix gmake iconv jpeg openal:al \
 		pkgconfig tar:xz
 USE_GNOME=	libxml2 gtk20
 USE_GL=		gl

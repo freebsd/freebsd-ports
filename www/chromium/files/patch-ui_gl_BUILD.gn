@@ -1,15 +1,15 @@
---- ui/gl/BUILD.gn.orig	2017-08-03 00:05:41.000000000 +0200
-+++ ui/gl/BUILD.gn	2017-08-10 12:59:44.155432000 +0200
-@@ -14,7 +14,7 @@
+--- ui/gl/BUILD.gn.orig	2017-09-05 21:05:48.000000000 +0200
++++ ui/gl/BUILD.gn	2017-09-07 01:56:19.612744000 +0200
+@@ -15,7 +15,7 @@
                         (target_cpu == "x86" || target_cpu == "x64")
  }
  
--use_egl = is_win || is_android || is_linux
-+use_egl = is_win || is_android || is_linux || is_bsd
+-use_egl = is_win || is_android || is_linux || is_fuchsia
++use_egl = is_win || is_android || is_linux || is_fuchsia || is_bsd
  use_glx = use_x11 || ozone_platform_x11
  
  if (is_android) {
-@@ -173,14 +173,14 @@
+@@ -181,14 +181,14 @@
        "gl_surface_egl.h",
      ]
  

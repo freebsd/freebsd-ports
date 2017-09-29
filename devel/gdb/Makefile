@@ -3,7 +3,7 @@
 
 PORTNAME=	gdb
 PORTVERSION=	8.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	GNU
 
@@ -48,7 +48,8 @@ EXTRA_PATCHES=	${FILESDIR}/commit-45eba0ab7d \
 		${FILESDIR}/commit-4b654465bf \
 		${FILESDIR}/commit-b30ff123fb \
 		${FILESDIR}/commit-48aeef91c2 \
-		${FILESDIR}/commit-0aa37b654c
+		${FILESDIR}/commit-0aa37b654c \
+		${FILESDIR}/commit-0335ac6d12
 LIB_DEPENDS+=	libexpat.so:textproc/expat2
 
 VER=		${PORTVERSION:S/.//g}

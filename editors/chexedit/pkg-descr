@@ -1,6 +1,6 @@
 Hexedit is a Curses based Hex editor.  Unlike a text editor, which
 is used for editing text documents in the desired language, hexedit
-lets you edit any file as it's byte(1) for byte representation.  It can
+lets you edit any file as its byte for byte representation.  It can
 even let you view and edit your fixed disks on your Linux system.  This
 is not ideal for writing a letter or writing c code, but there are my
 times when this is ideal:

@@ -1,0 +1,21 @@
+Pijul is a version control system based on patches, that can mimic the
+behaviour and workflows of both Git and Darcs, but contrarily to those systems,
+Pijul is based on a mathematically sound theory of patches.
+
+Pijul was started out of frustration that no version control system was at the
+same time fast and sound:
+
+- Git has non-associative merges, which might lead to security problems.
+  Concretely, this means that the commits you merge might not be the same as
+  the ones you review and test.
+
+- Handling of conflicts: Pijul has an explicit internal representation of
+  conflicts, a rock-solid theory of how they behave, and super-fast data
+  structures to handle them.
+
+- Speed! The complexity of Pijul is low in all cases, whereas previous attempts
+  to build a mathematically sound distributed version control system had huge
+  worst-case complexities. The use of Rust additionally yields a blazingly fast
+  implementation.
+
+WWW: https://pijul.org/

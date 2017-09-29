@@ -3,7 +3,7 @@
 
 PORTNAME=	zorba
 PORTVERSION=	2.7.0
-PORTREVISION=	14
+PORTREVISION=	16
 CATEGORIES=	textproc
 MASTER_SITES=	https://launchpadlibrarian.net/119058962/
 DISTNAME=	${PORTNAME}-src-${PORTVERSION}
@@ -38,7 +38,7 @@ CONFLICTS=	xqilla-[0-9]*
 USE_GNOME=	libxml2 libxslt
 USE_LDCONFIG=	yes
 USE_CXXSTD=	c++11
-USES=		cmake:outsource compiler:c++11-lib execinfo
+USES=		cmake:outsource compiler:c++11-lib
 CXXFLAGS+=	-I${LOCALBASE}/include -O1 # compiler hangs with -O2 on CURRENT
 LDFLAGS+=	-L${LOCALBASE}/lib
 CMAKE_ARGS=	-DCMAKE_REQUIRED_FLAGS:STRING="-I${LOCALBASE}/include -L${LOCALBASE}/lib" \
@@ -49,12 +49,6 @@ DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-${PORTVERSION}
 PLIST_SUB+=	FULLVERSION=${PORTVERSION} \
 		MIDVERSION=${PORTVERSION:R} \
 		MINVERSION=${PORTVERSION:R:R}
-
-.if exists(/usr/lib/libexecinfo.so)
-LOC_EXECINFO=	/usr/lib/libexecinfo.so
-.else
-LOC_EXECINFO=	${LOCALBASE}/lib/libexecinfo.so
-.endif
 
 .include <bsd.port.options.mk>
 
@@ -91,7 +85,7 @@ BUILD_DEPENDS+=	swig2.0:devel/swig20
 .endif
 
 post-patch:
-	${REINPLACE_CMD} -e 's|%%LIBEXECINFO%%|${LOC_EXECINFO}|' \
+	${REINPLACE_CMD} \
 		-e 's|FreeBSD|${OPSYS}|g' ${WRKSRC}/CMakeLists.txt
 	${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 		${WRKSRC}/cmake_modules/FindPHP5.cmake

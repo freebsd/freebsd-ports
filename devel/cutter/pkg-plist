@@ -112,6 +112,7 @@ lib/cutter/module/report/xml.so
 lib/cutter/module/stream/xml.so
 lib/cutter/module/ui/console.so
 lib/cutter/module/ui/gtk.so
+lib/gstreamer-1.0/libgstcuttertest.so
 lib/libcppcutter.so
 lib/libcppcutter.so.0
 lib/libcppcutter.so.0.1.0

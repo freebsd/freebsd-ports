@@ -4,4 +4,4 @@ run
 	CREATE EXTENSION IF NOT EXISTS timescaledb CASCADE;
 
 If you are upgrading, restart PostgreSQL server and run
-	ALTER EXTENSION timescaledb UPDATE TO '0.4.1';
+	ALTER EXTENSION timescaledb UPDATE TO '0.5.0';

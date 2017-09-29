@@ -8,7 +8,8 @@ MASTER_SITES=	RG
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Simple, easy-to-extend drop-in replacement for pygments
 
-LICENSE=	MIT
+LICENSE=	BSD2CLAUSE MIT
+LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 NO_ARCH=	yes

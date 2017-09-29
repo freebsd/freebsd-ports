@@ -3,13 +3,17 @@
 
 PORTNAME=	xpvm
 PORTVERSION=	1.2.5
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	net parallel
 MASTER_SITES=	NL/pvm3/xpvm
 DISTNAME=	XPVM.src.${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphical console and monitor for PVM
+
+DEPRECATED=		This port depends on Tcl/Tk 8.4 , which is no longer\
+			maintained. Please port it to 8.5+
+EXPIRATION_DATE=	2017-10-15
 
 LIB_DEPENDS=	libpvm3.so:net/pvm
 

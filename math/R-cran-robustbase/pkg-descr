@@ -1,0 +1,7 @@
+"Essential" Robust Statistics. Tools allowing to analyze data with
+robust methods. This includes regression methodology including model
+selections and multivariate statistics where we strive to cover the
+book "Robust Statistics, Theory and Methods" by 'Maronna, Martin
+and Yohai'; Wiley 2006.
+
+WWW: https://cran.r-project.org/web/packages/robustbase/

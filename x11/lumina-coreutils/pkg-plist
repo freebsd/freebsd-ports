@@ -84,7 +84,10 @@ share/lumina-desktop/i18n/lumina-search_da.qm
 share/lumina-desktop/i18n/lumina-search_de.qm
 share/lumina-desktop/i18n/lumina-search_el.qm
 share/lumina-desktop/i18n/lumina-search_en_GB.qm
+<<<<<<< HEAD
 share/lumina-desktop/i18n/lumina-search_en_AU.qm
+=======
+>>>>>>> 2d54d2a457d4ce7920d12e3827a5d7484201c025
 share/lumina-desktop/i18n/lumina-search_en_ZA.qm
 share/lumina-desktop/i18n/lumina-search_es.qm
 share/lumina-desktop/i18n/lumina-search_et.qm
@@ -151,7 +154,10 @@ share/lumina-desktop/i18n/lumina-xconfig_da.qm
 share/lumina-desktop/i18n/lumina-xconfig_de.qm
 share/lumina-desktop/i18n/lumina-xconfig_el.qm
 share/lumina-desktop/i18n/lumina-xconfig_en_GB.qm
+<<<<<<< HEAD
 share/lumina-desktop/i18n/lumina-xconfig_en_AU.qm
+=======
+>>>>>>> 2d54d2a457d4ce7920d12e3827a5d7484201c025
 share/lumina-desktop/i18n/lumina-xconfig_en_ZA.qm
 share/lumina-desktop/i18n/lumina-xconfig_es.qm
 share/lumina-desktop/i18n/lumina-xconfig_et.qm

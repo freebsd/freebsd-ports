@@ -6,4 +6,4 @@ orientation tag, it updates the exif informaton if needed (image dimension,
 orientation), it also rotates the exif thumbnail.
 It can process multiple images at once.
 
-WWW: http://www.kraxel.org/blog/linux/fbida/
+WWW: https://www.kraxel.org/blog/linux/fbida/

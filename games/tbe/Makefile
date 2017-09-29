@@ -3,7 +3,7 @@
 PORTNAME=	tbe
 PORTVERSION=	0.9.2.1
 DISTVERSIONPREFIX=	v
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	games
 
@@ -12,7 +12,7 @@ COMMENT=	The Butterfly Effect
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/unzip:archivers/unzip
 
-USES=		cmake compiler:c++11-lib execinfo tar:tgz
+USES=		cmake compiler:c++11-lib tar:tgz
 USE_QT4=	gui linguisttools_build moc_build qmake_build rcc_build \
 		svg uic_build xml
 

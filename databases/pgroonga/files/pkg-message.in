@@ -1,0 +1,12 @@
+######################################################################################
+# Create a database:                                                                 #
+# ==================                                                                 #
+# % sudo -H -u postgres psql --command 'CREATE DATABASE pgroonga_test'               #
+# (Normally, you should create a user for pgroonga_test database and use the user.   #
+# See GRANT USAGE ON SCHEMA pgroonga for details.)                                   #
+#                                                                                    #
+# Connect to the created database and execute CREATE EXTENSION pgroonga:             #
+# ======================================================================             #
+# % sudo -H -u postgres psql -d pgroonga_test --command 'CREATE EXTENSION pgroonga;' #
+#                                                                                    #
+######################################################################################

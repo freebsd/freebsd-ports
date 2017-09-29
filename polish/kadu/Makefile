@@ -3,7 +3,7 @@
 
 PORTNAME=	kadu
 PORTVERSION=	4.3
-PORTREVISION=	4
+PORTREVISION=	5
 PORTEPOCH=	1
 CATEGORIES=	polish net-im
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}/:kadu \
@@ -36,7 +36,7 @@ LIB_DEPENDS=	libmpdclient.so:audio/libmpdclient \
 GG6_EMOTS_DISTFILE=	kompatybilne_z_GG6.tar.gz
 GG7_EMOTS_DISTFILE=	dodatkowe_emoty_GG7.tar.gz
 
-USES=		cmake compiler:c++11-lib execinfo gettext-runtime \
+USES=		cmake compiler:c++11-lib gettext-runtime \
 		libarchive pkgconfig readline tar:bzip2
 USE_XORG=	x11 xext xfixes xscrnsaver
 USE_GNOME=	glib20

@@ -3,7 +3,7 @@
 
 PORTNAME=	c-ares
 PORTVERSION=	1.12.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	dns
 MASTER_SITES=	http://c-ares.haxx.se/download/ \
 		http://obsd.isc.org/pub/OpenBSD/distfiles/ \

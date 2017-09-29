@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	mongodb34-tools
-PORTVERSION=	3.4.7
+PORTVERSION=	3.4.9
 DISTVERSIONPREFIX=	r
 CATEGORIES=	databases net
 

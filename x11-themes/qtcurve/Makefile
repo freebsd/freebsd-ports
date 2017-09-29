@@ -2,7 +2,7 @@
 
 PORTNAME=	qtcurve
 PORTVERSION=	1.8.18
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-themes
 
 MAINTAINER=	jhale@FreeBSD.org
@@ -28,7 +28,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 USE_GITHUB=	yes
 GH_ACCOUNT=	QtCurve
 
-USES=		compiler:c++11-lib cmake execinfo pkgconfig
+USES=		compiler:c++11-lib cmake pkgconfig
 USE_XORG=	x11 xcb
 
 .for i in gtk2 kde4 qt4 qt5

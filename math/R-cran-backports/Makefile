@@ -2,15 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	backports
-PORTVERSION=	1.1.0
+PORTVERSION=	1.1.1
 CATEGORIES=	math
-DISTNAME=	${PORTNAME}_${DISTVERSION}
+DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Reimplementations of Functions Introduced Since R-3.0.0
 
 LICENSE=	GPLv2
 
-USES=		cran:auto-plist
+USES=		cran:auto-plist,compiles
 
 .include <bsd.port.mk>

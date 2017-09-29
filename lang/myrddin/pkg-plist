@@ -1,8 +1,10 @@
 bin/6m
+bin/h
 bin/mbld
 bin/mdumpleak
 bin/muse
 bin/redump
+bin/srvdot
 lib/myr/_myrrt.o
 lib/myr/libbio.a
 lib/myr/libbio.use
@@ -14,6 +16,8 @@ lib/myr/libescfmt.a
 lib/myr/libescfmt.use
 lib/myr/libfileutil.a
 lib/myr/libfileutil.use
+lib/myr/libhttp.a
+lib/myr/libhttp.use
 lib/myr/libinifile.a
 lib/myr/libinifile.use
 lib/myr/libjson.a
@@ -26,8 +30,12 @@ lib/myr/libsys.a
 lib/myr/libsys.use
 lib/myr/libtestr.a
 lib/myr/libtestr.use
+lib/myr/libtestutil.a
+lib/myr/libtestutil.use
 lib/myr/libthread.a
 lib/myr/libthread.use
+lib/myr/libthrtestutil.a
+lib/myr/libthrtestutil.use
 man/man1/6m.1.gz
 man/man1/mbld.1.gz
 man/man1/muse.1.gz

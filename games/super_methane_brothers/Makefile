@@ -15,12 +15,11 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libclan23Core.so:devel/clanlib
 
-USES=		execinfo gmake pkgconfig tar:tgz
+USES=		gmake localbase pkgconfig tar:tgz
 MAKE_ENV=	METHANE_FLAGS="${CPPFLAGS}" METHANE_LIBS="${LIBS}"
 MAKE_JOBS_UNSAFE=	yes
 
-CPPFLAGS+=	-I${LOCALBASE}/include
-LIBS+=		-L${LOCALBASE}/lib -lexecinfo
+LIBS+=		-lexecinfo
 
 DATADIR=	${PREFIX}/share/methane
 

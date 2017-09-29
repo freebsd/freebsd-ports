@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pysmb
-PORTVERSION=	1.1.19
+PORTVERSION=	1.1.22
 CATEGORIES=	net python
 MASTER_SITES=	CHEESESHOP \
 		http://miketeo.net/files/Projects/${PORTNAME}/

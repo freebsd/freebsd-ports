@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xfce4-battery-plugin
-PORTVERSION=	1.0.5
-PORTREVISION=	4
+PORTVERSION=	1.1.0
 CATEGORIES=	sysutils xfce
 MASTER_SITES=	XFCE/src/panel-plugins/${PORTNAME}/${PORTVERSION:R}
 DIST_SUBDIR=	xfce4
@@ -13,17 +12,18 @@ COMMENT=	Battery monitor panel plugin for Xfce4
 
 LICENSE=	GPLv2
 
-ONLY_FOR_ARCHS=	i386 amd64
+ONLY_FOR_ARCHS=	amd64 i386
 
 SSP_UNSAFE=	yes
+USES=		alias gettext-tools gmake libtool pkgconfig tar:bzip2 xfce:gtk3
 GNU_CONFIGURE=	yes
-INSTALLS_ICONS=	yes
-INSTALL_TARGET=	install-strip
-USES=		alias gmake libtool pkgconfig gettext-tools xfce tar:bzip2
-USE_GNOME=	gtk20 glib20 intltool intlhack
+USE_GNOME=	gtk30 glib20 intltool cairo
 USE_XFCE=	panel
+INSTALLS_ICONS=	yes
+USE_LDCONFIG=	yes
+INSTALL_TARGET=	install-strip
 
-OPTIONS_DEFINE= NLS
+OPTIONS_DEFINE=	NLS
 NLS_USES=	gettext-runtime
 NLS_CONFIGURE_ENABLE=	nls
 OPTIONS_SUB=	yes

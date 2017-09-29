@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=       WWW-Salesforce
-PORTVERSION=    0.25
+PORTVERSION=    0.301
 CATEGORIES=     www perl5
 MASTER_SITES=   CPAN
 PKGNAMEPREFIX=  p5-
@@ -10,7 +10,7 @@ PKGNAMEPREFIX=  p5-
 MAINTAINER=     matthew@FreeBSD.org
 COMMENT=        Simple abstraction layer between SOAP::Lite and Salesforce.com
 
-LICENSE=        ART10 GPLv1
+LICENSE=        ART10 GPLv1+
 LICENSE_COMB=   dual
 
 BUILD_DEPENDS=	p5-SOAP-Lite>=0.68:net/p5-SOAP-Lite \

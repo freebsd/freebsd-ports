@@ -42,7 +42,7 @@ CURL_DESC=	Require cURL for elasticsearch plugins
 GTK2_DESC=	Build sview GUI config tool
 HDF5_DESC=	Job profiling using HDF5
 HWLOC_DESC=	Portable hardware locality
-IPMI_DESC=	IPMI engergy consumption accounting
+IPMI_DESC=	IPMI energy consumption accounting
 RRD_DESC=	RRD external sensor data collection
 LINUX_DESC=	Support jobacct_gather/linux (requires linprocfs)
 

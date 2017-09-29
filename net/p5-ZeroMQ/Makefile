@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	az@FreeBSD.org
 COMMENT=	ZeroMQ2 wrapper for Perl
 
-LICENSE=	ART10 GPLv1
+LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Task-Weaken>=0:devel/p5-Task-Weaken

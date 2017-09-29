@@ -2,7 +2,7 @@
 
 PORTNAME?=	mariadb
 PORTVERSION=	10.2.7
-PORTREVISION?=	0
+PORTREVISION?=	3
 CATEGORIES=	databases ipv6
 MASTER_SITES=	http://mirrors.supportex.net/${SITESDIR}/ \
 		http://mirror2.hs-esslingen.de/pub/Mirrors/${SITESDIR}/ \
@@ -28,7 +28,7 @@ SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 SLAVEDIRS=	databases/mariadb102-client
-USES=		bison:build cmake compiler:c++11-lib cpe execinfo iconv:translit libedit ncurses shebangfix ssl
+USES=		bison:build cmake compiler:c++11-lib cpe iconv:translit libedit ncurses shebangfix ssl
 USE_LDCONFIG=	${PREFIX}/lib/mysql
 SHEBANG_FILES=	scripts/*.sh
 SITESDIR=	mariadb/mariadb-${PORTVERSION}/source
@@ -93,7 +93,6 @@ CMAKE_ARGS+=	-DINSTALL_DOCDIR="share/doc/mysql" \
 		-DCURSES_CURSES_LIBRARY="/usr/lib/libcurses.so" \
 		-DCURSES_FORM_LIBRARY="/usr/lib/libform.so" \
 		-DCURSES_CURSES_LIBRARY="/usr/lib/libncurses.so" \
-		-DEXECINFO_ROOT="${LOCALBASE}" \
 		-DICONV_LIBRARIES="${ICONV_LIB_PATH}" \
 		-DKRB5_CONFIG="${KRB5CONFIG}" \
 		-DCURSES_NCURSES_LIBRARY="${NCURSESLIB}/libncurses.so" \

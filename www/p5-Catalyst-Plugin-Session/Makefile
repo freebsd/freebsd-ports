@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Generic Catalyst Session plugin
 
-LICENSE=	ART10 GPLv1
+LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 # Do not add p5-Catalyst-Plugin-Session-State-Cookie to TEST_DEPENDS to avoid cyclic dependency

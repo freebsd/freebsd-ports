@@ -1,0 +1,4 @@
+%%SITE_PERL%%/Mojo/IOLoop/ForkCall.pm
+%%SITE_PERL%%/Mojolicious/Plugin/ForkCall.pm
+%%PERL5_MAN3%%/Mojo::IOLoop::ForkCall.3.gz
+%%PERL5_MAN3%%/Mojolicious::Plugin::ForkCall.3.gz

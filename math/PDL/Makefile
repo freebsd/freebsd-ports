@@ -9,7 +9,7 @@ MASTER_SITES=	CPAN
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl Data Language
 
-LICENSE=	ART10 GPLv1
+LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Astro-FITS-Header>=0:astro/p5-Astro-FITS-Header \

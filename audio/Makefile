@@ -658,6 +658,7 @@
     SUBDIR += py-mutagen
     SUBDIR += py-ogg
     SUBDIR += py-openal
+    SUBDIR += py-opuslib
     SUBDIR += py-py-jack
     SUBDIR += py-pyacoustid
     SUBDIR += py-pyaudio

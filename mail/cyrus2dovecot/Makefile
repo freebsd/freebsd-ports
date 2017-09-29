@@ -11,7 +11,7 @@ EXTRACT_ONLY=
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convert Cyrus folders to Dovecot
 
-LICENSE=	ART10 GPLv1
+LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 PLIST_FILES=	bin/${PORTNAME} man/man1/${PORTNAME}.1.gz

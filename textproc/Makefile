@@ -1510,6 +1510,7 @@
     SUBDIR += rubygem-htmlentities
     SUBDIR += rubygem-ini
     SUBDIR += rubygem-inifile
+    SUBDIR += rubygem-iso-639
     SUBDIR += rubygem-itextomml
     SUBDIR += rubygem-jekyll-assets
     SUBDIR += rubygem-jekyll-feed

@@ -3,9 +3,11 @@
 %%SITE_PERL%%/Config/Model/AnyId.pm
 %%SITE_PERL%%/Config/Model/AnyThing.pm
 %%SITE_PERL%%/Config/Model/Backend/Any.pm
+%%SITE_PERL%%/Config/Model/Backend/CdsFile.pm
 %%SITE_PERL%%/Config/Model/Backend/Fstab.pm
 %%SITE_PERL%%/Config/Model/Backend/IniFile.pm
 %%SITE_PERL%%/Config/Model/Backend/Json.pm
+%%SITE_PERL%%/Config/Model/Backend/PerlFile.pm
 %%SITE_PERL%%/Config/Model/Backend/PlainFile.pm
 %%SITE_PERL%%/Config/Model/Backend/ShellVar.pm
 %%SITE_PERL%%/Config/Model/Backend/Yaml.pm
@@ -70,9 +72,11 @@
 %%PERL5_MAN3%%/Config::Model::AnyId.3.gz
 %%PERL5_MAN3%%/Config::Model::AnyThing.3.gz
 %%PERL5_MAN3%%/Config::Model::Backend::Any.3.gz
+%%PERL5_MAN3%%/Config::Model::Backend::CdsFile.3.gz
 %%PERL5_MAN3%%/Config::Model::Backend::Fstab.3.gz
 %%PERL5_MAN3%%/Config::Model::Backend::IniFile.3.gz
 %%PERL5_MAN3%%/Config::Model::Backend::Json.3.gz
+%%PERL5_MAN3%%/Config::Model::Backend::PerlFile.3.gz
 %%PERL5_MAN3%%/Config::Model::Backend::PlainFile.3.gz
 %%PERL5_MAN3%%/Config::Model::Backend::ShellVar.3.gz
 %%PERL5_MAN3%%/Config::Model::Backend::Yaml.3.gz

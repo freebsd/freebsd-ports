@@ -5,6 +5,41 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20170928:
+  AFFECTS: users of security/courier-authlib and its modules
+  AUTHOR: madpilot@FreeBSD.org
+
+  The affected ports have been modified to follow the upstream
+  suggested best practice to use the sysconftool on installation.
+
+  Please make sure your configuration files include all the comments
+  that tool uses to correctly update the configuration on update.
+
+  You can use the ".sample" or ".dist" files as templates for missing
+  comments if needed.
+
+20170915:
+  AFFECTS: users of devel/cargo
+  AUTHOR: rust@FreeBSD.org
+
+  Starting with version 1.19.0, Cargo is provided with Rust. Therefore,
+  devel/cargo was merged into lang/rust.
+
+20170914:
+  AFFECTS: users of CMake & CMake Modules
+  AUTHOR: adridg@FreeBSD.org
+
+  The devel/cmake-modules port has been merged into devel/cmake.
+
+  The benefit of being able to update the modules without the binary
+  is outweighed by the issues caused by having the binary out-of-sync
+  with the modules.
+
+  Users should delete the devel/cmake-modules package and then
+  upgrade or reinstall devel/cmake.
+ 
+  All ports have been updated to depend only on CMake.
+
 20170904
   AFFECTS: users of net-mgmt/seafile-server
   AUTHOR: ultima@FreeBSD.org
@@ -17,14 +52,11 @@ you update your ports collection, before attempting any port upgrades.
   AFFECTS: users of security/gnupg
   AUTHOR: adamw@FreeBSD.org
 
-  security/gnupg22 has become the new stable version of GnuPG. This is
-  an LTS branch, and is directly analogous to security/gnupg20. gnupg20
-  will reach EOL at the end of the year, and all gnupg20 users should
-  migrate to gnupg22.
+  security/gnupg has become the new stable version of GnuPG. This is
+  an LTS branch. gnupg20 will reach EOL at the end of the year, and all
+  gnupg20 users should migrate to gnupg22.
 
   See https://gnupg.org/faq/whats-new-in-2.1.html for important changes.
-
-  The security/gnupg port will become GnuPG 2.3.x soon.
 
 20170820:
   AFFECTS: users of www/uwsgi
@@ -212,7 +244,7 @@ you update your ports collection, before attempting any port upgrades.
 
 20170628:
   AFFECTS: users of www/node
-  AUTHOR: bhughes@freebsd.org
+  AUTHOR: bhughes@FreeBSD.org
 
   The www/node port has been updated to Node.js v8.1.2, the latest
   upstream release. This is a major release, including many significant

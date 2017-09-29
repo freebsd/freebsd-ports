@@ -3,7 +3,7 @@
 
 PORTNAME=	doomsday
 PORTVERSION=	1.15.8
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	games
 MASTER_SITES=	SF/deng/Doomsday%20Engine/${PORTVERSION}
 DISTNAME=	${PORTNAME}-stable-${PORTVERSION}
@@ -22,7 +22,7 @@ USE_GL=		gl glu
 USE_LDCONFIG=	yes
 USE_SDL=	sdl2 mixer2 net2
 USE_XORG=	x11
-USES=		compiler:c++11-lib execinfo pkgconfig python:build qmake:outsource
+USES=		compiler:c++11-lib pkgconfig python:build qmake:outsource
 USE_QT4=	corelib network opengl moc_build
 QMAKE_SOURCE_PATH=	${WRKSRC}/doomsday
 QMAKE_ARGS+=	QMAKE_LFLAGS+="-Wl,--export-dynamic" \

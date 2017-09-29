@@ -14,7 +14,6 @@ lib/shotwell/plugins/builtin/shotwell-transitions.so
 libexec/shotwell/shotwell-settings-migrator
 libexec/shotwell/shotwell-video-thumbnailer
 man/man1/shotwell.1.gz
-share/appdata/shotwell.appdata.xml
 share/applications/shotwell-viewer.desktop
 share/applications/shotwell.desktop
 share/help/C/shotwell/edit-adjustments.page

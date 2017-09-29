@@ -1,11 +1,11 @@
-BruteForceBlocker is a perl script, that works along with pf - OpenBSD's
-firewall (Which is also available on FreeBSD since version 5.2 is out).
-It's main purpose is to block SSH bruteforce attacks via firewall.
+BruteForceBlocker is a Perl script that works along with pf - OpenBSD's
+firewall (which is also available on FreeBSD since version 5.2 is out).
+Its main purpose is to block SSH bruteforce attacks via firewall.
 When this script is running, it checks sshd logs from syslog and looks
-for Failed Login attempts - mostly some annoying script attacks, and
+for failed login attempts - mostly some annoying script attacks, and
 counts number of such attempts. When given IP reaches configured limit
 of fails, script puts this IP to the pf's table and blocks any further
-traffic to the that box from given IP (This also depends on
+traffic to the that box from given IP (this also depends on
 configuration done in pf.conf).
 
 WWW: http://danger.rulez.sk/projects/bruteforceblocker/

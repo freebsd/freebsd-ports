@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Search-Xapian
-PORTVERSION=	1.2.24.0
+PORTVERSION=	1.2.25.0
 CATEGORIES=	databases perl5
 MASTER_SITES=	http://oligarchy.co.uk/xapian/${PORTVERSION:R}/ \
 		LOCAL/sunpoet \
@@ -13,7 +13,7 @@ PKGNAMESUFFIX=	12
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Perl XS frontend to the Xapian C++ search library
 
-LICENSE=	ART10 GPLv1
+LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 LIB_DEPENDS=	libxapian.so:databases/xapian-core12

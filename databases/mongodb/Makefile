@@ -3,6 +3,7 @@
 
 PORTNAME=	mongodb
 PORTVERSION=	2.6.12
+PORTREVISION=	2
 CATEGORIES=	databases net
 MASTER_SITES=	http://downloads.mongodb.org/src/
 DISTNAME=	${PORTNAME}-src-r${PORTVERSION}
@@ -34,7 +35,7 @@ OPTIONS_DEFINE=	SSL SASL TEST
 OPTIONS_DEFAULT=SSL
 TEST_DESC=	Add support for running regression test
 
-USES=		cpe execinfo scons
+USES=		cpe scons
 MAKE_ARGS=	--prefix=${STAGEDIR}${PREFIX} --cc=${CC} --cxx=${CXX} \
 		--use-system-pcre --use-system-snappy --use-system-v8
 

@@ -3,7 +3,7 @@
 
 PORTNAME=	OpenEXR
 PORTVERSION=	2.2.0
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	graphics devel
 MASTER_SITES=	SAVANNAH/openexr/:dist \
 		LOCAL/mandree/:test

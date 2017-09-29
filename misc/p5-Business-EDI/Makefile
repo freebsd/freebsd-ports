@@ -12,7 +12,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	m.ne@gmx.net
 COMMENT=	Class for generating EDI objects and subobjects
 
-LICENSE=	ART10 GPLv1
+LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Exporter-Easy>=0.14:devel/p5-Exporter-Easy \
