@@ -12,6 +12,9 @@ if len(sys.argv) != 2:
 
 re_date = re.compile(r'^(19|20)[0-9]{2}-[0-9]{2}-[0-9]{2}$')
 
+# warn if description has more than X characters
+DESCRIPTION_LENGTH = 4500
+
 tree = ET.parse(sys.argv[1])
 root = tree.getroot()
 
@@ -73,10 +76,17 @@ for vuln in root:
                 print("Error: dates are insane : {0}".format(vid))
                 ret = 1
 
-        # Make sure the dates are in YYYY-MM-DD format (quick hack by expecting 6 chars)
+        # Make sure the dates are in YYYY-MM-DD format
         datelist = [discovery.text, entry.text] + ([modified.text] if modified is not None else [])
         for d in datelist:
             if not re_date.match(d):
                 print("Warning: dates must be in YYYY-MM-DD format: {0}".format(d))
+
+        # Check description lengths
+        description = vuln.find(namespace + "description")
+        description_len = len(ET.tostring(description))
+        if description_len > DESCRIPTION_LENGTH:
+            print("Warning: description too long ({0} chars, {1} is warning threshold): {2})" \
+                  .format(description_len, DESCRIPTION_LENGTH, vid))
 
 sys.exit(ret)
