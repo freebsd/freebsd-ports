@@ -1,3 +1,10 @@
-Estimation and simulation of latent variable models.
+A general implementation of Structural Equation Models with latent
+variables (MLE, 2SLS, and composite likelihood estimators) with
+both continuous, censored, and ordinal outcomes (Holst and
+Budtz-Joergensen (2013) <doi:10.1007/s00180-012-0344-y>). The package
+also provides methods for graph exploration (d-separation, back-door
+criterion), simulation of general non-linear latent variable models,
+and estimation of influence functions for a broad range of statistical
+models.
 
 WWW: https://cran.r-project.org/web/packages/lava/
