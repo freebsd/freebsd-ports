@@ -1,0 +1,37 @@
+# $FreeBSD$
+
+PORTNAME=	commons-lang3
+PORTVERSION=	3.4
+CATEGORIES=	java devel
+MASTER_SITES=	APACHE_COMMONS_SOURCE
+PKGNAMEPREFIX=	jakarta-
+DISTNAME=	${PORTNAME}-${PORTVERSION}-src
+
+MAINTAINER=	truckman@FreeBSD.org
+COMMENT=	Jakarta library with helper utilities for the java.lang API
+
+LICENSE=	APACHE20
+
+USE_JAVA=	yes
+JAVA_VERSION=	1.7+
+USE_ANT=	yes
+ALL_TARGET=	jar
+NO_ARCH=	yes
+
+JARFILE=	${PORTNAME}-${PORTVERSION}.jar
+DESTJARFILE=	${PORTNAME}.jar
+PLIST_FILES=	%%JAVAJARDIR%%/${DESTJARFILE}
+PORTDOCS=	*
+
+OPTIONS_DEFINE=	DOCS
+DOCS_ALL_TARGET=	javadoc
+
+do-install:
+	${INSTALL_DATA} ${WRKSRC}/target/${JARFILE} \
+		${STAGEDIR}${JAVAJARDIR}/${DESTJARFILE}
+
+do-install-DOCS-on:
+	(cd ${WRKSRC}/target/apidocs && ${COPYTREE_SHARE} . \
+		${STAGEDIR}${DOCSDIR})
+
+.include <bsd.port.mk>
