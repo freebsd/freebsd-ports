@@ -964,7 +964,7 @@ lib/wine/api-ms-win-core-file-l2-1-1.dll.so
 lib/wine/api-ms-win-core-handle-l1-1-0.dll.so
 lib/wine/api-ms-win-core-heap-l1-1-0.dll.so
 lib/wine/api-ms-win-core-heap-l1-2-0.dll.so
-%%STAGING%%lib/wine/api-ms-win-core-heap-l2-1-0.dll.so
+lib/wine/api-ms-win-core-heap-l2-1-0.dll.so
 lib/wine/api-ms-win-core-heap-obsolete-l1-1-0.dll.so
 lib/wine/api-ms-win-core-interlocked-l1-1-0.dll.so
 lib/wine/api-ms-win-core-interlocked-l1-2-0.dll.so
@@ -1016,7 +1016,7 @@ lib/wine/api-ms-win-core-rtlsupport-l1-1-0.dll.so
 lib/wine/api-ms-win-core-rtlsupport-l1-2-0.dll.so
 lib/wine/api-ms-win-core-shlwapi-legacy-l1-1-0.dll.so
 lib/wine/api-ms-win-core-shlwapi-obsolete-l1-1-0.dll.so
-%%STAGING%%lib/wine/api-ms-win-core-shlwapi-obsolete-l1-2-0.dll.so
+lib/wine/api-ms-win-core-shlwapi-obsolete-l1-2-0.dll.so
 lib/wine/api-ms-win-core-sidebyside-l1-1-0.dll.so
 lib/wine/api-ms-win-core-string-l1-1-0.dll.so
 lib/wine/api-ms-win-core-string-l2-1-0.dll.so
@@ -1351,7 +1351,7 @@ lib/wine/fakedlls/api-ms-win-core-file-l2-1-1.dll
 lib/wine/fakedlls/api-ms-win-core-handle-l1-1-0.dll
 lib/wine/fakedlls/api-ms-win-core-heap-l1-1-0.dll
 lib/wine/fakedlls/api-ms-win-core-heap-l1-2-0.dll
-%%STAGING%%lib/wine/fakedlls/api-ms-win-core-heap-l2-1-0.dll
+lib/wine/fakedlls/api-ms-win-core-heap-l2-1-0.dll
 lib/wine/fakedlls/api-ms-win-core-heap-obsolete-l1-1-0.dll
 lib/wine/fakedlls/api-ms-win-core-interlocked-l1-1-0.dll
 lib/wine/fakedlls/api-ms-win-core-interlocked-l1-2-0.dll
@@ -1403,7 +1403,7 @@ lib/wine/fakedlls/api-ms-win-core-rtlsupport-l1-1-0.dll
 lib/wine/fakedlls/api-ms-win-core-rtlsupport-l1-2-0.dll
 lib/wine/fakedlls/api-ms-win-core-shlwapi-legacy-l1-1-0.dll
 lib/wine/fakedlls/api-ms-win-core-shlwapi-obsolete-l1-1-0.dll
-%%STAGING%%lib/wine/fakedlls/api-ms-win-core-shlwapi-obsolete-l1-2-0.dll
+lib/wine/fakedlls/api-ms-win-core-shlwapi-obsolete-l1-2-0.dll
 lib/wine/fakedlls/api-ms-win-core-sidebyside-l1-1-0.dll
 lib/wine/fakedlls/api-ms-win-core-string-l1-1-0.dll
 lib/wine/fakedlls/api-ms-win-core-string-l2-1-0.dll
