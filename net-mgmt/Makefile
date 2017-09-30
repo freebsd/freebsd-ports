@@ -294,6 +294,7 @@
     SUBDIR += portmon
     SUBDIR += prometheus
     SUBDIR += pushgateway
+    SUBDIR += py-adal
     SUBDIR += py-ipcalc
     SUBDIR += py-ipy
     SUBDIR += py-pdagent
