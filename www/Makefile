@@ -2106,6 +2106,7 @@
     SUBDIR += rubygem-raindrops
     SUBDIR += rubygem-ramaze
     SUBDIR += rubygem-raphael-rails
+    SUBDIR += rubygem-rbovirt
     SUBDIR += rubygem-rdf
     SUBDIR += rubygem-rdf-normalize
     SUBDIR += rubygem-redcloth
