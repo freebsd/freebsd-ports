@@ -3,7 +3,7 @@
 
 PORTNAME=	apache-openoffice
 PORTVERSION=	${AOOVERSION1}.${AOOVERSION2}.${SVNREVISION}
-PORTREVISION=	7
+#PORTREVISION=	1
 PORTEPOCH=	4
 CATEGORIES=	editors java
 MASTER_SITES=	https://dist.apache.org/repos/dist/dev/openoffice/${AOOVERSION}-${AOORC}-r${SVNREVISION}/source/ \
@@ -25,7 +25,7 @@ MAINTAINER=	office@FreeBSD.org
 #Frequent Patch submitters should (optionally) sign the Apache iCLA
 COMMENT=	Integrated wordprocessor/dbase/spreadsheet/drawing/chart/browser (developer version)
 
-LICENSE=		APACHE20 ADOBE BSD3CLAUSE BSD4CLAUSE BSL ICU MIT MPL \
+LICENSE=		APACHE20 ADOBE BSD3CLAUSE BSD4CLAUSE BSL ICU MIT MPL11 \
 			PSFL TWAIN W3C
 LICENSE_COMB=		multi
 LICENSE_NAME_ADOBE=	Adobe Systems Incorporated license
@@ -39,7 +39,7 @@ LICENSE_FILE_BSD4CLAUSE=	${WRKSRC}/LICENSE_BSD4CLAUSE
 LICENSE_FILE_BSL=	${WRKSRC}/LICENSE_BSL
 LICENSE_FILE_ICU=	${WRKSRC}/LICENSE_ICU
 LICENSE_FILE_MIT=	${WRKSRC}/LICENSE_MIT
-LICENSE_FILE_MPL=	${WRKSRC}/LICENSE_MPL
+LICENSE_FILE_MPL11=	${WRKSRC}/LICENSE_MPL11
 LICENSE_FILE_PSFL=	${WRKSRC}/LICENSE_PSFL
 LICENSE_FILE_TWAIN=	${WRKSRC}/LICENSE_TWAIN
 LICENSE_FILE_W3C=	${WRKSRC}/LICENSE_W3C
@@ -47,6 +47,8 @@ LICENSE_PERMS_ADOBE=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 LICENSE_PERMS_ICU=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 LICENSE_PERMS_TWAIN=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 LICENSE_PERMS_W3C=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+
+ONLY_FOR_ARCHS=	amd64 i386 powerpc64
 
 BUILD_DEPENDS=								\
 		p5-Archive-Zip>=0:archivers/p5-Archive-Zip		\
@@ -61,8 +63,7 @@ BUILD_DEPENDS=								\
 		gpatch:devel/patch					\
 		${LOCALBASE}/include/sane/sane.h:graphics/sane-backends	\
 		${LOCALBASE}/bin/vigra-config:graphics/vigra		\
-		${JAVALIBDIR}/commons-httpclient.jar:java/jakarta-commons-httpclient \
-		${JAVALIBDIR}/commons-lang.jar:java/jakarta-commons-lang \
+		${JAVALIBDIR}/commons-lang3.jar:java/jakarta-commons-lang3 \
 		${JAVALIBDIR}/junit.jar:java/junit			\
 		${JAVALIBDIR}/bsh.jar:lang/bsh				\
 		bash:shells/bash					\
@@ -90,7 +91,7 @@ LIB_DEPENDS=								\
 		libfontconfig.so:x11-fonts/fontconfig
 RUN_DEPENDS=								\
 		${LOCALBASE}/share/icons/hicolor/index.theme:misc/hicolor-icon-theme \
-		${JAVALIBDIR}/commons-httpclient.jar:java/jakarta-commons-httpclient \
+		${JAVALIBDIR}/commons-lang3.jar:java/jakarta-commons-lang3 \
 		${JAVALIBDIR}/bsh.jar:lang/bsh				\
 		${LOCALBASE}/share/fonts/Caladea/Caladea-Bold.ttf:x11-fonts/crosextrafonts-caladea-ttf \
 		${LOCALBASE}/share/fonts/Carlito/Carlito-Bold.ttf:x11-fonts/crosextrafonts-carlito-ttf \
@@ -101,7 +102,7 @@ AOOVERSION2=	2
 AOOVERSION3=	0
 # From solenv/inc/minor.mk SOURCEREVISION LAST_MINOR BUILD
 AOOTAG=		AOO420m1\(Build:9800\)
-SVNREVISION=	1780246
+SVNREVISION=	1810071
 #AOORC=rc3
 EXTSRC=		ApacheOpenOffice.ext_sources.${AOOVERSION1}.x.x.20150707.tar.gz
 
@@ -127,8 +128,10 @@ XDGDIR=			${OOPATH}/share/xdg
 XDGREL=			../../${INSTALLATION_BASEDIR}/openoffice${AOOVERSION1}/share/xdg
 EXECBASE?=		openoffice-${AOOSUFFIX}
 
-ONLY_FOR_ARCHS=	amd64 i386 powerpc64
-
+USES=		autoreconf:autoconf bison compiler:c++11-lib cpe \
+		desktop-file-utils \
+		gettext-runtime gmake iconv jpeg perl5 pkgconfig python \
+		shared-mime-info ssl tar:${TARTYPE}
 USE_GL=		gl glu
 USE_GNOME=	gtk20 libxslt libidl glib20
 USE_JAVA=	yes
@@ -139,22 +142,20 @@ JAVA_VERSION=	1.6+
 USE_PERL5=	build
 USE_XORG=	ice sm x11 xau xaw xcomposite xcursor xdamage xext xfixes xi \
 		xinerama xrandr xrender xt
-USES=		autoreconf:autoconf bison compiler:c++11-lib cpe \
-		desktop-file-utils \
-		gettext-runtime gmake iconv jpeg perl5 pkgconfig python \
-		shared-mime-info ssl tar:${TARTYPE}
 INSTALLS_ICONS=	yes
 WITHOUT_CPU_CFLAGS=	true
 CPE_PRODUCT=	${PORTNAME:S|apache-||}
 CPE_VENDOR=	apache
 
-OPTIONS_DEFINE=		CUPS GNOME GNOMEVFS MMEDIA MYSQL PDFIMPORT SDK WIKI_PUBLISHER CCACHE
+OPTIONS_DEFINE=		CUPS GNOME GNOMEVFS MMEDIA MYSQL PDFIMPORT \
+			REPORT_BUILDER SDK WIKI_PUBLISHER CCACHE
 OPTIONS_DEFAULT=	CUPS GNOME GNOMEVFS MMEDIA PDFIMPORT WIKI_PUBLISHER
 GNOME_DESC=		GConf + screensaver presentation control via DBUS
 GNOMEVFS_DESC=		GNOME Virtual File System
 MMEDIA_DESC=		Multimedia backend for impress
 MYSQL_DESCR=		Build MySQL Connector extension
 PDFIMPORT_DESC=		Build and install PDF import extension
+REPORT_BUILDER_DESC=	Build and install Report builder extension (Broken)
 SDK_DESC=		Build and install software development kit
 WIKI_PUBLISHER_DESC=	Build and install Wiki Publisher extension
 CCACHE_DESC=		Mimimize compile time of C/C++ programs
@@ -187,12 +188,34 @@ PDFIMPORT_CONFIGURE_ENABLE=	pdfimport
 PDFIMPORT_CONFIGURE_WITH=	system-poppler
 PDFIMPORT_LIB_DEPENDS=		libpoppler.so:graphics/poppler
 
+REPORT_BUILDER_BROKEN=		REPORT_BUILDER option requires additional .jar files
+REPORT_BUILDER_CONFIGURE_ENABLE=	report-builder
+REPORT_BUILDER_JAR_DEPENDS=
+REPORT_BUILDER_BUILD_DEPENDS=	${REPORT_BUILDER_JAR_DEPENDS}
+REPORT_BUILDER_RUN_DEPENDS=	${REPORT_BUILDER_JAR_DEPENDS}
+
 WIKI_PUBLISHER_CONFIGURE_ENABLE=	wiki-publisher
+WIKI_PUBLISHER_CONFIGURE_WITH=						\
+	commons-codec-jar=${JAVALIBDIR}/commons-codec.jar		\
+	commons-httpclient-jar=${JAVALIBDIR}/commons-httpclient.jar
+WIKI_PUBLISHER_JAR_DEPENDS=						\
+	${JAVALIBDIR}/commons-codec.jar:java/jakarta-commons-codec	\
+	${JAVALIBDIR}/commons-httpclient.jar:java/jakarta-commons-httpclient
+WIKI_PUBLISHER_BUILD_DEPENDS=	${WIKI_PUBLISHER_JAR_DEPENDS}
+WIKI_PUBLISHER_RUN_DEPENDS=	${WIKI_PUBLISHER_JAR_DEPENDS}
 
 # Don't run gnome-post-icons until after post-install generates the plist
 TARGET_ORDER_OVERRIDE=	710:gnome-post-icons
 
 .include <bsd.port.pre.mk>
+
+.if ${PORT_OPTIONS:MREPORT_BUILDER} || ${PORT_OPTIONS:MWIKI_PUBLISHER}
+BUILD_DEPENDS+=	${JAVALIBDIR}/commons-logging.jar:java/jakarta-commons-logging
+RUN_DEPENDS+=	${JAVALIBDIR}/commons-logging.jar:java/jakarta-commons-logging
+CONFIGURE_ARGS+=	--with-commons-logging-jar=${JAVALIBDIR}/commons-logging.jar
+.else
+CONFIGURE_ARGS+=	--without-commons-logging
+.endif
 
 .include <${FILESDIR}/Makefile.localized>
 
@@ -241,10 +264,7 @@ CONFIGURE_ARGS+=							\
 			--with-unix-wrapper=${EXECBASE}			\
 			--with-alloc=system				\
 			--with-system-apache-commons=yes		\
-			--with-commons-codec-jar=${JAVALIBDIR}/commons-codec.jar \
-			--with-commons-lang-jar=${JAVALIBDIR}/commons-lang.jar \
-			--with-commons-httpclient-jar=${JAVALIBDIR}/commons-httpclient.jar \
-			--with-commons-logging-jar=${JAVALIBDIR}/commons-logging.jar \
+			--with-commons-lang-jar=${JAVALIBDIR}/commons-lang3.jar \
 			--with-system-apr				\
 			--with-system-apr-util				\
 			--with-system-beanshell				\
@@ -321,8 +341,10 @@ pre-everything::
 post-extract:
 	${TAR} -C ${WRKSUBDIR} -xzf ${DISTDIR}/${DIST_SUBDIR}/${EXTSRC}
 	${CP} ${DISTDIR}/${DIST_SUBDIR}/unowinreg.dll ${WRKSRC}/external/unowinreg/
-	${CP} ${FILESDIR}/freebsd-aoo-intro-developer.png ${WRKSRC}/default_images/introabout/intro.png
-	${CP} ${FILESDIR}/freebsd-aoo-about-developer.png ${WRKSRC}/default_images/introabout/about.png
+	${CP} ${FILESDIR}/freebsd-aoo-intro-developer.png \
+		${WRKSRC}/default_images/introabout/intro.png
+	${CP} ${FILESDIR}/freebsd-aoo-about-developer.png \
+		${WRKSRC}/default_images/introabout/about.png
 	${RM} -r ${WRKSRC}/l10n
 	${LN} -sf ${UNZIP_CMD} ${WRKSRC}/solenv/bin/unzip
 	${SED}  -e '\|^For main/vcl/unx/generic/fontmanager/parseAFM|,/^__/p' \
@@ -346,7 +368,7 @@ post-extract:
 	${SED}  -e '\|^For XMLSec Library|,/^__/p'	\
 		-e d  ${WRKSRC}/LICENSE_category_b >> ${LICENSE_FILE_MIT}
 	${SED}  -e '\|^For Graphite|,$$d'	\
-		      ${WRKSRC}/LICENSE_category_b > ${LICENSE_FILE_MPL}
+		      ${WRKSRC}/LICENSE_category_b > ${LICENSE_FILE_MPL11}
 	${SED}  -e '\|^For main/filter/source/config/tools/merge/pyAltFCFGMerge|,/^__/p'	\
 		-e d  ${WRKSRC}/LICENSE > ${LICENSE_FILE_PSFL}
 	${SED}  -e '\|^For main/twain|,/^__/p'	\
