@@ -8,7 +8,7 @@ PORTREVISION=	1
 CATEGORIES?=	www
 MASTER_SITES=	https://gitlab.com/${PORTNAME}-project/${PORTNAME}/repository/archive.tar.gz?ref=${DISTVERSIONPREFIX}${PORTVERSION}&dummy=/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	lbdm@privacychain.ch
 COMMENT=	Simple CalDAV server using a postgres backend
 
 LICENSE=	GPLv2 LGPL21
