@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	trueos-desktop
-PORTVERSION=	201707111911
+PORTVERSION=	201709301345
 CATEGORIES=	misc
 MASTER_SITES=
 DISTFILES=
@@ -24,11 +24,13 @@ RUN_DEPENDS=	${LOCALBASE}/sbin/PCDMd:x11/pcdm \
 		${LOCALBASE}/bin/sysadm-client:sysutils/sysadm-client \
 		${LOCALBASE}/bin/lpreserver:sysutils/life-preserver \
 		${LOCALBASE}/bin/personacrypt:sysutils/personacrypt \
+		${LOCALBASE}/bin/pc-pdfviewer:graphics/pc-pdfviewer \
 		${LOCALBASE}/bin/pc-webkitviewer:www/pc-webkitviewer \
 		${LOCALBASE}/sbin/beadm:sysutils/beadm \
 		${LOCALBASE}/bin/xdg-open:devel/xdg-utils \
 		${LOCALBASE}/bin/xvkbd:x11/xvkbd \
 		${LOCALBASE}/sbin/anacron:sysutils/anacron \
+		drm-next-kmod>=0:graphics/drm-next-kmod \
 		trueos-handbook>=0:misc/trueos-handbook \
 		lumina>=0:x11/lumina \
 		foomatic-db>=0:print/foomatic-db \
@@ -45,6 +47,12 @@ RUN_DEPENDS=	${LOCALBASE}/sbin/PCDMd:x11/pcdm \
 		git:devel/git \
 		xv>=0:graphics/xv \
 		tor>=0:security/tor \
+		fcitx-m17n>=0:textproc/fcitx-m17n \
+		fcitx-qt5>=0:textproc/fcitx-qt5 \
+		ja-fcitx-mozc>=0:japanese/fcitx-mozc \
+		ko-fcitx-hangul>=0:korean/fcitx-hangul \
+		zh-fcitx-configtool>=0:chinese/fcitx-configtool \
+		zh-fcitx-chewing>=0:chinese/fcitx-chewing \
 		socat>=0:net/socat \
 		mesa-demos>=0:graphics/mesa-demos \
 		dhcpcd>=0:net/dhcpcd \
@@ -60,6 +68,6 @@ MAKE_ARGS=	PREFIX=${STAGEDIR}${PREFIX}
 USE_GITHUB=     yes
 GH_ACCOUNT=     trueos
 GH_PROJECT=     trueos-core
-GH_TAGNAME=     6acd0c75d0c94c94a96c07f26c04ef553ad8ea90
+GH_TAGNAME=     0c60e2bfda23f3167feb85553666134dd8798706
 
 .include <bsd.port.mk>
