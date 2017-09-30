@@ -1,0 +1,10 @@
+Testinfra test your infrastructures.
+
+With Testinfra you can write unit tests in Python to test *actual state* of
+your servers configured by management tools like Salt, Ansible, Puppet,
+Chef and so on.
+
+Testinfra aims to be a Serverspec equivalent in python and is written as
+a plugin to the powerful Pytest test engine.
+
+WWW: https://github.com/philpep/testinfra
