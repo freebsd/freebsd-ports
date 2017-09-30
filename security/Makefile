@@ -1119,6 +1119,7 @@
     SUBDIR += samhain-client
     SUBDIR += samhain-server
     SUBDIR += sancp
+    SUBDIR += sandsifter
     SUBDIR += sasp
     SUBDIR += scamp
     SUBDIR += scanhill
