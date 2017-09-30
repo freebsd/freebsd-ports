@@ -962,7 +962,6 @@
     SUBDIR += py-tlslite
     SUBDIR += py-trustedpickle
     SUBDIR += py-tuf
-    SUBDIR += py-twistedConch
     SUBDIR += py-twofish
     SUBDIR += py-txtorcon
     SUBDIR += py-virustotal-api
