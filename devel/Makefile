@@ -4904,7 +4904,6 @@
     SUBDIR += py-twilio
     SUBDIR += py-twine
     SUBDIR += py-twisted
-    SUBDIR += py-twistedRunner
     SUBDIR += py-txaio
     SUBDIR += py-typed-ast
     SUBDIR += py-typing
