@@ -9526,7 +9526,7 @@ x11-toolkits/kirigami||2017-08-28|Not needed by anything
 x11-toolkits/kirigami2|x11-toolkits/kf5-kirigami2|2017-08-28|Became an official framework
 www/speedtest-mini||2017-09-03|Has expired: Discontinued upstream (on June 30, 2017)
 devel/rubygem-sequel3|devel/rubygem-sequel|2017-09-03|Has expired: Use devel/rubygem-sequel instead
-audio/tomahawk||2017-09-03|Has expired: Project is dead upstream.
+audio/tomahawk||2017-09-03|Has expired: Project is dead upstream
 mail/rubygem-larch||2017-09-03|Has expired: Unmaintained by upstream, no changes since 2013
 devel/rubygem-sidekiq4|devel/rubygem-sidekiq|2017-09-03|Has expired: Use devel/rubygem-sidekiq instead
 devel/rubygem-webpacker1-rails5|devel/rubygem-webpacker-rails5|2017-09-03|Has expired: Use devel/rubygem-webpacker-rails5 instead
