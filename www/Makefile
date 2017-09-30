@@ -1841,7 +1841,6 @@
     SUBDIR += py-treq
     SUBDIR += py-turbogears2
     SUBDIR += py-tvdb_api
-    SUBDIR += py-twistedWeb
     SUBDIR += py-twistedWeb2
     SUBDIR += py-txrequests
     SUBDIR += py-uliweb
