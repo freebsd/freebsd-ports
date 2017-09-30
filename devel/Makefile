@@ -4876,6 +4876,7 @@
     SUBDIR += py-terminable_thread
     SUBDIR += py-termstyle
     SUBDIR += py-testgears
+    SUBDIR += py-testinfra
     SUBDIR += py-testoob
     SUBDIR += py-testpath
     SUBDIR += py-testtools
