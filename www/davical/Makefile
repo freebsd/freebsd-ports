@@ -2,8 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	davical
-PORTVERSION=	1.1.5
 DISTVERSIONPREFIX=	r
+DISTVERSION=	1.1.5
+PORTREVISION=	1
 CATEGORIES?=	www
 MASTER_SITES=	https://gitlab.com/${PORTNAME}-project/${PORTNAME}/repository/archive.tar.gz?ref=${DISTVERSIONPREFIX}${PORTVERSION}&dummy=/
 
@@ -23,12 +24,12 @@ RUN_DEPENDS=	p5-DBI>=0:databases/p5-DBI \
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSIONPREFIX}${PORTVERSION}-7ccc7c449176475891ec50d5524928628df6f8d1
 
 NO_BUILD=	yes
-USES=		shebangfix pgsql php
-USE_PHP=	gettext iconv pcre pdo pdo_pgsql pgsql xml calendar
+USES=		pgsql php shebangfix
+USE_PHP=	calendar curl gettext iconv pcre pdo pdo_pgsql pgsql xml
 SHEBANG_FILES=	scripts/sync-remote-caldav.php
 SUB_FILES=	pkg-message httpd-davical.conf
-PORTDOCS=	README INSTALL davical_en_user_guide.odt translation.rst \
-		phpdoc.ini
+PORTDOCS=	README INSTALL davical_en_user_guide.odt phpdoc.ini \
+		translation.rst
 PORTEXAMPLES=	config
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
