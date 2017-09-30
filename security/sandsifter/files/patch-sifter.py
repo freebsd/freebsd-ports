@@ -1,10 +1,8 @@
---- sifter.py.orig	2017-09-22 12:42:26 UTC
+--- sifter.py.orig	2017-09-30 17:57:06 UTC
 +++ sifter.py
-@@ -26,11 +26,12 @@ import argparse
- import code
+@@ -27,10 +27,10 @@ import code
  import copy
  from ctypes import *
-+import sysctl
  
 -INJECTOR = "./injector"
 +INJECTOR = "injector"
@@ -15,7 +13,7 @@
  LOG  = OUTPUT + "log"
  SYNC = OUTPUT + "sync"
  TICK = OUTPUT + "tick"
-@@ -679,7 +680,7 @@ class Gui:
+@@ -679,7 +679,7 @@ class Gui:
              time.sleep(self.TIME_SLICE)
  
  def get_cpu_info():
@@ -24,7 +22,7 @@
          cpu = [l.strip() for l in f.readlines()[:7]]
      return cpu
  
-@@ -808,9 +809,16 @@ def main():
+@@ -808,9 +808,16 @@ def main():
      if not os.path.exists(OUTPUT):
          os.makedirs(OUTPUT)
  

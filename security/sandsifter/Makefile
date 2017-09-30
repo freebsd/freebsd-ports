@@ -13,7 +13,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}capstone>0:devel/py-capstone
 USES=		gmake python localbase shebangfix
 
 ONLY_FOR_ARCH=	amd64 i386
-ONLY_FOR_ARCH_RAESON=Designed for x86
+ONLY_FOR_ARCH_REASON=Designed for x86
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	xoreaxeaxeax
