@@ -1,6 +1,0 @@
-CLAW is a C++ Library Absolutely Wonderful providing useful classes
-from the simplest AVL binary search trees to the complex meta
-programming tools, including image manipulation, a generic alpha-beta
-algorithm, sockets implemented as std::stream and more
-
-WWW: http://libclaw.sourceforge.net/

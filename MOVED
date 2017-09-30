@@ -9566,3 +9566,4 @@ security/py-twistedConch|devel/py-twisted|2017-09-30|Has expired: Use devel/py-t
 textproc/py-twistedLore|devel/py-twisted|2017-09-30|Has expired: Use devel/py-twisted instead
 www/py-twistedWeb|devel/py-twisted|2017-09-30|Has expired: Use devel/py-twisted instead
 www/py-twistedWeb2|devel/py-twisted|2017-09-30|Has expired: Use devel/py-twisted instead
+devel/libclaw||2017-09-30|Has expired: useless for anything apart from removed games/plee-the-bear
