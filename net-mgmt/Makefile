@@ -298,6 +298,7 @@
     SUBDIR += py-ipcalc
     SUBDIR += py-ipy
     SUBDIR += py-msrest
+    SUBDIR += py-msrestazure
     SUBDIR += py-pdagent
     SUBDIR += py-pyang
     SUBDIR += py-pysmi
