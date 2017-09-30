@@ -9551,3 +9551,5 @@ devel/libexecinfo||2017-09-22|Is present in the base system of all supported rel
 games/ember||2017-09-23|Removed, it is BROKEN and no longer developed since 2014
 ports-mgmt/packagekit-qt4||2017-09-28|Has expired: Ignored for more than 5 years
 ports-mgmt/kpackagekit||2017-09-28|Has expired: Skipped for more than 5 years
+dns/rubygem-public_suffix2|dns/rubygem-public_suffix|2017-09-30|Has expired: Use dns/rubygem-public_suffix instead
+www/rubygem-deckar01-task_list1|www/rubygem-deckar01-task_list|2017-09-30|Has expired: Use www/rubygem-deckar01-task_list instead
