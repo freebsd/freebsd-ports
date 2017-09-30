@@ -1,8 +1,8 @@
 www is a static web server, useful for sharing and testing the contents of a
-directory via HTTP.
+directory via HTTP or HTTPS with a valid certificate.
 
 www will start a web server listening on port 8000 and use as document root 
 the directory where the command was called. Different document root may be
-specified as also the port and use of SSL, more info using the -h option.
+specified as also the port and use of TLS, more info using the -h option.
 
-WWW: https://github.com/nbari/www
+WWW: https://go-www.com
