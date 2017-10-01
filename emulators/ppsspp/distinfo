@@ -13,3 +13,5 @@ SHA256 (Kingcom-armips-v0.9-26-g770365d_GH0.tar.gz) = e6c52967082658082544f83875
 SIZE (Kingcom-armips-v0.9-26-g770365d_GH0.tar.gz) = 163606
 SHA256 (Kingcom-tinyformat-Release-2.0.1-7-gb7f5a22_GH0.tar.gz) = d86b5b4592047254c5118d0639e51d00869b3adc2f2c5419fdf29381ca42011e
 SIZE (Kingcom-tinyformat-Release-2.0.1-7-gb7f5a22_GH0.tar.gz) = 22286
+SHA256 (e33acdc5e922.patch) = 26db4fe256c3947193b379ea7d17b0aae59e4339ae3822b53ef40fd6dca07004
+SIZE (e33acdc5e922.patch) = 1819
