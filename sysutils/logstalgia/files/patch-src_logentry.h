@@ -1,10 +1,13 @@
---- src/logentry.h.orig	2015-10-19 22:33:12 UTC
+--- src/logentry.h.orig	2017-09-29 02:04:47 UTC
 +++ src/logentry.h
-@@ -21,6 +21,7 @@
- #include "core/vectors.h"
+@@ -24,6 +24,10 @@
+ #include <vector>
+ #include <map>
  
- #include <string>
++#ifdef __FreeBSD__
 +#include <sys/types.h>
- 
++#endif
++
  class LogEntry {
  
+ private:
