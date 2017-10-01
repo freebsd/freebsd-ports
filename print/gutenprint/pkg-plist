@@ -393,3 +393,4 @@ share/locale/zh_CN/LC_MESSAGES/gutenprint.mo
 share/locale/zh_CN/gutenprint_zh_CN.po
 share/locale/zh_TW/LC_MESSAGES/gutenprint.mo
 share/locale/zh_TW/gutenprint_zh_TW.po
+@postexec %D/sbin/cups-genppdupdate > /dev/null

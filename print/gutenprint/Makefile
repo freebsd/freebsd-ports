@@ -4,7 +4,7 @@
 
 PORTNAME=	gutenprint
 PORTVERSION=	5.2.13
-PORTREVISION?=	0	# also print/gimp-gutenprint
+PORTREVISION?=	1	# also print/gimp-gutenprint
 CATEGORIES=	print
 MASTER_SITES=	SF/gimp-print/gutenprint-5.2/${PORTVERSION}
 
