@@ -9565,3 +9565,4 @@ textproc/py-twistedLore|devel/py-twisted|2017-09-30|Has expired: Use devel/py-tw
 www/py-twistedWeb|devel/py-twisted|2017-09-30|Has expired: Use devel/py-twisted instead
 www/py-twistedWeb2|devel/py-twisted|2017-09-30|Has expired: Use devel/py-twisted instead
 devel/libclaw||2017-09-30|Has expired: useless for anything apart from removed games/plee-the-bear
+ports-mgmt/redports-node||2017-10-01|Has expired: Upstream is dead so port is not useable anymore.
