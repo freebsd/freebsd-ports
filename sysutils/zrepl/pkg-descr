@@ -1,0 +1,4 @@
+Cross-platform ZFS replication tool written in Go that supports
+feature detection, bookmarks, and other new features.
+
+WWW: https://zrepl.github.io/

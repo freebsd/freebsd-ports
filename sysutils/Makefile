@@ -1356,6 +1356,7 @@
     SUBDIR += znapzend
     SUBDIR += zogftw
     SUBDIR += zrep
+    SUBDIR += zrepl
     SUBDIR += zsd
     SUBDIR += zxfer
 
