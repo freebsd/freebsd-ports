@@ -1,13 +1,11 @@
-Fix up missing WITHOUT_DOCS, WITHOUT_CLIENT options
-
---- pcre/CMakeLists.txt.orig	2017-05-14 23:13:17 UTC
+--- pcre/CMakeLists.txt.orig	2017-08-17 10:05:39 UTC
 +++ pcre/CMakeLists.txt
 @@ -510,6 +510,8 @@ IF(PCRE_SHOW_REPORT)
    MESSAGE(STATUS "")
  ENDIF(PCRE_SHOW_REPORT)
  
 +IF(FALSE)
- INSTALL(FILES ${CMAKE_BINARY_DIR}/pcre/pcre.h DESTINATION ${INSTALL_INCLUDEDIR}/private COMPONENT Development)
+ INSTALL(FILES ${CMAKE_BINARY_DIR}/pcre/pcre.h DESTINATION ${INSTALL_INCLUDEDIR}/server/private COMPONENT Development)
 +ENDIF()
  
  # end CMakeLists.txt
