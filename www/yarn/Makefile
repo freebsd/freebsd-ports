@@ -3,6 +3,7 @@
 PORTNAME=	yarn
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.1.0
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	https://yarnpkg.com/downloads/${PORTVERSION}/
 
@@ -37,7 +38,7 @@ post-patch:
 	@${REINPLACE_CMD} -i '' \
 		-e 's|"installationMethod": "tar"|"installationMethod": "pkg"|g' \
 		${WRKSRC}/package.json
-	@${REINPLACE_CMD} -i '' -e 's%"Linux)%Linux|FreeBSD)%g' \
+	@${REINPLACE_CMD} -i '' -e 's%Linux)%Linux|FreeBSD)%g' \
 		${WRKSRC}/bin/yarn
 
 do-install:
