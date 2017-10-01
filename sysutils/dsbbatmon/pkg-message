@@ -1,0 +1,15 @@
+**************************************************************************
+
+In order to be able to execute shutdown as regular user, you can either
+use sudo(8) (see below), or you can add your username to the operator
+group:
+	# pw groupmod operator -m yourusername
+
+If you want to be able to suspend your system as regular user who is
+member of the wheel group, you can use sudo(8).  Add
+
+	%wheel  ALL=(ALL) NOPASSWD: /usr/sbin/acpiconf *
+
+to ${PREFIX}/etc/sudoers.
+
+**************************************************************************
