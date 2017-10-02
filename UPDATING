@@ -5,6 +5,14 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20171002:
+  AFFECTS: users of x11-wm/cwm
+  AUTHOR: tobik@FreeBSD.org
+
+  Configuration options were renamed and you need to update your ~/.cwmrc
+  accordingly.  Make sure to check cwmrc(5) for the new option names.
+  cwm-migrate-config.pl can help in migrating your ~/.cwmrc.
+
 20171001:
   AFFECTS: users of mail/isync using Maildir sub-folders
   AUTHOR: ehaupt@FreeBSD.org
