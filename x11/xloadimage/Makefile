@@ -2,13 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	xloadimage
-PORTVERSION=	4.1.21
-PORTREVISION=	1
+PORTVERSION=	4.1.24
 CATEGORIES=	x11 graphics
 MASTER_SITES=	DEBIAN_POOL
 DISTNAME=	${PORTNAME}.${VERSION}
 DISTFILES=	${DISTNAME:S/./_/}.orig${EXTRACT_SUFX} \
-		${DISTNAME:S/./_/}-${REVISION}.debian.tar.gz
+		${DISTNAME:S/./_/}-${REVISION}.debian.tar.xz
 
 MAINTAINER=	ak@FreeBSD.org
 COMMENT=	X11 Image Loading Utility
@@ -21,6 +20,9 @@ LIB_DEPENDS=	libpng.so:graphics/png \
 CONFLICTS_INSTALL=	xli-*
 
 EXTRA_PATCHES=	${WRKDIR}/debian/patches/*.patch
+IGNORE_PATCHES=	07_SYSPATHFILE.patch 24_libtiff5.patch \
+		25_hardening-flags.patch 26_uufilter-implicit-declaration.patch \
+		30_libtiff5.patch 31_reproducible-build.patch
 
 PATCH_STRIP=	-p1
 VERSION=	${PORTVERSION:R}
@@ -32,6 +34,9 @@ GNU_CONFIGURE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+
+pre-patch:
+	@${RM} ${IGNORE_PATCHES:S,^,${WRKDIR}/debian/patches/,}
 
 post-patch:
 	@${CHMOD} a+rx ${WRKSRC}/configure
