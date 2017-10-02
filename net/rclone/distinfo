@@ -1,6 +1,6 @@
-TIMESTAMP = 1474661586
-SHA256 (ncw-rclone-v1.33_GH0.tar.gz) = c1f947b9fa624bb70da151327d3b7e4652746ae56a2e66772a0808f2061efde3
-SIZE (ncw-rclone-v1.33_GH0.tar.gz) = 11684240
+TIMESTAMP = 1506858959
+SHA256 (ncw-rclone-v1.38_GH0.tar.gz) = d4806a55b64ab54923b55b230f2b2679406d5de995884433d3d60516bb8ebcc0
+SIZE (ncw-rclone-v1.38_GH0.tar.gz) = 36890082
 SHA256 (google-google-api-go-client-0caa379_GH0.tar.gz) = dca32796b5cc6d1a73053db2bfd841389234948b918ec36cbf23d614b8ae2e65
 SIZE (google-google-api-go-client-0caa379_GH0.tar.gz) = 3677588
 SHA256 (ncw-go-acd-56da839_GH0.tar.gz) = 190c93a65d4b9469d27ed631536ee498a3893b85b8e7bc643b1aa6bdd68bff2b
