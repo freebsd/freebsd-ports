@@ -4,7 +4,7 @@
 PORTNAME=		open-vm-tools
 PORTVERSION=		${RELEASE_VER}
 DISTVERSIONPREFIX=	stable-
-PORTREVISION=		3
+PORTREVISION=		4
 PORTEPOCH=		2
 CATEGORIES=		emulators
 
@@ -23,8 +23,8 @@ LIB_DEPENDS=		libmspack.so:archivers/libmspack \
 RELEASE_VER=		10.1.10
 BUILD_VER=		6082533
 
-OPTIONS_DEFINE=		DNET ICU LIBNOTIFY OPENSSL X11
-OPTIONS_DEFAULT=	DNET ICU LIBNOTIFY OPENSSL X11
+OPTIONS_DEFINE=		DNET LIBNOTIFY OPENSSL X11
+OPTIONS_DEFAULT=	DNET LIBNOTIFY OPENSSL X11
 
 OPTIONS_SUB=
 
@@ -39,8 +39,6 @@ X11_LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 LIBNOTIFY_LIB_DEPENDS=	libnotify.so:devel/libnotify
 DNET_CONFIGURE_WITH=	dnet
 DNET_LIB_DEPENDS=	libdnet.so:net/libdnet
-ICU_CONFIGURE_WITH=	icu
-ICU_LIB_DEPENDS=	libicuuc.so:devel/icu
 OPENSSL_CONFIGURE_WITH=	ssl
 
 WRKSRC_SUBDIR=		open-vm-tools
@@ -57,7 +55,7 @@ CPPFLAGS+=		-Wno-deprecated-declarations
 
 SSP_UNSAFE=		kernel module does not support ssp
 
-CONFIGURE_ARGS+=	--disable-grabbitmqproxy \
+CONFIGURE_ARGS+=	--disable-grabbitmqproxy --without-icu \
 			--disable-vgauth --without-procps \
 			--sysconfdir=${PREFIX}/etc
 
