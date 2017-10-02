@@ -5,6 +5,16 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20171001:
+  AFFECTS: users of mail/isync using Maildir sub-folders
+  AUTHOR: ehaupt@FreeBSD.org
+
+  If you have Maildir sub-folders, you need to update the configuration
+  to specify the naming style.
+
+  Please refer to the mbsync(1) man page section 'SubFolders
+  Verbatim|Maildir++|Legacy' on how to make the apropriate changes.
+
 20170930:
   AFFECTS: users of PHP and its modules
   AUTHOR: eugen@FreeBSD.org
