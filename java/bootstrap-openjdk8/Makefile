@@ -16,7 +16,7 @@ ONLY_FOR_ARCHS=		amd64 armv6 armv7 i386
 
 DISTINFO_FILE=	${.CURDIR}/distinfo.${JDK_ARCH}
 DISTVERSION_amd64=	r450802
-DISTVERSION_arm=	r444448
+DISTVERSION_arm=	r450802
 DISTVERSION_i386=	r450802
 
 JDK_ARCH=	${ARCH:C/armv.*/arm/}
@@ -34,16 +34,11 @@ INSTALLDIR=	${STAGEDIR}${PREFIX}/${JDK_ROOT}
 
 .if ${ARCH:Marmv*}
 RUN_DEPENDS+=	${LOCALBASE}/lib/libffi.so.6:devel/libffi
-RUN_DEPENDS+=	java-zoneinfo>0:java/java-zoneinfo
-PLIST=		${PKGDIR}/pkg-plist.arm
 .endif
 
 do-install:
 	@cd ${WRKSRC} && ${COPYTREE_SHARE} . ${INSTALLDIR}
 	@cd ${WRKSRC} && ${COPYTREE_BIN} bin ${INSTALLDIR}
-.if ${ARCH:Marmv*}
-	@cd ${WRKSRC} && ${COPYTREE_BIN} jre/bin ${INSTALLDIR}
-.endif
 
 update:
 	@${MAKE} -f ${.CURDIR}/Makefile.update \

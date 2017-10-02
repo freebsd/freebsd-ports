@@ -3,7 +3,6 @@
 JDK_ARCH?=	${ARCH:C/armv.*/arm/}
 JDK_PORT?=	openjdk8
 JDK_ROOT?=	bootstrap-${JDK_PORT}
-TARGET_OS?=	10
 
 .if !defined(PORTSDIR)
 .if exists(${.CURDIR}/../${JDK_PORT}/Makefile)
@@ -40,6 +39,14 @@ BUILD_ARGS=	BATCH=yes PORT_DBDIR=/var/empty
 BUILD_ENV=	__MAKE_CONF=/dev/null PATH="${PATH}"
 BUILD_ENV+=	java_openjdk8_UNSET="ALSA X11"
 JDK_BUILD_ARGS=	${BUILD_ARGS}
+
+.if !defined(TARGET_OS)
+.if ${ARCH:Marmv*}
+TARGET_OS=	11
+.else
+TARGET_OS=	10
+.endif
+.endif
 
 all:
 	@${ECHO} ""
