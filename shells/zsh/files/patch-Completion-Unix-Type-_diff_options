@@ -1,0 +1,9 @@
+--- Completion/Unix/Type/_diff_options.orig	2016-08-27 12:54:44.000000000 -0702
++++ Completion/Unix/Type/_diff_options	2017-09-17 22:13:47.153055000 -0700
+@@ -183,5 +183,6 @@
+     "($of)-f[output a reversed ed script]" \
+     '-b[skip trailing white spaces]' \
+     '-r[recursively compare subdirectories]' \
++    "($of)-u[output a unified diff]" \
+     "$@"
+ fi
