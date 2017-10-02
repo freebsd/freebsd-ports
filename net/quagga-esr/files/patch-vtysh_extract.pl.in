@@ -1,0 +1,11 @@
+--- vtysh/extract.pl.in.orig	2016-10-18 13:03:52 UTC
++++ vtysh/extract.pl.in
+@@ -69,7 +69,7 @@ my $cli_stomp = 0;
+ foreach (@ARGV) {
+     $file = $_;
+ 
+-    open (FH, "@CPP@ -DHAVE_CONFIG_H -DVTYSH_EXTRACT_PL -DHAVE_IPV6 -I@top_builddir@ -I@srcdir@/ -I@srcdir@/.. -I@top_srcdir@/lib -I@top_builddir@/lib -I@top_srcdir@/isisd/topology @CPPFLAGS@ $file |");
++    open (FH, "@CPP@ -DHAVE_CONFIG_H -DVTYSH_EXTRACT_PL -DHAVE_IPV6 -I@top_builddir@ -I@srcdir@/ -I@srcdir@/.. -I@top_srcdir@/lib -I@top_builddir@/lib -I/usr/local/include -I@top_srcdir@/isisd/topology @CPPFLAGS@ $file |");
+     local $/; undef $/;
+     $line = <FH>;
+     close (FH);

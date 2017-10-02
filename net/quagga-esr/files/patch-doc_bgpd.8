@@ -1,0 +1,21 @@
+--- doc/bgpd.8.orig	2016-10-18 13:03:52 UTC
++++ doc/bgpd.8
+@@ -28,6 +28,8 @@ software
+ ] [
+ .B \-g
+ .I group
++] [
++.B \--no_kernel
+ ]
+ .SH DESCRIPTION
+ .B bgpd 
+@@ -79,6 +81,9 @@ Skip setting the process effective user 
+ .TP
+ \fB\-v\fR, \fB\-\-version\fR
+ Print the version and exit.
++.TP
++\fB\--no_kernel\fR
++Prevents route updates to be submitted to the kernel.
+ .SH FILES
+ .TP
+ .BI /usr/local/sbin/bgpd
