@@ -14,7 +14,7 @@ LIB_DEPENDS=	libmpv.so:multimedia/mpv
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	cmdrkotori
-GH_TUPLE=	Argon-:mpv-stats:1.1-24-g6a37a6d:mpv_stats/external/mpv-stats
+GH_TUPLE=	Argon-:mpv-stats:1.1-28-gf42aa68:mpv_stats/external/mpv-stats
 
 USES=		compiler:c++11-lib desktop-file-utils pkgconfig qmake
 USE_QT5=	qmake_build buildtools_build linguisttools_build \
