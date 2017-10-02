@@ -1,17 +1,17 @@
 # $FreeBSD$
 
 PORTNAME=	rclone
-PORTVERSION=	1.33
-DISTVERSIONPREFIX=      v
+PORTVERSION=	1.38
+DISTVERSIONPREFIX=	v
 CATEGORIES=	net
 
-MAINTAINER=     wg@FreeBSD.org
-COMMENT=        Sync files to and from various cloud services
+MAINTAINER=	wg@FreeBSD.org
+COMMENT=	Sync files to and from various cloud services
 
 LICENSE=	MIT
 
 USES=		go
-USE_GITHUB=     yes
+USE_GITHUB=	yes
 GH_ACCOUNT=	ncw
 GH_SUBDIR=	src/github.com/${GH_ACCOUNT_DEFAULT}/${PORTNAME}
 GH_TUPLE+=	\
@@ -41,7 +41,7 @@ GH_TUPLE+=	\
 
 PLIST_FILES=	bin/rclone
 
-STRIP=          # stripping can break go binaries
+STRIP=		# stripping can break go binaries
 
 do-build:
 	@cd ${WRKSRC}/src/github.com/${GH_ACCOUNT_DEFAULT}/${PORTNAME}; ${SETENV} GOPATH=${WRKSRC} go build .
