@@ -3,7 +3,7 @@
 
 PORTNAME=	gcc
 PORTVERSION=	7.2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang
 MASTER_SITES=	GCC/releases/gcc-${DISTVERSION}
 PKGNAMESUFFIX=	${SUFFIX}
@@ -25,6 +25,8 @@ RUN_DEPENDS+=	${LOCALBASE}/bin/as:devel/binutils
 .if defined(MAINTAINER_MODE)
 BUILD_DEPENDS+=	runtest:misc/dejagnu
 .endif
+
+CONFLICTS=	gcc7-devel-7.*
 
 CPE_VENDOR=	gnu
 
