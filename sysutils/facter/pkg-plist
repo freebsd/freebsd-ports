@@ -21,3 +21,4 @@ lib/libfacter.so
 lib/libfacter.so.%%PORTVERSION%%
 lib/ruby/vendor_ruby/facter.rb
 man/man8/facter.8.gz
+%%FACTER_JAVA%%lib/ruby/vendor_ruby/facter.jar
