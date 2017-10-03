@@ -264,6 +264,9 @@ FPUHACK_DESC=		Hack denormalized numbers in flush-to-zero mode
 POLICY_DESC=		Install the Unlimited Strength Policy Files
 TZUPDATE_DESC=		Update the time zone data
 
+ALSA_CONFIGURE_ENV_OFF=	ALSA_NOT_NEEDED=yes
+ALSA_CONFIGURE_ON=	--with-alsa=${LOCALBASE}
+ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
 FPUHACK_EXTRA_PATCHES=	${PATCHDIR}/fpuhack.patch
 POLICY_CONFIGURE_ENABLE=	unlimited-crypto
 TZUPDATE_RUN_DEPENDS=	java-zoneinfo>0:java/java-zoneinfo
@@ -281,9 +284,6 @@ DEBUGFAST_DESC=		Build for debugging (with optimizations)
 RELEASE_DESC=		Build for release (default)
 TEST_DESC=		Run regression tests
 
-ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
-ALSA_CONFIGURE_ON=	--with-alsa=${LOCALBASE}
-ALSA_CONFIGURE_ENV_OFF=	ALSA_NOT_NEEDED=yes
 DEBUG_VARS=		JDK_BUILD_TYPE=slowdebug
 DEBUGFAST_VARS=		JDK_BUILD_TYPE=fastdebug
 RELEASE_BUILD_DEPENDS_OFF=	${LOCALBASE}/bin/objcopy:devel/binutils
