@@ -70,11 +70,3 @@
          context.Result(ret)
          return ret
  
-@@ -2645,6 +2645,7 @@ def doConfigure(myenv):
- 
-         conf = Configure(myenv, custom_tests = {
-             'CheckPThreadSetNameNP': CheckPThreadSetNameNP,
-+            'CheckBoostMinVersion': CheckBoostMinVersion,
-         })
- 
-         if conf.CheckPThreadSetNameNP():
