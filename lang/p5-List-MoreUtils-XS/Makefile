@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	List-MoreUtils-XS
-PORTVERSION=	0.423
+PORTVERSION=	0.426
 CATEGORIES=	lang perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -18,7 +18,7 @@ USES=		perl5
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 502503
+.if ${PERL_LEVEL} < 502401
 BUILD_DEPENDS+=	p5-XSLoader>=0.22:devel/p5-XSLoader
 RUN_DEPENDS+=	p5-XSLoader>=0.22:devel/p5-XSLoader
 .endif
