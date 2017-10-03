@@ -1,0 +1,5 @@
+List::Pairwise provides functions to map and grep lists two elements at
+a time, setting $a and $b to each pair instead of setting $_ to each
+element.
+
+WWW: https://metacpan.org/pod/List::Pairwise
