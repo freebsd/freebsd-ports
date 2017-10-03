@@ -1,0 +1,258 @@
+/*
+ * Copyright (c) 2013, 2015, Oracle and/or its affiliates. All rights reserved.
+ * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+ *
+ * This code is free software; you can redistribute it and/or modify it
+ * under the terms of the GNU General Public License version 2 only, as
+ * published by the Free Software Foundation.  Oracle designates this
+ * particular file as subject to the "Classpath" exception as provided
+ * by Oracle in the LICENSE file that accompanied this code.
+ *
+ * This code is distributed in the hope that it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+ * FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
+ * version 2 for more details (a copy is included in the LICENSE file that
+ * accompanied this code).
+ *
+ * You should have received a copy of the GNU General Public License version
+ * 2 along with this work; if not, write to the Free Software Foundation,
+ * Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA.
+ *
+ * Please contact Oracle, 500 Oracle Parkway, Redwood Shores, CA 94065 USA
+ * or visit www.oracle.com if you need additional information or have any
+ * questions.
+ */
+
+ext.BSD = [:]
+
+// Declare whether this particular target file applies to the current system
+BSD.canBuild = IS_BSD;
+if (!BSD.canBuild) return;
+
+// All desktop related packages should be built
+BSD.compileSwing = true;
+BSD.compileSWT = true;
+BSD.compileFXPackager = true;
+
+// Libraries end up in the sdk/rt/lib/$OS_ARCH directory for freebsd
+BSD.libDest = "lib/$OS_ARCH"
+
+// Lambda for naming the generated libs
+BSD.library = { name -> return "lib${name}.so" as String }
+
+// A set of common parameters to use for both compiling and linking
+def commonFlags = [
+        "-fno-strict-aliasing", "-fPIC", "-fno-omit-frame-pointer", // optimization flags
+        "-W", "-Wall", "-Wno-unused", "-Wno-parentheses", "-Werror=implicit-function-declaration"] // warning flags
+
+if (!IS_64) {
+    commonFlags += "-m32"
+}
+
+// Specify the compilation parameters and link parameters
+def ccFlags = [
+        commonFlags, "-I$JDK_HOME/include", "-I$JDK_HOME/include/freebsd", "-c",
+        IS_DEBUG_NATIVE ? ["-ggdb", "-DVERBOSE"] : ["-O2", "-DNDEBUG"]].flatten()
+//ccFlags.addAll(["-Wnon-virtual-dtor", "-Woverloaded-virtual", "-std=c++0x"])
+def linkFlags = ["-shared", commonFlags].flatten()
+
+// Create $buildDir/bsd_tools.properties file and load props from it
+setupTools("bsd_tools",
+    { propFile ->
+        ByteArrayOutputStream results = new ByteArrayOutputStream();
+        exec {
+		commandLine("pkg-config", "--cflags", "gtk+-2.0", "gthread-2.0", "xtst");
+            setStandardOutput(results);
+        }
+        propFile << "cflags=" << results.toString().trim() << "\n";
+
+        results = new ByteArrayOutputStream();
+        exec {
+            commandLine "pkg-config", "--libs", "gtk+-2.0", "gthread-2.0", "xtst"
+            standardOutput = results
+        }
+        propFile << "libs=" << results.toString().trim();
+    },
+    { properties ->
+        ccFlags.addAll(properties.getProperty("cflags").split(" "))
+        linkFlags.addAll(properties.getProperty("libs").split(" "))
+    }
+)
+
+def pangoCCFlags = ["-D_ENABLE_PANGO"];
+def pangoLinkFlags = [];
+setupTools("bsd_pango_tools",
+    { propFile ->
+        ByteArrayOutputStream results = new ByteArrayOutputStream();
+        exec {
+            commandLine "pkg-config", "--cflags", "pangoft2"
+            standardOutput = results
+        }
+        propFile << "cflags=" << results.toString().trim() << "\n";
+
+        results = new ByteArrayOutputStream();
+        exec {
+            commandLine "pkg-config", "--libs", "pangoft2"
+            standardOutput = results
+        }
+        propFile << "libs=" << results.toString().trim();
+    },
+    { properties ->
+        pangoCCFlags.addAll(properties.getProperty("cflags").split(" "))
+        pangoLinkFlags.addAll(properties.getProperty("libs").split(" "))
+    }
+)
+
+def freetypeCCFlags = [ext.IS_COMPILE_PANGO ? "-D_ENABLE_PANGO" :
+                       ext.IS_COMPILE_HARFBUZZ ? "-D_ENABLE_HARFBUZZ" : ""]
+def freetypeLinkFlags = []
+setupTools("bsd_freetype_tools",
+    { propFile ->
+        ByteArrayOutputStream results = new ByteArrayOutputStream();
+        exec {
+            commandLine "pkg-config", "--cflags", "freetype2"
+            standardOutput = results
+        }
+        propFile << "cflags=" << results.toString().trim() << "\n";
+
+        results = new ByteArrayOutputStream();
+        exec {
+            commandLine "pkg-config", "--libs", "freetype2"
+            standardOutput = results
+        }
+        propFile << "libs=" << results.toString().trim();
+    },
+    { properties ->
+        freetypeCCFlags.addAll(properties.getProperty("cflags").split(" "))
+        freetypeLinkFlags.addAll(properties.getProperty("libs").split(" "))
+    }
+)
+
+def compiler = IS_COMPILE_PARFAIT ? "parfait-gcc" : "cc";
+def linker = IS_COMPILE_PARFAIT ? "parfait-g++" : "c++";
+
+BSD.glass = [:]
+BSD.glass.javahInclude = [
+    "com/sun/glass/events/**",
+    "com/sun/glass/ui/*",
+    "com/sun/glass/ui/gtk/*"]
+BSD.glass.nativeSource = file("modules/graphics/src/main/native-glass/gtk")
+BSD.glass.compiler = compiler
+BSD.glass.ccFlags = [ccFlags, "-Werror"].flatten()
+BSD.glass.linker = linker
+BSD.glass.linkFlags = [linkFlags].flatten()
+BSD.glass.lib = "glass"
+
+BSD.decora = [:]
+BSD.decora.compiler = compiler
+BSD.decora.ccFlags = [ccFlags, "-ffast-math"].flatten()
+BSD.decora.linker = linker
+BSD.decora.linkFlags = [linkFlags].flatten()
+BSD.decora.lib = "decora_sse"
+
+BSD.prism = [:]
+BSD.prism.javahInclude = ["com/sun/prism/impl/**/*", "com/sun/prism/PresentableState*"]
+BSD.prism.nativeSource = file("modules/graphics/src/main/native-prism")
+BSD.prism.compiler = compiler
+BSD.prism.ccFlags = [ccFlags, "-DINLINE=inline"].flatten()
+BSD.prism.linker = linker
+BSD.prism.linkFlags = [linkFlags].flatten()
+BSD.prism.lib = "prism_common"
+
+BSD.prismSW = [:]
+BSD.prismSW.javahInclude = ["com/sun/pisces/**/*"]
+BSD.prismSW.nativeSource = file("modules/graphics/src/main/native-prism-sw")
+BSD.prismSW.compiler = compiler
+BSD.prismSW.ccFlags = [ccFlags, "-DINLINE=inline"].flatten()
+BSD.prismSW.linker = linker
+BSD.prismSW.linkFlags = [linkFlags].flatten()
+BSD.prismSW.lib = "prism_sw"
+
+BSD.launcher = [:]
+BSD.launcher.compiler = compiler
+BSD.launcher.ccFlags = ["-DJAVAARCH=\"$OS_ARCH\"", "-I$JDK_HOME/include", "-I$JDK_HOME/include/freebsd", "-c"]
+BSD.launcher.linker = linker
+BSD.launcher.linkFlags = ["-ldl"]
+if (!IS_64) {
+    BSD.launcher.ccFlags += "-m32"
+    BSD.launcher.linkFlags += "-m32"
+}
+
+BSD.launcherlibrary = [:]
+BSD.launcherlibrary.compiler = compiler
+BSD.launcherlibrary.ccFlags = ["-DJAVAARCH=\"$OS_ARCH\"", "-I$JDK_HOME/include", "-I$JDK_HOME/include/freebsd", "-c", "-fPIC"]
+BSD.launcherlibrary.linker = linker
+BSD.launcherlibrary.linkFlags = ["-ldl", "-lpthread", "-shared"]
+if (!IS_64) {
+    BSD.launcherlibrary.ccFlags += "-m32"
+    BSD.launcherlibrary.linkFlags += "-m32"
+}
+
+BSD.iio = [:]
+BSD.iio.javahInclude = ["com/sun/javafx/iio/**/*"]
+BSD.iio.nativeSource = [file("modules/graphics/src/main/native-iio")]
+BSD.iio.compiler = compiler
+BSD.iio.ccFlags = [ccFlags].flatten()
+BSD.iio.linker = linker
+BSD.iio.linkFlags = [linkFlags].flatten()
+BSD.iio.linkFlags += "-ljpeg"
+BSD.iio.lib = "javafx_iio"
+
+BSD.prismES2 = [:]
+BSD.prismES2.javahInclude = ["com/sun/prism/es2/**/*"]
+BSD.prismES2.nativeSource = [
+    file("modules/graphics/src/main/native-prism-es2"),
+    file("modules/graphics/src/main/native-prism-es2/GL"),
+    file("modules/graphics/src/main/native-prism-es2/x11")
+]
+BSD.prismES2.compiler = compiler
+BSD.prismES2.ccFlags = ["-DFREEBSD", ccFlags].flatten()
+BSD.prismES2.linker = linker
+BSD.prismES2.linkFlags = [linkFlags, "-lX11", "-lXxf86vm", "-lGL"].flatten()
+BSD.prismES2.lib = "prism_es2"
+
+def closedDir = file("$projectDir/../rt-closed")
+BSD.font = [:]
+BSD.font.javahInclude = [
+     "com/sun/javafx/font/**/*",
+     "com/sun/javafx/text/**/*"]
+BSD.font.compiler = compiler
+BSD.font.nativeSource = [file("modules/graphics/src/main/native-font")]
+BSD.font.ccFlags = ["-DJFXFONT_PLUS", ccFlags].flatten()
+BSD.font.linker = linker
+BSD.font.linkFlags = [linkFlags].flatten()
+BSD.font.lib = "javafx_font"
+
+BSD.fontT2K = [:]
+BSD.fontT2K.javahInclude = ["com/sun/javafx/font/t2k/**/*"]
+BSD.fontT2K.nativeSource = [
+        file("$closedDir/javafx-font-t2k-native/src"),
+        file("$closedDir/javafx-font-t2k-native/src/layout")]
+BSD.fontT2K.compiler = compiler
+BSD.fontT2K.ccFlags = ["-DJFXFONT_PLUS", "-DLE_STANDALONE", ccFlags].flatten()
+BSD.fontT2K.linker = linker
+BSD.fontT2K.linkFlags = [linkFlags].flatten()
+BSD.fontT2K.lib = "javafx_font_t2k"
+
+BSD.fontFreetype = [:]
+BSD.fontFreetype.javahInclude = ["com/sun/javafx/font/freetype/OSFreetype.class"]
+BSD.fontFreetype.nativeSource = ["src/main/native-font/freetype.c"]
+BSD.fontFreetype.compiler = compiler
+BSD.fontFreetype.ccFlags = ["-DJFXFONT_PLUS", ccFlags, freetypeCCFlags].flatten()
+BSD.fontFreetype.linker = linker
+BSD.fontFreetype.linkFlags = [linkFlags, freetypeLinkFlags].flatten()
+BSD.fontFreetype.lib = "javafx_font_freetype"
+
+BSD.fontPango = [:]
+BSD.fontPango.javahInclude = ["com/sun/javafx/font/freetype/OSPango.class"]
+BSD.fontPango.nativeSource = ["src/main/native-font/pango.c"]
+BSD.fontPango.compiler = compiler
+BSD.fontPango.ccFlags = ["-DJFXFONT_PLUS", ccFlags, pangoCCFlags].flatten()
+BSD.fontPango.linker = linker
+BSD.fontPango.linkFlags = [linkFlags, pangoLinkFlags].flatten()
+BSD.fontPango.lib = "javafx_font_pango"
+
+BSD.media = [:]
+BSD.media.compiler = compiler
+BSD.media.linker = linker
+BSD.media.lib = "ar"

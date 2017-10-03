@@ -1,0 +1,13 @@
+--- modules/web/src/main/native/Tools/DumpRenderTree/java/CMakeLists.txt.orig	2017-09-08 16:56:55 UTC
++++ modules/web/src/main/native/Tools/DumpRenderTree/java/CMakeLists.txt
+@@ -89,9 +89,7 @@ add_library(DumpRenderTreeJava SHARED ${DumpRenderTree
+ add_definitions(-DWEBCORE_EXPORT=WTF_IMPORT -DWEBCORE_TESTSUPPORT_EXPORT=WTF_IMPORT)
+ add_dependencies(DumpRenderTreeJava DumpRenderTreeBindings)
+ 
+-if (UNIX AND NOT APPLE)
+-  set_target_properties(DumpRenderTreeJava PROPERTIES LINK_FLAGS "-Wl,--no-undefined")
+-elseif (WIN32)
++if (WIN32)
+   # Workaround for MSBuild. It always creates Release|Debug folder
+   # according to the build type on each target.
+   install(PROGRAMS ${CMAKE_BINARY_DIR}/bin/DumpRenderTreeJava.dll DESTINATION ${CMAKE_BINARY_DIR}/lib OPTIONAL)
