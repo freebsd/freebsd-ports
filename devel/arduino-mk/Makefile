@@ -3,7 +3,7 @@
 
 PORTNAME=	arduino-mk
 PORTVERSION=	0.10
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	http://mjo.tc/atelier/2009/02/acli/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -15,6 +15,7 @@ LICENSE=	LGPL21
 
 # gmake is needed to use the port, not to build it
 RUN_DEPENDS=	gmake:devel/gmake \
+		p5-Device-SerialPort>=0:comms/p5-Device-SerialPort \
 		p5-YAML>=0:textproc/p5-YAML \
 		arduino:devel/arduino
 PATCH_DEPENDS=	${LOCALBASE}/arduino/lib/version.txt:devel/arduino
