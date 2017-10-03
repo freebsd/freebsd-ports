@@ -1,4 +1,4 @@
---- modules/graphics/src/main/java/com/sun/prism/impl/PrismSettings.java.orig	2017-07-22 15:59:03 UTC
+--- modules/graphics/src/main/java/com/sun/prism/impl/PrismSettings.java.orig	2017-09-08 16:56:55 UTC
 +++ modules/graphics/src/main/java/com/sun/prism/impl/PrismSettings.java
 @@ -212,6 +212,8 @@ public final class PrismSettings {
                      tryOrderArr = new String[] { "es2" };
