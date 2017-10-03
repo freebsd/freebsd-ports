@@ -2,14 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	bsdrcmds
-PORTVERSION=	20171003
+PORTVERSION=	20171003.01
 CATEGORIES=	net
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	jlehen
 
 MAINTAINER=	jlh@FreeBSD.org
-COMMENT=	FreeBSD rcmds (rcp/rlogin/rlogind/rsh/rshd/ruptime/rwho/rwhod)
+COMMENT=	FreeBSD rcmds (rcp/rlogin/rlogind/rsh/rshd)
 
 LICENSE=	BSD3CLAUSE
 
