@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	oj
-PORTVERSION=	3.3.6
+PORTVERSION=	3.3.7
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -11,8 +11,7 @@ COMMENT=	Fast JSON parser and serializer
 
 LICENSE=	MIT
 
-LIB_DEPENDS=	libgmp.so:math/gmp \
-		libunwind.so:devel/libunwind
+LIB_DEPENDS=	libgmp.so:math/gmp
 
 USES=		gem
 USE_RUBY=	yes
