@@ -1,16 +1,10 @@
-bin/ruptime
 @(,,4555) bin/rsh
-bin/rwho
 @(,,4555) bin/rlogin
 @(,,4555) bin/rcp
 man/man8/rlogind.8.gz
 man/man8/rshd.8.gz
-man/man8/rwhod.8.gz
 man/man1/rsh.1.gz
-man/man1/ruptime.1.gz
 man/man1/rlogin.1.gz
-man/man1/rwho.1.gz
 man/man1/rcp.1.gz
-sbin/rwhod
 sbin/rlogind
 sbin/rshd
