@@ -1,0 +1,12 @@
+Remember to run:
+
+sysrc puppetserver_enable=yes
+
+A note to users upgrading to 2.6 who have also modified bootstrap.cfg, please
+see the release notes for breaking changes in 2.5.
+
+https://docs.puppet.com/puppetserver/latest/release_notes.html#puppet-server-25
+
+The file bootstrap.cfg has been removed and ca configuration has been moved out
+to its own file in ca.cfg.
+
