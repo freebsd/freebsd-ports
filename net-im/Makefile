@@ -3,7 +3,6 @@
 
     COMMENT = Instant messaging
 
-    SUBDIR += ayttm
     SUBDIR += bsflite
     SUBDIR += centerim
     SUBDIR += centerim-devel
