@@ -9569,3 +9569,4 @@ devel/libclaw||2017-09-30|Has expired: useless for anything apart from removed g
 ports-mgmt/redports-node||2017-10-01|Has expired: Upstream is dead so port is not useable anymore.
 sysutils/py3-iocage|sysutils/iocage|2017-10-02|Port was renamed
 audio/ventrilo-server||2017-10-04|No more freebsd distfiles
+net-im/ayttm||2017-10-04|Non functional
