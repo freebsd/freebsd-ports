@@ -9,8 +9,8 @@ MASTER_SITES=	http://www.gaia-gis.it/gaia-sins/freexl-sources/
 MAINTAINER=	lbartoletti@tuxfamily.org
 COMMENT=	Library to extract valid data from within an Excel (.xls) spreadsheet
 
-LICENSE=	MPL GPLv2 LGPL21
-LICENSE_COMB=	multi
+LICENSE=	GPLv2+ LGPL21+ MPL11
+LICENSE_COMB=	dual
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	ac_cv_search_locale_charset=no
