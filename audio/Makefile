@@ -811,7 +811,6 @@
     SUBDIR += umurmur
     SUBDIR += vagalume
     SUBDIR += vamp-plugin-sdk
-    SUBDIR += ventrilo-server
     SUBDIR += virtual_oss
     SUBDIR += virtual_oss_ctl
     SUBDIR += vitunes
