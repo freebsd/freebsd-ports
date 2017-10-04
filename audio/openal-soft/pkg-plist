@@ -20,7 +20,7 @@ include/AL/efx-creative.h
 include/AL/efx-presets.h
 lib/cmake/OpenAL/OpenALConfig-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/OpenAL/OpenALConfig.cmake
-lib/libopenal.so.1.18.1
+lib/libopenal.so.1.18.2
 lib/libopenal.so.1
 lib/libopenal.so
 libdata/pkgconfig/openal.pc
