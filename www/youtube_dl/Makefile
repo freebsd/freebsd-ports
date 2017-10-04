@@ -16,7 +16,7 @@ BUILD_DEPENDS=	zip:archivers/zip
 
 ALL_TARGET=	youtube-dl
 MAKE_ARGS=	PYTHON=${PYTHON_CMD}
-USES=		python
+USES=		gmake python
 NO_ARCH=	yes
 WRKSRC=		${WRKDIR}/youtube-dl
 
