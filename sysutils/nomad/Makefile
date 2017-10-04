@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	nomad
-PORTVERSION=	0.6.1
+PORTVERSION=	0.6.3
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 
@@ -19,17 +19,6 @@ USES=		compiler
 USE_GITHUB=	yes
 GH_ACCOUNT=	hashicorp
 GH_SUBDIR=	src/github.com/hashicorp/nomad
-GH_TUPLE=	armon:go-radix:4239b77:go_radix/src/github.com/armon/go-radix \
-		axw:gocov:c77561c:gocov/src/github.com/axw/gocov \
-		bgentry:speakeasy:675b82c:speakeasy/src/github.com/bgentry/speakeasy \
-		golang:tools:8b84dae:tools/src/golang.org/x/tools \
-		kardianos:govendor:v1.0.8:govendor/src/github.com/kardianos/govendor \
-		matm:gocov-html:v1.1:gocov_html/src/gopkg.in/matm/v1/gocov-html \
-		mattn:go-isatty:57fdcb9:go_isatty/src/github.com/mattn/go-isatty \
-		mitchellh:gox:v0.3.0:gox/src/github.com/mitchellh/gox \
-		mitchellh:cli:8d6d9ab:gox/src/github.com/mitchellh/cli \
-		sean-:seed:e2103e2:seed/src/github.com/sean-/seed \
-		ugorji:go:faddd61:go/src/github.com/ugorji/go
 
 USE_RC_SUBR=	nomad
 
