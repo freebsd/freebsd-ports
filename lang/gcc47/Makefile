@@ -3,7 +3,7 @@
 
 PORTNAME=	gcc
 PORTVERSION=	4.7.4
-PORTREVISION=	6
+PORTREVISION=	7
 PORTEPOCH=	1
 CATEGORIES=	lang
 MASTER_SITES=	GCC/releases/gcc-${PORTVERSION}
@@ -15,6 +15,7 @@ COMMENT=	GNU Compiler Collection 4.7
 LICENSE=	GPLv3 GPLv3RLE
 LICENSE_COMB=	multi
 
+DEPRECATED=	Unsupported by upstream. Use GCC 5 or newer instead.
 ONLY_FOR_ARCHS=	amd64 i386 powerpc sparc64
 
 LIB_DEPENDS=	libgmp.so:math/gmp \
