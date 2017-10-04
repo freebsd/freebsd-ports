@@ -10,8 +10,8 @@ CATEGORIES=	devel
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Implementation of the IETF Calendaring and Scheduling protocols
 
+LICENSE=	LGPL21 MPL10
 LICENSE_COMB=	dual
-LICENSE=	MPL LGPL21
 
 LIB_DEPENDS=	libicuuc.so:devel/icu
 
