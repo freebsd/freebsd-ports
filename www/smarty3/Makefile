@@ -14,8 +14,8 @@ COMMENT=	PHP compiling template engine
 LICENSE=	LGPL3
 
 NO_BUILD=	yes
+USES=		php:web
 USE_PHP=	pcre
-WANT_PHP_WEB=	yes
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
 SUB_FILES=	pkg-message

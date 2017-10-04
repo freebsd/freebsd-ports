@@ -13,11 +13,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MVC web application framework (PHP/MySQL)
 
 WRKSRC=		${WRKDIR}/Zikula_Core-${PORTVERSION}
-USES=		zip
+USES=		zip php:web mysql
 NO_BUILD=	yes
-USE_MYSQL=	yes
 USE_PHP=	ctype tokenizer pdo mysql filter mbstring session json pdo_mysql hash
-WANT_PHP_WEB=	yes
 IGNORE_WITH_MYSQL=	41 50
 
 PLIST_SUB=	WWWOWN="${WWWOWN}" WWWGRP="${WWWGRP}"

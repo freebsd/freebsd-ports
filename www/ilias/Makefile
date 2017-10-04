@@ -24,7 +24,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	ILIAS-eLearning
 GH_PROJECT=	ILIAS
 
-USES=		cpe jpeg
+USES=		cpe jpeg php
 NO_BUILD=	yes
 PLIST=		${WRKDIR}/plist
 SUB_FILES=	pkg-message

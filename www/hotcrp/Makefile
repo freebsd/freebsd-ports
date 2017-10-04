@@ -12,8 +12,8 @@ COMMENT=	Web based conference management software
 RUN_DEPENDS=	pdftohtml:graphics/poppler-utils \
 		zip:archivers/zip
 
+USES=		php mysql:server
 USE_PHP=	mysqli gd session ctype
-USE_MYSQL=	server
 
 NO_BUILD=	yes
 SUB_FILES=	pkg-message
