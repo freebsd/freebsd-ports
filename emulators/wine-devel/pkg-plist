@@ -4,7 +4,7 @@ bin/msiexec
 bin/notepad
 bin/regedit
 bin/regsvr32
-%%STAGING%%bin/widl
+bin/widl
 %%WINE32%%bin/wine
 %%WINE64%%bin/wine64
 bin/wineboot
