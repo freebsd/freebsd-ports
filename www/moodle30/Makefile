@@ -17,7 +17,7 @@ CONFLICTS=	moodle31-3.1.[0-9]* moodle32-3.2.[0-9]* moodle33-3.3.[0-9]*
 DEPRECATED=		Deprecated by upstream, please use www/moodle33 instead
 EXPIRATION_DATE=	2017-10-11
 
-USES=		cpe tar:tgz
+USES=		cpe php tar:tgz
 USE_PHP=	ctype curl dom gd hash iconv intl json mbstring opcache \
 		openssl pcre session simplexml soap spl tokenizer xml xmlrpc \
 		zip zlib
@@ -29,7 +29,8 @@ OPTIONS_DEFINE=		LDAP MIMETEX
 OPTIONS_DEFAULT=	MYSQL
 MIMETEX_DESC=		mimeTeX filter functionality support
 
-MYSQL_USE=	mysql=client php=mysqli
+MYSQL_USES=	mysql:client
+MYSQL_USE=	php=mysqli
 PGSQL_USE=	php=pgsql
 MSSQL_USE=	php=mssql
 LDAP_USE=	php=ldap

@@ -13,7 +13,7 @@ COMMENT=	Open Source Human Resource Management
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/license/LICENSE.TXT
 
-USES=		cpe zip
+USES=		cpe php zip
 USE_PHP=	pdo_mysql ctype xml simplexml
 NO_BUILD=	yes
 PLIST=		${WRKDIR}/plist

@@ -12,7 +12,7 @@ COMMENT=	Online genealogy viewer
 
 EXTRACT_AFTER_ARGS=	-d ${WRKSRC}
 
-USES=		cpe shebangfix zip:infozip
+USES=		cpe php shebangfix zip:infozip
 SHEBANG_FILES=	webtrees/library/bombayworks/zendframework1/puppet/scripts/php-build.sh \
 		webtrees/library/ezyang/htmlpurifier/maintenance/*.php \
 		webtrees/library/ezyang/htmlpurifier/maintenance/*.sh \

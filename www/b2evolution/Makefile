@@ -11,12 +11,11 @@ MASTER_SITES=	SF/evocms/${PORTNAME}/b2evo%20${PORTVERSION}-stable
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multilingual, multiuser, multi-blog engine
 
-USES=		cpe dos2unix zip
+USES=		cpe dos2unix php:web zip
 
 B2EVO_DATE?=	stable-2011-03-23
 USE_PHP=	mysql pcre session xml
 NO_BUILD=	YES
-WANT_PHP_WEB=	YES
 
 TMPDIR?=	${PORTNAME}
 WRKSRC=		${WRKDIR}/${TMPDIR}

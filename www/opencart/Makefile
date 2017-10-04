@@ -13,6 +13,7 @@ LICENSE=	GPLv3
 USE_GITHUB=	yes
 GH_ACCOUNT=	opencart
 
+USES=		php
 USE_PHP=	filter mysqli curl mbstring gd zlib mcrypt session zip hash
 WRKSRC_SUBDIR=	upload
 

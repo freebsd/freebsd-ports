@@ -11,7 +11,7 @@ COMMENT=	Horde Photo Management and Web Gallery
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=	horde cpe
+USES=	horde cpe php
 USE_PHP=	gettext hash
 USE_HORDE_BUILD=	Horde_Role
 USE_HORDE_RUN=	Horde_Role \
