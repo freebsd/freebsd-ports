@@ -1,0 +1,11 @@
+--- configure.ac.orig	2015-11-06 15:08:46 UTC
++++ configure.ac
+@@ -139,7 +139,7 @@ if test "x$enable_python" != "xno"; then
+ 	ac_save_cc="$CC"
+ 	CC="$CC -fno-strict-aliasing"
+ 	AC_CACHE_VAL(ac_cv_no_strict_aliasing_ok,
+-	  AC_TRY_COMPILE([],[int main() { return 0; }],
++	  AC_TRY_COMPILE([],[],
+ 	  ac_cv_no_strict_aliasing_ok=yes,
+ 	  ac_cv_no_strict_aliasing_ok=no))
+ 	CC="$ac_save_cc"
