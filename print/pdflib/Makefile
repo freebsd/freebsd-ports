@@ -28,10 +28,6 @@ PERL_USES=	perl5
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "amd64" || ${ARCH} == "sparc64"
-CONFIGURE_ARGS+=--enable-64bit
-.endif
-
 .if ${PORT_OPTIONS:MPERL}
 PLIST_SUB=	PERL=""
 CONFIGURE_ARGS+=--with-perl=${PERL}
@@ -52,6 +48,8 @@ PLIST_SUB+=	JAVA="@comment "
 .endif
 
 post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/pdfimage ${STAGEDIR}${PREFIX}/bin/text2pdf \
+		${STAGEDIR}${PREFIX}/lib/libpdf.so.6.0.5
 	${MKDIR} ${STAGEDIR}${DATADIR}/fonts
 	${INSTALL_DATA} ${WRKSRC}/fonts/* ${STAGEDIR}${DATADIR}/fonts
 .if ${PORT_OPTIONS:MJAVA}
