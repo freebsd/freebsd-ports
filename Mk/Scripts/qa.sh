@@ -554,8 +554,6 @@ proxydeps_suggest_uses() {
 	# Qt5
 	elif expr ${pkg} : '.*/qt5-.*' > /dev/null; then
 		warn "you need USE_QT5+=$(echo ${pkg} | sed -E 's|.*/qt5-||')"
-	elif expr ${pkg} : '.*/.*-qt5' > /dev/null; then
-		warn "you need USE_QT5+=$(echo ${pkg} | sed -E 's|.*/(.*)-qt5|\1|')"
 	# MySQL
 	elif expr ${lib_file} : "${LOCALBASE}/lib/mysql/[^/]*$" > /dev/null; then
 		warn "you need USES+=mysql"
