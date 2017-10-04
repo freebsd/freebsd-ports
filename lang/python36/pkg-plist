@@ -2361,6 +2361,9 @@ lib/python%%XYDOT%%/idlelib/__pycache__/windows.cpython-%%XY%%.pyc
 lib/python%%XYDOT%%/idlelib/__pycache__/zoomheight.cpython-%%XY%%.opt-1.pyc
 lib/python%%XYDOT%%/idlelib/__pycache__/zoomheight.cpython-%%XY%%.opt-2.pyc
 lib/python%%XYDOT%%/idlelib/__pycache__/zoomheight.cpython-%%XY%%.pyc
+lib/python%%XYDOT%%/idlelib/__pycache__/zzdummy.cpython-%%XY%%.opt-1.pyc
+lib/python%%XYDOT%%/idlelib/__pycache__/zzdummy.cpython-%%XY%%.opt-2.pyc
+lib/python%%XYDOT%%/idlelib/__pycache__/zzdummy.cpython-%%XY%%.pyc
 lib/python%%XYDOT%%/idlelib/autocomplete.py
 lib/python%%XYDOT%%/idlelib/autocomplete_w.py
 lib/python%%XYDOT%%/idlelib/autoexpand.py
@@ -2462,6 +2465,9 @@ lib/python%%XYDOT%%/idlelib/idle_test/__pycache__/test_iomenu.cpython-%%XY%%.pyc
 lib/python%%XYDOT%%/idlelib/idle_test/__pycache__/test_macosx.cpython-%%XY%%.opt-1.pyc
 lib/python%%XYDOT%%/idlelib/idle_test/__pycache__/test_macosx.cpython-%%XY%%.opt-2.pyc
 lib/python%%XYDOT%%/idlelib/idle_test/__pycache__/test_macosx.cpython-%%XY%%.pyc
+lib/python%%XYDOT%%/idlelib/idle_test/__pycache__/test_outwin.cpython-%%XY%%.opt-1.pyc
+lib/python%%XYDOT%%/idlelib/idle_test/__pycache__/test_outwin.cpython-%%XY%%.opt-2.pyc
+lib/python%%XYDOT%%/idlelib/idle_test/__pycache__/test_outwin.cpython-%%XY%%.pyc
 lib/python%%XYDOT%%/idlelib/idle_test/__pycache__/test_paragraph.cpython-%%XY%%.opt-1.pyc
 lib/python%%XYDOT%%/idlelib/idle_test/__pycache__/test_paragraph.cpython-%%XY%%.opt-2.pyc
 lib/python%%XYDOT%%/idlelib/idle_test/__pycache__/test_paragraph.cpython-%%XY%%.pyc
@@ -2534,6 +2540,7 @@ lib/python%%XYDOT%%/idlelib/idle_test/test_history.py
 lib/python%%XYDOT%%/idlelib/idle_test/test_hyperparser.py
 lib/python%%XYDOT%%/idlelib/idle_test/test_iomenu.py
 lib/python%%XYDOT%%/idlelib/idle_test/test_macosx.py
+lib/python%%XYDOT%%/idlelib/idle_test/test_outwin.py
 lib/python%%XYDOT%%/idlelib/idle_test/test_paragraph.py
 lib/python%%XYDOT%%/idlelib/idle_test/test_parenmatch.py
 lib/python%%XYDOT%%/idlelib/idle_test/test_pathbrowser.py
@@ -2582,6 +2589,7 @@ lib/python%%XYDOT%%/idlelib/tree.py
 lib/python%%XYDOT%%/idlelib/undo.py
 lib/python%%XYDOT%%/idlelib/windows.py
 lib/python%%XYDOT%%/idlelib/zoomheight.py
+lib/python%%XYDOT%%/idlelib/zzdummy.py
 lib/python%%XYDOT%%/imaplib.py
 lib/python%%XYDOT%%/imghdr.py
 lib/python%%XYDOT%%/imp.py
@@ -3311,6 +3319,9 @@ lib/python%%XYDOT%%/test/__pycache__/audiotests.cpython-%%XY%%.pyc
 lib/python%%XYDOT%%/test/__pycache__/autotest.cpython-%%XY%%.opt-1.pyc
 lib/python%%XYDOT%%/test/__pycache__/autotest.cpython-%%XY%%.opt-2.pyc
 lib/python%%XYDOT%%/test/__pycache__/autotest.cpython-%%XY%%.pyc
+lib/python%%XYDOT%%/test/__pycache__/bisect.cpython-%%XY%%.opt-1.pyc
+lib/python%%XYDOT%%/test/__pycache__/bisect.cpython-%%XY%%.opt-2.pyc
+lib/python%%XYDOT%%/test/__pycache__/bisect.cpython-%%XY%%.pyc
 lib/python%%XYDOT%%/test/__pycache__/bytecode_helper.cpython-%%XY%%.opt-1.pyc
 lib/python%%XYDOT%%/test/__pycache__/bytecode_helper.cpython-%%XY%%.opt-2.pyc
 lib/python%%XYDOT%%/test/__pycache__/bytecode_helper.cpython-%%XY%%.pyc
@@ -3410,6 +3421,9 @@ lib/python%%XYDOT%%/test/__pycache__/pydocfodder.cpython-%%XY%%.pyc
 lib/python%%XYDOT%%/test/__pycache__/pystone.cpython-%%XY%%.opt-1.pyc
 lib/python%%XYDOT%%/test/__pycache__/pystone.cpython-%%XY%%.opt-2.pyc
 lib/python%%XYDOT%%/test/__pycache__/pystone.cpython-%%XY%%.pyc
+lib/python%%XYDOT%%/test/__pycache__/pythoninfo.cpython-%%XY%%.opt-1.pyc
+lib/python%%XYDOT%%/test/__pycache__/pythoninfo.cpython-%%XY%%.opt-2.pyc
+lib/python%%XYDOT%%/test/__pycache__/pythoninfo.cpython-%%XY%%.pyc
 lib/python%%XYDOT%%/test/__pycache__/re_tests.cpython-%%XY%%.opt-1.pyc
 lib/python%%XYDOT%%/test/__pycache__/re_tests.cpython-%%XY%%.opt-2.pyc
 lib/python%%XYDOT%%/test/__pycache__/re_tests.cpython-%%XY%%.pyc
@@ -4698,6 +4712,7 @@ lib/python%%XYDOT%%/test/badsyntax_future7.py
 lib/python%%XYDOT%%/test/badsyntax_future8.py
 lib/python%%XYDOT%%/test/badsyntax_future9.py
 lib/python%%XYDOT%%/test/badsyntax_pep3120.py
+lib/python%%XYDOT%%/test/bisect.py
 lib/python%%XYDOT%%/test/bytecode_helper.py
 lib/python%%XYDOT%%/test/capath/4e1295a3.0
 lib/python%%XYDOT%%/test/capath/5ed36f99.0
@@ -5024,6 +5039,7 @@ lib/python%%XYDOT%%/test/pyclbr_input.py
 lib/python%%XYDOT%%/test/pydoc_mod.py
 lib/python%%XYDOT%%/test/pydocfodder.py
 lib/python%%XYDOT%%/test/pystone.py
+lib/python%%XYDOT%%/test/pythoninfo.py
 lib/python%%XYDOT%%/test/randv2_32.pck
 lib/python%%XYDOT%%/test/randv2_64.pck
 lib/python%%XYDOT%%/test/randv3.pck
@@ -5038,7 +5054,6 @@ lib/python%%XYDOT%%/test/sample_doctest_no_doctests.py
 lib/python%%XYDOT%%/test/selfsigned_pythontestdotnet.pem
 lib/python%%XYDOT%%/test/seq_tests.py
 lib/python%%XYDOT%%/test/sgml_input.html
-lib/python%%XYDOT%%/test/sha256.pem
 lib/python%%XYDOT%%/test/signalinterproctester.py
 lib/python%%XYDOT%%/test/sndhdrdata/README
 lib/python%%XYDOT%%/test/sndhdrdata/sndhdr.8svx
@@ -5506,6 +5521,22 @@ lib/python%%XYDOT%%/test/test_import/data/circular_imports/subpkg/__pycache__/ut
 lib/python%%XYDOT%%/test/test_import/data/circular_imports/subpkg/subpackage2.py
 lib/python%%XYDOT%%/test/test_import/data/circular_imports/subpkg/util.py
 lib/python%%XYDOT%%/test/test_import/data/circular_imports/util.py
+lib/python%%XYDOT%%/test/test_import/data/package/__init__.py
+lib/python%%XYDOT%%/test/test_import/data/package/__pycache__/__init__.cpython-%%XY%%.opt-1.pyc
+lib/python%%XYDOT%%/test/test_import/data/package/__pycache__/__init__.cpython-%%XY%%.opt-2.pyc
+lib/python%%XYDOT%%/test/test_import/data/package/__pycache__/__init__.cpython-%%XY%%.pyc
+lib/python%%XYDOT%%/test/test_import/data/package/__pycache__/submodule.cpython-%%XY%%.opt-1.pyc
+lib/python%%XYDOT%%/test/test_import/data/package/__pycache__/submodule.cpython-%%XY%%.opt-2.pyc
+lib/python%%XYDOT%%/test/test_import/data/package/__pycache__/submodule.cpython-%%XY%%.pyc
+lib/python%%XYDOT%%/test/test_import/data/package/submodule.py
+lib/python%%XYDOT%%/test/test_import/data/package2/__pycache__/submodule1.cpython-%%XY%%.opt-1.pyc
+lib/python%%XYDOT%%/test/test_import/data/package2/__pycache__/submodule1.cpython-%%XY%%.opt-2.pyc
+lib/python%%XYDOT%%/test/test_import/data/package2/__pycache__/submodule1.cpython-%%XY%%.pyc
+lib/python%%XYDOT%%/test/test_import/data/package2/__pycache__/submodule2.cpython-%%XY%%.opt-1.pyc
+lib/python%%XYDOT%%/test/test_import/data/package2/__pycache__/submodule2.cpython-%%XY%%.opt-2.pyc
+lib/python%%XYDOT%%/test/test_import/data/package2/__pycache__/submodule2.cpython-%%XY%%.pyc
+lib/python%%XYDOT%%/test/test_import/data/package2/submodule1.py
+lib/python%%XYDOT%%/test/test_import/data/package2/submodule2.py
 lib/python%%XYDOT%%/test/test_importlib/__init__.py
 lib/python%%XYDOT%%/test/test_importlib/__main__.py
 lib/python%%XYDOT%%/test/test_importlib/__pycache__/__init__.cpython-%%XY%%.opt-1.pyc

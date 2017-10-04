@@ -1,4 +1,4 @@
 # Mk/Uses/python.mk includes this file, don't remove it!
 # $FreeBSD$
 
-PYTHON_PORTVERSION=	3.6.2
+PYTHON_PORTVERSION=	3.6.3
