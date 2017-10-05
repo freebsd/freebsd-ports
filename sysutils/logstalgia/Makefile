@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	logstalgia
-PORTVERSION=	1.0.8
+PORTVERSION=	1.0.9
 CATEGORIES=	sysutils www
 
 MAINTAINER=	ehaupt@FreeBSD.org
@@ -28,7 +28,7 @@ USE_SDL=	image2 sdl2
 USE_GITHUB=	yes
 GH_ACCOUNT=	acaudwell
 GH_PROJECT=	Logstalgia:DEFAULT Core:core
-GH_TAGNAME=	32067aa:DEFAULT 683d98b:core
+GH_TAGNAME=	${PORTNAME}-${PORTVERSION}:DEFAULT 683d98b:core
 
 post-extract:
 	@${MV} ${WRKDIR}/Core-*/* ${WRKSRC}/src/core/
