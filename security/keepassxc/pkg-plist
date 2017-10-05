@@ -1,6 +1,6 @@
 bin/keepassxc
 bin/keepassxc-cli
-%%AUTOTYPE%%lib/keepassxc/libkeepassx-autotype-xcb.so
+lib/keepassxc/libkeepassx-autotype-xcb.so
 share/applications/keepassxc.desktop
 share/icons/hicolor/128x128/apps/keepassxc-dark.png
 share/icons/hicolor/128x128/apps/keepassxc-locked.png
@@ -208,8 +208,10 @@ share/icons/hicolor/scalable/mimetypes/application-x-keepassxc.svgz
 %%DATADIR%%/translations/keepassx_el.qm
 %%DATADIR%%/translations/keepassx_en_plurals.qm
 %%DATADIR%%/translations/keepassx_es.qm
+%%DATADIR%%/translations/keepassx_eu.qm
 %%DATADIR%%/translations/keepassx_fi.qm
 %%DATADIR%%/translations/keepassx_fr.qm
+%%DATADIR%%/translations/keepassx_hu.qm
 %%DATADIR%%/translations/keepassx_id.qm
 %%DATADIR%%/translations/keepassx_it.qm
 %%DATADIR%%/translations/keepassx_ja.qm
@@ -223,65 +225,9 @@ share/icons/hicolor/scalable/mimetypes/application-x-keepassxc.svgz
 %%DATADIR%%/translations/keepassx_ru.qm
 %%DATADIR%%/translations/keepassx_sl_SI.qm
 %%DATADIR%%/translations/keepassx_sv.qm
+%%DATADIR%%/translations/keepassx_tr.qm
 %%DATADIR%%/translations/keepassx_uk.qm
 %%DATADIR%%/translations/keepassx_zh_CN.qm
 %%DATADIR%%/translations/keepassx_zh_TW.qm
 %%DATADIR%%/wordlists/eff_large.wordlist
 share/mime/packages/keepassxc.xml
-@dir share/icons/hicolor/scalable/apps
-@dir share/icons/hicolor/scalable
-@dir share/icons/hicolor/64x64/mimetypes
-@dir share/icons/hicolor/64x64/apps
-@dir share/icons/hicolor/64x64
-@dir share/icons/hicolor/48x48/apps
-@dir share/icons/hicolor/48x48
-@dir share/icons/hicolor/32x32/mimetypes
-@dir share/icons/hicolor/32x32/apps
-@dir share/icons/hicolor/32x32
-@dir share/icons/hicolor/256x256/apps
-@dir share/icons/hicolor/256x256
-@dir share/icons/hicolor/24x24/apps
-@dir share/icons/hicolor/24x24
-@dir share/icons/hicolor/22x22/mimetypes
-@dir share/icons/hicolor/22x22
-@dir share/icons/hicolor/16x16/mimetypes
-@dir share/icons/hicolor/16x16/apps
-@dir share/icons/hicolor/16x16
-@dir share/icons/hicolor/128x128/mimetypes
-@dir share/icons/hicolor/128x128/apps
-@dir share/icons/hicolor/128x128
-@dir %%DATADIR%%/wordlists
-@dir %%DATADIR%%/translations
-@dir %%DATADIR%%/icons/database
-@dir %%DATADIR%%/icons/application/scalable/mimetypes
-@dir %%DATADIR%%/icons/application/scalable/apps
-@dir %%DATADIR%%/icons/application/scalable
-@dir %%DATADIR%%/icons/application/64x64/mimetypes
-@dir %%DATADIR%%/icons/application/64x64/apps
-@dir %%DATADIR%%/icons/application/64x64
-@dir %%DATADIR%%/icons/application/48x48/apps
-@dir %%DATADIR%%/icons/application/48x48
-@dir %%DATADIR%%/icons/application/32x32/status
-@dir %%DATADIR%%/icons/application/32x32/mimetypes
-@dir %%DATADIR%%/icons/application/32x32/categories
-@dir %%DATADIR%%/icons/application/32x32/apps
-@dir %%DATADIR%%/icons/application/32x32/actions
-@dir %%DATADIR%%/icons/application/32x32
-@dir %%DATADIR%%/icons/application/256x256/apps
-@dir %%DATADIR%%/icons/application/256x256
-@dir %%DATADIR%%/icons/application/24x24/apps
-@dir %%DATADIR%%/icons/application/24x24
-@dir %%DATADIR%%/icons/application/22x22/status
-@dir %%DATADIR%%/icons/application/22x22/mimetypes
-@dir %%DATADIR%%/icons/application/22x22/actions
-@dir %%DATADIR%%/icons/application/22x22
-@dir %%DATADIR%%/icons/application/16x16/mimetypes
-@dir %%DATADIR%%/icons/application/16x16/apps
-@dir %%DATADIR%%/icons/application/16x16/actions
-@dir %%DATADIR%%/icons/application/16x16
-@dir %%DATADIR%%/icons/application/128x128/mimetypes
-@dir %%DATADIR%%/icons/application/128x128/apps
-@dir %%DATADIR%%/icons/application/128x128
-@dir %%DATADIR%%/icons/application
-@dir %%DATADIR%%/icons
-@dir %%DATADIR%%
