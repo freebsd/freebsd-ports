@@ -16,4 +16,4 @@ JWasm Features:
   both Win32Inc and Masm32.
 - C header files can be converted to include files for JWasm with h2incX.
 
-WWW: http://www.japheth.de/JWasm.html
+WWW: https://http://jwasm.github.io/

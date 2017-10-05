@@ -3,7 +3,7 @@
 PORTNAME=	pchecker
 PORTVERSION=	1.18
 CATEGORIES=	ports-mgmt
-MASTER_SITES=	https://googledrive.com/host/0BwCT-sp3iBCaeDRPYm1jTjl1Qmc/
+MASTER_SITES=	https://aklv.github.io/distfiles/
 
 MAINTAINER=	ak@FreeBSD.org
 COMMENT=	Tool that checks the ports tree for various errors
