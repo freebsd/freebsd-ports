@@ -5,6 +5,15 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20171004:
+  AFFECTS: users of security/krb5-appl
+  AUTHOR: cy@FreeBSD.org
+
+  Configuration options to rename kerberos ftp, telnet, rlogin, rsh, and
+  rcp are now default to avoid conflicting with net/bsdrcmds packages
+  (in poudriere). Deselect the options to use the original command names
+  and also uninstall net/bsdrcmds to avoid the conflict.
+
 20171002:
   AFFECTS: users of x11-wm/cwm
   AUTHOR: tobik@FreeBSD.org
