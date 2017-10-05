@@ -16,8 +16,10 @@ LICENSE=	GPLv3
 
 CPE_VENDOR=	gnu
 
+CONFLICTS=	cfengine-masterfiles3[0-79]-* cfengine-masterfiles31[0-9]-*
 .if !defined(MASTERDIR)
 PKGNAMESUFFIX=	38
+CONFLICTS+=	cfengine-masterfiles-3.*
 .endif
 
 RUN_DEPENDS=	cf-agent:sysutils/cfengine${PKGNAMESUFFIX}
