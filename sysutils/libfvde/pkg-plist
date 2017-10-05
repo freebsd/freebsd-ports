@@ -12,8 +12,10 @@ lib/libfvde.a
 lib/libfvde.so
 lib/libfvde.so.1
 lib/libfvde.so.1.0.0
-%%PYTHON_SITELIBDIR%%/pyfvde.a
-%%PYTHON_SITELIBDIR%%/pyfvde.so
+%%PYTHON2_SITELIBDIR%%/pyfvde.a
+%%PYTHON2_SITELIBDIR%%/pyfvde.so
+%%PYTHON3_SITELIBDIR%%/pyfvde.a
+%%PYTHON3_SITELIBDIR%%/pyfvde.so
 libdata/pkgconfig/libfvde.pc
 man/man1/fvdeinfo.1.gz
 man/man1/fvdemount.1.gz
