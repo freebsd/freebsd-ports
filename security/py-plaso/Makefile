@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	plaso
-DISTVERSION=	1.5.1
+PORTVERSION=	20170930
 CATEGORIES=	security python
 MASTER_SITES=	https://github.com/log2timeline/plaso/releases/download/${PORTVERSION}/ \
 		LOCAL/antoine
@@ -31,11 +31,11 @@ RUN_DEPENDS=	hachoir-core>=0:devel/hachoir-core \
 		${PYTHON_PKGNAMEPREFIX}binplist>=0:devel/py-binplist \
 		${PYTHON_PKGNAMEPREFIX}construct>=0:devel/py-construct \
 		${PYTHON_PKGNAMEPREFIX}dateutil>=0:devel/py-dateutil \
+		${PYTHON_PKGNAMEPREFIX}dfdatetime>=0:security/py-dfdatetime \
 		${PYTHON_PKGNAMEPREFIX}dfvfs>=0:security/py-dfvfs \
 		${PYTHON_PKGNAMEPREFIX}dfwinreg>=0:security/py-dfwinreg \
 		${PYTHON_PKGNAMEPREFIX}dpkt>=0:net/py-dpkt \
 		${PYTHON_PKGNAMEPREFIX}efilter>=0:devel/py-efilter \
-		${PYTHON_PKGNAMEPREFIX}ipython>=0:devel/ipython \
 		${PYTHON_PKGNAMEPREFIX}pefile>=0:devel/py-pefile \
 		${PYTHON_PKGNAMEPREFIX}psutil>=0:sysutils/py-psutil \
 		${PYTHON_PKGNAMEPREFIX}pyparsing>=0:devel/py-pyparsing \
@@ -55,7 +55,14 @@ USE_LOCALE=	en_US.UTF-8
 USE_PYTHON=	distutils autoplist
 TEST_ENV=	${MAKE_ENV} PYTHONHTTPSVERIFY=0
 
+.include <bsd.port.pre.mk>
+
+.if ${PYTHON_REL} < 3300
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pyliblzma>=0:archivers/py-pyliblzma
+.endif
+
 do-test:
+	@${TOUCH} ${TEST_WRKSRC}/utils/__init__.py
 	@(cd ${TEST_WRKSRC} && ${SETENV} ${TEST_ENV} ${PYTHON_CMD} run_tests.py)
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
