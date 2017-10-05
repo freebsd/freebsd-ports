@@ -1,22 +1,25 @@
 # Created by: Joe Horn <joehorn@gmail.com>
 # $FreeBSD$
 
-PORTNAME=	CKEditor
-PORTVERSION=	4.0
+PORTNAME=	ckeditor
+PORTVERSION=	4.7.3
 CATEGORIES=	www
-MASTER_SITES=	http://download.cksource.com/${PORTNAME}/${PORTNAME}/${PORTNAME}%20${PORTVERSION}/
-DISTNAME=	ckeditor_${PORTVERSION}_full
+MASTER_SITES=	https://download.cksource.com/CKEditor/CKEditor/CKEditor%20${PORTVERSION}/
+DISTNAME=	${PORTNAME}_${PORTVERSION}_full
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	WYSIWYG editor to be used inside web page
 
-LICENSE=	MPL
+LICENSE=	GPLv2+ LGPL21+ MPL11 MPL20
+LICENSE_COMB=	dual
+LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-NO_BUILD=	yes
 NO_ARCH=	yes
-WRKSRC=		${WRKDIR}/ckeditor
+NO_BUILD=	yes
+WRKSRC=		${WRKDIR}/${PORTNAME}
+USES=		zip
 
 do-install:
-	@(cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR})
+	cd ${WRKSRC}/ && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR}
 
 .include <bsd.port.mk>
