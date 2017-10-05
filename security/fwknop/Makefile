@@ -3,7 +3,7 @@
 
 PORTNAME=	fwknop
 PORTVERSION=	2.6.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	http://www.cipherdyne.org/fwknop/download/
 
@@ -15,7 +15,7 @@ LICENSE=	GPLv2
 BUILD_DEPENDS= wget:ftp/wget
 RUN_DEPENDS=   wget:ftp/wget
 LIB_DEPENDS+=  libassuan.so:security/libassuan
-
+CONFLICTS_BUILD=	fwknop-2.6.8_*
 CPE_VENDOR=	cipherdyne
 
 OPTIONS_DEFINE=	GPGME
