@@ -3,11 +3,11 @@
 
 PORTNAME=	devtools
 PORTVERSION=	${LINUX_DIST_VER}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 BIN_DISTNAMES=	binutils-2.20.51.0.2-5.47.el6_9.1 \
 		glibc-headers-2.12-1.209.el6_9.2 \
-		kernel-headers-2.6.32-696.3.2.el6 \
+		kernel-headers-2.6.32-696.10.3.el6 \
 		mpfr-2.4.1-6.el6 \
 		cpp-4.4.7-18.el6 \
 		gcc-4.4.7-18.el6 \
@@ -19,7 +19,7 @@ LIB_DISTNAMES=	binutils-devel-2.20.51.0.2-5.47.el6_9.1 \
 		libgomp-4.4.7-18.el6
 SRC_DISTFILES=	binutils-2.20.51.0.2-5.47.el6_9.1${SRC_SUFX}:SOURCE \
 		glibc-2.12-1.209.el6_9.2${SRC_SUFX}:SOURCE \
-		kernel-2.6.32-696.3.2.el6${SRC_SUFX}:SOURCE \
+		kernel-2.6.32-696.10.3.el6${SRC_SUFX}:SOURCE \
 		mpfr-2.4.1-6.el6${SRC_SUFX}:SOURCE \
 		gcc-4.4.7-18.el6${SRC_SUFX}:SOURCE
 
