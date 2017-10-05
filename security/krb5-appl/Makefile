@@ -103,6 +103,12 @@ PLIST_SUB+=		RCP_PROG="krcp"
 PLIST_SUB+=		RCP_PROG="rcp"
 .endif
 
+.if ! ( ${PORT_OPTIONS:MKRB5_RENAME_RLOGIN} && \
+	${PORT_OPTIONS:MKRB5_RENAME_RSH} && \
+	${PORT_OPTIONS:MKRB5_RENAME_RCP} )
+CONFLICTS+=	bsdrcmds-*
+.endif
+
 .if defined(PROGRAM_TRANSFORM_NAME) && ${PROGRAM_TRANSFORM_NAME} != ""
 CONFIGURE_ARGS+=	--program-transform-name="${PROGRAM_TRANSFORM_NAME}"
 .endif
