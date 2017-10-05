@@ -12,6 +12,9 @@ DISTFILES=	syslog-ng-incubator-${PORTVERSION}.tar.xz
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	The syslog-ng module incubator
 
+CONFLICTS=	syslog-ng3[79]-* syslog-ng31[0-9]-* syslog-ng-3.[79].* \
+		syslog-ng3.1[0-9].*
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 MAKE_JOBS_UNSAFE=	yes
