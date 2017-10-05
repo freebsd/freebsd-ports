@@ -1,0 +1,10 @@
+A modern open source Game Boy Advance emulator, with support for Game
+Boy and Game Boy Color games as well.  The project started in April
+2013 with the goal of being fast enough to run on lower end hardware
+than other emulators support, without sacrificing accuracy or
+portability.  Other goals include accurate enough emulation to provide
+a development environment for homebrew software, a good workflow for
+tool-assist runners, and a modern feature set for emulators that older
+emulators may not support.
+
+WWW: https://mgba.io

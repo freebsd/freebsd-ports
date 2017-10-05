@@ -79,6 +79,7 @@
     SUBDIR += mastergear
     SUBDIR += mednafen
     SUBDIR += mess
+    SUBDIR += mgba
     SUBDIR += mtools
     SUBDIR += mupen64plus
     SUBDIR += mupen64plus-audio-sdl
