@@ -35,8 +35,6 @@ X11BASE2FIX=	clients/olwmslave/help_file.c	lib/libxview/help/help_file.c	\
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.pre.mk>
-
 post-extract:
 	@${MV} ${WRKSRC}/xview.man ${WRKSRC}/XView.man
 
@@ -60,12 +58,12 @@ pre-install:
 	@${FIND} ${WRKSRC}/config ${WRKSRC}/fonts -type f -name Makefile | ${XARGS} ${REINPLACE_CMD} -e '/PROJECTROOT = /!s+${PREFIX}+${STAGEDIR}${PREFIX}+g'
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@(cd ${WRKSRC}/doc; ${MAKE} install)
-.endif
 	@${RM} ${STAGEDIR}${PREFIX}/lib/help/clock.info
 	@${RM} ${STAGEDIR}${PREFIX}/lib/help/olwm.info
 	@${RM} ${STAGEDIR}${PREFIX}/lib/help/props.info
 	@${RM} ${STAGEDIR}${PREFIX}/lib/help/textedit.info
 
-.include <bsd.port.post.mk>
+post-install-DOCS-on:
+	@(cd ${WRKSRC}/doc; ${MAKE} install)
+
+.include <bsd.port.mk>
