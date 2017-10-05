@@ -7,7 +7,7 @@ PORTREVISION=	${MAIN_PR}
 CATEGORIES=	lang
 MASTER_SITES=	http://downloads.dragonlace.net/src/:boot \
 		LOCAL/marino:boot GCC/${MS_SUBDIR}
-DISTFILES=	${IDENTIFICATION}.tar.bz2
+DISTFILES=	${IDENTIFICATION}.tar.xz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Version of GCC ${GCC_BRANCH} with full Ada support
@@ -86,24 +86,26 @@ BSFILENAME=		ada-bootstrap.${GARCH}.${OPSYS:tl}.${OSREL:S/.//}.tar.bz2
 
 # If we find gnatmake and friends in a standard location, then we'll use this
 # compiler instead of downloading the bootstrap.
+# Add ${LOCALBASE}/bin for gmake
 .if exists (${LOCALBASE}/${PORTNAME}/bin/ada)
 .if exists (${LOCALBASE}/${PORTNAME}/bin/gnatbind)
 .if exists (${LOCALBASE}/${PORTNAME}/bin/gnatlink)
 .if exists (${LOCALBASE}/${PORTNAME}/bin/gnatmake)
 FULL_GNATGCC=${LOCALBASE}/${PORTNAME}/bin/ada
 FULL_GNATGXX=${LOCALBASE}/${PORTNAME}/bin/g++
-FULL_PATH=/sbin:/bin:/usr/sbin:/usr/bin:${PREFIX}/${PORTNAME}/bin:${PREFIX}/bin
+FULL_PATH=/sbin:/bin:/usr/sbin:/usr/bin:${PREFIX}/${PORTNAME}/bin:${PREFIX}/bin:${LOCALBASE}/bin
 .endif
 .endif
 .endif
 .endif
 
 # If FULL_GNATGCC is not set, we'll request the bootstrap compiler
+# Add ${LOCALBASE}/bin for gmake
 .if ${FULL_GNATGCC} == NOT_SET
 INTENDED_COMPILER=BOOTSTRAP
 FULL_GNATGCC=${BOOTSTRAP_PREFIX}/bin/gcc
 FULL_GNATGXX=${BOOTSTRAP_PREFIX}/bin/g++
-FULL_PATH=${BOOTSTRAP_PREFIX}/bin:/sbin:/bin:/usr/sbin:/usr/bin:${PREFIX}/bin
+FULL_PATH=${BOOTSTRAP_PREFIX}/bin:/sbin:/bin:/usr/sbin:/usr/bin:${PREFIX}/bin:${LOCALBASE}/bin
 DISTFILES+=	${BOOTSTRAP_COMPILER}:boot
 .endif
 
