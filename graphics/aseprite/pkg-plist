@@ -1,16 +1,4 @@
 bin/aseprite
-bin/cmark
-include/cmark.h
-include/cmark_export.h
-include/cmark_version.h
-lib/cmake/cmark-%%CMAKE_BUILD_TYPE%%.cmake
-lib/cmake/cmark.cmake
-lib/libcmark.a
-lib/libcmark.so
-lib/libcmark.so.0.27.1
-libdata/pkgconfig/libcmark.pc
-man/man1/cmark.1.gz
-man/man3/cmark.3.gz
 %%DATADIR%%/data/convmatr.def
 %%DATADIR%%/data/fonts/allegro.pcx
 %%DATADIR%%/data/fonts/anipro_fixed.pcx
