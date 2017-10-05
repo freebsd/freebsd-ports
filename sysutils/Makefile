@@ -74,11 +74,6 @@
     SUBDIR += bacula-client-static
     SUBDIR += bacula-docs
     SUBDIR += bacula-server
-    SUBDIR += bacula5-bat
-    SUBDIR += bacula5-client
-    SUBDIR += bacula5-client-static
-    SUBDIR += bacula5-docs
-    SUBDIR += bacula5-server
     SUBDIR += bacula9-bat
     SUBDIR += bacula9-client
     SUBDIR += bacula9-client-static

@@ -9570,3 +9570,9 @@ sysutils/py3-iocage|sysutils/iocage|2017-10-02|Port was renamed
 audio/ventrilo-server||2017-10-04|No more freebsd distfiles
 net-im/ayttm||2017-10-04|Non functional
 graphics/diacanvas2||2017-10-04|GNOME2 library unused anymore
+sysutils/bacula5-client-static|sysutils/bacula-client-static|2017-10-05|Has expired: No upstream commits since 2013. Use sysutils/bacula-server
+sysutils/bacula5-client|sysutils/bacula-client|2017-10-05|Has expired: No upstream commits since 2013. Use sysutils/bacula-server
+sysutils/bacula5-bat|sysutils/bacula-bat|2017-10-05|Has expired: No upstream commits since 2013. Use sysutils/bacula-server
+sysutils/bacula5-server|sysutils/bacula-server|2017-10-05|Has expired: No upstream commits since 2013. Use sysutils/bacula-server
+net-mgmt/nagios-check_bacula5|net-mgmt/nagios-check_bacula|2017-10-05|Has expired: No upstream commits since 2013. Use sysutils/bacula-server
+sysutils/bacula5-docs|sysutils/bacula-docs|2017-10-05|Has expired: No upstream commits since 2013. Use sysutils/bacula-docs
