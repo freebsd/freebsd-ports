@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	SNMP-Info
-PORTVERSION=	3.34
+PORTVERSION=	3.37
 CATEGORIES=	net-mgmt perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,6 +16,6 @@ LIB_DEPENDS=	libnetsnmp.so:net-mgmt/net-snmp
 
 NO_ARCH=	yes
 USES=		perl5
-USE_PERL5=	configure
+USE_PERL5=	modbuild
 
 .include <bsd.port.mk>
