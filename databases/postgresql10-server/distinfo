@@ -1,5 +1,3 @@
-TIMESTAMP = 1505926503
-SHA256 (postgresql/postgresql-10rc1.tar.bz2) = ebdb44dccb64a31c9c524f996121e7d58c21045826d6c36e3a5ea46afbb2445b
-SIZE (postgresql/postgresql-10rc1.tar.bz2) = 19631683
-SHA256 (postgresql/pg-9218-icu-2016-08-10.diff.gz) = 2f9c831b3dff866f0b2f6f2a9ef771a4045486bc252a851aadc73c50d376319d
-SIZE (postgresql/pg-9218-icu-2016-08-10.diff.gz) = 5587
+TIMESTAMP = 1507019634
+SHA256 (postgresql/postgresql-10.0.tar.bz2) = 712f5592e27b81c5b454df96b258c14d94b6b03836831e015c65d6deeae57fd1
+SIZE (postgresql/postgresql-10.0.tar.bz2) = 19639147
