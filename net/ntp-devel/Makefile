@@ -16,7 +16,7 @@ COMMENT=	The Network Time Protocol Distribution
 LIB_DEPENDS=	libevent.so:devel/libevent \
 		libmd5.so:www/libwww
 
-CONFLICTS=	ntp-[0-9].*
+CONFLICTS=	ntp-[0-9].* openntpd-*
 
 USES=		cpe pathfix shebangfix libedit libtool localbase:ldflags \
 		pkgconfig gettext-runtime
