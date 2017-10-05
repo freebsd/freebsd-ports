@@ -16,7 +16,8 @@ COMMENT=		MIT implementation of RFC 4120 network authentication clients
 
 BUILD_DEPENDS=		krb5-config:security/krb5
 
-CONFLICTS=		krb4-[0-9]* krb5-1.[0-7].* heimdal-[0-9]* srp-[0-9]*
+CONFLICTS=		krb4-[0-9]* krb5-1.[0-7].* heimdal-[0-9]* srp-[0-9]* \
+			bsdftpd-ssl-*
 
 KERBEROSV_URL=		http://web.mit.edu/kerberos/
 USES=			autoreconf gmake ncurses perl5 gssapi:mit ssl
