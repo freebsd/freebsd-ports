@@ -4,9 +4,11 @@
 PORTNAME=	cfengine
 PORTVERSION=	3.6.6
 PORTREVISION=	4
+CONFLICTS=      cfengine-2* cfengine3[0-57-9]-* cfengine31[0-9]-*
 .if !defined(MASTERDIR)
 PKGNAMESUFFIX=	36
 PORTEPOCH?=	2
+CONFLICTS+=     cfengine-3.*
 .endif
 CATEGORIES=	sysutils
 MASTER_SITES=	https://cfengine-package-repos.s3.amazonaws.com/tarballs/
