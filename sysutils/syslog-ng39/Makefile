@@ -6,7 +6,10 @@ DISTVERSION=	3.9.1
 CATEGORIES=	sysutils
 DISTFILES=	syslog-ng-${DISTVERSION}.tar.gz
 MASTER_SITES=	https://github.com/balabit/syslog-ng/releases/download/syslog-ng-${DISTVERSION}/
+
+.if !defined(MASTERDIR)
 PKGNAMESUFFIX=	39
+.endif
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Powerful syslogd replacement
