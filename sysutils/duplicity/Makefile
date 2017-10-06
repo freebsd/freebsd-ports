@@ -1,4 +1,4 @@
-# Created by: Gerhard Häring <gh@ghaering.de>
+# Created by: Gerhard HÃ¤ring <gh@ghaering.de>
 # $FreeBSD$
 
 PORTNAME=	duplicity
