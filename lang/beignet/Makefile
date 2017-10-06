@@ -29,7 +29,7 @@ USE_GL=		gl egl
 USE_LDCONFIG=	${LOCALBASE}/lib/${PORTNAME}
 SHEBANG_FILES=	src/git_sha1.sh backend/kernels/compile.sh
 ALL_TARGET=	all
-LLVMVER=	${MESA_LLVM_VER:U39}
+LLVMVER=	${MESA_LLVM_VER:U40}
 
 CMAKE_ARGS+=	-DLLVM_CONFIG_EXECUTABLE=${LOCALBASE}/bin/llvm-config${LLVMVER}
 
