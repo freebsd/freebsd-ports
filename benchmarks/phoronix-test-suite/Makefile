@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	phoronix-test-suite
-PORTVERSION=	7.2.1
-PORTREVISION=	1
+PORTVERSION=	7.4.0
 CATEGORIES=	benchmarks
 MASTER_SITES=	http://www.phoronix-test-suite.com/releases/
 
@@ -13,17 +12,12 @@ COMMENT=	Phoronix Benchmarking Suite
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		php:cli,build python shebangfix
+USES=		php:cli,build python
 USE_GCC=	any
 USE_PHP=	ctype curl dom filter gd hash json openssl pcntl posix \
 		session simplexml sockets sqlite3 zip zlib
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/phoronix-test-suite
-SHEBANG_FILES=	deploy/juju/trusty/pts/hooks/phoronix-common \
-		deploy/juju/trusty/pts/actions/memory \
-		deploy/juju/trusty/pts/actions/benchmark \
-		deploy/juju/trusty/pts/actions/custom \
-		deploy/juju/trusty/pts/scripts/parse
 
 RUN_DEPENDS+=	fpdf>0:print/fpdf
 RUN_DEPENDS+=	cmake:devel/cmake
