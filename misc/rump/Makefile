@@ -18,11 +18,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	rumpkernel
 GH_PROJECT=	buildrump.sh
 GH_TAGNAME=	b914579
-GH_TUPLE= 	rumpkernel:src-netbsd:82f3a69:netbsd/src
+GH_TUPLE=	rumpkernel:src-netbsd:82f3a69:netbsd/src
 USE_LDCONFIG=	yes
-USE_GCC=	any
-
-.include <bsd.port.pre.mk>
 
 do-build:
 	cd ${WRKSRC}; ${SETENV} CC=${CC} AR=${AR} NM=${NM} OBJCOPY=${OBJCOPY} ./buildrump.sh -r fullbuild
@@ -30,4 +27,4 @@ do-build:
 do-install:
 	cd ${WRKSRC}/rump; ${PAX} -wr lib include ${STAGEDIR}${PREFIX}/
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
