@@ -1,0 +1,222 @@
+https://github.com/jwilm/alacritty/issues/618
+
+--- cargo-crates/libc-0.2.23/src/unix/bsd/freebsdlike/freebsd/aarch64.rs.orig	2017-03-02 02:44:01 UTC
++++ cargo-crates/libc-0.2.23/src/unix/bsd/freebsdlike/freebsd/aarch64.rs
+@@ -7,10 +7,12 @@ s! {
+     pub struct stat {
+         pub st_dev: ::dev_t,
+         pub st_ino: ::ino_t,
+-        pub st_mode: ::mode_t,
+         pub st_nlink: ::nlink_t,
++        pub st_mode: ::mode_t,
++        pub st_pad0: ::uint16_t,
+         pub st_uid: ::uid_t,
+         pub st_gid: ::gid_t,
++        pub st_pad1: ::uint32_t,
+         pub st_rdev: ::dev_t,
+         pub st_atime: ::time_t,
+         pub st_atime_nsec: ::c_long,
+@@ -18,13 +20,13 @@ s! {
+         pub st_mtime_nsec: ::c_long,
+         pub st_ctime: ::time_t,
+         pub st_ctime_nsec: ::c_long,
++        pub st_birthtime: ::time_t,
++        pub st_birthtime_nsec: ::c_long,
+         pub st_size: ::off_t,
+         pub st_blocks: ::blkcnt_t,
+         pub st_blksize: ::blksize_t,
+         pub st_flags: ::fflags_t,
+-        pub st_gen: ::uint32_t,
+-        pub st_lspare: ::int32_t,
+-        pub st_birthtime: ::time_t,
+-        pub st_birthtime_nsec: ::c_long,
++        pub st_gen: ::uint64_t,
++        pub st_spare: [::uint64_t; 10],
+     }
+ }
+--- cargo-crates/libc-0.2.23/src/unix/bsd/freebsdlike/freebsd/mod.rs.orig	2017-04-26 14:28:39 UTC
++++ cargo-crates/libc-0.2.23/src/unix/bsd/freebsdlike/freebsd/mod.rs
+@@ -1,8 +1,8 @@
+ pub type fflags_t = u32;
+ pub type clock_t = i32;
+-pub type ino_t = u32;
++pub type ino_t = u64;
+ pub type lwpid_t = i32;
+-pub type nlink_t = u16;
++pub type nlink_t = u64;
+ pub type blksize_t = u32;
+ pub type clockid_t = ::c_int;
+ pub type sem_t = _sem;
+@@ -44,10 +44,13 @@ s! {
+     }
+ 
+     pub struct dirent {
+-        pub d_fileno: u32,
++        pub d_fileno: u64,
++        pub d_off: u64,
+         pub d_reclen: u16,
+         pub d_type: u8,
+-        pub d_namlen: u8,
++        pub d_pad0: u8,
++        pub d_namlen: u16,
++        pub d_pad1: u16,
+         pub d_name: [::c_char; 256],
+     }
+ 
+--- cargo-crates/libc-0.2.23/src/unix/bsd/freebsdlike/freebsd/x86.rs.orig	2016-10-14 21:54:23 UTC
++++ cargo-crates/libc-0.2.23/src/unix/bsd/freebsdlike/freebsd/x86.rs
+@@ -7,25 +7,30 @@ s! {
+     pub struct stat {
+         pub st_dev: ::dev_t,
+         pub st_ino: ::ino_t,
+-        pub st_mode: ::mode_t,
+         pub st_nlink: ::nlink_t,
++        pub st_mode: ::mode_t,
++        pub st_pad0: ::uint16_t,
+         pub st_uid: ::uid_t,
+         pub st_gid: ::gid_t,
++        pub st_pad1: ::uint32_t,
+         pub st_rdev: ::dev_t,
++        pub st_atime_ext: ::int32_t,
+         pub st_atime: ::time_t,
+         pub st_atime_nsec: ::c_long,
++        pub st_mtime_ext: ::int32_t,
+         pub st_mtime: ::time_t,
+         pub st_mtime_nsec: ::c_long,
++        pub st_ctime_ext: ::int32_t,
+         pub st_ctime: ::time_t,
+         pub st_ctime_nsec: ::c_long,
++        pub st_birthtime_ext: ::int32_t,
++        pub st_birthtime: ::time_t,
++        pub st_birthtime_nsec: ::c_long,
+         pub st_size: ::off_t,
+         pub st_blocks: ::blkcnt_t,
+         pub st_blksize: ::blksize_t,
+         pub st_flags: ::fflags_t,
+-        pub st_gen: ::uint32_t,
+-        pub st_lspare: ::int32_t,
+-        pub st_birthtime: ::time_t,
+-        pub st_birthtime_nsec: ::c_long,
+-        __unused: [u8; 8],
++        pub st_gen: ::uint64_t,
++        pub st_spare: [::uint64_t; 10],
+     }
+ }
+--- cargo-crates/libc-0.2.23/src/unix/bsd/freebsdlike/freebsd/x86_64.rs.orig	2016-10-14 21:54:23 UTC
++++ cargo-crates/libc-0.2.23/src/unix/bsd/freebsdlike/freebsd/x86_64.rs
+@@ -7,10 +7,12 @@ s! {
+     pub struct stat {
+         pub st_dev: ::dev_t,
+         pub st_ino: ::ino_t,
+-        pub st_mode: ::mode_t,
+         pub st_nlink: ::nlink_t,
++        pub st_mode: ::mode_t,
++        pub st_pad0: ::uint16_t,
+         pub st_uid: ::uid_t,
+         pub st_gid: ::gid_t,
++        pub st_pad1: ::uint32_t,
+         pub st_rdev: ::dev_t,
+         pub st_atime: ::time_t,
+         pub st_atime_nsec: ::c_long,
+@@ -18,13 +20,13 @@ s! {
+         pub st_mtime_nsec: ::c_long,
+         pub st_ctime: ::time_t,
+         pub st_ctime_nsec: ::c_long,
++        pub st_birthtime: ::time_t,
++        pub st_birthtime_nsec: ::c_long,
+         pub st_size: ::off_t,
+         pub st_blocks: ::blkcnt_t,
+         pub st_blksize: ::blksize_t,
+         pub st_flags: ::fflags_t,
+-        pub st_gen: ::uint32_t,
+-        pub st_lspare: ::int32_t,
+-        pub st_birthtime: ::time_t,
+-        pub st_birthtime_nsec: ::c_long,
++        pub st_gen: ::uint64_t,
++        pub st_spare: [::uint64_t; 10],
+     }
+ }
+--- cargo-crates/libc-0.2.23/src/unix/bsd/freebsdlike/mod.rs.orig	2017-05-19 03:32:21 UTC
++++ cargo-crates/libc-0.2.23/src/unix/bsd/freebsdlike/mod.rs
+@@ -1,4 +1,4 @@
+-pub type dev_t = u32;
++pub type dev_t = u64;
+ pub type mode_t = u16;
+ pub type pthread_attr_t = *mut ::c_void;
+ pub type rlim_t = i64;
+@@ -35,8 +35,9 @@ s! {
+         pub filter: ::c_short,
+         pub flags: ::c_ushort,
+         pub fflags: ::c_uint,
+-        pub data: ::intptr_t,
++        pub data: i64,
+         pub udata: *mut ::c_void,
++        pub ext: [u64; 4],
+     }
+ 
+     pub struct sockaddr_storage {
+--- cargo-crates/mio-0.5.1/src/sys/unix/kqueue.rs.orig	2016-04-27 20:28:22 UTC
++++ cargo-crates/mio-0.5.1/src/sys/unix/kqueue.rs
+@@ -110,6 +110,7 @@ impl Selector {
+                 fflags: FilterFlag::empty(),
+                 data: 0,
+-                udata: token
++                udata: token,
++                ext: [0, 0, 0, 0],
+             });
+     }
+ 
+--- cargo-crates/mio-0.6.2/src/sys/unix/kqueue.rs.orig	2016-12-14 20:41:05 UTC
++++ cargo-crates/mio-0.6.2/src/sys/unix/kqueue.rs
+@@ -121,6 +121,7 @@ impl Selector {
+                 fflags: FilterFlag::empty(),
+                 data: 0,
+                 udata: token as UData,
++                ext: [0, 0, 0, 0],
+             });
+     }
+ 
+--- cargo-crates/nix-0.5.1/src/sys/event.rs.orig	2016-03-16 20:17:51 UTC
++++ cargo-crates/nix-0.5.1/src/sys/event.rs
+@@ -23,8 +23,9 @@ mod ffi {
+         pub filter: EventFilter,    // 2
+         pub flags: EventFlag,       // 2
+         pub fflags: FilterFlag,     // 4
+-        pub data: intptr_t,         // 8
+-        pub udata: usize             // 8
++        pub data: i64,              // 8
++        pub udata: usize,           // 8
++        pub ext: [u64; 4],          // 32
+     }
+ 
+     #[cfg(target_os = "netbsd")]
+@@ -346,6 +347,7 @@ pub fn ev_set(ev: &mut KEvent,
+     ev.fflags = fflags;
+     ev.data   = 0;
+     ev.udata  = udata;
++    ev.ext    = [0, 0, 0, 0];
+ }
+ 
+ #[cfg(target_os = "netbsd")]
+--- cargo-crates/nix-0.7.0/src/sys/event.rs.orig	2016-08-31 18:53:01 UTC
++++ cargo-crates/nix-0.7.0/src/sys/event.rs
+@@ -23,8 +23,9 @@ mod ffi {
+         pub filter: EventFilter,    // 2
+         pub flags: EventFlag,       // 2
+         pub fflags: FilterFlag,     // 4
+-        pub data: intptr_t,         // 8
+-        pub udata: usize             // 8
++        pub data: i64,              // 8
++        pub udata: usize,           // 8
++        pub ext: [u64; 4],          // 32
+     }
+ 
+     #[cfg(target_os = "netbsd")]
+@@ -346,6 +347,7 @@ pub fn ev_set(ev: &mut KEvent,
+     ev.fflags = fflags;
+     ev.data   = 0;
+     ev.udata  = udata;
++    ev.ext    = [0, 0, 0, 0];
+ }
+ 
+ #[cfg(target_os = "netbsd")]
