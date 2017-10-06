@@ -1,6 +1,6 @@
---- sql/conn_handler/socket_connection.cc.orig	2016-03-28 18:06:12 UTC
+--- sql/conn_handler/socket_connection.cc.orig	2017-06-27 11:44:29 UTC
 +++ sql/conn_handler/socket_connection.cc
-@@ -939,20 +939,23 @@ Channel_info* Mysqld_socket_listener::li
+@@ -903,22 +903,26 @@ Channel_info* Mysqld_socket_listener::li
      signal(SIGCHLD, SIG_DFL);
      request_init(&req, RQ_DAEMON, m_libwrap_name, RQ_FILE,
                   mysql_socket_getfd(connect_sock), NULL);
@@ -22,9 +22,12 @@
 -             "refused connect from %s", eval_client(&req));
 +             "refused connect from %s", my_eval_client(&req));
  
+ #ifdef HAVE_LIBWRAP_PROTOTYPES
+       // Some distros have patched tcpd.h to have proper prototypes
        if (req.sink)
 -        (req.sink)(req.fd);
 +        ((void (*)(int)) (req.sink))(req.fd);
- 
-       mysql_socket_shutdown(listen_sock, SHUT_RDWR);
-       mysql_socket_close(listen_sock);
++
+ #else
+       // Some distros have not patched tcpd.h
+       if (req.sink)

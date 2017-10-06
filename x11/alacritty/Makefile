@@ -2,6 +2,7 @@
 
 PORTNAME=	alacritty
 PORTVERSION=	g20170618
+PORTREVISION=	1
 CATEGORIES=	x11
 
 MAINTAINER=	tobik@FreeBSD.org
@@ -21,6 +22,9 @@ GH_TAGNAME=	3c8514ba103d5d987d2269c421a3cc09e6784904
 GH_TUPLE=	jwilm:glutin:cc64178d39a1fa06b2c5403117e5e0ef24deeac4:glutin \
 		jwilm:rust-fontconfig:419135e5e1106ec0973dd4923bd9c70d8e438cc8:servofontconfig \
 		jwilm:libfontconfig:618a52973d46e5cce4f054f6ee3bd2682167eee4:servofontconfigsys
+
+EXTRA_PATCHES+=	${EXTRA_PATCHES_${OPSYS}_${OSREL:R}}
+EXTRA_PATCHES_FreeBSD_12=	${PATCHDIR}/extra-patch-freebsd12
 
 PLIST_FILES=	bin/alacritty
 

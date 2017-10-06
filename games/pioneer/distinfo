@@ -1,5 +1,3 @@
-TIMESTAMP = 1488555232
-SHA256 (pioneerspacesim-pioneer-0.0.20170304-20170304_GH0.tar.gz) = 45d448a5ac53c9e230522600f03dad7abc70788367d09c3edcb4ae4285050004
-SIZE (pioneerspacesim-pioneer-0.0.20170304-20170304_GH0.tar.gz) = 194776151
-SHA256 (a53fdbe8b046.patch) = f9b438480642ad4a9a71cd976c007bc9c5a0fa82d3dc2d4d0892c1d6e00b78d7
-SIZE (a53fdbe8b046.patch) = 1109
+TIMESTAMP = 1506816107
+SHA256 (pioneerspacesim-pioneer-0.0.20171001-20171001_GH0.tar.gz) = 154118bd3dac2f9b8ea43a837bcb967abcc8c3a8ee5ab61d35183bae85e8b0db
+SIZE (pioneerspacesim-pioneer-0.0.20171001-20171001_GH0.tar.gz) = 210900753

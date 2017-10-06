@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	pchecker
-PORTVERSION=	1.18
+PORTVERSION=	1.20
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	https://aklv.github.io/distfiles/
 

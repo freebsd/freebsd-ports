@@ -44,11 +44,5 @@ MAILTO=you@example.org
 19 20 * * * /usr/local/bin/cert-shifter
 ###
 
-To use wget, set FETCH_TOOL="wget" in cert-puller.conf
-To use curl, set FETCH_TOOL="curl" in cert-puller.conf
-
-The default argments to fetch, curl, and wget can be overridden
-in cert-puller.conf.  See the website for details.
-
 ****************************************************************************
 

@@ -6,4 +6,3 @@ MASTERDIR=	${.CURDIR}/../py-pyasn1
 USES=	python:3.3+
 
 .include "${MASTERDIR}/Makefile"
-
