@@ -2,21 +2,20 @@
 # $FreeBSD$
 
 PORTNAME=	webtrees
-PORTVERSION=	1.6.2
-PORTREVISION=	2
+PORTVERSION=	1.7.9
 CATEGORIES=	www
-MASTER_SITES=	http://launchpad.net/${PORTNAME}/${PORTVERSION:C/\.[0-9]*$//}/${PORTVERSION}/+download/
+MASTER_SITES=	http://launchpad.net/${PORTNAME}/${PORTVERSION:R}/${PORTVERSION}/+download/
 
 MAINTAINER=	fbsd@opal.com
 COMMENT=	Online genealogy viewer
 
 EXTRACT_AFTER_ARGS=	-d ${WRKSRC}
 
-USES=		cpe php shebangfix zip:infozip
-SHEBANG_FILES=	webtrees/library/bombayworks/zendframework1/puppet/scripts/php-build.sh \
-		webtrees/library/ezyang/htmlpurifier/maintenance/*.php \
-		webtrees/library/ezyang/htmlpurifier/maintenance/*.sh \
-		webtrees/library/tecnick.com/tcpdf/tools/tcpdf_addfont.php
+USES=		cpe php shebangfix zip
+SHEBANG_FILES=	webtrees/vendor/ezyang/htmlpurifier/maintenance/*.php \
+		webtrees/vendor/ezyang/htmlpurifier/maintenance/*.sh \
+		webtrees/vendor/swiftmailer/swiftmailer/lib/swiftmailer_generate_mimes_config.php \
+		webtrees/vendor/tecnickcom/tcpdf/tools/tcpdf_addfont.php
 USE_PHP=	calendar dom filter gd pcre pdo_mysql session simplexml xml
 NO_BUILD=	yes
 NO_ARCH=	yes
@@ -29,7 +28,7 @@ do-install:
 	@(cd ${WRKSRC}/${PORTNAME}; ${FIND} . -not -type d) | ${SORT} | \
 		${SED} -ne 's,^${PORTNAME}/,${WWWDIR_REL}/,p' >> ${TMPPLIST}
 	@${ECHO_CMD} \
-		'@exec chown -R ${WWWOWN}:${WWWGRP} %D/${WWWDIR_REL}/data' \
+		'@postexec chown -R ${WWWOWN}:${WWWGRP} %D/${WWWDIR_REL}/data' \
 		>> ${TMPPLIST}
 
 .include <bsd.port.mk>
