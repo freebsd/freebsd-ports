@@ -1649,6 +1649,8 @@ share/lthemeengine/colors/waves.conf
 share/lthemeengine/desktop_qss/DarkGlass.qss
 share/lthemeengine/desktop_qss/Glass.qss
 share/lthemeengine/qss/scrollbar-simple.qss
+share/lthemeengine/qss/sliders-simple.qss
+share/lthemeengine/qss/tooltip-simple.qss
 share/lumina-desktop/Login.ogg
 share/lumina-desktop/Logout.ogg
 share/lumina-desktop/colors/Black.qss.colors
