@@ -156,8 +156,10 @@ lib/cmake/benchmark/benchmarkConfig.cmake
 lib/cmake/benchmark/benchmarkConfigVersion.cmake
 lib/cmake/benchmark/benchmarkTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/benchmark/benchmarkTargets.cmake
-lib/cmake/gRPC/gRPCConfig.cmake
-lib/cmake/gRPC/gRPCConfigVersion.cmake
+lib/cmake/grpc/gRPCConfig.cmake
+lib/cmake/grpc/gRPCConfigVersion.cmake
+lib/cmake/grpc/gRPCTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/grpc/gRPCTargets.cmake
 lib/libbenchmark.so
 lib/libbenchmark.so.0
 lib/libbenchmark.so.0.0.0

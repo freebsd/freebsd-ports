@@ -1,6 +1,6 @@
---- src/core/tsi/ssl_transport_security.c.orig	2017-08-05 03:36:13 UTC
+--- src/core/tsi/ssl_transport_security.c.orig	2017-10-03 19:53:08 UTC
 +++ src/core/tsi/ssl_transport_security.c
-@@ -35,6 +35,7 @@
+@@ -20,6 +20,7 @@
  
  #include <grpc/support/port_platform.h>
  
