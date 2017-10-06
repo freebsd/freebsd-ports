@@ -13,7 +13,7 @@ LICENSE=	GPLv2+
 
 LIB_DEPENDS=	libportaudio.so:audio/portaudio
 
-CONFLICTS=	pjsip-extsrtp-[0-9]* \
+CONFLICTS?=	pjsip-extsrtp-[0-9]* \
 		libsrtp-[0-9]*
 
 GNU_CONFIGURE=	yes
