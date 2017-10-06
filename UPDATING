@@ -5,6 +5,18 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20171006:
+  AFFECTS: users of graphics/netpbm
+  AUTHOR: tobik@FreeBSD.org
+
+  If you use portmaster/portupgrade/make to build your ports, please
+  uninstall the old netpbm version first before attempting to update to
+  netpbm 10.88.00:
+
+	pkg delete -f netpbm
+
+  It is recommended that you rebuild all dependent ports as well.
+
 20171004:
   AFFECTS: users of security/krb5-appl
   AUTHOR: cy@FreeBSD.org
