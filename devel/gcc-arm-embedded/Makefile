@@ -84,7 +84,7 @@ VAR_TO_SUBMAKE_NOEXPAND=	CONFIGURE_ENV MAKE_ENV
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MPURE}
-IGNORE=	"PURE option is not valid anymore, no libraries are bundled"
+IGNORE=	PURE option is not valid anymore, no libraries are bundled
 .endif
 
 post-extract:

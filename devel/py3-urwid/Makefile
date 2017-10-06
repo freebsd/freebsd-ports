@@ -8,4 +8,3 @@ USES=		python:3.3+
 MASTERDIR=	${.CURDIR}/../py-urwid
 
 .include "${MASTERDIR}/Makefile"
-
