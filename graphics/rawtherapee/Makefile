@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	rawtherapee
-PORTVERSION=	5.2
-PORTREVISION=	1
+PORTVERSION=	5.3
+PORTREVISION=	0
 #DISTNAME=	${PORTNAME}-${PORTVERSION:R}-r${PORTVERSION:E}${DISTVERSIONSUFFIX}
 CATEGORIES=	graphics
 MASTER_SITES=	http://rawtherapee.com/shared/source/
@@ -13,7 +13,9 @@ COMMENT=	Powerful RAW image processing application
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	libcanberra-gtk.so:audio/libcanberra \
+LIB_DEPENDS=	\
+		liblensfun.so:graphics/lensfun \
+		libcanberra-gtk.so:audio/libcanberra \
 		libcanberra-gtk3.so:audio/libcanberra-gtk3 \
 		libexpat.so:textproc/expat2 \
 		libfftw3.so:math/fftw3 \
@@ -108,7 +110,7 @@ USES+=		compiler:c++11-lib
 # support OpenMP, and those seeking ultimate performance need to use
 # amd64. Workaround implemented below.
 .else
-USES+=		compiler:gcc-c++11-lib
+USES+=		compiler:c++14-lang
 .endif
 
 # -------------------------------------------------------------------
@@ -131,5 +133,7 @@ post-patch:
 post-install:
 	${SETENV} LANG= LC_ALL=C LANGUAGE= DISPLAY= HOME=/dev/null ${STAGEDIR}${PREFIX}/bin/rawtherapee --help 2>&1 \
 	    | ${EGREP} -q "RawTherapee, version ${PKGVERSION:C/_.*//:C/,.*//}|cannot open display:"
+	${SETENV} LANG= LC_ALL=C LANGUAGE= DISPLAY= HOME=/dev/null ${STAGEDIR}${PREFIX}/bin/rawtherapee-cli --version 2>&1 \
+	    | ${EGREP} -q "RawTherapee, version ${PKGVERSION:C/_.*//:C/,.*//}"
 
 .include <bsd.port.post.mk>

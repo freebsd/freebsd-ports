@@ -1,7 +1,7 @@
+@comment env LC_ALL=C sort -f
 bin/rawtherapee
 bin/rawtherapee-cli
 man/man1/rawtherapee.1.gz
-share/appdata/rawtherapee.appdata.xml
 share/applications/rawtherapee.desktop
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS.txt
 %%PORTDOCS%%%%DOCSDIR%%/AboutThisBuild.txt
@@ -13,9 +13,10 @@ share/icons/hicolor/24x24/apps/rawtherapee.png
 share/icons/hicolor/256x256/apps/rawtherapee.png
 share/icons/hicolor/32x32/apps/rawtherapee.png
 share/icons/hicolor/48x48/apps/rawtherapee.png
-@comment env LC_ALL=C sort -f
+share/metainfo/rawtherapee.appdata.xml
 %%DATADIR%%/camconst.json
 %%DATADIR%%/dcpprofiles/Canon EOS 100D.dcp
+%%DATADIR%%/dcpprofiles/Canon EOS 1300D.dcp
 %%DATADIR%%/dcpprofiles/Canon EOS 20D.dcp
 %%DATADIR%%/dcpprofiles/Canon EOS 400D.dcp
 %%DATADIR%%/dcpprofiles/Canon EOS 40D.dcp
@@ -24,6 +25,8 @@ share/icons/hicolor/48x48/apps/rawtherapee.png
 %%DATADIR%%/dcpprofiles/Canon EOS 550D.dcp
 %%DATADIR%%/dcpprofiles/Canon EOS 5D Mark III.dcp
 %%DATADIR%%/dcpprofiles/Canon EOS 5D.dcp
+%%DATADIR%%/dcpprofiles/Canon EOS 60D.dcp
+%%DATADIR%%/dcpprofiles/Canon EOS 6D Mark II.dcp
 %%DATADIR%%/dcpprofiles/Canon EOS 6D.dcp
 %%DATADIR%%/dcpprofiles/Canon EOS 7D Mark II.dcp
 %%DATADIR%%/dcpprofiles/Canon EOS 7D.dcp
@@ -73,6 +76,10 @@ share/icons/hicolor/48x48/apps/rawtherapee.png
 %%DATADIR%%/dcpprofiles/Olympus E-M5.dcp
 %%DATADIR%%/dcpprofiles/Olympus E-P2.dcp
 %%DATADIR%%/dcpprofiles/Olympus XZ-1.dcp
+%%DATADIR%%/dcpprofiles/Panasonic DC-TZ90.dcp
+%%DATADIR%%/dcpprofiles/Panasonic DC-TZ91.dcp
+%%DATADIR%%/dcpprofiles/Panasonic DC-TZ92.dcp
+%%DATADIR%%/dcpprofiles/Panasonic DC-TZ93.dcp
 %%DATADIR%%/dcpprofiles/Panasonic DMC-FZ150.dcp
 %%DATADIR%%/dcpprofiles/Panasonic DMC-FZ35.dcp
 %%DATADIR%%/dcpprofiles/Panasonic DMC-FZ38.dcp
@@ -134,6 +141,9 @@ share/icons/hicolor/48x48/apps/rawtherapee.png
 %%DATADIR%%/iccprofiles/input/Sony DSLR-A700.icc
 %%DATADIR%%/iccprofiles/input/Sony DSLR-A900.icc
 %%DATADIR%%/iccprofiles/input/Sony SLT-A55V.icc
+%%DATADIR%%/iccprofiles/output/ACES.icc
+%%DATADIR%%/iccprofiles/output/DCI-P3 D65.icc
+%%DATADIR%%/iccprofiles/output/DCI-P3 Theater.icc
 %%DATADIR%%/iccprofiles/output/Rec2020.icm
 %%DATADIR%%/iccprofiles/output/RT_Large_g10.icc
 %%DATADIR%%/iccprofiles/output/RT_Large_gBT709.icc
@@ -350,6 +360,10 @@ share/icons/hicolor/48x48/apps/rawtherapee.png
 %%DATADIR%%/images/Dark/actions/previewmodeBC1-on.png
 %%DATADIR%%/images/Dark/actions/previewmodeBC2-off.png
 %%DATADIR%%/images/Dark/actions/previewmodeBC2-on.png
+%%DATADIR%%/images/Dark/actions/previewmodeBC3-off.png
+%%DATADIR%%/images/Dark/actions/previewmodeBC3-on.png
+%%DATADIR%%/images/Dark/actions/previewmodeF-focusScreen-off.png
+%%DATADIR%%/images/Dark/actions/previewmodeF-focusScreen-on.png
 %%DATADIR%%/images/Dark/actions/previewmodeF-off.png
 %%DATADIR%%/images/Dark/actions/previewmodeF-on.png
 %%DATADIR%%/images/Dark/actions/previewmodeG-off.png
@@ -639,6 +653,10 @@ share/icons/hicolor/48x48/apps/rawtherapee.png
 %%DATADIR%%/images/Light/actions/previewmodeBC1-on.png
 %%DATADIR%%/images/Light/actions/previewmodeBC2-off.png
 %%DATADIR%%/images/Light/actions/previewmodeBC2-on.png
+%%DATADIR%%/images/Light/actions/previewmodeBC3-off.png
+%%DATADIR%%/images/Light/actions/previewmodeBC3-on.png
+%%DATADIR%%/images/Light/actions/previewmodeF-focusScreen-off.png
+%%DATADIR%%/images/Light/actions/previewmodeF-focusScreen-on.png
 %%DATADIR%%/images/Light/actions/previewmodeF-off.png
 %%DATADIR%%/images/Light/actions/previewmodeF-on.png
 %%DATADIR%%/images/Light/actions/previewmodeG-off.png
@@ -912,7 +930,8 @@ share/icons/hicolor/48x48/apps/rawtherapee.png
 %%DATADIR%%/themes/RawTherapee-GTK3-20_.css
 %%DATADIR%%/themes/RawTherapee-GTK3-_19.css
 %%DATADIR%%/themes/system.iconset
-%%DATADIR%%/themes/TooWaBlue-Bright-GTK3-20_.css
-%%DATADIR%%/themes/TooWaBlue-Dark-GTK3-20_.css
+%%DATADIR%%/themes/TooWaBlue - Bright-GTK3-20_.css
+%%DATADIR%%/themes/TooWaBlue - Dark-GTK3-20_.css
 %%DATADIR%%/themes/TooWaBlue-GTK3-20_.css
 %%DATADIR%%/themes/TooWaBlue-GTK3-_19.css
+%%DATADIR%%/themes/TooWaGrey - Average Surround-GTK3-20_.css
