@@ -1,0 +1,30 @@
+diff --git caffe2/CMakeLists.txt caffe2/CMakeLists.txt
+index e6986086..b9ca1eeb 100644
+--- caffe2/CMakeLists.txt
++++ caffe2/CMakeLists.txt
+@@ -174,7 +174,7 @@ if (BUILD_PYTHON)
+   endif()
+   install(
+       TARGETS caffe2_pybind11_state DESTINATION
+-      ${CMAKE_INSTALL_PREFIX}/caffe2/python)
++      %%PYTHON_SITELIBDIR%%/caffe2/python)
+ 
+   if(USE_CUDA)
+     add_library(caffe2_pybind11_state_gpu MODULE ${Caffe2_GPU_PYTHON_SRCS})
+@@ -199,7 +199,7 @@ if (BUILD_PYTHON)
+     endif()
+     install(
+         TARGETS caffe2_pybind11_state_gpu DESTINATION
+-        ${CMAKE_INSTALL_PREFIX}/caffe2/python)
++        %%PYTHON_SITELIBDIR%%/caffe2/python)
+   endif()
+ 
+   if (MSVC)
+@@ -236,6 +236,6 @@ if (BUILD_BINARY)
+     add_executable(${bin_name} ${binary_src})
+     add_dependencies(${bin_name} ${Caffe2_MAIN_LIBS_ORDER})
+     target_link_libraries(${bin_name} ${Caffe2_MAIN_LIBS} ${Caffe2_DEPENDENCY_LIBS})
+-    install(TARGETS ${bin_name} DESTINATION ${CMAKE_INSTALL_PREFIX}/binaries)
++    install(TARGETS ${bin_name} DESTINATION ${CMAKE_INSTALL_PREFIX}/bin)
+   endforeach()
+ endif()

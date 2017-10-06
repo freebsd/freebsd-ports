@@ -1,0 +1,21 @@
+diff --git CMakeLists.txt CMakeLists.txt
+index 4205569e..104c0116 100644
+--- CMakeLists.txt
++++ CMakeLists.txt
+@@ -153,13 +153,13 @@ if (BUILD_PYTHON)
+ 
+   # Install commands
+   # Pick up static python files
+-  install(DIRECTORY ${CMAKE_BINARY_DIR}/caffe2 DESTINATION ${CMAKE_INSTALL_PREFIX}
++  install(DIRECTORY ${CMAKE_BINARY_DIR}/caffe2 DESTINATION "%%PYTHON_SITELIBDIR%%"
+           FILES_MATCHING PATTERN "*.py")
+   # Caffe proto files
+-  install(DIRECTORY ${CMAKE_BINARY_DIR}/caffe DESTINATION ${CMAKE_INSTALL_PREFIX}
++  install(DIRECTORY ${CMAKE_BINARY_DIR}/caffe DESTINATION "%%PYTHON_SITELIBDIR%%"
+           FILES_MATCHING PATTERN "*.py")
+   # Caffe2 proto files
+-  install(DIRECTORY ${CMAKE_BINARY_DIR}/caffe2 DESTINATION ${CMAKE_INSTALL_PREFIX}
++  install(DIRECTORY ${CMAKE_BINARY_DIR}/caffe2 DESTINATION "%%PYTHON_SITELIBDIR%%"
+           FILES_MATCHING PATTERN "*.py")
+ endif()
+ 

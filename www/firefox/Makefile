@@ -26,7 +26,7 @@ BUILD_DEPENDS=	nspr>=4.16:devel/nspr \
 		v4l_compat>0:multimedia/v4l_compat \
 		autoconf-2.13:devel/autoconf213 \
 		yasm:devel/yasm \
-		llvm40>0:devel/llvm40 \
+		llvm50>0:devel/llvm50 \
 		zip:archivers/zip
 #		soundtouch>=1.9.0:audio/soundtouch \
 

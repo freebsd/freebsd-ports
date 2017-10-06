@@ -21,7 +21,7 @@ PORTSCOUT=	ignore:1
 
 USES+=		gettext gmake libtool:keepla pathfix pkgconfig
 USE_LDCONFIG=	yes
-USE_GNOME=	gnomeprefix gtk20 gconf2 libxml2 intlhack referencehack
+USE_GNOME=	gnomeprefix gtk20 libxml2 intlhack referencehack
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-compile-warnings=no --enable-glade-catalog=no
 CPPFLAGS+=	-I${LOCALBASE}/include

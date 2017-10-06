@@ -9,7 +9,7 @@ MASTER_SITES=	SAVANNAH/openexr/:dist \
 		LOCAL/mandree/:test
 DISTNAME=	openexr-${DISTVERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:dist \
-		openexr-2.2.0-comp_dwa-test-images.tar.xz:test
+		openexr-${DISTVERSION}-comp_dwa-test-images.tar.xz:test
 
 MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	High dynamic-range (HDR) image file format

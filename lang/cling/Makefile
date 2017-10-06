@@ -23,8 +23,8 @@ BROKEN_powerpc64=	fails to compile: IncrementalParser.cpp: 'to_string' is not a 
 
 WRKSRC=		${WRKDIR}/src
 
-LLVM_RELEASE=	3.9.0
-LLVM_SUFFIX=	39_cern-root
+LLVM_RELEASE=	5.0.0
+LLVM_SUFFIX=	50_cern-root
 LLVM_PREFIX=	${PREFIX}/llvm${LLVM_SUFFIX}
 
 USES=		cmake:outsource compiler:c11 compiler:c++11-lib cpe \

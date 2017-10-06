@@ -1,0 +1,106 @@
+From dce41f7728913aecaecbc318889cabd6dda9d8db Mon Sep 17 00:00:00 2001
+From: Tim Rowley <timothy.o.rowley@intel.com>
+Date: Thu, 11 May 2017 10:56:20 -0500
+Subject: swr: don't use AttributeSet with llvm >= 5
+
+This change fixes the build break with llvm-svn.
+
+r301981 of llvm-svn made add/remove of function attributes
+use AttrBuilder instead of AttributeList.
+
+Tested with llvm-3.9, llvm-4.0, llvm-svn.
+
+Reviewed-by: Bruce Cherniak <bruce.cherniak@intel.com>
+
+diff --git a/src/gallium/drivers/swr/swr_shader.cpp b/src/gallium/drivers/swr/swr_shader.cpp
+index ec38584..d55820e 100644
+--- src/gallium/drivers/swr/swr_shader.cpp
++++ src/gallium/drivers/swr/swr_shader.cpp
+@@ -47,12 +47,6 @@
+ #include "swr_state.h"
+ #include "swr_screen.h"
+
+-#if HAVE_LLVM < 0x0500
+-namespace llvm {
+-typedef AttributeSet AttributeList;
+-}
+-#endif
+-
+ using namespace SwrJit;
+ using namespace llvm;
+
+@@ -533,8 +527,6 @@ BuilderSWR::CompileGS(struct swr_context *ctx, swr_jit_gs_key &key)
+
+    AttrBuilder attrBuilder;
+    attrBuilder.addStackAlignmentAttr(JM()->mVWidth * sizeof(float));
+-   AttributeList attrSet = AttributeList::get(
+-      JM()->mContext, AttributeList::FunctionIndex, attrBuilder);
+
+    std::vector<Type *> gsArgs{PointerType::get(Gen_swr_draw_context(JM()), 0),
+                               PointerType::get(Gen_SWR_GS_CONTEXT(JM()), 0)};
+@@ -546,7 +538,13 @@ BuilderSWR::CompileGS(struct swr_context *ctx, swr_jit_gs_key &key)
+                                      GlobalValue::ExternalLinkage,
+                                      "GS",
+                                      JM()->mpCurrentModule);
+-   pFunction->addAttributes(AttributeList::FunctionIndex, attrSet);
++#if HAVE_LLVM < 0x0500
++   AttributeSet attrSet = AttributeSet::get(
++      JM()->mContext, AttributeSet::FunctionIndex, attrBuilder);
++   pFunction->addAttributes(AttributeSet::FunctionIndex, attrSet);
++#else
++   pFunction->addAttributes(AttributeList::FunctionIndex, attrBuilder);
++#endif
+
+    BasicBlock *block = BasicBlock::Create(JM()->mContext, "entry", pFunction);
+    IRB()->SetInsertPoint(block);
+@@ -689,8 +687,6 @@ BuilderSWR::CompileVS(struct swr_context *ctx, swr_jit_vs_key &key)
+
+    AttrBuilder attrBuilder;
+    attrBuilder.addStackAlignmentAttr(JM()->mVWidth * sizeof(float));
+-   AttributeList attrSet = AttributeList::get(
+-      JM()->mContext, AttributeList::FunctionIndex, attrBuilder);
+
+    std::vector<Type *> vsArgs{PointerType::get(Gen_swr_draw_context(JM()), 0),
+                               PointerType::get(Gen_SWR_VS_CONTEXT(JM()), 0)};
+@@ -702,7 +698,13 @@ BuilderSWR::CompileVS(struct swr_context *ctx, swr_jit_vs_key &key)
+                                      GlobalValue::ExternalLinkage,
+                                      "VS",
+                                      JM()->mpCurrentModule);
+-   pFunction->addAttributes(AttributeList::FunctionIndex, attrSet);
++#if HAVE_LLVM < 0x0500
++   AttributeSet attrSet = AttributeSet::get(
++      JM()->mContext, AttributeSet::FunctionIndex, attrBuilder);
++   pFunction->addAttributes(AttributeSet::FunctionIndex, attrSet);
++#else
++   pFunction->addAttributes(AttributeList::FunctionIndex, attrBuilder);
++#endif
+
+    BasicBlock *block = BasicBlock::Create(JM()->mContext, "entry", pFunction);
+    IRB()->SetInsertPoint(block);
+@@ -900,8 +902,6 @@ BuilderSWR::CompileFS(struct swr_context *ctx, swr_jit_fs_key &key)
+
+    AttrBuilder attrBuilder;
+    attrBuilder.addStackAlignmentAttr(JM()->mVWidth * sizeof(float));
+-   AttributeList attrSet = AttributeList::get(
+-      JM()->mContext, AttributeList::FunctionIndex, attrBuilder);
+
+    std::vector<Type *> fsArgs{PointerType::get(Gen_swr_draw_context(JM()), 0),
+                               PointerType::get(Gen_SWR_PS_CONTEXT(JM()), 0)};
+@@ -912,7 +912,13 @@ BuilderSWR::CompileFS(struct swr_context *ctx, swr_jit_fs_key &key)
+                                      GlobalValue::ExternalLinkage,
+                                      "FS",
+                                      JM()->mpCurrentModule);
+-   pFunction->addAttributes(AttributeList::FunctionIndex, attrSet);
++#if HAVE_LLVM < 0x0500
++   AttributeSet attrSet = AttributeSet::get(
++      JM()->mContext, AttributeSet::FunctionIndex, attrBuilder);
++   pFunction->addAttributes(AttributeSet::FunctionIndex, attrSet);
++#else
++   pFunction->addAttributes(AttributeList::FunctionIndex, attrBuilder);
++#endif
+
+    BasicBlock *block = BasicBlock::Create(JM()->mContext, "entry", pFunction);
+    IRB()->SetInsertPoint(block);
+--
+cgit v0.10.2
+

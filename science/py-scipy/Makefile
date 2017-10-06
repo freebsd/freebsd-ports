@@ -19,7 +19,8 @@ COMMENT=	Scientific tools for Python
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-BUILD_DEPENDS=	${PYNUMPY}
+BUILD_DEPENDS=	${PYNUMPY} \
+		cython:lang/cython
 RUN_DEPENDS=	${PYNUMPY} \
 		swig:devel/swig13
 

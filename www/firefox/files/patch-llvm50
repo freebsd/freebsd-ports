@@ -1,0 +1,11 @@
+--- toolkit/moz.configure.orig	2017-09-27 21:29:19.056088000 -0700
++++ toolkit/moz.configure	2017-09-27 21:29:38.953228000 -0700
+@@ -664,6 +664,8 @@
+ @imports('subprocess')
+ def llvm_config_paths(host):
+     llvm_config_progs = [
++        'llvm-config-5.0',
++        'llvm-config50',
+         'llvm-config-4.0',
+         'llvm-config-mp-4.0',   # MacPorts' chosen naming scheme.
+         'llvm-config40',

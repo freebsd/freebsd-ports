@@ -13,7 +13,7 @@ COMMENT=	The LLVM-based D compiler
 
 LICENSE=	BSD3CLAUSE
 
-BUILD_DEPENDS=	clang39:devel/llvm39
+BUILD_DEPENDS=	clang50:devel/llvm50
 LIB_DEPENDS=	libconfig.so:devel/libconfig
 
 BROKEN_aarch64=		fails to compile: Error: undefined identifier _jmp_buf, did you mean alias jmp_buf?
@@ -25,12 +25,13 @@ CMAKE_ARGS+=	-DD_COMPILER:STRING="${WRKDIR}/${PORTNAME}-${BOOTVER:S/$/-src/}/bin
 		-DD_COMPILER_FLAGS:STRING=${D_COMPILER_FLAGS} \
 		-DD_FLAGS:STRING=${D_FLAGS} \
 		-DBUILD_SHARED_LIBS:STRING="BOTH"
-CC=		clang39
+CC=		clang50
 
 BOOTVER=	0.17.3
 LDCVER=		${PORTVERSION}
 D_FLAGS=	"-w;"
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:S/$/-src/}
+PATCH_WRKSRC=		${WRKDIR}/${PORTNAME}-${BOOTVER:S/$/-src/}
 
 DISTFILES+=	${PORTNAME}-${BOOTVER}-src.tar.gz:bootstrap
 

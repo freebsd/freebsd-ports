@@ -13,7 +13,8 @@ COMMENT=	Plotting library uses a syntax familiar to MATLAB users
 
 LICENSE=	PSFL
 
-BUILD_DEPENDS=	${PYNUMPY}
+BUILD_DEPENDS=	${PYNUMPY} \
+		${PYTHON_PKGNAMEPREFIX}scimath>=4.1.2:science/py-scimath
 LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libpng.so:graphics/png \
 		libfontconfig.so:x11-fonts/fontconfig \

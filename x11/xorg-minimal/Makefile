@@ -10,25 +10,26 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X.Org minimal distribution metaport
 
 USES=		metaport
-.include <bsd.port.options.mk>
-
-VIDEO_DRIVER?=	vesa
 
 RUN_DEPENDS+=	${LOCALBASE}/bin/Xorg:x11-servers/xorg-server \
 		${LOCALBASE}/lib/xorg/modules/input/mouse_drv.so:x11-drivers/xf86-input-mouse \
 		${LOCALBASE}/lib/xorg/modules/input/kbd_drv.so:x11-drivers/xf86-input-keyboard \
 		${LOCALBASE}/bin/xinit:x11/xinit \
 		${LOCALBASE}/bin/xauth:x11/xauth
-.if ${VIDEO_DRIVER} == "nvidia"
-RUN_DEPENDS+=	${LOCALBASE}/lib/xorg/modules/drivers/nvidia_drv.so:x11/nvidia-driver
-.elif ${VIDEO_DRIVER} == "intel29"
-RUN_DEPENDS+=	${LOCALBASE}/lib/xorg/modules/drivers/intel_drv.so:x11-drivers/xf86-video-${VIDEO_DRIVER}
-.else
-RUN_DEPENDS+=	${LOCALBASE}/lib/xorg/modules/drivers/${VIDEO_DRIVER}_drv.so:x11-drivers/xf86-video-${VIDEO_DRIVER}
-.endif
 
-.if ${VIDEO_DRIVER} == intel
-RUN_DEPENDS+=	${LOCALBASE}/lib/va/i965_drv_video.so:multimedia/libva-intel-driver
-.endif
+OPTIONS_DEFINE=	VIDEO_DRIVER_VESA VIDEO_DRIVER_NVIDIA VIDEO_DRIVER_INTEL VIDEO_DRIVER_SCFB
+OPTIONS_DEFAULT=	VIDEO_DRIVER_VESA
+
+VIDEO_DRIVER_VESA_DESC=	VESA video driver
+VIDEO_DRIVER_NVIDIA_DESC=	Nvidia video driver
+VIDEO_DRIVER_INTEL_DESC=	Intel video driver
+VIDEO_DRIVER_SCFB_DESC=	Framebuffer video driver
+
+VIDEO_DRIVER_NVIDIA_RUN_DEPENDS=	${LOCALBASE}/lib/xorg/modules/drivers/nvidia_drv.so:x11/nvidia-driver
+
+VIDEO_DRIVER_INTEL_RUN_DEPENDS=	${LOCALBASE}/lib/xorg/modules/drivers/intel_drv.so:x11-drivers/xf86-video-intel \
+			${LOCALBASE}/lib/va/i965_drv_video.so:multimedia/libva-intel-driver
+
+VIDEO_DRIVER_SCFB_RUN_DEPENDS=	${LOCALBASE}lib/xorg/modules/drivers/scfb_drv.so:x11-drivers/xf86-video-scfb
 
 .include <bsd.port.mk>

@@ -1,0 +1,584 @@
+bin/convert_caffe_image_db
+bin/convert_db
+bin/db_throughput
+bin/make_cifar_db
+bin/make_image_db
+bin/make_mnist_db
+bin/predictor_verifier
+bin/print_registered_core_operators
+bin/run_plan
+bin/speed_benchmark
+bin/split_db
+%%OPENMPI%%bin/fb_run_plan_mpi
+%%OPENMPI%%bin/run_plan_mpi
+%%ZEROMQ%%bin/zmq_feeder
+include/caffe/proto/caffe.pb.h
+include/caffe2/contrib/gloo/allreduce_ops.h
+include/caffe2/contrib/gloo/broadcast_ops.h
+include/caffe2/contrib/gloo/common_world_ops.h
+include/caffe2/contrib/gloo/context.h
+include/caffe2/contrib/gloo/store_handler.h
+include/caffe2/contrib/nccl/cuda_nccl_gpu.h
+include/caffe2/contrib/nervana/nervana.h
+include/caffe2/contrib/nervana/nervana_c_api.h
+include/caffe2/contrib/prof/htrace_conf.h
+include/caffe2/contrib/torch/torch_op.h
+include/caffe2/contrib/warpctc/ctc_op.h
+include/caffe2/core/asan.h
+include/caffe2/core/blob.h
+include/caffe2/core/blob_serialization.h
+include/caffe2/core/blob_serializer_base.h
+include/caffe2/core/blob_stats.h
+include/caffe2/core/common.h
+include/caffe2/core/common_cudnn.h
+include/caffe2/core/common_gpu.h
+include/caffe2/core/common_omp.h
+include/caffe2/core/context.h
+include/caffe2/core/context_gpu.h
+include/caffe2/core/db.h
+include/caffe2/core/flags.h
+include/caffe2/core/init.h
+include/caffe2/core/logging.h
+include/caffe2/core/logging_is_google_glog.h
+include/caffe2/core/logging_is_not_google_glog.h
+include/caffe2/core/macros.h
+include/caffe2/core/net.h
+include/caffe2/core/net_gpu.h
+include/caffe2/core/operator.h
+include/caffe2/core/operator_gradient.h
+include/caffe2/core/operator_schema.h
+include/caffe2/core/predictor.h
+include/caffe2/core/qtensor.h
+include/caffe2/core/qtensor_serialization.h
+include/caffe2/core/registry.h
+include/caffe2/core/scope_guard.h
+include/caffe2/core/static_tracepoint.h
+include/caffe2/core/static_tracepoint_elfx86.h
+include/caffe2/core/stats.h
+include/caffe2/core/tensor.h
+include/caffe2/core/timer.h
+include/caffe2/core/typeid.h
+include/caffe2/core/types.h
+include/caffe2/core/workspace.h
+include/caffe2/cuda_rtc/common_rtc.h
+include/caffe2/db/create_db_op.h
+include/caffe2/distributed/file_store_handler.h
+include/caffe2/distributed/file_store_handler_op.h
+include/caffe2/distributed/redis_store_handler.h
+include/caffe2/distributed/redis_store_handler_op.h
+include/caffe2/distributed/store_handler.h
+include/caffe2/distributed/store_ops.h
+include/caffe2/experiments/operators/fully_connected_op_decomposition.h
+include/caffe2/experiments/operators/fully_connected_op_prune.h
+include/caffe2/experiments/operators/fully_connected_op_sparse.h
+include/caffe2/experiments/operators/funhash_op.h
+include/caffe2/experiments/operators/sparse_funhash_op.h
+include/caffe2/experiments/operators/sparse_matrix_reshape_op.h
+include/caffe2/experiments/operators/tt_contraction_op.h
+include/caffe2/experiments/operators/tt_pad_op.h
+include/caffe2/image/image_input_op.h
+include/caffe2/image/transform_gpu.h
+include/caffe2/mkl/operators/operator_fallback_mkl.h
+include/caffe2/mpi/mpi_common.h
+include/caffe2/mpi/mpi_ops.h
+include/caffe2/operators/accumulate_op.h
+include/caffe2/operators/accuracy_op.h
+include/caffe2/operators/batch_matmul_op.h
+include/caffe2/operators/cast_op.h
+include/caffe2/operators/clip_op.h
+include/caffe2/operators/concat_split_op.h
+include/caffe2/operators/conv_op.h
+include/caffe2/operators/conv_op_cache_cudnn.h
+include/caffe2/operators/conv_op_impl.h
+include/caffe2/operators/conv_op_shared.h
+include/caffe2/operators/conv_pool_op_base.h
+include/caffe2/operators/conv_transpose_op.h
+include/caffe2/operators/conv_transpose_op_impl.h
+include/caffe2/operators/conv_transpose_op_mobile.h
+include/caffe2/operators/conv_transpose_op_mobile_impl.h
+include/caffe2/operators/conv_transpose_unpool_op_base.h
+include/caffe2/operators/cosine_embedding_criterion_op.h
+include/caffe2/operators/counter_ops.h
+include/caffe2/operators/cross_entropy_op.h
+include/caffe2/operators/distance_op.h
+include/caffe2/operators/dropout_op.h
+include/caffe2/operators/elementwise_linear_op.h
+include/caffe2/operators/elementwise_op.h
+include/caffe2/operators/elementwise_op_test.h
+include/caffe2/operators/elu_op.h
+include/caffe2/operators/feed_blob_op.h
+include/caffe2/operators/filler_op.h
+include/caffe2/operators/find_duplicate_elements_op.h
+include/caffe2/operators/free_op.h
+include/caffe2/operators/fully_connected_op.h
+include/caffe2/operators/given_tensor_fill_op.h
+include/caffe2/operators/h_softmax_op.h
+include/caffe2/operators/half_float_ops.h
+include/caffe2/operators/im2col_op.h
+include/caffe2/operators/instance_norm_op.h
+include/caffe2/operators/leaky_relu_op.h
+include/caffe2/operators/lengths_tile_op.h
+include/caffe2/operators/load_save_op.h
+include/caffe2/operators/local_response_normalization_op.h
+include/caffe2/operators/loss_op.h
+include/caffe2/operators/lstm_unit_op.h
+include/caffe2/operators/margin_ranking_criterion_op.h
+include/caffe2/operators/math_ops.h
+include/caffe2/operators/matmul_op.h
+include/caffe2/operators/metrics_ops.h
+include/caffe2/operators/multi_class_accuracy_op.h
+include/caffe2/operators/no_default_engine_op.h
+include/caffe2/operators/normalize_op.h
+include/caffe2/operators/one_hot_ops.h
+include/caffe2/operators/operator_fallback_gpu.h
+include/caffe2/operators/order_switch_ops.h
+include/caffe2/operators/pack_segments.h
+include/caffe2/operators/pad_op.h
+include/caffe2/operators/partition_ops.h
+include/caffe2/operators/perplexity_op.h
+include/caffe2/operators/piecewise_linear_transform_op.h
+include/caffe2/operators/pool_op.h
+include/caffe2/operators/prefetch_op.h
+include/caffe2/operators/prelu_op.h
+include/caffe2/operators/rank_loss_op.h
+include/caffe2/operators/recurrent_network_op.h
+include/caffe2/operators/recurrent_op_cudnn.h
+include/caffe2/operators/reducer_functors.h
+include/caffe2/operators/reduction_ops.h
+include/caffe2/operators/relu_op.h
+include/caffe2/operators/remove_data_blocks_op.h
+include/caffe2/operators/replace_nan_op.h
+include/caffe2/operators/reshape_op.h
+include/caffe2/operators/resize_op.h
+include/caffe2/operators/reverse_packed_segs_op.h
+include/caffe2/operators/roi_pool_op.h
+include/caffe2/operators/rowmul_op.h
+include/caffe2/operators/scale_op.h
+include/caffe2/operators/segment_reduction_op.h
+include/caffe2/operators/sequence_ops.h
+include/caffe2/operators/softmax_op.h
+include/caffe2/operators/softmax_shared.h
+include/caffe2/operators/softmax_with_loss_op.h
+include/caffe2/operators/space_batch_op.h
+include/caffe2/operators/sparse_to_dense_op.h
+include/caffe2/operators/spatial_batch_norm_op.h
+include/caffe2/operators/square_root_divide_op.h
+include/caffe2/operators/stop_gradient.h
+include/caffe2/operators/string_ops.h
+include/caffe2/operators/summarize_op.h
+include/caffe2/operators/tensor_protos_db_input.h
+include/caffe2/operators/text_file_reader_utils.h
+include/caffe2/operators/tile_op.h
+include/caffe2/operators/top_k.h
+include/caffe2/operators/transpose_op.h
+include/caffe2/operators/tt_linear_op.h
+include/caffe2/operators/utility_ops.h
+include/caffe2/proto/caffe2.pb.h
+include/caffe2/proto/caffe2_legacy.pb.h
+include/caffe2/proto/hsm.pb.h
+include/caffe2/proto/metanet.pb.h
+include/caffe2/proto/predictor_consts.pb.h
+include/caffe2/python/pybind_state.h
+include/caffe2/queue/blobs_queue.h
+include/caffe2/queue/queue_ops.h
+include/caffe2/sgd/adagrad_op.h
+include/caffe2/sgd/adam_op.h
+include/caffe2/sgd/ftrl_op.h
+include/caffe2/sgd/iter_op.h
+include/caffe2/sgd/learning_rate_functors.h
+include/caffe2/sgd/learning_rate_op.h
+include/caffe2/sgd/momentum_sgd_op.h
+include/caffe2/sgd/rmsprop_op.h
+include/caffe2/utils/cblas.h
+include/caffe2/utils/cpu_neon.h
+include/caffe2/utils/fixed_divisor.h
+include/caffe2/utils/math-detail.h
+include/caffe2/utils/math.h
+include/caffe2/utils/mkl/mkl_context.h
+include/caffe2/utils/mkl/mkl_dnn_cppwrapper.h
+include/caffe2/utils/mkl/mkl_memory.h
+include/caffe2/utils/mkl/mkl_operator.h
+include/caffe2/utils/mkl/mkl_version_check.h
+include/caffe2/utils/mkl/sgemm_pack.h
+include/caffe2/utils/mkl_utils.h
+include/caffe2/utils/murmur_hash3.h
+include/caffe2/utils/proto_utils.h
+include/caffe2/utils/signal_handler.h
+include/caffe2/utils/simple_queue.h
+include/caffe2/utils/string_utils.h
+include/caffe2/utils/thread_pool.h
+include/caffe2/utils/threadpool/ThreadPool.h
+include/caffe2/utils/threadpool/ThreadPoolCommon.h
+include/caffe2/utils/threadpool/pthreadpool.h
+include/caffe2/utils/threadpool/pthreadpool_impl.h
+include/caffe2/utils/windows_cpu_supports.h
+include/caffe2/utils/zmq_helper.h
+lib/libCaffe2_CPU.so
+%%PYTHON_SITELIBDIR%%/caffe/__init__.py
+%%PYTHON_SITELIBDIR%%/caffe/proto/__init__.py
+%%PYTHON_SITELIBDIR%%/caffe/proto/caffe_pb2.py
+%%PYTHON_SITELIBDIR%%/caffe2/__init__.py
+%%PYTHON_SITELIBDIR%%/caffe2/contrib/__init__.py
+%%PYTHON_SITELIBDIR%%/caffe2/contrib/gloo/__init__.py
+%%PYTHON_SITELIBDIR%%/caffe2/contrib/gloo/gloo_test.py
+%%PYTHON_SITELIBDIR%%/caffe2/contrib/nccl/__init__.py
+%%PYTHON_SITELIBDIR%%/caffe2/contrib/nccl/nccl_ops_test.py
+%%PYTHON_SITELIBDIR%%/caffe2/contrib/nnpack/__init__.py
+%%PYTHON_SITELIBDIR%%/caffe2/contrib/nnpack/nnpack_ops_test.py
+%%PYTHON_SITELIBDIR%%/caffe2/contrib/prof/__init__.py
+%%PYTHON_SITELIBDIR%%/caffe2/contrib/prof/cuda_profile_ops_test.py
+%%PYTHON_SITELIBDIR%%/caffe2/contrib/prof/htrace_to_chrome.py
+%%PYTHON_SITELIBDIR%%/caffe2/contrib/torch/__init__.py
+%%PYTHON_SITELIBDIR%%/caffe2/contrib/torch/th_ops_test.py
+%%PYTHON_SITELIBDIR%%/caffe2/contrib/torch/torch_ops_test.py
+%%PYTHON_SITELIBDIR%%/caffe2/contrib/warpctc/__init__.py
+%%PYTHON_SITELIBDIR%%/caffe2/contrib/warpctc/ctc_ops_test.py
+%%PYTHON_SITELIBDIR%%/caffe2/distributed/__init__.py
+%%PYTHON_SITELIBDIR%%/caffe2/distributed/file_store_handler_op_test.py
+%%PYTHON_SITELIBDIR%%/caffe2/distributed/redis_store_handler_op_test.py
+%%PYTHON_SITELIBDIR%%/caffe2/distributed/store_ops_test_util.py
+%%PYTHON_SITELIBDIR%%/caffe2/experiments/__init__.py
+%%PYTHON_SITELIBDIR%%/caffe2/experiments/python/SparseTransformer.py
+%%PYTHON_SITELIBDIR%%/caffe2/experiments/python/__init__.py
+%%PYTHON_SITELIBDIR%%/caffe2/experiments/python/cifar10_training.py
+%%PYTHON_SITELIBDIR%%/caffe2/experiments/python/convnet_benchmarks.py
+%%PYTHON_SITELIBDIR%%/caffe2/experiments/python/funhash_op_test.py
+%%PYTHON_SITELIBDIR%%/caffe2/experiments/python/net_construct_bench.py
+%%PYTHON_SITELIBDIR%%/caffe2/experiments/python/sparse_funhash_op_test.py
+%%PYTHON_SITELIBDIR%%/caffe2/experiments/python/sparse_reshape_op_test.py
+%%PYTHON_SITELIBDIR%%/caffe2/experiments/python/train.py
+%%PYTHON_SITELIBDIR%%/caffe2/experiments/python/tt_contraction_op_test.py
+%%PYTHON_SITELIBDIR%%/caffe2/experiments/python/tt_pad_op_test.py
+%%PYTHON_SITELIBDIR%%/caffe2/proto/__init__.py
+%%PYTHON_SITELIBDIR%%/caffe2/proto/caffe2_legacy_pb2.py
+%%PYTHON_SITELIBDIR%%/caffe2/proto/caffe2_pb2.py
+%%PYTHON_SITELIBDIR%%/caffe2/proto/hsm_pb2.py
+%%PYTHON_SITELIBDIR%%/caffe2/proto/metanet_pb2.py
+%%PYTHON_SITELIBDIR%%/caffe2/proto/predictor_consts_pb2.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/__init__.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/_import_c_extension.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/attention.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/caffe2_pybind11_state.so
+%%PYTHON_SITELIBDIR%%/caffe2/python/caffe_translator.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/caffe_translator_test.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/checkpoint.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/checkpoint_test.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/cnn.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/context.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/context_test.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/control.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/control_test.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/convnet_benchmarks.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/convnet_benchmarks_test.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/core.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/core_gradients_test.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/core_test.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/crf.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/cudnn_recurrent_test.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/data_parallel_model.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/data_parallel_model_test.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/data_workers.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/data_workers_test.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/dataio.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/dataio_test.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/dataset.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/db_test.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/device_checker.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/docs/__init__.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/docs/formatter.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/docs/generator.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/docs/github.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/docs/parser.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/dyndep.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/examples/__init__.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/examples/char_rnn.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/examples/lmdb_create_example.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/examples/resnet50_trainer.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/examples/seq2seq.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/examples/seq2seq_util.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/experiment_util.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/extension_loader.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/gradient_check_test.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/gradient_checker.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/helpers/__init__.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/helpers/algebra.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/helpers/array_helpers.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/helpers/conv.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/helpers/dropout.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/helpers/fc.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/helpers/nonlinearity.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/helpers/normalization.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/helpers/pooling.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/helpers/train.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/hsm_util.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/hypothesis_test.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/hypothesis_test_util.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/layer_model_helper.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/layer_model_instantiator.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/layer_test_util.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/layers/__init__.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/layers/batch_distill_lr_loss.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/layers/batch_lr_loss.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/layers/batch_mse_loss.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/layers/batch_sigmoid_cross_entropy_loss.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/layers/batch_softmax_loss.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/layers/concat.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/layers/dot_product.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/layers/expand_dims.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/layers/fc.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/layers/fc_without_bias.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/layers/functional.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/layers/gather_record.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/layers/layers.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/layers/optimizers.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/layers/sampling_train.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/layers/sampling_trainable_mixin.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/layers/simple_operator_layers.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/layers/sparse_lookup.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/layers/sparse_to_dense.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/layers/split.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/layers/tags.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/layers/uniform_sampling.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/layers_test.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/load_save_test.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/lstm_benchmark.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/memonger.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/memonger_test.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/mint/__init__.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/mint/app.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/mkl_test_util.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/model_device_test.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/model_helper.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/model_helpers.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/model_helpers_test.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/models/__init__.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/models/__sym_init__.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/models/download.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/models/resnet.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/muji.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/muji_test.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/net_builder.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/net_builder_test.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/net_drawer.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/net_printer.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/net_printer_test.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/operator_test/__init__.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/operator_test/activation_ops_test.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/operator_test/adagrad_test.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/operator_test/adam_test.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/operator_test/atomic_ops_test.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/operator_test/checkpoint_test.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/operator_test/conv_test.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/operator_test/conv_transpose_test.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/operator_test/copy_ops_test.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/operator_test/cosine_embedding_criterion_op_test.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/operator_test/counter_ops_test.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/operator_test/crf_test.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/operator_test/cross_entropy_ops_test.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/operator_test/dataset_ops_test.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/operator_test/duplicate_operands_test.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/operator_test/elementwise_linear_op_test.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/operator_test/elementwise_op_broadcast_test.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/operator_test/elementwise_ops_test.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/operator_test/emptysample_ops_test.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/operator_test/extend_tensor_op_test.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/operator_test/fc_operator_test.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/operator_test/filler_ops_test.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/operator_test/gather_ops_test.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/operator_test/gather_ranges_op_test.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/operator_test/given_tensor_fill_op_test.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/operator_test/group_conv_test.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/operator_test/hsm_test.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/operator_test/index_ops_test.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/operator_test/instance_norm_test.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/operator_test/lengths_tile_op_test.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/operator_test/loss_ops_test.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/operator_test/margin_ranking_criterion_op_test.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/operator_test/matmul_op_test.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/operator_test/mkl_conv_op_test.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/operator_test/mkl_packed_fc_op_test.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/operator_test/mkl_speed_test.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/operator_test/momentum_sgd_test.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/operator_test/mpi_test.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/operator_test/one_hot_ops_test.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/operator_test/pack_ops_test.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/operator_test/pad_test.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/operator_test/partition_ops_test.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/operator_test/piecewise_linear_transform_test.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/operator_test/pooling_test.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/operator_test/pow_op_test.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/operator_test/python_op_test.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/operator_test/rank_loss_operator_test.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/operator_test/record_queue_test.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/operator_test/recurrent_network_test.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/operator_test/reduce_ops_test.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/operator_test/reduction_ops_test.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/operator_test/relu_op_test.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/operator_test/reshape_ops_test.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/operator_test/resize_op_test.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/operator_test/rnn_cell_test.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/operator_test/segment_ops_test.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/operator_test/sequence_ops_test.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/operator_test/shape_inference_test.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/operator_test/softmax_ops_test.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/operator_test/sparse_gradient_checker_test.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/operator_test/sparse_ops_test.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/operator_test/spatial_bn_op_test.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/operator_test/square_root_divide_op_test.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/operator_test/stats_ops_test.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/operator_test/string_ops_test.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/operator_test/text_file_reader_test.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/operator_test/tile_op_test.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/operator_test/top_k_test.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/operator_test/unique_uniform_fill_op_test.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/operator_test/utility_ops_test.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/optimizer.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/optimizer_test.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/optimizer_test_util.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/pipeline.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/predictor/__init__.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/predictor/predictor_exporter.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/predictor/predictor_exporter_test.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/predictor/predictor_py_utils.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/predictor/serde.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/predictor_constants.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/python_op_test.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/queue_util.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/record_queue.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/recurrent.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/rnn_cell.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/schema.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/schema_test.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/scope.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/scope_test.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/session.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/session_test.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/sparse_to_dense_mask_test.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/task.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/test_util.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/text_file_reader.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/timeout_guard.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/toy_regression_test.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/tt_core.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/tt_core_test.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/tutorials/__init__.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/tutorials/helpers.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/utils.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/visualize.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/workspace.py
+%%PYTHON_SITELIBDIR%%/caffe2/python/workspace_test.py
+%%OPENMPI%%@dir include/caffe2/CMakeFiles/Caffe2_CPU.dir/mpi
+%%OPENMPI%%@dir include/caffe2/CMakeFiles/fb_run_plan_mpi.dir/binaries
+%%OPENMPI%%@dir include/caffe2/CMakeFiles/run_plan_mpi.dir/binaries
+%%ZEROMQ%%@dir include/caffe2/CMakeFiles/zmq_feeder.dir/binaries
+@dir include/caffe2/CMakeFiles/Caffe2_CPU.dir/core
+@dir include/caffe2/CMakeFiles/Caffe2_CPU.dir/db
+@dir include/caffe2/CMakeFiles/Caffe2_CPU.dir/distributed
+@dir include/caffe2/CMakeFiles/Caffe2_CPU.dir/image
+@dir include/caffe2/CMakeFiles/Caffe2_CPU.dir/operators
+@dir include/caffe2/CMakeFiles/Caffe2_CPU.dir/queue
+@dir include/caffe2/CMakeFiles/Caffe2_CPU.dir/sgd
+@dir include/caffe2/CMakeFiles/Caffe2_CPU.dir/utils/mkl
+@dir include/caffe2/CMakeFiles/Caffe2_CPU.dir/utils/threadpool
+@dir include/caffe2/CMakeFiles/caffe2_pybind11_state.dir/python
+@dir include/caffe2/CMakeFiles/convert_caffe_image_db.dir/binaries
+@dir include/caffe2/CMakeFiles/convert_db.dir/binaries
+@dir include/caffe2/CMakeFiles/db_throughput.dir/binaries
+@dir include/caffe2/CMakeFiles/make_cifar_db.dir/binaries
+@dir include/caffe2/CMakeFiles/make_image_db.dir/binaries
+@dir include/caffe2/CMakeFiles/make_mnist_db.dir/binaries
+@dir include/caffe2/CMakeFiles/predictor_verifier.dir/binaries
+@dir include/caffe2/CMakeFiles/print_registered_core_operators.dir/binaries
+@dir include/caffe2/CMakeFiles/run_plan.dir/binaries
+@dir include/caffe2/CMakeFiles/speed_benchmark.dir/binaries
+@dir include/caffe2/CMakeFiles/split_db.dir/binaries
+@dir include/caffe2/binaries/CMakeFiles
+@dir include/caffe2/contrib/CMakeFiles
+@dir include/caffe2/contrib/docker-ubuntu-14.04
+@dir include/caffe2/contrib/gloo/CMakeFiles
+@dir include/caffe2/contrib/nccl/CMakeFiles
+@dir include/caffe2/contrib/nnpack/CMakeFiles
+@dir include/caffe2/core/CMakeFiles
+@dir include/caffe2/cuda_rtc/CMakeFiles
+@dir include/caffe2/db/CMakeFiles
+@dir include/caffe2/distributed/CMakeFiles
+@dir include/caffe2/experiments/python
+@dir include/caffe2/image/CMakeFiles
+@dir include/caffe2/mkl/CMakeFiles
+@dir include/caffe2/mpi/CMakeFiles
+@dir include/caffe2/operators/CMakeFiles
+@dir include/caffe2/proto/CMakeFiles/Caffe2_PROTO.dir
+@dir include/caffe2/python/CMakeFiles
+@dir include/caffe2/python/docs
+@dir include/caffe2/python/examples
+@dir include/caffe2/python/helpers
+@dir include/caffe2/python/layers
+@dir include/caffe2/python/mint/static/css
+@dir include/caffe2/python/mint/templates
+@dir include/caffe2/python/models
+@dir include/caffe2/python/operator_test
+@dir include/caffe2/python/predictor
+@dir include/caffe2/python/tutorial
+@dir include/caffe2/python/tutorials/experimental
+@dir include/caffe2/python/tutorials/images
+@dir include/caffe2/queue/CMakeFiles
+@dir include/caffe2/sgd/CMakeFiles
+@dir include/caffe2/test/assets
+@dir include/caffe2/utils/CMakeFiles
+%%OPENMPI%%@dir %%PYTHON_SITELIBDIR%%/caffe2/CMakeFiles/Caffe2_CPU.dir/mpi
+%%OPENMPI%%@dir %%PYTHON_SITELIBDIR%%/caffe2/CMakeFiles/fb_run_plan_mpi.dir/binaries
+%%OPENMPI%%@dir %%PYTHON_SITELIBDIR%%/caffe2/CMakeFiles/run_plan_mpi.dir/binaries
+%%ZEROMQ%%@dir %%PYTHON_SITELIBDIR%%/caffe2/CMakeFiles/zmq_feeder.dir/binaries
+@dir %%PYTHON_SITELIBDIR%%/caffe/proto/CMakeFiles/Caffe_PROTO.dir
+@dir %%PYTHON_SITELIBDIR%%/caffe2/CMakeFiles/Caffe2_CPU.dir/core
+@dir %%PYTHON_SITELIBDIR%%/caffe2/CMakeFiles/Caffe2_CPU.dir/db
+@dir %%PYTHON_SITELIBDIR%%/caffe2/CMakeFiles/Caffe2_CPU.dir/distributed
+@dir %%PYTHON_SITELIBDIR%%/caffe2/CMakeFiles/Caffe2_CPU.dir/image
+@dir %%PYTHON_SITELIBDIR%%/caffe2/CMakeFiles/Caffe2_CPU.dir/operators
+@dir %%PYTHON_SITELIBDIR%%/caffe2/CMakeFiles/Caffe2_CPU.dir/queue
+@dir %%PYTHON_SITELIBDIR%%/caffe2/CMakeFiles/Caffe2_CPU.dir/sgd
+@dir %%PYTHON_SITELIBDIR%%/caffe2/CMakeFiles/Caffe2_CPU.dir/utils/mkl
+@dir %%PYTHON_SITELIBDIR%%/caffe2/CMakeFiles/Caffe2_CPU.dir/utils/threadpool
+@dir %%PYTHON_SITELIBDIR%%/caffe2/CMakeFiles/caffe2_pybind11_state.dir/python
+@dir %%PYTHON_SITELIBDIR%%/caffe2/CMakeFiles/convert_caffe_image_db.dir/binaries
+@dir %%PYTHON_SITELIBDIR%%/caffe2/CMakeFiles/convert_db.dir/binaries
+@dir %%PYTHON_SITELIBDIR%%/caffe2/CMakeFiles/db_throughput.dir/binaries
+@dir %%PYTHON_SITELIBDIR%%/caffe2/CMakeFiles/make_cifar_db.dir/binaries
+@dir %%PYTHON_SITELIBDIR%%/caffe2/CMakeFiles/make_image_db.dir/binaries
+@dir %%PYTHON_SITELIBDIR%%/caffe2/CMakeFiles/make_mnist_db.dir/binaries
+@dir %%PYTHON_SITELIBDIR%%/caffe2/CMakeFiles/predictor_verifier.dir/binaries
+@dir %%PYTHON_SITELIBDIR%%/caffe2/CMakeFiles/print_registered_core_operators.dir/binaries
+@dir %%PYTHON_SITELIBDIR%%/caffe2/CMakeFiles/run_plan.dir/binaries
+@dir %%PYTHON_SITELIBDIR%%/caffe2/CMakeFiles/speed_benchmark.dir/binaries
+@dir %%PYTHON_SITELIBDIR%%/caffe2/CMakeFiles/split_db.dir/binaries
+@dir %%PYTHON_SITELIBDIR%%/caffe2/binaries/CMakeFiles
+@dir %%PYTHON_SITELIBDIR%%/caffe2/contrib/CMakeFiles
+@dir %%PYTHON_SITELIBDIR%%/caffe2/contrib/docker-ubuntu-14.04
+@dir %%PYTHON_SITELIBDIR%%/caffe2/contrib/gloo/CMakeFiles
+@dir %%PYTHON_SITELIBDIR%%/caffe2/contrib/nccl/CMakeFiles
+@dir %%PYTHON_SITELIBDIR%%/caffe2/contrib/nervana
+@dir %%PYTHON_SITELIBDIR%%/caffe2/contrib/nnpack/CMakeFiles
+@dir %%PYTHON_SITELIBDIR%%/caffe2/core/CMakeFiles
+@dir %%PYTHON_SITELIBDIR%%/caffe2/cuda_rtc/CMakeFiles
+@dir %%PYTHON_SITELIBDIR%%/caffe2/db/CMakeFiles
+@dir %%PYTHON_SITELIBDIR%%/caffe2/distributed/CMakeFiles
+@dir %%PYTHON_SITELIBDIR%%/caffe2/experiments/operators
+@dir %%PYTHON_SITELIBDIR%%/caffe2/image/CMakeFiles
+@dir %%PYTHON_SITELIBDIR%%/caffe2/mkl/CMakeFiles
+@dir %%PYTHON_SITELIBDIR%%/caffe2/mkl/operators
+@dir %%PYTHON_SITELIBDIR%%/caffe2/mpi/CMakeFiles
+@dir %%PYTHON_SITELIBDIR%%/caffe2/operators/CMakeFiles
+@dir %%PYTHON_SITELIBDIR%%/caffe2/proto/CMakeFiles/Caffe2_PROTO.dir
+@dir %%PYTHON_SITELIBDIR%%/caffe2/python/CMakeFiles
+@dir %%PYTHON_SITELIBDIR%%/caffe2/python/mint/static/css
+@dir %%PYTHON_SITELIBDIR%%/caffe2/python/mint/templates
+@dir %%PYTHON_SITELIBDIR%%/caffe2/python/tutorial
+@dir %%PYTHON_SITELIBDIR%%/caffe2/python/tutorials/experimental
+@dir %%PYTHON_SITELIBDIR%%/caffe2/python/tutorials/images
+@dir %%PYTHON_SITELIBDIR%%/caffe2/queue/CMakeFiles
+@dir %%PYTHON_SITELIBDIR%%/caffe2/sgd/CMakeFiles
+@dir %%PYTHON_SITELIBDIR%%/caffe2/test/assets
+@dir %%PYTHON_SITELIBDIR%%/caffe2/utils/CMakeFiles
+@dir %%PYTHON_SITELIBDIR%%/caffe2/utils/mkl
+@dir %%PYTHON_SITELIBDIR%%/caffe2/utils/threadpool
+@dir %%PYTHON_SITELIBDIR%%/caffe2

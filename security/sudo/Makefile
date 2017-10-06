@@ -19,6 +19,7 @@ CPE_VENDOR=	todd_miller
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 LDFLAGS+=	-lgcc
+LDFLAGS+=	-Wl,-rpath,${PREFIX}/libexec/sudo
 
 CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc \
 		--with-ignore-dot \

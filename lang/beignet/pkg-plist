@@ -18,6 +18,7 @@ lib/beignet/include/ocl_image.h
 lib/beignet/include/ocl_integer.h
 lib/beignet/include/ocl_math.h
 lib/beignet/include/ocl_math_20.h
+lib/beignet/include/ocl_math_common.h
 lib/beignet/include/ocl_memcpy.h
 lib/beignet/include/ocl_memset.h
 lib/beignet/include/ocl_misc.h
@@ -34,3 +35,4 @@ lib/beignet/include/ocl_workitem.h
 lib/beignet/libcl.so
 lib/beignet/libgbe.so
 lib/beignet/libgbeinterp.so
+share/metainfo/com.intel.beignet.metainfo.xml

@@ -38,13 +38,13 @@ EMACS_DESC=	Compile pure-mode.el with Emacs
 ETC_DESC=	Copy Pure syntax highlighting to ${DATADIR}/etc
 
 .if !defined(LLVM_VERSION)
-.	for v in 33 34 35
+.	for v in 33 34 35 40 50
 .		if exists(${LOCALBASE}/bin/llvm-config$v)
 LLVM_VERSION=	$v
 .		endif
 .	endfor
 .endif
-LLVM_VERSION?=	35	# Pure does not build with llvm36. Yet?
+LLVM_VERSION?=	50	# Pure does not build with llvm50. Yet?
 SUB_LIST+=	LLVM_VERSION=${LLVM_VERSION}
 .if ${LLVM_VERSION} >= 35
 USES+=		compiler:c++11-lib

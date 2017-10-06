@@ -134,12 +134,12 @@ post-patch-OPENMP-on:
 		${WRKSRC}/ctest/Makefile
 
 do-build:
-	cd ${WRKSRC} ; ${SETENV} ${BUILDFLAGS} NUM_THREADS=1 USE_THREAD=0 \
+	cd ${WRKSRC} ; ${SETENV} ${MAKE_ENV} ${BUILDFLAGS} NUM_THREADS=1 USE_THREAD=0 \
 	${MAKE_CMD} ${MAKE_ARGS}
 	${CP} ${WRKSRC}/libopenblas-${OPENBLAS_SUFX}.a ${WRKDIR}/lib/libopenblas.a
 	${CP} ${WRKSRC}/libopenblas-${OPENBLAS_SUFX}.so ${WRKDIR}/lib/libopenblas.so.${OPENBLAS_SVER}
 	cd ${WRKSRC} ; ${MAKE_CMD} ${MAKE_ARGS} clean
-	cd ${WRKSRC} ; ${SETENV} ${BUILDFLAGS} ${BUILDFLAGS_THREAD} \
+	cd ${WRKSRC} ; ${SETENV} ${MAKE_ENV} ${BUILDFLAGS} ${BUILDFLAGS_THREAD} \
 	${MAKE_CMD} ${MAKE_ARGS}
 	${CP} ${WRKSRC}/libopenblasp-${OPENBLAS_SUFX}.a ${WRKDIR}/lib/libopenblasp.a
 	${CP} ${WRKSRC}/libopenblasp-${OPENBLAS_SUFX}.so ${WRKDIR}/lib/libopenblasp.so.${OPENBLAS_SVER}
@@ -152,9 +152,9 @@ BENCHMARK_THREADS_FLAG=		OPENBLAS_NUM_THREADS=${BENCHMARK_MAXTHREADS}
 .endif
 
 benchmark: build
-	cd ${WRKSRC} ; ${SETENV} ${BUILDFLAGS} NUM_THREADS=${MAXTHREADS} \
+	cd ${WRKSRC} ; ${SETENV} ${MAKE_ENV} ${BUILDFLAGS} NUM_THREADS=${MAXTHREADS} \
 	USE_THREAD=1 ${MAKE_CMD} ${MAKE_ARGS} hpl
-	cd ${WRKSRC}/benchmark ; ${SETENV} ${BUILDFLAGS} NUM_THREADS=${MAXTHREADS} \
+	cd ${WRKSRC}/benchmark ; ${SETENV} ${MAKE_ENV} ${BUILDFLAGS} NUM_THREADS=${MAXTHREADS} \
 	USE_THREAD=1 ${BENCHMARK_THREADS_FLAG} ${MAKE_CMD} ${MAKE_ARGS}
 
 do-install:

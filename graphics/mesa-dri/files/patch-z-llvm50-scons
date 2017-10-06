@@ -1,0 +1,47 @@
+From c1b01370486d203a6bccff2161afb288cfda1de3 Mon Sep 17 00:00:00 2001
+From: Alexandru-Liviu Prodea <liviuprodea@yahoo.com>
+Date: Fri, 15 Sep 2017 07:26:33 +0000
+Subject: Scons: Add LLVM 5.0 support
+
+1 new required library - LLVMBinaryFormat
+
+Cc: "17.2" <mesa-stable@lists.freedesktop.org>
+Bugzilla: https://bugs.freedesktop.org=/show_bug.cgi?id=3D102318
+Signed-off-by: Alexandru-Liviu Prodea <liviuprodea@yahoo.com>
+Reviewed-by: Emil Velikov <emil.velikov@collabora.com>
+
+diff --git a/scons/llvm.py b/scons/llvm.py
+index 928fc97..d6a2168 100644
+--- scons/llvm.py
++++ scons/llvm.py
+@@ -104,7 +104,26 @@ def generate(env):
+         ])
+         env.Prepend(LIBPATH = [os.path.join(llvm_dir, 'lib')])
+         # LIBS should match the output of `llvm-config --libs engine mcjit bitwriter x86asmprinter irreader`
+-        if llvm_version >= distutils.version.LooseVersion('4.0'):
++        if llvm_version >= distutils.version.LooseVersion('5.0'):
++            env.Prepend(LIBS = [
++                'LLVMX86Disassembler', 'LLVMX86AsmParser',
++                'LLVMX86CodeGen', 'LLVMSelectionDAG', 'LLVMAsmPrinter',
++                'LLVMDebugInfoCodeView', 'LLVMCodeGen',
++                'LLVMScalarOpts', 'LLVMInstCombine',
++                'LLVMTransformUtils',
++                'LLVMBitWriter', 'LLVMX86Desc',
++                'LLVMMCDisassembler', 'LLVMX86Info',
++                'LLVMX86AsmPrinter', 'LLVMX86Utils',
++                'LLVMMCJIT', 'LLVMExecutionEngine', 'LLVMTarget',
++                'LLVMAnalysis', 'LLVMProfileData',
++                'LLVMRuntimeDyld', 'LLVMObject', 'LLVMMCParser',
++                'LLVMBitReader', 'LLVMMC', 'LLVMCore',
++                'LLVMSupport',
++                'LLVMIRReader', 'LLVMAsmParser',
++                'LLVMDemangle', 'LLVMGlobalISel', 'LLVMDebugInfoMSF',
++                'LLVMBinaryFormat',
++            ])
++        elif llvm_version >= distutils.version.LooseVersion('4.0'):
+             env.Prepend(LIBS = [
+                 'LLVMX86Disassembler', 'LLVMX86AsmParser',
+                 'LLVMX86CodeGen', 'LLVMSelectionDAG', 'LLVMAsmPrinter',
+--
+cgit v0.10.2
+

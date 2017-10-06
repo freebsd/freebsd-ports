@@ -26,6 +26,20 @@
  endif
  
  KERNELDIR	= $(TOPDIR)/kernel/$(ARCH)
+@@ -990,11 +999,11 @@ FCOMMON_OPT += -g
+ endif
+ 
+ ifndef COMMON_OPT
+-COMMON_OPT = -O2
++#COMMON_OPT = -O2
+ endif
+ 
+ ifndef FCOMMON_OPT
+-FCOMMON_OPT = -O2 -frecursive
++#FCOMMON_OPT = -O2 -frecursive
+ endif
+ 
+ 
 @@ -1020,24 +1029,8 @@ ifndef LIBSUFFIX
  LIBSUFFIX = a
  endif

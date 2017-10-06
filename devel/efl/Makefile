@@ -128,7 +128,7 @@ CONFIGURE_ARGS+=		--with-crypto=none
 .endif
 
 .if ${PORT_OPTIONS:MIBUS}
-CONFIGURE_ARGS+=		--with-glib=yes
+CONFIGURE_ARGS+=		--enable-ibus --with-glib=yes
 .else
 CONFIGURE_ARGS+=		--disable-ibus --with-glib=no
 .endif

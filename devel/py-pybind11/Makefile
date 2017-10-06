@@ -15,5 +15,7 @@ LICENSE=	BSD3CLAUSE
 USES=		python:2
 USE_PYTHON=	autoplist distutils
 NO_ARCH=	yes
+#USES=		cmake gmake python:2 compiler:c++11-lib
+#CMAKE_ARGS+=	-DPYBIND11_INSTALL=ON -DPYBIND11_TEST=OFF
 
 .include <bsd.port.mk>

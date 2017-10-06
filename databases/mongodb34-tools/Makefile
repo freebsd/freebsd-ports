@@ -40,6 +40,13 @@ MAKE_ENV=	GOPATH="${WRKSRC}/.gopath:${WRKSRC}/vendor" \
 
 MY_TAGS=	-tags "${USE_MY_TAGS}"
 
+.include <bsd.port.pre.mk>
+
+.if ${SSL_DEFAULT:Mlibressl*}
+EXTRA_PATCHES+= ${FILESDIR}/extra-vendor_src_github.com_spacemonkeygo_openssl_cert.go \
+	${FILESDIR}/extra-vendor_src_github.com_spacemonkeygo_openssl_version.go
+.endif
+
 post-patch:
 	@cd ${WRKSRC} ; ${MKDIR} ${WRKSRC}/.gopath/src/github.com/${GH_ACCOUNT} ; \
 		${LN} -sf ${WRKSRC} ${WRKSRC}/.gopath/src/github.com/${GH_ACCOUNT}/${GH_PROJECT}
@@ -62,4 +69,4 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/${x} ${STAGEDIR}${DOCSDIR}
 .endfor
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

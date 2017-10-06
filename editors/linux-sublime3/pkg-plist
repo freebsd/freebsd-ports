@@ -19,6 +19,7 @@ share/icons/hicolor/48x48/apps/sublime-text.png
 %%DATADIR%%/Packages/CSS.sublime-package
 %%DATADIR%%/Packages/Clojure.sublime-package
 %%DATADIR%%/Packages/Color Scheme - Default.sublime-package
+%%DATADIR%%/Packages/Color Scheme - Legacy.sublime-package
 %%DATADIR%%/Packages/D.sublime-package
 %%DATADIR%%/Packages/Default.sublime-package
 %%DATADIR%%/Packages/Diff.sublime-package

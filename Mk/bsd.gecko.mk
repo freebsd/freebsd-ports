@@ -267,7 +267,7 @@ MOZ_OPTIONS+=	--enable-extensions=${MOZ_EXTENSIONS}
 MOZ_OPTIONS+=	--with-system-zlib		\
 		--with-system-bz2
 
-# API keys from www/chromium 
+# API keys from www/chromium
 # http://www.chromium.org/developers/how-tos/api-keys
 # Note: these are for FreeBSD use ONLY. For your own distribution,
 # please get your own set of keys.
@@ -285,8 +285,9 @@ USE_GNOME+=	gdkpixbuf2 gtk20
 .endif
 
 .if ${PORT_OPTIONS:MOPTIMIZED_CFLAGS}
-CFLAGS+=		-O3
-MOZ_EXPORT+=	MOZ_OPTIMIZE_FLAGS="${CFLAGS:M-O*}"
+#CFLAGS+=		-O3
+#MOZ_EXPORT+=	MOZ_OPTIMIZE_FLAGS="${CFLAGS:M-O*}"
+MOZ_EXPORT+=	MOZ_OPTIMIZE_FLAGS="${CFLAGS}"
 MOZ_OPTIONS+=	--enable-optimize
 .else
 MOZ_OPTIONS+=	--disable-optimize

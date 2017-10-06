@@ -3,7 +3,7 @@
 @@ -19,6 +19,11 @@ analyzer_wrapper =
      rebase_path("//build/toolchain/clang_static_analyzer_wrapper.py",
                  root_build_dir) + " --mode=clang"
- 
+
 +declare_args() {
 +  extra_cxxflags = ""
 +  extra_ldflags = ""
@@ -14,7 +14,7 @@
  #
 @@ -548,13 +553,22 @@ template("clang_toolchain") {
    }
- 
+
    gcc_toolchain(target_name) {
 -    prefix = rebase_path("$clang_base_path/bin", root_build_dir)
 -    cc = "$prefix/clang"
@@ -24,12 +24,12 @@
 -    ar = "${prefix}/llvm-ar"
 -    nm = "${toolprefix}nm"
 +    if (is_bsd) {
-+      cc = "${toolprefix}clang40"
-+      cxx = "${toolprefix}clang++40"
++      cc = "${toolprefix}clang50"
++      cxx = "${toolprefix}clang++50"
 +      ld = cxx
 +      readelf = "readelf"
-+      ar = "${toolprefix}llvm-ar40"
-+      nm = "${toolprefix}llvm-nm40"
++      ar = "${toolprefix}llvm-ar50"
++      nm = "${toolprefix}llvm-nm50"
 +    } else {
 +      prefix = rebase_path("$clang_base_path/bin", root_build_dir)
 +      cc = "$prefix/clang"
@@ -39,6 +39,6 @@
 +      ar = "${prefix}/llvm-ar"
 +      nm = "${toolprefix}nm"
 +    }
- 
+
      forward_variables_from(invoker,
                             [

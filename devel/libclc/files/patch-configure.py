@@ -16,6 +16,15 @@ ${LOCALBASE}/lib for the needed libs.  (prepare-builtins is not installed)
  
  prepare_builtins = os.path.join('utils', 'prepare-builtins')
  b.build(os.path.join('utils', 'prepare-builtins.o'), "LLVM_TOOL_CXX",
+@@ -253,7 +253,7 @@ for target in targets:
+     install_deps.append(builtins_bc)
+     for alias in device['aliases']:
+       # Ninja cannot have multiple rules with same name so append suffix
+-      ruleName = "CREATE_ALIAS_{0}_for_{1}".format(alias, device['gpu'])
++      ruleName = "CREATE_ALIAS_{0}_for_{1}_{2}_{3}_{4}".format(alias, t_arch, t_vendor, t_os, device['gpu'])
+       b.rule(ruleName, "ln -fs %s $out" % os.path.basename(builtins_bc)
+              ,"CREATE-ALIAS $out")
+
 @@ -264,7 +265,7 @@ install_cmd = ' && '.join(['mkdir -p ${D
                             {'src': file,
                              'dst': libexecdir}

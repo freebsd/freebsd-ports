@@ -78,7 +78,7 @@ GCONF_USE=		GNOME=gconf2
 GCONF_CONFIGURE_ENABLE=	gconf
 GCONF_VARS=		GCONF_SCHEMAS=ibus.schemas
 
-DCONF_USE=		GNOME=dconf,gconf2
+DCONF_USE=		GNOME=dconf
 DCONF_CONFIGURE_ENABLE=	dconf
 DCONF_VARS=		GLIB_SCHEMAS=org.freedesktop.ibus.gschema.xml
 

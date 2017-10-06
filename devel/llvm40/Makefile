@@ -11,6 +11,7 @@ DISTFILES=	${PORTNAME}-${DISTVERSION}.src${EXTRACT_SUFX}
 
 MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	LLVM and Clang
+BROKEN= Use devel/llvm50 instead.
 
 LICENSE=	LLVM
 LICENSE_NAME=	LLVM Release License

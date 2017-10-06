@@ -1,0 +1,10 @@
+Caffe2 is a lightweight, modular, and scalable deep learning framework.
+Building on the original Caffe, Caffe2 is designed with expression, speed,
+and modularity in mind.
+
+Caffe2 aims to provide an easy and straightforward way for you to experiment
+with deep learning and leverage community contributions of new models and
+algorithms. You can bring your creations to scale using the power of GPUs in
+the cloud or to the masses on mobile with Caffe2's cross-platform libraries.
+
+WWW: https://caffe2.ai/

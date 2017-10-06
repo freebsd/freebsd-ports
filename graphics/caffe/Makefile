@@ -8,6 +8,8 @@ CATEGORIES=	graphics
 MAINTAINER=	eric@camachat.org
 COMMENT=	Fast open framework for deep learning
 
+CONFLICTS_INSTALL=	caffe2-*
+
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
