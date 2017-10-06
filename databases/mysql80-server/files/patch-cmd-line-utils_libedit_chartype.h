@@ -1,5 +1,5 @@
---- cmd-line-utils/libedit/chartype.h.orig	2016-03-28 18:06:12 UTC
-+++ cmd-line-utils/libedit/chartype.h
+--- extra/libedit/chartype.h.orig	2016-03-28 18:06:12 UTC
++++ extra/libedit/chartype.h
 @@ -49,7 +49,7 @@
    TODO : Verify if FreeBSD & AIX stores ISO 10646 in wchar_t. */
  #if !defined(__NetBSD__) && !defined(__sun) \

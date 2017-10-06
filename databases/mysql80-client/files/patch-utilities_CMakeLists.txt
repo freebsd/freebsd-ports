@@ -1,5 +1,5 @@
---- extra/CMakeLists.txt.orig	2016-03-28 18:06:12 UTC
-+++ extra/CMakeLists.txt
+--- utilities/CMakeLists.txt.orig	2016-03-28 18:06:12 UTC
++++ utilities/CMakeLists.txt
 @@ -45,6 +45,7 @@ ENDIF()
  
  ADD_CUSTOM_COMMAND(OUTPUT ${PROJECT_BINARY_DIR}/include/mysqld_error.h 
