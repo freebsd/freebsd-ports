@@ -1,4 +1,4 @@
 bin/zrepl
-etc/newsyslog.conf.d/zrepl.conf
+@sample etc/newsyslog.conf.d/zrepl.conf.sample
 @sample etc/syslog.d/zrepl.conf.sample
 @sample etc/zrepl/zrepl.yml.sample

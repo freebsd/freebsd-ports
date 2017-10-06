@@ -3,6 +3,7 @@
 
 PORTNAME=	zrepl
 PORTVERSION=	0.0.1
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	lifanov@FreeBSD.org
@@ -55,7 +56,7 @@ post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/newsyslog.conf.d \
 		${STAGEDIR}${PREFIX}/etc/syslog.d \
 		${STAGEDIR}${PREFIX}/etc/zrepl
-	${INSTALL_DATA} ${FILESDIR}/newsyslog-zrepl.conf ${STAGEDIR}${PREFIX}/etc/newsyslog.conf.d/zrepl.conf
+	${INSTALL_DATA} ${FILESDIR}/newsyslog-zrepl.conf ${STAGEDIR}${PREFIX}/etc/newsyslog.conf.d/zrepl.conf.sample
 	${INSTALL_DATA} ${FILESDIR}/syslog-zrepl.conf.sample ${STAGEDIR}${PREFIX}/etc/syslog.d/zrepl.conf.sample
 	${INSTALL_DATA} ${FILESDIR}/zrepl.yml.sample ${STAGEDIR}${PREFIX}/etc/zrepl/zrepl.yml.sample
 
