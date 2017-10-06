@@ -2,7 +2,6 @@
 # $FreeBSD$
 
 PORTNAME=	mysql
-PORTREVISION?=	3
 PKGNAMESUFFIX=	80-client
 
 COMMENT=	Multithreaded SQL database (client)
@@ -23,7 +22,7 @@ CONFLICTS_INSTALL=	mysql8[1-9]-client-* \
 			mariadb[0-9][0-9]-client-* \
 			percona[0-9][0-9]-client-*
 
-CMAKE_ARGS+=	-DWITHOUT_SERVER=1
+CMAKE_ARGS+=	-DWITHOUT_SERVER=1 -DINSTALL_SUPPORTFILESDIR=0
 
 USE_LDCONFIG+=	${PREFIX}/lib/mysql
 

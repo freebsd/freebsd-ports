@@ -1,6 +1,18 @@
---- libmysql/CMakeLists.txt.orig	2016-03-28 18:06:12 UTC
+--- libmysql/CMakeLists.txt.orig	2017-06-27 11:44:29 UTC
 +++ libmysql/CMakeLists.txt
-@@ -260,7 +260,7 @@ IF(NOT DISABLE_SHARED)
+@@ -181,6 +181,11 @@ IF (WIN32 AND OPENSSL_APPLINK_C)
+   )
+ ENDIF()
+ 
++INCLUDE(${MYSQL_CMAKE_SCRIPT_DIR}/compile_flags.cmake)
++IF (CMAKE_SYSTEM_NAME STREQUAL "FreeBSD")
++  ADD_COMPILE_FLAGS(${CLIENT_SOURCES} COMPILE_FLAGS "-fPIC")
++ENDIF()
++
+ #
+ # Include protocol tracing infrastructure and the test
+ # trace plugin if enabled by build options.
+@@ -254,7 +258,7 @@ IF(NOT DISABLE_SHARED)
      COMPONENT SharedLibraries)
    IF(UNIX)
      # libtool compatability
