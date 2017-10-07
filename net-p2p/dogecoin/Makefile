@@ -2,78 +2,66 @@
 # $FreeBSD$
 
 PORTNAME=	dogecoin
-PORTVERSION=	1.8.2
+PORTVERSION=	1.10.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	9
 CATEGORIES=	net-p2p finance
 
-MAINTAINER=	swills@FreeBSD.org
-COMMENT=	Virtual Peer-to-Peer Currency Client
+MAINTAINER=	ehaupt@FreeBSD.org
+COMMENT=	P2P crypto currency client favored by shiba inus worldwide
 
 LICENSE=	MIT
-
-BUILD_DEPENDS=	protoc:devel/protobuf
-LIB_DEPENDS=	libboost_date_time.so:devel/boost-libs
 
 NOT_FOR_ARCHS=		powerpc powerpc64 sparc64
 NOT_FOR_ARCHS_REASON=	fails to configure: "Big Endian not supported"
 
-OPTIONS_DEFINE=	GUI UPNP QRCODES
-OPTIONS_DEFAULT=	GUI QRCODES
+LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
+		libprotobuf.so:devel/protobuf
 
-GUI_DESC=	Build as a QT4 GUI
+USES=		autoreconf bdb compiler:gcc-c++11-lib gmake libtool \
+		localbase:ldconfig pkgconfig ssl
+USE_GITHUB=	yes
+USE_LDCONFIG=	yes
+GNU_CONFIGURE=	yes
+OPTIONS_SUB=	yes
+
+OPTIONS_DEFINE=	GUI UPNP UTILS QRCODES
+OPTIONS_DEFAULT=GUI UPNP UTILS QRCODES
+
+GUI_DESC=	Build as a QT5 GUI
 UPNP_DESC=	Build with UPNP support
+UTILS_DESC=	Build with additional cli utils
 QRCODES_DESC=	Build with QR code display
 
-USE_GITHUB=	yes
+CONFIGURE_ARGS+=	--with-incompatible-bdb --disable-tests
 
-USES=		bdb:5 gmake compiler:c++11-lib pkgconfig autoreconf ssl
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=	--with-incompatible-bdb \
-		SSL_CFLAGS="-I${OPENSSLINC} -L${OPENSSLLIB}" SSL_LIBS="-lssl" \
+GUI_CONFIGURE_ARGS=	--with-gui=qt5
+GUI_CONFIGURE_OFF=	--with-gui=no
+GUI_USE=		QT5=buildtools,core,dbus,gui,linguist_build,network,printsupport,testlib,widgets
+GUI_USES=		desktop-file-utils
+
+QRCODES_CONFIGURE_WITH=	qrencode
+QRCODES_LIB_DEPENDS=	libqrencode.so:graphics/libqrencode
+
+UPNP_CONFIGURE_WITH=	miniupnpc
+UPNP_LIB_DEPENDS=	libminiupnpc.so:net/miniupnpc
+
+UTILS_CONFIGURE_WITH=	utils
+
+CONFIGURE_ENV=	SSL_CFLAGS="-I${OPENSSLINC} -L${OPENSSLLIB}" SSL_LIBS="-lssl" \
 		CRYPTO_CFLAGS="-I${OPENSSLINC} -L${OPENSSLLIB}" CRYPTO_LIBS="-lcrypto"
-CONFIGURE_ENV+=	OBJC="${CC}" OBJCFLAGS="${CFLAGS}" OBJCXX="${CXX}" OBJCXXFLAGS="${CXXFLAGS}"
 
-CXXFLAGS+=	-I${LOCALBASE}/include -I${BDB_INCLUDE_DIR} \
-		-L${LOCALBASE}/lib -L${BDB_LIB_DIR}
+CXXFLAGS+=	-I${BDB_INCLUDE_DIR}
+LDFLAGS+=	-L${BDB_LIB_DIR}
 
-PLIST_FILES=	bin/dogecoind bin/dogecoin-cli
+SUB_FILES=	dogecoin-qt.desktop
 
-.include <bsd.port.options.mk>
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libbitcoinconsensus.so.0.0.0
 
-#.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1000000
-#EXTRA_PATCHES+=	${FILESDIR}/extra-patch-src__leveldb__Makefile
-#.endif
+post-install-GUI-on:
+	${INSTALL} ${WRKDIR}/dogecoin-qt.desktop \
+		${STAGEDIR}${PREFIX}/share/applications
+	${INSTALL} ${WRKSRC}/src/qt/res/icons/bitcoin.png \
+		${STAGEDIR}${PREFIX}/share/pixmaps/dogecoin64.png
 
-GUI_CONFIGURE_ENABLE=		gui
-.if ${PORT_OPTIONS:MGUI}
-USE_QT4=	corelib network gui qmake_build linguist_build uic_build moc_build rcc_build dbus
-PLIST_FILES+=	share/applications/dogecoin-qt.desktop \
-		share/pixmaps/dogecoin64.png \
-		bin/dogecoin-qt
-.endif
-
-QRCODES_CONFIGURE_ENABLE=	qrencode
-.if ${PORT_OPTIONS:MQRCODES}
-LIB_DEPENDS+=	libqrencode.so:graphics/libqrencode
-.endif
-
-UPNP_CONFIGURE_ENABLE=		miniupnpc
-.if ${PORT_OPTIONS:MUPNP}
-LIB_DEPENDS+=	libminiupnpc.so:net/miniupnpc
-.endif
-
-SUB_FILES+=	dogecoin-qt.desktop
-
-.include <bsd.port.pre.mk>
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/src/dogecoind      ${STAGEDIR}${PREFIX}/bin/
-	${INSTALL_PROGRAM} ${WRKSRC}/src/dogecoin-cli   ${STAGEDIR}${PREFIX}/bin/
-.if ${PORT_OPTIONS:MGUI}
-	${INSTALL_PROGRAM} ${WRKSRC}/src/qt/dogecoin-qt ${STAGEDIR}${PREFIX}/bin/
-	${INSTALL} ${WRKDIR}/dogecoin-qt.desktop ${STAGEDIR}${PREFIX}/share/applications
-	${INSTALL} ${WRKSRC}/src/qt/res/icons/bitcoin.png ${STAGEDIR}${PREFIX}/share/pixmaps/dogecoin64.png
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
