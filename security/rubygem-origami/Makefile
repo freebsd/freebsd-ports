@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	origami
-PORTVERSION=	2.0.3
+PORTVERSION=	2.0.4
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
@@ -15,8 +15,8 @@ RUN_DEPENDS=	rubygem-colorize>=0.7:devel/rubygem-colorize
 
 NO_ARCH=	yes
 
-USE_RUBY=	yes
 USES=		gem shebangfix
 SHEBANG_FILES=	examples/*/*.rb
+USE_RUBY=	yes
 
 .include <bsd.port.mk>
