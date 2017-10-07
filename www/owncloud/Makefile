@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	owncloud
-PORTVERSION=	10.0.2
+PORTVERSION=	10.0.3
 CATEGORIES=	www
 MASTER_SITES=	http://download.owncloud.org/community/
 
@@ -12,7 +12,7 @@ COMMENT=	Personal cloud which runs on your own server
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cpe tar:bzip2 ssl php:web
+USES=		cpe tar:bzip2 php:web
 USE_PHP=	bz2 ctype curl dom fileinfo filter gd hash iconv intl json \
 		mbstring pdo posix session simplexml xml xmlreader xmlwriter \
 		xsl wddx zip zlib
@@ -30,7 +30,7 @@ PLIST_SUB=	OWNCLOUD_USERNAME=${OWNCLOUD_USERNAME} \
 OPTIONS_DEFINE=	EXIF LDAP SMB SSL
 OPTIONS_MULTI=	DB
 OPTIONS_MULTI_DB=	MYSQL PGSQL SQLITE
-OPTIONS_DEFAULT=	EXIF LDAP MYSQL SMB SSL
+OPTIONS_DEFAULT=EXIF LDAP MYSQL SMB SSL
 
 EXIF_DESC=	Image rotation support
 
