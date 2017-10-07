@@ -1,6 +1,10 @@
 Apache Tomcat is a web server written in 100% Pure Java.
 
-This is the version of Tomcat currently under active development.
+Apache Tomcat 9.x is the current focus of development. It builds on Tomcat
+8.0.x and 8.5.x and implements the current draft of the Servlet 4.0
+specification and also the JSP 2.3, EL 3.0, WebSocket 1.1 and JASPIC 1.1
+specifications (the versions required by Java EE 8 platform).
+
 Development releases may contain large amounts of untested or missing
 functionality required by the specification and/or significant
 bugs and are not expected to run stably for any length of time.
