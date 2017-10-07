@@ -19,7 +19,7 @@ BROKEN_powerpc64=	fails to compile: cc1plus: error: unrecognized command line op
 USE_GITHUB=	yes
 GH_ACCOUNT=	puppetlabs
 
-USES=		cmake gettext
+USES=		cmake:outsource gettext
 USE_RUBY=	yes
 CMAKE_ARGS=	-DLEATHERMAN_SHARED:BOOL=ON
 USE_LDCONFIG=	yes
