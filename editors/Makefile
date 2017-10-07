@@ -239,7 +239,6 @@
     SUBDIR += tweak
     SUBDIR += uemacs
     SUBDIR += uzap
-    SUBDIR += vanubi
     SUBDIR += vigor
     SUBDIR += vile
     SUBDIR += vim
