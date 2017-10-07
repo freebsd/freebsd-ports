@@ -9576,3 +9576,4 @@ sysutils/bacula5-bat|sysutils/bacula-bat|2017-10-05|Has expired: No upstream com
 sysutils/bacula5-server|sysutils/bacula-server|2017-10-05|Has expired: No upstream commits since 2013. Use sysutils/bacula-server
 net-mgmt/nagios-check_bacula5|net-mgmt/nagios-check_bacula|2017-10-05|Has expired: No upstream commits since 2013. Use sysutils/bacula-server
 sysutils/bacula5-docs|sysutils/bacula-docs|2017-10-05|Has expired: No upstream commits since 2013. Use sysutils/bacula-docs
+editors/vanubi||2017-10-07|Has expired: Vanubi is no longer actively maintained
