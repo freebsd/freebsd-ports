@@ -2,7 +2,7 @@
 
 PORTNAME=	openbor
 # Hint: svn revision is git rev-list --count ${GH_TAGNAME}
-PORTVERSION?=	4515
+PORTVERSION?=	4539
 .ifndef PKGNAMESUFFIX
 PORTREVISION=	0
 .endif
@@ -27,7 +27,6 @@ LIB_DEPENDS+=	libvpx.so:multimedia/libvpx
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	DCurrent
-GH_TAGNAME?=	12fc70c
 
 USES+=		gmake pkgconfig
 .if ${PORTVERSION} < 4433
