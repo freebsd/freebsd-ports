@@ -1,0 +1,12 @@
+To enable this urxvt extension, modify ~/.Xresources as follows:
+
+URxvt.perl-ext-common: ...,font-size
+
+The extension automatically binds:
+
+- Ctrl++ to 'increase'
+- Ctrl+- to 'decrease'
+- Ctrl+0 to 'reset'
+
+For further customization consult
+%%DOCSDIR%%/README
