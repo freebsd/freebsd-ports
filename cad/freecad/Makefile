@@ -1,11 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	FreeCAD
-DISTVERSION=	0.17.g20170616
-PORTREVISION=	4
+DISTVERSION=	0.17.12018
 CATEGORIES=	cad
 
-MAINTAINER=	tj+freebsd_ports@a13.fr
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	General purpose 3D CAD modeller
 
 LICENSE=	LGPL20+
@@ -32,9 +31,6 @@ LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libhdf5.so:science/hdf5
 RUN_DEPENDS=	pivy>0:graphics/py-pivy
 
-USE_GITHUB=	yes
-GH_TAGNAME=	d28bae3
-
 USES=		dos2unix compiler:c++11-lib cmake:outsource fortran jpeg \
 		python localbase
 USE_XORG=	ice sm x11 xext xt
@@ -56,6 +52,9 @@ CFLAGS+=	-I${LOCALBASE}/include/hdf5-18
 
 CMAKE_INSTALL_PREFIX=	${PREFIX}/${PORTNAME}
 
+USE_GITHUB=	yes
+GH_TAGNAME=	f27617e
+
 OPTIONS_DEFINE=	COLLADA
 
 COLLADA_DESC=		Install pycollada for Collada files import
@@ -69,6 +68,8 @@ post-patch:
 		${WRKSRC}/src/Gui/CMakeLists.txt
 
 pre-configure:
+	@${CP} ${FILESDIR}/version.h \
+		${WRKSRC}/src/Build/Version.h
 	# To be removed when french/med will be built against science/hdf5
 	@${REINPLACE_CMD} -e 's|find_package(HDF5 REQUIRED)|#find_package(HDF5 REQUIRED)|' \
 		${WRKSRC}/CMakeLists.txt
