@@ -14,12 +14,12 @@ COMMENT=	Multiprecision Integer and Rational Arithmetic C/C++ Library
 
 LICENSE=	AGPLv3 COMMERCIAL
 LICENSE_COMB=	dual
-LICENSE_NAME_COMMERCIAL=	Commericial use license to not be bound by AGPLv3
+LICENSE_NAME_COMMERCIAL=	Commercial use license to not be bound by AGPLv3
 LICENSE_TEXT_COMMERCIAL=	License available from CertiVox for commercial use and
 LICENSE_TEXT_COMMERCIAL+=	to not be bound by the terms of the AGPLv3. Visit
 LICENSE_TEXT_COMMERCIAL+=	http://certivox.com/index.php/solutions/miracl-crypto-sdk/
 LICENSE_TEXT_COMMERCIAL+=	for more details.
-LICENSE_FILE=			${FILESDIR}/LICENSE
+#LICENSE_FILE=			${FILESDIR}/LICENSE
 LICENSE_PERMS_COMMERCIAL=	dist-mirror dist-sell pkg-mirror pkg-sell no-auto-accept
 
 ONLY_FOR_ARCHS=	i386 amd64
