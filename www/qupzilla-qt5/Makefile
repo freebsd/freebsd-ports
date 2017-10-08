@@ -18,7 +18,7 @@ LIB_DEPENDS=	libhunspell-1.6.so:textproc/hunspell
 CONFLICTS_INSTALL=	${PORTNAME}-qt4* ${PORTNAME}-qt5-webkit
 
 USES=		desktop-file-utils pkgconfig qmake ssl tar:xz
-USE_QT5=	core concurrent gui network printsupport script sql webkit \
+USE_QT5=	core concurrent gui network printsupport script sql webengine \
 		widgets x11extras xml imageformats_run sql-sqlite3_run \
 		buildtools_build linguisttools_build
 USE_XORG=	x11 xcb
