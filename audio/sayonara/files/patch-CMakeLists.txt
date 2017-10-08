@@ -1,21 +1,8 @@
-CMake 3.9 compatibility. Upstreamed in a different form for
-sayonara 0.9.4, which is fully patched for CMake 3.9 and FreeBSD
+Adjust for changed UI search and generation paths in CMake 3.9.
 
---- CMakeLists.txt.orig	2016-10-30 11:53:25 UTC
+--- CMakeLists.txt.orig	2017-05-09 18:52:59 UTC
 +++ CMakeLists.txt
-@@ -1,6 +1,11 @@
- CMAKE_MINIMUM_REQUIRED(VERSION 2.7)
- PROJECT("Sayonara Player")
- 
-+IF(POLICY CMP0071)
-+    CMAKE_POLICY(SET CMP0071 OLD)
-+    SET(CMAKE_POLICY_DEFAULT_CMP0071 OLD)  # Don't reset in subdirs
-+ENDIF()
-+
- set (CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}")
- INCLUDE(cotire)
- SET(VAR_SAYONARA_VERSION "0.9.2")
-@@ -15,6 +20,10 @@ ADD_DEFINITIONS( -DSAYONARA_INSTALL_SHAR
+@@ -24,6 +24,10 @@ CONFIGURE_FILE(Macros.h.in "${CMAKE_CURR
  MESSAGE("Build Sayonara ${VAR_SAYONARA_VERSION}")
  MESSAGE("Will install to ${CMAKE_INSTALL_PREFIX}")
  
