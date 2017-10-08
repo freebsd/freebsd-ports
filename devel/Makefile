@@ -4860,6 +4860,7 @@
     SUBDIR += py-streamparse
     SUBDIR += py-structlog
     SUBDIR += py-stsci.distutils
+    SUBDIR += py-subprocess32
     SUBDIR += py-subversion
     SUBDIR += py-subvertpy
     SUBDIR += py-sure
