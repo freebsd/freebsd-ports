@@ -28,9 +28,6 @@ INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 USES=		libtool pathfix tar:xz
 
-PORTDATA=	*
-PORTDOCS=	*
-
 SSE2_CONFIGURE_ENABLE=	sse
 
 post-install:
