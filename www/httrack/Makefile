@@ -27,9 +27,6 @@ INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	${PREFIX}/lib/httrack
 USES=		alias gmake iconv libtool shebangfix ssl
 
-PORTDATA=	*
-PORTDOCS=	*
-
 SHEBANG_FILES=	src/webhttrack
 
 ICONS_VARS=	INSTALLS_ICONS=yes
