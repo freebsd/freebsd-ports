@@ -30,7 +30,7 @@ RUN_DEPENDS=	${LOCALBASE}/sbin/PCDMd:x11/pcdm \
 		${LOCALBASE}/bin/xdg-open:devel/xdg-utils \
 		${LOCALBASE}/bin/xvkbd:x11/xvkbd \
 		${LOCALBASE}/sbin/anacron:sysutils/anacron \
-		drm-next-kmod>=0:graphics/drm-next-kmod \
+		drm-next-kmod>=g20170918:graphics/drm-next-kmod \
 		trueos-handbook>=0:misc/trueos-handbook \
 		lumina>=0:x11/lumina \
 		foomatic-db>=0:print/foomatic-db \
