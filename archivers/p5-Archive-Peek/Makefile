@@ -13,7 +13,6 @@ COMMENT=	Peek into archives without extracting them
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
-LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	p5-Archive-Zip>=0:archivers/p5-Archive-Zip \
 		p5-Moose>=0:devel/p5-Moose \
