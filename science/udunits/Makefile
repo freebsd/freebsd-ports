@@ -27,8 +27,6 @@ USE_LDCONFIG=	yes
 USES=		libtool localbase
 
 INFO=		udunits2 udunits2lib udunits2prog
-PORTDATA=	*
-PORTDOCS=	*
 
 post-patch:
 	@${REINPLACE_CMD} -e '/install-data-hook$$/d' ${WRKSRC}/lib/Makefile.in
