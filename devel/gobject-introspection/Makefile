@@ -11,6 +11,9 @@ DIST_SUBDIR=	gnome3
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Generate interface introspection data for GObject libraries
 
+LICENSE=	GPLv2+ LGPL20+
+LICENSE_COMB=	dual
+
 # we need cairo otherwise the generated Cairo gir is broken
 BUILD_DEPENDS=	cairo-trace:graphics/cairo
 LIB_DEPENDS=	libffi.so:devel/libffi
