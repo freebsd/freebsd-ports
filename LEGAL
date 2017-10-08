@@ -220,7 +220,6 @@ unifi-5*/UniFi.unix.zip	net-mgmt/unifi5		Redistribution of bundled firmware imag
 uplink-demo*		games/linux-uplink-demo	Redistribution is limited, see license
 uzap.tar.gz		editors/uzap		This software may not be used to make a profit in any way.
 vdr-markad-*		multimedia/vdr-plugin-markad	Installs station logos
-ventrilo_srv-*		audio/ventrilo-server	May not be redistributed.  For personal use only.  Must accept license to download.
 vice-*			emulators/vice		ROMs are copyrighted by Commodore Business Machines
 VMware-vSphere-Perl*	net/vmware-vsphere-cli	May not be redistributed.  Must accept license to download.
 vpnc-*			security/vpnc		Redistribution is not allowed if linked against OpenSSL

@@ -10,6 +10,7 @@ include/varnish/cache/cache_backend.h
 include/varnish/cache/cache_director.h
 include/varnish/cache/cache_filter.h
 include/varnish/common/common.h
+include/varnish/common/common_vsm.h
 include/varnish/common/com_params.h
 include/varnish/miniobj.h
 include/varnish/tbl/acct_fields_bereq.h
@@ -47,11 +48,7 @@ include/varnish/tbl/vhd_return.h
 include/varnish/tbl/vhp_huffman.h
 include/varnish/tbl/vhp_static.h
 include/varnish/tbl/vrt_stv_var.h
-include/varnish/tbl/vsc_all.h
-include/varnish/tbl/vsc_f_main.h
-include/varnish/tbl/vsc_fields.h
 include/varnish/tbl/vsc_levels.h
-include/varnish/tbl/vsc_types.h
 include/varnish/tbl/vsl_tags.h
 include/varnish/tbl/vsl_tags_http.h
 include/varnish/tbl/waiters.h
@@ -62,7 +59,6 @@ include/varnish/vapi/vsc_int.h
 include/varnish/vapi/vsl.h
 include/varnish/vapi/vsl_int.h
 include/varnish/vapi/vsm.h
-include/varnish/vapi/vsm_int.h
 include/varnish/vas.h
 include/varnish/vav.h
 include/varnish/vbm.h
@@ -80,13 +76,18 @@ include/varnish/vsa.h
 include/varnish/vsb.h
 include/varnish/vsha256.h
 include/varnish/vtcp.h
+include/varnish/vut.h
+include/varnish/vut_options.h
 include/varnish/vtim.h
 include/varnish/waiter/waiter.h
 lib/libvarnishapi.so
 lib/libvarnishapi.so.1
 lib/libvarnishapi.so.1.0.6
+lib/varnish/vmods/libvmod_blob.so
 lib/varnish/vmods/libvmod_directors.so
+lib/varnish/vmods/libvmod_purge.so
 lib/varnish/vmods/libvmod_std.so
+lib/varnish/vmods/libvmod_vtc.so
 libdata/pkgconfig/varnishapi.pc
 man/man1/varnishadm.1.gz
 man/man1/varnishd.1.gz
@@ -96,8 +97,11 @@ man/man1/varnishncsa.1.gz
 man/man1/varnishstat.1.gz
 man/man1/varnishtest.1.gz
 man/man1/varnishtop.1.gz
+man/man3/vmod_blob.3.gz
 man/man3/vmod_directors.3.gz
+man/man3/vmod_purge.3.gz
 man/man3/vmod_std.3.gz
+man/man3/vmod_vtc.3.gz
 man/man7/varnish-cli.7.gz
 man/man7/varnish-counters.7.gz
 man/man7/vcl.7.gz
@@ -111,4 +115,5 @@ share/aclocal/varnish.m4
 %%PORTDOCS%%%%DOCSDIR%%/example.vcl
 %%DATADIR%%/vcl/devicedetect.vcl
 %%DATADIR%%/vmodtool.py
+%%DATADIR%%/vsctool.py
 @dir varnish

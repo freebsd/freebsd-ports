@@ -48,6 +48,7 @@ share/applications/emacs.desktop
 %%DATADIR%%/%%EMACS_VER%%/etc/NEWS.23
 %%DATADIR%%/%%EMACS_VER%%/etc/NEWS.24
 %%DATADIR%%/%%EMACS_VER%%/etc/NEWS.25
+%%DATADIR%%/%%EMACS_VER%%/etc/NEWS.26
 %%DATADIR%%/%%EMACS_VER%%/etc/NEXTSTEP
 %%DATADIR%%/%%EMACS_VER%%/etc/NXML-NEWS
 %%DATADIR%%/%%EMACS_VER%%/etc/ORDERS
@@ -2992,6 +2993,8 @@ share/applications/emacs.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/org/ob-groovy.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/org/ob-haskell.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/org/ob-haskell.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/org/ob-hledger.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/org/ob-hledger.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/org/ob-io.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/org/ob-io.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/org/ob-java.el.gz
@@ -3042,8 +3045,6 @@ share/applications/emacs.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/org/ob-ruby.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/org/ob-sass.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/org/ob-sass.elc
-%%DATADIR%%/%%EMACS_VER%%/lisp/org/ob-scala.el.gz
-%%DATADIR%%/%%EMACS_VER%%/lisp/org/ob-scala.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/org/ob-scheme.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/org/ob-scheme.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/org/ob-screen.el.gz
@@ -3064,6 +3065,8 @@ share/applications/emacs.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/org/ob-table.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/org/ob-tangle.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/org/ob-tangle.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/org/ob-vala.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/org/ob-vala.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/org/ob.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/org/ob.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/org/org-agenda.el.gz
@@ -3092,6 +3095,8 @@ share/applications/emacs.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/org/org-datetree.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/org/org-docview.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/org/org-docview.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/org/org-duration.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/org/org-duration.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/org/org-element.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/org/org-element.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/org/org-entities.el.gz
@@ -3978,6 +3983,7 @@ share/applications/emacs.desktop
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/keymap.h
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/kqueue.c
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/lastfile.c
+%%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/lcms.c
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/lisp.h
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/lread.c
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/macfont.h

@@ -1,5 +1,5 @@
---- gdb/arm-tdep.c.orig	2016-07-08 15:42:17.131392993 +0200
-+++ gdb/arm-tdep.c	2016-07-08 15:44:10.506386463 +0200
+--- gdb/arm-tdep.c.orig	2016-07-08 15:42:17 UTC
++++ gdb/arm-tdep.c
 @@ -9880,7 +9880,7 @@
        && !INSN_RECORDED(arm_insn_r))
      {

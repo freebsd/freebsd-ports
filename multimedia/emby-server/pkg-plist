@@ -116,7 +116,8 @@ lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/cardbuilder/car
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/cardbuilder/chaptercardbuilder.js
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/cardbuilder/peoplecardbuilder.js
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/cardbuilder/roundcard.css
-lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/chromecastplayer.js
+lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/chromecast/chromecasthelpers.js
+lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/chromecast/chromecastplayer.js
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/clearbutton.css
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/collectioneditor/collectioneditor.js
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/confirm/confirm.js
@@ -199,6 +200,9 @@ lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/imageeditor/ima
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/images/basicimagefetcher.js
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/images/imagehelper.js
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/images/style.css
+lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/imageuploader/imageuploader.js
+lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/imageuploader/imageuploader.template.html
+lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/imageuploader/style.css
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/indicators/indicators.css
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/indicators/indicators.js
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/input/api.js
@@ -259,6 +263,8 @@ lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/playback/playme
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/playback/playqueuemanager.js
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/playback/remotecontrolautoplay.js
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/playback/volumeosd.js
+lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/playbacksettings/playbacksettings.js
+lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/playbacksettings/playbacksettings.template.html
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/playerstats/playerstats.css
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/playerstats/playerstats.js
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/playlisteditor/playlisteditor.js
@@ -382,6 +388,9 @@ lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/themes/dark-red
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/themes/dark-red/theme.css
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/themes/dark/logo.png
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/themes/dark/theme.css
+lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/themes/halloween/bg.jpg
+lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/themes/halloween/logo.png
+lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/themes/halloween/theme.css
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/themes/light-blue/logo.png
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/themes/light-blue/theme.css
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/themes/light-green/logo.png
@@ -463,7 +472,6 @@ lib/emby-server/dashboard-ui/components/accessschedule/accessschedule.template.h
 lib/emby-server/dashboard-ui/components/apphost.js
 lib/emby-server/dashboard-ui/components/categorysyncbuttons.js
 lib/emby-server/dashboard-ui/components/channelmapper/channelmapper.js
-lib/emby-server/dashboard-ui/components/chromecasthelpers.js
 lib/emby-server/dashboard-ui/components/directorybrowser/directorybrowser.css
 lib/emby-server/dashboard-ui/components/directorybrowser/directorybrowser.js
 lib/emby-server/dashboard-ui/components/dockedtabs/dockedtabs.css
@@ -479,8 +487,6 @@ lib/emby-server/dashboard-ui/components/guestinviter/guestinviter.js
 lib/emby-server/dashboard-ui/components/guestinviter/guestinviter.template.html
 lib/emby-server/dashboard-ui/components/humanedate.js
 lib/emby-server/dashboard-ui/components/iap.js
-lib/emby-server/dashboard-ui/components/imageuploader/imageuploader.js
-lib/emby-server/dashboard-ui/components/imageuploader/imageuploader.template.html
 lib/emby-server/dashboard-ui/components/libraryoptionseditor/libraryoptionseditor.js
 lib/emby-server/dashboard-ui/components/libraryoptionseditor/libraryoptionseditor.template.html
 lib/emby-server/dashboard-ui/components/maintabsmanager.js
@@ -655,7 +661,6 @@ lib/emby-server/dashboard-ui/playbackconfiguration.html
 lib/emby-server/dashboard-ui/playlists.html
 lib/emby-server/dashboard-ui/plugincatalog.html
 lib/emby-server/dashboard-ui/plugins.html
-lib/emby-server/dashboard-ui/reports.html
 lib/emby-server/dashboard-ui/robots.txt
 lib/emby-server/dashboard-ui/scheduledtask.html
 lib/emby-server/dashboard-ui/scheduledtasks.html
@@ -824,8 +829,6 @@ lib/emby-server/dashboard-ui/strings/zh-tw.json
 lib/emby-server/dashboard-ui/supporterkey.html
 lib/emby-server/dashboard-ui/syncactivity.html
 lib/emby-server/dashboard-ui/syncsettings.html
-lib/emby-server/dashboard-ui/themes/halloween/bg.jpg
-lib/emby-server/dashboard-ui/themes/halloween/style.css
 lib/emby-server/dashboard-ui/themes/halloween/theme.js
 lib/emby-server/dashboard-ui/themes/holiday/style.css
 lib/emby-server/dashboard-ui/themes/holiday/theme.js

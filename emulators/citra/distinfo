@@ -1,6 +1,6 @@
-TIMESTAMP = 1506381852
-SHA256 (citra-emu-citra-s20170925-fd30d48c_GH0.tar.gz) = 5b1b5f8fef7945faf17a156a8f43cc4500f22ba5949148d84525daf6565877b7
-SIZE (citra-emu-citra-s20170925-fd30d48c_GH0.tar.gz) = 1295493
+TIMESTAMP = 1507310360
+SHA256 (citra-emu-citra-s20171006-74d40509_GH0.tar.gz) = 0b35cc6a838adf62edbedb912ee5704c518cc693b4856748f1087a035c47a77e
+SIZE (citra-emu-citra-s20171006-74d40509_GH0.tar.gz) = 1304963
 SHA256 (citra-emu-ext-soundtouch-019d208_GH0.tar.gz) = f48c211bbabe7ad79e1c504af1082756c74241be6bab4aca13140803f4b694e7
 SIZE (citra-emu-ext-soundtouch-019d208_GH0.tar.gz) = 59366
 SHA256 (MerryMage-dynarmic-8f15e3f_GH0.tar.gz) = 3e5b184c8d190849374fa426ee6a511f3375682232b46aaa8e060632eaa4cadb
@@ -19,3 +19,5 @@ SHA256 (svn2github-inih-603729d_GH0.tar.gz) = b4faa364c3e33261707d4b669e1c669ca3
 SIZE (svn2github-inih-603729d_GH0.tar.gz) = 8342
 SHA256 (weidai11-cryptopp-CRYPTOPP_5_6_5-610-g24bc2b8_GH0.tar.gz) = 9f3f59538ba0515307e142ab404d65270da709aa3ac906770ec658e47a277ec2
 SIZE (weidai11-cryptopp-CRYPTOPP_5_6_5-610-g24bc2b8_GH0.tar.gz) = 7008104
+SHA256 (whoshuu-cpr-1.3.0-12-gb5758fb_GH0.tar.gz) = 84ea509dc08766d7182b867b78ba6dd16f3352d85b18b0654661079b8617dae4
+SIZE (whoshuu-cpr-1.3.0-12-gb5758fb_GH0.tar.gz) = 34100

@@ -12,10 +12,9 @@ COMMENT=	Web based test management and test execution system
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cpe
+USES=		cpe php:web
 CPE_VENDOR=	teamst
 USE_PHP=	gd iconv mbstring session xml
-WANT_PHP_WEB=	yes
 NO_BUILD=	yes
 PLIST_SUB=	WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
 REINPLACE_ARGS=	-i ''

@@ -5,6 +5,65 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20171006:
+  AFFECTS: users of graphics/netpbm
+  AUTHOR: tobik@FreeBSD.org
+
+  If you use portmaster/portupgrade/make to build your ports, please
+  uninstall the old netpbm version first before attempting to update to
+  netpbm 10.80.00:
+
+	pkg delete -f netpbm
+
+  It is recommended that you rebuild all dependent ports as well.
+
+20171004:
+  AFFECTS: users of security/krb5-appl
+  AUTHOR: cy@FreeBSD.org
+
+  Configuration options to rename kerberos ftp, telnet, rlogin, rsh, and
+  rcp are now default to avoid conflicting with net/bsdrcmds packages
+  (in poudriere). Deselect the options to use the original command names
+  and also uninstall net/bsdrcmds to avoid the conflict.
+
+20171002:
+  AFFECTS: users of x11-wm/cwm
+  AUTHOR: tobik@FreeBSD.org
+
+  Configuration options were renamed and you need to update your ~/.cwmrc
+  accordingly.  Make sure to check cwmrc(5) for the new option names.
+  cwm-migrate-config.pl can help in migrating your ~/.cwmrc.
+
+20171001:
+  AFFECTS: users of mail/isync using Maildir sub-folders
+  AUTHOR: ehaupt@FreeBSD.org
+
+  If you have Maildir sub-folders, you need to update the configuration
+  to specify the naming style.
+
+  Please refer to the mbsync(1) man page section 'SubFolders
+  Verbatim|Maildir++|Legacy' on how to make the apropriate changes.
+
+20170930:
+  AFFECTS: users of PHP and its modules
+  AUTHOR: eugen@FreeBSD.org
+
+  All lang/php* ports switched to depend on devel/oniguruma6
+  instead of previous oniguruma version some time ago.
+
+  If you have not moved from devel/oniguruma5 before and
+  have troubles updating PHP,
+
+  for users of portmaster:
+	portmaster -o devel/oniguruma6 devel/oniguruma5
+	portmaster -r devel/oniguruma6
+
+  for users of portupgrade:
+	portupgrade -o devel/oniguruma6 devel/oniguruma5
+	portupgrade -fr devel/oniguruma6
+
+  pkg should handle this automatically.
+
 20170928:
   AFFECTS: users of security/courier-authlib and its modules
   AUTHOR: madpilot@FreeBSD.org

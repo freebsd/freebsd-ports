@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	pjsip
-PORTVERSION=	2.6
-PORTREVISION=	2
+PORTVERSION=	2.7
 CATEGORIES=	net
 MASTER_SITES=	http://www.pjsip.org/release/${PORTVERSION}/
 DISTNAME=	pjproject-${DISTVERSION}
@@ -14,7 +13,7 @@ LICENSE=	GPLv2+
 
 LIB_DEPENDS=	libportaudio.so:audio/portaudio
 
-CONFLICTS=	pjsip-extsrtp-[0-9]*
+CONFLICTS?=	pjsip-extsrtp-[0-9]*
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-external-pa \
@@ -87,6 +86,7 @@ AMR_LIB_DEPENDS=		libopencore-amrwb.so:audio/opencore-amr \
 				libvo-amrwbenc.so:audio/vo-amrwbenc
 EXTSRTP_CONFIGURE_WITH=		external-srtp
 EXTSRTP_LIB_DEPENDS=		libsrtp.so:net/libsrtp
+EXTSRTP_CONFLICTS_OFF=		libsrtp-[0-9]*
 WEBRTC_CONFIGURE_OFF=		--disable-libwebrtc
 
 post-patch:

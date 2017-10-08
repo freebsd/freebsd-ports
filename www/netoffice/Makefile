@@ -3,7 +3,7 @@
 
 PORTNAME=	netoffice
 PORTVERSION=	2.6.0b2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-devel/${PORTVERSION}
 
@@ -12,9 +12,8 @@ COMMENT=	NetOffice is a free web based project-management environment
 
 NO_BUILD=	yes
 NO_ARCH=	yes
-USER_MYSQL=	yes
+USES=		php:web mysql
 USE_PHP=	mysql pcre zlib session xml gd
-WANT_PHP_WEB=	yes
 
 WEBOWN?=	www
 WEBGRP?=	www

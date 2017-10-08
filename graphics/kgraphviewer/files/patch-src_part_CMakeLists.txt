@@ -1,0 +1,12 @@
+The gvc, cgraph, .. libraries are already linked to kgraphviewerlib.
+--- src/part/CMakeLists.txt.orig	2017-09-27 13:15:56 UTC
++++ src/part/CMakeLists.txt
+@@ -79,7 +79,7 @@ set( kgraphviewerpart_PART_SRCS kgraphvi
+ add_library(kgraphviewerpart MODULE ${kgraphviewerpart_PART_SRCS})
+ generate_export_header(kgraphviewerpart BASE_NAME kgraphviewer)
+ 
+-target_link_libraries(kgraphviewerpart Qt5::Core KF5::Parts gvc cgraph pathplan cdt kgraphviewerlib)
++target_link_libraries(kgraphviewerpart Qt5::Core KF5::Parts kgraphviewerlib)
+ 
+ install( TARGETS kgraphviewerpart DESTINATION ${KDE_INSTALL_PLUGINDIR})
+ 

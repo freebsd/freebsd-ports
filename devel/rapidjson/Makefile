@@ -13,7 +13,7 @@ COMMENT=	Fast JSON parser/generator for C++ with both SAX/DOM style API
 LICENSE=	unknown
 LICENSE_NAME=	RapidJSON
 LICENSE_FILE=	${WRKSRC}/license.txt
-LICENSE_PERMS=	${_LICENSE_PERMS_DEFAULT}
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 BROKEN_aarch64=		does not build: c++: error: the clang compiler does not support -march=native
 BROKEN_armv6=		does not build: c++: error: the clang compiler does not support -march=native

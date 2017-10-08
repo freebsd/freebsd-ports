@@ -1,6 +1,6 @@
-TIMESTAMP = 1504985804
-SHA256 (ssh-vault-ssh-vault-0.12.1_GH0.tar.gz) = e68ead1903f343a14d5177b5ff97972f5e5582159201180011323ae0b3c8d947
-SIZE (ssh-vault-ssh-vault-0.12.1_GH0.tar.gz) = 17753
+TIMESTAMP = 1506776663
+SHA256 (ssh-vault-ssh-vault-0.12.3_GH0.tar.gz) = 13e2f194750e29f3d6fee68a1132aa361591d518ca931333a2ef1b43f1233586
+SIZE (ssh-vault-ssh-vault-0.12.3_GH0.tar.gz) = 18666
 SHA256 (ssh-vault-crypto-ae180e0_GH0.tar.gz) = fe73e39078ecd1d077ddfdfb296c00eaa19c149856443259fe8964ff0951423f
 SIZE (ssh-vault-crypto-ae180e0_GH0.tar.gz) = 2062
 SHA256 (ssh-vault-ssh2pem-c1edc64_GH0.tar.gz) = a06595af99ffe330a6167250e53492b0738664d69c311fcb0f02e1cb6fea33a9

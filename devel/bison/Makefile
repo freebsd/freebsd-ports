@@ -26,9 +26,6 @@ USE_PERL5=	build
 USES=		charsetfix localbase makeinfo perl5 tar:xz
 
 INFO=		bison
-PORTDATA=	*
-PORTDOCS=	*
-PORTEXAMPLES=	*
 
 NLS_CONFIGURE_ENABLE=	nls
 NLS_USES=		gettext

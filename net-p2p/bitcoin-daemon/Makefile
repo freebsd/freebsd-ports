@@ -24,7 +24,8 @@ CONFIGURE_ARGS=	--with-daemon \
 		--without-utils
 
 PLIST_FILES=	bin/bitcoind \
-		man/man1/bitcoind.1.gz
+		man/man1/bitcoind.1.gz \
+		%%ETCDIR%%.conf.sample
 
 USE_RC_SUBR=	bitcoind
 

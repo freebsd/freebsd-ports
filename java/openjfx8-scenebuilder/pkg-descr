@@ -1,0 +1,12 @@
+JavaFX Scene Builder provides a visual layout environment that lets
+you quickly design user interfaces for JavaFX applications without
+needing to write any code.
+
+It allows simple drag-and-drop positioning of GUI components onto a
+JavaFX scene.  As you build the layout of your UI, the FXML code for
+the layout is automatically generated.  It provides a simple yet
+intuitive interface that can help even non-programmers to quickly
+prototype interactive applications that connect GUI components to the
+application logic.
+
+WWW: http://openjdk.java.net/projects/openjfx/

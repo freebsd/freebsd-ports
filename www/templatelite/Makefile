@@ -15,8 +15,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 NO_BUILD=	yes
 NO_ARCH=	yes
+USES=		php:web
 USE_PHP=	pcre
-WANT_PHP_WEB=	yes
 WRKSRC=		${WRKDIR}/template_lite
 SUB_FILES=	pkg-message
 

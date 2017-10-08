@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	wiggle
-PORTVERSION=	1.0
-PORTREVISION=	3
+PORTVERSION=	1.1
 CATEGORIES=	textproc
 MASTER_SITES=	http://neil.brown.name/wiggle/
 
@@ -14,9 +13,7 @@ LICENSE=	GPLv2
 
 BUILD_DEPENDS=	bash:shells/bash
 
-BROKEN_powerpc64=	Does not build: error: nested functions are disabled, use -fnested-functions to re-enable
-
-USES=		compiler:nestedfct gmake groff ncurses
+USES=		gmake groff ncurses
 
 MAKE_ARGS+=	CFLAGS="${CFLAGS} -I. -Wall -Wstrict-prototypes -Wextra -Wno-unused-parameter"
 

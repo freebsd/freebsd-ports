@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xfce4-pulseaudio-plugin
-PORTVERSION=	0.2.4
+PORTVERSION=	0.2.5
 CATEGORIES=	audio xfce
 MASTER_SITES=	XFCE/src/panel-plugins/${PORTNAME}/${PORTVERSION:R}
 DIST_SUBDIR=	xfce4
@@ -12,12 +12,14 @@ COMMENT=	Panel plugin for controlling PulseAudio mixer
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libpulse-mainloop-glib.so:audio/pulseaudio
+LIB_DEPENDS=	libpulse-mainloop-glib.so:audio/pulseaudio \
+		libdbus-1.so:devel/dbus \
+		libdbus-glib-1.so:devel/dbus-glib
 RUN_DEPENDS=	pavucontrol>=2.0:audio/pavucontrol
 
 USES=	gettext gmake libtool pkgconfig tar:bzip2 xfce:gtk3
 GNU_CONFIGURE=	yes
-USE_GNOME=	glib20 gtk30 intltool intlhack
+USE_GNOME=	glib20 gtk30 intltool cairo
 USE_XFCE=	panel
 USE_XORG=	x11
 INSTALLS_ICONS=	yes

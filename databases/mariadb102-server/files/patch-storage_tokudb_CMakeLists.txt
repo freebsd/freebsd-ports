@@ -1,12 +1,9 @@
---- storage/tokudb/CMakeLists.txt.orig	2017-05-14 23:13:20 UTC
-+++ storage/tokudb/CMakeLists.txt
-@@ -108,9 +108,6 @@ INCLUDE_DIRECTORIES(${CMAKE_CURRENT_BINA
+--- storage/tokudb/CMakeLists.txt.orig	2017-09-25 08:33:26.000000000 +0200
++++ storage/tokudb/CMakeLists.txt	2017-09-28 21:46:55.119327000 +0200
+@@ -108,6 +108,3 @@ INCLUDE_DIRECTORIES(${CMAKE_CURRENT_BINA
+ 
  TARGET_LINK_LIBRARIES(tokudb tokufractaltree_static tokuportability_static
                        ${ZLIB_LIBRARY} ${LIBJEMALLOC} stdc++)
- 
+-
 -SET(CMAKE_MODULE_LINKER_FLAGS_RELEASE "${CMAKE_MODULE_LINKER_FLAGS_RELEASE} -flto -fuse-linker-plugin")
 -SET(CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO "${CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO} -flto -fuse-linker-plugin")
--
- IF (INSTALL_SYSCONF2DIR)
-   INSTALL(FILES tokudb.cnf DESTINATION ${INSTALL_SYSCONF2DIR}
-           COMPONENT tokudb-engine)

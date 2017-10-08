@@ -1,3 +1,4 @@
+USE_MYSQL=	serve2
 # $FreeBSD$
 
 PORTNAME=	horde
@@ -18,7 +19,7 @@ ICONV_DESC=	Depend on PHP iconv extension
 TWITTER_DESC=	Support connections to Twitter
 WEATHER_DESC=	Support weather forecast display
 
-USES=	horde cpe
+USES=	horde cpe php
 USE_PHP=	filter gettext hash
 
 USE_HORDE_BUILD=	Horde_Role

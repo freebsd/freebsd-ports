@@ -12,7 +12,7 @@ COMMENT=	Modern Perl interactive shell
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
-LICENSE_FILE=	${WRKSRC}/LICENSE
+LICENSE_FILE=	${WRKSRC}/LICENCE
 
 BUILD_DEPENDS=	p5-Moose>=0.93:devel/p5-Moose \
 	p5-MooseX-Object-Pluggable>=0.0009:devel/p5-MooseX-Object-Pluggable \

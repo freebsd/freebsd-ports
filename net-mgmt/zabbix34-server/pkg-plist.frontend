@@ -52,6 +52,7 @@
 %%WWWDIR%%/app/controllers/CControllerScriptList.php
 %%WWWDIR%%/app/controllers/CControllerScriptUpdate.php
 %%WWWDIR%%/app/controllers/CControllerSystemWarning.php
+%%WWWDIR%%/app/controllers/CControllerTimelineUpdate.php
 %%WWWDIR%%/app/controllers/CControllerWebView.php
 %%WWWDIR%%/app/controllers/CControllerWidgetDiscoveryView.php
 %%WWWDIR%%/app/controllers/CControllerWidgetHostsView.php
@@ -491,6 +492,7 @@
 %%WWWDIR%%/include/classes/validators/CRegexValidator.php
 %%WWWDIR%%/include/classes/validators/CStringValidator.php
 %%WWWDIR%%/include/classes/validators/CValidator.php
+%%WWWDIR%%/include/classes/validators/CHtmlUrlValidator.php
 %%WWWDIR%%/include/classes/validators/event/CEventSourceObjectValidator.php
 %%WWWDIR%%/include/classes/validators/host/CHostNormalValidator.php
 %%WWWDIR%%/include/classes/validators/hostgroup/CHostGroupNameValidator.php
@@ -514,6 +516,7 @@
 %%WWWDIR%%/include/classes/widgetfields/CWidgetFieldTags.php
 %%WWWDIR%%/include/classes/widgetfields/CWidgetFieldTextBox.php
 %%WWWDIR%%/include/classes/widgetfields/CWidgetFieldWidgetListComboBox.php
+%%WWWDIR%%/include/classes/widgetfields/CWidgetFieldUrl.php
 %%WWWDIR%%/include/classes/widgets/CActionLogWidgetForm.php
 %%WWWDIR%%/include/classes/widgets/CClockWidgetForm.php
 %%WWWDIR%%/include/classes/widgets/CDataOverviewWidgetForm.php

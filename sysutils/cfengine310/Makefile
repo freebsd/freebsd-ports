@@ -15,13 +15,13 @@ LICENSE=	GPLv3
 
 CPE_VENDOR=	gnu
 
+CONFLICTS=	cfengine-2* cfengine3[0-9]-* cfengine31[1-9]-*
 .if !defined(MASTERDIR)
 PKGNAMESUFFIX=	310
+CONFLICTS+=	cfengine-3.*
 .endif
 
 FETCH_BEFORE_ARGS=	-o ${DISTDIR}/${DISTFILES}
-
-CONFLICTS=	cfengine-[12-9]*
 
 USE_RC_SUBR=	cf-execd cf-serverd cf-monitord
 

@@ -1,0 +1,15 @@
+TIMESTAMP = 1506755177
+SHA256 (ppsspp.1) = 64a7cca4c3a5fc6ad5b63399edef9056b0c85ea68fed00fb7e97f4b2724e503b
+SIZE (ppsspp.1) = 1598
+SHA256 (hrydgard-ppsspp-v1.4.2-463-g11f8bcc8a_GH0.tar.gz) = 1cafca6b9c83d20b4adb961095de208a6e236c1e67a549d84cc91544cb6ba77b
+SIZE (hrydgard-ppsspp-v1.4.2-463-g11f8bcc8a_GH0.tar.gz) = 18994696
+SHA256 (hrydgard-glslang-136b1e2d_GH0.tar.gz) = 430bd17420a0bf453c8b3f47ff19a58aadf5ae3e15cc773f2b833d60f0ecadea
+SIZE (hrydgard-glslang-136b1e2d_GH0.tar.gz) = 1767855
+SHA256 (hrydgard-ppsspp-lang-c31a1d3_GH0.tar.gz) = 6c007432d9af7ad9358710d54d13c66d80364db7b33ab018b76c87d92853c160
+SIZE (hrydgard-ppsspp-lang-c31a1d3_GH0.tar.gz) = 328423
+SHA256 (KhronosGroup-SPIRV-Cross-90966d5_GH0.tar.gz) = de8bcf01e0a0c4107871fdc8b764771487052fedbe2990a369e7908d4a95c000
+SIZE (KhronosGroup-SPIRV-Cross-90966d5_GH0.tar.gz) = 228783
+SHA256 (Kingcom-armips-v0.9-26-g770365d_GH0.tar.gz) = e6c52967082658082544f83875cc08e50227ff788d3553e0b0bc28abdb2615ed
+SIZE (Kingcom-armips-v0.9-26-g770365d_GH0.tar.gz) = 163606
+SHA256 (Kingcom-tinyformat-Release-2.0.1-7-gb7f5a22_GH0.tar.gz) = d86b5b4592047254c5118d0639e51d00869b3adc2f2c5419fdf29381ca42011e
+SIZE (Kingcom-tinyformat-Release-2.0.1-7-gb7f5a22_GH0.tar.gz) = 22286

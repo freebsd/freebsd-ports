@@ -3,26 +3,37 @@ bin/joe
 bin/jpico
 bin/jstar
 bin/rjoe
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
-%%PORTDOCS%%%%DOCSDIR%%/hacking.md
-%%PORTDOCS%%%%DOCSDIR%%/NEWS.md
-%%PORTDOCS%%%%DOCSDIR%%/README.md
-%%ETCDIR%%/ftyperc
+@sample %%ETCDIR%%/ftyperc.sample
 %%ETCDIR%%/jicerc.ru
 @sample %%ETCDIR%%/jmacsrc.sample
 @sample %%ETCDIR%%/joerc.sample
+%%ETCDIR%%/joerc.zh_TW
 @sample %%ETCDIR%%/jpicorc.sample
 @sample %%ETCDIR%%/jstarrc.sample
 @sample %%ETCDIR%%/rjoerc.sample
 %%ETCDIR%%/shell.csh
 %%ETCDIR%%/shell.sh
-%%ETCDIR%%/joerc.zh_TW
+man/man1/joe.1.gz
+man/ru/man1/joe.1.gz
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/NEWS.md
+%%PORTDOCS%%%%DOCSDIR%%/README.md
+%%PORTDOCS%%%%DOCSDIR%%/hacking.md
 %%DATADIR%%/charmaps/klingon
+%%DATADIR%%/colors/default.jcf
+%%DATADIR%%/colors/gruvbox.jcf
+%%DATADIR%%/colors/ir_black.jcf
+%%DATADIR%%/colors/molokai.jcf
+%%DATADIR%%/colors/solarized.jcf
+%%DATADIR%%/colors/wombat.jcf
+%%DATADIR%%/colors/xoria.jcf
+%%DATADIR%%/colors/zenburn-hc.jcf
+%%DATADIR%%/colors/zenburn.jcf
 %%DATADIR%%/lang/de.po
 %%DATADIR%%/lang/fr.po
 %%DATADIR%%/lang/ru.po
 %%DATADIR%%/lang/uk.po
-%%DATADIR%%/lang/zh.po
+%%DATADIR%%/lang/zh_TW.po
 %%DATADIR%%/syntax/4gl.jsf
 %%DATADIR%%/syntax/ada.jsf
 %%DATADIR%%/syntax/ant.jsf
@@ -36,6 +47,7 @@ bin/rjoe
 %%DATADIR%%/syntax/coffee.jsf
 %%DATADIR%%/syntax/comment_todo.jsf
 %%DATADIR%%/syntax/conf.jsf
+%%DATADIR%%/syntax/context.jsf
 %%DATADIR%%/syntax/csh.jsf
 %%DATADIR%%/syntax/csharp.jsf
 %%DATADIR%%/syntax/css.jsf
@@ -58,6 +70,7 @@ bin/rjoe
 %%DATADIR%%/syntax/ini.jsf
 %%DATADIR%%/syntax/iptables.jsf
 %%DATADIR%%/syntax/java.jsf
+%%DATADIR%%/syntax/jcf.jsf
 %%DATADIR%%/syntax/joerc.jsf
 %%DATADIR%%/syntax/js.jsf
 %%DATADIR%%/syntax/jsf.jsf
@@ -102,5 +115,3 @@ bin/rjoe
 %%DATADIR%%/syntax/whitespace.jsf
 %%DATADIR%%/syntax/xml.jsf
 %%DATADIR%%/syntax/yaml.jsf
-man/man1/joe.1.gz
-man/ru/man1/joe.1.gz

@@ -2,71 +2,147 @@
 # $FreeBSD$
 
 PORTNAME=	netpbm
-PORTVERSION=	10.35.98
+DISTVERSIONPREFIX=	v
+DISTVERSION=	10.80.00
 CATEGORIES=	graphics
-MASTER_SITES=	SF/netpbm/super_stable/${PORTVERSION} \
-		LOCAL/dinoex/:man
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	tobik@FreeBSD.org
 COMMENT=	Toolkit for conversion of images between different formats
 
-LIB_DEPENDS=	libtiff.so:graphics/tiff \
-		libpng.so:graphics/png \
-		libjbig.so:graphics/jbigkit \
-		libjasper.so:graphics/jasper \
-		libxml2.so:textproc/libxml2
+LICENSE=	IJG GPLv2 LGPL21 MIT PD
+LICENSE_COMB=	multi
+LICENSE_NAME_IJG=	Independent JPEG Group License
+LICENSE_FILE_IJG=	${WRKSRC}/doc/copyright_summary
+LICENSE_PERMS_IJG=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-USES=		gmake jpeg perl5 shebangfix tar:tgz
-SHEBANG_FILES=	editor/pnmflip editor/pnmquant editor/ppmfade \
-		editor/ppmquant editor/ppmshadow generator/ppmrainbow
-MAKEFILE=	GNUmakefile
-MAKE_ENV=	LN="${LN}" RANLIB="${RANLIB}"
-INSTALL_TARGET=	install.bin install.lib install.data install-dev
+TEST_DEPENDS=	bash:shells/bash
+
+# The port follows the advanced release series.  Upstream does not
+# create tarballs for them, so we have to roll our own.  See
+# http://netpbm.sourceforge.net/getting_netpbm.php.  To checkout the
+# sources yourself see the netpbm-version-check and netpbm-fetch
+# targets below.  The sources are then pushed to t6/netpbm and tagged
+# on GitHub.
+USES=		ghostscript:test gmake perl5 shebangfix
+USE_GITHUB=	yes
+GH_ACCOUNT=	t6
 USE_LDCONFIG=	yes
-MAKE_JOBS_UNSAFE=	yes
+USE_PERL5=	build test
 
-CFLAGS+=	-DPNG_DEPSTRUCT= -Iutil
+SHEBANG_FILES=	buildtools/makeman editor/pnmflip editor/pnmquant \
+		editor/ppmfade editor/ppmquant editor/ppmshadow \
+		generator/ppmrainbow converter/pbm/pbmtox10bm \
+		test/Execute-Tests test/*.test test/Available-Testprog
 
-OPTIONS_DEFINE=	X11 MANPAGES DOCS
+MAKEFILE=	GNUmakefile
+INSTALL_TARGET=	install.bin install.lib install.data install.hdr \
+		install.staticlib
+MAKE_ARGS=	pkgdir=${STAGEDIR}${PREFIX} \
+		BINMODE=${BINMODE} \
+		SHAREMODE=${SHAREMODE} \
+		DATAMODE=${_SHAREMODE} \
+		DIRMODE=755 \
+		MANMODE=${MANMODE} \
+		DATADIR=${DATADIR}
+TEST_ARGS=	pkgdir="${STAGEDIR}${PREFIX}" \
+		resultdir="${WRKDIR}/tests" \
+		RGBDEF="${STAGEDIR}${PREFIX}/share/netpbm/rgb.txt"
+TEST_TARGET=	check
+
+# tiff-flate-lzw-roundtrip's checksums are different on FreeBSD so the
+# test fails.  The resulting and intermediary images look fine in
+# spite of this.
+DISABLED_TESTS=	all-in-place tiff-flate-lzw-roundtrip ppmgauss \
+		palm-roundtrip pamtopdbimg
+
+OPTIONS_DEFAULT=	MANPAGES PERL
+OPTIONS_DEFINE=	MANPAGES PERL STATIC SVGTOPAM X11
 OPTIONS_SUB=	yes
 
-X11_USE=	xorg=x11
-X11_MAKE_ENV=	WITH_X11=yes
-
-MANPAGES_DISTFILES=	netpbm-manpages-2013-03-09${EXTRACT_SUFX}:man
-
-post-extract-X11-off:
-	@-${RM} ${WRKDIR}/doc/pamx.1 # only relevant for MANPAGES=on
+MANPAGES_GH_TUPLE=	t6:netpbm-userguide:r2996:userguide
+MANPAGES_USES=		python:build,2.7
+PERL_USE=		PERL5=run
+STATIC_BUILD_DEPENDS=	tiff>0:graphics/tiff \
+			png>0:graphics/png \
+			jbigkit>0:graphics/jbigkit \
+			jasper>0:graphics/jasper
+STATIC_LIB_DEPENDS_OFF=	libtiff.so:graphics/tiff \
+			libpng.so:graphics/png \
+			libjbig.so:graphics/jbigkit \
+			libjasper.so:graphics/jasper
+STATIC_USES=		jpeg:build
+STATIC_USES_OFF=	jpeg
+SVGTOPAM_DESC=		Build svgtopam
+SVGTOPAM_USE=		GNOME=libxml2
+SVGTOPAM_VARS_OFF=	DISABLED_TESTS+=svgtopam
+X11_USE=		XORG=x11,xcb,xau,xdmcp
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|doc/USERDOC|${DOCSDIR}/USERDOC|g' \
-		${WRKSRC}/doc/netpbm.1
-	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \
-		-e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
-		${WRKSRC}/pm_config.in.h
-	@${REINPLACE_CMD} -e 's|^SCRIPTS =.*|SCRIPTS =|' ${WRKSRC}/GNUmakefile
-	@${REINPLACE_CMD} -e 's|<shhopt.h>|<pm_shhopt.h>|g' ${WRKSRC}/lib/pm.h
-	@${REINPLACE_CMD} -e 's| jpeg2000||g' \
-		${WRKSRC}/converter/other/Makefile
+	@${REINPLACE_CMD} -e 's|misc|share/netpbm|g' ${WRKSRC}/common.mk
+	@${REINPLACE_CMD} -e 's|$$(PKGDIR)/link|$$(PKGDIR)/lib|g' \
+		-e 's|pkg-config|false|g' \
+		${WRKSRC}/GNUmakefile ${WRKSRC}/lib/Makefile
+.for test in ${DISABLED_TESTS}
+	@${REINPLACE_CMD} -e '/${test}/d' ${WRKSRC}/test/Test-Order
+.endfor
+
+post-patch-STATIC-on:
+	@${REINPLACE_CMD} 's|$$(LD)|$$(LD) -static|g' ${WRKSRC}/common.mk
+
+# Disable building svgtopam by default.  It is the only program that
+# requires libxml2 and it is not useful in this day and age according
+# to the author.  See the top of converter/other/svgtopam.c for more
+# details.
+post-patch-SVGTOPAM-off:
+	@${REINPLACE_CMD} '/svgtopam/d' ${WRKSRC}/converter/other/Makefile
+
+post-patch-X11-off:
+	@${REINPLACE_CMD} '/pamx/d' ${WRKSRC}/other/Makefile
 
 do-configure:
-	${CP} ${PATCHDIR}/Makefile.config.FreeBSD ${WRKSRC}/Makefile.config
-	${LN} -sf ${WRKSRC}/lib/util/shhopt.h ${WRKSRC}/lib/util/pm_shhopt.h
-	${LN} -sf ${WRKSRC}/lib/util/nstring.h ${WRKSRC}/lib/util/pm_nstring.h
-	cd ${WRKSRC} && buildtools/stamp-date > ${WRKSRC}/lib/compile.h
+	@${CAT} ${WRKSRC}/config.mk.in ${FILESDIR}/config.mk > ${WRKSRC}/config.mk
+
+post-build-MANPAGES-on:
+	@cd ${WRKSRC_userguide} && ${WRKSRC}/buildtools/makeman *.html
+	@cd ${WRKSRC_userguide} && ${MV} index.1 netpbm.1
+# Remove broken manpages
+	@cd ${WRKSRC_userguide} && ${RM} directory.1 liberror.1 \
+		libnetpbm_dir.1 libsystem.3 libtmpfile.3 libtmpfilefd.3 \
+		ppmsvgalib.1 vidtoppm.1 extendedopacity.5
 
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/lib/util/pm_c_util.h ${STAGEDIR}${PREFIX}/include/
-	${INSTALL_MAN} ${WRKSRC}/doc/netpbm.1 ${STAGEDIR}${PREFIX}/man/man1/
+	@cd ${STAGEDIR}${PREFIX}/lib && ${LN} -sf libnetpbm.so.11 libnetpbm.so
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libnetpbm.so
+	@${RM} ${STAGEDIR}${PREFIX}/bin/manweb
+	${INSTALL_DATA} ${WRKSRC}/lib/util/pm_c_util.h ${WRKSRC}/pm_config.h \
+		${STAGEDIR}${PREFIX}/include/netpbm
 
 post-install-MANPAGES-on:
-	${INSTALL_MAN} ${WRKDIR}/doc/*.1 ${STAGEDIR}${PREFIX}/man/man1/
-	${INSTALL_MAN} ${WRKDIR}/doc/*.3 ${STAGEDIR}${PREFIX}/man/man3/
-	${INSTALL_MAN} ${WRKDIR}/doc/*.5 ${STAGEDIR}${PREFIX}/man/man5/
+	${INSTALL_MAN} ${WRKSRC_userguide}/*.1 ${STAGEDIR}${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC_userguide}/*.3 ${STAGEDIR}${PREFIX}/man/man3
+	${INSTALL_MAN} ${WRKSRC_userguide}/*.5 ${STAGEDIR}${PREFIX}/man/man5
 
-post-install-DOCS-on:
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/USERDOC ${STAGEDIR}${DOCSDIR}/
+.if defined(DEVELOPER)
+# A lot of this is stolen from the netpbm OpenBSD port
+NETPBM_REPO=	https://svn.code.sf.net/p/netpbm/code
+NETPBM_SERIES=	advanced
+
+netpbm-version-check:
+	@REV=`svnlite info ${NETPBM_REPO}/${NETPBM_SERIES}/version.mk | sed -n 's/Last Changed Rev: //p'`; \
+	VERSION=`(svnlite cat -r$$REV ${NETPBM_REPO}/${NETPBM_SERIES}/version.mk; \
+			echo 'all:'; \
+			echo '	@printf "%02d.%02d.%02d" \'; \
+			echo '		$${NETPBM_MAJOR_RELEASE} \' ; \
+			echo '		$${NETPBM_MINOR_RELEASE} \' ; \
+			echo '		$${NETPBM_POINT_RELEASE} \' ; \
+		) | make -f -`; \
+	case `pkg version -t ${PORTVERSION} $$VERSION` in \
+		'>') echo "Port version is greater than latest release $$VERSION"; exit 1 ;; \
+		'<') echo "Run 'make NETPBM_REV=$$REV netpbm-fetch' to download netpbm $$VERSION" ;; \
+	esac
+
+netpbm-fetch:
+	@svnlite export --force -r${NETPBM_REV} ${NETPBM_REPO}/${NETPBM_SERIES} netpbm-r${NETPBM_REV}
+.endif
 
 .include <bsd.port.mk>

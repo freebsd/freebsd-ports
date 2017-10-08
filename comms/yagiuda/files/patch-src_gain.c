@@ -1,5 +1,5 @@
---- src/gain.c.orig	Tue Jul 19 12:24:45 2005
-+++ src/gain.c	Tue Jul 19 12:24:50 2005
+--- src/gain.c.orig	2000-10-28 11:45:51 UTC
++++ src/gain.c
 @@ -3,7 +3,6 @@
  #endif
  #include <stdio.h>

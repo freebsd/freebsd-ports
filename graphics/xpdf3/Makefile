@@ -10,6 +10,9 @@ MASTER_SITES=	http://mirrors.rit.edu/zi/ \
 		http://komquats.com/distfiles/
 .if !defined(MASTERDIR)
 PKGNAMESUFFIX=  3
+CONFLICTS_INSTALL=	xpdf4-* xpdf-*
+.else
+CONFLICTS_INSTALL=	xpdf4-*	xpdf3-*
 .endif
 
 MAINTAINER=	cy@FreeBSD.org

@@ -1,40 +1,134 @@
---- build.gradle.orig	2017-07-20 23:39:54 UTC
+--- build.gradle.orig	2017-09-08 16:56:55 UTC
 +++ build.gradle
-@@ -344,7 +344,7 @@ ext.SWT_FILE_NAME = IS_MAC ? "org.eclipse.swt.cocoa.ma
+@@ -251,6 +251,7 @@ ext.IS_64 = OS_ARCH.toLowerCase().contains("64")
+ ext.IS_MAC = OS_NAME.contains("mac") || OS_NAME.contains("darwin")
+ ext.IS_WINDOWS = OS_NAME.contains("windows")
+ ext.IS_LINUX = OS_NAME.contains("linux")
++ext.IS_BSD = OS_NAME.contains("freebsd") || OS_NAME.contains("dragonfly")
+ 
+ // Get the JDK_HOME automatically based on the version of Java used to execute gradle. Or, if specified,
+ // use a user supplied JDK_HOME, STUB_RUNTIME, JAVAC, and/or JAVAH, all of which may be specified
+@@ -311,7 +312,7 @@ defineProperty("COMPILE_MEDIA", "false")
+ ext.IS_COMPILE_MEDIA = Boolean.parseBoolean(COMPILE_MEDIA)
+ 
+ // COMPILE_PANGO specifies whether to build javafx_font_pango.
+-defineProperty("COMPILE_PANGO", "${IS_LINUX}")
++defineProperty("COMPILE_PANGO", "${IS_LINUX || IS_BSD}")
+ ext.IS_COMPILE_PANGO = Boolean.parseBoolean(COMPILE_PANGO)
+ 
+ // COMPILE_HARFBUZZ specifies whether to use Harfbuzz.
+@@ -342,7 +343,8 @@ ext.SWT_FILE_NAME = IS_MAC ? "org.eclipse.swt.cocoa.ma
+     IS_WINDOWS && IS_64 ? "org.eclipse.swt.win32.win32.x86_64_3.7.2.v3740f" :
      IS_WINDOWS && !IS_64 ? "org.eclipse.swt.win32.win32.x86_3.7.2.v3740f" :
      IS_LINUX && IS_64 ? "org.eclipse.swt.gtk.linux.x86_64_3.7.2.v3740f" :
-     IS_LINUX && !IS_64 ? "org.eclipse.swt.gtk.linux.x86_3.7.2.v3740f" :
--    IS_BSD ? "/usr/local/share/java/classes/swt-devel.jar" : ""
-+    IS_BSD ? "%%PREFIX%%/share/java/classes/swt-devel.jar" : ""
+-    IS_LINUX && !IS_64 ? "org.eclipse.swt.gtk.linux.x86_3.7.2.v3740f" : ""
++    IS_LINUX && !IS_64 ? "org.eclipse.swt.gtk.linux.x86_3.7.2.v3740f" :
++    IS_BSD ? "/usr/local/share/java/classes/swt-devel.jar" : ""
  
  // Build javadocs only if BUILD_JAVADOC=true
  defineProperty("BUILD_JAVADOC", "false")
-@@ -1163,7 +1163,8 @@ allprojects {
+@@ -402,6 +404,12 @@ if (IS_MAC) {
+     defineProperty("NUM_COMPILE_THREADS", "${Runtime.runtime.availableProcessors()}")
+ }
+ 
++if (IS_BSD) {
++    ext.MAKE_CMD = "gmake"
++} else {
++    ext.MAKE_CMD = "make"
++}
++
+ //
+ // The next three sections of properties are used to generate the
+ // VersionInfo class, and the Windows DLL manifest.
+@@ -442,7 +450,7 @@ defineProperty("RELEASE_MILESTONE", jfxReleaseMileston
+ // Check whether the COMPILE_TARGETS property has been specified (if so, it was done by
+ // the user and not by this script). If it has not been defined then default
+ // to building the normal desktop build for this machine
+-project.ext.set("defaultHostTarget", IS_MAC ? "mac" : IS_WINDOWS ? "win" : IS_LINUX ? "linux" : "");
++project.ext.set("defaultHostTarget", IS_MAC ? "mac" : IS_WINDOWS ? "win" : IS_LINUX ? "linux" : IS_BSD ? "bsd" : "");
+ defineProperty("COMPILE_TARGETS", "$defaultHostTarget")
+ 
+ // Flag indicating whether to import cross compile tools
+@@ -549,7 +557,7 @@ void fetchExternalTools(String configName, List packag
+                 def File pkgdir = file("$destdir/$basename")
+ 
+                 if (pkgname.endsWith(".tgz")) {
+-                    if (IS_LINUX || IS_MAC) {
++                    if (IS_BSD || IS_LINUX || IS_MAC) {
+                         // use native tar to support symlinks
+                         pkgdir.mkdirs()
+                         exec {
+@@ -674,7 +682,7 @@ compileTargets { t ->
+     if (!targetProperties.containsKey('includeMonocle')) targetProperties.includeMonocle = false
+     if (!targetProperties.containsKey('includeEGL')) targetProperties.includeEGL = false
+ 
+-    if (!targetProperties.containsKey('includeGTK')) targetProperties.includeGTK = IS_LINUX
++    if (!targetProperties.containsKey('includeGTK')) targetProperties.includeGTK = IS_LINUX || IS_BSD
+ 
+     // This value is used to under ./build/${sdkDirName} to allow for
+     // a common name for the hosted build (for use when building apps)
+@@ -706,7 +714,7 @@ compileTargets { t ->
+ // at present building on PI is not supported, but we would only need to make
+ // some changes on assumptions on what should be built (like SWT / Swing) and
+ // such and we could probably make it work.
+-if (!IS_MAC && !IS_WINDOWS && !IS_LINUX) logger.error("Unsupported build OS ${OS_NAME}")
++if (!IS_MAC && !IS_WINDOWS && !IS_LINUX && !IS_BSD) logger.error("Unsupported build OS ${OS_NAME}")
+ if (IS_WINDOWS && OS_ARCH != "x86" && OS_ARCH != "amd64") {
+     throw new Exception("Unknown and unsupported build architecture: $OS_ARCH")
+ } else if (IS_MAC && OS_ARCH != "x86_64") {
+@@ -1168,7 +1176,8 @@ allprojects {
      // By default all of our projects require junit for testing so we can just
      // setup this dependency here.
      dependencies {
 -        testCompile group: "junit", name: "junit", version: "4.8.2"
-+        testCompile files("%%PREFIX%%/share/java/classes/junit4.jar",
-+                          "%%PREFIX%%/share/java/classes/hamcrest.jar")
++        testCompile files("/usr/local/share/java/classes/junit4.jar",
++                          "/usr/local/share/java/classes/hamcrest.jar")
          if (BUILD_CLOSED && DO_JCOV)  {
              testCompile name: "jcov"
          }
-@@ -1306,11 +1307,10 @@ project(":graphics") {
- 	} else {
-              compile name: SWT_FILE_NAME
- 	}
+@@ -1306,12 +1315,15 @@ project(":graphics") {
+ 
+     dependencies {
+         compile project(":base"), BUILD_SRC
+-        compile name: SWT_FILE_NAME
 -        stubCompile group: "junit", name: "junit", version: "4.8.2",
-+        stubCompile files("%%PREFIX%%/share/java/classes/junit4.jar",
-+                          "%%PREFIX%%/share/java/classes/hamcrest.jar"),
++        if (IS_BSD) {
++             compile files(SWT_FILE_NAME)
++	} else {
++             compile name: SWT_FILE_NAME
++	}
++        stubCompile files("/usr/local/share/java/classes/junit4.jar",
++                          "/usr/local/share/java/classes/hamcrest.jar"),
          project(":base").sourceSets.test.output, sourceSets.main.output
 -        antlr3 group: "org.antlr", name: "antlr", version: "3.1.3"
 -        antlr3 group: "org.antlr", name: "antlr-runtime",  version: "3.1.3"
 -        antlr3 group: "org.antlr", name: "stringtemplate", version: "3.2"
-+        antlr3 files("%%PREFIX%%/share/java/classes/antlr-3.5.2-complete.jar")
++        antlr3 files("/usr/local/share/java/classes/antlr-3.5.2-complete.jar")
      }
  
      // Create a single "native" task which will depend on all the individual native tasks for graphics
-@@ -1600,9 +1600,7 @@ project(":graphics") {
+@@ -1460,7 +1472,7 @@ project(":graphics") {
+                 workingDir = "modules/graphics"
+                 main = settings.generator
+                 classpath = configurations.compile + configurations.antlr3
+-                classpath += files("$buildDir/classes/main")
++                classpath += files("$buildDir/classes/java/main")
+                 classpath += files("$buildDir/classes/jsl-compilers/decora")
+                 args = ["-i", sourceDir, "-o", destinationDir, "-t", "-pkg", "com/sun/scenario/effect", "$settings.outputs", "$settings.fileName"]
+                 jvmArgs "-Djava.ext.dirs="
+@@ -1471,9 +1483,9 @@ project(":graphics") {
+     task generateDecoraNativeHeaders(type: JavaHeaderTask, dependsOn: compileDecoraJavaShaders) {
+         description = "Generates JNI Headers for Decora SSE Natives"
+         source file("$buildDir/classes/jsl-decora")
+-        source file("$buildDir/classes/main")
++        source file("$buildDir/classes/java/main")
+         include("com/sun/scenario/effect/impl/sw/sse/*");
+-        classpath = files("$buildDir/classes/main", "$buildDir/classes/jsl-decora")
++        classpath = files("$buildDir/classes/java/main", "$buildDir/classes/jsl-decora")
+         output = file("$buildDir/generated-src/headers/jsl-decora")
+     }
+ 
+@@ -1601,9 +1613,7 @@ project(":graphics") {
              copy {
                  into libsDir
                  from f.getParentFile()
@@ -45,20 +139,50 @@
                  includeEmptyDirs = false
              }
              // Have to rename the swt jar because it is some platform specific name but
-@@ -1789,7 +1787,7 @@ project(":fxpackager") {
+@@ -1650,7 +1660,7 @@ project(":controls") {
+             javaexec {
+                 executable = JAVA
+                 workingDir = "modules/controls"
+-                classpath files("$buildDir/classes/main",
++                classpath files("$buildDir/classes/java/main",
+                         project(":graphics").sourceSets.main.output,
+                         project(":base").sourceSets.main.output)
+                 main = "com.sun.javafx.css.parser.Css2Bin"
+@@ -1687,7 +1697,11 @@ project(":swt") {
+     }
+     dependencies {
+         compile BUILD_SRC, project(":base"), project(":graphics")
+-        compile name: SWT_FILE_NAME
++        if (IS_BSD) {
++            compile files(SWT_FILE_NAME)
++        } else {
++            compile name: SWT_FILE_NAME
++        }
+     }
+ }
+ 
+@@ -1786,7 +1800,7 @@ project(":fxpackager") {
      }
  
      dependencies {
 -        compile group: "org.apache.ant", name: "ant", version: "1.8.2"
-+        compile files("%%PREFIX%%/share/java/apache-ant/lib/ant.jar")
++        compile files("/usr/local/share/java/apache-ant/lib/ant.jar")
      }
  
      // When producing the jar, we need to relocate a few class files
-@@ -2049,21 +2047,6 @@ project(":fxpackager") {
+@@ -2037,7 +2051,7 @@ project(":fxpackager") {
+         description = "Creates the packager.jar"
+         archiveName = "packager.jar";
+         includeEmptyDirs = false
+-        from("$buildDir/classes/main");
++        from("$buildDir/classes/java/main");
+         from("$buildDir/resources/main");
+         include('jdk/packager/**')
  
+@@ -2047,21 +2061,6 @@ project(":fxpackager") {
      jar.dependsOn buildJavaPackager
      jar.dependsOn packagerJar
--
+ 
 -    classes << {
 -        // Copy all of the download libraries to libs directory for the sake of the IDEs
 -        File libsDir = rootProject.file("build/libs");
@@ -73,6 +197,261 @@
 -            }
 -        }
 -    }
- 
+-
      task packagerFakeJar(type: Jar) {
          dependsOn compileTestJava
+         from compileTestJava.destinationDir
+@@ -2240,7 +2239,7 @@ project(":media") {
+ 
+             doLast {
+                 exec {
+-                    commandLine ("make", "${makeJobsFlag}", "-C", "${nativeSrcDir}/jfxmedia/projects/${projectDir}")
++                    commandLine (MAKE_CMD, "${makeJobsFlag}", "-C", "${nativeSrcDir}/jfxmedia/projects/${projectDir}")
+                     args("JAVA_HOME=${JDK_HOME}", "GENERATED_HEADERS_DIR=${generatedHeadersDir}",
+                          "OUTPUT_DIR=${nativeOutputDir}", "BUILD_TYPE=${buildType}", "BASE_NAME=jfxmedia",
+                          "COMPILE_PARFAIT=${compileParfait}")
+@@ -2250,7 +2249,7 @@ project(":media") {
+                         args(IS_64 ? "ARCH=x64" : "ARCH=x32", "RESOURCE=${nativeOutputDir}/${buildType}/${WIN.media.jfxmediaRcFile}")
+                     } else {
+                         args ("CC=${mediaProperties.compiler}", "LINK=${mediaProperties.linker}", "LIB=${mediaProperties.lib}")
+-                        if (t.name == "linux") {
++                        if (t.name == "linux" || t.name == "bsd") {
+                             args(IS_64 ? "ARCH=x64" : "ARCH=x32")
+                         }
+ 
+@@ -2272,7 +2271,7 @@ project(":media") {
+                 enabled = IS_COMPILE_MEDIA
+                 doLast {
+                     exec {
+-                        commandLine ("make", "${makeJobsFlag}", "-C", "${nativeSrcDir}/gstreamer/projects/${projectDir}/gstreamer-lite")
++                        commandLine (MAKE_CMD, "${makeJobsFlag}", "-C", "${nativeSrcDir}/gstreamer/projects/${projectDir}/gstreamer-lite")
+                         args("OUTPUT_DIR=${nativeOutputDir}", "BUILD_TYPE=${buildType}", "BASE_NAME=gstreamer-lite")
+ 
+                         if (t.name == "win") {
+@@ -2280,7 +2279,7 @@ project(":media") {
+                             args(IS_64 ? "ARCH=x64" : "ARCH=x32", "RESOURCE=${nativeOutputDir}/${buildType}/${WIN.media.gstreamerRcFile}")
+                         } else {
+                             args ("CC=${mediaProperties.compiler}", "LINK=${mediaProperties.linker}", "LIB=${mediaProperties.lib}")
+-                            if (t.name == "linux") {
++                            if (t.name == "linux" || t.name == "bsd") {
+                                 args(IS_64 ? "ARCH=x64" : "ARCH=x32")
+                             }
+                         }
+@@ -2301,7 +2300,7 @@ project(":media") {
+ 
+                 doLast {
+                     exec {
+-                        commandLine ("make", "${makeJobsFlag}", "-C", "${nativeSrcDir}/gstreamer/projects/${projectDir}/fxplugins")
++                        commandLine (MAKE_CMD, "${makeJobsFlag}", "-C", "${nativeSrcDir}/gstreamer/projects/${projectDir}/fxplugins")
+                         args("OUTPUT_DIR=${nativeOutputDir}", "BUILD_TYPE=${buildType}", "BASE_NAME=fxplugins",
+                              "ON2_SRCDIR=${project.ext.ON2_SRCDIR}", "ON2_LIB=${project.ext.ON2_LIB}")
+ 
+@@ -2318,7 +2317,7 @@ project(":media") {
+                             args(IS_64 ? "ARCH=x64" : "ARCH=x32", "RESOURCE=${nativeOutputDir}/${buildType}/${WIN.media.fxpluginsRcFile}")
+                         } else {
+                             args ("CC=${mediaProperties.compiler}", "LINK=${mediaProperties.linker}", "LIB=${mediaProperties.lib}")
+-                            if (t.name == "linux") {
++                            if (t.name == "linux" || t.name == "bsd") {
+                                 args(IS_64 ? "ARCH=x64" : "ARCH=x32")
+                             }
+                         }
+@@ -2328,7 +2327,7 @@ project(":media") {
+ 
+             buildNative.dependsOn buildPlugins
+ 
+-            if (t.name == "linux") {
++            if (t.name == "linux" || t.name == "bsd") {
+                 def buildAVPlugin = task( "buildAVPlugin", dependsOn: [buildPlugins]) {
+                     enabled = IS_COMPILE_MEDIA
+ 
+@@ -2339,7 +2338,7 @@ project(":media") {
+                                 File dir = file(libavDir)
+                                 if (dir.exists()) {
+                                     exec {
+-                                        commandLine ("make", "${makeJobsFlag}", "-C", "${nativeSrcDir}/gstreamer/projects/linux/avplugin")
++                                        commandLine (MAKE_CMD, "${makeJobsFlag}", "-C", "${nativeSrcDir}/gstreamer/projects/${t.name}/avplugin")
+                                         args("CC=${mediaProperties.compiler}", "OUTPUT_DIR=${nativeOutputDir}", "BUILD_TYPE=${buildType}",
+                                              "BASE_NAME=avplugin", "VERSION=${version}", "LIBAV_DIR=${libavDir}",
+                                              "SUFFIX=", IS_64 ? "ARCH=x64" : "ARCH=x32")
+@@ -2352,7 +2351,7 @@ project(":media") {
+                                 File dir = file(libavDir)
+                                 if (dir.exists()) {
+                                     exec {
+-                                        commandLine ("make", "${makeJobsFlag}", "-C", "${nativeSrcDir}/gstreamer/projects/linux/avplugin")
++                                        commandLine (MAKE_CMD, "${makeJobsFlag}", "-C", "${nativeSrcDir}/gstreamer/projects/${t.name}/avplugin")
+                                         args("CC=${mediaProperties.compiler}", "LINKER=${mediaProperties.linker}",
+                                              "OUTPUT_DIR=${nativeOutputDir}", "BUILD_TYPE=${buildType}",
+                                              "BASE_NAME=avplugin", "VERSION=${version}", "LIBAV_DIR=${libavDir}",
+@@ -2363,7 +2362,7 @@ project(":media") {
+                         } else {
+                             // Building fxavcodec plugin (libav plugin)
+                             exec {
+-                                commandLine ("make", "${makeJobsFlag}", "-C", "${nativeSrcDir}/gstreamer/projects/linux/avplugin")
++                                commandLine (MAKE_CMD, "${makeJobsFlag}", "-C", "${nativeSrcDir}/gstreamer/projects/linux/avplugin")
+                                 args("CC=${mediaProperties.compiler}", "OUTPUT_DIR=${nativeOutputDir}", "BUILD_TYPE=${buildType}",
+                                      "BASE_NAME=avplugin", IS_64 ? "ARCH=x64" : "ARCH=x32")
+                             }
+@@ -2411,7 +2410,7 @@ project(":media") {
+                     doLast {
+                         exec {
+                             environment(WINDOWS_NATIVE_COMPILE_ENVIRONMENT)
+-                            commandLine ("make", "${makeJobsFlag}", "-C", "${nativeSrcDir}/gstreamer/projects/${projectDir}/glib-lite")
++                            commandLine (MAKE_CMD, "${makeJobsFlag}", "-C", "${nativeSrcDir}/gstreamer/projects/${projectDir}/glib-lite")
+                             args("OUTPUT_DIR=${nativeOutputDir}", "BUILD_TYPE=${buildType}", "BASE_NAME=glib-lite",
+                                  IS_64 ? "ARCH=x64" : "ARCH=x32", "RESOURCE=${nativeOutputDir}/${buildType}/${WIN.media.glibRcFile}")
+                         }
+@@ -2424,7 +2423,7 @@ project(":media") {
+                     enabled = IS_COMPILE_MEDIA
+                     doLast {
+                         exec {
+-                            commandLine ("make", "${makeJobsFlag}", "-C", "${nativeSrcDir}/gstreamer/projects/${projectDir}/glib-lite")
++                            commandLine (MAKE_CMD, "${makeJobsFlag}", "-C", "${nativeSrcDir}/gstreamer/projects/${projectDir}/glib-lite")
+                             args("OUTPUT_DIR=${nativeOutputDir}", "BUILD_TYPE=${buildType}", "BASE_NAME=glib-lite")
+                             args ("CC=${mediaProperties.compiler}", "LINK=${mediaProperties.linker}", "LIB=${mediaProperties.lib}")
+                         }
+@@ -2477,7 +2476,7 @@ project(":web") {
+ 
+     task generateHeaders(dependsOn: compileJava) {
+         doLast {
+-            def classpath = files("$buildDir/classes/main",
++            def classpath = files("$buildDir/classes/java/main",
+                                   project(":graphics").sourceSets.main.output.classesDir)
+             def dest = file("$buildDir/generated-src/headers");
+             mkdir dest;
+@@ -2525,7 +2524,7 @@ project(":web") {
+ 
+     compileTargets { t ->
+         def targetProperties = project.rootProject.ext[t.upper]
+-        def classifier = (t.name != "linux" && t.name != "win") ? t.name :
++        def classifier = (t.name != "linux" && t.name != "bsd" && t.name != "win") ? t.name :
+                           IS_64 ? "${t.name}-amd64" : "${t.name}-i586"
+ 
+         def webkitOutputDir = cygpath("$buildDir/${t.name}")
+@@ -2586,6 +2585,9 @@ project(":web") {
+                     targetCpuBitDepthSwitch = "--32-bit"
+                 }
+ 
++                cmakeArgs += " -DCMAKE_VERBOSE_MAKEFILE:BOOL=ON"
++                cmakeArgs += " -DCMAKE_C_COMPILER:STRING=${System.getenv("CC")}"
++                cmakeArgs += " -DCMAKE_CXX_COMPILER:STRING=${System.getenv("CXX")}"
+                 commandLine("perl", "Tools/Scripts/build-webkit",
+                     "--java", "--icu-unicode", targetCpuBitDepthSwitch,
+                     "--cmakeargs=${cmakeArgs}")
+@@ -2628,7 +2630,7 @@ project(":web") {
+     task drtJar(type: Jar, dependsOn: compileJava) {
+         archiveName = "drt.jar"
+         destinationDir = file("$buildDir/test")
+-        from "$buildDir/classes/main"
++        from "$buildDir/classes/java/main"
+         include drtClasses
+     }
+     if (IS_COMPILE_WEBKIT) {
+@@ -2880,22 +2882,22 @@ compileTargets { t ->
+         description = "Creates the jfxrt.jar for the $t.name target"
+         archiveName = "build/${sdkDirName}/rt/lib/ext/jfxrt.jar";
+         includeEmptyDirs = false
+-        from("modules/base/build/classes/main",
++        from("modules/base/build/classes/java/main",
+              "modules/base/build/resources/main",
+-             "modules/builders/build/classes/main",
+-             "modules/graphics/build/classes/main",
++             "modules/builders/build/classes/java/main",
++             "modules/graphics/build/classes/java/main",
+              "modules/graphics/build/resources/main",
+-             "modules/controls/build/classes/main",
++             "modules/controls/build/classes/java/main",
+              "modules/controls/build/resources/main",
+-             "modules/fxml/build/classes/main",
++             "modules/fxml/build/classes/java/main",
+              "modules/fxml/build/resources/main",
+              "modules/graphics/build/classes/jsl-decora",
+              "modules/graphics/build/resources/jsl-decora",
+              "modules/graphics/build/classes/jsl-prism",
+              "modules/graphics/build/resources/jsl-prism",
+-             "modules/media/build/classes/main",
++             "modules/media/build/classes/java/main",
+              "modules/media/build/resources/main")
+-        if (COMPILE_SWING) from ("modules/swing/build/classes/main", "modules/swing/build/resources/main")
++        if (COMPILE_SWING) from ("modules/swing/build/classes/java/main", "modules/swing/build/resources/main")
+ 
+         if (!IS_MAC) {
+             exclude ("modules/media/build/classes/main/com/sun/media/jfxmediaimpl/platform/osx/**",
+@@ -2960,7 +2962,7 @@ compileTargets { t ->
+                   "modules/web/build/resources/ios",
+                   "modules/extensions/build/classes/ios")
+         } else {
+-            from ("modules/web/build/classes/main", "modules/web/build/resources/main")
++            from ("modules/web/build/classes/java/main", "modules/web/build/resources/main")
+         }
+ 
+         exclude("**/javafx/embed/swt/**")
+@@ -3000,8 +3002,8 @@ compileTargets { t ->
+         description = "Creates the jfxswt.jar for the $t.name target"
+         archiveName = "build/${sdkDirName}/rt/lib/jfxswt.jar";
+         includeEmptyDirs = false
+-        from("modules/swt/build/classes/main");
+-        from("modules/builders/build/classes/main");
++        from("modules/swt/build/classes/java/main");
++        from("modules/builders/build/classes/java/main");
+         include("**/javafx/embed/swt/**")
+         exclude("**/*.java");  // Builder java files are in build/classes and should be excluded
+ 
+@@ -3022,7 +3024,7 @@ compileTargets { t ->
+         description = "Creates the javafx-mx.jar"
+         archiveName = "build/${sdkDirName}/lib/javafx-mx.jar";
+         includeEmptyDirs = false
+-        from "modules/jmx/build/classes/main"
++        from "modules/jmx/build/classes/java/main"
+         from "modules/jmx/build/resources/main"
+         dependsOn project(":jmx").assemble
+     }
+@@ -3077,7 +3079,7 @@ compileTargets { t ->
+                         // OSX media natives
+                         [ "jfxmedia_qtkit", "jfxmedia_avf", "glib-lite" ].each { name ->
+                             from ("modules/media/build/native/${t.name}/${mediaBuildType}/${library(name)}") }
+-                    } else if (t.name == "linux") {
++                    } else if (t.name == "linux" || t.name == "bsd") {
+                         from("modules/media/build/native/${t.name}/${mediaBuildType}") { include "libavplugin*.so" }
+                     } else from ("modules/media/build/native/${t.name}/${mediaBuildType}/${library("glib-lite")}")
+                 } else {
+@@ -3090,7 +3092,7 @@ compileTargets { t ->
+                         // copy libjfxmedia_{avf,qtkit}.dylib if they exist
+                         [ "jfxmedia_qtkit", "jfxmedia_avf", "glib-lite" ].each { name ->
+                             from ("$LIBRARY_STUB/${library(name)}") }
+-                    } else if (t.name == "linux") {
++                    } else if (t.name == "linux" || t.name == "bsd") {
+                         from(LIBRARY_STUB) { include "libavplugin*.so" }
+                     }
+                     else if (t.name != "android"  && t.name != "dalvik" ) {
+@@ -3155,7 +3157,7 @@ compileTargets { t ->
+             }
+ 
+             // Copy over the javapackager executable
+-            if (t.name == "win" || t.name == "linux" || t.name == "mac") {
++            if (t.name == "win" || t.name == "linux" || t.name == "bsd" || t.name == "mac") {
+                 copy {
+                     from "modules/fxpackager/build/javapackager"
+                     into "build/${sdkDirName}/bin"
+@@ -3208,10 +3210,11 @@ ext.JFXRT_CP =
+         project(":fxml").sourceSets.main.output.classesDir,
+         project(":swing").sourceSets.main.output.classesDir, //NOTE - used by 3Dviewer
+         project(":builders").sourceSets.main.output.classesDir,
+-            "modules/media/build/classes/main",
+-            "modules/web/build/classes/main",
++            "modules/media/build/classes/java/main",
++            "modules/web/build/classes/java/main",
+     )
+ 
++/*
+ project(":apps") {
+     // The apps build is Ant based, and gradle lets us "import" ant build.xml
+     // into our configuration.
+@@ -3256,7 +3259,7 @@ project(":apps") {
+         }
+         rootProject.clean.dependsOn(appsClean)
+     }
+-}
++} */
+ 
+ /******************************************************************************
+  *                                                                            *

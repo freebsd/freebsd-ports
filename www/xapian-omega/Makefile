@@ -32,11 +32,6 @@ GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USES=		libtool localbase perl5 shebangfix tar:xz
 
-MORE_PORTDOCS=	AUTHORS ChangeLog NEWS README TODO
-PORTDATA=	*
-PORTDOCS=	*
-PORTEXAMPLES=	omega.conf
-
 SHEBANG_FILES=	dbi2omega htdig2omega mbox2omega
 
 ICONV_CONFIGURE_ON=	ac_cv_search_iconv=${ICONV_LIB}
@@ -50,10 +45,10 @@ post-patch:
 			${WRKSRC}/Makefile.in
 
 post-install-DOCS-on:
-	cd ${WRKSRC}/ && ${INSTALL_DATA} ${MORE_PORTDOCS} ${STAGEDIR}${DOCSDIR}/
+	cd ${WRKSRC}/ && ${INSTALL_DATA} AUTHORS ChangeLog NEWS README TODO ${STAGEDIR}${DOCSDIR}/
 
 post-install-EXAMPLES-on:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/
-	cd ${WRKSRC}/ && ${INSTALL_DATA} ${PORTEXAMPLES} ${STAGEDIR}${EXAMPLESDIR}/
+	${INSTALL_DATA} ${WRKSRC}/omega.conf ${STAGEDIR}${EXAMPLESDIR}/
 
 .include <bsd.port.mk>

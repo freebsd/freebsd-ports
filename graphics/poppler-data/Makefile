@@ -1,8 +1,7 @@
 # $FreeBSD$
-#   $MCom: ports/graphics/poppler-data/Makefile,v 1.5 2010/11/17 15:12:27 kwm Exp $
 
 PORTNAME=	poppler-data
-PORTVERSION=	0.4.7
+PORTVERSION=	0.4.8
 CATEGORIES=	graphics
 MASTER_SITES=	http://poppler.freedesktop.org/
 

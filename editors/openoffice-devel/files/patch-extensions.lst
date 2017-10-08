@@ -1,12 +1,16 @@
 --- extensions.lst.orig	2015-10-24 06:26:40 UTC
 +++ extensions.lst
-@@ -37,6 +37,14 @@
+@@ -37,6 +37,18 @@
  # [ language=all && ENABLE_XXX ]
  #    file://XXX.oxt
  
 +# PDF Import extension
 +[ language=all && ENABLE_PDFIMPORT=YES ]
 +    file://pdfimport/pdfimport.oxt
++
++# Report Builder extension
++[ language=all && ENABLE_REPORTBUILDER=YES ]
++    file://reportbuilder/reportbuilder.oxt
 +
 +# Wiki Publisher extension
 +[ language=all && ENABLE_MEDIAWIKI=YES ]

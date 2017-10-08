@@ -32,10 +32,7 @@ GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USES=		libtool php:build tar:xz
 
-PLIST_FILES=	lib/php/${PHP_EXT_DIR}/xapian.a \
-		lib/php/${PHP_EXT_DIR}/xapian.so
-PORTDATA=	*
-PORTDOCS=	*
+PLIST_SUB=	PHP_EXT_DIR=${PHP_EXT_DIR} PHP_MAJOR_VER=${PHP_VER:C|.$||}
 
 .include <bsd.port.pre.mk>
 

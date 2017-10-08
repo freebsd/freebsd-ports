@@ -1,6 +1,6 @@
-DSBBatmon is a GTK+ battery monitor for FreeBSD. It displays the battery's
+DSBBatmon is a Qt battery monitor for FreeBSD. It displays the battery's
 current status, capacity, and remaining time. It warns the user if the battery
-capacity is low, and can automatically shut down the system if a critical
-capacity is reached.
+capacity is low, and can automatically shut down or suspend the system if a
+critical capacity is reached.
 
 WWW: http://freeshell.de/~mk/projects/dsbbatmon.html

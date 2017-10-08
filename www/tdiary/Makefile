@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tdiary
-PORTVERSION=	5.0.5
-PORTREVISION=	1
+PORTVERSION=	5.0.6
 CATEGORIES?=	www ruby
 MASTER_SITES=	https://github.com/tdiary/tdiary-core/releases/download/v${PORTVERSION}/
 DISTNAME=	${PORTNAME}-full-v${PORTVERSION}
@@ -20,7 +19,7 @@ RUN_DEPENDS=	rubygem-bundler>=1.14.6:sysutils/rubygem-bundler \
 		rubygem-hikidoc>=0.1.0:textproc/rubygem-hikidoc \
 		rubygem-mail>=2.6.6:mail/rubygem-mail \
 		rubygem-rack16>=1.6.8:www/rubygem-rack16 \
-		rubygem-rake>=12.0.0:devel/rubygem-rake
+		rubygem-rake>=12.1.0:devel/rubygem-rake
 
 USES=		shebangfix
 USE_RUBY=	yes
@@ -81,7 +80,7 @@ pre-patch:
 	@${RM} ${WRKSRC}/tdiary.gemspec
 	@${RM} ${WRKSRC}/tmp/.gitkeep
 	@${RM} -r ${WRKSRC}/.bundle
-	@${RM} -r ${WRKSRC}/misc/lib/bundler-1.14.6
+	@${RM} -r ${WRKSRC}/misc/lib/bundler-1.15.4
 	@${RM} -r ${WRKSRC}/public
 	@${RM} -r ${WRKSRC}/spec
 	@${RM} -r ${WRKSRC}/test

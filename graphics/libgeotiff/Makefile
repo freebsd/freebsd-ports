@@ -33,6 +33,4 @@ INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 USES=		jpeg libtool
 
-PORTDATA=	*
-
 .include <bsd.port.mk>

@@ -116,6 +116,7 @@ lib/libWUtil.so.5
 lib/libWUtil.so.5.0.0
 libdata/pkgconfig/WINGs.pc
 libdata/pkgconfig/WUtil.pc
+libdata/pkgconfig/wmlib.pc
 share/WINGs/Images.tiff
 share/WINGs/Images.xpm
 share/WINGs/defaultIcon.tiff

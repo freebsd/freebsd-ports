@@ -8,7 +8,7 @@ CATEGORIES=	www pear
 MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde Facebook client
 
-USES=	horde
+USES=	horde php
 USE_PHP=	json simplexml
 USE_HORDE_RUN=	Horde_Exception \
 		Horde_Http \

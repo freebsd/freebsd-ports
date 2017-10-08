@@ -3,7 +3,7 @@
 
 PORTNAME=	pootle
 PORTVERSION=	2.5.1.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	textproc
 MASTER_SITES=	CHEESESHOP
 DISTNAME=	Pootle-${PORTVERSION}
@@ -23,6 +23,7 @@ RUN_DEPENDS=	translate-toolkit>=1.11.0:textproc/translate-toolkit \
 		${PYTHON_PKGNAMEPREFIX}south>=0.7.6:databases/py-south \
 		${PYTHON_PKGNAMEPREFIX}django-voting>=0.1:www/py-django-voting \
 		${PYTHON_PKGNAMEPREFIX}simplejson>=0:devel/py-simplejson \
+		${PYTHON_PKGNAMEPREFIX}argparse>=0:devel/py-argparse \
 		${PYTHON_PKGNAMEPREFIX}diff-match-patch>=0:textproc/py-diff-match-patch
 # actually diff-match-patch is a dependency of translate-toolkit,
 # but only this port uses it.

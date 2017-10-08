@@ -4,7 +4,7 @@
 PORTNAME=		aseprite
 PORTVERSION=		1.1.13
 DISTVERSIONPREFIX=	v
-PORTREVISION=		3
+PORTREVISION=		4
 CATEGORIES=		graphics
 
 MAINTAINER=		yuri@rawbw.com
@@ -21,7 +21,8 @@ LIB_DEPENDS=		libfreetype.so:print/freetype2 \
 			libpng.so:graphics/png \
 			libgif.so:graphics/giflib \
 			libcurl.so:ftp/curl \
-			libtinyxml.so:textproc/tinyxml
+			libtinyxml.so:textproc/tinyxml \
+			libcmark.so:textproc/cmark
 
 BROKEN_aarch64=		fails to compile: undefined reference to __va_copy
 BROKEN_armv6=		fails to compile: undefined reference to __va_copy
@@ -37,7 +38,6 @@ USE_GITHUB=		yes
 GH_TUPLE=		aseprite:clip:926e3cf:clip/src/clip
 GH_TUPLE+=		aseprite:flic:65a6072:flic/src/flic
 GH_TUPLE+=		aseprite:gtest:d63c625:gtest/third_party/gtest
-GH_TUPLE+=		aseprite:cmark:5255e2d:cmark/third_party/cmark
 GH_TUPLE+=		aseprite:simpleini:0687587:simpleini/third_party/simpleini
 GH_TUPLE+=		aseprite:duktape:0de771c:duktape/third_party/duktape
 GH_TUPLE+=		aseprite:undo:f39b188:undo/src/undo
@@ -71,12 +71,9 @@ post-extract:
 	@${MKDIR} ${WRKSRC}/third_party/pixman/pixman
 	@${CP} `${MAKE} -C ${PORTSDIR}/x11/pixman -V WRKSRC`/pixman/pixman-combine32.h \
 		${WRKSRC}/third_party/pixman/pixman/
-	@${REINPLACE_CMD} -e 's|$${LIB_INSTALL_DIR}/pkgconfig|${PREFIX}/libdata/pkgconfig|' \
-		${WRKDIR}/cmark-*/src/CMakeLists.txt
-	@${REINPLACE_CMD} -e 's|$${CMAKE_INSTALL_MANDIR}|${PREFIX}/man|' \
-		${WRKDIR}/cmark-*/man/CMakeLists.txt
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|1.1.6-dev|${PORTVERSION}|' ${WRKSRC}/src/config.h ${WRKSRC}/data/gui.xml
+	@${REINPLACE_CMD} 's|libcmark_static|cmark|' ${WRKSRC}/src/app/CMakeLists.txt
 
 .include <bsd.port.mk>

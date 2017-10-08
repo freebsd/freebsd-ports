@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	www
-PORTVERSION=	0.3.1
+PORTVERSION=	1.1.1
 CATEGORIES=	www
 PKGNAMEPREFIX=	go-
 
@@ -15,26 +15,24 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		go
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	nbari:DEFAULT,violetear
-GH_PROJECT=	violetear:violetear
-GH_TAGNAME=	2.2.0:violetear
-
-GO_PKGNAME=	github.com/${GH_ACCOUNT}/${GH_PROJECT}
+GH_ACCOUNT=	nbari:DEFAULT
+GH_TUPLE=	golang:crypto:847319b:crypto/src/golang.org/x/crypto
+GH_SUBDIR=	src/github.com/nbari/${PORTNAME}
 
 STRIP=		# stripping can break go binaries
 
 PLIST_FILES=	bin/www
 
 post-patch:
-	@${LN} -sf ${WRKDIR}/${GH_PROJECT_violetear}-${GH_TAGNAME_violetear} \
-		${GO_WRKDIR_SRC}/github.com/${GH_ACCOUNT_violetear}/${GH_PROJECT_violetear}
+	@${MKDIR} ${WRKSRC}/src/golang.org
+	@${LN} -sf ${LOCALBASE}/share/go/src/golang.org/x ${WRKSRC}/src/golang.org/x
 
 do-build:
-	@(cd ${GO_WRKSRC} && \
-		${SETENV} ${BUILD_ENV} GOPATH=${WRKDIR} go build -ldflags \
-			"-X main.version=${PORTVERSION}" -o www cmd/www/main.go)
+	@cd ${WRKSRC}/src/github.com/${GH_ACCOUNT}/${GH_PROJECT}; \
+	${SETENV} ${BUILD_ENV} GOPATH=${WRKSRC} go build -ldflags \
+	"-s -w" -o www;
 
 do-install:
-	${INSTALL_PROGRAM} ${GO_WRKSRC}/www ${STAGEDIR}${PREFIX}/bin/www
+	${INSTALL_PROGRAM} ${WRKSRC}/www ${STAGEDIR}${PREFIX}/bin/www
 
 .include <bsd.port.mk>

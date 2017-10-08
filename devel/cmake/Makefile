@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	cmake
-DISTVERSION=	3.9.2
-PORTREVISION=	1
+# Remember to update devel/cmake-doc and devel/cmake-gui as well.
+DISTVERSION=	3.9.3
 CATEGORIES=	devel
 MASTER_SITES=	https://www.cmake.org/files/v${PORTVERSION:R}/
 

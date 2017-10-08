@@ -12,9 +12,9 @@ COMMENT=	Crop and stitch pages from PDF to larger, single-page PDF
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	textproc/p5-YAML>=1.10:textproc/p5-YAML \
-	devel/p5-File-LibMagic>=1.10:devel/p5-File-LibMagic \
-	textproc/p5-PDF-API2>=2.030:textproc/p5-PDF-API2
+RUN_DEPENDS=	p5-YAML>=1.10:textproc/p5-YAML \
+		p5-File-LibMagic>=1.10:devel/p5-File-LibMagic \
+		p5-PDF-API2>=2.030:textproc/p5-PDF-API2
 
 USES=		perl5
 USE_GITHUB=	yes

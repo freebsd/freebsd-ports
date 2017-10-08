@@ -68,7 +68,6 @@
     SUBDIR += psearch
     SUBDIR += py-pytoport
     SUBDIR += py-skog
-    SUBDIR += redports-node
     SUBDIR += symports
     SUBDIR += synth
     SUBDIR += tinderbox

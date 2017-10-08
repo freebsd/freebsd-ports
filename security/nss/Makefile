@@ -3,6 +3,7 @@
 
 PORTNAME=	nss
 PORTVERSION=	3.33
+PORTREVISION=	1
 #DISTVERSIONSUFFIX=	-with-ckbi-1.98
 CATEGORIES=	security
 MASTER_SITES=	MOZILLA/security/${PORTNAME}/releases/${DISTNAME:tu:C/[-.]/_/g}_RTM/src
@@ -55,6 +56,10 @@ MAKE_ENV+=	BUILD_OPT=1
 BINS=		${DIST}/${OPSYS}${OSREL}_OPT.OBJ
 .else
 BINS=		${DIST}/${OPSYS}${OSREL}_DBG.OBJ
+.endif
+
+.if ${OPSYS} == FreeBSD && ${ARCH} == i386
+USES+=		compiler:c++14-lang # gcm.h
 .endif
 
 .if ${OPSYS} == FreeBSD && ${ARCH} == amd64

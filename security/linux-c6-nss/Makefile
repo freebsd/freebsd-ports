@@ -3,7 +3,7 @@
 
 PORTNAME=	nss
 PORTVERSION=	3.28.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security linux
 LIB_DISTNAMES=	${DISTNAME} \
 		${PORTNAME}-util-${PORTVERSION}-1.el6_9 \
@@ -18,7 +18,7 @@ COMMENT=	Network Security Services (Linux CentOS ${LINUX_DIST_VER})
 LICENSE=	MPL
 
 DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
-RPMVERSION=	3.el6_9
+RPMVERSION=	4.el6_9
 USES=		linux:c6
 USE_LDCONFIG=	yes
 USE_LINUX=	nspr sqlite3

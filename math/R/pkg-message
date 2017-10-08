@@ -1,14 +1,14 @@
 
 ========================================================================
 On 11.1 and later, there is a problem downloading R packages when
-gfortran is chosen as the fortran compiler.
+R is built with gfortran.
 
 Use either of these workarounds until a permanent solution is found.
 
-1. If you are on an amd64 system, you can use flang as the fortran
-   compiler.
+1. If you are on an amd64 system, use flang to build R.  R is now built
+   by default using flang on amd64.
 
-2. If you choose gfortran as the fortran compiler, you can add
+2. If you use gfortran to build R, add
 
    options(download.file.method="wget")
 

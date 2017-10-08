@@ -12,6 +12,7 @@ COMMENT=	Simple Open Source CMS
 
 LICENSE=	GPLv2
 
+USES=		php
 USE_PHP=	mysql tokenizer gd
 
 NO_BUILD=	yes

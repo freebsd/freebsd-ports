@@ -16,6 +16,8 @@ LICENSE=	BSD2CLAUSE
 LIB_DEPENDS=	libefl.so:devel/efl \
 		libxcb-keysyms.so:x11/xcb-util-keysyms
 
+BROKEN_sparc64=		Does not install on sparc64: signal 10
+
 GNU_CONFIGURE=	yes
 USES=		alias autoreconf desktop-file-utils gettext-tools \
 		gmake iconv libtool pathfix pkgconfig tar:xz
@@ -48,10 +50,4 @@ post-patch:
 		${WRKSRC}/src/bin/Makefile.mk \
 		${WRKSRC}/src/modules/Makefile_cpufreq.mk
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "sparc64"
-BROKEN=		Does not install on sparc64: signal 10
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

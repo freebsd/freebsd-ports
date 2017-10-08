@@ -546,6 +546,8 @@ libdata/pkgconfig/%%PORTNAME%%.pc
 %%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a143/fixnums.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a144.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a144/flonums.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a145.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a145/assumptions.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a151.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a151/bitwise.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a17.scm
@@ -652,6 +654,7 @@ libdata/pkgconfig/%%PORTNAME%%.pc
 %%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/142.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/143.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/144.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/145.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/151.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/17.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/2.scm

@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	audacious
-PORTVERSION=	3.8.2
-PORTREVISION=	2
+PORTVERSION=	3.9
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://distfiles.audacious-media-player.org/
 
@@ -12,17 +11,16 @@ COMMENT=	Lightweight and versatile audio player
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib \
-	libfreetype.so:print/freetype2 \
+LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 	libfontconfig.so:x11-fonts/fontconfig
 
 CONFLICTS_INSTALL=	audacious-gtk3-3.*
 
 SUB_FILES=	pkg-message
 
-GNU_CONFIGURE=	yes
 USES=		compiler:c++11-lib desktop-file-utils gettext-tools gmake \
 	localbase pkgconfig tar:bzip2
+GNU_CONFIGURE=	yes
 USE_XORG=	x11 sm
 USE_GNOME=	gtk20 glib20 cairo
 USE_LDCONFIG=	yes

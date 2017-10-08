@@ -15,8 +15,10 @@ LICENSE=	GPLv3
 
 CPE_VENDOR=	gnu
 
+CONFLICTS=	cfengine-2* cfengine3[0-9]-* cfengine31[02-9]-*
 .if !defined(MASTERDIR)
 PKGNAMESUFFIX=	311
+CONFLICTS+=	cfengine-3.*
 .endif
 
 FETCH_BEFORE_ARGS=	-o ${DISTDIR}/${DISTFILES}

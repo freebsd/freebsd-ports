@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	flightgear
-PORTVERSION=	2017.1.3
-PORTREVISION=	9
+PORTVERSION=	2017.3.1
 CATEGORIES=	games
 MASTER_SITES=	SF/flightgear/release-${PORTVERSION:R}
 
@@ -48,7 +47,7 @@ DBUS_CMAKE_ON=	-DUSE_DBUS:BOOL=ON
 DBUS_CMAKE_OFF=	-DUSE_DBUS:BOOL=OFF
 QT5_CMAKE_ON=	-DENABLE_QT:BOOL=ON
 QT5_CMAKE_OFF=	-DENABLE_QT:BOOL=OFF
-QT5_USE=	QT5=core,buildtools,gui,qmake,widgets
+QT5_USE=	QT5=core,buildtools,gui,qmake,qml,widgets
 
 .include <bsd.port.pre.mk>
 

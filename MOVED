@@ -5456,7 +5456,6 @@ sysutils/slmon||2014-02-27|Has expired: Broken for more than 6 months
 www/trac-revtree||2014-02-27|Has expired: Broken for more than 6 months
 security/crack||2014-02-27|Has expired: Broken for more than 6 months
 sysutils/graphicboot||2014-02-27|Has expired: Broken for more than 6 months, upstream disappeared
-graphics/kgraphviewer||2014-02-27|Has expired: Broken for more than 6 months
 sysutils/ckl||2014-02-27|Has expired: Broken for more than 6 months
 japanese/trac||2014-02-27|Has expired: Broken for more than 6 months
 lang/opa||2014-02-27|Has expired: Broken for more than 6 months
@@ -7822,7 +7821,6 @@ net/linc||2015-09-27|Has expired: Last release in 2003, not used by anything any
 net/linc-reference||2015-09-27|Has expired: Last release in 2003, not used by anything anymore
 x11/xlogout||2015-09-27|Has expired: Useless cruft from 1989
 net/rubygem-amq-client||2015-10-01|Has expired: Deprecated by Upstream. It is part of net/rubygem-amqp codebase now
-emulators/ppsspp-devel|emulators/ppsspp|2015-10-06|Out of date: use emulators/ppsspp for now
 ports-mgmt/bpm||2015-10-10|No support for pkg
 www/moodle27||2015-10-11|Has expired: Please upgrade to moodle28 or moodle29
 graphics/epeg|devel/efl|2015-10-11|Has expired: Merged into devel/efl
@@ -9526,7 +9524,7 @@ x11-toolkits/kirigami||2017-08-28|Not needed by anything
 x11-toolkits/kirigami2|x11-toolkits/kf5-kirigami2|2017-08-28|Became an official framework
 www/speedtest-mini||2017-09-03|Has expired: Discontinued upstream (on June 30, 2017)
 devel/rubygem-sequel3|devel/rubygem-sequel|2017-09-03|Has expired: Use devel/rubygem-sequel instead
-audio/tomahawk||2017-09-03|Has expired: Project is dead upstream.
+audio/tomahawk||2017-09-03|Has expired: Project is dead upstream
 mail/rubygem-larch||2017-09-03|Has expired: Unmaintained by upstream, no changes since 2013
 devel/rubygem-sidekiq4|devel/rubygem-sidekiq|2017-09-03|Has expired: Use devel/rubygem-sidekiq instead
 devel/rubygem-webpacker1-rails5|devel/rubygem-webpacker-rails5|2017-09-03|Has expired: Use devel/rubygem-webpacker-rails5 instead
@@ -9551,3 +9549,36 @@ devel/libexecinfo||2017-09-22|Is present in the base system of all supported rel
 games/ember||2017-09-23|Removed, it is BROKEN and no longer developed since 2014
 ports-mgmt/packagekit-qt4||2017-09-28|Has expired: Ignored for more than 5 years
 ports-mgmt/kpackagekit||2017-09-28|Has expired: Skipped for more than 5 years
+dns/rubygem-public_suffix2|dns/rubygem-public_suffix|2017-09-30|Has expired: Use dns/rubygem-public_suffix instead
+www/rubygem-deckar01-task_list1|www/rubygem-deckar01-task_list|2017-09-30|Has expired: Use www/rubygem-deckar01-task_list instead
+devel/py-twisted152|devel/py-twisted|2017-09-30|Has expired: Use devel/py-twisted instead
+devel/py-twistedCore|devel/py-twisted|2017-09-30|Has expired: Use devel/py-twisted instead
+devel/py-twistedFlow|devel/py-twisted|2017-09-30|Has expired: Use devel/py-twisted instead
+devel/py-twistedRunner|devel/py-twisted|2017-09-30|Has expired: Use devel/py-twisted instead
+dns/py-twistedNames|devel/py-twisted|2017-09-30|Has expired: Use devel/py-twisted instead
+mail/py-twistedMail|devel/py-twisted|2017-09-30|Has expired: Use devel/py-twisted instead
+net/py-twistedPair|devel/py-twisted|2017-09-30|Has expired: Use devel/py-twisted instead
+net-im/py-twistedWords|devel/py-twisted|2017-09-30|Has expired: Use devel/py-twisted instead
+news/py-twistedNews|devel/py-twisted|2017-09-30|Has expired: Use devel/py-twisted instead
+security/py-twistedConch|devel/py-twisted|2017-09-30|Has expired: Use devel/py-twisted instead
+textproc/py-twistedLore|devel/py-twisted|2017-09-30|Has expired: Use devel/py-twisted instead
+www/py-twistedWeb|devel/py-twisted|2017-09-30|Has expired: Use devel/py-twisted instead
+www/py-twistedWeb2|devel/py-twisted|2017-09-30|Has expired: Use devel/py-twisted instead
+devel/libclaw||2017-09-30|Has expired: useless for anything apart from removed games/plee-the-bear
+ports-mgmt/redports-node||2017-10-01|Has expired: Upstream is dead so port is not useable anymore.
+sysutils/py3-iocage|sysutils/iocage|2017-10-02|Port was renamed
+audio/ventrilo-server||2017-10-04|No more freebsd distfiles
+net-im/ayttm||2017-10-04|Non functional
+graphics/diacanvas2||2017-10-04|GNOME2 library unused anymore
+sysutils/bacula5-client-static|sysutils/bacula-client-static|2017-10-05|Has expired: No upstream commits since 2013. Use sysutils/bacula-server
+sysutils/bacula5-client|sysutils/bacula-client|2017-10-05|Has expired: No upstream commits since 2013. Use sysutils/bacula-server
+sysutils/bacula5-bat|sysutils/bacula-bat|2017-10-05|Has expired: No upstream commits since 2013. Use sysutils/bacula-server
+sysutils/bacula5-server|sysutils/bacula-server|2017-10-05|Has expired: No upstream commits since 2013. Use sysutils/bacula-server
+net-mgmt/nagios-check_bacula5|net-mgmt/nagios-check_bacula|2017-10-05|Has expired: No upstream commits since 2013. Use sysutils/bacula-server
+sysutils/bacula5-docs|sysutils/bacula-docs|2017-10-05|Has expired: No upstream commits since 2013. Use sysutils/bacula-docs
+editors/vanubi||2017-10-07|Has expired: Vanubi is no longer actively maintained
+converters/py-bencode|converters/py-bencode.py|2017-10-07|Switch to a fork that supports both python2 and python3
+japanese/jd||2017-10-08|Does not build and 2ch.net API has changed, so would not work anyway
+devel/vtable-dumper|devel/abi-compliance-checker|2017-10-08|Use abi-compliance-checker, which contains this program in newer version
+graphics/py-graph-dot||2017-10-08|Has expired: Unfetchable for more than six months (google code has gone away)
+graphics/py-graph||2017-10-08|Removed, depends on graphics/py-graph-dot

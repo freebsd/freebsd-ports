@@ -14,7 +14,7 @@ LICENSE=	GPLv2
 
 USE_PHP=	mysqli filter mbstring iconv xml zlib gd exif
 
-USES=		cpe
+USES=		cpe php
 NO_BUILD=	yes
 PLIST_SUB=	WWWOWN="${WWWOWN}" WWWGRP="${WWWGRP}"
 SUB_FILES=	pkg-message

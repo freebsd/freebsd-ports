@@ -97,7 +97,7 @@ lib/critcl%%VER%%/critcl_c/tkstubs_noconst.c
 lib/critcl%%VER%%/license.terms
 lib/critcl%%VER%%/pkgIndex.tcl
 lib/critcl_md5c0.12/critcl-rt.tcl
-lib/critcl_md5c0.12/freebsd-amd64/md5c.so
+lib/critcl_md5c0.12/freebsd-%%ARCH%%/md5c.so
 lib/critcl_md5c0.12/license.terms
 lib/critcl_md5c0.12/pkgIndex.tcl
 lib/critcl_md5c0.12/teapot.txt
