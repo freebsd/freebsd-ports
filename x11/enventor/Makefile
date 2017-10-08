@@ -13,6 +13,8 @@ COMMENT=	Dynamic EDC Editor
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		fails to build
+
 LIB_DEPENDS=	libefl.so:devel/efl
 
 USES=		compiler:c11 desktop-file-utils gmake libtool pkgconfig \
