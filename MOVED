@@ -9580,3 +9580,5 @@ editors/vanubi||2017-10-07|Has expired: Vanubi is no longer actively maintained
 converters/py-bencode|converters/py-bencode.py|2017-10-07|Switch to a fork that supports both python2 and python3
 japanese/jd||2017-10-08|Does not build and 2ch.net API has changed, so would not work anyway
 devel/vtable-dumper|devel/abi-compliance-checker|2017-10-08|Use abi-compliance-checker, which contains this program in newer version
+graphics/py-graph-dot||2017-10-08|Has expired: Unfetchable for more than six months (google code has gone away)
+graphics/py-graph||2017-10-08|Removed, depends on graphics/py-graph-dot
