@@ -9578,3 +9578,4 @@ net-mgmt/nagios-check_bacula5|net-mgmt/nagios-check_bacula|2017-10-05|Has expire
 sysutils/bacula5-docs|sysutils/bacula-docs|2017-10-05|Has expired: No upstream commits since 2013. Use sysutils/bacula-docs
 editors/vanubi||2017-10-07|Has expired: Vanubi is no longer actively maintained
 converters/py-bencode|converters/py-bencode.py|2017-10-07|Switch to a fork that supports both python2 and python3
+japanese/jd||2017-10-08|Does not build and 2ch.net API has changed, so would not work anyway
