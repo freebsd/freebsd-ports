@@ -14,6 +14,8 @@ COMMENT=	Open source distributed database management system
 LICENSE=	APACHE20
 
 BROKEN=		crash with current OpenJDK
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2017-11-09
 
 JAVA_VERSION=	1.7
 JAVA_VENDOR=	openjdk

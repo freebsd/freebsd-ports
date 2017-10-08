@@ -12,6 +12,8 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Interface for access Samba filesystem with libsmclient.so
 
 BROKEN=		no member named close in struct _SMBCCTX
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2017-11-09
 
 BUILD_DEPENDS=	p5-Test-Simple>=0:devel/p5-Test-Simple
 

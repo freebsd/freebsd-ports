@@ -10,6 +10,8 @@ MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	On-access anti-virus filter for Samba
 
 BROKEN=		fails to configure with samba 4
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2017-11-09
 
 PATCH_DEPENDS=	smbclient:${SAMBAPORT}
 BUILD_DEPENDS=	${NONEXISTENT}:${SAMBAPORT}:configure
