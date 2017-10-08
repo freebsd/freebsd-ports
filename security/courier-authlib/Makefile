@@ -175,7 +175,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|^\(DEFAULTOPTIONS=\)""$$|\1"wbnodsn=1"|' \
 		-e 's|@ALLMODULES@|authuserdb authvchkpw authpam authldap authmysql authpgsql|' \
 		${WRKSRC}/authdaemonrc.in
-	@${REINPLACE_CMD} -e 's:@EXPECT@:${SETENV} expect:' \
+	@${REINPLACE_CMD} -e 's:^#! @EXPECT@:#!${LOCALBASE}/bin/expect:' \
 		${WRKSRC}/authsystem.passwd.in
 
 pre-configure:
