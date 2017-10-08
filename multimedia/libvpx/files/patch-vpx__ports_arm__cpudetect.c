@@ -26,7 +26,7 @@
 +
 +  if (sysctl(mib, nitems(mib), auxv, &len, NULL, 0) != -1) {
 +    for (size_t i = 0; i < nitems(auxv); i++)
-+      if (auxv[i].a_type == (long)type)
++      if ((unsigned long)auxv[i].a_type == type)
 +        return auxv[i].a_un.a_val;
 +  }
 +  return 0;
