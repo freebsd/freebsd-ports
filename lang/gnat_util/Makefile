@@ -14,6 +14,8 @@ COMMENT=	Library used to build GNAT tools such as ASIS
 LICENSE=	GPLv3 GPLv3RLE
 LICENSE_COMB=	multi
 
+BROKEN=		bad distinfo
+
 USES=		ada tar:bzip2
 NO_MTREE=	yes
 DISTINFO_FILE=	${.CURDIR}/../${ADAXX}-aux/distinfo
