@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rainloop
-PORTVERSION=	1.11.2
-PORTREVISION=	1
+PORTVERSION=	1.11.3
 CATEGORIES=	mail www
 MASTER_SITES=	https://github.com/RainLoop/rainloop-webmail/releases/download/v${PORTVERSION}/
 
