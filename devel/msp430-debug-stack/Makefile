@@ -18,6 +18,8 @@ COMMENT=	TI MSP430 debugging interface library
 
 LICENSE=	BSD3CLAUSE
 
+BROKEN=		fails to package
+
 LIB_DEPENDS=	libboost_filesystem.so:devel/boost-libs \
 		libhidapi.so:comms/hidapi
 

@@ -28,9 +28,6 @@ GNU_CONFIGURE=	yes
 USE_GNOME=	libxml2
 USES=		gmake gnome iconv pkgconfig tar:bzip2
 
-PLIST_FILES=	bin/ices
-PORTDATA=	*
-
 ALSA_CONFIGURE_ENABLE=	alsa
 ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
 

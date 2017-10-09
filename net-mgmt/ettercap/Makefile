@@ -37,8 +37,6 @@ USES=		bison cmake:outsource cpe iconv localbase:ldflags pkgconfig
 DOCS=		AUTHORS CHANGELOG README README.BINARIES README.BUGS \
 		README.GIT README.PLATFORMS THANKS TODO TODO.TESTING \
 		doc/capture doc/decoders doc/dissectors doc/plugins doc/threads
-PORTDATA=	*
-PORTDOCS=	*
 
 CPE_VENDOR=	${PORTNAME}_project
 

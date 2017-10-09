@@ -35,6 +35,7 @@ share/pixmaps/sayonara.png
 %%DATADIR%%/translations/icons/fr.png
 %%DATADIR%%/translations/icons/hu.png
 %%DATADIR%%/translations/icons/it.png
+%%DATADIR%%/translations/icons/nl.png
 %%DATADIR%%/translations/icons/pl.png
 %%DATADIR%%/translations/icons/pt.png
 %%DATADIR%%/translations/icons/ro.png
@@ -49,6 +50,7 @@ share/pixmaps/sayonara.png
 %%DATADIR%%/translations/sayonara_lang_fr.qm
 %%DATADIR%%/translations/sayonara_lang_hu.qm
 %%DATADIR%%/translations/sayonara_lang_it.qm
+%%DATADIR%%/translations/sayonara_lang_nl.qm
 %%DATADIR%%/translations/sayonara_lang_pl.qm
 %%DATADIR%%/translations/sayonara_lang_pt.qm
 %%DATADIR%%/translations/sayonara_lang_ro.qm

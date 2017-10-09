@@ -13,6 +13,8 @@ LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BROKEN=		Doesn't build after cairomm was updated to 1.12.
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2017-11-09
 
 USES=		compiler:c++11-lib gettext gmake libarchive pkgconfig shebangfix
 USE_GNOME=	gtkmm30 intltool libxslt

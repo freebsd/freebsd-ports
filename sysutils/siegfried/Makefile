@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=		siegfried
-PORTVERSION=		1.7.5
+PORTVERSION=		1.7.6
 DISTVERSIONPREFIX=	v
 CATEGORIES=		sysutils
 

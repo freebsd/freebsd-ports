@@ -148,7 +148,7 @@
     SUBDIR += php71-recode
     SUBDIR += psiconv
     SUBDIR += py-bcode
-    SUBDIR += py-bencode
+    SUBDIR += py-bencode.py
     SUBDIR += py-bencoder
     SUBDIR += py-better-bencode
     SUBDIR += py-bsdconv

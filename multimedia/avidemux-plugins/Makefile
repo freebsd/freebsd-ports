@@ -11,6 +11,8 @@ COMMENT=	Simple GUI based video editor (Plugins)
 
 LIB_DEPENDS=	libADM6avutil.so.54:multimedia/avidemux
 
+BROKEN=		fails to build
+
 MASTERDIR=	${.CURDIR}/../avidemux
 PLIST=		${.CURDIR}/pkg-plist
 

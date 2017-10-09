@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	vapoursynth
-PORTVERSION=	R38
-PORTREVISION=	2
+PORTVERSION=	R39
 CATEGORIES=	multimedia
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -54,7 +53,7 @@ FRAME_GUARD_DESC=		Check integrity after each filter
 FRAME_GUARD_CONFIGURE_ENABLE=	guard-pattern
 
 # VSSCRIPT or REMOVEGRAIN
-SIMD_BUILD_DEPENDS=		yasm:devel/yasm
+SIMD_BUILD_DEPENDS=		nasm:devel/nasm
 SIMD_CONFIGURE_ENABLE=		x86-asm
 
 # COMPS group

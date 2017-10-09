@@ -12,7 +12,8 @@ COMMENT=	Xfce file manager
 
 LICENSE=	GPLv2 LGPL20
 LICENSE_COMB=	multi
-LICENSE_FILE=	${WRKSRC}/COPYING ${WRKSRC}/COPYING.LIB
+LICENSE_FILE_GPLv2=	${WRKSRC}/COPYING
+LICENSE_FILE_LGPL20=	${WRKSRC}/COPYING.LIB
 
 LIB_DEPENDS=	libtumbler-1.so:deskutils/xfce4-tumbler \
 		libdbus-1.so:devel/dbus \
@@ -63,7 +64,7 @@ CONFIGURE_ARGS+=--enable-gio-unix \
 		--enable-dbus
 
 post-patch:
-	${REINPLACE_CMD} -e 's|internet-mail|emblem-mail|' \
+	@${REINPLACE_CMD} -e 's|internet-mail|emblem-mail|' \
 		${WRKSRC}/plugins/thunar-sendto-email/thunar-sendto-email.desktop.in.in
 
 .include <bsd.port.mk>

@@ -14,7 +14,6 @@ COMMENT=	Search CPAN using a SQLite database
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
-LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	p5-DBD-SQLite>=0:databases/p5-DBD-SQLite	\
 		p5-File-HomeDir>=0:devel/p5-File-HomeDir \

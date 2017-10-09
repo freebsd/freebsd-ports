@@ -29,8 +29,6 @@ INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 USES=		libtool pathfix
 
-PORTDATA=	*
-
 JASPER_CONFIGURE_ON=	--with-jasper=${LOCALBASE}
 JASPER_LIB_DEPENDS=	libjasper.so:graphics/jasper
 OPENJPEG_CONFIGURE_ON=	--with-openjpeg=${LOCALBASE}

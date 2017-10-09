@@ -18,6 +18,8 @@ LICENSE=	GPLv2
 LICENSE_FILE_GPLv2=	${WRKSRC}/COPYING
 
 BROKEN=		does not build (/usr/local/include/libelf.h:308:8: error: unknown type name 'Elf32_Chdr')
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2017-11-09
 
 LIB_DEPENDS=	libargp.so:devel/argp-standalone \
 		libdw.so:devel/elfutils

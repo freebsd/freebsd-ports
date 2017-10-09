@@ -37,10 +37,6 @@ WRKSRC=		${WRKDIR}/icecast-${PORTVERSION}
 
 DATADIR=	${PREFIX}/share/icecast
 DOCSDIR=	${PREFIX}/share/doc/icecast
-PLIST_FILES=	bin/icecast \
-		etc/icecast.xml.sample
-PORTDATA=	*
-PORTDOCS=	*
 SUB_FILES=	pkg-message
 
 CPE_VENDOR=	xiph

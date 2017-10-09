@@ -18,9 +18,6 @@ NO_BUILD=	yes
 REINPLACE_ARGS=	-i ''
 USES=		perl5 shebangfix zip
 
-PLIST_FILES=	bin/progen bin/tmake
-PORTDATA=	*
-
 SHEBANG_FILES=	bin/progen bin/tmake
 
 post-patch:

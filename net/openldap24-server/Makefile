@@ -65,7 +65,7 @@ BROKEN=			incompatible OpenLDAP version: ${WANT_OPENLDAP_VER}
 .endif
 
 PORTREVISION_CLIENT=	0
-PORTREVISION_SERVER=	1
+PORTREVISION_SERVER=	2
 OPENLDAP_SHLIB_MAJOR=	2
 OPENLDAP_SHLIB_MINOR=	10.8
 OPENLDAP_MAJOR=		${DISTVERSION:R}
@@ -85,6 +85,7 @@ OPTIONS_DEFINE+=	UNIQUE VALSORT SMBPWD SHA2 DYNAMIC_BACKENDS SASL
 OPTIONS_DEFINE+=	LMPASSWD
 OPTIONS_DEFINE+=	OUTLOOK
 OPTIONS_DEFINE+=	LASTBIND
+OPTIONS_DEFINE+=	KQUEUE
 
 OPTIONS_DEFAULT=	MDB SYNCPROV DYNAMIC_BACKENDS
 
@@ -130,6 +131,7 @@ LMPASSWD_DESC=		With LM hash password support (DEPRECATED)
 DYNAMIC_BACKENDS_DESC=	Build dynamic backends
 OUTLOOK_DESC=		Force caseIgnoreOrderingMatch on name attribute (experimental)
 LASTBIND_DESC=		With lastbind overlay
+KQUEUE_DESC=		With kqueue support (experimental)
 .endif
 
 .if defined(CLIENT_ONLY)
@@ -156,6 +158,8 @@ BROKEN=			you have USE_OPENLDAP variable defined either in environment or in mak
 .else
 USE_OPENLDAP=		yes
 WANT_OPENLDAP_VER=	24
+
+LIB_DEPENDS+=		libicudata.so:devel/icu
 
 .if ${PORT_OPTIONS:MGSSAPI} && empty(PORT_OPTIONS:MSASL)
 PORT_OPTIONS+=	SASL
@@ -196,8 +200,9 @@ CONFIGURE_ARGS=		--with-threads=posix \
 			--disable-dependency-tracking \
 			--enable-dynamic
 
-# XXX FreeBSD does not implement O_DSYNC and fdatasync at this time.
+.if ${OSVERSION} < 1101000
 CFLAGS+=		-DMDB_DSYNC=O_SYNC -Dfdatasync=fsync
+.endif
 
 .if ${PORT_OPTIONS:MSASL}
 LIB_DEPENDS+=		libsasl2.so:security/cyrus-sasl2
@@ -500,6 +505,11 @@ CONFIGURE_ARGS+=	--enable-wrappers
 # See http://www.openldap.org/lists/openldap-technical/201211/msg00175.html
 .if ${PORT_OPTIONS:MOUTLOOK}
 EXTRA_PATCHES+=		${FILESDIR}/extrapatch-outlook-servers__slapd__schema_prep.c
+.endif
+
+.if ${PORT_OPTIONS:MKQUEUE}
+EXTRA_PATCHES+=		${FILESDIR}/extrapatch-ITS6300
+USE_AUTOTOOLS=		autoconf
 .endif
 
 # end of client/server specific configuration

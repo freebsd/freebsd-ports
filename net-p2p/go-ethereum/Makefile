@@ -1,11 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	go-ethereum
-PORTVERSION=	1.6.7
+PORTVERSION=	1.7.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net-p2p
 
-MAINTAINER=	enriquefynn@gmail.com
+MAINTAINER=	me@enriquefynn.com
 COMMENT=	Go implementation of the Ethereum y/w paper
 
 LICENSE=	GPLv3
@@ -20,6 +20,7 @@ OPTIONS_DEFINE= DEVTOOLS
 OPTIONS_SUB=	yes
 
 DEVTOOLS_DESC=	Developer tools
+TMPDIR=	${WRKDIR}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/build/bin/geth ${STAGEDIR}${PREFIX}/bin

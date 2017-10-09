@@ -170,6 +170,7 @@
     SUBDIR += gcipher
     SUBDIR += gcr
     SUBDIR += git-crypt
+    SUBDIR += git-remote-gcrypt
     SUBDIR += gnome-gpg
     SUBDIR += gnome-keyring
     SUBDIR += gnome-keyring-sharp

@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	qwt
-PORTVERSION=	6.1.0
-PORTREVISION=	2
+PORTVERSION=	6.1.3
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	SF
 PKGNAMESUFFIX=	6
@@ -25,8 +24,6 @@ PLIST_SUB=	INCLUDEDIR=include/qwt6 \
 OPTIONS_DEFINE=	DOCS
 
 post-patch:
-	@${REINPLACE_CMD} -e 's,qwtAddLibrary(qwt),qwtAddLibrary(qwt6),g' \
-		${WRKSRC}/qwt.prf ${WRKSRC}/textengines/textengines.pri
 	@${REINPLACE_CMD} -e '/INSTALLS.*doc/d' ${WRKSRC}/doc/doc.pro
 
 post-install-DOCS-on:

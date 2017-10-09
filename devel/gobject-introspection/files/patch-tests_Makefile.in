@@ -1,6 +1,6 @@
---- tests/Makefile.in.orig	2011-08-20 13:20:09.000000000 -0400
-+++ tests/Makefile.in	2011-08-20 13:20:26.000000000 -0400
-@@ -820,7 +820,7 @@ everything.h: everything-stamp.h
+--- tests/Makefile.in.orig	2017-04-17 10:01:31 UTC
++++ tests/Makefile.in
+@@ -1257,7 +1257,7 @@ everything.h: everything-stamp.h
  	@true
  
  Everything-1.0.gir: libeverything-1.0.la Makefile
@@ -9,7 +9,7 @@
  	--namespace=Everything --nsversion=1.0 \
  	--libtool="$(LIBTOOL)" \
  	--add-include-path=$(top_builddir) --include=Gio-2.0 \
-@@ -828,7 +828,7 @@ Everything-1.0.gir: libeverything-1.0.la
+@@ -1266,7 +1266,7 @@ Everything-1.0.gir: libeverything-1.0.la Makefile
  	everything.h everything.c
  
  GIMarshallingTests-1.0.gir: libgimarshallingtests-1.0.la Makefile

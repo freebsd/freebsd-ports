@@ -1,0 +1,36 @@
+This fixes the build on FreeBSD 12+ (with clang 5).
+
+src/uri/uri.cpp:25:73: error: lambda capture 'this' is not used [-Werror,-Wunused-lambda-capture]
+    std::transform(m_scheme.begin(), m_scheme.end(), m_scheme.begin(), [this](utility::char_t c) {
+src/uri/uri.cpp:30:67: error: lambda capture 'this' is not used [-Werror,-Wunused-lambda-capture]
+    std::transform(m_host.begin(), m_host.end(), m_host.begin(), [this](utility::char_t c) {
+
+From 70c1b14f39f5d47984fdd8a31fc357ebb5a37851 Mon Sep 17 00:00:00 2001
+From: Force Charlie <ipvb@qq.com>
+Date: Thu, 20 Jul 2017 14:39:21 +0800
+Subject: [PATCH] fix lambda capture 'this' is not used, clang 5.0 on ubuntu
+ 16.04
+
+---
+ Release/src/uri/uri.cpp | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/Release/src/uri/uri.cpp b/Release/src/uri/uri.cpp
+index fb395edf..3157b96a 100644
+--- src/uri/uri.cpp
++++ src/uri/uri.cpp
+@@ -22,12 +22,12 @@ utility::string_t uri_components::join()
+     // canonicalize components first
+ 
+     // convert scheme to lowercase
+-    std::transform(m_scheme.begin(), m_scheme.end(), m_scheme.begin(), [this](utility::char_t c) {
++    std::transform(m_scheme.begin(), m_scheme.end(), m_scheme.begin(), [](utility::char_t c) {
+         return (utility::char_t)tolower(c);
+     });
+ 
+     // convert host to lowercase
+-    std::transform(m_host.begin(), m_host.end(), m_host.begin(), [this](utility::char_t c) {
++    std::transform(m_host.begin(), m_host.end(), m_host.begin(), [](utility::char_t c) {
+         return (utility::char_t)tolower(c);
+     });
+ 

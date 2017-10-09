@@ -8,6 +8,8 @@ CATEGORIES=	math
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Toolkit for for processing natural language morphologies
 
+BROKEN=		fails to build
+
 USE_GITHUB=	yes
 GH_TAGNAME=	c187d5a
 

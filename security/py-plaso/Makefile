@@ -3,6 +3,7 @@
 
 PORTNAME=	plaso
 PORTVERSION=	20170930
+PORTREVISION=	1
 CATEGORIES=	security python
 MASTER_SITES=	https://github.com/log2timeline/plaso/releases/download/${PORTVERSION}/ \
 		LOCAL/antoine
@@ -27,7 +28,7 @@ RUN_DEPENDS=	hachoir-core>=0:devel/hachoir-core \
 		libregf>=a:devel/libregf \
 		libscca>=a:devel/libscca \
 		${PYTHON_PKGNAMEPREFIX}artifacts>=0:security/py-artifacts \
-		${PYTHON_PKGNAMEPREFIX}bencode>=0:converters/py-bencode \
+		${PYTHON_PKGNAMEPREFIX}bencode.py>=0:converters/py-bencode.py \
 		${PYTHON_PKGNAMEPREFIX}binplist>=0:devel/py-binplist \
 		${PYTHON_PKGNAMEPREFIX}construct>=0:devel/py-construct \
 		${PYTHON_PKGNAMEPREFIX}dateutil>=0:devel/py-dateutil \

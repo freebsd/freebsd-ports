@@ -11,7 +11,7 @@ you update your ports collection, before attempting any port upgrades.
 
   If you use portmaster/portupgrade/make to build your ports, please
   uninstall the old netpbm version first before attempting to update to
-  netpbm 10.88.00:
+  netpbm 10.80.00:
 
 	pkg delete -f netpbm
 
