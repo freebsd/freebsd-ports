@@ -19,6 +19,7 @@ LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 
 USES=		autoreconf bdb compiler:gcc-c++11-lib gmake libtool \
 		localbase:ldconfig pkgconfig ssl
+USE_CXXSTD=	c++11
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
