@@ -30,6 +30,47 @@ https://github.com/RPCS3/rpcs3/commit/c1450ad61627
  
  	// Used character: U+00B7 (Middle Dot)
  	switch (msg.sev)
+--- Utilities/mutex.cpp.orig	2017-10-08 20:37:54 UTC
++++ Utilities/mutex.cpp
+@@ -5,8 +5,10 @@
+ #include <vector>
+ #include <algorithm>
+ 
++#if 0
+ // TLS variable for tracking owned mutexes
+ thread_local std::vector<shared_mutex*> g_tls_locks;
++#endif
+ 
+ void shared_mutex::imp_lock_shared(s64 _old)
+ {
+@@ -258,6 +260,7 @@ bool shared_mutex::try_lock_degrade()
+ 	return m_value.compare_and_swap_test(0, c_one - c_min);
+ }
+ 
++#if 0
+ safe_reader_lock::safe_reader_lock(shared_mutex& mutex)
+ 	: m_mutex(mutex)
+ 	, m_is_owned(false)
+@@ -332,3 +335,4 @@ safe_writer_lock::~safe_writer_lock()
+ 
+ 	// TODO: order locks
+ }
++#endif
+--- Utilities/mutex.h.orig	2017-10-08 20:37:54 UTC
++++ Utilities/mutex.h
+@@ -177,6 +177,7 @@ class writer_lock final (public)
+ 	}
+ };
+ 
++#if 0
+ // Safe reader lock. Can be recursive above other safe locks (reader or writer).
+ class safe_reader_lock final
+ {
+@@ -229,3 +230,4 @@ class safe_writer_lock final (public)
+ 
+ 	~safe_writer_lock();
+ };
++#endif
 --- Utilities/types.h.orig	2017-08-24 18:20:18 UTC
 +++ Utilities/types.h
 @@ -32,6 +32,7 @@
