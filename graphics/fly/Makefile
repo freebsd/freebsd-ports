@@ -19,6 +19,8 @@ PLIST_FILES=	bin/fly
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
+CONFLICTS_INSTALL=	concourse-fly
+
 do-build:
 	cd ${WRKSRC} && ${CC} ${CFLAGS} -I${LOCALBASE}/include fly.c -o fly \
 		-L${LOCALBASE}/lib -lgd
