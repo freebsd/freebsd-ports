@@ -5,7 +5,7 @@ PORTNAME=	kafkacat
 PORTVERSION=	1.3.0
 CATEGORIES=	net
 
-MAINTAINER=	xnasx@yandex.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generic command line non-JVM Apache Kafka producer and consumer
 
 LICENSE=	BSD2CLAUSE
