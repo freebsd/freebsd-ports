@@ -51,18 +51,14 @@ DESKTOP_ENTRIES="PPSSPP" \
 		"Game;Emulator;" \
 		""
 
-.if !defined(PKGNAMESUFFIX) || ${PKGNAMESUFFIX:N*-devel}
 OPTIONS_DEFINE=	OLDJOY
-.endif
 OPTIONS_SINGLE=	GUI
 OPTIONS_SINGLE_GUI=	QT5 SDL
 OPTIONS_SLAVE?=	SDL
 OPTIONS_EXCLUDE:=	${OPTIONS_SINGLE_GUI}
 
-.if !defined(PKGNAMESUFFIX) || ${PKGNAMESUFFIX:N*-devel}
 OLDJOY_DESC=	Old joystick support with fixed button mappings (deprecated)
-OLDJOY_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-old-joy
-.endif
+OLDJOY_EXTRA_PATCHES?=	${PATCHDIR}/extra-patch-old-joy
 QT5_USE=	QT5=qmake_build,buildtools_build,linguisttools_build,gui,opengl,widgets
 QT5_CMAKE_BOOL=	USING_QT_UI
 QT5_VARS=	EXENAME=PPSSPPQt
