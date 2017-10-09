@@ -18,6 +18,8 @@ GO_PKGNAME=	github.com/concourse/fly
 
 USES=		go tar:xz
 
+CONFLICTS_INSTALL=	fly
+
 PLIST_FILES=	bin/fly
 
 STRIP=		# stripping can break go binaries
@@ -51,9 +53,7 @@ post-extract:
 do-build:
 	(cd ${WRKDIR}; \
 	${SETENV} ${MAKE_ENV} ${GO_ENV} ${GO_CMD} \
-		install -v -ldflags="-X github.com/concourse/fly/version.Version=${PORTVERSION}" ${GO_TARGET})
-
-.include <bsd.port.mk>
+		'install' -v -ldflags="-X github.com/concourse/fly/version.Version=${PORTVERSION}" ${GO_TARGET})
 
 .PHONY: create-src-archive
 ARCHIVE_DIR=	${DISTDIR}/concourse-${PORTVERSION}
@@ -62,7 +62,9 @@ create-src-archive:
 	git clone --recursive -b v${PORTVERSION} \
 		https://github.com/concourse/concourse.git \
 		${ARCHIVE_DIR}
-	${FIND} ${ARCHIVE_DIR} \( -name ".git*" -o -name "testdata" \) -depth -exec rm -rf {} \;
+	${FIND} ${ARCHIVE_DIR} \( -name ".git*" -o -name "testdata" \) -depth -exec ${RM} -rf {} \;
 	${TAR} -cf - -C ${ARCHIVE_DIR:H} ${ARCHIVE_DIR:T} | ${XZ_CMD} > ${ARCHIVE_DIR}.tar.xz
 	${RM} -rf ${ARCHIVE_DIR}
 	${MAKE} makesum
+
+.include <bsd.port.mk>
