@@ -1,6 +1,6 @@
 --- vpx_ports/arm_cpudetect.c.orig	2017-01-12 20:27:27 UTC
 +++ vpx_ports/arm_cpudetect.c
-@@ -147,6 +147,57 @@ int arm_cpu_caps(void) {
+@@ -147,6 +147,60 @@ int arm_cpu_caps(void) {
    }
    return flags & mask;
  }
@@ -12,6 +12,7 @@
 +#include <sys/param.h>
 +#include <sys/sysctl.h>
 +#include <elf.h>
++#include <errno.h>
 +#include <unistd.h>
 +
 +static unsigned long getauxval(unsigned long type) {
@@ -28,6 +29,8 @@
 +    for (size_t i = 0; i < nitems(auxv); i++)
 +      if ((unsigned long)auxv[i].a_type == type)
 +        return auxv[i].a_un.a_val;
++
++    errno = ENOENT;
 +  }
 +  return 0;
 +}
