@@ -1,4 +1,4 @@
---- mk/Autoconf.mk.orig	2016-03-24 14:39:02 UTC
+--- mk/Autoconf.mk.orig	2017-08-30 10:48:03 UTC
 +++ mk/Autoconf.mk
 @@ -110,20 +110,14 @@ ac_binary = $(shell \
  #	$(call ac_fini))
