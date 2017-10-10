@@ -1,0 +1,9 @@
+This subclass of Convert::Color::RGB8 provides lookup of the colors that xterm
+uses by default. Note that the module is not intelligent enough to actually
+parse the XTerm configuration on a machine, nor to query a running terminal for
+its actual colors. It simply implements the colors that are present as defaults
+in the XTerm source code.
+
+It implements the complete 256-color model in XTerm.
+
+WWW: http://search.cpan.org/dist/Convert-Color-XTerm/
