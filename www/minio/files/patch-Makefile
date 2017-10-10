@@ -1,0 +1,15 @@
+--- Makefile.orig	2017-09-29 19:08:23 UTC
++++ Makefile
+@@ -93,10 +93,10 @@ install: build
+ 	@cp $(PWD)/minio $(GOPATH)/bin/minio
+ 	@echo "Check 'minio -h' for help."
+ 
+-release: verifiers
++release:
+ 	@MINIO_RELEASE=RELEASE ./buildscripts/build.sh
+ 
+-experimental: verifiers
++experimental:
+ 	@MINIO_RELEASE=EXPERIMENTAL ./buildscripts/build.sh
+ 
+ clean:

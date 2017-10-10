@@ -19,8 +19,7 @@
 # minio_group (str):            Set to "minio" by default.
 #                               Set it to group to run minio under
 # minio_logfile (str):          Set to "/var/log/minio.log" by default.
-#                               Set it to file where stdout/stderr are logged.
-#
+#                          
 
 . /etc/rc.subr
 
@@ -54,9 +53,9 @@ minio_startprecmd()
 		install -d -o "${minio_user}" -g "${minio_group}" "${minio_config}"
 	fi
 
-        if [ ! -e "${minio_logfile}" ]; then
-                install -o "${minio_user}" -g "${minio_group}" "/dev/null" "${minio_logfile}"
-        fi
+	if [ ! -e "${minio_logfile}" ]; then
+		install -o "${minio_user}" -g "${minio_group}" "/dev/null" "${minio_logfile}"
+	fi
 
 	for disk in "${minio_disks}"; do
 		if [ ! -d "${disk}" ]; then
