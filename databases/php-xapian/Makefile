@@ -18,6 +18,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	xapian-core>=${PORTVERSION}:databases/xapian-core
 LIB_DEPENDS=	libxapian.so:databases/xapian-core
 
+CONFLICTS_INSTALL=	xapian-bindings12
+
 OPTIONS_DEFINE=	DOCS
 
 PORTSCOUT=	limitw:1,even
