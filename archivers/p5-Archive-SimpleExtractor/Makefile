@@ -11,6 +11,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Simple module for extract archives
 
+LICENSE=	ART10 GPLv1+
+LICENSE_COMB=	dual
+
 BUILD_DEPENDS=	p5-Archive-Rar>=2.02:archivers/p5-Archive-Rar \
 		p5-Archive-Zip>=1.30:archivers/p5-Archive-Zip
 RUN_DEPENDS:=	${BUILD_DEPENDS}
