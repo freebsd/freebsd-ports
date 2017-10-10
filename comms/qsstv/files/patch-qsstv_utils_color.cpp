@@ -5,7 +5,7 @@
  
  //#include "opj_apps_config.h"
 -#include "openjpeg-2.1/openjpeg.h"
-+#include "openjpeg-2.2/openjpeg.h"
++#include "openjpeg-2.3/openjpeg.h"
  #include "color.h"
  
  
