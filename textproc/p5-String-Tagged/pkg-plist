@@ -1,0 +1,4 @@
+%%SITE_PERL%%/String/Tagged.pm
+%%SITE_PERL%%/String/Tagged/Formatting.pod
+%%PERL5_MAN3%%/String::Tagged.3.gz
+%%PERL5_MAN3%%/String::Tagged::Formatting.3.gz
