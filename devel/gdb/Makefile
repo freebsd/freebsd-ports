@@ -13,7 +13,7 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING3
 
 # untested on sparc64, might work
-ONLY_FOR_ARCHS=	aarch64 amd64 armv6 i386 mips powerpc powerpc64
+ONLY_FOR_ARCHS=	aarch64 amd64 armv6 armv7 i386 mips powerpc powerpc64
 
 TEST_DEPENDS=	runtest:misc/dejagnu
 
