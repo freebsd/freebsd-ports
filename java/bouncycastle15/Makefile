@@ -48,7 +48,8 @@ PORTDOCS=	*
 .include <bsd.port.options.mk>
 
 # PR 220612: remove fork="true" in javac and fork="yes" in junit tasks
-.if ${ARCH}=="armv6"
+# NB: as of adding armv7, the patchname is kind of obsolete.
+.if ${ARCH} == armv6 || ${ARCH} == armv7
 EXTRA_PATCHES+=	${FILESDIR}/armv6-patch-bc+-build.xml
 .endif
 

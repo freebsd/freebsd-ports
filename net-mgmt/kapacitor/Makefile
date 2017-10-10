@@ -13,7 +13,7 @@ LICENSE=	MIT
 
 BUILD_DEPENDS=	go>=1.6.0:lang/go
 
-ONLY_FOR_ARCHS=	i386 amd64 armv6
+ONLY_FOR_ARCHS=	amd64 armv6 armv7 i386
 
 USE_RC_SUBR=	kapacitord
 

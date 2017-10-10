@@ -67,7 +67,7 @@ SNDIO_CONFIGURE_OFF=	--disable-sndio
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "armv6"
+.if ${ARCH} == armv6 || ${ARCH} == armv7
 CONFIGURE_ENV+=	ASFLAGS=-meabi=5
 .endif
 
