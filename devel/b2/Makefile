@@ -2,28 +2,28 @@
 # $FreeBSD$
 
 PORTNAME=	b2
-PORTVERSION=	0.2.4
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.7.2
 CATEGORIES=	devel
-MASTER_SITES=	https://www.backblaze.com/b2/docs/
-DISTNAME=	${PORTNAME}
-EXTRACT_SUFX=
 
 MAINTAINER=	robak@FreeBSD.org
 COMMENT=	Command Line Interface for Backblaze's B2 storage service
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		python:2.6+ shebangfix
-SHEBANG_FILES=	b2
-NO_BUILD=	yes
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}arrow>=0.8.0:devel/py-arrow \
+		${PYTHON_PKGNAMEPREFIX}logfury>=0.1.2:devel/py-logfury \
+		${PYTHON_PKGNAMEPREFIX}requests>=2.9.1:www/py-requests \
+		${PYTHON_PKGNAMEPREFIX}six>=1.10:devel/py-six \
+		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3 \
+		${PYTHON_PKGNAMEPREFIX}tqdm>=4.5.0:misc/py-tqdm
 
-PLIST_FILES=	bin/${PORTNAME}
+USES=		python:2.7+
+USE_PYTHON=	distutils autoplist
 
-do-extract:
-	@${MKDIR} ${WRKSRC}
-	@${CP} ${DISTDIR}/${DISTNAME} ${WRKSRC}
-
-do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+USE_GITHUB=	yes
+GH_ACCOUNT=	Backblaze
+GH_PROJECT=	B2_Command_Line_Tool
 
 .include <bsd.port.mk>
