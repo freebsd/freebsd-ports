@@ -14,7 +14,7 @@ COMMENT=	GNU Compiler Collection 6
 LICENSE=	GPLv3 GPLv3RLE
 LICENSE_COMB=	multi
 
-ONLY_FOR_ARCHS=	aarch64 amd64 arm armv6 i386 powerpc powerpc64 sparc64
+ONLY_FOR_ARCHS=	aarch64 amd64 arm armv6 armv7 i386 powerpc powerpc64 sparc64
 BROKEN_sparc64=	fails to configure: cannot compute suffix of object files: cannot compile
 
 LIB_DEPENDS=	libgmp.so:math/gmp \
@@ -73,7 +73,7 @@ CONFIGURE_ENV+=	UNAME_m="powerpc64"
 USE_GCC=	5	# Cannot require ourselves, needs to be at least 4.9.
 .endif
 
-.if ${ARCH} == aarch64 || ${ARCH} == armv6
+.if ${ARCH} == aarch64 || ${ARCH} == armv6 || ${ARCH} == armv7
 . if ${COMPILER_TYPE} == clang
 .  if empty(PORT_OPTIONS:MBOOTSTRAP)
 MAKE_ARGS+=CXXFLAGS=-fbracket-depth=512
