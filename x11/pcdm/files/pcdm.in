@@ -31,5 +31,5 @@ stop_post() {
 
 depend() {
 	need urandom
-	after bootmisc syscons moused
+	after bootmisc syscons mouse
 }
