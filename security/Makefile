@@ -908,6 +908,7 @@
     SUBDIR += py-mcrypt
     SUBDIR += py-mhash
     SUBDIR += py-mixbox
+    SUBDIR += py-mnemonic
     SUBDIR += py-oauth2client
     SUBDIR += py-oauthlib
     SUBDIR += py-onetime
