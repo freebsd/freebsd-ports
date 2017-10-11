@@ -15,11 +15,12 @@ COMMENT=	Cross-build das u-boot for ${MODEL}
 LICENSE=	GPLv2
 
 BUILD_DEPENDS+=	gsed:textproc/gsed \
-		swig:devel/swig13 \
+		swig3.0:devel/swig30 \
 		dtc>=1.4.1:sysutils/dtc
 BUILD_DEPENDS+=	${COMPILER}:devel/${COMPILER}
 
 USES=		gmake python:build shebangfix
+BINARY_ALIAS=	swig3.0=swig
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	freebsd
