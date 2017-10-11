@@ -12,6 +12,8 @@ COMMENT=	POSIX layer for Lua
 
 LICENSE=	MIT
 
+BROKEN=		checksum and size mismatch
+
 USES=		lua shebangfix
 SHEBANG_FILES=	${WRKSRC}/build-aux/luke
 
