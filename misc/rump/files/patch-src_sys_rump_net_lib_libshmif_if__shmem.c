@@ -1,4 +1,4 @@
---- src/sys/rump/net/lib/libshmif/if_shmem.c.orig	2017-09-26 10:09:42 UTC
+--- src/sys/rump/net/lib/libshmif/if_shmem.c.orig	2016-08-02 11:51:10 UTC
 +++ src/sys/rump/net/lib/libshmif/if_shmem.c
 @@ -176,7 +176,8 @@ allocif(int unit, struct shmif_sc **scp)
  

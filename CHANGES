@@ -10,6 +10,20 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20171011:
+AUTHOR: bapt@FreeBSD.org
+
+  New BINARY_ALIAS variable has been added, when defined it will create symlinks
+  of some given binaries in a directory which will be prepended to the PATH.
+
+  The syntax is the following:
+  BINARY_ALIAS=   target1=source1  target2=source2
+
+  For example to have a "swig" binary in the path which will be pointing at
+  swig3.0 and a "sed" pointing at GNU sed: gsed
+
+  BINARY_ALIAS=  swig=swig3.0 sed=gsed
+
 20170625:
 AUTHOR: kde@FreeBSD.org
 

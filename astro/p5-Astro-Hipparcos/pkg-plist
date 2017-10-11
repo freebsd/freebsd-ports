@@ -1,5 +1,5 @@
-%%SITE_ARCH%%/Astro/Hipparcos/Record.pod
 %%SITE_ARCH%%/Astro/Hipparcos.pm
+%%SITE_ARCH%%/Astro/Hipparcos/Record.pod
 %%SITE_ARCH%%/auto/Astro/Hipparcos/Hipparcos.so
 %%PERL5_MAN3%%/Astro::Hipparcos.3.gz
 %%PERL5_MAN3%%/Astro::Hipparcos::Record.3.gz

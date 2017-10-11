@@ -21,10 +21,16 @@ GH_TAGNAME=	b914579
 GH_TUPLE=	rumpkernel:src-netbsd:82f3a69:netbsd/src
 USE_LDCONFIG=	yes
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 1100121
+CFLAGS+=	-Wno-address-of-packed-member
+.endif
+
 do-build:
-	cd ${WRKSRC}; ${SETENV} CC=${CC} AR=${AR} NM=${NM} OBJCOPY=${OBJCOPY} ./buildrump.sh -r fullbuild
+	cd ${WRKSRC}; ${SETENV} CC=${CC} AR=${AR} NM=${NM} OBJCOPY=${OBJCOPY} ./buildrump.sh -F CFLAGS="${CFLAGS}" -r fullbuild
 
 do-install:
 	cd ${WRKSRC}/rump; ${PAX} -wr lib include ${STAGEDIR}${PREFIX}/
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

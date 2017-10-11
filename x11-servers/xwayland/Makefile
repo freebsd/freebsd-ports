@@ -2,6 +2,7 @@
 
 PORTNAME=	xwayland
 PORTVERSION=	1.19.1
+PORTREVISION=	1
 
 COMMENT=	X Clients under Wayland
 
@@ -27,6 +28,9 @@ CONFIGURE_ARGS+=	--disable-docs --disable-devel-docs \
 			--disable-xquartz --disable-xwin
 
 PLIST_FILES=	bin/Xwayland
+
+EXTRA_PATCHES=	${MASTERDIR}/files/patch-CVE-2017-13721 \
+		${MASTERDIR}/files/patch-CVE-2017-13723
 
 do-install:
 	cd ${WRKSRC}/hw/xwayland; DESTDIR=${STAGEDIR} ${MAKE_CMD} install

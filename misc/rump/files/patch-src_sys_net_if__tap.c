@@ -1,4 +1,4 @@
---- src/sys/net/if_tap.c.orig	2017-09-26 10:11:03 UTC
+--- src/sys/net/if_tap.c.orig	2016-08-02 11:51:10 UTC
 +++ src/sys/net/if_tap.c
 @@ -332,7 +332,8 @@ tap_attach(device_t parent, device_t sel
  	ifp = &sc->sc_ec.ec_if;

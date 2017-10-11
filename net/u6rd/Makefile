@@ -2,7 +2,7 @@
 
 PORTNAME=	u6rd
 PORTVERSION=	1.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://ftp.scythe.jp/pub/u6rd/release/
 

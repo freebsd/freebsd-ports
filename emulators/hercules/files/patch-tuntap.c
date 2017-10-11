@@ -1,6 +1,6 @@
---- tuntap.c.orig	Sun Dec 11 16:44:16 2005
-+++ tuntap.c	Wed Jan 25 20:05:14 2006
-@@ -159,6 +159,25 @@ int             TUNTAP_CreateInterface( 
+--- tuntap.c.orig	2017-03-26 19:44:49 UTC
++++ tuntap.c
+@@ -241,6 +241,25 @@ int             TUNTAP_CreateInterface( 
          strcpy( pszNetDevName, ifr.ifr_name );
      }
  #if !defined( OPTION_W32_CTCI )

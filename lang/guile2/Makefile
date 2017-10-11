@@ -20,6 +20,7 @@ LIB_DEPENDS=	libgmp.so:math/gmp \
 
 CONFLICTS_INSTALL=	guile-[0-9]*
 
+MAKE_JOBS_UNSAFE=	yes
 BROKEN_powerpc64=	does not build: error: expected declaration specifiers or ... before __builtin_choose_expr
 BROKEN_sparc64=		fails to compile: errors in complex.h
 
