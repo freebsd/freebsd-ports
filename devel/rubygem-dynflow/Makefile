@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	dynflow
-PORTVERSION=	0.8.30
+PORTVERSION=	0.8.31
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
