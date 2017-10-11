@@ -11,7 +11,7 @@ COMMENT=	Open source library for SPI/I2C control via FTDI chips
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/../docs/LICENSE
 
-BUILD_DEPENDS=	swig2.0:devel/swig20
+BUILD_DEPENDS=	swig3.0:devel/swig30
 LIB_DEPENDS=	libftdi.so:devel/libftdi
 
 USE_GITHUB=	yes
@@ -20,7 +20,7 @@ GH_TAGNAME=	f1a6744b220d
 
 USES=		autoreconf localbase:ldflags pkgconfig python:2
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	SWIG="swig2.0"
+CONFIGURE_ENV=	SWIG="swig3.0"
 USE_LDCONFIG=	yes
 
 WRKSRC_SUBDIR=	src
