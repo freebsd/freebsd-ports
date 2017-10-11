@@ -1,4 +1,4 @@
---- src/sys/net/if_pppoe.c.orig	2017-09-26 10:07:00 UTC
+--- src/sys/net/if_pppoe.c.orig	2016-08-02 11:51:10 UTC
 +++ src/sys/net/if_pppoe.c
 @@ -227,7 +227,8 @@ pppoe_clone_create(struct if_clone *ifc,
  	if_initname(&sc->sc_sppp.pp_if, "pppoe", unit);

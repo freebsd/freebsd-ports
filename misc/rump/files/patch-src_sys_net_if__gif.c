@@ -1,4 +1,4 @@
---- src/sys/net/if_gif.c.orig	2017-09-26 10:05:48 UTC
+--- src/sys/net/if_gif.c.orig	2016-08-02 11:51:10 UTC
 +++ src/sys/net/if_gif.c
 @@ -192,7 +192,8 @@ gifattach0(struct gif_softc *sc)
  
