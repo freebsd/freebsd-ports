@@ -1,4 +1,3 @@
-USE_MYSQL=	serve2
 # $FreeBSD$
 
 PORTNAME=	horde
