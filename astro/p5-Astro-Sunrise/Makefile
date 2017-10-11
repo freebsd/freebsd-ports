@@ -18,10 +18,6 @@ BUILD_DEPENDS=	p5-DateTime>=0:devel/p5-DateTime
 
 NO_ARCH=	yes
 USES=		perl5
-USE_PERL5=	configure patch
-
-post-patch:
-	${PERL} -pi -e 's/(qw\(.*)\[1\];/($$1)[1];/; s/\r\n/\n/;' \
-		${WRKSRC}/Sunrise.pm
+USE_PERL5=	configure
 
 .include <bsd.port.mk>
