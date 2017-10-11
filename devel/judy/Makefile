@@ -24,7 +24,7 @@ PORTDOCS=	COPYRIGHT README *.htm
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == armv6 || ${ARCH} == i386 || ${ARCH} == mips || ${ARCH} == powerpc
+.if ${ARCH} == armv6 || ${ARCH} == armv7 || ${ARCH} == i386 || ${ARCH} == mips || ${ARCH} == powerpc
 CONFIGURE_ARGS+=	--enable-32-bit
 .else
 CONFIGURE_ARGS+=	--enable-64-bit

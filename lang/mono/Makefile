@@ -65,7 +65,7 @@ MAKE_ENV=	MONO_SHARED_DIR="${WRKDIR}" \
 TEST_TARGET=	check
 TEST_WRKSRC=	${WRKSRC}/mono/tests
 
-ONLY_FOR_ARCHS=		amd64 armv6 i386 powerpc
+ONLY_FOR_ARCHS=		amd64 armv6 armv7 i386 powerpc
 
 PORTSCOUT=	limit:^\d+\.\d+\.[1-9]\d*
 

@@ -22,7 +22,7 @@ LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 RUN_DEPENDS=	bash:shells/bash \
 		${LOCALBASE}/share/fonts/freefont-ttf/FreeSans.ttf:x11-fonts/freefont-ttf
 
-ONLY_FOR_ARCHS=	armv6
+ONLY_FOR_ARCHS=	armv6 armv7
 
 CFLAGS+=	-Dfopen64=fopen -Dfseeko64=fseeko -Dftello64=ftello
 ALL_TARGET=	omxplayer.bin

@@ -298,6 +298,7 @@ man/man1/nsupdate.1.gz
 man/man5/named.conf.5.gz
 man/man5/rndc.conf.5.gz
 man/man8/ddns-confgen.8.gz
+man/man8/dnssec-cds.8.gz
 %%PYTHON%%man/man8/dnssec-checkds.8.gz
 %%PYTHON%%man/man8/dnssec-coverage.8.gz
 man/man8/dnssec-dsfromkey.8.gz
@@ -326,6 +327,7 @@ man/man8/rndc-confgen.8.gz
 man/man8/rndc.8.gz
 man/man8/tsig-keygen.8.gz
 sbin/ddns-confgen
+sbin/dnssec-cds
 %%PYTHON%%sbin/dnssec-checkds
 %%PYTHON%%sbin/dnssec-coverage
 sbin/dnssec-dsfromkey

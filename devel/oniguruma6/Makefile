@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	oniguruma
-PORTVERSION=	6.4.0
+PORTVERSION=	6.6.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel textproc
 PKGNAMESUFFIX=	6
@@ -13,6 +13,7 @@ COMMENT=	BSDL Regular Expressions library compatible with POSIX/GNU/Perl
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+USES=		pathfix autoreconf libtool
 USE_GITHUB=	yes
 GH_ACCOUNT=	kkos
 
@@ -20,7 +21,6 @@ OPTIONS_DEFINE=	DOCS EXAMPLES
 
 CONFLICTS_INSTALL=	oniguruma[45]
 
-USES=		pathfix autoreconf libtool
 PATHFIX_MAKEFILEIN=	Makefile.am
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip

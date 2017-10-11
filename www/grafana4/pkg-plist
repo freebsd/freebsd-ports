@@ -7,7 +7,7 @@ bin/grafana-server
 %%DATADIR%%/public/app/app.js.map
 %%DATADIR%%/public/app/app.ts
 %%DATADIR%%/public/app/app_bundle.js
-%%DATADIR%%/public/app/boot.de7c040d.js
+%%DATADIR%%/public/app/boot.e4836696.js
 %%DATADIR%%/public/app/boot.js
 %%DATADIR%%/public/app/core/app_events.d.ts
 %%DATADIR%%/public/app/core/app_events.js

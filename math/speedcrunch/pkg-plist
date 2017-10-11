@@ -1,3 +1,4 @@
 bin/speedcrunch
+share/appdata/speedcrunch.appdata.xml
 share/applications/speedcrunch.desktop
 share/pixmaps/speedcrunch.png

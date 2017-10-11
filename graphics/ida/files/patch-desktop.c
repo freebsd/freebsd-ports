@@ -1,4 +1,4 @@
---- desktop.c.orig	2016-03-24 14:39:02 UTC
+--- desktop.c.orig	2017-08-30 10:48:03 UTC
 +++ desktop.c
 @@ -27,7 +27,7 @@ extern int debug;
  /* desktop files are in utf-8                                                */

@@ -52,13 +52,16 @@ plen_equal()
 
 start_precmd()
 {
-	ifconfig ${u6rd_interface} create ${iface_fib}
+	ifconfig ${u6rd_interface} create
 	ifconfig ${u6rd_interface} inet6 -ifdisabled >/dev/null 2>&1
 	if [ -n "${u6rd_interface_flags}" ]; then
 		ifconfig ${u6rd_interface} ${u6rd_interface_flags}
 	fi
 	if [ -n "${u6rd_my_v6_addr}" ]; then
 		ifconfig ${u6rd_interface} inet6 ${u6rd_my_v6_addr}
+	fi
+	if [ -n "${u6rd_fib}" ]; then
+		ifconfig ${u6rd_interface} fib ${u6rd_fib}
 	fi
 	ifconfig ${u6rd_interface} up
 	if ! plen_equal ${u6rd_prefix} ${u6rd_my_v6_addr}; then
@@ -85,8 +88,6 @@ stop_postcmd()
 load_rc_config ${name}
 command_args="-u ${u6rd_username} ${u6rd_interface} ${u6rd_prefix} ${u6rd_relay_v4_addr} ${u6rd_my_v4_addr}"
 if [ -n "${u6rd_fib}" ]; then
-	iface_fib="fib ${u6rd_fib}"
 	route_fib="-fib ${u6rd_fib}"
-	u6rd_fib=
 fi
 run_rc_command "$1"

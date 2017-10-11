@@ -4,7 +4,7 @@
    amd64-*-freebsd*)
       AC_SUBST(NATIVE_ARCH_DEFINES, "-DTARGET_POSIX -DTARGET_FREEBSD -D_LINUX")
       ;;
-+  armv6-*-freebsd*)
++  armv*-*-freebsd*)
 +     AC_SUBST(NATIVE_ARCH_DEFINES, "-DTARGET_POSIX -DTARGET_FREEBSD -D_LINUX")
 +     ;;
    *86*-apple-darwin*)
@@ -14,7 +14,7 @@
    amd64-*-freebsd*)
       AC_SUBST(ARCH_DEFINES, "-DTARGET_POSIX -DTARGET_FREEBSD -D_LINUX")
       ;;
-+  armv6-*-freebsd*)
++  armv*-*-freebsd*)
 +     AC_SUBST(ARCH_DEFINES, "-DTARGET_POSIX -DTARGET_FREEBSD -D_LINUX")
 +     ;;
    arm-apple-darwin*)

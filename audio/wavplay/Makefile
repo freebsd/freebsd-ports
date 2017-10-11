@@ -13,7 +13,7 @@ COMMENT=	Wav player and recorder
 LICENSE=	GPLv2 # only
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-ONLY_FOR_ARCHS=	amd64 armv6 i386
+ONLY_FOR_ARCHS=	amd64 armv6 armv7 i386
 
 INSTALL_TARGET=	install PREFIX="${STAGEDIR}${PREFIX}"
 

@@ -10,6 +10,9 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@mark.reidel.info
 COMMENT=	Nice and clean GTK+-2.x based graphical client for musicpd
 
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 LIB_DEPENDS=	libmpd.so:audio/libmpd
 
 GNU_CONFIGURE=	yes

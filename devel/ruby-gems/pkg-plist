@@ -142,6 +142,7 @@ bin/gem%%RUBY_VER_SHORT%%
 %%RUBY_SITELIBDIR%%/rubygems/resolver/stats.rb
 %%RUBY_SITELIBDIR%%/rubygems/resolver/vendor_set.rb
 %%RUBY_SITELIBDIR%%/rubygems/resolver/vendor_specification.rb
+%%RUBY_SITELIBDIR%%/rubygems/safe_yaml.rb
 %%RUBY_SITELIBDIR%%/rubygems/security.rb
 %%RUBY_SITELIBDIR%%/rubygems/security/policies.rb
 %%RUBY_SITELIBDIR%%/rubygems/security/policy.rb

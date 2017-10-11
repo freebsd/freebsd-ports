@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	augeas
-PORTVERSION=	1.8.1
+PORTVERSION=	1.9.0
 CATEGORIES=	textproc
 MASTER_SITES=	http://download.augeas.net/
 
@@ -29,5 +29,8 @@ post-patch:
 		${WRKSRC}/lenses/puppet.aug \
 		${WRKSRC}/lenses/puppet_auth.aug \
 		${WRKSRC}/lenses/puppetfileserver.aug
+
+post-install:
+	${MV} ${STAGEDIR}${PREFIX}/bin/dump ${STAGEDIR}${PREFIX}/bin/augdump
 
 .include <bsd.port.mk>

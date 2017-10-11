@@ -14,7 +14,7 @@ COMMENT=	Pythin binding for cryptlib
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-ONLY_FOR_ARCHS=	i386 amd64 armv6
+ONLY_FOR_ARCHS=	i386 amd64 armv6 armv7
 
 USES=		python:2 zip:infozip
 USE_PYTHON=	distutils autoplist
