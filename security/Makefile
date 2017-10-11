@@ -963,6 +963,7 @@
     SUBDIR += py-stem
     SUBDIR += py-stix
     SUBDIR += py-tlslite
+    SUBDIR += py-trezor
     SUBDIR += py-trustedpickle
     SUBDIR += py-tuf
     SUBDIR += py-twofish
