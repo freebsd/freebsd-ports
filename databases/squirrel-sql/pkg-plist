@@ -1,4 +1,5 @@
 bin/squirrel-sql
+%%DATADIR%%/icons/acorn.icns
 %%DATADIR%%/icons/acorn.ico
 %%DATADIR%%/icons/acorn.png
 %%DATADIR%%/icons/acorn.xpm
@@ -29,12 +30,16 @@ bin/squirrel-sql
 %%DATADIR%%/lib/hibernate-entitymanager.jar
 %%DATADIR%%/lib/hibernate.jar
 %%DATADIR%%/lib/icu4j.jar
+%%DATADIR%%/lib/jackson-annotations-2.6.3.jar
+%%DATADIR%%/lib/jackson-core-2.6.3.jar
+%%DATADIR%%/lib/jackson-databind-2.6.3.jar
 %%DATADIR%%/lib/javahelp.jar
 %%DATADIR%%/lib/jcommon.jar
 %%DATADIR%%/lib/jfreechart.jar
 %%DATADIR%%/lib/jide-oss.jar
 %%DATADIR%%/lib/jmeld.jar
 %%DATADIR%%/lib/log4j.jar
+%%DATADIR%%/lib/markdowngeneratorJava1_6.jar
 %%DATADIR%%/lib/nanoxml.jar
 %%DATADIR%%/lib/org.eclipse.equinox.common.jar
 %%DATADIR%%/lib/osgi.jar
