@@ -2,7 +2,7 @@
 
 PORTNAME=	llvm
 DISTVERSION=	4.0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel lang
 MASTER_SITES=	http://llvm.org/${PRE_}releases/${LLVM_RELEASE}/${RCDIR}
 PKGNAMESUFFIX=	${LLVM_SUFFIX}
@@ -40,6 +40,8 @@ SUB_LIST=	LLVM_PREFIX="${LLVM_PREFIX}" LLVM_SUFFIX="${LLVM_SUFFIX}"
 
 CMAKE_INSTALL_PREFIX=	${LLVM_PREFIX}
 CMAKE_ARGS=	-DLLVM_BUILD_LLVM_DYLIB=ON
+CMAKE_ARGS+=	-DLLVM_DEFAULT_TARGET_TRIPLE=${CONFIGURE_TARGET}
+CMAKE_ARGS+=	-DLLVM_HOST_TRIPLE=${CONFIGURE_TARGET}
 # Following commit https://github.com/kitware/cmake/commit/956054
 # we need to either change the whole man-shuffle below, or simply
 # redefine CMAKE_INSTALL_MANDIR
@@ -184,8 +186,21 @@ EXTRAS_PATTERN=	${EXTRAS_COMMANDS:tW:C/  */|/g}|${EXTRAS_LIBS:tW:C/  */|/g}
 
 .include <bsd.port.options.mk>
 
-# keep in sync with /usr/src/lib/clang/clang.build.mk
-CONFIGURE_TARGET:=${ARCH:C/amd64/x86_64/:C/armv6hf/armv6/}-portbld-${OPSYS:tl}${OSREL}
+# keep in sync with /usr/src/lib/clang/llvm.build.mk
+# ----------- start of sync block ------------------
+# Armv6 and armv7 uses hard float abi, unless the CPUTYPE has soft in it.
+# arm (for armv4 and armv5 CPUs) always uses the soft float ABI.
+# For all other targets, we stick with 'unknown'.
+.if ${ARCH:Marmv[67]*} && (!defined(CPUTYPE) || ${CPUTYPE:M*soft*} == "")
+TARGET_ABI=	-gnueabihf
+.elif ${ARCH:Marm*}
+TARGET_ABI=	-gnueabi
+.else
+TARGET_ABI=
+.endif
+
+CONFIGURE_TARGET:=${ARCH:C/amd64/x86_64/:C/arm64/aarch64/}-portbld-${OPSYS:tl}${OSREL}${TARGET_ABI}
+# ----------- end of sync block --------------------
 
 .if ${PORT_OPTIONS:MCLANG}
 COMMANDS+=	c-index-test \
@@ -308,7 +323,7 @@ PORTDOCS+=	lld
 CXXFLAGS+=	-D_GLIBCXX_USE_C99
 .endif
 
-.if ${ARCH} == "armv6"
+.if ${ARCH} == armv6 ||  ${ARCH} == armv7
 BUILD_DEPENDS+=	${LOCALBASE}/bin/ld:devel/binutils
 CONFIGURE_ENV+=	COMPILER_PATH=${LOCALBASE}/bin
 MAKE_ENV+=	COMPILER_PATH=${LOCALBASE}/bin
