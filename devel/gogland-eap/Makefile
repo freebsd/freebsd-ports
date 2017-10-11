@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gogland-eap
-PORTVERSION=	172.3968.45
+PORTVERSION=	173.2696.28
 CATEGORIES=	devel java
 MASTER_SITES=	https://download.jetbrains.com/go/ \
 		http://download.jetbrains.com/go/
