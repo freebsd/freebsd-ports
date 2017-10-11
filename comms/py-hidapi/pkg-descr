@@ -1,0 +1,3 @@
+Cython interface to comms/hidapi.
+
+WWW: https://pypi.python.org/pypi/hidapi
