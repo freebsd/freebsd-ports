@@ -1,4 +1,4 @@
---- src/sys/netinet/ip_carp.c.orig	2017-09-26 10:03:06 UTC
+--- src/sys/netinet/ip_carp.c.orig	2016-08-02 11:51:10 UTC
 +++ src/sys/netinet/ip_carp.c
 @@ -827,7 +827,8 @@ carp_clone_create(struct if_clone *ifc, 
  	ifp->if_softc = sc;
