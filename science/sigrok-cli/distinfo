@@ -1,2 +1,3 @@
-SHA256 (sigrok-cli-0.5.0.tar.gz) = 73a30501525b13c09624ae00d37041cdaa50238d89c6febf169fc784affe723c
-SIZE (sigrok-cli-0.5.0.tar.gz) = 390077
+TIMESTAMP = 1507722101
+SHA256 (sigrok-cli-0.7.0.tar.gz) = 5669d968c2de3dfc6adfda76e83789b6ba76368407c832438cef5e7099a65e1c
+SIZE (sigrok-cli-0.7.0.tar.gz) = 210736
