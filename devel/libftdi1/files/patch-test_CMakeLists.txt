@@ -1,0 +1,11 @@
+--- test/CMakeLists.txt.orig	2017-08-07 14:52:39 UTC
++++ test/CMakeLists.txt
+@@ -10,7 +10,7 @@ if(BUILD_TESTS)
+ 
+         enable_testing()
+ 
+-        INCLUDE_DIRECTORIES(BEFORE ${CMAKE_SOURCE_DIR}/src ${Boost_INCLUDE_DIRS})
++        INCLUDE_DIRECTORIES(BEFORE ${Boost_INCLUDE_DIRS} ${CMAKE_SOURCE_DIR}/src)
+ 
+         set(cpp_tests
+             basic.cpp
