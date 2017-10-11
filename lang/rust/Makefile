@@ -185,18 +185,19 @@ post-patch:
 		's|cargo-nightly-|cargo-${CARGO_BOOTSTRAP_VERSION_${ARCH}:U${CARGO_BOOTSTRAP_VERSION}}-|' \
 		${WRKSRC}/src/bootstrap/bootstrap.py; \
 	fi
-# `extra-patch-ino64` may be applied. If that's the case, we need to
-# update `.cargo-checksum.json` to reflect the new checksums verified by
-# Cargo.
-	@cd "${WRKSRC}/src/vendor/libc"; \
-	for file in $$(${FIND} * -name "*.orig"); do \
-		old_checksum=$$(${SHA256} -q "$$file"); \
-		new_checksum=$$(${SHA256} -q "$${file%%.orig}"); \
-		regex="$$regex -e s|\"$${file%%.orig}\":\"$$old_checksum\"|\"$${file%%.orig}\":\"$$new_checksum\"|"; \
-	done; \
-	if test "$$regex"; then \
-		${REINPLACE_CMD} -E $$regex .cargo-checksum.json; \
-	fi
+# After patching crates, we need to update their corresponding
+# `.cargo-checksum.json` to reflect the new checksums verified by Cargo.
+	@for dir in "${WRKSRC}/src/vendor/libc" "${WRKSRC}/src/vendor/openssl" "${WRKSRC}/src/vendor/openssl-sys"; do \
+		cd "$$dir"; \
+		for file in $$(${FIND} * -name "*.orig"); do \
+			old_checksum=$$(${SHA256} -q "$$file"); \
+			new_checksum=$$(${SHA256} -q "$${file%%.orig}"); \
+			regex="$$regex -e s|\"$${file%%.orig}\":\"$$old_checksum\"|\"$${file%%.orig}\":\"$$new_checksum\"|"; \
+		done; \
+		if test "$$regex"; then \
+			${REINPLACE_CMD} -E $$regex .cargo-checksum.json; \
+		fi; \
+	done
 # We make a backup of a few files before the FreeBSD 10 autotools
 # fix is applied. We'll need them in `do-configure` to update the
 # `.cargo-checksum.json` files.
