@@ -1,0 +1,124 @@
+From: Jan Beulich <jbeulich@suse.com>
+Subject: x86/IRQ: conditionally preserve irq <-> pirq mapping on map error paths
+
+Mappings that had been set up before should not be torn down when
+handling unrelated errors.
+
+This is part of XSA-237.
+
+Reported-by: HW42 <hw42@ipsumj.de>
+Signed-off-by: Jan Beulich <jbeulich@suse.com>
+Reviewed-by: George Dunlap <george.dunlap@citrix.com>
+
+--- a/xen/arch/x86/irq.c
++++ b/xen/arch/x86/irq.c
+@@ -1252,7 +1252,8 @@ static int prepare_domain_irq_pirq(struc
+         return -ENOMEM;
+     }
+     *pinfo = info;
+-    return 0;
++
++    return !!err;
+ }
+ 
+ static void set_domain_irq_pirq(struct domain *d, int irq, struct pirq *pirq)
+@@ -1295,7 +1296,10 @@ int init_domain_irq_mapping(struct domai
+             continue;
+         err = prepare_domain_irq_pirq(d, i, i, &info);
+         if ( err )
++        {
++            ASSERT(err < 0);
+             break;
++        }
+         set_domain_irq_pirq(d, i, info);
+     }
+ 
+@@ -1903,6 +1907,7 @@ int map_domain_pirq(
+     struct pirq *info;
+     struct irq_desc *desc;
+     unsigned long flags;
++    DECLARE_BITMAP(prepared, MAX_MSI_IRQS) = {};
+ 
+     ASSERT(spin_is_locked(&d->event_lock));
+ 
+@@ -1946,8 +1951,10 @@ int map_domain_pirq(
+     }
+ 
+     ret = prepare_domain_irq_pirq(d, irq, pirq, &info);
+-    if ( ret )
++    if ( ret < 0 )
+         goto revoke;
++    if ( !ret )
++        __set_bit(0, prepared);
+ 
+     desc = irq_to_desc(irq);
+ 
+@@ -2019,8 +2026,10 @@ int map_domain_pirq(
+             irq = create_irq(NUMA_NO_NODE);
+             ret = irq >= 0 ? prepare_domain_irq_pirq(d, irq, pirq + nr, &info)
+                            : irq;
+-            if ( ret )
++            if ( ret < 0 )
+                 break;
++            if ( !ret )
++                __set_bit(nr, prepared);
+             msi_desc[nr].irq = irq;
+ 
+             if ( irq_permit_access(d, irq) != 0 )
+@@ -2053,15 +2062,15 @@ int map_domain_pirq(
+                 desc->msi_desc = NULL;
+                 spin_unlock_irqrestore(&desc->lock, flags);
+             }
+-            while ( nr-- )
++            while ( nr )
+             {
+                 if ( irq >= 0 && irq_deny_access(d, irq) )
+                     printk(XENLOG_G_ERR
+                            "dom%d: could not revoke access to IRQ%d (pirq %d)\n",
+                            d->domain_id, irq, pirq);
+-                if ( info )
++                if ( info && test_bit(nr, prepared) )
+                     cleanup_domain_irq_pirq(d, irq, info);
+-                info = pirq_info(d, pirq + nr);
++                info = pirq_info(d, pirq + --nr);
+                 irq = info->arch.irq;
+             }
+             msi_desc->irq = -1;
+@@ -2077,12 +2086,14 @@ int map_domain_pirq(
+         spin_lock_irqsave(&desc->lock, flags);
+         set_domain_irq_pirq(d, irq, info);
+         spin_unlock_irqrestore(&desc->lock, flags);
++        ret = 0;
+     }
+ 
+ done:
+     if ( ret )
+     {
+-        cleanup_domain_irq_pirq(d, irq, info);
++        if ( test_bit(0, prepared) )
++            cleanup_domain_irq_pirq(d, irq, info);
+  revoke:
+         if ( irq_deny_access(d, irq) )
+             printk(XENLOG_G_ERR
+--- a/xen/arch/x86/physdev.c
++++ b/xen/arch/x86/physdev.c
+@@ -185,7 +185,7 @@ int physdev_map_pirq(domid_t domid, int
+         }
+         else if ( type == MAP_PIRQ_TYPE_MULTI_MSI )
+         {
+-            if ( msi->entry_nr <= 0 || msi->entry_nr > 32 )
++            if ( msi->entry_nr <= 0 || msi->entry_nr > MAX_MSI_IRQS )
+                 ret = -EDOM;
+             else if ( msi->entry_nr != 1 && !iommu_intremap )
+                 ret = -EOPNOTSUPP;
+--- a/xen/include/asm-x86/msi.h
++++ b/xen/include/asm-x86/msi.h
+@@ -55,6 +55,8 @@
+ /* MAX fixed pages reserved for mapping MSIX tables. */
+ #define FIX_MSIX_MAX_PAGES              512
+ 
++#define MAX_MSI_IRQS 32 /* limited by MSI capability struct properties */
++
+ struct msi_info {
+     u16 seg;
+     u8 bus;
