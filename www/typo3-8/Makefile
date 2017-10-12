@@ -21,12 +21,12 @@ USES=		cpe php:web shebangfix
 SHEBANG_GLOB=	*.sh *.php
 NO_BUILD=	yes
 NO_ARCH=	yes
-USE_PHP=	ctype fileinfo filter hash json mysqli openssl pcre session soap xml zip simplexml
+xUSE_PHP=	ctype fileinfo filter hash json mysqli openssl pcre session soap xml zip simplexml
 WRKSRC=		${WRKDIR}/${TYPO3SRC}
 
 PORT_V_MAJOR=	8
 PORT_V_MINOR=	7
-PORT_V_PATCH=	7
+PORT_V_PATCH=	8
 
 TYPO3WWW=	www
 TYPO3SRC=	${PORTNAME}_src-${PORTVERSION}
