@@ -342,7 +342,6 @@ MASTER_SITE_GENTOO+= \
 	ftp://mirror.iawnet.sandia.gov/pub/gentoo/%SUBDIR%/ \
 	ftp://ftp.ussg.iu.edu/pub/linux/gentoo/%SUBDIR%/ \
 	ftp://ftp.ucsb.edu/pub/mirrors/linux/gentoo/%SUBDIR%/ \
-	ftp://gentoo.mirrors.pair.com/%SUBDIR%/ \
 	ftp://mirrors.tds.net/pub/gentoo/%SUBDIR%/ \
 	ftp://ftp.belnet.be/mirror/rsync.gentoo.org/gentoo/%SUBDIR%/ \
 	ftp://ftp.snt.utwente.nl/pub/os/linux/gentoo/%SUBDIR%/ \
@@ -943,7 +942,6 @@ MASTER_SITE_SAVANNAH+= \
 	http://ftp.twaren.net/Unix/NonGNU/%SUBDIR%/ \
 	ftp://ftp.twaren.net/Unix/NonGNU/%SUBDIR%/ \
 	http://gnu.mirrors.pair.com/savannah/savannah/%SUBDIR%/ \
-	ftp://gnu.mirrors.pair.com/savannah/%SUBDIR%/
 .endif
 
 # List:		https://sourceforge.net/p/forge/documentation/Mirrors/
