@@ -649,9 +649,6 @@ MASTER_SITE_KDE+= \
 	ftp://ftp.gtlib.gatech.edu/pub/kde/%SUBDIR%/ \
 	ftp://ftp.informatik.hu-berlin.de/pub/Mirrors/ftp.kde.org/%SUBDIR%/ \
 	http://ftp.gtlib.gatech.edu/pub/kde/%SUBDIR%/ \
-	ftp://ftp.solnet.ch/mirror/KDE/%SUBDIR%/ \
-	ftp://gd.tuwien.ac.at/kde/%SUBDIR%/ \
-	http://gd.tuwien.ac.at/kde/%SUBDIR%/ \
 	http://kde.mirrors.tds.net/pub/kde/%SUBDIR%/ \
 	ftp://ftp.rz.uni-wuerzburg.de/pub/unix/kde/%SUBDIR%/ \
 	http://mirrors.dotsrc.org/kde/%SUBDIR%/ \
@@ -660,13 +657,11 @@ MASTER_SITE_KDE+= \
 	http://ftp.fi.muni.cz/pub/kde/%SUBDIR%/ \
 	ftp://sunsite.icm.edu.pl/pub/unix/kde/%SUBDIR%/ \
 	http://sunsite.icm.edu.pl/pub/unix/kde/%SUBDIR%/ \
-	ftp://ftp.kde.org/pub/kde/%SUBDIR%/ \
 	ftp://ftp.lip6.fr/pub/X11/kde/%SUBDIR%/ \
 	http://www-ftp.lip6.fr/pub/X11/kde/%SUBDIR%/ \
 	http://ftp-stud.hs-esslingen.de/Mirrors/ftp.kde.org/pub/kde/%SUBDIR%/ \
 	ftp://ftp.cronyx.ru/pub/mirror/kde/%SUBDIR%/ \
 	http://ftp.twaren.net/Unix/X/KDE/%SUBDIR%/ \
-	ftp://ftp.na.kde.org/pub/kde/%SUBDIR%/ \
 	ftp://ftp.fu-berlin.de/pub/unix/X11/gui/kde/%SUBDIR%/ \
 	ftp://sunsite.informatik.rwth-aachen.de/pub/Linux/kde/%SUBDIR%/ \
 	ftp://ftp.ntua.gr/pub/X11/kde/%SUBDIR%/ \
@@ -680,7 +675,6 @@ MASTER_SITE_KDE+= \
 	http://ftp.ussg.iu.edu/kde/%SUBDIR%/ \
 	ftp://ftp.sayclub.com/pub/X/KDE/%SUBDIR%/ \
 	http://ftp.sayclub.com/pub/X/KDE/%SUBDIR%/ \
-	ftp://carroll.aset.psu.edu/pub/kde/%SUBDIR%/ \
 	http://mirror.cc.columbia.edu/pub/software/kde/%SUBDIR%/ \
 	ftp://ftp.mirrorservice.org/sites/ftp.kde.org/pub/kde/%SUBDIR%/ \
 	http://www.mirrorservice.org/sites/ftp.kde.org/pub/kde/%SUBDIR%/ \
