@@ -996,7 +996,6 @@ MASTER_SITE_SUNSITE+= \
 	http://www.gtlib.gatech.edu/pub/Linux/%SUBDIR%/ \
 	ftp://ftp.lip6.fr/pub/linux/sunsite/%SUBDIR%/ \
 	ftp://ftp.icm.edu.pl/pub/Linux/sunsite/%SUBDIR%/ \
-
 	ftp://ftp.sun.ac.za/pub/mirrors/sunsite.unc.edu/pub/Linux/%SUBDIR%/
 .endif
 
