@@ -3,7 +3,7 @@
 
 PORTNAME?=	${SAMBA4_BASENAME}47
 PORTVERSION?=	${SAMBA4_VERSION}
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES?=	net
 EXTRACT_ONLY=
 
@@ -192,6 +192,7 @@ CONFIGURE_ARGS+=	\
 			--enable-gnutls \
 			--builtin-libraries=smbclient \
 			--without-pie \
+			--accel-aes=intelaesni \
 			${ICONV_CONFIGURE_BASE}
 
 # for libexecinfo: (so that __builtin_frame_address() finds the top of the stack)
