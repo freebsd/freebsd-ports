@@ -16,7 +16,9 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	texinfo>0:print/texinfo
 LIB_DEPENDS=	libgslcblas.so:math/gsl
 
-USES=		charsetfix gettext-tools gmake iconv localbase libtool perl5 pkgconfig readline
+USES=		cpe charsetfix gettext-tools gmake iconv localbase libtool \
+		perl5 pkgconfig readline
+CPE_VENDOR=	gnu
 USE_GNOME=	libxml2
 USE_PERL5=	build
 GNU_CONFIGURE=	yes
