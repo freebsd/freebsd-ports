@@ -17,7 +17,4 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-regression-test: build
-	(cd ${WRKSRC}/ && ${MAKE} test)
-
 .include <bsd.port.mk>
