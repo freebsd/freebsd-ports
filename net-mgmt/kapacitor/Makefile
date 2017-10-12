@@ -28,8 +28,6 @@ SUB_FILES=	kapacitord
 SUB_LIST+=	KAPACITORD_PIDDIR=${KAPACITORD_PIDDIR}
 PLIST_SUB=	KAPACITORD_PIDDIR=${KAPACITORD_PIDDIR}
 
-STRIP=		# stripping can break go binaries
-
 post-patch:
 	@${MKDIR} ${WRKSRC}/src/github.com/${GH_ACCOUNT}/${PORTNAME}
 	@cd ${WRKSRC} && ${MV} \

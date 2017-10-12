@@ -18,8 +18,6 @@ GH_TAGNAME=	c2b8306
 PLIST_FILES=	bin/${PORTNAME}
 COMPILEINFO=	${OPSYS}${OSREL}-${ARCH}-${GH_TAGNAME}
 
-STRIP=		# stripping can break go binaries
-
 do-build:
 	(cd ${WRKSRC} && ${SETENV} ${GO_ENV} go build -o ${PORTNAME} -ldflags "-X main.compileInfo=${COMPILEINFO}" main.go)
 

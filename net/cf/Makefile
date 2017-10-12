@@ -24,8 +24,6 @@ PLIST_FILES=	bin/cf
 
 PORTDOCS=	CHANGELOG.md NOTICE README.md
 
-STRIP=		# stripping can break go binaries
-
 OPTIONS_DEFINE=	DOCS
 
 do-build:

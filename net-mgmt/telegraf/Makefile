@@ -90,8 +90,6 @@ SUB_FILES=	telegraf
 SUB_LIST+=	TELEGRAF_PIDDIR=${TELEGRAF_PIDDIR}
 PLIST_SUB=	TELEGRAF_PIDDIR=${TELEGRAF_PIDDIR}
 
-STRIP=		# stripping can break go binaries
-
 post-patch:
 	@${MKDIR} ${WRKSRC}/src/github.com/${GH_ACCOUNT_DEFAULT}/${PORTNAME}
 	@cd ${WRKSRC} && ${MV} CHANGELOG.md CONTRIBUTING.md Godeps Godeps_windows \

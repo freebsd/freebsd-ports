@@ -21,8 +21,6 @@ USE_RC_SUBR=	syncthing-discosrv
 USERS=		syncthing
 GROUPS=		syncthing
 
-STRIP=		# stripping can break go binaries
-
 post-patch:
 	@cd ${WRKSRC} ; ${MKDIR} src/github.com/${GH_ACCOUNT}/${GH_PROJECT} ; \
 		${MV} .gitignore CONTRIBUTORS LICENSE README.md build.sh \

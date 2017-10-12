@@ -32,7 +32,6 @@ GH_TAGNAME=	RELEASE.2017-02-06T20-16-19Z
 GH_SUBDIR=	src/github.com/${GH_ACCOUNT}/${GH_PROJECT}
 MAKE_ENV=	GOPATH=${WRKSRC} GOROOT=${LOCALBASE}/go
 
-STRIP=		# stripping can break go binaries
 PLIST_FILES=	bin/${MC}
 
 do-build:

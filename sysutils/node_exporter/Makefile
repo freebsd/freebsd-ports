@@ -23,8 +23,6 @@ PLIST_FILES=	bin/node_exporter
 
 USE_RC_SUBR=	node_exporter
 
-STRIP=		# stripping can break go binaries
-
 do-install:
 	${INSTALL_PROGRAM} ${WRKDIR}/bin/node_exporter ${STAGEDIR}${PREFIX}/bin
 

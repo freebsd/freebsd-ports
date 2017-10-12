@@ -25,8 +25,6 @@ PLIST_FILES=	${PREFIX}/bin/${PORTNAME}
 
 USE_RC_SUBR=	${PORTNAME}
 
-STRIP=		#none
-
 do-build:
 	cd ${GO_WRKSRC} && \
 		${SETENV} ${BUILD_ENV} GOPATH=${WRKSRC} go build -v -x \
