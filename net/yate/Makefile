@@ -26,7 +26,6 @@ SHEBANG_FILES=	share/scripts/banbrutes.php \
 		share/scripts/route.php \
 		share/scripts/voicemail.php
 USE_LDCONFIG=	yes
-WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
 
 CONFIGURE_ARGS=	--without-fdsize \

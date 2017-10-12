@@ -25,7 +25,6 @@ SHEBANG_FILES=	tools/cqrlog-apparmor-fix \
 USE_FPC=	cairo fcl-base fcl-db fcl-image fcl-json fcl-net fcl-web \
 		fcl-registry rtl-extra fcl-xml mysql numlib openssl pasjpeg x11
 
-WANT_GNOME=	yes
 ALL_TARGET=	${PORTNAME}
 
 LAZARUS_VER=	1.6.4

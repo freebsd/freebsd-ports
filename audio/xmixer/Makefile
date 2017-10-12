@@ -12,7 +12,6 @@ COMMENT=	Audio mixer (gtk and Xlib) for X11R6
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
 ALL_TARGET=	${PROGRAMS}
 

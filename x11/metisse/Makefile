@@ -44,7 +44,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-fontdir=${LOCALBASE}/share/fonts
 USE_LDCONFIG=	yes
 USE_XORG=	xcursor xft xinerama xpm xrender xt xtst
-WANT_GNOME=	yes
 MAKE_ARGS=	METISSE_DOC_DIR="${DOCSDIR}"
 INSTALL_TARGET=	install-strip
 

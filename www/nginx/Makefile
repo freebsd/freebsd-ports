@@ -246,8 +246,6 @@ X11_DESC=			graphics/ImageMagick[-nox11] dependency
 XSS_DESC=			3rd party xss module
 VIDEO_DESC=			Video module support
 
-WANT_GNOME=	yes
-
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MX11}
