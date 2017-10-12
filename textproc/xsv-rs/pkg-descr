@@ -1,0 +1,4 @@
+xsv is a suite of command line utilities for indexing, slicing,
+analyzing, splitting and joining CSV files.
+
+WWW: https://github.com/BurntSushi/xsv
