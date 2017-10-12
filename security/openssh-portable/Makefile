@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	openssh
-DISTVERSION=	7.5p1
-PORTREVISION=	1
+DISTVERSION=	7.6p1
+PORTREVISION=	0
 PORTEPOCH=	1
 CATEGORIES=	security ipv6
 MASTER_SITES=	OPENBSD/OpenSSH/portable
@@ -30,7 +30,7 @@ BROKEN_SSL_REASON_openssl-devel=	incomplete definition of type struct rsa_st
 OPTIONS_DEFINE=		PAM TCP_WRAPPERS LIBEDIT BSM \
 			HPN X509 KERB_GSSAPI \
 			OVERWRITE_BASE SCTP LDNS NONECIPHER
-OPTIONS_DEFAULT=	LIBEDIT PAM TCP_WRAPPERS HPN LDNS
+OPTIONS_DEFAULT=	LIBEDIT PAM TCP_WRAPPERS LDNS
 OPTIONS_RADIO=		KERBEROS
 OPTIONS_RADIO_KERBEROS=	MIT HEIMDAL HEIMDAL_BASE
 TCP_WRAPPERS_DESC=	tcp_wrappers support
@@ -61,14 +61,15 @@ HPN_CONFIGURE_WITH=		hpn
 NONECIPHER_CONFIGURE_WITH=	nonecipher
 
 # See http://www.roumenpetrov.info/openssh/
-X509_VERSION=		10.1
+X509_VERSION=		11.0
 X509_PATCH_SITES=	http://www.roumenpetrov.info/openssh/x509-${X509_VERSION}/:x509
 X509_EXTRA_PATCHES+=	${FILESDIR}/extra-patch-x509-glue
-X509_PATCHFILES=	${PORTNAME}-7.5p1+x509-${X509_VERSION}.diff.gz:-p1:x509
+X509_PATCHFILES=	${PORTNAME}-7.6p1+x509-${X509_VERSION}.diff.gz:-p1:x509
 
 # See https://bugzilla.mindrot.org/show_bug.cgi?id=2016
 # and https://bugzilla.mindrot.org/show_bug.cgi?id=1604
 #SCTP_PATCHFILES=	${PORTNAME}-7.2_p1-sctp.patch.gz:-p1
+SCTP_BROKEN=		Does not apply to 7.6+
 SCTP_CONFIGURE_WITH=	sctp
 SCTP_EXTRA_PATCHES+=	${FILESDIR}/extra-patch-sctp:-p1
 
@@ -95,7 +96,7 @@ EXTRA_PATCHES:=		${EXTRA_PATCHES:N${TCP_WRAPPERS_EXTRA_PATCHES}}
 
 # Must add this patch before HPN due to conflicts
 .if ${PORT_OPTIONS:MKERB_GSSAPI}
-BROKEN=	No patch for 7.5 yet.
+BROKEN=	No patch for 7.6 yet.
 # Patch from:
 # http://sources.debian.net/data/main/o/openssh/1:7.4p1-5/debian/patches/gssapi.patch
 # which was originally based on 5.7 patch from
@@ -110,12 +111,16 @@ PATCHFILES+=	openssh-7.4p1-gsskex-all-20141021-debian-rh-20161228.patch.gz:-p1:g
 
 # http://www.psc.edu/index.php/hpn-ssh https://github.com/rapier1/hpn-ssh https://github.com/rapier1/openssh-portable
 .if ${PORT_OPTIONS:MHPN} || ${PORT_OPTIONS:MNONECIPHER}
+BROKEN=			Not yet updated for 7.6+ and disabled in base
 PORTDOCS+=		HPN-README
 HPN_VERSION=		14v5
 HPN_DISTVERSION=	6.7p1
 #PATCH_SITES+=		SOURCEFORGE/hpnssh/HPN-SSH%20${HPN_VERSION}%20${HPN_DISTVERSION}/:hpn
 #PATCHFILES+=		${PORTNAME}-${HPN_DISTVERSION}-hpnssh${HPN_VERSION}.diff.gz:-p1:hpn
 EXTRA_PATCHES+=		${FILESDIR}/extra-patch-hpn:-p2
+.elif !${PORT_OPTIONS:MHPN} && !${PORT_OPTIONS:MNONECIPHER}
+# Apply compatibility patch
+EXTRA_PATCHES+=		${FILESDIR}/extra-patch-hpn-compat
 .endif
 
 CONFIGURE_LIBS+=	-lutil
