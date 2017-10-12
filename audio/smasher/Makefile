@@ -10,6 +10,9 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cross platform audio loop slicer
 
+DEPRECATED=	Does not build with modern csound
+EXPIRATION_DATE=	2017-11-12
+
 LICENSE=	LGPL20
 LICENSE_FILE=	${WRKSRC}/COPYING.LIB
 
