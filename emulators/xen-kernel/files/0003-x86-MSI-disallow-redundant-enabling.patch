@@ -1,0 +1,55 @@
+From: Jan Beulich <jbeulich@suse.com>
+Subject: x86/MSI: disallow redundant enabling
+
+At the moment, Xen attempts to allow redundant enabling of MSI by
+having pci_enable_msi() return 0, and point to the existing MSI
+descriptor, when the msi already exists.
+
+Unfortunately, if subsequent errors are encountered, the cleanup
+paths assume pci_enable_msi() had done full initialization, and
+hence undo everything that was assumed to be done by that
+function without also undoing other setup that would normally
+occur only after that function was called (in map_domain_pirq()
+itself).
+
+Rather than try to make the redundant enabling case work properly, just
+forbid it entirely by having pci_enable_msi() return -EEXIST when MSI
+is already set up.
+
+This is part of XSA-237.
+
+Reported-by: HW42 <hw42@ipsumj.de>
+Signed-off-by: Jan Beulich <jbeulich@suse.com>
+Reviewed-by: Andrew Cooper <andrew.cooper3@citrix.com>
+Reviewed-by: George Dunlap <george.dunlap@citrix.com>
+
+--- a/xen/arch/x86/msi.c
++++ b/xen/arch/x86/msi.c
+@@ -1050,11 +1050,10 @@ static int __pci_enable_msi(struct msi_i
+     old_desc = find_msi_entry(pdev, msi->irq, PCI_CAP_ID_MSI);
+     if ( old_desc )
+     {
+-        printk(XENLOG_WARNING "irq %d already mapped to MSI on %04x:%02x:%02x.%u\n",
++        printk(XENLOG_ERR "irq %d already mapped to MSI on %04x:%02x:%02x.%u\n",
+                msi->irq, msi->seg, msi->bus,
+                PCI_SLOT(msi->devfn), PCI_FUNC(msi->devfn));
+-        *desc = old_desc;
+-        return 0;
++        return -EEXIST;
+     }
+ 
+     old_desc = find_msi_entry(pdev, -1, PCI_CAP_ID_MSIX);
+@@ -1118,11 +1117,10 @@ static int __pci_enable_msix(struct msi_
+     old_desc = find_msi_entry(pdev, msi->irq, PCI_CAP_ID_MSIX);
+     if ( old_desc )
+     {
+-        printk(XENLOG_WARNING "irq %d already mapped to MSI-X on %04x:%02x:%02x.%u\n",
++        printk(XENLOG_ERR "irq %d already mapped to MSI-X on %04x:%02x:%02x.%u\n",
+                msi->irq, msi->seg, msi->bus,
+                PCI_SLOT(msi->devfn), PCI_FUNC(msi->devfn));
+-        *desc = old_desc;
+-        return 0;
++        return -EEXIST;
+     }
+ 
+     old_desc = find_msi_entry(pdev, -1, PCI_CAP_ID_MSI);
