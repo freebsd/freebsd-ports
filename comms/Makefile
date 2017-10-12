@@ -40,6 +40,7 @@
     SUBDIR += efax-gtk
     SUBDIR += ems-flasher
     SUBDIR += fl_moxgen
+    SUBDIR += flcluster
     SUBDIR += fldigi
     SUBDIR += fllog
     SUBDIR += flrig

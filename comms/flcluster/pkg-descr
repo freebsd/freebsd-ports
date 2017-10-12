@@ -1,0 +1,11 @@
+flcluster is a stand alone dx cluster client that will also connect to fldigi
+and act as the dx cluster client for fldigi. Multiple instances of flcluster   
+can simultaneously connect to fldigi, and fldigi's internal dx cluster client
+can also be connected at the same time.  Connectivity is via a socket interface,
+so flclient can reside on the same or a different computer on the LAN or WAN
+so long as it is possible to establish the socket (xmlrpc) connection.
+
+Join linuxham or NBEMSham at groups.io or win-fldigi at Yahoo group for
+support, news and updates on W1HKJ software:
+
+WWW: http://www.w1hkj.com/flcluster-help
