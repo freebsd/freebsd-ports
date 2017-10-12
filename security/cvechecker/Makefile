@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	cvechecker
-PORTVERSION=	3.8
+DISTVERSIONPREFIX=	v
+DISTVERSION=	3.8
 CATEGORIES=	security
 
 MAINTAINER=	se@FreeBSD.org
@@ -38,8 +39,6 @@ SQLITE_CONFIGURE_ENABLE=	sqlite3
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	sjvermeu
-GH_PROJECT=	cvechecker
-GH_TAGNAME=	v${PORTVERSION}
 
 post-stage:
 		${MV} ${STAGEDIR}${PREFIX}/etc/cvechecker.conf ${STAGEDIR}${PREFIX}/etc/cvechecker.conf.sample
