@@ -5,7 +5,22 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
-20171006:
+20171012:
+  AFFECTS: users of security/openssh-portable
+  AUTHOR: bdrewery@FreeBSD.org
+
+  OpenSSH has been upgraded to 7.6p1 which has removed several deprecated
+  features:
+
+    - SSH version 1 support dropped.
+    - Dropped support for hmac-ripemd160 MAC.
+    - Dropped support for the ciphers arcfour, blowfish and CAST.
+    - RSA keys less than 1024 bits are refused.
+
+  The HPN option is currently disabled by default, and does not build,
+  in the package.  This follows what happened in base as well.
+
+ 20171006:
   AFFECTS: users of graphics/netpbm
   AUTHOR: tobik@FreeBSD.org
 

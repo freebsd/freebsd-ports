@@ -8,9 +8,9 @@ r226103 | des | 2011-10-07 08:10:16 -0500 (Fri, 07 Oct 2011) | 5 lines
 Add a -x option that causes ssh-agent(1) to exit when all clients have
 disconnected.
 
---- ssh-agent.c.orig	2015-05-29 03:27:21.000000000 -0500
-+++ ssh-agent.c	2015-06-02 09:46:54.719580000 -0500
-@@ -157,15 +157,34 @@ static long lifetime = 0;
+--- ssh-agent.c.orig	2017-10-02 12:34:26.000000000 -0700
++++ ssh-agent.c	2017-10-12 11:31:40.908737000 -0700
+@@ -162,15 +162,34 @@ static long lifetime = 0;
  
  static int fingerprint_hash = SSH_FP_HASH_DEFAULT;
  
@@ -45,7 +45,7 @@ disconnected.
  }
  
  static void
-@@ -963,6 +982,10 @@ new_socket(sock_type type, int fd)
+@@ -745,6 +764,10 @@ new_socket(sock_type type, int fd)
  {
  	u_int i, old_alloc, new_alloc;
  
@@ -56,7 +56,7 @@ disconnected.
  	set_nonblock(fd);
  
  	if (fd > max_fd)
-@@ -1190,7 +1213,7 @@ static void
+@@ -1007,7 +1030,7 @@ static void
  usage(void)
  {
  	fprintf(stderr,
@@ -65,7 +65,7 @@ disconnected.
  	    "                 [-P pkcs11_whitelist] [-t life] [command [arg ...]]\n"
  	    "       ssh-agent [-c | -s] -k\n");
  	exit(1);
-@@ -1222,6 +1245,7 @@ main(int ac, char **av)
+@@ -1039,6 +1062,7 @@ main(int ac, char **av)
  	/* drop */
  	setegid(getgid());
  	setgid(getgid());
@@ -73,7 +73,7 @@ disconnected.
  
  	platform_disable_tracing(0);	/* strict=no */
  
-@@ -1232,7 +1256,7 @@ main(int ac, char **av)
+@@ -1049,7 +1073,7 @@ main(int ac, char **av)
  	__progname = ssh_get_progname(av[0]);
  	seed_rng();
  
@@ -82,13 +82,13 @@ disconnected.
  		switch (ch) {
  		case 'E':
  			fingerprint_hash = ssh_digest_alg_by_name(optarg);
-@@ -1276,6 +1300,9 @@ main(int ac, char **av)
+@@ -1092,6 +1116,9 @@ main(int ac, char **av)
+ 				fprintf(stderr, "Invalid lifetime\n");
  				usage();
  			}
- 			break;
++			break;
 +		case 'x':
 +			xcount = 0;
-+			break;
+ 			break;
  		default:
  			usage();
- 		}
