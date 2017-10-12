@@ -192,7 +192,6 @@ CONFIGURE_ARGS+=	\
 			--enable-gnutls \
 			--builtin-libraries=smbclient \
 			--without-pie \
-			--accel-aes=intelaesni \
 			${ICONV_CONFIGURE_BASE}
 
 # for libexecinfo: (so that __builtin_frame_address() finds the top of the stack)
