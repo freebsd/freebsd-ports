@@ -1,0 +1,4 @@
+Requests-File is a transport adapter for use with the Requests Python
+library to allow local filesystem access via file:// URLs.
+
+WWW: https://github.com/dashea/requests-file
