@@ -16,7 +16,6 @@ GH_ACCOUNT=	mono
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_path_MCS=${LOCALBASE}/bin/mcs
 USES=		autoreconf gmake mono pkgconfig
-WANT_GNOME=	yes
 
 OPTIONS_DEFINE=	GTK2 GTK3
 OPTIONS_DEFAULT=GTK2

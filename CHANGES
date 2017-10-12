@@ -10,6 +10,12 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20171012:
+AUTHOR: mat@FreeBSD.org
+
+  Remove WANT_GNOME and HAVE_GNOME, they were in disuse, and made useless by
+  options.
+
 20171011:
 AUTHOR: bapt@FreeBSD.org
 
