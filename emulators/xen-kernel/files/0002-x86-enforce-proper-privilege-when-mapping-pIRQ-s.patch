@@ -1,0 +1,66 @@
+From: Jan Beulich <jbeulich@suse.com>
+Subject: x86: enforce proper privilege when (un)mapping pIRQ-s
+
+(Un)mapping of IRQs, just like other RESOURCE__ADD* / RESOURCE__REMOVE*
+actions (in FLASK terms) should be XSM_DM_PRIV rather than XSM_TARGET.
+This in turn requires bypassing the XSM check in physdev_unmap_pirq()
+for the HVM emuirq case just like is being done in physdev_map_pirq().
+The primary goal security wise, however, is to no longer allow HVM
+guests, by specifying their own domain ID instead of DOMID_SELF, to
+enter code paths intended for PV guest and the control domains of HVM
+guests only.
+
+This is part of XSA-237.
+
+Reported-by: HW42 <hw42@ipsumj.de>
+Signed-off-by: Jan Beulich <jbeulich@suse.com>
+Reviewed-by: George Dunlap <george.dunlap@citrix.com>
+
+--- a/xen/arch/x86/physdev.c
++++ b/xen/arch/x86/physdev.c
+@@ -110,7 +110,7 @@ int physdev_map_pirq(domid_t domid, int
+     if ( d == NULL )
+         return -ESRCH;
+ 
+-    ret = xsm_map_domain_pirq(XSM_TARGET, d);
++    ret = xsm_map_domain_pirq(XSM_DM_PRIV, d);
+     if ( ret )
+         goto free_domain;
+ 
+@@ -255,13 +255,14 @@ int physdev_map_pirq(domid_t domid, int
+ int physdev_unmap_pirq(domid_t domid, int pirq)
+ {
+     struct domain *d;
+-    int ret;
++    int ret = 0;
+ 
+     d = rcu_lock_domain_by_any_id(domid);
+     if ( d == NULL )
+         return -ESRCH;
+ 
+-    ret = xsm_unmap_domain_pirq(XSM_TARGET, d);
++    if ( domid != DOMID_SELF || !is_hvm_domain(d) )
++        ret = xsm_unmap_domain_pirq(XSM_DM_PRIV, d);
+     if ( ret )
+         goto free_domain;
+ 
+--- a/xen/include/xsm/dummy.h
++++ b/xen/include/xsm/dummy.h
+@@ -453,7 +453,7 @@ static XSM_INLINE char *xsm_show_irq_sid
+ 
+ static XSM_INLINE int xsm_map_domain_pirq(XSM_DEFAULT_ARG struct domain *d)
+ {
+-    XSM_ASSERT_ACTION(XSM_TARGET);
++    XSM_ASSERT_ACTION(XSM_DM_PRIV);
+     return xsm_default_action(action, current->domain, d);
+ }
+ 
+@@ -465,7 +465,7 @@ static XSM_INLINE int xsm_map_domain_irq
+ 
+ static XSM_INLINE int xsm_unmap_domain_pirq(XSM_DEFAULT_ARG struct domain *d)
+ {
+-    XSM_ASSERT_ACTION(XSM_TARGET);
++    XSM_ASSERT_ACTION(XSM_DM_PRIV);
+     return xsm_default_action(action, current->domain, d);
+ }
+ 
