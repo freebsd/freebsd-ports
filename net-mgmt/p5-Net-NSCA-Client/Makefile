@@ -49,7 +49,4 @@ post-patch:
 	@cd ${WRKSRC} && ${RM} bin/send_nsca
 	@cd ${WRKSRC} && ${RM} t/send_nsca.t
 
-regression-test: build
-	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ./Build test
-
 .include <bsd.port.mk>
