@@ -11,9 +11,8 @@ MAINTAINER=	feld@FreeBSD.org
 COMMENT=	Various utilities for working with date and datetime objects
 
 LICENSE=	BSD3CLAUSE
-LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS?=	${PYTHON_PKGNAMEPREFIX}argparse>0:devel/py-argparse \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}argparse>0:devel/py-argparse \
 		${PYTHON_PKGNAMEPREFIX}dateutil>0:devel/py-dateutil \
 		${PYTHON_PKGNAMEPREFIX}pytz>0:devel/py-pytz
 
