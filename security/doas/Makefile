@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	doas
-PORTVERSION=	6.0p1
+PORTVERSION=	6.0p2
 CATEGORIES=	security
 
 MAINTAINER=	jsmith@resonatingmedia.com
