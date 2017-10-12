@@ -896,11 +896,7 @@ MASTER_SITE_QT+= \
 	http://www.mirrorservice.org/sites/download.qt-project.org/%SUBDIR%/ \
 	http://www.nic.funet.fi/pub/mirrors/download.qt-project.org/%SUBDIR%/ \
 	http://qtmirror.ics.com/pub/qtproject/%SUBDIR%/ \
-	http://anychimirror101.mirrors.tds.net/pub/Qt/%SUBDIR%/ \
-	http://www.las.ic.unicamp.br/pub/qtproject/%SUBDIR%/ \
-	http://linorg.usp.br/Qt/%SUBDIR%/ \
-	http://ftp.jaist.ac.jp/pub/qtproject/%SUBDIR%/ \
-	http://mirrors.neusoft.edu.cn/qt/%SUBDIR%/
+	http://ftp.jaist.ac.jp/pub/qtproject/%SUBDIR%/
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_REDHAT_LINUX)
