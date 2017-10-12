@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dovecot-pigeonhole
-PORTVERSION=	0.4.20
-PORTREVISION=	3
+PORTVERSION=	0.4.21
 CATEGORIES=	mail
 MASTER_SITES=	http://pigeonhole.dovecot.org/releases/${DOVECOTVERSION}/
 DISTNAME=	${PORTNAME:C/-/-${DOVECOTVERSION}-/}-${PORTVERSION}
