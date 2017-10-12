@@ -428,6 +428,7 @@
 %%WWWDIR%%/include/classes/validators/CDecimalStringValidator.php
 %%WWWDIR%%/include/classes/validators/CDecimalValidator.php
 %%WWWDIR%%/include/classes/validators/CFunctionValidator.php
+%%WWWDIR%%/include/classes/validators/CHtmlUrlValidator.php
 %%WWWDIR%%/include/classes/validators/CIPRangeValidator.php
 %%WWWDIR%%/include/classes/validators/CIPValidator.php
 %%WWWDIR%%/include/classes/validators/CIdValidator.php
