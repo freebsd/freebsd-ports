@@ -20,7 +20,7 @@ BUILD_DEPENDS+=	gsed:textproc/gsed \
 BUILD_DEPENDS+=	${COMPILER}:devel/${COMPILER}
 
 USES=		gmake python:build shebangfix
-BINARY_ALIAS=	swig3.0=swig
+BINARY_ALIAS=	swig=swig3.0
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	freebsd
