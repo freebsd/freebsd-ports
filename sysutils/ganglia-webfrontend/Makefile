@@ -6,22 +6,22 @@ PORTREVISION=	1
 CATEGORIES=	sysutils net parallel www
 PKGNAMESUFFIX=	-webfrontend
 
-MAINTAINER=	jrm@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ganglia cluster monitor, web frontend
 
 LICENSE=	BSD3CLAUSE
 
-RUN_DEPENDS=	${LOCALBASE}/sbin/gmetad:sysutils/ganglia-monitor-core
+RUN_DEPENDS=	${LOCALBASE}/sbin/gmond:sysutils/ganglia-monitor-core
 
+USES=		php:web
 USE_GITHUB=	yes
 GH_ACCOUNT=	ganglia
 GH_PROJECT=	ganglia-web
+USE_PHP=	filter gd session xml
 
 NO_ARCH=	yes
 NO_BUILD=	yes
 
-USES=		php:web
-USE_PHP=	filter gd session xml
 WWWDIR=		${PREFIX}/www/ganglia
 
 PLIST_SUB=	WWWOWN="${WWWOWN}" WWWGRP="${WWWGRP}" WWWDIR="${WWWDIR}"
