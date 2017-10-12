@@ -531,8 +531,6 @@ MASTER_SITE_GNOME+= \
 	ftp://ftp.cse.buffalo.edu/pub/Gnome/%SUBDIR%/ \
 	http://fr2.rpmfind.net/linux/gnome.org/%SUBDIR%/ \
 	http://www.gtlib.gatech.edu/pub/gnome/%SUBDIR%/ \
-	http://linorg.usp.br/gnome/%SUBDIR%/ \
-	http://mirror.aarnet.edu.au/pub/gnome/%SUBDIR%/ \
 	ftp://ftp.kddlabs.co.jp/pub/GNOME/%SUBDIR%/ \
 	ftp://ftp.mirrorservice.org/sites/ftp.gnome.org/pub/GNOME/%SUBDIR%/ \
 	ftp://ftp.nara.wide.ad.jp/pub/X11/GNOME/%SUBDIR%/ \
