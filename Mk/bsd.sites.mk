@@ -329,15 +329,11 @@ MASTER_SITE_GENTOO+= \
 	http://ftp.snt.utwente.nl/pub/os/linux/gentoo/%SUBDIR%/ \
 	http://trumpetti.atm.tut.fi/gentoo/%SUBDIR%/ \
 	http://ftp.uni-erlangen.de/pub/mirrors/gentoo/%SUBDIR%/ \
-	http://darkstar.ist.utl.pt/gentoo/%SUBDIR%/ \
 	http://gentoo.inode.at/%SUBDIR%/ \
 	http://gentoo.gg3.net/%SUBDIR%/ \
-	http://gentoo.kems.net/%SUBDIR%/ \
 	http://mirrors.163.com/gentoo/%SUBDIR%/ \
 	ftp://ftp.gtlib.gatech.edu/pub/gentoo/%SUBDIR%/ \
-	ftp://mirror.iawnet.sandia.gov/pub/gentoo/%SUBDIR%/ \
 	ftp://ftp.ussg.iu.edu/pub/linux/gentoo/%SUBDIR%/ \
-	ftp://ftp.ucsb.edu/pub/mirrors/linux/gentoo/%SUBDIR%/ \
 	ftp://mirrors.tds.net/pub/gentoo/%SUBDIR%/ \
 	ftp://ftp.belnet.be/mirror/rsync.gentoo.org/gentoo/%SUBDIR%/ \
 	ftp://ftp.snt.utwente.nl/pub/os/linux/gentoo/%SUBDIR%/ \
@@ -346,9 +342,7 @@ MASTER_SITE_GENTOO+= \
 	ftp://sunsite.informatik.rwth-aachen.de/pub/Linux/gentoo/%SUBDIR%/ \
 	ftp://linux.rz.ruhr-uni-bochum.de/gentoo-mirror/%SUBDIR%/ \
 	ftp://ftp.uni-erlangen.de/pub/mirrors/gentoo/%SUBDIR%/ \
-	ftp://darkstar.ist.utl.pt/pub/gentoo/%SUBDIR%/ \
-	ftp://gentoo.inode.at/source/%SUBDIR%/ \
-	ftp://files.gentoo.gr/%SUBDIR%/
+	ftp://gentoo.inode.at/source/%SUBDIR%/
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_GITHUB)
