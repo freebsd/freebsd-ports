@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	facter
-PORTVERSION=	3.9.0
-PORTREVISION?=	3
+PORTVERSION=	3.9.2
 CATEGORIES?=	sysutils
 MASTER_SITES=	http://downloads.puppetlabs.com/facter/
 
@@ -12,7 +11,7 @@ COMMENT=	Cross-platform library for retrieving facts from OS
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cmake compiler:c++11-lib ssl
+USES=		cmake:noninja compiler:c++11-lib ssl
 
 BROKEN_DragonFly=	DragonFly is not supported upstream
 BROKEN_powerpc64=	fails to compile: collection.cc: 'stoi' was not declared in this scope
@@ -43,7 +42,7 @@ OPTIONS_SUB=	yes
 .include <bsd.port.options.mk>
 
 post-patch:
-	${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \
+	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \
 		${WRKSRC}/lib/src/facts/posix/collection.cc \
 		${WRKSRC}/lib/src/util/config/posix/config.cc
 
