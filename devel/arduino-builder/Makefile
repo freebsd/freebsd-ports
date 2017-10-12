@@ -27,7 +27,6 @@ TOOLS_RUN_DEPENDS=	arduino-tools>=${_COMPAT_VER}:devel/arduino-tools
 TOOLS_PLIST_FILES=	arduino/arduino-builder.options
 
 GO_ENV+=	GOPATH=${WRKSRC}
-STRIP=		# stripping can break go binaries
 _COMPAT_VER=	1.6.12
 _IDE_VER=	10612
 

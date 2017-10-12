@@ -30,8 +30,6 @@ SSL_USE=	my_tags=ssl
 ONLY_FOR_ARCHS=	amd64 i386
 ONLY_FOR_ARCHS_REASON=	"not yet ported to anything other than i386 and amd64"
 
-STRIP=		# Stripping can break go binaries
-
 # Go is not our friend. Without below, ignores user-supplied flags.
 MAKE_CMD=	${LOCALBASE}/bin/go build
 MAKE_ENV=	GOPATH="${WRKSRC}/.gopath:${WRKSRC}/vendor" \

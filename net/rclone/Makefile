@@ -41,8 +41,6 @@ GH_TUPLE+=	\
 
 PLIST_FILES=	bin/rclone
 
-STRIP=		# stripping can break go binaries
-
 do-build:
 	@cd ${WRKSRC}/src/github.com/${GH_ACCOUNT_DEFAULT}/${PORTNAME}; ${SETENV} GOPATH=${WRKSRC} go build .
 

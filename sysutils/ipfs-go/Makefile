@@ -25,8 +25,6 @@ PLIST_FILES=	bin/${PORTNAME}
 
 USE_RC_SUBR=	${PORTNAME}
 
-STRIP=		# stripping can break go binaries
-
 do-build:
 	cd ${WRKSRC}/src/github.com/ipfs/go-ipfs/cmd/ipfs; \
 		${SETENV} ${BUILD_ENV} ${MAKE_ENV} go build -v -x \

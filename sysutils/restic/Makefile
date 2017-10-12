@@ -14,7 +14,6 @@ LICENSE=	BSD2CLAUSE
 USES=		go
 USE_GITHUB=	yes
 
-STRIP=		# stripping can break go binaries
 PLIST_FILES=	bin/restic
 
 post-patch:

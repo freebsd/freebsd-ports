@@ -25,8 +25,6 @@ PLIST_SUB=	ARCH=amd64
 PLIST_SUB=	ARCH=386
 .endif
 
-STRIP=		# stripping can break go binaries
-
 do-install:
 	cd ${WRKSRC}/build/pkg && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/go/pkg/
 	cd ${WRKSRC}/build/src && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/go/src/
