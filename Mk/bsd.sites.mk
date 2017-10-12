@@ -337,7 +337,6 @@ MASTER_SITE_GENTOO+= \
 	http://ftp.uni-erlangen.de/pub/mirrors/gentoo/%SUBDIR%/ \
 	http://darkstar.ist.utl.pt/gentoo/%SUBDIR%/ \
 	http://gentoo.inode.at/%SUBDIR%/ \
-	http://ftp.rhnet.is/pub/gentoo/%SUBDIR%/ \
 	http://gentoo.gg3.net/%SUBDIR%/ \
 	http://gentoo.kems.net/%SUBDIR%/ \
 	http://mirrors.163.com/gentoo/%SUBDIR%/ \
@@ -357,7 +356,6 @@ MASTER_SITE_GENTOO+= \
 	ftp://ftp.uni-erlangen.de/pub/mirrors/gentoo/%SUBDIR%/ \
 	ftp://darkstar.ist.utl.pt/pub/gentoo/%SUBDIR%/ \
 	ftp://gentoo.inode.at/source/%SUBDIR%/ \
-	ftp://ftp.rhnet.is/pub/gentoo/%SUBDIR%/ \
 	ftp://files.gentoo.gr/%SUBDIR%/
 .endif
 
@@ -673,8 +671,6 @@ MASTER_SITE_KDE+= \
 	http://ftp.belnet.be/packages/kde/%SUBDIR%/ \
 	ftp://ftp.lip6.fr/pub/X11/kde/%SUBDIR%/ \
 	http://www-ftp.lip6.fr/pub/X11/kde/%SUBDIR%/ \
-	ftp://ftp.rhnet.is/pub/kde/%SUBDIR%/ \
-	http://ftp.rhnet.is/pub/kde/%SUBDIR%/ \
 	http://ftp-stud.hs-esslingen.de/Mirrors/ftp.kde.org/pub/kde/%SUBDIR%/ \
 	ftp://ftp.cronyx.ru/pub/mirror/kde/%SUBDIR%/ \
 	http://ftp.twaren.net/Unix/X/KDE/%SUBDIR%/ \
@@ -765,7 +761,6 @@ MASTER_SITE_MYSQL+= \
 	http://mirrors.ntua.gr/MySQL/Downloads/%SUBDIR%/ \
 	ftp://ftp.ntua.gr/pub/databases/mysql/Downloads/%SUBDIR%/ \
 	http://mysql.sote.hu/Downloads/%SUBDIR%/ \
-	ftp://ftp.rhnet.is/pub/mysql/Downloads/%SUBDIR%/ \
 	ftp://mirror.widexs.nl/pub/mysql/Downloads/%SUBDIR%/ \
 	ftp://mirror.switch.ch/mirror/mysql/Downloads/%SUBDIR%/ \
 	http://mysql.dp.ua/Downloads/%SUBDIR%/ \
