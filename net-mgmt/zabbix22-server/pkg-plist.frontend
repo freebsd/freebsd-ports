@@ -287,6 +287,7 @@
 %%WWWDIR%%/include/classes/helpers/CArrayHelper.php
 %%WWWDIR%%/include/classes/validators/CValidator.php
 %%WWWDIR%%/include/classes/validators/CDecimalValidator.php
+%%WWWDIR%%/include/classes/validators/CHtmlUrlValidator.php
 %%WWWDIR%%/include/classes/validators/CTimePeriodValidator.php
 %%WWWDIR%%/include/classes/validators/CTriggerFunctionValidator.php
 %%WWWDIR%%/include/classes/validators/CCollectionValidator.php
