@@ -1,0 +1,120 @@
+x86: don't store possibly stale TLB flush time stamp
+
+While the timing window is extremely narrow, it is theoretically
+possible for an update to the TLB flush clock and a subsequent flush
+IPI to happen between the read and write parts of the update of the
+per-page stamp. Exclude this possibility by disabling interrupts
+across the update, preventing the IPI to be serviced in the middle.
+
+This is XSA-241.
+
+Reported-by: Jann Horn <jannh@google.com>
+Suggested-by: George Dunlap <george.dunlap@citrix.com>
+Signed-off-by: Jan Beulich <jbeulich@suse.com>
+Reviewed-by: George Dunlap <george.dunlap@citrix.com>
+
+--- a/xen/arch/arm/smp.c
++++ b/xen/arch/arm/smp.c
+@@ -1,4 +1,5 @@
+ #include <xen/config.h>
++#include <xen/mm.h>
+ #include <asm/system.h>
+ #include <asm/smp.h>
+ #include <asm/cpregs.h>
+--- a/xen/arch/x86/mm.c
++++ b/xen/arch/x86/mm.c
+@@ -2524,7 +2524,7 @@ static int _put_final_page_type(struct p
+          */
+         if ( !(shadow_mode_enabled(page_get_owner(page)) &&
+                (page->count_info & PGC_page_table)) )
+-            page->tlbflush_timestamp = tlbflush_current_time();
++            page_set_tlbflush_timestamp(page);
+         wmb();
+         page->u.inuse.type_info--;
+     }
+@@ -2534,7 +2534,7 @@ static int _put_final_page_type(struct p
+                 (PGT_count_mask|PGT_validated|PGT_partial)) == 1);
+         if ( !(shadow_mode_enabled(page_get_owner(page)) &&
+                (page->count_info & PGC_page_table)) )
+-            page->tlbflush_timestamp = tlbflush_current_time();
++            page_set_tlbflush_timestamp(page);
+         wmb();
+         page->u.inuse.type_info |= PGT_validated;
+     }
+@@ -2588,7 +2588,7 @@ static int _put_page_type(struct page_in
+             if ( ptpg && PGT_type_equal(x, ptpg->u.inuse.type_info) )
+             {
+                 /*
+-                 * page_set_tlbflush_timestamp() accesses the same union
++                 * set_tlbflush_timestamp() accesses the same union
+                  * linear_pt_count lives in. Unvalidated page table pages,
+                  * however, should occur during domain destruction only
+                  * anyway.  Updating of linear_pt_count luckily is not
+@@ -2609,7 +2609,7 @@ static int _put_page_type(struct page_in
+              */
+             if ( !(shadow_mode_enabled(page_get_owner(page)) &&
+                    (page->count_info & PGC_page_table)) )
+-                page->tlbflush_timestamp = tlbflush_current_time();
++                page_set_tlbflush_timestamp(page);
+         }
+ 
+         if ( likely((y = cmpxchg(&page->u.inuse.type_info, x, nx)) == x) )
+--- a/xen/arch/x86/mm/shadow/common.c
++++ b/xen/arch/x86/mm/shadow/common.c
+@@ -1464,7 +1464,7 @@ void shadow_free(struct domain *d, mfn_t
+          * TLBs when we reuse the page.  Because the destructors leave the
+          * contents of the pages in place, we can delay TLB flushes until
+          * just before the allocator hands the page out again. */
+-        sp->tlbflush_timestamp = tlbflush_current_time();
++        page_set_tlbflush_timestamp(sp);
+         perfc_decr(shadow_alloc_count);
+         page_list_add_tail(sp, &d->arch.paging.shadow.freelist);
+         sp = next;
+--- a/xen/common/page_alloc.c
++++ b/xen/common/page_alloc.c
+@@ -960,7 +960,7 @@ static void free_heap_pages(
+         /* If a page has no owner it will need no safety TLB flush. */
+         pg[i].u.free.need_tlbflush = (page_get_owner(&pg[i]) != NULL);
+         if ( pg[i].u.free.need_tlbflush )
+-            pg[i].tlbflush_timestamp = tlbflush_current_time();
++            page_set_tlbflush_timestamp(&pg[i]);
+ 
+         /* This page is not a guest frame any more. */
+         page_set_owner(&pg[i], NULL); /* set_gpfn_from_mfn snoops pg owner */
+--- a/xen/include/asm-arm/flushtlb.h
++++ b/xen/include/asm-arm/flushtlb.h
+@@ -12,6 +12,11 @@ static inline void tlbflush_filter(cpuma
+ 
+ #define tlbflush_current_time()                 (0)
+ 
++static inline void page_set_tlbflush_timestamp(struct page_info *page)
++{
++    page->tlbflush_timestamp = tlbflush_current_time();
++}
++
+ #if defined(CONFIG_ARM_32)
+ # include <asm/arm32/flushtlb.h>
+ #elif defined(CONFIG_ARM_64)
+--- a/xen/include/asm-x86/flushtlb.h
++++ b/xen/include/asm-x86/flushtlb.h
+@@ -23,6 +23,20 @@ DECLARE_PER_CPU(u32, tlbflush_time);
+ 
+ #define tlbflush_current_time() tlbflush_clock
+ 
++static inline void page_set_tlbflush_timestamp(struct page_info *page)
++{
++    /*
++     * Prevent storing a stale time stamp, which could happen if an update
++     * to tlbflush_clock plus a subsequent flush IPI happen between the
++     * reading of tlbflush_clock and the writing of the struct page_info
++     * field.
++     */
++    ASSERT(local_irq_is_enabled());
++    local_irq_disable();
++    page->tlbflush_timestamp = tlbflush_current_time();
++    local_irq_enable();
++}
++
+ /*
+  * @cpu_stamp is the timestamp at last TLB flush for the CPU we are testing.
+  * @lastuse_stamp is a timestamp taken when the PFN we are testing was last 

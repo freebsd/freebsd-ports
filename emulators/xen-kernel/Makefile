@@ -2,7 +2,7 @@
 
 PORTNAME=	xen
 PORTVERSION=	4.7.2
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	emulators
 MASTER_SITES=	http://downloads.xenproject.org/release/xen/${PORTVERSION}/
 PKGNAMESUFFIX=	-kernel
@@ -67,7 +67,20 @@ EXTRA_PATCHES=	${FILESDIR}/0001-xen-logdirty-prevent-preemption-if-finished.patc
 		${FILESDIR}/xsa231-4.7.patch:-p1 \
 		${FILESDIR}/xsa232.patch:-p1 \
 		${FILESDIR}/xsa233.patch:-p1 \
-		${FILESDIR}/xsa234-4.8.patch:-p1
+		${FILESDIR}/xsa234-4.8.patch:-p1 \
+		${FILESDIR}/0001-x86-dont-allow-MSI-pIRQ-mapping-on-unowned-device.patch:-p1 \
+		${FILESDIR}/0002-x86-enforce-proper-privilege-when-mapping-pIRQ-s.patch:-p1 \
+		${FILESDIR}/0003-x86-MSI-disallow-redundant-enabling.patch:-p1 \
+		${FILESDIR}/0004-x86-IRQ-conditionally-preserve-irq-pirq-mapping-on-error.patch:-p1 \
+		${FILESDIR}/0005-x86-FLASK-fix-unmap-domain-IRQ-XSM-hook.patch:-p1 \
+		${FILESDIR}/xsa238.patch:-p1 \
+		${FILESDIR}/xsa239.patch:-p1 \
+		${FILESDIR}/0001-x86-limit-linear-page-table-use-to-a-single-level.patch:-p1 \
+		${FILESDIR}/0002-x86-mm-Disable-PV-linear-pagetables-by-default.patch:-p1 \
+		${FILESDIR}/xsa241-4.8.patch:-p1 \
+		${FILESDIR}/xsa242-4.9.patch:-p1 \
+		${FILESDIR}/xsa243-4.7.patch:-p1 \
+		${FILESDIR}/xsa244-4.7.patch:-p1
 
 .include <bsd.port.options.mk>
 
