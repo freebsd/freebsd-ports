@@ -4331,6 +4331,7 @@
     SUBDIR += py-darcsver
     SUBDIR += py-darts.util.lru
     SUBDIR += py-dateutil
+    SUBDIR += py-dateutils
     SUBDIR += py-dbus
     SUBDIR += py-ddt
     SUBDIR += py-debtcollector
