@@ -941,7 +941,7 @@ MASTER_SITE_SAVANNAH+= \
 	http://mirror.lihnidos.org/GNU/savannah/%SUBDIR%/ \
 	http://ftp.twaren.net/Unix/NonGNU/%SUBDIR%/ \
 	ftp://ftp.twaren.net/Unix/NonGNU/%SUBDIR%/ \
-	http://gnu.mirrors.pair.com/savannah/savannah/%SUBDIR%/ \
+	http://gnu.mirrors.pair.com/savannah/savannah/%SUBDIR%/
 .endif
 
 # List:		https://sourceforge.net/p/forge/documentation/Mirrors/
