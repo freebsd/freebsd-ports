@@ -667,8 +667,6 @@ MASTER_SITE_KDE+= \
 	ftp://ftp.sunet.se/pub/X11/kde/%SUBDIR%/ \
 	http://ftp.sunet.se/pub/X11/kde/%SUBDIR%/ \
 	ftp://ftp.kde.org/pub/kde/%SUBDIR%/ \
-	ftp://ftp.belnet.be/packages/kde/%SUBDIR%/ \
-	http://ftp.belnet.be/packages/kde/%SUBDIR%/ \
 	ftp://ftp.lip6.fr/pub/X11/kde/%SUBDIR%/ \
 	http://www-ftp.lip6.fr/pub/X11/kde/%SUBDIR%/ \
 	http://ftp-stud.hs-esslingen.de/Mirrors/ftp.kde.org/pub/kde/%SUBDIR%/ \
@@ -692,7 +690,6 @@ MASTER_SITE_KDE+= \
 	http://mirror.cc.columbia.edu/pub/software/kde/%SUBDIR%/ \
 	ftp://ftp.mirrorservice.org/sites/ftp.kde.org/pub/kde/%SUBDIR%/ \
 	http://www.mirrorservice.org/sites/ftp.kde.org/pub/kde/%SUBDIR%/ \
-	http://master.kde.org/%SUBDIR%/ \
 	http://ftp.icm.edu.pl/pub/unix/kde/%SUBDIR%/ \
 	http://kde-mirror.freenux.org/%SUBDIR%/ \
 	http://ftp.fi.muni.cz/pub/kde/%SUBDIR%/ \
