@@ -13,7 +13,4 @@ COMMENT=	Perl extension of devstat(3) API
 USES=		perl5
 USE_PERL5=	configure
 
-regression-test:
-	cd ${WRKSRC} && make test
-
 .include <bsd.port.mk>
