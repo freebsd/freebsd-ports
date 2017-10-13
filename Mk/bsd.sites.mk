@@ -938,7 +938,7 @@ MASTER_SITE_SOURCEFORGE+= ${p}://${m}.dl.sourceforge.net/project/%SUBDIR%/
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_SOURCEFORGE_JP)
-.for mirror in iij jaist keihanna osdn
+.for mirror in iij jaist osdn
 MASTER_SITE_SOURCEFORGE_JP+= \
 	http://${mirror}.dl.sourceforge.jp/%SUBDIR%/
 .endfor
