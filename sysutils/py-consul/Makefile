@@ -10,9 +10,9 @@ COMMENT=	Python client for consul
 
 LICENSE=	MIT
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>=2.0.0:www/py3-requests \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>=2.0.0:www/py-requests \
 				${PYTHON_PKGNAMEPREFIX}six>=1.4:devel/py-six
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>=2.0.0:www/py3-requests \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>=2.0.0:www/py-requests \
 				${PYTHON_PKGNAMEPREFIX}six>=1.4:devel/py-six
 
 USE_GITHUB=	yes
