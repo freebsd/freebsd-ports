@@ -2,7 +2,7 @@
 
 PORTNAME=	xwayland
 PORTVERSION=	1.19.1
-PORTREVISION=	1
+PORTREVISION=	2
 
 COMMENT=	X Clients under Wayland
 
@@ -29,8 +29,16 @@ CONFIGURE_ARGS+=	--disable-docs --disable-devel-docs \
 
 PLIST_FILES=	bin/Xwayland
 
-EXTRA_PATCHES=	${MASTERDIR}/files/patch-CVE-2017-13721 \
-		${MASTERDIR}/files/patch-CVE-2017-13723
+EXTRA_PATCHES=	${MASTERDIR}/files/patch-CVE-2017-12176 \
+		${MASTERDIR}/files/patch-CVE-2017-12177 \
+		${MASTERDIR}/files/patch-CVE-2017-12178 \
+		${MASTERDIR}/files/patch-CVE-2017-12179 \
+		${MASTERDIR}/files/patch-CVE-2017-12183 \
+		${MASTERDIR}/files/patch-CVE-2017-1218x \
+		${MASTERDIR}/files/patch-CVE-2017-1218y \
+		${MASTERDIR}/files/patch-CVE-2017-13721 \
+		${MASTERDIR}/files/patch-CVE-2017-13723 \
+		${MASTERDIR}/files/patch-os_io.c
 
 do-install:
 	cd ${WRKSRC}/hw/xwayland; DESTDIR=${STAGEDIR} ${MAKE_CMD} install
