@@ -1066,10 +1066,7 @@ MASTER_SITE_WINDOWMAKER+= \
 
 .if !defined(IGNORE_MASTER_SITE_XCONTRIB)
 MASTER_SITE_XCONTRIB+= \
-	ftp://ftp.gwdg.de/pub/x11/x.org/contrib/%SUBDIR%/ \
-	ftp://ftp.x.org/contrib/%SUBDIR%/ \
-	ftp://ftp.kddlabs.co.jp/X11/ftp.x.org/contrib/%SUBDIR%/ \
-	ftp://ftp2.x.org/contrib/%SUBDIR%/
+	ftp://ftp.gwdg.de/pub/x11/x.org/contrib/%SUBDIR%/
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_XFCE)
