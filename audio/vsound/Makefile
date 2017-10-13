@@ -10,6 +10,8 @@ MASTER_SITES=	http://www.vsound.org/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility for capturing audio streams from programs with OSS output
 
+BROKEN=		No public distfiles
+
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
