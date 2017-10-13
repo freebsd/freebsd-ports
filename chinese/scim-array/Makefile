@@ -10,7 +10,7 @@ MASTER_SITES=	http://of.openfoundry.org/download/scimarray/${PORTVERSION}/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Array 30 SCIM IMEngine module
 
-BORKEN=		No public distfiles
+BROKEN=		No public distfiles
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
