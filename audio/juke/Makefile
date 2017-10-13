@@ -1,11 +1,10 @@
-# Created by: Oyvind Moll <oyvindmo@initio.no>
+ # Created by: Oyvind Moll <oyvindmo@initio.no2
 # $FreeBSD$
 
 PORTNAME=	juke
 PORTVERSION=	0.7
 CATEGORIES=	audio
-MASTER_SITES=	http://www.moll.no/oyvind/distfiles/ \
-		http://www.orakel.ntnu.no/~oyvindmo/distfiles/
+MASTER_SITES=	http://www.moll.no/oyvind/distfiles/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple (n)curses based juke box program

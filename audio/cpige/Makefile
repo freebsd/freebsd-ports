@@ -5,8 +5,7 @@ PORTNAME=	cpige
 DISTVERSION=	1.5
 PORTREVISION=	1
 CATEGORIES=	audio
-MASTER_SITES=	http://old.ed.zehome.com/cpige/ \
-		http://T32.TecNik93.com/FreeBSD/ports/cpige/sources/
+MASTER_SITES=	http://old.ed.zehome.com/cpige/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Icecast/Shoutcast stream ripper
