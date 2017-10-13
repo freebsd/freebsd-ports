@@ -10,6 +10,8 @@ MASTER_SITES=	http://testbit.eu/pub/dists/beast/v${PORTVERSION:R}/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Powerful music composition and modular synthesis application
 
+BROKEN=		No public distfiles
+
 LICENSE=	LGPL21
 
 LIB_DEPENDS=	libasound.so:audio/alsa-lib \

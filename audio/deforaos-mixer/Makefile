@@ -11,6 +11,8 @@ DISTNAME=	Mixer-${PORTVERSION}
 MAINTAINER=	olivier@FreeBSD.org
 COMMENT=	DeforaOS desktop audio mixer
 
+BROKEN=		No public distfiles
+
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
