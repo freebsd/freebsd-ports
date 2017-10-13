@@ -5,8 +5,7 @@ PORTNAME=	FreeWnn
 PORTVERSION=	1.1.1.a021
 PORTREVISION=	13
 CATEGORIES?=	japanese
-MASTER_SITES=	ftp://ftp.freewnn.org/pub/FreeWnn/alpha/ \
-		SFJP/freewnn/17724
+MASTER_SITES=	SFJP/freewnn/17724
 PKGNAMESUFFIX=	-lib
 DISTNAME=	${PORTNAME}-1.1.1-a021
 
