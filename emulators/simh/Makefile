@@ -3,7 +3,7 @@
 
 PORTNAME=	simh
 PORTVERSION=	3.9.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	emulators
 MASTER_SITES=	http://simh.trailing-edge.com/sources/:src \
 		http://www.ml1.org.uk/distfiles/:pdf \
@@ -23,7 +23,7 @@ NO_WRKSUBDIR=	yes
 
 USES=		gmake dos2unix zip
 DOS2UNIX_GLOB=	*.c *.h *.txt *.mak *.ini makefile
-CFLAGS+=	-Wno-format-extra-args -Wno-comment -Wno-logical-op-parentheses -Wno-bitwise-op-parentheses
+CFLAGS+=	-Wno-format-extra-args -Wno-comment -Wno-logical-op-parentheses -Wno-bitwise-op-parentheses -Wno-shift-negative-value
 MAKE_ENV=	GCC="${CC}" CFLAGS_O="${CFLAGS}" USE_NETWORK=1
 MAKEFILE=	makefile
 
@@ -45,8 +45,10 @@ post-patch:
 		's|%%DATADIR%%|${DATADIR}|' ${WRKSRC}/VAX/vax_sysdev.c
 
 post-build:
-# eclipse conflicts with java/eclipse, install it as simh-eclipse
+# eclipse, gri and nova conflict with other ports, prefix with simh-
 	@${MV} ${WRKSRC}/BIN/eclipse ${WRKSRC}/BIN/simh-eclipse
+	@${MV} ${WRKSRC}/BIN/gri ${WRKSRC}/BIN/simh-gri
+	@${MV} ${WRKSRC}/BIN/nova ${WRKSRC}/BIN/simh-nova
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/BIN/* ${STAGEDIR}${PREFIX}/bin
