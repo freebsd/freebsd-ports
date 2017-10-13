@@ -11,6 +11,7 @@ DISTNAME=	cider1b1
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mixed-level circuit and device simulator (includes SPICE3)
 
+BROKEN=		No public distfiles
 BROKEN_aarch64=		fails to link: missing sbrk
 BROKEN_powerpc64=	fails to compile: ccache: cc: FreeBSD: No such file or directory
 

@@ -13,6 +13,7 @@ EXTRACT_ONLY=	${PORTNAME}${PORTVERSION:S/.//}${EXTRACT_SUFX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Finite element analysis program (personal version)
 
+BROKEN=		No public distfiles
 USES=		fortran gmake localbase:ldflags zip
 USE_XORG=	x11
 MAKEFILE=	makefile
