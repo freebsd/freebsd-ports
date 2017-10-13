@@ -10,6 +10,8 @@ MASTER_SITES=	http://www.ibiblio.org/tkan/download/xmmix/1.2.2/src/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Motif-based audio mixer
 
+BROKEN=		No public distfiles
+
 WRKSRC=		${WRKDIR}/xmmix-1.2
 
 USES=		imake motif
