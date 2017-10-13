@@ -1,9 +1,12 @@
---- gdb/arm-fbsd-nat.c.orig 2017-09-14 09:28:17 UTC
+diff --git gdb/arm-fbsd-nat.c gdb/arm-fbsd-nat.c
+new file mode 100644
+index 0000000000..b1c5c360f8
+--- /dev/null
 +++ gdb/arm-fbsd-nat.c
-@@ -0,0 +1,215 @@
-+/* Native-dependent code for BSD Unix running on ARM's, for GDB.
+@@ -0,0 +1,151 @@
++/* Native-dependent code for FreeBSD/arm.
 +
-+   Copyright (C) 1988-2015 Free Software Foundation, Inc.
++   Copyright (C) 2017 Free Software Foundation, Inc.
 +
 +   This file is part of GDB.
 +
@@ -21,210 +24,146 @@
 +   along with this program.  If not, see <http://www.gnu.org/licenses/>.  */
 +
 +#include "defs.h"
-+#include "gdbcore.h"
-+#include "inferior.h"
-+#include "regcache.h"
 +#include "target.h"
-+#include "gregset.h"
++
 +#include <sys/types.h>
 +#include <sys/ptrace.h>
 +#include <machine/reg.h>
-+#include <machine/frame.h>
 +
 +#include "fbsd-nat.h"
 +#include "arm-tdep.h"
++#include "arm-fbsd-tdep.h"
 +#include "inf-ptrace.h"
 +
-+extern int arm_apcs_32;
++/* Determine if PT_GETREGS fetches REGNUM.  */
 +
-+static pid_t
-+ptrace_pid (ptid_t ptid)
++static bool
++getregs_supplies (struct gdbarch *gdbarch, int regnum)
 +{
-+  pid_t pid;
++  return ((regnum >= ARM_A1_REGNUM && regnum <= ARM_PC_REGNUM)
++	  || regnum == ARM_PS_REGNUM);
++}
 +
-+#ifdef __FreeBSD__
-+  pid = ptid_get_lwp (ptid);
-+  if (pid == 0)
++#ifdef PT_GETVFPREGS
++/* Determine if PT_GETVFPREGS fetches REGNUM.  */
++
++static bool
++getvfpregs_supplies (struct gdbarch *gdbarch, int regnum)
++{
++  return ((regnum >= ARM_D0_REGNUM && regnum <= ARM_D31_REGNUM)
++	  || regnum == ARM_FPSCR_REGNUM);
++}
 +#endif
-+    pid = ptid_get_pid (ptid);
-+  return pid;
-+}
 +
-+static void
-+arm_supply_gregset (struct regcache *regcache, const gregset_t *gregset, int regnum)
-+{
-+  int r;
-+  CORE_ADDR r_pc;
-+
-+  /* Integer registers.  */
-+  for (r = ARM_A1_REGNUM; r < ARM_SP_REGNUM; r++)
-+    if ((r == regnum) || (regnum == -1))
-+      regcache_raw_supply (regcache, r, (char *) &gregset->r[r]);
-+
-+  if ((regnum == ARM_SP_REGNUM) || (regnum == -1))
-+    regcache_raw_supply (regcache, ARM_SP_REGNUM,
-+		       (char *) &gregset->r_sp);
-+  if ((regnum == ARM_LR_REGNUM) || (regnum == -1))
-+    regcache_raw_supply (regcache, ARM_LR_REGNUM,
-+		       (char *) &gregset->r_lr);
-+  /* This is ok: we're running native...  */
-+  if ((regnum == ARM_PC_REGNUM) || (regnum == -1))
-+    {
-+      r_pc = gdbarch_addr_bits_remove (get_regcache_arch (regcache), gregset->r_pc);
-+      regcache_raw_supply (regcache, ARM_PC_REGNUM, (char *) &r_pc);
-+    }
-+
-+  if ((regnum == ARM_PS_REGNUM) || (regnum == -1))
-+    {
-+      if (arm_apcs_32)
-+        regcache_raw_supply (regcache, ARM_PS_REGNUM,
-+			 (char *) &gregset->r_cpsr);
-+      else
-+        regcache_raw_supply (regcache, ARM_PS_REGNUM,
-+			 (char *) &gregset->r_pc);
-+    }
-+}
-+
-+static void
-+armbsd_collect_gregset (const struct regcache *regcache, gregset_t *gregset, int regnum)
-+{
-+  int ret;
-+  int r;
-+
-+  for (r = ARM_A1_REGNUM; r < ARM_SP_REGNUM; r++)
-+    if ((regnum == r) || (regnum == -1))
-+      regcache_raw_collect (regcache, r,
-+			  (char *) &gregset->r[r]);
-+
-+  if ((regnum == ARM_SP_REGNUM) || (regnum == -1))
-+    regcache_raw_collect (regcache, ARM_SP_REGNUM,
-+			(char *) &gregset->r_sp);
-+  if ((regnum == ARM_LR_REGNUM) || (regnum == -1))
-+    regcache_raw_collect (regcache, ARM_LR_REGNUM,
-+			(char *) &gregset->r_lr);
-+
-+
-+  if ((regnum == ARM_PC_REGNUM) || (regnum == -1))
-+    regcache_raw_collect (regcache, ARM_PC_REGNUM,
-+			(char *) &gregset->r_pc);
-+  if ((regnum == ARM_PS_REGNUM) || (regnum == -1))
-+    {
-+      if (arm_apcs_32)
-+        {
-+          regcache_raw_collect (regcache, ARM_PS_REGNUM,
-+			    (char *) &gregset->r_cpsr);
-+        }
-+      else
-+        {
-+          unsigned psr_val;
-+
-+          regcache_raw_collect (regcache, ARM_PS_REGNUM,
-+			   (char *) &psr_val);
-+
-+          psr_val ^= gdbarch_addr_bits_remove (get_regcache_arch (regcache), psr_val);
-+          gregset->r_pc = gdbarch_addr_bits_remove
-+    			   (get_regcache_arch (regcache), gregset->r_pc);
-+          gregset->r_pc |= psr_val;
-+        }
-+    }
-+}
-+
-+/* Fill GDB's register array with the general-purpose register values
-+   in *GREGSETP.  */
-+
-+void
-+supply_gregset (struct regcache *regcache, const gregset_t *gregsetp)
-+{
-+  arm_supply_gregset (regcache, gregsetp, -1);
-+}
-+
-+/* Fill register REGNUM (if it is a general-purpose register) in
-+   *GREGSETPS with the value in GDB's register array.  If REGNUM is -1,
-+   do this for all registers.  */
-+
-+void
-+fill_gregset (const struct regcache *regcache, gdb_gregset_t *gregsetp, int regnum)
-+{
-+  armbsd_collect_gregset (regcache, gregsetp, regnum);
-+}
-+
-+/* Fill GDB's register array with the floating-point register values
-+   in *FPREGSETP.  */
-+
-+void
-+supply_fpregset (struct regcache *regcache, const fpregset_t *fpregsetp)
-+{
-+}
-+
-+/* Fill register REGNUM (if it is a floating-point register) in
-+   *FPREGSETP with the value in GDB's register array.  If REGNUM is -1,
-+   do this for all registers.  */
-+
-+void
-+fill_fpregset (const struct regcache *regcache, gdb_fpregset_t *fpregsetp, int regnum)
-+{
-+}
-+
-+/* Fetch register REGNO from the child process. If REGNO is -1, do it
++/* Fetch register REGNUM from the inferior.  If REGNUM is -1, do this
 +   for all registers.  */
 +
 +static void
-+armfbsd_fetch_inferior_registers (struct target_ops *ops,
-+				  struct regcache *regcache, int regno)
++arm_fbsd_fetch_inferior_registers (struct target_ops *ops,
++				    struct regcache *regcache, int regnum)
 +{
-+  gdb_gregset_t regs;
++  pid_t pid = get_ptrace_pid (regcache_get_ptid (regcache));
 +
-+  if (ptrace (PT_GETREGS, ptrace_pid (inferior_ptid),
-+	      (PTRACE_TYPE_ARG3) &regs, 0) == -1)
-+    perror_with_name (_("Couldn't get registers"));
++  struct gdbarch *gdbarch = get_regcache_arch (regcache);
++  if (regnum == -1 || getregs_supplies (gdbarch, regnum))
++    {
++      struct reg regs;
 +
-+  arm_supply_gregset (regcache, &regs, regno);
-+  /* TODO: fpregs */
++      if (ptrace (PT_GETREGS, pid, (PTRACE_TYPE_ARG3) &regs, 0) == -1)
++	perror_with_name (_("Couldn't get registers"));
++
++      regcache_supply_regset (&arm_fbsd_gregset, regcache, regnum, &regs,
++			       sizeof (regs));
++    }
++
++#ifdef PT_GETVFPREGS
++  if (regnum == -1 || getvfpregs_supplies (gdbarch, regnum))
++    {
++      struct vfpreg vfpregs;
++
++      if (ptrace (PT_GETVFPREGS, pid, (PTRACE_TYPE_ARG3) &vfpregs, 0) == -1)
++	perror_with_name (_("Couldn't get floating point status"));
++
++      regcache_supply_regset (&arm_fbsd_vfpregset, regcache, regnum, &vfpregs,
++			       sizeof (vfpregs));
++    }
++#endif
 +}
 +
-+/* Store register REGNO back into the child process. If REGNO is -1,
-+   do this for all registers.  */
++/* Store register REGNUM back into the inferior.  If REGNUM is -1, do
++   this for all registers.  */
 +
 +static void
-+armfbsd_store_inferior_registers (struct target_ops *ops,
-+				  struct regcache *regcache, int regno)
++arm_fbsd_store_inferior_registers (struct target_ops *ops,
++				    struct regcache *regcache, int regnum)
 +{
-+  gdb_gregset_t regs;
++  pid_t pid = get_ptrace_pid (regcache_get_ptid (regcache));
 +
-+  if (ptrace (PT_GETREGS, ptrace_pid (inferior_ptid),
-+	      (PTRACE_TYPE_ARG3) &regs, 0) == -1)
-+    perror_with_name (_("Couldn't get registers"));
++  struct gdbarch *gdbarch = get_regcache_arch (regcache);
++  if (regnum == -1 || getregs_supplies (gdbarch, regnum))
++    {
++      struct reg regs;
 +
-+  fill_gregset (regcache, &regs, regno);
++      if (ptrace (PT_GETREGS, pid, (PTRACE_TYPE_ARG3) &regs, 0) == -1)
++	perror_with_name (_("Couldn't get registers"));
 +
-+  if (ptrace (PT_SETREGS, ptrace_pid (inferior_ptid),
-+	      (PTRACE_TYPE_ARG3) &regs, 0) == -1)
-+    perror_with_name (_("Couldn't write registers"));
-+  /* TODO: FP regs */
++      regcache_collect_regset (&arm_fbsd_gregset, regcache, regnum, &regs,
++			       sizeof (regs));
++
++      if (ptrace (PT_SETREGS, pid, (PTRACE_TYPE_ARG3) &regs, 0) == -1)
++	perror_with_name (_("Couldn't write registers"));
++    }
++
++#ifdef PT_GETVFPREGS
++  if (regnum == -1 || getvfpregs_supplies (gdbarch, regnum))
++    {
++      struct vfpreg vfpregs;
++
++      if (ptrace (PT_GETVFPREGS, pid, (PTRACE_TYPE_ARG3) &vfpregs, 0) == -1)
++	perror_with_name (_("Couldn't get floating point status"));
++
++      regcache_collect_regset (&arm_fbsd_vfpregset, regcache, regnum, &vfpregs,
++				sizeof (vfpregs));
++
++      if (ptrace (PT_SETVFPREGS, pid, (PTRACE_TYPE_ARG3) &vfpregs, 0) == -1)
++	perror_with_name (_("Couldn't write floating point status"));
++    }
++#endif
 +}
 +
-+void _initialize_armfbsd_nat (void);
++/* Implement the to_read_description method.  */
++
++static const struct target_desc *
++arm_fbsd_read_description (struct target_ops *ops)
++{
++  const struct target_desc *desc;
++
++  desc = arm_fbsd_read_description_auxv (ops);
++  if (desc == NULL)
++    desc = ops->beneath->to_read_description (ops->beneath);
++  return desc;
++}
 +
 +void
-+_initialize_armfbsd_nat (void)
++_initialize_arm_fbsd_nat (void)
 +{
 +  struct target_ops *t;
 +
-+  /* Add in local overrides.  */
 +  t = inf_ptrace_target ();
-+  t->to_fetch_registers = armfbsd_fetch_inferior_registers;
-+  t->to_store_registers = armfbsd_store_inferior_registers;
++  t->to_fetch_registers = arm_fbsd_fetch_inferior_registers;
++  t->to_store_registers = arm_fbsd_store_inferior_registers;
++  t->to_read_description = arm_fbsd_read_description;
 +  fbsd_nat_add_target (t);
 +}
 diff --git gdb/arm-fbsd-tdep.c gdb/arm-fbsd-tdep.c
 new file mode 100644
-index 0000000000..c76bc96700
+index 0000000000..02697b3de8
 --- /dev/null
 +++ gdb/arm-fbsd-tdep.c
-@@ -0,0 +1,109 @@
-+/* Target-dependent code for PowerPC systems running FreeBSD.
+@@ -0,0 +1,260 @@
++/* Target-dependent code for FreeBSD/arm.
 +
-+   Copyright (C) 2013-2015 Free Software Foundation, Inc.
++   Copyright (C) 2017 Free Software Foundation, Inc.
 +
 +   This file is part of GDB.
 +
@@ -242,109 +181,319 @@ index 0000000000..c76bc96700
 +   along with this program.  If not, see <http://www.gnu.org/licenses/>.  */
 +
 +#include "defs.h"
-+#include "arch-utils.h"
-+#include "frame.h"
-+#include "gdbcore.h"
-+#include "frame-unwind.h"
-+#include "gdbtypes.h"
++
++#include "elf/common.h"
++#include "arm-tdep.h"
++#include "arm-fbsd-tdep.h"
++#include "auxv.h"
++#include "fbsd-tdep.h"
 +#include "osabi.h"
-+#include "regcache.h"
-+#include "regset.h"
-+#include "symtab.h"
++#include "solib-svr4.h"
 +#include "target.h"
 +#include "trad-frame.h"
++#include "tramp-frame.h"
 +
-+#include "arm-tdep.h"
-+#include "solib-svr4.h"
++/* In a signal frame, sp points to a 'struct sigframe' which is
++   defined as:
 +
-+/* Description of the longjmp buffer.  */
-+#define ARM_FBSD_JB_PC 24
-+#define ARM_FBSD_JB_ELEMENT_SIZE INT_REGISTER_SIZE
++   struct sigframe {
++	   siginfo_t	sf_si;
++	   ucontext_t	sf_uc;
++	   mcontext_vfp_t sf_vfp;
++   };
 +
-+/* For compatibility with previous implemenations of GDB on arm/FreeBSD,
-+   override the default little-endian breakpoint.  */
-+static const gdb_byte arm_fbsd_arm_le_breakpoint[] = {0x11, 0x00, 0x00, 0xe6};
-+static const gdb_byte arm_fbsd_arm_be_breakpoint[] = {0xe6, 0x00, 0x00, 0x11};
-+static const gdb_byte arm_fbsd_thumb_le_breakpoint[] = {0xfe, 0xde};
-+static const gdb_byte arm_fbsd_thumb_be_breakpoint[] = {0xde, 0xfe};
++   ucontext_t is defined as:
++
++   struct __ucontext {
++	   sigset_t	uc_sigmask;
++	   mcontext_t	uc_mcontext;
++	   ...
++   };
++
++   mcontext_t is defined as:
++
++   struct {
++	   unsigned int __gregs[17];
++	   size_t       mc_vfp_size;
++	   void         *mc_vfp_ptr;
++	   ...
++   };
++
++   mcontext_vfp_t is defined as:
++
++   struct {
++	  uint64_t      mcv_reg[32];
++	  uint32_t      mcv_fpscr;
++   };
++
++   If the VFP state is valid, then mc_vfp_ptr will point to sf_vfp in
++   the sigframe, otherwise it is NULL.  There is no non-VFP floating
++   point register state saved in the signal frame.  */
++
++#define ARM_MCONTEXT_REG_SIZE		4
++#define ARM_MCONTEXT_VFP_REG_SIZE	8
++#define ARM_SIGFRAME_UCONTEXT_OFFSET	64
++#define ARM_UCONTEXT_MCONTEXT_OFFSET	16
++#define	ARM_MCONTEXT_VFP_PTR_OFFSET	72
++
++/* Implement the "init" method of struct tramp_frame.  */
 +
 +static void
-+arm_freebsd_init_abi_common (struct gdbarch_info info,
-+			    struct gdbarch *gdbarch)
++arm_fbsd_sigframe_init (const struct tramp_frame *self,
++			struct frame_info *this_frame,
++			struct trad_frame_cache *this_cache,
++			CORE_ADDR func)
++{
++  struct gdbarch *gdbarch = get_frame_arch (this_frame);
++  enum bfd_endian byte_order = gdbarch_byte_order (gdbarch);
++  CORE_ADDR sp = get_frame_register_unsigned (this_frame, ARM_SP_REGNUM);
++  CORE_ADDR mcontext_addr =
++    sp
++    + ARM_SIGFRAME_UCONTEXT_OFFSET
++    + ARM_UCONTEXT_MCONTEXT_OFFSET;
++  CORE_ADDR mcontext_vfp_addr;
++  gdb_byte buf[4];
++  int i;
++
++  for (i = 0; i < 16; i++)
++    {
++      trad_frame_set_reg_addr (this_cache,
++			       ARM_A1_REGNUM + i,
++			       mcontext_addr + i * ARM_MCONTEXT_REG_SIZE);
++    }
++  trad_frame_set_reg_addr (this_cache, ARM_PS_REGNUM,
++			   mcontext_addr + 16 * ARM_MCONTEXT_REG_SIZE);
++
++  mcontext_vfp_addr = 0;
++  if (target_read_memory (mcontext_addr + ARM_MCONTEXT_VFP_PTR_OFFSET, buf,
++			  4) == 0)
++    mcontext_vfp_addr = extract_unsigned_integer (buf, 4, byte_order);
++  if (mcontext_vfp_addr != 0)
++    {
++      for (i = 0; i < 32; i++)
++	{
++	  trad_frame_set_reg_addr (this_cache, ARM_D0_REGNUM + i,
++				   mcontext_vfp_addr
++				   + i * ARM_MCONTEXT_VFP_REG_SIZE);
++	}
++      trad_frame_set_reg_addr (this_cache, ARM_FPSCR_REGNUM,
++			       mcontext_vfp_addr
++			       + 32 * ARM_MCONTEXT_VFP_REG_SIZE);
++    }
++
++  trad_frame_set_id (this_cache, frame_id_build (sp, func));
++}
++
++static const struct tramp_frame arm_fbsd_sigframe =
++{
++  SIGTRAMP_FRAME,
++  4,
++  {
++    {0xe1a0000d, -1},		/* mov  r0, sp  */
++    {0xe2800040, -1},		/* add  r0, r0, #SIGF_UC  */
++    {0xe59f700c, -1},		/* ldr  r7, [pc, #12]  */
++    {0xef0001a1, -1},		/* swi  SYS_sigreturn  */
++    {TRAMP_SENTINEL_INSN, -1}
++  },
++  arm_fbsd_sigframe_init
++};
++
++/* Register maps.  */
++
++static const struct regcache_map_entry arm_fbsd_gregmap[] =
++  {
++    { 13, ARM_A1_REGNUM, 4 }, /* r0 ... r12 */
++    { 1, ARM_SP_REGNUM, 4 },
++    { 1, ARM_LR_REGNUM, 4 },
++    { 1, ARM_PC_REGNUM, 4 },
++    { 1, ARM_PS_REGNUM, 4 },
++    { 0 }
++  };
++
++static const struct regcache_map_entry arm_fbsd_vfpregmap[] =
++  {
++    { 32, ARM_D0_REGNUM, 8 }, /* d0 ... d31 */
++    { 1, ARM_FPSCR_REGNUM, 4 },
++    { 0 }
++  };
++
++/* Register set definitions.  */
++
++const struct regset arm_fbsd_gregset =
++  {
++    arm_fbsd_gregmap,
++    regcache_supply_regset, regcache_collect_regset
++  };
++
++const struct regset arm_fbsd_vfpregset =
++  {
++    arm_fbsd_vfpregmap,
++    regcache_supply_regset, regcache_collect_regset
++  };
++
++/* Implement the "regset_from_core_section" gdbarch method.  */
++
++static void
++arm_fbsd_iterate_over_regset_sections (struct gdbarch *gdbarch,
++				       iterate_over_regset_sections_cb *cb,
++				       void *cb_data,
++				       const struct regcache *regcache)
 +{
 +  struct gdbarch_tdep *tdep = gdbarch_tdep (gdbarch);
 +
-+  tdep->lowest_pc = 0x8000;
-+  switch (info.byte_order)
++  cb (".reg", ARM_FBSD_SIZEOF_GREGSET, &arm_fbsd_gregset, NULL, cb_data);
++
++  /* While FreeBSD/arm cores do contain a NT_FPREGSET / ".reg2"
++     register set, it is not populated with register values by the
++     kernel but just contains all zeroes.  */
++  if (tdep->vfp_register_count > 0)
++    cb (".reg-arm-vfp", ARM_FBSD_SIZEOF_VFPREGSET, &arm_fbsd_vfpregset,
++	"VFP floating-point", cb_data);
++}
++
++/* Lookup a target description from a target's AT_HWCAP auxiliary
++   vector.  */
++
++const struct target_desc *
++arm_fbsd_read_description_auxv (struct target_ops *target)
++{
++  CORE_ADDR arm_hwcap = 0;
++
++  if (target_auxv_search (target, AT_FREEBSD_HWCAP, &arm_hwcap) != 1)
++    return NULL;
++
++  if (arm_hwcap & HWCAP_VFP)
 +    {
-+    case BFD_ENDIAN_LITTLE:
-+      tdep->arm_breakpoint = arm_fbsd_arm_le_breakpoint;
-+      tdep->thumb_breakpoint = arm_fbsd_thumb_le_breakpoint;
-+      tdep->arm_breakpoint_size = sizeof (arm_fbsd_arm_le_breakpoint);
-+      tdep->thumb_breakpoint_size = sizeof (arm_fbsd_thumb_le_breakpoint);
-+      break;
-+
-+    case BFD_ENDIAN_BIG:
-+      tdep->arm_breakpoint = arm_fbsd_arm_be_breakpoint;
-+      tdep->thumb_breakpoint = arm_fbsd_thumb_be_breakpoint;
-+      tdep->arm_breakpoint_size = sizeof (arm_fbsd_arm_be_breakpoint);
-+      tdep->thumb_breakpoint_size = sizeof (arm_fbsd_thumb_be_breakpoint);
-+      break;
-+
-+    default:
-+      internal_error (__FILE__, __LINE__,
-+		      _("arm_gdbarch_init: bad byte order for float format"));
++      if (arm_hwcap & HWCAP_NEON)
++	return tdesc_arm_with_neon;
++      else if ((arm_hwcap & (HWCAP_VFPv3 | HWCAP_VFPD32))
++	  == (HWCAP_VFPv3 | HWCAP_VFPD32))
++	return tdesc_arm_with_vfpv3;
++      else
++	return tdesc_arm_with_vfpv2;
 +    }
 +
-+  tdep->jb_pc = ARM_FBSD_JB_PC;
-+  tdep->jb_elt_size = ARM_FBSD_JB_ELEMENT_SIZE;
++  return NULL;
++}
++
++/* Implement the "core_read_description" gdbarch method.  */
++
++static const struct target_desc *
++arm_fbsd_core_read_description (struct gdbarch *gdbarch,
++				struct target_ops *target,
++				bfd *abfd)
++{
++  return arm_fbsd_read_description_auxv (target);
++}
++
++/* Implement the 'init_osabi' method of struct gdb_osabi_handler.  */
++
++static void
++arm_fbsd_init_abi (struct gdbarch_info info, struct gdbarch *gdbarch)
++{
++  struct gdbarch_tdep *tdep = gdbarch_tdep (gdbarch);
++
++  /* Generic FreeBSD support.  */
++  fbsd_init_abi (info, gdbarch);
++
++  if (tdep->fp_model == ARM_FLOAT_AUTO)
++    tdep->fp_model = ARM_FLOAT_SOFT_VFP;
++
++  tramp_frame_prepend_unwinder (gdbarch, &arm_fbsd_sigframe);
++
++  set_solib_svr4_fetch_link_map_offsets
++    (gdbarch, svr4_ilp32_fetch_link_map_offsets);
++
++  tdep->jb_pc = 24;
++  tdep->jb_elt_size = 4;
++
++  set_gdbarch_iterate_over_regset_sections
++    (gdbarch, arm_fbsd_iterate_over_regset_sections);
++  set_gdbarch_core_read_description (gdbarch, arm_fbsd_core_read_description);
 +
 +  /* Single stepping.  */
 +  set_gdbarch_software_single_step (gdbarch, arm_software_single_step);
 +}
 +
-+static void
-+arm_freebsd_elf_init_abi (struct gdbarch_info info,
-+			 struct gdbarch *gdbarch)
-+{
-+  struct gdbarch_tdep *tdep = gdbarch_tdep (gdbarch);
-+
-+  arm_freebsd_init_abi_common (info, gdbarch);
-+  if (tdep->fp_model == ARM_FLOAT_AUTO)
-+    tdep->fp_model = ARM_FLOAT_SOFT_VFP;
-+
-+  /* NetBSD ELF uses SVR4-style shared libraries.  */
-+  set_solib_svr4_fetch_link_map_offsets
-+    (gdbarch, svr4_ilp32_fetch_link_map_offsets);
-+}
-+
-+
-+
-+/* Provide a prototype to silence -Wmissing-prototypes.  */
-+
-+void _initialize_armfbsd_tdep (void);
-+
 +void
-+_initialize_armfbsd_tdep (void)
++_initialize_arm_fbsd_tdep (void)
 +{
-+
 +  gdbarch_register_osabi (bfd_arch_arm, 0, GDB_OSABI_FREEBSD,
-+                          arm_freebsd_elf_init_abi);
++			  arm_fbsd_init_abi);
 +}
-diff --git gdb/config/arm/fbsd.mh gdb/config/arm/fbsd.mh
+diff --git gdb/arm-fbsd-tdep.h gdb/arm-fbsd-tdep.h
 new file mode 100644
-index 0000000000..7b2fd44b91
+index 0000000000..8717b804af
+--- /dev/null
++++ gdb/arm-fbsd-tdep.h
+@@ -0,0 +1,40 @@
++/* FreeBSD/arm target support, prototypes.
++
++   Copyright (C) 2017 Free Software Foundation, Inc.
++
++   This file is part of GDB.
++
++   This program is free software; you can redistribute it and/or modify
++   it under the terms of the GNU General Public License as published by
++   the Free Software Foundation; either version 3 of the License, or
++   (at your option) any later version.
++
++   This program is distributed in the hope that it will be useful,
++   but WITHOUT ANY WARRANTY; without even the implied warranty of
++   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
++   GNU General Public License for more details.
++
++   You should have received a copy of the GNU General Public License
++   along with this program.  If not, see <http://www.gnu.org/licenses/>.  */
++
++#include "regset.h"
++
++/* The general-purpose regset consists of 13 R registers, plus SP, LR,
++   PC, and CPSR registers.  */
++#define ARM_FBSD_SIZEOF_GREGSET  (17 * 4)
++
++/* The VFP regset consists of 32 D registers plus FPSCR, and the whole
++   structure is padded to 64-bit alignment.  */
++#define	ARM_FBSD_SIZEOF_VFPREGSET	(33 * 8)
++
++extern const struct regset arm_fbsd_gregset;
++extern const struct regset arm_fbsd_vfpregset;
++
++/* Flags passed in AT_HWCAP. */
++#define	HWCAP_VFP		0x00000040
++#define	HWCAP_NEON		0x00001000
++#define	HWCAP_VFPv3		0x00002000
++#define	HWCAP_VFPD32		0x00080000
++
++extern const struct target_desc *
++arm_fbsd_read_description_auxv (struct target_ops *target);
 --- /dev/null
 +++ gdb/config/arm/fbsd.mh
 @@ -0,0 +1,3 @@
 +# Host: FreeBSD/arm
 +NATDEPFILES= arm-fbsd-nat.o fbsd-nat.o fork-child.o inf-ptrace.o
 +HAVE_NATIVE_GCORE_HOST = 1
+diff --git gdb/configure.tgt gdb/configure.tgt
+index 122a72608f..06957c111d 100644
+--- gdb/configure.tgt
++++ gdb/configure.tgt
+@@ -110,6 +110,11 @@ arm*-*-linux*)
+ 			solib-svr4.o symfile-mem.o linux-tdep.o linux-record.o"
+ 	build_gdbserver=yes
+ 	;;
++arm*-*-freebsd*)
++	# Target: FreeBSD/arm
++	gdb_target_obs="arm.o arm-get-next-pcs.o arm-tdep.o arm-fbsd-tdep.o \
++			fbsd-tdep.o solib-svr4.o"
++	;;
+ arm*-*-netbsd* | arm*-*-knetbsd*-gnu)
+ 	# Target: NetBSD/arm
+ 	gdb_target_obs="arm.o arm-get-next-pcs.o arm-tdep.o arm-nbsd-tdep.o \
 diff --git gdb/Makefile.in gdb/Makefile.in
-index 1d2dbaf3f7..6e96a88a98 100644
+index 9454e3a62f..c9bd60a2d8 100644
 --- gdb/Makefile.in
 +++ gdb/Makefile.in
-@@ -780,6 +780,7 @@ ALL_TARGET_OBS = \
+@@ -794,6 +794,7 @@ ALL_TARGET_OBS = \
  	arc-tdep.o \
  	arm.o \
  	arm-bsd-tdep.o \
@@ -352,10 +501,11 @@ index 1d2dbaf3f7..6e96a88a98 100644
  	arm-get-next-pcs.o \
  	arm-linux.o \
  	arm-linux-tdep.o \
-@@ -2488,6 +2489,7 @@ ALLDEPFILES = \
+@@ -2537,6 +2538,8 @@ ALLDEPFILES = \
  	arc-tdep.c \
  	arm.c \
  	arm-bsd-tdep.c \
++	arm-fbsd-nat.c \
 +	arm-fbsd-tdep.c \
  	arm-get-next-pcs.c \
  	arm-linux.c \
