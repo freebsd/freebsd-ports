@@ -11,6 +11,8 @@ COMMENT=	Programs to compare protein sequences and profiles
 
 WRKSRC=		${WRKDIR}/SRC-${PORTVERSION}
 
+BROKEN=		No public distfiles
+
 PLIST_FILES+=	bin/ariadne bin/prospero
 USES=		gmake tar:Z
 PORTDOCS=	README

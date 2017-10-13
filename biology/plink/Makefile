@@ -11,6 +11,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Whole genome association analysis toolset
 
+BROKEN=		no public distfiles
+
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	liblapack.so:math/lapack
