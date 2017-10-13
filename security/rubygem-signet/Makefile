@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	signet
-PORTVERSION=	0.7.3
+PORTVERSION=	0.8.0
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
