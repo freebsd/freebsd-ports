@@ -92,8 +92,8 @@ startdevd_description="Internal command to start a instance from devd"
 
 depend()
 {
-	need localmount network dbus
-	after bootmisc
+	need localmount network 
+	after bootmisc dbus
 }
 
 # If invoked automatically by devd, we receive additional arguments

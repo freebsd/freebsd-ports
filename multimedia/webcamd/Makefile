@@ -3,6 +3,7 @@
 
 PORTNAME=	webcamd
 PORTVERSION=	4.12.0.1
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.selasky.org/hans_petter/distfiles/ \
 		http://home.selasky.org:8192/distfiles/
@@ -22,7 +23,7 @@ SUB_FILES=	webcamd.conf
 USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	CUSE DEBUG HAL VT_CLIENT VT_SERVER DVB INPUT KEYBOARD MOUSE RADIO WEBCAM
-OPTIONS_DEFAULT=DVB HAL INPUT RADIO WEBCAM
+OPTIONS_DEFAULT=DVB INPUT RADIO WEBCAM
 
 .if exists(/usr/lib/libcuse.so)
 OPTIONS_DEFAULT+=	CUSE
