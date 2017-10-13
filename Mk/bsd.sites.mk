@@ -917,9 +917,7 @@ MASTER_SITE_RUBYGEMS+= \
 
 .if !defined(IGNORE_MASTER_SITE_SAMBA)
 MASTER_SITE_SAMBA+= \
-	http://ftp.samba.org/pub/%SUBDIR%/ \
-	ftp://ca.samba.org/pub/%SUBDIR%/ \
-	ftp://de.samba.org/pub/%SUBDIR%/
+	http://ftp.samba.org/pub/%SUBDIR%/
 .endif
 
 # List:	http://download.savannah.gnu.org/mirmon/
