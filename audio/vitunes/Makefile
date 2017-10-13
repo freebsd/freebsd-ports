@@ -5,9 +5,7 @@ PORTNAME=	vitunes
 PORTVERSION=	2.3
 PORTREVISION=	4
 CATEGORIES=	audio
-MASTER_SITES=	http://vitunes.org/files/ \
-		http://mirror.4bit.ws/ \
-		LOCAL/dhn
+MASTER_SITES=	http://vitunes.org/files/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Curses-based media player with vim-like keybinds
