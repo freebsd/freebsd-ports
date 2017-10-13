@@ -1,6 +1,5 @@
 bin/altair
 bin/altairz80
-bin/gri
 bin/h316
 bin/hp2100
 bin/i1401
@@ -10,7 +9,6 @@ bin/ibm1130
 bin/id16
 bin/id32
 bin/lgp
-bin/nova
 bin/pdp1
 bin/pdp10
 bin/pdp11
@@ -22,6 +20,8 @@ bin/pdp9
 bin/s3
 bin/sds
 bin/simh-eclipse
+bin/simh-gri
+bin/simh-nova
 bin/swtp6800mp-a
 bin/swtp6800mp-a2
 bin/vax
