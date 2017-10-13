@@ -11,6 +11,8 @@ MASTER_SITES=	ftp://selab.janelia.org/pub/software/hmmer3/3.0/ \
 MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Profile hidden Markov models for biological sequence analysis
 
+BROKEN=		No public distfiles
+
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
