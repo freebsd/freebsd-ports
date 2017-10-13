@@ -251,7 +251,6 @@
     SUBDIR += gstreamer-plugins-ladspa
     SUBDIR += gstreamer-plugins-lame
     SUBDIR += gstreamer-plugins-mad
-    SUBDIR += gstreamer-plugins-moodbar
     SUBDIR += gstreamer-plugins-mp3
     SUBDIR += gstreamer-plugins-musepack
     SUBDIR += gstreamer-plugins-nas
