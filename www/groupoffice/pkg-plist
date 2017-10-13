@@ -1215,6 +1215,7 @@
 %%WWWDIR%%/modules/addressbook/AddressbookDialog.js
 %%WWWDIR%%/modules/addressbook/AddressbookModule.php
 %%WWWDIR%%/modules/addressbook/AddressbooksGrid.js
+%%WWWDIR%%/modules/addressbook/AddresslistDialog.js
 %%WWWDIR%%/modules/addressbook/AddresslistGrids.js
 %%WWWDIR%%/modules/addressbook/AddresslistsFilterPanel.js
 %%WWWDIR%%/modules/addressbook/AddresslistsGrid.js
@@ -1231,7 +1232,6 @@
 %%WWWDIR%%/modules/addressbook/EmailTemplateDialog.js
 %%WWWDIR%%/modules/addressbook/EmployeesPanel.js
 %%WWWDIR%%/modules/addressbook/GlobalSettings.js
-%%WWWDIR%%/modules/addressbook/MailingDialog.js
 %%WWWDIR%%/modules/addressbook/MailingStatusWindow.js
 %%WWWDIR%%/modules/addressbook/MainPanel.js
 %%WWWDIR%%/modules/addressbook/ManageAddressbooksGrid.js
@@ -2503,6 +2503,7 @@
 %%WWWDIR%%/modules/exactonline/language/nl.php
 %%WWWDIR%%/modules/exactonline/model/AddressbookAddressbookExtension.php
 %%WWWDIR%%/modules/exactonline/model/AddressbookCompanyExtension.php
+%%WWWDIR%%/modules/exactonline/model/AddressbookContactExtension.php
 %%WWWDIR%%/modules/exactonline/model/ExactAPiConnection.php
 %%WWWDIR%%/modules/exactonline/model/Project2IncomeExtension.php
 %%WWWDIR%%/modules/exactonline/model/ProjectTemplateExtension.php
@@ -2705,6 +2706,7 @@
 %%WWWDIR%%/modules/exactonline/vendor/psr/http-message/src/StreamInterface.php
 %%WWWDIR%%/modules/exactonline/vendor/psr/http-message/src/UploadedFileInterface.php
 %%WWWDIR%%/modules/exactonline/vendor/psr/http-message/src/UriInterface.php
+%%WWWDIR%%/modules/exactonline/views/Extjs3/AddressBookOverrides.js
 %%WWWDIR%%/modules/exactonline/views/Extjs3/PluginBilling.js
 %%WWWDIR%%/modules/exactonline/views/Extjs3/PluginProjects2.js
 %%WWWDIR%%/modules/exactonline/views/Extjs3/Projects2Overrides.js
@@ -4878,6 +4880,7 @@
 %%WWWDIR%%/modules/zpushadmin/install/install.sql
 %%WWWDIR%%/modules/zpushadmin/install/uninstall.sql
 %%WWWDIR%%/modules/zpushadmin/install/updates.php
+%%WWWDIR%%/modules/zpushadmin/language/cs.php
 %%WWWDIR%%/modules/zpushadmin/language/de.php
 %%WWWDIR%%/modules/zpushadmin/language/en.php
 %%WWWDIR%%/modules/zpushadmin/language/es.php
