@@ -11,6 +11,8 @@ DISTNAME=	libtabe_${PORTVERSION}.orig
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Unified library for Chinese text processing
 
+BROKEN=		No public distfiles
+
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
