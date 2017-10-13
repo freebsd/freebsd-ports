@@ -9583,3 +9583,4 @@ devel/vtable-dumper|devel/abi-compliance-checker|2017-10-08|Use abi-compliance-c
 graphics/py-graph-dot||2017-10-08|Has expired: Unfetchable for more than six months (google code has gone away)
 graphics/py-graph||2017-10-08|Removed, depends on graphics/py-graph-dot
 net/py-python-cloudfiles||2017-10-12|Deprecated by usptream since August 1, 2013. Use databases/py-python-swiftclient instead
+audio/festdoc||2017-10-13|No version of the documentation matching current release
