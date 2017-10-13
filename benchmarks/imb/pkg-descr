@@ -5,5 +5,3 @@ The rules, such as time measurement (including a repetitive call
 of the kernels for better clock synchronization), message lengths,
 selection of communicators to run a particular benchmark (inside
 the group of all started processes) are program parameters.
-
-WWW: http://www.intel.com/cd/software/products/asmo-na/eng/cluster/mpi/219848.htm
