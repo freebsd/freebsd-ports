@@ -100,6 +100,7 @@
     SUBDIR += cryptlib
     SUBDIR += cryptopp
     SUBDIR += ct-submit
+    SUBDIR += cvechecker
     SUBDIR += cvm
     SUBDIR += cyberchef
     SUBDIR += cyrus-sasl2
