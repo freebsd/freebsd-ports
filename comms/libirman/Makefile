@@ -9,7 +9,7 @@ MASTER_SITES=	SF/lirc/${PORTNAME}/${PORTVERSION}
 MAINTAINER=	rand@iteris.com
 COMMENT=	Library for Evation's Irman infrared receiver
 
-BROKEN=		No public distfiles
+#BROKEN=		No public distfiles
 
 LICENSE=	LGPL20
 
