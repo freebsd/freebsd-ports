@@ -141,7 +141,6 @@
     SUBDIR += fdk-aac
     SUBDIR += fdmf
     SUBDIR += festalon
-    SUBDIR += festdoc
     SUBDIR += festival
     SUBDIR += festival-freebsoft-utils
     SUBDIR += festlex-cmu
