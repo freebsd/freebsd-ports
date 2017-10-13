@@ -8,6 +8,8 @@ MASTER_SITES=	http://www.w1hkj.com/files/flcluster/
 MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	FLCLUSTER is a management tool for accessing dxcluster nodes
 
+BROKEN=		No public distfiles
+
 LICENSE=	GPLv3
 
 LIB_DEPENDS=	libpng16.so:graphics/png \

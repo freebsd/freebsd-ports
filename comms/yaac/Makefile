@@ -11,6 +11,7 @@ COMMENT=	Platform-independent Java application for the APRS network
 
 LICENSE=	LGPL3
 
+BROKEN=		No public distfiles
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 USES=		zip

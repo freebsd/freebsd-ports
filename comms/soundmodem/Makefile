@@ -8,6 +8,8 @@ MASTER_SITES=	http://download.gna.org/soundmodem/
 MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Amateur Radio sound modem
 
+BROKEN=		No public distfiles
+
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
