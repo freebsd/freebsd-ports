@@ -13,6 +13,7 @@ COMMENT=	Software toolkit for phylogenetic inference
 LICENSE=	BSD2CLAUSE BSD3CLAUSE
 LICENSE_COMB=	multi
 
+BROKEN=		No public distfiles
 BROKEN_aarch64=		Fails to link: ImportError: /lib/libgcc_s.so.1: version GCC_4.5.0 required by /usr/local/lib/gcc5/libgfortran.so.3 not found
 BROKEN_armv6=		Fails to link: ImportError: /usr/local/lib/gcc49/libgfortran.so.3: Undefined symbol "__aeabi_ldivmod"
 
