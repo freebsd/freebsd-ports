@@ -258,8 +258,7 @@ MASTER_SITE_FARSIGHT+= \
 .if !defined(IGNORE_MASTER_SITE_FESTIVAL)
 MASTER_SITE_FESTIVAL+= \
 	http://www.festvox.org/packed/festival/%SUBDIR%/ \
-	http://www.cstr.ed.ac.uk/downloads/festival/%SUBDIR%/ \
-	http://stuff.mit.edu/afs/sipb/project/speech-tools/src/festival/festvox.org/packed/festival/%SUBDIR%/
+	http://www.cstr.ed.ac.uk/downloads/festival/%SUBDIR%/
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_FESTIVAL_OGI)
