@@ -10,6 +10,8 @@ MASTER_SITES=	http://members.dslextreme.com/users/billw/gkrellmss/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GKrellM plugin with a VU meter showing left/right channel audio
 
+BROKEN=		No public distfiles
+
 LICENSE=	GPLv2+
 
 BUILD_DEPENDS=	${LOCALBASE}/include/gkrellm2/gkrellm.h:sysutils/gkrellm2
