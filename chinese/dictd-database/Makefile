@@ -5,8 +5,7 @@ PORTNAME=	dictd-database
 PORTVERSION=	1.6
 PORTREVISION=	1
 CATEGORIES=	chinese textproc
-MASTER_SITES=	LOCAL/rafan/chinese/ \
-		ftp://freebsd.sinica.edu.tw/pub/statue/dictd-database/
+MASTER_SITES=	LOCAL/rafan/chinese/
 DISTNAME=	dict-zh-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
