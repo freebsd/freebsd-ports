@@ -5,8 +5,7 @@ PORTNAME=	amp
 PORTVERSION=	0.7.6
 PORTEPOCH=	1
 CATEGORIES=	audio
-MASTER_SITES=	http://www.gufi.org/ports/ \
-		http://www-users.cs.umn.edu/~wburdick/ftp/
+MASTER_SITES=	http://www.gufi.org/ports/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Another mp3 player

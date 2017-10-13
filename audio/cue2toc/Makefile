@@ -4,8 +4,7 @@
 PORTNAME=	cue2toc
 PORTVERSION=	0.1
 CATEGORIES=	audio perl5
-MASTER_SITES=	http://www.tuxcoder.com/cue2toc/download/ \
-		http://www.oook.cz/bsd/distfiles/
+MASTER_SITES=	http://www.oook.cz/bsd/distfiles/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl script that converts CUE files into TOC files for cdrdao

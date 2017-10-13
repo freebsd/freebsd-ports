@@ -4,9 +4,7 @@
 PORTNAME=	lpac
 PORTVERSION=	1.40
 CATEGORIES=	audio linux
-MASTER_SITES=	ftp://relay1.tomsk.gov.ru/pub/FreeBSD/ports/distfiles/ \
-		ftp://ftp.itsinternet.net/pub/FreeBSD/ports/distfiles/ \
-		ftp://chernabog.cc.vt.edu/pub2/freebsd/ports/distfiles/
+MASTER_SITES=	ftp://chernabog.cc.vt.edu/pub2/freebsd/ports/distfiles/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lossless audio codec
