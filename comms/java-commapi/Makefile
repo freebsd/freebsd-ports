@@ -11,6 +11,7 @@ DISTNAME=	comm${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Sun's Java Communications API
 
+BROKEN=		No upstream anymore
 USES=		zip
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
