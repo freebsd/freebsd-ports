@@ -4,8 +4,7 @@
 PORTNAME=	mmencode
 PORTVERSION=	2.7
 CATEGORIES=	converters
-MASTER_SITES=	ftp://ftp.delegate.org/pub/mime/mm2.7/ \
-		ftp://ftp.funet.fi/pub/unix/mail/metamail/
+MASTER_SITES=	ftp://ftp.funet.fi/pub/unix/mail/metamail/
 DISTNAME=	mm${PORTVERSION}
 EXTRACT_SUFX=	.tar.Z
 
