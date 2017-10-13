@@ -9,6 +9,8 @@ MASTER_SITES=	http://www.teuniz.net/RS-232/
 MAINTAINER=	kevlo@FreeBSD.org
 COMMENT=	Simple serial library
 
+BROKEN=		Invalid checksum
+
 LICENSE=	GPLv3
 LICENSE_FILE=   ${WRKSRC}/gpl.txt
 
