@@ -27,7 +27,6 @@ share/dbus-1/services/org.mate.panel.applet.WnckletFactory.service
 %%PORTDOCS%%%%DOCSDIR%%-applet/applet-writing.html
 %%PORTDOCS%%%%DOCSDIR%%-applet/home.png
 %%PORTDOCS%%%%DOCSDIR%%-applet/index.html
-%%PORTDOCS%%%%DOCSDIR%%-applet/index.sgml
 %%PORTDOCS%%%%DOCSDIR%%-applet/left-insensitive.png
 %%PORTDOCS%%%%DOCSDIR%%-applet/left.png
 %%PORTDOCS%%%%DOCSDIR%%-applet/mate-panel-applet-Panel-Applet-MateConf-Utilities.html

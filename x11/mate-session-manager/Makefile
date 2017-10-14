@@ -2,14 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	mate-session-manager
-PORTVERSION=	1.18.0
-PORTREVISION=	1
+PORTVERSION=	1.18.1
 CATEGORIES=	x11 mate
 MASTER_SITES=	MATE
 DIST_SUBDIR=	mate
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Session component for the MATE desktop
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib \
 		libdbus-1.so:devel/dbus \
