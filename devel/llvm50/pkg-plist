@@ -41,7 +41,6 @@ bin/opt%%LLVM_SUFFIX%%
 bin/sancov%%LLVM_SUFFIX%%
 %%CLANG%%bin/c-index-test%%LLVM_SUFFIX%%
 %%CLANG%%bin/clang%%LLVM_SUFFIX%%
-%%CLANG%%bin/clangd%%LLVM_SUFFIX%%
 %%CLANG%%bin/clang++%%LLVM_SUFFIX%%
 %%CLANG%%bin/clang-check%%LLVM_SUFFIX%%
 %%CLANG%%bin/clang-cpp%%LLVM_SUFFIX%%
@@ -62,6 +61,7 @@ bin/sancov%%LLVM_SUFFIX%%
 %%EXTRAS%%bin/clang-rename%%LLVM_SUFFIX%%
 %%EXTRAS%%bin/clang-reorder-fields%%LLVM_SUFFIX%%
 %%EXTRAS%%bin/clang-tidy%%LLVM_SUFFIX%%
+%%EXTRAS%%bin/clangd%%LLVM_SUFFIX%%
 %%EXTRAS%%bin/find-all-symbols%%LLVM_SUFFIX%%
 %%EXTRAS%%bin/modularize%%LLVM_SUFFIX%%
 %%LLD%%bin/lld%%LLVM_SUFFIX%%
@@ -109,7 +109,7 @@ llvm%%LLVM_LIB_VER%%/bin/bugpoint
 %%EXTRAS%%llvm%%LLVM_LIB_VER%%/bin/clang-reorder-fields
 %%CLANG%%llvm%%LLVM_LIB_VER%%/bin/clang-tblgen
 %%EXTRAS%%llvm%%LLVM_LIB_VER%%/bin/clang-tidy
-%%CLANG%%llvm%%LLVM_LIB_VER%%/bin/clangd
+%%EXTRAS%%llvm%%LLVM_LIB_VER%%/bin/clangd
 %%EXTRAS%%llvm%%LLVM_LIB_VER%%/bin/find-all-symbols
 %%CLANG%%llvm%%LLVM_LIB_VER%%/bin/git-clang-format
 %%LLD%%llvm%%LLVM_LIB_VER%%/bin/ld.lld
@@ -2568,7 +2568,7 @@ llvm%%LLVM_LIB_VER%%/lib/libLTO.so.5
 %%CLANG%%llvm%%LLVM_LIB_VER%%/lib/libclangBasic.a
 %%EXTRAS%%llvm%%LLVM_LIB_VER%%/lib/libclangChangeNamespace.a
 %%CLANG%%llvm%%LLVM_LIB_VER%%/lib/libclangCodeGen.a
-%%CLANG%%llvm%%LLVM_LIB_VER%%/lib/libclangDaemon.a
+%%EXTRAS%%llvm%%LLVM_LIB_VER%%/lib/libclangDaemon.a
 %%CLANG%%llvm%%LLVM_LIB_VER%%/lib/libclangDriver.a
 %%CLANG%%llvm%%LLVM_LIB_VER%%/lib/libclangDynamicASTMatchers.a
 %%CLANG%%llvm%%LLVM_LIB_VER%%/lib/libclangEdit.a
@@ -2757,3 +2757,5 @@ llvm%%LLVM_LIB_VER%%/share/opt-viewer/style.css
 %%LIT%%%%PYTHON_SITELIBDIR%%/lit%%LLVM_SUFFIX%%/main.py
 %%LIT%%%%PYTHON_SITELIBDIR%%/lit%%LLVM_SUFFIX%%/run.py
 %%LIT%%%%PYTHON_SITELIBDIR%%/lit%%LLVM_SUFFIX%%/util.py
+@postexec if type ccache-update-links >/dev/null 2>&1; then ccache-update-links -v; fi
+@postunexec if type ccache-update-links >/dev/null 2>&1; then ccache-update-links -v; fi
