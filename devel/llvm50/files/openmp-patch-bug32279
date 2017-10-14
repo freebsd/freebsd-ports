@@ -1,5 +1,5 @@
---- tools/openmp/runtime/cmake/LibompHandleFlags.cmake.orig	2017-03-16 15:50:48 UTC
-+++ tools/openmp/runtime/cmake/LibompHandleFlags.cmake
+--- projects/openmp/runtime/cmake/LibompHandleFlags.cmake.orig	2017-03-16 15:50:48 UTC
++++ projects/openmp/runtime/cmake/LibompHandleFlags.cmake
 @@ -156,6 +156,11 @@ function(libomp_get_libflags libflags)
    if(${IA32})
      libomp_append(libflags_local -lirc_pic LIBOMP_HAVE_IRC_PIC_LIBRARY)
@@ -16,8 +16,8 @@
  runtime/cmake/LibompMicroTests.cmake  | 2 +-
  2 files changed, 6 insertions(+), 1 deletion(-)
 
---- tools/openmp/runtime/cmake/LibompMicroTests.cmake.orig	2017-03-16 15:50:48 UTC
-+++ tools/openmp/runtime/cmake/LibompMicroTests.cmake
+--- projects/openmp/runtime/cmake/LibompMicroTests.cmake.orig	2017-03-16 15:50:48 UTC
++++ projects/openmp/runtime/cmake/LibompMicroTests.cmake
 @@ -171,7 +171,7 @@ add_custom_command(
  add_custom_target(libomp-test-deps DEPENDS test-deps/.success)
  set(libomp_expected_library_deps)

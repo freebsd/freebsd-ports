@@ -2,7 +2,7 @@
 
 PORTNAME=	llvm
 DISTVERSION=	5.0.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel lang
 MASTER_SITES=	http://llvm.org/${PRE_}releases/${LLVM_RELEASE}/${RCDIR}
 PKGNAMESUFFIX=	${LLVM_SUFFIX}
@@ -361,7 +361,7 @@ post-extract-LLDB-on:
 	${MV} ${WRKSRC_lldb} ${PATCH_WRKSRC}/tools/lldb
 
 post-extract-OPENMP-on:
-	${MV} ${WRKSRC_openmp} ${PATCH_WRKSRC}/tools/openmp
+	${MV} ${WRKSRC_openmp} ${PATCH_WRKSRC}/projects/openmp
 
 post-patch:
 	${REINPLACE_CMD} -e 's|import lit|import lit${LLVM_SUFFIX}|' \

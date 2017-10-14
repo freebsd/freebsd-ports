@@ -2368,6 +2368,7 @@ llvm%%LLVM_LIB_VER%%/lib/LLVMHello.so
 %%CLANG%%llvm%%LLVM_LIB_VER%%/lib/clang/%%LLVM_RELEASE%%/include/msa.h
 %%CLANG%%llvm%%LLVM_LIB_VER%%/lib/clang/%%LLVM_RELEASE%%/include/mwaitxintrin.h
 %%CLANG%%llvm%%LLVM_LIB_VER%%/lib/clang/%%LLVM_RELEASE%%/include/nmmintrin.h
+%%OPENMP%%llvm%%LLVM_LIB_VER%%/lib/clang/%%LLVM_RELEASE%%/include/omp.h
 %%CLANG%%llvm%%LLVM_LIB_VER%%/lib/clang/%%LLVM_RELEASE%%/include/opencl-c.h
 %%CLANG%%llvm%%LLVM_LIB_VER%%/lib/clang/%%LLVM_RELEASE%%/include/pkuintrin.h
 %%CLANG%%llvm%%LLVM_LIB_VER%%/lib/clang/%%LLVM_RELEASE%%/include/pmmintrin.h
@@ -2610,6 +2611,8 @@ llvm%%LLVM_LIB_VER%%/lib/libLTO.so.5
 %%CLANG%%llvm%%LLVM_LIB_VER%%/lib/libclangToolingCore.a
 %%CLANG%%llvm%%LLVM_LIB_VER%%/lib/libclangToolingRefactor.a
 %%EXTRAS%%llvm%%LLVM_LIB_VER%%/lib/libfindAllSymbols.a
+%%OPENMP%%llvm%%LLVM_LIB_VER%%/lib/libgomp.so
+%%OPENMP%%llvm%%LLVM_LIB_VER%%/lib/libiomp5.so
 %%LLD%%llvm%%LLVM_LIB_VER%%/lib/liblldCOFF.a
 %%LLD%%llvm%%LLVM_LIB_VER%%/lib/liblldConfig.a
 %%LLD%%llvm%%LLVM_LIB_VER%%/lib/liblldCore.a
@@ -2710,6 +2713,7 @@ llvm%%LLVM_LIB_VER%%/lib/libLTO.so.5
 %%LLDB%%llvm%%LLVM_LIB_VER%%/lib/liblldbTarget.a
 %%LLDB%%llvm%%LLVM_LIB_VER%%/lib/liblldbUtility.a
 %%LLDB%%llvm%%LLVM_LIB_VER%%/lib/liblldbUtilityHelpers.a
+%%OPENMP%%llvm%%LLVM_LIB_VER%%/lib/libomp.so
 %%CLANG%%llvm%%LLVM_LIB_VER%%/libexec/c++-analyzer
 %%CLANG%%llvm%%LLVM_LIB_VER%%/libexec/ccc-analyzer
 %%CLANG%%llvm%%LLVM_LIB_VER%%/share/clang/bash-autocomplete.sh
