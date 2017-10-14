@@ -1,6 +1,3 @@
-/usr/local/share/licenses/reflex-20170521/BSD3CLAUSE
-/usr/local/share/licenses/reflex-20170521/LICENSE
-/usr/local/share/licenses/reflex-20170521/catalog.mk
 bin/reflex
 bin/reflex++
 include/reFlexLexer.h
