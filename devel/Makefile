@@ -117,9 +117,9 @@
     SUBDIR += arduino-builder
     SUBDIR += arduino-core
     SUBDIR += arduino-ctags
-    SUBDIR += arduino-glcd
     SUBDIR += arduino-irremote
     SUBDIR += arduino-mk
+    SUBDIR += arduino-openglcd
     SUBDIR += arduino-sevseg
     SUBDIR += arduino-tools
     SUBDIR += arduino18
