@@ -9586,3 +9586,5 @@ net/py-python-cloudfiles||2017-10-12|Deprecated by usptream since August 1, 2013
 audio/festdoc||2017-10-13|No version of the documentation matching current release
 audio/gstreamer-plugins-moodbar||2017-10-13|Abandonware, no public distfiles
 devel/arduino-glcd|devel/arduino-openglcd|2017-10-14|Switched to active fork
+x11-wm/awesome2|x11-wm/awesome|2017-10-14|Has expired: Awesome WM 2.x is deprecated use 4.x instead
+x11-wm/awesome3|x11-wm/awesome|2017-10-14|Has expired: Awesome WM 3.x is deprecated use 4.x instead
