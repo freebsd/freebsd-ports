@@ -30,7 +30,7 @@ do-install:
 	cd ${WRKSRC}/build/src && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/go/src/
 	cd ${WRKSRC}/build/lib/python${PYTHON_VER}/site-packages && ${COPYTREE_SHARE} . ${STAGEDIR}${PYTHON_SITELIBDIR}
 .for bin in benchcmp coverparse diffrange grumpc
-	${INSTALL_PROGRAM} ${WRKSRC}/build/bin/${bin} ${STAGEDIR}${PREFIX}/bin/
+	${INSTALL_SCRIPT} ${WRKSRC}/build/bin/${bin} ${STAGEDIR}${PREFIX}/bin/
 .endfor
 
 .include <bsd.port.mk>
