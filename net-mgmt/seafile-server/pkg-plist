@@ -88,6 +88,10 @@ libdata/pkgconfig/libseafile.pc
 %%SEAFILE_SERVER%%/upgrade/sql/6.0.0/sqlite3/seahub.sql
 %%SEAFILE_SERVER%%/upgrade/sql/6.1.0/mysql/seahub.sql
 %%SEAFILE_SERVER%%/upgrade/sql/6.1.0/sqlite3/seahub.sql
+%%SEAFILE_SERVER%%/upgrade/sql/6.2.0/mysql/ccnet.sql
+%%SEAFILE_SERVER%%/upgrade/sql/6.2.0/mysql/seahub.sql
+%%SEAFILE_SERVER%%/upgrade/sql/6.2.0/sqlite3/ccnet/usermgr.sql
+%%SEAFILE_SERVER%%/upgrade/sql/6.2.0/sqlite3/seahub.sql
 %%SEAFILE_SERVER%%/upgrade/upgrade_1.2_1.3.sh
 %%SEAFILE_SERVER%%/upgrade/upgrade_1.3_1.4.sh
 %%SEAFILE_SERVER%%/upgrade/upgrade_1.4_1.5.sh
@@ -108,4 +112,5 @@ libdata/pkgconfig/libseafile.pc
 %%SEAFILE_SERVER%%/upgrade/upgrade_5.0_5.1.sh
 %%SEAFILE_SERVER%%/upgrade/upgrade_5.1_6.0.sh
 %%SEAFILE_SERVER%%/upgrade/upgrade_6.0_6.1.sh
+%%SEAFILE_SERVER%%/upgrade/upgrade_6.1_6.2.sh
 @dir(%%USERS%%,%%GROUPS%%,755) %%HAIWENDIR%%
