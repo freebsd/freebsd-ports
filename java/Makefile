@@ -95,6 +95,7 @@
     SUBDIR += lightweight-java-profiler
     SUBDIR += linux-oracle-jdk18
     SUBDIR += linux-oracle-jre18
+    SUBDIR += linux-oracle-jdk9
     SUBDIR += mmake
     SUBDIR += mx4j
     SUBDIR += netbeans
