@@ -1,4 +1,4 @@
-TIMESTAMP = 1496897415
+TIMESTAMP = 1507980608
 SHA256 (SDL2-CS.dll) = b06c14a771d14cb37210f476dfd973d4e7d80d97f90566bd5bc78996ade4f7a0
 SIZE (SDL2-CS.dll) = 80896
 SHA256 (SDL2-CS.dll.config) = eff0594f7e86d40a94c1b28f8db87478f3de1cf0857f3d46e384bcc6744ce094
@@ -31,5 +31,7 @@ SHA256 (stylecop.msbuild.4.7.49.0.nupkg) = 6680dedaa5d27fb1ead475015de98e476e58f
 SIZE (stylecop.msbuild.4.7.49.0.nupkg) = 2366995
 SHA256 (stylecopplus.msbuild.4.7.49.5.nupkg) = b98a8ed20c5e82ff5fe6c2a52ecd45bffd4d4ab284611f35a25889c3bba364c3
 SIZE (stylecopplus.msbuild.4.7.49.5.nupkg) = 124724
-SHA256 (openra-OpenRA-release-20170527_GH0.tar.gz) = d8da40fbed12c529a3bb4008f0aba46bbac3fd6113805046eb5107bbdcb7c0c2
-SIZE (openra-OpenRA-release-20170527_GH0.tar.gz) = 14705630
+SHA256 (rix0rrr.beaconlib.1.0.1.nupkg) = e8e126b98ae7676cb0434455aa8a41c17a927c1b40c4cf368f9527af6bc251f2
+SIZE (rix0rrr.beaconlib.1.0.1.nupkg) = 8421
+SHA256 (openra-OpenRA-release-20171014_GH0.tar.gz) = ea8a6c38f22c3432bd173c15e3f3d96a7bb47c39f73db5aa5ab6df7e6980ed5a
+SIZE (openra-OpenRA-release-20171014_GH0.tar.gz) = 20125442
