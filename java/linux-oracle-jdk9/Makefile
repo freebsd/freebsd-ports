@@ -53,7 +53,5 @@ post-patch:
 do-install:
 	@${MKDIR} ${STAGEDIR}${APP_HOME}
 	@cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${APP_HOME}
-	@cd ${STAGEDIR}${APP_HOME} && \
-	    ${CHMOD} ${BINMODE} ${BIN_DIRS:S|$|/*|} ${LIB_DIRS:S|$|/jexec|}
 
 .include <bsd.port.post.mk>
