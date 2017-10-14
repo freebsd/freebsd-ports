@@ -1,4 +1,3 @@
-etc/rc.d/openvassd
 man/man8/greenbone-nvt-sync.8.gz
 man/man8/openvassd.8.gz
 sbin/greenbone-nvt-sync
