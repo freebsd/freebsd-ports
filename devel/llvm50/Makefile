@@ -2,7 +2,7 @@
 
 PORTNAME=	llvm
 DISTVERSION=	5.0.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel lang
 MASTER_SITES=	http://llvm.org/${PRE_}releases/${LLVM_RELEASE}/${RCDIR}
 PKGNAMESUFFIX=	${LLVM_SUFFIX}
@@ -172,10 +172,12 @@ EXTRAS_COMMANDS+= \
 		clang-rename \
 		clang-reorder-fields \
 		clang-tidy \
+		clangd \
 		find-all-symbols \
 		modularize
 EXTRAS_LIBS=	libclangApplyReplacements \
 		libclangChangeNamespace \
+		libclangDaemon \
 		libclangIncludeFixer \
 		libclangMove \
 		libclangQuery \
@@ -212,7 +214,6 @@ CONFIGURE_TARGET:=${ARCH:C/amd64/x86_64/:C/arm64/aarch64/}-portbld-${OPSYS:tl}${
 .if ${PORT_OPTIONS:MCLANG}
 COMMANDS+=	c-index-test \
 		clang \
-		clangd \
 		clang++ \
 		clang-check \
 		clang-cpp \
@@ -506,6 +507,8 @@ build-plist:
 	    if ($$0 ~ /lib.*omp/) {printf "%%%%OPENMP%%%%"} \
 	    if ($$0 ~ /LLVMgold/) {printf "%%%%GOLD%%%%"} \
 	    if ($$0 !~ /libclang_rt/) {print}}' ${PLIST}.tmp >> ${PLIST}
+	${ECHO_CMD} '@postexec if type ccache-update-links >/dev/null 2>&1; then ccache-update-links -v; fi' >> ${PLIST}
+	${ECHO_CMD} '@postunexec if type ccache-update-links >/dev/null 2>&1; then ccache-update-links -v; fi' >> ${PLIST}
 	${RM} ${PLIST}.tmp
 
 check-commands:
