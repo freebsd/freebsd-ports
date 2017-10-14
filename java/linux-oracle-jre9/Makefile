@@ -5,15 +5,16 @@ PORTVERSION=	${JRE_VERSION}.${JRE_UPDATE_VERSION}
 CATEGORIES=	java
 MASTER_SITES=	#
 PKGNAMEPREFIX=	linux-${JRE_VENDOR}-
+PKGNAMESUFFIX=	${JRE_VERSION}
 DISTNAME=	jre-${JRE_VERSION}_linux-x64_bin
 
 MAINTAINER=	java@FreeBSD.org
 COMMENT=	Oracle Java ${JRE_VERSION} Runtime Environment for Linux
 
+ONLY_FOR_ARCHS=	amd64 i386
 RUN_DEPENDS=	javavm:java/javavmwrapper
 
 RESTRICTED=	Redistribution of repackaged binaries not permitted
-PKGNAMESUFFIX=	${JRE_VERSION}
 
 WRKSRC=		${WRKDIR}/jre-${DL_JRE_VERSION}
 PLIST_SUB=	T=${APP_HOME:S/^${PREFIX}\///} PORTVERSION=${PORTVERSION}
@@ -21,7 +22,6 @@ PLIST_SUB=	T=${APP_HOME:S/^${PREFIX}\///} PORTVERSION=${PORTVERSION}
 NO_BUILD=	yes
 USES=		linux
 USE_LINUX=	xorglibs
-ONLY_FOR_ARCHS=	i386 amd64
 
 JRE_VENDOR=		oracle
 JRE_VERSION=		9
@@ -49,7 +49,5 @@ IGNORE?=You must manually fetch the J2SE RE download for the Linux platform (${D
 do-install:
 	@${MKDIR} ${STAGEDIR}${APP_HOME}
 	@cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${APP_HOME}
-	@cd ${STAGEDIR}${APP_HOME} && \
-	    ${CHMOD} ${BINMODE} ${BIN_DIRS:S|$|/*|} ${LIB_DIRS:S|$|/jexec|}
 
 .include <bsd.port.post.mk>

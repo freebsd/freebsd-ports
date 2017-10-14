@@ -1,4 +1,5 @@
 %%T%%/README.html
+@mode 555
 %%T%%/bin/appletviewer
 %%T%%/bin/idlj
 %%T%%/bin/java
@@ -16,6 +17,7 @@
 %%T%%/bin/servertool
 %%T%%/bin/tnameserv
 %%T%%/bin/unpack200
+@mode
 %%T%%/conf/logging.properties
 %%T%%/conf/management/jmxremote.access
 %%T%%/conf/management/jmxremote.password.template
@@ -308,7 +310,7 @@
 %%T%%/lib/jdk.javaws.jar
 %%T%%/lib/jdk.plugin.dom.jar
 %%T%%/lib/jdk.plugin.jar
-%%T%%/lib/jexec
+@(,,555) %%T%%/lib/jexec
 %%T%%/lib/jfr/default.jfc
 %%T%%/lib/jfr/profile.jfc
 %%T%%/lib/jli/libjli.so
