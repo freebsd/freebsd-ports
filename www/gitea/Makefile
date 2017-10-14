@@ -3,6 +3,7 @@
 
 PORTNAME=	gitea
 PORTVERSION=	1.1.4
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 
@@ -39,6 +40,15 @@ OPTIONS_DEFAULT=	${OPTIONS_DEFINE}
 CERT_VARS=	GO_TAGS+=cert
 PAM_VARS=	GO_TAGS+=pam
 SQLITE_VARS=	GO_TAGS+=sqlite
+
+post-patch:
+	# Gitea releases don't supply the release version number; the
+	# automatic method to obtain the version number in the Gitea build
+	# system only works when sources are checked out from git.
+	# See https://github.com/go-gitea/gitea/issues/1136#issuecomment-311622745
+	${SED} -Ei .orig \
+		-e 's#^(var Version = )"[^"]+"#\1"${PORTVERSION}"#' \
+		${GO_WRKSRC}/main.go
 
 do-install:
 	${INSTALL_PROGRAM} ${GO_WRKDIR_BIN}/${PORTNAME} ${STAGEDIR}${PREFIX}/sbin
