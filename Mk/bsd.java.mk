@@ -159,7 +159,7 @@ SUB_LIST+=		JAVA_OS="${JAVA_OS}"
 .		endif
 
 # The complete list of Java versions, os and vendors supported.
-__JAVA_VERSION_LIST=	1.6 1.7 1.8
+__JAVA_VERSION_LIST=	1.6 1.7 1.8 1.9
 _JAVA_VERSION_LIST=		${__JAVA_VERSION_LIST} ${__JAVA_VERSION_LIST:S/$/+/}
 _JAVA_OS_LIST=			native linux
 _JAVA_VENDOR_LIST=		openjdk oracle sun
@@ -174,6 +174,8 @@ _JAVA_PORT_NATIVE_OPENJDK_JDK_1_8_INFO=		PORT=java/openjdk8			HOME=${LOCALBASE}/
 											VERSION=1.8.0	OS=native	VENDOR=openjdk
 _JAVA_PORT_LINUX_ORACLE_JDK_1_8_INFO=		PORT=java/linux-oracle-jdk18	HOME=${LOCALBASE}/linux-oracle-jdk1.8.0 \
 											VERSION=1.8.0	OS=linux	VENDOR=oracle
+_JAVA_PORT_LINUX_ORACLE_JDK_1_9_INFO=		PORT=java/linux-oracle-jdk9	HOME=${LOCALBASE}/linux-oracle-jdk9 \
+											VERSION=1.9.0	OS=linux	VENDOR=oracle
 
 # Verbose description for each VENDOR
 _JAVA_VENDOR_openjdk=		"OpenJDK BSD Porting Team"
@@ -188,7 +190,8 @@ _JAVA_OS_linux=		Linux
 __JAVA_PORTS_ALL=	JAVA_PORT_NATIVE_OPENJDK_JDK_1_8 \
 					JAVA_PORT_NATIVE_OPENJDK_JDK_1_7 \
 					JAVA_PORT_NATIVE_OPENJDK_JDK_1_6 \
-					JAVA_PORT_LINUX_ORACLE_JDK_1_8
+					JAVA_PORT_LINUX_ORACLE_JDK_1_8 \
+					JAVA_PORT_LINUX_ORACLE_JDK_1_9
 _JAVA_PORTS_ALL=	${JAVA_PREFERRED_PORTS} \
 					${__JAVA_PORTS_ALL}
 
@@ -255,7 +258,7 @@ JAVA_RUN=	jre
 .		undef _JAVA_PORTS_INSTALLED
 .		undef _JAVA_PORTS_POSSIBLE
 .		if defined(JAVA_VERSION)
-_JAVA_VERSION=	${JAVA_VERSION:S/1.6+/1.6 1.7+/:S/1.7+/1.7 1.8+/:S/1.8+/1.8/}
+_JAVA_VERSION=	${JAVA_VERSION:S/1.6+/1.6 1.7+/:S/1.7+/1.7 1.8+/:S/1.8+/1.8 1.9+/:S/1.9+/1.9/}
 .		else
 _JAVA_VERSION=	${__JAVA_VERSION_LIST}
 .		endif
