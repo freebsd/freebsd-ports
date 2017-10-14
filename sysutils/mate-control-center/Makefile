@@ -2,14 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	mate-control-center
-PORTVERSION=	1.18.1
-PORTREVISION=	1
+PORTVERSION=	1.18.2
 CATEGORIES=	sysutils mate
 MASTER_SITES=	MATE
 DIST_SUBDIR=	mate
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Control center for MATE project
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	itstool:textproc/itstool
 LIB_DEPENDS=	libcanberra-gtk.so:audio/libcanberra \
@@ -33,7 +35,7 @@ USE_GNOME=	cairo dconf glib20 gtk30 intlhack libxml2 librsvg2 pango
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-appindicator=no \
-		--with-gtk=3.0
+		--disable-update-mimedb
 INSTALLS_ICONS=	yes
 INSTALL_TARGET=	install-strip
 

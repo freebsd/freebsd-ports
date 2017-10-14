@@ -4004,6 +4004,7 @@ share/themes/BlueMenta/xfwm4/top-left-inactive.xpm
 share/themes/BlueMenta/xfwm4/top-right-active-shaded.xpm
 share/themes/BlueMenta/xfwm4/top-right-active.xpm
 share/themes/BlueMenta/xfwm4/top-right-inactive.xpm
+share/themes/ContrastHigh/index.theme
 share/themes/ContrastHighInverse/gtk-2.0/gtkrc
 share/themes/ContrastHighInverse/gtk-3.0/assets/bullet-symbolic.svg
 share/themes/ContrastHighInverse/gtk-3.0/assets/bullet-symbolic.symbolic.png
@@ -4776,6 +4777,9 @@ share/themes/TraditionalGreen/gtk-3.0/img/menuitem-radio-checked-insensitive.png
 share/themes/TraditionalGreen/gtk-3.0/img/menuitem-radio-checked.png
 share/themes/TraditionalGreen/gtk-3.0/img/menuitem-radio-hover.png
 share/themes/TraditionalGreen/gtk-3.0/img/menuitem-radio-insensitive.png
+share/themes/TraditionalGreen/gtk-3.0/img/menuitem-radio-mixed-hover.png
+share/themes/TraditionalGreen/gtk-3.0/img/menuitem-radio-mixed-insensitive.png
+share/themes/TraditionalGreen/gtk-3.0/img/menuitem-radio-mixed.png
 share/themes/TraditionalGreen/gtk-3.0/img/menuitem-radio.png
 share/themes/TraditionalGreen/gtk-3.0/img/pane-separator-grip-horz.png
 share/themes/TraditionalGreen/gtk-3.0/img/pane-separator-grip-vert.png
@@ -4841,6 +4845,9 @@ share/themes/TraditionalOk/gtk-3.0/img/menuitem-radio-checked-insensitive.png
 share/themes/TraditionalOk/gtk-3.0/img/menuitem-radio-checked.png
 share/themes/TraditionalOk/gtk-3.0/img/menuitem-radio-hover.png
 share/themes/TraditionalOk/gtk-3.0/img/menuitem-radio-insensitive.png
+share/themes/TraditionalOk/gtk-3.0/img/menuitem-radio-mixed-hover.png
+share/themes/TraditionalOk/gtk-3.0/img/menuitem-radio-mixed-insensitive.png
+share/themes/TraditionalOk/gtk-3.0/img/menuitem-radio-mixed.png
 share/themes/TraditionalOk/gtk-3.0/img/menuitem-radio.png
 share/themes/TraditionalOk/gtk-3.0/img/pane-separator-grip-horz.png
 share/themes/TraditionalOk/gtk-3.0/img/pane-separator-grip-vert.png

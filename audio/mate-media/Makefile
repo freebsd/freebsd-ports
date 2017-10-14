@@ -2,13 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	mate-media
-PORTVERSION=	1.18.0
+PORTVERSION=	1.18.1
 CATEGORIES=	audio mate
 MASTER_SITES=	MATE
 DIST_SUBDIR=	mate
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Multimedia applications for the MATE desktop
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	itstool:textproc/itstool
 LIB_DEPENDS=	libcanberra-gtk.so:audio/libcanberra \
