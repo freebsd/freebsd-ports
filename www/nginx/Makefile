@@ -3,7 +3,7 @@
 
 PORTNAME=	nginx
 PORTVERSION=	1.12.1
-PORTREVISION?=	1
+PORTREVISION?=	2
 PORTEPOCH=	2
 CATEGORIES=	www
 MASTER_SITES=	http://nginx.org/download/
@@ -479,7 +479,8 @@ NGINX_FASTDFS_VERSION=	5a8110f
 GH_ACCOUNT+=	happyfish100:fastdfs
 GH_PROJECT+=	fastdfs-nginx-module:fastdfs
 GH_TAGNAME+=	${NGINX_FASTDFS_VERSION}:fastdfs
-EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-fastdfs-src-config
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-fastdfs-src-config \
+		${PATCHDIR}/extra-patch-fastdfs-src-mod_fastdfs.conf
 BUILD_DEPENDS+=	${LOCALBASE}/include/fastcommon/logger.h:devel/libfastcommon \
 		${LOCALBASE}/include/fastdfs/fdfs_client.h:ftp/fastdfs
 LIB_DEPENDS+=	libfastcommon.so:devel/libfastcommon \
