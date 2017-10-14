@@ -14,12 +14,10 @@ include/libewf/extern.h
 include/libewf/features.h
 include/libewf/types.h
 lib/libewf.a
-lib/libewf.la
 lib/libewf.so
 lib/libewf.so.2
 lib/libewf.so.2.0.0
 %%PYTHON_SITELIBDIR%%/pyewf.a
-%%PYTHON_SITELIBDIR%%/pyewf.la
 %%PYTHON_SITELIBDIR%%/pyewf.so
 libdata/pkgconfig/libewf.pc
 man/man1/ewfacquire.1.gz
