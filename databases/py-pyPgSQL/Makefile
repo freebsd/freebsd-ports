@@ -11,6 +11,8 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Python DB-API 2 compliant library for using PostgreSQL databases
 
+BROKEN=		Invalid checksum
+
 RUN_DEPENDS=	${DATETIME_DEP}:lang/py-mx-base
 
 USES=	pgsql python
