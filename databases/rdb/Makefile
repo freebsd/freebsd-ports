@@ -10,6 +10,8 @@ DISTNAME=	RDB-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast, portable, relational database management system
 
+BROKEN=		No public distfiles
+
 USES=		perl5 shebangfix
 SHEBANG_FILES=	${BINFILES}
 NO_BUILD=	yes

@@ -12,6 +12,8 @@ COMMENT=	Open source, distributed, noSQL database
 
 LICENSE=	APACHE20
 
+BROKEN=		No public distfiles
+
 BUILD_DEPENDS=	${LOCALBASE}/lib/erlang15/bin/erlc:lang/erlang-runtime15
 
 USES=		gmake readline shebangfix
