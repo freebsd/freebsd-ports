@@ -5,15 +5,16 @@ PORTVERSION=	${JDK_VERSION}.${JDK_UPDATE_VERSION}
 CATEGORIES=	java devel
 MASTER_SITES=	#
 PKGNAMEPREFIX=	linux-${JDK_VENDOR}-
+PKGNAMESUFFIX=	${JDK_VERSION}
 DISTNAME=	jdk-${JDK_VERSION}_linux-x64_bin
 
 MAINTAINER=	java@FreeBSD.org
 COMMENT=	Oracle Java ${JDK_VERSION} Development Kit for Linux
 
+ONLY_FOR_ARCHS=	amd64 i386
 RUN_DEPENDS=	javavm:java/javavmwrapper
 
 RESTRICTED=	Redistribution of repackaged binaries not permitted
-PKGNAMESUFFIX=	${JDK_VERSION}
 
 WRKSRC=		${WRKDIR}/jdk-${DL_JDK_VERSION}
 PLIST_SUB=	T=${APP_HOME:S/^${PREFIX}\///} PORTVERSION=${PORTVERSION}
@@ -21,7 +22,6 @@ PLIST_SUB=	T=${APP_HOME:S/^${PREFIX}\///} PORTVERSION=${PORTVERSION}
 NO_BUILD=	yes
 USES=		linux shebangfix
 USE_LINUX=	xorglibs
-ONLY_FOR_ARCHS=	i386 amd64
 
 JDK_VENDOR=		oracle
 JDK_VERSION=		9
