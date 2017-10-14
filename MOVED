@@ -9589,3 +9589,4 @@ devel/arduino-glcd|devel/arduino-openglcd|2017-10-14|Switched to active fork
 x11-wm/awesome2|x11-wm/awesome|2017-10-14|Has expired: Awesome WM 2.x is deprecated use 4.x instead
 x11-wm/awesome3|x11-wm/awesome|2017-10-14|Has expired: Awesome WM 3.x is deprecated use 4.x instead
 www/moodle30|www/moodle33|2017-10-14|Has expired: Deprecated by upstream, please use www/moodle33 instead
+lang/gcc5-devel|lang/gcc5|2017-10-14|The GCC 5 branch has been closed, use the final release instead (or a newer major version)
