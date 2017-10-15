@@ -58,7 +58,7 @@ getport_recursive()
 	fi
 }
 
-svn=$(which svn 2>/dev/null) || $(which svnlite 2>/dev/null) || err "Where is Subversion??"
+svn=$(which svn 2>/dev/null || which svnlite 2>/dev/null) || err "Where is Subversion??"
 
 PORTSDIR="$(make -f /usr/share/mk/bsd.port.mk -VPORTSDIR)"
 
