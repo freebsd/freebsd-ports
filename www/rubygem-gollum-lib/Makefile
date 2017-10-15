@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gollum-lib
-PORTVERSION=	4.2.5
+PORTVERSION=	4.2.7
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -14,8 +14,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-gemojione>=3.2:graphics/rubygem-gemojione \
 		rubygem-gollum-grit_adapter>=1.0:www/rubygem-gollum-grit_adapter \
-		rubygem-nokogiri>=1.6.4:textproc/rubygem-nokogiri \
-		rubygem-rouge>=2.0:textproc/rubygem-rouge \
+		rubygem-nokogiri>=1.6.1:textproc/rubygem-nokogiri \
+		rubygem-rouge>=2.1:textproc/rubygem-rouge \
 		rubygem-sanitize>=2.1:textproc/rubygem-sanitize \
 		rubygem-stringex>=2.6:devel/rubygem-stringex
 
@@ -31,8 +31,8 @@ GITHUB_RUN_DEPENDS=	rubygem-github-markup>=1.6:textproc/rubygem-github-markup
 GITLAB_RUN_DEPENDS=	rubygem-gitlab-markup>=1.5:textproc/rubygem-gitlab-markup
 
 NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
+USE_RUBY=	yes
 
 post-patch-GITLAB-on:
 # change runtime dependency from "github-markup ~> 1.6" to "gitlab-markup ~> 1.5"
