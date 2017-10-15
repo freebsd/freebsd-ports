@@ -1,10 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	flcluster
-PORTVERSION=	1.0.2
+PORTVERSION=	1.0.3
 CATEGORIES=	comms hamradio
-MASTER_SITES=	http://www.w1hkj.com/files/flcluster/ \
-		LOCAL/db
+MASTER_SITES=	SF/fldigi/${PORTNAME}
 
 MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	FLCLUSTER is a management tool for accessing dxcluster nodes
