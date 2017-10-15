@@ -2,7 +2,7 @@
 
 PORTNAME?=	mariadb
 PORTVERSION=	10.2.9
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	databases ipv6
 MASTER_SITES=	http://mirrors.supportex.net/${SITESDIR}/ \
 		http://mirror2.hs-esslingen.de/pub/Mirrors/${SITESDIR}/ \
@@ -28,7 +28,7 @@ SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 SLAVEDIRS=	databases/mariadb102-client
-USES=		bison:build cmake compiler:c++11-lib cpe iconv:translit libedit ncurses shebangfix ssl
+USES=		bison:build cmake:noninja compiler:c++11-lib cpe iconv:translit libedit ncurses shebangfix ssl
 USE_LDCONFIG=	${PREFIX}/lib/mysql
 SHEBANG_FILES=	scripts/*.sh
 SITESDIR=	mariadb/mariadb-${PORTVERSION}/source
@@ -201,8 +201,12 @@ post-patch:
 		${WRKSRC}/cmake/os/DragonFly.cmake
 .endif
 
-#post-configure-MROONGA-on:
-#	${REINPLACE_CMD} 's|-llz4|-L${LOCALBASE}/lib -llz4|' \
-#		${WRKSRC}/storage/mroonga/CMakeFiles/mroonga.dir/link.txt
+# Fix build failure in mbstream, see https://jira.mariadb.org/browse/MDEV-14072
+post-configure-INNOBASE-on:
+	${REINPLACE_CMD} -e 's| ${PREFIX}/lib/liblz4.so\(.* ${PREFIX}/lib/liblz4.so.*\)|\1|' \
+		-e 's| ${PREFIX}/lib/liblzo2.so\(.* ${PREFIX}/lib/liblzo2.so.*\)|\1|' \
+		-e 's| ${PREFIX}/lib/libsnappy.so\(.* ${PREFIX}/lib/libsnappy.so\)|\1|' \
+		-e 's| -llzma\(.* -llzma\)|\1|;s| -lbz2\(.* -lbz2\)|\1|;' \
+		${WRKSRC}/extra/mariabackup/CMakeFiles/mbstream.dir/link.txt
 
 .include <bsd.port.post.mk>
