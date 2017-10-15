@@ -9,7 +9,7 @@ MASTER_SITES=	http://downloads.dragonlace.net/src/:boot \
 		LOCAL/marino:boot GCC/${MS_SUBDIR}
 DISTFILES=	${IDENTIFICATION}.tar.xz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ericturgeon.bsd@gmail.com
 COMMENT=	Version of GCC ${GCC_BRANCH} with full Ada support
 
 LICENSE=	GPLv3 GPLv3RLE
@@ -53,6 +53,8 @@ ONLY_FOR_ARCHS=		aarch64 amd64 i386
 MODERN_BINUTILS=	yes
 .  if ${ARCH} == aarch64
 BOOTSTRAP_COMPILER=	ada-bootstrap.aarch64.freebsd.120.tar.bz2
+.  elif ${ARCH} == amd64 && ${OSVERSION} > 1200030 #ino64
+BOOTSTRAP_COMPILER=	ada-bootstrap.${GARCH}.freebsd.120.tar.bz2
 .  else
 BOOTSTRAP_COMPILER=	ada-bootstrap.${GARCH}.freebsd.100B.tar.bz2
 .  endif
