@@ -93,11 +93,21 @@ DOCS_BUILD_DEPENDS=	xsltproc:textproc/libxslt \
 			${LOCALBASE}/share/xsl/docbook/html/docbook.xsl:textproc/docbook-xsl \
 			lynx:www/lynx
 
+post-build-DOCS-off:
+	${SED} -e 's,@docdir@,${DOCSDIR},' ${WRKSRC}/doc/neomuttrc.head > ${WRKSRC}/doc/neomuttrc
+	cd ${WRKSRC} && ${CC} -I. -o doc/makedoc doc/makedoc.c
+	cd ${WRKSRC} && ${CPP} -isystem ${LOCALBASE}/include -D_MAKEDOC -C -I. ./init.h | doc/makedoc -c >> doc/neomuttrc
+
 post-install:
 	${RM} ${STAGEDIR}${PREFIX}/etc/mime*
-	${MV} ${STAGEDIR}${PREFIX}/etc/neomuttrc ${STAGEDIR}${PREFIX}/etc/neomuttrc.dist
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/neomutt \
 		${STAGEDIR}${PREFIX}/lib/neomutt/pgpring \
 		${STAGEDIR}${PREFIX}/lib/neomutt/pgpewrap
+
+post-install-DOCS-on:
+	${MV} ${STAGEDIR}${PREFIX}/etc/neomuttrc ${STAGEDIR}${PREFIX}/etc/neomuttrc.dist
+
+post-install-DOCS-off:
+	${INSTALL_DATA} ${WRKSRC}/doc/neomuttrc ${STAGEDIR}${PREFIX}/etc/neomuttrc.dist
 
 .include <bsd.port.mk>
