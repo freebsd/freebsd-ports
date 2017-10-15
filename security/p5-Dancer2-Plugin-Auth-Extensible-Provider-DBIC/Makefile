@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Dancer2-Plugin-Auth-Extensible-Provider-DBIC
-PORTVERSION=	0.601
+PORTVERSION=	0.623
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
