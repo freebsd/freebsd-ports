@@ -72,7 +72,7 @@ _COMPAT=		-DNO_GSSAPI
 
 _COMPAT+=	-DOMIT_UTMP
 
-.if defined(WITH_DEBUG) && ${WITH_DEBUG} != "no"
+.if defined(WITH_DEBUG)
 XFLAGS=		-DDEBUG
 .endif
 

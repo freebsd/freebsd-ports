@@ -28,7 +28,7 @@ OPTIONS_DEFAULT=	OPTIMIZED_CFLAGS
 
 .if ${PORT_OPTIONS:MOPTIMIZED_CFLAGS}
 CFLAGS+=	-O3 -ffast-math
-.if defined(WITHOUT_DEBUG) || !defined(WITH_DEBUG)
+.if !defined(WITH_DEBUG)
 CFLAGS+=	-fomit-frame-pointer -DNDEBUG
 .endif
 .endif

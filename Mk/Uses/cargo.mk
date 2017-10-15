@@ -103,7 +103,7 @@ CARGO_INSTALL_ARGS+=	--features='${CARGO_FEATURES}'
 CARGO_TEST_ARGS+=	--features='${CARGO_FEATURES}'
 .endif
 
-.if !defined(WITH_DEBUG) || defined(WITHOUT_DEBUG)
+.if !defined(WITH_DEBUG)
 CARGO_BUILD_ARGS+=	--release
 CARGO_TEST_ARGS+=	--release
 .else

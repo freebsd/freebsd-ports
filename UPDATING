@@ -5,6 +5,17 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20171015:
+  AFFECTS: people using WITHOUT_DEBUG
+  AUTHOR: madpilot@FreeBSD.org
+
+  The WITHOUT_DEBUG flag has been retired. It's only purpose was
+  to override a global WITH_DEBUG, if that was defined, but many
+  ports were ignoring such flag even if honouring WITH_DEBUG.
+
+  The same effect can be obtained using ".undef WITH_DEBUG" without
+  any special support in port Makefiles.
+
 20171012:
   AFFECTS: users of security/openssh-portable
   AUTHOR: bdrewery@FreeBSD.org
