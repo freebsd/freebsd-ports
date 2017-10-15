@@ -3,6 +3,7 @@
 
 PORTNAME=	MooseX-Util
 PORTVERSION=	0.006
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -13,7 +14,7 @@ COMMENT=	Moose::Util extensions
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-xBUILD_DEPENDS=	p5-Moose>=0:devel/p5-Moose \
+BUILD_DEPENDS=	p5-Moose>=0:devel/p5-Moose \
 		p5-MooseX-TraitFor-Meta-Class-BetterAnonClassNames>=0.002001:devel/p5-MooseX-TraitFor-Meta-Class-BetterAnonClassNames \
 		p5-Sub-Exporter-Progressive>=0:devel/p5-Sub-Exporter-Progressive \
 		p5-namespace-autoclean>=0:devel/p5-namespace-autoclean
