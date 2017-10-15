@@ -3,14 +3,18 @@
 
 PORTNAME=	libtai
 PORTVERSION=	0.60
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	devel
 MASTER_SITES=	http://cr.yp.to/libtai/ \
 		ftp://ftp.sunsite.auc.dk/disk1/qmail/ \
 		ftp://ftp.task.gda.pl/mirror/mirror.qmail.org/koobera/pub/software/
 
 MAINTAINER=	rodrigo@FreeBSD.org
-COMMENT=	Library for storing and manipulating dates and times in second/attosecond
+COMMENT=	Library for storing and manipulating dates and times
+
+LICENSE=	UNLICENSE
+
+CONFLICTS_INSTALL=	mess822
 
 ALL_TARGET=	it
 USES=		groff
