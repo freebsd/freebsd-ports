@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rouge
-PORTVERSION=	2.0.5
+PORTVERSION=	2.2.1
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
@@ -13,9 +13,8 @@ LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 NO_ARCH=	yes
-
-USE_RUBY=	yes
 USES=		gem
+USE_RUBY=	yes
 PLIST_FILES=	bin/rougify
 
 .include <bsd.port.mk>
