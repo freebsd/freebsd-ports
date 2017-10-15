@@ -14,6 +14,4 @@ GH_TUPLE=	hrydgard:glslang:136b1e2d:glslang/ext/glslang \
 MASTERDIR=	${.CURDIR}/../ppsspp
 DISTINFO_FILE=	${.CURDIR}/distinfo
 
-OLDJOY_EXTRA_PATCHES=	${.CURDIR}/files/extra-patch-old-joy
-
 .include "${MASTERDIR}/Makefile"
