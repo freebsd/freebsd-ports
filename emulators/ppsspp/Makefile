@@ -3,7 +3,7 @@
 PORTNAME=	ppsspp
 DISTVERSIONPREFIX=	v
 DISTVERSION?=	1.4.2
-PORTREVISION?=	3
+PORTREVISION?=	4
 CATEGORIES=	emulators
 # XXX Get from Debian once #697821 lands
 MASTER_SITES=	https://bazaar.launchpad.net/~sergio-br2/${PORTNAME}/debian-sdl/download/5/${PORTNAME}.1-20140802045408-dd26dik367ztj5xg-8/:manpage
@@ -13,6 +13,7 @@ EXTRACT_ONLY=	${DISTFILES:N*\:manpage:C/:.*//}
 .if !defined(PKGNAMESUFFIX) || ${PKGNAMESUFFIX:N*-devel}
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
 PATCHFILES=	e33acdc5e922.patch:-p1
+PATCHFILES+=	ac0052c6af92.patch:-p1
 .endif
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -58,7 +59,7 @@ OPTIONS_SLAVE?=	SDL
 OPTIONS_EXCLUDE:=	${OPTIONS_SINGLE_GUI}
 
 OLDJOY_DESC=	Old joystick support with fixed button mappings (deprecated)
-OLDJOY_EXTRA_PATCHES?=	${PATCHDIR}/extra-patch-old-joy
+OLDJOY_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-old-joy
 QT5_USE=	QT5=qmake_build,buildtools_build,linguisttools_build,gui,opengl,widgets
 QT5_CMAKE_BOOL=	USING_QT_UI
 QT5_VARS=	EXENAME=PPSSPPQt
