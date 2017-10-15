@@ -23,6 +23,7 @@
 %%LUA_MODSHAREDIR%%/lgi/override/Gdk.lua
 %%LUA_MODSHAREDIR%%/lgi/override/Gio-DBus.lua
 %%LUA_MODSHAREDIR%%/lgi/override/Gio.lua
+%%LUA_MODSHAREDIR%%/lgi/override/GooCanvas.lua
 %%LUA_MODSHAREDIR%%/lgi/override/Gst.lua
 %%LUA_MODSHAREDIR%%/lgi/override/Gtk.lua
 %%LUA_MODSHAREDIR%%/lgi/override/Pango.lua
