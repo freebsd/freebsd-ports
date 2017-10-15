@@ -6,7 +6,7 @@ CATEGORIES=	mail perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	hvo.pm@xs4all.nl
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Correct handling of non-ASCII MIME headers
 
 LICENSE=	ART10 GPLv1+

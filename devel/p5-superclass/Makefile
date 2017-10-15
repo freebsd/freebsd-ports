@@ -7,7 +7,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:DAGOLDEN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	hvo.pm@xs4all.nl
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Like parent, but with version checks
 
 LICENSE=	ART10 GPLv1+

@@ -7,7 +7,7 @@ CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	hvo.pm@xs4all.nl
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Extensible authentication for D2 apps using Dancer2-Plugin-Database
 
 LICENSE=	ART10 GPLv1+
