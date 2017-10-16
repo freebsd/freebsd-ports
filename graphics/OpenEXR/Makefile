@@ -14,6 +14,9 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:dist \
 MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	High dynamic-range (HDR) image file format
 
+DEPRECATED=	Vulnerable with no upstream support
+EXPIRATION_DATE=2017-12-31
+
 LICENSE=	BSD3CLAUSE
 
 # exact version required to avoid hard-to-debug issues
