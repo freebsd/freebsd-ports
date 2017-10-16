@@ -3,6 +3,7 @@
 
 PORTNAME=	data
 PORTVERSION=	1.11
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	https://downloadmirror.intel.com/26925/eng/:intel \
 		http://www.amd64.org/microcode/:amd
