@@ -16,6 +16,7 @@
 # microcode_update_cpus (str):		A list of cpus to update on startup, or "ALL" for all.
 #					Example: microcode_update_cpus_cpus="0 CPU0"
 #					Set to "ALL" by default. 
+# microcode_update_flags (str):		Flags for cpucontrol(8).
 
 . /etc/rc.subr
 
@@ -48,7 +49,8 @@ microcode_update_start()
 		cpus=${microcode_cpus}
 	fi
 	for i in ${cpus}; do
-		${CMT} -u -d "${microcode_update_datadir}" /dev/cpuctl${i} || \
+		${CMT} -u ${microcode_update_flags} \
+		    -d "${microcode_update_datadir}" /dev/cpuctl${i} || \
 		    (echo "Failed." && exit 1)
 	done
 	echo "Done."
@@ -60,5 +62,6 @@ load_rc_config $name
 : ${microcode_update_enable="NO"}
 : ${microcode_update_datadir="%%DATADIR%%"}
 : ${microcode_cpus="ALL"}
+: ${microcode_update_flags=""}
 
 run_rc_command "$1"
