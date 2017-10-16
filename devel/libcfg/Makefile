@@ -3,7 +3,7 @@
 
 PORTNAME=	libcfg
 PORTVERSION=	0.6.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel
 MASTER_SITES=	http://opensource.platon.org/projects/
 DISTNAME=	${PORTNAME}+-${DISTVERSION}
@@ -13,6 +13,8 @@ COMMENT=	Library for command line and configuration file parsing
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+CONFLICTS_INSTALL=	ossp-cfg
 
 USES=		autoreconf gmake
 GNU_CONFIGURE=	yes
