@@ -10,7 +10,7 @@ DISTFILES=	# none
 MAINTAINER=	crees@FreeBSD.org
 COMMENT=	Sets a port back to a previous version
 
-LICENSE=	BSD2CLAUSE # public domain
+LICENSE=	PD
 
 RUN_DEPENDS=	svn:devel/subversion${WITH_SUBVERSION_VER}
 
