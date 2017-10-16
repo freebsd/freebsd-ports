@@ -30,7 +30,8 @@ MAKE_ARGS=	UBINOWN=${UID} UBINGRP=${GID} \
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 DOCS=		KNOWNBUGS LICENSE PGPKEYS README RELEASE_NOTES \
 		sendmail/TRACEFLAGS sendmail/SECURITY sendmail/TUNING
-PLIST_SUB+=	PREFIX=${PREFIX:S=${PREFIX}/==} MANPREFIX=${MANPREFIX:S=$=/=:S=${PREFIX}==:S=^/==}
+PLIST_SUB+=	PREFIX=${PREFIX:S=${PREFIX}/==} \
+		MANPREFIX=${MANPREFIX:S=$=/=:S=${PREFIX}==:S=^/==}
 PKGMESSAGE=	${WRKSRC}/pkg-message
 
 WCONF=		${WRKSRC}/devtools/Site
@@ -44,8 +45,11 @@ SENDMAIL=	${PREFIX}/sbin/sendmail
 BASEMAIL=	/usr/libexec/sendmail/sendmail
 MILTER_SOVER?=	6
 
-OPTIONS_DEFINE?=	SHMEM SEM LA NIS IPV6 TLS SASL SASLAUTHD LDAP BDB GDBM SOCKETMAP CYRUSLOOKUP PICKY_HELO_CHECK MILTER DOCS
-OPTIONS_DEFAULT?=	SHMEM SEM LA NIS TLS SASL SASLAUTHD PICKY_HELO_CHECK MILTER BDB1
+OPTIONS_DEFINE?=	SHMEM SEM LA NIS IPV6 TLS SASL SASLAUTHD LDAP BDB \
+			GDBM SOCKETMAP CYRUSLOOKUP BLACKLISTD \
+			PICKY_HELO_CHECK MILTER DOCS
+OPTIONS_DEFAULT?=	SHMEM SEM LA NIS TLS SASL SASLAUTHD BDB1 \
+			PICKY_HELO_CHECK MILTER
 NO_OPTIONS_SORT=yes
 SHMEM_DESC=		System V shared memory support
 LA_DESC=		load averages support
@@ -54,6 +58,7 @@ SASLAUTHD_DESC=		SASLAUTHD support
 BDB_DESC=		Berkeley DB version 4+ support
 GDBM_DESC=		GNU dbm library support (option COMPAT needed)
 SOCKETMAP_DESC=		Enable socketmap feature
+BLACKLISTD_DESC=	Enable blacklistd support
 CYRUSLOOKUP_DESC=	Enable cyruslookup feature
 PICKY_HELO_CHECK_DESC=	Enable picky HELO check
 MILTER_DESC=		Enable milter support
@@ -120,6 +125,9 @@ SITE+=	${FILESDIR}/site.config.m4.sasl2
 .if ${PORT_OPTIONS:MLDAP}
 SITE+=	${FILESDIR}/site.config.m4.ldap
 .endif
+.if ${PORT_OPTIONS:MBLACKLISTD}
+SITE+=	${FILESDIR}/site.config.m4.blacklistd
+.endif
 .if ${PORT_OPTIONS:MMILTER}
 SITE+=	${FILESDIR}/site.config.m4.milter
 .endif
@@ -145,6 +153,12 @@ do-configure:
 .if ${PORT_OPTIONS:MGDBM}
 	@(if [ ! -e "${LOCALBASE}/lib/libgdbm_compat.so" ] ; then \
 	  ${ECHO_MSG} "===> option COMPAT is missing in databases/gdbm."; \
+          ${FALSE}; \
+          fi)
+.endif
+.if ${PORT_OPTIONS:MBLACKLISTD}
+	@(if [ ! -e "${DESTDIR}/usr/lib/libblacklist.so" ] ; then \
+	  ${ECHO_MSG} "===> libblacklist.so not found. Please update to FreeBSD 11"; \
           ${FALSE}; \
           fi)
 .endif
@@ -192,7 +206,8 @@ do-configure:
 .endif
 
 post-build:
-	(cd ${WRKSRC}/doc/op && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} op.txt)
+	(cd ${WRKSRC}/doc/op && \
+	 ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} op.txt)
 
 pre-install:
 	${MKDIR} ${STAGEDIR}/etc/mail
