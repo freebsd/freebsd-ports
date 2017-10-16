@@ -3,16 +3,13 @@
 
 PORTNAME?=	svxlink
 PORTVERSION=	15.11
+PORTREVISION=	1
 CATEGORIES=	comms hamradio
 
 MAINTAINER=	hamradio@FreeBSD.org
 COMMENT?=	General purpose ham radio voice services
 
 LICENSE=	GPLv2
-
-BROKEN=		does not build since newer libsigc++20
-DEPRECATED=	Broken for more than 6 months
-EXPIRATION_DATE=	2017-11-09
 
 LIB_DEPENDS?=	libgsm.so:audio/gsm \
 		libspeex.so:audio/speex \
