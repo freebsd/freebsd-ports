@@ -4,7 +4,7 @@ PORTNAME=	wpa_supplicant
 PORTVERSION=	2.6
 PORTREVISION=	1
 CATEGORIES=	security net
-MASTER_SITES=	http://w1.fi/releases/
+MASTER_SITES=	https://w1.fi/releases/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Supplicant (client) for WPA/802.1x protocols
