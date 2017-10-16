@@ -11,6 +11,9 @@ MASTER_SITES=	http://rawtherapee.com/shared/source/
 MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	Powerful RAW image processing application
 
+DEPRECATED=	Vulnerable with no upstream support
+EXPIRATION_DATE=2017-12-31
+
 LICENSE=	GPLv3
 
 LIB_DEPENDS=	\
