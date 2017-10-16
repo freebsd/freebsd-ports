@@ -3,7 +3,6 @@
 
 PORTNAME=	xorg-vfbserver
 PORTVERSION=	1.19.1
-PORTREVISION=	2
 PORTEPOCH=	1
 
 COMMENT=	X virtual framebuffer server from X.Org
