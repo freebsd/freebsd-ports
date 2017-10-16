@@ -11,7 +11,7 @@ MASTER_SITES=	http://www.mr511.de/software/ \
 MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	Public ELF file access library similar to libelf(3) in Solaris
 
-LICENSE=	LGPL
+LICENSE=	LGPL20
 
 CONFLICTS_INSTALL=	elfutils
 
