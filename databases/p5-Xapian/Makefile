@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Xapian
-PORTVERSION=	1.4.4.0
+PORTVERSION=	1.4.5.0
 CATEGORIES=	databases perl5
 MASTER_SITES=	http://oligarchy.co.uk/xapian/${PORTVERSION:R}/ \
 		LOCAL/sunpoet
