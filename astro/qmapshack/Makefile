@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	qmapshack
-PORTVERSION=	1.8.1
-PORTREVISION=	1
+PORTVERSION=	1.9.1
 CATEGORIES=	astro
 MASTER_SITES=	https://bitbucket.org/maproom/qmapshack/downloads/
 
@@ -21,6 +20,6 @@ RUN_DEPENDS=	${LOCALBASE}/bin/bsdisks:sysutils/bsdisks
 
 USES=		cmake compiler:c++11-lib desktop-file-utils
 USE_QT5=	buildtools core dbus gui linguisttools network printsupport \
-		qmake script sql sql-sqlite3 webkit widgets xml
+		qmake script sql sql-sqlite3 uitools webkit widgets xml
 
 .include <bsd.port.mk>
