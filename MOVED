@@ -9590,3 +9590,9 @@ x11-wm/awesome2|x11-wm/awesome|2017-10-14|Has expired: Awesome WM 2.x is depreca
 x11-wm/awesome3|x11-wm/awesome|2017-10-14|Has expired: Awesome WM 3.x is deprecated use 4.x instead
 www/moodle30|www/moodle33|2017-10-14|Has expired: Deprecated by upstream, please use www/moodle33 instead
 lang/gcc5-devel|lang/gcc5|2017-10-14|The GCC 5 branch has been closed, use the final release instead (or a newer major version)
+devel/vtcl||2017-10-16|Has expired: This port depends on Tcl/Tk 8.4 , which is no longer maintained. Please port it to 8.5+
+editors/tpad||2017-10-16|Has expired: This port depends on Tcl/Tk 8.4 , which is no longer maintained. Please port it to 8.5+
+games/polypuzzle||2017-10-16|Has expired: This port depends on Tcl/Tk 8.4 , which is no longer maintained. Please port it to 8.5+
+multimedia/nxtvepg||2017-10-16|Has expired: This port depends on Tcl/Tk 8.4 , which is no longer maintained. Please port it to 8.5+
+net/xpvm||2017-10-16|Has expired: This port depends on Tcl/Tk 8.4 , which is no longer maintained. Please port it to 8.5+
+x11/tkXwin||2017-10-16|Has expired: This port depends on Tcl/Tk 8.4 , which is no longer maintained. Please port it to 8.5+
