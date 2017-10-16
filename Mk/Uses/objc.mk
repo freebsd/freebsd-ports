@@ -43,7 +43,7 @@ ALT_COMPILER_TYPE=	gcc
 
 # We do always need clang and prefer a recent version
 .if (${COMPILER_TYPE} == clang && ${COMPILER_VERSION} < ${OBJC_CLANG_VERSION}) || ${COMPILER_TYPE} != clang
-.if ${ALT_COMPILER_TYPE} == clang && ${ALT_COMPILER_VERSION} >= ${OJBC_CLANG_VERSION}
+.if ${ALT_COMPILER_TYPE} == clang && ${ALT_COMPILER_VERSION} >= ${OBJC_CLANG_VERSION}
 CC=	/usr/bin/clang
 CPP=	/usr/bin/clang-cpp
 CXX=	/usr/bin/clang++
