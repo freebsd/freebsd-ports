@@ -1,3 +1,3 @@
-TIMESTAMP = 1501171431
-SHA256 (notmuch-0.25.tar.gz) = 65d28d1f783d02629039f7d15d9a2bada147a7d3809f86fe8d13861b0f6ae60b
-SIZE (notmuch-0.25.tar.gz) = 882093
+TIMESTAMP = 1508076826
+SHA256 (notmuch-0.25.1.tar.gz) = b4bf09ec9b7b64180704faa26d66cad5f911a5a00ef812da34cb02c3f8872831
+SIZE (notmuch-0.25.1.tar.gz) = 882141
