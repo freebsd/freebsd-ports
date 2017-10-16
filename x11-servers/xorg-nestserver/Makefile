@@ -3,7 +3,6 @@
 
 PORTNAME=	xorg-nestserver
 PORTVERSION=	1.19.1
-PORTREVISION=	2
 PORTEPOCH=	2
 
 COMMENT=	Nesting X server from X.Org
