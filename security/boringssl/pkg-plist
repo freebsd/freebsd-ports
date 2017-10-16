@@ -61,6 +61,7 @@ include/openssl/ripemd.h
 include/openssl/rsa.h
 include/openssl/safestack.h
 include/openssl/sha.h
+include/openssl/span.h
 include/openssl/srtp.h
 include/openssl/ssl.h
 include/openssl/ssl3.h
