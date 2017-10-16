@@ -327,7 +327,6 @@
     SUBDIR += tilda
     SUBDIR += tint
     SUBDIR += tint-devel
-    SUBDIR += tkXwin
     SUBDIR += trapproto
     SUBDIR += trayer
     SUBDIR += tycoon

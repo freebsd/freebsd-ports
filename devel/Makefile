@@ -6048,7 +6048,6 @@
     SUBDIR += violet
     SUBDIR += visualparadigm
     SUBDIR += vstr
-    SUBDIR += vtcl
     SUBDIR += vxlog
     SUBDIR += wand-libconfig
     SUBDIR += wandio

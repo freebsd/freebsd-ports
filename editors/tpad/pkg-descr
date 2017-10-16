@@ -1,8 +1,0 @@
-Apart from all the features Notepad has, tpad adds
-plugins to invoke some common text utilities without
-leaving the editor, an Ascii table, a tip database
-and support for regexps. It also is fully configurable.
-
-The executable `tpad' is a wish(1) shell script.
-
-WWW: http://monitor.deis.unical.it/ant/tpad/
