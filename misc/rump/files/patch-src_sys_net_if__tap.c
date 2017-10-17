@@ -1,6 +1,6 @@
 --- src/sys/net/if_tap.c.orig	2016-08-02 11:51:10 UTC
 +++ src/sys/net/if_tap.c
-@@ -332,7 +332,8 @@ tap_attach(device_t parent, device_t sel
+@@ -332,7 +332,8 @@ tap_attach(device_t parent, device_t self, void *aux)
  	ifp = &sc->sc_ec.ec_if;
  	strcpy(ifp->if_xname, device_xname(self));
  	ifp->if_softc	= sc;

@@ -11,7 +11,7 @@ COMMENT=	Virtualized NetBSD kernel components in userspace
 
 LICENSE=	BSD2CLAUSE
 
-NOT_FOR_ARCHS=	aarch64 armv6 mips mips64 powerpc powerpc64 sparc64
+NOT_FOR_ARCHS=	armv6 mips mips64 powerpc powerpc64 sparc64
 NOT_FOR_ARCHS_REASON=	not yet ported to FreeBSD on this architecture
 
 USE_GITHUB=	yes
@@ -22,6 +22,12 @@ GH_TUPLE=	rumpkernel:src-netbsd:82f3a69:netbsd/src
 USE_LDCONFIG=	yes
 
 .include <bsd.port.pre.mk>
+
+.if ${ARCH} == "i386" || ${ARCH} == "amd64"
+PLIST_SUB+= 	X8664=""
+.else
+PLIST_SUB+= 	X8664="@comment "
+.endif
 
 .if ${OSVERSION} >= 1100121
 CFLAGS+=	-Wno-address-of-packed-member

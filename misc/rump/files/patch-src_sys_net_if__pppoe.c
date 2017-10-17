@@ -1,6 +1,6 @@
 --- src/sys/net/if_pppoe.c.orig	2016-08-02 11:51:10 UTC
 +++ src/sys/net/if_pppoe.c
-@@ -227,7 +227,8 @@ pppoe_clone_create(struct if_clone *ifc,
+@@ -227,7 +227,8 @@ pppoe_clone_create(struct if_clone *ifc, int unit)
  	if_initname(&sc->sc_sppp.pp_if, "pppoe", unit);
  	sc->sc_sppp.pp_if.if_softc = sc;
  	sc->sc_sppp.pp_if.if_mtu = PPPOE_MAXMTU;
