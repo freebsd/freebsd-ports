@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	logrotate
-PORTVERSION=	3.9.2
+PORTVERSION=	3.13.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	js@iksz.hu
