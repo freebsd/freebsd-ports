@@ -19,7 +19,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest \
 		${PYTHON_PKGNAMEPREFIX}python-snappy>0:archivers/py-python-snappy \
 		${PYTHON_PKGNAMEPREFIX}simplejson>0:devel/py-simplejson
 
-USES=		python:-2.7
+USES=		python
 USE_GITHUB=	yes
 USE_PYTHON=	distutils autoplist
 
