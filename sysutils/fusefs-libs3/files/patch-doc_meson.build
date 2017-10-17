@@ -1,0 +1,10 @@
+--- doc/meson.build.orig	2017-09-12 13:50:16 UTC
++++ doc/meson.build
+@@ -1,5 +1,7 @@
+ # Attention, emacs, please use -*- mode: python -*-
+ # (even though this isn't actually Python code)
+ 
++if not platform.endswith('bsd')
+ install_man('fusermount3.1', 'mount.fuse.8')
++endif 
+ 
