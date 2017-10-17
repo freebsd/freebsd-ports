@@ -4,7 +4,7 @@
 PORTNAME=	hostapd
 PORTVERSION=	2.6
 CATEGORIES=	net
-MASTER_SITES=	http://w1.fi/releases/
+MASTER_SITES=	https://w1.fi/releases/
 
 MAINTAINER=	leres@FreeBSD.org
 COMMENT=	IEEE 802.11 AP, IEEE 802.1X/WPA/WPA2/EAP/RADIUS Authenticator
