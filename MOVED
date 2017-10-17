@@ -6871,7 +6871,6 @@ www/mod_auth_form||2014-09-01|Not staged
 www/mod_auth_mellon||2014-09-01|Not staged
 www/mod_ftp||2014-09-01|Not staged
 www/mod_log_dbd||2014-09-01|Not staged
-www/mod_pagespeed||2014-09-01|Not staged
 www/moodle24||2014-09-01|Not staged
 www/plugger-plugins-hubbe||2014-09-01|Not staged
 www/prado||2014-09-01|Not staged
@@ -9195,7 +9194,6 @@ www/p5-Catalyst-Plugin-Singleton||2017-04-10|Has expired: Deprecated by upstream
 x11/lumina-i18n||2017-04-10|Has expired: Obsolete, i18n files included in x11/lumina
 sysutils/jail2||2017-04-10|Has expired: Starting with 10.0 functionality has been merged into base
 sysutils/iocage-devel||2017-04-10|Has expired: Outdated version. Please use sysutils/py-iocage instead
-sysutils/iocage||2017-04-10|Has expired: Outdated version. Please use sysutils/py-iocage instead
 databases/puppetdb||2017-04-10|Has expired: Depends on expired sysutils/puppet38, use puppetdb[34] instead
 databases/puppetdb-terminus||2017-04-10|Has expired: Depends on expired sysutils/puppet38, use puppetdb-terminus[34]
 databases/pglesslog||2017-04-10|Has expired: Does not build with recent PostgreSQL versions
@@ -9565,7 +9563,7 @@ textproc/py-twistedLore|devel/py-twisted|2017-09-30|Has expired: Use devel/py-tw
 www/py-twistedWeb|devel/py-twisted|2017-09-30|Has expired: Use devel/py-twisted instead
 www/py-twistedWeb2|devel/py-twisted|2017-09-30|Has expired: Use devel/py-twisted instead
 devel/libclaw||2017-09-30|Has expired: useless for anything apart from removed games/plee-the-bear
-ports-mgmt/redports-node||2017-10-01|Has expired: Upstream is dead so port is not useable anymore.
+ports-mgmt/redports-node||2017-10-01|Has expired: Upstream is dead so port is not useable anymore
 sysutils/py3-iocage|sysutils/iocage|2017-10-02|Port was renamed
 audio/ventrilo-server||2017-10-04|No more freebsd distfiles
 net-im/ayttm||2017-10-04|Non functional
