@@ -1,0 +1,48 @@
+--- scripts/pullcves.orig	2017-03-27 16:42:38 UTC
++++ scripts/pullcves
+@@ -44,17 +44,11 @@ then
+   exit 1;
+ fi
+ 
+-wget -V > /dev/null 2>&1;
+-if [ $? -ne 0 ];
+-then
+-  echo "This script requires wget to be available on the system and reachable in a directory mentioned in the PATH variable."
+-  exit 1;
+-fi
+ 
+ DATADIR=$(awk -F'=' '/^datadir/ {print $2}' ${CONFFILE} | awk -F'"' '{print $2}');
+ CVECACHE=$(awk -F'=' '/^cvecache/ {print $2}' ${CONFFILE} | awk -F'"' '{print $2}');
+ DLLOCATION=$(awk -F'=' '/^version_url/ {print $2}' ${CONFFILE} | awk -F'"' '{print $2}');
+-WGETCMD="wget --no-check-certificate";
++FETCHCMD="fetch -q"
+ DLCVE=0;
+ DLDAT=0;
+ COMMAND=$1;
+@@ -68,7 +69,7 @@ do
+   if [ ! -f ${CVECACHE}/nvdcve-2.0-20${YEAR}.xml ];
+   then
+     printf "Downloading nvdcve-2.0-20${YEAR}.xml... ";
+-    ${WGETCMD} -q -O ${CVECACHE}/nvdcve-2.0-20${YEAR}.xml.gz http://static.nvd.nist.gov/feeds/xml/cve/nvdcve-2.0-20${YEAR}.xml.gz;
++    ${FETCHCMD} -o ${CVECACHE}/nvdcve-2.0-20${YEAR}.xml.gz http://static.nvd.nist.gov/feeds/xml/cve/nvdcve-2.0-20${YEAR}.xml.gz;
+     gunzip -c ${CVECACHE}/nvdcve-2.0-20${YEAR}.xml.gz > ${CVECACHE}/nvdcve-2.0-20${YEAR}.xml && rm ${CVECACHE}/nvdcve-2.0-20${YEAR}.xml.gz;
+     printf "ok\nConverting nvdcve-2.0-20${YEAR}.xml to CSV... ";
+     xsltproc ${DATADIR}/nvdcve2simple.xsl ${CVECACHE}/nvdcve-2.0-20${YEAR}.xml > ${CVECACHE}/nvdcve-2.0-20${YEAR}.csv;
+@@ -85,7 +86,7 @@ else
+   CKSUM=$(cksum nvdcve-2.0-Modified.xml 2>/dev/null);
+ fi
+ printf "Downloading nvdcve-2.0-Modified.xml... ";
+-${WGETCMD} -q -N http://static.nvd.nist.gov/feeds/xml/cve/nvdcve-2.0-Modified.xml.gz;
++${FETCHCMD} -i nvdcve-2.0-Modified.xml http://static.nvd.nist.gov/feeds/xml/cve/nvdcve-2.0-Modified.xml.gz;
+ gunzip -c nvdcve-2.0-Modified.xml.gz > nvdcve-2.0-Modified.xml && rm nvdcve-2.0-Modified.xml.gz;
+ CKSUM2=$(cksum nvdcve-2.0-Modified.xml 2>/dev/null);
+ if [ "${CKSUM2}" != "${CKSUM}" ] || [ -f nvdcve-2.0-Modified.xml.1 ];
+@@ -113,7 +114,7 @@ fi
+ 
+ CKSUM=$(cksum versions.dat 2>/dev/null);
+ printf "Downloading versions.dat... ";
+-${WGETCMD} -q -N ${DLLOCATION};
++${FETCHCMD} -i versions.dat ${DLLOCATION};
+ CKSUM2=$(cksum versions.dat 2>/dev/null);
+ if [ "${CKSUM}" != "${CKSUM2}" ] || [ -f versions.dat.1 ];
+ then
