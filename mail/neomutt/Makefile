@@ -3,6 +3,7 @@
 PORTNAME=	neomutt
 PORTVERSION=	20171013
 DISTVERSIONPREFIX=	${PORTNAME}-
+PORTREVISION=	1
 CATEGORIES=	mail
 
 MAINTAINER=	bapt@FreeBSD.org
@@ -88,26 +89,22 @@ SLANG_VARS=	PKGMESSAGE=${FILESDIR}/pkg-message.slang
 
 NCURSES_USES=	ncurses
 
-DOCS_CONFIGURE_ENABLE=	doc
 DOCS_BUILD_DEPENDS=	xsltproc:textproc/libxslt \
 			${LOCALBASE}/share/xsl/docbook/html/docbook.xsl:textproc/docbook-xsl \
 			lynx:www/lynx
 
-post-build-DOCS-off:
-	${SED} -e 's,@docdir@,${DOCSDIR},' ${WRKSRC}/doc/neomuttrc.head > ${WRKSRC}/doc/neomuttrc
-	cd ${WRKSRC} && ${CC} -I. -o doc/makedoc doc/makedoc.c
-	cd ${WRKSRC} && ${CPP} -isystem ${LOCALBASE}/include -D_MAKEDOC -C -I. ./init.h | doc/makedoc -c >> doc/neomuttrc
+.include <bsd.port.options.mk>
+
+# Trick neomutt into building manpages and neomuttrc
+.if empty(PORT_OPTIONS:MDOCS)
+BINARY_ALIAS=	xsltproc=true
+.endif
 
 post-install:
 	${RM} ${STAGEDIR}${PREFIX}/etc/mime*
+	${MV} ${STAGEDIR}${PREFIX}/etc/neomuttrc ${STAGEDIR}${PREFIX}/etc/neomuttrc.dist
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/neomutt \
 		${STAGEDIR}${PREFIX}/lib/neomutt/pgpring \
 		${STAGEDIR}${PREFIX}/lib/neomutt/pgpewrap
-
-post-install-DOCS-on:
-	${MV} ${STAGEDIR}${PREFIX}/etc/neomuttrc ${STAGEDIR}${PREFIX}/etc/neomuttrc.dist
-
-post-install-DOCS-off:
-	${INSTALL_DATA} ${WRKSRC}/doc/neomuttrc ${STAGEDIR}${PREFIX}/etc/neomuttrc.dist
 
 .include <bsd.port.mk>
