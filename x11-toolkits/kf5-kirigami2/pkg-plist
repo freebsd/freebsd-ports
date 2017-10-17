@@ -1,6 +1,16 @@
+include/KF5/Kirigami2/KirigamiPluginFactory
+include/KF5/Kirigami2/PlatformTheme
+include/KF5/Kirigami2/kirigami2_export.h
+include/KF5/Kirigami2/kirigamipluginfactory.h
+include/KF5/Kirigami2/platformtheme.h
 lib/cmake/KF5Kirigami2/KF5Kirigami2Config.cmake
 lib/cmake/KF5Kirigami2/KF5Kirigami2ConfigVersion.cmake
 lib/cmake/KF5Kirigami2/KF5Kirigami2Macros.cmake
+lib/cmake/KF5Kirigami2/KF5Kirigami2Targets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/KF5Kirigami2/KF5Kirigami2Targets.cmake
+lib/libKF5Kirigami2.so
+lib/libKF5Kirigami2.so.5
+lib/libKF5Kirigami2.so.%%KDE_FRAMEWORKS_VERSION%%
 %%QT_MKSPECDIR%%/modules/qt_Kirigami2.pri
 %%QT_QMLDIR%%/org/kde/kirigami.2/AbstractApplicationHeader.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/AbstractApplicationItem.qml
@@ -62,6 +72,7 @@ lib/cmake/KF5Kirigami2/KF5Kirigami2Macros.cmake
 %%QT_QMLDIR%%/org/kde/kirigami.2/templates/SwipeListItem.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/templates/private/BackButton.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/templates/private/ContextIcon.qml
+%%QT_QMLDIR%%/org/kde/kirigami.2/templates/private/ForwardButton.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/templates/private/MenuIcon.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/templates/private/PassiveNotification.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/templates/private/ScrollView.qml
@@ -79,6 +90,8 @@ share/locale/fi/LC_MESSAGES/libkirigami2plugin_qt.qm
 share/locale/fr/LC_MESSAGES/libkirigami2plugin_qt.qm
 share/locale/gl/LC_MESSAGES/libkirigami2plugin_qt.qm
 share/locale/hu/LC_MESSAGES/libkirigami2plugin_qt.qm
+share/locale/ia/LC_MESSAGES/libkirigami2plugin_qt.qm
+share/locale/it/LC_MESSAGES/libkirigami2plugin_qt.qm
 share/locale/ja/LC_MESSAGES/libkirigami2plugin_qt.qm
 share/locale/ko/LC_MESSAGES/libkirigami2plugin_qt.qm
 share/locale/nl/LC_MESSAGES/libkirigami2plugin_qt.qm

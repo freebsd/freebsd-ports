@@ -8323,6 +8323,7 @@ share/icons/breeze/actions/16/online.svg
 share/icons/breeze/actions/16/open-for-editing.svg
 share/icons/breeze/actions/16/outdated.svg
 share/icons/breeze/actions/16/output_win.svg
+share/icons/breeze/actions/16/overflow-menu.svg
 share/icons/breeze/actions/16/package-available-locked.svg
 share/icons/breeze/actions/16/package-available.svg
 share/icons/breeze/actions/16/package-broken.svg
@@ -9944,6 +9945,7 @@ share/icons/breeze/actions/22/online.svg
 share/icons/breeze/actions/22/open-for-editing.svg
 share/icons/breeze/actions/22/output_win.svg
 share/icons/breeze/actions/22/overexposure.svg
+share/icons/breeze/actions/22/overflow-menu.svg
 share/icons/breeze/actions/22/package.svg
 share/icons/breeze/actions/22/page-2sides.svg
 share/icons/breeze/actions/22/page-3sides.svg
@@ -11100,6 +11102,7 @@ share/icons/breeze/actions/24/office-chart-polar-stacked.svg
 share/icons/breeze/actions/24/office-chart-polar.svg
 share/icons/breeze/actions/24/office-chart-ring.svg
 share/icons/breeze/actions/24/office-chart-scatter.svg
+share/icons/breeze/actions/24/overflow-menu.svg
 share/icons/breeze/actions/24/package.svg
 share/icons/breeze/actions/24/page-2sides.svg
 share/icons/breeze/actions/24/page-3sides.svg
@@ -11588,6 +11591,7 @@ share/icons/breeze/actions/32/object-order-front.svg
 share/icons/breeze/actions/32/object-order-lower.svg
 share/icons/breeze/actions/32/object-order-raise.svg
 share/icons/breeze/actions/32/output_win.svg
+share/icons/breeze/actions/32/overflow-menu.svg
 share/icons/breeze/actions/32/page-zoom.svg
 share/icons/breeze/actions/32/percent.svg
 share/icons/breeze/actions/32/preview.svg

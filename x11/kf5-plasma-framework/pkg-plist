@@ -236,6 +236,7 @@ lib/libKF5PlasmaQuick.so.%%KDE_FRAMEWORKS_VERSION%%
 %%QT_QMLDIR%%/org/kde/plasma/core/qmldir
 %%QT_QMLDIR%%/org/kde/plasma/extras/App.qml
 %%QT_QMLDIR%%/org/kde/plasma/extras/ConditionalLoader.qml
+%%QT_QMLDIR%%/org/kde/plasma/extras/DescriptiveLabel.qml
 %%QT_QMLDIR%%/org/kde/plasma/extras/Heading.qml
 %%QT_QMLDIR%%/org/kde/plasma/extras/PageRow.qml
 %%QT_QMLDIR%%/org/kde/plasma/extras/Paragraph.qml
@@ -299,6 +300,7 @@ share/locale/gl/LC_MESSAGES/libplasma5.mo
 share/locale/he/LC_MESSAGES/libplasma5.mo
 share/locale/hu/LC_MESSAGES/libplasma5.mo
 share/locale/ia/LC_MESSAGES/libplasma5.mo
+share/locale/id/LC_MESSAGES/libplasma5.mo
 share/locale/it/LC_MESSAGES/libplasma5.mo
 share/locale/ja/LC_MESSAGES/libplasma5.mo
 share/locale/ko/LC_MESSAGES/libplasma5.mo
