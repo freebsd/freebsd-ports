@@ -6011,6 +6011,7 @@
     SUBDIR += tnt
     SUBDIR += toh
     SUBDIR += tokamak
+    SUBDIR += tokei
     SUBDIR += tortoisehg
     SUBDIR += tpasm
     SUBDIR += tr-eric6
