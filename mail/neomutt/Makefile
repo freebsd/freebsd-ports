@@ -15,9 +15,10 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.md
 RUN_DEPENDS=	${LOCALBASE}/etc/mime.types:misc/mime-support \
 		urlview:textproc/urlview
 
-USES=		iconv:translit localbase shebangfix ssl
+USES=		iconv:translit localbase perl5 shebangfix ssl
 
 USE_GITHUB=	yes
+USE_PERL5=	build
 
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	configure.autosetup
