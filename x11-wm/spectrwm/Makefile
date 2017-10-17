@@ -4,6 +4,7 @@
 PORTNAME=	spectrwm
 DISTVERSIONPREFIX=	SPECTRWM_
 DISTVERSION=	3_1_0
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 
 MAINTAINER=	zeising@FreeBSD.org
@@ -35,6 +36,8 @@ CONFEXAMPLES=	spectrwm_cz.conf \
 
 SCRIPTEXAMPLES=	baraction.sh \
 		screenshot.sh
+
+EXTRA_PATCHES= ${FILESDIR}/ea3e6da-oob-fix.patch
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/etc/|${PREFIX}/etc/|g' ${WRKSRC}/spectrwm.*
