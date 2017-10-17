@@ -9596,3 +9596,4 @@ games/polypuzzle||2017-10-16|Has expired: This port depends on Tcl/Tk 8.4 , whic
 multimedia/nxtvepg||2017-10-16|Has expired: This port depends on Tcl/Tk 8.4 , which is no longer maintained. Please port it to 8.5+
 net/xpvm||2017-10-16|Has expired: This port depends on Tcl/Tk 8.4 , which is no longer maintained. Please port it to 8.5+
 x11/tkXwin||2017-10-16|Has expired: This port depends on Tcl/Tk 8.4 , which is no longer maintained. Please port it to 8.5+
+games/crafty-tablebase-pawn||2017-10-17|Waste of resources
