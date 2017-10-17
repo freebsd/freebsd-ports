@@ -796,6 +796,7 @@
     SUBDIR += pax-utils
     SUBDIR += pbi-manager
     SUBDIR += pbimaker
+    SUBDIR += pc-diskmanager
     SUBDIR += pc-firewall
     SUBDIR += pc-networkmanager
     SUBDIR += pc-sysinstall
