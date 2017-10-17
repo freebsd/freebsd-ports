@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	redis-rack
-PORTVERSION=	2.0.2
+PORTVERSION=	2.0.3
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -17,5 +17,7 @@ RUN_DEPENDS=	rubygem-rack>=1.5:www/rubygem-rack \
 NO_ARCH=	yes
 USE_RUBY=	yes
 USES=		gem
+
+PLIST_FILES=	bin/appraisal bin/rake
 
 .include <bsd.port.mk>
