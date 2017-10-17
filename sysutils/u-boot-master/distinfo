@@ -1,3 +1,3 @@
-TIMESTAMP = 1501619668
-SHA256 (freebsd-u-boot-ports-v2017.07.00.1_GH0.tar.gz) = 4e74457cba12d6de890418aed296800f4bdb62570379fa330e3cf74b78dff2c8
-SIZE (freebsd-u-boot-ports-v2017.07.00.1_GH0.tar.gz) = 14286103
+TIMESTAMP = 1508182195
+SHA256 (freebsd-u-boot-ports-v2017.09.00_GH0.tar.gz) = 5e408dee8be45e11293771a7d8a91250dad20711088195f5d6da99d42f5d4f7e
+SIZE (freebsd-u-boot-ports-v2017.09.00_GH0.tar.gz) = 14429809
