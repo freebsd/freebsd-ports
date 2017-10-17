@@ -1,5 +1,5 @@
-TIMESTAMP = 1465187272
+TIMESTAMP = 1506910724
 SHA256 (xloadimage_4.1.orig.tar.gz) = 400bc7d84dcfb3265a7a1ce51819679dc3adaeda231514bd89b0f932b78ff5c4
 SIZE (xloadimage_4.1.orig.tar.gz) = 596021
-SHA256 (xloadimage_4.1-21.debian.tar.gz) = 4a15879f501462f1e45f3f8064a67b46362826c44bab5827e5dc051cd5c0a49f
-SIZE (xloadimage_4.1-21.debian.tar.gz) = 76415
+SHA256 (xloadimage_4.1-24.debian.tar.xz) = 3f5332fbca08e6c1d2ecad2f4ddeed5390273b4607921b0e2d8385eb75b1ed85
+SIZE (xloadimage_4.1-24.debian.tar.xz) = 69684

@@ -8,7 +8,7 @@ CATEGORIES=	java editors devel
 MASTER_SITES=	SF/${PORTNAME}/a%29%20Eclipse%203.3.x/PHPEclipse-${PORTVERSION}
 DISTNAME=	PHPEclipse-${PLIST_VER}-src
 
-MAINTAINER=	kamikaze@bsdforen.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PHP Eclipse adds PHP support to the Eclipse IDE Framework
 
 RUN_DEPENDS=	eclipse:java/eclipse

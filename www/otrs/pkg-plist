@@ -5,7 +5,7 @@ otrs/.mailfilter.dist
 otrs/.procmailrc.dist
 otrs/ARCHIVE
 @sample otrs/Kernel/Config.pm.dist otrs/Kernel/Config.pm
-otrs/Kernel/Config.pod.dist
+@sample otrs/Kernel/Config.pod.dist otrs/Kernel/Config.pod
 otrs/Kernel/Config/Defaults.pm
 otrs/Kernel/Config/Files/CloudServices.xml
 otrs/Kernel/Config/Files/Daemon.xml
@@ -518,6 +518,7 @@ otrs/Kernel/Output/HTML/Templates/Standard/InstallerLicenseText.tt
 otrs/Kernel/Output/HTML/Templates/Standard/InstallerSystem.tt
 otrs/Kernel/Output/HTML/Templates/Standard/LinkObject.tt
 otrs/Kernel/Output/HTML/Templates/Standard/Login.tt
+otrs/Kernel/Output/HTML/Templates/Standard/MetaFloater.tt
 otrs/Kernel/Output/HTML/Templates/Standard/MobileNotAvailableWidget.tt
 otrs/Kernel/Output/HTML/Templates/Standard/Motd.tt
 otrs/Kernel/Output/HTML/Templates/Standard/NoPermission.tt

@@ -20,7 +20,7 @@ BROKEN_mips=	Missing header
 BROKEN_mips64=	Missing header
 BROKEN_powerpc64=	Does not build: Assertion failed: (get_int () == TLS_SCHEMA_V2)
 
-USES=		execinfo gmake lua:52 ncurses pkgconfig readline ssl
+USES=		gmake lua:52 ncurses pkgconfig readline ssl
 GNU_CONFIGURE=	yes
 
 USE_GITHUB=	yes

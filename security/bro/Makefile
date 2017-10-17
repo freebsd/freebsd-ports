@@ -3,13 +3,14 @@
 
 PORTNAME=	bro
 PORTVERSION=	2.5.1
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	https://www.bro.org/downloads/:source1 \
 		https://codeload.github.com/${GH_ACCOUNT}/${GH_PROJECT}/tar.gz/${PORTVERSION2}?dummy=/:source2
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}:source1 \
 		${GH_ACCOUNT}-${GH_PROJECT}-${PORTVERSION2}_GH0${EXTRACT_SUFX}:source2
 
-MAINTAINER=	leres@ee.lbl.gov
+MAINTAINER=	leres@FreeBSD.org
 COMMENT=	System for detecting network intruders in real-time
 
 LICENSE=	BSD3CLAUSE

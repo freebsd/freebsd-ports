@@ -1,0 +1,59 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: zrepl
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# zrepl_enable:		Set to YES to enable the zrepl service.
+#			Default: NO
+# zrepl_config:		File containing zrepl configuration details.
+#			Default: %%PREFIX%%/etc/zrepl/zrepl.yml
+# zrepl_user:		The user account used to run the zrepl daemon.
+#			Do not specifically set this to an empty string as this
+#			will cause the daemon to run as root.
+#			Default: root
+# zrepl_group:		The group account used to run the zrepl daemon.
+#			Do not specifically set this to an empty string as this
+#			will cause the daemon to run with group wheel.
+#			Default: wheel
+
+. /etc/rc.subr
+name=zrepl
+rcvar=${name}_enable
+load_rc_config $name
+
+: ${zrepl_enable:="NO"}
+: ${zrepl_config:="%%PREFIX%%/etc/zrepl/zrepl.yml"}
+: ${zrepl_user:="root"}
+: ${zrepl_group:="wheel"}
+
+pidfile="/var/run/zrepl/daemon.pid"
+command="/usr/sbin/daemon"
+procname="%%PREFIX%%/bin/zrepl"
+command_args="-p ${pidfile} -S -l local0 -s alert -T zrepl ${procname} --config ${zrepl_config} daemon"
+
+start_precmd=zrepl_precmd
+zrepl_precmd()
+{
+	if [ ! -d "/var/run/zrepl/stdinserver" ]; then
+		install -d -g ${zrepl_group} -o ${zrepl_user} -m 0700 -- "/var/run/zrepl";
+		install -d -g ${zrepl_group} -o ${zrepl_user} -m 0700 -- "/var/run/zrepl/stdinserver";
+	fi
+
+	if [ ! -e "${pidfile}" ]; then
+		install -g ${zrepl_group} -o ${zrepl_user} -- /dev/null "${pidfile}";
+	fi
+}
+
+stop_postcmd=zrepl_postcmd
+zrepl_postcmd()
+{
+	rm -f -- "${pidfile}"
+}
+
+run_rc_command "$1"

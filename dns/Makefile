@@ -29,6 +29,7 @@
     SUBDIR += djbdns-tools
     SUBDIR += dlint
     SUBDIR += dnrd
+    SUBDIR += dns2blackhole
     SUBDIR += dns2tcp
     SUBDIR += dns_balance
     SUBDIR += dnscap
@@ -147,6 +148,7 @@
     SUBDIR += p5-Net-Domain-ExpireDate
     SUBDIR += p5-Net-Domain-TLD
     SUBDIR += p5-Net-LibIDN
+    SUBDIR += p5-Net-LibIDN2
     SUBDIR += p5-Net-Nslookup
     SUBDIR += p5-Net-RBLClient
     SUBDIR += p5-Net-RNDC
@@ -183,7 +185,6 @@
     SUBDIR += py-pydnstable
     SUBDIR += py-pywdns
     SUBDIR += py-tldextract
-    SUBDIR += py-twistedNames
     SUBDIR += py3-dnspython
     SUBDIR += py3-idna
     SUBDIR += radns
@@ -196,7 +197,6 @@
     SUBDIR += rubygem-idn-ruby
     SUBDIR += rubygem-net-dns
     SUBDIR += rubygem-public_suffix
-    SUBDIR += rubygem-public_suffix2
     SUBDIR += rubygem-public_suffix_service
     SUBDIR += rubygem-simpleidn
     SUBDIR += rubygem-validates_hostname

@@ -1,6 +1,6 @@
---- defs.pxd.orig	2017-09-10 04:00:05.369137000 +0200
-+++ defs.pxd	2017-09-10 04:00:19.523758000 +0200
-@@ -490,7 +490,7 @@
+--- defs.pxd.orig	2017-03-30 01:24:59 UTC
++++ defs.pxd
+@@ -490,7 +490,7 @@ cdef extern from "sys/extattr.h" nogil:
      char *EXTATTR_NAMESPACE_SYSTEM_STRING
      
      ssize_t extattr_get_fd(int fd, int attrnamespace, const char *attrname, void *data, size_t nbytes)

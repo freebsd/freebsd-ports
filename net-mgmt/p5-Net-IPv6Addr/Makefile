@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Net-IPv6Addr
-PORTVERSION=	0.7
+PORTVERSION=	0.91
 CATEGORIES=	net-mgmt perl5 ipv6
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for manipulating IPv6 addresses
 
-LICENSE=	ART10 GPLv1
+LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Math-Base85>=0.2:math/p5-Math-Base85 \

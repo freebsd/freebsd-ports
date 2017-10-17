@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	kronolith
-PORTVERSION=	4.2.22
+PORTVERSION=	4.2.23
 CATEGORIES=	deskutils www pear
 PKGNAMEPREFIX=	horde-
 

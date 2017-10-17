@@ -10,6 +10,8 @@ MASTER_SITES=	ftp://selab.janelia.org/pub/software/tRNAscan-SE/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Improved tool for transfer RNA detection
 
+BROKEN=		No public distfiles
+
 USES=		perl5 tar:Z
 MAKE_ARGS=	BINDIR="${PREFIX}/bin" \
 		LIBDIR="${DATADIR}" \

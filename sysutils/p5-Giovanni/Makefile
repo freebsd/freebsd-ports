@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	dch@skunkwerks.at
 COMMENT=	PERL-based software deployment tool inspired by capistrano
 
-LICENSE=        ART10 GPLv1
+LICENSE=        ART10 GPLv1+
 LICENSE_COMB=   dual
 
 BUILD_DEPENDS=	\

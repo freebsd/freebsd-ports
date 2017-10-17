@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	mich@FreeBSD.org
 COMMENT=	Implementation of RIPE Whois
 
-LICENSE=	ART10 GPLv1
+LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Iterator-Util>=0:devel/p5-Iterator-Util

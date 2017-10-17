@@ -1,6 +1,15 @@
 *********************************************************************
 
-The 'eclipse' emulator has been renamed to 'simh-eclipse'.
+Note that the executable files for some simulators have been renamed
+to remove conflicts with other ports. In such cases, the name is now
+prefixed with 'simh'. Affected simulators are:
+
+	eclipse becomes simh-eclipse
+	gri becomes simh-gri
+	nova becomes simh-nova
+
+Users may wish to create a symbolic link to these, or an alias,
+if they want to use the old names.
 
 The file needed by the VAX emulator is located in:
 

@@ -1,0 +1,284 @@
+https://github.com/icing/mod_md/blob/master/patches/mod_ssl_md-2.4.x-v5.diff
+
+Fix for using a fallback certificate on initial signup of a
+Managed Domain. Requires also a changed mod_ssl patch (v5) to take effect.
+
+Index: modules/ssl/ssl_engine_init.c
+===================================================================
+--- modules/ssl/ssl_engine_init.c	(revision 1808124)
++++ modules/ssl/ssl_engine_init.c	(working copy)
+@@ -164,6 +164,41 @@
+                  modver, AP_SERVER_BASEVERSION, incver);
+ }
+ 
++/**************************************************************************************************/
++/* Managed Domains Interface (temporary here) */
++
++APR_DECLARE_OPTIONAL_FN(int, 
++                        md_is_managed, (struct server_rec *));
++
++APR_DECLARE_OPTIONAL_FN(apr_status_t, 
++                        md_get_credentials, (struct server_rec *, apr_pool_t *,
++                                             const char **pkeyfile, 
++                                             const char **pcertfile, 
++                                             const char **pchainfile));
++APR_DECLARE_OPTIONAL_FN(apr_status_t, 
++                        md_get_certificate, (struct server_rec *, apr_pool_t *,
++                                             const char **pkeyfile, 
++                                             const char **pcertfile));
++APR_DECLARE_OPTIONAL_FN(int, 
++                        md_is_challenge, (struct conn_rec *, const char *,
++                                          X509 **, EVP_PKEY **));
++                                          
++static APR_OPTIONAL_FN_TYPE(md_is_managed) *md_is_managed;
++static APR_OPTIONAL_FN_TYPE(md_get_credentials) *md_get_credentials;
++static APR_OPTIONAL_FN_TYPE(md_get_certificate) *md_get_certificate;
++static APR_OPTIONAL_FN_TYPE(md_is_challenge) *md_is_challenge;
++
++int ssl_is_challenge(conn_rec *c, const char *servername, 
++                     X509 **pcert, EVP_PKEY **pkey)
++{
++    if (md_is_challenge) {
++        return md_is_challenge(c, servername, pcert, pkey);
++    }
++    *pcert = NULL;
++    *pkey = NULL;
++    return 0;
++}
++
+ /*
+  *  Per-module initialization
+  */
+@@ -204,6 +239,18 @@
+     ssl_config_global_create(base_server); /* just to avoid problems */
+     ssl_config_global_fix(mc);
+ 
++    /* Initialize our interface to mod_md, if it is loaded 
++     */
++    md_is_managed = APR_RETRIEVE_OPTIONAL_FN(md_is_managed);
++    md_get_credentials = APR_RETRIEVE_OPTIONAL_FN(md_get_credentials);
++    md_get_certificate = APR_RETRIEVE_OPTIONAL_FN(md_get_certificate);
++    md_is_challenge = APR_RETRIEVE_OPTIONAL_FN(md_is_challenge);
++    if (!md_is_managed || (!md_get_credentials && !md_get_certificate)) {
++        md_is_managed = NULL;
++        md_get_credentials = NULL;
++        md_get_certificate = NULL;
++    }
++
+     /*
+      *  try to fix the configuration and open the dedicated SSL
+      *  logfile as early as possible
+@@ -1606,6 +1653,57 @@
+         return APR_EGENERAL;
+     }
+ 
++    ap_log_error(APLOG_MARK, APLOG_DEBUG, 0, s, APLOGNO()
++                 "Init: (%s) mod_md support is %s.", ssl_util_vhostid(p, s),
++                 md_is_managed? "available" : "unavailable");
++    if (md_is_managed && md_is_managed(s)) {
++        modssl_pk_server_t *const pks = sc->server->pks;
++        if (pks->cert_files->nelts > 0 || pks->key_files->nelts > 0) {
++            ap_log_error(APLOG_MARK, APLOG_WARNING, 0, s, APLOGNO()
++                         "Init: (%s) You configured certificate/key files on this host, but "
++                         "is is covered by a Managed Domain. You need to remove these directives "
++                         "for the Managed Domain to take over.", ssl_util_vhostid(p, s));
++        }
++        else {
++            const char *key_file, *cert_file, *chain_file;
++            
++            key_file = cert_file = chain_file = NULL;
++            
++            if (md_get_certificate) {
++                /* mod_md >= v0.9.0 */
++                rv = md_get_certificate(s, p, &key_file, &cert_file);
++            }
++            else if (md_get_credentials) {
++                /* mod_md < v0.9.0, remove this after a while */
++                rv = md_get_credentials(s, p, &key_file, &cert_file, &chain_file);
++            }
++            else {
++                rv = APR_ENOTIMPL;
++            }
++            
++            if (key_file && cert_file) {
++                ap_log_error(APLOG_MARK, APLOG_TRACE1, 0, s, 
++                             "%s: installing key=%s, cert=%s, chain=%s", 
++                             ssl_util_vhostid(p, s), key_file, cert_file, chain_file);
++                APR_ARRAY_PUSH(pks->key_files, const char *) = key_file;
++                APR_ARRAY_PUSH(pks->cert_files, const char *) = cert_file;
++                sc->server->cert_chain = chain_file;
++            }
++            
++            if (APR_STATUS_IS_EAGAIN(rv)) {
++                /* Managed Domain not ready yet. This is not a reason to fail the config */
++                ap_log_error(APLOG_MARK, APLOG_WARNING, 0, s, APLOGNO()
++                             "Init: %s will respond with '503 Service Unavailable' for now. This "
++                             "host is part of a Managed Domain, but no SSL certificate is "
++                             "available (yet).", ssl_util_vhostid(p, s));
++                pks->service_unavailable = 1;
++            }
++            else if (rv != APR_SUCCESS) {
++                return rv;
++            }
++        }
++    }
++    
+     if ((rv = ssl_init_ctx(s, p, ptemp, sc->server)) != APR_SUCCESS) {
+         return rv;
+     }
+Index: modules/ssl/ssl_engine_kernel.c
+===================================================================
+--- modules/ssl/ssl_engine_kernel.c	(revision 1808124)
++++ modules/ssl/ssl_engine_kernel.c	(working copy)
+@@ -264,6 +264,15 @@
+         return DECLINED;
+     }
+ 
++    if (sslconn->service_unavailable) {
++        /* This is set when the SSL properties of this connection are
++         * incomplete or if this connection was made to challenge a 
++         * particular hostname (ACME). We never serve any request on 
++         * such a connection. */
++         /* TODO: a retry-after indicator would be nice here */
++        return HTTP_SERVICE_UNAVAILABLE;
++    }
++
+     if (sslconn->non_ssl_request == NON_SSL_SET_ERROR_MSG) {
+         apr_table_setn(r->notes, "error-notes",
+                        "Reason: You're speaking plain HTTP to an SSL-enabled "
+@@ -2110,6 +2119,8 @@
+ static apr_status_t init_vhost(conn_rec *c, SSL *ssl)
+ {
+     const char *servername;
++    X509 *cert;
++    EVP_PKEY *key;
+     
+     if (c) {
+         SSLConnRec *sslcon = myConnConfig(c);
+@@ -2126,8 +2137,35 @@
+                 ap_log_cerror(APLOG_MARK, APLOG_DEBUG, 0, c, APLOGNO(02043)
+                               "SSL virtual host for servername %s found",
+                               servername);
++                
+                 return APR_SUCCESS;
+             }
++            else if (ssl_is_challenge(c, servername, &cert, &key)) {
++            
++                sslcon->service_unavailable = 1;
++                if ((SSL_use_certificate(ssl, cert) < 1)) {
++                    ap_log_cerror(APLOG_MARK, APLOG_WARNING, 0, c, APLOGNO()
++                                  "Failed to configure challenge certificate %s",
++                                  servername);
++                    return APR_EGENERAL;
++                }
++                
++                if (!SSL_use_PrivateKey(ssl, key)) {
++                    ap_log_cerror(APLOG_MARK, APLOG_WARNING, 0, c, APLOGNO()
++                                  "error '%s' using Challenge key: %s",
++                                  ERR_error_string(ERR_peek_last_error(), NULL), 
++                                  servername);
++                    return APR_EGENERAL;
++                }
++                
++                if (SSL_check_private_key(ssl) < 1) {
++                    ap_log_cerror(APLOG_MARK, APLOG_WARNING, 0, c, APLOGNO()
++                                  "Challenbge certificate and private key %s "
++                                  "do not match", servername);
++                    return APR_EGENERAL;
++                }
++                
++            }
+             else {
+                 ap_log_cerror(APLOG_MARK, APLOG_DEBUG, 0, c, APLOGNO(02044)
+                               "No matching SSL virtual host for servername "
+@@ -2233,6 +2271,8 @@
+          */
+         sslcon->server = s;
+         sslcon->cipher_suite = sc->server->auth.cipher_suite;
++        sslcon->service_unavailable = sc->server->pks? 
++            sc->server->pks->service_unavailable : 0; 
+         
+         ap_update_child_status_from_server(c->sbh, SERVER_BUSY_READ, c, s);
+         /*
+Index: modules/ssl/ssl_private.h
+===================================================================
+--- modules/ssl/ssl_private.h	(revision 1808124)
++++ modules/ssl/ssl_private.h	(working copy)
+@@ -524,6 +524,7 @@
+     server_rec *server;
+     
+     const char *cipher_suite; /* cipher suite used in last reneg */
++    int service_unavailable;  /* thouugh we negotiate SSL, no requests will be served */
+ } SSLConnRec;
+ 
+ /* BIG FAT WARNING: SSLModConfigRec has unusual memory lifetime: it is
+@@ -600,6 +601,9 @@
+      * sent in the CertificateRequest message: */
+     const char  *ca_name_path;
+     const char  *ca_name_file;
++    
++    /* TLS service for this server is suspended */
++    int service_unavailable;
+ } modssl_pk_server_t;
+ 
+ typedef struct {
+@@ -1063,6 +1067,9 @@
+  * memory. */
+ DH *modssl_get_dh_params(unsigned keylen);
+ 
++int ssl_is_challenge(conn_rec *c, const char *servername, 
++                     X509 **pcert, EVP_PKEY **pkey);
++
+ #endif /* SSL_PRIVATE_H */
+ /** @} */
+ 
+Index: modules/ssl/ssl_util_ssl.c
+===================================================================
+--- modules/ssl/ssl_util_ssl.c	(revision 1808124)
++++ modules/ssl/ssl_util_ssl.c	(working copy)
+@@ -115,6 +115,33 @@
+     return rc;
+ }
+ 
++typedef struct {
++    const char *pass;
++    int pass_len;
++} pass_ctx;
++
++static int provide_pass(char *buf, int size, int rwflag, void *baton)
++{
++    pass_ctx *ctx = baton;
++    if (ctx->pass_len > 0) {
++        if (ctx->pass_len < size) {
++            size = (int)ctx->pass_len;
++        }
++        memcpy(buf, ctx->pass, size);
++    }
++    return ctx->pass_len;
++}
++
++EVP_PKEY   *modssl_read_encrypted_pkey(const char *filename, EVP_PKEY **key, 
++                                       const char *pass, apr_size_t pass_len)
++{
++    pass_ctx ctx;
++    
++    ctx.pass = pass;
++    ctx.pass_len = pass_len;
++    return modssl_read_privatekey(filename, key, provide_pass, &ctx);
++}
++
+ /*  _________________________________________________________________
+ **
+ **  Smart shutdown
+Index: modules/ssl/ssl_util_ssl.h
+===================================================================
+--- modules/ssl/ssl_util_ssl.h	(revision 1808124)
++++ modules/ssl/ssl_util_ssl.h	(working copy)
+@@ -65,6 +65,7 @@
+ void       *modssl_get_app_data2(SSL *);
+ void        modssl_set_app_data2(SSL *, void *);
+ EVP_PKEY   *modssl_read_privatekey(const char *, EVP_PKEY **, pem_password_cb *, void *);
++EVP_PKEY   *modssl_read_encrypted_pkey(const char *, EVP_PKEY **, const char *, apr_size_t);
+ int         modssl_smart_shutdown(SSL *ssl);
+ BOOL        modssl_X509_getBC(X509 *, int *, int *);
+ char       *modssl_X509_NAME_ENTRY_to_string(apr_pool_t *p, X509_NAME_ENTRY *xsne);

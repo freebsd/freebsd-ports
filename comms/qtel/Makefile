@@ -7,6 +7,8 @@ PORTREVISION=	1
 MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Qtel Echolink client
 
+BROKEN=		Invalid checksum
+
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	libecholib.so:comms/svxlink

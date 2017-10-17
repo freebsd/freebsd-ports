@@ -1,10 +1,11 @@
 # Created by: Bernard Spil <brnrd@FreeBSD.org>
 # $FreeBSD$
 
-PORTNAME=	mod_md-devel
-PORTVERSION=	0.9.1
+PORTNAME=	mod_md
+PORTVERSION=	1.0.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
+PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	brnrd@FreeBSD.org
 COMMENT=	Early experience LetsEncrypt module for Apache httpd
@@ -23,13 +24,11 @@ GH_ACCOUNT=	icing
 GH_PROJECT=	mod_md
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--program-prefix=ext-
-CONFIGURE_ENV=	CONFIG_SHELL=/bin/sh
+CONFIGURE_ARGS=	--program-prefix=ext- \
+		--with-openssl=${OPENSSLBASE} \
+		--with-jansson=${LOCALBASE}
 
 MODULENAME=	${GH_PROJECT}
-
-CFLAGS+=	-I${LOCALBASE}/include
-CPPFLAGS+=	-I${LOCALBASE}/include
 
 DOCSDIR=	share/doc/mod_md
 PORTDOCS=	README README.md

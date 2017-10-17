@@ -38,7 +38,7 @@ FIREBIRD_DEFAULT?=	2.5
 # Possible values: 3.0.0
 FPC_DEFAULT?=		3.0.2
 # Possible values: 4.8, 4.9, 5, 6, 7
-GCC_DEFAULT?=		5
+GCC_DEFAULT?=		6
 # Possible values: 7, 8, 9, agpl
 GHOSTSCRIPT_DEFAULT?=	agpl
 .if ${ARCH} == amd64
@@ -134,7 +134,7 @@ check-makevars::
 # Make sure we have a default in the end
 SSL_DEFAULT?=	base
 .endif
-# Possible values: 8.4, 8.5, 8.6
+# Possible values: 8.4, 8.5, 8.6, 8.7
 TCLTK_DEFAULT?=		8.6
 
 # Possible values: 4, 5

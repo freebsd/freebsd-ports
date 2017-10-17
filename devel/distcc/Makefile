@@ -20,7 +20,6 @@ USES=		autoreconf alias gmake libtool pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=     distcc
 GH_TAGNAME=	9a09372
-WANT_GNOME=	yes
 
 GROUPS=		distcc
 USERS=		distcc

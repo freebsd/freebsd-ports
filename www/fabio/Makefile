@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	fabio
-PORTVERSION=	1.5.0
+PORTVERSION=	1.5.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 
@@ -9,6 +9,7 @@ MAINTAINER=	stl@ossuary.net
 COMMENT=	Zero-conf load balancing HTTP(S) router managed by Consul
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		go
 USE_GITHUB=	yes

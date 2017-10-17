@@ -179,9 +179,6 @@ share/doc/HTML/fr/dragonplayer/common
 share/doc/HTML/fr/dragonplayer/index.cache.bz2
 share/doc/HTML/fr/dragonplayer/index.docbook
 share/doc/HTML/fr/dragonplayer/man-dragon.1.docbook
-share/doc/HTML/fr/filelight/common
-share/doc/HTML/fr/filelight/index.cache.bz2
-share/doc/HTML/fr/filelight/index.docbook
 share/doc/HTML/fr/fundamentals/colors.png
 share/doc/HTML/fr/fundamentals/common
 share/doc/HTML/fr/fundamentals/config.docbook
@@ -1600,7 +1597,6 @@ share/locale/fr/LC_MESSAGES/dolphin.mo
 share/locale/fr/LC_MESSAGES/domtreeviewer.mo
 share/locale/fr/LC_MESSAGES/dragonplayer.mo
 share/locale/fr/LC_MESSAGES/drkonqi.mo
-share/locale/fr/LC_MESSAGES/filelight.mo
 share/locale/fr/LC_MESSAGES/filetypes.mo
 share/locale/fr/LC_MESSAGES/fileviewbazaarplugin.mo
 share/locale/fr/LC_MESSAGES/fileviewgitplugin.mo

@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	michelle@sorbs.net
 COMMENT=	Simple client for interacting with RESTful http/https resources
 
-LICENSE=	ART10 GPLv1
+LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Crypt-SSLeay>0:security/p5-Crypt-SSLeay \

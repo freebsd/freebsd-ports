@@ -8,6 +8,14 @@ Some features available on other platforms are not implemented:
 - Performance profiling (requires GeckoProfiler)
 - Gamepad API (requires libusbhid backend)
 - WebVR (requires open source runtime)
+- U2F Security Keys (requires libusbhid backend)
+
+======================================================================
+
+To select non-default audio backend open about:config page and create
+media.cubeb.backend preference. Supported values are: alsa, jack,
+pulse, pulse-rust, oss, sndio. Currently used backend can be inspected
+on about:support page.
 
 ======================================================================
 

@@ -5,8 +5,7 @@ PORTNAME=	rxtx
 PORTVERSION=	2.2p2
 PORTREVISION=	4
 CATEGORIES=	comms java
-MASTER_SITES=	http://rxtx.qbang.org/pub/rxtx/ \
-		ftp://jarvi.dsl.frii.com/pub/rxtx/
+MASTER_SITES=	http://rxtx.qbang.org/pub/rxtx/
 PKGNAMESUFFIX=	-${JAVA_PORT:S/java\///}
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/p/pre/}
 

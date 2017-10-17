@@ -3,6 +3,7 @@
 
 PORTNAME=	httrack
 PORTVERSION=	3.49.2
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	https://download.httrack.com/ \
 		https://mirror.httrack.com/ \
@@ -25,10 +26,7 @@ CONFIGURE_ARGS=	--docdir=${DOCSDIR} --with-zlib=/usr
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	${PREFIX}/lib/httrack
-USES=		alias execinfo gmake iconv libtool localbase shebangfix ssl
-
-PORTDATA=	*
-PORTDOCS=	*
+USES=		alias gmake iconv libtool shebangfix ssl
 
 SHEBANG_FILES=	src/webhttrack
 
@@ -47,11 +45,14 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|gcc|${CC}|; s|-ldl ||' ${WRKSRC}/src/coucal/Makefile
 
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/html/httrack.css ${STAGEDIR}${DOCSDIR}/
+	${RM} ${STAGEDIR}${DATADIR}/html
 
 post-install-DOCS-off:
-# make an empty directory instead of an invalid symbolic link to DOCSDIR
-	${RM} ${STAGEDIR}${DATADIR}/html
+# See PR/208875 for details
 	${MKDIR} ${STAGEDIR}${DATADIR}/html/
+
+post-install-DOCS-on:
+	${INSTALL_DATA} ${WRKSRC}/html/httrack.css ${STAGEDIR}${DOCSDIR}/
+	${RLN} ${STAGEDIR}${DOCSDIR} ${STAGEDIR}${DATADIR}/html
 
 .include <bsd.port.mk>

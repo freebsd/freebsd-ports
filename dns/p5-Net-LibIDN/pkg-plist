@@ -1,4 +1,4 @@
-%%PERL5_MAN3%%/Net::LibIDN.3.gz
 %%SITE_ARCH%%/Net/LibIDN.pm
 %%SITE_ARCH%%/auto/Net/LibIDN/LibIDN.so
 %%SITE_ARCH%%/auto/Net/LibIDN/autosplit.ix
+%%PERL5_MAN3%%/Net::LibIDN.3.gz

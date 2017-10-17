@@ -3,6 +3,7 @@
 
 PORTNAME=	libwps
 PORTVERSION=	0.4.7
+PORTREVISION=	2
 CATEGORIES=	textproc
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -11,6 +12,8 @@ COMMENT=	Microsoft file word processor format import filter library
 
 LICENSE=	LGPL21+ MPL20
 LICENSE_COMB=	dual
+LICENSE_FILE_LGPL21=	${WRKSRC}/COPYING.LGPL
+LICENSE_FILE_MPL20=	${WRKSRC}/COPYING.MPL
 
 LIB_DEPENDS=	librevenge-0.0.so:textproc/librevenge
 

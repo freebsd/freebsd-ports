@@ -1,6 +1,6 @@
---- setup.py.orig	2017-02-08 10:06:13.000000000 +0100
-+++ setup.py	2017-03-07 15:28:03.225761995 +0100
-@@ -104,9 +104,6 @@
+--- setup.py.orig	2017-07-01 19:16:48 UTC
++++ setup.py
+@@ -106,9 +106,6 @@ setup_args = {
          "buildbot_worker.test.unit",
          "buildbot_worker.test.util",
      ],

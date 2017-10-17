@@ -582,5 +582,6 @@ share/locale/zu/LC_MESSAGES/mate-control-center.mo
 %%DATADIR%%/ui/mate-keyboard-properties-options-dialog.ui
 %%DATADIR%%/ui/mate-mouse-properties.ui
 %%DATADIR%%/ui/mate-network-properties.ui
+share/mime/packages/mate-theme-package.xml
 share/polkit-1/actions/org.mate.randr.policy
 share/thumbnailers/mate-font-viewer.thumbnailer

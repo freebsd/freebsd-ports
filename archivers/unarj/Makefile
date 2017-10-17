@@ -5,7 +5,7 @@ PORTNAME=	unarj
 PORTVERSION=	2.65
 PORTREVISION=	2
 CATEGORIES=	archivers
-MASTER_SITES=	https://googledrive.com/host/0BwCT-sp3iBCaeDRPYm1jTjl1Qmc/
+MASTER_SITES=	https://aklv.github.io/distfiles/
 
 MAINTAINER=	ak@FreeBSD.org
 COMMENT=	Allows files to be extracted from ARJ archives

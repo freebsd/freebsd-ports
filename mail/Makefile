@@ -238,7 +238,6 @@
     SUBDIR += milter-bogom
     SUBDIR += milter-callback
     SUBDIR += milter-greylist
-    SUBDIR += milter-greylist-devel
     SUBDIR += milter-manager
     SUBDIR += milter-regex
     SUBDIR += milter-skem
@@ -540,10 +539,10 @@
     SUBDIR += py-milter
     SUBDIR += py-notmuch
     SUBDIR += py-ppolicy
+    SUBDIR += py-premailer
     SUBDIR += py-pymailq
     SUBDIR += py-pyspf
     SUBDIR += py-spambayes
-    SUBDIR += py-twistedMail
     SUBDIR += py-zope.sendmail
     SUBDIR += pymsgauth
     SUBDIR += pysieved

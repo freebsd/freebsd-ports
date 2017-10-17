@@ -17,6 +17,7 @@ DEFAULT_ADDONS=	AsyncRequest \
 		Loki \
 		MD5 \
 		NotificationCenter \
+		Oauth \
 		Obsidian \
 		Random \
 		Range \
@@ -39,6 +40,7 @@ DEFAULT_ADDONS=	AsyncRequest \
 #
 OPTIONAL_ADDONS=BigNum \
 		CFFI \
+		Cairo \
 		Clutter \
 		DBI \
 		EditLine \
@@ -72,6 +74,7 @@ OPTIONS_GROUP_ADDONS=${OPTIONAL_ADDONS}
 
 BigNum_LIB_DEPENDS=	libgmp.so:math/gmp
 CFFI_LIB_DEPENDS=	libffi.so:devel/libffi
+Cairo_USE=		GNOME=cairo
 Clutter_LIB_DEPENDS=	libclutter-glx-1.0.so:graphics/clutter
 DBI_LIB_DEPENDS=	libdbi.so:databases/libdbi
 EditLine_USES=		libedit
@@ -92,7 +95,7 @@ MySQL_USES=		mysql:client
 Ogg_LIB_DEPENDS=	libogg.so:audio/libogg
 OpenGL_USE=		GL=glut XORG=xmu
 PostgreSQL_USES=	pgsql
-Python_USES=		python
+Python_USES=		python:3.3+
 QDBM_LIB_DEPENDS=	libqdbm.so:databases/qdbm
 ReadLine_USES=		readline:port
 Regex_LIB_DEPENDS=	libpcre.so:devel/pcre

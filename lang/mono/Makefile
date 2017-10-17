@@ -4,7 +4,7 @@
 PORTNAME=	mono
 PORTVERSION=	4.8.1.0
 DISTVERSIONPREFIX=	mono-
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang
 
 MAINTAINER=	mono@FreeBSD.org
@@ -65,7 +65,7 @@ MAKE_ENV=	MONO_SHARED_DIR="${WRKDIR}" \
 TEST_TARGET=	check
 TEST_WRKSRC=	${WRKSRC}/mono/tests
 
-ONLY_FOR_ARCHS=		amd64 armv6 i386 powerpc
+ONLY_FOR_ARCHS=		amd64 armv6 armv7 i386 powerpc
 
 PORTSCOUT=	limit:^\d+\.\d+\.[1-9]\d*
 

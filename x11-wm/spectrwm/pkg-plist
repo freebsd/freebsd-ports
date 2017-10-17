@@ -1,5 +1,12 @@
 bin/spectrwm
-bin/screenshot.sh
 lib/libswmhack.so
 man/man1/spectrwm.1.gz
 @sample etc/spectrwm.conf.sample
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/baraction.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/screenshot.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/spectrwm_cz.conf
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/spectrwm_es.conf
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/spectrwm_fr.conf
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/spectrwm_fr_ch.conf
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/spectrwm_se.conf
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/spectrwm_us.conf

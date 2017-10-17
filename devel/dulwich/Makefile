@@ -12,7 +12,7 @@ COMMENT=	Python implementation of the Git file formats and protocols
 
 LICENSE=	APACHE20 GPLv2+
 LICENSE_COMB=	dual
-LICENSE_FILE=	COPYING relicensing-apachev2.txt
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 PORTDOCS=	AUTHORS CONTRIBUTING NEWS README.md TODO conclusion.txt \
 		file-format.txt index.txt introduction.txt object-store.txt \

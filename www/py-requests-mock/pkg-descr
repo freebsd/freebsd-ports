@@ -1,0 +1,4 @@
+requests-mock provides a building block to stub out the HTTP requests portions
+of your testing code.
+
+WWW: https://pypi.python.org/pypi/requests-mock

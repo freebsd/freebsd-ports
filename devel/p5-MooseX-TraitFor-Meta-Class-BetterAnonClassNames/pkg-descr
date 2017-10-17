@@ -1,0 +1,4 @@
+MooseX::TraitFor::Meta::Class::BetterAnonClassNames is a metaclass trait to
+attempt to demystify generated anonymous class names.
+
+WWW: http://search.cpan.org/dist/MooseX-TraitFor-Meta-Class-BetterAnonClassNames/

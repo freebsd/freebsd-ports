@@ -1,5 +1,5 @@
---- cmd-line-utils/libedit/vi.c.orig	2016-03-28 18:06:12 UTC
-+++ cmd-line-utils/libedit/vi.c
+--- extra/libedit/vi.c.orig	2016-03-28 18:06:12 UTC
++++ extra/libedit/vi.c
 @@ -919,7 +919,7 @@ vi_comment_out(EditLine *el, Int c __att
   * NB: posix implies that we should enter insert mode, however
   * this is against historical precedent...

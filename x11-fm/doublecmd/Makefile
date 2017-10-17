@@ -26,7 +26,6 @@ USE_FPC=	cairo fcl-base fcl-db fcl-image fcl-json fcl-registry \
 		fcl-xml iconvenc pasjpeg rtl-extra x11
 USE_XORG=	x11
 DOS2UNIX_FILES=	src/dmhelpmanager.pas
-WANT_GNOME=	yes
 
 PLIST=		${WRKDIR}/pkg-plist
 

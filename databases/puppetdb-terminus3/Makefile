@@ -11,6 +11,9 @@ COMMENT=	PuppetDB storeconfigs backend terminus module
 
 LICENSE=	APACHE20
 
+DEPRECATED=	End of life upstream
+EXPIRATION_DATE=	2017-11-01
+
 BUILD_DEPENDS=	puppet:sysutils/puppet4
 
 CONFLICTS_INSTALL=	puppetdb-terminus4-* puppetdb-terminus5-*

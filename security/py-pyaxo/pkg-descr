@@ -1,0 +1,10 @@
+The Double Ratchet Algorithm is a protocol (similar to OTR) that provides for
+perfect forward secrecy in (a)synchronous communications. It uses triple
+Diffie-Hellman for authentication and ECDHE for perfect forward secrecy. The
+protocol is lighter and more robust than the OTR protocol - providing better
+forward and future secrecy, as well as deniability.
+
+The protocol was developed by Trevor Perrin and Moxie Marlinspike. Its chief
+use currently is in the Open Whisper Systems Signal package.
+
+WWW: https://github.com/rxcomm/pyaxo

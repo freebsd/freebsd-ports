@@ -10,13 +10,14 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utilities for Diamond Rio500
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 USE_GNOME=	glib12
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-devicepath='/dev' \
 		--with-deviceentry='urio0' \
 		--with-id3support
-
-.include <bsd.port.pre.mk>
 
 post-patch:
 	${REINPLACE_CMD} -e "s,byteswap.h,sys/endian.h," \
@@ -24,4 +25,4 @@ post-patch:
 		${WRKSRC}/lib/librio500.c
 	${REINPLACE_CMD} -e "s,getopt.h,," ${WRKSRC}/include/Makefile.in
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

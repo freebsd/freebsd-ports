@@ -35,6 +35,7 @@ man/man8/virtlogd.8.gz
 %%XEN%%@sample %%ETCDIR%%/libxl.conf.sample
 %%QEMU%%%%ETCDIR%%/qemu-lockd.conf
 %%XEN%%%%ETCDIR%%/libxl-lockd.conf
+%%SASL%%etc/sasl2/libvirt.conf
 etc/logrotate.d/libvirtd
 etc/logrotate.d/libvirtd.lxc
 etc/logrotate.d/libvirtd.qemu
@@ -220,6 +221,7 @@ share/augeas/lenses/tests/test_virtlogd.aug
 %%DOCSDIR%%%%PORTVERSION%%/html/migration-tunnel.png
 %%DOCSDIR%%%%PORTVERSION%%/html/migration-unmanaged-direct.png
 %%DOCSDIR%%%%PORTVERSION%%/html/migration.html
+%%DOCSDIR%%%%PORTVERSION%%/html/mobile.css                                   
 %%DOCSDIR%%%%PORTVERSION%%/html/news-2005.html
 %%DOCSDIR%%%%PORTVERSION%%/html/news-2006.html
 %%DOCSDIR%%%%PORTVERSION%%/html/news-2007.html
@@ -235,6 +237,7 @@ share/augeas/lenses/tests/test_virtlogd.aug
 %%DOCSDIR%%%%PORTVERSION%%/html/news.html
 %%DOCSDIR%%%%PORTVERSION%%/html/node.gif
 %%DOCSDIR%%%%PORTVERSION%%/html/nss.html
+%%DOCSDIR%%%%PORTVERSION%%/html/pci-hotplug.html   
 %%DOCSDIR%%%%PORTVERSION%%/html/php.html
 %%DOCSDIR%%%%PORTVERSION%%/html/python.html
 %%DOCSDIR%%%%PORTVERSION%%/html/remote.html

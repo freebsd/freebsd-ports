@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	go
-PORTVERSION=	1.9
+PORTVERSION=	1.9.1
 PORTEPOCH=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://golang.org/dl/
@@ -31,25 +31,24 @@ sh_OLD_CMD=	"/usr/bin/env bash"
 sh_CMD=		${SH}
 
 WRKSRC=		${WRKDIR}/go
-ONLY_FOR_ARCHS=	i386 amd64 armv6
+ONLY_FOR_ARCHS=	i386 amd64 armv6 armv7
 
 OPTIONS_DEFINE=	GO387
 GO387_DESC=	Do not generate code with SSE2 (for old x86 CPU)
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "i386"
+.if ${ARCH} == i386
 GOARCH=386
 .elif ${ARCH} == "amd64"
 GOARCH=amd64
-.elif ${ARCH} == "armv6"
+.elif ${ARCH} == armv6 || ${ARCH} == armv7
 GOARCH=arm
 .else
 IGNORE=		unknown arch ${ARCH}
 .endif
 
 .if ${PORT_OPTIONS:MGO387}
-.error wat
 GO386=387
 .endif
 

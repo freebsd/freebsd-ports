@@ -7,22 +7,22 @@ bin/maildirmake
 bin/makedat
 bin/makeimapaccess
 bin/pop3d
-@unexec if cmp -s %D/%%CONFDIR%%/imapd-ssl.dist %D/%%CONFDIR%%/imapd-ssl; then rm -f %D/%%CONFDIR%%/imapd-ssl; fi
+@preunexec if cmp -s %D/%%CONFDIR%%/imapd-ssl.dist %D/%%CONFDIR%%/imapd-ssl; then rm -f %D/%%CONFDIR%%/imapd-ssl; fi
 %%CONFDIR%%/imapd-ssl.dist
-@exec %%LOCALBASE%%/share/sysconftool/sysconftool %D/%%CONFDIR%%/imapd-ssl.dist
-@unexec if cmp -s %D/%%CONFDIR%%/imapd.cnf.dist %D/%%CONFDIR%%/imapd.cnf; then rm -f %D/%%CONFDIR%%/imapd.cnf; fi
+@postexec %%LOCALBASE%%/share/sysconftool/sysconftool %D/%%CONFDIR%%/imapd-ssl.dist
+@preunexec if cmp -s %D/%%CONFDIR%%/imapd.cnf.dist %D/%%CONFDIR%%/imapd.cnf; then rm -f %D/%%CONFDIR%%/imapd.cnf; fi
 %%CONFDIR%%/imapd.cnf.dist
-@unexec if cmp -s %D/%%CONFDIR%%/imapd.dist %D/%%CONFDIR%%/imapd; then rm -f %D/%%CONFDIR%%/imapd; fi
+@preunexec if cmp -s %D/%%CONFDIR%%/imapd.dist %D/%%CONFDIR%%/imapd; then rm -f %D/%%CONFDIR%%/imapd; fi
 %%CONFDIR%%/imapd.dist
-@exec %%LOCALBASE%%/share/sysconftool/sysconftool %D/%%CONFDIR%%/imapd.dist
-@unexec if cmp -s %D/%%CONFDIR%%/pop3d-ssl.dist %D/%%CONFDIR%%/pop3d-ssl; then rm -f %D/%%CONFDIR%%/pop3d-ssl; fi
+@postexec %%LOCALBASE%%/share/sysconftool/sysconftool %D/%%CONFDIR%%/imapd.dist
+@preunexec if cmp -s %D/%%CONFDIR%%/pop3d-ssl.dist %D/%%CONFDIR%%/pop3d-ssl; then rm -f %D/%%CONFDIR%%/pop3d-ssl; fi
 %%CONFDIR%%/pop3d-ssl.dist
-@exec %%LOCALBASE%%/share/sysconftool/sysconftool %D/%%CONFDIR%%/pop3d-ssl.dist
-@unexec if cmp -s %D/%%CONFDIR%%/pop3d.cnf.dist %D/%%CONFDIR%%/pop3d.cnf; then rm -f %D/%%CONFDIR%%/pop3d.cnf; fi
+@postexec %%LOCALBASE%%/share/sysconftool/sysconftool %D/%%CONFDIR%%/pop3d-ssl.dist
+@preunexec if cmp -s %D/%%CONFDIR%%/pop3d.cnf.dist %D/%%CONFDIR%%/pop3d.cnf; then rm -f %D/%%CONFDIR%%/pop3d.cnf; fi
 %%CONFDIR%%/pop3d.cnf.dist
-@unexec if cmp -s %D/%%CONFDIR%%/pop3d.dist %D/%%CONFDIR%%/pop3d; then rm -f %D/%%CONFDIR%%/pop3d; fi
+@preunexec if cmp -s %D/%%CONFDIR%%/pop3d.dist %D/%%CONFDIR%%/pop3d; then rm -f %D/%%CONFDIR%%/pop3d; fi
 %%CONFDIR%%/pop3d.dist
-@exec %%LOCALBASE%%/share/sysconftool/sysconftool %D/%%CONFDIR%%/pop3d.dist
+@postexec %%LOCALBASE%%/share/sysconftool/sysconftool %D/%%CONFDIR%%/pop3d.dist
 %%CONFDIR%%/quotawarnmsg.example
 %%LIBEXECDIR%%/couriertcpd
 %%LIBEXECDIR%%/imapd-ssl.rc

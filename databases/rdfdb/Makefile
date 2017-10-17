@@ -11,6 +11,8 @@ DISTNAME=	rdfdb_src
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lightweight RDF database
 
+BROKEN=		No public distfiles
+
 USERS=	rdfdb
 GROUPS=	rdfdb
 

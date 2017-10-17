@@ -3,6 +3,7 @@
 
 PORTNAME=	freecell-solver
 PORTVERSION=	4.12.1
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://fc-solve.shlomifish.org/downloads/fc-solve/
 

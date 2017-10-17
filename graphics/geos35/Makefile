@@ -15,6 +15,9 @@ COMMENT=	GEOS implements all the OpenGIS "Simple Features for SQL" (legacy)
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	legacy version, no longer needed
+EXPIRATION_DATE=2017-11-09
+
 CONFIGURE_ARGS=	--program-suffix=35
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip

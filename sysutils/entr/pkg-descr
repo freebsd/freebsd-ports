@@ -1,5 +1,5 @@
 The Event Notify Test Runner is a general-purpose UNIX utility intended to make
 rapid feedback and automated testing natural and completely ordinary by running
-arbitrary commands when files change
+arbitrary commands when files change.
 
 WWW: http://entrproject.org/

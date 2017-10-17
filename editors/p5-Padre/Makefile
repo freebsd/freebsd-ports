@@ -3,7 +3,7 @@
 
 PORTNAME=	Padre
 PORTVERSION=	1.00
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	editors perl5
 MASTER_SITES=	CPAN/${PORTNAME}/ CPAN/Wx/:wxsc
 PKGNAMEPREFIX=	p5-
@@ -12,10 +12,10 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${WXSC_DISTFILE}:wxsc
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl Application Development and Refactoring Environment
 
-LICENSE=	ART10 GPLv1
+LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 LICENSE_FILE_ART10=	${WRKSRC}/Artistic
-LICENSE_FILE_GPLv1=	${WRKSRC}/COPYING
+LICENSE_FILE_GPLv1+ =	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	p5-Algorithm-Diff>=1.19:devel/p5-Algorithm-Diff \
 		p5-App-cpanminus>=0.9923:devel/p5-App-cpanminus \

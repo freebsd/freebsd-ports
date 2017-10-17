@@ -1,0 +1,37 @@
+From: Jan Beulich <jbeulich@suse.com>
+Subject: x86/FLASK: fix unmap-domain-IRQ XSM hook
+
+The caller and the FLASK implementation of xsm_unmap_domain_irq()
+disagreed about what the "data" argument points to in the MSI case:
+Change both sides to pass/take a PCI device.
+
+This is part of XSA-237.
+
+Signed-off-by: Jan Beulich <jbeulich@suse.com>
+Reviewed-by: Andrew Cooper <andrew.cooper3@citrix.com>
+
+--- a/xen/arch/x86/irq.c
++++ b/xen/arch/x86/irq.c
+@@ -2144,7 +2144,8 @@ int unmap_domain_pirq(struct domain *d,
+         nr = msi_desc->msi.nvec;
+     }
+ 
+-    ret = xsm_unmap_domain_irq(XSM_HOOK, d, irq, msi_desc);
++    ret = xsm_unmap_domain_irq(XSM_HOOK, d, irq,
++                               msi_desc ? msi_desc->dev : NULL);
+     if ( ret )
+         goto done;
+ 
+--- a/xen/xsm/flask/hooks.c
++++ b/xen/xsm/flask/hooks.c
+@@ -915,8 +915,8 @@ static int flask_unmap_domain_msi (struc
+                                    u32 *sid, struct avc_audit_data *ad)
+ {
+ #ifdef CONFIG_HAS_PCI
+-    struct msi_info *msi = data;
+-    u32 machine_bdf = (msi->seg << 16) | (msi->bus << 8) | msi->devfn;
++    const struct pci_dev *pdev = data;
++    u32 machine_bdf = (pdev->seg << 16) | (pdev->bus << 8) | pdev->devfn;
+ 
+     AVC_AUDIT_DATA_INIT(ad, DEV);
+     ad->device = machine_bdf;

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	critcl
-PORTVERSION=	3.1.15
+PORTVERSION=	3.1.17
 CATEGORIES=	devel
 
 MAINTAINER=	tcltk@FreeBSD.org
@@ -22,7 +22,8 @@ GH_ACCOUNT=	andreas-kupries
 
 TEST_TARGET=	test
 
-PLIST_SUB+=	VER=${PORTVERSION}
+PLIST_SUB+=	VER=${PORTVERSION} \
+		ARCH=${ARCH:S/i386/ix86/}
 PORTDOCS=	*
 
 NO_BUILD=	yes
@@ -32,14 +33,13 @@ NO_BUILD=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's|dtplite|${LOCALBASE}/bin/dtplite|g' ${WRKSRC}/build.tcl
 	${REINPLACE_CMD} -e 's|%%CC%%|${CC}|g' ${WRKSRC}/lib/critcl/Config
-	${REINPLACE_CMD} -e '/^#line/d' ${WRKSRC}/test/cconst/*
 
 do-install:
 	(cd ${WRKSRC} && ${TCLSH} build.tcl install ${STAGEDIR}${PREFIX}/lib)
 	${INSTALL_MAN} ${WRKSRC}/embedded/man/files/critcl_*.n	\
 		${STAGEDIR}${MANPREFIX}/man/mann/
 
-test: build
-	(cd ${WRKSRC} && ${TCLSH} test/all.tcl)
+do-test:
+	(cd ${WRKSRC} && ${TCLSH} build.tcl test)
 
 .include <bsd.port.mk>

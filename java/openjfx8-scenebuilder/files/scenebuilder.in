@@ -1,0 +1,2 @@
+#!/bin/sh
+exec "%%LOCALBASE%%/bin/java" ${SCENEBUILDER_JAVA_ARGS} -cp "%%JAVAJARDIR%%/SceneBuilderKit.jar:%%JAVAJARDIR%%/SceneBuilderApp.jar" com.oracle.javafx.scenebuilder.app.SceneBuilderApp "$@"

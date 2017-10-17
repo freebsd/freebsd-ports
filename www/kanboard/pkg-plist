@@ -467,6 +467,7 @@
 %%WWWDIR%%/app/Locale/sv_SE/translations.php
 %%WWWDIR%%/app/Locale/th_TH/translations.php
 %%WWWDIR%%/app/Locale/tr_TR/translations.php
+%%WWWDIR%%/app/Locale/vi_VN/translations.php
 %%WWWDIR%%/app/Locale/zh_CN/translations.php
 %%WWWDIR%%/app/Middleware/ApplicationAuthorizationMiddleware.php
 %%WWWDIR%%/app/Middleware/AuthenticationMiddleware.php

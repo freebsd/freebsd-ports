@@ -3,13 +3,17 @@
 
 PORTNAME=	libelf
 PORTVERSION=	0.8.13
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	http://www.mr511.de/software/ \
 		SUNSITE/libs
 
 MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	Public ELF file access library similar to libelf(3) in Solaris
+
+LICENSE=	LGPL20
+
+CONFLICTS_INSTALL=	elfutils
 
 OPTIONS_DEFINE=	EXTENDED NLS SANITY
 OPTIONS_DEFAULT=	EXTENDED SANITY

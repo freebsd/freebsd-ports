@@ -1,7 +1,17 @@
 make configure not require a specific gnupg version..
+Accept gnupg 2.2.0 (upstream)
 
---- configure.orig	2015-09-28 19:51:56.713332000 +0200
-+++ configure	2015-09-28 19:52:39.551499000 +0200
+--- configure.orig	2017-09-20 20:21:49.529005000 +0200
++++ configure	2017-09-20 20:22:01.538527000 +0200
+@@ -2532,7 +2532,7 @@
+ GTK_REQ=3.4.0
+ GTK_MAX=GTK_VERSION_3_4
+ 
+-GNUPG_ACCEPTED="2.0.12 2.1.4"
++GNUPG_ACCEPTED="2.0.12 2.1.4 2.2.0"
+ GPGME_REQUIRED=1.0.0
+ LIBSECRET_REQUIRED=0.16
+ AVAHI_GLIB_REQUIRED=0.6
 @@ -8640,7 +8640,6 @@
  				branch=`echo $ver | sed 's/\.[0-9]*$//'`
  				if test "$branch" = "$major.$minor"; then

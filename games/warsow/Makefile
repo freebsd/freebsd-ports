@@ -3,7 +3,7 @@
 
 PORTNAME=	warsow
 PORTVERSION=	1.51
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	games
 MASTER_SITES=	http://update.warsow.net/mirror/ \
 		http://mirror.amdmi3.ru/distfiles/

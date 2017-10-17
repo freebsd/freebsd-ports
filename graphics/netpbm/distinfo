@@ -1,4 +1,5 @@
-SHA256 (netpbm-10.35.98.tgz) = 0b396f3e6495892a1da6785bcf2e1cde693ffdbef1fb1f44d60486880212825a
-SIZE (netpbm-10.35.98.tgz) = 2560129
-SHA256 (netpbm-manpages-2013-03-09.tgz) = 430a9c5becbc55e2fed832fa40d9fb050ac6ad426cbf39dc73af5d6be37f8cd6
-SIZE (netpbm-manpages-2013-03-09.tgz) = 1464320
+TIMESTAMP = 1506804540
+SHA256 (t6-netpbm-v10.80.00_GH0.tar.gz) = a066b36aab18fcb1601aa192872b0282bf74dba65ab7cfdfd13cb0a2a4bb8148
+SIZE (t6-netpbm-v10.80.00_GH0.tar.gz) = 2774451
+SHA256 (t6-netpbm-userguide-r2996_GH0.tar.gz) = a8d5ec3e74cea12f55a797ac0fe5a0f79d9adf578fa2762a7b569e2f1aaa105b
+SIZE (t6-netpbm-userguide-r2996_GH0.tar.gz) = 715558

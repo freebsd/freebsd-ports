@@ -12,6 +12,8 @@ COMMENT=	Automatic migrations for Ecto
 LICENSE=	APACHE20
 
 BROKEN=		Does not build with latest Ecto
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2017-11-09
 
 USES=		elixir
 USE_GITHUB=	yes

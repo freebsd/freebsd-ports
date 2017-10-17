@@ -1,6 +1,6 @@
---- src/gallium/include/pipe/p_config.h.orig	2016-11-10 22:05:17 UTC
+--- src/gallium/include/pipe/p_config.h.orig	2017-10-02 15:49:02 UTC
 +++ src/gallium/include/pipe/p_config.h
-@@ -76,6 +76,13 @@
+@@ -77,6 +77,13 @@
  #define PIPE_CC_ICL
  #endif
  
@@ -14,7 +14,7 @@
  
  /*
   * Processor architecture
-@@ -130,7 +137,7 @@
+@@ -131,7 +138,7 @@
  
  #if defined(PIPE_ARCH_X86) || defined(PIPE_ARCH_X86_64) || defined(PIPE_ARCH_ARM) || defined(PIPE_ARCH_AARCH64)
  #define PIPE_ARCH_LITTLE_ENDIAN
@@ -23,7 +23,7 @@
  #define PIPE_ARCH_BIG_ENDIAN
  #endif
  
-@@ -159,6 +166,12 @@
+@@ -160,6 +167,12 @@
  #define PIPE_OS_ANDROID
  #endif
  

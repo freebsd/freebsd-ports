@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	BioPerl-Run
-PORTVERSION=	1.007001
-PORTREVISION=	1
+PORTVERSION=	1.007002
 CATEGORIES=	biology perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:CJFIELDS
@@ -12,11 +11,12 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Wrapper modules for common bioinformatics tools
 
-LICENSE=	ART10 GPLv1
+LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 LICENSE_FILE_ART10=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	p5-Algorithm-Diff>=0:devel/p5-Algorithm-Diff \
+		p5-Bio-FeatureIO>=0:biology/p5-Bio-FeatureIO \
 		p5-BioPerl>=1.007000:biology/p5-BioPerl \
 		p5-Config-Any>=0:devel/p5-Config-Any \
 		p5-File-Sort>=0:misc/p5-File-Sort \

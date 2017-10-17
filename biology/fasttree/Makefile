@@ -3,7 +3,7 @@
 
 PORTNAME=	FastTree
 PORTVERSION=	2.1.8
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	biology
 MASTER_SITES=	http://www.microbesonline.org/fasttree/
 EXTRACT_SUFX=	.c

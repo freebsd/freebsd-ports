@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	silktools
-PORTVERSION=	3.15.0
+PORTVERSION=	3.16.0
 CATEGORIES=	security net
 MASTER_SITES=	http://tools.netsa.cert.org/releases/
 DISTNAME=	silk-${PORTVERSION}

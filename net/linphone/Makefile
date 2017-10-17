@@ -55,7 +55,7 @@ UPNP_LIB_DEPENDS=	libupnp.so:devel/upnp
 
 VIDEO_CONFIGURE_ENABLE=	video
 
-.if defined(WITH_DEBUG) && !defined(WITHOUT_DEBUG)
+.if defined(WITH_DEBUG)
 CONFIGURE_ARGS+=--enable-debug
 .endif
 

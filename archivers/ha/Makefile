@@ -5,7 +5,7 @@ PORTNAME=	ha
 PORTVERSION=	0.999b
 PORTREVISION=	1
 CATEGORIES=	archivers
-MASTER_SITES=	https://googledrive.com/host/0BwCT-sp3iBCaeDRPYm1jTjl1Qmc/
+MASTER_SITES=	https://aklv.github.io/distfiles/
 DISTNAME=	ha0999
 
 MAINTAINER=	ak@FreeBSD.org

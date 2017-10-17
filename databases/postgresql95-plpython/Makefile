@@ -2,6 +2,7 @@
 
 PORTNAME=	postgresql
 CATEGORIES=	databases python
+PORTREVISION=	0
 PKGNAMESUFFIX?=	${WANT_PGSQL_VER:S/.//}${COMPONENT}
 
 MAINTAINER=	pgsql@FreeBSD.org

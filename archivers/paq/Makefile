@@ -3,7 +3,7 @@
 
 PORTNAME=	paq
 PORTVERSION=	20140131
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	archivers
 MASTER_SITES=	http://mattmahoney.net/dc/ LOCAL/bf/paq/
 DISTFILES=	wbpe110.zip zpaqd633.zip zpaq657.zip zpipe.201.zip

@@ -12,10 +12,10 @@ COMMENT=	Entrans is an online, collaborative translation tool
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+USES=		php:web
 USE_PHP=	mysql
 NO_BUILD=	yes
 NO_ARCH=	yes
-WANT_PHP_WEB=	yes
 ENTRANS?=	www/entrans
 PLIST_SUB+=	ENTRANS=${ENTRANS}
 PLIST=		${WRKDIR}/pkg-plist

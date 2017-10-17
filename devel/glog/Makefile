@@ -21,9 +21,7 @@ INSTALL_TARGET=	install-strip
 LDFLAGS+=	-lexecinfo
 TEST_TARGET=	check
 USE_LDCONFIG=	yes
-USES=		execinfo libtool localbase pathfix
-
-PORTDOCS=	*
+USES=		libtool localbase pathfix
 
 GH_ACCOUNT=	google
 USE_GITHUB=	yes

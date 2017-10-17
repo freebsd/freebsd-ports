@@ -3,7 +3,7 @@
 
 PORTNAME=	c6
 PORTVERSION=	${LINUX_DIST_VER}
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	emulators linux
 PKGNAMEPREFIX=	linux_base-
 BIN_DISTNAMES=	bash-4.1.2-48.el6 \
@@ -36,7 +36,7 @@ LIB_DISTNAMES=	bzip2-libs-1.0.5-7.el6_0 \
 		gmp-4.3.1-12.el6 \
 		keyutils-libs-1.4-5.el6 \
 		krb5-libs-1.10.3-65.el6 \
-		libacl-2.2.49-7.el6 \
+		libacl-2.2.49-7.el6_9.1 \
 		libattr-2.4.44-7.el6 \
 		libblkid-2.17.2-12.28.el6 \
 		libcap-2.16-5.5.el6 \
@@ -58,7 +58,7 @@ LIB_DISTNAMES=	bzip2-libs-1.0.5-7.el6_0 \
 		zlib-1.2.3-29.el6
 SHARE_DISTNAMES=basesystem-10.0-4.el6 \
 		setup-2.8.14-23.el6
-SRC_DISTFILES=	acl-2.2.49-7.el6${SRC_SUFX}:SOURCE \
+SRC_DISTFILES=	acl-2.2.49-7.el6_9.1${SRC_SUFX}:SOURCE \
 		attr-2.4.44-7.el6${SRC_SUFX}:SOURCE \
 		basesystem-10.0-4.el6${SRC_SUFX}:SOURCE \
 		bash-4.1.2-48.el6${SRC_SUFX}:SOURCE \

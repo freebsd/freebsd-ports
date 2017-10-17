@@ -1,12 +1,11 @@
---- lib/configure.orig	2017-03-02 11:48:03 UTC
-+++ lib/configure
+Index: lib/configure
 @@ -1,4 +1,4 @@
 -#!/usr/bin/env bash
 +#!/bin/sh
  
  CONFIG="config.mk"
  PREFIX="/usr/local"
-@@ -79,7 +79,7 @@ done
+@@ -86,7 +86,7 @@
  
  # If someone runs sudo make install as very first command, and configure later,
  # $CONFIG cannot be overwritten, and must be deleted before continuing.
@@ -15,7 +14,7 @@
      echo "Cannot overwrite file $CONFIG! Please delete it."
      exit 1
  fi
-@@ -138,12 +138,8 @@ fi
+@@ -146,12 +146,8 @@
  # SSE
  if [ "$SSE" = 'auto' ]; then
      SSE=0
@@ -30,7 +29,7 @@
  fi
  
  if [ "$SSE" -eq 1 ]; then
-@@ -166,9 +162,8 @@ if [ -n "$OPENMP" ]; then
+@@ -174,9 +170,8 @@
      else
          OPENMPFLAGS="-fopenmp"
      fi
@@ -42,3 +41,29 @@
          cflags "$OPENMPFLAGS"
          lflags "$OPENMPFLAGS"
          status "OpenMP" "yes"
+@@ -191,20 +186,20 @@
+ fi
+ 
+ # Cocoa
+-if [[ "$OSTYPE" =~ "darwin" ]]; then
++if echo "$OSTYPE" | grep -q "darwin" ; then
+     cflags "-mmacosx-version-min=10.6"
+     lflags "-mmacosx-version-min=10.6"
+ fi
+ 
+-if [[ "$OSTYPE" =~ "darwin" ]]; then
++if echo "$OSTYPE" | grep -q "darwin" ; then
+     SOLIBSUFFIX=dylib
+ 
+     # Search Developer SDK paths, since Apple seems to have dropped the standard Unixy ones
+     XCODE_CMD="xcode-select"
+     XCODE_PATH=$($XCODE_CMD -p)
+-    DIRS+=("$XCODE_PATH/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk/usr/include $XCODE_PATH/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk/usr/lib")
+-    DIRS+=("$XCODE_PATH/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/usr/include $XCODE_PATH/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/usr/lib")
+-elif [[ "$OSTYPE" =~ "msys" ]]; then
++    DIRS="$DIRS $XCODE_PATH/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk/usr/include $XCODE_PATH/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk/usr/lib"
++    DIRS="$DIRS $XCODE_PATH/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/usr/include $XCODE_PATH/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/usr/lib"
++elif echo "$OSTYPE" | grep -q "msys" ; then
+     SOLIBSUFFIX=dll
+ else
+     SOLIBSUFFIX=so

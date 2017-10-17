@@ -13,7 +13,7 @@ COMMENT=	Blogging and social networking platform
 LICENSE=	GPLv2
 
 USE_PHP=	mysql gd json soap dom xml
-USES=		cpe gettext zip
+USES=		cpe gettext zip php
 
 NO_BUILD=	yes
 PLIST_SUB=	WWWOWN="${WWWOWN}" WWWGRP="${WWWGRP}"

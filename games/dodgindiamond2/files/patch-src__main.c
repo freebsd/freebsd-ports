@@ -1,6 +1,6 @@
---- src/main.c.orig	Thu Jul 15 15:04:36 2004
-+++ src/main.c	Thu Jul 15 15:17:57 2004
-@@ -284,7 +284,7 @@
+--- src/main.c.orig	2007-08-14 18:59:42 UTC
++++ src/main.c
+@@ -285,7 +285,7 @@ main (int argc, char *argv[])
  	sprintf(buffer,"%.500s/.dd2rc",getenv("HOME"));
  	if(!loadCFG(buffer,&conf)) {
  		/* if there's no local, use global */
@@ -9,7 +9,7 @@
  		if(!loadCFG(buffer,&conf))
  			fprintf(stderr,"unable to read configuration, using defaults\n");
  	}
-@@ -295,7 +295,7 @@
+@@ -296,7 +296,7 @@ main (int argc, char *argv[])
  #endif
  
  	/* read hi-scores */
@@ -18,7 +18,7 @@
  	if(!loadScore(buffer,hiscore))
  		fprintf(stderr,"unable to read hi-scores, using defaults\n");
  
-@@ -462,7 +462,7 @@
+@@ -463,7 +463,7 @@ main (int argc, char *argv[])
  	saveCFG(buffer,&conf);
  
  	/* save hi-scores */

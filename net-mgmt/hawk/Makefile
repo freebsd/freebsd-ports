@@ -20,7 +20,7 @@ USES=		perl5
 USE_MYSQL=	server
 USE_PHP=	mysql
 WANT_PHP_MOD=	yes
-IGNORE_WITH_PHP=	70
+IGNORE_WITH_PHP=	70 71
 
 NO_BUILD=	yes
 USE_RC_SUBR=	hawk

@@ -14,8 +14,9 @@ LICENSE=	NONE
 
 LIB_DEPENDS=	libnetpbm.so:graphics/netpbm
 
-MAKE_ARGS=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" LDLIBS=-lnetpbm
-LDFLAGS+=	-L${LOCALBASE}/lib
+USES=		localbase:ldflags
+MAKE_ARGS=	CFLAGS="${CFLAGS}" LDLIBS=-lnetpbm
+CFLAGS+=	-I${LOCALBASE}/include/netpbm
 
 PORTDOCS=	README
 

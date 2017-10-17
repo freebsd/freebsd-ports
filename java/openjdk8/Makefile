@@ -40,27 +40,12 @@ BUILD_DEPENDS=	zip:archivers/zip \
 		${LOCALBASE}/include/cups/cups.h:print/cups \
 		bash:shells/bash
 LIB_DEPENDS=	libfreetype.so:print/freetype2
-X11_LIB_DEPENDS= libfontconfig.so:x11-fonts/fontconfig \
-		libgif.so:graphics/giflib
 RUN_DEPENDS=	javavm:java/javavmwrapper \
 		dejavu>0:x11-fonts/dejavu
 
 USES=		compiler:features dos2unix gmake iconv pkgconfig \
 		shebangfix
 USE_AUTOTOOLS=	autoconf
-# Even when not building with X11 support, openjdk8 requires Xrender, X11,
-# Xext, and Xt headers.
-X11_BUILD_DEPENDS_OFF+=	${LOCALBASE}/libdata/pkgconfig/x11.pc:x11/libX11
-X11_BUILD_DEPENDS_OFF+=	${LOCALBASE}/libdata/pkgconfig/xext.pc:x11/libXext
-X11_BUILD_DEPENDS_OFF+=	${LOCALBASE}/libdata/pkgconfig/xrender.pc:x11/libXrender
-X11_BUILD_DEPENDS_OFF+=	${LOCALBASE}/libdata/pkgconfig/xt.pc:x11-toolkits/libXt
-# Add more X11 build deps and runtime deps when X11 is enabled
-X11_LIB_DEPENDS+=	libX11.so.6:x11/libX11
-X11_LIB_DEPENDS+=	libXext.so.6:x11/libXext
-X11_LIB_DEPENDS+=	libXi.so.6:x11/libXi
-X11_LIB_DEPENDS+=	libXrender.so.1:x11/libXrender
-X11_LIB_DEPENDS+=	libXt.so.6:x11-toolkits/libXt
-X11_LIB_DEPENDS+=	libXtst.so.6:x11/libXtst
 
 .if !exists(/usr/bin/unzip)
 BUILD_DEPENDS+=	${UNZIP_CMD}:archivers/unzip
@@ -201,11 +186,6 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 MAKE_ENV=	CLASSPATH="" JAVA_HOME="" LD_LIBRARY_PATH=""
 MAKE_ENV+=	IGNORE_OLD_CONFIG=true
 MAKE_ENV+=	COMPILER_WARNINGS_FATAL="false"
-# openjdk8 normally sets X_CFLAGS in the ./configure script, but it won't do
-# that if you say --disable-headful, even though it still needs some X headers.
-# Set it here instead.
-X11_MAKE_ENV_OFF=	MAKEFLAGS="X_CFLAGS=-I${LOCALBASE}/include" \
-			BUILD_HEADLESS_ONLY=1
 
 JDK_BUILDDIR=	${WRKSRC}/build/${JDK_OSARCH}-normal-${JDK_BUILD_JVM}-${JDK_BUILD_TYPE}
 .if !defined(BUILD_JRE)
@@ -247,10 +227,6 @@ CONFIGURE_ARGS+=	--disable-ccache \
 			--with-milestone=fcs \
 			--with-package-path=${LOCALBASE} \
 			--with-zlib=system
-X11_CONFIGURE_ON=	--with-giflib=system \
-			--x-libraries=${LOCALBASE}/lib \
-			--x-includes=${LOCALBASE}/include
-X11_CONFIGURE_OFF=	--disable-headful
 CONFIGURE_SCRIPT=	../../configure
 CONFIGURE_WRKSRC=	${WRKSRC}/common/autoconf
 
@@ -264,9 +240,26 @@ FPUHACK_DESC=		Hack denormalized numbers in flush-to-zero mode
 POLICY_DESC=		Install the Unlimited Strength Policy Files
 TZUPDATE_DESC=		Update the time zone data
 
+ALSA_CONFIGURE_ENV_OFF=	ALSA_NOT_NEEDED=yes
+ALSA_CONFIGURE_ON=	--with-alsa=${LOCALBASE}
+ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
 FPUHACK_EXTRA_PATCHES=	${PATCHDIR}/fpuhack.patch
 POLICY_CONFIGURE_ENABLE=	unlimited-crypto
 TZUPDATE_RUN_DEPENDS=	java-zoneinfo>0:java/java-zoneinfo
+X11_BUILD_DEPENDS_OFF=	${LOCALBASE}/include/X11/Xlib.h:x11/libX11 \
+			${LOCALBASE}/include/X11/extensions/Xdbe.h:x11/libXext \
+			${LOCALBASE}/include/X11/extensions/Xrender.h:x11/libXrender \
+			${LOCALBASE}/include/X11/Intrinsic.h:x11-toolkits/libXt
+X11_CONFIGURE_OFF=	--disable-headful
+X11_CONFIGURE_ON=	--with-giflib=system \
+			--x-includes=${LOCALBASE}/include \
+			--x-libraries=${LOCALBASE}/lib
+X11_LIB_DEPENDS=	libgif.so:graphics/giflib \
+			libfontconfig.so:x11-fonts/fontconfig
+X11_MAKE_ENV_OFF=	BUILD_HEADLESS_ONLY=1 \
+			MAKEFLAGS=X_CFLAGS="-I${LOCALBASE}/include"
+X11_MAKE_ENV_ON=	MAKEFLAGS=""
+X11_USE=		XORG=x11,xext,xi,xrender,xt,xtst
 
 JAVAVMS_COMMENT=	OpenJDK${JDK_MAJOR_VERSION}
 
@@ -281,9 +274,6 @@ DEBUGFAST_DESC=		Build for debugging (with optimizations)
 RELEASE_DESC=		Build for release (default)
 TEST_DESC=		Run regression tests
 
-ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
-ALSA_CONFIGURE_ON=	--with-alsa=${LOCALBASE}
-ALSA_CONFIGURE_ENV_OFF=	ALSA_NOT_NEEDED=yes
 DEBUG_VARS=		JDK_BUILD_TYPE=slowdebug
 DEBUGFAST_VARS=		JDK_BUILD_TYPE=fastdebug
 RELEASE_BUILD_DEPENDS_OFF=	${LOCALBASE}/bin/objcopy:devel/binutils
@@ -315,6 +305,23 @@ TOOLS_DIR+=	${${t}:S|/${BUILD_${t}}$||}
 CONFIGURE_ARGS+=	--with-tools-dir="${TOOLS_DIR:u:S/ /:/g}"
 .endif
 
+BOOTSTRAP_JDKS=	${LOCALBASE}/openjdk8 \
+		${LOCALBASE}/openjdk7 \
+		${LOCALBASE}/bootstrap-openjdk8
+
+# do we have valid native jdk installed?
+.for BJDK in ${BOOTSTRAP_JDKS}
+.  if !defined(BOOTSTRAPJDKDIR) && exists(${BJDK}/bin/javac)
+BOOTSTRAPJDKDIR=	${BJDK}
+.  endif
+.endfor
+
+# if no valid jdk found, set dependency
+.if !defined(BOOTSTRAPJDKDIR)
+BOOTSTRAPJDKDIR?=	${LOCALBASE}/bootstrap-openjdk8
+BUILD_DEPENDS+=		${BOOTSTRAPJDKDIR}/bin/javac:java/bootstrap-openjdk8
+.endif
+
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == armv6 || ${ARCH} == armv7 || ${ARCH} == i386
@@ -328,31 +335,6 @@ JDK_BUILD_JVM=	server
 .else
 JDK_BUILD_JVM=	zero
 LIB_DEPENDS+=	libffi.so:devel/libffi
-.endif
-
-BOOTSTRAP_JDKS=	${LOCALBASE}/openjdk8 \
-		${LOCALBASE}/openjdk7
-.if ${ARCH} == armv6 || ${ARCH} == armv7
-BOOTSTRAP_JDKS+=	${LOCALBASE}/bootstrap-openjdk
-.endif
-
-# do we have valid native jdk installed?
-.for BJDK in ${BOOTSTRAP_JDKS}
-.  if !defined(BOOTSTRAPJDKDIR) && exists(${BJDK}/bin/javac)
-BOOTSTRAPJDKDIR=	${BJDK}
-.  endif
-.endfor
-
-# if no valid jdk found, set dependency
-.if !defined(BOOTSTRAPJDKDIR)
-.  if ${ARCH} == armv6 || ${ARCH} == armv7
-# bootstrap-openjdk is based on openjdk7 and can compile openjdk8
-BOOTSTRAPJDKDIR?=	${LOCALBASE}/bootstrap-openjdk
-BUILD_DEPENDS+=		${BOOTSTRAPJDKDIR}/bin/javac:java/bootstrap-openjdk
-.  else
-BOOTSTRAPJDKDIR?=	${LOCALBASE}/openjdk7
-BUILD_DEPENDS+=		${BOOTSTRAPJDKDIR}/bin/javac:java/openjdk7
-.  endif
 .endif
 
 .if ${COMPILER_TYPE} == clang

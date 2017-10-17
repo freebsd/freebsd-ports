@@ -2,14 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	mpv
-PORTVERSION=	0.26.0
+PORTVERSION=	0.27.0
 DISTVERSIONPREFIX=	v
 PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	multimedia audio
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES=	8c82555e41a6.patch:-p1
 
 MAINTAINER=	cpm@FreeBSD.org
 COMMENT=	Free and open-source general-purpose video player
@@ -42,15 +39,14 @@ CONFIGURE_ARGS=	--docdir="${EXAMPLESDIR}" \
 		--disable-vaapi-wayland \
 		--disable-vapoursynth \
 		--disable-vapoursynth-lazy \
-		--disable-wayland \
 		--enable-libmpv-shared
 
 OPTIONS_DEFINE=		ARCHIVE ASS DOCS LCMS2 LUAJIT MANPAGES TEST UCHARDET ZSH
 OPTIONS_DEFAULT=	ARCHIVE ASS DVDREAD DVDNAV MANPAGES OPENGL UCHARDET \
-			V4L VAAPI VDPAU X11 YTDL ZSH
+			V4L VAAPI VDPAU X11 YTDL
 OPTIONS_GROUP=		IN VO AO
 OPTIONS_GROUP_IN=	CDIO DVDREAD DVDNAV LIBBLURAY V4L YTDL SMB
-OPTIONS_GROUP_VO=	CACA OPENGL VAAPI VDPAU X11
+OPTIONS_GROUP_VO=	CACA OPENGL VAAPI VDPAU WAYLAND X11
 OPTIONS_GROUP_AO=	ALSA JACK PULSEAUDIO SDL SNDIO
 OPTIONS_SUB=		yes
 
@@ -59,6 +55,7 @@ DVDREAD_DESC=		DVD Playback support
 DVDNAV_DESC=		DVD menu navigation
 LUAJIT_DESC=		Use LuaJIT instead of Lua scripting language support
 UCHARDET_DESC=		Guess subtitle encoding via uchardet
+WAYLAND_DESC=		Wayland (graphics) support
 YTDL_DESC=		Install youtube-dl
 IN_DESC=		Input
 VO_DESC=		Video Output
@@ -132,13 +129,18 @@ UCHARDET_CONFIGURE_OFF=		--disable-uchardet
 
 V4L_BUILD_DEPENDS=		${LOCALBASE}/include/linux/videodev2.h:multimedia/v4l_compat
 V4L_LIB_DEPENDS=		libv4l2.so:multimedia/libv4l
-V4L_CONFIGURE_ON=		--enable-tv
+V4L_CONFIGURE_ON=		--enable-tv --enable-dvbin
 
 VAAPI_LIB_DEPENDS=		libva.so:multimedia/libva
 VAAPI_CONFIGURE_OFF=		--disable-vaapi
 
 VDPAU_LIB_DEPENDS=		libvdpau.so:multimedia/libvdpau
 VDPAU_CONFIGURE_OFF=		--disable-vdpau
+
+WAYLAND_LIB_DEPENDS=		libwayland-client.so:graphics/wayland \
+				libwayland-cursor.so:graphics/wayland \
+				libxkbcommon.so:x11/libxkbcommon
+WAYLAND_CONFIGURE_OFF=		--disable-wayland
 
 X11_USE=			XORG=x11,xext,xinerama,xineramaproto,xrandr,xscrnsaver,xv,xxf86vm
 X11_VARS=			INSTALLS_ICONS=yes

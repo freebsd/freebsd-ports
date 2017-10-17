@@ -1,0 +1,7 @@
+Core utilities for the Lumina Desktop.
+This includes the following utilities:
+* lumina-config (graphical interface for the desktop settings)
+* lumina-xconfig (graphical interface for monitor settings)
+* lumina-search (file/utility find and launch)
+
+WWW: http://lumina-desktop.org

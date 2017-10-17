@@ -3,7 +3,7 @@
 
 PORTNAME=	opensurge
 PORTVERSION=	0.1.r${SVN_REV}
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	http://www.ime.usp.br/~alemart/opensurge_nightly/ \
 		SF/nemysisfreebsdp/${CATEGORIES}/${PORTNAME}/

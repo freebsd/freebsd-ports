@@ -1,5 +1,5 @@
 bin/gnome-power-statistics
-%%MAN%%man/man1/gnome-power-statistics.1.gz
+%%MANPAGES%%man/man1/gnome-power-statistics.1.gz
 share/appdata/gnome-power-statistics.appdata.xml
 share/applications/gnome-power-statistics.desktop
 share/icons/hicolor/16x16/apps/gnome-power-statistics.png

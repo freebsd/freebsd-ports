@@ -3,7 +3,7 @@
 
 PORTNAME=	pdf2djvu
 PORTVERSION=	0.7.21
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	converters
 MASTER_SITES=	https://bitbucket.org/jwilk/pdf2djvu/downloads/
 
@@ -11,6 +11,8 @@ MAINTAINER=	darcsis@gmail.com
 COMMENT=	Pdf2djvu creates DjVu files from PDF files
 
 LICENSE=	GPLv2
+
+BROKEN=		No public distfiles
 
 BUILD_DEPENDS=	${LOCALBASE}/include/pstreams/pstream.h:devel/pstreams
 LIB_DEPENDS=	libpoppler.so:graphics/poppler \

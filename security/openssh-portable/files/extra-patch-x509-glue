@@ -1,6 +1,6 @@
---- session.c.orig	2017-01-12 11:58:30.754769000 -0800
-+++ session.c	2017-01-12 11:58:35.360654000 -0800
-@@ -1252,36 +1252,6 @@ do_setup_env(Session *s, const char *she
+--- session.c.orig	2017-10-12 11:52:52.953370000 -0700
++++ session.c	2017-10-12 11:53:40.793055000 -0700
+@@ -1045,36 +1045,6 @@ do_setup_env(struct ssh *ssh, Session *s, const char *
  	if (getenv("TZ"))
  		child_set_env(&env, &envsize, "TZ", getenv("TZ"));
  
@@ -37,3 +37,111 @@
  	/* Set custom environment options from RSA authentication. */
  	while (custom_environment) {
  		struct envstring *ce = custom_environment;
+--- sshd_config.5.orig	2017-10-12 11:51:06.638814000 -0700
++++ sshd_config.5	2017-10-12 11:51:33.780459000 -0700
+@@ -1641,52 +1641,7 @@ is set to
+ then the pre-authentication unprivileged process is subject to additional
+ restrictions.
+ The default is
+-.Cm sandbox .
+-.It Cm VACertificateFile
+-File with X.509 certificates in PEM format concatenated together.
+-In use when
+-.Cm VAType
+-is set to
+-.Cm ocspspec .
+-The default value is
+-.Sq
+-..
+-(empty).
+-Certificates from that file explicitly trust
+-.Sq "OCSP Responder"
+-public key.
+-They are used as trusted certificates in addition to certificates from
+-.Cm CACertificateFile
+-and
+-.Cm CACertificatePath
+-to verify responder certificate.
+-.It Cm VAType
+-Specifies whether
+-.Sq "Online Certificate Status Protocol"
+-(OCSP) is used to validate X.509 certificates.
+-Accepted values are case insensitive:
+-.Bl -tag -offset indent -compact
+-.It none
+-do not use OCSP to validate certificates;
+-.It ocspcert
+-validate only certificates that specify
+-.Sq "OCSP Service Locator"
+-URL;
+-.It ocspspec
+-use specified in the configuration
+-.Sq "OCSP Responder"
+-to validate all certificates.
+-.El
+-The default is
+-.Cm none .
+-.It Cm VAOCSPResponderURL
+-.Sq "Access Location"
+-/
+-.Sq "OCSP Service Locator"
+-URL of the OCSP provider. In use when
+-.Cm VAType
+-is set to
+-.Cm ocspspec .
++.Cm no .
+ .It Cm VersionAddendum
+ Optionally specifies additional text to append to the SSH protocol banner
+ sent by the server upon connection.
+@@ -1737,6 +1692,51 @@ the wildcard address.
+ By default,
+ sshd binds the forwarding server to the loopback address and sets the
+ hostname part of the
++.It Cm VACertificateFile
++File with X.509 certificates in PEM format concatenated together.
++In use when
++.Cm VAType
++is set to
++.Cm ocspspec .
++The default value is
++.Sq
++..
++(empty).
++Certificates from that file explicitly trust
++.Sq "OCSP Responder"
++public key.
++They are used as trusted certificates in addition to certificates from
++.Cm CACertificateFile
++and
++.Cm CACertificatePath
++to verify responder certificate.
++.It Cm VAType
++Specifies whether
++.Sq "Online Certificate Status Protocol"
++(OCSP) is used to validate X.509 certificates.
++Accepted values are case insensitive:
++.Bl -tag -offset indent -compact
++.It none
++do not use OCSP to validate certificates;
++.It ocspcert
++validate only certificates that specify
++.Sq "OCSP Service Locator"
++URL;
++.It ocspspec
++use specified in the configuration
++.Sq "OCSP Responder"
++to validate all certificates.
++.El
++The default is
++.Cm none .
++.It Cm VAOCSPResponderURL
++.Sq "Access Location"
++/
++.Sq "OCSP Service Locator"
++URL of the OCSP provider. In use when
++.Cm VAType
++is set to
++.Cm ocspspec .
+ .Ev DISPLAY
+ environment variable to
+ .Cm localhost .

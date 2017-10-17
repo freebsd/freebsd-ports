@@ -3,7 +3,7 @@
 
 PORTNAME=	mpqc
 PORTVERSION=	2.3.1
-PORTREVISION=	29
+PORTREVISION=	30
 CATEGORIES=	science parallel
 MASTER_SITES=	SF
 
@@ -45,7 +45,6 @@ MPICH_LIB_DEPENDS=	libmpich.so:net/mpich2
 DOCS_BUILD_DEPENDS=	doxygen:devel/doxygen \
 			dot:graphics/graphviz \
 			${LOCALBASE}/bin/gsed:textproc/gsed
-DOCS_USES=		execinfo
 DOCS_USE=		TEX=latex:build
 
 .include <bsd.port.options.mk>

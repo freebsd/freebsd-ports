@@ -10,7 +10,7 @@ MASTER_SITES=	CPAN
 MAINTAINER=	fmysh@iijmio-mail.jp
 COMMENT=	Alternate Interface To libmecab
 
-LICENSE=	ART10 GPLv1
+LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 RUN_DEPENDS=	p5-Class-Accessor>0:devel/p5-Class-Accessor

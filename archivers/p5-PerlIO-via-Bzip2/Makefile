@@ -11,6 +11,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension to provide a PerlIO layer to bzip2/bunzip2
 
+LICENSE=	ART10 GPLv1+
+LICENSE_COMB=	dual
+
 BUILD_DEPENDS=	p5-Compress-Bzip2>=0:archivers/p5-Compress-Bzip2
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libsmraw
-DISTVERSION=	alpha-20170802
+DISTVERSION=	alpha-20170803
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/libyal/libsmraw/releases/download/${PORTVERSION:E}/ \
 		LOCAL/antoine

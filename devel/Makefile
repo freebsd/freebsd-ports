@@ -38,6 +38,7 @@
     SUBDIR += R-cran-hms
     SUBDIR += R-cran-iterators
     SUBDIR += R-cran-itertools
+    SUBDIR += R-cran-lubridate
     SUBDIR += R-cran-magrittr
     SUBDIR += R-cran-memoise
     SUBDIR += R-cran-microbenchmark
@@ -58,10 +59,12 @@
     SUBDIR += R-cran-rngtools
     SUBDIR += R-cran-rprojroot
     SUBDIR += R-cran-rstudioapi
+    SUBDIR += R-cran-sfsmisc
     SUBDIR += R-cran-sourcetools
     SUBDIR += R-cran-tibble
     SUBDIR += R-cran-tidyr
     SUBDIR += R-cran-tidyselect
+    SUBDIR += R-cran-withr
     SUBDIR += SpecTcl
     SUBDIR += aap
     SUBDIR += aarch64-binutils
@@ -114,9 +117,9 @@
     SUBDIR += arduino-builder
     SUBDIR += arduino-core
     SUBDIR += arduino-ctags
-    SUBDIR += arduino-glcd
     SUBDIR += arduino-irremote
     SUBDIR += arduino-mk
+    SUBDIR += arduino-openglcd
     SUBDIR += arduino-sevseg
     SUBDIR += arduino-tools
     SUBDIR += arduino18
@@ -253,7 +256,6 @@
     SUBDIR += calibrator
     SUBDIR += capstone3
     SUBDIR += capstone4
-    SUBDIR += cargo
     SUBDIR += cask
     SUBDIR += catch
     SUBDIR += cbrowser
@@ -321,7 +323,6 @@
     SUBDIR += cmake-doc
     SUBDIR += cmake-fedora
     SUBDIR += cmake-gui
-    SUBDIR += cmake-modules
     SUBDIR += cmake-modules-webos
     SUBDIR += cmph
     SUBDIR += cmunge
@@ -409,8 +410,8 @@
     SUBDIR += cxref
     SUBDIR += cxxtest
     SUBDIR += cxxtools
-    SUBDIR += d-scanner
     SUBDIR += d-feet
+    SUBDIR += d-scanner
     SUBDIR += darts
     SUBDIR += dash.el
     SUBDIR += datadraw
@@ -513,6 +514,7 @@
     SUBDIR += elixir-exjsx
     SUBDIR += elixir-exprotobuf
     SUBDIR += elixir-exrm
+    SUBDIR += elixir-gen_stage
     SUBDIR += elixir-gen_state_machine
     SUBDIR += elixir-gettext
     SUBDIR += elixir-hex
@@ -1085,9 +1087,9 @@
     SUBDIR += hs-mueval
     SUBDIR += hs-murmur-hash
     SUBDIR += hs-mutable-containers
-    SUBDIR += hs-newtype-generics
     SUBDIR += hs-ncurses
     SUBDIR += hs-newtype
+    SUBDIR += hs-newtype-generics
     SUBDIR += hs-old-locale
     SUBDIR += hs-old-time
     SUBDIR += hs-optparse-applicative
@@ -1188,8 +1190,8 @@
     SUBDIR += idutils
     SUBDIR += imake
     SUBDIR += include-what-you-use
-    SUBDIR += inilib
     SUBDIR += inifiled
+    SUBDIR += inilib
     SUBDIR += iniparser
     SUBDIR += initutil
     SUBDIR += injeqt
@@ -1325,7 +1327,6 @@
     SUBDIR += libchipcard
     SUBDIR += libcidr
     SUBDIR += libcii
-    SUBDIR += libclaw
     SUBDIR += libclc
     SUBDIR += libcli
     SUBDIR += libconcurrent
@@ -1373,7 +1374,6 @@
     SUBDIR += libevt
     SUBDIR += libevtx
     SUBDIR += libewf
-    SUBDIR += libexecinfo
     SUBDIR += libexplain
     SUBDIR += libfaketime
     SUBDIR += libfastcommon
@@ -1398,6 +1398,7 @@
     SUBDIR += libgee
     SUBDIR += libgee06
     SUBDIR += libgetline
+    SUBDIR += libght
     SUBDIR += libghthash
     SUBDIR += libgit2
     SUBDIR += libgit2-glib
@@ -1573,6 +1574,7 @@
     SUBDIR += libxalloc
     SUBDIR += libxo
     SUBDIR += libxs
+    SUBDIR += libzim
     SUBDIR += libzookeeper
     SUBDIR += libzrtpcpp
     SUBDIR += libzvbi
@@ -1622,6 +1624,7 @@
     SUBDIR += llvm38
     SUBDIR += llvm39
     SUBDIR += llvm40
+    SUBDIR += llvm50
     SUBDIR += lm4tools
     SUBDIR += lmdbg
     SUBDIR += lndir
@@ -1677,8 +1680,8 @@
     SUBDIR += marisa-trie
     SUBDIR += mate-common
     SUBDIR += matreshka
-    SUBDIR += maven-wrapper
     SUBDIR += maven
+    SUBDIR += maven-wrapper
     SUBDIR += maven3
     SUBDIR += maven31
     SUBDIR += maven33
@@ -1724,8 +1727,8 @@
     SUBDIR += mpatrol
     SUBDIR += mph
     SUBDIR += mq4cpp
-    SUBDIR += msgpack-d
     SUBDIR += msgpack
+    SUBDIR += msgpack-d
     SUBDIR += msgpuck
     SUBDIR += msp430-debug-stack
     SUBDIR += mspdebug
@@ -2458,6 +2461,7 @@
     SUBDIR += p5-Exporter-Lite
     SUBDIR += p5-Exporter-Tidy
     SUBDIR += p5-Exporter-Tiny
+    SUBDIR += p5-ExportTo
     SUBDIR += p5-ExtUtils-AutoInstall
     SUBDIR += p5-ExtUtils-CBuilder
     SUBDIR += p5-ExtUtils-CChecker
@@ -2748,6 +2752,7 @@
     SUBDIR += p5-List-Group
     SUBDIR += p5-List-Objects-Types
     SUBDIR += p5-List-Objects-WithUtils
+    SUBDIR += p5-List-Pairwise
     SUBDIR += p5-List-Permutor
     SUBDIR += p5-List-PowerSet
     SUBDIR += p5-List-Regexp
@@ -2973,6 +2978,7 @@
     SUBDIR += p5-MooseX-Singleton
     SUBDIR += p5-MooseX-Storage
     SUBDIR += p5-MooseX-StrictConstructor
+    SUBDIR += p5-MooseX-TraitFor-Meta-Class-BetterAnonClassNames
     SUBDIR += p5-MooseX-Traits
     SUBDIR += p5-MooseX-Traits-Pluggable
     SUBDIR += p5-MooseX-TransactionalMethods
@@ -2996,6 +3002,7 @@
     SUBDIR += p5-MooseX-Types-Structured
     SUBDIR += p5-MooseX-Types-URI
     SUBDIR += p5-MooseX-Types-VariantTable
+    SUBDIR += p5-MooseX-Util
     SUBDIR += p5-Mouse
     SUBDIR += p5-MouseX-App-Cmd
     SUBDIR += p5-MouseX-AttributeHelpers
@@ -3649,6 +3656,7 @@
     SUBDIR += p5-UNIVERSAL-ref
     SUBDIR += p5-UNIVERSAL-require
     SUBDIR += p5-UNIVERSAL-which
+    SUBDIR += p5-Util-Any
     SUBDIR += p5-UUID
     SUBDIR += p5-UUID-Random
     SUBDIR += p5-UUID-Random-Patch-UseMRS
@@ -4051,6 +4059,7 @@
     SUBDIR += picp
     SUBDIR += picprog
     SUBDIR += pig
+    SUBDIR += pijul
     SUBDIR += piklab
     SUBDIR += pinba_engine
     SUBDIR += pipestatus
@@ -4228,8 +4237,8 @@
     SUBDIR += py-asyncio
     SUBDIR += py-atomiclong
     SUBDIR += py-atomicwrites
-    SUBDIR += py-attrs
     SUBDIR += py-atpublic
+    SUBDIR += py-attrs
     SUBDIR += py-automaton
     SUBDIR += py-avro
     SUBDIR += py-babel
@@ -4254,6 +4263,7 @@
     SUBDIR += py-boto
     SUBDIR += py-botocore
     SUBDIR += py-bsd
+    SUBDIR += py-buildbot-grid-view
     SUBDIR += py-cached-property
     SUBDIR += py-cachetools
     SUBDIR += py-calendar
@@ -4321,6 +4331,7 @@
     SUBDIR += py-darcsver
     SUBDIR += py-darts.util.lru
     SUBDIR += py-dateutil
+    SUBDIR += py-dateutils
     SUBDIR += py-dbus
     SUBDIR += py-ddt
     SUBDIR += py-debtcollector
@@ -4425,6 +4436,7 @@
     SUBDIR += py-gobject
     SUBDIR += py-gobject3
     SUBDIR += py-google-apputils
+    SUBDIR += py-googleapis-common-protos
     SUBDIR += py-grab
     SUBDIR += py-greenlet
     SUBDIR += py-grizzled
@@ -4623,6 +4635,7 @@
     SUBDIR += py-phonenumbers
     SUBDIR += py-phply
     SUBDIR += py-phpserialize
+    SUBDIR += py-pid
     SUBDIR += py-pika
     SUBDIR += py-pika-pool
     SUBDIR += py-pinocchio
@@ -4707,6 +4720,7 @@
     SUBDIR += py-pytest-asyncio
     SUBDIR += py-pytest-cache
     SUBDIR += py-pytest-capturelog
+    SUBDIR += py-pytest-cov
     SUBDIR += py-pytest-django
     SUBDIR += py-pytest-localserver
     SUBDIR += py-pytest-mock
@@ -4848,6 +4862,7 @@
     SUBDIR += py-streamparse
     SUBDIR += py-structlog
     SUBDIR += py-stsci.distutils
+    SUBDIR += py-subprocess32
     SUBDIR += py-subversion
     SUBDIR += py-subvertpy
     SUBDIR += py-sure
@@ -4867,6 +4882,7 @@
     SUBDIR += py-terminable_thread
     SUBDIR += py-termstyle
     SUBDIR += py-testgears
+    SUBDIR += py-testinfra
     SUBDIR += py-testoob
     SUBDIR += py-testpath
     SUBDIR += py-testtools
@@ -4894,10 +4910,6 @@
     SUBDIR += py-twilio
     SUBDIR += py-twine
     SUBDIR += py-twisted
-    SUBDIR += py-twisted152
-    SUBDIR += py-twistedCore
-    SUBDIR += py-twistedFlow
-    SUBDIR += py-twistedRunner
     SUBDIR += py-txaio
     SUBDIR += py-typed-ast
     SUBDIR += py-typing
@@ -4920,8 +4932,8 @@
     SUBDIR += py-vcrpy
     SUBDIR += py-vcversioner
     SUBDIR += py-venusian
-    SUBDIR += py-versiontools
     SUBDIR += py-verboselogs
+    SUBDIR += py-versiontools
     SUBDIR += py-virtualenv
     SUBDIR += py-virtualenv-clone
     SUBDIR += py-virtualenvwrapper
@@ -5315,6 +5327,7 @@
     SUBDIR += rubygem-bones
     SUBDIR += rubygem-bootsnap
     SUBDIR += rubygem-bosh-template
+    SUBDIR += rubygem-bootstrap_form
     SUBDIR += rubygem-bosh_common
     SUBDIR += rubygem-bson
     SUBDIR += rubygem-buftok
@@ -5366,6 +5379,8 @@
     SUBDIR += rubygem-cri
     SUBDIR += rubygem-cucumber
     SUBDIR += rubygem-cucumber-core
+    SUBDIR += rubygem-cucumber-expressions
+    SUBDIR += rubygem-cucumber-tag_expressions
     SUBDIR += rubygem-cucumber-wire
     SUBDIR += rubygem-curses
     SUBDIR += rubygem-cyoi
@@ -5473,6 +5488,7 @@
     SUBDIR += rubygem-grape-route-helpers
     SUBDIR += rubygem-grape-swagger
     SUBDIR += rubygem-grape0
+    SUBDIR += rubygem-grape_logging
     SUBDIR += rubygem-grit
     SUBDIR += rubygem-guess_html_encoding
     SUBDIR += rubygem-gyoku
@@ -5652,6 +5668,7 @@
     SUBDIR += rubygem-rails-deprecated_sanitizer-rails5
     SUBDIR += rubygem-rails-deprecated_sanitizer-rails50
     SUBDIR += rubygem-rails-i18n
+    SUBDIR += rubygem-rails-i18n-4
     SUBDIR += rubygem-rails-i18n-rails50
     SUBDIR += rubygem-rails-observers
     SUBDIR += rubygem-rainbow
@@ -5678,6 +5695,7 @@
     SUBDIR += rubygem-redis-activesupport-rails50
     SUBDIR += rubygem-redis-store
     SUBDIR += rubygem-redmine_plugin_support
+    SUBDIR += rubygem-reentrant_flock
     SUBDIR += rubygem-ref
     SUBDIR += rubygem-request_store
     SUBDIR += rubygem-require_all
@@ -5834,6 +5852,7 @@
     SUBDIR += rubygem-will_paginate
     SUBDIR += rubygem-windows_error
     SUBDIR += rubygem-wmi-lite
+    SUBDIR += rubygem-xdg
     SUBDIR += rubygem-xpath
     SUBDIR += rubygem-yajl-ruby
     SUBDIR += rubygem-yui-compressor
@@ -5992,6 +6011,7 @@
     SUBDIR += tnt
     SUBDIR += toh
     SUBDIR += tokamak
+    SUBDIR += tokei
     SUBDIR += tortoisehg
     SUBDIR += tpasm
     SUBDIR += tr-eric6
@@ -6029,8 +6049,6 @@
     SUBDIR += violet
     SUBDIR += visualparadigm
     SUBDIR += vstr
-    SUBDIR += vtable-dumper
-    SUBDIR += vtcl
     SUBDIR += vxlog
     SUBDIR += wand-libconfig
     SUBDIR += wandio
@@ -6054,6 +6072,7 @@
     SUBDIR += xtl
     SUBDIR += xtoolchain-llvm-devel
     SUBDIR += xtoolchain-llvm40
+    SUBDIR += xtoolchain-llvm50
     SUBDIR += xwpe
     SUBDIR += xxgdb
     SUBDIR += xxhash

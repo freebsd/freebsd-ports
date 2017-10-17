@@ -1,0 +1,9 @@
+The sandsifter audits x86 processors for hidden instructions and 
+hardware bugs, by systematically generating machine code to search
+through a processor's instruction set, and monitoring execution for
+anomalies. Sandsifter has uncovered secret processor instructions from
+every major vendor; ubiquitous software bugs in disassemblers,
+assemblers, and emulators; flaws in enterprise hypervisors; and both
+benign and security-critical hardware bugs in x86 chips.
+
+WWW: https://github.com/xoreaxeaxeax/sandsifter

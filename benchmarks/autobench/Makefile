@@ -5,8 +5,7 @@ PORTNAME=	autobench
 PORTVERSION=	2.1.2
 PORTREVISION=	9
 CATEGORIES=	benchmarks www
-MASTER_SITES=	http://www.xenoclast.org/autobench/downloads/ \
-		http://www.sfr-fresh.com/unix/privat/
+MASTER_SITES=	http://www.xenoclast.org/autobench/downloads/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Automating the process of benchmarking a web server

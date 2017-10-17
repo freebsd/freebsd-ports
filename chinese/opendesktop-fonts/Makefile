@@ -5,8 +5,7 @@ PORTNAME=	opendesktop-fonts
 PORTVERSION=	1.4.2
 PORTREVISION=	5
 CATEGORIES=	chinese x11-fonts
-MASTER_SITES?=	ftp://ftp.opendesktop.org.tw/odp/ODOFonts/OpenFonts/ \
-		LOCAL/chinsan/fonts
+MASTER_SITES?=	LOCAL/chinsan/fonts
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ming and Kai face of OpenDesktop fonts

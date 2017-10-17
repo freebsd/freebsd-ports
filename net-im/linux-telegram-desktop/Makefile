@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	telegram-desktop
-PORTVERSION=	1.1.7
+PORTVERSION=	1.1.23
 CATEGORIES=	net-im linux
-MASTER_SITES=	https://updates.tdesktop.com/tlinux32/ \
-		http://freebsd.nsu.ru/distfiles/
+MASTER_SITES=	https://updates.tdesktop.com/tlinux32/
 PKGNAMEPREFIX=	linux-
 DISTNAME=	tsetup32.${PORTVERSION}
 
@@ -17,6 +16,7 @@ LICENSE=	GPLv3
 USES=		linux:c7 tar:xz
 USE_LINUX=	alsalib alsa-plugins-oss dbuslibs dri expat gtk2 xorglibs
 NO_BUILD=	yes
+RUN_DEPENDS=	dbus-launch:devel/dbus
 
 WRKSRC=		${WRKDIR}/Telegram
 TDESKTOPDIR=	lib/telegram-desktop

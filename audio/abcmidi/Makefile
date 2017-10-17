@@ -10,6 +10,8 @@ DISTNAME=	abcMIDI-${DISTVERSION:S/-/./g}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convert abc music files to MIDI and PostScript
 
+BROKEN=		No public distfiles
+
 LICENSE=	GPLv2
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

@@ -3,7 +3,7 @@
 
 PORTNAME=	ppminfo
 PORTVERSION=	0.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.vanheusden.com/ppminfo/ CENKES
 
@@ -12,10 +12,9 @@ COMMENT=	Shows details of a ppm file
 
 LIB_DEPENDS=	libnetpbm.so:graphics/netpbm
 
-USES=		ncurses tar:tgz
+USES=		localbase:ldflags ncurses tar:tgz
 PLIST_FILES=	bin/${PORTNAME}
-CFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+CFLAGS+=	-I${LOCALBASE}/include/netpbm
 
 post-patch:
 	@${REINPLACE_CMD} 's|min(|MIN(|;s|max(|MAX(|' ${WRKSRC}/pi.c

@@ -52,9 +52,9 @@ GALLIUM_DRIVERS+=	SVGA
 . if ${OPSYS} == FreeBSD && ${OSVERSION} < 1100000
 EXTRA_PATCHES+=	${PATCHDIR}/extra-src_mesa_drivers_dri_i965_intel__screen.c
 . endif
-.elif ${ARCH} == armv6 || ${ARCH} == aarch64
+.elif ${ARCH} == aarch64 || ${ARCH} == armv6 || ${ARCH} == armv7
 GALLIUM_DRIVERS+=	FREEDRENO VC4
-. if ${ARCH} == armv6
+. if ${ARCH} == armv6 || ${ARCH} == armv7
 EXTRA_PATCHES+=	${PATCHDIR}/extra-src_gallium_drivers_vc4_Makefile.in
 . endif
 .endif

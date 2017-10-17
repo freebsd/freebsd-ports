@@ -1,8 +1,10 @@
 bin/lfe
 bin/lfec
+bin/lfedoc
 bin/lfescript
 lib/erlang/lib/lfe-%%VERSION%%/bin/lfe
 lib/erlang/lib/lfe-%%VERSION%%/bin/lfec
+lib/erlang/lib/lfe-%%VERSION%%/bin/lfedoc
 lib/erlang/lib/lfe-%%VERSION%%/bin/lfescript
 lib/erlang/lib/lfe-%%VERSION%%/ebin/cl.beam
 lib/erlang/lib/lfe-%%VERSION%%/ebin/clj.beam
@@ -17,6 +19,7 @@ lib/erlang/lib/lfe-%%VERSION%%/ebin/lfe_env.beam
 lib/erlang/lib/lfe-%%VERSION%%/ebin/lfe_eval.beam
 lib/erlang/lib/lfe-%%VERSION%%/ebin/lfe_gen.beam
 lib/erlang/lib/lfe-%%VERSION%%/ebin/lfe_init.beam
+lib/erlang/lib/lfe-%%VERSION%%/ebin/lfe_internal.beam
 lib/erlang/lib/lfe-%%VERSION%%/ebin/lfe_io.beam
 lib/erlang/lib/lfe-%%VERSION%%/ebin/lfe_io_format.beam
 lib/erlang/lib/lfe-%%VERSION%%/ebin/lfe_io_pretty.beam
@@ -34,6 +37,7 @@ lib/erlang/lib/lfe-%%VERSION%%/ebin/lfe_qlc.beam
 lib/erlang/lib/lfe-%%VERSION%%/ebin/lfe_scan.beam
 lib/erlang/lib/lfe-%%VERSION%%/ebin/lfe_shell.beam
 lib/erlang/lib/lfe-%%VERSION%%/ebin/lfe_trans.beam
+lib/erlang/lib/lfe-%%VERSION%%/ebin/lfe_types.beam
 lib/erlang/lib/lfe-%%VERSION%%/ebin/lfescript.beam
 lib/erlang/lib/lfe-%%VERSION%%/include/cl.lfe
 lib/erlang/lib/lfe-%%VERSION%%/include/clj.lfe
@@ -56,6 +60,7 @@ lib/erlang/lib/lfe-%%VERSION%%/src/lfe_env.erl
 lib/erlang/lib/lfe-%%VERSION%%/src/lfe_eval.erl
 lib/erlang/lib/lfe-%%VERSION%%/src/lfe_gen.erl
 lib/erlang/lib/lfe-%%VERSION%%/src/lfe_init.erl
+lib/erlang/lib/lfe-%%VERSION%%/src/lfe_internal.erl
 lib/erlang/lib/lfe-%%VERSION%%/src/lfe_io.erl
 lib/erlang/lib/lfe-%%VERSION%%/src/lfe_io_format.erl
 lib/erlang/lib/lfe-%%VERSION%%/src/lfe_io_pretty.erl
@@ -75,4 +80,18 @@ lib/erlang/lib/lfe-%%VERSION%%/src/lfe_qlc.erl
 lib/erlang/lib/lfe-%%VERSION%%/src/lfe_scan.xrl
 lib/erlang/lib/lfe-%%VERSION%%/src/lfe_shell.erl
 lib/erlang/lib/lfe-%%VERSION%%/src/lfe_trans.erl
+lib/erlang/lib/lfe-%%VERSION%%/src/lfe_types.erl
 lib/erlang/lib/lfe-%%VERSION%%/src/lfescript.erl
+man/man1/lfe.1.gz
+man/man1/lfescript.1.gz
+man/man3/lfe_bits.3.gz
+man/man3/lfe_cl.3.gz
+man/man3/lfe_clj.3.gz
+man/man3/lfe_comp.3.gz
+man/man3/lfe_doc.3.gz
+man/man3/lfe_gen.3.gz
+man/man3/lfe_io.3.gz
+man/man3/lfe_lib.3.gz
+man/man3/lfe_macro.3.gz
+man/man7/lfe_guide.7.gz
+man/man7/lfe_types.7.gz

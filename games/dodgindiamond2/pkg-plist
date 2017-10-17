@@ -1,18 +1,18 @@
 @(,games,2755) bin/dd2
 @sample(,games,664) /var/games/dd2-hiscore.sample
 @sample etc/dd2.cfg.sample
-share/dd2/bgm1.xm
-share/dd2/bgm2.xm
-share/dd2/efx1.wav
-share/dd2/efx2.wav
-share/dd2/efx3.wav
-share/dd2/efx4.wav
-share/dd2/efx5.wav
-share/dd2/efx6.wav
-share/dd2/efx7.wav
-share/dd2/efx8.wav
-share/dd2/game.act
-share/dd2/gfx.bmp
+%%DATADIR%%/bgm1.xm
+%%DATADIR%%/bgm2.xm
+%%DATADIR%%/efx1.wav
+%%DATADIR%%/efx2.wav
+%%DATADIR%%/efx3.wav
+%%DATADIR%%/efx4.wav
+%%DATADIR%%/efx5.wav
+%%DATADIR%%/efx6.wav
+%%DATADIR%%/efx7.wav
+%%DATADIR%%/efx8.wav
+%%DATADIR%%/game.act
+%%DATADIR%%/gfx.bmp
 %%PORTDOCS%%share/doc/dd2/AUTHORS
 %%PORTDOCS%%share/doc/dd2/ChangeLog
 %%PORTDOCS%%share/doc/dd2/NEWS

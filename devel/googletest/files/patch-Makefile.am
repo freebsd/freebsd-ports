@@ -1,6 +1,6 @@
 Move custom headers into their own directory
 
---- Makefile.am.orig	2016-11-03 20:36:28 UTC
+--- Makefile.am.orig	2017-09-23 23:21:02 UTC
 +++ Makefile.am
 @@ -208,7 +208,10 @@ pkginclude_internal_HEADERS = \
    include/gtest/internal/gtest-port-arch.h \

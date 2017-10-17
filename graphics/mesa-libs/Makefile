@@ -14,6 +14,7 @@ OPTIONS_DEFINE=	WAYLAND
 OPTIONS_SUB=	yes
 
 WAYLAND_DESC=		Enable support for the Wayland platform in EGL
+WAYLAND_BUILD_DEPENDS=	wayland-protocols>=1.8:graphics/wayland-protocols
 WAYLAND_LIB_DEPENDS=	libwayland-client.so:graphics/wayland \
 			libwayland-server.so:graphics/wayland
 
@@ -42,7 +43,7 @@ MESA_BUILD_WRKSRC=	src/mapi
 MESA_INSTALL_WRKSRC=	src/mapi
 
 .if ${PORT_OPTIONS:MWAYLAND}
-MESA_BUILD_WRKSRC+=	src/egl/wayland/wayland-drm src/egl/wayland/wayland-egl
+MESA_BUILD_WRKSRC+=	src/util src/egl/wayland/wayland-drm src/egl/wayland/wayland-egl
 MESA_INSTALL_WRKSRC+=	src/egl/wayland/wayland-egl
 .endif
 

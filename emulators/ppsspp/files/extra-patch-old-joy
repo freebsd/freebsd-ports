@@ -7,10 +7,11 @@ https://github.com/hrydgard/ppsspp/commit/182b9e0fdae3
 https://github.com/hrydgard/ppsspp/commit/d6b81236626f
 https://github.com/hrydgard/ppsspp/commit/b058b987ad0f
 https://github.com/hrydgard/ppsspp/commit/1b699363ca4d
+https://github.com/hrydgard/ppsspp/commit/ac0052c6af92
 
---- SDL/SDLJoystick.cpp.orig	2017-03-30 12:14:27 UTC
+--- SDL/SDLJoystick.cpp.orig	2017-10-04 19:26:40 UTC
 +++ SDL/SDLJoystick.cpp
-@@ -1,12 +1,7 @@
+@@ -1,13 +1,8 @@
  #include "SDL/SDLJoystick.h"
  #include "Core/Config.h"
 -#include "Common/FileUtil.h"
@@ -18,18 +19,20 @@ https://github.com/hrydgard/ppsspp/commit/1b699363ca4d
  
  #include <iostream>
 -#include <string>
--
--using namespace std;
  
+-using namespace std;
+-
  static int SDLJoystickEventHandlerWrapper(void* userdata, SDL_Event* event)
  {
-@@ -17,65 +12,32 @@ static int SDLJoystickEventHandlerWrappe
+ 	static_cast<SDLJoystick *>(userdata)->ProcessInput(*event);
+@@ -17,79 +12,30 @@ static int SDLJoystickEventHandlerWrapper(void* userda
  SDLJoystick::SDLJoystick(bool init_SDL ) : registeredAsEventHandler(false) {
  	SDL_SetHint(SDL_HINT_JOYSTICK_ALLOW_BACKGROUND_EVENTS, "1");
  	if (init_SDL) {
 -		SDL_Init(SDL_INIT_JOYSTICK | SDL_INIT_VIDEO | SDL_INIT_GAMECONTROLLER);
--	}
--
++		SDL_Init(SDL_INIT_JOYSTICK | SDL_INIT_VIDEO);
+ 	}
+ 
 -	const char *dbPath = "gamecontrollerdb.txt";
 -	cout << "loading control pad mappings from " << dbPath << ": ";
 -
@@ -44,52 +47,63 @@ https://github.com/hrydgard/ppsspp/commit/1b699363ca4d
 -		delete[] mappingData;
 -	} else {
 -		cout << "gamecontrollerdb.txt missing" << endl;
-+		SDL_Init(SDL_INIT_JOYSTICK | SDL_INIT_VIDEO);
- 	}
+-	}
 -	cout << "SUCCESS!" << endl;
 -	setUpControllers();
 -}
- 
+-
 -void SDLJoystick::setUpControllers() {
  	int numjoys = SDL_NumJoysticks();
 +	SDL_JoystickEventState(SDL_ENABLE);
  	for (int i = 0; i < numjoys; i++) {
 -		setUpController(i);
--	}
--	if (controllers.size() > 0) {
--		cout << "pad 1 has been assigned to control pad: " << SDL_GameControllerName(controllers.front()) << endl;
 +		joys.push_back(SDL_JoystickOpen(i));
 +//		printf("Initialized joystick %d: %s",i,SDL_JoystickNameForIndex(i));
 +		if(strstr(SDL_JoystickNameForIndex(i),"PLAYSTATION(R)3 Controller"))
 +			g_Config.bPS3Controller = true;
  	}
+-	if (controllers.size() > 0) {
+-		cout << "pad 1 has been assigned to control pad: " << SDL_GameControllerName(controllers.front()) << endl;
+-	}
 -}
  
 -void SDLJoystick::setUpController(int deviceIndex) {
--	if (SDL_IsGameController(deviceIndex)) {
--		SDL_GameController *controller = SDL_GameControllerOpen(deviceIndex);
--		if (controller) {
--			if (SDL_GameControllerGetAttached(controller)) {
--				controllers.push_back(controller);
--				controllerDeviceMap[SDL_JoystickInstanceID(SDL_GameControllerGetJoystick(controller))] = deviceIndex;
--				cout << "found control pad: " << SDL_GameControllerName(controller) << ", loading mapping: ";
--				auto mapping = SDL_GameControllerMapping(controller);
--				if (mapping == NULL) {
--					cout << "FAILED" << endl;
--				} else {
--					cout << "SUCCESS, mapping is:" << endl << mapping << endl;
--				}
+-	if (!SDL_IsGameController(deviceIndex)) {
+-		cout << "Control pad device " << deviceIndex << " not supported by SDL game controller database, attempting to create default mapping..." << endl;
+-		int cbGUID = 33;
+-		char pszGUID[cbGUID];
+-		SDL_Joystick* joystick = SDL_JoystickOpen(deviceIndex);
+-		SDL_JoystickGetGUIDString(SDL_JoystickGetGUID(joystick), pszGUID, cbGUID);
+-		// create default mapping - this is the PS3 dual shock mapping
+-		std::string mapping = string(pszGUID) + "," + string(SDL_JoystickName(joystick)) + ",x:b3,a:b0,b:b1,y:b2,back:b8,guide:b10,start:b9,dpleft:b15,dpdown:b14,dpright:b16,dpup:b13,leftshoulder:b4,lefttrigger:a2,rightshoulder:b6,rightshoulder:b5,righttrigger:a5,leftstick:b7,leftstick:b11,rightstick:b12,leftx:a0,lefty:a1,rightx:a3,righty:a4";
+-		if (SDL_GameControllerAddMapping(mapping.c_str()) == 1){
+-			cout << "Added default mapping ok" << endl;
+-		} else {
+-			cout << "Failed to add default mapping" << endl;
+-		}
+-		SDL_JoystickClose(joystick);
+-	}
+-	SDL_GameController *controller = SDL_GameControllerOpen(deviceIndex);
+-	if (controller) {
+-		if (SDL_GameControllerGetAttached(controller)) {
+-			controllers.push_back(controller);
+-			controllerDeviceMap[SDL_JoystickInstanceID(SDL_GameControllerGetJoystick(controller))] = deviceIndex;
+-			cout << "found control pad: " << SDL_GameControllerName(controller) << ", loading mapping: ";
+-			auto mapping = SDL_GameControllerMapping(controller);
+-			if (mapping == NULL) {
+-				//cout << "FAILED" << endl;
+-				cout << "Could not find mapping in SDL2 controller database" << endl;
 -			} else {
--				SDL_GameControllerClose(controller);
+-				cout << "SUCCESS, mapping is:" << endl << mapping << endl;
 -			}
+-		} else {
+-			SDL_GameControllerClose(controller);
 -		}
 -	}
 +        if (g_Config.bPS3Controller)
 +                fillMappingPS3();
 +        else
 +                fillMapping();
-+
-+
  }
  
  SDLJoystick::~SDLJoystick() {
@@ -103,7 +117,7 @@ https://github.com/hrydgard/ppsspp/commit/1b699363ca4d
  	}
  }
  
-@@ -84,107 +46,124 @@ void SDLJoystick::registerEventHandler()
+@@ -98,107 +44,124 @@ void SDLJoystick::registerEventHandler() {
  	registeredAsEventHandler = true;
  }
  
@@ -281,7 +295,8 @@ https://github.com/hrydgard/ppsspp/commit/1b699363ca4d
 +			joys[deviceIndex] = SDL_JoystickOpen(deviceIndex);
 +			SDL_JoystickEventState(SDL_ENABLE);
 +			break;
-+		}
+ 		}
+-		break;
 +
 +	case SDL_JOYDEVICEREMOVED:
 +		{
@@ -291,8 +306,7 @@ https://github.com/hrydgard/ppsspp/commit/1b699363ca4d
 +				joys[deviceIndex] = 0;
 +			}
 +			break;
- 		}
--		break;
++		}
  	}
  }
  
@@ -310,7 +324,7 @@ https://github.com/hrydgard/ppsspp/commit/1b699363ca4d
 -	return it->second;
 +	return -1;
  }
---- SDL/SDLJoystick.h.orig	2017-03-30 12:14:27 UTC
+--- SDL/SDLJoystick.h.orig	2017-10-04 19:26:40 UTC
 +++ SDL/SDLJoystick.h
 @@ -1,9 +1,11 @@
  #pragma once
@@ -324,7 +338,7 @@ https://github.com/hrydgard/ppsspp/commit/1b699363ca4d
  #include "SDL_thread.h"
  #endif
  
-@@ -21,11 +23,119 @@ public:
+@@ -21,11 +23,119 @@ class SDLJoystick{ (public)
  	void ProcessInput(SDL_Event &event);
  
  private:
@@ -450,9 +464,9 @@ https://github.com/hrydgard/ppsspp/commit/1b699363ca4d
 +
 +	int getDeviceIndex(int instanceId);
  };
---- ext/native/base/PCMain.cpp.orig	2017-03-30 12:14:27 UTC
+--- ext/native/base/PCMain.cpp.orig	2017-10-04 19:26:40 UTC
 +++ ext/native/base/PCMain.cpp
-@@ -399,7 +399,7 @@ int main(int argc, char *argv[]) {
+@@ -428,7 +428,7 @@ int main(int argc, char *argv[]) {
  	NativeGetAppInfo(&app_name, &app_name_nice, &landscape, &version);
  
  	bool joystick_enabled = true;

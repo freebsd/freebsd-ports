@@ -11,8 +11,10 @@ MASTER_SITES=	http://cairographics.org/releases/
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Vector graphics library with cross-device output support
 
-LICENSE=	LGPL21 MPL
+LICENSE=	LGPL21 MPL11
 LICENSE_COMB=	dual
+LICENSE_FILE_LGPL21=	${WRKSRC}/COPYING-LGPL-2.1
+LICENSE_FILE_MPL11=	${WRKSRC}/COPYING-MPL-1.1
 
 USES=		tar:xz
 

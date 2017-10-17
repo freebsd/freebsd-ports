@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	html2text
-PORTVERSION=	0.2.0
+PORTVERSION=	0.2.1
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 

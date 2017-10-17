@@ -3,7 +3,7 @@
 
 PORTNAME=	GNUDoku
 PORTVERSION=	0.93
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	games
 MASTER_SITES=	http://offload2.icculus.org:9090/~jcspray/GNUDoku/ \
 		http://mirror.amdmi3.ru/distfiles/

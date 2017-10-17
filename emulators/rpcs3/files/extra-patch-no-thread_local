@@ -1,9 +1,9 @@
 FreeBSD 10.3 lacks __cxa_thread_atexit, so revert
 https://github.com/RPCS3/rpcs3/commit/c1450ad61627
 
---- Utilities/Log.cpp.orig	2017-08-24 18:20:18 UTC
+--- Utilities/Log.cpp.orig	2017-09-19 12:07:07 UTC
 +++ Utilities/Log.cpp
-@@ -246,7 +246,7 @@ void logs::message::broadcast(const char* fmt, const f
+@@ -255,7 +255,7 @@ void logs::message::broadcast(const char* fmt, const f
  	}
  
  	// Get text
@@ -12,16 +12,16 @@ https://github.com/RPCS3/rpcs3/commit/c1450ad61627
  	fmt::raw_append(text, fmt, sup, args);
  	std::string prefix = g_tls_log_prefix();
  
-@@ -266,7 +266,7 @@ void logs::message::broadcast(const char* fmt, const f
+@@ -275,7 +275,7 @@ void logs::message::broadcast(const char* fmt, const f
  			}
  
  			// Store message additionally
--			g_messages.emplace_back(stored_message{*this, stamp, std::move(prefix), text});
-+			g_messages.emplace_back(stored_message{*this, stamp, std::move(prefix), std::move(text)});
+-			get_logger()->messages.emplace_back(stored_message{*this, stamp, std::move(prefix), text});
++			get_logger()->messages.emplace_back(stored_message{*this, stamp, std::move(prefix), std::move(text)});
  		}
  	}
- 	
-@@ -348,7 +348,7 @@ logs::file_listener::file_listener(const std::string& 
+ 
+@@ -405,7 +405,7 @@ logs::file_listener::file_listener(const std::string& 
  
  void logs::file_listener::log(u64 stamp, const logs::message& msg, const std::string& prefix, const std::string& _text)
  {
@@ -30,6 +30,47 @@ https://github.com/RPCS3/rpcs3/commit/c1450ad61627
  
  	// Used character: U+00B7 (Middle Dot)
  	switch (msg.sev)
+--- Utilities/mutex.cpp.orig	2017-10-08 20:37:54 UTC
++++ Utilities/mutex.cpp
+@@ -5,8 +5,10 @@
+ #include <vector>
+ #include <algorithm>
+ 
++#if 0
+ // TLS variable for tracking owned mutexes
+ thread_local std::vector<shared_mutex*> g_tls_locks;
++#endif
+ 
+ void shared_mutex::imp_lock_shared(s64 _old)
+ {
+@@ -258,6 +260,7 @@ bool shared_mutex::try_lock_degrade()
+ 	return m_value.compare_and_swap_test(0, c_one - c_min);
+ }
+ 
++#if 0
+ safe_reader_lock::safe_reader_lock(shared_mutex& mutex)
+ 	: m_mutex(mutex)
+ 	, m_is_owned(false)
+@@ -332,3 +335,4 @@ safe_writer_lock::~safe_writer_lock()
+ 
+ 	// TODO: order locks
+ }
++#endif
+--- Utilities/mutex.h.orig	2017-10-08 20:37:54 UTC
++++ Utilities/mutex.h
+@@ -177,6 +177,7 @@ class writer_lock final (public)
+ 	}
+ };
+ 
++#if 0
+ // Safe reader lock. Can be recursive above other safe locks (reader or writer).
+ class safe_reader_lock final
+ {
+@@ -229,3 +230,4 @@ class safe_writer_lock final (public)
+ 
+ 	~safe_writer_lock();
+ };
++#endif
 --- Utilities/types.h.orig	2017-08-24 18:20:18 UTC
 +++ Utilities/types.h
 @@ -32,6 +32,7 @@

@@ -2,7 +2,7 @@
 
 PORTNAME=	chromaprint
 PORTVERSION=	1.4.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	https://github.com/acoustid/${PORTNAME}/releases/download/v${PORTVERSION}/ \
 		https://bitbucket.org/acoustid/${PORTNAME}/downloads/

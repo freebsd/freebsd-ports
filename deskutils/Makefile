@@ -136,6 +136,15 @@
     SUBDIR += ljclive
     SUBDIR += ljit
     SUBDIR += logjam
+    SUBDIR += lumina-archiver
+    SUBDIR += lumina-calculator
+    SUBDIR += lumina-fileinfo
+    SUBDIR += lumina-fm
+    SUBDIR += lumina-mediaplayer
+    SUBDIR += lumina-notify
+    SUBDIR += lumina-screenshot
+    SUBDIR += lumina-textedit
+    SUBDIR += lumina-xdg-entry
     SUBDIR += mate-notification-daemon
     SUBDIR += mate-utils
     SUBDIR += mdh

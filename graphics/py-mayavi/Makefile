@@ -31,7 +31,7 @@ RUN_DEPENDS=	vtk6>=6.1.0_8:math/vtk6 \
 		${PYTHON_PKGNAMEPREFIX}scimath>=4.1.2:science/py-scimath \
 		${PYTHON_PKGNAMEPREFIX}traitsui>=4.5.1:graphics/py-traitsui
 
-USES=		execinfo python:-2.7 shebangfix tar:bzip2
+USES=		python:-2.7 shebangfix tar:bzip2
 USE_PYTHON=	autoplist distutils
 USE_WX=		2.8+
 WX_COMPS=	python:run

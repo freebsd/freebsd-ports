@@ -1,9 +1,7 @@
-TIMESTAMP = 1484161900
-SHA256 (openssh-7.5p1.tar.gz) = 9846e3c5fab9f0547400b4d2c017992f914222b3fd1f8eee6c7dc6bc5e59f9f0
-SIZE (openssh-7.5p1.tar.gz) = 1510857
+TIMESTAMP = 1507833573
+SHA256 (openssh-7.6p1.tar.gz) = a323caeeddfe145baaa0db16e98d784b1fbc7dd436a6bf1f479dfd5cd1d21723
+SIZE (openssh-7.6p1.tar.gz) = 1489788
 SHA256 (openssh-7.2_p1-sctp.patch.gz) = fb67e3e23f39fabf44ef198e3e19527417c75c9352747547448512032365dbfc
 SIZE (openssh-7.2_p1-sctp.patch.gz) = 8501
-SHA256 (openssh-7.5p1+x509-10.1.diff.gz) = e7abe401e7f651779c680491cfefbfcf4f26743202641b2bda934f80bb4464d2
-SIZE (openssh-7.5p1+x509-10.1.diff.gz) = 460721
-SHA256 (openssh-7.4p1-gsskex-all-20141021-debian-rh-20161228.patch.gz) = f77ac434e6914814bc2f16d1581efd74baedaa86f1249a3cee00566d458c5f6b
-SIZE (openssh-7.4p1-gsskex-all-20141021-debian-rh-20161228.patch.gz) = 27091
+SHA256 (openssh-7.6p1+x509-11.0.diff.gz) = bc4175ed8efce14579f10e242b25a23c959b1ff0e63b7c15493503eb654a960e
+SIZE (openssh-7.6p1+x509-11.0.diff.gz) = 440219

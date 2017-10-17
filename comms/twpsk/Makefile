@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	twpsk
-PORTVERSION=	4.2
+PORTVERSION=	4.3
 CATEGORIES=	comms hamradio
 MASTER_SITES=	http://wa0eir.bcts.info/src/
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src

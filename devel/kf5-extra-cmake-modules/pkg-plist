@@ -30,6 +30,7 @@ share/ECM/kde-modules/KDEPackageAppTemplates.cmake
 share/ECM/kde-modules/appstreamtest.cmake
 share/ECM/modules/ECMAddAppIcon.cmake
 share/ECM/modules/ECMAddQch.cmake
+share/ECM/modules/ECMFindQMLModule.cmake.in
 share/ECM/modules/ECMQchDoxygen.config.in
 share/ECM/modules/ECMQchDoxygenLayout.xml
 share/ECM/modules/ECMAddTests.cmake
@@ -47,6 +48,7 @@ share/ECM/modules/ECMMarkNonGuiExecutable.cmake
 share/ECM/modules/ECMOptionalAddSubdirectory.cmake
 share/ECM/modules/ECMPackageConfigHelpers.cmake
 share/ECM/modules/ECMPoQmTools.cmake
+share/ECM/modules/ECMQMLModules.cmake
 share/ECM/modules/ECMQmLoader.cpp.in
 share/ECM/modules/ECMQtDeclareLoggingCategory.cmake
 share/ECM/modules/ECMQtDeclareLoggingCategory.cpp.in

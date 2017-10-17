@@ -1,7 +1,7 @@
---- chrome/app/chrome_main_delegate.cc.orig	2017-06-05 19:03:01 UTC
-+++ chrome/app/chrome_main_delegate.cc
-@@ -89,7 +89,7 @@
- #include "chrome/app/chrome_crash_reporter_client.h"
+--- chrome/app/chrome_main_delegate.cc.orig	2017-09-05 21:05:12.000000000 +0200
++++ chrome/app/chrome_main_delegate.cc	2017-09-06 17:38:27.122172000 +0200
+@@ -94,7 +94,7 @@
+ #include "chrome/app/shutdown_signal_handlers_posix.h"
  #endif
  
 -#if !defined(DISABLE_NACL) && defined(OS_LINUX)
@@ -9,13 +9,8 @@
  #include "components/nacl/common/nacl_paths.h"
  #include "components/nacl/zygote/nacl_fork_delegate_linux.h"
  #endif
-@@ -117,11 +117,11 @@
- #include "ui/base/x/x11_util.h"  // nogncheck
- #endif
- 
--#if defined(OS_POSIX) && !defined(OS_MACOSX)
-+#if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_BSD)
- #include "components/crash/content/app/breakpad_linux.h"
+@@ -140,7 +140,7 @@
+ #include "v8/include/v8.h"
  #endif
  
 -#if defined(OS_LINUX)
@@ -23,7 +18,7 @@
  #include "base/environment.h"
  #endif
  
-@@ -164,7 +164,7 @@ base::LazyInstance<ChromeContentBrowserClient>::Destru
+@@ -183,7 +183,7 @@
      g_chrome_content_browser_client = LAZY_INSTANCE_INITIALIZER;
  #endif
  
@@ -32,7 +27,7 @@
  base::LazyInstance<ChromeCrashReporterClient>::Leaky g_chrome_crash_client =
      LAZY_INSTANCE_INITIALIZER;
  #endif
-@@ -284,7 +284,7 @@ void AdjustLinuxOOMScore(const std::string& process_ty
+@@ -309,7 +309,7 @@
  // and resources loaded.
  bool SubprocessNeedsResourceBundle(const std::string& process_type) {
    return
@@ -41,7 +36,7 @@
        // The zygote process opens the resources for the renderers.
        process_type == switches::kZygoteProcess ||
  #endif
-@@ -336,7 +336,7 @@ void HandleHelpSwitches(const base::CommandLine& comma
+@@ -361,7 +361,7 @@
  }
  #endif
  
@@ -50,7 +45,7 @@
  void SIGTERMProfilingShutdown(int signal) {
    Profiling::Stop();
    struct sigaction sigact;
-@@ -403,7 +403,7 @@ void InitializeUserDataDir(base::CommandLine* command_
+@@ -428,7 +428,7 @@
    std::string process_type =
        command_line->GetSwitchValueASCII(switches::kProcessType);
  
@@ -59,7 +54,7 @@
    // On Linux, Chrome does not support running multiple copies under different
    // DISPLAYs, so the profile directory can be specified in the environment to
    // support the virtual desktop use-case.
-@@ -596,7 +596,7 @@ bool ChromeMainDelegate::BasicStartupComplete(int* exi
+@@ -630,7 +630,7 @@
        std::string format_str =
            command_line.GetSwitchValueASCII(switches::kDiagnosticsFormat);
        if (format_str == "machine") {
@@ -68,7 +63,7 @@
        } else if (format_str == "log") {
          format = diagnostics::DiagnosticsWriter::LOG;
        } else {
-@@ -646,7 +646,7 @@ bool ChromeMainDelegate::BasicStartupComplete(int* exi
+@@ -680,7 +680,7 @@
        std::string format_str =
            command_line.GetSwitchValueASCII(switches::kDiagnosticsFormat);
        if (format_str == "machine") {
@@ -77,7 +72,7 @@
        } else if (format_str == "human") {
          format = diagnostics::DiagnosticsWriter::HUMAN;
        } else {
-@@ -758,7 +758,7 @@ void ChromeMainDelegate::PreSandboxStartup() {
+@@ -792,7 +792,7 @@
    std::string process_type =
        command_line.GetSwitchValueASCII(switches::kProcessType);
  
@@ -86,7 +81,7 @@
    crash_reporter::SetCrashReporterClient(g_chrome_crash_client.Pointer());
  #endif
  
-@@ -888,7 +888,7 @@ void ChromeMainDelegate::PreSandboxStartup() {
+@@ -932,7 +932,7 @@
    chrome::InitializePDF();
  #endif
  
@@ -95,7 +90,7 @@
    // Zygote needs to call InitCrashReporter() in RunZygote().
    if (process_type != switches::kZygoteProcess) {
  #if defined(OS_ANDROID)
-@@ -903,7 +903,7 @@ void ChromeMainDelegate::PreSandboxStartup() {
+@@ -947,7 +947,7 @@
      breakpad::InitCrashReporter(process_type);
  #endif  // defined(OS_ANDROID)
    }
@@ -104,7 +99,7 @@
  
    // After all the platform Breakpads have been initialized, store the command
    // line for crash reporting.
-@@ -1009,7 +1009,7 @@ bool ChromeMainDelegate::DelaySandboxInitialization(
+@@ -1053,7 +1053,7 @@
  #endif
    return process_type == switches::kRelauncherProcess;
  }

@@ -13,7 +13,7 @@ DISTNAME=	MIME-tools-${PORTVERSION}
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Set of perl5 modules for MIME
 
-LICENSE=	ART10 GPLv1
+LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Convert-BinHex>=0:converters/p5-Convert-BinHex \

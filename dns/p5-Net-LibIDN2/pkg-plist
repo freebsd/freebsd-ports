@@ -1,0 +1,3 @@
+%%SITE_ARCH%%/Net/LibIDN2.pm
+%%SITE_ARCH%%/auto/Net/LibIDN2/LibIDN2.so
+%%PERL5_MAN3%%/Net::LibIDN2.3.gz

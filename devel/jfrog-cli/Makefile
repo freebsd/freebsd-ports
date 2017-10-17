@@ -15,8 +15,6 @@ GH_PROJECT=	jfrog-cli-go
 
 PLIST_FILES=	bin/jfrog
 
-STRIP=		# stripping can break go binaries
-
 post-extract:
 	@${MV} ${WRKSRC}/vendor/ ${WRKSRC}/src
 	@${MKDIR} ${WRKSRC}/src/github.com/jfrogdev/jfrog-cli-go

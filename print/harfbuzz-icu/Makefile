@@ -1,5 +1,6 @@
 # $FreeBSD$
 
+PORTREVISION=	2
 PKGNAMESUFFIX=	-icu
 
 COMMENT=	Harfbuzz ICU support

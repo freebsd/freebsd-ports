@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dynamips
-PORTVERSION=	0.2.16
+PORTVERSION=	0.2.17
 DISTVERSIONPREFIX=	v
 CATEGORIES=	emulators
 PKGNAMESUFFIX=	-community
@@ -24,12 +24,13 @@ CONFLICTS=	dynamips-[0-9]* dynamips-devel-[0-9]*
 USES=		cmake
 USE_GITHUB=	yes
 
+OPTIONS_DEFINE=	DOCS
+
 MAKE_JOBS_UNSAFE=	yes
 
 GH_ACCOUNT=	GNS3
 
-MAKE_ENV=	DYNAMIPS_CODE=${DYNAMIPS_CODE} \
-		DYNAMIPS_ARCH=${DYNAMIPS_ARCH}
+CMAKE_ARGS+=	-DDYNAMIPS_CODE=${DYNAMIPS_CODE} -DDYNAMIPS_ARCH=${DYNAMIPS_ARCH}
 
 .include <bsd.port.pre.mk>
 
@@ -52,6 +53,7 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/man/nvram_export.1 ${STAGEDIR}${MANPREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/man/hypervisor_mode.7 ${STAGEDIR}${MANPREFIX}/man/man7
 
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for file in README.md README.hypervisor RELEASE-NOTES ChangeLog MAINTAINERS
 	${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${DOCSDIR}

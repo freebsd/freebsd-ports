@@ -11,7 +11,7 @@ PKGNAMEPREFIX=		p5-
 MAINTAINER=		fullermd@over-yonder.net
 COMMENT=	Implementation of the Wiki Creole markup language
 
-LICENSE=	ART10 GPLv1
+LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 USES=		perl5

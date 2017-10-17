@@ -5,7 +5,7 @@ PORTNAME=	libbpm
 PORTVERSION=	0.3
 PORTREVISION=	1
 CATEGORIES=	audio
-MASTER_SITES=	http://www.hep.ucl.ac.uk/~bino/libbpm/dist/ http://levsha.me/ports/distfiles/
+MASTER_SITES=	http://www.hep.ucl.ac.uk/~bino/libbpm/dist/
 
 MAINTAINER=	i@levsha.me
 COMMENT=	C-library contains low level beam position monitor signal processing

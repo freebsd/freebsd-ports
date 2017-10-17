@@ -2,6 +2,7 @@
 
 PORTNAME=	coq
 PORTVERSION=	8.6
+PORTREVISION=	1
 PORTEPOCH=	3
 CATEGORIES=	math
 MASTER_SITES=	http://coq.inria.fr/distrib/V${PORTVERSION}/files/ \

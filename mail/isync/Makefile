@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	isync
-PORTVERSION=	1.2.2
+PORTVERSION=	1.3.0
 CATEGORIES=	mail
 MASTER_SITES=	SF
 
@@ -13,7 +13,8 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2
 
-USES=		alias bdb cpe ssl
+USES=		alias bdb cpe perl5 ssl
+USE_PERL5=	build
 CPE_VENDOR=	oswald_buddenhagen
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-sasl=${LOCALBASE} \

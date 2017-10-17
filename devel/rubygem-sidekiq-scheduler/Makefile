@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sidekiq-scheduler
-PORTVERSION=	2.1.9
+PORTVERSION=	2.1.10
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 

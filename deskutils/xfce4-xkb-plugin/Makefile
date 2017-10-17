@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	xfce4-xkb-plugin
-PORTVERSION=	0.7.1
+PORTVERSION=	0.8.1
 CATEGORIES=	deskutils xfce
 MASTER_SITES=	XFCE/src/panel-plugins/${PORTNAME}/${PORTVERSION:R}
 
@@ -12,10 +12,15 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libxklavier.so:x11/libxklavier
 
+USES=		gettext gmake libtool pkgconfig tar:bzip2 xfce:gtk3
 GNU_CONFIGURE=	yes
-USES=		gettext pkgconfig gmake xfce tar:bzip2
-USE_GNOME=	gtk20 intltool intlhack librsvg2 libwnck
+USE_GNOME=	gtk30 intltool librsvg2 libwnck3 cairo
 USE_XFCE=	panel
 USE_XORG=	x11
+INSTALL_TARGET=	install-strip
+
+# Downgrade libxklavier
+post-patch:
+	@${REINPLACE_CMD} -e 's|5.4|5.3|g' ${WRKSRC}/configure
 
 .include <bsd.port.mk>

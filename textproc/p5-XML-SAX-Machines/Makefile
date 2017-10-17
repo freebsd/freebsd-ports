@@ -21,11 +21,8 @@ USE_PERL5=	configure
 
 OPTIONS_DEFINE=	EXAMPLES
 
-regression-test: build
-	${MAKE} -C ${WRKSRC} test
-
-post-install:
-		@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-		${INSTALL_SCRIPT} ${WRKSRC}/examples/* ${STAGEDIR}${EXAMPLESDIR}
+post-install-EXAMPLES-on:
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/examples/* ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>

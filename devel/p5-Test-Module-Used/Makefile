@@ -12,7 +12,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	tsucchi@cpan.org
 COMMENT=	Test required module is really used and vice versa
 
-LICENSE=	ART10 GPLv1
+LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 RUN_DEPENDS=	p5-List-MoreUtils>=0.24:lang/p5-List-MoreUtils \

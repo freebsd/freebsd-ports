@@ -2,7 +2,7 @@ bin/solvespace
 include/slvs.h
 lib/libslvs.so
 lib/libslvs.so.1
-lib/libslvs.so.2.2
+lib/libslvs.so.2.3
 share/applications/solvespace.desktop
 share/icons/hicolor/16x16/apps/solvespace.png
 share/icons/hicolor/16x16/mimetypes/application.x-solvespace.png

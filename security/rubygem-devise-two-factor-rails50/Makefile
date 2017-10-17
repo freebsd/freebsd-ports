@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	devise-two-factor
-PORTVERSION=	3.0.0
+PORTVERSION=	3.0.1
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	-rails50

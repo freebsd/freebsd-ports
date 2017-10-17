@@ -316,8 +316,6 @@ lib/dpdk
 %%DATADIR%%/mk/arch/x86_x32/rte.vars.mk
 %%DATADIR%%/mk/exec-env/bsdapp/rte.app.mk
 %%DATADIR%%/mk/exec-env/bsdapp/rte.vars.mk
-%%DATADIR%%/mk/exec-env/bsdapp/rte.vars.mk.bak
-%%DATADIR%%/mk/exec-env/bsdapp/rte.vars.mk.orig
 %%DATADIR%%/mk/exec-env/linuxapp/rte.app.mk
 %%DATADIR%%/mk/exec-env/linuxapp/rte.vars.mk
 %%DATADIR%%/mk/internal/rte.build-post.mk

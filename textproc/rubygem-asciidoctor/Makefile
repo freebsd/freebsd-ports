@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	asciidoctor
-PORTVERSION=	1.5.6
+PORTVERSION=	1.5.6.1
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 

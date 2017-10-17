@@ -10,6 +10,6 @@ DIST=		bad
 
 MASTERDIR=	${.CURDIR}/../../multimedia/gstreamer1-plugins
 
-EXTRA_PATCHES=	${.CURDIR}/files/patch-openjpeg22
+EXTRA_PATCHES=	${.CURDIR}/files/patch-openjpeg23
 
 .include "${MASTERDIR}/Makefile"

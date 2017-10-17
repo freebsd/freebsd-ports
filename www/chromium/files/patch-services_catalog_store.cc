@@ -1,9 +1,10 @@
---- services/catalog/store.cc.orig	2017-06-05 19:03:11 UTC
-+++ services/catalog/store.cc
-@@ -32,4 +32,6 @@ const char Store::kRequiredFilesKey_PlatformValue_Linu
- const char Store::kRequiredFilesKey_PlatformValue_MacOSX[] = "macosx";
- // static
+--- services/catalog/store.cc.orig	2017-09-05 21:05:23.000000000 +0200
++++ services/catalog/store.cc	2017-09-06 21:21:50.819060000 +0200
+@@ -34,5 +34,7 @@
  const char Store::kRequiredFilesKey_PlatformValue_Android[] = "android";
+ // static
+ const char Store::kRequiredFilesKey_PlatformValue_Fuchsia[] = "fuchsia";
 +// static
 +const char Store::kRequiredFilesKey_PlatformValue_FreeBSD[] = "freebsd";
+ 
  }  // namespace catalog

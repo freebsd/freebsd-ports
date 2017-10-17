@@ -323,6 +323,7 @@ share/locale/am/LC_MESSAGES/atril.mo
 share/locale/ar/LC_MESSAGES/atril.mo
 share/locale/as/LC_MESSAGES/atril.mo
 share/locale/ast/LC_MESSAGES/atril.mo
+share/locale/az/LC_MESSAGES/atril.mo
 share/locale/be/LC_MESSAGES/atril.mo
 share/locale/bg/LC_MESSAGES/atril.mo
 share/locale/bn/LC_MESSAGES/atril.mo
@@ -336,6 +337,7 @@ share/locale/cs/LC_MESSAGES/atril.mo
 share/locale/cy/LC_MESSAGES/atril.mo
 share/locale/da/LC_MESSAGES/atril.mo
 share/locale/de/LC_MESSAGES/atril.mo
+share/locale/de_CH/LC_MESSAGES/atril.mo
 share/locale/dz/LC_MESSAGES/atril.mo
 share/locale/el/LC_MESSAGES/atril.mo
 share/locale/en_AU/LC_MESSAGES/atril.mo

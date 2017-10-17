@@ -10,10 +10,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl5 module for SQL parsing and processing
 
-LICENSE=	ART10 GPLv1
+LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 LICENSE_FILE_ART10=	${WRKSRC}/ARTISTIC-1.0
-LICENSE_FILE_GPLv1=	${WRKSRC}/GPL-1
+LICENSE_FILE_GPLv1+ =	${WRKSRC}/GPL-1
 
 BUILD_DEPENDS=	p5-Clone>=0.30:devel/p5-Clone \
 		p5-Module-Runtime>=0:devel/p5-Module-Runtime \

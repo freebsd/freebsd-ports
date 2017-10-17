@@ -1,0 +1,8 @@
+--- qwt.prf.orig	2017-10-06 14:51:04 UTC
++++ qwt.prf
+@@ -34,4 +34,4 @@ else {
+ }   
+ 
+ # QMAKE_RPATHDIR *= $${QWT_INSTALL_LIBS}
+-qwtAddLibrary($${QWT_INSTALL_LIBS}, qwt)
++qwtAddLibrary($${QWT_INSTALL_LIBS}, qwt6)

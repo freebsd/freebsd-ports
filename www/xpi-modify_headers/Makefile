@@ -6,7 +6,7 @@ PORTVERSION=	0.7.1.2b
 DISTVERSIONSUFFIX=	-fx
 CATEGORIES=	www
 
-MAINTAINER=	kamikaze@bsdforen.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Firefox extension to manipulate HTTP headers
 
 XPI_NUM=	967

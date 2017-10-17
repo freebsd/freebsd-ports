@@ -21,10 +21,6 @@ DOXYGEN_IMPLIES=	DOCS
 
 DOXYGEN_BUILD_DEPENDS=	doxygen:devel/doxygen
 
-.include <bsd.port.pre.mk>
+DOXYGEN_MESON_TRUE=	documentation
 
-.if ${PORT_OPTIONS:MDOXYGEN}
-MESON_ARGS+=	-Ddocumentation=true
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

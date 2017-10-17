@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	scandir
-PORTVERSION=	1.5
+PORTVERSION=	1.6
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,11 +12,11 @@ COMMENT=	Fast and featureful directory iterator
 
 LICENSE=	BSD3CLAUSE
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	benhoyt
-
 USES=		python
 USE_PYTHON=	autoplist distutils
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	benhoyt
 
 do-test:
 	${PYTHON_CMD} ${WRKSRC}/test/run_tests.py

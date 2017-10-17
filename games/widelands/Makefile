@@ -3,6 +3,7 @@
 
 PORTNAME=	widelands
 DISTVERSION=	build19
+PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	https://launchpad.net/widelands/${DISTVERSION}/${DISTVERSION}/+download/ \
 		http://mirror.amdmi3.ru/distfiles/
@@ -18,7 +19,7 @@ LIB_DEPENDS=	libpng.so:graphics/png \
 		libicuuc.so:devel/icu \
 		libboost_regex.so:devel/boost-libs
 
-USES=		cmake:outsource compiler:c++11-lib execinfo gettext \
+USES=		cmake:outsource compiler:c++11-lib gettext \
 		tar:bzip2 python:build
 CMAKE_ARGS=	-DWL_INSTALL_BASEDIR="${PREFIX}" \
 		-DWL_INSTALL_DATADIR="${DATADIR}" \

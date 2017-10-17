@@ -3,7 +3,7 @@
 
 PORTNAME=	openomf
 PORTVERSION=	0.6.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	http://www.omf2097.com/pub/files/omf/:data
 DISTFILES+=	omf2097.rar:data

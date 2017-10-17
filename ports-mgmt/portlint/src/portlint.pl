@@ -15,7 +15,7 @@
 # was removed.
 #
 # $FreeBSD$
-# $MCom: portlint/portlint.pl,v 1.424 2017/08/15 12:38:42 jclarke Exp $
+# $MCom: portlint/portlint.pl,v 1.430 2017/10/08 17:56:03 jclarke Exp $
 #
 
 use strict;
@@ -50,7 +50,7 @@ $portdir = '.';
 # version variables
 my $major = 2;
 my $minor = 17;
-my $micro = 12;
+my $micro = 13;
 
 # default setting - for FreeBSD
 my $portsdir = '/usr/ports';
@@ -218,7 +218,7 @@ my $ulineno = -1;
 my $uulineno = -1;
 my @muses = ();
 while (my $mline = <MK>) {
-	if ($uulineno == -1 && $mline =~ /^USE_/) {
+	if ($uulineno == -1 && $mline =~ /^USE_/ && $mline !~ /^USE_GITHUB/) {
 		$uulineno = $.;
 	}
     if ($mline =~ /^USES[?+]?=\s*(.*)/) {
@@ -1104,14 +1104,13 @@ sub check_depends_syntax {
 			my %depmvars = ();
 			foreach my $dv ($m{'dep'}, $m{'dir'}, $m{'tgt'}) {
 				foreach my $mv ($dv =~ /\$\{([^}]+)\}/g) {
-					my $mvar = $1;
-					if (defined($depmvars{$mvar})) {
+					if (defined($depmvars{$mv})) {
 						next;
 					}
-					if (defined($makevar{$mvar})) {
-						$depmvars{$mvar} = $makevar{$mvar};
+					if (defined($makevar{$mv})) {
+						$depmvars{$mv} = $makevar{$mv};
 					} else {
-						$depmvars{$mvar} = &get_makevar($mvar);
+						$depmvars{$mv} = &get_makevar($mv);
 					}
 				}
 			}
@@ -1173,7 +1172,6 @@ sub check_depends_syntax {
 			my %udeps = (
 				'bison' => 'bison',
 				'fmake' => 'fmake',
-				'libexecinfo.so' => 'execinfo',
 			);
 			foreach my $udep (keys %udeps) {
 				if ($m{'dep'} =~ /^$udep/) {
@@ -2969,7 +2967,7 @@ MAINTAINER COMMENT
 	#
 	print "OK: checking fourth section of $file (LICENSE).\n"
 		if ($verbose);
-	$tmp = $sections[$idx];
+	$tmp = $sections[$idx] // '';
 
 	if ($makevar{LICENSE}) {
 		&checkorder('LICENSE', $tmp, $file, qw(
@@ -3020,6 +3018,10 @@ NOT_FOR_ARCHS NOT_FOR_ARCHS_REASON(_\w+)?
 
 	if ($tmp =~ /$brokenpattern/) {
 		$idx++;
+	}
+
+	foreach my $i (@linestocheck) {
+		$tmp =~ s/$i[?+:]?=[^\n]+\n//g;
 	}
 
 	push(@varnames, @linestocheck);
@@ -3388,11 +3390,10 @@ sub checkorder {
 
 sub checkearlier {
 	my($file, $str, @varnames) = @_;
-	my($i);
 
 	$str //= '';
 
-	print "OK: checking items that has to appear earlier.\n" if ($verbose);
+	print "OK: checking items that have to appear earlier.\n" if ($verbose);
 	foreach my $i (@varnames) {
 		if ($str =~ /\n($i)\??=/) {
 			&perror("WARN", $file, -1, "\"$1\" has to appear earlier.");

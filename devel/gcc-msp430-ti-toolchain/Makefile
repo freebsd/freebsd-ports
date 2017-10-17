@@ -11,14 +11,14 @@ MASTER_SITES=	GCC/releases/gcc-${GCC_REL_VERSION}:gcc \
 		SOURCEWARE/newlib:newlib \
 		http://software-dl.ti.com/msp430/msp430_public_sw/mcu/msp430/MSPGCC/${TI_VERSION:S/./_/g}/exports/:ti \
 		http://www.ti.com/lit/ml/slau591${DOC_VERSION}/:docs
-DISTFILES=	gcc-${GCC_REL_VERSION}.tar.bz2:gcc \
+DISTFILES=	gcc-${GCC_REL_VERSION}.tar.xz:gcc \
 		binutils-${BINUTILS_VERSION}.tar.bz2:binutils \
 		gdb-${GDB_VERSION}.tar.gz:gdb \
 		newlib-${NEWLIB_VERSION}.tar.gz:newlib \
 		msp430-gcc-${PATCHSET_VERSION}_source-patches.tar.bz2:ti \
 		msp430-gcc-support-files-${SUPPORT_VERSION}.zip:ti \
 		slau591${DOC_VERSION}.pdf:docs
-EXTRACT_ONLY=	gcc-${GCC_REL_VERSION}.tar.bz2 \
+EXTRACT_ONLY=	gcc-${GCC_REL_VERSION}.tar.xz \
 		binutils-${BINUTILS_VERSION}.tar.bz2 \
 		gdb-${GDB_VERSION}.tar.gz \
 		newlib-${NEWLIB_VERSION}.tar.gz \
@@ -48,16 +48,16 @@ USE_CSTD=	gnu89
 GNU_CONFIGURE=		yes
 GNU_CONFIGURE_PREFIX=	${PREFIX}/${SUBPREFIX}
 
-TI_VERSION=		5.00.00.00
-GCC_REL_VERSION=	6.2.0
-GCC_VERSION=		6.2.1
-SUPPORT_VERSION=	1.198
+TI_VERSION=		5.01.00.00
+GCC_REL_VERSION=	6.4.0
+GCC_VERSION=		6.4.0
+SUPPORT_VERSION=	1.201
 BINUTILS_VERSION=	2.26
 GDB_VERSION=		7.11
 NEWLIB_VERSION=		2.4.0
-PATCHSET_VERSION=	6.2.1.16
+PATCHSET_VERSION=	6.4.0.32
 DOC_VERSION=		c
-RELEASE_DATE=		20170131
+RELEASE_DATE=		20170831
 TARGET=			msp430-elf
 
 CPE_PRODUCT=	gcc

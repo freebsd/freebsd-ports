@@ -14,8 +14,8 @@ LICENSE=	NAIST ICOT
 LICENSE_COMB=	multi
 LICENSE_NAME_NAIST=	NAIST
 LICENSE_NAME_ICOT=	ICOT
-LICENSE_PERMS_NAIST=	${_LICENSE_PERMS_DEFAULT}
-LICENSE_PERMS_ICOT=	${_LICENSE_PERMS_DEFAULT}
+LICENSE_PERMS_NAIST=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+LICENSE_PERMS_ICOT=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 .if empty(PKGNAMESUFFIX)
 LICENSE_TEXT_NAIST=	See https://github.com/taku910/mecab/blob/master/mecab-ipadic/COPYING

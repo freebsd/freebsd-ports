@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	ansifilter
-PORTVERSION=	2.3
+PORTVERSION=	2.8
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.andre-simon.de/zip/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Customizable ANSI Code Converter
 
 LICENSE=	GPLv3+

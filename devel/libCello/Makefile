@@ -13,10 +13,8 @@ COMMENT=	Higher level programming in C
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-USES=		dos2unix execinfo gmake
+USES=		dos2unix gmake
 DOS2UNIX_FILES=	Makefile
-
-CFLAGS+=	${EXECINFO_CPPFLAGS}
 
 post-patch:
 	${REINPLACE_CMD} -E 's| abs\(| labs\(|' ${WRKSRC}/src/*.c

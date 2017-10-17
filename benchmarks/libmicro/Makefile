@@ -4,8 +4,7 @@
 PORTNAME=	libmicro
 PORTVERSION=	0.4.1
 CATEGORIES=	benchmarks
-MASTER_SITES=	http://hub.opensolaris.org/bin/download/Project+libmicro/Source+Archives/ \
-		LOCAL/bdrewery/${PORTNAME}/
+MASTER_SITES=	LOCAL/bdrewery/${PORTNAME}/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Set of utilities to benchmark productivity of system calls

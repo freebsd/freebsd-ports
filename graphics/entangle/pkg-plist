@@ -1,4 +1,6 @@
 bin/entangle
+lib/entangle/plugins/eclipse/eclipse.plugin
+lib/entangle/plugins/eclipse/eclipse.py
 lib/entangle/plugins/photobox/photobox.plugin
 lib/entangle/plugins/photobox/photobox.py
 lib/entangle/plugins/shooter/shooter.plugin
@@ -17,8 +19,10 @@ share/applications/entangle.desktop
 %%DATADIR%%/entangle-camera-picker.ui
 %%DATADIR%%/entangle-camera-support.ui
 %%DATADIR%%/entangle-help-about.ui
-%%DATADIR%%/entangle-image-popup.ui
+%%DATADIR%%/entangle-media-popup.ui
 %%DATADIR%%/entangle-preferences-display.ui
+%%DATADIR%%/plugins/eclipse/schemas/gschemas.compiled
+%%DATADIR%%/plugins/eclipse/schemas/org.entangle-photo.plugins.eclipse.gschema.xml
 %%DATADIR%%/plugins/photobox/schemas/gschemas.compiled
 %%DATADIR%%/plugins/photobox/schemas/org.entangle-photo.plugins.photobox.gschema.xml
 %%DATADIR%%/plugins/shooter/schemas/gschemas.compiled
@@ -52,8 +56,8 @@ share/gtk-doc/html/Entangle/EntangleImage.html
 share/gtk-doc/html/Entangle/EntangleImageDisplay.html
 share/gtk-doc/html/Entangle/EntangleImageHistogram.html
 share/gtk-doc/html/Entangle/EntangleImageLoader.html
-share/gtk-doc/html/Entangle/EntangleImagePopup.html
-share/gtk-doc/html/Entangle/EntangleImageStatusbar.html
+share/gtk-doc/html/Entangle/EntangleMediaPopup.html
+share/gtk-doc/html/Entangle/EntangleMediaStatusbar.html
 share/gtk-doc/html/Entangle/EntanglePixbufLoader.html
 share/gtk-doc/html/Entangle/EntanglePreferences.html
 share/gtk-doc/html/Entangle/EntanglePreferencesDisplay.html
@@ -67,7 +71,6 @@ share/gtk-doc/html/Entangle/ch01.html
 share/gtk-doc/html/Entangle/ch02.html
 share/gtk-doc/html/Entangle/home.png
 share/gtk-doc/html/Entangle/index.html
-share/gtk-doc/html/Entangle/index.sgml
 share/gtk-doc/html/Entangle/left-insensitive.png
 share/gtk-doc/html/Entangle/left.png
 share/gtk-doc/html/Entangle/object-tree.html

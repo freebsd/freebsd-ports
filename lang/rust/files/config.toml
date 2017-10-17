@@ -1,5 +1,11 @@
 [build]
 
+# Use bundled crates; this should permit offline build.
+vendor = true
+
+# In addition to rustc, rust-std and rust-docs, build Cargo.
+extended = true
+
 # python(1) location.
 python = "%PYTHON_CMD%"
 
@@ -20,3 +26,8 @@ channel = "%CHANNEL%"
 
 [target.%TARGET%]
 llvm-config = "%LLVM_CONFIG%"
+
+[dist]
+
+# Do not build the source archive.
+src-tarball = false

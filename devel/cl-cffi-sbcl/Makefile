@@ -10,6 +10,8 @@ MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Portable foreign function interface for Common Lisp
 
 BROKEN=		does not build with new sbcl 1.13
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2017-11-09
 
 BUILD_DEPENDS=	cl-cffi>=0:devel/cl-cffi \
 		cl-alexandria-sbcl>=0:devel/cl-alexandria-sbcl \

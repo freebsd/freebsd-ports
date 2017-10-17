@@ -1,13 +1,13 @@
 # $FreeBSD$
 
 PORTNAME=	tortoisehg
-PORTVERSION=	4.2.1
+PORTVERSION=	4.3.1
 CATEGORIES=	devel
 MASTER_SITES=	https://bitbucket.org/tortoisehg/targz/downloads/
 #MASTER_SITES=	http://cdn.bitbucket.org/tortoisehg/targz/downloads/
 
 MAINTAINER=	6yearold@gmail.com
-COMMENT=	THg script from TortoiseHG
+COMMENT=	GUI for Mercurial VCS
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING.txt

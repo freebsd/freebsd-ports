@@ -404,6 +404,7 @@
 %%CACTIDIR%%/include/phpmailer/language/phpmailer.lang-am.php
 %%CACTIDIR%%/include/phpmailer/language/phpmailer.lang-ar.php
 %%CACTIDIR%%/include/phpmailer/language/phpmailer.lang-az.php
+%%CACTIDIR%%/include/phpmailer/language/phpmailer.lang-ba.php
 %%CACTIDIR%%/include/phpmailer/language/phpmailer.lang-be.php
 %%CACTIDIR%%/include/phpmailer/language/phpmailer.lang-bg.php
 %%CACTIDIR%%/include/phpmailer/language/phpmailer.lang-ca.php
@@ -437,6 +438,7 @@
 %%CACTIDIR%%/include/phpmailer/language/phpmailer.lang-pt.php
 %%CACTIDIR%%/include/phpmailer/language/phpmailer.lang-pt_br.php
 %%CACTIDIR%%/include/phpmailer/language/phpmailer.lang-ro.php
+%%CACTIDIR%%/include/phpmailer/language/phpmailer.lang-rs.php
 %%CACTIDIR%%/include/phpmailer/language/phpmailer.lang-ru.php
 %%CACTIDIR%%/include/phpmailer/language/phpmailer.lang-sk.php
 %%CACTIDIR%%/include/phpmailer/language/phpmailer.lang-sl.php

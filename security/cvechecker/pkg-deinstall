@@ -1,0 +1,13 @@
+#!/bin/sh
+
+[ "$2" = DEINSTALL ] && cat <<***EOM
+------------------------------------------------------------------------------
+
+If you are no longer using the $1 port, then manually delete
+the following directory:
+
+	/var/db/cvechecker
+
+------------------------------------------------------------------------------
+***EOM
+exit 0

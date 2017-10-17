@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	asterisk
-PORTVERSION=	11.25.2
+PORTVERSION=	11.25.3
 CATEGORIES=	net
 MASTER_SITES=	http://downloads.asterisk.org/pub/telephony/%SUBDIR%/:DEFAULT,g729
 MASTER_SITE_SUBDIR=	asterisk/ \
@@ -114,7 +114,6 @@ XMPP_DESC=	XMPP/GTALK support
 OPTIONS_SUB=		yes
 
 BACKTRACE_CONFIGURE_WITH=	execinfo
-BACKTRACE_USES=			execinfo
 
 CURL_CONFIGURE_ON=	--with-libcurl
 CURL_CONFIGURE_OFF=	--with-libcurl=no

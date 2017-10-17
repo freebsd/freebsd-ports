@@ -1,21 +1,26 @@
 # $FreeBSD$
 
 PORTNAME=	tomsfastmath
-PORTVERSION=	0.12
-PORTREVISION=	2
+PORTVERSION=	0.13.1
+DISTVERSIONPREFIX=	v
 CATEGORIES=	math
-MASTER_SITES=	http://libtom.net/files/
-DISTNAME=	tfm-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Portable fixed precision math library for fast exponentiations
 
+LICENSE=	PD WTFPL
+LICENSE_COMB=	dual
+
 BROKEN_powerpc=	internal compiler error at src/mul/fp_mul_comba_48.c:398
 
 USES=		compiler:features gmake tar:bzip2
+USE_GITHUB=	yes
+GH_ACCOUNT=	libtom
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 MAKEFILE=	makefile
 ALL_TARGET=	default
+CFLAGS+=	-fPIC
 
 PLIST_FILES=	include/tfm.h lib/libtfm.a
 
@@ -33,5 +38,9 @@ post-patch:
 		${WRKSRC}/src/mont/fp_montgomery_reduce.c \
 		${WRKSRC}/src/mul/fp_mul_comba.c \
 		${WRKSRC}/src/sqr/fp_sqr_comba.c
+
+do-install:
+	${INSTALL_DATA} ${WRKSRC}/src/headers/tfm.h ${STAGEDIR}${PREFIX}/include
+	${INSTALL_DATA} ${WRKSRC}/libtfm.a ${STAGEDIR}${PREFIX}/lib
 
 .include <bsd.port.post.mk>

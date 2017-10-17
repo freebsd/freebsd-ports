@@ -12,7 +12,6 @@ MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Getting and setting Xv attributes
 
 USE_XORG=	x11 xv
-WANT_GNOME=	yes
 USES=		pkgconfig
 
 PLIST_FILES=	bin/${PORTNAME} bin/g${PORTNAME} \

@@ -14,8 +14,6 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/go:lang/go
 USE_GITHUB=	yes
 GH_PROJECT=	cli
 
-STRIP=		# stripping can break go binaries
-
 PLIST_FILES=	bin/exercism
 
 post-patch:

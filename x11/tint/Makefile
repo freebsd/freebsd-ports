@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	tint2
-PORTVERSION=	0.14.5
+PORTVERSION=	15.2
 CATEGORIES=	x11
 
 MAINTAINER=	yamagi@yamagi.org
@@ -10,14 +10,15 @@ COMMENT=	Lightweight freedesktop-compliant panel/taskbar/systray/clock
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_powerpc64=	fails to build: area.h: redefinition of typedef 'Area'
+
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
 		libImlib2.so:graphics/imlib2 \
 		libstartup-notification-1.so:x11/startup-notification
 
-BROKEN_powerpc64=	fails to build: area.h: redefinition of typedef 'Area'
-
-USES=		alias cmake:outsource pkgconfig
+USES=		alias cmake:outsource desktop-file-utils pkgconfig \
+		shared-mime-info
 USE_GNOME=	cairo glib20 gtk20 librsvg2 pango
 USE_XORG=	x11 xcomposite xdamage xfixes xinerama xrandr xrender
 INSTALLS_ICONS=	yes

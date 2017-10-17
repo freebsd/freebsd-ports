@@ -3,6 +3,7 @@
 
 PORTNAME=	mtl
 DISTVERSION=	2.1.2-23.tentative
+PORTREVISION=	1
 CATEGORIES=	math devel
 MASTER_SITES=	http://www.osl.iu.edu/download/research/mtl/
 

@@ -1,0 +1,15 @@
+------------------------------------------------------------------------
+zrepl must be configured before it is started the first time.
+- Create the log file /var/log/zrepl.log:
+  # service newsyslog restart
+- Teach syslogd to redirect facility local0 to the zrepl.log file:
+  # service syslogd reload
+- Modify the %%PREFIX%%/etc/zrepl/zrepl.yml configuration file
+- For remote backups, create the SSH key pair and authorized_keys file
+- Enable the zrepl daemon to start automatically at boot:
+  # sysrc zrepl_enable="YES"
+- Start the zrepl daemon:
+  # service zrepl start
+
+For documentation, refer to https://zrepl.github.io/.
+------------------------------------------------------------------------

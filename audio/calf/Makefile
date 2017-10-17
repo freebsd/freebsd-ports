@@ -3,7 +3,7 @@
 
 PORTNAME=	calf
 PORTVERSION=	0.0.60
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	audio
 MASTER_SITES=	http://calf-studio-gear.org/files/
 

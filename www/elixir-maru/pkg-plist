@@ -64,6 +64,7 @@ lib/elixir/lib/maru/ebin/Elixir.Maru.Types.List.beam
 lib/elixir/lib/maru/ebin/Elixir.Maru.Types.Map.beam
 lib/elixir/lib/maru/ebin/Elixir.Maru.Types.String.beam
 lib/elixir/lib/maru/ebin/Elixir.Maru.Utils.beam
+lib/elixir/lib/maru/ebin/Elixir.Maru.Validations.AllOrNoneOf.beam
 lib/elixir/lib/maru/ebin/Elixir.Maru.Validations.AllowBlank.beam
 lib/elixir/lib/maru/ebin/Elixir.Maru.Validations.AtLeastOneOf.beam
 lib/elixir/lib/maru/ebin/Elixir.Maru.Validations.ExactlyOneOf.beam

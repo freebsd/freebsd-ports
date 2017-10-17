@@ -4718,7 +4718,6 @@ security/kovpn||2013-07-26|Has expired: Depends on Qt 3.x
 security/kssh||2013-07-26|Has expired: Depends on Qt 3.x
 security/qca-tls||2013-07-26|Has expired: Depends on Qt 3.x
 security/qtfw||2013-07-26|Has expired: Depends on Qt 3.x
-sysutils/filelight||2013-07-26|Has expired: Depends on Qt 3.x
 sysutils/k3b||2013-07-26|Has expired: Depends on Qt 3.x
 sysutils/kcpuload||2013-07-26|Has expired: Depends on Qt 3.x
 sysutils/kdeadmin3||2013-07-26|Has expired: Depends on Qt 3.x
@@ -5457,7 +5456,6 @@ sysutils/slmon||2014-02-27|Has expired: Broken for more than 6 months
 www/trac-revtree||2014-02-27|Has expired: Broken for more than 6 months
 security/crack||2014-02-27|Has expired: Broken for more than 6 months
 sysutils/graphicboot||2014-02-27|Has expired: Broken for more than 6 months, upstream disappeared
-graphics/kgraphviewer||2014-02-27|Has expired: Broken for more than 6 months
 sysutils/ckl||2014-02-27|Has expired: Broken for more than 6 months
 japanese/trac||2014-02-27|Has expired: Broken for more than 6 months
 lang/opa||2014-02-27|Has expired: Broken for more than 6 months
@@ -6873,7 +6871,6 @@ www/mod_auth_form||2014-09-01|Not staged
 www/mod_auth_mellon||2014-09-01|Not staged
 www/mod_ftp||2014-09-01|Not staged
 www/mod_log_dbd||2014-09-01|Not staged
-www/mod_pagespeed||2014-09-01|Not staged
 www/moodle24||2014-09-01|Not staged
 www/plugger-plugins-hubbe||2014-09-01|Not staged
 www/prado||2014-09-01|Not staged
@@ -7823,7 +7820,6 @@ net/linc||2015-09-27|Has expired: Last release in 2003, not used by anything any
 net/linc-reference||2015-09-27|Has expired: Last release in 2003, not used by anything anymore
 x11/xlogout||2015-09-27|Has expired: Useless cruft from 1989
 net/rubygem-amq-client||2015-10-01|Has expired: Deprecated by Upstream. It is part of net/rubygem-amqp codebase now
-emulators/ppsspp-devel|emulators/ppsspp|2015-10-06|Out of date: use emulators/ppsspp for now
 ports-mgmt/bpm||2015-10-10|No support for pkg
 www/moodle27||2015-10-11|Has expired: Please upgrade to moodle28 or moodle29
 graphics/epeg|devel/efl|2015-10-11|Has expired: Merged into devel/efl
@@ -8082,7 +8078,6 @@ databases/py32-sqlite3||2016-02-02|Has expired: Full EOL reached. Please update 
 x11-toolkits/py32-tkinter||2016-02-02|Has expired: Full EOL reached. Please update to Python 3.5
 sysutils/puppet|sysutils/puppet38|2016-02-05|Renamed
 devel/etcdctl|devel/etcd|2016-02-06|Has expired: etcdctl is now part of etcd, following the change from the upstream
-graphics/py-graphviz|graphics/py-pygraphviz|2016-02-07|Renamed to match upstream (PyPI) name
 security/polarssl||2016-02-07|Has expired: Upstream is ending support for 1.2.x
 multimedia/xbmc-addon-pvr||2016-02-12|Has expired: Does not work with multimedia/kodi 15.x and newer
 security/py-openid|security/py-python-openid|2016-02-13|Renamed to match upstream (PyPI) name
@@ -9199,7 +9194,6 @@ www/p5-Catalyst-Plugin-Singleton||2017-04-10|Has expired: Deprecated by upstream
 x11/lumina-i18n||2017-04-10|Has expired: Obsolete, i18n files included in x11/lumina
 sysutils/jail2||2017-04-10|Has expired: Starting with 10.0 functionality has been merged into base
 sysutils/iocage-devel||2017-04-10|Has expired: Outdated version. Please use sysutils/py-iocage instead
-sysutils/iocage||2017-04-10|Has expired: Outdated version. Please use sysutils/py-iocage instead
 databases/puppetdb||2017-04-10|Has expired: Depends on expired sysutils/puppet38, use puppetdb[34] instead
 databases/puppetdb-terminus||2017-04-10|Has expired: Depends on expired sysutils/puppet38, use puppetdb-terminus[34]
 databases/pglesslog||2017-04-10|Has expired: Does not build with recent PostgreSQL versions
@@ -9528,7 +9522,7 @@ x11-toolkits/kirigami||2017-08-28|Not needed by anything
 x11-toolkits/kirigami2|x11-toolkits/kf5-kirigami2|2017-08-28|Became an official framework
 www/speedtest-mini||2017-09-03|Has expired: Discontinued upstream (on June 30, 2017)
 devel/rubygem-sequel3|devel/rubygem-sequel|2017-09-03|Has expired: Use devel/rubygem-sequel instead
-audio/tomahawk||2017-09-03|Has expired: Project is dead upstream.
+audio/tomahawk||2017-09-03|Has expired: Project is dead upstream
 mail/rubygem-larch||2017-09-03|Has expired: Unmaintained by upstream, no changes since 2013
 devel/rubygem-sidekiq4|devel/rubygem-sidekiq|2017-09-03|Has expired: Use devel/rubygem-sidekiq instead
 devel/rubygem-webpacker1-rails5|devel/rubygem-webpacker-rails5|2017-09-03|Has expired: Use devel/rubygem-webpacker-rails5 instead
@@ -9543,3 +9537,61 @@ databases/py33-sqlite3||2017-09-03|Removed, please update to Python 3.6
 devel/py33-setuptools||2017-09-03|Removed, please update to Python 3.6
 x11-toolkits/py33-tkinter||2017-09-03|Removed, please update to Python 3.6
 devel/py3-enum34||2017-09-03|Removed, Python 3.3 only
+security/clambc||2017-09-14|Has expired: Practically unmaintained, featuring issues elsewhere solved 6 years ago
+devel/cmake-modules||2017-09-14|Deleted, merged into devel/cmake
+devel/cargo|lang/rust|2017-09-15|Merged with lang/rust
+sysutils/filelight-kde4|sysutils/filelight|2017-09-16|Renamed to sysutils/filelight
+security/gnupg22|security/gnupg|2017-09-19|Removed, security/gnupg is now gnupg22
+mail/milter-greylist-devel|mail/milter-greylist|2017-09-22|Has expired: mail/milter-greylist provides same version and options
+devel/libexecinfo||2017-09-22|Is present in the base system of all supported releases
+games/ember||2017-09-23|Removed, it is BROKEN and no longer developed since 2014
+ports-mgmt/packagekit-qt4||2017-09-28|Has expired: Ignored for more than 5 years
+ports-mgmt/kpackagekit||2017-09-28|Has expired: Skipped for more than 5 years
+dns/rubygem-public_suffix2|dns/rubygem-public_suffix|2017-09-30|Has expired: Use dns/rubygem-public_suffix instead
+www/rubygem-deckar01-task_list1|www/rubygem-deckar01-task_list|2017-09-30|Has expired: Use www/rubygem-deckar01-task_list instead
+devel/py-twisted152|devel/py-twisted|2017-09-30|Has expired: Use devel/py-twisted instead
+devel/py-twistedCore|devel/py-twisted|2017-09-30|Has expired: Use devel/py-twisted instead
+devel/py-twistedFlow|devel/py-twisted|2017-09-30|Has expired: Use devel/py-twisted instead
+devel/py-twistedRunner|devel/py-twisted|2017-09-30|Has expired: Use devel/py-twisted instead
+dns/py-twistedNames|devel/py-twisted|2017-09-30|Has expired: Use devel/py-twisted instead
+mail/py-twistedMail|devel/py-twisted|2017-09-30|Has expired: Use devel/py-twisted instead
+net/py-twistedPair|devel/py-twisted|2017-09-30|Has expired: Use devel/py-twisted instead
+net-im/py-twistedWords|devel/py-twisted|2017-09-30|Has expired: Use devel/py-twisted instead
+news/py-twistedNews|devel/py-twisted|2017-09-30|Has expired: Use devel/py-twisted instead
+security/py-twistedConch|devel/py-twisted|2017-09-30|Has expired: Use devel/py-twisted instead
+textproc/py-twistedLore|devel/py-twisted|2017-09-30|Has expired: Use devel/py-twisted instead
+www/py-twistedWeb|devel/py-twisted|2017-09-30|Has expired: Use devel/py-twisted instead
+www/py-twistedWeb2|devel/py-twisted|2017-09-30|Has expired: Use devel/py-twisted instead
+devel/libclaw||2017-09-30|Has expired: useless for anything apart from removed games/plee-the-bear
+ports-mgmt/redports-node||2017-10-01|Has expired: Upstream is dead so port is not useable anymore
+sysutils/py3-iocage|sysutils/iocage|2017-10-02|Port was renamed
+audio/ventrilo-server||2017-10-04|No more freebsd distfiles
+net-im/ayttm||2017-10-04|Non functional
+graphics/diacanvas2||2017-10-04|GNOME2 library unused anymore
+sysutils/bacula5-client-static|sysutils/bacula-client-static|2017-10-05|Has expired: No upstream commits since 2013. Use sysutils/bacula-server
+sysutils/bacula5-client|sysutils/bacula-client|2017-10-05|Has expired: No upstream commits since 2013. Use sysutils/bacula-server
+sysutils/bacula5-bat|sysutils/bacula-bat|2017-10-05|Has expired: No upstream commits since 2013. Use sysutils/bacula-server
+sysutils/bacula5-server|sysutils/bacula-server|2017-10-05|Has expired: No upstream commits since 2013. Use sysutils/bacula-server
+net-mgmt/nagios-check_bacula5|net-mgmt/nagios-check_bacula|2017-10-05|Has expired: No upstream commits since 2013. Use sysutils/bacula-server
+sysutils/bacula5-docs|sysutils/bacula-docs|2017-10-05|Has expired: No upstream commits since 2013. Use sysutils/bacula-docs
+editors/vanubi||2017-10-07|Has expired: Vanubi is no longer actively maintained
+converters/py-bencode|converters/py-bencode.py|2017-10-07|Switch to a fork that supports both python2 and python3
+japanese/jd||2017-10-08|Does not build and 2ch.net API has changed, so would not work anyway
+devel/vtable-dumper|devel/abi-compliance-checker|2017-10-08|Use abi-compliance-checker, which contains this program in newer version
+graphics/py-graph-dot||2017-10-08|Has expired: Unfetchable for more than six months (google code has gone away)
+graphics/py-graph||2017-10-08|Removed, depends on graphics/py-graph-dot
+net/py-python-cloudfiles||2017-10-12|Deprecated by usptream since August 1, 2013. Use databases/py-python-swiftclient instead
+audio/festdoc||2017-10-13|No version of the documentation matching current release
+audio/gstreamer-plugins-moodbar||2017-10-13|Abandonware, no public distfiles
+devel/arduino-glcd|devel/arduino-openglcd|2017-10-14|Switched to active fork
+x11-wm/awesome2|x11-wm/awesome|2017-10-14|Has expired: Awesome WM 2.x is deprecated use 4.x instead
+x11-wm/awesome3|x11-wm/awesome|2017-10-14|Has expired: Awesome WM 3.x is deprecated use 4.x instead
+www/moodle30|www/moodle33|2017-10-14|Has expired: Deprecated by upstream, please use www/moodle33 instead
+lang/gcc5-devel|lang/gcc5|2017-10-14|The GCC 5 branch has been closed, use the final release instead (or a newer major version)
+devel/vtcl||2017-10-16|Has expired: This port depends on Tcl/Tk 8.4 , which is no longer maintained. Please port it to 8.5+
+editors/tpad||2017-10-16|Has expired: This port depends on Tcl/Tk 8.4 , which is no longer maintained. Please port it to 8.5+
+games/polypuzzle||2017-10-16|Has expired: This port depends on Tcl/Tk 8.4 , which is no longer maintained. Please port it to 8.5+
+multimedia/nxtvepg||2017-10-16|Has expired: This port depends on Tcl/Tk 8.4 , which is no longer maintained. Please port it to 8.5+
+net/xpvm||2017-10-16|Has expired: This port depends on Tcl/Tk 8.4 , which is no longer maintained. Please port it to 8.5+
+x11/tkXwin||2017-10-16|Has expired: This port depends on Tcl/Tk 8.4 , which is no longer maintained. Please port it to 8.5+
+games/crafty-tablebase-pawn||2017-10-17|Waste of resources

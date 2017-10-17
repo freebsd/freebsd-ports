@@ -1,7 +1,7 @@
 Python implementation of the Engine.IO realtime server.
 
 Features
-    Fully compatible with the Javascript engine.io-client library,
+    Fully compatible with the JavaScript engine.io-client library,
         versions 1.5.0 and up.
     Compatible with Python 2.7 and Python 3.3+.
     Supports large number of clients even on modest hardware when

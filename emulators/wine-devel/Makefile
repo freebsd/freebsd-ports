@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	wine
-DISTVERSION=	2.16
+DISTVERSION=	2.18
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	emulators
 MASTER_SITES=	SF/${PORTNAME}/Source \
@@ -169,5 +170,13 @@ post-install:
 .endfor
 	${INSTALL_DATA} ${WRKSRC}/programs/winedbg/README ${STAGEDIR}${DOCSDIR}/README.winedbg
 	${INSTALL_DATA} ${WRKSRC}/tools/winedump/README ${STAGEDIR}${DOCSDIR}/README.winedump
+
+check-wine-devel-vs-wine-staging:
+	@${GREP} %%STAGING%% pkg-plist | while read f; do \
+	  f=`echo $$f | ${SED} -e 's/%%STAGING%%//'`; \
+	  if [ -f "$$STAGEDIR/$$PREFIX/$$f" ]; then \
+	    ${PRINTF} "%s no longer contigent on %%STAGING%%?\n" "$$f"; \
+	  fi \
+	done
 
 .include <bsd.port.post.mk>

@@ -1,0 +1,10 @@
+--- third_party/boringssl/ssl/CMakeLists.txt.orig	2017-09-28 08:26:07 UTC
++++ third_party/boringssl/ssl/CMakeLists.txt
+@@ -25,7 +25,6 @@ add_library(
+   ssl_file.c
+   ssl_lib.c
+   ssl_privkey.c
+-  ssl_privkey_cc.cc
+   ssl_session.c
+   ssl_stat.c
+   ssl_transcript.c

@@ -3,7 +3,7 @@
 
 PORTNAME=	urt
 PORTVERSION=	3.1b1
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	graphics
 MASTER_SITES=	http://BSDforge.com/projects/source/graphics/utah-raster/
 
@@ -22,6 +22,7 @@ OPTIONS_DEFINE=	DOCS EXAMPLES
 
 NO_WRKSUBDIR=	yes
 
+CFLAGS+=	-I${LOCALBASE}/include/netpbm
 USE_XORG=	x11 xext
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=Configure

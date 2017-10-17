@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mate-themes
-PORTVERSION=	3.22.12
+PORTVERSION=	3.22.14
 CATEGORIES=	x11-themes mate
 MASTER_SITES=	MATE/themes/${PORTVERSION:R}/
 DIST_SUBDIR=	mate
@@ -23,7 +23,7 @@ USE_GNOME=	gtk20 intltool
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 
-LOCALES=	as ast bn_IN ca@valencia cmn crh dz es_CO fur \
+LOCALES=	as ast bn_IN ca@valencia cmn crh dz es_CO fur fy \
 		hy kk ky mai mg mr nds oc si sr@latin te ug xh zh_HK
 
 post-install:

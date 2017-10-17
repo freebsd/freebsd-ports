@@ -1,6 +1,6 @@
 Implements Short Message Peer to Peer protocol, which is frequently used to
 pass short messages between mobile operators implementing short message
-service (SMS). This is applicable to both european GSM and american CDMA/TDMA
+service (SMS). This is applicable to both European GSM and American CDMA/TDMA
 systems.
 
 WWW: http://search.cpan.org/dist/Net-SMPP/

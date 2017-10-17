@@ -107,10 +107,11 @@ index 12df1b3..e9863ba 100644
  
  #include <new>
  
-@@ -26,6 +31,15 @@
- #include "critical_section_wrapper.h"
- #include "video_capture_linux.h"
- 
+@@ -32,6 +35,15 @@
+ #include "webrtc/modules/video_capture/linux/video_capture_linux.h"
+ #include "webrtc/system_wrappers/include/critical_section_wrapper.h"
+ #include "webrtc/system_wrappers/include/trace.h"
++
 +#ifdef HAVE_LIBV4L2
 +#define open	v4l2_open
 +#define close	v4l2_close
@@ -119,10 +120,9 @@ index 12df1b3..e9863ba 100644
 +#define mmap	v4l2_mmap
 +#define munmap	v4l2_munmap
 +#endif
-+
- namespace webrtc
- {
- namespace videocapturemodule
+ 
+ namespace webrtc {
+ namespace videocapturemodule {
 diff --git media/webrtc/trunk/webrtc/modules/video_capture/video_capture.gypi media/webrtc/trunk/webrtc/modules/video_capture/video_capture.gypi
 index d46b5aa..e452223 100644
 --- media/webrtc/trunk/webrtc/modules/video_capture/video_capture.gypi

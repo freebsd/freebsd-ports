@@ -12,6 +12,7 @@ COMMENT=	Web front-end for plexWatch
 
 RUN_DEPENDS=	plexWatch>=0.1.6:multimedia/plexwatch
 
+USES=		php
 USE_PHP=	curl json session simplexml sqlite3
 
 USERS=		${WWWOWN}

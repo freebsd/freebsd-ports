@@ -1,6 +1,6 @@
---- init.h.orig	2017-04-14 01:20:27 UTC
+--- init.h.orig	2017-09-10 22:12:31 UTC
 +++ init.h
-@@ -903,6 +903,11 @@ struct option_t MuttVars[] = {
+@@ -911,6 +911,11 @@ struct option_t MuttVars[] = {
    ** message via mail.
    */
  #endif
@@ -12,9 +12,9 @@
    { "force_name",	DT_BOOL, R_NONE, OPTFORCENAME, 0 },
    /*
    ** .pp
---- mutt.h.orig	2017-04-14 01:20:27 UTC
+--- mutt.h.orig	2017-09-10 22:12:31 UTC
 +++ mutt.h
-@@ -368,6 +368,7 @@ enum
+@@ -379,6 +379,7 @@ enum
    OPTFCCCLEAR,
    OPTFLAGSAFE,
    OPTFOLLOWUPTO,
@@ -22,9 +22,9 @@
    OPTFORCENAME,
    OPTFORWDECODE,
    OPTFORWQUOTE,
---- sendlib.c.orig	2017-04-14 01:20:27 UTC
+--- sendlib.c.orig	2017-09-10 22:12:31 UTC
 +++ sendlib.c
-@@ -1175,7 +1175,9 @@ static void mutt_set_encoding (BODY *b, 
+@@ -1180,7 +1180,9 @@ static void mutt_set_encoding (BODY *b, 
    if (b->type == TYPETEXT)
    {
      char *chsname = mutt_get_body_charset (send_charset, sizeof (send_charset), b);

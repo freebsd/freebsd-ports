@@ -1,6 +1,6 @@
---- configure.ac.orig	2016-12-07 14:25:43 UTC
+--- configure.ac.orig	2017-08-16 09:52:10 UTC
 +++ configure.ac
-@@ -386,7 +386,8 @@ case "$build_crypto" in
+@@ -397,7 +397,8 @@ case "$build_crypto" in
        ;;
  
     openssl)
@@ -10,21 +10,15 @@
        ;;
  esac
  AM_CONDITIONAL([HAVE_CRYPTO_GNUTLS], [test "${build_crypto}" = "gnutls"])
-@@ -442,12 +443,12 @@ AC_CHECK_HEADERS([ \
+@@ -466,7 +467,6 @@ AC_HEADER_TIME
+ AC_CHECK_HEADERS([ \
  execinfo.h \
  mcheck.h \
- sys/epoll.h \
 -sys/inotify.h \
  sys/signalfd.h \
  sys/types.h \
  sys/param.h \
- sys/mman.h \
- netinet/in.h \
-+netinet/tcp.h \
- ])
- 
- EFL_CHECK_PATH_MAX
-@@ -4732,6 +4733,7 @@ EFL_ADD_LIBS([EIO], [-lm])
+@@ -4605,6 +4605,7 @@ EFL_ADD_LIBS([EIO], [-lm])
  ### Checks for linker characteristics
  
  ### Checks for library functions

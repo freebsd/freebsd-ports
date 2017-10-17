@@ -3,4 +3,4 @@ Libewf is a library for support of the Expert Witness Compression Format
 Libewf allows you to read and write EWF files. Recent versions also
 support the LEV (EWF-L01) format.
 
-WWW: http://code.google.com/p/libewf/
+WWW: https://github.com/libyal/libewf-legacy

@@ -1,5 +1,7 @@
 @postunexec if cmp -s %D/%%MMDIR%%/Mailman/mm_cfg.py %D/%%MMDIR%%/Mailman/mm_cfg.py.dist; then rm -f %D/%%MMDIR%%/Mailman/mm_cfg.py; fi
 @postunexec rm -f %D/%%MMDIR%%/Mailman/mm_cfg.pyc
+@dir etc/newsyslog.conf.d
+@sample %%EXAMPLESDIR%%/mailman.newsyslog.sample etc/newsyslog.conf.d/mailman.newsyslog
 %%IMGDIR%%/mailman-large.jpg
 %%IMGDIR%%/gnu-head-tiny.jpg
 %%IMGDIR%%/mailman.jpg

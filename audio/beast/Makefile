@@ -3,9 +3,9 @@
 
 PORTNAME=	beast
 PORTVERSION=	0.7.8
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	audio
-MASTER_SITES=	http://testbit.eu/pub/dists/beast/v${PORTVERSION:R}/
+MASTER_SITES=	https://beast.testbit.org/pub/v0/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Powerful music composition and modular synthesis application

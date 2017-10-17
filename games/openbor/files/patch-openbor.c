@@ -52,15 +52,6 @@ Avoid accidental rounding from abs()
      ptrdiff_t pos = 0;
      char *newbuf = NULL;
  
-@@ -13933,7 +13933,7 @@ void generate_basemap(int map_index, flo
- 
- void load_level(char *filename)
- {
--    char *buf;
-+    char *buf = NULL;
-     size_t size, len, sblen;
-     ptrdiff_t pos, oldpos;
-     char *command;
 @@ -15210,6 +15210,11 @@ void bar(int x, int y, int value, int ma
          return;
      }

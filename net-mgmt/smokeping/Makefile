@@ -3,7 +3,7 @@
 
 PORTNAME=	smokeping
 PORTVERSION=	2.6.11
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	net-mgmt www
 MASTER_SITES=	http://oss.oetiker.ch/smokeping/pub/ \
 		http://smokeping.cs.pu.edu.tw/pub/
@@ -32,6 +32,8 @@ BUILD_DEPENDS=	p5-CGI-Fast>=0:www/p5-CGI-Fast \
 		p5-Net-OpenSSH>=0:net/p5-Net-OpenSSH \
 		p5-perl-ldap>=0:net/p5-perl-ldap
 RUN_DEPENDS:=	${BUILD_DEPENDS}
+
+CONFLICTS_INSTALL=	nfsping
 
 NO_ARCH=	yes
 USES=		gmake perl5

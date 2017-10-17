@@ -13,12 +13,14 @@ COMMENT=	Oracle\'s Java 6 virtual machine release under the GPL v2
 
 LICENSE=	GPLv2
 
+DEPRECATED=	superseded by java/bootstrap-openjdk[68]
+EXPIRATION_DATE=	2017-11-30
+BROKEN_powerpc64=	fails to build: pkg-static: Unable to access file jre/lib/powerpc64/jvm.cfg
+ONLY_FOR_ARCHS=	amd64 armv6 i386 powerpc64
+
 RUN_DEPENDS=	java-zoneinfo>0:java/java-zoneinfo
 
 BUNDLE_LIBS=	yes
-
-ONLY_FOR_ARCHS=		amd64 armv6 i386 powerpc64
-BROKEN_powerpc64=	fails to build: pkg-static: Unable to access file jre/lib/powerpc64/jvm.cfg
 
 DISTINFO_FILE=	${.CURDIR}/distinfo.${JDK_ARCH}
 DISTVERSION_amd64=	r351880

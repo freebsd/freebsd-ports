@@ -71,7 +71,7 @@ Implement Linux-like memory stats for BSDs
  
  /////////////////////////////////////////////////////////////////////////////
  //  Functions
-@@ -101,6 +136,49 @@ u64 getFreeRam(int byte_size)
+@@ -101,6 +136,48 @@ u64 getFreeRam(int byte_size)
  	if(host_page_size(hostPort, &size) != KERN_SUCCESS) return 0;
  	if(host_statistics(hostPort, HOST_VM_INFO, (host_info_t)&vms, &count) != KERN_SUCCESS) return 0;
  	return (u64)(((vms.inactive_count+vms.free_count)*size)/byte_size);
@@ -85,9 +85,8 @@ Implement Linux-like memory stats for BSDs
 +	return (u64)((vms.v_free_count + vms.v_inactive_count
 +				  + vms.v_cache_count) * getpagesize()) / byte_size;
 +#elif defined(__FreeBSD__) || defined(__FreeBSD_kernel__)
-+	u_int v_free_count, v_inactive_count, v_cache_count;
++	u_int v_free_count = 0, v_inactive_count = 0, v_cache_count = 0;
 +	size_t sz = sizeof(u_int);
-+	v_free_count = v_inactive_count = v_cache_count = 0;
 +	sysctlbyname("vm.stats.vm.v_free_count",
 +				 &v_free_count, &sz, NULL, 0);
 +	sysctlbyname("vm.stats.vm.v_inactive_count",

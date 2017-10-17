@@ -1,6 +1,6 @@
---- spectrwm.c.orig	2016-06-05 07:12:06 UTC
+--- spectrwm.c.orig	2017-10-04 18:36:20 UTC
 +++ spectrwm.c
-@@ -7876,7 +7876,7 @@ validate_spawns(void)
+@@ -7960,7 +7960,7 @@ validate_spawns(void)
  void
  setup_spawn(void)
  {

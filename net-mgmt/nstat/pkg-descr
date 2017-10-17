@@ -1,0 +1,4 @@
+nstat is a replacement for the most frequently used parts of vmstat, netstat
+(bw), and pmc-memory.x The advantage of using nstat is that it can run all in a
+single session, rather than having to use 3 terminal sessions to monitor a
+machine.

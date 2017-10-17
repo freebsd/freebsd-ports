@@ -42,9 +42,6 @@ INSTALL_TARGET=	pure_install
 
 post-patch:
 	@${REINPLACE_CMD} -e 's/.*EXE_FILES.*//' ${WRKSRC}/${CONFIGURE_SCRIPT}
-
-regression-test:
-	@(cd ${WRKSRC} && ${PERL} ${CONFIGURE_SCRIPT} && ${MAKE} test)
 .endif
 
 ONLY_FOR_ARCHS=		i386 amd64

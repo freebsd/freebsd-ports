@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	doParallel
-PORTVERSION=	1.0.10
+PORTVERSION=	1.0.11
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -11,8 +11,10 @@ COMMENT=	Foreach parallel adaptor for the parallel package
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	R-cran-foreach>=1.2.0:devel/R-cran-foreach \
+CRAN_DEPENDS=	R-cran-foreach>=1.2.0:devel/R-cran-foreach \
 		R-cran-iterators>=1.0.0:devel/R-cran-iterators
+BUILD_DEPENDS=	${CRAN_DEPENDS}
+RUN_DEPENDS=	${CRAN_DEPENDS}
 
 USES=	cran:auto-plist
 

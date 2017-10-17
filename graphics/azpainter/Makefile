@@ -2,22 +2,22 @@
 # $FreeBSD$
 
 PORTNAME=	azpainter
-PORTVERSION=	2.1.0
+PORTVERSION=	2.1.1
 CATEGORIES=	graphics
-MASTER_SITES=	http://aarnet.dl.osdn.jp/azpainter/68231/ \
-		http://acc.dl.osdn.jp/azpainter/68231/ \
-		http://c3sl.dl.osdn.jp/azpainter/68231/ \
-		http://cznic.dl.osdn.jp/azpainter/68231/ \
-		http://gigenet.dl.osdn.jp/azpainter/68231/ \
-		http://iij.dl.osdn.jp/azpainter/68231/ \
-		http://jaist.dl.osdn.jp/azpainter/68231/ \
-		http://master.dl.osdn.jp/azpainter/68231/ \
-		http://nchc.dl.osdn.jp/azpainter/68231/ \
-		http://onet.dl.osdn.jp/azpainter/68231/ \
-		http://osdn.dl.osdn.jp/azpainter/68231/ \
-		http://pumath.dl.osdn.jp/azpainter/68231/ \
-		http://rwthaachen.dl.osdn.jp/azpainter/68231/ \
-		http://ymu.dl.osdn.jp/azpainter/68231/
+MASTER_SITES=	http://aarnet.dl.osdn.jp/azpainter/68339/ \
+		http://acc.dl.osdn.jp/azpainter/68339/ \
+		http://c3sl.dl.osdn.jp/azpainter/68339/ \
+		http://cznic.dl.osdn.jp/azpainter/68339/ \
+		http://gigenet.dl.osdn.jp/azpainter/68339/ \
+		http://iij.dl.osdn.jp/azpainter/68339/ \
+		http://jaist.dl.osdn.jp/azpainter/68339/ \
+		http://master.dl.osdn.jp/azpainter/68339/ \
+		http://nchc.dl.osdn.jp/azpainter/68339/ \
+		http://onet.dl.osdn.jp/azpainter/68339/ \
+		http://osdn.dl.osdn.jp/azpainter/68339/ \
+		http://pumath.dl.osdn.jp/azpainter/68339/ \
+		http://rwthaachen.dl.osdn.jp/azpainter/68339/ \
+		http://ymu.dl.osdn.jp/azpainter/68339/
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	16-bit RGB full color painting application

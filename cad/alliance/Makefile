@@ -3,7 +3,7 @@
 
 PORTNAME=	alliance
 DISTVERSION=	5.0-20120515
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	cad
 MASTER_SITES=	http://ftp.lyx.org/lip6/softs/alliance/distribution/5.0/ \
 		http://ftp.jussieu.fr/lip6/softs/alliance/distribution/5.0/ \
@@ -18,6 +18,8 @@ LICENSE_FILE=	${WRKSRC}/LICENCE
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 BROKEN_aarch64=		fails to link: collect2: error: ld returned 1 exit status
+
+CONFLICTS_INSTALL=	fspclient-*
 
 WRKSRC=		${WRKDIR}/alliance-5.0
 SUB_FILES=	pkg-message

@@ -1,6 +1,6 @@
---- ui/views/BUILD.gn.orig	2017-06-05 19:03:30 UTC
-+++ ui/views/BUILD.gn
-@@ -452,7 +452,7 @@ component("views") {
+--- ui/views/BUILD.gn.orig	2017-09-05 21:05:48.000000000 +0200
++++ ui/views/BUILD.gn	2017-09-07 02:00:50.311837000 +0200
+@@ -465,7 +465,7 @@
    if (use_x11 && !is_chromeos) {
      deps += [ "//ui/display/util" ]
    }
@@ -9,12 +9,12 @@
      sources -= [ "window/window_button_order_provider.cc" ]
      deps += [ "//ui/shell_dialogs" ]
    } else {
-@@ -640,7 +640,7 @@ component("views") {
-           "widget/desktop_aura/desktop_window_tree_host_ozone.cc",
-         ]
+@@ -658,7 +658,7 @@
+       } else if (use_ozone) {
+         sources += [ "widget/desktop_aura/desktop_window_tree_host_ozone.cc" ]
        }
 -      if (is_linux) {
 +      if (is_linux || is_bsd) {
-         sources += [ "style/platform_style_linux.cc" ]
-       }
-     }
+         sources += [
+           "style/platform_style_linux.cc",
+           "widget/desktop_aura/window_event_filter.cc",

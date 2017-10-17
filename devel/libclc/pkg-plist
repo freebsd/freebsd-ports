@@ -30,6 +30,17 @@ include/clc/cl_khr_global_int32_extended_atomics/atom_max.h
 include/clc/cl_khr_global_int32_extended_atomics/atom_min.h
 include/clc/cl_khr_global_int32_extended_atomics/atom_or.h
 include/clc/cl_khr_global_int32_extended_atomics/atom_xor.h
+include/clc/cl_khr_int64_base_atomics/atom_add.h
+include/clc/cl_khr_int64_base_atomics/atom_cmpxchg.h
+include/clc/cl_khr_int64_base_atomics/atom_dec.h
+include/clc/cl_khr_int64_base_atomics/atom_inc.h
+include/clc/cl_khr_int64_base_atomics/atom_sub.h
+include/clc/cl_khr_int64_base_atomics/atom_xchg.h
+include/clc/cl_khr_int64_extended_atomics/atom_and.h
+include/clc/cl_khr_int64_extended_atomics/atom_max.h
+include/clc/cl_khr_int64_extended_atomics/atom_min.h
+include/clc/cl_khr_int64_extended_atomics/atom_or.h
+include/clc/cl_khr_int64_extended_atomics/atom_xor.h
 include/clc/cl_khr_local_int32_base_atomics/atom_add.h
 include/clc/cl_khr_local_int32_base_atomics/atom_cmpxchg.h
 include/clc/cl_khr_local_int32_base_atomics/atom_dec.h
@@ -43,8 +54,8 @@ include/clc/cl_khr_local_int32_extended_atomics/atom_or.h
 include/clc/cl_khr_local_int32_extended_atomics/atom_xor.h
 include/clc/clc.h
 include/clc/clcfunc.h
+include/clc/clcmacros.h
 include/clc/clctypes.h
-include/clc/clcversion.h
 include/clc/common/degrees.h
 include/clc/common/degrees.inc
 include/clc/common/mix.h
@@ -57,6 +68,7 @@ include/clc/common/smoothstep.inc
 include/clc/common/step.h
 include/clc/common/step.inc
 include/clc/convert.h
+include/clc/explicit_fence/explicit_memory_fence.h
 include/clc/float/definitions.h
 include/clc/geometric/cross.h
 include/clc/geometric/distance.h
@@ -98,12 +110,14 @@ include/clc/integer/mul24.h
 include/clc/integer/mul24.inc
 include/clc/integer/mul_hi.h
 include/clc/integer/mul_hi.inc
+include/clc/integer/popcount.h
 include/clc/integer/rhadd.h
 include/clc/integer/rhadd.inc
 include/clc/integer/rotate.h
 include/clc/integer/rotate.inc
 include/clc/integer/sub_sat.h
 include/clc/integer/sub_sat.inc
+include/clc/integer/unary_intrin.inc
 include/clc/integer/upsample.h
 include/clc/math/acos.h
 include/clc/math/acos.inc
@@ -197,6 +211,7 @@ include/clc/math/native_log.inc
 include/clc/math/native_log2.h
 include/clc/math/native_log2.inc
 include/clc/math/native_powr.h
+include/clc/math/native_recip.h
 include/clc/math/native_rsqrt.h
 include/clc/math/native_sin.h
 include/clc/math/native_sqrt.h
@@ -227,6 +242,8 @@ include/clc/math/tgamma.inc
 include/clc/math/trunc.h
 include/clc/math/unary_decl.inc
 include/clc/math/unary_intrin.inc
+include/clc/misc/shuffle.h
+include/clc/misc/shuffle2.h
 include/clc/relational/all.h
 include/clc/relational/any.h
 include/clc/relational/binary_decl.inc

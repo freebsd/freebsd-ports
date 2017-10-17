@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rubinius
-PORTVERSION=	3.70
-PORTREVISION=	1
+PORTVERSION=	3.86
 CATEGORIES=	lang
 MASTER_SITES=	http://releases.rubini.us/:source
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:source
@@ -47,7 +46,7 @@ LLVM38_DESC=	LLVM 3.8
 LLVM39_DESC=	LLVM 3.9
 LLVM40_DESC=	LLVM 4.0
 
-USES=		execinfo gmake perl5 readline tar:bzip2 libedit ssl
+USES=		gmake perl5 readline tar:bzip2 libedit ssl
 USE_LOCALE=	en_US.UTF-8
 USE_RUBY=	yes
 RUBY_NO_RUN_DEPENDS=	yes
@@ -89,10 +88,6 @@ LLVM40_VARS=	LLVM_CONFIG=llvm-config40 \
 		LLVM_CXX=clang++40
 
 .include <bsd.port.pre.mk>
-
-.if !exists(/usr/lib/libexecinfo.so)
-CONFIGURE_ARGS+=	--with-opt-dir "${LOCALBASE}"
-.endif
 
 .if ${ARCH} == "sparc64"
 BROKEN=		Does not compile on sparc64

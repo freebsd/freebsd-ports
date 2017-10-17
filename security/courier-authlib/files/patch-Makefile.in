@@ -188,32 +188,29 @@
  @HAVE_AUTHPGSQL_TRUE@install-authpgsqlrc:
  @HAVE_AUTHPGSQL_TRUE@	$(mkinstalldirs) $(DESTDIR)`dirname @authpgsqlrc@` || :
  @HAVE_AUTHPGSQL_TRUE@	$(INSTALL_DATA) -m 660 $(srcdir)/authpgsqlrc \
--@HAVE_AUTHPGSQL_TRUE@		$(DESTDIR)@authpgsqlrc@.dist
+ @HAVE_AUTHPGSQL_TRUE@		$(DESTDIR)@authpgsqlrc@.dist
 -@HAVE_AUTHPGSQL_TRUE@	-chown @mailuser@ $(DESTDIR)@authpgsqlrc@.dist
 -@HAVE_AUTHPGSQL_TRUE@	-chgrp @mailgroup@ $(DESTDIR)@authpgsqlrc@.dist
-+@HAVE_AUTHPGSQL_TRUE@		$(DESTDIR)@authpgsqlrc@.sample
  
  @HAVE_AUTHPGSQL_TRUE@uninstall-authpgsqlrc:
  @HAVE_AUTHPGSQL_TRUE@	rm -f $(DESTDIR)@authpgsqlrc@.dist
-@@ -1951,9 +1990,7 @@ authpgsqlrc.h:
- @HAVE_LDAP_TRUE@install-authldaprc:
+@@ -1952,8 +1991,6 @@ authpgsqlrc.h:
  @HAVE_LDAP_TRUE@	$(mkinstalldirs) $(DESTDIR)`dirname @authldaprc@` || :
  @HAVE_LDAP_TRUE@	$(INSTALL_DATA) -m 660 $(srcdir)/authldaprc \
--@HAVE_LDAP_TRUE@		$(DESTDIR)@authldaprc@.dist
+ @HAVE_LDAP_TRUE@		$(DESTDIR)@authldaprc@.dist
 -@HAVE_LDAP_TRUE@	-chown @mailuser@ $(DESTDIR)@authldaprc@.dist
 -@HAVE_LDAP_TRUE@	-chgrp @mailgroup@ $(DESTDIR)@authldaprc@.dist
-+@HAVE_LDAP_TRUE@		$(DESTDIR)@authldaprc@.sample
  
  @HAVE_LDAP_TRUE@uninstall-authldaprc:
  @HAVE_LDAP_TRUE@	rm -f $(DESTDIR)@authldaprc@.dist
-@@ -1964,15 +2001,25 @@ authpgsqlrc.h:
+@@ -1964,6 +2001,18 @@ authpgsqlrc.h:
  @HAVE_LDAP_FALSE@uninstall-authldaprc:
  @HAVE_LDAP_FALSE@	@:
  
 +@HAVE_LDAP_TRUE@install-ldapschema:
 +@HAVE_LDAP_TRUE@	$(mkinstalldirs) ${DESTDIR}${sysconfdir}/openldap/schema
 +@HAVE_LDAP_TRUE@	$(INSTALL_DATA) -m 0444 $(srcdir)/authldap.schema \
-+@HAVE_LDAP_TRUE@		${DESTDIR}${sysconfdir}/openldap/schema/authldap.schema.sample
++@HAVE_LDAP_TRUE@		${DESTDIR}${sysconfdir}/openldap/schema/authldap.schema.dist
 +@HAVE_LDAP_TRUE@#	if test ! -f ${sysconfdir}/openldap/schema/authldap.schema ; then \
 +@HAVE_LDAP_TRUE@#		$(INSTALL_DATA) -m 0444 $(srcdir)/authldap.schema \
 +@HAVE_LDAP_TRUE@#			${sysconfdir}/openldap/schema/authldap.schema ; \
@@ -225,24 +222,21 @@
  authldaprc.h:
  	echo "#define AUTHLDAPRC \"@authldaprc@\"" >authldaprc.h
  
- @HAVE_AUTHMYSQL_TRUE@install-authmysqlrc:
+@@ -1971,8 +2020,6 @@ authldaprc.h:
  @HAVE_AUTHMYSQL_TRUE@	$(mkinstalldirs) $(DESTDIR)`dirname @authmysqlrc@` || :
  @HAVE_AUTHMYSQL_TRUE@	$(INSTALL_DATA) -m 660 $(srcdir)/authmysqlrc \
--@HAVE_AUTHMYSQL_TRUE@		$(DESTDIR)@authmysqlrc@.dist
+ @HAVE_AUTHMYSQL_TRUE@		$(DESTDIR)@authmysqlrc@.dist
 -@HAVE_AUTHMYSQL_TRUE@	-chown @mailuser@ $(DESTDIR)@authmysqlrc@.dist
 -@HAVE_AUTHMYSQL_TRUE@	-chgrp @mailgroup@ $(DESTDIR)@authmysqlrc@.dist
-+@HAVE_AUTHMYSQL_TRUE@		$(DESTDIR)@authmysqlrc@.sample
  
  @HAVE_AUTHMYSQL_TRUE@uninstall-authmysqlrc:
  @HAVE_AUTHMYSQL_TRUE@	rm -f $(DESTDIR)@authmysqlrc@.dist
-@@ -1989,9 +2036,7 @@ authmysqlrc.h:
- @HAVE_AUTHSQLITE_TRUE@install-authsqliterc:
+@@ -1990,8 +2037,6 @@ authmysqlrc.h:
  @HAVE_AUTHSQLITE_TRUE@	$(mkinstalldirs) $(DESTDIR)`dirname @authsqliterc@` || :
  @HAVE_AUTHSQLITE_TRUE@	$(INSTALL_DATA) -m 660 $(srcdir)/authsqliterc \
--@HAVE_AUTHSQLITE_TRUE@		$(DESTDIR)@authsqliterc@.dist
+ @HAVE_AUTHSQLITE_TRUE@		$(DESTDIR)@authsqliterc@.dist
 -@HAVE_AUTHSQLITE_TRUE@	-chown @mailuser@ $(DESTDIR)@authsqliterc@.dist
 -@HAVE_AUTHSQLITE_TRUE@	-chgrp @mailgroup@ $(DESTDIR)@authsqliterc@.dist
-+@HAVE_AUTHSQLITE_TRUE@		$(DESTDIR)@authsqliterc@.sample
  
  @HAVE_AUTHSQLITE_TRUE@uninstall-authsqliterc:
  @HAVE_AUTHSQLITE_TRUE@	rm -f $(DESTDIR)@authsqliterc@.dist
@@ -260,7 +254,7 @@
 +@HAVE_BASE_TRUE@install-authdaemonrc:
 +@HAVE_BASE_TRUE@	$(mkinstalldirs) $(DESTDIR)`dirname @authdaemonrc@` || :
 +@HAVE_BASE_TRUE@	sed 's/@ALLMODULES@/$(modules:lib%.la=%)/' <authdaemonrc >authdaemonrc.tmp
-+@HAVE_BASE_TRUE@	$(INSTALL_DATA) -m 660 authdaemonrc.tmp $(DESTDIR)@authdaemonrc@.sample
++@HAVE_BASE_TRUE@	$(INSTALL_DATA) -m 660 authdaemonrc.tmp $(DESTDIR)@authdaemonrc@.dist
 +@HAVE_BASE_TRUE@	rm -f authdaemonrc.tmp
  
 -uninstall-authdaemonrc:

@@ -1,0 +1,11 @@
+--- bin/pd-nagios.orig	2017-10-05 18:21:38 UTC
++++ bin/pd-nagios
+@@ -101,7 +101,7 @@ class NagiosEvent:
+         if not NagiosEvent.REQUIRED_FIELDS[self._notification_type].issubset(self._details.keys()):
+             msg = "Missing fields for type '{0}'.  {1} required".format(
+                 self._notification_type,
+-                ", ".join(self._required_fields())
++                ", ".join(NagiosEvent.REQUIRED_FIELDS[self._notification_type])
+                 )
+             raise ValueError(msg)
+ 

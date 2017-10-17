@@ -1,4 +1,4 @@
---- Makefile.in.orig	2017-06-15 21:00:10 UTC
+--- Makefile.in.orig	2017-09-07 12:42:44 UTC
 +++ Makefile.in
 @@ -84,7 +84,7 @@ DIST_COMMON = $(srcdir)/Makefile.in $(srcdir)/Makefile
  	$(top_srcdir)/configure $(am__configure_deps) \
@@ -9,7 +9,7 @@
  	INSTALL NEWS TODO ar-lib config.guess config.sub depcomp \
  	install-sh missing
  ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
-@@ -375,17 +375,7 @@ noinst_DATA = AUTHORS.txt LICENSE_gsmartcontrol.txt RE
+@@ -375,15 +375,7 @@ noinst_DATA = AUTHORS.txt LICENSE_gsmartcontrol.txt RE
  # These will be installed into docdir.
  # Some of these files are actually needed for compilation (see src/res/Makefile.am).
  dist_doc_DATA = AUTHORS.txt ChangeLog NEWS README.txt \
@@ -20,11 +20,9 @@
 -	LICENSE_gpl3.txt \
 -	LICENSE_gsmartcontrol.txt \
 -	LICENSE_hz.txt \
--	LICENSE_pcrecpp.txt \
 -	LICENSE_unlicense.txt \
 -	LICENSE_zlib.txt
--
 +	LICENSE_gsmartcontrol.txt
  
+ 
  # nobase_ preserves their directory names.
- nobase_dist_doc_DATA = contrib/cron-based_noadmin/README \

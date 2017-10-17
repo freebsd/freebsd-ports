@@ -14,9 +14,8 @@ LICENSE=	GPLv3
 LIB_DEPENDS=	libinotify.so:devel/libinotify
 
 GNU_CONFIGURE=	yes
-USES=		autoreconf compiler:features execinfo gmake libtool pkgconfig
+USES=		autoreconf compiler:features gmake libtool pkgconfig
 USE_GNOME=	glib20
-LDFLAGS+=	${EXECINFO_LDFLAGS}
 
 USE_RC_SUBR=	clsync
 

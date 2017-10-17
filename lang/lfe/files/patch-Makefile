@@ -1,0 +1,15 @@
+--- Makefile.orig	2017-09-07 14:59:29 UTC
++++ Makefile
+@@ -117,10 +117,9 @@ comp_opts.mk:
+ 
+ -include comp_opts.mk
+ 
+-$(BINDIR)/lfe%:
+-	$(INSTALL_BIN) $@ $(DESTBINDIR)
++install: compile install-beam install-bin install-man
+ 
+-install: compile install-man
++install-beam:
+ 	rm -Rf $(DESTEBINDIR)
+ 	$(INSTALL_DIR) $(DESTEBINDIR)
+ 	$(INSTALL_DATA) $(EBINDIR)/$(APP_DEF) $(DESTEBINDIR)

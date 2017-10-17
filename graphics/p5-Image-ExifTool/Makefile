@@ -12,7 +12,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	devin@spamcop.net
 COMMENT=	Perl module for getting EXIF data from image files
 
-LICENSE=	ART10 GPLv1
+LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 CONFLICTS=	p5-Image-ExifTool-devel-[0-9]*

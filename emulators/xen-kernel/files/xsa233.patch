@@ -1,0 +1,52 @@
+From: Juergen Gross <jgross@suse.com>
+Subject: tools/xenstore: dont unlink connection object twice
+
+A connection object of a domain with associated stubdom has two
+parents: the domain and the stubdom. When cleaning up the list of
+active domains in domain_cleanup() make sure not to unlink the
+connection twice from the same domain. This could happen when the
+domain and its stubdom are being destroyed at the same time leading
+to the domain loop being entered twice.
+
+Additionally don't use talloc_free() in this case as it will remove
+a random parent link, leading eventually to a memory leak. Use
+talloc_unlink() instead specifying the context from which the
+connection object should be removed.
+
+This is XSA-233.
+
+Reported-by: Eric Chanudet <chanudete@ainfosec.com>
+Signed-off-by: Juergen Gross <jgross@suse.com>
+Reviewed-by: Ian Jackson <ian.jackson@eu.citrix.com>
+
+--- a/tools/xenstore/xenstored_domain.c
++++ b/tools/xenstore/xenstored_domain.c
+@@ -221,10 +221,11 @@ static int destroy_domain(void *_domain)
+ static void domain_cleanup(void)
+ {
+ 	xc_dominfo_t dominfo;
+-	struct domain *domain, *tmp;
++	struct domain *domain;
+ 	int notify = 0;
+ 
+-	list_for_each_entry_safe(domain, tmp, &domains, list) {
++ again:
++	list_for_each_entry(domain, &domains, list) {
+ 		if (xc_domain_getinfo(*xc_handle, domain->domid, 1,
+ 				      &dominfo) == 1 &&
+ 		    dominfo.domid == domain->domid) {
+@@ -236,8 +237,12 @@ static void domain_cleanup(void)
+ 			if (!dominfo.dying)
+ 				continue;
+ 		}
+-		talloc_free(domain->conn);
+-		notify = 0; /* destroy_domain() fires the watch */
++		if (domain->conn) {
++			talloc_unlink(talloc_autofree_context(), domain->conn);
++			domain->conn = NULL;
++			notify = 0; /* destroy_domain() fires the watch */
++			goto again;
++		}
+ 	}
+ 
+ 	if (notify)

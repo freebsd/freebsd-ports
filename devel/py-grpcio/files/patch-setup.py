@@ -1,6 +1,6 @@
---- setup.py.orig	2017-04-27 21:44:50 UTC
+--- setup.py.orig	2017-09-27 21:43:56 UTC
 +++ setup.py
-@@ -52,13 +52,6 @@ PYTHON_STEM = os.path.join('src', 'pytho
+@@ -37,13 +37,6 @@ PYTHON_STEM = os.path.join('src', 'pytho
  CORE_INCLUDE = ('include', '.',)
  BORINGSSL_INCLUDE = (os.path.join('third_party', 'boringssl', 'include'),)
  ZLIB_INCLUDE = (os.path.join('third_party', 'zlib'),)

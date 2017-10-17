@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	node
-PORTVERSION=	8.4.0
+PORTVERSION=	8.6.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 MASTER_SITES=	http://nodejs.org/dist/v${PORTVERSION}/
@@ -36,7 +36,7 @@ NLS_LIB_DEPENDS=	libicui18n.so:devel/icu
 
 DTRACE_CONFIGURE_ON=	--with-dtrace
 
-USES=		compiler:c++11-lib execinfo gmake python:2,build pkgconfig \
+USES=		compiler:c++11-lib gmake python:2,build pkgconfig \
 		localbase shebangfix
 
 HAS_CONFIGURE=	yes
@@ -44,7 +44,7 @@ USE_LDCONFIG=	yes
 
 CONFLICTS_INSTALL=	node[456]-[0-9]* node01[02]-[0-9]* node-devel-[0-9]* iojs-[0-9]*
 
-ONLY_FOR_ARCHS=		aarch64 amd64 armv6 i386
+ONLY_FOR_ARCHS=		aarch64 amd64 armv6 armv7 i386
 
 CONFIGURE_ARGS=	--prefix=${PREFIX_RELDEST} \
 		--without-npm \
@@ -77,7 +77,7 @@ IGNORE=		cannot build node.js with LibreSSL. You must enable BUNDLED_SSL
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "armv6"
+.if ${ARCH} == armv6 || ${ARCH} == armv7
 CONFIGURE_ARGS+=--openssl-no-asm
 .endif
 

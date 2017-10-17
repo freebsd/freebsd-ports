@@ -1,6 +1,10 @@
 include/pycairo/pycairo.h
 %%PYTHON_SITELIBDIR%%/cairo/__init__.py
 %%PYTHON_SITELIBDIR%%/cairo/__init__.pyc
-%%PYTHON_SITELIBDIR%%/cairo/__init__.pyo
+%%PYTHON_SITELIBDIR%%/cairo/__init__.%%PYTHON_PYOEXTENSION%%
 %%PYTHON_SITELIBDIR%%/cairo/_cairo.so
+%%PYTHON_SITELIBDIR%%/pycairo-%%PORTVER%%-py%%PYTHON_VER%%.egg-info/PKG-INFO
+%%PYTHON_SITELIBDIR%%/pycairo-%%PORTVER%%-py%%PYTHON_VER%%.egg-info/SOURCES.txt
+%%PYTHON_SITELIBDIR%%/pycairo-%%PORTVER%%-py%%PYTHON_VER%%.egg-info/dependency_links.txt
+%%PYTHON_SITELIBDIR%%/pycairo-%%PORTVER%%-py%%PYTHON_VER%%.egg-info/top_level.txt
 libdata/pkgconfig/pycairo.pc

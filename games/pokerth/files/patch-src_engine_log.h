@@ -1,6 +1,6 @@
---- src/engine/log.h.orig	2012-01-04 13:48:11.224976420 +0100
-+++ src/engine/log.h	2012-01-04 14:01:30.113974000 +0100
-@@ -21,6 +21,7 @@
+--- src/engine/log.h.orig	2014-01-10 21:18:20 UTC
++++ src/engine/log.h
+@@ -37,6 +37,7 @@
  
  #include "engine_defs.h"
  #include "game_defs.h"

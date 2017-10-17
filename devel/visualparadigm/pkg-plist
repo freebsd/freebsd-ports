@@ -176,6 +176,7 @@
 %%DATADIR%%/Application/resources/Visual_Paradigm_Patch_Update
 %%DATADIR%%/Application/resources/am.png
 %%DATADIR%%/Application/resources/appConfig_sample.properties
+%%DATADIR%%/Application/resources/cjm1.dat
 %%DATADIR%%/Application/resources/community.txt
 %%DATADIR%%/Application/resources/deliverables.docs
 %%DATADIR%%/Application/resources/diagram_palette_tooltip/ActivityDiagram.xml
@@ -266,7 +267,8 @@
 %%DATADIR%%/Application/resources/dict/sents.vrb
 %%DATADIR%%/Application/resources/dict/verb.Framestext
 %%DATADIR%%/Application/resources/dict/verb.exc
-%%DATADIR%%/Application/resources/guide-through-process/bmm/mapping.xml
+%%DATADIR%%/Application/resources/guide-through-process/bmm/baseline/mapping.xml
+%%DATADIR%%/Application/resources/guide-through-process/bmm/target/mapping.xml
 %%DATADIR%%/Application/resources/guide-through-process/project-management/basic/mapping.xml
 %%DATADIR%%/Application/resources/guide-through-process/project-management/high/mapping.xml
 %%DATADIR%%/Application/resources/guide-through-process/project-management/low/mapping.xml
@@ -563,6 +565,8 @@
 %%DATADIR%%/Application/resources/proc1.dat
 %%DATADIR%%/Application/resources/proc2.dat
 %%DATADIR%%/Application/resources/proc3.dat
+%%DATADIR%%/Application/resources/proc4.dat
+%%DATADIR%%/Application/resources/proc5.dat
 %%DATADIR%%/Application/resources/product_edition.properties
 %%DATADIR%%/Application/resources/productselector.ico
 %%DATADIR%%/Application/resources/setup/feature_vp.xml
@@ -571,10 +575,6 @@
 %%DATADIR%%/Application/resources/vpuml.png
 %%DATADIR%%/Application/resources/vpumlproject.ico
 %%DATADIR%%/Application/resources/vpupdateinfo.xml
-%%DATADIR%%/Application/samples/HelloWorldOnlineLearning.vpp
-%%DATADIR%%/Application/samples/HelloWorldOnlineLearning.vux
-%%DATADIR%%/Application/samples/Ticket-System.vpp
-%%DATADIR%%/Application/samples/VP-Sample-Project.vpp
 %%DATADIR%%/Application/scripts/CommitTeamworkProject.sh
 %%DATADIR%%/Application/scripts/ConvertProjectToLatestVersion.sh
 %%DATADIR%%/Application/scripts/ExportDiagramImage.sh
@@ -728,6 +728,7 @@
 %%DATADIR%%/Application/sde/sdeec/plugins/com.vp.sde.eclipse_13.0.0.0/icons/sdeec/diagram/ejbDiagram.png
 %%DATADIR%%/Application/sde/sdeec/plugins/com.vp.sde.eclipse_13.0.0.0/icons/sdeec/diagram/entityRelationshipDiagram.png
 %%DATADIR%%/Application/sde/sdeec/plugins/com.vp.sde.eclipse_13.0.0.0/icons/sdeec/diagram/epcDiagram.png
+%%DATADIR%%/Application/sde/sdeec/plugins/com.vp.sde.eclipse_13.0.0.0/icons/sdeec/diagram/etlTableDiagram.png
 %%DATADIR%%/Application/sde/sdeec/plugins/com.vp.sde.eclipse_13.0.0.0/icons/sdeec/diagram/factDiagram.png
 %%DATADIR%%/Application/sde/sdeec/plugins/com.vp.sde.eclipse_13.0.0.0/icons/sdeec/diagram/factTypeEditorDiagram.png
 %%DATADIR%%/Application/sde/sdeec/plugins/com.vp.sde.eclipse_13.0.0.0/icons/sdeec/diagram/fishboneDiagram.png

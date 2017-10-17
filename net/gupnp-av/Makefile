@@ -26,8 +26,6 @@ USE_GNOME=	glib20 introspection:build libxml2
 USE_LDCONFIG=	yes
 USES=		gmake gnome libtool pathfix pkgconfig tar:xz
 
-PORTDATA=	*
-
 VALA_BUILD_DEPENDS=	vala>=0.22:lang/vala
 VALA_CONFIGURE_ENV=	ac_cv_path_VAPIGEN=${LOCALBASE}/bin/vapigen
 VALA_CONFIGURE_ENV_OFF=	ac_cv_path_VAPIGEN=""

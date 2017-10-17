@@ -9,13 +9,12 @@
 # bump the version here.
 
 PORTNAME=	stack
-PORTVERSION=	1.5.0
-PORTREVISION=	1
+PORTVERSION=	1.5.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel haskell
 MASTER_SITES=	GH \
 		https://github.com/applicative-tech/stack-dependencies/releases/download/v${PORTVERSION}/:deps
-DISTFILES=	stack-dependencies-${PORTVERSION}-ghc802${EXTRACT_SUFX}:deps
+DISTFILES=	stack-dependencies-${PORTVERSION}${EXTRACT_SUFX}:deps
 
 MAINTAINER=	tobik@FreeBSD.org
 COMMENT=	Cross-platform program for developing Haskell programs
@@ -38,7 +37,7 @@ LIB_DEPENDS=	libgmp.so:math/gmp \
 RUN_DEPENDS=	ca_root_nss>0:security/ca_root_nss \
 		gmake:devel/gmake
 
-USES=		gmake iconv perl5
+USES=		gmake iconv:translit perl5
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	applicative-tech

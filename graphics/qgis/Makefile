@@ -27,7 +27,7 @@ LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libxerces-c.so:textproc/xerces-c3
 
 USES=		bison cmake compiler:features cpe desktop-file-utils \
-		execinfo fortran gmake pyqt:4 python:2.7 sqlite:3
+		fortran gmake pyqt:4 python:2.7 sqlite:3
 
 USE_GITHUB=	yes
 GH_PROJECT=	${PORTNAME:tu}

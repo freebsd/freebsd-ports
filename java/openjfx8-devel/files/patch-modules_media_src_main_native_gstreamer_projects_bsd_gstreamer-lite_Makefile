@@ -1,0 +1,38 @@
+--- modules/media/src/main/native/gstreamer/projects/bsd/gstreamer-lite/Makefile.orig	2017-10-03 19:30:23 UTC
++++ modules/media/src/main/native/gstreamer/projects/bsd/gstreamer-lite/Makefile
+@@ -27,7 +27,7 @@ DIRLIST = gstreamer/gst \
+           gst-plugins-base/gst/volume \
+           gst-plugins-good/gst/audioparsers \
+           gst-plugins-good/gst/isomp4 \
+-          gst-plugins-base/ext/alsa \
++          gst-plugins-base/ext/bsdaudio \
+           gst-plugins-good/gst/audiofx \
+           gst-plugins-good/gst/equalizer \
+           gst-plugins-good/gst/spectrum \
+@@ -67,10 +67,10 @@ INCLUDES = -I$(BASE_DIR)/plugins                      
+            -I$(SRCBASE_DIR)/gst-plugins-good/gst/isomp4   \
+            -I$(SRCBASE_DIR)/gst-plugins-bad/gst-libs
+ 
+-PACKAGES_INCLUDES := $(shell pkg-config --cflags alsa glib-2.0)
+-PACKAGES_LIBS := $(shell pkg-config --libs alsa glib-2.0 gobject-2.0 gmodule-2.0 gthread-2.0)
++PACKAGES_INCLUDES := $(shell pkg-config --cflags glib-2.0)
++PACKAGES_LIBS := $(shell pkg-config --libs glib-2.0 gobject-2.0 gmodule-2.0 gthread-2.0)
+ 
+-LDFLAGS = -L$(BUILD_DIR) -lm $(PACKAGES_LIBS) 
++LDFLAGS = -L$(BUILD_DIR) -lm $(PACKAGES_LIBS) -lsndio
+ 
+ ifeq ($(ARCH), x32)
+     CFLAGS += -m32
+@@ -227,10 +227,8 @@ SOURCES = \
+      gst-plugins-good/gst/isomp4/qtdemux_dump.c                  \
+      gst-plugins-good/gst/isomp4/qtdemux_types.c                 \
+      gst-plugins-good/gst/isomp4/qtdemux.c                       \
+-     gst-plugins-base/ext/alsa/gstalsaplugin.c                   \
+-     gst-plugins-base/ext/alsa/gstalsa.c                         \
+-     gst-plugins-base/ext/alsa/gstalsadeviceprobe.c              \
+-     gst-plugins-base/ext/alsa/gstalsasink.c                     \
++     gst-plugins-base/ext/bsdaudio/gstbsdaudio.c                 \
++     gst-plugins-base/ext/bsdaudio/bsdaudiosink.c                \
+      gst-plugins-good/gst/audiofx/audiofx.c                      \
+      gst-plugins-good/gst/audiofx/audiopanorama.c                \
+      gst-plugins-good/gst/equalizer/gstiirequalizer.c            \

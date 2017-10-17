@@ -8,7 +8,7 @@ CATEGORIES=	deskutils
 MAINTAINER=	culot@FreeBSD.org
 COMMENT=	Simple personal calendar
 
-LICENSE=	ART10 GPLv1
+LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 USE_GITHUB=	yes

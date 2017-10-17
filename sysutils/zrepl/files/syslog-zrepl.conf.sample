@@ -1,0 +1,8 @@
+# $FreeBSD$
+#
+# Syslog configuration file for zrepl.
+# See syslog.conf(5) for details.
+#
+# SELECTOR					ACTION
+# FACILITY.[!<=>]LEVEL
+local0.info					/var/log/zrepl.log

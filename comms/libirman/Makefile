@@ -4,14 +4,14 @@
 PORTNAME=	libirman
 PORTVERSION=	0.4.6
 CATEGORIES=	comms
-MASTER_SITES=	SF/lirc/${PORTNAME}/${PORTVERSION}
+MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	rand@iteris.com
 COMMENT=	Library for Evation's Irman infrared receiver
 
 LICENSE=	LGPL20
 
-USES=		gmake libtool pathfix tar:bzip2
+USES=		gmake libtool pathfix
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 

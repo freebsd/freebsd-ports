@@ -7258,6 +7258,7 @@ man/man1/%%RUBY_NAME%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Installer/spec-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Installer/spec_file-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Installer/unpack-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Gem/Installer/verify_spec_name-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Installer/windows_stub_script-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Installer/wrappers-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Installer/write_build_info_file-i.ri
@@ -8137,8 +8138,10 @@ man/man1/%%RUBY_NAME%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Gem/TestCase/win_platform%3f-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/TestCase/write_file-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Text/cdesc-Text.ri
+%%RDOC%%%%RUBY_RIDIR%%/Gem/Text/clean_text-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Text/format_text-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Text/levenshtein_distance-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Gem/Text/truncate_text-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Uninstaller/bin_dir-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Uninstaller/cdesc-Uninstaller.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Uninstaller/gem_home-i.ri

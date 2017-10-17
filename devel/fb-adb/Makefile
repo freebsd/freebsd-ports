@@ -3,13 +3,16 @@
 PORTNAME=	fb-adb
 DISTVERSION=	1.4.4-126
 DISTVERSIONSUFFIX=	-g6fd78ae
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel comms
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
 PATCHFILES=	1b5524282981.patch:-p1 \
 		8f532a9ee3a3.patch:-p1 \
 		a25602788c1b.patch:-p1 \
+		3a3a52355a39.patch:-p1 \
+		281df4766b82.patch:-p1 \
+		723148059ce2.patch:-p1 \
 		${NULL}
 
 MAINTAINER=	jbeich@FreeBSD.org

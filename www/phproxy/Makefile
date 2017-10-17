@@ -12,8 +12,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PHP based web proxy
 
 NO_BUILD=	YES
-WANT_PHP_WEB=	YES
-USES=		zip:infozip
+USES=		php:web zip:infozip
 USE_PHP=	ctype pcre
 EXTRACT_AFTER_ARGS+=	-d ${WRKSRC}
 PLIST_SUB=	WWWOWN="${WWWOWN}" WWWGRP="${WWWGRP}"
@@ -27,7 +26,6 @@ do-install:
 .for i in ${DOCFILES}
 	@${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}/${i}
 .endfor
-
 	@${RM} ${WRKSRC}/*.txt
 	${MKDIR} ${STAGEDIR}${WWWDIR}
 	@(cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR}/)

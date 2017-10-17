@@ -28,7 +28,7 @@ LIB_DEPENDS=	libFLAC.so:audio/flac \
 		libvpx.so:multimedia/libvpx \
 		libpng16.so:graphics/png
 
-USES=		execinfo gmake pkgconfig tar:xz
+USES=		gmake pkgconfig tar:xz
 USE_GL=		gl glu
 USE_GNOME=	gtk20
 USE_SDL=	sdl2 mixer2

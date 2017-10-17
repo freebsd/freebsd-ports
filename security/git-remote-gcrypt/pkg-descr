@@ -1,0 +1,5 @@
+git-remote-gcrypt is a git remote helper to push and pull from
+repositories encrypted with GnuPG. It works with the standard git
+transports, including repository hosting services like GitHub.
+
+WWW: https://spwhitton.name/tech/code/git-remote-gcrypt/

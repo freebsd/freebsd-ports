@@ -1,0 +1,5 @@
+Compute Gower's distance (or similarity) coefficient between records.
+Compute the top-n matches between records. Core algorithms are
+executed in parallel on systems supporting OpenMP.
+
+WWW: https://cran.r-project.org/web/packages/gower/

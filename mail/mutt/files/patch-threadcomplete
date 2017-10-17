@@ -1,4 +1,4 @@
---- mutt.h.orig	2017-06-03 22:52:35 UTC
+--- mutt.h.orig	2017-09-04 23:39:03 UTC
 +++ mutt.h
 @@ -211,6 +211,7 @@ enum
    MUTT_EXPIRED,
@@ -8,9 +8,9 @@
  
    /* actions for mutt_pattern_comp/mutt_pattern_exec */
    MUTT_AND,
---- pattern.c.orig	2017-06-03 22:52:35 UTC
+--- pattern.c.orig	2017-09-04 23:39:03 UTC
 +++ pattern.c
-@@ -57,6 +57,7 @@ static const struct pattern_flags
+@@ -56,6 +56,7 @@ static const struct pattern_flags
  }
  Flags[] =
  {
@@ -18,7 +18,7 @@
    { 'A', MUTT_ALL,			0,		NULL },
    { 'b', MUTT_BODY,		MUTT_FULL_MSG,	eat_regexp },
    { 'B', MUTT_WHOLE_MSG,		MUTT_FULL_MSG,	eat_regexp },
-@@ -1302,6 +1303,16 @@ pattern_exec (struct pattern_t *pat, pat
+@@ -1270,6 +1271,16 @@ mutt_pattern_exec (struct pattern_t *pat
        else
          result = mutt_is_list_cc (pat->alladdr, h->env->to, h->env->cc);
        return (pat->not ^ result);

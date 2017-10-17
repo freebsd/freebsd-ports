@@ -68,8 +68,6 @@ Gecko_Pre_Include=	bsd.gecko.mk
 #
 # MOZ_EXTENSIONS		A list of extensions to build
 #
-# MOZ_PROTOCOLS			A list of protocols to build (http, ftp, etc.)
-#
 # PORT_MOZCONFIG		Defaults to ${FILESDIR}/mozconfig.in, but can be
 # 						set to a generic mozconfig included with the port
 #
@@ -105,6 +103,10 @@ USES+=		compiler:c++11-lang
 
 .if ${MOZILLA_VER:R:R} >= 50
 USE_XORG+=	xcb
+.endif
+
+.if ${OPSYS} == FreeBSD && ${OSREL} == 11.1
+LLD_UNSAFE=	yes
 .endif
 
 MOZILLA_SUFX?=	none
@@ -261,11 +263,6 @@ MOZ_OPTIONS+=	--enable-extensions=default
 .else
 MOZ_OPTIONS+=	--enable-extensions=${MOZ_EXTENSIONS}
 .endif
-.if !defined(MOZ_PROTOCOLS)
-MOZ_OPTIONS+=	--enable-necko-protocols=default
-.else
-MOZ_OPTIONS+=	--enable-necko-protocols=${MOZ_PROTOCOLS}
-.endif
 # others
 MOZ_OPTIONS+=	--with-system-zlib		\
 		--with-system-bz2
@@ -358,13 +355,13 @@ RUN_DEPENDS+=	alsa-lib>=1.1.1_1:audio/alsa-lib
 MOZ_OPTIONS+=	--enable-alsa
 .endif
 
+.if ${PORT_OPTIONS:MJACK}
+BUILD_DEPENDS+=	${LOCALBASE}/include/jack/jack.h:audio/jack
+MOZ_OPTIONS+=	--enable-jack
+.endif
+
 .if ${PORT_OPTIONS:MPULSEAUDIO}
-. if ${PORT_OPTIONS:MALSA}
-BUILD_DEPENDS+=	pulseaudio>0:audio/pulseaudio
-. else
-# pull pulse package if we cannot fallback to another backend
-LIB_DEPENDS+=	libpulse.so:audio/pulseaudio
-. endif
+BUILD_DEPENDS+=	${LOCALBASE}/include/pulse/pulseaudio.h:audio/pulseaudio
 MOZ_OPTIONS+=	--enable-pulseaudio
 .else
 MOZ_OPTIONS+=	--disable-pulseaudio
@@ -388,13 +385,12 @@ post-patch-SNDIO-on:
 		${MOZSRC}/media/webrtc/signaling/test/common.build
 .endif
 
-.if ${PORT_OPTIONS:MRUST}
-BUILD_DEPENDS+=	rust>=1.15.1:${RUST_PORT}
-. if ${MOZILLA_VER:R:R} >= 51
-BUILD_DEPENDS+=	cargo>=0.16.0:devel/cargo
-. endif
+.if ${PORT_OPTIONS:MRUST} || ${MOZILLA_VER:R:R} >= 54
+BUILD_DEPENDS+=	rust>=1.19.0_2:${RUST_PORT}
 RUST_PORT?=		lang/rust
+. if ${MOZILLA_VER:R:R} < 54
 MOZ_OPTIONS+=	--enable-rust
+. endif
 .else
 MOZ_OPTIONS+=	--disable-rust
 .endif
@@ -404,6 +400,9 @@ MOZ_OPTIONS+=	--enable-debug --disable-release
 STRIP=	# ports/184285
 .else
 MOZ_OPTIONS+=	--disable-debug --disable-debug-symbols --enable-release
+. if ${MOZILLA_VER:R:R} >= 56
+MOZ_OPTIONS+=	--enable-rust-simd
+. endif
 .endif
 
 .if ${PORT_OPTIONS:MDTRACE}
@@ -413,6 +412,7 @@ MOZ_OPTIONS+=	--enable-dtrace \
 LIBS+=			-lelf
 . endif
 STRIP=
+LLD_UNSAFE=		yes
 .else
 MOZ_OPTIONS+=	--disable-dtrace
 .endif

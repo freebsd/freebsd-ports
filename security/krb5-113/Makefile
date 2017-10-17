@@ -21,7 +21,8 @@ LICENSE=		MIT
 DEPRECATED=             EOL twelve months after release of krb5-1.15
 EXPIRATION_DATE=        2017-12-02
 
-CONFLICTS=		heimdal-[0-9]* srp-[0-9]* krb5-11[45]-[0-9]* krb5-1.[0-9]*
+CONFLICTS=		heimdal-[0-9]* srp-[0-9]* krb5-11[45]-[0-9]* \
+			krb5-1.[0-9]* krbt5-devel-*
 
 KERBEROSV_URL=		http://web.mit.edu/kerberos/
 USE_PERL5=		build

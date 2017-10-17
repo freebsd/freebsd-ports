@@ -39,8 +39,6 @@ GH_TUPLE=	BurntSushi:toml:v0.2.0:toml/src/github.com/BurntSushi/toml \
 TARGETS=	nsqd nsqlookupd nsqadmin nsq_pubsub nsq_to_nsq nsq_to_file \
 	nsq_to_http nsq_tail nsq_stat to_nsq
 
-STRIP=
-
 .for _t in ${TARGETS}
 build-${_t}:
 	cd ${GO_WRKSRC}/apps/${_t}; \

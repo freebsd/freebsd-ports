@@ -3,7 +3,7 @@
 PORTNAME=	android-tools-adb
 DISTVERSIONPREFIX=	android-
 DISTVERSION?=	8.0.0_r4
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	devel comms
 
 .ifndef EXTRA_PATCHES

@@ -19,7 +19,7 @@ BROKEN_powerpc64=	Does not build
 USES=		gmake tar:bzip2 libtool
 
 HAS_CONFIGURE=	yes
-CONFIGURE_TARGET=	${ARCH:S/amd64/x86_64/:S/armv6/arm/}-unknown-${OPSYS:tl}${OSREL}
+CONFIGURE_TARGET=	${ARCH:S/amd64/x86_64/:C/armv*/arm/}-unknown-${OPSYS:tl}${OSREL}
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--target="psp" \
 		--enable-install-libbfd \

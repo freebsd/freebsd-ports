@@ -12,6 +12,7 @@ COMMENT=	Easily create, change, or delete virtual PureFTPd users
 
 WRKSRC=		${WRKDIR}/ftp
 
+USES=		php
 USE_PHP=	mysql pcre posix session
 
 NO_BUILD=	yes

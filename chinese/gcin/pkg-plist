@@ -21,7 +21,6 @@ bin/tsd2a32
 bin/tsin2gtab-phrase
 bin/tslearn
 bin/txt2gtab-phrase
-%%QT_IM_MODULE%%lib/qt4/plugins/inputmethods/im-gcin.so
 %%ANTHY%%lib/gcin/anthy-module.so
 lib/gcin/gcin1.so
 lib/gcin/gcin2.so

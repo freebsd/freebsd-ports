@@ -1,8 +1,8 @@
---- bin/kawa.sh.in.orig	2016-11-22 21:30:51 UTC
+--- bin/kawa.sh.in.orig	2017-05-02 13:54:41 UTC
 +++ bin/kawa.sh.in
 @@ -1,13 +1,7 @@
  #!@KAWA_SHELL@
--thisfile=`type -p $0`
+-thisfile=`command -v $0`
 -case "$thisfile" in
 -  "") echo "installation error - can't find path to $0"; exit -1 ;;
 -  /*) ;;

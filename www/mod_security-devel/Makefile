@@ -2,6 +2,7 @@
 
 PORTNAME=	mod_security-devel
 PORTVERSION=	3.0.0.g2017080200
+PORTREVISION=	1
 CATEGORIES=	www security
 
 MAINTAINER=	marius.halden@modirum.com

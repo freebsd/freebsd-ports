@@ -1,42 +1,20 @@
 --- translation/en.orig	2017-05-20 02:07:36 UTC
 +++ translation/en
-@@ -821,9 +821,9 @@
- 
- [2018]
- 0=Panel setting
--+=panel
--+=pane
--+=pane%d
-++=panels
-++=position
-++=panel%d
- +=Canvas
- 
- #----------------------
-@@ -864,7 +864,7 @@
- +=tool action
- +=other action
- +=command
--+=buttom
-++=button
- +=Please push button on this
- +=set
- 
-@@ -1101,7 +1101,7 @@
- +=Fill(&F)
- +=Erase(&E)
- +=Change canvas size(&S)...
--+=Canvas Resize(&R)...
-++=Resize canvas(&R)...
- +=Change DPI value(&D)...
- 
- ### select
-@@ -1112,7 +1112,7 @@
- +=Cut(&X)
- +=Paste new layer(&V)
- +=Expand/Shrink(&E)...
--+=Output image in range to PNG(&P)
-++=Export selection to PNG(&P)
- 
- ### layer
- 4000=New layer(&N)...
+@@ -598,7 +598,7 @@
+ 100=type
+ +=blend mode
+ +=color
+-+=[palette]\nRight click/Ctrl+left click: regist color
+++=[palette]\nRight click/Ctrl+left click: register color
+ +=Double clicking on the image preview part of the layer list\nwill display a color selection dialog.
+ +=inverted color luminance to alpha value
+ +=merge with new layer
+@@ -1166,7 +1166,7 @@
+ 5100=Brightness/Contrast...
+ +=Gamma...
+ +=Level...
+-+=RGB...
+++=RGB adjustment...
+ +=HSV adjustment...
+ +=Negative-positive reversal
+ +=Grayscale

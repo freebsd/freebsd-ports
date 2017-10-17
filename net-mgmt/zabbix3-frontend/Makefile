@@ -5,11 +5,6 @@ PORTNAME=	zabbix3
 CATEGORIES=	net-mgmt
 PKGNAMESUFFIX=	-frontend
 
-MAINTAINER=	pg@pakhom.spb.ru
-COMMENT=	Enterprise-class open source distributed monitoring (${PKGNAMESUFFIX:S/^-//}) LTS
-
-LICENSE=	GPLv2
-
 MASTERDIR=	${.CURDIR}/../zabbix3-server
 
 NO_BUILD=	yes

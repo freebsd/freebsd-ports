@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME?=	mcollective-service-common
-PORTVERSION=	3.1.5
+PORTVERSION=	3.2.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	puppet@FreeBSD.org
@@ -22,6 +22,7 @@ PLIST_FILES?=	share/mcollective/agent/service.ddl \
 		share/mcollective/data/service_data.ddl \
 		share/mcollective/data/service_data.rb \
 		share/mcollective/util/service/base.rb \
+		share/mcollective/util/service/serviceservice.rb \
 		share/mcollective/util/service/puppetservice.rb \
 		share/mcollective/validator/service_name.ddl \
 		share/mcollective/validator/service_name.rb

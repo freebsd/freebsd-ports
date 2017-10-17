@@ -49,6 +49,7 @@ CFLAGS_i386+=	-mstack-alignment=16 -mstackrealign
 .endif # ${CHOSEN_COMPILER_TYPE} == clang
 
 CFLAGS_armv6+=	-no-integrated-as
+CFLAGS_armv7+=	-no-integrated-as
 
 # Extra build options for debugging
 # =================================

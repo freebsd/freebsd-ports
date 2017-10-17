@@ -1,9 +1,0 @@
-GnuPG is a complete and free replacement for PGP. This is the "stable"
-version.
-
-GnuPG allows encrypting and signing your data and communication, and
-features a versatile key management system as well as access modules
-for many public key directories. GnuPG, also known as GPG, is a command
-line tool with features for easy integration with other applications.
-
-WWW: https://www.gnupg.org/

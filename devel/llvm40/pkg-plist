@@ -2636,3 +2636,5 @@ llvm%%LLVM_LIB_VER%%/lib/libLTO.so.4
 %%LIT%%%%PYTHON_SITELIBDIR%%/lit%%LLVM_SUFFIX%%/main.py
 %%LIT%%%%PYTHON_SITELIBDIR%%/lit%%LLVM_SUFFIX%%/run.py
 %%LIT%%%%PYTHON_SITELIBDIR%%/lit%%LLVM_SUFFIX%%/util.py
+@postexec if type ccache-update-links >/dev/null 2>&1; then ccache-update-links -v; fi
+@postunexec if type ccache-update-links >/dev/null 2>&1; then ccache-update-links -v; fi

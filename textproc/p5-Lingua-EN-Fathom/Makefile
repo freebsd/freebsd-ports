@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	Lingua::EN::Fathom - Measure readability of English text
 
-LICENSE=	ART10 GPLv1
+LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 COMMON_DEPENDS=	p5-Lingua-EN-Syllable>=0:textproc/p5-Lingua-EN-Syllable

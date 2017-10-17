@@ -40,7 +40,7 @@ LIB_DEPENDS=	libFLAC.so:audio/flac \
 LIB_DEPENDS+=	libdvdcss.so.2:multimedia/libdvdcss
 .endif
 
-USES=		compiler cpe execinfo gmake iconv libtool:keepla \
+USES=		compiler cpe gmake iconv libtool:keepla \
 		localbase pathfix perl5 pkgconfig tar:xz
 CPE_PRODUCT=	xine-lib
 CPE_VENDOR=	xine

@@ -3,7 +3,7 @@
 
 PORTNAME=	ori
 PORTVERSION=	0.8.1
-PORTREVISION=	9
+PORTREVISION=	12
 CATEGORIES=	sysutils net
 MASTER_SITES=	http://cdn.bitbucket.org/orifs/ori/downloads/
 
@@ -16,7 +16,7 @@ COMMENT=	Ori distributed file system
 LIB_DEPENDS=	libevent.so:devel/libevent \
 		libboost_date_time.so:devel/boost-libs
 
-USES=		compiler:c++11-lib execinfo fuse pkgconfig scons ssl tar:xz
+USES=		compiler:c++11-lib fuse pkgconfig scons ssl tar:xz
 CPPFLAGS+=	-I${OPENSSLINC}
 LDFLAGS+=	-L${OPENSSLLIB} -lcrypto
 MAKE_ARGS=	VERBOSE=1

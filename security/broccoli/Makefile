@@ -1,4 +1,4 @@
-# Created by: Craig Leres <leres@ee.lbl.gov>
+# Created by: Craig Leres <leres@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	broccoli
@@ -8,7 +8,7 @@ CATEGORIES=	security
 MASTER_SITES=	http://www.bro.org/downloads/release/
 DISTNAME=	bro-2.4.1
 
-MAINTAINER=	leres@ee.lbl.gov
+MAINTAINER=	leres@FreeBSD.org
 COMMENT=	Bro Client Communications Library
 
 LICENSE=	BSD3CLAUSE

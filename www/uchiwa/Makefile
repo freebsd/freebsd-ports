@@ -46,8 +46,6 @@ GH_TUPLE+=	kless:osutil:3ac994847c4376a4b905fc0a19f450c5a4bec647:klessosutil/src
 USERS=	uchiwa
 GROUPS=	uchiwa
 
-STRIP=	#
-
 post-extract:
 	@${MKDIR} ${WRKSRC}/src/github.com/${GH_ACCOUNT}/${PORTNAME}
 .for src in .travis.yml Gruntfile.js bower.json package.json uchiwa \

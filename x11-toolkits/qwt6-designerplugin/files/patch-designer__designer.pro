@@ -1,6 +1,6 @@
---- ./designer/designer.pro.orig	2013-05-30 15:18:27.753341000 +0000
-+++ ./designer/designer.pro	2013-07-13 21:19:00.492115401 +0000
-@@ -42,7 +42,7 @@
+--- designer/designer.pro.orig	2016-06-13 07:14:23 UTC
++++ designer/designer.pro
+@@ -42,7 +42,7 @@ contains(QWT_CONFIG, QwtDesigner) {
  
  
      TEMPLATE        = lib
@@ -9,16 +9,16 @@
  
      DESTDIR         = plugins/designer
  
-@@ -95,7 +95,7 @@
-             LIBS      += -L$${QWT_ROOT}/lib
-         }
+@@ -84,7 +84,7 @@ contains(QWT_CONFIG, QwtDesigner) {
+         # into the plugin. Not supported on Windows !
  
--        qwtAddLibrary(qwt)
-+        qwtAddLibrary(qwt6)
+         QMAKE_RPATHDIR *= $${QWT_INSTALL_LIBS}
+-        qwtAddLibrary($${QWT_OUT_ROOT}/lib, qwt)
++        qwtAddLibrary($${QWT_OUT_ROOT}/lib, qwt6)
  
          contains(QWT_CONFIG, QwtDll) {
  
-@@ -124,7 +124,7 @@
+@@ -113,7 +113,7 @@ contains(QWT_CONFIG, QwtDesigner) {
  
      RESOURCES += qwt_designer_plugin.qrc
  

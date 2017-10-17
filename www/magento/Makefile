@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.magentocommerce.com/downloads/assets/${PORTVERSION}/
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Feature-rich eCommerce platform
 
-USES=		cpe
+USES=		cpe php
 CPE_VENDDOR=	magentocommerce
 USE_PHP=	pdo_mysql hash gd iconv curl dom soap simplexml mcrypt mysql \
 		ctype zlib json

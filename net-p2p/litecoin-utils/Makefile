@@ -21,6 +21,7 @@ CONFIGURE_ARGS=	--without-daemon \
 		--disable-wallet \
 		--disable-reduce-exports
 
-PLIST_FILES=	bin/litecoin-cli bin/litecoin-tx
+PLIST_FILES=	bin/litecoin-cli bin/litecoin-tx \
+		man/man1/litecoin-cli.1.gz man/man1/litecoin-tx.1.gz
 
 .include "${MASTERDIR}/Makefile"

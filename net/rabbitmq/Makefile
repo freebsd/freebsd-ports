@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rabbitmq
-PORTVERSION=	3.6.11
+PORTVERSION=	3.6.12
 CATEGORIES=	net
 MASTER_SITES=	http://www.rabbitmq.com/releases/rabbitmq-server/v${PORTVERSION}/
 DISTNAME=	${PORTNAME}-server-${PORTVERSION}
@@ -10,7 +10,8 @@ DISTNAME=	${PORTNAME}-server-${PORTVERSION}
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	RabbitMQ is an implementation of AMQP
 
-LICENSE=	MPL
+LICENSE=	MPL11
+LICENSE_FILE=	${WRKSRC}/LICENSE-MPL-RabbitMQ
 
 BUILD_DEPENDS=	erlang-runtime19>=19.0:lang/erlang-runtime19 \
 		${PYTHON_PKGNAMEPREFIX}simplejson>=2.0:devel/py-simplejson \

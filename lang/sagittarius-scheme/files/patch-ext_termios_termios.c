@@ -1,4 +1,4 @@
---- ext/termios/termios.c.orig	2016-02-19 19:27:59 UTC
+--- ext/termios/termios.c.orig	2017-09-23 20:35:41 UTC
 +++ ext/termios/termios.c
 @@ -457,29 +457,29 @@ SG_EXTENSION_ENTRY void Sg_Init_sagittar
    TERMIOS_VAR(OCRNL);

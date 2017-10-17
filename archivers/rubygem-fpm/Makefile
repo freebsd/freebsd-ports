@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	fpm
-PORTVERSION=	1.9.2
+PORTVERSION=	1.9.3
 CATEGORIES=	archivers rubygems
 MASTER_SITES=	RG
 

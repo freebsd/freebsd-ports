@@ -22,6 +22,7 @@ lib/libtumbler-1.so.0.0.0
 lib/tumbler-1/plugins/cache/tumbler-cache-plugin.so
 lib/tumbler-1/plugins/cache/tumbler-xdg-cache.so
 %%COVER%%lib/tumbler-1/plugins/tumbler-cover-thumbnailer.so
+lib/tumbler-1/plugins/tumbler-desktop-thumbnailer.so
 %%FFMPEG%%lib/tumbler-1/plugins/tumbler-ffmpeg-thumbnailer.so
 %%FONTS%%lib/tumbler-1/plugins/tumbler-font-thumbnailer.so
 %%JPEG%%lib/tumbler-1/plugins/tumbler-jpeg-thumbnailer.so

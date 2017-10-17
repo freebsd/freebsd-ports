@@ -3,6 +3,7 @@
 
 PORTNAME=	elasticsearch
 PORTVERSION=	5.3.0
+PORTREVISION=	1
 CATEGORIES=	textproc java devel
 MASTER_SITES=	https://artifacts.elastic.co/downloads/${PORTNAME}/ \
 		http://mirrors.rit.edu/zi/
@@ -24,7 +25,7 @@ NO_BUILD=	yes
 JAVA_VERSION=	1.8+
 USE_RC_SUBR=	${PORTNAME}
 SHEBANG_FILES=	bin/elasticsearch-plugin \
-		bin/elasticsearch
+		bin/elasticsearch bin/elasticsearch.in.sh
 
 OPTIONS_DEFINE=	DOCS
 

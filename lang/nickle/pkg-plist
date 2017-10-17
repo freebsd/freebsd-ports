@@ -37,6 +37,7 @@ man/man1/nickle.1.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/smlng/generate.5c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/smlng/parse.5c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/smlng/test.5c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sudoku.5c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/turtle/COPYING
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/turtle/snowflake.5c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/turtle/snowflake.tex
@@ -51,6 +52,7 @@ man/man1/nickle.1.gz
 %%DATADIR%%/file.5c
 %%DATADIR%%/gamma.5c
 %%DATADIR%%/history.5c
+%%DATADIR%%/json.5c
 %%DATADIR%%/list.5c
 %%DATADIR%%/math.5c
 %%DATADIR%%/mutex.5c

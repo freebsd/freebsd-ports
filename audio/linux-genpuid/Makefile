@@ -12,6 +12,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Application for generating MusicIP puids
 
 USES=		linux tar:tgz
+BROKEN=		No public distfiles
 
 NO_BUILD=		yes
 IA32_BINARY_PORT=	yes

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fog
-PORTVERSION=	1.41.0
+PORTVERSION=	1.42.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -28,6 +28,7 @@ RUN_DEPENDS=	rubygem-fog-aliyun>=0.1.0:net/rubygem-fog-aliyun \
 		rubygem-fog-json>=0:devel/rubygem-fog-json \
 		rubygem-fog-local>=0:net/rubygem-fog-local \
 		rubygem-fog-openstack>=0:net/rubygem-fog-openstack \
+		rubygem-fog-ovirt>=0:net/rubygem-fog-ovirt \
 		rubygem-fog-powerdns>=0.1.1:net/rubygem-fog-powerdns \
 		rubygem-fog-profitbricks>=0:net/rubygem-fog-profitbricks \
 		rubygem-fog-rackspace>=0:net/rubygem-fog-rackspace \
@@ -44,7 +45,7 @@ RUN_DEPENDS=	rubygem-fog-aliyun>=0.1.0:net/rubygem-fog-aliyun \
 		rubygem-fog-xenserver>=0:net/rubygem-fog-xenserver \
 		rubygem-fog-xml>=0.1.1:textproc/rubygem-fog-xml \
 		rubygem-ipaddress>=0.5:net/rubygem-ipaddress \
-		rubygem-json1>=1.8:devel/rubygem-json1
+		rubygem-json>=2.0:devel/rubygem-json
 
 NO_ARCH=	yes
 USE_RUBY=	yes

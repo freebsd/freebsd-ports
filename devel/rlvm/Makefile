@@ -4,7 +4,7 @@ PORTNAME=	rlvm
 DISTVERSIONPREFIX=	release-
 DISTVERSION=	0.14-67
 DISTVERSIONSUFFIX=	-g9350209
-PORTREVISION=	7
+PORTREVISION=	10
 CATEGORIES=	devel games
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -68,8 +68,10 @@ post-patch:
 		-e 's,truetype/[^/"]*/,TTF/,' \
 		${WRKSRC}/src/utilities/find_font_file.cc
 
-pre-install-TEST-on:
+do-test-TEST-on:
 	(cd ${WRKSRC} && build/${PORTNAME}_unittests)
+
+pre-install-TEST-on: do-test-TEST-on
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/build/${PORTNAME} \

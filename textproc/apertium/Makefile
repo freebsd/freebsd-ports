@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	apertium
-PORTVERSION=	3.4.0
+PORTVERSION=	3.4.2
 CATEGORIES=	textproc
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION:R}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bofs@FreeBSD.org
 COMMENT=	Toolbox to build shallow-transfer machine translation systems
 
 LICENSE=	GPLv2+

@@ -84,11 +84,11 @@ lib/cmake/KReport3/KReportTargets.cmake
 lib/libKReport3.so
 lib/libKReport3.so.3
 lib/libKReport3.so.3.0
-libdata/pkgconfig/KReport3.pc
 %%QT_MKSPECDIR%%/modules/qt_KReport3.pri
 %%QT_PLUGINDIR%%/kreport3/org.kde.kreport.barcode.so
 %%QT_PLUGINDIR%%/kreport3/org.kde.kreport.web.so
-%%DATADIR%%3/icons/kreport_breeze.rcc
-%%DATADIR%%3/icons/org.kde.kreport.barcode_breeze.rcc
-%%DATADIR%%3/icons/org.kde.kreport.web_breeze.rcc
+libdata/pkgconfig/KReport3.pc
+share/kreport3/icons/kreport_breeze.rcc
+share/kreport3/icons/org.kde.kreport.barcode_breeze.rcc
+share/kreport3/icons/org.kde.kreport.web_breeze.rcc
 share/kservicetypes5/kreport_elementplugin.desktop

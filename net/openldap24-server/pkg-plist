@@ -1,4 +1,4 @@
-@unexec %%RC_DIR%%/etc/rc.d/slapd stop 2>&1 >/dev/null || true
+@preunexec %%RC_DIR%%/etc/rc.d/slapd stop 2>&1 >/dev/null || true
 %%ETCDIR%%/schema/README
 %%ETCDIR%%/schema/collective.ldif
 @sample %%ETCDIR%%/schema/collective.schema.sample
@@ -34,7 +34,6 @@
 %%SLAPI%%lib/libslapi.a
 %%SLAPI%%lib/libslapi.la
 %%SLAPI%%lib/libslapi.so
-%%MODULES%%@exec mkdir -p %D/libexec/openldap
 %%BACK_BDB%%libexec/openldap/back_bdb-%%OPENLDAP_MAJOR%%.so.%%SHLIB_MAJOR%%
 %%BACK_BDB%%libexec/openldap/back_bdb-%%OPENLDAP_MAJOR%%.so.%%SHLIB_MAJOR%%.%%SHLIB_MINOR%%
 %%BACK_BDB%%libexec/openldap/back_bdb.la
@@ -99,6 +98,10 @@
 %%SMBPWD%%libexec/openldap/smbk5pwd.so
 %%SMBPWD%%libexec/openldap/smbk5pwd.so.0
 %%SMBPWD%%libexec/openldap/smbk5pwd.so.0.0.0
+%%LASTBIND%%libexec/openldap/lastbind.la
+%%LASTBIND%%libexec/openldap/lastbind.so
+%%LASTBIND%%libexec/openldap/lastbind.so.0
+%%LASTBIND%%libexec/openldap/lastbind.so.0.0.0
 libexec/slapd
 man/man5/slapd-bdb.5.gz
 man/man5/slapd-config.5.gz

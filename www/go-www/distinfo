@@ -1,5 +1,5 @@
-TIMESTAMP = 1486283285
-SHA256 (nbari-www-0.3.1_GH0.tar.gz) = 322612b8ad3167df0a6bf84b283db958f670d6f0e4770376ae24fc4ea39d9f68
-SIZE (nbari-www-0.3.1_GH0.tar.gz) = 3633
-SHA256 (nbari-violetear-2.2.0_GH0.tar.gz) = a71a2355548ae5adef5578552dc522c1a6174f9ac88b36db25c8bba1c39ab01e
-SIZE (nbari-violetear-2.2.0_GH0.tar.gz) = 14408
+TIMESTAMP = 1506548170
+SHA256 (nbari-www-1.1.1_GH0.tar.gz) = eea1a8beb69556d984eed63967c569c7bace2add3752a94241de0def5df012eb
+SIZE (nbari-www-1.1.1_GH0.tar.gz) = 4211
+SHA256 (golang-crypto-847319b_GH0.tar.gz) = f471dac9d970154c00dba9b9772752f0feb368713ee1b11418d22f11ba6fd5df
+SIZE (golang-crypto-847319b_GH0.tar.gz) = 1432733

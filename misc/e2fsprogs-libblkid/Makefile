@@ -23,8 +23,6 @@ INSTALL_WRKSRC=	${WRKSRC}/lib/blkid
 
 PKGDIR=		${.CURDIR}
 
-BROKEN_aarch64=		Fails to build: No targets specified and no makefile found
-
 pre-build:
 	${MKDIR} ${WRKSRC}/lib/blkid/elfshared
 	cd ${WRKSRC}/util && ${MAKE_CMD} subst

@@ -1,17 +1,17 @@
---- config/gitlab.yml.example.orig	2017-06-07 20:48:31 UTC
+--- config/gitlab.yml.example.orig	2017-08-09 13:53:30 UTC
 +++ config/gitlab.yml.example
-@@ -463,8 +463,8 @@ production: &base
+@@ -467,8 +467,8 @@ production: &base
      # real path not the symlink.
      storages: # You must have at least a `default` storage path.
        default:
 -        path: /home/git/repositories/
 -        gitaly_address: unix:/home/git/gitlab/tmp/sockets/private/gitaly.socket # TCP connections are supported too (e.g. tcp://host:port)
 +        path: /usr/home/git/repositories/
-+        gitaly_address: unix:/usr/home/git/gitlab/tmp/sockets/private/gitaly.socket # TCP connections are supported too (e.g. tcp://host:port)
++        gitaly_address: unix:/usr/local/www/gitlab/tmp/sockets/private/gitaly.socket # TCP connections are supported too (e.g. tcp://host:port)
  
    ## Backup settings
    backup:
-@@ -491,12 +491,12 @@ production: &base
+@@ -495,12 +495,12 @@ production: &base
  
    ## GitLab Shell settings
    gitlab_shell:
@@ -27,7 +27,7 @@
  
      # Git over HTTP
      upload_pack: true
-@@ -509,7 +509,7 @@ production: &base
+@@ -521,7 +521,7 @@ production: &base
    # CAUTION!
    # Use the default values unless you really know what you are doing
    git:

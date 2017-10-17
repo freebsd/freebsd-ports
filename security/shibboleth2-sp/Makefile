@@ -3,7 +3,7 @@
 
 PORTNAME=	shibboleth-sp
 PORTVERSION=	2.6.0
-PORTREVISION=	4
+PORTREVISION=	6
 CATEGORIES=	security www
 MASTER_SITES=	http://shibboleth.net/downloads/service-provider/${PORTVERSION}/
 
@@ -45,6 +45,8 @@ MEMCACHED_DESC=	Store sessions in memcached
 FASTCGI_DESC=	FastCGI protocol support, e.g. for NGINX
 APACHE_DESC=	Build Apache module
 
+APACHE_USE=	apache=22+
+
 ODBC_CONFIGURE_ENABLE=	odbc
 ODBC_LIB_DEPENDS=	libodbc.so:databases/unixODBC
 
@@ -71,7 +73,6 @@ CONFIGURE_ARGS+=	--disable-doxygen-doc
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MAPACHE}
-USE_APACHE=	22+
 .if "${APACHE_VERSION}" == 22
 CONFIGURE_ARGS+=--disable-apache-24 --enable-apache-22 --with-apxs22=${APXS}
 PLIST_SUB+=	WITH_APACHE_22=""

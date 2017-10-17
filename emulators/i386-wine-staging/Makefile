@@ -24,4 +24,3 @@ PKGNAMESUFFIX=	-staging
 MASTERDIR=	${SLAVEDIR}
 .include "${SLAVEDIR}/Makefile.inc"
 .endif
-

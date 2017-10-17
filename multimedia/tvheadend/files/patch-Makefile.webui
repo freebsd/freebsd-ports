@@ -1,6 +1,6 @@
---- Makefile.webui.orig	2015-09-25 13:57:59 UTC
-+++ Makefile.webui
-@@ -153,22 +153,22 @@ define GO_JS
+--- Makefile.webui.orig	2017-01-20 19:41:51.000000000 +0100
++++ Makefile.webui	2017-02-08 10:35:04.215801000 +0100
+@@ -189,22 +189,22 @@
  	$(VV)$(CSS_PY) --in="$^" utf-check
  	$(VV)cat $^ > $@.tmp
  	$(VV)$(RUN_JS) < $@.tmp > $@.tmp2
@@ -26,4 +26,4 @@
 +	@stat -f "%-35N %7b" $@
  endef
  
- all:
+ define merge-po

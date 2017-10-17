@@ -13,4 +13,3 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=2.5.1:devel/py3-pytest \
 USES=	python:3.3+
 
 .include "${MASTERDIR}/Makefile"
-

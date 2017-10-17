@@ -15,10 +15,9 @@ PORTSCOUT=	limitw:1,even
 
 NO_BUILD=	yes
 NO_ARCH=	yes
-USES=		cpe dos2unix
+USES=		cpe dos2unix php:web
 USE_PHP=	dom mcrypt gd
 DOS2UNIX_REGEX=	.*\.php
-WANT_PHP_WEB=	yes
 SUB_FILES=	pkg-deinstall pkg-message
 SUB_LIST+=	GOWDIR=${WWWDIR:H}
 

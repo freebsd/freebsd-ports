@@ -1,0 +1,7 @@
+===========================================================================
+Please add the following to %%PREFIX%%/%%APACHEETCDIR%%/httpd.conf:
+LoadModule auth_openidc_module %%APACHEMODDIR%%/mod_auth_openidc.so
+
+Then update the following config file with your settings:
+%%PREFIX%%/%%APACHEETCDIR%%/Includes/auth_openidc.conf
+===========================================================================

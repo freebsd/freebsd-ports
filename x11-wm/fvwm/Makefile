@@ -11,6 +11,8 @@ PKGNAMESUFFIX=	1${PKGNAMESUFFIX2}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fvwm window manager
 
+CONFLICTS=	fvwm-2.*
+
 USES=		imake
 USE_XORG=	xbitmaps xpm xext x11 xmu
 

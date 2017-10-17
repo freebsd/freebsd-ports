@@ -85,9 +85,6 @@ lib/calibre/calibre/debug.py
 lib/calibre/calibre/devices/__init__.py
 lib/calibre/calibre/devices/android/__init__.py
 lib/calibre/calibre/devices/android/driver.py
-lib/calibre/calibre/devices/apple/__init__.py
-lib/calibre/calibre/devices/apple/driver.py
-lib/calibre/calibre/devices/apple/itunes.py
 lib/calibre/calibre/devices/binatone/__init__.py
 lib/calibre/calibre/devices/binatone/driver.py
 lib/calibre/calibre/devices/blackberry/__init__.py

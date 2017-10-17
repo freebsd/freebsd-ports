@@ -3,7 +3,7 @@
 
 PORTNAME=	feappv
 PORTVERSION=	3.1
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	cad science
 MASTER_SITES=	http://www.ce.berkeley.edu/projects/feap/feappv/
 DISTFILES=	${PORTNAME}${PORTVERSION:S/.//}${EXTRACT_SUFX} ${PORTDOCS}
@@ -13,6 +13,7 @@ EXTRACT_ONLY=	${PORTNAME}${PORTVERSION:S/.//}${EXTRACT_SUFX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Finite element analysis program (personal version)
 
+BROKEN=		No public distfiles
 USES=		fortran gmake localbase:ldflags zip
 USE_XORG=	x11
 MAKEFILE=	makefile

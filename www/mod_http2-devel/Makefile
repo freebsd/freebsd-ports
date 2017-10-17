@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mod_http2-devel
-PORTVERSION=	1.10.11
+PORTVERSION=	1.10.12
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 
@@ -16,7 +16,7 @@ LIB_DEPENDS=	libnghttp2.so:www/libnghttp2
 
 USES=		autoreconf libtool ssl
 USE_GITHUB=	yes
-USE_APACHE=	24
+USE_APACHE=	24+
 
 GH_ACCOUNT=	icing
 GH_PROJECT=	mod_h2

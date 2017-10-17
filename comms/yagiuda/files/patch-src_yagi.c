@@ -1,8 +1,8 @@
---- src/yagi.c.orig	Tue Jul 19 12:23:10 2005
-+++ src/yagi.c	Tue Jul 19 12:23:33 2005
-@@ -19,7 +19,7 @@
-
-
+--- src/yagi.c.orig	2005-07-09 19:59:56 UTC
++++ src/yagi.c
+@@ -19,7 +19,7 @@ formulae */
+ 
+ 
  #include <stdio.h>
 -#include <malloc.h>
 +#include <stdlib.h>

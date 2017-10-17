@@ -1,0 +1,5 @@
+Simple Python lib to get wmi data classes in a dict.
+The script wmi_query make a query and print on the screen the wmi class object.
+Both keys and values will be printed for each object returned by the query.
+
+WWW: https://github.com/kanazux/wmi-query

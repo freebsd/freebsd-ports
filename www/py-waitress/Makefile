@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	waitress
-PORTVERSION=	1.0.2
+PORTVERSION=	1.1.0
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,8 +12,8 @@ COMMENT=	Python WSGI server
 
 LICENSE=	ZPL21
 
-USES=	python
-USE_PYTHON=	distutils autoplist
+USES=		python
+USE_PYTHON=	autoplist distutils
 NO_ARCH=	yes
 
 .include <bsd.port.mk>

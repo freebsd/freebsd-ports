@@ -3,13 +3,15 @@
 
 PORTNAME=	plink
 PORTVERSION=	1.07
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	biology science
 MASTER_SITES=	http://pngu.mgh.harvard.edu/~purcell/plink/dist/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Whole genome association analysis toolset
+
+BROKEN=		no public distfiles
 
 LICENSE=	GPLv2
 

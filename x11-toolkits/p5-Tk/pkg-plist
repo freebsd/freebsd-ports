@@ -103,6 +103,7 @@ bin/widget
 %%PERL5_MAN3%%/Tk::focus.3.gz
 %%PERL5_MAN3%%/Tk::form.3.gz
 %%PERL5_MAN3%%/Tk::getOpenFile.3.gz
+%%PERL5_MAN3%%/Tk::getSaveFile.3.gz
 %%PERL5_MAN3%%/Tk::grab.3.gz
 %%PERL5_MAN3%%/Tk::grid.3.gz
 %%PERL5_MAN3%%/Tk::mega.3.gz
@@ -437,6 +438,7 @@ bin/widget
 %%SITE_ARCH%%/Tk/folder.xpm
 %%SITE_ARCH%%/Tk/form.pod
 %%SITE_ARCH%%/Tk/getOpenFile.pod
+%%SITE_ARCH%%/Tk/getSaveFile.pod
 %%SITE_ARCH%%/Tk/grab.pod
 %%SITE_ARCH%%/Tk/grid.pod
 %%SITE_ARCH%%/Tk/icon.gif

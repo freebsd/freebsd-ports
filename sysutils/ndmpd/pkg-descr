@@ -8,4 +8,4 @@ data backup and recovery using Data Management Application (DMA) clients.
 The NDMP protocol is used to coordinate data movement and control
 between a DMA and an NDMP server or between two NDMP servers.
 
-WWW: https://bitbucket.org/araujobsd/ndmp-freebsd
+WWW: https://github.com/araujobsd/ndmpd

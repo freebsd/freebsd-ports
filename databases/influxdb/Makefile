@@ -3,6 +3,7 @@
 PORTNAME=	influxdb
 PORTVERSION=	1.3.3
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	databases net-mgmt
 
 MAINTAINER=	cheffo@freebsd-bg.org
@@ -11,7 +12,7 @@ COMMENT=	Open-source distributed time series database
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-ONLY_FOR_ARCHS=	amd64 armv6 i386
+ONLY_FOR_ARCHS=	amd64 armv6 armv7 i386
 
 BUILD_DEPENDS=	go>=1.8.1:lang/go
 
@@ -72,6 +73,15 @@ INFLUXD_DBDIR=	/var/db/${PORTNAME}/
 INFLUXD_LOGDIR=	/var/log/${PORTNAME}/
 INFLUXD_PIDDIR=	/var/run/${PORTNAME}/
 
+.include <bsd.port.pre.mk>
+
+.if ${OPSYS} == "FreeBSD" && ((${OSVERSION} >= 1100513 && ${OSVERSION} < 1200000) || \
+    	${OSVERSION} >= 1200015)
+SUB_LIST+=	INFLUXD_LOGCMD="daemon"
+.else
+SUB_LIST+=	INFLUXD_LOGCMD="logger"
+.endif
+
 post-patch:
 	@${MKDIR} ${WRKSRC}/src/github.com/${GH_ACCOUNT_DEFAULT}/${PORTNAME}
 	@cd ${WRKSRC} && \
@@ -115,4 +125,4 @@ do-install-MANPAGES-on:
 		${INSTALL_MAN} ${WRKSRC}/src/github.com/influxdata/influxdb/man/$i ${STAGEDIR}${MAN8PREFIX}/man/man1
 .endfor
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

@@ -5,8 +5,7 @@ PORTNAME=	gmpc-mserver
 PORTVERSION=	0.20.0
 PORTREVISION=	14
 CATEGORIES=	audio
-MASTER_SITES=	http://download.sarine.nl/Programs/gmpc/${PORTVERSION}/ \
-		http://freebsd.unixfreunde.de/sources/
+MASTER_SITES=	http://download.sarine.nl/Programs/gmpc/${PORTVERSION}/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lets you stream music files to your mpd that are not in your database

@@ -1,4 +1,4 @@
---- HP2100/hp_disclib.c.orig	2016-12-01 22:43:42 UTC
+--- HP2100/hp_disclib.c.orig	2017-10-12 22:55:55 UTC
 +++ HP2100/hp_disclib.c
 @@ -761,8 +761,8 @@ else {                                  
      uptr = units + unit_limit;                          /*     and we use the indicated unit */
@@ -52,6 +52,15 @@
          }
  
      else                                                        /* the file mask does not permit an auto-seek */
+@@ -2195,7 +2196,7 @@ if (target_cylinder >= drive_props [mode
+     }
+ 
+ else {                                                  /* the cylinder value is OK */
+-    delta = abs (uptr->CYL - target_cylinder);          /* calculate the relative movement */
++    delta = abs (uptr->CYL - (int32) target_cylinder);          /* calculate the relative movement */
+     uptr->CYL = target_cylinder;                        /*   and move the positioner */
+ 
+     if ((cvptr->head >= drive_props [model].heads)          /* if the head */
 @@ -2291,12 +2292,13 @@ return;
  
  static void set_timer (CVPTR cvptr, FLIP_FLOP action)

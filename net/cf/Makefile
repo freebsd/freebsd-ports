@@ -9,6 +9,7 @@ MAINTAINER=	swills@FreeBSD.org
 COMMENT=	CLI for Cloud Foundry written in Go
 
 LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/go-bindata:devel/go-bindata
 
@@ -21,9 +22,7 @@ GO_PKGNAME=	code.cloudfoundry.org/cli
 
 PLIST_FILES=	bin/cf
 
-PORTDOCS=	CHANGELOG.md LICENSE NOTICE README.md
-
-STRIP=		# stripping can break go binaries
+PORTDOCS=	CHANGELOG.md NOTICE README.md
 
 OPTIONS_DEFINE=	DOCS
 
@@ -35,7 +34,7 @@ do-build:
 do-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for x in ${PORTDOCS}
-	${INSTALL_MAN} ${WRKSRC}/${x} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${x} ${STAGEDIR}${DOCSDIR}
 .endfor
 
 post-install:

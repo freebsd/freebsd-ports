@@ -95,6 +95,7 @@ include/tbb/task_scheduler_observer.h
 include/tbb/tbb.h
 include/tbb/tbb_allocator.h
 include/tbb/tbb_config.h
+include/tbb/tbb_disable_exceptions.h
 include/tbb/tbb_exception.h
 include/tbb/tbb_machine.h
 include/tbb/tbb_profiling.h

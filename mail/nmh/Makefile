@@ -71,5 +71,6 @@ DEBUG_FLAGS+=	-O0 -Wall -Wextra -g
 .endif
 
 CONFLICTS=	ja-mh-[0-9]*
+CONFLICTS_INSTALL=	pixie-* p5-Dist-Joseki-*
 
 .include <bsd.port.mk>

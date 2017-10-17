@@ -69,6 +69,8 @@
 %%WWWDIR%%/js/tinymce/plugins/wordcount/plugin.min.js
 %%WWWDIR%%/js/tinymce/skins/lightgray/content.inline.min.css
 %%WWWDIR%%/js/tinymce/skins/lightgray/content.min.css
+%%WWWDIR%%/js/tinymce/skins/lightgray/content.mobile.min.css
+%%WWWDIR%%/js/tinymce/skins/lightgray/fonts/tinymce-mobile.woff
 %%WWWDIR%%/js/tinymce/skins/lightgray/fonts/tinymce-small.eot
 %%WWWDIR%%/js/tinymce/skins/lightgray/fonts/tinymce-small.svg
 %%WWWDIR%%/js/tinymce/skins/lightgray/fonts/tinymce-small.ttf
@@ -82,7 +84,9 @@
 %%WWWDIR%%/js/tinymce/skins/lightgray/img/object.gif
 %%WWWDIR%%/js/tinymce/skins/lightgray/img/trans.gif
 %%WWWDIR%%/js/tinymce/skins/lightgray/skin.min.css
+%%WWWDIR%%/js/tinymce/skins/lightgray/skin.mobile.min.css
 %%WWWDIR%%/js/tinymce/themes/inlite/theme.min.js
+%%WWWDIR%%/js/tinymce/themes/mobile/theme.min.js
 %%WWWDIR%%/js/tinymce/themes/modern/theme.min.js
 %%WWWDIR%%/js/tinymce/tinymce.min.js
 @owner

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gstreamer1-validate
-PORTVERSION=	1.12.2
+PORTVERSION=	1.12.3
 CATEGORIES=	multimedia
 MASTER_SITES=	http://gstreamer.freedesktop.org/src/gst-validate/
 DISTNAME=	gst-validate-${PORTVERSION}
@@ -20,6 +20,6 @@ USE_GNOME=	cairo gdkpixbuf2 gtk30 introspection:build
 USE_GSTREAMER1=	yes
 INSTALL_TARGET=	install-strip
 
-PLIST_SUB=	VERSION=1.0 SOVERSION=0.1202.0
+PLIST_SUB=	VERSION=1.0 SOVERSION=0.1203.0
 
 .include <bsd.port.mk>

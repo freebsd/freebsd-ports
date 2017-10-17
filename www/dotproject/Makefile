@@ -11,12 +11,11 @@ COMMENT=	Open Source Project Management tool
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cpe shebangfix
+USES=		cpe shebangfix php:web
 SHEBANG_FILES=	misc/cvs2cl/cvs2cl.pl
 WRKSRC=		${WRKDIR}/${PORTNAME}
 NO_BUILD=	yes
 USE_PHP=	gd mysql session zlib
-WANT_PHP_WEB=	yes
 USE_APACHE_RUN=	22+
 
 SUB_FILES=	pkg-message

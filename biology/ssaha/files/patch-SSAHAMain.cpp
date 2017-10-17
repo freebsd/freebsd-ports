@@ -37,6 +37,15 @@
  
    cerr << "Info: will ignore hits on words that occur more than " 
         << queryParams.maxStore << " times in the database." << endl;
+@@ -964,7 +965,7 @@ delete pQueryMode;
+ 
+     } // ~else
+ 
+-    assert( pAligner!=false);
++    assert(pAligner!=NULL);
+ 
+     // ownership of *pAligner passes to *pPrintTask
+     pPrintTask = new MatchTaskAlign( *pQuery, *pSubjectSource, pAligner,
 @@ -1151,7 +1152,7 @@
      } // ~if
      dirent* dirEntry;

@@ -3,7 +3,7 @@
 
 PORTNAME=	magickwand
 PORTVERSION=	1.0.9
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.magickwand.org/download/php/
 PKGNAMEPREFIX=	php-

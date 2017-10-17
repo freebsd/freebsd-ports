@@ -296,6 +296,13 @@ _LICENSE_DISTFILES=	${LICENSE_DISTFILES}
 .	endfor
 
 .else
+
+.	if defined(LICENSE_FILE)
+.		for lic in ${_LICENSE}
+LICENSE_FILE_${lic}?=	${LICENSE_FILE}
+.		endfor
+.	endif
+
 .	for lic in ${_LICENSE}
 # Defaults to empty
 _LICENSE_GROUPS_${lic}?=#

@@ -1,4 +1,4 @@
-# Created by: José García Juanino <jjuanino@gmail.com>
+# Created by: JosÃ© GarcÃ­a Juanino <jjuanino@gmail.com>
 # $FreeBSD$
 
 PORTNAME=	borgbackup

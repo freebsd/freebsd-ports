@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mongo
-PORTVERSION=	1.6.14
-PORTREVISION=	1
+PORTVERSION=	1.6.16
 CATEGORIES=	databases pear
 
 MAINTAINER=	bofh@FreeBSD.org

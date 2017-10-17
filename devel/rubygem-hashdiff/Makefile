@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	hashdiff
-PORTVERSION=	0.3.6
+PORTVERSION=	0.3.7
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 

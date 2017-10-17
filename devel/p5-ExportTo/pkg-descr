@@ -1,0 +1,5 @@
+This module allow you to export/override subroutine/method to one
+namespace. It can be used for mix-in, for extension of modules not using
+inheritance.
+
+WWW: https://github.com/ktat/ExportTo

@@ -3,4 +3,8 @@ include/pycairo/py3cairo.h
 %%PYTHON_SITELIBDIR%%/cairo/__pycache__/__init__.cpython-%%PYTHON_SUFFIX%%.%%PYTHON_PYOEXTENSION%%
 %%PYTHON_SITELIBDIR%%/cairo/__pycache__/__init__.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/cairo/_cairo.so
+%%PYTHON_SITELIBDIR%%/pycairo-%%PORTVER%%-py%%PYTHON_VER%%.egg-info/PKG-INFO
+%%PYTHON_SITELIBDIR%%/pycairo-%%PORTVER%%-py%%PYTHON_VER%%.egg-info/SOURCES.txt
+%%PYTHON_SITELIBDIR%%/pycairo-%%PORTVER%%-py%%PYTHON_VER%%.egg-info/dependency_links.txt
+%%PYTHON_SITELIBDIR%%/pycairo-%%PORTVER%%-py%%PYTHON_VER%%.egg-info/top_level.txt
 libdata/pkgconfig/py3cairo.pc

@@ -4,6 +4,7 @@
 PORTNAME=	node
 PORTVERSION=	4.8.4
 DISTVERSIONPREFIX=	v
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	http://nodejs.org/dist/v${PORTVERSION}/
 PKGNAMESUFFIX=	4
@@ -28,7 +29,7 @@ BUNDLED_SSL_CONFIGURE_OFF=	--shared-openssl
 NLS_CONFIGURE_ON=	--with-intl=system-icu
 NLS_LIB_DEPENDS=	libicui18n.so:devel/icu
 
-USES=		compiler:c++11-lib execinfo gmake python:2 pkgconfig localbase
+USES=		compiler:c++11-lib gmake python:2 pkgconfig localbase
 HAS_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 

@@ -20,7 +20,7 @@ BUILDENV=	${SETENV} TMPDIR="${WRKDIR}"
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "i386" || ${ARCH} == "powerpc" || ${ARCH} == "armv6" || ${ARCH} == "mips"
+.if ${ARCH} == armv6 || ${ARCH} == armv7 || ${ARCH} == i386 || ${ARCH} == mips || ${ARCH} == powerpc
 LPSOLVE_ARCH=	ux32
 .else
 LPSOLVE_ARCH=	ux64

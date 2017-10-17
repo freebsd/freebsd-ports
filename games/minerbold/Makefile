@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	minerbold
-PORTVERSION=	1.3
+PORTVERSION=	1.4
 CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org

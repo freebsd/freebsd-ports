@@ -1,13 +1,14 @@
---- Gemfile.orig	2016-06-05 07:30:30 UTC
+--- Gemfile.orig	2017-07-02 13:29:06 UTC
 +++ Gemfile
-@@ -4,11 +4,11 @@ if Gem::Version.new(Bundler::VERSION) < 
+@@ -4,22 +4,22 @@ if Gem::Version.new(Bundler::VERSION) < 
    abort "Redmine requires Bundler 1.5.0 or higher (you're using #{Bundler::VERSION}).\nPlease update with 'gem update bundler'."
  end
  
--gem "rails", "4.2.5.2"
+-gem "rails", "4.2.7.1"
++gem "rails", ">= 4.2.7.1"
+ gem "addressable", "2.4.0" if RUBY_VERSION < "2.0"
 -gem "jquery-rails", "~> 3.1.4"
-+gem "rails", ">= 4.2.5.2"
-+gem "jquery-rails"
++gem "jquery-rails", "~> 4.3.0"
  gem "coderay", "~> 1.1.0"
  gem "builder", ">= 3.0.4"
 -gem "request_store", "1.0.5"
@@ -15,16 +16,20 @@
  gem "mime-types", (RUBY_VERSION >= "2.0" ? "~> 3.0" : "~> 2.99")
  gem "protected_attributes"
  gem "actionpack-action_caching"
-@@ -17,7 +17,7 @@ gem "roadie-rails"
+ gem "actionpack-xml_parser"
+-gem "roadie-rails", "~> 1.1.1"
++gem "roadie-rails", "~> 1.2.0"
+ gem "roadie", "~> 3.2.1"
  gem "mimemagic"
  
- # Request at least nokogiri 1.6.7.2 because of security advisories
--gem "nokogiri", ">= 1.6.7.2"
+-gem "nokogiri", (RUBY_VERSION >= "2.1" ? "~> 1.7.2" : "~> 1.6.8")
+-gem "i18n", "~> 0.7.0"
 +gem "nokogiri"
++gem "i18n", "~> 0.8.5"
+ gem "ffi", "1.9.14", :platforms => :mingw if RUBY_VERSION < "2.0"
  
  # Request at least rails-html-sanitizer 1.0.3 because of security advisories 
- gem "rails-html-sanitizer", ">= 1.0.3"
-@@ -28,27 +28,15 @@ gem "rbpdf", "~> 1.19.0"
+@@ -31,27 +31,15 @@ gem "rbpdf", "~> 1.19.2"
  
  # Optional gem for LDAP authentication
  group :ldap do
@@ -54,27 +59,12 @@
  platforms :jruby do
    # jruby-openssl is bundled with JRuby 1.7.0
    gem "jruby-openssl" if Object.const_defined?(:JRUBY_VERSION) && JRUBY_VERSION < '1.7.0'
-@@ -67,12 +55,12 @@ if File.exist?(database_file)
-     adapters.each do |adapter|
-       case adapter
-       when 'mysql2'
--        gem "mysql2", "~> 0.3.11", :platforms => [:mri, :mingw, :x64_mingw]
-+        gem "mysql2", "~> 0.4.5", :platforms => [:mri, :mingw, :x64_mingw]
-         gem "activerecord-jdbcmysql-adapter", :platforms => :jruby
-       when 'mysql'
-         gem "activerecord-jdbcmysql-adapter", :platforms => :jruby
-       when /postgresql/
--        gem "pg", "~> 0.18.1", :platforms => [:mri, :mingw, :x64_mingw]
-+        gem "pg", ">= 0.18.1", :platforms => [:mri, :mingw, :x64_mingw]
-         gem "activerecord-jdbcpostgresql-adapter", :platforms => :jruby
-       when /sqlite3/
-         gem "sqlite3", :platforms => [:mri, :mingw, :x64_mingw]
-@@ -92,21 +80,6 @@ else
+@@ -96,21 +84,6 @@ else
    warn("Please configure your config/database.yml first")
  end
  
 -group :development do
--  gem "rdoc", ">= 2.4.2"
+-  gem "rdoc", "~> 4.3"
 -  gem "yard"
 -end
 -
@@ -85,13 +75,13 @@
 -  gem "simplecov", "~> 0.9.1", :require => false
 -  # For running UI tests
 -  gem "capybara"
--  gem "selenium-webdriver"
+-  gem "selenium-webdriver", "~> 2.53.4"
 -end
 -
  local_gemfile = File.join(File.dirname(__FILE__), "Gemfile.local")
  if File.exists?(local_gemfile)
    eval_gemfile local_gemfile
-@@ -116,3 +89,7 @@ end
+@@ -120,3 +93,7 @@ end
  Dir.glob File.expand_path("../plugins/*/{Gemfile,PluginGemfile}", __FILE__) do |file|
    eval_gemfile file
  end

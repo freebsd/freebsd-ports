@@ -13,7 +13,7 @@ LICENSE=	MIT
 
 BUILD_DEPENDS=	go>=1.6.0:lang/go
 
-ONLY_FOR_ARCHS=	i386 amd64 armv6
+ONLY_FOR_ARCHS=	amd64 armv6 armv7 i386
 
 USE_RC_SUBR=	kapacitord
 
@@ -27,8 +27,6 @@ GH_ACCOUNT=	influxdata:DEFAULT
 SUB_FILES=	kapacitord
 SUB_LIST+=	KAPACITORD_PIDDIR=${KAPACITORD_PIDDIR}
 PLIST_SUB=	KAPACITORD_PIDDIR=${KAPACITORD_PIDDIR}
-
-STRIP=		# stripping can break go binaries
 
 post-patch:
 	@${MKDIR} ${WRKSRC}/src/github.com/${GH_ACCOUNT}/${PORTNAME}

@@ -2,7 +2,7 @@
 
 PORTNAME=	seabios
 PORTVERSION=	1.10.2
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	http://code.coreboot.org/p/seabios/downloads/get/
 

@@ -3,7 +3,7 @@
 
 PORTNAME=	blender
 PORTVERSION=	2.78c
-PORTREVISION=	3
+PORTREVISION=	9
 CATEGORIES=	graphics games
 MASTER_SITES=	http://download.blender.org/source/ \
 		http://mirror.cs.umn.edu/blender.org/source/ \
@@ -213,12 +213,7 @@ BROKEN=	REDCODE requires OPENJPEG and FFMPEG
 
 .if ${COMPILER_TYPE} == gcc
 # gcc 4.2 does not support -msse4.1, which is needed for blender 2.70+
-.if ${ARCH} == amd64
-# gcc 4.9 fails to link on amd64
-USE_GCC=	4.8+
-.else
 USE_GCC=	yes
-.endif
 .endif
 
 post-patch-OPENCOLORIO-on:

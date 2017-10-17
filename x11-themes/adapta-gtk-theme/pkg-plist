@@ -82,6 +82,7 @@
 %%GNOMESHELL%%share/themes/Adapta-Eta/gnome-shell/extensions/workspaces-to-dock/workspaces-to-dock.css
 %%GNOMESHELL%%share/themes/Adapta-Eta/gnome-shell/gnome-shell-theme.gresource
 %%GNOMESHELL%%share/themes/Adapta-Eta/gnome-shell/gnome-shell.css
+%%GNOMESHELL%%share/themes/Adapta-Eta/gnome-shell/message-indicator-symbolic.svg
 %%GNOMESHELL%%share/themes/Adapta-Eta/gnome-shell/no-events.svg
 %%GNOMESHELL%%share/themes/Adapta-Eta/gnome-shell/no-notifications.svg
 %%GNOMESHELL%%share/themes/Adapta-Eta/gnome-shell/noise-texture.png
@@ -135,8 +136,11 @@ share/themes/Adapta-Eta/gtk-2.0/Buttons/rtl-button-hover.png
 share/themes/Adapta-Eta/gtk-2.0/Buttons/rtl-button-insensitive.png
 share/themes/Adapta-Eta/gtk-2.0/Buttons/rtl-button.png
 share/themes/Adapta-Eta/gtk-2.0/Check-Radio/check-off-active.png
+share/themes/Adapta-Eta/gtk-2.0/Check-Radio/check-off-hover-menuitem.png
 share/themes/Adapta-Eta/gtk-2.0/Check-Radio/check-off-hover.png
+share/themes/Adapta-Eta/gtk-2.0/Check-Radio/check-off-insensitive-menuitem.png
 share/themes/Adapta-Eta/gtk-2.0/Check-Radio/check-off-insensitive.png
+share/themes/Adapta-Eta/gtk-2.0/Check-Radio/check-off-menuitem.png
 share/themes/Adapta-Eta/gtk-2.0/Check-Radio/check-off.png
 share/themes/Adapta-Eta/gtk-2.0/Check-Radio/check-on-active.png
 share/themes/Adapta-Eta/gtk-2.0/Check-Radio/check-on-hover-menuitem.png
@@ -146,8 +150,11 @@ share/themes/Adapta-Eta/gtk-2.0/Check-Radio/check-on-insensitive.png
 share/themes/Adapta-Eta/gtk-2.0/Check-Radio/check-on-menuitem.png
 share/themes/Adapta-Eta/gtk-2.0/Check-Radio/check-on.png
 share/themes/Adapta-Eta/gtk-2.0/Check-Radio/radio-off-active.png
+share/themes/Adapta-Eta/gtk-2.0/Check-Radio/radio-off-hover-menuitem.png
 share/themes/Adapta-Eta/gtk-2.0/Check-Radio/radio-off-hover.png
+share/themes/Adapta-Eta/gtk-2.0/Check-Radio/radio-off-insensitive-menuitem.png
 share/themes/Adapta-Eta/gtk-2.0/Check-Radio/radio-off-insensitive.png
+share/themes/Adapta-Eta/gtk-2.0/Check-Radio/radio-off-menuitem.png
 share/themes/Adapta-Eta/gtk-2.0/Check-Radio/radio-off.png
 share/themes/Adapta-Eta/gtk-2.0/Check-Radio/radio-on-active.png
 share/themes/Adapta-Eta/gtk-2.0/Check-Radio/radio-on-hover-menuitem.png
@@ -329,6 +336,7 @@ share/themes/Adapta-Eta/index.theme
 %%GNOMESHELL%%share/themes/Adapta-Nokto-Eta/gnome-shell/extensions/workspaces-to-dock/workspaces-to-dock.css
 %%GNOMESHELL%%share/themes/Adapta-Nokto-Eta/gnome-shell/gnome-shell-theme.gresource
 %%GNOMESHELL%%share/themes/Adapta-Nokto-Eta/gnome-shell/gnome-shell.css
+%%GNOMESHELL%%share/themes/Adapta-Nokto-Eta/gnome-shell/message-indicator-symbolic.svg
 %%GNOMESHELL%%share/themes/Adapta-Nokto-Eta/gnome-shell/no-events.svg
 %%GNOMESHELL%%share/themes/Adapta-Nokto-Eta/gnome-shell/no-notifications.svg
 %%GNOMESHELL%%share/themes/Adapta-Nokto-Eta/gnome-shell/noise-texture.png
@@ -380,7 +388,10 @@ share/themes/Adapta-Nokto-Eta/gtk-2.0/Buttons/rtl-button-insensitive-dark.png
 share/themes/Adapta-Nokto-Eta/gtk-2.0/Check-Radio/check-off-active-dark.png
 share/themes/Adapta-Nokto-Eta/gtk-2.0/Check-Radio/check-off-dark.png
 share/themes/Adapta-Nokto-Eta/gtk-2.0/Check-Radio/check-off-hover-dark.png
+share/themes/Adapta-Nokto-Eta/gtk-2.0/Check-Radio/check-off-hover-menuitem-dark.png
 share/themes/Adapta-Nokto-Eta/gtk-2.0/Check-Radio/check-off-insensitive-dark.png
+share/themes/Adapta-Nokto-Eta/gtk-2.0/Check-Radio/check-off-insensitive-menuitem-dark.png
+share/themes/Adapta-Nokto-Eta/gtk-2.0/Check-Radio/check-off-menuitem-dark.png
 share/themes/Adapta-Nokto-Eta/gtk-2.0/Check-Radio/check-on-active-dark.png
 share/themes/Adapta-Nokto-Eta/gtk-2.0/Check-Radio/check-on-dark.png
 share/themes/Adapta-Nokto-Eta/gtk-2.0/Check-Radio/check-on-hover-dark.png
@@ -391,7 +402,10 @@ share/themes/Adapta-Nokto-Eta/gtk-2.0/Check-Radio/check-on-menuitem.png
 share/themes/Adapta-Nokto-Eta/gtk-2.0/Check-Radio/radio-off-active-dark.png
 share/themes/Adapta-Nokto-Eta/gtk-2.0/Check-Radio/radio-off-dark.png
 share/themes/Adapta-Nokto-Eta/gtk-2.0/Check-Radio/radio-off-hover-dark.png
+share/themes/Adapta-Nokto-Eta/gtk-2.0/Check-Radio/radio-off-hover-menuitem-dark.png
 share/themes/Adapta-Nokto-Eta/gtk-2.0/Check-Radio/radio-off-insensitive-dark.png
+share/themes/Adapta-Nokto-Eta/gtk-2.0/Check-Radio/radio-off-insensitive-menuitem-dark.png
+share/themes/Adapta-Nokto-Eta/gtk-2.0/Check-Radio/radio-off-menuitem-dark.png
 share/themes/Adapta-Nokto-Eta/gtk-2.0/Check-Radio/radio-on-active-dark.png
 share/themes/Adapta-Nokto-Eta/gtk-2.0/Check-Radio/radio-on-dark.png
 share/themes/Adapta-Nokto-Eta/gtk-2.0/Check-Radio/radio-on-hover-dark.png
@@ -604,6 +618,7 @@ share/themes/Adapta-Nokto/gedit
 %%GNOMESHELL%%share/themes/Adapta-Nokto/gnome-shell/extensions/workspaces-to-dock/workspaces-to-dock.css
 %%GNOMESHELL%%share/themes/Adapta-Nokto/gnome-shell/gnome-shell-theme.gresource
 %%GNOMESHELL%%share/themes/Adapta-Nokto/gnome-shell/gnome-shell.css
+%%GNOMESHELL%%share/themes/Adapta-Nokto/gnome-shell/message-indicator-symbolic.svg
 %%GNOMESHELL%%share/themes/Adapta-Nokto/gnome-shell/no-events.svg
 %%GNOMESHELL%%share/themes/Adapta-Nokto/gnome-shell/no-notifications.svg
 %%GNOMESHELL%%share/themes/Adapta-Nokto/gnome-shell/noise-texture.png
@@ -655,7 +670,10 @@ share/themes/Adapta-Nokto/gtk-2.0/Buttons/rtl-button-insensitive-dark.png
 share/themes/Adapta-Nokto/gtk-2.0/Check-Radio/check-off-active-dark.png
 share/themes/Adapta-Nokto/gtk-2.0/Check-Radio/check-off-dark.png
 share/themes/Adapta-Nokto/gtk-2.0/Check-Radio/check-off-hover-dark.png
+share/themes/Adapta-Nokto/gtk-2.0/Check-Radio/check-off-hover-menuitem-dark.png
 share/themes/Adapta-Nokto/gtk-2.0/Check-Radio/check-off-insensitive-dark.png
+share/themes/Adapta-Nokto/gtk-2.0/Check-Radio/check-off-insensitive-menuitem-dark.png
+share/themes/Adapta-Nokto/gtk-2.0/Check-Radio/check-off-menuitem-dark.png
 share/themes/Adapta-Nokto/gtk-2.0/Check-Radio/check-on-active-dark.png
 share/themes/Adapta-Nokto/gtk-2.0/Check-Radio/check-on-dark.png
 share/themes/Adapta-Nokto/gtk-2.0/Check-Radio/check-on-hover-dark.png
@@ -666,7 +684,10 @@ share/themes/Adapta-Nokto/gtk-2.0/Check-Radio/check-on-menuitem.png
 share/themes/Adapta-Nokto/gtk-2.0/Check-Radio/radio-off-active-dark.png
 share/themes/Adapta-Nokto/gtk-2.0/Check-Radio/radio-off-dark.png
 share/themes/Adapta-Nokto/gtk-2.0/Check-Radio/radio-off-hover-dark.png
+share/themes/Adapta-Nokto/gtk-2.0/Check-Radio/radio-off-hover-menuitem-dark.png
 share/themes/Adapta-Nokto/gtk-2.0/Check-Radio/radio-off-insensitive-dark.png
+share/themes/Adapta-Nokto/gtk-2.0/Check-Radio/radio-off-insensitive-menuitem-dark.png
+share/themes/Adapta-Nokto/gtk-2.0/Check-Radio/radio-off-menuitem-dark.png
 share/themes/Adapta-Nokto/gtk-2.0/Check-Radio/radio-on-active-dark.png
 share/themes/Adapta-Nokto/gtk-2.0/Check-Radio/radio-on-dark.png
 share/themes/Adapta-Nokto/gtk-2.0/Check-Radio/radio-on-hover-dark.png
@@ -893,6 +914,7 @@ share/themes/Adapta/gedit/adapta.xml
 %%GNOMESHELL%%share/themes/Adapta/gnome-shell/extensions/workspaces-to-dock/workspaces-to-dock.css
 %%GNOMESHELL%%share/themes/Adapta/gnome-shell/gnome-shell-theme.gresource
 %%GNOMESHELL%%share/themes/Adapta/gnome-shell/gnome-shell.css
+%%GNOMESHELL%%share/themes/Adapta/gnome-shell/message-indicator-symbolic.svg
 %%GNOMESHELL%%share/themes/Adapta/gnome-shell/no-events.svg
 %%GNOMESHELL%%share/themes/Adapta/gnome-shell/no-notifications.svg
 %%GNOMESHELL%%share/themes/Adapta/gnome-shell/noise-texture.png
@@ -946,8 +968,11 @@ share/themes/Adapta/gtk-2.0/Buttons/rtl-button-hover.png
 share/themes/Adapta/gtk-2.0/Buttons/rtl-button-insensitive.png
 share/themes/Adapta/gtk-2.0/Buttons/rtl-button.png
 share/themes/Adapta/gtk-2.0/Check-Radio/check-off-active.png
+share/themes/Adapta/gtk-2.0/Check-Radio/check-off-hover-menuitem.png
 share/themes/Adapta/gtk-2.0/Check-Radio/check-off-hover.png
+share/themes/Adapta/gtk-2.0/Check-Radio/check-off-insensitive-menuitem.png
 share/themes/Adapta/gtk-2.0/Check-Radio/check-off-insensitive.png
+share/themes/Adapta/gtk-2.0/Check-Radio/check-off-menuitem.png
 share/themes/Adapta/gtk-2.0/Check-Radio/check-off.png
 share/themes/Adapta/gtk-2.0/Check-Radio/check-on-active.png
 share/themes/Adapta/gtk-2.0/Check-Radio/check-on-hover-menuitem.png
@@ -957,8 +982,11 @@ share/themes/Adapta/gtk-2.0/Check-Radio/check-on-insensitive.png
 share/themes/Adapta/gtk-2.0/Check-Radio/check-on-menuitem.png
 share/themes/Adapta/gtk-2.0/Check-Radio/check-on.png
 share/themes/Adapta/gtk-2.0/Check-Radio/radio-off-active.png
+share/themes/Adapta/gtk-2.0/Check-Radio/radio-off-hover-menuitem.png
 share/themes/Adapta/gtk-2.0/Check-Radio/radio-off-hover.png
+share/themes/Adapta/gtk-2.0/Check-Radio/radio-off-insensitive-menuitem.png
 share/themes/Adapta/gtk-2.0/Check-Radio/radio-off-insensitive.png
+share/themes/Adapta/gtk-2.0/Check-Radio/radio-off-menuitem.png
 share/themes/Adapta/gtk-2.0/Check-Radio/radio-off.png
 share/themes/Adapta/gtk-2.0/Check-Radio/radio-on-active.png
 share/themes/Adapta/gtk-2.0/Check-Radio/radio-on-hover-menuitem.png

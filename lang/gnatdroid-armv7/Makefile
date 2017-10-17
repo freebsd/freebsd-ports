@@ -15,6 +15,8 @@ COMMENT?=	C/Ada cross-compiler, target: Android ARMv7
 LICENSE=	GPLv3 GPLv3RLE
 LICENSE_COMB=	multi
 
+BROKEN=		bad distinfo
+
 BUILD_DEPENDS=	${SYSROOT}>=0:lang/${SYSROOT} \
 		${GDBINUTILS}>=2.21:lang/${GDBINUTILS}
 RUN_DEPENDS:=	${BUILD_DEPENDS}

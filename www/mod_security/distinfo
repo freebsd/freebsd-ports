@@ -1,2 +1,3 @@
-SHA256 (modsecurity-2.9.1.tar.gz) = 958cc5a7a7430f93fac0fd6f8b9aa92fc1801efce0cda797d6029d44080a9b24
-SIZE (modsecurity-2.9.1.tar.gz) = 4261212
+TIMESTAMP = 1501788911
+SHA256 (modsecurity-2.9.2.tar.gz) = 41a8f73476ec891f3a9e8736b98b64ea5c2105f1ce15ea57a1f05b4bf2ffaeb5
+SIZE (modsecurity-2.9.2.tar.gz) = 4298993

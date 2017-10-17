@@ -1,0 +1,19 @@
+A file format and library for storing and rapidly accessing point cloud data, in
+ particular LIDAR data.
+
+GeoHashTree organizes points into a tree structure for fast spatial access. The 
+tree structure itself encodes the significant bits of at each node, so child nod
+es can omit them. The result is a smaller file than if all the points were store
+d with full precision. Each node includes statistical information about the chil
+dren below (e.g. average/median Z value) permitting fast overview generation. Ad
+ditional attributes are attached to the tree at parent nodes, below which all ch
+ildren share the attribute value. This reduces duplicate data storage further.
+
+The advantage of a GeoHashTree file over a LAS file is fast access and filtering
+, since the tree encodes useful information at each node to speed searches over 
+the full set of points in the file. LASZ zipped files can be smaller, but will b
+e less efficient at overviews, searching and sub-setting. GHT is a good working 
+format for applications that will be filtering and querying large sets of LIDAR 
+data.
+
+WWW: https://github.com/pramsey/libght

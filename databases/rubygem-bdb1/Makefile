@@ -13,7 +13,7 @@ LICENSE=	BSD2CLAUSE RUBY
 LICENSE_COMB=	dual
 
 USE_RUBY=	yes
-USES=		execinfo gem shebangfix
+USES=		gem shebangfix
 SHEBANG_FILES=	examples/*.rb
 
 .include <bsd.port.pre.mk>

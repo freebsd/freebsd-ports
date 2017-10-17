@@ -61,6 +61,8 @@ include/simgear/constants.h
 include/simgear/debug/BufferedLogCallback.hxx
 include/simgear/debug/debug_types.h
 include/simgear/debug/logstream.hxx
+include/simgear/embedded_resources/EmbeddedResource.hxx
+include/simgear/embedded_resources/EmbeddedResourceManager.hxx
 include/simgear/environment/metar.hxx
 include/simgear/environment/precipitation.hxx
 include/simgear/ephemeris/celestialBody.hxx
@@ -86,6 +88,8 @@ include/simgear/io/HTTPMemoryRequest.hxx
 include/simgear/io/HTTPRepository.hxx
 include/simgear/io/HTTPRequest.hxx
 include/simgear/io/iochannel.hxx
+include/simgear/io/iostreams/CharArrayStream.hxx
+include/simgear/io/iostreams/zlibstream.hxx
 include/simgear/io/lowlevel.hxx
 include/simgear/io/raw_socket.hxx
 include/simgear/io/sg_binobj.hxx
@@ -136,6 +140,7 @@ include/simgear/misc/ListDiff.hxx
 include/simgear/misc/ResourceManager.hxx
 include/simgear/misc/SVGpreserveAspectRatio.hxx
 include/simgear/misc/SimpleMarkdown.hxx
+include/simgear/misc/argparse.hxx
 include/simgear/misc/interpolator.hxx
 include/simgear/misc/make_new.hxx
 include/simgear/misc/sg_dir.hxx
@@ -145,6 +150,7 @@ include/simgear/misc/stdint.hxx
 include/simgear/misc/stopwatch.hxx
 include/simgear/misc/strutils.hxx
 include/simgear/misc/tabbed_values.hxx
+include/simgear/misc/test_macros.hxx
 include/simgear/misc/texcoord.hxx
 include/simgear/nasal/cppbind/Ghost.hxx
 include/simgear/nasal/cppbind/NasalCallContext.hxx
@@ -273,6 +279,7 @@ include/simgear/scene/util/SGSceneFeatures.hxx
 include/simgear/scene/util/SGSceneUserData.hxx
 include/simgear/scene/util/SGStateAttributeVisitor.hxx
 include/simgear/scene/util/SGTextureStateAttributeVisitor.hxx
+include/simgear/scene/util/SGTransientModelData.hxx
 include/simgear/scene/util/SGUpdateVisitor.hxx
 include/simgear/scene/util/SplicingVisitor.hxx
 include/simgear/scene/util/StateAttributeFactory.hxx

@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	testssl.sh
-PORTVERSION=	2.8
-PORTREVISION=	1
+DISTVERSIONPREFIX=	v
+DISTVERSION=	2.9.5-1
 CATEGORIES=	security
 
 MAINTAINER=	tobik@FreeBSD.org
@@ -69,12 +69,13 @@ post-patch:
 	@${REINPLACE_CMD} -e '/elif test_openssl_suffix/d' \
 		-e 's@:    \# 5. we tried.*$$@else OPENSSL="${PREFIX}/libexec/openssl.testssl.sh"@' \
 		-e 's@$${TESTSSL_INSTALL_DIR:-""}@$${TESTSSL_INSTALL_DIR:-"${DATADIR}"}@' \
-		-e '/^check_bsd_mount$$/d' \
+		-e '/check_bsd_mount$$/d' \
 		${WRKSRC}/testssl.sh
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC_openssl}/apps/openssl ${STAGEDIR}${PREFIX}/libexec/openssl.testssl.sh
 	${INSTALL_SCRIPT} ${WRKSRC}/testssl.sh ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/doc/testssl.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
 	@${MKDIR} ${STAGEDIR}${DATADIR}/etc ${STAGEDIR}${DATADIR}/utils
 	@cd ${WRKSRC}/etc && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}/etc
 	@cd ${WRKSRC}/utils && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}/utils

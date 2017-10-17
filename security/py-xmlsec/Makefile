@@ -16,6 +16,8 @@ LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BROKEN=		does not build (x509.c:46:60: error: too many arguments to function call, expected 2, have 3)
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2017-11-09
 
 LIB_DEPENDS=	libxmlsec1.so:security/xmlsec1
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/libxml2.py:textproc/py-libxml2

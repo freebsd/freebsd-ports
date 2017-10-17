@@ -13,7 +13,7 @@ DISTNAME=	kwiki-trunk-20070327
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Kwiki Wiki Building Framework
 
-LICENSE=	ART10 GPLv1
+LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 USES=		shebangfix

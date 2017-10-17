@@ -1,8 +1,0 @@
-@sample etc/ventrilo_srv.ini.sample
-@owner ventrilo
-ventrilo-server/LICENSE
-ventrilo-server/ventrilo_srv
-ventrilo-server/ventrilo_status
-ventrilo-server/ventrilo_srv.htm
-ventrilo-server/ventrilo_srv.ini
-@owner root

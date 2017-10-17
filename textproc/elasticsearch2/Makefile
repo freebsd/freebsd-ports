@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	elasticsearch
-PORTVERSION=	2.4.4
+PORTVERSION=	2.4.6
 CATEGORIES=	textproc java devel
 MASTER_SITES=	http://download.elasticsearch.org/${PORTNAME}/${PORTNAME}/ \
 		http://mirrors.rit.edu/zi/
@@ -26,7 +26,7 @@ OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 
-LUCENEVER=	5.5.2
+LUCENEVER=	5.5.4
 CONFIG_FILES=	elasticsearch.yml logging.yml
 BINS=		elasticsearch.in.sh \
 		elasticsearch \

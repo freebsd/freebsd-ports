@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	ja-p5-
 MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	Perl5 module to validate Japanese phone numbers
 
-LICENSE=	ART10 GPLv1
+LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 RUN_DEPENDS=	p5-UNIVERSAL-require>=0:devel/p5-UNIVERSAL-require

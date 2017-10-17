@@ -20,6 +20,7 @@ WRKROOT=	${WRKDIR}/${PORTNAME:tl}
 WRKSRC=		${WRKROOT}/bin/mysar-binary-importer
 GNU_CONFIGURE=	yes
 USE_MYSQL=	yes
+USES=		php
 USE_PHP=	mysql pcre
 USE_CSTD=	gnu89
 

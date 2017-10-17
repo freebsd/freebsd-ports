@@ -24,7 +24,4 @@ post-patch:
 	@${REINPLACE_CMD} -i '' -e '/auto_install;/d' \
 		${WRKSRC}/Makefile.PL
 
-regression-test: build
-	cd ${WRKSRC} && ${MAKE} test
-
 .include <bsd.port.mk>

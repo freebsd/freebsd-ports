@@ -19,7 +19,6 @@ PLIST_FILES=	bin/gb bin/gb-vendor
 
 PORTDOCS=	README.md
 
-STRIP=		# stripping can break go binaries
 GO_PKGNAME=	github.com/${GH_ACCOUNT}/${GH_PROJECT}
 GO_TARGET=	./...
 

@@ -3,6 +3,7 @@
 
 PORTNAME=	flang-clang
 DISTVERSION=	4.0-20170812
+PORTREVISION=	1
 CATEGORIES=	devel lang
 
 MAINTAINER=	jmd@FreeBSD.org

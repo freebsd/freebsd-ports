@@ -1,0 +1,114 @@
+--- synapse/app/_base.py.orig	2017-10-02 12:52:03 UTC
++++ synapse/app/_base.py
+@@ -15,7 +15,6 @@
+ import gc
+ import logging
+ 
+-import affinity
+ from daemonize import Daemonize
+ from synapse.util import PreserveLoggingContext
+ from synapse.util.rlimit import change_resource_limit
+@@ -41,8 +40,7 @@ def start_worker_reactor(appname, config
+         config.gc_thresholds,
+         config.worker_pid_file,
+         config.worker_daemonize,
+-        config.worker_cpu_affinity,
+-        logger,
++        logger
+     )
+ 
+ 
+@@ -52,7 +50,6 @@ def start_reactor(
+         gc_thresholds,
+         pid_file,
+         daemonize,
+-        cpu_affinity,
+         logger,
+ ):
+     """ Run the reactor in the main process
+@@ -66,7 +63,6 @@ def start_reactor(
+         gc_thresholds:
+         pid_file (str): name of pid file to write to if daemonize is True
+         daemonize (bool): true to run the reactor in a background process
+-        cpu_affinity (int|None): cpu affinity mask
+         logger (logging.Logger): logger instance to pass to Daemonize
+     """
+ 
+@@ -77,9 +73,6 @@ def start_reactor(
+         # between the sentinel and `run` logcontexts.
+         with PreserveLoggingContext():
+             logger.info("Running")
+-            if cpu_affinity is not None:
+-                logger.info("Setting CPU affinity to %s" % cpu_affinity)
+-                affinity.set_process_affinity_mask(0, cpu_affinity)
+             change_resource_limit(soft_file_limit)
+             if gc_thresholds:
+                 gc.set_threshold(*gc_thresholds)
+--- synapse/app/homeserver.py.orig	2017-10-02 12:52:03 UTC
++++ synapse/app/homeserver.py
+@@ -442,7 +442,6 @@ def run(hs):
+         hs.config.gc_thresholds,
+         hs.config.pid_file,
+         hs.config.daemonize,
+-        hs.config.cpu_affinity,
+         logger,
+     )
+ 
+--- synapse/config/server.py.orig	2017-10-02 12:52:03 UTC
++++ synapse/config/server.py
+@@ -30,7 +30,6 @@ class ServerConfig(Config):
+         self.user_agent_suffix = config.get("user_agent_suffix")
+         self.use_frozen_dicts = config.get("use_frozen_dicts", False)
+         self.public_baseurl = config.get("public_baseurl")
+-        self.cpu_affinity = config.get("cpu_affinity")
+ 
+         # Whether to send federation traffic out in this process. This only
+         # applies to some federation traffic, and so shouldn't be used to
+@@ -155,27 +154,6 @@ class ServerConfig(Config):
+         # When running as a daemon, the file to store the pid in
+         pid_file: %(pid_file)s
+ 
+-        # CPU affinity mask. Setting this restricts the CPUs on which the
+-        # process will be scheduled. It is represented as a bitmask, with the
+-        # lowest order bit corresponding to the first logical CPU and the
+-        # highest order bit corresponding to the last logical CPU. Not all CPUs
+-        # may exist on a given system but a mask may specify more CPUs than are
+-        # present.
+-        #
+-        # For example:
+-        #    0x00000001  is processor #0,
+-        #    0x00000003  is processors #0 and #1,
+-        #    0xFFFFFFFF  is all processors (#0 through #31).
+-        #
+-        # Pinning a Python process to a single CPU is desirable, because Python
+-        # is inherently single-threaded due to the GIL, and can suffer a
+-        # 30-40%% slowdown due to cache blow-out and thread context switching
+-        # if the scheduler happens to schedule the underlying threads across
+-        # different cores. See
+-        # https://www.mirantis.com/blog/improve-performance-python-programs-restricting-single-cpu/.
+-        #
+-        # cpu_affinity: 0xFFFFFFFF
+-
+         # Whether to serve a web client from the HTTP/HTTPS root resource.
+         web_client: True
+ 
+--- synapse/config/workers.py.orig	2017-10-02 12:52:03 UTC
++++ synapse/config/workers.py
+@@ -33,7 +33,6 @@ class WorkerConfig(Config):
+         self.worker_name = config.get("worker_name", self.worker_app)
+ 
+         self.worker_main_http_uri = config.get("worker_main_http_uri", None)
+-        self.worker_cpu_affinity = config.get("worker_cpu_affinity")
+ 
+         if self.worker_listeners:
+             for listener in self.worker_listeners:
+--- synapse/python_dependencies.py.orig	2017-10-02 12:52:03 UTC
++++ synapse/python_dependencies.py
+@@ -40,7 +40,6 @@ REQUIREMENTS = {
+     "pymacaroons-pynacl": ["pymacaroons"],
+     "msgpack-python>=0.3.0": ["msgpack"],
+     "phonenumbers>=8.2.0": ["phonenumbers"],
+-    "affinity": ["affinity"],
+ }
+ CONDITIONAL_REQUIREMENTS = {
+     "web_client": {

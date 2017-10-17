@@ -3,8 +3,7 @@
 PORTNAME=	jxrlib
 PORTVERSION=	1.1
 CATEGORIES=	graphics devel
-MASTER_SITES=	${MASTER_SITE_DEBIAN}
-MASTER_SITE_SUBDIR=pool/main/j/jxrlib
+MASTER_SITES=	DEBIAN
 DISTFILES=	jxrlib_${PORTVERSION}.orig.tar.gz	\
 		jxrlib_${PORTVERSION}-6.debian.tar.xz
 

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	kramdown
-PORTVERSION=	1.14.0
+PORTVERSION=	1.15.0
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 

@@ -1,0 +1,62 @@
+#!/bin/sh
+# $FreeBSD$
+
+# PROVIDE: litecoind
+# REQUIRE: DAEMON cleanvar
+# KEYWORD: shutdown
+
+#
+# Add the following lines to /etc/rc.conf to enable :
+# litecoind_enable (bool):	Set to "NO" by default.
+#				Set it to "YES" to enable litecoind
+# litecoind_user (str)		Set to "litecoin" by default.
+#				Set it to preferred user
+# litecoind_group (str)		Set to "litecoin" by default.
+#				Set it to preferred group
+# litecoind_data_dir (str)	Set to "/var/lib/litecoin" by default.
+#				Set it to preferred data dir
+# litecoind_config_file (str)	Set to "%%PREFIX%%/etc/litecoind.conf" by default.
+#				Set it to preferred config file
+# litecoind_log_file (str)	Set to "/var/log/litecoind.log" by default.
+#				Set it to preferred log file
+
+. /etc/rc.subr
+
+name=litecoind
+desc="Litecoin Daemon"
+rcvar=litecoind_enable
+
+load_rc_config ${name}
+
+: ${litecoind_enable:=NO}
+: ${litecoind_user:=litecoin}
+: ${litecoind_group:=litecoin}
+: ${litecoind_data_dir:=/var/db/litecoin}
+: ${litecoind_config_file:=%%PREFIX%%/etc/litecoin.conf}
+: ${litecoind_log_file:=/var/log/litecoind.log}
+
+required_files="${litecoind_config_file}"
+litecoind_chdir="${litecoind_data_dir}"
+litecoind_env="HOME=${litecoind_data_dir}"
+pidfile="/var/run/${name}.pid"
+command="%%PREFIX%%/bin/litecoind"
+command_args="-daemon -pid=${pidfile} -conf=${litecoind_config_file} -datadir=${litecoind_data_dir} > ${litecoind_log_file} 2>&1"
+
+start_precmd=litecoind_startprecmd
+
+litecoind_startprecmd()
+{
+        if [ ! -e ${pidfile} ]; then
+                install -o ${litecoind_user} -g ${litecoind_group} /dev/null ${pidfile};
+        fi
+
+        if [ ! -e ${litecoind_log_file} ]; then
+                install -o ${litecoind_user} -g ${litecoind_group} /dev/null ${litecoind_log_file};
+        fi
+
+        if [ ! -d ${litecoind_data_dir} ]; then
+                install -d -o ${litecoind_user} -g ${litecoind_group} ${litecoind_data_dir}
+        fi
+}
+
+run_rc_command "$1"

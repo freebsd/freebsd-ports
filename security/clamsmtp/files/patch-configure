@@ -1,6 +1,6 @@
---- configure.orig	Fri Apr 15 07:18:10 2005
-+++ configure	Wed Apr 20 15:45:54 2005
-@@ -3156,7 +3156,7 @@
+--- configure.orig	2008-06-30 17:03:01 UTC
++++ configure
+@@ -3643,7 +3643,7 @@ fi
  # which indicates that we try without any flags at all, and "pthread-config"
  # which is a program returning the flags for the Pth emulation library.
  

@@ -5,7 +5,7 @@ PORTNAME=	trickle
 PORTVERSION=	1.07
 PORTREVISION=	6
 CATEGORIES=	net
-MASTER_SITES=	http://monkey.org/~marius/trickle/
+MASTER_SITES=	https://monkey.org/~marius/trickle/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lightweight, portable bandwidth shaper

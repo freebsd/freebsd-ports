@@ -10,6 +10,7 @@ MASTER_SITES=	SF/${PORTNAME}/Jinzora%20${PORTVERSION}
 MAINTAINER=	kevlo@FreeBSD.org
 COMMENT=	Web based media streaming and management system
 
+USES=		php
 USE_PHP=	mysql session iconv gd pdf
 
 NO_BUILD=	yes

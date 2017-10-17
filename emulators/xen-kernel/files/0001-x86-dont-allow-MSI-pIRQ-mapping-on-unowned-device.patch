@@ -1,0 +1,27 @@
+From: Jan Beulich <jbeulich@suse.com>
+Subject: x86: don't allow MSI pIRQ mapping on unowned device
+
+MSI setup should be permitted only for existing devices owned by the
+respective guest (the operation may still be carried out by the domain
+controlling that guest).
+
+This is part of XSA-237.
+
+Reported-by: HW42 <hw42@ipsumj.de>
+Signed-off-by: Jan Beulich <jbeulich@suse.com>
+Reviewed-by: Andrew Cooper <andrew.cooper3@citrix.com>
+
+--- a/xen/arch/x86/irq.c
++++ b/xen/arch/x86/irq.c
+@@ -1964,7 +1964,10 @@ int map_domain_pirq(
+         if ( !cpu_has_apic )
+             goto done;
+ 
+-        pdev = pci_get_pdev(msi->seg, msi->bus, msi->devfn);
++        pdev = pci_get_pdev_by_domain(d, msi->seg, msi->bus, msi->devfn);
++        if ( !pdev )
++            goto done;
++
+         ret = pci_enable_msi(msi, &msi_desc);
+         if ( ret )
+         {

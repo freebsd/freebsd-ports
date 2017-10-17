@@ -1,0 +1,2 @@
+APPENDDEF(`conf_sendmail_ENVDEF', `-DUSE_BLACKLIST')
+APPENDDEF(`conf_sendmail_LIBS', `-lblacklist')

@@ -15,6 +15,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django110>=0:www/py-django110
 
+CONFLICTS_INSTALL=py*-django-jsonfield
+
 USES=		python
 USE_PYTHON=	distutils autoplist
 NO_ARCH=	yes

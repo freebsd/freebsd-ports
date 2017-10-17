@@ -1,2 +1,3 @@
-SHA256 (grembo-intel_backlight_fbsd-20150706-93e1fe4_GH0.tar.gz) = bf2d8d082edbdaf8f89913532cd2620ba49a6dfebbc276fa86d806b63993c852
-SIZE (grembo-intel_backlight_fbsd-20150706-93e1fe4_GH0.tar.gz) = 40402
+TIMESTAMP = 1504227150
+SHA256 (FreeBSDDesktop-intel_backlight_fbsd-20170831-baba3e6_GH0.tar.gz) = 909bcd0ad981ad3e198ea2ae8fb59f5fd0a42f18cf47eb80cd23a4bcf6639092
+SIZE (FreeBSDDesktop-intel_backlight_fbsd-20170831-baba3e6_GH0.tar.gz) = 41192

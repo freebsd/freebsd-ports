@@ -12,7 +12,7 @@ MASTERDIR=	${.CURDIR}/../miniupnpc
 USES=		python
 USE_PYTHON=	autoplist distutils
 
-WRKDIR=		${WRKDIRPREFIX}${MASTERDIR}/work
+WRKDIR=		${WRKDIRPREFIX}${MASTERDIR}/${_WRKDIR}
 PLIST=		${.CURDIR}/pkg-plist
 
 post-patch:

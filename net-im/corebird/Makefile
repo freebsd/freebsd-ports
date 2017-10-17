@@ -3,6 +3,7 @@
 
 PORTNAME=	corebird
 PORTVERSION=	1.5.1
+PORTREVISION=	1
 CATEGORIES=	net-im
 
 MAINTAINER=	cpm@FreeBSD.org

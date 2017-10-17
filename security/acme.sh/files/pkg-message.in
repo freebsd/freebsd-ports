@@ -16,4 +16,17 @@ included are the deploy scripts.
 A newsyslog.conf sample file is provided at %%EXAMPLESDIR%%/acme.sh
 and you could create a symlink from that to %%PREFIX%%/etc/newsyslog.conf.d/
 
+Your sample cronjob looks like this:
+
+############################################################################
+$ sudo crontab -l -u acme
+# use /bin/sh to run commands, overriding the default set by cron
+SHELL=/bin/sh
+# mail any output to here, no matter whose crontab this is
+MAILTO=dan@example.org
+
+7 22 * * * /usr/local/sbin/acme.sh --cron --home /var/db/acme/.acme.sh > /dev/null
+############################################################################
+
+Change x & y to some minute and hour of the day.
 

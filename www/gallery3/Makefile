@@ -11,11 +11,10 @@ DISTNAME=	gallery-${PORTVERSION}
 MAINTAINER=	appleboy.tw@gmail.com
 COMMENT=	Web based photo album organizer written in PHP
 
-USES=		zip
+USES=		zip php:web
 
 USE_PHP=	ctype filter iconv json mysql mbstring pcre \
 		simplexml session spl tokenizer xml
-WANT_PHP_WEB=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 NO_BUILD=	yes

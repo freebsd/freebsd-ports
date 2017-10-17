@@ -23,11 +23,10 @@ OPTIONS_DEFINE=	MYSQL PHPDOM DOCS EXAMPLES
 MYSQL_DESC=	Use MySQL instead of flat files
 PHPDOM_DESC=	Use PHP:DOM instead of SimpleXML
 
-.include <bsd.port.options.mk>
-
-WANT_PHP_WEB=	yes
+USES+=		cpe php:web tar:tgz
 USE_PHP=	session gettext xml tokenizer gd pcre
-USES+=		cpe tar:tgz
+
+.include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPHPDOM}
 USE_PHP+=	dom

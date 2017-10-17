@@ -2,6 +2,7 @@
 
 PORTNAME=	enventor
 PORTVERSION=	1.0.0
+PORTREVISION=	1
 CATEGORIES=	x11 enlightenment
 MASTER_SITES=	http://download.enlightenment.org/rel/apps/${PORTNAME}/
 DIST_SUBDIR=	enlightenment
@@ -11,6 +12,8 @@ COMMENT=	Dynamic EDC Editor
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+BROKEN=		fails to build
 
 LIB_DEPENDS=	libefl.so:devel/efl
 

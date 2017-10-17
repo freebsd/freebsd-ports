@@ -1,5 +1,5 @@
---- chrome/browser/ui/webui/about_ui.cc.orig	2017-06-21 00:03:13.000000000 +0200
-+++ chrome/browser/ui/webui/about_ui.cc	2017-06-27 01:22:41.801626000 +0200
+--- chrome/browser/ui/webui/about_ui.cc.orig	2017-09-05 21:05:14.000000000 +0200
++++ chrome/browser/ui/webui/about_ui.cc	2017-09-06 18:59:58.102599000 +0200
 @@ -420,7 +420,7 @@
    return html;
  }
@@ -8,12 +8,11 @@
 +#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || defined(OS_BSD)
  
  const char kAboutDiscardsRunCommand[] = "run";
+ const char kAboutDiscardsSkipUnloadHandlersCommand[] = "skip_unload_handlers";
+@@ -564,10 +564,13 @@
+       "<a href='%s%s'>Discard tab now (safely)</a>",
+       chrome::kChromeUIDiscardsURL, kAboutDiscardsRunCommand));
  
-@@ -539,11 +539,13 @@
-   output.append(base::StringPrintf("<a href='%s%s'>Discard tab now</a>",
-                                    chrome::kChromeUIDiscardsURL,
-                                    kAboutDiscardsRunCommand));
--
 +#if !defined(OS_BSD)
    base::SystemMemoryInfoKB meminfo;
    base::GetSystemMemoryInfo(&meminfo);
@@ -24,7 +23,7 @@
    // Start with summary statistics.
    output.append(AddStringRow(
        "Total", base::IntToString(meminfo.total / 1024)));
-@@ -575,12 +577,13 @@
+@@ -599,12 +602,13 @@
    output.append(AddStringRow(
        "Graphics", base::IntToString(meminfo.gem_size / 1024 / 1024)));
  #endif  // OS_CHROMEOS
@@ -39,7 +38,7 @@
  
  // AboutDnsHandler bounces the request back to the IO thread to collect
  // the DNS information.
-@@ -642,7 +645,7 @@
+@@ -666,7 +670,7 @@
    DISALLOW_COPY_AND_ASSIGN(AboutDnsHandler);
  };
  
@@ -48,10 +47,10 @@
  std::string AboutLinuxProxyConfig() {
    std::string data;
    AppendHeader(&data, 0,
-@@ -717,14 +720,14 @@
-     } else {
-       response = raw_response.as_string();
+@@ -723,14 +727,14 @@
+                      .as_string();
      }
+ 
 -#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX)
 +#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || defined(OS_BSD)
    } else if (source_name_ == chrome::kChromeUIDiscardsHost) {

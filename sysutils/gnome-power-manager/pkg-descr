@@ -4,4 +4,4 @@ for HAL events and responds with user-configurable reactions.
 Currently it supports laptop batteries and AC adapters. Its goal is to be
 architecture neutral and free of polling and other hacks.
 
-WWW: http://projects.gnome.org/gnome-power-manager/
+WWW: https://projects.gnome.org/gnome-power-manager/

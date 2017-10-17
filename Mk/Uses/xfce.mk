@@ -30,6 +30,9 @@ LIBS+=	-L${LOCALBASE}/lib
 libmenu_LIB_DEPENDS=	libxfce4ui-2.so:x11/libxfce4menu
 libmenu_USE_XFCE_REQ=	xfconf
 
+garcon_LIB_DEPENDS=	libgarcon-gtk3-1.so:sysutils/garcon
+garcon_USE_XFCE_REQ=	libmenu
+
 panel_LIB_DEPENDS=	libxfce4panel-2.0.so:x11-wm/xfce4-panel
 panel_RUN_DEPENDS=	xfce4-panel:x11-wm/xfce4-panel
 panel_USE_XFCE_REQ=	garcon libexo xfconf
@@ -37,13 +40,13 @@ panel_USE_XFCE_REQ=	garcon libexo xfconf
 libmenu_LIB_DEPENDS=	libxfce4ui-1.so:x11/libxfce4menu
 libmenu_USE_XFCE_REQ=	xfconf
 
+garcon_LIB_DEPENDS=	libgarcon-gtk2-1.so:sysutils/garcon
+garcon_USE_XFCE_REQ=	libmenu
+
 panel_LIB_DEPENDS=	libxfce4panel-1.0.so:x11-wm/xfce4-panel
 panel_RUN_DEPENDS=	xfce4-panel:x11-wm/xfce4-panel
 panel_USE_XFCE_REQ=	garcon libexo xfconf
 .endif
-
-garcon_LIB_DEPENDS=	libgarcon-1.so:sysutils/garcon
-garcon_USE_XFCE_REQ=	libmenu
 
 libexo_LIB_DEPENDS=	libexo-1.so:x11/libexo
 libexo_USE_XFCE_REQ=	libmenu

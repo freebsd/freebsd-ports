@@ -1,9 +1,0 @@
---- CMakeLists.txt.orig	2017-04-13 20:58:25 UTC
-+++ CMakeLists.txt
-@@ -252,5 +252,5 @@ endif()
- #############################################################
- 
- install(TARGETS osm2pgsql DESTINATION bin)
--install(FILES docs/osm2pgsql.1 DESTINATION share/man/man1)
-+install(FILES docs/osm2pgsql.1 DESTINATION man/man1)
- install(FILES default.style empty.style DESTINATION share/osm2pgsql)

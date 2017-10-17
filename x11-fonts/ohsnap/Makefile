@@ -5,7 +5,7 @@ PORTVERSION=	1.8.0
 CATEGORIES=	x11-fonts
 MASTER_SITES=	SF/osnapfont/
 
-MAINTAINER=	lebarondemerde@gmx.com
+MAINTAINER=	lbdm@privacychain.ch
 COMMENT=	Monospaced font based on Artwiz Snap
 
 LICENSE=	GPLv2

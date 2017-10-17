@@ -19,6 +19,8 @@ BUILD_DEPENDS=	${LOCALBASE}/include/google/protobuf/descriptor.h:devel/protobuf 
 LIB_DEPENDS=	libprotobuf.so:devel/protobuf
 
 BROKEN=		fails to configure (error: Failed to find required header file include/mysql_version.h)
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2017-11-09
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	tony2001

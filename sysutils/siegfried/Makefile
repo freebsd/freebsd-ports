@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=		siegfried
-PORTVERSION=		1.7.5
+PORTVERSION=		1.7.6
 DISTVERSIONPREFIX=	v
 CATEGORIES=		sysutils
 
@@ -21,7 +21,5 @@ USES=	go
 
 GO_PKGNAME=	github.com/${GH_ACCOUNT}/${PORTNAME}
 GO_TARGET=	github.com/${GH_ACCOUNT}/${PORTNAME}/cmd/sf
-
-STRIP=		# stripping can break go binaries
 
 .include <bsd.port.mk>

@@ -39,7 +39,7 @@ GNU_CONFIGURE=	yes
 LIBS+=		-lpthread -L${LOCALBASE}/lib
 MAKE_JOBS_UNSAFE=	yes
 USE_LDCONFIG=	yes
-USES=		autoreconf cpe execinfo tar:xz ssl
+USES=		autoreconf cpe tar:xz ssl
 WRKSRC=		${RUBY_WRKSRC}
 
 RUBY_VER=		2.2

@@ -1,6 +1,33 @@
---- CMakeLists.txt.orig	2012-04-19 18:05:29.938959913 +0300
-+++ CMakeLists.txt	2012-04-19 18:05:39.398959691 +0300
-@@ -191,7 +191,7 @@
+ - Shuffle a little to enforce C++11 in a normal way
+ - Drop non-standard flags (unbreak PPC64)
+ - Don't install license, since the ports LICENSE_FILE already does that
+
+--- CMakeLists.txt.orig	2016-11-02 11:10:18 UTC
++++ CMakeLists.txt
+@@ -1,4 +1,8 @@
+-PROJECT( Charm )
++CMAKE_MINIMUM_REQUIRED( VERSION 2.6.0 )
++PROJECT( Charm CXX )
++SET( CMAKE_CXX_STANDARD 11 )
++SET( CMAKE_CXX_STANDARD_REQUIRED ON )
++
+ IF( NOT Charm_VERSION )
+     FIND_PACKAGE( Git QUIET )
+     IF( EXISTS ${GIT_EXECUTABLE} )
+@@ -34,12 +38,8 @@ ENDIF()
+ 
+ MESSAGE( STATUS "Building Charm ${Charm_VERSION} in ${CMAKE_BUILD_TYPE} mode" )
+ 
+-CMAKE_MINIMUM_REQUIRED( VERSION 2.6.0 )
+ SET( CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/CMake" )
+ 
+-IF(CMAKE_COMPILER_IS_GNUCXX OR ${CMAKE_CXX_COMPILER_ID} STREQUAL "Clang")
+-    SET(CMAKE_CXX_FLAGS "-std=c++0x ${CMAKE_CXX_FLAGS}")
+-ENDIF()
+ IF(MSVC)
+     SET(CMAKE_CXX_FLAGS "-D_USING_V110_SDK71_=1 ${CMAKE_CXX_FLAGS}")
+ ENDIF()
+@@ -191,7 +185,7 @@ IF( APPLE AND "${QT_VERSION_MAJOR}.${QT_
  ENDIF()
  
  IF( CMAKE_BUILD_TYPE MATCHES "^[Rr]elease$" )
@@ -9,3 +36,12 @@
  ENDIF()
  
  # Always include the source and build directories in the include path
+@@ -264,7 +258,7 @@ CONFIGURE_FILE( CharmCMake.h.cmake ${CMA
+ SET( LICENSE_FILE "License.txt" )
+ SET( README_FILE "ReadMe.txt" )
+ IF( NOT APPLE )
+-    INSTALL( FILES "${LICENSE_FILE}" "${README_FILE}" DESTINATION ${DOC_INSTALL_DIR} )
++    INSTALL( FILES "${README_FILE}" DESTINATION ${DOC_INSTALL_DIR} )
+ ENDIF()
+ 
+     # Only support CPack packaging on newer versions of CMake.

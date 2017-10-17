@@ -5,6 +5,126 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20171015:
+  AFFECTS: people using WITHOUT_DEBUG
+  AUTHOR: madpilot@FreeBSD.org
+
+  The WITHOUT_DEBUG flag has been retired. It's only purpose was
+  to override a global WITH_DEBUG, if that was defined, but many
+  ports were ignoring such flag even if honouring WITH_DEBUG.
+
+  The same effect can be obtained using ".undef WITH_DEBUG" without
+  any special support in port Makefiles.
+
+20171012:
+  AFFECTS: users of security/openssh-portable
+  AUTHOR: bdrewery@FreeBSD.org
+
+  OpenSSH has been upgraded to 7.6p1 which has removed several deprecated
+  features:
+
+    - SSH version 1 support dropped.
+    - Dropped support for hmac-ripemd160 MAC.
+    - Dropped support for the ciphers arcfour, blowfish and CAST.
+    - RSA keys less than 1024 bits are refused.
+
+  The HPN option is currently disabled by default, and does not build,
+  in the package.  This follows what happened in base as well.
+
+ 20171006:
+  AFFECTS: users of graphics/netpbm
+  AUTHOR: tobik@FreeBSD.org
+
+  If you use portmaster/portupgrade/make to build your ports, please
+  uninstall the old netpbm version first before attempting to update to
+  netpbm 10.80.00:
+
+	pkg delete -f netpbm
+
+  It is recommended that you rebuild all dependent ports as well.
+
+20171004:
+  AFFECTS: users of security/krb5-appl
+  AUTHOR: cy@FreeBSD.org
+
+  Configuration options to rename kerberos ftp, telnet, rlogin, rsh, and
+  rcp are now default to avoid conflicting with net/bsdrcmds packages
+  (in poudriere). Deselect the options to use the original command names
+  and also uninstall net/bsdrcmds to avoid the conflict.
+
+20171002:
+  AFFECTS: users of x11-wm/cwm
+  AUTHOR: tobik@FreeBSD.org
+
+  Configuration options were renamed and you need to update your ~/.cwmrc
+  accordingly.  Make sure to check cwmrc(5) for the new option names.
+  cwm-migrate-config.pl can help in migrating your ~/.cwmrc.
+
+20171001:
+  AFFECTS: users of mail/isync using Maildir sub-folders
+  AUTHOR: ehaupt@FreeBSD.org
+
+  If you have Maildir sub-folders, you need to update the configuration
+  to specify the naming style.
+
+  Please refer to the mbsync(1) man page section 'SubFolders
+  Verbatim|Maildir++|Legacy' on how to make the apropriate changes.
+
+20170930:
+  AFFECTS: users of PHP and its modules
+  AUTHOR: eugen@FreeBSD.org
+
+  All lang/php* ports switched to depend on devel/oniguruma6
+  instead of previous oniguruma version some time ago.
+
+  If you have not moved from devel/oniguruma5 before and
+  have troubles updating PHP,
+
+  for users of portmaster:
+	portmaster -o devel/oniguruma6 devel/oniguruma5
+	portmaster -r devel/oniguruma6
+
+  for users of portupgrade:
+	portupgrade -o devel/oniguruma6 devel/oniguruma5
+	portupgrade -fr devel/oniguruma6
+
+  pkg should handle this automatically.
+
+20170928:
+  AFFECTS: users of security/courier-authlib and its modules
+  AUTHOR: madpilot@FreeBSD.org
+
+  The affected ports have been modified to follow the upstream
+  suggested best practice to use the sysconftool on installation.
+
+  Please make sure your configuration files include all the comments
+  that tool uses to correctly update the configuration on update.
+
+  You can use the ".sample" or ".dist" files as templates for missing
+  comments if needed.
+
+20170915:
+  AFFECTS: users of devel/cargo
+  AUTHOR: rust@FreeBSD.org
+
+  Starting with version 1.19.0, Cargo is provided with Rust. Therefore,
+  devel/cargo was merged into lang/rust.
+
+20170914:
+  AFFECTS: users of CMake & CMake Modules
+  AUTHOR: adridg@FreeBSD.org
+
+  The devel/cmake-modules port has been merged into devel/cmake.
+
+  The benefit of being able to update the modules without the binary
+  is outweighed by the issues caused by having the binary out-of-sync
+  with the modules.
+
+  Users should delete the devel/cmake-modules package and then
+  upgrade or reinstall devel/cmake.
+ 
+  All ports have been updated to depend only on CMake.
+
 20170904
   AFFECTS: users of net-mgmt/seafile-server
   AUTHOR: ultima@FreeBSD.org
@@ -17,14 +137,11 @@ you update your ports collection, before attempting any port upgrades.
   AFFECTS: users of security/gnupg
   AUTHOR: adamw@FreeBSD.org
 
-  security/gnupg22 has become the new stable version of GnuPG. This is
-  an LTS branch, and is directly analogous to security/gnupg20. gnupg20
-  will reach EOL at the end of the year, and all gnupg20 users should
-  migrate to gnupg22.
+  security/gnupg has become the new stable version of GnuPG. This is
+  an LTS branch. gnupg20 will reach EOL at the end of the year, and all
+  gnupg20 users should migrate to gnupg22.
 
   See https://gnupg.org/faq/whats-new-in-2.1.html for important changes.
-
-  The security/gnupg port will become GnuPG 2.3.x soon.
 
 20170820:
   AFFECTS: users of www/uwsgi
@@ -212,7 +329,7 @@ you update your ports collection, before attempting any port upgrades.
 
 20170628:
   AFFECTS: users of www/node
-  AUTHOR: bhughes@freebsd.org
+  AUTHOR: bhughes@FreeBSD.org
 
   The www/node port has been updated to Node.js v8.1.2, the latest
   upstream release. This is a major release, including many significant

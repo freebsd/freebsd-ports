@@ -2,7 +2,7 @@
 
 PORTNAME=	wx
 PORTVERSION=	3.0.2
-PORTREVISION?=	6
+PORTREVISION?=	7
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	SF/wxwindows/${PORTVERSION}
 PKGNAMESUFFIX=	30-gtk2
@@ -15,7 +15,7 @@ LIB_DEPENDS=	libpng.so:graphics/png \
 		libtiff.so:graphics/tiff \
 		libexpat.so:textproc/expat2
 
-USES=		compiler:c++11-lib execinfo gmake iconv jpeg pkgconfig tar:bzip2
+USES=		compiler:c++11-lib gmake iconv jpeg pkgconfig tar:bzip2
 USE_XORG=	x11 sm xxf86vm xinerama
 USE_GL=		glu
 USE_GNOME=	gtk20

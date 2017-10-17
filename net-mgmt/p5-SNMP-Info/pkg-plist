@@ -70,6 +70,7 @@
 %%SITE_PERL%%/SNMP/Info/Layer3/CiscoSwitch.pm
 %%SITE_PERL%%/SNMP/Info/Layer3/Contivity.pm
 %%SITE_PERL%%/SNMP/Info/Layer3/Dell.pm
+%%SITE_PERL%%/SNMP/Info/Layer3/DLink.pm
 %%SITE_PERL%%/SNMP/Info/Layer3/Enterasys.pm
 %%SITE_PERL%%/SNMP/Info/Layer3/Extreme.pm
 %%SITE_PERL%%/SNMP/Info/Layer3/F5.pm

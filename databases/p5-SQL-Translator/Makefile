@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Manipulate structured data definitions (SQL and more)
 
-LICENSE=	ART10 GPLv1
+LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Carp-Clan>=0:devel/p5-Carp-Clan \
@@ -49,8 +49,5 @@ DIAGRAM_RUN_DEPENDS=	${DIAGRAM_BUILD_DEPENDS}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|@EXPORT|&_OK|' ${WRKSRC}/lib/SQL/Translator/Parser/xSV.pm
-
-regression-test: build
-	cd ${WRKSRC}/ && ${MAKE} test
 
 .include <bsd.port.mk>

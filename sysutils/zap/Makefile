@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	zap
-DISTVERSION=	0.7.3
+DISTVERSION=	0.7.4
 CATEGORIES=	sysutils
 
 MAINTAINER=	jrm@FreeBSD.org

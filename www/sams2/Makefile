@@ -14,7 +14,7 @@ LICENSE=	BSD4CLAUSE
 LIB_DEPENDS=	libpcre.so:devel/pcre
 RUN_DEPENDS=	${LOCALBASE}/libexec/mysqld:${_MYSQL_SERVER}
 
-USES=		autoreconf gmake libtool tar:bzip2
+USES=		autoreconf gmake libtool php tar:bzip2
 USE_LDCONFIG=	yes
 USE_PHP=	gd mysql zlib
 USE_MYSQL=	yes

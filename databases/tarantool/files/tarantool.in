@@ -24,7 +24,7 @@ start_cmd="${name}_start"
 stop_cmd="${name}_stop"
 restart_cmd="${name}_restart"
 
-INSTANCES=$(find ${tarantool_instances} -type l -name '*.lua')
+INSTANCES=$(find ${tarantool_instances} -type l -name '*.lua' 2>/dev/null)
 TDAEMON=%%PREFIX%%/bin/tarantool
 TCTL=%%PREFIX%%/bin/tarantoolctl
 

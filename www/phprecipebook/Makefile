@@ -15,9 +15,8 @@ LICENSE_FILE=	${WRKSRC}/docs/LICENSE.TXT
 WRKSRC=		${WRKDIR}/${PORTNAME}
 NO_BUILD=	yes
 NO_ARCH=	yes
-USES=		tar:tgz
+USES=		php:web tar:tgz
 USE_PHP=	xml
-WANT_PHP_WEB=	yes
 SUB_FILES=	pkg-message
 PLIST_SUB=	WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
 

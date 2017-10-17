@@ -1008,7 +1008,6 @@ man/man7/WITH.7.gz
 %%NLS%%share/locale/cs/LC_MESSAGES/pg_config-10.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/pg_dump-10.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/pgscripts-10.mo
-%%NLS%%share/locale/cs/LC_MESSAGES/psql-10.mo
 %%NLS%%share/locale/de/LC_MESSAGES/ecpg-10.mo
 %%NLS%%share/locale/de/LC_MESSAGES/ecpglib6-10.mo
 %%NLS%%share/locale/de/LC_MESSAGES/libpq5-10.mo
@@ -1032,6 +1031,7 @@ man/man7/WITH.7.gz
 %%NLS%%share/locale/fr/LC_MESSAGES/psql-10.mo
 %%NLS%%share/locale/he/LC_MESSAGES/libpq5-10.mo
 %%NLS%%share/locale/he/LC_MESSAGES/pg_config-10.mo
+%%NLS%%share/locale/he/LC_MESSAGES/pg_dump-10.mo
 %%NLS%%share/locale/he/LC_MESSAGES/pgscripts-10.mo
 %%NLS%%share/locale/he/LC_MESSAGES/psql-10.mo
 %%NLS%%share/locale/it/LC_MESSAGES/ecpg-10.mo
@@ -1047,7 +1047,6 @@ man/man7/WITH.7.gz
 %%NLS%%share/locale/ja/LC_MESSAGES/pg_config-10.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/pg_dump-10.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/pgscripts-10.mo
-%%NLS%%share/locale/ja/LC_MESSAGES/psql-10.mo
 %%NLS%%share/locale/ko/LC_MESSAGES/ecpg-10.mo
 %%NLS%%share/locale/ko/LC_MESSAGES/ecpglib6-10.mo
 %%NLS%%share/locale/ko/LC_MESSAGES/libpq5-10.mo
@@ -1078,6 +1077,8 @@ man/man7/WITH.7.gz
 %%NLS%%share/locale/ru/LC_MESSAGES/pg_dump-10.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/pgscripts-10.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/psql-10.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/ecpg-10.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/ecpglib6-10.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/libpq5-10.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/pg_config-10.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/pg_dump-10.mo
@@ -1086,7 +1087,6 @@ man/man7/WITH.7.gz
 %%NLS%%share/locale/ta/LC_MESSAGES/pg_config-10.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/ecpg-10.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/ecpglib6-10.mo
-%%NLS%%share/locale/tr/LC_MESSAGES/libpq5-10.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/pg_config-10.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/ecpg-10.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/ecpglib6-10.mo
@@ -1096,9 +1096,7 @@ man/man7/WITH.7.gz
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/pgscripts-10.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/psql-10.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/ecpg-10.mo
-%%NLS%%share/locale/zh_TW/LC_MESSAGES/libpq5-10.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/pg_config-10.mo
-%%NLS%%share/locale/zh_TW/LC_MESSAGES/psql-10.mo
 %%DATADIR%%/pg_service.conf.sample
 %%DATADIR%%/psqlrc.sample
 

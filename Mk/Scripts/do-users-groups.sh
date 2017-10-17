@@ -139,7 +139,7 @@ if [ -n "${USERS}" ]; then
 				/|/nonexistent|/var/empty)
 					;;
 				*)
-					group=$(awk -F: -v gid=${gid} '$3 == gid { print $1 }' ${dp_GID_FILES})
+					group=$(awk -F: -v gid=${gid} '$1 !~ /^#/ && $3 == gid { print $1 }' ${dp_GID_FILES})
 					echo "${dp_INSTALL} -d -g $group -o $login $homedir" >> "${dp_UG_INSTALL}"
 					;;
 			esac

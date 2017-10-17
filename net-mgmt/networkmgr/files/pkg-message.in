@@ -3,7 +3,7 @@
 Any bug reports or request of new feature should be addressed at:
     https://github.com/GhostBSD/networkmgr/issues
 
-Make sure that the %%ETCDIR%%/doas.conf have someting simular like this:
+Make sure that the %%PREFIX%%/etc/doas.conf have someting simular like this:
 
     permit nopass keepenv :wheel cmd netcardmgr
     permit nopass keepenv :wheel cmd detect-nics

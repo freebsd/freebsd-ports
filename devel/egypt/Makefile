@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.gson.org/egypt/download/
 MAINTAINER=	culot@FreeBSD.org
 COMMENT=	Create call graphs of C programs
 
-LICENSE=	ART10 GPLv1
+LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 USES=		perl5 shebangfix

@@ -1,7 +1,9 @@
-TIMESTAMP = 1485372460
-SHA256 (openoffice/apache-openoffice-r1780246-src.tar.xz) = 362b04bcc9a8ab10cd63ff97ac9e0a512aadf44ca5309d6cc8f00fee7fd246a3
-SIZE (openoffice/apache-openoffice-r1780246-src.tar.xz) = 216097636
+TIMESTAMP = 1506752342
+SHA256 (openoffice/apache-openoffice-r1810071-src.tar.xz) = d5ed9637367081e03433f3a8cc2d39d84a64d7068b730f5c170d282784c6dd10
+SIZE (openoffice/apache-openoffice-r1810071-src.tar.xz) = 216675892
 SHA256 (openoffice/unowinreg.dll) = f563e522922133db9340b0306711c2d8767cc3481dd9e7d9b0d059906d12653c
 SIZE (openoffice/unowinreg.dll) = 6144
 SHA256 (openoffice/ApacheOpenOffice.ext_sources.4.x.x.20150707.tar.gz) = 966a8333c83a18ddd84401389006d6e0b52b8175924b808b54b88211669985fa
 SIZE (openoffice/ApacheOpenOffice.ext_sources.4.x.x.20150707.tar.gz) = 28957004
+SHA256 (openoffice/apache-tomcat-5.5.36-src.tar.gz) = 0f83d54e093c0a2383ba185ca928be0ee87148d5d98569470120690ac6c2008f
+SIZE (openoffice/apache-tomcat-5.5.36-src.tar.gz) = 3743113

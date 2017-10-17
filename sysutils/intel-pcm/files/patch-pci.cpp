@@ -1,6 +1,6 @@
---- pci.cpp.orig	2016-10-31 10:26:34 UTC
+--- pci.cpp.orig	2017-05-15 10:43:22 UTC
 +++ pci.cpp
-@@ -17,6 +17,7 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIG
+@@ -17,6 +17,7 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND
  
  #include <iostream>
  #include <stdio.h>

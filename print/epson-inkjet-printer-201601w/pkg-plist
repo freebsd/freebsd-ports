@@ -1,0 +1,39 @@
+%%LINUXBASE%%/opt/%%PORTNAME%%/cups/lib/filter/epson_inkjet_printer_filter
+%%LINUXBASE%%/opt/%%PORTNAME%%/doc/AUTHORS
+%%LINUXBASE%%/opt/%%PORTNAME%%/doc/COPYING
+%%LINUXBASE%%/opt/%%PORTNAME%%/doc/COPYING.EPSON
+%%LINUXBASE%%/opt/%%PORTNAME%%/doc/COPYING.LIB
+%%LINUXBASE%%/opt/%%PORTNAME%%/doc/Manual.txt
+%%LINUXBASE%%/opt/%%PORTNAME%%/doc/README
+%%LINUXBASE%%/opt/%%PORTNAME%%/%%LIBDIR%%/libEpson_201601w.MT.so.1.0.0
+%%LINUXBASE%%/opt/%%PORTNAME%%/%%LIBDIR%%/libEpson_201601w.so.1.0.0
+%%LINUXBASE%%/opt/%%PORTNAME%%/ppds/Epson/Epson-L380_Series-epson-driver.ppd
+%%LINUXBASE%%/opt/%%PORTNAME%%/ppds/Epson/Epson-L382_Series-epson-driver.ppd
+%%LINUXBASE%%/opt/%%PORTNAME%%/resource/Epson_201601w.1.data
+%%LINUXBASE%%/opt/%%PORTNAME%%/resource/Epson_201601w.MT.1.data
+%%LINUXBASE%%/opt/%%PORTNAME%%/resource/Epson_201601w.MT.2.data
+%%LINUXBASE%%/opt/%%PORTNAME%%/resource/Epson_201601w.MT.3.data
+%%LINUXBASE%%/opt/%%PORTNAME%%/resource/Epson_201601w.MT.4.data
+%%LINUXBASE%%/opt/%%PORTNAME%%/watermark/WEPCG00.EID
+%%LINUXBASE%%/opt/%%PORTNAME%%/watermark/WEPCG01.EID
+%%LINUXBASE%%/opt/%%PORTNAME%%/watermark/WEPCG02.EID
+%%LINUXBASE%%/opt/%%PORTNAME%%/watermark/WEPCG03.EID
+%%LINUXBASE%%/opt/%%PORTNAME%%/watermark/WEPCG04.EID
+%%LINUXBASE%%/opt/%%PORTNAME%%/watermark/WEPCG05.EID
+%%LINUXBASE%%/opt/%%PORTNAME%%/watermark/WEPCG06.EID
+%%LINUXBASE%%/opt/%%PORTNAME%%/watermark/WEPCG07.EID
+%%LINUXBASE%%/opt/%%PORTNAME%%/watermark/WEPCG08.EID
+%%LINUXBASE%%/opt/%%PORTNAME%%/watermark/WEPCG09.EID
+share/cups/model/Epson-201601w
+@dir %%LINUXBASE%%/opt/%%PORTNAME%%/cups/lib/filter
+@dir %%LINUXBASE%%/opt/%%PORTNAME%%/cups/lib
+@dir %%LINUXBASE%%/opt/%%PORTNAME%%/cups
+@dir %%LINUXBASE%%/opt/%%PORTNAME%%/doc
+@dir %%LINUXBASE%%/opt/%%PORTNAME%%/%%LIBDIR%%
+@dir %%LINUXBASE%%/opt/%%PORTNAME%%/ppds/Epson
+@dir %%LINUXBASE%%/opt/%%PORTNAME%%/ppds
+@dir %%LINUXBASE%%/opt/%%PORTNAME%%/resource
+@dir %%LINUXBASE%%/opt/%%PORTNAME%%/watermark
+@dir %%LINUXBASE%%/opt/%%PORTNAME%%
+@dir %%LINUXBASE%%/opt
+@dir %%LINUXBASE%%

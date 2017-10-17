@@ -18,7 +18,7 @@ LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg
 
 RESTRICTED=	Installs station logos
 
-USES=		execinfo pkgconfig tar:tgz
+USES=		pkgconfig tar:tgz
 WRKSRC=		${WRKDIR}/${PLUGIN}-${DISTVERSION}
 VDR_PLUGIN_MAKEFILES=	${WRKSRC}/command/Makefile ${WRKSRC}/plugin/Makefile
 DEFINES=	-DDATADIR=\\\"${DATADIR}\\\" -DPREFIX=\\\"${PREFIX}\\\"

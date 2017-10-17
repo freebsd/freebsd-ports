@@ -3,12 +3,15 @@
 @group %%WWWGRP%%
 %%WWWDIR%%/.htaccess
 %%WWWDIR%%/CHANGELOG.md
+%%WWWDIR%%/CODE_OF_CONDUCT.md
+%%WWWDIR%%/CONTRIBUTING.md
 %%WWWDIR%%/COPYING
 %%WWWDIR%%/Dockerfile
 %%WWWDIR%%/README.md
 %%WWWDIR%%/README_PLUGIN.md
 %%WWWDIR%%/composer.json
 %%WWWDIR%%/data/ModelTranslation.txt
+%%WWWDIR%%/data/cpus.ini
 %%WWWDIR%%/data/distros.ini
 %%WWWDIR%%/data/languages.ini
 %%WWWDIR%%/data/osnames.ini
@@ -43,6 +46,7 @@
 %%WWWDIR%%/gfx/images/ClearOS.png
 %%WWWDIR%%/gfx/images/Cloud.png
 %%WWWDIR%%/gfx/images/Cobalt.png
+%%WWWDIR%%/gfx/images/Container.png
 %%WWWDIR%%/gfx/images/CoreOS.png
 %%WWWDIR%%/gfx/images/Crux.png
 %%WWWDIR%%/gfx/images/Darwin.png
@@ -66,7 +70,9 @@
 %%WWWDIR%%/gfx/images/IPFire.png
 %%WWWDIR%%/gfx/images/KaOS.png
 %%WWWDIR%%/gfx/images/Korora.png
+%%WWWDIR%%/gfx/images/Lakka.png
 %%WWWDIR%%/gfx/images/LFS.png
+%%WWWDIR%%/gfx/images/LibreELEC.png
 %%WWWDIR%%/gfx/images/Linaro.png
 %%WWWDIR%%/gfx/images/Lunar.png
 %%WWWDIR%%/gfx/images/Mageia.png
@@ -80,6 +86,7 @@
 %%WWWDIR%%/gfx/images/Netrunner.png
 %%WWWDIR%%/gfx/images/NixOS.png
 %%WWWDIR%%/gfx/images/OpenBSD.png
+%%WWWDIR%%/gfx/images/OpenELEC.png
 %%WWWDIR%%/gfx/images/OpenMamba.png
 %%WWWDIR%%/gfx/images/OpenMandriva.png
 %%WWWDIR%%/gfx/images/Oracle.png
@@ -91,6 +98,7 @@
 %%WWWDIR%%/gfx/images/Pisi.png
 %%WWWDIR%%/gfx/images/Porteus.png
 %%WWWDIR%%/gfx/images/Puppy.png
+%%WWWDIR%%/gfx/images/PureOS.png
 %%WWWDIR%%/gfx/images/QNX.png
 %%WWWDIR%%/gfx/images/QTS.png
 %%WWWDIR%%/gfx/images/Qubes.png
@@ -178,7 +186,7 @@
 %%WWWDIR%%/includes/mb/class.healthd.inc.php
 %%WWWDIR%%/includes/mb/class.hwmon.inc.php
 %%WWWDIR%%/includes/mb/class.hwsensors.inc.php
-%%WWWDIR%%/includes/mb/class.ipmi.inc.php
+%%WWWDIR%%/includes/mb/class.ipmitool.inc.php
 %%WWWDIR%%/includes/mb/class.ipmiutil.inc.php
 %%WWWDIR%%/includes/mb/class.k8temp.inc.php
 %%WWWDIR%%/includes/mb/class.lmsensors.inc.php
@@ -316,22 +324,12 @@
 %%WWWDIR%%/plugins/dmraid/lang/fr.xml
 %%WWWDIR%%/plugins/dmraid/lang/ro.xml
 %%WWWDIR%%/plugins/dmraid/lang/ru.xml
-%%WWWDIR%%/plugins/ipmiinfo/class.ipmiinfo.inc.php
-%%WWWDIR%%/plugins/ipmiinfo/ipmiinfo_bootstrap.html
-%%WWWDIR%%/plugins/ipmiinfo/js/ipmiinfo.js
-%%WWWDIR%%/plugins/ipmiinfo/js/ipmiinfo_bootstrap.js
-%%WWWDIR%%/plugins/ipmiinfo/lang/cz.xml
-%%WWWDIR%%/plugins/ipmiinfo/lang/de.xml
-%%WWWDIR%%/plugins/ipmiinfo/lang/en.xml
-%%WWWDIR%%/plugins/ipmiinfo/lang/fr.xml
-%%WWWDIR%%/plugins/ipmiinfo/lang/pl.xml
-%%WWWDIR%%/plugins/ipmiinfo/lang/ro.xml
-%%WWWDIR%%/plugins/ipmiinfo/lang/ru.xml
 %%WWWDIR%%/plugins/iptables/class.iptables.inc.php
 %%WWWDIR%%/plugins/iptables/iptables_bootstrap.html
 %%WWWDIR%%/plugins/iptables/js/iptables.js
 %%WWWDIR%%/plugins/iptables/js/iptables_bootstrap.js
 %%WWWDIR%%/plugins/iptables/lang/en.xml
+%%WWWDIR%%/plugins/iptables/lang/ru.xml
 %%WWWDIR%%/plugins/mdstatus/class.mdstatus.inc.php
 %%WWWDIR%%/plugins/mdstatus/css/mdstatus.css
 %%WWWDIR%%/plugins/mdstatus/gfx/error.png
@@ -349,6 +347,14 @@
 %%WWWDIR%%/plugins/mdstatus/lang/ro.xml
 %%WWWDIR%%/plugins/mdstatus/lang/ru.xml
 %%WWWDIR%%/plugins/mdstatus/mdstatus_bootstrap.html
+%%WWWDIR%%/plugins/pingtest/class.pingtest.inc.php
+%%WWWDIR%%/plugins/pingtest/css/pingtest.css
+%%WWWDIR%%/plugins/pingtest/js/pingtest.js
+%%WWWDIR%%/plugins/pingtest/js/pingtest_bootstrap.js
+%%WWWDIR%%/plugins/pingtest/lang/de.xml
+%%WWWDIR%%/plugins/pingtest/lang/en.xml
+%%WWWDIR%%/plugins/pingtest/lang/pl.xml
+%%WWWDIR%%/plugins/pingtest/pingtest_bootstrap.html
 %%WWWDIR%%/plugins/ps/class.ps.inc.php
 %%WWWDIR%%/plugins/ps/js/ps.js
 %%WWWDIR%%/plugins/ps/js/ps_bootstrap.js
@@ -360,6 +366,7 @@
 %%WWWDIR%%/plugins/ps/lang/pl.xml
 %%WWWDIR%%/plugins/ps/lang/ro.xml
 %%WWWDIR%%/plugins/ps/lang/ru.xml
+%%WWWDIR%%/plugins/ps/lang/uk.xml
 %%WWWDIR%%/plugins/ps/ps_bootstrap.html
 %%WWWDIR%%/plugins/psstatus/class.psstatus.inc.php
 %%WWWDIR%%/plugins/psstatus/css/psstatus.css
@@ -375,6 +382,7 @@
 %%WWWDIR%%/plugins/psstatus/lang/pl.xml
 %%WWWDIR%%/plugins/psstatus/lang/ro.xml
 %%WWWDIR%%/plugins/psstatus/lang/ru.xml
+%%WWWDIR%%/plugins/psstatus/lang/uk.xml
 %%WWWDIR%%/plugins/psstatus/psstatus_bootstrap.html
 %%WWWDIR%%/plugins/quotas/class.quotas.inc.php
 %%WWWDIR%%/plugins/quotas/css/quotas.css
@@ -398,7 +406,6 @@
 %%WWWDIR%%/plugins/smart/lang/gr.xml
 %%WWWDIR%%/plugins/smart/lang/pl.xml
 %%WWWDIR%%/plugins/smart/lang/ro.xml
-%%WWWDIR%%/plugins/smart/lang/ru.xml
 %%WWWDIR%%/plugins/smart/smart_bootstrap.html
 %%WWWDIR%%/plugins/snmppinfo/class.snmppinfo.inc.php
 %%WWWDIR%%/plugins/snmppinfo/js/snmppinfo.js
@@ -455,6 +462,7 @@
 %%WWWDIR%%/sample/distrotest/Cloud/5.10.txt
 %%WWWDIR%%/sample/distrotest/Cloud/6.4.txt
 %%WWWDIR%%/sample/distrotest/Cloud/7.2.txt
+%%WWWDIR%%/sample/distrotest/Container/1409.2.0.txt
 %%WWWDIR%%/sample/distrotest/CoreOS/367.1.0.txt
 %%WWWDIR%%/sample/distrotest/Crux/2.8.txt
 %%WWWDIR%%/sample/distrotest/Debian/5.0.3.txt
@@ -480,6 +488,8 @@
 %%WWWDIR%%/sample/distrotest/IPFire/2.13.txt
 %%WWWDIR%%/sample/distrotest/KaOS/2014.0301.txt
 %%WWWDIR%%/sample/distrotest/Korora/20.txt
+%%WWWDIR%%/sample/distrotest/Lakka/2.0.txt
+%%WWWDIR%%/sample/distrotest/LibreELEC/8.0.1.txt
 %%WWWDIR%%/sample/distrotest/Linaro/13.12.txt
 %%WWWDIR%%/sample/distrotest/Lunar/1.7.0-rc2.txt
 %%WWWDIR%%/sample/distrotest/Mageia/4.txt
@@ -495,6 +505,7 @@
 %%WWWDIR%%/sample/distrotest/Netrunner/13.06.txt
 %%WWWDIR%%/sample/distrotest/Netrunner/2014.04.txt
 %%WWWDIR%%/sample/distrotest/NixOS/13.10.txt
+%%WWWDIR%%/sample/distrotest/OpenELEC/8.0.3.txt
 %%WWWDIR%%/sample/distrotest/OpenMamba/3.0.1.txt
 %%WWWDIR%%/sample/distrotest/OpenMandriva/2013.0-RC1.txt
 %%WWWDIR%%/sample/distrotest/Oracle/5.10-el.txt
@@ -516,6 +527,7 @@
 %%WWWDIR%%/sample/distrotest/Puppy/5.3-wary.txt
 %%WWWDIR%%/sample/distrotest/Puppy/5.3.3-slacko.txt
 %%WWWDIR%%/sample/distrotest/Puppy/528-lucid.txt
+%%WWWDIR%%/sample/distrotest/PureOS/3.0beta1.txt
 %%WWWDIR%%/sample/distrotest/QTS/3.1.2.txt
 %%WWWDIR%%/sample/distrotest/Qubes/3.0.txt
 %%WWWDIR%%/sample/distrotest/ROSA/2012.0.0-11-LTS.txt
@@ -542,6 +554,7 @@
 %%WWWDIR%%/sample/distrotest/SliTaz/2014.02.16-cooking.txt
 %%WWWDIR%%/sample/distrotest/SliTaz/5.0-RC4.txt
 %%WWWDIR%%/sample/distrotest/Solus/1.0-rc1.txt
+%%WWWDIR%%/sample/distrotest/Solus/2017.01.01.0.txt
 %%WWWDIR%%/sample/distrotest/SolusOS/1.3.txt
 %%WWWDIR%%/sample/distrotest/SolusOS/2-alpha7.txt
 %%WWWDIR%%/sample/distrotest/SolydXK/2014.01-K.txt
@@ -575,12 +588,14 @@
 %%WWWDIR%%/sample/distrotest/gNewSense/3.0.txt
 %%WWWDIR%%/sample/distrotest/openSUSE/11.3.txt
 %%WWWDIR%%/sample/distrotest/openSUSE/13.1.txt
+%%WWWDIR%%/sample/freebsd/netstat1.txt
+%%WWWDIR%%/sample/freebsd/netstat2.txt
+%%WWWDIR%%/sample/freebsd/netstat3.txt
 %%WWWDIR%%/sample/logs/log_android21.txt
 %%WWWDIR%%/sample/logs/log_android412.txt
 %%WWWDIR%%/sample/logs/log_bluestacks.txt
 %%WWWDIR%%/sample/logs/log_debian7.txt
 %%WWWDIR%%/sample/logs/log_sf.txt
-%%WWWDIR%%/sample/main/1-cpuinfo.txt
 %%WWWDIR%%/sample/main/1-dfiP.txt
 %%WWWDIR%%/sample/main/1-dfkP.txt
 %%WWWDIR%%/sample/main/1-mount.txt
@@ -605,6 +620,7 @@
 %%WWWDIR%%/sample/main/vm_stat1.txt
 %%WWWDIR%%/sample/main/vm_stat2.txt
 %%WWWDIR%%/sample/main/vm_stat3.txt
+%%WWWDIR%%/sample/motherboard/healthd/healthd1.txt
 %%WWWDIR%%/sample/motherboard/hwsensors/hwsensors1.txt
 %%WWWDIR%%/sample/motherboard/hwsensors/hwsensors2.txt
 %%WWWDIR%%/sample/motherboard/hwsensors/hwsensors3.txt
@@ -612,6 +628,8 @@
 %%WWWDIR%%/sample/motherboard/hwsensors/hwsensors5.txt
 %%WWWDIR%%/sample/motherboard/ipmi-sensors/ipmi-sensors1.txt
 %%WWWDIR%%/sample/motherboard/ipmitool/ipmitool1.txt
+%%WWWDIR%%/sample/motherboard/ipmitool/ipmitool2.txt
+%%WWWDIR%%/sample/motherboard/ipmitool/ipmitool3.txt
 %%WWWDIR%%/sample/motherboard/ipmiutil/ipmiutil1.txt
 %%WWWDIR%%/sample/motherboard/lmsensors/lmsensors1.txt
 %%WWWDIR%%/sample/motherboard/lmsensors/lmsensors10.txt

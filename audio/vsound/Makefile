@@ -5,7 +5,8 @@ PORTNAME=	vsound
 PORTVERSION=	0.6
 PORTREVISION=	6
 CATEGORIES=	audio
-MASTER_SITES=	http://www.vsound.org/
+MASTER_SITES=	http://down1.chinaunix.net/distfiles/ \
+		http://freebsd.nsu.ru/distfiles/ GENTOO
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility for capturing audio streams from programs with OSS output

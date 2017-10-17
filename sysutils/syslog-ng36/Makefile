@@ -4,12 +4,13 @@
 PORTNAME=	syslog-ng
 DISTVERSION=	3.6.4
 PORTREVISION=	1
-.if !defined(MASTERDIR)
-PKGNAMESUFFIX=	36
-.endif
 CATEGORIES=	sysutils
 MASTER_SITES=	https://github.com/balabit/${PORTNAME}/releases/download/${PORTNAME}-${DISTVERSION}/ \
 		http://www.balabit.com/downloads/files/syslog-ng/open-source-edition/${DISTVERSION}/source/ \
+
+.if !defined(MASTERDIR)
+PKGNAMESUFFIX=	36
+.endif
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Powerful syslogd replacement

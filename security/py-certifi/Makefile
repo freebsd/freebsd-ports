@@ -14,6 +14,6 @@ LICENSE=	MPL20
 
 NO_ARCH=	yes
 USES?=		python
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	autoplist concurrent distutils
 
 .include <bsd.port.mk>

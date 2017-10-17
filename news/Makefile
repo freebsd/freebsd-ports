@@ -60,7 +60,6 @@
     SUBDIR += plor
     SUBDIR += py-pynzb
     SUBDIR += py-sabyenc
-    SUBDIR += py-twistedNews
     SUBDIR += py-yenc
     SUBDIR += rawdog
     SUBDIR += s-news

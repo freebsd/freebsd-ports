@@ -12,11 +12,15 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	vvelox@vvelox.net
 COMMENT=	ZConf module to assist with fetching/printing weather information
 
+LICENSE=	ART10 GPLv1+
+LICENSE_COMB=	dual
+
 BUILD_DEPENDS=	p5-ZConf>=6.1.0:net/p5-ZConf \
 		p5-Text-NeatTemplate>=0.10.01:textproc/p5-Text-NeatTemplate \
 		p5-Weather-Underground>=3.03:astro/p5-Weather-Underground
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+NO_ARCH=	yes
 USES=		perl5 shebangfix
 SHEBANG_FILES=	bin/zcweather
 USE_PERL5=	configure

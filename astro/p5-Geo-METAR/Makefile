@@ -11,6 +11,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module that processes METAR information from NOAA sources
 
+LICENSE=	GPLv2+
+
+NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
 

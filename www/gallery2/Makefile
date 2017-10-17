@@ -22,8 +22,8 @@ OPTIONS_DEFAULT=IMAGEMAGICK JHEAD MYSQL
 
 NO_ARCH=	yes
 NO_BUILD=	yes
+USES=		php:web
 USE_PHP=	pcre session
-WANT_PHP_WEB=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 SUB_FILES=	pkg-message

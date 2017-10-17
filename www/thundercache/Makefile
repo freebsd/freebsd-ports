@@ -2,7 +2,7 @@
 
 PORTNAME=	thundercache
 PORTVERSION=	6.1
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	www
 MASTER_SITES=	http://www.thundercache.com.br/dist/ \
 		http://www.bmsoftware.org/packs/ \
@@ -28,7 +28,7 @@ APACHE_DESC=	Install apache for reporting viewing
 PHP_DESC=	Install PHP for reporting generating
 PGSQL_DESC=	Install PostgreSQL (report data storing)
 
-USES=		shebangfix tar:bzip2 ssl
+USES=		php shebangfix tar:bzip2 ssl
 SHEBANG_FILES=	sbin/thunderlog.php
 USE_GCC=	any
 

@@ -12,15 +12,6 @@
      fi
  
      if test -n "$vuln"; then
-@@ -20758,7 +20758,7 @@ $as_echo "#define C_BSD 1" >>confdefs.h
-     ;;
- freebsd*)
-     if test "$have_pthreads" = "yes"; then
--	THREAD_LIBS="-lthr"
-+	THREAD_LIBS="%%PTHREAD_LIBS%%"
- 	TH_SAFE="-thread-safe"
-     fi
- 
 @@ -20934,7 +20934,7 @@ esac
  if test "$have_milter" = "yes"; then
  

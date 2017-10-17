@@ -19,7 +19,7 @@ RUN_DEPENDS=	squirrelmail>=${PORTVERSION}:mail/squirrelmail
 USES=		tar:bzip2 gettext
 WRKSRC=		${WRKDIR}/squirrelmail.locales
 NO_ARCH=	yes
-PORTSCOUT=	ignore
+PORTSCOUT=	ignore:1
 
 # if you were using WITHOUT_WWWDIR, use SQUIRRELDIR=${PREFIX}/squirrelmail
 SQUIRRELDIR?=	${PREFIX}/www/squirrelmail

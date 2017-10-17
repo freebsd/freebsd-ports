@@ -3,7 +3,7 @@
 
 PORTNAME=	levmar
 PORTVERSION=	2.6
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	math
 MASTER_SITES=	http://users.ics.forth.gr/~lourakis/levmar/
 

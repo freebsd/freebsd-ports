@@ -97,8 +97,6 @@ SUB_LIST+=	GRAFANA_USER=${GRAFANA_USER} \
 
 PLIST_SUB+=	GRAFANAHOMEDIR=${GRAFANAHOMEDIR}
 
-STRIP=
-
 post-extract:
 	@${MKDIR} ${WRKSRC}/src/github.com/grafana/grafana
 .for src in .bowerrc .bra.toml .editorconfig .github .gitignore .hooks \

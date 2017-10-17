@@ -3,7 +3,7 @@
 
 PORTNAME=	v8
 PORTVERSION=	3.27.7
-PORTREVISION=	9
+PORTREVISION=	11
 CATEGORIES=	lang
 MASTER_SITES=	LOCAL/vanilla
 PKGNAMESUFFIX=	-devel
@@ -23,7 +23,7 @@ ALL_TARGET=	native
 MAKE_ARGS=	library=shared use_system_icu=on
 MAKE_ENV=	CC.host=${CC} CXX.host=${CXX} LINK.host=${CXX} LINK.target=${CXX}
 USE_LDCONFIG=	yes
-USES=		compiler cpe execinfo gmake python:2 shebangfix tar:xz
+USES=		compiler cpe gmake localbase python:2 shebangfix tar:xz
 
 CPE_VENDOR=	google
 

@@ -2686,6 +2686,9 @@ lib/python2.7/test/Sine-1000Hz-300ms.aif
 lib/python2.7/test/__init__.py
 lib/python2.7/test/__init__.pyc
 lib/python2.7/test/__init__.pyo
+lib/python2.7/test/__main__.py
+lib/python2.7/test/__main__.pyc
+lib/python2.7/test/__main__.pyo
 lib/python2.7/test/_mock_backport.py
 lib/python2.7/test/_mock_backport.pyc
 lib/python2.7/test/_mock_backport.pyo
@@ -2723,6 +2726,9 @@ lib/python2.7/test/badsyntax_future7.py
 lib/python2.7/test/badsyntax_future8.py
 lib/python2.7/test/badsyntax_future9.py
 lib/python2.7/test/badsyntax_nocaret.py
+lib/python2.7/test/bisect.py
+lib/python2.7/test/bisect.pyc
+lib/python2.7/test/bisect.pyo
 lib/python2.7/test/capath/0e4015b9.0
 lib/python2.7/test/capath/4e1295a3.0
 lib/python2.7/test/capath/5ed36f99.0
@@ -2968,6 +2974,9 @@ lib/python2.7/test/math_testcases.txt
 lib/python2.7/test/mp_fork_bomb.py
 lib/python2.7/test/mp_fork_bomb.pyc
 lib/python2.7/test/mp_fork_bomb.pyo
+lib/python2.7/test/multibytecodec_support.py
+lib/python2.7/test/multibytecodec_support.pyc
+lib/python2.7/test/multibytecodec_support.pyo
 lib/python2.7/test/nokia.pem
 lib/python2.7/test/nullbytecert.pem
 lib/python2.7/test/nullcert.pem
@@ -2993,6 +3002,9 @@ lib/python2.7/test/pydocfodder.pyo
 lib/python2.7/test/pystone.py
 lib/python2.7/test/pystone.pyc
 lib/python2.7/test/pystone.pyo
+lib/python2.7/test/pythoninfo.py
+lib/python2.7/test/pythoninfo.pyc
+lib/python2.7/test/pythoninfo.pyo
 lib/python2.7/test/randv2_32.pck
 lib/python2.7/test/randv2_64.pck
 lib/python2.7/test/randv3.pck
@@ -3045,6 +3057,12 @@ lib/python2.7/test/string_tests.pyo
 lib/python2.7/test/subprocessdata/sigchild_ignore.py
 lib/python2.7/test/subprocessdata/sigchild_ignore.pyc
 lib/python2.7/test/subprocessdata/sigchild_ignore.pyo
+lib/python2.7/test/support/__init__.py
+lib/python2.7/test/support/__init__.pyc
+lib/python2.7/test/support/__init__.pyo
+lib/python2.7/test/support/script_helper.py
+lib/python2.7/test/support/script_helper.pyc
+lib/python2.7/test/support/script_helper.pyo
 lib/python2.7/test/symlink_support.py
 lib/python2.7/test/symlink_support.pyc
 lib/python2.7/test/symlink_support.pyo
@@ -3590,6 +3608,9 @@ lib/python2.7/test/test_imp.pyo
 lib/python2.7/test/test_import.py
 lib/python2.7/test/test_import.pyc
 lib/python2.7/test/test_import.pyo
+lib/python2.7/test/test_import_magic.py
+lib/python2.7/test/test_import_magic.pyc
+lib/python2.7/test/test_import_magic.pyo
 lib/python2.7/test/test_importhooks.py
 lib/python2.7/test/test_importhooks.pyc
 lib/python2.7/test/test_importhooks.pyo
@@ -3719,9 +3740,6 @@ lib/python2.7/test/test_msilib.pyo
 lib/python2.7/test/test_multibytecodec.py
 lib/python2.7/test/test_multibytecodec.pyc
 lib/python2.7/test/test_multibytecodec.pyo
-lib/python2.7/test/test_multibytecodec_support.py
-lib/python2.7/test/test_multibytecodec_support.pyc
-lib/python2.7/test/test_multibytecodec_support.pyo
 lib/python2.7/test/test_multifile.py
 lib/python2.7/test/test_multifile.pyc
 lib/python2.7/test/test_multifile.pyo
@@ -3890,6 +3908,9 @@ lib/python2.7/test/test_re.pyo
 lib/python2.7/test/test_readline.py
 lib/python2.7/test/test_readline.pyc
 lib/python2.7/test/test_readline.pyo
+lib/python2.7/test/test_regrtest.py
+lib/python2.7/test/test_regrtest.pyc
+lib/python2.7/test/test_regrtest.pyo
 lib/python2.7/test/test_repr.py
 lib/python2.7/test/test_repr.pyc
 lib/python2.7/test/test_repr.pyo
@@ -4067,6 +4088,9 @@ lib/python2.7/test/test_telnetlib.pyo
 lib/python2.7/test/test_tempfile.py
 lib/python2.7/test/test_tempfile.pyc
 lib/python2.7/test/test_tempfile.pyo
+lib/python2.7/test/test_test_support.py
+lib/python2.7/test/test_test_support.pyc
+lib/python2.7/test/test_test_support.pyo
 lib/python2.7/test/test_textwrap.py
 lib/python2.7/test/test_textwrap.pyc
 lib/python2.7/test/test_textwrap.pyo

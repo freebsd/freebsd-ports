@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gitlab-grit
-PORTVERSION=	2.8.1
-PORTREVISION=	1
+PORTVERSION=	2.8.2
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 

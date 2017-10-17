@@ -24,6 +24,4 @@ USES=		go
 
 PLIST_FILES=	bin/zfs-snap-diff
 
-STRIP=		# stripping can break go binaries
-
 .include <bsd.port.mk>

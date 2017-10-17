@@ -27,7 +27,7 @@ CXXFLAGS+=	-fsigned-char -fPIC
 INSTALL_TARGET=	install-strip
 
 post-patch:
-.if defined(WITH_DEBUG) && !defined(WITHOUT_DEBUG)
+.if defined(WITH_DEBUG)
 	@${REINPLACE_CMD} 's/-DNDEBUG//' ${WRKSRC}/Makefile.in
 .endif
 

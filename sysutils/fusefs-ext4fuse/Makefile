@@ -13,7 +13,7 @@ COMMENT=	EXT4 implementation for FUSE
 
 LICENSE=	GPLv2
 
-USES=		execinfo fuse pkgconfig gmake
+USES=		fuse pkgconfig gmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	gerard
 

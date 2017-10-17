@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=		kreport
-PORTVERSION=		3.0.0
+DISTVERSION=		3.0.2
 CATEGORIES=		textproc kde
 MASTER_SITES=		KDE/stable/${PORTNAME}/src
 DIST_SUBDIR=		KDE/${PORTNAME}

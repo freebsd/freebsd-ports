@@ -3,6 +3,7 @@
 
 PORTNAME=	freerdp
 DISTVERSION=	2.0.0-rc0
+PORTREVISION=	1
 CATEGORIES=	net comms ipv6
 
 MAINTAINER=	kevans@FreeBSD.org
@@ -15,7 +16,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	FreeRDP
 GH_PROJECT=	${GH_ACCOUNT}
 
-USES=		alias cmake:outsource compiler:c++11-lib cpe execinfo gettext localbase pathfix pkgconfig ssl
+USES=		alias cmake:outsource compiler:c++11-lib cpe gettext localbase pathfix pkgconfig ssl
 USE_LDCONFIG=	yes
 CPE_VENDOR=	freerdp_project
 

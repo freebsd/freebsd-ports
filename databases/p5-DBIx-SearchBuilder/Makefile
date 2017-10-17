@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	michelle@sorbs.net
 COMMENT=	Perl extension for easy SQL SELECT Statement generation
 
-LICENSE=	ART10 GPLv1
+LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Class-ReturnValue>=0:devel/p5-Class-ReturnValue \

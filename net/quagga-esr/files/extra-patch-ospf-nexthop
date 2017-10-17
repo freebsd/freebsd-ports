@@ -1,0 +1,184 @@
+--- ospfd/ospf_asbr.c.orig	2016-10-18 13:03:52 UTC
++++ ospfd/ospf_asbr.c
+@@ -122,6 +122,7 @@ ospf_reset_route_map_set_values (struct 
+ {
+   values->metric = -1;
+   values->metric_type = -1;
++  values->nexthop.s_addr = -1;
+ }
+ 
+ int
+--- ospfd/ospf_asbr.h.orig	2016-10-18 13:03:52 UTC
++++ ospfd/ospf_asbr.h
+@@ -27,6 +27,7 @@ struct route_map_set_values
+ {
+   int32_t metric;
+   int32_t metric_type;
++  struct in_addr nexthop;
+ };
+ 
+ /* Redistributed external information. */
+@@ -50,6 +51,7 @@ struct external_info
+   struct route_map_set_values route_map_set;
+ #define ROUTEMAP_METRIC(E)      (E)->route_map_set.metric
+ #define ROUTEMAP_METRIC_TYPE(E) (E)->route_map_set.metric_type
++#define ROUTEMAP_NEXTHOP(E)     (E)->route_map_set.nexthop
+ };
+ 
+ #define OSPF_ASBR_CHECK_DELAY 30
+--- ospfd/ospf_lsa.c.orig	2016-10-18 13:03:52 UTC
++++ ospfd/ospf_lsa.c
+@@ -1644,7 +1644,8 @@ ospf_external_lsa_body_set (struct strea
+   stream_put_ospf_metric (s, mvalue);
+   
+   /* Get forwarding address to nexthop if on the Connection List, else 0. */
+-  fwd_addr = ospf_external_lsa_nexthop_get (ospf, ei->nexthop);
++  fwd_addr = (ei->route_map_set.nexthop.s_addr != -1) ?
++    ROUTEMAP_NEXTHOP (ei) : ospf_external_lsa_nexthop_get (ospf, ei->nexthop);
+ 
+   /* Put forwarding address. */
+   stream_put_ipv4 (s, fwd_addr.s_addr);
+--- ospfd/ospf_routemap.c.orig	2016-10-18 13:03:52 UTC
++++ ospfd/ospf_routemap.c
+@@ -668,6 +668,62 @@ struct route_map_rule_cmd route_set_tag_
+   route_set_tag_free,
+ };
+ 
++/* `set ip next-hop IP_ADDRESS' */
++/* Set nexthop to object. */
++static route_map_result_t
++route_set_ip_nexthop (void *rule, struct prefix *prefix,
++		      route_map_object_t type, void *object)
++{
++  struct in_addr *address;
++  struct external_info *ei;
++
++  if (type == RMAP_OSPF)
++    {
++      /* Fetch routemap's rule information. */
++      address = rule;
++      ei = object;
++
++      /* Set metric out value. */
++      ei->route_map_set.nexthop = *address;
++    }
++  return RMAP_OKAY;
++}
++
++/* set ip next-hop compilation. */
++static void *
++route_set_ip_nexthop_compile (const char *arg)
++{
++  struct in_addr *address = NULL;
++  int ret;
++
++  address = XMALLOC (MTYPE_ROUTE_MAP_COMPILED, sizeof (struct in_addr));
++  ret = inet_aton (arg, address);
++
++  if (ret == 0)
++    {
++      XFREE (MTYPE_ROUTE_MAP_COMPILED, address);
++      return NULL;
++    }
++
++  return address;
++}
++
++/* Free route map's compiled `set ip next-hop' value. */
++static void
++route_set_ip_nexthop_free (void *rule)
++{
++  XFREE (MTYPE_ROUTE_MAP_COMPILED, rule);
++}
++
++/* Set ip next-hop rule structure. */
++struct route_map_rule_cmd route_set_ip_nexthop_cmd =
++{
++  "ip next-hop",
++  route_set_ip_nexthop,
++  route_set_ip_nexthop_compile,
++  route_set_ip_nexthop_free,
++};
++
+ DEFUN (match_ip_nexthop,
+        match_ip_nexthop_cmd,
+        "match ip next-hop (<1-199>|<1300-2699>|WORD)",
+@@ -984,6 +1040,49 @@ ALIAS (no_set_tag,
+        "Tag value for routing protocol\n"
+        "Tag value\n")
+ 
++DEFUN (set_ip_nexthop,
++       set_ip_nexthop_cmd,
++       "set ip next-hop A.B.C.D",
++       SET_STR
++       IP_STR
++       "Next hop address\n"
++       "IP address of next hop\n")
++{
++  union sockunion su;
++  int ret;
++
++  ret = str2sockunion (argv[0], &su);
++  if (ret < 0)
++    {
++      vty_out (vty, "%% Malformed Next-hop address%s", VTY_NEWLINE);
++      return CMD_WARNING;
++    }
++
++  return ospf_route_set_add (vty, vty->index, "ip next-hop", argv[0]);
++}
++
++DEFUN (no_set_ip_nexthop,
++       no_set_ip_nexthop_cmd,
++       "no set ip next-hop",
++       NO_STR
++       SET_STR
++       "Next hop address\n")
++{
++  if (argc == 0)
++    return ospf_route_set_delete (vty, vty->index, "ip next-hop", NULL);
++
++  return ospf_route_set_delete (vty, vty->index, "ip next-hop", argv[0]);
++}
++
++ALIAS (no_set_ip_nexthop,
++       no_set_ip_nexthop_val_cmd,
++       "no set ip next-hop A.B.C.D",
++       NO_STR
++       SET_STR
++       IP_STR
++       "Next hop address\n"
++       "IP address of next hop\n")
++
+ /* Route-map init */
+ void
+ ospf_route_map_init (void)
+@@ -1005,6 +1104,7 @@ ospf_route_map_init (void)
+   route_map_install_set (&route_set_metric_cmd);
+   route_map_install_set (&route_set_metric_type_cmd);
+   route_map_install_set (&route_set_tag_cmd);
++  route_map_install_set (&route_set_ip_nexthop_cmd);
+ 
+   install_element (RMAP_NODE, &match_ip_nexthop_cmd);
+   install_element (RMAP_NODE, &no_match_ip_nexthop_cmd);
+@@ -1031,6 +1131,9 @@ ospf_route_map_init (void)
+   install_element (RMAP_NODE, &set_metric_type_cmd);
+   install_element (RMAP_NODE, &no_set_metric_type_cmd);
+   install_element (RMAP_NODE, &no_set_metric_type_val_cmd);
++  install_element (RMAP_NODE, &set_ip_nexthop_cmd);
++  install_element (RMAP_NODE, &no_set_ip_nexthop_cmd);
++  install_element (RMAP_NODE, &no_set_ip_nexthop_val_cmd);
+   install_element (RMAP_NODE, &set_tag_cmd);
+   install_element (RMAP_NODE, &no_set_tag_cmd);
+   install_element (RMAP_NODE, &no_set_tag_val_cmd);
+--- vtysh/extract.pl.in.orig	2016-10-20 11:59:56 UTC
++++ vtysh/extract.pl.in
+@@ -180,7 +180,7 @@ foreach (@ARGV) {
+     }
+ }
+ 
+-my $bad_cli_stomps = 102;
++my $bad_cli_stomps = 105;
+ # Currently we have $bad_cli_stomps.  This was determined by
+ # running this script and counting up the collisions from what
+ # was returned.

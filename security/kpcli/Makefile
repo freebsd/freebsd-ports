@@ -10,7 +10,7 @@ EXTRACT_SUFX=	.pl
 MAINTAINER=	alexander.4mail@gmail.com
 COMMENT=	Command line interface to KeePassX and KeePass database files
 
-LICENSE=	ART10 GPLv1
+LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 RUN_DEPENDS=	p5-Crypt-Rijndael>=1.08:security/p5-Crypt-Rijndael \

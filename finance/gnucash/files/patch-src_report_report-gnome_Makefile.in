@@ -1,6 +1,6 @@
---- src/report/report-gnome/Makefile.in.orig	2016-12-17 19:13:07 UTC
+--- src/report/report-gnome/Makefile.in.orig	2017-09-22 22:13:50 UTC
 +++ src/report/report-gnome/Makefile.in
-@@ -586,6 +586,7 @@ EXTRA_DIST = \
+@@ -599,6 +599,7 @@ EXTRA_DIST = \
  @GNC_HAVE_GUILE_2_TRUE@GUILE_COMPILE_ENV = \
  @GNC_HAVE_GUILE_2_TRUE@  --gnc-module-dir ${top_builddir}/src/app-utils \
  @GNC_HAVE_GUILE_2_TRUE@  --gnc-module-dir ${top_builddir}/src/engine \

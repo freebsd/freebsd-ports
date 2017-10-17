@@ -4,8 +4,7 @@
 PORTNAME=	nokryptia
 PORTVERSION=	1.3
 CATEGORIES=	comms
-MASTER_SITES=	http://tuxmobil.org/software/nokryptia/ \
-		http://www.bsdguru.org/distfiles/
+MASTER_SITES=	http://tuxmobil.org/software/nokryptia/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool for fast loading mp3s into Nokia 5510

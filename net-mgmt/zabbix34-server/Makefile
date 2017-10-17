@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	zabbix34
-PORTVERSION=	3.4.1
+PORTVERSION=	3.4.2
 PORTREVISION?=	0
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/zabbix/ZABBIX%20Latest%20Stable/${PORTVERSION}
@@ -17,7 +17,9 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libpcre.so:devel/pcre
 
-CONFLICTS=	zabbix[0-24-9][0-35-9]${PKGNAMESUFFIX} zabbix[0-9]${PKGNAMESUFFIX}
+CONFLICTS=	zabbix[0-24-9][0-9]${PKGNAMESUFFIX} \
+		zabbix3[0-35-9]${PKGNAMESUFFIX} \
+		zabbix[0-9]${PKGNAMESUFFIX}
 
 IGNORE_WITH_MYSQL=	41
 
@@ -25,6 +27,7 @@ ZABBIX_BUILD=	${PKGNAMESUFFIX:S/^-//}
 
 .if ${ZABBIX_BUILD} != "frontend" # frontend only needs the version/distribution settings
 .if ${ZABBIX_BUILD} != "agent"
+LIB_DEPENDS+=	libevent.so:devel/libevent
 USE_RC_SUBR=	zabbix_${ZABBIX_BUILD}
 .else
 USE_RC_SUBR=	zabbix_${ZABBIX_BUILD}d
@@ -42,7 +45,6 @@ PLIST_SUB=	PROXY=""
 .endif
 
 .if ${ZABBIX_BUILD} == "server"
-LIB_DEPENDS+=	libevent.so:devel/libevent
 PLIST_SUB+=	SERVER=""
 .else
 PLIST_SUB+=	SERVER="@comment "
@@ -60,7 +62,6 @@ CONFIGURE_ARGS+=	--enable-${ZABBIX_BUILD} \
 
 .if ${ZABBIX_BUILD} != "agent"
 LIB_DEPENDS+=	libnetsnmp.so:net-mgmt/net-snmp
-USES+=		execinfo
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 

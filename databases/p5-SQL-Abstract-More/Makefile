@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	espen@tagestad.no
 COMMENT=	Extension of SQL::Abstract with more constructs and more flexible API
 
-LICENSE=	ART10 GPLv1
+LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-MRO-Compat>0:devel/p5-MRO-Compat \

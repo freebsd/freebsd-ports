@@ -1,0 +1,4 @@
+Fog::Ovirt is a module for the 'fog' gem to support oVirt virtualization
+management platform.
+
+WWW: https://github.com/fog/fog-ovirt

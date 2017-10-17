@@ -3,7 +3,7 @@
 
 PORTNAME=	stella
 PORTVERSION=	4.7.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	emulators
 MASTER_SITES=	https://github.com/stella-emu/stella/releases/download/release-${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src

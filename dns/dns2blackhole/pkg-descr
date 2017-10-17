@@ -1,0 +1,16 @@
+Malware Prevention through Domain Blocking (Black Hole)
+
+dns2blackhole is a set of Bourne Shell csh scripts that fetch host files
+from public host file providers that contain the FQDN [ Fully Qualified
+Domain Names ] of sites that fall into the following categories, adware,
+malware, exploit, hijackers, harvesters, tracking, phishing, fake news,
+fraud, spam, sex, porn, gambling, advertisements, misleading marketing,
+illegal pharmacy, warez/piracy and others. The output of the dns2blackhole
+scripts is fed directly into the ports/package versions of unbound, named,
+and dnsmask DNS servers to block those FQDN thus protecting user
+devices from being compromised or bothered seeing things of no interest.
+The base built-in version of unbound titled "local_unbound" can also be
+configured to work using the dns2blackhole method. This black hole method
+is another layer of protection that you can customize to your needs.
+
+WWW: http://dns2blackhole.sourceforge.net/

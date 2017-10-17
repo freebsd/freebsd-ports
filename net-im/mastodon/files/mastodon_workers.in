@@ -30,6 +30,7 @@ mastodon_workers_user="mastodon"
 pidfile="%%WWWDIR%%/tmp/${name}.pid"
 procname="%%RUBY%%:"
 
+start_precmd="rm -f %%WWWDIR%%/Gemfile.lock"
 command="%%PREFIX%%/bin/sidekiq"
 command_flags="-c ${mastodon_workers_threads} -q default -q mailers -q pull -q push"
 command_args=">> /var/log/mastodon/${name##mastodon_}.log 2>&1 &"

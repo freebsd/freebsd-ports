@@ -19,7 +19,7 @@ LIB_DEPENDS=	libquazip.so:archivers/quazip
 
 MAKE_JOBS_UNSAFE=yes
 
-USES=		execinfo gmake qmake
+USES=		gmake qmake
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 USE_QT4=	qmake_build codecs-cn codecs-jp codecs-kr codecs-tw corelib \

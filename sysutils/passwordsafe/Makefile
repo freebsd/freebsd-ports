@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	passwordsafe
-DISTVERSION=	1.02BETA
-PORTREVISION=	1
+DISTVERSION=	1.02.1BETA
 CATEGORIES=	sysutils
 
 MAINTAINER=	brnrd@FreeBSD.org
@@ -24,6 +23,14 @@ USE_GITHUB=	yes
 USE_WX=		3.0+
 USE_XORG=	x11 xtst
 
+OPTIONS_DEFINE=	NLS YUBIKEY
+YUBIKEY_DESC=	Yubikey support
+OPTIONS_SUB=	yes
+
+NLS_USES=		gettext
+YUBIKEY_LIB_DEPENDS=	libykpers-1.so:security/ykpers
+YUBIKEY_MAKE_ENV_OFF=	NO_YUBI=yes
+
 GH_ACCOUNT=	pwsafe
 GH_PROJECT=	${GH_ACCOUNT}
 
@@ -31,10 +38,6 @@ WX_COMP=	wx
 WANT_WX_VER=	3.0
 
 ALL_TARGET=	unicoderelease
-
-OPTIONS_DEFINE=	NLS
-OPTIONS_SUB=	yes
-NLS_USES=	gettext
 
 post-patch:
 .	for f in Makefile.freebsd help/Makefile.freebsd src/os/unix/Makefile \

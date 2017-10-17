@@ -4,7 +4,7 @@
 PORTNAME=	bonnie++
 PORTVERSION=	1.97.3
 CATEGORIES=	benchmarks
-MASTER_SITES=	http://www.coker.com.au/bonnie++/experimental/
+MASTER_SITES=	https://www.coker.com.au/bonnie++/
 
 MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	Performance Test of Filesystem I/O

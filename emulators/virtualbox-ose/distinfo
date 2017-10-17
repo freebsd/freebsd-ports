@@ -1,5 +1,5 @@
-TIMESTAMP = 1501255973
-SHA256 (VirtualBox-5.1.26.tar.bz2) = b5715035e681a11ef1475f83f9503d34a00f0276b89c572eebec363dda80c8a9
-SIZE (VirtualBox-5.1.26.tar.bz2) = 115915813
-SHA256 (VBoxGuestAdditions_5.1.26.iso) = 6df8c8ab6e7ac3a70a5e29116f8a5dcdb7dfbd0b226ef849a5cd9502e956b06f
-SIZE (VBoxGuestAdditions_5.1.26.iso) = 59496448
+TIMESTAMP = 1508180714
+SHA256 (VirtualBox-5.1.30.tar.bz2) = 6059b0986c9cdacc533177867634a76331ceccdcd46dddd111a50d1c42846d0b
+SIZE (VirtualBox-5.1.30.tar.bz2) = 116510730
+SHA256 (VBoxGuestAdditions_5.1.30.iso) = 631ca8e8d513acf43a75de56a71a31aaffb5624864c57d10346ba657d991ec1e
+SIZE (VBoxGuestAdditions_5.1.30.iso) = 59494400

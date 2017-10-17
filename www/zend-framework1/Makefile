@@ -16,8 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 NO_ARCH=	yes
 NO_BUILD=	yes
 USE_PHP=	spl
-WANT_PHP_WEB=	yes
-USES=		gettext
+USES=		gettext php:web
 
 CONFLICTS=	ZendFramework-2.*
 

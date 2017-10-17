@@ -10,13 +10,14 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	Perl extension for computing the sunrise/sunset on a given day
 
+LICENSE=	ART10 GPLv1+
+LICENSE_COMB=	dual
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
 BUILD_DEPENDS=	p5-DateTime>=0:devel/p5-DateTime
 
+NO_ARCH=	yes
 USES=		perl5
-USE_PERL5=	configure patch
-
-post-patch:
-	${PERL} -pi -e 's/(qw\(.*)\[1\];/($$1)[1];/; s/\r\n/\n/;' \
-		${WRKSRC}/Sunrise.pm
+USE_PERL5=	configure
 
 .include <bsd.port.mk>

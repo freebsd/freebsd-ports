@@ -3,7 +3,7 @@
 
 PORTNAME=	tumble
 PORTVERSION=	0.33
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	graphics print
 MASTER_SITES=	http://tumble.brouhaha.com/download/ \
 		http://www.sourcefiles.org/Graphics/Tools/Conversion/
@@ -18,6 +18,8 @@ LIB_DEPENDS=	libtiff.so:graphics/tiff \
 		libnetpbm.so:graphics/netpbm
 
 USES=		bison gmake jpeg localbase:ldflags
+
+CFLAGS+=	-I${LOCALBASE}/include/netpbm
 
 NOT_FOR_ARCHS=	powerpc sparc64
 NOT_FOR_ARCHS_REASON=	Only works on little endian systems

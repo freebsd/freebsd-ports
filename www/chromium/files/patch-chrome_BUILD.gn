@@ -1,24 +1,24 @@
---- chrome/BUILD.gn.orig	2017-06-05 19:03:01 UTC
-+++ chrome/BUILD.gn
-@@ -143,7 +143,7 @@ if (!is_android && !is_mac) {
-     data = [
-       "$root_out_dir/resources.pak",
-     ]
--    if (is_linux || is_win) {
-+    if (is_linux || is_bsd || is_win) {
-       data += [
-         "$root_out_dir/chrome_100_percent.pak",
-         "$root_out_dir/locales/en-US.pak",
-@@ -225,7 +225,7 @@ if (!is_android && !is_mac) {
-       sources += [ "app/chrome_exe_main_aura.cc" ]
-     }
+--- chrome/BUILD.gn.orig	2017-09-05 21:05:11.000000000 +0200
++++ chrome/BUILD.gn	2017-09-06 17:18:59.694120000 +0200
+@@ -165,7 +165,7 @@
+       ]
  
--    if (is_linux) {
-+    if (is_linux || is_bsd) {
-       sources += [
-         "app/chrome_dll_resource.h",
-         "app/chrome_main.cc",
-@@ -1655,7 +1655,7 @@ if (enable_resource_whitelist_generation) {
+       data += [ "$root_out_dir/resources.pak" ]
+-      if (is_linux || is_win) {
++      if (is_linux || is_bsd || is_win) {
+         data += [
+           "$root_out_dir/chrome_100_percent.pak",
+           "$root_out_dir/locales/en-US.pak",
+@@ -245,7 +245,7 @@
+         }
+       }
+ 
+-      if (is_linux) {
++      if (is_linux || is_bsd) {
+         sources += [
+           "app/chrome_dll_resource.h",
+           "app/chrome_main.cc",
+@@ -1783,7 +1783,7 @@
    }
  }
  

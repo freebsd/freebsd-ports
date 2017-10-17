@@ -1,4 +1,4 @@
 Hiera is a pluggable (YAML, JSON, Puppet) hierarchical database for
 storing infrastructure representation data.
 
-WWW: http://projects.puppetlabs.com/projects/hiera
+WWW: https://github.com/puppetlabs/hiera

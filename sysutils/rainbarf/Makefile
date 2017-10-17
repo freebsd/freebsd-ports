@@ -12,7 +12,7 @@ DISTNAME=	App-${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	CPU/RAM/battery stats chart bar for tmux (and GNU screen)
 
-LICENSE=	ART10 GPLv1
+LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 USES=		perl5

@@ -24,7 +24,7 @@ OPTIONS_DEFINE=	IPV6 MFD_REWRITES PERL PERL_EMBEDDED PYTHON DUMMY TKMIB \
 OPTIONS_DEFAULT=PERL PERL_EMBEDDED DUMMY SMUX
 OPTIONS_SUB=	yes
 
-MFD_REWRITES_DESC=	Build with 64-bit Interface Counters
+MFD_REWRITES_DESC=	Use new MFD rewrites of mib modules
 PERL_EMBEDDED_DESC=	Build embedded perl
 DUMMY_DESC=		Enable dummy values as placeholders
 TKMIB_DESC=		Install graphical MIB browser

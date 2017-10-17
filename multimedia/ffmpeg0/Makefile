@@ -164,7 +164,7 @@ COMPAT_HEADERS=libavcodec/avcodec.h \
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == armv6
+.if ${ARCH} == armv6 || ${ARCH} == armv7
 CONFIGURE_ENV+=	ASFLAGS=-no-integrated-as
 CFLAGS+=	-no-integrated-as
 .endif

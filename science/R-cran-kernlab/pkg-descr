@@ -1,0 +1,7 @@
+Kernel-based machine learning methods for classification, regression,
+clustering, novelty detection, quantile regression and dimensionality
+reduction. Among other methods 'kernlab' includes Support Vector
+Machines, Spectral Clustering, Kernel PCA, Gaussian Processes and
+a QP solver.
+
+WWW: https://cran.r-project.org/web/packages/kernlab/

@@ -1,4 +1,4 @@
---- tumblerd/tumbler.rc.orig	2015-02-28 15:23:08 UTC
+--- tumblerd/tumbler.rc.orig	2017-05-28 10:17:58 UTC
 +++ tumblerd/tumbler.rc
 @@ -37,7 +37,7 @@ MaxFileSize=0
  
@@ -12,7 +12,7 @@
 @@ -58,7 +58,7 @@ MaxFileSize=0
  
  # ffmpegthumbnailer plugin
- [FfmegThumbnailer]
+ [FfmpegThumbnailer]
 -Disabled=false
 +Disabled=true
  Priority=2

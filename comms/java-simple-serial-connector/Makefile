@@ -24,7 +24,7 @@ PLIST_FILES=	${JAVA_HOME}/jre/lib/ext/jssc-${PORTVERSION}.jar
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "armv6" || ${ARCH} == "aarch64"
+.if ${ARCH} == aarch64 || ${ARCH} == armv6 || ${ARCH} == armv7
 JSSC_ARCH=		arm
 .else
 JSSC_ARCH=		${ARCH}

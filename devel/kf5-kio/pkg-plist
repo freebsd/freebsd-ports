@@ -754,13 +754,8 @@ share/knotifications5/proxyscout.notifyrc
 share/kservices5/cache.desktop
 share/kservices5/cookies.desktop
 share/kservices5/data.protocol
-share/kservices5/fixhosturifilter.desktop
 share/kservices5/http_cache_cleaner.desktop
 share/kservices5/kcmtrash.desktop
-share/kservices5/kshorturifilter.desktop
-share/kservices5/kuriikwsfilter.desktop
-share/kservices5/kurisearchfilter.desktop
-share/kservices5/localdomainurifilter.desktop
 share/kservices5/mms.protocol
 share/kservices5/mmst.protocol
 share/kservices5/mmsu.protocol

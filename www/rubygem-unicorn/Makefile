@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	unicorn
-PORTVERSION=	5.3.0
+PORTVERSION=	5.3.1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 

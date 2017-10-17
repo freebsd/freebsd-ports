@@ -12,7 +12,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	tatsuki_makino@hotmail.com
 COMMENT=	Perl extension for the Mcrypt cryptography library
 
-LICENSE=	ART10 GPLv1
+LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 LIB_DEPENDS=	libmcrypt.so:security/libmcrypt

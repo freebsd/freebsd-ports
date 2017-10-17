@@ -4,4 +4,4 @@ data copied directly from other zip archives. Changes made without
 closing the archive can be reverted. The API is documented by man
 pages.
 
-WWW: http://www.nih.at/libzip/
+WWW: https://nih.at/libzip/

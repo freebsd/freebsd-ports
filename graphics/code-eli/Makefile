@@ -3,7 +3,7 @@
 
 PORTNAME=	code-eli
 PORTVERSION=	0.3.6
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
 
 MAINTAINER=	fernando.apesteguia@gmail.com

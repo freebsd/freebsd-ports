@@ -18,8 +18,7 @@ CONFLICTS=	ZendFramework-1.*
 NO_ARCH=	yes
 NO_BUILD=	yes
 USE_PHP=	spl
-WANT_PHP_WEB=	yes
-USES=		gettext tar:tgz
+USES=		gettext php:web tar:tgz
 
 SUB_FILES=	pkg-message
 
