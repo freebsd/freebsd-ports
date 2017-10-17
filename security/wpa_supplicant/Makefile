@@ -16,7 +16,7 @@ PATCHFILES=	rebased-v2.6-0001-hostapd-Avoid-key-reinstallation-in-FT-handshake.p
 	rebased-v2.6-0008-FT-Do-not-allow-multiple-Reassociation-Response-fram.patch
 PATCH_DIST_STRIP=	-p1
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Supplicant (client) for WPA/802.1x protocols
 
 LICENSE=	BSD3CLAUSE
