@@ -84,7 +84,7 @@ VPX_LIB_DEPENDS=	libvpx.so:multimedia/libvpx
 XVIDEO_CONFIGURE_ENABLE=x11 xv
 XVIDEO_USE=		XORG=videoproto,x11,xv
 
-.if defined(WITH_DEBUG) && !defined(WITHOUT_DEBUG)
+.if defined(WITH_DEBUG)
 CONFIGURE_ARGS+=--enable-debug
 .endif
 

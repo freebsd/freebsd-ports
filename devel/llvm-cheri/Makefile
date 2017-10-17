@@ -2,7 +2,6 @@
 
 PORTNAME=	llvm
 PORTVERSION=	${LLVM_MAJOR}.d${SNAPDATE}
-PORTREVISION=	3
 CATEGORIES=	devel lang
 PKGNAMESUFFIX=	${LLVM_SUFFIX}
 
@@ -27,6 +26,10 @@ SHEBANG_FILES=	utils/lit/lit.py utils/llvm-lit/llvm-lit.in \
 SUB_FILES=	llvm-wrapper.sh
 SUB_LIST=	LLVM_PREFIX="${LLVM_PREFIX}" LLVM_SUFFIX="${LLVM_SUFFIX}"
 
+SUB_FILES+=	mips-cheri-clang.mk
+SUB_LIST+=	STACK_ALIGN=${STACK_ALIGN}
+STACK_ALIGN?=	-mstack-alignment=32
+
 CMAKE_INSTALL_PREFIX=	${LLVM_PREFIX}
 CMAKE_ARGS+=	-DBUILD_SHARED_LIBS=ON \
 		-DLLVM_DEFAULT_TARGET_TRIPLE=cheri-unknown-freebsd
@@ -37,13 +40,14 @@ GH_TAGNAME=	${LLVM_COMMIT}
 
 .include "Makefile.snapshot"
 
-OPTIONS_DEFINE=	CLANG DOCS LIT
-OPTIONS_DEFAULT=	CLANG LIT
+OPTIONS_DEFINE=	CLANG DOCS LIT LLD
+OPTIONS_DEFAULT=	CLANG LIT LLD
 OPTIONS_SUB=	yes
 
 CLANG_DESC=	Build clang
 CLANG_EXTRA_PATCHES= ${PATCHDIR}/clang-patch-tools_clang_lib_Headers_CMakeLists.txt
 CLANG_GH_PROJECT=	clang:clang
+CLANG_GH_SUBDIR=	tools/clang:clang
 CLANG_GH_TAGNAME=	${CLANG_COMMIT}:clang
 CLANG_PORTDOCS=		clang
 DOCS_PORTDOCS=		llvm
@@ -52,6 +56,11 @@ DOCS_CMAKE_ON=		-DLLVM_ENABLE_SPHINX=ON \
 			-DLLVM_BUILD_DOCS=ON
 DOCS_PLIST_FILES=	${MAN1SRCS:S|^|man/man1/|:S|.1$|${LLVM_SUFFIX}.1.gz|}
 LIT_DESC=		Install lit and FileCheck test tools
+LLD_DESC=		Install lld linker
+LLD_GH_PROJECT=		lld:lld
+LLD_GH_SUBDIR=		tools/lld:lld
+LLD_GH_TAGNAME=		${LLD_COMMIT}:lld
+LLD_PORTDOCS=		lld
 LLDB_DESC=		Install lldb, the LLVM debugger (ignore on 9.x)
 LLDB_BUILD_DEPENDS=	swig:devel/swig13
 LLDB_GH_PROJECT=	lldb:lldb
@@ -67,32 +76,50 @@ PLIST_SUB+=	COMMAND_SUFFIX=${COMMAND_SUFFIX} \
 		LLVM_SUFFIX=${LLVM_SUFFIX}
 
 COMMANDS=	bugpoint \
+		c-index-test \
 		llc \
 		lli \
 		llvm-ar \
 		llvm-as \
 		llvm-bcanalyzer \
+		llvm-cat \
 		llvm-config \
 		llvm-cov \
+		llvm-cvtres \
+		llvm-cxxdump \
+		llvm-cxx-filt \
 		llvm-diff \
 		llvm-dis \
+		llvm-dsymutil \
 		llvm-dwarfdump \
+		llvm-dwp \
 		llvm-extract \
+		llvm-lib \
 		llvm-link \
+		llvm-lto \
+		llvm-lto2 \
 		llvm-mc \
 		llvm-mcmarkup \
 		llvm-nm \
 		llvm-objdump \
+		llvm-opt-report \
+		llvm-pdbdump \
 		llvm-profdata \
 		llvm-ranlib \
 		llvm-readobj \
 		llvm-rtdyld \
 		llvm-size \
-		llvm-stress \
 		llvm-split \
+		llvm-stress \
+		llvm-strings \
 		llvm-symbolizer \
 		llvm-tblgen \
-		opt
+		llvm-xray \
+		opt \
+		sancov \
+		sanstats \
+		verify-uselistorder \
+		yaml2obj
 FIRST_COMMAND=	${COMMANDS:C/^/XXXX/1:MXXXX*:C/^XXXX//}
 
 STRIP_LIBS=	BugpointPasses.so \
@@ -110,14 +137,21 @@ COMMANDS+=	clang \
 		clang++ \
 		clang-check \
 		clang-cpp \
-		clang-format
+		clang-format \
+		scan-build \
+		scan-view
 MAN1SRCS+=	clang.1
+DOCS_PLIST_FILES+=	man/man1/scan-build${LLVM_SUFFIX}.1.gz
 .endif
 
 .if ${PORT_OPTIONS:MLIT}
 MAN1SRCS+=	lit.1 FileCheck.1
 _USES_PYTHON=	python
 LIT_COMMANDS=	lit llvm-lit FileCheck
+.endif
+
+.if ${PORT_OPTIONS:MLLD}
+COMMANDS+=	ld.lld
 .endif
 
 .if ${PORT_OPTIONS:MLLDB}
@@ -145,9 +179,6 @@ MAN1SRCS+=	bugpoint.1 llc.1 lli.1 llvm-ar.1 llvm-as.1 \
 PLIST_SUB:=	${PLIST_SUB:NLLDB=*} LLDB="@comment "
 .endif
 
-post-extract-CLANG-on:
-	${MV} ${WRKSRC_clang} ${PATCH_WRKSRC}/tools/clang
-
 post-extract-LLDB-on:
 .if ${OPSYS} != "FreeBSD" || ${COMPILER_TYPE} == clang
 	${MV} ${WRKSRC_lldb} ${PATCH_WRKSRC}/tools/lldb
@@ -162,6 +193,9 @@ post-patch:
 	    ${WRKSRC}/CMakeLists.txt
 
 post-install:
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/toolchains/
+	${INSTALL_DATA} ${WRKDIR}/mips-cheri-clang.mk \
+	    ${STAGEDIR}${PREFIX}/share/toolchains/mips${LLVM_SUFFIX}-clang.mk
 	${INSTALL_SCRIPT} ${WRKDIR}/llvm-wrapper.sh \
 	    ${STAGEDIR}${PREFIX}/bin/${COMMAND_PREFIX}${FIRST_COMMAND}${COMMAND_SUFFIX}
 .for command in ${COMMANDS:C/^/XXXX/1:NXXXX*}
@@ -181,6 +215,12 @@ post-install-DOCS-on:
 .endif
 	${RMDIR} ${STAGEDIR}${LLVM_PREFIX}/share/man/man1/
 	${RMDIR} ${STAGEDIR}${LLVM_PREFIX}/share/man/
+.if ${PORT_OPTIONS:MCLANG}
+	${MV} ${STAGEDIR}${LLVM_PREFIX}/man/man1/scan-build.1 \
+	    ${STAGEDIR}${MANPREFIX}/man/man1/scan-build${LLVM_SUFFIX}.1
+	${RMDIR} ${STAGEDIR}${LLVM_PREFIX}/man/man1
+	${RMDIR} ${STAGEDIR}${LLVM_PREFIX}/man
+.endif
 
 post-install-LLDB-on:
 .if ${OPSYS} != "FreeBSD" || ${COMPILER_TYPE} == clang
@@ -219,6 +259,7 @@ regression-test: ${BUILD_COOKIE}
 
 build-plist:
 	${RM} ${PLIST} ${PLIST}.tmp
+	${ECHO_CMD} share/toolchains/mips%%LLVM_SUFFIX%%-clang.mk >> ${PLIST}.tmp
 .for command in ${COMMANDS}
 	${ECHO_CMD} bin/${COMMAND_PREFIX}${command}%%COMMAND_SUFFIX%% >> ${PLIST}.tmp
 .endfor
@@ -238,7 +279,14 @@ build-plist:
 	    ${SED} -e 's|${STAGEDIR}${PYTHON_SITELIBDIR}|%%LIT%%%%PYTHON_SITELIBDIR%%|' \
 	    -e 's|${LLVM_SUFFIX}|%%LLVM_SUFFIX%%|' | \
 	    ${SORT} >> ${PLIST}.tmp
-	awk '{if ($$0 ~ /clang/ && $$0 !~ /omp.h/) {printf "%%%%CLANG%%%%"} if ($$0 ~ /(argdumper|lldb)/) {printf "%%%%LLDB%%%%"} print}' ${PLIST}.tmp >> ${PLIST}
+	awk '{ \
+	    if ($$0 ~ /clang/ && $$0 !~ /omp.h/) {printf "%%%%CLANG%%%%"} \
+	    if ($$0 ~ /lld/ && $$0 !~ /lldb/) {printf "%%%%LLD%%%%"} \
+	    if ($$0 ~ /(argdumper|lldb)/) {printf "%%%%LLDB%%%%"} \
+	    print \
+	}' \${PLIST}.tmp >> ${PLIST}
+	${ECHO_CMD} '@postexec if type ccache-update-links >/dev/null 2>&1; then ccache-update-links -v; fi' >> ${PLIST}
+	${ECHO_CMD} '@postunexec if type ccache-update-links >/dev/null 2>&1; then ccache-update-links -v; fi' >> ${PLIST}
 	${RM} ${PLIST}.tmp
 
 check-commands:

@@ -13,6 +13,8 @@ COMMENT=	Audio-cd ripper and encoder for KDE4
 
 LICENSE=	GPLv2
 
+BROKEN=		No public distfiles
+
 LIB_DEPENDS=	libdiscid.so:audio/libdiscid \
 		libtag.so:audio/taglib
 RUN_DEPENDS=	flac:audio/flac \

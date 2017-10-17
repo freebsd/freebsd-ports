@@ -233,7 +233,6 @@
     SUBDIR += texworks
     SUBDIR += the
     SUBDIR += thoteditor
-    SUBDIR += tpad
     SUBDIR += tree-widget
     SUBDIR += treeform
     SUBDIR += tweak

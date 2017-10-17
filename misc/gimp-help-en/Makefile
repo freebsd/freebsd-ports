@@ -4,9 +4,8 @@
 PORTNAME=	gimp-help
 PORTVERSION=	2.8.2
 CATEGORIES?=	misc graphics
-MASTER_SITES=	ftp://ftp.gimp.org/pub/%SUBDIR%/ \
-		http://gimp.mirrors.hoobly.com/%SUBDIR%/ \
-		http://ftp.gwdg.de/pub/misc/grafik/gimp/%SUBDIR%/ \
+MASTER_SITES=	http://gimp.mirrors.hoobly.com/pub/%SUBDIR%/ \
+		http://ftp.gwdg.de/pub/misc/grafik/%SUBDIR%/ \
 		http://www.mirrorservice.org/sites/ftp.gimp.org/pub/%SUBDIR%/
 MASTER_SITE_SUBDIR=	gimp/help
 PKGNAMEPREFIX?=	${DOCLANG}-

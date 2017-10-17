@@ -16,7 +16,6 @@ LIB_DEPENDS=	librudiments.so:devel/rudiments \
 		libkrb5.so:security/krb5 \
 		libcurl.so:ftp/curl
 
-WANT_GNOME=	yes
 USES=		gmake libtool pathfix python readline
 PATHFIX_MAKEFILEIN=	Makefile
 CPPFLAGS+=	-I${LOCALBASE}/include

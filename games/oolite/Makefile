@@ -3,7 +3,7 @@
 
 PORTNAME=		oolite
 PORTVERSION=		1.84
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=		games gnustep
 MASTER_SITES=		https://github.com/OoliteProject/oolite/releases/download/1.84/
 DISTNAME=		${PORTNAME}-source-${PORTVERSION}
@@ -56,25 +56,6 @@ BROKEN_aarch64=		fails to configure: error: These compiler flags are invalid: -O
 BROKEN_armv6=		fails to compile: your compiler does not follow the C++ specification for temporary object destruction order
 
 .include <bsd.port.pre.mk>
-
-.if exists(${CC})
-CCVERSION!=	${CC} --version
-COMPILER_VERSION=	${CCVERSION:M[0-9].[0-9]*:C/([0-9]).?/\1/g}
-COMPILER_IS_CLANG=	${CCVERSION:Mclang}
-# Check for LLVM/Clang v3.4.1
-.if ${COMPILER_IS_CLANG} && ${COMPILER_VERSION} == 341
-# Use compiler from ports, because of errors
-# for ${WRKSRC}/src/Core/Scripting/OOJavaScriptEngine.m file
-WITH_PORTS_CLANG=	yes
-.endif
-.endif
-
-.if defined(WITH_PORTS_CLANG)
-BUILD_DEPENDS+=	clang34:lang/clang34
-CC=		${LOCALBASE}/bin/clang34
-CXX=		${LOCALBASE}/bin/clang++34
-CPP=		${LOCALBASE}/bin/clang-cpp34
-.endif
 
 post-patch: .SILENT
 	${REINPLACE_CMD} -e 's/GNUSTEP_USER_ROOT/GNUSTEP_LOCAL_ROOT/ ; \

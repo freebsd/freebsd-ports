@@ -28,8 +28,6 @@ USE_XORG=	x11
 USES=		desktop-file-utils gmake perl5 pkgconfig shebangfix
 SHEBANG_FILES=	jrunscript.in launcher/launchers.in
 
-WANT_GNOME=	yes
-
 CONFIGURE_ARGS=		--with-hamcrest="${HAMCREST_JAR}"
 CONFIGURE_ARGS+=	--with-jdk-home="${JAVA_HOME}"
 CONFIGURE_ARGS+=	--with-jre-home="${JAVA_HOME}/jre"

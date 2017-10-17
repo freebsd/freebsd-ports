@@ -9,6 +9,8 @@ MASTER_SITES=	http://bitspjoule.org/netpipe/code/
 MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Self-scaling network benchmark
 
+BROKEN=		No public distfiles
+
 # The default port builds and installs only the TCP version of
 # netpipe(1).  The sources support many other variants.
 

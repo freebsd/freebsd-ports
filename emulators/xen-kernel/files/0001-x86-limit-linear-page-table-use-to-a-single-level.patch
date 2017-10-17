@@ -1,0 +1,494 @@
+From ea7513a3e3f28cfec59dda6e128b6b4968685762 Mon Sep 17 00:00:00 2001
+From: Jan Beulich <jbeulich@suse.com>
+Date: Thu, 28 Sep 2017 15:17:27 +0100
+Subject: [PATCH 1/2] x86: limit linear page table use to a single level
+
+That's the only way that they're meant to be used. Without such a
+restriction arbitrarily long chains of same-level page tables can be
+built, tearing down of which may then cause arbitrarily deep recursion,
+causing a stack overflow. To facilitate this restriction, a counter is
+being introduced to track both the number of same-level entries in a
+page table as well as the number of uses of a page table in another
+same-level one (counting into positive and negative direction
+respectively, utilizing the fact that both counts can't be non-zero at
+the same time).
+
+Note that the added accounting introduces a restriction on the number
+of times a page can be used in other same-level page tables - more than
+32k of such uses are no longer possible.
+
+Note also that some put_page_and_type[_preemptible]() calls are
+replaced with open-coded equivalents.  This seemed preferrable to
+adding "parent_table" to the matrix of functions.
+
+Note further that cross-domain same-level page table references are no
+longer permitted (they probably never should have been).
+
+This is XSA-240.
+
+Reported-by: Jann Horn <jannh@google.com>
+Signed-off-by: Jan Beulich <jbeulich@suse.com>
+Signed-off-by: George Dunlap <george.dunlap@citrix.com>
+---
+ xen/arch/x86/domain.c        |   1 +
+ xen/arch/x86/mm.c            | 171 ++++++++++++++++++++++++++++++++++++++-----
+ xen/include/asm-x86/domain.h |   2 +
+ xen/include/asm-x86/mm.h     |  25 +++++--
+ 4 files changed, 175 insertions(+), 24 deletions(-)
+
+diff --git a/xen/arch/x86/domain.c b/xen/arch/x86/domain.c
+index 452748dd5b..44ed2ccd0a 100644
+--- a/xen/arch/x86/domain.c
++++ b/xen/arch/x86/domain.c
+@@ -1237,6 +1237,7 @@ int arch_set_info_guest(
+                 case -EINTR:
+                     rc = -ERESTART;
+                 case -ERESTART:
++                    v->arch.old_guest_ptpg = NULL;
+                     v->arch.old_guest_table =
+                         pagetable_get_page(v->arch.guest_table);
+                     v->arch.guest_table = pagetable_null();
+diff --git a/xen/arch/x86/mm.c b/xen/arch/x86/mm.c
+index e97ecccd93..e81a461b91 100644
+--- a/xen/arch/x86/mm.c
++++ b/xen/arch/x86/mm.c
+@@ -732,6 +732,61 @@ static void put_data_page(
+         put_page(page);
+ }
+ 
++static bool_t inc_linear_entries(struct page_info *pg)
++{
++    typeof(pg->linear_pt_count) nc = read_atomic(&pg->linear_pt_count), oc;
++
++    do {
++        /*
++         * The check below checks for the "linear use" count being non-zero
++         * as well as overflow.  Signed integer overflow is undefined behavior
++         * according to the C spec.  However, as long as linear_pt_count is
++         * smaller in size than 'int', the arithmetic operation of the
++         * increment below won't overflow; rather the result will be truncated
++         * when stored.  Ensure that this is always true.
++         */
++        BUILD_BUG_ON(sizeof(nc) >= sizeof(int));
++        oc = nc++;
++        if ( nc <= 0 )
++            return 0;
++        nc = cmpxchg(&pg->linear_pt_count, oc, nc);
++    } while ( oc != nc );
++
++    return 1;
++}
++
++static void dec_linear_entries(struct page_info *pg)
++{
++    typeof(pg->linear_pt_count) oc;
++
++    oc = arch_fetch_and_add(&pg->linear_pt_count, -1);
++    ASSERT(oc > 0);
++}
++
++static bool_t inc_linear_uses(struct page_info *pg)
++{
++    typeof(pg->linear_pt_count) nc = read_atomic(&pg->linear_pt_count), oc;
++
++    do {
++        /* See the respective comment in inc_linear_entries(). */
++        BUILD_BUG_ON(sizeof(nc) >= sizeof(int));
++        oc = nc--;
++        if ( nc >= 0 )
++            return 0;
++        nc = cmpxchg(&pg->linear_pt_count, oc, nc);
++    } while ( oc != nc );
++
++    return 1;
++}
++
++static void dec_linear_uses(struct page_info *pg)
++{
++    typeof(pg->linear_pt_count) oc;
++
++    oc = arch_fetch_and_add(&pg->linear_pt_count, 1);
++    ASSERT(oc < 0);
++}
++
+ /*
+  * We allow root tables to map each other (a.k.a. linear page tables). It
+  * needs some special care with reference counts and access permissions:
+@@ -761,15 +816,35 @@ get_##level##_linear_pagetable(                                             \
+                                                                             \
+     if ( (pfn = level##e_get_pfn(pde)) != pde_pfn )                         \
+     {                                                                       \
++        struct page_info *ptpg = mfn_to_page(pde_pfn);                      \
++                                                                            \
++        /* Make sure the page table belongs to the correct domain. */       \
++        if ( unlikely(page_get_owner(ptpg) != d) )                          \
++            return 0;                                                       \
++                                                                            \
+         /* Make sure the mapped frame belongs to the correct domain. */     \
+         if ( unlikely(!get_page_from_pagenr(pfn, d)) )                      \
+             return 0;                                                       \
+                                                                             \
+         /*                                                                  \
+-         * Ensure that the mapped frame is an already-validated page table. \
++         * Ensure that the mapped frame is an already-validated page table  \
++         * and is not itself having linear entries, as well as that the     \
++         * containing page table is not iself in use as a linear page table \
++         * elsewhere.                                                       \
+          * If so, atomically increment the count (checking for overflow).   \
+          */                                                                 \
+         page = mfn_to_page(pfn);                                            \
++        if ( !inc_linear_entries(ptpg) )                                    \
++        {                                                                   \
++            put_page(page);                                                 \
++            return 0;                                                       \
++        }                                                                   \
++        if ( !inc_linear_uses(page) )                                       \
++        {                                                                   \
++            dec_linear_entries(ptpg);                                       \
++            put_page(page);                                                 \
++            return 0;                                                       \
++        }                                                                   \
+         y = page->u.inuse.type_info;                                        \
+         do {                                                                \
+             x = y;                                                          \
+@@ -777,6 +852,8 @@ get_##level##_linear_pagetable(                                             \
+                  unlikely((x & (PGT_type_mask|PGT_validated)) !=            \
+                           (PGT_##level##_page_table|PGT_validated)) )       \
+             {                                                               \
++                dec_linear_uses(page);                                      \
++                dec_linear_entries(ptpg);                                   \
+                 put_page(page);                                             \
+                 return 0;                                                   \
+             }                                                               \
+@@ -1201,6 +1278,9 @@ get_page_from_l4e(
+             l3e_remove_flags((pl3e), _PAGE_USER|_PAGE_RW|_PAGE_ACCESSED);   \
+     } while ( 0 )
+ 
++static int _put_page_type(struct page_info *page, bool_t preemptible,
++                          struct page_info *ptpg);
++
+ void put_page_from_l1e(l1_pgentry_t l1e, struct domain *l1e_owner)
+ {
+     unsigned long     pfn = l1e_get_pfn(l1e);
+@@ -1270,17 +1350,22 @@ static int put_page_from_l2e(l2_pgentry_t l2e, unsigned long pfn)
+     if ( l2e_get_flags(l2e) & _PAGE_PSE )
+         put_superpage(l2e_get_pfn(l2e));
+     else
+-        put_page_and_type(l2e_get_page(l2e));
++    {
++        struct page_info *pg = l2e_get_page(l2e);
++        int rc = _put_page_type(pg, 0, mfn_to_page(pfn));
++
++        ASSERT(!rc);
++        put_page(pg);
++    }
+ 
+     return 0;
+ }
+ 
+-static int __put_page_type(struct page_info *, int preemptible);
+-
+ static int put_page_from_l3e(l3_pgentry_t l3e, unsigned long pfn,
+                              int partial, bool_t defer)
+ {
+     struct page_info *pg;
++    int rc;
+ 
+     if ( !(l3e_get_flags(l3e) & _PAGE_PRESENT) || (l3e_get_pfn(l3e) == pfn) )
+         return 1;
+@@ -1303,21 +1388,28 @@ static int put_page_from_l3e(l3_pgentry_t l3e, unsigned long pfn,
+     if ( unlikely(partial > 0) )
+     {
+         ASSERT(!defer);
+-        return __put_page_type(pg, 1);
++        return _put_page_type(pg, 1, mfn_to_page(pfn));
+     }
+ 
+     if ( defer )
+     {
++        current->arch.old_guest_ptpg = mfn_to_page(pfn);
+         current->arch.old_guest_table = pg;
+         return 0;
+     }
+ 
+-    return put_page_and_type_preemptible(pg);
++    rc = _put_page_type(pg, 1, mfn_to_page(pfn));
++    if ( likely(!rc) )
++        put_page(pg);
++
++    return rc;
+ }
+ 
+ static int put_page_from_l4e(l4_pgentry_t l4e, unsigned long pfn,
+                              int partial, bool_t defer)
+ {
++    int rc = 1;
++
+     if ( (l4e_get_flags(l4e) & _PAGE_PRESENT) && 
+          (l4e_get_pfn(l4e) != pfn) )
+     {
+@@ -1326,18 +1418,22 @@ static int put_page_from_l4e(l4_pgentry_t l4e, unsigned long pfn,
+         if ( unlikely(partial > 0) )
+         {
+             ASSERT(!defer);
+-            return __put_page_type(pg, 1);
++            return _put_page_type(pg, 1, mfn_to_page(pfn));
+         }
+ 
+         if ( defer )
+         {
++            current->arch.old_guest_ptpg = mfn_to_page(pfn);
+             current->arch.old_guest_table = pg;
+             return 0;
+         }
+ 
+-        return put_page_and_type_preemptible(pg);
++        rc = _put_page_type(pg, 1, mfn_to_page(pfn));
++        if ( likely(!rc) )
++            put_page(pg);
+     }
+-    return 1;
++
++    return rc;
+ }
+ 
+ static int alloc_l1_table(struct page_info *page)
+@@ -1535,6 +1631,7 @@ static int alloc_l3_table(struct page_info *page)
+         {
+             page->nr_validated_ptes = i;
+             page->partial_pte = 0;
++            current->arch.old_guest_ptpg = NULL;
+             current->arch.old_guest_table = page;
+         }
+         while ( i-- > 0 )
+@@ -1627,6 +1724,7 @@ static int alloc_l4_table(struct page_info *page)
+                 {
+                     if ( current->arch.old_guest_table )
+                         page->nr_validated_ptes++;
++                    current->arch.old_guest_ptpg = NULL;
+                     current->arch.old_guest_table = page;
+                 }
+             }
+@@ -2369,14 +2467,20 @@ int free_page_type(struct page_info *pag
+ }
+ 
+ 
+-static int __put_final_page_type(
+-    struct page_info *page, unsigned long type, int preemptible)
++static int _put_final_page_type(struct page_info *page, unsigned long type,
++                                bool_t preemptible, struct page_info *ptpg)
+ {
+     int rc = free_page_type(page, type, preemptible);
+ 
+     /* No need for atomic update of type_info here: noone else updates it. */
+     if ( rc == 0 )
+     {
++        if ( ptpg && PGT_type_equal(type, ptpg->u.inuse.type_info) )
++        {
++            dec_linear_uses(page);
++            dec_linear_entries(ptpg);
++        }
++        ASSERT(!page->linear_pt_count || page_get_owner(page)->is_dying);
+         /*
+          * Record TLB information for flush later. We do not stamp page tables
+          * when running in shadow mode:
+@@ -2412,8 +2516,8 @@ static int __put_final_page_type(
+ }
+ 
+ 
+-static int __put_page_type(struct page_info *page,
+-                           int preemptible)
++static int _put_page_type(struct page_info *page, bool_t preemptible,
++                          struct page_info *ptpg)
+ {
+     unsigned long nx, x, y = page->u.inuse.type_info;
+     int rc = 0;
+@@ -2440,12 +2544,28 @@ static int __put_page_type(struct page_info *page,
+                                            x, nx)) != x) )
+                     continue;
+                 /* We cleared the 'valid bit' so we do the clean up. */
+-                rc = __put_final_page_type(page, x, preemptible);
++                rc = _put_final_page_type(page, x, preemptible, ptpg);
++                ptpg = NULL;
+                 if ( x & PGT_partial )
+                     put_page(page);
+                 break;
+             }
+ 
++            if ( ptpg && PGT_type_equal(x, ptpg->u.inuse.type_info) )
++            {
++                /*
++                 * page_set_tlbflush_timestamp() accesses the same union
++                 * linear_pt_count lives in. Unvalidated page table pages,
++                 * however, should occur during domain destruction only
++                 * anyway.  Updating of linear_pt_count luckily is not
++                 * necessary anymore for a dying domain.
++                 */
++                ASSERT(page_get_owner(page)->is_dying);
++                ASSERT(page->linear_pt_count < 0);
++                ASSERT(ptpg->linear_pt_count > 0);
++                ptpg = NULL;
++            }
++
+             /*
+              * Record TLB information for flush later. We do not stamp page
+              * tables when running in shadow mode:
+@@ -2465,6 +2585,13 @@ static int __put_page_type(struct page_info *page,
+             return -EINTR;
+     }
+ 
++    if ( ptpg && PGT_type_equal(x, ptpg->u.inuse.type_info) )
++    {
++        ASSERT(!rc);
++        dec_linear_uses(page);
++        dec_linear_entries(ptpg);
++    }
++
+     return rc;
+ }
+ 
+@@ -2599,6 +2726,7 @@ static int __get_page_type(struct page_info *page, unsigned long type,
+             page->nr_validated_ptes = 0;
+             page->partial_pte = 0;
+         }
++        page->linear_pt_count = 0;
+         rc = alloc_page_type(page, type, preemptible);
+     }
+ 
+@@ -2610,7 +2738,7 @@ static int __get_page_type(struct page_info *page, unsigned long type,
+ 
+ void put_page_type(struct page_info *page)
+ {
+-    int rc = __put_page_type(page, 0);
++    int rc = _put_page_type(page, 0, NULL);
+     ASSERT(rc == 0);
+     (void)rc;
+ }
+@@ -2626,7 +2754,7 @@ int get_page_type(struct page_info *page, unsigned long type)
+ 
+ int put_page_type_preemptible(struct page_info *page)
+ {
+-    return __put_page_type(page, 1);
++    return _put_page_type(page, 1, NULL);
+ }
+ 
+ int get_page_type_preemptible(struct page_info *page, unsigned long type)
+@@ -2832,11 +2960,14 @@ int put_old_guest_table(struct vcpu *v)
+     if ( !v->arch.old_guest_table )
+         return 0;
+ 
+-    switch ( rc = put_page_and_type_preemptible(v->arch.old_guest_table) )
++    switch ( rc = _put_page_type(v->arch.old_guest_table, 1,
++                                 v->arch.old_guest_ptpg) )
+     {
+     case -EINTR:
+     case -ERESTART:
+         return -ERESTART;
++    case 0:
++        put_page(v->arch.old_guest_table);
+     }
+ 
+     v->arch.old_guest_table = NULL;
+@@ -2993,6 +3124,7 @@ int new_guest_cr3(unsigned long mfn)
+                 rc = -ERESTART;
+                 /* fallthrough */
+             case -ERESTART:
++                curr->arch.old_guest_ptpg = NULL;
+                 curr->arch.old_guest_table = page;
+                 break;
+             default:
+@@ -3260,7 +3392,10 @@ long do_mmuext_op(
+                     if ( type == PGT_l1_page_table )
+                         put_page_and_type(page);
+                     else
++                    {
++                        curr->arch.old_guest_ptpg = NULL;
+                         curr->arch.old_guest_table = page;
++                    }
+                 }
+             }
+ 
+@@ -3293,6 +3428,7 @@ long do_mmuext_op(
+             {
+             case -EINTR:
+             case -ERESTART:
++                curr->arch.old_guest_ptpg = NULL;
+                 curr->arch.old_guest_table = page;
+                 rc = 0;
+                 break;
+@@ -3371,6 +3507,7 @@ long do_mmuext_op(
+                         rc = -ERESTART;
+                         /* fallthrough */
+                     case -ERESTART:
++                        curr->arch.old_guest_ptpg = NULL;
+                         curr->arch.old_guest_table = page;
+                         break;
+                     default:
+diff --git a/xen/include/asm-x86/domain.h b/xen/include/asm-x86/domain.h
+index 165e533ab3..5ef761be8b 100644
+--- a/xen/include/asm-x86/domain.h
++++ b/xen/include/asm-x86/domain.h
+@@ -529,6 +529,8 @@ struct arch_vcpu
+     pagetable_t guest_table_user;       /* (MFN) x86/64 user-space pagetable */
+     pagetable_t guest_table;            /* (MFN) guest notion of cr3 */
+     struct page_info *old_guest_table;  /* partially destructed pagetable */
++    struct page_info *old_guest_ptpg;   /* containing page table of the */
++                                        /* former, if any */
+     /* guest_table holds a ref to the page, and also a type-count unless
+      * shadow refcounts are in use */
+     pagetable_t shadow_table[4];        /* (MFN) shadow(s) of guest */
+diff --git a/xen/include/asm-x86/mm.h b/xen/include/asm-x86/mm.h
+index a30e76db1e..905c7971f2 100644
+--- a/xen/include/asm-x86/mm.h
++++ b/xen/include/asm-x86/mm.h
+@@ -125,11 +125,11 @@ struct page_info
+         u32 tlbflush_timestamp;
+ 
+         /*
+-         * When PGT_partial is true then this field is valid and indicates
+-         * that PTEs in the range [0, @nr_validated_ptes) have been validated.
+-         * An extra page reference must be acquired (or not dropped) whenever
+-         * PGT_partial gets set, and it must be dropped when the flag gets
+-         * cleared. This is so that a get() leaving a page in partially
++         * When PGT_partial is true then the first two fields are valid and
++         * indicate that PTEs in the range [0, @nr_validated_ptes) have been
++         * validated. An extra page reference must be acquired (or not dropped)
++         * whenever PGT_partial gets set, and it must be dropped when the flag
++         * gets cleared. This is so that a get() leaving a page in partially
+          * validated state (where the caller would drop the reference acquired
+          * due to the getting of the type [apparently] failing [-ERESTART])
+          * would not accidentally result in a page left with zero general
+@@ -153,10 +153,18 @@ struct page_info
+          * put_page_from_lNe() (due to the apparent failure), and hence it
+          * must be dropped when the put operation is resumed (and completes),
+          * but it must not be acquired if picking up the page for validation.
++         *
++         * The 3rd field, @linear_pt_count, indicates
++         * - by a positive value, how many same-level page table entries a page
++         *   table has,
++         * - by a negative value, in how many same-level page tables a page is
++         *   in use.
+          */
+         struct {
+-            u16 nr_validated_ptes;
+-            s8 partial_pte;
++            u16 nr_validated_ptes:PAGETABLE_ORDER + 1;
++            u16 :16 - PAGETABLE_ORDER - 1 - 2;
++            s16 partial_pte:2;
++            s16 linear_pt_count;
+         };
+ 
+         /*
+@@ -207,6 +215,9 @@ struct page_info
+ #define PGT_count_width   PG_shift(9)
+ #define PGT_count_mask    ((1UL<<PGT_count_width)-1)
+ 
++/* Are the 'type mask' bits identical? */
++#define PGT_type_equal(x, y) (!(((x) ^ (y)) & PGT_type_mask))
++
+  /* Cleared when the owning guest 'frees' this page. */
+ #define _PGC_allocated    PG_shift(1)
+ #define PGC_allocated     PG_mask(1, 1)
+-- 
+2.14.1
+

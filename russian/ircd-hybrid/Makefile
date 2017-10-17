@@ -3,6 +3,7 @@
 
 PORTNAME=	ircd
 PORTVERSION=	7.2.4
+PORTREVISION=	2
 CATEGORIES=	russian irc
 MASTER_SITES=	SF/${PORTNAME}-hybrid-ru/${PORTNAME}-hybrid-ru/${PORTNAME}-hybrid-ru-${PORTVERSION} \
 		ftp://rusunix.org/pub/FreeBSD/distfiles/
@@ -15,7 +16,7 @@ COMMENT=	Russian version of well known hybrid IRC server
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-CONFLICTS=	ircd-[0-9]* irc-[0-9]* charybdis-[0-9]* Nefarious-[0-9]* ircd-hybrid-[0-9]*
+CONFLICTS_INSTALL=	ircd-[0-9]* irc-[0-9]* charybdis-[0-9]* Nefarious-[0-9]* ircd-hybrid-[0-9]* ircd-ratbox* bnc whois
 
 BROKEN_aarch64=		fails to compile: passing void * to parameter of incompatible type
 BROKEN_armv6=		fails to compile: passing void * to parameter of incompatible type

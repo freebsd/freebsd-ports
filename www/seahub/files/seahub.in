@@ -60,6 +60,7 @@ clearsessions_cmd="seahub_clearsessions"
 : ${seahub_port:="8000"}
 
 manage_py=${seafile_path}/seahub/manage.py
+gunicorn_exe=%%PREFIX%%/bin/gunicorn
 gunicorn_conf=${seafile_path}/runtime/seahub.conf
 pidfile=${seafile_path}/runtime/seahub.pid
 errorlog=${seafile_path}/runtime/error.log
@@ -150,11 +151,11 @@ seahub_start()
 			check_required_before;
 			before_start;
 			echo "Starting seahub at port ${seahub_port} ..."
-			su -m "${seafile_user}" -c "$command \"${manage_py}\" run_gunicorn -c \"${gunicorn_conf}\" -b \"0.0.0.0:${seahub_port}\" --preload"
+			su -m "${seafile_user}" -c "$command \"${gunicorn_exe}\" seahub.wsgi:application -c \"${gunicorn_conf}\" -b \"0.0.0.0:${seahub_port}\" --preload --chdir \"$seafile_path/seahub\""
 
 	# Ensure seahub is started successfully
 			sleep 5
-			if ! pgrep -f "${manage_py}" 2>/dev/null 1>&2; then
+			if ! pgrep -f "seahub.wsgi:application" 2>/dev/null 1>&2; then
 				printf "\033[33mError:Seahub failed to start.\033[m\n"
 				echo "Please try to run \"./seahub.sh start\" again"
 				exit 1;
@@ -164,7 +165,7 @@ seahub_start()
 			echo
 		fi
 		else
-			return 0 
+			return 0
 	fi
 }
 

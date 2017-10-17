@@ -37,8 +37,6 @@ GH_TUPLE=	\
 BUILD_HASH=	5dc8fe4
 BUILD_DATE=	February 10, 2017
 
-STRIP=		# stripping can break go binaries
-
 PLIST_FILES=	bin/micro
 PORTDOCS=	README.md
 

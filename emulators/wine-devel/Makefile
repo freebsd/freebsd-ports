@@ -3,7 +3,7 @@
 
 PORTNAME=	wine
 DISTVERSION=	2.18
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	emulators
 MASTER_SITES=	SF/${PORTNAME}/Source \
@@ -172,10 +172,10 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/tools/winedump/README ${STAGEDIR}${DOCSDIR}/README.winedump
 
 check-wine-devel-vs-wine-staging:
-	@grep %%STAGING%% pkg-plist | while read f; do \
-	  f=`echo $$f | sed -e 's/%%STAGING%%//'`; \
+	@${GREP} %%STAGING%% pkg-plist | while read f; do \
+	  f=`echo $$f | ${SED} -e 's/%%STAGING%%//'`; \
 	  if [ -f "$$STAGEDIR/$$PREFIX/$$f" ]; then \
-	    printf "%s no longer contigent on %%STAGING%%?\n" "$$f"; \
+	    ${PRINTF} "%s no longer contigent on %%STAGING%%?\n" "$$f"; \
 	  fi \
 	done
 

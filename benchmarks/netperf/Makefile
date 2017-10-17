@@ -4,8 +4,7 @@
 PORTNAME=	netperf
 PORTVERSION=	2.7.0
 CATEGORIES=	benchmarks ipv6
-MASTER_SITES=	ftp://ftp.netperf.org/netperf/ \
-		http://fossies.org/unix/misc/
+MASTER_SITES=	http://fossies.org/unix/misc/
 
 MAINTAINER=	marius@FreeBSD.org
 COMMENT=	Network performance benchmarking package

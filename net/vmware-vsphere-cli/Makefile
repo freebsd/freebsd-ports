@@ -3,6 +3,7 @@
 
 PORTNAME=		vmware-vsphere-cli
 PORTVERSION=		6.5.0
+PORTREVISION=		1
 CATEGORIES=		net perl5
 MASTER_SITES=		#http://communities.vmware.com/community/vmtn/developer/downloads
 DISTNAME=		VMware-vSphere-Perl-SDK-${PORTVERSION}-${DISTREL}.i386
@@ -28,7 +29,7 @@ USE_PERL5=		configure
 RESTRICTED=		May not be redistributed.  Must accept license to download.
 NO_CDROM=		May not be redistributed.  Must accept license to download.
 NO_PACKAGE=		May not be redistributed.  Must accept license to download.
-SHEBANG_FILES=		bin/* apps/host/* apps/general/* apps/vm/*
+SHEBANG_FILES=		apps/general/* apps/host/* apps/performance/* apps/session/* apps/vm/* bin/*
 
 DISTREL=		4566394
 

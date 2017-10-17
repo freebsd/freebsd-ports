@@ -1,0 +1,8 @@
+RxMath duplicates the interface of IBM's RxMath library, as well as the
+library that comes with ARexx (known here as RexxMath).
+
+Note that any scripts which load RxMath or RexxMath must be run with the
+'regina' command, rather than 'rexx'; the latter does not support the use
+of external function packages.
+
+WWW: http://pages.interlog.com/~pjtm/

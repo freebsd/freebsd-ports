@@ -6871,7 +6871,6 @@ www/mod_auth_form||2014-09-01|Not staged
 www/mod_auth_mellon||2014-09-01|Not staged
 www/mod_ftp||2014-09-01|Not staged
 www/mod_log_dbd||2014-09-01|Not staged
-www/mod_pagespeed||2014-09-01|Not staged
 www/moodle24||2014-09-01|Not staged
 www/plugger-plugins-hubbe||2014-09-01|Not staged
 www/prado||2014-09-01|Not staged
@@ -9195,7 +9194,6 @@ www/p5-Catalyst-Plugin-Singleton||2017-04-10|Has expired: Deprecated by upstream
 x11/lumina-i18n||2017-04-10|Has expired: Obsolete, i18n files included in x11/lumina
 sysutils/jail2||2017-04-10|Has expired: Starting with 10.0 functionality has been merged into base
 sysutils/iocage-devel||2017-04-10|Has expired: Outdated version. Please use sysutils/py-iocage instead
-sysutils/iocage||2017-04-10|Has expired: Outdated version. Please use sysutils/py-iocage instead
 databases/puppetdb||2017-04-10|Has expired: Depends on expired sysutils/puppet38, use puppetdb[34] instead
 databases/puppetdb-terminus||2017-04-10|Has expired: Depends on expired sysutils/puppet38, use puppetdb-terminus[34]
 databases/pglesslog||2017-04-10|Has expired: Does not build with recent PostgreSQL versions
@@ -9565,7 +9563,7 @@ textproc/py-twistedLore|devel/py-twisted|2017-09-30|Has expired: Use devel/py-tw
 www/py-twistedWeb|devel/py-twisted|2017-09-30|Has expired: Use devel/py-twisted instead
 www/py-twistedWeb2|devel/py-twisted|2017-09-30|Has expired: Use devel/py-twisted instead
 devel/libclaw||2017-09-30|Has expired: useless for anything apart from removed games/plee-the-bear
-ports-mgmt/redports-node||2017-10-01|Has expired: Upstream is dead so port is not useable anymore.
+ports-mgmt/redports-node||2017-10-01|Has expired: Upstream is dead so port is not useable anymore
 sysutils/py3-iocage|sysutils/iocage|2017-10-02|Port was renamed
 audio/ventrilo-server||2017-10-04|No more freebsd distfiles
 net-im/ayttm||2017-10-04|Non functional
@@ -9582,3 +9580,18 @@ japanese/jd||2017-10-08|Does not build and 2ch.net API has changed, so would not
 devel/vtable-dumper|devel/abi-compliance-checker|2017-10-08|Use abi-compliance-checker, which contains this program in newer version
 graphics/py-graph-dot||2017-10-08|Has expired: Unfetchable for more than six months (google code has gone away)
 graphics/py-graph||2017-10-08|Removed, depends on graphics/py-graph-dot
+net/py-python-cloudfiles||2017-10-12|Deprecated by usptream since August 1, 2013. Use databases/py-python-swiftclient instead
+audio/festdoc||2017-10-13|No version of the documentation matching current release
+audio/gstreamer-plugins-moodbar||2017-10-13|Abandonware, no public distfiles
+devel/arduino-glcd|devel/arduino-openglcd|2017-10-14|Switched to active fork
+x11-wm/awesome2|x11-wm/awesome|2017-10-14|Has expired: Awesome WM 2.x is deprecated use 4.x instead
+x11-wm/awesome3|x11-wm/awesome|2017-10-14|Has expired: Awesome WM 3.x is deprecated use 4.x instead
+www/moodle30|www/moodle33|2017-10-14|Has expired: Deprecated by upstream, please use www/moodle33 instead
+lang/gcc5-devel|lang/gcc5|2017-10-14|The GCC 5 branch has been closed, use the final release instead (or a newer major version)
+devel/vtcl||2017-10-16|Has expired: This port depends on Tcl/Tk 8.4 , which is no longer maintained. Please port it to 8.5+
+editors/tpad||2017-10-16|Has expired: This port depends on Tcl/Tk 8.4 , which is no longer maintained. Please port it to 8.5+
+games/polypuzzle||2017-10-16|Has expired: This port depends on Tcl/Tk 8.4 , which is no longer maintained. Please port it to 8.5+
+multimedia/nxtvepg||2017-10-16|Has expired: This port depends on Tcl/Tk 8.4 , which is no longer maintained. Please port it to 8.5+
+net/xpvm||2017-10-16|Has expired: This port depends on Tcl/Tk 8.4 , which is no longer maintained. Please port it to 8.5+
+x11/tkXwin||2017-10-16|Has expired: This port depends on Tcl/Tk 8.4 , which is no longer maintained. Please port it to 8.5+
+games/crafty-tablebase-pawn||2017-10-17|Waste of resources

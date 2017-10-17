@@ -1,9 +1,0 @@
-bin/nxtvepg
-bin/nxtvepgd
-lib/X11/app-defaults/Nxtvepg
-man/man1/nxtvepg.1.gz
-man/man1/nxtvepgd.1.gz
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/TODO
-%%PORTDOCS%%%%DOCSDIR%%/CHANGES
-%%PORTDOCS%%%%DOCSDIR%%/manual.html

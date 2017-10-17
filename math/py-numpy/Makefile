@@ -2,12 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	numpy
-PORTVERSION=	1.13.1
+PORTVERSION=	1.13.3
 DISTVERSIONPREFIX=	v
-PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	math python
-MASTER_SITES=	http://docs.scipy.org/doc/${PORTNAME}-${PORTVERSION:C/\.[0-9]+$/.0/}/:doc
+MASTER_SITES=	http://docs.scipy.org/doc/${PORTNAME}-${PORTVERSION:R}.0/:doc
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTFILES=	${PORTNAME}-ref-${PORTVERSION:C/\.[0-9]+$/.0/}.pdf:doc \
 		${PORTNAME}-user-${PORTVERSION:C/\.[0-9]+$/.0/}.pdf:doc
@@ -54,8 +53,8 @@ PLIST_FILES+=	man/man1/f2py.1.gz
 .endif
 
 post-patch:
-	${REINPLACE_CMD} -e "s|%%FC%%|${FC}|" ${WRKSRC}/numpy/distutils/fcompiler/gnu.py
-	${CP} ${FILESDIR}/site.cfg ${WRKSRC}/site.cfg
+	@${REINPLACE_CMD} -e "s|%%FC%%|${FC}|" ${WRKSRC}/numpy/distutils/fcompiler/gnu.py
+	@${CP} ${FILESDIR}/site.cfg ${WRKSRC}/site.cfg
 
 pre-configure:
 	@${REINPLACE_CMD} -e "s|%%GCCLIBDIR%%|$$(${GCCLIBDIR_CMDS})|" \
@@ -91,7 +90,7 @@ pre-configure-SUITESPARSE-off:
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/f2py/f2py.1 ${STAGEDIR}${MANPREFIX}/man/man1/f2py-${PYTHON_VER}.1
 .if ${PYTHON_VERSION} == ${PYTHON_DEFAULT_VERSION}
-	${LN} -sf ${MANPREFIX}/man/man1/f2py-${PYTHON_VER}.1 ${STAGEDIR}${MANPREFIX}/man/man1/f2py.1
+	${LN} -sf f2py-${PYTHON_VER}.1 ${STAGEDIR}${MANPREFIX}/man/man1/f2py.1
 .endif
 	${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR} -name '*.so' | ${XARGS} ${STRIP_CMD}
 

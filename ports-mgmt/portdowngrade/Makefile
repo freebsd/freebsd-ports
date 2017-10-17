@@ -2,13 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	portdowngrade
-PORTVERSION=	1.5
+PORTVERSION=	1.6
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	# empty
 DISTFILES=	# none
 
 MAINTAINER=	crees@FreeBSD.org
 COMMENT=	Sets a port back to a previous version
+
+LICENSE=	PD
 
 RUN_DEPENDS=	svn:devel/subversion${WITH_SUBVERSION_VER}
 

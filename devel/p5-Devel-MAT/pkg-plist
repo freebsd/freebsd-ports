@@ -1,10 +1,8 @@
 bin/pmat
 bin/pmat-cat-svpv
 bin/pmat-diff
-bin/pmat-find-pv
 bin/pmat-list-dangling-ptrs
 bin/pmat-list-orphans
-bin/pmat-sizes
 %%SITE_ARCH%%/Devel/MAT.pm
 %%SITE_ARCH%%/Devel/MAT/Cmd.pod
 %%SITE_ARCH%%/Devel/MAT/Context.pm
@@ -17,6 +15,7 @@ bin/pmat-sizes
 %%SITE_ARCH%%/Devel/MAT/Tool.pod
 %%SITE_ARCH%%/Devel/MAT/Tool/Callstack.pm
 %%SITE_ARCH%%/Devel/MAT/Tool/Count.pm
+%%SITE_ARCH%%/Devel/MAT/Tool/Find.pm
 %%SITE_ARCH%%/Devel/MAT/Tool/IO.pm
 %%SITE_ARCH%%/Devel/MAT/Tool/Identify.pm
 %%SITE_ARCH%%/Devel/MAT/Tool/Inrefs.pm
@@ -72,6 +71,7 @@ bin/pmat-sizes
 %%PERL5_MAN3%%/Devel::MAT::Tool.3.gz
 %%PERL5_MAN3%%/Devel::MAT::Tool::Callstack.3.gz
 %%PERL5_MAN3%%/Devel::MAT::Tool::Count.3.gz
+%%PERL5_MAN3%%/Devel::MAT::Tool::Find.3.gz
 %%PERL5_MAN3%%/Devel::MAT::Tool::IO.3.gz
 %%PERL5_MAN3%%/Devel::MAT::Tool::Identify.3.gz
 %%PERL5_MAN3%%/Devel::MAT::Tool::Inrefs.3.gz

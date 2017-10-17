@@ -5,8 +5,7 @@ PORTNAME=	vagalume
 PORTVERSION=	0.8.6
 PORTREVISION=	2
 CATEGORIES=	audio
-MASTER_SITES=	http://vagalume.igalia.com/files/source/ \
-		DEBIAN_POOL/pool/main/v/vagalume/
+MASTER_SITES=	http://vagalume.igalia.com/files/source/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK+-based client for the Last.fm online radio

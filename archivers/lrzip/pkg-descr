@@ -3,5 +3,3 @@ and the more memory you have, the better the compression advantage this will
 provide, especially once the files are larger than 100MB. The advantage can
 be chosen to be either size (much smaller than bzip2) or speed (much faster
 than bzip2).
-
-WWW: http://ck.kolivas.org/apps/lrzip/README

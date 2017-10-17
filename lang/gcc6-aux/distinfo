@@ -7,5 +7,7 @@ SHA256 (ada-bootstrap.x86_64.dragonfly.41.tar.bz2) = eb7785d8b842aee2bb04b43adfb
 SIZE (ada-bootstrap.x86_64.dragonfly.41.tar.bz2) = 44956630
 SHA256 (ada-bootstrap.x86_64.freebsd.100B.tar.bz2) = 1066d7c5e71d78b4416de3b73348227678ca07db52488409e270db7b00467f55
 SIZE (ada-bootstrap.x86_64.freebsd.100B.tar.bz2) = 42163803
+SHA256 (ada-bootstrap.x86_64.freebsd.120.tar.bz2) = 4b490145520ffa9f8402a65cad8152a865f3fdae5bab2e06fc395bd7919083e0
+SIZE (ada-bootstrap.x86_64.freebsd.120.tar.bz2) = 52651957
 SHA256 (ada-bootstrap.aarch64.freebsd.120.tar.bz2) = 84d96268e864564bc4adddf54bac492ff74a0d7112c13283512542cde71663e7
 SIZE (ada-bootstrap.aarch64.freebsd.120.tar.bz2) = 53840614

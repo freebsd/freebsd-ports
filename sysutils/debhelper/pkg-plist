@@ -35,6 +35,7 @@ bin/dh_installmime
 bin/dh_installmodules
 bin/dh_installpam
 bin/dh_installppp
+bin/dh_installsystemd
 bin/dh_installudev
 bin/dh_installwm
 bin/dh_installxfonts

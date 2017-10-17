@@ -9,7 +9,6 @@ NO_ARCH=	yes
 REASON=		Themes may contain artwork not done by the author. \
 		Keep FreeBSD safe if theme author violated copyrights.
 
-WANT_GNOME=	yes
 INSTALLS_ICONS=	yes
 
 do-install: icon-do-install

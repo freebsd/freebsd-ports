@@ -10,6 +10,8 @@ MASTER_SITES=	http://atarininja.org/distfiles/
 MAINTAINER=	tobias.rehbein@web.de
 COMMENT=	Perl script that converts Ogg Vorbis files to MP3 format
 
+BROKEN=		No public distfiles
+
 LICENSE=	GPLv2
 
 RUN_DEPENDS=	lame:audio/lame \

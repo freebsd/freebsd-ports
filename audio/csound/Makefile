@@ -13,6 +13,9 @@ DIST_SUBDIR=	csound
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Sound synthesizer
 
+DEPRECATED=	Not supported upstream anymore, use csound6
+EXPIRATION_DATE=	2017-11-12
+
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 

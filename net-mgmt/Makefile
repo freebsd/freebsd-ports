@@ -301,6 +301,7 @@
     SUBDIR += py-msrestazure
     SUBDIR += py-pdagent
     SUBDIR += py-pyang
+    SUBDIR += py-pynsca
     SUBDIR += py-pysmi
     SUBDIR += py-pyzabbix
     SUBDIR += py-snmp4

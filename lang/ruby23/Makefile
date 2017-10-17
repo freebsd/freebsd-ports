@@ -73,6 +73,10 @@ CPE_VENDOR=	ruby-lang
 CPE_VERSION=	${RUBY_RELVERSION}
 CPE_UPDATE=	p${RUBY_PATCHLEVEL}
 
+# --- loadpath.o ---
+# loadpath.c:30:2: error: RUBY_EXEC_PREFIX must be defined
+MAKE_JOBS_UNSAFE=	yes
+
 .include <bsd.port.pre.mk>
 
 # PORTREVISION/PORTEPOCH hack

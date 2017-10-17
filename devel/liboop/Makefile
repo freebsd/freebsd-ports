@@ -3,7 +3,7 @@
 
 PORTNAME=	liboop
 PORTVERSION=	1.0
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	devel
 MASTER_SITES=	GENTOO \
 		http://download.ofb.net/liboop/
@@ -15,6 +15,8 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libadns.so:dns/adns \
 		libwwwcore.so:www/libwww
+
+CONFLICTS_INSTALL=	gale
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libwww

@@ -21,11 +21,16 @@ include/mysql/mariadb_ctype.h
 include/mysql/mariadb_dyncol.h
 include/mysql/mariadb_stmt.h
 include/mysql/mariadb_version.h
+include/mysql/my_config.h
+include/mysql/my_global.h
+include/mysql/my_sys.h
 include/mysql/mysql.h
 include/mysql/mysql/client_plugin.h
 include/mysql/mysql/plugin_auth.h
 include/mysql/mysql/plugin_auth_common.h
-@comment include/mysql/mysqld_error.h
+include/mysql/mysql_com.h
+include/mysql/mysql_version.h
+include/mysql/mysqld_error.h
 %%NO_GSSAPI_NONE%%lib/mysql/plugin/auth_gssapi_client.so
 lib/mysql/libmariadb.so
 lib/mysql/libmariadb.so.3

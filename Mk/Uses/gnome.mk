@@ -477,70 +477,6 @@ USE_GNOME+=	gtk-update-icon-cache
 
 # End component definition section
 
-# This section defines tests for optional software.  These work off four
-# types of variables:  WANT_GNOME, WITH_GNOME, HAVE_GNOME and USE_GNOME.
-# The logic of this is that a port can WANT support for a package; a user
-# specifies if they want ports compiled WITH certain features; this section
-# tests if we HAVE these features; and the port is then free to USE them.
-
-# The logic of this section is like this:
-#
-# .if defined(WANT_GNOME) && !defined(WITHOUT_GNOME)
-#   .for foo in ALL_GNOME_COMPONENTS
-#     .if defined(WITH_GNOME)
-#       HAVE_GNOME += foo
-#     .elif (foo installed)
-#       HAVE_GNOME += foo
-#     .else
-#       Print option message
-#     .endif
-#   .endfor
-# .endif
-#
-# Although it appears a little more convoluted in the tests.
-
-# Ports can make use of this like so:
-#
-# WANT_GNOME=		yes
-#
-# .include <bsd.port.pre.mk>
-#
-# .if ${HAVE_GNOME:Mfoo}!=""
-# ... Do some things ...
-# USE_GNOME=		foo
-# .else
-# ... Do some other things ...
-# .endif
-
-# We also check each component to see if it has a desktop requirement.  If
-# it does, and its requirement disagrees with the user's chosen desktop,
-# do not add the component to the HAVE_GNOME list.
-
-_USE_GNOME_SAVED:=${USE_GNOME}
-HAVE_GNOME?=
-.if (defined(WANT_GNOME) && !defined(WITHOUT_GNOME))
-. for component in ${_USE_GNOME_ALL}
-.         if exists(${${component}_DETECT})
-HAVE_GNOME+=	${component}
-.         elif defined(WITH_GNOME)
-.            if ${WITH_GNOME}=="yes" || ${WITH_GNOME:M${component}}!="" \
-		|| ${WITH_GNOME}=="1"
-HAVE_GNOME+=	${component}
-.            endif
-.         endif
-. endfor
-.elif defined(WITHOUT_GNOME)
-.  if ${WITHOUT_GNOME}!="yes" && ${WITHOUT_GNOME}!="1"
-.    for component in ${_USE_GNOME_ALL}
-.      if ${WITHOUT_GNOME:M${component}}==""
-.        if exists(${${component}_DETECT})
-HAVE_GNOME+=	${component}
-.        endif
-.      endif
-.    endfor
-.  endif
-.endif
-
 .if defined(USE_GNOME)
 # First of all expand all USE_GNOME_IMPL recursively
 . for component in ${_USE_GNOME_ALL}
@@ -627,15 +563,6 @@ GNOME_PRE_PATCH+=	; ${${component}_PRE_PATCH}
 . if defined(GCONF_SCHEMAS)
 MAKE_ENV+=	GCONF_DISABLE_MAKEFILE_SCHEMA_INSTALL=1
 . endif
-.endif
-
-.if defined(WANT_GNOME)
-USE_GNOME?=
-.  if ${_USE_GNOME_SAVED}==${USE_GNOME}
-PLIST_SUB+=	GNOME:="@comment " NOGNOME:=""
-.  else
-PLIST_SUB+=	GNOME:="" NOGNOME:="@comment "
-.  endif
 .endif
 
 .if defined(USE_GNOME_SUBR)

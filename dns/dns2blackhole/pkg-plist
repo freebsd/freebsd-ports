@@ -1,0 +1,7 @@
+bin/dns2blackhole-update1
+bin/dns2blackhole-update2
+bin/dns2blackhole-sanitize
+bin/dns2blackhole-sort-fqdn
+bin/dns2blackhole-whitelist
+@sample %%ETCDIR%%/dns2blackhole-unbound.conf.sample
+%%PORTDOCS%%%%DOCSDIR%%/dns2blackhole-intro

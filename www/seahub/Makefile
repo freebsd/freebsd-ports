@@ -19,6 +19,7 @@ RUN_DEPENDS=	bash:shells/bash \
 		${PYTHON_PKGNAMEPREFIX}django-statici18n>=0:www/py-django-statici18n \
 		${PYTHON_PKGNAMEPREFIX}djangorestframework>=0:www/py-djangorestframework \
 		${PYTHON_PKGNAMEPREFIX}django_compressor>=0:www/py-django_compressor \
+		${PYTHON_PKGNAMEPREFIX}django-formtools>=0:www/py-django-formtools \
 		${PYTHON_PKGNAMEPREFIX}django-post_office>=0:www/py-django-post_office \
 		${PYTHON_PKGNAMEPREFIX}django-constance>=0:www/py-django-constance \
 		${PYTHON_PKGNAMEPREFIX}gunicorn>=0:www/py-gunicorn \
@@ -29,7 +30,9 @@ RUN_DEPENDS=	bash:shells/bash \
 		${PYTHON_PKGNAMEPREFIX}six>=0:devel/py-six \
 		${PYTHON_PKGNAMEPREFIX}openpyxl>=0:textproc/py-openpyxl \
 		${PYTHON_PKGNAMEPREFIX}pillow>=0:graphics/py-pillow \
-		${PYTHON_PKGNAMEPREFIX}MySQLdb>0:databases/py-MySQLdb
+		${PYTHON_PKGNAMEPREFIX}MySQLdb>0:databases/py-MySQLdb \
+		${PYTHON_PKGNAMEPREFIX}qrcode>0:textproc/py-qrcode \
+		${PYTHON_PKGNAMEPREFIX}futures>0:devel/py-futures
 
 USES=		python:-2.7 shebangfix
 USE_GITHUB=	yes

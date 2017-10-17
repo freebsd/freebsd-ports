@@ -1,0 +1,3 @@
+Client side implementation for TREZOR-compatible Bitcoin hardware wallets.
+
+WWW: https://github.com/trezor/python-trezor

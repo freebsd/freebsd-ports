@@ -18,8 +18,6 @@ PLIST_FILES=	bin/spiff
 PORTDOCS=	LICENSE README.md examples/cf-aws.yml \
 		examples/multi-az-cf-aws.yml examples/tutorial.md
 
-STRIP=		# stripping can break go binaries
-
 OPTIONS_DEFINE=	DOCS
 
 post-patch:

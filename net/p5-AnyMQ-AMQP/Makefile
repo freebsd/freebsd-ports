@@ -23,9 +23,4 @@ RUN_DEPENDS=	p5-AnyMQ>=0:devel/p5-AnyMQ \
 USES=		perl5
 USE_PERL5=	configure
 
-.if defined(MAINTAINER_MODE)
-regression-test: build
-	cd ${WRKSRC} && ${MAKE} test
-.endif
-
 .include <bsd.port.mk>

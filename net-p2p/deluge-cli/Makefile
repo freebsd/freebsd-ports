@@ -1,7 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	deluge
-PORTVERSION=	1.3.15
+DISTVERSIONPREFIX=	${PORTNAME}-
+DISTVERSION=	1.3.15
 PORTREVISION=	2
 CATEGORIES=	net-p2p python
 PKGNAMESUFFIX=	-cli
@@ -25,7 +26,6 @@ USES=		gettext python:-2.7
 USE_PYTHON=	autoplist distutils
 USE_GITHUB=	yes
 GH_ACCOUNT=	deluge-torrent
-GH_TAGNAME=	${PORTNAME}-${PORTVERSION}
 
 NO_ARCH=	yes
 

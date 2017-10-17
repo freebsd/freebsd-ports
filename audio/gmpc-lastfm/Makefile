@@ -5,8 +5,7 @@ PORTNAME=	gmpc-lastfm
 PORTVERSION=	0.20.0
 PORTREVISION=	6
 CATEGORIES=	audio
-MASTER_SITES=	http://download.sarine.nl/Programs/gmpc/${PORTVERSION}/ \
-		http://freebsd.unixfreunde.de/sources/
+MASTER_SITES=	http://download.sarine.nl/Programs/gmpc/${PORTVERSION}/
 DISTNAME=	gmpc-last-fm-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Net-CLI-Interact
-PORTVERSION=	2.200009
+PORTVERSION=	2.300002
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,6 +15,8 @@ LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Class-Load>=0:devel/p5-Class-Load \
 		p5-Class-Mix>=0:devel/p5-Class-Mix \
+		p5-Config-Any>=0.27:devel/p5-Config-Any \
+		p5-File-ShareDir>=1:devel/p5-File-ShareDir \
 		p5-IO-Tty>=0:devel/p5-IO-Tty \
 		p5-IPC-Run>=0:devel/p5-IPC-Run \
 		p5-Log-Dispatch-Config>=0:devel/p5-Log-Dispatch-Config \
@@ -26,7 +28,7 @@ BUILD_DEPENDS=	p5-Class-Load>=0:devel/p5-Class-Load \
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes
-USE_PERL5=	configure
+USE_PERL5=	modbuild
 USES=		perl5
 
 .include <bsd.port.mk>

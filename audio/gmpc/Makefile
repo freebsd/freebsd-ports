@@ -6,8 +6,7 @@ PORTVERSION=	11.8.16
 PORTREVISION=	5
 PORTEPOCH=	1
 CATEGORIES=	audio
-MASTER_SITES=	http://download.sarine.nl/Programs/gmpc/${PORTVERSION}/ \
-		http://freebsd.unixfreunde.de/sources/
+MASTER_SITES=	http://download.sarine.nl/Programs/gmpc/${PORTVERSION}/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Full featured GTK2 client for musicpd

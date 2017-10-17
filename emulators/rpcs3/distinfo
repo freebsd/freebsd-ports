@@ -1,12 +1,14 @@
-TIMESTAMP = 1507569941
-SHA256 (RPCS3-rpcs3-v0.0.3-425-g1d375cb1_GH0.tar.gz) = 89b133fab7032d4e8dae62889784a1b5213c802c37a1d8f1f9ce85e9e636d511
-SIZE (RPCS3-rpcs3-v0.0.3-425-g1d375cb1_GH0.tar.gz) = 3530456
+TIMESTAMP = 1507897428
+SHA256 (RPCS3-rpcs3-v0.0.3-445-gbb398c4a_GH0.tar.gz) = 94b6e38a12d6ac6ec5b560bd631ebcfd7686db64a3250cb086a6cf7400d57bff
+SIZE (RPCS3-rpcs3-v0.0.3-445-gbb398c4a_GH0.tar.gz) = 3529430
 SHA256 (RPCS3-hidapi-hidapi-0.8.0-rc1-25-gca39ce8_GH0.tar.gz) = e50e4f4e9035e891e16867e995f44aac87ce734a9dde169f02fc9719b2ce3642
 SIZE (RPCS3-hidapi-hidapi-0.8.0-rc1-25-gca39ce8_GH0.tar.gz) = 105623
 SHA256 (RPCS3-pugixml-f205aaf_GH0.tar.gz) = 3b2a7e21625d8cbeb3aa1841b8816f6cab0752e89008b9fc67a325c800f153b5
 SIZE (RPCS3-pugixml-f205aaf_GH0.tar.gz) = 76332
 SHA256 (RPCS3-yaml-cpp-release-0.5.3-62-g017626a_GH0.tar.gz) = 1d4b32443f137c23b68d3cb183ba6fb48eb76be2b0b30016970adff5c770d841
 SIZE (RPCS3-yaml-cpp-release-0.5.3-62-g017626a_GH0.tar.gz) = 65888
+SHA256 (akrzemi1-Optional-f27e790_GH0.tar.gz) = d9f81fa3699b724812994897180365b7ee2fdef1549239d5086722bd4552baf1
+SIZE (akrzemi1-Optional-f27e790_GH0.tar.gz) = 16055
 SHA256 (kobalicek-asmjit-1370fe6_GH0.tar.gz) = cc064a8e495959ee525803bd83a4f9b2b3bf6e9aacbc7538e8ac3c20fb12e83e
 SIZE (kobalicek-asmjit-1370fe6_GH0.tar.gz) = 447958
 SHA256 (Microsoft-GSL-fc5fce4_GH0.tar.gz) = 2df1538ff240bf4dd3ef44ba8c832451376fff8e74f7734d32fc8c337557a64d

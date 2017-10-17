@@ -25,8 +25,6 @@ USE_RC_SUBR=	nomad
 USERS=		nomad
 GROUPS=		nomad
 
-STRIP=
-
 do-build:
 	@cd ${WRKSRC}/src/github.com/hashicorp/nomad; \
 	${SETENV} ${BUILD_ENV} GOPATH=${WRKSRC} go build -v -x \

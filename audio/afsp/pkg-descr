@@ -17,5 +17,3 @@ The following file formats are supported for reading.
     INRS-Telecom, ESPS, Comdisco SPW, Text audio
 The following file formats are supported for writing.
   - Headerless, AU, WAVE, AIFF-C
-
-WWW: http://WWW-MMSP.ECE.McGill.CA/Documents/Software/Packages/AFsp/AFsp.html

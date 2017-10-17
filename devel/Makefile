@@ -117,9 +117,9 @@
     SUBDIR += arduino-builder
     SUBDIR += arduino-core
     SUBDIR += arduino-ctags
-    SUBDIR += arduino-glcd
     SUBDIR += arduino-irremote
     SUBDIR += arduino-mk
+    SUBDIR += arduino-openglcd
     SUBDIR += arduino-sevseg
     SUBDIR += arduino-tools
     SUBDIR += arduino18
@@ -4331,6 +4331,7 @@
     SUBDIR += py-darcsver
     SUBDIR += py-darts.util.lru
     SUBDIR += py-dateutil
+    SUBDIR += py-dateutils
     SUBDIR += py-dbus
     SUBDIR += py-ddt
     SUBDIR += py-debtcollector
@@ -4634,6 +4635,7 @@
     SUBDIR += py-phonenumbers
     SUBDIR += py-phply
     SUBDIR += py-phpserialize
+    SUBDIR += py-pid
     SUBDIR += py-pika
     SUBDIR += py-pika-pool
     SUBDIR += py-pinocchio
@@ -6010,6 +6012,7 @@
     SUBDIR += tnt
     SUBDIR += toh
     SUBDIR += tokamak
+    SUBDIR += tokei
     SUBDIR += tortoisehg
     SUBDIR += tpasm
     SUBDIR += tr-eric6
@@ -6047,7 +6050,6 @@
     SUBDIR += violet
     SUBDIR += visualparadigm
     SUBDIR += vstr
-    SUBDIR += vtcl
     SUBDIR += vxlog
     SUBDIR += wand-libconfig
     SUBDIR += wandio

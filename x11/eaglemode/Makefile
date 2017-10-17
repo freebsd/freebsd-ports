@@ -20,7 +20,6 @@ USES=		compiler:features jpeg perl5 pkgconfig shebangfix tar:bzip2
 USE_PERL5=	build
 USE_XORG=	x11 xext xxf86vm
 SUB_FILES=	eaglemode.sh
-WANT_GNOME=	yes
 
 BUILD_ARGS=	continue=no
 

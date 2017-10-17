@@ -2,8 +2,8 @@
 
 PORTNAME=	rpcs3
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.0.3-425
-DISTVERSIONSUFFIX=	-g1d375cb1
+DISTVERSION=	0.0.3-445
+DISTVERSIONSUFFIX=	-gbb398c4a
 CATEGORIES=	emulators
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -11,10 +11,10 @@ COMMENT=	PS3 emulator/debugger
 
 LICENSE=	BSD3CLAUSE BSL GPLv2 MIT ZLIB
 LICENSE_COMB=	multi
-LICENSE_FILE_BSD3CLAUSE=${WRKSRC}/3rdparty/cereal/LICENSE
-LICENSE_FILE_BSL=	${WRKSRC}/Utilities/LICENSE_1_0.txt
-LICENSE_FILE_MIT=	${WRKSRC}/3rdparty/GSL/LICENSE
-LICENSE_FILE_ZLIB=	${WRKSRC}/asmjit/LICENSE.md
+LICENSE_FILE_BSD3CLAUSE=${WRKSRC_cereal}/LICENSE
+LICENSE_FILE_BSL=	${WRKSRC_Optional}/LICENSE
+LICENSE_FILE_MIT=	${WRKSRC_GSL}/LICENSE
+LICENSE_FILE_ZLIB=	${WRKSRC_asmjit}/LICENSE.md
 
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libavcodec.so:multimedia/ffmpeg
@@ -27,6 +27,7 @@ GH_ACCOUNT=	RPCS3
 GH_TUPLE=	RPCS3:hidapi:hidapi-0.8.0-rc1-25-gca39ce8:hidapi/3rdparty/hidapi \
 		RPCS3:pugixml:f205aaf:pugixml/3rdparty/pugixml \
 		RPCS3:yaml-cpp:release-0.5.3-62-g017626a:yamlcpp/Utilities/yaml-cpp \
+		akrzemi1:Optional:f27e790:Optional/3rdparty/Optional \
 		kobalicek:asmjit:1370fe6:asmjit/asmjit \
 		Microsoft:GSL:fc5fce4:GSL/3rdparty/GSL \
 		USCiLab:cereal:v1.2.0:cereal/3rdparty/cereal

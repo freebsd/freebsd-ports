@@ -9,6 +9,8 @@ MASTER_SITES=	http://files.freedv.org/codec2/ \
 MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Low bit rate codec
 
+BROKEN=		no public distfiles
+
 LICENSE=	LGPL21
 
 LIB_DEPENDS=	libspeexdsp.so:audio/speexdsp

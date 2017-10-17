@@ -38,7 +38,7 @@ CARGO_DIST_SUBDIR?=	rust/crates
 
 # Generate list of DISTFILES.
 .for _crate in ${CARGO_CRATES}
-MASTER_SITES+=	${MASTER_SITES_CRATESIO}/${_crate:C/-[^-]*$//}/${_crate:C/^.*-//}/download?dummy=/:cargo_${_crate:S/-//g:S/.//g}
+MASTER_SITES+=	${MASTER_SITES_CRATESIO}/${_crate:C/-[0-9].*$//}/${_crate:C/^.*-([0-9].*)/\1/}/download?dummy=/:cargo_${_crate:S/-//g:S/.//g}
 DISTFILES+=	${CARGO_DIST_SUBDIR}/${_crate}.tar.gz:cargo_${_crate:S/-//g:S/.//g}
 .endfor
 
@@ -103,7 +103,7 @@ CARGO_INSTALL_ARGS+=	--features='${CARGO_FEATURES}'
 CARGO_TEST_ARGS+=	--features='${CARGO_FEATURES}'
 .endif
 
-.if !defined(WITH_DEBUG) || defined(WITHOUT_DEBUG)
+.if !defined(WITH_DEBUG)
 CARGO_BUILD_ARGS+=	--release
 CARGO_TEST_ARGS+=	--release
 .else

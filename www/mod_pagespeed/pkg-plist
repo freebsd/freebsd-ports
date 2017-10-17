@@ -1,0 +1,9 @@
+bin/%%AP_NAME%%_js_minify
+%%APACHEMODDIR%%/%%AP_MODULE%%
+%%DOCSDIR%%/mod_%%AP_NAME%%_example
+%%DOCSDIR%%/mod_%%AP_NAME%%_test
+@sample(www,www,0750) %%APACHEETCDIR%%/%%AP_NAME%%.conf.sample
+@sample(www,www,0750) %%APACHEETCDIR%%/%%AP_NAME%%_libraries.conf.sample
+@dir(www,www,) /var/cache/mod_%%AP_NAME%%
+@dir(www,www,) /var/cache/mod_%%AP_NAME%%-alt
+@dir(www,www,) /var/log/%%AP_NAME%%

@@ -21,7 +21,6 @@ WRKSRC_SUBDIR=	plugins/xmms/src
 
 USE_GNOME=	gtk12
 USES=		pkgconfig tar:bzip2
-WANT_GNOME=	yes
 EXTRA_CFLAGS=	`xmms-config --cflags`
 EXTRA_LDFLAGS=	`xmms-config --libs`
 

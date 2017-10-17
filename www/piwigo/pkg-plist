@@ -979,6 +979,7 @@
 %%WWWDIR%%/language/en_GB/index.php
 %%WWWDIR%%/language/en_GB/install.lang.php
 %%WWWDIR%%/language/en_GB/iso.txt
+%%WWWDIR%%/language/en_GB/upgrade.lang.php
 %%WWWDIR%%/language/en_UK/about.html
 %%WWWDIR%%/language/en_UK/admin.lang.php
 %%WWWDIR%%/language/en_UK/common.lang.php
@@ -1083,6 +1084,8 @@
 %%WWWDIR%%/language/eu_ES/admin.lang.php
 %%WWWDIR%%/language/eu_ES/common.lang.php
 %%WWWDIR%%/language/eu_ES/eu_ES.jpg
+%%WWWDIR%%/language/eu_ES/help/cat_move.html
+%%WWWDIR%%/language/eu_ES/help/help_add_photos.html
 %%WWWDIR%%/language/eu_ES/install.lang.php
 %%WWWDIR%%/language/eu_ES/iso.txt
 %%WWWDIR%%/language/eu_ES/upgrade.lang.php
@@ -1609,6 +1612,9 @@
 %%WWWDIR%%/language/ro_RO/admin.lang.php
 %%WWWDIR%%/language/ro_RO/common.lang.php
 %%WWWDIR%%/language/ro_RO/help/cat_move.html
+%%WWWDIR%%/language/ro_RO/help/cat_options.html
+%%WWWDIR%%/language/ro_RO/help/help_add_photos.html
+%%WWWDIR%%/language/ro_RO/help/help_misc.html
 %%WWWDIR%%/language/ro_RO/index.php
 %%WWWDIR%%/language/ro_RO/install.lang.php
 %%WWWDIR%%/language/ro_RO/iso.txt
@@ -1688,11 +1694,13 @@
 %%WWWDIR%%/language/sl_SI/admin.lang.php
 %%WWWDIR%%/language/sl_SI/common.lang.php
 %%WWWDIR%%/language/sl_SI/help/cat_move.html
+%%WWWDIR%%/language/sl_SI/help/cat_options.html
 %%WWWDIR%%/language/sl_SI/help/cat_perm.html
 %%WWWDIR%%/language/sl_SI/help/group_list.html
 %%WWWDIR%%/language/sl_SI/help/help_add_photos.html
 %%WWWDIR%%/language/sl_SI/help/help_groups.html
 %%WWWDIR%%/language/sl_SI/help/help_misc.html
+%%WWWDIR%%/language/sl_SI/help/notification_by_mail.html
 %%WWWDIR%%/language/sl_SI/help/search.html
 %%WWWDIR%%/language/sl_SI/help/synchronize.html
 %%WWWDIR%%/language/sl_SI/help/user_list.html
@@ -2333,6 +2341,7 @@
 %%WWWDIR%%/plugins/TakeATour/language/eu_ES/plugin.lang.php
 %%WWWDIR%%/plugins/TakeATour/language/fa_IR/description.txt
 %%WWWDIR%%/plugins/TakeATour/language/fa_IR/plugin.lang.php
+%%WWWDIR%%/plugins/TakeATour/language/fa_IR/tour_2_9_0.lang.php
 %%WWWDIR%%/plugins/TakeATour/language/fi_FI/description.txt
 %%WWWDIR%%/plugins/TakeATour/language/fi_FI/index.php
 %%WWWDIR%%/plugins/TakeATour/language/fi_FI/plugin.lang.php

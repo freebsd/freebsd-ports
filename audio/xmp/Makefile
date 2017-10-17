@@ -16,7 +16,6 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libxmp.so:audio/libxmp
 
 USES=		gmake localbase:ldflags pkgconfig
-WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
 
 CONFIGURE_ARGS+=	--sysconfdir=${PREFIX}/etc

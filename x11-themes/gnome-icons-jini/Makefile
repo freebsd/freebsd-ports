@@ -12,7 +12,6 @@ COMMENT=	Jini Icons for Gnome
 
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}
-WANT_GNOME=	yes
 INSTALLS_ICONS=	yes
 
 post-extract:

@@ -539,6 +539,7 @@
     SUBDIR += py-milter
     SUBDIR += py-notmuch
     SUBDIR += py-ppolicy
+    SUBDIR += py-premailer
     SUBDIR += py-pymailq
     SUBDIR += py-pyspf
     SUBDIR += py-spambayes

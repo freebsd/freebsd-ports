@@ -2,6 +2,7 @@
 
 PORTNAME=	python27
 PORTVERSION=	${PYTHON_PORTVERSION}
+PORTREVISION=	1
 CATEGORIES=	lang python ipv6
 MASTER_SITES=	PYTHON/ftp/python/${PORTVERSION}
 DISTNAME=	Python-${PORTVERSION}
@@ -142,6 +143,12 @@ post-install:
 # FreeBSD base system provides.  sbruno 02Aug2017
 .if ${CC} == /nxb-bin/usr/bin/cc
 	@${REINPLACE_CMD} -e 's=/nxb-bin==' \
+		${STAGEDIR}${PREFIX}/lib/python2.7/_sysconfigdata.py
+	@cd ${WRKSRC} && ${SETENV} LD_LIBRARY_PATH=${WRKSRC} \
+		./python -E -m compileall -d ${PREFIX}/lib/python2.7 \
+		${STAGEDIR}${PREFIX}/lib/python2.7/_sysconfigdata.py
+	@cd ${WRKSRC} && ${SETENV} LD_LIBRARY_PATH=${WRKSRC} \
+		./python -E -O -m compileall -d ${PREFIX}/lib/python2.7 \
 		${STAGEDIR}${PREFIX}/lib/python2.7/_sysconfigdata.py
 	@${REINPLACE_CMD} -e 's=/nxb-bin==' \
 		${STAGEDIR}${PREFIX}/lib/python2.7/config/Makefile

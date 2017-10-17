@@ -5,11 +5,16 @@
 # documentation, or see the accompanying file app.ini.defaults, which
 # contains the settings incorporated into the gitea binary.
 #
-# This sample configuration runs Gitea with a local database.
-# Before running this configuration, make sure to change the security
-# token SECRET_KEY at the end of this file.  There are no pre-configured
-# users; the first user to register becomes an admin.  In this sample
-# configuration, the HTTP server only listens on localhost.
+# This sample configuration runs Gitea with a local database.  Before
+# running this configuration, make sure to change the SECRET_KEY and the
+# INTERNAL_TOKEN at the end of this file.  SECRET_KEY is a password of your
+# choosing, INTERNAL_TOKEN is a 64-byte random number in BASE64 encoding. 
+# Your can generate the token using for example:
+# openssl rand -base64 64
+#
+# There are no pre-configured users; the first user to register becomes an
+# admin.  In this sample configuration, the HTTP server only listens on
+# localhost.
 #
 # If you'd rather use the web-based installer, remove this conf/app.ini file
 # and make %%PREFIX%%/etc/gitea/conf writeable to the git user.
@@ -51,6 +56,7 @@ TEMP_PATH = /var/db/gitea/data/tmp/uploads
 
 [security]
 INSTALL_LOCK = true
+INTERNAL_TOKEN = 1FFhAklka01JhgJTRUrFujWYiv4ijqcTIfXJ9o4n1fWxz+XVQdXhrqDTlsnD7fvz7gugdhgkx0FY2Lx6IBdPQw==
 SECRET_KEY   = ChangeMeBeforeRunning
 
 [session]

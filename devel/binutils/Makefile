@@ -28,7 +28,8 @@ RELRO_DESC=	enable -z relro in ELF linker by default
 LICENSE_FILE_GPLv3=	${WRKSRC}/COPYING3
 LICENSE_FILE_LGPL3=	${WRKSRC}/COPYING3.LIB
 
-USES=		bison gmake libtool tar:bzip2 compiler:env
+USES=		bison cpe gmake libtool tar:bzip2 compiler:env
+CPE_VENDOR=	gnu
 GNU_CONFIGURE=	yes
 
 .if defined(PKGNAMEPREFIX)

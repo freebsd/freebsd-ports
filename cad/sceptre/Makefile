@@ -12,6 +12,7 @@ COMMENT=	General-purpose circuit analysis program
 
 LICENSE=	GPLv2
 
+BROKEN=		No public distfiles
 USES=		fortran
 
 MAKE_JOBS_UNSAFE=	yes

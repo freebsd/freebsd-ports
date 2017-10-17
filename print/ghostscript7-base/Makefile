@@ -30,7 +30,6 @@ CONFLICTS_INSTALL= \
 USES=		autoreconf gmake jpeg shebangfix tar:bzip2
 USE_LDCONFIG=	yes
 SHEBANG_FILES=	lib/fixmswrd.pl
-WANT_GNOME=	yes
 # normazile WRKSRC so things like cups-pstoraster may work
 WRKSRC=		${WRKDIR}/${PORTNAME}
 MAKE_JOBS_UNSAFE=	yes

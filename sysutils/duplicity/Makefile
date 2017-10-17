@@ -3,6 +3,7 @@
 
 PORTNAME=	duplicity
 PORTVERSION=	0.7.14
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://launchpad.net/duplicity/0.7-series/${PORTVERSION}/+download/
 
@@ -21,13 +22,12 @@ USE_LDCONFIG=	yes
 
 PORTDOCS=	CHANGELOG COPYING README README-REPO README-LOG
 
-OPTIONS_DEFINE=		CLOUDFILES DOCS FTP FTPS GDOCS GIO NLS S3
+OPTIONS_DEFINE=		DOCS FTP FTPS GDOCS GIO NLS S3
 OPTIONS_GROUP=		GPG SSH
 OPTIONS_SINGLE=		GPG
 OPTIONS_SINGLE_GPG=	GNUPG GNUPG2
 OPTIONS_GROUP_SSH=	PARAMIKO PEXPECT
 OPTIONS_DEFAULT=	FTP FTPS GNUPG PARAMIKO S3
-CLOUDFILES_DESC=	CloudFiles backend
 FTP_DESC=		FTP backend
 FTPS_DESC=		FTPS backend
 GDOCS_DESC=		Google Docs backend
@@ -40,7 +40,6 @@ SSH_DESC=		SSH/SCP/SFTP backend
 PARAMIKO_DESC=		python ssh implementation
 PEXPECT_DESC=		pexpect and use ssh binaries
 
-CLOUDFILES_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}python-cloudfiles>0:net/py-python-cloudfiles
 FTP_RUN_DEPENDS=	ncftp>=3.2.2:ftp/ncftp3
 FTPS_RUN_DEPENDS=	lftp>=3.7.15:ftp/lftp
 GDOCS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gdata>0:devel/py-gdata
@@ -52,6 +51,11 @@ NLS_USES=		gettext
 PARAMIKO_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}paramiko>=1.7.7.1:security/py-paramiko
 PEXPECT_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pexpect>0:misc/py-pexpect
 S3_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}boto>=1.6b:devel/py-boto
+
+post-patch:
+.for f in cfbackend _cf_cloudfiles _cf_pyrax
+	@${RM} ${WRKSRC}/${PORTNAME}/backends/${f}.py
+.endfor
 
 post-patch-NLS-off:
 	@${REINPLACE_CMD} -e '56,67d' \
@@ -78,16 +82,6 @@ post-patch-S3-off:
 
 post-patch-GDOCS-off:
 	@${RM} ${WRKSRC}/${PORTNAME}/backends/gdocsbackend.py
-
-post-patch-CLOUDFILES-off:
-.for f in cfbackend _cf_cloudfiles _cf_pyrax
-	@${RM} ${WRKSRC}/${PORTNAME}/backends/${f}.py
-.endfor
-
-post-patch-CLOUDFILES-on:
-# Make pycloudfiles the default backend for cloudfiles, as pyrax isn't in the Ports Collection yet
-# Use --cf-backend=pyrax arg when running duplicity to manually select pyrax as the backend
-	@${REINPLACE_CMD} 's|"pyrax"|"cloudfiles"|' ${WRKSRC}/${PORTNAME}/globals.py
 
 post-patch-GIO-off:
 	@${RM} ${WRKSRC}/${PORTNAME}/backends/giobackend.py

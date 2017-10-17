@@ -5,7 +5,7 @@
  .if ${WARNS} > 2
  CFLAGS+=	-Wcast-qual -Wwrite-strings
 -CFLAGS+=	-Wextra -Wno-unused-parameter
-+CFLAGS+=	-Wextra -Wno-unused-parameter -Wno-address-of-packed-member -Wno-varargs
++CFLAGS+=	-Wextra -Wno-unused-parameter -Wno-varargs
  # Readd -Wno-sign-compare to override -Wextra with clang
  CFLAGS+=	-Wno-sign-compare
  CXXFLAGS+=	-Wabi

@@ -22,8 +22,6 @@ CONFLICTS_INSTALL=	fly
 
 PLIST_FILES=	bin/fly
 
-STRIP=		# stripping can break go binaries
-
 # The build instructions for `fly` suggest to clone the global Concourse
 # repository, which contains many Git submodules, including fly, and
 # build from there. So basically:

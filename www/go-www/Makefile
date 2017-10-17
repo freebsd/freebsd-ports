@@ -19,8 +19,6 @@ GH_ACCOUNT=	nbari:DEFAULT
 GH_TUPLE=	golang:crypto:847319b:crypto/src/golang.org/x/crypto
 GH_SUBDIR=	src/github.com/nbari/${PORTNAME}
 
-STRIP=		# stripping can break go binaries
-
 PLIST_FILES=	bin/www
 
 post-patch:

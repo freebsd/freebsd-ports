@@ -28,11 +28,11 @@ BOOST_CMAKE_BOOL=	FTDIPP
 BOOST_CXXFLAGS=		-I${LOCALBASE}/include
 
 PYTHON_DESC=		Python bindings
-PYTHON_BUILD_DEPENDS=	swig2.0:devel/swig20
+PYTHON_BUILD_DEPENDS=	swig3.0:devel/swig30
 PYTHON_CMAKE_BOOL=	PYTHON_BINDINGS
 PYTHON_USES=		python
 
-.include <bsd.port.options.mk>
+BINARY_ALIAS=	swig=swig3.0
 
 post-patch:
 	@${REINPLACE_CMD} \
@@ -43,11 +43,9 @@ post-patch:
 	@${REINPLACE_CMD} 's|SITEPACKAGE.*ABSOLUTE|SITEPACKAGE ${PYTHON_SITELIBDIR} ABSOLUTE|' \
 		${WRKSRC}/bindings/CMakeLists.txt
 
-post-install:
-.if ${PORT_OPTIONS:MPYTHON}
+post-install-PYTHON-on:
 	${PYTHON_CMD} -m compileall -d ${PYTHON_SITELIBDIR} ${STAGEDIR}${PYTHON_SITELIBDIR}
 	${PYTHON_CMD} -O -m compileall -d ${PYTHON_SITELIBDIR} ${STAGEDIR}${PYTHON_SITELIBDIR}
 	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/_ftdi.so
-.endif
 
 .include <bsd.port.mk>

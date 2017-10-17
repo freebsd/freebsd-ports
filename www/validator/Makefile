@@ -2,7 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	validator
-PORTVERSION=	1.3
+DISTVERSIONPREFIX=	${PORTNAME}-
+DISTVERSION=	1_3
+DISTVERSIONSUFFIX=	-release
 PORTREVISION=	3
 CATEGORIES=	www
 
@@ -32,7 +34,6 @@ RUN_DEPENDS=	onsgmls:textproc/opensp \
 USE_GITHUB=	yes
 GH_ACCOUNT=	w3c
 GH_PROJECT=	markup-validator
-GH_TAGNAME=	${PORTNAME}-${PORTVERSION:S,.,_,}-release
 USES=		perl5 shebangfix
 NO_ARCH=	yes
 NO_BUILD=	yes

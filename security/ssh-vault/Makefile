@@ -20,8 +20,6 @@ GH_TUPLE=	ssh-vault:crypto:ae180e0:crypto/src/github.com/ssh-vault/crypto \
 		ssh-vault:ssh2pem:c1edc64:ssh2pem/src/github.com/ssh-vault/ssh2pem
 GH_SUBDIR=	src/github.com/${PORTNAME}/${PORTNAME}
 
-STRIP=		# stripping can break go binaries
-
 PLIST_FILES=	bin/ssh-vault
 
 post-patch:

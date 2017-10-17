@@ -4,8 +4,7 @@
 PORTNAME=	chu
 PORTVERSION=	0.1.29
 CATEGORIES=	comms hamradio
-MASTER_SITES=	SUNSITE/system/admin/time \
-		http://www.rossi.com/chu/
+MASTER_SITES=	SUNSITE/system/admin/time
 
 MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Synchronise computer clock to CHU radio station

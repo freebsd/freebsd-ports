@@ -11,6 +11,8 @@ DISTNAME=	${PORTNAME}-client-gui-gtk
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	AnimeNfo client with GTK support
 
+BROKEN=		No public distfiles
+
 LICENSE=	GPLv2
 
 USES=		pkgconfig gettext gmake tar:tgz

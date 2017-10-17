@@ -1,0 +1,79 @@
+commit a181c0bf74
+Author: John Baldwin <jhb@FreeBSD.org>
+Date:   Mon Oct 9 09:54:42 2017 -0700
+
+    Use gdbarch_long_bit to determine layout of FreeBSD siginfo_t.
+    
+    FreeBSD architectures are either ILP32 or LP64 resulting in two
+    different layouts for siginfo_t.  Previously, the 'bits_per_word'
+    member of bfd_arch_info was used to determine the layout to use for a
+    given FreeBSD architecture.  However, mipsn32 architectures inherit
+    from a 64-bit mips architecture where bits_per_word is 64.  As a
+    result, $_siginfo was not properly extracted from FreeBSD/mipsn32 core
+    dumps.  Fix this by using gdbarch_long_bit instead of 'bits_per_word'
+    to determine if a FreeBSD architecture is ILP32 or LP64.
+    
+    gdb/ChangeLog:
+    
+            * fbsd-nat.c (fbsd_siginfo_size): Use gdbarch_long_bit.
+            (fbsd_convert_siginfo): Likewise.
+            * fbsd-tdep.c (fbsd_core_xfer_siginfo): Likewise.
+
+diff --git gdb/ChangeLog gdb/ChangeLog
+index 7c8c6e4fe5..b04da8bd44 100644
+--- gdb/ChangeLog
++++ gdb/ChangeLog
+@@ -1,3 +1,9 @@
++2017-10-09  John Baldwin  <jhb@FreeBSD.org>
++
++	* fbsd-nat.c (fbsd_siginfo_size): Use gdbarch_long_bit.
++	(fbsd_convert_siginfo): Likewise.
++	* fbsd-tdep.c (fbsd_core_xfer_siginfo): Likewise.
++
+ 2017-10-09  Simon Marchi  <simon.marchi@polymtl.ca>
+ 
+ 	* configure.ac (try_guile_versions): Remove guile-2.2.
+diff --git gdb/fbsd-nat.c gdb/fbsd-nat.c
+index 5ad0dda5b4..265175a769 100644
+--- gdb/fbsd-nat.c
++++ gdb/fbsd-nat.c
+@@ -279,7 +279,7 @@ fbsd_siginfo_size ()
+   struct gdbarch *gdbarch = get_frame_arch (get_current_frame ());
+ 
+   /* Is the inferior 32-bit?  If so, use the 32-bit siginfo size.  */
+-  if (gdbarch_bfd_arch_info (gdbarch)->bits_per_word == 32)
++  if (gdbarch_long_bit (gdbarch) == 32)
+     return sizeof (struct siginfo32);
+ #endif
+   return sizeof (siginfo_t);
+@@ -296,7 +296,7 @@ fbsd_convert_siginfo (siginfo_t *si)
+   struct gdbarch *gdbarch = get_frame_arch (get_current_frame ());
+ 
+   /* Is the inferior 32-bit?  If not, nothing to do.  */
+-  if (gdbarch_bfd_arch_info (gdbarch)->bits_per_word != 32)
++  if (gdbarch_long_bit (gdbarch) != 32)
+     return;
+ 
+   struct siginfo32 si32;
+diff --git gdb/fbsd-tdep.c gdb/fbsd-tdep.c
+index fa4cd912ef..fa70f7c20b 100644
+--- gdb/fbsd-tdep.c
++++ gdb/fbsd-tdep.c
+@@ -143,7 +143,7 @@ fbsd_core_xfer_siginfo (struct gdbarch *gdbarch, gdb_byte *readbuf,
+ {
+   size_t siginfo_size;
+ 
+-  if (gdbarch_bfd_arch_info (gdbarch)->bits_per_word == 32)
++  if (gdbarch_long_bit (gdbarch) == 32)
+     siginfo_size = SIZE32_SIGINFO_T;
+   else
+     siginfo_size = SIZE64_SIGINFO_T;
+@@ -168,7 +168,7 @@ fbsd_core_xfer_siginfo (struct gdbarch *gdbarch, gdb_byte *readbuf,
+     len = siginfo_size - offset;
+ 
+   ULONGEST siginfo_offset;
+-  if (gdbarch_bfd_arch_info (gdbarch)->bits_per_word == 32)
++  if (gdbarch_long_bit (gdbarch) == 32)
+     siginfo_offset = LWPINFO_OFFSET + LWPINFO32_PL_SIGINFO;
+   else
+     siginfo_offset = LWPINFO_OFFSET + LWPINFO64_PL_SIGINFO;
