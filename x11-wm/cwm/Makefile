@@ -2,11 +2,10 @@
 
 PORTNAME=	cwm
 DISTVERSIONPREFIX=	v
-DISTVERSION=	5.6-201
-DISTVERSIONSUFFIX=	-g5a46349
+DISTVERSION=	6.2
 CATEGORIES=	x11-wm
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	tobik@FreeBSD.org
 COMMENT=	Minimalistic window manager for X11 based on evilwm
 
 LICENSE=	ISCL
