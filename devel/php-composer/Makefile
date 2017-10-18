@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	composer
-DISTVERSION=	1.4.2
+DISTVERSION=	1.5.2
 CATEGORIES=	devel
 MASTER_SITES=	http://getcomposer.org/download/${DISTVERSION}/
 PKGNAMEPREFIX=	php-
@@ -21,7 +21,7 @@ NO_ARCH=	yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 USES=		php
-USE_PHP=	intl openssl phar json ctype filter
+USE_PHP=	intl openssl phar json ctype filter mbstring
 
 PLIST_FILES=	bin/composer \
 		bin/composer.phar
