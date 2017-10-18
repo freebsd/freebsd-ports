@@ -16,7 +16,7 @@ COMMENT=	Family of archivers with extremely high compression ratios
 LICENSE=	GPLv3 MIT
 LICENSE_COMB=	multi
 
-USES=		dos2unix zip:infozip
+USES=		dos2unix zip
 
 EXTRACT_AFTER_ARGS=	-x *.bat *.exe readme.txt -d ${WRKSRC}
 NO_WRKSUBDIR=	yes
@@ -74,7 +74,7 @@ post-extract:
 	@${CP} ${DISTDIR}/${DIST_SUBDIR}/zpsfx101.cpp ${WRKSRC}/zpsfx.cpp
 .if ${PORT_OPTIONS:MDOCS}
 .for r in ${READMES}
-	@${UNZIP_CMD} -pq  ${DISTDIR}/${DIST_SUBDIR}/${r}.zip readme.txt > ${WRKSRC}/readme_${r:R}.txt
+	@${UNZIP_NATIVE_CMD} -pq  ${DISTDIR}/${DIST_SUBDIR}/${r}.zip readme.txt > ${WRKSRC}/readme_${r:R}.txt
 .endfor
 
 .endif
