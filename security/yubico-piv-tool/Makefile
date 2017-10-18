@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	yubico-piv-tool
-PORTVERSION=	1.4.3
+PORTVERSION=	1.4.4
 #PORTREVISION=	0
 CATEGORIES=	security
 MASTER_SITES=	https://developers.yubico.com/yubico-piv-tool/Releases/
@@ -27,11 +27,11 @@ PLIST_FILES=	bin/yubico-piv-tool \
 		lib/libykcs11.a \
 		lib/libykcs11.so \
 		lib/libykcs11.so.1 \
-		lib/libykcs11.so.1.3.5 \
+		lib/libykcs11.so.1.3.6 \
 		lib/libykpiv.a \
 		lib/libykpiv.so \
 		lib/libykpiv.so.1 \
-		lib/libykpiv.so.1.3.5 \
+		lib/libykpiv.so.1.3.6 \
 		libdata/pkgconfig/ykcs11.pc \
 		libdata/pkgconfig/ykpiv.pc \
 		man/man1/yubico-piv-tool.1.gz
