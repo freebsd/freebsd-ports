@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	SOAP-Lite
-PORTVERSION=	1.20
+PORTVERSION=	1.22
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -32,8 +32,8 @@ CONFLICTS_INSTALL=	p5-SOAP-Lite-0.60* p5-SOAP-[0-9]*
 
 CONFIGURE_ARGS=	--noprompt
 INSTALL_TARGET=	pure_install
-USE_PERL5=	configure
 USES=		perl5 shebangfix
+USE_PERL5=	configure
 NO_ARCH=	yes
 
 SHEBANG_FILES=	bin/SOAPsh.pl
