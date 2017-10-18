@@ -20,7 +20,7 @@ USES=		python
 USE_PYTHON=	autoplist concurrent distutils
 
 do-test:
-	@cd ${WRKSRC} && pytest -v
+	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYDISTUTILS_SETUP} test
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/bcrypt/_bcrypt.so
