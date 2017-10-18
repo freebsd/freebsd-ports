@@ -717,7 +717,6 @@
 %%WWWDIR%%/popup_media.php
 %%WWWDIR%%/popup_right.php
 %%WWWDIR%%/popup_trexpr.php
-%%WWWDIR%%/popup_usrgrp.php
 %%WWWDIR%%/profile.php
 %%WWWDIR%%/queue.php
 %%WWWDIR%%/report2.php
