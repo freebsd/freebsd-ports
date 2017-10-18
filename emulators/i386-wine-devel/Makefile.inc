@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	wine
-PORTVERSION=	2.15
+PORTVERSION=	2.18
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	emulators
 MASTER_SITES=	LOCAL/dbn/repos/wine/${DIST_SUBDIR}/
@@ -90,11 +91,11 @@ port-update:
 	${RM} ${SLAVEDIR}/distinfo ${SLAVEDIR}/distinfo~ ${SLAVEDIR}/pkg-plist.*
 .for osrel in 10 11 12
 .for suffix in -devel -staging
-	${MAKE} fetch OSREL=${osrel} OSVERSION=${osrel}99999 UNAME_r=${osrel} PKGNAMESUFFIX=${suffix}
-	${MAKE} makesum OSREL=${osrel} OSVERSION=${osrel}99999 UNAME_r=${osrel} PKGNAMESUFFIX=${suffix}
+	${MAKE} fetch OSREL=${osrel} OSVERSION=${osrel}99999 _OSRELEASE=${osrel} PKGNAMESUFFIX=${suffix}
+	${MAKE} makesum OSREL=${osrel} OSVERSION=${osrel}99999 _OSRELEASE=${osrel} PKGNAMESUFFIX=${suffix}
 	${CAT} ${SLAVEDIR}/distinfo >> ${SLAVEDIR}/distinfo~
 	${RM} ${SLAVEDIR}/distinfo
-	${MAKE} pkg-plist.${osrel}${suffix:tu} PLIST=pkg-plist.${osrel}${suffix:tu} OSREL=${osrel} OSVERSION=${osrel}99999 UNAME_r=${osrel} PKGNAMESUFFIX=${suffix}
+	${MAKE} pkg-plist.${osrel}${suffix:tu} PLIST=pkg-plist.${osrel}${suffix:tu} OSREL=${osrel} OSVERSION=${osrel}99999 _OSRELEASE=${osrel} PKGNAMESUFFIX=${suffix}
 .endfor
 .endfor
 	${SED} -e '2,$${' -e '/^TIMESTAMP/d' -e '}' distinfo~ > ${SLAVEDIR}/distinfo
