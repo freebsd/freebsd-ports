@@ -6,7 +6,7 @@ DISTVERSION=	5.6-201
 DISTVERSIONSUFFIX=	-g5a46349
 CATEGORIES=	x11-wm
 
-MAINTAINER=	braakvaak@aol.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Minimalistic window manager for X11 based on evilwm
 
 LICENSE=	ISCL
