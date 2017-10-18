@@ -58,9 +58,11 @@ lib/pure/asyncdispatch.nim
 lib/pure/asyncdispatch.nim.cfg
 lib/pure/asyncfile.nim
 lib/pure/asyncftpclient.nim
+lib/pure/asyncfutures.nim
 lib/pure/asynchttpserver.nim
 lib/pure/asyncmacro.nim
 lib/pure/asyncnet.nim
+lib/pure/asyncstreams.nim
 lib/pure/base64.nim
 lib/pure/basic2d.nim
 lib/pure/basic3d.nim
@@ -108,7 +110,8 @@ lib/pure/httpclient.nim
 lib/pure/httpcore.nim
 lib/pure/httpserver.nim
 lib/pure/includes/asynccommon.nim
-lib/pure/includes/asyncfutures.nim
+lib/pure/includes/osenv.nim
+lib/pure/includes/oserr.nim
 lib/pure/ioselectors.nim
 lib/pure/ioselects/ioselectors_epoll.nim
 lib/pure/ioselects/ioselectors_kqueue.nim
@@ -199,7 +202,7 @@ lib/system/gc.nim
 lib/system/gc2.nim
 lib/system/gc_common.nim
 lib/system/gc_ms.nim
-lib/system/gc_stack.nim
+lib/system/gc_regions.nim
 lib/system/hti.nim
 lib/system/inclrtl.nim
 lib/system/jssys.nim
@@ -320,6 +323,7 @@ nim/compiler/prefixmatches.nim
 nim/compiler/procfind.nim
 nim/compiler/readme.txt
 nim/compiler/renderer.nim
+nim/compiler/reorder.nim
 nim/compiler/rodread.nim
 nim/compiler/rodutils.nim
 nim/compiler/rodwrite.nim
@@ -351,7 +355,6 @@ nim/compiler/sigmatch.nim
 nim/compiler/suggest.nim
 nim/compiler/syntaxes.nim
 nim/compiler/tccgen.nim
-nim/compiler/testability.nim
 nim/compiler/transf.nim
 nim/compiler/trees.nim
 nim/compiler/treetab.nim
