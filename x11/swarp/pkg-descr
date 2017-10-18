@@ -3,4 +3,4 @@ It allows you to place the pointer to arbitrary x/y coordinates,
 for instance from within scripts.  It is especially useful in
 conjunction with scripted window managers such as wmii.
 
-WWW: http://tools.suckless.org/swarp
+WWW: https://tools.suckless.org/x/swarp
