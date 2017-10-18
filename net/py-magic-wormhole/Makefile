@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	magic-wormhole
-PORTVERSION=	0.9.2
+PORTVERSION=	0.10.3
 CATEGORIES=	net
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,8 +18,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}autobahn>=0.14.1:www/py-autobahn \
 		${PYTHON_PKGNAMEPREFIX}service_identity>=0:security/py-service_identity \
 		${PYTHON_PKGNAMEPREFIX}six>=0:devel/py-six \
 		${PYTHON_PKGNAMEPREFIX}spake2>=0.7:security/py-spake2 \
-		${PYTHON_PKGNAMEPREFIX}tqdm>0:misc/py-tqdm \
-
+		${PYTHON_PKGNAMEPREFIX}tqdm>=4.13.0:misc/py-tqdm \
+		${PYTHON_PKGNAMEPREFIX}txtorcon>=0.19.3:security/py-txtorcon
 
 USES=		python
 USE_PYTHON=	autoplist distutils
