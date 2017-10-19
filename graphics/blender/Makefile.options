@@ -3,8 +3,8 @@
 OPTIONS_DEFINE=		\
 	AVI		\
 	BULLET 		\
-	CINEON 		\
 	CAMERATRACK 	\
+	CINEON 		\
 	COLLADA		\
 	COMPOSITOR 	\
 	CYCLES 		\
@@ -19,7 +19,6 @@ OPTIONS_DEFINE=		\
 	HEADLESS 	\
 	INPUT_NDOF	\
 	JACK 		\
-	LIBMV		\
 	LZO		\
 	LZMA		\
 	MENU 		\
@@ -31,13 +30,12 @@ OPTIONS_DEFINE=		\
 	NLS 		\
 	OPENAL 		\
 	OPENCOLORIO 	\
-	OPENIMAGEIO	\
 	OPENEXR 	\
+	OPENIMAGEIO	\
 	OPENJPEG 	\
 	OPENSUBDIV	\
 	PLAYER 		\
 	RAYOPTIMIZATION	\
-	REDCODE		\
 	SDL		\
 	SNDFILE		\
 	TIFF		\
@@ -47,29 +45,32 @@ OPTIONS_DEFINE=		\
 OPTIONS_DEFAULT=	\
 	AVI		\
 	BULLET		\
+	CAMERATRACK	\
 	CINEON		\
 	COMPOSITOR	\
+	CYCLES		\
 	DDS		\
+	FFMPEG 		\
 	FFTW3		\
 	FRAMESERVER	\
 	FREESTYLE	\
 	GAMEENGINE	\
 	HDR		\
 	INPUT_NDOF	\
-	LIBMV		\
 	LZO		\
 	LZMA		\
+	MENU		\
 	MOD_BOOLEAN	\
 	MOD_FLUID	\
+	MOD_OCEANSIM	\
 	MOD_REMESH	\
 	MOD_SMOKE	\
 	OPENAL		\
 	OPENCOLORIO	\
-	OPENIMAGEIO	\
 	OPENEXR		\
+	OPENIMAGEIO	\
 	OPENJPEG	\
-	OPENSUBDIV	\
-	PLAYER		\
+	RAYOPTIMIZATION	\
 	SDL		\
 	TIFF		\
 	XINPUT		\
@@ -91,7 +92,6 @@ GAMEENGINE_DESC=	Enable the game engine
 HDR_DESC=		Generic high dynamic-range (HDR) support
 HEADLESS_DESC=		Disable user interface (for render-farms)
 INPUT_NDOF_DESC=	Enable NDOF input device support
-LIBMV_DESC=		Enable motion tracking via libmv
 LZO_DESC=		Fast compression support
 LZMA_DESC=		Best compression support
 MENU_DESC=		Install desktop menu
@@ -105,8 +105,6 @@ OPENIMAGEIO_DESC=	OpenImageIO image processing support
 OPENSUBDIV_DESC=	Use the OpenSubDiv library for surface subdivision
 PLAYER_DESC=		Enable blender player
 RAYOPTIMIZATION_DESC=	Enable SSE optimizatons for raytracing
-REDCODE_DESC=		RedCode graphics format support
 SDL_DESC=		Audio and Joystick support using SDL
 XINPUT_DESC=		X11 Xinput (tablet) support
 XF86VMODE_DESC=		X11 video mode switching support
-
