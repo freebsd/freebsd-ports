@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mailfromd
-PORTVERSION=	8.1.90
-PORTREVISION=	1
+PORTVERSION=	8.2
 CATEGORIES=	mail
 MASTER_SITES=	http://download.gnu.org.ua/pub/release/${PORTNAME}/ \
 		http://download.gnu.org.ua/pub/alpha/${PORTNAME}/
@@ -34,7 +33,7 @@ INFO=		${PORTNAME}
 PORTDOCS=	AUTHORS ChangeLog NEWS README THANKS TODO
 
 OPTIONS_DEFINE=		DOCS DSPAM GEOIP NLS
-OPTIONS_DEFAULT=	BDB
+OPTIONS_DEFAULT=	GDBM
 OPTIONS_MULTI=		DB
 OPTIONS_MULTI_DB=	BDB GDBM
 OPTIONS_SUB=		yes
@@ -61,6 +60,9 @@ INVALID_BDB_VER=	5+
 
 GDBM_LIB_DEPENDS=	libgdbm.so:databases/gdbm
 GDBM_CONFIGURE_WITH=	gdbm
+
+post-patch:
+	@${REINPLACE_CMD} -e '/patch -lt 92/,+3d' ${WRKSRC}/configure
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DATABASEDIR} ${STAGEDIR}${MFD_RUN_DIR}
