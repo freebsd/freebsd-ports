@@ -1,0 +1,5 @@
+statsd-ruby is statsd client, written in, you guessed it, Ruby.  Is is not a
+direct port of the Python example code.  Statsd is a daemon for easy, but
+powerful stats aggregation.
+
+WWW: https://github.com/reinh/statsd
