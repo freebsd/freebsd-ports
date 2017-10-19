@@ -1,7 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	redis-rack
-PORTVERSION=	2.0.3
+DISTVERSION=	2.0.3
+PORTREVISION=	1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -14,10 +15,13 @@ LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 RUN_DEPENDS=	rubygem-rack>=1.5:www/rubygem-rack \
 		rubygem-redis-store>=1.2:devel/rubygem-redis-store
 
-NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
+USE_RUBY=	yes
 
-PLIST_FILES=	bin/appraisal bin/rake
+NO_ARCH=	yes
+
+post-install:
+	@${RM} ${STAGEDIR}${PREFIX}/bin/appraisal \
+		${STAGEDIR}${PREFIX}/bin/rake
 
 .include <bsd.port.mk>
