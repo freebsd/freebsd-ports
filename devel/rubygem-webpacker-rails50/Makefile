@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	webpacker
-PORTVERSION=	2.0
+PORTVERSION=	3.0.2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	-rails50
@@ -13,12 +13,15 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
 RUN_DEPENDS=	rubygem-activesupport50>0:devel/rubygem-activesupport50 \
-		rubygem-multi_json>=1.2:devel/rubygem-multi_json \
+		rubygem-rack-proxy>=0.6.1:www/rubygem-rack-proxy \
 		rubygem-railties50>0:www/rubygem-railties50 \
 		yarn>0:www/yarn
 
 NO_ARCH=	yes
 USE_RUBY=	yes
 USES=		gem
+
+post-install:
+	${RM} ${STAGEDIR}${PREFIX}/bin/webpack ${STAGEDIR}${PREFIX}/bin/webpack-dev-server
 
 .include <bsd.port.mk>
