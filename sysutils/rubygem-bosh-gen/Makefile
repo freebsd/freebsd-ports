@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	bosh-gen
-PORTVERSION=	0.94.0
+PORTVERSION=	0.95.0
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
