@@ -1,7 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	opensubdiv
-PORTVERSION=	3.3.0
+DISTVERSIONPREFIX=	v
+DISTVERSION=	3_3_0
 CATEGORIES?=	graphics
 
 MAINTAINER=	FreeBSD@Shaneware.biz
@@ -17,7 +18,6 @@ USES=		cmake:outsource
 USE_GITHUB=	yes
 GH_ACCOUNT=	PixarAnimationStudios
 GH_PROJECT=	OpenSubdiv
-GH_TAGNAME=	v3_3_0
 
 USE_GL=		gl glu glew
 CMAKE_VERBOSE=	yes
