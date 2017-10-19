@@ -3,9 +3,12 @@
 
 PORTNAME=	arj
 PORTVERSION=	3.10.22
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	archivers
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/2.78_3.10%20build%2022
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/2.78_3.10%20build%2022:source \
+		DEBIAN_POOL:patch
+DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.gz:source \
+		${PORTNAME}_${PORTVERSION}-16.debian.tar.xz:patch
 
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	Open source implementation of the ARJ archiver
@@ -14,6 +17,17 @@ LICENSE=	GPLv2
 
 PORTSCOUT=	skipv:3.10g
 
+EXTRA_PATCHES=	${WRKDIR}/debian/patches/*.patch
+IGNORE_PATCHES=	002_no_remove_static_const.patch  \
+		doc_refer_robert_k_jung.patch \
+		gnu_build_cross.patch \
+		gnu_build_fix.patch \
+		gnu_build_flags.patch \
+		gnu_build_pie.patch \
+		gnu_build_strip.patch \
+		hurd_no_fcntl_getlk.patch
+PATCH_STRIP=	-p1
+
 USES=		alias gmake
 USE_AUTOTOOLS=	autoconf
 CONFIGURE_WRKSRC=	${WRKSRC}/gnu
@@ -21,7 +35,6 @@ MAKEFILE=	GNUmakefile
 MAKE_ARGS=	LOCALE="${LANGUAGE}"
 ALL_TARGET=	prepare all
 STRIP=		# empty
-MAKE_JOBS_UNSAFE=	yes
 
 CFLAGS+=	-fPIC
 LANGUAGE?=	en
@@ -29,6 +42,9 @@ LANGUAGE?=	en
 PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS
+
+pre-patch:
+	@${RM} ${IGNORE_PATCHES:S,^,${WRKDIR}/debian/patches/,}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's!/etc!${LOCALBASE}/etc!' \
