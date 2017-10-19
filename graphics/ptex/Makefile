@@ -3,6 +3,7 @@
 PORTNAME=	ptex
 PORTVERSION=	2.1.28
 CATEGORIES?=	graphics
+DISTVERSIONPREFIX=	v
 
 MAINTAINER=	FreeBSD@Shaneware.biz
 COMMENT=	Per face texture library
@@ -14,14 +15,10 @@ USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	wdas
-GH_PROJECT=	ptex
-GH_TAGNAME=	v${PORTVERSION}
 
 OPTIONS_DEFINE=		DOCS
 
 DOCS_BUILD_DEPENDS=	doxygen:devel/doxygen
-
-.include <bsd.port.options.mk>
 
 post-build-DOCS-on:
 	@(cd ${WRKSRC}/src/doc && doxygen Doxyfile)
