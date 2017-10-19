@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	vte
-PORTVERSION=	3.1.8
+PORTVERSION=	3.1.9
 CATEGORIES=	x11-toolkits rubygems
 MASTER_SITES=	RG
 
