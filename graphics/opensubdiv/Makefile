@@ -65,10 +65,10 @@ PLIST_SUB+=		LIBVERS=${PORTVERSION}
 
 post-patch:
 	${FIND} ${WRKSRC}/tutorials -name CMakeLists.txt -exec \
-		${REINPLACE_CMD} -e 's|{CMAKE_BINDIR_BASE}/tutorials|{CMAKE_INSTALL_PREFIX}/${DATADIR_REL}/tutorials|g' {} \+
+		${REINPLACE_CMD} -e 's|{CMAKE_BINDIR_BASE}/tutorials|{CMAKE_INSTALL_PREFIX}/${DATADIR_REL}/tutorials|g' {} +
 	${FIND} ${WRKSRC}/examples -name CMakeLists.txt -exec \
-		${REINPLACE_CMD} -e 's|{CMAKE_BINDIR_BASE}|{CMAKE_INSTALL_PREFIX}/${EXAMPLESDIR_REL}|g' {} \+
+		${REINPLACE_CMD} -e 's|{CMAKE_BINDIR_BASE}|{CMAKE_INSTALL_PREFIX}/${EXAMPLESDIR_REL}|g' {} +
 	${FIND} ${WRKSRC}/regression -name CMakeLists.txt -exec \
-		${REINPLACE_CMD} -e 's|{CMAKE_BINDIR_BASE}|{CMAKE_INSTALL_PREFIX}/tests/${PORTNAME}|g' {} \+
+		${REINPLACE_CMD} -e 's|{CMAKE_BINDIR_BASE}|{CMAKE_INSTALL_PREFIX}/tests/${PORTNAME}|g' {} +
 
 .include <bsd.port.mk>
