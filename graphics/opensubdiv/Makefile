@@ -1,51 +1,80 @@
 # $FreeBSD$
 
 PORTNAME=	opensubdiv
-DISTVERSIONPREFIX=	v
-DISTVERSION=	3_0_5
-PORTREVISION=	5
-CATEGORIES=	graphics devel
+PORTVERSION=	3.3.0
+CATEGORIES?=	graphics
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	High performance subdivision surface libraries
+MAINTAINER=	FreeBSD@Shaneware.biz
+COMMENT=	OpenSubdiv graphics library
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-BUILD_DEPENDS=	${LOCALBASE}/include/GLFW/glfw3.h:graphics/glfw
+BUILD_DEPENDS=	glfw>2.7.0:graphics/glfw
+
+USES=		cmake:outsource
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	PixarAnimationStudios
 GH_PROJECT=	OpenSubdiv
+GH_TAGNAME=	v3_3_0
 
+USE_GL=		gl glu glew
+CMAKE_VERBOSE=	yes
 USE_LDCONFIG=	yes
-USE_GL=		glew
-USES=		cmake:outsource,noninja compiler pkgconfig
-USE_XORG=	x11 xi xcursor xrandr xxf86vm xinerama
+CMAKE_ARGS+=	-DNO_CUDA:BOOL=ON \
+		-DNO_DX:BOOL=ON \
+		-DNO_OMP:BOOL=ON
 
-CMAKE_ARGS+=	-DNO_TUTORIALS:BOOL=ON -DNO_EXAMPLES:BOOL=ON \
-		-DNO_REGRESSION:BOOL=ON -DNO_PTEX:BOOL=ON -DNO_CUDA:BOOL=ON \
-		-DNO_OPENCL:BOOL=ON -DNO_MAYA:BOOL=ON -DNO_TBB:BOOL=ON
+OPTIONS_DEFINE=		DOCS EXAMPLES OPENCL PTEX TBB TEST TUTORIALS
+OPTIONS_DEFAULT=	TBB
+OPTIONS_SUB=		yes
 
-OPTIONS_DEFINE=	DOCS
+DOCS_CMAKE_ON=		-DNO_DOC:BOOL=OFF
+DOCS_CMAKE_OFF=		-DNO_DOC:BOOL=ON
+DOCS_BUILD_DEPENDS=	rst2html.py:textproc/py-docutils \
+			doxygen>=1.8.4:devel/doxygen
 
-.include <bsd.port.pre.mk>
+EXAMPLES_CMAKE_ON=	-DNO_EXAMPLES:BOOL=OFF
+EXAMPLES_CMAKE_OFF=	-DNO_EXAMPLES:BOOL=ON
+EXAMPLES_USE=		xorg=ice,sm,x11,xcursor,xext,xi,xinerama,xrandr,xxf86vm
+EXAMPLES_LIB_DEPENDS=	libglfw.so:graphics/glfw
 
-.if ${CHOSEN_COMPILER_TYPE:Mgcc}
-# OpenMP is available
-PLIST_SUB+=	OPENMP=""
-.else
-PLIST_SUB+=	OPENMP="@comment "
-.endif
+OPENCL_CMAKE_ON=	-DNO_OPENCL:BOOL=OFF
+OPENCL_CMAKE_OFF=	-DNO_OPENCL:BOOL=ON
+OPENCL_CFLAGS=		-pthread
+OPENCL_CXXFLAGS=	-pthread
+OPENCL_BUILD_DEPENDS=	${LOCALBASE}/include/CL/cl.h:devel/opencl
+OPENCL_LIB_DEPENDS=	libOpenCL.so:devel/ocl-icd
 
-.include <bsd.port.options.mk>
+PTEX_DESC=		ptex support
+PTEX_CMAKE_ON=		-DNO_PTEX:BOOL=OFF -DPTEX_LOCATION:STRING=${LOCALBASE} \
+			-DPTEX_INCLUDE_DIR:STRING=${LOCALBASE}/include/ptex
+PTEX_CMAKE_OFF=		-DNO_PTEX:BOOL=ON
+PTEX_LIB_DEPENDS=	libPtex.so:graphics/ptex
 
-.if ${PORT_OPTIONS:MDOCS}
-BUILD_DEPENDS+=	doxygen:devel/doxygen \
-		python2:lang/python2 \
-		rst2html:textproc/py-docutils
-.else
-CMAKE_ARGS+=	-DNO_DOC:BOOL=ON
-.endif
+TBB_DESC=		Intel threading building blocks
+TBB_CMAKE_ON=		-DNO_TBB:BOOL=OFF
+TBB_CMAKE_OFF=		-DNO_TBB:BOOL=ON
+TBB_LIB_DEPENDS=	libtbb.so:devel/tbb
 
-.include <bsd.port.post.mk>
+TEST_CMAKE_ON=		-DNO_REGRESSION:BOOL=OFF -DNO_TESTS:BOOL=OFF -DNO_GLTESTS:BOOL=OFF
+TEST_CMAKE_OFF=		-DNO_REGRESSION:BOOL=ON -DNO_TESTS:BOOL=ON -DNO_GLTESTS:BOOL=ON
+TEST_LIB_DEPENDS=	libglfw.so:graphics/glfw
+TEST_USE=		xorg=ice,sm,x11,xcursor,xext,xi,xinerama,xrandr,xxf86vm
+
+TUTORIALS_DESC=		Install tutorial programs
+TUTORIALS_CMAKE_ON=	-DNO_TUTORIALS:BOOL=OFF
+TUTORIALS_CMAKE_OFF=	-DNO_TUTORIALS:BOOL=ON
+
+PLIST_SUB+=		LIBVERS=${PORTVERSION}
+
+post-patch:
+	${FIND} ${WRKSRC}/tutorials -name CMakeLists.txt | ${XARGS} ${REINPLACE_CMD} \
+	-e 's|{CMAKE_BINDIR_BASE}/tutorials|{CMAKE_INSTALL_PREFIX}/share/${PORTNAME}/tutorials|g'
+	${FIND} ${WRKSRC}/examples -name CMakeLists.txt | ${XARGS} ${REINPLACE_CMD} \
+	-e 's|{CMAKE_BINDIR_BASE}|{CMAKE_INSTALL_PREFIX}/share/${PORTNAME}/examples|g'
+	${FIND} ${WRKSRC}/regression -name CMakeLists.txt | ${XARGS} ${REINPLACE_CMD} \
+	-e 's|{CMAKE_BINDIR_BASE}|{CMAKE_INSTALL_PREFIX}/share/${PORTNAME}/test|g'
+
+.include <bsd.port.mk>
