@@ -2781,7 +2781,6 @@
     SUBDIR += p5-Log-Any-Adapter-Callback
     SUBDIR += p5-Log-Any-Adapter-Dispatch
     SUBDIR += p5-Log-Any-Adapter-Log4perl
-    SUBDIR += p5-Log-Any-Adapter-Syslog
     SUBDIR += p5-Log-Any-App
     SUBDIR += p5-Log-Any-IfLOG
     SUBDIR += p5-Log-Contextual
