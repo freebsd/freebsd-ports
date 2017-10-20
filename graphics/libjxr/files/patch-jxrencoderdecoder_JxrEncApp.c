@@ -3,7 +3,7 @@ Author: Mathieu Malaterre <malat@debian.org>
 
 Cleaned up for FreeBSD by mi
 
---- jxrencoderdecoder/JxrEncApp.c
+--- jxrencoderdecoder/JxrEncApp.c.orig	2017-10-20 15:09:28 UTC
 +++ jxrencoderdecoder/JxrEncApp.c
 @@ -578,7 +578,7 @@ main(int argc, char* argv[])
  
@@ -14,14 +14,3 @@ Cleaned up for FreeBSD by mi
  
      //----------------------------------------------------------------
      Call(PKCreateTestFactory(&pTestFactory, WMP_SDK_VERSION));
---- jxrgluelib/JXRMeta.h
-+++ jxrgluelib/JXRMeta.h
-@@ -34,7 +34,7 @@
- 
- #ifndef UNREFERENCED_PARAMETER
- #define UNREFERENCED_PARAMETER(P) { (P) = (P); }
--#endif UNREFERENCED_PARAMETER
-+#endif /*UNREFERENCED_PARAMETER*/
- 
- //================================================================
- // Container
