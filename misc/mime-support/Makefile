@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mime-support
-PORTVERSION=	3.59
+PORTVERSION=	3.60
 CATEGORIES=	misc
 MASTER_SITES=	DEBIAN_POOL
 DISTNAME=	${PORTNAME}_${PORTVERSION:C/([0-9]*\.[0-9]*)\.(.*)/\1-\2/}
@@ -16,7 +16,7 @@ USES=		cpe shebangfix
 
 CPE_VENDOR=	debian
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:C/\.2$//}
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
 NO_BUILD=	yes
 PLIST_FILES=	bin/run-mailcap etc/mime.types \
