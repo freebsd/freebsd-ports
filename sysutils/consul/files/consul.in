@@ -66,6 +66,7 @@ consul_startprecmd()
 consul_checkconfig()
 {
 	${procname} validate /usr/local/etc/consul.d
+	return 0
 }
 
 run_rc_command "$1"
