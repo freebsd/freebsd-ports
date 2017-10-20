@@ -76,7 +76,7 @@ _FPC_ALL_UNITS=	a52 aspell bfd bzip2 cairo chm dblib dbus dts fastcgi \
 		ncurses newt numlib odbc oggvorbis openal opengl openssl \
 		oracle pasjpeg pcap postgres proj4 pthreads pxlib regexpr \
 		rexx rsvg rtl-console rtl-extra rtl-objpas rtl-unicode sdl \
-		sqlite svgalib symbolic syslog tcl unzip users utmp \
+		sqlite svgalib symbolic syslog unzip users utmp \
 		uuid x11 xforms zlib
 
 .if defined(WANT_FPC_BASE)
@@ -189,7 +189,6 @@ sdl_UNIT=	devel/fpc-sdl
 svgalib_UNIT=	graphics/fpc-svgalib
 symbolic_UNIT=	devel/fpc-symbolic
 syslog_UNIT=	sysutils/fpc-syslog
-tcl_UNIT=	lang/fpc-tcl
 unzip_UNIT=	archivers/fpc-unzip
 users_UNIT=	sysutils/fpc-users
 utmp_UNIT=	sysutils/fpc-utmp
