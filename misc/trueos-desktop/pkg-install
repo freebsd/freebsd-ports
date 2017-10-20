@@ -90,5 +90,12 @@ if [ ! -e "/var/.openrc-migrate-7" ] ; then
 fi
 touch /var/.openrc-migrate-7
 
+if [ ! -e "/var/.openrc-migrate-8" ] ; then
+    /usr/sbin/sysrc -f /etc/rc.conf kld_list-="i915kms"
+fi
+touch /var/.openrc-migrate-8
+
+
+
 
 exit 0

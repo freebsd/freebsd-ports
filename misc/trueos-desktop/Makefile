@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	trueos-desktop
-PORTVERSION=	201710161221
+PORTVERSION=	201710201949
 CATEGORIES=	misc
 MASTER_SITES=
 DISTFILES=
@@ -30,6 +30,8 @@ RUN_DEPENDS=	${LOCALBASE}/sbin/PCDMd:x11/pcdm \
 		${LOCALBASE}/bin/xdg-open:devel/xdg-utils \
 		${LOCALBASE}/bin/xvkbd:x11/xvkbd \
 		${LOCALBASE}/sbin/anacron:sysutils/anacron \
+		paprefs>=0:audio/paprefs \
+		pavucontrol>=0:audio/pavucontrol \
 		drm-next-kmod>=g20170918:graphics/drm-next-kmod \
 		trueos-handbook>=0:misc/trueos-handbook \
 		lumina>=0:x11/lumina \
@@ -68,6 +70,6 @@ MAKE_ARGS=	PREFIX=${STAGEDIR}${PREFIX}
 USE_GITHUB=     yes
 GH_ACCOUNT=     trueos
 GH_PROJECT=     trueos-core
-GH_TAGNAME=     8aff07212d7641ece5e80e58589a72d86e47f2a9
+GH_TAGNAME=     117641703c61109031a48046c4ac6a3bca08a7bf
 
 .include <bsd.port.mk>
