@@ -3,7 +3,7 @@
 
 PORTNAME=	smalltalk
 PORTVERSION=	3.2.5
-PORTREVISION=	10
+PORTREVISION=	9
 CATEGORIES=	lang
 MASTER_SITES=	GNU
 
@@ -15,9 +15,11 @@ BUILD_DEPENDS=	zip:archivers/zip \
 LIB_DEPENDS=	libgdbm.so:databases/gdbm \
 		libcairo.so:graphics/cairo
 
-OPTIONS_DEFINE=	PGSQL SDL
-OPTIONS_DEFAULT=PGSQL SDL
+OPTIONS_DEFINE=	TK PGSQL SDL
+OPTIONS_DEFAULT=TK PGSQL SDL
 OPTIONS_SUB=	yes
+TK_USES=	tk:84
+TK_CONFIGURE_WITH=tcl=${LOCALBASE}/lib/tcl8.4 tk=${LOCALBASE}/lib/tk8.4
 PGSQL_USES=	pgsql
 SDL_USE=	SDL=image,mixer,sdl,sound,ttf
 
