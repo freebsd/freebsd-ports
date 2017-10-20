@@ -1,6 +1,6 @@
---- src/fr-command-zip.c.orig	2015-02-15 10:13:10 UTC
-+++ src/fr-command-zip.c
-@@ -179,7 +179,11 @@ fr_command_zip_list (FrCommand  *comm)
+--- src/fr-command-zip.c.orig	2010-11-16 08:32:18.000000000 +0000
++++ src/fr-command-zip.c	2011-01-20 16:55:45.000000000 +0000
+@@ -186,7 +186,11 @@ fr_command_zip_list (FrCommand  *comm)
  {
  	fr_process_set_out_line_func (comm->process, list__process_line, comm);
  
@@ -11,8 +11,8 @@
 +#endif
  	fr_process_set_begin_func (comm->process, list__begin, comm);
  	fr_process_add_arg (comm->process, "-ZTs");
- 	fr_process_add_arg (comm->process, "--");
-@@ -299,7 +303,11 @@ fr_command_zip_extract (FrCommand  *comm
+ 	fr_process_add_arg (comm->process, comm->filename);
+@@ -301,7 +305,11 @@ fr_command_zip_extract (FrCommand  *comm
  				      process_line__common,
  				      comm);
  
@@ -34,5 +34,5 @@
  	fr_process_begin_command (comm->process, "unzip");
 +#endif
  	fr_process_add_arg (comm->process, "-t");
- 	add_password_arg (comm, FR_ARCHIVE (comm)->password);
- 	fr_process_add_arg (comm->process, "--");
+ 	add_password_arg (comm, comm->password);
+ 	fr_process_add_arg (comm->process, comm->filename);
