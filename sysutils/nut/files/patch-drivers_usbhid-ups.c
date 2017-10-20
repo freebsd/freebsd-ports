@@ -1,5 +1,13 @@
 --- drivers/usbhid-ups.c.orig	2015-12-29 12:08:34 UTC
 +++ drivers/usbhid-ups.c
+@@ -30,6 +30,7 @@
+ #define DRIVER_VERSION		"0.41"
+ 
+ #include "main.h"
++#include "libusb.h"
+ #include "libhid.h"
+ #include "usbhid-ups.h"
+ #include "hidparser.h"
 @@ -790,22 +790,14 @@ void upsdrv_updateinfo(void)
  	/* Get HID notifications on Interrupt pipe first */
  	if (use_interrupt_pipe == TRUE) {
