@@ -736,7 +736,6 @@ libexec/dovecot/script
 libexec/dovecot/script-login
 libexec/dovecot/ssl-params
 libexec/dovecot/stats
-libexec/dovecot/tcpwrap
 libexec/dovecot/xml2text
 man/man1/deliver.1.gz
 man/man1/doveadm-acl.1.gz
@@ -807,6 +806,7 @@ share/aclocal/dovecot.m4
 %%LDAP%%lib/dovecot/libdovecot-ldap.so
 %%LDAP%%lib/dovecot/libdovecot-ldap.so.0
 %%LDAP%%lib/dovecot/libdovecot-ldap.so.0.0.0
+%%LIBWRAP%%libexec/dovecot/tcpwrap
 %%LUCENE%%lib/dovecot/doveadm/lib20_doveadm_fts_lucene_plugin.a
 %%LUCENE%%lib/dovecot/doveadm/lib20_doveadm_fts_lucene_plugin.so
 %%LUCENE%%lib/dovecot/lib21_fts_lucene_plugin.a
