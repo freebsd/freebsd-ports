@@ -5,13 +5,13 @@
 
 # PROVIDE: watchfrr
 # REQUIRE: NETWORKING frr
-# KEYWORD: shutdown
+# KEYWORD: nojailvtnet shutdown
 
 # Add the following line to /etc/rc.conf to enable watchfrr:
 # watchfrr_enable="YES"
 #
 # You may also wish to use the following variables to fine-tune startup:
-# watchquagga_flags
+# watchfrr_flags
 
 . /etc/rc.subr
 
