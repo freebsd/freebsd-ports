@@ -13,6 +13,7 @@
 
 PORTNAME=	dovecot
 PORTVERSION=	2.2.33.2
+PORTREVISION=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	https://www.dovecot.org/releases/2.2/
 
@@ -21,6 +22,8 @@ COMMENT=	Secure, fast and powerful IMAP and POP3 server
 
 LICENSE=	LGPL21 MIT
 LICENSE_COMB=	dual
+LICENSE_FILE_LGPL21=	${WRKSRC}/COPYING.LGPL
+LICENSE_FILE_MIT=	${WRKSRC}/COPYING.MIT
 
 USES=		cpe iconv libtool ssl
 USE_RC_SUBR=	dovecot
@@ -30,7 +33,8 @@ CONFIGURE_ARGS=	--localstatedir=/var \
 		--with-statedir=/var/db/dovecot \
 		--without-shadow \
 		--with-ssl=openssl \
-		--with-docs
+		--with-docs \
+		--with-libwrap
 
 USE_LDCONFIG=	${PREFIX}/lib/dovecot
 INSTALL_TARGET=	install-strip
@@ -38,8 +42,8 @@ INSTALL_TARGET=	install-strip
 USERS=		dovecot dovenull
 GROUPS=		${USERS}
 
-OPTIONS_DEFINE=	KQUEUE LIBWRAP LZ4 VPOPMAIL DOCS EXAMPLES
-OPTIONS_DEFAULT=KQUEUE GSSAPI_NONE
+OPTIONS_DEFINE=	LZ4 VPOPMAIL DOCS EXAMPLES
+OPTIONS_DEFAULT=GSSAPI_NONE
 OPTIONS_SUB=	yes
 
 OPTIONS_GROUP=		DB FTS
@@ -49,7 +53,6 @@ OPTIONS_GROUP_FTS=	ICU LUCENE SOLR TEXTCAT
 OPTIONS_SINGLE=		GSSAPI
 OPTIONS_SINGLE_GSSAPI=	GSSAPI_NONE GSSAPI_BASE GSSAPI_HEIMDAL GSSAPI_MIT
 
-KQUEUE_DESC=	kqueue(2) support
 LZ4_DESC=	LZ4 compression support
 VPOPMAIL_DESC=	vpopmail support
 
@@ -68,11 +71,6 @@ GSSAPI_HEIMDAL_DESC=	Use Heimdal GSSAPI from security/heimdal
 GSSAPI_MIT_DESC=	Use MIT GSSAPI from security/krb5
 
 # General options
-KQUEUE_CONFIGURE_OFF=	--with-ioloop=poll --with-notify=none
-KQUEUE_CONFIGURE_ON=	--with-ioloop=kqueue --with-notify=kqueue
-
-LIBWRAP_CONFIGURE_WITH=	libwrap
-
 LZ4_CONFIGURE_WITH=	lz4
 LZ4_LIB_DEPENDS=	liblz4.so:archivers/liblz4
 
@@ -92,7 +90,7 @@ MYSQL_CONFIGURE_WITH=	mysql
 PGSQL_USES=		pgsql
 PGSQL_CONFIGURE_WITH=	pgsql
 
-SQLITE_USES=		sqlite:3
+SQLITE_USES=		sqlite
 SQLITE_CONFIGURE_WITH=	sqlite
 
 # FTS
@@ -117,7 +115,7 @@ GSSAPI_BASE_USES=		gssapi
 GSSAPI_HEIMDAL_USES=		gssapi:heimdal
 GSSAPI_MIT_USES=		gssapi:mit
 
-DOCS=		AUTHORS COPYING COPYING.LGPL COPYING.MIT INSTALL NEWS TODO README
+DOCS=		AUTHORS COPYING INSTALL NEWS TODO README
 PORTDOCS=	*
 PORTEXAMPLES=	*
 
@@ -144,7 +142,7 @@ post-patch:
 	@${REINPLACE_CMD} -e '/^exampledir =/s|\$$(docdir)|${ETCDIR}|' \
 		${WRKSRC}/doc/example-config/Makefile.in \
 		${WRKSRC}/doc/example-config/conf.d/Makefile.in
-	@${REINPLACE_CMD} -e '/^[^#]/s|/usr|${LOCALBASE}|' \
+	@${REINPLACE_CMD} -e 's|/usr/bin|${LOCALBASE}/bin|' \
 		${WRKSRC}/src/plugins/fts/decode2text.sh
 
 post-install:
