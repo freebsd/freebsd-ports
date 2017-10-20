@@ -696,6 +696,8 @@ lib/dovecot/libfs_crypt.a
 lib/dovecot/libfs_crypt.so
 lib/dovecot/libfs_mail_crypt.a
 lib/dovecot/libfs_mail_crypt.so
+lib/dovecot/libssl_iostream_openssl.a
+lib/dovecot/libssl_iostream_openssl.so
 lib/dovecot/stats/libstats_auth.a
 lib/dovecot/stats/libstats_auth.so
 lib/dovecot/stats/libstats_mail.a
@@ -734,6 +736,7 @@ libexec/dovecot/script
 libexec/dovecot/script-login
 libexec/dovecot/ssl-params
 libexec/dovecot/stats
+libexec/dovecot/tcpwrap
 libexec/dovecot/xml2text
 man/man1/deliver.1.gz
 man/man1/doveadm-acl.1.gz
@@ -797,7 +800,6 @@ share/aclocal/dovecot.m4
 %%DATADIR%%/stopwords/stopwords_ro.txt
 %%DATADIR%%/stopwords/stopwords_ru.txt
 %%DATADIR%%/stopwords/stopwords_sv.txt
-%%LIBWRAP%%libexec/dovecot/tcpwrap
 %%LDAP%%include/dovecot/ldap-client.h
 %%LDAP%%lib/dovecot/dict/libdict_ldap.a
 %%LDAP%%lib/dovecot/dict/libdict_ldap.so
@@ -811,6 +813,4 @@ share/aclocal/dovecot.m4
 %%LUCENE%%lib/dovecot/lib21_fts_lucene_plugin.so
 %%SOLR%%lib/dovecot/lib21_fts_solr_plugin.a
 %%SOLR%%lib/dovecot/lib21_fts_solr_plugin.so
-lib/dovecot/libssl_iostream_openssl.a
-lib/dovecot/libssl_iostream_openssl.so
 @postunexec echo "If you are removing dovecot2 permanently, you should 'rm -rf /var/db/dovecot' to clear out any remaining data."
