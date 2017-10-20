@@ -4270,6 +4270,7 @@
     SUBDIR += py-capstone
     SUBDIR += py-castellan
     SUBDIR += py-cclib
+    SUBDIR += py-cdg
     SUBDIR += py-celery
     SUBDIR += py-certsrv
     SUBDIR += py-cffi
