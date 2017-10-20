@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	flang
-DISTVERSION=	4.0-20170812
+DISTVERSION=	4.0-20171019
 PORTREVISION=	1
 CATEGORIES=	devel
 
@@ -13,10 +13,8 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 BUILD_DEPENDS=	llvm40>=0:devel/llvm40 \
-		openmp>=0:devel/openmp \
 		flang-clang>=0:devel/flang-clang
 RUN_DEPENDS=	llvm40>=0:devel/llvm40 \
-		openmp>=0:devel/openmp \
 		flang-clang>=0:devel/flang-clang
 
 ONLY_FOR_ARCHS=	amd64
@@ -33,12 +31,13 @@ USES+=		${_USES_PYTHON}
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	flang-compiler
-GH_TAGNAME=	f7af78c
+GH_TAGNAME=	e68c31f
 
 CMAKE_ARGS+=	-DLLVM_CONFIG=${LOCALBASE}/bin/llvm-config40 \
 		-DCMAKE_CXX_COMPILER=${LOCALBASE}flang/bin/clang++ \
 		-DCMAKE_C_COMPILER=${LOCALBASE}/flang/bin/clang \
-		-DCMAKE_Fortran_COMPILER=${LOCALBASE}/flang/bin/flang
+		-DCMAKE_Fortran_COMPILER=${LOCALBASE}/flang/bin/flang \
+		-DFLANG_LIBOMP=${LOCALBASE}/llvm40/lib/libomp.so
 
 CMAKE_INSTALL_PREFIX=	${PREFIX}/flang
 
