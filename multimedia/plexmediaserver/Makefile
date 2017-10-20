@@ -3,18 +3,18 @@
 
 PORTNAME=	plexmediaserver
 PORTVERSION?=	1.9.4.4325
+DISTVERSIONSUFFIX?=1bf240a65
 PORTREVISION?=	0
 CATEGORIES=	multimedia
-MASTER_SITES=	https://downloads.plex.tv/plex-media-server/${PORTVERSION}-${PLEX_BUILD}/
-DISTNAME=	PlexMediaServer-${PORTVERSION}-${PLEX_BUILD}-freebsd-${ARCH}
+MASTER_SITES=	https://downloads.plex.tv/plex-media-server/${DISTVERSION}/
+DISTNAME=	PlexMediaServer-${DISTVERSION}-${DISTVERSIONSUFFIX}-freebsd-${ARCH}
 
 MAINTAINER?=	feld@FreeBSD.org
 COMMENT=	Plex Media Server component
 
 USES=		cpe tar:bzip2
-PLEX_BUILD?=	1bf240a65
 NO_BUILD=	yes
-WRKSRC=	${WRKDIR}/PlexMediaServer-${PORTVERSION}-${PLEX_BUILD}
+WRKSRC=	${WRKDIR}/PlexMediaServer-${PORTVERSION}-${DISTVERSIONSUFFIX}
 
 CPE_VENDOR=	plex
 CPE_PRODUCT=	plex_media_server
@@ -24,7 +24,7 @@ USE_RC_SUBR?=	${PORTNAME}
 
 SUB_FILES=	pkg-message
 SUB_LIST?=	PORTNAME=${PORTNAME} DATADIR=${DATADIR} USERS=${USERS} GROUPS=${GROUPS}
-PLIST_SUB+=	PLEX_BUILD=${PLEX_BUILD}
+PLIST_SUB+=	PLEX_BUILD=${DISTVERSIONSUFFIX}
 
 USERS=	plex
 GROUPS=	${USERS}
