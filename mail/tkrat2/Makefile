@@ -11,6 +11,9 @@ MASTER_SITES=	http://tkrat.org/downloads/stable/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mail user agent for X with a Tcl/Tk user interface
 
+DEPRECATED=		Tcl/Tk 8.4 is no longer maintained, please use 8.5+
+EXPIRATION_DATE=	2017-11-20
+
 LICENSE=	BSD3CLAUSE
 
 LIB_DEPENDS=	libtcl84.so:lang/tcl84 \

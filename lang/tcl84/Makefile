@@ -15,7 +15,7 @@ MAINTAINER=	tcltk@FreeBSD.org
 COMMENT=	Tool Command Language
 
 DEPRECATED=		Tcl/Tk 8.4 is no longer maintained, please use 8.5+
-EXPIRATION_DATE=	2017-10-15
+EXPIRATION_DATE=	2017-11-20
 
 LICENSE=	TclTk
 LICENSE_NAME=	Tcl/Tk License
