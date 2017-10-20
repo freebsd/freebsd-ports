@@ -14,6 +14,9 @@ COMMENT=	Combined DHCP/DNS server for small LANs
 
 LICENSE=	GPLv2
 
+DEPRECATED=	Please migrate to dns/dnsmasq. Over the years dualserver becomes unmaintenaible.
+EXPIRATION_DATE=	2018-01-01
+
 USES=		dos2unix
 USE_RC_SUBR=	dualserver
 PLIST_FILES=	sbin/dualserver etc/dualserver.conf.sample
