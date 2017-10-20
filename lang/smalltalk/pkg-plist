@@ -16,9 +16,6 @@ lib/libgst.a
 lib/libgst.so
 lib/libgst.so.7
 lib/libgst.so.7.1.3
-%%TK%%lib/smalltalk/blox-tk-%%VERSION%%.so
-%%TK%%lib/smalltalk/blox-tk.a
-%%TK%%lib/smalltalk/blox-tk.so
 lib/smalltalk/dbd-sqlite3-%%VERSION%%.so
 lib/smalltalk/dbd-sqlite3.a
 lib/smalltalk/dbd-sqlite3.so

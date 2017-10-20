@@ -3,6 +3,7 @@
 
 PORTNAME=	labltk
 PORTVERSION=	8.06.0
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://forge.ocamlcore.org/frs/download.php/1455/
 PKGNAMEPREFIX=	ocaml-
@@ -12,7 +13,7 @@ COMMENT=	Objective Caml interface to Tk
 
 LICENSE=	LGPL20
 
-USES=		gmake tk:84,85
+USES=		gmake tk:85
 HAS_CONFIGURE=	yes
 MAKE_JOBS_UNSAFE=yes
 MAKE_ENV+=	STAGEDIR="${STAGEDIR}"
