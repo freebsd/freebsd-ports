@@ -1,18 +1,13 @@
 bin/dconf
-include/dconf-dbus-1/dconf-dbus-1.h
 include/dconf/client/dconf-client.h
 include/dconf/common/dconf-changeset.h
-include/dconf/common/dconf-error.h
+include/dconf/common/dconf-enums.h
 include/dconf/common/dconf-paths.h
 include/dconf/dconf.h
 lib/gio/modules/libdconfsettings.so
-lib/libdconf-dbus-1.so
-lib/libdconf-dbus-1.so.0
-lib/libdconf-dbus-1.so.0.0.0
 lib/libdconf.so
 lib/libdconf.so.1
 lib/libdconf.so.1.0.0
-libdata/pkgconfig/dconf-dbus-1.pc
 libdata/pkgconfig/dconf.pc
 libexec/dconf-service
 man/man1/dconf-service.1.gz
@@ -33,7 +28,6 @@ share/gtk-doc/html/dconf/dconf-tool.html
 share/gtk-doc/html/dconf/dconf.devhelp2
 share/gtk-doc/html/dconf/home.png
 share/gtk-doc/html/dconf/index.html
-share/gtk-doc/html/dconf/index.sgml
 share/gtk-doc/html/dconf/left-insensitive.png
 share/gtk-doc/html/dconf/left.png
 share/gtk-doc/html/dconf/object-tree.html
