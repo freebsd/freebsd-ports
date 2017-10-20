@@ -13,6 +13,7 @@ libexec/poudriere/locked_mkdir
 libexec/poudriere/nc
 libexec/poudriere/poudriered
 libexec/poudriere/ptsort
+libexec/poudriere/pwait
 libexec/poudriere/rename
 libexec/poudriere/rexec
 %%RM%%libexec/poudriere/rm
