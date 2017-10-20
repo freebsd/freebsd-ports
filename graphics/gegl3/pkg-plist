@@ -1,3 +1,4 @@
+bin/gcut
 bin/gegl3
 bin/gegl-imgcmp
 include/gegl-%%GEGL_VER%%/gegl-apply.h
@@ -82,15 +83,15 @@ lib/gegl-%%GEGL_VER%%/gegl-core.so
 lib/gegl-%%GEGL_VER%%/gegl-generated.so
 lib/gegl-%%GEGL_VER%%/grey2.json
 %%JASPER%%lib/gegl-%%GEGL_VER%%/jp2-load.so
-%%JPEG%%lib/gegl-%%GEGL_VER%%/jpg-load.so
-%%JPEG%%lib/gegl-%%GEGL_VER%%/jpg-save.so
+lib/gegl-%%GEGL_VER%%/jpg-load.so
+lib/gegl-%%GEGL_VER%%/jpg-save.so
 %%LCMS2%%lib/gegl-%%GEGL_VER%%/lcms-from-profile.so
 %%CAIRO%%lib/gegl-%%GEGL_VER%%/npd.so
 lib/gegl-%%GEGL_VER%%/npy-save.so
 %%CAIRO%%lib/gegl-%%GEGL_VER%%/path.so
 %%PIXBUF%%lib/gegl-%%GEGL_VER%%/pixbuf.so
-%%PNG%%lib/gegl-%%GEGL_VER%%/png-load.so
-%%PNG%%lib/gegl-%%GEGL_VER%%/png-save.so
+lib/gegl-%%GEGL_VER%%/png-load.so
+lib/gegl-%%GEGL_VER%%/png-save.so
 lib/gegl-%%GEGL_VER%%/ppm-load.so
 lib/gegl-%%GEGL_VER%%/ppm-save.so
 %%RAW%%lib/gegl-%%GEGL_VER%%/raw-load.so
