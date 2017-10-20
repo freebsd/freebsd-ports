@@ -1,3 +1,0 @@
-lib/fpc/%%PORTVERSION%%/fpmkinst/%%BUILDNAME%%/tcl.fpm
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/tcl/tcl80.o
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/tcl/tcl80.ppu
