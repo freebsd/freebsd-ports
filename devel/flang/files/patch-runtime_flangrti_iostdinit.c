@@ -1,4 +1,4 @@
---- runtime/flangrti/iostdinit.c.orig	2017-05-17 00:40:01 UTC
+--- runtime/flangrti/iostdinit.c.orig	2017-10-19 11:03:03 UTC
 +++ runtime/flangrti/iostdinit.c
 @@ -160,7 +160,7 @@ __io_ferror(void *p)
  int
@@ -9,7 +9,7 @@
  }
  
  /* is a tty? */
-@@ -270,14 +270,14 @@ extern long *_imp___timezone_dll; /* for
+@@ -270,14 +270,14 @@ extern long *_imp___timezone_dll; /* for crtdll.dll */
  #define timezone _timezone /* cygnus, timezone is usually a function */
  #endif
  
