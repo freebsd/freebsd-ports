@@ -99,7 +99,6 @@
     SUBDIR += gcc49
     SUBDIR += gcc5
     SUBDIR += gcc5-aux
-    SUBDIR += gcc5-devel
     SUBDIR += gcc6
     SUBDIR += gcc6-aux
     SUBDIR += gcc6-devel
