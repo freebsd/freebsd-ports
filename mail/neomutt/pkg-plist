@@ -2,13 +2,13 @@ bin/neomutt
 lib/neomutt/pgpewrap
 lib/neomutt/pgpring
 lib/neomutt/smime_keys
-%%PORTDOCS%%man/man1/neomutt.1.gz
-%%PORTDOCS%%man/man1/pgpewrap_neomutt.1.gz
-%%PORTDOCS%%man/man1/pgpring_neomutt.1.gz
-%%PORTDOCS%%man/man1/smime_keys_neomutt.1.gz
-%%PORTDOCS%%man/man5/mbox_neomutt.5.gz
-%%PORTDOCS%%man/man5/mmdf_neomutt.5.gz
-%%PORTDOCS%%man/man5/neomuttrc.5.gz
+man/man1/neomutt.1.gz
+man/man1/pgpewrap_neomutt.1.gz
+man/man1/pgpring_neomutt.1.gz
+man/man1/smime_keys_neomutt.1.gz
+man/man5/mbox_neomutt.5.gz
+man/man5/mmdf_neomutt.5.gz
+man/man5/neomuttrc.5.gz
 @sample etc/neomuttrc.dist etc/neomuttrc
 %%NLS%%share/locale/bg/LC_MESSAGES/neomutt.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/neomutt.mo

@@ -162,6 +162,7 @@
     SUBDIR += nemo-extensions
     SUBDIR += note
     SUBDIR += notecase
+    SUBDIR += noti
     SUBDIR += notification-daemon
     SUBDIR += notify-osd
     SUBDIR += orage

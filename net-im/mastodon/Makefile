@@ -2,8 +2,7 @@
 
 PORTNAME=	mastodon
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.6.1
-PORTREVISION=	1
+DISTVERSION=	2.0.0
 CATEGORIES=	net-im www
 
 MAINTAINER=	jrm@FreeBSD.org
@@ -53,6 +52,7 @@ BR_DEPENDS=	ffmpeg>0:multimedia/ffmpeg \
 		rubygem-link_header>=0.0.8:www/rubygem-link_header \
 		rubygem-mime-types>=3.1:misc/rubygem-mime-types \
 		rubygem-nokogiri>=1.8.0_1:textproc/rubygem-nokogiri \
+		rubygem-nsa-rails5>=0.2:devel/rubygem-nsa-rails5 \
 		rubygem-oj>=3.3.4:devel/rubygem-oj \
 		rubygem-ostatus2>=2.0.1:www/rubygem-ostatus2 \
 		rubygem-ox>=2.5.0:textproc/rubygem-ox \
@@ -75,7 +75,7 @@ BR_DEPENDS=	ffmpeg>0:multimedia/ffmpeg \
 		rubygem-simple-navigation>=4.0.5_1:devel/rubygem-simple-navigation \
 		rubygem-simple_form-rails5>=3.5.0:devel/rubygem-simple_form-rails5 \
 		rubygem-sprockets-rails-rails5>=3.2.0:devel/rubygem-sprockets-rails-rails5 \
-		rubygem-statsd-instrument>=2.1.4:devel/rubygem-statsd-instrument \
+		rubygem-strong_migrations>=0.1.9:devel/rubygem-strong_migrations \
 		rubygem-twitter-text>=1.14.7:textproc/rubygem-twitter-text \
 		rubygem-tzinfo-data>=1.2017.2:devel/rubygem-tzinfo-data \
 		rubygem-webpacker-rails5>=2.0:devel/rubygem-webpacker-rails5 \
@@ -89,7 +89,7 @@ USES=		gmake gnome pgsql python:build,2 shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	tootsuite jehops:mn
 GH_PROJECT=	mastodon_node:mn
-GH_TAGNAME=	1.6.0:mn
+GH_TAGNAME=	2.0.0:mn
 USE_GNOME=	libxml2 libxslt
 USE_RC_SUBR=	mastodon_stream mastodon_web mastodon_workers
 USE_RUBY=	yes
@@ -114,6 +114,7 @@ do-build:
 	@${RM} ${WRKSRC}/Gemfile.lock
 	HOME=${WRKSRC_mn} yarn config set yarn-offline-mirror ${WRKSRC_mn} --offline
 	HOME=${WRKSRC_mn} yarn config set nodedir ${LOCALBASE} --offline
+	@${CP} ${FILESDIR}/yarn.lock.in ${WRKSRC}/yarn.lock
 	(cd ${WRKSRC} && HOME=${WRKSRC_mn} yarn --offline)
 	(cd ${WRKSRC} && \
 		NODE_ENV=production RAILS_ENV=production \

@@ -1,0 +1,14 @@
+This is an initial tagging script for notmuch mail.
+
+Its basic task is to provide automatic tagging each time new
+mail is registered with notmuch.  In a classic setup, you might
+call it after 'notmuch new' in an offlineimap post sync hook.
+
+It can do basic thing such as adding tags based on email headers
+or maildir folders, handling killed threads and spam.
+
+In move mode, afew will move mails between maildir folders
+according to configurable rules that can contain arbitrary
+notmuch queries to match against any searchable attributes.
+
+WWW: https://github.com/afewmail/afew

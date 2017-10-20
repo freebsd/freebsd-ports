@@ -26,7 +26,7 @@ Gem::Specification.new do |s|
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
       s.add_runtime_dependency(%q<google-protobuf>.freeze, ["~> 3.1"])
-      s.add_runtime_dependency(%q<googleauth>.freeze, ["~> 0.5.1"])
+      s.add_runtime_dependency(%q<googleauth>.freeze, ["~> 0.5", ">= 0.5.1"])
       s.add_development_dependency(%q<bundler>.freeze, ["~> 1.9"])
       s.add_development_dependency(%q<facter>.freeze, ["~> 2.4"])
       s.add_development_dependency(%q<logging>.freeze, ["~> 2.0"])

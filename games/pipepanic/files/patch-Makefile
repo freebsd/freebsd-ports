@@ -1,6 +1,6 @@
---- Makefile.orig	Wed May 17 00:11:29 2006
-+++ Makefile	Sat May 20 18:49:20 2006
-@@ -3,11 +3,10 @@
+--- Makefile.orig	2006-05-16 20:11:29 UTC
++++ Makefile
+@@ -3,11 +3,10 @@ OBJECTS=main.o
  TARGET=pipepanic
  
  # Settings for x86.

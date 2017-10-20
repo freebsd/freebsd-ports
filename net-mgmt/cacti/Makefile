@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	cacti
-PORTVERSION=	1.1.24
+PORTVERSION=	1.1.26
 CATEGORIES=	net-mgmt www
 MASTER_SITES=	http://www.cacti.net/downloads/ \
 		ftp://ftpmirror.uk/freebsd-ports/cacti/

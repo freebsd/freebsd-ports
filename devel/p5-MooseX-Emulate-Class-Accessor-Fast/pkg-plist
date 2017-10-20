@@ -1,6 +1,6 @@
-%%PERL5_MAN3%%/MooseX::Adopt::Class::Accessor::Fast.3.gz
-%%PERL5_MAN3%%/MooseX::Emulate::Class::Accessor::Fast.3.gz
 %%SITE_PERL%%/MooseX/Adopt/Class/Accessor/Fast.pm
 %%SITE_PERL%%/MooseX/Emulate/Class/Accessor/Fast.pm
 %%SITE_PERL%%/MooseX/Emulate/Class/Accessor/Fast/Meta/Accessor.pm
 %%SITE_PERL%%/MooseX/Emulate/Class/Accessor/Fast/Meta/Role/Attribute.pm
+%%PERL5_MAN3%%/MooseX::Adopt::Class::Accessor::Fast.3.gz
+%%PERL5_MAN3%%/MooseX::Emulate::Class::Accessor::Fast.3.gz

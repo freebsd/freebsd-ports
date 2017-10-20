@@ -680,6 +680,7 @@
     SUBDIR += oneko-sakura
     SUBDIR += oolite
     SUBDIR += oonsoo
+    SUBDIR += open-adventure
     SUBDIR += openalchemist
     SUBDIR += openarena
     SUBDIR += openarena-data

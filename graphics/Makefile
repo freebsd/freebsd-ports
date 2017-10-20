@@ -838,6 +838,7 @@
     SUBDIR += projectm-libvisual
     SUBDIR += pstoedit
     SUBDIR += pstoepsi
+    SUBDIR += ptex
     SUBDIR += py-PyOpenGL
     SUBDIR += py-PyOpenGL-accelerate
     SUBDIR += py-PyX

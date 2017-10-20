@@ -1,0 +1,10 @@
+This gem catches the following unsafe migrations:
+     - adding a column with a non-null default value to an existing table
+     - changing the type of a column
+     - renaming a table
+     - renaming a column
+     - removing a column
+     - adding an index non-concurrently (Postgres only)
+     - adding a json column to an existing table (Postgres only)
+
+WWW: https://github.com/ankane/strong_migrations

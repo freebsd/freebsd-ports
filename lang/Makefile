@@ -85,7 +85,6 @@
     SUBDIR += fpc-rtl-extra
     SUBDIR += fpc-rtl-objpas
     SUBDIR += fpc-rtl-unicode
-    SUBDIR += fpc-tcl
     SUBDIR += fpc-units
     SUBDIR += fpc-utils
     SUBDIR += fsharp

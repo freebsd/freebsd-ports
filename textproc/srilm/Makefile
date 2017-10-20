@@ -11,6 +11,9 @@ EXTRACT_SUFX?=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Toolkit for building and applying statistical language models
 
+DEPRECATED=		Tcl/Tk 8.4 is no longer maintained, please use 8.5+
+EXPIRATION_DATE=	2017-11-20
+
 LIB_DEPENDS=	libtcl84.so:lang/tcl84
 
 DOWNLOAD_URL?=	http://www.speech.sri.com/projects/srilm/download.html

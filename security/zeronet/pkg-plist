@@ -8,6 +8,22 @@ etc/rc.d/zeronet
 %%DATADIR%%/plugins/AnnounceZero/__init__.py
 %%DATADIR%%/plugins/AnnounceZero/__init__.pyc
 %%DATADIR%%/plugins/AnnounceZero/__init__.pyo
+%%DATADIR%%/plugins/Bigfile/BigfilePiecefield.py
+%%DATADIR%%/plugins/Bigfile/BigfilePiecefield.pyc
+%%DATADIR%%/plugins/Bigfile/BigfilePiecefield.pyo
+%%DATADIR%%/plugins/Bigfile/BigfilePlugin.py
+%%DATADIR%%/plugins/Bigfile/BigfilePlugin.pyc
+%%DATADIR%%/plugins/Bigfile/BigfilePlugin.pyo
+%%DATADIR%%/plugins/Bigfile/Test/TestBigfile.py
+%%DATADIR%%/plugins/Bigfile/Test/TestBigfile.pyc
+%%DATADIR%%/plugins/Bigfile/Test/TestBigfile.pyo
+%%DATADIR%%/plugins/Bigfile/Test/conftest.py
+%%DATADIR%%/plugins/Bigfile/Test/conftest.pyc
+%%DATADIR%%/plugins/Bigfile/Test/conftest.pyo
+%%DATADIR%%/plugins/Bigfile/Test/pytest.ini
+%%DATADIR%%/plugins/Bigfile/__init__.py
+%%DATADIR%%/plugins/Bigfile/__init__.pyc
+%%DATADIR%%/plugins/Bigfile/__init__.pyo
 %%DATADIR%%/plugins/Cors/CorsPlugin.py
 %%DATADIR%%/plugins/Cors/CorsPlugin.pyc
 %%DATADIR%%/plugins/Cors/CorsPlugin.pyo
@@ -523,6 +539,7 @@ etc/rc.d/zeronet
 %%DATADIR%%/src/Translate/languages/pl.json
 %%DATADIR%%/src/Translate/languages/pt-br.json
 %%DATADIR%%/src/Translate/languages/ru.json
+%%DATADIR%%/src/Translate/languages/sl.json
 %%DATADIR%%/src/Translate/languages/tr.json
 %%DATADIR%%/src/Translate/languages/zh-tw.json
 %%DATADIR%%/src/Translate/languages/zh.json
@@ -665,6 +682,13 @@ etc/rc.d/zeronet
 %%DATADIR%%/src/lib/geventwebsocket/websocket.py
 %%DATADIR%%/src/lib/geventwebsocket/websocket.pyc
 %%DATADIR%%/src/lib/geventwebsocket/websocket.pyo
+%%DATADIR%%/src/lib/merkletools/README.md
+%%DATADIR%%/src/lib/merkletools/__init__.py
+%%DATADIR%%/src/lib/merkletools/__init__.pyc
+%%DATADIR%%/src/lib/merkletools/__init__.pyo
+%%DATADIR%%/src/lib/merkletools/setup.py
+%%DATADIR%%/src/lib/merkletools/setup.pyc
+%%DATADIR%%/src/lib/merkletools/setup.pyo
 %%DATADIR%%/src/lib/opensslVerify/HashInfo.txt
 %%DATADIR%%/src/lib/opensslVerify/OpenSSL License.txt
 %%DATADIR%%/src/lib/opensslVerify/ReadMe.txt

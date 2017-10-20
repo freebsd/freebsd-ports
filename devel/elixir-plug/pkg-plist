@@ -62,6 +62,7 @@ lib/elixir/lib/plug/ebin/Elixir.Plug.Upload.beam
 lib/elixir/lib/plug/ebin/Elixir.Plug.UploadError.beam
 lib/elixir/lib/plug/ebin/Elixir.Plug.beam
 lib/elixir/lib/plug/ebin/plug.app
+lib/elixir/lib/plug/ebin/plug_multipart.beam
 lib/elixir/lib/plug/lib/plug.ex
 lib/elixir/lib/plug/lib/plug/adapters/cowboy.ex
 lib/elixir/lib/plug/lib/plug/adapters/cowboy/conn.ex

@@ -1,5 +1,5 @@
---- install.sh.orig	2017-05-17 22:06:55.000000000 +0000
-+++ install.sh	2017-05-18 13:59:55.263749000 +0000
+--- install.sh.orig	2017-09-07 18:45:41.000000000 +0000
++++ install.sh	2017-09-18 14:47:39.284096000 +0000
 @@ -15,48 +15,14 @@
      "--help"|"-h"|"help"|"h")
        echo "Nim installation script"
@@ -19,7 +19,7 @@
 -      libdir=/usr/lib/nim
 -      docdir=/usr/share/nim/doc
 -      datadir=/usr/share/nim/data
--      nimbleDir="/opt/nimble/pkgs/compiler-0.17.0"
+-      nimbleDir="/opt/nimble/pkgs/compiler-0.17.2"
 -      ;;
 -    "/usr/local/bin")
 -      bindir=/usr/local/bin
@@ -27,7 +27,7 @@
 -      libdir=/usr/local/lib/nim
 -      docdir=/usr/local/share/nim/doc
 -      datadir=/usr/local/share/nim/data
--      nimbleDir="/opt/nimble/pkgs/compiler-0.17.0"
+-      nimbleDir="/opt/nimble/pkgs/compiler-0.17.2"
 -      ;;
 -    "/opt")
 -      bindir="/opt/nim/bin"
@@ -35,7 +35,7 @@
 -      libdir="/opt/nim/lib"
 -      docdir="/opt/nim/doc"
 -      datadir="/opt/nim/data"
--      nimbleDir="/opt/nimble/pkgs/compiler-0.17.0"
+-      nimbleDir="/opt/nimble/pkgs/compiler-0.17.2"
 -      mkdir -p /opt/nim
 -      mkdir -p $bindir
 -      mkdir -p $configdir
@@ -54,7 +54,7 @@
        nimbleDir="$1/nim"
        mkdir -p $1/nim
        mkdir -p $bindir
-@@ -848,13 +814,6 @@
+@@ -854,13 +820,6 @@
  else
    echo "Nim installation script"
    echo "Usage: [sudo] sh install.sh DIR"

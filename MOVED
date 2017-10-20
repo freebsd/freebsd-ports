@@ -740,7 +740,7 @@ misc/koffice-i18n-se|editors/koffice-i18n-se|2009-06-29|Moved to editors categor
 misc/koffice-i18n-sk|editors/koffice-i18n-sk|2009-06-29|Moved to editors category
 misc/koffice-i18n-sl|editors/koffice-i18n-sl|2009-06-29|Moved to editors category
 misc/koffice-i18n-sr|editors/koffice-i18n-sr|2009-06-29|Moved to editors category
-misc/koffice-i18n-sr@Latn|editors/koffice-i18n-sr@Latn|2009-06-29|Moved to editors category
+misc/koffice-i18n-sr@Latn|editors/koffice-i18n-sr_Latn|2009-06-29|Moved to editors category
 misc/koffice-i18n-sv|editors/koffice-i18n-sv|2009-06-29|Moved to editors category
 misc/koffice-i18n-ta|editors/koffice-i18n-ta|2009-06-29|Moved to editors category
 misc/koffice-i18n-tg|editors/koffice-i18n-tg|2009-06-29|Moved to editors category
@@ -9595,3 +9595,5 @@ multimedia/nxtvepg||2017-10-16|Has expired: This port depends on Tcl/Tk 8.4 , wh
 net/xpvm||2017-10-16|Has expired: This port depends on Tcl/Tk 8.4 , which is no longer maintained. Please port it to 8.5+
 x11/tkXwin||2017-10-16|Has expired: This port depends on Tcl/Tk 8.4 , which is no longer maintained. Please port it to 8.5+
 games/crafty-tablebase-pawn||2017-10-17|Waste of resources
+devel/p5-Log-Any-Adapter-Syslog|devel/p5-Log-Any|2017-10-19|Has expired: Merged with devel/p5-Log-Any
+lang/fpc-tcl||2017-10-20|Has expired: This port depends on Tcl/Tk 8.4 , which is no longer maintained. Please port it to 8.5+
