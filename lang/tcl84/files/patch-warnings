@@ -1,0 +1,12 @@
+Quiet the noisy "already defined" warning triggered, when building with TCL_THREADS.
+
+--- ../unix/tclUnixPort.h	Tue Dec  6 04:01:07 2005
++++ ../unix/tclUnixPort.h	Tue Jun 27 15:16:21 2006
+@@ -607,4 +607,7 @@
+ #endif
+ EXTERN char *          	TclpInetNtoa(struct in_addr);
++#ifdef inet_ntoa
++#	undef inet_ntoa
++#endif
+ #define inet_ntoa(x)	TclpInetNtoa(x)
+ #else
