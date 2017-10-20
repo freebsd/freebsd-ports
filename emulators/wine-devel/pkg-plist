@@ -94,6 +94,7 @@ include/wine/windows/amvideo.idl
 %%STAGING%%include/wine/windows/apiset.h
 include/wine/windows/appcompatapi.h
 include/wine/windows/appmgmt.h
+include/wine/windows/appmodel.h
 include/wine/windows/asptlb.h
 include/wine/windows/asptlb.idl
 include/wine/windows/asynot.idl
@@ -960,6 +961,7 @@ lib/wine/advpack.dll.so
 lib/wine/amstream.dll.so
 lib/wine/api-ms-win-appmodel-identity-l1-1-0.dll.so
 lib/wine/api-ms-win-appmodel-runtime-l1-1-1.dll.so
+lib/wine/api-ms-win-appmodel-runtime-l1-1-2.dll.so
 lib/wine/api-ms-win-core-apiquery-l1-1-0.dll.so
 lib/wine/api-ms-win-core-appcompat-l1-1-1.dll.so
 lib/wine/api-ms-win-core-appinit-l1-1-0.dll.so
@@ -1355,6 +1357,7 @@ lib/wine/fakedlls/advpack.dll
 lib/wine/fakedlls/amstream.dll
 lib/wine/fakedlls/api-ms-win-appmodel-identity-l1-1-0.dll
 lib/wine/fakedlls/api-ms-win-appmodel-runtime-l1-1-1.dll
+lib/wine/fakedlls/api-ms-win-appmodel-runtime-l1-1-2.dll
 lib/wine/fakedlls/api-ms-win-core-apiquery-l1-1-0.dll
 lib/wine/fakedlls/api-ms-win-core-appcompat-l1-1-1.dll
 lib/wine/fakedlls/api-ms-win-core-appinit-l1-1-0.dll
