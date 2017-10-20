@@ -12,6 +12,9 @@ DISTNAME=	hping3-20051105
 MAINTAINER=	ecu@200ok.org
 COMMENT=	Network auditing tool
 
+DEPRECATED=		Tcl/Tk 8.4 is no longer maintained, please use 8.5+
+EXPIRATION_DATE=	2017-11-20
+
 LIB_DEPENDS=	libtcl84.so:lang/tcl84
 
 CONFLICTS=	hping-[0-9]*

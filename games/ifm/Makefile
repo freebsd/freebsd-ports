@@ -9,6 +9,9 @@ MASTER_SITES=	http://www.ifarchive.org/if-archive/mapping-tools/
 MAINTAINER=	akosela@andykosela.com
 COMMENT=	Interactive Fiction mapper and walkthrough generator
 
+DEPRECATED=		Tcl/Tk 8.4 is no longer maintained, please use 8.5+
+EXPIRATION_DATE=	2017-11-20
+
 RUN_DEPENDS=	wish8.4:x11-toolkits/tk84
 
 USES=		perl5 gmake
