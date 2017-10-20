@@ -33,8 +33,7 @@ CONFIGURE_ARGS=	--localstatedir=/var \
 		--with-statedir=/var/db/dovecot \
 		--without-shadow \
 		--with-ssl=openssl \
-		--with-docs \
-		--with-libwrap
+		--with-docs
 
 USE_LDCONFIG=	${PREFIX}/lib/dovecot
 INSTALL_TARGET=	install-strip
@@ -42,8 +41,8 @@ INSTALL_TARGET=	install-strip
 USERS=		dovecot dovenull
 GROUPS=		${USERS}
 
-OPTIONS_DEFINE=	LZ4 VPOPMAIL DOCS EXAMPLES
-OPTIONS_DEFAULT=GSSAPI_NONE
+OPTIONS_DEFINE=	LIBWRAP LZ4 VPOPMAIL DOCS EXAMPLES
+OPTIONS_DEFAULT=GSSAPI_NONE LIBWRAP
 OPTIONS_SUB=	yes
 
 OPTIONS_GROUP=		DB FTS
@@ -71,6 +70,8 @@ GSSAPI_HEIMDAL_DESC=	Use Heimdal GSSAPI from security/heimdal
 GSSAPI_MIT_DESC=	Use MIT GSSAPI from security/krb5
 
 # General options
+LIBWRAP_CONFIGURE_WITH=	libwrap
+
 LZ4_CONFIGURE_WITH=	lz4
 LZ4_LIB_DEPENDS=	liblz4.so:archivers/liblz4
 
