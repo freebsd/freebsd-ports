@@ -87,7 +87,8 @@
 -	 if (init_put_byte(format_context->pb, buffer, buffer_size,
 +	 if (avio_alloc_context(buffer, buffer_size,
  				    1, (void *)this,
- 				    0, udp_callback, 0) < 0) {
+-				    0, udp_callback, 0) < 0) {
++				    0, udp_callback, 0) == NULL) {
  	   std::cerr << "ffmpegImageSink: init_put_byte failed" << std::endl ;
  	   return false ;
  	 }
