@@ -6,7 +6,7 @@ PORTVERSION=	5.1.0
 PORTREVISION=	1
 CATEGORIES=	databases pear
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	dBase database file access functions for PHP
 
 LICENSE=	PHP301
