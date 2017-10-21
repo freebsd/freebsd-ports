@@ -1000,7 +1000,6 @@ lib/calibre/calibre/gui2/store/stores/biblio_plugin.py
 lib/calibre/calibre/gui2/store/stores/bn_plugin.py
 lib/calibre/calibre/gui2/store/stores/bubok_portugal_plugin.py
 lib/calibre/calibre/gui2/store/stores/bubok_publishing_plugin.py
-lib/calibre/calibre/gui2/store/stores/cdp_plugin.py
 lib/calibre/calibre/gui2/store/stores/chitanka_plugin.py
 lib/calibre/calibre/gui2/store/stores/ebook_nl_plugin.py
 lib/calibre/calibre/gui2/store/stores/ebookpoint_plugin.py
@@ -1689,6 +1688,7 @@ lib/calibre/tinycss/version.py
 %%DATADIR%%/images/remove_books.png
 %%DATADIR%%/images/reports.png
 %%DATADIR%%/images/resize.png
+%%DATADIR%%/images/restart.png
 %%DATADIR%%/images/rotate-right.png
 %%DATADIR%%/images/save.png
 %%DATADIR%%/images/scheduler.png
@@ -1699,6 +1699,7 @@ lib/calibre/tinycss/version.py
 %%DATADIR%%/images/search_delete_saved.png
 %%DATADIR%%/images/search.png
 %%DATADIR%%/images/series.png
+%%DATADIR%%/images/similar.png
 %%DATADIR%%/images/smarten-punctuation.png
 %%DATADIR%%/images/snippets.png
 %%DATADIR%%/images/sort.png
