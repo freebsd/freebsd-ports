@@ -1,6 +1,6 @@
---- doc/Makefile.in.orig	Fri Dec 23 23:15:58 2005
-+++ doc/Makefile.in	Fri Aug 25 03:38:13 2006
-@@ -214,7 +214,7 @@
+--- doc/Makefile.in.orig	2005-12-23 14:15:58 UTC
++++ doc/Makefile.in
+@@ -214,7 +214,7 @@ sbindir = @sbindir@
  sharedstatedir = @sharedstatedir@
  sysconfdir = @sysconfdir@
  target_alias = @target_alias@
