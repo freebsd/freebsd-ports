@@ -9,10 +9,10 @@ PKGNAMESUFFIX=	-rails5
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Deliver Rails ActiveSupport::Notifications to a Statsd backend
 
-RUN_DEPENDS=	rubygem-activesupport5>=5.1.4:devel/rubygem-activesupport5 \
-		rubygem-concurrent-ruby>=1.0.5:devel/rubygem-concurrent-ruby \
-		rubygem-sidekiq>=5.0.4:devel/rubygem-sidekiq \
-		rubygem-statsd-ruby>=1.2.0:devel/rubygem-statsd-ruby
+RUN_DEPENDS=	rubygem-activesupport5>=4.2:devel/rubygem-activesupport5 \
+		rubygem-concurrent-ruby>=1.0.0:devel/rubygem-concurrent-ruby \
+		rubygem-sidekiq>=3.5.0:devel/rubygem-sidekiq \
+		rubygem-statsd-ruby>=1.2:devel/rubygem-statsd-ruby
 
 USES=		gem shebangfix
 USE_RUBY=	yes
