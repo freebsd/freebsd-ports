@@ -11,6 +11,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	hcchien@hcchien.org
 COMMENT=	Simple interface for Yahoo! Taiwan Lifestyle open APIs
 
+DEPRECATED=	This service has been shut down
+EXPIRATION_DATE=	2017-11-30
+
 BUILD_DEPENDS:=	${RUN_DEPENDS} \
 		p5-Test-Simple>=0:devel/p5-Test-Simple
 RUN_DEPENDS=	p5-Yahoo-BBAuth>=0:security/p5-Yahoo-BBAuth \
