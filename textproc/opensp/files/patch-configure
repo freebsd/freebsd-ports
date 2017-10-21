@@ -1,6 +1,6 @@
---- configure.orig	Fri Dec 23 23:15:56 2005
-+++ configure	Fri Aug 25 03:37:02 2006
-@@ -26441,12 +26441,12 @@
+--- configure.orig	2005-12-23 14:15:56 UTC
++++ configure
+@@ -26441,12 +26441,12 @@ cat >>conftest.$ac_ext <<_ACEOF
  /* end confdefs.h.  */
  #include <libintl.h>
  extern int _nl_msg_cat_cntr;
