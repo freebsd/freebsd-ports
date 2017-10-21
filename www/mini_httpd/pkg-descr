@@ -15,4 +15,4 @@ basic features of an HTTP server, including:
 
 It can also be configured to do SSL/HTTPS and IPv6.
 
-WWW: http://www.acme.com/software/mini_httpd/
+WWW: https://www.acme.com/software/mini_httpd/
