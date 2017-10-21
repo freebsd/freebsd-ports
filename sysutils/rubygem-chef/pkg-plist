@@ -38,3 +38,4 @@ man/man1/knife.1.gz
 man/man8/chef-apply.8.gz
 man/man8/chef-client.8.gz
 man/man8/chef-solo.8.gz
+@dir /var/chef
