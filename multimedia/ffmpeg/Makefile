@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ffmpeg
-PORTVERSION=	3.3.4
+PORTVERSION=	3.4
 PORTEPOCH=	1
 CATEGORIES=	multimedia audio ipv6 net
 MASTER_SITES=	http://ffmpeg.org/releases/
@@ -13,7 +13,7 @@ COMMENT=	Realtime audio/video encoder/converter and streaming server
 LICENSE=	GPLv2+ LGPL21+
 LICENSE_COMB=	multi
 
-BUILD_DEPENDS=	yasm:devel/yasm \
+BUILD_DEPENDS=	nasm:devel/nasm \
 		${LOCALBASE}/bin/as:devel/binutils
 
 HAS_CONFIGURE=	yes
@@ -27,18 +27,23 @@ NOPRECIOUSMAKEVARS=	yes # ARCH
 PORTSCOUT=	limit:^3\.
 
 OPTIONS_DEFINE=	ALSA AMR_NB AMR_WB ASS BS2B CACA CDIO CELT CHROMAPRINT DC1394 \
-		DEBUG DOCS FDK_AAC FFSERVER FLITE FONTCONFIG \
+		DEBUG DOCS DRM FDK_AAC FFSERVER FLITE FONTCONFIG \
 		FREETYPE FREI0R FRIBIDI GME GSM ICONV ILBC JACK KVAZAAR LADSPA \
-		LAME LIBBLURAY MODPLUG NETCDF OPENAL OPENCL OPENCV OPENGL \
+		LAME LIBBLURAY LIBRSVG2 LIBXML2 MODPLUG MYSOFA OPENAL OPENCL OPENCV OPENGL \
 		OPENH264 OPENJPEG OPTIMIZED_CFLAGS OPUS PULSEAUDIO \
-		RUBBERBAND RTCPU SCHROEDINGER SDL SMB SNAPPY SNDIO SOXR SPEEX SSH \
+		RUBBERBAND RTCPU SDL SMB SNAPPY SNDIO SOXR SPEEX SSH \
 		TESSERACT THEORA TWOLAME V4L VAAPI VDPAU VIDSTAB VORBIS \
 		VO_AMRWBENC VPX WAVPACK WEBP X264 X265 XCB XVID \
 		XVIDEO ZIMG ZMQ ZVBI
 
 OPTIONS_DEFAULT=	FFSERVER FONTCONFIG FREETYPE FREI0R GMP GNUTLS ICONV \
-			OPENCV OPTIMIZED_CFLAGS RTCPU SCHROEDINGER THEORA V4L VAAPI VDPAU \
+			OPENCV OPTIMIZED_CFLAGS RTCPU THEORA V4L VAAPI VDPAU \
 			VORBIS VPX X264 X265 XVID
+
+.if !exists(${.CURDIR:H:H}/science/libmysofa)
+# https://git.ffmpeg.org/gitweb/ffmpeg.git/commitdiff/2336c76b2246
+OPTIONS_EXCLUDE+=	MYSOFA
+.endif
 
 OPTIONS_RADIO=	RTMP SSL
 OPTIONS_RADIO_RTMP=	GCRYPT GMP LIBRTMP
@@ -54,9 +59,9 @@ OPTIONS_DEFAULT_i386=	MMX SSE
 
 ASS_DESC=	Subtitles rendering via libass
 BS2B_DESC=	Bauer Stereophonic-to-Binaural filter
-CDIO_DESC=	Audio CD grabbing with libcdio
 CHROMAPRINT_DESC=	Audio fingerprinting with chromaprint
 DC1394_DESC=	IIDC-1394 grabbing using libdc1394
+DRM_DESC=	KMS grabbing using libdrm
 FDK_AAC_DESC=	AAC audio encoding via Fraunhofer FDK
 FFSERVER_DESC=	Build and install ffserver
 FLITE_DESC=	Voice synthesis support via libflite
@@ -65,8 +70,8 @@ GPL3_DESC=	Allow (L)GPL version 3 code(cs)
 ILBC_DESC=	Internet Low Bit Rate codec
 KVAZAAR_DESC=	H.265 video codec support via Kvazaar
 LICENSE_DESC=	Licensing options
-NEON_DESC=	Enable Media Processing Engine instructions
-NETCDF_DESC=	SOFAlizer binaural filter
+NEON_DESC=	Media Processing Engine instructions
+MYSOFA_DESC=	SOFAlizer binaural filter
 NONFREE_DESC=	Allow use of nonfree code
 OPENH264_DESC=	H.264 video codec support via OpenH264
 RUBBERBAND_DESC=Time-stretching and pitch-shifting with librubberband
@@ -74,7 +79,7 @@ RTCPU_DESC=	Detect CPU capabilities at runtime
 RTMP_DESC=	RTMP(T)E protocol support
 LIBRTMP_DESC=	${RTMP_DESC} via librtmp
 TESSERACT_DESC=	Optical Character Recognition via Tesseract
-VFP_DESC=	Enable Vector Floating Point instructions
+VFP_DESC=	Vector Floating Point instructions
 VIDSTAB_DESC=	Video stabilization filter
 XCB_DESC=	X11 grabbing using XCB
 ZIMG_DESC=	"z" library video scaling filter
@@ -84,9 +89,8 @@ ZVBI_DESC=	Teletext support via libzvbi
 OPTIONS_SUB=	yes
 
 # alsa
-ALSA_CONFIGURE_OFF=	--disable-indev=alsa \
-			--disable-outdev=alsa
 ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
+ALSA_CONFIGURE_ENABLE=	alsa
 
 # Opencore AMR NB
 AMR_NB_LIB_DEPENDS=	libopencore-amrnb.so:audio/opencore-amr
@@ -134,6 +138,10 @@ DEBUG_CONFIGURE_OFF=	--disable-debug
 # docs
 DOCS_BUILD_DEPENDS=	texi2html:textproc/texi2html
 DOCS_CONFIGURE_ENABLE=	htmlpages
+
+# drm
+DRM_LIB_DEPENDS=	libdrm.so:graphics/libdrm
+DRM_CONFIGURE_ENABLE=	libdrm
 
 # fdk_aac
 FDK_AAC_LIB_DEPENDS=	libfdk-aac.so:audio/fdk-aac
@@ -195,7 +203,7 @@ ILBC_CONFIGURE_ENABLE=	libilbc
 
 # jack
 JACK_LIB_DEPENDS=	libjack.so:audio/jack
-JACK_CONFIGURE_OFF=	--disable-indev=jack
+JACK_CONFIGURE_ENABLE=	jack
 
 # kvazaar
 KVAZAAR_LIB_DEPENDS=	libkvazaar.so:multimedia/kvazaar
@@ -214,6 +222,14 @@ LAME_CONFIGURE_ENABLE=	libmp3lame
 LIBBLURAY_LIB_DEPENDS=	libbluray.so:multimedia/libbluray
 LIBBLURAY_CONFIGURE_ENABLE=	libbluray
 
+# librsvg
+LIBRSVG2_LIB_DEPENDS=	librsvg-2.so:graphics/librsvg2
+LIBRSVG2_CONFIGURE_ENABLE=	librsvg
+
+# libxml
+LIBXML2_LIB_DEPENDS=	libxml2.so:textproc/libxml2
+LIBXML2_CONFIGURE_ENABLE=	libxml2
+
 # libv4l
 V4L_BUILD_DEPENDS=	v4l_compat>0:multimedia/v4l_compat
 V4L_LIB_DEPENDS=	libv4l2.so:multimedia/libv4l
@@ -228,14 +244,13 @@ MMX_CONFIGURE_ENABLE=	mmx
 MODPLUG_LIB_DEPENDS=	libmodplug.so:audio/libmodplug
 MODPLUG_CONFIGURE_ENABLE=	libmodplug
 
-# netcdf
-NETCDF_LIB_DEPENDS=	libnetcdf.so:science/netcdf
-NETCDF_CONFIGURE_ENABLE=	netcdf
+# mysofa
+MYSOFA_LIB_DEPENDS=	libmysofa.so:science/libmysofa
+MYSOFA_CONFIGURE_ENABLE=	libmysofa
 
 # OpenAL
 OPENAL_LIB_DEPENDS=	libopenal.so:audio/openal-soft
 OPENAL_CONFIGURE_ENABLE=	openal
-OPENAL_CONFIGURE_OFF=		--disable-indev=openal
 
 # opencl
 OPENCL_BUILD_DEPENDS=	${LOCALBASE}/include/CL/opencl.h:devel/opencl
@@ -273,8 +288,6 @@ OPUS_CONFIGURE_ENABLE=	libopus
 # pulseaudio
 PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
 PULSEAUDIO_CONFIGURE_ENABLE=	libpulse
-PULSEAUDIO_CONFIGURE_OFF=	--disable-indev=pulse \
-				--disable-outdev=pulse
 
 # rubberband
 RUBBERBAND_LIB_DEPENDS=	librubberband.so:audio/rubberband
@@ -287,14 +300,9 @@ RTCPU_CONFIGURE_ENABLE=	runtime-cpudetect
 LIBRTMP_LIB_DEPENDS=	librtmp.so:multimedia/librtmp
 LIBRTMP_CONFIGURE_ENABLE=	librtmp
 
-# schroedinger
-SCHROEDINGER_LIB_DEPENDS=	libschroedinger-1.0.so:multimedia/schroedinger
-SCHROEDINGER_CONFIGURE_ENABLE=	libschroedinger
-
 # sdl
 SDL_USE=		SDL=sdl2
-SDL_CONFIGURE_ENABLE=	ffplay
-SDL_CONFIGURE_OFF=	--disable-outdev=sdl --disable-sdl2
+SDL_CONFIGURE_ENABLE=	sdl2
 
 # smbclient
 SMB_USES=		samba:lib
@@ -306,9 +314,8 @@ SNAPPY_LIB_DEPENDS=	libsnappy.so:archivers/snappy
 SNAPPY_CONFIGURE_ENABLE=	libsnappy
 
 # sndio
-SNDIO_CONFIGURE_OFF=	--disable-indev=sndio \
-			--disable-outdev=sndio
 SNDIO_LIB_DEPENDS=	libsndio.so:audio/sndio
+SNDIO_CONFIGURE_ENABLE=	sndio
 
 # soxr
 SOXR_LIB_DEPENDS=	libsoxr.so:audio/libsoxr
@@ -421,7 +428,7 @@ NONFREE_CONFIGURE_ENABLE=nonfree
 NONFREE_VARS=		RESTRICTED="enabling OPENSSL or FDK_AAC restricts redistribution"
 
 INSTALL_TARGET=	install-progs install-doc install-data \
-		install-libs install-headers
+		install-libs install-headers install-examples
 
 DATADIR=	${PREFIX}/share/${PORTNAME}${PKGNAMESUFFIX}
 
@@ -461,7 +468,7 @@ CONFIGURE_ARGS+=${CONFIGURE_ARGS_${ARCH}}
 post-patch:
 # {C,LD}FLAGS safeness
 	@${REINPLACE_CMD} -e 's|/etc/ffserver.conf|${PREFIX}/etc/ffserver.conf|' \
-		${WRKSRC}/ffserver.c
+		${WRKSRC}/fftools/ffserver.c
 	@${REINPLACE_CMD} -E \
 		-e 's|require_pkg_config opencv|require_pkg_config opencv-core|g' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}

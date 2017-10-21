@@ -1,15 +1,6 @@
---- configure.orig	2017-09-12 00:51:31 UTC
+--- configure.orig	2017-10-15 15:59:36 UTC
 +++ configure
-@@ -1875,6 +1875,8 @@ HEADERS_LIST="
-     machine_ioctl_meteor_h
-     malloc_h
-     opencv2_core_core_c_h
-+    openjpeg_2_3_openjpeg_h
-+    openjpeg_2_2_openjpeg_h
-     openjpeg_2_1_openjpeg_h
-     openjpeg_2_0_openjpeg_h
-     openjpeg_1_5_openjpeg_h
-@@ -3262,12 +3264,7 @@ target_os_default=$(tolower $(uname -s))
+@@ -3371,12 +3371,7 @@ target_os_default=$(tolower $(uname -s))
  host_os=$target_os_default
  
  # machine
@@ -23,18 +14,7 @@
  cpu="generic"
  intrinsics="none"
  
-@@ -5807,6 +5804,10 @@ enabled libopencv         && { check_header opencv2/co
- enabled libopenh264       && require_pkg_config openh264 wels/codec_api.h WelsGetCodecVersion
- enabled libopenjpeg       && { { check_lib openjpeg-2.1/openjpeg.h opj_version -lopenjp2 -DOPJ_STATIC && add_cppflags -DOPJ_STATIC; } ||
-                                check_lib openjpeg-2.1/openjpeg.h opj_version -lopenjp2 ||
-+			       { check_lib openjpeg-2.2/openjpeg.h opj_version -lopenjp2 -DOPJ_STATIC && add_cppflags -DOPJ_STATIC; } ||
-+                               check_lib openjpeg-2.2/openjpeg.h opj_version -lopenjp2 ||
-+			       { check_lib openjpeg-2.3/openjpeg.h opj_version -lopenjp2 -DOPJ_STATIC && add_cppflags -DOPJ_STATIC; } ||
-+                               check_lib openjpeg-2.3/openjpeg.h opj_version -lopenjp2 ||
-                                { check_lib openjpeg-2.0/openjpeg.h opj_version -lopenjp2 -DOPJ_STATIC && add_cppflags -DOPJ_STATIC; } ||
-                                { check_lib openjpeg-1.5/openjpeg.h opj_version -lopenjpeg -DOPJ_STATIC && add_cppflags -DOPJ_STATIC; } ||
-                                { check_lib openjpeg.h opj_version -lopenjpeg -DOPJ_STATIC && add_cppflags -DOPJ_STATIC; } ||
-@@ -6295,6 +6296,9 @@ elif enabled llvm_gcc; then
+@@ -6491,6 +6486,9 @@ elif enabled llvm_gcc; then
  elif enabled clang; then
      check_cflags -mllvm -stack-alignment=16
      check_cflags -mstack-alignment=16
@@ -44,25 +24,3 @@
      check_cflags -Qunused-arguments
      check_cflags -Werror=implicit-function-declaration
      check_cflags -Werror=missing-prototypes
-@@ -6900,7 +6904,7 @@ exec_prefix=\${prefix}
- libdir=$libdir
- includedir=$incdir
- 
--Name: $name
-+Name: ${name}${build_suffix}
- Description: $comment
- Version: $version
- Requires: $(enabled shared || echo $requires)
-@@ -6914,10 +6918,10 @@ EOF
- mkdir -p doc/examples/pc-uninstalled
- includedir=${source_path}
- [ "$includedir" = . ] && includedir="\${pcfiledir}/../../.."
--    cat <<EOF > doc/examples/pc-uninstalled/${name}-uninstalled.pc
-+    cat <<EOF > doc/examples/pc-uninstalled/${name}${build_suffix}-uninstalled.pc
- prefix=
- exec_prefix=
--libdir=\${pcfiledir}/../../../$name
-+libdir=\${pcfiledir}/../../../${name}${build_suffix}.pc
- includedir=${includedir}
- 
- Name: $name
