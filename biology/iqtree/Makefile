@@ -3,6 +3,7 @@
 PORTNAME=	iqtree
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.6.beta4
+PORTREVISION=	1
 CATEGORIES=	biology
 
 MAINTAINER=	jrm@FreeBSD.org
@@ -18,7 +19,18 @@ USES=		cmake compiler:openmp
 USE_GITHUB=	yes
 GH_ACCOUNT=	Cibiv
 
-PLIST_FILES=	bin/iqtree example.cf example.nex example.phy models.nex
 WRKSRC=		${WRKDIR}/IQ-TREE-${DISTVERSION}
+
+PLIST_FILES=	bin/iqtree
+PORTEXAMPLES=	example.cf example.nex example.phy models.nex
+
+OPTIONS_DEFINE=	EXAMPLES
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/iqtree ${STAGEDIR}${PREFIX}/bin
+
+do-install-EXAMPLES-on:
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/example/* ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>
