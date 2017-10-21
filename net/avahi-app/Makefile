@@ -11,6 +11,9 @@ PKGNAMESUFFIX?=	-app
 MAINTAINER?=	gnome@FreeBSD.org
 COMMENT?=	Service discovery on a local network
 
+LICENSE=	LGPL21+
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
 AVAHI_SLAVE?=	no
 
 .if ${AVAHI_SLAVE} != header

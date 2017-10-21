@@ -1,5 +1,5 @@
---- avahi-qt3.pc.in.orig	Thu Apr 12 00:18:53 2007
-+++ avahi-qt3.pc.in	Thu Apr 12 00:19:20 2007
+--- avahi-qt3.pc.in.orig	2011-12-30 21:26:44 UTC
++++ avahi-qt3.pc.in
 @@ -7,5 +7,5 @@ Name: avahi-qt3
  Description: Avahi Multicast DNS Responder (QT3 Support)
  Version: @PACKAGE_VERSION@

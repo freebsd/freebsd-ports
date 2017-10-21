@@ -1,6 +1,6 @@
---- avahi-compat-howl.pc.in.orig	Sun Jan 29 13:32:39 2006
-+++ avahi-compat-howl.pc.in	Sun Jan 29 13:32:56 2006
-@@ -6,5 +6,5 @@
+--- avahi-compat-howl.pc.in.orig	2011-12-30 21:26:44 UTC
++++ avahi-compat-howl.pc.in
+@@ -6,5 +6,5 @@ includedir=${prefix}/include/avahi-compa
  Name: avahi-compat-howl
  Description: Avahi Multicast DNS Responder (HOWL Compatibility)
  Version: @HOWL_COMPAT_VERSION@
