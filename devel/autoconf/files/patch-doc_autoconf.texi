@@ -1,5 +1,5 @@
---- doc/autoconf.texi.orig	2012-04-25 04:14:19.000000000 +0200
-+++ doc/autoconf.texi	2014-06-25 14:47:17.208468153 +0200
+--- doc/autoconf.texi.orig	2012-04-25 02:14:19 UTC
++++ doc/autoconf.texi
 @@ -15,7 +15,7 @@
  @c The ARG is an optional argument.  To be used for macro arguments in
  @c their documentation (@defmac).
@@ -18,7 +18,7 @@
  @end macro
  
  @c Handling the indexes with Texinfo yields several different problems.
-@@ -217,31 +217,11 @@
+@@ -217,31 +217,11 @@ entitled ``GNU Free Documentation Licens
  
  
  
