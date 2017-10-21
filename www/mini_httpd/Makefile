@@ -4,7 +4,7 @@
 PORTNAME=	mini_httpd
 PORTVERSION=	1.27
 CATEGORIES=	www ipv6
-MASTER_SITES=	http://www.acme.com/software/mini_httpd/
+MASTER_SITES=	https://www.acme.com/software/mini_httpd/
 
 MAINTAINER=	leres@FreeBSD.org
 COMMENT=	Small HTTP server with support for GET, HEAD, POST, CGI, SSL, IPv6
