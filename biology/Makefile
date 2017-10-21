@@ -37,6 +37,7 @@
     SUBDIR += hmmer
     SUBDIR += htslib
     SUBDIR += iolib
+    SUBDIR += iqtree
     SUBDIR += jalview
     SUBDIR += jellyfish
     SUBDIR += lagan
