@@ -24,7 +24,7 @@ CONFLICTS_INSTALL=	libressl-[0-9]* \
 			openssl-[0-9]* \
 			openssl-devel-[0-9]*
 
-MAN3_EXTRA_PATCHES_OFF=	${FILESDIR}/extra-patch-MAN3
+MAN3_USES_OFF=		autoreconf
 NC_CONFIGURE_ENABLE=	nc
 
 GNU_CONFIGURE=	yes
@@ -35,6 +35,9 @@ CFLAGS+=	-fpic -DPIC -Wl,-rpath,${PREFIX}/lib -Wl,--as-needed
 
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
+
+post-patch-MAN3-off:
+	${CP} ${FILESDIR}/extra-Makefile-no-MAN3 ${WRKSRC}/man/Makefile.am 
 
 post-install:
 	${RM} -r ${STAGEDIR}/${PREFIX}/etc/ssl/cert.pem
