@@ -2,19 +2,19 @@
 # $FreeBSD$
 
 PORTNAME=	xattr
-PORTVERSION=	0.7.8
+PORTVERSION=	0.9.2
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	bland@FreeBSD.org
+MAINTAINER=	timur@FreeBSD.org
 COMMENT=	Python wrapper for extended filesystem attributes
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cffi>0:devel/py-cffi
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cffi>=1.0.0:devel/py-cffi
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cffi>=1.0.0:devel/py-cffi
 
 USES=		python
 USE_PYTHON=	distutils autoplist
