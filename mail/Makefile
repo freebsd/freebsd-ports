@@ -666,6 +666,7 @@
     SUBDIR += spampd
     SUBDIR += spamprobe
     SUBDIR += spamstats
+    SUBDIR += spfmilter
     SUBDIR += spfval
     SUBDIR += spmfilter
     SUBDIR += spmfilter-clamav
