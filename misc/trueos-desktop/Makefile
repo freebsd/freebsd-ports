@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	trueos-desktop
-PORTVERSION=	201710201949
+PORTVERSION=	201710221744
 CATEGORIES=	misc
 MASTER_SITES=
 DISTFILES=
@@ -30,6 +30,7 @@ RUN_DEPENDS=	${LOCALBASE}/sbin/PCDMd:x11/pcdm \
 		${LOCALBASE}/bin/xdg-open:devel/xdg-utils \
 		${LOCALBASE}/bin/xvkbd:x11/xvkbd \
 		${LOCALBASE}/sbin/anacron:sysutils/anacron \
+		cups-filters>=0:print/cups-filters \
 		paprefs>=0:audio/paprefs \
 		pavucontrol>=0:audio/pavucontrol \
 		drm-next-kmod>=g20170918:graphics/drm-next-kmod \
