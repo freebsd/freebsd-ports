@@ -2,7 +2,7 @@
 
 PORTNAME=	uTox
 PORTVERSION=	0.11.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net-im net-p2p
 
 MAINTAINER=	portmaster@BSDforge.com
