@@ -1,0 +1,17 @@
+--- rc_scripts/freebsd.orig	2015-02-05 18:18:42 UTC
++++ rc_scripts/freebsd
+@@ -23,11 +23,12 @@ load_rc_config "$name"
+ 
+ # Defaults.
+ spfmilter_enable="${spfmilter_enable:-NO}"
+-spfmilter_program="${spfmilter_program:-/usr/local/sbin/spfmilter}"
++spfmilter_program="${spfmilter_program:-/usr/local/libexec/spfmilter}"
+ spfmilter_socket="${spfmilter_socket:-/var/run/spfmilter.sock}"
++spfmilter_runas="${spfmilter_runas:-nobody}"
+ 
+ # Add socket to any given argument.
+-spfmilter_flags="${spfmilter_flags} ${spfmilter_socket}"
++spfmilter_flags="${spfmilter_flags} -u ${spfmilter_runas} ${spfmilter_socket}"
+ 
+ command="$spfmilter_program"
+ 

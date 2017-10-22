@@ -1,0 +1,4 @@
+Spfmilter implements the Sender Policy Framework (SPF) as a sendmail
+milter, using either the libspf or libspf2 libraries.
+
+WWW: https://acme.com/software/spfmilter/
