@@ -8,4 +8,3 @@ bin/pdfexplode
 bin/pdfextract
 bin/pdfmetadata
 bin/pdfsh
-bin/pdfwalker
