@@ -1218,3 +1218,4 @@
 %%T%%/lib/src.zip
 %%T%%/lib/tzdb.dat
 %%T%%/release
+@dir %%T%%/lib/missioncontrol/p2/org.eclipse.equinox.p2.engine/profileRegistry/JMC.profile/.data
