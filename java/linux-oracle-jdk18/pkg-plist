@@ -975,6 +975,7 @@
 %%DEMO%%%%T%%/demo/javafx_samples/src/Ensemble8/src/samples/resources/ensemble/samples/charts/bar/image/van-s.png
 %%DEMO%%%%T%%/demo/javafx_samples/src/Ensemble8/src/samples/resources/ensemble/samples/charts/bar/stacked/preview.png
 %%DEMO%%%%T%%/demo/javafx_samples/src/Ensemble8/src/samples/resources/ensemble/samples/charts/bar/stacked/preview@2x.png
+%%DEMO%%%%T%%/demo/javafx_samples/src/Ensemble8/src/samples/resources/ensemble/samples/charts/bubble/BubbleChart.css
 %%DEMO%%%%T%%/demo/javafx_samples/src/Ensemble8/src/samples/resources/ensemble/samples/charts/bubble/preview.png
 %%DEMO%%%%T%%/demo/javafx_samples/src/Ensemble8/src/samples/resources/ensemble/samples/charts/bubble/preview@2x.png
 %%DEMO%%%%T%%/demo/javafx_samples/src/Ensemble8/src/samples/resources/ensemble/samples/charts/candlestick/CandleStickChart.css
@@ -1846,14 +1847,16 @@
 %%T%%/jre/lib/psfontj2d.properties
 %%T%%/jre/lib/resources.jar
 %%T%%/jre/lib/rt.jar
-%%T%%/jre/lib/security/US_export_policy.jar
 %%T%%/jre/lib/security/blacklist
 %%T%%/jre/lib/security/blacklisted.certs
 %%T%%/jre/lib/security/cacerts
 %%T%%/jre/lib/security/java.policy
 %%T%%/jre/lib/security/java.security
 %%T%%/jre/lib/security/javaws.policy
-%%T%%/jre/lib/security/local_policy.jar
+%%T%%/jre/lib/security/policy/limited/US_export_policy.jar
+%%T%%/jre/lib/security/policy/limited/local_policy.jar
+%%T%%/jre/lib/security/policy/unlimited/US_export_policy.jar
+%%T%%/jre/lib/security/policy/unlimited/local_policy.jar
 %%T%%/jre/lib/security/trusted.libraries
 %%T%%/jre/lib/sound.properties
 %%T%%/jre/lib/tzdb.dat
