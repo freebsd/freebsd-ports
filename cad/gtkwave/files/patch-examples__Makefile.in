@@ -1,15 +1,15 @@
---- examples/Makefile.in.orig	2014-01-03 04:17:31 UTC
+--- examples/Makefile.in.orig	2017-10-08 05:44:27 UTC
 +++ examples/Makefile.in
-@@ -32,7 +32,7 @@ am__make_dryrun = \
-     esac; \
-     test $$am__dry = yes; \
-   }
+@@ -60,7 +60,7 @@ am__make_running_with_option = \
+   test $$has_opt = yes
+ am__make_dryrun = (target_option=n; $(am__make_running_with_option))
+ am__make_keepgoing = (target_option=k; $(am__make_running_with_option))
 -pkgdatadir = $(datadir)/@PACKAGE@
 +pkgdatadir = $(datadir)
  pkgincludedir = $(includedir)/@PACKAGE@
  pkglibdir = $(libdir)/@PACKAGE@
  pkglibexecdir = $(libexecdir)/@PACKAGE@
-@@ -258,7 +258,7 @@ top_build_prefix = @top_build_prefix@
+@@ -288,7 +288,7 @@ top_build_prefix = @top_build_prefix@
  top_builddir = @top_builddir@
  top_srcdir = @top_srcdir@
  dist_examples_DATA = des.gtkw des.tcl des.v des.fst transaction.fst transaction.gtkw transaction.c gtkwaverc
