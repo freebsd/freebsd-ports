@@ -1,0 +1,8 @@
+DeviceAtlas Device Detection C API
+
+DeviceAtlas provides industrial grade device identification using HTTP
+headers, and by adding device intelligence to HAProxy a richer
+configuration is possible, allowing administrators to make decisions
+based on device type amongst other properties.
+
+WWW: https://www.deviceatlas.com
