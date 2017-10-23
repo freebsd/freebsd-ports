@@ -215,6 +215,7 @@ bin/xscreensaver-hacks/twang
 bin/xscreensaver-hacks/unicrud
 bin/xscreensaver-hacks/unknownpleasures
 bin/xscreensaver-hacks/vermiculate
+bin/xscreensaver-hacks/vigilance
 bin/xscreensaver-hacks/vidwhacker
 bin/xscreensaver-hacks/voronoi
 bin/xscreensaver-hacks/wander
@@ -448,6 +449,7 @@ man/man6/unicrud.6.gz
 man/man6/unknownpleasures.6.gz
 man/man6/vermiculate.6.gz
 man/man6/vidwhacker.6.gz
+man/man6/vigilance.6.gz
 man/man6/voronoi.6.gz
 man/man6/wander.6.gz
 man/man6/webcollage.6.gz
@@ -468,7 +470,6 @@ share/applications/xscreensaver-lock.desktop
 share/applications/xscreensaver-properties.desktop
 share/applications/xscreensaver-start.desktop
 share/applications/xscreensaver-stop.desktop
-%%NLS%%share/locale/ca/LC_MESSAGES/xscreensaver.mo
 %%NLS%%share/locale/da/LC_MESSAGES/xscreensaver.mo
 %%NLS%%share/locale/de/LC_MESSAGES/xscreensaver.mo
 %%NLS%%share/locale/es/LC_MESSAGES/xscreensaver.mo
@@ -701,6 +702,7 @@ share/pixmaps/xscreensaver.xpm
 %%DATADIR%%/config/unknownpleasures.xml
 %%DATADIR%%/config/vermiculate.xml
 %%DATADIR%%/config/vidwhacker.xml
+%%DATADIR%%/config/vigilance.xml
 %%DATADIR%%/config/voronoi.xml
 %%DATADIR%%/config/wander.xml
 %%DATADIR%%/config/webcollage.xml
