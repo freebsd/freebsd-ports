@@ -1,6 +1,6 @@
---- src/VBox/Additions/common/VBoxGuest/freebsd/Makefile.orig	2016-08-16 19:55:31 UTC
+--- src/VBox/Additions/common/VBoxGuest/freebsd/Makefile.orig	2017-10-18 07:06:43 UTC
 +++ src/VBox/Additions/common/VBoxGuest/freebsd/Makefile
-@@ -71,6 +71,7 @@ SRCS += \
+@@ -70,6 +70,7 @@ SRCS += \
  	handletable.c \
  	handletablectx.c \
  	once.c \
@@ -8,21 +8,11 @@
  	thread.c
  
  .PATH:	${.CURDIR}/common/string
-@@ -129,6 +130,7 @@ SRCS += \
+@@ -128,6 +129,7 @@ SRCS += \
+ 
  .PATH:	${.CURDIR}/r0drv
  SRCS += \
- 	alloc-r0drv.c \
 +	alloc-ef-r0drv.c \
+ 	alloc-r0drv.c \
  	initterm-r0drv.c \
  	memobj-r0drv.c \
- 	powernotification-r0drv.c
-@@ -149,8 +151,7 @@ SRCS += \
- 	spinlock-r0drv-freebsd.c \
- 	thread-r0drv-freebsd.c \
- 	thread2-r0drv-freebsd.c \
--	time-r0drv-freebsd.c \
--	timer-r0drv-freebsd.c
-+	time-r0drv-freebsd.c
- 
- .PATH:	${.CURDIR}/r0drv/generic
- SRCS += \

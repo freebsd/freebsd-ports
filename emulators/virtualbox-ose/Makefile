@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	virtualbox-ose
-PORTVERSION=	5.1.30
+PORTVERSION=	5.2.0
 CATEGORIES=	emulators
 MASTER_SITES=	http://download.virtualbox.org/virtualbox/${PORTVERSION}/
 DISTFILES=	VirtualBox-${PORTVERSION}${EXTRACT_SUFX} ${GUESTADDITIONS}
@@ -30,7 +30,7 @@ CPE_PRODUCT=	vm_virtualbox
 
 WRKSRC=		${WRKDIR}/VirtualBox-${PORTVERSION}
 ONLY_FOR_ARCHS=	i386 amd64
-USES=		compiler cpe iconv pkgconfig ssl tar:bzip2
+USES=		compiler:c++11-lang cpe iconv pkgconfig ssl tar:bzip2
 USE_GNOME=	libidl libxml2
 
 HAS_CONFIGURE=	yes
@@ -56,16 +56,13 @@ VBOX_UTILS=	VBoxExtPackHelperApp VBoxNetAdpCtl VBoxNetDHCP VBoxNetNAT \
 		VBoxSVC VBoxXPCOMIPCD
 
 OPTIONS_DEFINE=	ALSA DBUS DEBUG GUESTADDITIONS MANUAL NLS PULSEAUDIO \
-		PYTHON R0LOGGING UDPTUNNEL VDE VNC WEBSERVICE VPX X11
+		PYTHON QT5 R0LOGGING UDPTUNNEL VDE VNC WEBSERVICE VPX X11
 OPTIONS_DEFAULT=	DBUS QT5 UDPTUNNEL VNC WEBSERVICE X11
-OPTIONS_RADIO=		GUI
-OPTIONS_RADIO_GUI=	QT4 QT5
 OPTIONS_SUB=	yes
 
 DEBUG_DESC=	Debug symbols, additional logs and assertions
 GUESTADDITIONS_DESC=	Build with Guest Additions
 MANUAL_DESC=	Build with user manual
-QT4_DESC=	Build with QT4 Frontend
 QT5_DESC=	Build with QT5 Frontend
 R0LOGGING_DESC=	Enable R0 logging
 UDPTUNNEL_DESC=	Build with UDP tunnel support
@@ -118,7 +115,7 @@ CONFLICTS_INSTALL+=	virtualbox-ose-[0-9]*
 _ELF32!=	kldstat -q -m elf32 && echo yes || echo no
 .endif
 
-.if ${PORT_OPTIONS:MNLS} && empty(PORT_OPTIONS:MQT[45])
+.if ${PORT_OPTIONS:MNLS} && empty(PORT_OPTIONS:MQT5)
 BROKEN=		NLS support requires QT frontend. Run 'make config' again!
 .endif
 
@@ -158,31 +155,18 @@ PYDISTUTILS_PKGVERSION=	1.0
 USES+=		python:build
 .endif
 
-.if ${PORT_OPTIONS:MQT[45]}
+.if ${PORT_OPTIONS:MQT5}
+CONFIGURE_ARGS+=	--enable-qt5
 PLIST_SUB+=	QT=""
 QT_NONSTANDARD=	yes
 USE_GL=		gl
+USE_QT5=	buildtools_build core dbus gui linguist_build opengl
+USE_QT5+=	printsupport widgets x11extras
 USE_XORG=	xcb
 INSTALLS_ICONS=	yes
 VBOX_PROGS+=	VirtualBox
 VBOX_UTILS+=	VBoxTestOGL
 VBOX_WITH_QT=	1
-.if ${PORT_OPTIONS:MQT4}
-EXTRA_PATCHES+=	${PATCHDIR}/extrapatch-src_VBox_Frontends_VirtualBox_src_net_UIDownloaderAdditions.cpp \
-		${PATCHDIR}/extrapatch-src_VBox_Frontends_VirtualBox_src_net_UIDownloaderExtensionPack.cpp \
-		${PATCHDIR}/extrapatch-src_VBox_Frontends_VirtualBox_src_settings_global_UIGlobalSettingsNetworkDetailsHost.cpp \
-		${PATCHDIR}/extrapatch-src_VBox_Frontends_VirtualBox_src_widgets_UIMiniToolBar.cpp \
-		${PATCHDIR}/extrapatch-src_VBox_Frontends_VirtualBox_src_widgets_UIMiniToolBar.h
-CONFIGURE_ARGS+=	--enable-qt4
-USE_QT4=	corelib gui linguist_build moc_build network opengl
-USE_QT4+=	rcc_build uic_build
-WARNING=	"Qt4 support has been deprecated by the upstream.\
-		This option may be removed in the future without notice."
-.else
-CONFIGURE_ARGS+=	--enable-qt5
-USE_QT5=	buildtools_build core dbus gui linguist_build opengl
-USE_QT5+=	printsupport widgets x11extras
-.endif
 .else
 CONFIGURE_ARGS+=	--disable-qt
 PLIST_SUB+=	QT="@comment "
@@ -286,9 +270,6 @@ post-patch:
 	    ${WRKSRC}/LocalConfig.kmk
 	@${ECHO} 'VBOX_WITH_VALIDATIONKIT =' >> ${WRKSRC}/LocalConfig.kmk
 	@${ECHO} 'VBOX_WITH_X11_ADDITIONS =' >> ${WRKSRC}/LocalConfig.kmk
-.if empty(PORT_OPTIONS:MQT5)
-	@${ECHO} 'VBOX_WITH_QTGUI_V5 =' >> ${WRKSRC}/LocalConfig.kmk
-.endif
 .if ${PORT_OPTIONS:MR0LOGGING}
 	@${ECHO} 'VBOX_WITH_R0_LOGGING = 1' >> ${WRKSRC}/LocalConfig.kmk
 .endif
@@ -303,14 +284,13 @@ post-patch:
 	    ${WRKSRC}/LocalConfig.kmk
 	@${ECHO} 'VBOX_GCC_PEDANTIC_CXX = -Wshadow $$(VBOX_GCC_WARN) -Wno-long-long' >> \
 	    ${WRKSRC}/LocalConfig.kmk
+	@${ECHO} 'VBOX_GCC_std = -std=c++11' >> ${WRKSRC}/LocalConfig.kmk
 .endif
 .if ${COMPILER_TYPE} == clang
 	@${REINPLACE_CMD} -e 's| -finline-limit=8000||' \
 	    -e 's| -mpreferred-stack-boundary=2||' ${WRKSRC}/Config.kmk
 	@${REINPLACE_CMD} -e 's| -fpermissive||' ${WRKSRC}/Config.kmk \
 	    ${WRKSRC}/src/VBox/Main/webservice/Makefile.kmk
-	@${ECHO} 'VBOX_GCC_Wno-unused-parameter = -Wno-unused-parameter' >> \
-	    ${WRKSRC}/LocalConfig.kmk
 	@${ECHO} 'TOOL_VBoxGccFreeBSD_LD = ${CXX}' >> ${WRKSRC}/LocalConfig.kmk
 	@${SED} -e 's|GXX3|VBoxGccFreeBSD|g' \
 	    ${LOCALBASE}/share/kBuild/tools/GXX3.kmk > \
@@ -403,7 +383,7 @@ do-install:
 	    ${STAGEDIR}${DATADIR}/sdk/bindings/xpcom/python
 .endif
 
-.if ${PORT_OPTIONS:MQT[45]}
+.if ${PORT_OPTIONS:MQT5}
 	${INSTALL_DATA} \
 	    ${WRKSRC}/src/VBox/Frontends/VirtualBox/images/OSE/VirtualBox_48px.png \
 	    ${STAGEDIR}${PREFIX}/share/pixmaps/VBox.png
