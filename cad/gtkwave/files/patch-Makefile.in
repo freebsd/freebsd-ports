@@ -1,6 +1,6 @@
---- Makefile.in.orig	2014-01-03 04:17:31 UTC
+--- Makefile.in.orig	2017-10-08 05:44:27 UTC
 +++ Makefile.in
-@@ -310,7 +310,7 @@ target_alias = @target_alias@
+@@ -340,7 +340,7 @@ target_alias = @target_alias@
  top_build_prefix = @top_build_prefix@
  top_builddir = @top_builddir@
  top_srcdir = @top_srcdir@
