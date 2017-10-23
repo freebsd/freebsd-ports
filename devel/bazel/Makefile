@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=		bazel
-PORTVERSION=		0.5.3
+PORTVERSION=		0.7.0
 CATEGORIES=		devel java
 MASTER_SITES=		https://storage.googleapis.com/bazel/${PORTVERSION}/rc${FINALRC}/
 DISTNAME=		bazel-${PORTVERSION}rc${FINALRC}-dist
@@ -21,9 +21,9 @@ BUILD_DEPENDS=		bash:shells/bash \
 # In bazel, a release is always code-wise identical to the final release candidate.
 # Hence we can also download that one and so have a simple way to also test earlier release
 # candidates.
-FINALRC=		4
+FINALRC=		2
 
-USES=			shebangfix zip
+USES=			shebangfix zip:infozip python
 SHEBANG_REGEX=		.*(sh|txt|_stub|stub_.*|bazel|get_workspace_status|protobuf_support|_so)
 USE_JAVA=		yes
 JAVA_VENDOR=		openjdk
@@ -55,7 +55,14 @@ post-patch:
 	@${REINPLACE_CMD} \
 	-e "s|\"/etc/bazel.bazelrc\"|\"${ETCDIR}/bazel.bazelrc\"|" \
 	${WRKSRC}/src/main/cpp/blaze_util_posix.cc
-	@${ECHO_CMD} build --strategy=Javac=standalone >> ${WRKSRC}/scripts/packages/debian/bazel.bazelrc
+	@${ECHO_CMD} build --strategy=Javac=standalone >> ${WRKSRC}/scripts/packages/bazel.bazelrc
+	@${ECHO_CMD} build --python_path=${PYTHON_CMD} >> ${WRKSRC}/scripts/packages/bazel.bazelrc
+	@${REINPLACE_CMD} \
+	-e 's|\$$command|$$command --python_path=${PYTHON_CMD}|' \
+	${WRKSRC}/scripts/bootstrap/bootstrap.sh
+	@${REINPLACE_CMD} \
+	-e 's|/usr/bin/env python|${PYTHON_CMD}|' \
+	${WRKSRC}/src/main/java/com/google/devtools/build/lib/bazel/rules/python/BazelPythonSemantics.java
 
 post-patch-CLANG38-on:
 	@${REINPLACE_CMD} -e 's=/usr/lib/clang=${LOCALBASE}/llvm38/lib/clang=' \
@@ -71,12 +78,13 @@ do-build:
 	${SETENV} BAZEL_SH=${LOCALBASE}/bin/bash \
 	TMPDIR=${WRKDIR}/bazel_tmp \
 	EMBED_LABEL='${PORTVERSION}' \
+	PATH=${LOCALBASE}/bin:$$PATH \
 	SOURCE_DATE_EPOCH=$${SOURCE_DATE_EPOCH} \
 	${LOCALBASE}/bin/bash ./compile.sh)
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/output/bazel ${STAGEDIR}${PREFIX}/bin
 	@${MKDIR} ${STAGEDIR}${ETCDIR}
-	${INSTALL_DATA} ${WRKSRC}/scripts/packages/debian/bazel.bazelrc ${STAGEDIR}${ETCDIR}/bazel.bazelrc.sample
+	${INSTALL_DATA} ${WRKSRC}/scripts/packages/bazel.bazelrc ${STAGEDIR}${ETCDIR}/bazel.bazelrc.sample
 
 .include <bsd.port.post.mk>
