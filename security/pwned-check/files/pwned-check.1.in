@@ -1,0 +1,66 @@
+.Dd October 23, 2017
+.Dt PWNED-CHECK 1
+.Os
+.Sh NAME
+.Nm pwned-check
+.Nd Check word against list of known stolen passwords.
+.Sh SYNOPSIS
+.Nm
+.Op Fl u
+.Sh DESCRIPTION
+The
+.Nm
+utility checks the passwords piped in via standard input  (one per line)
+against a huge database of passwords that are known to have been stolen
+in data breaches.
+.Pp
+SHA1 hashes of these passwords have been published at
+.Lk https://haveibeenpwned.com/
+.Pp
+If any of the checked passwords is found in the database, it is printed
+on standard output and the exit status of
+.Nm
+is set to 1.
+No output is generated for passwords not found in the database.
+.Pp
+Instead of plain passwords, SHA1 hashes of passwords may be supplied.
+Matches will be reported, but there is no provision to report the
+plain text password corresponding to a given SHA1 hash.
+.Pp
+If the option
+.Fl u
+is used, the password hash database is downloaded and initialized.
+This process will temporarily require some 18 GB of free space in the
+database directory, which is
+.Pa /var/db/pwned-check
+by default.
+This location can be changed in the configuration file, prior to starting
+the download.
+.Sh FILES
+.Bl -tag -width %%PREFIX%%/etc/pwned-check.conf
+.It Pa %%PREFIX%%/etc/pwned-check.conf
+Optional configuration file.
+.It Pa /var/db/pwned-check
+Default location of pwned password hash database.
+Needs 18 GB of free space during download, 13 GB when finished.
+.El
+.Sh EXIT STATUS
+.Nm
+returns 0 if none of the passwords to check have been found in the
+pwned password database, else 1.
+.Pp
+If the
+.Fl u
+option is used to download the pwned password hashes, an exit code of 0
+indicates success, 1 failure to fetch and initialize the database.
+.Sh EXAMPLES
+Download the pwned password hash files:
+.Bd -literal -offset indent
+pwned-check -u
+.Ed
+.Pp
+Check passwords passed on standard input against pwned password database:
+.Bd -literal -offset indent
+echo badpasswd | pwned-check
+.Ed
+.\" .Sh AUTHORS
