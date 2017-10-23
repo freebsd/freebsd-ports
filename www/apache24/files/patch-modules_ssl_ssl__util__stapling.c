@@ -5,7 +5,7 @@
          issuer = sk_X509_value(extra_certs, i);
          if (X509_check_issued(issuer, x) == X509_V_OK) {
 -#if OPENSSL_VERSION_NUMBER < 0x10100000L
-+#if OPENSSL_VERSION_NUMBER < 0x10100000L || LIBRESSL_VERSION_NUMBER < 0x2050000fL
++#if OPENSSL_VERSION_NUMBER < 0x10100000L || (defined(LIBRESSL_VERSION_NUMBER) && LIBRESSL_VERSION_NUMBER < 0x2050000fL)
              CRYPTO_add(&issuer->references, 1, CRYPTO_LOCK_X509);
  #else
              X509_up_ref(issuer);
