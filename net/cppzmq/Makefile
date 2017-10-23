@@ -16,7 +16,7 @@ USES=		cmake pkgconfig
 CMAKE_ARGS=	--no-warn-unused-cli -Wno-dev
 
 # cppzmq is included in libzmq2
-CONFLICTS=	libzmq2
+CONFLICTS_INSTALL=	libzmq2
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	zeromq
