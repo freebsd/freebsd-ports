@@ -66,7 +66,7 @@ include/libcouchbase/views.h
 include/libcouchbase/visibility.h
 lib/libcouchbase.so
 lib/libcouchbase.so.2
-lib/libcouchbase.so.2.0.47
+lib/libcouchbase.so.2.0.48
 lib/libcouchbase_libev.so
 lib/libcouchbase_libevent.so
 lib/libcouchbase_libuv.so
