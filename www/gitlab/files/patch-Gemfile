@@ -1,4 +1,4 @@
---- Gemfile.orig	2017-10-18 09:47:47 UTC
+--- Gemfile.orig	2017-10-16 16:38:24 UTC
 +++ Gemfile
 @@ -1,19 +1,19 @@
  source 'https://rubygems.org'
@@ -345,6 +345,15 @@
  gem 'html2text'
  
  gem 'ruby-prof', '~> 0.16.2'
+@@ -379,7 +299,7 @@ gem 'oauth2', '~> 1.4'
+ gem 'paranoia', '~> 2.3.1'
+ 
+ # Health check
+-gem 'health_check', '~> 2.6.0'
++gem 'health_check', '~> 2.6'
+ 
+ # System information
+ gem 'vmstat', '~> 2.3.0'
 @@ -388,8 +308,10 @@ gem 'sys-filesystem', '~> 1.1.6'
  # Gitaly GRPC client
  gem 'gitaly', '~> 0.14.0'
