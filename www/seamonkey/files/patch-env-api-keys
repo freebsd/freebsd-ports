@@ -10,10 +10,10 @@
      def keyfile(value):
          if value:
              try:
-@@ -29,7 +30,7 @@ def keyfile(desc, help=None, callback=lambda x: x):
-                 raise
-             except IOError:
-                 pass
+@@ -28,7 +29,7 @@ def keyfile(desc, help=None, callback=lambda x: x):
+                     raise FatalCheckError("'%s' is empty." % value[0])
+             except IOError as e:
+                 raise FatalCheckError("'%s': %s." % (value[0], e.strerror))
 -        return no_key
 +        return environ.get('MOZ_%s_KEY' % desc.upper().replace(' ', '_')) or no_key
  
