@@ -131,6 +131,7 @@ man/mann/critcl_app.n.gz
 man/mann/critcl_apppkg.n.gz
 man/mann/critcl_bitmap.n.gz
 man/mann/critcl_class.n.gz
+man/mann/critcl_cproc.n.gz
 man/mann/critcl_cutil.n.gz
 man/mann/critcl_devguide.n.gz
 man/mann/critcl_emap.n.gz
