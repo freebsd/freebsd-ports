@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	health_check
-PORTVERSION=	2.6.0
-PORTREVISION=	2
+PORTVERSION=	2.7.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
