@@ -1,5 +1,5 @@
---- lib/critcl/Config.orig	2013-11-05 09:57:26.000000000 +0100
-+++ lib/critcl/Config	2013-11-05 09:57:54.000000000 +0100
+--- lib/critcl/Config.orig	2017-10-14 02:48:11 UTC
++++ lib/critcl/Config
 @@ -52,13 +52,13 @@
  # the "copy" option and then specifically setting the config bits that
  # you want to change. See win32-x86_64-cl for an example.
