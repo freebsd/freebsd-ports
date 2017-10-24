@@ -4,16 +4,7 @@ PORTNAME=	mod_pagespeed
 PORTVERSION=	1.12.34.2
 PORTEPOCH=	1
 CATEGORIES=	www devel
-MASTER_SITES=	https://boringssl.googlesource.com/boringssl.git/+archive/:boringssl \
-		https://chromium.googlesource.com/chromium/src/base/+archive/:chromium_base \
-		https://chromium.googlesource.com/chromium/src/build/+archive/:chromium_build \
-		https://chromium.googlesource.com/external/google-url/+archive/:googleurl \
-		https://chromium.googlesource.com/external/webrtc/trunk/third_party/gflags/+archive/master.tar.gz?dummy=/:gflags_arch \
-		https://chromium.googlesource.com/external/gflags/src/+archive/master.tar.gz?dummy=/:gflags_src \
-		https://chromium.googlesource.com/chromium/deps/libjpeg_turbo/+archive/:libjpeg_turbo_src \
-		https://chromium.googlesource.com/chromium/deps/yasm/patched-yasm/+archive/:yasm_patched \
-		https://chromium.googlesource.com/webm/libwebp/+archive/:libwebp \
-		https://chromium.googlesource.com/chromium/src/third_party/modp_b64/+archive/:modpb64 \
+MASTER_SITES=	LOCAL/mmokhi:boringssl,chromium_base,chromium_build,googleurl,gflags_arch,gflags_src,libjpeg_turbo_src,yasm_patched,libwebp,modpb64 \
 		https://dl.google.com/closure-compiler/:closurezip
 DISTFILES=	${NON_GH_DISTS}
 
