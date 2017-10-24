@@ -435,6 +435,7 @@ lib/samba/libMESSAGING-SEND-samba4.so
 lib/samba/libMESSAGING-samba4.so
 lib/samba/libaddns-samba4.so
 lib/samba/libads-samba4.so
+lib/samba/libaesni-intel-samba4.so
 lib/samba/libasn1-samba4.so.8
 lib/samba/libasn1util-samba4.so
 lib/samba/libauth-samba4.so

@@ -3,7 +3,7 @@
 
 PORTNAME?=	${SAMBA4_BASENAME}47
 PORTVERSION?=	${SAMBA4_VERSION}
-PORTREVISION?=	2
+PORTREVISION?=	3
 CATEGORIES?=	net
 EXTRACT_ONLY=
 
@@ -12,9 +12,7 @@ COMMENT?=	Free SMB/CIFS and AD/DC server and client for Unix
 
 LICENSE=	GPLv3
 
-CONFLICTS?=	*samba3[2-6]-3.* samba4-4.0.* samba41-4.1.* \
-	samba42-4.2.* samba43-4.3.* samba44-4.4.* samba45-4.5.* \
-	samba46-4.6.*
+CONFLICTS?=	*samba3[2-6]-3.* samba4-4.0.* samba4[1-689]-4.*
 
 SAMBA4_BASENAME=	samba
 SAMBA4_PORTNAME=	${SAMBA4_BASENAME}4
@@ -192,6 +190,7 @@ CONFIGURE_ARGS+=	\
 			--enable-gnutls \
 			--builtin-libraries=smbclient \
 			--without-pie \
+			--accel-aes=intelaesni \
 			${ICONV_CONFIGURE_BASE}
 
 # for libexecinfo: (so that __builtin_frame_address() finds the top of the stack)
