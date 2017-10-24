@@ -35,21 +35,21 @@ diff --git media/libstagefright/binding/mp4parse-cargo.patch media/libstagefrigh
 index 1dd13d20472a..bfa0ab74b424 100644
 --- mozilla/media/libstagefright/binding/mp4parse-cargo.patch
 +++ mozilla/media/libstagefright/binding/mp4parse-cargo.patch
-@@ -2,12 +2,13 @@ diff --git a/media/libstagefright/binding/mp4parse_cap
- index 5092cd7..ecbc8c0 100644
+@@ -25,12 +25,13 @@ diff --git a/media/libstagefright/binding/mp4parse_cap
+ index aeeebc65..5c0836a 100644
  --- a/media/libstagefright/binding/mp4parse_capi/Cargo.toml
  +++ b/media/libstagefright/binding/mp4parse_capi/Cargo.toml
--@@ -17,15 +17,7 @@ exclude = [
-+@@ -17,4 +17,4 @@ exclude = [
+-@@ -18,17 +18,9 @@ exclude = [
++@@ -18,17 +18,11 @@ exclude = [
     "*.mp4",
   ]
   
  -build = "build.rs"
 --
 ++build = false
-+
++ 
   [dependencies]
-  "mp4parse" = {version = "0.5.1", path = "../mp4parse"}
+  "mp4parse" = {version = "0.6.0", path = "../mp4parse"}
   
 diff --git media/libstagefright/binding/mp4parse_capi/Cargo.toml media/libstagefright/binding/mp4parse_capi/Cargo.toml
 index aee7ee947151..d7e3f55119d3 100644
