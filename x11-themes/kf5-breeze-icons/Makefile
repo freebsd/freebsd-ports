@@ -2,11 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	breeze-icons
-PORTVERSION=	${KDE_FRAMEWORKS_VERSION}
+DISTVERSION=	${KDE_FRAMEWORKS_VERSION}
 CATEGORIES=	x11-themes kde kde-frameworks
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	The Breeze icon theme for KDE
+COMMENT=	Breeze icon theme for KDE
+
+LICENSE=	LGPL3+
+LICENSE_FILE=	${WRKSRC}/COPYING-ICONS
 
 USES=		cmake:outsource kde:5 tar:xz
 USE_KDE=	ecm
