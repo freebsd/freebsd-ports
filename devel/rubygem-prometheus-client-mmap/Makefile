@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	prometheus-client-mmap
-DISTVERSION=	0.7.0.beta5
+DISTVERSION=	0.7.0.beta11
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
