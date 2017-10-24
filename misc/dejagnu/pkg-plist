@@ -2,6 +2,7 @@ bin/runtest
 include/dejagnu.h
 man/man1/runtest.1.gz
 %%DATADIR%%/baseboards/README
+%%DATADIR%%/baseboards/aarch64-sim.exp
 %%DATADIR%%/baseboards/am33_2.0-libremote.exp
 %%DATADIR%%/baseboards/androideabi.exp
 %%DATADIR%%/baseboards/arm-ice.exp
@@ -36,6 +37,7 @@ man/man1/runtest.1.gz
 %%DATADIR%%/baseboards/mmixware-sim.exp
 %%DATADIR%%/baseboards/mn10200-sim.exp
 %%DATADIR%%/baseboards/mn10300-sim.exp
+%%DATADIR%%/baseboards/msp430-sim.exp
 %%DATADIR%%/baseboards/mt-sid.exp
 %%DATADIR%%/baseboards/multi-sim.exp
 %%DATADIR%%/baseboards/powerpc-sim.exp
@@ -68,6 +70,7 @@ man/man1/runtest.1.gz
 %%DATADIR%%/debugger.exp
 %%DATADIR%%/dejagnu.exp
 %%DATADIR%%/dg.exp
+%%DATADIR%%/dmucs.exp
 %%DATADIR%%/framework.exp
 %%DATADIR%%/ftp.exp
 %%DATADIR%%/kermit.exp
@@ -77,6 +80,7 @@ man/man1/runtest.1.gz
 %%DATADIR%%/rlogin.exp
 %%DATADIR%%/rsh.exp
 %%DATADIR%%/runtest.exp
+%%DATADIR%%/ssh.exp
 %%DATADIR%%/standard.exp
 %%DATADIR%%/stub-loader.c
 %%DATADIR%%/target.exp
