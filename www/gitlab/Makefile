@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	gitlab
-PORTVERSION=	9.3.11
+PORTVERSION=	9.4.7
 DISTVERSIONPREFIX=	v
-PORTREVISION=	2
 CATEGORIES=	www devel
 
 MAINTAINER=	tz@FreeBSD.org
@@ -37,7 +36,7 @@ RUN_DEPENDS=	git>=2.14.1:devel/git \
 	rubygem-sprockets3>=3.7:devel/rubygem-sprockets3 \
 	rubygem-default_value_for>=3.0.1:devel/rubygem-default_value_for \
 	rubygem-rugged>=0.25.1.1:devel/rubygem-rugged \
-	rubygem-faraday>=0.11.0:www/rubygem-faraday \
+	rubygem-faraday>=0.12.0:www/rubygem-faraday \
 	rubygem-devise>=4.2:devel/rubygem-devise \
 	rubygem-doorkeeper>=4.2:security/rubygem-doorkeeper \
 	rubygem-doorkeeper-openid_connect>=1.1.0:security/rubygem-doorkeeper-openid_connect \
@@ -65,7 +64,8 @@ RUN_DEPENDS=	git>=2.14.1:devel/git \
 	rubygem-u2f0>=0.2.1:net/rubygem-u2f0 \
 	rubygem-validates_hostname>=1.0.6:dns/rubygem-validates_hostname \
 	rubygem-browser>=2.2:www/rubygem-browser \
-	rubygem-gitlab_omniauth-ldap1>=1.2.1:net/rubygem-gitlab_omniauth-ldap1 \
+	rubygem-gitlab_omniauth-ldap>=2.0.2:net/rubygem-gitlab_omniauth-ldap \
+	rubygem-net-ldap>=0:net/rubygem-net-ldap \
 	rubygem-gollum-lib-gitlab>=4.2.0:www/rubygem-gollum-lib-gitlab \
 	rubygem-gollum-rugged_adapter>=0.4.4:www/rubygem-gollum-rugged_adapter \
 	rubygem-github-linguist>=4.7.0:textproc/rubygem-github-linguist \
@@ -75,7 +75,7 @@ RUN_DEPENDS=	git>=2.14.1:devel/git \
 	rubygem-rack-cors0>=0.4.0:www/rubygem-rack-cors0 \
 	rubygem-kaminari-rails4>=0.17.0:www/rubygem-kaminari-rails4 \
 	rubygem-hamlit>=2.6.1:www/rubygem-hamlit \
-	rubygem-carrierwave>=1.0:www/rubygem-carrierwave \
+	rubygem-carrierwave>=1.1:www/rubygem-carrierwave \
 	rubygem-dropzonejs-rails>=0.7.1:www/rubygem-dropzonejs-rails \
 	rubygem-fog-aws0>=0.9:net/rubygem-fog-aws0 \
 	rubygem-fog-core>=1.44:devel/rubygem-fog-core \
@@ -100,6 +100,7 @@ RUN_DEPENDS=	git>=2.14.1:devel/git \
 	rubygem-asciidoctor-plantuml>=0.0.7:textproc/rubygem-asciidoctor-plantuml \
 	rubygem-rouge>=2.0:textproc/rubygem-rouge \
 	rubygem-truncato>=0.7.9:textproc/rubygem-truncato \
+	rubygem-bootstrap_form>=2.7:devel/rubygem-bootstrap_form \
 	rubygem-nokogiri>=1.8.0:textproc/rubygem-nokogiri  \
 	rubygem-diffy>=3.1.0:textproc/rubygem-diffy \
 	rubygem-unicorn>=5.1.0:www/rubygem-unicorn \
@@ -113,7 +114,7 @@ RUN_DEPENDS=	git>=2.14.1:devel/git \
 	rubygem-sidekiq-limit_fetch>=3.4:devel/rubygem-sidekiq-limit_fetch \
 	rubygem-rufus-scheduler>=3.4.0:devel/rubygem-rufus-scheduler \
 	rubygem-httparty>=0.13.3:www/rubygem-httparty \
-	rubygem-rainbow>=2.1.0:devel/rubygem-rainbow \
+	rubygem-rainbow>=2.2:devel/rubygem-rainbow \
 	rubygem-settingslogic>=2.0.9:devel/rubygem-settingslogic \
 	rubygem-re2>=1.0:devel/rubygem-re2 \
 	rubygem-version_sorter>=2.1.0:textproc/rubygem-version_sorter \
@@ -158,9 +159,10 @@ RUN_DEPENDS=	git>=2.14.1:devel/git \
 	rubygem-virtus>=1.0.1:devel/rubygem-virtus \
 	rubygem-net-ssh>=3.0.1:security/rubygem-net-ssh \
 	rubygem-base32>=0.3.2:converters/rubygem-base32 \
-	rubygem-sentry-raven>=2.4.0:devel/rubygem-sentry-raven \
+	rubygem-sentry-raven>=2.5.3:devel/rubygem-sentry-raven \
 	rubygem-premailer-rails>=1.9.7:mail/rubygem-premailer-rails \
-	rubygem-ruby_parser>=3.8.4:devel/rubygem-ruby_parser \
+	rubygem-ruby_parser>=3.8:devel/rubygem-ruby_parser \
+	rubygem-rails-i18n-4>=4.0.9:devel/rubygem-rails-i18n-4 \
 	rubygem-gettext_i18n_rails>=1.8.0:devel/rubygem-gettext_i18n_rails \
 	rubygem-gettext_i18n_rails_js>=1.2.0:devel/rubygem-gettext_i18n_rails_js \
 	rubygem-gettext>=3.2.2:devel/rubygem-gettext \
@@ -171,18 +173,19 @@ RUN_DEPENDS=	git>=2.14.1:devel/git \
 	rubygem-peek-rblineprof>=0.2.0:devel/rubygem-peek-rblineprof \
 	rubygem-peek-redis>=1.2.0:devel/rubygem-peek-redis \
 	rubygem-peek-sidekiq>=1.0.3:devel/rubygem-peek-sidekiq \
-	rubygem-prometheus-client-mmap>=0.7.0.beta5:devel/rubygem-prometheus-client-mmap \
+	rubygem-prometheus-client-mmap>=0.7.0.beta11:devel/rubygem-prometheus-client-mmap \
+	rubygem-raindrops>=0.18:www/rubygem-raindrops \
 	rubygem-octokit>=4.6.2:net/rubygem-octokit \
 	rubygem-mail_room>=0.9.1:mail/rubygem-mail_room \
 	rubygem-email_reply_trimmer>=0.1:mail/rubygem-email_reply_trimmer \
 	rubygem-html2text>=0:textproc/rubygem-html2text \
 	rubygem-ruby-prof>=0.16.2:devel/rubygem-ruby-prof \
-	rubygem-oauth2>=1.3.0:net/rubygem-oauth2 \
-	rubygem-paranoia>=2.2:databases/rubygem-paranoia \
+	rubygem-oauth2>=1.4:net/rubygem-oauth2 \
+	rubygem-paranoia>=2.3.1:databases/rubygem-paranoia \
 	rubygem-health_check>=2.6.0:devel/rubygem-health_check \
 	rubygem-vmstat>=2.3.0:sysutils/rubygem-vmstat \
 	rubygem-sys-filesystem>=1.1.6:sysutils/rubygem-sys-filesystem \
-	rubygem-gitaly>=0.8.0:net/rubygem-gitaly \
+	rubygem-gitaly>=0.14.0:net/rubygem-gitaly \
 	rubygem-toml-rb>=0.3.15:www/rubygem-toml-rb \
 	rubygem-flipper>=0.10.2:devel/rubygem-flipper \
 	rubygem-flipper-active_record>=0.10.2:databases/rubygem-flipper-active_record \
@@ -207,18 +210,19 @@ NO_ARCH=	yes
 NO_BUILD=	yes
 
 post-patch-MYSQL-on:
-	@${CP} ${WRKSRC}/config/database.yml.mysql ${WRKSRC}/config/database.yml.sample
+	${CP} ${WRKSRC}/config/database.yml.mysql ${WRKSRC}/config/database.yml.sample
 
 post-patch-MYSQL-off:
-	@${REINPLACE_CMD} -e "/gem 'mysql2'/d" ${WRKSRC}/Gemfile
-	@${REINPLACE_CMD} -e "/gem 'peek-mysql2'/d" ${WRKSRC}/Gemfile
+	${REINPLACE_CMD} -e "/gem 'mysql2'/d" ${WRKSRC}/Gemfile
+	${REINPLACE_CMD} -e "/gem 'peek-mysql2'/d" ${WRKSRC}/Gemfile
 
 post-patch-PGSQL-on:
-	@${CP} ${WRKSRC}/config/database.yml.postgresql ${WRKSRC}/config/database.yml.sample
+	${REINPLACE_CMD} -e "/gem 'pg'/d" ${WRKSRC}/Gemfile
+	${CP} ${WRKSRC}/config/database.yml.postgresql ${WRKSRC}/config/database.yml.sample
 
 post-patch-PGSQL-off:
-	@${REINPLACE_CMD} -e "/gem 'pg'/d" ${WRKSRC}/Gemfile
-	@${REINPLACE_CMD} -e "/gem 'peek-pg'/d" ${WRKSRC}/Gemfile
+	${REINPLACE_CMD} -e "/gem 'pg'/d" ${WRKSRC}/Gemfile
+	${REINPLACE_CMD} -e "/gem 'peek-pg'/d" ${WRKSRC}/Gemfile
 
 do-install:
 	${FIND} ${WRKSRC} -name '*.orig' -delete
