@@ -4,7 +4,7 @@
 #
 # PROVIDE: google_clock_skew_daemon
 # BEFORE: LOGIN
-# REQUIRE: NETWORKING syslogd google_instance_setup google_network_setup
+# REQUIRE: NETWORKING syslogd ntpd google_instance_setup google_network_setup
 # KEYWORD: shutdown
 #
 # google_clock_skew_daemon_enable (bool): Set to NO by default.
