@@ -39,8 +39,8 @@ pidfile=/var/run/node_exporter.pid
 command="/usr/sbin/daemon"
 procname="%%PREFIX%%/bin/node_exporter"
 command_args="-p ${pidfile} /usr/bin/env ${procname} \
-    -web.listen-address=${node_exporter_listen_address} \
-    -collector.textfile.directory=${node_exporter_textfile_dir} \
+    --web.listen-address=${node_exporter_listen_address} \
+    --collector.textfile.directory=${node_exporter_textfile_dir} \
     ${node_exporter_args}"
 
 start_precmd=node_exporter_startprecmd
