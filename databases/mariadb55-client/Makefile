@@ -21,7 +21,7 @@ CONFLICTS_INSTALL=	mariadb5[0-46-9]-client-* \
 CMAKE_ARGS+=	-DWITHOUT_SERVER=1
 CLIENT_ONLY=	yes
 
-USES+=		ncurses readline
+USES=		ncurses readline
 
 post-install:
 	${RM} ${STAGEDIR}${PREFIX}/bin/mysqld_safe_helper
