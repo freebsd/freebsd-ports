@@ -1,6 +1,6 @@
---- deps/v8/src/base/platform/platform-freebsd.cc.orig	2017-08-09 18:48:10 UTC
+--- deps/v8/src/base/platform/platform-freebsd.cc.orig	2017-10-24 19:40:14 UTC
 +++ deps/v8/src/base/platform/platform-freebsd.cc
-@@ -48,6 +48,48 @@ void* OS::Allocate(const size_t requested, size_t* all
+@@ -51,6 +51,48 @@ void* OS::Allocate(const size_t requested, size_t* all
    return mbase;
  }
  
