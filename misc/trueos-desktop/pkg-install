@@ -71,31 +71,34 @@ fi
 touch /var/.openrc-migrate-3
 
 if [ ! -e "/var/.openrc-migrate-4" ] ; then
-    /sbin/rc-update add sndiod default
+  /sbin/rc-update add sndiod default
 fi
 touch /var/.openrc-migrate-4
 
 if [ ! -e "/var/.openrc-migrate-5" ] ; then
-    /sbin/rc-update add mountlate default
+  /sbin/rc-update add mountlate default
 fi
 touch /var/.openrc-migrate-5
 
 if [ ! -e "/var/.openrc-migrate-6" ] ; then
-    /usr/sbin/sysrc -f /etc/rc.conf webcamd_enable=YES
+  /usr/sbin/sysrc -f /etc/rc.conf webcamd_enable=YES
 fi
 touch /var/.openrc-migrate-6
 
 if [ ! -e "/var/.openrc-migrate-7" ] ; then
-    /usr/sbin/sysrc -f /etc/rc.conf kldload_i915-="i915kms"
+  /usr/sbin/sysrc -f /etc/rc.conf kldload_i915-="i915kms"
 fi
 touch /var/.openrc-migrate-7
 
 if [ ! -e "/var/.openrc-migrate-8" ] ; then
-    /usr/sbin/sysrc -f /etc/rc.conf kld_list-="i915kms"
+  /usr/sbin/sysrc -f /etc/rc.conf kld_list-="i915kms"
 fi
 touch /var/.openrc-migrate-8
 
-
-
+if [ ! -e "/var/.openrc-migrate-9" ] ; then
+  /usr/sbin/sysrc -f /etc/rc.conf kldload_i915kms-="i915kms"
+  /sbin/rc-update add trueosinit default
+fi
+touch /var/.openrc-migrate-9
 
 exit 0

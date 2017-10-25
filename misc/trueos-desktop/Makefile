@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	trueos-desktop
-PORTVERSION=	201710221744
+PORTVERSION=	201710251909
 CATEGORIES=	misc
 MASTER_SITES=
 DISTFILES=
@@ -17,7 +17,7 @@ RUN_DEPENDS=	${LOCALBASE}/sbin/PCDMd:x11/pcdm \
 		${LOCALBASE}/bin/pc-wificonfig:sysutils/pc-networkmanager \
 		${LOCALBASE}/sbin/pc-sysinstall:sysutils/pc-sysinstall \
 		${LOCALBASE}/share/trueos/scripts/functions.sh:sysutils/trueos-libsh \
-		${LOCALBASE}/bin/pc-checkxdisplay:sysutils/trueos-utils \
+		${LOCALBASE}/bin/pc-firstgui:sysutils/trueos-utils \
 		${LOCALBASE}/bin/pc-firstboot:sysutils/trueos-utils-qt5 \
 		${LOCALBASE}/bin/pc-mixer:audio/pc-mixer \
 		${LOCALBASE}/bin/sysadm-binary:sysutils/sysadm \
@@ -71,6 +71,6 @@ MAKE_ARGS=	PREFIX=${STAGEDIR}${PREFIX}
 USE_GITHUB=     yes
 GH_ACCOUNT=     trueos
 GH_PROJECT=     trueos-core
-GH_TAGNAME=     117641703c61109031a48046c4ac6a3bca08a7bf
+GH_TAGNAME=     6b92587443bcd7b8f4b0e905ec873fe0952fc283
 
 .include <bsd.port.mk>
