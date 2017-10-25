@@ -483,11 +483,11 @@ lib/erlang/lib/wx-%%APP_VERSION%%/ebin/wxe_util.beam
 lib/erlang/lib/wx-%%APP_VERSION%%/include/gl.hrl
 lib/erlang/lib/wx-%%APP_VERSION%%/include/glu.hrl
 lib/erlang/lib/wx-%%APP_VERSION%%/include/wx.hrl
-lib/erlang/lib/wx-%%APP_VERSION%%/priv/%%CONFIGURE_TARGET%%/erl_gl.so
-lib/erlang/lib/wx-%%APP_VERSION%%/priv/%%CONFIGURE_TARGET%%/wxe_driver.so
+lib/erlang/lib/wx-%%APP_VERSION%%/priv/erl_gl.so
 lib/erlang/lib/wx-%%APP_VERSION%%/priv/erlang-logo128.png
 lib/erlang/lib/wx-%%APP_VERSION%%/priv/erlang-logo32.png
 lib/erlang/lib/wx-%%APP_VERSION%%/priv/erlang-logo64.png
+lib/erlang/lib/wx-%%APP_VERSION%%/priv/wxe_driver.so
 lib/erlang/lib/wx-%%APP_VERSION%%/src/Makefile
 lib/erlang/lib/wx-%%APP_VERSION%%/src/gen/gl.erl
 lib/erlang/lib/wx-%%APP_VERSION%%/src/gen/glu.erl
