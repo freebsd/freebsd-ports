@@ -1,0 +1,10 @@
+--- src/VBox/Debugger/Makefile.kmk.orig	2017-10-18 07:09:03 UTC
++++ src/VBox/Debugger/Makefile.kmk
+@@ -109,6 +109,7 @@ VBoxDbg_SOURCES = \
+ 	VBoxDbgBase.cpp \
+ 	VBoxDbgConsole.cpp \
+ 	VBoxDbgStatsQt.cpp
++VBoxDbg_CXXFLAGS.freebsd += -std=c++11
+ VBoxDbg_LIBS = \
+ 	$(VBOX_LIB_VMM_LAZY)
+ VBoxDbg_LDFLAGS.darwin = \
