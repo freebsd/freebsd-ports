@@ -2,8 +2,7 @@
 
 PORTNAME=	gitaly
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.11.2
-PORTREVISION=	1
+DISTVERSION=	0.21.2
 CATEGORIES=	devel
 MASTER_SITES=	https://gitlab.com/gitlab-org/${PORTNAME}/repository/archive.tar.gz?ref=${DISTVERSIONPREFIX}${PORTVERSION}&dummy=/
 
