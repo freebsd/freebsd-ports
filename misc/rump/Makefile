@@ -24,12 +24,12 @@ USE_LDCONFIG=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "i386" || ${ARCH} == "amd64"
-PLIST_SUB+= 	X8664=""
+PLIST_SUB+=	X8664=""
 .else
-PLIST_SUB+= 	X8664="@comment "
+PLIST_SUB+=	X8664="@comment "
 .endif
 
-.if ${OSVERSION} >= 1100121
+.if ${OSVERSION} >= 1100508
 CFLAGS+=	-Wno-address-of-packed-member
 .endif
 
