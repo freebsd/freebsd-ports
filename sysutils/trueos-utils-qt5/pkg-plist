@@ -1,7 +1,9 @@
+bin/pc-checkxdisplay
 bin/pc-firstboot
 bin/pc-sysconfig
 bin/pc-sysinstaller
 bin/pc-xgui
+etc/init.d/checkxdisplay
 share/trueos/i18n/FirstBoot_af.qm
 share/trueos/i18n/FirstBoot_ar.qm
 share/trueos/i18n/FirstBoot_az.qm

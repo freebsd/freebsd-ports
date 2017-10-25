@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	trueos-utils-qt5
-PORTVERSION=	201710161633
+PORTVERSION=	201710251127
 CATEGORIES=	sysutils
 
 MAINTAINER=	jmaloney@ixsystems.com
@@ -36,6 +36,6 @@ QMAKE_ARGS=     CONFIG+="configure"
 USE_GITHUB=	yes
 GH_ACCOUNT=	trueos
 GH_PROJECT=	trueos-utils-qt5
-GH_TAGNAME=	ce71b47bdf7bc8f868d6f97540ab4a41e5b16762
+GH_TAGNAME=	810d2f8faebf08bb3a8ce0ae5187b0f7c4baec0b
 
 .include <bsd.port.mk>
