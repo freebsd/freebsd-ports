@@ -138,6 +138,7 @@
     SUBDIR += exabgp
     SUBDIR += exaddos
     SUBDIR += fb
+    SUBDIR += file2pcap
     SUBDIR += findmtu
     SUBDIR += flower
     SUBDIR += flowgrep

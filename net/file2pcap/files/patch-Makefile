@@ -1,0 +1,7 @@
+--- Makefile.orig	2017-10-22 15:06:28 UTC
++++ Makefile
+@@ -1,4 +1,3 @@
+-CC = gcc
+ 
+ 
+ 
