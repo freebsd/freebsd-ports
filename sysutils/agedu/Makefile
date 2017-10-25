@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	agedu
-PORTVERSION=	20160920
-DISTVERSIONSUFFIX=	.853cea9
+PORTVERSION=	20170831
+DISTVERSIONSUFFIX=	.fc6b2b5
 CATEGORIES=	sysutils
 MASTER_SITES=	LOCAL/sunpoet \
 		https://www.chiark.greenend.org.uk/~sgtatham/${PORTNAME}/
