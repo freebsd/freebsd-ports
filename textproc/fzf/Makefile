@@ -3,7 +3,7 @@
 
 PORTNAME=	fzf
 PORTVERSION=	0.16.10
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 
 MAINTAINER=	sascha@root-login.org
