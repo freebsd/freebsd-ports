@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libtasn1
-PORTVERSION=	3.8
-PORTREVISION=	1
+PORTVERSION=	4.10
 CATEGORIES=	security linux
 
 MAINTAINER=	emulation@FreeBSD.org
@@ -14,7 +13,7 @@ LICENSE=	LGPL21+
 CONFLICT=	linux-c6-${PORTNAME}-[0-9]*
 
 DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
-RPMVERSION=	3.el7
+RPMVERSION=	1.el7
 USES=		cpe linux:c7
 CPE_VENDOR=	gnu
 USE_LDCONFIG=	yes

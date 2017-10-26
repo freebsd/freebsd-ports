@@ -1089,6 +1089,7 @@ usr/include/linux/blkpg.h
 usr/include/linux/blktrace_api.h
 usr/include/linux/bpqether.h
 usr/include/linux/bsg.h
+usr/include/linux/bt-bmc.h
 usr/include/linux/btrfs.h
 usr/include/linux/byteorder/big_endian.h
 usr/include/linux/byteorder/little_endian.h
@@ -1120,6 +1121,7 @@ usr/include/linux/cyclades.h
 usr/include/linux/cycx_cfm.h
 usr/include/linux/dcbnl.h
 usr/include/linux/dccp.h
+usr/include/linux/devlink.h
 usr/include/linux/dlm.h
 usr/include/linux/dlm_device.h
 usr/include/linux/dlm_netlink.h
@@ -1160,6 +1162,7 @@ usr/include/linux/filter.h
 usr/include/linux/firewire-cdev.h
 usr/include/linux/firewire-constants.h
 usr/include/linux/flat.h
+usr/include/linux/fou.h
 usr/include/linux/fs.h
 usr/include/linux/fsl_hypervisor.h
 usr/include/linux/fuse.h
@@ -1281,6 +1284,7 @@ usr/include/linux/minix_fs.h
 usr/include/linux/mman.h
 usr/include/linux/mmc/ioctl.h
 usr/include/linux/mmtimer.h
+usr/include/linux/mpls.h
 usr/include/linux/mqueue.h
 usr/include/linux/mroute.h
 usr/include/linux/mroute6.h
@@ -1542,6 +1546,7 @@ usr/include/linux/swab.h
 usr/include/linux/synclink.h
 usr/include/linux/sysctl.h
 usr/include/linux/sysinfo.h
+usr/include/linux/target_core_user.h
 usr/include/linux/taskstats.h
 usr/include/linux/tc_act/tc_csum.h
 usr/include/linux/tc_act/tc_gact.h
@@ -1618,7 +1623,10 @@ usr/include/linux/virtio_ring.h
 usr/include/linux/virtio_rng.h
 usr/include/linux/virtio_scsi.h
 usr/include/linux/virtio_types.h
+usr/include/linux/virtio_vsock.h
+usr/include/linux/vm_sockets.h
 usr/include/linux/vt.h
+usr/include/linux/vtpm_proxy.h
 usr/include/linux/wait.h
 usr/include/linux/wanrouter.h
 usr/include/linux/watchdog.h
@@ -1690,13 +1698,22 @@ usr/include/protocols/timed.h
 usr/include/pthread.h
 usr/include/pty.h
 usr/include/pwd.h
+usr/include/rdma/cxgb3-abi.h
+usr/include/rdma/cxgb4-abi.h
 usr/include/rdma/hfi/hfi1_user.h
 usr/include/rdma/ib_user_cm.h
 usr/include/rdma/ib_user_mad.h
 usr/include/rdma/ib_user_sa.h
 usr/include/rdma/ib_user_verbs.h
+usr/include/rdma/mlx4-abi.h
+usr/include/rdma/mlx5-abi.h
+usr/include/rdma/mthca-abi.h
+usr/include/rdma/nes-abi.h
+usr/include/rdma/ocrdma-abi.h
+usr/include/rdma/qedr-abi.h
 usr/include/rdma/rdma_netlink.h
 usr/include/rdma/rdma_user_cm.h
+usr/include/rdma/rdma_user_rxe.h
 usr/include/re_comp.h
 usr/include/regex.h
 usr/include/regexp.h
@@ -1774,6 +1791,7 @@ usr/include/sgtty.h
 usr/include/shadow.h
 usr/include/signal.h
 usr/include/sound/asequencer.h
+usr/include/sound/asoc.h
 usr/include/sound/asound.h
 usr/include/sound/asound_fm.h
 usr/include/sound/compress_offload.h
@@ -1783,6 +1801,9 @@ usr/include/sound/hdsp.h
 usr/include/sound/hdspm.h
 usr/include/sound/sb16_csp.h
 usr/include/sound/sfnt_info.h
+usr/include/sound/snd_sst_tokens.h
+usr/include/sound/tlv.h
+usr/include/sound/usb_stream.h
 usr/include/spawn.h
 usr/include/stab.h
 usr/include/stdc-predef.h
@@ -2081,7 +2102,7 @@ usr/lib64/crtn.o
 usr/lib64/gcrt1.o
 usr/lib64/libBrokenLocale.so
 usr/lib64/libanl.so
-usr/lib64/libbfd-2.25.1-22.base.el7.so
+usr/lib64/libbfd-2.25.1-32.base.el7_4.1.so
 usr/lib64/libbfd.a
 usr/lib64/libbfd.so
 usr/lib64/libbsd-compat.a
@@ -2110,7 +2131,7 @@ usr/lib64/libnss_files.so
 usr/lib64/libnss_hesiod.so
 usr/lib64/libnss_nis.so
 usr/lib64/libnss_nisplus.so
-usr/lib64/libopcodes-2.25.1-22.base.el7.so
+usr/lib64/libopcodes-2.25.1-32.base.el7_4.1.so
 usr/lib64/libopcodes.a
 usr/lib64/libopcodes.so
 usr/lib64/libpthread.so
