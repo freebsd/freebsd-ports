@@ -3,7 +3,7 @@
 
 PORTNAME=	alttab
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.0.3
+DISTVERSION=	1.1.0
 CATEGORIES=	x11
 
 MAINTAINER=	dg@syrec.org
@@ -12,9 +12,13 @@ COMMENT=	Task switcher for minimalistic window managers
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BUILD_DEPENDS=	${LOCALBASE}/include/uthash.h:devel/uthash
+LIB_DEPENDS=	libpng16.so:graphics/png
+
 USES=		pkgconfig
-USE_XORG=	x11 xft
+USE_XORG=	x11 xft xrender
 GNU_CONFIGURE=	yes
+CFLAGS+=	-I${LOCALBASE}/include
 USE_GITHUB=	yes
 GH_ACCOUNT=	sagb
 
