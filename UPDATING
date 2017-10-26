@@ -5,6 +5,14 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20171026:
+  AFFECTS: users of devel/universal-ctags
+  AUTHOR: rodrigo@FreeBSD.org
+
+  Due to conflicts with emacs ctag (editors/emacs-devel, editors/emacs-nox11, editors/emacs),
+  the installed files will be prefixed with the 'u' character.
+  The new binaries will de named uctags and ureadtags.
+
 20171015:
   AFFECTS: people using WITHOUT_DEBUG
   AUTHOR: madpilot@FreeBSD.org
