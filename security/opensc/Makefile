@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	opensc
-PORTVERSION=	0.16.0
+PORTVERSION=	0.17.0
 CATEGORIES=	security devel
-MASTER_SITES=	SF/${PORTNAME}/OpenSC/${DISTNAME}
+MASTER_SITES=	https://github.com/OpenSC/OpenSC/releases/download/0.17.0/
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	Libraries and utilities to access smart cards
