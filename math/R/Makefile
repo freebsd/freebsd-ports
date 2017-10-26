@@ -3,6 +3,7 @@
 
 PORTNAME=		R
 DISTVERSION=		3.4.2
+PORTREVISION=		1
 CATEGORIES=		math lang
 MASTER_SITES=		CRAN/src/base/R-${PORTVERSION:C|\..*||}
 
@@ -75,17 +76,9 @@ CAIROPANGO_IMPLIES=	X11
 CAIROPANGO_CONFIGURE_WITH=cairo
 CAIROPANGO_USES=	gettext jpeg pkgconfig
 CAIROPANGO_USE=		GNOME=pango,cairo
-FLANG_USE=		binutils
-#FLANG_USES=		fortran:flang
+FLANG_USES=		fortran:flang
 FLANG_PREVENTS=		ATLAS OPENBLAS NETLIB
-FLANG_BUILD_DEPENDS=	flang:devel/flang
-FLANG_RUN_DEPENDS=	flang:devel/flang
-FLANG_VARS=		F77=flang FC=flang
-FLANG_LDFLAGS=		-L${LOCALBASE}/flang/lib -lflang -lexecinfo
-FLANG_CONFIGURE_ENV=	F77="${F77}" FC="${FC}" FFLAGS="${FFLAGS}"
-FLANG_MAKE_ENV=		F77="${F77}" FC="${FC}" FFLAGS="${FFLAGS}"
-#GFORTRAN_USE=		gcc=yes
-GFORTRAN_USES=		fortran
+GFORTRAN_USES=		fortran:gcc
 GFORTRAN_RUN_DEPENDS=	wget:ftp/wget
 GHOSTSCRIPT_IMPLIES=	X11
 GHOSTSCRIPT_USES=	ghostscript
@@ -144,6 +137,14 @@ post-patch:
 		${WRKSRC}/src/main/Makefile.in \
 		${WRKSRC}/src/extra/blas/Makefile.in \
 		${WRKSRC}/src/modules/lapack/Makefile.in
+
+post-install-RBLAS-on:
+	@${REINPLACE_CMD} -e "s| -lR| -lR -lRblas|" \
+		${STAGEDIR}${PREFIX}/libdata/pkgconfig/libR.pc
+
+post-install-RBLAS-off:
+	@${REINPLACE_CMD} -e "s| -lR| -lR ${BLASLIB}|" \
+		${STAGEDIR}${PREFIX}/libdata/pkgconfig/libR.pc
 
 .include <bsd.port.pre.mk>
 .include "compiler.mk"
