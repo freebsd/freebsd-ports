@@ -1,4 +1,5 @@
 usr/bin/gdk-pixbuf-query-loaders-32
+usr/bin/gdk-pixbuf-thumbnailer
 usr/lib/gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader-ani.so
 usr/lib/gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader-bmp.so
 usr/lib/gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader-gif.so
@@ -6,24 +7,21 @@ usr/lib/gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader-icns.so
 usr/lib/gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader-ico.so
 usr/lib/gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader-jasper.so
 usr/lib/gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader-jpeg.so
-usr/lib/gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader-pcx.so
 usr/lib/gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader-pnm.so
 usr/lib/gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader-qtif.so
-usr/lib/gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader-ras.so
 usr/lib/gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader-tga.so
 usr/lib/gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader-tiff.so
-usr/lib/gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader-wbmp.so
 usr/lib/gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader-xbm.so
 usr/lib/gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader-xpm.so
 @rmtry usr/lib/gdk-pixbuf-2.0/2.10.0/loaders.cache
 usr/lib/girepository-1.0/GdkPixbuf-2.0.typelib
 usr/lib/libgdk_pixbuf-2.0.so.0
-usr/lib/libgdk_pixbuf-2.0.so.0.3100.6
+usr/lib/libgdk_pixbuf-2.0.so.0.3600.5
 usr/lib/libgdk_pixbuf_xlib-2.0.so.0
-usr/lib/libgdk_pixbuf_xlib-2.0.so.0.3100.6
+usr/lib/libgdk_pixbuf_xlib-2.0.so.0.3600.5
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
-%%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
+usr/share/licenses/gdk-pixbuf2-2.36.5/COPYING
 %%NLS%%usr/share/locale/af/LC_MESSAGES/gdk-pixbuf.mo
 %%NLS%%usr/share/locale/ang/LC_MESSAGES/gdk-pixbuf.mo
 %%NLS%%usr/share/locale/ar/LC_MESSAGES/gdk-pixbuf.mo
@@ -57,6 +55,7 @@ usr/lib/libgdk_pixbuf_xlib-2.0.so.0.3100.6
 %%NLS%%usr/share/locale/fa/LC_MESSAGES/gdk-pixbuf.mo
 %%NLS%%usr/share/locale/fi/LC_MESSAGES/gdk-pixbuf.mo
 %%NLS%%usr/share/locale/fr/LC_MESSAGES/gdk-pixbuf.mo
+%%NLS%%usr/share/locale/fur/LC_MESSAGES/gdk-pixbuf.mo
 %%NLS%%usr/share/locale/ga/LC_MESSAGES/gdk-pixbuf.mo
 %%NLS%%usr/share/locale/gl/LC_MESSAGES/gdk-pixbuf.mo
 %%NLS%%usr/share/locale/gu/LC_MESSAGES/gdk-pixbuf.mo
@@ -130,4 +129,5 @@ usr/lib/libgdk_pixbuf_xlib-2.0.so.0.3100.6
 %%NLS%%usr/share/locale/zh_HK/LC_MESSAGES/gdk-pixbuf.mo
 %%NLS%%usr/share/locale/zh_TW/LC_MESSAGES/gdk-pixbuf.mo
 usr/share/man/man1/gdk-pixbuf-query-loaders.1.gz
+usr/share/thumbnailers/gdk-pixbuf-thumbnailer.thumbnailer
 @postexec %D/usr/bin/gdk-pixbuf-query-loaders-32 --update-cache

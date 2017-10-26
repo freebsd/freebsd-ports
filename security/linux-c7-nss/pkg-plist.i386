@@ -1,3 +1,4 @@
+etc/pki/nss-legacy/nss-rhel7.config
 etc/pki/nssdb/cert8.db
 etc/pki/nssdb/cert9.db
 etc/pki/nssdb/key3.db
@@ -7,7 +8,6 @@ etc/pki/nssdb/secmod.db
 usr/lib/libnss3.so
 usr/lib/libnssdbm3.chk
 usr/lib/libnssdbm3.so
-usr/lib/libnsspem.so
 usr/lib/libnssutil3.so
 usr/lib/libsmime3.so
 usr/lib/libsoftokn3.chk

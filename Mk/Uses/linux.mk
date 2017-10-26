@@ -47,7 +47,7 @@ LINUX_ARCH=		${ARCH}
 IGNORE=			Linux CentOS ${LINUX_DIST_VER} is unsupported on ${ARCH}
 .endif
 .elif ${linux_ARGS} == c7
-LINUX_DIST_VER?=	7.3.1611
+LINUX_DIST_VER?=	7.4.1708
 .if ${ARCH} == amd64
 LINUX_ARCH=		x86_64
 .elif ${ARCH} == i386
