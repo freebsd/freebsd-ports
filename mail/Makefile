@@ -527,6 +527,7 @@
     SUBDIR += proxsmtp
     SUBDIR += py-Products.MailHost
     SUBDIR += py-Products.SecureMailHost
+    SUBDIR += py-afew
     SUBDIR += py-aiosmtpd
     SUBDIR += py-apolicy
     SUBDIR += py-authres
@@ -665,6 +666,7 @@
     SUBDIR += spampd
     SUBDIR += spamprobe
     SUBDIR += spamstats
+    SUBDIR += spfmilter
     SUBDIR += spfval
     SUBDIR += spmfilter
     SUBDIR += spmfilter-clamav

@@ -79,6 +79,7 @@ include/mailutils/kwd.h
 include/mailutils/ldap.h
 include/mailutils/list.h
 include/mailutils/locker.h
+include/mailutils/locus.h
 include/mailutils/log.h
 include/mailutils/mailbox.h
 include/mailutils/mailcap.h
@@ -167,7 +168,8 @@ include/mailutils/url.h
 include/mailutils/util.h
 include/mailutils/version.h
 include/mailutils/wordsplit.h
-%%GUILE%%lib/libguile-mailutils-v-3.2.91.so
+include/mailutils/yyloc.h
+%%GUILE%%lib/libguile-mailutils-v-3.3.so
 lib/libmailutils.a
 lib/libmailutils.so
 lib/libmailutils.so.5

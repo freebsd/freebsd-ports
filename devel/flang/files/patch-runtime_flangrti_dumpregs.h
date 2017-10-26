@@ -1,4 +1,4 @@
---- runtime/flangrti/dumpregs.h.orig	2017-05-17 00:40:01 UTC
+--- runtime/flangrti/dumpregs.h.orig	2017-10-19 11:03:03 UTC
 +++ runtime/flangrti/dumpregs.h
 @@ -21,6 +21,6 @@
   *  Declare routines that access the machine registers

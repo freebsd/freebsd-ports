@@ -9,8 +9,8 @@ bin/mdig
 bin/named-rrchecker
 bin/nslookup
 bin/nsupdate
-etc/mtree/BIND.chroot.dist
-etc/mtree/BIND.chroot.local.dist
+@sample etc/mtree/BIND.chroot.dist.sample
+@sample etc/mtree/BIND.chroot.local.dist.sample
 %%ETCDIR%%/bind.keys
 %%ETCDIR%%/master/empty.db
 %%ETCDIR%%/master/localhost-forward.db

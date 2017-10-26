@@ -1,12 +1,12 @@
---- runtime/flang/cdexp.c.orig	2017-05-17 00:40:01 UTC
+--- runtime/flang/cdexp.c.orig	2017-10-19 11:03:03 UTC
 +++ runtime/flang/cdexp.c
-@@ -22,7 +22,8 @@ __mth_i_cdexp(dcmplx_t *dcmplx, double r
- {
+@@ -24,7 +24,8 @@ ZMPLXFUNC_Z(__mth_i_cdexp)
+   ZMPLXARGS_Z;
    double x, y, z;
    x = exp(real);
--  sincos(imag, &z, &y);
+-  __mth_dsincos(imag, &z, &y);
 +  z = sin(imag);
 +  y = cos(imag);
    y *= x;
    z *= x;
-   d_dummy(y, z); /* should leave y & z in appropriate
+   ZRETURN_D_D(y, z); /* should leave y & z in appropriate

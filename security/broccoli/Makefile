@@ -5,7 +5,7 @@ PORTNAME=	broccoli
 PORTVERSION=	1.97
 PORTEPOCH=	1
 CATEGORIES=	security
-MASTER_SITES=	http://www.bro.org/downloads/release/
+MASTER_SITES=	https://www.bro.org/downloads/release/
 DISTNAME=	bro-2.4.1
 
 MAINTAINER=	leres@FreeBSD.org

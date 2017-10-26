@@ -38,6 +38,7 @@ load_rc_config $name
 start_cmd="%%APP_SHORTNAME%%_start"
 stop_cmd="%%APP_SHORTNAME%%_stop"
 pidfile="%%PID_FILE%%"
+status_cmd="%%APP_SHORTNAME%%_status"
 
 WILDFLY_HOME="%%APP_HOME%%"
 #minimal requirements must be set for our javavmwrapper
@@ -51,6 +52,8 @@ export JAVA_VERSION
 		install -d -o ${%%APP_SHORTNAME%%_user} ${%%APP_SHORTNAME%%_logdir}
 	fi
 
+	echo "%%APP_SHORTNAME%%: making sure all writeable dirs belong to proper user/group"
+	chown -R ${%%APP_SHORTNAME%%_user}:${%%APP_SHORTNAME%%_group} ${WILDFLY_HOME}/standalone
 	echo "Starting %%APP_SHORTNAME%%."
 	daemon -u ${%%APP_SHORTNAME%%_user} ${WILDFLY_HOME}/bin/standalone.sh ${%%APP_SHORTNAME%%_args} >> ${%%APP_SHORTNAME%%_log_stdout} 2>> ${%%APP_SHORTNAME%%_log_stderr}
 
@@ -78,6 +81,7 @@ export JAVA_VERSION
 			sleep ${%%APP_SHORTNAME%%_sleep}
 			killall ${%%APP_SHORTNAME%%_additional_killall}
 		fi
+		rm ${pidfile}
 	fi
 }
 

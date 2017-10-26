@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	metasploit-aggregator
-PORTVERSION=	0.2.1
+PORTVERSION=	1.0.0
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 

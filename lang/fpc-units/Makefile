@@ -3,6 +3,7 @@
 
 PORTNAME=	units
 PORTVERSION=	3.0.2
+PORTREVISION=	1
 CATEGORIES=	lang
 PKGNAMEPREFIX=	fpc-
 
@@ -23,7 +24,7 @@ ALL_OPTIONS=	A52 ASPELL BFD BZIP2 CAIRO CHM DBLIB DBUS DTS FASTCGI \
 		MODPLUG NCURSES NEWT NUMLIB OGGVORBIS OPENAL OPENGL \
 		OPENSSL PASJPEG PCAP PROJ4 PXLIB RSVG REXX RTL_CONSOLE \
 		RTL_EXTRA RTL_OBJPAS RTL_UNICODE SDL SVGALIB SYMBOLIC \
-		SYSLOG TCL UNZIP USERS UTMP UUID X11 XFORMS ZLIB
+		SYSLOG UNZIP USERS UTMP UUID X11 XFORMS ZLIB
 
 # per PR 212919, the inclusion of the VLC unit will cause pkg(8) to require
 # the deinstallation of KDE, so it's not a default option until furter notice
@@ -100,7 +101,6 @@ SDL_DESC=		Interface to SDL library
 SVGALIB_DESC=		Interface to svgalib library
 SYMBOLIC_DESC=		Simple expression parsing and evaluating
 SYSLOG_DESC=		Interface to system logger
-TCL_DESC=		Interface to tcl/tk interpreter
 UNZIP_DESC=		Routines for unzipping zip files
 USERS_DESC=		Interface to manipulate users
 UTMP_DESC=		Gather information from the utmp file

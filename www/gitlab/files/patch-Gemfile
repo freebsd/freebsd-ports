@@ -1,6 +1,6 @@
---- Gemfile.orig	2017-09-06 21:34:31 UTC
+--- Gemfile.orig	2017-10-16 16:38:24 UTC
 +++ Gemfile
-@@ -1,48 +1,47 @@
+@@ -1,19 +1,19 @@
  source 'https://rubygems.org'
  
 -gem 'rails', '4.2.8'
@@ -24,10 +24,7 @@
  
  gem 'rugged', '~> 0.25.1.1'
  
--gem 'faraday', '~> 0.11.0'
-+gem 'faraday', '>= 0.11.0'
- 
- # Authentication libraries
+@@ -23,26 +23,25 @@ gem 'faraday', '~> 0.12'
  gem 'devise', '~> 4.2'
  gem 'doorkeeper', '~> 4.2.0'
  gem 'doorkeeper-openid_connect', '~> 1.1.0'
@@ -46,7 +43,7 @@
  gem 'omniauth-saml', '~> 1.7.0'
 -gem 'omniauth-shibboleth', '~> 1.2.0'
 -gem 'omniauth-twitter', '~> 1.2.0'
-+gem 'omniauth-shibboleth', '~> 1.2'
++gem 'omniauth-shibboleth', '>= 1.2.0'
 +gem 'omniauth-twitter', '>= 1.2.0'
  gem 'omniauth_crowd', '~> 2.2.0'
  gem 'omniauth-authentiq', '~> 0.3.0'
@@ -60,7 +57,7 @@
  gem 'akismet', '~> 2.0'
  
  # Two-factor authentication
-@@ -68,7 +67,7 @@ gem 'gollum-lib', '~> 4.2', require: fal
+@@ -69,7 +68,7 @@ gem 'gollum-lib', '~> 4.2', require: fal
  gem 'gollum-rugged_adapter', '~> 0.4.4', require: false
  
  # Language detection
@@ -69,7 +66,7 @@
  
  # API
  gem 'grape', '~> 0.19.0'
-@@ -82,13 +81,13 @@ gem 'hashie-forbidden_attributes'
+@@ -83,13 +82,13 @@ gem 'hashie-forbidden_attributes'
  gem 'kaminari', '~> 0.17.0'
  
  # HAML
@@ -77,8 +74,7 @@
 +gem 'hamlit', '>= 2.6.1'
  
  # Files attachments
--gem 'carrierwave', '~> 1.0'
-+gem 'carrierwave', '>= 1.0'
+ gem 'carrierwave', '~> 1.1'
  
  # Drag and Drop UI
 -gem 'dropzonejs-rails', '~> 0.7.1'
@@ -86,7 +82,7 @@
  
  # for backups
  gem 'fog-aws', '~> 0.9'
-@@ -97,10 +96,10 @@ gem 'fog-google', '~> 0.5'
+@@ -98,10 +97,10 @@ gem 'fog-google', '~> 0.5'
  gem 'fog-local', '~> 0.3'
  gem 'fog-openstack', '~> 0.1'
  gem 'fog-rackspace', '~> 0.1.1'
@@ -99,7 +95,7 @@
  
  # for aws storage
  gem 'unf', '~> 0.1.4'
-@@ -110,31 +109,31 @@ gem 'seed-fu', '~> 2.3.5'
+@@ -111,32 +110,32 @@ gem 'seed-fu', '~> 2.3.5'
  
  # Markdown and HTML processing
  gem 'html-pipeline', '~> 1.11.0'
@@ -119,7 +115,8 @@
 +gem 'asciidoctor-plantuml', '>= 0.0.7'
  gem 'rouge', '~> 2.0'
  gem 'truncato', '~> 0.7.9'
- gem 'nokogiri', '~> 1.8.0'
+ gem 'bootstrap_form', '~> 2.7.0'
+ gem 'nokogiri', '~> 1.8.1'
  
  # Diffs
 -gem 'diffy', '~> 3.1.0'
@@ -138,7 +135,7 @@
  # Run events after state machine commits
  gem 'after_commit_queue', '~> 1.3.0'
  
-@@ -151,10 +150,10 @@ gem 'sidekiq-limit_fetch', '~> 3.4'
+@@ -153,7 +152,7 @@ gem 'sidekiq-limit_fetch', '~> 3.4'
  gem 'rufus-scheduler', '~> 3.4'
  
  # HTTP requests
@@ -146,12 +143,8 @@
 +gem 'httparty', '>= 0.13.3'
  
  # Colored output to console
--gem 'rainbow', '~> 2.1.0'
-+gem 'rainbow', '>= 2.1.0'
- 
- # GitLab settings
- gem 'settingslogic', '~> 2.0.9'
-@@ -164,7 +163,7 @@ gem 're2', '~> 1.0.0'
+ gem 'rainbow', '~> 2.2'
+@@ -166,7 +165,7 @@ gem 're2', '~> 1.0.0'
  
  # Misc
  
@@ -160,7 +153,7 @@
  
  # Cache
  gem 'redis-rails', '~> 5.0.1'
-@@ -174,10 +173,10 @@ gem 'redis', '~> 3.2'
+@@ -176,10 +175,10 @@ gem 'redis', '~> 3.2'
  gem 'connection_pool', '~> 2.0'
  
  # HipChat integration
@@ -173,7 +166,7 @@
  
  # Flowdock integration
  gem 'gitlab-flowdock-git-hook', '~> 1.0.1'
-@@ -195,7 +194,7 @@ gem 'asana', '~> 0.6.0'
+@@ -197,7 +196,7 @@ gem 'asana', '~> 0.6.0'
  gem 'ruby-fogbugz', '~> 0.2.1'
  
  # Kubernetes integration
@@ -182,7 +175,7 @@
  
  # d3
  gem 'd3_rails', '~> 3.5.0'
-@@ -204,7 +203,7 @@ gem 'd3_rails', '~> 3.5.0'
+@@ -206,7 +205,7 @@ gem 'd3_rails', '~> 3.5.0'
  gem 'underscore-rails', '~> 1.8.0'
  
  # Sanitize user input
@@ -191,7 +184,7 @@
  gem 'babosa', '~> 1.0.2'
  
  # Sanitizes SVG input
-@@ -214,7 +213,7 @@ gem 'loofah', '~> 2.0.3'
+@@ -216,7 +215,7 @@ gem 'loofah', '~> 2.0.3'
  gem 'licensee', '~> 8.7.0'
  
  # Protect against bruteforcing
@@ -200,7 +193,7 @@
  
  # Ace editor
  gem 'ace-rails-ap', '~> 4.1.0'
-@@ -233,34 +232,34 @@ gem 'chronic', '~> 0.10.2'
+@@ -235,27 +234,27 @@ gem 'chronic', '~> 0.10.2'
  gem 'chronic_duration', '~> 0.10.6'
  
  gem 'webpack-rails', '~> 0.9.10'
@@ -218,7 +211,7 @@
  gem 'font-awesome-rails', '~> 4.7'
  gem 'gemojione', '~> 3.3'
 -gem 'gon', '~> 6.1.0'
-+gem 'gon', '~> 6.1'
++gem 'gon', '>= 6.1.0'
  gem 'jquery-atwho-rails', '~> 1.3.2'
 -gem 'jquery-rails', '~> 4.1.0'
 -gem 'request_store', '~> 1.3'
@@ -231,20 +224,21 @@
  gem 'base32', '~> 0.3.0'
  
  # Sentry integration
--gem 'sentry-raven', '~> 2.4.0'
-+gem 'sentry-raven', '>= 2.4.0'
+-gem 'sentry-raven', '~> 2.5.3'
++gem 'sentry-raven', '>= 2.5.3'
  
  gem 'premailer-rails', '~> 1.9.7'
  
- # I18n
- gem 'ruby_parser', '~> 3.8.4', require: false
+@@ -263,7 +262,7 @@ gem 'premailer-rails', '~> 1.9.7'
+ gem 'ruby_parser', '~> 3.8', require: false
+ gem 'rails-i18n', '~> 4.0.9'
  gem 'gettext_i18n_rails', '~> 1.8.0'
 -gem 'gettext_i18n_rails_js', '~> 1.2.0'
 +gem 'gettext_i18n_rails_js', '>= 1.2.0'
  gem 'gettext', '~> 3.2.2', require: false, group: :development
  
  # Perf bar
-@@ -268,7 +267,7 @@ gem 'peek', '~> 1.0.1'
+@@ -271,7 +270,7 @@ gem 'peek', '~> 1.0.1'
  gem 'peek-gc', '~> 0.0.2'
  gem 'peek-host', '~> 1.0.0'
  gem 'peek-mysql2', '~> 1.1.0', group: :mysql
@@ -253,7 +247,7 @@
  gem 'peek-pg', '~> 1.3.0', group: :postgres
  gem 'peek-rblineprof', '~> 0.2.0'
  gem 'peek-redis', '~> 1.2.0'
-@@ -276,100 +275,21 @@ gem 'peek-sidekiq', '~> 1.0.3'
+@@ -279,95 +278,16 @@ gem 'peek-sidekiq', '~> 1.0.3'
  
  # Metrics
  group :metrics do
@@ -262,7 +256,8 @@
 -  gem 'influxdb', '~> 0.2', require: false
 -
    # Prometheus
-   gem 'prometheus-client-mmap', '~>0.7.0.beta5'
+   gem 'prometheus-client-mmap', '~>0.7.0.beta11'
+   gem 'raindrops', '~> 0.18'
  end
  
 -group :development do
@@ -333,7 +328,7 @@
 -  gem 'shoulda-matchers', '~> 2.8.0', require: false
 -  gem 'email_spec', '~> 1.6.0'
 -  gem 'json-schema', '~> 2.6.2'
--  gem 'webmock', '~> 1.24.0'
+-  gem 'webmock', '~> 2.3.2'
 -  gem 'test_after_commit', '~> 1.1'
 -  gem 'sham_rack', '~> 1.3.6'
 -  gem 'timecop', '~> 0.8.0'
@@ -350,16 +345,18 @@
  gem 'html2text'
  
  gem 'ruby-prof', '~> 0.16.2'
+@@ -379,7 +299,7 @@ gem 'oauth2', '~> 1.4'
+ gem 'paranoia', '~> 2.3.1'
  
- # OAuth
--gem 'oauth2', '~> 1.3.0'
-+gem 'oauth2', '>= 1.3.0'
+ # Health check
+-gem 'health_check', '~> 2.6.0'
++gem 'health_check', '~> 2.6'
  
- # Soft deletion
- gem 'paranoia', '~> 2.2'
-@@ -384,8 +304,10 @@ gem 'sys-filesystem', '~> 1.1.6'
+ # System information
+ gem 'vmstat', '~> 2.3.0'
+@@ -388,8 +308,10 @@ gem 'sys-filesystem', '~> 1.1.6'
  # Gitaly GRPC client
- gem 'gitaly', '~> 0.8.0'
+ gem 'gitaly', '~> 0.14.0'
  
 -gem 'toml-rb', '~> 0.3.15', require: false
 +gem 'toml-rb', '>= 0.3.15', require: false

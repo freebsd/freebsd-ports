@@ -7,6 +7,9 @@ include/htslib/faidx.h
 include/htslib/hfile.h
 include/htslib/hts.h
 include/htslib/hts_defs.h
+include/htslib/hts_endian.h
+include/htslib/hts_log.h
+include/htslib/hts_os.h
 include/htslib/kbitset.h
 include/htslib/kfunc.h
 include/htslib/khash.h
@@ -20,13 +23,14 @@ include/htslib/regidx.h
 include/htslib/sam.h
 include/htslib/synced_bcf_reader.h
 include/htslib/tbx.h
+include/htslib/thread_pool.h
 include/htslib/vcf.h
 include/htslib/vcf_sweep.h
 include/htslib/vcfutils.h
 lib/libhts.a
 lib/libhts.so
-lib/libhts.so.1
 lib/libhts.so.%%PORTVERSION%%
+lib/libhts.so.2
 libdata/pkgconfig/htslib.pc
 man/man1/htsfile.1.gz
 man/man1/tabix.1.gz

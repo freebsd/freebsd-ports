@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Net-HTTP-Spore
-PORTVERSION=	0.06
-PORTREVISION=	1
+PORTVERSION=	0.07
 CATEGORIES=	net www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -13,8 +12,10 @@ COMMENT=	SPORE client
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	p5-HTTP-Message>=0:www/p5-HTTP-Message \
+BUILD_DEPENDS=	p5-Class-Load>=0:devel/p5-Class-Load \
+		p5-HTTP-Message>=0:www/p5-HTTP-Message \
 		p5-IO-All>=0:devel/p5-IO-All \
 		p5-JSON>=0:converters/p5-JSON \
 		p5-Moose>=0:devel/p5-Moose \

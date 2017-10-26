@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	openlibm
-PORTVERSION=	0.5.2
 DISTVERSIONPREFIX=	v
+DISTVERSION=	0.5.5
 CATEGORIES=	math
 MASTER_SITES=	GH
 
@@ -20,11 +20,11 @@ BROKEN_mips=		fails to compile: No rule to make target mips/Make.files
 BROKEN_mips64=		fails to compile: No rule to make target mips64/Make.files
 BROKEN_powerpc64=	fails to build: gmake: clang: Command not found
 
+USES=	gmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	JuliaLang
 GH_PROJECT=	openlibm
 
-USES=	gmake
 USE_LDCONFIG=	yes
 
 .include <bsd.port.pre.mk>

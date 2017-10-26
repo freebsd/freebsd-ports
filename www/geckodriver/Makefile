@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	geckodriver
-PORTVERSION=	0.18.0
 DISTVERSIONPREFIX=	v
+DISTVERSION=	0.19.0
 CATEGORIES=	www
 
 MAINTAINER=	daniel@blodan.se
@@ -35,7 +35,7 @@ CARGO_CRATES=	advapi32-sys-0.1.2 \
 		gcc-0.3.42 \
 		httparse-1.2.2 \
 		hyper-0.10.10 \
-		idna-0.1.2 \
+		idna-0.1.4 \
 		isatty-0.1.3 \
 		kernel32-sys-0.1.4 \
 		kernel32-sys-0.2.2 \
@@ -50,7 +50,7 @@ CARGO_CRATES=	advapi32-sys-0.1.2 \
 		mime-0.2.4 \
 		miniz-sys-0.1.9 \
 		mozprofile-0.3.0 \
-		mozrunner-0.4.1 \
+		mozrunner-0.5.0 \
 		mozversion-0.1.2 \
 		msdos_time-0.1.5 \
 		num-0.1.37 \
@@ -58,6 +58,7 @@ CARGO_CRATES=	advapi32-sys-0.1.2 \
 		num-iter-0.1.33 \
 		num-traits-0.1.37 \
 		num_cpus-1.2.1 \
+		percent-encoding-1.0.0 \
 		podio-0.1.5 \
 		rand-0.3.15 \
 		redox_syscall-0.1.16 \
@@ -86,16 +87,16 @@ CARGO_CRATES=	advapi32-sys-0.1.2 \
 		typeable-0.1.2 \
 		unicase-1.4.0 \
 		unicode-bidi-0.3.3 \
-		unicode-normalization-0.1.4 \
+		unicode-normalization-0.1.5 \
 		unicode-segmentation-1.1.0 \
 		unicode-width-0.1.4 \
 		unreachable-0.1.1 \
-		url-1.4.1 \
+		url-1.5.1 \
 		utf8-ranges-1.0.0 \
 		uuid-0.1.18 \
 		vec_map-0.8.0 \
 		void-1.0.2 \
-		webdriver-0.27.0 \
+		webdriver-0.31.0 \
 		winapi-0.2.8 \
 		winapi-build-0.1.1 \
 		winreg-0.3.5 \

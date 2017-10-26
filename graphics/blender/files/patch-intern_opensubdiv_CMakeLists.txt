@@ -1,0 +1,11 @@
+--- intern/opensubdiv/CMakeLists.txt.orig	2017-09-13 04:49:03 UTC
++++ intern/opensubdiv/CMakeLists.txt
+@@ -56,7 +56,7 @@ macro(OPENSUBDIV_DEFINE_COMPONENT compon
+ 	endif()
+ endmacro()
+ 
+-OPENSUBDIV_DEFINE_COMPONENT(OPENSUBDIV_HAS_OPENMP)
++#OPENSUBDIV_DEFINE_COMPONENT(OPENSUBDIV_HAS_OPENMP)
+ # TODO(sergey): OpenCL is not tested and totally unstable atm.
+ # OPENSUBDIV_DEFINE_COMPONENT(OPENSUBDIV_HAS_OPENCL)
+ # TODO(sergey): CUDA stays disabled for util it's ported to drievr API.

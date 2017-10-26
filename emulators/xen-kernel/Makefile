@@ -2,7 +2,7 @@
 
 PORTNAME=	xen
 PORTVERSION=	4.7.2
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	emulators
 MASTER_SITES=	http://downloads.xenproject.org/release/xen/${PORTVERSION}/
 PKGNAMESUFFIX=	-kernel
@@ -80,7 +80,8 @@ EXTRA_PATCHES=	${FILESDIR}/0001-xen-logdirty-prevent-preemption-if-finished.patc
 		${FILESDIR}/xsa241-4.8.patch:-p1 \
 		${FILESDIR}/xsa242-4.9.patch:-p1 \
 		${FILESDIR}/xsa243-4.7.patch:-p1 \
-		${FILESDIR}/xsa244-4.7.patch:-p1
+		${FILESDIR}/xsa244-4.7.patch:-p1 \
+		${FILESDIR}/xsa236-4.9.patch:-p1
 
 .include <bsd.port.options.mk>
 

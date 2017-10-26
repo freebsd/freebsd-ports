@@ -9,6 +9,9 @@ MASTER_SITES=	SF
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Download and assemble multipart binaries from newsgroups
 
+DEPRECATED=		Tcl/Tk 8.4 is no longer maintained, please use 8.5+
+EXPIRATION_DATE=	2017-11-20
+
 LICENSE=	GPLv2
 
 RUN_DEPENDS=	uudeview:converters/uudeview \

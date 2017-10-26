@@ -6,7 +6,7 @@ PORTVERSION=	0.1.00
 PORTREVISION=	7
 CATEGORIES=	graphics
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	PECL extension if imlib2
 
 LICENSE=	PHP202

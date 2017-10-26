@@ -10,7 +10,8 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	alexander.nusov@nfvexpress.com
 COMMENT=	Physical quantities module
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 NO_ARCH=	yes
 

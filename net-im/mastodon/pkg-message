@@ -1,5 +1,14 @@
 ############################################################
 
+Upgrading notes: Version 2.0.0 includes database migrations.
+As the mastodon user, run
+
+   % RAILS_ENV=production rails db:migrate
+
+Some options may now be set in /etc/rc.conf.  See the
+comments in the rc scripts (mastodon_web, mastodon_workers,
+and mastodon_stream) for details.
+
 Visit this URL to get started with Mastodon.
 http://ftfl.ca/blog/2017-05-23-mastodon-freebsd.html
 

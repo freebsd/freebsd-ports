@@ -3,7 +3,7 @@
 
 PORTNAME=	evemu
 PORTVERSION=	2.6.0
-CATEGORIES=     devel
+CATEGORIES=	devel
 MASTER_SITES=	http://www.freedesktop.org/software/${PORTNAME}/
 
 MAINTAINER=	wulf@FreeBSD.org
@@ -14,7 +14,7 @@ LICENSE=	GPLv3
 BUILD_DEPENDS=	v4l_compat>=0:multimedia/v4l_compat
 LIB_DEPENDS=	libevdev.so:devel/libevdev
 
-USES=		tar:xz python:2,build pathfix libtool pkgconfig localbase
+USES=		tar:xz pathfix libtool pkgconfig localbase
 
 OPTIONS_DEFINE=	MANPAGES PYTHON
 OPTIONS_DEFAULT=MANPAGES
@@ -25,7 +25,8 @@ MANPAGES_BUILD_DEPENDS=		minixmlto:textproc/minixmlto \
 MANPAGES_CONFIGURE_ENV=		XMLTO=${LOCALBASE}/bin/minixmlto
 MANPAGES_CONFIGURE_ENV_OFF=	ac_cv_path_XMLTO="" \
 				ac_cv_path_ASCIIDOC=""
-PYTHON_RUN_DEPENDS=		${PYTHON_CMD}:${PYTHON_PORTSDIR}
+PYTHON_USES=			python:2
+PYTHON_USES_OFF=		python:2,build
 PYTHON_CONFIGURE_ENABLE=	python-bindings
 
 GNU_CONFIGURE=  yes

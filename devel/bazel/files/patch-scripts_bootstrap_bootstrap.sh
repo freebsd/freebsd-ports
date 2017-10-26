@@ -9,12 +9,3 @@
          --compilation_mode=opt \
          ${EXTRA_BAZEL_ARGS:-}"
  fi
-@@ -96,7 +96,7 @@ function bootstrap_test() {
-   local BAZEL_BIN=$1
-   local BAZEL_SUM=$2
-   local BAZEL_TARGET=${3:-src:bazel}
--  local STRATEGY="--strategy=Javac=worker --worker_quit_after_build"
-+  local STRATEGY="--strategy=Javac=standalone"
-   if [ "${JAVA_VERSION}" = "1.7" ]; then
-     STRATEGY=
-   fi

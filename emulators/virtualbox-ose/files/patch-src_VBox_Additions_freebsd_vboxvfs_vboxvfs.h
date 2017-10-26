@@ -1,6 +1,6 @@
---- src/VBox/Additions/freebsd/vboxvfs/vboxvfs.h.orig	2017-04-28 16:59:22.000000000 +0200
-+++ src/VBox/Additions/freebsd/vboxvfs/vboxvfs.h	2017-07-13 01:05:04.399618524 +0200
-@@ -1,10 +1,5 @@
+--- src/VBox/Additions/freebsd/vboxvfs/vboxvfs.h.orig	2017-10-18 07:06:47 UTC
++++ src/VBox/Additions/freebsd/vboxvfs/vboxvfs.h
+@@ -1,8 +1,3 @@
 -/* $Id: vboxvfs.h $ */
 -/** @file
 - * Description.
@@ -9,9 +9,7 @@
  /*
   * Copyright (C) 2010-2016 Oracle Corporation
   *
-  * This file is part of VirtualBox Open Source Edition (OSE), as
-  * available from http://www.virtualbox.org. This file is free software;
-@@ -21,72 +16,418 @@
+@@ -21,72 +16,416 @@
  #define VBOXVFS_VFSNAME "vboxvfs"
  #define VBOXVFS_VERSION 1
  
@@ -24,11 +22,18 @@
 +#define VFSTOVBOXFS(mp)		((struct vboxfs_mnt *)((mp)->mnt_data))
 +#define VP_TO_VBOXFS_NODE(vp) 	((struct vboxfs_node *)(vp)->v_data)
 +#define VBOXTOV(np)		((struct vnode *)(np)->n_vnode)
-+
+ 
+-struct vboxvfs_mount_info {
+-    char name[MAX_HOST_NAME];
+-    char nls_name[MAX_NLS_NAME];
+-    int uid;
+-    int gid;
+-    int ttl;
+-};
 +#define	ROOTDIR_INO		1
 +#define	THEFILE_INO		2
 +#define THEFILE_NAME	"thefile"
-+
+ 
 +#define VBOXFS_NODE_LOCK(node) mtx_lock(&(node)->sf_interlock)
 +#define VBOXFS_NODE_UNLOCK(node) mtx_unlock(&(node)->sf_interlock)
 +#define VBOXFS_NODE_MTX(node) (&(node)->sf_interlock)
@@ -53,21 +58,14 @@
 +#define VBOXFS_ASSERT_LOCKED(node) (void)0
 +#define VBOXFS_ASSERT_ELOCKED(node) (void)0
 +#endif
- 
--struct vboxvfs_mount_info {
--    char name[MAX_HOST_NAME];
--    char nls_name[MAX_NLS_NAME];
--    int uid;
--    int gid;
--    int ttl;
--};
++
 +#define	VBOXFS_VNODE_ALLOCATING	1
 +#define	VBOXFS_VNODE_WANT	2
 +#define	VBOXFS_VNODE_DOOMED	4
 +#define	VBOXFS_VNODE_WRECLAIM	8
 +
 +MALLOC_DECLARE(M_VBOXVFS);
- 
++
  #ifdef _KERNEL
 +#ifndef FREEBSD_STYLE
 +#include "../../../../../include/iprt/nocrt/limits.h"
@@ -112,9 +110,8 @@
 +#include "../../../../../include/iprt/time.h"
 +#include "../../../../../include/iprt/types.h"
 +#include "../../../../../include/iprt/uni.h"
-+
-+#include "../../common/VBoxGuestLib/SysHlp.h"
-+
+ 
+-#include <VBox/VBoxGuestLibSharedFolders.h>
 +#else
 +
 +#include "iprt/nocrt/limits.h"
@@ -161,12 +158,22 @@
 +#include "common/VBoxGuestLib/SysHlp.h"
 +
 +#endif /* !FREEBSD_STYLE */
- 
--#include <VBox/VBoxGuestLibSharedFolders.h>
++
  #include <sys/mount.h>
  #include <sys/vnode.h>
 +#include <sys/_timespec.h>
-+
+ 
+-struct vboxvfsmount {
+-    uid_t           uid;
+-    gid_t           gid;
+-    mode_t          file_mode;
+-    mode_t          dir_mode;
+-    struct mount   *mp;
+-    struct ucred   *owner;
+-    u_int           flags;
+-    long            nextino;
+-    int             caseopt;
+-    int             didrele;
 +#if defined(RT_OS_FREEBSD) && defined(_KERNEL)
 +# undef PVM /** XXX: For not conflict with PVM in sys/priority.h */
 +#endif
@@ -185,8 +192,9 @@
 + */
 +struct sfp_mount {
 +	VBGLSFMAP map;
-+};
-+
+ };
+ 
+-/* structs - stolen from the linux shared module code */
 +/*
 + * Mount / Unmount a shared folder.
 + *
@@ -278,18 +286,7 @@
 +	sffs_stat_t		sf_stat;	/* cached file attrs for this node */
 +	uint64_t		sf_stat_time;	/* last-modified time of sf_stat */
 +	sffs_dirents_t		*sf_dir_list;	/* list of entries for this directory */
- 
--struct vboxvfsmount {
--    uid_t           uid;
--    gid_t           gid;
--    mode_t          file_mode;
--    mode_t          dir_mode;
--    struct mount   *mp;
--    struct ucred   *owner;
--    u_int           flags;
--    long            nextino;
--    int             caseopt;
--    int             didrele;
++
 +	/* interlock to protect sf_vpstate */
 +	struct mtx		sf_interlock;
 +};
@@ -304,9 +301,8 @@
 +	int  fmode;		    /* mode for regular files if != 0xffffffff */
 +	int  dmask;		    /* umask applied to directories */
 +	int  fmask;		    /* umask applied to regular files */
- };
- 
--/* structs - stolen from the linux shared module code */
++};
++
  struct sf_glob_info {
 -    VBGLSFMAP map;
 -/*    struct nls_table *nls;*/

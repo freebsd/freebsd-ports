@@ -5098,6 +5098,9 @@ include/aws/es/model/StorageTypeLimit.h
 include/aws/es/model/Tag.h
 include/aws/es/model/UpdateElasticsearchDomainConfigRequest.h
 include/aws/es/model/UpdateElasticsearchDomainConfigResult.h
+include/aws/es/model/VPCDerivedInfo.h
+include/aws/es/model/VPCDerivedInfoStatus.h
+include/aws/es/model/VPCOptions.h
 include/aws/es/model/VolumeType.h
 include/aws/events/CloudWatchEventsClient.h
 include/aws/events/CloudWatchEventsEndpoint.h

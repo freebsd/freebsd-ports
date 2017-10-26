@@ -1061,6 +1061,10 @@ STAGEDIR?=	${WRKDIR}/stage
 NOTPHONY?=
 FLAVORS?=
 FLAVOR?=
+# Store env FLAVOR for later
+.if !defined(_FLAVOR)
+_FLAVOR:=	${FLAVOR}
+.endif
 # XXX: We have no real FLAVORS support in ports or tools yet.
 #PORTS_FEATURES+=	FLAVORS
 MINIMAL_PKG_VERSION=	1.6.0
@@ -3748,7 +3752,12 @@ post-clean-noflavor:
 clean: ${CLEAN_DEPENDENCIES}
 .endif
 
-.for _f in ${FLAVORS}
+.if !empty(_FLAVOR)
+_CLEANFLAVORS=	${_FLAVOR}
+.else
+_CLEANFLAVORS=	${FLAVORS}
+.endif
+.for _f in ${_CLEANFLAVORS}
 CLEAN_DEPENDENCIES=
 .if !defined(NOCLEANDEPENDS)
 CLEAN_DEPENDENCIES+=	limited-clean-depends-${_f}

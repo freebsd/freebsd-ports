@@ -1,5 +1,5 @@
---- initscript/freebsd/avahi-dnsconfd.sh.in.orig	2010-06-25 02:54:22.000000000 +0200
-+++ initscript/freebsd/avahi-dnsconfd.sh.in	2012-01-15 19:04:25.000000000 +0100
+--- initscript/freebsd/avahi-dnsconfd.sh.in.orig	2010-08-26 00:51:39 UTC
++++ initscript/freebsd/avahi-dnsconfd.sh.in
 @@ -12,13 +12,15 @@
  # DNS servers in a DHCP-like fashion with mDNS.
  #

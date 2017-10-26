@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	undernet-ircu
-PORTVERSION=	2.10.12.17
+PORTVERSION=	2.10.12.18
 CATEGORIES=	irc net
 MASTER_SITES=	SF/${PORTNAME}/ircu/ircu${PORTVERSION} \
 		ftp://ftpmirror.uk/freebsd-ports/undernet-ircu/

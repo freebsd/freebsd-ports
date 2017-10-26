@@ -21,9 +21,9 @@ bin/validate-storage-schemas.py
 %%PYTHON_SITELIBDIR%%/carbon/aggregator/buffers.py
 %%PYTHON_SITELIBDIR%%/carbon/aggregator/buffers.pyc
 %%PYTHON_SITELIBDIR%%/carbon/aggregator/buffers.pyo
-%%PYTHON_SITELIBDIR%%/carbon/aggregator/receiver.py
-%%PYTHON_SITELIBDIR%%/carbon/aggregator/receiver.pyc
-%%PYTHON_SITELIBDIR%%/carbon/aggregator/receiver.pyo
+%%PYTHON_SITELIBDIR%%/carbon/aggregator/processor.py
+%%PYTHON_SITELIBDIR%%/carbon/aggregator/processor.pyc
+%%PYTHON_SITELIBDIR%%/carbon/aggregator/processor.pyo
 %%PYTHON_SITELIBDIR%%/carbon/aggregator/rules.py
 %%PYTHON_SITELIBDIR%%/carbon/aggregator/rules.pyc
 %%PYTHON_SITELIBDIR%%/carbon/aggregator/rules.pyo
@@ -37,12 +37,18 @@ bin/validate-storage-schemas.py
 %%PYTHON_SITELIBDIR%%/carbon/cache.py
 %%PYTHON_SITELIBDIR%%/carbon/cache.pyc
 %%PYTHON_SITELIBDIR%%/carbon/cache.pyo
+%%PYTHON_SITELIBDIR%%/carbon/carbon_pb2.py
+%%PYTHON_SITELIBDIR%%/carbon/carbon_pb2.pyc
+%%PYTHON_SITELIBDIR%%/carbon/carbon_pb2.pyo
 %%PYTHON_SITELIBDIR%%/carbon/client.py
 %%PYTHON_SITELIBDIR%%/carbon/client.pyc
 %%PYTHON_SITELIBDIR%%/carbon/client.pyo
 %%PYTHON_SITELIBDIR%%/carbon/conf.py
 %%PYTHON_SITELIBDIR%%/carbon/conf.pyc
 %%PYTHON_SITELIBDIR%%/carbon/conf.pyo
+%%PYTHON_SITELIBDIR%%/carbon/database.py
+%%PYTHON_SITELIBDIR%%/carbon/database.pyc
+%%PYTHON_SITELIBDIR%%/carbon/database.pyo
 %%PYTHON_SITELIBDIR%%/carbon/events.py
 %%PYTHON_SITELIBDIR%%/carbon/events.pyc
 %%PYTHON_SITELIBDIR%%/carbon/events.pyo
@@ -64,6 +70,12 @@ bin/validate-storage-schemas.py
 %%PYTHON_SITELIBDIR%%/carbon/manhole.py
 %%PYTHON_SITELIBDIR%%/carbon/manhole.pyc
 %%PYTHON_SITELIBDIR%%/carbon/manhole.pyo
+%%PYTHON_SITELIBDIR%%/carbon/pipeline.py
+%%PYTHON_SITELIBDIR%%/carbon/pipeline.pyc
+%%PYTHON_SITELIBDIR%%/carbon/pipeline.pyo
+%%PYTHON_SITELIBDIR%%/carbon/protobuf.py
+%%PYTHON_SITELIBDIR%%/carbon/protobuf.pyc
+%%PYTHON_SITELIBDIR%%/carbon/protobuf.pyo
 %%PYTHON_SITELIBDIR%%/carbon/protocols.py
 %%PYTHON_SITELIBDIR%%/carbon/protocols.pyc
 %%PYTHON_SITELIBDIR%%/carbon/protocols.pyo
@@ -103,6 +115,7 @@ bin/validate-storage-schemas.py
 %%PYTHON_SITELIBDIR%%/twisted/plugins/carbon_relay_plugin.py
 %%PYTHON_SITELIBDIR%%/twisted/plugins/carbon_relay_plugin.pyc
 %%PYTHON_SITELIBDIR%%/twisted/plugins/carbon_relay_plugin.pyo
+@dir /var/db/carbon/ceres
 @dir /var/db/carbon/lists
 @dir /var/db/carbon/log
 @dir /var/db/carbon/rrd

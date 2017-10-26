@@ -20,12 +20,3 @@
  
  UTILS_SRC	= $(srcdir)/../utils
  UTILS_BIN	= ../utils
-@@ -205,7 +205,7 @@ PDF2JPEG_LIBS	= -framework Cocoa
- SAVER_LIBS	= $(LIBS) $(X_LIBS) $(XMU_LIBS) @SAVER_LIBS@ \
- 		  $(XDPMS_LIBS) $(XINERAMA_LIBS) $(GL_LIBS) $(X_PRE_LIBS) \
- 		  -lXt -lX11 -lXext $(X_EXTRA_LIBS) \
--		  $(PASSWD_LIBS)
-+		  $(PASSWD_LIBS) $(INTL_LIBS)
- 
- CMD_LIBS	= $(LIBS) $(X_LIBS) \
- 		  $(X_PRE_LIBS) -lX11 -lXext $(X_EXTRA_LIBS)

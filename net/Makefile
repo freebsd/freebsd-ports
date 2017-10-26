@@ -99,6 +99,7 @@
     SUBDIR += datapipe
     SUBDIR += dbeacon
     SUBDIR += delegate
+    SUBDIR += deviceatlas-enterprise-c
     SUBDIR += dgd
     SUBDIR += dgd-kernel
     SUBDIR += dgd-lpmud
@@ -137,6 +138,7 @@
     SUBDIR += exabgp
     SUBDIR += exaddos
     SUBDIR += fb
+    SUBDIR += file2pcap
     SUBDIR += findmtu
     SUBDIR += flower
     SUBDIR += flowgrep

@@ -3,7 +3,6 @@
 # $FreeBSD$
 # Makefile for knobs
 
-CONFIGURE_ARGS+=	--with-jdk-home="${JAVA_HOME}" --with-ant-home="${LOCALBASE}/share/java/apache-ant"
 CONFIGURE_ARGS+=	--with-lang=${LOCALIZED_LANG}
 
 pre-fetch:

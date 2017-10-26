@@ -10,4 +10,4 @@ To use the ports version instead of the base, add:
 
 to /etc/rc.conf
 
-WWW: http://w1.fi/hostapd/
+WWW: https://w1.fi/hostapd/

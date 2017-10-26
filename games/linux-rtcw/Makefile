@@ -13,6 +13,9 @@ EXTRACT_SUFX=	.run
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Return to Castle Wolfenstein (Linux version)
 
+DEPRECATED=	Use the native and open source games/iortcw instead
+EXPIRATION_DATE=	2017-11-30
+
 USES=		linux makeself
 USE_LINUX=	dri xorglibs
 NO_WRKSUBDIR=	yes

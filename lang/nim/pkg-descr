@@ -10,4 +10,4 @@ between threads, so no "stop the world" mechanism is necessary. An unsafe
 shared memory heap is also provided for the increased efficiency that
 results from that model.
 
-WWW: http://nim-lang.org/
+WWW: https://nim-lang.org/

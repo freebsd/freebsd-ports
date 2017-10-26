@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	carbon
-PORTVERSION=	0.9.15
-PORTREVISION=	2
+PORTVERSION=	1.0.2
 CATEGORIES=	databases python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -24,6 +23,10 @@ USES=		python:2.7
 USE_RC_SUBR=	carbon
 USE_GITHUB=	yes
 GH_ACCOUNT=	graphite-project
+MAKE_ENV=	GRAPHITE_NO_PREFIX=yes
+
+post-patch:
+	@${REINPLACE_CMD} 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/setup.py
 
 post-install:
 	${RM} -r ${STAGEDIR}${PREFIX}/examples/init.d

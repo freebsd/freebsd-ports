@@ -258,12 +258,6 @@ share/applications/FreeDoko.desktop
 %%DATADIR%%/backgrounds/wood/table6.png
 %%DATADIR%%/backgrounds/wood/table7.png
 %%DATADIR%%/backgrounds/wood/table8.png
-%%DATADIR%%/cardsets/InnoCard/License.txt
-%%DATADIR%%/cardsets/InnoCard/Lizenzvertrag_InnoCard_2014.txt
-%%DATADIR%%/cardsets/InnoCard/Lizenzvertrag_InnoCard_2015.pdf
-%%DATADIR%%/cardsets/InnoCard/Lizenzvertrag_InnoCard_2016.pdf
-%%DATADIR%%/cardsets/InnoCard/cardset_convert.InnoCard.sh
-%%DATADIR%%/cardsets/InnoCard/create_icons.sh
 %%DATADIR%%/cardsets/LiesMich
 %%DATADIR%%/cardsets/ReadMe
 %%DATADIR%%/cardsets/backs/tux/SuitClubs.svg

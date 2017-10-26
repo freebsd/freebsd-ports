@@ -1,6 +1,6 @@
---- configure.orig	2016-05-11 18:22:21 UTC
+--- configure.orig	2017-10-08 05:44:27 UTC
 +++ configure
-@@ -10257,6 +10257,7 @@ OLD_LDFLAGS="${LDFLAGS}"
+@@ -10293,6 +10293,7 @@ OLD_LDFLAGS="${LDFLAGS}"
  TCLSPEC_LHS="${TCL_LIB_SPEC% *}"
  TKLSPEC_LHS="${TK_LIB_SPEC% *}"
  LDFLAGS="${LDFLAGS} ${TCLSPEC_LHS} ${TKLSPEC_LHS}"

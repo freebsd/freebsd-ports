@@ -1,6 +1,6 @@
---- avahi-client.pc.in.orig	Mon May 15 02:28:25 2006
-+++ avahi-client.pc.in	Mon May 15 02:30:08 2006
-@@ -6,5 +6,5 @@
+--- avahi-client.pc.in.orig	2011-12-30 21:26:44 UTC
++++ avahi-client.pc.in
+@@ -6,5 +6,5 @@ includedir=${prefix}/include
  Name: avahi-client
  Description: Avahi Multicast DNS Responder (Client Support)
  Version: @PACKAGE_VERSION@

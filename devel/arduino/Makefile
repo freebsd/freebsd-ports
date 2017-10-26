@@ -6,7 +6,7 @@ PORTVERSION=	1.0.6
 PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	devel java lang
-MASTER_SITES=	http://arduino.cc/download.php?f=/
+MASTER_SITES=	https://arduino.cc/download.php?f=/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-linux32
 
 MAINTAINER=	leres@FreeBSD.org

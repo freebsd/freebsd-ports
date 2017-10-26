@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cmark
-PORTVERSION=	0.28.2
+PORTVERSION=	0.28.3
 CATEGORIES=	textproc
 
 MAINTAINER=	tobik@FreeBSD.org

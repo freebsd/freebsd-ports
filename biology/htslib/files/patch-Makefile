@@ -1,6 +1,6 @@
---- Makefile.orig	2016-04-22 08:45:12 UTC
+--- Makefile.orig	2017-10-18 08:03:33 UTC
 +++ Makefile
-@@ -22,16 +22,7 @@
+@@ -22,41 +22,26 @@
  # FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
  # DEALINGS IN THE SOFTWARE.
  
@@ -8,16 +8,23 @@
 -AR     = ar
 -RANLIB = ranlib
 -
+-# Default libraries to link if configure is not used
+-htslib_default_libs = -lz -lm -lbz2 -llzma
+-
 -CPPFLAGS =
 -# TODO: probably update cram code to make it compile cleanly with -Wc++-compat
+-# For testing strict C99 support add -std=c99 -D_XOPEN_SOURCE=600
+-#CFLAGS   = -g -Wall -O2 -pedantic -std=c99 -D_XOPEN_SOURCE=600 -D__FUNCTION__=__func__
 -CFLAGS   = -g -Wall -O2
  EXTRA_CFLAGS_PIC = -fpic
 -LDFLAGS  =
--LIBS     =
+-LIBS     = $(htslib_default_libs)
  
- # For now these don't work too well as samtools also needs to know to
- # add -lbz2 and -llzma if linking against the static libhts.a library.
-@@ -58,17 +49,11 @@ includedir  = $(prefix)/include
+-prefix      = /usr/local
++prefix      = ${PREFIX}
+ exec_prefix = $(prefix)
+ bindir      = $(exec_prefix)/bin
+ includedir  = $(prefix)/include
  libdir      = $(exec_prefix)/lib
  libexecdir  = $(exec_prefix)/libexec
  datarootdir = $(prefix)/share
@@ -27,30 +34,27 @@
  man5dir     = $(mandir)/man5
  pkgconfigdir= $(prefix)/libdata/pkgconfig
  
--MKDIR_P = mkdir -p
+ MKDIR_P = mkdir -p
 -INSTALL = install -p
--INSTALL_PROGRAM = $(INSTALL)
 -INSTALL_DATA    = $(INSTALL) -m 644
 -INSTALL_DIR     = $(MKDIR_P) -m 755
--
+-INSTALL_LIB     = $(INSTALL_DATA)
+-INSTALL_MAN     = $(INSTALL_DATA)
+-INSTALL_PROGRAM = $(INSTALL)
++INSTALL_DATA    = ${BSD_INSTALL_DATA}
++INSTALL_DIR     = $(MKDIR_P)
++INSTALL_LIB     = ${BSD_INSTALL_LIB}
++INSTALL_MAN     = ${BSD_INSTALL_MAN}
++INSTALL_PROGRAM = ${BSD_INSTALL_PROGRAM}
+ 
  # Set by config.mk if plugins are enabled
  plugindir =
- 
-@@ -86,7 +71,7 @@ BUILT_TEST_PROGRAMS = \
- 	test/test-vcf-api \
- 	test/test-vcf-sweep
+@@ -87,7 +72,7 @@ BUILT_THRASH_PROGRAMS = \
+ 	test/thrash_threads5 \
+ 	test/thrash_threads6
  
 -all: lib-static lib-shared $(BUILT_PROGRAMS) plugins $(BUILT_TEST_PROGRAMS)
 +all: lib-static lib-shared $(BUILT_PROGRAMS) plugins
  
  HTSPREFIX =
  include htslib_vars.mk
-@@ -360,7 +345,7 @@ installdirs:
- # and libhts.so.NN (used by client executables at runtime).
- 
- install-so: libhts.so installdirs
--	$(INSTALL_DATA) libhts.so $(DESTDIR)$(libdir)/libhts.so.$(PACKAGE_VERSION)
-+	$(INSTALL_LIB) libhts.so $(DESTDIR)$(libdir)/libhts.so.$(PACKAGE_VERSION)
- 	ln -sf libhts.so.$(PACKAGE_VERSION) $(DESTDIR)$(libdir)/libhts.so
- 	ln -sf libhts.so.$(PACKAGE_VERSION) $(DESTDIR)$(libdir)/libhts.so.$(LIBHTS_SOVERSION)
- 

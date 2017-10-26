@@ -1,6 +1,6 @@
---- Makefile.in.orig	2011-03-13 18:12:06.000000000 +0100
-+++ Makefile.in	2011-03-13 18:14:22.000000000 +0100
-@@ -1179,6 +1179,8 @@
+--- Makefile.in.orig	2017-09-15 01:20:16 UTC
++++ Makefile.in
+@@ -1206,6 +1206,8 @@ uninstall-am: uninstall-pkgconfigDATA
  %.pc: %.pc.in
  	$(AM_V_GEN)sed -e 's,@prefix\@,$(prefix),g' \
  	    -e 's,@libdir\@,$(libdir),g' \

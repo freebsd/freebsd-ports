@@ -1,6 +1,6 @@
---- initscript/freebsd/Makefile.in.orig	2008-07-03 15:05:53.000000000 -0500
-+++ initscript/freebsd/Makefile.in	2008-07-03 15:07:05.000000000 -0500
-@@ -333,12 +333,12 @@
+--- initscript/freebsd/Makefile.in.orig	2017-09-15 01:20:16 UTC
++++ initscript/freebsd/Makefile.in
+@@ -361,12 +361,12 @@ EXTRA_DIST = \
  	avahi-dnsconfd.sh.in
  
  initd_SCRIPTS = \
@@ -17,7 +17,7 @@
  
  all: all-am
  
-@@ -531,11 +531,11 @@
+@@ -595,11 +595,11 @@ uninstall-am: uninstall-initdSCRIPTS
  	uninstall uninstall-am uninstall-initdSCRIPTS
  
  

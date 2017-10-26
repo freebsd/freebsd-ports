@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	origami
-PORTVERSION=	2.0.4
+PORTVERSION=	2.1.0
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
