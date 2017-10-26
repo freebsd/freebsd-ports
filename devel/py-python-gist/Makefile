@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	python-gist
-PORTVERSION=	0.4.7
 DISTVERSIONPREFIX=	v
+DISTVERSION=	0.5.1
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -24,7 +24,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	jdowner
 GH_PROJECT=	gist
 
-USES=		python
+USES=		python:2.7-3.5
 USE_PYTHON=	autoplist distutils
 NO_ARCH=	yes
 
