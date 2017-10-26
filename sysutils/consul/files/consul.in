@@ -60,7 +60,7 @@ consul_startprecmd()
 		mkdir -p %%PREFIX%%/etc/consul.d
 	fi
 
-	consul_checkconfig
+	#consul_checkconfig
 }
 
 consul_checkconfig()

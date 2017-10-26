@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	py-nomad
-PORTVERSION=	0.0.2
+PORTVERSION=	0.5.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	jhixson@gmail.com
