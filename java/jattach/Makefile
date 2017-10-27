@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=	gmake
 
-USE_GITHUB=	yesmake
+USE_GITHUB=	yes
 GH_ACCOUNT=	apangin
 GH_TAGNAME=	ccc2f05
 
