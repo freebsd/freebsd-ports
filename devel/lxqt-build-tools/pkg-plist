@@ -1,3 +1,4 @@
+share/cmake/lxqt-build-tools/find-modules/FindExif.cmake
 share/cmake/lxqt-build-tools/find-modules/FindFm.cmake
 share/cmake/lxqt-build-tools/find-modules/FindGLIB.cmake
 share/cmake/lxqt-build-tools/find-modules/FindMenuCache.cmake
