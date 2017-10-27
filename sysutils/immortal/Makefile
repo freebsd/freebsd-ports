@@ -2,6 +2,7 @@
 
 PORTNAME=	immortal
 PORTVERSION=	0.16.0
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	nbari@tequila.io
@@ -40,6 +41,7 @@ do-install:
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${ETCDIR}
-	${INSTALL_DATA} ${FILESDIR}/www.yml ${STAGEDIR}${ETCDIR}/www.yml.sample
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${FILESDIR}/www.yml ${STAGEDIR}${EXAMPLESDIR}/www.yml.sample
 
 .include <bsd.port.mk>
