@@ -1,0 +1,12 @@
+--- config/pcmanfm-qt/lxqt/settings.conf.in.orig	2017-10-21 19:42:34 UTC
++++ config/pcmanfm-qt/lxqt/settings.conf.in
+@@ -1,8 +1,7 @@
+ [System]
+-IconThemeName=elementary
++IconThemeName=oxygen
+ SuCommand=lxqt-sudo %s
+ TerminalCommand=
+-Archiver=file-roller
+ SIUnit=false
+ TerminalDirCommand=xterm
+ TerminalExecCommand=xterm -e %s
