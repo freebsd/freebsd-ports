@@ -891,6 +891,7 @@
     SUBDIR += hapy
     SUBDIR += hcs12mem
     SUBDIR += hexcompare
+    SUBDIR += hexd
     SUBDIR += hg-git
     SUBDIR += hgreviewboard
     SUBDIR += hgsvn
