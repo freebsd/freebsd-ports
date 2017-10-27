@@ -38,7 +38,7 @@ GNOME_CONFIGURE_ENABLE=	gnome
 GNOME_USE=	GNOME=libgnomeui
 PYTHON_CONFIGURE_ENABLE=	python
 PYTHON_USE=	GNOME=pygtk2
-PUTHON_USES=	python:2
+PYTHON_USES=	python:2
 
 post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/lib/glade3/bindings
