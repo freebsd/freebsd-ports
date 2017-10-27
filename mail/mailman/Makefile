@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	mailman
-DISTVERSION=	2.1.24
-PORTREVISION=	2
+DISTVERSION=	2.1.25
+PORTREVISION=	0
 CATEGORIES=	mail
 MASTER_SITES=	GNU \
 		SF/${PORTNAME}/Mailman%202.1%20%28stable%29/${PORTVERSION} \
@@ -128,7 +128,8 @@ PKGNAMESUFFIX+=	-with-htdig
 #X unpack this tarball, and the original distfile
 #X diff -NEur original-unpack bazaar-unpack | xz --best -c >msapiro-htdig-1702.patch.xz
 #X upload the latter with mode 0644 or similar to freefall's public_distfiles/ directory
-PATCHFILES+=	msapiro-htdig-1702.patch.xz
+_HTDIGREV=	1717
+PATCHFILES+=	msapiro-htdig-${_HTDIGREV}.patch.xz
 RUN_DEPENDS+=	htdig:textproc/htdig
 PLIST_SUB+=	SUB_HTDIG=""
 .else
