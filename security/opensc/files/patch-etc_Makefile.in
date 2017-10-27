@@ -9,7 +9,7 @@
 -	else \
 -		$(INSTALL_DATA) opensc.conf "$(DESTDIR)$(sysconfdir)/opensc.conf"; \
 -	fi
-+	$(INSTALL_DATA) opensc.conf "$(DESTDIR)$(sysconfdir)/opensc.conf-sample"
++	$(INSTALL_DATA) opensc.conf "$(DESTDIR)$(sysconfdir)/opensc.conf.sample"
  
  uninstall-hook: opensc.conf
  	rm -f "$(DESTDIR)$(sysconfdir)/opensc.conf.new" "$(DESTDIR)$(sysconfdir)/opensc.conf"
