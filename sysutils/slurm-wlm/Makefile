@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	slurm
-DISTVERSION=	17.02.7
+DISTVERSION=	17.02.8
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.schedmd.com/download/latest/ \
 		http://www.schedmd.com/download/archive/ \
@@ -103,6 +103,8 @@ post-patch:
 		-e 's|SlurmdSpoolDir=.*|SlurmdSpoolDir=/var/spool/slurmd|' \
 		-e 's|StateSaveLocation=.*|StateSaveLocation=/var/run/slurm|' \
 		${WRKSRC}/etc/slurm.conf.example
+
+post-patch-LINUX-on:
 	@${REINPLACE_CMD} -e 's|"/proc|"/compat/linux/proc|g' \
 		${WRKSRC}/src/slurmd/slurmstepd/req.c \
 		${WRKSRC}/src/slurmd/slurmstepd/pdebug.c \
