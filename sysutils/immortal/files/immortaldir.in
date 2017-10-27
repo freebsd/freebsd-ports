@@ -22,6 +22,7 @@ rcvar=immortaldir_enable
 
 load_rc_config $name
 
+: ${immortaldir_enable="NO"}
 : ${immortaldir_path=%%PREFIX%%/etc/immortal}
 
 command=%%PREFIX%%/bin/${name}
