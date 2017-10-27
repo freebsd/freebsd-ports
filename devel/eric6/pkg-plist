@@ -1,10 +1,12 @@
 bin/eric6
 bin/eric6_api
+bin/eric6_browser
 bin/eric6_compare
 bin/eric6_configure
 bin/eric6_diff
 bin/eric6_doc
 bin/eric6_editor
+bin/eric6_hexeditor
 bin/eric6_iconeditor
 bin/eric6_plugininstall
 bin/eric6_pluginrepository
@@ -12,6 +14,7 @@ bin/eric6_pluginuninstall
 bin/eric6_qregexp
 bin/eric6_qregularexpression
 bin/eric6_re
+bin/eric6_shell
 bin/eric6_snap
 bin/eric6_sqlbrowser
 bin/eric6_tray
@@ -34,6 +37,4 @@ share/qt4/qsci/api/ruby/Ruby-1.8.7.api
 share/qt4/qsci/api/ruby/Ruby-1.8.7.bas
 share/qt4/qsci/api/ruby/Ruby-1.9.1.api
 share/qt4/qsci/api/ruby/Ruby-1.9.1.bas
-share/qt4/qsci/api/ruby/eric6.api
-share/qt4/qsci/api/ruby/eric6.bas
 @dir %%DATADIR%%/i18n
