@@ -57,6 +57,7 @@
     SUBDIR += jakarta-regexp
     SUBDIR += jamvm
     SUBDIR += jasmin
+    SUBDIR += jattach
     SUBDIR += java-checkstyle
     SUBDIR += java-cup
     SUBDIR += java-getopt
