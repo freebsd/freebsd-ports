@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mediathekview
-PORTVERSION=	13.0.2
-PORTREVISION=	1
+PORTVERSION=	13.0.3
 CATEGORIES=	german java
 MASTER_SITES=	https://download.mediathekview.de/stabil/
 DISTNAME=	MediathekView-${PORTVERSION}
@@ -32,9 +31,9 @@ OPTIONS_MULTI=		BACKEND
 OPTIONS_MULTI_BACKEND=	MPLAYER MPV VLC
 
 VLC_DESC=		VLC support
-MPV_DESC=		VLC support
+MPV_DESC=		MPV support
 
-OPTIONS_DEFAULT=	VLC
+OPTIONS_DEFAULT=	MPV
 
 MPLAYER_RUN_DEPENDS=	mplayer:multimedia/mplayer
 MPV_RUN_DEPENDS=	mpv:multimedia/mpv
