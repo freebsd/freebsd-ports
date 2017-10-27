@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libzfs
-PORTVERSION=	1.0.20171009
+PORTVERSION=	1.0.20171027
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -16,7 +16,7 @@ BROKEN_powerpc64=	fails to build: libzfs.c: error: convert_for_assignment: incom
 USE_GITHUB=     yes
 GH_ACCOUNT=	freenas
 GH_PROJECT=	py-libzfs
-GH_TAGNAME=	268b4b0
+GH_TAGNAME=	3e31c3f
 
 USES?=		python
 USE_PYTHON=	autoplist distutils
