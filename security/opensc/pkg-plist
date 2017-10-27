@@ -33,7 +33,7 @@ etc/bash_completion.d/pkcs15-init
 etc/bash_completion.d/pkcs15-tool
 etc/bash_completion.d/sc-hsm-tool
 etc/bash_completion.d/westcos-tool
-etc/opensc.conf-sample
+@sample etc/opensc.conf.sample
 lib/libopensc.a
 lib/libopensc.so
 lib/libopensc.so.5
