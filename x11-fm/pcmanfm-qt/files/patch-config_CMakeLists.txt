@@ -1,0 +1,13 @@
+--- config/CMakeLists.txt.orig	2017-10-21 19:42:34 UTC
++++ config/CMakeLists.txt
+@@ -1,8 +1,8 @@
+ # install default config files to /etc/xdg
+ 
+-configure_file(pcmanfm-qt/lxqt/settings.conf.in pcmanfm-qt/lxqt/settings.conf @ONLY)
++configure_file(pcmanfm-qt/lxqt/settings.conf.in pcmanfm-qt/lxqt/settings.conf.sample @ONLY)
+ install(FILES
+-    "${CMAKE_CURRENT_BINARY_DIR}/pcmanfm-qt/lxqt/settings.conf"
++    "${CMAKE_CURRENT_BINARY_DIR}/pcmanfm-qt/lxqt/settings.conf.sample"
+     DESTINATION "${LXQT_ETC_XDG_DIR}/pcmanfm-qt/lxqt"
+     COMPONENT Runtime
+ )
