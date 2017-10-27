@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sysbench
-PORTVERSION=	1.0.9
+PORTVERSION=	1.0.10
 CATEGORIES=	benchmarks databases
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -33,6 +33,5 @@ PGSQL_USES=		pgsql
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^SUBDIRS = / s| doc||' ${WRKSRC}/Makefile.am
-	@${REINPLACE_CMD} -e 's|__linux__|__FreeBSD__|' ${WRKSRC}/src/sb_util.h
 
 .include <bsd.port.mk>
