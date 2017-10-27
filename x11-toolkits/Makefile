@@ -191,6 +191,7 @@
     SUBDIR += pangox-compat
     SUBDIR += pangoxsl
     SUBDIR += phat
+    SUBDIR += plasma5-kdeplasma-addons
     SUBDIR += plib
     SUBDIR += pure-gtk
     SUBDIR += pure-tk
@@ -239,6 +240,7 @@
     SUBDIR += qt5-widgets
     SUBDIR += qt5pas
     SUBDIR += qtermwidget
+    SUBDIR += qtermwidget-l10n
     SUBDIR += qwt5
     SUBDIR += qwt5-designerplugin
     SUBDIR += qwt6
