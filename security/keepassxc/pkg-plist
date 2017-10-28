@@ -1,7 +1,7 @@
 bin/keepassxc
 bin/keepassxc-cli
 %%AUTOTYPE%%lib/keepassxc/libkeepassx-autotype-xcb.so
-share/applications/keepassxc.desktop
+share/applications/org.keepassxc.desktop
 share/icons/hicolor/128x128/apps/keepassxc-dark.png
 share/icons/hicolor/128x128/apps/keepassxc-locked.png
 share/icons/hicolor/128x128/apps/keepassxc-unlocked.png
@@ -230,4 +230,5 @@ share/icons/hicolor/scalable/mimetypes/application-x-keepassxc.svgz
 %%DATADIR%%/translations/keepassx_zh_CN.qm
 %%DATADIR%%/translations/keepassx_zh_TW.qm
 %%DATADIR%%/wordlists/eff_large.wordlist
+share/metainfo/org.keepassxc.appdata.xml
 share/mime/packages/keepassxc.xml
