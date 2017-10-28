@@ -105,6 +105,7 @@
     SUBDIR += stellarium
     SUBDIR += stellarium-qt4
     SUBDIR += sunclock
+    SUBDIR += sunwait
     SUBDIR += swe
     SUBDIR += tclgeomap
     SUBDIR += tkgeomap
