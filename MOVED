@@ -9597,3 +9597,4 @@ x11/tkXwin||2017-10-16|Has expired: This port depends on Tcl/Tk 8.4 , which is n
 games/crafty-tablebase-pawn||2017-10-17|Waste of resources
 devel/p5-Log-Any-Adapter-Syslog|devel/p5-Log-Any|2017-10-19|Has expired: Merged with devel/p5-Log-Any
 lang/fpc-tcl||2017-10-20|Has expired: This port depends on Tcl/Tk 8.4 , which is no longer maintained. Please port it to 8.5+
+net/asterisk11|net/asterisk13|2017-10-28|Has expired: Asterisk 11.x will reach EOL on 2017-10-25. Please migrate to net/asterisk13
