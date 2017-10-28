@@ -1512,7 +1512,6 @@ usr/share/centos-release/EULA
 %%PORTDOCS%%usr/share/doc/gdbm-1.10/README
 %%PORTDOCS%%usr/share/doc/gdbm-1.10/THANKS
 %%PORTDOCS%%usr/share/doc/glib2-2.50.3/AUTHORS
-%%PORTDOCS%%usr/share/doc/glib2-2.50.3/COPYING
 %%PORTDOCS%%usr/share/doc/glib2-2.50.3/NEWS
 %%PORTDOCS%%usr/share/doc/glib2-2.50.3/README
 %%PORTDOCS%%usr/share/doc/glibc-2.17/BUGS
