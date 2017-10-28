@@ -45,6 +45,7 @@ OPTIONS_DEFINE=			DNSTAP FASTPARSER IDN
 
 DNSTAP_DESC=			dnstap support (see dnstap.info)
 DNSTAP_CONFIGURE_ENABLE=	dnstap
+DNSTAP_CONFIGURE_WITH=		module-dnstap=yes
 DNSTAP_LIB_DEPENDS=		libprotobuf-c.so:devel/protobuf-c \
 				libfstrm.so:devel/fstrm
 # XXX: because `kdig_CPPFLAGS += $(DNSTAP_CFLAGS)' line is missing from
