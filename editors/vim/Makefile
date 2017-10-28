@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	vim
-PORTVERSION=	8.0.1207
+PORTVERSION=	8.0.1231
 DISTVERSIONPREFIX=	v
 CATEGORIES=	editors
 
@@ -51,6 +51,7 @@ OPTIONS_SUB=		yes
 .if defined(LITE)
 OPTIONS_DEFAULT=	DEFAULT_VIMRC
 OPTIONS_SLAVE=		CONSOLE
+# Exclude everything except the two options above
 OPTIONS_EXCLUDE:=	${OPTIONS_DEFINE:NDEFAULT_VIMRC} \
 			${OPTIONS_SINGLE_UI:NCONSOLE} \
 			${OPTIONS_GROUP_LANGBIND}
@@ -176,10 +177,10 @@ post-install:
 
 # OPTIONS
 post-patch-EXUBERANT_CTAGS-off:
-	@${FIND} ${WRKSRC}/runtime/ -name 'menu*.vim' -print0 | ${XARGS} -0 ${REINPLACE_CMD} -e 's!ctags -R \.!${FIND} . -type f \\| ${XARGS} ctags!g'
+	@${FIND} ${WRKSRC}/runtime/ -name 'menu*.vim' -print0 | ${XARGS} -0 ${REINPLACE_CMD} -Ee 's!ctags -R ?\.!${FIND} . -type f | ${XARGS} ctags!g'
 
 post-patch-EXUBERANT_CTAGS-on:
-	@${FIND} ${WRKSRC}/runtime/ -name 'menu*.vim' -print0 | ${XARGS} -0 ${REINPLACE_CMD} -e 's|ctags -R \.|exctags -R .|g'
+	@${FIND} ${WRKSRC}/runtime/ -name 'menu*.vim' -print0 | ${XARGS} -0 ${REINPLACE_CMD} -e 's|ctags -R|exctags -R|g'
 
 post-patch-LUA-on:
 	@${REINPLACE_CMD} -e 's|set dummy lua;|set dummy ${LUA_CMD};|g' ${WRKSRC}/src/auto/configure
