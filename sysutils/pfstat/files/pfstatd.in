@@ -19,4 +19,7 @@ rcvar=pfstatd_enable
 command="%%PREFIX%%/bin/${name}"
 
 load_rc_config ${name}
+
+: ${pfstatd_enable:="NO"}
+
 run_rc_command "$1"
