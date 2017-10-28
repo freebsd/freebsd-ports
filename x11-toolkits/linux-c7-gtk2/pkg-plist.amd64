@@ -56,7 +56,6 @@ usr/lib64/libgdk-x11-2.0.so.0.2400.31
 usr/lib64/libgtk-x11-2.0.so.0
 usr/lib64/libgtk-x11-2.0.so.0.2400.31
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
-%%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
 usr/share/licenses/gtk2-2.24.31/COPYING
