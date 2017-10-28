@@ -2,15 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	rust
-PORTVERSION?=	1.20.0
-PORTREVISION?=	1
+PORTVERSION?=	1.21.0
 CATEGORIES=	lang
 MASTER_SITES=	http://static.rust-lang.org/dist/:src \
-		https://static.rust-lang.org/dist/:rust_bootstrap \
 		LOCAL/dumbbell/rust:rust_bootstrap \
+		https://static.rust-lang.org/dist/:rust_bootstrap \
+		LOCAL/dumbbell/rust:cargo_bootstrap \
 		https://static.rust-lang.org/dist/:cargo_bootstrap \
 		https://s3.amazonaws.com/rust-lang-ci/cargo-builds/:cargo_bootstrap \
-		LOCAL/dumbbell/rust:cargo_bootstrap \
 		LOCAL/marino:bootstrap
 DISTNAME?=	${PORTNAME}c-${PORTVERSION}-src
 DISTFILES?=	${DISTNAME}${EXTRACT_SUFX}:src \
@@ -43,16 +42,13 @@ ONLY_FOR_ARCHS_REASON=	requires prebuilt bootstrap compiler
 #CONFLICTS_BUILD+=	${PKGBASE}
 CONFLICTS_INSTALL?=	rust-nightly
 
-BOOTSTRAPS_DATE?=		2017-07-20
-BOOTSTRAPS_DATE_aarch64?=	2017-07-20
+BOOTSTRAPS_DATE?=		2017-08-31
 
-RUST_BOOTSTRAP_VERSION?=	1.19.0
-RUST_BOOTSTRAP_VERSION_aarch64?=1.19.0
+RUST_BOOTSTRAP_VERSION?=	1.20.0
 RUSTC_BOOTSTRAP=		${BOOTSTRAPS_DATE_${ARCH}:U${BOOTSTRAPS_DATE}}/rustc-${RUST_BOOTSTRAP_VERSION_${ARCH}:U${RUST_BOOTSTRAP_VERSION}}-${RUST_TARGET}.tar.gz
 RUST_STD_BOOTSTRAP=		${BOOTSTRAPS_DATE_${ARCH}:U${BOOTSTRAPS_DATE}}/rust-std-${RUST_BOOTSTRAP_VERSION_${ARCH}:U${RUST_BOOTSTRAP_VERSION}}-${RUST_TARGET}.tar.gz
 
-CARGO_BOOTSTRAP_VERSION?=	0.20.0
-CARGO_BOOTSTRAP_VERSION_aarch64?=0.20.0
+CARGO_BOOTSTRAP_VERSION?=	0.21.0
 CARGO_BOOTSTRAP=		${BOOTSTRAPS_DATE_${ARCH}:U${BOOTSTRAPS_DATE}}/cargo-${CARGO_BOOTSTRAP_VERSION_${ARCH}:U${CARGO_BOOTSTRAP_VERSION}}-${RUST_TARGET}${EXTRACT_SUFX}
 
 RUST_CHANNEL=	${PKGNAMESUFFIX:Ustable:S/^-//}
@@ -134,8 +130,9 @@ pre-fetch:
 	fi
 
 RUST_STD_DIR=		${RUST_STD_BOOTSTRAP:T:R:R}
-LIBSTD_SUFFIX=		35ad9950c7e5074b
-LIBSTD_SUFFIX_aarch64=	ab4dd4f618cec2e9
+LIBSTD_SUFFIX_aarch64=	8eed00280b051035
+LIBSTD_SUFFIX_amd64=	fdf1c4a03a15a71f
+LIBSTD_SUFFIX_i386=	aaa09cdd21ad338f
 LIBSTD=			${RUST_STD_DIR}/rust-std-${RUST_TARGET}/lib/rustlib/${RUST_TARGET}/lib/libstd-${LIBSTD_SUFFIX_${ARCH}:U${LIBSTD_SUFFIX}}.rlib
 STDF=			${LIBSTD:T:R:S/lib//}.0.o
 
@@ -168,23 +165,23 @@ post-patch:
 # If we override the versions and date of the bootstraps (for instance
 # on aarch64 where we provide our own bootstraps), we need to update
 # places where they are recorded.
-	@if test "${BOOTSTRAPS_DATE_${ARCH}}"; then \
+	@if test "${BOOTSTRAPS_DATE_${ARCH}}" && \
+	test "${BOOTSTRAPS_DATE_${ARCH}}" != "${BOOTSTRAPS_DATE}"; then \
 		${REINPLACE_CMD} -e \
 		's|^date:.*|date: ${BOOTSTRAPS_DATE_${ARCH}:U${BOOTSTRAPS_DATE}}|' \
 		${WRKSRC}/src/stage0.txt; \
 	fi
-	@if test "${RUST_BOOTSTRAP_VERSION_${ARCH}}"; then \
+	@if test "${RUST_BOOTSTRAP_VERSION_${ARCH}}" && \
+	test "${RUST_BOOTSTRAP_VERSION_${ARCH}}" != "${RUST_BOOTSTRAP_VERSION}"; then \
 		${REINPLACE_CMD} -e \
 		's|^rustc:.*|rustc: ${RUST_BOOTSTRAP_VERSION_${ARCH}:U${RUST_BOOTSTRAP_VERSION}}|' \
 		${WRKSRC}/src/stage0.txt; \
 	fi
-	@if test "${CARGO_BOOTSTRAP_VERSION_${ARCH}}"; then \
+	@if test "${CARGO_BOOTSTRAP_VERSION_${ARCH}}" && \
+	test "${CARGO_BOOTSTRAP_VERSION_${ARCH}}" != "${CARGO_BOOTSTRAP_VERSION}"; then \
 		${REINPLACE_CMD} -e \
 		's|^cargo:.*|cargo: ${CARGO_BOOTSTRAP_VERSION_${ARCH}:U${CARGO_BOOTSTRAP_VERSION}}|' \
 		${WRKSRC}/src/stage0.txt; \
-		${REINPLACE_CMD} -e \
-		's|cargo-nightly-|cargo-${CARGO_BOOTSTRAP_VERSION_${ARCH}:U${CARGO_BOOTSTRAP_VERSION}}-|' \
-		${WRKSRC}/src/bootstrap/bootstrap.py; \
 	fi
 # After patching crates, we need to update their corresponding
 # `.cargo-checksum.json` to reflect the new checksums verified by Cargo.
@@ -352,5 +349,41 @@ do-test:
 		--verbose \
 		--config ./config.toml \
 		--jobs ${MAKE_JOBS_NUMBER}
+
+BOOTSTRAPS_SOURCE_PKG_FBSDVER=		10
+BOOTSTRAPS_SOURCE_PKG_FBSDVER_aarch64=	11
+BOOTSTRAPS_SOURCE_PKG_URL=	http://pkg.freebsd.org/FreeBSD:${BOOTSTRAPS_SOURCE_PKG_FBSDVER_${ARCH}:U${BOOTSTRAPS_SOURCE_PKG_FBSDVER}}:${ARCH}/latest/All/rust-${RUST_BOOTSTRAP_VERSION_${ARCH}:U${RUST_BOOTSTRAP_VERSION}}.txz
+BOOTSTRAPS_SOURCE_PKG=		${_DISTDIR}/${BOOTSTRAPS_DATE_${ARCH}:U${BOOTSTRAPS_DATE}}/rust-${RUST_BOOTSTRAP_VERSION_${ARCH}:U${RUST_BOOTSTRAP_VERSION}}-${ARCH}.txz
+
+package-to-bootstraps: ${BOOTSTRAPS_SOURCE_PKG}
+	${MKDIR} ${WRKDIR}/bootstraps
+	${RM} -r ${WRKDIR}/bootstraps/usr
+	${EXTRACT_CMD} \
+		-C ${WRKDIR}/bootstraps \
+		--strip-components 3 \
+		${EXTRACT_BEFORE_ARGS} ${BOOTSTRAPS_SOURCE_PKG} ${LOCALBASE}
+# `rustc` bootstrap.
+	${RM} -r ${WRKDIR}/bootstraps/rustc-${RUST_BOOTSTRAP_VERSION_${ARCH}:U${RUST_BOOTSTRAP_VERSION}}-${RUST_TARGET}
+	${MKDIR} ${WRKDIR}/bootstraps/rustc-${RUST_BOOTSTRAP_VERSION_${ARCH}:U${RUST_BOOTSTRAP_VERSION}}-${RUST_TARGET}
+	cd ${WRKDIR}/bootstraps/rustc-${RUST_BOOTSTRAP_VERSION_${ARCH}:U${RUST_BOOTSTRAP_VERSION}}-${RUST_TARGET} && \
+		${MKDIR} rustc/bin rustc/lib && \
+		${MV} ${WRKDIR}/bootstraps/bin/rust* rustc/bin && \
+		${MV} ${WRKDIR}/bootstraps/lib/*.so rustc/lib
+	${TAR} -cz --format=ustar -C ${WRKDIR}/bootstraps \
+		-f ${_DISTDIR}/${BOOTSTRAPS_DATE_${ARCH}:U${BOOTSTRAPS_DATE}}/rustc-${RUST_BOOTSTRAP_VERSION_${ARCH}:U${RUST_BOOTSTRAP_VERSION}}-${RUST_TARGET}.tar.gz \
+		rustc-${RUST_BOOTSTRAP_VERSION_${ARCH}:U${RUST_BOOTSTRAP_VERSION}}-${RUST_TARGET}
+# `rust-std` bootstrap.
+	${RM} -r ${WRKDIR}/bootstraps/rust-std-${RUST_BOOTSTRAP_VERSION_${ARCH}:U${RUST_BOOTSTRAP_VERSION}}-${RUST_TARGET}
+	${MKDIR} ${WRKDIR}/bootstraps/rust-std-${RUST_BOOTSTRAP_VERSION_${ARCH}:U${RUST_BOOTSTRAP_VERSION}}-${RUST_TARGET}
+	cd ${WRKDIR}/bootstraps/rust-std-${RUST_BOOTSTRAP_VERSION_${ARCH}:U${RUST_BOOTSTRAP_VERSION}}-${RUST_TARGET} && \
+		${MKDIR} rust-std-${RUST_TARGET}/lib/rustlib/${RUST_TARGET} && \
+		${MV} ${WRKDIR}/bootstraps/lib/rustlib/${RUST_TARGET}/lib rust-std-${RUST_TARGET}/lib/rustlib/${RUST_TARGET}
+	${TAR} -cz --format=ustar -C ${WRKDIR}/bootstraps \
+		-f ${_DISTDIR}/${BOOTSTRAPS_DATE_${ARCH}:U${BOOTSTRAPS_DATE}}/rust-std-${RUST_BOOTSTRAP_VERSION_${ARCH}:U${RUST_BOOTSTRAP_VERSION}}-${RUST_TARGET}.tar.gz \
+		rust-std-${RUST_BOOTSTRAP_VERSION_${ARCH}:U${RUST_BOOTSTRAP_VERSION}}-${RUST_TARGET}
+
+${BOOTSTRAPS_SOURCE_PKG}:
+	${MKDIR} ${@:H}
+	${FETCH_CMD} -o $@ ${BOOTSTRAPS_SOURCE_PKG_URL}
 
 .include <bsd.port.post.mk>
