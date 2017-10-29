@@ -7,6 +7,8 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:ADUITSIS
 PKGNAMEPREFIX=	p5-
 
+BUILD_DEPENDS=	p5-Module-Build>=0:devel/p5-Module-Build
+
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	IPv6 Address Manipulation Library
 
