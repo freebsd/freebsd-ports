@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	e2fsprogs
-PORTVERSION=	1.43.6
-PORTREVISION?=	1
+PORTVERSION=	1.43.7
+PORTREVISION?=	0
 CATEGORIES?=	sysutils
 MASTER_SITES=	KERNEL_ORG/linux/kernel/people/tytso/${PORTNAME}/v${PORTVERSION}
 
@@ -22,17 +22,21 @@ PORTSCOUT=	ignore	# cannot handle the version in the directory
 BROKEN_aarch64=		fails to link: missing sbrk
 .endif
 
-USES=		cpe gmake pkgconfig tar:xz
+USES=		cpe gmake makeinfo pkgconfig tar:xz
 CPE_VENDOR=	e2fsprogs_project
 USE_CSTD=	gnu99
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=--disable-fsck \
+CONFIGURE_ARGS?=--disable-fsck \
 		--disable-e2initrd-helper \
-		--enable-libuuid \
-		--with-root-prefix='${PREFIX}'
+		--disable-libuuid \
+		--disable-uuidd \
+		--enable-libblkid \
+		--enable-elf-shlibs \
+		--with-root-prefix='${PREFIX}' \
+		LDFLAGS='${LDFLAGS} -L${LOCALBASE}/lib'
 CPPFLAGS+=	-I${WRKSRC}/lib -I${LOCALBASE}/include # -D_EXT2_USE_C_VERSIONS
-MAKE_ARGS+=	LDFLAGS='${LDFLAGS} -L${LOCALBASE}/lib' pkgconfigdir='${PREFIX}/libdata/pkgconfig'
+MAKE_ARGS+=	pkgconfigdir='${PREFIX}/libdata/pkgconfig'
 MAKE_ENV+=	CHECK_CMD=@true
 
 .if !defined(MASTERDIR)
@@ -51,6 +55,10 @@ ALLTESTS_DESC=	Run most self-tests (needs more RAM/disk space)
 PARALLELTESTS_DESC=	Parallelize self-tests (needs more disk space)
 
 BUILD_DEPENDS+=	gdd:sysutils/coreutils
+
+LIB_DEPENDS+=	libblkid.so:misc/e2fsprogs-libblkid
+LIB_DEPENDS+=	libss.so:devel/e2fsprogs-libss
+LIB_DEPENDS+=	libuuid.so:misc/e2fsprogs-libuuid
 
 PORTDOCS=	NOTICE README RELEASE-NOTES SUBMITTING-PATCHES
 .endif
@@ -80,9 +88,9 @@ USE_PERL5=	build
 
 .if ${PORT_OPTIONS:MNLS}
 . if empty(ICONV_LIB)
-libintl=	"${LOCALBASE}/lib/libintl.a"
+libintl=	${LOCALBASE}/lib/libintl.a
 . else
-libintl=	"${LOCALBASE}/lib/libintl.a ${LOCALBASE}/lib/libiconv.a"
+libintl=	${LOCALBASE}/lib/libintl.a ${LOCALBASE}/lib/libiconv.a
 . endif
 .else
 CONFIGURE_ARGS+=--disable-nls
@@ -166,11 +174,11 @@ post-build:
 # system are statically linked against anything that is outside the root fs,
 # else we're in trouble if e2fsck is needed for boot:
 # (we don't use e2fsck.static, since we can link libc.so dynamically)
-	cd ${WRKSRC}/e2fsck && ${RM} e2fsck \
+	cd ${WRKSRC}/e2fsck && ${RM} -f e2fsck \
 		&& ${MAKE_CMD} e2fsck V=1 \
-		STATIC_LIBS="../lib/libext2fs.a ../lib/libcom_err.a \
-		../lib/libblkid.a ../lib/libuuid.a" \
-		LIBINTL=${libintl} LIBMAGIC=/usr/lib/libmagic.a\ -lz
+		LIBS="../lib/libsupport.a ../lib/libext2fs.a ../lib/libcom_err.a \
+		${LOCALBASE}/lib/libblkid.a ${LOCALBASE}/lib/libuuid.a ${libintl} ../lib/libe2p.a" \
+		LIBMAGIC=/usr/lib/libmagic.a\ -lz
 # Regression check: avoid a port (not upstream!) regression from 1.40.5,
 # check that e2fsck isn't dynalinked against anything but libc.so:
 	@${ECHO_CMD} -n "===>  checking that e2fsck depends on no shared objects outside /lib: "
@@ -206,7 +214,6 @@ post-build:
 .endif
 
 post-install:
-	${RM} ${STAGEDIR}${PREFIX}/sbin/uuidd
 	${INSTALL_PROGRAM} ${WRKSRC}/fsck_ext2fs ${STAGEDIR}${PREFIX}/sbin/
 	${INSTALL_MAN} ${FILESDIR}/fsck_ext2fs.8 ${STAGEDIR}${PREFIX}/man/man8/
 .if ${PORT_OPTIONS:MDOCS}
