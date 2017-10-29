@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Module-Extract-Use
-PORTVERSION=	1.04
+PORTVERSION=	1.043
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	svysh.fbsd@gmail.com
 COMMENT=	Pull out the modules a module explicitly uses
 
-LICENSE=	ART10 GPLv1+
+LICENSE=	ART20 GPLv1+
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Test-Output>0:devel/p5-Test-Output \
