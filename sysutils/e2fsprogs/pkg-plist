@@ -101,3 +101,10 @@ lib/libe2p.a
 lib/libext2fs.a
 libdata/pkgconfig/e2p.pc
 libdata/pkgconfig/ext2fs.pc
+include/com_err.h
+include/et/com_err.h
+libdata/pkgconfig/com_err.pc
+bin/compile_et
+share/et/et_c.awk
+share/et/et_h.awk
+man/man1/compile_et.1.gz
