@@ -3,7 +3,7 @@
 
 PORTNAME=	rdist
 PORTVERSION=	6.1.5
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	net
 MASTER_SITES=	http://www.magnicomp.com/download/rdist/ \
 		ftp://ftp.sunet.se/pub/unix/admin/mirror-magnicomp/download/rdist/
@@ -21,7 +21,7 @@ PLIST_SUB=	RDIST_NAME=${RDIST_NAME}
 
 .include <bsd.port.pre.mk>
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} <= 1200050
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1200050
 RUN_DEPENDS=	rsh:net/bsdrcmds
 .endif
 
