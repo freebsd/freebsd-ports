@@ -3,7 +3,7 @@
 
 PORTNAME=	e2fsprogs
 PORTVERSION=	1.43.7
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES?=	sysutils
 MASTER_SITES=	KERNEL_ORG/linux/kernel/people/tytso/${PORTNAME}/v${PORTVERSION}
 
@@ -40,6 +40,8 @@ MAKE_ARGS+=	pkgconfigdir='${PREFIX}/libdata/pkgconfig'
 MAKE_ENV+=	CHECK_CMD=@true
 
 .if !defined(MASTERDIR)
+INSTALL_TARGET=		install install-libs
+
 OPTIONS_DEFINE=		DOCS NLS FUSEFS PARALLELTESTS
 OPTIONS_EXCLUDE+=	EXAMPLES
 OPTIONS_SUB=		yes
@@ -222,6 +224,11 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
 .endif
+# ditch files installed by other ports already, or shadowing system files:
+	cd ${STAGEDIR}${PREFIX} && \
+		${XARGS} <${FILESDIR}/unwanted ${RM} && \
+		${RMDIR} include/blkid include/et include/ss share/et share/ss
+
 #
 # the next line closes .if ${MASTERDIR} == ${.CURDIR}
 .endif
