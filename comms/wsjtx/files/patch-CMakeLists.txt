@@ -1,4 +1,4 @@
---- CMakeLists.txt.orig	2017-01-05 15:57:44 UTC
+--- CMakeLists.txt.orig	2017-10-19 22:13:49 UTC
 +++ CMakeLists.txt
 @@ -1,5 +1,4 @@
  cmake_minimum_required (VERSION 2.8.10 FATAL_ERROR)
@@ -6,7 +6,7 @@
  if (APPLE)
    #
    # The following variables define the portability and compatability attributes of the Mac OS X build
-@@ -97,6 +96,12 @@ if (CMAKE_BUILD_TYPE MATCHES "[Dd][Ee][B
+@@ -132,6 +131,12 @@ if (CMAKE_BUILD_TYPE MATCHES "[Dd][Ee][B
    set (is_debug_build 1)
  endif ()
  
@@ -19,23 +19,7 @@
  
  #
  # Options & features
-@@ -161,7 +166,14 @@ set (INCLUDE_DESTINATION include)
- set (SHARE_DESTINATION share)
- set (DOC_DESTINATION doc/${CMAKE_PROJECT_NAME})
- set (DATA_DESTINATION ${CMAKE_PROJECT_NAME})
--set (MANPAGE_DESTINATION ${SHARE_DESTINATION})
-+if (NOT FREEBSD)
-+  message (STATUS "NOT FREEBSD")
-+  set (MANPAGE_DESTINATION share)
-+else()
-+  message (STATUS "FREEBSD")
-+  set (MANPAGE_DESTINATION "${CMAKE_INSTALL_PREFIX}" )
-+endif()
-+message (STATUS MANPAGE_DESTINATION ${MANPAGE_DESTINATION})
- set (PLUGIN_DESTINATION lib/plugins)
- set (QT_CONF_DESTINATION bin)
- 
-@@ -721,7 +733,20 @@ find_program(ETAGS etags)
+@@ -838,7 +843,20 @@ endif ()
  #
  # OpenMP
  #
@@ -57,38 +41,17 @@
  
  #
  # fftw3 single precision library
-@@ -1132,6 +1157,13 @@ if (APPLE)
-   target_link_libraries (wsjtx wsjt_fort wsjt_cxx wsjt_qt wsjt_qtmm ${hamlib_LIBRARIES} ${FFTW3_LIBRARIES})
- else ()
-   target_link_libraries (wsjtx wsjt_fort_omp wsjt_cxx wsjt_qt wsjt_qtmm ${hamlib_LIBRARIES} ${FFTW3_LIBRARIES})
-+
-+  if(FREEBSD)
-+    set (extraLIBS "ltdl" "usb")
-+  else()
-+    set (extraLIBS "")
-+  endif()
-+  
-   set_target_properties (wsjtx PROPERTIES
-     COMPILE_FLAGS "${OpenMP_C_FLAGS}"
-     LINK_FLAGS "${OpenMP_C_FLAGS}"
-@@ -1232,20 +1264,6 @@ install (TARGETS jt9 jt65code qra64code 
-   BUNDLE DESTINATION ${WSJT_BIN_DESTINATION} COMPONENT runtime
-   )
+@@ -1282,6 +1300,13 @@ else (${OPENMP_FOUND} OR APPLE)
+   target_link_libraries (jt9 wsjt_fort wsjt_cxx Qt5::Core)
+ endif (${OPENMP_FOUND} OR APPLE)
  
--install (PROGRAMS
--  ${RIGCTL_EXE}
--  DESTINATION ${WSJT_BIN_DESTINATION}
--  #COMPONENT runtime
--  RENAME rigctl-wsjtx${CMAKE_EXECUTABLE_SUFFIX}
--  )
--
--install (PROGRAMS
--  ${RIGCTLD_EXE}
--  DESTINATION ${WSJT_BIN_DESTINATION}
--  #COMPONENT runtime
--  RENAME rigctld-wsjtx${CMAKE_EXECUTABLE_SUFFIX}
--  )
--
- install (FILES
-   README
-   COPYING
++if(FREEBSD)
++   set (extraLIBS "ltdl" "usb")
++ else()
++   set (extraLIBS "")
++endif()
++  
++
+ # build the main application
+ add_executable (wsjtx MACOSX_BUNDLE
+   ${wsjtx_CXXSRCS}
