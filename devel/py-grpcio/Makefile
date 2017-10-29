@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	grpcio
-PORTVERSION=	1.6.3
+PORTVERSION=	1.7.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,7 +18,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>1:devel/py-six \
 		${PYTHON_PKGNAMEPREFIX}futures>=3:devel/py-futures
 LIB_DEPENDS=	libcares.so:dns/c-ares
 
-BROKEN_aarch64=		fails to compile: cpu-aarch64-linux.c: fatal error: 'sys/auxv.h' file not found
 BROKEN_powerpc64=	fails to compile: cpu-ppc64le.c: 'AT_HWCAP2' undeclared
 
 USES=		localbase:ldflags python
