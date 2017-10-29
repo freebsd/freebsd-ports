@@ -3,7 +3,7 @@
 
 PORTNAME=	e2fsprogs
 PORTVERSION=	1.43.7
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES?=	sysutils
 MASTER_SITES=	KERNEL_ORG/linux/kernel/people/tytso/${PORTNAME}/v${PORTVERSION}
 
@@ -227,7 +227,7 @@ post-install:
 # ditch files installed by other ports already, or shadowing system files:
 	cd ${STAGEDIR}${PREFIX} && \
 		${XARGS} <${FILESDIR}/unwanted ${RM} && \
-		${RMDIR} include/blkid include/et include/ss share/et share/ss
+		${RMDIR} include/blkid include/ss share/ss
 
 #
 # the next line closes .if ${MASTERDIR} == ${.CURDIR}
