@@ -74,3 +74,18 @@ sbin/tune2fs
 %%NLS%%share/locale/uk/LC_MESSAGES/e2fsprogs.mo
 %%NLS%%share/locale/vi/LC_MESSAGES/e2fsprogs.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/e2fsprogs.mo
+@comment lib/libblkid.so
+@comment lib/libblkid.so.1
+@comment lib/libblkid.so.1.0
+lib/libcom_err.so
+lib/libcom_err.so.2
+lib/libcom_err.so.2.1
+lib/libe2p.so
+lib/libe2p.so.2
+lib/libe2p.so.2.3
+lib/libext2fs.so
+lib/libext2fs.so.2
+lib/libext2fs.so.2.4
+@comment lib/libss.so
+@comment lib/libss.so.2
+@comment lib/libss.so.2.0
