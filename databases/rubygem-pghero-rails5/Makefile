@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	pghero
-DISTVERSION=	2.0.6
+DISTVERSION=	2.0.7
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	-rails5
