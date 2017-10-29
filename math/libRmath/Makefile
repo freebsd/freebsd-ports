@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	libRmath
-PORTVERSION=	3.4.2
+DISTVERSION=	3.4.2
+PORTREVISION=	1
 CATEGORIES=	math lang
 MASTER_SITES=	CRAN/src/base/R-${PORTVERSION:C|\..*||}
 DISTNAME=	R-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}
@@ -22,7 +23,7 @@ CONFIGURE_ARGS=	--disable-nls --with-ICU=no --with-cairo=no \
 		--with-jpeglib=no --with-libpng=no --with-libtiff=no \
 		--with-readline=no --with-tcltk=no --with-x=no \
 		--without-libintl-prefix
-CONFIGURE_ENV+=	ac_cv_header_iconv_h=no
+CONFIGURE_ENV+=	ac_cv_header_iconv_h=no FPICFLAGS=-fPIC
 GNU_CONFIGURE=	yes
 RMATH_SOVERSION=${PORTVERSION:R}
 USES=		localbase
