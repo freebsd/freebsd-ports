@@ -15,6 +15,9 @@ COMMENT=	BSDL Regular Expressions library compatible with POSIX/GNU/Perl
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Upstream no longer maintained, superseded by devel/oniguruma6
+EXPIRATION_DATE=2017-11-12
+
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
 CONFLICTS_INSTALL=	oniguruma[46]
