@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	phply
-PORTVERSION=	1.0.0
+PORTVERSION=	1.2.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,5 +14,8 @@ LICENSE=	BSD3CLAUSE
 NO_ARCH=	yes
 USES=		python
 USE_PYTHON=	autoplist distutils
+
+do-test:
+	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYDISTUTILS_SETUP} test
 
 .include <bsd.port.mk>
