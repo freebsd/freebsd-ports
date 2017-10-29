@@ -3,6 +3,7 @@
 
 PORTNAME=	rust
 PORTVERSION?=	1.21.0
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://static.rust-lang.org/dist/:src \
 		LOCAL/dumbbell/rust:rust_bootstrap \
@@ -82,6 +83,7 @@ LLVM_CONFIG=			${LOCALBASE}/bin/llvm-config${LLVM_VER}
 #     - pre-install to cleanup the ${STAGEDIR}
 #     - post-install to populate the ${TMPPLIST}
 RUST_MANIFESTS=		lib/rustlib/manifest-cargo \
+			lib/rustlib/manifest-rls-preview \
 			lib/rustlib/manifest-rustc \
 			lib/rustlib/manifest-rust-analysis-${RUST_TARGET} \
 			lib/rustlib/manifest-rust-std-${RUST_TARGET}
@@ -321,6 +323,7 @@ post-install:
 # but they contain non-object files which make strip(1) unhappy.
 	@${STRIP_CMD} \
 		${STAGEDIR}${PREFIX}/bin/cargo \
+		${STAGEDIR}${PREFIX}/bin/rls \
 		${STAGEDIR}${PREFIX}/bin/rustc \
 		${STAGEDIR}${PREFIX}/bin/rustdoc \
 		${STAGEDIR}${PREFIX}/lib/*.so \
