@@ -1,6 +1,6 @@
---- UI/window-basic-preview.cpp.orig	2016-09-28 09:26:01 UTC
+--- UI/window-basic-preview.cpp.orig	2017-10-25 18:45:20 UTC
 +++ UI/window-basic-preview.cpp
-@@ -407,8 +407,8 @@ void OBSBasicPreview::mousePressEvent(QM
+@@ -471,8 +471,8 @@ void OBSBasicPreview::mousePressEvent(QM
  	GetStretchHandleData(startPos);
  
  	vec2_divf(&startPos, &startPos, main->previewScale / pixelRatio);
@@ -11,8 +11,8 @@
  
  	mouseOverItems = SelectedAtPos(startPos);
  	vec2_zero(&lastMoveOffset);
-@@ -702,8 +702,8 @@ void OBSBasicPreview::ClampAspect(vec3 &
- 		size.y = size.x / baseAspect;
+@@ -789,8 +789,8 @@ void OBSBasicPreview::ClampAspect(vec3 &
+ 			size.y = size.x / baseAspect * -1.0f;
  	}
  
 -	size.x = std::round(size.x);
@@ -22,7 +22,7 @@
  
  	if (stretchFlags & ITEM_LEFT)
  		tl.x = br.x - size.x;
-@@ -849,18 +849,18 @@ void OBSBasicPreview::CropItem(const vec
+@@ -936,18 +936,18 @@ void OBSBasicPreview::CropItem(const vec
  	crop = startCrop;
  
  	if (stretchFlags & ITEM_LEFT)
@@ -47,7 +47,7 @@
  
  #if 0
  	vec3 curPos;
-@@ -945,7 +945,7 @@ void OBSBasicPreview::StretchItem(const 
+@@ -1032,7 +1032,7 @@ void OBSBasicPreview::StretchItem(const 
  	vec3_transform(&pos3, &pos3, &itemToScreen);
  
  	vec2 newPos;
@@ -56,7 +56,7 @@
  	obs_sceneitem_set_pos(stretchItem, &newPos);
  }
  
-@@ -963,8 +963,8 @@ void OBSBasicPreview::mouseMoveEvent(QMo
+@@ -1059,8 +1059,8 @@ void OBSBasicPreview::mouseMoveEvent(QMo
  			mouseOverItems = SelectedAtPos(startPos);
  		}
  
