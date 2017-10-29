@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	obs-studio
-PORTVERSION=	20.0.1
-PORTREVISION=	2
+PORTVERSION=	20.1.1
 CATEGORIES=	multimedia
 
 MAINTAINER=	ports@FreeBSD.org
