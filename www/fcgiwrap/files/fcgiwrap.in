@@ -19,6 +19,7 @@
 # - tcp6:[ipv6_addr]:port (for ipv6)
 # fcgiwrap_flags=
 # Use fcgiwrap_user to run fcgiwrap as user
+# Use fcgiwrap_group to run fcgiwrap as group
 # Use fcgiwrap_socket_mode to change the mode of the socket
 # Use fcgiwrap_socket_owner to change the owner of the socket
 # Use fcgiwrap_socket_group to change the group of the socket
@@ -35,8 +36,10 @@
 # fcgiwrap_socket_owner="www"
 # fcgiwrap_myserver_socket="unix:/var/run/fcgiwrap.myserver.socket"
 # fcgiwrap_myserver_user="myuser"
+# fcgiwrap_myserver_group="mygroup"
 # fcgiwrap_myotherserver_socket="unix:/var/run/fcgiwrap.myotherserver.socket"
 # fcgiwrap_myotherserver_user="myotheruser"
+# fcgiwrap_myotherserver_grup="myothergroup"
 # fcgiwrap_myserver_socket_mode="0775"
 # fcgiwrap_myotherserver_flags=""  # No flags for this profile.
 
@@ -65,6 +68,7 @@ fcgiwrap_setfib() {
 fcgiwrap_precmd() {
 	fcgiwrap_setfib
 	install -d -o root -g wheel -m 1777 /var/run/fcgiwrap
+	umask $(printf 0%o $(echo $((0777 - $(echo 0${fcgiwrap_socket_mode})))))
 }
 
 fcgiwrap_postcmd() {
@@ -76,15 +80,13 @@ fcgiwrap_postcmd() {
 			return
 			;;
 	esac
-	if [ -n "${fcgiwrap_socket_mode}" ]; then
-		chmod ${fcgiwrap_socket_mode} ${fcgiwrap_socket#unix:}
-	fi
-	if [ -n "${fcgiwrap_socket_owner}" ]; then
+	if [ "${fcgiwrap_socket_owner}" != "${fcgiwrap_user}" ]; then
 		chown ${fcgiwrap_socket_owner} ${fcgiwrap_socket#unix:}
 	fi
-	if [ -n "${fcgiwrap_socket_group}" ]; then
+	if [ "${fcgiwrap_socket_group}" != "${fcgiwrap_group}" ]; then
 		chgrp ${fcgiwrap_socket_group} ${fcgiwrap_socket#unix:}
 	fi
+	umask ${fcgiwrap_saved_umask}
 }
 
 fcgiwrap_stop() {
@@ -123,11 +125,12 @@ load_rc_config $name
 
 # These are just the defaults, they might get overriden for a specific profile.
 fcgiwrap_enable=${fcgiwrap_enable:-"NO"}
-fcgiwrap_user=${fcgiwrap_user:-"root"}
+fcgiwrap_user=${fcgiwrap_user:-"nobody"}
+fcgiwrap_group=${fcgiwrap_group:-"nogroup"}
 fcgiwrap_socket=${fcgiwrap_socket:-"unix:/var/run/fcgiwrap/fcgiwrap.sock"}
-fcgiwrap_socket_mode=${fcgiwrap_socket_mode:-"0755"}
-fcgiwrap_socket_owner=${fcgiwrap_socket_owner:-"root"}
-fcgiwrap_socket_group=${fcgiwrap_socket_group:-"wheel"}
+fcgiwrap_socket_mode=${fcgiwrap_socket_mode:-"0775"}
+fcgiwrap_socket_owner=${fcgiwrap_socket_owner:-"nobody"}
+fcgiwrap_socket_group=${fcgiwrap_socket_group:-"nogroup"}
 
 # This handles profile specific vars.
 if [ -n "$2" ]; then
@@ -137,6 +140,7 @@ if [ -n "$2" ]; then
 		eval fcgiwrap_enable="\${fcgiwrap_${profile}_enable:-${fcgiwrap_enable}}"
 		eval fcgiwrap_fib="\${fcgiwrap_${profile}_fib:-${fcgiwrap_fib}}"
 		eval fcgiwrap_user="\${fcgiwrap_${profile}_user:-${fcgiwrap_user}}"
+		eval fcgiwrap_group="\${fcgiwrap_${profile}_user:-${fcgiwrap_group}}"
 		eval fcgiwrap_socket="\${fcgiwrap_${profile}_socket:?}"
 		eval fcgiwrap_socket_mode="\${fcgiwrap_${profile}_socket_mode:-${fcgiwrap_socket_mode}}"
 		eval fcgiwrap_socket_owner="\${fcgiwrap_${profile}_socket_owner:-${fcgiwrap_socket_owner}}"
@@ -167,5 +171,6 @@ fi
 actual_fcgiwrap_flags="${fcgiwrap_flags}"
 fcgiwrap_flags=""
 command_args="-f -p ${pidfile} ${procname} -s ${fcgiwrap_socket} ${actual_fcgiwrap_flags}"
+fcgiwrap_saved_umask=$(umask)
 
 run_rc_command "$1"
