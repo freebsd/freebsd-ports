@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	stress-ng
-PORTVERSION=	0.08.18
+PORTVERSION=	0.09.00
 CATEGORIES=	benchmarks
 MASTER_SITES=	http://kernel.ubuntu.com/~cking/tarballs/stress-ng/
 
