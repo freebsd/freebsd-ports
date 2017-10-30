@@ -1,23 +1,23 @@
---- Resources/Configuration.json.orig	2015-02-12 13:47:38 UTC
+--- Resources/Configuration.json.orig	2017-07-19 11:10:48 UTC
 +++ Resources/Configuration.json
-@@ -9,12 +9,12 @@
- 
-   // Path to the directory that holds the heavyweight files
-   // (i.e. the raw DICOM instances)
+@@ -10,12 +10,12 @@
+   // Path to the directory that holds the heavyweight files (i.e. the
+   // raw DICOM instances). Backslashes must be either escaped by
+   // doubling them, or replaced by forward slashes "/".
 -  "StorageDirectory" : "OrthancStorage",
 +  "StorageDirectory" : "/var/db/orthanc/db-v5",
  
-   // Path to the directory that holds the SQLite index (if unset,
-   // the value of StorageDirectory is used). This index could be
-   // stored on a RAM-drive or a SSD device for performance reasons.
+   // Path to the directory that holds the SQLite index (if unset, the
+   // value of StorageDirectory is used). This index could be stored on
+   // a RAM-drive or a SSD device for performance reasons.
 -  "IndexDirectory" : "OrthancStorage",
 +  "IndexDirectory" : "/var/db/orthanc/db-v5",
  
    // Enable the transparent compression of the DICOM instances
    "StorageCompression" : false,
-@@ -39,6 +39,7 @@
-   // folders, in which case they will be scanned non-recursively to
-   // find shared libraries.
+@@ -41,6 +41,7 @@
+   // find shared libraries. Backslashes must be either escaped by
+   // doubling them, or replaced by forward slashes "/".
    "Plugins" : [
 +    "%%PREFIX%%/share/orthanc/plugins/"
    ],
