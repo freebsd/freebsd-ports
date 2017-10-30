@@ -18,6 +18,8 @@ RUN_DEPENDS=	mke2fs:sysutils/e2fsprogs
 USES=		autoreconf libtool fuse pkgconfig localbase:ldflags
 USE_GITHUB=	yes
 GNU_CONFIGURE=	yes
+CPPFLAGS+=	-I${LOCALBASE}/include/e2fsprogs
+LDFLAGS+=	-L${LOCALBASE}/lib/e2fsprogs -Wl,--rpath -Wl,${LOCALBASE}/lib/e2fsprogs
 
 GH_PROJECT=	fuse-ext2
 GH_ACCOUNT=	alperakcan
