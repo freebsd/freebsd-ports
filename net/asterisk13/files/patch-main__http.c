@@ -1,6 +1,6 @@
---- main/http.c.orig	2015-07-24 22:20:17 UTC
+--- main/http.c.orig	2017-10-13 17:46:56 UTC
 +++ main/http.c
-@@ -2080,7 +2080,7 @@ static int __ast_http_load(int reload)
+@@ -2098,7 +2098,7 @@ static int __ast_http_load(int reload)
  	struct http_uri_redirect *redirect;
  	struct ast_flags config_flags = { reload ? CONFIG_FLAG_FILEUNCHANGED : 0 };
  	uint32_t bindport = DEFAULT_PORT;
