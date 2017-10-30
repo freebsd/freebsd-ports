@@ -1,6 +1,6 @@
---- main/asterisk.exports.in.orig	2013-08-22 08:26:55 UTC
+--- main/asterisk.exports.in.orig	2017-10-13 17:46:56 UTC
 +++ main/asterisk.exports.in
-@@ -68,6 +68,8 @@
+@@ -70,6 +70,8 @@
  
  		*/
  		LINKER_SYMBOL_PREFIX_IO_stdin_used;
