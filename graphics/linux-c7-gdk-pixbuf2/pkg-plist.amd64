@@ -40,7 +40,6 @@ usr/lib64/libgdk_pixbuf-2.0.so.0.3600.5
 usr/lib64/libgdk_pixbuf_xlib-2.0.so.0
 usr/lib64/libgdk_pixbuf_xlib-2.0.so.0.3600.5
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
-%%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 usr/share/licenses/gdk-pixbuf2-2.36.5/COPYING
 %%NLS%%usr/share/locale/af/LC_MESSAGES/gdk-pixbuf.mo
