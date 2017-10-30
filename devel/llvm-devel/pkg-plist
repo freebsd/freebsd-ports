@@ -7,6 +7,7 @@ bin/llvm-ar-devel
 bin/llvm-as-devel
 bin/llvm-bcanalyzer-devel
 bin/llvm-cat-devel
+bin/llvm-cfi-verify-devel
 bin/llvm-config-devel
 bin/llvm-cov-devel
 bin/llvm-cvtres-devel
@@ -47,12 +48,14 @@ bin/sancov-devel
 %%CLANG%%bin/clang-check-devel
 %%CLANG%%bin/clang-cpp-devel
 %%CLANG%%bin/clang-format-devel
+%%CLANG%%bin/clang-func-mapping-devel
 %%CLANG%%bin/clang-import-test-devel
 %%CLANG%%bin/clang-offload-bundler-devel
 %%CLANG%%bin/clangd-devel
 %%CLANG%%bin/scan-build-devel
 %%CLANG%%bin/scan-view-devel
 %%LLD%%bin/ld.lld-devel
+%%LLD%%bin/ld64.lld-devel
 %%LLDB%%bin/lldb-devel
 %%LLDB%%bin/lldb-argdumper-devel
 %%LLDB%%bin/lldb-mi-devel
@@ -104,6 +107,7 @@ llvm-devel/bin/bugpoint
 %%CLANG%%llvm-devel/bin/clang-cl
 %%CLANG%%llvm-devel/bin/clang-cpp
 %%CLANG%%llvm-devel/bin/clang-format
+%%CLANG%%llvm-devel/bin/clang-func-mapping
 %%CLANG%%llvm-devel/bin/clang-import-test
 %%EXTRAS%%llvm-devel/bin/clang-include-fixer
 %%CLANG%%llvm-devel/bin/clang-offload-bundler
@@ -116,6 +120,7 @@ llvm-devel/bin/bugpoint
 %%EXTRAS%%llvm-devel/bin/find-all-symbols
 %%CLANG%%llvm-devel/bin/git-clang-format
 %%LLD%%llvm-devel/bin/ld.lld
+%%LLD%%llvm-devel/bin/ld64.lld
 llvm-devel/bin/llc
 %%LLD%%llvm-devel/bin/lld
 %%LLD%%llvm-devel/bin/lld-link
@@ -129,6 +134,7 @@ llvm-devel/bin/llvm-as
 llvm-devel/bin/llvm-bcanalyzer
 llvm-devel/bin/llvm-c-test
 llvm-devel/bin/llvm-cat
+llvm-devel/bin/llvm-cfi-verify
 llvm-devel/bin/llvm-config
 llvm-devel/bin/llvm-cov
 llvm-devel/bin/llvm-cvtres
@@ -176,6 +182,7 @@ llvm-devel/bin/sanstats
 %%CLANG%%llvm-devel/bin/scan-view
 llvm-devel/bin/verify-uselistorder
 llvm-devel/bin/yaml2obj
+llvm-devel/cfi_blacklist.txt
 %%CLANG%%llvm-devel/include/clang-c/BuildSystem.h
 %%CLANG%%llvm-devel/include/clang-c/CXCompilationDatabase.h
 %%CLANG%%llvm-devel/include/clang-c/CXErrorCode.h
@@ -363,6 +370,7 @@ llvm-devel/bin/yaml2obj
 %%CLANG%%llvm-devel/include/clang/Basic/DiagnosticCategories.h
 %%CLANG%%llvm-devel/include/clang/Basic/DiagnosticCommentKinds.inc
 %%CLANG%%llvm-devel/include/clang/Basic/DiagnosticCommonKinds.inc
+%%CLANG%%llvm-devel/include/clang/Basic/DiagnosticCrossTUKinds.inc
 %%CLANG%%llvm-devel/include/clang/Basic/DiagnosticDriverKinds.inc
 %%CLANG%%llvm-devel/include/clang/Basic/DiagnosticError.h
 %%CLANG%%llvm-devel/include/clang/Basic/DiagnosticFrontendKinds.inc
@@ -373,6 +381,7 @@ llvm-devel/bin/yaml2obj
 %%CLANG%%llvm-devel/include/clang/Basic/DiagnosticOptions.def
 %%CLANG%%llvm-devel/include/clang/Basic/DiagnosticOptions.h
 %%CLANG%%llvm-devel/include/clang/Basic/DiagnosticParseKinds.inc
+%%CLANG%%llvm-devel/include/clang/Basic/DiagnosticRefactoringKinds.inc
 %%CLANG%%llvm-devel/include/clang/Basic/DiagnosticSemaKinds.inc
 %%CLANG%%llvm-devel/include/clang/Basic/DiagnosticSerializationKinds.inc
 %%CLANG%%llvm-devel/include/clang/Basic/ExceptionSpecificationType.h
@@ -403,6 +412,7 @@ llvm-devel/bin/yaml2obj
 %%CLANG%%llvm-devel/include/clang/Basic/PragmaKinds.h
 %%CLANG%%llvm-devel/include/clang/Basic/PrettyStackTrace.h
 %%CLANG%%llvm-devel/include/clang/Basic/SanitizerBlacklist.h
+%%CLANG%%llvm-devel/include/clang/Basic/SanitizerSpecialCaseList.h
 %%CLANG%%llvm-devel/include/clang/Basic/Sanitizers.def
 %%CLANG%%llvm-devel/include/clang/Basic/Sanitizers.h
 %%CLANG%%llvm-devel/include/clang/Basic/SourceLocation.h
@@ -435,6 +445,8 @@ llvm-devel/bin/yaml2obj
 %%CLANG%%llvm-devel/include/clang/CodeGen/ObjectFilePCHContainerOperations.h
 %%CLANG%%llvm-devel/include/clang/CodeGen/SwiftCallingConv.h
 %%CLANG%%llvm-devel/include/clang/Config/config.h
+%%CLANG%%llvm-devel/include/clang/CrossTU/CrossTUDiagnostic.h
+%%CLANG%%llvm-devel/include/clang/CrossTU/CrossTranslationUnit.h
 %%CLANG%%llvm-devel/include/clang/Driver/Action.h
 %%CLANG%%llvm-devel/include/clang/Driver/Compilation.h
 %%CLANG%%llvm-devel/include/clang/Driver/Distro.h
@@ -673,9 +685,12 @@ llvm-devel/bin/yaml2obj
 %%CLANG%%llvm-devel/include/clang/Tooling/Refactoring/RefactoringActionRegistry.def
 %%CLANG%%llvm-devel/include/clang/Tooling/Refactoring/RefactoringActionRule.h
 %%CLANG%%llvm-devel/include/clang/Tooling/Refactoring/RefactoringActionRuleRequirements.h
-%%CLANG%%llvm-devel/include/clang/Tooling/Refactoring/RefactoringActionRuleRequirementsInternal.h
 %%CLANG%%llvm-devel/include/clang/Tooling/Refactoring/RefactoringActionRules.h
 %%CLANG%%llvm-devel/include/clang/Tooling/Refactoring/RefactoringActionRulesInternal.h
+%%CLANG%%llvm-devel/include/clang/Tooling/Refactoring/RefactoringDiagnostic.h
+%%CLANG%%llvm-devel/include/clang/Tooling/Refactoring/RefactoringOption.h
+%%CLANG%%llvm-devel/include/clang/Tooling/Refactoring/RefactoringOptionVisitor.h
+%%CLANG%%llvm-devel/include/clang/Tooling/Refactoring/RefactoringOptions.h
 %%CLANG%%llvm-devel/include/clang/Tooling/Refactoring/RefactoringResultConsumer.h
 %%CLANG%%llvm-devel/include/clang/Tooling/Refactoring/RefactoringRuleContext.h
 %%CLANG%%llvm-devel/include/clang/Tooling/Refactoring/Rename/RenamingAction.h
@@ -684,11 +699,15 @@ llvm-devel/bin/yaml2obj
 %%CLANG%%llvm-devel/include/clang/Tooling/Refactoring/Rename/USRFinder.h
 %%CLANG%%llvm-devel/include/clang/Tooling/Refactoring/Rename/USRFindingAction.h
 %%CLANG%%llvm-devel/include/clang/Tooling/Refactoring/Rename/USRLocFinder.h
-%%CLANG%%llvm-devel/include/clang/Tooling/Refactoring/SourceSelectionConstraints.h
 %%CLANG%%llvm-devel/include/clang/Tooling/RefactoringCallbacks.h
 %%CLANG%%llvm-devel/include/clang/Tooling/ReplacementsYaml.h
 %%CLANG%%llvm-devel/include/clang/Tooling/Tooling.h
-%%LLD%%llvm-devel/include/lld/Config/Version.h
+%%LLD%%llvm-devel/include/lld/Common/Driver.h
+%%LLD%%llvm-devel/include/lld/Common/LLVM.h
+%%LLD%%llvm-devel/include/lld/Common/Reproduce.h
+%%LLD%%llvm-devel/include/lld/Common/TargetOptionsCommandFlags.h
+%%LLD%%llvm-devel/include/lld/Common/Threads.h
+%%LLD%%llvm-devel/include/lld/Common/Version.h
 %%LLD%%llvm-devel/include/lld/Core/AbsoluteAtom.h
 %%LLD%%llvm-devel/include/lld/Core/ArchiveLibraryFile.h
 %%LLD%%llvm-devel/include/lld/Core/Atom.h
@@ -696,23 +715,19 @@ llvm-devel/bin/yaml2obj
 %%LLD%%llvm-devel/include/lld/Core/Error.h
 %%LLD%%llvm-devel/include/lld/Core/File.h
 %%LLD%%llvm-devel/include/lld/Core/Instrumentation.h
-%%LLD%%llvm-devel/include/lld/Core/LLVM.h
 %%LLD%%llvm-devel/include/lld/Core/LinkingContext.h
 %%LLD%%llvm-devel/include/lld/Core/Node.h
 %%LLD%%llvm-devel/include/lld/Core/Pass.h
 %%LLD%%llvm-devel/include/lld/Core/PassManager.h
 %%LLD%%llvm-devel/include/lld/Core/Reader.h
 %%LLD%%llvm-devel/include/lld/Core/Reference.h
-%%LLD%%llvm-devel/include/lld/Core/Reproduce.h
 %%LLD%%llvm-devel/include/lld/Core/Resolver.h
 %%LLD%%llvm-devel/include/lld/Core/SharedLibraryAtom.h
 %%LLD%%llvm-devel/include/lld/Core/SharedLibraryFile.h
 %%LLD%%llvm-devel/include/lld/Core/Simple.h
 %%LLD%%llvm-devel/include/lld/Core/SymbolTable.h
-%%LLD%%llvm-devel/include/lld/Core/TargetOptionsCommandFlags.h
 %%LLD%%llvm-devel/include/lld/Core/UndefinedAtom.h
 %%LLD%%llvm-devel/include/lld/Core/Writer.h
-%%LLD%%llvm-devel/include/lld/Driver/Driver.h
 %%LLD%%llvm-devel/include/lld/ReaderWriter/MachOLinkingContext.h
 %%LLD%%llvm-devel/include/lld/ReaderWriter/YamlContext.h
 %%LLDB%%llvm-devel/include/lldb/Breakpoint/Breakpoint.h
@@ -1279,7 +1294,7 @@ llvm-devel/include/llvm/Analysis/ObjCARCAliasAnalysis.h
 llvm-devel/include/llvm/Analysis/ObjCARCAnalysisUtils.h
 llvm-devel/include/llvm/Analysis/ObjCARCInstKind.h
 llvm-devel/include/llvm/Analysis/ObjectUtils.h
-llvm-devel/include/llvm/Analysis/OptimizationDiagnosticInfo.h
+llvm-devel/include/llvm/Analysis/OptimizationRemarkEmitter.h
 llvm-devel/include/llvm/Analysis/OrderedBasicBlock.h
 llvm-devel/include/llvm/Analysis/PHITransAddr.h
 llvm-devel/include/llvm/Analysis/Passes.h
@@ -1306,6 +1321,8 @@ llvm-devel/include/llvm/Analysis/TargetTransformInfoImpl.h
 llvm-devel/include/llvm/Analysis/Trace.h
 llvm-devel/include/llvm/Analysis/TypeBasedAliasAnalysis.h
 llvm-devel/include/llvm/Analysis/TypeMetadataUtils.h
+llvm-devel/include/llvm/Analysis/ValueLattice.h
+llvm-devel/include/llvm/Analysis/ValueLatticeUtils.h
 llvm-devel/include/llvm/Analysis/ValueTracking.h
 llvm-devel/include/llvm/Analysis/VectorUtils.h
 llvm-devel/include/llvm/AsmParser/Parser.h
@@ -1488,6 +1505,7 @@ llvm-devel/include/llvm/DebugInfo/CodeView/CVTypeVisitor.h
 llvm-devel/include/llvm/DebugInfo/CodeView/CodeView.h
 llvm-devel/include/llvm/DebugInfo/CodeView/CodeViewError.h
 llvm-devel/include/llvm/DebugInfo/CodeView/CodeViewRecordIO.h
+llvm-devel/include/llvm/DebugInfo/CodeView/CodeViewRegisters.def
 llvm-devel/include/llvm/DebugInfo/CodeView/CodeViewSymbols.def
 llvm-devel/include/llvm/DebugInfo/CodeView/CodeViewTypes.def
 llvm-devel/include/llvm/DebugInfo/CodeView/DebugChecksumsSubsection.h
@@ -1952,7 +1970,8 @@ llvm-devel/include/llvm/ProfileData/SampleProf.h
 llvm-devel/include/llvm/ProfileData/SampleProfReader.h
 llvm-devel/include/llvm/ProfileData/SampleProfWriter.h
 llvm-devel/include/llvm/Support/AArch64TargetParser.def
-llvm-devel/include/llvm/Support/AMDGPUCodeObjectMetadata.h
+llvm-devel/include/llvm/Support/AMDGPUKernelDescriptor.h
+llvm-devel/include/llvm/Support/AMDGPUMetadata.h
 llvm-devel/include/llvm/Support/ARMAttributeParser.h
 llvm-devel/include/llvm/Support/ARMBuildAttributes.h
 llvm-devel/include/llvm/Support/ARMEHABI.h
@@ -2251,6 +2270,9 @@ llvm-devel/include/llvm/Transforms/Vectorize.h
 llvm-devel/include/llvm/Transforms/Vectorize/LoopVectorize.h
 llvm-devel/include/llvm/Transforms/Vectorize/SLPVectorizer.h
 llvm-devel/include/llvm/WindowsManifest/WindowsManifestMerger.h
+llvm-devel/include/llvm/WindowsResource/ResourceProcessor.h
+llvm-devel/include/llvm/WindowsResource/ResourceScriptToken.h
+llvm-devel/include/llvm/WindowsResource/ResourceScriptTokenList.h
 llvm-devel/include/llvm/XRay/Graph.h
 llvm-devel/include/llvm/XRay/InstrumentationMap.h
 llvm-devel/include/llvm/XRay/Trace.h
@@ -2308,6 +2330,7 @@ llvm-devel/lib/LLVMHello.so
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/bmi2intrin.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/bmiintrin.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/clflushoptintrin.h
+%%CLANG%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/clwbintrin.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/clzerointrin.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/cpuid.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/cuda_wrappers/algorithm
@@ -2540,6 +2563,7 @@ llvm-devel/lib/libLTO.so.%%LLVM_RELEASE%%svn
 %%CLANG%%llvm-devel/lib/libclangBasic.a
 %%CLANG%%llvm-devel/lib/libclangChangeNamespace.a
 %%CLANG%%llvm-devel/lib/libclangCodeGen.a
+%%CLANG%%llvm-devel/lib/libclangCrossTU.a
 %%CLANG%%llvm-devel/lib/libclangDaemon.a
 %%CLANG%%llvm-devel/lib/libclangDriver.a
 %%CLANG%%llvm-devel/lib/libclangDynamicASTMatchers.a
@@ -2547,6 +2571,7 @@ llvm-devel/lib/libLTO.so.%%LLVM_RELEASE%%svn
 %%CLANG%%llvm-devel/lib/libclangFormat.a
 %%CLANG%%llvm-devel/lib/libclangFrontend.a
 %%CLANG%%llvm-devel/lib/libclangFrontendTool.a
+%%CLANG%%llvm-devel/lib/libclangHandleCXX.a
 %%EXTRAS%%llvm-devel/lib/libclangIncludeFixer.a
 %%EXTRAS%%llvm-devel/lib/libclangIncludeFixerPlugin.a
 %%CLANG%%llvm-devel/lib/libclangIndex.a
@@ -2586,7 +2611,7 @@ llvm-devel/lib/libLTO.so.%%LLVM_RELEASE%%svn
 %%OPENMP%%llvm-devel/lib/libgomp.so
 %%OPENMP%%llvm-devel/lib/libiomp5.so
 %%LLD%%llvm-devel/lib/liblldCOFF.a
-%%LLD%%llvm-devel/lib/liblldConfig.a
+%%LLD%%llvm-devel/lib/liblldCommon.a
 %%LLD%%llvm-devel/lib/liblldCore.a
 %%LLD%%llvm-devel/lib/liblldDriver.a
 %%LLD%%llvm-devel/lib/liblldELF.a
