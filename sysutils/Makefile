@@ -350,6 +350,7 @@
     SUBDIR += fusefs-curlftpfs
     SUBDIR += fusefs-encfs
     SUBDIR += fusefs-exfat
+    SUBDIR += fusefs-ext2
     SUBDIR += fusefs-ext4fuse
     SUBDIR += fusefs-funionfs
     SUBDIR += fusefs-fusepak
