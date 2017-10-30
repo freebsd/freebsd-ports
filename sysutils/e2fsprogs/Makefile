@@ -3,7 +3,7 @@
 
 PORTNAME=	e2fsprogs
 PORTVERSION=	1.43.7
-PORTREVISION?=	2
+PORTREVISION?=	3
 CATEGORIES?=	sysutils
 MASTER_SITES=	KERNEL_ORG/linux/kernel/people/tytso/${PORTNAME}/v${PORTVERSION}
 
@@ -17,8 +17,6 @@ LICENSE_FILE?=	${WRKSRC}/NOTICE
 LICENSE_DISTFILES_GPLv2=	${DISTNAME}${EXTRACT_SUFX}
 
 PORTSCOUT=	ignore	# cannot handle the version in the directory
-
-CONFLICTS_INSTALL=	krb5-[0-9d]*
 
 .if !defined(MASTERDIR)
 BROKEN_aarch64=		fails to link: missing sbrk
@@ -35,7 +33,10 @@ CONFIGURE_ARGS?=--disable-fsck \
 		--disable-uuidd \
 		--enable-libblkid \
 		--enable-elf-shlibs \
+		--libdir='${PREFIX}/lib/e2fsprogs/' \
+		--includedir='${PREFIX}/include/e2fsprogs/' \
 		--with-root-prefix='${PREFIX}' \
+		--without-included-gettext \
 		LDFLAGS='${LDFLAGS} -L${LOCALBASE}/lib'
 CPPFLAGS+=	-I${WRKSRC}/lib -I${LOCALBASE}/include # -D_EXT2_USE_C_VERSIONS
 MAKE_ARGS+=	pkgconfigdir='${PREFIX}/libdata/pkgconfig'
@@ -58,6 +59,8 @@ SMALLTESTS_DESC=Run tests that need <500 MB disk space (DEFAULT)
 ALLTESTS_DESC=	Run most self-tests (needs more RAM/disk space)
 PARALLELTESTS_DESC=	Parallelize self-tests (needs more disk space)
 
+FUSEFS_CONFIGURE_ENABLE=	fuse2fs
+
 BUILD_DEPENDS+=	gdd:sysutils/coreutils
 
 LIB_DEPENDS+=	libblkid.so:misc/e2fsprogs-libblkid
@@ -75,8 +78,6 @@ MAKE_ARGS+=	V=1
 
 .if ${PORT_OPTIONS:MFUSEFS}
 USES+=		fuse
-CONFIGURE_ARGS+=--enable-fuse2fs
-LDFLAGS+=	-L${LOCALBASE}/lib
 .endif
 
 .if ${PORT_OPTIONS:MNLS}
@@ -226,10 +227,16 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
 .endif
-# ditch files installed by other ports already, or shadowing system files:
+# remove or relocate files installed by other ports already, or shadowing system files:
 	cd ${STAGEDIR}${PREFIX} && \
 		${XARGS} <${FILESDIR}/unwanted ${RM} && \
-		${RMDIR} include/blkid include/ss share/ss
+		${RMDIR} include/e2fsprogs/blkid include/e2fsprogs/ss share/ss
+	${MV} ${STAGEDIR}${PREFIX}/bin/compile_et ${STAGEDIR}${PREFIX}/bin/e2fsprogs-compile_et
+	${MV} ${STAGEDIR}${PREFIX}/man/man1/compile_et.1 ${STAGEDIR}${PREFIX}/man/man1/e2fsprogs-compile_et.1
+	${MKDIR} ${STAGEDIR}${DATADIR}/et/
+	${MV} ${STAGEDIR}${PREFIX}/share/et/* ${STAGEDIR}${DATADIR}/et/
+	${REINPLACE_CMD} -e 's}^DIR=.*$$}DIR=${DATADIR}/et}' -i '' ${STAGEDIR}${PREFIX}/bin/e2fsprogs-compile_et
+	${RMDIR} ${STAGEDIR}${PREFIX}/share/et
 
 #
 # the next line closes .if ${MASTERDIR} == ${.CURDIR}
