@@ -8,7 +8,7 @@ PORTVERSION=	${ISCVERSION:S/-P/P/:S/b/.b/:S/a/.a/:S/rc/.rc/}
 PORTREVISION=	0
 .else
 # dns/bind9xx here
-PORTREVISION=	1
+PORTREVISION=	0
 .endif
 CATEGORIES=	dns net ipv6
 MASTER_SITES=	LOCAL/mat/bind
@@ -31,8 +31,8 @@ LICENSE=	MPL
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
 # ISC releases things like 9.8.0-P1, which our versioning doesn't like
-ISCVERSION=	9.12.0a.2017.10.22
-HASH=		2e662cf
+ISCVERSION=	9.12.0b1.2017.10.30
+HASH=		facf811
 
 USES=	cpe libedit
 
