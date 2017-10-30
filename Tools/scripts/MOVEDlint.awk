@@ -86,10 +86,10 @@ $3 !~ /^20[0-3][0-9]-[01][0-9]-[0-3][0-9]$/ {
 
 #    Produces too many false positives
 #    if ($4 ~ /^[a-z].*/)
-#       printf "Initial value of 'reason' is lowercase: %5d (%s)\n", NR, $4
+#       printf "Initial value of 'reason' is lowercase: %5d (%s)\n", NR, $4 | sort
 
     if ($4 ~ /\.$/)
-        printf "%5d: Final character is a dot: (%s)\n", NR, $4
+        printf "%5d: Final character is a dot: (%s)\n", NR, $4 | sort
 }
 
 END {
