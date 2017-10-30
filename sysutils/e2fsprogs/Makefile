@@ -18,6 +18,8 @@ LICENSE_DISTFILES_GPLv2=	${DISTNAME}${EXTRACT_SUFX}
 
 PORTSCOUT=	ignore	# cannot handle the version in the directory
 
+CONFLICTS_INSTALL=	krb5-[0-9d]*
+
 .if !defined(MASTERDIR)
 BROKEN_aarch64=		fails to link: missing sbrk
 .endif
