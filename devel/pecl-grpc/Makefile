@@ -8,7 +8,8 @@ CATEGORIES=	devel net
 MAINTAINER=	vanilla@FreeBSD.org
 COMMENT=	High performance, general RPC framework
 
-LICENSE=	BSD3CLAUSE
+LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN_aarch64=		fails to compile: fatal error: sys/auxv.h file not found
 BROKEN_mips=		fails to compile: fatal error: sys/auxv.h file not found
