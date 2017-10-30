@@ -3,7 +3,7 @@
 
 PORTNAME=	e2fsprogs
 PORTVERSION=	1.43.7
-PORTREVISION?=	3
+PORTREVISION?=	4
 CATEGORIES?=	sysutils
 MASTER_SITES=	KERNEL_ORG/linux/kernel/people/tytso/${PORTNAME}/v${PORTVERSION}
 
@@ -37,7 +37,7 @@ CONFIGURE_ARGS?=--disable-fsck \
 		--includedir='${PREFIX}/include/e2fsprogs/' \
 		--with-root-prefix='${PREFIX}' \
 		--without-included-gettext \
-		LDFLAGS='${LDFLAGS} -L${LOCALBASE}/lib'
+		LDFLAGS='${LDFLAGS} -L${LOCALBASE}/lib -Wl,--rpath -Wl,${LOCALBASE}/lib/e2fsprogs'
 CPPFLAGS+=	-I${WRKSRC}/lib -I${LOCALBASE}/include # -D_EXT2_USE_C_VERSIONS
 MAKE_ARGS+=	pkgconfigdir='${PREFIX}/libdata/pkgconfig'
 MAKE_ENV+=	CHECK_CMD=@true
