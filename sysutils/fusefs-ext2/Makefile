@@ -4,6 +4,7 @@
 PORTNAME=	fusefs-ext2
 PORTVERSION=	0.0.9
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	ehaupt@FreeBSD.org
@@ -25,6 +26,6 @@ GH_PROJECT=	fuse-ext2
 GH_ACCOUNT=	alperakcan
 
 PLIST_FILES=	bin/fuse-ext2 bin/fuse-ext2.probe \
-		libdata/pkgconfig/fuse-ext2.pc man/man1/fuse-ext2.1.gz
+		man/man1/fuse-ext2.1.gz
 
 .include <bsd.port.mk>
