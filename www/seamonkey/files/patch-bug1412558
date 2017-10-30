@@ -2,15 +2,25 @@ diff --git dom/media/flac/FlacDecoder.cpp dom/media/flac/FlacDecoder.cpp
 index 53fc3c9937f7..b23771ab80fa 100644
 --- mozilla/dom/media/flac/FlacDecoder.cpp
 +++ mozilla/dom/media/flac/FlacDecoder.cpp
-@@ -36,7 +36,7 @@ FlacDecoder::CreateStateMachine()
- /* static */ bool
- FlacDecoder::IsEnabled()
+@@ -7,6 +7,7 @@
+ #include "FlacDecoder.h"
+ #include "MediaContainerType.h"
+ #include "MediaPrefs.h"
++#include "PDMFactory.h"
+ 
+ namespace mozilla {
+ 
+@@ -15,6 +16,10 @@ FlacDecoder::IsEnabled()
  {
--#ifdef MOZ_FFVPX
-+#if defined(MOZ_FFMPEG) || defined(MOZ_FFVPX)
+ #ifdef MOZ_FFVPX
    return MediaPrefs::FlacEnabled();
++#elif defined(MOZ_FFMPEG)
++  RefPtr<PDMFactory> platform = new PDMFactory();
++  return MediaPrefs::FlacEnabled() && platform->SupportsMimeType(NS_LITERAL_CSTRING("audio/flac"),
++                                    /* DecoderDoctorDiagnostics* */ nullptr);
  #else
    // Until bug 1295886 is fixed.
+   return false;
 diff --git media/ffvpx/README_MOZILLA media/ffvpx/README_MOZILLA
 index 5d3a6037efe0..43144b726a92 100644
 --- mozilla/media/ffvpx/README_MOZILLA
