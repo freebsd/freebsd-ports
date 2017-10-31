@@ -4,6 +4,7 @@
 PORTNAME=	vim
 PORTVERSION=	8.0.1231
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	editors
 
 MAINTAINER=	adamw@FreeBSD.org
@@ -37,15 +38,16 @@ MAKE_ARGS+=	CC="${CC}" \
 		VIMRUNTIMEDIR=${PREFIX}/share/vim/${VIM_VER} \
 		VIMRCLOC=${ETCDIR} \
 		CONF_OPT_MULTIBYTE=--enable-multibyte \
-		CONF_TERM_LIB=--with-tlib=ncurses
+		CONF_TERM_LIB=--with-tlib=ncurses \
+		CONF_OPT_PYTHON="${CONF_OPT_PYTHON}"
 
 # OPTIONS
-OPTIONS_DEFAULT=	CSCOPE DEFAULT_VIMRC EXUBERANT_CTAGS GTK2 LUA PERL PYTHON RUBY TCL
+OPTIONS_DEFAULT=	CSCOPE DEFAULT_VIMRC EXUBERANT_CTAGS GTK2 PERL PYTHON2 RUBY
 OPTIONS_DEFINE=		CSCOPE DEFAULT_VIMRC EXUBERANT_CTAGS NLS XTERM_SAVE
 OPTIONS_SINGLE=		UI
 OPTIONS_SINGLE_UI=	ATHENA CONSOLE GNOME GTK2 GTK3 MOTIF X11
 OPTIONS_GROUP=		LANGBIND
-OPTIONS_GROUP_LANGBIND=	LUA PERL PYTHON RUBY TCL
+OPTIONS_GROUP_LANGBIND=	LUA PERL PYTHON2 PYTHON3 RUBY TCL
 OPTIONS_SUB=		yes
 
 .if defined(LITE)
@@ -129,8 +131,14 @@ PERL_MAKE_ARGS=		CONF_OPT_PERL=--enable-perlinterp
 PERL_MAKE_ARGS_OFF=	CONF_OPT_PERL=--disable-perlinterp
 PERL_USES=		perl5
 
-PYTHON_MAKE_ARGS_OFF=	CONF_OPT_PYTHON="--disable-pythoninterp --disable-python3interp"
-PYTHON_USES=		python
+PYTHON2_VARS=		CONF_OPT_PYTHON+=--enable-pythoninterp
+PYTHON2_VARS_OFF=	CONF_OPT_PYTHON+=--disable-pythoninterp
+PYTHON2_BUILD_DEPENDS=	python${PYTHON2_DEFAULT}:lang/python${PYTHON2_DEFAULT:S/.//}
+PYTHON2_RUN_DEPENDS=	${PYTHON2_BUILD_DEPENDS}
+
+PYTHON3_VARS=		CONF_OPT_PYTHON+=--enable-python3interp
+PYTHON3_VARS_OFF=	CONF_OPT_PYTHON+=--disable-python3interp
+PYTHON3_USES=		python:3.4+
 
 RUBY_MAKE_ARGS=		CONF_OPT_RUBY=--enable-rubyinterp
 RUBY_MAKE_ARGS_OFF=	CONF_OPT_RUBY=--disable-rubyinterp
@@ -140,16 +148,6 @@ TCL_MAKE_ARGS=		CONF_OPT_TCL="--enable-tclinterp --with-tclsh=tclsh${TCL_VER}"
 TCL_MAKE_ARGS_OFF=	CONF_OPT_TCL=--disable-tclinterp
 TCL_USES=		tcl:85+
 
-.include <bsd.port.pre.mk>
-
-.if ${PORT_OPTIONS:MPYTHON}
-.if ${PYTHON_REL} < 3000
-MAKE_ARGS+=	CONF_OPT_PYTHON="--enable-pythoninterp --disable-python3interp"
-.else
-MAKE_ARGS+=	CONF_OPT_PYTHON="--enable-python3interp --disable-pythoninterp"
-.endif
-.endif
-
 post-extract:
 	${INSTALL_DATA} ${FILESDIR}/vietnamese_viscii.vim ${WRKSRC}/runtime/keymap
 
@@ -158,6 +156,8 @@ post-patch:
 	@${ECHO_CMD} '#define SYS_GVIMRC_FILE "'${ETCDIR}'/gvimrc"' >> ${WRKSRC}/src/feature.h
 	@${REINPLACE_CMD} -e 's|-liconv|${ICONV_LIB}|g; s|/usr/local|${LOCALBASE}|g' \
 		${WRKSRC}/src/auto/configure
+# Work around qa-check shebang error
+	@${REINPLACE_CMD} -e 1d ${WRKSRC}/runtime/tools/demoserver.py
 
 pre-configure:
 	@${CP} ${WRKSRC}/src/config.mk.dist ${WRKSRC}/src/auto/config.mk
@@ -185,10 +185,6 @@ post-patch-EXUBERANT_CTAGS-on:
 post-patch-LUA-on:
 	@${REINPLACE_CMD} -e 's|set dummy lua;|set dummy ${LUA_CMD};|g' ${WRKSRC}/src/auto/configure
 
-post-patch-PYTHON-off:
-# Work around qa-check shebang error
-	@${REINPLACE_CMD} -e 1d ${WRKSRC}/runtime/tools/demoserver.py
-
 post-patch-XTERM_SAVE-on:
 	@${REINPLACE_CMD} -e '/FEAT_XTERM_SAVE/ s|.*|#define FEAT_XTERM_SAVE|' ${WRKSRC}/src/feature.h
 
@@ -202,4 +198,4 @@ post-install-NLS-off:
 	@${MKDIR} ${STAGEDIR}${DATADIR}/${VIM_VER}/keymap
 	${INSTALL_DATA} ${WRKSRC}/runtime/keymap/* ${STAGEDIR}${DATADIR}/${VIM_VER}/keymap
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

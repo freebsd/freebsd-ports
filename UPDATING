@@ -5,6 +5,20 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20171031:
+  AFFECTS: users of editors/vim
+  AUTHOR: adamw@FreeBSD.org
+
+  The default vim language bindings have changed. Python 2 and 3 bindings
+  may now be enabled independently (the default vim package will continue
+  to depend on python-2.7).
+
+  Lua and Tcl bindings have been disabled by default. If you need these
+  bindings, you'll need to compile vim yourself. Note that bindings are
+  only for plugins written in those languages, and for interactive
+  debugging. Editing, indenting, linting, completing, and syntax-highlighting
+  those languages is NOT affected.
+
 20171026:
   AFFECTS: users of devel/universal-ctags
   AUTHOR: rodrigo@FreeBSD.org
