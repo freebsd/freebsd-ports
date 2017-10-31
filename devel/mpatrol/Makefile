@@ -8,7 +8,7 @@ CATEGORIES=	devel
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER= ports@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Dynamic memory debugging and profiling library
 
 LIB_DEPENDS=	libelf.so.0:devel/libelf

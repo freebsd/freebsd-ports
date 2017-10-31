@@ -14,8 +14,8 @@ LIB_DEPENDS=	libgsl.so:math/gsl \
 		libmuparser.so:math/muparser \
 		libpng.so:graphics/png
 # use bundled modified libraries
-# 		qwt.5:x11-toolkits/qwt5 \
-# 		qwtplot3d-qt4:math/qwtplot3d-qt4
+#		qwt.5:x11-toolkits/qwt5 \
+#		qwtplot3d-qt4:math/qwtplot3d-qt4
 
 USES=		dos2unix gmake qmake tar:bzip2
 USE_QT4=	gui opengl svg qt3support network assistantclient \

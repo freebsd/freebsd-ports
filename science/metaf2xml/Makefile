@@ -42,7 +42,7 @@ APACHE_USE=		APACHE_RUN=22+
 
 post-patch:
 	${REINPLACE_CMD} 's|%%METAF2XML_XSL%%|../../../${DATADIR_REL}| ; \
-	       	s|%%METAF2XML_BIN%%|../../../bin|' \
+		s|%%METAF2XML_BIN%%|../../../bin|' \
 		${WRKSRC}/install.pl
 
 .include <bsd.port.mk>
