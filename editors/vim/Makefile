@@ -4,7 +4,7 @@
 PORTNAME=	vim
 PORTVERSION=	8.0.1231
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	editors
 
 MAINTAINER=	adamw@FreeBSD.org
@@ -177,7 +177,7 @@ post-install:
 
 # OPTIONS
 post-patch-EXUBERANT_CTAGS-off:
-	@${FIND} ${WRKSRC}/runtime/ -name 'menu*.vim' -print0 | ${XARGS} -0 ${REINPLACE_CMD} -Ee 's!ctags -R ?\.!${FIND} . -type f | ${XARGS} ctags!g'
+	@${FIND} ${WRKSRC}/runtime/ -name 'menu*.vim' -print0 | ${XARGS} -0 ${REINPLACE_CMD} -Ee 's!ctags -R ?\.!${FIND} . -type f \\| ${XARGS} ctags!g'
 
 post-patch-EXUBERANT_CTAGS-on:
 	@${FIND} ${WRKSRC}/runtime/ -name 'menu*.vim' -print0 | ${XARGS} -0 ${REINPLACE_CMD} -e 's|ctags -R|exctags -R|g'
