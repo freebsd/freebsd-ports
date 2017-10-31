@@ -1103,6 +1103,7 @@
     SUBDIR += sloth
     SUBDIR += slst
     SUBDIR += slurm-wlm
+    SUBDIR += smart
     SUBDIR += smartmontools
     SUBDIR += smenu
     SUBDIR += smp_utils
