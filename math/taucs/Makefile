@@ -12,10 +12,10 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C library of sparse linear solvers
 
-LICENSE=        TAUCS
-LICENSE_NAME=   TAUCS License
-LICENSE_FILE=   ${FILESDIR}/TAUCS-license.txt
-LICENSE_PERMS=  dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+LICENSE=	TAUCS
+LICENSE_NAME=	TAUCS License
+LICENSE_FILE=	${FILESDIR}/TAUCS-license.txt
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 LIB_DEPENDS=	libmetis.so:math/metis4
 

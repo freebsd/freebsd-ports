@@ -49,9 +49,9 @@ LATEX_USE=		tex=dvipsk:run,latex:run
 PDF_RUN_DEPENDS=	pdftotext:graphics/poppler-utils
 PS_RUN_DEPENDS=		pstotext:print/pstotext
 PYTHON_USES=		python
-PYTHON_CONFIGURE_ENABLE=	python-module
+PYTHON_CONFIGURE_ENABLE=python-module
 PYTHON_PLIST_SUB=	PYDISTUTILS_EGGINFO="${PYDISTUTILS_EGGINFO}"
-PYTHON_VARS= 		PYDISTUTILS_PKGNAME=Recoll \
+PYTHON_VARS=		PYDISTUTILS_PKGNAME=Recoll \
 			PYDISTUTILS_PKGVERSION=1.0
 QT4_USE=		qt4=moc_build,qmake_build,rcc_build,uic_build \
 			qt4=iconengines_run,imageformats_run \
@@ -65,7 +65,7 @@ SOUND_RUN_DEPENDS=	mutagen-pony:audio/py-mutagen \
 X11MON_DESC=		X11 session monitoring support
 X11MON_USES=		fam
 X11MON_USE=		xorg=ice,sm,x11
-X11MON_CONFIGURE_ENABLE=	x11mon
+X11MON_CONFIGURE_ENABLE=x11mon
 X11MON_CONFIGURE_WITH=	fam
 
 post-patch:
