@@ -11,8 +11,6 @@ PKGNAMESUFFIX=	3
 MAINTAINER=	feld@FreeBSD.org
 COMMENT=	Really Awesome New Cisco confIg Differ
 
-BROKEN=	Fails to patch
-
 LIB_DEPENDS=	libexpect.so:lang/expect
 RUN_DEPENDS=	p5-LockFile-Simple>=0:devel/p5-LockFile-Simple
 
