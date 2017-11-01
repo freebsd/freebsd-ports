@@ -5,7 +5,11 @@ PORTNAME=	opensc
 PORTVERSION=	0.17.0
 PORTREVISION=	1
 CATEGORIES=	security devel
-MASTER_SITES=	https://github.com/OpenSC/OpenSC/releases/download/0.17.0/
+MASTER_SITES=	https://github.com/OpenSC/OpenSC/releases/download/${PORTVERSION}/
+
+PATCH_SITES=	https://github.com/OpenSC/OpenSC/commit/
+PATCHFILES=	8d7346406d166a9db4afd239e6669df3e3b99f79.patch
+PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	Libraries and utilities to access smart cards
@@ -34,16 +38,19 @@ CONFIGURE_ENV=	\
 
 PORTDOCS=	*
 
-MANPAGES_CONFIGURE_ARGS_OFF=--disable-man
+MANPAGES_CONFIGURE_ENABLE=	man
 
 OPENCT_LIB_DEPENDS=	libopenct.so:security/openct
-OPENCT_CONFIGURE_ARGS=	--enable-openct
+OPENCT_CONFIGURE_ENABLE=	openct
 
 PCSC_LIB_DEPENDS=	libpcsclite.so:devel/pcsc-lite
-PCSC_CONFIGURE_ARGS_OFF=--disable-pcsc
-CTAPI_CONFIGURE_ARGS=	--enable-ctapi
-SM_CONFIGURE_ARGS_OFF=	--disable-sm
-DOCS_CONFIGURE_ARGS+=	--enable-doc
+PCSC_CONFIGURE_ENABLE=	pcsc
+
+CTAPI_CONFIGURE_ENABLE=		ctapi
+
+SM_CONFIGURE_ENABLE=		sm
+
+DOCS_CONFIGURE_ENABLE=		doc
 
 .include <bsd.port.options.mk>
 
