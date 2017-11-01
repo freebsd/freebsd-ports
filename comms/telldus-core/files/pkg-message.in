@@ -10,7 +10,7 @@ Please restart devd to activate this:
 
 	/etc/rc.d/devd restart
 
-Edit /usr/local/etc/tellstick.conf to configure some devices,
+Edit %%PREFIX%%/etc/tellstick.conf to configure some devices,
 and enable telldusd in rc.conf.
 
 Then start telldusd.

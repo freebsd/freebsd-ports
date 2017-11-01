@@ -9,7 +9,7 @@
  	cfg_t *cfg;
  	cfg_t *var_cfg;
  };
-@@ -42,10 +44,10 @@
+@@ -42,10 +44,10 @@ Settings::Settings(void) {
  */
  Settings::~Settings(void) {
  	TelldusCore::MutexLocker locker(&mutex);
@@ -22,7 +22,7 @@
  		cfg_free(d->var_cfg);
  	}
  	delete d;
-@@ -56,7 +58,7 @@
+@@ -56,7 +58,7 @@ Settings::~Settings(void) {
  */
  std::wstring Settings::getSetting(const std::wstring &strName) const {
  	TelldusCore::MutexLocker locker(&mutex);
@@ -31,7 +31,7 @@
  		std::string setting(cfg_getstr(d->cfg, TelldusCore::wideToString(strName).c_str()));
  		return TelldusCore::charToWstring(setting.c_str());
  	}
-@@ -68,7 +70,7 @@
+@@ -68,7 +70,7 @@ std::wstring Settings::getSetting(const 
  */
  int Settings::getNumberOfNodes(Node node) const {
  	TelldusCore::MutexLocker locker(&mutex);
