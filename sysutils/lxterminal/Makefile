@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	lxterminal
-PORTVERSION=	0.3.0
-PORTREVISION=	1
+PORTVERSION=	0.3.1
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/lxde/LXTerminal%20%28terminal%20emulator%29/LXTerminal%20${PORTVERSION}/
 
