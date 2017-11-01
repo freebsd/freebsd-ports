@@ -2,7 +2,7 @@
 
 PORTNAME=	c7
 PORTVERSION=	${LINUX_DIST_VER}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	emulators linux
 PKGNAMEPREFIX=	linux_base-
 BIN_DISTNAMES=	centos-release-7-4.1708.el7.centos \
@@ -43,6 +43,7 @@ LIB_DISTNAMES=	bzip2-libs-1.0.6-13.el7 \
 		libffi-3.0.13-18.el7 \
 		libgcc-4.8.5-16.el7 \
 		libidn-1.28-4.el7 \
+		libmount-2.23.2-43.el7 \
 		libselinux-2.5-11.el7 \
 		libsepol-2.5-6.el7 \
 		libstdc++-4.8.5-16.el7 \
