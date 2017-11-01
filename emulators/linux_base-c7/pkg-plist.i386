@@ -723,6 +723,8 @@ usr/lib/libmenu.so.5
 usr/lib/libmenu.so.5.9
 usr/lib/libmenuw.so.5
 usr/lib/libmenuw.so.5.9
+usr/lib/libmount.so.1
+usr/lib/libmount.so.1.1.0
 usr/lib/libncurses++.so.5
 usr/lib/libncurses++.so.5.9
 usr/lib/libncurses++w.so.5
@@ -1131,6 +1133,7 @@ usr/share/centos-release/EULA
 %%PORTDOCS%%usr/share/doc/libidn-1.28/NEWS
 %%PORTDOCS%%usr/share/doc/libidn-1.28/README
 %%PORTDOCS%%usr/share/doc/libidn-1.28/THANKS
+%%PORTDOCS%%usr/share/doc/libmount-2.23.2/COPYING
 %%PORTDOCS%%usr/share/doc/libuuid-2.23.2/COPYING
 %%PORTDOCS%%usr/share/doc/ncurses-5.9/ANNOUNCE
 %%PORTDOCS%%usr/share/doc/ncurses-5.9/AUTHORS
