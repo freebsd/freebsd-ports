@@ -55,7 +55,7 @@ OPTIONS_SUB=		yes
 NO_OPTIONS_SORT=	yes
 
 ALL_MODULES_DESC=	Build all modules
-X11_DESC=		graphics/ImageMagick[-nox11] dependency
+X11_DESC=	graphics/ImageMagick[-nox11] dependency
 8K_DESC=	8kHz Audio Files
 16K_DESC=	16kHz Audio Files
 32K_DESC=	32kHz Audio Files
@@ -75,8 +75,8 @@ ALL_MODULES_LIB_DEPENDS=	libavformat.so:multimedia/ffmpeg \
 				libmemcached.so:databases/libmemcached \
 				libSoundTouch.so:audio/soundtouch \
 				libasound.so:audio/alsa-lib \
-	     			libportaudio.so:audio/portaudio \
-	      			libmp4v2.so:multimedia/mp4v2 \
+				libportaudio.so:audio/portaudio \
+				libmp4v2.so:multimedia/mp4v2 \
 				libshout.so:audio/libshout \
 				libmpg123.so:audio/mpg123 \
 				libmp3lame.so:audio/lame \

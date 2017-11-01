@@ -135,7 +135,7 @@ post-patch:
 do-build:
 	@cd ${GO_WRKSRC} && \
 		${SETENV} ${MAKE_ENV} ${GO_ENV} GOPATH=${WRKSRC} \
-	 	${GO_CMD} build -v -x -ldflags "-X main.version=${PORTVERSION}" \
+		${GO_CMD} build -v -x -ldflags "-X main.version=${PORTVERSION}" \
 		-o ${WRKSRC}/${PORTNAME}
 
 do-install:

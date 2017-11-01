@@ -81,7 +81,7 @@ LIRC_CMAKE_BOOL=	ENABLE_LIRC
 
 post-patch:
 	@${REINPLACE_CMD} -e '/SET.*LIRC_CLIENT_LIBRARY/ s|lirc_client|${LOCALBASE}/lib/lib&.so|; \
-       		s|share/man|man|' ${WRKSRC}/CMakeLists.txt
+		s|share/man|man|' ${WRKSRC}/CMakeLists.txt
 
 maint-gen-distfile:
 	@if [ -f ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} ]; then \

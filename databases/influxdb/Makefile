@@ -76,7 +76,7 @@ INFLUXD_PIDDIR=	/var/run/${PORTNAME}/
 .include <bsd.port.pre.mk>
 
 .if ${OPSYS} == "FreeBSD" && ((${OSVERSION} >= 1100513 && ${OSVERSION} < 1200000) || \
-    	${OSVERSION} >= 1200015)
+	${OSVERSION} >= 1200015)
 SUB_LIST+=	INFLUXD_LOGCMD="daemon"
 .else
 SUB_LIST+=	INFLUXD_LOGCMD="logger"
@@ -94,7 +94,7 @@ post-patch:
 		internal LICENSE_OF_DEPENDENCIES.md Makefile man models \
 		monitor nightly.sh node.go pkg QUERIES.md README.md \
 		scripts services stress tcp test.sh tests TODO.md toml tsdb uuid \
- 		${WRKSRC}/src/github.com/${GH_ACCOUNT_DEFAULT}/${PORTNAME}
+		${WRKSRC}/src/github.com/${GH_ACCOUNT_DEFAULT}/${PORTNAME}
 
 do-build:
 		@cd ${WRKSRC}/src/github.com/${GH_ACCOUNT_DEFAULT}/${GH_PROJECT} && \

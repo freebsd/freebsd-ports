@@ -47,10 +47,10 @@ post-patch:
 
 post-install:
 	cd ${STAGEDIR}${PREFIX}/etc && \
-		 ${MV} tellstick.conf tellstick.conf.sample
+		${MV} tellstick.conf tellstick.conf.sample
 	# This file is actually empty but allows us to simply use @sample to 
 	# make sure it stays between upgrades if modified
 	cd ${STAGEDIR}/var/telldus && \
-		 ${MV} telldus-core.conf telldus-core.conf.sample
+		${MV} telldus-core.conf telldus-core.conf.sample
 
 .include <bsd.port.post.mk>

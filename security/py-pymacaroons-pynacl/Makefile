@@ -20,7 +20,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hypothesis>0:devel/py-hypothesis \
 		${PYTHON_PKGNAMEPREFIX}mock>0:devel/py-mock \
 		${PYTHON_PKGNAMEPREFIX}nose>0:devel/py-nose
 
-USES=           python
+USES=		python
 USE_GITHUB=	yes
 USE_PYTHON=	autoplist distutils
 

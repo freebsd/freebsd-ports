@@ -3,7 +3,7 @@
 PORTNAME=	MessagePack
 PORTVERSION=	0.3.5
 CATEGORIES=	devel
-PKGNAMEPREFIX=  ${LUA_PKGNAMEPREFIX}
+PKGNAMEPREFIX=	${LUA_PKGNAMEPREFIX}
 
 MAINTAINER=	oleksii.tsai@gmail.com
 COMMENT=	Efficient binary serialization format
