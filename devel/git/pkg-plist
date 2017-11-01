@@ -651,6 +651,7 @@ man/man7/gitworkflows.7.gz
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.14.1.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.14.2.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.14.3.txt
+%%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.15.0.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.2.0.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.2.1.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.2.2.txt
@@ -1176,8 +1177,6 @@ man/man7/gitworkflows.7.gz
 %%HTMLDOCS%%%%DOCSDIR%%/technical/api-setup.txt
 %%HTMLDOCS%%%%DOCSDIR%%/technical/api-sigchain.html
 %%HTMLDOCS%%%%DOCSDIR%%/technical/api-sigchain.txt
-%%HTMLDOCS%%%%DOCSDIR%%/technical/api-string-list.html
-%%HTMLDOCS%%%%DOCSDIR%%/technical/api-string-list.txt
 %%HTMLDOCS%%%%DOCSDIR%%/technical/api-submodule-config.html
 %%HTMLDOCS%%%%DOCSDIR%%/technical/api-submodule-config.txt
 %%HTMLDOCS%%%%DOCSDIR%%/technical/api-trace.html
@@ -1187,6 +1186,8 @@ man/man7/gitworkflows.7.gz
 %%HTMLDOCS%%%%DOCSDIR%%/technical/api-xdiff-interface.html
 %%HTMLDOCS%%%%DOCSDIR%%/technical/api-xdiff-interface.txt
 %%HTMLDOCS%%%%DOCSDIR%%/technical/bitmap-format.txt
+%%HTMLDOCS%%%%DOCSDIR%%/technical/hash-function-transition.html
+%%HTMLDOCS%%%%DOCSDIR%%/technical/hash-function-transition.txt
 %%HTMLDOCS%%%%DOCSDIR%%/technical/http-protocol.html
 %%HTMLDOCS%%%%DOCSDIR%%/technical/http-protocol.txt
 %%HTMLDOCS%%%%DOCSDIR%%/technical/index-format.html
@@ -1475,6 +1476,7 @@ share/git-core/templates/info/exclude
 %%NLS%%share/locale/bg/LC_MESSAGES/git.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/git.mo
 %%NLS%%share/locale/de/LC_MESSAGES/git.mo
+%%NLS%%share/locale/es/LC_MESSAGES/git.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/git.mo
 %%NLS%%share/locale/is/LC_MESSAGES/git.mo
 %%NLS%%share/locale/it/LC_MESSAGES/git.mo
