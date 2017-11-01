@@ -3,7 +3,7 @@
 #   $MCom: ports/trunk/graphics/gthumb/Makefile 19823 2014-08-20 09:28:14Z gusi $
 
 PORTNAME=	gthumb
-PORTVERSION=	3.5.2
+PORTVERSION=	3.5.3
 PORTREVISION=	0
 CATEGORIES=	graphics
 MASTER_SITES=	GNOME
@@ -19,6 +19,7 @@ BUILD_DEPENDS=	gsettings-desktop-schemas>0:devel/gsettings-desktop-schemas \
 LIB_DEPENDS=	libclutter-1.0.so:graphics/clutter \
 		libcogl.so:graphics/cogl \
 		libgstreamer-1.0.so:multimedia/gstreamer1 \
+		libjson-glib-1.0.so:devel/json-glib \
 		liblcms2.so:graphics/lcms2 \
 		liboauth.so:net/liboauth \
 		libomp.so:devel/openmp \
@@ -36,7 +37,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_lib_jpeg_jpeg_destroy_decompress=yes \
 		ac_cv_lib_tiff_TIFFWriteScanline=yes
 CONFIGURE_ARGS=	--disable-libchamplain \
-		--enable-compile-warnings=minimum \
 		--enable-librsvg
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
