@@ -6,7 +6,7 @@ PORTVERSION?=	1.9.4.4325
 DISTVERSIONSUFFIX?=1bf240a65
 PORTREVISION?=	0
 CATEGORIES=	multimedia
-MASTER_SITES=	https://downloads.plex.tv/plex-media-server/${DISTVERSION}/
+MASTER_SITES=	https://downloads.plex.tv/plex-media-server/${DISTVERSION}-${DISTVERSIONSUFFIX}/
 DISTNAME=	PlexMediaServer-${DISTVERSION}-${DISTVERSIONSUFFIX}-freebsd-${ARCH}
 
 MAINTAINER?=	feld@FreeBSD.org
