@@ -3,7 +3,7 @@
 
 PORTNAME=	opensc
 PORTVERSION=	0.17.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security devel
 MASTER_SITES=	https://github.com/OpenSC/OpenSC/releases/download/${PORTVERSION}/
 
