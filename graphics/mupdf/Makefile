@@ -52,10 +52,10 @@ post-patch:
 	@${RM} -r ${WRKSRC}/thirdparty/curl \
 		${WRKSRC}/thirdparty/freetype \
 		${WRKSRC}/thirdparty/harfbuzz \
-	 	${WRKSRC}/thirdparty/jbig2dec \
-	 	${WRKSRC}/thirdparty/libjpeg \
-	 	${WRKSRC}/thirdparty/openjpeg \
-	 	${WRKSRC}/thirdparty/zlib
+		${WRKSRC}/thirdparty/jbig2dec \
+		${WRKSRC}/thirdparty/libjpeg \
+		${WRKSRC}/thirdparty/openjpeg \
+		${WRKSRC}/thirdparty/zlib
 
 post-install:
 	${MV} ${STAGEDIR}${PREFIX}/bin/mupdf-x11 ${STAGEDIR}${PREFIX}/bin/mupdf

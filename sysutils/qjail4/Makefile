@@ -5,7 +5,7 @@ PORTNAME=	qjail
 PORTVERSION=	4.9
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/${PORTNAME}
-PKGNAMESUFFIX=  4
+PKGNAMESUFFIX=	4
 
 MAINTAINER=	qjail1@a1poweruser.com
 COMMENT=	Utility to quickly deploy and manage jails

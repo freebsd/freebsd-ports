@@ -69,7 +69,7 @@ SQLITE_CONFIGURE_ON=		--with-sqlite3-h="${LOCALBASE}/include" \
 
 MYSQL_USES=			mysql
 MYSQL_CONFIGURE_ENABLE=		mysql
-MYSQL_CONFIGURE_ON= 		--with-mysql-cfg="${LOCALBASE}/bin/mysql_config"
+MYSQL_CONFIGURE_ON=		--with-mysql-cfg="${LOCALBASE}/bin/mysql_config"
 
 JS_CONFIGURE_ENABLE=		libjs
 JS_CONFIGURE_ON=		--with-js-h="${LOCALBASE}/include/js-1.7" \
@@ -91,7 +91,7 @@ FFMPEGTHUMBNAILER_LIB_DEPENDS=		libffmpegthumbnailer.so:multimedia/ffmpegthumbna
 # CURL is only useful in combination with EXTERNAL_TRANSCODING
 CURL_IMPLIES=			EXTERNAL_TRANSCODING
 CURL_CONFIGURE_ENABLE=		curl
-CURL_CONFIGURE_ON= 		--with-curl-cfg="${LOCALBASE}/bin/curl-config"
+CURL_CONFIGURE_ON=		--with-curl-cfg="${LOCALBASE}/bin/curl-config"
 CURL_LIB_DEPENDS=		libcurl.so:ftp/curl
 
 FFMPEG_CONFIGURE_ENABLE=	ffmpeg

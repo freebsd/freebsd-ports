@@ -12,7 +12,7 @@ COMMENT=	Simple UNIX SMS client to send messages to phones or pagers
 
 LICENSE=	BSD3CLAUSE
 
-USES= 		tar:xz
+USES=		tar:xz
 HAS_CONFIGURE=	yes
 SPOOL=		${STAGEDIR}${PREFIX}/var/spool/sms
 

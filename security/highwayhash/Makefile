@@ -26,7 +26,7 @@ post-patch:
 		s|LIBDIR|XLIBDIR|; \
 		s| -O3||; \
 		s|install -m0755 high|${INSTALL_DATA} high|; \
-       		s|install -m0755 lib|${INSTALL_LIB} lib|' \
+		s|install -m0755 lib|${INSTALL_LIB} lib|' \
 		${WRKSRC}/Makefile
 
 post-install:

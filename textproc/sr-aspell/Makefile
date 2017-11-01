@@ -10,7 +10,7 @@ CATEGORIES=	textproc
 MAINTAINER=	nikola.lecic@anthesphoria.net
 COMMENT=	Aspell Serbian dictionary
 
-DICT=	 	sr
+DICT=		sr
 
 .include "${.CURDIR}/../../textproc/aspell/Makefile.inc"
 .include <bsd.port.post.mk>
