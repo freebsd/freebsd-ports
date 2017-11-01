@@ -5,35 +5,26 @@ Fix tests
 - The argscap check returns 8186 + 8186 + 1339 = 17711 on FreeBSD,
   which should be fine.
 
---- tests.orig	2017-07-17 14:20:26 UTC
+--- tests.orig	2017-10-30 15:43:40 UTC
 +++ tests
-@@ -194,7 +194,7 @@ check_output 'using -LL' '{ echo 1; sleep 1; echo 2; s
+@@ -220,7 +220,7 @@ check_output 'exit code when process was killed' 'nech
  EOF
  
- check_output 'using -vvL' '{ echo 1; sleep 1; echo 2; sleep 1; echo 3; } | xe -j2 -vvL -s "printf \$1; sleep 1; echo \$1" | wc -l' <<EOF
--9
-+       9
- EOF
- 
- printf '# error handling\n'
-@@ -219,7 +219,7 @@ check_output 'exit code when process was killed' 'nech
- 125
- EOF
- 
+ # possible false positive result when exec returns ENOENT instead of ENOTDIR here
 -check_output 'exit code when command cannot be run' 'necho a | xe /dev/null/calc.exe 2>/dev/null || echo $?' <<EOF
 +check_output 'exit code when command cannot be run' 'necho a | xe /dev/null 2>/dev/null || echo $?' <<EOF
  126
  EOF
  
-@@ -265,10 +265,8 @@ EOF
+@@ -266,10 +266,8 @@ EOF
  
  printf '# limit checks, expecting maximal POSIX limits available\n'
  
--check_output 'argscap check' 'head -c 17711 /dev/zero | tr "\0" "\012" | xe -N0 -s "echo \$#"' <<EOF
+-check_output 'argscap check' 'dd if=/dev/zero bs=1 count=17711 2>/dev/null | tr "\0" "\012" | xe -N0 -s "echo \$#"' <<EOF
 -8187
 -8187
 -1337
-+check_output 'argscap check' 'head -c 17711 /dev/zero | tr "\0" "\012" | xe -N0 -s "echo \$#" | awk "{sum+=\$0}END{print sum}"' <<EOF
++check_output 'argscap check' 'dd if=/dev/zero bs=1 count=17711 2>/dev/null | tr "\0" "\012" | xe -N0 -s "echo \$#" | awk "{sum+=\$0}END{print sum}"' <<EOF
 +17711
  EOF
  
