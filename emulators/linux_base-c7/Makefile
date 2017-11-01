@@ -2,6 +2,7 @@
 
 PORTNAME=	c7
 PORTVERSION=	${LINUX_DIST_VER}
+PORTREVISION=	1
 CATEGORIES=	emulators linux
 PKGNAMEPREFIX=	linux_base-
 BIN_DISTNAMES=	centos-release-7-4.1708.el7.centos \
@@ -57,6 +58,7 @@ LIB_DISTNAMES=	bzip2-libs-1.0.6-13.el7 \
 		xz-libs-5.2.2-1.el7 \
 		zlib-1.2.7-17.el7
 SHARE_DISTNAMES=basesystem-10.0-7.el7.centos \
+		ncurses-base-5.9-14.20130511.el7_4 \
 		setup-2.8.71-7.el7
 SRC_DISTFILES=	acl-2.2.51-12.el7${SRC_SUFX}:SOURCE \
 		attr-2.4.46-12.el7${SRC_SUFX}:SOURCE \

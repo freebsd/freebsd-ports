@@ -9600,3 +9600,5 @@ lang/fpc-tcl||2017-10-20|Has expired: This port depends on Tcl/Tk 8.4 , which is
 net/asterisk11|net/asterisk13|2017-10-28|Has expired: Asterisk 11.x will reach EOL on 2017-10-25. Please migrate to net/asterisk13
 lang/gcc5-aux|lang/gcc6-aux|2017-11-01|Has expired: Essentially unmaintained and replaced by gcc6-aux
 textproc/rubygem-rouge1|textproc/rubygem-rouge|2017-11-01|Has expired: Use textproc/rubygem-rouge instead
+devel/linux-c6-ncurses-base||2017-11-01|Merged into emulators/linux_base-c6
+devel/linux-c7-ncurses-base||2017-11-01|Merged into emulators/linux_base-c7

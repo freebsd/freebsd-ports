@@ -1,4 +1,4 @@
-TIMESTAMP = 1507218213
+TIMESTAMP = 1509540613
 SHA256 (centos/basesystem-10.0-4.el6.noarch.rpm) = 18860007697438e375733bb4a36a599daac2e2ae95d98a74c436a10d0974710e
 SIZE (centos/basesystem-10.0-4.el6.noarch.rpm) = 4784
 SHA256 (centos/bash-4.1.2-48.el6.i686.rpm) = 0300a6935602bb86a6e44dc526993069e79b80a32a02cfaeec7def94e3a2973e
@@ -153,6 +153,10 @@ SHA256 (centos/ncurses-5.7-4.20090207.el6.i686.rpm) = 5d7449100c2c23593fbaf7bf50
 SIZE (centos/ncurses-5.7-4.20090207.el6.i686.rpm) = 274852
 SHA256 (centos/ncurses-5.7-4.20090207.el6.x86_64.rpm) = a4cd0365f3fe8240e5b081597458888ebe42fbe88d0c86e87f5b48b718ca402b
 SIZE (centos/ncurses-5.7-4.20090207.el6.x86_64.rpm) = 273996
+SHA256 (centos/ncurses-base-5.7-4.20090207.el6.i686.rpm) = 5811c992ccefadbecbdf3b9091b1971e2e80cbd47eb8b7a1bd307d80a86f67ca
+SIZE (centos/ncurses-base-5.7-4.20090207.el6.i686.rpm) = 62504
+SHA256 (centos/ncurses-base-5.7-4.20090207.el6.x86_64.rpm) = 6254a095635de3984d426f5a133d0e961a94decd4a0018bb1a9921e51232f7dc
+SIZE (centos/ncurses-base-5.7-4.20090207.el6.x86_64.rpm) = 62472
 SHA256 (centos/ncurses-libs-5.7-4.20090207.el6.i686.rpm) = fe1778ee05c4840cb27a6804e6af6d61ca6f48666560654e3cfd765fa20ff2bb
 SIZE (centos/ncurses-libs-5.7-4.20090207.el6.i686.rpm) = 255352
 SHA256 (centos/ncurses-libs-5.7-4.20090207.el6.x86_64.rpm) = 88b5174e139c595569787ebe4750fefdfc5e047657f13df0c87b8316ff6cf956
