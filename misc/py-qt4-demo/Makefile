@@ -16,6 +16,7 @@ DISTINFO_FILE=	${PYQT4_DISTINFO_FILE}
 
 NO_BUILD=	yes
 USES=		python pyqt:4
+USE_PYTHON=	py3kplist
 
 EXAMPLESDIR=	${PREFIX}/share/examples/py-qt4
 
