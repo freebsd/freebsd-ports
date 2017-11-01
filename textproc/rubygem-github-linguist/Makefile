@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	github-linguist
-PORTVERSION=	5.3.1
+PORTVERSION=	5.3.2
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
@@ -19,7 +19,6 @@ RUN_DEPENDS=	rubygem-charlock_holmes>=0.7.5:textproc/rubygem-charlock_holmes \
 # bin/linguist
 CONFLICTS_INSTALL=	rubygem-gitlab-linguist
 
-NO_ARCH=	yes
 USE_RUBY=	yes
 USES=		gem
 
