@@ -2,14 +2,15 @@
 
 PORTNAME=	vuls
 DISTVERSIONPREFIX=	v
-DISTVERSION=		0.4.0-2
-DISTVERSIONSUFFIX=	-g0ba490c
+DISTVERSION=		0.4.1-8
+DISTVERSIONSUFFIX=	-gab68ad5
 CATEGORIES=	security
 
 MAINTAINER=	iscandr@gmail.com
 COMMENT=	Agentless vulnerability scanner
 
-LICENSE=	GPLv3
+LICENSE=	GPLv3+
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${LOCALBASE}/bin/go-cve-dictionary:security/go-cve-dictionary
 
@@ -102,6 +103,7 @@ GH_TUPLE+=	mgutz:minimist:39eb8cf:minimist/src/github.com/mgutz/minimist
 GH_TUPLE+=	mgutz:str:968bf66:str/src/github.com/mgutz/str
 GH_TUPLE+=	mgutz:to:00c0640:to/src/github.com/mgutz/to
 GH_TUPLE+=	moul:http2curl:4e24498:http2curl/src/github.com/moul/http2curl
+GH_TUPLE+=	nlopes:slack:c86337c:slack/src/github.com/nlopes/slack
 GH_TUPLE+=	nozzle:throttler:d9b45f1:throttler/src/github.com/nozzle/throttler
 GH_TUPLE+=	nsf:termbox-go:72800b7:termboxgo/src/github.com/nsf/termbox-go
 GH_TUPLE+=	parnurzeal:gorequest:v0.2.15:gorequest/src/github.com/parnurzeal/gorequest
