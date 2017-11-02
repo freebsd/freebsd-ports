@@ -26,7 +26,7 @@ do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/ebook2cwgui ${STAGEDIR}${PREFIX}/bin/ebook2cwgui
 	@${INSTALL_DATA} ${WRKSRC}/ebook2cwgui.1 ${STAGEDIR}${MANPREFIX}/man/man1
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for 	f in README COPYING ChangeLog
+.for f in README COPYING ChangeLog
 	@${INSTALL_DATA} ${WRKSRC}/$f ${STAGEDIR}${DOCSDIR}/$f
 .endfor
 

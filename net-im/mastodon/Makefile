@@ -127,7 +127,7 @@ do-install:
 		${WRKSRC}/node_modules/*/node_modules \
 		${WRKSRC}/node_modules/node-sass \
 		${WRKSRC}/node_modules/uws/build
-	@${RM} 	${WRKSRC}/Gemfile.lock \
+	@${RM}	${WRKSRC}/Gemfile.lock \
 		${WRKSRC}/lib/tasks/auto_annotate_models.rake \
 		${WRKSRC}/node_modules/uws/uws_darwin_* \
 		${WRKSRC}/node_modules/uws/uws_linux_* \

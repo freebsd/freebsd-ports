@@ -6,7 +6,7 @@ PORTVERSION=		3.5.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=		textproc python
 PKGNAMEPREFIX=		${PYTHON_PKGNAMEPREFIX}elasticsearch-
-PKGNAMESUFFIX=  -py
+PKGNAMESUFFIX=		-py
 
 MAINTAINER=		dvl@FreeBSD.org
 COMMENT=		Python index manager for Elasticsearch

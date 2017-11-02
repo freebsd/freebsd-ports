@@ -28,13 +28,13 @@ CONFIGURE_ARGS=	--with-openssl="${OPENSSLBASE}" \
 		--with-gcrypt="${LOCALBASE}"
 MAKE_ENV=	ABS_BUILDDIR=${WRKSRC} TMPFOLDER=${WRKSRC}
 INSTALL_TARGET=	install-strip
-PORTDOCS= api authors.html bugs.html c14n.html documentation.html	\
-	download.html faq.html favicon.ico images/bart.gif		\
-	images/libxml2-logo.png images/libxslt-logo.png			\
-	images/logo.gif images/openssl-logo.png				\
-	images/xmlsec-logo.gif index.html news.html related.html	\
-	xmldsig-verifier.html xmldsig.html xmlenc.html			\
-	xmlsec-man.html
+PORTDOCS=	api authors.html bugs.html c14n.html documentation.html		\
+		download.html faq.html favicon.ico images/bart.gif		\
+		images/libxml2-logo.png images/libxslt-logo.png			\
+		images/logo.gif images/openssl-logo.png				\
+		images/xmlsec-logo.gif index.html news.html related.html	\
+		xmldsig-verifier.html xmldsig.html xmlenc.html			\
+		xmlsec-man.html
 
 OPTIONS_DEFINE=	DOCS GNUTLS NSS
 OPTIONS_SUB=	yes

@@ -21,7 +21,7 @@ LIB_DEPENDS=	librrd.so:databases/rrdtool \
 		libsodium.so:security/libsodium
 BUILD_DEPENDS=  bash:shells/bash
 
-USES=	 	autoreconf cpe gmake libtool localbase mysql pathfix pkgconfig \
+USES=		autoreconf cpe gmake libtool localbase mysql pathfix pkgconfig \
 		shebangfix sqlite ssl
 SUB_FILES=	ntopng-geoipupdate.sh pkg-deinstall
 SHEBANG_FILES=	httpdocs/misc/ntopng-add-user.sh

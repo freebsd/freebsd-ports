@@ -11,7 +11,7 @@ COMMENT=	Forecasting functions for time series and linear models
 
 LICENSE=	GPLv3
 
-CRAN_DEPENDS= 	R-cran-tseries>0:finance/R-cran-tseries \
+CRAN_DEPENDS=	R-cran-tseries>0:finance/R-cran-tseries \
 		R-cran-fracdiff>0:math/R-cran-fracdiff \
 		R-cran-Rcpp>=0.11.0:devel/R-cran-Rcpp \
 		R-cran-colorspace>0:graphics/R-cran-colorspace \

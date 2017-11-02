@@ -24,7 +24,7 @@ BUILD_DEPENDS=	p5-Capture-Tiny>=0:devel/p5-Capture-Tiny \
 		p5-autodie>=0:devel/p5-autodie
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-File-Copy-Recursive>=0:devel/p5-File-Copy-Recursive \
-  		p5-Module-Build>=0:devel/p5-Module-Build \
+		p5-Module-Build>=0:devel/p5-Module-Build \
 		p5-Module-Build-Tiny>=0:devel/p5-Module-Build-Tiny
 
 NO_ARCH=	yes
