@@ -5,6 +5,7 @@
 
 PORTNAME=	ripgrep
 PORTVERSION=	0.7.1
+PORTREVISION=	1
 CATEGORIES=	textproc
 
 MAINTAINER=	petteri.valkonen@iki.fi
@@ -72,6 +73,22 @@ CARGO_CRATES=	aho-corasick-0.6.3 \
 
 RIPGREP_OUTDIR=	${WRKDIR}/cargo-out
 CARGO_ENV=	RIPGREP_OUTDIR=${RIPGREP_OUTDIR}
+
+OPTIONS_DEFINE=	SIMD
+OPTIONS_DEFAULT=SIMD
+
+OPTIONS_DEFINE_amd64=	AVX
+OPTIONS_DEFINE_i386=	AVX
+
+AVX_DESC=	${SSE_DESC:S/SSE/AVX/}
+AVX_VARS=	CARGO_FEATURES+=avx-accel RUSTFLAGS+="-C target-feature=+avx"
+AVX_IMPLIES=	SIMD
+
+# simd crate uses cfg_target_feature which isn't stable yet, so unlock
+# unstable features similar to how lang/rust bootstraps. www/firefox
+# uses the same hack when building with --enable-rust-simd.
+SIMD_MAKE_ENV=	RUSTC_BOOTSTRAP=1
+SIMD_VARS=	CARGO_FEATURES+=simd-accel
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|OUT_DIR|RIPGREP_OUTDIR|' ${WRKSRC}/build.rs
