@@ -4659,6 +4659,24 @@ ${_t}:
 
 .if !target(pre-check-config)
 pre-check-config:
+_CHECK_OPTIONS_NAMES=	OPTIONS_DEFINE
+_CHECK_OPTIONS_NAMES+=	${OPTIONS_GROUP:S/^/OPTIONS_GROUP_/}
+_CHECK_OPTIONS_NAMES+=	${OPTIONS_MULTI:S/^/OPTIONS_MULTI_/}
+_CHECK_OPTIONS_NAMES+=	${OPTIONS_RADIO:S/^/OPTIONS_RADIO_/}
+_CHECK_OPTIONS_NAMES+=	${OPTIONS_SINGLE:S/^/OPTIONS_SINGLE_/}
+.for var in ${_CHECK_OPTIONS_NAMES}
+.  if defined(${var})
+.    for o in ${${var}}
+.      if ${o:C/[-_[:upper:][:digit:]]//g}
+OPTIONS_BAD_NAMES+=	${o}
+.      endif
+.    endfor
+.  endif
+.endfor
+.if defined(OPTIONS_BAD_NAMES) && !empty(OPTIONS_BAD_NAMES)
+DEV_WARNING+=	"These options name have characters outside of [-_A-Z0-9]:"
+DEV_WARNING+=	"${OPTIONS_BAD_NAMES:O:u}"
+.endif
 .for single in ${OPTIONS_SINGLE}
 .  for opt in ${OPTIONS_SINGLE_${single}}
 .    if empty(ALL_OPTIONS:M${single}) || !empty(PORT_OPTIONS:M${single})
