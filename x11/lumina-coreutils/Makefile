@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	lumina-coreutils
-DISTVERSIONPREFIX=      v
-DISTVERSION=    1.3.0
+DISTVERSIONPREFIX=	v
+DISTVERSION=	1.3.0
 DISTVERSIONSUFFIX=	-p1
 CATEGORIES=	x11
 
@@ -18,7 +18,7 @@ CONFLICTS_INSTALL=	lumina-1.2.*
 
 OPTIONS_DEFINE=	I18N
 OPTIONS_DEFAULT=	I18N
-I18N_DESC= Install localization files
+I18N_DESC=	Install localization files
 
 .include <bsd.port.options.mk>
 
@@ -34,8 +34,8 @@ GH_PROJECT=	lumina
 WRKSRC_SUBDIR=	src-qt5/core-utils
 
 .if${PORT_OPTIONS:MI18N}
-USE_QT5+= linguist_build
-QMAKE_ARGS+=CONFIG+=WITH_I18N
+USE_QT5+=	linguist_build
+QMAKE_ARGS+=	CONFIG+=WITH_I18N
 .endif
 
 .include <bsd.port.mk>

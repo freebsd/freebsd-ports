@@ -28,7 +28,7 @@ CGX_VER=	cgx_${PORTVERSION}
 
 USES=		gmake tar:bzip2 compiler:c++11-lib
 USE_XORG=	ice sm x11 xext xi xmu xt
-USE_GL= 	gl glu # uses its own glut
+USE_GL=		gl glu # uses its own glut
 
 BROWSER?=	firefox
 PSVIEWER?=	gv

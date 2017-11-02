@@ -138,7 +138,7 @@ FEDERATED_SUB_LIST+=		FEDER="--federated"
 FEDERATED_SUB_LIST_OFF+=	FEDER=""
 
 # issue 220865: Currently there's no source to be built with server-side support.
-# 		But this keeps the pkg-plist not overlaping
+#		But this keeps the pkg-plist not overlaping
 CMAKE_ARGS+=	-DWITH_AUTHENTICATION_LDAP=0
 .endif
 

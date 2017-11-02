@@ -85,13 +85,13 @@ post-configure:
 		${WRKSRC}/config.h
 	for f in `${FIND} ${WRKSRC} -name \*.make -o -name link.txt` ; do				\
 		${REINPLACE_CMD}						\
-		-e 's|CC = gcc|#CC = gcc|'             				\
-		-e 's|LD = gcc|LD = ${CC}|'                     		\
-		-e 's|LD = g++|LD = ${CXX}|'                    		\
-		-e 's|wx-config|${WX_CONFIG}|'                  		\
+		-e 's|CC = gcc|#CC = gcc|'					\
+		-e 's|LD = gcc|LD = ${CC}|'					\
+		-e 's|LD = g++|LD = ${CXX}|'					\
+		-e 's|wx-config|${WX_CONFIG}|'					\
 		-e 's|CXX_FLAGS =|CXX_FLAGS = -I${LOCALBASE}/include|'		\
 		-e 's|C_FLAGS =|C_FLAGS = -I${LOCALBASE}/include|'		\
-		-e 's|LDFLAGS =|LDFLAGS += -L${LOCALBASE}/lib|' 		\
+		-e 's|LDFLAGS =|LDFLAGS += -L${LOCALBASE}/lib|'			\
 		-e 's|gcc -D|${CC} -D|'						\
 		-e 's/-pthread;-D_THREAD_SAFE/-pthread -D_THREAD_SAFE/g'	\
 		$$f ;								\

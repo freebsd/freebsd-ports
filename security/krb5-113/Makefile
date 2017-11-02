@@ -3,7 +3,7 @@
 
 PORTNAME=		krb5
 PORTVERSION=		1.13.7
-PORTREVISION=	8
+PORTREVISION=		8
 CATEGORIES=		security
 MASTER_SITES=		http://web.mit.edu/kerberos/dist/${PORTNAME}/${PORTVERSION:C/^[0-9]*\.[0-9]*/&X/:C/X\.[0-9]*$//:C/X//}/
 .if !defined(MASTERDIR)
@@ -18,8 +18,8 @@ COMMENT=		MIT implementation of RFC 4120 network authentication service
 
 LICENSE=		MIT
 
-DEPRECATED=             EOL twelve months after release of krb5-1.15
-EXPIRATION_DATE=        2017-12-02
+DEPRECATED=		EOL twelve months after release of krb5-1.15
+EXPIRATION_DATE=	2017-12-02
 
 CONFLICTS=		heimdal-[0-9]* srp-[0-9]* krb5-11[45]-[0-9]* \
 			krb5-1.[0-9]* krbt5-devel-*

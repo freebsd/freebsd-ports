@@ -4,7 +4,7 @@ PORTNAME=	ldap2pw
 PORTVERSION=	20170922
 CATEGORIES=	net
 MASTER_SITES=	GH
-PKGNAMEPREFIX=  p5-
+PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	des@FreeBSD.org
 COMMENT=	Synchronize local user database with LDAP directory

@@ -13,7 +13,7 @@ COMMENT=	Constructive Solid Geometry rendering library
 
 USES=		qmake
 USE_GL=		glew
-USE_QT4=  	corelib gui
+USE_QT4=	corelib gui
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 PLIST_SUB=      PORTVERSION=${PORTVERSION}
 

@@ -60,7 +60,7 @@ CONFIGURE_ARGS= --with-system-kpathsea \
 		--with-system-libpng \
 		--with-system-zlib
 CFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+= 	-L${LOCALBASE}/lib
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 pre-install:
 	${CAT} ${DISTDIR}/${DIST_SUBDIR}/texlive-${DISTVERSION_TEXLIVE_TEXMF}-texmf${EXTRACT_SUFX} \

@@ -10,7 +10,7 @@ MASTER_SITES=	SF
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Virtual Tunnels over TCP/IP networks with traffic shaping
 
-LICENSE=        GPLv2
+LICENSE=	GPLv2
 
 LIB_DEPENDS=	liblzo2.so:archivers/lzo2
 

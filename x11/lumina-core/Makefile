@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	lumina-core
-DISTVERSIONPREFIX=      v
-DISTVERSION=    1.3.0
+DISTVERSIONPREFIX=	v
+DISTVERSION=	1.3.0
 DISTVERSIONSUFFIX=	-p1
 CATEGORIES=	x11
 
@@ -29,7 +29,7 @@ OPTIONS_DEFINE=	MULTIMEDIA TRUEOS I18N
 OPTIONS_DEFAULT=	MULTIMEDIA I18N
 MULTIMEDIA_DESC=	Install multimedia support backend (gstreamer)
 TRUEOS_DESC=	Use the TrueOS system interface settings.
-I18N_DESC= Install localization files
+I18N_DESC=	Install localization files
 
 .include <bsd.port.options.mk>
 
@@ -56,8 +56,8 @@ QMAKE_ARGS=	DEFAULT_SETTINGS=TrueOS
 .endif
 
 .if${PORT_OPTIONS:MI18N}
-USE_QT5+= linguist_build
-QMAKE_ARGS+=CONFIG+=WITH_I18N
+USE_QT5+=	linguist_build
+QMAKE_ARGS+=	CONFIG+=WITH_I18N
 .endif
 
 .include <bsd.port.mk>

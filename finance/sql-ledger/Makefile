@@ -23,9 +23,9 @@ NO_ARCH=	yes
 
 ROOT_DIRS=	SL bin css doc images js locale spool sql templates users
 ROOT_FILES=	VERSION admin.pl am.pl ap.pl ar.pl bp.pl ca.pl cp.pl ct.pl\
-	       	favicon.ico gl.pl hr.pl ic.pl im.pl index.html ir.pl is.pl\
+		favicon.ico gl.pl hr.pl ic.pl im.pl index.html ir.pl is.pl\
 		jc.pl login.pl menu.ini menu.pl oe.pl pe.pl ps.pl rc.pl\
-	       	rd.pl rp.pl setup.pl sm.pl vr.pl
+		rd.pl rp.pl setup.pl sm.pl vr.pl
 
 do-install:
 	${INSTALL_DATA} ${WRKDIR}/sql-ledger-httpd.conf ${STAGEDIR}${PREFIX}/etc/
