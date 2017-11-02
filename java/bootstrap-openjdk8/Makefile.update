@@ -41,7 +41,7 @@ BUILD_ENV+=	java_openjdk8_UNSET="ALSA X11"
 JDK_BUILD_ARGS=	${BUILD_ARGS}
 
 .if !defined(TARGET_OS)
-.if ${ARCH:Marmv*}
+.if ${ARCH} == aarch64 || ${ARCH:Marmv*}
 TARGET_OS=	11
 .else
 TARGET_OS=	10
