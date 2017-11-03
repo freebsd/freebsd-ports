@@ -274,6 +274,8 @@ go/misc/cgo/test/issue20129.go
 go/misc/cgo/test/issue20266.go
 go/misc/cgo/test/issue20266/issue20266.h
 go/misc/cgo/test/issue20369.go
+go/misc/cgo/test/issue21668.go
+go/misc/cgo/test/issue21708.go
 go/misc/cgo/test/issue2462.go
 go/misc/cgo/test/issue3250.go
 go/misc/cgo/test/issue3250w.go
@@ -3575,6 +3577,7 @@ go/src/internal/cpu/cpu_x86.s
 go/src/internal/nettrace/nettrace.go
 go/src/internal/poll/export_posix_test.go
 go/src/internal/poll/export_test.go
+go/src/internal/poll/export_windows_test.go
 go/src/internal/poll/fd.go
 go/src/internal/poll/fd_io_plan9.go
 go/src/internal/poll/fd_mutex.go
@@ -3586,6 +3589,7 @@ go/src/internal/poll/fd_posix.go
 go/src/internal/poll/fd_posix_test.go
 go/src/internal/poll/fd_unix.go
 go/src/internal/poll/fd_windows.go
+go/src/internal/poll/fd_windows_test.go
 go/src/internal/poll/hook_cloexec.go
 go/src/internal/poll/hook_unix.go
 go/src/internal/poll/hook_windows.go
@@ -6849,6 +6853,9 @@ go/test/fixedbugs/issue21120.dir/a.go
 go/test/fixedbugs/issue21120.dir/b.go
 go/test/fixedbugs/issue21120.dir/main.go
 go/test/fixedbugs/issue21120.go
+go/test/fixedbugs/issue21655.go
+go/test/fixedbugs/issue21963.go
+go/test/fixedbugs/issue22083.go
 go/test/fixedbugs/issue2615.go
 go/test/fixedbugs/issue3552.dir/one.go
 go/test/fixedbugs/issue3552.dir/two.go
