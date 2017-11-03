@@ -8,7 +8,8 @@ CATEGORIES=	security devel
 MASTER_SITES=	https://github.com/OpenSC/OpenSC/releases/download/${PORTVERSION}/
 
 PATCH_SITES=	https://github.com/OpenSC/OpenSC/commit/
-PATCHFILES=	8d7346406d166a9db4afd239e6669df3e3b99f79.patch
+PATCHFILES=	8d7346406d166a9db4afd239e6669df3e3b99f79.patch \
+		def06389bfeec4eabfb88801c388ae30a6f7b693.patch
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	ale@FreeBSD.org
