@@ -1,0 +1,72 @@
+Build libyuv with SIMD optimizations on Linux x86.
+
+diff --git media/libyuv/include/libyuv/compare_row.h media/libyuv/include/libyuv/compare_row.h
+index 7abc2d4aef8f..161c12fa1b83 100644
+--- mozilla/media/libyuv/include/libyuv/compare_row.h
++++ mozilla/media/libyuv/include/libyuv/compare_row.h
+@@ -18,8 +18,7 @@ namespace libyuv {
+ extern "C" {
+ #endif
+ 
+-#if defined(__pnacl__) || defined(__CLR_VER) || \
+-    (defined(__i386__) && !defined(__SSE2__))
++#if defined(__pnacl__) || defined(__CLR_VER)
+ #define LIBYUV_DISABLE_X86
+ #endif
+ // MemorySanitizer does not support assembly code yet. http://crbug.com/344505
+diff --git media/libyuv/include/libyuv/planar_functions.h media/libyuv/include/libyuv/planar_functions.h
+index 040839c211b1..0d672dec96d6 100644
+--- mozilla/media/libyuv/include/libyuv/planar_functions.h
++++ mozilla/media/libyuv/include/libyuv/planar_functions.h
+@@ -719,8 +719,7 @@ int I420Interpolate(const uint8* src0_y,
+                     int height,
+                     int interpolation);
+ 
+-#if defined(__pnacl__) || defined(__CLR_VER) || \
+-    (defined(__i386__) && !defined(__SSE2__))
++#if defined(__pnacl__) || defined(__CLR_VER)
+ #define LIBYUV_DISABLE_X86
+ #endif
+ // MemorySanitizer does not support assembly code yet. http://crbug.com/344505
+diff --git media/libyuv/include/libyuv/rotate_row.h media/libyuv/include/libyuv/rotate_row.h
+index 2c51584eee8b..73bbe8ef7ad4 100644
+--- mozilla/media/libyuv/include/libyuv/rotate_row.h
++++ mozilla/media/libyuv/include/libyuv/rotate_row.h
+@@ -18,8 +18,7 @@ namespace libyuv {
+ extern "C" {
+ #endif
+ 
+-#if defined(__pnacl__) || defined(__CLR_VER) || \
+-    (defined(__i386__) && !defined(__SSE2__))
++#if defined(__pnacl__) || defined(__CLR_VER)
+ #define LIBYUV_DISABLE_X86
+ #endif
+ // MemorySanitizer does not support assembly code yet. http://crbug.com/344505
+diff --git media/libyuv/include/libyuv/row.h media/libyuv/include/libyuv/row.h
+index f74bd9f7d17a..3bdfb75fc160 100644
+--- mozilla/media/libyuv/include/libyuv/row.h
++++ mozilla/media/libyuv/include/libyuv/row.h
+@@ -30,8 +30,7 @@ extern "C" {
+   free(var##_mem);                  \
+   var = 0
+ 
+-#if defined(__pnacl__) || defined(__CLR_VER) || \
+-    (defined(__i386__) && !defined(__SSE2__))
++#if defined(__pnacl__) || defined(__CLR_VER)
+ #define LIBYUV_DISABLE_X86
+ #endif
+ // MemorySanitizer does not support assembly code yet. http://crbug.com/344505
+diff --git media/libyuv/include/libyuv/scale_row.h media/libyuv/include/libyuv/scale_row.h
+index edb46cc8c647..fe78a80f81bd 100644
+--- mozilla/media/libyuv/include/libyuv/scale_row.h
++++ mozilla/media/libyuv/include/libyuv/scale_row.h
+@@ -19,8 +19,7 @@ namespace libyuv {
+ extern "C" {
+ #endif
+ 
+-#if defined(__pnacl__) || defined(__CLR_VER) || \
+-    (defined(__i386__) && !defined(__SSE2__))
++#if defined(__pnacl__) || defined(__CLR_VER)
+ #define LIBYUV_DISABLE_X86
+ #endif
+ // MemorySanitizer does not support assembly code yet. http://crbug.com/344505
