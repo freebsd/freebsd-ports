@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	ssl_verify_fun
-PORTVERSION=	1.1.2
+PORTVERSION=	1.1.3
 CATEGORIES=	devel
 PKGNAMEPREFIX=	erlang-
 
