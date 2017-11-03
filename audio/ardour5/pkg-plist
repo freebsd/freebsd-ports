@@ -413,13 +413,17 @@ share/applications/ardour5.desktop
 %%DATADIR%%/scripts/scope.lua
 %%DATADIR%%/scripts/select_every_2nd_region.lua
 %%DATADIR%%/scripts/send_to_bus.lua
+%%DATADIR%%/scripts/session_template_advanced.lua
+%%DATADIR%%/scripts/session_template_record.lua
 %%DATADIR%%/scripts/spectrogram.lua
 %%DATADIR%%/scripts/split_all_markers.lua
 %%DATADIR%%/scripts/stop_at_marker.lua
 %%DATADIR%%/scripts/synth1.lua
+%%DATADIR%%/scripts/template_band.lua
 %%DATADIR%%/scripts/tomsloop.lua
 %%DATADIR%%/scripts/vamp_audio_to_midi.lua
 %%DATADIR%%/scripts/voice_activate.lua
+%%DATADIR%%/templates/.stub
 %%DATADIR%%/themes/blueberry_milk-ardour.colors
 %%DATADIR%%/themes/caineville-ardour.colors
 %%DATADIR%%/themes/clear_gray-ardour.colors
