@@ -1003,6 +1003,7 @@
     SUBDIR += tt
     SUBDIR += ttraffic
     SUBDIR += ttt
+    SUBDIR += tty-solitaire
     SUBDIR += tux-aqfh
     SUBDIR += tuxfighter
     SUBDIR += tuxkart
