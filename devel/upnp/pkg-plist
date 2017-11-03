@@ -26,5 +26,5 @@ lib/libthreadutil.so.6.0.4
 lib/libupnp.a
 lib/libupnp.so
 lib/libupnp.so.6
-lib/libupnp.so.6.3.4
+lib/libupnp.so.6.3.6
 libdata/pkgconfig/libupnp.pc
