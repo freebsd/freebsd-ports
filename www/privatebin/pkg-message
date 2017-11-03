@@ -1,0 +1,5 @@
+Please check https://github.com/PrivateBin/PrivateBin/wiki/Configuration 
+for information regarding the secure configuration of PrivateBin.
+
+If used with the apache web-server, mod_php must be installed and enabled
+in httpd.conf.
