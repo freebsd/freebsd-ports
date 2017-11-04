@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	grpc
-PORTVERSION=	1.6.7
+PORTVERSION=	1.7.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
@@ -20,7 +20,7 @@ LIB_DEPENDS=	libgflags.so:devel/gflags \
 
 USES=		cmake localbase:ldflags perl5 pkgconfig ssl
 USE_GITHUB=	yes
-GH_TUPLE=	google:benchmark:v1.2.0:benchmark/third_party/benchmark
+GH_TUPLE=	google:benchmark:v1.3.0:benchmark/third_party/benchmark
 USE_LDCONFIG=	yes
 USE_PERL5=	build
 PLIST_SUB+=	SOVERSION=${PORTVERSION}
