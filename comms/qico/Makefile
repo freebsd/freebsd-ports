@@ -7,7 +7,7 @@ CATEGORIES=	comms
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-0.49.10-p3
 DISTNAME=	${PORTNAME}-0.49.10-p3
 
-MAINTAINER=	dsh@vlink.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	FidoNet Technology Network (FTN) compatible mailer for Unix systems
 
 USES=	tar:bzip2
