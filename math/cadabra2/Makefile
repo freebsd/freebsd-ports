@@ -1,12 +1,10 @@
-# Created by: Yuri Victorovich <yuri@rawbw.com>
 # $FreeBSD$
 
 PORTNAME=	cadabra2
-PORTVERSION=	2.1.5
-PORTREVISION=	3
+DISTVERSION=	2.1.6
 CATEGORIES=	math
 
-MAINTAINER=	yuri@rawbw.com
+MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Computer algebra system for solving field theory problems
 
 LICENSE=	LGPL3
