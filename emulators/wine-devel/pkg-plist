@@ -989,6 +989,7 @@ lib/wine/api-ms-win-core-fibers-l1-1-1.dll.so
 lib/wine/api-ms-win-core-file-l1-1-0.dll.so
 lib/wine/api-ms-win-core-file-l1-2-0.dll.so
 lib/wine/api-ms-win-core-file-l1-2-1.dll.so
+lib/wine/api-ms-win-core-file-l1-2-2.dll.so
 lib/wine/api-ms-win-core-file-l2-1-0.dll.so
 lib/wine/api-ms-win-core-file-l2-1-1.dll.so
 lib/wine/api-ms-win-core-file-l2-1-2.dll.so
@@ -1009,6 +1010,7 @@ lib/wine/api-ms-win-core-kernel32-private-l1-1-1.dll.so
 lib/wine/api-ms-win-core-libraryloader-l1-1-0.dll.so
 lib/wine/api-ms-win-core-libraryloader-l1-1-1.dll.so
 lib/wine/api-ms-win-core-libraryloader-l1-2-0.dll.so
+lib/wine/api-ms-win-core-libraryloader-l1-2-1.dll.so
 lib/wine/api-ms-win-core-libraryloader-l1-2-2.dll.so
 lib/wine/api-ms-win-core-localization-l1-1-0.dll.so
 lib/wine/api-ms-win-core-localization-l1-2-0.dll.so
@@ -1054,6 +1056,7 @@ lib/wine/api-ms-win-core-string-l1-1-0.dll.so
 lib/wine/api-ms-win-core-string-l2-1-0.dll.so
 lib/wine/api-ms-win-core-string-obsolete-l1-1-0.dll.so
 lib/wine/api-ms-win-core-stringansi-l1-1-0.dll.so
+lib/wine/api-ms-win-core-synch-ansi-l1-1-0.dll.so
 lib/wine/api-ms-win-core-synch-l1-1-0.dll.so
 lib/wine/api-ms-win-core-synch-l1-2-0.dll.so
 lib/wine/api-ms-win-core-synch-l1-2-1.dll.so
@@ -1150,6 +1153,7 @@ lib/wine/api-ms-win-service-private-l1-1-1.dll.so
 lib/wine/api-ms-win-service-winsvc-l1-1-0.dll.so
 lib/wine/api-ms-win-service-winsvc-l1-2-0.dll.so
 %%STAGING%%lib/wine/api-ms-win-shcore-obsolete-l1-1-0.dll.so
+lib/wine/api-ms-win-shcore-scaling-l1-1-1.dll.so
 %%STAGING%%lib/wine/api-ms-win-shcore-stream-l1-1-0.dll.so
 %%STAGING%%lib/wine/api-ms-win-shcore-thread-l1-1-0.dll.so
 lib/wine/api-ms-win-shell-shellcom-l1-1-0.dll.so
@@ -1385,6 +1389,7 @@ lib/wine/fakedlls/api-ms-win-core-fibers-l1-1-1.dll
 lib/wine/fakedlls/api-ms-win-core-file-l1-1-0.dll
 lib/wine/fakedlls/api-ms-win-core-file-l1-2-0.dll
 lib/wine/fakedlls/api-ms-win-core-file-l1-2-1.dll
+lib/wine/fakedlls/api-ms-win-core-file-l1-2-2.dll
 lib/wine/fakedlls/api-ms-win-core-file-l2-1-0.dll
 lib/wine/fakedlls/api-ms-win-core-file-l2-1-1.dll
 lib/wine/fakedlls/api-ms-win-core-file-l2-1-2.dll
@@ -1405,6 +1410,7 @@ lib/wine/fakedlls/api-ms-win-core-kernel32-private-l1-1-1.dll
 lib/wine/fakedlls/api-ms-win-core-libraryloader-l1-1-0.dll
 lib/wine/fakedlls/api-ms-win-core-libraryloader-l1-1-1.dll
 lib/wine/fakedlls/api-ms-win-core-libraryloader-l1-2-0.dll
+lib/wine/fakedlls/api-ms-win-core-libraryloader-l1-2-1.dll
 lib/wine/fakedlls/api-ms-win-core-libraryloader-l1-2-2.dll
 lib/wine/fakedlls/api-ms-win-core-localization-l1-1-0.dll
 lib/wine/fakedlls/api-ms-win-core-localization-l1-2-0.dll
@@ -1450,6 +1456,7 @@ lib/wine/fakedlls/api-ms-win-core-string-l1-1-0.dll
 lib/wine/fakedlls/api-ms-win-core-string-l2-1-0.dll
 lib/wine/fakedlls/api-ms-win-core-string-obsolete-l1-1-0.dll
 lib/wine/fakedlls/api-ms-win-core-stringansi-l1-1-0.dll
+lib/wine/fakedlls/api-ms-win-core-synch-ansi-l1-1-0.dll
 lib/wine/fakedlls/api-ms-win-core-synch-l1-1-0.dll
 lib/wine/fakedlls/api-ms-win-core-synch-l1-2-0.dll
 lib/wine/fakedlls/api-ms-win-core-synch-l1-2-1.dll
@@ -1546,6 +1553,7 @@ lib/wine/fakedlls/api-ms-win-service-private-l1-1-1.dll
 lib/wine/fakedlls/api-ms-win-service-winsvc-l1-1-0.dll
 lib/wine/fakedlls/api-ms-win-service-winsvc-l1-2-0.dll
 %%STAGING%%lib/wine/fakedlls/api-ms-win-shcore-obsolete-l1-1-0.dll
+lib/wine/fakedlls/api-ms-win-shcore-scaling-l1-1-1.dll
 %%STAGING%%lib/wine/fakedlls/api-ms-win-shcore-stream-l1-1-0.dll
 %%STAGING%%lib/wine/fakedlls/api-ms-win-shcore-thread-l1-1-0.dll
 lib/wine/fakedlls/api-ms-win-shell-shellcom-l1-1-0.dll
@@ -1798,6 +1806,7 @@ lib/wine/fakedlls/itss.dll
 lib/wine/fakedlls/joy.cpl
 lib/wine/fakedlls/jscript.dll
 lib/wine/fakedlls/jsproxy.dll
+lib/wine/fakedlls/kerberos.dll
 lib/wine/fakedlls/kernel32.dll
 lib/wine/fakedlls/kernelbase.dll
 %%WINE32%%lib/wine/fakedlls/keyboard.drv16
@@ -2275,6 +2284,7 @@ lib/wine/itss.dll.so
 lib/wine/joy.cpl.so
 lib/wine/jscript.dll.so
 lib/wine/jsproxy.dll.so
+lib/wine/kerberos.dll.so
 lib/wine/kernel32.dll.so
 lib/wine/kernelbase.dll.so
 %%WINE32%%lib/wine/keyboard.drv16.so
