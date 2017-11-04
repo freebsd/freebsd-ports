@@ -27,7 +27,6 @@ BUILD_DEPENDS=	nspr>=4.16:devel/nspr \
 		v4l_compat>0:multimedia/v4l_compat \
 		autoconf-2.13:devel/autoconf213 \
 		yasm:devel/yasm \
-		llvm40>0:devel/llvm40 \
 		zip:archivers/zip
 #		soundtouch>=1.9.0:audio/soundtouch \
 
@@ -44,8 +43,6 @@ USES=		tar:xz
 
 FIREFOX_ICON=		${MOZILLA}.png
 FIREFOX_ICON_SRC=	${PREFIX}/lib/${MOZILLA}/browser/chrome/icons/default/default48.png
-MOZ_EXPORT=	BINDGEN_CFLAGS="-isystem${LOCALBASE}/include/nspr \
-			-isystem${LOCALBASE}/include/pixman-1" # XXX bug 1341234
 MOZ_OPTIONS=	--enable-application=browser \
 		--enable-official-branding
 
