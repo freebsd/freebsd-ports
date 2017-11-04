@@ -10,7 +10,7 @@ MASTER_SITES=	GNOME
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	VoIP abstraction library
 
-LICENSE=	MPL
+LICENSE=	MPL10
 
 LIB_DEPENDS=	libpt.so:devel/ptlib
 

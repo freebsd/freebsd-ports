@@ -10,7 +10,7 @@ MASTER_SITES=	GNOME
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Cross platform C++ library, used by OPAL
 
-LICENSE=	MPL
+LICENSE=	MPL10
 
 LIB_DEPENDS=	libexpat.so:textproc/expat2
 

@@ -12,7 +12,7 @@ COMMENT=	Lets you add a tagline to the end of an email or newsgroup posting
 
 RUN_DEPENDS=	${LOCALBASE}/lib/xpi/{DF8E5247-8E0A-4de6-B393-0735A39DFD80}/install.rdf:www/xpi-jslib
 
-LICENSE=	MPL # also "GPL" but doesn't specify version and doesn't contain license text
+LICENSE=	MPL11 # also "GPL" but doesn't specify version and doesn't contain license text
 
 XPI_ID=		{4eac6fec-f68b-4797-be7a-ffeea73e1495}
 XPI_FILES=	chrome/tagzilla.jar chrome.manifest components/tzprefs-service.js \
