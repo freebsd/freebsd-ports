@@ -48,6 +48,7 @@ lib/libcadabra_server.so
 %%GUI%%%%DATADIR%%/manual/algorithms/join_gamma.cnb
 %%GUI%%%%DATADIR%%/manual/algorithms/keep_weight.cnb
 %%GUI%%%%DATADIR%%/manual/algorithms/lr_tensor.cnb
+%%GUI%%%%DATADIR%%/manual/algorithms/map_sympy.cnb
 %%GUI%%%%DATADIR%%/manual/algorithms/product_rule.cnb
 %%GUI%%%%DATADIR%%/manual/algorithms/reduce_delta.cnb
 %%GUI%%%%DATADIR%%/manual/algorithms/rename_dummies.cnb
@@ -96,6 +97,7 @@ lib/libcadabra_server.so
 %%GUI%%%%DATADIR%%/manual/properties/SelfNonCommuting.cnb
 %%GUI%%%%DATADIR%%/manual/properties/SortOrder.cnb
 %%GUI%%%%DATADIR%%/manual/properties/Spinor.cnb
+%%GUI%%%%DATADIR%%/manual/properties/Symbol.cnb
 %%GUI%%%%DATADIR%%/manual/properties/Symmetric.cnb
 %%GUI%%%%DATADIR%%/manual/properties/Tableau.cnb
 %%GUI%%%%DATADIR%%/manual/properties/TableauSymmetry.cnb
