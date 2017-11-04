@@ -1,6 +1,6 @@
---- src/main.c.orig	2017-07-02 11:38:48 UTC
+--- src/main.c.orig	2017-10-24 18:52:11 UTC
 +++ src/main.c
-@@ -113,13 +113,8 @@ static void stream(PSERVER_DATA server, PCONFIGURATION
+@@ -115,13 +115,8 @@ static void stream(PSERVER_DATA server, PCONFIGURATION
    platform_start(system);
    LiStartConnection(&server->serverInfo, &config->stream, &connection_callbacks, platform_get_video(system), platform_get_audio(system, config->audio_device), NULL, drFlags, config->audio_device, 0);
  
@@ -15,7 +15,7 @@
      sdl_loop();
    #endif
  
-@@ -160,7 +155,6 @@ static void help() {
+@@ -163,7 +158,6 @@ static void help() {
    printf("\t-surround\t\tStream 5.1 surround sound (requires GFE 2.7)\n");
    printf("\t-keydir <directory>\tLoad encryption keys from directory\n");
    printf("\t-mapping <file>\t\tUse <file> as gamepad mappings configuration file\n");
@@ -23,7 +23,16 @@
    printf("\t-unsupported\t\tTry streaming if GFE version or options are unsupported\n");
    #if defined(HAVE_SDL) || defined(HAVE_X11)
    printf("\n WM options (SDL and X11 only)\n\n");
-@@ -199,12 +193,8 @@ int main(int argc, char* argv[]) {
+@@ -201,8 +195,6 @@ int main(int argc, char* argv[]) {
+       exit(-1);
+     }
+  
+-    evdev_create(config.inputs[0], NULL, config.debug_level > 0);
+-    evdev_map(config.inputs[0]); 
+     exit(0); 
+   }
+ 
+@@ -213,12 +205,8 @@ int main(int argc, char* argv[]) {
        exit(-1);
      }
      config.address[0] = 0;
@@ -38,7 +47,7 @@
    }
    
    char host_config_file[128];
-@@ -251,38 +241,8 @@ int main(int argc, char* argv[]) {
+@@ -268,38 +256,8 @@ int main(int argc, char* argv[]) {
      }
      config.stream.supportsHevc = config.codec != CODEC_H264 && (config.codec == CODEC_HEVC || platform_supports_hevc(system));
  
