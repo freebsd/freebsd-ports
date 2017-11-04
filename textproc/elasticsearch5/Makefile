@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	elasticsearch
-PORTVERSION=	5.3.0
-PORTREVISION=	1
+PORTVERSION=	5.6.3
+PORTREVISION=	0
 CATEGORIES=	textproc java devel
 MASTER_SITES=	https://artifacts.elastic.co/downloads/${PORTNAME}/ \
 		http://mirrors.rit.edu/zi/
@@ -31,7 +31,7 @@ OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 
-LUCENEVER=	6.4.1
+LUCENEVER=	6.6.1
 CONFIG_FILES=	elasticsearch.yml log4j2.properties jvm.options
 BINS=		elasticsearch.in.sh \
 		elasticsearch \
@@ -82,7 +82,7 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/elasticsearch/plugins
 	@${MKDIR} ${STAGEDIR}${PREFIX}/libexec/elasticsearch
 	@${MKDIR} ${STAGEDIR}${ELASTIC_DBDIR} ${STAGEDIR}${ELASTIC_LOGDIR}
-	cd ${STAGEDIR}${PREFIX}/bin && ${LN} -s ${PREFIX}/lib/elasticsearch/bin/elasticsearch-plugin elasticsearch-plugin
+	${RLN} ${STAGEDIR}${PREFIX}/lib/elasticsearch/bin/elasticsearch-plugin ${STAGEDIR}${PREFIX}/bin/elasticsearch-plugin
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
