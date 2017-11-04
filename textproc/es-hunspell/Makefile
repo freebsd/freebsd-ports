@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	hunspell
-PORTVERSION=	2.1.1
+PORTVERSION=	2.2
 CATEGORIES=	textproc spanish
 MASTER_SITES=	https://github.com/sbosio/rla-es/releases/download/v${PORTVERSION}/
 PKGNAMEPREFIX=	es-
