@@ -8,7 +8,7 @@ PKGNAMEPREFIX=	elixir-
 MAINTAINER=	vanilla@FreeBSD.org
 COMMENT=	JSON Object Signing and Encryption (JOSE) for Elixir
 
-LICENSE=	MPL
+LICENSE=	MPL20
 
 USES=		elixir
 USE_GITHUB=	yes

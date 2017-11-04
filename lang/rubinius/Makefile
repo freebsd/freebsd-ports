@@ -11,7 +11,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	LLVM based ruby language implementation
 
-LICENSE=	MPL
+LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/bundle:sysutils/rubygem-bundler \

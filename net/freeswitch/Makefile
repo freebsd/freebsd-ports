@@ -12,7 +12,7 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
 MAINTAINER=	corsmith@gmail.com
 COMMENT=	Multi-protocol soft switch for telephony applications
 
-LICENSE=	MPL
+LICENSE=	MPL11
 
 ONLY_FOR_ARCHS=	amd64
 

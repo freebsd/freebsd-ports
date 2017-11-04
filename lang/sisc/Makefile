@@ -10,7 +10,7 @@ MASTER_SITES=	SF/${PORTNAME}/SISC/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extensible Java-based Scheme interpreter
 
-LICENSE=	MPL GPLv2+
+LICENSE=	MPL11 GPLv2+
 LICENSE_COMB=	dual
 
 USE_JAVA=	yes

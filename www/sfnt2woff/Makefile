@@ -10,7 +10,7 @@ DISTNAME=	woff-code-latest
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convert TTF/OTF fonts to WOFF web embeddable format and back
 
-LICENSE=	GPLv2 LGPL21 MPL
+LICENSE=	GPLv2 LGPL21 MPL11
 LICENSE_COMB=	multi
 
 NO_WRKSUBDIR=	yes

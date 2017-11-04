@@ -15,7 +15,7 @@ DIST_SUBDIR=	rabbitmq
 MAINTAINER=	rabbitmq@geoffgarside.co.uk
 COMMENT=	RabbitMQ C AMQP client library
 
-LICENSE=	GPLv2 MPL
+LICENSE=	GPLv2 MPL11
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	python:lang/python \
