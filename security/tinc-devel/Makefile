@@ -5,6 +5,7 @@ PORTVERSION=	1.1pre15
 CATEGORIES=	security
 MASTER_SITES=	https://www.tinc-vpn.org/packages/ \
 		http://www.tinc-vpn.org/packages/
+PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Virtual Private Network (VPN) daemon
