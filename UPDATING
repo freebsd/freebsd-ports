@@ -5,6 +5,13 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20171105:
+  AFFECTS: users of www/mod_rpaf2
+
+  The configuration of mod_rpaf2 has been heavily modified since version
+  0.6. Have a look at https://github.com/gnif/mod_rpaf/tree/v0.8.4 to 
+  determine what you need to change in your configuration.
+
 20171031:
   AFFECTS: users of editors/vim
   AUTHOR: adamw@FreeBSD.org
