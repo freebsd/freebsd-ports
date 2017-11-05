@@ -13,6 +13,8 @@ COMMENT=	Apache module for rewriting web pages to reduce latency
 
 LICENSE=	APACHE20
 
+BROKEN=		fails to configure
+
 BUILD_DEPENDS=	bash:shells/bash \
 		curl:ftp/curl \
 		closure-compiler:www/closure-compiler \
