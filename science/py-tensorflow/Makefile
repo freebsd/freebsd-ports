@@ -12,6 +12,8 @@ COMMENT=	Computation using data flow graphs for scalable machine learning
 
 LICENSE=	APACHE20
 
+BROKEN=		fails to build
+
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}wheel>=0.29.0:devel/py-wheel \
 		${PYTHON_PKGNAMEPREFIX}numpy>=1.11.2:math/py-numpy \
 		bash:shells/bash
