@@ -5,8 +5,17 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20171105
+  AFFECTS: users of www/mod_auth_cas
+  AUTHOR: brnrd@FreeBSD.org
+
+  The configuration of mod_auth_cas has changed since the previous
+  version. Visit the https://github.com/apereo/mod_auth_cas page for
+  an overview of all configuration parameters
+
 20171105:
   AFFECTS: users of www/mod_rpaf2
+  AUTHOR: brnrd@FreeBSD.org
 
   The configuration of mod_rpaf2 has been heavily modified since version
   0.6. Have a look at https://github.com/gnif/mod_rpaf/tree/v0.8.4 to 
