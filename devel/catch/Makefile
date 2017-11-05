@@ -3,7 +3,7 @@
 
 PORTNAME=	catch
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.11.0
+DISTVERSION=	2.0.1
 CATEGORIES=	devel
 
 MAINTAINER=	gahr@FreeBSD.org
@@ -12,10 +12,9 @@ COMMENT=	Header-only test framework for C++
 LICENSE=	BSL
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-BROKEN=		checksum and size mismatch
-
 TEST_DEPENDS=	cmake:devel/cmake
 
+USES=		compiler:c++11-lang
 USE_GITHUB=	yes
 GH_ACCOUNT=	philsquared
 GH_PROJECT=	Catch
@@ -23,9 +22,19 @@ GH_PROJECT=	Catch
 NO_BUILD=	yes
 NO_ARCH=	yes
 
+WRKSRC=		${WRKDIR}/${GH_PROJECT}2-${PORTVERSION}
+
 REPORTERS=	catch_reporter_automake.hpp \
+		catch_reporter_bases.cpp \
+		catch_reporter_bases.hpp \
+		catch_reporter_compact.cpp \
+		catch_reporter_console.cpp \
+	       	catch_reporter_junit.cpp \
+		catch_reporter_multi.cpp \
+		catch_reporter_multi.h \
 		catch_reporter_tap.hpp \
-		catch_reporter_teamcity.hpp
+		catch_reporter_teamcity.hpp \
+		catch_reporter_xml.cpp
 
 PLIST_FILES=	include/catch.hpp \
 		${REPORTERS:S/^/include\//g}
