@@ -13,6 +13,8 @@ LICENSE=	APACHE20 BSD3CLAUSE NCSA
 LICENSE_COMB=	multi
 LICENSE_FILE_APACHE20=	${WRKSRC}/LICENSE.txt
 
+BROKEN=		checksum and size mismatch
+
 BUILD_DEPENDS=	llvm-lit-devel:devel/llvm-devel
 LIB_DEPENDS=	libsqlite3.so:databases/sqlite3
 
