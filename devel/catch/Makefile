@@ -12,6 +12,8 @@ COMMENT=	Header-only test framework for C++
 LICENSE=	BSL
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+BROKEN=		checksum and size mismatch
+
 TEST_DEPENDS=	cmake:devel/cmake
 
 USE_GITHUB=	yes
