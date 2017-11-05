@@ -28,6 +28,7 @@ OPTIONS_DEFAULT=GSSAPI_BASE
 GSSAPI_BASE_USES=	gssapi
 GSSAPI_HEIMDAL_USES=	gssapi:heimdal
 GSSAPI_MIT_USES=	gssapi:mit
+GSSAPI_MIT_CONFIGURE_ON=        --with-krb5-config=/usr/local/bin/krb5-config --with-krb5dir=/usr/local --with-krb5=mit
 
 PLIST_FILES=	man/man1/msktutil.1.gz sbin/msktutil
 
