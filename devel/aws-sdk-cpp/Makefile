@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	aws-sdk-cpp
-PORTVERSION=	1.2.16
+PORTVERSION=	1.2.30
 CATEGORIES=	devel
 
 MAINTAINER=	ports@FreeBSD.org
@@ -12,7 +12,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libcurl.so:ftp/curl
 
-BROKEN=		checksum and size mismatch
 BROKEN_aarch64=		fails to build: runaway process
 BROKEN_armv6=		fails to build: runaway process
 BROKEN_powerpc64=	fails to build: runaway process
