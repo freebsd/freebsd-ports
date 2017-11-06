@@ -1,5 +1,4 @@
 bin/testssl.sh
-libexec/openssl.testssl.sh
 man/man1/testssl.1.gz
 %%DATADIR%%/etc/Apple.pem
 %%DATADIR%%/etc/ca_hashes.txt
