@@ -42,7 +42,7 @@ USES=		compiler:c++11-lib gmake python:2,build pkgconfig \
 HAS_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
-CONFLICTS_INSTALL=	node[456]-[0-9]* node01[02]-[0-9]* node-devel-[0-9]* iojs-[0-9]*
+CONFLICTS_INSTALL=	node[4568]-[0-9]*
 
 ONLY_FOR_ARCHS=		aarch64 amd64 armv6 armv7 i386
 
