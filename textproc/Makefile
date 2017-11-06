@@ -208,6 +208,7 @@
     SUBDIR += freexl
     SUBDIR += fy-aspell
     SUBDIR += fzf
+    SUBDIR += fzy
     SUBDIR += ga-aspell
     SUBDIR += gastex
     SUBDIR += gd-aspell
