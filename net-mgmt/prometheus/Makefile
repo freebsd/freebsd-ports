@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	prometheus
-PORTVERSION=	1.8.1
+PORTVERSION=	1.8.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net-mgmt
 
@@ -10,6 +10,7 @@ MAINTAINER=	ports@ecadlabs.com
 COMMENT=	Systems monitoring and alerting toolkit
 
 LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		go gmake
 USE_GITHUB=	yes
