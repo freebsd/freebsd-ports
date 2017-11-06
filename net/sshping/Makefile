@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libssh.so:security/libssh
 
-USES=		localbase:ldflags
+USES=		localbase:ldflags perl5
 USE_GITHUB=	yes
 USE_PERL5=	build
 
