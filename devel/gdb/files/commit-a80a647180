@@ -1,0 +1,53 @@
+commit a80a647180bf92692e0f01efe7b323afe7d317c9
+Author: John Baldwin <jhb@FreeBSD.org>
+Date:   Thu Oct 5 09:50:01 2017 -0700
+
+    Add a signal frame unwinder for FreeBSD/mipsn32.
+    
+    The N32 signal frame uses an identical layout to N64, so reuse the N64
+    handler.  The N32 signal trampoline does use one different instruction
+    relative to N64, so a separate tramp_frame is required.
+    
+    gdb/ChangeLog:
+    
+            * mips-fbsd-tdep.c (MIPS_INST_ADDIU_A0_SP_N32): Define.
+            (mipsn32_fbsd_sigframe): Define.
+            (mips_fbsd_init_abi): Install mipsn32_fbsd_sigframe unwinder
+            for FreeBSD/mipsn32.
+
+diff --git gdb/mips-fbsd-tdep.c gdb/mips-fbsd-tdep.c
+index 05545e37d8..b1578d0cbb 100644
+--- gdb/mips-fbsd-tdep.c
++++ gdb/mips-fbsd-tdep.c
+@@ -426,6 +426,23 @@ mips64_fbsd_sigframe_init (const struct tramp_frame *self,
+   trad_frame_set_id (cache, frame_id_build (sp, func));
+ }
+ 
++#define MIPS_INST_ADDIU_A0_SP_N32 (0x27a40000 \
++				   + N64_SIGFRAME_UCONTEXT_OFFSET)
++
++static const struct tramp_frame mipsn32_fbsd_sigframe =
++{
++  SIGTRAMP_FRAME,
++  MIPS_INSN32_SIZE,
++  {
++    { MIPS_INST_ADDIU_A0_SP_N32, -1 },	/* addiu   a0, sp, SIGF_UC */
++    { MIPS_INST_LI_V0_SIGRETURN, -1 },	/* li      v0, SYS_sigreturn */
++    { MIPS_INST_SYSCALL, -1 },		/* syscall */
++    { MIPS_INST_BREAK, -1 },		/* break */
++    { TRAMP_SENTINEL_INSN, -1 }
++  },
++  mips64_fbsd_sigframe_init
++};
++
+ #define MIPS_INST_DADDIU_A0_SP_N64 (0x67a40000 \
+ 				    + N64_SIGFRAME_UCONTEXT_OFFSET)
+ 
+@@ -519,6 +536,7 @@ mips_fbsd_init_abi (struct gdbarch_info info, struct gdbarch *gdbarch)
+ 	tramp_frame_prepend_unwinder (gdbarch, &mips_fbsd_sigframe);
+ 	break;
+       case MIPS_ABI_N32:
++	tramp_frame_prepend_unwinder (gdbarch, &mipsn32_fbsd_sigframe);
+ 	break;
+       case MIPS_ABI_N64:
+ 	tramp_frame_prepend_unwinder (gdbarch, &mips64_fbsd_sigframe);
