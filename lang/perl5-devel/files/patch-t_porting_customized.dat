@@ -1,6 +1,7 @@
---- t/porting/customized.dat.orig	2017-10-30 05:30:00 UTC
+--- t/porting/customized.dat.orig	2017-11-05 04:45:04 UTC
 +++ t/porting/customized.dat
-@@ -1,5 +1,6 @@
+@@ -3,6 +3,7 @@
+ #     ./perl -I../lib porting/customized.t --regen
  Devel::PPPort dist/Devel-PPPort/parts/embed.fnc e030719d9c6921810554a8e2d398543348b4878c
  Digest cpan/Digest/Digest.pm 43f7f544cb11842b2f55c73e28930da50774e081
 +ExtUtils::MakeMaker cpan/ExtUtils-MakeMaker/lib/ExtUtils/MM_Any.pm ac29a8dc1c7d6f0aca4abff0730c05bde1dab3ad
