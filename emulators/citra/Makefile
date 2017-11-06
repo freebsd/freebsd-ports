@@ -1,12 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	citra
-PORTVERSION=	s20171105
+PORTVERSION=	s20171106
 PORTREVISION?=	0
 CATEGORIES=	emulators
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES=	ff17773c28b1.patch:-p1
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Nintendo 3DS emulator/debugger
@@ -29,7 +26,7 @@ ONLY_FOR_ARCHS_REASON=	https://github.com/MerryMage/dynarmic/issues/35
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	citra-emu
-GH_TAGNAME=	4fc04480
+GH_TAGNAME=	c6b2cc2e2
 GH_TUPLE=	citra-emu:ext-soundtouch:019d208:soundtouch/externals/soundtouch \
 		MerryMage:dynarmic:d3fb603:dynarmic/externals/dynarmic \
 		fmtlib:fmt:4.0.0:fmt/externals/fmt \
