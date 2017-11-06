@@ -3,7 +3,7 @@
 
 PORTNAME=	grpcio
 PORTVERSION=	1.7.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -33,6 +33,6 @@ BUILD_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}enum34>1:devel/py-enum34 \
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/grpc/_cython/cygrpc.so
-	${REINPLACE_CMD} -e 's|${PYTHONPREFIX_SITELIBDIR}/\(.*\)/src/python/grpcio/|${PYTHONPREFIX_SITELIBDIR}/|g' ${_PYTHONPKGLIST}
+	${REINPLACE_CMD} -e 's|${PYTHONPREFIX_SITELIBDIR}/\(.*\)/grpcio/grpc/_cython/cygrpc.so|${PYTHONPREFIX_SITELIBDIR}/grpc/_cython/cygrpc.so|g' ${_PYTHONPKGLIST}
 
 .include <bsd.port.post.mk>
