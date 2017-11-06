@@ -1,0 +1,119 @@
+https://github.com/citra-emu/citra/issues/3079
+
+--- src/core/hle/kernel/errors.h.orig	2017-11-05 08:32:46 UTC
++++ src/core/hle/kernel/errors.h
+@@ -13,7 +13,6 @@ enum {
+     OutOfHandles = 19,
+     SessionClosedByRemote = 26,
+     PortNameTooLong = 30,
+-    WrongLockingThread = 31,
+     NoPendingSessions = 35,
+     WrongPermission = 46,
+     InvalidBufferDescriptor = 48,
+--- src/core/hle/kernel/mutex.cpp.orig	2017-11-05 08:32:46 UTC
++++ src/core/hle/kernel/mutex.cpp
+@@ -7,7 +7,6 @@
+ #include <boost/range/algorithm_ext/erase.hpp>
+ #include "common/assert.h"
+ #include "core/core.h"
+-#include "core/hle/kernel/errors.h"
+ #include "core/hle/kernel/kernel.h"
+ #include "core/hle/kernel/mutex.h"
+ #include "core/hle/kernel/thread.h"
+@@ -59,35 +58,20 @@ void Mutex::Acquire(Thread* thread) {
+     lock_count++;
+ }
+ 
+-ResultCode Mutex::Release(Thread* thread) {
+-    // We can only release the mutex if it's held by the calling thread.
+-    if (thread != holding_thread) {
+-        if (holding_thread) {
+-            LOG_ERROR(
+-                Kernel,
+-                "Tried to release a mutex (owned by thread id %u) from a different thread id %u",
+-                holding_thread->thread_id, thread->thread_id);
++void Mutex::Release() {
++    // Only release if the mutex is held
++    if (lock_count > 0) {
++        lock_count--;
++
++        // Yield to the next thread only if we've fully released the mutex
++        if (lock_count == 0) {
++            holding_thread->held_mutexes.erase(this);
++            holding_thread->UpdatePriority();
++            holding_thread = nullptr;
++            WakeupAllWaitingThreads();
++            Core::System::GetInstance().PrepareReschedule();
+         }
+-        return ResultCode(ErrCodes::WrongLockingThread, ErrorModule::Kernel,
+-                          ErrorSummary::InvalidArgument, ErrorLevel::Permanent);
+     }
+-
+-    // Note: It should not be possible for the situation where the mutex has a holding thread with a
+-    // zero lock count to occur. The real kernel still checks for this, so we do too.
+-    if (lock_count <= 0)
+-        return ResultCode(ErrorDescription::InvalidResultValue, ErrorModule::Kernel,
+-                          ErrorSummary::InvalidState, ErrorLevel::Permanent);
+-
+-    lock_count--;
+-
+-    // Yield to the next thread only if we've fully released the mutex
+-    if (lock_count == 0) {
+-        holding_thread->held_mutexes.erase(this);
+-        holding_thread->UpdatePriority();
+-        holding_thread = nullptr;
+-        WakeupAllWaitingThreads();
+-        Core::System::GetInstance().PrepareReschedule();
+-    }
+ }
+ 
+ void Mutex::AddWaitingThread(SharedPtr<Thread> thread) {
+@@ -118,4 +102,4 @@ void Mutex::UpdatePriority() {
+     }
+ }
+ 
+-} // namespace Kernel
++} // namespace
+--- src/core/hle/kernel/mutex.h.orig	2017-11-05 08:32:46 UTC
++++ src/core/hle/kernel/mutex.h
+@@ -8,7 +8,6 @@
+ #include "common/common_types.h"
+ #include "core/hle/kernel/kernel.h"
+ #include "core/hle/kernel/wait_object.h"
+-#include "core/hle/result.h"
+ 
+ namespace Kernel {
+ 
+@@ -53,12 +52,7 @@ class Mutex final : public WaitObject { (public)
+     void AddWaitingThread(SharedPtr<Thread> thread) override;
+     void RemoveWaitingThread(Thread* thread) override;
+ 
+-    /**
+-     * Attempts to release the mutex from the specified thread.
+-     * @param thread Thread that wants to release the mutex.
+-     * @returns The result code of the operation.
+-     */
+-    ResultCode Release(Thread* thread);
++    void Release();
+ 
+ private:
+     Mutex();
+@@ -71,4 +65,4 @@ class Mutex final : public WaitObject { (public)
+  */
+ void ReleaseThreadMutexes(Thread* thread);
+ 
+-} // namespace Kernel
++} // namespace
+--- src/core/hle/svc.cpp.orig	2017-11-05 08:32:46 UTC
++++ src/core/hle/svc.cpp
+@@ -818,7 +818,9 @@ static ResultCode ReleaseMutex(Kernel::Handle handle) 
+     if (mutex == nullptr)
+         return ERR_INVALID_HANDLE;
+ 
+-    return mutex->Release(Kernel::GetCurrentThread());
++    mutex->Release();
++
++    return RESULT_SUCCESS;
+ }
+ 
+ /// Get the ID of the specified process
