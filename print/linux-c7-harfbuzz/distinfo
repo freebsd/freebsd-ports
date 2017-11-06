@@ -1,7 +1,7 @@
-TIMESTAMP = 1482091524
-SHA256 (centos/harfbuzz-0.9.36-1.el7.i686.rpm) = 2bb37a0c0b8b0156c5074b7c3e96e93c645b0203e4a5d030931ac331faf121f9
-SIZE (centos/harfbuzz-0.9.36-1.el7.i686.rpm) = 159380
-SHA256 (centos/harfbuzz-0.9.36-1.el7.x86_64.rpm) = 8e44b44215df3ca01b66295249d068a1722460764c24456ef97340e2539e9a67
-SIZE (centos/harfbuzz-0.9.36-1.el7.x86_64.rpm) = 160036
-SHA256 (centos/harfbuzz-0.9.36-1.el7.src.rpm) = e2f9caad7fed5451c19271b904cf597b210676120a63246b1094060ca9aa6873
-SIZE (centos/harfbuzz-0.9.36-1.el7.src.rpm) = 1168365
+TIMESTAMP = 1507237648
+SHA256 (centos/harfbuzz-1.3.2-1.el7.i686.rpm) = f55aaba2875fea33c7b5412a575d160f0e77cff1d5be5003fe557354030b7651
+SIZE (centos/harfbuzz-1.3.2-1.el7.i686.rpm) = 179704
+SHA256 (centos/harfbuzz-1.3.2-1.el7.x86_64.rpm) = 39a10a9e6a396468d9a906490b57f095ed68c61e1f5c3366848a079535ba4615
+SIZE (centos/harfbuzz-1.3.2-1.el7.x86_64.rpm) = 181176
+SHA256 (centos/harfbuzz-1.3.2-1.el7.src.rpm) = f0ac75775c15766570c4aefa3628d9fd4d2f9473ca180d900ea5a0a9ca000593
+SIZE (centos/harfbuzz-1.3.2-1.el7.src.rpm) = 1359159

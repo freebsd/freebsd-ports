@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rex-arch
-PORTVERSION=	0.1.11
+PORTVERSION=	0.1.13
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 

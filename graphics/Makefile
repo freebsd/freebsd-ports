@@ -279,6 +279,7 @@
     SUBDIR += glosm
     SUBDIR += glpng
     SUBDIR += gltt
+    SUBDIR += gmic-qt
     SUBDIR += gmt
     SUBDIR += gnash
     SUBDIR += gnofract4d
@@ -799,6 +800,7 @@
     SUBDIR += piglit
     SUBDIR += pikopixel
     SUBDIR += pinpoint
+    SUBDIR += pixd
     SUBDIR += pixelize
     SUBDIR += pixen
     SUBDIR += pixie

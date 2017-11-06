@@ -6,7 +6,7 @@ PORTVERSION=	0.91
 CATEGORIES=	security
 MASTER_SITES=	http://www.corpit.ru/ftp/avcheck/
 
-MAINTAINER=	dsh@vlink.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple antivirus solution for a mail system
 
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}"

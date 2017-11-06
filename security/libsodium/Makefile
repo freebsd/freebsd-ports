@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libsodium
-PORTVERSION=	1.0.12
+PORTVERSION=	1.0.15
 CATEGORIES=	security
 MASTER_SITES=	http://download.libsodium.org/libsodium/releases/
 

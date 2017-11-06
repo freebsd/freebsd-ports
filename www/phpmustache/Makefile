@@ -33,6 +33,6 @@ do-install:
 do-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	(cd ${WRKSRC}/test/fixtures/examples && ${COPYTREE_SHARE} . \
-	       	${STAGEDIR}${EXAMPLESDIR})
+		${STAGEDIR}${EXAMPLESDIR})
 
 .include <bsd.port.mk>

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	racket
-PORTVERSION=	6.10.1
+PORTVERSION=	6.11
 CATEGORIES=	lang scheme
 MASTER_SITES=	http://mirror.racket-lang.org/installers/${PORTVERSION}/ \
 		http://www.cs.utah.edu/plt/installers/${PORTVERSION}/ \

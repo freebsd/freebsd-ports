@@ -179,7 +179,8 @@ _EXTRA_PATCHES_QT4=	${.CURDIR:H:H}/devel/${_QT_RELNAME}/files/extrapatch-src-cor
 _EXTRA_PATCHES_QT4+=	${.CURDIR:H:H}/devel/${_QT_RELNAME}/files/extrapatch-armv6
 .  else
 _EXTRA_PATCHES_QT5=	${.CURDIR:H:H}/devel/${_QT_RELNAME}/files/extrapatch-mkspecs_features_create__cmake.prf \
-					${.CURDIR:H:H}/devel/${_QT_RELNAME}/files/extrapatch-mkspecs_features_qt__module.prf
+					${.CURDIR:H:H}/devel/${_QT_RELNAME}/files/extrapatch-mkspecs_features_qt__module.prf \
+					${.CURDIR:H:H}/devel/${_QT_RELNAME}/files/extrapatch-config.tests_unix_arch.test
 .  endif
 EXTRA_PATCHES?=	${.CURDIR:H:H}/devel/${_QT_RELNAME}/files/extrapatch-configure \
 		${.CURDIR:H:H}/devel/${_QT_RELNAME}/files/extrapatch-config.tests-unix-compile.test \

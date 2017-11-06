@@ -3,6 +3,7 @@
 
 PORTNAME=	libsodium
 PORTVERSION=	1.0.6
+PORTREVISION=	1
 CATEGORIES=	security
 
 MAINTAINER=	gasol.wu@gmail.com

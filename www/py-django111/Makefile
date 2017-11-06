@@ -4,7 +4,7 @@
 # Remember to update www/py-django along with this port.
 
 PORTNAME=	django
-PORTVERSION=	1.11.6
+PORTVERSION=	1.11.7
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP \
 		https://www.djangoproject.com/m/releases/${PORTVERSION}/

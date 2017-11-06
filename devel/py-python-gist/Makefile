@@ -1,13 +1,12 @@
-# Created by: Yuri Victorovich <yuri@rawbw.com>
 # $FreeBSD$
 
 PORTNAME=	python-gist
-PORTVERSION=	0.4.7
 DISTVERSIONPREFIX=	v
+DISTVERSION=	0.5.3
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	yuri@rawbw.com
+MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Command line interface for working with github gists
 
 LICENSE=	MIT
@@ -20,11 +19,10 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}docopt>0:devel/py-docopt \
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mock>0:devel/py-mock \
 		${PYTHON_PKGNAMEPREFIX}responses>0:devel/py-responses
 
+USES=		python
 USE_GITHUB=	yes
 GH_ACCOUNT=	jdowner
 GH_PROJECT=	gist
-
-USES=		python
 USE_PYTHON=	autoplist distutils
 NO_ARCH=	yes
 

@@ -19,6 +19,8 @@ load_rc_config $name
 
 : ${gitea_user:="%%GITUSER%%"}
 : ${gitea_enable:="NO"}
+: ${gitea_facility:="daemon"}
+: ${gitea_priority:="debug"}
 : ${gitea_shared:="%%PREFIX%%/share/${name}"}
 
 command="%%PREFIX%%/sbin/${name} web"
@@ -30,7 +32,9 @@ pidfile="/var/run/${name}.pid"
 start_cmd="${name}_start"
 
 gitea_start() {
-	/usr/sbin/daemon -f -u ${gitea_user} -p ${pidfile} /usr/bin/env -i \
+	/usr/sbin/daemon %%DAEMONARGS%% \
+		-u ${gitea_user} -p ${pidfile} \
+		/usr/bin/env -i \
 		"GITEA_WORK_DIR=${gitea_shared}" \
 		"GITEA_CUSTOM=%%PREFIX%%/etc/${name}" \
 		"HOME=${githome}" \

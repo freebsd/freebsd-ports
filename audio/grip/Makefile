@@ -3,21 +3,27 @@
 #    $MCom: ports/audio/grip/Makefile,v 1.4 2007/05/19 21:35:57 marcus Exp $
 
 PORTNAME=	grip
-PORTVERSION=	3.3.1
-PORTREVISION=	8
+PORTVERSION=	3.6.1
 CATEGORIES=	audio
-MASTER_SITES=	SF
+MASTER_SITES=	SF/grip/${PORTVERSION}
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	GTK front-end to external cd rippers and audio encoders
 
-LIB_DEPENDS=	libid3.so:audio/id3lib \
-		libcurl.so:ftp/curl
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-USE_XORG=	x11
+LIB_DEPENDS=	libcurl.so:ftp/curl \
+		libfontconfig.so:x11-fonts/fontconfig \
+		libfreetype.so:print/freetype2 \
+		libid3.so:audio/id3lib \
+		libpopt.so:devel/popt
+
 USES=		gmake libtool pathfix pkgconfig
-USE_GNOME=	gnomeprefix libgnomeui vte
+USE_XORG=	ice sm x11 xext
+USE_GNOME=	cairo gdkpixbuf2 gnomeprefix libgnomeui vte
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS+=--disable-werror
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
@@ -43,10 +49,10 @@ NLS_CONFIGURE_OFF=	--disable-nls
 .if defined(WITH_CDROM_DEVICE)
 DEFAULT_CDROM_DEVICE=${WITH_CDROM_DEVICE}
 .else
-DEFAULT_CDROM_DEVICE=/dev/acd0
+DEFAULT_CDROM_DEVICE=/dev/cd0
 .endif
 
-pre-everything::
+pre-everything:
 .if !defined(WITH_CDROM_DEVICE)
 	@${ECHO_MSG} "===> The default CDROM device is ${DEFAULT_CDROM_DEVICE}"
 	@${ECHO_MSG} "===> Define WITH_CDROM_DEVICE if you want to change the default"

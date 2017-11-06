@@ -1,0 +1,53 @@
+--- doc/autoconf.texi.orig	2012-04-25 02:14:19 UTC
++++ doc/autoconf.texi
+@@ -15,7 +15,7 @@
+ @c The ARG is an optional argument.  To be used for macro arguments in
+ @c their documentation (@defmac).
+ @macro ovar{varname}
+-@r{[}@var{\varname\}@r{]}@c
++@r{[}@var{\varname\}@r{]}
+ @end macro
+ 
+ @c @dvar(ARG, DEFAULT)
+@@ -23,7 +23,7 @@
+ @c The ARG is an optional argument, defaulting to DEFAULT.  To be used
+ @c for macro arguments in their documentation (@defmac).
+ @macro dvar{varname, default}
+-@r{[}@var{\varname\} = @samp{\default\}@r{]}@c
++@r{[}@var{\varname\} = @samp{\default\}@r{]}
+ @end macro
+ 
+ @c Handling the indexes with Texinfo yields several different problems.
+@@ -217,31 +217,11 @@ entitled ``GNU Free Documentation Licens
+ 
+ 
+ 
+-@dircategory Software development
++@dircategory Programming & development tools
+ @direntry
+ * Autoconf: (autoconf).         Create source code configuration scripts.
+ @end direntry
+ 
+-@dircategory Individual utilities
+-@direntry
+-* autoscan: (autoconf)autoscan Invocation.
+-                                Semi-automatic @file{configure.ac} writing
+-* ifnames: (autoconf)ifnames Invocation.        Listing conditionals in source.
+-* autoconf-invocation: (autoconf)autoconf Invocation.
+-                                How to create configuration scripts
+-* autoreconf: (autoconf)autoreconf Invocation.
+-                                Remaking multiple @command{configure} scripts
+-* autoheader: (autoconf)autoheader Invocation.
+-                                How to create configuration templates
+-* autom4te: (autoconf)autom4te Invocation.
+-                                The Autoconf executables backbone
+-* configure: (autoconf)configure Invocation.    Configuring a package.
+-* autoupdate: (autoconf)autoupdate Invocation.
+-                                Automatic update of @file{configure.ac}
+-* config.status: (autoconf)config.status Invocation. Recreating configurations.
+-* testsuite: (autoconf)testsuite Invocation.    Running an Autotest test suite.
+-@end direntry
+-
+ @titlepage
+ @title Autoconf
+ @subtitle Creating Automatic Configuration Scripts

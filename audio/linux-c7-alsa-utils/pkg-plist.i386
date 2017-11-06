@@ -50,6 +50,7 @@ usr/share/man/man1/alsabat.1.gz
 usr/share/man/man1/alsactl.1.gz
 usr/share/man/man1/alsaloop.1.gz
 usr/share/man/man1/alsamixer.1.gz
+usr/share/man/man1/alsaucm.1.gz
 usr/share/man/man1/alsaunmute.1.gz
 usr/share/man/man1/amidi.1.gz
 usr/share/man/man1/amixer.1.gz

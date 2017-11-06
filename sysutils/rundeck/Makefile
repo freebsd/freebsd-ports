@@ -1,13 +1,13 @@
 # $FreeBSD$
 
 PORTNAME=	rundeck
-PORTVERSION=	2.8.2
+DISTVERSION=	2.10.0
 CATEGORIES=	sysutils java
 MASTER_SITES=	http://dl.bintray.com/rundeck/rundeck-maven/
 DISTNAME=	rundeck-launcher-${PORTVERSION}
 EXTRACT_SUFX=	.jar
 
-MAINTAINER=	c.kworr@gmail.com
+MAINTAINER=	arcade@b1t.name
 COMMENT=	Web-console for dispatching commands and scripts to your nodes
 
 LICENSE=	APACHE20

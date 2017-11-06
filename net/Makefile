@@ -28,7 +28,6 @@
     SUBDIR += aslookup
     SUBDIR += asterisk-chan_sccp
     SUBDIR += asterisk-g72x
-    SUBDIR += asterisk11
     SUBDIR += asterisk13
     SUBDIR += avahi
     SUBDIR += avahi-app
@@ -99,6 +98,7 @@
     SUBDIR += datapipe
     SUBDIR += dbeacon
     SUBDIR += delegate
+    SUBDIR += deviceatlas-enterprise-c
     SUBDIR += dgd
     SUBDIR += dgd-kernel
     SUBDIR += dgd-lpmud
@@ -137,6 +137,7 @@
     SUBDIR += exabgp
     SUBDIR += exaddos
     SUBDIR += fb
+    SUBDIR += file2pcap
     SUBDIR += findmtu
     SUBDIR += flower
     SUBDIR += flowgrep
@@ -576,6 +577,7 @@
     SUBDIR += p5-IP-Anonymous
     SUBDIR += p5-IP-Country
     SUBDIR += p5-IPC-Session
+    SUBDIR += p5-IPv6-Address
     SUBDIR += p5-JavaScript-RPC
     SUBDIR += p5-Kafka
     SUBDIR += p5-MaxMind-DB-Common

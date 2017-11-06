@@ -2,6 +2,7 @@
 
 PORTNAME=	mgba
 DISTVERSION=	0.6.1
+PORTREVISION=	1
 CATEGORIES=	emulators
 
 MAINTAINER=	greg@unrelenting.technology

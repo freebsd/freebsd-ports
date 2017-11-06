@@ -1,0 +1,14 @@
+The format and location of SMART / health data varies across protocols.  To
+simplify the output, this application uses a Dumb Unified Model of SMART
+Buffers. In this model, SMART data is located in one or more log pages.  Each
+page contains one or more values ("attributes") differentiated by an ID.  Note
+that ID's are only unique within a log page. Thus, the application outputs:
+
+<Log Page ID> <Attribute ID> <Attribute value>
+
+for each selected attribute.
+
+See the shell scripts atasmart, nvmesmart, and scsismart for examples of parsing
+the output.
+
+WWW: https://github.com/ctuffli/smart

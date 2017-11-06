@@ -3,7 +3,7 @@
 
 PORTNAME=	adom
 PORTVERSION=	1.1.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	games linux
 MASTER_SITES=	http://www.adom.de/adom/download/linux/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}-elf
@@ -22,7 +22,7 @@ OPTIONS_DEFINE=	DOCS
 
 ONLY_FOR_ARCHS=	i386 amd64
 USES=		linux
-USE_LINUX=	ncurses-base xorglibs
+USE_LINUX=	xorglibs
 
 WRKSRC=		${WRKDIR}/adom
 NO_BUILD=	yes

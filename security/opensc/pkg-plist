@@ -5,6 +5,7 @@ bin/eidenv
 bin/gids-tool
 bin/iasecc-tool
 bin/netkey-tool
+bin/npa-tool
 bin/openpgp-tool
 bin/opensc-explorer
 bin/opensc-tool
@@ -32,21 +33,21 @@ etc/bash_completion.d/pkcs15-init
 etc/bash_completion.d/pkcs15-tool
 etc/bash_completion.d/sc-hsm-tool
 etc/bash_completion.d/westcos-tool
-etc/opensc.conf-sample
+@sample etc/opensc.conf.sample
 lib/libopensc.a
 lib/libopensc.so
-lib/libopensc.so.4
-lib/libopensc.so.4.0.0
-%%SM%%lib/libsmm-local.a
+lib/libopensc.so.5
+lib/libopensc.so.5.0.0
 %%SM%%lib/libsmm-local.so
-%%SM%%lib/libsmm-local.so.4
-%%SM%%lib/libsmm-local.so.4.0.0
+%%SM%%lib/libsmm-local.so.5
+%%SM%%lib/libsmm-local.so.5.0.0
 lib/onepin-opensc-pkcs11.so
 lib/opensc-pkcs11.so
 lib/pkcs11-spy.so
 lib/pkcs11/onepin-opensc-pkcs11.so
 lib/pkcs11/opensc-pkcs11.so
 lib/pkcs11/pkcs11-spy.so
+libdata/pkgconfig/opensc-pkcs11.pc
 %%DATADIR%%/asepcos.profile
 %%DATADIR%%/authentic.profile
 %%DATADIR%%/cardos.profile
@@ -85,6 +86,7 @@ lib/pkcs11/pkcs11-spy.so
 %%MANPAGES%%man/man1/gids-tool.1.gz
 %%MANPAGES%%man/man1/iasecc-tool.1.gz
 %%MANPAGES%%man/man1/netkey-tool.1.gz
+%%MANPAGES%%man/man1/npa-tool.1.gz
 %%MANPAGES%%man/man1/openpgp-tool.1.gz
 %%MANPAGES%%man/man1/opensc-explorer.1.gz
 %%MANPAGES%%man/man1/opensc-tool.1.gz

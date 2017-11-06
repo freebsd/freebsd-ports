@@ -4,7 +4,7 @@
  		;;
  	esac
  	;;
-+  *freebsd*)
++  *freebsd*|dragonfly)
 +    PANO_WIN32_RESOURCE=
 +    HSYS=freebsd
 +    HCPU="${target_cpu}"

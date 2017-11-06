@@ -15,7 +15,7 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}routes>=1.12.3:www/py-routes \
- 		${PYTHON_PKGNAMEPREFIX}webhelpers>=0.6.4:www/py-webhelpers \
+		${PYTHON_PKGNAMEPREFIX}webhelpers>=0.6.4:www/py-webhelpers \
 		${PYTHON_PKGNAMEPREFIX}beaker>=1.5.4:www/py-beaker \
 		${PYTHON_PKGNAMEPREFIX}Paste>=1.7.5.1:www/py-paste \
 		${PYTHON_PKGNAMEPREFIX}PasteDeploy>=1.5.0:www/py-pastedeploy \

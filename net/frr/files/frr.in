@@ -5,7 +5,7 @@
 
 # PROVIDE: frr
 # REQUIRE: netif routing 
-# KEYWORD: nojail shutdown
+# KEYWORD: nojailvnet shutdown
 
 # Add the following line to /etc/rc.conf to enable frr:
 #  frr_enable="YES"
@@ -52,7 +52,7 @@ check_config()
 {
     echo "Checking $daemon.conf"
 	# pimd doesn't support -C
-	if [ "$daemon" == "pimd" ]; then
+	if [ "$daemon" = "pimd" ]; then
 		echo "Ignored"
 	else
     	$command $daemon_flags -C
@@ -78,7 +78,7 @@ start_postcmd()
 		echo Waiting for ${frr_wait_for} route...
 		while [ ${waited_for} -lt ${frr_wait_seconds} ]; do
 			/sbin/route -n get ${frr_wait_for} >/dev/null 2>&1 && break;
-			waited_for=$((${waited_for}+1))
+			waited_for=$((waited_for+1))
 			sleep 1;
 		done
 		[ ${waited_for} -lt ${frr_wait_seconds} ] || echo Giving up...
@@ -93,13 +93,13 @@ do_cmd()
 	    command=%%PREFIX%%/sbin/${daemon}
 	    required_files=%%ETCDIR%%/${daemon}.conf
 	    pidfile=/var/run/frr/${daemon}.pid
-	    if [ ${frr_cmd} = "restart" -o ${frr_cmd} = "start" ]; then
+	    if [ ${frr_cmd} = "restart" ] || [ ${frr_cmd} = "start" ]; then
 		check_config
 	    fi
-	    if [ ${frr_cmd} = "start" -a ! -f ${required_files} ]; then
+	    if [ ${frr_cmd} = "start" ] && ! [ -f ${required_files} ]; then
 			continue
 	    fi
-	    if [ ${frr_cmd} = "stop" -a -z $(check_process ${command}) ]; then
+	    if [ ${frr_cmd} = "stop" ] && [ -z $(check_process ${command}) ]; then
 			continue
 	    fi
 	    eval flags=\$\{${daemon}_flags:-\"${frr_flags}\"\}

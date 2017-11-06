@@ -67,6 +67,7 @@
 %%T%%/conf/security/policy/unlimited/default_local.policy
 %%T%%/conf/sound.properties
 %%T%%/include/classfile_constants.h
+%%T%%/include/freebsd
 %%T%%/include/ir.idl
 %%T%%/include/jawt.h
 %%T%%/include/jdwpTransport.h
@@ -277,7 +278,7 @@
 %%T%%/legal/javafx.swing/LICENSE
 %%T%%/legal/javafx.web/COPYRIGHT
 %%T%%/legal/javafx.web/LICENSE
-%%T%%/legal/javafx.web/icu_v48.md
+%%T%%/legal/javafx.web/icu_v51.md
 %%T%%/legal/javafx.web/libxml2.md
 %%T%%/legal/javafx.web/libxslt.md
 %%T%%/legal/javafx.web/webkit.md

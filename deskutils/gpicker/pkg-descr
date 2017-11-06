@@ -1,0 +1,7 @@
+gpicker is a program that allows you to quickly and conveniently pick file
+in a (possibly very large) project. You type significant letters of file name
+(typically from the start of words) and gpicker provides you with a list of
+files you most likely mean to pick. The program filters and orders project's
+list of files in real-time as you type. 
+
+WWW: http://savannah.nongnu.org/projects/gpicker

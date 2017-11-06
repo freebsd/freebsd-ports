@@ -43,7 +43,7 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/$f ${STAGEDIR}${DATADIR}
 .endfor
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/onlinelog
-.for 	f in README  search.php test.txt
+.for	f in README  search.php test.txt
 	${INSTALL_DATA} ${WRKSRC}/onlinelog/$f ${STAGEDIR}${EXAMPLESDIR}/onlinelog
 .endfor
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/clubs

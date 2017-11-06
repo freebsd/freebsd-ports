@@ -73,12 +73,12 @@ include/zscanner/scanner.h
 include/zscanner/version.h
 lib/libdnssec.a
 lib/libdnssec.so
-lib/libdnssec.so.4
-lib/libdnssec.so.4.0.0
+lib/libdnssec.so.5
+lib/libdnssec.so.5.0.0
 lib/libknot.a
 lib/libknot.so
-lib/libknot.so.6
-lib/libknot.so.6.0.0
+lib/libknot.so.7
+lib/libknot.so.7.0.0
 lib/libzscanner.a
 lib/libzscanner.so
 lib/libzscanner.so.1

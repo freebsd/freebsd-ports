@@ -33,7 +33,7 @@ OPTIONS_DEFINE=	EXAMPLES
 .include <bsd.port.pre.mk>
 
 .if ${OPSYS} != FreeBSD
-IGNORE= 	is a FreeBSD-specific port
+IGNORE=		is a FreeBSD-specific port
 .endif
 
 post-patch:

@@ -113,7 +113,7 @@ do-install:
 		${STAGEDIR}${PREFIX}/etc/turnserver.conf.default
 	${MKDIR} ${STAGEDIR}${PREFIX}/include/turn
 	(cd ${WRKSRC}/include/turn && ${COPYTREE_SHARE} "client ns_turn_defs.h" \
-	       	${STAGEDIR}${PREFIX}/include/turn)
+		${STAGEDIR}${PREFIX}/include/turn)
 
 do-install-SQLITE-on:
 	${MKDIR} ${STAGEDIR}${PREFIX}/var/db

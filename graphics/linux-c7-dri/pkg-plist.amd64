@@ -17,8 +17,8 @@ usr/lib/libEGL.so.1.0.0
 usr/lib/libGL.so.1.2.0
 usr/lib/libGLU.so.1
 usr/lib/libGLU.so.1.3.1
-usr/lib/libLLVM-3.8-mesa.so
-usr/lib/libLLVM-3.8.1-mesa.so
+usr/lib/libLLVM-3.9-mesa.so
+usr/lib/libLLVM-3.9.1-mesa.so
 usr/lib/libdrm.so.2
 usr/lib/libdrm.so.2.4.0
 usr/lib/libdrm_amdgpu.so.1
@@ -56,8 +56,8 @@ usr/lib64/libEGL.so.1.0.0
 usr/lib64/libGL.so.1.2.0
 usr/lib64/libGLU.so.1
 usr/lib64/libGLU.so.1.3.1
-usr/lib64/libLLVM-3.8-mesa.so
-usr/lib64/libLLVM-3.8.1-mesa.so
+usr/lib64/libLLVM-3.9-mesa.so
+usr/lib64/libLLVM-3.9.1-mesa.so
 usr/lib64/libdrm.so.2
 usr/lib64/libdrm.so.2.4.0
 usr/lib64/libdrm_amdgpu.so.1
@@ -91,8 +91,5 @@ usr/lib64/libkms.so.1.0.0
 %%PORTDOCS%%usr/share/doc/freeglut-2.8.1/ogl_sm.png
 %%PORTDOCS%%usr/share/doc/freeglut-2.8.1/progress.html
 %%PORTDOCS%%usr/share/doc/freeglut-2.8.1/structure.html
-%%PORTDOCS%%usr/share/doc/libdrm-2.4.67/README
-%%PORTDOCS%%usr/share/doc/mesa-libEGL-11.2.2/COPYING
-%%PORTDOCS%%usr/share/doc/mesa-libGL-11.2.2/COPYING
-%%PORTDOCS%%usr/share/doc/mesa-libgbm-11.2.2/COPYING
-%%PORTDOCS%%usr/share/doc/mesa-private-llvm-3.8.1/LICENSE.TXT
+%%PORTDOCS%%usr/share/doc/libdrm-2.4.74/README
+%%PORTDOCS%%usr/share/doc/mesa-private-llvm-3.9.1/LICENSE.TXT

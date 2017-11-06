@@ -1,6 +1,6 @@
---- main/lock.c.orig	2014-12-12 23:40:50 UTC
+--- main/lock.c.orig	2017-10-13 17:46:56 UTC
 +++ main/lock.c
-@@ -701,9 +701,6 @@ int __ast_rwlock_init(int tracking, cons
+@@ -703,9 +703,6 @@ int __ast_rwlock_init(int tracking, const char *filena
  #endif /* DEBUG_THREADS */
  
  	pthread_rwlockattr_init(&attr);

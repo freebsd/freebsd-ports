@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gtklife
-PORTVERSION=	5.1
-PORTREVISION=	8
+PORTVERSION=	5.2
 CATEGORIES=	games
 MASTER_SITES=	http://ironphoenix.org/tril/gtklife/
 
@@ -34,6 +33,7 @@ OPTIONS_DEFINE=	GTK2 DOCS
 
 GTK2_DESC=	GTK2 gui toolkit support (beta)
 GTK2_USE=	GNOME=gtk20 XORG=x11
+GTK2_USES=	pkgconfig
 GTK2_USE_OFF=	GNOME=gtk12
 GTK2_MAKE_ARGS=	gtk2=yes
 GTK2_LDFLAGS=	-lX11

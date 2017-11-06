@@ -219,6 +219,7 @@ CONFIGURE_ARGS+=-b ${PREFIX}/bin \
 		-d ${PYTHONPREFIX_SITELIBDIR} \
 		-q ${QMAKE} \
 		--confirm-license \
+		--sip ${LOCALBASE}/bin/sip-${PYTHON_VER} \
 		--sipdir ${SIPDIR}
 
 # One of the things PyQt looks for to determine whether to build the Qt DBus

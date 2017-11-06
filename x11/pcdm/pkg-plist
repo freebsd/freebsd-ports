@@ -2,7 +2,7 @@ bin/PCDM-session
 bin/pc-dmconf
 bin/start-pcdm-pico
 etc/init.d/pcdm
-etc/pcdm.conf.dist
+%%ETCDIR%%.conf.dist
 etc/rc.d/pcdm
 etc/sudoers.d/pico-sudoers
 sbin/PCDMd

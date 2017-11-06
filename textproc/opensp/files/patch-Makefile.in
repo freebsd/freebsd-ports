@@ -1,6 +1,6 @@
---- Makefile.in.orig	Fri Dec 23 23:16:01 2005
-+++ Makefile.in	Sun Jan  7 23:29:03 2007
-@@ -247,9 +247,9 @@
+--- Makefile.in.orig	2005-12-23 14:16:01 UTC
++++ Makefile.in
+@@ -247,9 +247,9 @@ sharedstatedir = @sharedstatedir@
  sysconfdir = @sysconfdir@
  target_alias = @target_alias@
  AUTOMAKE_OPTIONS = check-news
@@ -12,7 +12,7 @@
  	lib nsgmls spent spam sgmlnorm sx spcat \
  	tests @DOCSRC@
  
-@@ -709,7 +709,7 @@
+@@ -709,7 +709,7 @@ info: info-recursive
  
  info-am:
  

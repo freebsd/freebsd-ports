@@ -15,7 +15,7 @@ USES=		perl5 gmake
 USE_PERL5=	build
 USE_XORG=	x11
 
-SUB_FILES= 	pkg-message
+SUB_FILES=	pkg-message
 
 post-patch:
 	@${REINPLACE_CMD} -i '' -e 's|%%LOCALBASE%%|${LOCALBASE}|' ${WRKSRC}/Makefile

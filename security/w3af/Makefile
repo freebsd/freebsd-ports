@@ -3,6 +3,7 @@
 
 PORTNAME=	w3af
 PORTVERSION=	1.6.49
+PORTREVISION=	1
 CATEGORIES=	security python www
 
 MAINTAINER=	dbaio@FreeBSD.org
@@ -26,7 +27,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>=2.1:devel/py-lxml \
 		${PYTHON_PKGNAMEPREFIX}pyClamd>=0.2.2:security/py-pyclamd \
 		${PYTHON_PKGNAMEPREFIX}pygithub>=1.21:devel/py-pygithub \
 		${PYTHON_PKGNAMEPREFIX}GitPython>=0.3.2:devel/py-gitpython \
-		${PYTHON_PKGNAMEPREFIX}pybloom>=0.3.11:math/py-pybloom \
+		${PYTHON_PKGNAMEPREFIX}pybloomfiltermmap>=0.3.11:devel/py-pybloomfiltermmap \
 		${PYTHON_PKGNAMEPREFIX}esmre>=0.3.1:textproc/py-esmre \
 		${PYTHON_PKGNAMEPREFIX}phply>=0.9.1:devel/py-phply \
 		${PYTHON_PKGNAMEPREFIX}stopit>=1.1.0:devel/py-stopit \
@@ -51,7 +52,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	andresriancho
 
 USES=		gettext python shebangfix
-SHEBANG_FILES=	tools/*
+SHEBANG_FILES=	tools/* w3af_console w3af_gui
 NO_BUILD=	yes
 
 OPTIONS_DEFINE=	GUI DOCS

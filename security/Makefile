@@ -855,6 +855,7 @@
     SUBDIR += pwauth
     SUBDIR += pwman
     SUBDIR += pwman3
+    SUBDIR += pwned-check
     SUBDIR += pxytest
     SUBDIR += py-AccessControl
     SUBDIR += py-PF
@@ -1212,6 +1213,7 @@
     SUBDIR += tcpcrypt
     SUBDIR += testssl.sh
     SUBDIR += tinc
+    SUBDIR += tinc-devel
     SUBDIR += tinyca
     SUBDIR += titus
     SUBDIR += tls-check

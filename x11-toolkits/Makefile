@@ -130,6 +130,7 @@
     SUBDIR += mygui-ogre
     SUBDIR += mygui-opengl
     SUBDIR += neXtaw
+    SUBDIR += ntk
     SUBDIR += nucleo
     SUBDIR += ocaml-lablgtk2
     SUBDIR += ocaml-labltk
@@ -239,6 +240,7 @@
     SUBDIR += qt5-widgets
     SUBDIR += qt5pas
     SUBDIR += qtermwidget
+    SUBDIR += qtermwidget-l10n
     SUBDIR += qwt5
     SUBDIR += qwt5-designerplugin
     SUBDIR += qwt6

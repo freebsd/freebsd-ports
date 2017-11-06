@@ -9,6 +9,5 @@ documents.
   strings.
 - High-level operations, such as encryption/decryption, signature, file
   attachments...
-- A GTK interface to quickly browse into the document contents.
 
 WWW: https://github.com/gdelugre/origami

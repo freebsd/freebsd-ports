@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	orthanc
-PORTVERSION=	1.1.0
-PORTREVISION=	8
+PORTVERSION=	1.3.0
 CATEGORIES=	science graphics net www
 MASTER_SITES=	http://orthanc-server.com/downloads/get.php?path=/orthanc/:main \
 		http://www.montefiore.ulg.ac.be/~jodogne/Orthanc/ThirdPartyDownloads/:mongoose
@@ -17,6 +16,8 @@ COMMENT=	RESTful DICOM server for healthcare and medical research
 # GPLv3 license, with the OpenSSL exception.
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+BROKEN_powerpc64=	fails to configure: CMake: Looking for C++ include pugixml.hpp - not found
 
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libjsoncpp.so:devel/jsoncpp \
@@ -34,8 +35,6 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libpng16.so:graphics/png \
 		libgtest.so:devel/googletest \
 		libpugixml.so:textproc/pugixml
-
-BROKEN_powerpc64=	fails to configure: CMake: Looking for C++ include pugixml.hpp - not found
 
 CMAKE_ARGS=	-DDCMTK_LIBRARIES="dcmdsig;charls;dcmjpls" \
 		-DDCMTK_DIR="${LOCALBASE}" \
@@ -73,8 +72,10 @@ post-patch:
 # Some tests require connections to be made to the outside world, this is
 # definitely unsupported behaviour and therefor those tests are disabled with
 # cmake variable above (-DUNIT_TESTS_WITH_HTTP_CONNEXIONS=OFF).
-post-build:
-	@cd ${BUILD_WRKSRC} && ./UnitTests
+#
+# Tests run is temporary disabled: https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=215393
+#post-build:
+#	@cd ${BUILD_WRKSRC} && ./UnitTests
 
 post-install:
 	${MKDIR} ${STAGEDIR}/var/db/orthanc/db/db-v5

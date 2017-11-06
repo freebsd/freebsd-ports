@@ -1,21 +1,20 @@
 # $FreeBSD$
 
 PORTNAME=	yaac
-PORTVERSION=	1.0b89
+PORTVERSION=	1.0b114
 CATEGORIES=	comms hamradio
 MASTER_SITES=	SF/yetanotheraprsc/
-DISTNAME=	YAACSrc_20160321
+DISTNAME=	YAACsrc_20170920
 
 MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Platform-independent Java application for the APRS network
 
 LICENSE=	LGPL3
 
-BROKEN=		No public distfiles
-USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 USES=		zip
 USE_ANT=	yes
+USE_JAVA=	yes
 ALL_TARGET=	DISTRO
 SUB_FILES=	yaac.sh
 

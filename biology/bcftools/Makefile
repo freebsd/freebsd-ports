@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	bcftools
-PORTVERSION=	1.3.1
-PORTREVISION=	2
+PORTVERSION=	1.6
 CATEGORIES=	biology
 
 MAINTAINER=	cartwright@asu.edu
@@ -12,7 +11,7 @@ COMMENT=	Tools for manipulating next-generation sequencing data
 LICENSE=	MIT
 # LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	htslib>=1.3:biology/htslib
+BUILD_DEPENDS=	htslib>=1.6:biology/htslib
 LIB_DEPENDS=	libhts.so:biology/htslib
 TEST_DEPENDS=	bash:shells/bash
 
@@ -21,10 +20,12 @@ CONFLICTS_BUILD=openssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	samtools
 
-USES=		gmake perl5 shebangfix
+USES=		autoreconf gmake perl5 python shebangfix
 USE_PERL5=	test
+PYTHON_NO_DEPENDS=	yes
+GNU_CONFIGURE=	yes
 SUB_FILES=	pkg-message
-SHEBANG_FILES=	vcfutils.pl plot-vcfstats plugins/color-chrs.pl test/test.pl
+SHEBANG_FILES=	misc/* test/test.pl
 
 OPTIONS_DEFINE=	GPL
 GPL_DESC=	Enable modules that rely on GPL code
@@ -37,19 +38,15 @@ GPL_LIB_DEPENDS=	libgsl.so:math/gsl
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-MAKE_ENV=	INSTALL_LIB="${INSTALL_LIB}" \
-		INSTALL_DATA="${INSTALL_DATA}" \
-		INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
-		INSTALL_SCRIPT="${INSTALL_SCRIPT}" \
-		INSTALL_DIR="${MKDIR}"
-
 .if ${PORT_OPTIONS:MGPL}
 MAKE_ENV+=	USE_GPL=1
 LICENSE=	GPLv3
 .endif
 
-PLIST_SUB=	PORTVERSION="${PORTVERSION}"
-
 TEST_TARGET=	test
+
+post-patch:
+	@${GREP} -q '@PORTVERSION@' ${WRKSRC}/configure.ac || (echo "@PORTVERSION@ in file/patch-configure.ac is overwritten probably due to using 'make makepatch'"; exit 1)
+	@${REINPLACE_CMD} -e 's|@PORTVERSION@|${PORTVERSION}|g' ${WRKSRC}/configure.ac
 
 .include <bsd.port.mk>

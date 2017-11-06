@@ -1,6 +1,6 @@
---- avahi-qt4.pc.in.orig	2006-01-23 07:15:20.000000000 +1000
-+++ avahi-qt4.pc.in	2007-10-28 12:10:17.000000000 +1000
-@@ -7,5 +7,5 @@
+--- avahi-qt4.pc.in.orig	2011-12-30 21:26:44 UTC
++++ avahi-qt4.pc.in
+@@ -7,5 +7,5 @@ Name: avahi-qt4
  Description: Avahi Multicast DNS Responder (QT4 Support)
  Version: @PACKAGE_VERSION@
  Requires.private: QtCore >= 4.0.0

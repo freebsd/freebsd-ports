@@ -18,7 +18,7 @@ include/racket/schvers.h
 include/racket/sconfig.h
 include/racket/stypes.h
 include/racket/uconfig.h
-lib/libracket3m-6.10.1.so
+lib/libracket3m-6.11.so
 lib/libracket3m.so
 lib/racket/buildinfo
 lib/racket/gracket
@@ -1609,9 +1609,6 @@ man/man1/raco.1.gz
 %%DATADIR%%/collects/syntax/parse/experimental/contract.rkt
 %%DATADIR%%/collects/syntax/parse/experimental/dset.rkt
 %%DATADIR%%/collects/syntax/parse/experimental/eh.rkt
-%%DATADIR%%/collects/syntax/parse/experimental/private/compiled/substitute_rkt.dep
-%%DATADIR%%/collects/syntax/parse/experimental/private/compiled/substitute_rkt.zo
-%%DATADIR%%/collects/syntax/parse/experimental/private/substitute.rkt
 %%DATADIR%%/collects/syntax/parse/experimental/provide.rkt
 %%DATADIR%%/collects/syntax/parse/experimental/reflect.rkt
 %%DATADIR%%/collects/syntax/parse/experimental/specialize.rkt

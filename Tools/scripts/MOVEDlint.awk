@@ -38,6 +38,14 @@ BEGIN {
     portsdir = ENVIRON["PORTSDIR"] ? ENVIRON["PORTSDIR"] : "/usr/ports"
     if (ARGC == 1) {
         ARGV[ARGC++] = portsdir "/MOVED"
+        if (ENVIRON["BLAME"]) {
+            if (!system("test -d " portsdir "/.svn")) {
+                blame = "cd " portsdir "; svn blame MOVED 2>/dev/null"
+            } else if (!system("test -d " portsdir "/.git")) {
+                blame = "cd " portsdir "; git blame MOVED 2>/dev/null"
+            }
+
+        }
     }
     sort = "/usr/bin/sort -n"
     lastdate="1999-12-31"
@@ -85,11 +93,15 @@ $3 !~ /^20[0-3][0-9]-[01][0-9]-[0-3][0-9]$/ {
     }
 
 #    Produces too many false positives
-#    if ($4 ~ /^[a-z].*/)
-#       printf "Initial value of 'reason' is lowercase: %5d (%s)\n", NR, $4
+#    if ($4 ~ /^[a-z].*/) {
+#       printf "Initial value of 'reason' is lowercase: %5d (%s)\n", NR, $4 | sort
+#       error[NR] = 1
+#    }
 
-    if ($4 ~ /\.$/)
-        printf "%5d: Final character is a dot: (%s)\n", NR, $4
+    if ($4 ~ /\.$/) {
+        printf "%5d: Final character is a dot: (%s)\n", NR, $4 | sort
+        error[NR] = 1
+    }
 }
 
 END {
@@ -101,6 +113,16 @@ END {
     for (port in missing) {
         printf "%5d: %s not found\n", missing[port], port | sort
         error[missing[port]] = 1
+    }
+
+    if (blame) {
+        line = 1
+        while (blame | getline) {
+            if (error[line])
+                printf "%5d!\n%5d! %s\n", line, line, $0 | sort
+            line++
+        }
+        close(blame)
     }
 
     close(sort)

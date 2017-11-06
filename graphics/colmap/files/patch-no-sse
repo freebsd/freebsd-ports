@@ -28,7 +28,7 @@ build: don't force SSE on i386
  #undef CPUPBA_USE_SSE
  #undef POINT_DATA_ALIGN4
 -#elif !defined(DISABLE_CPU_SSE)  // Using SSE
-+#elif defined(__SSE__) && !defined(DISABLE_CPU_SSE)  // Using SSE
++#elif defined(__SSE2__) && !defined(DISABLE_CPU_SSE)  // Using SSE
  #define CPUPBA_USE_SSE
  #include <xmmintrin.h>
  #include <emmintrin.h>

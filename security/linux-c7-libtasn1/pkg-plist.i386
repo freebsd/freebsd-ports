@@ -1,5 +1,5 @@
 usr/lib/libtasn1.so.6
-usr/lib/libtasn1.so.6.2.3
+usr/lib/libtasn1.so.6.5.3
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/COPYING.LIB

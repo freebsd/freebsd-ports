@@ -13,6 +13,7 @@
     SUBDIR += R-cran-scrapeR
     SUBDIR += R-cran-selectr
     SUBDIR += R-cran-shiny
+    SUBDIR += UniversalFeedCreator
     SUBDIR += WebMagick
     SUBDIR += ach
     SUBDIR += adzap
@@ -128,6 +129,7 @@
     SUBDIR += elgg
     SUBDIR += elinks
     SUBDIR += elixir-html_entities
+    SUBDIR += elixir-html_sanitize_ex
     SUBDIR += elixir-httpoison
     SUBDIR += elixir-httpotion
     SUBDIR += elixir-joken
@@ -1369,6 +1371,7 @@
     SUBDIR += p5-WebService-Linode
     SUBDIR += p5-WebService-MoviePosterDB
     SUBDIR += p5-WebService-MusicBrainz
+    SUBDIR += p5-WebService-MusicBrainz0
     SUBDIR += p5-WebService-NoPaste
     SUBDIR += p5-WebService-Pushover
     SUBDIR += p5-WebService-Rakuten
@@ -1497,6 +1500,7 @@
     SUBDIR += podcastamatic
     SUBDIR += polipo
     SUBDIR += pound
+    SUBDIR += privatebin
     SUBDIR += privoxy
     SUBDIR += protovis
     SUBDIR += pserv
@@ -1812,6 +1816,7 @@
     SUBDIR += py-recaptcha
     SUBDIR += py-requestbuilder
     SUBDIR += py-requests
+    SUBDIR += py-requests-cache
     SUBDIR += py-requests-file
     SUBDIR += py-requests-futures
     SUBDIR += py-requests-mock

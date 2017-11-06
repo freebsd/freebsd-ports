@@ -6,7 +6,7 @@ PORTVERSION=	2.2.2
 CATEGORIES=	x11-clocks
 MASTER_SITES=	http://opencircuitdesign.com/~tim/programs/dclock/archive/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	romain@FreeBSD.org
 COMMENT=	7-segment digital clock with some optional features
 
 USE_XORG=	x11 xt

@@ -4,7 +4,7 @@
 PORTNAME=		bash
 PATCHLEVEL=		12
 PORTVERSION=		4.4.${PATCHLEVEL:S/^0//g}
-PORTREVISION?=		2
+PORTREVISION?=		3
 CATEGORIES=		shells
 MASTER_SITES=		GNU/${PORTNAME}
 DISTNAME=		${PORTNAME}-${PORTVERSION:R}
@@ -22,10 +22,11 @@ COMMENT=		GNU Project's Bourne Again SHell
 LICENSE=		GPLv3+
 LICENSE_FILE=		${WRKSRC}/COPYING
 
-OPTIONS_DEFINE=		COLONBREAKSWORDS FDESCFS HELP NLS STATIC SYSLOG DOCS
+OPTIONS_DEFINE=		COLONBREAKSWORDS FDESCFS HELP NLS STATIC SYSBASHRC SYSLOG DOCS
 COLONBREAKSWORDS_DESC=	Colons break words
 FDESCFS_DESC=		Enable use of /dev/fd
 HELP_DESC=		Enable builtin help
+SYSBASHRC_DESC=		Enable system-wide rc files
 
 OPTIONS_DEFAULT=	COLONBREAKSWORDS HELP
 
@@ -83,6 +84,11 @@ post-patch:
 	    -e "s|/\*.*#define SYSLOG_HISTORY .*\*/|#define SYSLOG_HISTORY|g" \
 	    ${WRKSRC}/config-top.h
 .endif
+
+post-patch-SYSBASHRC-on:
+	@${REINPLACE_CMD} \
+		-e "s|.*\(#define SYS_BASH.*\)\(/etc/.*\"\).*|\1${PREFIX}\2|" \
+		${WRKSRC}/config-top.h
 
 post-configure:
 	@${FIND} ${WRKSRC} -name Makefile -print0 | ${XARGS} -0 \

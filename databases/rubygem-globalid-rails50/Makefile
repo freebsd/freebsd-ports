@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	globalid
-PORTVERSION=	0.4.0
+PORTVERSION=	0.4.1
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	-rails50

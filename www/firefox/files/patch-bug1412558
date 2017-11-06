@@ -1,0 +1,83 @@
+diff --git dom/media/flac/FlacDecoder.cpp dom/media/flac/FlacDecoder.cpp
+index 53fc3c9937f7..b23771ab80fa 100644
+--- dom/media/flac/FlacDecoder.cpp
++++ dom/media/flac/FlacDecoder.cpp
+@@ -7,6 +7,7 @@
+ #include "FlacDecoder.h"
+ #include "MediaContainerType.h"
+ #include "MediaPrefs.h"
++#include "PDMFactory.h"
+ 
+ namespace mozilla {
+ 
+@@ -15,6 +16,10 @@ FlacDecoder::IsEnabled()
+ {
+ #ifdef MOZ_FFVPX
+   return MediaPrefs::FlacEnabled();
++#elif defined(MOZ_FFMPEG)
++  RefPtr<PDMFactory> platform = new PDMFactory();
++  return MediaPrefs::FlacEnabled() && platform->SupportsMimeType(NS_LITERAL_CSTRING("audio/flac"),
++                                    /* DecoderDoctorDiagnostics* */ nullptr);
+ #else
+   // Until bug 1295886 is fixed.
+   return false;
+diff --git media/ffvpx/README_MOZILLA media/ffvpx/README_MOZILLA
+index 5d3a6037efe0..43144b726a92 100644
+--- media/ffvpx/README_MOZILLA
++++ media/ffvpx/README_MOZILLA
+@@ -17,14 +17,6 @@ configuration files were generated as follow using the configure script:
+ config*:
+ replace: /HAVE_(MALLOC_H|ARC4RANDOM|LOCALTIME_R|MEMALIGN|POSIX_MEMALIGN)/d
+ 
+-config_darwin32.h:
+-add to configure command: --disable-asm --disable-yasm --cc='clang -m32'
+-
+-config_unix32.h:
+-add to configure command: --disable-asm --disable-yasm --cc='clang -m32'
+-replace: s/HAVE_SYSCTL 1/HAVE_SYSCTL 0/ and s/HAVE_MEMALIGN 1/HAVE_MEMALIGN 0/ and s/HAVE_POSIX_MEMALIGN 1/HAVE_POSIX_MEMALIGN 0/
+-
+-
+ config_unix64.h/config_unix64.asm:
+ replace: s/HAVE_SYSCTL 1/HAVE_SYSCTL 0
+ 
+diff --git media/ffvpx/config.h media/ffvpx/config.h
+index dab01e05cd65..26ebe529bd98 100644
+--- media/ffvpx/config.h
++++ media/ffvpx/config.h
+@@ -27,17 +27,9 @@
+ #define HAVE_LIBC_MSVCRT 0
+ #endif
+ #elif defined(XP_DARWIN)
+-#if defined(HAVE_64BIT_BUILD)
+ #include "config_darwin64.h"
+-#else
+-#include "config_darwin32.h"
+-#endif
+ #elif defined(XP_UNIX)
+-#if defined(HAVE_64BIT_BUILD)
+ #include "config_unix64.h"
+-#else
+-#include "config_unix32.h"
+-#endif
+ #endif
+ #include "config_common.h"
+ #endif // MOZ_FFVPX_CONFIG_H
+diff --git old-configure.in old-configure.in
+index b8ce71278548..410be683c2f6 100644
+--- old-configure.in
++++ old-configure.in
+@@ -3279,11 +3279,11 @@ dnl = FFmpeg's ffvpx configuration
+ dnl ========================================================
+ 
+ MOZ_FFVPX=
+-case "$CPU_ARCH" in
+-  x86)
++case "$OS_ARCH:$CPU_ARCH" in
++  WINNT:x86)
+       MOZ_FFVPX=1
+   ;;
+-  x86_64)
++  *:x86_64)
+       MOZ_FFVPX=1
+   ;;
+ esac

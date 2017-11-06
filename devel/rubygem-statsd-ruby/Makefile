@@ -9,6 +9,7 @@ MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby Statsd client that is not port of the Python implementation
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 USES=		gem
 USE_RUBY=	yes

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Unicode-Collate
-PORTVERSION=	1.19
+PORTVERSION=	1.21
 CATEGORIES=	textproc converters perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-

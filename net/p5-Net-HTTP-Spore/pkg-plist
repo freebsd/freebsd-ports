@@ -7,6 +7,7 @@
 %%SITE_PERL%%/Net/HTTP/Spore/Meta/Types.pm
 %%SITE_PERL%%/Net/HTTP/Spore/Middleware.pm
 %%SITE_PERL%%/Net/HTTP/Spore/Middleware/Auth.pm
+%%SITE_PERL%%/Net/HTTP/Spore/Middleware/Auth/ApiKey.pm
 %%SITE_PERL%%/Net/HTTP/Spore/Middleware/Auth/Basic.pm
 %%SITE_PERL%%/Net/HTTP/Spore/Middleware/Auth/Header.pm
 %%SITE_PERL%%/Net/HTTP/Spore/Middleware/Auth/OAuth.pm
@@ -14,6 +15,7 @@
 %%SITE_PERL%%/Net/HTTP/Spore/Middleware/Format.pm
 %%SITE_PERL%%/Net/HTTP/Spore/Middleware/Format/Auto.pm
 %%SITE_PERL%%/Net/HTTP/Spore/Middleware/Format/JSON.pm
+%%SITE_PERL%%/Net/HTTP/Spore/Middleware/Format/Text.pm
 %%SITE_PERL%%/Net/HTTP/Spore/Middleware/Format/XML.pm
 %%SITE_PERL%%/Net/HTTP/Spore/Middleware/Format/YAML.pm
 %%SITE_PERL%%/Net/HTTP/Spore/Middleware/LogDispatch.pm
@@ -38,6 +40,7 @@
 %%PERL5_MAN3%%/Net::HTTP::Spore::Meta::Types.3.gz
 %%PERL5_MAN3%%/Net::HTTP::Spore::Middleware.3.gz
 %%PERL5_MAN3%%/Net::HTTP::Spore::Middleware::Auth.3.gz
+%%PERL5_MAN3%%/Net::HTTP::Spore::Middleware::Auth::ApiKey.3.gz
 %%PERL5_MAN3%%/Net::HTTP::Spore::Middleware::Auth::Basic.3.gz
 %%PERL5_MAN3%%/Net::HTTP::Spore::Middleware::Auth::Header.3.gz
 %%PERL5_MAN3%%/Net::HTTP::Spore::Middleware::Auth::OAuth.3.gz
@@ -45,6 +48,7 @@
 %%PERL5_MAN3%%/Net::HTTP::Spore::Middleware::Format.3.gz
 %%PERL5_MAN3%%/Net::HTTP::Spore::Middleware::Format::Auto.3.gz
 %%PERL5_MAN3%%/Net::HTTP::Spore::Middleware::Format::JSON.3.gz
+%%PERL5_MAN3%%/Net::HTTP::Spore::Middleware::Format::Text.3.gz
 %%PERL5_MAN3%%/Net::HTTP::Spore::Middleware::Format::XML.3.gz
 %%PERL5_MAN3%%/Net::HTTP::Spore::Middleware::Format::YAML.3.gz
 %%PERL5_MAN3%%/Net::HTTP::Spore::Middleware::LogDispatch.3.gz

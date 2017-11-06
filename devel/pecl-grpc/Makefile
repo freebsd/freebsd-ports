@@ -2,13 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	grpc
-PORTVERSION=	1.4.6
+PORTVERSION=	1.6.0
 CATEGORIES=	devel net
 
 MAINTAINER=	vanilla@FreeBSD.org
 COMMENT=	High performance, general RPC framework
 
-LICENSE=	BSD3CLAUSE
+LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN_aarch64=		fails to compile: fatal error: sys/auxv.h file not found
 BROKEN_mips=		fails to compile: fatal error: sys/auxv.h file not found

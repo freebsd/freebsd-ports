@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	wine
-DISTVERSION=	2.0.2
-PORTREVISION=	1
+DISTVERSION=	2.0.3
 PORTEPOCH=	1
 CATEGORIES=	emulators
 MASTER_SITES=	SF/${PORTNAME}/Source \
@@ -15,6 +14,8 @@ COMMENT?=	Microsoft Windows compatibility environment
 LICENSE=	LGPL21 LGPL3
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+ONLY_FOR_ARCHS=	amd64 i386
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/flex:textproc/flex
 LIB_DEPENDS=	libxml2.so:textproc/libxml2
@@ -36,11 +37,10 @@ CONFIGURE_ARGS+=--verbose --disable-tests \
 		--without-tiff
 CONFIGURE_ENV=	CPPBIN="${CPP}" FLEX="${LOCALBASE}/bin/flex"
 WINELIBDIR?=	${PREFIX}/lib
+USES=		bison compiler:c11 desktop-file-utils gmake shebangfix tar:xz
 .if !defined(USE_LDCONFIG32)
 USE_LDCONFIG=	${WINELIBDIR} ${WINELIBDIR}/wine
 .endif
-ONLY_FOR_ARCHS=	amd64 i386
-USES=		bison compiler:c11 desktop-file-utils gmake shebangfix tar:xz
 SHEBANG_FILES=	tools/make_requests tools/winemaker/winemaker \
 		tools/winedump/function_grep.pl
 

@@ -10,7 +10,7 @@ MASTER_SITES=	LOCAL/riggs/mp4v2
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Library and tools to read, create, and modify mp4 files
 
-LICENSE=	MPL
+LICENSE=	MPL11
 
 CONFLICTS=	mpeg4ip-libmp4v2-[0-9.]*
 USES=		compiler gmake libtool tar:bzip2

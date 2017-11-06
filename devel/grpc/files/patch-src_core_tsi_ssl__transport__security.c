@@ -1,4 +1,4 @@
---- src/core/tsi/ssl_transport_security.c.orig	2017-10-05 19:05:39 UTC
+--- src/core/tsi/ssl_transport_security.c.orig	2017-10-26 19:11:22 UTC
 +++ src/core/tsi/ssl_transport_security.c
 @@ -20,6 +20,7 @@
  

@@ -7,10 +7,13 @@ CATEGORIES=	security www
 MASTER_SITES=	http://www.scrt.ch/outils/webshag/
 DISTNAME=	ws110
 
-MAINTAINER=	clutton@zoho.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multi-threaded, multi-platform web server audit tool
 
 LICENSE=	GPLv3
+
+DEPRECATED=	Abandoned
+EXPIRATION_DATE=	2017-11-30
 
 USES=		python:2.7 dos2unix
 USE_PYTHON=distutils

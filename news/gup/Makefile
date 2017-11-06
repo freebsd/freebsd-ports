@@ -6,7 +6,7 @@ PORTVERSION=	0.4
 CATEGORIES=	news
 MASTER_SITES=	ftp://ftp.isc.org/isc/inn/unoff-contrib/
 
-MAINTAINER=	dsh@vlink.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Allows remote sites to change their newsgroup subscriptions
 
 WRKSRC=		${WRKDIR}/gup

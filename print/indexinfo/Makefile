@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	indexinfo
-PORTVERSION=	0.2.6
+PORTVERSION=	0.3.1
 CATEGORIES=	print ports-mgmt
 
 MAINTAINER=	bapt@FreeBSD.org
@@ -10,6 +10,7 @@ COMMENT=	Utility to regenerate the GNU info page index
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+USE_CSTD=	gnu99
 USE_GITHUB=	yes
 GH_ACCOUNT=	bapt
 INSTALL_TARGET=	install-strip

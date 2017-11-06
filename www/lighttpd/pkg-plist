@@ -47,6 +47,7 @@ lib/lighttpd/mod_flv_streaming.so
 lib/lighttpd/mod_indexfile.so
 %%LUA%%lib/lighttpd/mod_magnet.so
 %%MYSQL%%lib/lighttpd/mod_mysql_vhost.so
+%%OPENSSL%%lib/lighttpd/mod_openssl.so
 lib/lighttpd/mod_proxy.so
 lib/lighttpd/mod_redirect.so
 lib/lighttpd/mod_rewrite.so
@@ -62,7 +63,11 @@ lib/lighttpd/mod_status.so
 lib/lighttpd/mod_uploadprogress.so
 lib/lighttpd/mod_userdir.so
 lib/lighttpd/mod_usertrack.so
+lib/lighttpd/mod_vhostdb.so
+%%LDAP%%lib/lighttpd/mod_vhostdb_ldap.so
+%%MYSQL%%lib/lighttpd/mod_vhostdb_mysql.so
 lib/lighttpd/mod_webdav.so
+lib/lighttpd/mod_wstunnel.so
 man/man8/lighttpd.8.gz
 %%KRB5%%man/man8/lighttpd-angel.8.gz
 sbin/lighttpd

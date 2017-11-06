@@ -105,6 +105,20 @@ USES+=		compiler:c++11-lang
 USE_XORG+=	xcb
 .endif
 
+.if ${MOZILLA_VER:R:R} >= 56
+MESA_LLVM_VER?=	40
+BUILD_DEPENDS+=	llvm${MESA_LLVM_VER}>0:devel/llvm${MESA_LLVM_VER}
+MOZ_EXPORT+=	LLVM_CONFIG=llvm-config${MESA_LLVM_VER}
+MOZ_EXPORT+=	BINDGEN_CFLAGS="${BINDGEN_CFLAGS}"
+# XXX bug 1341234
+. if ! ${USE_MOZILLA:M-nspr}
+BINDGEN_CFLAGS+=-isystem${LOCALBASE}/include/nspr
+. endif
+. if ! ${USE_MOZILLA:M-pixman}
+BINDGEN_CFLAGS+=-isystem${LOCALBASE}/include/pixman-1
+. endif
+.endif
+
 .if ${OPSYS} == FreeBSD && ${OSREL} == 11.1
 LLD_UNSAFE=	yes
 .endif

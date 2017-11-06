@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gen6dns
-PORTVERSION=	1.2
+PORTVERSION=	1.3
 CATEGORIES=	dns
 MASTER_SITES=	http://www.hznet.de/tools/
 

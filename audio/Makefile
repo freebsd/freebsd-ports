@@ -61,6 +61,7 @@
     SUBDIR += cantata
     SUBDIR += caps-lv2
     SUBDIR += caps-plugins
+    SUBDIR += cava
     SUBDIR += ccaudio2
     SUBDIR += cd-console
     SUBDIR += cd-discid
@@ -173,6 +174,7 @@
     SUBDIR += fluidsynth
     SUBDIR += fluidsynth-dssi
     SUBDIR += fmit
+    SUBDIR += foo-yc20
     SUBDIR += forked-daapd
     SUBDIR += fpc-a52
     SUBDIR += fpc-mad
@@ -327,6 +329,7 @@
     SUBDIR += id3v2
     SUBDIR += idjc
     SUBDIR += ifp-line
+    SUBDIR += infamous-plugins-lv2
     SUBDIR += ir-lv2
     SUBDIR += jack
     SUBDIR += jack_ghero
@@ -662,6 +665,7 @@
     SUBDIR += py-pyaudio
     SUBDIR += py-pylast
     SUBDIR += py-pyliblo
+    SUBDIR += py-pysndfile
     SUBDIR += py-shout
     SUBDIR += py-soundcloud
     SUBDIR += py-soundscrape
@@ -696,6 +700,7 @@
     SUBDIR += rosegarden
     SUBDIR += rplay
     SUBDIR += rsynth
+    SUBDIR += rtaudio
     SUBDIR += rtmidi
     SUBDIR += rubberband
     SUBDIR += ruby-smf

@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fzf
-PORTVERSION=	0.16.10
-PORTREVISION=	1
+PORTVERSION=	0.17.1
 CATEGORIES=	textproc
 
 MAINTAINER=	sascha@root-login.org
@@ -18,11 +17,15 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	junegunn
 GH_SUBDIR:=	src/github.com/${GH_ACCOUNT}/${PORTNAME}
 
-GH_TUPLE=	mattn:go-runewidth:14207d2:runwidth/src/github.com/mattn/go-runewidth \
-    		mattn:go-shellwords:02e3cf0:shellwords/src/github.com/mattn/go-shellwords \
+GH_TUPLE=	lucasb-eyer:go-colorful:c900de9:colorful/src/github.com/lucasb-eyer/go-colorful \
+		mattn:go-runewidth:14207d2:runewidth/src/github.com/mattn/go-runewidth \
+		mattn:go-shellwords:02e3cf0:shellwords/src/github.com/mattn/go-shellwords \
 		mattn:go-isatty:66b8e73:isatty/src/github.com/mattn/go-isatty \
+		gdamore:encoding:b23993c:encoding/src/github.com/gdamore/encoding \
 		gdamore:tcell:44772c1:tcell/src/github.com/gdamore/tcell \
-		golang:crypto:b8a2a83:terminal/src/golang.org/x/crypto
+		golang:sys:b90f89a:sys/src/golang.org/x/sys \
+		golang:text:4ee4af5:text/src/golang.org/x/text \
+		golang:crypto:e1a4589:crypto/src/golang.org/x/crypto
 
 SUB_FILES=	pkg-message
 PLIST_FILES=	bin/fzf man/man1/fzf.1.gz
@@ -44,7 +47,7 @@ GOENV=		GOPATH=${WRKSRC} CGO_CFLAGS="${CGO_CFLAGS}" \
 do-build:
 	cd ${WRKSRC}/src/github.com/${GH_ACCOUNT_DEFAULT}/${PORTNAME} && \
 	${SETENV} ${MAKE_ENV} ${GOENV} ${GO_CMD} build -a \
-		-ldflags "-X main.revision=6dbc108 -w" -o bin/${PORTNAME}
+		-ldflags "-X main.revision=0b33dc6 -w" -o bin/${PORTNAME}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/github.com/${GH_ACCOUNT_DEFAULT}/${PORTNAME}/bin/${PORTNAME} \

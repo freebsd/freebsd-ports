@@ -1,21 +1,21 @@
-# Created by: Ken Moore <ken@ixsystems.com>
 # $FreeBSD$
 
 PORTNAME=	lumina-themes
-PORTVERSION=	201708181333
+PORTVERSION=	201710311100
 CATEGORIES=	x11-themes
 
-MAINTAINER=	ken@ixsystems.com
+MAINTAINER=	jt@ixsystems.com
 COMMENT=	Lumina desktop wallpapers/colors
 
-LICENSE=	BSD2CLAUSE
+LICENSE=	BSD2CLAUSE CC0-1.0
+LICENSE_COMB=	multi
 
-USE_QT5=	qmake_build
 USES=	qmake
+USE_QT5=	qmake_build
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	trueos
 GH_PROJECT=	lumina-themes
-GH_TAGNAME=	3ad35cf883978f33bc4d2c5d677249ffcbeb0010
+GH_TAGNAME=	1b395f36674ba4aad193fd6e4eed0ddb40f1738e
 
 .include <bsd.port.mk>

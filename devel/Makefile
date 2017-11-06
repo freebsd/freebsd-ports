@@ -329,6 +329,7 @@
     SUBDIR += cobf
     SUBDIR += coccinelle
     SUBDIR += codeblocks
+    SUBDIR += codeblocks-devel
     SUBDIR += codequery
     SUBDIR += codesearch-py
     SUBDIR += codeville
@@ -498,6 +499,7 @@
     SUBDIR += elfutils
     SUBDIR += elixir-apex
     SUBDIR += elixir-bson
+    SUBDIR += elixir-cachex
     SUBDIR += elixir-calendar
     SUBDIR += elixir-combine
     SUBDIR += elixir-conform
@@ -507,8 +509,10 @@
     SUBDIR += elixir-crontab
     SUBDIR += elixir-csv
     SUBDIR += elixir-decimal
+    SUBDIR += elixir-deppie
     SUBDIR += elixir-dialyze
     SUBDIR += elixir-estree
+    SUBDIR += elixir-eternal
     SUBDIR += elixir-exactor
     SUBDIR += elixir-excoveralls
     SUBDIR += elixir-exjsx
@@ -539,6 +543,7 @@
     SUBDIR += elixir-swarm
     SUBDIR += elixir-timex
     SUBDIR += elixir-tirexs
+    SUBDIR += elixir-trailing_format_plug
     SUBDIR += elixir-tzdata
     SUBDIR += embb
     SUBDIR += epl.el
@@ -886,6 +891,7 @@
     SUBDIR += hapy
     SUBDIR += hcs12mem
     SUBDIR += hexcompare
+    SUBDIR += hexd
     SUBDIR += hg-git
     SUBDIR += hgreviewboard
     SUBDIR += hgsvn
@@ -1590,7 +1596,6 @@
     SUBDIR += linux-c6-libsigc++20
     SUBDIR += linux-c6-libsoup
     SUBDIR += linux-c6-libthai
-    SUBDIR += linux-c6-ncurses-base
     SUBDIR += linux-c6-nspr
     SUBDIR += linux-c6-qt47
     SUBDIR += linux-c6-sdl12
@@ -1603,7 +1608,6 @@
     SUBDIR += linux-c7-libpciaccess
     SUBDIR += linux-c7-libsigc++20
     SUBDIR += linux-c7-libthai
-    SUBDIR += linux-c7-ncurses-base
     SUBDIR += linux-c7-nspr
     SUBDIR += linux-c7-qt
     SUBDIR += linux-c7-sdl12
@@ -1613,6 +1617,7 @@
     SUBDIR += lion
     SUBDIR += listserialc
     SUBDIR += liteide
+    SUBDIR += llbuild
     SUBDIR += lldb38
     SUBDIR += llnextgen
     SUBDIR += llvm-cheri
@@ -2059,6 +2064,7 @@
     SUBDIR += p5-Class-Factory
     SUBDIR += p5-Class-Factory-Util
     SUBDIR += p5-Class-Field
+    SUBDIR += p5-Class-Fields
     SUBDIR += p5-Class-Forward
     SUBDIR += p5-Class-Generate
     SUBDIR += p5-Class-Gomor
@@ -3236,6 +3242,7 @@
     SUBDIR += p5-SDL
     SUBDIR += p5-SNMP-Persist
     SUBDIR += p5-SOAP-WSDL
+    SUBDIR += p5-SPOPS
     SUBDIR += p5-SSN-Validate
     SUBDIR += p5-SUPER
     SUBDIR += p5-SVN-ACL
@@ -4381,6 +4388,7 @@
     SUBDIR += py-fasteners
     SUBDIR += py-fastentrypoints
     SUBDIR += py-fastimport
+    SUBDIR += py-fastnumbers
     SUBDIR += py-filemagic
     SUBDIR += py-fileutils
     SUBDIR += py-five.customerize
@@ -4442,6 +4450,7 @@
     SUBDIR += py-grizzled
     SUBDIR += py-grouch
     SUBDIR += py-grpcio
+    SUBDIR += py-grpcio-tools
     SUBDIR += py-gtfslib
     SUBDIR += py-gyp
     SUBDIR += py-hash_ring
@@ -4665,6 +4674,7 @@
     SUBDIR += py-pyasn1
     SUBDIR += py-pyasn1-modules
     SUBDIR += py-pybind11
+    SUBDIR += py-pybloomfiltermmap
     SUBDIR += py-pycadf
     SUBDIR += py-pycalendar
     SUBDIR += py-pycallgraph

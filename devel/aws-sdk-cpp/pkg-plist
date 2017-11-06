@@ -153,6 +153,8 @@ include/aws/apigateway/model/DocumentationPartLocation.h
 include/aws/apigateway/model/DocumentationPartType.h
 include/aws/apigateway/model/DocumentationVersion.h
 include/aws/apigateway/model/DomainName.h
+include/aws/apigateway/model/EndpointConfiguration.h
+include/aws/apigateway/model/EndpointType.h
 include/aws/apigateway/model/FlushStageAuthorizersCacheRequest.h
 include/aws/apigateway/model/FlushStageCacheRequest.h
 include/aws/apigateway/model/GatewayResponse.h
@@ -1139,6 +1141,7 @@ include/aws/cloudfront/model/CustomOriginConfig.h
 include/aws/cloudfront/model/DefaultCacheBehavior.h
 include/aws/cloudfront/model/DeleteCloudFrontOriginAccessIdentity2017_03_25Request.h
 include/aws/cloudfront/model/DeleteDistribution2017_03_25Request.h
+include/aws/cloudfront/model/DeleteServiceLinkedRole2017_03_25Request.h
 include/aws/cloudfront/model/DeleteStreamingDistribution2017_03_25Request.h
 include/aws/cloudfront/model/Distribution.h
 include/aws/cloudfront/model/DistributionConfig.h
@@ -2722,6 +2725,10 @@ include/aws/directconnect/model/CreateBGPPeerRequest.h
 include/aws/directconnect/model/CreateBGPPeerResult.h
 include/aws/directconnect/model/CreateConnectionRequest.h
 include/aws/directconnect/model/CreateConnectionResult.h
+include/aws/directconnect/model/CreateDirectConnectGatewayAssociationRequest.h
+include/aws/directconnect/model/CreateDirectConnectGatewayAssociationResult.h
+include/aws/directconnect/model/CreateDirectConnectGatewayRequest.h
+include/aws/directconnect/model/CreateDirectConnectGatewayResult.h
 include/aws/directconnect/model/CreateInterconnectRequest.h
 include/aws/directconnect/model/CreateInterconnectResult.h
 include/aws/directconnect/model/CreateLagRequest.h
@@ -2734,6 +2741,10 @@ include/aws/directconnect/model/DeleteBGPPeerRequest.h
 include/aws/directconnect/model/DeleteBGPPeerResult.h
 include/aws/directconnect/model/DeleteConnectionRequest.h
 include/aws/directconnect/model/DeleteConnectionResult.h
+include/aws/directconnect/model/DeleteDirectConnectGatewayAssociationRequest.h
+include/aws/directconnect/model/DeleteDirectConnectGatewayAssociationResult.h
+include/aws/directconnect/model/DeleteDirectConnectGatewayRequest.h
+include/aws/directconnect/model/DeleteDirectConnectGatewayResult.h
 include/aws/directconnect/model/DeleteInterconnectRequest.h
 include/aws/directconnect/model/DeleteInterconnectResult.h
 include/aws/directconnect/model/DeleteLagRequest.h
@@ -2742,6 +2753,12 @@ include/aws/directconnect/model/DeleteVirtualInterfaceRequest.h
 include/aws/directconnect/model/DeleteVirtualInterfaceResult.h
 include/aws/directconnect/model/DescribeConnectionsRequest.h
 include/aws/directconnect/model/DescribeConnectionsResult.h
+include/aws/directconnect/model/DescribeDirectConnectGatewayAssociationsRequest.h
+include/aws/directconnect/model/DescribeDirectConnectGatewayAssociationsResult.h
+include/aws/directconnect/model/DescribeDirectConnectGatewayAttachmentsRequest.h
+include/aws/directconnect/model/DescribeDirectConnectGatewayAttachmentsResult.h
+include/aws/directconnect/model/DescribeDirectConnectGatewaysRequest.h
+include/aws/directconnect/model/DescribeDirectConnectGatewaysResult.h
 include/aws/directconnect/model/DescribeHostedConnectionsRequest.h
 include/aws/directconnect/model/DescribeHostedConnectionsResult.h
 include/aws/directconnect/model/DescribeInterconnectsRequest.h
@@ -2756,6 +2773,12 @@ include/aws/directconnect/model/DescribeTagsResult.h
 include/aws/directconnect/model/DescribeVirtualGatewaysResult.h
 include/aws/directconnect/model/DescribeVirtualInterfacesRequest.h
 include/aws/directconnect/model/DescribeVirtualInterfacesResult.h
+include/aws/directconnect/model/DirectConnectGateway.h
+include/aws/directconnect/model/DirectConnectGatewayAssociation.h
+include/aws/directconnect/model/DirectConnectGatewayAssociationState.h
+include/aws/directconnect/model/DirectConnectGatewayAttachment.h
+include/aws/directconnect/model/DirectConnectGatewayAttachmentState.h
+include/aws/directconnect/model/DirectConnectGatewayState.h
 include/aws/directconnect/model/DisassociateConnectionFromLagRequest.h
 include/aws/directconnect/model/DisassociateConnectionFromLagResult.h
 include/aws/directconnect/model/Interconnect.h
@@ -4072,6 +4095,8 @@ include/aws/ecs/model/DescribeTaskDefinitionResult.h
 include/aws/ecs/model/DescribeTasksRequest.h
 include/aws/ecs/model/DescribeTasksResult.h
 include/aws/ecs/model/DesiredStatus.h
+include/aws/ecs/model/Device.h
+include/aws/ecs/model/DeviceCgroupPermission.h
 include/aws/ecs/model/DiscoverPollEndpointRequest.h
 include/aws/ecs/model/DiscoverPollEndpointResult.h
 include/aws/ecs/model/Failure.h
@@ -5489,6 +5514,10 @@ include/aws/glue/model/BatchDeleteTableRequest.h
 include/aws/glue/model/BatchDeleteTableResult.h
 include/aws/glue/model/BatchGetPartitionRequest.h
 include/aws/glue/model/BatchGetPartitionResult.h
+include/aws/glue/model/BatchStopJobRunError.h
+include/aws/glue/model/BatchStopJobRunRequest.h
+include/aws/glue/model/BatchStopJobRunResult.h
+include/aws/glue/model/BatchStopJobRunSuccessfulSubmission.h
 include/aws/glue/model/CatalogEntry.h
 include/aws/glue/model/CatalogImportStatus.h
 include/aws/glue/model/Classifier.h
@@ -6936,6 +6965,7 @@ include/aws/lightsail/model/InstanceAccessProtocol.h
 include/aws/lightsail/model/InstanceHardware.h
 include/aws/lightsail/model/InstanceMetricName.h
 include/aws/lightsail/model/InstanceNetworking.h
+include/aws/lightsail/model/InstancePlatform.h
 include/aws/lightsail/model/InstancePortInfo.h
 include/aws/lightsail/model/InstancePortState.h
 include/aws/lightsail/model/InstanceSnapshot.h
@@ -6954,6 +6984,7 @@ include/aws/lightsail/model/OpenInstancePublicPortsResult.h
 include/aws/lightsail/model/Operation.h
 include/aws/lightsail/model/OperationStatus.h
 include/aws/lightsail/model/OperationType.h
+include/aws/lightsail/model/PasswordData.h
 include/aws/lightsail/model/PeerVpcRequest.h
 include/aws/lightsail/model/PeerVpcResult.h
 include/aws/lightsail/model/PortAccessType.h
@@ -7571,6 +7602,7 @@ include/aws/organizations/OrganizationsRequest.h
 include/aws/organizations/Organizations_EXPORTS.h
 include/aws/organizations/model/AcceptHandshakeRequest.h
 include/aws/organizations/model/AcceptHandshakeResult.h
+include/aws/organizations/model/AccessDeniedForDependencyExceptionReason.h
 include/aws/organizations/model/Account.h
 include/aws/organizations/model/AccountJoinedMethod.h
 include/aws/organizations/model/AccountStatus.h
@@ -7683,6 +7715,10 @@ include/aws/pinpoint/model/APNSChannelResponse.h
 include/aws/pinpoint/model/APNSMessage.h
 include/aws/pinpoint/model/APNSSandboxChannelRequest.h
 include/aws/pinpoint/model/APNSSandboxChannelResponse.h
+include/aws/pinpoint/model/APNSVoipChannelRequest.h
+include/aws/pinpoint/model/APNSVoipChannelResponse.h
+include/aws/pinpoint/model/APNSVoipSandboxChannelRequest.h
+include/aws/pinpoint/model/APNSVoipSandboxChannelResponse.h
 include/aws/pinpoint/model/Action.h
 include/aws/pinpoint/model/ActivitiesResponse.h
 include/aws/pinpoint/model/ActivityResponse.h
@@ -7720,6 +7756,10 @@ include/aws/pinpoint/model/DeleteApnsChannelRequest.h
 include/aws/pinpoint/model/DeleteApnsChannelResult.h
 include/aws/pinpoint/model/DeleteApnsSandboxChannelRequest.h
 include/aws/pinpoint/model/DeleteApnsSandboxChannelResult.h
+include/aws/pinpoint/model/DeleteApnsVoipChannelRequest.h
+include/aws/pinpoint/model/DeleteApnsVoipChannelResult.h
+include/aws/pinpoint/model/DeleteApnsVoipSandboxChannelRequest.h
+include/aws/pinpoint/model/DeleteApnsVoipSandboxChannelResult.h
 include/aws/pinpoint/model/DeleteAppRequest.h
 include/aws/pinpoint/model/DeleteAppResult.h
 include/aws/pinpoint/model/DeleteBaiduChannelRequest.h
@@ -7742,7 +7782,6 @@ include/aws/pinpoint/model/DirectMessageConfiguration.h
 include/aws/pinpoint/model/Duration.h
 include/aws/pinpoint/model/EmailChannelRequest.h
 include/aws/pinpoint/model/EmailChannelResponse.h
-include/aws/pinpoint/model/EmailMessage.h
 include/aws/pinpoint/model/EndpointBatchItem.h
 include/aws/pinpoint/model/EndpointBatchRequest.h
 include/aws/pinpoint/model/EndpointDemographic.h
@@ -7764,6 +7803,10 @@ include/aws/pinpoint/model/GetApnsChannelRequest.h
 include/aws/pinpoint/model/GetApnsChannelResult.h
 include/aws/pinpoint/model/GetApnsSandboxChannelRequest.h
 include/aws/pinpoint/model/GetApnsSandboxChannelResult.h
+include/aws/pinpoint/model/GetApnsVoipChannelRequest.h
+include/aws/pinpoint/model/GetApnsVoipChannelResult.h
+include/aws/pinpoint/model/GetApnsVoipSandboxChannelRequest.h
+include/aws/pinpoint/model/GetApnsVoipSandboxChannelResult.h
 include/aws/pinpoint/model/GetAppRequest.h
 include/aws/pinpoint/model/GetAppResult.h
 include/aws/pinpoint/model/GetApplicationSettingsRequest.h
@@ -7849,6 +7892,10 @@ include/aws/pinpoint/model/UpdateApnsChannelRequest.h
 include/aws/pinpoint/model/UpdateApnsChannelResult.h
 include/aws/pinpoint/model/UpdateApnsSandboxChannelRequest.h
 include/aws/pinpoint/model/UpdateApnsSandboxChannelResult.h
+include/aws/pinpoint/model/UpdateApnsVoipChannelRequest.h
+include/aws/pinpoint/model/UpdateApnsVoipChannelResult.h
+include/aws/pinpoint/model/UpdateApnsVoipSandboxChannelRequest.h
+include/aws/pinpoint/model/UpdateApnsVoipSandboxChannelResult.h
 include/aws/pinpoint/model/UpdateApplicationSettingsRequest.h
 include/aws/pinpoint/model/UpdateApplicationSettingsResult.h
 include/aws/pinpoint/model/UpdateBaiduChannelRequest.h
@@ -9267,6 +9314,8 @@ include/aws/sqs/model/GetQueueUrlRequest.h
 include/aws/sqs/model/GetQueueUrlResult.h
 include/aws/sqs/model/ListDeadLetterSourceQueuesRequest.h
 include/aws/sqs/model/ListDeadLetterSourceQueuesResult.h
+include/aws/sqs/model/ListQueueTagsRequest.h
+include/aws/sqs/model/ListQueueTagsResult.h
 include/aws/sqs/model/ListQueuesRequest.h
 include/aws/sqs/model/ListQueuesResult.h
 include/aws/sqs/model/Message.h
@@ -9285,6 +9334,8 @@ include/aws/sqs/model/SendMessageBatchResultEntry.h
 include/aws/sqs/model/SendMessageRequest.h
 include/aws/sqs/model/SendMessageResult.h
 include/aws/sqs/model/SetQueueAttributesRequest.h
+include/aws/sqs/model/TagQueueRequest.h
+include/aws/sqs/model/UntagQueueRequest.h
 include/aws/ssm/SSMClient.h
 include/aws/ssm/SSMEndpoint.h
 include/aws/ssm/SSMErrorMarshaller.h

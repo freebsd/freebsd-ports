@@ -9,7 +9,7 @@ CATEGORIES=	textproc
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Generic template rendering and notifications with Consul
 
-LICENSE=	MPL
+LICENSE=	MPL20
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/go:lang/go
 

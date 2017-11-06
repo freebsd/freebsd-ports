@@ -1,0 +1,36 @@
+# $FreeBSD$
+
+PORTNAME=	iqtree
+DISTVERSIONPREFIX=	v
+DISTVERSION=	1.6.beta4
+PORTREVISION=	1
+CATEGORIES=	biology
+
+MAINTAINER=	jrm@FreeBSD.org
+COMMENT=	Efficient phylogenomic software by maximum likelihood
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/eigen3.pc:math/eigen3
+RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/eigen3.pc:math/eigen3
+
+USES=		cmake compiler:openmp
+USE_GITHUB=	yes
+GH_ACCOUNT=	Cibiv
+
+WRKSRC=		${WRKDIR}/IQ-TREE-${DISTVERSION}
+
+PLIST_FILES=	bin/iqtree
+PORTEXAMPLES=	example.cf example.nex example.phy models.nex
+
+OPTIONS_DEFINE=	EXAMPLES
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/iqtree ${STAGEDIR}${PREFIX}/bin
+
+do-install-EXAMPLES-on:
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/example/* ${STAGEDIR}${EXAMPLESDIR}
+
+.include <bsd.port.mk>

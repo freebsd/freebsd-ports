@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	node
-PORTVERSION=	8.6.0
+PORTVERSION=	8.8.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 MASTER_SITES=	http://nodejs.org/dist/v${PORTVERSION}/
@@ -89,14 +89,6 @@ CXXFLAGS+=	-D_GLIBCXX_USE_C99
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' \
 		${WRKSRC}/deps/v8/src/v8.gyp
-	# So many different ways to run python. Fix them all.
-	@${REINPLACE_CMD} -e 's|/usr/bin/env python|${PYTHON_CMD}|' \
-		${WRKSRC}/configure
-	@${FIND} ${WRKSRC} -type f -name '*.gyp*' -print0 \
-		| ${XARGS} -0 ${REINPLACE_CMD} \
-			-e "s|'python'|'${PYTHON_CMD}'|" \
-			-e 's|<!(python |<!(${PYTHON_CMD} |' \
-			-e 's|\&\& python |\&\& ${PYTHON_CMD} |'
 
 post-configure:
 	# Post-process Makefile and *.mk files created by node-gyp and remove

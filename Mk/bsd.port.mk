@@ -1069,6 +1069,10 @@ STAGEDIR?=	${WRKDIR}/stage
 NOTPHONY?=
 FLAVORS?=
 FLAVOR?=
+# Store env FLAVOR for later
+.if !defined(_FLAVOR)
+_FLAVOR:=	${FLAVOR}
+.endif
 # XXX: We have no real FLAVORS support in ports or tools yet.
 #PORTS_FEATURES+=	FLAVORS
 MINIMAL_PKG_VERSION=	1.6.0
@@ -3764,7 +3768,12 @@ post-clean-noflavor:
 clean: ${CLEAN_DEPENDENCIES}
 .endif
 
-.for _f in ${FLAVORS}
+.if !empty(_FLAVOR)
+_CLEANFLAVORS=	${_FLAVOR}
+.else
+_CLEANFLAVORS=	${FLAVORS}
+.endif
+.for _f in ${_CLEANFLAVORS}
 CLEAN_DEPENDENCIES=
 .if !defined(NOCLEANDEPENDS)
 CLEAN_DEPENDENCIES+=	limited-clean-depends-${_f}
@@ -4681,6 +4690,24 @@ ${_t}:
 
 .if !target(pre-check-config)
 pre-check-config:
+_CHECK_OPTIONS_NAMES=	OPTIONS_DEFINE
+_CHECK_OPTIONS_NAMES+=	${OPTIONS_GROUP:S/^/OPTIONS_GROUP_/}
+_CHECK_OPTIONS_NAMES+=	${OPTIONS_MULTI:S/^/OPTIONS_MULTI_/}
+_CHECK_OPTIONS_NAMES+=	${OPTIONS_RADIO:S/^/OPTIONS_RADIO_/}
+_CHECK_OPTIONS_NAMES+=	${OPTIONS_SINGLE:S/^/OPTIONS_SINGLE_/}
+.for var in ${_CHECK_OPTIONS_NAMES}
+.  if defined(${var})
+.    for o in ${${var}}
+.      if ${o:C/[-_[:upper:][:digit:]]//g}
+OPTIONS_BAD_NAMES+=	${o}
+.      endif
+.    endfor
+.  endif
+.endfor
+.if defined(OPTIONS_BAD_NAMES) && !empty(OPTIONS_BAD_NAMES)
+DEV_WARNING+=	"These options name have characters outside of [-_A-Z0-9]:"
+DEV_WARNING+=	"${OPTIONS_BAD_NAMES:O:u}"
+.endif
 .for single in ${OPTIONS_SINGLE}
 .  for opt in ${OPTIONS_SINGLE_${single}}
 .    if empty(ALL_OPTIONS:M${single}) || !empty(PORT_OPTIONS:M${single})

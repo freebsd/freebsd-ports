@@ -27,6 +27,7 @@
     SUBDIR += fugu
     SUBDIR += gajim
     SUBDIR += gale
+    SUBDIR += gitterdone
     SUBDIR += gloox
     SUBDIR += hotot
     SUBDIR += hs-haskell-xmpp
@@ -115,6 +116,7 @@
     SUBDIR += pidgin-osd
     SUBDIR += pidgin-pidgimpd
     SUBDIR += pidgin-privacy-please
+    SUBDIR += pidgin-rocketchat
     SUBDIR += pidgin-sipe
     SUBDIR += pidgin-skype
     SUBDIR += pidgin-skypeweb

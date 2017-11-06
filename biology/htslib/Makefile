@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	htslib
-PORTVERSION=	1.3.1
+PORTVERSION=	1.6
 CATEGORIES=	biology devel
 
 MAINTAINER=	cartwright@asu.edu
@@ -34,16 +34,8 @@ CURL_CONFIGURE_ENABLE=	libcurl
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-MAKE_ENV=	INSTALL_LIB="${INSTALL_LIB}" \
-		INSTALL_DATA="${INSTALL_DATA}" \
-		INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
-		INSTALL_DIR="${MKDIR}"
-
 PLIST_SUB=	PORTVERSION="${PORTVERSION}"
 
 TEST_TARGET=	test
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|@PORTVERSION@|${PORTVERSION}|g' ${WRKSRC}/configure.ac
 
 .include <bsd.port.mk>

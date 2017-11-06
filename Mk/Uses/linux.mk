@@ -47,7 +47,7 @@ LINUX_ARCH=		${ARCH}
 IGNORE=			Linux CentOS ${LINUX_DIST_VER} is unsupported on ${ARCH}
 .endif
 .elif ${linux_ARGS} == c7
-LINUX_DIST_VER?=	7.3.1611
+LINUX_DIST_VER?=	7.4.1708
 .if ${ARCH} == amd64
 LINUX_ARCH=		x86_64
 .elif ${ARCH} == i386
@@ -114,7 +114,6 @@ linux_libvorbis_DEP=		linux-${linux_ARGS}-libvorbis>0:audio/linux-${linux_ARGS}-
 linux_libxml2_DEP=		linux-${linux_ARGS}-libxml2>0:textproc/linux-${linux_ARGS}-libxml2
 linux_mikmod_DEP=		linux-${linux_ARGS}-libmikmod>0:audio/linux-${linux_ARGS}-mikmod
 linux_naslibs_DEP=		linux-${linux_ARGS}-nas>0:audio/linux-${linux_ARGS}-nas-libs
-linux_ncurses-base_DEP=		linux-${linux_ARGS}-ncurses-base>0:devel/linux-${linux_ARGS}-ncurses-base
 linux_nettle_DEP=		linux-${linux_ARGS}-nettle>0:security/linux-${linux_ARGS}-nettle
 linux_nspr_DEP=			linux-${linux_ARGS}-nspr>0:devel/linux-${linux_ARGS}-nspr
 linux_nss_DEP=			linux-${linux_ARGS}-nss>0:security/linux-${linux_ARGS}-nss

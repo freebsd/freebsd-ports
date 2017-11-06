@@ -1,5 +1,5 @@
 bin/obs
-include/obs/audio-monitoring/null/null-audio-monitoring.c
+include/obs/audio-monitoring/pulse/pulseaudio-wrapper.h
 include/obs/callback/calldata.h
 include/obs/callback/decl.h
 include/obs/callback/proc.h

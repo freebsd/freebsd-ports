@@ -13,6 +13,8 @@ COMMENT=	GUI component of the Rekall framework
 LICENSE=	GPLv2
 
 IGNORE=		does not work with rekall-core 1.6.0
+DEPRECATED=	PoC that is no longer supported
+EXPIRATION_DATE=	2017-11-29
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}rekall-core>=1.5.0.p:security/py-rekall-core \
 		${PYTHON_PKGNAMEPREFIX}codegen>=1.0:devel/py-codegen \

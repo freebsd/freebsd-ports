@@ -1,5 +1,5 @@
---- avahi-ui/Makefile.in.orig	2013-12-11 12:03:44.000000000 +0100
-+++ avahi-ui/Makefile.in	2013-12-11 12:05:00.000000000 +0100
+--- avahi-ui/Makefile.in.orig	2017-09-15 01:20:16 UTC
++++ avahi-ui/Makefile.in
 @@ -125,9 +125,7 @@ am__installdirs = "$(DESTDIR)$(libdir)" 
  	"$(DESTDIR)$(desktopdir)" "$(DESTDIR)$(avahiincludedir)"
  LTLIBRARIES = $(lib_LTLIBRARIES)
@@ -85,4 +85,4 @@
 +@HAVE_GTK_TRUE@	test -z "$(desktopdir)" || $(MKDIR_P) "$(DESTDIR)$(desktopdir)"
  	@list='$(desktop_DATA)'; test -n "$(desktopdir)" || list=; \
  	for p in $$list; do \
- 	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \ 
+ 	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
