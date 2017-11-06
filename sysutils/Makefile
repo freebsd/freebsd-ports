@@ -934,6 +934,7 @@
     SUBDIR += qjail4
     SUBDIR += qlogtools
     SUBDIR += qpxtool
+    SUBDIR += qsudo
     SUBDIR += qsynergy
     SUBDIR += qt5-qtdiag
     SUBDIR += qt5-qtpaths
