@@ -256,6 +256,7 @@ sbin/munin-sched
 %%DATADIR%%/plugins/users
 %%PERL%%%%DATADIR%%/plugins/varnish_
 %%DATADIR%%/plugins/vmstat
+%%DATADIR%%/plugins/zfs_arc_compression
 %%DATADIR%%/plugins/zfs_compress
 %%DATADIR%%/plugins/zimbra_
 %%DATADIR%%/plugins/zpool_chksum
