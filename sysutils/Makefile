@@ -1192,6 +1192,7 @@
     SUBDIR += tty-clock
     SUBDIR += ttyd
     SUBDIR += ttyload
+    SUBDIR += trueos-libqt5
     SUBDIR += tuptime
     SUBDIR += tw_cli
     SUBDIR += tzdialog
