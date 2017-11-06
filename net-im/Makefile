@@ -27,6 +27,7 @@
     SUBDIR += fugu
     SUBDIR += gajim
     SUBDIR += gale
+    SUBDIR += gitterdone
     SUBDIR += gloox
     SUBDIR += hotot
     SUBDIR += hs-haskell-xmpp
