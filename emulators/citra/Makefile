@@ -5,6 +5,9 @@ PORTVERSION=	s20171105
 PORTREVISION?=	0
 CATEGORIES=	emulators
 
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES=	ff17773c28b1.patch:-p1
+
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Nintendo 3DS emulator/debugger
 
