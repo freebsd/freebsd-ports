@@ -16,8 +16,9 @@ USES=		cmake localbase:ldflags
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	NagyD
+GH_PROJECT=	SDLPoP
 
-WRKSRC=		${WRKDIR}/SDLPoP-${PORTVERSION}/src
+WRKSRC_SUBDIR=	src
 USE_SDL=	sdl2 image2 mixer2
 PORTDOCS=	*
 
