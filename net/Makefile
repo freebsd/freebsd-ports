@@ -376,7 +376,6 @@
     SUBDIR += librouteros
     SUBDIR += librsync2
     SUBDIR += libsocket++
-    SUBDIR += libsocketcpp
     SUBDIR += libsrtp
     SUBDIR += libtnl
     SUBDIR += libtrace
