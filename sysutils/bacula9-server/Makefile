@@ -45,6 +45,7 @@ OPTIONS_SUB=		yes
 
 PYTHON_USES=		python
 PYTHON_CONFIGURE_ON=	--with-python=yes
+PYTHON_BROKEN=	Does not package
 
 .if !defined(WITH_CLIENT_ONLY)
 LIB_DEPENDS+=	libbac-${PORTVERSION}.so:sysutils/bacula9-client
