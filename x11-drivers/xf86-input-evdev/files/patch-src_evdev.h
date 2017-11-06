@@ -1,4 +1,4 @@
---- src/evdev.h.orig	2015-03-27 01:35:50 UTC
+--- src/evdev.h.orig	2016-11-21 04:59:44 UTC
 +++ src/evdev.h
 @@ -36,7 +36,15 @@
  #define EVDEV_H

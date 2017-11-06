@@ -2,6 +2,7 @@
 
 PORTNAME=	coq
 PORTVERSION=	8.6
+PORTREVISION=	1
 PORTEPOCH=	3
 CATEGORIES=	math
 MASTER_SITES=	http://coq.inria.fr/distrib/V${PORTVERSION}/files/ \
@@ -18,6 +19,9 @@ BUILD_DEPENDS=	camlp5:devel/ocaml-camlp5 \
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2
 
+BROKEN_armv6=		fails to compile: Fatal error: exception Invalid_argument("index out of bounds")
+BROKEN_powerpc=		fails to link
+
 USES=		gmake gettext-runtime
 USE_EMACS=	yes
 USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk20 gtksourceview2 pango
@@ -31,8 +35,6 @@ CONFIGURE_ARGS=	-prefix ${PREFIX} \
 		-byteonly
 MAKE_ENV=	VERBOSE=1
 ALL_TARGET=	world
-
-BROKEN_powerpc=		does not link
 
 OPTIONS_DEFINE=		DOCS IDE
 OPTIONS_DEFAULT=	IDE

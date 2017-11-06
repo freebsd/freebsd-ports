@@ -24,7 +24,6 @@
     SUBDIR += bookview
     SUBDIR += bugzilla44
     SUBDIR += bugzilla50
-    SUBDIR += calligra-l10n
     SUBDIR += canna-lib
     SUBDIR += canna-server
     SUBDIR += cannadic
@@ -125,7 +124,6 @@
     SUBDIR += japaneseAFM
     SUBDIR += jargon-fpw
     SUBDIR += jcode.pl
-    SUBDIR += jd
     SUBDIR += jed
     SUBDIR += jishyo
     SUBDIR += jls
@@ -192,7 +190,6 @@
     SUBDIR += ng-canna
     SUBDIR += ng-devel
     SUBDIR += ngraph-fonts
-    SUBDIR += nhocr
     SUBDIR += nkf
     SUBDIR += onew
     SUBDIR += p5-2chproxy
@@ -237,11 +234,8 @@
     SUBDIR += quit
     SUBDIR += roget-fpw
     SUBDIR += rogue_s
-    SUBDIR += ruby-eb
-    SUBDIR += ruby-mecab
     SUBDIR += ruby-romkan
     SUBDIR += ruby-uconv
-    SUBDIR += ruby-usersguide
     SUBDIR += rubygem-jpmobile-ipaddresses
     SUBDIR += rubygem-jpmobile-terminfo
     SUBDIR += rubygem-jpmobile4
@@ -304,7 +298,6 @@
     SUBDIR += xshodou
     SUBDIR += xtr
     SUBDIR += xv
-    SUBDIR += xyaku
     SUBDIR += yasou-fpw
     SUBDIR += yc.el
     SUBDIR += zinnia

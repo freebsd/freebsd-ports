@@ -69,6 +69,7 @@ lib/freeswitch/mod/mod_cdr_csv.so
 %%ALL_MODULES%%lib/freeswitch/mod/mod_cdr_mongodb.so
 lib/freeswitch/mod/mod_cdr_sqlite.so
 %%ALL_MODULES%%lib/freeswitch/mod/mod_cidlookup.so
+%%ALL_MODULES%%lib/freeswitch/mod/mod_clearmode.so
 %%ALL_MODULES%%lib/freeswitch/mod/mod_cluechoo.so
 lib/freeswitch/mod/mod_commands.so
 lib/freeswitch/mod/mod_conference.so

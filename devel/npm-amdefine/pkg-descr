@@ -1,0 +1,5 @@
+Amdefine is a module that can be used to implement AMD's define() in Node.
+This allows you to code to the AMD API and have the module work
+in node programs without requiring those other programs to use AMD.
+
+WWW: https://github.com/jrburke/amdefine

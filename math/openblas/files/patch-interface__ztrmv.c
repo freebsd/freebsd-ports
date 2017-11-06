@@ -1,6 +1,6 @@
---- interface/ztrmv.c.orig	2016-08-31 20:58:42.000000000 -0700
-+++ interface/ztrmv.c	2017-01-01 10:26:22.759442000 -0800
-@@ -242,7 +242,7 @@
+--- interface/ztrmv.c.orig	2016-09-01 03:58:42 UTC
++++ interface/ztrmv.c
+@@ -242,7 +242,7 @@ void CNAME(enum CBLAS_ORDER order, enum 
    else
  #endif
    {

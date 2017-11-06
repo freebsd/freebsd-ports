@@ -4,18 +4,16 @@
 PORTNAME=	gather
 PORTVERSION=	0.4.1
 CATEGORIES=	sysutils
-MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	trociny@FreeBSD.org
 COMMENT=	Utility to store and display system statistics
 
 LICENSE=	BSD2CLAUSE
 
-BROKEN=		Unfetchable (google code has gone away)
-
-PROJECTHOST=	gatherit
-
 USES=		perl5
+USE_GITHUB=	yes
+
+GH_ACCOUNT=	trociny
 
 CONFLICTS_INSTALL=	harvest-[0-9]*
 

@@ -3,12 +3,14 @@
 
 PORTNAME=	libtsnnls
 PORTVERSION=	2.3.3
-PORTREVISION=	5
+PORTREVISION=	7
 CATEGORIES=	math
 MASTER_SITES=	http://www.jasoncantarella.com/downloads/
 
 MAINTAINER=	tzhuan@gmail.com
 COMMENT=	Fast Sparse Nonnegative Least Squares Solver
+
+BROKEN_aarch64=		fails to configure: error: cannot compute sizeof (int)
 
 GNU_CONFIGURE=	yes
 USES=		fortran libtool

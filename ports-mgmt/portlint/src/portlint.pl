@@ -15,7 +15,7 @@
 # was removed.
 #
 # $FreeBSD$
-# $MCom: portlint/portlint.pl,v 1.399 2016/12/23 23:18:20 jclarke Exp $
+# $MCom: portlint/portlint.pl,v 1.430 2017/10/08 17:56:03 jclarke Exp $
 #
 
 use strict;
@@ -50,7 +50,7 @@ $portdir = '.';
 # version variables
 my $major = 2;
 my $minor = 17;
-my $micro = 6;
+my $micro = 13;
 
 # default setting - for FreeBSD
 my $portsdir = '/usr/ports';
@@ -159,7 +159,7 @@ my @varlist =  qw(
 	OPTIONS_GROUP OPTIONS_SUB INSTALLS_OMF USE_RC_SUBR USES DIST_SUBDIR
 	ALLFILES CHECKSUM_ALGORITHMS INSTALLS_ICONS GNU_CONFIGURE
 	CONFIGURE_ARGS MASTER_SITE_SUBDIR LICENSE LICENSE_COMB NO_STAGE
-	DEVELOPER SUB_FILES
+	DEVELOPER SUB_FILES SHEBANG_LANG
 );
 
 my %makevar;
@@ -214,7 +214,26 @@ while (<IN>) {
 close(IN);
 
 open(MK, 'Makefile') || die "Makefile: $!";
-my @muses = grep($_ = /^USES[?+]?=\s*(.*)/ && $1, <MK>);
+my $ulineno = -1;
+my $uulineno = -1;
+my @muses = ();
+while (my $mline = <MK>) {
+	if ($uulineno == -1 && $mline =~ /^USE_/ && $mline !~ /^USE_GITHUB/) {
+		$uulineno = $.;
+	}
+    if ($mline =~ /^USES[?+]?=\s*(.*)/) {
+		if ($ulineno == -1) {
+		    $ulineno = $.;
+		}
+	    if ($1) {
+		    push @muses, split(/\s+/, $1);
+		}
+    }
+}
+if ($uulineno > -1 && $ulineno > -1 && $uulineno < $ulineno) {
+	&perror("WARN", 'Makefile', $uulineno, "USE_* seen before USES.  ".
+		"According to the porters-handbook, USES must appear first.");
+}
 foreach my $muse (@muses) {
 	$makevar{USES} .= " " . $muse;
 }
@@ -397,10 +416,6 @@ sub checkdistinfo {
 			my $now = time;
 			if ($1 > $now) {
 				&perror("FATAL", $file, $., "TIMESTAMP is in the future");
-			} else {
-				if ($now - $1 > (30 * 60 * 60 * 24)) {
-					&perror("WARN", $file, $., "TIMESTAMP is over 30 days old");
-				}
 			}
 			next;
 		}
@@ -850,6 +865,11 @@ sub checkplist {
 				"accordingly.") unless ($check_xxxdir_ok{$3} eq $1);
 		}
 
+		if ($_ =~ m#share/man/#) {
+			&perror("FATAL", $file, $., "Man pages must be installed into ".
+				"``man'' not ``share/man''.");
+		}
+
 		if ($_ =~ m#man/([^/]+/)?man[1-9ln]/([^\.]+\.[1-9ln])(\.gz)?$#) {
 			if (!$3) {
 				&perror("FATAL", $file, $., "Unpacked man file $2 listed.  ".
@@ -1084,16 +1104,23 @@ sub check_depends_syntax {
 			my %depmvars = ();
 			foreach my $dv ($m{'dep'}, $m{'dir'}, $m{'tgt'}) {
 				foreach my $mv ($dv =~ /\$\{([^}]+)\}/g) {
-					my $mvar = $1;
-					if (defined($depmvars{$mvar})) {
+					if (defined($depmvars{$mv})) {
 						next;
 					}
-					if (defined($makevar{$mvar})) {
-						$depmvars{$mvar} = $makevar{$mvar};
+					if (defined($makevar{$mv})) {
+						$depmvars{$mv} = $makevar{$mv};
 					} else {
-						$depmvars{$mvar} = &get_makevar($mvar);
+						$depmvars{$mv} = &get_makevar($mv);
 					}
 				}
+			}
+
+			# check JAVALIBDIR
+			if ($m{'dep'} =~ m|share/java/classes|) {
+				&perror("FATAL", $file, -1, "you should use \${JAVALIBDIR} ".
+					"in BUILD_DEPENDS/RUN_DEPENDS to define ".
+					"dependencies on JAR files installed in ".
+					"\${JAVAJARDIR}");
 			}
 
 			foreach my $dv ($m{'dep'}, $m{'dir'}, $m{'tgt'}) {
@@ -1142,6 +1169,18 @@ sub check_depends_syntax {
 					"USES[+]=gmake.");
 			}
 
+			my %udeps = (
+				'bison' => 'bison',
+				'fmake' => 'fmake',
+			);
+			foreach my $udep (keys %udeps) {
+				if ($m{'dep'} =~ /^$udep/) {
+					&perror("WARN", $file, -1, "dependency to $udep ".
+						"listed in $j.  consider using ".
+						"USES[+]=$udeps{$udep}.");
+				}
+			}
+
 			# check USE_QT
 			if ($m{'dep'} =~ /^(qt\d)+$/) {
 				&perror("WARN", $file, -1, "dependency to $1 ".
@@ -1163,13 +1202,6 @@ sub check_depends_syntax {
 					"USE_GHOSTSCRIPT(_BUILD|_RUN).");
 			}
 
-			# check JAVALIBDIR
-			if ($m{'dep'} =~ m|share/java/classes|) {
-				&perror("FATAL", $file, -1, "you should use \${JAVALIBDIR} ".
-					"in BUILD_DEPENDS/RUN_DEPENDS to define ".
-					"dependencies on JAR files installed in ".
-					"\${JAVAJARDIR}");
-			}
 
 			# check for PREFIX
 			if ($m{'dep'} =~ /\$\{PREFIX}/) {
@@ -1273,7 +1305,7 @@ sub checkmakefile {
 				"indentation");
 		}
 		if ($usetabs) {
-			if (m/^[A-Za-z0-9_-]+.?= /) {
+			if (m/^[A-Za-z0-9_-]+.?=\t*? \t*?/) {
 				if (m/[?+]=/) {
 					&perror("WARN", $file, $., "use a tab (not space) after a ".
 						"variable name");
@@ -1329,7 +1361,7 @@ sub checkmakefile {
 	#
 	if ($parenwarn) {
 		print "OK: checking for \$(VARIABLE).\n" if ($verbose);
-		if ($whole =~ /\$\([\w\d]+\)/) {
+		if ($whole =~ /[^\$]\$\([\w\d]+\)/) {
 			my $lineno = &linenumber($`);
 			&perror("WARN", $file, $lineno, "use \${VARIABLE}, instead of ".
 				"\$(VARIABLE).");
@@ -1389,16 +1421,6 @@ sub checkmakefile {
 		my $lineno = &linenumber($`);
 		&perror("WARN", $file, $lineno, "most uses of \${ENV} should really ".
 			"be \${SETENV} to avoid strange behaviors in sh(1).");
-	}
-
-	#
-	# whole file: use of :LU variable expansion modifiers
-	#
-	print "OK: checking for use of :LU variable expansion modifiers.\n" if ($verbose);
-	if ($whole =~ /\$\{[^}]+:[LU]/m) {
-		my $lineno = &linenumber($`);
-		&perror("FATAL", $file, $lineno, ":U and :L syntax is not supported ".
-			"anymore.  Please use :tu and :tl instead.");
 	}
 
 	#
@@ -1610,6 +1632,16 @@ sub checkmakefile {
 				}
 			}
 		}
+		if (-f 'pkg-plist') {
+			open(PL, 'pkg-plist');
+			my @pcontents = <PL>;
+			close(PL);
+			foreach my $i (@pcontents) {
+				while ($i =~ /\%\%([^%]+)\%\%/g) {
+					push @popt, $1;
+				}
+			}
+		}
 		# special cases for PORTDOCS/PORTEXAMPLES
 		push @popt, "DOCS" if $makevar{PORTDOCS};
 		push @popt, "EXAMPLES" if $makevar{PORTEXAMPLES};
@@ -1622,7 +1654,7 @@ sub checkmakefile {
 		# skip global options
 		next if ($i eq 'DOCS' or $i eq 'NLS' or $i eq 'EXAMPLES' or $i eq 'IPV6' or $i eq 'X11' or $i eq 'DEBUG');
 		if (!grep(/^$i$/, (@mopt, @popt))) {
-			if ($whole !~ /\n${i}_($m)(.)?=[^\n]+/) {
+			if ($whole !~ /\n${i}_($m)(_\w+)?(.)?=[^\n]+/) {
 				if (!$slaveport) {
 					&perror("WARN", $file, -1, "$i is listed in ".
 						"OPTIONS_DEFINE, but no PORT_OPTIONS:M$i appears.");
@@ -1762,25 +1794,24 @@ sub checkmakefile {
 	}
 
 	#
-	# whole file: Check if USES stuff is sorted
+	# whole file: Check if some macros are sorted
 	#
-	my @uses_to_sort = qw(
-		USES
-		USE_PYTHON
-		USE_XORG
+	my @macros_to_sort = qw(
+	    ONLY_FOR_ARCHS
+		NOT_FOR_ARCHS
 	);
-#	print "OK: checking to see if USES_* stuff is sorted.\n" if ($verbose);
-#	foreach my $sorted_use (@uses_to_sort) {
-#		while ($whole =~ /\n$sorted_use.?=\s*(.+)\n/g) {
-#			my $lineno = &linenumber($`);
-#			my $srex = $1;
-#			my @suses = sort(split / /, $srex);
-#			if (join(" ", @suses) ne $srex) {
-#				&perror("WARN", $file, $lineno, "the options to $sorted_use ".
-#					"are not sorted.  Please consider sorting them.");
-#			}
-#		}
-#	}
+	print "OK: checking to see if certain macros are sorted.\n" if ($verbose);
+	foreach my $sorted_macro (@macros_to_sort) {
+		while ($whole =~ /\n$sorted_macro.?=\s*(.+)\n/g) {
+			my $lineno = &linenumber($`);
+			my $srex = $1;
+			my @smacros = sort(split / /, $srex);
+			if (join(" ", @smacros) ne $srex) {
+				&perror("WARN", $file, $lineno, "the arguments to $sorted_macro ".
+					"are not sorted.  Please consider sorting them.");
+			}
+		}
+	}
 
 	#
 	# whole file: USE_GNOME=pkgconfig
@@ -1966,7 +1997,7 @@ xargs xmkmf
 				&& $curline !~ /^NO_CDROM(.)?=[^\n]+$i/m
 				&& $curline !~ /^MAINTAINER(.)?=[^\n]+$i/m
 				&& $curline !~ /^CATEGORIES(.)?=[^\n]+$i/m
-				&& $curline !~ /^USES(.)?=[^\n]+$i/m
+				&& $curline !~ /^(\w+)?USES(.)?=[^\n]+$i/m
 				&& $curline !~ /^WX_COMPS(.)?=[^\n]+$i/m
 				&& $curline !~ /^ONLY_FOR_ARCHS_REASON(.)?=[^\n]+$i/m
 				&& $curline !~ /^NOT_FOR_ARCHS_REASON(.)?=[^\n]+$i/m
@@ -2157,7 +2188,7 @@ xargs xmkmf
 	#
 	# whole file: USE_GCC checks
 	#
-	if ($whole =~ /^USE_GCC[?:]?=\s*(.*)$/m) {
+	if ($whole =~ /^USE_GCC[?:]?=\s*([^\s#]*).*$/m) {
 		my $lineno = &linenumber($`);
 		my $gcc_val = $1;
 		if ($gcc_val eq 'any' || $gcc_val eq 'yes') {
@@ -2248,6 +2279,19 @@ xargs xmkmf
 		&perror("WARN", $file, -1, "--build, --mandir, and --infodir ".
 			"are not needed in CONFIGURE_ARGS as they are already set in ".
 			"bsd.port.mk.");
+	}
+
+	#
+	# whole file: check for redundant SHEBANG_LANGs
+	#
+	if ($whole =~ /\nSHEBANG_LANG[?+]?=\s*([^\s#]*).*\n/) {
+		my @shebang_langs = split(/\s+/, $1 // '');
+		foreach my $shebang_lang (@shebang_langs) {
+			if ($makevar{SHEBANG_LANG} =~ /\b$shebang_lang\b/) {
+				&perror("WARN", $file, -1, "$shebang_lang is already included in ".
+					"SHEBANG_LANG.  You should remove this from $file.");
+			}
+		}
 	}
 
 	#
@@ -2622,8 +2666,6 @@ DIST_SUBDIR EXTRACT_ONLY
 				$ftphttp = 1;
 			}
 		}
-		&perror("WARN", $file, -1, "no ftp/http mirror in MASTER_SITES ".
-			"for users behind a proxy.") if ($urlseen && ! $ftphttp);
 	} else {
 		&perror("WARN", $file, -1, "no MASTER_SITES found. is it ok?");
 	}
@@ -2733,13 +2775,6 @@ DIST_SUBDIR EXTRACT_ONLY
 		foreach my $conflict (split ' ', $makevar{CONFLICTS}) {
 			`$pkg_version -T '$makevar{PKGNAME}' '$conflict'`;
 			my $selfconflict = !$?;
-			if ($conflict !~ /(?:[<>=]|[]?*]$)/) {
-				&perror("WARN", "", -1, "Conflict \"$conflict\" specified too narrow. ".
-					"You should end it with a wildcard (-[0-9]*).");
-			} elsif ($conflict !~ /[<>=-][^-]*[0-9][^-]*$/) {
-				&perror("WARN", "", -1, "Conflict \"$conflict\" specified too broad. ".
-					"You should end it with a version number fragment (-[0-9]*).");
-			}
 			if ($selfconflict) {
 				&perror("FATAL", "", -1, "Package conflicts with itself. ".
 					"You should remove \"$conflict\" from CONFLICTS.");
@@ -2932,7 +2967,7 @@ MAINTAINER COMMENT
 	#
 	print "OK: checking fourth section of $file (LICENSE).\n"
 		if ($verbose);
-	$tmp = $sections[$idx];
+	$tmp = $sections[$idx] // '';
 
 	if ($makevar{LICENSE}) {
 		&checkorder('LICENSE', $tmp, $file, qw(
@@ -2967,9 +3002,35 @@ MAINTAINER COMMENT
 	}
 
 	#
-	# section 6: *_DEPENDS (may not be there)
+	# section 6: BROKEN/IGNORE/DEPRECATED (may not be there)
 	#
-	print "OK: checking fifth section of $file (*_DEPENDS).\n"
+	print "OK: checking sixth section of $file (BROKEN/IGNORE/DEPRECATED).\n"
+		if ($verbose);
+	$tmp = $sections[$idx] // '';
+
+	@linestocheck = qw(
+DEPRECATED EXPIRATION_DATE FORBIDDEN BROKEN(_\w+)? IGNORE(_\w+)?
+ONLY_FOR_ARCHS ONLY_FOR_ARCHS_REASON(_\w+)?
+NOT_FOR_ARCHS NOT_FOR_ARCHS_REASON(_\w+)?
+	);
+
+	my $brokenpattern = "^(" . join("|", @linestocheck) . ")[?+:]?=";
+
+	if ($tmp =~ /$brokenpattern/) {
+		$idx++;
+	}
+
+	foreach my $i (@linestocheck) {
+		$tmp =~ s/$i[?+:]?=[^\n]+\n//g;
+	}
+
+	push(@varnames, @linestocheck);
+	&checkearlier($file, $tmp, @varnames);
+
+	#
+	# section 7: *_DEPENDS (may not be there)
+	#
+	print "OK: checking seventh section of $file (*_DEPENDS).\n"
 		if ($verbose);
 	$tmp = $sections[$idx] // '';
 
@@ -3329,14 +3390,13 @@ sub checkorder {
 
 sub checkearlier {
 	my($file, $str, @varnames) = @_;
-	my($i);
 
 	$str //= '';
 
-	print "OK: checking items that has to appear earlier.\n" if ($verbose);
+	print "OK: checking items that have to appear earlier.\n" if ($verbose);
 	foreach my $i (@varnames) {
-		if ($str =~ /\n$i\??=/) {
-			&perror("WARN", $file, -1, "\"$i\" has to appear earlier.");
+		if ($str =~ /\n($i)\??=/) {
+			&perror("WARN", $file, -1, "\"$1\" has to appear earlier.");
 		}
 	}
 }
@@ -3347,7 +3407,7 @@ sub linenumber {
 
 	@lines = split /\n/, $text;
 
-	return scalar(@lines);
+	return scalar(@lines) - 1;
 }
 
 sub abspathname {
@@ -3378,6 +3438,11 @@ sub abspathname {
 
 			if ($pre =~ /MASTER_SITE_SUBDIR/) {
 				# MASTER_SITE_SUBDIR lines are ok.
+				$i = '';
+			}
+			if ($s =~ /\$\{[^}]*?$i/) {
+				# If we're inside a make variable, we probably do not have
+				# an absolute path.
 				$i = '';
 			}
 		}

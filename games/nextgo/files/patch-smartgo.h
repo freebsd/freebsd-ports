@@ -1,6 +1,6 @@
---- smartgo.h.orig	Sun Jan 12 05:01:52 2003
-+++ smartgo.h	Sat Nov 18 17:18:57 2006
-@@ -122,7 +122,7 @@
+--- smartgo.h.orig	2003-01-12 04:01:52 UTC
++++ smartgo.h
+@@ -122,7 +122,7 @@ typedef struct _node {
  extern node* parse_tree(char* inputBuffer);
  
  /*   Routines from smartgoeval.c needed by other routines.   */
@@ -9,7 +9,7 @@
  
  
  /*   Routines from smartgotree.c needed by other routines.  */
-@@ -134,7 +134,7 @@
+@@ -134,7 +134,7 @@ extern node* findLast0(node* currentNode
  extern node* forwardOneVariant(node* currentNode);
  extern node* backOneVariant(node* currentNode);
  extern void clearNodeFlags(node* currentNode);

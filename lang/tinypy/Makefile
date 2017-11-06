@@ -5,19 +5,19 @@ PORTNAME=	tinypy
 PORTVERSION=	1.1
 PORTREVISION=	1
 CATEGORIES=	lang python
-MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	saper@saper.info
 COMMENT=	Minimalist implementation of python in 64k of code
 
 LICENSE=	MIT PSFL
 LICENSE_COMB=	multi
-LICENSE_FILE=	LICENSE.txt
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-BROKEN=		Unfetchable (google code has gone away)
+GH_ACCOUNT=	philhassey
 
 USES=		python:build
 USE_PYTHON=	distutils noegginfo
+USE_GITHUB=	yes
 
 PYDISTUTILS_BUILD_TARGET=	linux
 
@@ -43,6 +43,9 @@ post-patch:
 
 do-configure:
 	@${DO_NADA}
+
+pre-build:
+	@${MKDIR} ${WRKSRC}/build
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/build/tinypy ${STAGEDIR}${PREFIX}/bin

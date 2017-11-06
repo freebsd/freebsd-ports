@@ -11,7 +11,7 @@ DISTNAME=	${RUBY_DISTNAME}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	ruby@FreeBSD.org
-COMMENT?=	Object-oriented interpreted scripting language
+COMMENT=	Object-oriented interpreted scripting language
 
 LICENSE=	BSD2CLAUSE RUBY
 LICENSE_COMB=	dual
@@ -23,6 +23,9 @@ BUILD_DEPENDS=	libffi>=0:devel/libffi
 LIB_DEPENDS=	libyaml.so:textproc/libyaml
 RUN_DEPENDS=	libffi>=0:devel/libffi
 
+BROKEN_SSL=	openssl-devel
+BROKEN_SSL_REASON_openssl-devel=does not detect and buid the openssl*.rb bits	
+
 CONFIGURE_ARGS=	${RUBY_CONFIGURE_ARGS} \
 		--disable-rpath \
 		--enable-pthread \
@@ -30,14 +33,13 @@ CONFIGURE_ARGS=	${RUBY_CONFIGURE_ARGS} \
 		--with-ruby-version=minor \
 		--with-sitedir="${PREFIX}/lib/ruby/site_ruby" \
 		--with-vendordir="${PREFIX}/lib/ruby/vendor_ruby"
-CONFIGURE_ENV=	LC_ALL=C debugflags=
+CONFIGURE_ENV=	debugflags=
 CPPFLAGS+=	-I${LOCALBASE}/include
 GNU_CONFIGURE=	yes
 # Keep this, else ruby will fail to load libraries dependent of libpthread.
 LIBS+=		-lpthread -L${LOCALBASE}/lib
-MAKE_ENV=	LC_ALL=C
 USE_LDCONFIG=	yes
-USES=		autoreconf cpe execinfo ssl tar:xz
+USES=		autoreconf cpe ssl tar:xz
 WRKSRC=		${RUBY_WRKSRC}
 
 RUBY_VER=		2.3
@@ -56,7 +58,7 @@ RDOC_DESC=		Build and install Rdoc indexes
 EDIT_DESC=		Which line editing lib to use
 LIBEDIT_DESC=		Use libedit
 READLINE_DESC=		Use libreadline
-CAPIDOCS_BUILD_DEPENDS=	doxygen>0:devel/doxygen \
+CAPIDOCS_BUILD_DEPENDS=	doxygen>=1.8.13,2:devel/doxygen \
 			dot:graphics/graphviz
 CAPIDOCS_CONFIGURE_ENABLE=	install-capi
 GMP_CONFIGURE_WITH=	gmp
@@ -64,13 +66,16 @@ GMP_LIB_DEPENDS=	libgmp.so:math/gmp
 LIBEDIT_CONFIGURE_ON=	--enable-libedit --with-libedit-dir=${LOCALBASE}
 LIBEDIT_USES=		libedit
 RDOC_CONFIGURE_ENABLE=	install-rdoc
-READLINE_BUILD_DEPENDS=	readline>=0:devel/readline
 READLINE_CONFIGURE_ON=	--disable-libedit --with-readline-dir=${LOCALBASE}
-READLINE_RUN_DEPENDS=	readline>=0:devel/readline
+READLINE_USES=		readline:port
 
 CPE_VENDOR=	ruby-lang
 CPE_VERSION=	${RUBY_RELVERSION}
 CPE_UPDATE=	p${RUBY_PATCHLEVEL}
+
+# --- loadpath.o ---
+# loadpath.c:30:2: error: RUBY_EXEC_PREFIX must be defined
+MAKE_JOBS_UNSAFE=	yes
 
 .include <bsd.port.pre.mk>
 
@@ -90,6 +95,11 @@ CONFIGURE_ARGS+=--enable-dtrace
 .else
 CONFIGURE_ARGS+=--disable-dtrace
 .endif
+.endif
+
+# keep in sync with all platforms where libunwind is available
+.if (${ARCH} == "amd64" || ${ARCH} == "i386")
+LIB_DEPENDS+=	libunwind.so:devel/libunwind
 .endif
 
 .if ${ARCH} == "powerpc64"

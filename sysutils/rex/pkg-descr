@@ -1,0 +1,8 @@
+REX is a remote execution utility that runs a supplied command or shell
+script on several hosts in succession.  It is also able to copy a file
+(or files) to several hosts.
+
+Rex is written in Tcl and provides extensive scripting facilities.  It
+provides a convenient way to administrate multiple servers.
+
+WWW: http://puszcza.gnu.org.ua/projects/rex

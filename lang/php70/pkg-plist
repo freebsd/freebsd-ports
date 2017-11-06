@@ -231,6 +231,7 @@ include/php/main/win95nt.h
 %%EMBED%%lib/libphp7.so
 lib/php/build/Makefile.global
 lib/php/build/acinclude.m4
+lib/php/build/ax_check_compile_flag.m4
 lib/php/build/config.guess
 lib/php/build/config.sub
 lib/php/build/libtool.m4

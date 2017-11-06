@@ -10,8 +10,8 @@
 %%QT_INCDIR%%/QtSerialPort/qserialportglobal.h
 %%QT_INCDIR%%/QtSerialPort/qserialportinfo.h
 %%QT_INCDIR%%/QtSerialPort/qtserialportversion.h
-%%QT_LIBDIR%%/cmake/Qt5SerialPort/Qt5SerialPortConfig.cmake
-%%QT_LIBDIR%%/cmake/Qt5SerialPort/Qt5SerialPortConfigVersion.cmake
+%%QT_CMAKEDIR%%/Qt5SerialPort/Qt5SerialPortConfig.cmake
+%%QT_CMAKEDIR%%/Qt5SerialPort/Qt5SerialPortConfigVersion.cmake
 %%QT_LIBDIR%%/libQt5SerialPort.prl
 %%QT_LIBDIR%%/libQt5SerialPort.so
 %%QT_LIBDIR%%/libQt5SerialPort.so.5

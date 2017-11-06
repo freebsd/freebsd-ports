@@ -3,7 +3,7 @@
 
 PORTNAME=	gstreamer
 PORTVERSION=	0.10.3
-PORTREVISION=	5
+PORTREVISION=	8
 CATEGORIES=	multimedia
 MASTER_SITES=	http://gstreamer.freedesktop.org/src/qt-${PORTNAME}/
 PKGNAMESUFFIX=	-qt4
@@ -17,7 +17,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libboost_thread.so:devel/boost-libs
 
-USES=		bison cmake gmake kde:4 pathfix pkgconfig tar:bzip2
+USES=		bison cmake:noninja gmake kde:4 pathfix pkgconfig tar:bzip2
 USE_LDCONFIG=	yes
 USE_GSTREAMER=	yes
 USE_GNOME=	glib20

@@ -1,0 +1,11 @@
+bin/gcolor3
+share/appdata/gcolor3.appdata.xml
+share/applications/gcolor3.desktop
+share/icons/hicolor/scalable/apps/gcolor3.svg
+%%NLS%%share/locale/de_DE/LC_MESSAGES/Gcolor3.mo
+%%NLS%%share/locale/en_GB/LC_MESSAGES/Gcolor3.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/Gcolor3.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/Gcolor3.mo
+%%NLS%%share/locale/sr/LC_MESSAGES/Gcolor3.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/Gcolor3.mo
+%%NLS%%share/locale/uk/LC_MESSAGES/Gcolor3.mo

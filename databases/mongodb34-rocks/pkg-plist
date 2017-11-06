@@ -1,0 +1,5 @@
+@sample etc/mongod.conf.sample
+bin/mongo
+bin/mongod
+bin/mongoperf
+bin/mongos

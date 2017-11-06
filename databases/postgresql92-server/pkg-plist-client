@@ -553,6 +553,7 @@ lib/postgresql/pgxs/src/Makefile.port
 lib/postgresql/pgxs/src/Makefile.shlib
 lib/postgresql/pgxs/src/makefiles/pgxs.mk
 lib/postgresql/pgxs/src/nls-global.mk
+lib/postgresql/pgxs/src/test/regress/pg_regress
 man/man1/clusterdb.1.gz
 man/man1/createdb.1.gz
 man/man1/createlang.1.gz

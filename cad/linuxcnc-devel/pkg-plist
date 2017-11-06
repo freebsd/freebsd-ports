@@ -1,6 +1,3 @@
-share/X11/app-defaults/TkLinuxCNC
-share/X11/app-defaults/XEmc
-etc/rc.d/realtime
 bin/5axisgui
 bin/axis
 bin/axis-remote
@@ -18,6 +15,7 @@ bin/hal-histogram
 bin/hal_input
 bin/hal_manualtoolchange
 bin/halcmd
+bin/halcmd_twopass
 bin/halcompile
 bin/halmeter
 bin/halrmt
@@ -30,17 +28,19 @@ bin/haltcl
 bin/halui
 bin/hbmgui
 bin/hexagui
+bin/hy_gt_vfd
 bin/hy_vfd
 bin/image-to-gcode
 bin/inivar
 bin/io
 bin/iov2
-bin/keystick
 bin/latency-histogram
 bin/latency-plot
 bin/latency-test
+bin/lineardelta
 bin/linuxcnc
 bin/linuxcnc_info
+bin/linuxcnc_module_helper
 bin/linuxcnc_var
 bin/linuxcnclcd
 bin/linuxcncmkdesktop
@@ -52,6 +52,7 @@ bin/max5gui
 bin/mb2hal
 bin/mdi
 bin/milltask
+bin/mitsub_vfd
 bin/monitor-xhc-hb04
 bin/motion-logger
 bin/moveoff_gui
@@ -64,23 +65,29 @@ bin/pyngcgui
 bin/pyui
 bin/pyvcp
 bin/pyvcp_demo
+bin/rotarydelta
 bin/rs274
 bin/rtapi_app
 bin/scaragui
 bin/schedrmt
+bin/scorbot-er-3
 bin/sim_pin
 bin/simulate_probe
 bin/stepconf
+bin/teach-in
 bin/thermistor
 bin/tooledit
 bin/touchy
+bin/update_ini
 bin/vfdb_vfd
 bin/vfs11_vfd
 bin/wj200_vfd
 bin/xhc-hb04
 bin/xhc-hb04-accels
-bin/xlinuxcnc
-etc/linuxcnc/rtapi.conf
+bin/xyzac-trt-gui
+bin/xyzbc-trt-gui
+%%ETCDIR%%/rtapi.conf
+etc/rc.d/realtime
 include/linuxcnc/_sem.h
 include/linuxcnc/_shm.h
 include/linuxcnc/_timer.h
@@ -118,6 +125,7 @@ include/linuxcnc/iniaxis.hh
 include/linuxcnc/inifile.h
 include/linuxcnc/inifile.hh
 include/linuxcnc/inihal.hh
+include/linuxcnc/inijoint.hh
 include/linuxcnc/initool.hh
 include/linuxcnc/initraj.hh
 include/linuxcnc/interp_base.hh
@@ -175,6 +183,7 @@ include/linuxcnc/sem.hh
 include/linuxcnc/sendn.h
 include/linuxcnc/shm.hh
 include/linuxcnc/shmem.hh
+include/linuxcnc/simple_tp.h
 include/linuxcnc/sincos.h
 include/linuxcnc/spherical_arc.h
 include/linuxcnc/stat_msg.hh
@@ -235,10 +244,12 @@ lib/linuxcnc/modules/conv_s32_u32.so
 lib/linuxcnc/modules/conv_u32_bit.so
 lib/linuxcnc/modules/conv_u32_float.so
 lib/linuxcnc/modules/conv_u32_s32.so
+lib/linuxcnc/modules/corexykins.so
 lib/linuxcnc/modules/counter.so
 lib/linuxcnc/modules/ddt.so
 lib/linuxcnc/modules/deadzone.so
 lib/linuxcnc/modules/debounce.so
+lib/linuxcnc/modules/differential.so
 lib/linuxcnc/modules/edge.so
 lib/linuxcnc/modules/encoder.so
 lib/linuxcnc/modules/encoder_ratio.so
@@ -246,7 +257,6 @@ lib/linuxcnc/modules/estop_latch.so
 lib/linuxcnc/modules/feedcomp.so
 lib/linuxcnc/modules/flipflop.so
 lib/linuxcnc/modules/gantry.so
-lib/linuxcnc/modules/gantrykins.so
 lib/linuxcnc/modules/gearchange.so
 lib/linuxcnc/modules/genhexkins.so
 lib/linuxcnc/modules/genserkins.so
@@ -268,6 +278,7 @@ lib/linuxcnc/modules/limit1.so
 lib/linuxcnc/modules/limit2.so
 lib/linuxcnc/modules/limit3.so
 lib/linuxcnc/modules/lincurve.so
+lib/linuxcnc/modules/lineardeltakins.so
 lib/linuxcnc/modules/logic.so
 lib/linuxcnc/modules/lowpass.so
 lib/linuxcnc/modules/lut5.so
@@ -299,12 +310,15 @@ lib/linuxcnc/modules/orient.so
 lib/linuxcnc/modules/pid.so
 lib/linuxcnc/modules/pumakins.so
 lib/linuxcnc/modules/pwmgen.so
+lib/linuxcnc/modules/rosekins.so
+lib/linuxcnc/modules/rotarydeltakins.so
 lib/linuxcnc/modules/rotatekins.so
 lib/linuxcnc/modules/sample_hold.so
 lib/linuxcnc/modules/sampler.so
 lib/linuxcnc/modules/scale.so
 lib/linuxcnc/modules/scarakins.so
 lib/linuxcnc/modules/scope_rt.so
+lib/linuxcnc/modules/scorbot-kins.so
 lib/linuxcnc/modules/select8.so
 lib/linuxcnc/modules/serport.so
 lib/linuxcnc/modules/siggen.so
@@ -340,58 +354,61 @@ lib/linuxcnc/modules/wcomp.so
 lib/linuxcnc/modules/weighted_sum.so
 lib/linuxcnc/modules/xhc_hb04_util.so
 lib/linuxcnc/modules/xor2.so
-lib/tcltk/linuxcnc/bin/emccalib.tcl
-lib/tcltk/linuxcnc/bin/emcdebug.tcl
-lib/tcltk/linuxcnc/bin/emctesting.tcl
-lib/tcltk/linuxcnc/bin/emctuning.tcl
-lib/tcltk/linuxcnc/bin/genedit.tcl
-lib/tcltk/linuxcnc/bin/halconfig.tcl
-lib/tcltk/linuxcnc/bin/halshow.tcl
-lib/tcltk/linuxcnc/bin/pickconfig.tcl
-lib/tcltk/linuxcnc/bin/popimage
-lib/tcltk/linuxcnc/bin/tkbackplot.tcl
-lib/tcltk/linuxcnc/hal.so
-lib/tcltk/linuxcnc/linuxcnc.so
-lib/tcltk/linuxcnc/linuxcnc.tcl
-lib/tcltk/linuxcnc/mini.tcl
-lib/tcltk/linuxcnc/msgs/de.msg
-lib/tcltk/linuxcnc/msgs/es.msg
-lib/tcltk/linuxcnc/msgs/fi.msg
-lib/tcltk/linuxcnc/msgs/fr.msg
-lib/tcltk/linuxcnc/msgs/hu.msg
-lib/tcltk/linuxcnc/msgs/it.msg
-lib/tcltk/linuxcnc/msgs/ja.msg
-lib/tcltk/linuxcnc/msgs/pl.msg
-lib/tcltk/linuxcnc/msgs/pt_BR.msg
-lib/tcltk/linuxcnc/msgs/pt_br.msg
-lib/tcltk/linuxcnc/msgs/ro.msg
-lib/tcltk/linuxcnc/msgs/ru.msg
-lib/tcltk/linuxcnc/msgs/sk.msg
-lib/tcltk/linuxcnc/msgs/sr.msg
-lib/tcltk/linuxcnc/msgs/sv.msg
-lib/tcltk/linuxcnc/msgs/zh_CN.msg
-lib/tcltk/linuxcnc/msgs/zh_HK.msg
-lib/tcltk/linuxcnc/msgs/zh_TW.msg
-lib/tcltk/linuxcnc/msgs/zh_cn.msg
-lib/tcltk/linuxcnc/msgs/zh_hk.msg
-lib/tcltk/linuxcnc/msgs/zh_tw.msg
-lib/tcltk/linuxcnc/ngcgui.tcl
-lib/tcltk/linuxcnc/ngcgui_app.tcl
-lib/tcltk/linuxcnc/ngcgui_ttt.tcl
-lib/tcltk/linuxcnc/pkgIndex.tcl
-lib/tcltk/linuxcnc/scripts/Set_Coordinates.tcl
-lib/tcltk/linuxcnc/scripts/balloon.tcl
-lib/tcltk/linuxcnc/scripts/emchelp.tcl
-lib/tcltk/linuxcnc/show_errors.tcl
-lib/tcltk/linuxcnc/tklinuxcnc.tcl
-lib/tcltk/linuxcnc/tooledit.tcl
-lib/tcltk/linuxcnc/twopass.tcl
+lib/linuxcnc/modules/xyzac-trt-kins.so
+lib/linuxcnc/modules/xyzbc-trt-kins.so
+lib/tcllib/linuxcnc/bin/emccalib.tcl
+lib/tcllib/linuxcnc/bin/emcdebug.tcl
+lib/tcllib/linuxcnc/bin/emctesting.tcl
+lib/tcllib/linuxcnc/bin/emctuning.tcl
+lib/tcllib/linuxcnc/bin/genedit.tcl
+lib/tcllib/linuxcnc/bin/halconfig.tcl
+lib/tcllib/linuxcnc/bin/halshow.tcl
+lib/tcllib/linuxcnc/bin/pickconfig.tcl
+lib/tcllib/linuxcnc/bin/popimage
+lib/tcllib/linuxcnc/bin/tkbackplot.tcl
+lib/tcllib/linuxcnc/hal.so
+lib/tcllib/linuxcnc/linuxcnc.so
+lib/tcllib/linuxcnc/linuxcnc.tcl
+lib/tcllib/linuxcnc/msgs/de.msg
+lib/tcllib/linuxcnc/msgs/es.msg
+lib/tcllib/linuxcnc/msgs/fi.msg
+lib/tcllib/linuxcnc/msgs/fr.msg
+lib/tcllib/linuxcnc/msgs/hu.msg
+lib/tcllib/linuxcnc/msgs/it.msg
+lib/tcllib/linuxcnc/msgs/ja.msg
+lib/tcllib/linuxcnc/msgs/pl.msg
+lib/tcllib/linuxcnc/msgs/pt_BR.msg
+lib/tcllib/linuxcnc/msgs/pt_br.msg
+lib/tcllib/linuxcnc/msgs/ro.msg
+lib/tcllib/linuxcnc/msgs/ru.msg
+lib/tcllib/linuxcnc/msgs/sk.msg
+lib/tcllib/linuxcnc/msgs/sr.msg
+lib/tcllib/linuxcnc/msgs/sv.msg
+lib/tcllib/linuxcnc/msgs/zh_CN.msg
+lib/tcllib/linuxcnc/msgs/zh_HK.msg
+lib/tcllib/linuxcnc/msgs/zh_TW.msg
+lib/tcllib/linuxcnc/msgs/zh_cn.msg
+lib/tcllib/linuxcnc/msgs/zh_hk.msg
+lib/tcllib/linuxcnc/msgs/zh_tw.msg
+lib/tcllib/linuxcnc/ngcgui.tcl
+lib/tcllib/linuxcnc/ngcgui_app.tcl
+lib/tcllib/linuxcnc/ngcgui_ttt.tcl
+lib/tcllib/linuxcnc/pkgIndex.tcl
+lib/tcllib/linuxcnc/scripts/Set_Coordinates.tcl
+lib/tcllib/linuxcnc/scripts/balloon.tcl
+lib/tcllib/linuxcnc/scripts/emchelp.tcl
+lib/tcllib/linuxcnc/show_errors.tcl
+lib/tcllib/linuxcnc/tklinuxcnc.tcl
+lib/tcllib/linuxcnc/tooledit.tcl
+lib/tcllib/linuxcnc/twopass.tcl
 man/man1/axis-remote.1.gz
 man/man1/axis.1.gz
 man/man1/elbpcom.1.gz
 man/man1/gladevcp.1.gz
 man/man1/gs2.1.gz
 man/man1/hal_input.1.gz
+man/man1/hal_manualtoolchange.1.gz
+man/man1/hal_parport.1.gz
 man/man1/halcmd.1.gz
 man/man1/halcompile.1.gz
 man/man1/halmeter.1.gz
@@ -492,6 +509,7 @@ man/man3/rtapi_is.3rtapi.gz
 man/man3/rtapi_list.3rtapi.gz
 man/man3/rtapi_module_param.3rtapi.gz
 man/man3/rtapi_mutex.3rtapi.gz
+man/man3/rtapi_open_as_root.3rtapi.gz
 man/man3/rtapi_outb.3rtapi.gz
 man/man3/rtapi_parport.3rtapi.gz
 man/man3/rtapi_pci.3rtapi.gz
@@ -532,15 +550,19 @@ man/man9/encoder_ratio.9.gz
 man/man9/gantrykins.9.gz
 man/man9/genhexkins.9.gz
 man/man9/genserkins.9.gz
+man/man9/gentrivkins.9.gz
 man/man9/gladevcp.9.gz
+man/man9/hal_bb_gpio.9.gz
 man/man9/hm2_7i43.9.gz
 man/man9/hm2_7i90.9.gz
 man/man9/hm2_eth.9.gz
 man/man9/hm2_pci.9.gz
+man/man9/hm2_rpspi.9.gz
 man/man9/hm2_spi.9.gz
 man/man9/hostmot2.9.gz
 man/man9/kins.9.gz
 man/man9/lcd.9.gz
+man/man9/lineardeltakins.9.gz
 man/man9/matrix_kb.9.gz
 man/man9/maxkins.9.gz
 man/man9/motion.9.gz
@@ -549,6 +571,7 @@ man/man9/opto_ac5.9.gz
 man/man9/pid.9.gz
 man/man9/pumakins.9.gz
 man/man9/pwmgen.9.gz
+man/man9/rosekins.9.gz
 man/man9/rotatekins.9.gz
 man/man9/sampler.9.gz
 man/man9/scarakins.9.gz
@@ -563,6 +586,7 @@ man/man9/tripodkins.9.gz
 man/man9/trivkins.9.gz
 man/man9/watchdog.9.gz
 man/man9/weighted_sum.9.gz
+share/X11/app-defaults/TkLinuxCNC
 share/axis/images/axis-16x16.png
 share/axis/images/axis-24x24.png
 share/axis/images/axis-32x32.png
@@ -570,21 +594,9 @@ share/axis/images/axis-48x48.png
 share/axis/images/axis-lathe.ngc
 share/axis/images/axis.ngc
 share/axis/images/banner.gif
-share/axis/images/cba0.gif
-share/axis/images/cba1.gif
-share/axis/images/cbd0.gif
-share/axis/images/cbd1.gif
-share/axis/images/cbn0.gif
-share/axis/images/cbn1.gif
 share/axis/images/close.gif
 share/axis/images/downarrow.xbm
 share/axis/images/leftarrow.xbm
-share/axis/images/rba0.gif
-share/axis/images/rba1.gif
-share/axis/images/rbd0.gif
-share/axis/images/rbd1.gif
-share/axis/images/rbn0.gif
-share/axis/images/rbn1.gif
 share/axis/images/resume_inhibit.gif
 share/axis/images/rightarrow.xbm
 share/axis/images/spindle_ccw.gif
@@ -615,10 +627,8 @@ share/axis/images/tool_zoomout.gif
 share/axis/images/uparrow.xbm
 share/axis/tcl/accel.tcl
 share/axis/tcl/axis.tcl
-share/axis/tcl/cb.tcl
 share/axis/tcl/combobox.tcl
 share/axis/tcl/dialog.tcl
-share/axis/tcl/rb.tcl
 share/axis/tcl/sb.tcl
 share/axis/tcl/support.tcl
 share/doc/linuxcnc/AUTHORS
@@ -745,6 +755,14 @@ share/doc/linuxcnc/examples/sample-configs/attic/demo_mazak/demo_mazak.ini
 share/doc/linuxcnc/examples/sample-configs/attic/demo_mazak/demo_mazak.tbl
 share/doc/linuxcnc/examples/sample-configs/attic/demo_mazak/tester.hal
 share/doc/linuxcnc/examples/sample-configs/attic/demo_mazak/tester.vcp
+share/doc/linuxcnc/examples/sample-configs/attic/unclaimed/max/jogwheel.hal
+share/doc/linuxcnc/examples/sample-configs/attic/unclaimed/max/max.hal
+share/doc/linuxcnc/examples/sample-configs/attic/unclaimed/plasma-thc/mp1000A.hal
+share/doc/linuxcnc/examples/sample-configs/attic/unclaimed/plasma-thc/mp1000A_parport.hal
+share/doc/linuxcnc/examples/sample-configs/attic/unclaimed/plasma-thc/mp1000B.hal
+share/doc/linuxcnc/examples/sample-configs/attic/unclaimed/plasma-thc/mp1000B_parport.hal
+share/doc/linuxcnc/examples/sample-configs/attic/unclaimed/plasma-thc/stepper.hal
+share/doc/linuxcnc/examples/sample-configs/attic/unclaimed/plasma-thc/thc300.hal
 share/doc/linuxcnc/examples/sample-configs/by_interface/README
 share/doc/linuxcnc/examples/sample-configs/by_interface/general_mechatronics/GM6-PCI/3-axis-servo.hal
 share/doc/linuxcnc/examples/sample-configs/by_interface/general_mechatronics/GM6-PCI/3-axis-servo.ini
@@ -795,7 +813,6 @@ share/doc/linuxcnc/examples/sample-configs/by_interface/parport/classicladder/cl
 share/doc/linuxcnc/examples/sample-configs/by_interface/parport/classicladder/cl-estop/cl-estop.ini
 share/doc/linuxcnc/examples/sample-configs/by_interface/parport/classicladder/cl-estop/custom.hal
 share/doc/linuxcnc/examples/sample-configs/by_interface/parport/classicladder/cl-estop/custom_postgui.hal
-share/doc/linuxcnc/examples/sample-configs/by_interface/parport/classicladder/cl-estop/emc.nml
 share/doc/linuxcnc/examples/sample-configs/by_interface/parport/classicladder/cl-estop/estop.clp
 share/doc/linuxcnc/examples/sample-configs/by_interface/parport/classicladder/cl-estop/panel.xml
 share/doc/linuxcnc/examples/sample-configs/by_interface/parport/classicladder/cl-estop/tool.tbl
@@ -969,6 +986,12 @@ share/doc/linuxcnc/examples/sample-configs/by_machine/cooltool/stepper.tbl
 share/doc/linuxcnc/examples/sample-configs/by_machine/cooltool/uni-dreh-g_pinout.hal
 share/doc/linuxcnc/examples/sample-configs/by_machine/cooltool/uni-dreh-g_stepper.hal
 share/doc/linuxcnc/examples/sample-configs/by_machine/nc_files
+share/doc/linuxcnc/examples/sample-configs/by_machine/scorbot-er-3/gripper.xml
+share/doc/linuxcnc/examples/sample-configs/by_machine/scorbot-er-3/pyvcp.hal
+share/doc/linuxcnc/examples/sample-configs/by_machine/scorbot-er-3/pyvcp.xml
+share/doc/linuxcnc/examples/sample-configs/by_machine/scorbot-er-3/scorbot-er-3.hal
+share/doc/linuxcnc/examples/sample-configs/by_machine/scorbot-er-3/scorbot-er-3.ini
+share/doc/linuxcnc/examples/sample-configs/by_machine/scorbot-er-3/shuttlexpress-customization.hal
 share/doc/linuxcnc/examples/sample-configs/by_machine/sherline/README
 share/doc/linuxcnc/examples/sample-configs/by_machine/sherline/Sherline3Axis/README
 share/doc/linuxcnc/examples/sample-configs/by_machine/sherline/Sherline3Axis/Sherline3Axis_inch.ini
@@ -1067,22 +1090,25 @@ share/doc/linuxcnc/examples/sample-configs/maintainer.txt
 share/doc/linuxcnc/examples/sample-configs/nc_files
 share/doc/linuxcnc/examples/sample-configs/sim/README
 share/doc/linuxcnc/examples/sample-configs/sim/axis/README
-share/doc/linuxcnc/examples/sample-configs/sim/axis/acc_test.ini
 share/doc/linuxcnc/examples/sample-configs/sim/axis/axis.ini
 share/doc/linuxcnc/examples/sample-configs/sim/axis/axis_9axis.ini
-share/doc/linuxcnc/examples/sample-configs/sim/axis/axis_foam.ini
 share/doc/linuxcnc/examples/sample-configs/sim/axis/axis_mm.ini
 share/doc/linuxcnc/examples/sample-configs/sim/axis/canterp.ini
 share/doc/linuxcnc/examples/sample-configs/sim/axis/canterp_example.can
-share/doc/linuxcnc/examples/sample-configs/sim/axis/check_constraints.hal
 share/doc/linuxcnc/examples/sample-configs/sim/axis/classicladder/README
 share/doc/linuxcnc/examples/sample-configs/sim/axis/classicladder/classicladder.hal
 share/doc/linuxcnc/examples/sample-configs/sim/axis/classicladder/demo_sim_cl.clp
 share/doc/linuxcnc/examples/sample-configs/sim/axis/classicladder/demo_sim_cl.hal
 share/doc/linuxcnc/examples/sample-configs/sim/axis/classicladder/demo_sim_cl.ini
 share/doc/linuxcnc/examples/sample-configs/sim/axis/classicladder/demo_sim_cl.tbl
-share/doc/linuxcnc/examples/sample-configs/sim/axis/foam.ngc
+share/doc/linuxcnc/examples/sample-configs/sim/axis/corexy/corexy.ini
+share/doc/linuxcnc/examples/sample-configs/sim/axis/corexy/corexy.txt
+share/doc/linuxcnc/examples/sample-configs/sim/axis/foam/axis_foam.ini
+share/doc/linuxcnc/examples/sample-configs/sim/axis/foam/foam.ngc
 share/doc/linuxcnc/examples/sample-configs/sim/axis/gantry.ini
+share/doc/linuxcnc/examples/sample-configs/sim/axis/gantry_mm.hal
+share/doc/linuxcnc/examples/sample-configs/sim/axis/gantry_mm.ini
+share/doc/linuxcnc/examples/sample-configs/sim/axis/gantry_mm.tbl
 share/doc/linuxcnc/examples/sample-configs/sim/axis/gladevcp/README
 share/doc/linuxcnc/examples/sample-configs/sim/axis/gladevcp/gladevcp_panel.ini
 share/doc/linuxcnc/examples/sample-configs/sim/axis/gladevcp/gladevcp_tab.ini
@@ -1109,12 +1135,13 @@ share/doc/linuxcnc/examples/sample-configs/sim/axis/halui_pyvcp/sim.tbl
 share/doc/linuxcnc/examples/sample-configs/sim/axis/halui_pyvcp/vcp.xml
 share/doc/linuxcnc/examples/sample-configs/sim/axis/histogram_demo.ini
 share/doc/linuxcnc/examples/sample-configs/sim/axis/histogram_demo.txt
+share/doc/linuxcnc/examples/sample-configs/sim/axis/historical_lathe.ini
 share/doc/linuxcnc/examples/sample-configs/sim/axis/ini_hal_demo.ini
 share/doc/linuxcnc/examples/sample-configs/sim/axis/ini_hal_demo.txt
 share/doc/linuxcnc/examples/sample-configs/sim/axis/ini_with_includes/README
-share/doc/linuxcnc/examples/sample-configs/sim/axis/ini_with_includes/axis_0.inc
-share/doc/linuxcnc/examples/sample-configs/sim/axis/ini_with_includes/axis_1.inc
-share/doc/linuxcnc/examples/sample-configs/sim/axis/ini_with_includes/axis_2.inc
+share/doc/linuxcnc/examples/sample-configs/sim/axis/ini_with_includes/axis_x.inc
+share/doc/linuxcnc/examples/sample-configs/sim/axis/ini_with_includes/axis_y.inc
+share/doc/linuxcnc/examples/sample-configs/sim/axis/ini_with_includes/axis_z.inc
 share/doc/linuxcnc/examples/sample-configs/sim/axis/ini_with_includes/display.inc
 share/doc/linuxcnc/examples/sample-configs/sim/axis/ini_with_includes/emc.inc
 share/doc/linuxcnc/examples/sample-configs/sim/axis/ini_with_includes/emcio.inc
@@ -1122,6 +1149,10 @@ share/doc/linuxcnc/examples/sample-configs/sim/axis/ini_with_includes/emcmot.inc
 share/doc/linuxcnc/examples/sample-configs/sim/axis/ini_with_includes/filter.inc
 share/doc/linuxcnc/examples/sample-configs/sim/axis/ini_with_includes/hal.inc
 share/doc/linuxcnc/examples/sample-configs/sim/axis/ini_with_includes/includes_demo.ini
+share/doc/linuxcnc/examples/sample-configs/sim/axis/ini_with_includes/joint_0.inc
+share/doc/linuxcnc/examples/sample-configs/sim/axis/ini_with_includes/joint_1.inc
+share/doc/linuxcnc/examples/sample-configs/sim/axis/ini_with_includes/joint_2.inc
+share/doc/linuxcnc/examples/sample-configs/sim/axis/ini_with_includes/kins.inc
 share/doc/linuxcnc/examples/sample-configs/sim/axis/ini_with_includes/rs274ngc.inc
 share/doc/linuxcnc/examples/sample-configs/sim/axis/ini_with_includes/sim.tbl
 share/doc/linuxcnc/examples/sample-configs/sim/axis/ini_with_includes/task.inc
@@ -1145,6 +1176,25 @@ share/doc/linuxcnc/examples/sample-configs/sim/axis/iocontrolv2/toolchange-demo.
 share/doc/linuxcnc/examples/sample-configs/sim/axis/iocontrolv2/v2-tc.ui
 share/doc/linuxcnc/examples/sample-configs/sim/axis/iocontrolv2/v2_gladevcp_postgui.hal
 share/doc/linuxcnc/examples/sample-configs/sim/axis/iocontrolv2/v2_oword_gladevcp_postgui.hal
+share/doc/linuxcnc/examples/sample-configs/sim/axis/ja_tests/xyzb_locking_indexer/README
+share/doc/linuxcnc/examples/sample-configs/sim/axis/ja_tests/xyzb_locking_indexer/xyyzb.ini
+share/doc/linuxcnc/examples/sample-configs/sim/axis/ja_tests/xyzb_locking_indexer/xyzb.hal
+share/doc/linuxcnc/examples/sample-configs/sim/axis/ja_tests/xyzb_locking_indexer/xyzb.halshow
+share/doc/linuxcnc/examples/sample-configs/sim/axis/ja_tests/xyzb_locking_indexer/xyzb.ini
+share/doc/linuxcnc/examples/sample-configs/sim/axis/ja_tests/xyzx_mpg/README
+share/doc/linuxcnc/examples/sample-configs/sim/axis/ja_tests/xyzx_mpg/xhc-hb04-postgui.hal
+share/doc/linuxcnc/examples/sample-configs/sim/axis/ja_tests/xyzx_mpg/xhc-hb04.inc
+share/doc/linuxcnc/examples/sample-configs/sim/axis/ja_tests/xyzx_mpg/xyzx-xhc-hb04.ini
+share/doc/linuxcnc/examples/sample-configs/sim/axis/ja_tests/xyzx_mpg/xyzx.halshow
+share/doc/linuxcnc/examples/sample-configs/sim/axis/ja_tests/xyzx_mpg/xyzx.ini
+share/doc/linuxcnc/examples/sample-configs/sim/axis/ja_tests/xyzx_mpg/xyzx_base.inc
+share/doc/linuxcnc/examples/sample-configs/sim/axis/ja_tests/xyzx_mpg/xyzx_jog.hal
+share/doc/linuxcnc/examples/sample-configs/sim/axis/ja_tests/xz/README
+share/doc/linuxcnc/examples/sample-configs/sim/axis/ja_tests/xz/xz.ini
+share/doc/linuxcnc/examples/sample-configs/sim/axis/ja_tests/xz/xz.tbl
+share/doc/linuxcnc/examples/sample-configs/sim/axis/ja_tests/xz/xz_both.ini
+share/doc/linuxcnc/examples/sample-configs/sim/axis/ja_tests/xz/xz_both_auto.ini
+share/doc/linuxcnc/examples/sample-configs/sim/axis/ja_tests/xz/xzbase.inc
 share/doc/linuxcnc/examples/sample-configs/sim/axis/lathe-fanucy/README
 share/doc/linuxcnc/examples/sample-configs/sim/axis/lathe-fanucy/lathe-fanucy.ini
 share/doc/linuxcnc/examples/sample-configs/sim/axis/lathe-fanucy/lathe-fanucy.tbl
@@ -1155,7 +1205,10 @@ share/doc/linuxcnc/examples/sample-configs/sim/axis/lathe.ini
 share/doc/linuxcnc/examples/sample-configs/sim/axis/lathe.tbl
 share/doc/linuxcnc/examples/sample-configs/sim/axis/lathe.xml
 share/doc/linuxcnc/examples/sample-configs/sim/axis/lathe_postgui.hal
-share/doc/linuxcnc/examples/sample-configs/sim/axis/medium.ini
+share/doc/linuxcnc/examples/sample-configs/sim/axis/ldelta.ini
+share/doc/linuxcnc/examples/sample-configs/sim/axis/ldelta_demo.ini
+share/doc/linuxcnc/examples/sample-configs/sim/axis/ldelta_demo.txt
+share/doc/linuxcnc/examples/sample-configs/sim/axis/minimal_xyz.ini
 share/doc/linuxcnc/examples/sample-configs/sim/axis/moveoff/1_onpause_local.ini
 share/doc/linuxcnc/examples/sample-configs/sim/axis/moveoff/1_onpause_local.txt
 share/doc/linuxcnc/examples/sample-configs/sim/axis/moveoff/2_onpause_external.ini
@@ -1177,20 +1230,6 @@ share/doc/linuxcnc/examples/sample-configs/sim/axis/moveoff/moveoff.hal
 share/doc/linuxcnc/examples/sample-configs/sim/axis/moveoff/moveoff.halscope
 share/doc/linuxcnc/examples/sample-configs/sim/axis/moveoff/moveoff.halshow
 share/doc/linuxcnc/examples/sample-configs/sim/axis/moveoff/moveoff_base.inc
-share/doc/linuxcnc/examples/sample-configs/sim/axis/moveoff/moveoff_demo2.ini
-share/doc/linuxcnc/examples/sample-configs/sim/axis/moveoff/moveoff_demo2.txt
-share/doc/linuxcnc/examples/sample-configs/sim/axis/moveoff/moveoff_demo3.ini
-share/doc/linuxcnc/examples/sample-configs/sim/axis/moveoff/moveoff_demo3.txt
-share/doc/linuxcnc/examples/sample-configs/sim/axis/moveoff/moveoff_demo4.ini
-share/doc/linuxcnc/examples/sample-configs/sim/axis/moveoff/moveoff_demo4.txt
-share/doc/linuxcnc/examples/sample-configs/sim/axis/moveoff/moveoff_demo4a.ini
-share/doc/linuxcnc/examples/sample-configs/sim/axis/moveoff/moveoff_demo4a.txt
-share/doc/linuxcnc/examples/sample-configs/sim/axis/moveoff/moveoff_demo5.ini
-share/doc/linuxcnc/examples/sample-configs/sim/axis/moveoff/moveoff_demo5.txt
-share/doc/linuxcnc/examples/sample-configs/sim/axis/moveoff/moveoff_demo5a.ini
-share/doc/linuxcnc/examples/sample-configs/sim/axis/moveoff/moveoff_demo5a.txt
-share/doc/linuxcnc/examples/sample-configs/sim/axis/moveoff/moveoff_demo6.ini
-share/doc/linuxcnc/examples/sample-configs/sim/axis/moveoff/moveoff_demo6.txt
 share/doc/linuxcnc/examples/sample-configs/sim/axis/moveoff/moveoff_display.inc
 share/doc/linuxcnc/examples/sample-configs/sim/axis/moveoff/moveoff_display_6.hal
 share/doc/linuxcnc/examples/sample-configs/sim/axis/moveoff/moveoff_display_6.inc
@@ -1206,8 +1245,8 @@ share/doc/linuxcnc/examples/sample-configs/sim/axis/moveoff/removeshort.hal
 share/doc/linuxcnc/examples/sample-configs/sim/axis/moveoff/sim.tbl
 share/doc/linuxcnc/examples/sample-configs/sim/axis/nc_files
 share/doc/linuxcnc/examples/sample-configs/sim/axis/ngcgui/README
-share/doc/linuxcnc/examples/sample-configs/sim/axis/ngcgui/axis_resize.tcl
-share/doc/linuxcnc/examples/sample-configs/sim/axis/ngcgui/fullscreen.tcl
+share/doc/linuxcnc/examples/sample-configs/sim/axis/ngcgui/axis_resize.py
+share/doc/linuxcnc/examples/sample-configs/sim/axis/ngcgui/fullscreen.py
 share/doc/linuxcnc/examples/sample-configs/sim/axis/ngcgui/gremlin_view.ui
 share/doc/linuxcnc/examples/sample-configs/sim/axis/ngcgui/lathe.tbl
 share/doc/linuxcnc/examples/sample-configs/sim/axis/ngcgui/ngcgui.ini
@@ -1226,12 +1265,36 @@ share/doc/linuxcnc/examples/sample-configs/sim/axis/ngcgui/pyngcgui_gcmc.txt
 share/doc/linuxcnc/examples/sample-configs/sim/axis/ngcgui/pyngcgui_popupkeyboard.ui
 share/doc/linuxcnc/examples/sample-configs/sim/axis/ngcgui/sim.tbl
 share/doc/linuxcnc/examples/sample-configs/sim/axis/orphans/README
+share/doc/linuxcnc/examples/sample-configs/sim/axis/orphans/acc_test.ini
 share/doc/linuxcnc/examples/sample-configs/sim/axis/orphans/axis_noio.ini
 share/doc/linuxcnc/examples/sample-configs/sim/axis/orphans/core_sim_noio.hal
 share/doc/linuxcnc/examples/sample-configs/sim/axis/orphans/core_sim_noiocontrol.hal
 share/doc/linuxcnc/examples/sample-configs/sim/axis/orphans/core_sim_test.hal
 share/doc/linuxcnc/examples/sample-configs/sim/axis/orphans/gladevcp_postgui.hal
+share/doc/linuxcnc/examples/sample-configs/sim/axis/orphans/iocontrol-removed/core_sim_test.hal
+share/doc/linuxcnc/examples/sample-configs/sim/axis/orphans/iocontrol-removed/gladevcp.hal
+share/doc/linuxcnc/examples/sample-configs/sim/axis/orphans/iocontrol-removed/iocontrol-removed.ini
+share/doc/linuxcnc/examples/sample-configs/sim/axis/orphans/iocontrol-removed/nc_files/tcdemo.ngc
+share/doc/linuxcnc/examples/sample-configs/sim/axis/orphans/iocontrol-removed/nc_subroutines
+share/doc/linuxcnc/examples/sample-configs/sim/axis/orphans/iocontrol-removed/no-iotask.nml
+share/doc/linuxcnc/examples/sample-configs/sim/axis/orphans/iocontrol-removed/python/customtask.py
+share/doc/linuxcnc/examples/sample-configs/sim/axis/orphans/iocontrol-removed/python/embedding.py
+share/doc/linuxcnc/examples/sample-configs/sim/axis/orphans/iocontrol-removed/python/nulluserfuncs.py
+share/doc/linuxcnc/examples/sample-configs/sim/axis/orphans/iocontrol-removed/python/oword.py
+share/doc/linuxcnc/examples/sample-configs/sim/axis/orphans/iocontrol-removed/python/remap.py
+share/doc/linuxcnc/examples/sample-configs/sim/axis/orphans/iocontrol-removed/python/sqltoolaccess.py
+share/doc/linuxcnc/examples/sample-configs/sim/axis/orphans/iocontrol-removed/python/task.py
+share/doc/linuxcnc/examples/sample-configs/sim/axis/orphans/iocontrol-removed/python/tooltable.py
+share/doc/linuxcnc/examples/sample-configs/sim/axis/orphans/iocontrol-removed/python/toplevel.py
+share/doc/linuxcnc/examples/sample-configs/sim/axis/orphans/iocontrol-removed/python/userfuncs.py
+share/doc/linuxcnc/examples/sample-configs/sim/axis/orphans/iocontrol-removed/racktoolchange-noioctl.glade
+share/doc/linuxcnc/examples/sample-configs/sim/axis/orphans/iocontrol-removed/racktoolchange-noioctl.ui
+share/doc/linuxcnc/examples/sample-configs/sim/axis/orphans/iocontrol-removed/racktoolchange.hal
+share/doc/linuxcnc/examples/sample-configs/sim/axis/orphans/iocontrol-removed/tool.tbl
+share/doc/linuxcnc/examples/sample-configs/sim/axis/orphans/iocontrol-removed/tooltable.sql
+share/doc/linuxcnc/examples/sample-configs/sim/axis/orphans/iocontrol-removed/tooltable.sqlite
 share/doc/linuxcnc/examples/sample-configs/sim/axis/orphans/iov2.hal
+share/doc/linuxcnc/examples/sample-configs/sim/axis/orphans/medium.ini
 share/doc/linuxcnc/examples/sample-configs/sim/axis/orphans/no-iotask.nml
 share/doc/linuxcnc/examples/sample-configs/sim/axis/orphans/py.ini.notworking
 share/doc/linuxcnc/examples/sample-configs/sim/axis/orphans/pyiocontrol.ini.notworking
@@ -1259,6 +1322,7 @@ share/doc/linuxcnc/examples/sample-configs/sim/axis/panelui-demo/tool.tbl
 share/doc/linuxcnc/examples/sample-configs/sim/axis/postgui_calib_helper.hal
 share/doc/linuxcnc/examples/sample-configs/sim/axis/profile_axis.ini
 share/doc/linuxcnc/examples/sample-configs/sim/axis/random_tc.ini
+share/doc/linuxcnc/examples/sample-configs/sim/axis/rdelta.ini
 share/doc/linuxcnc/examples/sample-configs/sim/axis/remap/README
 share/doc/linuxcnc/examples/sample-configs/sim/axis/remap/cycle/README
 share/doc/linuxcnc/examples/sample-configs/sim/axis/remap/cycle/cycle.ini
@@ -1294,28 +1358,6 @@ share/doc/linuxcnc/examples/sample-configs/sim/axis/remap/getting-started/python
 share/doc/linuxcnc/examples/sample-configs/sim/axis/remap/getting-started/python/toplevel.py
 share/doc/linuxcnc/examples/sample-configs/sim/axis/remap/getting-started/python/util.py
 share/doc/linuxcnc/examples/sample-configs/sim/axis/remap/getting-started/tool.tbl
-share/doc/linuxcnc/examples/sample-configs/sim/axis/remap/iocontrol-removed/core_sim_test.hal
-share/doc/linuxcnc/examples/sample-configs/sim/axis/remap/iocontrol-removed/gladevcp.hal
-share/doc/linuxcnc/examples/sample-configs/sim/axis/remap/iocontrol-removed/iocontrol-removed.ini
-share/doc/linuxcnc/examples/sample-configs/sim/axis/remap/iocontrol-removed/nc_files/tcdemo.ngc
-share/doc/linuxcnc/examples/sample-configs/sim/axis/remap/iocontrol-removed/nc_subroutines
-share/doc/linuxcnc/examples/sample-configs/sim/axis/remap/iocontrol-removed/no-iotask.nml
-share/doc/linuxcnc/examples/sample-configs/sim/axis/remap/iocontrol-removed/python/customtask.py
-share/doc/linuxcnc/examples/sample-configs/sim/axis/remap/iocontrol-removed/python/embedding.py
-share/doc/linuxcnc/examples/sample-configs/sim/axis/remap/iocontrol-removed/python/nulluserfuncs.py
-share/doc/linuxcnc/examples/sample-configs/sim/axis/remap/iocontrol-removed/python/oword.py
-share/doc/linuxcnc/examples/sample-configs/sim/axis/remap/iocontrol-removed/python/remap.py
-share/doc/linuxcnc/examples/sample-configs/sim/axis/remap/iocontrol-removed/python/sqltoolaccess.py
-share/doc/linuxcnc/examples/sample-configs/sim/axis/remap/iocontrol-removed/python/task.py
-share/doc/linuxcnc/examples/sample-configs/sim/axis/remap/iocontrol-removed/python/tooltable.py
-share/doc/linuxcnc/examples/sample-configs/sim/axis/remap/iocontrol-removed/python/toplevel.py
-share/doc/linuxcnc/examples/sample-configs/sim/axis/remap/iocontrol-removed/python/userfuncs.py
-share/doc/linuxcnc/examples/sample-configs/sim/axis/remap/iocontrol-removed/racktoolchange-noioctl.glade
-share/doc/linuxcnc/examples/sample-configs/sim/axis/remap/iocontrol-removed/racktoolchange-noioctl.ui
-share/doc/linuxcnc/examples/sample-configs/sim/axis/remap/iocontrol-removed/racktoolchange.hal
-share/doc/linuxcnc/examples/sample-configs/sim/axis/remap/iocontrol-removed/tool.tbl
-share/doc/linuxcnc/examples/sample-configs/sim/axis/remap/iocontrol-removed/tooltable.sql
-share/doc/linuxcnc/examples/sample-configs/sim/axis/remap/iocontrol-removed/tooltable.sqlite
 share/doc/linuxcnc/examples/sample-configs/sim/axis/remap/manual-toolchange-with-tool-length-switch/README
 share/doc/linuxcnc/examples/sample-configs/sim/axis/remap/manual-toolchange-with-tool-length-switch/gladevcp.hal
 share/doc/linuxcnc/examples/sample-configs/sim/axis/remap/manual-toolchange-with-tool-length-switch/manualtoolchange.glade
@@ -1351,6 +1393,11 @@ share/doc/linuxcnc/examples/sample-configs/sim/axis/remap/stop-lookahead/python/
 share/doc/linuxcnc/examples/sample-configs/sim/axis/remap/stop-lookahead/python/toplevel.py
 share/doc/linuxcnc/examples/sample-configs/sim/axis/remap/stop-lookahead/tool.tbl
 share/doc/linuxcnc/examples/sample-configs/sim/axis/remap/tool.tbl
+share/doc/linuxcnc/examples/sample-configs/sim/axis/rose_engine/README
+share/doc/linuxcnc/examples/sample-configs/sim/axis/rose_engine/rcone.ngc
+share/doc/linuxcnc/examples/sample-configs/sim/axis/rose_engine/rcone_demo.ngc
+share/doc/linuxcnc/examples/sample-configs/sim/axis/rose_engine/rose_engine.halshow
+share/doc/linuxcnc/examples/sample-configs/sim/axis/rose_engine/rose_engine.ini
 share/doc/linuxcnc/examples/sample-configs/sim/axis/sim.tbl
 share/doc/linuxcnc/examples/sample-configs/sim/axis/sim_mm.tbl
 share/doc/linuxcnc/examples/sample-configs/sim/axis/simpockets.tbl
@@ -1361,9 +1408,6 @@ share/doc/linuxcnc/examples/sample-configs/sim/axis/simtcl/twopass_basic.ini
 share/doc/linuxcnc/examples/sample-configs/sim/axis/simtcl/twopass_basic.txt
 share/doc/linuxcnc/examples/sample-configs/sim/axis/simtcl/twopass_compat.ini
 share/doc/linuxcnc/examples/sample-configs/sim/axis/simtcl/twopass_compat.txt
-share/doc/linuxcnc/examples/sample-configs/sim/axis/simtcl/twopass_demo.ini
-share/doc/linuxcnc/examples/sample-configs/sim/axis/simtcl/twopass_demo.tcl
-share/doc/linuxcnc/examples/sample-configs/sim/axis/simtcl/twopass_demo.txt
 share/doc/linuxcnc/examples/sample-configs/sim/axis/spindle_orient/README
 share/doc/linuxcnc/examples/sample-configs/sim/axis/spindle_orient/orient.hal
 share/doc/linuxcnc/examples/sample-configs/sim/axis/spindle_orient/orient.ini
@@ -1375,10 +1419,26 @@ share/doc/linuxcnc/examples/sample-configs/sim/axis/twopass/postgui.hal
 share/doc/linuxcnc/examples/sample-configs/sim/axis/twopass/sim.tbl
 share/doc/linuxcnc/examples/sample-configs/sim/axis/twopass/twopass.ini
 share/doc/linuxcnc/examples/sample-configs/sim/axis/twopass/twopass.txt
-share/doc/linuxcnc/examples/sample-configs/sim/axis/vismach/5axis/5axis.ini
-share/doc/linuxcnc/examples/sample-configs/sim/axis/vismach/5axis/5axis.tbl
-share/doc/linuxcnc/examples/sample-configs/sim/axis/vismach/5axis/5axis_sim.hal
-share/doc/linuxcnc/examples/sample-configs/sim/axis/vismach/5axis/README
+share/doc/linuxcnc/examples/sample-configs/sim/axis/vismach/5axis/bridgemill/5axis.ini
+share/doc/linuxcnc/examples/sample-configs/sim/axis/vismach/5axis/bridgemill/5axis.tbl
+share/doc/linuxcnc/examples/sample-configs/sim/axis/vismach/5axis/bridgemill/README
+share/doc/linuxcnc/examples/sample-configs/sim/axis/vismach/5axis/max5/README
+share/doc/linuxcnc/examples/sample-configs/sim/axis/vismach/5axis/max5/max5.tbl
+share/doc/linuxcnc/examples/sample-configs/sim/axis/vismach/5axis/max5/max5_base.inc
+share/doc/linuxcnc/examples/sample-configs/sim/axis/vismach/5axis/max5/max5kins.hal
+share/doc/linuxcnc/examples/sample-configs/sim/axis/vismach/5axis/max5/max5kins.ini
+share/doc/linuxcnc/examples/sample-configs/sim/axis/vismach/5axis/max5/max5triv.hal
+share/doc/linuxcnc/examples/sample-configs/sim/axis/vismach/5axis/max5/max5triv.ini
+share/doc/linuxcnc/examples/sample-configs/sim/axis/vismach/5axis/table-rotary-tilting/README
+share/doc/linuxcnc/examples/sample-configs/sim/axis/vismach/5axis/table-rotary-tilting/examples/boat-xyzac.ngc
+share/doc/linuxcnc/examples/sample-configs/sim/axis/vismach/5axis/table-rotary-tilting/examples/boat-xyzbc.ngc
+share/doc/linuxcnc/examples/sample-configs/sim/axis/vismach/5axis/table-rotary-tilting/examples/impeller-7bl-xyzac.ngc
+share/doc/linuxcnc/examples/sample-configs/sim/axis/vismach/5axis/table-rotary-tilting/examples/test-xyzac.ngc
+share/doc/linuxcnc/examples/sample-configs/sim/axis/vismach/5axis/table-rotary-tilting/examples/test-xyzbc.ngc
+share/doc/linuxcnc/examples/sample-configs/sim/axis/vismach/5axis/table-rotary-tilting/xyzac-trt.ini
+share/doc/linuxcnc/examples/sample-configs/sim/axis/vismach/5axis/table-rotary-tilting/xyzac-trt.tbl
+share/doc/linuxcnc/examples/sample-configs/sim/axis/vismach/5axis/table-rotary-tilting/xyzbc-trt.ini
+share/doc/linuxcnc/examples/sample-configs/sim/axis/vismach/5axis/table-rotary-tilting/xyzbc-trt.tbl
 share/doc/linuxcnc/examples/sample-configs/sim/axis/vismach/README
 share/doc/linuxcnc/examples/sample-configs/sim/axis/vismach/VMC_toolchange/README
 share/doc/linuxcnc/examples/sample-configs/sim/axis/vismach/VMC_toolchange/arm.stl
@@ -1410,12 +1470,6 @@ share/doc/linuxcnc/examples/sample-configs/sim/axis/vismach/hexapod-sim/hexapod.
 share/doc/linuxcnc/examples/sample-configs/sim/axis/vismach/hexapod-sim/hexapod_postgui.hal
 share/doc/linuxcnc/examples/sample-configs/sim/axis/vismach/hexapod-sim/kinematics.hal
 share/doc/linuxcnc/examples/sample-configs/sim/axis/vismach/hexapod-sim/panel.xml
-share/doc/linuxcnc/examples/sample-configs/sim/axis/vismach/max5kins/max5kins.hal
-share/doc/linuxcnc/examples/sample-configs/sim/axis/vismach/max5kins/max5kins.ini
-share/doc/linuxcnc/examples/sample-configs/sim/axis/vismach/max5triv/max5kins.tbl
-share/doc/linuxcnc/examples/sample-configs/sim/axis/vismach/max5triv/max5triv.hal
-share/doc/linuxcnc/examples/sample-configs/sim/axis/vismach/max5triv/max5triv.ini
-share/doc/linuxcnc/examples/sample-configs/sim/axis/vismach/max5triv/max5triv.tbl
 share/doc/linuxcnc/examples/sample-configs/sim/axis/vismach/puma/README
 share/doc/linuxcnc/examples/sample-configs/sim/axis/vismach/puma/puma.ini
 share/doc/linuxcnc/examples/sample-configs/sim/axis/vismach/puma/puma.tbl
@@ -1441,9 +1495,11 @@ share/doc/linuxcnc/examples/sample-configs/sim/axis/vismach/scara/scara_postgui.
 share/doc/linuxcnc/examples/sample-configs/sim/axis/vismach/scara/scara_sim_4.hal
 share/doc/linuxcnc/examples/sample-configs/sim/axis/xhc-hb04/README
 share/doc/linuxcnc/examples/sample-configs/sim/axis/xhc-hb04/inch_base.inc
+share/doc/linuxcnc/examples/sample-configs/sim/axis/xhc-hb04/inch_trivkins.inc
 share/doc/linuxcnc/examples/sample-configs/sim/axis/xhc-hb04/layout1.inc
 share/doc/linuxcnc/examples/sample-configs/sim/axis/xhc-hb04/layout2.inc
 share/doc/linuxcnc/examples/sample-configs/sim/axis/xhc-hb04/mm_base.inc
+share/doc/linuxcnc/examples/sample-configs/sim/axis/xhc-hb04/mm_trivkins.inc
 share/doc/linuxcnc/examples/sample-configs/sim/axis/xhc-hb04/sim.tbl
 share/doc/linuxcnc/examples/sample-configs/sim/axis/xhc-hb04/sim_mm.tbl
 share/doc/linuxcnc/examples/sample-configs/sim/axis/xhc-hb04/xhc-hb04-layout1.ini
@@ -1455,10 +1511,39 @@ share/doc/linuxcnc/examples/sample-configs/sim/axis/xhc-hb04/xhc-hb04-layout2_mm
 share/doc/linuxcnc/examples/sample-configs/sim/gmoccapy/README
 share/doc/linuxcnc/examples/sample-configs/sim/gmoccapy/button.glade
 share/doc/linuxcnc/examples/sample-configs/sim/gmoccapy/core_sim4.hal
+share/doc/linuxcnc/examples/sample-configs/sim/gmoccapy/core_sim_XYZAB.hal
+share/doc/linuxcnc/examples/sample-configs/sim/gmoccapy/core_sim_XYZAC.hal
+share/doc/linuxcnc/examples/sample-configs/sim/gmoccapy/core_sim_XYZCW.hal
+share/doc/linuxcnc/examples/sample-configs/sim/gmoccapy/core_sim_lathe.hal
 share/doc/linuxcnc/examples/sample-configs/sim/gmoccapy/dro.glade
+share/doc/linuxcnc/examples/sample-configs/sim/gmoccapy/gmoccapy-JA/Gantry/gantry_mm.hal
+share/doc/linuxcnc/examples/sample-configs/sim/gmoccapy/gmoccapy-JA/Gantry/gantry_mm.ini
+share/doc/linuxcnc/examples/sample-configs/sim/gmoccapy/gmoccapy-JA/Gantry/gmoccapy_GANTRY_sim.pref
+share/doc/linuxcnc/examples/sample-configs/sim/gmoccapy/gmoccapy-JA/Gantry/tool.tbl
+share/doc/linuxcnc/examples/sample-configs/sim/gmoccapy/gmoccapy-JA/scara/LinuxCNC-HAL-SIM-SCARA.pref
+share/doc/linuxcnc/examples/sample-configs/sim/gmoccapy/gmoccapy-JA/scara/README
+share/doc/linuxcnc/examples/sample-configs/sim/gmoccapy/gmoccapy-JA/scara/postgui.hal
+share/doc/linuxcnc/examples/sample-configs/sim/gmoccapy/gmoccapy-JA/scara/scara.glade
+share/doc/linuxcnc/examples/sample-configs/sim/gmoccapy/gmoccapy-JA/scara/scara.ini
+share/doc/linuxcnc/examples/sample-configs/sim/gmoccapy/gmoccapy-JA/scara/scara.tbl
+share/doc/linuxcnc/examples/sample-configs/sim/gmoccapy/gmoccapy-JA/scara/scara_postgui.hal
+share/doc/linuxcnc/examples/sample-configs/sim/gmoccapy/gmoccapy-JA/scara/scara_sim_4.hal
+share/doc/linuxcnc/examples/sample-configs/sim/gmoccapy/gmoccapy-JA/table-rotary-tilting/README
+share/doc/linuxcnc/examples/sample-configs/sim/gmoccapy/gmoccapy-JA/table-rotary-tilting/examples/boat-xyzac.ngc
+share/doc/linuxcnc/examples/sample-configs/sim/gmoccapy/gmoccapy-JA/table-rotary-tilting/examples/boat-xyzbc.ngc
+share/doc/linuxcnc/examples/sample-configs/sim/gmoccapy/gmoccapy-JA/table-rotary-tilting/examples/impeller-7bl-xyzac.ngc
+share/doc/linuxcnc/examples/sample-configs/sim/gmoccapy/gmoccapy-JA/table-rotary-tilting/examples/test-xyzac.ngc
+share/doc/linuxcnc/examples/sample-configs/sim/gmoccapy/gmoccapy-JA/table-rotary-tilting/examples/test-xyzbc.ngc
+share/doc/linuxcnc/examples/sample-configs/sim/gmoccapy/gmoccapy-JA/table-rotary-tilting/postgui.hal
+share/doc/linuxcnc/examples/sample-configs/sim/gmoccapy/gmoccapy-JA/table-rotary-tilting/sim-xyzac-trt.pref
+share/doc/linuxcnc/examples/sample-configs/sim/gmoccapy/gmoccapy-JA/table-rotary-tilting/xyzac-trt.ini
+share/doc/linuxcnc/examples/sample-configs/sim/gmoccapy/gmoccapy-JA/table-rotary-tilting/xyzac-trt.tbl
 share/doc/linuxcnc/examples/sample-configs/sim/gmoccapy/gmoccapy.ini
 share/doc/linuxcnc/examples/sample-configs/sim/gmoccapy/gmoccapy2.glade
 share/doc/linuxcnc/examples/sample-configs/sim/gmoccapy/gmoccapy_4_axis.ini
+share/doc/linuxcnc/examples/sample-configs/sim/gmoccapy/gmoccapy_XYZAB.ini
+share/doc/linuxcnc/examples/sample-configs/sim/gmoccapy/gmoccapy_XYZAC.ini
+share/doc/linuxcnc/examples/sample-configs/sim/gmoccapy/gmoccapy_XYZCW.ini
 share/doc/linuxcnc/examples/sample-configs/sim/gmoccapy/gmoccapy_lathe.ini
 share/doc/linuxcnc/examples/sample-configs/sim/gmoccapy/gmoccapy_lathe_imperial.ini
 share/doc/linuxcnc/examples/sample-configs/sim/gmoccapy/gmoccapy_left_panel.ini
@@ -1502,6 +1587,7 @@ share/doc/linuxcnc/examples/sample-configs/sim/gmoccapy/pendant.hal
 share/doc/linuxcnc/examples/sample-configs/sim/gmoccapy/python/remap.py
 share/doc/linuxcnc/examples/sample-configs/sim/gmoccapy/python/stdglue.py
 share/doc/linuxcnc/examples/sample-configs/sim/gmoccapy/python/toplevel.py
+share/doc/linuxcnc/examples/sample-configs/sim/gmoccapy/simulated_home_lathe.hal
 share/doc/linuxcnc/examples/sample-configs/sim/gmoccapy/spindle_sim.hal
 share/doc/linuxcnc/examples/sample-configs/sim/gmoccapy/tool.tbl
 share/doc/linuxcnc/examples/sample-configs/sim/gmoccapy/tool_sensor.glade
@@ -1593,14 +1679,6 @@ share/doc/linuxcnc/examples/sample-configs/sim/hitcounter.py
 share/doc/linuxcnc/examples/sample-configs/sim/lathe.tbl
 share/doc/linuxcnc/examples/sample-configs/sim/lathe.xml
 share/doc/linuxcnc/examples/sample-configs/sim/lathe_postgui.hal
-share/doc/linuxcnc/examples/sample-configs/sim/low_graphics/README
-share/doc/linuxcnc/examples/sample-configs/sim/low_graphics/keystick.ini
-share/doc/linuxcnc/examples/sample-configs/sim/low_graphics/keystick.txt
-share/doc/linuxcnc/examples/sample-configs/sim/low_graphics/mini.ini
-share/doc/linuxcnc/examples/sample-configs/sim/low_graphics/mini.txt
-share/doc/linuxcnc/examples/sample-configs/sim/low_graphics/sim.tbl
-share/doc/linuxcnc/examples/sample-configs/sim/low_graphics/xlinuxcnc.ini
-share/doc/linuxcnc/examples/sample-configs/sim/low_graphics/xlinuxcnc.txt
 share/doc/linuxcnc/examples/sample-configs/sim/manual-example.hal
 share/doc/linuxcnc/examples/sample-configs/sim/manual-example.ui
 share/doc/linuxcnc/examples/sample-configs/sim/nc_files
@@ -1622,11 +1700,17 @@ share/doc/linuxcnc/examples/sample-configs/sim/sim_mm_test.tbl
 share/doc/linuxcnc/examples/sample-configs/sim/simpockets.tbl
 share/doc/linuxcnc/examples/sample-configs/sim/test.vcp
 share/doc/linuxcnc/examples/sample-configs/sim/tklinuxcnc/README
+share/doc/linuxcnc/examples/sample-configs/sim/tklinuxcnc/ldelta.ini
 share/doc/linuxcnc/examples/sample-configs/sim/tklinuxcnc/screwcompX.dat
 share/doc/linuxcnc/examples/sample-configs/sim/tklinuxcnc/servo_sim.ini
 share/doc/linuxcnc/examples/sample-configs/sim/tklinuxcnc/sim.tbl
 share/doc/linuxcnc/examples/sample-configs/sim/tklinuxcnc/tklinuxcnc.ini
 share/doc/linuxcnc/examples/sample-configs/sim/tklinuxcnc/tripod.ini
+share/doc/linuxcnc/examples/sample-configs/sim/tklinuxcnc/trivkins/README
+share/doc/linuxcnc/examples/sample-configs/sim/tklinuxcnc/trivkins/xz.ini
+share/doc/linuxcnc/examples/sample-configs/sim/tklinuxcnc/trivkins/xz.tbl
+share/doc/linuxcnc/examples/sample-configs/sim/tklinuxcnc/trivkins/xz_both.ini
+share/doc/linuxcnc/examples/sample-configs/sim/tklinuxcnc/trivkins/xzbase.inc
 share/doc/linuxcnc/examples/sample-configs/sim/touchy/README
 share/doc/linuxcnc/examples/sample-configs/sim/touchy/gladevcp/README
 share/doc/linuxcnc/examples/sample-configs/sim/touchy/gladevcp/gladevcp-touchy.hal
@@ -1642,6 +1726,7 @@ share/doc/linuxcnc/examples/sample-configs/sim/touchy/gladevcp/touchy.hal
 share/doc/linuxcnc/examples/sample-configs/sim/touchy/gladevcp/touchy.ini
 share/doc/linuxcnc/examples/sample-configs/sim/touchy/ngcgui/README
 share/doc/linuxcnc/examples/sample-configs/sim/touchy/ngcgui/gremlin_view.ui
+share/doc/linuxcnc/examples/sample-configs/sim/touchy/ngcgui/hwsim.sh
 share/doc/linuxcnc/examples/sample-configs/sim/touchy/ngcgui/lathe.tbl
 share/doc/linuxcnc/examples/sample-configs/sim/touchy/ngcgui/pyngcgui_touchy.ini
 share/doc/linuxcnc/examples/sample-configs/sim/touchy/ngcgui/pyngcgui_touchy.txt
@@ -1660,10 +1745,10 @@ share/doc/linuxcnc/examples/sample-configs/sim/touchy/touchy.ini
 share/doc/linuxcnc/examples/sample-configs/sim/touchy/touchy.txt
 share/doc/linuxcnc/examples/sample-configs/sim/tracking-test.hal
 share/doc/linuxcnc/tklinuxcnc.txt
-share/doc/linuxcnc/xlinuxcnc.txt
 share/glade3/catalogs/hal_python.xml
 share/glade3/pixmaps/widget-gladevcp-calc.png
 share/glade3/pixmaps/widget-gladevcp-combi_dro.png
+share/glade3/pixmaps/widget-gladevcp-hal_dial.png
 share/glade3/pixmaps/widget-gladevcp-hal_dro.png
 share/glade3/pixmaps/widget-gladevcp-hal_gremlin.png
 share/glade3/pixmaps/widget-gladevcp-hal_hbar.png
@@ -1703,6 +1788,14 @@ share/gmoccapy/images/mist_off.png
 share/gmoccapy/images/mist_on.gif
 share/gmoccapy/images/pause.png
 share/gmoccapy/images/rabbit_jog.png
+share/gmoccapy/images/ref_0.png
+share/gmoccapy/images/ref_1.png
+share/gmoccapy/images/ref_2.png
+share/gmoccapy/images/ref_3.png
+share/gmoccapy/images/ref_4.png
+share/gmoccapy/images/ref_5.png
+share/gmoccapy/images/ref_6.png
+share/gmoccapy/images/ref_7.png
 share/gmoccapy/images/refa.png
 share/gmoccapy/images/refall.png
 share/gmoccapy/images/refb.png
@@ -1735,6 +1828,12 @@ share/gmoccapy/images/toolaxisz.png
 share/gmoccapy/images/toolchange.png
 share/gmoccapy/images/toolpath.png
 share/gmoccapy/images/tools.png
+share/gmoccapy/images/touchoffa_value.png
+share/gmoccapy/images/touchoffb_value.png
+share/gmoccapy/images/touchoffc_value.png
+share/gmoccapy/images/touchoffu_value.png
+share/gmoccapy/images/touchoffv_value.png
+share/gmoccapy/images/touchoffw_value.png
 share/gmoccapy/images/touchoffwz.png
 share/gmoccapy/images/touchoffx.png
 share/gmoccapy/images/touchoffx_value.png
@@ -1775,6 +1874,8 @@ share/linuxcnc/gscreen2.glade
 share/linuxcnc/hallib/README
 share/linuxcnc/hallib/axis_manualtoolchange.hal
 share/linuxcnc/hallib/basic_sim.tcl
+share/linuxcnc/hallib/check_config.tcl
+share/linuxcnc/hallib/check_xyz_constraints.hal
 share/linuxcnc/hallib/core_servo.hal
 share/linuxcnc/hallib/core_sim.hal
 share/linuxcnc/hallib/core_sim9.hal
@@ -1787,7 +1888,9 @@ share/linuxcnc/hallib/lathe.hal
 share/linuxcnc/hallib/locking_indexer.hal
 share/linuxcnc/hallib/moveoff_external.hal
 share/linuxcnc/hallib/servo_sim.hal
+share/linuxcnc/hallib/sim_ldelta.hal
 share/linuxcnc/hallib/sim_lib.tcl
+share/linuxcnc/hallib/sim_rdelta.hal
 share/linuxcnc/hallib/sim_spindle_encoder.hal
 share/linuxcnc/hallib/simulated-gantry-home.hal
 share/linuxcnc/hallib/simulated_home.hal
@@ -1795,6 +1898,7 @@ share/linuxcnc/hallib/simulated_limits.hal
 share/linuxcnc/hallib/tripodsim.hal
 share/linuxcnc/hallib/util_lib.tcl
 share/linuxcnc/hallib/var_show.tcl
+share/linuxcnc/hallib/wheeljogpins.tcl
 share/linuxcnc/hallib/xhc-hb04-layout1.cfg
 share/linuxcnc/hallib/xhc-hb04-layout2.cfg
 share/linuxcnc/hallib/xhc-hb04.tcl
@@ -1980,6 +2084,29 @@ share/linuxcnc/stepconf/pport2.glade
 share/linuxcnc/stepconf/spindle.glade
 share/linuxcnc/stepconf/start.glade
 share/linuxcnc/touchy.glade
+share/locale/de/LC_MESSAGES/gmoccapy.mo
+share/locale/de/LC_MESSAGES/linuxcnc.mo
+share/locale/es/LC_MESSAGES/gmoccapy.mo
+share/locale/es/LC_MESSAGES/linuxcnc.mo
+share/locale/fi/LC_MESSAGES/linuxcnc.mo
+share/locale/fr/LC_MESSAGES/gmoccapy.mo
+share/locale/fr/LC_MESSAGES/linuxcnc.mo
+share/locale/hu/LC_MESSAGES/gmoccapy.mo
+share/locale/hu/LC_MESSAGES/linuxcnc.mo
+share/locale/it/LC_MESSAGES/linuxcnc.mo
+share/locale/ja/LC_MESSAGES/linuxcnc.mo
+share/locale/pl/LC_MESSAGES/gmoccapy.mo
+share/locale/pl/LC_MESSAGES/linuxcnc.mo
+share/locale/pt_BR/LC_MESSAGES/linuxcnc.mo
+share/locale/ro/LC_MESSAGES/linuxcnc.mo
+share/locale/ru/LC_MESSAGES/linuxcnc.mo
+share/locale/sk/LC_MESSAGES/linuxcnc.mo
+share/locale/sr/LC_MESSAGES/gmoccapy.mo
+share/locale/sr/LC_MESSAGES/linuxcnc.mo
+share/locale/sv/LC_MESSAGES/linuxcnc.mo
+share/locale/zh_CN/LC_MESSAGES/linuxcnc.mo
+share/locale/zh_HK/LC_MESSAGES/linuxcnc.mo
+share/locale/zh_TW/LC_MESSAGES/linuxcnc.mo
 /usr/local/%%PYTHON_SITELIBDIR%%/_hal.so
 /usr/local/%%PYTHON_SITELIBDIR%%/_togl.so
 /usr/local/%%PYTHON_SITELIBDIR%%/bitfile.py
@@ -2009,6 +2136,7 @@ share/linuxcnc/touchy.glade
 /usr/local/%%PYTHON_SITELIBDIR%%/gladevcp/iconview.py
 /usr/local/%%PYTHON_SITELIBDIR%%/gladevcp/jogwheel.py
 /usr/local/%%PYTHON_SITELIBDIR%%/gladevcp/led.py
+/usr/local/%%PYTHON_SITELIBDIR%%/gladevcp/macro_widget.py
 /usr/local/%%PYTHON_SITELIBDIR%%/gladevcp/makepins.py
 /usr/local/%%PYTHON_SITELIBDIR%%/gladevcp/offsetpage.glade
 /usr/local/%%PYTHON_SITELIBDIR%%/gladevcp/offsetpage_widget.py
@@ -2038,8 +2166,10 @@ share/linuxcnc/touchy.glade
 /usr/local/%%PYTHON_SITELIBDIR%%/hal.py
 /usr/local/%%PYTHON_SITELIBDIR%%/hal_glib.py
 /usr/local/%%PYTHON_SITELIBDIR%%/hershey.py
+/usr/local/%%PYTHON_SITELIBDIR%%/lineardeltakins.so
 /usr/local/%%PYTHON_SITELIBDIR%%/linux_event.py
 /usr/local/%%PYTHON_SITELIBDIR%%/linuxcnc.so
+/usr/local/%%PYTHON_SITELIBDIR%%/linuxcnc_util.py
 /usr/local/%%PYTHON_SITELIBDIR%%/minigl.so
 /usr/local/%%PYTHON_SITELIBDIR%%/multifilebuilder.py
 /usr/local/%%PYTHON_SITELIBDIR%%/multifilebuilder_gtk3.py
@@ -2059,6 +2189,7 @@ share/linuxcnc/touchy.glade
 /usr/local/%%PYTHON_SITELIBDIR%%/pyui/panelui_validate.py
 /usr/local/%%PYTHON_SITELIBDIR%%/pyui/widgets.py
 /usr/local/%%PYTHON_SITELIBDIR%%/pyvcp_widgets.py
+/usr/local/%%PYTHON_SITELIBDIR%%/rotarydeltakins.so
 /usr/local/%%PYTHON_SITELIBDIR%%/rs274/OpenGLTk.py
 /usr/local/%%PYTHON_SITELIBDIR%%/rs274/__init__.py
 /usr/local/%%PYTHON_SITELIBDIR%%/rs274/author.py
@@ -2079,32 +2210,7 @@ share/linuxcnc/touchy.glade
 /usr/local/%%PYTHON_SITELIBDIR%%/touchy/preferences.py
 /usr/local/%%PYTHON_SITELIBDIR%%/vcpparse.py
 /usr/local/%%PYTHON_SITELIBDIR%%/vismach.py
-share/locale/de/LC_MESSAGES/gmoccapy.mo
-share/locale/de/LC_MESSAGES/linuxcnc.mo
-share/locale/es/LC_MESSAGES/gmoccapy.mo
-share/locale/es/LC_MESSAGES/linuxcnc.mo
-share/locale/fi/LC_MESSAGES/linuxcnc.mo
-share/locale/fr/LC_MESSAGES/gmoccapy.mo
-share/locale/fr/LC_MESSAGES/linuxcnc.mo
-share/locale/hu/LC_MESSAGES/gmoccapy.mo
-share/locale/hu/LC_MESSAGES/linuxcnc.mo
-share/locale/it/LC_MESSAGES/linuxcnc.mo
-share/locale/ja/LC_MESSAGES/linuxcnc.mo
-share/locale/pl/LC_MESSAGES/gmoccapy.mo
-share/locale/pl/LC_MESSAGES/linuxcnc.mo
-share/locale/pt_BR/LC_MESSAGES/linuxcnc.mo
-share/locale/ro/LC_MESSAGES/linuxcnc.mo
-share/locale/ru/LC_MESSAGES/linuxcnc.mo
-share/locale/sk/LC_MESSAGES/linuxcnc.mo
-share/locale/sr/LC_MESSAGES/gmoccapy.mo
-share/locale/sr/LC_MESSAGES/linuxcnc.mo
-share/locale/sv/LC_MESSAGES/linuxcnc.mo
-share/locale/zh_CN/LC_MESSAGES/linuxcnc.mo
-share/locale/zh_HK/LC_MESSAGES/linuxcnc.mo
-share/locale/zh_TW/LC_MESSAGES/linuxcnc.mo
 @dir lib/linuxcnc/modules/linuxcnc
-@dir share/X11/app-defaults
-@dir etc/rc.d
 @dir /usr/local/%%PYTHON_SITELIBDIR%%/gladevcp
 @dir /usr/local/%%PYTHON_SITELIBDIR%%/gmoccapy
 @dir /usr/local/%%PYTHON_SITELIBDIR%%/gscreen
@@ -2115,37 +2221,3 @@ share/locale/zh_TW/LC_MESSAGES/linuxcnc.mo
 @dir /usr/local/%%PYTHON_SITELIBDIR%%/touchy
 @dir /usr/local/%%PYTHON_SITELIBDIR%%
 @dir /usr/local/%%PYTHON_LIBDIR%%
-@dir share/locale/de/LC_MESSAGES
-@dir share/locale/de
-@dir share/locale/es/LC_MESSAGES
-@dir share/locale/es
-@dir share/locale/fi/LC_MESSAGES
-@dir share/locale/fi
-@dir share/locale/fr/LC_MESSAGES
-@dir share/locale/fr
-@dir share/locale/hu/LC_MESSAGES
-@dir share/locale/hu
-@dir share/locale/it/LC_MESSAGES
-@dir share/locale/it
-@dir share/locale/ja/LC_MESSAGES
-@dir share/locale/ja
-@dir share/locale/pl/LC_MESSAGES
-@dir share/locale/pl
-@dir share/locale/pt_BR/LC_MESSAGES
-@dir share/locale/pt_BR
-@dir share/locale/ro/LC_MESSAGES
-@dir share/locale/ro
-@dir share/locale/ru/LC_MESSAGES
-@dir share/locale/ru
-@dir share/locale/sk/LC_MESSAGES
-@dir share/locale/sk
-@dir share/locale/sr/LC_MESSAGES
-@dir share/locale/sr
-@dir share/locale/sv/LC_MESSAGES
-@dir share/locale/sv
-@dir share/locale/zh_CN/LC_MESSAGES
-@dir share/locale/zh_CN
-@dir share/locale/zh_HK/LC_MESSAGES
-@dir share/locale/zh_HK
-@dir share/locale/zh_TW/LC_MESSAGES
-@dir share/locale/zh_TW

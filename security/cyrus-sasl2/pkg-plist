@@ -35,11 +35,6 @@ lib/libsasl2.so.3.0.0
 %%SCRAM%%lib/sasl2/libscram.so
 %%SCRAM%%lib/sasl2/libscram.so.3
 %%SCRAM%%lib/sasl2/libscram.so.3.0.0
-%%SQL%%lib/sasl2/libsql.a
-%%SQL%%lib/sasl2/libsql.la
-%%SQL%%lib/sasl2/libsql.so
-%%SQL%%lib/sasl2/libsql.so.3
-%%SQL%%lib/sasl2/libsql.so.3.0.0
 %%NTLM%%lib/sasl2/libntlm.a
 %%NTLM%%lib/sasl2/libntlm.la
 %%NTLM%%lib/sasl2/libntlm.so

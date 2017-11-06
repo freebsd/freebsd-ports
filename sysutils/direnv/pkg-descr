@@ -3,4 +3,4 @@ bash, zsh, tcsh and fish shell to load or unload environment variables
 depending on the current directory. This allows to have project-specific
 environment variables and not clutter the "~/.profile" file.
 
-WWW: http://direnv.net/
+WWW: https://direnv.net/

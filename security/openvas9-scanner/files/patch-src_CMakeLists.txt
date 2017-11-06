@@ -1,0 +1,11 @@
+--- src/CMakeLists.txt	2017-07-28 23:40:33.283258000 -0500
++++ src/CMakeLists.txt	2017-07-28 23:40:47.899791000 -0500
+@@ -118,7 +118,7 @@
+ 
+ target_link_libraries (openvassd ${LIBOPENVAS_NASL_LDFLAGS}
+                        ${LIBOPENVAS_BASE_LDFLAGS} ${LIBOPENVAS_MISC_LDFLAGS}
+-                       ${GLIB_LDFLAGS} ${GCRYPT_LDFLAGS}
++                       ${GLIB_LDFLAGS} ${GCRYPT_LDFLAGS} -lexecinfo
+                        ${LINKER_HARDENING_FLAGS})
+ 
+ ## Tests

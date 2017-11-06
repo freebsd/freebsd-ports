@@ -1,0 +1,15 @@
+The hackage security library provides both server and client utilities for
+securing the Hackage package server (http://hackage.haskell.org/). It is based on
+The Update Framework (http://theupdateframework.com/), a set of recommendations
+developed by security researchers at various universities in the US as well as
+developers on the Tor project (https://www.torproject.org/).
+
+The current implementation supports only index signing, thereby enabling
+untrusted mirrors. It does not yet provide facilities for author package
+signing.
+
+The library has two main entry points: Hackage.Security.Client is the main entry
+point for clients (the typical example being cabal), and Hackage.Security.Server
+is the main entry point for servers (the typical example being hackage-server).
+
+WWW: https://hackage.haskell.org/package/hackage-security

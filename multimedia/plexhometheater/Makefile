@@ -5,7 +5,7 @@ PORTNAME=	plexhometheater
 PORTVERSION=	1.4.1
 DISTVERSIONPREFIX=v
 DISTVERSIONSUFFIX=.469-47a90f01
-PORTREVISION=	6
+PORTREVISION=	13
 CATEGORIES=	multimedia
 
 MAINTAINER=	woodsb02@FreeBSD.org
@@ -61,13 +61,15 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3 \
 		xdpyinfo:x11/xdpyinfo
 
 BROKEN=		Fails to build against libsamplerate-0.1.9
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2017-08-23
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	plexinc
 GH_PROJECT=	plex-home-theater-public
 BUNDLE_LIBS=	yes
 
-USES=		cmake:outsource execinfo gmake iconv:wchar_t jpeg pkgconfig python:2
+USES=		cmake:outsource iconv:wchar_t jpeg pkgconfig python:2
 CMAKE_ARGS+=	-DENABLE_AUTOUPDATE:BOOL=false
 CMAKE_ARGS+=	-DENABLE_DUMP_SYMBOLS:BOOL=false
 CMAKE_ARGS+=	-DENABLE_PYTHON:BOOL=false

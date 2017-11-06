@@ -1,0 +1,5 @@
+Provides a number of user-level functions to work with "grid"
+graphics, notably to arrange multiple grid-based plots on a page,
+and draw tables.
+
+WWW: https://cran.r-project.org/web/packages/gridExtra/

@@ -2,35 +2,30 @@
 # $FreeBSD$
 
 PORTNAME=	tty-clock
-PORTVERSION=	2.0.0
-PORTREVISION=	1
+PORTVERSION=	2.3
+DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Terminal based clock
 
 LICENSE=	BSD3CLAUSE
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	xorg62
-GH_TAGNAME=	a82fd71
-
-USES=		ncurses
 ALL_TARGET=	tty-clock
+LDFLAGS+=	-lncursesw
+USES=		gmake ncurses pkgconfig
 
-PLIST_FILES=	bin/tty-clock
+PLIST_FILES=	bin/tty-clock \
+		man/man1/tty-clock.1.gz
+
+GH_ACCOUNT=	xorg62
+USE_GITHUB=	yes
 
 post-patch:
-	@${REINPLACE_CMD} -e \
-		'/^CC/s| =| ?=| ; \
-		 s|/usr/local|$${PREFIX}| ; \
-		 /^CFLAGS/s| =| +=| ; \
-		 s|-Wall -g|-Wall| ; \
-		 /^LDFLAGS/s| =| +=| ; \
-		 /@echo /s|^|#| ; \
-		 s|@$${CC} |$${CC} | ; \
-		 s|@cp |$${BSD_INSTALL_PROGRAM} | ; \
-		 s| $${INSTALLPATH}| $${DESTDIR}$${INSTALLPATH}| ; \
-		 /@chmod /s|^|#|' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's|share/man|man|; s| -g||; /@echo /d; /@chmod/d' ${WRKSRC}/Makefile
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/tty-clock ${STAGEDIR}${PREFIX}/bin/
+	${INSTALL_MAN} ${WRKSRC}/tty-clock.1 ${STAGEDIR}${PREFIX}/man/man1/
 
 .include <bsd.port.mk>

@@ -3,4 +3,4 @@ and real-time audit event analysis through auditpipe(4).  This host based
 IDS operates using a finite state machine principles with a flexible
 sequence driven signature system.
 
-WWW: http://people.freebsd.org/~csjp/bsmtrace/bsmtrace.txt
+WWW: https://people.freebsd.org/~csjp/bsmtrace/bsmtrace.txt

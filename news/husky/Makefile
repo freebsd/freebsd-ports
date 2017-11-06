@@ -33,6 +33,6 @@ GROUPS=		fido
 pre-build:
 	${LN} -sf ${HUSKY_ROOTDIR}/huskybse/huskymak.cfg ${HUSKY_ROOTDIR}
 	@${REINPLACE_CMD} -e 's|gcc|${CC}|; s|g++|${CXX}|' \
-		${HUSKY_ROOTDIR}/huskymak.cfg
+		${HUSKY_ROOTDIR}/huskybse/huskymak.cfg
 
 .include <bsd.port.mk>

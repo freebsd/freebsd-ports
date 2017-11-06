@@ -4,7 +4,6 @@ PORTNAME=		calendar
 PORTVERSION=	2.1
 CATEGORIES=		devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=		pycalendar-${PORTVERSION}
 
 MAINTAINER=	axel.rau@chaos1.de
 COMMENT=	Library for iCalendar/vCard data

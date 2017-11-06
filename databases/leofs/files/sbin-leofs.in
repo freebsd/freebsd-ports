@@ -236,6 +236,8 @@ make_env()
     APP_VSN=${START_ERL#* }
     ERTS_PATH=${LEOFS_BASEDIR}/erts-${ERTS_VSN}/bin
 
+    : ${ERLEXEC_MODE=embedded}
+
     LEOFS_BOOT=${LEOFS_BASEDIR}/releases/${LEOFS_SERVER%_slave}/${APP_VSN}/${LEOFS_SERVER%_slave}
 
     HOME=%%LEOFS_DBDIR%%
@@ -429,8 +431,8 @@ cmd_console()
     config_path=${LEOFS_DBDIR}/etc/app.config
     vmargs_path=${LEOFS_DBDIR}/etc/vm.args
 
-    cmd="${BINDIR}/erlexec -boot ${LEOFS_BOOT} -mode embedded \
-        -config ${config_path} -args_file ${vmargs_path} -- $@"
+    cmd="${BINDIR}/erlexec -boot ${LEOFS_BOOT} -mode ${ERLEXEC_MODE} \
+        -config ${config_path} -args_file ${vmargs_path} -- console $@"
 
     # Dump environment info for logging purposes
     echo Exec: ${cmd}

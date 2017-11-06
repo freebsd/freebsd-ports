@@ -13,7 +13,7 @@ COMMENT=	Universal feed parser written in Python
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		python tar:bzip2
+USES?=		python tar:bzip2
 USE_PYTHON=	distutils autoplist
 
 NO_ARCH=	yes

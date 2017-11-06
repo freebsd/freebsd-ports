@@ -43,10 +43,10 @@ include/sylpheed/sylph/virtual.h
 include/sylpheed/sylph/xml.h
 lib/libsylph-0.so
 lib/libsylph-0.so.1
-lib/libsylph-0.so.1.2.0
+lib/libsylph-0.so.1.2.1
 lib/libsylpheed-plugin-0.so
 lib/libsylpheed-plugin-0.so.1
-lib/libsylpheed-plugin-0.so.1.2.0
+lib/libsylpheed-plugin-0.so.1.2.1
 share/applications/sylpheed.desktop
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog.ja
@@ -119,6 +119,7 @@ share/applications/sylpheed.desktop
 %%PORTDOCS%%%%DOCSDIR%%/manual/ja/sylpheed-24.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/ja/sylpheed-25.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/ja/sylpheed-26.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/ja/sylpheed-27.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/ja/sylpheed-3.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/ja/sylpheed-4.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/ja/sylpheed-5.html

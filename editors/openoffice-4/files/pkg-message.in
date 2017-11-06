@@ -10,13 +10,19 @@ Apache OpenOffice %%AOOTAG%% will soon be installed in
 --------------------
 To enable the scanner interface, install the sane-backends package.
 
-2. User installation
+2. Spell checkers
+-----------------
+Dictionaries for various languages are available as packages.
+They are named LANG-hunspell, where LANG can be "en", "es", "it" etc.
+The corresponding ports are in the textproc category.
+
+3. User installation
 --------------------
 Just type "%%EXECBASE%%" after you have successfully installed
 the package.  If there is no installed .openoffice.org directory in your
 home directory, the setup installs the "%%AOOUDIR%%" folder.
 
-3. Starting Apache OpenOffice
+4. Starting Apache OpenOffice
 -----------------------------
 There are some wrappers installed for faster startup.  Add "%%PREFIX%%/bin/"
 to your PATH and you will be able to use them.
@@ -32,12 +38,12 @@ to your PATH and you will be able to use them.
 
 OpenOffice does need $LANG to be set to a suitable value.
 
-4. Wiki Publisher Extension
+5. Wiki Publisher Extension
 ---------------------------
 The Wiki Publisher extension is now an integrated extension and manual
 installation with the extension manager is no longer needed.
 
-5. If you run into problems
+6. If you run into problems
 ---------------------------
 If you somehow run into problems, please remove the already installed
 "%%AOOUDIR%%" directory in your home directory, then redo the

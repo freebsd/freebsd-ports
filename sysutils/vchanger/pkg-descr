@@ -1,0 +1,6 @@
+Vchanger as a disk-based virtual autochanger may be used with the Bacula
+Open Source network backup system to emulate a magazine-based tape autoloader
+using disk partitions on fixed or removable disk drives as virtual magazines
+and files on those partitions as virtual tape volumes.
+
+WWW: https://vchanger.sourceforge.io

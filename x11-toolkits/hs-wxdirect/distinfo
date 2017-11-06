@@ -1,2 +1,3 @@
-SHA256 (cabal/wxdirect-0.91.0.0.tar.gz) = 475c9f977576f1ea881461d7ac729caa71c0b5958db8500fab9b3de57ddcb49f
-SIZE (cabal/wxdirect-0.91.0.0.tar.gz) = 30044
+TIMESTAMP = 1499446016
+SHA256 (cabal/wxdirect-0.92.3.0.tar.gz) = 03c60f604347dcfb1fb8cf65b4d0a487b5c2c868e4896f03ce5edd12d81e367a
+SIZE (cabal/wxdirect-0.92.3.0.tar.gz) = 30586

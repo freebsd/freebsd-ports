@@ -1,2 +1,3 @@
-SHA256 (cabal/network-2.6.2.1.tar.gz) = a3fda15c9bbe2c7274d97f40398c6cf8d1d3a9fe896fbf6531e1bfc849bb1bfa
-SIZE (cabal/network-2.6.2.1.tar.gz) = 118092
+TIMESTAMP = 1499623593
+SHA256 (cabal/network-2.6.3.2.tar.gz) = 354477074eaf2c0e134f4a7ae17694ffc747d484133463e95fae57ecbe48c0b6
+SIZE (cabal/network-2.6.3.2.tar.gz) = 122892

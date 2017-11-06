@@ -1,7 +1,7 @@
 ****************************************************************
 To use the motion service properly, you should edit
 
-	%%PREFIX%%/etc/motion.conf
+	%%ETCDIR%%/motion.conf
 
 according to your needs.
 

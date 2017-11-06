@@ -1,0 +1,30 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: znapzend
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+
+#
+# Add the following line to /etc/rc.conf to enable znapzend:
+# znapzend_enable (bool):	Set to "NO" by default.
+#				Set it to "YES" to enable znapzend.
+#
+
+. /etc/rc.subr
+
+name="znapzend"
+rcvar="znapzend_enable"
+
+load_rc_config $name
+
+: ${znapzend_enable="NO"}
+
+pidfile=/var/run/${name}.pid
+command=%%PREFIX%%/bin/${name}
+command_args="--daemonize --pidfile=${pidfile}"
+
+run_rc_command "$1"
+

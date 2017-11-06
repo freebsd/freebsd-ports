@@ -213,7 +213,6 @@ man/man3/SDL_mutexP.3.gz
 man/man3/SDL_mutexV.3.gz
 share/aclocal/sdl.m4
 %%PORTDOCS%%%%DOCSDIR%%/BUGS
-%%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/CREDITS
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/README-SDL.txt

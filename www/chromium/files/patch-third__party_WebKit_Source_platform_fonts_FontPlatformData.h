@@ -1,32 +1,32 @@
---- third_party/WebKit/Source/platform/fonts/FontPlatformData.h.orig	2016-08-05 04:20:03.099630000 +0300
-+++ third_party/WebKit/Source/platform/fonts/FontPlatformData.h	2016-08-05 04:18:22.356719000 +0300
-@@ -46,9 +46,9 @@
- #include "wtf/text/CString.h"
- #include "wtf/text/StringImpl.h"
+--- third_party/WebKit/Source/platform/fonts/FontPlatformData.h.orig	2017-09-05 21:05:41.000000000 +0200
++++ third_party/WebKit/Source/platform/fonts/FontPlatformData.h	2017-09-06 21:44:50.459129000 +0200
+@@ -48,9 +48,9 @@
+ #include "platform/wtf/text/StringImpl.h"
+ #include "third_party/skia/include/core/SkRefCnt.h"
  
--#if OS(LINUX) || OS(ANDROID)
-+#if OS(LINUX) || OS(ANDROID) || OS(BSD)
+-#if defined(OS_LINUX) || defined(OS_ANDROID)
++#if defined(OS_LINUX) || defined(OS_ANDROID) || defined(OS_BSD)
  #include "platform/fonts/linux/FontRenderStyle.h"
--#endif // OS(LINUX) || OS(ANDROID)
-+#endif // OS(LINUX) || OS(ANDROID) || OS(BSD)
+-#endif  // defined(OS_LINUX) || defined(OS_ANDROID)
++#endif  // defined(OS_LINUX) || defined(OS_ANDROID) || defined(OS_BSD)
  
- #if OS(MACOSX)
+ #if defined(OS_MACOSX)
  OBJC_CLASS NSFont;
-@@ -126,7 +126,7 @@
-     PassRefPtr<OpenTypeVerticalData> verticalData() const;
-     PassRefPtr<SharedBuffer> openTypeTable(SkFontTableTag) const;
- 
--#if OS(LINUX) || OS(ANDROID)
-+#if OS(LINUX) || OS(ANDROID) || OS(BSD)
-     // The returned styles are all actual styles without FontRenderStyle::NoPreference.
-     const FontRenderStyle& getFontRenderStyle() const { return m_style; }
- #endif
 @@ -152,7 +152,7 @@
-     bool m_syntheticItalic;
-     FontOrientation m_orientation;
- private:
--#if OS(LINUX) || OS(ANDROID)
-+#if OS(LINUX) || OS(ANDROID) || OS(BSD)
-     FontRenderStyle m_style;
+   PassRefPtr<OpenTypeVerticalData> VerticalData() const;
+   Vector<char> OpenTypeTable(SkFontTableTag) const;
+ 
+-#if defined(OS_LINUX) || defined(OS_ANDROID)
++#if defined(OS_LINUX) || defined(OS_ANDROID) || defined(OS_BSD)
+   // The returned styles are all actual styles without
+   // FontRenderStyle::NoPreference.
+   const FontRenderStyle& GetFontRenderStyle() const { return style_; }
+@@ -182,7 +182,7 @@
+   FontOrientation orientation_;
+ 
+  private:
+-#if defined(OS_LINUX) || defined(OS_ANDROID)
++#if defined(OS_LINUX) || defined(OS_ANDROID) || defined(OS_BSD)
+   FontRenderStyle style_;
  #endif
  

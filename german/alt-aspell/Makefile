@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	alt-aspell
-DISTVERSION=	6-de-alt-2.1-1
+SPELLVERSION=	6-de-alt-2.1-1
 PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	german textproc

@@ -1,5 +1,3 @@
-$FreeBSD$
-
 runit is designed to be placed in /sbin.  However, there is no reason that
 PREFIX cannot be respected here, so should a user define in loader.conf this
 in place, then it will still be found.

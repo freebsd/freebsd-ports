@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	jsobfu
-PORTVERSION=	0.4.1
+PORTVERSION=	0.4.2
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -10,12 +10,12 @@ COMMENT=	Javascript code obfuscator
 
 LICENSE=	BSD3CLAUSE
 
-RUN_DEPENDS=	rubygem-rkelly-remix>=0.0.6:www/rubygem-rkelly-remix
+RUN_DEPENDS=	rubygem-rkelly-remix>=0:www/rubygem-rkelly-remix
 
 NO_ARCH=	yes
-
 USE_RUBY=	yes
 USES=		gem
+
 PLIST_FILES=	bin/jsobfu
 
 .include <bsd.port.mk>

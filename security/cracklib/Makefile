@@ -7,14 +7,14 @@ CATEGORIES=	security
 .if defined(PYTHON_SLAVEPORT)
 CATEGORIES+=	python
 .endif
-MASTER_SITES=	 https://github.com/cracklib/cracklib/releases/download/cracklib-2.9.6/ \
+MASTER_SITES=	https://github.com/cracklib/cracklib/releases/download/cracklib-2.9.6/ \
 		LOCAL/cy
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
 		${PORTNAME}-words-${PORTVERSION}.gz
 EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
 WORDS_DISTFILE=	${PORTNAME}-words-${PORTVERSION}.gz
 
-MAINTAINER= 	cy@FreeBSD.org
+MAINTAINER=	cy@FreeBSD.org
 COMMENT?=	Password-checking library
 
 LICENSE=	LGPL21

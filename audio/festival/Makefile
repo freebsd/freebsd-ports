@@ -5,19 +5,19 @@ PORTNAME=	festival
 PORTVERSION=	2.4
 CATEGORIES=	audio accessibility
 MASTER_SITES=	FESTIVAL
-DISTFILES=	${DISTNAME}-release.tar.gz 	\
+DISTFILES=	${DISTNAME}-release.tar.gz	\
 		speech_tools-${PORTVERSION}-release.tar.gz
 DIST_SUBDIR=	festival
 
 PATCHFILES=	src_modules_diphone_diphone.h.diff?id=b58a836:debian	\
 		src_modules_diphone_di_io.cc.diff?id=b58a836:debian	\
 		src_modules_diphone_diphone.cc.diff?id=b58a836:debian	\
-		src_modules_donovan_t2s.h.diff?id=b58a836:debian		\
-		src_modules_UniSyn_diphone_UniSyn_diphone.cc.diff?id=b58a836:debian \
+		src_modules_donovan_t2s.h.diff?id=b58a836:debian	\
+		src_modules_UniSyn_diphone_UniSyn_diphone.cc.diff?id=b58a836:debian	\
 		festival_el_utf8.diff?id=b58a836:debian	\
 		lintianspellpatch.diff?id=b58a836:debian	\
 		hts21compat.diff?id=b58a836:debian	\
-		languagespatch.diff?id=b58a836:debian \
+		languagespatch.diff?id=b58a836:debian	\
 		${SPT_PATCHES:C/.*/patch-speech__tools_\0:netbsd/}
 PATCH_SITES=	ftp://ftp.netbsd.org/pub/pkgsrc/current/pkgsrc/audio/festival/patches/:netbsd	\
 		http://anonscm.debian.org/cgit/tts/festival.git/plain/debian/patches/:debian
@@ -25,17 +25,12 @@ PATCH_SITES=	ftp://ftp.netbsd.org/pub/pkgsrc/current/pkgsrc/audio/festival/patch
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Multi-lingual speech synthesis system
 
-BROKEN_aarch64=		Fails to link: arm64_unknown.mak: No such file or directory
-BROKEN_armv6=		Fails to link: cc.mak: No such file or directory
-BROKEN_mips64=		Fails to link: cc.mak: No such file or directory
-BROKEN_powerpc64=	Does not build
-
 OPTIONS_DEFINE=	NAS ESD
 OPTIONS_DEFAULT=NAS ESD
 ESD_DESC=	${ESOUND_DESC}
 
 CXXFLAGS+=	-DFTLIBDIR=${LOCALBASE}/share/festival/lib
-CONFIGURE_WRKSRC=	${WRKDIR}/festival
+CONFIGURE_WRKSRC=${WRKDIR}/festival
 USES=		gmake
 SPEECHTOOLS=	${WRKSRC}/speech_tools
 FESTIVAL=	${WRKSRC}/festival
@@ -85,16 +80,13 @@ do-configure:
 		${FALSE}; \
 	fi
 	# This step helps non-i386 systems and is harmless on i386
-	-${LN} -s ix86_FreeBSD.mak ${WRKDIR}/$d/config/systems/${ARCH:S/armv6/arm/}_unknown.mak
+	-${LN} -s ix86_FreeBSD.mak ${WRKDIR}/$d/config/systems/${MACHINE}_unknown.mak
 .endfor
-	${REINPLACE_CMD} \
+	@${REINPLACE_CMD} \
 	    -e '/^CFLAGS *=/s|$$| ${CFLAGS}|' \
 	    -e '/^CXXFLAGS *=/s|$$| ${CXXFLAGS}|' \
 	    -e 's,^OPTIMI,#OPTIMI,' \
 	    ${WRKSRC}/speech_tools/config/compilers/gcc*.mak
-	# This step helps to use a compiler, the vendor has not seen before:
-	${TEST} -e ${WRKDIR}/speech_tools/config/compilers/${CC}.mak ||	\
-		${LN} -s gcc_defaults.mak ${WRKDIR}/speech_tools/config/compilers/${CC}.mak
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}

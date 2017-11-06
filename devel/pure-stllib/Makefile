@@ -3,6 +3,7 @@
 
 PORTNAME=	pure-stllib
 PORTVERSION=	0.6
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	https://bitbucket.org/purelang/pure-lang/downloads/
 DIST_SUBDIR=	pure
@@ -11,6 +12,7 @@ MAINTAINER=	lichray@gmail.com
 COMMENT=	Pure interface to C++ STL map and vectors
 
 LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		compiler:c++11-lib pkgconfig pure
 

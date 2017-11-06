@@ -16,7 +16,7 @@ LIB_DEPENDS=	libgnutls.so:security/gnutls \
 
 BROKEN_FreeBSD_10=	does not build
 
-USES=		desktop-file-utils pkgconfig perl5 tar:tgz
+USES=		desktop-file-utils groff pkgconfig perl5 tar:tgz
 USE_PERL5=	build
 INSTALLS_ICONS=	yes
 

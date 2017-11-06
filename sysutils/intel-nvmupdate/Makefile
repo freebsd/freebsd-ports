@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	nvmupdate
-DISTVERSION=	5_04
+DISTVERSION=	5_05
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	https://downloadmirror.intel.com/${MASTER_SITE_SUBDIR}/ \
 		http://downloadmirror.intel.com/${MASTER_SITE_SUBDIR}/
@@ -24,6 +25,8 @@ LICENSE_NAME_IPL=	Intel Proprietary License
 LICENSE_FILE_IPL=	${WRKSRC}/license.txt
 LICENSE_PERMS_IPL=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
+BROKEN=		Does not fetch.
+
 WRKSRC=			${WRKDIR}/XL710/FreeBSDx64
 NO_BUILD=		yes
 ONLY_FOR_ARCHS=		amd64
@@ -36,10 +39,6 @@ SUB_LIST=	NVMUPDATE_DIR=${NVMUPDATE_DIR}
 NVMUPDATE_DIR=	intel-nvmupdate
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 1100000
-BROKEN=		core dump on application startup
-.endif
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/${NVMUPDATE_DIR}

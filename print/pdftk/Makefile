@@ -3,7 +3,7 @@
 
 PORTNAME=	pdftk
 PORTVERSION=	2.02
-PORTREVISION=	4
+PORTREVISION=	6
 CATEGORIES=	print
 MASTER_SITES=	http://www.pdflabs.com/tools/pdftk-the-pdf-toolkit/ LOCAL/mat/pdftk
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
@@ -16,7 +16,7 @@ LICENSE=	GPLv2
 # Get GCC version suffix without the dot in USE_GCC
 CSUFF=		${_USE_GCC:S/.//}
 
-USE_GCC=	yes
+USE_GCC=	6	# Only GCC 6 provides Java (GCJ and libgcj).
 USES=		iconv gmake zip
 
 # gcj/libgcj don't exist on some platforms
@@ -28,7 +28,7 @@ WRKSRC=		${PATCH_WRKSRC}/${PORTNAME}
 
 MAKEFILE=	Makefile.FreeBSD
 MAKE_ENV=	GCJ=gcj${CSUFF} GCJH=gcjh${CSUFF} GCPP=cpp${CSUFF} \
-		OBJCOPY=${OBJCOPY} LANG=C LC_CTYPE=C
+		OBJCOPY=${OBJCOPY}
 
 PLIST_FILES=	bin/${PORTNAME} man/man1/${PORTNAME}.1.gz
 

@@ -2,19 +2,17 @@
 # $FreeBSD$
 
 PORTNAME=	Net-Riak
-PORTVERSION=	0.17.02
-PORTREVISION=	1
+PORTVERSION=	0.1702
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	CPAN:RGE
 PKGNAMEPREFIX=	p5-
-DISTNAME=	${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Interface to Riak
 
-LICENSE=	ART10 GPLv1
+LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	p5-Data-Dump>=0:devel/p5-Data-Dump \
 		p5-Google-ProtocolBuffers>=0:devel/p5-Google-ProtocolBuffers \
@@ -28,6 +26,7 @@ BUILD_DEPENDS=	p5-Data-Dump>=0:devel/p5-Data-Dump \
 		p5-libwww>=0:www/p5-libwww
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
 

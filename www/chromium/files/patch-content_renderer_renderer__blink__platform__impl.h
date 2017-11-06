@@ -1,11 +1,11 @@
---- content/renderer/renderer_blink_platform_impl.h.orig	2016-05-11 19:02:22 UTC
+--- content/renderer/renderer_blink_platform_impl.h.orig	2017-06-05 19:03:07 UTC
 +++ content/renderer/renderer_blink_platform_impl.h
-@@ -250,7 +250,7 @@ class CONTENT_EXPORT RendererBlinkPlatfo
-   class MimeRegistry;
-   scoped_ptr<MimeRegistry> mime_registry_;
+@@ -258,7 +258,7 @@ class CONTENT_EXPORT RendererBlinkPlatformImpl : publi
+   class FileUtilities;
+   std::unique_ptr<FileUtilities> file_utilities_;
  
 -#if !defined(OS_ANDROID) && !defined(OS_WIN)
 +#if !defined(OS_ANDROID) && !defined(OS_WIN) && !defined(OS_BSD)
    class SandboxSupport;
-   scoped_ptr<SandboxSupport> sandbox_support_;
+   std::unique_ptr<SandboxSupport> sandbox_support_;
  #endif

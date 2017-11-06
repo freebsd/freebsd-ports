@@ -1,7 +1,5 @@
 Beautify PHP
-WWW: http://www.bierkandt.org/beautify/index.php
 
-What it does:
 This program tries to reformat and beautify PHP source code files automatically.
 The program is Open Source and distributed under the terms of GNU GPL.
 It is written in PHP and has a web frontend.
@@ -22,3 +20,5 @@ Basic features:
   be executed anymore, it is only useful for printout.)
 - turn off and on beautifying by inserting "// NO_BEAUTIFY" or "// BEAUTIFY"
   in source code
+
+WWW: http://www.bierkandt.org/beautify/index.php

@@ -3,7 +3,7 @@
 
 PORTNAME=	libpar2
 PORTVERSION=	0.4
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	archivers
 MASTER_SITES=	http://launchpad.net/${PORTNAME}/trunk/${PORTVERSION}/+download/
 
@@ -16,11 +16,9 @@ LIB_DEPENDS=	libsigc-2.0.so:devel/libsigc++20
 
 GNU_CONFIGURE=	yes
 
-LDFLAGS+=	-L${LOCALBASE}/lib
-CPPFLAGS+=	-I${LOCALBASE}/include
-
 USE_LDCONFIG=	yes
-USES=		pkgconfig libtool
+USES=		pkgconfig libtool localbase compiler:c++11-lang
+USE_CXXSTD=	c++11
 
 OPTIONS_DEFINE=	DOCS
 

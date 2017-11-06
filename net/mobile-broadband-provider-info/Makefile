@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	mobile-broadband-provider-info
-PORTVERSION=	20151214
+PORTVERSION=	20170310
 CATEGORIES=	net gnome
 MASTER_SITES=	GNOME
 

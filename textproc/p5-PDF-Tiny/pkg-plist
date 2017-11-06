@@ -1,0 +1,3 @@
+%%SITE_PERL%%/PDF/Tiny.pm
+%%SITE_PERL%%/PDF/Tiny.pod
+%%PERL5_MAN3%%/PDF::Tiny.3.gz

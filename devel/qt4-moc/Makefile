@@ -3,14 +3,12 @@
 
 PORTNAME=	moc
 DISTVERSION=	${QT4_VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 PKGNAMEPREFIX=	qt4-
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt Meta-Object Compiler
-
-BROKEN_arm=	does not compile
 
 USE_QT4=	qmake_build
 QT_DIST=	yes

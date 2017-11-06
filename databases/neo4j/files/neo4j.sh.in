@@ -2,6 +2,4 @@
 #
 # $FreeBSD$
 
-. %%PREFIX%%/libexec/neo4j/neo4j-shared.sh
-
-exec %%PREFIX%%/libexec/neo4j/$(basename $0) ${1+"$@"}
+exec %%PREFIX%%/bin/$(basename $0) ${1+"$@"}

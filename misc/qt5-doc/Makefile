@@ -13,7 +13,8 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt 5 documentation
 
 USES=		gmake python:build qmake:norecursive,outsource tar:xz
-USE_QT5=	buildtools_build concurrent_build help_build qdoc_build
+USE_QT5=	buildtools_build concurrent_build help_build qdoc_build \
+		sql_build sql-sqlite3_build
 QMAKE_SOURCE_PATH=	${WRKSRC}/qt.pro
 
 ALL_TARGET=	docs

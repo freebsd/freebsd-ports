@@ -13,4 +13,4 @@ Perl code, a user-definable string to designate unused addresses that
 are in DNS, testing that the forward and reverse hostnames match, and
 the daemon forks one process pre subnet.
 
-WWW: http://sourceforge.net/projects/iphawk/
+WWW: https://sourceforge.net/projects/iphawk/

@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	gnubik
-PORTVERSION=	2.4.2
+PORTVERSION=	2.4.3
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	GNU
 
@@ -12,7 +13,7 @@ COMMENT=	3D Rubik's cube game
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libguile.so:lang/guile \
+LIB_DEPENDS=	libguile-2.0.so:lang/guile2 \
 		libgtkglext-x11-1.0.so:x11-toolkits/gtkglext
 
 GNU_CONFIGURE=	yes

@@ -1,2 +1,3 @@
-SHA256 (cabal/lifted-base-0.2.3.6.tar.gz) = 57c5837d83f569bb72136ca89256e50e1ac168ee935804a8e7763e9d8322e1fb
-SIZE (cabal/lifted-base-0.2.3.6.tar.gz) = 11613
+TIMESTAMP = 1499627850
+SHA256 (cabal/lifted-base-0.2.3.11.tar.gz) = 8ec47a9fce7cf5913766a5c53e1b2cf254be733fa9d62e6e2f3f24e538005aab
+SIZE (cabal/lifted-base-0.2.3.11.tar.gz) = 11777

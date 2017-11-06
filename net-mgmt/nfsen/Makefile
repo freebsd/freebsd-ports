@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	nfsen
-PORTVERSION=	1.3.7
-PORTREVISION=	3
+PORTVERSION=	1.3.8
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/${PORTNAME}/stable/${PORTNAME}-${PORTVERSION} \
 		http://nfsen.sourceforge.net/
@@ -19,7 +19,7 @@ RUN_DEPENDS=	rrdtool>=0:databases/rrdtool \
 		p5-Socket6>=0:net/p5-Socket6 \
 		nfdump>=0:net-mgmt/nfdump
 
-USES=		cpe iconv shebangfix perl5
+USES=		cpe iconv shebangfix perl5 php
 CPE_VENDOR=	nfsen
 CPE_PRODUCT=	nfsen
 USE_PHP=	session pcre sockets

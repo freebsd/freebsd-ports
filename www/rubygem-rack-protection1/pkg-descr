@@ -1,0 +1,3 @@
+Collection of Rack middleware to protect you against common, opportunistic attack.
+
+WWW: https://github.com/sinatra/rack-protection

@@ -1,6 +1,6 @@
---- server.c.orig	2016-02-10 18:38:43 UTC
+--- server.c.orig	2017-06-11 18:52:26 UTC
 +++ server.c
-@@ -101,7 +101,9 @@ static void dispatch_dump(FILE *fh, char
+@@ -101,7 +101,9 @@ static void dispatch_dump(FILE *fh, char *s)
  
  static void dispatch_pages(FILE *fh)
  {
@@ -10,7 +10,7 @@
  	fprintf(fh, "done\n");
  }
  
-@@ -137,6 +139,7 @@ static void process_cmd(struct clientcon
+@@ -137,6 +139,7 @@ static void process_cmd(struct clientcon *cc)
  		Enomem();
  }
  
@@ -18,12 +18,12 @@
  /* check if client is allowed to access */
  static int access_check(int fd, struct msghdr *msg)
  {
-@@ -162,11 +165,44 @@ static int access_check(int fd, struct m
+@@ -162,11 +165,44 @@ static int access_check(int fd, struct msghdr *msg)
  	sendstring(fd, "permission denied\n");
  	return -1;
  }
 +#endif
-+
+ 
 +#ifdef __FreeBSD__
 +/* check if client is allowed to access */
 +static int access_check(int fd, struct msghdr *msg)
@@ -51,7 +51,7 @@
 +	return -1;
 +}
 +#endif
- 
++
  /* retrieve commands from client */
  static int client_input(int fd, struct clientcon *cc)
  {
@@ -63,7 +63,7 @@
  	struct iovec miov;
  	struct msghdr msg = {
  		.msg_iov = &miov,
-@@ -242,18 +278,22 @@ static void client_accept(struct pollfd 
+@@ -242,18 +278,22 @@ static void client_accept(struct pollfd *pfd, void *da
  {
  	struct clientcon *cc = NULL;
  	int nfd = accept(pfd->fd, NULL, 0);	
@@ -86,7 +86,7 @@
  
  	cc = xalloc(sizeof(struct clientcon));
  	if (register_pollcb(nfd, POLLIN, client_event, cc) < 0) {
-@@ -301,7 +341,12 @@ static int server_ping(struct sockaddr_u
+@@ -301,7 +341,12 @@ static int server_ping(struct sockaddr_un *un)
  	if (sigsetjmp(ping_timeout_ctx, 1) == 0) {
  		ret = -1;
  		alarm(initial_ping_timeout);
@@ -99,3 +99,25 @@
  			goto cleanup;
  		if (write(fd, PAIR("ping\n")) < 0)
  			goto cleanup;
+@@ -322,7 +367,9 @@ void server_setup(void)
+ {
+ 	int fd;
+ 	struct sockaddr_un adr; 
++#ifdef __Linux__
+ 	int on;
++#endif
+ 
+ 	server_config();
+ 
+@@ -363,9 +410,11 @@ void server_setup(void)
+ 	listen(fd, 10);
+ 	/* Set SO_PASSCRED to avoid race with client connecting too fast */
+ 	/* Ignore error for old kernels */
++#ifdef __Linux__
+ 	on = 1;
+ 	setsockopt(fd, SOL_SOCKET, SO_PASSCRED, &on, sizeof(on));
+ 
++#endif
+ 	register_pollcb(fd, POLLIN, client_accept, NULL);
+ 	return;
+ 

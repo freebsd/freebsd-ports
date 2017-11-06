@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	liborcus
-PORTVERSION=	0.11.2
-PORTREVISION=	2
+PORTVERSION=	0.12.1
+PORTREVISION=	5
 CATEGORIES=	devel misc
 MASTER_SITES=	http://kohei.us/files/orcus/src/
 
@@ -14,8 +14,10 @@ LICENSE=	MIT
 BUILD_DEPENDS=	${LOCALBASE}/include/mdds-1.2/mdds/global.hpp:devel/mdds
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs
 
+BROKEN_powerpc64=	fails to configure: checking for the Boost program_options library... no
+
 GNU_CONFIGURE=	yes
-USES=		compiler:c++11-lib gmake libtool pathfix pkgconfig tar:xz
+USES=		compiler:c++11-lib libtool pathfix pkgconfig tar:xz
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 

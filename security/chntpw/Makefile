@@ -15,8 +15,7 @@ LICENSE=	GPLv2
 
 OPTIONS_DEFINE=	DOCS
 
-USE_OPENSSL=	yes
-USES=		gmake zip
+USES=		gmake zip ssl
 
 BIN_FILES=	chntpw cpnt reged
 PLIST_FILES=	${BIN_FILES:C|^|bin/|}

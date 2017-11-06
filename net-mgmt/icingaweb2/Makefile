@@ -2,7 +2,7 @@
 
 PORTNAME=	icingaweb2
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.4.0
+DISTVERSION=	2.4.2
 CATEGORIES=	net-mgmt www
 
 MAINTAINER=	lme@FreeBSD.org
@@ -37,7 +37,7 @@ PDF_DESC=	Export graphs as PDF
 
 NLS_USES=	gettext
 NLS_USE=	php=intl
-PGSQL_USE=	PHP=pdo_pgsql
+PGSQL_USE=	PHP=pdo_pgsql,pgsql
 MYSQL_USE=	PHP=pdo_mysql
 LDAP_USE=	PHP=ldap
 PDF_RUN_DEPENDS=	${PHPBASE}/lib/php/${PHP_EXT_DIR}/imagick.so:graphics/pecl-imagick

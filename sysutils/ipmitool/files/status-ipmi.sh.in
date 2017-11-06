@@ -49,7 +49,12 @@ case "${daily_status_ipmi_enable}" in
         if [ $entries -gt $last ]; then
           echo $entries > /var/db/ipmi-sel-count
           echo ""
-          $ipmitool sel list $sel_list_args
+          if [ "$sel_list_args" ]; then
+            $ipmitool sel list $sel_list_args
+          else
+            count=$(($entries-$last))
+            $ipmitool sel list last $count
+          fi
           rc=3
         fi
         ;;

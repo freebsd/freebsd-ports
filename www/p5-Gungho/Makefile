@@ -2,16 +2,18 @@
 # $FreeBSD$
 
 PORTNAME=	Gungho
-PORTVERSION=	0.09.008
+PORTVERSION=	0.09008
 PORTREVISION=	2
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:DMAKI
 PKGNAMEPREFIX=	p5-
-DISTNAME=	${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Event Based High Performance Web Crawler Framework
+
+LICENSE=	ART10 GPLv1+
+LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Best>=0:devel/p5-Best \
 		p5-Class-Accessor>=0:devel/p5-Class-Accessor \
@@ -46,6 +48,7 @@ BUILD_DEPENDS=	p5-Best>=0:devel/p5-Best \
 		p5-libwww>=0:www/p5-libwww
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+NO_ARCH=	yes
 USES=		perl5 shebangfix
 USE_PERL5=	configure
 SHEBANG_FILES=	script/*

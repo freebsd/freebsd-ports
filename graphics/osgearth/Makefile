@@ -2,25 +2,28 @@
 # $FreeBSD$
 
 PORTNAME=	osgearth
-PORTVERSION=	2.7
+PORTVERSION=	2.8
 DISTVERSIONPREFIX=	${PORTNAME}-
 CATEGORIES=	graphics geography
 
-MAINTAINER=	coder@tuxfamily.org
+MAINTAINER=	lbartoletti@tuxfamily.org
 COMMENT=	C++ terrain rendering toolkit for OpenSceneGraph
 
 LICENSE=	LGPL3
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 BUILD_DEPENDS=	minizip:archivers/minizip
 LIB_DEPENDS=	libosg.so:graphics/osg \
 		libgdal.so:graphics/gdal \
 		libcurl.so:ftp/curl
 
+USES=		cmake pkgconfig sqlite
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	gwaldron
 
 USE_LDCONFIG=	yes
-USES=		cmake gmake pkgconfig sqlite
+USE_GL+=	gl glu
 PLIST_SUB=	OSGVERSION=3.4.0
 
 CMAKE_ARGS+=	-DCMAKE_INCLUDE_PATH:PATH=${LOCALBASE}/include \

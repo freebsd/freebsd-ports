@@ -1,17 +1,19 @@
---- ../plugins/Make-arch.orig	2011-03-11 22:38:25.000000000 -0500
-+++ ../plugins/Make-arch	2011-03-12 00:08:41.000000000 -0500
-@@ -277,8 +277,8 @@
+--- ../plugins/Make-arch.orig	2016-10-21 23:34:39.000000000 +0200
++++ ../plugins/Make-arch
+@@ -272,10 +272,8 @@
  	"CC = gcc" \
  	"CXX = g++" \
  	"DEF = -D" \
 -	"CCFLAGS = -O2 -Wall -I/usr/local/include/tcl8.5" \
 -	"CXXFLAGS = -O2 -Wall" \
-+	"CCFLAGS = ${CFLAGS} -O2 -Wall -I/usr/local/include/tcl8.5" \
-+	"CXXFLAGS = ${CFLAGS} -O2 -Wall" \
- 	"TCLLDFLAGS = -L/usr/local/lib -ltcl85" \
- 	"NETCDFLDFLAGS = -lnetcdf " \
+-	"TCLLDFLAGS = -L/usr/local/lib -ltcl85" \
+-	"NETCDFLDFLAGS = -lnetcdf " \
++	"CCFLAGS = ${CFLAGS} -Wall" \
++	"CXXFLAGS = ${CFLAGS} -Wall" \
  	"AR = ar" \
-@@ -288,14 +288,14 @@
+ 	"NM = nm -p" \
+ 	"RANLIB = touch" \
+@@ -283,16 +281,14 @@
  
  FREEBSDAMD64:
  	$(MAKE) dynlibs staticlibs bins \
@@ -24,8 +26,10 @@
  	"DEF = -D" \
 -	"CCFLAGS = -m64 -O2 -Wall -I/usr/local/include/tcl8.5" \
 -	"CXXFLAGS = -m64 -O2 -Wall" \
-+	"CCFLAGS = ${CFLAGS} -m64 -O2 -Wall -I/usr/local/include/tcl8.5" \
-+	"CXXFLAGS = ${CFLAGS} -m64 -O2 -Wall" \
- 	"TCLLDFLAGS = -L/usr/local/lib -ltcl85" \
- 	"NETCDFLDFLAGS = -lnetcdf " \
+-	"TCLLDFLAGS = -L/usr/local/lib -ltcl85" \
+-	"NETCDFLDFLAGS = -lnetcdf " \
++	"CCFLAGS = ${CFLAGS} -Wall" \
++	"CXXFLAGS = ${CFLAGS} -Wall" \
  	"AR = ar" \
+ 	"NM = nm -p" \
+ 	"RANLIB = touch" \

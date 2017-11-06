@@ -15,10 +15,7 @@ RUN_DEPENDS=	rubygem-rubyinline>=3.6.3:devel/rubygem-rubyinline
 
 LICENSE=	GPLv2
 
-GEM_NAME=	${DISTNAME}
-
 NO_ARCH=	yes
-
 USE_RUBY=	yes
 USES=		gem
 

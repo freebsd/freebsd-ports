@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	ffmpegthumbnailer
-PORTVERSION=	2.1.1
-PORTREVISION=	1
+PORTVERSION=	2.2.0
+PORTREVISION=	4
 CATEGORIES=	multimedia graphics
 
 MAINTAINER=	clutton@zoho.com
@@ -14,6 +14,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libswscale.so:multimedia/ffmpeg
+
+BROKEN_powerpc64=	fails to compile: moviedecoder.cpp: error: 'to_string' is not a member of 'std'
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	dirkvdb

@@ -104,6 +104,7 @@ smokeping_stop()
 	else
 		echo "Stopping ${name}."
 		kill -TERM $rc_pid
+		wait_for_pids $rc_pid
 	fi
 }
 

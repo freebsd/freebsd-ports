@@ -10,7 +10,6 @@
     SUBDIR += bcftools
     SUBDIR += bedtools
     SUBDIR += biococoa
-    SUBDIR += biojava
     SUBDIR += blat
     SUBDIR += bowtie
     SUBDIR += bowtie2
@@ -38,6 +37,7 @@
     SUBDIR += hmmer
     SUBDIR += htslib
     SUBDIR += iolib
+    SUBDIR += iqtree
     SUBDIR += jalview
     SUBDIR += jellyfish
     SUBDIR += lagan
@@ -61,6 +61,7 @@
     SUBDIR += p5-Bio-Coordinate
     SUBDIR += p5-Bio-Das
     SUBDIR += p5-Bio-Das-Lite
+    SUBDIR += p5-Bio-FeatureIO
     SUBDIR += p5-Bio-GFF3
     SUBDIR += p5-Bio-Glite
     SUBDIR += p5-Bio-Graphics
@@ -83,11 +84,14 @@
     SUBDIR += psi88
     SUBDIR += py-biom-format
     SUBDIR += py-biopython
+    SUBDIR += py-bx-python
+    SUBDIR += py-pysam
     SUBDIR += pycogent
     SUBDIR += pyfasta
     SUBDIR += python-nexus
     SUBDIR += recombine
     SUBDIR += ruby-bio
+    SUBDIR += rubygem-bio
     SUBDIR += samtools
     SUBDIR += seaview
     SUBDIR += seqan
@@ -102,7 +106,6 @@
     SUBDIR += t_coffee
     SUBDIR += tinker
     SUBDIR += treepuzzle
-    SUBDIR += treeviewx
     SUBDIR += trimmomatic
     SUBDIR += ugene
     SUBDIR += vcftools

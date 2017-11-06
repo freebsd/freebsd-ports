@@ -11,6 +11,8 @@ PKGNAMEPREFIX=	ant-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XInclude task for Jakarta Ant
 
+LICENSE=	NONE
+
 BUILD_DEPENDS=	${JAVALIBDIR}/xincluder.jar:textproc/xincluder
 
 USE_JAVA=	yes

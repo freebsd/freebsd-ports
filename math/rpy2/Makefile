@@ -3,7 +3,7 @@
 
 PORTNAME=	rpy2
 PORTVERSION=	2.7.8
-PORTREVISION=	3
+PORTREVISION=	6
 CATEGORIES=	math
 MASTER_SITES=	CHEESESHOP
 
@@ -12,10 +12,9 @@ COMMENT=	Python interface to the R Programming Language
 
 LICENSE=	GPLv2+
 
-BUILD_DEPENDS=	${PYNUMPY} \
-		R:math/R
-RUN_DEPENDS=	${PYNUMPY} \
-		R:math/R
+BUILD_DEPENDS=	${PYNUMPY}
+LIB_DEPENDS=	libR.so:math/R
+RUN_DEPENDS=	${PYNUMPY}
 
 USES=		fortran python readline
 USE_PYTHON=	distutils autoplist

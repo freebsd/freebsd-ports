@@ -2,7 +2,7 @@ include/termkey.h
 lib/libtermkey.a
 lib/libtermkey.so
 lib/libtermkey.so.1
-lib/libtermkey.so.1.13.0
+lib/libtermkey.so.1.14.0
 libdata/pkgconfig/termkey.pc
 man/man3/termkey_advisereadable.3.gz
 man/man3/termkey_canonicalise.3.gz
@@ -14,6 +14,7 @@ man/man3/termkey_interpret_csi.3.gz
 man/man3/termkey_interpret_modereport.3.gz
 man/man3/termkey_interpret_mouse.3.gz
 man/man3/termkey_interpret_position.3.gz
+man/man3/termkey_interpret_string.3.gz
 man/man3/termkey_keycmp.3.gz
 man/man3/termkey_keyname2sym.3.gz
 man/man3/termkey_lookup_keyname.3.gz

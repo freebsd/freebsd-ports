@@ -1,2 +1,3 @@
-SHA256 (cabal/ghc-events-0.4.4.0.tar.gz) = ab2bf624848165872375954f6b67379991557a58dff66959f585ee9807c84f6d
-SIZE (cabal/ghc-events-0.4.4.0.tar.gz) = 102944
+TIMESTAMP = 1499451126
+SHA256 (cabal/ghc-events-0.6.0.tar.gz) = 277da9dcd9a1910e530c76b2ad8875868f5e2d8acff44091623dc97255ce0769
+SIZE (cabal/ghc-events-0.6.0.tar.gz) = 153517

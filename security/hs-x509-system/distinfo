@@ -1,2 +1,3 @@
-SHA256 (cabal/x509-system-1.6.0.tar.gz) = 50f9c24513aba2677d71a1c09cbd4f4d6cb82b5e0bad1ecfdfb407f6f5be1735
-SIZE (cabal/x509-system-1.6.0.tar.gz) = 3833
+TIMESTAMP = 1499624174
+SHA256 (cabal/x509-system-1.6.4.tar.gz) = d98ef028855ad73a872ed86026f205aba383378bf1e63462c5d3e4733b60ff4c
+SIZE (cabal/x509-system-1.6.4.tar.gz) = 3443

@@ -1,0 +1,25 @@
+commit e6f3b9c3194c0d89efffd6e5b59471950f979e5a
+Author: John Baldwin <jhb@FreeBSD.org>
+Date:   Wed Jun 28 12:47:14 2017 -0700
+
+    Create pseudo sections for FreeBSD NT_PTLWPINFO core notes.
+    
+    bfd/ChangeLog:
+    
+            * elf.c (elfcore_grok_freebsd_note): Handle NT_FREEBSD_PTLWPINFO.
+
+diff --git bfd/elf.c bfd/elf.c
+index 063a6e4bb3..dcb06383d9 100644
+--- bfd/elf.c
++++ bfd/elf.c
+@@ -9980,6 +9980,10 @@ elfcore_grok_freebsd_note (bfd *abfd, Elf_Internal_Note *note)
+       else
+ 	return TRUE;
+ 
++    case NT_FREEBSD_PTLWPINFO:
++      return elfcore_make_note_pseudosection (abfd, ".note.freebsdcore.lwpinfo",
++					      note);
++
+     default:
+       return TRUE;
+     }

@@ -1,0 +1,5 @@
+SoundScrape makes it super easy to download artists from SoundCloud, Bandcamp
+and MixCloud. It automatically creates ID3 tags as well (including album art),
+which is handy.
+
+WWW: https://github.com/Miserlou/SoundScrape

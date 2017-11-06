@@ -1,4 +1,15 @@
 bin/milkytracker
+share/applications/milkytracker.desktop
+%%PORTDOCS%%%%DOCSDIR%%/Authors.txt
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog.html
+%%PORTDOCS%%%%DOCSDIR%%/Copying.txt
+%%PORTDOCS%%%%DOCSDIR%%/FAQ.html
+%%PORTDOCS%%%%DOCSDIR%%/MilkyTracker.html
+%%PORTDOCS%%%%DOCSDIR%%/TiTAN.nfo
+%%DATADIR%%/songs/milky.xm
+%%DATADIR%%/songs/slumberjack.xm
+%%DATADIR%%/songs/sv_ttt.xm
+%%DATADIR%%/songs/theday.xm
+%%DATADIR%%/songs/universalnetwork2_real.xm
 share/pixmaps/milkytracker.ico
 share/pixmaps/milkytracker.png
-share/applications/milkytracker.desktop

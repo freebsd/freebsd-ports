@@ -1,3 +1,4 @@
+bin/automatic_reconstructor
 bin/bundle_adjuster
 bin/colmap
 bin/color_extractor
@@ -13,11 +14,15 @@ bin/image_undistorter
 bin/mapper
 bin/matches_importer
 bin/model_aligner
+bin/model_analyzer
 bin/model_converter
 bin/model_merger
+bin/model_orientation_aligner
+bin/point_triangulator
 bin/rig_bundle_adjuster
 bin/sequential_matcher
 bin/spatial_matcher
+bin/transitive_matcher
 bin/vocab_tree_builder
 bin/vocab_tree_matcher
 bin/vocab_tree_retriever

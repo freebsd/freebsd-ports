@@ -18,7 +18,7 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
-USES=		cpe execinfo gmake libtool ncurses pathfix perl5 pkgconfig \
+USES=		cpe gmake libtool ncurses pathfix perl5 pkgconfig \
 		sqlite ssl tar:bzip2 tcl
 CPE_VENDOR=	apache
 CPE_PRODUCT=	traffic_server
@@ -51,11 +51,6 @@ SPDY_DESC=	Enable SPDY
 WCCP_CONFIGURE_ENABLE=	wccp
 SPDY_CONFIGURE_ENABLE=	spdy
 SPDY_LIB_DEPENDS=	libspdylay.so:www/spdylay
-
-.if ! exists(/var/cache)
-# FreeBSD 8.x
-PLIST_DIRS+=	/var/cache
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} \

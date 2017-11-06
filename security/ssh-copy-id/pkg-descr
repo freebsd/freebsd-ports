@@ -1,4 +1,0 @@
-ssh-copy-id is a small script which copies your ssh public-key to a remote host;
-appending it to your remote authorized_keys.
-
-WWW: http://www.openssh.com/portable.html

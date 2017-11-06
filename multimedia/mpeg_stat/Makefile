@@ -11,7 +11,7 @@ MAINTAINER=	lme@FreeBSD.org
 COMMENT=	MPEG-I statistics gatherer
 
 USES=		shebangfix
-SHEBANG_FILES= 	block2spec
+SHEBANG_FILES=	block2spec
 WRKSRC=		${WRKDIR}/mpeg_stat
 
 .include <bsd.port.mk>

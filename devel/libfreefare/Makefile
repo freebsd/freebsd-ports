@@ -3,21 +3,22 @@
 
 PORTNAME=	libfreefare
 PORTVERSION=	0.4.0
+DISTVERSIONPREFIX=	${PORTNAME}-
 PORTREVISION=	1
 CATEGORIES=	devel
-MASTER_SITES=	http://${PORTNAME}.googlecode.com/files/ \
-		http://romain.blogreen.org/distfiles/
 
 MAINTAINER=	romain@FreeBSD.org
 COMMENT=	MIFARE contactless tag access library
 
-BROKEN=		Unfetchable (google code has gone away)
+LICENSE=	LGPL3+
 
 LIB_DEPENDS=	libnfc.so:devel/libnfc
 
+USE_GITHUB=	yes
+GH_ACCOUNT=	nfc-tools
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USES=		pathfix gmake pkgconfig tar:bzip2 libtool ssl
+USES=		autoreconf gmake libtool pathfix pkgconfig ssl
 MAKE_ENV=	INSTALL_STRIP_FLAG="${STRIP}"
 LDFLAGS+=	-L${OPENSSLLIB}
 CFLAGS+=	-I${OPENSSLINC}

@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	ansible
-PORTVERSION?=	2.2.0.0
-PORTREVISION?=	2
+PORTVERSION?=	2.4.1.0
+PORTREVISION?=	0
 CATEGORIES=	sysutils python
 MASTER_SITES=	http://releases.ansible.com/ansible/
 
@@ -13,30 +13,28 @@ COMMENT=	Radically simple IT automation
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS?=	${PYTHON_PKGNAMEPREFIX}yaml>0:devel/py-yaml \
-		${PYTHON_PKGNAMEPREFIX}pycrypto>0:security/py-pycrypto \
+RUN_DEPENDS?=	${PYTHON_PKGNAMEPREFIX}Jinja2>0:devel/py-Jinja2 \
+		${PYTHON_PKGNAMEPREFIX}jmespath>0:devel/py-jmespath \
+		${PYTHON_PKGNAMEPREFIX}netaddr>0:net/py-netaddr \
 		${PYTHON_PKGNAMEPREFIX}paramiko>0:security/py-paramiko \
-		${PYTHON_PKGNAMEPREFIX}Jinja2>0:devel/py-Jinja2
+		${PYTHON_PKGNAMEPREFIX}pycrypto>0:security/py-pycrypto \
+		${PYTHON_PKGNAMEPREFIX}yaml>0:devel/py-yaml
 
-EXTRA_PATCHES?=	${FILESDIR}/extra-patch-872594b \
-		${FILESDIR}/extra-patch-ec84ff6 \
-		${FILESDIR}/extra-patch-eb8c26c \
-		${FILESDIR}/extra-patch-cc4634a
+EXTRA_PATCHES?=	#
 
 NO_ARCH=	yes
-USES?=		cpe python shebangfix
+USES?=		cpe python
 USE_PYTHON=	autoplist distutils
-python_CMD=	${LOCALBASE}/bin/python
-SHEBANG_FILES+=	lib/ansible/modules/core/*/*.py \
-		lib/ansible/modules/core/*/*/*.py \
-		lib/ansible/modules/extras/*/*.py \
-		lib/ansible/modules/extras/*/*/*.py
 CPE_VENDOR=	ansibleworks
 
 SUB_FILES=	pkg-message
+SUB_LIST+=	PYTHON_CMD=${PYTHON_CMD}
 
-PLIST_FILES+=	man/man1/ansible-doc.1.gz \
+PLIST_FILES?=	man/man1/ansible-config.1.gz \
+		man/man1/ansible-console.1.gz \
+		man/man1/ansible-doc.1.gz \
 		man/man1/ansible-galaxy.1.gz \
+		man/man1/ansible-inventory.1.gz \
 		man/man1/ansible-playbook.1.gz \
 		man/man1/ansible-pull.1.gz \
 		man/man1/ansible-vault.1.gz \
@@ -44,21 +42,12 @@ PLIST_FILES+=	man/man1/ansible-doc.1.gz \
 
 PORTEXAMPLES=	ansible.cfg hosts
 
-OPTIONS_DEFINE=	DOCS EXAMPLES NETADDR
-OPTIONS_DEFAULT=NETADDR
-
-NETADDR_DESC=	Dependency on py-netaddr for ipaddr() filter
-NETADDR_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}netaddr>0:net/py-netaddr
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
 post-patch:
-.for f in bin/* docs/man/man1/* examples/* lib/ansible/*.py \
-	lib/ansible/*/*.py lib/ansible/*/*/*.py lib/ansible/*/*/*/*.py
-	@${REINPLACE_CMD} -e 's|/etc/ansible|${ETCDIR}|' ${WRKSRC}/${f}
-.endfor
-
-.for f in docs/man/man1/* examples/* lib/ansible/*.py lib/ansible/*/*.py
-	@${REINPLACE_CMD} -e 's|/usr/share/ansible|${DATADIR}|' ${WRKSRC}/${f}
-.endfor
+	${FIND} ${WRKSRC} -type f | ${XARGS} ${REINPLACE_CMD} \
+		-e 's|/etc/ansible|${ETCDIR}|g' \
+		-e 's|/usr/share/ansible|${DATADIR}|g'
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${MAN1PREFIX}/man/man1

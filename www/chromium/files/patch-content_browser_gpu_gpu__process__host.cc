@@ -1,8 +1,8 @@
---- content/browser/gpu/gpu_process_host.cc.orig	2016-07-20 22:03:24.000000000 +0300
-+++ content/browser/gpu/gpu_process_host.cc	2016-08-18 02:45:06.533983000 +0300
-@@ -968,7 +968,7 @@
-   base::CommandLine* cmd_line =
-       new base::CommandLine(base::CommandLine::NO_PROGRAM);
+--- content/browser/gpu/gpu_process_host.cc.orig	2017-06-05 19:03:07 UTC
++++ content/browser/gpu/gpu_process_host.cc
+@@ -965,7 +965,7 @@ bool GpuProcessHost::LaunchGpuProcess(gpu::GpuPreferen
+   std::unique_ptr<base::CommandLine> cmd_line =
+       base::MakeUnique<base::CommandLine>(base::CommandLine::NO_PROGRAM);
  #else
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_BSD)

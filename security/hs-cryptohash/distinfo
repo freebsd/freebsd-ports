@@ -1,2 +1,3 @@
-SHA256 (cabal/cryptohash-0.11.6.tar.gz) = da382334857a88f3e94ce0fb83f425f0a0787b0644100913c61f6e94bb62df37
-SIZE (cabal/cryptohash-0.11.6.tar.gz) = 65798
+TIMESTAMP = 1499538586
+SHA256 (cabal/cryptohash-0.11.9.tar.gz) = c28f847fc1fcd65b6eea2e74a100300af940919f04bb21d391f6a773968f22fb
+SIZE (cabal/cryptohash-0.11.9.tar.gz) = 25762

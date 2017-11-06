@@ -2,7 +2,7 @@
 
 PORTNAME=	openbsc
 PORTVERSION=	0.15.0
-PORTREVISION=	2
+PORTREVISION=	4
 CATEGORIES=	net
 MASTER_SITES=	http://git.osmocom.org/${PORTNAME}/snapshot/ \
 		http://chaosophia.net/downloads/osmocom/${PORTNAME}/
@@ -20,8 +20,7 @@ LIB_DEPENDS=	libdbi.so:databases/libdbi \
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/${PORTNAME}
 
-USES=		autoreconf compiler:c11 gmake pathfix pkgconfig
-USE_OPENSSL=	yes
+USES=		autoreconf compiler:c11 gmake pathfix pkgconfig ssl
 GNU_CONFIGURE=	yes
 AUTOMAKE_ARGS=	--gnu --add-missing --copy
 CONFIGURE_ARGS+=	CFLAGS="-I${LOCALBASE}/include"

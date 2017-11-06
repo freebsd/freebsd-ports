@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	jpeg-turbo
-PORTVERSION=	1.5.1
+PORTVERSION=	1.5.2
 PORTREVISION?=	0
 CATEGORIES=	graphics
 MASTER_SITES=	SF/lib${PORTNAME}/${PORTVERSION}
@@ -49,6 +49,7 @@ BUILD_DEPENDS+=	nasm:devel/nasm
 .if ${SLAVE_PORT} == yes
 # libturbojpeg.a has to be built with PIC for virtualgl
 CONFIGURE_ARGS+=--with-pic
+USES+=		jpeg
 PLIST_SUB+=	JPEG="@comment " LIBTURBOJPEG=""
 .else
 CONFIGURE_ARGS+=--without-turbojpeg

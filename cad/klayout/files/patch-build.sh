@@ -28,20 +28,6 @@
  if [ "$gcc_path" = "" ]; then
    echo "*** ERROR: unable to locate gcc in path"
    exit 1
-@@ -398,11 +401,11 @@ mac-*)
-   ;;
- esac
- 
--if [ ! -r $QTBIN/moc ]; then
-+if [ ! -r $QTBIN/moc-qt4 ]; then
-   echo "*** ERROR: unable to locate Qt MOC in $QTBIN"
-   exit 1
- fi
--if [ ! -r $QTBIN/uic ]; then
-+if [ ! -r $QTBIN/uic-qt4 ]; then
-   echo "*** ERROR: unable to locate Qt UIC in $QTBIN"
-   exit 1
- fi
 @@ -463,11 +466,7 @@ else
    cd $CURR_DIR
  fi

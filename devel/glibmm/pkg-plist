@@ -65,6 +65,8 @@ include/giomm-%%VERSION%%/giomm/init.h
 include/giomm-%%VERSION%%/giomm/initable.h
 include/giomm-%%VERSION%%/giomm/inputstream.h
 include/giomm-%%VERSION%%/giomm/iostream.h
+include/giomm-%%VERSION%%/giomm/listmodel.h
+include/giomm-%%VERSION%%/giomm/liststore.h
 include/giomm-%%VERSION%%/giomm/loadableicon.h
 include/giomm-%%VERSION%%/giomm/memoryinputstream.h
 include/giomm-%%VERSION%%/giomm/memoryoutputstream.h
@@ -147,6 +149,8 @@ include/giomm-%%VERSION%%/giomm/private/inetsocketaddress_p.h
 include/giomm-%%VERSION%%/giomm/private/initable_p.h
 include/giomm-%%VERSION%%/giomm/private/inputstream_p.h
 include/giomm-%%VERSION%%/giomm/private/iostream_p.h
+include/giomm-%%VERSION%%/giomm/private/listmodel_p.h
+include/giomm-%%VERSION%%/giomm/private/liststore_p.h
 include/giomm-%%VERSION%%/giomm/private/loadableicon_p.h
 include/giomm-%%VERSION%%/giomm/private/memoryinputstream_p.h
 include/giomm-%%VERSION%%/giomm/private/memoryoutputstream_p.h
@@ -162,10 +166,9 @@ include/giomm-%%VERSION%%/giomm/private/networkmonitor_p.h
 include/giomm-%%VERSION%%/giomm/private/networkservice_p.h
 include/giomm-%%VERSION%%/giomm/private/notification_p.h
 include/giomm-%%VERSION%%/giomm/private/outputstream_p.h
+include/giomm-%%VERSION%%/giomm/private/permission_p.h
 include/giomm-%%VERSION%%/giomm/private/pollableinputstream_p.h
 include/giomm-%%VERSION%%/giomm/private/pollableoutputstream_p.h
-include/giomm-%%VERSION%%/giomm/private/permission_p.h
-include/giomm-%%VERSION%%/giomm/private/simplepermission_p.h
 include/giomm-%%VERSION%%/giomm/private/proxy_p.h
 include/giomm-%%VERSION%%/giomm/private/proxyaddress_p.h
 include/giomm-%%VERSION%%/giomm/private/proxyresolver_p.h
@@ -174,8 +177,13 @@ include/giomm-%%VERSION%%/giomm/private/resolver_p.h
 include/giomm-%%VERSION%%/giomm/private/resource_p.h
 include/giomm-%%VERSION%%/giomm/private/seekable_p.h
 include/giomm-%%VERSION%%/giomm/private/settings_p.h
+include/giomm-%%VERSION%%/giomm/private/settingsschema_p.h
+include/giomm-%%VERSION%%/giomm/private/settingsschemakey_p.h
+include/giomm-%%VERSION%%/giomm/private/settingsschemasource_p.h
 include/giomm-%%VERSION%%/giomm/private/simpleaction_p.h
 include/giomm-%%VERSION%%/giomm/private/simpleactiongroup_p.h
+include/giomm-%%VERSION%%/giomm/private/simpleiostream_p.h
+include/giomm-%%VERSION%%/giomm/private/simplepermission_p.h
 include/giomm-%%VERSION%%/giomm/private/socket_p.h
 include/giomm-%%VERSION%%/giomm/private/socketaddress_p.h
 include/giomm-%%VERSION%%/giomm/private/socketaddressenumerator_p.h
@@ -216,8 +224,12 @@ include/giomm-%%VERSION%%/giomm/resolver.h
 include/giomm-%%VERSION%%/giomm/resource.h
 include/giomm-%%VERSION%%/giomm/seekable.h
 include/giomm-%%VERSION%%/giomm/settings.h
+include/giomm-%%VERSION%%/giomm/settingsschema.h
+include/giomm-%%VERSION%%/giomm/settingsschemakey.h
+include/giomm-%%VERSION%%/giomm/settingsschemasource.h
 include/giomm-%%VERSION%%/giomm/simpleaction.h
 include/giomm-%%VERSION%%/giomm/simpleactiongroup.h
+include/giomm-%%VERSION%%/giomm/simpleiostream.h
 include/giomm-%%VERSION%%/giomm/simplepermission.h
 include/giomm-%%VERSION%%/giomm/socket.h
 include/giomm-%%VERSION%%/giomm/socketaddress.h
@@ -269,6 +281,7 @@ include/glibmm-%%VERSION%%/glibmm/date.h
 include/glibmm-%%VERSION%%/glibmm/datetime.h
 include/glibmm-%%VERSION%%/glibmm/debug.h
 include/glibmm-%%VERSION%%/glibmm/dispatcher.h
+include/glibmm-%%VERSION%%/glibmm/enums.h
 include/glibmm-%%VERSION%%/glibmm/error.h
 include/glibmm-%%VERSION%%/glibmm/exception.h
 include/glibmm-%%VERSION%%/glibmm/exceptionhandler.h
@@ -301,11 +314,13 @@ include/glibmm-%%VERSION%%/glibmm/private/checksum_p.h
 include/glibmm-%%VERSION%%/glibmm/private/convert_p.h
 include/glibmm-%%VERSION%%/glibmm/private/date_p.h
 include/glibmm-%%VERSION%%/glibmm/private/datetime_p.h
+include/glibmm-%%VERSION%%/glibmm/private/enums_p.h
 include/glibmm-%%VERSION%%/glibmm/private/fileutils_p.h
 include/glibmm-%%VERSION%%/glibmm/private/interface_p.h
 include/glibmm-%%VERSION%%/glibmm/private/iochannel_p.h
 include/glibmm-%%VERSION%%/glibmm/private/keyfile_p.h
 include/glibmm-%%VERSION%%/glibmm/private/markup_p.h
+include/glibmm-%%VERSION%%/glibmm/private/miscutils_p.h
 include/glibmm-%%VERSION%%/glibmm/private/module_p.h
 include/glibmm-%%VERSION%%/glibmm/private/nodetree_p.h
 include/glibmm-%%VERSION%%/glibmm/private/object_p.h
@@ -360,6 +375,7 @@ include/glibmm-%%VERSION%%/glibmm/variantdict.h
 include/glibmm-%%VERSION%%/glibmm/variantiter.h
 include/glibmm-%%VERSION%%/glibmm/varianttype.h
 include/glibmm-%%VERSION%%/glibmm/vectorutils.h
+include/glibmm-%%VERSION%%/glibmm/weakref.h
 include/glibmm-%%VERSION%%/glibmm/wrap.h
 include/glibmm-%%VERSION%%/glibmm/wrap_init.h
 include/glibmm-%%VERSION%%/glibmm_generate_extra_defs/generate_extra_defs.h
@@ -391,7 +407,6 @@ lib/glibmm-%%VERSION%%/proc/m4/initialize_base.m4
 lib/glibmm-%%VERSION%%/proc/m4/initialize_gio.m4
 lib/glibmm-%%VERSION%%/proc/m4/initialize_glib.m4
 lib/glibmm-%%VERSION%%/proc/m4/initialize_glibmm.m4
-lib/glibmm-%%VERSION%%/proc/m4/list.m4
 lib/glibmm-%%VERSION%%/proc/m4/member.m4
 lib/glibmm-%%VERSION%%/proc/m4/method.m4
 lib/glibmm-%%VERSION%%/proc/m4/property.m4

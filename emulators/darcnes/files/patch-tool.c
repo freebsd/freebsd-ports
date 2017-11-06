@@ -1,5 +1,5 @@
---- tool.c.orig	Sat May  6 23:50:17 2000
-+++ tool.c	Thu Jun  1 02:43:09 2000
+--- tool.c.orig	2001-03-25 21:53:42 UTC
++++ tool.c
 @@ -19,6 +19,7 @@
  #include "video.h"
  #include "tool.h"

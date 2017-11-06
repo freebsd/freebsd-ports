@@ -1,6 +1,6 @@
---- content/browser/tracing/tracing_controller_impl.cc.orig	2016-07-20 22:03:24.000000000 +0300
-+++ content/browser/tracing/tracing_controller_impl.cc	2016-08-18 02:46:09.991782000 +0300
-@@ -496,7 +496,7 @@
+--- content/browser/tracing/tracing_controller_impl.cc.orig	2017-06-05 19:03:07 UTC
++++ content/browser/tracing/tracing_controller_impl.cc
+@@ -412,7 +412,7 @@ void TracingControllerImpl::AddTraceMessageFilter(
      return;
    }
  
@@ -9,3 +9,12 @@
    // On Linux the browser process dumps process metrics for child process due to
    // sandbox.
    tracing::ProcessMetricsMemoryDumpProvider::RegisterForProcess(
+@@ -440,7 +440,7 @@ void TracingControllerImpl::RemoveTraceMessageFilter(
+     return;
+   }
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+   tracing::ProcessMetricsMemoryDumpProvider::UnregisterForProcess(
+       trace_message_filter->peer_pid());
+ #endif

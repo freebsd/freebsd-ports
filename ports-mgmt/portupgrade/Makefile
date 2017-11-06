@@ -2,14 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	portupgrade
-PORTVERSION=	2.4.14
+PORTVERSION=	2.4.15
 PORTREVISION=	0
 PORTEPOCH=	2
 CATEGORIES=	ports-mgmt
-MASTER_SITES=	LOCAL/bdrewery/pkgtools/ \
-		http://mirror.shatow.net/freebsd/pkgtools/ \
+MASTER_SITES=	LOCAL/bdrewery/${PORTNAME}/ \
+		http://mirror.shatow.net/freebsd/${PORTNAME}/ \
 		GH
-DISTNAME=	pkgtools-${PORTVERSION}
 
 MAINTAINER=	bdrewery@FreeBSD.org
 COMMENT=	FreeBSD ports/packages administration and management tool suite

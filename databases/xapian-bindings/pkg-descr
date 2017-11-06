@@ -1,4 +1,8 @@
-SWIG and JNI bindings allowing Xapian to be used from various other programming
-languages.
+This is the meta port of the following bindings:
+- databases/lua-xapian: Lua binding
+- databases/p5-Xapian: Perl binding
+- databases/php-xapian: PHP binding
+- databases/py-xapian: Python binding
+- databases/ruby-xapian: Ruby binding
 
-WWW: http://www.xapian.org/
+WWW: https://xapian.org/

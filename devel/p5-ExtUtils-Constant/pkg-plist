@@ -1,10 +1,10 @@
-%%PERL5_MAN3%%/ExtUtils::Constant.3.gz
-%%PERL5_MAN3%%/ExtUtils::Constant::Base.3.gz
-%%PERL5_MAN3%%/ExtUtils::Constant::Utils.3.gz
-%%PERL5_MAN3%%/ExtUtils::Constant::XS.3.gz
 %%SITE_PERL%%/ExtUtils/Constant.pm
 %%SITE_PERL%%/ExtUtils/Constant/Aaargh56Hash.pm
 %%SITE_PERL%%/ExtUtils/Constant/Base.pm
 %%SITE_PERL%%/ExtUtils/Constant/ProxySubs.pm
 %%SITE_PERL%%/ExtUtils/Constant/Utils.pm
 %%SITE_PERL%%/ExtUtils/Constant/XS.pm
+%%PERL5_MAN3%%/ExtUtils::Constant.3.gz
+%%PERL5_MAN3%%/ExtUtils::Constant::Base.3.gz
+%%PERL5_MAN3%%/ExtUtils::Constant::Utils.3.gz
+%%PERL5_MAN3%%/ExtUtils::Constant::XS.3.gz

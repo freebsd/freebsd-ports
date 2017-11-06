@@ -1,2 +1,3 @@
-SHA256 (cabal/void-0.7.tar.gz) = 981b85d19bb51c1ac60103b184b86061621e0b016d4db24dd965751b2bc96f47
-SIZE (cabal/void-0.7.tar.gz) = 3900
+TIMESTAMP = 1499627864
+SHA256 (cabal/void-0.7.2.tar.gz) = d3fffe66a03e4b53db1e459edf75ad8402385a817cae415d857ec0b03ce0cf2b
+SIZE (cabal/void-0.7.2.tar.gz) = 5563

@@ -1,5 +1,5 @@
---- mtrxmath.h.orig	Tue Jan  9 20:33:48 2001
-+++ mtrxmath.h	Tue Jan  9 20:35:02 2001
+--- mtrxmath.h.orig	2001-09-19 15:31:44 UTC
++++ mtrxmath.h
 @@ -13,7 +13,6 @@
  #include <stdio.h>
  #include <stdlib.h>

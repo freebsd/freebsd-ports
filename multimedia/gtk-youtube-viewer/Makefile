@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gtk-youtube-viewer
-PORTVERSION=	3.2.4
+PORTVERSION=	3.2.7
 CATEGORIES=	multimedia perl5
 
 MAINTAINER=	ports@FreeBSD.org
@@ -14,24 +14,16 @@ LICENSE_COMB=	dual
 # According to Build.PL
 BUILD_DEPENDS=	p5-JSON>0:converters/p5-JSON \
 		p5-JSON-XS>0:converters/p5-JSON-XS \
-		p5-MIME-Base64>0:converters/p5-MIME-Base64 \
 		p5-Data-Dump>0:devel/p5-Data-Dump \
-		p5-File-Path>0:devel/p5-File-Path \
-		p5-Getopt-Long>0:devel/p5-Getopt-Long \
 		p5-PathTools>0:devel/p5-PathTools \
 		p5-Term-ReadLine-Gnu>0:devel/p5-Term-ReadLine-Gnu \
-		p5-Term-ANSIColor>0:devel/p5-Term-ANSIColor \
-		p5-Term-ReadLine>0:devel/p5-Term-ReadLine \
-		p5-Thread-Queue>0:devel/p5-Thread-Queue \
-		p5-threads>0:devel/p5-threads \
-		p5-Socket>0:net/p5-Socket \
 		p5-Text-CharWidth>0:textproc/p5-Text-CharWidth \
-		p5-Text-ParseWords>0:textproc/p5-Text-ParseWords \
 		p5-Text-Tabs+Wrap>0:textproc/p5-Text-Tabs+Wrap  \
 		p5-LWP-Protocol-https>0:www/p5-LWP-Protocol-https \
 		p5-Mozilla-CA>0:www/p5-Mozilla-CA \
 		p5-libwww>0:www/p5-libwww
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS} \
+		p5-common-sense>=2.02:devel/p5-common-sense
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	trizen

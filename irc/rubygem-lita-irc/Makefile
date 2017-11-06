@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	lita-irc
-PORTVERSION=	2.0.3
+PORTVERSION=	2.2.0
 CATEGORIES=	irc rubygems
 MASTER_SITES=	RG
 

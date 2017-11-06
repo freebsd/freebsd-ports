@@ -1,2 +1,3 @@
-SHA256 (xorg/driver/xf86-input-synaptics-1.8.2.tar.bz2) = 7b0e164ebd02a680e0c695955e783059f37edb0c2656398e0a972adc8e698c80
-SIZE (xorg/driver/xf86-input-synaptics-1.8.2.tar.bz2) = 484261
+TIMESTAMP = 1479490184
+SHA256 (xorg/driver/xf86-input-synaptics-1.9.0.tar.bz2) = afba3289d7a40217a19d90db98ce181772f9ca6d77e1898727b0afcf02073b5a
+SIZE (xorg/driver/xf86-input-synaptics-1.9.0.tar.bz2) = 501814

@@ -9,12 +9,3 @@
      if (ref_ptr) {
          mtx_init(&ref_ptr->lock, "nvkms-ref-ptr-lock", NULL, MTX_SPIN);
          // The ref_ptr owner counts as a reference on the ref_ptr itself.
-@@ -792,7 +792,7 @@ static int nvkms_open(
-     nvkms_module.client_counter += 1;
-     sx_xunlock(&nvkms_module.lock);
- 
--    popen = nvkms_alloc(sizeof(*popen), NV_FALSE);
-+    popen = nvkms_alloc(sizeof(*popen), NV_TRUE);
-     if (popen == NULL) {
-         return ENOMEM;
-     }

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	upnp
-PORTVERSION=	1.6.21
+PORTVERSION=	1.6.22
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	SF/p${PORTNAME}/p${PORTNAME}/libUPnP%20${PORTVERSION}
@@ -16,7 +16,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
-USES=		libtool pathfix tar:bzip2
+USES=		cpe libtool pathfix tar:bzip2
+CPE_VENDOR=	libupnp_project
+CPE_PRODUCT=	libupnp
 USE_LDCONFIG=	yes
 
 PORTDOCS=	*

@@ -1,3 +1,5 @@
+pba: unbreak for GCC + libc++
+
 In file included from src/./ext/PBA/pba.h:50:0,
                  from src/./optim/bundle_adjustment.h:29,
                  from src/./util/option_manager.h:34,

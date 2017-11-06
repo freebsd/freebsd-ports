@@ -4,11 +4,11 @@ sbin/apctest
 sbin/smtp
 @sample %%ETCDIR%%/apcupsd.conf.sample
 %%ETCDIR%%/apccontrol
-%%ETCDIR%%/changeme
-%%ETCDIR%%/commfailure
-%%ETCDIR%%/commok
-%%ETCDIR%%/onbattery
-%%ETCDIR%%/offbattery
+@sample %%ETCDIR%%/changeme.sample
+@sample %%ETCDIR%%/commfailure.sample
+@sample %%ETCDIR%%/commok.sample
+@sample %%ETCDIR%%/onbattery.sample
+@sample %%ETCDIR%%/offbattery.sample
 %%CGI%%@sample %%ETCDIR%%/apcupsd.css.sample
 %%CGI%%@sample %%ETCDIR%%/hosts.conf.sample
 %%CGI%%@sample %%ETCDIR%%/multimon.conf.sample

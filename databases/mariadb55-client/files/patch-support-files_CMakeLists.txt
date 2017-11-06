@@ -1,6 +1,6 @@
---- support-files/CMakeLists.txt.orig	2014-10-08 15:19:53.000000000 +0200
-+++ support-files/CMakeLists.txt	2014-10-17 22:34:28.000000000 +0200
-@@ -41,15 +41,18 @@
+--- support-files/CMakeLists.txt.orig	2017-04-30 11:09:34 UTC
++++ support-files/CMakeLists.txt
+@@ -41,15 +41,18 @@ ELSE()
    SET(inst_location ${INSTALL_SUPPORTFILESDIR})
  ENDIF()
  
@@ -19,9 +19,9 @@
    FOREACH(script  mysqld_multi.server mysql-log-rotate binary-configure)
      CONFIGURE_FILE(${CMAKE_CURRENT_SOURCE_DIR}/${script}.sh 
                     ${CMAKE_CURRENT_BINARY_DIR}/${script} @ONLY )
-@@ -69,8 +72,10 @@
+@@ -69,8 +72,10 @@ IF(UNIX)
      INSTALL(FILES magic DESTINATION ${inst_location} COMPONENT SupportFiles)
-     INSTALL(DIRECTORY RHEL4-SElinux/ DESTINATION ${inst_location}/SELinux/RHEL4 COMPONENT SupportFiles)
+     ADD_SUBDIRECTORY(SELinux)
    ENDIF()
 +  ENDIF()
  
@@ -30,7 +30,7 @@
    CONFIGURE_FILE(MySQL-shared-compat.spec.sh ${CMAKE_CURRENT_BINARY_DIR}/MySQL-shared-compat.spec @ONLY)
    CONFIGURE_FILE(mysql.spec.sh ${CMAKE_CURRENT_BINARY_DIR}/mysql.spec @ONLY)
    
-@@ -94,6 +99,7 @@
+@@ -94,6 +99,7 @@ IF(UNIX)
      DESTINATION ${inst_location} COMPONENT SupportFiles
      PERMISSIONS OWNER_READ OWNER_WRITE OWNER_EXECUTE GROUP_READ 
      GROUP_EXECUTE WORLD_READ WORLD_EXECUTE)

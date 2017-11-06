@@ -1,0 +1,23 @@
+
+==============================================================================
+
+google-compute-engine has been installed, and the following services are
+available:
+
+google_accounts_daemon		Responsible for provisioning and
+				deprovisioning user accounts
+google_clock_skew_daemon	Responsible for syncing the software clock with
+				the hypervisor clock
+google_instance_setup		Configure the guest at boot
+google_ip_forwarding_daemon	Responsible to setup or remove IP routes in the
+				guest
+google_network_setup		Responsible to enables all associated network
+				interfaces
+google_startup			Implement support for running host provided
+                                startup / shutdown scripts
+
+To enable the above services, sysrc <servicename>_enable=YES
+
+Reboot your system or start the services, service <servicename> start
+
+==============================================================================

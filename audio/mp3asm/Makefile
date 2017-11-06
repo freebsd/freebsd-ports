@@ -5,31 +5,30 @@ PORTNAME=	mp3asm
 PORTVERSION=	0.1.3.1
 PORTREVISION=	1
 CATEGORIES=	audio
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/0.1.3-1
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION:R}-${PORTVERSION:E}
 DISTNAME=	${PORTNAME}-${PORTVERSION:R}-${PORTVERSION:E}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	MP3 frame level editor
 
 LICENSE=	GPLv2
-
-USES=		tar:bzip2 gmake
-GNU_CONFIGURE=	yes
-WRKSRC=		${WRKDIR}/${PORTNAME}-0.1
-PLIST_FILES=	bin/mp3asm
-PORTDOCS=	Changelog README
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 OPTIONS_DEFINE=	DOCS
 
-post-extract:
-	${RM} ${WRKSRC}/config.cache
+GNU_CONFIGURE=	yes
+USES=		gmake tar:bzip2
+
+PLIST_FILES=	bin/mp3asm
+PORTDOCS=	Changelog README
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R:R}
 
 post-patch:
-	${REINPLACE_CMD} -e 's|^CFLAGS=|#CFLAGS=|g' ${WRKSRC}/configure
-	${REINPLACE_CMD} -e 's|#include <argz.h>||' \
-		-e 's|getprogname|_getprogname|g' \
-		-e 's|\([ (!]\)\(log[\.;]\)|\1mp3asm\2|g' \
-		${WRKSRC}/src/mp3asm.h ${WRKSRC}/src/*.c
+	@${RM} ${WRKSRC}/config.cache
+	@${REINPLACE_CMD} -e '/^CFLAGS=/d' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|getprogname|mp3info_&|' ${WRKSRC}/src/mp3asm.c
+	@${REINPLACE_CMD} -e '/^#include <argz.h>/d' ${WRKSRC}/src/mp3asm.h
+	@${REINPLACE_CMD} -e 's|\([ (!]\)\(log[\.;]\)|\1mp3asm_\2|g' ${WRKSRC}/src/*.c ${WRKSRC}/src/mp3asm.h
 
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}

@@ -3971,6 +3971,7 @@ share/icons/matefaenza/apps/16/softwarecenter.png
 share/icons/matefaenza/apps/16/sound-juicer.png
 share/icons/matefaenza/apps/16/soundconverter.png
 share/icons/matefaenza/apps/16/speedcrunch.png
+share/icons/matefaenza/apps/16/spotify-client.png
 share/icons/matefaenza/apps/16/spotify-linux-48x48.png
 share/icons/matefaenza/apps/16/spotify-linux-512x512.png
 share/icons/matefaenza/apps/16/spotify.png
@@ -4839,6 +4840,7 @@ share/icons/matefaenza/apps/22/softwarecenter.png
 share/icons/matefaenza/apps/22/sound-juicer.png
 share/icons/matefaenza/apps/22/soundconverter.png
 share/icons/matefaenza/apps/22/speedcrunch.png
+share/icons/matefaenza/apps/22/spotify-client.png
 share/icons/matefaenza/apps/22/spotify-linux-48x48.png
 share/icons/matefaenza/apps/22/spotify-linux-512x512.png
 share/icons/matefaenza/apps/22/spotify.png
@@ -5707,6 +5709,7 @@ share/icons/matefaenza/apps/24/softwarecenter.png
 share/icons/matefaenza/apps/24/sound-juicer.png
 share/icons/matefaenza/apps/24/soundconverter.png
 share/icons/matefaenza/apps/24/speedcrunch.png
+share/icons/matefaenza/apps/24/spotify-client.png
 share/icons/matefaenza/apps/24/spotify-linux-48x48.png
 share/icons/matefaenza/apps/24/spotify-linux-512x512.png
 share/icons/matefaenza/apps/24/spotify.png
@@ -6574,6 +6577,7 @@ share/icons/matefaenza/apps/32/softwarecenter.png
 share/icons/matefaenza/apps/32/sound-juicer.png
 share/icons/matefaenza/apps/32/soundconverter.png
 share/icons/matefaenza/apps/32/speedcrunch.png
+share/icons/matefaenza/apps/32/spotify-client.png
 share/icons/matefaenza/apps/32/spotify-linux-48x48.png
 share/icons/matefaenza/apps/32/spotify-linux-512x512.png
 share/icons/matefaenza/apps/32/spotify.png
@@ -7447,6 +7451,7 @@ share/icons/matefaenza/apps/48/softwarecenter.png
 share/icons/matefaenza/apps/48/sound-juicer.png
 share/icons/matefaenza/apps/48/soundconverter.png
 share/icons/matefaenza/apps/48/speedcrunch.png
+share/icons/matefaenza/apps/48/spotify-client.png
 share/icons/matefaenza/apps/48/spotify-linux-48x48.png
 share/icons/matefaenza/apps/48/spotify-linux-512x512.png
 share/icons/matefaenza/apps/48/spotify.png
@@ -8256,6 +8261,7 @@ share/icons/matefaenza/apps/64/softwarecenter.png
 share/icons/matefaenza/apps/64/sound-juicer.png
 share/icons/matefaenza/apps/64/soundconverter.png
 share/icons/matefaenza/apps/64/speedcrunch.png
+share/icons/matefaenza/apps/64/spotify-client.png
 share/icons/matefaenza/apps/64/spotify-linux-48x48.png
 share/icons/matefaenza/apps/64/spotify-linux-512x512.png
 share/icons/matefaenza/apps/64/spotify.png
@@ -9006,6 +9012,7 @@ share/icons/matefaenza/apps/96/softwarecenter.png
 share/icons/matefaenza/apps/96/sound-juicer.png
 share/icons/matefaenza/apps/96/soundconverter.png
 share/icons/matefaenza/apps/96/speedcrunch.png
+share/icons/matefaenza/apps/96/spotify-client.png
 share/icons/matefaenza/apps/96/spotify-linux-48x48.png
 share/icons/matefaenza/apps/96/spotify-linux-512x512.png
 share/icons/matefaenza/apps/96/spotify.png
@@ -9833,6 +9840,7 @@ share/icons/matefaenza/apps/scalable/softwarecenter.svg
 share/icons/matefaenza/apps/scalable/sound-juicer.svg
 share/icons/matefaenza/apps/scalable/soundconverter.svg
 share/icons/matefaenza/apps/scalable/speedcrunch.svg
+share/icons/matefaenza/apps/scalable/spotify-client.svg
 share/icons/matefaenza/apps/scalable/spotify-linux-48x48.svg
 share/icons/matefaenza/apps/scalable/spotify-linux-512x512.svg
 share/icons/matefaenza/apps/scalable/spotify.svg

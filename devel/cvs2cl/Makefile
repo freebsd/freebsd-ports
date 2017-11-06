@@ -11,16 +11,19 @@ EXTRACT_SUFX=	.pl
 DIST_SUBDIR=	${PORTNAME}/${PORTVERSION}
 EXTRACT_ONLY=	# none
 
-MAINTAINER=	mva@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	CVS-log-message-to-ChangeLog conversion script
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
 
 USES=		perl5
 
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
-PLIST_FILES=	bin/${PORTNAME} man/man1/${PORTNAME}.1.gz
+NO_ARCH=	yes
+
+PLIST_FILES=	bin/${PORTNAME} \
+		man/man1/${PORTNAME}.1.gz
 
 do-extract:
 	@${MKDIR} ${WRKSRC}
@@ -30,9 +33,11 @@ post-patch:
 	@${REINPLACE_CMD} -e "s|exec perl -w -x|exec ${PERL} -w -x|" \
 		-e "s|#!perl -w|#!${PERL} -w|" ${WRKSRC}/${PORTNAME}
 
+pre-install:
+	pod2man ${WRKSRC}/${PORTNAME} > ${WRKSRC}/${PORTNAME}.1
+
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
-	@pod2man ${WRKSRC}/${PORTNAME} > ${WRKSRC}/${PORTNAME}.1
 	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${MAN1PREFIX}/man/man1/
 
 .include <bsd.port.mk>

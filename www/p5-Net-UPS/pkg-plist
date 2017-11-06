@@ -1,0 +1,14 @@
+%%SITE_PERL%%/Net/UPS.pm
+%%SITE_PERL%%/Net/UPS/Address.pm
+%%SITE_PERL%%/Net/UPS/ErrorHandler.pm
+%%SITE_PERL%%/Net/UPS/Package.pm
+%%SITE_PERL%%/Net/UPS/Rate.pm
+%%SITE_PERL%%/Net/UPS/Service.pm
+%%SITE_PERL%%/Net/UPS/Tutorial.pm
+%%PERL5_MAN3%%/Net::UPS.3.gz
+%%PERL5_MAN3%%/Net::UPS::Address.3.gz
+%%PERL5_MAN3%%/Net::UPS::ErrorHandler.3.gz
+%%PERL5_MAN3%%/Net::UPS::Package.3.gz
+%%PERL5_MAN3%%/Net::UPS::Rate.3.gz
+%%PERL5_MAN3%%/Net::UPS::Service.3.gz
+%%PERL5_MAN3%%/Net::UPS::Tutorial.3.gz

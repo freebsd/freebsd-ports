@@ -3,7 +3,7 @@
 
 PORTNAME=	pyzy
 PORTVERSION=	0.1.0
-PORTREVISION=	3
+PORTREVISION=	5
 CATEGORIES=	chinese
 
 MAINTAINER=	henry.hu.sh@gmail.com
@@ -20,6 +20,10 @@ USES=		compiler:c++11-lib gmake libtool pkgconfig python:build shebangfix autore
 SHEBANG_FILES=	data/db/android/create_db.py
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
+
+BROKEN_aarch64=		fails to compile: constant expression evaluates to -1
+BROKEN_armv6=		fails to compile: constant expression evaluates to -1
+BROKEN_powerpc64=	fails to compile: narrowing conversion of '-1' from 'int' to 'char'
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-dependency-tracking --disable-boost

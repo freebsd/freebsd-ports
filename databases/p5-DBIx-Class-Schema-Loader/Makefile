@@ -10,12 +10,12 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	des@FreeBSD.org
 COMMENT=	Dynamic definition of a DBIx::Class::Schema
 
-LICENSE=	ART10 GPLv1
+LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Carp-Clan>=0:devel/p5-Carp-Clan \
 		p5-Class-Accessor-Grouped>=0.10002:devel/p5-Class-Accessor-Grouped \
-		p5-Class-C3-Componentised>=1.0008:devel/p5-Class-C3-Componentised \
+		p5-Class-C3-Componentised>=1.000800:devel/p5-Class-C3-Componentised \
 		p5-Class-Inspector>=1.27:devel/p5-Class-Inspector \
 		p5-Class-Load>=0:devel/p5-Class-Load \
 		p5-Class-Unload>=0:devel/p5-Class-Unload \
@@ -30,6 +30,7 @@ BUILD_DEPENDS=	p5-Carp-Clan>=0:devel/p5-Carp-Clan \
 		p5-String-ToIdentifier-EN>=0.05:textproc/p5-String-ToIdentifier-EN \
 		p5-Try-Tiny>=0:lang/p5-Try-Tiny \
 		p5-namespace-clean>=0.20:devel/p5-namespace-clean
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Config-General>=0:devel/p5-Config-General \
 		p5-DBD-SQLite>=1.29:databases/p5-DBD-SQLite \
 		p5-DBIx-Class-IntrospectableM2M>=0:databases/p5-DBIx-Class-IntrospectableM2M \
@@ -40,25 +41,14 @@ TEST_DEPENDS=	p5-Config-General>=0:devel/p5-Config-General \
 		p5-Test-Pod>=1.14:devel/p5-Test-Pod \
 		p5-Test-Warn>=0.21:devel/p5-Test-Warn
 
-OPTIONS_DEFINE=	MYSQL ORACLE PGSQL SQLITE
-ORACLE_DESC=	Enable Oracle backend (experimental)
+OPTIONS_DEFINE=	MYSQL PGSQL SQLITE
 
 NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
 
 MYSQL_USE=		MYSQL=yes
-ORACLE_BUILD_DEPENDS=	p5-DBD-Oracle>=0.19:databases/p5-DBD-Oracle
-ORACLE_RUN_DEPENDS=	p5-DBD-Oracle>=0.19:databases/p5-DBD-Oracle
 PGSQL_USES=		pgsql
 SQLITE_USES=		sqlite
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 502200
-BUILD_DEPENDS+=	p5-Scalar-List-Utils>=1.40:lang/p5-Scalar-List-Utils
-.endif
-
-RUN_DEPENDS:=	${BUILD_DEPENDS}
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

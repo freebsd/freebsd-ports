@@ -4,8 +4,11 @@ bin/mate-power-statistics
 etc/xdg/autostart/mate-power-manager.desktop
 libexec/mate-brightness-applet
 libexec/mate-inhibit-applet
+man/man1/mate-power-backlight-helper.1.gz
+man/man1/mate-power-manager.1.gz
+man/man1/mate-power-preferences.1.gz
+man/man1/mate-power-statistics.1.gz
 sbin/mate-power-backlight-helper
-share/MateConf/gsettings/mate-power-manager.convert
 share/applications/mate-power-preferences.desktop
 share/applications/mate-power-statistics.desktop
 share/dbus-1/services/org.mate.PowerManager.service
@@ -280,10 +283,10 @@ share/locale/ar/LC_MESSAGES/mate-power-manager.mo
 share/locale/as/LC_MESSAGES/mate-power-manager.mo
 share/locale/ast/LC_MESSAGES/mate-power-manager.mo
 share/locale/be/LC_MESSAGES/mate-power-manager.mo
-share/locale/be@latin/LC_MESSAGES/mate-power-manager.mo
 share/locale/bg/LC_MESSAGES/mate-power-manager.mo
 share/locale/bn/LC_MESSAGES/mate-power-manager.mo
 share/locale/bn_IN/LC_MESSAGES/mate-power-manager.mo
+share/locale/br/LC_MESSAGES/mate-power-manager.mo
 share/locale/ca/LC_MESSAGES/mate-power-manager.mo
 share/locale/ca@valencia/LC_MESSAGES/mate-power-manager.mo
 share/locale/cmn/LC_MESSAGES/mate-power-manager.mo
@@ -293,12 +296,12 @@ share/locale/da/LC_MESSAGES/mate-power-manager.mo
 share/locale/de/LC_MESSAGES/mate-power-manager.mo
 share/locale/dz/LC_MESSAGES/mate-power-manager.mo
 share/locale/el/LC_MESSAGES/mate-power-manager.mo
-share/locale/en@shaw/LC_MESSAGES/mate-power-manager.mo
 share/locale/en_AU/LC_MESSAGES/mate-power-manager.mo
 share/locale/en_CA/LC_MESSAGES/mate-power-manager.mo
 share/locale/en_GB/LC_MESSAGES/mate-power-manager.mo
-share/locale/en_US/LC_MESSAGES/mate-power-manager.mo
 share/locale/es/LC_MESSAGES/mate-power-manager.mo
+share/locale/es_CO/LC_MESSAGES/mate-power-manager.mo
+share/locale/es_MX/LC_MESSAGES/mate-power-manager.mo
 share/locale/et/LC_MESSAGES/mate-power-manager.mo
 share/locale/eu/LC_MESSAGES/mate-power-manager.mo
 share/locale/fa/LC_MESSAGES/mate-power-manager.mo
@@ -311,6 +314,7 @@ share/locale/he/LC_MESSAGES/mate-power-manager.mo
 share/locale/hi/LC_MESSAGES/mate-power-manager.mo
 share/locale/hr/LC_MESSAGES/mate-power-manager.mo
 share/locale/hu/LC_MESSAGES/mate-power-manager.mo
+share/locale/hy/LC_MESSAGES/mate-power-manager.mo
 share/locale/id/LC_MESSAGES/mate-power-manager.mo
 share/locale/is/LC_MESSAGES/mate-power-manager.mo
 share/locale/it/LC_MESSAGES/mate-power-manager.mo
@@ -320,6 +324,7 @@ share/locale/kk/LC_MESSAGES/mate-power-manager.mo
 share/locale/kn/LC_MESSAGES/mate-power-manager.mo
 share/locale/ko/LC_MESSAGES/mate-power-manager.mo
 share/locale/ku/LC_MESSAGES/mate-power-manager.mo
+share/locale/ku_IQ/LC_MESSAGES/mate-power-manager.mo
 share/locale/ky/LC_MESSAGES/mate-power-manager.mo
 share/locale/lt/LC_MESSAGES/mate-power-manager.mo
 share/locale/lv/LC_MESSAGES/mate-power-manager.mo
@@ -336,6 +341,7 @@ share/locale/oc/LC_MESSAGES/mate-power-manager.mo
 share/locale/or/LC_MESSAGES/mate-power-manager.mo
 share/locale/pa/LC_MESSAGES/mate-power-manager.mo
 share/locale/pl/LC_MESSAGES/mate-power-manager.mo
+share/locale/pms/LC_MESSAGES/mate-power-manager.mo
 share/locale/pt/LC_MESSAGES/mate-power-manager.mo
 share/locale/pt_BR/LC_MESSAGES/mate-power-manager.mo
 share/locale/ro/LC_MESSAGES/mate-power-manager.mo
@@ -353,6 +359,7 @@ share/locale/th/LC_MESSAGES/mate-power-manager.mo
 share/locale/tr/LC_MESSAGES/mate-power-manager.mo
 share/locale/uk/LC_MESSAGES/mate-power-manager.mo
 share/locale/ur/LC_MESSAGES/mate-power-manager.mo
+share/locale/uz/LC_MESSAGES/mate-power-manager.mo
 share/locale/vi/LC_MESSAGES/mate-power-manager.mo
 share/locale/zh_CN/LC_MESSAGES/mate-power-manager.mo
 share/locale/zh_HK/LC_MESSAGES/mate-power-manager.mo

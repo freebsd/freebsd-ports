@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	activesupport
-PORTVERSION=	5.0.1
+PORTVERSION=	5.1.4
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	5
 
-MAINTAINER=	ruby@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Utility classes and extension that are required by Rails MVC Framework
 
 LICENSE=	MIT

@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	erlang
-PORTVERSION=	19.2
-PORTREVISION=	2
-PORTEPOCH=	3
+PORTVERSION=	19.3.6.3
+PORTEPOCH=	4
 CATEGORIES=	lang parallel java
 MASTER_SITES=	http://www.erlang.org/download/:erlangorg		\
 		http://erlang.stacken.kth.se/download/:erlangorg	\
@@ -21,14 +20,16 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 PATCH_SITES=	http://olgeni.olgeni.com/~olgeni/distfiles/ \
 		LOCAL/olgeni
-PATCHFILES=
+PATCHFILES=	patch-otp-19.3.1 patch-otp-19.3.2 patch-otp-19.3.3 \
+		patch-otp-19.3.4 patch-otp-19.3.5 patch-otp-19.3.6 \
+		patch-otp-19.3.6.1 patch-otp-19.3.6.2 patch-otp-19.3.6.3
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Functional programming language from Ericsson
 
 LICENSE=	APACHE20
 
-BROKEN_sparc64=		Fails to build: error: fp_except undeclared
+BROKEN_sparc64=	Fails to build: error: fp_except undeclared
 
 WRKSRC=		${WRKDIR}/otp_src_${ERL_RELEASE}
 
@@ -61,11 +62,12 @@ OPTIONS_EXCLUDE_DragonFly=	HIPE NATIVE SCTP
 OPTIONS_EXCLUDE+=	DTRACE
 .endif
 
-OPTIONS_EXCLUDE_FreeBSD_9=	DTRACE
 OPTIONS_EXCLUDE_FreeBSD_10=	DTRACE
 OPTIONS_EXCLUDE_i386=		DTRACE
+# ld(1) fails to link probes: missing __dtrace_erlang___* symbols
+OPTIONS_EXCLUDE_aarch64=	DTRACE
 
-ERL_RELEASE=	19.2
+ERL_RELEASE=	19.3
 
 USES=		gmake ncurses perl5
 USE_PERL5=	build
@@ -73,16 +75,25 @@ USE_RC_SUBR=	epmd
 GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-EI_VSN=		3.9.2
-SNMP_VSN=	5.2.4
-TOOLS_VSN=	2.9
+APP_UPGRADE=	erts            8.3 8.3.5.3 \
+		lib/crypto    3.7.3   3.7.4 \
+		lib/compiler  7.0.4 7.0.4.1 \
+		lib/inets     6.3.6   6.3.9 \
+		lib/ssh       4.4.1   4.4.2 \
+		lib/ssl       8.1.1   8.1.3 \
+		lib/dialyzer    3.1   3.1.1 \
+		lib/xmerl    1.3.13  1.3.14
+
+EI_VSN=		3.9.3
+SNMP_VSN=	5.2.5
+TOOLS_VSN=	2.9.1
 
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}
 DISTFILES+=	${ERLANG_DOCS}:erlangorg		\
 		${DOC_DISTFILES}
-DOC_DISTFILES=	armstrong_thesis_2003.pdf:joe		\
+DOC_DISTFILES=	armstrong_thesis_2003.pdf:local		\
 		bjarnelic.pdf:publications		\
 		erlang-book-part1.pdf:erlangorg		\
 		master_thesis_patterns.pdf:local	\
@@ -190,7 +201,7 @@ CONFIGURE_ARGS+=--enable-dirty-schedulers
 MAKE_ARGS+=	ARCH=x86
 .endif
 
-.if ${ARCH} == armv6
+.if ${ARCH} == armv6 || ${ARCH} == armv7
 MAKE_ARGS+=	ARCH=arm
 .endif
 
@@ -233,7 +244,11 @@ post-install:
 .if ${PORT_OPTIONS:MDOCS}
 	${TAR} --unlink -xzpf ${DISTDIR}/${DIST_SUBDIR}/${ERLANG_DOCS} \
 		-C ${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}
-
+.for app v1 v2 in ${APP_UPGRADE}
+	${MV} ${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/${app}-${v1}/* \
+		${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/${app}-${v2}
+	${RMDIR} ${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/${app}-${v1}
+.endfor
 	${INSTALL_DATA} ${WRKSRC}/lib/dialyzer/doc/*.txt \
 		${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/lib/dialyzer-*/doc/
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

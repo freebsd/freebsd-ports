@@ -1,0 +1,7 @@
+GettextI18nRailsJs extends gettext_i18n_rails, making your .PO files available
+to client side Javascript as JSON. It will find translations inside your .js,
+.coffee, .handlebars and .mustache files, then it will create JSON versions of
+your .PO files so you can serve them with the rest of your assets, thus letting
+you access all your translations offline from client side Javascript.
+
+WWW: https://github.com/webhippie/gettext_i18n_rails_js

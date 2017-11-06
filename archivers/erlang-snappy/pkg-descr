@@ -1,0 +1,3 @@
+An Erlang NIF wrapper for Google's snappy compressor/decompressor.
+
+WWW: https://github.com/skunkwerks/snappy-erlang-nif

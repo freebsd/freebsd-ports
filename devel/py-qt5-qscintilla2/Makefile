@@ -2,6 +2,7 @@
 
 PORTNAME=	qscintilla2
 PORTVERSION=	${QSCI2_VERSION}
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	${MASTER_SITES_QSCI2}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}qt5-
@@ -28,7 +29,8 @@ DEBUG_CONFIGURE_ON=	--debug --trace
 
 QSCIDIR=	${PREFIX}/share/qt5/qsci
 CONFIGURE_ARGS=	--pyqt PyQt5 -d ${PYTHONPREFIX_SITELIBDIR}/PyQt5 -v ${SIPDIR} \
-		--apidir ${QSCIDIR} --qmake ${QMAKE} --pyqt-sipdir ${SIPDIR}
+		--apidir ${QSCIDIR} --qmake ${QMAKE} --pyqt-sipdir ${SIPDIR} \
+		--sip ${LOCALBASE}/bin/sip-${PYTHON_VER}
 WRKSRC=		${WRKDIR}/${DISTNAME}/Python
 ALL_TARGET=	#empty
 

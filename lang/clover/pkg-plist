@@ -1,9 +1,6 @@
 etc/OpenCL/vendors/mesa.icd
-lib/gallium-pipe/pipe_r300.so
 lib/gallium-pipe/pipe_r600.so
 lib/gallium-pipe/pipe_radeonsi.so
-lib/gallium-pipe/pipe_swrast.so
-lib/gallium-pipe/pipe_vmwgfx.so
 lib/libMesaOpenCL.so
 lib/libMesaOpenCL.so.1
 lib/libMesaOpenCL.so.1.0.0

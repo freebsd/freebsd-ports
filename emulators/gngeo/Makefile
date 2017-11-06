@@ -3,18 +3,21 @@
 
 PORTNAME=	gngeo
 PORTVERSION=	0.8
-PORTREVISION=	2
+DISTVERSIONPREFIX=	${PORTNAME}_
+PORTREVISION=	4
 CATEGORIES=	emulators
-MASTER_SITES=	GOOGLE_CODE/${PORTNAME}
+MASTER_SITES=	LOCAL/acm/${PORTNAME}
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	NeoGeo emulator
 
-BROKEN=		Unfetchable (google code has gone away)
+LICENSE=	GPLv2
 
-USES=		compiler:features gmake
+USES=		autoreconf compiler:features gmake
 USE_SDL=	image sdl
 USE_GL=		yes
+USE_GITHUB=	yes
+GH_ACCOUNT=	pepone42
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-transform-name="" --disable-gp2x
@@ -61,21 +64,25 @@ CONFIGURE_ARGS+=	--with-m68kcore=gen68k
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|x86_64|amd64|' ${WRKSRC}/configure
-.if ${ARCH} == "amd64"
-	@${REINPLACE_CMD} -e 's|-malign-double||' ${WRKSRC}/configure
-.endif
 .if ${COMPILER_TYPE} == "clang"
 	@${REINPLACE_CMD} -e 's|-frerun-loop-opt||; \
 		s|-falign-jumps=2||; s|-falign-loops=2||; \
-		s|-fschedule-insns2||; s|-malign-double||' \
+		s|-fschedule-insns2||; s|-malign-double||; \
+		s|-frerun-loop-opt||; s|-O3||' \
 		${WRKSRC}/configure
 .endif
 	@${REINPLACE_CMD} -e 's|sdl-config|${SDL_CONFIG}|' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT} \
 		${WRKSRC}/src/generator68k/Makefile.in
 
+pre-configure:
+	@cd ${WRKSRC} && ${AUTORECONF} -i
+
 post-install:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/sample_gngeorc ${STAGEDIR}${EXAMPLESDIR}/gngeorc
+	${INSTALL_DATA} ${WRKSRC}/romrc ${STAGEDIR}${DATADIR}/romrc
+	${INSTALL_DATA} ${WRKSRC}/gngeo.dat/gngeo_data.zip ${STAGEDIR}${DATADIR}/gngeo_data.zip
 
 .include <bsd.port.post.mk>

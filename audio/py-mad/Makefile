@@ -7,24 +7,25 @@ DISTVERSIONPREFIX=	version/
 CATEGORIES=	audio python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Python module that provides the MPEG Audio Decoder interface
+MAINTAINER=	sunpoet@FreeBSD.org
+COMMENT=	Python wrapper for the MPEG Audio Decoder library
 
 LICENSE=	LGPL20+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libmad.so:audio/libmad
 
-USE_GITHUB=	yes
+PORTSCOUT=	ignore:1
+
+USE_PYTHON=	autoplist distutils
+USES=		python
+
 GH_ACCOUNT=	jaqx0r
 GH_PROJECT=	pymad
-
-USES=		python:2
-USE_PYTHON=	distutils autoplist pythonprefix
+USE_GITHUB=	yes
 
 do-configure:
-	@cd ${WRKSRC} && ${MAKE_ENV} ${PYTHON_CMD} config_unix.py \
-		--prefix ${LOCALBASE}
+	@cd ${WRKSRC}/ && ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} config_unix.py --prefix ${LOCALBASE}
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/mad.so

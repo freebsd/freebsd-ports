@@ -7,7 +7,7 @@ MASTER_SITES=	ftp://sources.redhat.com/pub/${PORTNAME}/ \
 		SOURCEWARE/${PORTNAME}
 PKGNAMEPREFIX=	${NEWLIB_TARGET}-
 
-MAINTAINER=	bsdports@kyle-evans.net
+MAINTAINER=	kevans@FreeBSD.org
 COMMENT=	Newlib distribution for ${NEWLIB_TARGET} targets
 
 BUILD_DEPENDS+=	${NEWLIB_TARGET}-ar:devel/${NEWLIB_TARGET}-binutils \

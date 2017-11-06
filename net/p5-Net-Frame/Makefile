@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Net-Frame
-PORTVERSION=	1.16
+PORTVERSION=	1.17
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -11,6 +11,7 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Base framework for frame crafting
 
 LICENSE=	ART10
+LICENSE_FILE=	${WRKSRC}/LICENSE.Artistic
 
 BUILD_DEPENDS=	p5-Bit-Vector>=0:math/p5-Bit-Vector \
 		p5-Class-Gomor>=1.00:devel/p5-Class-Gomor \
@@ -18,6 +19,7 @@ BUILD_DEPENDS=	p5-Bit-Vector>=0:math/p5-Bit-Vector \
 		p5-Socket6>=0:net/p5-Socket6
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
 

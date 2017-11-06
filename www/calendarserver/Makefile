@@ -2,10 +2,9 @@
 
 PORTNAME=	calendarserver
 PORTVERSION=	9.0
+DISTVERSIONPREFIX=	CalendarServer-
 CATEGORIES=	    www python
-MASTER_SITES=	https://github.com/apple/ccs-calendarserver/archive/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=		CalendarServer-${PORTVERSION}
 
 MAINTAINER=	axel.rau@chaos1.de
 COMMENT=	Calendar and Contacts Server from Apple (RFC 4791, RFC 6352)
@@ -35,6 +34,10 @@ OPTIONS_DEFINE=	DOCS EXAMPLES
 
 USES=	pgsql:9.1+ python:2.7
 USE_PYTHON=	autoplist distutils
+USE_GITHUB=	yes
+GH_ACCOUNT=	apple
+GH_PROJECT=	ccs-calendarserver
+
 NO_ARCH=yes
 
 SUB_FILES=	pkg-message
@@ -53,7 +56,6 @@ PLIST_SUB=	USER=${USERS} GROUP=${GROUPS} \
 		DBDIR=${DBDIR} \
 		LOGDIR=${LOGDIR} \
 		RUNDIR=${RUNDIR}
-WRKSRC=		${WRKDIR}/ccs-calendarserver-CalendarServer-9.0
 
 CALDAVD_USER=	caldavd
 USERS=			${CALDAVD_USER}

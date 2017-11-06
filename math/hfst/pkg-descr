@@ -2,4 +2,4 @@ The Helsinki Finite-State Transducer toolkit is intended for processing
 natural language morphologies.  The toolkit is demonstrated by wide-coverage
 implementations of a number of languages of varying morphological complexity.
 
-WWW: http://hfst.sourceforge.net/
+WWW: https://hfst.github.io/

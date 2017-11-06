@@ -2,18 +2,18 @@
 # $FreeBSD$
 
 PORTNAME=	focuswriter
-PORTVERSION=	1.6.3
-DISTVERSIONPREFIX=	v
+PORTVERSION=	1.6.7
 PORTREVISION=	1
+DISTVERSIONPREFIX=	v
 CATEGORIES=	editors
 
 MAINTAINER=	lightside@gmx.com
 COMMENT=	Simple, distraction-free writing environment
 
-LICENSE=	GPLv3 LGPL3
+LICENSE=	GPLv3+ LGPL3+
 LICENSE_COMB=	multi
-LICENSE_FILE_GPLv3=	${WRKSRC}/COPYING
-LICENSE_FILE_LGPL3=	${WRKSRC}/resources/images/icons/oxygen/COPYING
+LICENSE_FILE_GPLv3+ =	${WRKSRC}/COPYING
+LICENSE_FILE_LGPL3+ =	${WRKSRC}/resources/images/icons/oxygen/COPYING
 
 LIB_DEPENDS=	libhunspell-1.6.so:textproc/hunspell
 
@@ -37,7 +37,7 @@ post-patch:
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/resources/unix/focuswriter.1 \
-		${STAGEDIR}${PREFIX}/man/man1
+		${STAGEDIR}${MANPREFIX}/man/man1
 
 post-install-DOCS-on:
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} "${PORTDOCS}" ${STAGEDIR}${DOCSDIR})

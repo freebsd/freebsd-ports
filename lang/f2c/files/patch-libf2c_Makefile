@@ -26,7 +26,7 @@
  
  libf2c.so: $(OFILES)
 -	cc -shared -o libf2c.so $(OFILES)
-+	$(CC) -shared -o libf2c.so $(OFILES)
++	$(CC) -shared -Wl,-soname,libf2c.so.%%LIBVER%% -o libf2c.so $(OFILES)
  
  ### If your system lacks ranlib, you don't need it; see README.
  

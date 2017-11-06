@@ -2,13 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	mate-icon-theme-faenza
-PORTVERSION=	1.12.0
+PORTVERSION=	1.18.1
 CATEGORIES=	x11-themes mate
 MASTER_SITES=	MATE
 DIST_SUBDIR=	mate
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Collection of Faenza and Faience icons for the MATE desktop
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 PORTSCOUT=	limitw:1,even
 

@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	qcad
-PORTVERSION=	3.15.4.0
+PORTVERSION=	3.17.3.6
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
+#PORTREVISION=	1
 CATEGORIES=	cad
 DIST_SUBDIR=	${PORTNAME}
 
@@ -19,7 +19,7 @@ LIB_DEPENDS=	libquazip.so:archivers/quazip
 
 MAKE_JOBS_UNSAFE=yes
 
-USES=		execinfo gmake qmake
+USES=		gmake qmake
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 USE_QT4=	qmake_build codecs-cn codecs-jp codecs-kr codecs-tw corelib \
@@ -43,7 +43,7 @@ RESDIR=		${WRKSRC}/release
 SHRLIBS=	qcadcore qcadecmaapi qcadentity qcadgrid qcadgui qcadoperations	\
 		qcadsnap qcadspatialindex qcadstemmer spatialindexnavel qcadzip
 STALIBS=	dxflib stemmer
-SHRDIR=		fonts libraries patterns plugins scripts ts
+SHRDIR=		fonts libraries linetypes patterns plugins scripts ts
 #QSCRIPTS should not be installed to avoid conflicts with texlive-base
 QSCRIPTS=	bbox dwg2bmp dwg2pdf dwg2svg
 
@@ -65,7 +65,7 @@ do-install:
 	${LN} -sf qcad-bin ${STAGEDIR}${PREFIX}/bin/qcad
 .for lib in ${SHRLIBS:C|^|lib|:C|$|.so|}
 	${INSTALL_LIB} ${RESDIR}/${lib} ${STAGEDIR}${PREFIX}/lib/${lib}.0
-	${LN} -sf ../lib/${lib}.0 ${STAGEDIR}${PREFIX}/lib/${lib}
+	${LN} -sf ${lib}.0 ${STAGEDIR}${PREFIX}/lib/${lib}
 .endfor
 .for lib in ${STALIBS:C|^|lib|:C|$|.a|}
 	${INSTALL_DATA} ${RESDIR}/${lib} ${STAGEDIR}${PREFIX}/lib/

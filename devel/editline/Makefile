@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	editline
-PORTVERSION=	1.15.2
+PORTVERSION=	1.15.3
 CATEGORIES=	devel
 
 MAINTAINER=	sunpoet@FreeBSD.org

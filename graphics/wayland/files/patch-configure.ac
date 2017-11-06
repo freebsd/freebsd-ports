@@ -1,0 +1,56 @@
+--- configure.ac.orig	2016-06-01 00:11:10 UTC
++++ configure.ac
+@@ -63,6 +63,28 @@ AC_SUBST(GCC_CFLAGS)
+ 
+ AC_CHECK_FUNCS([accept4 mkostemp posix_fallocate])
+ 
++AC_CHECK_HEADERS([sys/signalfd.h sys/timerfd.h])
++
++# Use epoll on Linux or kqueue on BSD
++AC_CHECK_HEADERS([sys/epoll.h sys/event.h])
++if test "x$ac_cv_header_sys_epoll_h" != "xyes" && test "x$ac_cv_header_sys_event_h" != "xyes"; then
++       AC_MSG_ERROR([Can't find sys/epoll.h or sys/event.h. Please ensure either epoll or kqueue is available.])
++fi
++
++# Credential support on FreeBSD
++AC_CHECK_HEADERS([sys/ucred.h])
++
++# dlopen()
++AC_CHECK_LIB([dl], [dlsym], [DL_LIBS=-ldl])
++AC_SUBST([DL_LIBS])
++
++# Defines __FreeBSD__ if we're on FreeBSD
++AC_CHECK_HEADERS([sys/param.h])
++
++# waitid() and signal.h are needed for the test suite.
++AC_CHECK_FUNCS([waitid])
++AC_CHECK_HEADERS([signal.h])
++
+ AC_ARG_ENABLE([libraries],
+ 	      [AC_HELP_STRING([--disable-libraries],
+ 			      [Disable compilation of wayland libraries])],
+@@ -98,11 +120,12 @@ AC_SUBST([ICONDIR])
+ 
+ if test "x$enable_libraries" = "xyes"; then
+ 	PKG_CHECK_MODULES(FFI, [libffi])
++dnl convert SFD_CLOEXEC and TFD_CLOEXEC to warning while figuring out how to do this.
+ 	AC_CHECK_DECL(SFD_CLOEXEC,[],
+-		      [AC_MSG_ERROR("SFD_CLOEXEC is needed to compile wayland libraries")],
++		      [AC_MSG_WARN("SFD_CLOEXEC is needed to compile wayland libraries")],
+ 		      [[#include <sys/signalfd.h>]])
+ 	AC_CHECK_DECL(TFD_CLOEXEC,[],
+-		      [AC_MSG_ERROR("TFD_CLOEXEC is needed to compile wayland libraries")],
++		      [AC_MSG_WARN("TFD_CLOEXEC is needed to compile wayland libraries")],
+ 		      [[#include <sys/timerfd.h>]])
+ 	AC_CHECK_DECL(CLOCK_MONOTONIC,[],
+ 		      [AC_MSG_ERROR("CLOCK_MONOTONIC is needed to compile wayland libraries")],
+@@ -110,6 +133,9 @@ if test "x$enable_libraries" = "xyes"; t
+ 	AC_CHECK_HEADERS([execinfo.h])
+ fi
+ 
++EPOLLSHIM_LIBS="-lepoll-shim"
++AC_SUBST(EPOLLSHIM_LIBS)
++
+ PKG_CHECK_MODULES(EXPAT, [expat], [],
+ 	[AC_CHECK_HEADERS(expat.h, [],
+ 		[AC_MSG_ERROR([Can't find expat.h. Please install expat.])])

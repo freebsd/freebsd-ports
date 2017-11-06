@@ -2,19 +2,21 @@
 # $FreeBSD$
 
 PORTNAME=	tarantool
-PORTVERSION=	1.6.9.9
+PORTVERSION=	1.7.4.260
+PORTREVISION=	2
 CATEGORIES=	databases
-MASTER_SITES=	http://download.tarantool.org/tarantool/1.6/src/
+MASTER_SITES=	http://download.tarantool.org/tarantool/1.7/src/
 
 MAINTAINER=	vg@FreeBSD.org
 COMMENT=	NoSQL database running in a Lua application server
 
 LICENSE=	BSD2CLAUSE
 
-BROKEN_powerpc64=	Does not build
+NOT_FOR_ARCHS=		armv6 powerpc64 sparc64
+NOT_FOR_ARCHS_REASON=	fails to build: Unsupported architecture
 
 MAKE_JOBS_UNSAFE=yes
-USES=		cmake compiler:c++11-lang gettext gmake perl5 readline
+USES=		cmake:noninja compiler:c++11-lang gettext gmake perl5 readline
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	${PORTNAME}
 SUB_FILES=	pkg-message
@@ -25,6 +27,7 @@ TT_LOGDIR?=	/var/log/tarantool
 
 CMAKE_ARGS=	-DCMAKE_INSTALL_FULL_SYSCONFDIR=${ETCDIR} \
 		-DCMAKE_INSTALL_LOCALSTATEDIR=/var \
+		-DCMAKE_INSTALL_MANDIR=${MANPREFIX}/man \
 		-DENABLE_DIST=ON
 
 USERS=		tarantool
@@ -43,9 +46,6 @@ PLIST_SUB+=	TT_USER=${USERS} \
 	TT_RUNDIR=${TT_RUNDIR}
 
 OPTIONS_DEFINE=	DEBUG
-
-NOT_FOR_ARCHS=	sparc64
-NOT_FOR_ARCHS_REASON=	not yet ported to this architecture
 
 .include <bsd.port.options.mk>
 

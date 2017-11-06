@@ -1,0 +1,7 @@
+#!/bin/sh
+
+# $FreeBSD$
+
+if [ "$2" == "POST-INSTALL" ]; then
+	/usr/sbin/chown -R anvil:anvil /var/db/anvil
+fi

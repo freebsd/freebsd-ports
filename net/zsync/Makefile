@@ -3,6 +3,7 @@
 
 PORTNAME=	zsync
 PORTVERSION=	0.6.2
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://zsync.moria.org.uk/download/
 
@@ -12,7 +13,7 @@ COMMENT=	File transfer program
 LICENSE=	ART20
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		tar:bzip2
+USES=		autoreconf tar:bzip2
 GNU_CONFIGURE=	yes
 
 PORTDOCS=	INSTALL NEWS README

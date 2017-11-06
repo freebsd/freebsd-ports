@@ -12,7 +12,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:C/0$//}
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Extendable perl5 module for parsing whois information
 
-LICENSE=	ART10 GPLv1
+LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 USES=		perl5

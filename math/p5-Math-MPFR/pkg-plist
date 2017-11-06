@@ -1,4 +1,5 @@
 %%SITE_ARCH%%/Math/MPFR.pm
+%%SITE_ARCH%%/Math/MPFR.pod
 %%SITE_ARCH%%/Math/MPFR/Prec.pm
 %%SITE_ARCH%%/Math/MPFR/Random.pm
 %%SITE_ARCH%%/Math/MPFR/V.pm

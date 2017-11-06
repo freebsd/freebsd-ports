@@ -1,4 +1,4 @@
-#!/usr/bin/env perl -w
+#!/usr/bin/env perl
 #
 # Copyright (c) 2004 Oliver Eikemeier. All rights reserved.
 #
@@ -30,7 +30,7 @@
 #
 # $FreeBSD$
 #
-# MAINTAINER=   erwin@FreeBSD.org
+# MAINTAINER=   portmgr@FreeBSD.org
 #
 # PORTVERSION and PKGORIGIN auditing script
 #
@@ -66,6 +66,7 @@
 
 require 5.005;
 use strict;
+use warnings;
 use POSIX;
 use File::Find;
 use Cwd 'abs_path';
@@ -127,7 +128,6 @@ foreach (qw(ARCH OPSYS OSREL OSVERSION UID)) {
     my @cachedenv = readfrom $portsdir, $make, "-V$_";
     $ENV{$_} = $cachedenv[0];
 }
-$ENV{WITH_OPENSSL_BASE} = 'yes';
 
 my %pkgname;
 my %pkgorigin;

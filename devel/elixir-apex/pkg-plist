@@ -5,8 +5,6 @@ lib/elixir/lib/apex/ebin/Elixir.Apex.Format.BitString.beam
 lib/elixir/lib/apex/ebin/Elixir.Apex.Format.Color.beam
 lib/elixir/lib/apex/ebin/Elixir.Apex.Format.Float.beam
 lib/elixir/lib/apex/ebin/Elixir.Apex.Format.Function.beam
-lib/elixir/lib/apex/ebin/Elixir.Apex.Format.HashDict.beam
-lib/elixir/lib/apex/ebin/Elixir.Apex.Format.HashSet.beam
 lib/elixir/lib/apex/ebin/Elixir.Apex.Format.Integer.beam
 lib/elixir/lib/apex/ebin/Elixir.Apex.Format.List.beam
 lib/elixir/lib/apex/ebin/Elixir.Apex.Format.Map.beam

@@ -1,6 +1,6 @@
---- spunk/unixsrc/delay.cc.orig	Sat Feb 26 17:50:13 2000
-+++ spunk/unixsrc/delay.cc	Sat Feb 26 17:50:24 2000
-@@ -73,7 +73,7 @@
+--- spunk/unixsrc/delay.cc.orig	1996-11-07 17:06:58 UTC
++++ spunk/unixsrc/delay.cc
+@@ -73,7 +73,7 @@ u32 Delay (u32 ms)
  //
  // The function returns the real time passed or just ms.
  {

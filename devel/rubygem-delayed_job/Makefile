@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	delayed_job
-PORTVERSION=	4.1.2
+PORTVERSION=	4.1.3
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 

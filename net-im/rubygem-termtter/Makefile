@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	termtter
-PORTVERSION=	2.2.6
-PORTREVISION=	1
+PORTVERSION=	2.2.8
 CATEGORIES=	net-im rubygems
 MASTER_SITES=	RG
 
@@ -13,7 +12,7 @@ COMMENT=	Terminal based Twitter client
 LICENSE=	MIT
 
 RUN_DEPENDS=	rubygem-activerecord4>=4.1.0:databases/rubygem-activerecord4 \
-		rubygem-builder32>=3.1.4:devel/rubygem-builder32 \
+		rubygem-builder>=3.1.4:devel/rubygem-builder \
 		rubygem-fluent-logger>=0.4.6:devel/rubygem-fluent-logger \
 		rubygem-highline>=1.6.0:devel/rubygem-highline \
 		rubygem-json1>=1.8.0:devel/rubygem-json1 \

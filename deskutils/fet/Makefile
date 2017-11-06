@@ -2,14 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	fet
-PORTVERSION=	5.30.7
+DISTVERSION=	5.34.0
 CATEGORIES=	deskutils kde
 MASTER_SITES=	http://lalescu.ro/liviu/fet/download/ \
 		http://lalescu.ro/liviu/fet/download/old/ \
 		http://timetabling.de/download/ \
 		http://timetabling.de/download/old/
 
-MAINTAINER=	udvzsolt@gmail.com
+MAINTAINER=	uzsolt@uzsolt.hu
 COMMENT=	Free timetabling software
 
 LICENSE=	GPLv3+
@@ -29,7 +29,7 @@ DESKTOP_ENTRIES="FET" \
 OPTIONS_DEFINE=	EXAMPLES NLS ONLYCL
 OPTIONS_SINGLE=	QTVER
 OPTIONS_SINGLE_QTVER=	QT4 QT5
-OPTIONS_DEFAULT=	EXAMPLES NLS QT4
+OPTIONS_DEFAULT=	QT4
 ONLYCL_DESC=	Build only command line version (without Qt GUI)
 
 OPTIONS_SUB=	yes

@@ -3,16 +3,19 @@
 
 PORTNAME=	netcdf-fortran
 PORTVERSION=	4.4.4
-PORTREVISION=	1
+PORTREVISION=	4
 DISTVERSIONPREFIX=	v
 CATEGORIES=	science
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Fortran library for machine-independent, array-oriented data access
 
-LIB_DEPENDS=	libnetcdf.so:science/netcdf
+LICENSE=	UCAR_UNIDATA
+LICENSE_FILE=	${WRKSRC}/COPYRIGHT
+LICENSE_NAME=	University Corporation for Atmospheric Research/Unidata
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-CONFLICTS=	netcdf-ftn-[0-9]* netcdf3-ftn-[0-9]*
+LIB_DEPENDS=	libnetcdf.so:science/netcdf
 
 CPPFLAGS+=	-fPIC -DPIC -DgFortran
 GNU_CONFIGURE=	yes

@@ -6,7 +6,7 @@
  
 +prefix = @prefix@
  CC = @CC@
--DEFS = @DEFS@ -DSYSPATHFILE=\"/etc/X11/Xloadimage\"
+-DEFS = @DEFS@
 -CFLAGS = @CFLAGS@
 +DEFS = @DEFS@ -DSYSPATHFILE=\"@sysconfdir@/xloadimagerc\"
 +CFLAGS = @CFLAGS@ @CPPFLAGS@ @X_CFLAGS@

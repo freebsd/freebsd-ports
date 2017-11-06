@@ -2,8 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	lmdb
-PORTVERSION=	0.9.20
+PORTVERSION=	0.9.21
 DISTVERSIONPREFIX=	${PORTNAME:tu}_
+PORTEPOCH=	1
 CATEGORIES=	databases
 
 MAINTAINER=	delphij@FreeBSD.org
@@ -14,8 +15,6 @@ LICENSE_NAME=	OpenLDAP Public License
 LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-# XXX FreeBSD does not implement O_DSYNC and fdatasync at this time.
-CFLAGS+=	-DMDB_DSYNC=O_SYNC -Dfdatasync=fsync
 WRKSRC_SUBDIR=		libraries/liblmdb
 MAKE_ARGS+=	CC="${CC}"
 MAKE_ARGS+=	prefix="${PREFIX}" INSTALL_PROGRAM="${INSTALL_PROGRAM}"
@@ -28,5 +27,9 @@ GH_ACCOUNT=	${PORTNAME:tu}
 
 post-install:
 	${LN} -sf liblmdb.so.0 ${STAGEDIR}${PREFIX}/lib/liblmdb.so
+
+do-test:
+	${MKDIR} ${WRKSRC}/testdb
+	cd ${WRKSRC} && ./mtest*
 
 .include <bsd.port.mk>

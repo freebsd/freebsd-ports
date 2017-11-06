@@ -1,6 +1,6 @@
---- Makefile.orig	2014-01-24 22:07:36.000000000 +0100
-+++ Makefile	2014-02-18 18:57:41.000000000 +0100
-@@ -292,7 +292,7 @@
+--- Makefile.orig	2014-01-24 21:07:36 UTC
++++ Makefile
+@@ -292,7 +292,7 @@ else
   lLIBS += $(shell pkg-config --libs gmodule-2.0)
  endif
  # -lrt needed for clock_gettime(), explicit -lm, -ldl needed for some arch-linux distros
@@ -9,7 +9,7 @@
  ifeq ($(USE_GAMIN), 1)
  #gamin code is a superset of FAM code, so gamin needs fam as well
  lLIBS += -lfam
-@@ -347,16 +347,12 @@
+@@ -347,16 +347,12 @@ else
  		install -m 644 $$file $(ICON_DIR)/stock; \
  	done
  endif

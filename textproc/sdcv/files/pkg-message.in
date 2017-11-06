@@ -4,11 +4,11 @@ you have to fetch the dictionaries to make it work correctly.
 
 1. Make directory for dictionaries files :
 
-	# mkdir -p %%PREFIX%%/share/stardict/dict
+	# mkdir -p %%PREFIX%%/share/stardict/dic
 
 
 2. Please put your dictionary file at :
 
- 	%%PREFIX%%/share/stardict/dict/
+ 	%%PREFIX%%/share/stardict/dic/
 
 **************************************************************************

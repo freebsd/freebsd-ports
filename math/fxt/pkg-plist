@@ -106,6 +106,7 @@ include/fxt/bits/graypower.h
 include/fxt/bits/grsnegative.h
 include/fxt/bits/hilbert.h
 include/fxt/bits/ith-one-idx.h
+include/fxt/bits/kolakoski-seq.h
 include/fxt/bits/negbin.h
 include/fxt/bits/nextgray.h
 include/fxt/bits/parenwords.h
@@ -794,6 +795,8 @@ lib/libfxt.a
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/hilbert-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/hilbert-texpic-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/hilbert-texpic-out.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/kolakoski-seq-demo.cc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/kolakoski-seq-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/modular-lookup-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/modular-lookup-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/negbin-demo.cc
@@ -1636,6 +1639,8 @@ lib/libfxt.a
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/seq/A007608-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/seq/A039724-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/seq/A039724-out.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/seq/A042942-demo.cc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/seq/A042942-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/seq/A062200-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/seq/A062200-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/seq/A066411-demo.cc
@@ -1704,8 +1709,14 @@ lib/libfxt.a
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/seq/A240949-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/seq/A247386-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/seq/A247386-out.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/seq/A249872-demo.cc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/seq/A249872-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/seq/A259095-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/seq/A259095-out.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/seq/A276691-demo.cc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/seq/A276691-out.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/seq/A278479-demo.cc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/seq/A278479-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sort/equivclass-bitstring-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sort/equivclass-bitstring-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sort/equivclass-bracelets-demo.cc

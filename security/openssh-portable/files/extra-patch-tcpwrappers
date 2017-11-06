@@ -43,9 +43,9 @@ index 0ade557..045f149 100644
  /*
   * Author: Tatu Ylonen <ylo@cs.hut.fi>
   * Copyright (c) 1995 Tatu Ylonen <ylo@cs.hut.fi>, Espoo, Finland
-@@ -122,6 +122,13 @@
- #include "ssh-sandbox.h"
+@@ -123,6 +123,13 @@
  #include "version.h"
+ #include "ssherr.h"
  
 +#ifdef LIBWRAP
 +#include <tcpd.h>
@@ -54,10 +54,10 @@ index 0ade557..045f149 100644
 +int deny_severity;
 +#endif /* LIBWRAP */
 +
- #ifndef O_NOCTTY
- #define O_NOCTTY	0
- #endif
-@@ -2027,6 +2034,24 @@ main(int ac, char **av)
+ /* Re-exec fds */
+ #define REEXEC_DEVCRYPTO_RESERVED_FD	(STDERR_FILENO + 1)
+ #define REEXEC_STARTUP_PIPE_FD		(STDERR_FILENO + 2)
+@@ -1971,6 +1978,24 @@ main(int ac, char **av)
  #ifdef SSH_AUDIT_EVENTS
  	audit_connection_from(remote_ip, remote_port);
  #endif
@@ -81,7 +81,7 @@ index 0ade557..045f149 100644
 +#endif /* LIBWRAP */
  
  	/* Log the connection. */
- 	verbose("Connection from %s port %d on %s port %d",
+ 	laddr = get_local_ipaddr(sock_in);
 diff --git configure.ac configure.ac
 index f48ba4a..66fbe82 100644
 --- configure.ac

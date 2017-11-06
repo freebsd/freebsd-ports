@@ -5,11 +5,8 @@ PORTNAME=	oauth
 PORTVERSION=	1.2.3
 PORTREVISION=	2
 CATEGORIES=	net pear
-MASTER_SITES=	http://pecl.php.net/get/
-PKGNAMEPREFIX=	pecl-
-DIST_SUBDIR=	PECL
 
-MAINTAINER=	dbaio@bsd.com.br
+MAINTAINER=	dbaio@FreeBSD.org
 COMMENT=	Php Interface to the OAuth Protocol
 
 LICENSE=	BSD3CLAUSE
@@ -23,7 +20,7 @@ CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS+=	CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
 
-USES=		php:ext tar:tgz
-IGNORE_WITH_PHP=	70
+USES=		php:pecl
+IGNORE_WITH_PHP=	70 71
 
 .include <bsd.port.mk>

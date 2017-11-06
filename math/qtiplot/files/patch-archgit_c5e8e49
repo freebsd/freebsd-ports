@@ -1,0 +1,37 @@
+Obtained from:
+https://git.archlinux.org/svntogit/packages.git/tree/trunk/qtiplot-gsl2.patch?h=packages/qtiplot
+
+Description: adoptation to gsl2.
+Author: Damir Islamov <damir@secretlaboratory.ru>
+Last-Update: 2015-12-04
+
+--- qtiplot/src/analysis/Fit.cpp
++++ qtiplot/src/analysis/Fit.cpp
+@@ -126,10 +126,12 @@ gsl_multifit_fdfsolver * Fit::fitGSL(gsl
+ 			break;
+ 		}
+ 	}
+-
++	gsl_matrix *J = gsl_matrix_alloc(d_n, d_p);
+ 	if (status){
+-	    gsl_multifit_covar (s->J, 0.0, covar);
++	    gsl_multifit_fdfsolver_jac(s, J);
++	    gsl_multifit_covar (J, 0.0, covar);
+ 	    iterations = 0;
++	    gsl_matrix_free (J);
+ 	    return s;
+ 	}
+
+@@ -154,9 +156,9 @@ gsl_multifit_fdfsolver * Fit::fitGSL(gsl
+
+ 		status = gsl_multifit_test_delta (s->dx, s->x, d_tolerance, d_tolerance);
+ 	} while (inRange && status == GSL_CONTINUE && (int)iter < d_max_iterations);
+-
+-	gsl_multifit_covar (s->J, 0.0, covar);
+-
++	gsl_multifit_fdfsolver_jac(s, J);
++	gsl_multifit_covar (J, 0.0, covar);
++	gsl_matrix_free (J);
+ 	iterations = iter;
+ 	return s;
+ }

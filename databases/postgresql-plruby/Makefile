@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	postgresql-plruby
-PORTVERSION=	0.5.4
+PORTVERSION=	0.5.7
 PORTREVISION=	2
 CATEGORIES=	databases ruby
 DIST_SUBDIR=	ruby
@@ -11,8 +11,7 @@ MAINTAINER=	knu@FreeBSD.org
 COMMENT=	PL/Ruby procedural language for the PostgreSQL database system
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	CraigCottingham
-GH_TAGNAME=	f8d9ced
+GH_ACCOUNT=	devrimgunduz
 
 USES=		uidfix pgsql
 WANT_PGSQL=	server
@@ -55,9 +54,5 @@ post-install-DOCS-on:
 	cd ${WRKSRC}/ && ${COPYTREE_SHARE} docs/doc ${STAGEDIR}${RUBY_MODDOCDIR}/ README.markdown && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${RUBY_MODDOCDIR}/
 	${FIND} -ds ${STAGEDIR}${RUBY_MODDOCDIR} -type f -print | ${SED} -E -e \
 		's,^${STAGEDIR}${PREFIX}/?,,' >> ${TMPPLIST}
-
-BROKEN_RUBY22=	yes
-BROKEN_RUBY23=	yes
-BROKEN_RUBY24=	yes
 
 .include <bsd.port.mk>

@@ -1,0 +1,7 @@
+bin/showimage-kde
+share/applications/showimage-kde.desktop
+share/doc/HTML/en/showimage/index.cache.bz2
+share/doc/HTML/en/showimage/index.docbook
+share/icons/hicolor/32x32/apps/showimage.png
+share/locale/de/LC_MESSAGES/showimage.mo
+share/locale/hu/LC_MESSAGES/showimage.mo

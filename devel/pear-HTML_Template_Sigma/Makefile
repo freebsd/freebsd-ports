@@ -5,10 +5,10 @@ PORTNAME=	HTML_Template_Sigma
 PORTVERSION=	1.3.0
 CATEGORIES=	devel www pear
 
-MAINTAINER=	joneum@bsdproject.de
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	PEAR template API
 
 USE_PHP=	ctype
-USES=	pear
+USES=		pear php
 
 .include <bsd.port.mk>

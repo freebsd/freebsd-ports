@@ -1,6 +1,6 @@
 # $FreeBSD$
 
-PORTNAME=  	canvas3d
+PORTNAME=	canvas3d
 DISTVERSION=	${QT5_VERSION}
 CATEGORIES=	x11-toolkits
 PKGNAMEPREFIX=	qt5-

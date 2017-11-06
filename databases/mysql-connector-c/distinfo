@@ -1,2 +1,3 @@
-SHA256 (mysql-connector-c-6.1.6-src.tar.gz) = 2222433012c415871958b61bc4f3683e1ebe77e3389f698b267058c12533ea78
-SIZE (mysql-connector-c-6.1.6-src.tar.gz) = 3475044
+TIMESTAMP = 1501858684
+SHA256 (mysql-connector-c-6.1.11-src.tar.gz) = c8664851487200162b38b6f3c8db69850bd4f0e4c5ff5a6d161dbfb5cb76b6c4
+SIZE (mysql-connector-c-6.1.11-src.tar.gz) = 3489345

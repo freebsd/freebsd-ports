@@ -1,0 +1,20 @@
+--- build.xml.orig	2017-04-03 11:23:57 UTC
++++ build.xml
+@@ -208,7 +208,7 @@ list of possible build targets.
+   <property name="lib.dir" value="${basedir}/lib"/>
+   <property name="user.hyph.dir" value="${basedir}/hyph"/>
+   <property name="unidata.dir" value="${basedir}/UNIDATA"/>
+-  <property name="hyph.stacksize" value="512k"/>
++  <property name="hyph.stacksize" value="1024k"/>
+   <property name="test.dir" value="${basedir}/test"/>
+   <property name="test.java.dir" value="${src.dir}/test/java"/>
+   <property name="test.resources.dir" value="${src.dir}/test/resources"/>
+@@ -348,7 +348,7 @@ list of possible build targets.
+   <target name="compile-java" depends="init, codegen">
+ <!-- create directories -->
+     <mkdir dir="${build.classes.dir}"/>
+-    <javac destdir="${build.classes.dir}" includeAntRuntime="true">
++    <javac destdir="${build.classes.dir}" includeAntRuntime="true" encoding="utf-8">
+       <src path="${build.gensrc.dir}"/>
+       <src path="${core.src.java.dir}"/>
+       <src path="${events.src.java.dir}"/>

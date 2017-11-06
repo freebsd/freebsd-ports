@@ -1,6 +1,6 @@
 %%SITE_PERL%%/Apache/AuthTicket.pm
 %%SITE_PERL%%/Apache/AuthTicket/Base.pm
 %%SITE_PERL%%/Apache2/AuthTicket.pm
+%%PERL5_MAN3%%/Apache2::AuthTicket.3.gz
 %%PERL5_MAN3%%/Apache::AuthTicket.3.gz
 %%PERL5_MAN3%%/Apache::AuthTicket::Base.3.gz
-%%PERL5_MAN3%%/Apache2::AuthTicket.3.gz

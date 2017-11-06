@@ -3,18 +3,21 @@
 
 PORTNAME=	srecord
 PORTVERSION=	1.64
-PORTREVISION=	7
+PORTREVISION=	10
 CATEGORIES=	devel
 MASTER_SITES=	SF
 
 MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	Collection of powerful tools for manipulating EPROM load files
 
+LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:devel/boost-libs
 LIB_DEPENDS=	libgcrypt.so:security/libgcrypt
 
 ALL_TARGET=	all libdir/pkgconfig/srecord.pc
-USES=		ghostscript libtool:build
+USES=		ghostscript groff libtool:build
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

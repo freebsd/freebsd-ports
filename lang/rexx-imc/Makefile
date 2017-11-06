@@ -13,6 +13,8 @@ COMMENT=	Procedural programming language designed by IBM's UK Laboratories
 
 CONFLICTS=	rexx-regina-* oorexx-[0-9]*
 
+BROKEN_armv6=		fails to link: /nxb-bin/usr/bin/ld: hidden symbol __aeabi_uidivmod in libgcc.a is referenced by DSO
+
 HAS_CONFIGURE=		yes
 CONFIGURE_SCRIPT=	Make
 CONFIGURE_ENV=		PREFIX="${PREFIX}"

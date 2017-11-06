@@ -1,4 +1,3 @@
-%%SITE_PERL%%/MIME/Type/Simple.pm
 %%SITE_PERL%%/Media/Type/Simple.pm
-%%PERL5_MAN3%%/MIME::Type::Simple.3.gz
+%%SITE_PERL%%/auto/share/dist/Media-Type-Simple/mime.types
 %%PERL5_MAN3%%/Media::Type::Simple.3.gz

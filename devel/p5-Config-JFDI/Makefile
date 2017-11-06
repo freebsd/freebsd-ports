@@ -12,6 +12,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Catalyst::Plugin::ConfigLoader-style layer over Config::Any
 
+LICENSE=	ART10 GPLv1+
+LICENSE_COMB=	dual
+
 BUILD_DEPENDS=	p5-Carp-Clan-Share>=0:devel/p5-Carp-Clan-Share \
 		p5-Hash-Merge-Simple>=0:devel/p5-Hash-Merge-Simple \
 		p5-Config-Any>=0:devel/p5-Config-Any \
@@ -27,8 +30,5 @@ TEST_DEPENDS=	p5-Test-Most>=0:devel/p5-Test-Most
 
 USES=		perl5
 USE_PERL5=	configure
-
-post-extract:
-	@${REINPLACE_CMD} -i '' '/Test::/d' ${WRKSRC}/Makefile.PL
 
 .include <bsd.port.mk>

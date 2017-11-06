@@ -56,6 +56,7 @@ include/taglib/oggpageheader.h
 include/taglib/opusfile.h
 include/taglib/opusproperties.h
 include/taglib/ownershipframe.h
+include/taglib/podcastframe.h
 include/taglib/popularimeterframe.h
 include/taglib/privateframe.h
 %%RCC%%include/taglib/rccpatch.h
@@ -106,7 +107,7 @@ include/taglib/xmfile.h
 include/taglib/xmproperties.h
 lib/libtag.so
 lib/libtag.so.1
-lib/libtag.so.1.15.1
+lib/libtag.so.1.17.0
 lib/libtag_c.so
 lib/libtag_c.so.0
 lib/libtag_c.so.0.0.0

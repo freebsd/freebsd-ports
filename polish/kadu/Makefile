@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	kadu
-PORTVERSION=	4.2
+PORTVERSION=	4.3
+PORTREVISION=	5
 PORTEPOCH=	1
 CATEGORIES=	polish net-im
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}/:kadu \
@@ -18,7 +19,7 @@ COMMENT=	Internet communicator supporting Gadu-Gadu and Jabber/XMPP
 LICENSE=	GPLv2
 
 BUILD_DEPENDS=	bash:shells/bash \
-		pl-libgadu>=1.12.1:polish/libgadu
+		pl-libgadu>=1.12.2:polish/libgadu
 LIB_DEPENDS=	libmpdclient.so:audio/libmpdclient \
 		libsndfile.so:audio/libsndfile \
 		libinjeqt.so:devel/injeqt \
@@ -35,11 +36,11 @@ LIB_DEPENDS=	libmpdclient.so:audio/libmpdclient \
 GG6_EMOTS_DISTFILE=	kompatybilne_z_GG6.tar.gz
 GG7_EMOTS_DISTFILE=	dodatkowe_emoty_GG7.tar.gz
 
-USES=		cmake compiler:c++11-lib execinfo gettext-runtime \
+USES=		cmake compiler:c++11-lib gettext-runtime \
 		libarchive pkgconfig readline tar:bzip2
 USE_XORG=	x11 xext xfixes xscrnsaver
 USE_GNOME=	glib20
-USE_QT5=	concurrent core dbus declarative gui multimedia network \
+USE_QT5=	concurrent core dbus gui multimedia network \
 		qml quick script scripttools sql webkit widgets x11extras \
 		xml xmlpatterns buildtools_build linguisttools_build \
 		qmake_build imageformats_run sql-sqlite3_run

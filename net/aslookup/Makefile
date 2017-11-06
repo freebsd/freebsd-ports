@@ -19,9 +19,9 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/aslookup ${STAGEDIR}${PREFIX}/bin
-	@if [ ! -d ${STAGEDIR}${PREFIX}/share/doc/aslookup ]; then 	\
+	@if [ ! -d ${STAGEDIR}${PREFIX}/share/doc/aslookup ]; then \
 		${MKDIR} ${STAGEDIR}${PREFIX}/share/doc/aslookup; fi
-	${INSTALL_DATA} ${WRKSRC}/readme-eng.txt ${WRKSRC}/readme-jp.txt   \
+	${INSTALL_DATA} ${WRKSRC}/readme-eng.txt ${WRKSRC}/readme-jp.txt \
 		${STAGEDIR}${PREFIX}/share/doc/aslookup
 
 .include <bsd.port.mk>

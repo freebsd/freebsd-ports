@@ -4,8 +4,7 @@
 PORTNAME=	libmicro
 PORTVERSION=	0.4.1
 CATEGORIES=	benchmarks
-MASTER_SITES=	http://hub.opensolaris.org/bin/download/Project+libmicro/Source+Archives/ \
-		LOCAL/bdrewery/${PORTNAME}/
+MASTER_SITES=	LOCAL/bdrewery/${PORTNAME}/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Set of utilities to benchmark productivity of system calls
@@ -13,12 +12,13 @@ COMMENT=	Set of utilities to benchmark productivity of system calls
 LICENSE=	CDDL
 
 BROKEN_aarch64=		Fails to build: bin-aarch64: no such file or directory
+BROKEN_armv6=		Fails to build: bin-armv6: no such file or directory
 BROKEN_mips64=		Fails to build: bin-mips64: no such file or directory
-BROKEN_powerpc64=	Does not build on powerpc64
+BROKEN_powerpc64=	Fails to build: bin-powerpc64: no such file or directory
 
 USES=		gmake
 WRKSRC=		${WRKDIR}/libMicro-${PORTVERSION}
-STRIP=		 # Do not strip binaries
+STRIP=		# Do not strip binaries
 PLIST_SUB=	ARCH="${ARCH}"
 PKGLIBDIR=	${PREFIX}/lib/${PORTNAME}
 

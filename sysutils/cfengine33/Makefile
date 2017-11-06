@@ -3,7 +3,7 @@
 
 PORTNAME=	cfengine
 PORTVERSION=	3.3.8
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	sysutils
 MASTER_SITES=	https://s3.amazonaws.com/cfengine.package-repos/tarballs/
 PKGNAMESUFFIX=	33
@@ -16,7 +16,8 @@ CPE_VENDOR=	gnu
 
 FETCH_BEFORE_ARGS=	-o ${DISTDIR}/${DISTFILES}
 
-CONFLICTS=	cfengine-2* cfengine-3.[124-9]* cfengine-devel-*
+CONFLICTS=	cfengine-2* cfengine-3.[124-9]* cfengine-devel-* \
+		cfengine3[0124-9]-* cfengine31[0-9]-*
 
 USE_RC_SUBR=	cf-execd cf-serverd
 

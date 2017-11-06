@@ -13,10 +13,9 @@ COMMENT=	Powerful IRC bouncer
 
 LICENSE=	GPLv1+ # though COPYING is GPLv2
 
-BROKEN_powerpc64=	Does not build
+BROKEN_powerpc64=	Does not build: exec(clang) failed (No such file or directory)
 
-USE_OPENSSL=	yes
-USES=		dos2unix
+USES=		dos2unix ssl
 DOS2UNIX_GLOB=	*.c *.h
 WRKSRC=		${WRKDIR}/psybnc
 PSYBASE?=	${PREFIX}/psybnc

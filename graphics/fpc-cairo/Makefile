@@ -4,7 +4,6 @@
 CATEGORIES=	graphics lang
 PKGNAMESUFFIX=	-cairo
 
-MAINTAINER=	freebsd-fpc@FreeBSD.org
 COMMENT=	Free Pascal interface to cairo library
 
 USE_FPC=	fcl-base fcl-image fcl-res pasjpeg rtl-objpas x11

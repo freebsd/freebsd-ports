@@ -11,7 +11,7 @@ COMMENT=	Subset of a well-known texture compression scheme
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	libGL>=9.1.7:graphics/libGL
+BUILD_DEPENDS=	mesa-libs>=0:graphics/mesa-libs
 TEST_DEPENDS=	convert:graphics/ImageMagick \
 		nvcompress:graphics/nvidia-texture-tools \
 		wget:ftp/wget

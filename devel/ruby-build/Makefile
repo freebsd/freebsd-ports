@@ -1,11 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	ruby-build
-PORTVERSION=	20161225
+PORTVERSION=	20170914
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel ruby
 
-MAINTAINER=	meta+ports@vmeta.jp
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Compile and install different ruby versions
 
 LICENSE=	MIT
@@ -38,6 +38,6 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/rbenv-install ${STAGEDIR}${PREFIX}/libexec
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/rbenv-uninstall ${STAGEDIR}${PREFIX}/libexec
 	@${MKDIR} ${STAGEDIR}${DATADIR}
-	( cd ${WRKSRC}/share/ruby-build && ${COPYTREE_BIN} \* ${STAGEDIR}${DATADIR} )
+	( cd ${WRKSRC}/share/ruby-build && ${COPYTREE_BIN} . ${STAGEDIR}${DATADIR} )
 
 .include <bsd.port.mk>

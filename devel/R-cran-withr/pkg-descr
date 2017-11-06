@@ -1,0 +1,6 @@
+A set of functions to run code 'with' safely and temporarily modified
+global state. Many of these functions were originally a part of the
+'devtools' package, this provides a simple package with limited
+dependencies to provide access to these functions.
+
+WWW: https://cran.r-project.org/web/packages/withr/

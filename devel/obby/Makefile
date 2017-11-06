@@ -3,7 +3,7 @@
 
 PORTNAME=	obby
 PORTVERSION=	0.4.8
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	http://releases.0x539.de/obby/
 
@@ -15,7 +15,10 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libsigc-2.0.so:devel/libsigc++20 \
 		libnet6.so:net/net6
 
-USES=		pathfix pkgconfig libtool
+BROKEN_armv6=		fails to compile: no member named 'name' in 'serialise::type_name<long long>'
+
+USES=		pathfix pkgconfig libtool compiler:c++11-lang
+USE_CXXSTD=	c++11
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip

@@ -35,6 +35,7 @@ OPTIONS_DEFINE=	LANG_AR \
 		LANG_IS \
 		LANG_IT \
 		LANG_JA \
+		LANG_KAB \
 		LANG_KO \
 		LANG_LT \
 		LANG_NB \
@@ -64,3 +65,4 @@ OPTIONS_DEFAULT=LANG_CN LANG_ES LANG_PBR LANG_RU LANG_JA LANG_DE LANG_FR \
 
 LANG_DSB_DESC?=	Lower Sorbian language support
 LANG_HSB_DESC?=	Upper Sorbian language support
+LANG_KAB_DESC?=	Taqbaylit language support

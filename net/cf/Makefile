@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	cf
-PORTVERSION=	6.22.2
+PORTVERSION=	6.24.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net
 
@@ -9,6 +9,7 @@ MAINTAINER=	swills@FreeBSD.org
 COMMENT=	CLI for Cloud Foundry written in Go
 
 LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/go-bindata:devel/go-bindata
 
@@ -21,22 +22,19 @@ GO_PKGNAME=	code.cloudfoundry.org/cli
 
 PLIST_FILES=	bin/cf
 
-PORTDOCS=	CHANGELOG.md LICENSE NOTICE README.md
-
-STRIP=		# stripping can break go binaries
+PORTDOCS=	CHANGELOG.md NOTICE README.md
 
 OPTIONS_DEFINE=	DOCS
 
-post-patch:
-	@${REINPLACE_CMD} \
-		-e "s/BUILT_FROM_SOURCE/${PORTVERSION}/g" \
-		${WRKSRC}/cf/app_constants.go
-	@: ${LN} -s ../.. ${WRKSRC}/vendor/code.cloudfoundry.org/cli
+do-build:
+	(cd ${WRKDIR}; \
+	${SETENV} ${MAKE_ENV} ${GO_ENV} ${GO_CMD} \
+		install -v -ldflags="-X code.cloudfoundry.org/cli/version.binaryVersion=${PORTVERSION}" ${GO_TARGET})
 
 do-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for x in ${PORTDOCS}
-	${INSTALL_MAN} ${WRKSRC}/${x} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${x} ${STAGEDIR}${DOCSDIR}
 .endfor
 
 post-install:

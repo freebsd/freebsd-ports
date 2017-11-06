@@ -25,6 +25,10 @@ CONFIGURE_ARGS=	--prefix ${PREFIX} \
 		--man-prefix ${MANPREFIX}/man \
 		--xdg-config-dir ${PREFIX}/etc/xdg
 
+PLIST_FILES=	bin/wmfs \
+		etc/xdg/wmfs/wmfsrc \
+		man/man1/wmfs.1.gz \
+		share/xsessions/wmfs.desktop
 SUB_FILES=	pkg-message
 
 OPTIONS_DEFINE=		XRANDR XINERAMA IMLIB
@@ -41,6 +45,6 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' ${WRKSRC}/configure
 
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>

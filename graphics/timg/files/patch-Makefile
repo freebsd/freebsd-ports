@@ -1,0 +1,20 @@
+--- Makefile.orig	2016-06-27 04:44:39 UTC
++++ Makefile
+@@ -1,6 +1,6 @@
+ CXXFLAGS=-Wall -O3 -fPIC
+-MAGICK_CXXFLAGS=`GraphicsMagick++-config --cppflags --cxxflags`
+-MAGICK_LDFLAGS=`GraphicsMagick++-config --ldflags --libs`
++MAGICK_CXXFLAGS=`Magick++-config --cppflags --cxxflags`
++MAGICK_LDFLAGS=`Magick++-config --ldflags --libs`
+ PREFIX?=/usr/local
+ 
+ timg : timg.o terminal-canvas.o
+@@ -10,7 +10,7 @@ timg.o: timg.cc
+ 	$(CXX) $(MAGICK_CXXFLAGS) $(CXXFLAGS) -c -o $@ $^
+ 
+ install: timg
+-	install $^ $(PREFIX)/bin
++	install $^ $(DESTDIR)$(PREFIX)/bin
+ 
+ clean:
+ 	rm -f timg terminal-canvas.o timg.o

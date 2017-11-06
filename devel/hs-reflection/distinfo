@@ -1,2 +1,3 @@
-SHA256 (cabal/reflection-2.tar.gz) = ee199e899e3810c3c8fd27dbda5cc3d1730f69e4a75f7494482863cf4d9499c2
-SIZE (cabal/reflection-2.tar.gz) = 13194
+TIMESTAMP = 1499627855
+SHA256 (cabal/reflection-2.1.2.tar.gz) = a909882c04b24016bedb85587c09f23cf06bad71a2b1f7e781e89abaa6023c39
+SIZE (cabal/reflection-2.1.2.tar.gz) = 14334

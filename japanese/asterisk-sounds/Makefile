@@ -3,6 +3,7 @@
 
 PORTNAME=	asterisk
 PORTVERSION=	1.6
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	japanese net
 MASTER_SITES=	http://ftp.voip-info.jp/asterisk/sounds/${PORTVERSION:S|.|_|}/ \
@@ -13,7 +14,7 @@ DISTNAME=	asterisk-sound-jp_${PORTVERSION:S|.||}_pre
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Japanese sound files for Asterisk
 
-RUN_DEPENDS=	asterisk:net/asterisk11
+RUN_DEPENDS=	asterisk:net/asterisk13
 
 NO_BUILD=	yes
 ASTERISKDIR=	${PREFIX}/share/asterisk/sounds

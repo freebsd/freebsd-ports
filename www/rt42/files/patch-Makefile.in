@@ -1,4 +1,4 @@
---- Makefile.in.orig	2016-06-08 21:49:02 UTC
+--- Makefile.in.orig	2017-07-12 14:22:49 UTC
 +++ Makefile.in
 @@ -59,7 +59,7 @@ RT_LAYOUT		=	@rt_layout_name@
  

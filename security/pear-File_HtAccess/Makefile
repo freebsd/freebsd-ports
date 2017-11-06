@@ -5,9 +5,9 @@ PORTNAME=	File_HtAccess
 PORTVERSION=	1.2.1
 CATEGORIES=	security www pear
 
-MAINTAINER=	joneum@bsdproject.de
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	PEAR class to manipulate .htaccess files
 
-USES=	pear
+USES=		pear
 
 .include <bsd.port.mk>

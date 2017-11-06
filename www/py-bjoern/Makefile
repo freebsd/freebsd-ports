@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	bjoern
-PORTVERSION=	1.4.3
+PORTVERSION=	2.0.1
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	olivierd@FreeBSD.org
+MAINTAINER=	python@FreeBSD.org
 COMMENT=	Fast Python WSGI server
 
 LICENSE=	BSD2CLAUSE
@@ -15,10 +15,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libev.so:devel/libev
 
-USES=	localbase python:2
-USE_PYTHON=	distutils autoplist
-
 LDFLAGS+=	-lc
+USES=		localbase python:2
+USE_PYTHON=	autoplist distutils
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/*.so

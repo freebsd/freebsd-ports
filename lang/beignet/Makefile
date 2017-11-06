@@ -2,13 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	beignet
-PORTVERSION=	1.2.0
+DISTVERSION=	1.3.2
+DISTVERSIONSUFFIX=	-source
 CATEGORIES=	lang
 MASTER_SITES=	https://01.org/sites/default/files/
-DISTVERSIONSUFFIX=	-source
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	OpenCL library for Intel GPUs
+
+LICENSE=	LGPL21+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	clang${LLVMVER}:devel/llvm${LLVMVER} \
 		opencl>=0:devel/opencl
@@ -17,35 +20,47 @@ LIB_DEPENDS=	libOpenCL.so:devel/ocl-icd \
 RUN_DEPENDS=	opencl>=0:devel/opencl \
 		clang${LLVMVER}:devel/llvm${LLVMVER}
 
-WRKSRC=		${WRKDIR}/Beignet-${PORTVERSION}-Source
+WRKSRC=		${WRKDIR}/Beignet-${DISTVERSION}-Source
 
-USES=		cmake gmake ncurses pkgconfig shebangfix
+USES=		cmake ncurses pkgconfig shebangfix
 USE_XORG=	sm ice x11 xext xfixes
 USE_GL=		gl egl
+USE_LDCONFIG=	${LOCALBASE}/lib/${PORTNAME}
 SHEBANG_FILES=	src/git_sha1.sh backend/kernels/compile.sh
-LLVMVER=	37
+ALL_TARGET=	all
+LLVMVER=	${MESA_LLVM_VER:U40}
 
 CMAKE_ARGS+=	-DLLVM_CONFIG_EXECUTABLE=${LOCALBASE}/bin/llvm-config${LLVMVER}
 
 ONLY_FOR_ARCHS=	i386 amd64
-ONLY_FOR_ARCHS_REASON= Beignet needs a graphics driver supported by the Intel KMS driver
+ONLY_FOR_ARCHS_REASON=	Beignet needs a graphics driver supported by the Intel KMS driver
 
-# running tests from makefile doesn't work quite yet, so comment them out for now.
-#OPTIONS_DEFINE=	TESTS
-#TESTS_DESC=	Build and run the test suite
+OPTIONS_DEFINE=	FP64 OCL20 TEST
+OPTIONS_DEFAULT=	OCL20
+OPTIONS_EXCLUDE_i386=	OCL20
+OPTIONS_SUB=	yes
+
+FP64_DESC=	Double precision (experimental)
+FP64_CMAKE_BOOL=	EXPERIMENTAL_DOUBLE
+
+OCL20_DESC=	OpenCL 2.0 support
+OCL20_CMAKE_BOOL=	ENABLE_OPENCL_20
+
+TEST_ALL_TARGET=	flat_address_space utest_run
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|llvm-dis|llvm-dis${LLVMVER}|g; \
 		s|clang |clang${LLVMVER} |g' \
 		${WRKSRC}/backend/kernels/compile.sh
-#post-patch-TESTS-off:
-	@${REINPLACE_CMD} -e 's|ADD_SUBDIRECTORY(utests)||g' \
-		${WRKSRC}/CMakeLists.txt
+
+# XXX bug 213732: compiler_device_enqueue() Interrupt signal (SIGSEGV) received.
+do-test-TEST-on:
+	-@(cd ${TEST_WRKSRC}/utests; . ./setenv.sh; \
+		./flat_address_space; ./utest_run; )
+
+pre-install-TEST-on: do-test-TEST-on
 
 post-install:
 	@${RM} -r ${STAGEDIR}${PREFIX}/include/CL
-
-#post-install-TESTS-on:
-#	@cd ${WRKSRC}/utests && sh ./setenv.sh && ./utest_run
 
 .include <bsd.port.mk>

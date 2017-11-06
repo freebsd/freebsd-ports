@@ -1,0 +1,9 @@
+dspdfviewer a simple viewer for latex-beamer presentations that are built with
+the show notes on second screen option of latex-beamer. It will take your PDF
+file, split it in a left and right half and render the two halves individually
+to the screens.
+
+In addition, your laptop screen will contain some counters and a wall-clock,
+which may help you time your presentation right.
+
+WWW: https://github.com/dannyedel/dspdfviewer

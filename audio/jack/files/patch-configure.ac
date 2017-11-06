@@ -1,0 +1,10 @@
+--- configure.ac.orig	2017-01-10 10:20:51 UTC
++++ configure.ac
+@@ -172,6 +172,7 @@ case "${host_os}" in
+     # barrier code, this may be fixed in 5.3, stay tuned.
+     USE_BARRIER="no"
+     USE_MD5SUM=0
++    JACK_DO_NOT_MLOCK=0
+     ;;
+   openbsd*)
+     # pthread_barrier* not implemented

@@ -3,6 +3,7 @@
 
 PORTNAME=	gringo
 PORTVERSION=	4.5.2
+PORTREVISION=	2
 DISTVERSIONSUFFIX=	-source
 CATEGORIES=	math devel
 MASTER_SITES=	SOURCEFORGE/potassco/${PORTNAME}/${PORTVERSION}
@@ -13,6 +14,8 @@ COMMENT=	Grounding algorithm based on semi-naive database evaluation
 LICENSE=	GPLv3
 
 BUILD_DEPENDS=	re2c:devel/re2c
+
+BROKEN_powerpc64=	fails to compile: term.cc: error: pow is not a member of std
 
 USES=		bison compiler:c++11-lib scons
 

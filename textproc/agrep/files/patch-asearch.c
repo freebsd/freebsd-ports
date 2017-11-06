@@ -1,6 +1,6 @@
---- asearch.c.orig	1992-01-24 02:49:08.000000000 +0100
-+++ asearch.c	2011-11-27 12:05:20.000000000 +0100
-@@ -6,7 +6,9 @@
+--- asearch.c.orig	1992-01-24 01:49:08 UTC
++++ asearch.c
+@@ -6,7 +6,9 @@ extern int DELIMITER, FILENAMEONLY, INVE
  extern CHAR CurrentFileName[];
  extern int I, num_of_matched, TRUNCATE;
  
@@ -11,7 +11,7 @@
  CHAR old_D_pat[]; int text; register unsigned D;
  {
    register unsigned i, c, r1, r2, CMask, r_NO_ERR, r_Init1; 
-@@ -178,7 +180,7 @@
+@@ -178,7 +180,7 @@ Nextchar1: i=i+1;
    return;
  }
  

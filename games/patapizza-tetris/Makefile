@@ -25,12 +25,13 @@ USES=		gmake
 USE_SDL=	sdl image gfx ttf
 
 PORTDOCS=	README.md
-OPTIONS_DEFINE=	DOCS
 
 SUB_FILES=	${PORTNAME}
 
 DESKTOP_ENTRIES="Patapizza Tetris" "" "${PORTNAME}" \
 		"${PORTNAME}" "Game;LogicGame;" ""
+
+OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|CC =|CC ?=|; \
@@ -49,6 +50,7 @@ do-install:
 	${INSTALL_DATA} ${_DISTDIR}/${PORTNAME}.png \
 		${STAGEDIR}${PREFIX}/share/pixmaps/
 
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 

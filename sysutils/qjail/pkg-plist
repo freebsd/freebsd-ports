@@ -1,10 +1,11 @@
 bin/qjail
-bin/qjail.vnet.be
 @sample etc/qjail.portsnap.conf.sample
 etc/rc.d/qjail.bootime
 man/man8/qjail.8.gz
 man/man8/qjail-intro.8.gz
 man/man8/qjail-howto.8.gz
+man/man8/qjail-vnet-howto.8.gz
+man/man8/qjail-ipv6-testing.8.gz
 %%EXAMPLESDIR%%/vnet/ipfw.host.rules
 %%EXAMPLESDIR%%/vnet/ipfw.vnet.rules
 %%EXAMPLESDIR%%/vnet/ipf.host.rules
@@ -14,6 +15,8 @@ man/man8/qjail-howto.8.gz
 %%EXAMPLESDIR%%/vnet/pf.vnet.rules.script
 %%EXAMPLESDIR%%/vnet/devfsrules_vjail_pf70
 %%EXAMPLESDIR%%/vnet/devfsrules_vjail_ipf60
+%%EXAMPLESDIR%%/vnet/devfsrules_qjail_bpf50
+%%EXAMPLESDIR%%/vnet/dot.cshrc
 %%EXAMPLESDIR%%/default/etc/make.conf
 %%EXAMPLESDIR%%/default/etc/motd
 %%EXAMPLESDIR%%/default/etc/periodic.conf

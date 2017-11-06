@@ -16,6 +16,8 @@ LIB_DEPENDS=	libltdl.so:devel/libltdl \
 		libgnutls.so:security/gnutls \
 		libgcrypt.so:security/libgcrypt
 
+BROKEN_armv6=		fails to configure: Easybindings require a C++ compiler, but none were found
+
 OPTIONS_DEFINE=	DOCS PERL PYTHON
 OPTIONS_SUB=	yes
 

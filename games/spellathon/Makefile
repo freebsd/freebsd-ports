@@ -3,7 +3,7 @@
 
 PORTNAME=	spellathon
 PORTVERSION=	6.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/Spellathon%20${PORTVERSION}
 
@@ -12,8 +12,8 @@ COMMENT=	Word game to test your English vocabulary skills
 
 LICENSE=	BSD2CLAUSE
 
-LIB_DEPENDS=	libpthread-stubs.so:devel/libpthread-stubs \
-		libpcre.so:devel/pcre \
+BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/pthread-stubs.pc:devel/libpthread-stubs
+LIB_DEPENDS=	libpcre.so:devel/pcre \
 		libpng.so:graphics/png \
 		libfreetype.so:print/freetype2 \
 		libexpat.so:textproc/expat2 \

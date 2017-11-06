@@ -2,22 +2,26 @@
 # $FreeBSD$
 
 PORTNAME=	ctris
-PORTVERSION=	0.42
+PORTVERSION=	0.42.1
+DISTVERSIONPREFIX=	v
 CATEGORIES=	games
-MASTER_SITES=	http://www.hackl.dhs.org/data/download/files/ \
-		LOCAL/ehaupt
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Colorized, small, and flexible Tetris(TM)-clone for the console
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		ncurses tar:bzip2
-MAKE_ARGS=	LIBS="${LDFLAGS} -lncurses -lm"
+USES=		ncurses
+MAKE_ARGS=	LIBS="${LDFLAGS} -lncurses"
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	dominikhackl
 
 PLIST_FILES=	bin/ctris man/man6/ctris.6.gz
 
 post-patch:
+	@${REINPLACE_CMD} -e "s|v0\.42|v${PORTVERSION}|" ${WRKSRC}/ctris.h
 	@${REINPLACE_CMD} -e "s|gcc|${CC}|" -e "s|CFLAGS=.*|CFLAGS+=-Wall|" \
 		 ${WRKSRC}/Makefile
 

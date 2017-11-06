@@ -1,10 +1,11 @@
 bin/gpg-error
 bin/gpg-error-config
 include/gpg-error.h
+include/gpgrt.h
 lib/libgpg-error.a
 lib/libgpg-error.so
 lib/libgpg-error.so.0
-lib/libgpg-error.so.0.21.0
+lib/libgpg-error.so.0.22.0
 man/man1/gpg-error-config.1.gz
 share/aclocal/gpg-error.m4
 share/common-lisp/source/gpg-error/gpg-error.asd

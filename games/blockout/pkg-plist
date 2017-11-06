@@ -1,4 +1,5 @@
 bin/blockout
+share/pixmaps/block_icon.ico
 %%DATADIR%%/images/background.png
 %%DATADIR%%/images/background2.png
 %%DATADIR%%/images/background3.png

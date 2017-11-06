@@ -1,4 +1,4 @@
---- wordole.c
+--- wordole.c.orig	2005-08-26 19:49:57 UTC
 +++ wordole.c
 @@ -259,6 +259,11 @@ bGetPPS(FILE *pFile,
  		}

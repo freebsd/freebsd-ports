@@ -1,0 +1,5 @@
+This package provides a data type for colours and transparency.
+Colours can be blended and composed. Various colour spaces are
+supported. A module of colour names (Data.Colour.Names) is provided.
+
+WWW: http://hackage.haskell.org/package/colour

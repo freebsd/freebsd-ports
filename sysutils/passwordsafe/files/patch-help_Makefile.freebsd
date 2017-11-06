@@ -1,0 +1,36 @@
+From fad7654fc8f709712211700d3ad02272dd2e6963 Mon Sep 17 00:00:00 2001
+From: Bernard Spil <brnrd@FreeBSD.org>
+Date: Sun, 5 Feb 2017 15:35:35 +0100
+Subject: [PATCH] Fix helpfile building on FreeBSD
+
+Signed-off-by: Bernard Spil <brnrd@FreeBSD.org>
+---
+ help/Makefile         |  2 ++
+ help/Makefile.freebsd | 21 +++++++++++++++++++++
+ 2 files changed, 23 insertions(+)
+ create mode 100644 help/Makefile.freebsd
+
+--- help/Makefile.freebsd.orig	2017-02-05 14:51:25 UTC
++++ help/Makefile.freebsd
+@@ -0,0 +1,21 @@
++BASEDIRNAME=pwsafe
++LANGS=RU DE ES FR ZH PL
++
++ZIP = /usr/local/bin/zip
++
++all: default $(LANGS)
++
++default:
++	@cd default ; $(ZIP) -Xqr ../helpEN ./*
++
++$(LANGS):
++	@cd $(BASEDIRNAME)$@ ; $(ZIP) -Xqr ../help$@ ./*
++
++clean:
++	$(RM) *.zip
++
++.PHONY: all clean default $(LANGS)
++
++# Local variables:
++# mode: makefile
++# End:

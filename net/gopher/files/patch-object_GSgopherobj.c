@@ -1,6 +1,6 @@
---- object/GSgopherobj.c.orig	Sun Aug 22 15:51:21 2004
-+++ object/GSgopherobj.c	Sun Aug 22 15:51:30 2004
-@@ -2003,7 +2003,7 @@
+--- object/GSgopherobj.c.orig	2003-08-18 16:58:58 UTC
++++ object/GSgopherobj.c
+@@ -2003,7 +2003,7 @@ GSfromURL(GopherObj *gs, char *urltxt, c
       case news:
       case unset:
       case unknown:

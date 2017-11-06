@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mongo-c-driver
-PORTVERSION=	1.3.5
+PORTVERSION=	1.8.1
 CATEGORIES=	devel
 
 MAINTAINER=	ports@bsdserwis.com
@@ -17,11 +17,9 @@ LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2 \
 USE_GITHUB=	yes
 GH_ACCOUNT=	mongodb
 
-USES=		cmake pkgconfig
+USES=		cmake:outsource pkgconfig
+#USES=		cmake:noninja pkgconfig
 USE_LDCONFIG=	yes
 LDFLAGS+=	-pthread
-
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libmongoc-1.0.so.${PORTVERSION}
 
 .include <bsd.port.mk>

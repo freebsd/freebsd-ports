@@ -1,6 +1,6 @@
---- configure.orig	2016-03-26 17:20:08 UTC
-+++ configure
-@@ -9284,7 +9284,7 @@ $as_echo_n "checking whether the $compil
+--- configure.orig	2017-03-26 09:14:47.000000000 +0000
++++ configure	2017-03-26 09:14:47.000000000 +0000
+@@ -9622,7 +9622,7 @@
    hardcode_minus_L=no
    hardcode_shlibpath_var=unsupported
    inherit_rpath=no
@@ -9,7 +9,7 @@
    module_cmds=
    module_expsym_cmds=
    old_archive_from_new_cmds=
-@@ -12248,7 +12248,7 @@ hardcode_automatic_CXX=no
+@@ -12871,7 +12871,7 @@
  inherit_rpath_CXX=no
  module_cmds_CXX=
  module_expsym_cmds_CXX=
@@ -18,13 +18,13 @@
  old_archive_cmds_CXX=$old_archive_cmds
  reload_flag_CXX=$reload_flag
  reload_cmds_CXX=$reload_cmds
-@@ -15767,6 +15767,9 @@ case $host_os in
- 	*mingw32* )
- 		WERROR=""
- 		;;
-+	freebsd* )
-+		WERROR=""
-+		;;
- 	*)
- 		;;
- esac
+@@ -16512,6 +16512,9 @@
+ 			WERROR=""
+ 			;;
+ 		*mingw32* )
++			WERROR=""
++			;;
++		freebsd* )
+ 			WERROR=""
+ 			;;
+ 		*)

@@ -1,0 +1,5 @@
+Filtering and folding over arbitrary MonadPlus instances.  This package
+generalizes many common stream operations such as filter, catMaybes etc.
+
+WWW: http://hackage.haskell.org/package/monadplus
+

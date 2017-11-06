@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	mailutils
-PORTVERSION=	3.1.1
-PORTREVISION=	3
+PORTVERSION=	3.3
 CATEGORIES=	mail
-MASTER_SITES=	GNU
+MASTER_SITES=	GNU_ALPHA GNU
 
 MAINTAINER=	zeus@gnu.org.ua
 COMMENT=	Utilities, daemons, and filters for processing e-mail
@@ -14,17 +13,19 @@ LICENSE=	GPLv3+
 
 LIB_DEPENDS=	libltdl.so:devel/libltdl
 
-USES=		gmake iconv libtool localbase makeinfo readline tar:xz
+USES=		gmake libtool localbase readline tar:xz
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	comsatd imap4d pop3d
 INSTALL_TARGET=	install-strip
 
+PLIST_SUB+=	LIBVERSION=5.0.5
+
 INFO=		${PORTNAME}
 PORTDOCS=	AUTHORS ChangeLog NEWS README* THANKS TODO
 
 OPTIONS_DEFINE=		DOCS EMACS GNUTLS GSSAPI GUILE MH NNTP NLS PAM PYTHON
-OPTIONS_DEFAULT=	BDB GNUTLS PAM
+OPTIONS_DEFAULT=	GDBM GNUTLS PAM
 OPTIONS_MULTI=		DB
 OPTIONS_MULTI_DB=	BDB GDBM KYOTOCABINET LDAP MYSQL PGSQL TOKYOCABINET
 OPTIONS_SUB=		yes
@@ -45,7 +46,7 @@ GNUTLS_CONFIGURE_WITH=	gnutls
 GSSAPI_RUN_DEPENDS=	cyrus-sasl-gssapi>0:security/cyrus-sasl2-gssapi
 GSSAPI_CONFIGURE_WITH=	gssapi
 
-GUILE_LIB_DEPENDS=	libguile.so:lang/guile
+GUILE_LIB_DEPENDS=	libguile.so:lang/guile libgmp.so:math/gmp
 GUILE_CONFIGURE_WITH=	guile
 
 MH_CONFIGURE_ENABLE=	mh

@@ -24,14 +24,15 @@ load_rc_config $name
 
 : ${bareos_fd_enable="NO"}
 : ${bareos_fd_flags="-u root -g wheel -v"}
-: ${bareos_fd_config="%%PREFIX%%/etc/bareos/bareos-fd.d"}
+: ${bareos_fd_config="%%PREFIX%%/etc/bareos/bareos-fd.conf"}
 : ${bareos_fd_pidfile="/var/run/bareos/bareos-fd.9102.pid"}
 
 command=%%PREFIX%%/sbin/bareos-fd
 command_args="-c ${bareos_fd_config}"
 pidfile="${bareos_fd_pidfile}"
+start_precmd="bareos_start_precmd"
 
-start_precmd() {
+bareos_start_precmd() {
 	[ -d "${pidfile%/*}" ] || {
 		getent passwd bareos > /dev/null 2&>1
 		if [ $? -eq 0] ; then

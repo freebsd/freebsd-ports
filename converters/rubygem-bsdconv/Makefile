@@ -15,7 +15,6 @@ LICENSE=	ISCL
 LIB_DEPENDS=	libbsdconv.so:converters/bsdconv
 
 CONFIGURE_ARGS=	--with-bsdconv-dir=${LOCALBASE}
-GEM_NAME=	${DISTNAME}
 USE_RUBY=	yes
 USES=		gem
 

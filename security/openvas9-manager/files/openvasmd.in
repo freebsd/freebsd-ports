@@ -1,0 +1,28 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: openvasmd
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+#
+# Add the following to /etc/rc.conf[.local] to enable this service
+#
+# openvasmd_enable  (bool):   Set to NO by default.
+#                Set it to YES to enable bareos_dir.
+# openvasmd_flags (params):   Set params used to start openvasmd.
+#
+
+. /etc/rc.subr
+
+name=openvasmd
+rcvar=${name}_enable
+command="%%PREFIX%%/sbin/openvasmd"
+pidfile=/var/run/openvasmd.pid
+extra_commands="reload"
+
+: ${openvasmd_enable="NO"}
+: ${openvasmd_flags="--unix-socket=/var/run/${name}.sock --listen=127.0.0.1"}
+
+load_rc_config $name
+run_rc_command "$1"

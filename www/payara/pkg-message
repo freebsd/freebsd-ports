@@ -1,0 +1,4 @@
+To run the payara java application server from startup,
+add payara_enable="YES" in your /etc/rc.conf.
+
+Extra options can be found in startup script.

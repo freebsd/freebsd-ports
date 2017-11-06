@@ -26,4 +26,7 @@ include/ode/threading.h
 include/ode/threading_impl.h
 include/ode/timer.h
 lib/libode.a
+lib/libode.so
+lib/libode.so.3
+lib/libode.so.3.1.0
 libdata/pkgconfig/ode.pc

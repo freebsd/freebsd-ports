@@ -4,7 +4,7 @@
 
 PORTNAME=	conduit
 PORTVERSION=	0.3.17
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	deskutils
 MASTER_SITES=	GNOME
 
@@ -23,13 +23,16 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/goocanvasmodule.so:graphics/py-goocanvas \
 		xdg-open:devel/xdg-utils
 
 GNU_CONFIGURE=	yes
-USES=		gettext gmake pathfix pkgconfig python:2
+USES=		gettext gmake pathfix pkgconfig python:2 \
+		shebangfix
 INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 USE_GNOME=	intltool pygnome2 gnomeprefix gnomedocutils
 CONFIGURE_ARGS=	--disable-nautilus-extension
+SHEBANG_FILES=	conduit/conduit.real \
+		tools/conduit-client
 
 OPTIONS_DEFINE=	EOG
 OPTIONS_DEFAULT=EOG

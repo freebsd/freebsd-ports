@@ -1,0 +1,33 @@
+--- Makefile.am.orig	2010-10-22 23:38:09 UTC
++++ Makefile.am
+@@ -1,21 +1,9 @@
+-SUBDIRS = \
+-	usbhid-dump
+-
+ AM_LDFLAGS = \
+ 	-Wl,--as-needed
+ 
+-data_DATA = \
+-	usb.ids
+-if HAVE_ZLIB
+-data_DATA += usb.ids.gz
+-endif
+-
+ sbin_PROGRAMS = \
+ 	lsusb
+ 
+-sbin_SCRIPTS = \
+-	update-usbids.sh
+-
+ bin_SCRIPTS = \
+ 	usb-devices
+ 
+@@ -59,7 +47,7 @@ lsusb.8: $(srcdir)/lsusb.8.in
+ usb-devices.1: $(srcdir)/usb-devices.1.in
+ 	sed 's|VERSION|$(VERSION)|g' $< >$@
+ 
+-pkgconfigdir = $(datarootdir)/pkgconfig
++pkgconfigdir = $(prefix)/libdata/pkgconfig
+ pkgconfig_DATA = usbutils.pc
+ 
+ usbutils.pc: $(srcdir)/usbutils.pc.in

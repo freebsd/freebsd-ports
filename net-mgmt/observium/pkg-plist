@@ -11549,3 +11549,4 @@
 @dir(www,www,) %%WWWDIR%%/logs
 @dir(www,www,) %%WWWDIR%%/rrd
 @dir %%WWWDIR%%/scripts/agent-local/munin-scripts
+@sample %%APACHEETCDIR%%/Includes/observium.conf.sample

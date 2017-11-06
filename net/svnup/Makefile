@@ -2,7 +2,7 @@
 
 PORTNAME=	svnup
 PORTVERSION=	1.07
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net
 MASTER_SITES=	http://jcm.dsl.visi.com/freebsd/svnup/ \
 		LOCAL/jgh/net/${PORTNAME}/
@@ -16,8 +16,7 @@ OPTIONS_DEFINE=	DOCS
 
 CFLAGS=		-I${OPENSSLINC}
 LDFLAGS=	-L${OPENSSLLIB} -lmd -lssl
-USES=		tar:xz
-USE_OPENSSL=	yes
+USES=		tar:xz ssl
 
 PORTDOCS=	ChangeLog
 

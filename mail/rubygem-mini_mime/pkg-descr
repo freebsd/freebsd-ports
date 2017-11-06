@@ -1,0 +1,5 @@
+MiniMime is a minimal mime type implementation for use with the mail and
+rest-client gems.  It is optimised to minimize memory usage and keeps a
+cache of 100 mime type lookups (and 100 misses).
+
+WWW: https://github.com/discourse/mini_mime

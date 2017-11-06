@@ -1,0 +1,5 @@
+Retriable is a simple DSL to retry failed code blocks with randomized
+exponential backoff time intervals. This is especially useful when interacting
+external api/services or file system calls.
+
+WWW: https://github.com/kamui/retriable

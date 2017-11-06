@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	serendipity
-PORTVERSION=	2.0.5
+PORTVERSION=	2.1.1
 CATEGORIES=	www
 MASTER_SITES=	SF/php-blog/${PORTNAME}/${PORTVERSION}
 
@@ -12,37 +12,22 @@ COMMENT=	PHP based weblog software
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/docs/LICENSE
 
-RUN_DEPENDS=	${LOCALBASE}/share/pear/File/Archive.php:archivers/pear-File_Archive
-
 WRKSRC=		${WRKDIR}/${PORTNAME}
 NO_BUILD=	YES
 SERENDIPITY?=	www/${PORTNAME}
 PLIST_SUB+=	WWWOWN="${WWWOWN}" WWWGRP="${WWWGRP}"
 USE_PHP=	session pcre gd openssl mbstring iconv zlib xml
 SUB_FILES=	pkg-message
-USES=		cpe tar:bzip2
+USES=		cpe php tar:bzip2
 CPE_VENDOR=	s9y
 
 OPTIONS_DEFINE=	MYSQL PGSQL SQLITE MAGICK
 OPTIONS_DEFAULT=	MYSQL MAGICK
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MMYSQL}
-USE_PHP+=	mysql
-. endif
-
-.if ${PORT_OPTIONS:MPGSQL}
-USE_PHP+=	pgsql
-.endif
-
-.if ${PORT_OPTIONS:MSQLITE}
-USE_PHP+=	sqlite3
-.endif
-
-.if ${PORT_OPTIONS:MMAGICK}
-RUN_DEPENDS+=	convert:graphics/ImageMagick
-.endif
+MYSQL_USE=	PHP=mysql
+PGSQL_USE=	PHP=pgsql
+SQLITE_USE=	PHP=sqlite3
+MAGICK_RUN_DEPENDS+=	convert:graphics/ImageMagick
 
 do-install:
 	@-${MKDIR} ${STAGEDIR}${PREFIX}/${SERENDIPITY}

@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=			nanomsg
-PORTVERSION=			1.0.0
+PORTVERSION=			1.1.0
 CATEGORIES=			net
 
 MAINTAINER=			crest@bultmann.eu

@@ -1,9 +1,0 @@
-[global]
-
-# workgroup = NT-Domain-Name or Workgroup-Name, eg: MIDEARTH
-;   workgroup = MYGROUP
-
-# Charset settings
-;   display charset = koi8-r
-;   unix charset = koi8-r
-;   dos charset = cp866

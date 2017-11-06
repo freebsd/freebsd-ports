@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	openblas
-PORTVERSION=	0.2.19
+PORTVERSION=	0.2.20
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 PORTEPOCH=	1
 CATEGORIES=	math
@@ -14,6 +15,9 @@ MAINTAINER=	phd_kimberlite@yahoo.co.jp
 COMMENT=	Optimized BLAS library based on GotoBLAS2
 
 LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+USES=		fortran gmake perl5
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	xianyi
@@ -21,7 +25,6 @@ GH_PROJECT=	OpenBLAS
 LARGE_FILE=	large.tgz
 TIMING_FILE=	timing.tgz
 
-USES=		fortran gmake perl5
 USE_LDCONFIG=	yes
 USE_PERL5=	build
 
@@ -30,18 +33,22 @@ OPENBLAS_LIBS=	libopenblas libopenblasp
 OPENBLAS_SVER=	0
 OPENBLAS_FILES=	${OPENBLAS_LIBS:S|$|.so|} ${OPENBLAS_LIBS:S|$|.so.${OPENBLAS_SVER}|} ${OPENBLAS_LIBS:S|$|.a|}
 PLIST_FILES=	${OPENBLAS_FILES:S|^|lib/|}
+TEST_TARGET=	tests
 
-OPTIONS_DEFINE=		DYNAMIC_ARCH INTERFACE64 OPENMP AVX AVX2
+OPTIONS_DEFINE=		INTERFACE64 OPENMP
+OPTIONS_DEFINE_i386=	DYNAMIC_ARCH AVX AVX2
+OPTIONS_DEFINE_amd64=	${OPTIONS_DEFINE_i386}
+
+.if defined(BATCH) || defined(PACKAGE_BUILDING)
+OPTIONS_DEFAULT_i386=	DYNAMIC_ARCH
+OPTIONS_DEFAULT_amd64=	DYNAMIC_ARCH
+.endif
 
 DYNAMIC_ARCH_DESC=	Support multiple CPU types on i386 and amd64
 INTERFACE64_DESC=	Use 8 byte integers on 64-bit architectures
 OPENMP_DESC=		Use OpenMP for threading
 AVX_DESC=		Support Advanced Vector Extensions (AVX)
 AVX2_DESC=		Support Advanced Vector Extensions 2 (AVX2)
-
-.if defined(BATCH) || defined(PACKAGE_BUILDING)
-OPTIONS_DEFAULT=	DYNAMIC_ARCH
-.endif
 
 .include <bsd.port.options.mk>
 
@@ -58,7 +65,7 @@ BUILDFLAGS+=	BINARY32=1
 BUILDFLAGS+=	BINARY64=1
 .endif
 
-.if ! ( ${PORT_OPTIONS:MDYNAMIC_ARCH} && ( ${ARCH} == "amd64" || ${ARCH} == "i386" ) )
+.if ! ${PORT_OPTIONS:MDYNAMIC_ARCH} && ( ${ARCH} == "amd64" || ${ARCH} == "i386" )
 MANUAL_PACKAGE_BUILD=	Optimizes for the build machine.
 .endif
 
@@ -120,11 +127,11 @@ post-patch:
 	-e 's+$${CROSS_SUFFIX}+${LOCALBASE}/bin/+' \
 	-e '/Clang.*OpenMP/g' \
 		${WRKSRC}/Makefile.system
-.if ${PORT_OPTIONS:MOPENMP}
+
+post-patch-OPENMP-on:
 	${REINPLACE_CMD} -e "s+OPENBLAS_NUM_THREADS+OMP_NUM_THREADS+g" \
 		${WRKSRC}/test/Makefile \
 		${WRKSRC}/ctest/Makefile
-.endif
 
 do-build:
 	cd ${WRKSRC} ; ${SETENV} ${BUILDFLAGS} NUM_THREADS=1 USE_THREAD=0 \

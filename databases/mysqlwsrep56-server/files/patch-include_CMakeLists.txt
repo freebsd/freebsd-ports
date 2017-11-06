@@ -1,0 +1,15 @@
+--- include/CMakeLists.txt.orig	2017-01-25 07:58:07 UTC
++++ include/CMakeLists.txt
+@@ -65,10 +65,12 @@ SET(HEADERS 
+   ${HEADERS_GEN_CONFIGURE}
+ )
+ 
++IF(FALSE)
+ INSTALL(FILES ${HEADERS} DESTINATION ${INSTALL_INCLUDEDIR} COMPONENT Development)
+ INSTALL(DIRECTORY mysql/ DESTINATION ${INSTALL_INCLUDEDIR}/mysql COMPONENT Development 
+  PATTERN "*.h"
+  PATTERN "psi_abi*" EXCLUDE
+ )
++ENDIF()
+ 
+ 

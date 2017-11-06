@@ -12,6 +12,6 @@ COMMENT=	OO PEAR common interface to image drawing
 RUN_DEPENDS=	${PEARDIR}/Image/Color.php:graphics/pear-Image_Color
 
 USE_PHP=	gd
-USES=		dos2unix pear
+USES=		dos2unix pear php
 
 .include <bsd.port.mk>

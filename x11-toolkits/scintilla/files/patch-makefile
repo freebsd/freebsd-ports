@@ -1,4 +1,4 @@
---- makefile.orig	2016-12-01 09:53:41 UTC
+--- makefile.orig	2017-05-24 01:26:25 UTC
 +++ makefile
 @@ -9,14 +9,6 @@
  srcdir ?= .
@@ -31,7 +31,7 @@
  vpath %.h $(srcdir) $(srcdir)/../src $(srcdir)/../include $(srcdir)/../lexlib
 @@ -98,7 +95,7 @@ GLIB_GENMARSHAL_FLAGS = --prefix=scintil
  
- LEXOBJS:=$(addsuffix .o,$(basename $(notdir $(wildcard $(srcdir)/../lexers/Lex*.cxx))))
+ LEXOBJS:=$(addsuffix .o,$(basename $(sort $(notdir $(wildcard $(srcdir)/../lexers/Lex*.cxx)))))
  
 -all: $(COMPLIB)
 +all: $(COMPLIB) $(LEXRLIB)

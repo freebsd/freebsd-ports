@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	pcsc-lite
-PORTVERSION=	1.8.20
+PORTVERSION=	1.8.22
 PORTEPOCH=	2
 CATEGORIES=	devel security
 MASTER_SITES=	https://alioth.debian.org/frs/download.php/latestfile/39/
 
-MAINTAINER=	mokhi64@gmail.com
+MAINTAINER=	mmokhi@FreeBSD.org
 COMMENT=	Smartcard development library
 
 LICENSE=	BSD3CLAUSE
@@ -15,19 +15,22 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
-USES=		gmake libtool pathfix perl5 pkgconfig shebangfix tar:bzip2
+USES=		libtool pathfix perl5 pkgconfig python:2.7,build shebangfix tar:bzip2
 USE_PERL5=	build
 USE_RC_SUBR=	pcscd
-SHEBANG_FILES=	${WRKSRC}/src/spy/pcsc-spy
+SHEBANG_FILES=	src/spy/pcsc-spy
 
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--enable-usbdropdir=${PREFIX}/lib/pcsc/drivers/
 
-PKGMESSAGE=	${WRKDIR}/pkg-message
+SUB_FILES=	pkg-message
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
-
-.include <bsd.port.options.mk>
+OPTIONS_GROUP=		FEATURES
+OPTIONS_GROUP_FEATURES=	FILTER
+FEATURES_DESC=		Default features knobs
+FILTER_DESC=		Control (Ignore or Extend) reader names reported by PCSC
+FILTER_CONFIGURE_ENABLE=	filter
 
 post-patch:
 	${REINPLACE_CMD} -e "s,^datadir,#datadir,; s,^data_DATA,#data_DATA," \
@@ -41,13 +44,13 @@ post-patch-DOCS-off:
 	${REINPLACE_CMD} -e '/^install-data-am: / s|install-docDATA||' ${WRKSRC}/doc/Makefile.in
 
 post-install:
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/pcsc/drivers
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/pcsc/services
+
+post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/example/Makefile.am ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/example/Makefile.in ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/example/pcsc_demo.c ${STAGEDIR}${EXAMPLESDIR}
-	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/pcsc/drivers
-	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/pcsc/services
-	@${SED} 's,%%PREFIX%%,${PREFIX},g' < ${FILESDIR}/pkg-message.in > \
-		${WRKDIR}/pkg-message
 
 .include <bsd.port.mk>

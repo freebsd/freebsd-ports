@@ -2,15 +2,19 @@
 # $FreeBSD$
 
 PORTNAME=	ntpa
-PORTVERSION=	0.8.1
+PORTVERSION=	0.8.2
 CATEGORIES=	net
-MASTER_SITES=	http://dist.innolan.net/
+MASTER_SITES=	http://dist1.innolan.net/ \
+		http://dist2.innolan.net/
 
-MAINTAINER=	cs@innolan.dk
+MAINTAINER=	cs@innolan.net
 COMMENT=	NTP data collection and charting
 
 LICENSE=	MIT BSD3CLAUSE PostgreSQL GPLv2
 LICENSE_COMB=	multi
+
+BUILD_DEPENDS=	newtonsoft-json>=0:devel/newtonsoft-json
+RUN_DEPENDS=	newtonsoft-json>=0:devel/newtonsoft-json
 
 USES=		mono pkgconfig autoreconf gmake
 GNU_CONFIGURE=	yes
@@ -27,7 +31,7 @@ OPTIONS_DEFINE=	WEBFILES GRAPH
 WEBFILES_DESC=	Install web files
 GRAPH_DESC=	Graph generation (requires Cairo)
 
-GRAPH_BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/NPlot.pc:graphics/nplot
+GRAPH_BUILD_DEPENDS=	nplot>=0:graphics/nplot
 GRAPH_RUN_DEPENDS=	nplot>=0:graphics/nplot
 
 CONFIGURE_ARGS+=	--libdir=${LOCALBASE}/libexec --bindir=${LOCALBASE}/libexec/ntpa
@@ -55,7 +59,12 @@ post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/ntpa/
 	${INSTALL_DATA} ${WRKSRC}/examples/ntpa.conf ${STAGEDIR}${PREFIX}/etc/ntpa/ntpa.conf.sample
 	${INSTALL_MAN} ${WRKSRC}/docs/ntpa.1 ${STAGEDIR}${PREFIX}/man/man1
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/CHANGES ${STAGEDIR}${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/DATABASE ${STAGEDIR}${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/INSTALL ${STAGEDIR}${DOCSDIR}
 	${MKDIR} ${STAGEDIR}/var/log/ntpa
 	${MKDIR} ${STAGEDIR}/var/run/ntpa
+	${INSTALL_DATA} ${FILESDIR}/newsyslog ${STAGEDIR}${ETCDIR}/ntpa.newsyslog
 
 .include <bsd.port.mk>

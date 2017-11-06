@@ -1,0 +1,4 @@
+bin/moonlight
+@sample etc/moonlight.conf.sample
+man/man1/moonlight.1.gz
+share/moonlight/gamecontrollerdb.txt

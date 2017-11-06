@@ -2,12 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	freeradius
-DISTVERSION=	3.0.12
+DISTVERSION=	3.0.15
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.freeradius.org/pub/freeradius/%SUBDIR%/ \
 		ftp://ftp.ntua.gr/pub/net/radius/freeradius/%SUBDIR%/ \
 		http://ftp.cc.uoc.gr/mirrors/ftp.freeradius.org/%SUBDIR%/ \
-		http://mirrors.rit.edu/zi/
+		ZI
 MASTER_SITE_SUBDIR=	. old
 PKGNAMESUFFIX=	3
 DISTNAME=	freeradius-server-${DISTVERSION}
@@ -43,7 +44,7 @@ OPTIONS_SUB=	yes
 OPTIONS_DEFINE=	USER KERBEROS HEIMDAL HEIMDAL_PORT LDAP MYSQL \
 		PGSQL UNIXODBC FIREBIRD REDIS PYTHON RUBY \
 		EXPERIMENTAL UDPFROMTO DEVELOPER EDIR PERL REST \
-		FREETDS IDN SSL_PORT DOCS SQLITE3
+		FREETDS IDN DOCS SQLITE3
 OPTIONS_DEFAULT=USER PERL
 
 USER_DESC=		Run as user freeradius, group freeradius
@@ -56,7 +57,6 @@ UDPFROMTO_DESC=		Compile in UDPFROMTO support
 DEVELOPER_DESC=		Enable developer options
 EDIR_DESC=		Enable eDirectory support (implies LDAP)
 REST_DESC=		Enable RESTful API support
-SSL_PORT_DESC=		Use OpenSSL from the ports collection
 
 SQLITE3_CONFIGURE_WITH=rlm_sql_sqlite
 SQLITE3_LIB_DEPENDS=	libsqlite3.so:databases/sqlite3
@@ -282,10 +282,6 @@ CONFIGURE_ARGS+=--quiet
 CONFIGURE_ARGS+=--with-udpfromto
 .endif
 
-.if ${PORT_OPTIONS:MSSL_PORT}
-WITH_OPENSSL_PORT=yes
-.endif
-
 .include <bsd.port.pre.mk>
 
 # if we're installing, place sample configs into ${EXAMPLESDIR}
@@ -326,7 +322,8 @@ CONFIGURE_ARGS+=--with-logdir=${LOGDIR} \
 		--without-rlm_securid \
 		--without-rlm_cache_memcached \
 		--with-vmps \
-		--with-collectdclient-lib-dir=/dev/null
+		--with-collectdclient-lib-dir=/dev/null \
+		--disable-openssl-version-check
 
 .if ${ARCH} == amd64
 CONFIGURE_ARGS+=--with-pic

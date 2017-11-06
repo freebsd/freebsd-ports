@@ -2,6 +2,7 @@
 
 PORTNAME=	ns3
 PORTVERSION=	3.26
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	https://www.nsnam.org/release/
 DISTNAME=	ns-allinone-${PORTVERSION}
@@ -10,6 +11,8 @@ MAINTAINER=	koue@chaosophia.net
 COMMENT=	Network simulator for Internet systems
 
 LICENSE=	GPLv2
+
+BROKEN_powerpc64=	fails to compile: cc1plus: unrecognized command line option -std=c++11
 
 USES=		gettext pkgconfig python sqlite tar:bzip2 waf
 USE_GNOME=	libxml2

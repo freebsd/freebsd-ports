@@ -22,7 +22,7 @@ USES=		ncurses perl5
 IPV6_RUN_DEPENDS=	p5-IO-Socket-INET6>0:net/p5-IO-Socket-INET6
 IPV6_EXTRA_PATCHES=	${PATCHDIR}/dsirc-ipv6
 
-SIRC_SCRIPTS_DESC= 	Additional scripts for the client
+SIRC_SCRIPTS_DESC=	Additional scripts for the client
 SIRC_SCRIPTS_DISTFILES=	${SIRC_SCRIPTS:S|$|:s|}
 
 SUB_FILES=	sirc

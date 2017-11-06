@@ -1,0 +1,32 @@
+# $FreeBSD$
+
+PORTNAME=	acalc
+PORTVERSION=	0.21
+DISTVERSIONPREFIX=	${PORTNAME}-
+CATEGORIES=	math
+
+MAINTAINER=	andrey.nik.ponomarenko@gmail.com
+COMMENT=	Simple and pretty Qt4-based expression calculator
+
+LICENSE=	BSD4CLAUSE
+
+BROKEN_powerpc64=	fails to compile: cc1plus: unrecognized command line option "-std=c++11"
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	anpp
+
+USES=		qmake
+USE_QT4=	corelib gui moc_build rcc_build uic_build
+WRKSRC_SUBDIR=	aCalc/aCalc
+
+PLIST_FILES=	bin/acalc share/pixmaps/Calculator-50.png
+
+DESKTOP_ENTRIES="acalc" "" "${PREFIX}/share/pixmaps/Calculator-50.png" \
+		"${PORTNAME}" "" ""
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/acalc ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/Icons/Calculator-50.png \
+		${STAGEDIR}${PREFIX}/share/pixmaps
+
+.include <bsd.port.mk>

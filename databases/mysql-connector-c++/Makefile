@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	mysql-connector-c++
-PORTVERSION=	1.1.7
-PORTREVISION=	5
+PORTVERSION=	1.1.9
+PORTREVISION=	2
 CATEGORIES=	databases
 MASTER_SITES=	MYSQL/Connector-C++
 
@@ -15,7 +15,9 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libboost_regex.so:devel/boost-libs
 
-USES=		cmake:outsource mysql
+BROKEN_powerpc64=	fails to configure: the compiler doesn't support C++11
+
+USES=		cmake:outsource mysql ssl
 USE_LDCONFIG=	yes
 CMAKE_ARGS=	-DDOC_DESTINATION="${DOCSDIR}"
 

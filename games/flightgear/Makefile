@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	flightgear
-PORTVERSION=	2016.4.4
+PORTVERSION=	2017.3.1
 CATEGORIES=	games
 MASTER_SITES=	SF/flightgear/release-${PORTVERSION:R}
 
@@ -14,10 +14,12 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libboost_thread.so:devel/boost-libs \
 		libfltk.so:x11-toolkits/fltk \
+		libfreetype.so:print/freetype2 \
 		libosg.so:graphics/osg \
 		libspeex.so:audio/speex \
 		libspeexdsp.so:audio/speexdsp \
-		libcurl.so:ftp/curl
+		libcurl.so:ftp/curl \
+		libudev.so:devel/libudev-devd
 BUILD_DEPENDS=	${LOCALBASE}/lib/libplibsl.a:x11-toolkits/plib \
 		${LOCALBASE}/lib/libSimGearCore.a:devel/simgear
 RUN_DEPENDS=	${LOCALBASE}/lib/libplibsl.a:x11-toolkits/plib \
@@ -25,7 +27,7 @@ RUN_DEPENDS=	${LOCALBASE}/lib/libplibsl.a:x11-toolkits/plib \
 		${LOCALBASE}/share/flightgear/version:games/flightgear-data
 
 USE_XORG=	ice sm x11 xext xft xi xinerama xmu xt
-USE_GL=		gl glu glut
+USE_GL=		gl glew glu glut
 
 USES=		alias cmake compiler cpe dos2unix jpeg openal:al,alut sqlite \
 		tar:bzip2
@@ -45,7 +47,7 @@ DBUS_CMAKE_ON=	-DUSE_DBUS:BOOL=ON
 DBUS_CMAKE_OFF=	-DUSE_DBUS:BOOL=OFF
 QT5_CMAKE_ON=	-DENABLE_QT:BOOL=ON
 QT5_CMAKE_OFF=	-DENABLE_QT:BOOL=OFF
-QT5_USE=	QT5=core,buildtools,gui,qmake,widgets
+QT5_USE=	QT5=core,buildtools,gui,qmake,qml,widgets
 
 .include <bsd.port.pre.mk>
 

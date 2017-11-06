@@ -1,6 +1,6 @@
---- estic-1.61.orig/spunk/str.h
+--- spunk/str.h.orig	1996-12-18 12:18:50 UTC
 +++ spunk/str.h
-@@ -91,6 +91,46 @@
+@@ -91,6 +91,46 @@ extern const class String EmptyString;
  // Note: This string class may not work with strings greater than INT_MAX or
  //       0xFFFF, whichever is less
  

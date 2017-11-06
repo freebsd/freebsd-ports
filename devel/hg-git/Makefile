@@ -2,22 +2,26 @@
 # $FreeBSD$
 
 PORTNAME=	hg-git
-PORTVERSION=	0.8.5
+DISTVERSION=	0.8.9
 CATEGORIES=	devel python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	http://bitbucket.org/durin42/${PORTNAME}/get/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	${PORTVERSION}
+DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	marco.broeder@posteo.eu
 COMMENT=	Mercurial extension to pull from or push to a Git repository
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	${PKGNAMEPREFIX}dulwich>=*:devel/dulwich \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dulwich>=*:devel/dulwich \
 		mercurial>=*:devel/mercurial
 
 PORTDOCS=	README.md
 
-USES=		python:2
+NO_ARCH=	yes
+WRKSRC=		${WRKDIR}/durin42-${PORTNAME}-88de3215e138
+USES=		python:2.7
 USE_PYTHON=	distutils autoplist
 
 OPTIONS_DEFINE=	DOCS

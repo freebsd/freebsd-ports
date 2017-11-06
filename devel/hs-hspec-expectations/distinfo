@@ -1,2 +1,3 @@
-SHA256 (cabal/hspec-expectations-0.7.1.tar.gz) = afcac6b3492a2db618e0e85e83cb106ba555fd966a3b045ee4aa30ccf199a258
-SIZE (cabal/hspec-expectations-0.7.1.tar.gz) = 4005
+TIMESTAMP = 1499544608
+SHA256 (cabal/hspec-expectations-0.8.2.tar.gz) = 819607ea1faf35ce5be34be61c6f50f3389ea43892d56fb28c57a9f5d54fb4ef
+SIZE (cabal/hspec-expectations-0.8.2.tar.gz) = 5492

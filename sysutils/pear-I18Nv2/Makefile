@@ -5,10 +5,10 @@ PORTNAME=	I18Nv2
 PORTVERSION=	0.11.4
 CATEGORIES=	sysutils devel pear
 
-MAINTAINER=	joneum@bsdproject.de
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	PEAR Internationalization
 
-USES=	pear
+USES=		pear php
 USE_PHP=	iconv
 
 .include <bsd.port.mk>

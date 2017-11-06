@@ -1,2 +1,5 @@
-SHA256 (buildrump-20131213.tar.gz) = 340a09329c9f625534eb9cd6f525e3e2d1702c98f2b975a6fa4f4ad9e499a6f3
-SIZE (buildrump-20131213.tar.gz) = 36351647
+TIMESTAMP = 1503393441
+SHA256 (rumpkernel-buildrump.sh-20170822-b914579_GH0.tar.gz) = 4c3c8e94f6b8dee86f593dd8a52cd37077a3f3831be93a45210f5f5a4ea23093
+SIZE (rumpkernel-buildrump.sh-20170822-b914579_GH0.tar.gz) = 57072
+SHA256 (rumpkernel-src-netbsd-82f3a69_GH0.tar.gz) = 9739ca41ab47ca9697ee2471e5deddd2119e6bf8429c6974e03fba366694cc89
+SIZE (rumpkernel-src-netbsd-82f3a69_GH0.tar.gz) = 44458533

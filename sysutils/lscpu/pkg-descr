@@ -1,0 +1,9 @@
+lscpu gathers CPU architecture information about the current CPU. The
+command output is optimized for parsing or for easy readability by
+humans. The information includes, for example, the number of CPUs,
+threads, cores, and sockets.
+
+There is also information about the CPU caches, family, model,
+byte order, and stepping.
+
+WWW: https://github.com/NanXiao/lscpu

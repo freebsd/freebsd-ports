@@ -4,7 +4,6 @@
 CATEGORIES=	audio lang
 PKGNAMESUFFIX=	-oggvorbis
 
-MAINTAINER=	freebsd-fpc@FreeBSD.org
 COMMENT=	Free Pascal interface to ogg & vorbis libraries
 
 USE_FPC=	yes

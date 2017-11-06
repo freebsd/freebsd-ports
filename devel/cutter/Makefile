@@ -2,32 +2,35 @@
 # $FreeBSD$
 
 PORTNAME=	cutter
-PORTVERSION=	1.2.4
-PORTREVISION=	1
+PORTVERSION=	1.2.5
 CATEGORIES=	devel
 MASTER_SITES=	SF
 
 MAINTAINER=	romain@FreeBSD.org
 COMMENT=	Unit Testing Framework for C and C++
 
+LICENSE=	LGPL3+
+LICENSE_FILE=	${WRKSRC}/license/lgpl-3.txt
+
 LIB_DEPENDS=	libcairo.so:graphics/cairo \
-		libpangocairo-1.0.so:x11-toolkits/pango
+		libpangocairo-1.0.so:x11-toolkits/pango \
+		libgstbase-1.0.so:multimedia/gstreamer1 \
+		libfontconfig.so:x11-fonts/fontconfig \
+		libfreetype.so:print/freetype2
 
 CPPFLAGS+=	"-I${LOCALBASE}/include"
 CONFIGURE_ARGS=	--disable-gtk-doc-html --with-html-dir=${PREFIX}/share/doc
 GNU_CONFIGURE=	yes
 USES=		gettext gmake libtool pathfix pkgconfig
-USE_GNOME=	intlhack glib20 gtk20
+USE_GNOME=	intlhack gdkpixbuf2 glib20 gtk20
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
+TEST_TARGET=	check
 
 OPTIONS_DEFINE=	GOFFICE SOUP LCOV
 GOFFICE_DESC=	GOffice support
 SOUP_DESC=	libsoup support
 LCOV_DESC=	Force dependency on lcov
-
-regression-test: build
-	@${SETENV} LC_ALL=C ${MAKE_ENV} ${MAKE_CMD} -C ${WRKSRC} check
 
 .include <bsd.port.options.mk>
 

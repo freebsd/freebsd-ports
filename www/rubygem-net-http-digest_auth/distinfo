@@ -1,2 +1,3 @@
-SHA256 (rubygem/net-http-digest_auth-1.4.gem) = 11f7a8c13e801455dedd8864339d5fcd6536949b99ec9b3eae193c32f20b0091
-SIZE (rubygem/net-http-digest_auth-1.4.gem) = 13312
+TIMESTAMP = 1487175108
+SHA256 (rubygem/net-http-digest_auth-1.4.1.gem) = 4b8ad50ed8d180a58db5d6c49449b987dd0466fe01e24037945bc007562a08db
+SIZE (rubygem/net-http-digest_auth-1.4.1.gem) = 13824

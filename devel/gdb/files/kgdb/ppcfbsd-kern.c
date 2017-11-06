@@ -241,14 +241,14 @@ _initialize_ppc_kgdb_tdep(void)
 				       bfd_target_elf_flavour,
 				       fbsd_kernel_osabi_sniffer);
 	gdbarch_register_osabi (bfd_arch_powerpc, bfd_mach_ppc,
-	    GDB_OSABI_FREEBSD_ELF_KERNEL, ppcfbsd_kernel_init_abi);
+	    GDB_OSABI_FREEBSD_KERNEL, ppcfbsd_kernel_init_abi);
 	gdbarch_register_osabi (bfd_arch_powerpc, bfd_mach_ppc64,
-	    GDB_OSABI_FREEBSD_ELF_KERNEL, ppcfbsd_kernel_init_abi);
+	    GDB_OSABI_FREEBSD_KERNEL, ppcfbsd_kernel_init_abi);
 
 	/* Not sure about this one. */
 	gdbarch_register_osabi_sniffer(bfd_arch_rs6000,
 				       bfd_target_elf_flavour,
 				       fbsd_kernel_osabi_sniffer);
 	gdbarch_register_osabi (bfd_arch_rs6000, 0,
-	    GDB_OSABI_FREEBSD_ELF_KERNEL, ppcfbsd_kernel_init_abi);
+	    GDB_OSABI_FREEBSD_KERNEL, ppcfbsd_kernel_init_abi);
 }

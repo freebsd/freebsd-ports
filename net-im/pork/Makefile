@@ -9,8 +9,7 @@ MASTER_SITES=	SF/ojnk/${PORTNAME}/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Console-based AIM client
 
-USES=		ncurses perl5
-USE_OPENSSL=	yes
+USES=		ncurses perl5 ssl
 GNU_CONFIGURE=	yes
 
 post-patch:

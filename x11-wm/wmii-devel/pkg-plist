@@ -33,7 +33,6 @@ man/man1/wimenu.1.gz
 man/man1/wmii.1.gz
 man/man1/wmii9menu.1.gz
 man/man1/wmiir.1.gz
-%%PORTDOCS%%%%DOCSDIR%%/LICENSE
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/alternative_wmiircs/README
 %%PORTDOCS%%%%DOCSDIR%%/alternative_wmiircs/plan9port/README

@@ -3,6 +3,7 @@
 
 PORTNAME=	caTools
 PORTVERSION=	1.17.1
+PORTREVISION=	1
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -13,6 +14,6 @@ LICENSE=	GPLv3
 
 RUN_DEPENDS=	R-cran-bitops>0:devel/R-cran-bitops
 
-USES=	cran:auto-plist
+USES=		cran:auto-plist,compiles
 
 .include <bsd.port.mk>

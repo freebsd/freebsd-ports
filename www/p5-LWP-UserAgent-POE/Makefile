@@ -7,7 +7,7 @@ CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	lth@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Drop-in LWP::UserAgent replacement in POE environments
 
 BUILD_DEPENDS=	p5-POE>=0.9999:devel/p5-POE \

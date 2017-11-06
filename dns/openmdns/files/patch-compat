@@ -1,4 +1,28 @@
---- mdnsd/mdns.h.orig	2015-05-29 14:18:11 UTC
+--- mdnsctl/mdnsctl.c.orig	2017-02-18 03:02:15 UTC
++++ mdnsctl/mdnsctl.c
+@@ -67,8 +67,10 @@ main(int argc, char *argv[])
+ 	struct mdns		mdns;
+ 	struct mdns_service	ms;
+ 
++#ifdef __OpenBSD__
+ 	if (pledge("stdio unix", NULL) == -1)
+ 		err(1, NULL);
++#endif
+ 
+ 	/* parse options */
+ 	if ((res = parse(argc - 1, argv + 1)) == NULL)
+@@ -77,8 +79,10 @@ main(int argc, char *argv[])
+ 	if ((sockfd = mdns_open(&mdns)) == -1)
+ 		err(1, "mdns_open");
+ 
++#ifdef __OpenBSD__
+ 	if (pledge("stdio", NULL) == -1)
+ 		err(1, NULL);
++#endif
+ 
+ 	mdns_set_lookup_A_hook(&mdns, my_lookup_A_hook);
+ 	mdns_set_lookup_PTR_hook(&mdns, my_lookup_PTR_hook);
+--- mdnsd/mdns.h.orig	2017-02-18 03:02:15 UTC
 +++ mdnsd/mdns.h
 @@ -31,6 +31,37 @@
  #include <event.h>
@@ -38,7 +62,7 @@
  #define MAXCHARSTR	MAXHOSTNAMELEN
  #define MAXLABELLEN	64
  #define MAXPROTOLEN	4
---- mdnsd/mdnsd.c.orig	2015-05-29 14:18:11 UTC
+--- mdnsd/mdnsd.c.orig	2017-02-18 03:02:15 UTC
 +++ mdnsd/mdnsd.c
 @@ -46,7 +46,9 @@ void		fetchmyname(char [MAXHOSTNAMELEN])
  void		fetchhinfo(struct hinfo *);

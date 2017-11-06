@@ -1,7 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	postgresql
-PORTVERSION=	09.05.0400
+PORTVERSION=	09.06.0500
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	PGSQL/odbc/versions/src
 PKGNAMESUFFIX=	-odbc
@@ -16,19 +17,20 @@ LICENSE_FILE=	${WRKSRC}/license.txt
 
 LIB_DEPENDS=	libodbc.so:databases/unixODBC
 
-USES=		libtool pgsql
+USES=		compiler:c11 libtool pgsql
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-unixodbc=${LOCALBASE}
 INSTALL_TARGET=	install-strip
+CFLAGS+=	-std=c11
 
 DOCSDIR=	${PREFIX}/share/doc/postgresql/odbc
 EXAMPLESDIR=	${PREFIX}/share/examples/postgresql/odbc
 
 PORTDOCS=	*
 PORTEXAMPLES=	*
-PLIST_FILES=	lib/psqlodbcw.so
+PLIST_FILES=	lib/psqlodbcw.so lib/psqlodbca.so
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 

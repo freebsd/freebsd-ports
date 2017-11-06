@@ -1,3 +1,0 @@
-%%RUBY_SITELIBDIR%%/o_dbm.rb
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/README.jp
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/test-o_dbm.rb

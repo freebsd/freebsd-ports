@@ -1,6 +1,6 @@
-@postexec %D/usr/bin/pango-querymodules-32 > %D/etc/pango/i386-redhat-linux-gnu/pango.modules
-@rmtry etc/pango/i386-redhat-linux-gnu/pango.modules
-etc/pango/pangox.aliases
+@postexec %D/usr/bin/pango-querymodules-32 > %D/%%ETCDIR%%/i386-redhat-linux-gnu/pango.modules
+@rmtry %%ETCDIR%%/i386-redhat-linux-gnu/pango.modules
+%%ETCDIR%%/pangox.aliases
 usr/bin/pango-querymodules-32
 usr/bin/pango-view
 usr/lib/libpango-1.0.so.0
@@ -25,11 +25,11 @@ usr/lib/pango/1.6.0/modules/pango-syriac-fc.so
 usr/lib/pango/1.6.0/modules/pango-thai-fc.so
 usr/lib/pango/1.6.0/modules/pango-thai-lang.so
 usr/lib/pango/1.6.0/modules/pango-tibetan-fc.so
-usr/share/doc/pango-1.28.1/AUTHORS
-usr/share/doc/pango-1.28.1/COPYING
-usr/share/doc/pango-1.28.1/HELLO.txt
-usr/share/doc/pango-1.28.1/NEWS
-usr/share/doc/pango-1.28.1/README
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/HELLO.txt
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
 usr/share/man/man1/pango-querymodules.1.gz
 usr/share/man/man1/pango-view.1.gz
-@dir etc/pango/i386-redhat-linux-gnu
+@dir %%ETCDIR%%/i386-redhat-linux-gnu

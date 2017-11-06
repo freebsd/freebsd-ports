@@ -1,6 +1,7 @@
 bin/ceylon
 bin/ceylon-sh-setup
 man/man1/ceylon-ant-task-doc.1.gz
+man/man1/ceylon-assemble.1.gz
 man/man1/ceylon-bash-completion.1.gz
 man/man1/ceylon-bootstrap.1.gz
 man/man1/ceylon-browse.1.gz
@@ -16,6 +17,7 @@ man/man1/ceylon-help.1.gz
 man/man1/ceylon-import-jar.1.gz
 man/man1/ceylon-info.1.gz
 man/man1/ceylon-jigsaw.1.gz
+man/man1/ceylon-maven-export.1.gz
 man/man1/ceylon-new.1.gz
 man/man1/ceylon-p2.1.gz
 man/man1/ceylon-plugin.1.gz

@@ -5,9 +5,9 @@ PORTNAME=	Console_Color
 PORTVERSION=	1.0.3
 CATEGORIES=	devel www pear
 
-MAINTAINER=	joneum@bsdproject.de
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	PEAR use ANSI console colors
 
-USES=	pear
+USES=		pear
 
 .include <bsd.port.mk>

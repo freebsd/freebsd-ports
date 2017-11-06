@@ -1,6 +1,3 @@
-SHA256 (fife_0.3.5.tar.gz) = 1d3c7a19d05ae426af6ccd50a8ba79a71eb6e6f18f0226d1abdaeae7fcf9d3a8
-SIZE (fife_0.3.5.tar.gz) = 1383813
-SHA256 (fife_0.3.5_demos.tar.gz) = 3e4ae747da68c9a9a014b09312c7e62cd2fa1928aeda72200fec15bf9bbb4fe0
-SIZE (fife_0.3.5_demos.tar.gz) = 23347311
-SHA256 (fife_0.3.5_tools.tar.gz) = 47b6fe045c734813f14e71279cd0d999ae1485f928714950d90a2a20cd7b4fc1
-SIZE (fife_0.3.5_tools.tar.gz) = 502981
+TIMESTAMP = 1496751325
+SHA256 (fifengine-fifengine-0.4.1_GH0.tar.gz) = bae3fc591cc2891f7d1b3a656a5d8ad700ecc2e297ad453bf4f1bcbbf82e8cb2
+SIZE (fifengine-fifengine-0.4.1_GH0.tar.gz) = 15972607

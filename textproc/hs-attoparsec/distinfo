@@ -1,2 +1,3 @@
-SHA256 (cabal/attoparsec-0.12.1.6.tar.gz) = ce0bb68c3a232dc981412b44211395ee04b0c18075777c30493d4e0f1edc06a8
-SIZE (cabal/attoparsec-0.12.1.6.tar.gz) = 65300
+TIMESTAMP = 1499537691
+SHA256 (cabal/attoparsec-0.13.1.0.tar.gz) = 52dc74d4955e457ce4f76f5c9d6dba05c1d07e2cd2a542d6251c6dbc66ce3f64
+SIZE (cabal/attoparsec-0.13.1.0.tar.gz) = 159512

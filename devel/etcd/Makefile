@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	etcd
-PORTVERSION=	2.3.7
+PORTVERSION=	2.3.8
 DISTVERSIONPREFIX=	v
 PORTREVISION=	2
 CATEGORIES=	devel
@@ -13,7 +13,7 @@ COMMENT=	Highly-available key value store and service discovery
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-CONFLICTS_INSTALL=coreos-etcdctl-0.* coreos-etcd3-*
+CONFLICTS_INSTALL=coreos-etcdctl-0.* coreos-etcd31-* coreos-etcd32-*
 
 PORTSCOUT=	limit:^2.*
 

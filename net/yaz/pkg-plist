@@ -53,6 +53,7 @@ include/yaz/otherinfo.h
 include/yaz/poll.h
 include/yaz/pquery.h
 include/yaz/proto.h
+include/yaz/proxunit.h
 include/yaz/prt-ext.h
 include/yaz/query-charset.h
 include/yaz/querytowrbuf.h

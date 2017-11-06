@@ -1,0 +1,2 @@
+#!/bin/sh
+%%PREFIX%%/flang/bin/flang -L%%PREFIX%%/flang/lib -lflang -lflangmain -lflangrti -lompstub -lexecinfo -I%%PREFIX%%/flang/include $@

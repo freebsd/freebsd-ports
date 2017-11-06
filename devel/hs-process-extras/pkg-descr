@@ -1,0 +1,7 @@
+Extends http://hackage.haskell.org/package/process. Read process input and
+output as ByteStrings or Text, or write your own ProcessOutput instance. Lazy
+process input and output. ProcessMaker class for more flexibility in the
+process creation API.
+
+WWW: http://hackage.haskell.org/package/process-extras
+

@@ -1,6 +1,0 @@
-Provides a monad-transformer version of the Control.Exception.catch
-Haskell function. For this, it defines the MonadCatchIO class, a subset
-of MonadIO. It defines proper instances for most monad transformers in
-the 'mtl' library.
-
-WWW: http://darcsden.com/jcpetruzza/MonadCatchIO-mtl

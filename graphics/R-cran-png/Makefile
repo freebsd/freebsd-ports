@@ -3,7 +3,7 @@
 
 PORTNAME=	png
 DISTVERSION=	0.1-7
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -15,6 +15,6 @@ LICENSE_COMB=	dual
 
 LIB_DEPENDS=	libpng.so:graphics/png
 
-USES=	cran:auto-plist
+USES=		cran:auto-plist,compiles
 
 .include <bsd.port.mk>

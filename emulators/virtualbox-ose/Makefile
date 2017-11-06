@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	virtualbox-ose
-PORTVERSION=	5.1.12
+PORTVERSION=	5.2.0
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	http://download.virtualbox.org/virtualbox/${PORTVERSION}/
 DISTFILES=	VirtualBox-${PORTVERSION}${EXTRACT_SUFX} ${GUESTADDITIONS}
@@ -30,7 +31,7 @@ CPE_PRODUCT=	vm_virtualbox
 
 WRKSRC=		${WRKDIR}/VirtualBox-${PORTVERSION}
 ONLY_FOR_ARCHS=	i386 amd64
-USES=		compiler cpe iconv pkgconfig ssl tar:bzip2
+USES=		compiler:c++14-lang cpe iconv pkgconfig ssl tar:bzip2
 USE_GNOME=	libidl libxml2
 
 HAS_CONFIGURE=	yes
@@ -56,16 +57,13 @@ VBOX_UTILS=	VBoxExtPackHelperApp VBoxNetAdpCtl VBoxNetDHCP VBoxNetNAT \
 		VBoxSVC VBoxXPCOMIPCD
 
 OPTIONS_DEFINE=	ALSA DBUS DEBUG GUESTADDITIONS MANUAL NLS PULSEAUDIO \
-		PYTHON R0LOGGING UDPTUNNEL VDE VNC WEBSERVICE VPX X11
+		PYTHON QT5 R0LOGGING UDPTUNNEL VDE VNC WEBSERVICE VPX X11
 OPTIONS_DEFAULT=	DBUS QT5 UDPTUNNEL VNC WEBSERVICE X11
-OPTIONS_RADIO=		GUI
-OPTIONS_RADIO_GUI=	QT4 QT5
 OPTIONS_SUB=	yes
 
 DEBUG_DESC=	Debug symbols, additional logs and assertions
 GUESTADDITIONS_DESC=	Build with Guest Additions
 MANUAL_DESC=	Build with user manual
-QT4_DESC=	Build with QT4 Frontend
 QT5_DESC=	Build with QT5 Frontend
 R0LOGGING_DESC=	Enable R0 logging
 UDPTUNNEL_DESC=	Build with UDP tunnel support
@@ -93,13 +91,8 @@ VPX_CONFIGURE_OFF=	--disable-libvpx
 VPX_LIB_DEPENDS=	libvpx.so:multimedia/libvpx
 X11_CONFIGURE_OFF=	--build-headless
 
-# bmake doesn't know about unsetenv=true
-.if defined(.PARSEDIR)
 ENV=
 .export ENV
-.else
-.SHELL:		path="/bin/sh" unsetenv=true
-.endif
 
 PLIST_SUB=	GUEST_VER=${PORTVERSION} \
 		PYTHON_VERU=${PYTHON_VER:S/./_/}${PYTHON_ABIVER} \
@@ -119,7 +112,11 @@ OPTIONS_DEFAULT+=	PYTHON
 CONFLICTS_INSTALL+=	virtualbox-ose-[0-9]*
 .endif
 
-.if ${PORT_OPTIONS:MNLS} && empty(PORT_OPTIONS:MQT[45])
+.if ${ARCH} == "amd64"
+_ELF32!=	kldstat -q -m elf32 && echo yes || echo no
+.endif
+
+.if ${PORT_OPTIONS:MNLS} && empty(PORT_OPTIONS:MQT5)
 BROKEN=		NLS support requires QT frontend. Run 'make config' again!
 .endif
 
@@ -159,24 +156,18 @@ PYDISTUTILS_PKGVERSION=	1.0
 USES+=		python:build
 .endif
 
-.if ${PORT_OPTIONS:MQT[45]}
+.if ${PORT_OPTIONS:MQT5}
+CONFIGURE_ARGS+=	--enable-qt5
 PLIST_SUB+=	QT=""
 QT_NONSTANDARD=	yes
 USE_GL=		gl
+USE_QT5=	buildtools_build core dbus gui linguist_build opengl
+USE_QT5+=	printsupport widgets x11extras
 USE_XORG=	xcb
 INSTALLS_ICONS=	yes
 VBOX_PROGS+=	VirtualBox
 VBOX_UTILS+=	VBoxTestOGL
 VBOX_WITH_QT=	1
-.if ${PORT_OPTIONS:MQT4}
-CONFIGURE_ARGS+=	--enable-qt4
-USE_QT4=	corelib gui linguist_build moc_build network opengl
-USE_QT4+=	rcc_build uic_build
-.else
-CONFIGURE_ARGS+=	--enable-qt5
-USE_QT5=	buildtools_build core dbus gui linguist_build opengl
-USE_QT5+=	printsupport widgets x11extras
-.endif
 .else
 CONFIGURE_ARGS+=	--disable-qt
 PLIST_SUB+=	QT="@comment "
@@ -238,9 +229,13 @@ CONFIGURE_ARGS+=	--with-openssl-dir="${OPENSSLBASE}"
 
 pre-everything::
 .if ${ARCH} == "amd64"
-.if !exists(/usr/lib32/libc.so)
+.if ${_ELF32} != yes
+	@${ECHO} 'Requires 32-bit runtime support in kernel.'
+	@${ECHO} 'Rebuild kernel with "options COMPAT_FREEBSD32" and reboot.'
+	@${FALSE}
+.elif !exists(/usr/lib32/libc.so)
 	@${ECHO} 'Requires 32-bit libraries installed under /usr/lib32.'
-	@${ECHO} 'Do: cd /usr/src; make build32 install32; /etc/rc.d/ldconfig restart'
+	@${ECHO} 'Do: cd /usr/src; make build32 install32; service ldconfig restart'
 	@${FALSE}
 .endif
 .endif
@@ -276,12 +271,6 @@ post-patch:
 	    ${WRKSRC}/LocalConfig.kmk
 	@${ECHO} 'VBOX_WITH_VALIDATIONKIT =' >> ${WRKSRC}/LocalConfig.kmk
 	@${ECHO} 'VBOX_WITH_X11_ADDITIONS =' >> ${WRKSRC}/LocalConfig.kmk
-.if ${PORT_OPTIONS:MQT4}
-	@${ECHO} 'TOOL_QT4_BIN_SUFF = -qt4' >> ${WRKSRC}/LocalConfig.kmk
-.endif
-.if empty(PORT_OPTIONS:MQT5)
-	@${ECHO} 'VBOX_WITH_QTGUI_V5 =' >> ${WRKSRC}/LocalConfig.kmk
-.endif
 .if ${PORT_OPTIONS:MR0LOGGING}
 	@${ECHO} 'VBOX_WITH_R0_LOGGING = 1' >> ${WRKSRC}/LocalConfig.kmk
 .endif
@@ -302,8 +291,6 @@ post-patch:
 	    -e 's| -mpreferred-stack-boundary=2||' ${WRKSRC}/Config.kmk
 	@${REINPLACE_CMD} -e 's| -fpermissive||' ${WRKSRC}/Config.kmk \
 	    ${WRKSRC}/src/VBox/Main/webservice/Makefile.kmk
-	@${ECHO} 'VBOX_GCC_Wno-unused-parameter = -Wno-unused-parameter' >> \
-	    ${WRKSRC}/LocalConfig.kmk
 	@${ECHO} 'TOOL_VBoxGccFreeBSD_LD = ${CXX}' >> ${WRKSRC}/LocalConfig.kmk
 	@${SED} -e 's|GXX3|VBoxGccFreeBSD|g' \
 	    ${LOCALBASE}/share/kBuild/tools/GXX3.kmk > \
@@ -339,7 +326,7 @@ do-build:
 .endif
 
 do-install:
-	${MKDIR} ${STAGEDIR}${DATADIR}
+	${MKDIR} ${STAGEDIR}${DATADIR}/sdk
 	cd ${KMK_BUILDDIR}/bin/sdk/bindings/xpcom && \
 	    ${COPYTREE_SHARE} "idl samples" ${STAGEDIR}${DATADIR}
 
@@ -350,7 +337,7 @@ do-install:
 	${MKDIR} ${STAGEDIR}${VBOX_DIR}
 	cd ${KMK_BUILDDIR}/bin && ${COPYTREE_SHARE} \
 	    "*.fd *.r0 *.rc *.so components" ${STAGEDIR}${VBOX_DIR}
-	${LN} -fs ${DATADIR}/sdk ${STAGEDIR}${VBOX_DIR}
+	${RLN} ${STAGEDIR}${DATADIR}/sdk ${STAGEDIR}${VBOX_DIR}
 
 	${INSTALL_SCRIPT} ${WRKSRC}/src/VBox/Installer/freebsd/VBox.sh \
 	    ${STAGEDIR}${VBOX_DIR}
@@ -368,7 +355,7 @@ do-install:
 	${MKDIR} ${STAGEDIR}${VBOX_DIR}/additions
 	${INSTALL_DATA} ${DISTDIR}/${GUESTADDITIONS} \
 	    ${STAGEDIR}${VBOX_DIR}/additions/
-	${LN} -fs ${VBOX_DIR}/additions/${GUESTADDITIONS} \
+	${RLN} ${STAGEDIR}${VBOX_DIR}/additions/${GUESTADDITIONS} \
 	    ${STAGEDIR}${VBOX_DIR}/additions/VBoxGuestAdditions.iso
 .endif
 
@@ -392,11 +379,11 @@ do-install:
 	cd ${KMK_BUILDDIR}/bin/sdk/bindings/xpcom/python/xpcom && \
 	    ${COPYTREE_SHARE} "*" ${STAGEDIR}${PYTHON_SITELIBDIR}/xpcom
 	@${MKDIR} ${STAGEDIR}${DATADIR}/sdk/bindings/xpcom/python
-	${LN} -fs ${PYTHON_SITELIBDIR}/xpcom \
+	${RLN} ${STAGEDIR}${PYTHON_SITELIBDIR}/xpcom \
 	    ${STAGEDIR}${DATADIR}/sdk/bindings/xpcom/python
 .endif
 
-.if ${PORT_OPTIONS:MQT[45]}
+.if ${PORT_OPTIONS:MQT5}
 	${INSTALL_DATA} \
 	    ${WRKSRC}/src/VBox/Frontends/VirtualBox/images/OSE/VirtualBox_48px.png \
 	    ${STAGEDIR}${PREFIX}/share/pixmaps/VBox.png

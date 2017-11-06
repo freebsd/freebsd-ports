@@ -8,7 +8,7 @@ CATEGORIES=	devel
 MASTER_SITES=	SF/booch95/booch95/${PORTVERSION}
 DISTNAME=	bc-${PORTVERSION}
 
-MAINTAINER=	marino@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ada 95 Booch Components
 
 LICENSE=	GPLv2 GMGPL

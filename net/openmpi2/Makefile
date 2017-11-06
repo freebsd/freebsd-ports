@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	openmpi
-PORTVERSION=	2.0.1
-PORTREVISION=	2
+PORTVERSION=	2.1.1
+PORTREVISION=	1
 CATEGORIES=	net parallel
 MASTER_SITES=	http://www.open-mpi.org/software/ompi/v${PORTVERSION:R}/downloads/
 PKGNAMESUFFIX=	2
@@ -10,15 +10,22 @@ PKGNAMESUFFIX=	2
 MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	High Performance Message Passing Library
 
+LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
 LIB_DEPENDS=	libhwloc.so:devel/hwloc \
 		libltdl.so:devel/libltdl \
-		libevent.so:devel/libevent2 \
+		libevent.so:devel/libevent \
 		libmunge.so:security/munge
+
+BROKEN_armv6=		fails to package: pkg-static: mca_patcher_overwrite.la: No such file or directory
+BROKEN_sparc64=		fails to compile on sparc64
 
 HAS_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 # :keepla because port uses lt_dlopen
-USES=		execinfo fortran gmake libtool:keepla perl5 pkgconfig tar:bzip2
+USES=		fortran gmake libtool:keepla localbase perl5 \
+		pkgconfig tar:bzip2
 USE_PERL5=	build
 
 MPIBASE?=	mpi
@@ -30,18 +37,17 @@ PLIST_SUB+=	MPIDIR=${MPIDIR}
 CONFIGURE_ARGS+=	--prefix=${PREFIX}/${MPIDIR} \
 			--mandir=${PREFIX}/${MPIDIR}/man \
 			--program-prefix= \
-			--with-hwloc=${LOCALBASE} \
-			--with-libltdl=${LOCALBASE} \
+			--with-hwloc=external \
+			--with-libltdl \
 			--enable-mpi-fortran=usempi \
 			--enable-mpi-cxx \
 			--enable-cxx-exceptions \
 			--enable-heterogeneous \
 			--enable-mpi-thread-multiple \
-			--with-libevent=${LOCALBASE}/include \
-			--with-libevent-libdir=${LOCALBASE}/lib \
+			--with-libevent=external \
+			--with-wrapper-ldflags=-Wl,-rpath=-Wl,-rpath=${LOCALBASE}/lib/gcc${_GCC_VER} \
 			ompi_cv_fortran_ignore_tkr_data=0
 
-LDFLAGS+=	-L${LOCALBASE}/lib
 USE_LDCONFIG=	${PREFIX}/${MPIDIR}/lib \
 		${PREFIX}/${MPIDIR}/lib/openmpi
 
@@ -57,8 +63,7 @@ DEBUG_CONFIGURE_ENABLE=	debug
 
 IPV6_CONFIGURE_ENABLE=	ipv6
 
-TORQUE_CONFIGURE_ON=	--with-tm=${LOCALBASE}
-TORQUE_CONFIGURE_OFF=	--without-tm
+TORQUE_CONFIGURE_WITH=	tm
 TORQUE_LIB_DEPENDS=	libtorque.so:sysutils/torque
 TORQUE_PLIST_FILES=	${MPIDIR}/lib/openmpi/mca_plm_tm.so \
 			${MPIDIR}/lib/openmpi/mca_plm_tm.la \
@@ -80,8 +85,6 @@ SLURM_PLIST_FILES=	${MPIDIR}/lib/openmpi/mca_ess_slurm.la \
 			${MPIDIR}/share/openmpi/help-plm-slurm.txt \
 			${MPIDIR}/share/openmpi/help-ras-slurm.txt
 
-BROKEN_sparc64=		Does not compile on sparc64
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|$$(libdir)/pkgconfig|${PREFIX}/${MPIDIR}/libdata/pkgconfig|g' \
 		${WRKSRC}/ompi/tools/wrappers/Makefile.am \
@@ -90,5 +93,7 @@ post-patch:
 		${WRKSRC}/opal/tools/wrappers/Makefile.in \
 		${WRKSRC}/orte/tools/wrappers/Makefile.am \
 		${WRKSRC}/orte/tools/wrappers/Makefile.in
+	@${REINPLACE_CMD} 's|define MCA_hwloc_external_.*header "|&${LOCALBASE}/include/|' \
+		${WRKSRC}/configure
 
 .include <bsd.port.mk>

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gtk2hs
-PORTVERSION=	0.13
+PORTVERSION=	0.13.2.2
 PORTEPOCH=	1
 CATEGORIES=	x11-toolkits haskell
 

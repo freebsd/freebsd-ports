@@ -1,6 +1,6 @@
---- ui/message_center/message_center_style.h.orig	2016-05-11 19:02:35 UTC
+--- ui/message_center/message_center_style.h.orig	2017-06-05 19:03:30 UTC
 +++ ui/message_center/message_center_style.h
-@@ -111,7 +111,7 @@ const int kButtonHorizontalPadding = 16;
+@@ -124,7 +124,7 @@ const int kButtonHorizontalPadding = 16;   // In DIPs.
  const int kButtonIconTopPadding = 11;      // In DIPs.
  const int kButtonIconToTitlePadding = 16;  // In DIPs.
  

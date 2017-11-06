@@ -1,11 +1,9 @@
 # Created by: Alonso Cardenas Marquez <acm@FreeBSD.org>
 # $FreeBSD$
 
-PORTREVISION=	2
 CATEGORIES=	math lang
 PKGNAMESUFFIX=	-fftw
 
-MAINTAINER=	freebsd-fpc@FreeBSD.org
 COMMENT=	Free Pascal interface to the FFTW3 library
 
 USE_FPC=	yes

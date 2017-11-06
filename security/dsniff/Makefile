@@ -12,9 +12,12 @@ MAINTAINER=	sbz@FreeBSD.org
 COMMENT=	Various sniffing utilities for penetration testing
 
 LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libnet.so:net/libnet
 BUILD_DEPENDS=	${LOCALBASE}/lib/libnids.a:net/libnids
+
+BROKEN_FreeBSD_12=	fails to compile: pcaputil.c: '/usr/include/pcap-int.h' file not found
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libnet=${LOCALBASE}

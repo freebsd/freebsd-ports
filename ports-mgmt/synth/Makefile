@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	synth
-PORTVERSION=	1.66
 DISTVERSIONPREFIX=	v
+DISTVERSION=	1.71
 CATEGORIES=	ports-mgmt
 
-MAINTAINER=	marino@FreeBSD.org
+MAINTAINER=	ericturgeon.bsd@gmail.com
 COMMENT=	Custom package repository builder for FreeBSD and DragonFly
 
 LICENSE=	ISCL
@@ -22,6 +22,13 @@ GH_ACCOUNT=	jrmarino
 
 GPR=		${LOCALBASE}/lib/gnat
 MAKE_ENV=	NCURSES_LINK=static
+
+OPTIONS_DEFINE=	WATCHDOG
+OPTIONS_DEFAULT=WATCHDOG
+
+WATCHDOG_DESC=	Build with watchdog monitor
+
+WATCHDOG_EXTRA_PATCHES_OFF=	${FILESDIR}/extrapatch-nowatchdog-portscan-buildcycle.adb
 
 .include <bsd.port.pre.mk>
 

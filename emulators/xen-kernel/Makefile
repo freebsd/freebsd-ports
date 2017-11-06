@@ -1,11 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	xen
-PKGNAMESUFFIX=	-kernel
-PORTVERSION=	4.7.1
-PORTREVISION=   3
+PORTVERSION=	4.7.2
+PORTREVISION=	7
 CATEGORIES=	emulators
 MASTER_SITES=	http://downloads.xenproject.org/release/xen/${PORTVERSION}/
+PKGNAMESUFFIX=	-kernel
 
 MAINTAINER=	royger@FreeBSD.org
 COMMENT=	Hypervisor using a microkernel design
@@ -40,23 +40,57 @@ PLIST_FILES=	/boot/xen \
 EXTRA_PATCHES=	${FILESDIR}/0001-xen-logdirty-prevent-preemption-if-finished.patch:-p1 \
 		${FILESDIR}/0002-xen-rework-paging_log_dirty_op-to-work-with-hvm-gues.patch:-p1 \
 		${FILESDIR}/kconf_arch.patch:-p1 \
-		${FILESDIR}/xsa191.patch \
-		${FILESDIR}/xsa192.patch \
-		${FILESDIR}/xsa193-4.7.patch \
-		${FILESDIR}/xsa194.patch \
-		${FILESDIR}/xsa195.patch \
-		${FILESDIR}/xsa200-4.7.patch \
-		${FILESDIR}/xsa204-4.7.patch \
-		${FILESDIR}/xsa202.patch
+		${FILESDIR}/0001-x86-drop-unneeded-__packed-attributes.patch:-p1 \
+		${FILESDIR}/0002-build-clang-fix-XSM-dummy-policy-when-using-clang-4..patch:-p1 \
+		${FILESDIR}/xsa212.patch:-p1 \
+		${FILESDIR}/xsa213-4.7.patch:-p1 \
+		${FILESDIR}/xsa214.patch:-p1 \
+		${FILESDIR}/xsa215.patch:-p1 \
+		${FILESDIR}/xsa217.patch:-p1 \
+		${FILESDIR}/0001-IOMMU-handle-IOMMU-mapping-and-unmapping-failures.patch:-p1 \
+		${FILESDIR}/0002-gnttab-fix-unmap-pin-accounting-race.patch:-p1 \
+		${FILESDIR}/0003-gnttab-Avoid-potential-double-put-of-maptrack-entry.patch:-p1 \
+		${FILESDIR}/0004-gnttab-correct-maptrack-table-accesses.patch:-p1 \
+		${FILESDIR}/xsa219-4.8.patch:-p1 \
+		${FILESDIR}/xsa220-4.7.patch:-p1 \
+		${FILESDIR}/xsa221.patch:-p1 \
+		${FILESDIR}/xsa222-1-4.7.patch:-p1 \
+		${FILESDIR}/xsa222-2-4.7.patch:-p1 \
+		${FILESDIR}/0001-gnttab-Fix-handling-of-dev_bus_addr-during-unmap.patch:-p1 \
+		${FILESDIR}/0002-gnttab-never-create-host-mapping-unless-asked-to.patch:-p1 \
+		${FILESDIR}/0003-gnttab-correct-logic-to-get-page-references-during-m.patch:-p1 \
+		${FILESDIR}/0004-gnttab-__gnttab_unmap_common_complete-is-all-or-noth.patch:-p1 \
+		${FILESDIR}/xsa226-4.7.patch:-p1 \
+		${FILESDIR}/xsa227.patch:-p1 \
+		${FILESDIR}/xsa228-4.8.patch:-p1 \
+		${FILESDIR}/xsa230.patch:-p1 \
+		${FILESDIR}/xsa231-4.7.patch:-p1 \
+		${FILESDIR}/xsa232.patch:-p1 \
+		${FILESDIR}/xsa233.patch:-p1 \
+		${FILESDIR}/xsa234-4.8.patch:-p1 \
+		${FILESDIR}/0001-x86-dont-allow-MSI-pIRQ-mapping-on-unowned-device.patch:-p1 \
+		${FILESDIR}/0002-x86-enforce-proper-privilege-when-mapping-pIRQ-s.patch:-p1 \
+		${FILESDIR}/0003-x86-MSI-disallow-redundant-enabling.patch:-p1 \
+		${FILESDIR}/0004-x86-IRQ-conditionally-preserve-irq-pirq-mapping-on-error.patch:-p1 \
+		${FILESDIR}/0005-x86-FLASK-fix-unmap-domain-IRQ-XSM-hook.patch:-p1 \
+		${FILESDIR}/xsa238.patch:-p1 \
+		${FILESDIR}/xsa239.patch:-p1 \
+		${FILESDIR}/0001-x86-limit-linear-page-table-use-to-a-single-level.patch:-p1 \
+		${FILESDIR}/0002-x86-mm-Disable-PV-linear-pagetables-by-default.patch:-p1 \
+		${FILESDIR}/xsa241-4.8.patch:-p1 \
+		${FILESDIR}/xsa242-4.9.patch:-p1 \
+		${FILESDIR}/xsa243-4.7.patch:-p1 \
+		${FILESDIR}/xsa244-4.7.patch:-p1 \
+		${FILESDIR}/xsa236-4.9.patch:-p1
 
 .include <bsd.port.options.mk>
 
 .if ${OPSYS} != FreeBSD
-IGNORE=		Only supported on FreeBSD
+IGNORE=		only supported on FreeBSD
 .endif
 
 .if ${OSVERSION} < 1100055
-IGNORE=		Only supported on recent FreeBSD 11
+IGNORE=		only supported on recent FreeBSD 11
 .endif
 
 pre-build:

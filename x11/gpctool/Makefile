@@ -3,7 +3,7 @@
 
 PORTNAME=	gpctool
 PORTVERSION=	1.0.1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	x11 math graphics
 MASTER_SITES=	ftp://ftp.cs.man.ac.uk/pub/toby/gpc/
 DISTNAME=	gpct${PORTVERSION:S/.//g}

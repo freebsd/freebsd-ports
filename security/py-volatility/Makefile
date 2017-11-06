@@ -3,6 +3,7 @@
 
 PORTNAME=	volatility
 PORTVERSION=	2.6
+PORTREVISION=	1
 CATEGORIES=	security python
 MASTER_SITES=	http://downloads.volatilityfoundation.org/releases/${PORTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -21,8 +22,9 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>=0:databases/py-sqlite3 \
 		${PYTHON_PKGNAMEPREFIX}openpyxl>=0:textproc/py-openpyxl
 
 NO_ARCH=	yes
-USES=		python:2.7 zip
+USES=		python:2.7 shebangfix zip
 USE_PYTHON=	distutils autoplist
+SHEBANG_FILES=	tools/*.py tools/mac/*.py
 
 OPTIONS_DEFINE=	DOCS
 

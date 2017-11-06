@@ -10,6 +10,8 @@ COMMENT=	Netgraph IP accounting
 
 LICENSE=	BSD2CLAUSE
 
+BROKEN_powerpc64=	fails to build: pcpu.h: error: size of array '__assert_0' is negative
+
 USE_GITHUB=	yes
 USES=		kmod uidfix
 

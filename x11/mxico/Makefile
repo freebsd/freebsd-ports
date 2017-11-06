@@ -8,10 +8,12 @@ PORTNAME=	mxico
 PORTVERSION=	1.0.1
 PORTREVISION=	2
 CATEGORIES=	x11
-MASTER_SITES=	http://people.freebsd.org/~maho/mxico/
+MASTER_SITES=	https://people.freebsd.org/~maho/mxico/
 
 MAINTAINER=	maho@FreeBSD.org
 COMMENT=	Rotating Object on the screen (Zalgaller polyhedra)
+
+LICENSE=	MIT
 
 USES=		imake
 USE_XORG=	x11 xext
@@ -21,7 +23,7 @@ OPTIONS_DEFINE=	DOCS
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	@(cd ${WRKSRC}; ${INSTALL_DATA} polyhedron/READMEj ${STAGEDIR}${DOCSDIR})
-	@(cd ${WRKSRC}; ${INSTALL_DATA} polyhedron/README ${STAGEDIR}${DOCSDIR})
+	(cd ${WRKSRC} && ${INSTALL_DATA} polyhedron/READMEj ${STAGEDIR}${DOCSDIR})
+	(cd ${WRKSRC} && ${INSTALL_DATA} polyhedron/README ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>

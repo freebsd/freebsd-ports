@@ -1,6 +1,6 @@
---- test/test.pl.orig	2015-12-22 22:45:13 UTC
+--- test/test.pl.orig	2017-10-18 09:33:24 UTC
 +++ test/test.pl
-@@ -290,7 +290,7 @@ sub _cmd
+@@ -381,7 +381,7 @@ sub _cmd
      else
      {
          # child
@@ -9,7 +9,7 @@
      }
      return ($? >> 8, join('',@out));
  }
-@@ -657,7 +657,7 @@ sub test_usage
+@@ -782,7 +782,7 @@ sub test_usage
      my $command = $args{cmd};
      my $commandpath = $$opts{bin}."/".$command;
      my ($ret,$out) = _cmd("$commandpath $args{redirection} 2>&1");
@@ -18,7 +18,7 @@
  
      my @sections = ($out =~ m/(^[A-Za-z]+.*?)(?:(?=^[A-Za-z]+:)|\z)/msg);
  
-@@ -708,7 +708,7 @@ sub test_usage_subcommand
+@@ -833,7 +833,7 @@ sub test_usage_subcommand
      my $subcommand = $args{subcmd};
      my $commandpath = $$opts{bin}."/".$command;
      my ($ret,$out) = _cmd("$commandpath $subcommand $args{redirection} 2>&1");

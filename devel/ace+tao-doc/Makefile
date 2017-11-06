@@ -2,14 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	ace+tao-doc
-PORTVERSION=	5.5.0
+PORTVERSION=	6.4.3
 CATEGORIES=	devel
 MASTER_SITES=	ftp://download.dre.vanderbilt.edu/previous_versions/ \
 		http://download.dre.vanderbilt.edu/previous_versions/
-DISTNAME=	ACE-${PORTVERSION:C/\.0$//}-html
+DISTNAME=	ACE-html-${PORTVERSION:C/\.0$//}
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	The ACE+TAO HTML documentation
+MAINTAINER=	amutu@amutu.com
+COMMENT=	ACE+TAO HTML documentation
 
 USES=		tar:bzip2
 WRKSRC=		${WRKDIR}/html

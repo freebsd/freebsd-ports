@@ -15,6 +15,8 @@ LICENSE=	GPLv3
 
 LIB_DEPENDS=	libxml++-2.6.so:textproc/libxml++26
 
+BROKEN=		fails to compile: ustring.h: expected ';' at end of declaration list
+
 USES=	gmake pkgconfig
 
 OPTIONS_DEFINE=	DOCS

@@ -14,11 +14,13 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libconfig.so:devel/libconfig \
 		libprotobuf-c.so:devel/protobuf-c
 
+BROKEN_aarch64=		fails to compile: fatal error: byteswap.h file not found
+BROKEN_armv6=		fails to compile: fatal error: byteswap.h file not found
+
 USE_GITHUB=	yes
 
-USES=		autoreconf gmake libtool
+USES=		autoreconf gmake libtool ssl
 GNU_CONFIGURE=	yes
-USE_OPENSSL=	yes
 CONFIGURE_ARGS=	--with-ssl=openssl
 
 USE_RC_SUBR=	umurmur

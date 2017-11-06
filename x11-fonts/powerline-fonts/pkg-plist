@@ -1,68 +1,39 @@
-%%PORTDOCS%%%%DOCSDIR%%/LICENSE_AnonymousPro.txt
-%%PORTDOCS%%%%DOCSDIR%%/LICENSE_Arimo.txt
-%%PORTDOCS%%%%DOCSDIR%%/LICENSE_Cousine.txt
-%%PORTDOCS%%%%DOCSDIR%%/LICENSE_DejaVuSansMono.txt
-%%PORTDOCS%%%%DOCSDIR%%/LICENSE_DroidSansMono.txt
-%%PORTDOCS%%%%DOCSDIR%%/LICENSE_DroidSansMonoDotted.txt
-%%PORTDOCS%%%%DOCSDIR%%/LICENSE_DroidSansMonoSlashed.txt
-%%PORTDOCS%%%%DOCSDIR%%/LICENSE_FiraMono.txt
-%%PORTDOCS%%%%DOCSDIR%%/LICENSE_Hack.txt
-%%PORTDOCS%%%%DOCSDIR%%/LICENSE_Inconsolata-g.txt
-%%PORTDOCS%%%%DOCSDIR%%/LICENSE_Inconsolata.txt
-%%PORTDOCS%%%%DOCSDIR%%/LICENSE_InconsolataDz.txt
-%%PORTDOCS%%%%DOCSDIR%%/LICENSE_LiberationMono.txt
-%%PORTDOCS%%%%DOCSDIR%%/LICENSE_Meslo.txt
-%%PORTDOCS%%%%DOCSDIR%%/LICENSE_RobotoMono.txt
-%%PORTDOCS%%%%DOCSDIR%%/LICENSE_SourceCodePro.txt
-%%PORTDOCS%%%%DOCSDIR%%/LICENSE_SymbolNeu.txt
-%%PORTDOCS%%%%DOCSDIR%%/LICENSE_Terminus.txt
-%%PORTDOCS%%%%DOCSDIR%%/LICENSE_Tinos.txt
-%%PORTDOCS%%%%DOCSDIR%%/README_AnonymousPro.rst
-%%PORTDOCS%%%%DOCSDIR%%/README_Arimo.rst
-%%PORTDOCS%%%%DOCSDIR%%/README_Cousine.rst
-%%PORTDOCS%%%%DOCSDIR%%/README_DejaVuSansMono.rst
-%%PORTDOCS%%%%DOCSDIR%%/README_DroidSansMono.rst
-%%PORTDOCS%%%%DOCSDIR%%/README_DroidSansMonoDotted.rst
-%%PORTDOCS%%%%DOCSDIR%%/README_DroidSansMonoSlashed.rst
-%%PORTDOCS%%%%DOCSDIR%%/README_FiraMono.rst
-%%PORTDOCS%%%%DOCSDIR%%/README_Hack.rst
-%%PORTDOCS%%%%DOCSDIR%%/README_Inconsolata-g.rst
-%%PORTDOCS%%%%DOCSDIR%%/README_Inconsolata.rst
-%%PORTDOCS%%%%DOCSDIR%%/README_InconsolataDz.rst
-%%PORTDOCS%%%%DOCSDIR%%/README_LiberationMono.rst
-%%PORTDOCS%%%%DOCSDIR%%/README_Meslo.rst
-%%PORTDOCS%%%%DOCSDIR%%/README_RobotoMono.rst
-%%PORTDOCS%%%%DOCSDIR%%/README_SourceCodePro.rst
-%%PORTDOCS%%%%DOCSDIR%%/README_SymbolNeu.rst
-%%PORTDOCS%%%%DOCSDIR%%/README_Terminus.rst
-%%PORTDOCS%%%%DOCSDIR%%/README_Tinos.rst
-%%PORTDOCS%%%%DOCSDIR%%/README_UbuntuMono.rst
+%%FONTSDIR%%/3270Medium.ttf
+%%FONTSDIR%%/3270Narrow.ttf
+%%FONTSDIR%%/3270SemiNarrow.ttf
 %%FONTSDIR%%/Anonymice Powerline Bold Italic.ttf
 %%FONTSDIR%%/Anonymice Powerline Bold.ttf
 %%FONTSDIR%%/Anonymice Powerline Italic.ttf
 %%FONTSDIR%%/Anonymice Powerline.ttf
-%%FONTSDIR%%/Arimo Bold Italic for Powerline.ttf
 %%FONTSDIR%%/Arimo Bold for Powerline.ttf
-%%FONTSDIR%%/Arimo Italic for Powerline.ttf
+%%FONTSDIR%%/Arimo Bold Italic for Powerline.ttf
 %%FONTSDIR%%/Arimo for Powerline.ttf
-%%FONTSDIR%%/Cousine Bold Italic for Powerline.ttf
+%%FONTSDIR%%/Arimo Italic for Powerline.ttf
 %%FONTSDIR%%/Cousine Bold for Powerline.ttf
-%%FONTSDIR%%/Cousine Italic for Powerline.ttf
+%%FONTSDIR%%/Cousine Bold Italic for Powerline.ttf
 %%FONTSDIR%%/Cousine for Powerline.ttf
-%%FONTSDIR%%/DejaVu Sans Mono Bold Oblique for Powerline.ttf
+%%FONTSDIR%%/Cousine Italic for Powerline.ttf
+%%FONTSDIR%%/D2Coding Bold for Powerline.ttf
+%%FONTSDIR%%/D2Coding for Powerline.ttf
 %%FONTSDIR%%/DejaVu Sans Mono Bold for Powerline.ttf
-%%FONTSDIR%%/DejaVu Sans Mono Oblique for Powerline.ttf
+%%FONTSDIR%%/DejaVu Sans Mono Bold Oblique for Powerline.ttf
 %%FONTSDIR%%/DejaVu Sans Mono for Powerline.ttf
+%%FONTSDIR%%/DejaVu Sans Mono Oblique for Powerline.ttf
 %%FONTSDIR%%/Droid Sans Mono Dotted for Powerline.ttf
-%%FONTSDIR%%/Droid Sans Mono Slashed for Powerline.ttf
 %%FONTSDIR%%/Droid Sans Mono for Powerline.otf
+%%FONTSDIR%%/Droid Sans Mono Slashed for Powerline.ttf
 %%FONTSDIR%%/FuraMono-Bold Powerline.otf
 %%FONTSDIR%%/FuraMono-Medium Powerline.otf
 %%FONTSDIR%%/FuraMono-Regular Powerline.otf
+%%FONTSDIR%%/Go Mono Bold for Powerline.ttf
+%%FONTSDIR%%/Go Mono Bold Italic for Powerline.ttf
+%%FONTSDIR%%/Go Mono for Powerline.ttf
+%%FONTSDIR%%/Go Mono Italic for Powerline.ttf
 %%FONTSDIR%%/Hack-Bold.ttf
 %%FONTSDIR%%/Hack-BoldItalic.ttf
 %%FONTSDIR%%/Hack-Italic.ttf
 %%FONTSDIR%%/Hack-Regular.ttf
+%%FONTSDIR%%/Inconsolata Bold for Powerline.ttf
 %%FONTSDIR%%/Inconsolata for Powerline.otf
 %%FONTSDIR%%/Inconsolata-dz for Powerline.otf
 %%FONTSDIR%%/Inconsolata-g for Powerline.otf
@@ -70,41 +41,70 @@
 %%FONTSDIR%%/Literation Mono Powerline Bold.ttf
 %%FONTSDIR%%/Literation Mono Powerline Italic.ttf
 %%FONTSDIR%%/Literation Mono Powerline.ttf
-%%FONTSDIR%%/Meslo LG L DZ Regular for Powerline.otf
-%%FONTSDIR%%/Meslo LG L Regular for Powerline.otf
-%%FONTSDIR%%/Meslo LG M DZ Regular for Powerline.otf
-%%FONTSDIR%%/Meslo LG M Regular for Powerline.otf
-%%FONTSDIR%%/Meslo LG S DZ Regular for Powerline.otf
-%%FONTSDIR%%/Meslo LG S Regular for Powerline.otf
+%%FONTSDIR%%/Meslo LG L Bold for Powerline.ttf
+%%FONTSDIR%%/Meslo LG L Bold Italic for Powerline.ttf
+%%FONTSDIR%%/Meslo LG L DZ Bold for Powerline.ttf
+%%FONTSDIR%%/Meslo LG L DZ Bold Italic for Powerline.ttf
+%%FONTSDIR%%/Meslo LG L DZ Italic for Powerline.ttf
+%%FONTSDIR%%/Meslo LG L DZ Regular for Powerline.ttf
+%%FONTSDIR%%/Meslo LG L Italic for Powerline.ttf
+%%FONTSDIR%%/Meslo LG L Regular for Powerline.ttf
+%%FONTSDIR%%/Meslo LG M Bold for Powerline.ttf
+%%FONTSDIR%%/Meslo LG M Bold Italic for Powerline.ttf
+%%FONTSDIR%%/Meslo LG M DZ Bold for Powerline.ttf
+%%FONTSDIR%%/Meslo LG M DZ Bold Italic for Powerline.ttf
+%%FONTSDIR%%/Meslo LG M DZ Italic for Powerline.ttf
+%%FONTSDIR%%/Meslo LG M DZ Regular for Powerline.ttf
+%%FONTSDIR%%/Meslo LG M Italic for Powerline.ttf
+%%FONTSDIR%%/Meslo LG M Regular for Powerline.ttf
+%%FONTSDIR%%/Meslo LG S Bold for Powerline.ttf
+%%FONTSDIR%%/Meslo LG S Bold Italic for Powerline.ttf
+%%FONTSDIR%%/Meslo LG S DZ Bold for Powerline.ttf
+%%FONTSDIR%%/Meslo LG S DZ Bold Italic for Powerline.ttf
+%%FONTSDIR%%/Meslo LG S DZ Italic for Powerline.ttf
+%%FONTSDIR%%/Meslo LG S DZ Regular for Powerline.ttf
+%%FONTSDIR%%/Meslo LG S Italic for Powerline.ttf
+%%FONTSDIR%%/Meslo LG S Regular for Powerline.ttf
 %%FONTSDIR%%/Monofur Bold for Powerline.ttf
-%%FONTSDIR%%/Monofur Italic for Powerline.ttf
 %%FONTSDIR%%/Monofur for Powerline.ttf
-%%FONTSDIR%%/Roboto Mono Bold Italic for Powerline.ttf
+%%FONTSDIR%%/Monofur Italic for Powerline.ttf
+%%FONTSDIR%%/Noto Mono for Powerline.ttf
+%%FONTSDIR%%/NovaMono for Powerline.ttf
+%%FONTSDIR%%/ProFont Bold For Powerline.ttf
+%%FONTSDIR%%/ProFont For Powerline.ttf
 %%FONTSDIR%%/Roboto Mono Bold for Powerline.ttf
-%%FONTSDIR%%/Roboto Mono Italic for Powerline.ttf
-%%FONTSDIR%%/Roboto Mono Light Italic for Powerline.ttf
-%%FONTSDIR%%/Roboto Mono Light for Powerline.ttf
-%%FONTSDIR%%/Roboto Mono Medium Italic for Powerline.ttf
-%%FONTSDIR%%/Roboto Mono Medium for Powerline.ttf
-%%FONTSDIR%%/Roboto Mono Thin Italic for Powerline.ttf
-%%FONTSDIR%%/Roboto Mono Thin for Powerline.ttf
+%%FONTSDIR%%/Roboto Mono Bold Italic for Powerline.ttf
 %%FONTSDIR%%/Roboto Mono for Powerline.ttf
-%%FONTSDIR%%/Sauce Code Powerline Black.otf
-%%FONTSDIR%%/Sauce Code Powerline Bold.otf
-%%FONTSDIR%%/Sauce Code Powerline ExtraLight.otf
-%%FONTSDIR%%/Sauce Code Powerline Light.otf
-%%FONTSDIR%%/Sauce Code Powerline Medium.otf
-%%FONTSDIR%%/Sauce Code Powerline Regular.otf
-%%FONTSDIR%%/Sauce Code Powerline Semibold.otf
+%%FONTSDIR%%/Roboto Mono Italic for Powerline.ttf
+%%FONTSDIR%%/Roboto Mono Light for Powerline.ttf
+%%FONTSDIR%%/Roboto Mono Light Italic for Powerline.ttf
+%%FONTSDIR%%/Roboto Mono Medium for Powerline.ttf
+%%FONTSDIR%%/Roboto Mono Medium Italic for Powerline.ttf
+%%FONTSDIR%%/Roboto Mono Thin for Powerline.ttf
+%%FONTSDIR%%/Roboto Mono Thin Italic for Powerline.ttf
+%%FONTSDIR%%/Source Code Pro Black for Powerline.otf
+%%FONTSDIR%%/Source Code Pro Bold for Powerline.otf
+%%FONTSDIR%%/Source Code Pro ExtraLight for Powerline.otf
+%%FONTSDIR%%/Source Code Pro for Powerline.otf
+%%FONTSDIR%%/Source Code Pro Light for Powerline.otf
+%%FONTSDIR%%/Source Code Pro Medium for Powerline.otf
+%%FONTSDIR%%/Source Code Pro Powerline BlackItalic.otf
+%%FONTSDIR%%/Source Code Pro Powerline BoldItalic.otf
+%%FONTSDIR%%/Source Code Pro Powerline ExtraLightItalic.otf
+%%FONTSDIR%%/Source Code Pro Powerline Italic.otf
+%%FONTSDIR%%/Source Code Pro Powerline LightItalic.otf
+%%FONTSDIR%%/Source Code Pro Powerline MediumItalic.otf
+%%FONTSDIR%%/Source Code Pro Powerline SemiboldItalic.otf
+%%FONTSDIR%%/Source Code Pro Semibold for Powerline.otf
+%%FONTSDIR%%/Space Mono Bold for Powerline.ttf
+%%FONTSDIR%%/Space Mono Bold Italic for Powerline.ttf
+%%FONTSDIR%%/Space Mono for Powerline.ttf
+%%FONTSDIR%%/Space Mono Italic for Powerline.ttf
+%%FONTSDIR%%/SpaceMono-Bold.ttf
+%%FONTSDIR%%/SpaceMono-BoldItalic.ttf
+%%FONTSDIR%%/SpaceMono-Italic.ttf
+%%FONTSDIR%%/SpaceMono-Regular.ttf
 %%FONTSDIR%%/Symbol Neu for Powerline.ttf
-%%FONTSDIR%%/Tinos Bold Italic for Powerline.ttf
-%%FONTSDIR%%/Tinos Bold for Powerline.ttf
-%%FONTSDIR%%/Tinos Italic for Powerline.ttf
-%%FONTSDIR%%/Tinos for Powerline.ttf
-%%FONTSDIR%%/Ubuntu Mono derivative Powerline Bold Italic.ttf
-%%FONTSDIR%%/Ubuntu Mono derivative Powerline Bold.ttf
-%%FONTSDIR%%/Ubuntu Mono derivative Powerline Italic.ttf
-%%FONTSDIR%%/Ubuntu Mono derivative Powerline.ttf
 %%FONTSDIR%%/ter-powerline-x12b.pcf.gz
 %%FONTSDIR%%/ter-powerline-x12n.pcf.gz
 %%FONTSDIR%%/ter-powerline-x14b.pcf.gz
@@ -123,3 +123,66 @@
 %%FONTSDIR%%/ter-powerline-x28n.pcf.gz
 %%FONTSDIR%%/ter-powerline-x32b.pcf.gz
 %%FONTSDIR%%/ter-powerline-x32n.pcf.gz
+%%FONTSDIR%%/Tinos Bold for Powerline.ttf
+%%FONTSDIR%%/Tinos Bold Italic for Powerline.ttf
+%%FONTSDIR%%/Tinos for Powerline.ttf
+%%FONTSDIR%%/Tinos Italic for Powerline.ttf
+%%FONTSDIR%%/Ubuntu Mono derivative Powerline Bold Italic.ttf
+%%FONTSDIR%%/Ubuntu Mono derivative Powerline Bold.ttf
+%%FONTSDIR%%/Ubuntu Mono derivative Powerline Italic.ttf
+%%FONTSDIR%%/Ubuntu Mono derivative Powerline.ttf
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE_AnonymousPro.txt
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE_Arimo.txt
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE_Cousine.txt
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE_D2Coding.txt
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE_DejaVuSansMono.txt
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE_DroidSansMono.txt
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE_DroidSansMonoDotted.txt
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE_DroidSansMonoSlashed.txt
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE_FiraMono.txt
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE_Hack.txt
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE_Inconsolata-g.txt
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE_Inconsolata.txt
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE_InconsolataDz.txt
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE_LiberationMono.txt
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE_Meslo Dotted.txt
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE_Meslo Slashed.txt
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE_Monofur.txt
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE_NotoMono_OFL.txt
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE_NovaMono.txt
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE_ProFont.txt
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE_RobotoMono.txt
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE_SourceCodePro.txt
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE_SpaceMono.txt
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE_SymbolNeu.txt
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE_Terminus.txt
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE_Tinos.txt
+%%PORTDOCS%%%%DOCSDIR%%/README_3270.rst
+%%PORTDOCS%%%%DOCSDIR%%/README_AnonymousPro.rst
+%%PORTDOCS%%%%DOCSDIR%%/README_Arimo.rst
+%%PORTDOCS%%%%DOCSDIR%%/README_Cousine.rst
+%%PORTDOCS%%%%DOCSDIR%%/README_D2Coding.rst
+%%PORTDOCS%%%%DOCSDIR%%/README_DejaVuSansMono.rst
+%%PORTDOCS%%%%DOCSDIR%%/README_DroidSansMono.rst
+%%PORTDOCS%%%%DOCSDIR%%/README_DroidSansMonoDotted.rst
+%%PORTDOCS%%%%DOCSDIR%%/README_DroidSansMonoSlashed.rst
+%%PORTDOCS%%%%DOCSDIR%%/README_FiraMono.rst
+%%PORTDOCS%%%%DOCSDIR%%/README_GoMono.rst
+%%PORTDOCS%%%%DOCSDIR%%/README_Hack.rst
+%%PORTDOCS%%%%DOCSDIR%%/README_Inconsolata-g.rst
+%%PORTDOCS%%%%DOCSDIR%%/README_Inconsolata.rst
+%%PORTDOCS%%%%DOCSDIR%%/README_InconsolataDz.rst
+%%PORTDOCS%%%%DOCSDIR%%/README_InputMono.rst
+%%PORTDOCS%%%%DOCSDIR%%/README_LiberationMono.rst
+%%PORTDOCS%%%%DOCSDIR%%/README_Meslo Dotted.rst
+%%PORTDOCS%%%%DOCSDIR%%/README_Meslo Slashed.rst
+%%PORTDOCS%%%%DOCSDIR%%/README_NotoMono.rst
+%%PORTDOCS%%%%DOCSDIR%%/README_NovaMono.rst
+%%PORTDOCS%%%%DOCSDIR%%/README_ProFont.rst
+%%PORTDOCS%%%%DOCSDIR%%/README_RobotoMono.rst
+%%PORTDOCS%%%%DOCSDIR%%/README_SourceCodePro.rst
+%%PORTDOCS%%%%DOCSDIR%%/README_SpaceMono.rst
+%%PORTDOCS%%%%DOCSDIR%%/README_SymbolNeu.rst
+%%PORTDOCS%%%%DOCSDIR%%/README_Terminus.rst
+%%PORTDOCS%%%%DOCSDIR%%/README_Tinos.rst
+%%PORTDOCS%%%%DOCSDIR%%/README_UbuntuMono.rst

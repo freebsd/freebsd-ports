@@ -3,13 +3,16 @@
 
 PORTNAME=	mpd
 DISTVERSION=	5.8
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	SF/${PORTNAME}/Mpd5/Mpd-${PORTVERSION}
 PKGNAMESUFFIX=	5
 DIST_SUBDIR=	mpd5
 
-MAINTAINER=	mav@FreeBSD.org
+MAINTAINER=	eugen@FreeBSD.org
 COMMENT=	Multi-link PPP daemon based on netgraph(4)
+
+LICENSE=	BSD3CLAUSE
 
 OPTIONS_DEFINE=	NG_IPACCT
 NG_IPACCT_DESC=	Use ng_ipacct kernel module from port
@@ -17,9 +20,11 @@ NG_IPACCT_DESC=	Use ng_ipacct kernel module from port
 HAS_CONFIGURE=	YES
 CONFIGURE_WRKSRC=	"${WRKSRC}/src"
 
-USE_OPENSSL=	yes
+USES=		ssl
 
 .include <bsd.port.options.mk>
+
+MAKE_ARGS+=	OSVERSION=${OSVERSION}
 
 .if ${PORT_OPTIONS:MNG_IPACCT}
 BUILD_DEPENDS+=	${LOCALBASE}/include/netgraph/ng_ipacct.h:net-mgmt/ng_ipacct
@@ -31,11 +36,9 @@ RUN_DEPENDS+=	/boot/modules/ng_ipacct.ko:net-mgmt/ng_ipacct
 .endif
 
 USE_RC_SUBR=	mpd5
-HTMLNUM!=	jot 70 1
 CONFSUF=	conf secret script
 DOCSDIR=	${PREFIX}/share/doc/mpd5
-PORTDOCS=	${HTMLNUM:S/^/mpd/:S/$/.html/} mpd.html mpd.ps README	\
-		mpd_toc.html
+PORTDOCS=	README mpd*
 PLIST_FILES=	${CONFSUF:S/^/etc\/mpd5\/mpd./:S/$/.sample/} sbin/mpd5
 
 .if !defined(WITHOUT_MAN)

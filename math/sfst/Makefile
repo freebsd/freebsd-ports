@@ -3,6 +3,7 @@
 
 PORTNAME=	sfst
 PORTVERSION=	1.4.6h
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	http://www.cis.uni-muenchen.de/~schmid/tools/SFST/data/
 DISTNAME=	${PORTNAME:tu}-${PORTVERSION}

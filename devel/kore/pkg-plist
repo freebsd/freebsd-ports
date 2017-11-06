@@ -1,9 +1,9 @@
-bin/kore
-include/kore/http.h
-include/kore/jsonrpc.h
-include/kore/kore.h
-include/kore/pgsql.h
-include/kore/tasks.h
+bin/%%KORE_BIN%%
+include/%%KORE_BIN%%/kore/http.h
+include/%%KORE_BIN%%/kore/jsonrpc.h
+include/%%KORE_BIN%%/kore/kore.h
+include/%%KORE_BIN%%/kore/pgsql.h
+include/%%KORE_BIN%%/kore/tasks.h
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/cpp/.gitignore
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/cpp/README.md
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/cpp/conf/build.conf

@@ -106,6 +106,9 @@ POST-INSTALL)
     echo "---> rcfile sets mailman_fix_perms to no, skipping check_perms"
   fi
 
+  echo "---> Fixing up default host names (MAILHOST, URLHOST)"
+  sed -Ee "s}^(DEFAULT_(EMAIL|URL)_HOST) = '//'}\1 = '`hostname -f`'}" -i '' "%%MAILMANDIR%%/Mailman/Defaults.py"
+
   echo "---> Running assorted other checks"
   if egrep -q "^[ \t]*MTA.*=.*Postfix" "%%MAILMANDIR%%/Mailman/mm_cfg.py" ; then
       # run Postfix-specific checks

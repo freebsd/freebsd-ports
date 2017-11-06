@@ -10,12 +10,12 @@
     SUBDIR += antiwm
     SUBDIR += awesome
     SUBDIR += awesome-vicious
-    SUBDIR += awesome2
     SUBDIR += bbkeys
     SUBDIR += bbpager
     SUBDIR += blackbox
     SUBDIR += bspwm
     SUBDIR += ccsm
+    SUBDIR += cde
     SUBDIR += clementine-wm
     SUBDIR += compiz
     SUBDIR += compiz-fusion
@@ -71,6 +71,7 @@
     SUBDIR += libdockapp
     SUBDIR += libwraster
     SUBDIR += lwm
+    SUBDIR += lxappearance-obconf
     SUBDIR += lxmed
     SUBDIR += lxsession
     SUBDIR += marco
@@ -102,10 +103,13 @@
     SUBDIR += ratmen
     SUBDIR += ratmenu
     SUBDIR += ratpoison
+    SUBDIR += rubygem-uh-layout
+    SUBDIR += rubygem-uh-wm
     SUBDIR += sawfish
     SUBDIR += selectwm
     SUBDIR += simple-ccsm
     SUBDIR += spectrwm
+    SUBDIR += stumpwm
     SUBDIR += subtle
     SUBDIR += swm
     SUBDIR += tinywm

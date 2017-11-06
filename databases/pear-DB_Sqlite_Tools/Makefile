@@ -5,7 +5,7 @@ PORTNAME=	DB_Sqlite_Tools
 PORTVERSION=	0.1.7
 CATEGORIES=	databases www pear
 
-MAINTAINER=	joneum@bsdproject.de
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	an object oriented interface to backup Sqlite databases
 
 BUILD_DEPENDS=	${PEARDIR}/DB.php:databases/pear-DB \
@@ -13,6 +13,6 @@ BUILD_DEPENDS=	${PEARDIR}/DB.php:databases/pear-DB \
 RUN_DEPENDS=	${PEARDIR}/DB.php:databases/pear-DB \
 		${PEARDIR}/Log/null.php:sysutils/pear-Log
 
-USES=	pear
+USES=		pear
 
 .include <bsd.port.mk>

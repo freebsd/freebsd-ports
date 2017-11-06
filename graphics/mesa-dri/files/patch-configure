@@ -1,0 +1,41 @@
+--- configure.orig	2017-10-02 15:49:13 UTC
++++ configure
+@@ -22846,7 +22846,7 @@ fi
+ 
+ 
+ case "$host_os" in
+-linux*)
++linux* | freebsd*)
+     dri3_default=yes
+     ;;
+ *)
+@@ -26399,9 +26399,19 @@ if test "x$enable_opencl" = xyes; then
+         as_fn_error $? "cannot enable OpenCL without Gallium" "$LINENO" 5
+     fi
+ 
++    if test "x$acv_mesa_CLANG" = xno; then
++
++    GCC_VERSION=`$CC -dumpversion`
++    if test $? -eq 0; then
++        GCC_VERSION_MAJOR=`echo $GCC_VERSION | cut -d. -f1`
++        GCC_VERSION_MINOR=`echo $GCC_VERSION | cut -d. -f2`
++    fi
++
+     if test $GCC_VERSION_MAJOR -lt 4 -o $GCC_VERSION_MAJOR -eq 4 -a $GCC_VERSION_MINOR -lt 7; then
+         as_fn_error $? "gcc >= 4.7 is required to build clover" "$LINENO" 5
+     fi
++# end of clang test.
++    fi
+ 
+     if test "x$have_libclc" = xno; then
+         as_fn_error $? "pkg-config cannot find libclc.pc which is required to build clover.
+@@ -26464,9 +26474,6 @@ rm -f core conftest.err conftest.$ac_obj
+         CLANG_LIBDIR=${LLVM_LIBDIR}
+     fi
+     CLANG_RESOURCE_DIR=$CLANG_LIBDIR/clang/${LLVM_VERSION}
+-    if test ! -f "$CLANG_RESOURCE_DIR/include/stddef.h"; then :
+-  as_fn_error $? "Could not find clang internal header stddef.h in $CLANG_RESOURCE_DIR Use --with-clang-libdir to specify the correct path to the clang libraries." "$LINENO" 5
+-fi
+ fi
+  if test "x$enable_opencl" = xyes; then
+   HAVE_CLOVER_TRUE=

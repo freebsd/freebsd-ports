@@ -2,12 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	opentsdb
-PORTVERSION=	2.2.0
-PORTREVISION=	2
+PORTVERSION=	2.3.0
 CATEGORIES=	databases java
 MASTER_SITES=	https://github.com/OpenTSDB/opentsdb/releases/download/v${PORTVERSION}/
 
-MAINTAINER=	johannes@perceivon.net
+MAINTAINER=	kbowling@FreeBSD.org
 COMMENT=	OpenTSDB is the Scalable Timeseries Database
 
 LICENSE=	LGPL21+

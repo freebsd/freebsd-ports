@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	varnish-modules
-DISTVERSIONPREFIX=	varnish-modules-
-DISTVERSION=	0.9.1
-PORTREVISION=	1
+DISTVERSION=	0.12.1
+PORTREVISION=	0
 CATEGORIES=	www
 
 MAINTAINER=	feld@FreeBSD.org
@@ -24,7 +23,14 @@ GH_ACCOUNT=	varnish
 
 MAKE_JOBS_UNSAFE=	yes
 
+OPTIONS_DEFINE=	DOCS
+PORTDOCS=	*
+
 pre-configure:
 	cd ${WRKSRC} && ./bootstrap
+
+post-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC}/docs && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR} '-not -regex .*.man.rst'
 
 .include <bsd.port.mk>

@@ -3,7 +3,7 @@
 
 PORTNAME=	argtable
 PORTVERSION=	2.13
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 DISTNAME=	${PORTNAME}${PORTVERSION:S/./-/}
@@ -15,15 +15,15 @@ LICENSE=	LGPL20+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		libtool
+USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
-USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^SUBDIRS/s|doc||g ; \
-		 s|^install-data-am: |install-data-am: #|g' ${WRKSRC}/Makefile.in
+		 s|^install-data-am: install-dist_exampleDATA|install-data-am: |g' ${WRKSRC}/Makefile.in
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/argtable2.3 ${STAGEDIR}${MAN3PREFIX}/man/man3

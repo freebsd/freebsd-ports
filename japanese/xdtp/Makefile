@@ -3,7 +3,7 @@
 
 PORTNAME=	xdtp
 PORTVERSION=	1.5.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	japanese
 MASTER_SITES=	http://www.ongs.co.jp/software/xdtp/
 
@@ -13,7 +13,8 @@ COMMENT=	XML document transfer program
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		pkgconfig tar:tgz
+USES=		compiler:c++11-lang pkgconfig tar:tgz
+USE_CXXSTD=	c++11
 USE_GNOME=	glibmm libxml2 libxslt
 HAS_CONFIGURE=	yes
 USE_LDCONFIG=	yes
@@ -62,7 +63,7 @@ post-patch:
 		 s|\([[:blank:]]\)\($${XDTPSHARE}\)|\1$${DESTDIR}\2|' \
 		${WRKSRC}/xsl/Makefile
 # Unbreak parallel builds (-jX) by calling make(1) correctly
-	@${REINPLACE_CMD} -E 's/cd(.+)(;| &&) (\$${MAKE})/\3 -C\1/' \
+	@${REINPLACE_CMD} -E 's/cd(.+)(;| &&) (\$$\{MAKE})/\3 -C\1/' \
 		${WRKSRC}/Makefile ${WRKSRC}/bin/Makefile \
 		${WRKSRC}/java/Makefile ${WRKSRC}/misc/Makefile
 

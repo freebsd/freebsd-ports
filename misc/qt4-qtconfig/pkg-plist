@@ -1,3 +1,3 @@
-%%QT_BINDIR%%/qtconfig-qt4
-%%DEBUG%%%%QT_BINDIR%%/qtconfig-qt4.debug
+%%QT_BINDIR%%/qtconfig
+%%DEBUG%%%%QT_BINDIR%%/qtconfig.debug
 share/pixmaps/qtconfig-qt4.png

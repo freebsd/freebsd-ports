@@ -1,6 +1,6 @@
---- X.c.orig	Wed Aug 24 15:59:59 2005
-+++ X.c	Wed Aug 24 16:00:08 2005
-@@ -290,7 +290,7 @@
+--- X.c.orig	1997-02-13 17:53:43 UTC
++++ X.c
+@@ -290,7 +290,7 @@ int InitMachine(void)
   DefaultGC=DefaultGCOfScreen (Scr);
   DefaultCMap=DefaultColormapOfScreen (Scr);
   bpp=DefaultDepthOfScreen (Scr);

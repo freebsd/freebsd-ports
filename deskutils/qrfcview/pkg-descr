@@ -1,10 +1,10 @@
 qRFCView is a viewer for IETF RFCs. Advantages are:
-* automatic table of content, with direct opening of section;
-* handling of RFC internal cross-references;
+* automatic table of content, with direct opening of section
+* handling of RFC internal cross-references
 * automatic downloading of a referenced RFC from the IETF web site on
-  a simple click;
-* caching of RFC in a local directory;
-* tab-browsing of RFC;
-* searching.
+  a simple click
+* caching of RFC in a local directory
+* tab-browsing of RFC
+* searching
 
-WWW: http://qrfcview.berlios.de/
+WWW: https://web-beta.archive.org/web/20130618220115/http://qrfcview.berlios.de/

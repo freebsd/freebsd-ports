@@ -1,0 +1,5 @@
+X11 window switcher designed for minimalistic window managers (ratpoison,
+xmonad and others) or standalone X11 session. It is lightweight and depends
+only on basic X11 libs, conforming to the usage of lightweight WM.
+
+WWW: https://github.com/sagb/alttab

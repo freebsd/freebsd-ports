@@ -2,11 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	bpython
-PORTVERSION=	0.16
-PORTREVISION=	1
+PORTVERSION=	0.17
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP \
-		http://bpython-interpreter.org/releases/
+		https://bpython-interpreter.org/releases/
 PKGNAMESUFFIX=	${PYTHON_PKGNAMESUFFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org

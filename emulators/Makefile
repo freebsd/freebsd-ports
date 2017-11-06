@@ -8,6 +8,7 @@
     SUBDIR += advancemenu
     SUBDIR += advancemess
     SUBDIR += aftp
+    SUBDIR += almostti
     SUBDIR += aqemu
     SUBDIR += atari800
     SUBDIR += bfe
@@ -27,7 +28,6 @@
     SUBDIR += dgen-sdl
     SUBDIR += dolphin-emu
     SUBDIR += dosbox
-    SUBDIR += doscmd
     SUBDIR += dtcyber
     SUBDIR += dynagen
     SUBDIR += dynagui
@@ -55,7 +55,6 @@
     SUBDIR += hercules
     SUBDIR += higan
     SUBDIR += hugo
-    SUBDIR += hyperv-is
     SUBDIR += i386-wine
     SUBDIR += i386-wine-devel
     SUBDIR += i386-wine-staging
@@ -80,12 +79,14 @@
     SUBDIR += mastergear
     SUBDIR += mednafen
     SUBDIR += mess
+    SUBDIR += mgba
     SUBDIR += mtools
     SUBDIR += mupen64plus
     SUBDIR += mupen64plus-audio-sdl
     SUBDIR += mupen64plus-core
     SUBDIR += mupen64plus-input-sdl
     SUBDIR += mupen64plus-plugins
+    SUBDIR += mupen64plus-qt
     SUBDIR += mupen64plus-rsp-cxd4
     SUBDIR += mupen64plus-rsp-hle
     SUBDIR += mupen64plus-rsp-z64
@@ -110,8 +111,9 @@
     SUBDIR += pipelight
     SUBDIR += playonbsd
     SUBDIR += ppsspp
-    SUBDIR += ppsspp-qt4
+    SUBDIR += ppsspp-devel
     SUBDIR += ppsspp-qt5
+    SUBDIR += ppsspp-qt5-devel
     SUBDIR += py-gns3-converter
     SUBDIR += py-nova
     SUBDIR += py-unicorn
@@ -122,6 +124,7 @@
     SUBDIR += qemu-cheri128m
     SUBDIR += qemu-devel
     SUBDIR += qemu-launcher
+    SUBDIR += qemu-ppcnv
     SUBDIR += qemu-riscv
     SUBDIR += qemu-sbruno
     SUBDIR += qemu-user-static
@@ -130,6 +133,9 @@
     SUBDIR += qtemu
     SUBDIR += quasi88
     SUBDIR += raine
+    SUBDIR += riscv-fesvr
+    SUBDIR += riscv-isa-sim
+    SUBDIR += rpcs3
     SUBDIR += rtc
     SUBDIR += rubygem-fission
     SUBDIR += simh

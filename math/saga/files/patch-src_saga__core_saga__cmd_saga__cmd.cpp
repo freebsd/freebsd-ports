@@ -1,4 +1,4 @@
---- src/saga_core/saga_cmd/saga_cmd.cpp.orig	2015-12-21 09:38:29 UTC
+--- src/saga_core/saga_cmd/saga_cmd.cpp.orig	2016-06-29 05:55:46 UTC
 +++ src/saga_core/saga_cmd/saga_cmd.cpp
 @@ -65,6 +65,7 @@
  

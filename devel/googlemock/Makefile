@@ -3,8 +3,8 @@
 
 PORTNAME=	googlemock
 DISTVERSIONPREFIX=	release-
-DISTVERSION=	1.8.0-11
-DISTVERSIONSUFFIX=	-ga2b8a8e
+DISTVERSION=	1.8.0-358
+DISTVERSIONSUFFIX=	-gf1a87d7
 CATEGORIES=	devel
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -21,7 +21,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	google
 GH_PROJECT=	googletest
 
-USES=		autoreconf libtool localbase
+USES=		autoreconf libtool localbase python:run shebangfix
+SHEBANG_FILES=	scripts/gmock_doctor.py
 WRKSRC_SUBDIR=	${PORTNAME}
 GNU_CONFIGURE=	yes
 # fused-src python tests are only useful for bundling. There's no point in

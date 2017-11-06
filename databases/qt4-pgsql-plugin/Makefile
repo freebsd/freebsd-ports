@@ -1,7 +1,7 @@
 # Created by: Lauri Watts <lauri@kde.org>
 # $FreeBSD$
 
-PORTREVISION=	1
+PORTREVISION=	3
 
 COMMENT=	Qt PostgreSQL database plugin
 DB=		psql

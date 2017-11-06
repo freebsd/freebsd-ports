@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	flock
-PORTVERSION=	2.29
-PORTREVISION=	1
+PORTVERPREFIX=	2.30
+PORTVERSION=	${PORTVERPREFIX}.1
 CATEGORIES=	sysutils
-MASTER_SITES=	KERNEL_ORG/linux/utils/util-linux/v${PORTVERSION}/
+MASTER_SITES=	KERNEL_ORG/linux/utils/util-linux/v${PORTVERPREFIX}/
 DISTNAME=	util-linux-${PORTVERSION}
 
 MAINTAINER=	franco@opnsense.org
@@ -19,7 +19,7 @@ USES=		libtool pkgconfig
 
 OPTIONS_DEFINE=	NLS
 
-NLS_CONFIGURE_OFF=--disable-nls
+NLS_CONFIGURE_ENABLE=	nls
 NLS_USES=	autoreconf:autopoint gettext
 
 PLIST_FILES=	bin/flock man/man1/flock.1.gz \
@@ -32,8 +32,8 @@ do-build:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/flock ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/sys-utils/flock.1 \
-	    ${STAGEDIR}${MANPREFIX}/man/man1
-	${MKDIR} ${STAGEDIR}${PREFIX}/etc/bash_completion.d
+		${STAGEDIR}${MANPREFIX}/man/man1
+	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/bash_completion.d
 	${INSTALL_DATA} ${WRKSRC}/bash-completion/flock ${STAGEDIR}${PREFIX}/etc/bash_completion.d
 
 .include <bsd.port.mk>

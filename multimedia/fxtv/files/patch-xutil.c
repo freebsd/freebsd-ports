@@ -1,6 +1,6 @@
---- ./xutil.c.orig	Fri Nov  5 09:38:54 1999
-+++ ./xutil.c	Tue Oct  9 03:41:54 2007
-@@ -1500,8 +1500,10 @@
+--- xutil.c.orig	1999-11-05 00:38:54 UTC
++++ xutil.c
+@@ -1500,8 +1500,10 @@ void XUTILDetermineFrameBufferVisual( Di
      /**********************************************************************/
  
      vinfo_pref.screen = screen;

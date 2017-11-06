@@ -11,21 +11,28 @@ DISTNAME=	vdr-${PLUGIN}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Video Disk Recorder - extended recordings menu
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 USES=		tar:tgz
 PATCH_STRIP=	-p1
-HAVE_CONFIGURE=	yes
-PORTDOCS=	COPYING README HISTORY
 WRKSRC=		${WRKDIR}/${PLUGIN}-${PORTVERSION}
+
+PORTDOCS=	README HISTORY
+
+OPTIONS_DEFINE=	DOCS NLS
 
 .include	"${.CURDIR}/../vdr/Makefile.plugins"
 
 post-patch: post-patch-plugin
 
 pre-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/lib/vdr
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/vdr
 
 post-install: post-install-pluginlocales
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
+
+post-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>

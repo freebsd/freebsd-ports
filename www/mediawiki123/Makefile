@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mediawiki
-PORTVERSION=	1.23.15
+PORTVERSION=	1.23.17
 CATEGORIES=	www
 MASTER_SITES=	http://releases.wikimedia.org/mediawiki/${PORTVERSION:R}/
 PKGNAMESUFFIX=	123
@@ -12,17 +12,17 @@ COMMENT=	Wiki engine used by Wikipedia
 
 LICENSE=	GPLv2
 
-CONFLICTS=	mediawiki12[678]-[0-9]*
+CONFLICTS=	mediawiki12[789]-[0-9]*
 
-USES=		shebangfix
+USES=		php:web python:run shebangfix
 SHEBANG_FILES=	maintenance/dev/*.sh \
-		maintenance/hiphop/run-server
+		maintenance/hiphop/run-server \
+		maintenance/language/zhtable/Makefile.py
 SHEBANG_LANG=	hhvm
 hhvm_OLD_CMD=	/usr/bin/hhvm
 hhvm_CMD=	${LOCALBASE}/bin/hhvm # not installed by anything yet
 USE_PHP=	ctype dom hash iconv json mbstring pcre readline \
 		session xml xmlreader zlib
-WANT_PHP_WEB=	yes
 MEDIAWIKIDIR?=	www/mediawiki
 
 NO_BUILD=	yes
@@ -41,40 +41,16 @@ SOCKETS_DESC=	Use sockets
 
 MYSQL_VARS=	IGNORE_WITH_PHP+=70
 
-.include <bsd.port.options.mk>
+MYSQL_USES=	mysql
+MYSQL_USE=	php=mysql
+PGSQL_USE=	php=pgsql
+SQLITE_USE=	php=sqlite3
+LDAP_USE=	php=ldap
 
-.if ${PORT_OPTIONS:MMYSQL}
-USE_MYSQL=	client
-USE_PHP+=	mysql
-.endif
-
-.if ${PORT_OPTIONS:MPGSQL}
-USE_PHP+=	pgsql
-.endif
-
-.if ${PORT_OPTIONS:MSQLITE}
-USE_PHP+=	sqlite3
-.endif
-
-.if ${PORT_OPTIONS:MLDAP}
-USE_PHP+=	ldap
-.endif
-
-.if ${PORT_OPTIONS:MMEMCACHED}
-RUN_DEPENDS=	memcached:databases/memcached
-.endif
-
-.if ${PORT_OPTIONS:MIMAGICK}
-RUN_DEPENDS+=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/imagick.so:graphics/pecl-imagick
-.endif
-
-.if ${PORT_OPTIONS:MXCACHE}
-RUN_DEPENDS+=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/xcache.so:www/xcache
-.endif
-
-.if ${PORT_OPTIONS:MSOCKETS}
-USE_PHP+=	sockets
-.endif
+MEMCACHED_RUN_DEPENDS=	memcached:databases/memcached
+IMAGICK_RUN_DEPENDS=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/imagick.so:graphics/pecl-imagick
+XCACHE_RUN_DEPENDS=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/xcache.so:www/xcache
+SOCKETS_USE=	php=sockets
 
 pre-install:
 	@${FIND} -s -d ${WRKSRC} -not -type d | ${SED} "s?${WRKSRC}?${MEDIAWIKIDIR}?g" >>${PLIST}

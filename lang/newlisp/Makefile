@@ -3,6 +3,7 @@
 
 PORTNAME=	newlisp
 PORTVERSION=	10.6.2
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://www.newlisp.org/downloads/
 
@@ -41,7 +42,7 @@ GUISERV_DESC=	Install GUI server (in Java)
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-.if ${ARCH} == "amd64" || ${ARCH} == "sparc64" || ${ARCH} == "ia64"
+.if ${ARCH} == "amd64" || ${ARCH} == "sparc64"
 CFLAGS+=	-DNEWLISP64
 .endif
 

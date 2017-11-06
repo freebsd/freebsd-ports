@@ -1,0 +1,11 @@
+--- xml-hamlet.cabal.orig	2017-07-10 13:36:43 UTC
++++ xml-hamlet.cabal
+@@ -19,7 +19,7 @@ Library
+   
+   Build-depends:       base                       >= 4        && < 5
+                      , shakespeare                >= 1.0      && < 2.2
+-                     , xml-conduit                >= 1.0      && < 1.5
++                     , xml-conduit                >= 1.0      && < 1.6
+                      , text                       >= 0.10
+                      , template-haskell
+                      , parsec                     >= 2.0      && < 3.2

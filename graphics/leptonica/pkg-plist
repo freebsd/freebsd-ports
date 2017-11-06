@@ -34,6 +34,7 @@ include/leptonica/morph.h
 include/leptonica/pix.h
 include/leptonica/ptra.h
 include/leptonica/queue.h
+include/leptonica/rbtree.h
 include/leptonica/readbarcode.h
 include/leptonica/recog.h
 include/leptonica/regutils.h
@@ -43,6 +44,6 @@ include/leptonica/sudoku.h
 include/leptonica/watershed.h
 lib/liblept.a
 lib/liblept.so
-lib/liblept.so.4
-lib/liblept.so.4.0.3
+lib/liblept.so.5
+lib/liblept.so.5.0.1
 libdata/pkgconfig/lept.pc

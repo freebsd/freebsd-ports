@@ -11,8 +11,8 @@ include/proj_api.h
 include/projects.h
 lib/libproj.a
 lib/libproj.so
-lib/libproj.so.9
-lib/libproj.so.9.1.0
+lib/libproj.so.12
+lib/libproj.so.12.0.0
 libdata/pkgconfig/proj.pc
 man/man1/cs2cs.1.gz
 man/man1/geod.1.gz

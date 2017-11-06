@@ -1,8 +1,8 @@
-This is a reimplementation for Unix, by Byron Rakitzis, of the Plan
-9 shell. rc offers much the same capabilities as a traditional
-Bourne shell, but with a much cleaner syntax.
+This is a reimplementation for Unix, by Byron Rakitzis, of the Plan 9 shell.
+The original rc was designed and implemented by Tom Duff at Bell Labs. It has
+a small feature set similar to a traditional Bourne shell, but with a much
+cleaner and simpler syntax. Among other things, this makes rc much better than
+Bourne-compatible shells at handling filenames which contain spaces. Thus,
+writing rc scripts is less error-prone than writing sh scripts.
 
-See the end of the man page, under "INCOMPATIBILITIES" for (known?)
-differences from the "real" rc.
-
-Scott Kenney <saken@hotel.rmta.org>
+WWW: http://tobold.org/article/rc

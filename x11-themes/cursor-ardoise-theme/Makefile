@@ -3,6 +3,7 @@
 
 PORTNAME=	ardoise
 PORTVERSION=	3.5
+PORTREVISION=	1
 CATEGORIES=	x11-themes
 MASTER_SITES=	https://github.com/obnosim/ardoise/releases/download/v${PORTVERSION}/
 PKGNAMEPREFIX=	cursor-
@@ -21,7 +22,7 @@ NO_ARCH=	yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
-DATADIR=	${PREFIX}/lib/X11/icons
+DATADIR=	${PREFIX}/share/icons
 PORTDATA=	*
 
 do-install:

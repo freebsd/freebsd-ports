@@ -2,33 +2,32 @@
 # $FreeBSD$
 
 PORTNAME=	libcdio
-PORTVERSION=	0.93
+PORTVERSION=	0.94
 CATEGORIES=	sysutils
 MASTER_SITES=	GNU
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Compact Disc Input and Control Library
 
-LIB_DEPENDS=	libcddb.so:audio/libcddb
-
-LICENSE=	GPLv3
+LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-GNU_CONFIGURE=	yes
-USES=		cpe pathfix pkgconfig iconv libtool ncurses gmake perl5
-USE_LDCONFIG=	yes
-CONFIGURE_ARGS+=${ICONV_CONFIGURE_ARG}
+LIB_DEPENDS=	libcddb.so:audio/libcddb
+
+USES=		cpe gmake iconv localbase libtool \
+		ncurses pathfix perl5 pkgconfig
 USE_PERL5=	build
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib ${ICONV_LIB}
+USE_LDCONFIG=	yes
+
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	${ICONV_CONFIGURE_ARG}
+LIBS+=		${ICONV_LIB}
 
 INFO=		libcdio
 CPE_VENDOR=	gnu
-INSTALL_TARGET=install-strip
-
-.include <bsd.port.pre.mk>
+INSTALL_TARGET=	install-strip
 
 post-patch:
-	${REINPLACE_CMD} -e "s,freebsd5\.\*,freebsd*," ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|freebsd10\.\*|freebsd*|g' ${WRKSRC}/configure
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

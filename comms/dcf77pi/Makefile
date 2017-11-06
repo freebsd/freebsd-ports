@@ -2,13 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	dcf77pi
-PORTVERSION=	3.5.0
+PORTVERSION=	3.6.0
 CATEGORIES=	comms
 
 MAINTAINER=	rene@FreeBSD.org
 COMMENT=	DCF77 receiver/logger/analyzer and library for the Raspberry Pi
 
 LICENSE=	BSD2CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	rene0
@@ -22,7 +23,7 @@ USES=		ncurses
 USE_LDCONFIG=	yes
 
 PATCH_STRIP=	-p1
-PORTDOCS=	README.md
+PORTDOCS=	CHANGELOG.md README.md
 DOXYGEN_PORTDOCS=	html/*
 
 INSTALL_TARGET=	install-strip

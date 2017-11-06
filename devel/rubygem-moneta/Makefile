@@ -10,8 +10,10 @@ MASTER_SITES=	RG
 MAINTAINER=	renchap@cocoa-x.com
 COMMENT=	Unified interface to key/value stores
 
-NO_ARCH=	yes
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
+NO_ARCH=	yes
 USE_RUBY=	yes
 USES=		gem shebangfix
 SHEBANG_FILES=	script/install-kyotocabinet \

@@ -1,11 +1,11 @@
 # Created by: Sir l33tname <sirl33tname@gmail.com>
 # $FreeBSD$
 
-PORTNAME=	lua51
-PORTVERSION=	1.1
+PORTNAME=	zlib
+PORTVERSION=	1.2
 DISTVERSIONPREFIX=v
 CATEGORIES=	archivers
-PKGNAMESUFFIX=	-zlib
+PKGNAMEPREFIX=	lua51-
 
 MAINTAINER=	sirl33tname@gmail.com
 COMMENT=	Simple streaming interface to zlib for the Lua Programming Language
@@ -16,10 +16,10 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	brimworks
 GH_PROJECT=	lua-zlib
 
-USES=		gmake lua:51
+USES=		lua:51
 
 ALL_TARGET=	bsd
-MAKE_ENV+=      LUAPATH="${LOCALBASE}"
+MAKE_ENV+=	LUAPATH="${LOCALBASE}"
 MAKE_ENV+=	LUACPATH="${STAGEDIR}${LUA_MODLIBDIR}"
 MAKE_ENV+=	INCDIR="-I${LUA_INCDIR}"
 MAKE_ENV+=	LUALIBDIR="-L${LUA_MODLIBDIR}"

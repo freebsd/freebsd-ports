@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	yesod-core
-PORTVERSION=	1.4.13
+PORTVERSION=	1.4.35
 CATEGORIES=	www haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -12,7 +12,7 @@ LICENSE=	MIT
 USE_CABAL=	aeson>=0.5 auto-update blaze-builder>=0.2.1.4 blaze-html>=0.5 \
 		blaze-markup>=0.5.1 case-insensitive>=0.2 cereal>=0.3 \
 		clientsession>=0.9.1 conduit>=1.2 conduit-extra cookie>=0.4.1 \
-		data-default exceptions>=0.6 fast-logger>=2.2 http-types>=0.7 \
+		data-default deepseq-generics exceptions>=0.6 fast-logger>=2.2 http-types>=0.7 \
 		lifted-base>=0.1.2 monad-control>=0.3 monad-logger>=0.3.1 mtl \
 		mwc-random old-locale>=1.0.0.2 parsec>=2 path-pieces>=0.1.2 \
 		primitive random>=1.0.0.2 resourcet>=0.4.9 safe semigroups \

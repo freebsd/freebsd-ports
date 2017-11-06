@@ -8,6 +8,8 @@ CATEGORIES=	audio
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	JACK output plugin for DeaDBeeF music player
 
+LICENSE=	MIT
+
 BUILD_DEPENDS=	${LOCALBASE}/include/deadbeef/deadbeef.h:audio/deadbeef
 LIB_DEPENDS=	libjack.so:audio/jack
 RUN_DEPENDS:=	${BUILD_DEPENDS}
@@ -16,8 +18,6 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	Alexey-Yakovenko
 GH_PROJECT=	jack
 GH_TAGNAME=	62d1e6a
-
-MAKE_JOBS_UNSAFE=	yes
 
 PLIST_FILES=	lib/deadbeef/jack.so
 

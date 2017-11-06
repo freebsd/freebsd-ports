@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	wolfssl
-PORTVERSION=	3.10.0
+PORTVERSION=	3.11.0
 CATEGORIES=	security devel
 MASTER_SITES=	http://www.wolfssl.com/
 
@@ -11,6 +11,10 @@ COMMENT=	Embedded SSL C-Library
 LICENSE=	GPLv2
 
 BUILD_DEPENDS=	bash:shells/bash
+
+BROKEN_mips=		fails to package: pkg-static: Unable to access file libwolfssl.so.3: No such file or directory
+BROKEN_mips64=		fails to package: pkg-static: Unable to access file libwolfssl.so.3: No such file or directory
+BROKEN_powerpc64=	fails to package: pkg-static: Unable to access file libwolfssl.so.3: No such file or directory
 
 USES=		libtool zip
 GNU_CONFIGURE=	yes

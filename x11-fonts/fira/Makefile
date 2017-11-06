@@ -2,15 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	fira
-PORTVERSION=	4.106
+PORTVERSION=	4.203
 CATEGORIES=	x11-fonts
-MASTER_SITES=	http://www.carrois.com/downloads/%SUBDIR%/:sans,mono \
-		SF/horia/${CATEGORIES}/${PORTNAME}/%SUBDIR%/:sans,mono
-MASTER_SITE_SUBDIR=	${PORTNAME}_4_1/:sans ${PORTNAME}_mono_3_2/:mono
-DISTNAME=	${PORTNAME:S|f|F|}
-DISTFILES=	${DISTNAME}Fonts${PORTVERSION:S|.||}${EXTRACT_SUFX}:sans \
-		${DISTNAME}MonoFonts${MONO_VERSION}${EXTRACT_SUFX}:mono
-EXTRACT_ONLY=	${DISTFILES:C|:[^:]+$||:M*.zip}
+MASTER_SITES=	https://carrois.com/downloads/Fira/
+DISTFILES=	Fira_Code_3_2.zip Fira_Mono_3_2.zip Fira_Sans_4_2.zip
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Sans-serif and monospaced typeface for small screens
@@ -26,35 +21,18 @@ NO_WRKSUBDIR=	yes
 SUB_FILES=	pkg-message
 
 PORTDOCS=	*.pdf *.rtf
-PORTEXAMPLES=	*
 
-MONO_VERSION=	3206
-
-OPTIONS_DEFINE=	DOCS EXAMPLES
-EXAMPLES_DESC=	UFO source files
-
-DOCS_DISTFILES=	${DISTNAME}_4_1_Version_Report.rtf:sans \
-		${DISTNAME}PDF${PORTVERSION:S|.||}${EXTRACT_SUFX}:sans \
-		${DISTNAME}MonoPDF${MONO_VERSION}${EXTRACT_SUFX}:mono
-EXAMPLES_DISTFILES=	${DISTNAME}UFO_beta${PORTVERSION:S|.||}${EXTRACT_SUFX}:sans \
-			${DISTNAME}MonoUFO_beta${MONO_VERSION}${EXTRACT_SUFX}:mono
+OPTIONS_DEFINE=	DOCS
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${FONTSDIR}
-	${INSTALL_DATA} ${WRKSRC}/${DISTNAME}*Fonts*/OTF/*.otf \
-		${STAGEDIR}${FONTSDIR}
+	${FIND} ${WRKSRC}/Fira* -type f -name \*.otf | while read f; do \
+		${INSTALL_DATA} $$f ${STAGEDIR}${FONTSDIR} ; done
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${CP} ${DISTDIR}/${DISTFILES:C|:[^:]+$||:M*.rtf} ${WRKSRC}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|:M*.rtf} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/${DISTNAME}*PDF*/|:M*.pdf} \
+	${INSTALL_DATA} ${WRKSRC}/Fira*/PDF/*.pdf ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/Fira_Sans_4_2/Fira_4_2_Version_Log.rtf \
 		${STAGEDIR}${DOCSDIR}
-
-do-install-EXAMPLES-on:
-	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-.for e in ${EXAMPLES_DISTFILES:R:C|:[^:]+$||}
-	(cd ${WRKSRC}/${e} && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR})
-.endfor
 
 .include <bsd.port.mk>

@@ -114,5 +114,5 @@ lib/libsteplazyfile.so.2.0.0
 lib/libsteputils.so
 lib/libsteputils.so.2
 lib/libsteputils.so.2.0.0
-share/man/man1/exp2cxx.1
-share/man/man1/fedex.1
+man/man1/exp2cxx.1.gz
+man/man1/fedex.1.gz

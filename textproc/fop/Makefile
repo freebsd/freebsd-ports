@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	fop
-PORTVERSION=	2.1
+PORTVERSION=	2.2
 CATEGORIES=	textproc java
 MASTER_SITES=	APACHE/xmlgraphics/fop/source/:fop \
-		SF/offo/offo-hyphenation/2.1:hyph
+		SF/offo/offo-hyphenation/${PORTVERSION}:hyph
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 DISTFILES=	${DISTNAME}.tar.gz:fop offo-hyphenation.zip:hyph
 EXTRACT_ONLY=	${DISTNAME}.tar.gz
@@ -13,11 +13,15 @@ EXTRACT_ONLY=	${DISTNAME}.tar.gz
 MAINTAINER=	geoff@sea-incorporated.com
 COMMENT=	Print formatter driven by XSL formatting
 
+LICENSE=	APACHE20
+LICENSE_FILE=	${LEGALDIR}/LICENSE
+
 EXTRACT_DEPENDS+=	${UNZIP_CMD}:archivers/unzip
 
 OPTIONS_DEFINE=	DOCS
 
-WRKSRC=		${WRKDIR}/${DISTNAME:S/-src//}
+WRKSRC=		${WRKDIR}/${DISTNAME:S/-src//}/fop
+LEGALDIR=	${WRKDIR}/${DISTNAME:S/-src//}
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 PORTDOCS=	*
 
@@ -46,6 +50,6 @@ do-install:
 	${LN} -s ${DATADIR}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_MAN} LICENSE README NOTICE KEYS ${STAGEDIR}${DOCSDIR}
+	cd ${LEGALDIR} && ${INSTALL_MAN} LICENSE README NOTICE KEYS ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

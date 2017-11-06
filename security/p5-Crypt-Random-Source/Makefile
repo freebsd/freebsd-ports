@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Crypt-Random-Source
-PORTVERSION=	0.11
-PORTREVISION=	1
+PORTVERSION=	0.12
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -13,7 +12,7 @@ COMMENT=	Get weak or strong random data from pluggable sources
 
 LICENSE=	ART20
 
-BUILD_DEPENDS=	p5-Moo>=0:devel/p5-Moo \
+BUILD_DEPENDS=	p5-Moo>=1.002000:devel/p5-Moo \
 		p5-Capture-Tiny>=0.08:devel/p5-Capture-Tiny \
 		p5-Module-Find>=0:devel/p5-Module-Find \
 		p5-Sub-Exporter>=0:devel/p5-Sub-Exporter \
@@ -22,13 +21,8 @@ BUILD_DEPENDS=	p5-Moo>=0:devel/p5-Moo \
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Exception>0:devel/p5-Test-Exception
 
+NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 502200
-TEST_DEPENDS+=	p5-Test-Simple>=1.001014:devel/p5-Test-Simple
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

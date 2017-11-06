@@ -1,0 +1,25 @@
+--- vmblockmounter/Makefile.am.orig	2017-04-25 03:59:07 UTC
++++ vmblockmounter/Makefile.am
+@@ -27,16 +27,16 @@ if FREEBSD
+ install-exec-hook:
+ 	mv $(DESTDIR)$(sbindir)/mount.vmblock \
+ 		$(DESTDIR)$(sbindir)/mount_vmblock
+-	-$(MKDIR_P) $(DESTDIR)/sbin
+-	-$(LN_S) $(DESTDIR)$(sbindir)/mount_vmblock \
+-		$(DESTDIR)/sbin/mount_vmblock &> /dev/null
++#	-$(MKDIR_P) $(DESTDIR)/sbin
++#	-$(LN_S) $(sbindir)/mount_vmblock \
++#		$(DESTDIR)/sbin/mount_vmblock &> /dev/null
+ uninstall-hook:
+ 	rm -f $(DESTDIR)$(sbindir)/mount_vmblock
+ else
+ install-exec-hook:
+-	-$(MKDIR_P) $(DESTDIR)/sbin
+-	-$(LN_S) $(DESTDIR)$(sbindir)/mount.vmblock \
+-		$(DESTDIR)/sbin/mount.vmblock &> /dev/null
++#	-$(MKDIR_P) $(DESTDIR)/sbin
++#	-$(LN_S) $(DESTDIR)/mount.vmblock \
++#		$(DESTDIR)/sbin/mount.vmblock &> /dev/null
+ uninstall-hook:
+ 	rm -f $(DESTDIR)/sbin/mount.vmblock
+ endif !FREEBSD

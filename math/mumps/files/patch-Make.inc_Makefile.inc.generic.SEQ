@@ -1,0 +1,78 @@
+--- Make.inc/Makefile.inc.generic.SEQ.orig	2011-05-10 12:56:32 UTC
++++ Make.inc/Makefile.inc.generic.SEQ
+@@ -41,7 +41,7 @@
+ #          Metis/ParMetis and SCOTCH/PT-SCOTCH (ver 5.1 and later) orderings are now available for MUMPS.
+ #
+ 
+-#SCOTCHDIR  = ${HOME}/scotch_5.1_esmumps
++#SCOTCHDIR  = @LOCALBASE@
+ #ISCOTCH    = -I$(SCOTCHDIR)/include 
+ # You have to choose one among the following two lines depending on
+ # the type of analysis you want to perform. If you want to perform only
+@@ -57,7 +57,7 @@ LPORDDIR = $(topdir)/PORD/lib/
+ IPORD    = -I$(topdir)/PORD/include/
+ LPORD    = -L$(LPORDDIR) -lpord
+ 
+-#LMETISDIR = /local/metis/
++#LMETISDIR = @LOCALBASE@/lib
+ #IMETIS    = # Should be provided if you use parmetis
+ 
+ # You have to choose one among the following two lines depending on
+@@ -72,7 +72,7 @@ LPORD    = -L$(LPORDDIR) -lpord
+ # The following variables will be used in the compilation process.
+ # Please note that -Dptscotch and -Dparmetis imply -Dscotch and -Dmetis respectively.
+ #ORDERINGSF = -Dscotch -Dmetis -Dpord -Dptscotch -Dparmetis
+-ORDERINGSF  = -Dpord
++ORDERINGSF  += -Dpord
+ ORDERINGSC  = $(ORDERINGSF)
+ 
+ LORDERINGS = $(LMETIS) $(LPORD) $(LSCOTCH)
+@@ -95,11 +95,11 @@ OUTF    = -o 
+ # RM : remove files
+ RM      = /bin/rm -f
+ # CC : C compiler
+-CC      = cc
++CC      = @CC@
+ # FC : Fortran 90 compiler
+-FC      = f90
++FC      = @FC@
+ # FL : Fortran linker
+-FL      = f90
++FL      = @FC@
+ # AR : Archive object in a library
+ #      keep a space at the end if options have to be separated from lib name
+ AR      = ar vr 
+@@ -112,14 +112,14 @@ RANLIB  = ranlib
+ # the sequential library provided by MUMPS, to use instead
+ # of ScaLAPACK and MPI.
+ INCSEQ  = -I$(topdir)/libseq
+-LIBSEQ  = -Llibseq -lmpiseq
++LIBSEQ  = -L$(topdir)/libseq -lmpiseq
+ 
+ # DEFINE HERE YOUR BLAS LIBRARY
+ 
+-LIBBLAS = -lblas
++LIBBLAS = -L@LOCALBASE@/lib @BLAS_LIBS@ 
+ 
+ # DEFINE HERE YOUR PTHREAD LIBRARY
+-LIBOTHERS = -lpthread
++LIBOTHERS = -lpthread @GCCLIBDIR@  @FORTRANLIBS@
+ 
+ # FORTRAN/C COMPATIBILITY:
+ #  Use:
+@@ -132,12 +132,12 @@ LIBOTHERS = -lpthread
+ #     leave empty if your Fortran compiler does not change the symbols.
+ #
+ 
+-CDEFS = -DAdd_
++CDEFS ?= -DAdd_
+ 
+ #COMPILER OPTIONS
+ 
+-OPTF    = -O
+-OPTC    = -O -I.
++OPTF    = @FCFLAGS@
++OPTC    = @CFLAGS@
+ OPTL    = -O
+ 
+ #Sequential:

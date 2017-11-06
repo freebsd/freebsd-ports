@@ -1,10 +1,10 @@
 # $FreeBSD$
 
 PORTNAME?=	mcollective-service-common
-PORTVERSION=	3.1.3
+PORTVERSION=	3.2.0
 CATEGORIES=	sysutils
 
-MAINTAINER=	romain@FreeBSD.org
+MAINTAINER=	puppet@FreeBSD.org
 COMMENT?=	MCollective common files to manage the OS Services
 
 LICENSE=	APACHE20
@@ -22,6 +22,7 @@ PLIST_FILES?=	share/mcollective/agent/service.ddl \
 		share/mcollective/data/service_data.ddl \
 		share/mcollective/data/service_data.rb \
 		share/mcollective/util/service/base.rb \
+		share/mcollective/util/service/serviceservice.rb \
 		share/mcollective/util/service/puppetservice.rb \
 		share/mcollective/validator/service_name.ddl \
 		share/mcollective/validator/service_name.rb

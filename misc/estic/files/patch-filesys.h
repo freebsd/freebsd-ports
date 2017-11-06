@@ -1,5 +1,5 @@
---- spunk/filesys.h.orig	Sat Feb 26 17:51:00 2000
-+++ spunk/filesys.h	Sat Feb 26 17:51:27 2000
+--- spunk/filesys.h.orig	1996-11-07 17:06:48 UTC
++++ spunk/filesys.h
 @@ -44,10 +44,10 @@
  
  extern const char FileSysPathSep;	// Path separator

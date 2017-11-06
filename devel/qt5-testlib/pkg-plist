@@ -11,6 +11,7 @@
 %%QT_INCDIR%%/QtTest/%%FULLVER%%/QtTest/private/qcsvbenchmarklogger_p.h
 %%QT_INCDIR%%/QtTest/%%FULLVER%%/QtTest/private/qplaintestlogger_p.h
 %%QT_INCDIR%%/QtTest/%%FULLVER%%/QtTest/private/qsignaldumper_p.h
+%%QT_INCDIR%%/QtTest/%%FULLVER%%/QtTest/private/qteamcitylogger_p.h
 %%QT_INCDIR%%/QtTest/%%FULLVER%%/QtTest/private/qtestblacklist_p.h
 %%QT_INCDIR%%/QtTest/%%FULLVER%%/QtTest/private/qtestcoreelement_p.h
 %%QT_INCDIR%%/QtTest/%%FULLVER%%/QtTest/private/qtestcorelist_p.h
@@ -62,9 +63,9 @@
 %%QT_INCDIR%%/QtTest/qtestsystem.h
 %%QT_INCDIR%%/QtTest/qtesttouch.h
 %%QT_INCDIR%%/QtTest/qttestversion.h
-%%QT_LIBDIR%%/cmake/Qt5Test/Qt5TestConfig.cmake
-%%QT_LIBDIR%%/cmake/Qt5Test/Qt5TestConfigExtras.cmake
-%%QT_LIBDIR%%/cmake/Qt5Test/Qt5TestConfigVersion.cmake
+%%QT_CMAKEDIR%%/Qt5Test/Qt5TestConfig.cmake
+%%QT_CMAKEDIR%%/Qt5Test/Qt5TestConfigExtras.cmake
+%%QT_CMAKEDIR%%/Qt5Test/Qt5TestConfigVersion.cmake
 %%QT_LIBDIR%%/libQt5Test.prl
 %%QT_LIBDIR%%/libQt5Test.so
 %%QT_LIBDIR%%/libQt5Test.so.5

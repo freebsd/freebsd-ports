@@ -5,7 +5,7 @@ PORTNAME=	logsurfer
 PORTVERSION=	1.8
 CATEGORIES=	misc
 MASTER_SITES=	http://www.crypt.gen.nz/logsurfer/ \
-		http://mirrors.rit.edu/zi/
+		ZI
 
 MAINTAINER=	zi@FreeBSD.org
 COMMENT=	Process logfiles and conditionally perform certain actions

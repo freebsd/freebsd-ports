@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	node_exporter
-PORTVERSION=	0.13.0
+PORTVERSION=	0.15.0
 DISTVERSIONPREFIX=v
 CATEGORIES=	sysutils
 
@@ -22,8 +22,6 @@ GO_TARGET=	github.com/${GH_ACCOUNT}/${PORTNAME}
 PLIST_FILES=	bin/node_exporter
 
 USE_RC_SUBR=	node_exporter
-
-STRIP=		# stripping can break go binaries
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKDIR}/bin/node_exporter ${STAGEDIR}${PREFIX}/bin

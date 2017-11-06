@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	smstools
-PORTVERSION=	3.1.15
-PORTREVISION=	4
+PORTVERSION=	3.1.21
 CATEGORIES=	comms
 MASTER_SITES=	http://smstools3.kekekasvi.com/packages/
 DISTNAME=	smstools3-${PORTVERSION}
@@ -14,6 +13,8 @@ COMMENT=	SMS Gateway software for GSM modems and mobile phones
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+LIB_DEPENDS=	libinotify.so:devel/libinotify
+
 CONFLICTS=	gnokii-[0-9]* smstools-2.* sendsms-[0-9]*
 
 OPTIONS_DEFINE=	STATS UTF8 EXAMPLES DOCS
@@ -22,7 +23,7 @@ STATS_DESC=	Build status and statistics support
 
 WRKSRC=		${WRKDIR}/smstools3
 
-USES=		gmake shebangfix
+USES=		gmake localbase:ldflags shebangfix
 SHEBANG_FILES=	scripts/hex2dec scripts/hex2bin
 SHEBANG_LANG=	awk
 awk_OLD_CMD=	/bin/gawk
@@ -39,11 +40,12 @@ PLIST_SUB+=	SPOOLDIR="${SPOOLDIR}" LOGDIR="${LOGDIR}" PIDDIR="${PIDDIR}" \
 		SMSD_USER="${SMSD_USER}" SMSD_GROUP="${SMSD_GROUP}"
 SUB_FILES=	pkg-install pkg-deinstall
 
+LDFLAGS+=	-linotify
+
 PORTDOCS=	*
 PORTEXAMPLES=	.procmailrc .qmailrc *
 
 STATS_LIB_DEPENDS=	libmm.so:devel/mm
-STATS_CFLAGS=	-I${LOCALBASE}/include
 STATS_CFLAGS_OFF=	-DNOSTATS
 
 UTF8_USES=		iconv

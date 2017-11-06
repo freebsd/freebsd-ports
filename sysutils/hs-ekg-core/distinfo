@@ -1,2 +1,3 @@
-SHA256 (cabal/ekg-core-0.1.1.0.tar.gz) = 7ba11eb73ad3b906610cc1ae3889543547c48d1b2f4ca68c288bb3f022a7061e
-SIZE (cabal/ekg-core-0.1.1.0.tar.gz) = 12376
+TIMESTAMP = 1499538190
+SHA256 (cabal/ekg-core-0.1.1.1.tar.gz) = 54de3df4b1b027aa2f3760b64f6a8c8134f3275b6d95bf1cf1fc0e74282939d6
+SIZE (cabal/ekg-core-0.1.1.1.tar.gz) = 12426

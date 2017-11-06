@@ -8,6 +8,7 @@ bin/htmltree
 %%SITE_PERL%%/HTML/Tree/AboutTrees.pod
 %%SITE_PERL%%/HTML/Tree/Scanning.pod
 %%SITE_PERL%%/HTML/TreeBuilder.pm
+%%PERL5_MAN1%%/htmltree.1.gz
 %%PERL5_MAN3%%/HTML::AsSubs.3.gz
 %%PERL5_MAN3%%/HTML::Element.3.gz
 %%PERL5_MAN3%%/HTML::Element::traverse.3.gz

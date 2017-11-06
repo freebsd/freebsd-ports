@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	artifactory
-PORTVERSION=	4.15.0
+PORTVERSION=	5.4.1
 CATEGORIES=	devel java
 MASTER_SITES=	https://bintray.com/artifact/download/jfrog/artifactory/
 DISTNAME=	jfrog-${PORTNAME}-oss-${PORTVERSION}
@@ -68,7 +68,7 @@ do-install:
 	${LN} -sf ${VARDIR}/tomcat/${d} ${STAGEDIR}${PREFIX}/${APP_HOME}/tomcat/${d}
 .endfor
 
-.for d in data backup support
+.for d in data backup support access
 	${MKDIR} ${STAGEDIR}/${VARDIR}/${d}
 	${LN} -sf ${VARDIR}/${d} ${STAGEDIR}${PREFIX}/${APP_HOME}/${d}
 .endfor

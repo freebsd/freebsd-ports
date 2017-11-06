@@ -11,10 +11,10 @@ bin/lwp-request
 %%SITE_PERL%%/LWP/Authen/Ntlm.pm
 %%SITE_PERL%%/LWP/ConnCache.pm
 %%SITE_PERL%%/LWP/Debug.pm
+%%SITE_PERL%%/LWP/Debug/TraceHTTP.pm
 %%SITE_PERL%%/LWP/DebugFile.pm
 %%SITE_PERL%%/LWP/MemberMixin.pm
 %%SITE_PERL%%/LWP/Protocol.pm
-%%SITE_PERL%%/LWP/Protocol/GHTTP.pm
 %%SITE_PERL%%/LWP/Protocol/cpan.pm
 %%SITE_PERL%%/LWP/Protocol/data.pm
 %%SITE_PERL%%/LWP/Protocol/file.pm
@@ -28,8 +28,8 @@ bin/lwp-request
 %%SITE_PERL%%/LWP/RobotUA.pm
 %%SITE_PERL%%/LWP/Simple.pm
 %%SITE_PERL%%/LWP/UserAgent.pm
-%%SITE_PERL%%/lwpcook.pod
-%%SITE_PERL%%/lwptut.pod
+%%SITE_PERL%%/libwww/lwpcook.pod
+%%SITE_PERL%%/libwww/lwptut.pod
 %%PERL5_MAN1%%/GET.1.gz
 %%PERL5_MAN1%%/HEAD.1.gz
 %%PERL5_MAN1%%/POST.1.gz
@@ -46,5 +46,5 @@ bin/lwp-request
 %%PERL5_MAN3%%/LWP::RobotUA.3.gz
 %%PERL5_MAN3%%/LWP::Simple.3.gz
 %%PERL5_MAN3%%/LWP::UserAgent.3.gz
-%%PERL5_MAN3%%/lwpcook.3.gz
-%%PERL5_MAN3%%/lwptut.3.gz
+%%PERL5_MAN3%%/libwww::lwpcook.3.gz
+%%PERL5_MAN3%%/libwww::lwptut.3.gz

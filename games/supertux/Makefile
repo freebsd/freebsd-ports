@@ -3,7 +3,7 @@
 
 PORTNAME=	supertux
 PORTVERSION=	0.1.3
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	games
 MASTER_SITES=	https://github.com/SuperTux/downloads/raw/master/
 

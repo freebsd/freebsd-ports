@@ -1,4 +1,5 @@
 etc/fonts
+usr/bin/fc-cache
 usr/bin/fc-cat
 usr/bin/fc-list
 usr/bin/fc-match
@@ -6,14 +7,18 @@ usr/bin/fc-query
 usr/bin/fc-scan
 usr/lib/libfontconfig.so.1
 usr/lib/libfontconfig.so.1.4.4
-usr/share/doc/fontconfig-2.8.0/AUTHORS
-usr/share/doc/fontconfig-2.8.0/COPYING
-usr/share/doc/fontconfig-2.8.0/README
-usr/share/doc/fontconfig-2.8.0/fontconfig-user.html
-usr/share/doc/fontconfig-2.8.0/fontconfig-user.txt
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/fontconfig-user.html
+%%PORTDOCS%%%%DOCSDIR%%/fontconfig-user.txt
+usr/share/man/man1/fc-cache.1.gz
 usr/share/man/man1/fc-cat.1.gz
 usr/share/man/man1/fc-list.1.gz
 usr/share/man/man1/fc-match.1.gz
 usr/share/man/man1/fc-query.1.gz
 usr/share/man/man1/fc-scan.1.gz
 usr/share/man/man5/fonts-conf.5.gz
+@rmtry var/db/fontconfig/*-le32d4.cache-3
+@dir var/db/fontconfig
+@postexec %D/usr/bin/fc-cache -f -s

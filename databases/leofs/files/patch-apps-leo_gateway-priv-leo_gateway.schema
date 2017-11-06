@@ -1,0 +1,144 @@
+--- apps/leo_gateway/priv/leo_gateway.schema.orig	2014-08-06 05:56:49.000000000 +0300
++++ apps/leo_gateway/priv/leo_gateway.schema	2014-08-13 23:13:17.000000000 +0300
+@@ -37,7 +37,7 @@
+  "sasl.sasl_error_logger",
+  [
+   {datatype, string},
+-  {default, "./log/sasl/sasl-error.log"}
++  {default, "%%LEOFS_LOGDIR%%/leo_gateway/sasl/sasl-error.log"}
+  ]}.
+ 
+ {translation, "sasl.sasl_error_logger",
+@@ -63,7 +63,7 @@
+  "sasl.error_logger_mf_dir",
+  "sasl.error_logger_mf_dir",
+  [
+-  {default, "./log/sasl"}
++  {default, "%%LEOFS_LOGDIR%%/leo_gateway/sasl"}
+  ]}.
+ 
+ %% @doc Specifies how large each individual file can be.
+@@ -104,7 +104,7 @@
+          Managers = cuttlefish_util:conf_get_value("managers", Conf),
+          case string:tokens(Managers, "[ , ]") of
+              [] ->
+-                 ['manager_0@127.0.0.1', 'manager_1@127.0.0.1'];
++                 ['manager@127.0.0.1', 'manager_slave@127.0.0.1'];
+              Tokens ->
+                  lists:map(fun(X) ->
+                                    list_to_atom(X)
+@@ -191,7 +191,7 @@
+  "http.ssl_certfile",
+  "leo_gateway.http.ssl_certfile",
+  [
+-  {default, "./etc/server_cert.pem"}
++  {default, "%%PREFIX%%/etc/leofs/server_cert.pem"}
+  ]}.
+ 
+ %% @doc SSL key
+@@ -199,7 +199,7 @@
+  "http.ssl_keyfile",
+  "leo_gateway.http.ssl_keyfile",
+  [
+-  {default, "./etc/server_key.pem"}
++  {default, "%%PREFIX%%/etc/leofs/server_key.pem"}
+  ]}.
+ 
+ %% @doc Synchronized time of a bucket property (second)
+@@ -306,7 +306,7 @@
+  "cache.cache_disc_dir_data",
+  "leo_gateway.cache.cache_disc_dir_data",
+  [
+-  {default, "./cache/data"}
++  {default, "%%LEOFS_DBDIR%%/leo_gateway/cache/data"}
+  ]}.
+ 
+ %% @doc Directory for the disk cache journal
+@@ -314,7 +314,7 @@
+  "cache.cache_disc_dir_journal",
+  "leo_gateway.cache.cache_disc_dir_journal",
+  [
+-  {default, "./cache/journal"}
++  {default, "%%LEOFS_DBDIR%%/leo_gateway/cache/journal"}
+  ]}.
+ 
+ %% @doc Cache Expire in seconds
+@@ -484,7 +484,7 @@
+  "leo_gateway.log_dir",
+  [
+   {datatype, string},
+-  {default, "./log/erlang"}
++  {default, "%%LEOFS_LOGDIR%%/leo_gateway/erlang"}
+  ]}.
+ 
+ %% @doc Output log file(s) - app
+@@ -493,7 +493,7 @@
+  "leo_gateway.log_appender",
+  [
+   {datatype, string},
+-  {default, "./log/app"}
++  {default, "%%LEOFS_LOGDIR%%/leo_gateway/app"}
+  ]}.
+ 
+ {translation, "leo_gateway.log_appender",
+@@ -508,7 +508,7 @@
+  "leo_redundant_manager.log_dir_member",
+  [
+   {datatype, string},
+-  {default, "./log/ring"}
++  {default, "%%LEOFS_LOGDIR%%/leo_gateway/ring"}
+  ]}.
+ 
+ %% @doc Output log file(s) - ring
+@@ -517,7 +517,7 @@
+  "leo_redundant_manager.log_dir_ring",
+  [
+   {datatype, string},
+-  {default, "./log/ring"}
++  {default, "%%LEOFS_LOGDIR%%/leo_gateway/ring"}
+  ]}.
+ 
+ 
+@@ -529,7 +529,7 @@
+  "queue_dir",
+  "leo_gateway.queue_dir",
+  [
+-  {default, "./work/queue"}
++  {default, "%%LEOFS_DBDIR%%/leo_gateway/queue"}
+  ]}.
+ 
+ %% @doc Directory of SNMP agent configuration
+@@ -537,7 +537,7 @@
+  "snmp_agent",
+  "leo_gateway.snmp_agent",
+  [
+-  {default, "./snmp/snmpa_gateway_0/LEO-GATEWAY"}
++  {default, "%%PREFIX%%/lib/leofs/snmp/snmpa_gateway/LEO-GATEWAY"}
+  ]}.
+ 
+ 
+@@ -752,7 +752,7 @@
+  "nodename",
+  "vm_args.-name",
+  [
+-  {default, "gateway_0@127.0.0.1"}
++  {default, "gateway@127.0.0.1"}
+  ]}.
+ 
+ %% @doc Cookie for distributed node communication.  All nodes in the same cluster
+@@ -800,7 +800,7 @@
+  "erlang.crash_dump",
+  "vm_args.-env ERL_CRASH_DUMP",
+  [
+-  {default, "./log/erl_crash.dump"}
++  {default, "%%LEOFS_LOGDIR%%/leo_gateway/erl_crash.dump"}
+  ]}.
+ 
+ %% @doc Raise the ETS table limit
+@@ -839,5 +839,5 @@
+  "snmp_conf",
+  "vm_args.-config",
+  [
+-  {default, "./snmp/snmpa_gateway_0/leo_gateway_snmp"}
++  {default, "%%PREFIX%%/lib/leofs/snmp/snmpa_gateway/leo_gateway_snmp"}
+  ]}.

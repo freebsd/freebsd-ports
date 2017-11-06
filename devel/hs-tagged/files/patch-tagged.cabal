@@ -1,0 +1,11 @@
+--- tagged.cabal.orig	2017-07-07 20:47:45 UTC
++++ tagged.cabal
+@@ -57,7 +57,7 @@ library
+ 
+   if impl(ghc>=7.6)
+     exposed-modules: Data.Proxy.TH
+-    build-depends: template-haskell >= 2.8 && < 2.12
++    build-depends: template-haskell >= 2.8 && < 2.13
+ 
+   if flag(deepseq)
+     build-depends: deepseq >= 1.1 && < 1.5

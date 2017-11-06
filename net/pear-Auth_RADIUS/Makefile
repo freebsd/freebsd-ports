@@ -11,6 +11,6 @@ COMMENT=	PEAR wrapper classes for the RADIUS PECL
 LICNSE=		BSD3CLAUSE
 
 USE_PHP=	radius
-USES=	pear
+USES=		pear php
 
 .include <bsd.port.mk>

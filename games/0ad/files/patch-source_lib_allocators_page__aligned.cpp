@@ -1,6 +1,6 @@
---- source/lib/allocators/page_aligned.cpp.orig	2011-05-03 12:38:42 UTC
+--- source/lib/allocators/page_aligned.cpp.orig	2017-07-28 19:57:26 UTC
 +++ source/lib/allocators/page_aligned.cpp
-@@ -49,7 +49,7 @@ static const int mmap_flags = MAP_PRIVAT
+@@ -49,7 +49,7 @@ static const int mmap_flags = MAP_PRIVATE|MAP_ANONYMOU
  Status mem_Reserve(size_t size, u8** pp)
  {
  	errno = 0;
@@ -9,7 +9,7 @@
  	*pp = (u8*)ret;
  	return StatusFromMap(ret);
  }
-@@ -76,7 +76,7 @@ Status mem_Commit(u8* p, size_t size, in
+@@ -76,7 +76,7 @@ Status mem_Commit(u8* p, size_t size, int prot)
  Status mem_Decommit(u8* p, size_t size)
  {
  	errno = 0;

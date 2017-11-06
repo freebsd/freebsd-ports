@@ -18,7 +18,12 @@ USES=		cmake
 CMAKE_ARGS=	-DENABLE_BUNDLED_MSGPUCK=false
 
 BROKEN_aarch64=		Fails to compile: clang compiler does not support -march=native
+BROKEN_armv6=		Fails to compile: clang compiler does not support -march=native
 BROKEN_mips64=		Fails to compile: clang compiler does not support -march=native
+BROKEN_powerpc64=	Fails to compile: clang compiler does not support -march=native
 BROKEN_sparc64=		Fails to compile: clang compiler does not support -march=native
+
+post-patch:
+	@${REINPLACE_CMD} -e '/-O3 -march=native/d' ${WRKSRC}/CMakeLists.txt
 
 .include <bsd.port.mk>

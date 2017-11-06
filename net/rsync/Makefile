@@ -4,12 +4,12 @@
 PORTNAME=	rsync
 PORTVERSION=	3.1.2
 CATEGORIES=	net ipv6
-PORTREVISION=	6
+PORTREVISION=	7
 MASTER_SITES=	http://rsync.samba.org/ftp/rsync/ \
-		ftp://ftp.samba.org/pub/rsync/ \
-		ftp://ftp.sunet.se/pub/unix/admin/rsync/  \
+		https://rsync.samba.org/ftp/rsync/ \
 		ftp://ftp.fu-berlin.de/pub/unix/network/rsync/ \
 		http://www.mirrorservice.org/sites/rsync.samba.org/ \
+		https://www.mirrorservice.org/sites/rsync.samba.org/ \
 		LOCAL/ehaupt/rsync
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
@@ -18,7 +18,8 @@ COMMENT=	Network file distribution/synchronization utility
 
 LICENSE=	GPLv3
 
-USES=		cpe
+USES=		cpe shebangfix
+SHEBANG_FILES=	support/rrsync
 
 CPE_VENDOR=	samba
 CPE_PRODUCT=	rsync
@@ -29,6 +30,7 @@ USE_RC_SUBR=	rsyncd
 SUB_LIST=	NAME=rsyncd
 
 INSTALL_TARGET=	install-strip
+TEST_TARGET=	check
 
 CONFIGURE_ARGS=	--disable-debug --enable-ipv6 \
 		--with-rsyncd-conf=${ETCDIR}/rsyncd.conf
@@ -79,9 +81,14 @@ POPT_PORT_CONFIGURE_OFF=	--with-included-popt
 SSH_CONFIGURE_ON=	--with-rsh=ssh
 SSH_CONFIGURE_OFF=	--with-rsh=rsh
 
-.include <bsd.port.options.mk>
+ACL_DISTFILES=		${PORTNAME}-patches-${PORTVERSION}${EXTRACT_SUFX}
+ATIMES_DISTFILES=	${PORTNAME}-patches-${PORTVERSION}${EXTRACT_SUFX}
+FLAGS_DISTFILES=	${PORTNAME}-patches-${PORTVERSION}${EXTRACT_SUFX}
+ICONV_DISTFILES=	${PORTNAME}-patches-${PORTVERSION}${EXTRACT_SUFX}
+RENAMED_DISTFILES=	${PORTNAME}-patches-${PORTVERSION}${EXTRACT_SUFX}
+TIMELIMIT_DISTFILES=	${PORTNAME}-patches-${PORTVERSION}${EXTRACT_SUFX}
 
-.if ${PORT_OPTIONS:MICONV} || ${PORT_OPTIONS:MFLAGS} || ${PORT_OPTIONS:MACL} || make(makesum) || ${PORT_OPTIONS:MTIMELIMIT} || ${PORT_OPTIONS:MATIMES} || ${PORT_OPTIONS:MRENAMED}
+.if make(makesum)
 DISTFILES+=	${PORTNAME}-patches-${PORTVERSION}${EXTRACT_SUFX}
 .endif
 
@@ -95,14 +102,13 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|perl.*|${DO_NADA}|' ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's:/etc/:${ETCDIR}/:g'  \
 		${WRKSRC}/rsync.h ${WRKSRC}/rsync.1 ${WRKSRC}/rsyncd.conf.5
+	@${REINPLACE_CMD} -e 's|/usr/bin/rsync|${PREFIX}/bin/rsync|g' ${WRKSRC}/support/rrsync
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${ETCDIR}
 	${INSTALL_DATA} ${FILESDIR}/rsyncd.conf.sample ${STAGEDIR}${ETCDIR}/
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
-
-test: build
-	@(cd ${WRKSRC} && ${MAKE_CMD} check)
+	${INSTALL_SCRIPT} ${WRKSRC}/support/rrsync ${STAGEDIR}${PREFIX}/sbin
 
 .include <bsd.port.post.mk>

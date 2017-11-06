@@ -3,6 +3,7 @@ bin/zstd
 bin/zstdcat
 bin/zstdgrep
 bin/zstdless
+bin/zstdmt
 include/zbuff.h
 include/zdict.h
 include/zstd.h
@@ -10,7 +11,7 @@ include/zstd_errors.h
 lib/libzstd.a
 lib/libzstd.so
 lib/libzstd.so.1
-lib/libzstd.so.%%LIBVER%%
+lib/libzstd.so.%%PORTVERSION%%
 libdata/pkgconfig/libzstd.pc
 man/man1/unzstd.1.gz
 man/man1/zstd.1.gz

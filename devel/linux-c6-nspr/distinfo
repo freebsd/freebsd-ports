@@ -1,0 +1,7 @@
+TIMESTAMP = 1492275686
+SHA256 (centos/nspr-4.13.1-1.el6.i686.rpm) = dfc2c09ecb8adc4b49ddc8f78d98f291c99ec188346729f7bbdf621f41b169ee
+SIZE (centos/nspr-4.13.1-1.el6.i686.rpm) = 119208
+SHA256 (centos/nspr-4.13.1-1.el6.x86_64.rpm) = b67fe5b7acfbc9114b0a3f7a944524e996c7a8cd5d3f4e193f35e2395d3f16cc
+SIZE (centos/nspr-4.13.1-1.el6.x86_64.rpm) = 116544
+SHA256 (centos/nspr-4.13.1-1.el6.src.rpm) = 0b82fbf734df7bf4804aa118665eca30dd93932061364f47d01d13f8d403c28c
+SIZE (centos/nspr-4.13.1-1.el6.src.rpm) = 1152700

@@ -15,11 +15,14 @@ DISTNAME=	${PORTNAME}-gnome_${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lila Icons for Gnome
 
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/Lila/LICENSE
+
 RESTRICTED=	${REASON}
 
 NO_WRKSUBDIR=	yes
 
-USES=	tar:bzip2
+USES=		tar:bzip2
 
 .include "${.CURDIR}/../gnome-icons/bsd.gnome-icons.mk"
 .include <bsd.port.mk>

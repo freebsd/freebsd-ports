@@ -1,0 +1,4 @@
+Dynamic bindings to SDL 2 version 2.0.5, SDL2_image, SDL2_mixer, SDL2_ttf, and 
+SDL2_net for the D Programming Language.
+
+WWW: https://github.com/DerelictOrg/DerelictSDL2

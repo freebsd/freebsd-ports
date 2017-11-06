@@ -2,20 +2,20 @@
 # $FreeBSD$
 
 PORTNAME=	prawn-graph
-PORTVERSION=	0.0.4
+PORTVERSION=	1.0.6
 CATEGORIES=	print rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Draw basic graphs and charts natively in your PDFs
 
-LICENSE=	GPLv2 RUBY
-LICENSE_COMB=	dual
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	rubygem-prawn>=0:print/rubygem-prawn
+RUN_DEPENDS=	rubygem-prawn>=0.11.1:print/rubygem-prawn \
+		rubygem-prawn_shapes>=1.2:print/rubygem-prawn_shapes
 
 NO_ARCH=	yes
-
 USE_RUBY=	yes
 USES=		gem
 

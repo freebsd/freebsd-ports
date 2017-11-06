@@ -10,6 +10,8 @@
 %%SITE_PERL%%/HTTP/Status.pm
 %%PERL5_MAN3%%/HTTP::Config.3.gz
 %%PERL5_MAN3%%/HTTP::Headers.3.gz
+%%PERL5_MAN3%%/HTTP::Headers::Auth.3.gz
+%%PERL5_MAN3%%/HTTP::Headers::ETag.3.gz
 %%PERL5_MAN3%%/HTTP::Headers::Util.3.gz
 %%PERL5_MAN3%%/HTTP::Message.3.gz
 %%PERL5_MAN3%%/HTTP::Request.3.gz

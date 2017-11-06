@@ -3,7 +3,7 @@
 
 PORTNAME=	lightzone
 PORTVERSION=	4.1.7
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	graphics java
 DIST_SUBDIR=	${PORTNAME}
 
@@ -21,6 +21,8 @@ BUILD_DEPENDS=	jhindexer:java/javahelp \
 LIB_DEPENDS=	liblcms2.so:graphics/lcms2 \
 		libtiff.so:graphics/tiff
 RUN_DEPENDS=	jhindexer:java/javahelp
+
+BROKEN_armv6=		fails to compile: build.xml: exec returned: 1
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	ktgw0316

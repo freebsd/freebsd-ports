@@ -71,6 +71,7 @@ lib/libKF5Parts.so
 lib/libKF5Parts.so.5
 lib/libKF5Parts.so.%%KDE_FRAMEWORKS_VERSION%%
 %%QT_MKSPECDIR%%/modules/qt_KParts.pri
+share/kdevappwizard/templates/kpartsapp.tar.bz2
 share/kservicetypes5/browserview.desktop
 share/kservicetypes5/kpart.desktop
 share/kservicetypes5/krop.desktop

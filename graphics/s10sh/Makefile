@@ -3,7 +3,7 @@
 
 PORTNAME=	s10sh
 PORTVERSION=	0.2.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.reynoldsnet.org/s10sh/ \
 		http://www.edwinh.org/s10sh/
@@ -15,6 +15,7 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BROKEN_aarch64=	Fails to build: error: can not find the byte order for this architecture, fix bytesex.h
+BROKEN_armv6=	Fails to build: error: can not find the byte order for this architecture, fix bytesex.h
 
 USES=		ncurses readline
 

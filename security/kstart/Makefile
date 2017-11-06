@@ -4,7 +4,8 @@
 PORTNAME=	kstart
 DISTVERSION=	4.2
 CATEGORIES=	security
-MASTER_SITES=	http://archives.eyrie.org/software/kerberos/
+MASTER_SITES=	http://archives.eyrie.org/software/kerberos/ \
+		ZI
 
 MAINTAINER=	zi@FreeBSD.org
 COMMENT=	Automated Kerberos ticket cache and keytab management utilities

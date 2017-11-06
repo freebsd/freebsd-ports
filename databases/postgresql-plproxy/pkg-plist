@@ -1,7 +1,8 @@
 lib/postgresql/plproxy.so
-%%NEW_CONTRIB_DIR%%share/postgresql/extension/plproxy--unpackaged--2.5.0.sql
-%%NEW_CONTRIB_DIR%%share/postgresql/extension/plproxy--2.3.0--2.5.0.sql
-%%NEW_CONTRIB_DIR%%share/postgresql/extension/plproxy--2.4.0--2.5.0.sql
-%%NEW_CONTRIB_DIR%%share/postgresql/extension/plproxy--2.5.0.sql
-%%NEW_CONTRIB_DIR%%share/postgresql/extension/plproxy.control
-%%OLD_CONTRIB_DIR%%share/postgresql/contrib/plproxy.sql
+share/postgresql/extension/plproxy--2.3.0--2.7.0.sql
+share/postgresql/extension/plproxy--2.4.0--2.7.0.sql
+share/postgresql/extension/plproxy--2.5.0--2.7.0.sql
+share/postgresql/extension/plproxy--2.6.0--2.7.0.sql
+share/postgresql/extension/plproxy--2.7.0.sql
+share/postgresql/extension/plproxy--unpackaged--2.7.0.sql
+share/postgresql/extension/plproxy.control

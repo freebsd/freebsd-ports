@@ -6,14 +6,13 @@ PORTVERSION=	0.1.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 
-MAINTAINER=	t@tobik.me
+MAINTAINER=	tobik@FreeBSD.org
 COMMENT=	Acer Aspire One fan control
 
 LICENSE=	GPLv2
 
 USES=		kmod uidfix
 KMODNAME=	acerhdf
-KERN_DEBUGDIR=
 MANDIR=		${PREFIX}/man/man4
 
 USE_GITHUB=	yes

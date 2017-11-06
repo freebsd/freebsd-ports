@@ -68,6 +68,8 @@ do-install:
 .endfor
 	@${MKDIR} ${STAGEDIR}${PREFIX}/${ICONSDIR}/cvsweb
 	${INSTALL_DATA} ${WRKSRC}/icons/* ${STAGEDIR}${PREFIX}/${ICONSDIR}/cvsweb/
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in ChangeLog INSTALL README README.FreeBSD TODO TODO.FreeBSD
 	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}/

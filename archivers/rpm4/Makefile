@@ -2,14 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	rpm
-PORTVERSION=	4.12.0.1
-PORTREVISION=	4
+PORTVERSION=	4.13.0.1
 CATEGORIES=	archivers
-MASTER_SITES=	http://rpm.org/releases/rpm-${PORTVERSION:R:R}.x/
+MASTER_SITES=	http://ftp.rpm.org/releases/rpm-${PORTVERSION:R:R}.x/
 PKGNAMESUFFIX=	4
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	Red Hat Package Manager
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libpopt.so:devel/popt \
 		libnss3.so:security/nss
@@ -24,9 +26,7 @@ SHEBANG_FILES=	scripts/brp-python-bytecompile scripts/check-prereqs \
 		scripts/check-rpaths-worker scripts/pythondeps.sh \
 		scripts/mono-find-requires scripts/mono-find-provides \
 		scripts/pkgconfigdeps.sh scripts/fontconfig.prov \
-		scripts/rpmdb_loadcvt \
-		scripts/perl.prov scripts/perl.req scripts/perldeps.pl \
-		scripts/osgideps.pl scripts/tcl.req \
+		scripts/rpmdb_loadcvt scripts/perl.prov scripts/perl.req  \
 		python/rpm/transaction.py
 CONFIGURE_ARGS=	--with-external-db \
 		--without-db \

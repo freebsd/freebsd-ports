@@ -2,18 +2,17 @@
 # $FreeBSD$
 
 PORTNAME=	citrix_ica
-PORTVERSION=	13.3.0
-PORTREVISION=	2
+PORTVERSION=	13.6.0
 CATEGORIES=	net comms linux
 MASTER_SITES=	#
-DISTNAME=	linuxx86-${PORTVERSION}.344519
+DISTNAME=	linuxx86-${PORTVERSION}.10243651
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Citrix(R) Presentation Server(TM) client
 
 ONLY_FOR_ARCHS=	i386 amd64
-USES=		linux webplugin:linux
-USE_LINUX=	alsalib gtk2 openmotif
+USES=		fakeroot linux webplugin:linux
+USE_LINUX=	alsalib gtk2 libxml2 openmotif
 WEBPLUGIN_DIR=	${PREFIX}/ICAClient
 WEBPLUGIN_FILES=	npica.so
 RESTRICTED=	License prohibits redistribution
@@ -67,9 +66,9 @@ post-patch:
 		-e 's|^ClientAudio=On|ClientAudio=Off|' \
 		-e 's|^FlashV2=On|FlashV2=Off|' \
 			${WRKSRC}/linuxx86/linuxx86.cor/nls/*/module.ini
+	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${STAGEDIR}${PREFIX}|g' ${WRKSRC}/linuxx86/hinst
 
 do-install:
-	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${STAGEDIR}${PREFIX}|g' ${WRKSRC}/linuxx86/hinst
 	@if (test -d "${CDIR}") ; \
 	then \
 		${ECHO} "-----------------------------------------------------------" ; \
@@ -80,7 +79,7 @@ do-install:
 		${ECHO} "-----------------------------------------------------------" ; \
 		${FALSE} ; \
 	fi
-	cd ${WRKSRC} && ${SH} -c './setupwfc'
+	cd ${WRKSRC} && ${FAKEROOT} ${SH} -c './setupwfc'
 	${INSTALL_SCRIPT} ${WRKDIR}/wfcmgr ${STAGEDIR}${PREFIX}/bin/wfcmgr
 	${INSTALL_SCRIPT} ${WRKDIR}/wfica ${STAGEDIR}${PREFIX}/bin/wfica
 # XXX: This is missing a "${BRANDELF} -t Linux <executables>".

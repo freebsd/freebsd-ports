@@ -4,6 +4,7 @@
 PORTNAME=	opensmtpd
 PORTVERSION=	201606220754
 DISTVERSIONSUFFIX=	p1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.opensmtpd.org/archives/ \
@@ -16,7 +17,7 @@ COMMENT=	Security- and simplicity-focused SMTP server from OpenBSD
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libevent.so:devel/libevent2
+LIB_DEPENDS=	libevent.so:devel/libevent
 
 OPTIONS_DEFINE=		CA_BUNDLE LIBASR MAILERCONF PAM SSL_PORT TABLE_DB
 
@@ -28,7 +29,7 @@ MAILERCONF_DESC=	Activate OpenSMTPD in mailer.conf(5)
 SSL_PORT_DESC=		SSL/TLS support via OpenSSL/LibreSSL from port
 TABLE_DB_DESC=		Build table-db plugin (aliases)
 
-USES=		cpe libtool ssl
+USES=		cpe groff libtool ssl
 GNU_CONFIGURE=	yes
 
 CPE_VENDOR=	openbsd

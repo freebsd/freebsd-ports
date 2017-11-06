@@ -6,6 +6,8 @@ bin/%%GCC_TARGET%%-gcc-%%GCC_VERSION%%
 bin/%%GCC_TARGET%%-gcc-ar
 bin/%%GCC_TARGET%%-gcc-nm
 bin/%%GCC_TARGET%%-gcc-ranlib
+bin/%%GCC_TARGET%%-gcov
+bin/%%GCC_TARGET%%-gcov-tool
 lib/gcc/%%GCC_TARGET%%/%%GCC_VERSION%%/include-fixed/README
 lib/gcc/%%GCC_TARGET%%/%%GCC_VERSION%%/include-fixed/limits.h
 lib/gcc/%%GCC_TARGET%%/%%GCC_VERSION%%/include-fixed/netinet/ip_fil.h
@@ -489,3 +491,7 @@ libexec/gcc/%%GCC_TARGET%%/%%GCC_VERSION%%/liblto_plugin.so.0.0.0
 libexec/gcc/%%GCC_TARGET%%/%%GCC_VERSION%%/lto-wrapper
 libexec/gcc/%%GCC_TARGET%%/%%GCC_VERSION%%/lto1
 libexec/gcc/%%GCC_TARGET%%/%%GCC_VERSION%%/plugin/gengtype
+man/man1/%%GCC_TARGET%%-cpp.1.gz
+man/man1/%%GCC_TARGET%%-g++.1.gz
+man/man1/%%GCC_TARGET%%-gcc.1.gz
+man/man1/%%GCC_TARGET%%-gcov.1.gz

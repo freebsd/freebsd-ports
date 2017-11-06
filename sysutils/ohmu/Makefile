@@ -2,7 +2,7 @@
 
 PORTNAME=	ohmu
 PORTVERSION=	1.1.0
-PORTREVISION=	2
+PORTREVISION=	3
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 
@@ -20,5 +20,10 @@ GH_ACCOUNT=	paul-nechifor
 USES=		python
 USE_PYTHON=	autoplist distutils
 NO_ARCH=	yes
+
+pre-configure:
+	${REINPLACE_CMD} -e 's/scandir==1.3/scandir>=1.3/' \
+		-e 's/future==0.15.2/future>=0.15.2/' \
+		${WRKSRC}/setup.py
 
 .include <bsd.port.mk>

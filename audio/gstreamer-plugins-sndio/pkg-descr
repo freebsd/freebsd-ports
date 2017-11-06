@@ -1,0 +1,7 @@
+The GStreamer sndio plugin allows applications that use GStreamer 0.10
+to play and record through sndio.
+
+This includes several games, audio players like Exaile, and audio
+editors like Jokosher.
+
+WWW: https://github.com/t6/gstreamer-plugins-sndio

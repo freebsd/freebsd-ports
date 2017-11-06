@@ -3,7 +3,7 @@
 
 PORTNAME=	raknet
 PORTVERSION=	3.9.2
-PORTREVISION=	4
+PORTREVISION=	6
 PORTEPOCH=	1
 CATEGORIES=	devel net
 MASTER_SITES=	http://www.jenkinssoftware.com/raknet/downloads/ \
@@ -24,6 +24,9 @@ LICENSE_FILE_SpecialAuth=	${FILESDIR}/SpecialAuth.mbox
 LICENSE_PERMS_SpecialAuth=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 LEGAL_TEXT=	Special authorization granted to distribute version 3.x under GPLv3
+
+NOT_FOR_ARCHS=		aarch64 mips mips64
+NOT_FOR_ARCHS_REASON=	fails to compile: error: Add your platform to the list
 
 NO_WRKSUBDIR=	yes
 

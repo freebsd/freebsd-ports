@@ -3,7 +3,7 @@
 
 PORTNAME=	xplanet
 PORTVERSION=	1.3.0
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	astro geography
 MASTER_SITES=	SF
 
@@ -11,11 +11,11 @@ MAINTAINER=	novel@FreeBSD.org
 COMMENT=	Draw pictures of the earth textured by an image
 
 GNU_CONFIGURE=	yes
-USES=		iconv
+USES=		iconv localbase
 USE_XORG=	xt xscrnsaver
 CONFIGURE_ARGS=	--with-map-extension=jpg
-CPPFLAGS+=	-I${LOCALBASE}/include
-LIBS+=		-L${LOCALBASE}/lib -lm
+CPPFLAGS+=	-I${LOCALBASE}/include/netpbm
+LIBS+=		-lm
 
 OPTIONS_DEFINE=	FREETYPE PANGO GIF JPEG PNG PNM TIFF
 OPTIONS_DEFAULT=	FREETYPE PANGO GIF JPEG PNG PNM TIFF

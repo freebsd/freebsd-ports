@@ -1,26 +1,28 @@
 --- app/cms.c.orig
 +++ app/cms.c
-@@ -37,16 +37,9 @@
+@@ -37,17 +37,11 @@
  #endif
  
  #ifdef HAVE_OY
 -#include <oyranos/oyranos.h>
 -#ifndef OYRANOS_VERSION
 -#define OYRANOS_VERSION 0
--#endif
++#include <oyranos_conversion.h>
++#include <oyranos_devices.h>
++#include <oyObject_s.h>
++#include <oyProfiles_s.h>
+ #endif
 -#if OYRANOS_VERSION < 108
 -#include <arpa/inet.h>  /* ntohl */
 -#include <oyranos/oyranos_monitor.h>
 -#else
 -#include <oyranos/oyranos_alpha.h>
 -#endif
-+#include <oyranos_devices.h>
-+#include <oyObject_s.h>
-+#include <oyProfiles_s.h>
- #endif
+-#endif
  
  #include "config.h"
-@@ -114,7 +107,7 @@
+ #include "../lib/version.h"
+@@ -114,7 +108,7 @@
      cmsHPROFILE handle;
      char       *data;                   /* save original data for profile i/o */
      size_t      size;
@@ -29,7 +31,7 @@
  };
  
  /* same for transform */
-@@ -348,7 +341,7 @@
+@@ -348,7 +342,7 @@
  
  #ifdef HAVE_OY
  # if OYRANOS_VERSION > 107
@@ -38,7 +40,7 @@
  {
    char* text = 0, *pos = 0;
    va_list list;
-@@ -359,10 +352,10 @@
+@@ -359,10 +353,10 @@
      return 0;
  
  
@@ -52,7 +54,7 @@
    }
  
    text = (char*)calloc(sizeof(char), 4096);
-@@ -463,7 +456,7 @@
+@@ -463,7 +457,7 @@
        const char *display_name = gdk_get_display ();
  
        test = oyGetMonitorProfile( display_name, &test_size, my_alloc_func );
@@ -61,7 +63,7 @@
                test_size );
  
        if (test == NULL || !test_size)
-@@ -566,36 +559,36 @@
+@@ -566,36 +560,36 @@
  
  const char* 
  cms_get_color_space_name (cmsHPROFILE hProfile)
@@ -125,7 +127,7 @@
      }
  
      return name;
-@@ -603,17 +596,16 @@
+@@ -603,17 +597,16 @@
  
  const char**
  cms_get_color_space_channel_names (cmsHPROFILE hProfile)
@@ -147,7 +149,7 @@
  
      ret = (const char**) name;
      sprintf( name[3],_("Alpha"));
-@@ -683,7 +675,7 @@
+@@ -683,7 +676,7 @@
  
  const char*
  cms_get_device_class_name (cmsHPROFILE hProfile)
@@ -156,7 +158,26 @@
  
      switch (cmsGetDeviceClass (hProfile))
      {
-@@ -1193,6 +1185,8 @@
+@@ -939,13 +932,16 @@
+ #ifdef HAVE_OY
+     if(cms_oyranos)
+     {
+-# if OYRANOS_VERSION > 107
++# if OYRANOS_VERSION > 905
+       oyPROFILE_e type = oyDEFAULT_PROFILE_START;
+       int size, i;
+       oyProfile_s * temp_prof = 0;
+       oyProfiles_s * iccs = 0;
++      uint32_t icc_profile_flags =oyICCProfileSelectionFlagsFromOptions(
++                                      OY_CMM_STD, "//" OY_TYPE_STD "/icc_color",
++                                                                     NULL, 0 );
+ 
+-      iccs = oyProfiles_ForStd( type, 0, 0 );
++      iccs = oyProfiles_ForStd( type, icc_profile_flags, 0, 0 );
+ 
+       size = oyProfiles_Count( iccs );
+       for( i = 0; i < size; ++i)
+@@ -1193,6 +1189,8 @@
   */
  const char * cms_get_profile_cspace ( CMSProfile         * profile )
  {
@@ -165,7 +186,7 @@
    return profile->cspace;
  }
  
-@@ -1222,22 +1216,21 @@
+@@ -1222,22 +1220,21 @@
  #ifdef HAVE_OY
      if ( profile == NULL )
      {
@@ -190,7 +211,7 @@
          char *ptr = NULL;
  
          ptr = strrchr(file_name, OY_SLASH_C);
-@@ -1251,12 +1244,13 @@
+@@ -1251,12 +1248,13 @@
              fullFileName = (char*) calloc (MAX_PATH, sizeof(char));;
              sprintf(fullFileName, "%s%s%s", pp_name, OY_SLASH, ptr);;
            }
@@ -206,7 +227,7 @@
      }
  #endif
  
-@@ -1282,8 +1276,7 @@
+@@ -1282,8 +1280,7 @@
      return_value = g_new(CMSProfile, 1);
      return_value->cache_key = strdup(cms_get_profile_keyname(profile,mem));
      return_value->handle = profile;
@@ -216,7 +237,7 @@
  
      /* save an copy of the original icc profile to mem */
      return_value->size = 0;
-@@ -1336,8 +1329,7 @@
+@@ -1336,8 +1333,7 @@
      return_value = g_new(CMSProfile, 1);
      return_value->cache_key = strdup(cms_get_profile_keyname(profile,mem_pointer));
      return_value->handle = profile;
@@ -226,7 +247,7 @@
  
      cache_entry = g_new(ProfileCacheEntry, 1);
      cache_entry->ref_count = 1;
-@@ -2689,7 +2681,7 @@
+@@ -2689,7 +2685,7 @@
  
      GSList *profile_file_names = 0;
      GSList *iterator = 0;
@@ -235,7 +256,7 @@
      CMSProfile *current_profile;
      CMSProfileInfo *current_profile_info;      
      int pos = can_select_none ? 1 : 0, select_pos = -1;
-@@ -2720,16 +2712,20 @@
+@@ -2720,16 +2716,20 @@
  
      while (iterator != NULL)
      {

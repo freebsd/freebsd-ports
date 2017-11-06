@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	lxde-common
-PORTVERSION=	0.5.5
-PORTREVISION=	6
+PORTVERSION=	0.99.2
 CATEGORIES=	misc
-MASTER_SITES=	SF/lxde/${PORTNAME}%20%28default%20config%29/LXDE%20Common%20${PORTVERSION}/
+MASTER_SITES=	SF/lxde/${PORTNAME}%20%28default%20config%29/${PORTNAME}%20${PORTVERSION:R}/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	LXDE Common files
@@ -13,31 +12,25 @@ COMMENT=	LXDE Common files
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gmake iconv
-USE_GNOME=	gtk20
+RUN_DEPENDS=	lxde-icon-theme>=0:x11-themes/lxde-icon-theme \
+	gnome-themes-standard>=3.18:x11-themes/gnome-themes-standard \
+	xscreensaver:x11/xscreensaver
+
+USES=		gettext-tools gmake localbase tar:xz
+USE_GNOME=	gtk20 intltool
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib" \
-		GMSGFMT="${LOCALBASE}/bin/msgfmt" \
-		--with-xsession-path=${PREFIX}/share/xsessions \
-		--with-xdg-path=${PREFIX}/share/applications
+CONFIGURE_ARGS+=	--sysconfdir=${PREFIX}/etc \
+	--with-xsession-path=${PREFIX}/share/xsessions
 NO_ARCH=	yes
 
 DATADIR=	${PREFIX}/share/lxde
 INSTALLS_ICONS=	yes
 
-PORTDOCS=	AUTHORS README
-
-OPTIONS_DEFINE=	DOCS
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/desktop.conf \
 		${STAGEDIR}${PREFIX}/etc/xdg/lxsession/LXDE/desktop.conf.sample
 	${INSTALL_DATA} ${WRKSRC}/pcmanfm/pcmanfm.conf \
 		${STAGEDIR}${PREFIX}/etc/xdg/pcmanfm/LXDE/pcmanfm.conf.sample
-
-post-install-DOCS-on:
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

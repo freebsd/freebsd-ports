@@ -3,6 +3,7 @@ bin/dcf77pi-analyze
 bin/readpin
 @sample %%ETCDIR%%/config.txt.sample
 include/dcf77pi/bits1to14.h
+include/dcf77pi/calendar.h
 include/dcf77pi/config.h
 include/dcf77pi/decode_alarm.h
 include/dcf77pi/decode_time.h

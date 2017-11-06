@@ -3,7 +3,7 @@
 
 PORTNAME=	gdm
 PORTVERSION=	3.16.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11 gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -14,7 +14,7 @@ COMMENT=	GNOME 3 version of xdm display manager
 BUILD_DEPENDS=	zenity>=3.0.0:x11/zenity \
 		itstool:textproc/itstool \
 		iso-codes>=0:misc/iso-codes
-LIB_DEPENDS=	libck-connector.so:sysutils/consolekit \
+LIB_DEPENDS=	libck-connector.so:sysutils/consolekit2 \
 		libdbus-glib-1.so:devel/dbus-glib \
 		libupower-glib.so:sysutils/upower \
 		libnss3.so:security/nss \
@@ -41,7 +41,7 @@ GROUPS=		gdm
 
 PORTSCOUT=	limitw:1,even
 
-USES=		cpe execinfo gettext gmake libtool pathfix pkgconfig tar:xz
+USES=		cpe gettext gmake libtool pathfix pkgconfig tar:xz
 CPE_VENDOR=	gnome
 CPE_VENDOR=	gnome_display_manager
 USE_GNOME=	dconf intlhack introspection librsvg2
@@ -92,6 +92,8 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 GNOME_LOCALSTATEDIR=	/var
 
 OPTIONS_DEFINE=	IPV6
+KEYRING_RUN_DEPENDS=	${LOCALBASE}/lib/pam_gnome_keyring.so:security/gnome-keyring
+
 IPV6_CONFIGURE_ENABLE=	ipv6
 
 .include <bsd.port.options.mk>

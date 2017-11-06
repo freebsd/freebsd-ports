@@ -20,7 +20,7 @@ CMAKE_ARGS=	-DSYSCONF_INSTALL_DIR=${PREFIX}/etc \
 		-DLIB_DIR=${PREFIX}/lib
 LDFLAGS+=	-L${LOCALBASE}/lib
 GLIB_SCHEMAS=	org.freedesktop.IBus.Chewing.gschema.xml
-USES=		cmake gettext pkgconfig
+USES=		cmake:noninja gettext pkgconfig
 USE_GNOME=	gtk20
 USE_XORG=	xtst
 

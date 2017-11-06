@@ -1,2 +1,2 @@
 If you wish to use the NMBLOOKUP option within sdig, you must
-install net/samba-nmblookup (or net/samba).
+install samba.

@@ -1,11 +1,10 @@
-@comment file listing
 etc/asound.conf
-lib/libasound.so.2
-lib/libasound.so.2.0.0
 usr/bin/aserver
 usr/lib/alsa-lib/smixer/smixer-ac97.so
 usr/lib/alsa-lib/smixer/smixer-hda.so
 usr/lib/alsa-lib/smixer/smixer-sbase.so
+usr/lib/libasound.so.2
+usr/lib/libasound.so.2.0.0
 usr/share/alsa/alsa.conf
 usr/share/alsa/alsa.conf.d/README
 usr/share/alsa/cards/AACI.conf
@@ -118,7 +117,7 @@ usr/share/alsa/ucm/SDP4430/voiceCall
 usr/share/alsa/ucm/broadwell-rt286/HiFi
 usr/share/alsa/ucm/broadwell-rt286/broadwell-rt286.conf
 usr/share/alsa/ucm/tegraalc5632/tegraalc5632.conf
-%%PORTDOCS%%usr/share/doc/alsa-lib-1.1.0/COPYING
-%%PORTDOCS%%usr/share/doc/alsa-lib-1.1.0/ChangeLog
-%%PORTDOCS%%usr/share/doc/alsa-lib-1.1.0/TODO
-%%PORTDOCS%%usr/share/doc/alsa-lib-1.1.0/asoundrc.txt
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%%%DOCSDIR%%/asoundrc.txt

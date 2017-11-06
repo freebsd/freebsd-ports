@@ -1,4 +1,2 @@
-@unexec %%SED%% -i '' '/LoadModule %%AP_NAME%%_module/d' %D/%%APACHEETCDIR%%/httpd.conf
 %%APACHEMODDIR%%/%%AP_MODULE%%
-@exec %D/sbin/apxs -e -a -n %%AP_NAME%% %D/%F
-@unexec echo "Don't forget to remove all %%AP_NAME%%-related directives in your httpd.conf"
+@sample %%APACHEETCDIR%%/modules.d/200_mod_mpm_itk.conf.sample

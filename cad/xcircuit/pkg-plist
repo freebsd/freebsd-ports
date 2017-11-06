@@ -29,6 +29,7 @@ man/man1/xcircuit.1.gz
 %%DATADIR%%/boot_xcircuit.tcl
 %%DATADIR%%/bparams.tcl
 %%DATADIR%%/console.tcl
+%%DATADIR%%/cyrillic.enc
 %%DATADIR%%/digital.lps
 %%DATADIR%%/digitallib.lps
 %%DATADIR%%/digitaltcl.lps
@@ -36,6 +37,7 @@ man/man1/xcircuit.1.gz
 %%DATADIR%%/files.tcl
 %%DATADIR%%/fonts/courier.lps
 %%DATADIR%%/fonts/courier.xfe
+%%DATADIR%%/fonts/courier_cyrillic.xfe
 %%DATADIR%%/fonts/courieriso.xfe
 %%DATADIR%%/fonts/courieriso2.lps
 %%DATADIR%%/fonts/courieriso2.xfe
@@ -43,6 +45,7 @@ man/man1/xcircuit.1.gz
 %%DATADIR%%/fonts/courieriso5.xfe
 %%DATADIR%%/fonts/helvetica.lps
 %%DATADIR%%/fonts/helvetica.xfe
+%%DATADIR%%/fonts/helvetica_cyrillic.xfe
 %%DATADIR%%/fonts/helveticaiso.xfe
 %%DATADIR%%/fonts/helveticaiso2.lps
 %%DATADIR%%/fonts/helveticaiso2.xfe
@@ -54,6 +57,7 @@ man/man1/xcircuit.1.gz
 %%DATADIR%%/fonts/symbol.xfe
 %%DATADIR%%/fonts/times_roman.lps
 %%DATADIR%%/fonts/times_roman.xfe
+%%DATADIR%%/fonts/times_roman_cyrillic.xfe
 %%DATADIR%%/fonts/times_romaniso.xfe
 %%DATADIR%%/fonts/times_romaniso2.lps
 %%DATADIR%%/fonts/times_romaniso2.xfe
@@ -61,6 +65,8 @@ man/man1/xcircuit.1.gz
 %%DATADIR%%/fonts/times_romaniso5.xfe
 %%DATADIR%%/generic.lps
 %%DATADIR%%/ic_templates.lps
+%%DATADIR%%/isolatin2.enc
+%%DATADIR%%/isolatin5.enc
 %%DATADIR%%/lgf.lps
 %%DATADIR%%/library.tcl
 %%DATADIR%%/matgen.tcl
@@ -136,3 +142,4 @@ man/man1/xcircuit.1.gz
 %%DATADIR%%/xcircuit.so
 %%DATADIR%%/xcircuit.tcl
 %%DATADIR%%/xcstartup.tcl
+%%DATADIR%%/xspice.lps

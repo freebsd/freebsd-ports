@@ -1,10 +1,10 @@
-%%PERL5_MAN3%%/Tree::Simple::View.3.gz
-%%PERL5_MAN3%%/Tree::Simple::View::ASCII.3.gz
-%%PERL5_MAN3%%/Tree::Simple::View::DHTML.3.gz
-%%PERL5_MAN3%%/Tree::Simple::View::Exceptions.3.gz
-%%PERL5_MAN3%%/Tree::Simple::View::HTML.3.gz
 %%SITE_PERL%%/Tree/Simple/View.pm
 %%SITE_PERL%%/Tree/Simple/View/ASCII.pm
 %%SITE_PERL%%/Tree/Simple/View/DHTML.pm
 %%SITE_PERL%%/Tree/Simple/View/Exceptions.pm
 %%SITE_PERL%%/Tree/Simple/View/HTML.pm
+%%PERL5_MAN3%%/Tree::Simple::View.3.gz
+%%PERL5_MAN3%%/Tree::Simple::View::ASCII.3.gz
+%%PERL5_MAN3%%/Tree::Simple::View::DHTML.3.gz
+%%PERL5_MAN3%%/Tree::Simple::View::Exceptions.3.gz
+%%PERL5_MAN3%%/Tree::Simple::View::HTML.3.gz

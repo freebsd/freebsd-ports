@@ -2,6 +2,7 @@
 
 PORTNAME=	epl.el
 PORTVERSION=	0.8
+PORTREVISION=	1
 CATEGORIES=	devel elisp
 
 MAINTAINER=	hrs@FreeBSD.org

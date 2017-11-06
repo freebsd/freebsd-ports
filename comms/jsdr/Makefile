@@ -11,6 +11,8 @@ MASTER_SITES=	http://www.sdr-j.tk/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SDR tools for RTL2832-based USB sticks
 
+BROKEN=		No public distfiles
+
 LICENSE=	GPLv2
 
 LIB_DEPENDS+=	libqwt.so:x11-toolkits/qwt5 \

@@ -3,7 +3,7 @@
 
 PORTNAME=	bino
 PORTVERSION=	1.4.2
-PORTREVISION=	6
+PORTREVISION=	11
 CATEGORIES=	multimedia
 MASTER_SITES=	http://download.savannah.nongnu.org/releases/bino/ http://levsha.me/ports/distfiles/
 
@@ -33,10 +33,5 @@ OPTIONS_SUB=	yes
 
 NLS_USES=	gettext
 NLS_CONFIGURE_ENABLE=nls
-
-# fixes build on non UTF-8 enviroments
-post-patch:
-	@${REINPLACE_CMD} -e 's|echo $<|LANG=C; LC_ALL=C; &|' \
-		${WRKSRC}/src/Makefile.in
 
 .include <bsd.port.mk>

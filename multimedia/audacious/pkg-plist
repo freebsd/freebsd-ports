@@ -33,11 +33,11 @@ include/libaudgui/libaudgui.h
 include/libaudgui/list.h
 include/libaudgui/menu.h
 lib/libaudcore.so
-lib/libaudcore.so.4
-lib/libaudcore.so.4.1.0
+lib/libaudcore.so.5
+lib/libaudcore.so.5.0.0
 lib/libaudgui.so
-lib/libaudgui.so.4
-lib/libaudgui.so.4.1.0
+lib/libaudgui.so.5
+lib/libaudgui.so.5.0.0
 lib/libaudtag.so
 lib/libaudtag.so.3
 lib/libaudtag.so.3.0.0

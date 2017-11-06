@@ -2,19 +2,20 @@
 # $FreeBSD$
 
 PORTNAME=	FusionInventory-Agent
-PORTVERSION=	2.3.17
+PORTVERSION=	2.3.20
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	CPAN:GROUSSE
+MASTER_SITE_SUBDIR=	CPAN:GBOUGARD/${PORTNAME}-2320targz
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	vg@FreeBSD.org
 COMMENT=	Agent for OCS Inventory server and FusionInventory for GLPI servers
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	p5-ExtUtils-MakeMaker>=6.59:devel/p5-ExtUtils-MakeMaker \
-		p5-File-Which>=0:sysutils/p5-File-Which \
+BUILD_DEPENDS=	p5-File-Which>=0:sysutils/p5-File-Which \
 		p5-libwww>=0:www/p5-libwww \
 		p5-Net-IP>=0:net-mgmt/p5-Net-IP \
 		p5-UNIVERSAL-require>=0:devel/p5-UNIVERSAL-require \
@@ -35,8 +36,7 @@ TEST_DEPENDS=	p5-POE-Component-Client-Ping>=0:net/p5-POE-Component-Client-Ping \
 		p5-Test-Exception>=0:devel/p5-Test-Exception \
 		p5-Test-MockModule>=0:devel/p5-Test-MockModule \
 		p5-Test-MockObject>=0:devel/p5-Test-MockObject \
-		p5-Test-NoWarnings>=0:devel/p5-Test-NoWarnings \
-		p5-Test-Simple>=0.93:devel/p5-Test-Simple
+		p5-Test-NoWarnings>=0:devel/p5-Test-NoWarnings
 
 CONFLICTS=	p5-FusionInventory-Agent-Task-NetDiscovery-* \
 		p5-FusionInventory-Agent-Task-SNMPQuery-*
@@ -56,6 +56,7 @@ VMWARE_DESC=	VMware hypervisor remote inventory task
 WOL_DESC=	Wake on LAN task
 ZLIB_DESC=	Zlib compression
 
+NO_ARCH=	yes
 USES=		gmake perl5
 USE_PERL5=	configure
 USE_RC_SUBR=    fusioninventory
@@ -74,16 +75,13 @@ DEPLOY_RUN_DEPENDS=	p5-Archive-Extract>=0:archivers/p5-Archive-Extract \
 DMIDECODE_RUN_DEPENDS=	dmidecode:sysutils/dmidecode
 NETDISC_RUN_DEPENDS=	nmap:security/nmap \
 			p5-Net-NBName>=0:net/p5-Net-NBName \
-			p5-Net-SNMP>=0:net-mgmt/p5-Net-SNMP \
-			p5-Thread-Queue>=0:devel/p5-Thread-Queue
+			p5-Net-SNMP>=0:net-mgmt/p5-Net-SNMP
 NETINV_RUN_DEPENDS=	p5-Crypt-DES>=0:security/p5-Crypt-DES \
-			p5-Net-SNMP>=0:net-mgmt/p5-Net-SNMP \
-			p5-Thread-Queue>=0:devel/p5-Thread-Queue
+			p5-Net-SNMP>=0:net-mgmt/p5-Net-SNMP
 PCIUTILS_RUN_DEPENDS+=	lspci:sysutils/pciutils
 SSL_RUN_DEPENDS=	p5-IO-Socket-SSL>=1.14:security/p5-IO-Socket-SSL \
 			p5-LWP-Protocol-https>=0:www/p5-LWP-Protocol-https
 WOL_RUN_DEPENDS=	p5-Net-Write>=0:net/p5-Net-Write
-ZLIB_RUN_DEPENDS=	p5-Compress-Raw-Zlib>=0:archivers/p5-Compress-Raw-Zlib
 
 post-patch:
 	@${FIND} ${WRKSRC} -type f \( -name '*.orig' \) -delete

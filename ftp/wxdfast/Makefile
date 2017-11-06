@@ -14,6 +14,8 @@ COMMENT=	Multithread and multi-platform download manager
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_armv6=		fails to compile: no matching member function for call to 'Read'
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USE_WX=		2.8+

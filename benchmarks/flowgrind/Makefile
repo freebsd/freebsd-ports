@@ -3,10 +3,11 @@
 
 PORTNAME=	flowgrind
 PORTVERSION=	0.8.0
+PORTREVISION=	2
 DISTVERSIONPREFIX=	${PORTNAME}-
 CATEGORIES=	benchmarks
 
-MAINTAINER=	dbaio@bsd.com.br
+MAINTAINER=	dbaio@FreeBSD.org
 COMMENT=	Measure throughput and other metrics for TCP
 
 LICENSE=	GPLv3+

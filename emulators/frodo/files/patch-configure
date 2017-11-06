@@ -1,6 +1,6 @@
---- configure.orig	Wed Jan  2 17:44:11 2002
-+++ configure	Fri Sep  5 21:39:45 2003
-@@ -1602,15 +1602,15 @@
+--- configure.orig	2002-01-02 16:44:11 UTC
++++ configure
+@@ -1602,15 +1602,15 @@ if test "$ac_test_CFLAGS" = set; then
    CFLAGS=$ac_save_CFLAGS
  elif test $ac_cv_prog_cc_g = yes; then
    if test "$GCC" = yes; then
@@ -20,7 +20,7 @@
    fi
  fi
  # Some people use a C++ compiler to compile C.  Since we use `exit',
-@@ -2283,7 +2283,7 @@
+@@ -2283,7 +2283,7 @@ echo "${ECHO_T}no" >&6
  fi
  
  if [ x"$GXX" = "xyes" ]; then

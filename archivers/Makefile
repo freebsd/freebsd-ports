@@ -11,8 +11,10 @@
     SUBDIR += ark
     SUBDIR += atool
     SUBDIR += bicom
+    SUBDIR += brotli
     SUBDIR += bzip
     SUBDIR += bzip2
+    SUBDIR += c-blosc
     SUBDIR += cabextract
     SUBDIR += dact
     SUBDIR += deb2targz
@@ -22,6 +24,7 @@
     SUBDIR += dzip
     SUBDIR += ecm
     SUBDIR += engrampa
+    SUBDIR += erlang-snappy
     SUBDIR += fastjar
     SUBDIR += file-roller
     SUBDIR += fpc-bzip2
@@ -31,6 +34,7 @@
     SUBDIR += gcab
     SUBDIR += gcpio
     SUBDIR += gnome-autoar
+    SUBDIR += go-compress
     SUBDIR += grzip
     SUBDIR += gtar
     SUBDIR += gzip
@@ -50,6 +54,7 @@
     SUBDIR += kf5-karchive
     SUBDIR += kzip
     SUBDIR += laszip
+    SUBDIR += lazperf
     SUBDIR += lbrate
     SUBDIR += lbzip2
     SUBDIR += lcab
@@ -68,7 +73,6 @@
     SUBDIR += libpar2
     SUBDIR += librtfcomp
     SUBDIR += libunrar
-    SUBDIR += libunrar4
     SUBDIR += libunrar5
     SUBDIR += libzip
     SUBDIR += lrzip
@@ -81,7 +85,6 @@
     SUBDIR += lzmalib
     SUBDIR += lzo2
     SUBDIR += lzop
-    SUBDIR += macutils
     SUBDIR += makeself
     SUBDIR += mar
     SUBDIR += minizip
@@ -142,8 +145,8 @@
     SUBDIR += pecl-lzf
     SUBDIR += pecl-phk
     SUBDIR += pecl-rar
-    SUBDIR += pecl-snappy
     SUBDIR += php-horde_lz4
+    SUBDIR += php-snappy
     SUBDIR += php56-bz2
     SUBDIR += php56-phar
     SUBDIR += php56-zip
@@ -152,6 +155,10 @@
     SUBDIR += php70-phar
     SUBDIR += php70-zip
     SUBDIR += php70-zlib
+    SUBDIR += php71-bz2
+    SUBDIR += php71-phar
+    SUBDIR += php71-zip
+    SUBDIR += php71-zlib
     SUBDIR += pigz
     SUBDIR += pixz
     SUBDIR += plzip
@@ -164,12 +171,14 @@
     SUBDIR += py-borgbackup
     SUBDIR += py-brotli
     SUBDIR += py-bz2file
+    SUBDIR += py-czipfile
     SUBDIR += py-libarchive-c
     SUBDIR += py-librtfcomp
     SUBDIR += py-lz4
     SUBDIR += py-lzma
     SUBDIR += py-pyliblzma
     SUBDIR += py-python-lhafile
+    SUBDIR += py-python-lzo
     SUBDIR += py-python-snappy
     SUBDIR += py-rarfile
     SUBDIR += py-rcssmin
@@ -183,15 +192,17 @@
     SUBDIR += rox-archive
     SUBDIR += rpm2cpio
     SUBDIR += rpm4
-    SUBDIR += ruby-lha
     SUBDIR += rubygem-archive-tar-minitar
     SUBDIR += rubygem-archive-zip
     SUBDIR += rubygem-bzip2-ruby
+    SUBDIR += rubygem-fpm
     SUBDIR += rubygem-libarchive
     SUBDIR += rubygem-minitar
+    SUBDIR += rubygem-minitar-cli
     SUBDIR += rubygem-ruby-xz
     SUBDIR += rubygem-rubyzip
     SUBDIR += rubygem-rubyzip2
+    SUBDIR += rubygem-snappy
     SUBDIR += rvm
     SUBDIR += rzip
     SUBDIR += sectar
@@ -205,7 +216,6 @@
     SUBDIR += stuffit
     SUBDIR += szip
     SUBDIR += tardy
-    SUBDIR += tclmkziplib
     SUBDIR += thunar-archive-plugin
     SUBDIR += torrentzip
     SUBDIR += ucl

@@ -1,6 +1,6 @@
---- mysys/default.c.orig	2013-10-01 21:15:03.544135869 +0200
-+++ mysys/default.c	2013-10-01 21:15:38.871375504 +0200
-@@ -89,7 +89,7 @@
+--- mysys/default.c.orig	2017-04-30 11:09:31 UTC
++++ mysys/default.c
+@@ -89,7 +89,7 @@ static my_bool defaults_already_read= FA
  
  /* Which directories are searched for options (and in which order) */
  
@@ -9,7 +9,7 @@
  #define DEFAULT_DIRS_SIZE (MAX_DEFAULT_DIRS + 1)  /* Terminate with NULL */
  static const char **default_directories = NULL;
  
-@@ -785,7 +785,7 @@
+@@ -786,7 +786,7 @@ static int search_default_file_with_ext(
    {
      MY_STAT stat_info;
      if (!my_stat(name,&stat_info,MYF(0)))
@@ -18,7 +18,7 @@
      /*
        Ignore world-writable regular files.
        This is mainly done to protect us to not read a file created by
-@@ -803,6 +803,14 @@
+@@ -804,6 +804,14 @@ static int search_default_file_with_ext(
    if (!(fp= mysql_file_fopen(key_file_cnf, name, O_RDONLY, MYF(0))))
      return 1;					/* Ignore wrong files */
  
@@ -33,7 +33,7 @@
    while (mysql_file_fgets(buff, sizeof(buff) - 1, fp))
    {
      line++;
-@@ -1067,7 +1067,8 @@
+@@ -1068,7 +1076,8 @@ void my_print_default_files(const char *
            if (name[0] == FN_HOMELIB)	/* Add . to filenames in home */
              *end++= '.';
            strxmov(end, conf_file, *ext, " ", NullS);
@@ -43,7 +43,7 @@
          }
        }
      }
-@@ -1226,10 +1226,8 @@
+@@ -1227,10 +1236,8 @@ static const char **init_default_directo
    errors += add_directory(alloc, "/etc/", dirs);
    errors += add_directory(alloc, "/etc/mysql/", dirs);
  

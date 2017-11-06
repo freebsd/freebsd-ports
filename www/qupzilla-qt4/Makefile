@@ -8,7 +8,7 @@ MASTER_SITES=	https://github.com/QupZilla/${PORTNAME}/releases/download/v${PORTV
 PKGNAMESUFFIX=	-qt4
 DISTNAME=	QupZilla-${PORTVERSION}
 
-MAINTAINER=	matthew@reztek.cz
+MAINTAINER=	rezny@FreeBSD.org
 COMMENT=	Web browser based on WebKit engine and Qt Framework
 
 LICENSE=	GPLv3
@@ -17,7 +17,7 @@ LIB_DEPENDS=	libhunspell-1.6.so:textproc/hunspell
 
 CONFLICTS_INSTALL=	${PORTNAME}-qt5*
 
-USES=		desktop-file-utils execinfo pkgconfig qmake ssl tar:xz
+USES=		desktop-file-utils pkgconfig qmake ssl tar:xz
 USE_QT4=	corelib gui network script sql webkit xml \
 		linguisttools_build moc_build rcc_build uic_build \
 		imageformats_run sql-sqlite3_run

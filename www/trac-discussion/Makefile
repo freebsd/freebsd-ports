@@ -7,7 +7,7 @@ CATEGORIES=	www devel python
 MASTER_SITES=	LOCAL/brooks
 PKGNAMEPREFIX=	trac-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Discussion forum plugin for Trac
 
 RUN_DEPENDS=	tracd:www/trac \

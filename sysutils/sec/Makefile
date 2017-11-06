@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	sec
-PORTVERSION=	2.7.10
+PORTVERSION=	2.7.11
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/simple-evcorr/${PORTNAME}/${PORTVERSION}
 
@@ -10,12 +10,10 @@ COMMENT=	Simple event (logs) correlator
 
 LICENSE=	GPLv2
 
-USE_RC_SUBR=	sec
-
 USES=		perl5 shebangfix
+USE_RC_SUBR=	sec
 SHEBANG_FILES=	sec
 SUB_LIST=	PERL=${PERL}
-USE_PERL5=	run
 NO_ARCH=	yes
 NO_BUILD=	yes
 

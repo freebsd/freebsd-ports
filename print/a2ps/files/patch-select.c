@@ -1,6 +1,6 @@
---- src/select.c.orig	Thu Dec 16 02:04:56 1999
-+++ src/select.c	Sat Aug 21 12:05:31 2004
-@@ -131,6 +131,36 @@
+--- src/select.c.orig	1999-12-16 01:04:56 UTC
++++ src/select.c
+@@ -131,6 +131,36 @@ sheets_map_load_main (void)
    return 1;
  }
  
@@ -37,7 +37,7 @@
  /* What says file about the type of a file (result is malloc'd).  NULL
    if could not be run.  */
  
-@@ -144,11 +174,15 @@
+@@ -144,11 +174,15 @@ file_verdict_on (const uchar *filename)
    if (IS_EMPTY (job->file_command))
      return NULL;
  

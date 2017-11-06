@@ -50,7 +50,9 @@ RUN_DEPENDS=	crafty:games/crafty
 NO_BUILD=	yes
 
 BROKEN_aarch64=		Fails to install: runaway process
+BROKEN_armv6=		Fails to install: runaway process
 BROKEN_mips64=		Fails to install: runaway process
+BROKEN_powerpc64=	Fails to install: runaway process
 
 .if !defined(WITH_TBDIR)
 WITH_TBDIR=	${PREFIX}/lib/crafty/TB

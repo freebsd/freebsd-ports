@@ -2,10 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	Geo-GeoNames
-PORTVERSION=	1.11
+PORTVERSION=	1.120
 CATEGORIES=	misc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
+DISTNAME=	${PORTNAME}-${PORTVERSION:S|0$||}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Perform geographical queries using GeoNames Web Services

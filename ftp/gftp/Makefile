@@ -12,10 +12,9 @@ COMMENT=	Free multithreaded GTK-based FTP and SFTP client
 
 LICENSE=	GPLv2
 
-USES=		pathfix pkgconfig tar:bzip2
+USES=		pathfix pkgconfig tar:bzip2 ssl
 GNU_CONFIGURE=	yes
 USE_GNOME=	glib20 gtk20
-USE_OPENSSL=	yes
 
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes

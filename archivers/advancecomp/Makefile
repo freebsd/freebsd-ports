@@ -13,7 +13,6 @@ LICENSE=	GPLv3
 
 LIB_DEPENDS=	libzopfli.so:archivers/zopfli
 
-USES=		gmake
 GNU_CONFIGURE=	yes
 MAKE_ARGS=	zopfli_SOURCES="" am__objects_3=""
 CPPFLAGS+=	-I${LOCALBASE}/include/zopfli

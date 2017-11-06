@@ -5,9 +5,9 @@ Changed paths:
 
 Apply class-imposed login restrictions.
 
---- auth2.c.orig	2012-12-02 16:53:20.000000000 -0600
-+++ auth2.c	2013-05-22 17:21:37.979631466 -0500
-@@ -46,6 +46,7 @@
+--- auth2.c.orig	2017-03-19 19:39:27.000000000 -0700
++++ auth2.c	2017-03-20 11:52:27.960733000 -0700
+@@ -47,6 +47,7 @@
  #include "key.h"
  #include "hostfile.h"
  #include "auth.h"
@@ -15,12 +15,11 @@ Apply class-imposed login restrictions.
  #include "dispatch.h"
  #include "pathnames.h"
  #include "buffer.h"
-@@ -216,6 +217,14 @@ input_userauth_request(int type, u_int32
+@@ -217,6 +218,13 @@ input_userauth_request(int type, u_int32
  	Authmethod *m = NULL;
  	char *user, *service, *method, *style = NULL;
  	int authenticated = 0;
 +#ifdef HAVE_LOGIN_CAP
-+	struct ssh *ssh = active_state; /* XXX */
 +	login_cap_t *lc;
 +	const char *from_host, *from_ip;
 +
@@ -30,7 +29,7 @@ Apply class-imposed login restrictions.
  
  	if (authctxt == NULL)
  		fatal("input_userauth_request: no authctxt");
-@@ -262,6 +271,27 @@ input_userauth_request(int type, u_int32
+@@ -266,6 +274,27 @@ input_userauth_request(int type, u_int32
  		    "(%s,%s) -> (%s,%s)",
  		    authctxt->user, authctxt->service, user, service);
  	}

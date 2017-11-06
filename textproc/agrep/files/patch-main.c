@@ -1,5 +1,5 @@
---- main.c.orig	1992-04-14 22:41:24.000000000 +0200
-+++ main.c	2011-11-27 13:36:45.000000000 +0100
+--- main.c.orig	1992-04-14 20:41:24 UTC
++++ main.c
 @@ -1,6 +1,14 @@
  /* Copyright (c) 1991 Sun Wu and Udi Manber.  All Rights Reserved. */
  #include "agrep.h"
@@ -15,7 +15,7 @@
  
  unsigned Mask[MAXSYM];
  unsigned Init1, NO_ERR_MASK, Init[MaxError];
-@@ -33,7 +41,7 @@
+@@ -33,7 +41,7 @@ int  NOFILENAME = 0,  /* Boolean flag, s
  extern int init();
  int table[WORD][WORD];
  
@@ -24,7 +24,7 @@
  {
     int i; 
  
-@@ -51,7 +59,7 @@
+@@ -51,7 +59,7 @@ initial_value()
     for (i=0; i< MAXSYM; i++) Mask[i] = 0;
  }
  
@@ -33,7 +33,7 @@
  int M; unsigned *Next, *Next1;
  {
    int i, j=0, n,  k, temp;
-@@ -110,7 +118,7 @@
+@@ -110,7 +118,7 @@ int M; unsigned *Next, *Next1;
    return;
  }
    
@@ -42,7 +42,7 @@
  int m;
  { int i, ex;
    ex= 1;
-@@ -118,7 +126,7 @@
+@@ -118,7 +126,7 @@ int m;
    return(ex);
  }
  
@@ -51,7 +51,7 @@
  int Text, M, D;
  {
    register unsigned i, c, r0, r1, r2, r3, CMask, Newline, Init0, r_NO_ERR; 
-@@ -393,7 +401,7 @@
+@@ -393,7 +401,7 @@ Nextchar1: i=i+1;
    return;
  } /* re1 */
  
@@ -60,7 +60,7 @@
  int Text, M, D;
  {
    register unsigned i, c, r1, r2, r3, CMask, k, Newline, Init0, Init1, end; 
-@@ -595,7 +603,7 @@
+@@ -595,7 +603,7 @@ Nextchar1: i++;
  } /* re */
  
  
@@ -69,7 +69,7 @@
  int i, end, j; 
  CHAR *buffer;
  {
-@@ -612,7 +620,7 @@
+@@ -612,7 +620,7 @@ int bp;
        while (bp <= i ) putchar(buffer[bp++]);
  }
  
@@ -78,7 +78,7 @@
  int argc; char *argv[];
  {
    int N, M, D=0, fp, fd, i, j; 
-@@ -751,7 +759,7 @@
+@@ -751,7 +759,7 @@ int argc; char *argv[];
    }
    if (!(PAT_FILE) && Pattern[0] == '\0') { /* Pattern not set with -e option */
      if (argc == 0) usage();
@@ -87,7 +87,7 @@
      argc--;
      argv++;
    }
-@@ -897,7 +905,7 @@
+@@ -897,7 +905,7 @@ CONT:
  } /* end of main() */
  
  	   
@@ -96,7 +96,7 @@
  char *fname;
  {
  int num_read;
-@@ -921,7 +929,7 @@
+@@ -921,7 +929,7 @@ CHAR buf[4097];
  }
  
  
@@ -105,7 +105,7 @@
  {
      	fprintf(stderr, "usage: %s [-#cdehiklnpstvwxBDGIS] [-f patternfile] pattern [files]\n", Progname); 
   	printf("\n");	
-@@ -942,7 +950,7 @@
+@@ -942,7 +950,7 @@ usage()
      	exit(2);
  }
  
@@ -114,7 +114,7 @@
  CHAR *Pattern; int D;
  {                          
    char c;
-@@ -999,7 +1007,8 @@
+@@ -999,7 +1007,8 @@ CHAR *Pattern; int D;
    return;
  }
  

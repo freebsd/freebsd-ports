@@ -1,0 +1,5 @@
+This gem implements a simple extraction of the key_transform abilities of
+ActiveModelSerializers.  For example, it will transform the key to camel case,
+dash, or underscore.
+
+WWW: https://github.com/NullVoxPopuli/case_transform

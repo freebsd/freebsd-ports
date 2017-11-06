@@ -2,17 +2,17 @@
 # $FreeBSD$
 
 PORTNAME=	tbb
-PORTVERSION=	2017.1
-PORTREVISION=	3
+PORTVERSION=	2018
 CATEGORIES=	devel
-MASTER_SITES=	http://threadingbuildingblocks.org/sites/default/files/software_releases/source/ \
-		LOCAL/martymac
-DISTNAME=	${PORTNAME}${PORTVERSION:R:S/.//g}_20160916oss_src
 
 MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	Library that provides thread building blocks
 
-LICENSE=	GPLv2
+LICENSE=	APACHE20
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	01org
+GH_TAGNAME=	${PORTVERSION:S/./_U/}
 
 SUB_FILES=	tbb.pc
 SUB_LIST=	prefix="${PREFIX}" \
@@ -23,14 +23,13 @@ SUB_LIST=	prefix="${PREFIX}" \
 OPTIONS_DEFINE=	DOCS
 PORTDOCS=	*
 
-ONLY_FOR_ARCHS=	amd64 i386 ia64
+ONLY_FOR_ARCHS=		amd64 armv6 i386
 ONLY_FOR_ARCHS_REASON=	has not been ported to this platform
 
 USE_LDCONFIG=	yes
 USES=	compiler gmake tar:tgz
 ALL_TARGET=	default
 
-WRKSRC=	${WRKDIR}/${DISTNAME:S/_src//}
 CC_BASENAME=	${CC:C,^.*/,,}
 
 .include <bsd.port.pre.mk>
@@ -45,7 +44,7 @@ post-patch:
 	@${REINPLACE_CMD} \
 		-e '/^CONLY =/s|^CONLY =.*|CONLY = ${CC}|' \
 		-e '/^CPLUS =/s|^CPLUS =.*|CPLUS = ${CXX}|' \
-			${WRKSRC}/build/FreeBSD.${CC_BASENAME}.inc
+			${WRKSRC}/build/FreeBSD.${COMPILER_TYPE}.inc
 
 do-install:
 	cd ${WRKSRC}; \

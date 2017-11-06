@@ -48,7 +48,7 @@ _USE_MATE_ALL=	autogen intlhack intltool
 # the *.pc file instead.
 _USE_MATE_ALL+=	caja common controlcenter desktop dialogs docutils icontheme \
 		libmatekbd libmateweather \
-		marco menus notificationdaemon panel polkit pluma \
+		marco menus mixer notificationdaemon panel polkit pluma \
 		session settingsdaemon
 
 SCROLLKEEPER_DIR=	/var/db/rarian
@@ -115,6 +115,11 @@ menus_DETECT=		${LOCALBASE}/libdata/pkgconfig/libmate-menu.pc
 menus_BUILD_DEPENDS=	${menus_DETECT}:x11/mate-menus
 menus_LIB_DEPENDS=	libmate-menu.so:x11/mate-menus
 menus_RUN_DEPENDS=	${menus_DETECT}:x11/mate-menus
+
+mixer_DETECT=		${LOCALBASE}/libdata/pkgconfig/libmatemixer.pc
+mixer_BUILD_DEPENDS=	${mixer_DETECT}:audio/libmatemixer
+mixer_LIB_DEPENDS=	libmatemixer.so:audio/libmatemixer
+mixer_RUN_DEPENDS=	${mixer_DETECT}:audio/libmatemixer
 
 notificationdaemon_DETECT=		${LOCALBASE}/libexec/mate-notification-daemon
 notificationdaemon_BUILD_DEPENDS=	${notificationdaemon_DETECT}:deskutils/mate-notification-daemon

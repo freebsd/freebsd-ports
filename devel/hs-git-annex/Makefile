@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	git-annex
-PORTVERSION=	5.20150727
-PORTREVISION=	1
+PORTVERSION=	6.20170520
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -11,17 +10,52 @@ COMMENT=	Manage files with git, without checking their contents into git
 
 LICENSE=	GPLv3
 
-USE_CABAL=	optparse-applicative>=0.10 cryptohash>=0.11.0 exceptions>=0.6 \
-		QuickCheck>=2.1 stm>=2.3 mtl>=2 data-default case-insensitive \
-		uuid random dlist unix-compat SafeSemaphore async IfElse \
-		MissingH hslogger monad-logger utf8-string text sandi json \
-		monad-control bloomfilter edit-distance resourcet aws>=0.9.2 \
-		http-conduit http-types network>=2.6 network-uri>=2.6
+USE_CABAL=	hslogger split IfElse QuickCheck SafeSemaphore bloomfilter \
+		concurrent-output disk-free-space edit-distance esqueleto \
+		feed magic network persistent-sqlite regex-tdfa sandi \
+		torrent uuid
 
 USES=		gmake perl5
 USE_PERL5=	build
 
-MAN1PAGES=	git-annex.1 git-annex-shell.1
+MAN1PAGES=	git-annex-add.1 git-annex-expire.1 git-annex-lookupkey.1 \
+		git-annex-remotedaemon.1 git-annex-ungroup.1 \
+		git-annex-addunused.1 git-annex-find.1 git-annex-map.1 \
+		git-annex-repair.1 git-annex-uninit.1 git-annex-addurl.1 \
+		git-annex-findref.1 git-annex-matchexpression.1 \
+		git-annex-required.1 git-annex-unlock.1 git-annex-adjust.1 \
+		git-annex-fix.1 git-annex-matching-options.1 \
+		git-annex-resolvemerge.1 git-annex-untrust.1 \
+		git-annex-assistant.1 git-annex-forget.1 git-annex-merge.1 \
+		git-annex-rmurl.1 git-annex-unused.1 git-annex-calckey.1 \
+		git-annex-fromkey.1 git-annex-metadata.1 git-annex-schedule.1 \
+		git-annex-upgrade.1 git-annex-checkpresentkey.1 \
+		git-annex-fsck.1 git-annex-migrate.1 git-annex-semitrust.1 \
+		git-annex-vadd.1 git-annex-contentlocation.1 \
+		git-annex-fuzztest.1 git-annex-mirror.1 git-annex-setkey.1 \
+		git-annex-vcycle.1 git-annex-copy.1 git-annex-get.1 \
+		git-annex-move.1 git-annex-setpresentkey.1 \
+		git-annex-version.1 git-annex-dead.1 git-annex-group.1 \
+		git-annex-multicast.1 git-annex-shell.1 git-annex-vfilter.1 \
+		git-annex-describe.1 git-annex-groupwanted.1 \
+		git-annex-numcopies.1 git-annex-smudge.1 git-annex-vicfg.1 \
+		git-annex-diffdriver.1 git-annex-import.1 git-annex-p2p.1 \
+		git-annex-status.1 git-annex-view.1 git-annex-direct.1 \
+		git-annex-importfeed.1 git-annex-pre-commit.1 \
+		git-annex-sync.1 git-annex-vpop.1 git-annex-drop.1 \
+		git-annex-indirect.1 git-annex-preferred-content.1 \
+		git-annex-test.1 git-annex-wanted.1 git-annex-dropkey.1 \
+		git-annex-info.1 git-annex-proxy.1 git-annex-testremote.1 \
+		git-annex-watch.1 git-annex-dropunused.1 git-annex-init.1 \
+		git-annex-readpresentkey.1 git-annex-transferkey.1 \
+		git-annex-webapp.1 git-annex-edit.1 git-annex-initremote.1 \
+		git-annex-registerurl.1 git-annex-transferkeys.1 \
+		git-annex-whereis.1 git-annex-enable-tor.1 git-annex-list.1 \
+		git-annex-reinit.1 git-annex-trust.1 git-annex.1 \
+		git-annex-enableremote.1 git-annex-lock.1 \
+		git-annex-reinject.1 git-annex-unannex.1 \
+		git-remote-tor-annex.1 git-annex-examinekey.1 git-annex-log.1 \
+		git-annex-rekey.1 git-annex-undo.1
 
 BUILD_DEPENDS+=	rsync:net/rsync \
 		git:devel/git \
@@ -31,92 +65,45 @@ RUN_DEPENDS+=	rsync:net/rsync \
 		git:devel/git \
 		gsha256sum:sysutils/coreutils
 
-EXECUTABLE=	git-annex git-annex-shell
+EXECUTABLE=	git-annex git-annex-shell git-remote-tor-annex
 STANDALONE=	yes
 
-FLAGS_DEFINE=	S3 WEBDAV INOTIFY ASSISTANT WEBAPP WEBAPP_SECURE PAIRING \
-		XMPP DNS PRODUCTION TDFA FEED QUVI TAHOE DESKTOPNOTIFY \
-		TORRENTPARSER EKG DATABASE
-FLAGS_DEFAULT=	S3 WEBDAV INOTIFY ASSISTANT WEBAPP WEBAPP_SECURE PAIRING \
-		XMPP DNS PRODUCTION TDFA FEED QUVI TAHOE DATABASE
+FLAGS_DEFINE=	S3 ASSISTANT WEBDAV WEBAPP PAIRING PRODUCTION DBUS
+FLAGS_DEFAULT=	S3 ASSISTANT WEBDAV WEBAPP PAIRING PRODUCTION
 
 S3_DESC=		S3 support
 S3_FLAG_ENABLE=		S3
-S3_FLAG_CABAL=		hS3
+S3_FLAG_CABAL=		conduit conduit-extra aws
+
+WEBDAV_DESC=		WebDAV support
+WEBDAV_FLAG_ENABLE=	WebDAV
+WEBDAV_FLAG_CABAL=	DAV
 
 ASSISTANT_DESC=		'assistant' and 'watch' commands
 ASSISTANT_FLAG_ENABLE=	Assistant
-
-INOTIFY_DESC=		File system notifications support
-INOTIFY_FLAG_ENABLE=	Inotify
-INOTIFY_FLAG_CABAL=	hinotify
+ASSISTANT_FLAG_CABAL=	dns mountpoints hinotify 
 
 WEBAPP_DESC=		Web application (requires assistant)
 WEBAPP_FLAG_DEPENDS=	ASSISTANT
 WEBAPP_FLAG_ENABLE=	Webapp
-WEBAPP_FLAG_CABAL=	yesod>=1.2.6 yesod-static>=1.2.4 yesod-form>=1.3.15 \
-			yesod-core>=1.2.19 path-pieces>=0.1.4 warp>=3.0.05 \
-			warp-tls wai wai-extra blaze-builder crypto-api \
-			clientsession aeson shakespeare>=2.0.0
-
-WEBAPP_SECURE_DESC=		Secure webapp (requires webbapp)
-WEBAPP_SECURE_FLAG_DEPENDS=	WEBAPP
-WEBAPP_SECURE_FLAG_ENABLE=	Webapp-secure
-WEBAPP_SECURE_FLAG_CABAL=	warp-tls>=1.4 securemem byteable
+WEBAPP_FLAG_CABAL=	yesod yesod-static yesod-form yesod-core path-pieces \
+			warp warp-tls wai wai-extra blaze-builder \
+			clientsession shakespeare
 
 PAIRING_DESC=		Enable pairing (requires web application)
 PAIRING_FLAG_DEPENDS=	WEBAPP
 PAIRING_FLAG_ENABLE=	Pairing
 PAIRING_FLAG_CABAL=	network-multicast network-info
 
-XMPP_DESC=		Enable notifications using XMPP (requires assistant)
-XMPP_FLAG_DEPENDS=	ASSISTANT
-XMPP_FLAG_ENABLE=	XMPP
-XMPP_FLAG_CABAL=	gnutls>=0.1.4 network-protocol-xmpp xml-types
-
-DNS_DESC=		Use the DNS library for lookups (requires XMPP)
-DNS_FLAG_DEPENDS=	ASSISTANT XMPP
-DNS_FLAG_ENABLE=	DNS
-DNS_FLAG_CABAL=		dns
-
 PRODUCTION_DESC=	Production build
 PRODUCTION_FLAG_ENABLE=	Production
 
-TDFA_DESC=		Use regex-tdfa for wildcards
-TDFA_FLAG_ENABLE=	TDFA
-TDFA_FLAG_CABAL=	regex-tdfa
+DBUS_DESC=		Dbus support
+DBUS_FLAG_ENABLE=	Dbus
+DBUS_FLAG_CABAL=	dbus fdo-notify
 
-WEBDAV_DESC=		WebDAV support
-WEBDAV_FLAG_ENABLE=	WebDAV
-WEBDAV_FLAG_CABAL=	DAV>=0.3 http-conduit xml-conduit http-types
-
-FEED_DESC=		Podcast feed support
-FEED_FLAG_ENABLE=	Feed
-FEED_FLAG_CABAL=	feed
-
-QUVI_DESC=		quvi to download videos
-QUVI_FLAG_ENABLE=	Quvi
-QUVI_FLAG_CABAL=	aeson
-
-TAHOE_DESC=		Tahoe special remote
-TAHOE_FLAG_ENABLE=	Tahoe
-TAHOE_FLAG_CABAL=	aeson
-
-DESKTOPNOTIFY_DESC=		Desktop environment notifications
-DESKTOPNOTIFY_FLAG_ENABLE=	DesktopNotify
-
-TORRENTPARSER_DESC=		Use haskell torrent library to parse torrent files
-TORRENTPARSER_FLAG_ENABLE=	TorrentParser
-TORRENTPARSER_FLAG_CABAL=	torrent>=10000.0.0
-
-EKG_DESC=		EKG for run-time monitoring
-EKG_FLAG_ENABLE=	EKG
-EKG_FLAG_CABAL=		ekg
-
-DATABASE_DESC=		Build with persistent for database use
-DATABASE_FLAG_ENABLE=	Database
-DATABASE_FLAG_CABAL=	esqueleto persistent-sqlite persistent \
-			persistent-template
+FLAGS_ENABLE=		ConcurrentOutput TorrentParser MagicMime
+FLAGS_DISABLE=		Benchmark TestSuite Android AndroidSplice
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

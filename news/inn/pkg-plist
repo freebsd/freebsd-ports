@@ -1,16 +1,12 @@
 @owner news
 @group news
-@exec mkdir -p %%NEWSBASE%%
+@preexec mkdir -p %%NEWSBASE%%
 %%CWDNEWSBASE%%
 bin/actmerge
 bin/actsync
 bin/actsyncd
 bin/archive
-@owner root
-@mode 4550
-bin/auth/passwd/ckpasswd
-@mode
-@owner news
+@(root,,4550) bin/auth/passwd/ckpasswd
 %%KERBEROS%%bin/auth/passwd/auth_krb5
 bin/auth/passwd/radius
 bin/auth/resolv/domain
@@ -53,14 +49,10 @@ bin/filter/startup_innd.pl
 bin/getlist
 bin/grephistory
 bin/imapfeed
-bin/inews
+@(,news,%%MODE_INEWS%%) bin/inews
 bin/inncheck
 bin/innconfval
-@owner root
-@mode 4550
-bin/innbind
-@mode
-@owner news
+@(root,,4550) bin/innbind
 bin/innd
 bin/inndf
 bin/innfeed
@@ -133,6 +125,7 @@ doc/hook-python
 doc/sample-control
 http/innreport.css
 include/inn/buffer.h
+include/inn/concat.h
 include/inn/confparse.h
 include/inn/dbz.h
 include/inn/defines.h
@@ -181,8 +174,8 @@ lib/innshellvars.pl
 lib/innshellvars.tcl
 lib/libinn.a
 lib/libinn.so
-lib/libinn.so.%%LIBVER%%
-lib/libinn.so.%%LIBVER_LONG%%
+lib/libinn.so.%%INNLIB%%
+lib/libinn.so.%%INNLIB_LONG%%
 lib/libinnhist.a
 lib/libinnhist.so
 lib/libinnhist.so.%%LIBVER%%
@@ -351,12 +344,12 @@ man/man8/writelog.8.gz
 @sample %%DBDIR%%/active.times.sample
 @sample %%DBDIR%%/newsgroups.sample
 @comment --------------------------------------------------------------
-%%WITHOUT_TAGGED_HASH%%@unexec f=history.hash;  if cmp -s %%DBDIR%%/$f %%EXAMPLESDIR%%/db/$f; then rm -f %%DBDIR%%/$f; fi
-%%WITHOUT_TAGGED_HASH%%@unexec f=history.index; if cmp -s %%DBDIR%%/$f %%EXAMPLESDIR%%/db/$f; then rm -f %%DBDIR%%/$f; fi
-%%WITHOUT_TAGGED_HASH%%@unexec rm -f %%EXAMPLESDIR%%/db/history.hash  2> /dev/null || true
-%%WITHOUT_TAGGED_HASH%%@unexec rm -f %%EXAMPLESDIR%%/db/history.index 2> /dev/null || true
-%%WITH_TAGGED_HASH%%@unexec f=history.pag; if cmp -s %%DBDIR%%/$f %%EXAMPLESDIR%%/db/$f; then rm -f %%DBDIR%%/$f; fi
-%%WITH_TAGGED_HASH%%@unexec rm -f %%EXAMPLESDIR%%/db/history.pag 2> /dev/null || true
+%%WITHOUT_TAGGED_HASH%%@postunexec f=history.hash;  if cmp -s %%DBDIR%%/$f %%EXAMPLESDIR%%/db/$f; then rm -f %%DBDIR%%/$f; fi
+%%WITHOUT_TAGGED_HASH%%@postunexec f=history.index; if cmp -s %%DBDIR%%/$f %%EXAMPLESDIR%%/db/$f; then rm -f %%DBDIR%%/$f; fi
+%%WITHOUT_TAGGED_HASH%%@postunexec rm -f %%EXAMPLESDIR%%/db/history.hash  2> /dev/null || true
+%%WITHOUT_TAGGED_HASH%%@postunexec rm -f %%EXAMPLESDIR%%/db/history.index 2> /dev/null || true
+%%WITH_TAGGED_HASH%%@postunexec f=history.pag; if cmp -s %%DBDIR%%/$f %%EXAMPLESDIR%%/db/$f; then rm -f %%DBDIR%%/$f; fi
+%%WITH_TAGGED_HASH%%@postunexec rm -f %%EXAMPLESDIR%%/db/history.pag 2> /dev/null || true
 @sample %%CONFDIR%%/actsync.cfg.sample
 @sample %%CONFDIR%%/actsync.ign.sample
 @sample %%CONFDIR%%/buffindexed.conf.sample
@@ -403,4 +396,4 @@ man/man8/writelog.8.gz
 @dir %%DBDIR%%
 @dir %%LOGDIR%%/OLD
 @dir %%LOGDIR%%
-@unexec rmdir %%NEWSBASE%% 2>/dev/null ||( echo "===>  If you don't plan to use inn later, you can safely remove %%NEWSBASE%%. Deinstall process kept these files intact:" | fmt && for i in $(find %D/news -type f); do echo "    - $i"; done)
+@postunexec rmdir %%NEWSBASE%% 2>/dev/null ||( echo "===>  If you don't plan to use inn later, you can safely remove %%NEWSBASE%%. Deinstall process kept these files intact:" | fmt && for i in $(find %D/news -type f); do echo "    - $i"; done)

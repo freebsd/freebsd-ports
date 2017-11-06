@@ -54,12 +54,6 @@ PORTSCOUT=	 ignore:1
 pre-configure:
 	@(cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ./autogen.sh)
 
-.if ${PORT_OPTIONS:MNLS}
-	@${REINPLACE_CMD} -e \
-		's|$$(prefix)/$$(DATADIRNAME)/locale|$$(prefix)/share/locale|' \
-		${WRKSRC}/po/Makefile.in.in
-.endif
-
 post-install:
 .for s in ${ICON_SIZES}
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/${s}/apps/

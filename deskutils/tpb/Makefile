@@ -3,11 +3,11 @@
 
 PORTNAME=	tpb
 PORTVERSION=	0.6.4
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	deskutils
 MASTER_SITES=	SAVANNAH
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dmitryluhtionov@gmail.com
 COMMENT=	On-Screen-Display for hotkeys of IBM ThinkPads
 
 LICENSE=	GPLv2+

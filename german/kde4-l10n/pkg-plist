@@ -510,13 +510,6 @@ share/doc/HTML/de/dragonplayer/index.cache.bz2
 share/doc/HTML/de/dragonplayer/index.docbook
 share/doc/HTML/de/dragonplayer/main.png
 share/doc/HTML/de/dragonplayer/man-dragon.1.docbook
-share/doc/HTML/de/filelight/common
-share/doc/HTML/de/filelight/config_appear.png
-share/doc/HTML/de/filelight/config_scan.png
-share/doc/HTML/de/filelight/index.cache.bz2
-share/doc/HTML/de/filelight/index.docbook
-share/doc/HTML/de/filelight/radial_map.png
-share/doc/HTML/de/filelight/radial_map_context_menu.png
 share/doc/HTML/de/fundamentals/colors.png
 share/doc/HTML/de/fundamentals/common
 share/doc/HTML/de/fundamentals/config.docbook
@@ -2059,7 +2052,6 @@ share/locale/de/LC_MESSAGES/dolphin.mo
 share/locale/de/LC_MESSAGES/domtreeviewer.mo
 share/locale/de/LC_MESSAGES/dragonplayer.mo
 share/locale/de/LC_MESSAGES/drkonqi.mo
-share/locale/de/LC_MESSAGES/filelight.mo
 share/locale/de/LC_MESSAGES/filetypes.mo
 share/locale/de/LC_MESSAGES/fileviewbazaarplugin.mo
 share/locale/de/LC_MESSAGES/fileviewgitplugin.mo

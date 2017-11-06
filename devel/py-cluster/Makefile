@@ -1,12 +1,12 @@
 # $FreeBSD$
 
 PORTNAME=	cluster
-PORTVERSION=	1.3.3
+PORTVERSION=	1.4.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	dbaio@bsd.com.br
+MAINTAINER=	dbaio@FreeBSD.org
 COMMENT=	Create several groups (clusters) of objects from a list in Python
 
 LICENSE=	LGPL21+

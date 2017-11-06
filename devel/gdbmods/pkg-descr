@@ -1,4 +1,4 @@
 gdbmods is a wrapper for gdb which adds symbol information from loaded modules
 in the running kernel.
 
-WWW: http://people.freebsd.org/~gallatin/gdbmods
+WWW: https://people.freebsd.org/~gallatin/gdbmods

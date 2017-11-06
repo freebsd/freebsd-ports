@@ -45,6 +45,7 @@
     SUBDIR += colortail
     SUBDIR += colwide
     SUBDIR += compat10x
+    SUBDIR += compat11x
     SUBDIR += compat4x
     SUBDIR += compat5x
     SUBDIR += compat6x
@@ -94,9 +95,7 @@
     SUBDIR += floatator
     SUBDIR += fortune-mod-bible
     SUBDIR += fortune-mod-bofh
-    SUBDIR += fortune-mod-culmea-culmilor
     SUBDIR += fortune-mod-epictetus
-    SUBDIR += fortune-mod-ferengi_rules_of_acquisition
     SUBDIR += fortune-mod-futurama
     SUBDIR += fortune-mod-psalms
     SUBDIR += fortuneit
@@ -176,6 +175,7 @@
     SUBDIR += hotkeys
     SUBDIR += hulgalugha
     SUBDIR += imerge
+    SUBDIR += img2xterm
     SUBDIR += ini_file_manager
     SUBDIR += inplace
     SUBDIR += ipa_conv
@@ -239,6 +239,7 @@
     SUBDIR += ktouch
     SUBDIR += kwordquiz
     SUBDIR += latex-mk
+    SUBDIR += lazyread
     SUBDIR += lc
     SUBDIR += lesspipe
     SUBDIR += libeatmydata
@@ -254,7 +255,6 @@
     SUBDIR += localedata
     SUBDIR += logsurfer
     SUBDIR += loop
-    SUBDIR += lr
     SUBDIR += lv
     SUBDIR += lxde-common
     SUBDIR += magicpoint
@@ -312,10 +312,8 @@
     SUBDIR += p5-File-Sort
     SUBDIR += p5-Geo-Cache
     SUBDIR += p5-Geo-Coder-Bing
-    SUBDIR += p5-Geo-Coder-Geocoder-US
     SUBDIR += p5-Geo-Coder-Google
     SUBDIR += p5-Geo-Coder-Googlev3
-    SUBDIR += p5-Geo-Coder-Many
     SUBDIR += p5-Geo-Coder-Mapquest
     SUBDIR += p5-Geo-Coder-Multimap
     SUBDIR += p5-Geo-Coder-Multiple
@@ -363,6 +361,7 @@
     SUBDIR += pfm
     SUBDIR += php56-calendar
     SUBDIR += php70-calendar
+    SUBDIR += php71-calendar
     SUBDIR += phraze
     SUBDIR += pinfo
     SUBDIR += pipe
@@ -370,6 +369,7 @@
     SUBDIR += posixtestsuite
     SUBDIR += proxyper
     SUBDIR += pspresent
+    SUBDIR += ptsort
     SUBDIR += py-YABT
     SUBDIR += py-cinder
     SUBDIR += py-crudini
@@ -382,6 +382,7 @@
     SUBDIR += py-progressbar231
     SUBDIR += py-pyfiglet
     SUBDIR += py-pyprind
+    SUBDIR += py-python-geohash
     SUBDIR += py-qt4-demo
     SUBDIR += py-qt4-doc
     SUBDIR += py-qt5-demo
@@ -391,6 +392,8 @@
     SUBDIR += py-spdx-lookup
     SUBDIR += py-tqdm
     SUBDIR += py-yolk
+    SUBDIR += py3-pexpect
+    SUBDIR += py3-tqdm
     SUBDIR += pylize
     SUBDIR += qbrew
     SUBDIR += qlas
@@ -403,6 +406,7 @@
     SUBDIR += qt5-examples
     SUBDIR += qt5-l10n
     SUBDIR += qt5ct
+    SUBDIR += qtchooser
     SUBDIR += raspberrypi-userland
     SUBDIR += raspbsd-led
     SUBDIR += ree
@@ -412,6 +416,9 @@
     SUBDIR += rpl
     SUBDIR += rtfm
     SUBDIR += rubygem-dotenv
+    SUBDIR += rubygem-dotenv-rails
+    SUBDIR += rubygem-dotenv-rails-rails5
+    SUBDIR += rubygem-dotenv-rails-rails50
     SUBDIR += rubygem-iesd
     SUBDIR += rubygem-mime-types
     SUBDIR += rubygem-mime-types-data
@@ -450,9 +457,7 @@
     SUBDIR += tellico-kde4
     SUBDIR += tempcontrol
     SUBDIR += termatrix
-    SUBDIR += terraform
     SUBDIR += teseq
-    SUBDIR += teslams
     SUBDIR += timediff
     SUBDIR += tkcron
     SUBDIR += tkinfo
@@ -469,6 +474,7 @@
     SUBDIR += uk-postcodes
     SUBDIR += umodunpack
     SUBDIR += unclutter
+    SUBDIR += unclutter-xfixes
     SUBDIR += upclient
     SUBDIR += us-zipcodes
     SUBDIR += usbids
@@ -501,11 +507,9 @@
     SUBDIR += xless
     SUBDIR += xosd
     SUBDIR += xpns
-    SUBDIR += xsw
     SUBDIR += xtail
     SUBDIR += xtar
     SUBDIR += xtypo
-    SUBDIR += xyzcmd
     SUBDIR += yaunc
     SUBDIR += ytree
     SUBDIR += zoneinfo

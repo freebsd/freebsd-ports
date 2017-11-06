@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	simgear
-PORTVERSION=	2016.4.4
+PORTVERSION=	2017.3.1
 CATEGORIES=	devel games
 MASTER_SITES=	SF/flightgear/release-${PORTVERSION:R}
 
@@ -17,13 +17,13 @@ LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 
 USE_XORG=	ice sm x11 xext xi xmu xt
 USE_GL=		gl glu glut
-USES=		alias cmake compiler cpe jpeg openal:al,alut tar:bzip2
+USES=		alias cmake compiler:c++11-lib cpe jpeg openal:al,alut tar:bzip2
 
 .include <bsd.port.pre.mk>
 
-# When building with Gcc, needs Gcc 4.6+
-.if ${COMPILER_TYPE} == gcc && ${COMPILER_VERSION} < 46
-USE_GCC=	yes
+# Work around "'to_string' is not a member of 'std'" when building with Gcc < 6
+.if ${COMPILER_TYPE} == gcc && ${COMPILER_VERSION} < 60
+CFLAGS+=	-D_GLIBCXX_USE_C99
 .endif
 
 .include <bsd.port.post.mk>

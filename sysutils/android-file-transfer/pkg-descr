@@ -7,7 +7,7 @@ Features:
   partial read/writes, allowing instant access to your files.
 * No file size limits.
 * Automatically renames album cover to make it visible from media player.
-* No extra dependencies (e.g. libptp/libmtp).
+* No extra dependencies (e.g., libptp/libmtp).
 * Available as static/shared library.
 * Command line tool (aft-mtp-cli)
 

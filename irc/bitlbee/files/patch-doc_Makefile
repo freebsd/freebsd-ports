@@ -1,0 +1,10 @@
+--- doc/Makefile.orig	2017-01-30 20:45:59 UTC
++++ doc/Makefile
+@@ -4,7 +4,6 @@ _SRCDIR_ := $(_SRCDIR_)doc/
+ endif
+ 
+ all:
+-	$(MAKE) -C user-guide
+ 
+ install:
+ 	mkdir -p $(DESTDIR)$(MANDIR)/man8/ $(DESTDIR)$(MANDIR)/man5/

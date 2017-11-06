@@ -1,17 +1,25 @@
---- ui/gl/BUILD.gn.orig	2016-08-03 22:02:41.000000000 +0300
-+++ ui/gl/BUILD.gn	2016-09-03 00:16:34.776838000 +0300
-@@ -5,7 +5,7 @@
- import("//build/config/ui.gni")
- import("//testing/test.gni")
+--- ui/gl/BUILD.gn.orig	2017-09-05 21:05:48.000000000 +0200
++++ ui/gl/BUILD.gn	2017-09-07 01:56:19.612744000 +0200
+@@ -15,7 +15,7 @@
+                        (target_cpu == "x86" || target_cpu == "x64")
+ }
  
--use_egl = is_win || is_android || is_linux
-+use_egl = is_win || is_android || is_linux || is_bsd
- use_glx = use_x11
+-use_egl = is_win || is_android || is_linux || is_fuchsia
++use_egl = is_win || is_android || is_linux || is_fuchsia || is_bsd
+ use_glx = use_x11 || ozone_platform_x11
  
  if (is_android) {
-@@ -163,7 +163,7 @@
+@@ -181,14 +181,14 @@
        "gl_surface_egl.h",
      ]
+ 
+-    if (is_linux) {
++    if (is_linux || is_bsd) {
+       sources += [
+         "gl_image_native_pixmap.cc",
+         "gl_image_native_pixmap.h",
+       ]
+     }
    }
 -  if (is_android || is_linux) {
 +  if (is_android || is_linux || is_bsd) {

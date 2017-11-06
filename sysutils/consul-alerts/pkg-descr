@@ -4,4 +4,4 @@ check, or host that enables specific handlers and reminder intervals.
 consul-alerts makes use of consul services to provide leader election
 and automatic failover amongst multiple instances.
 
-URL: https://github.com/AcalephStorage/consul-alerts
+WWW: https://github.com/AcalephStorage/consul-alerts

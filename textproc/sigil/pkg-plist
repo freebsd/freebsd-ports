@@ -56,7 +56,6 @@ share/pixmaps/sigil.png
 %%DATADIR%%/translations/sigil_es.qm
 %%DATADIR%%/translations/sigil_fi.qm
 %%DATADIR%%/translations/sigil_fr.qm
-%%DATADIR%%/translations/sigil_he.qm
 %%DATADIR%%/translations/sigil_hu_HU.qm
 %%DATADIR%%/translations/sigil_id_ID.qm
 %%DATADIR%%/translations/sigil_it.qm
@@ -67,8 +66,9 @@ share/pixmaps/sigil.png
 %%DATADIR%%/translations/sigil_pt.qm
 %%DATADIR%%/translations/sigil_pt_BR.qm
 %%DATADIR%%/translations/sigil_ru.qm
-%%DATADIR%%/translations/sigil_sk.qm
 %%DATADIR%%/translations/sigil_sr.qm
+%%DATADIR%%/translations/sigil_tr.qm
 %%DATADIR%%/translations/sigil_tr_TR.qm
+%%DATADIR%%/translations/sigil_zh.qm
 %%DATADIR%%/translations/sigil_zh_CN.qm
 %%DATADIR%%/translations/sigil_zh_TW.qm

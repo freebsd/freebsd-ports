@@ -4,7 +4,7 @@
 PORTNAME=	retroshare
 PORTVERSION=	0.6.1
 DISTVERSIONPREFIX=	v
-PORTREVISION=	3
+PORTREVISION=	8
 CATEGORIES=	net-p2p
 
 MAINTAINER=	peter@netkey.at
@@ -18,13 +18,13 @@ LIB_DEPENDS=	libsqlcipher.so:databases/sqlcipher \
 		libupnp.so:devel/upnp \
 		libgnome-keyring.so:security/libgnome-keyring \
 		libgpgme.so:security/gpgme \
-		libopencv_highgui.so:graphics/opencv2 \
-		libopencv_imgproc.so:graphics/opencv2-core \
+		libopencv_highgui.so:graphics/opencv \
+		libopencv_imgproc.so:graphics/opencv-core \
 		libavcodec.so:multimedia/ffmpeg \
 		libcurl.so:ftp/curl \
 		libmicrohttpd.so:www/libmicrohttpd
 
-USES=		compiler:features desktop-file-utils dos2unix execinfo pkgconfig qmake ssl
+USES=		compiler:features desktop-file-utils dos2unix pkgconfig qmake ssl
 USE_GNOME=	glib20 libxml2 libxslt
 USE_GL=		gl
 USE_QT5=	buildtools_build uitools_build core gui network xml \

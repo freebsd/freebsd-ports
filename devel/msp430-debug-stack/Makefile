@@ -1,25 +1,29 @@
 # $FreeBSD$
 
 PORTNAME=	msp430-debug-stack
-PORTVERSION=	3.9.1.2
-PORTREVISION=	0
+PORTVERSION=	3.10.001.000
+PORTREVISION=	2
 CATEGORIES=	devel
-MASTER_SITES=	http://www.ti.com/lit/sw/slac460s/ \
-		http://www.ti.com/lit/ug/slau320x/:doc1 \
+MASTER_SITES=	http://www.ti.com/lit/sw/slac460v/ \
+		http://www.ti.com/lit/ug/slau320z/:doc1 \
 		http://www.ti.com/lit/ug/slau656b/:doc2
-DISTFILES=	slac460s.zip \
-		slau320x.pdf:doc1 \
+DISTFILES=	slac460v.zip \
+		slau320z.pdf:doc1 \
 		slau656b.pdf:doc2
 DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
-EXTRACT_ONLY=	slac460s.zip
+EXTRACT_ONLY=	slac460v.zip
 
 MAINTAINER=	lev@FreeBSD.org
 COMMENT=	TI MSP430 debugging interface library
 
 LICENSE=	BSD3CLAUSE
 
+BROKEN=		fails to package
+
 LIB_DEPENDS=	libboost_filesystem.so:devel/boost-libs \
 		libhidapi.so:comms/hidapi
+
+BROKEN_powerpc64=	fails to compile: adapt_enum.h: 'to_string' is not a member of 'std'
 
 USES=		compiler:c++11-lib dos2unix gmake zip:infozip
 USE_LDCONFIG=	yes
@@ -47,7 +51,7 @@ do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/include/libmsp430
 	${INSTALL_DATA} ${WRKSRC}/DLL430_v3/include/* ${STAGEDIR}${PREFIX}/include/libmsp430/
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/slau320x.pdf ${STAGEDIR}${DOCSDIR}/
+	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/slau320z.pdf ${STAGEDIR}${DOCSDIR}/
 	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/slau656b.pdf ${STAGEDIR}${DOCSDIR}/
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/devd
 	${INSTALL_DATA} ${FILESDIR}/mspfet.conf ${STAGEDIR}${PREFIX}/etc/devd

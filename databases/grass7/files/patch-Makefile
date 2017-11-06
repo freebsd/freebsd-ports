@@ -1,0 +1,22 @@
+--- Makefile.orig	2016-11-04 UTC
++++ Makefile	
+@@ -64,19 +64,7 @@ default:
+ 	$(MAKE) subdirs
+ 	$(MAKE) $(FILES_DST)
+ 	$(MAKE) manifests
+-	@if [ `wc -l < "$(ERRORLOG)"` -gt 5 ] ; then \
+-		echo "--"     >> $(ERRORLOG) ; \
+-		echo "In case of errors please change into the directory with error and run 'make'." >> $(ERRORLOG) ; \
+-		echo "If you get multiple errors, you need to deal with them in the order they"      >> $(ERRORLOG) ; \
+-		echo "appear in the error log. If you get an error building a library, you will"     >> $(ERRORLOG) ; \
+-		echo "also get errors from anything which uses the library."  >> $(ERRORLOG) ; \
+-	else \
+-		echo "No errors detected." >> $(ERRORLOG) ; \
+-	fi
+-	@echo "--"  >> $(ERRORLOG)
+ 	@echo "Finished compilation: `date`" >> $(ERRORLOG)
+-	@cat $(ERRORLOG)
+-	@if [ `wc -l < "$(ERRORLOG)"` -gt 8 ] ; then false ; else true ; fi
+ 
+ manifests:
+ ifeq ($(MANIFEST),external)

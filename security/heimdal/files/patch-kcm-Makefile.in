@@ -1,4 +1,4 @@
---- kcm/Makefile.in.orig	2017-01-03 19:44:13 UTC
+--- kcm/Makefile.in.orig	2017-06-10 19:27:47 UTC
 +++ kcm/Makefile.in
 @@ -157,10 +157,12 @@ am_kcm_OBJECTS = acl.$(OBJEXT) acquire.$
  	events.$(OBJEXT) glue.$(OBJEXT) log.$(OBJEXT) main.$(OBJEXT) \

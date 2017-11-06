@@ -6,7 +6,7 @@ PORTVERSION=	7.0.1
 CATEGORIES=	x11-themes xfce
 PKGNAMESUFFIX=	-theme
 
-MAINTAINER=	olivierd@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gtk3 port of Clearlooks theme for the Xfce Desktop
 
 LICENSE=	GPLv3

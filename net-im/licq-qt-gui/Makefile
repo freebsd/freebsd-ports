@@ -3,7 +3,7 @@
 
 PORTNAME=	qt4-gui
 PORTVERSION=	1.8.2
-PORTREVISION=	5
+PORTREVISION=	8
 CATEGORIES=	net-im
 PKGNAMESUFFIX?=	${KDE_SUFFIX}${PKGNAMESUFFIX2}
 
@@ -15,10 +15,10 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libboost_regex.so:devel/boost-libs
 RUN_DEPENDS=	${LOCALBASE}/lib/licq/protocol_icq.so:${LICQ_PORT}-icq
 
-USE_XORG=	x11 xext ice xscrnsaver
+USE_XORG=	x11 xext ice xscrnsaver sm
 USES=		cmake
 USE_QT4=	qmake_build moc_build rcc_build uic_build linguisttools_build \
-		corelib xml gui
+		corelib xml gui network dbus svg
 
 OPTIONS_DEFINE=	HUNSPELL KDE4
 OPTIONS_DEFAULT=HUNSPELL

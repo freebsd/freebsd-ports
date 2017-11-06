@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	Crypt-Format
-PORTVERSION=	0.06
+PORTVERSION=	0.07
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -9,7 +9,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	pi@FreeBSD.org
 COMMENT=	Conversion utilities for encryption applications
 
-LICENSE=	ART10 GPLv1
+LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 USES=		perl5

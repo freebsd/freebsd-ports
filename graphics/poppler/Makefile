@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	poppler
-PORTVERSION=	0.50.0
+PORTVERSION=	0.57.0
 CATEGORIES=	graphics print
 MASTER_SITES=	http://poppler.freedesktop.org/
 
@@ -74,6 +74,8 @@ CONFIGURE_ARGS+=--disable-poppler-qt4
 CONFIGURE_ARGS+=--enable-poppler-qt5
 CONFIGURE_ENV+=	MOCQT5=${MOC}
 USE_QT5=	core gui widgets xml buildtools_build testlib_build
+# Qt from 5.7.0 on requires c++11.
+USE_CXXSTD=	c++11
 BUILD_WRKSRC=	${WRKSRC}/qt5
 INSTALL_WRKSRC=	${WRKSRC}/qt5
 .else
@@ -116,7 +118,7 @@ PLIST_SUB+=	CURL="@comment "
 CONFIGURE_ARGS+=--enable-libopenjpeg=openjpeg2
 LIB_DEPENDS+=	libopenjp2.so:graphics/openjpeg
 .else
-CONFIGURE_ARGS+=--disable-libopenjpeg
+CONFIGURE_ARGS+=--enable-libopenjpeg=none
 .endif
 .endif # end of options
 

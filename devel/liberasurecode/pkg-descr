@@ -1,0 +1,4 @@
+liberasurecode is an Erasure Code API library written in C with pluggable
+Erasure Code backends.
+
+WWW: https://github.com/openstack/liberasurecode

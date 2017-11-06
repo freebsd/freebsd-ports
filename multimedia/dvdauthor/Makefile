@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	dvdauthor
-PORTVERSION=	0.7.1
-PORTREVISION=	10
+PORTVERSION=	0.7.2
 CATEGORIES=	multimedia
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Makes a DVD file structure from one or more MPEG2 streams

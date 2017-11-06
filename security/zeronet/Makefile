@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	zeronet
-PORTVERSION=	0.5.0
+PORTVERSION=	0.6.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	security net-p2p
 
@@ -14,34 +14,28 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}msgpack-python>0:devel/py-msgpack-python \
 		${PYTHON_PKGNAMEPREFIX}gevent>=1.0.2:devel/py-gevent \
-		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3
-
-USE_GITHUB=	yes
-GH_ACCOUNT=	HelloZeroNet
-GH_PROJECT=	ZeroNet
+		${PYTHON_PKGNAMEPREFIX}stem>0:security/py-stem
 
 SUB_FILES=	zeronet-service zeronet-cmd pkg-message
 SUB_LIST=	LOCALBASE=${LOCALBASE} USER=${USER} GROUP=${GROUP}
 PLIST_SUB=	USER=${USER} GROUP=${GROUP}
 
-USES=		python
+# ZeroNet hasn't been ported to Python 3 yet
+# https://github.com/HelloZeroNet/ZeroNet/issues/149
+USES=		python:2.7
+USE_GITHUB=	yes
+GH_ACCOUNT=	HelloZeroNet
+GH_PROJECT=	ZeroNet
 NO_ARCH=	yes
 
-OPTIONS_DEFINE=	TOR DEBUG
-TOR_DESC=	Enable TOR anonymity network integration
+OPTIONS_DEFINE=	DEBUG
 
-TOR_RUN_DEPENDS=	tor:security/tor
 DEBUG_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}werkzeug>0:www/py-werkzeug
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MTOR}
-USER=		_tor
-GROUP=		_tor
-.else
 USER=		nobody
 GROUP=		nobody
-.endif
 
 do-build:
 	@(cd ${WRKSRC} && \
@@ -54,7 +48,7 @@ do-install:
 	@${CP} -R ${WRKSRC}/* ${STAGEDIR}${DATADIR}/
 	@${RM} `${FIND} ${STAGEDIR}${DATADIR} -name "*.orig"`
 	@${RM} `${FIND} ${STAGEDIR}${DATADIR} -name LICENSE`
-	@${RM} ${STAGEDIR}${DATADIR}/README*.md ${STAGEDIR}${DATADIR}/CHANGELOG.md ${STAGEDIR}${DATADIR}/requirements.txt
+	@${RM} ${STAGEDIR}${DATADIR}/README*.md ${STAGEDIR}${DATADIR}/CHANGELOG*.md ${STAGEDIR}${DATADIR}/requirements.txt
 	@${RM} ${STAGEDIR}${DATADIR}/Vagrantfile ${STAGEDIR}${DATADIR}/Dockerfile
 	@${RM} -r `${FIND} ${STAGEDIR}${DATADIR} -name test`
 	@${MKDIR} ${STAGEDIR}/var/db/zeronet

@@ -1,10 +1,10 @@
-Netpbm is a toolkit for conversion of images between a variety of
-different formats, as well as to allow a few basic image operations.
-Netpbm is based on the widely spread Pbmplus package (release: 10 Dec
-91).  On top of that, a lot of improvements and additions have been
-made. After the latest release of Pbmplus, a lot of additional filters
-have been circulating on the net. The aim of Netpbm was, to collect
-these and to turn them into a package. This work has been performed by
-a group of programmers all over the world.
+Netpbm is a toolkit for manipulation of graphic images, including
+conversion of images between a variety of different formats.  There
+are over 300 separate tools in the package including converters for
+about 100 graphics formats.
+
+Examples of supported image manipulations: Shrinking an image by 10%;
+Cutting the top half off of an image; Making a mirror image; Creating
+a sequence of images that fade from one image to another.
 
 WWW: http://netpbm.sourceforge.net/

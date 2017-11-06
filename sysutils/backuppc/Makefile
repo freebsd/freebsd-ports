@@ -2,10 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	backuppc
-PORTVERSION=	3.3.1
-PORTREVISION=	4
+PORTVERSION=	3.3.2
+PORTREVISION=	2
 CATEGORIES=	sysutils
-MASTER_SITES=	SF
+MASTER_SITES=	https://github.com/backuppc/backuppc/releases/download/${PORTVERSION}/ \
+		SF
 DISTNAME=	BackupPC-${PORTVERSION}
 
 MAINTAINER=	moiseev@mezonplus.ru
@@ -14,7 +15,8 @@ COMMENT=	Multi-platform backup to disk-based storage
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	p5-File-Listing>=0:sysutils/p5-File-Listing
+RUN_DEPENDS=	p5-CGI>0:www/p5-CGI \
+		p5-File-Listing>=0:sysutils/p5-File-Listing
 
 CONFLICTS=	backuppc-devel-[0-9]*
 
@@ -22,6 +24,7 @@ USE_RC_SUBR=	backuppc
 
 USES=		cpe perl5
 CPE_VENDOR=	craig_barratt
+NO_ARCH=	yes
 NO_BUILD=	yes
 
 USERS=		backuppc
@@ -37,8 +40,8 @@ PLIST_SUB+=	CGIDIR=${CGIDIR:S,^${PREFIX}/,,} \
 
 PORTDOCS=	ChangeLog LICENSE README
 
-OPTIONS_DEFINE=		ARCHIVE_ZIP COMPRESS_ZLIB DOCS FILE_RSYNCP NMBLOOKUP \
-			SMBCLIENT XML_RSS
+OPTIONS_DEFINE=		ARCHIVE_ZIP COMPRESS_ZLIB DOCS FILE_RSYNCP SMB \
+			XML_RSS
 
 OPTIONS_RADIO=		GRAPHS
 OPTIONS_RADIO_GRAPHS=	RRD_GRAPHS RRDTOOL
@@ -48,39 +51,21 @@ OPTIONS_DEFAULT=	ARCHIVE_ZIP COMPRESS_ZLIB RRD_GRAPHS
 ARCHIVE_ZIP_DESC=	Perl module for Zip archive files
 COMPRESS_ZLIB_DESC=	Perl5 interface to zlib compression library
 FILE_RSYNCP_DESC=	Perl Rsync client
-NMBLOOKUP_DESC=		NetBIOS Name lookup tool
 RRD_GRAPHS_DESC=	Apply graphs patch (but not install RRDTool)
 RRDTOOL_DESC=		Use RRDTool to generate pool statistic graphs
-SMBCLIENT_DESC=		Samba client
+SMB_DESC=		NetBIOS Name lookup and Samba client
 XML_RSS_DESC=		Perl extension to manage RSS files
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MARCHIVE_ZIP}
-RUN_DEPENDS+=	p5-Archive-Zip>=0:archivers/p5-Archive-Zip
-.endif
-.if ${PORT_OPTIONS:MCOMPRESS_ZLIB}
-RUN_DEPENDS+=	p5-IO-Compress>=0:archivers/p5-IO-Compress
-.endif
-.if ${PORT_OPTIONS:MFILE_RSYNCP}
-RUN_DEPENDS+=	p5-File-RsyncP>=0:net/p5-File-RsyncP
-.endif
-.if ${PORT_OPTIONS:MNMBLOOKUP}
-RUN_DEPENDS+=	nmblookup:net/samba-nmblookup
-.endif
-.if ${PORT_OPTIONS:MRRDTOOL}
-RUN_DEPENDS+=	rrdtool:databases/rrdtool
-.endif
-.if ${PORT_OPTIONS:MRRD_GRAPHS} || ${PORT_OPTIONS:MRRDTOOL}
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-bin-BackupPC \
-		${FILESDIR}/extra-patch-lib-BackupPC-CGI-GeneralInfo.pm
-.endif
-.if ${PORT_OPTIONS:MSMBCLIENT}
-RUN_DEPENDS+=	smbclient:net/samba-smbclient
-.endif
-.if ${PORT_OPTIONS:MXML_RSS}
-RUN_DEPENDS+=	p5-XML-RSS>=0:textproc/p5-XML-RSS
-.endif
+ARCHIVE_ZIP_RUN_DEPENDS=	p5-Archive-Zip>=0:archivers/p5-Archive-Zip
+COMPRESS_ZLIB_RUN_DEPENDS=	p5-IO-Compress>=0:archivers/p5-IO-Compress
+FILE_RSYNCP_RUN_DEPENDS=	p5-File-RsyncP>=0:net/p5-File-RsyncP
+RRDTOOL_RUN_DEPENDS=		rrdtool:databases/rrdtool
+SMB_USES=			samba:run # nmblookup, smbclient
+XML_RSS_RUN_DEPENDS=		p5-XML-RSS>=0:textproc/p5-XML-RSS
+RRD_GRAPHS_EXTRA_PATCHES=	${FILESDIR}/extra-patch-bin-BackupPC \
+				${FILESDIR}/extra-patch-lib-BackupPC-CGI-GeneralInfo.pm
+RRDTOOL_EXTRA_PATCHES=		${FILESDIR}/extra-patch-bin-BackupPC \
+				${FILESDIR}/extra-patch-lib-BackupPC-CGI-GeneralInfo.pm
 
 pre-patch:
 	@${CP} ${WRKSRC}/configure.pl ${WRKSRC}/update.pl
@@ -134,10 +119,4 @@ do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/libexec/backuppc
 	${CP} ${WRKSRC}/update.pl ${STAGEDIR}${PREFIX}/libexec/backuppc/update.pl
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} >= 502200
-RUN_DEPENDS+=	p5-CGI>0:www/p5-CGI
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

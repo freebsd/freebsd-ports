@@ -5,12 +5,13 @@ bin/mtbl_verify
 include/mtbl.h
 lib/libmtbl.a
 lib/libmtbl.so
-lib/libmtbl.so.0
-lib/libmtbl.so.0.0.0
+lib/libmtbl.so.1
+lib/libmtbl.so.1.0.1
 libdata/pkgconfig/libmtbl.pc
 man/man1/mtbl_dump.1.gz
 man/man1/mtbl_info.1.gz
 man/man1/mtbl_merge.1.gz
+man/man1/mtbl_verify.1.gz
 man/man3/mtbl_crc32c.3.gz
 man/man3/mtbl_fileset.3.gz
 man/man3/mtbl_fixed.3.gz

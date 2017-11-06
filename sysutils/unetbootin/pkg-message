@@ -1,0 +1,3 @@
+    If SysLinux refuses to boot with a "Boot error" message when written to
+    a PC partition (slice), try to reformat the drive in raw (or dedicated)
+    mode (that is, without a partition table), then reinstall things again.

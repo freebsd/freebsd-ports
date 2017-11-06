@@ -10,9 +10,9 @@ MASTER_SITES=	SF/${PORTNAME:tl}/${PORTNAME:tl}/${PORTNAME}%20${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Elegant personal publishing system with Smarty
 
+USES=		php:web
 USE_PHP=	mysql pcre session
 NO_BUILD=	yes
-WANT_PHP_WEB=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME:tl}
 WWWDOCROOT?=	www

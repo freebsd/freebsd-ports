@@ -5,7 +5,7 @@ PORTNAME=	txtbdf2ps
 PORTVERSION=	0.7.1
 PORTREVISION=	1
 CATEGORIES=	print
-MASTER_SITES=	https://googledrive.com/host/0BwCT-sp3iBCaeDRPYm1jTjl1Qmc/ \
+MASTER_SITES=	https://aklv.github.io/distfiles/ \
 		http://oldrus-ispell.sourceforge.net/
 EXTRACT_SUFX=	.txt
 

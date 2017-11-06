@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	bokutin@bokut.in
 COMMENT=	Simple Log::Dispatch replacement of Mojo::Log
 
-LICENSE=	ART10 GPLv1
+LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Log-Dispatch>=0:devel/p5-Log-Dispatch \

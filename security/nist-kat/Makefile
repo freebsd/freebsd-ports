@@ -17,10 +17,10 @@ DISTFILES+=	hmactestvectors.zip:mac
 MAINTAINER=	jmg@FreeBSD.org
 COMMENT=	Collection of NIST's Know Answer Test Vectors
 
-LICENSE=        PD
+LICENSE=	PD
 
 # We want each dist file in it's own subdir
-EXTRACT_AFTER_ARGS= -s ":^:nist-kat/$${file%.zip}/:"
+EXTRACT_AFTER_ARGS=	-s ":^:nist-kat/$${file%.zip}/:"
 
 NO_BUILD=
 NO_WRKSUBDIR=

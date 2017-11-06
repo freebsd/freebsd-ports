@@ -3,7 +3,7 @@
 
 PORTNAME=	sword
 PORTVERSION=	1.7.4
-PORTREVISION=	5
+PORTREVISION=	8
 CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.crosswire.org/pub/sword/source/v${PORTVERSION:R}/ \
 		http://crosswire.org/ftpmirror/pub/sword/source/v${PORTVERSION:R}/
@@ -14,6 +14,9 @@ COMMENT=	Framework for manipulating Bible texts
 LICENSE=	GPLv2
 
 BUILD_DEPENDS=	cppunit-config:devel/cppunit
+
+BROKEN_FreeBSD_12=	does not build on 12.X
+BROKEN_powerpc64=	does not compile: libicui18n.so: undefined reference to __cxa_throw_bad_array_new_length
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-conf --with-zlib

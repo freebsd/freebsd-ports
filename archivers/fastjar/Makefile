@@ -3,6 +3,7 @@
 
 PORTNAME=	fastjar
 PORTVERSION=	0.93.20060808
+PORTREVISION=	1
 CATEGORIES=	archivers java
 MASTER_SITES=	LOCAL/maho/fastjar
 

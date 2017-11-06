@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	kpackage
-PORTVERSION=	5.29.1
+PORTVERSION=	${KDE_FRAMEWORKS_VERSION}
 CATEGORIES=	devel kde kde-frameworks
 
 MAINTAINER=	kde@FreeBSD.org

@@ -9,7 +9,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension for Mozilla CA cert bundle in PEM format
 
-LICENSE=	MPL
+LICENSE=	MPL20
 
 USES=		perl5
 USE_PERL5=	configure

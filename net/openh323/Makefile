@@ -3,7 +3,7 @@
 
 PORTNAME=	openh323
 PORTVERSION=	1.19.0.1
-PORTREVISION=	10
+PORTREVISION=	13
 CATEGORIES=	net
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-v${PORTVERSION:S/./_/g}-src
@@ -13,9 +13,9 @@ DIST_SUBDIR=	openh323
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	H323 Video Conferencing library
 
-BROKEN_powerpc64=	Does not build
-
 LIB_DEPENDS=	libpt_r.so:devel/pwlib
+
+BROKEN_powerpc64=	Does not build: call to H261Encoder::~H261Encoder() lacks nop, can't restore toc
 
 CONFLICTS=	h323plus-1.*
 
@@ -26,6 +26,10 @@ USE_GCC=	yes
 USE_AUTOTOOLS=	autoconf
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
+
+CFLAGS_amd64=	-fPIC
+CFLAGS_powerpc=	-fPIC
+CFLAGS_sparc64=	-fPIC
 
 ALL_TARGET=	optshared
 CONFIGURE_ENV+=	BUILDTIME="YES"
@@ -42,10 +46,6 @@ SPEEX_CONFIGURE_ON=	--enable-localspeex=no
 SPEEX_CONFIGURE_OFF=	--enable-localspeex=yes
 
 .include <bsd.port.pre.mk>
-
-.if (${ARCH} == "amd64") || (${ARCH} == "ia64") || (${ARCH} == "powerpc") || (${ARCH} == "sparc64")
-CFLAGS+=	-fPIC
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' \

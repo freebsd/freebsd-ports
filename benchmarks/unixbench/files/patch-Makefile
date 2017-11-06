@@ -1,40 +1,46 @@
---- Makefile.orig	1999-07-28 22:05:02 UTC
+--- Makefile.orig	2015-06-04 17:20:18 UTC
 +++ Makefile
-@@ -30,9 +30,7 @@
+@@ -38,7 +38,7 @@
  ##############################################################################
- ID="@(#)Makefile:3.9 -- 5/15/91 19:30:15";
- SHELL = /bin/sh
--#HZ = ????  	   #(read from environment)
--CFLAGS = -DTIME
--CC=gcc
-+HZ = 128
  
- ## For Linux 486/Pentium, GCC 2.7.x and 2.8.x
- #OPTON = -O2 -fomit-frame-pointer -fforce-addr -fforce-mem -ffast-math \
-@@ -44,7 +42,7 @@ CC=gcc
+ SHELL = /bin/sh
+-
++HZ = 128
+ # GRAPHICS TESTS: Uncomment the definition of "GRAPHIC_TESTS" to enable
+ # the building of the graphics benchmarks.  This will require the
+ # X11 libraries on your system.
+@@ -53,7 +53,7 @@ GL_LIBS = -lGL -lXext -lX11
+ # COMPILER CONFIGURATION: Set "CC" to the name of the compiler to use
+ # to build the binary benchmarks.  You should also set "$cCompiler" in the
+ # Run script to the name of the compiler you want to test.
+-CC=gcc
++#CC=gcc
+ 
+ # OPTIMISATION SETTINGS:
+ 
+@@ -71,14 +71,14 @@ CC=gcc
  #	-m386 -malign-loops=1 -malign-jumps=1 -malign-functions=1
  
  ## For Solaris 2, or general-purpose GCC 2.7.x
--OPTON = -O2 -fomit-frame-pointer -fforce-addr -fforce-mem -ffast-math -Wall
-+#OPTON = -O2 -fomit-frame-pointer -fforce-addr -fforce-mem -ffast-math -Wall
+-OPTON = -O2 -fomit-frame-pointer -fforce-addr -ffast-math -Wall
++OPTON = -O2 -fomit-frame-pointer -ffast-math -Wall
  
- ## Very generic
- #OPTON = -O
-@@ -54,14 +52,14 @@ OPTON = -O2 -fomit-frame-pointer -fforce
+ ## For Digital Unix v4.x, with DEC cc v5.x
+ #OPTON = -O4
  #CFLAGS = -DTIME -std1 -verbose -w0
  
- ## generic gcc CFLAGS.  -DTIME must be included
+ ## generic gcc CFLAGS.  -DTIME must be included.
 -CFLAGS = -DTIME -Wall -pedantic -ansi
 +CFLAGS += -DTIME -Wall -pedantic -ansi
  
- # local directories
+ 
+ ##############################################################################
+@@ -90,8 +90,6 @@ CFLAGS = -DTIME -Wall -pedantic -ansi
  PROGDIR = ./pgms
  SRCDIR = ./src
  TESTDIR = ./testdir
 -RESULTDIR = ./results
 -TMPDIR = ./tmp
-+#RESULTDIR = ./results
-+#TMPDIR = /var/tmp
  # other directories
  INCLDIR = /usr/include
  LIBDIR = /lib

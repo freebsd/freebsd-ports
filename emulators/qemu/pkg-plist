@@ -21,7 +21,8 @@ bin/qemu-system-i386
 %%NO_X86_TARGETS%%bin/qemu-system-mips64el
 %%NO_X86_TARGETS%%bin/qemu-system-mipsel
 %%NO_X86_TARGETS%%bin/qemu-system-moxie
-%%NO_X86_TARGETS%%bin/qemu-system-or32
+%%NO_X86_TARGETS%%bin/qemu-system-nios2
+%%NO_X86_TARGETS%%bin/qemu-system-or1k
 %%NO_X86_TARGETS%%bin/qemu-system-ppc
 %%NO_X86_TARGETS%%bin/qemu-system-ppc64
 %%NO_X86_TARGETS%%bin/qemu-system-ppcemb
@@ -38,6 +39,8 @@ bin/qemu-system-x86_64
 bin/qemu-x86_64
 man/man1/qemu.1.gz
 man/man1/qemu-img.1.gz
+man/man7/qemu-ga-ref.7.gz
+man/man7/qemu-qmp-ref.7.gz
 man/man8/qemu-ga.8.gz
 man/man8/qemu-nbd.8.gz
 @sample etc/qemu-ifup.sample
@@ -48,11 +51,13 @@ man/man8/qemu-nbd.8.gz
 %%DATADIR%%/bios-256k.bin
 %%DATADIR%%/bios.bin
 %%DATADIR%%/efi-e1000.rom
+%%DATADIR%%/efi-e1000e.rom
 %%DATADIR%%/efi-eepro100.rom
 %%DATADIR%%/efi-ne2k_pci.rom
 %%DATADIR%%/efi-pcnet.rom
 %%DATADIR%%/efi-rtl8139.rom
 %%DATADIR%%/efi-virtio.rom
+%%DATADIR%%/efi-vmxnet3.rom
 %%DATADIR%%/vgabios.bin
 %%DATADIR%%/vgabios-cirrus.bin
 %%DATADIR%%/vgabios-qxl.bin
@@ -75,14 +80,16 @@ man/man8/qemu-nbd.8.gz
 %%DATADIR%%/slof.bin
 %%DATADIR%%/s390-ccw.img
 %%DATADIR%%/linuxboot.bin
+%%LINUXBOOT_DMA%%%%DATADIR%%/linuxboot_dma.bin
 %%DATADIR%%/multiboot.bin
 %%DATADIR%%/sgabios.bin
+%%DATADIR%%/skiboot.lid
+%%DATADIR%%/trace-events-all
 %%DATADIR%%/petalogix-s3adsp1800.dtb
 %%DATADIR%%/bamboo.dtb
 %%DATADIR%%/kvmvapic.bin
 %%DATADIR%%/qemu-icon.bmp
 %%DATADIR%%/qemu_logo_no_text.svg
-%%DATADIR%%/trace-events
 %%DATADIR%%/u-boot.e500
 %%DATADIR%%/keymaps/ar
 %%DATADIR%%/keymaps/bepo
@@ -121,6 +128,7 @@ man/man8/qemu-nbd.8.gz
 %%DATADIR%%/keymaps/sv
 %%DATADIR%%/keymaps/th
 %%DATADIR%%/keymaps/tr
+%%GTK2%%share/locale/bg/LC_MESSAGES/qemu.mo
 %%GTK2%%share/locale/de_DE/LC_MESSAGES/qemu.mo
 %%GTK2%%share/locale/fr_FR/LC_MESSAGES/qemu.mo
 %%GTK2%%share/locale/it/LC_MESSAGES/qemu.mo

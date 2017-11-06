@@ -2,16 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	nss
-PORTVERSION=	3.28.1
-#DISTVERSIONSUFFIX=	-with-ckbi-1.98
+PORTVERSION=	3.33
 PORTREVISION=	1
+#DISTVERSIONSUFFIX=	-with-ckbi-1.98
 CATEGORIES=	security
 MASTER_SITES=	MOZILLA/security/${PORTNAME}/releases/${DISTNAME:tu:C/[-.]/_/g}_RTM/src
 
 MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	Libraries to support development of security-enabled applications
 
-LICENSE=	MPL
+LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	zip:archivers/zip \
@@ -31,7 +31,6 @@ USE_PERL5=	build
 MAKE_ENV=	LIBRARY_PATH="${LOCALBASE}/lib" \
 		SQLITE_INCLUDE_DIR="${LOCALBASE}/include" \
 		FREEBL_LOWHASH=1 \
-		NSS_ENABLE_TLS_1_3=1 \
 		NSS_DISABLE_GTESTS=1 \
 		NSS_USE_SYSTEM_SQLITE=1
 CFLAGS+=	-I${LOCALBASE}/include/nspr
@@ -57,6 +56,10 @@ MAKE_ENV+=	BUILD_OPT=1
 BINS=		${DIST}/${OPSYS}${OSREL}_OPT.OBJ
 .else
 BINS=		${DIST}/${OPSYS}${OSREL}_DBG.OBJ
+.endif
+
+.if ${OPSYS} == FreeBSD && ${ARCH} == i386
+USES+=		compiler:c++14-lang # gcm.h
 .endif
 
 .if ${OPSYS} == FreeBSD && ${ARCH} == amd64

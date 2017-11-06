@@ -7,6 +7,7 @@
 
 PORTNAME=	sphinxsearch
 PORTVERSION=	2.2.11
+PORTREVISION=	1
 CATEGORIES=	textproc databases
 MASTER_SITES=	http://sphinxsearch.com/files/ \
 		http://snowball.tartarus.org/dist/:libstemmer
@@ -25,7 +26,7 @@ LIB_DEPENDS=	libexpat.so:textproc/expat2
 
 OPTIONS_DEFINE=	ICONV ID64 LIBSTEMMER MYSQL OPTIMIZED_CFLAGS PGSQL \
 		RE2 SYSLOG UNIXODBC DOCS EXAMPLES
-OPTIONS_DEFAULT=ICONV MYSQL SYSLOG
+OPTIONS_DEFAULT=ICONV ID64 MYSQL SYSLOG
 
 ICONV_CONFIGURE_WITH=	iconv
 ICONV_USES=		iconv
@@ -79,6 +80,7 @@ PGSQL_USES=		pgsql
 RE2_DESC=		Enable re2 regular expression library
 RE2_CONFIGURE_WITH=	re2
 RE2_BUILD_DEPENDS=	${LOCALBASE}/lib/libre2.a:devel/re2
+RE2_BROKEN=		Bad C++ code in re2.h
 
 SYSLOG_DESC=		Enable logging via syslog
 SYSLOG_CONFIGURE_WITH=	syslog

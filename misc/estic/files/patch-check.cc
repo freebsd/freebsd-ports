@@ -1,6 +1,6 @@
---- spunk/check.cc.orig	Tue Jul 30 20:10:24 1996
-+++ spunk/check.cc	Thu Dec 23 20:52:21 2004
-@@ -50,9 +50,6 @@
+--- spunk/check.cc.orig	1996-11-07 17:06:46 UTC
++++ spunk/check.cc
+@@ -50,9 +50,6 @@ static void _CheckFailed (const char* Ms
  
  
  // The fail vector
@@ -8,5 +8,5 @@
 -volatile
 -#endif
  void (*CheckFailed) (const char*, const char* Cond,
- 		     int Code, const char* File, int Line) = _CheckFailed;
+                      int Code, const char* File, int Line) = _CheckFailed;
  

@@ -3,6 +3,7 @@
 
 PORTNAME=	frobtads
 PORTVERSION=	1.2.3
+PORTREVISION=	1
 CATEGORIES=	games lang
 MASTER_SITES=	http://www.tads.org/${PORTNAME}/ \
 		http://www.ifarchive.org/if-archive/programming/tads3/source/
@@ -14,7 +15,7 @@ LIB_DEPENDS=	libcurl.so:ftp/curl
 
 CONFLICTS=	tads-2.*
 
-USES=		autoreconf execinfo gmake localbase ncurses
+USES=		autoreconf gmake localbase ncurses
 GNU_CONFIGURE=	yes
 
 LIBS+=		-lcompat

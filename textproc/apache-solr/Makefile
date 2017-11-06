@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	apache-solr
-PORTVERSION=	6.3.0
+PORTVERSION=	7.1.0
 CATEGORIES=	textproc java
 MASTER_SITES=	APACHE/lucene/solr/${PORTVERSION}
 DISTNAME=	solr-${PORTVERSION}
@@ -12,10 +12,9 @@ COMMENT=	High performance search server built using Lucene Java
 
 LICENSE=	APACHE20
 
-CONFLICTS_INSTALL=	apache-solr3-* apache-solr-4* apache-solr-5*
+RUN_DEPENDS=	bash:shells/bash
 
-RUN_DEPENDS=	bash:shells/bash \
-		lsof:sysutils/lsof
+CONFLICTS_INSTALL=	apache-solr3-* apache-solr-4* apache-solr-5*
 
 USES=		cpe tar:tgz
 USE_JAVA=	yes
@@ -24,7 +23,7 @@ JAVA_RUN=	yes
 NO_BUILD=	yes
 NO_ARCH=	yes
 PLIST_SUB+=	PORTVERSION="${PORTVERSION}"
-SUB_FILES=	pkg-message pkg-install
+SUB_FILES=	pkg-message
 USE_RC_SUBR=	solr
 USERS=		solr
 GROUPS=		${USERS}

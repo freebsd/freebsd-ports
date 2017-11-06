@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	super_mediator
-PORTVERSION=	1.3.0
+PORTVERSION=	1.5.2
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://tools.netsa.cert.org/releases/
 
@@ -17,7 +17,7 @@ LIB_DEPENDS=	libfixbuf.so:net/libfixbuf \
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
-USES=		libtool pathfix perl5 pkgconfig
+USES=		libtool pathfix perl5 pkgconfig ssl
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
 

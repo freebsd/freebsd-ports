@@ -4,9 +4,7 @@ Date: Mon, 22 Sep 2014 10:56:02 +1000
 Subject: don't use PCITAG in struct anymore
 
 
-diff --git a/src/voodoo.h b/src/voodoo.h
-index bfed497..c3eb64e 100644
---- src/voodoo.h
+--- src/voodoo.h.orig	2012-07-17 05:21:17 UTC
 +++ src/voodoo.h
 @@ -23,7 +23,9 @@ typedef struct {
    
@@ -18,6 +16,3 @@ index bfed497..c3eb64e 100644
    CARD32	      PhysBase;
    
    CARD32	      Width;		/* Current width */
--- 
-cgit v0.10.2
-

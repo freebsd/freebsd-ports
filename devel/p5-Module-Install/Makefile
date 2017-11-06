@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Module-Install
-PORTVERSION=	1.16
+PORTVERSION=	1.18
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Standalone, extensible Perl module installer
 
-LICENSE=	ART10 GPLv1
+LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-File-Remove>=1.42:devel/p5-File-Remove \

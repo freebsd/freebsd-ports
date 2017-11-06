@@ -1,0 +1,13 @@
+This package provides a Python library ly containing various Python modules
+to parse, manipulate or create documents in LilyPond format.  A command line
+program ly is also provided that can be used to do various manipulations
+with LilyPond files.
+
+The LilyPond format is a plain text input format that is used by the GNU
+music typesetter LilyPond (www.lilypond.org).
+
+The python-ly package is Free Software, licensed under the GPL.  This
+package is written by the Frescobaldi developers and is used extensively by
+the Frescobaldi project.  The main author is Wilbert Berendsen.
+
+WWW: https://github.com/wbsoft/python-ly

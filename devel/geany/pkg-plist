@@ -84,6 +84,7 @@ share/applications/geany.desktop
 %%DATADIR%%/GPL-2
 %%DATADIR%%/colorschemes/alt.conf
 %%DATADIR%%/filetype_extensions.conf
+%%DATADIR%%/filedefs/filetypes.Arduino.conf
 %%DATADIR%%/filedefs/filetypes.CUDA.conf
 %%DATADIR%%/filedefs/filetypes.Clojure.conf
 %%DATADIR%%/filedefs/filetypes.Cython.conf

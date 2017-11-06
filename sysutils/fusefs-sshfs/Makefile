@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	sshfs
-PORTVERSION=	2.8
-DISTVERSIONPREFIX=	${PORTNAME}_
+PORTVERSION=	3.3.0
+DISTVERSIONPREFIX=	${PORTNAME}-
 CATEGORIES=	sysutils
 PKGNAMEPREFIX=	fusefs-
 
@@ -11,14 +11,15 @@ MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Mount remote directories over ssh
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-KMODDIR?=	${LOCALBASE}/modules
+BUILD_DEPENDS=	rst2man:textproc/py-docutils
+
+USES=		fuse:3 gettext meson pkgconfig
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	libfuse
 
-GNU_CONFIGURE=	yes
-USES=		autoreconf fuse gettext pkgconfig
 USE_GNOME=	glib20
 
 PLIST_FILES=	bin/sshfs \

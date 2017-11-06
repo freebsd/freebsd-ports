@@ -3,7 +3,7 @@
 
 PORTNAME=	panoptis
 PORTVERSION=	0.1.4
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net security
 MASTER_SITES=	SF
 
@@ -16,7 +16,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libccgnu2.so:devel/commoncpp
 
 GNU_CONFIGURE=	yes
-USES=		python
+USES=		python shebangfix
+SHEBANG_FILES=	panoptis/*.py
 PLIST_FILES=	bin/panoptis \
 		bin/mail.py \
 		bin/pview.py \

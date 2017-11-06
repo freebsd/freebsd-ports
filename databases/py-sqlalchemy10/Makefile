@@ -34,7 +34,7 @@ OPTIONS_DEFAULT=	SQLITE
 MSSQL_DESC=	MS SQL Server backend
 SYBASE_DESC=	Sybase backend
 
-MSSQL_RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pymssql.py:databases/py-mssql
+MSSQL_RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pymssql.py:databases/py-pymssql
 PGSQL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}psycopg2>=2.0.8:databases/py-psycopg2
 SQLITE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3
 SYBASE_RUN_DEPENDS=	${PYTHON_SITELIBDIR}/Sybase.py:databases/py-sybase

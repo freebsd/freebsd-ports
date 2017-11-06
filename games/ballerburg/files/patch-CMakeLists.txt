@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2015-03-29 15:04:01 UTC
++++ CMakeLists.txt
+@@ -50,7 +50,7 @@ if(NOT BIN2LOCALEDIR)
+ endif()
+ 
+ if(NOT MANDIR)
+-	set(MANDIR share/man/man6)
++	set(MANDIR man/man6)
+ endif()
+ 
+ if(NOT DOCDIR)

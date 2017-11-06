@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	librep
-PORTVERSION=	0.92.6
+PORTVERSION=	0.92.7
 CATEGORIES=	lang elisp gnome
 MASTER_SITES=	http://download.tuxfamily.org/librep/
 DISTNAME=	${PORTNAME}_${PORTVERSION}

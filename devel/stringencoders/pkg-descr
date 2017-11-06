@@ -12,3 +12,5 @@ including
     * javascript string escaping
     * fast number to string conversion, 4-22x faster than sprintf!
     * fast ascii upper/lower case conversion, 2-66x faster than stdlib!
+
+WWW: https://github.com/client9/stringencoders

@@ -1,0 +1,6 @@
+Python library to use the pseudo-tty of a docker container
+
+Provides the functionality needed to operate the pseudo-tty (PTY) allocated to
+a docker container, using the Python client.
+
+WWW: https://github.com/d11wtq/dockerpty

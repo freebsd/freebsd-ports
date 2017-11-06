@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	zookeeper
-PORTVERSION=	3.4.9
-PORTREVISION=	1
+PORTVERSION=	3.4.10
 CATEGORIES=	devel
 MASTER_SITES=	APACHE/${PORTNAME}/current
 PKGNAMEPREFIX=	lib
@@ -19,7 +18,7 @@ LIB_DEPENDS=	libcppunit.so:devel/cppunit
 ONLY_FOR_ARCHS=	i386 amd64
 ONLY_FOR_ARCHS_REASON=	uses x86 assembly
 
-USES=		gmake libtool
+USES=		libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 

@@ -10,4 +10,4 @@ operations needed for efficient remote desktop access, but would
 be easy for JavaScript programs to process. guacd is the proxy which
 translates between arbitrary protocols and the Guacamole protocol.
 
-WWW: https://github.com/glyptodon/guacamole-server
+WWW: http://guacamole.incubator.apache.org

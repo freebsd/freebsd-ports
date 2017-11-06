@@ -1,0 +1,9 @@
+The Midi Matrix (Channel Filter) is a 3-in-1 filter plugin with a simple UI
+enabling you to easily accomplish:
+* MIDI channel filtering (e.g. blocking of specific channels)
+* MIDI channel multiplication (e.g. send events from channel X to channels
+  X, Y and Z)
+* MIDI channel rerouting (e.g send events from channel X to channel Y)
+* And any possible combination thereof
+
+WWW: http://open-music-kontrollers.ch/lv2/midi_matrix

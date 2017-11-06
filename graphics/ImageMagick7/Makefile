@@ -1,13 +1,12 @@
 # $FreeBSD$
 
 PORTNAME=	ImageMagick
-DISTVERSION=	7.0.3-7
+DISTVERSION=	7.0.7-4
 CATEGORIES=	graphics perl5
 MASTER_SITES=	http://www.imagemagick.org/download/ \
 		http://www.imagemagick.org/download/legacy/ \
 		http://servingzone.com/mirrors/ImageMagick/ \
 		http://mirror.checkdomain.de/imagemagick/ \
-		http://image_magick.veidrodis.com/image_magick/ \
 		http://imagemagick.spd.co.il/ \
 		http://www.champground.com/imagemagick/ \
 		http://ftp.surfnet.nl/pub/ImageMagick/ \
@@ -37,6 +36,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libltdl.so:devel/libltdl
 
 CONFLICTS_INSTALL=	execline-[0-9]* # bin/import
+CONFLICTS_INSTALL+=	ImageMagick ImageMagick-nox11 # bin/Magick++-config
 
 # This port uses .la files, keep libtool:keepla! (magick/module.c)
 USES=		cpe gettext-runtime gmake gnome libtool:keepla \
@@ -61,7 +61,7 @@ OPTIONS_DEFINE=	BZIP2 DOCS DJVU FFTW FONTCONFIG FPX FREETYPE \
 		GRAPHVIZ GSLIB JPEG2000 JBIG JPEG LCMS2 LZMA LQR MODULES \
 		OPENEXR OPENMP PANGO PDF PERL PNG SVG TESTS TIFF WEBP WMF \
 		THREADS X11 16BIT_PIXEL HDRI
-OPTIONS_DEFAULT=	16BIT_PIXEL BZIP2 FFTW FONTCONFIG FPX FREETYPE \
+OPTIONS_DEFAULT=	16BIT_PIXEL BZIP2 FFTW FONTCONFIG FREETYPE \
 		JPEG2000 JBIG JPEG LCMS2 LZMA LQR MODULES PDF PERL PNG SVG \
 		TIFF WEBP WMF THREADS X11 HDRI
 

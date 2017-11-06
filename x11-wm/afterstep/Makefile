@@ -12,6 +12,8 @@ DISTNAME=	AfterStep-${PORTVERSION}
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Window manager originally based on the Bowman NeXTstep clone
 
+LICENSE=	GPLv2+
+
 RUN_DEPENDS=	asclock:x11-clocks/asclock
 
 CONFLICTS?=	afterstep-2*
@@ -36,6 +38,7 @@ HICOLOR_ICONS_DESC=	Use hi-color icons
 
 post-patch:
 		${REINPLACE_CMD} \
+			-e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 			-e 's|%%PREFIX%%|${PREFIX}|g' \
 			${WRKSRC}/configure.h \
 			${WRKSRC}/sample.steprc

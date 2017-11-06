@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	Media-Type-Simple
-PORTVERSION=	0.02
-PORTREVISION=	1
+PORTVERSION=	0.31.0
+DISTVERSIONPREFIX=	v
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:RRWO
@@ -12,14 +12,14 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	MIME Media Types and their file extensions
 
-LICENSE=	ART10 GPLv1
-LICENSE_COMB=	dual
+LICENSE=	ART20
 
-BUILD_DEPENDS=	p5-Sub-Exporter>=0:devel/p5-Sub-Exporter
+BUILD_DEPENDS=	p5-Exporter-Lite>=0:devel/p5-Exporter-Lite \
+		p5-File-Share>=0:devel/p5-File-Share \
+		p5-File-ShareDir>=0:devel/p5-File-ShareDir
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-TEST_DEPENDS=	p5-Test-Pod>=1.22:devel/p5-Test-Pod \
-		p5-Test-Pod-Coverage>=1.08:devel/p5-Test-Pod-Coverage
 
+NO_ARCH=	yes
 USE_PERL5=	configure
 USES=		perl5
 

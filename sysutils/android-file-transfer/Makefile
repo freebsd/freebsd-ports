@@ -2,9 +2,8 @@
 
 PORTNAME=	android-file-transfer
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.0-14
-DISTVERSIONSUFFIX=	-g5a818d8
-PORTREVISION?=	0
+DISTVERSION=	3.2
+PORTREVISION?=	2
 CATEGORIES=	sysutils
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -47,6 +46,10 @@ QT5_CMAKE_ON=	-DBUILD_QT_UI=on -DDESIRED_QT_VERSION=5
 QT5_PLIST_FILES=bin/android-file-transfer \
 		share/applications/android-file-transfer.desktop \
 		share/icons/hicolor/128x128/apps/android-file-transfer.png
+
+post-patch:
+	@${REINPLACE_CMD} '/set.*AFT_VERSION/s/".*"/"${GH_TAGNAME}"/' \
+		${WRKSRC}/CMakeLists.txt
 
 post-patch-CLI-off:
 	@${REINPLACE_CMD} '/subdirectory(cli)/d' ${WRKSRC}/CMakeLists.txt

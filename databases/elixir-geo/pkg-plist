@@ -8,9 +8,10 @@ lib/elixir/lib/geo/ebin/Elixir.Geo.MultiLineString.beam
 lib/elixir/lib/geo/ebin/Elixir.Geo.MultiPoint.beam
 lib/elixir/lib/geo/ebin/Elixir.Geo.MultiPolygon.beam
 lib/elixir/lib/geo/ebin/Elixir.Geo.Point.beam
+lib/elixir/lib/geo/ebin/Elixir.Geo.PointM.beam
+lib/elixir/lib/geo/ebin/Elixir.Geo.PointZ.beam
+lib/elixir/lib/geo/ebin/Elixir.Geo.PointZM.beam
 lib/elixir/lib/geo/ebin/Elixir.Geo.Polygon.beam
-lib/elixir/lib/geo/ebin/Elixir.Geo.PostGIS.Extension.beam
-lib/elixir/lib/geo/ebin/Elixir.Geo.PostGIS.beam
 lib/elixir/lib/geo/ebin/Elixir.Geo.Utils.beam
 lib/elixir/lib/geo/ebin/Elixir.Geo.WKB.Reader.beam
 lib/elixir/lib/geo/ebin/Elixir.Geo.WKB.Writer.beam
@@ -23,6 +24,9 @@ lib/elixir/lib/geo/ebin/Elixir.String.Chars.Geo.MultiLineString.beam
 lib/elixir/lib/geo/ebin/Elixir.String.Chars.Geo.MultiPoint.beam
 lib/elixir/lib/geo/ebin/Elixir.String.Chars.Geo.MultiPolygon.beam
 lib/elixir/lib/geo/ebin/Elixir.String.Chars.Geo.Point.beam
+lib/elixir/lib/geo/ebin/Elixir.String.Chars.Geo.PointM.beam
+lib/elixir/lib/geo/ebin/Elixir.String.Chars.Geo.PointZ.beam
+lib/elixir/lib/geo/ebin/Elixir.String.Chars.Geo.PointZM.beam
 lib/elixir/lib/geo/ebin/Elixir.String.Chars.Geo.Polygon.beam
 lib/elixir/lib/geo/ebin/geo.app
 lib/elixir/lib/geo/lib/geo.ex
@@ -34,9 +38,10 @@ lib/elixir/lib/geo/lib/geo/multi_line_string.ex
 lib/elixir/lib/geo/lib/geo/multi_point.ex
 lib/elixir/lib/geo/lib/geo/multi_polygon.ex
 lib/elixir/lib/geo/lib/geo/point.ex
+lib/elixir/lib/geo/lib/geo/pointm.ex
+lib/elixir/lib/geo/lib/geo/pointz.ex
+lib/elixir/lib/geo/lib/geo/pointzm.ex
 lib/elixir/lib/geo/lib/geo/polygon.ex
-lib/elixir/lib/geo/lib/geo/postgis.ex
-lib/elixir/lib/geo/lib/geo/postgis/extension.ex
 lib/elixir/lib/geo/lib/geo/utils.ex
 lib/elixir/lib/geo/lib/geo/wkb.ex
 lib/elixir/lib/geo/lib/geo/wkb/reader.ex

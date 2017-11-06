@@ -1,0 +1,11 @@
+#!/bin/sh
+
+# Before r448361, QtWebKit had QT_DEFINES, which caused qconfig-modules.h to
+# include qconfig-webkit.h, which we no longer set. We no longer ship
+# qconfig-webkit.h, we need to make sure qconfig-modules.h no longer includes
+# it (see bug 221828).
+
+if [ "$2" = "POST-INSTALL" ]; then
+    sed -i "" '/qconfig-webkit.h/d' \
+	%%QT_INCDIR%%/QtCore/qconfig-modules.h 2>/dev/null || true
+fi

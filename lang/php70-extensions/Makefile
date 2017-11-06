@@ -6,7 +6,7 @@ PORTVERSION=	1.1
 CATEGORIES=	lang
 PKGNAMESUFFIX=	-extensions
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	"meta-port" to install PHP extensions
 
 USES=		metaport php

@@ -1,0 +1,7 @@
+TIMESTAMP = 1482091989
+SHA256 (centos/alsa-plugins-oss-1.1.1-1.el7.i686.rpm) = b49683387ff11eff6f9697dae02f14539b53a67a4f09a1eae52ae7fffdb0b22f
+SIZE (centos/alsa-plugins-oss-1.1.1-1.el7.i686.rpm) = 32212
+SHA256 (centos/alsa-plugins-oss-1.1.1-1.el7.x86_64.rpm) = 9e75d7c1445c76b012ee8144237ef054fe6a25b30f6cbe88826f6b9795ae9ee0
+SIZE (centos/alsa-plugins-oss-1.1.1-1.el7.x86_64.rpm) = 32660
+SHA256 (centos/alsa-plugins-1.1.1-1.el7.src.rpm) = db290b29cf2c95463a78de59bdabe4bf78391b03967c121f935bcd3274f2dff1
+SIZE (centos/alsa-plugins-1.1.1-1.el7.src.rpm) = 381619

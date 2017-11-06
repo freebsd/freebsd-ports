@@ -75,6 +75,7 @@
 ### XML::RSS 1.05
 
 CORE_DEPS=	p5-Apache-Session>=1.53:www/p5-Apache-Session				\
+		p5-CGI>4.0:www/p5-CGI							\
 		p5-CGI-Emulate-PSGI>0:www/p5-CGI-Emulate-PSGI				\
 		p5-CGI-PSGI>=0.12:www/p5-CGI-PSGI						\
 		p5-CSS-Squish>=0.06:textproc/p5-CSS-Squish					\
@@ -91,9 +92,8 @@ CORE_DEPS=	p5-Apache-Session>=1.53:www/p5-Apache-Session				\
 		p5-DateTime>=0.44:devel/p5-DateTime						\
 		p5-Devel-GlobalDestruction>0:devel/p5-Devel-GlobalDestruction		\
 		p5-Devel-StackTrace>=1.30:devel/p5-Devel-StackTrace				\
-		p5-Email-Address>=1.89.7:mail/p5-Email-Address				\
+		p5-Email-Address>=1.897:mail/p5-Email-Address				\
 		p5-Email-Address-List>=0.03:mail/p5-Email-Address-List			\
-		p5-Encode>=2.64:converters/p5-Encode					\
 		p5-File-ShareDir>0:devel/p5-File-ShareDir					\
 		p5-HTML-FormatExternal>0:textproc/p5-HTML-FormatExternal			\
 		p5-HTML-FormatText-WithLinks-AndTables>0:textproc/p5-HTML-FormatText-WithLinks-AndTables	\
@@ -223,11 +223,6 @@ MODPERL2_DEPS=	p5-libapreq2>0:www/p5-libapreq2 \
 
 MYSQL_DEPS=	p5-DBD-mysql>=2.1018:databases/p5-DBD-mysql
 
-### --- ORACLE ---
-### DBD::Oracle  (avoid 1.23 -- ports has 1.19)
-
-ORACLE_DEPS=	p5-DBD-Oracle>0:databases/p5-DBD-Oracle
-
 ### --- PGSQL ---
 ### DBD::Pg 3.3.1
 
@@ -298,6 +293,5 @@ USERLOGO_DEPS=	p5-Convert-Color>0:graphics/p5-Convert-Color
 HTML_DOC_DEPS=	p5-HTML-Parser>0:www/p5-HTML-Parser
 
 ### --- AVOID ---
-###     'DBD::Oracle' => [qw(1.23)],
 ###     'Devel::StackTrace' => [qw(1.28 1.29)],
 ###	'DBD::Pg' => [qw(3.3.0)],

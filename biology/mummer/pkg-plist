@@ -19,6 +19,12 @@ bin/show-coords
 bin/show-diff
 bin/show-snps
 bin/show-tiling
+libexec/mummer/Foundation.pm
+libexec/mummer/postnuc
+libexec/mummer/postpro
+libexec/mummer/prenuc
+libexec/mummer/prepro
+libexec/mummer/tandem-repeat.awk
 %%PORTDOCS%%%%DOCSDIR%%/COPYRIGHT
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE

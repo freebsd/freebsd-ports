@@ -20,11 +20,10 @@ RUN_DEPENDS=	bash:shells/bash
 
 LIBS+=		-L${LOCALBASE}/lib
 USE_RC_SUBR=	verlihub
-USES=		libtool
+USES=		libtool ssl
 USE_MYSQL=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USE_OPENSSL=	yes
 SUB_FILES+=	pkg-message
 
 post-patch:

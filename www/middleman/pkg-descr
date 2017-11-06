@@ -7,4 +7,4 @@ expression substitution in downloaded files and HTTP headers, complete
 support for HTTP/1.1 including persistent connections and gzip encoding,
 and an intuitive Web interface for configuring the proxy.
 
-WWW: http://sourceforge.net/projects/middle-man/
+WWW: https://sourceforge.net/projects/middle-man/

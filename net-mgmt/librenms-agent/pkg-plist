@@ -1,0 +1,25 @@
+bin/check_mk_agent
+bin/distro
+bin/mk_enplug
+etc/xinetd.d/check_mk
+lib/check_mk_agent/repo/apache
+lib/check_mk_agent/repo/bind
+lib/check_mk_agent/repo/ceph
+lib/check_mk_agent/repo/dmi
+lib/check_mk_agent/repo/dpkg
+lib/check_mk_agent/repo/drbd
+lib/check_mk_agent/repo/hddtemp
+lib/check_mk_agent/repo/memcached
+lib/check_mk_agent/repo/munin
+lib/check_mk_agent/repo/mysql
+lib/check_mk_agent/repo/nfsstats
+lib/check_mk_agent/repo/nginx
+lib/check_mk_agent/repo/powerdns
+lib/check_mk_agent/repo/powerdns-recursor
+lib/check_mk_agent/repo/proxmox
+lib/check_mk_agent/repo/rpm
+lib/check_mk_agent/repo/rrdcached
+lib/check_mk_agent/repo/temperature
+lib/check_mk_agent/repo/tinydns
+@dir lib/check_mk_agent/local
+@dir lib/check_mk_agent/plugins

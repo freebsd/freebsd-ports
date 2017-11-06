@@ -1,6 +1,6 @@
---- popt.c.orig	2010-01-19 08:39:10.000000000 +0800
-+++ popt.c	2010-06-16 00:38:47.000000000 +0800
-@@ -22,6 +22,9 @@
+--- popt.c.orig	2010-01-19 00:39:10 UTC
++++ popt.c
+@@ -22,6 +22,9 @@ extern long long int strtoll(const char *nptr, /*@null
  #include <float.h>
  #endif
  #include <math.h>

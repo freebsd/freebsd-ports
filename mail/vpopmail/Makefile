@@ -3,7 +3,7 @@
 
 PORTNAME=	vpopmail
 PORTVERSION=	5.4.33
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	mail
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-stable/${PORTVERSION}
 
@@ -61,7 +61,6 @@ OPTIONS_DEFINE=	DOCS \
 		SUID_VCHKPW \
 		SMTP_AUTH_PATCH \
 		ONCHANGE_SCRIPT \
-		FPIC \
 		MAILDROP \
 		DOMAIN_QUOTAS \
 		SPAMFOLDER \
@@ -78,7 +77,6 @@ OPTIONS_DEFAULT=MD5_PASSWORDS \
 		FILE_LOCKING \
 		USERS_BIG_DIR \
 		SEEKABLE \
-		FPIC \
 		AUTH_LOG
 
 CDB_DESC=			Auth via CDB
@@ -106,7 +104,6 @@ SPAMASSASSIN_DESC=		SpamAssassin support
 SUID_VCHKPW_DESC=		Set vchkpw setugid vpopmail:vchkpw
 SMTP_AUTH_PATCH_DESC=		Swap Challenge/Response for CRAM-MD5
 ONCHANGE_SCRIPT_DESC=		vpopmail/etc/onchange script support
-FPIC_DESC=			Compile with -fPIC
 MAILDROP_DESC=			Maildrop MDA support
 DOMAIN_QUOTAS_DESC=		Domain quotas support
 SPAMFOLDER_DESC=		Move spam to Junk (requires SA)
@@ -222,7 +219,7 @@ PLIST_SUB+=	VCHKPW_MODE="${VCHKPW_MODE}"
 # User-configurable variables
 #
 # ONCHANGE_SCRIPT	- see README.onchange
-# MAILDROP 		- see README.maildrop
+# MAILDROP		- see README.maildrop
 #
 # Define these to change from the default behaviour
 #
@@ -318,10 +315,6 @@ MAILDROP_FILES=		${WRKSRC}/maildrop/maildroprc.v1 \
 
 .if empty(PORT_OPTIONS:MDOCS)
 EXTRA_PATCHES+=	${FILESDIR}/Makefile.in-noportdocs.patch
-.endif
-
-.if ${PORT_OPTIONS:MFPIC} && ( ${ARCH} == "amd64" || ${ARCH} == "ia64" )
-CFLAGS+=	-fPIC
 .endif
 
 #

@@ -36,6 +36,7 @@ bin/kwiki-install
 %%SITE_PERL%%/CGI/Kwiki/Slides.pm
 %%SITE_PERL%%/CGI/Kwiki/Style.pm
 %%SITE_PERL%%/CGI/Kwiki/Template.pm
+%%PERL5_MAN1%%/kwiki-install.1.gz
 %%PERL5_MAN3%%/CGI::Kwiki.3.gz
 %%PERL5_MAN3%%/CGI::Kwiki::Blog.3.gz
 %%PERL5_MAN3%%/CGI::Kwiki::CGI.3.gz
@@ -64,4 +65,3 @@ bin/kwiki-install
 %%PERL5_MAN3%%/CGI::Kwiki::Slides.3.gz
 %%PERL5_MAN3%%/CGI::Kwiki::Style.3.gz
 %%PERL5_MAN3%%/CGI::Kwiki::Template.3.gz
-%%PERL5_MAN1%%/kwiki-install.1.gz

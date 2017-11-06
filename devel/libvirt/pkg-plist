@@ -8,6 +8,19 @@ man/man1/virt-admin.1.gz
 man/man1/virt-host-validate.1.gz
 man/man1/virt-pki-validate.1.gz
 man/man1/virt-xml-validate.1.gz
+man/man7/virkeycode-atset1.7.gz
+man/man7/virkeycode-atset2.7.gz
+man/man7/virkeycode-atset3.7.gz
+man/man7/virkeycode-linux.7.gz
+man/man7/virkeycode-osx.7.gz
+man/man7/virkeycode-rfb.7.gz
+man/man7/virkeycode-usb.7.gz
+man/man7/virkeycode-win32.7.gz
+man/man7/virkeycode-xt.7.gz
+man/man7/virkeycode-xtkbd.7.gz
+man/man7/virkeyname-linux.7.gz
+man/man7/virkeyname-osx.7.gz
+man/man7/virkeyname-win32.7.gz
 man/man8/libvirtd.8.gz
 man/man8/virtlockd.8.gz
 man/man8/virtlogd.8.gz
@@ -17,10 +30,12 @@ man/man8/virtlogd.8.gz
 @sample %%ETCDIR%%/virtlockd.conf.sample
 @sample %%ETCDIR%%/virtlogd.conf.sample
 %%EXAMPLESDIR%%/networks/default.xml
+%%BHYVE%%@sample %%ETCDIR%%/bhyve.conf.sample
 %%QEMU%%@sample %%ETCDIR%%/qemu.conf.sample
 %%XEN%%@sample %%ETCDIR%%/libxl.conf.sample
 %%QEMU%%%%ETCDIR%%/qemu-lockd.conf
 %%XEN%%%%ETCDIR%%/libxl-lockd.conf
+%%SASL%%etc/sasl2/libvirt.conf
 etc/logrotate.d/libvirtd
 etc/logrotate.d/libvirtd.lxc
 etc/logrotate.d/libvirtd.qemu
@@ -70,6 +85,7 @@ sbin/virtlockd
 sbin/virtlogd
 share/augeas/lenses/libvirt_lockd.aug
 share/augeas/lenses/libvirtd.aug
+%%BHYVE%%share/augeas/lenses/libvirtd_bhyve.aug
 share/augeas/lenses/virtlockd.aug
 share/augeas/lenses/virtlogd.aug
 %%QEMU%%share/augeas/lenses/libvirtd_qemu.aug
@@ -77,6 +93,7 @@ share/augeas/lenses/virtlogd.aug
 share/augeas/lenses/tests/test_libvirtd.aug
 share/augeas/lenses/tests/test_virtlockd.aug
 share/augeas/lenses/tests/test_virtlogd.aug
+%%BHYVE%%share/augeas/lenses/tests/test_libvirtd_bhyve.aug
 %%QEMU%%share/augeas/lenses/tests/test_libvirtd_qemu.aug
 %%XEN%%share/augeas/lenses/libvirtd_libxl.aug
 %%XEN%%share/augeas/lenses/tests/test_libvirtd_libxl.aug
@@ -106,6 +123,7 @@ share/augeas/lenses/tests/test_virtlogd.aug
 %%DOCSDIR%%%%PORTVERSION%%/html/drvesx.html
 %%DOCSDIR%%%%PORTVERSION%%/html/drvhyperv.html
 %%DOCSDIR%%%%PORTVERSION%%/html/drvlxc.html
+%%DOCSDIR%%%%PORTVERSION%%/html/drvnodedev.html
 %%DOCSDIR%%%%PORTVERSION%%/html/drvopenvz.html
 %%DOCSDIR%%%%PORTVERSION%%/html/drvphyp.html
 %%DOCSDIR%%%%PORTVERSION%%/html/drvqemu.html
@@ -118,6 +136,18 @@ share/augeas/lenses/tests/test_virtlogd.aug
 %%DOCSDIR%%%%PORTVERSION%%/html/drvxen.html
 %%DOCSDIR%%%%PORTVERSION%%/html/errors.html
 %%DOCSDIR%%%%PORTVERSION%%/html/firewall.html
+%%DOCSDIR%%%%PORTVERSION%%/html/fonts/LICENSE.md
+%%DOCSDIR%%%%PORTVERSION%%/html/fonts/overpass-bold-italic.woff
+%%DOCSDIR%%%%PORTVERSION%%/html/fonts/overpass-bold.woff
+%%DOCSDIR%%%%PORTVERSION%%/html/fonts/overpass-italic.woff
+%%DOCSDIR%%%%PORTVERSION%%/html/fonts/overpass-light-italic.woff
+%%DOCSDIR%%%%PORTVERSION%%/html/fonts/overpass-light.woff
+%%DOCSDIR%%%%PORTVERSION%%/html/fonts/overpass-mono-bold.woff
+%%DOCSDIR%%%%PORTVERSION%%/html/fonts/overpass-mono-light.woff
+%%DOCSDIR%%%%PORTVERSION%%/html/fonts/overpass-mono-regular.woff
+%%DOCSDIR%%%%PORTVERSION%%/html/fonts/overpass-mono-semibold.woff
+%%DOCSDIR%%%%PORTVERSION%%/html/fonts/overpass-regular.woff
+%%DOCSDIR%%%%PORTVERSION%%/html/fonts/stylesheet.css
 %%DOCSDIR%%%%PORTVERSION%%/html/format.html
 %%DOCSDIR%%%%PORTVERSION%%/html/formatcaps.html
 %%DOCSDIR%%%%PORTVERSION%%/html/formatdomain.html
@@ -191,6 +221,7 @@ share/augeas/lenses/tests/test_virtlogd.aug
 %%DOCSDIR%%%%PORTVERSION%%/html/migration-tunnel.png
 %%DOCSDIR%%%%PORTVERSION%%/html/migration-unmanaged-direct.png
 %%DOCSDIR%%%%PORTVERSION%%/html/migration.html
+%%DOCSDIR%%%%PORTVERSION%%/html/mobile.css                                   
 %%DOCSDIR%%%%PORTVERSION%%/html/news-2005.html
 %%DOCSDIR%%%%PORTVERSION%%/html/news-2006.html
 %%DOCSDIR%%%%PORTVERSION%%/html/news-2007.html
@@ -206,6 +237,7 @@ share/augeas/lenses/tests/test_virtlogd.aug
 %%DOCSDIR%%%%PORTVERSION%%/html/news.html
 %%DOCSDIR%%%%PORTVERSION%%/html/node.gif
 %%DOCSDIR%%%%PORTVERSION%%/html/nss.html
+%%DOCSDIR%%%%PORTVERSION%%/html/pci-hotplug.html   
 %%DOCSDIR%%%%PORTVERSION%%/html/php.html
 %%DOCSDIR%%%%PORTVERSION%%/html/python.html
 %%DOCSDIR%%%%PORTVERSION%%/html/remote.html
@@ -251,6 +283,7 @@ share/gtk-doc/html/libvirt/up.png
 %%DATADIR%%/schemas/storagecommon.rng
 %%DATADIR%%/schemas/storagepool.rng
 %%DATADIR%%/schemas/storagevol.rng
+%%DATADIR%%/test-screenshot.png
 %%NLS%%share/locale/af/LC_MESSAGES/libvirt.mo
 %%NLS%%share/locale/am/LC_MESSAGES/libvirt.mo
 %%NLS%%share/locale/anp/LC_MESSAGES/libvirt.mo
@@ -353,6 +386,8 @@ lib/libvirt/connection-driver/libvirt_driver_secret.so
 lib/libvirt/connection-driver/libvirt_driver_storage.so
 lib/libvirt/connection-driver/libvirt_driver_vbox.so
 %%XEN%%lib/libvirt/connection-driver/libvirt_driver_libxl.so
+lib/libvirt/storage-backend/libvirt_storage_backend_fs.so
+%%ZFS%%lib/libvirt/storage-backend/libvirt_storage_backend_zfs.so
 %%QEMU%%@dir /var/run/libvirt/qemu
 %%QEMU%%@dir /var/lib/libvirt/qemu/channel/target
 %%QEMU%%@dir /var/lib/libvirt/qemu/channel

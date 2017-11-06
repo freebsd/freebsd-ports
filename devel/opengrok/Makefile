@@ -1,25 +1,26 @@
 # $FreeBSD$
 
 PORTNAME=	opengrok
-PORTVERSION=	0.12.1.5
+PORTVERSION=	1.0
 CATEGORIES=	devel java
-MASTER_SITES=	http://java.net/projects/opengrok/downloads/download/
+MASTER_SITES=	https://github.com/OpenGrok/OpenGrok/releases/download/${PORTVERSION}/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	amutu@amutu.com
 COMMENT=	Fast and powerful code search and cross-reference engine
 
 LICENSE=	CDDL APACHE20
 LICENSE_COMB=	multi
+LICENSE_FILE=	${WRKSRC}/doc/LICENSE.txt
 
 RUN_DEPENDS=	exctags:devel/ctags
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.7+
+JAVA_VERSION=	1.8+
 SHAREOWN=	www
 SHAREGRP=	www
 NO_BUILD=	yes
 NO_ARCH=	yes
-PORTDOCS=	CHANGES.txt EXAMPLE.txt LICENSE.txt
+PORTDOCS=	CHANGES.txt EXAMPLE.txt README.txt NOTICE.txt
 SUB_FILES=	opengrok
 SUB_LIST+=	LIBFILES="${LIBFILES:S,^,${DATADIR}/lib/,}" \
 		JARFILE="${JARFILE}"
@@ -28,39 +29,39 @@ PLIST_SUB=	T=${WEBAPP_HOME:S|^${LOCALBASE}/||} \
 
 OPTIONS_DEFINE=		DOCS
 OPTIONS_SINGLE=		AS
-OPTIONS_SINGLE_AS=	TOMCAT7 TOMCAT6 RESIN3
-OPTIONS_DEFAULT=	TOMCAT6
+OPTIONS_SINGLE_AS=	TOMCAT85 TOMCAT8 TOMCAT7 TOMCAT6 RESIN3
+OPTIONS_DEFAULT=	TOMCAT8
+
+TOMCAT8_DESC=		Tomcat 8.x support
+TOMCAT85_DESC=		Tomcat 8.5.x support
+
+TOMCAT6_VARS=	WEBAPP_HOME=${LOCALBASE}/apache-tomcat-6.0
+TOMCAT7_VARS=	WEBAPP_HOME=${LOCALBASE}/apache-tomcat-7.0
+TOMCAT8_VARS=	WEBAPP_HOME=${LOCALBASE}/apache-tomcat-8.0
+TOMCAT85_VARS=	WEBAPP_HOME=${LOCALBASE}/apache-tomcat-8.5
+RESIN3_VARS=	WEBAPP_HOME=${LOCALBASE}/resin3
 
 TOMCAT6_BUILD_DEPENDS=	${WEBAPP_HOME}/bin/bootstrap.jar:www/tomcat6
 TOMCAT6_RUN_DEPENDS=	${WEBAPP_HOME}/bin/bootstrap.jar:www/tomcat6
 TOMCAT7_BUILD_DEPENDS=	${WEBAPP_HOME}/bin/bootstrap.jar:www/tomcat7
 TOMCAT7_RUN_DEPENDS=	${WEBAPP_HOME}/bin/bootstrap.jar:www/tomcat7
+TOMCAT8_BUILD_DEPENDS=	${WEBAPP_HOME}/bin/bootstrap.jar:www/tomcat8
+TOMCAT8_RUN_DEPENDS=	${WEBAPP_HOME}/bin/bootstrap.jar:www/tomcat8
+TOMCAT85_BUILD_DEPENDS=	${WEBAPP_HOME}/bin/bootstrap.jar:www/tomcat85
+TOMCAT85_RUN_DEPENDS=	${WEBAPP_HOME}/bin/bootstrap.jar:www/tomcat85
 RESIN3_BUILD_DEPENDS=	${WEBAPP_HOME}/lib/resin.jar:www/resin3
 RESIN3_RUN_DEPENDS=	${WEBAPP_HOME}/lib/resin.jar:www/resin3
 
 JARFILE=	${DATADIR}/opengrok.jar
 LIBFILES=	ant.jar \
-		bcel-5.2.jar \
+		bcel-6.0.jar \
 		jrcs.jar \
-		lucene-analyzers-common-4.7.1.jar \
-		lucene-core-4.7.1.jar \
-		lucene-queryparser-4.7.1.jar \
-		lucene-suggest-4.7.1.jar \
-		swing-layout-0.9.jar
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MTOMCAT7}
-WEBAPP_HOME?=	${LOCALBASE}/apache-tomcat-7.0
-.endif
-
-.if ${PORT_OPTIONS:MTOMCAT6}
-WEBAPP_HOME?=	${LOCALBASE}/apache-tomcat-6.0
-.endif
-
-.if ${PORT_OPTIONS:MRESIN3}
-WEBAPP_HOME?=	${LOCALBASE}/resin3
-.endif
+		lucene-analyzers-common-6.5.0.jar \
+		lucene-core-6.5.0.jar \
+		lucene-queryparser-6.5.0.jar \
+		lucene-suggest-6.5.0.jar \
+		swing-layout-0.9.jar \
+		json-simple-1.1.1.jar
 
 WEBAPPS_DIR=	${WEBAPP_HOME:S|^${LOCALBASE}/||}/webapps
 

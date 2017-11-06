@@ -3,7 +3,7 @@
 
 PORTNAME=	pootle
 PORTVERSION=	2.5.1.3
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	textproc
 MASTER_SITES=	CHEESESHOP
 DISTNAME=	Pootle-${PORTVERSION}
@@ -23,13 +23,15 @@ RUN_DEPENDS=	translate-toolkit>=1.11.0:textproc/translate-toolkit \
 		${PYTHON_PKGNAMEPREFIX}south>=0.7.6:databases/py-south \
 		${PYTHON_PKGNAMEPREFIX}django-voting>=0.1:www/py-django-voting \
 		${PYTHON_PKGNAMEPREFIX}simplejson>=0:devel/py-simplejson \
+		${PYTHON_PKGNAMEPREFIX}argparse>=0:devel/py-argparse \
 		${PYTHON_PKGNAMEPREFIX}diff-match-patch>=0:textproc/py-diff-match-patch
 # actually diff-match-patch is a dependency of translate-toolkit,
 # but only this port uses it.
 
 NO_ARCH=	yes
-USES=		gettext python tar:bzip2
+USES=		gettext python tar:bzip2 shebangfix
 USE_PYTHON=	autoplist distutils
+SHEBANG_FILES=	pootle/assets/admin/js/compress.py
 
 USERS=		pootle
 GROUPS=		pootle
@@ -47,8 +49,6 @@ OPTIONS_DEFAULT=MEMCACHED MYSQL
 
 MEMCACHED_DESC=	Use memcached to improve performance
 
-MYSQL_USE=	MYSQL=yes
-
 LDAP_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ldap2>0:devel/py-ldap2
 
 MEMCACHED_LIB_DEPENDS=	libmemcached.so:databases/libmemcached
@@ -59,6 +59,11 @@ MYSQL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}MySQLdb>0:databases/py-MySQLdb
 PGSQL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}psycopg2>0:databases/py-psycopg2
 
 SUBVERSION_RUN_DEPENDS=	svn:devel/subversion
+
+.include <bsd.port.pre.mk>
+.if ${PORT_OPTIONS:MMYSQL}
+USES+=	mysql:client
+.endif
 
 pre-configure:
 	@${REINPLACE_CMD} -e "s/,<0.11.2//g" \
@@ -73,4 +78,4 @@ post-install-DOCS-on:
 	${INSTALL_DATA} ${WRKSRC}/${docs} ${STAGEDIR}/${DOCSDIR}
 .endfor
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

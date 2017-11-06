@@ -1,0 +1,41 @@
+From: Jan Beulich <jbeulich@suse.com>
+Subject: x86/mm: disallow page stealing from HVM domains
+
+The operation's success can't be controlled by the guest, as the device
+model may have an active mapping of the page. If we nevertheless
+permitted this operation, we'd have to add further TLB flushing to
+prevent scenarios like
+
+"Domains A (HVM), B (PV), C (PV); B->target==A
+ Steps:
+ 1. B maps page X from A as writable
+ 2. B unmaps page X without a TLB flush
+ 3. A sends page X to C via GNTTABOP_transfer
+ 4. C maps page X as pagetable (potentially causing a TLB flush in C,
+ but not in B)
+
+ At this point, X would be mapped as a pagetable in C while being
+ writable through a stale TLB entry in B."
+
+A similar scenario could be constructed for A using XENMEM_exchange and
+some arbitrary PV domain C then having this page allocated.
+
+This is XSA-217.
+
+Reported-by: Jann Horn <jannh@google.com>
+Signed-off-by: Jan Beulich <jbeulich@suse.com>
+Acked-by: George Dunlap <george.dunlap@citrix.com>
+Reviewed-by: Konrad Rzeszutek Wilk <konrad.wilk@oracle.com>
+
+--- a/xen/arch/x86/mm.c
++++ b/xen/arch/x86/mm.c
+@@ -4449,6 +4449,9 @@ int steal_page(
+     bool_t drop_dom_ref = 0;
+     const struct domain *owner = dom_xen;
+ 
++    if ( paging_mode_external(d) )
++        return -1;
++
+     spin_lock(&d->page_alloc_lock);
+ 
+     if ( is_xen_heap_page(page) || ((owner = page_get_owner(page)) != d) )

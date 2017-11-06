@@ -1,0 +1,19 @@
+--- Makefile.orig	2017-02-26 10:05:09 UTC
++++ Makefile
+@@ -20,7 +20,6 @@
+ TOP:=$(shell  pwd)
+ BUILD_OS:=$(shell uname)
+ VERSION:=$(shell cat version)
+-GITHASH:=$(shell git rev-parse HEAD)
+ OPTGEN:=$(shell which optgen | head -c1)
+ 
+ ifeq ($(LCOV_OUTPUT_DIR),)
+@@ -98,7 +97,7 @@ $(BUILD)/%.o: src/%.c src/%.h
+ 		 -c $< -o $@
+ 
+ $(BUILD)/usage.o: man/dupd
+-	$(OBJCP) -I binary $(USAGE_ARCH) man/dupd $(BUILD)/usage.o
++	ld -r -b binary -o $(BUILD)/usage.o man/dupd
+ 
+ clean:
+ 	rm -f dupd

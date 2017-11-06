@@ -1,0 +1,8 @@
+--- etc/logcheck.logfiles.orig	2017-01-25 21:08:04 UTC
++++ etc/logcheck.logfiles
+@@ -1,4 +1,4 @@
+ # these files will be checked by logcheck
+ # This has been tuned towards a default syslog install
+-/var/log/syslog
+ /var/log/auth.log
++/var/log/messages

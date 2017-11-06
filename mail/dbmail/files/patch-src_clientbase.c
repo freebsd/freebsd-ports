@@ -1,6 +1,6 @@
---- src/clientbase.c.orig	2014-08-23 14:01:38.000000000 +0100
-+++ src/clientbase.c	2014-08-24 10:12:06.000000000 +0100
-@@ -151,7 +151,7 @@
+--- src/clientbase.c.orig	2015-01-25 10:20:50 UTC
++++ src/clientbase.c
+@@ -151,7 +151,7 @@ ClientBase_T * client_init(client_sock *
  		client->tx		= STDOUT_FILENO;
  	} else {
  		/* server-side */
@@ -9,7 +9,7 @@
  						NI_MAXHOST, client->dst_port, 
  						NI_MAXSERV, NI_NUMERICHOST | NI_NUMERICSERV))) {
  			TRACE(TRACE_INFO, "getnameinfo::error [%s]", gai_strerror(serr));
-@@ -159,7 +159,7 @@
+@@ -159,7 +159,7 @@ ClientBase_T * client_init(client_sock *
  
  		/* client-side */
  		if (server_conf->resolveIP) {
@@ -18,7 +18,7 @@
  						       	NI_MAXHOST-1, NULL, 0, NI_NAMEREQD))) {
  				TRACE(TRACE_INFO, "getnameinfo:error [%s]", gai_strerror(serr));
  			} 
-@@ -170,7 +170,7 @@
+@@ -170,7 +170,7 @@ ClientBase_T * client_init(client_sock *
  					client->clientname[0] ? client->clientname : "Lookup failed");
  		} else {
  

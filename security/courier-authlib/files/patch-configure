@@ -1,4 +1,4 @@
---- configure.orig	2015-04-25 14:07:07 UTC
+--- configure.orig	2017-07-02 14:41:39 UTC
 +++ configure
 @@ -642,6 +642,10 @@ ltdl_LIBOBJS
  am__EXEEXT_FALSE
@@ -21,7 +21,7 @@
  LIBAUTHPWD
  LIBAUTHSHADOW
  SHADOWLIBS
-@@ -1546,6 +1553,7 @@ Optional Packages:
+@@ -1563,6 +1570,7 @@ Optional Packages:
   --with-authldaprc=filename         Expect to find authldaprc here
   --without-authpwd                  Do not include the authpwd module
   --without-authshadow               Do not include the authshadow module
@@ -29,7 +29,7 @@
   --with-authpgsqlrc=filename        Expect to find authpgsql here
   --without-authpgsql               Do not include the authpgsql module
   --with-pgsql-libs=DIR		Look for pgsql libs in this dir
-@@ -2795,7 +2803,7 @@ else
+@@ -2938,7 +2946,7 @@ else
  fi
  
  fi
@@ -38,16 +38,7 @@
  
  { $as_echo "$as_me:${as_lineno-$LINENO}: checking for a thread-safe mkdir -p" >&5
  $as_echo_n "checking for a thread-safe mkdir -p... " >&6; }
-@@ -13456,7 +13464,7 @@ LIBS="$saveLIBS"
- 
- 
- save_LIBS="$LIBS"
--LIBS="-lcourier-unicode"
-+LIBS="-L%%LOCALBASE%%/lib -lcourier-unicode"
- cat confdefs.h - <<_ACEOF >conftest.$ac_ext
- /* end confdefs.h.  */
- 
-@@ -13749,8 +13757,12 @@ fi
+@@ -18097,8 +18105,12 @@ fi
  
  if test "$doauthuserdb" = "no"
  then
@@ -60,7 +51,7 @@
  	AUTHUSERDB="authuserdb"
  	LIBAUTHUSERDB="libauthuserdb.la"
  
-@@ -14208,6 +14220,20 @@ else
+@@ -18556,7 +18568,21 @@ else
  fi
  
  
@@ -70,7 +61,7 @@
 +else
 +	dobase="yes"
 +fi;
-+
+ 
 +if test "$dobase" = "no"; then
 +	HAVE_BASE_TRUE='#'
 +	HAVE_BASE_FALSE=
@@ -78,13 +69,20 @@
 +	HAVE_BASE_TRUE=
 +	HAVE_BASE_FALSE='#'
 +fi
- 
++
   if test "$HAVE_LDAP" = 1; then
    HAVE_LDAP_TRUE=
-@@ -14426,6 +14452,256 @@ fi
- 
- 
- 
+   HAVE_LDAP_FALSE='#'
+@@ -18768,6 +18794,256 @@ if test "$HAVE_PWD" = 1
+ then
+ 	LIBAUTHPWD="libauthpwd.la"
+ fi
++
++
++
++
++
++
 +
 +vpopmail_home=`$PERL -e '@a=getpwnam("vpopmail"); print "$a[7]";'`
 +
@@ -329,12 +327,6 @@
 +	LIBS=$_SAVE_LIBS
 +fi
 +
-+
-+
-+
-+
-+
-+
- # Check whether --with-authpgsqlrc was given.
- if test "${with_authpgsqlrc+set}" = set; then :
-   withval=$with_authpgsqlrc; authpgsqlrc="$withval"
+ 
+ 
+ 

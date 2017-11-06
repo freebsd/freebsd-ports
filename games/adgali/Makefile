@@ -17,7 +17,7 @@ LIB_DEPENDS=	libpng.so:graphics/png \
 		libtiff.so:graphics/tiff \
 		libfreetype.so:print/freetype2
 
-USES=		execinfo gmake jpeg libtool tar:bzip2
+USES=		gmake jpeg libtool tar:bzip2
 USE_LDCONFIG=	yes
 USE_SDL=	sdl
 USE_XORG=	xpm
@@ -25,8 +25,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-compile-optim=no
 INSTALL_TARGET=	install-strip
 
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib -lexecinfo
+LDFLAGS+=	-lexecinfo
 
 OPTIONS_DEFINE=	DOCS
 

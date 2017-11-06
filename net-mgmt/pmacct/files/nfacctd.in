@@ -1,0 +1,38 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: nfacctd
+# REQUIRE: NETWORKING
+# KEYWORD: shutdown
+
+#
+# Add the following lines to /etc/rc.conf to enable nfacctd:
+#
+# nfacctd_enable="YES"
+#
+# You can define flags for nfacctd running. 
+# See http://wiki.pmacct.net/OfficialConfigKeys for more details.
+#
+# Example:
+# nfacctd_flags="-f %%PREFIX%%/etc/nfacctd.conf -P mysql"
+#
+# Default flags: -f %%PREFIX%%/etc/nfacctd.conf
+#
+
+. /etc/rc.subr
+
+name=nfacctd
+rcvar=nfacctd_enable
+
+command=%%PREFIX%%/sbin/$name
+command_args="-D"
+
+# set defaults
+
+nfacctd_enable=${nfacctd_enable:-"NO"}
+nfacctd_flags=${nfacctd_flags:-"-f %%PREFIX%%/etc/nfacctd.conf"}
+
+load_rc_config $name
+run_rc_command "$1"

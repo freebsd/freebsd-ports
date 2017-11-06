@@ -3,7 +3,7 @@
 
 PORTNAME=	pydance
 PORTVERSION=	1.1.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	games
 MASTER_SITES=	http://people.freebsd.org/~sylvio/pydance/ \
 		http://icculus.org/pyddr/ \
@@ -18,7 +18,8 @@ COMMENT=	Dancing simulation game similar to the kind in arcades
 BUILD_DEPENDS=	${PYGAME}
 RUN_DEPENDS=	${PYGAME}
 
-USES=		python
+USES=		python shebangfix
+SHEBANG_FILES=	pydance.py utils/findbpm.py
 USE_PYTHON=	distutils noegginfo
 SUB_FILES=	pkg-message
 
@@ -33,7 +34,8 @@ DOCFILES=	BUGS CREDITS ChangeLog HACKING INSTALL LICENSE README TODO \
 OPTIONS_DEFINE=	DOCS
 
 post-patch:
-	${REINPLACE_CMD} -e "s,/etc,${LOCALBASE}/etc," ${WRKSRC}/constants.py
+	@${REINPLACE_CMD} -e "s,/etc,${LOCALBASE}/etc," ${WRKSRC}/constants.py
+
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/games/pydance/songs
 	${INSTALL_SCRIPT} ${WRKSRC}/utils/findbpm.py ${STAGEDIR}${PREFIX}/bin/findbpm
@@ -53,6 +55,8 @@ do-install:
 		${STAGEDIR}${PREFIX}/share/games/pydance/songs)
 	(cd ${STAGEDIR}${PREFIX}/share/games/pydance/songs && ${MV} \
 		pydance-cdtitle.png pydance.png)
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/images
 	(cd ${WRKSRC} && ${INSTALL_DATA} ${DOCFILES} ${STAGEDIR}${DOCSDIR})
 	(cd ${WRKSRC}/docs && ${COPYTREE_SHARE} images ${STAGEDIR}${DOCSDIR})

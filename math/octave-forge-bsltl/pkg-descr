@@ -1,0 +1,11 @@
+The octave-forge package is the result of The GNU Octave Repositry project,
+which is intended to be a central location for custom scripts, functions and
+extensions for GNU Octave. contains the source for all the functions plus
+build and install scripts.
+
+This is bsltl.
+
+ The BSLTL package is a free collection of OCTAVE/MATLAB routines for working
+ with the biospeckle laser technique.
+
+WWW: http://octave.sourceforge.net/

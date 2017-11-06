@@ -1,11 +1,3 @@
-TIMESTAMP = 1483187903
-SHA256 (libidn2-0.14.tar.gz) = ba5dfbf2ac617846d9a02ecbfd43d813de5e3100963d2412f1774fd16ea3218a
-SIZE (libidn2-0.14.tar.gz) = 1503716
-SHA256 (idna-tables-6.3.0.txt) = ac67b5bf7c2de2d3b6e11fa7bf0d7ba54e6457788aec1ebde48739ee084822b7
-SIZE (idna-tables-6.3.0.txt) = 162415
-SHA256 (DerivedNormalizationProps.txt) = c5e867ae043fe5d1cf713150d859356bfdcdba291c39f584af0bfb943f1a9743
-SIZE (DerivedNormalizationProps.txt) = 783470
-SHA256 (IdnaTest.txt) = f56af7d031fddd8264cd95086e360375e3a09e680c8e2d947be469bfa4f4097d
-SIZE (IdnaTest.txt) = 422220
-SHA256 (IdnaMappingTable.txt) = 84c8f25d2b58531dada678cbfb779c0fb04b1aac42c7744a63fb59784e974775
-SIZE (IdnaMappingTable.txt) = 742564
+TIMESTAMP = 1504161218
+SHA256 (libidn2-2.0.4.tar.gz) = 644b6b03b285fb0ace02d241d59483d98bc462729d8bb3608d5cad5532f3d2f0
+SIZE (libidn2-2.0.4.tar.gz) = 2008524

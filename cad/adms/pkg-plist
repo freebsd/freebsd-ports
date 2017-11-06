@@ -1,5 +1,7 @@
 bin/admsCheck
 bin/admsXml
+include/adms/constants.vams
+include/adms/disciplines.vams
 lib/libadmsAdmstpath.a
 lib/libadmsAdmstpath.so
 lib/libadmsAdmstpath.so.0

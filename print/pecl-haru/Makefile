@@ -5,10 +5,8 @@ PORTNAME=	haru
 PORTVERSION=	1.0.4
 PORTREVISION=	1
 CATEGORIES=	print pear
-MASTER_SITES=	http://pecl.php.net/get/
-PKGNAMEPREFIX=	pecl-
 
-MAINTAINER=	joneum@bsdproject.de
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	PECL extension to Haru PDF functions
 
 LICENSE=	PHP301
@@ -17,8 +15,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	${LOCALBASE}/include/hpdf.h:print/libharu
 RUN_DEPENDS:=	${LOCALBASE}/include/hpdf.h:print/libharu
 
-USES=		php:ext tar:tgz
-IGNORE_WITH_PHP=	70
+USES=		php:pecl
+IGNORE_WITH_PHP=	70 71
 
 CONFIGURE_ARGS+=	--with-haru=${LOCALBASE}
 CFLAGS+=	-I${LOCALBASE}/include

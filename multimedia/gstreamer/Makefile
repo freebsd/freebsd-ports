@@ -4,7 +4,7 @@
 
 PORTNAME=	gstreamer
 PORTVERSION=	0.10.36
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	multimedia
 MASTER_SITES=	http://gstreamer.freedesktop.org/src/gstreamer/
 
@@ -36,7 +36,7 @@ OPTIONS_DEFINE=	LIBCHECK NLS
 OPTIONS_SUB=	yes
 LIBCHECK_DESC=	Unit tests support
 
-LIBCHECK_LIB_DEPENDS=	libcheck.so:devel/libcheck
+LIBCHECK_LIB_DEPENDS=	libcheck.so:devel/check
 LIBCHECK_CONFIGURE_OFF=	--disable-check
 
 NLS_USES=	gettext

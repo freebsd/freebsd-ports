@@ -63,12 +63,12 @@ LIB_DEPENDS+=	libgnustep-base.so:lang/gnustep-base
 
 .  if ${USE_GNUSTEP:Mbuild}
 PATH:=	${GNUSTEP_SYSTEM_TOOLS}:${GNUSTEP_LOCAL_TOOLS}:${PATH}
-MAKE_ENV+=	PATH="${PATH}" GNUSTEP_MAKEFILES="${GNUSTEP_MAKEFILES}" GNUSTEP_SYSTEM_ROOT="${GNUSTEP_SYSTEM_ROOT}"
+MAKE_ENV+=	PATH="${PATH}" GNUSTEP_MAKEFILES="${GNUSTEP_MAKEFILES}"
 # All GNUstep things installed from ports should be in the System domain.
 # Things installed from source can then freely live in the Local domain without
 # conflicts.
 MAKE_ENV+=	GNUSTEP_INSTALLATION_DOMAIN=SYSTEM
-CONFIGURE_ENV+=	PATH="${PATH}" GNUSTEP_MAKEFILES="${GNUSTEP_MAKEFILES}" GNUSTEP_SYSTEM_ROOT="${GNUSTEP_SYSTEM_ROOT}"
+CONFIGURE_ENV+=	PATH="${PATH}" GNUSTEP_MAKEFILES="${GNUSTEP_MAKEFILES}"
 BUILD_DEPENDS+=	gnustep-make>0:devel/gnustep-make
 .include "${USESDIR}/objc.mk"
 .  endif

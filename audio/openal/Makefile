@@ -6,7 +6,7 @@ PORTVERSION=	20060211
 PORTREVISION=	15
 CATEGORIES=	audio
 MASTER_SITES=	GENTOO
-DISTVERSION=	0.0.8
+DISTNAME=	${PORTNAME}-0.0.8
 
 MAINTAINER=	erik@bz.bzflag.bz
 COMMENT=	3D positional spatialized sound library
@@ -40,9 +40,6 @@ SMPEG_CONFIGURE_ENABLE=	mp3
 ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
 ALSA_CONFIGURE_ENABLE=	alsa
 ASM_BUILD_DEPENDS=	nasm:devel/nasm
-
-NOT_FOR_ARCHS=	ia64
-NOT_FOR_ARCHS_REASON_ia64=	does not compile
 
 post-patch:
 	@${REINPLACE_CMD} -e 's/x86_64\*/amd64\* | \*ia64\*/g; \

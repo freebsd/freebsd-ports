@@ -3,28 +3,29 @@
 
 PORTNAME=	libbinio
 PORTVERSION=	1.4
-PORTREVISION=	3
+DISTVERSIONPREFIX=	${PORTNAME}-
+PORTREVISION=	4
 CATEGORIES=	devel
-MASTER_SITES=	SF
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Binary I/O stream class library
 
 LICENSE=	LGPL21
 
-USES=		pathfix libtool
+BROKEN_armv6=		dumps core: internal compiler failure: Unknown addressing mode for CP reference!
+
+USES=		autoreconf libtool pathfix
 GNU_CONFIGURE=	yes
+USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-
-CFLAGS+=	${CPPFLAGS}
-CXXFLAGS+=	${CPPFLAGS}
+GH_ACCOUNT=	adplug
 
 INSTALL_TARGET=	install-strip
 
+PORTSCOUT=	skipv:start
+
 post-patch:
-	@${REINPLACE_CMD} -e 's|^\(SUBDIRS\ =\).*|\1 src|' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's|^\(SUBDIRS\ =\).*|\1 src|' ${WRKSRC}/Makefile.am
 
 .include <bsd.port.mk>

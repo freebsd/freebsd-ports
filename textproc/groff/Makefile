@@ -2,18 +2,17 @@
 # $FreeBSD$
 
 PORTNAME=	groff
-PORTVERSION=	1.22.2
-PORTREVISION=	4
+PORTVERSION=	1.22.3
 CATEGORIES=	textproc
 MASTER_SITES=	GNU
 
-MAINTAINER=	uqs@FreeBSD.org
+MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	Software typesetting package
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/psselect:print/psutils
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	psselect:print/psutils
+RUN_DEPENDS:=	psselect:print/psutils
 
 MAKE_JOBS_UNSAFE=	yes
 

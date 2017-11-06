@@ -1,0 +1,19 @@
+#!/bin/sh
+
+SYSCTL=kern.ipc.shm_allow_removed
+if [ "`/sbin/sysctl -n $SYSCTL`" = 0 ] ; then
+	cat << EOMSG
+For correct operation, shared memory support has to be enabled
+in Iridium by performing the following command as root :
+
+sysctl $SYSCTL=1
+
+To preserve this setting across reboots, append the following
+to /etc/sysctl.conf :
+
+$SYSCTL=1
+EOMSG
+	exit 1
+fi
+ulimit -c 0
+exec %%PREFIX%%/share/iridium/iridium ${1+"$@"}

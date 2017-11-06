@@ -3,6 +3,7 @@
 
 PORTNAME=	angelscript
 PORTVERSION=	2.29.0
+PORTREVISION=	2
 CATEGORIES=	lang
 MASTER_SITES=	http://www.angelcode.com/angelscript/sdk/files/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -13,7 +14,7 @@ COMMENT=	AngelCode Scripting Library
 LICENSE=	ZLIB
 
 BROKEN_aarch64=		Does not build: invokes x86 asm
-BROKEN_powerpc64=	Does not build
+BROKEN_powerpc64=	Does not build: invokes x86 asm
 BROKEN_sparc64=		Does not build: invokes x86 asm
 
 MAKEFILE=	makefile

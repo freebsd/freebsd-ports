@@ -1,0 +1,16 @@
+bin/injector
+bin/sifter
+bin/summarize
+%%PORTDOCS%%%%DOCSDIR%%/README.md
+%%PORTDOCS%%%%DOCSDIR%%/domas_breaking_the_x86_isa.pdf
+%%PORTDOCS%%%%DOCSDIR%%/domas_breaking_the_x86_isa_wp.pdf
+%%PORTDOCS%%%%DOCSDIR%%/sandsifter.gif
+%%PORTDOCS%%%%DOCSDIR%%/screenshot.png
+%%PORTDOCS%%%%DOCSDIR%%/summarizer.png
+%%DATADIR%%/gui/__init__.py
+%%DATADIR%%/gui/gui.py
+%%DATADIR%%/pyutil/__init__.py
+%%DATADIR%%/pyutil/colors.py
+%%DATADIR%%/pyutil/progress.py
+%%DATADIR%%/sifter.py
+%%DATADIR%%/summarize.py

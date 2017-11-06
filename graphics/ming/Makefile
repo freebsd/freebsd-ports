@@ -3,8 +3,7 @@
 
 PORTNAME=	ming
 DISTVERSIONPREFIX=	${PORTNAME}-
-DISTVERSION=	0_4_7
-PORTREVISION=	2
+DISTVERSION=	0_4_8
 CATEGORIES=	graphics
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -19,7 +18,7 @@ LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libgif.so:graphics/giflib \
 		libpng.so:graphics/png
 
-CONFLICTS_INSTALL=	ja-ming-[0-9]*
+CONFLICTS_INSTALL=	ja-ming
 
 OPTIONS_DEFINE=	DOCS
 

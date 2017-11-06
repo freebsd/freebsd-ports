@@ -3,7 +3,7 @@
 
 PORTNAME=	scanssh
 PORTVERSION=	2.1
-PORTREVISION=	9
+PORTREVISION=	11
 CATEGORIES=	security net
 MASTER_SITES=	http://www.monkey.org/~provos/
 
@@ -11,7 +11,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Scans networks for open proxies, SSH, web, and SMTP servers
 
 LIB_DEPENDS=	libdnet.so:net/libdnet \
-		libevent.so:devel/libevent2
+		libevent.so:devel/libevent
 
 GNU_CONFIGURE=	YES
 PLIST_FILES=	bin/scanssh man/man1/scanssh.1.gz

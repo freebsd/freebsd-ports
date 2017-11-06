@@ -1,1 +1,6 @@
-@comment Left empty, filled during post-install by Makefile
+sbin/dhisd
+sbin/genkeys
+@(,,600) etc/dhis/dhis.db.sample
+@(,,600) etc/dhis/services.db.sample
+etc/rc.d/dhisd.sh
+@dir(,,700) etc/dhis

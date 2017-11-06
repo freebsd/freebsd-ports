@@ -1,0 +1,19 @@
+This is ancient software that is ported for curiosity purposes.  It is
+unlikely to be useful in everyday use, and should not be used in untrusted
+environments as there are highly likely to be unresolved security issues.
+
+CDE unfortunately requires a symbolic link as it uses the build system imake,
+as with X11R6.  This is actually done by the dtspc rc script (and removed
+afterwards).
+
+It is also necessary to enable the Subprocess Control Service (and dtcms for
+the calendar to work).
+
+# service rpcbind rcvar | grep -q 'rpcbind_enable="[Yy]' || \
+    echo rpcbind_enable=yes >> /etc/rc.conf
+# echo dtspc_enable=yes >> /etc/rc.conf
+# echo dtcms_enable=yes >> /etc/rc.conf
+
+To start the Common Desktop Environment,
+
+% env LANG=C startx /usr/dt/bin/Xsession

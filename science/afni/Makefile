@@ -11,7 +11,7 @@
 
 PORTNAME=	afni
 PORTVERSION=	2015.11.13
-PORTREVISION=	1
+PORTREVISION=	5
 CATEGORIES=	science biology graphics
 MASTER_SITES=	http://www.acadix.biz/Ports/distfiles/
 
@@ -20,10 +20,10 @@ COMMENT=	Advanced Functional Neuro Imaging
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	gm4:devel/m4 \
-		R:math/R
+BUILD_DEPENDS=	gm4:devel/m4
 LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libf2c.so:lang/f2c \
+		libR.so:math/R \
 		libgsl.so:math/gsl \
 		libnetcdff.so:science/netcdf-fortran \
 		libxml2.so:textproc/libxml2 \
@@ -31,8 +31,7 @@ LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 RUN_DEPENDS=	endian:sysutils/endian \
 		mpeg_encode:multimedia/mpeg_encode \
 		ppmtogif:graphics/netpbm \
-		qhull:math/qhull5 \
-		R:math/R
+		qhull:math/qhull5
 
 CONFLICTS=	im-[0-9]* \
 		nifticlib-[0-9]* \
@@ -41,9 +40,10 @@ CONFLICTS=	im-[0-9]* \
 USES=		gettext gmake iconv jpeg:run motif perl5 python shebangfix tar:xz
 SHEBANG_FILES=	suma_change_spec \
 		3dPAR2AFNI.pl \
-		python_scripts/afni_restproc.py \
-		python_scripts/lib_fat_Rfactor.py \
-		pkundu/meica.libs/siemens_me2nii.py
+		python_scripts/*.py \
+		pkundu/meica.py \
+		pkundu/meica.libs/*.py \
+		pkundu/meica.libs/mdp/test/run_tests.py
 USE_GNOME=	glib20
 
 .include <bsd.port.options.mk>

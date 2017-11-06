@@ -16,7 +16,8 @@ SPOOLDIR?=	/var/spool
 
 NO_CDROM=	Free for individuals and non-military, non-profit organisations only
 
-BROKEN_aarch64=	Fails to link: missing sbrk
+BROKEN_aarch64=		fails to link: missing sbrk
+BROKEN_powerpc64=	fails to install: ./mmap_tests: Quit (core dumped)
 
 USES=		gmake autoreconf shebangfix
 GNU_CONFIGURE=	yes
@@ -28,7 +29,7 @@ SHEBANG_FILES=	contrib/perlnewshound/newshound.pl
 AUTHINFO_EXT=	authinfo_pam.ext
 USE_RC_SUBR=	nntpcached
 
-OPTIONS_DEFINE=	LDAP RADIUS SPAMPHOBIA
+OPTIONS_DEFINE=	LDAP RADIUS SPAMPHOBIA DOCS
 SPAMPHOBIA_DESC=	Spamphobia NoCeM support
 
 RADIUS_CONFIGURE_WITH=	authinfo-radius
@@ -51,11 +52,10 @@ SPAMPHOBIA_PATCH_SITES=	http://people.freebsd.org/~leeym/:SPAMPHOBIA
 SPAMPHOBIA_PATCHFILES=	${DISTNAME}-spamphobia-${REVISEDATE}.diff.gz:SPAMPHOBIA
 
 post-configure:
-	${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} -C ${WRKSRC}/src ${AUTHINFO_EXT}
+	${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} -C ${WRKSRC}/src ${AUTHINFO_EXT}
 
-post-install:
-	@ ${MKDIR} ${STAGEDIR}${DOCSDIR}
-	(cd ${WRKSRC} && ${FIND} ${PORTDOCS} \
-	  | ${CPIO_CMD} ${SHAREOWN}:${SHAREGRP} ${STAGEDIR}${DOCSDIR})
+post-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@cd ${WRKSRC} && ${COPYTREE_SHARE} "${PORTDOCS}" ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-%%PERL5_MAN3%%/Tie::Array::Sorted.3.gz
-%%PERL5_MAN3%%/Tie::Array::Sorted::Lazy.3.gz
 %%SITE_PERL%%/Tie/Array/Sorted.pm
 %%SITE_PERL%%/Tie/Array/Sorted/Lazy.pm
+%%PERL5_MAN3%%/Tie::Array::Sorted.3.gz
+%%PERL5_MAN3%%/Tie::Array::Sorted::Lazy.3.gz

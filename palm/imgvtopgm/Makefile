@@ -3,7 +3,7 @@
 
 PORTNAME=	imgvtopgm
 PORTVERSION=	2.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	palm graphics
 MASTER_SITES=	http://linuxmafia.com/pub/palmos/other-os/
 
@@ -14,6 +14,8 @@ LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libnetpbm.so:graphics/netpbm
+
+USES=	localbase
 
 GNU_CONFIGURE=	yes
 

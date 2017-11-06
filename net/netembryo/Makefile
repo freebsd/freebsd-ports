@@ -32,7 +32,7 @@ INSTALL_TARGET=	install-strip
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MOPENSSL}
-USE_OPENSSL=	yes
+USES+=		ssl
 CONFIGURE_ENV+=	OPENSSL_CFLAGS="-I${OPENSSLINC}" \
 		OPENSSL_LIBS="-L${OPENSSLLIB}"
 .else

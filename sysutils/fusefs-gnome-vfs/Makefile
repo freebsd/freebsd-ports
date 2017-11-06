@@ -11,10 +11,14 @@ DISTNAME=	${RPORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Interface between FUSE and the Gnome VFS 2.0
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 RPORTNAME=	gnome-vfs-fuse
 WRKSRC=		${WRKDIR}/${RPORTNAME}
 USES=		fuse pkgconfig gmake
 USE_GNOME=	gnomevfs2
+
 PLIST_FILES=	bin/gnomevfs-mount
 PORTDOCS=	README
 
@@ -22,6 +26,8 @@ OPTIONS_DEFINE=	DOCS
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/gnomevfs-mount ${STAGEDIR}${PREFIX}/bin
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 

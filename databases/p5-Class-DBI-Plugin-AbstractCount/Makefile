@@ -8,7 +8,7 @@ CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	lth@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Get COUNT(*) results with abstract SQL
 
 BUILD_DEPENDS=	p5-Class-DBI-Plugin>=0.02:databases/p5-Class-DBI-Plugin \

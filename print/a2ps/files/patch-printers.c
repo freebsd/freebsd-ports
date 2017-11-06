@@ -1,6 +1,6 @@
---- lib/printers.c.orig	Tue Oct 12 00:01:59 1999
-+++ lib/printers.c	Wed May  2 11:23:25 2001
-@@ -315,8 +315,8 @@
+--- lib/printers.c.orig	1999-10-11 22:01:59 UTC
++++ lib/printers.c
+@@ -315,8 +315,8 @@ a2ps_printers_new (struct a2ps_common_s 
    res->ppd = NULL;		/* Printer's ppd are not read yet */
  
    /* Output */

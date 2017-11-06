@@ -7,7 +7,7 @@ MASTER_SITES=	http://bitbucket.org/marcusva/py-sdl2/downloads/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	PySDL2-${PORTVERSION}
 
-MAINTAINER=	mva@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python bindings to the SDL2 libraries
 
 LICENSE=	ZLIB

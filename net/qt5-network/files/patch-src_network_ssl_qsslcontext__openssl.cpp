@@ -1,29 +1,22 @@
-Obtained from: https://github.com/libressl-portable/openbsd/issues/33
-
-From 81494e67eccba04fc3fe554d76a9ca6fe7f2250e Mon Sep 17 00:00:00 2001
-From: hasufell <hasufell@gentoo.org>
-Date: Sat, 10 Oct 2015 01:15:01 +0200
-Subject: [PATCH] Fix compilation with libressl
-
-By additionally checking for defined(SSL_CTRL_SET_CURVES), which
-is defined in openssl, but not in libressl.
---- src/network/ssl/qsslcontext_openssl.cpp.orig	2015-10-13 04:35:28 UTC
+* Instead of using the SSL_CTRL_SET_CURVES macros which only exists in OpenSSL,
+* call the SSL_CTX_set1_groups function, which exists in LibreSSL as well as in 
+* OpenSSL and is what would be called through the macro 
+*
+--- src/network/ssl/qsslcontext_openssl.cpp.orig	2016-12-01 08:17:04 UTC
 +++ src/network/ssl/qsslcontext_openssl.cpp
-@@ -338,7 +338,7 @@ init_context:
- 
-     const QVector<QSslEllipticCurve> qcurves = sslContext->sslConfiguration.ellipticCurves();
-     if (!qcurves.isEmpty()) {
--#if OPENSSL_VERSION_NUMBER >= 0x10002000L && !defined(OPENSSL_NO_EC)
-+#if OPENSSL_VERSION_NUMBER >= 0x10002000L && defined(SSL_CTRL_SET_CURVES) && !defined(OPENSSL_NO_EC)
+@@ -350,12 +350,9 @@ init_context:
+ #if OPENSSL_VERSION_NUMBER >= 0x10002000L && !defined(OPENSSL_NO_EC)
          // Set the curves to be used
          if (q_SSLeay() >= 0x10002000L) {
-             // SSL_CTX_ctrl wants a non-const pointer as last argument,
-@@ -352,7 +352,7 @@ init_context:
-                 return sslContext;
+-            // SSL_CTX_ctrl wants a non-const pointer as last argument,
+-            // but let's avoid a copy into a temporary array
+-            if (!q_SSL_CTX_ctrl(sslContext->ctx,
+-                                SSL_CTRL_SET_CURVES,
+-                                qcurves.size(),
+-                                const_cast<int *>(reinterpret_cast<const int *>(qcurves.data())))) {
++            if (!q_SSL_CTX_set1_groups(sslContext->ctx,
++                                       const_cast<int *>(reinterpret_cast<const int *>(qcurves.data())),
++                                       qcurves.size())) {
+                 sslContext->errorStr = msgErrorSettingEllipticCurves(QSslSocketBackendPrivate::getErrorsFromOpenSsl());
+                 sslContext->errorCode = QSslError::UnspecifiedError;
              }
-         } else
--#endif // OPENSSL_VERSION_NUMBER >= 0x10002000L && !defined(OPENSSL_NO_EC)
-+#endif // OPENSSL_VERSION_NUMBER >= 0x10002000L && defined(SSL_CTRL_SET_CURVES) && !defined(OPENSSL_NO_EC)
-         {
-             // specific curves requested, but not possible to set -> error
-             sslContext->errorStr = msgErrorSettingEllipticCurves(QSslSocket::tr("OpenSSL version too old, need at least v1.0.2"));

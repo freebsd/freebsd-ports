@@ -5,7 +5,7 @@ Index: lib/configure
  
  CONFIG="config.mk"
  PREFIX="/usr/local"
-@@ -80,7 +80,7 @@
+@@ -86,7 +86,7 @@
  
  # If someone runs sudo make install as very first command, and configure later,
  # $CONFIG cannot be overwritten, and must be deleted before continuing.
@@ -14,20 +14,22 @@ Index: lib/configure
      echo "Cannot overwrite file $CONFIG! Please delete it."
      exit 1
  fi
-@@ -135,10 +135,8 @@
- 
+@@ -146,12 +146,8 @@
  # SSE
  if [ "$SSE" = 'auto' ]; then
--    if [[ "$(uname -m)" =~ (amd|x86_)64 ||
--          "$(grep -E -m1 "^flags" /proc/cpuinfo)" =~ "sse" ]]; then
--        SSE=1
+     SSE=0
+-    if type uname > /dev/null; then
+-        if [[ "$(uname -m)" =~ "amd64" || "$(uname -m)" =~ "x86_64" ||
+-              "$(grep -E -m1 "^flags" /proc/cpuinfo)" =~ "sse" ]]; then
+-            SSE=1
+-        fi
 -    fi
 +    echo $(uname -m) | grep -E -q '(amd|x86_)64' && SSE=1
 +    grep -E -m1 -q '^flags.*sse' /proc/cpuinfo 2>/dev/null && SSE=1
  fi
  
  if [ "$SSE" -eq 1 ]; then
-@@ -161,9 +159,8 @@
+@@ -174,9 +170,8 @@
      else
          OPENMPFLAGS="-fopenmp"
      fi
@@ -39,3 +41,29 @@ Index: lib/configure
          cflags "$OPENMPFLAGS"
          lflags "$OPENMPFLAGS"
          status "OpenMP" "yes"
+@@ -191,20 +186,20 @@
+ fi
+ 
+ # Cocoa
+-if [[ "$OSTYPE" =~ "darwin" ]]; then
++if echo "$OSTYPE" | grep -q "darwin" ; then
+     cflags "-mmacosx-version-min=10.6"
+     lflags "-mmacosx-version-min=10.6"
+ fi
+ 
+-if [[ "$OSTYPE" =~ "darwin" ]]; then
++if echo "$OSTYPE" | grep -q "darwin" ; then
+     SOLIBSUFFIX=dylib
+ 
+     # Search Developer SDK paths, since Apple seems to have dropped the standard Unixy ones
+     XCODE_CMD="xcode-select"
+     XCODE_PATH=$($XCODE_CMD -p)
+-    DIRS+=("$XCODE_PATH/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk/usr/include $XCODE_PATH/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk/usr/lib")
+-    DIRS+=("$XCODE_PATH/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/usr/include $XCODE_PATH/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/usr/lib")
+-elif [[ "$OSTYPE" =~ "msys" ]]; then
++    DIRS="$DIRS $XCODE_PATH/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk/usr/include $XCODE_PATH/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk/usr/lib"
++    DIRS="$DIRS $XCODE_PATH/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/usr/include $XCODE_PATH/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/usr/lib"
++elif echo "$OSTYPE" | grep -q "msys" ; then
+     SOLIBSUFFIX=dll
+ else
+     SOLIBSUFFIX=so

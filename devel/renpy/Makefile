@@ -1,11 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	renpy
-PORTVERSION?=	6.99.12.2
+PORTVERSION?=	6.99.13
 DISTVERSIONSUFFIX=-sdk
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	devel games
-MASTER_SITES=	http://www.renpy.org/dl/${PORTVERSION}/
+MASTER_SITES=	https://www.renpy.org/dl/${PORTVERSION}/
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Framework for developing visual-novel type games
@@ -36,11 +36,16 @@ USE_SDL?=	sdl2
 EXCLUDE=	gen 'module/*.py[co]' 'renpy/*.py[co]'
 EXTRACT_AFTER_ARGS=${EXCLUDE:S,^,--exclude ,}
 SHEBANG_FILES=	renpy.py launcher/game/tkaskdir.py
+.ifndef PKGNAMESUFFIX
+python3_CMD?=	${PYTHON_CMD}
+SHEBANG_LANG=	python3
+SHEBANG_FILES+=	tutorial/recrop.py
+.endif
 TARGET_ORDER_OVERRIDE=610:fix-shebang
 BUILD_WRKSRC=	${WRKSRC}/module
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
 MAKE_ENV+=	RENPY_DEPS_INSTALL="${LOCALBASE}"
-PORTDATA=	launcher renpy renpy.py templates
+PORTDATA=	gui launcher renpy renpy.py templates
 PORTDOCS=	*
 PLIST_FILES=	bin/${PORTNAME}
 
@@ -58,6 +63,9 @@ DIST_DESC=	Distribution runtimes for Windows, OS X, Linux
 DIST_VARS=	LICENSE+="ART20 PSFL" \
 		PORTDATA+="lib renpy.app renpy.exe renpy.sh"
 EXAMPLES_VARS=	PORTDATA+="the_question tutorial"
+.ifndef PKGNAMESUFFIX
+EXAMPLES_VARS+=	PORTDATA+="oldtutorial"
+.endif
 TKINTER_DESC=	Install Tkinter to allow choosing Projects Directory
 TKINTER_RUN_DEPENDS=${PYTHON_PKGNAMEPREFIX}tkinter>0:x11-toolkits/py-tkinter
 
@@ -88,8 +96,9 @@ post-build:
 
 add-plist-post: add-empty-dirs
 add-empty-dirs:
-# Keep images directory in templates, see renpy@d81ea29
-	${FIND} ${WRKSRC}/templates -type d ! -name "saves" -empty | \
+# Keep images directory in gui and templates, see renpy@d81ea29
+	${FIND} ${WRKSRC} -type d -empty \
+		! \( -name "saves" -or -name "pysdlsound" \) | \
 		${SED} 's,^${WRKSRC},@dir ${DATADIR},' >>${TMPPLIST}
 
 post-install:

@@ -8,7 +8,7 @@ CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	lth@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Produce HTML form elements for database columns
 
 BUILD_DEPENDS=	p5-Class-DBI>=0:databases/p5-Class-DBI \

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sonarqube
-PORTVERSION=	5.6
+PORTVERSION=	6.2
 CATEGORIES=	devel www java
 MASTER_SITES=	http://sonarsource.bintray.com/Distribution/sonarqube/
 
@@ -30,20 +30,24 @@ USE_JAVA=	yes
 JAVA_VERSION=	1.7+
 
 SQ_FILE=	sonar.sh
-SQ_HOME=	${PREFIX}/${PORTNAME}
+SQ_HOME=	${PREFIX}/share/${PORTNAME}
+SQ_DB_DIR=	/var/db/${PORTNAME}
 SQ_LOG_DIR=	/var/log/${PORTNAME}
 SQ_LOG_FILE=	${PORTNAME}.log
 SQ_JSW=		${PREFIX}/lib/javaservicewrapper
 
-SUB_LIST+=	SQ_GROUP=${GROUPS} \
-		SQ_LOG_DIR=${SQ_LOG_DIR} \
-		SQ_LOG_FILE=${SQ_LOG_FILE} \
-		SQ_RC=${PORTNAME} \
-		SQ_RUN=${SQ_HOME}/bin/freebsd/${SQ_FILE} \
-		SQ_USER=${USERS}
-PLIST_SUB+=	SQ_GROUP=${GROUPS} \
-		SQ_HOME=${SQ_HOME} \
-		SQ_USER=${USERS}
+SUB_LIST+=	SQ_DB_DIR=${SQ_DB_DIR} \
+			SQ_GROUP=${GROUPS} \
+			SQ_LOG_DIR=${SQ_LOG_DIR} \
+			SQ_LOG_FILE=${SQ_LOG_FILE} \
+			SQ_RC=${PORTNAME} \
+			SQ_RUN=${SQ_HOME}/bin/freebsd/${SQ_FILE} \
+			SQ_USER=${USERS}
+PLIST_SUB+=	SQ_DB_DIR=${SQ_DB_DIR} \
+			SQ_GROUP=${GROUPS} \
+			SQ_HOME=${SQ_HOME} \
+			SQ_LOG_DIR=${SQ_LOG_DIR} \
+			SQ_USER=${USERS}
 
 OPTIONS_RADIO=		SQL
 OPTIONS_RADIO_SQL=	MYSQL PGSQL
@@ -55,8 +59,10 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|%%DIR%%|${SQ_HOME}|' \
 		-e 's|%%LIB%%|${SQ_JSW}|' \
 		-e 's|%%LOG%%|${SQ_LOG_DIR}/${SQ_LOG_FILE}|' \
+		-e 's|%%LOGDIR%%|${SQ_LOG_DIR}|' \
+		-e 's|%%DBDIR%%|${SQ_DB_DIR}|' \
 		-e 's|%%WRAPPER_JAR%%|${SQ_JSW}/lib/wrapper.jar|' \
-		${WRKSRC}/conf/wrapper.conf
+		${WRKSRC}/conf/wrapper.conf ${WRKSRC}/conf/sonar.properties
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${SQ_HOME}
@@ -73,11 +79,11 @@ do-install:
 	@${MV} -f ${STAGEDIR}${SQ_HOME}/conf/sonar.properties \
 		${STAGEDIR}${SQ_HOME}/conf/sonar.properties.sample
 	@${MV} -f ${STAGEDIR}${SQ_HOME}/conf/wrapper.conf \
-		${STAGEDIR}${SQ_HOME}/conf/wrapper.conf.sample
-	@${RM} -r ${STAGEDIR}${SQ_HOME}/bin/linux-x86-32
-	@${RM} -r ${STAGEDIR}${SQ_HOME}/bin/linux-x86-64
-	@${RM} -r ${STAGEDIR}${SQ_HOME}/bin/macosx-universal-64
-	@${RM} -r ${STAGEDIR}${SQ_HOME}/bin/windows-x86-32
-	@${RM} -r ${STAGEDIR}${SQ_HOME}/bin/windows-x86-64
+	${STAGEDIR}${SQ_HOME}/conf/wrapper.conf.sample
+	@${RM} -drf ${STAGEDIR}${SQ_HOME}/bin/linux-x86-32
+	@${RM} -drf ${STAGEDIR}${SQ_HOME}/bin/linux-x86-64
+	@${RM} -drf ${STAGEDIR}${SQ_HOME}/bin/macosx-universal-64
+	@${RM} -drf ${STAGEDIR}${SQ_HOME}/bin/windows-x86-32
+	@${RM} -drf ${STAGEDIR}${SQ_HOME}/bin/windows-x86-64
 
 .include <bsd.port.mk>

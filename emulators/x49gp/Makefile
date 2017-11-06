@@ -5,7 +5,7 @@
 
 PORTNAME=	x49gp
 PORTVERSION=	20100425
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	emulators math
 MASTER_SITES=	LOCAL/shaun
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} sdcard64.tar.gz
@@ -15,6 +15,9 @@ MAINTAINER=	shaun@FreeBSD.org
 COMMENT=	HP 49g+/50g graphics calculator emulator
 
 BROKEN_i386=		does not build on i386 (error: frame pointer required, but reserved)
+BROKEN_powerpc64=	fails to build: qemu/qemu-git/arm-softmmu/i386-dis.o: No such file or directory
+NOT_FOR_ARCHS=		aarch64 armv6
+NOT_FOR_ARCHS_REASON=	unsupported CPU = unknown
 
 WRKSRC=		${WRKDIR}/x49gp/x49gp-code
 HAVE_CONFIGURE=	yes

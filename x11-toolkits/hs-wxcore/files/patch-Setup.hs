@@ -1,10 +1,10 @@
---- Setup.hs.orig	2016-06-20 16:11:53 UTC
+--- Setup.hs.orig	2017-04-28 17:39:58 UTC
 +++ Setup.hs
-@@ -78,7 +78,6 @@ myConfHook (pkg0, pbi) flags = do
+@@ -90,7 +90,6 @@ myConfHook (pkg0, pbi) flags = do
  
      let libbi' = libbi
-           { extraLibDirs = extraLibDirs libbi ++ [wxcDirectory]
--          , extraLibs    = extraLibs    libbi ++ ["wxc"]
-           , ldOptions    = ldOptions    libbi ++ ["-Wl,-rpath," ++ wxcDirectory]  }
- 
-     let lib' = lib { libBuildInfo = libbi' }
+           { extraLibDirs   = extraLibDirs   libbi ++ [wxcDirectory]
+-          , extraLibs      = extraLibs      libbi ++ ["wxc"]
+           , PD.includeDirs = PD.includeDirs libbi ++ case glIncludeDirs of
+                                                          ('-':'I':v) -> [v];
+                                                          _           -> []

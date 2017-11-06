@@ -1,4 +1,5 @@
 bin/cqrlog
+man/man1/cqrlog.1.gz
 share/applications/cqrlog.desktop
 %%DATADIR%%/changelog.html
 %%DATADIR%%/cqrlog-apparmor-fix
@@ -16,7 +17,11 @@ share/applications/cqrlog.desktop
 %%DATADIR%%/ctyfiles/qslmgr.csv
 %%DATADIR%%/ctyfiles/us_states.tab
 %%DATADIR%%/help/cwd.html
+%%DATADIR%%/help/cwd.html.bak
+%%DATADIR%%/help/cwd.html.orig
 %%DATADIR%%/help/h1.html
+%%DATADIR%%/help/h1.html.bak
+%%DATADIR%%/help/h1.html.orig
 %%DATADIR%%/help/h20.html
 %%DATADIR%%/help/h21.html
 %%DATADIR%%/help/h22.html
@@ -163,9 +168,8 @@ share/applications/cqrlog.desktop
 %%DATADIR%%/images/BigEarth.bmp
 %%DATADIR%%/images/HamQTH.png
 %%DATADIR%%/images/bck.png
-%%DATADIR%%/images/cqrlog.ico
-%%DATADIR%%/images/cqrlog.png
 %%DATADIR%%/images/connect.png
+%%DATADIR%%/images/cqrlog.png
 %%DATADIR%%/images/delete.png
 %%DATADIR%%/images/disconnect.png
 %%DATADIR%%/images/dxcc_stat.xpm
@@ -179,6 +183,11 @@ share/applications/cqrlog.desktop
 %%DATADIR%%/images/go-bottom.png
 %%DATADIR%%/images/grayline.bmp
 %%DATADIR%%/images/help.png
+%%DATADIR%%/images/icon/128x128/cqrlog.png
+%%DATADIR%%/images/icon/256x256/cqrlog.png
+%%DATADIR%%/images/icon/32x32/cqrlog.png
+%%DATADIR%%/images/icon/48x48/cqrlog.png
+%%DATADIR%%/images/icon/64x64/cqrlog.png
 %%DATADIR%%/images/menu_new.png
 %%DATADIR%%/images/my_view.png
 %%DATADIR%%/images/options.xpm
@@ -208,8 +217,8 @@ share/applications/cqrlog.desktop
 %%DATADIR%%/members/a1-op.txt
 %%DATADIR%%/members/afm.txt
 %%DATADIR%%/members/agcw.txt
-%%DATADIR%%/members/arktika.txt
 %%DATADIR%%/members/arci.txt
+%%DATADIR%%/members/arktika.txt
 %%DATADIR%%/members/armi.txt
 %%DATADIR%%/members/aviaham.txt
 %%DATADIR%%/members/bcc.txt
@@ -308,6 +317,14 @@ share/applications/cqrlog.desktop
 %%DATADIR%%/zipcodes/italy-prov.txt
 %%DATADIR%%/zipcodes/usa-ca.txt
 %%DATADIR%%/zipcodes/usa-states.txt
-share/icons/cqrlog.png
-man/man1/cqrlog.1.gz
+share/icons/cqrlog/128x128/cqrlog.png
+share/icons/cqrlog/256x256/cqrlog.png
+share/icons/cqrlog/32x32/cqrlog.png
+share/icons/cqrlog/48x48/cqrlog.png
+share/icons/cqrlog/64x64/cqrlog.png
+share/pixmaps/cqrlog/128x128/cqrlog.png
+share/pixmaps/cqrlog/256x256/cqrlog.png
+share/pixmaps/cqrlog/32x32/cqrlog.png
+share/pixmaps/cqrlog/48x48/cqrlog.png
+share/pixmaps/cqrlog/64x64/cqrlog.png
 share/pixmaps/cqrlog/cqrlog.png

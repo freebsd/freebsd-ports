@@ -5,7 +5,7 @@ PORTNAME=	gitflow
 PORTVERSION=	1.8.0
 CATEGORIES=	devel
 
-MAINTAINER=	nbari@dalmp.com
+MAINTAINER=	nbari@tequila.io
 COMMENT=	Git extensions to provide high-level repository operations
 
 LICENSE=	BSD2CLAUSE

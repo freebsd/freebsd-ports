@@ -1,0 +1,167 @@
+commit 762c974a09746bda8a5d64ed3ee887adeae742b9
+Author: John Baldwin <jhb@FreeBSD.org>
+Date:   Wed Jun 28 08:14:06 2017 -0700
+
+    Implement the "get_siginfo_type" gdbarch method for FreeBSD architectures.
+    
+    As with Linux architectures, cache the created type in the gdbarch when it
+    is first created.  Currently FreeBSD uses an identical siginfo type on
+    all architectures, so there is no support for architecture-specific fields.
+    
+    gdb/ChangeLog:
+    
+            * fbsd-tdep.c (fbsd_gdbarch_data_handle, struct fbsd_gdbarch_data)
+            (init_fbsd_gdbarch_data, get_fbsd_gdbarch_data)
+            (fbsd_get_siginfo_type): New.
+            (fbsd_init_abi): Install gdbarch "get_siginfo_type" method.
+            (_initialize_fbsd_tdep): New.
+
+diff --git gdb/fbsd-tdep.c gdb/fbsd-tdep.c
+index b834ce38b4..24a3c20dd6 100644
+--- gdb/fbsd-tdep.c
++++ gdb/fbsd-tdep.c
+@@ -30,6 +30,26 @@
+ #include "fbsd-tdep.h"
+ 
+ 
++static struct gdbarch_data *fbsd_gdbarch_data_handle;
++
++struct fbsd_gdbarch_data
++  {
++    struct type *siginfo_type;
++  };
++
++static void *
++init_fbsd_gdbarch_data (struct gdbarch *gdbarch)
++{
++  return GDBARCH_OBSTACK_ZALLOC (gdbarch, struct fbsd_gdbarch_data);
++}
++
++static struct fbsd_gdbarch_data *
++get_fbsd_gdbarch_data (struct gdbarch *gdbarch)
++{
++  return ((struct fbsd_gdbarch_data *)
++	  gdbarch_data (gdbarch, fbsd_gdbarch_data_handle));
++}
++
+ /* This is how we want PTIDs from core files to be printed.  */
+ 
+ static const char *
+@@ -314,6 +334,97 @@ fbsd_print_auxv_entry (struct gdbarch *gdbarch, struct ui_file *file,
+   fprint_auxv_entry (file, name, description, format, type, val);
+ }
+ 
++/* Implement the "get_siginfo_type" gdbarch method.  */
++
++static struct type *
++fbsd_get_siginfo_type (struct gdbarch *gdbarch)
++{
++  struct fbsd_gdbarch_data *fbsd_gdbarch_data;
++  struct type *int_type, *int32_type, *uint32_type, *long_type, *void_ptr_type;
++  struct type *uid_type, *pid_type;
++  struct type *sigval_type, *reason_type;
++  struct type *siginfo_type;
++  struct type *type;
++
++  fbsd_gdbarch_data = get_fbsd_gdbarch_data (gdbarch);
++  if (fbsd_gdbarch_data->siginfo_type != NULL)
++    return fbsd_gdbarch_data->siginfo_type;
++
++  int_type = arch_integer_type (gdbarch, gdbarch_int_bit (gdbarch),
++				0, "int");
++  int32_type = arch_integer_type (gdbarch, 32, 0, "int32_t");
++  uint32_type = arch_integer_type (gdbarch, 32, 1, "uint32_t");
++  long_type = arch_integer_type (gdbarch, gdbarch_long_bit (gdbarch),
++				 0, "long");
++  void_ptr_type = lookup_pointer_type (builtin_type (gdbarch)->builtin_void);
++
++  /* union sigval */
++  sigval_type = arch_composite_type (gdbarch, NULL, TYPE_CODE_UNION);
++  TYPE_NAME (sigval_type) = xstrdup ("sigval");
++  append_composite_type_field (sigval_type, "sival_int", int_type);
++  append_composite_type_field (sigval_type, "sival_ptr", void_ptr_type);
++
++  /* __pid_t */
++  pid_type = arch_type (gdbarch, TYPE_CODE_TYPEDEF,
++			TYPE_LENGTH (int32_type), "__pid_t");
++  TYPE_TARGET_TYPE (pid_type) = int32_type;
++  TYPE_TARGET_STUB (pid_type) = 1;
++
++  /* __uid_t */
++  uid_type = arch_type (gdbarch, TYPE_CODE_TYPEDEF,
++			TYPE_LENGTH (uint32_type), "__uid_t");
++  TYPE_TARGET_TYPE (uid_type) = uint32_type;
++  TYPE_TARGET_STUB (uid_type) = 1;
++
++  /* _reason */
++  reason_type = arch_composite_type (gdbarch, NULL, TYPE_CODE_UNION);
++
++  /* _fault */
++  type = arch_composite_type (gdbarch, NULL, TYPE_CODE_STRUCT);
++  append_composite_type_field (type, "si_trapno", int_type);
++  append_composite_type_field (reason_type, "_fault", type);
++
++  /* _timer */
++  type = arch_composite_type (gdbarch, NULL, TYPE_CODE_STRUCT);
++  append_composite_type_field (type, "si_timerid", int_type);
++  append_composite_type_field (type, "si_overrun", int_type);
++  append_composite_type_field (reason_type, "_timer", type);
++
++  /* _mesgq */
++  type = arch_composite_type (gdbarch, NULL, TYPE_CODE_STRUCT);
++  append_composite_type_field (type, "si_mqd", int_type);
++  append_composite_type_field (reason_type, "_mesgq", type);
++
++  /* _poll */
++  type = arch_composite_type (gdbarch, NULL, TYPE_CODE_STRUCT);
++  append_composite_type_field (type, "si_band", long_type);
++  append_composite_type_field (reason_type, "_poll", type);
++
++  /* __spare__ */
++  type = arch_composite_type (gdbarch, NULL, TYPE_CODE_STRUCT);
++  append_composite_type_field (type, "__spare1__", long_type);
++  append_composite_type_field (type, "__spare2__",
++			       init_vector_type (int_type, 7));
++  append_composite_type_field (reason_type, "__spare__", type);
++
++  /* struct siginfo */
++  siginfo_type = arch_composite_type (gdbarch, NULL, TYPE_CODE_STRUCT);
++  TYPE_NAME (siginfo_type) = xstrdup ("siginfo");
++  append_composite_type_field (siginfo_type, "si_signo", int_type);
++  append_composite_type_field (siginfo_type, "si_errno", int_type);
++  append_composite_type_field (siginfo_type, "si_code", int_type);
++  append_composite_type_field (siginfo_type, "si_pid", pid_type);
++  append_composite_type_field (siginfo_type, "si_uid", uid_type);
++  append_composite_type_field (siginfo_type, "si_status", int_type);
++  append_composite_type_field (siginfo_type, "si_addr", void_ptr_type);
++  append_composite_type_field (siginfo_type, "si_value", sigval_type);
++  append_composite_type_field (siginfo_type, "_reason", reason_type);
++
++  fbsd_gdbarch_data->siginfo_type = siginfo_type;
++
++  return siginfo_type;
++}
++
+ /* Implement the "get_syscall_number" gdbarch method.  */
+ 
+ static LONGEST
+@@ -339,8 +450,19 @@ fbsd_init_abi (struct gdbarch_info info, struct gdbarch *gdbarch)
+   set_gdbarch_core_thread_name (gdbarch, fbsd_core_thread_name);
+   set_gdbarch_make_corefile_notes (gdbarch, fbsd_make_corefile_notes);
+   set_gdbarch_print_auxv_entry (gdbarch, fbsd_print_auxv_entry);
++  set_gdbarch_get_siginfo_type (gdbarch, fbsd_get_siginfo_type);
+ 
+   /* `catch syscall' */
+   set_xml_syscall_file_name (gdbarch, "syscalls/freebsd.xml");
+   set_gdbarch_get_syscall_number (gdbarch, fbsd_get_syscall_number);
+ }
++
++/* Provide a prototype to silence -Wmissing-prototypes.  */
++extern initialize_file_ftype _initialize_fbsd_tdep;
++
++void
++_initialize_fbsd_tdep (void)
++{
++  fbsd_gdbarch_data_handle =
++    gdbarch_data_register_post_init (init_fbsd_gdbarch_data);
++}

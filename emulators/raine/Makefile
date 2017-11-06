@@ -3,7 +3,7 @@
 
 PORTNAME=	raine
 PORTVERSION=	0.51.9
-PORTREVISION=	4
+PORTREVISION=	6
 CATEGORIES=	emulators games
 MASTER_SITES=	GENTOO
 DISTNAME=	${PORTNAME}s-${PORTVERSION}
@@ -12,6 +12,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Arcade Emulator for M68000, M68020 and Z80 based hardware
 
 LICENSE=	ART10
+
+BROKEN=		fails to link
 
 BUILD_DEPENDS=	nasm>0:devel/nasm
 LIB_DEPENDS=	libpng.so:graphics/png
@@ -23,6 +25,7 @@ SHEBANG_FILES=	makedep
 USE_PERL5=	build
 USE_SDL=	image ttf sdl
 USE_GCC=	any
+USE_CSTD=	gnu89
 MAKEFILE=	makefile
 MAKE_ARGS=	NEO="" VERBOSE=1 HAS_CONSOLE=""
 

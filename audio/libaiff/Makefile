@@ -3,9 +3,9 @@
 
 PORTNAME=	libaiff
 PORTVERSION=	5.0
+DISTVERSIONSUFFIX=	-release
 CATEGORIES=	audio
 MASTER_SITES=	SF/aifftools/${PORTNAME}/LibAiff%20${PORTVERSION}
-DISTNAME=	libaiff-5.0-release
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Read and write AIFF files

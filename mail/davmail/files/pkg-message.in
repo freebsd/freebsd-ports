@@ -1,0 +1,9 @@
+In order to connect to several exchange servers, it is needed setup davmail
+profiles. You have to set davmail_profiles in rc.conf, and configure
+%%LOCALBASE%%/etc/davmail.<profile_name>.properties properly. Example:
+
+davmail_profiles="exchange1 exchange2"
+(and configure both %%LOCALBASE%%/etc/davmail.exchange[12].properties)
+
+You can also disable an specific profile by mean of
+davmail_<profile_name>_enable="NO" in rc.conf.

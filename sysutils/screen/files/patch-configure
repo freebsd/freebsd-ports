@@ -1,6 +1,6 @@
 --- configure.orig	2014-04-26 03:58:46.000000000 -0700
-+++ configure	2014-04-29 19:47:03.900706999 -0700
-@@ -4857,46 +4857,6 @@
++++ configure	2017-05-13 09:29:58.991277000 -0700
+@@ -4858,63 +4858,6 @@
  
  else
    olibs="$LIBS"
@@ -44,10 +44,27 @@
 -if ac_fn_c_try_link "$LINENO"; then :
 -
 -else
-   LIBS="-ltermlib $olibs"
- { $as_echo "$as_me:${as_lineno-$LINENO}: checking libtermlib..." >&5
- $as_echo "$as_me: checking libtermlib..." >&6;}
-@@ -5001,12 +4961,6 @@
+-  LIBS="-ltermlib $olibs"
+-{ $as_echo "$as_me:${as_lineno-$LINENO}: checking libtermlib..." >&5
+-$as_echo "$as_me: checking libtermlib..." >&6;}
+-cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+-/* end confdefs.h.  */
+-
+-int
+-main ()
+-{
+-tgetent((char *)0, (char *)0);
+-  ;
+-  return 0;
+-}
+-_ACEOF
+-if ac_fn_c_try_link "$LINENO"; then :
+-
+-else
+   LIBS="-lncursesw $olibs"
+ { $as_echo "$as_me:${as_lineno-$LINENO}: checking libncursesw..." >&5
+ $as_echo "$as_me: checking libncursesw..." >&6;}
+@@ -4999,15 +4942,6 @@
  fi
  rm -f core conftest.err conftest.$ac_objext \
      conftest$ac_exeext conftest.$ac_ext
@@ -57,10 +74,13 @@
 -fi
 -rm -f core conftest.err conftest.$ac_objext \
 -    conftest$ac_exeext conftest.$ac_ext
+-fi
+-rm -f core conftest.err conftest.$ac_objext \
+-    conftest$ac_exeext conftest.$ac_ext
  
  if test "$cross_compiling" = yes; then :
    { { $as_echo "$as_me:${as_lineno-$LINENO}: error: in \`$ac_pwd':" >&5
-@@ -5019,7 +4973,8 @@
+@@ -5020,7 +4954,8 @@
  
  main()
  {
@@ -70,7 +90,7 @@
  }
  _ACEOF
  if ac_fn_c_try_run "$LINENO"; then :
-@@ -5066,7 +5021,7 @@
+@@ -5067,7 +5002,7 @@
  { $as_echo "$as_me:${as_lineno-$LINENO}: checking for SVR4 ptys..." >&5
  $as_echo "$as_me: checking for SVR4 ptys..." >&6;}
  sysvr4ptys=
@@ -79,7 +99,7 @@
  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  
-@@ -5177,19 +5132,16 @@
+@@ -5178,19 +5113,16 @@
  fi
  rm -f conftest*
  
@@ -103,7 +123,7 @@
  
  # Check whether --with-pty-mode was given.
  if test "${with_pty_mode+set}" = set; then :
-@@ -5416,6 +5368,8 @@
+@@ -5417,6 +5349,8 @@
  #if defined(SVR4) && !defined(DGUX)
  #include <utmpx.h>
  #define utmp utmpx
@@ -112,7 +132,7 @@
  #else
  #include <utmp.h>
  #endif
-@@ -5484,6 +5438,10 @@
+@@ -5485,6 +5419,10 @@
  #if defined(SVR4) && !defined(DGUX)
  #include <utmpx.h>
  #define utmp utmpx

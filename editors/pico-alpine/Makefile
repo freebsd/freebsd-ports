@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	pico-alpine
-PORTREVISION=	1
+PORTREVISION=	0
 CATEGORIES=	editors
 DISTNAME=	alpine-${PORTVERSION}
 
@@ -24,7 +24,7 @@ post-patch:
 		${WRKSRC}/imap/Makefile.presed > ${WRKSRC}/imap/Makefile
 	@${CP} ${WRKSRC}/Makefile.in ${WRKSRC}/Makefile.in.presed
 	@${SED}	-e "s#^\(SUBDIRS.*pico\).*#\1#" \
-		-e "s#^man_MANS.*#man_MANS = doc/pico.1 doc/pilot.1#" \
+		-e "s#^man_MANS.*#man_MANS = doc/man1/pico.1 doc/man1/pilot.1#" \
 		${WRKSRC}/Makefile.in.presed > ${WRKSRC}/Makefile.in
 
 .include "${MASTERDIR}/Makefile"

@@ -3,7 +3,7 @@
 
 PORTNAME=	sigar
 PORTVERSION=	1.7.3
-PORTREVISION=	3
+PORTREVISION=	5
 CATEGORIES=	java devel
 PKGNAMEPREFIX=	java-
 
@@ -15,6 +15,8 @@ LICENSE_FILE=	${WRKSRC}/NOTICE
 
 BUILD_DEPENDS=	${ANT_CMD}:devel/apache-ant
 LIB_DEPENDS=	libsigar.so:devel/sigar
+
+BROKEN_armv6=		fails to compile: jni-build.xml: gcc failed with return code 1
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	amishHammer
@@ -33,13 +35,9 @@ ANT=		${SETENV} JAVA_HOME=${JAVA_HOME} ${ANT_CMD}
 .include <bsd.port.pre.mk>
 
 .if ${OPSYS} == FreeBSD
-.  if ${OSVERSION} >= 1000000
 PLATFORM_VER=	1
-.  else
-PLATFORM_VER=	9
-.  endif
 .else
-BROKEN=		${OPSYS} platform is not supported
+IGNORE=		${OPSYS} platform is not supported
 .endif
 
 LIBNAME=	libsigar-${ARCH:S,i386,x86,}-${OPSYS:tl}-${PLATFORM_VER}.so

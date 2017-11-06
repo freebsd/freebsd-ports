@@ -2,19 +2,20 @@
 # $FreeBSD$
 
 PORTNAME=	gatling
-PORTVERSION=	0.13
-PORTREVISION=	1
+PORTVERSION=	0.15
 CATEGORIES=	www benchmarks ftp ipv6
-MASTER_SITES=	http://dl.fefe.de/
+MASTER_SITES=	http://www.fefe.de/gatling/
 
 MAINTAINER=	coco@executive-computing.de
 COMMENT=	High performance webserver with scalability benchmark tools
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	libowfat>=0.29:devel/libowfat
+BUILD_DEPENDS=	libowfat>=0.31:devel/libowfat
 
-USES=		gmake ssl tar:bzip2
+BROKEN_powerpc64=	fails to compile: dirfd.c: error: expected ';', ',' or ')' before 'key'
+
+USES=		gmake ssl tar:xz
 USE_RC_SUBR=	gatling
 
 CFLAGS+=	-I${LOCALBASE}/include/libowfat -I${OPENSSLINC} -I${LOCALBASE}/include
@@ -87,19 +88,19 @@ post-patch:
 		${WRKSRC}/GNUmakefile
 
 pre-install:
-	@cd ${WRKSRC} && ${CP} gatling.1 gatling.8
+	cd ${WRKSRC} && ${CP} gatling.1 gatling.8
 
 do-install:
-	@cd ${WRKSRC} && ${INSTALL_PROGRAM} ${bin} ${STAGEDIR}${PREFIX}/bin
-	@cd ${WRKSRC} && ${INSTALL_PROGRAM} ${sbin} ${STAGEDIR}${PREFIX}/sbin
-	@${INSTALL_SCRIPT} ${FILESDIR}/gatling_wrapper ${STAGEDIR}${PREFIX}/sbin
-	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	@cd ${WRKSRC} && ${INSTALL_SCRIPT} ${PORTEXAMPLES} ${STAGEDIR}${EXAMPLESDIR}
+	cd ${WRKSRC} && ${INSTALL_PROGRAM} ${bin} ${STAGEDIR}${PREFIX}/bin
+	cd ${WRKSRC} && ${INSTALL_PROGRAM} ${sbin} ${STAGEDIR}${PREFIX}/sbin
+	${INSTALL_SCRIPT} ${FILESDIR}/gatling_wrapper ${STAGEDIR}${PREFIX}/sbin
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	cd ${WRKSRC} && ${INSTALL_SCRIPT} ${PORTEXAMPLES} ${STAGEDIR}${EXAMPLESDIR}
 .if !empty(BENCH1)
-	@cd ${WRKSRC} && ${INSTALL_MAN} ${BENCH1} ${STAGEDIR}${MAN1PREFIX}/man/man1
+	cd ${WRKSRC} && ${INSTALL_MAN} ${BENCH1} ${STAGEDIR}${MAN1PREFIX}/man/man1
 .endif
-	@cd ${WRKSRC} && ${INSTALL_MAN} ${GATLING8} ${STAGEDIR}${MAN8PREFIX}/man/man8
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	@cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_MAN} ${GATLING8} ${STAGEDIR}${MAN8PREFIX}/man/man8
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.post.mk>

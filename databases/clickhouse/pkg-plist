@@ -1,0 +1,18 @@
+bin/clickhouse
+bin/clickhouse-benchmark
+bin/clickhouse-client
+bin/clickhouse-local
+bin/clickhouse-server
+bin/clickhouse-performance-test
+bin/clickhouse-zookeeper-cli
+@dir(clickhouse,,) etc/clickhouse-server
+@dir(clickhouse,,) etc/clickhouse-client
+@sample etc/clickhouse-client/config.xml.sample
+@sample etc/clickhouse-server/config.xml.sample
+@sample etc/clickhouse-server/users.xml.sample
+lib/libclickhouse.so
+lib/libclickhouse.so.1
+lib/libclickhouse.so.%%SOVERSION%%
+@dir(clickhouse,clickhouse,700) /var/db/clickhouse
+@dir(clickhouse,clickhouse) /var/log/clickhouse
+@dir(clickhouse,clickhouse) /var/run/clickhouse

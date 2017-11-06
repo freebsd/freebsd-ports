@@ -2,10 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	abi-compliance-checker
-PORTVERSION=	1.99
-PORTREVISION=	1
+DISTVERSION=	2.0b1
 CATEGORIES=	devel perl5
-MASTER_SITES=	LOCAL/bf/${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Checks binary compatibility of two versions of a C/C++ shared library
@@ -13,30 +11,38 @@ COMMENT=	Checks binary compatibility of two versions of a C/C++ shared library
 LICENSE=	LGPL20 GPLv2
 LICENSE_COMB=	dual
 
-USES=		perl5 shebangfix
-SHEBANG_FILES=	*.pl
-USE_GITHUB=	yes
-GH_ACCOUNT=	lvc
+RUN_DEPENDS=	exctags:devel/ctags
+RUN_DEPENDS+=	eu-readelf:devel/elfutils
 
-.if defined(MAINTAINER_MODE) || defined(PACKAGE_BUILDING)
-BUILD_DEPENDS?=	exctags:devel/ctags
-.else
+OPTIONS_DEFINE=	DOCS PORTS_BINUTILS
+PORTS_BINUTILS_DESC=	Use binutils from ports
+
+USES=		gmake perl5 shebangfix
 USE_PERL5=	run
-.endif
-RUN_DEPENDS?=	exctags:devel/ctags
-USE_GCC=	any
 
-NO_BUILD=	yes
-PLIST_FILES=	bin/${PORTNAME}.pl
+USE_GITHUB=	nodefault
+GH_TUPLE=	lvc:abi-compliance-checker:2.0b1 \
+		lvc:vtable-dumper:0e04246:vdumper/vdumper \
+		lvc:abi-dumper:46aae79:adumper/adumper \
+		lvc:abi-compliance-checker:a6554a1:checker/checker
+PLIST_FILES=	bin/${PORTNAME}.pl bin/abi-dumper.pl bin/vtable-dumper
+SHEBANG_FILES=	checker/*.pl adumper/*.pl
 
-OPTIONS_DEFINE=	DOCS
+PORTDATA=	*
+PORTDOCS=	*
+
+CTAGS?=		exctags
 
 .include <bsd.port.options.mk>
 
+.if ${PORT_OPTIONS:MPORTS_BINUTILS}
+RUN_DEPENDS+=	readelf:devel/binutils
+CPPFILT?=	${PREFIX}/bin/c++filt
+READELF?=	${PREFIX}/bin/readelf
+OBJDUMP?=	${PREFIX}/bin/objdump
+.else
 CPPFILT?=	/usr/bin/c++filt
-CTAGS?=		exctags
-GZ?=		/usr/bin/gzip
-READELF?=	/usr/bin/readelf
+.endif
 
 .if ${ARCH} == "sparc64"
 PICFLAG?=	-fPIC
@@ -44,9 +50,9 @@ PICFLAG?=	-fPIC
 PICFLAG?=	-fpic
 .endif
 
-PORTDATA=	*
-
-PORTDOCS=	*
+do-build:
+	cd ${WRKSRC}/vdumper && \
+	    ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${_MAKE_JOBS} ${MAKE_ARGS}
 
 post-patch:
 	@${REINPLACE_CMD} \
@@ -55,28 +61,25 @@ post-patch:
 		-e "\|get_CmdPath(\"gcc\")|s|\"gcc\"|\"${CC}\"|" \
 		-e "\|get_CmdPath(\"objdump\")|s|\"objdump\"|\"${OBJDUMP}\"|" \
 		-e "\|get_CmdPath(\"readelf\")|s|\"readelf\"|\"${READELF}\"|" \
-		-e "\|my \$$GzipCmd =|s|=.*|= \"${GZ}\";|" \
+		-e "\|my \$$GzipCmd =|s|=.*|= \"${GZIP_CMD}\";|" \
 		-e "\|my \$$TarCmd =|s|=.*|= \"${TAR}\";|" \
 		-e "\|TarCmd -xv.*>|{h; s| >.*|\");|; x; s|-xv|-t|; G;}" \
 		-e "s|ACC_MODULES_INSTALL_PATH|${DATADIR}|" \
-		${WRKSRC}/${PORTNAME}.pl
+		${WRKSRC}/checker/${PORTNAME}.pl
 	@${SED} -i "" -e "\|BuildCmd|s|GCC_PATH.\"|& ${PICFLAG}|" \
-		${WRKSRC}/modules/Internals/RegTests.pm
+		${WRKSRC}/checker/modules/Internals/RegTests.pm
 
 do-install:
-	@${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}.pl ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/vdumper/vtable-dumper \
+		${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/adumper/abi-dumper.pl \
+		${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/checker/${PORTNAME}.pl \
+		${STAGEDIR}${PREFIX}/bin
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	@(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} \* ${STAGEDIR}${DOCSDIR})
+	(cd ${WRKSRC}/checker/doc && ${COPYTREE_SHARE} \* ${STAGEDIR}${DOCSDIR})
 	@${MKDIR} ${STAGEDIR}${DATADIR}
-	@(cd ${WRKSRC} && ${COPYTREE_SHARE} \
-	"modules/Internals modules/*.xml modules/Targets/unix" ${STAGEDIR}${DATADIR})
-
-.if defined(MAINTAINER_MODE) || defined(PACKAGE_BUILDING)
-check regression-test test: build
-	cd ${WRKSRC}; \
-	${PERL} ./${PORTNAME}.pl -test; \
-	${PERL} ./${PORTNAME}.pl -test-dump
-
-.endif
+	(cd ${WRKSRC}/checker && ${COPYTREE_SHARE} \
+		"modules/Internals modules/*.xml" ${STAGEDIR}${DATADIR})
 
 .include <bsd.port.mk>

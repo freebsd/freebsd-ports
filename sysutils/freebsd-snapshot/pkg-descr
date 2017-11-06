@@ -6,4 +6,4 @@ command in the amd(8) map /usr/local/etc/amd.map.snap. It
 provides the making, expiring, visiting, mounting and
 unmounting of filesystem snapshots.
 
-WWW: http://people.freebsd.org/~rse/snapshot/
+WWW: https://people.freebsd.org/~rse/snapshot/

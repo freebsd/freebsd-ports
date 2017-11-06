@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ddrescue
-PORTVERSION=	1.18.1
+PORTVERSION=	1.22
 CATEGORIES=	sysutils
 MASTER_SITES=	GNU
 EXTRACT_SUFX=	.tar.lz
@@ -10,7 +10,7 @@ EXTRACT_SUFX=	.tar.lz
 MAINTAINER=	jharris@widomaker.com
 COMMENT=	Data recovery tool
 
-LICENSE=	GPLv3
+LICENSE=	GPLv2
 
 EXTRACT_DEPENDS=lzip:archivers/lzip
 

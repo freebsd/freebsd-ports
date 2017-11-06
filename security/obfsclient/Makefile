@@ -4,7 +4,7 @@
 PORTNAME=	obfsclient
 PORTVERSION=	0.0.2
 DISTVERSIONPREFIX=	v
-PORTREVISION=	3
+PORTREVISION=	7
 CATEGORIES=	security
 
 MAINTAINER=	ports@FreeBSD.org
@@ -15,7 +15,7 @@ LICENSE_COMB=	multi
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	liballium-1.0.so:devel/liballium \
-		libevent.so:devel/libevent2
+		libevent.so:devel/libevent
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	Yawning

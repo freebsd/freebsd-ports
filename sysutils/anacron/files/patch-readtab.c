@@ -1,5 +1,5 @@
---- readtab.c.orig	Fri Jun 23 00:13:12 2000
-+++ readtab.c	Thu Jun 16 17:35:07 2005
+--- readtab.c.orig	2000-06-22 22:13:12 UTC
++++ readtab.c
 @@ -19,6 +19,11 @@
   
      The GNU General Public License can also be found in the file
@@ -29,7 +29,7 @@
  static FILE *tab;
  job_rec **job_array;
  int njobs;                       /* number of jobs to run */
-@@ -47,9 +49,7 @@
+@@ -47,9 +49,7 @@ static int line_num;             /* curr
  static job_rec *last_job_rec;    /* last job stored in memory, at the moment */
  static env_rec *last_env_rec;    /* last environment assignment stored */
  
@@ -40,7 +40,7 @@
  
  static void *
  xmalloc (size_t size)
-@@ -63,6 +63,18 @@
+@@ -63,6 +63,18 @@ xmalloc (size_t size)
      return ptr;
  }
  
@@ -59,7 +59,7 @@
  static int
  conv2int(const char *s)
  /* Return the int or -1 on over/under-flow
-@@ -78,19 +90,20 @@
+@@ -78,19 +90,20 @@ conv2int(const char *s)
  }
  
  static char *
@@ -85,7 +85,7 @@
  }
  
  static int
-@@ -119,8 +132,8 @@
+@@ -119,8 +132,8 @@ register_env(const char *env_var, const 
  
      var_len = strlen(env_var);
      val_len = strlen(value);
@@ -96,7 +96,7 @@
      strcpy(er->assign, env_var);
      er->assign[var_len] = '=';
      strcpy(er->assign + var_len + 1, value);
-@@ -151,14 +164,14 @@
+@@ -151,14 +164,14 @@ register_job(const char *periods, const 
  		 anacrontab, line_num);
  	return;
      }
@@ -114,7 +114,7 @@
      strcpy(jr->command, command);
      jr->job_pid = jr->mailer_pid = 0;
      if (last_job_rec != NULL) last_job_rec->next = jr;
-@@ -222,7 +235,7 @@
+@@ -222,7 +235,7 @@ void
  read_tab()
  /* Read the anacrontab file into memory */
  {
@@ -123,7 +123,7 @@
  
      first_job_rec = last_job_rec = NULL;
      first_env_rec = last_env_rec = NULL;
-@@ -231,14 +244,10 @@
+@@ -231,14 +244,10 @@ read_tab()
      /* Open the anacrontab file */
      tab = fopen(anacrontab, "r");
      if (tab == NULL) die_e("Error opening %s", anacrontab);
@@ -139,7 +139,7 @@
      }
      if (fclose(tab)) die_e("Error closing %s", anacrontab);
  }
-@@ -269,16 +278,17 @@
+@@ -269,16 +278,17 @@ arrange_jobs()
  
      j = first_job_rec;
      njobs = 0;

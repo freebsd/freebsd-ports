@@ -4,9 +4,9 @@
 Obtained from:	https://github.com/sam-github/libnet/commit/18cbe497dd84afc471a5320e4ef3a7cde87c2c4e [1]
 		https://github.com/sam-github/libnet/commit/2e724b2f5cd614d7362f8dcbc57dc1fca6e437b3 [2]
 
---- src/libnet_if_addr.c.orig	2012-03-20 00:59:50.000000000 +0800
-+++ src/libnet_if_addr.c	2015-01-18 03:09:08.169400000 +0800
-@@ -330,6 +330,8 @@
+--- src/libnet_if_addr.c.orig	2012-03-19 16:59:50 UTC
++++ src/libnet_if_addr.c
+@@ -330,6 +330,8 @@ register char *errbuf)
          ++nipaddr;
      }
  
@@ -15,7 +15,7 @@ Obtained from:	https://github.com/sam-github/libnet/commit/18cbe497dd84afc471a53
      *ipaddrp = ifaddrlist;
      return (nipaddr);
  }
-@@ -339,7 +341,6 @@
+@@ -339,7 +341,6 @@ int
  libnet_select_device(libnet_t *l)
  {
      int c, i;
@@ -23,7 +23,7 @@ Obtained from:	https://github.com/sam-github/libnet/commit/18cbe497dd84afc471a53
      struct libnet_ifaddr_list *address_list, *al;
      uint32_t addr;
  
-@@ -364,7 +365,7 @@
+@@ -364,7 +365,7 @@ libnet_select_device(libnet_t *l)
      /*
       *  Number of interfaces.
       */

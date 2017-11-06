@@ -93,6 +93,8 @@
 %%CSL%%%%DATADIR%%/reduce.fonts/cmsy7.ttf
 %%CSL%%%%DATADIR%%/reduce.fonts/cmsy8.ttf
 %%CSL%%%%DATADIR%%/reduce.fonts/cmsy9.ttf
+%%CSL%%%%DATADIR%%/reduce.fonts/cmuntt.pfb
+%%CSL%%%%DATADIR%%/reduce.fonts/cmuntt.ttf
 %%CSL%%%%DATADIR%%/reduce.fonts/fonts.dir
 %%CSL%%%%DATADIR%%/reduce.fonts/fonts.scale
 %%CSL%%%%DATADIR%%/reduce.fonts/pfmfiles/cmex10.pfm
@@ -385,6 +387,17 @@
 %%PSL%%%%DATADIR%%/red/cantens.b
 %%PSL%%%%DATADIR%%/red/cdiff.b
 %%PSL%%%%DATADIR%%/red/cdiffx.b
+%%PSL%%%%DATADIR%%/red/cde.b
+%%PSL%%%%DATADIR%%/red/cde_ansatz.b
+%%PSL%%%%DATADIR%%/red/cde_cdcalc.b
+%%PSL%%%%DATADIR%%/red/cde_cdiff.b
+%%PSL%%%%DATADIR%%/red/cde_diffcon.b
+%%PSL%%%%DATADIR%%/red/cde_init.b
+%%PSL%%%%DATADIR%%/red/cde_jetspace.b
+%%PSL%%%%DATADIR%%/red/cde_parametric.b
+%%PSL%%%%DATADIR%%/red/cde_tools.b
+%%PSL%%%%DATADIR%%/red/cde_totalder.b
+%%PSL%%%%DATADIR%%/red/cde_varcalc.b
 %%PSL%%%%DATADIR%%/red/cedit.b
 %%PSL%%%%DATADIR%%/red/cface.b
 %%PSL%%%%DATADIR%%/red/cgb.b
@@ -421,7 +434,6 @@
 %%PSL%%%%DATADIR%%/red/coeffts.b
 %%PSL%%%%DATADIR%%/red/cofactor.b
 %%PSL%%%%DATADIR%%/red/comfac.b
-%%PSL%%%%DATADIR%%/red/comment.b
 %%PSL%%%%DATADIR%%/red/compact.b
 %%PSL%%%%DATADIR%%/red/compactf.b
 %%PSL%%%%DATADIR%%/red/compat.b
@@ -461,6 +473,8 @@
 %%PSL%%%%DATADIR%%/red/crlinalg.b
 %%PSL%%%%DATADIR%%/red/crmain.b
 %%PSL%%%%DATADIR%%/red/crpvm.b
+%%PSL%%%%DATADIR%%/red/crresu.b
+%%PSL%%%%DATADIR%%/red/crstart.b
 %%PSL%%%%DATADIR%%/red/crsep.b
 %%PSL%%%%DATADIR%%/red/crshort.b
 %%PSL%%%%DATADIR%%/red/crsimp.b
@@ -602,11 +616,11 @@
 %%PSL%%%%DATADIR%%/red/general.b
 %%PSL%%%%DATADIR%%/red/genmod.b
 %%PSL%%%%DATADIR%%/red/genparser.b
+%%PSL%%%%DATADIR%%/red/genparserprint.b
 %%PSL%%%%DATADIR%%/red/genpurfn.b
 %%PSL%%%%DATADIR%%/red/gentens.b
 %%PSL%%%%DATADIR%%/red/gentran.b
 %%PSL%%%%DATADIR%%/red/genus.b
-%%PSL%%%%DATADIR%%/red/geometry.b
 %%PSL%%%%DATADIR%%/red/geoprover.b
 %%PSL%%%%DATADIR%%/red/ghyper.b
 %%PSL%%%%DATADIR%%/red/gint.b
@@ -845,6 +859,10 @@
 %%PSL%%%%DATADIR%%/red/ofsftfc.b
 %%PSL%%%%DATADIR%%/red/ofsftrop.b
 %%PSL%%%%DATADIR%%/red/ofsfvsl.b
+%%PSL%%%%DATADIR%%/red/ofsfvsblock.b
+%%PSL%%%%DATADIR%%/red/ofsfvseset.b
+%%PSL%%%%DATADIR%%/red/ofsfvslists.b
+%%PSL%%%%DATADIR%%/red/ofsfvssub.b
 %%PSL%%%%DATADIR%%/red/ofsfxopt.b
 %%PSL%%%%DATADIR%%/red/om2ir.b
 %%PSL%%%%DATADIR%%/red/opertens.b
@@ -864,7 +882,6 @@
 %%PSL%%%%DATADIR%%/red/pasfbnf.b
 %%PSL%%%%DATADIR%%/red/pasfmisc.b
 %%PSL%%%%DATADIR%%/red/pasfnf.b
-%%PSL%%%%DATADIR%%/red/pasfopt.b
 %%PSL%%%%DATADIR%%/red/pasfqe.b
 %%PSL%%%%DATADIR%%/red/pasfresolve.b
 %%PSL%%%%DATADIR%%/red/pasfsiat.b
@@ -975,6 +992,7 @@
 %%PSL%%%%DATADIR%%/red/resultnt.b
 %%PSL%%%%DATADIR%%/red/reval.b
 %%PSL%%%%DATADIR%%/red/reval4.b
+%%PSL%%%%DATADIR%%/red/revision.b
 %%PSL%%%%DATADIR%%/red/ring.b
 %%PSL%%%%DATADIR%%/red/rlami.b
 %%PSL%%%%DATADIR%%/red/rlcont.b
@@ -983,9 +1001,14 @@
 %%PSL%%%%DATADIR%%/red/rlisp.b
 %%PSL%%%%DATADIR%%/red/rlisp88.b
 %%PSL%%%%DATADIR%%/red/rlsched.b
+%%PSL%%%%DATADIR%%/red/rlservice.b
+%%PSL%%%%DATADIR%%/red/rlservices.b
 %%PSL%%%%DATADIR%%/red/rlsl.b
 %%PSL%%%%DATADIR%%/red/rlslv.b
+%%PSL%%%%DATADIR%%/red/rlsupport.b
 %%PSL%%%%DATADIR%%/red/rltools.b
+%%PSL%%%%DATADIR%%/red/rltype.b
+%%PSL%%%%DATADIR%%/red/rltypes.b
 %%PSL%%%%DATADIR%%/red/rmsubs.b
 %%PSL%%%%DATADIR%%/red/rnelem.b
 %%PSL%%%%DATADIR%%/red/rootaux.b
@@ -993,6 +1016,7 @@
 %%PSL%%%%DATADIR%%/red/roots2.b
 %%PSL%%%%DATADIR%%/red/rounded.b
 %%PSL%%%%DATADIR%%/red/rprint.b
+%%PSL%%%%DATADIR%%/red/rprintf.b
 %%PSL%%%%DATADIR%%/red/rsolve.b
 %%PSL%%%%DATADIR%%/red/rsupport.b
 %%PSL%%%%DATADIR%%/red/rtrace.b
@@ -1068,6 +1092,7 @@
 %%PSL%%%%DATADIR%%/red/sqfrnorm.b
 %%PSL%%%%DATADIR%%/red/sqprint.b
 %%PSL%%%%DATADIR%%/red/sqrtf.b
+%%PSL%%%%DATADIR%%/red/sstools.b
 %%PSL%%%%DATADIR%%/red/statmisc.b
 %%PSL%%%%DATADIR%%/red/steepstd.b
 %%PSL%%%%DATADIR%%/red/str.b
@@ -1157,6 +1182,7 @@
 %%PSL%%%%DATADIR%%/red/tri.b
 %%PSL%%%%DATADIR%%/red/trialdiv.b
 %%PSL%%%%DATADIR%%/red/triang.b
+%%PSL%%%%DATADIR%%/red/trigd.b
 %%PSL%%%%DATADIR%%/red/trigint.b
 %%PSL%%%%DATADIR%%/red/trigsimp.b
 %%PSL%%%%DATADIR%%/red/trigsmp1.b

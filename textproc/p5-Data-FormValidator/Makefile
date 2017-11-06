@@ -2,14 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	Data-FormValidator
-PORTVERSION=	4.81
-PORTREVISION=	2
+PORTVERSION=	4.88
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Validates user input (usually from an HTML form) based
+
+LICENSE=	ART10 GPLv1+
+LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-CGI>=3.48:www/p5-CGI \
 		p5-Date-Calc>=5.0:devel/p5-Date-Calc \
@@ -21,7 +23,8 @@ BUILD_DEPENDS=	p5-CGI>=3.48:www/p5-CGI \
 		p5-Regexp-Common>=0:textproc/p5-Regexp-Common
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+NO_ARCH=	yes
 USES=		perl5
-USE_PERL5=	modbuild
+USE_PERL5=	configure
 
 .include <bsd.port.mk>

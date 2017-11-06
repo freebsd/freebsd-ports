@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mailboxer
-PORTVERSION=	0.14.0
+PORTVERSION=	0.15.1
 CATEGORIES=	mail rubygems
 MASTER_SITES=	RG
 
@@ -13,7 +13,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	rubygem-carrierwave>=0.5.8:www/rubygem-carrierwave \
-		rubygem-rails4>=4.2.0:www/rubygem-rails4
+		rubygem-rails5>=5.0.0:www/rubygem-rails5
 
 NO_ARCH=	yes
 USE_RUBY=	yes

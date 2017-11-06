@@ -1,5 +1,5 @@
---- dlgc/Makefile.orig	Fri Jul 26 17:53:14 2002
-+++ dlgc/Makefile	Thu Aug  8 02:08:37 2002
+--- dlgc/Makefile.orig	2002-07-26 08:53:14 UTC
++++ dlgc/Makefile
 @@ -4,9 +4,8 @@
  # Description: DLGC Makefile
  # Author: Michal Safranek
@@ -12,7 +12,7 @@
  LIBS = -lncurses ../libtn.a
  
  .SUFFIXES: .c .cpp .h
-@@ -14,16 +13,16 @@
+@@ -14,16 +13,16 @@ LIBS = -lncurses ../libtn.a
  all: dlgc
  
  ../libtn.a:

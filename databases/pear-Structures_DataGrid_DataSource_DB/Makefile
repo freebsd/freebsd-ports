@@ -5,13 +5,13 @@ PORTNAME=	Structures_DataGrid_DataSource_DB
 PORTVERSION=	0.1.1
 CATEGORIES=	databases www pear
 
-MAINTAINER=	joneum@bsdproject.de
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	DB datasource driver for pear-Structures_DataGrid
 
 RUN_DEPENDS=	${PEARDIR}/Structures/DataGrid.php:devel/pear-Structures_DataGrid \
 		${PEARDIR}/DB.php:databases/pear-DB \
 		${PEARDIR}/Structures/DataGrid/DataSource/Array.php:databases/pear-Structures_DataGrid_DataSource_Array
 
-USES=	pear
+USES=		pear
 
 .include <bsd.port.mk>

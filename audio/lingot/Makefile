@@ -7,7 +7,7 @@ PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	SAVANNAH
 
-MAINTAINER=	coder@tuxfamily.org
+MAINTAINER=	lbartoletti@tuxfamily.org
 COMMENT=	LINGOT is a musical instrument tuner
 
 LICENSE=	GPLv2

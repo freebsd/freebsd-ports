@@ -1,7 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	rspamd
-PORTVERSION=	1.5.0.a2.20161226
+PORTVERSION=	1.5.4.a1.20170328
+PORTREVISION=	1
 CATEGORIES=	mail
 PKGNAMESUFFIX=	-devel
 
@@ -12,24 +13,26 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libpcre.so:devel/pcre \
-		libevent.so:devel/libevent2 \
+		libevent.so:devel/libevent \
 		libluajit-5.1.so:lang/luajit \
-		libfann.so:math/fann
+		libfann.so:math/fann \
+		libicui18n.so:devel/icu
 BUILD_DEPENDS=	ragel:devel/ragel
 
 CONFLICTS_INSTALL=	rspamd
 
-RSPAMD_VERSION=	1.5.0
+RSPAMD_VERSION=	1.5.4
 USE_GITHUB=	yes
 GH_ACCOUNT=	vstakhov
-GH_TAGNAME=	0d4c60d
+GH_TAGNAME=	56b2c0c5
 
-OPTIONS_DEFINE=	GPERF REDIRECTOR HYPERSCAN GD
+OPTIONS_DEFINE=	GPERF REDIRECTOR HYPERSCAN GD CGP
 OPTIONS_DEFAULT=	GD
 GPERF_DESC=		Google perf-tools profiling
 REDIRECTOR_DESC=	Install HTTP redirector
 HYPERSCAN_DESC=		Use hyperscan optimizations (amd64 only)
 GD_DESC=		Enable libgd support for images fuzzy hashes
+CGP_DESC=		Install Communigate Pro(tm) helper
 
 USE_RC_SUBR=	rspamd
 
@@ -93,10 +96,21 @@ WITH_DEBUG=	yes
 	p5-POE-Component-Server-HTTP>=0:www/p5-POE-Component-Server-HTTP \
 	p5-Cache-Memcached-Fast>=0:databases/p5-Cache-Memcached-Fast \
 	p5-Proc-PidUtil>=0:sysutils/p5-Proc-PidUtil \
-	p5-Proc-Daemon>=0:devel/p5-Proc-Daemon \
-	p5-SWF-File>=0:graphics/p5-SWF-File
+	p5-Proc-Daemon>=0:devel/p5-Proc-Daemon
 .else
  PLIST_SUB+=	REDIRECTOR="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MCGP}
+ USE_PERL5+=	run
+ PLIST_SUB+=	CGP=""
+ RUN_DEPENDS+=	\
+	p5-AnyEvent-HTTP>=0:www/p5-AnyEvent-HTTP \
+	p5-AnyEvent>=0:devel/p5-AnyEvent \
+	p5-EV>=0:devel/p5-EV \
+	p5-JSON-XS>=0:converters/p5-JSON-XS
+.else
+ PLIST_SUB+=	CGP="@comment "
 .endif
 
 post-install:
@@ -111,5 +125,8 @@ post-install:
 	${INSTALL_DATA} ${WRKDIR}/rspamd.newsyslog.conf.sample ${STAGEDIR}${ETCDIR}
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/newsyslog.conf.d
 	${LN} -s ${ETCDIR}/rspamd.newsyslog.conf ${STAGEDIR}${PREFIX}/etc/newsyslog.conf.d
+.if ${PORT_OPTIONS:MCGP}
+	${INSTALL_SCRIPT} ${WRKSRC}/utils/cgp_rspamd.pl ${STAGEDIR}${PREFIX}/bin/rspamd-cgp-helper
+.endif
 
 .include <bsd.port.mk>

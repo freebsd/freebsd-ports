@@ -14,14 +14,16 @@ LICENSE=	BSD3CLAUSE
 
 USES=		perl5 shebangfix
 SHEBANG_FILES=	scripts/squid_redirect-nodata scripts/wrapzap scripts/zapchain
-NO_BUILD=	yes
 USE_PERL5=	run
+NO_BUILD=	yes
+NO_ARCH=	yes
 
-OPTIONS_DEFINE=	DOCS EXAMPLES
+SUB_FILES=	adzap.conf pkg-message
 
 PORTDOCS=	index.html update-instructions.txt TODO my-bsd-license.html
 PORTEXAMPLES=	*
-SUB_FILES=	adzap.conf pkg-message
+
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
 post-patch:
 	@${REINPLACE_CMD} -e "s:%%PREFIX%%:${PREFIX}:g" ${WRKSRC}/scripts/wrapzap
@@ -31,11 +33,13 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/scripts/wrapzap ${STAGEDIR}${PREFIX}/libexec/adzap
 	${INSTALL_SCRIPT} ${WRKSRC}/scripts/zapchain ${STAGEDIR}${PREFIX}/libexec/
 
-	${INSTALL} -d ${STAGEDIR}${EXAMPLESDIR}
+do-install-EXAMPLES-on:
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${CP} -R ${WRKSRC}/zaps ${STAGEDIR}${EXAMPLESDIR}
 	${CP} -R ${WRKSRC}/rc ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKDIR}/adzap.conf ${STAGEDIR}${EXAMPLESDIR}
 
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 

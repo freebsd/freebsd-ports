@@ -1,3 +1,3 @@
-TIMESTAMP = 1483434958
-SHA256 (sqlmap-1.1.tar.gz) = f1d90a6074428c73a20f4288fea8ceab3e35c19fc9446432f5cc1c2eca15a75f
-SIZE (sqlmap-1.1.tar.gz) = 6736690
+TIMESTAMP = 1508276278
+SHA256 (sqlmap-1.1.10.tar.gz) = 90db96664955c6a576b495c973bd3976b9d4eaffaea205c0343ac7e8f8147cbe
+SIZE (sqlmap-1.1.10.tar.gz) = 7405215

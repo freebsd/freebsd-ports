@@ -1,0 +1,8 @@
+Please note: The binaries in this package -- pdffonts, pdfimages, pdfinfo,
+pdfdetach, pdftohtml, pdftopng, pdftoppm, pdftops, pdftotext -- are
+installed in ${LOCALBASE}/libexec/xpdf. The reason for this is to not
+conflict with the poppler-utils package, which is a prerequisite of many
+other packages. If you need to use any of these utilites,
+
+a) create symlinks in ${LOCALBASE}/bin or some other directory in $PATH, or
+b) install graphics/poppler-utils.

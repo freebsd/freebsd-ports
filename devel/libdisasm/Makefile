@@ -8,14 +8,12 @@ CATEGORIES=	devel
 MASTER_SITES=	SF/bastard/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Bastard Disassembly Environment x86 disassembler library and CLI
+COMMENT=	Intel x86 instructions disassembler utility and library
 
 LICENSE=	ART10
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-ONLY_FOR_ARCHS=	i386 amd64
-
-USES=		gmake libtool
+USES=		libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 

@@ -4,7 +4,7 @@
 
 PORTNAME=	bakery
 PORTVERSION=	2.6.3
-PORTREVISION=	9
+PORTREVISION=	11
 CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	GNOME
 
@@ -16,12 +16,12 @@ LIB_DEPENDS=	libgconfmm-2.6.so:devel/gconfmm26 \
 		libgnomevfsmm-2.6.so:devel/gnome-vfsmm \
 		libxml++-2.6.so:textproc/libxml++26
 
-USES=		gettext gmake libtool:keepla pathfix pkgconfig tar:bzip2
+USES=		compiler:c++11-lang gettext gmake libtool localbase pathfix \
+		pkgconfig tar:bzip2
+USE_CXXSTD=	c++11
 USE_GNOME=	gnomeprefix intlhack
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
 
 PLIST_SUB=	VERSION="2.6" API_VERSION="2.6"

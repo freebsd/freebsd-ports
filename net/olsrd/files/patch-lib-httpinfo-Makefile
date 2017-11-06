@@ -1,0 +1,10 @@
+--- lib/httpinfo/Makefile.orig	2016-11-22 19:39:42 UTC
++++ lib/httpinfo/Makefile
+@@ -52,7 +52,6 @@ ifdef ADMIN_INTERFACE
+ CPPFLAGS +=	-DADMIN_INTERFACE
+ endif
+ 
+-OBJS += $(TOPDIR)/src/cfgparser/cfgfile_gen.o
+ 
+ default_target: $(PLUGIN_FULLNAME)
+ ifdef ADMIN_INTERFACE

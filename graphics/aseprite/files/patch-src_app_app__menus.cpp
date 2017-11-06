@@ -1,6 +1,6 @@
---- src/app/app_menus.cpp.orig	2016-09-23 15:59:20 UTC
+--- src/app/app_menus.cpp.orig	2017-01-06 20:44:08 UTC
 +++ src/app/app_menus.cpp
-@@ -115,7 +115,7 @@ void AppMenus::reload()
+@@ -114,7 +114,7 @@ void AppMenus::reload()
    }
  }
  
@@ -9,7 +9,7 @@
  {
    MenuItem* list_menuitem = m_recentListMenuitem;
    MenuItem* menuitem;
-@@ -123,7 +123,7 @@ bool AppMenus::rebuildRecentList()
+@@ -122,7 +122,7 @@ bool AppMenus::rebuildRecentList()
    // Update the recent file list menu item
    if (list_menuitem) {
      if (list_menuitem->hasSubmenuOpened())
@@ -18,7 +18,7 @@
  
      Command* cmd_open_file = CommandsModule::instance()->getCommandByName(CommandId::OpenFile);
  
-@@ -159,8 +159,6 @@ bool AppMenus::rebuildRecentList()
+@@ -158,8 +158,6 @@ bool AppMenus::rebuildRecentList()
        submenu->addChild(menuitem);
      }
    }

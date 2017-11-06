@@ -25,6 +25,7 @@ vmware_mod_load()
 			echo "done."
 		else
 			echo "failed."
+			return 1
 		fi
 	fi
 }
@@ -36,6 +37,7 @@ vmware_mod_status()
 		echo "loaded."
 	else
 		echo "not loaded"
+		return 1
 	fi
 }
 
@@ -51,8 +53,8 @@ stop_precmd="${checkvm_cmd}"
 stop_cmd=":"
 
 load_rc_config $name
-[ -z "$vmware_guest_vmmemctl_enable" ] && vmware_guest_vmmemctl_enable="NO"
-[ -n "$vmware_guest_kmod_enable" ] && vmware_guest_vmmemctl_enable="$vmware_guest_kmod_enable"
+: ${vmware_guest_kmod_enable:="YES"}
+: ${vmware_guest_vmmemctl_enable:=$vmware_guest_kmod_enable}
 run_rc_command "$1"
 
 # VMware kernel module: vmxnet
@@ -67,7 +69,7 @@ stop_precmd="${checkvm_cmd}"
 stop_cmd=":"
 
 load_rc_config $name
-[ -z "$vmware_guest_vmxnet_enable" ] && vmware_guest_vmxnet_enable="NO"
+: ${vmware_guest_vmxnet_enable:=$vmware_guest_kmod_enable}
 run_rc_command "$1"
 
 # VMware kernel module: vmblock
@@ -82,20 +84,5 @@ stop_precmd="${checkvm_cmd}"
 stop_cmd=":"
 
 load_rc_config $name
-[ -z "$vmware_guest_vmblock_enable" ] && vmware_guest_vmblock_enable="NO"
-run_rc_command "$1"
-
-# VMware kernel module: vmhgfs
-kernel_mod="vmhgfs"
-name="vmware_guest_${kernel_mod}"
-rcvar=vmware_guest_${kernel_mod}_enable
-extra_commands="status"
-status_cmd="vmware_mod_status ${kernel_mod}"
-start_precmd="${checkvm_cmd}"
-start_cmd="vmware_mod_load ${kernel_mod}"
-stop_precmd="${checkvm_cmd}"
-stop_cmd=":"
-
-load_rc_config $name
-[ -z "$vmware_guest_vmhgfs_enable" ] && vmware_guest_vmhgfs_enable="NO"
+: ${vmware_guest_vmblock_enable:=$vmware_guest_kmod_enable}
 run_rc_command "$1"

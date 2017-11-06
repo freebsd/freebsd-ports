@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tor
-PORTVERSION=	0.2.9.8
+PORTVERSION=	0.3.1.8
 CATEGORIES=	security net ipv6
 MASTER_SITES=	TOR
 
@@ -12,26 +12,27 @@ COMMENT=	Anonymizing overlay network for TCP
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_mips64=	Does not build: error: Need a uint128_t implementation!
-BROKEN_powerpc64=	Does not build
-BROKEN_sparc64=	Does not build: error: Need a uint128_t implementation!
+BROKEN_mips64=		does not build: error: Need a uint128_t implementation!
+BROKEN_powerpc64=	does not build: error: Need a uint128_t implementation!
+BROKEN_sparc64=		does not build: error: Need a uint128_t implementation!
 
-USES=		cpe gmake
+USES=		cpe gmake pkgconfig
 CPE_VENDOR=	torproject
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-openssl-dir="${OPENSSLBASE}" --disable-asciidoc
+CONFIGURE_ARGS=	--with-openssl-dir="${OPENSSLBASE}"
 CONFIGURE_ENV=	TOR_CPPFLAGS_libevent="-I${LOCALBASE}/include" \
 		TOR_LDFLAGS_libevent="-L${LOCALBASE}/lib/" \
 		TOR_LIBEVENT_LIBS="${TOR_LIBEVENT_LIBS}"
 
-OPTIONS_DEFINE=	STATIC_TOR TCMALLOC TOR2WEB TRANSPARENT
-
+OPTIONS_DEFINE=	MANPAGES DOCS STATIC_TOR TCMALLOC TOR2WEB
+OPTIONS_GROUP=	COMPRESSION
+OPTIONS_GROUP_COMPRESSION=ZSTD LZMA
+OPTIONS_DEFAULT=MANPAGES ZSTD LZMA
+OPTIONS_SUB=	yes
 STATIC_TOR_DESC=	Build a static tor
 TCMALLOC_DESC=		Use the tcmalloc memory allocation library
 TOR2WEB_DESC=		(EXPERT OPTION) Faster but non-anonymous hidden services
-TRANSPARENT_DESC=	Transparent proxy support
-
-OPTIONS_DEFAULT=	TRANSPARENT
+COMPRESSION_DESC=	Supported compression libraries
 
 USE_RC_SUBR=	tor
 SUB_FILES=	pkg-message
@@ -41,29 +42,48 @@ PLIST_SUB=	USER="${USERS}" GROUP="${GROUPS}"
 GROUPS=		_tor
 USERS=		_tor
 
-CONFLICTS=	tor-devel-[0-9]*
+CONFLICTS_INSTALL=	tor-devel-[0-9]*
 
 STATIC_TOR_USES=	ssl:build
 STATIC_TOR_USES_OFF=	ssl
 
+TOR2WEB_CONFIGURE_ENABLE=	tor2web-mode
+ZSTD_CONFIGURE_ENABLE=		zstd
+ZSTD_CONFIGURE_ENV=TOR_ZSTD_LIBS="${TOR_ZSTD_LIBS}"
+LZMA_CONFIGURE_ENABLE=		lzma
+
 .include <bsd.port.options.mk>
 
+.if ${PORT_OPTIONS:MDOCS} || ${PORT_OPTIONS:MMANPAGES}
+BUILD_DEPENDS+=	asciidoc:textproc/asciidoc
+.else
+CONFIGURE_ARGS+=	--disable-asciidoc
+.endif
+
 .if !defined(USE_GCC) && empty(CC:T:M*gcc4*) && \
-empty(PORT_OPTIONS:MSTATIC_TOR) && empty(ARCH:Mia64)
+empty(PORT_OPTIONS:MSTATIC_TOR)
 CONFIGURE_ARGS+=	--enable-gcc-hardening
 .else
 CONFIGURE_ARGS+=	--disable-gcc-hardening
 .endif
 
 .if ${PORT_OPTIONS:MSTATIC_TOR}
-BUILD_DEPENDS +=	${LOCALBASE}/lib/libevent.a:devel/libevent2
+BUILD_DEPENDS +=	${LOCALBASE}/lib/libevent.a:devel/libevent
 CONFIGURE_ARGS+=	--enable-static-tor \
 			--with-zlib-dir=/usr/lib --disable-linker-hardening
 TOR_LIBEVENT_LIBS=	${LOCALBASE}/lib/libevent.a
+.  if ${PORT_OPTIONS:MZSTD}
+BUILD_DEPENDS+=		${LOCALBASE}/lib/libzstd.a:archivers/zstd
+TOR_ZSTD_LIBS=		${LOCALBASE}/lib/libzstd.a
+.  endif
 .else
 CONFIGURE_ARGS+=	--enable-linker-hardening
-LIB_DEPENDS+=		libevent.so:devel/libevent2
+LIB_DEPENDS+=		libevent.so:devel/libevent
 TOR_LIBEVENT_LIBS=	-levent
+.  if ${PORT_OPTIONS:MZSTD}
+LIB_DEPENDS+=		libzstd.so:archivers/zstd
+TOR_ZSTD_LIBS=		-lzstd
+.  endif
 .endif
 
 .if ${PORT_OPTIONS:MTCMALLOC}
@@ -73,16 +93,6 @@ BUILD_DEPENDS+=		${LOCALBASE}/lib/libtcmalloc.a:devel/google-perftools
 .else
 LIB_DEPENDS+=		libtcmalloc.so:devel/google-perftools
 .endif
-.endif
-
-.if ${PORT_OPTIONS:MTOR2WEB}
-CONFIGURE_ARGS+=	--enable-tor2web-mode
-.endif
-
-.if ${PORT_OPTIONS:MTRANSPARENT}
-CONFIGURE_ARGS+=	--enable-transparent
-.else
-CONFIGURE_ARGS+=	--disable-transparent
 .endif
 
 pre-everything::
@@ -110,10 +120,6 @@ post-patch-STATIC_TOR-off:
 post-patch-STATIC_TOR-on:
 	@${REINPLACE_CMD} -e "s@-ltcmalloc@${LOCALBASE}/lib/libtcmalloc.a@" \
 		${WRKSRC}/configure
-
-post-configure:
-	@${REINPLACE_CMD} -e '\|^nodist_man1_MANS =|s|$$|$$(install_mans:=.1)|' \
-		${WRKSRC}/Makefile
 
 post-install:
 	@${MKDIR} ${STAGEDIR}/var/log/tor ${STAGEDIR}/var/run/tor ${STAGEDIR}/var/db/tor

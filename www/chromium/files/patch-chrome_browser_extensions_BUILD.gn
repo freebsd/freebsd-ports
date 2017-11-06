@@ -1,24 +1,24 @@
---- chrome/browser/extensions/BUILD.gn.orig	2016-10-06 04:02:11.000000000 +0300
-+++ chrome/browser/extensions/BUILD.gn	2016-10-13 05:50:49.572236000 +0300
-@@ -186,7 +186,7 @@
-     sources -= [ "global_shortcut_listener_ozone.cc" ]
+--- chrome/browser/extensions/BUILD.gn.orig	2017-09-05 21:05:12.000000000 +0200
++++ chrome/browser/extensions/BUILD.gn	2017-09-06 18:09:24.874408000 +0200
+@@ -1095,7 +1095,7 @@
+     ]
    }
  
--  if (is_linux) {
-+  if (is_linux || is_bsd) {
-     deps += [ "//build/linux:fontconfig" ]
+-  if (is_win || (is_linux && !is_chromeos)) {
++  if (is_win || ((is_linux || is_bsd) && !is_chromeos)) {
+     sources += [
+       "api/input_ime/input_ime_api.cc",
+       "api/input_ime/input_ime_api.h",
+@@ -1126,6 +1126,12 @@
  
-     if (use_dbus) {
-@@ -252,6 +252,12 @@
+   if (enable_hotwording) {
      defines += [ "ENABLE_HOTWORDING" ]
-   }
- 
++  }
++
 +  if (is_bsd) {
 +    sources -= [
 +      "api/image_writer_private/removable_storage_provider_linux.cc",
 +    ]
-+  }
-+
+   }
+ 
    if (enable_service_discovery) {
-     sources += rebase_path(
-             gypi_values.chrome_browser_extensions_service_discovery_sources,

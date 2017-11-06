@@ -2,19 +2,21 @@
 
 PORTNAME=	qemu
 PORTVERSION=	2.7.50
-PORTREVISION=	20170112
+PORTREVISION=	20170306
 CATEGORIES=	emulators
 PKGNAMESUFFIX?=	-riscv
 
 MAINTAINER=	lwhsu@FreeBSD.org
-COMMENT=	QEMU with RISC-V (RV64G, RV32G) emulation support
+COMMENT=	QEMU with RISC-V (RV64GC, RV32GC) emulation support
 
 LICENSE=	GPLv2
+
+BROKEN_powerpc64=	fails to compile: async.c: internal compiler error: Segmentation fault
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	riscv
 GH_PROJECT=	riscv-qemu
-GH_TAGNAME=	168b877
+GH_TAGNAME=	2094f39
 
 HAS_CONFIGURE=	yes
 USES=	gmake libtool makeinfo pkgconfig python:2,build

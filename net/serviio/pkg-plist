@@ -11,6 +11,7 @@ sbin/serviiod
 %%JAVAJARDIR%%/serviio/freemarker.jar
 %%JAVAJARDIR%%/serviio/groovy-all.jar
 %%JAVAJARDIR%%/serviio/gson.jar
+%%JAVAJARDIR%%/serviio/httpclient-cache.jar
 %%JAVAJARDIR%%/serviio/httpclient.jar
 %%JAVAJARDIR%%/serviio/httpcore.jar
 %%JAVAJARDIR%%/serviio/icu4j.jar

@@ -341,6 +341,7 @@ lib/opencollada/libOpenCOLLADAStreamWriter.so
 lib/opencollada/libUTF.so
 lib/opencollada/libbuffer.so
 lib/opencollada/libftoa.so
+lib/opencollada/libzlib.so
 share/cmake/Modules/OpenCOLLADAConfig.cmake
 share/cmake/Modules/OpenCOLLADAConfigVersion.cmake
 share/cmake/Modules/OpenCOLLADATargets-%%CMAKE_BUILD_TYPE%%.cmake

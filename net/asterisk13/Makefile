@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	asterisk
-PORTVERSION=	13.13.1
+PORTVERSION=	13.18.0
 CATEGORIES=	net
 MASTER_SITES=	http://downloads.asterisk.org/pub/telephony/%SUBDIR%/:DEFAULT,g729
 MASTER_SITE_SUBDIR=	asterisk/ \
@@ -19,9 +19,10 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libuuid.so:misc/e2fsprogs-libuuid \
 		libjansson.so:devel/jansson
 
-EXTRACT_ONLY:=	${DISTNAME}${EXTRACT_SUFX}
+BROKEN_armv6=		fails to configure: the SPANDSP installation appears to be missing or broken
+ONLY_FOR_ARCHS=		amd64 armv6 i386 powerpc sparc64
 
-ONLY_FOR_ARCHS=	i386 amd64 powerpc sparc64 armv6
+EXTRACT_ONLY:=	${DISTNAME}${EXTRACT_SUFX}
 
 USES=		bison cpe gmake iconv libedit localbase \
 		shebangfix sqlite ssl ncurses
@@ -100,7 +101,7 @@ G729_DISTFILES=			${ASTERISK_CORE_G729_SOUNDS}:g729 \
 
 ASTVERSION_DESC?= Install astversion (requires bash)
 BACKTRACE_DESC?= Stack backtrace support via (lib)execinfo
-BASE_DESC=	Use base compiler (experimental)
+BASE_DESC=	Use base compiler
 DAHDI_DESC?=	DAHDI support
 EXCHANGE_DESC?=	Exchange calendar support
 MP3PLAYER_DESC=	Install MP3 Player for Music-On-Hold (mpg123)
@@ -116,7 +117,6 @@ OPTIONS_SUB=		yes
 ASTVERSION_RUN_DEPENDS=		bash:shells/bash
 
 BACKTRACE_CONFIGURE_WITH=	execinfo
-BACKTRACE_USES=			execinfo
 
 CURL_CONFIGURE_ON=	--with-libcurl
 CURL_CONFIGURE_OFF=	--with-libcurl=no
@@ -171,6 +171,8 @@ PGSQL_USES=		pgsql
 
 PJSIP_CONFIGURE_WITH=	pjproject
 PJSIP_USES=		pkgconfig
+PJSIP_LIB_DEPENDS=	libspeex.so:audio/speex \
+			libspeexdsp.so:audio/speexdsp
 
 PORTAUDIO_CONFIGURE_WITH=	portaudio
 PORTAUDIO_LIB_DEPENDS=	libportaudio.so:audio/portaudio
@@ -179,13 +181,16 @@ RADIUS_CONFIGURE_WITH=	radius
 RADIUS_LIB_DEPENDS=	libradiusclient-ng.so:net/radiusclient
 
 SNMP_CONFIGURE_WITH=	netsnmp
-SNMP_LIB_DEPENDS=	libnetsnmp.so:net-mgmt/net-snmp
+SNMP_LIB_DEPENDS=	libnetsnmp.so:net-mgmt/net-snmp \
+			libpkg.so:ports-mgmt/pkg
 
 SPANDSP_CONFIGURE_WITH=	spandsp
-SPANDSP_LIB_DEPENDS=	libspandsp.so:comms/spandsp
+SPANDSP_LIB_DEPENDS=	libspandsp.so:comms/spandsp \
+			libtiff.so:graphics/tiff
 
 SPEEX_CONFIGURE_WITH=	speex
-SPEEX_LIB_DEPENDS=	libspeex.so:audio/speex
+SPEEX_LIB_DEPENDS=	libspeex.so:audio/speex \
+			libspeexdsp.so:audio/speexdsp
 
 SQLITE2_CONFIGURE_WITH=	sqlite
 SQLITE2_LIB_DEPENDS=	libsqlite.so:databases/sqlite2
@@ -195,7 +200,8 @@ SRTP_CONFIGURE_WITH=	srtp
 SYSINFO_LIB_DEPENDS=	libsysinfo.so:devel/libsysinfo
 
 VORBIS_CONFIGURE_WITH=	ogg
-VORBIS_LIB_DEPENDS=	libvorbis.so:audio/libvorbis
+VORBIS_LIB_DEPENDS=	libvorbis.so:audio/libvorbis \
+			libogg.so:audio/libogg
 
 XMPP_CONFIGURE_WITH=	iksemel
 XMPP_LIB_DEPENDS=	libiksemel.so:textproc/iksemel
@@ -243,6 +249,9 @@ post-extract-G729-on:
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/var/lib|${PREFIX}/share|g' ${WRKSRC}/configs/samples/musiconhold.conf.sample
+.if exists(${FILESDIR}/.asterisk.makeopts)
+	${CP} ${FILESDIR}/.asterisk.makeopts ${WRKSRC}/menuselect.makeopts
+.endif
 
 post-patch-SYSINFO-on:
 	@${REINPLACE_CMD} -e 's/%%LIBSYSINFO%%/-lsysinfo/' ${WRKSRC}/main/Makefile
@@ -250,9 +259,6 @@ post-patch-SYSINFO-on:
 post-patch-SYSINFO-off:
 	@${REINPLACE_CMD} -e '/#define HAVE_SYSINFO 1/d' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e '/%%LIBSYSINFO%%/d' ${WRKSRC}/main/Makefile
-.if exists(${FILESDIR}/.asterisk.makeopts)
-	${CP} ${USER_MAKEOPTS_FILE} ${WRKSRC}/menuselect.makeopts
-.endif
 
 post-configure:
 	@cd ${WRKSRC} && ${MAKE_CMD} menuselect.makeopts
@@ -276,6 +282,7 @@ post-configure-OPTIMIZED_CFLAGS-off:
 
 post-install:
 	@${RM} ${STAGEDIR}${ETCDIR}/*.conf ${STAGEDIR}${ETCDIR}/extensions.ael ${STAGEDIR}${ETCDIR}/extensions.lua
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/sbin/ast[a-f]* ${STAGEDIR}${PREFIX}/lib/*.so.* ${STAGEDIR}${PREFIX}/lib/${PORTNAME}/modules/*.so ${STAGEDIR}${DATADIR}/agi-bin/eagi-*
 	${FIND} ${STAGEDIR}${PREFIX}/lib/${PORTNAME}/modules -type f -name '*.so' | ${SED} "s,^${STAGEDIR}${PREFIX}/,," >> ${TMPPLIST}
 	${FIND} ${STAGEDIR}${DATADIR}/sounds -type f | ${SED} "s,^${STAGEDIR}${DATADIR},${DATADIR}," >> ${TMPPLIST}
 	${FIND} ${STAGEDIR}${DATADIR}/moh -type f | ${SED} "s,^${STAGEDIR}${DATADIR},${DATADIR}," >> ${TMPPLIST}

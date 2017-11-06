@@ -1,4 +1,5 @@
-SHA256 (technomancy-leiningen-2.6.1_GH0.tar.gz) = 9e6a6c7b6e032921a37d5be8fcdc2c0288d3698f759e22bdd29de4eb327ebeab
-SIZE (technomancy-leiningen-2.6.1_GH0.tar.gz) = 706289
-SHA256 (leiningen-2.6.1-standalone.zip) = d70078fba85d5f405d042a6d7bad3a1e5b4aafae565c2d581feb999e95ae6394
-SIZE (leiningen-2.6.1-standalone.zip) = 15343271
+TIMESTAMP = 1508338704
+SHA256 (leiningen-2.8.0-standalone.zip) = 69c8c553553d1e02ca89bfa2a7650acf80b75511d193bfaa60236342e1356075
+SIZE (leiningen-2.8.0-standalone.zip) = 13541842
+SHA256 (technomancy-leiningen-2.8.0_GH0.tar.gz) = c02919055d23420a919f9a133457d49fd85141565e24bc2c45c1ec1ad6c11bec
+SIZE (technomancy-leiningen-2.8.0_GH0.tar.gz) = 727198

@@ -4,7 +4,6 @@
 CATEGORIES=	www lang
 PKGNAMESUFFIX=	-httpd24
 
-MAINTAINER=	freebsd-fpc@FreeBSD.org
 COMMENT=	Free Pascal headers for Apache 2.4 series web server
 
 USE_FPC=	rtl-extra

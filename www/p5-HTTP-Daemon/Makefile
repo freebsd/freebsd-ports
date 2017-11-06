@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Simple HTTP server class
 
-LICENSE=	ART10 GPLv1
+LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-HTTP-Date>=6:www/p5-HTTP-Date \
@@ -19,8 +19,7 @@ BUILD_DEPENDS=	p5-HTTP-Date>=6:www/p5-HTTP-Date \
 		p5-LWP-MediaTypes>=6:www/p5-LWP-MediaTypes
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-CONFLICTS=	p5-libwww-5*
-
+NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
 

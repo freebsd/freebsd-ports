@@ -3,6 +3,7 @@
 
 PORTNAME=	snes9x
 PORTVERSION=	1.54.1
+PORTREVISION=	3
 CATEGORIES=	emulators
 PKGNAMESUFFIX=	-gtk
 
@@ -15,6 +16,8 @@ LICENSE_FILE=	${WRKSRC}/../docs/snes9x-license.txt
 LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 
 LIB_DEPENDS=	libpng.so:graphics/png
+
+BROKEN_powerpc64=	fails to configure: C compiler cannot create executables
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	snes9xgit

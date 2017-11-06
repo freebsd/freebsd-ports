@@ -1,24 +1,17 @@
 # $FreeBSD$
 
 PORTNAME=	rrd
-DISTVERSION=	1.1.3
-PORTREVISION=	4
+DISTVERSION=	2.0.1
+PORTREVISION=	1
 CATEGORIES=	databases pear
-MASTER_SITES=	http://pecl.php.net/get/
-PKGNAMEPREFIX=	pecl-
-EXTRACT_SUFX=	.tgz
-DIST_SUBDIR=	PECL
 
 MAINTAINER=	flo@FreeBSD.org
 COMMENT=	PHP bindings to rrd tool system
 
 LICENSE=	PHP301
 
+IGNORE_WITH_PHP=56
 LIB_DEPENDS=	librrd.so:databases/rrdtool
-
-LDFLAGS+=	-L${LOCALBASE}/lib
-
-USES=		php:ext
-IGNORE_WITH_PHP=	70
+USES=		php:pecl localbase pkgconfig
 
 .include <bsd.port.mk>

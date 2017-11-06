@@ -2,11 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	pdflib
-PORTVERSION=	4.0.1
+PORTVERSION=	4.1.2
 CATEGORIES=	print pear
-MASTER_SITES=	http://pecl.php.net/get/
-PKGNAMEPREFIX=	pecl-
-DIST_SUBDIR=	PECL
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	PECL extension to create PDF on the fly
@@ -17,7 +14,7 @@ LIB_DEPENDS=	libpdf.so:print/pdflib
 
 BROKEN_powerpc64=	Does not build
 
-USES=		php:ext tar:tgz
+USES=		php:pecl
 USE_PHP=	gd:build
 PHP_MODNAME=	pdf
 

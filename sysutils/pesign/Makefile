@@ -3,7 +3,7 @@
 
 PORTNAME=	pesign
 PORTVERSION=	0.110
-PORTREVISION=	2
+PORTREVISION=	4
 CATEGORIES=	sysutils
 
 MAINTAINER=	ports@FreeBSD.org
@@ -11,7 +11,7 @@ COMMENT=	Signing utility for UEFI secure boot
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libefivar.so:devel/efivar \
+LIB_DEPENDS=	libefivar.so.0:devel/efivar \
 		libnspr4.so:devel/nspr \
 		libnss3.so:security/nss \
 		libpopt.so:devel/popt \
@@ -23,9 +23,6 @@ GH_ACCOUNT=	rhinstaller
 
 USES=		gmake localbase pkgconfig
 USE_LDCONFIG=	yes
-
-EXTRA_PATCHES=	${EXTRA_PATCHES_${OPSYS}_${OSREL:R}}
-EXTRA_PATCHES_FreeBSD_9=	${FILESDIR}/extra-patch-src_client.c
 
 ONLY_FOR_ARCHS=		aarch64 armv6 amd64 i386
 ONLY_FOR_ARCHS_REASON=	UEFI specification only supports little-endian processors

@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	leptonica
-PORTVERSION=	1.72
-PORTREVISION=	2
+PORTVERSION=	1.74.1
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.leptonica.com/source/
 

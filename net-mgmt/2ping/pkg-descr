@@ -2,4 +2,4 @@
 SYN/ACK, ACK) and after-the-fact state comparison between a 2ping listener and a
 2ping client to determine which direction packet loss occurs.
 
-WWW: http://www.finnie.org/software/2ping/
+WWW: https://www.finnie.org/software/2ping/

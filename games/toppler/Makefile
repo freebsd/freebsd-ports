@@ -2,29 +2,26 @@
 # $FreeBSD$
 
 PORTNAME=	toppler
-PORTVERSION=	1.1.5
-PORTREVISION=	5
+PORTVERSION=	1.1.6
 CATEGORIES=	games
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}
+MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Climb a tower and avoid monsters
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
+USES=		gettext gmake localbase
 USE_SDL=	mixer sdl
-USES=		gettext gmake
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=/var/games
-
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 
 OPTIONS_DEFINE=	DOCS
 
 SCOREFILE=	/var/games/toppler/toppler.hsc
 
 post-install:
-	${MV} ${STAGEDIR}${SCOREFILE} ${STAGEDIR}${SCOREFILE}.sample
+	@${MV} ${STAGEDIR}${SCOREFILE} ${STAGEDIR}${SCOREFILE}.sample
 
 .include <bsd.port.mk>

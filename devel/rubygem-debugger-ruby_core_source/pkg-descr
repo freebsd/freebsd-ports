@@ -1,0 +1,6 @@
+Provide Ruby core source files for C extensions that need them.
+
+Fork of ruby_core_source that uses included Ruby headers (*.h and *.inc) instead
+of downloading them. Used by debugger.
+
+WWW: https://github.com/cldwalker/debugger-ruby_core_source

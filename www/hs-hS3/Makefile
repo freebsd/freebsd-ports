@@ -2,6 +2,7 @@
 
 PORTNAME=	hS3
 PORTVERSION=	0.5.9
+PORTREVISION=	1
 CATEGORIES=	www haskell
 
 MAINTAINER=	haskell@FreeBSD.org

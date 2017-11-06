@@ -14,7 +14,8 @@ LICENSE=	APACHE20
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/Newtonsoft.Json.pc:devel/newtonsoft-json
 
 USE_GITHUB=	yes
-GH_TUPLE=	google:google-gdata:edcd096379
+GH_ACCOUNT=	google
+GH_TAGNAME=	edcd096379
 
 USES=		dos2unix gmake mono pathfix
 PATHFIX_MAKEFILEIN=	Makefile

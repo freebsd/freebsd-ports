@@ -3,6 +3,7 @@
 
 PORTNAME=	dbmail
 PORTVERSION=	3.2.3
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	http://git.dbmail.eu/paul/dbmail/snapshot/ \
 		http://www.dbmail.org/download/3.2/
@@ -15,7 +16,7 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libgmime-2.6.so:mail/gmime26 \
 		libzdb.so:databases/libzdb \
 		libmhash.so:security/mhash \
-		libevent.so:devel/libevent2
+		libevent.so:devel/libevent
 BUILD_DEPENDS=	asciidoc:textproc/asciidoc \
 		xmlto:textproc/xmlto \
 		docbook-sgml>0:textproc/docbook-sgml
@@ -31,11 +32,11 @@ SIEVE_DESC=	Sieve mail sorting language support
 OPTIONS_SUB=	yes
 
 INSTALL_TARGET=	install-strip
-USE_AUTOTOOLS=	autoheader autoconf
 USE_LDCONFIG=	${PREFIX}/lib/dbmail
 USE_RC_SUBR=	dbmail-pop3d dbmail-lmtpd dbmail-imapd dbmail-timsieved
-USE_OPENSSL=	yes
-USES=		gmake libtool pkgconfig shebangfix tar:bzip2
+USES=		autoreconf gmake libtool pkgconfig shebangfix ssl tar:bzip2
+GNU_CONFIGURE=	yes
+
 SHEBANG_FILES=	man/fixsp.pl
 
 CPPFLAGS+=	-I${LOCALBASE}/include

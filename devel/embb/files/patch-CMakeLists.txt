@@ -1,0 +1,16 @@
+--- CMakeLists.txt.orig	2017-06-19 10:16:26 UTC
++++ CMakeLists.txt
+@@ -266,10 +266,10 @@ endif()
+ ## create cmake finder
+ configure_file("EMBBConfig.cmake.in" "EMBBConfig.cmake")
+ configure_file("UseEMBB.cmake.in" "UseEMBB.cmake")
+-install(FILES "${CMAKE_BINARY_DIR}/EMBBConfig.cmake" DESTINATION "CMake")
+-install(FILES "${CMAKE_BINARY_DIR}/UseEMBB.cmake" DESTINATION "CMake")
++install(FILES "${CMAKE_BINARY_DIR}/EMBBConfig.cmake" DESTINATION "lib/cmake/EMBB")
++install(FILES "${CMAKE_BINARY_DIR}/UseEMBB.cmake" DESTINATION "lib/cmake/EMBB")
+ install(
+    EXPORT EMBB-Targets
+-   DESTINATION "CMake"
++   DESTINATION "lib/cmake/EMBB"
+    FILE EMBB-Targets.cmake
+ )

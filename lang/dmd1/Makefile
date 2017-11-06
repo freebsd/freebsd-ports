@@ -4,23 +4,24 @@
 PORTNAME=	dmd
 PORTVERSION=	1.076
 PORTREVISION=	2
-PKGNAMESUFFIX=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://ftp.digitalmars.com/
+PKGNAMESUFFIX=	1
 DISTNAME=	${PORTNAME}.${PORTVERSION}
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Official compiler for the D 1.0 programming language
 
+LICENSE=	ART10 ZLIB DMD
+LICENSE_COMB=	multi
+LICENSE_NAME_DMD=	digital mars license
+LICENSE_FILE_DMD=	${WRKSRC}/../../license.txt
+LICENSE_PERMS_DMD=	no-pkg-mirror auto-accept
+
 NO_PACKAGE=	No redistribution of non validated binaries
 USES=		gmake zip
 PORTDOCS=	*.txt html/ phobos/
 WRKSRC=		${WRKDIR}/${PORTNAME}/src/${PORTNAME}
-LICENSE_COMB=	multi
-LICENSE=	ART10 ZLIB DMD
-LICENSE_NAME_DMD=	digital mars license
-LICENSE_FILE_DMD=	${WRKSRC}/../../license.txt
-LICENSE_PERMS_DMD=	no-pkg-mirror auto-accept
 
 OPTIONS_DEFINE=	SOURCE DOCS
 SOURCE_DESC=	Compile dmd and phobos from source

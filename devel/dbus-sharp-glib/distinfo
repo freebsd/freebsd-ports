@@ -1,2 +1,3 @@
-SHA256 (dbus-sharp-glib-0.5.0.tar.gz) = f4fd663957f06ac5f0322beab264c5498bf6408f7435d0387950b4cb7996180e
-SIZE (dbus-sharp-glib-0.5.0.tar.gz) = 95405
+TIMESTAMP = 1494680692
+SHA256 (mono-dbus-sharp-glib-v0.6_GH0.tar.gz) = d337d5a4dbaab2084972f85d175ba30ca87aa6baaa635288f3b37ca71f2d9047
+SIZE (mono-dbus-sharp-glib-v0.6_GH0.tar.gz) = 9296

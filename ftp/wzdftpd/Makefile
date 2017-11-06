@@ -11,17 +11,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Modular FTP server configurable online using SITE commands
 
 LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-OPTIONS_DEFINE=	ICONV IPV6 MYSQL PERL PGSQL SQLITE TCL DOCS
-OPTIONS_RADIO=	TLS ZEROCONF
-OPTIONS_RADIO_TLS=	GNUTLS OPENSSL
-OPTIONS_RADIO_ZEROCONF=	AVAHI HOWL
-OPTIONS_DEFAULT=	AVAHI GNUTLS
-HOWL_DESC=	Zeroconf support via Howl
-
-OPTIONS_SUB=	yes
-
-USES=		autoreconf gettext-tools libtool pkgconfig
+USES=		autoreconf gettext-tools libtool localbase pkgconfig
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--sysconfdir=${ETCDIR} --without-pam --disable-bonjour
 INSTALL_TARGET=	install-strip
@@ -29,8 +21,12 @@ USE_LDCONFIG=	yes
 
 USE_RC_SUBR=	wzdftpd
 
-CPPFLAGS+=	-I${LOCALBASE}/include
-LIBS+=		-L${LOCALBASE}/lib
+OPTIONS_DEFINE=	ICONV IPV6 MYSQL PERL PGSQL SQLITE TCL DOCS
+OPTIONS_RADIO=	TLS ZEROCONF
+OPTIONS_RADIO_TLS=	GNUTLS OPENSSL
+OPTIONS_RADIO_ZEROCONF=	AVAHI HOWL
+OPTIONS_DEFAULT=	AVAHI GNUTLS
+OPTIONS_SUB=	yes
 
 ICONV_CONFIGURE_ON=	${ICONV_CONFIGURE_ARG}
 ICONV_CONFIGURE_OFF=	--disable-utf8
@@ -41,7 +37,7 @@ TCL_CONFIGURE_OFF=	--without-tcl
 TCL_USES=		tcl
 
 OPENSSL_CONFIGURE_ENABLE=	openssl
-OPENSSL_USE=		OPENSSL=yes
+OPENSSL_USES=		ssl
 
 GNUTLS_CONFIGURE_ENABLE=	gnutls
 GNUTLS_LIB_DEPENDS=		libgnutls.so:security/gnutls
@@ -65,6 +61,7 @@ AVAHI_CONFIGURE_ON=	--with-zeroconf --enable-avahi
 AVAHI_LIB_DEPENDS=	libdbus-1.so:devel/dbus \
 			libavahi-core.so:net/avahi-app
 
+HOWL_DESC=		Zeroconf support via Howl
 HOWL_CONFIGURE_ON=	--with-zeroconf --enable-howl
 HOWL_CPPFLAGS=		-I${LOCALBASE}/include/howl
 HOWL_LIB_DEPENDS=	libhowl.so:net/howl
@@ -97,11 +94,13 @@ post-patch:
 		 /gcry_control/d' \
 
 post-install:
-	(cd ${WRKSRC} && ${INSTALL_DATA} *.pc ${STAGEDIR}${PREFIX}/libdata/pkgconfig )
+	${INSTALL_DATA} ${WRKSRC}/*.pc ${STAGEDIR}${PREFIX}/libdata/pkgconfig
+
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in AUTHORS ChangeLog NEWS Permissions.ReadMeFirst README \
 	TLS.ReadMeFirst UPGRADING wzd_tls.cnf
-	(cd ${WRKSRC} && ${INSTALL_DATA} ${i} ${STAGEDIR}${DOCSDIR})
+	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
 
 .include <bsd.port.mk>

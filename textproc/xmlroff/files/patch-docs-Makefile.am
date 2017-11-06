@@ -1,4 +1,4 @@
---- docs/Makefile.am.orig	2009-03-11 21:08:57 UTC
+--- docs/Makefile.am.orig	2017-04-02 16:02:08 UTC
 +++ docs/Makefile.am
 @@ -186,7 +186,7 @@ GTKDOC_CFLAGS = \
  	-I$(top_builddir)
@@ -18,3 +18,12 @@
  	xsltproc ../libfo-compat.xsl xmlroff.tmp > xmlroff.fo
  	rm -f xmlroff.tmp
  
+@@ -341,8 +341,6 @@ install-data-local:
+ 	    echo '-- Installing '$$i ; \
+ 	    $(INSTALL_DATA) $$i $(DESTDIR)$(TARGET_DIR); \
+ 	  done; \
+-	  echo '-- Installing $(srcdir)/html/index.sgml' ; \
+-	  $(INSTALL_DATA) $(srcdir)/html/index.sgml $(DESTDIR)$(TARGET_DIR); \
+ 	fi)
+ 
+ #

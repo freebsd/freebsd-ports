@@ -13,7 +13,6 @@ OPTIONS_DEFINE+=	ALT_CONFIG_PREFIX \
 			LISTMATCH_RHS \
 			LMTP \
 			OCSP \
-			OLD_DEMIME \
 			PRDR \
 			READLINE \
 			SUID \
@@ -29,6 +28,7 @@ OPTIONS_DEFAULT+=	AUTH_CRAM_MD5 \
 			AUTH_PLAINTEXT \
 			AUTH_SPA \
 			CDB \
+			CONTENT_SCAN \
 			DAEMON \
 			DISABLE_D_OPT \
 			DKIM \
@@ -45,7 +45,6 @@ OPTIONS_DEFAULT+=	AUTH_CRAM_MD5 \
 			MAILSTORE \
 			MBX \
 			OCSP \
-			OLD_DEMIME \
 			PAM \
 			PASSWD \
 			PRDR \
@@ -105,7 +104,6 @@ MAILSTORE_DESC=		Enable Mailstore mailbox format
 MBX_DESC=		Enable MBX mailbox format
 MYSQL_DESC=		Enable mysql lookups
 NIS_DESC=		Enable NIS-style lookups
-OLD_DEMIME_DESC=	Enable old, deprecated "demime" ACL
 OPENLDAP_DESC=		Enable LDAP lookups
 OCSP_DESC=		Enable OCSP stapling
 QUEUEFILE_DESC=		Enable queuefile transport

@@ -3,19 +3,21 @@
 
 PORTNAME=	fxtv
 PORTVERSION=	1.03
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	multimedia
 MASTER_SITES=	LOCAL/sanpei
 
-MAINTAINER=	sanpei@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X11-based TV display and capture application (for use with bt848 driver)
 
-ONLY_FOR_ARCHS=	i386 ia64 amd64
+LICENSE=	BSD2CLAUSE
 
 LIB_DEPENDS=	libtiff.so:graphics/tiff \
 		libXaw3d.so:x11-toolkits/Xaw3d
 
-USES=		gmake tar:tgz
+ONLY_FOR_ARCHS=	amd64 i386
+
+USES=		gmake jpeg tar:tgz
 MAKE_ENV=	X11BASE=${LOCALBASE}
 USE_XORG=	ice sm x11 xaw xext xmu xt xpm xxf86vm xxf86dga
 MAKE_FLAGS=	-e
@@ -31,6 +33,6 @@ EXTRA_RUN_DEPENDS=	sox:audio/sox \
 			mplex:multimedia/mplex
 
 pre-install:
-	${CP} -p ${WRKSRC}/fxtv.1 ${WRKSRC}/fxtv.man
+	@${CP} -p ${WRKSRC}/fxtv.1 ${WRKSRC}/fxtv.man
 
 .include <bsd.port.mk>

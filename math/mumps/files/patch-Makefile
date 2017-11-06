@@ -1,0 +1,20 @@
+--- Makefile.orig	2011-05-10 12:56:32 UTC
++++ Makefile
+@@ -51,7 +51,7 @@ zexamples:	z
+ 	(cd examples ; $(MAKE) z)
+ 
+ 
+-requiredobj: Makefile.inc $(LIBSEQNEEDED) $(libdir)/libpord$(PLAT)$(LIBEXT)
++requiredobj: Makefile.inc $(LIBSEQNEEDED) $(libdir)/libpord$(PLAT)$(LIBEXT) $(libdir)/libpord$(PLAT).so.@SOVER@
+ 
+ # dummy MPI library (sequential version)
+ 
+@@ -65,7 +65,7 @@ $(libdir)/libpord$(PLAT)$(LIBEXT):
+ 	  $(MAKE) CC="$(CC)" CFLAGS="$(OPTC)" AR="$(AR)" RANLIB="$(RANLIB)" OUTC=$(OUTC) LIBEXT=$(LIBEXT); \
+ 	fi;
+ 	if [ "$(LPORDDIR)" != "" ] ; then \
+-	  cp $(LPORDDIR)/libpord$(LIBEXT) $@; \
++	  cp $(LPORDDIR)/libpord* $(libdir)/; \
+ 	fi;
+ 
+ clean:

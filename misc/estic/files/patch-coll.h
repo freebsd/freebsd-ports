@@ -1,5 +1,5 @@
---- spunk/coll.h.orig	1996-12-18 23:42:14.000000000 +0100
-+++ spunk/coll.h	2014-11-14 08:12:06.000000000 +0100
+--- spunk/coll.h.orig	1996-12-18 22:42:14 UTC
++++ spunk/coll.h
 @@ -24,7 +24,7 @@
  
  
@@ -20,7 +20,7 @@
  
  
  
-@@ -479,15 +479,15 @@
+@@ -479,15 +479,15 @@ int SortedCollection<T, U>::IndexOf (con
  
      // Duplicates allowed. Do a linear search.
      // (Hint: Search returns the first of all entrys with the same key)
@@ -39,7 +39,7 @@
  
      // Item not found
      return -1;
-@@ -512,7 +512,7 @@
+@@ -512,7 +512,7 @@ void SortedCollection<T, U>::Insert (T* 
      }
  
      // Index points to the correct position, insert item
@@ -48,7 +48,7 @@
  }
  
  
-@@ -522,7 +522,7 @@
+@@ -522,7 +522,7 @@ int SortedCollection<T, U>::Search (cons
  {
      // do a binary search
      int First = 0;
@@ -57,7 +57,7 @@
      int Current;
      int Result;
      int S = 0;
-@@ -533,7 +533,7 @@
+@@ -533,7 +533,7 @@ int SortedCollection<T, U>::Search (cons
  	Current = (Last + First) / 2;
  
  	// Do a compare
@@ -66,7 +66,7 @@
  	if (Result < 0) {
  	    First = Current + 1;
  	} else {
-@@ -577,7 +577,7 @@
+@@ -577,7 +577,7 @@ T* SortedCollection<T, U>::Find (const U
      int I;
      if (Search (Key, I) != 0) {
  	// We found the key, I is the index

@@ -1,0 +1,3 @@
+The GStreamer sndio plugin has been installed.  It has a higher
+priority than both the OSS or PulseAudio plugins and GStreamer will
+prefer it over them by default.

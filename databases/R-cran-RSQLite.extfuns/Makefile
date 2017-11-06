@@ -3,7 +3,7 @@
 
 PORTNAME=	RSQLite.extfuns
 PORTVERSION=	0.0.1
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	databases
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -15,6 +15,6 @@ LICENSE=	APACHE20
 BUILD_DEPENDS=	R-cran-RSQLite>=0.11.1:databases/R-cran-RSQLite
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USES=	cran:auto-plist
+USES=		cran:auto-plist,compiles
 
 .include <bsd.port.mk>

@@ -3,4 +3,4 @@ component of MogileFS.  cmogstored is implemented in C and does not
 use Perl at runtime.  cmogstored is the only component you need to
 install on a MogileFS storage node.
 
-WWW: http://bogomips.org/cmogstored/
+WWW: https://bogomips.org/cmogstored/

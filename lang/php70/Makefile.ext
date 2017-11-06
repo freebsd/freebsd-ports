@@ -1,3 +1,5 @@
+# $FreeBSD$
+
 COMMENT=	The ${PHP_MODNAME} shared extension for php
 
 USES+=	php:ext
@@ -86,7 +88,7 @@ CONFIGURE_ARGS+=--enable-ftp \
 		--with-openssl-dir=${OPENSSLBASE}
 
 LDFLAGS+=	-L${OPENSSLLIB} -lcrypto -lssl
-USE_OPENSSL=	yes
+USES+=		ssl
 .endif
 
 .if ${PHP_MODNAME} == "gd"
@@ -100,14 +102,13 @@ CONFIGURE_ARGS+=--with-gd \
 		--with-png-dir=${LOCALBASE} \
 		--with-zlib-dir=/usr
 
-OPTIONS_DEFINE=	T1LIB TRUETYPE JIS X11 VPX
-OPTIONS_DEFAULT=T1LIB TRUETYPE X11
+OPTIONS_DEFINE=TRUETYPE JIS WEBP X11
+OPTIONS_DEFAULT=TRUETYPE X11
 
-T1LIB_DESC=	Include T1lib support
 TRUETYPE_DESC=	Enable TrueType string function
 JIS_DESC=	Enable JIS-mapped Japanese font support
+WEBP_DESC=  Enable WebP image format support
 X11_DESC=	Enable XPM support
-VPX_DESC=	Enable VP8 codec support
 
 PHP_HEADER_DIRS=libgd
 .endif
@@ -144,7 +145,7 @@ CONFIGURE_ARGS+=--with-imap=${LOCALBASE} \
 		--with-imap-ssl=${OPENSSLBASE}
 
 LDFLAGS+=	-L${OPENSSLLIB} -lcrypto -lssl
-USE_OPENSSL=	yes
+USES+=	ssl
 .endif
 
 .if ${PHP_MODNAME} == "interbase"
@@ -210,7 +211,7 @@ CONFIGURE_ARGS+=--enable-odbc \
 CONFIGURE_ARGS+=--with-openssl=${OPENSSLBASE}
 
 LDFLAGS+=	-L${OPENSSLLIB} -lcrypto -lssl
-USE_OPENSSL=	yes
+USES+=	ssl
 .endif
 
 .if ${PHP_MODNAME} == "opcache"
@@ -336,7 +337,7 @@ CONFIGURE_ENV+=	ac_cv_buggy_snprint_value="no"
 
 LIB_DEPENDS+=	libnetsnmp.so:net-mgmt/net-snmp
 LDFLAGS+=	-L${OPENSSLLIB} -lcrypto -lssl
-USE_OPENSSL=	yes
+USES+=	ssl
 .endif
 
 .if ${PHP_MODNAME} == "soap"
@@ -505,26 +506,21 @@ USES+=	mysql
 .include <bsd.port.pre.mk>
 
 .if ${PHP_MODNAME} == "gd"
-.	if ${PORT_OPTIONS:MT1LIB}
-LIB_DEPENDS+=	libt1.so:devel/t1lib
-
-CONFIGURE_ARGS+=--with-t1lib=${LOCALBASE}
-.	endif
 .	if ${PORT_OPTIONS:MTRUETYPE}
 CONFIGURE_ARGS+=--enable-gd-native-ttf
 .	endif
 .	if ${PORT_OPTIONS:MJIS}
 CONFIGURE_ARGS+=--enable-gd-jis-conv
 .	endif
+.   if ${PORT_OPTIONS:MWEBP}
+LIB_DEPENDS+=   libwebp.so:graphics/webp
+
+CONFIGURE_ARGS+=--with-webp-dir=${LOCALBASE}
+.   endif
 .	if ${PORT_OPTIONS:MX11}
 USE_XORG=	xpm
 
 CONFIGURE_ARGS+=--with-xpm-dir=${LOCALBASE}
-.	endif
-.	if ${PORT_OPTIONS:MVPX}
-LIB_DEPENDS+=	libvpx.so:multimedia/libvpx
-
-CONFIGURE_ARGS+=--with-vpx-dir=${LOCALBASE}
 .	endif
 .endif
 
@@ -538,7 +534,7 @@ LIB_DEPENDS+=	libc-client4.so.9:mail/cclient
 
 .if ${PHP_MODNAME} == "mbstring"
 .	if ${PORT_OPTIONS:MREGEX}
-LIB_DEPENDS+=	libonig.so:devel/oniguruma5
+LIB_DEPENDS+=	libonig.so:devel/oniguruma6
 CONFIGURE_ARGS+=--with-onig=${LOCALBASE}
 .	else
 CONFIGURE_ARGS+=--disable-mbregex

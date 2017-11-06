@@ -17,9 +17,8 @@ BUILD_DEPENDS=	mlton:lang/mlton
 CONFIGURE_ENV=	CCARGS="-I${LOCALBASE}/include"
 
 GNU_CONFIGURE=	yes
-USES=		gmake libtool tar:tgz
+USES=		gmake libtool tar:tgz ssl
 USE_LDCONFIG=	yes
-USE_OPENSSL=	yes
 ONLY_FOR_ARCHS=	i386 amd64
 CFLAGS+=	-pthread
 
@@ -30,7 +29,6 @@ ELISP_DESC=	Install contributed Emacs Lisp
 
 .include <bsd.port.options.mk>
 
-USE_OPENSSL=	yes
 CONFIGURE_ARGS+=	--with-openssl=${OPENSSLBASE}
 
 .if ${PORT_OPTIONS:MELISP}

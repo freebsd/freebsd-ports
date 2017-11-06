@@ -5,7 +5,7 @@ PORTNAME=	Net_IPv4
 DISTVERSION=	1.3.4
 CATEGORIES=	net pear
 
-MAINTAINER=	joneum@bsdproject.de
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	IPv4 network calculations and validation
 
 LICENSE=	PHP301

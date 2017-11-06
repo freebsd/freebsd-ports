@@ -1,6 +1,6 @@
---- setup.py.orig	Mon Apr 11 23:31:45 2005
-+++ setup.py	Mon Apr 11 23:32:09 2005
-@@ -52,6 +52,7 @@
+--- setup.py.orig	2005-12-09 03:39:16 UTC
++++ setup.py
+@@ -52,6 +52,7 @@ setup(name = "py-freebsd",
              "freebsd",
              ["src/freebsdmodule.c"],
              libraries=libs,

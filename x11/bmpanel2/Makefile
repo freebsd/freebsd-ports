@@ -5,7 +5,7 @@ PORTNAME=	bmpanel2
 DISTVERSION=	2.1pre1
 PORTREVISION=	2
 CATEGORIES=	x11
-MASTER_SITES=	GOOGLE_CODE
+MASTER_SITES=	https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/bmpanel2/
 PATCH_SITES=	LOCAL/danfe
 
 MAINTAINER=	danfe@FreeBSD.org
@@ -13,8 +13,6 @@ COMMENT=	Lightweight NetWM-compliant panel (taskbar) for X11
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
-
-BROKEN=		Unfetchable (google code has gone away)
 
 USES=		cmake pkgconfig
 USE_GNOME=	pango

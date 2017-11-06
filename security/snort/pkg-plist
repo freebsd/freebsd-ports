@@ -1,4 +1,5 @@
 %%FILEINSPECT%%bin/file_server
+%%APPID%%bin/appid_detector_builder.sh
 bin/snort
 bin/u2boat
 bin/u2spewfoo
@@ -31,6 +32,11 @@ include/snort/dynamic_output/sfrt_dir.h
 include/snort/dynamic_output/sfrt_trie.h
 include/snort/dynamic_output/snort_debug.h
 include/snort/dynamic_output/stream_api.h
+%%APPID%%include/snort/dynamic_preproc/appId.h
+%%APPID%%include/snort/dynamic_preproc/appIdApi.h
+%%APPID%%include/snort/dynamic_preproc/dns_defs.h
+%%APPID%%include/snort/dynamic_preproc/thirdparty_appid_api.h
+%%APPID%%include/snort/dynamic_preproc/thirdparty_appid_types.h
 %%APPID%%include/snort/dynamic_preproc/md5.h
 %%APPID%%include/snort/dynamic_preproc/sfghash.h
 %%APPID%%include/snort/dynamic_preproc/sfhashfcn.h
@@ -91,6 +97,7 @@ include/snort/dynamic_preproc/str_search.h
 include/snort/dynamic_preproc/stream_api.h
 lib/snort/dynamic_output/libsf_dynamic_output.a
 lib/snort/dynamic_preproc/libsf_dynamic_preproc.a
+%%APPID%%lib/snort/dynamic_preproc/libsf_dynamic_utils.a
 lib/snort_dynamicengine/libsf_engine.a
 lib/snort_dynamicengine/libsf_engine.so
 lib/snort_dynamicengine/libsf_engine.so.0
@@ -233,7 +240,10 @@ man/man8/snort.8.gz
 %%APPID%%src/snort_dynamicsrc/sfprimetable.h
 %%APPID%%src/snort_dynamicsrc/sfxhash.h
 src/snort_dynamicsrc/Unified2_common.h
+%%APPID%%src/snort_dynamicsrc/appId.h
+%%APPID%%src/snort_dynamicsrc/appIdApi.h
 src/snort_dynamicsrc/bitop.h
+%%APPID%%src/snort_dynamicsrc/dns_defs.h
 src/snort_dynamicsrc/event.h
 src/snort_dynamicsrc/file_api.h
 src/snort_dynamicsrc/file_mail_common.h
@@ -290,6 +300,8 @@ src/snort_dynamicsrc/ssl_inspect.h
 src/snort_dynamicsrc/ssl_session.h
 src/snort_dynamicsrc/str_search.h
 src/snort_dynamicsrc/stream_api.h
+%%APPID%%src/snort_dynamicsrc/thirdparty_appid_api.h
+%%APPID%%src/snort_dynamicsrc/thirdparty_appid_types.h
 src/snort_dynamicsrc/treenodes.h
 src/snort_dynamicsrc/util_unfold.c
 src/snort_dynamicsrc/util_unfold.h

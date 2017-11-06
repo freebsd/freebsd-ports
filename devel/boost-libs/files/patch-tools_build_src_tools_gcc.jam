@@ -5,7 +5,7 @@ that USE_GCC already passes.
 
 --- tools/build/src/tools/gcc.jam.orig	2016-09-21 14:33:28 UTC
 +++ tools/build/src/tools/gcc.jam
-@@ -210,24 +210,6 @@ rule init ( version ? : command * : opti
+@@ -210,24 +210,6 @@ rule init ( version ? : command * : options * )
      }
      init-link-flags gcc $(linker) $(condition) ;
  

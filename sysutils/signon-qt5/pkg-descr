@@ -1,0 +1,6 @@
+The SignOn daemon is a D-Bus service which performs user authentication
+on behalf of its clients. There are currently authentication plugins
+for OAuth 1.0 and 2.0, SASL, Digest-MD5, and plain username/password
+combination.
+
+WWW: https://gitlab.com/accounts-sso/signond

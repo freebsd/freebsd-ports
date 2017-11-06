@@ -18,7 +18,7 @@ DIST_SUBDIR=	qmail
 CONFLICTS?=	qmail-ldap-[0-9]* *qmail-mysql-[0-9]* qmail-spamcontrol-[0-9]* *qmail-tls-[0-9]*
 CONFLICTS+=	qmail-vida-[0-9]*
 
-USES=		qmail:vars fakeroot
+USES+=		qmail:vars fakeroot
 PREFIX?=	${QMAIL_PREFIX}
 PLIST_SUB+=	QMAIL_PREFIX="${PREFIX}"
 
@@ -377,18 +377,16 @@ CONFIGUREPROGRAMS=	dnsfq hostname dnsip ipmeprint dnsptr
 CONFIGURESCRIPTS=	config config-fast
 
 .if defined(SLAVE_LDAP)
-TLS_USE=	OPENSSL=yes
+TLS_USES=		ssl
 .endif
 
 # Port will control all PREFIX handling.
-install-mtree:
-	@${DO_NADA}
 NO_MTREE=	yes
 NO_PREFIX_RMDIR=yes
 
 .include <bsd.port.options.mk>
 
-.if ( ${ARCH} == "amd64" || ${ARCH} == "ia64" ) && !defined(SLAVE_LDAP) \
+.if ${ARCH} == "amd64" && !defined(SLAVE_LDAP) \
     && !defined(SLAVE_SPAMCONTROL)
 EXTRA_PATCHES+=			${FILESDIR}/extra-patch-amd64
 .endif
@@ -424,6 +422,8 @@ LDAPFLAGS+=	-D${param}
 BUILD_DEPENDS+=	srs:mail/libsrs2
 MASTER_SITES+=	http://qmail-ldap-smtpauthuser.googlecode.com/svn/trunk/:srs_ldap
 BROKEN=		Unfetchable (google code has gone away)
+DEPRECATED=	Unfetchable for more than six months (google code has gone away)
+EXPIRATION_DATE=	2017-04-30
 SRS_LDAP_PATCH=		qmail-ldap-1.03-20060201-SRS.patch
 DISTFILES+=	${SRS_LDAP_PATCH}:srs_ldap
 . endif

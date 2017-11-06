@@ -3,6 +3,7 @@
 
 PORTNAME=	porttree
 PORTVERSION=	0.3.r${SVN_REV}
+PORTREVISION=	1
 CATEGORIES=	ports-mgmt python
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -12,7 +13,7 @@ COMMENT=	Show dependences of FreeBSD port as pseudo graphical tree
 
 LICENSE=	MIT
 
-USES=		python tar:bzip2
+USES=		python tar:bzip2 shebangfix
 
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}networkx>=1.5:math/py-networkx
 
@@ -25,6 +26,8 @@ SVN_REV=	52
 NO_BUILD=	yes
 PLIST_FILES=	bin/porttree man/man1/porttree.1.gz
 NO_ARCH=	yes
+
+SHEBANG_FILES=	src/porttree.py
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/src/porttree.py ${STAGEDIR}${PREFIX}/bin/porttree

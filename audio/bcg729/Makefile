@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	bcg729
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.2
 CATEGORIES=	audio
 MASTER_SITES=	SAVANNAH/linphone/plugins/sources
 

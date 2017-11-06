@@ -3,7 +3,7 @@
 
 PORTNAME=	dashing
 PORTVERSION=	1.3.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www devel rubygems
 MASTER_SITES=	RG
 
@@ -15,7 +15,7 @@ LICENSE=	MIT
 RUN_DEPENDS=	rubygem-sass32>=3.2.12:textproc/rubygem-sass32 \
 		rubygem-coffee-script>=2.3.0:devel/rubygem-coffee-script \
 		rubygem-execjs>=2.2.2:devel/rubygem-execjs \
-		rubygem-sinatra>=1.4.5:www/rubygem-sinatra \
+		rubygem-sinatra1>=1.4.4:www/rubygem-sinatra1 \
 		rubygem-sinatra-contrib>=1.4.2:www/rubygem-sinatra-contrib \
 		rubygem-thin>=1.6.2:www/rubygem-thin \
 		rubygem-rufus-scheduler>=3.0.9:devel/rubygem-rufus-scheduler \

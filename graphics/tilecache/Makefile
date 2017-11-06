@@ -3,7 +3,7 @@
 
 PORTNAME=	tilecache
 PORTVERSION=	2.11
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics python geography www
 MASTER_SITES=	http://tilecache.org/
 
@@ -16,8 +16,9 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}flup>0:www/py-flup \
 LICENSE=	BSD3CLAUSE MIT
 LICENSE_COMB=	multi
 
-USES=		python
+USES=		python shebangfix
 USE_PYTHON=	distutils autoplist
+SHEBANG_FILES=	tilecache.cgi tilecache.fcgi
 
 FILES_ETC=	TileCache/Service.py setup.py tilecache_install_config.py
 

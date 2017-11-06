@@ -11,6 +11,6 @@ COMMENT=	Implementation of Tableless Renderer for HTML_QuickForm
 BUILD_DEPENDS=	${PEARDIR}/HTML/QuickForm.php:devel/pear-HTML_QuickForm
 RUN_DEPENDS=	${PEARDIR}/HTML/QuickForm.php:devel/pear-HTML_QuickForm
 
-USES=	pear
+USES=		pear
 
 .include <bsd.port.mk>

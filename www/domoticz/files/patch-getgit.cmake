@@ -1,5 +1,5 @@
---- getgit.cmake.orig	2016-11-10 15:44:33 UTC
-+++ getgit.cmake
+--- getgit.cmake.orig	2016-04-01 15:27:18.517929000 +0200
++++ getgit.cmake	2016-04-01 15:27:52.572836000 +0200
 @@ -1,66 +1,7 @@
  # this macro gets called as a custom build step by running make
  # please take into account, that the variable 'SOURCE_DIR' has been defined by the caller

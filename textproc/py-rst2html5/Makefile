@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	rst2html5
-PORTVERSION=	1.9
+PORTVERSION=	1.9.3
 CATEGORIES=	textproc python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	olivierd@FreeBSD.org
+MAINTAINER=	python@FreeBSD.org
 COMMENT=	Produces HTML5 documents from reStructuredText sources
 
 LICENSE=	MIT

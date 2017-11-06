@@ -1,3 +1,5 @@
-@sample(%%MAILOWN%%,%%MAILGRP%%,660) etc/authlib/authpgsqlrc.sample
+@postunexec if cmp -s %D/etc/authlib/authpgsqlrc.dist %D/etc/authlib/authpgsqlrc; then rm -f %D/etc/authlib/authpgsqlrc; fi
+@(%%MAILOWN%%,%%MAILGRP%%,660) etc/authlib/authpgsqlrc.dist
+@postexec %%LOCALBASE%%/share/sysconftool/sysconftool %D/etc/authlib/authpgsqlrc
 lib/courier-authlib/libauthpgsql.so
 %%PORTDOCS%%%%DOCSDIR%%/README.authpostgres.html

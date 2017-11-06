@@ -7,8 +7,8 @@ COMMENT=	Virtual Peer-to-Peer Currency (CLI and Utilities)
 
 SLAVE_PORT=	yes
 
-BROKEN_powerpc64=	Does not build
-BROKEN_sparc64=		Does not build
+NOT_FOR_ARCHS=		powerpc64 sparc64
+NOT_FOR_ARCHS_REASON=	configure: error: Big Endian not supported
 
 OPTIONS_DEFINE=		DEBUG HARDENING TESTS
 OPTIONS_DEFAULT=	HARDENING TESTS
@@ -21,6 +21,7 @@ CONFIGURE_ARGS=	--without-daemon \
 		--disable-wallet \
 		--disable-reduce-exports
 
-PLIST_FILES=	bin/litecoin-cli bin/litecoin-tx
+PLIST_FILES=	bin/litecoin-cli bin/litecoin-tx \
+		man/man1/litecoin-cli.1.gz man/man1/litecoin-tx.1.gz
 
 .include "${MASTERDIR}/Makefile"

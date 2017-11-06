@@ -3,6 +3,7 @@
 
 PORTNAME=	exim
 PORTVERSION?=	${EXIM_VERSION}
+PORTREVISION=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	EXIM:exim
 MASTER_SITE_SUBDIR=	/exim4/:exim \
@@ -91,7 +92,7 @@ MASTER_SITES+=	http://marc.merlins.org/linux/exim/files/:sa_exim \
 DISTFILES+=	sa-exim-${SA_EXIM_VERSION}.tar.gz:sa_exim
 .endif
 
-EXIM_VERSION=	4.88
+EXIM_VERSION=	4.89
 SA_EXIM_VERSION=4.2
 EXIM_INSTALL_ARG+=	"-no_chown" "-no_symlink"
 
@@ -324,7 +325,7 @@ SEDLIST+=	-e 's,XX_LMDB_LIBS_XX,${LMDB_LIBS:S/,/\\,/g},' \
 		-e 's,XX_LMDB_INCLUDES_XX,${LMDB_INCLUDES:S/,/\\,/g},'
 
 .if ${PORT_OPTIONS:MMYSQL}
-SEDLIST+=	-e 's,XX_MYSQL_LIBS_XX,-L${LOCALBASE:S/,/\\,/g}/lib/mysql -lmysqlclient,' \
+SEDLIST+=	-e 's,XX_MYSQL_LIBS_XX,-L${LOCALBASE:S/,/\\,/g}/lib/mysql -l${_MYSQL_SHLIB:S/lib//},' \
 		-e 's,XX_MYSQL_INCLUDE_XX,-I${LOCALBASE:S/,/\\,/g}/include/mysql,' \
 		-e 's,^\# (LOOKUP_MYSQL=),\1,'
 .else
@@ -481,10 +482,6 @@ SEDLIST+=	-e 's,^\# (USE_READLINE=),\1,'
 
 .if ${PORT_OPTIONS:MCONTENT_SCAN}
 SEDLIST+=	-e 's,^\# (WITH_CONTENT_SCAN=),\1,'
-.endif
-
-.if ${PORT_OPTIONS:MOLD_DEMIME}
-SEDLIST+=	-e 's,^\# (WITH_OLD_DEMIME=),\1,'
 .endif
 
 .if !defined(EXIMON_ONLY) && ${PORT_OPTIONS:MDAEMON}

@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	metasploit_payloads-mettle
-PORTVERSION=	0.1.4
+PORTVERSION=	0.2.5
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
@@ -11,8 +11,8 @@ COMMENT=	Compiled binaries for Metasploit's next-gen Meterpreter
 LICENSE=	BSD3CLAUSE
 
 NO_ARCH=	yes
-
-USE_RUBY=	yes
+STRIP=
 USES=		gem
+USE_RUBY=	yes
 
 .include <bsd.port.mk>

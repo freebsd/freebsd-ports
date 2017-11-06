@@ -3,7 +3,7 @@
 
 PORTNAME=	eventxx
 PORTVERSION=	1.0.1
-PORTREVISION=	2
+PORTREVISION=	4
 CATEGORIES=	devel
 MASTER_SITES=	http://proj.llucax.com.ar/home/eventxx/releases/ \
 		LOCAL/glarkin
@@ -11,7 +11,7 @@ MASTER_SITES=	http://proj.llucax.com.ar/home/eventxx/releases/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ wrapper for libevent
 
-LIB_DEPENDS=	libevent.so:devel/libevent2
+LIB_DEPENDS=	libevent.so:devel/libevent
 
 NO_BUILD=	yes
 

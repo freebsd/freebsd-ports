@@ -1,6 +1,6 @@
---- builds/unix/detect.mk.orig	2015-09-25 07:58:57.000000000 +0200
-+++ builds/unix/detect.mk	2015-10-04 12:35:05.733855000 +0200
-@@ -22,6 +22,9 @@
+--- builds/unix/detect.mk.orig	2016-02-03 18:13:58 UTC
++++ builds/unix/detect.mk
+@@ -22,6 +22,9 @@ ifeq ($(PLATFORM),ansi)
                       $(wildcard /usr/sbin/init) \
                       $(wildcard /dev/null) \
                       $(wildcard /hurd/auth))
@@ -10,7 +10,7 @@
    ifneq ($(is_unix),)
  
      PLATFORM := unix
-@@ -80,10 +83,10 @@
+@@ -80,10 +83,10 @@ ifeq ($(PLATFORM),unix)
    ifdef must_configure
      ifneq ($(have_Makefile),)
        # we are building FT2 not in the src tree

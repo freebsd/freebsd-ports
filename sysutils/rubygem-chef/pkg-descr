@@ -8,4 +8,4 @@ configuration management to your entire infrastructure. With Chef, you can:
   infrastructure ("What systems are running my application?" "What is the
   current master database server?")
 
-WWW: http://wiki.opscode.com/display/chef
+WWW: https://www.chef.io/

@@ -1,4 +1,4 @@
---- mame2014-libretro/src/osd/modules/sync/sync_retro.c.orig	2015-11-04 17:31:20 UTC
+--- mame2014-libretro/src/osd/modules/sync/sync_retro.c.orig	2016-09-09 05:23:19 UTC
 +++ mame2014-libretro/src/osd/modules/sync/sync_retro.c
 @@ -42,6 +42,8 @@
  #include <signal.h>

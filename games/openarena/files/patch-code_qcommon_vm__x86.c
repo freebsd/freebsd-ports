@@ -1,4 +1,4 @@
---- code/qcommon/vm_x86.c.orig	2016-04-01 10:07:17 UTC
+--- code/qcommon/vm_x86.c.orig	2011-12-24 12:29:32 UTC
 +++ code/qcommon/vm_x86.c
 @@ -90,8 +90,11 @@ static	int		ftolPtr = (int)qftol0F7F;
  void AsmCall(void);

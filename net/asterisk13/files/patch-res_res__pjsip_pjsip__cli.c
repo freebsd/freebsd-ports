@@ -1,6 +1,6 @@
---- res/res_pjsip/pjsip_cli.c.orig	2016-05-13 17:41:41 UTC
+--- res/res_pjsip/pjsip_cli.c.orig	2017-10-13 17:46:56 UTC
 +++ res/res_pjsip/pjsip_cli.c
-@@ -172,7 +172,7 @@ char *ast_sip_cli_traverse_objects(struc
+@@ -172,7 +172,7 @@ char *ast_sip_cli_traverse_objects(struct ast_cli_entr
  		}
  		regex = a->argv[4];
  	} else {

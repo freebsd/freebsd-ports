@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	redis
-DISTVERSION=	3.2.6
+DISTVERSION=	3.2.10
 CATEGORIES=	databases
 MASTER_SITES=	http://download.redis.io/releases/
 
@@ -10,8 +10,6 @@ MAINTAINER=	osa@FreeBSD.org
 COMMENT=	Persistent key-value database with built-in net interface
 
 LICENSE=	BSD3CLAUSE
-
-USES=		execinfo
 
 OPTIONS_DEFINE=	TESTS TRIB
 OPTIONS_RADIO=	EXTLUA
@@ -49,8 +47,7 @@ LDFLAGS+=	-Wl,-E
 USES+=		tcl:build
 .endif
 
-CFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib -lpthread -lm -lexecinfo
+LDFLAGS+=	-lpthread -lm -lexecinfo
 
 CONFLICTS?=	redis-devel-3.*
 

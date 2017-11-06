@@ -1,5 +1,5 @@
---- dns_resolv.c.orig	2008-07-01 07:49:26.000000000 +0200
-+++ dns_resolv.c	2008-07-05 08:45:35.000000000 +0200
+--- dns_resolv.c.orig	2013-02-26 05:37:27 UTC
++++ dns_resolv.c
 @@ -68,13 +68,21 @@
  #include "parser.h"                            /* log parser functions     */
  #include "dns_resolv.h"                        /* our header               */
@@ -22,7 +22,7 @@
  
  struct   dns_child child[MAXCHILD];            /* DNS child pipe data      */
  
-@@ -122,7 +130,11 @@
+@@ -122,7 +130,11 @@ void resolve_dns(struct log_struct *log_
  
     if (debug_mode) fprintf(stderr,"Checking %s...", log_rec->hostname);
  
@@ -34,7 +34,7 @@
     {
        memcpy(&alignedRecord, response.data, sizeof(struct dnsRecord));
        strncpy (log_rec->hostname,
-@@ -131,7 +143,7 @@
+@@ -131,7 +143,7 @@ void resolve_dns(struct log_struct *log_
        log_rec->hostname[MAXHOST-1]=0;
        if (debug_mode)
           fprintf(stderr," found: %s (%ld)\n",
@@ -43,7 +43,7 @@
     }
     else  /* not found or error occured during get */
     {
-@@ -193,10 +205,14 @@
+@@ -193,10 +205,14 @@ int dns_resolver(void *log_fp)
     }
    
     /* open cache file */
@@ -58,7 +58,7 @@
     {
        /* Error: Unable to open DNS cache file <filename> */
        if (verbose) fprintf(stderr,"%s %s\n",msg_dns_nodb,dns_cache);
-@@ -206,14 +222,22 @@
+@@ -206,14 +222,22 @@ int dns_resolver(void *log_fp)
     }
  
     /* get file descriptor */
@@ -81,7 +81,7 @@
        dns_cache=NULL;
        dns_db=NULL;
        return 0;                  /* disable cache */
-@@ -261,7 +285,11 @@
+@@ -261,7 +285,11 @@ int dns_resolver(void *log_fp)
              q.size = strlen(log_rec.hostname);
  
              /* Check if we have it in DB */
@@ -93,7 +93,7 @@
              {
                 /* have a record for this address */
                 memcpy(&alignedRecord, r.data, sizeof(struct dnsRecord));
-@@ -301,7 +329,11 @@
+@@ -302,7 +330,11 @@ int dns_resolver(void *log_fp)
        if (verbose>1) printf("%s\n",msg_dns_none);
        tmp_flock.l_type=F_UNLCK;
        fcntl(dns_fd, F_SETLK, &tmp_flock);
@@ -105,7 +105,7 @@
        return 0;
     }
  
-@@ -334,7 +366,11 @@
+@@ -335,7 +367,11 @@ int dns_resolver(void *log_fp)
     /* processing done, exit   */
     tmp_flock.l_type=F_UNLCK;
     fcntl(dns_fd, F_SETLK, &tmp_flock);
@@ -117,7 +117,7 @@
     return 0;
  
  }
-@@ -719,7 +755,11 @@
+@@ -720,7 +756,11 @@ static void db_put(char *key, char *valu
           v.size = recSize;
           v.data = recPtr;
  
@@ -129,7 +129,7 @@
              if (verbose>1) fprintf(stderr,"db_put fail!\n");
           free(recPtr);
        }
-@@ -767,10 +807,14 @@
+@@ -768,10 +808,14 @@ int open_cache()
     }
    
     /* open cache file */
@@ -144,7 +144,7 @@
     {
        /* Error: Unable to open DNS cache file <filename> */
        if (verbose) fprintf(stderr,"%s %s\n",msg_dns_nodb,dns_cache);
-@@ -778,13 +822,21 @@
+@@ -779,13 +823,21 @@ int open_cache()
     }
  
     /* get file descriptor */
@@ -166,7 +166,7 @@
        return 0;
     }
     return 1;
-@@ -806,7 +858,11 @@
+@@ -807,7 +859,11 @@ int close_cache()
  
     /* clear lock and close cache file */
     fcntl(dns_fd, F_SETLK, &tmp_flock);
@@ -178,7 +178,7 @@
     return 1;
  }
  
-@@ -824,6 +880,11 @@
+@@ -825,6 +881,11 @@ DB *geodb_open(char *dbname)
        strncpy(buf,dbname,sizeof(buf)-1);
     buf[sizeof(buf)-1]='\0';
  
@@ -190,7 +190,7 @@
     /* create database thingie */
     if ( db_create(&geo_db, NULL, 0) ) return NULL;
  
-@@ -836,6 +897,7 @@
+@@ -837,6 +898,7 @@ DB *geodb_open(char *dbname)
        geo_db->close(geo_db,0);
        return NULL;
     }
@@ -198,7 +198,7 @@
     /* all is well in the world */
     return geo_db;
  }
-@@ -856,7 +918,11 @@
+@@ -857,7 +919,11 @@ char *geodb_ver(DB *db, char *str)
     k.data=&x;
     k.size=sizeof(x);
  
@@ -210,7 +210,7 @@
  
     if (i) strncpy(str, "Unknown", 8);
     else   strncpy(str, v.data+3, v.size-3);
-@@ -894,7 +960,11 @@
+@@ -895,7 +961,11 @@ char *geodb_get_cc(DB *db, char *ip, cha
     k.data=&addr;
     k.size=sizeof(addr);
  
@@ -222,7 +222,7 @@
     if (!i) memcpy(buf, v.data, 2);
     return buf;
  }
-@@ -905,7 +975,11 @@
+@@ -906,7 +976,11 @@ char *geodb_get_cc(DB *db, char *ip, cha
  
  void geodb_close(DB *db)
  {

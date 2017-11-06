@@ -1,4 +1,4 @@
 Setup scripts can use pytest-runner to add setup.py test support
 for pytest runner.
 
-WWW: https://bitbucket.org/jaraco/pytest-runner
+WWW: https://github.com/pytest-dev/pytest-runner

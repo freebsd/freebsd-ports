@@ -1,9 +1,0 @@
-TIMESTAMP = 1480526912
-SHA256 (rpm/centos/7.2.1511/i386/nss-3.21.3-2.el7_3.i686.rpm) = 5b4f73cb56c5da024ff3d236401b73fbf09bb294d0f2a32ca596bfbbc702441b
-SIZE (rpm/centos/7.2.1511/i386/nss-3.21.3-2.el7_3.i686.rpm) = 869688
-SHA256 (rpm/centos/7.2.1511/i386/nss-util-3.21.3-1.1.el7_3.i686.rpm) = 2d3652925a4e87ac83483ccaa8e67ca5bd1faa1c17a86202943c71a56d615eef
-SIZE (rpm/centos/7.2.1511/i386/nss-util-3.21.3-1.1.el7_3.i686.rpm) = 72344
-SHA256 (rpm/centos/7.2.1511/i386/nss-softokn-3.16.2.3-14.4.el7.i686.rpm) = 025d3affd527ed34f4eb842b91d089f0cd7b1c6e91eca99233250b12769bc159
-SIZE (rpm/centos/7.2.1511/i386/nss-softokn-3.16.2.3-14.4.el7.i686.rpm) = 313312
-SHA256 (rpm/centos/7.2.1511/i386/nss-softokn-freebl-3.16.2.3-14.4.el7.i686.rpm) = 1dc2b14a034dbe0fdcd7b3ce48ad498fd891cbb0d2440c35771185c01954bd2c
-SIZE (rpm/centos/7.2.1511/i386/nss-softokn-freebl-3.16.2.3-14.4.el7.i686.rpm) = 192344

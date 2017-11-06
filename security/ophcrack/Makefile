@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ophcrack
-PORTVERSION=	3.6.1
+PORTVERSION=	3.7.0
 CATEGORIES=	security
 MASTER_SITES=	SF
 
@@ -18,27 +18,20 @@ USES=		gmake localbase ssl tar:bzip2
 GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/ophcrack
-PORTDOCS=	AUTHORS ChangeLog README
+PORTDOCS=	AUTHORS ChangeLog README.md
 
 OPTIONS_DEFINE=	X11 GRAPH DOCS
 OPTIONS_DEFAULT=	X11 GRAPH
+GRAPH_IMPLIES=	X11
 
 X11_DESC=	Build Qt 4 GUI frontend
 GRAPH_DESC=	Enable graph rendering via Qwt
 
-.include <bsd.port.options.mk>
+X11_USE=	QT4=moc_build,qmake_build,rcc_build,uic_build,corelib,gui
+X11_CONFIGURE_OFF=	--disable-gui
 
-.if ${PORT_OPTIONS:MX11} || ${PORT_OPTIONS:MGRAPH}
-USE_QT4=	moc_build qmake_build rcc_build uic_build corelib gui
-.else
-CONFIGURE_ARGS+=	--disable-gui
-.endif
-
-.if ${PORT_OPTIONS:MGRAPH}
-LIB_DEPENDS+=	libqwt.so:x11-toolkits/qwt5
-.else
-CONFIGURE_ARGS+=	--disable-graph
-.endif
+GRAPH_LIB_DEPENDS=	libqwt.so:x11-toolkits/qwt5
+GRAPH_CONFIGURE_OFF=	--disable-graph
 
 post-patch:
 	@${REINPLACE_CMD} -E '/#include <byteswap\.h>/d ; \
@@ -47,7 +40,7 @@ post-patch:
 			${WRKSRC}/src/samdump2/bkhive.c \
 			${WRKSRC}/src/samdump2/hive.c \
 			${WRKSRC}/src/samdump2/samdump2.c \
-			${WRKSRC}/src/misc.h
+			${WRKSRC}/src/core/misc.h
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

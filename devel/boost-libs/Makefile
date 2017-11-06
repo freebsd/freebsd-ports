@@ -2,13 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	boost-libs
-PORTREVISION=	1
 
 COMMENT=	Free portable C++ libraries (without Boost.Python)
 
 BROKEN_sparc64=	https://github.com/boostorg/context/commit/f2ef6326b6ed
 
 BUILD_DEPENDS+=	bjam:devel/boost-jam
+
+# libs/config/test/boost_no_cxx11_thread_local.ipp fails (see base r303795)
+PLIST_SUB+=	FIBER="${"${OPSYS}"=="FreeBSD" && ${OSREL:R} < 11:?@comment :}"
 
 OPTIONS_DEFINE=		DEBUG OPTIMIZED_CFLAGS
 OPTIONS_MULTI=		LOCALE

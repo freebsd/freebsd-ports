@@ -38,3 +38,14 @@
 %%PERL5_MAN3%%/X11::Protocol::Other.3.gz
 %%PERL5_MAN3%%/X11::Protocol::WM.3.gz
 %%PERL5_MAN3%%/X11::Protocol::XSetRoot.3.gz
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cursor-font-anim.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/damage-duplicate.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dbe-info.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dbe-swap.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mit-screen-saver-external.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/view-root.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/xfixes-cursor-image.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/xfixes-selection.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/xinerama-info.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/xresource-pairwise.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/xresource-print.pl

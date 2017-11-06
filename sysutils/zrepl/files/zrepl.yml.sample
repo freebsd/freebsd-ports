@@ -1,0 +1,12 @@
+# $FreeBSD$
+#
+# zrepl main configuration file.
+# For documentation, refer to https://zrepl.github.io/
+#
+global:
+  logging:
+    syslog:
+      enable: true
+      format: logfmt
+
+# Add "jobs:" section(s) here for your specific use cases.

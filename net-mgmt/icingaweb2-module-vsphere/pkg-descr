@@ -1,0 +1,8 @@
+In case you want to have an automated import of your Virtual Machines and/or
+Physical Host from VMware Sphere (vCenter) into your Icinga monitoring system
+this module might be what you have been looking for.
+
+At the time of this writing, the main purpose of this module is being a Import
+Source provider for the Icinga Director.
+
+WWW: https://github.com/Icinga/icingaweb2-module-vsphere

@@ -10,4 +10,4 @@ FreeBSD has OpenIPMI-compatible ipmi(4) driver for in-band IPMI
 operations in the base system starting from 6.2 release. On older
 systems sysutils/ipmi-kmod port is available.
 
-WWW: http://sourceforge.net/projects/ipmitool/
+WWW: https://sourceforge.net/projects/ipmitool/

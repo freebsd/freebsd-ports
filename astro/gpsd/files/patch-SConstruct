@@ -1,19 +1,101 @@
---- SConstruct.orig	2015-03-14 11:24:41 UTC
+Remove LIBPATH='.' - see http://lists.nongnu.org/archive/html/gpsd-dev/2016-02/msg00042.html
+
+--- SConstruct.orig	2016-01-08 19:25:48 UTC
 +++ SConstruct
-@@ -305,16 +305,6 @@ def installdir(dir, add_destdir=True):
-     wrapped.replace("/usr/lib/systemd", "/lib/systemd")
-     return wrapped
+@@ -985,37 +985,37 @@ gpsmon_sources = [
+ ## Production programs
  
--# Honor the specified installation prefix in link paths.
--if env["sysroot"]:
--    env.Prepend(LIBPATH=[env["sysroot"] + installdir('libdir', add_destdir=False)])
--
--# Don't hack RPATH unless libdir points somewhere that is not on the
--# minimum default load path.
--if env["shared"]:
--    if env["libdir"] not in ["/usr/lib", "/lib"]:
--        env.Prepend(RPATH=[installdir('libdir')])
--
- # Give deheader a way to set compiler flags
- if 'MORECFLAGS' in os.environ:
-     env.Append(CFLAGS=Split(os.environ['MORECFLAGS']))
+ gpsd = env.Program('gpsd', gpsd_sources,
+-                   LIBS=['gpsd', 'gps_static'], LIBPATH='.',
++                   LIBS=['gpsd', 'gps_static'],
+                    parse_flags=gpsdflags+gpsflags)
+ gpsdecode = env.Program('gpsdecode', ['gpsdecode.c'],
+-                        LIBS=['gpsd', 'gps_static'], LIBPATH='.',
++                        LIBS=['gpsd', 'gps_static'],
+                         parse_flags=gpsdflags+gpsflags)
+ gpsctl = env.Program('gpsctl', ['gpsctl.c'],
+-                     LIBS=['gpsd', 'gps_static'], LIBPATH='.',
++                     LIBS=['gpsd', 'gps_static'],
+                      parse_flags=gpsdflags+gpsflags)
+ gpsmon = env.Program('gpsmon', gpsmon_sources,
+-                     LIBS=['gpsd', 'gps_static'], LIBPATH='.',
++                     LIBS=['gpsd', 'gps_static'],
+                      parse_flags=gpsdflags + gpsflags + ncurseslibs)
+ gpsdctl = env.Program('gpsdctl', ['gpsdctl.c'],
+-                      LIBS=['gps_static'], LIBPATH='.',
++                      LIBS=['gps_static'],
+                       parse_flags=gpsflags)
+ gpspipe = env.Program('gpspipe', ['gpspipe.c'],
+-                      LIBS=['gps_static'], LIBPATH='.',
++                      LIBS=['gps_static'],
+                       parse_flags=gpsflags)
+ gps2udp = env.Program('gps2udp', ['gps2udp.c'],
+-                      LIBS=['gps_static'], LIBPATH='.',
++                      LIBS=['gps_static'],
+                       parse_flags=gpsflags)
+ gpxlogger = env.Program('gpxlogger', ['gpxlogger.c'],
+-                        LIBS=['gps_static'], LIBPATH='.',
++                        LIBS=['gps_static'],
+                         parse_flags=gpsflags)
+ lcdgps = env.Program('lcdgps', ['lcdgps.c'],
+-                     LIBS=['gps_static'], LIBPATH='.',
++                     LIBS=['gps_static'],
+                      parse_flags=gpsflags)
+ cgps = env.Program('cgps', ['cgps.c'],
+-                   LIBS=['gps_static'], LIBPATH='.',
++                   LIBS=['gps_static'],
+                    parse_flags=gpsflags + ncurseslibs)
+ ntpshmmon = env.Program('ntpshmmon', ['ntpshmmon.c'],
+-                        LIBS=['gps_static'], LIBPATH='.',
++                        LIBS=['gps_static'],
+                         parse_flags=gpsflags)
+ 
+ binaries = [gpsd, gpsdecode, gpsctl, gpsdctl, gpspipe, gps2udp, gpxlogger, lcdgps, ntpshmmon]
+@@ -1024,26 +1024,26 @@ if env["ncurses"]:
+ 
+ # Test programs - always link locally and statically
+ test_bits = env.Program('test_bits', ['test_bits.c'],
+-                        LIBS=['gps_static'], LIBPATH='.')
++                        LIBS=['gps_static'])
+ test_float = env.Program('test_float', ['test_float.c'])
+ test_geoid = env.Program('test_geoid', ['test_geoid.c'],
+                          LIBS=['gpsd', 'gps_static'],
+-                         LIBPATH='.', parse_flags=gpsdflags)
++                         parse_flags=gpsdflags)
+ test_matrix = env.Program('test_matrix', ['test_matrix.c'],
+                           LIBS=['gpsd', 'gps_static'],
+-                          LIBPATH='.', parse_flags=gpsdflags)
++                          parse_flags=gpsdflags)
+ test_mktime = env.Program('test_mktime', ['test_mktime.c'],
+-                          LIBS=['gps_static'], LIBPATH='.', parse_flags=["-lm"])
++                          LIBS=['gps_static'], parse_flags=["-lm"])
+ test_packet = env.Program('test_packet', ['test_packet.c'],
+                           LIBS=['gpsd', 'gps_static'],
+-                          LIBPATH='.', parse_flags=gpsdflags)
++                          parse_flags=gpsdflags)
+ test_timespec = env.Program('test_timespec', ['test_timespec.c'],
+                           LIBS=['gpsd', 'gps_static'],
+-                          LIBPATH='.', parse_flags=gpsdflags)
++                          parse_flags=gpsdflags)
+ test_trig = env.Program('test_trig', ['test_trig.c'], parse_flags=["-lm"])
+ # test_libgps for glibc older than 2.17
+ test_libgps = env.Program('test_libgps', ['test_libgps.c'],
+-                          LIBS=['gps_static'], LIBPATH='.', parse_flags=["-lm"] + rtlibs + dbusflags)
++                          LIBS=['gps_static'], parse_flags=["-lm"] + rtlibs + dbusflags)
+ 
+ if not env['socket_export']:
+     announce("test_json not building because socket_export is disabled")
+@@ -1051,11 +1051,11 @@ if not env['socket_export']:
+ else:
+     test_json = env.Program(
+         'test_json', ['test_json.c'],
+-	LIBS=['gps_static'], LIBPATH='.',
++	LIBS=['gps_static'],
+ 	parse_flags=["-lm"] + rtlibs + usbflags + dbusflags)
+ 
+ test_gpsmm = env.Program('test_gpsmm', ['test_gpsmm.cpp'],
+-                         LIBS=['gps_static'], LIBPATH='.', parse_flags=["-lm"])
++                         LIBS=['gps_static'], parse_flags=["-lm"])
+ testprogs = [test_bits, test_float, test_geoid, test_libgps, test_matrix, test_mktime, test_packet, test_timespec, test_trig]
+ if env['socket_export']:
+     testprogs.append(test_json)

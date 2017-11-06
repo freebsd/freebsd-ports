@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	greed
-PORTVERSION=	4.1
+PORTVERSION=	4.2
 CATEGORIES=	games
 MASTER_SITES=	http://catb.org/~esr/greed/
 PKGNAMESUFFIX=	-game
@@ -10,7 +10,7 @@ PKGNAMESUFFIX=	-game
 MAINTAINER=	culot@FreeBSD.org
 COMMENT=	Text puzzle game with the aim of clearing the game field
 
-LICENSE=	BSD3CLAUSE
+LICENSE=	BSD2CLAUSE
 
 USES=		ncurses
 SCOREFILE?=	/var/games/greed.hs

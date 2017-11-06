@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	mailman
-DISTVERSION=	2.1.23
+DISTVERSION=	2.1.25
+PORTREVISION=	0
 CATEGORIES=	mail
 MASTER_SITES=	GNU \
 		SF/${PORTNAME}/Mailman%202.1%20%28stable%29/${PORTVERSION} \
@@ -20,8 +21,11 @@ LICENSE_FILE=	${WRKSRC}/gnu-COPYING-GPL
 
 CONFLICTS=	ja-mailman-2.1.*
 
-USES=		autoreconf cpe fakeroot python:2 tar:tgz
+USES=		autoreconf cpe fakeroot python:2 shebangfix tar:tgz
 USE_RC_SUBR=	mailman
+SHEBANG_FILES=	bin/msgfmt.py \
+		tests/fblast.py \
+		tests/onebounce.py
 
 CPE_VENDOR=	gnu
 
@@ -31,7 +35,9 @@ CONFIGURE_ARGS+=--with-python=${PYTHON_CMD} \
 		--with-username=${MM_USERNAME} \
 		--with-groupname=${MM_GROUPNAME} \
 		--with-mail-gid=${MAIL_GID} --with-cgi-gid=${CGI_GID} \
-		--with-permcheck=no
+		--with-permcheck=no \
+		--with-mailhost=// \
+		--with-urlhost=//
 
 # The Mailman port supports a number of variables that may be tweaked at
 # build time.  Getting the values of some of them right is crucial!
@@ -51,7 +57,7 @@ GROUPS=		${MM_GROUPNAME}
 
 MAILMANDIR=	${PREFIX}/${MM_DIR}
 PLIST_SUB=	MMDIR=${MM_DIR} IMGDIR=${IMGDIR} MM_USERNAME=${MM_USERNAME} MM_GROUPNAME=${MM_GROUPNAME}
-SUB_FILES=	pkg-message pkg-install pkg-deinstall
+SUB_FILES=	pkg-message pkg-install pkg-deinstall mailman.newsyslog.sample
 SUB_LIST=	MAILMANDIR=${MAILMANDIR} USER=${MM_USERNAME} GROUP=${MM_GROUPNAME} PYTHON_CMD="${PYTHON_CMD}"
 
 PORTDOCS=	ACKNOWLEDGMENTS BUGS FAQ INSTALL NEWS README README-I18N.en \
@@ -76,6 +82,12 @@ NAMAZU2_DESC=	Make private archives searchable with namazu2
 MTA_DESC=	Integrate with which MTA?
 
 .include <bsd.port.options.mk>
+
+# enforce EXAMPLES option, necessary so that @sample
+# can install the newsyslog file
+.if empty(PORT_OPTIONS:MEXAMPLES)
+PORT_OPTIONS+=	EXAMPLES
+.endif
 
 .if ${PORT_OPTIONS:MNLS}
 USES+=		gettext
@@ -111,11 +123,13 @@ MAIL_GID?=	_smtpd
 .if ${PORT_OPTIONS:MHTDIG}
 PKGNAMESUFFIX+=	-with-htdig
 # how to create PATCHFILES:
-#X fetch http://bazaar.launchpad.net/~msapiro/mailman/htdig/tarball/1668
+#X identify what is the version of msapiro's patches corresponding to the release.
+#X fetch http://bazaar.launchpad.net/~msapiro/mailman/htdig/tarball/1702
 #X unpack this tarball, and the original distfile
-#X diff -NEur original-unpack bazaar-unpack | xz --best -c >msapiro-htdig-1668.patch.xz
+#X diff -NEur original-unpack bazaar-unpack | xz --best -c >msapiro-htdig-1702.patch.xz
 #X upload the latter with mode 0644 or similar to freefall's public_distfiles/ directory
-PATCHFILES+=	msapiro-htdig-1668.patch.xz
+_HTDIGREV=	1717
+PATCHFILES+=	msapiro-htdig-${_HTDIGREV}.patch.xz
 RUN_DEPENDS+=	htdig:textproc/htdig
 PLIST_SUB+=	SUB_HTDIG=""
 .else
@@ -163,6 +177,8 @@ pre-configure:
 .endif
 
 post-install:
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKDIR}/mailman.newsyslog.sample ${STAGEDIR}${EXAMPLESDIR}
 .for i in admindb admin confirm create edithtml listinfo options private \
 	rmlist roster subscribe
 	${STRIP_CMD} ${STAGEDIR}${MAILMANDIR}/cgi-bin/${i}

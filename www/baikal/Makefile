@@ -3,18 +3,19 @@
 
 PORTNAME=	baikal
 PORTVERSION=	0.4.6
-PORTREVISION=	1
+PORTREVISION=	4
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/fruux/Baikal/releases/download/${PORTVERSION}/
 
-MAINTAINER=	mat@FreeBSD.org
+MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	Lightweight CalDAV/CardDAV server
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=	php zip
-USE_PHP=	ctype dom filter json mbstring openssl pdo_sqlite session xml xmlreader xmlwriter
+USES=		php zip
+USE_PHP=	ctype dom filter imap json mbstring openssl pdo_sqlite \
+		session xml xmlreader xmlwriter
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 NO_BUILD=	yes

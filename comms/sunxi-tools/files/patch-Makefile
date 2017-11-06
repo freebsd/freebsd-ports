@@ -1,0 +1,29 @@
+--- Makefile.orig	2016-11-29 13:07:51 UTC
++++ Makefile
+@@ -17,7 +17,7 @@
+ # along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ 
+ CC ?= gcc
+-DEFAULT_CFLAGS := -std=c99
++DEFAULT_CFLAGS += -std=c99
+ DEFAULT_CFLAGS += -Wall -Wextra -Wno-unused-result
+ 
+ DEFAULT_CFLAGS += -D_POSIX_C_SOURCE=200112L
+@@ -63,7 +63,7 @@ BINDIR  ?= $(PREFIX)/bin
+ tools: $(TOOLS) $(FEXC_LINKS)
+ target-tools: $(TARGET_TOOLS)
+ 
+-all: tools target-tools
++all: tools
+ 
+ misc: $(MISC_TOOLS)
+ 
+@@ -75,7 +75,7 @@ install-all: install-tools install-target-tools
+ install-tools: $(TOOLS)
+ 	install -d $(DESTDIR)$(BINDIR)
+ 	@set -ex ; for t in $^ ; do \
+-		install -m0755 $$t $(DESTDIR)$(BINDIR)/$$t ; \
++		$(BSD_INSTALL_PROGRAM) $$t $(DESTDIR)$(BINDIR)/$$t ; \
+ 	done
+ 	@set -ex ; for l in $(FEXC_LINKS) ; do \
+ 		ln -nfs sunxi-fexc $(DESTDIR)$(BINDIR)/$$l ; \

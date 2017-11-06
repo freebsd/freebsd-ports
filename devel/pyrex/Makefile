@@ -8,21 +8,26 @@ MASTER_SITES=	http://www.cosc.canterbury.ac.nz/greg.ewing/python/Pyrex/
 PKGNAMEPREFIX=	${PYTHONPKGNAMEPREFIX}
 DISTNAME=	Pyrex-${PORTVERSION}
 
-MAINTAINER=	mva@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Programming Language for writing Python extension modules
 
 LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USES=		python:2
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
 USE_PYTHON=	autoplist distutils
+USES=		python:2
 
-post-install:
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}/Manual
-	@cd ${WRKSRC}/Doc && ${INSTALL_DATA} ./[^M]* ${STAGEDIR}${DOCSDIR}
-	@cd ${WRKSRC}/Doc/Manual && ${INSTALL_DATA} ./* ${STAGEDIR}${DOCSDIR}/Manual
-	@cd ${WRKSRC}/Demos && ${MAKE} clean
-	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	@${TAR} -C ${WRKSRC}/Demos -cf - . | \
-		${TAR} -C ${STAGEDIR}${EXAMPLESDIR} -xf -
+PORTDOCS=	*
+PORTEXAMPLES=	*
+
+post-install-DOCS-on:
+	${MKDIR} ${STAGEDIR}${DOCSDIR}/
+	cd ${WRKSRC}/Doc/ && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}/
+
+post-install-EXAMPLES-on:
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/
+	cd ${WRKSRC}/Demos && ${MAKE} clean && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>

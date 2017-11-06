@@ -2,17 +2,22 @@
 # $FreeBSD$
 
 PORTNAME=	Module-Info-File
-PORTVERSION=	0.14
+PORTVERSION=	1.00
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	lth@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Retrieves module information from a file or script
 
-RUN_DEPENDS=	p5-Module-Info>0.20:devel/p5-Module-Info
-BUILD_DEPENDS:=	${RUN_DEPENDS}
+LICENSE=	ART20
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BUILD_DEPENDS=	p5-Module-Info>=0.20:devel/p5-Module-Info \
+		p5-Try-Tiny>=0:lang/p5-Try-Tiny
+RUN_DEPENDS:=	${BUILD_DEPENDS}
+
+NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
 

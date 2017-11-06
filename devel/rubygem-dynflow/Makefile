@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	dynflow
-PORTVERSION=	0.8.18
+PORTVERSION=	0.8.32
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -16,10 +16,12 @@ RUN_DEPENDS=	rubygem-algebrick>=0.7.0:devel/rubygem-algebrick \
 		rubygem-concurrent-ruby>=1.0:devel/rubygem-concurrent-ruby \
 		rubygem-concurrent-ruby-edge>=0.2.3:devel/rubygem-concurrent-ruby-edge \
 		rubygem-multi_json>=0:devel/rubygem-multi_json \
-		rubygem-sequel>=0:devel/rubygem-sequel
+		rubygem-sequel>=4.0.0:devel/rubygem-sequel
 
 NO_ARCH=	yes
 USE_RUBY=	yes
 USES=		gem
+
+PLIST_FILES=	${GEM_LIB_DIR}/web/assets/images/logo-square.png
 
 .include <bsd.port.mk>

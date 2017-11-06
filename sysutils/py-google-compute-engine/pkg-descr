@@ -1,0 +1,14 @@
+Google Compute Engine offers scripts and daemons which run in the
+background and provides the following services:
+
+- Accounts daemon to setup and manage user accounts, and to enable SSH key based
+  authentication.
+- Clock skew daemon to keep the system clock in sync after VM start and stop
+  events.
+- Instance setup scripts to execute VM configuration scripts during boot.
+- IP forwarding daemon that integrates network load balancing with forwarding
+  rule changes into the guest.
+- Metadata scripts to run user provided scripts at VM startup and shutdown.
+- Network setup service to enable multiple network interfaces on boot.
+
+WWW: https://github.com/GoogleCloudPlatform/compute-image-packages

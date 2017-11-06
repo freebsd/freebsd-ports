@@ -1,2 +1,3 @@
-SHA256 (cabal/data-lens-2.10.7.tar.gz) = 3b198a84158d757d074b6cf71fe16c8ad900e24991d9813d0b6361a1fd97e050
-SIZE (cabal/data-lens-2.10.7.tar.gz) = 6078
+TIMESTAMP = 1499623374
+SHA256 (cabal/data-lens-2.11.1.tar.gz) = fbbe0bb7d754fa9bced7c89a0629146618ab204cbe7a7ea26b1fa9746ac73c32
+SIZE (cabal/data-lens-2.11.1.tar.gz) = 6208

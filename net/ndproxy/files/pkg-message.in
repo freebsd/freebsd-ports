@@ -1,0 +1,22 @@
+-------------------------------------------------------------------------------
+IMPORTANT! MAKE SURE TO READ THE FOLLOWING!
+
+Please remember to reinstall this port after kernel source update.
+
+ndproxy is configured using four sysctl kernel states. The boot script
+(%%PREFIX%%/etc/rc.d/ndproxy) can set those states using rc.conf variables.
+
+Here is the corresponding rc.conf variable to each sysctl kernel state:
+
+sysctl kernel state                            rc.conf corresponding variable
+-------------------------------------------------------------------------------
+net.inet6.ndproxyconf_uplink_interface         ndproxy_uplink_interface
+net.inet6.ndproxyconf_downlink_mac_address     ndproxy_downlink_mac_address
+net.inet6.ndproxyconf_exception_ipv6_addresses ndproxy_exception_ipv6_addresses
+net.inet6.ndproxyconf_uplink_ipv6_addresses    ndproxy_uplink_ipv6_addresses
+
+The network interface set in ndproxy_uplink_interface will be put into
+permanently promiscuous mode.
+
+IMPORTANT! MAKE SURE TO READ THE ABOVE!
+-------------------------------------------------------------------------------

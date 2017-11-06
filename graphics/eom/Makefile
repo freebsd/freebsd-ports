@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	eom
-PORTVERSION=	1.12.2
+PORTVERSION=	1.18.2
 CATEGORIES=	graphics mate
 MASTER_SITES=	MATE
 DIST_SUBDIR=	mate
@@ -10,25 +10,26 @@ DIST_SUBDIR=	mate
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Eye of MATE image viewer
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 BUILD_DEPENDS=	itstool:textproc/itstool
+LIB_DEPENDS=	libstartup-notification-1.so:x11/startup-notification \
+		libdbus-1.so:devel/dbus \
+		libdbus-glib-1.so:devel/dbus-glib \
+		libpeas-gtk-1.0.so:devel/libpeas
 
 PORTSCOUT=	limitw:1,even
 
-USES=		desktop-file-utils gettext gmake jpeg libtool pathfix pkgconfig \
-		tar:xz
+USES=		desktop-file-utils gettext gmake jpeg libtool localbase \
+		pathfix pkgconfig tar:xz
 USE_MATE=	desktop icontheme
 USE_XORG=	x11
-USE_GNOME=	gdkpixbuf2 glib20 gtk20 intltool librsvg2 libxml2
+USE_GNOME=	cairo gnomeprefix gtk30 intltool introspection \
+		librsvg2 libxml2
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=	--disable-gtk-doc \
-		--with-html-dir=${PREFIX}/share/doc \
-		--disable-introspection \
-		--with-gtk=2.0 \
-		--disable-python \
-		--without-cms
+CONFIGURE_ARGS=	--without-cms
 INSTALLS_ICONS=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
 
 GLIB_SCHEMAS=	org.mate.eom.gschema.xml \
@@ -36,33 +37,18 @@ GLIB_SCHEMAS=	org.mate.eom.gschema.xml \
 
 OPTIONS_DEFINE=	EXIF EXEMPI
 OPTIONS_DEFAULT=EXIF EXEMPI
-EXIF_DESC=	Digital camera file meta-data support
-EXEMPI_DESC=	XMP support
+
+EXEMPI_DESC=		XMP support
+EXEMPI_CONFIGURE_WITH=	xmp
+EXEMPI_LIB_DEPENDS=	libexempi.so:textproc/exempi
+
+EXIF_DESC=		Digital camera file meta-data support
+EXIF_CONFIGURE_WITH=	libexif
+EXIF_LIB_DEPENDS=	libexif.so:graphics/libexif
 
 .include <bsd.port.options.mk>
 
-_WITH_EXIF=	no
-_WITH_EXEMPI=	no
-
-.if ${PORT_OPTIONS:MEXIF}
-CONFIGURE_ARGS+=--with-libexif
-LIB_DEPENDS+=	libexif.so:graphics/libexif
-PLIST_SUB+=	EXIF=""
-_WITH_EXIF=	yes
-.else
-CONFIGURE_ARGS+=--without-libexif
-PLIST_SUB+=	EXIF="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MEXEMPI}
-CONFIGURE_ARGS+=--with-xmp
-LIB_DEPENDS+=	libexempi.so:textproc/exempi
-_WITH_EXEMPI=	yes
-.else
-CONFIGURE_ARGS+=--without-xmp
-.endif
-
-.if ${_WITH_EXIF}=="yes" || ${_WITH_EXEMPI}=="yes"
+.if ${PORT_OPTIONS:MEXIF} || ${PORT_OPTIONS:MEXEMPI}
 PLIST_SUB+=	EXIFEXEMPI=""
 .else
 PLIST_SUB+=	EXIFEXEMPI="@comment "

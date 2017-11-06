@@ -3,6 +3,7 @@
 
 PORTNAME=	opencc
 PORTVERSION=	1.0.4
+PORTREVISION=	2
 DISTVERSIONPREFIX=	ver.
 CATEGORIES=	chinese converters
 

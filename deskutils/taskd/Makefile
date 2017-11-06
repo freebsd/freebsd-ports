@@ -3,7 +3,7 @@
 
 PORTNAME=	taskd
 PORTVERSION=	1.1.0
-PORTREVISION=	3
+PORTREVISION=	5
 CATEGORIES=	deskutils
 MASTER_SITES=	http://taskwarrior.org/download/
 

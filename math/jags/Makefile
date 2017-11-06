@@ -3,6 +3,7 @@
 
 PORTNAME=	mcmc-jags
 PORTVERSION=	4.2.0
+PORTREVISION=	3
 CATEGORIES=	math
 MASTER_SITES=	SF/mcmc-jags/JAGS/${S}.x/Source/:1 \
 		SF/mcmc-jags/Examples/${S}.x/:2 \

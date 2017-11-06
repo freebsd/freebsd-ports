@@ -4,7 +4,7 @@
 PORTNAME=	tardy
 PORTVERSION=	1.28
 DISTVERSIONSUFFIX=	.D001.orig
-PORTREVISION=	4
+PORTREVISION=	7
 CATEGORIES=	archivers
 MASTER_SITES=	SF/tardy/${PORTVERSION}/
 DISTNAME=	${PORTNAME}_${PORTVERSION}${DISTVERSIONSUFFIX}
@@ -19,6 +19,7 @@ BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:devel/boost-libs \
 LIB_DEPENDS=	libexplain.so:devel/libexplain
 
 GNU_CONFIGURE=	yes
+USES=		groff
 
 MAKE_JOBS_UNSAFE=	yes
 

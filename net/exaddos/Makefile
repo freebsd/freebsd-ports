@@ -4,7 +4,7 @@
 PORTNAME=	exaddos
 PORTVERSION=	0.4.0
 CATEGORIES=	net
-MASTER_SITES=	http://mirrors.rit.edu/zi/
+MASTER_SITES=	ZI
 
 MAINTAINER=	zi@FreeBSD.org
 COMMENT=	Monitor your network for DDoS

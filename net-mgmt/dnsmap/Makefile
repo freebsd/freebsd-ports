@@ -9,7 +9,8 @@ CATEGORIES=	net-mgmt
 MAINTAINER=	rihaz.jerrin@gmail.com
 COMMENT=	DNS domain name brute forcing tool
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/gpl-2.0.txt
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	lifanov
@@ -26,7 +27,7 @@ do-install:
 	 ${INSTALL_SCRIPT}   ${WRKSRC}/${PORTNAME}-bulk.sh    ${STAGEDIR}${PREFIX}/bin/${PORTNAME}-bulk
 	 ${MKDIR}	     ${STAGEDIR}${DATADIR}
 	 ${INSTALL_DATA}     ${WRKSRC}/wordlist_TLAs.txt      ${STAGEDIR}${DATADIR}
-	 ${MKDIR}  	     ${STAGEDIR}${DOCSDIR}
+	 ${MKDIR}	     ${STAGEDIR}${DOCSDIR}
 	 ${INSTALL_DATA}     ${PORTDOCS:S|^|${WRKSRC}/|}      ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

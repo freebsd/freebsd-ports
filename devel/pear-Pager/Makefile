@@ -2,12 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	Pager
-PORTVERSION=	2.4.9
+PORTVERSION=	2.5.1
 CATEGORIES=	devel www pear
 
-MAINTAINER=	joneum@bsdproject.de
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	PEAR data paging class
 
-USES=	pear
+LICENSE=	BSD2CLAUSE
+
+USES=		pear
 
 .include <bsd.port.mk>

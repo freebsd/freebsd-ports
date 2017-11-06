@@ -1,7 +1,7 @@
---- Makefile.in.orig	Thu Sep 12 00:35:22 2002
-+++ Makefile.in	Mon Oct 21 10:02:37 2002
-@@ -22,8 +22,9 @@
-   GUIDIR = gui
+--- Makefile.in.orig	2017-06-01 20:13:36 UTC
++++ Makefile.in
+@@ -40,8 +40,9 @@ ifeq ($(use_xdg),yes)
+   XDGDIR = xdg
  endif
  
 -INSTALL_PROGRAM = ${INSTALL} -m 755

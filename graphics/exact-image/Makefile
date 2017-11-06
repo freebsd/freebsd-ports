@@ -23,6 +23,8 @@ LIB_DEPENDS=	libagg.so:graphics/agg \
 		libfreetype.so:print/freetype2 \
 		libexpat.so:textproc/expat2
 
+BROKEN_armv6=		fails to configure: C++ compiler is not installed or does not work correctly
+
 #hack to get custom exactcode configure script to enable tiff support with
 #broken headers on c++ in base system:
 CPPFLAGS+=	-fpermissive -I${LOCALBASE}/include

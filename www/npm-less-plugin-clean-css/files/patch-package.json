@@ -1,0 +1,12 @@
+--- package.json.orig	2017-05-14 10:36:05 UTC
++++ package.json
+@@ -19,9 +19,6 @@
+   "engines": {
+     "node": ">=0.10"
+   },
+-  "dependencies": {
+-    "clean-css": "^3.0.1"
+-  },
+   "keywords": [
+     "less plugins",
+     "cleancss",

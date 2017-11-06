@@ -27,7 +27,7 @@ Qt_Pre_Include=	bsd.qt.mk
 # Qt versions currently supported by the framework.
 _QT_SUPPORTED?=	4 5
 QT4_VERSION?=	4.8.7
-QT5_VERSION?=	5.6.2
+QT5_VERSION?=	5.7.1
 
 _QT_RELNAME=	qt${_QT_VERSION:R:R}
 _QT_VERSION=	# empty
@@ -51,9 +51,6 @@ IGNORE?=		can't be installed: bsd.qt.mk may only be included via USE_QT[${_QT_SU
 QT_NONSTANDARD=	yes
 
 MASTER_SITES=	${MASTER_SITE_QT}
-# Useless, as it must be defined before including bsd.port.pre.mk (at least
-# because of bsd.options.mk).
-#PKGNAMEPREFIX?=	${_QT_RELNAME}-
 DISTINFO_FILE?=	${.CURDIR:H:H}/devel/${_QT_RELNAME}/distinfo
 
 LICENSE?=		LGPL21
@@ -91,9 +88,12 @@ LDFLAGS+=		-Wl,--as-needed
 # Ensure that the "makesum" target (with its inner "fetch" one) uses
 # devel/qt*/distinfo for every port.
 .		if ${DISTINFO_FILE:H} == ${.CURDIR:H:H}/devel/${_QT_RELNAME}
-QT_DIST=		3d base canvas3d connectivity declarative graphicaleffects imageformats \
-				location multimedia quickcontrols quickcontrols2 script sensors serialbus serialport svg tools \
-				translations webchannel websockets x11extras xmlpatterns
+QT_DIST=		3d base canvas3d charts connectivity datavis3d declarative \
+				declarative-render2d gamepad graphicaleffects imageformats \
+				location multimedia quickcontrols quickcontrols2 script scxml \
+				sensors serialbus serialport svg tools translations \
+				virtualkeyboard wayland webchannel webengine \
+				websockets x11extras xmlpatterns
 .		endif
 .  endif
 
@@ -147,6 +147,9 @@ CONFIGURE_ARGS+=-nomake examples -nomake tests \
 .  if ${ARCH} == i386 && empty(MACHINE_CPU:Msse2)
 CONFIGURE_ARGS+=-no-sse2
 .  endif
+# Work around a bug in current binutils, where the gold linker creates
+# duplicate symbols. See pr 218187. Disable the gold-linker for Qt5 ports.
+CONFIGURE_ARGS+=	-no-use-gold-linker
 . endif
 
 . if defined(WANT_QT_DEBUG) || defined(WITH_DEBUG)
@@ -172,9 +175,12 @@ CONFIGURE_ARGS+=-verbose
 .  if ${_QT_VERSION:M4*}
 _EXTRA_PATCHES_QT4=	${.CURDIR:H:H}/devel/${_QT_RELNAME}/files/extrapatch-src-corelib-global-qglobal.h \
 					${.CURDIR:H:H}/devel/${_QT_RELNAME}/files/extrapatch-libtool
+# Patch in proper name for armv6 architecture: https://gcc.gnu.org/ml/gcc-patches/2015-06/msg01679.html
+_EXTRA_PATCHES_QT4+=	${.CURDIR:H:H}/devel/${_QT_RELNAME}/files/extrapatch-armv6
 .  else
-_EXTRA_PATCHES_QT5=	${.CURDIR:H:H}/devel/${_QT_RELNAME}/files/extrapatch-src_corelib_global_qcompilerdetection.h \
-					${.CURDIR:H:H}/devel/${_QT_RELNAME}/files/extrapatch-mkspecs_features_qt__module.prf
+_EXTRA_PATCHES_QT5=	${.CURDIR:H:H}/devel/${_QT_RELNAME}/files/extrapatch-mkspecs_features_create__cmake.prf \
+					${.CURDIR:H:H}/devel/${_QT_RELNAME}/files/extrapatch-mkspecs_features_qt__module.prf \
+					${.CURDIR:H:H}/devel/${_QT_RELNAME}/files/extrapatch-config.tests_unix_arch.test
 .  endif
 EXTRA_PATCHES?=	${.CURDIR:H:H}/devel/${_QT_RELNAME}/files/extrapatch-configure \
 		${.CURDIR:H:H}/devel/${_QT_RELNAME}/files/extrapatch-config.tests-unix-compile.test \
@@ -205,22 +211,24 @@ QMAKE_ARGS+=	QT_CONFIG+="${QT_CONFIG:N-*:O:u}"
 QMAKE_ARGS+=	QT_CONFIG-="${QT_CONFIG:M-*:O:u:C/^-//}"
 . endif
 
+# Add a RUN_DEPENDS on misc/qtchooser to select the binaries.
+# The binaries of both supported Qt versions are installed to
+# ${LOCALBASE}/lib/qt[45]/bin. The port misc/qtchooser installs
+# wrapper binaries into ${LOCALBASE}/bin, and chooses the correct
+# one depending on the value of QT_SELECT (which we pass to both
+# CONFIGURE_ENV and MAKE_ENV). Therefore make all QT_DIST ports
+# RUN_DEPEND on it.
+RUN_DEPENDS+=	qtchooser:misc/qtchooser
+
 PLIST_SUB+=		SHORTVER=${DISTVERSION:R} \
 				FULLVER=${DISTVERSION:C/-.*//}
 .endif # defined(QT_DIST)
 
-.if ${_QT_VERSION:M4*}
-QT_BINDIR_REL?=	bin
-QT_LIBDIR_REL?=	lib/${_QT_RELNAME}
-QT_PLUGINDIR_REL?=	${QT_LIBDIR_REL}/plugins
-QT_IMPORTDIR_REL?=	${QT_LIBDIR_REL}/imports
-.endif
-
 # A wrapper (qtchooser) is used to invoke binaries.
 QT_BINDIR_REL?=	${QT_ARCHDIR_REL}/bin
 QT_INCDIR_REL?=	include/${_QT_RELNAME}
-QT_LIBDIR_REL?=	lib
-QT_ARCHDIR_REL?=${QT_LIBDIR_REL}/${_QT_RELNAME}
+QT_LIBDIR_REL?=	lib/${_QT_RELNAME}
+QT_ARCHDIR_REL?=${QT_LIBDIR_REL}
 QT_PLUGINDIR_REL?=	${QT_ARCHDIR_REL}/plugins
 QT_LIBEXECDIR_REL?=	libexec/${_QT_RELNAME}
 QT_IMPORTDIR_REL?=	${QT_ARCHDIR_REL}/imports
@@ -231,26 +239,26 @@ QT_L10NDIR_REL?=${QT_DATADIR_REL}/translations
 QT_ETCDIR_REL?=	etc/xdg
 QT_EXAMPLEDIR_REL?=	share/examples/${_QT_RELNAME}
 QT_TESTDIR_REL?=${QT_DATADIR_REL}/tests
+QT_CMAKEDIR_REL?=	lib/cmake
+QT_QTCHOOSERDIR_REL?=	${QT_ETCDIR_REL}/qtchooser
 
 # Not customizable.
 .if ${_QT_VERSION:M4*}
 QT_MKSPECDIR_REL=	${QT_DATADIR_REL}/mkspecs
 
 _QT_LIBVER=		# empty
-_QT_BINSUFX=	-${_QT_RELNAME}
 .else
 QT_MKSPECDIR_REL=	${QT_ARCHDIR_REL}/mkspecs
 
 _QT_LIBVER=		${_QT_VERSION:R:R}
-_QT_BINSUFX=	# empty
 .endif
 
-LRELEASE?=		${QT_BINDIR}/lrelease${_QT_BINSUFX}
-LUPDATE?=		${QT_BINDIR}/lupdate${_QT_BINSUFX}
-MOC?=			${QT_BINDIR}/moc${_QT_BINSUFX}
+LRELEASE?=		${QT_BINDIR}/lrelease
+LUPDATE?=		${QT_BINDIR}/lupdate
+MOC?=			${QT_BINDIR}/moc
 RCC?=			${QT_BINDIR}/rcc
-UIC?=			${QT_BINDIR}/uic${_QT_BINSUFX}
-QMAKE?=			${QT_BINDIR}/qmake${_QT_BINSUFX}
+UIC?=			${QT_BINDIR}/uic
+QMAKE?=			${QT_BINDIR}/qmake
 # Needed to redefine the qmake target for internal Qt configuration.
 _QMAKE?=		${QMAKE}
 QMAKESPEC?=		${QT_MKSPECDIR}/freebsd-${QMAKE_COMPILER}
@@ -264,18 +272,20 @@ QMAKE_COMPILER=	$$(ccver="$$(${CXX} --version)"; case "$$ccver" in *clang*) echo
 # Import QMAKE_ENV and QMAKE_ARGS definitions.
 USES+=			qmake:_env
 
-.for dir in INC ARCH PLUGIN LIBEXEC IMPORT \
-	QML DATA DOC L10N ETC EXAMPLE TEST MKSPEC
+.for dir in BIN INC LIB ARCH PLUGIN LIBEXEC IMPORT \
+	QML DATA DOC L10N ETC EXAMPLE TEST MKSPEC \
+	CMAKE QTCHOOSER
 QT_${dir}DIR=	${PREFIX}/${QT_${dir}DIR_REL}
+# Export all directories to the plist substituion for QT_DIST ports.
+# For the others, exclude QT_CMAKEDIR and QT_ETCDIR.
+.  if (${dir:NCMAKE} && ${dir:NETC}) || defined(QT_DIST)
 PLIST_SUB+=		QT_${dir}DIR="${QT_${dir}DIR_REL}"
-.endfor
-
-.for dir in BIN LIB
-QT_${dir}DIR=        ${PREFIX}/${QT_${dir}DIR_REL}
-.  if defined(QT_DIST)
-PLIST_SUB+=                QT_${dir}DIR="${QT_${dir}DIR_REL}"
 .  endif
 .endfor
+
+# Pass the chosen Qt version to the environment for qtchooser.
+CONFIGURE_ENV+=	QT_SELECT=${_QT_RELNAME}
+MAKE_ENV+=	QT_SELECT=${_QT_RELNAME}
 
 .endif # !defined(_POSTMKINCLUDED) && !defined(Qt_Pre_Include)
 
@@ -284,7 +294,7 @@ PLIST_SUB+=                QT_${dir}DIR="${QT_${dir}DIR_REL}"
 Qt_Post_Include=	bsd.qt.mk
 
 .if !defined(QT_NONSTANDARD)
-CONFIGURE_ENV+=	QTDIR="${PREFIX}" QMAKE="${QMAKE}" \
+CONFIGURE_ENV+=	QTDIR="${QT_ARCHDIR}" QMAKE="${QMAKE}" \
 				MOC="${MOC}" RCC="${RCC}" UIC="${UIC}" \
 				QMAKESPEC="${QMAKESPEC}"
 CONFIGURE_ARGS+=--with-qt-includes=${QT_INCDIR} \
@@ -306,47 +316,52 @@ _USE_QT4_ONLY=	accessible assistant-adp assistantclient clucene codecs-cn codecs
 				phonon-gst porting qdoc3 qmlviewer qt3support qtconfig \
 				qtestlib qvfb rcc uic uic3 xmlpatterns-tool
 
-_USE_QT5_ONLY=	3d buildtools canvas3d concurrent connectivity core \
-				examples graphicaleffects location paths phonon4 \
-				printsupport qdbus qdoc qdoc-data qev qml quick quickcontrols \
-				quickcontrols2 sensors serialbus serialport sql-tds \
-				uiplugin uitools webchannel websockets widgets x11extras
+_USE_QT5_ONLY=	3d buildtools canvas3d charts concurrent connectivity \
+				core datavis3d declarative-render2d diag examples gamepad \
+				graphicaleffects location paths phonon4 plugininfo printsupport \
+				qdbus qdoc qdoc-data qev qml quick quickcontrols \
+				quickcontrols2 scxml sensors serialbus serialport \
+				sql-tds uiplugin uitools virtualkeyboard wayland webchannel \
+				webengine websockets websockets-qml widgets x11extras
 
 3d_PORT=		graphics/${_QT_RELNAME}-3d
 3d_LIB=		libQt${_QT_LIBVER}3DCore.so
 
 accessible_PORT=	accessibility/${_QT_RELNAME}-accessible
-accessible_PATH=	${QT_PLUGINDIR}/accessible/libqtaccessiblewidgets.so
+accessible_PATH=	${LOCALBASE}/${QT_PLUGINDIR_REL}/accessible/libqtaccessiblewidgets.so
 
 assistant_PORT=		devel/${_QT_RELNAME}-assistant
-assistant_PATH=		${QT_BINDIR}/assistant${_QT_BINSUFX}
+assistant_PATH=		${LOCALBASE}/${QT_BINDIR_REL}/assistant
 
 assistant-adp_PORT=	devel/${_QT_RELNAME}-assistant-adp
-assistant-adp_PATH=	${QT_BINDIR}/assistant_adp
+assistant-adp_PATH=	assistant_adp
 
 assistantclient_PORT=	devel/${_QT_RELNAME}-libqtassistantclient
 assistantclient_LIB=	libQt${_QT_LIBVER}AssistantClient.so
 
 buildtools_PORT=	devel/${_QT_RELNAME}-buildtools
-buildtools_PATH=	${MOC}
+buildtools_PATH=	${LOCALBASE}/${QT_BINDIR_REL}/moc
 
 canvas3d_PORT=		x11-toolkits/${_QT_RELNAME}-canvas3d
-canvas3d_PATH=		${QT_QMLDIR}/QtCanvas3D/qmldir
+canvas3d_PATH=		${LOCALBASE}/${QT_QMLDIR_REL}/QtCanvas3D/qmldir
 
-clucene_PORT=		textproc/clucene-${_QT_RELNAME}
+charts_PORT=		x11-toolkits/${_QT_RELNAME}-charts
+charts_LIB=		libQt${_QT_LIBVER}Charts.so
+
+clucene_PORT=		textproc/${_QT_RELNAME}-clucene
 clucene_LIB=		libQt${_QT_LIBVER}CLucene.so
 
 codecs-cn_PORT=		chinese/${_QT_RELNAME}-codecs-cn
-codecs-cn_PATH=		${QT_PLUGINDIR}/codecs/libqcncodecs.so
+codecs-cn_PATH=		${LOCALBASE}/${QT_PLUGINDIR_REL}/codecs/libqcncodecs.so
 
 codecs-jp_PORT=		japanese/${_QT_RELNAME}-codecs-jp
-codecs-jp_PATH=		${QT_PLUGINDIR}/codecs/libqjpcodecs.so
+codecs-jp_PATH=		${LOCALBASE}/${QT_PLUGINDIR_REL}/codecs/libqjpcodecs.so
 
 codecs-kr_PORT=		korean/${_QT_RELNAME}-codecs-kr
-codecs-kr_PATH=		${QT_PLUGINDIR}/codecs/libqkrcodecs.so
+codecs-kr_PATH=		${LOCALBASE}/${QT_PLUGINDIR_REL}/codecs/libqkrcodecs.so
 
 codecs-tw_PORT=		chinese/${_QT_RELNAME}-codecs-tw
-codecs-tw_PATH=		${QT_PLUGINDIR}/codecs/libqtwcodecs.so
+codecs-tw_PATH=		${LOCALBASE}/${QT_PLUGINDIR_REL}/codecs/libqtwcodecs.so
 
 concurrent_PORT=	devel/${_QT_RELNAME}-concurrent
 concurrent_LIB=	libQt${_QT_LIBVER}Concurrent.so
@@ -360,17 +375,26 @@ core_LIB=			libQt${_QT_LIBVER}Core.so
 corelib_PORT=		devel/${_QT_RELNAME}-corelib
 corelib_LIB=		${core_LIB}
 
-dbus_PORT=			devel/dbus-${_QT_RELNAME}
+datavis3d_PORT=		x11-toolkits/${_QT_RELNAME}-datavis3d
+datavis3d_LIB=		libQt${_QT_LIBVER}DataVisualization.so
+
+dbus_PORT=			devel/${_QT_RELNAME}-dbus
 dbus_LIB=			libQt${_QT_LIBVER}DBus.so
 
 declarative_PORT=	x11-toolkits/${_QT_RELNAME}-declarative
 declarative_LIB=	libQt${_QT_LIBVER}Declarative.so
 
+declarative-render2d_PORT=	x11-toolkits/${_QT_RELNAME}-declarative-render2d
+declarative-render2d_PATH=	${LOCALBASE}/${QT_PLUGINDIR_REL}/scenegraph/libsoftwarecontext.so
+
 demo_PORT=			misc/${_QT_RELNAME}-qtdemo
-demo_PATH=			${QT_BINDIR}/qtdemo
+demo_PATH=			${LOCALBASE}/${QT_BINDIR_REL}/qtdemo
 
 designer_PORT=		devel/${_QT_RELNAME}-designer
-designer_PATH=		${QT_BINDIR}/designer${_QT_BINSUFX}
+designer_PATH=		${LOCALBASE}/${QT_BINDIR_REL}/designer
+
+diag_PORT=		sysutils/${_QT_RELNAME}-qtdiag
+diag_PATH=		${LOCALBASE}/${QT_BINDIR_REL}/qtdiag
 
 doc_PORT=			misc/${_QT_RELNAME}-doc
 doc_PATH=			${_QT_RELNAME}-doc>=${_QT_VERSION:R:R}
@@ -378,11 +402,14 @@ doc_PATH=			${_QT_RELNAME}-doc>=${_QT_VERSION:R:R}
 examples_PORT=		misc/${_QT_RELNAME}-examples
 examples_PATH=		${_QT_RELNAME}-examples>=${_QT_VERSION:R:R}
 
+gamepad_PORT=		x11-toolkits/${_QT_RELNAME}-gamepad
+gamepad_LIB=		libQt${_QT_LIBVER}Gamepad.so
+
 graphicaleffects_PORT=	graphics/${_QT_RELNAME}-graphicaleffects
-graphicaleffects_PATH=	${QT_QMLDIR}/QtGraphicalEffects/qmldir
+graphicaleffects_PATH=	${LOCALBASE}/${QT_QMLDIR_REL}/QtGraphicalEffects/qmldir
 
 graphicssystems-opengl_PORT=	x11/${_QT_RELNAME}-graphicssystems-opengl
-graphicssystems-opengl_PATH=	${QT_PLUGINDIR}/graphicssystems/libqglgraphicssystem.so
+graphicssystems-opengl_PATH=	${LOCALBASE}/${QT_PLUGINDIR_REL}/graphicssystems/libqglgraphicssystem.so
 
 gui_PORT=			x11-toolkits/${_QT_RELNAME}-gui
 gui_LIB=			libQt${_QT_LIBVER}Gui.so
@@ -391,22 +418,22 @@ help_PORT=			devel/${_QT_RELNAME}-help
 help_LIB=			libQt${_QT_LIBVER}Help.so
 
 help-tools_PORT=	devel/${_QT_RELNAME}-help-tools
-help-tools_PATH=	${QT_BINDIR}/qhelpgenerator
+help-tools_PATH=	${LOCALBASE}/${QT_BINDIR_REL}/qhelpgenerator
 
 iconengines_PORT=	graphics/${_QT_RELNAME}-iconengines
-iconengines_PATH=	${QT_PLUGINDIR}/iconengines/libqsvgicon.so
+iconengines_PATH=	${LOCALBASE}/${QT_PLUGINDIR_REL}/iconengines/libqsvgicon.so
 
 imageformats_PORT=	graphics/${_QT_RELNAME}-imageformats
-imageformats_PATH=	${QT_PLUGINDIR}/imageformats/libqtiff.so
+imageformats_PATH=	${LOCALBASE}/${QT_PLUGINDIR_REL}/imageformats/libqtiff.so
 
 inputmethods_PORT=	x11/${_QT_RELNAME}-inputmethods
-inputmethods_PATH=	${QT_PLUGINDIR}/inputmethods/libqimsw-multi.so
+inputmethods_PATH=	${LOCALBASE}/${QT_PLUGINDIR_REL}/inputmethods/libqimsw-multi.so
 
 linguist_PORT=		devel/${_QT_RELNAME}-linguist
-linguist_PATH=		${QT_BINDIR}/linguist${_QT_BINSUFX}
+linguist_PATH=		${LOCALBASE}/${QT_BINDIR_REL}/linguist
 
 linguisttools_PORT=	devel/${_QT_RELNAME}-linguisttools
-linguisttools_PATH=	${LRELEASE}
+linguisttools_PATH=	${LOCALBASE}/${QT_BINDIR_REL}/lrelease
 
 location_PORT=		devel/${_QT_RELNAME}-location
 location_LIB=		libQt${_QT_LIBVER}Location.so
@@ -415,10 +442,10 @@ l10n_PORT=			misc/${_QT_RELNAME}-l10n
 l10n_PATH=			${_QT_RELNAME}-l10n>=${_QT_VERSION:R:R}
 
 makeqpf_PORT=		devel/${_QT_RELNAME}-makeqpf
-makeqpf_PATH=		${QT_BINDIR}/makeqpf${_QT_BINSUFX}
+makeqpf_PATH=		${LOCALBASE}/${QT_BINDIR_REL}/makeqpf
 
 moc_PORT=			devel/${_QT_RELNAME}-moc
-moc_PATH=			${MOC}
+moc_PATH=			${LOCALBASE}/${QT_BINDIR_REL}/moc
 
 multimedia_PORT=	multimedia/${_QT_RELNAME}-multimedia
 multimedia_LIB=		libQt${_QT_LIBVER}Multimedia.so
@@ -430,10 +457,10 @@ opengl_PORT=		graphics/${_QT_RELNAME}-opengl
 opengl_LIB=		libQt${_QT_LIBVER}OpenGL.so
 
 paths_PORT=		sysutils/${_QT_RELNAME}-qtpaths
-paths_PATH=		${QT_BINDIR}/qtpaths
+paths_PATH=		${LOCALBASE}/${QT_BINDIR_REL}/qtpaths
 
 pixeltool_PORT=		graphics/${_QT_RELNAME}-pixeltool
-pixeltool_PATH=		${QT_BINDIR}/pixeltool
+pixeltool_PATH=		${LOCALBASE}/${QT_BINDIR_REL}/pixeltool
 
 phonon_PORT=		multimedia/phonon
 phonon_LIB=		libphonon.so
@@ -442,46 +469,49 @@ phonon4_PORT=		multimedia/${_QT_RELNAME}-phonon4
 phonon4_LIB=		libphonon4${_QT_RELNAME}.so
 
 phonon-gst_PORT=	multimedia/phonon-gstreamer
-phonon-gst_PATH=	${QT_PLUGINDIR}/phonon_backend/libphonon_gstreamer.so
+phonon-gst_PATH=	${LOCALBASE}/${QT_PLUGINDIR_REL}/phonon_backend/libphonon_gstreamer.so
+
+plugininfo_PORT=		sysutils/${_QT_RELNAME}-qtplugininfo
+plugininfo_PATH=		${LOCALBASE}/${QT_BINDIR_REL}/qtplugininfo
 
 porting_PORT=		devel/${_QT_RELNAME}-porting
-porting_PATH=		${QT_BINDIR}/qt3to4
+porting_PATH=		${LOCALBASE}/${QT_BINDIR_REL}/qt3to4
 
 printsupport_PORT=	print/${_QT_RELNAME}-printsupport
 printsupport_LIB=	libQt${_QT_LIBVER}PrintSupport.so
 
 qdbus_PORT=			devel/${_QT_RELNAME}-qdbus
-qdbus_PATH=			${QT_BINDIR}/qdbus
+qdbus_PATH=			${LOCALBASE}/${QT_BINDIR_REL}/qdbus
 
 qdbusviewer_PORT=	devel/${_QT_RELNAME}-qdbusviewer
-qdbusviewer_PATH=	${QT_BINDIR}/qdbusviewer
+qdbusviewer_PATH=	${LOCALBASE}/${QT_BINDIR_REL}/qdbusviewer
 
 qdoc_PORT=			devel/${_QT_RELNAME}-qdoc
-qdoc_PATH=			${QT_BINDIR}/qdoc
+qdoc_PATH=			${LOCALBASE}/${QT_BINDIR_REL}/qdoc
 
 qdoc-data_PORT=		devel/${_QT_RELNAME}-qdoc-data
-qdoc-data_PATH=		${QT_DOCDIR}/global/config.qdocconf
+qdoc-data_PATH=		${LOCALBASE}/${QT_DOCDIR_REL}/global/config.qdocconf
 
 qdoc3_PORT=			devel/${_QT_RELNAME}-qdoc3
-qdoc3_PATH=			${QT_BINDIR}/qdoc3
+qdoc3_PATH=			${LOCALBASE}/${QT_BINDIR_REL}/qdoc3
 
 qev_PORT=			x11/${_QT_RELNAME}-qev
-qev_PATH=			${QT_BINDIR}/qev
+qev_PATH=			${LOCALBASE}/${QT_BINDIR_REL}/qev
 
-qmake_PORT=			devel/qmake${_QT_VERSION:R:R}
-qmake_PATH=			${QMAKE}
+qmake_PORT=			devel/${_QT_RELNAME}-qmake
+qmake_PATH=			${LOCALBASE}/${QT_BINDIR_REL}/qmake
 
 qml_PORT=			lang/${_QT_RELNAME}-qml
 qml_LIB=			libQt${_QT_LIBVER}Qml.so
 
 qmlviewer_PORT=		devel/${_QT_RELNAME}-qmlviewer
-qmlviewer_PATH=		${QT_BINDIR}/qmlviewer
+qmlviewer_PATH=		${LOCALBASE}/${QT_BINDIR_REL}/qmlviewer
 
 qt3support_PORT=	devel/${_QT_RELNAME}-qt3support
 qt3support_LIB=		libQt${_QT_LIBVER}3Support.so
 
 qtconfig_PORT=		misc/${_QT_RELNAME}-qtconfig
-qtconfig_PATH=		${QT_BINDIR}/qtconfig${_QT_BINSUFX}
+qtconfig_PATH=		${LOCALBASE}/${QT_BINDIR_REL}/qtconfig
 
 qtestlib_PORT=		${testlib_PORT}
 qtestlib_LIB=		${testlib_LIB}
@@ -490,16 +520,16 @@ quick_PORT=			x11-toolkits/${_QT_RELNAME}-quick
 quick_LIB=			libQt${_QT_LIBVER}Quick.so
 
 quickcontrols_PORT=	x11-toolkits/${_QT_RELNAME}-quickcontrols
-quickcontrols_PATH=	${QT_QMLDIR}/QtQuick/Controls/qmldir
+quickcontrols_PATH=	${LOCALBASE}/${QT_QMLDIR_REL}/QtQuick/Controls/qmldir
 
 quickcontrols2_PORT=	x11-toolkits/${_QT_RELNAME}-quickcontrols2
-quickcontrols2_LIB=	libQt${_QT_LIBVER}LabsTemplates.so
+quickcontrols2_LIB=	libQt${_QT_LIBVER}QuickControls2.so
 
 qvfb_PORT=			devel/${_QT_RELNAME}-qvfb
-qvfb_PATH=			${QT_BINDIR}/qvfb${_QT_BINSUFX}
+qvfb_PATH=			${LOCALBASE}/${QT_BINDIR_REL}/qvfb
 
 rcc_PORT=			devel/${_QT_RELNAME}-rcc
-rcc_PATH=			${RCC}
+rcc_PATH=			${LOCALBASE}/${QT_BINDIR_REL}/rcc
 
 sensors_PORT=		comms/${_QT_RELNAME}-sensors
 sensors_LIB=		libQt${_QT_LIBVER}Sensors.so
@@ -510,6 +540,9 @@ script_LIB=		libQt${_QT_LIBVER}Script.so
 scripttools_PORT=	devel/${_QT_RELNAME}-scripttools
 scripttools_LIB=	libQt${_QT_LIBVER}ScriptTools.so
 
+scxml_PORT=		devel/${_QT_RELNAME}-scxml
+scxml_LIB=		libQt${_QT_LIBVER}Scxml.so
+
 serialbus_PORT=		comms/${_QT_RELNAME}-serialbus
 serialbus_LIB=		libQt${_QT_LIBVER}SerialBus.so
 
@@ -519,13 +552,13 @@ serialport_LIB=	libQt${_QT_LIBVER}SerialPort.so
 sql_PORT=			databases/${_QT_RELNAME}-sql
 sql_LIB=			libQt${_QT_LIBVER}Sql.so
 
-sql-pgsql_PATH=		${QT_PLUGINDIR}/sqldrivers/libqsqlpsql.so
+sql-pgsql_PATH=		${LOCALBASE}/${QT_PLUGINDIR_REL}/sqldrivers/libqsqlpsql.so
 
 .  if ${_QT_VERSION:M4*}
 sql-sqlite2_PORT=	databases/${_QT_RELNAME}-sqlite-plugin
 .  endif
 
-sql-sqlite3_PATH=	${QT_PLUGINDIR}/sqldrivers/libqsqlite.so
+sql-sqlite3_PATH=	${LOCALBASE}/${QT_PLUGINDIR_REL}/sqldrivers/libqsqlite.so
 
 .  for db in ibase mysql odbc pgsql sqlite2 sqlite3 tds
 .    if ${_QT_VERSION:M4*}
@@ -533,7 +566,7 @@ sql-${db}_PORT?=	databases/${_QT_RELNAME}-${db}-plugin
 .    else
 sql-${db}_PORT?=	databases/${_QT_RELNAME}-sqldrivers-${db}
 .    endif
-sql-${db}_PATH?=	${QT_PLUGINDIR}/sqldrivers/libqsql${db:C/^sql//}.so
+sql-${db}_PATH?=	${LOCALBASE}/${QT_PLUGINDIR_REL}/sqldrivers/libqsql${db:C/^sql//}.so
 .  endfor
 
 svg_PORT=			graphics/${_QT_RELNAME}-svg
@@ -543,24 +576,33 @@ testlib_PORT=		devel/${_QT_RELNAME}-testlib
 testlib_LIB=		libQt${_QT_LIBVER}Test.so
 
 uic_PORT=			devel/${_QT_RELNAME}-uic
-uic_PATH=			${UIC}
+uic_PATH=			${LOCALBASE}/${QT_BINDIR_REL}/uic
 
 uic3_PORT=			devel/${_QT_RELNAME}-uic3
-uic3_PATH=			${QT_BINDIR}/uic3
+uic3_PATH=			${LOCALBASE}/${QT_BINDIR_REL}/uic3
 
 uiplugin_PORT=		x11-toolkits/${_QT_RELNAME}-uiplugin
-uiplugin_PATH=		${QT_INCDIR}/QtUiPlugin/QtUiPlugin
+uiplugin_PATH=		${LOCALBASE}/${QT_INCDIR_REL}/QtUiPlugin/QtUiPlugin
 
 uitools_PORT=		devel/${_QT_RELNAME}-uitools
-uitools_PATH=		${QT_LIBDIR}/libQt${_QT_LIBVER}UiTools.a
+uitools_PATH=		${LOCALBASE}/${QT_LIBDIR_REL}/libQt${_QT_LIBVER}UiTools.a
+
+virtualkeyboard_PORT=	x11-toolkits/${_QT_RELNAME}-virtualkeyboard
+virtualkeyboard_PATH=	${LOCALBASE}/${QT_PLUGINDIR_REL}/platforminputcontexts/libqtvirtualkeyboardplugin.so
 
 webchannel_PORT=	www/${_QT_RELNAME}-webchannel
 webchannel_LIB=	libQt${_QT_LIBVER}WebChannel.so
 
+webengine_PORT=		www/${_QT_RELNAME}-webengine
+webengine_LIB=	libQt${_QT_LIBVER}WebEngine.so
+
 websockets_PORT=	www/${_QT_RELNAME}-websockets
 websockets_LIB=	libQt${_QT_LIBVER}WebSockets.so
 
-webkit_PORT=		www/webkit-${_QT_RELNAME}
+websockets-qml_PORT=	www/${_QT_RELNAME}-websockets-qml
+websockets-qml_PATH=	${LOCALBASE}/${QT_QMLDIR_REL}/QtWebSockets/qmldir
+
+webkit_PORT=		www/${_QT_RELNAME}-webkit
 webkit_LIB=	libQt${_QT_LIBVER}WebKit.so
 
 widgets_PORT=		x11-toolkits/${_QT_RELNAME}-widgets
@@ -576,7 +618,7 @@ xmlpatterns_PORT=	textproc/${_QT_RELNAME}-xmlpatterns
 xmlpatterns_LIB=	libQt${_QT_LIBVER}XmlPatterns.so
 
 xmlpatterns-tool_PORT=	textproc/${_QT_RELNAME}-xmlpatterns-tool
-xmlpatterns-tool_PATH=	${QT_BINDIR}/xmlpatterns
+xmlpatterns-tool_PATH=	${LOCALBASE}/${QT_BINDIR_REL}/xmlpatterns
 
 _USE_QT=		${USE_QT${_QT_VERSION:R:R}}
 _USE_QT_ALL+=		${_USE_QT${_QT_VERSION:R:R}_ONLY}
@@ -639,6 +681,10 @@ _QT_TOOLS+=		qdbuscpp2xml qdbusxml2cpp
 _QT_TOOLS+=		${UIC}
 .  endif
 
+# The list of QtBase components that need to be linked into WRKSRC/lib for
+# other QtBase ports. See below.
+_QT5_BASE=			core dbus gui network sql widgets
+
 pre-configure: qtbase-pre-configure
 qtbase-pre-configure:
 .  for tool in ${_QT_TOOLS}
@@ -647,6 +693,28 @@ qtbase-pre-configure:
 		${TRUE}
 .  endfor
 
+# The following is a fix for the inplace upgrade problem we faced (see
+# QTBUG-40825 and ports bugs 194088, 195105 and 198720) previously,
+# which previously was adressed by making sure, that ${LOCALBASE}/lib, which
+# would often gets added by pkgconf for the dependencies, was passed after
+# ${WRKSRC}/lib.
+# * We fix the inplace upgrade problem by moving the Qt5 libraries into
+#   ${LOCALBASE}/lib/qt5. Therefore a -L${LOCALBASE}/lib does no harm anymore.
+# * However, this means, that the ports belonging to the split up QtBase package
+#   now no longer can find their depending QtBase libraries. We fix this by
+#   linking these into ${CONFIGURE_WRKSRC}/lib if the given QtBase port depends
+#   on them.
+.  if ${QT_DIST:Mbase}
+.    for basedep in ${_QT5_BASE}
+.      if ${USE_QT5:M${basedep}}
+	${LN} -sf ${QT_LIBDIR}/${${basedep}_LIB} ${CONFIGURE_WRKSRC}/lib
+.      endif
+.    endfor
+.  endif
+
+#
+# **** THIS PART IS OBSOLETE FOR THE NEXT QT UPGRADE ****
+#
 # Add ${LOCALBASE}/lib to DEFAULT_LIBDIRS, which we use to filter out
 # certain paths from pkg-config calls (see the explanation in
 # devel/qt5/files/patch-configure) as well as for setting
@@ -674,6 +742,9 @@ qt5-pre-configure:
 # value through to the configure script in qtbase).
 	${MKDIR} ${CONFIGURE_WRKSRC}
 	${ECHO_CMD} 'CMAKE_MODULE_TESTS = -' > ${CONFIGURE_WRKSRC}/.qmake.cache
+#
+# **** THIS PART IS OBSOLETE FOR THE NEXT QT UPGRADE ****
+#
 # We piggyback on QMAKE_LIBDIR_FLAGS to make sure -L${WRKSRC}/lib is passed to
 # the linker before -L/usr/local/lib. By default, the opposite happens, which
 # is a problem when a Qt port is being upgraded, since an existing library

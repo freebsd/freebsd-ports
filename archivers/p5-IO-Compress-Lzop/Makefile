@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	IO-Compress-Lzop
-PORTVERSION=	2.070
+PORTVERSION=	2.074
 CATEGORIES=	archivers perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Write lzop files / buffers
 
-LICENSE=	ART10 GPLv1
+LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Compress-LZO>=0:archivers/p5-Compress-LZO \

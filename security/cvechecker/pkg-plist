@@ -1,0 +1,21 @@
+bin/cvechecker
+bin/cvegenversdat
+bin/cvereport
+bin/cverules
+bin/pullcves
+@sample %%ETCDIR%%.conf.sample
+man/man1/cvechecker.1.gz
+man/man1/cvegenversdat.1.gz
+man/man1/cvereport.1.gz
+man/man1/cverules.1.gz
+man/man1/pullcves.1.gz
+%%DATADIR%%/csv2xml.awk
+%%DATADIR%%/cvereport.xsl
+%%DATADIR%%/mysql_cvechecker.sql
+%%DATADIR%%/nvdcve2simple.xsl
+%%DATADIR%%/report.css
+%%PORTDOCS%%%%DOCSDIR%%/acknowledgements.xml
+%%PORTDOCS%%%%DOCSDIR%%/userguide.xml
+@dir /var/db/cvechecker/cache
+@dir /var/db/cvechecker/local
+@dir /var/db/cvechecker

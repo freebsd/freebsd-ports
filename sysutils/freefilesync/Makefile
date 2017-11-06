@@ -3,10 +3,10 @@
 
 PORTNAME=	freefilesync
 PORTVERSION=	8.3
-PORTREVISION=	3
+PORTREVISION=	8
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.freefilesync.org/download/ \
-		http://www.freefilesync.org/archive/
+MASTER_SITES=	https://www.freefilesync.org/download/ \
+		https://www.freefilesync.org/archive/
 DISTNAME=	FreeFileSync_${PORTVERSION}_Source
 
 MAINTAINER=	ports@FreeBSD.org
@@ -35,6 +35,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|<sys/vfs.h>|<sys/mount.h>|' \
 		${WRKDIR}/zen/file_access.cpp
 	@${REINPLACE_CMD} -e 's|WEXITSTATUS||' ${WRKDIR}/zen/shell_execute.h
+	@${REINPLACE_CMD} -e 's| noexcept;|;|' ${WRKDIR}/zen/scope_guard.h
 	@${REINPLACE_CMD} -e 's|CLOCK_MONOTONIC_RAW|CLOCK_MONOTONIC|' \
 		${WRKDIR}/zen/tick_count.h
 

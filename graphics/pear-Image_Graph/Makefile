@@ -5,7 +5,7 @@ PORTNAME=	Image_Graph
 PORTVERSION=	0.8.0
 CATEGORIES=	graphics www pear
 
-MAINTAINER=	joneum@bsdproject.de
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	OO PEAR graph rendering package
 
 RUN_DEPENDS=	${PEARDIR}/Log.php:sysutils/pear-Log \

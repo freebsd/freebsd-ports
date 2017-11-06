@@ -3,14 +3,19 @@
 
 PORTNAME=	nrpe
 DISTVERSION=	2.15
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/nagios/${PORTNAME}-2.x/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	zeising@FreeBSD.org
 COMMENT?=	Nagios Remote Plugin Executor
 
-CONFLICTS=	nrpe-ssl-2.*
+LICENSE=	GPLv2
+
+CONFLICTS?=	nrpe-ssl nrpe3
+
+DEPRECATED=	EoL, please use nrpe3 instead
+EXPIRATION_DATE=	2018-01-01
 
 USES=		perl5
 USE_PERL5=	build
@@ -27,7 +32,7 @@ ARGS_DESC=	Enable command argument processing
 NAGPLUGINS_DESC=Use net-mgmt/nagios-plugins
 MONPLUGINS_DESC=Use net-mgmt/monitoring-plugins
 
-SSL_USE=		OPENSSL=yes
+SSL_USES=		ssl
 SSL_CONFIGURE_ON=	--enable-ssl --with-ssl=${OPENSSLDIR} \
 			--with-ssl-inc=${OPENSSLINC} \
 			--with-ssl-lib=${OPENSSLLIB}

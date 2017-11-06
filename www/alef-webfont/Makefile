@@ -9,7 +9,7 @@ MASTER_SITES=	http://alef.hagilda.com/
 PKGNAMESUFFIX=	-webfont
 DISTNAME=	Alef
 
-MAINTAINER=	cpm@fbsd.es
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Free multi-lingual font designed for screens
 
 LICENSE=	OFL11

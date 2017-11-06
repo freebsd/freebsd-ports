@@ -4,4 +4,7 @@ install the 3D modeler wings3D (port graphics/wings).
 
 Pcbnew uses the exported files in wrml (.wrl) format from
 wings3d (not the native .wings format).
+
+Libraries are now available in a separate package: please
+see cad/kicad-library .
 ..........................................................

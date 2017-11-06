@@ -1,8 +1,8 @@
-# Created by: Torsten Zuehlsdorff <ports@toco-domains.de
+# Created by: Torsten Zuehlsdorff <tz@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	gitlab-workhorse
-PORTVERSION=	0.7.11
+PORTVERSION=	2.3.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 MASTER_SITES=	https://gitlab.com/gitlab-org/${PORTNAME}/repository/archive.tar.gz?ref=${DISTVERSIONPREFIX}${PORTVERSION}&dummy=/

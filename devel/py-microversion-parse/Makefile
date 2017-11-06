@@ -6,14 +6,14 @@ PORTVERSION=	0.1.4
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=       microversion_parse-${DISTVERSION}
+DISTNAME=	microversion_parse-${DISTVERSION}
 
 MAINTAINER=	alexander.nusov@nfvexpress.com
 COMMENT=	Openstack microversion header parser
 
 LICENSE=	APACHE20
 
-BUILD_DEPENDS=  ${PYTHON_PKGNAMEPREFIX}pbr>=1.6:devel/py-pbr
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pbr>=1.6:devel/py-pbr
 
 NO_ARCH=	yes
 

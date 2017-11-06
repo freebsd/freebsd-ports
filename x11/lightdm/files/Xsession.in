@@ -15,7 +15,7 @@ for file in "%%LOCALBASE%%/etc/profile" "$HOME/.profile" "%%LOCALBASE%%/etc/xpro
 done
 
 # Load resources
-for file in "%%LOCALBASE%%/etc/X11/Xresources" "$HOME/.Xresources"; do
+for file in "%%LOCALBASE%%/etc/X11/Xresources" "%%LOCALBASE%%/etc/X11/.Xresources" "%%LOCALBASE%%/etc/X11/xinit/Xresources" "%%LOCALBASE%%/etc/X11/xinit/.Xresources" "$HOME/.Xresources"; do
 	if [ -f "$file" ]; then
 		echo "Loading resource: $file"
 		xrdb -merge "$file"
@@ -23,7 +23,7 @@ for file in "%%LOCALBASE%%/etc/X11/Xresources" "$HOME/.Xresources"; do
 done
 
 # Load keymaps
-for file in "%%LOCALBASE%%/etc/X11/Xkbmap" "$HOME/.Xkbmap"; do
+for file in "%%LOCALBASE%%/etc/X11/Xkbmap" "%%LOCALBASE%%/etc/X11/.Xkbmap" "%%LOCALBASE%%/etc/X11/xinit/Xkbmap" "%%LOCALBASE%%/etc/X11/xinit/.Xkbmap" "$HOME/.Xkbmap"; do
 	if [ -f "$file" ]; then
 		echo "Loading keymap: $file"
 		setxkbmap `cat "$file"`
@@ -33,7 +33,7 @@ done
 
 # Load xmodmap if not using XKB
 if [ -z "$XKB_IN_USE" ]; then
-	for file in "%%LOCALBASE%%/etc/X11/Xmodmap" "$HOME/.Xmodmap"; do
+	for file in "%%LOCALBASE%%/etc/X11/Xmodmap" "%%LOCALBASE%%/etc/X11/.Xmodmap" "%%LOCALBASE%%/etc/X11/xinit/Xmodmap" "%%LOCALBASE%%/etc/X11/xinit/.Xmodmap" "$HOME/.Xmodmap"; do
 		if [ -f "$file" ]; then
 			echo "Loading modmap: $file"
 			xmodmap "$file"

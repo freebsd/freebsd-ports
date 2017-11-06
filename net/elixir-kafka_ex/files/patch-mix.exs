@@ -1,10 +1,10 @@
---- mix.exs.orig	2016-10-26 03:54:02 UTC
+--- mix.exs.orig	2017-01-23 00:24:40 UTC
 +++ mix.exs
-@@ -7,7 +7,6 @@ defmodule KafkaEx.Mixfile do
-      elixir: "~> 1.0",
-      description: description,
-      package: package,
--     deps: deps,
-      docs: [main: "KafkaEx"]]
-   end
- 
+@@ -17,7 +17,6 @@ defmodule KafkaEx.Mixfile do
+       preferred_cli_env: [coveralls: :test],
+       description: description(),
+       package: package(),
+-      deps: deps(),
+       docs: [
+         main: "README",
+         extras: ["README.md"]

@@ -3,6 +3,7 @@
 
 PORTNAME=	rvm
 PORTVERSION=	1.11
+PORTREVISION=	2
 CATEGORIES=	archivers
 MASTER_SITES=	SF
 PKGNAMESUFFIX=	an
@@ -18,7 +19,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-USES=		compiler:c++11-lang gmake
+USES=		compiler:c++11-lang
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-default-config-file=${PREFIX}/etc/rvm.conf \
 		--enable-assume-stl-memory-exception

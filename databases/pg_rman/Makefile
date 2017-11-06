@@ -1,18 +1,23 @@
 # $FreeBSD$
 
 PORTNAME=	pg_rman
-PORTVERSION=	1.2.3
-PORTREVISION=	2
+PORTVERSION=	1.3.3
 CATEGORIES=	databases
-MASTER_SITES=	http://pg-rman.googlecode.com/files/
 
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Online backup and restore tool for PostgreSQL
 
-BROKEN=		Unfetchable (google code has gone away)
+LICENSE=	BSD3CLAUSE
 
-USES=		gmake pgsql:9.2
+BROKEN=		checksum and size mismatch (using a branch and not a tag or commit hash)
+
+USES=		gettext-runtime gmake pgsql
+USE_GITHUB=	yes
+PG_TAG_VERSION=	${PGSQL_DEFAULT:S/./_/}
+GH_ACCOUNT=	ossc-db
+GH_TAGNAME=	REL${PG_TAG_VERSION}_STABLE
 WANT_PGSQL=	client server
+WANT_PGSQL_VER=	91+
 MAKE_ARGS=	USE_PGXS=1
 PLIST_FILES=	bin/pg_rman
 

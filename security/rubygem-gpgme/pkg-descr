@@ -1,0 +1,6 @@
+Ruby-GPGME is a Ruby language binding of GPGME (GnuPG Made Easy). GnuPG Made
+Easy (GPGME) is a library designed to make access to GnuPG easier for
+applications. It provides a High-Level Crypto API for encryption, decryption,
+signing, signature verification and key management.
+
+WWW: https://github.com/ueno/ruby-gpgme

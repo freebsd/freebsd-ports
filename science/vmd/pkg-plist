@@ -23,6 +23,7 @@ lib/vmd/plugins/%%VMD_ARCH%%/molfile/crdplugin.so
 lib/vmd/plugins/%%VMD_ARCH%%/molfile/cubeplugin.so
 lib/vmd/plugins/%%VMD_ARCH%%/molfile/dcdplugin.so
 lib/vmd/plugins/%%VMD_ARCH%%/molfile/dlpolyplugin.so
+lib/vmd/plugins/%%VMD_ARCH%%/molfile/dmsplugin.so
 lib/vmd/plugins/%%VMD_ARCH%%/molfile/dsn6plugin.so
 lib/vmd/plugins/%%VMD_ARCH%%/molfile/dtrplugin.so
 lib/vmd/plugins/%%VMD_ARCH%%/molfile/dxplugin.so
@@ -33,6 +34,7 @@ lib/vmd/plugins/%%VMD_ARCH%%/molfile/graspplugin.so
 lib/vmd/plugins/%%VMD_ARCH%%/molfile/grdplugin.so
 lib/vmd/plugins/%%VMD_ARCH%%/molfile/gridplugin.so
 lib/vmd/plugins/%%VMD_ARCH%%/molfile/gromacsplugin.so
+lib/vmd/plugins/%%VMD_ARCH%%/molfile/hoomdplugin.so
 lib/vmd/plugins/%%VMD_ARCH%%/molfile/jsplugin.so
 lib/vmd/plugins/%%VMD_ARCH%%/molfile/lammpsplugin.so
 lib/vmd/plugins/%%VMD_ARCH%%/molfile/libmolfile_plugin.a
@@ -45,6 +47,7 @@ lib/vmd/plugins/%%VMD_ARCH%%/molfile/moldenplugin.so
 lib/vmd/plugins/%%VMD_ARCH%%/molfile/molemeshplugin.so
 lib/vmd/plugins/%%VMD_ARCH%%/molfile/msmsplugin.so
 lib/vmd/plugins/%%VMD_ARCH%%/molfile/namdbinplugin.so
+lib/vmd/plugins/%%VMD_ARCH%%/molfile/netcdfplugin.so
 lib/vmd/plugins/%%VMD_ARCH%%/molfile/offplugin.so
 lib/vmd/plugins/%%VMD_ARCH%%/molfile/parm7plugin.so
 lib/vmd/plugins/%%VMD_ARCH%%/molfile/parmplugin.so

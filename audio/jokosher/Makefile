@@ -2,7 +2,7 @@
 
 PORTNAME=	jokosher
 PORTVERSION=	0.11.5
-PORTREVISION=	4
+PORTREVISION=	6
 CATEGORIES=	audio
 MASTER_SITES=	http://launchpadlibrarian.net/43860543/
 
@@ -10,57 +10,37 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multi-track non-linear audio editing
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}xdg>0:devel/py-xdg
 
-USES=	desktop-file-utils python:2 shared-mime-info
+USES=		desktop-file-utils python:2 shared-mime-info
 USE_PYTHON=	distutils
-WANT_GNOME=	yes
 USE_GSTREAMER=	gnonlin good python
 INSTALLS_ICONS=	yes
+NO_ARCH=	yes
 
-OPTIONS_DEFINE=	DBUS FLAC GCONF JACK LADSPA LAME MP3 PIDGIN PROFILES PULSE VORBIS
+OPTIONS_DEFINE=	DBUS FLAC GCONF GNOME JACK LADSPA LAME MP3 PIDGIN PULSEAUDIO VORBIS
 OPTIONS_DEFAULT=	DBUS FLAC GCONF LADSPA VORBIS
+
+DBUS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>0:devel/py-dbus
+FLAC_USE=	GSTREAMER=flac
+GCONF_USE=	GSTREAMER=gconf
+JACK_USE=	GSTREAMER=jack
+LADSPA_USE=	GSTREAMER=ladspa
+LAME_USE=	GSTREAMER=lame
 MP3_DESC=	MP3 import
+MP3_USE=	GSTREAMER=mp3
+GNOME_USE=	GNOME=pygnome2
 PIDGIN_DESC=	Pidgin status extension
-PROFILES_DESC=	Gnome Audio Profiels extension
-PULSE_DESC=	${PULSEAUDIO_DESC}
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MDBUS}
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/dbus/__init__.py:devel/py-dbus
-.endif
-
-.if ${PORT_OPTIONS:MGNOME} || ${PORT_OPTIONS:MPROFILES} \
-	|| exists(${LOCALBASE}/libdata/pkgconfig/gnome-python-2.0.pc)
-USE_GNOME+=	pygnome2
-.endif
-
-.if ${PORT_OPTIONS:MPIDGIN}
-.if empty(PORT_OPTIONS:MDBUS)
-IGNORE=		requires DBUS support
-. endif
-RUN_DEPENDS+=	pidgin:net-im/pidgin
-.endif
-
-.if ${PORT_OPTIONS:MOMF} || exists(${LOCALBASE}/bin/scrollkeeper-update)
-RUN_DEPENDS+=	scrollkeeper-update:textproc/scrollkeeper
-INSTALLS_OMF=	yes
-PLIST_SUB+=	OMF=""
-.else
-PLIST_SUB+=	OMF="@comment "
-.endif
-
-.for plugin in flac gconf jack ladspa lame mp3 pulse vorbis
-. if ${PORT_OPTIONS:M${plugin:tu}}
-USE_GSTREAMER+=${plugin}
-. endif
-.endfor
+PIDGIN_IMPLIES=	DBUS
+PIDGIN_RUN_DEPENDS=	pidgin:net-im/pidgin
+PULSEAUDIO_USE=	GSTREAMER=pulse
+VORBIS_USE=	GSTREAMER=vorbis
 
 post-patch:	.SILENT
 	${REINPLACE_CMD} -e 's|/usr/share|${PREFIX}/share|g' -e \
-		'\|scrollkeeper-preinstall|s|HELPURI\[fileNum]|"file://" + &|' -e \
+		's|scrollkeeper-config||' -e \
 		's|"update-desktop-database"|&, "${PREFIX}/share/applications"|' \
 		${WRKSRC}/bin/${PORTNAME} ${WRKSRC}/${PYSETUP}
 

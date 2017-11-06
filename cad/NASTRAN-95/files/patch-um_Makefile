@@ -1,4 +1,4 @@
---- um/Makefile.orig	2016-08-10 15:22:55 UTC
+--- um/Makefile.orig	2016-09-08 21:25:12 UTC
 +++ um/Makefile
 @@ -1,6 +1,6 @@
  # Declaration of variables

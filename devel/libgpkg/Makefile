@@ -14,6 +14,8 @@ COMMENT=	SQLite 3 extension of minimal OGC GeoPackage implementation
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_powerpc64=	fails to link: cc: Internal error: Segmentation fault (program ld)
+
 OPTIONS_DEFINE=	GEOS
 OPTIONS_DEFAULT=GEOS
 

@@ -5,10 +5,10 @@
  	AFTERBASE_C=
      if test "x$have_x" != "xyes" -a "x$have_gif" = "xyes"; then
 -    	AFTERIMAGE_LIBS="$AFTERIMAGE_LIBS -lAfterBase"
-+    	AFTERIMAGE_LIBS="$AFTERIMAGE_LIBS -lAfterBase -L%%LOCALBASE%%/lib -lexecinfo"
++    	AFTERIMAGE_LIBS="$AFTERIMAGE_LIBS -lAfterBase -lexecinfo"
      else
 -    	AFTERIMAGE_LIBS="-lAfterBase $AFTERIMAGE_LIBS"
-+    	AFTERIMAGE_LIBS="-lAfterBase -L%%LOCALBASE%%/lib -lexecinfo $AFTERIMAGE_LIBS"
++    	AFTERIMAGE_LIBS="-lAfterBase -lexecinfo $AFTERIMAGE_LIBS"
      fi
      if test -r "../libAfterBase/astypes.h"; then
      	AFTERIMAGE_APPS_LIBS="-L../ -L../../libAfterBase -lAfterImage $AFTERIMAGE_LIBS"

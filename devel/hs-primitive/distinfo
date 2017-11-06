@@ -1,2 +1,3 @@
-SHA256 (cabal/primitive-0.6.tar.gz) = 34a5f39213c68369e7edc2a3ea175d3f4edbf89e9f0777784710eff6f2d69722
-SIZE (cabal/primitive-0.6.tar.gz) = 12677
+TIMESTAMP = 1499444407
+SHA256 (cabal/primitive-0.6.2.0.tar.gz) = b8e8d70213e22b3fab0e0d11525c02627489618988fdc636052ca0adce282ae1
+SIZE (cabal/primitive-0.6.2.0.tar.gz) = 23954

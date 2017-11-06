@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	iohyve
-PORTVERSION=	0.7.7
-PORTREVISION=	1
+PORTVERSION=	0.7.9
 CATEGORIES=	sysutils
 
 MAINTAINER=	lme@FreeBSD.org
@@ -14,7 +13,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USE_GITHUB=	yes
 GH_ACCOUNT=	pr1ntf
 
-NO_BUILD=	yes
 NO_ARCH=	yes
 
 do-patch:

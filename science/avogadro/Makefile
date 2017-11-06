@@ -3,11 +3,11 @@
 
 PORTNAME=	avogadro
 PORTVERSION=	1.1.1
-PORTREVISION=	5
+PORTREVISION=	9
 CATEGORIES=	science
 MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Advanced molecular editor and viewer
 
 LICENSE=	GPLv2+

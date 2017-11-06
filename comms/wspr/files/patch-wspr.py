@@ -1,4 +1,4 @@
---- wspr.py.orig	2015-07-27 16:22:02 UTC
+--- wspr.py.orig	2017-09-27 19:55:15 UTC
 +++ wspr.py
 @@ -50,7 +50,7 @@ from WsprMod import g
  import Pmw

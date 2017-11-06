@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	dnscrypt-proxy
-PORTVERSION=	1.9.1
-PORTREVISION=	1
+PORTVERSION=	1.9.5
+PORTREVISION=	2
 CATEGORIES=	dns
 MASTER_SITES=	https://download.dnscrypt.org/dnscrypt-proxy/ \
 		http://download.dnscrypt.org/dnscrypt-proxy/ \
@@ -17,10 +17,13 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libsodium.so:security/libsodium
 
+BROKEN_powerpc64=	fails to compile: fpst.c: error: redefinition of typedef 'FPST'
+
 USERS=		_dnscrypt-proxy
+GROUPS=		_dnscrypt-proxy
 
 GNU_CONFIGURE=	yes
-USES=		execinfo gmake
+USES=		gmake
 
 INSTALL_TARGET=	install-strip
 
@@ -54,5 +57,6 @@ post-install:
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_MAN} ${WRKSRC}/man/dnscrypt-proxy.8 ${STAGEDIR}${MAN8PREFIX}/man/man8
 	${INSTALL_MAN} ${WRKSRC}/man/hostip.8 ${STAGEDIR}${MAN8PREFIX}/man/man8
+	${MV} ${STAGEDIR}${PREFIX}/etc/dnscrypt-proxy.conf ${STAGEDIR}${PREFIX}/etc/dnscrypt-proxy.conf.sample
 
 .include <bsd.port.mk>

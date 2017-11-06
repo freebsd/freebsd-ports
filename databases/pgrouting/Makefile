@@ -2,22 +2,22 @@
 # $FreeBSD$
 
 PORTNAME=	pgrouting
-PORTVERSION=	2.3.1
+PORTVERSION=	2.5.1
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
 CATEGORIES=	databases geography
 
 MAINTAINER=	lbartoletti@tuxfamily.org
 COMMENT=	Extension to PostGIS to provide geospatial routing functionality
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs\
 		libCGAL.so:math/cgal \
 		libgmp.so:math/gmp
-RUN_DEPENDS=	${LOCALBASE}/share/postgresql/contrib/postgis-2.1/postgis.sql:databases/postgis21
+RUN_DEPENDS=	${LOCALBASE}/share/postgresql/contrib/postgis-2.2/postgis.sql:databases/postgis22
 
-USES=		compiler:c++11-lib cmake localbase pgsql:9.1+ pkgconfig
+USES=		compiler:c++11-lib cmake:outsource localbase pgsql:9.1+ pkgconfig
 USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	pgRouting

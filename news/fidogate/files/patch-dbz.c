@@ -1,6 +1,6 @@
---- src/toss/dbz.c.orig	Wed Oct 18 23:53:57 2000
-+++ src/toss/dbz.c	Mon Jul 22 19:52:59 2002
-@@ -300,8 +300,10 @@
+--- src/toss/dbz.c.orig	2000-10-18 21:53:57 UTC
++++ src/toss/dbz.c
+@@ -300,8 +300,10 @@ static int debug;			/* controlled by dbz
  #endif
  
  /* externals used */

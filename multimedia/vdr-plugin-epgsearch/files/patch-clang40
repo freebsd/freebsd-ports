@@ -1,0 +1,22 @@
+--- createcats.c.orig	2012-03-22 18:00:19 UTC
++++ createcats.c
+@@ -64,7 +64,7 @@ class cReadLine {
+ 
+ char *cReadLine::Read(FILE *f)
+ {
+-    if (fgets(buffer, sizeof(buffer), f) > 0) {
++    if (fgets(buffer, sizeof(buffer), f)) {
+ 	int l = strlen(buffer) - 1;
+ 	if (l >= 0 && buffer[l] == '\n')
+ 	    buffer[l] = 0;
+--- epgsearchext.c.orig	2012-03-22 18:00:19 UTC
++++ epgsearchext.c
+@@ -1497,7 +1503,7 @@ bool cSearchExts::Load(const char *FileN
+          int line = 0;
+          char buffer[MAXPARSEBUFFER];
+          result = true;
+-         while (fgets(buffer, sizeof(buffer), f) > 0) {
++         while (fgets(buffer, sizeof(buffer), f)) {
+             line++;
+             char *p = strchr(buffer, '#');
+             if (p == buffer) *p = 0;

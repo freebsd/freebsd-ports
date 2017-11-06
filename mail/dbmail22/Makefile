@@ -38,11 +38,10 @@ LDAP_USE=		OPENLDAP=yes
 INSTALL_TARGET=	install-strip
 
 GNU_CONFIGURE=	yes
-USES=		gmake libtool pkgconfig
+USES=		gmake libtool pkgconfig ssl
 USE_LDCONFIG=	${PREFIX}/lib/dbmail
 USE_RC_SUBR=	dbmail-pop3d dbmail-lmtpd dbmail-imapd dbmail-timsieved
 USE_GNOME=	glib20
-USE_OPENSSL=	yes
 
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

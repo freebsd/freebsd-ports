@@ -1,4 +1,4 @@
-bin/xlogical
+@(,games,2555) bin/xlogical
 %%DATADIR%%/sound/block_ball.wav
 %%DATADIR%%/sound/teleport.wav
 %%DATADIR%%/sound/spinner_click.wav
@@ -153,9 +153,9 @@ bin/xlogical
 %%DATADIR%%/xlogical.properties
 %%DATADIR%%/xlogical.levels
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
-%%PORTDOCS%%%%DOCSDIR%%/COPYING
-%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/TODO
-var/xlogical/xlogical.scores
+@sample(,games,664) /var/games/xlogical/xlogical.scores.sample
+@dir(,games,775) /var/games/xlogical

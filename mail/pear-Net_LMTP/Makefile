@@ -5,7 +5,7 @@ PORTNAME=	Net_LMTP
 PORTVERSION=	1.0.2
 CATEGORIES=	mail www pear
 
-MAINTAINER=	joneum@bsdproject.de
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	PEAR implementation of the RFC2033 LMTP protocol
 
 LICENSE=	PHP301

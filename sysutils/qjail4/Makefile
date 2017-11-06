@@ -5,7 +5,7 @@ PORTNAME=	qjail
 PORTVERSION=	4.9
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/${PORTNAME}
-PKGNAMESUFFIX=  4
+PKGNAMESUFFIX=	4
 
 MAINTAINER=	qjail1@a1poweruser.com
 COMMENT=	Utility to quickly deploy and manage jails
@@ -25,7 +25,6 @@ USES=		tar:bzip2
 NO_BUILD=	yes
 NO_ARCH=	yes
 
-IGNORE_FreeBSD_9=	Only for FreeBSD 10.x
 IGNORE_FreeBSD_11=	Only for FreeBSD 10.x
 IGNORE_FreeBSD_12=	Only for FreeBSD 10.x
 

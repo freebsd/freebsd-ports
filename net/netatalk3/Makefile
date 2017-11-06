@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	netatalk
-PORTVERSION=	3.1.10
-PORTREVISION=	2
+PORTVERSION=	3.1.11
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	net
 MASTER_SITES=	SF
@@ -15,9 +15,9 @@ COMMENT=	File server for Mac OS X
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	libgcrypt.so:security/libgcrypt \
-		libevent.so:devel/libevent2
+		libevent.so:devel/libevent
 
-USES=		bdb:5+ gettext gmake iconv libtool perl5 pkgconfig ssl tar:bzip2
+USES=		bdb:5+ gettext gmake iconv libtool perl5 pkgconfig shebangfix ssl tar:bzip2
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	netatalk
@@ -73,6 +73,8 @@ ACL_LIB_DEPENDS=	libsunacl.so:sysutils/libsunacl
 ACL_CONFIGURE_WITH=acls
 LIBWRAP_CONFIGURE_ENABLE=tcp-wrappers
 
+SHEBANG_GLOB=	afpstats
+
 CONFLICTS=	bigloo-2.* cap-6.0.* tct-1.* netatalk-[12]* yudit-[0-9]*
 
 .include <bsd.port.pre.mk>
@@ -88,9 +90,9 @@ post-patch:
 		s|%%LOCALBASE%%|${LOCALBASE}|g' \
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|\.dist|\.sample|g' \
-	    	${WRKSRC}/config/Makefile.in
-	@${REINPLACE_CMD} -e 's|%%PYTHONCMD%%|${PYTHONCMD}|' \
-	    	${WRKSRC}/contrib/shell_utils/afpstats
+		${WRKSRC}/config/Makefile.in
+#	@${REINPLACE_CMD} -e 's|%%PYTHONCMD%%|${PYTHONCMD}|' \
+#		${WRKSRC}/contrib/shell_utils/afpstats
 
 post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/contrib/macusers/macusers \

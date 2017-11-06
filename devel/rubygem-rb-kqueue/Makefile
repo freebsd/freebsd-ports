@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rb-kqueue
-PORTVERSION=	0.2.4
+PORTVERSION=	0.2.5
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 

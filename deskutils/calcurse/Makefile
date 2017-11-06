@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	calcurse
-PORTVERSION=	4.0.0
+PORTVERSION=	4.2.2
 CATEGORIES=	deskutils
 MASTER_SITES=	http://calcurse.org/files/
 
@@ -14,7 +14,9 @@ LICENSE=	BSD2CLAUSE
 OPTIONS_DEFINE=	DOCS NLS
 OPTIONS_SUB=	yes
 
-USES=		gmake ncurses
+USES=		gmake ncurses shebangfix
+SHEBANG_LANG=	python3
+SHEBANG_FILES=	contrib/caldav/calcurse-caldav.py
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-asciidoc
 

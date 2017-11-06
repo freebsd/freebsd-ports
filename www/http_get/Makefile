@@ -18,7 +18,7 @@ PLIST_FILES=	bin/http_get \
 		man/man1/http_get.1.gz
 
 .ifndef NO_OPENSSL
-USE_OPENSSL=	yes
+USES+=	ssl
 .endif
 
 .include <bsd.port.mk>

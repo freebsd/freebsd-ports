@@ -18,9 +18,11 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>=0:databases/py-sqlite3 \
 		${PYTHON_PKGNAMEPREFIX}pillow>=0:graphics/py-pillow \
 		${PYTHON_PKGNAMEPREFIX}reportlab1>=1.19:print/py-reportlab1
 
+USES=		gmake gettext python:2 shebangfix tar:xz
+SHEBANG_FILES=	griffith
 USE_GNOME=	pygtk2
-USES=		gmake gettext python:2 tar:xz
 NO_BUILD=	yes
+NO_ARCH=	yes
 
 OPTIONS_DEFINE=		CHARDET LXML
 OPTIONS_DEFAULT=	LXML
@@ -30,8 +32,6 @@ CHARDET_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}chardet>=0:textproc/py-chardet
 
 LXML_DESC=		lxml support
 LXML_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>=0:devel/py-lxml
-
-.include <bsd.port.options.mk>
 
 post-patch:
 .for file in Makefile

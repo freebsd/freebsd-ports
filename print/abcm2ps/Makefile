@@ -2,17 +2,22 @@
 # $FreeBSD$
 
 PORTNAME=	abcm2ps
-PORTVERSION=	8.13.1
+PORTVERSION=	8.13.7
 CATEGORIES=	print audio
 MASTER_SITES=	http://moinejf.free.fr/
 
 MAINTAINER=	araujo@FreeBSD.org
 COMMENT=	Converts ABC to music sheet in PostScript format
 
-USES=		cpe
+LICENSE=	GPLv2
+
+USES=		cpe gettext-runtime
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}"
 CPE_VENDOR=	moinejf
 GNU_CONFIGURE=	yes
+USE_GNOME=	pango cairo glib20
+LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
+		libfreetype.so:print/freetype2
 ALL_TARGET=	${PORTNAME}
 
 PORTDOCS=	Changes README deco.abc newfeatures.abc sample.abc sample2.abc\

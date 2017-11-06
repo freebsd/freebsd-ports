@@ -1,0 +1,4 @@
+This project provides a Mix compiler that makes it straightforward
+to use makefiles in your Mix projects.
+
+WWW: https://github.com/elixir-lang/elixir_make

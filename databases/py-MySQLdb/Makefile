@@ -2,21 +2,25 @@
 # $FreeBSD$
 
 PORTNAME=	MySQLdb
+PORTVERSION=	1.2.5
 DISTVERSIONPREFIX=	${PORTNAME}-
-DISTVERSION=	1.2.5
 CATEGORIES=	databases python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Access a MySQL database through Python
 
-USES=		python:2 mysql
-USE_PYTHON=	distutils autoplist
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/GPL-2.0
+
+USES=		mysql python:2
+USE_PYTHON=	autoplist distutils
 USE_GITHUB=	yes
 GH_ACCOUNT=	farcepest
 GH_PROJECT=	${PORTNAME}1
 
-CONFLICTS=	py*-MySQLdb-[0-9]* py*-MySQLdb5[0-9]-[0-9]* py*-mysqlclient-[0-9]*
+CONFLICTS=	${PYTHON_PKGNAMEPREFIX}-MySQLdb5[0-9]-[0-9]* \
+		${PYTHON_PKGNAMEPREFIX}-mysqlclient-[0-9]*
 
 PORTDOCS=	*
 DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
@@ -25,15 +29,13 @@ OPTIONS_DEFINE=		DOCS MYSQLCLIENT_R
 OPTIONS_DEFAULT=	MYSQLCLIENT_R
 MYSQLCLIENT_R_DESC=	Use libmysqlclient_r (thread safe)
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MMYSQLCLIENT_R}
-pre-configure:
-	@${REINPLACE_CMD} -E -e "s|(threadsafe.*)True|\1 False|" \
-		${WRKSRC}/site.cfg
-.endif
+pre-configure-MYSQLCLIENT_R-on:
+	${REINPLACE_CMD} -e '/threadsafe = / s|True|False|' ${WRKSRC}/site.cfg
 
 post-install:
+	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/_mysql.so
+
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README.md ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/* ${STAGEDIR}${DOCSDIR}

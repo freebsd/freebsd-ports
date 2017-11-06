@@ -1,9 +1,14 @@
 lib/libbeidpkcs11.so
 lib/libbeidpkcs11.so.0
 lib/libbeidpkcs11.so.0.0.0
+lib/pkcs11/beidpkcs11.so
 libexec/beid-askaccess
 libexec/beid-askpin
 libexec/beid-badpin
 libexec/beid-changepin
 libexec/beid-spr-askpin
 libexec/beid-spr-changepin
+%%NLS%%share/locale/de/LC_MESSAGES/dialogs-beid.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/dialogs-beid.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/dialogs-beid.mo
+share/p11-kit/modules/beid.module

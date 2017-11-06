@@ -10,10 +10,10 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}.tar.gz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple PHP/MySQL script for generating lil? URLs
 
+USES=		php:web
 USE_PHP=	mysql pcre
 NO_BUILD=	yes
 NO_ARCH=	yes
-WANT_PHP_WEB=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 LILURL_DIR?=	www/lilurl

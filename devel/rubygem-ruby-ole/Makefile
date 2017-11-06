@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ruby-ole
-PORTVERSION=	1.2.12
+PORTVERSION=	1.2.12.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 

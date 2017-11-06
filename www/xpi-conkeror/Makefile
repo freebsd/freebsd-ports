@@ -3,6 +3,7 @@
 
 PORTNAME=	conkeror
 PORTVERSION=	20150730
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://distfiles.pirateparty.in/ashish/ \
 		LOCAL/ashish
@@ -10,7 +11,7 @@ MASTER_SITES=	http://distfiles.pirateparty.in/ashish/ \
 MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	Keyboard-oriented, customizable web browser based on Mozilla XULRunner
 
-LICENSE=	GPLv1 GPLv2 MPL
+LICENSE=	GPLv1 GPLv2 MPL11
 LICENSE_COMB=	multi
 
 OPTIONS_SINGLE+=	XULRUNNER

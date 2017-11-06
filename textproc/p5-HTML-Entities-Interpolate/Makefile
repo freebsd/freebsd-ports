@@ -10,14 +10,15 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Call HTML::Entities::encode_entities, via a hash, within a string
 
-LICENSE=	ART10 GPLv1
+LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	p5-HTML-Parser>=3.69:www/p5-HTML-Parser \
 		p5-Tie-Function>=0.02:devel/p5-Tie-Function
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-TEST_DEPENDS=	p5-File-Slurper>=0.009:devel/p5-File-Slurper
+TEST_DEPENDS=	p5-Capture-Tiny>=0.44:devel/p5-Capture-Tiny \
+		p5-File-Slurper>=0.009:devel/p5-File-Slurper
 
 NO_ARCH=	yes
 USE_PERL5=	configure

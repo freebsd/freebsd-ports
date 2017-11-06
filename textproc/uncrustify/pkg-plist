@@ -1,4 +1,5 @@
 bin/uncrustify
+%%ETCDIR%%/MS-calling_conventions.cfg
 %%ETCDIR%%/amxmodx.cfg
 %%ETCDIR%%/ben.cfg
 %%ETCDIR%%/ben2.cfg
@@ -11,6 +12,7 @@ bin/uncrustify
 %%ETCDIR%%/linux-indent.cfg
 %%ETCDIR%%/linux.cfg
 %%ETCDIR%%/mono.cfg
+%%ETCDIR%%/msvc.cfg
 %%ETCDIR%%/objc.cfg
 %%ETCDIR%%/sun.cfg
 %%ETCDIR%%/xsupplicant.cfg

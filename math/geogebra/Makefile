@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	geogebra
-PORTVERSION=	5.0.286.0
+PORTVERSION=	5.0.387.0
 CATEGORIES=	math java
 MASTER_SITES=	http://download.geogebra.org/installers/5.0/ \
 		http://freebsd.uzsolt.hu/src/
@@ -10,7 +10,7 @@ DISTNAME=	GeoGebra-Linux-Portable-${PORTVERSION:S/./-/g}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} geogebra.png
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	udvzsolt@gmail.com
+MAINTAINER=	uzsolt@uzsolt.hu
 COMMENT=	Dynamic software that joins geometry, algebra, and calculus
 
 LICENSE=	GEOGEBRA
@@ -18,7 +18,7 @@ LICENSE_NAME=	GeoGebra Non-Commercial License Agreement
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 LICENSE_PERMS=	dist-mirror no-dist-sell pkg-mirror no-pkg-sell auto-accept
 
-ONLY_FOR_ARCHS=	i386 amd64
+ONLY_FOR_ARCHS=	amd64 i386
 
 SUB_FILES=	geogebra.desktop
 CONFLICTS=	math/geogebra-i18n-[0-9]*
@@ -26,7 +26,6 @@ NO_BUILD=	yes
 NO_ARCH=	yes
 USES=		tar:bzip2 desktop-file-utils shebangfix
 USE_JAVA=	yes
-JAVA_RUN=	jre
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
 SUB_FILES=	geogebra.desktop geogebra.sh

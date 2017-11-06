@@ -1,2 +1,3 @@
-SHA256 (cabal/unix-time-0.3.5.tar.gz) = 7f1c58cd0328bbcb1d050af05670bc6f44dea3ee0894f30c6f87ee4a0d01675e
-SIZE (cabal/unix-time-0.3.5.tar.gz) = 40201
+TIMESTAMP = 1499627862
+SHA256 (cabal/unix-time-0.3.7.tar.gz) = 1131301131dd3e73353a346daa04578ec067073e7674d447051ac1a87262b4e1
+SIZE (cabal/unix-time-0.3.7.tar.gz) = 40549

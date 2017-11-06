@@ -1,0 +1,12 @@
+--- Makefile.orig	2017-09-14 00:15:15 UTC
++++ Makefile
+@@ -1,6 +1,6 @@
+-PREFIX ?= /usr
+-SYSCONFDIR ?= /etc
+-MANDIR ?= $(PREFIX)/share/man
++PREFIX ?= /usr/local
++SYSCONFDIR ?= $(PREFIX)/etc
++MANDIR ?= $(PREFIX)/man
+ 
+ all:
+ 	@echo Run \'make install\' to install Neofetch.

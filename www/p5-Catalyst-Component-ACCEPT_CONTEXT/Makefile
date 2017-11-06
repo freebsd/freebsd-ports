@@ -8,7 +8,7 @@ CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	lth@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Make the Catalyst request context available in Models and Views
 
 BUILD_DEPENDS=	p5-Catalyst-Runtime>0:www/p5-Catalyst-Runtime

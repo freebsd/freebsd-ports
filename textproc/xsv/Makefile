@@ -11,26 +11,25 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XML Schema Validator
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ltxml>0:textproc/py-ltxml
 
 USES=		python
 USE_PYTHON=	distutils autoplist
-USE_LDCONFIG=	yes
+NO_ARCH=	yes
 
 PORTDOCS=	pc-shrinkwrap xsv-status.xml xsv-status.html
 PORTEXAMPLES=	triv.xml triv.xsd tiny.xml tiny.xsd
+
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "amd64" || ${ARCH} == "ia64"
-CFLAGS+=	-fPIC
-.endif
-
-post-install:
-	@${MKDIR} ${STAGEDIR}${DOCSDIR} ${STAGEDIR}${EXAMPLESDIR}
+post-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
+
+post-install-EXAMPLES-on:
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${PORTEXAMPLES:S|^|${WRKSRC}/|} ${STAGEDIR}${EXAMPLESDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	librarian-puppet
-PORTVERSION=	2.2.1
+PORTVERSION=	2.2.3
 PORTREVISION=	1
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
@@ -13,7 +13,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-librarianp>=0.6.3:devel/rubygem-librarianp \
-		rubygem-puppet_forge1>=1.0:sysutils/rubygem-puppet_forge1 \
+		rubygem-puppet_forge>=2.1:sysutils/rubygem-puppet_forge \
 		rubygem-rsync>0:net/rubygem-rsync
 
 NO_ARCH=	yes

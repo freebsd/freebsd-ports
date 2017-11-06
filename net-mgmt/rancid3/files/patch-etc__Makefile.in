@@ -1,6 +1,6 @@
---- etc/Makefile.in.orig	2014-09-05 15:59:57 UTC
+--- etc/Makefile.in.orig	2017-10-25 18:05:21 UTC
 +++ etc/Makefile.in
-@@ -520,30 +520,10 @@
+@@ -535,30 +535,10 @@ uninstall-am: uninstall-pkgdataDATA unin
  
  
  install-data-local: all

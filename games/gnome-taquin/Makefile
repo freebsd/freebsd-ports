@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gnome-taquin
-PORTVERSION=	3.18.2
+PORTVERSION=	3.22.0
 CATEGORIES=	games gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -10,18 +10,21 @@ DIST_SUBDIR=	gnome3
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Move tiles so that they reach their places
 
+LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 BUILD_DEPENDS=	vala:lang/vala \
 		itstool:textproc/itstool
-LIB_DEPENDS=	libcanberra-gtk3.so:audio/libcanberra-gtk3
+LIB_DEPENDS=	libcanberra.so:audio/libcanberra \
+		libcanberra-gtk3.so:audio/libcanberra-gtk3
 
 PORTSCOUT=	limitw:1,even
 
-USES=		gettext gmake gnome pathfix pkgconfig tar:xz
-USE_GNOME=	gtk30 intlhack librsvg2 libxml2:build
+USES=		gettext gmake gnome localbase pathfix pkgconfig tar:xz
+USE_GNOME=	cairo gtk30 intlhack librsvg2 libxml2:build
+USE_XORG=	x11
 INSTALLS_ICONS=	yes
 GNU_CONFIGURE=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 
 GLIB_SCHEMAS=	org.gnome.taquin.gschema.xml
 

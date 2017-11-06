@@ -1,33 +1,52 @@
 # Created by: Eric van Gyzen <vangyzen@stat.duke.edu>
 # $FreeBSD$
 
-PORTNAME=		libRmath
-PORTVERSION=		3.3.2
+PORTNAME=	libRmath
+DISTVERSION=	3.4.2
 PORTREVISION=	1
-CATEGORIES=		math lang
-MASTER_SITES=		CRAN/src/base/R-${PORTVERSION:C|\..*||}
-DISTNAME=		R-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}
+CATEGORIES=	math lang
+MASTER_SITES=	CRAN/src/base/R-${PORTVERSION:C|\..*||}
+DISTNAME=	R-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}
 
-MAINTAINER=		jrm@FreeBSD.org
-COMMENT=		Standalone math library from R
+MAINTAINER=	jrm@FreeBSD.org
+COMMENT=	Standalone math library from R
 
-LICENSE=		GPLv2
+LICENSE=	GPLv2
 
-LIB_DEPENDS=		libcurl.so:ftp/curl \
-			libpcre.so:devel/pcre
+ONLY_FOR_ARCHS=		aarch64 amd64 i386
 
-BUILD_WRKSRC=		${WRKSRC}/src/nmath/standalone
-CONFIGURE_ARGS=		--disable-nls --with-ICU=no --with-cairo=no \
-			--with-jpeglib=no --with-libpng=no --with-libtiff=no \
-			--with-readline=no --with-tcltk=no --with-x=no \
-			--without-libintl-prefix
-CONFIGURE_ENV+=		ac_cv_header_iconv_h=no r_cv_header_zlib_h=yes
-GNU_CONFIGURE=		yes
-RMATH_SOVERSION=	1
-USES=			fortran localbase
-USE_LDCONFIG=		yes
+LIB_DEPENDS=	libcurl.so:ftp/curl \
+		libpcre.so:devel/pcre
 
-PLIST_SUB=		RMATH_SOVERSION="${RMATH_SOVERSION}"
+BUILD_WRKSRC=	${WRKSRC}/src/nmath/standalone
+CONFIGURE_ARGS=	--disable-nls --with-ICU=no --with-cairo=no \
+		--with-jpeglib=no --with-libpng=no --with-libtiff=no \
+		--with-readline=no --with-tcltk=no --with-x=no \
+		--without-libintl-prefix
+CONFIGURE_ENV+=	ac_cv_header_iconv_h=no FPICFLAGS=-fPIC
+GNU_CONFIGURE=	yes
+RMATH_SOVERSION=${PORTVERSION:R}
+USES=		localbase
+USE_LDCONFIG=	yes
+
+PLIST_SUB=	RMATH_SOVERSION="${RMATH_SOVERSION}"
+
+OPTIONS_SINGLE=		FORTRAN
+OPTIONS_SINGLE_FORTRAN=	${OPTIONS_SINGLE_FORTRAN_${MACHINE_ARCH}}
+OPTIONS_SINGLE_FORTRAN_amd64=	GFORTRAN FLANG
+OPTIONS_DEFAULT_amd64=	FLANG
+
+FLANG_DESC=		Build Fortran source with flang
+GFORTRAN_DESC=		Build Fortran source with gfortran
+
+GFORTRAN_USES=		fortran:gcc
+FLANG_USES=		fortran:flang
+
+.include <bsd.port.options.mk>
+
+.if ${ARCH} != amd64
+USES+=		fortran:gcc
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|(libdir)/pkgconfig|(prefix)/libdata/pkgconfig|g'\

@@ -344,7 +344,6 @@ man/man1/omnicpp.1.gz
 man/man1/omniidl.1.gz
 man/man8/omniMapper.8.gz
 man/man8/omniNames.8.gz
-%%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/README.FIRST.txt
 %%PORTDOCS%%%%DOCSDIR%%/README.unix
 %%PORTDOCS%%%%DOCSDIR%%/ReleaseNotes.txt

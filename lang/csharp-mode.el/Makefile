@@ -3,10 +3,11 @@
 
 PORTNAME=	csharp-mode.el
 PORTVERSION=	0.9.0
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	lang elisp
 
-MAINTAINER=	mva@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Emacs/XEmacs major mode for editing C\# source code
 
 LICENSE=	GPLv2

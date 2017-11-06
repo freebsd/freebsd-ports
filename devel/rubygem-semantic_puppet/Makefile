@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	semantic_puppet
-PORTVERSION=	0.1.4
+PORTVERSION=	1.0.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 

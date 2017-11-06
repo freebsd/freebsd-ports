@@ -1,2 +1,1 @@
-The port installs Linux Fedora 10 Mesa libGL runtime libraries
-and DRI drivers.
+The port installs Linux Mesa libGL runtime libraries and DRI drivers.

@@ -3,16 +3,20 @@
 
 PORTNAME=	mathomatic
 PORTVERSION=	16.0.5
+PORTREVISION=	1
 CATEGORIES=	math
-MASTER_SITES=	http://www.panix.com/~gesslein/ \
-		LOCAL/ehaupt
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Highly portable, general purpose CAS (Computer Algebra System)
 
-LICENSE=	GPLv2
+LICENSE=	LGPL21
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gmake tar:bzip2 readline
+USES=		gmake readline
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	mfillpot
+GH_TAGNAME=	ceb0861
 
 MAKEFILE=	makefile
 

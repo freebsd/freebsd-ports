@@ -1,0 +1,11 @@
+--- PajeEventDecoder/GNUmakefile.orig	2004-12-13 22:15:43 UTC
++++ PajeEventDecoder/GNUmakefile
+@@ -24,7 +24,7 @@ include $(GNUSTEP_MAKEFILES)/common.make
+ PACKAGE_NAME=PajeEventDecoder
+ BUNDLE_NAME=PajeEventDecoder
+ BUNDLE_EXTENSION=.bundle
+-BUNDLE_INSTALL_DIR=$(GNUSTEP_INSTALLATION_DIR)/Library/Bundles/Paje
++BUNDLE_INSTALL_DIR=$(DESTDIR)/$(GNUSTEP_SYSTEM_LIBRARY)/Bundles/Paje
+ PajeEventDecoder_PRINCIPAL_CLASS=PajeEventDecoder
+ 
+ 

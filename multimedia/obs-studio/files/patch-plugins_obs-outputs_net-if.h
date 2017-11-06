@@ -1,6 +1,6 @@
---- plugins/obs-outputs/net-if.h.orig	2016-09-28 11:25:11 UTC
+--- plugins/obs-outputs/net-if.h.orig	2017-10-25 18:45:20 UTC
 +++ plugins/obs-outputs/net-if.h
-@@ -48,6 +48,7 @@
+@@ -49,6 +49,7 @@
  #      undef ___NET_IF_GNU_SOURCE__
  #      undef _GNU_SOURCE
  #    endif

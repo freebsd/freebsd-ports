@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	cairomm
-PORTVERSION=	1.10.0
-PORTREVISION=	3
+PORTVERSION=	1.12.2
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://cairographics.org/releases/
 
@@ -11,15 +11,17 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	C++ interface to cairo
 
 LICENSE=	LGPL20
-LICENSE_FILE=	${WRKSRC}/COPYING
+
+LIB_DEPENDS=	libfreetype.so:print/freetype2 \
+		libpng.so:graphics/png
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USES=		gmake libtool pathfix pkgconfig
+USES=		gmake gnome libtool pathfix pkgconfig compiler:c++11-lang
+USE_CXXSTD=	c++11
 USE_GNOME=	cairo libxml++26
+USE_XORG=	x11 xext xrender
 CONFIGURE_ENV=	AUTOMAKE="${TRUE}" AUTOCONF="${TRUE}" DOXYGEN="${TRUE}"
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 
 OPTIONS_DEFINE=	DOCS
 

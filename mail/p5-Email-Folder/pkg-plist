@@ -5,6 +5,7 @@
 %%SITE_PERL%%/Email/Folder/Mbox.pm
 %%SITE_PERL%%/Email/Folder/Reader.pm
 %%PERL5_MAN3%%/Email::Folder.3.gz
+%%PERL5_MAN3%%/Email::Folder::Ezmlm.3.gz
 %%PERL5_MAN3%%/Email::Folder::MH.3.gz
 %%PERL5_MAN3%%/Email::Folder::Maildir.3.gz
 %%PERL5_MAN3%%/Email::Folder::Mbox.3.gz

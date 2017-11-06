@@ -23,7 +23,6 @@ PLIST_FILES=	bin/abgx360gui \
 
 GNU_CONFIGURE=	yes
 USE_WX=		2.8
-WX_UNICODE=	yes
 WX_COMPS=	wx
 CONFIGURE_ARGS=	--with-wx=${LOCALBASE} \
 		--with-wx-config=${WX_CONFIG:T}

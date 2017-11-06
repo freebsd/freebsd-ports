@@ -1,3 +1,6 @@
-lib/libboost_python.a
-lib/libboost_python.so
-lib/libboost_python.so.%%BOOST_SHARED_LIB_VER%%
+%%PYTHON2%%lib/libboost_python.a
+%%PYTHON2%%lib/libboost_python.so
+%%PYTHON2%%lib/libboost_python.so.%%BOOST_SHARED_LIB_VER%%
+%%PYTHON3%%lib/libboost_python3.a
+%%PYTHON3%%lib/libboost_python3.so
+%%PYTHON3%%lib/libboost_python3.so.%%BOOST_SHARED_LIB_VER%%

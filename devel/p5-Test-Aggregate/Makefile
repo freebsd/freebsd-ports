@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Test-Aggregate
-PORTVERSION=	0.374
+PORTVERSION=	0.375
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Aggregate Perl tests for better performance
 
-LICENSE=	ART10 GPLv1
+LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Test-Most>=0.21:devel/p5-Test-Most \

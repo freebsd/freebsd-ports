@@ -1,10 +1,7 @@
-Codec2 is an open source low bit rate speech codec designed for
-communications quality speech at 2400 bit/s and below. Applications
-include low bandwidth HF/VHF digital radio and VOIP trunking. Codec 2
-operating at 2400 bit/s can send 26 phone calls using the bandwidth
-required for one 64 kbit/s uncompressed phone call. It fills a gap in
-open source, free-as-in-speech voice codecs beneath 5000 bit/s and
-is released under the GNU Lesser General Public License (LGPL).
+Codec 2 is an open source speech codec designed for communications quality
+speech between 700 and 3200 bit/s.
+The main application is low bandwidth HF/VHF digital radio.
+It fills a gap in open source, free-as-in-speech voice codecs beneath 5000
+bit/s and is released under the GNU Lesser General Public License (LGPL).
 
-
-WWW: http://www.rowetel.com/blog/?page_id=452
+WWW: http://www.rowetel.com/?page_id=452

@@ -6,4 +6,4 @@ Handles base64, quoted-printable, url_encode, mime-words and other encoded data.
 
 Please have a look at strfunc(3) and other manual pages.
 
-WWW: http://sourceforge.net/projects/libstrfunc/
+WWW: https://sourceforge.net/projects/libstrfunc/

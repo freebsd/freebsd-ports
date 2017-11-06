@@ -2,6 +2,7 @@
 
 PORTNAME=	waifu2x-w2xc
 DISTVERSION=	r6
+PORTREVISION=	2
 CATEGORIES=	graphics
 PKGNAMEPREFIX=	vapoursynth-
 

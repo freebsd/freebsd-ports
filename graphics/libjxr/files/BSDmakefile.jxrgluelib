@@ -1,0 +1,21 @@
+LIB=		jxrglue
+SHLIB_MAJOR=	1
+NO_PROFILE=	nope
+LIBDIR=		${PREFIX}/lib
+INCLUDEDIR=	${PREFIX}/include/jxrlib
+INCS=		JXRGlue.h JXRMeta.h JXRTest.h
+
+SRCS=	JXRGlue.c JXRMeta.c JXRGluePFC.c JXRGlueJxr.c
+SRCS+=	JXRTest.c JXRTestBmp.c JXRTestHdr.c JXRTestPnm.c	\
+	JXRTestTif.c JXRTestYUV.c
+
+.PATH:	${.CURDIR:H}/jxrtestlib
+
+CFLAGS+=	-I. -I${.CURDIR:H}/common/include -I${.CURDIR:H}/image/sys
+CFLAGS+=	-I${.CURDIR:H}/jxrtestlib
+CFLAGS+=	-D__ANSI__ -DDISABLE_PERF_MEASUREMENT
+CFLAGS+=	-Wno-extra-tokens
+
+LDADD=	-L${.CURDIR:H}/libjpegxr -ljpegxr -lm
+
+.include <bsd.lib.mk>

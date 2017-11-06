@@ -4,7 +4,7 @@
 PORTNAME=	mapnik
 PORTVERSION=	3.0.9
 DISTVERSIONPREFIX=	v
-PORTREVISION=	7
+PORTREVISION=	14
 CATEGORIES=	graphics geography
 MASTER_SITES=	http://mapnik.s3.amazonaws.com/dist/v${PORTVERSION}/
 
@@ -19,7 +19,8 @@ LIB_DEPENDS=	libicuuc.so:devel/icu \
 		libfreetype.so:print/freetype2 \
 		libharfbuzz.so:print/harfbuzz
 
-BROKEN_powerpc=	does not install: runs out of virtual memory
+BROKEN_powerpc=		fails to install: runs out of virtual memory
+BROKEN_powerpc64=	fails to link: libmapnik.so: undefined reference to boost::match_results
 
 USES=		compiler:c++11-lib pkgconfig python scons tar:bzip2
 USE_GNOME=	libxml2

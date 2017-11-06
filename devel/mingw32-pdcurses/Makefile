@@ -9,7 +9,7 @@ MASTER_SITES=	SF
 PKGNAMEPREFIX=	mingw32-
 DISTNAME=	PDCurses-${PORTVERSION}
 
-MAINTAINER= ports@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Curses and Panel terminal library for Windows
 
 BUILD_DEPENDS=	${PKGNAMEPREFIX}gcc:devel/${PKGNAMEPREFIX}gcc \

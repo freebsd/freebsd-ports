@@ -1,0 +1,8 @@
+sbin/adcli
+man/man8/adcli.8.gz
+%%PORTDOCS%%%%DOCSDIR%%/gtk-doc.css
+%%PORTDOCS%%%%DOCSDIR%%/home.png
+%%PORTDOCS%%%%DOCSDIR%%/left.png
+%%PORTDOCS%%%%DOCSDIR%%/right.png
+%%PORTDOCS%%%%DOCSDIR%%/style.css
+%%PORTDOCS%%%%DOCSDIR%%/up.png

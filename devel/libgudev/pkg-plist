@@ -1,0 +1,13 @@
+include/gudev-1.0/gudev/gudev.h
+include/gudev-1.0/gudev/gudevclient.h
+include/gudev-1.0/gudev/gudevdevice.h
+include/gudev-1.0/gudev/gudevenumerator.h
+include/gudev-1.0/gudev/gudevenums.h
+include/gudev-1.0/gudev/gudevenumtypes.h
+include/gudev-1.0/gudev/gudevtypes.h
+lib/girepository-1.0/GUdev-1.0.typelib
+lib/libgudev-1.0.so
+lib/libgudev-1.0.so.0
+lib/libgudev-1.0.so.0.2.0
+libdata/pkgconfig/gudev-1.0.pc
+share/gir-1.0/GUdev-1.0.gir

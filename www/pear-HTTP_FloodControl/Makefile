@@ -5,7 +5,7 @@ PORTNAME=	HTTP_FloodControl
 PORTVERSION=	0.1.1
 CATEGORIES=	www pear
 
-MAINTAINER=	joneum@bsdproject.de
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	PEAR classes to detect and protect from attempts to flood a site
 
 BUILD_DEPENDS=	${PEARDIR}/HTTP.php:www/pear-HTTP
@@ -17,7 +17,7 @@ PEAR_DB_DESC=	PEAR::DB support
 PEAR_MDB_DESC=	PEAR::MDB support
 PEAR_MDB2_DESC=	PEAR::MDB2 support
 
-USES=	pear
+USES=		pear
 
 PEAR_DB_RUN_DEPENDS=	${PEARDIR}/DB.php:databases/pear-DB
 PEAR_MDB_RUN_DEPENDS=	${PEARDIR}/MDB.php:databases/pear-MDB

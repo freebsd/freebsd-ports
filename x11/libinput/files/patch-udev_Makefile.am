@@ -1,0 +1,10 @@
+--- udev/Makefile.am.orig	2017-02-11 05:10:33 UTC
++++ udev/Makefile.am
+@@ -19,6 +19,7 @@ endif
+ 
+ libinput_model_quirks_SOURCES = libinput-model-quirks.c
+ libinput_model_quirks_CFLAGS = \
++			       -I$(top_srcdir)/include \
+ 			       -I$(top_srcdir)/src \
+ 			       $(LIBUDEV_CFLAGS) \
+ 			       $(GCC_CFLAGS)

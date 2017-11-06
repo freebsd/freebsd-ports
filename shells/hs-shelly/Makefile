@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	shelly
-PORTVERSION=	1.6.3.3
+PORTVERSION=	1.6.8.3
 CATEGORIES=	shells haskell
 
 MAINTAINER=	haskell@FreeBSD.org

@@ -3,7 +3,7 @@
 
 PORTNAME=	htmlize.el
 PORTVERSION=	1.39
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	textproc elisp
 MASTER_SITES=	http://fly.srk.fer.hr/~hniksic/emacs/
 DISTNAME=	${PORTNAME}.cgi

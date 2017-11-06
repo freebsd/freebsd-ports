@@ -1,2 +1,3 @@
-SHA256 (cabal/cassava-0.4.3.1.tar.gz) = e389ea01f6f346246e7002d5eb925518d134185f260cbdf1e81628eb4cffc2ac
-SIZE (cabal/cassava-0.4.3.1.tar.gz) = 31922
+TIMESTAMP = 1499538420
+SHA256 (cabal/cassava-0.5.0.0.tar.gz) = 847e4b09860e9721c1436ae48a9db89fff119c7b43c696997c18592ca86fbeb9
+SIZE (cabal/cassava-0.5.0.0.tar.gz) = 33476

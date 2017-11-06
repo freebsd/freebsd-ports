@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	polyclipping
-PORTVERSION=	6.4
+PORTVERSION=	6.4.2
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}
 DISTNAME=	clipper_ver${PORTVERSION}
@@ -27,7 +27,6 @@ PLIST_FILES=	include/polyclipping/clipper.hpp \
 		libdata/pkgconfig/polyclipping.pc
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|6.2.6|6.4|' ${WRKSRC}/cpp/clipper.hpp
 	@${REINPLACE_CMD} -e 's|share/pkgconfig|libdata/pkgconfig|' ${WRKSRC}/cpp/CMakeLists.txt
 
 .include <bsd.port.mk>

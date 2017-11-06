@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	pear
-PORTVERSION=	1.10.1
+PORTVERSION=	1.10.5
 CATEGORIES=	devel
-MASTER_SITES=	http://mirror.miwibox.org/
+MASTER_SITES=	http://mirror.bsdproject.de/
 
-MAINTAINER=	joneum@bsdproject.de
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	PEAR framework for PHP
 
 LICENSE=	PHP301

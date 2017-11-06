@@ -1,0 +1,4 @@
+This package allows you to authenticate to AWS with Amazon's signature
+version 4 signing process with the python requests library.
+
+WWW: https://github.com/DavidMuller/aws-requests-auth

@@ -1,0 +1,3 @@
+madonctl is a Golang command line interface for the Mastodon API.
+
+WWW: https://github.com/McKael/madonctl

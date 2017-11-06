@@ -1,2 +1,3 @@
-SHA256 (cabal/http-client-tls-0.2.2.tar.gz) = 451e5833a1f07fdc162fde4371ac92986932d5c38f9969ace7babb020bc80128
-SIZE (cabal/http-client-tls-0.2.2.tar.gz) = 2962
+TIMESTAMP = 1499625375
+SHA256 (cabal/http-client-tls-0.3.5.1.tar.gz) = c1fa23eb868f4b4e36304f3d03890bce1230284be79f80bd7b4fe1733e8a9558
+SIZE (cabal/http-client-tls-0.3.5.1.tar.gz) = 7240

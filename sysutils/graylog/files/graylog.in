@@ -19,7 +19,7 @@
 #   Name of the graylog group
 #
 # graylog_config (string)
-#   Default value %%ETCDIR%%/graylog.conf
+#   Default value %%ETCDIR%%/server/server.conf
 #   Path to the graylog configuration file
 #
 # graylog_min_mem (string):
@@ -31,20 +31,20 @@
 #   Maximum JVM heap size
 #
 # graylog_dir (string):
-#   Default value: %%GRAYLOG_DIR%%
-#   Path the the graylog installation.
+#   Default value: %%DATADIR%%
+#   Path to the graylog installation.
+#
+# graylog_data_dir (string):
+#   Default vaule: %%GRAYLOG_DATA_DIR%%
+#   Storage location for the graylog journal
 #
 # graylog_run_dir (string):
 #   Default value: /var/graylog
-#   Path the the graylog run folder.
+#   Path to the graylog run folder.
 #
-# graylog_java_home (string):
-#   Default value: %%JAVA_HOME%%
-#   Root directory of the desired Java SDK.
-#
-# graylog_log4j_config (string):
-#   Default value: file://%%ETCDIR%%/graylog_logging.xml
-#   Path to the log4j configuration file for graylog
+# graylog_log_config (string):
+#   Default value: %%ETCDIR%%/server/log4j2.xml
+#   Path to the Graylog Server logfile
 
 . /etc/rc.subr
 
@@ -55,42 +55,63 @@ load_rc_config $name
 : ${graylog_enable:="NO"}
 : ${graylog_user:="%%GRAYLOGUSER%%"}
 : ${graylog_group:="%%GRAYLOGGROUP%%"}
-: ${graylog_config:="%%ETCDIR%%/${name}.conf"}
+: ${graylog_config:="%%ETCDIR%%/server/server.conf"}
 : ${graylog_min_mem:="256m"}
 : ${graylog_max_mem:="1g"}
-: ${graylog_dir:="%%GRAYLOG_DIR%%"}
-: ${graylog_run_dir:="/var/graylog"}
-: ${graylog_java_home:="%%JAVA_HOME%%"}
-: ${graylog_log4j_config="file://%%ETCDIR%%/graylog_logging.xml"}
+: ${graylog_dir:="%%DATADIR%%"}
+: ${graylog_data_dir:="%%GRAYLOG_DATA_DIR%%"}
+: ${graylog_logs_dir:="%%GRAYLOG_LOGS_DIR%%"}
+: ${graylog_run_dir:="/var/run/graylog"}
+: ${graylog_log_config:="%%ETCDIR%%/server/log4j2.xml"}
 
+java_options=" \
+    -Djava.awt.headless=true \
+    -Djava.net.preferIPv4Stack=true \
+    -Dapp=${name} \
+    -Dlog4j.configurationFile=${graylog_log_config} \
+    -Xms${graylog_min_mem} \
+    -Xmx${graylog_max_mem} \
+    -XX:-OmitStackTraceInFastThrow \
+    -XX:+AggressiveOpts \
+    -XX:+CMSClassUnloadingEnabled \
+    -XX:+CMSConcurrentMTEnabled \
+    -XX:+CMSParallelRemarkEnabled \
+    -XX:+DisableExplicitGC \
+    -XX:+HeapDumpOnOutOfMemoryError \
+    -XX:+ResizeTLAB \
+    -XX:+UseCMSInitiatingOccupancyOnly \
+    -XX:+UseCompressedOops \
+    -XX:+UseConcMarkSweepGC \
+    -XX:+UseFastAccessorMethods \
+    -XX:+UseParNewGC \
+    -XX:CMSInitiatingOccupancyFraction=75 \
+    -XX:NewRatio=1 \
+    "
 
-java_options=" -Xms${graylog_min_mem} \
-               -Xmx${graylog_max_mem} \
-               -XX:NewRatio=1 \
-               -XX:+ResizeTLAB \
-               -XX:+UseConcMarkSweepGC \
-               -XX:+CMSConcurrentMTEnabled \
-               -XX:+CMSClassUnloadingEnabled \
-               -XX:+UseParNewGC \
-               -XX:-OmitStackTraceInFastThrow\
-               -Djava.library.path=${graylog_dir}/lib/sigar \
-               -Dlog4j.configuration=${graylog_log4j_config}"
+app_pidfile="${graylog_run_dir}/${name}.pid"
+pidfile="${graylog_run_dir}/daemon.pid"
+command="/usr/sbin/daemon"
 
-start_precmd="graylog_precmd"
+command_args=" \
+    -c \
+    -t ${name} \
+    -r \
+    -p ${app_pidfile} \
+    -P ${pidfile} \
+    %%LOCALBASE%%/bin/java \
+    ${java_options} \
+    -jar ${graylog_dir}/graylog.jar server \
+    --no-pid-file \
+    --configfile ${graylog_config}"
 
-pidfile=/var/run/${name}.pid
-command=/usr/sbin/daemon
-procname=`env JAVAVM_DRYRUN=true JAVA_VERSION=1.7+ %%LOCALBASE%%/bin/java | grep JAVAVM_PROG | cut -f 2 -d =`
-
-command_args="-p $pidfile -f /usr/local/bin/java ${java_options} -jar ${graylog_dir}/graylog.jar server --configfile ${graylog_config} --no-pid-file"
+required_files="%%LOCALBASE%%/bin/java ${graylog_config}"
 
 graylog_precmd() {
-    /usr/bin/install -d -o ${graylog_group} -g ${graylog_group} -m 755 /var/log/graylog
-    /usr/bin/install -d -o ${graylog_group} -g ${graylog_group} -m 755 /var/log/graylog/server
-    /usr/bin/install -d -o ${graylog_group} -g ${graylog_group} -m 755 ${graylog_run_dir}
-    touch $pidfile
-    chown ${graylog_user}:${graylog_group} ${pidfile}
-    cd ${graylog_run_dir}
+    install -d -o ${graylog_user} -g ${graylog_group} -m 750 "${graylog_data_dir}"
+    install -d -o ${graylog_user} -g ${graylog_group} -m 750 "${graylog_logs_dir}"
+    install -d -o ${graylog_user} -g ${graylog_group} -m 750 "${graylog_run_dir}"
 }
+
+start_precmd="graylog_precmd"
 
 run_rc_command "$1"

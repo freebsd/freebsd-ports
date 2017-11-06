@@ -1,4 +1,5 @@
-SHA256 (ip4r-2.0.tar.gz) = 251e70d12fc1244aab1707d3db0fe9f821ab224765e34cd8f2fb66ee3468a957
-SIZE (ip4r-2.0.tar.gz) = 93007
-SHA256 (ip4r-2.x-SORBS-prefer-index.patch) = 4c10dcb0c31b6abe012597fc7826ccff2611c8ef256bbc5d448633cfb3b60427
-SIZE (ip4r-2.x-SORBS-prefer-index.patch) = 9221
+TIMESTAMP = 1496567402
+SHA256 (RhodiumToad-ip4r-2.2_GH0.tar.gz) = b513ca2f5e71c33b82566096e9b0ed420405845ed5ac396936ef676527074dc3
+SIZE (RhodiumToad-ip4r-2.2_GH0.tar.gz) = 103362
+SHA256 (ip4r-2.2-SORBS-prefer-index.patch) = 7f0740c8278dc01964323e74683a7d1e43bc761e8698201aee60da479b8d5b41
+SIZE (ip4r-2.2-SORBS-prefer-index.patch) = 9160

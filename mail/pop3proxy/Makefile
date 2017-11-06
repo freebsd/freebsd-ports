@@ -12,8 +12,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	POP3 Proxy Server derived from UP IMAP Proxy
 
 GNU_CONFIGURE=	yes
-USES=		autoreconf
-USE_OPENSSL=	yes
+USES=		autoreconf ssl
 USE_RC_SUBR=	pop3proxyd
 
 post-patch:

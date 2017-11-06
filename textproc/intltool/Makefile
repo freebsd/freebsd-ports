@@ -11,6 +11,9 @@ DIST_SUBDIR=	gnome
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Tools to internationalize various kinds of data files
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 BUILD_DEPENDS=	p5-XML-Parser>=0:textproc/p5-XML-Parser
 RUN_DEPENDS=	p5-XML-Parser>=0:textproc/p5-XML-Parser
 

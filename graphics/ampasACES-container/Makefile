@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ampasACES-container
-PORTVERSION=	1.0.0
+PORTVERSION=	1.0.2
 CATEGORIES=	graphics devel
 
 MAINTAINER=	ports@FreeBSD.org
@@ -16,19 +16,19 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 USE_GITHUB=	yes
 GH_ACCOUNT=	ampas
 GH_PROJECT=	aces_container
-GH_TAGNAME=	73f15c5
+GH_TAGNAME=	4c7375b
 
-USES=		cmake pkgconfig
+USES=		cmake pathfix pkgconfig
 USE_LDCONFIG=	yes
 
+OPTIONS_DEFINE=	DOCS
 PORTDOCS=	README.md
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|lib/pkgconfig|libdata/pkgconfig|' \
-		-e 's|lib/CMake|lib/cmake|' \
+	@${REINPLACE_CMD} -e 's|lib/CMake|lib/cmake|' \
 		${WRKSRC}/CMakeLists.txt
 
-post-install:
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 

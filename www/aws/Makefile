@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	aws
-PORTVERSION=	17.1.0
+PORTVERSION=	17.1
 CATEGORIES=	www
 
-MAINTAINER=	marino@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Adacore Ada Web Server and framework
 
 LICENSE=	GPLv3 GPLv3RLE
@@ -20,8 +20,7 @@ RUN_DEPENDS=	xmlada>=4.4:textproc/xmlada
 USES=		ada:run gmake python shebangfix tar:bzip2
 USE_GITHUB=	yes
 GH_ACCOUNT=	AdaCore
-GH_TAGNAME=	${PORTVERSION:R}
-GH_TUPLE=	AdaCore:templates-parser:${PORTVERSION:R}:tp/templates_parser
+GH_TUPLE=	AdaCore:templates-parser:${PORTVERSION}:tp/templates_parser
 
 GNU_CONFIGURE=	yes
 NO_MTREE=	yes

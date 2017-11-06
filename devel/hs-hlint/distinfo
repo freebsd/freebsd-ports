@@ -1,2 +1,3 @@
-SHA256 (cabal/hlint-1.9.21.tar.gz) = 8694a193e0f55b9a74ddd4fb44a242872f91e36ea59dd96ab489562a65cb6393
-SIZE (cabal/hlint-1.9.21.tar.gz) = 88802
+TIMESTAMP = 1499627842
+SHA256 (cabal/hlint-2.0.9.tar.gz) = 252993e74def5caae29a546f39ce37ce2cf2b6bcafa6cc5c867fb5d07fb4a5ad
+SIZE (cabal/hlint-2.0.9.tar.gz) = 102835

@@ -11,4 +11,4 @@ software package installations on different servers. It can be used for
 automated software testing. Pexpect is in the spirit of Don Libes' Expect, but
 Pexpect is pure Python. The Pexpect interface was designed to be easy to use.
 
-WWW: http://pexpect.sourceforge.net
+WWW: https://pexpect.readthedocs.io/

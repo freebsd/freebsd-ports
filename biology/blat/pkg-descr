@@ -11,4 +11,4 @@ genome (but not the genome itself) in memory. Since the index takes up a
 bit less than a gigabyte of RAM, BLAT can deliver high performance on a
 reasonably priced Linux box.
 
-WWW: http://users.soe.ucsc.edu/~kent/
+WWW: https://users.soe.ucsc.edu/~kent/

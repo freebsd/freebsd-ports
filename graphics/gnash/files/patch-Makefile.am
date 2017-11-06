@@ -1,6 +1,6 @@
---- Makefile.am.orig	2016-07-21 14:25:09.000000000 +0200
-+++ Makefile.am	2016-12-13 10:23:36.939767000 +0100
-@@ -512,7 +512,7 @@
+--- Makefile.am.orig	2016-07-21 12:25:09 UTC
++++ Makefile.am
+@@ -512,7 +512,7 @@ install-plugins install-plugin uninstall
  apidoc:
  	$(MAKE) -C doc $@
  

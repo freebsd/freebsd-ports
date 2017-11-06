@@ -1,5 +1,5 @@
-TIMESTAMP = 1476036137
-SHA256 (elixir/1.3.4/Docs.zip) = 4d4467721344262f95fd5605198644547c45d530b2368747d8148ec153c0d58e
-SIZE (elixir/1.3.4/Docs.zip) = 1167502
-SHA256 (elixir/1.3.4/elixir-lang-elixir-v1.3.4_GH0.tar.gz) = f5ee5353d8dbe610b1dfd276d22f2038d57d9a7d3cea69dac10da2b098bd2033
-SIZE (elixir/1.3.4/elixir-lang-elixir-v1.3.4_GH0.tar.gz) = 1751828
+TIMESTAMP = 1506699082
+SHA256 (elixir/1.5.2/Docs.zip) = 5eb4acbc0c2220df3c055191670f07235adb876b8563d632dcd96cfaf3aa15f7
+SIZE (elixir/1.5.2/Docs.zip) = 1442433
+SHA256 (elixir/1.5.2/elixir-lang-elixir-v1.5.2_GH0.tar.gz) = 7317b7a9d3b5bef2b5cd56de738f2b37fd4111e24efbe71a3e39bea1b702ff6c
+SIZE (elixir/1.5.2/elixir-lang-elixir-v1.5.2_GH0.tar.gz) = 1947836

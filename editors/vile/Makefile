@@ -11,7 +11,7 @@ MASTER_SITES=	ftp://dickey.his.com/vile/current/ \
 PATCH_SITES=	${MASTER_SITES:S,vile/current/,vile/patches/,g}
 #PATCHFILES=
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dickey@invisible-island.net
 COMMENT=	VI Like Emacs -- console version
 
 LICENSE=	GPLv2

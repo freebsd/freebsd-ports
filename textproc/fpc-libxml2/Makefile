@@ -4,7 +4,6 @@
 CATEGORIES=	textproc lang
 PKGNAMESUFFIX=	-libxml2
 
-MAINTAINER=	freebsd-fpc@FreeBSD.org
 COMMENT=	Interface to xml2 library
 
 USE_FPC=	rtl-objpas

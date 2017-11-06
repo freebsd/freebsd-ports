@@ -62,6 +62,7 @@ ${lang}_CMD?= ${LOCALBASE}/bin/${lang}
 ${lang}_OLD_CMD+= "/usr/bin/env ${lang}"
 ${lang}_OLD_CMD+= /bin/${lang}
 ${lang}_OLD_CMD+= /usr/bin/${lang}
+${lang}_OLD_CMD+= /usr/local/bin/${lang}
 .endfor
 
 .for lang in ${SHEBANG_LANG}
@@ -83,15 +84,18 @@ fix-shebang:
 	@cd ${WRKSRC}; \
 		${FIND} -E . -type f -iregex '${SHEBANG_REGEX}' \
 		-exec ${SED} -i '' ${_SHEBANG_REINPLACE_ARGS} {} +
-.elif defined(SHEBANG_GLOB)
-.for f in ${SHEBANG_GLOB}
+.endif
+.if defined(SHEBANG_GLOB)
+.  for f in ${SHEBANG_GLOB}
 	@cd ${WRKSRC}; \
 		${FIND} . -type f -name '${f}' \
 		-exec ${SED} -i '' ${_SHEBANG_REINPLACE_ARGS} {} +
-.endfor
-.else
+.  endfor
+.endif
+.if defined(SHEBANG_FILES)
 	@cd ${WRKSRC}; \
-		${ECHO_CMD} ${SHEBANG_FILES} | ${XARGS} ${SED} -i '' ${_SHEBANG_REINPLACE_ARGS}
+		${FIND} ${SHEBANG_FILES} -type f \
+		-exec ${SED} -i '' ${_SHEBANG_REINPLACE_ARGS} {} +
 .endif
 
 .endif

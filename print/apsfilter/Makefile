@@ -3,7 +3,7 @@
 
 PORTNAME=	apsfilter
 PORTVERSION=	7.2.8
-PORTREVISION=	17
+PORTREVISION=	20
 CATEGORIES=	print
 MASTER_SITES=	http://www.apsfilter.org/download/
 DIST_SUBDIR=	apsfilter
@@ -16,9 +16,8 @@ LICENSE_NAME=	Postcard License
 LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-BROKEN=		wrong run depends
-
-RUN_DEPENDS=	bash:shells/bash
+RUN_DEPENDS=	bash:shells/bash \
+		hpijs:print/hpijs
 
 USES=		tar:bzip2
 USE_SUBMAKE=	yes
@@ -29,10 +28,9 @@ SUB_FILES=	pkg-message
 
 OPTIONS_DEFINE=DOCS X11 GS PSUTILS ASCII CONVERT DVIPS FIG2DEV HTML2PS \
 	ATALK SAMBA COMPRESS MP3 OGG WAV
-OPTIONS_DEFAULT=X11 GS PSUTILS ASCII CONVERT A4 HPLIP
-OPTIONS_SINGLE=PAPERSIZE HP_SUPPORT
+OPTIONS_DEFAULT=X11 GS PSUTILS ASCII CONVERT A4
+OPTIONS_SINGLE=PAPERSIZE
 OPTIONS_SINGLE_PAPERSIZE=A4 LETTER LETTERDJ
-OPTIONS_SINGLE_HP_SUPPORT=HPIJS HPLIP
 NO_OPTIONS_SORT=yes
 PAPERSIZE_DESC=	papersize
 A4_DESC=	A4 papersize
@@ -48,14 +46,12 @@ HTML2PS_DESC=	HTML documents
 ATALK_DESC=	remote printing on AppleTalk remote printer
 SAMBA_DESC=	remote printing on Windows remote printer
 COMPRESS_DESC=	print compressed documents
-HP_SUPPORT_DESC=	HP Print Support
-HPIJS_DESC=	Depend on hpijs port
-HPLIP_DESC=	Depend on hplip port
 
 DOCS_MAKE_ARGS=	-DDOCS
 PORTDOCS=	ANNOUNCE FAQ HOWTO-BUGREPORTS apsfilter4.png \
 		README.BSD handbook.html README.TeX paper
 GS_USES=	ghostscript:run
+SAMBA_USES=	samba:run
 
 .include <bsd.port.options.mk>
 
@@ -80,11 +76,6 @@ PSUFX=	-a4
 PSUFX=	-letter
 .elif !empty(PORT_OPTIONS:MLETTERDJ)
 PSUFX=	-letterdj
-.endif
-.if !empty(PORT_OPTIONS:MHPIJS)
-RUN_DEPENDS+=	hpijs:print/hpijs
-.elif !empty(PORT_OPTIONS:MHPLIP)
-RUN_DEPENDS+=	hpijs:print/hplip
 .endif
 
 _DEPENDS_ASCII=	a2ps:print/a2ps \
@@ -118,7 +109,6 @@ _DEPENDS_FIG2DEV= \
 _DEPENDS_HTML2PS= \
 		html2ps:print/html2ps
 _DEPENDS_ATALK=	pap:net/netatalk
-_DEPENDS_SAMBA= smbclient:net/samba36
 _DEPENDS_MP3=	mpg321:audio/mpg321
 _DEPENDS_OGG=	ogg123:audio/vorbis-tools
 _DEPENDS_WAV=	wavplay:audio/wavplay

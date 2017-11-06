@@ -5,6 +5,7 @@ lib/elixir/lib/plug/ebin/Elixir.Plug.Adapters.Cowboy.Handler.beam
 lib/elixir/lib/plug/ebin/Elixir.Plug.Adapters.Cowboy.beam
 lib/elixir/lib/plug/ebin/Elixir.Plug.Adapters.Test.Conn.beam
 lib/elixir/lib/plug/ebin/Elixir.Plug.Adapters.Translator.beam
+lib/elixir/lib/plug/ebin/Elixir.Plug.BadRequestError.beam
 lib/elixir/lib/plug/ebin/Elixir.Plug.Builder.beam
 lib/elixir/lib/plug/ebin/Elixir.Plug.CSRFProtection.InvalidCSRFTokenError.beam
 lib/elixir/lib/plug/ebin/Elixir.Plug.CSRFProtection.InvalidCrossOriginRequestError.beam
@@ -56,10 +57,12 @@ lib/elixir/lib/plug/ebin/Elixir.Plug.Static.InvalidPathError.beam
 lib/elixir/lib/plug/ebin/Elixir.Plug.Static.beam
 lib/elixir/lib/plug/ebin/Elixir.Plug.Supervisor.beam
 lib/elixir/lib/plug/ebin/Elixir.Plug.Test.beam
+lib/elixir/lib/plug/ebin/Elixir.Plug.TimeoutError.beam
 lib/elixir/lib/plug/ebin/Elixir.Plug.Upload.beam
 lib/elixir/lib/plug/ebin/Elixir.Plug.UploadError.beam
 lib/elixir/lib/plug/ebin/Elixir.Plug.beam
 lib/elixir/lib/plug/ebin/plug.app
+lib/elixir/lib/plug/ebin/plug_multipart.beam
 lib/elixir/lib/plug/lib/plug.ex
 lib/elixir/lib/plug/lib/plug/adapters/cowboy.ex
 lib/elixir/lib/plug/lib/plug/adapters/cowboy/conn.ex
@@ -88,7 +91,6 @@ lib/elixir/lib/plug/lib/plug/html.ex
 lib/elixir/lib/plug/lib/plug/logger.ex
 lib/elixir/lib/plug/lib/plug/method_override.ex
 lib/elixir/lib/plug/lib/plug/mime.ex
-lib/elixir/lib/plug/lib/plug/mime.types
 lib/elixir/lib/plug/lib/plug/parsers.ex
 lib/elixir/lib/plug/lib/plug/parsers/json.ex
 lib/elixir/lib/plug/lib/plug/parsers/multipart.ex
@@ -103,7 +105,8 @@ lib/elixir/lib/plug/lib/plug/session/store.ex
 lib/elixir/lib/plug/lib/plug/ssl.ex
 lib/elixir/lib/plug/lib/plug/static.ex
 lib/elixir/lib/plug/lib/plug/supervisor.ex
-lib/elixir/lib/plug/lib/plug/templates/debugger.eex
+lib/elixir/lib/plug/lib/plug/templates/debugger.html.eex
+lib/elixir/lib/plug/lib/plug/templates/debugger.md.eex
 lib/elixir/lib/plug/lib/plug/test.ex
 lib/elixir/lib/plug/lib/plug/upload.ex
 %%PORTDOCS%%%%DOCSDIR%%/README.md

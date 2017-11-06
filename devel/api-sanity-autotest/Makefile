@@ -3,7 +3,7 @@
 
 PORTNAME=	api-sanity-checker
 PORTVERSION=	1.98.4
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	devel perl5
 MASTER_SITES=	LOCAL/bf/${PORTNAME}
 
@@ -25,7 +25,7 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/abi-compliance-checker.pl:devel/abi-compliance-c
 .else
 USE_PERL5=	run
 .endif
-USE_GCC=	any
+USE_GCC=	4.8 # same as devel/elfutils
 
 NO_BUILD=	yes
 PLIST_FILES=	bin/${PORTNAME}.pl

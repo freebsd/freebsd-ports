@@ -14,6 +14,6 @@ several more Boost libraries in addition to those from TR1. More Boost
 libraries are proposed for TR2.
 
 NOTE: This package does not contain Boost.Python, it's in
-'devel/boost-python-libs'.
+devel/boost-python-libs (python 2) and devel/boost-python3-libs (python 3).
 
 WWW: http://www.boost.org/

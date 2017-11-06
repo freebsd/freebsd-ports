@@ -1,6 +1,6 @@
---- spunk/make/freebsd.mak.orig	1996-11-24 22:33:26.000000000 +0100
-+++ spunk/make/freebsd.mak	2014-03-28 16:25:12.000000000 +0100
-@@ -27,10 +27,10 @@
+--- spunk/make/freebsd.mak.orig	1996-11-24 21:33:26 UTC
++++ spunk/make/freebsd.mak
+@@ -27,10 +27,10 @@ AS = gas
  AR = ar
  LD = ld
  ZIP = zip
@@ -13,7 +13,7 @@
  
  LIB	= spunk.a
  ZIPFILE = spunk.zip
-@@ -137,7 +137,7 @@
+@@ -137,7 +137,7 @@ RESEDITOBJS	=	resed.o		\
  # Dummy targets
  
  resed:	$(LIB) $(RESEDITOBJS)
@@ -22,7 +22,7 @@
  
  lib:	$(LIB)
  
-@@ -150,7 +150,7 @@
+@@ -150,7 +150,7 @@ $(LIB):		$(OBJS)
  
  depend dep:
  	@echo "Creating dependency information"
@@ -31,7 +31,7 @@
  
  # ------------------------------------------------------------------------------
  # Target specific files
-@@ -196,9 +196,10 @@
+@@ -196,9 +196,10 @@ zip:
  
  clean:
  	-rm -f *~ linuxsrc/*~ bsdsrc/*~ unixsrc/*~

@@ -4,7 +4,8 @@
 PORTNAME=	msktutil
 PORTVERSION=	1.0
 CATEGORIES=	sysutils
-MASTER_SITES=	SF/${PORTNAME}
+MASTER_SITES=	SF/${PORTNAME} \
+		ZI
 
 MAINTAINER=	zi@FreeBSD.org
 COMMENT=	Utility to manage Active Directory interoperability

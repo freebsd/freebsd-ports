@@ -2,9 +2,10 @@
 
 PORTNAME=	kannel-sqlbox
 PORTVERSION=	1.0.1
+PORTREVISION=	2
 CATEGORIES=	www
 
-MAINTAINER=	dbaio@bsd.com.br
+MAINTAINER=	dbaio@FreeBSD.org
 # Co-maintainer: Alberto Mijares <amijaresp@gmail.com> (PR/173889)
 COMMENT=	Add-on module for www/kannel (svn rev.55)
 

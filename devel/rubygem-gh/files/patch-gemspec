@@ -1,0 +1,11 @@
+--- gh.gemspec.orig	2017-07-11 08:13:40 UTC
++++ gh.gemspec
+@@ -26,7 +26,7 @@ Gem::Specification.new do |s|
+       s.add_runtime_dependency(%q<faraday>.freeze, ["~> 0.8"])
+       s.add_runtime_dependency(%q<backports>.freeze, [">= 0"])
+       s.add_runtime_dependency(%q<multi_json>.freeze, ["~> 1.0"])
+-      s.add_runtime_dependency(%q<addressable>.freeze, ["~> 2.4.0"])
++      s.add_runtime_dependency(%q<addressable>.freeze, ["~> 2.4"])
+       s.add_runtime_dependency(%q<net-http-persistent>.freeze, ["~> 2.9"])
+       s.add_runtime_dependency(%q<net-http-pipeline>.freeze, [">= 0"])
+     else

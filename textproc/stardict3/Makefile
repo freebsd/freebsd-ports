@@ -3,6 +3,7 @@
 
 PORTNAME=	stardict
 PORTVERSION=	3.0.6
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	SF/stardict-4/${PORTVERSION}
 DIST_SUBDIR=	stardict
@@ -22,9 +23,9 @@ CONFIGURE_ARGS=	--disable-festival \
 		--disable-updateinfo \
 		--disable-advertisement
 
-CPPFLAGS+=	-I${LOCALBASE}/include
-LIBS+=		-L${LOCALBASE}/lib
-USES=		gettext gmake libtool pathfix pkgconfig tar:bzip2
+USES=		compiler:c++11-lang gettext gmake libtool localbase pathfix \
+		pkgconfig tar:bzip2
+USE_CXXSTD=	c++11
 USE_GNOME=	intltool
 
 OPTIONS_DEFINE=	GNOME

@@ -1,6 +1,6 @@
---- src/gnu/io/CommPortIdentifier.java.orig	2008-11-27 20:02:34.000000000 +0000
-+++ src/gnu/io/CommPortIdentifier.java	2015-05-11 16:51:34.000000000 +0100
-@@ -76,85 +76,138 @@
+--- src/gnu/io/CommPortIdentifier.java.orig	2008-11-27 20:02:34 UTC
++++ src/gnu/io/CommPortIdentifier.java
+@@ -76,85 +76,138 @@ public class CommPortIdentifier extends 
  	public static final int PORT_RS485    = 4;  // rs485 Port
  	public static final int PORT_RAW      = 5;  // Raw Port
  	private String PortName;
@@ -102,13 +102,12 @@
 +		if(debug) System.out.println(" Loading Library...");
 +		
  		System.loadLibrary( "rxtxSerial" );
--	}
--	CommPortIdentifier ( String pn, CommPort cp, int pt, CommDriver driver) 
 +		
 +		if(debug) System.out.println(" init_clean is " + init_clean);
 +		if(debug) System.out.println("CommPortIdentifier:Static:Exit");
 +		
-+	}
+ 	}
+-	CommPortIdentifier ( String pn, CommPort cp, int pt, CommDriver driver) 
 +	CommPortIdentifier 
 +	(
 +		String pn,
@@ -175,7 +174,7 @@
  	private static void AddIdentifierToList( CommPortIdentifier cpi)
  	{
  		if(debug) System.out.println("CommPortIdentifier:AddIdentifierToList()");
-@@ -163,7 +216,7 @@
+@@ -163,7 +216,7 @@ public class CommPortIdentifier extends 
  			if (CommPortIndex == null) 
  			{
  				CommPortIndex = cpi;
@@ -184,7 +183,7 @@
  			}
  			else
  			{ 
-@@ -171,264 +224,351 @@
+@@ -171,264 +224,351 @@ public class CommPortIdentifier extends 
  				while (index.next != null)
  				{
  					index = index.next;
@@ -664,7 +663,7 @@
  					try
  					{
  						wait(waitTimeEnd - waitTimeCurr);
-@@ -439,91 +579,134 @@
+@@ -439,91 +579,134 @@ public class CommPortIdentifier extends 
  						break;
  					}
  				}
@@ -837,7 +836,7 @@
  		if (ownershipListener != null)
  		{
  			CommPortOwnershipListener c;
-@@ -532,6 +715,10 @@
+@@ -532,6 +715,10 @@ public class CommPortIdentifier extends 
  				c.ownershipChange(eventType))
  				c = (CommPortOwnershipListener) e.nextElement();
  		}

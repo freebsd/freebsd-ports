@@ -2,7 +2,7 @@
 
 PORTNAME=	libcutl
 PORTVERSION=	1.10.0
-PORTREVISION=	2
+PORTREVISION=	7
 CATEGORIES=	devel
 MASTER_SITES=	http://www.codesynthesis.com/download/${PORTNAME}/${PORTVERSION:R}/
 
@@ -15,12 +15,11 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 		libexpat.so:textproc/expat2
 
-BROKEN_powerpc64=	Does not build
 BROKEN_sparc64=	Does not build: cannot configure with boost
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
-USES=		libtool
+USES=		compiler:c++11-lib libtool
 
 # The checks for external boost and external expat are quite limited and do not
 # add the ${LOCALBASE} paths correctly (libboost.m4 uses wrong paths and

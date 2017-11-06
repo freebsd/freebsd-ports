@@ -1,0 +1,38 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: immortaldir
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add these lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# immortaldir_enable (bool):    Set it to "YES" to enable immortaldir
+#                               Default is "NO"
+#
+# immortaldir_path (str):       Set the directory that will be scanned
+#                               Default is "/usr/local/etc/immortal"
+
+. /etc/rc.subr
+
+name=immortaldir
+rcvar=immortaldir_enable
+
+load_rc_config $name
+
+: ${immortaldir_enable="NO"}
+: ${immortaldir_path=%%PREFIX%%/etc/immortal}
+
+command=%%PREFIX%%/bin/${name}
+command_args=${immortaldir_path}
+start_cmd=immortaldir_run
+
+immortaldir_run()
+{
+        PATH="/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin"
+        /usr/sbin/daemon -c /bin/sh -c "$command $immortaldir_path 2>&1 | logger -t immortaldir"
+}
+
+run_rc_command "$1"

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	log4cpp
-PORTVERSION=	1.1.1
+PORTVERSION=	1.1.2
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-${PORTVERSION:R}.x%20%28new%29/${PORTNAME}-${PORTVERSION:R}
 
@@ -11,6 +11,10 @@ COMMENT=	Library of C++ classes for flexible logging
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+BROKEN_mips=		fails to compile: Appender.cpp: extra ';'
+BROKEN_mips64=		fails to compile: Appender.cpp: extra ';'
+BROKEN_powerpc64=	fails to compile: Appender.cpp: extra ';'
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

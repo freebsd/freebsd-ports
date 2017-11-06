@@ -1,6 +1,6 @@
---- chrome/test/base/testing_browser_process.h.orig	2016-05-11 19:02:17 UTC
+--- chrome/test/base/testing_browser_process.h.orig	2017-06-05 19:03:04 UTC
 +++ chrome/test/base/testing_browser_process.h
-@@ -104,8 +104,8 @@ class TestingBrowserProcess : public Bro
+@@ -108,8 +108,8 @@ class TestingBrowserProcess : public BrowserProcess {
    DownloadStatusUpdater* download_status_updater() override;
    DownloadRequestLimiter* download_request_limiter() override;
  

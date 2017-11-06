@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mlmmj
-PORTVERSION=	1.2.19.0
+PORTVERSION=	1.3.0
 CATEGORIES=	mail
 MASTER_SITES=	http://mlmmj.org/releases/
 

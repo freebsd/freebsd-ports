@@ -8,6 +8,8 @@ man/man1/h5math.1.gz
 man/man1/h5topng.1.gz
 man/man1/h5totxt.1.gz
 man/man1/h5tovtk.1.gz
+%%DATADIR%%/colormaps/BrBG
+%%DATADIR%%/colormaps/RdBu
 %%DATADIR%%/colormaps/autumn
 %%DATADIR%%/colormaps/bluered
 %%DATADIR%%/colormaps/bone
@@ -19,6 +21,7 @@ man/man1/h5tovtk.1.gz
 %%DATADIR%%/colormaps/green
 %%DATADIR%%/colormaps/hot
 %%DATADIR%%/colormaps/hsv
+%%DATADIR%%/colormaps/inferno
 %%DATADIR%%/colormaps/jet
 %%DATADIR%%/colormaps/lines
 %%DATADIR%%/colormaps/pink
@@ -26,6 +29,7 @@ man/man1/h5tovtk.1.gz
 %%DATADIR%%/colormaps/spring
 %%DATADIR%%/colormaps/summer
 %%DATADIR%%/colormaps/vga
+%%DATADIR%%/colormaps/viridis
 %%DATADIR%%/colormaps/winter
 %%DATADIR%%/colormaps/yarg
 %%DATADIR%%/colormaps/yellow

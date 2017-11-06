@@ -1,2 +1,3 @@
-SHA256 (cabal/semigroups-0.16.2.2.tar.gz) = d17e3e42c8e2457286d5c583dad5d0df57678ce4dcf12acc8a7667e80bd8ed57
-SIZE (cabal/semigroups-0.16.2.2.tar.gz) = 15159
+TIMESTAMP = 1499594594
+SHA256 (cabal/semigroups-0.18.3.tar.gz) = 35297c986872406e2efe29620c623727369f8c578e2f9c22998d575996e5a9ca
+SIZE (cabal/semigroups-0.18.3.tar.gz) = 18629

@@ -1,0 +1,60 @@
+--- dub.json.orig	2017-07-19 07:42:26 UTC
++++ dub.json
+@@ -50,13 +50,6 @@
+             "versions": ["USE_OPENGL", "EmbedStandardResources"],
+             "versions-posix": ["USE_SDL", "USE_FREETYPE"],
+             "versions-windows": ["Unicode"],
+-            "dependencies": {
+-                "derelict-gl3": "~>1.0.18",
+-                "derelict-ft": "~>1.1.2"
+-            },
+-            "dependencies-posix": {
+-                "derelict-sdl2": "~>2.0.0"
+-            },
+             "copyFiles-windows-x86_64": [
+                 "libs/windows/x86_64/libfreetype-6.dll"
+             ],
+@@ -79,21 +72,11 @@
+             "versions": ["EmbedStandardResources", "ForceLogs"],
+             "versions-posix": ["USE_SDL", "USE_FREETYPE", "NO_OPENGL"],
+             "versions-windows": ["Unicode" ,"NO_OPENGL"],
+-            "dependencies-posix": {
+-                "derelict-gl3": "~>1.0.18",
+-                "derelict-sdl2": "~>2.0.0",
+-                "derelict-ft": "~>1.1.2"
+-            }
+         },
+         {
+             "name": "sdl",
+             "versions": ["USE_SDL", "USE_OPENGL", "USE_FREETYPE", "EmbedStandardResources"],
+             "versions-windows": ["Unicode"],
+-            "dependencies": {
+-                "derelict-gl3": "~>1.0.18",
+-                "derelict-ft": "~>1.1.2",
+-                "derelict-sdl2": "~>2.0.0"
+-            },
+             "copyFiles-windows-x86_64": [
+                 "libs/windows/x86_64/libfreetype-6.dll", 
+                 "libs/windows/x86_64/SDL2.dll"
+@@ -107,21 +90,11 @@
+             "name": "x11",
+             "versions": ["USE_X11", "USE_FREETYPE", "EmbedStandardResources"],
+             "versions-windows": ["Unicode"],
+-            "dependencies": {
+-                "derelict-gl3": "~>1.0.18",
+-                "derelict-ft": "~>1.1.2",
+-                "x11": "~>1.0.13"
+-            }
+         },
+         {
+             "name": "sfml",
+             "versions": ["USE_DSFML", "USE_OPENGL", "USE_FREETYPE", "EmbedStandardResources"],
+             "versions-windows": ["Unicode"],
+-            "dependencies": {
+-                "derelict-gl3": "~>1.0.18",
+-                "derelict-ft": "~>1.1.2",
+-                "dsfml": "~>2.1.0"
+-            },
+             "copyFiles-windows-x86_64": [
+                 "libs/windows/x86_64/libfreetype-6.dll"
+             ],

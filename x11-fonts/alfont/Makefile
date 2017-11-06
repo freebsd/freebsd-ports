@@ -22,6 +22,8 @@ LICENSE_FILE=	${WRKSRC}/docs/FTL.txt
 LICENSE_PERMS=	auto-accept
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2017-08-23
 
 EXTRACT_DEPENDS=	unrar:archivers/unrar
 LIB_DEPENDS=	liballeg.so.4:devel/allegro \

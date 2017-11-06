@@ -1,14 +1,10 @@
 
-**********************************************
+***************************************************************************
 
- %%PKGNAME%% has been installed into :
+yourls has been installed into %%WWWDIR%%
 
-    %%WWWDIR%%
+Please visit https://yourls.org/#Install for further install/upgrade
+instructions.
 
- Please visit following web page for further
- install/upgrade instructions :
-
-    http://yourls.org/#Install
-
-**********************************************
+***************************************************************************
 

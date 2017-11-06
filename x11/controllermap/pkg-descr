@@ -1,0 +1,3 @@
+controllermap helps to map buttons on Xbox 360 style gamepad for use
+with SDL_GameController API. The output can be appended into an
+existing gamecontrollerdb.txt file or to SDL_GAMECONTROLLERCONFIG.

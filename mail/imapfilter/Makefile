@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	imapfilter
-PORTVERSION=	2.6.7
+PORTVERSION=	2.6.10
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	mail
 
@@ -13,8 +14,7 @@ LICENSE=	MIT
 
 LIB_DEPENDS=	libpcre.so:devel/pcre
 
-USES=		lua
-USE_OPENSSL=	yes
+USES=		lua ssl
 CPPFLAGS+=	-I${LOCALBASE}/include -I${LUA_INCDIR}
 LDFLAGS+=	-L${LOCALBASE}/lib -L${LUA_LIBDIR}
 

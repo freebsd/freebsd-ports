@@ -1,0 +1,10 @@
+The main idea behind FIRST is to preserve an engineer's analysis of
+certain functions (name, prototype, comment, etc) by using methods
+like opcode hashing, mnemonic hashing, locality sensitive hashing,
+etc. By collecting and storing these signatures centrally the framework
+can provide them later to the community via the API/Plugin. The goal is
+to provide quick lookups for similar functions (see Fig. A) to avoid
+losing time with analysing a function which was already analysed before
+in another sample or by another engineer.
+
+WWW: https://github.com/vrtadmin/FIRST-server

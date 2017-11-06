@@ -1,2 +1,2 @@
-%%QT_BINDIR%%/makeqpf-qt4
-%%DEBUG%%%%QT_BINDIR%%/makeqpf-qt4.debug
+%%QT_BINDIR%%/makeqpf
+%%DEBUG%%%%QT_BINDIR%%/makeqpf.debug

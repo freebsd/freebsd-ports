@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	ntopng
-PORTVERSION=	2.4.2016.10.14
+PORTVERSION=	3.0.2017.10.03
+PORTREVISION=	1
 CATEGORIES=	net
 
 MAINTAINER=	madpilot@FreeBSD.org
@@ -16,24 +17,31 @@ LIB_DEPENDS=	librrd.so:databases/rrdtool \
 		libzmq.so:net/libzmq4 \
 		libcurl.so:ftp/curl \
 		libndpi.so:net/ndpi \
-		libjson-c.so:devel/json-c
+		libjson-c.so:devel/json-c \
+		libsodium.so:security/libsodium
+BUILD_DEPENDS=  bash:shells/bash
 
+USES=		autoreconf cpe gmake libtool localbase mysql pathfix pkgconfig \
+		shebangfix sqlite ssl
+SUB_FILES=	ntopng-geoipupdate.sh pkg-deinstall
+SHEBANG_FILES=	httpdocs/misc/ntopng-add-user.sh
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USES=	 	autoreconf cpe gmake libtool localbase mysql pathfix pkgconfig sqlite
-SUB_FILES=	ntopng-geoipupdate.sh
 
 USERS=		ntopng
 GROUPS=		ntopng
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	ntop
-GH_TAGNAME=	141c778
+GH_TAGNAME=	499e0bf
 
 CPE_VENDOR=	ntop
 
 OPTIONS_DEFINE=		GEOIP NLS
 OPTIONS_DEFAULT=	GEOIP
+
+OPTIONS_SUB=	yes
+
 GEOIP_LIB_DEPENDS=	libGeoIP.so:net/GeoIP
 
 NLS_USES=	gettext
@@ -41,10 +49,14 @@ NLS_USES=	gettext
 USE_RC_SUBR=	ntopng
 
 post-patch:
+	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
+		${WRKSRC}/configure.seed
 	cd ${WRKSRC} && ${SH} autogen.sh
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/ntopng
+
+post-install-GEOIP-on:
 	${INSTALL_SCRIPT} ${WRKDIR}/ntopng-geoipupdate.sh ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>

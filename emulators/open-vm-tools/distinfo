@@ -1,2 +1,3 @@
-SHA256 (open-vm-tools-9.4.0-1280544.tar.gz) = 5d30652eb0f6dc5e930781029c184837e700be5543b6a7116db4c62a6f3ca399
-SIZE (open-vm-tools-9.4.0-1280544.tar.gz) = 3659504
+TIMESTAMP = 1503010753
+SHA256 (vmware-open-vm-tools-stable-10.1.10_GH0.tar.gz) = ce03c8827389ea272a5c072366b6bff381b2eddad94750c6a9433a0dea61c762
+SIZE (vmware-open-vm-tools-stable-10.1.10_GH0.tar.gz) = 3543342

@@ -2,12 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	davical
-PORTVERSION=	1.1.2
 DISTVERSIONPREFIX=	r
-PORTREVISION=	1
+DISTVERSION=	1.1.5
+PORTREVISION=	2
 CATEGORIES?=	www
+MASTER_SITES=	https://gitlab.com/${PORTNAME}-project/${PORTNAME}/repository/archive.tar.gz?ref=${DISTVERSIONPREFIX}${PORTVERSION}&dummy=/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	lbdm@privacychain.ch
 COMMENT=	Simple CalDAV server using a postgres backend
 
 LICENSE=	GPLv2 LGPL21
@@ -20,22 +21,21 @@ RUN_DEPENDS=	p5-DBI>=0:databases/p5-DBI \
 		${LOCALBASE}/bin/pwgen:sysutils/pwgen \
 		php-libawl>=0.54:devel/php-libawl
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	DAViCal
+WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSIONPREFIX}${PORTVERSION}-7ccc7c449176475891ec50d5524928628df6f8d1
 
 NO_BUILD=	yes
-USE_PHP=	gettext iconv pcre pdo pdo_pgsql pgsql xml calendar
-USES=		shebangfix pgsql
+USES=		pgsql php shebangfix
+USE_PHP=	calendar curl gettext iconv pcre pdo pdo_pgsql pgsql xml
 SHEBANG_FILES=	scripts/sync-remote-caldav.php
 SUB_FILES=	pkg-message httpd-davical.conf
-PORTDOCS=	api website \
-		README INSTALL davical_en_user_guide.odt translation.rst
+PORTDOCS=	README INSTALL davical_en_user_guide.odt phpdoc.ini \
+		translation.rst
 PORTEXAMPLES=	config
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
 post-extract:
-	@${FIND} ${WRKSRC} -name .gitignore -delete
+	${FIND} ${WRKSRC} -name .gitignore -delete
 
 do-install:
 	${MKDIR} ${STAGEDIR}${WWWDIR}/htdocs \

@@ -1,7 +1,7 @@
 include/gstreamer-%%VERSION%%/gst/gl/egl/gstegl.h
-include/gstreamer-%%VERSION%%/gst/gl/egl/gsteglimagememory.h
-include/gstreamer-%%VERSION%%/gst/gl/egl/gstglcontext_egl.h
+include/gstreamer-%%VERSION%%/gst/gl/egl/gsteglimage.h
 include/gstreamer-%%VERSION%%/gst/gl/egl/gstgldisplay_egl.h
+include/gstreamer-%%VERSION%%/gst/gl/egl/gstglmemoryegl.h
 include/gstreamer-%%VERSION%%/gst/gl/gl.h
 include/gstreamer-%%VERSION%%/gst/gl/glprototypes/all_functions.h
 include/gstreamer-%%VERSION%%/gst/gl/glprototypes/base.h
@@ -28,7 +28,6 @@ include/gstreamer-%%VERSION%%/gst/gl/gstglbuffer.h
 include/gstreamer-%%VERSION%%/gst/gl/gstglbufferpool.h
 include/gstreamer-%%VERSION%%/gst/gl/gstglcolorconvert.h
 include/gstreamer-%%VERSION%%/gst/gl/gstglcontext.h
-include/gstreamer-%%VERSION%%/gst/gl/gstglcontrolbindingproxy.h
 include/gstreamer-%%VERSION%%/gst/gl/gstgldebug.h
 include/gstreamer-%%VERSION%%/gst/gl/gstgldisplay.h
 include/gstreamer-%%VERSION%%/gst/gl/gstglfeature.h
@@ -39,6 +38,7 @@ include/gstreamer-%%VERSION%%/gst/gl/gstglmemory.h
 include/gstreamer-%%VERSION%%/gst/gl/gstglmemorypbo.h
 include/gstreamer-%%VERSION%%/gst/gl/gstgloverlaycompositor.h
 include/gstreamer-%%VERSION%%/gst/gl/gstglquery.h
+include/gstreamer-%%VERSION%%/gst/gl/gstglrenderbuffer.h
 include/gstreamer-%%VERSION%%/gst/gl/gstglshader.h
 include/gstreamer-%%VERSION%%/gst/gl/gstglshaderstrings.h
 include/gstreamer-%%VERSION%%/gst/gl/gstglsl.h

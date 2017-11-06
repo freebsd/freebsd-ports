@@ -1,0 +1,14 @@
+****************************************************************************
+
+If you are upgrading cstore_fdw from a version prior to 1.6, you need 
+to execute the following steps:
+
+  - Restart the PostgreSQL server;
+
+  - Run ALTER EXTENSION cstore_fdw UPDATE;
+
+Please, visit the following URL for more information:
+
+https://github.com/citusdata/cstore_fdw/blob/master/README.md
+
+***************************************************************************

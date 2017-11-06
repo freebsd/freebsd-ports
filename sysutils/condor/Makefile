@@ -6,7 +6,7 @@
 
 PORTNAME=	condor
 PORTVERSION=	8.4.9
-PORTREVISION=	2
+PORTREVISION=	6
 CATEGORIES=	sysutils net
 MASTER_SITES=	http://www.acadix.biz/Ports/distfiles/
 DISTNAME=	condor_src-${PORTVERSION}-all-all
@@ -16,8 +16,6 @@ COMMENT=	High-throughput computing on distributively owned resources
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE-2.0.txt
-
-BROKEN_powerpc64=	Does not build
 
 LIB_DEPENDS+=	libkrb5support.so:security/krb5 \
 		libpcre.so:devel/pcre \
@@ -34,7 +32,8 @@ SHEBANG_FILES=	src/condor_scripts/condor_qsub \
 		src/condor_gridmanager/remote_gahp \
 		src/condor_examples/condor_limits_wrapper.sh \
 		src/condor_examples/condor_schedd.init \
-		src/condor_starter.V6.1/condor_ssh_to_job_shell_setup
+		src/condor_starter.V6.1/condor_ssh_to_job_shell_setup \
+		src/condor_job_router/condor_router_history
 
 WANT_PGSQL=	server
 CXXFLAGS+=	-I${LOCALBASE}/include -fPIC

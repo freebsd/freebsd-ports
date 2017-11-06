@@ -1,0 +1,32 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: isnsd
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# isnsd_enable (bool):	Set to NO by default.
+#			Set it to YES to enable daemon.
+# isnsd_config (path):	Set to %%PREFIX%%/etc/isns/${name}.conf
+#			by default.
+# isnsd_flags (str):	Set to "" by default.
+#			Extra flags passed to start command.
+
+. /etc/rc.subr
+
+name="isnsd"
+desc="Internet Storage Name Service daemon"
+rcvar=`set_rcvar`
+
+load_rc_config "$name"
+
+eval "${rcvar}=\${${rcvar}:-'NO'}"
+: ${isnsd_config="%%PREFIX%%/etc/isns/isnsd.conf"}
+: ${isnsd_flags=""}
+
+pidfile="/var/run/${name}.pid"
+command="%%PREFIX%%/sbin/${name}"
+command_args="--config \"${isnsd_config}\" ${isnsd_flags}"
+
+run_rc_command "$1"

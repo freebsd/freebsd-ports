@@ -18,8 +18,4 @@
     restore command to 5 ('-d 5') in the main configuration, for instance
 
      $Conf{SmbClientRestoreCmd} = '$smbClientPath \\\\$host\\$shareName $I_option -U $userName -E -d 5 -c tarmode\\ full -Tx -';
-
-    and set in the each host's configuration
-
-     $Conf{BackupZeroFilesIsFatal} = '0';
 ==========================================================================

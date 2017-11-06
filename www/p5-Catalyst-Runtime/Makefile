@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Catalyst-Runtime
-PORTVERSION=	5.90114
+PORTVERSION=	5.90115
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Elegant MVC Web Application Framework (Runtime)
 
-LICENSE=	ART10 GPLv1
+LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 # Do not add the following ports to TEST_DEPENDS to avoid cyclic dependencies:
@@ -33,11 +33,10 @@ BUILD_DEPENDS=	p5-CGI-Simple>=1.109:www/p5-CGI-Simple \
 		p5-List-MoreUtils>=0:lang/p5-List-MoreUtils \
 		p5-MRO-Compat>=0:devel/p5-MRO-Compat \
 		p5-Module-Pluggable>=4.7:devel/p5-Module-Pluggable \
-		p5-Moose>=2:devel/p5-Moose \
+		p5-Moose>=2.1300:devel/p5-Moose \
 		p5-MooseX-Emulate-Class-Accessor-Fast>=0.00903:devel/p5-MooseX-Emulate-Class-Accessor-Fast \
 		p5-MooseX-Getopt>=0.48:devel/p5-MooseX-Getopt \
 		p5-MooseX-MethodAttributes>=0.24:devel/p5-MooseX-MethodAttributes \
-		p5-MooseX-Role-WithOverloading>=0.09:devel/p5-MooseX-Role-WithOverloading \
 		p5-Path-Class>=0.09:devel/p5-Path-Class \
 		p5-Plack>=0.9991:www/p5-Plack \
 		p5-Plack-Middleware-FixMissingBodyInRedirect>=0.09:www/p5-Plack-Middleware-FixMissingBodyInRedirect \

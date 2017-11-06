@@ -1,0 +1,33 @@
+--- CMakeLists.txt.orig	2016-11-21 02:03:53.000000000 -0500
++++ CMakeLists.txt	2017-07-28 23:21:24.804201000 -0500
+@@ -149,7 +149,7 @@
+ endif (NOT LIBDIR)
+ 
+ if (NOT LOCALSTATEDIR)
+-  set (LOCALSTATEDIR "${CMAKE_INSTALL_PREFIX}/var")
++  set (LOCALSTATEDIR "/var")
+ endif (NOT LOCALSTATEDIR)
+ 
+ if (NOT DATADIR)
+@@ -222,7 +222,7 @@
+ 
+ ## Program
+ 
+-set (HARDENING_FLAGS            "-Wformat -Wformat-security -O2 -D_FORTIFY_SOURCE=2 -fstack-protector")
++set (HARDENING_FLAGS            "-Wformat -Wformat-security -fstack-protector")
+ set (LINKER_HARDENING_FLAGS     "-Wl,-z,relro -Wl,-z,now")
+ set (GPGME_C_FLAGS              "-D_FILE_OFFSET_BITS=64 -DLARGEFILE_SOURCE=1")
+ 
+@@ -255,10 +255,10 @@
+                      GROUP_READ GROUP_EXECUTE WORLD_READ WORLD_EXECUTE)
+ 
+ install (FILES ${CMAKE_BINARY_DIR}/doc/openvassd.8
+-         DESTINATION ${DATADIR}/man/man8 )
++         DESTINATION man/man8 )
+ 
+ install (FILES ${CMAKE_SOURCE_DIR}/doc/greenbone-nvt-sync.8
+-         DESTINATION ${DATADIR}/man/man8 )
++         DESTINATION man/man8 )
+ 
+ install (FILES ${CMAKE_BINARY_DIR}/doc/example_redis_2_4.conf
+                ${CMAKE_BINARY_DIR}/doc/example_redis_2_6.conf

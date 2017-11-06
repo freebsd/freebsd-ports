@@ -1,7 +1,7 @@
 ============================================================
 To use doas,
 
-%%ETCDIR%%/doas.conf
+%%PREFIX%%/etc/doas.conf
 
 must be created.
 

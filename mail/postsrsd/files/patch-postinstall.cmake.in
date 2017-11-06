@@ -1,6 +1,11 @@
 --- postinstall.cmake.in.orig	2015-12-13 08:56:05 UTC
 +++ postinstall.cmake.in
-@@ -7,51 +7,13 @@ set(INIT_FLAVOR "@INIT_FLAVOR@")
+@@ -1,4 +1,3 @@
+-set(GENERATE_SRS_SECRET "@GENERATE_SRS_SECRET@")
+ set(SYSCONF_DIR "@SYSCONF_DIR@")
+ set(SYSD_UNIT_DIR "@SYSD_UNIT_DIR@")
+ set(CHROOT_DIR "@CHROOT_DIR@")
+@@ -7,51 +6,13 @@ set(INIT_FLAVOR "@INIT_FLAVOR@")
  set(SECRET_FILE "@PROJECT_NAME@.secret")
  set(DD "@DD@")
  set(BASE64_ENCODE "@BASE64_ENCODE@")
@@ -53,7 +58,7 @@
  	message(STATUS "Generating secret key")
  	execute_process(
  		COMMAND ${DD} if=/dev/urandom bs=18 count=1
-@@ -60,7 +22,7 @@ if(GENERATE_SRS_SECRET AND DD AND BASE64
+@@ -60,7 +21,7 @@ if(GENERATE_SRS_SECRET AND DD AND BASE64
  		ERROR_QUIET
  		OUTPUT_STRIP_TRAILING_WHITESPACE
  	)

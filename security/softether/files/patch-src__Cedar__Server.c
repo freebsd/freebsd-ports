@@ -1,4 +1,4 @@
---- src/Cedar/Server.c.orig	2014-06-08 06:19:15 UTC
+--- src/Cedar/Server.c.orig	2016-05-03 06:16:53 UTC
 +++ src/Cedar/Server.c
 @@ -115,12 +115,12 @@
  
@@ -19,3 +19,12 @@
  
  static bool server_reset_setting = false;
  
+@@ -10916,7 +10916,7 @@ SERVER *SiNewServerEx(bool bridge, bool 
+ #endif	// OS_WIN32
+ 
+ #ifdef	ENABLE_AZURE_SERVER
+-	if (IsFileExists("@azureserver.config"))
++	if (IsFileExists("/var/db/softether/azureserver.config"))
+ 	{
+ 		DisableRDUPServerGlobally();
+ 		s->AzureServer = NewAzureServer(s->Cedar);

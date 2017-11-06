@@ -47,6 +47,7 @@ man/man1/kid3.1.gz
 %%QT%%share/icons/hicolor/scalable/apps/kid3-qt.svg
 %%KDE%%share/icons/hicolor/scalable/apps/kid3.svgz
 %%DATADIR%%/translations/kid3_cs.qm
+%%DATADIR%%/translations/kid3_da.qm
 %%DATADIR%%/translations/kid3_de.qm
 %%DATADIR%%/translations/kid3_es.qm
 %%DATADIR%%/translations/kid3_et.qm

@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	enclosed-exceptions
-PORTVERSION=	1.0.1.1
+PORTVERSION=	1.0.2
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org

@@ -1,6 +1,6 @@
 --- images/Makefile.am.orig	2014-06-10 19:57:22.000000000 +0000
 +++ images/Makefile.am
-@@ -3,10 +3,10 @@
+@@ -3,10 +3,9 @@
  SHELL=@SHELL@
  
  install-data-am:
@@ -11,7 +11,6 @@
 +	$(SHELL) ./../mkinstalldirs $(DESTDIR)$(datadir)/xlogical
 +	$(SHELL) ./../mkinstalldirs $(DESTDIR)$(datadir)/xlogical/images
 +	$(BSD_INSTALL_DATA) *.bmp *.jpg $(DESTDIR)$(datadir)/xlogical/images
-+	chmod 644 $(DESTDIR)$(datadir)/xlogical/images/*
  uninstall:
  	rm -f $(datadir)/xlogical/images/*.{bmp,jpg}
  	rmdir $(datadir)/xlogical/images

@@ -1,0 +1,11 @@
+--- device/gamepad/BUILD.gn.orig	2017-09-07 07:21:11.763066000 +0200
++++ device/gamepad/BUILD.gn	2017-09-07 07:50:31.557057000 +0200
+@@ -72,7 +72,7 @@
+     cflags = [ "/wd4267" ]  # conversion from 'size_t' (64 bit) to 'type'(32 bit).
+   }
+ 
+-  if (is_linux) {
++  if (is_linux || is_bsd) {
+     if (use_udev) {
+       deps += [ "//device/udev_linux" ]
+     } else {

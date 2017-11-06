@@ -2,13 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	boinc_curses
-PORTVERSION=	0.2.2
-PORTREVISION=	1
+PORTVERSION=	0.2.3
 CATEGORIES=	net
-MASTER_SITES=	LOCAL/rene http://www.oook.cz/bsd/boinc_curses/
+MASTER_SITES=	http://www.oook.cz/bsd/boinc_curses/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Console, ncurses based monitor and manager for BOINC
+
+LICENSE=	LGPL21+
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libboinc.a:net/boinc-client
 

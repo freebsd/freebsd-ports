@@ -3,7 +3,6 @@
 
     COMMENT = Instant messaging
 
-    SUBDIR += ayttm
     SUBDIR += bsflite
     SUBDIR += centerim
     SUBDIR += centerim-devel
@@ -35,7 +34,6 @@
     SUBDIR += icqlib
     SUBDIR += imspector
     SUBDIR += jabber
-    SUBDIR += jabber-pyicq
     SUBDIR += jabber.el
     SUBDIR += jabberd
     SUBDIR += jarl
@@ -58,11 +56,13 @@
     SUBDIR += libaccounts-glib
     SUBDIR += libaccounts-qt5
     SUBDIR += libjreen
+    SUBDIR += libmesode
     SUBDIR += libnice
     SUBDIR += libnice-gst010
     SUBDIR += libnice-gst1
     SUBDIR += libpurple
     SUBDIR += libqtelegram-ae
+    SUBDIR += libsignon-glib
     SUBDIR += libstrophe
     SUBDIR += libtelepathy
     SUBDIR += libyahoo2
@@ -72,14 +72,14 @@
     SUBDIR += licq-msn
     SUBDIR += licq-osd
     SUBDIR += licq-qt-gui
-    SUBDIR += linux-instantbird
+    SUBDIR += linux-telegram-desktop
     SUBDIR += loudmouth
+    SUBDIR += mastodon
     SUBDIR += mbpurple
     SUBDIR += mcabber
     SUBDIR += meanwhile
     SUBDIR += mikutter
     SUBDIR += mu-conference
-    SUBDIR += naim
     SUBDIR += openfire
     SUBDIR += oysttyer
     SUBDIR += p5-AnyEvent-XMPP
@@ -111,9 +111,11 @@
     SUBDIR += pidgin-hotkeys
     SUBDIR += pidgin-latex
     SUBDIR += pidgin-libnotify
+    SUBDIR += pidgin-manualsize
     SUBDIR += pidgin-osd
     SUBDIR += pidgin-pidgimpd
     SUBDIR += pidgin-privacy-please
+    SUBDIR += pidgin-rocketchat
     SUBDIR += pidgin-sipe
     SUBDIR += pidgin-skype
     SUBDIR += pidgin-skypeweb
@@ -123,14 +125,15 @@
     SUBDIR += pork
     SUBDIR += profanity
     SUBDIR += prosody
+    SUBDIR += prosody-modules
     SUBDIR += proxy65
     SUBDIR += psi
     SUBDIR += psimedia
-    SUBDIR += pwytter
     SUBDIR += py-fbmq
     SUBDIR += py-jabber
     SUBDIR += py-jabberbot
     SUBDIR += py-libturpial
+    SUBDIR += py-matrix-synapse
     SUBDIR += py-nbxmpp
     SUBDIR += py-punjab
     SUBDIR += py-python-telegram-bot
@@ -139,14 +142,13 @@
     SUBDIR += py-slackclient
     SUBDIR += py-sleekxmpp
     SUBDIR += py-telepot
-    SUBDIR += py-twistedWords
+    SUBDIR += py-toxcore-c
+    SUBDIR += py-unmessage
     SUBDIR += py-xmpppy
     SUBDIR += py-xmpppy-irc
     SUBDIR += py-xmpppy-yahoo
     SUBDIR += qTox
     SUBDIR += qq
-    SUBDIR += qwit
-    SUBDIR += qwit-devel
     SUBDIR += qxmpp
     SUBDIR += qxmpp-qt5
     SUBDIR += ramblercontacts
@@ -168,6 +170,7 @@
     SUBDIR += telegram
     SUBDIR += telegram-purple
     SUBDIR += telegramqml
+    SUBDIR += telepathy-accounts-signon
     SUBDIR += telepathy-butterfly
     SUBDIR += telepathy-farsight
     SUBDIR += telepathy-farstream
@@ -188,7 +191,6 @@
     SUBDIR += tkabber-plugins
     SUBDIR += tox
     SUBDIR += toxic
-    SUBDIR += ttytter
     SUBDIR += turpial
     SUBDIR += twirssi
     SUBDIR += twitmail

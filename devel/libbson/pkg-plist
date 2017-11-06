@@ -4,6 +4,7 @@ include/libbson-1.0/bson-clock.h
 include/libbson-1.0/bson-compat.h
 include/libbson-1.0/bson-config.h
 include/libbson-1.0/bson-context.h
+include/libbson-1.0/bson-decimal128.h
 include/libbson-1.0/bson-endian.h
 include/libbson-1.0/bson-error.h
 include/libbson-1.0/bson-iter.h
@@ -14,6 +15,7 @@ include/libbson-1.0/bson-md5.h
 include/libbson-1.0/bson-memory.h
 include/libbson-1.0/bson-oid.h
 include/libbson-1.0/bson-reader.h
+include/libbson-1.0/bson-stdint-win32.h
 include/libbson-1.0/bson-stdint.h
 include/libbson-1.0/bson-string.h
 include/libbson-1.0/bson-types.h
@@ -23,10 +25,13 @@ include/libbson-1.0/bson-version-functions.h
 include/libbson-1.0/bson-version.h
 include/libbson-1.0/bson-writer.h
 include/libbson-1.0/bson.h
+lib/cmake/libbson-1.0/libbson-1.0-config-version.cmake
+lib/cmake/libbson-1.0/libbson-1.0-config.cmake
+lib/cmake/libbson-static-1.0/libbson-static-1.0-config-version.cmake
+lib/cmake/libbson-static-1.0/libbson-static-1.0-config.cmake
 lib/libbson-1.0.so
 lib/libbson-1.0.so.0
-lib/libbson-1.0.so.0.0.0
+lib/libbson-1.0.so.1
+lib/libbson-static-1.0.a
 libdata/pkgconfig/libbson-1.0.pc
-%%PORTDOCS%%%%DOCSDIR%%/COPYING
-%%PORTDOCS%%%%DOCSDIR%%/NEWS
-%%PORTDOCS%%%%DOCSDIR%%/README
+libdata/pkgconfig/libbson-static-1.0.pc

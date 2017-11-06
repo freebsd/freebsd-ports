@@ -4,7 +4,7 @@
 PORTNAME=	mongo-cxx-driver
 PORTVERSION=	1.1.2
 DISTVERSIONPREFIX=legacy-
-PORTREVISION=	2
+PORTREVISION=	5
 CATEGORIES=	devel
 
 MAINTAINER=	numisemis@yahoo.com
@@ -14,8 +14,6 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/APACHE-2.0.txt
 
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs
-
-BROKEN_powerpc64=	Does not build
 
 MAKE_JOBS_UNSAFE=	yes
 
@@ -30,7 +28,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	mongodb
 GH_PROJECT=	mongo-cxx-driver
 
-USES=		execinfo scons
+USES=		scons
 MAKE_ARGS=	--prefix=${STAGEDIR}${PREFIX} \
 		--cc=${CC} \
 		--cxx=${CXX}

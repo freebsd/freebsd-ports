@@ -8,7 +8,7 @@ CATEGORIES=	mail www
 DISTNAME=	${SQUIRREL_PLUGIN_NAME}-${PORTVERSION}-1.4.0
 DIST_SUBDIR=	squirrelmail
 
-MAINTAINER=	itetcu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Provides buttons with customizable action (for reporting spam, etc.)
 
 USE_SM_COMPAT=	yes

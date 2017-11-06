@@ -1,6 +1,7 @@
 bin/append_sff
 bin/convert_trace
 bin/cram_dump
+bin/cram_filter
 bin/cram_index
 bin/cram_size
 bin/extract_fastq
@@ -39,6 +40,7 @@ include/io_lib/abi.h
 include/io_lib/alf.h
 include/io_lib/array.h
 include/io_lib/bam.h
+include/io_lib/bgzip.h
 include/io_lib/binning.h
 include/io_lib/compress.h
 include/io_lib/compression.h
@@ -86,7 +88,7 @@ include/io_lib/ztr.h
 lib/libstaden-read.a
 lib/libstaden-read.so
 lib/libstaden-read.so.11
-lib/libstaden-read.so.11.0.6
+lib/libstaden-read.so.11.1.0
 man/man1/scramble.1.gz
 man/man1/srf2fasta.1.gz
 man/man1/srf2fastq.1.gz

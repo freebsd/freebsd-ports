@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	File_MARC
-PORTVERSION=	1.1.3
+PORTVERSION=	1.1.5
 CATEGORIES=	textproc pear
 
-MAINTAINER=	dbaio@bsd.com.br
+MAINTAINER=	dbaio@FreeBSD.org
 COMMENT=	Parse, modify, and create MARC records
 
 LICENSE=	LGPL21+

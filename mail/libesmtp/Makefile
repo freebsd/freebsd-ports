@@ -16,6 +16,8 @@ COMMENT=	Library for posting electronic mail
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING.LIB
 
+BROKEN_SSL=	openssl-devel
+
 USES=		gmake libtool tar:bzip2
 GNU_CONFIGURE=	yes
 # require-all-recipients (implied by enable-all) is required for Balsa
@@ -41,10 +43,4 @@ post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/examples/* ${STAGEDIR}${EXAMPLESDIR}
 
-.include <bsd.port.pre.mk>
-
-.if ${PORT_OPTIONS:MOPENSSL} && ${SSL_DEFAULT:Mopenssl-devel}
-BROKEN=		Does not build with openssl-devel
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

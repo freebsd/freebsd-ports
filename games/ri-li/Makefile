@@ -10,6 +10,10 @@ MASTER_SITES=	SF/${PORTNAME:tl}/${PORTNAME}%20Linux_Unix/${PORTNAME}%20V${PORTVE
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Drive a toy wood train in many levels - snake-like arcade game
 
+LICENSE=	GPLv2 GPLv3
+LICENSE_COMB=	dual
+LICENSE_FILE_GPLv3=	${WRKSRC}/COPYING
+
 USES=		tar:bzip2 gmake
 GNU_CONFIGURE=	yes
 USE_SDL=	sdl mixer

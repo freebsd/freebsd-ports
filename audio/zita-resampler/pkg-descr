@@ -1,0 +1,14 @@
+Zita-resampler is a C++ library for resampling audio signals. It is designed to
+be used within a real-time processing context, to be fast, and to provide
+high-quality sample rate conversion.
+
+The library operates on signals represented in single-precision floating point
+format. For multichannel operation both the input and output signals are assumed
+to be stored as interleaved samples.
+
+The API allows a trade-off between quality and CPU load. For the latter a range
+of approximately 1:6 is available. Even at the highest quality setting
+libzita-resampler will be faster than most similar libraries providing the same
+quality, e.g. libsamplerate.
+
+WWW: http://kokkinizita.linuxaudio.org/linuxaudio/zita-resampler/resampler.html

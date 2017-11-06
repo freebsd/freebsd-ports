@@ -12,6 +12,7 @@
     SUBDIR += bind9-devel
     SUBDIR += bind910
     SUBDIR += bind911
+    SUBDIR += bind912
     SUBDIR += bind99
     SUBDIR += bindgraph
     SUBDIR += bundy
@@ -29,6 +30,7 @@
     SUBDIR += djbdns-tools
     SUBDIR += dlint
     SUBDIR += dnrd
+    SUBDIR += dns2blackhole
     SUBDIR += dns2tcp
     SUBDIR += dns_balance
     SUBDIR += dnscap
@@ -40,6 +42,7 @@
     SUBDIR += dnsdist
     SUBDIR += dnsenum
     SUBDIR += dnsflood
+    SUBDIR += dnsforwarder
     SUBDIR += dnshistory
     SUBDIR += dnsjava
     SUBDIR += dnsmasq
@@ -58,6 +61,7 @@
     SUBDIR += dnswall
     SUBDIR += doc
     SUBDIR += dq
+    SUBDIR += drool
     SUBDIR += dualserver
     SUBDIR += erlang-idna
     SUBDIR += ez-ipupdate
@@ -103,12 +107,12 @@
     SUBDIR += noip
     SUBDIR += nsd
     SUBDIR += nslint
+    SUBDIR += nsnotifyd
     SUBDIR += nsping
     SUBDIR += nss_mdns
     SUBDIR += nss_resinit
     SUBDIR += opendd
     SUBDIR += opendnssec
-    SUBDIR += opendnssec13
     SUBDIR += opendnssec2
     SUBDIR += openmdns
     SUBDIR += openresolv
@@ -133,6 +137,7 @@
     SUBDIR += p5-Net-DNS-Lite
     SUBDIR += p5-Net-DNS-Match
     SUBDIR += p5-Net-DNS-RR-SRV-Helper
+    SUBDIR += p5-Net-DNS-Resolver-Mock
     SUBDIR += p5-Net-DNS-Resolver-Programmable
     SUBDIR += p5-Net-DNS-SEC
     SUBDIR += p5-Net-DNS-TestNS
@@ -145,6 +150,7 @@
     SUBDIR += p5-Net-Domain-ExpireDate
     SUBDIR += p5-Net-Domain-TLD
     SUBDIR += p5-Net-LibIDN
+    SUBDIR += p5-Net-LibIDN2
     SUBDIR += p5-Net-Nslookup
     SUBDIR += p5-Net-RBLClient
     SUBDIR += p5-Net-RNDC
@@ -158,17 +164,16 @@
     SUBDIR += p5-Tie-DNS
     SUBDIR += p5-URBL-Prepare
     SUBDIR += p5-pgeodns
+    SUBDIR += packetq
     SUBDIR += pdnsd
     SUBDIR += pear-File_DNS
     SUBDIR += pear-Horde_Idna
-    SUBDIR += pear-Net_DNS
     SUBDIR += pear-Net_DNS2
     SUBDIR += powerdns
     SUBDIR += powerdns-recursor
     SUBDIR += public_suffix_list
-    SUBDIR += py-adns
-    SUBDIR += py-bonjour
     SUBDIR += py-dns
+    SUBDIR += py-dns-lexicon
     SUBDIR += py-dnschain
     SUBDIR += py-dnspython
     SUBDIR += py-easyzone
@@ -182,8 +187,8 @@
     SUBDIR += py-pydnstable
     SUBDIR += py-pywdns
     SUBDIR += py-tldextract
-    SUBDIR += py-twistedNames
     SUBDIR += py3-dnspython
+    SUBDIR += py3-idna
     SUBDIR += radns
     SUBDIR += rbldnsd
     SUBDIR += rbllookup
@@ -191,9 +196,12 @@
     SUBDIR += renewck
     SUBDIR += rpsl2acl
     SUBDIR += rubygem-dnsruby
+    SUBDIR += rubygem-idn-ruby
     SUBDIR += rubygem-net-dns
     SUBDIR += rubygem-public_suffix
     SUBDIR += rubygem-public_suffix_service
+    SUBDIR += rubygem-simpleidn
+    SUBDIR += rubygem-validates_hostname
     SUBDIR += samba-nsupdate
     SUBDIR += scavenge
     SUBDIR += sheerdns

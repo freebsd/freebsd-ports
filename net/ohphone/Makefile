@@ -3,14 +3,14 @@
 
 PORTNAME=	ohphone
 PORTVERSION=	1.4.5
-PORTREVISION=	10
+PORTREVISION=	12
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.frm2.tum.de/pub/jpulz/FreeBSD/distfiles/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	H323 Video Conferencing Program, compatible with NetMeeting
 
-LICENSE=	MPL
+LICENSE=	MPL10
 
 LIB_DEPENDS=	libh323_r.so:net/openh323
 

@@ -10,6 +10,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Web log rotation utility that provides datestamp filenames
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 CONFLICTS_INSTALL=      cronolog-devel-[0-9]*
 
@@ -23,12 +24,7 @@ GH_TAGNAME=	8ea64c0
 OPTIONS_DEFINE=		SETUID_PATCH
 OPTIONS_DEFAULT=	SETUID_PATCH
 SETUID_PATCH_DESC=	Build with setuid functionality
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MSETUID_PATCH}
-EXTRA_PATCHES=	${PATCHDIR}/extra-patch-cronolog-setugid
-.endif
+SETUID_PATCH_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-cronolog-setugid
 
 post-patch-SETUID_PATCH-on:
 	(cd ${WRKSRC} && ${TOUCH} aclocal.m4 Makefile.in */Makefile.in)

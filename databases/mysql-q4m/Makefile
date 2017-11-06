@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	q4m
-PORTVERSION=	0.9.13
-PORTREVISION=	2
+PORTVERSION=	0.9.14
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://q4m.kazuhooku.com/dist/
 PKGNAMEPREFIX=	${_MYSQL_SERVER:T:C/-server$/-/}
@@ -11,7 +11,8 @@ PKGNAMEPREFIX=	${_MYSQL_SERVER:T:C/-server$/-/}
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	Message queue that works as a pluggable storage engine of MySQL
 
-FETCH_DEPENDS+=	${NONEXISTENT}:${_MYSQL_SERVER}:build
+FETCH_DEPENDS+=	${NONEXISTENT}:${_MYSQL_SERVER}:fetch
+BUILD_DEPENDS+=	${NONEXISTENT}:${_MYSQL_SERVER}:build
 
 USES=		gmake perl5 libtool
 USE_MYSQL=	server
@@ -19,11 +20,11 @@ USE_GCC=	any
 USE_PERL5=	run
 
 GNU_CONFIGURE=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include -DDBUG_OFF
-LDFLAGS+=	-lpthread -L${LOCALBASE}/lib -L${LOCALBASE}/lib/mysql
+LDFLAGS+=	-lpthread -L${LOCALBASE}/lib/mysql
 CONFIGURE_ARGS=	--prefix="${PREFIX}" \
 		--libdir="${PREFIX}/lib/mysql/plugin" \
-		--with-mysql="$$(cd ${PORTSDIR}/${_MYSQL_SERVER}; ${MAKE} -V WRKSRC)"
+		--with-mysql="$$(cd ${PORTSDIR}/${_MYSQL_SERVER}; ${MAKE} -V WRKSRC)" \
+		CPPFLAGS="-I$$(cd ${PORTSDIR}/${_MYSQL_SERVER}; ${MAKE} -V BUILD_WRKSRC)/include -DDEBUG_OFF"
 INSTALL_TARGET=	bindir=${STAGEDIR}${PREFIX}/bin install
 
 post-extract:

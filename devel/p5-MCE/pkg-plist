@@ -16,6 +16,8 @@
 %%SITE_PERL%%/MCE/Loop.pm
 %%SITE_PERL%%/MCE/Map.pm
 %%SITE_PERL%%/MCE/Mutex.pm
+%%SITE_PERL%%/MCE/Mutex/Channel.pm
+%%SITE_PERL%%/MCE/Mutex/Flock.pm
 %%SITE_PERL%%/MCE/Queue.pm
 %%SITE_PERL%%/MCE/Relay.pm
 %%SITE_PERL%%/MCE/Signal.pm
@@ -32,6 +34,8 @@
 %%PERL5_MAN3%%/MCE::Loop.3.gz
 %%PERL5_MAN3%%/MCE::Map.3.gz
 %%PERL5_MAN3%%/MCE::Mutex.3.gz
+%%PERL5_MAN3%%/MCE::Mutex::Channel.3.gz
+%%PERL5_MAN3%%/MCE::Mutex::Flock.3.gz
 %%PERL5_MAN3%%/MCE::Queue.3.gz
 %%PERL5_MAN3%%/MCE::Relay.3.gz
 %%PERL5_MAN3%%/MCE::Signal.3.gz

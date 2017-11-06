@@ -7,7 +7,7 @@ DISTVERSIONPREFIX=	v
 PORTREVISION=	1
 CATEGORIES=	databases
 
-MAINTAINER=	nbari@dalmp.com
+MAINTAINER=	nbari@tequila.io
 COMMENT=	Database Abstraction Layer for MySQL using PHP
 
 LICENSE=	BSD3CLAUSE

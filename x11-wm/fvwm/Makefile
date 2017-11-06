@@ -3,13 +3,15 @@
 
 PORTNAME=	fvwm
 PORTVERSION=	1.24r
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	x11-wm
 MASTER_SITES=	ftp://ftp.fvwm.org/pub/fvwm/version-1/
 PKGNAMESUFFIX=	1${PKGNAMESUFFIX2}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fvwm window manager
+
+CONFLICTS=	fvwm-2.*
 
 USES=		imake
 USE_XORG=	xbitmaps xpm xext x11 xmu

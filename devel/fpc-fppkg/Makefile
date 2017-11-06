@@ -4,7 +4,6 @@
 CATEGORIES=	devel lang
 PKGNAMESUFFIX=	-fppkg
 
-MAINTAINER=	freebsd-fpc@FreeBSD.org
 COMMENT=	Free Pascal package manager unit
 
 USE_FPC=	dblib fastcgi fcl-async fcl-base fcl-db fcl-json fcl-net \

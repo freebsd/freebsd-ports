@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	dgeo@centrale-marseille.fr
 COMMENT=	AnyEvent::DNS::EtcHosts - Use /etc/hosts before DNS
 
-LICENSE=	ART10 GPLv1
+LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 USES=		perl5

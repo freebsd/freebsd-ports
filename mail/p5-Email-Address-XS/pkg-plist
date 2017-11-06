@@ -1,0 +1,3 @@
+%%SITE_ARCH%%/Email/Address/XS.pm
+%%SITE_ARCH%%/auto/Email/Address/XS/XS.so
+%%PERL5_MAN3%%/Email::Address::XS.3.gz

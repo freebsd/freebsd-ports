@@ -4,8 +4,7 @@
 PORTNAME=	stress
 PORTVERSION=	1.0.4
 CATEGORIES=	sysutils
-MASTER_SITES=	http://people.seas.harvard.edu/~apw/stress/ \
-		http://fossies.org/linux/privat/
+MASTER_SITES=	https://people.seas.harvard.edu/~apw/stress/
 
 MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Tool to impose load on and stress test Unix-like systems

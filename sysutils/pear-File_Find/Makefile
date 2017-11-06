@@ -5,11 +5,11 @@ PORTNAME=	File_Find
 PORTVERSION=	1.3.3
 CATEGORIES=	sysutils www pear
 
-MAINTAINER=	joneum@bsdproject.de
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	PEAR class that facilitates the search of filesystems
 
 LICENSE=	PHP301
 
-USES=	pear
+USES=		pear
 
 .include <bsd.port.mk>

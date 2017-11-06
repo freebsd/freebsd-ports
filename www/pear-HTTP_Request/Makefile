@@ -5,7 +5,7 @@ PORTNAME=	HTTP_Request
 PORTVERSION=	1.4.4
 CATEGORIES=	www pear
 
-MAINTAINER=	joneum@bsdproject.de
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	PEAR classes providing an easy way to perform HTTP requests
 
 BUILD_DEPENDS=	${PEARDIR}/Net/URL.php:net/pear-Net_URL		\
@@ -13,6 +13,6 @@ BUILD_DEPENDS=	${PEARDIR}/Net/URL.php:net/pear-Net_URL		\
 RUN_DEPENDS=	${PEARDIR}/Net/URL.php:net/pear-Net_URL		\
 		${PEARDIR}/Net/Socket.php:net/pear-Net_Socket
 
-USES=	pear
+USES=		pear
 
 .include <bsd.port.mk>

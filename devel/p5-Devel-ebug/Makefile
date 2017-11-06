@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Devel-ebug
-PORTVERSION=	0.57
+PORTVERSION=	0.59
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -10,19 +10,21 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Simple, extensible Perl debugger
 
-LICENSE=	ART10 GPLv1
+LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	p5-Class-Accessor-Chained>=0:devel/p5-Class-Accessor-Chained \
 		p5-Devel-StackTrace>=0:devel/p5-Devel-StackTrace \
+		p5-Module-Pluggable>=0:devel/p5-Module-Pluggable \
 		p5-PadWalker>=0:devel/p5-PadWalker \
 		p5-Proc-Background>=0:devel/p5-Proc-Background \
 		p5-String-Koremutake>=0:textproc/p5-String-Koremutake \
-		p5-YAML-Syck>=0:textproc/p5-YAML-Syck
-BUILD_DEPENDS:=	${RUN_DEPENDS}
-TEST_DEPENDS=	p5-Test-Expect>=0:devel/p5-Test-Expect \
 		p5-YAML>=0:textproc/p5-YAML
+BUILD_DEPENDS:=	${RUN_DEPENDS}
+TEST_DEPENDS=	p5-Test-Expect>=0:devel/p5-Test-Expect
 
+NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
 

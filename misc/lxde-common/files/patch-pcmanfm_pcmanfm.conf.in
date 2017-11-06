@@ -1,0 +1,9 @@
+--- pcmanfm/pcmanfm.conf.in.orig	2016-11-21 22:47:05 UTC
++++ pcmanfm/pcmanfm.conf.in
+@@ -1,6 +1,5 @@
+ [config]
+ bm_open_method=0
+-su_cmd=xdg-su -c '%s'
+ 
+ [desktop]
+ wallpaper_mode=crop

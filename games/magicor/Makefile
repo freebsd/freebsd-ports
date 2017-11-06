@@ -3,7 +3,7 @@
 
 PORTNAME=	magicor
 PORTVERSION=	1.1
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	games
 MASTER_SITES=	SF
 DISTFILES=	${PORTNAME}-source-${PORTVERSION}${EXTRACT_SUFX} \
@@ -17,7 +17,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pygame/__init__.py:devel/py-game
 
-USES=		python
+USES=		python shebangfix
+SHEBANG_FILES=	*.py
 NO_BUILD=	yes
 NO_ARCH=	yes
 
@@ -49,9 +50,9 @@ post-patch:
 	@${FIND} ${WRKSRC}/magicor -name "*.pyc" -delete
 
 do-install:
-	cd ${WRKSRC}/data && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}/
-	cd ${WRKSRC}/magicor && ${COPYTREE_SHARE} . ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/magicor/
-	${MKDIR} ${STAGEDIR}${PREFIX}/etc/magicor
+	@cd ${WRKSRC}/data && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}/
+	@cd ${WRKSRC}/magicor && ${COPYTREE_SHARE} . ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/magicor/
+	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/magicor
 	${INSTALL_SCRIPT} ${WRKSRC}/Magicor.py ${STAGEDIR}${PREFIX}/bin/magicor
 	${INSTALL_DATA} ${WRKSRC}/etc/magicor.conf \
 		${STAGEDIR}${PREFIX}/etc/magicor/magicor.conf.sample
@@ -62,7 +63,7 @@ do-install-EDITOR-on:
 		${STAGEDIR}${PREFIX}/etc/magicor/magicor-editor.conf.sample
 
 do-install-DOCS-on:
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}/
 
 .include <bsd.port.mk>

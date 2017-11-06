@@ -12,16 +12,22 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:snapshot
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Video Disk Recorder - EPG search plugin
 
-LIB_DEPENDS+=	libpcre.so:devel/pcre \
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+LIB_DEPENDS=	libpcre.so:devel/pcre \
 		libtre.so:textproc/libtre
 
 USES=		pkgconfig tar:bzip2
 PATCH_STRIP=	-p1
-PORTDOCS=	COPYING README HISTORY
 WRKSRC=		${WRKDIR}/vdr-plugin-${PLUGIN}
-MAKE_ARGS+=	INCLUDES="-I${LOCALBASE}/include -I${LOCALBASE}/include/vdr -I${WRKSRC}"
+MAKE_ARGS=	INCLUDES="-I${LOCALBASE}/include -I${LOCALBASE}/include/vdr -I${WRKSRC}"
 
-.include	"${.CURDIR}/../vdr/Makefile.plugins"
+PORTDOCS=	README HISTORY
+
+OPTIONS_DEFINE=	DOCS NLS
+
+.include "${.CURDIR}/../vdr/Makefile.plugins"
 
 post-patch: post-patch-plugin
 	@${REINPLACE_CMD} -e 's/^#\(HAVE_PCREPOSIX=\)/\1/;' \
@@ -29,10 +35,12 @@ post-patch: post-patch-plugin
 		${WRKSRC}/Makefile
 
 pre-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/lib/vdr
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/vdr
 
 post-install: post-install-pluginlocales
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
+
+post-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>

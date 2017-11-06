@@ -1,0 +1,9 @@
+The SonarQube Scanner is recommended as the default launcher to analyze a
+project with SonarQube. The SonarQube Scanner allows you to perform source code
+analyzes without using tools such as Ant or Maven. The SonarQube platform is an
+open source quality management platform, dedicated to continuously analyzing and
+measuring the technical quality of source code, from project portfolio down to
+the method level. With the SonarQube Scanner, and also a tool like Jenkins,
+everyone can analyze all kinds of languages, not just Java.
+
+WWW: http://docs.sonarqube.org/display/SCAN/Analyzing+with+SonarQube+Scanner

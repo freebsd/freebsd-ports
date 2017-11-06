@@ -23,6 +23,8 @@ man/man1/dirmngr-client.1.gz
 man/man1/gpg-agent.1.gz
 man/man1/gpg-connect-agent.1.gz
 man/man1/gpg-preset-passphrase.1.gz
+man/man1/gpg-wks-client.1.gz
+man/man1/gpg-wks-server.1.gz
 man/man1/gpg2.1.gz
 man/man1/gpgconf.1.gz
 man/man1/gpgparsemail.1.gz
@@ -46,6 +48,7 @@ sbin/applygnupgdefaults
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/TRANSLATE
 %%PORTDOCS%%%%DOCSDIR%%/examples/README
+%%PORTDOCS%%%%DOCSDIR%%/examples/debug.prf
 %%PORTDOCS%%%%DOCSDIR%%/examples/gpgconf.conf
 %%PORTDOCS%%%%DOCSDIR%%/examples/pwpattern.list
 %%PORTDOCS%%%%DOCSDIR%%/examples/scd-event
@@ -58,6 +61,7 @@ sbin/applygnupgdefaults
 %%PORTDOCS%%%%DOCSDIR%%/examples/systemd-user/gpg-agent.service
 %%PORTDOCS%%%%DOCSDIR%%/examples/systemd-user/gpg-agent.socket
 %%PORTDOCS%%%%DOCSDIR%%/examples/trustlist.txt
+%%PORTDOCS%%%%DOCSDIR%%/examples/vsnfd.prf
 %%PORTDOCS%%%%DOCSDIR%%/help.be.txt
 %%PORTDOCS%%%%DOCSDIR%%/help.ca.txt
 %%PORTDOCS%%%%DOCSDIR%%/help.cs.txt
@@ -86,9 +90,7 @@ sbin/applygnupgdefaults
 %%PORTDOCS%%%%DOCSDIR%%/help.txt
 %%PORTDOCS%%%%DOCSDIR%%/help.zh_CN.txt
 %%PORTDOCS%%%%DOCSDIR%%/help.zh_TW.txt
-%%DATADIR%%/dirmngr-conf.skel
 %%DATADIR%%/distsigkey.gpg
-%%DATADIR%%/gpg-conf.skel
 %%DATADIR%%/sks-keyservers.netCA.pem
 %%NLS%%share/locale/ca/LC_MESSAGES/gnupg2.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/gnupg2.mo

@@ -3,11 +3,11 @@
 
 PORTNAME=	elf
 PORTVERSION=	0.5.4p1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel
 MASTER_SITES=	PACKETSTORM/linux/reverse-engineering
 
-MAINTAINER=	mokhi64@gmail.com
+MAINTAINER=	mmokhi@FreeBSD.org
 COMMENT=	Commandline based ELF header analyzer
 
 LICENSE=	GPLv2

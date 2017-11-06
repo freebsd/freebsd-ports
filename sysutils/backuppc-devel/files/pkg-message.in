@@ -14,12 +14,14 @@
      This file system needs to be big enough
      to accommodate all the PCs you expect to backup.
 
+ - BackupPC 4 creates a large number of files with negative group permissions.
+    To avoid excessive daily security run output consider adding the following
+    line to /etc/periodic.conf:
+
+     daily_status_security_neggrpperm_enable="NO"
+
  - Users of Samba 4 smbclient should change debug level for smbclient
     restore command to 5 ('-d 5') in the main configuration, for instance
 
      $Conf{SmbClientRestoreCmd} = '$smbClientPath \\\\$host\\$shareName $I_option -U $userName -E -d 5 -c tarmode\\ full -Tx -';
-
-    and set in the each host's configuration
-
-     $Conf{BackupZeroFilesIsFatal} = '0';
 ==========================================================================

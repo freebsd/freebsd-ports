@@ -1,6 +1,6 @@
---- extra/CMakeLists.txt.orig	2012-12-17 03:38:29.000000000 +0200
-+++ extra/CMakeLists.txt	2012-12-17 03:40:12.000000000 +0200
-@@ -54,6 +54,7 @@
+--- extra/CMakeLists.txt.orig	2017-04-30 11:09:29 UTC
++++ extra/CMakeLists.txt
+@@ -54,6 +54,7 @@ ADD_CUSTOM_TARGET(GenError
                    DEPENDS 
                    ${CMAKE_BINARY_DIR}/include/mysqld_error.h.tmp)
  
@@ -8,7 +8,7 @@
  MYSQL_ADD_EXECUTABLE(my_print_defaults my_print_defaults.c)
  TARGET_LINK_LIBRARIES(my_print_defaults  mysys)
  
-@@ -74,11 +75,14 @@
+@@ -74,11 +75,14 @@ ENDIF()
  
  MYSQL_ADD_EXECUTABLE(replace replace.c COMPONENT Server)
  TARGET_LINK_LIBRARIES(replace mysys)

@@ -1,4 +1,4 @@
-# Created by: Kyle Evans <bsdports@kyle-evans.net>
+# Created by: Kyle Evans <kevans@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	sarge
@@ -7,7 +7,7 @@ CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	bsdports@kyle-evans.net
+MAINTAINER=	kevans@FreeBSD.org
 COMMENT=	Wrapper for subprocess which provides command pipeline functionality
 
 LICENSE=	BSD2CLAUSE

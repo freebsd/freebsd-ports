@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	cyrus-imapd
-PORTVERSION=	2.5.10
+PORTVERSION=	2.5.11
 #PORTREVISION=	0
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.cyrusimap.org/cyrus-imapd/ \
@@ -17,7 +17,10 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2 \
 		libpcre.so:devel/pcre
 
-CONFLICTS=	cyrus-1.* cyrus-imapd-2.[^5].* cyrus-imapd2[^5]-2.[^5].*
+BROKEN_armv6=		fails to build: ./tools/config2header: Error code 1
+
+CONFLICTS_INSTALL=	cyrus-imapd-2.[^5].* cyrus-imapd2[^5]-2.[^5].* \
+			cyrus-imapd3*
 
 USE_RC_SUBR=	imapd
 

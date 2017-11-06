@@ -14,8 +14,8 @@
 %%QT_INCDIR%%/QtWebChannel/qwebchannel.h
 %%QT_INCDIR%%/QtWebChannel/qwebchannelabstracttransport.h
 %%QT_INCDIR%%/QtWebChannel/qwebchannelglobal.h
-%%QT_LIBDIR%%/cmake/Qt5WebChannel/Qt5WebChannelConfig.cmake
-%%QT_LIBDIR%%/cmake/Qt5WebChannel/Qt5WebChannelConfigVersion.cmake
+%%QT_CMAKEDIR%%/Qt5WebChannel/Qt5WebChannelConfig.cmake
+%%QT_CMAKEDIR%%/Qt5WebChannel/Qt5WebChannelConfigVersion.cmake
 %%QT_LIBDIR%%/libQt5WebChannel.prl
 %%QT_LIBDIR%%/libQt5WebChannel.so
 %%QT_LIBDIR%%/libQt5WebChannel.so.5

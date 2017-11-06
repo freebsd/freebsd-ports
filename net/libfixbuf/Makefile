@@ -7,7 +7,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://tools.netsa.cert.org/releases/ \
 		http://redundancy.redundancy.org/mirror/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	nacho319+freebsdZilla@gmail.com
 COMMENT=	Library for using the IP Flow Information Export protocol
 
 LICENSE=	LGPL21

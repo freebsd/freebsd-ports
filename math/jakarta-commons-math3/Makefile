@@ -17,9 +17,12 @@ COMMENT=	Java library of self-contained mathematics and statistics components
 
 LICENSE=	APACHE20
 
+BROKEN_armv6=		fails to compile: build.xml: Compile failed; see the compiler error output for details
+
+USE_ANT=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
-USE_ANT=	yes
+USE_LOCALE=	en_US.ISO8859-1
 
 ALL_TARGET=	jar
 MAKE_ARGS=	-Dlibdir=${WRKDIR} -Dnoget=true
@@ -29,8 +32,6 @@ DESTJARFILE=	${PORTNAME}.jar
 PLIST_FILES+=	%%JAVAJARDIR%%/${DESTJARFILE}
 
 OPTIONS_DEFINE=	DOCS
-
-MAKE_ENV=	LANG=en_US.ISO8859-1
 
 .include <bsd.port.options.mk>
 

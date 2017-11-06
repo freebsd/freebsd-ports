@@ -19,7 +19,7 @@ LICENSE_FILE_QPL10=	${WRKSRC}/LICENSE
 LICENSE_PERMS_QPL10=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 BROKEN_aarch64=		Does not build: No rule to make target aarch64.o, needed by libasmrun.a
-BROKEN_powerpc64=	Does not build
+BROKEN_powerpc64=	Does not build: error: too few arguments to function gethostbyname_r
 BROKEN_sparc64=	ocamlc.opt seg-faults, please try to fix
 BROKEN_mips64=	No ASM support
 BROKEN_mips=	No ASM support

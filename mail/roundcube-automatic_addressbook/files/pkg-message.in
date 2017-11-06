@@ -7,15 +7,17 @@ chosen database backend :
 
 %%PLUGINDIR%%/SQL/<dbtype>.initial.sql
 
+If your Roundcube Database starts with a prefix set the prefix also in the SQL Statement: "REFERENCES `PREFIX_users`(`user_id`)"
+
 You will also need to copy :
 %%PLUGINDIR%%/config/config.inc.php.dist to
 %%PLUGINDIR%%/config/config.inc.php
 and edit as you need.
 
 Finally, you will need to add the plugin to your list of loadable
-plugins in %%RCDIR%%/config/main.inc.php :
+plugins in %%RCDIR%%/config/main.inc.php or %%RCDIR%%/config/config.inc.php depending on your roundcube version, for example:
 
-E.g. : $rcmail_config['plugins'] = array('automatic_addressbook');
+    $rcmail_config['plugins'] = array('automatic_addressbook',);
 
 UPGRADING
 
@@ -23,6 +25,6 @@ If you already had a previous version of automatic addressbook plugin
 installed, you should update your database schema by executing the
 relevant upgrade SQL script for your chosen database backend :
 
-%%WWWDIR%%/SQL/<dbtype>.upgrade.sql
+%%PLUGINDIR%%/SQL/<dbtype>.update.sql scripts.
 
 ---------------------------------------------------------------------

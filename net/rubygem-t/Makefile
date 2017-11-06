@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	t
-PORTVERSION=	2.10.0
-PORTREVISION=	1
+PORTVERSION=	3.1.0
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
@@ -16,10 +15,10 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.md
 RUN_DEPENDS=	rubygem-geokit>=1.9:graphics/rubygem-geokit \
 		rubygem-htmlentities>=4.3:textproc/rubygem-htmlentities \
 		rubygem-launchy>=2.4:devel/rubygem-launchy \
-		rubygem-oauth>=0.4.7:net/rubygem-oauth \
+		rubygem-oauth>=0.5.1:net/rubygem-oauth \
 		rubygem-retryable>=2.0:devel/rubygem-retryable \
 		rubygem-thor>=0.19.1:devel/rubygem-thor \
-		rubygem-twitter>=5.16:net/rubygem-twitter
+		rubygem-twitter>=6.0:net/rubygem-twitter
 
 NO_ARCH=	yes
 USE_RUBY=	yes

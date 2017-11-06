@@ -3,7 +3,7 @@
 
 PORTNAME=	nitrogen
 PORTVERSION=	1.5.2
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	sysutils
 MASTER_SITES=	http://projects.l3ib.org/nitrogen/files/
 
@@ -19,7 +19,8 @@ RUN_DEPENDS=	gnome-icon-theme>0:misc/gnome-icon-theme \
 OPTIONS_DEFINE=	XINERAMA
 OPTIONS_DEFAULT=XINERAMA
 
-USES=		gettext iconv pkgconfig
+USES=		compiler:c++11-lang gettext iconv pkgconfig
+USE_CXXSTD=	c++11
 USE_GNOME=	gtkmm24
 USE_XORG=	x11
 GNU_CONFIGURE=	yes

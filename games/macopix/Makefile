@@ -14,6 +14,8 @@ COMMENT=	Window sitter for X11
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_armv6=		dumps core: Assertion failed: (!NodePtr->isKnownSentinel()), function operator*, file ilist_iterator.h
+
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libtiff.so:graphics/tiff
 
@@ -49,7 +51,7 @@ GTK1_CONFIGURE_ON=	--with-gtk1
 .include <bsd.port.options.mk>
 
 .if ! ${PORT_OPTIONS:MGNUTLS}
-USE_OPENSSL=	yes
+USES+=	ssl
 .endif
 
 .if ${PORT_OPTIONS:MGTK1}

@@ -3,15 +3,16 @@
 
 PORTNAME=	qpdfview
 PORTVERSION=	0.4.16
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	print
 MASTER_SITES=	https://launchpadlibrarian.net/226592308/ \
-	https://launchpad.net/${PORTVERSION}/trunk/${PORTVERSION}/+download/
+		https://launchpad.net/${PORTVERSION}/trunk/${PORTVERSION}/+download/
 
 MAINTAINER=	vg@FreeBSD.org
 COMMENT=	Tabbed DjVu/PDF/PS document viewer
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		desktop-file-utils pkgconfig qmake
 USE_LDCONFIG=	yes

@@ -3,7 +3,7 @@
 
 PORTNAME=	worldofgoo
 PORTVERSION=	1.41
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games linux
 MASTER_SITES=	http://freebsd.nsu.ru/distfiles/
 PKGNAMEPREFIX=	linux-
@@ -15,7 +15,7 @@ COMMENT=	Demo version of incredible physics based puzzle/construction game
 ONLY_FOR_ARCHS=	i386 amd64
 
 USES=		linux
-USE_LINUX=	dri libvorbis mikmod sdl12 sdlmixer
+USE_LINUX=	dri libvorbis sdl12 sdlmixer
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/WorldOfGooDemo
 DATADIR=	${PREFIX}/share/WorldOfGoo
@@ -23,9 +23,9 @@ DOCSDIR=	${PREFIX}/share/doc/WorldOfGoo
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
+.include <bsd.port.pre.mk>
 
-.if ${ARCH} == "i386"
+.if ${LINUX_ARCH} == "i386"
 TARGET_BIN=	WorldOfGoo.bin32
 .else
 TARGET_BIN=	WorldOfGoo.bin64
@@ -54,4 +54,4 @@ do-install:
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

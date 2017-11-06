@@ -1,4 +1,6 @@
 bin/pcmanfm-qt
+etc/xdg/autostart/lxqt-desktop.desktop
+@sample etc/xdg/pcmanfm-qt/lxqt/settings.conf.sample
 man/man1/pcmanfm-qt.1.gz
 share/applications/pcmanfm-qt-desktop-pref.desktop
 share/applications/pcmanfm-qt.desktop

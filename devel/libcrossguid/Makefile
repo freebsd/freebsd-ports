@@ -2,14 +2,14 @@
 
 PORTNAME=	libcrossguid
 PORTVERSION=	20150803
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	devel
 
 MAINTAINER=	mickael.maillot@gmail.com
 COMMENT=	Minimal and cross platform C++ GUID library
 
 LICENSE=	MIT
-LICENSE_FILES=	${WRKSRC}/LICENSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libuuid.so:misc/e2fsprogs-libuuid
 
@@ -33,13 +33,16 @@ post-patch:
 		${FILESDIR}/libcrossguid.pc.in > ${WRKDIR}/libcrossguid.pc
 
 do-build:
-	cd ${WRKSRC} && ${CXX} ${CXXFLAGS} -shared -fPIC -Wl,-soname,libcrossguid.so.0 \
-		-DGUID_LIBUUID -L${LOCALBASE}/lib guid.cpp -o libcrossguid.so.0 -luuid
+	cd ${WRKSRC} && ${CXX} ${CXXFLAGS} -shared -fPIC \
+		-Wl,-soname,libcrossguid.so.0 \
+		-DGUID_LIBUUID -L${LOCALBASE}/lib guid.cpp \
+		-o libcrossguid.so.0 -luuid
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/guid.h ${STAGEDIR}${PREFIX}/include
 	${INSTALL_LIB} ${WRKSRC}/libcrossguid.so.0 ${STAGEDIR}${PREFIX}/lib
-	${INSTALL_DATA} ${WRKDIR}/libcrossguid.pc ${STAGEDIR}${PREFIX}/libdata/pkgconfig
+	${INSTALL_DATA} ${WRKDIR}/libcrossguid.pc \
+		${STAGEDIR}${PREFIX}/libdata/pkgconfig
 	${LN} -sf libcrossguid.so.0 ${STAGEDIR}${PREFIX}/lib/libcrossguid.so
 
 .include <bsd.port.mk>

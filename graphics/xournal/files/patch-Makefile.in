@@ -1,6 +1,15 @@
---- Makefile.in.orig	2014-06-29 08:53:20.000000000 +0200
-+++ Makefile.in	2015-02-23 22:51:49.000000000 +0100
-@@ -796,31 +796,29 @@
+--- Makefile.in.orig	2017-07-20 18:30:27 UTC
++++ Makefile.in
+@@ -809,38 +809,36 @@ uninstall-am:
+ install-data-local:
+ 	@$(NORMAL_INSTALL)
+ 	if test -d $(srcdir)/pixmaps; then \
+-	  $(mkinstalldirs) $(DESTDIR)$(pkgdatadir)/pixmaps; \
++	  $(mkinstalldirs) $(DESTDIR)$(DATADIR)/pixmaps; \
+ 	  for pixmap in $(srcdir)/pixmaps/*; do \
+ 	    if test -f $$pixmap; then \
+-	      $(INSTALL_DATA) $$pixmap $(DESTDIR)$(pkgdatadir)/pixmaps; \
++	      $(INSTALL_DATA) $$pixmap $(DESTDIR)$(DATADIR)/pixmaps; \
  	    fi \
  	  done \
  	fi; \
@@ -33,7 +42,7 @@
 -	else \
 -	  desktopdir=/usr/local/share; \
 -	fi; \
-+	desktopdir=$(pkgdatadir); \
++	desktopdir=$(DATADIR); \
  	$(mkinstalldirs) $(DESTDIR)$$desktopdir/icons/hicolor/scalable/apps; \
  	$(mkinstalldirs) $(DESTDIR)$$desktopdir/icons/hicolor/scalable/mimetypes; \
  	$(mkinstalldirs) $(DESTDIR)$$desktopdir/mime/packages; \
@@ -43,7 +52,7 @@
  	$(INSTALL_DATA) $(srcdir)/pixmaps/xournal.svg $(DESTDIR)$$desktopdir/icons/hicolor/scalable/apps; \
  	$(INSTALL_DATA) $(srcdir)/pixmaps/xoj.svg $(DESTDIR)$$desktopdir/icons/hicolor/scalable/mimetypes; \
  	if test ! -e $(DESTDIR)$$desktopdir/icons/hicolor/scalable/mimetypes/gnome-mime-application-x-xoj.svg; then \
-@@ -828,7 +826,7 @@
+@@ -851,7 +849,7 @@ desktop-install:
  	fi; \
  	$(INSTALL_DATA) $(srcdir)/xournal.xml $(DESTDIR)$$desktopdir/mime/packages; \
  	$(INSTALL_DATA) $(srcdir)/xournal.desktop $(DESTDIR)$$desktopdir/applications; \

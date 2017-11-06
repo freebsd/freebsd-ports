@@ -3,7 +3,7 @@
 
 PORTNAME=	flowcanvas
 PORTVERSION=	0.7.1
-PORTREVISION=	7
+PORTREVISION=	11
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://download.drobilla.net/
 
@@ -18,7 +18,8 @@ LIB_DEPENDS=	libboost_date_time.so:devel/boost-libs \
 		libgnomecanvasmm-2.6.so:graphics/libgnomecanvasmm26 \
 		libgtkmm-2.4.so:x11-toolkits/gtkmm24
 
-USES=		pkgconfig tar:bzip2 waf
+USES=		compiler:c++11-lang pkgconfig tar:bzip2 waf
+USE_CXXSTD=	c++11
 USE_LDCONFIG=	yes
 
 CFLAGS+=	-I${LOCALBASE}/include

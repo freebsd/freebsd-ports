@@ -18,7 +18,6 @@ RUN_DEPENDS=	${SKKJISYOCDB}:japanese/skk-jisyo-cdb
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	jj1bdx
-GH_TAGNAME=	3.00
 MAKE_ENV=	LOCALBASE="${LOCALBASE}" \
 		SKKJISYOCDB="${SKKJISYOCDB}"
 PLIST_FILES=	libexec/dbskkd-cdb
@@ -33,7 +32,6 @@ PORTDOCS_FILE=	CHANGES.md LICENSE README.md READMEJP.md \
 PORTDOCS_SH=	makeskkcdb.sh skktocdbm.sh
 
 OPTIONS_DEFINE=	DOCS
-OPTIONS_DEFAULT=DOCS
 
 post-patch:
 .for f in READMEJP.md makeskkcdb.sh

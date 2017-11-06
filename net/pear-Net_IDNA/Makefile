@@ -5,9 +5,10 @@ PORTNAME=	Net_IDNA
 PORTVERSION=	0.8.1
 CATEGORIES=	net pear
 
-MAINTAINER=	joneum@bsdproject.de
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Pear Punycode encoding and decoding package
 
-USES=	pear
+NO_ARCH=	yes
+USES=		pear
 
 .include <bsd.port.mk>

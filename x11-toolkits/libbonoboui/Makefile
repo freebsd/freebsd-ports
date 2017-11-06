@@ -3,8 +3,7 @@
 #   $MCom: ports/x11-toolkits/libbonoboui/Makefile,v 1.75 2010/09/28 16:03:49 kwm Exp $
 
 PORTNAME=	libbonoboui
-PORTVERSION=	2.24.4
-PORTREVISION?=	3
+PORTVERSION=	2.24.5
 CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
@@ -16,13 +15,12 @@ USES+=		tar:bzip2
 
 .if !defined(REFERENCE_PORT)
 
-USES+=		gettext gmake libtool:keepla pathfix pkgconfig
+USES+=		gettext gmake libtool:keepla localbase pathfix pkgconfig
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnomeprefix intlhack \
 		libgnomecanvas libgnome referencehack
 USE_LDCONFIG=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-lpthread -L${LOCALBASE}/lib
+LDFLAGS+=	-lpthread
 INSTALL_TARGET=	install-strip
 
 .include <bsd.port.mk>

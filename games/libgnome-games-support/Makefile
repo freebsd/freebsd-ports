@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libgnome-games-support
-PORTVERSION=	1.2.1
+PORTVERSION=	1.2.2
 CATEGORIES=	games gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -14,8 +14,6 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	valac:lang/vala
 LIB_DEPENDS=	libgee-0.8.so:devel/libgee
-
-BROKEN=		does not build (Package dependency requirement 'gtk+-3.0 >= 3.19.2' could not be satisfied)
 
 PORTSCOUT=	limitw:1,even
 

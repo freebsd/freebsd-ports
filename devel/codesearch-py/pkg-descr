@@ -1,0 +1,11 @@
+The codesearch Python library provides an interface for talking to the
+Chromium CodeSearch backend.
+
+The primary entry point into the library is the codesearch class. Various
+message classes you are likely to encounter are defined in messages.py
+
+In addition, the library also includes facilities for maintaining an
+ephemeral or persistent cache in order to minimize generated network
+traffic.
+
+WWW: https://github.com/chromium/codesearch-py

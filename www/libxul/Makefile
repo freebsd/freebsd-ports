@@ -2,19 +2,19 @@
 # $FreeBSD$
 
 PORTNAME=	libxul
-DISTVERSION=	45.6.0
-PORTREVISION=	5
+DISTVERSION=	45.9.0
+PORTREVISION=	6
 CATEGORIES?=	www devel
 MASTER_SITES=	MOZILLA/firefox/releases/${DISTVERSION}esr/source \
-		MOZILLA/firefox/candidates/${DISTVERSION}esr-candidates/build1/source
+		MOZILLA/firefox/candidates/${DISTVERSION}esr-candidates/build3/source
 DISTNAME=	firefox-${DISTVERSION}esr.source
 
 MAINTAINER?=	gecko@FreeBSD.org
 COMMENT?=	Mozilla runtime package that can be used to bootstrap XUL+XPCOM apps
 
 BUILD_DEPENDS=	nspr>=4.12:devel/nspr \
-		nss>=3.21.1:security/nss \
-		libevent2>=2.0.21_2:devel/libevent2 \
+		nss>=3.21.3:security/nss \
+		libevent>=2.0.21_2:devel/libevent \
 		soundtouch>=1.9.0:audio/soundtouch \
 		harfbuzz>=1.1.0:print/harfbuzz \
 		graphite2>=1.3.6:graphics/graphite2 \
@@ -34,12 +34,15 @@ WRKSRC:=	${WRKDIR}/firefox-${DISTVERSION}esr
 CONFLICTS_INSTALL=	libxul-1.9.*
 
 USE_GL=		gl
-USES=		pathfix tar:xz
+USES=		pathfix shebangfix tar:xz
+SHEBANG_FILES=	xpcom/idl-parser/xpidl/xpidl.py \
+		xpcom/typelib/xpt/tools/xpt.py
 MAKE_ENV=	SKIP_GRE_REGISTRATION=1 mozappdir=${PREFIX}/lib/${MOZILLA}
 LDFLAGS+=	-Wl,-rpath,${PREFIX}/lib/${MOZ_RPATH}
 USE_LDCONFIG=	${PREFIX}/lib/${MOZILLA}
 
 MOZ_OPTIONS?=	--enable-application=xulrunner
+MOZ_CHANNEL=	esr
 USE_GECKO=	gecko
 CPE_PRODUCT=	firefox_esr
 MOZILLA_EXEC_NAME=xulrunner
@@ -55,6 +58,7 @@ OPTIONS_SINGLE+=	TOOLKIT
 OPTIONS_SINGLE_TOOLKIT=	GTK2 GTK3
 
 .include "${.CURDIR}/../../www/firefox/Makefile.options"
+OPTIONS_MULTI_AUDIO:=	${OPTIONS_MULTI_AUDIO:NJACK}
 
 .if ${USE_MOZILLA:M-nss}
 MOZ_PKGCONFIG_FILES+=	mozilla-nss

@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	elfutils
-PORTVERSION=	0.163
-PORTREVISION=	7
+PORTVERSION=	0.168
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://sourceware.org/elfutils/ftp/${PORTVERSION}/
 
@@ -19,8 +19,10 @@ LICENSE_FILE_LGPL3=	${WRKSRC}/COPYING-LGPLV3
 LIB_DEPENDS=	libargp.so:devel/argp-standalone
 PATCH_DEPENDS=	gnulib>=0:devel/gnulib
 
-BROKEN_armv6=	Fails to build: fails to compile i386_disasm.c
-BROKEN_sparc64=	Fails to build: fails to compile dwarf_begin_elf.c
+BROKEN_aarch64=		fails to build: fatal error: linux/uio.h: No such file or directory
+BROKEN_armv6=		fails to build: fails to compile i386_disasm.c
+BROKEN_powerpc64=	fails to build: error: field 'r' has incomplete type
+BROKEN_sparc64=		fails to build: fails to compile dwarf_begin_elf.c
 
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes
@@ -28,9 +30,8 @@ OPTIONS_SUB=	yes
 NLS_USES=	gettext
 NLS_CONFIGURE_ENABLE=	nls
 
-USES=		gmake libtool tar:bzip2
-USE_AUTOTOOLS=	automake:env
-USE_GCC=	4.8+
+USES=		autoreconf gmake libtool tar:bzip2
+USE_GCC=	4.8	# fails to build with newer versions
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
@@ -47,8 +48,5 @@ post-patch:
 	    ${LOCALBASE}/share/gnulib/lib/obstack.h \
 	    ${LOCALBASE}/share/gnulib/lib/obstack_printf.c \
 	    ${WRKSRC}/lib
-
-pre-configure:
-	@cd ${WRKSRC} && ${AUTOMAKE}
 
 .include <bsd.port.mk>

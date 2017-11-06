@@ -6,15 +6,19 @@ PORTVERSION=	3.0.6
 PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://gopher.quux.org:70/give-me-gopher/ \
-		http://dl.droso.net/FreeBSD/distfiles/
-DISTFILES=	${PORTNAME}_${PORTVERSION}${EXTRACT_SUFX}
-WRKSRC=		${WRKDIR}/${PORTNAME}
+		http://aaron.baugher.biz/files/FreeBSD/ports/
+DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	aaron@baugher.biz
 COMMENT=	Gopher client for access to a distributed document service
 
-GNU_CONFIGURE=	yes
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 USES=		gmake
+GNU_CONFIGURE=	yes
+
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
 pre-patch:
 	@${FIND} ${WRKSRC} -name '*.[ch]' | ${XARGS} ${REINPLACE_CMD} -e \

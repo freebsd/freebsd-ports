@@ -1,6 +1,6 @@
---- avahi-qt/Makefile.in.orig	2008-07-03 14:37:05.000000000 -0500
-+++ avahi-qt/Makefile.in	2008-07-03 14:39:27.000000000 -0500
-@@ -93,7 +93,6 @@
+--- avahi-qt/Makefile.in.orig	2017-09-15 01:20:16 UTC
++++ avahi-qt/Makefile.in
+@@ -117,7 +117,6 @@ am__installdirs = "$(DESTDIR)$(libdir)" 
  LTLIBRARIES = $(lib_LTLIBRARIES)
  am__DEPENDENCIES_1 =
  @HAVE_QT3_TRUE@libavahi_qt3_la_DEPENDENCIES =  \
@@ -8,16 +8,16 @@
  @HAVE_QT3_TRUE@	$(am__DEPENDENCIES_1)
  am__libavahi_qt3_la_SOURCES_DIST = qt-watch.cpp
  @HAVE_QT3_TRUE@am_libavahi_qt3_la_OBJECTS =  \
-@@ -104,7 +103,6 @@
- 	$(CXXFLAGS) $(libavahi_qt3_la_LDFLAGS) $(LDFLAGS) -o $@
+@@ -132,7 +131,6 @@ libavahi_qt3_la_LINK = $(LIBTOOL) $(AM_V
+ 	$(LDFLAGS) -o $@
  @HAVE_QT3_TRUE@am_libavahi_qt3_la_rpath = -rpath $(libdir)
  @HAVE_QT4_TRUE@libavahi_qt4_la_DEPENDENCIES =  \
 -@HAVE_QT4_TRUE@	../avahi-common/libavahi-common.la \
  @HAVE_QT4_TRUE@	$(am__DEPENDENCIES_1)
  am__libavahi_qt4_la_SOURCES_DIST = qt-watch.cpp
  @HAVE_QT4_TRUE@am_libavahi_qt4_la_OBJECTS =  \
-@@ -400,7 +398,7 @@
- @HAVE_QT3_TRUE@	qt-watch.cpp 
+@@ -433,7 +431,7 @@ BUILT_SOURCES = $(am__append_2) $(am__ap
+ @HAVE_QT3_TRUE@	qt-watch.cpp
  
  @HAVE_QT3_TRUE@libavahi_qt3_la_CPPFLAGS = $(AM_CFLAGS) $(QT3_CFLAGS) $(VISIBILITY_HIDDEN_CFLAGS)
 -@HAVE_QT3_TRUE@libavahi_qt3_la_LIBADD = $(AM_LDADD) ../avahi-common/libavahi-common.la $(QT3_LIBS)
@@ -25,8 +25,8 @@
  @HAVE_QT3_TRUE@libavahi_qt3_la_LDFLAGS = $(AM_LDFLAGS) -export-dynamic -version-info $(LIBAVAHI_QT3_VERSION_INFO)
  @HAVE_QT4_TRUE@avahiqt4includedir = $(includedir)/avahi-qt4
  @HAVE_QT4_TRUE@avahiqt4include_HEADERS = \
-@@ -410,7 +408,7 @@
- @HAVE_QT4_TRUE@	qt-watch.cpp 
+@@ -443,7 +441,7 @@ BUILT_SOURCES = $(am__append_2) $(am__ap
+ @HAVE_QT4_TRUE@	qt-watch.cpp
  
  @HAVE_QT4_TRUE@libavahi_qt4_la_CPPFLAGS = $(AM_CFLAGS) $(QT4_CFLAGS) -DQT4 $(VISIBILITY_HIDDEN_CFLAGS)
 -@HAVE_QT4_TRUE@libavahi_qt4_la_LIBADD = $(AM_LDADD) ../avahi-common/libavahi-common.la $(QT4_LIBS)

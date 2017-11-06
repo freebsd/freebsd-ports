@@ -2,6 +2,7 @@
 
 PORTNAME=	go14
 PORTVERSION=	1.4.3
+PORTREVISION=	2
 CATEGORIES=	lang
 MASTER_SITES=	http://golang.org/dl/
 DISTNAME=	go${PORTVERSION}.src
@@ -12,22 +13,23 @@ COMMENT=	Go programming language
 LICENSE=	BSD3CLAUSE
 
 USES=		compiler shebangfix
-SHEBANG_LANG=	sh
-SHEBANG_FILES=	${WRKSRC}/src/*.bash \
-		${WRKSRC}/doc/progs/run \
-		${WRKSRC}/doc/articles/wiki/*.bash \
-		${WRKSRC}/test/bench/shootout/timing.sh
+SHEBANG_LANG=	sh perl
+SHEBANG_FILES=	src/*.bash \
+		src/cmd/go/*.bash \
+		doc/progs/run \
+		doc/articles/wiki/*.bash \
+		test/bench/shootout/timing.sh \
+		misc/nacl/*_exec misc/benchcmp \
+		src/net/http/cgi/testdata/*.cgi \
+		src/regexp/syntax/*.pl \
+		lib/codereview/*.sh
 
 sh_OLD_CMD=	"/usr/bin/env bash"
 sh_CMD=		${SH}
 
 WRKSRC=		${WRKDIR}/go
-ONLY_FOR_ARCHS=	i386 amd64 armv6 armv6hf
 
-# NB: apparently this failure is only when running under emulation via
-# qemu; it works fine on native hardware.  Let's leave the line in as a
-# reminder, but commented out for now while this is being investigated.
-#BROKEN_armv6=		Fails to configure: wait: interrupted system call
+ONLY_FOR_ARCHS=		amd64 armv6 armv7 i386
 
 .include <bsd.port.pre.mk>
 
@@ -36,13 +38,13 @@ ONLY_FOR_ARCHS=	i386 amd64 armv6 armv6hf
 CC=clang
 .endif
 
-.if ${ARCH} == "i386"
+.if ${ARCH} == i386
 GOARCH=386
 GOOBJ=8
-.elif ${ARCH} == "amd64"
+.elif ${ARCH} == amd64
 GOARCH=amd64
 GOOBJ=6
-.elif ${ARCH} == "armv6" || ${ARCH} == "armv6hf"
+.elif ${ARCH} == armv6 || ${ARCH} == armv7
 GOARCH=arm
 GOOBJ=5
 .else

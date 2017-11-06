@@ -4,14 +4,14 @@
 PORTNAME=	librasterlite2
 PORTVERSION=	1.0.0
 DISTVERSIONSUFFIX=-rc0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics geography
 MASTER_SITES=	http://www.gaia-gis.it/gaia-sins/
 
-MAINTAINER=	coder@tuxfamily.org
+MAINTAINER=	lbartoletti@tuxfamily.org
 COMMENT=	Library that stores and retrieves raster coverages using a SpatiaLite
 
-LICENSE=	MPL GPLv2 LGPL21
+LICENSE=	MPL11 GPLv2 LGPL21
 LICENSE_COMB=	dual
 
 LIB_DEPENDS=	libspatialite.so:databases/spatialite \

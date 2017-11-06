@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	froxlor
-PORTVERSION=	0.9.33.2
+PORTVERSION=	0.9.38.7
+PORTREVIION=	2
 CATEGORIES=	sysutils www
 MASTER_SITES=	http://files.froxlor.org/releases/
 
@@ -17,22 +18,19 @@ SUB_FILES+=	pkg-message pkg-deinstall
 SUB_LIST+=	WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
 PLIST_SUB+=	${SUB_LIST}
 
-USE_PHP=	bcmath curl filter ftp json mysql mysqli pdo_mysql posix session xml
+USE_PHP=	bcmath curl filter ftp json pdo_mysql posix session xml zip
 
 WANT_PHP_CLI=	yes
 
-USES=		shebangfix
 NO_ARCH=	yes
 NO_BUILD=	yes
-
-SHEBANG_FILES=	froxlor/install/tsmarty2c.php
 
 OPTIONS_DEFINE=	LIBNSS LOGROTATE MYSQLS DKIM PCNTL NLS
 
 OPTIONS_RADIO=	WEB SMTP IMAPPOP3 FTP DNS
 OPTIONS_RADIO_WEB=	APACHE LIGHTTPD NGINX
 OPTIONS_RADIO_SMTP=	POSTFIX EXIM
-OPTIONS_RADIO_IMAPPOP3=	DOVECOT DOVECOT2 COURIER
+OPTIONS_RADIO_IMAPPOP3=	DOVECOT2 COURIER
 OPTIONS_RADIO_FTP=	PROFTPD PUREFTPD
 OPTIONS_RADIO_DNS=	POWERDNS ISCDNS
 OPTIONS_MULTI=	WWWST
@@ -52,7 +50,6 @@ MYSQLS_DESC=	MySQL database server and client
 POSTFIX_DESC=	Postfix as SMTP server
 EXIM_DESC=	Exim as SMTP server
 DKIM_DESC=	OpenDKIM for DomainKeys Identified Mail
-DOVECOT_DESC=	Dovecot 1.x as IMAP/POP3 server
 DOVECOT2_DESC=	Dovecot 2.x as IMAP/POP3 server
 COURIER_DESC=	Courier as IMAP/POP3 server
 PROFTPD_DESC=	ProFTPd as FTP server
@@ -67,7 +64,7 @@ LOGROTATE_DESC=	Logrotate for log rotation
 MYSQLS_DESC=	Depend on MySQL server
 NLS_DESC=	Enable NLS support (required for webFTP frontend)
 
-OPTIONS_DEFAULT=	APACHE MYSQLS POSTFIX DOVECOT PROFTPD WEBALIZER MYSQLS PCNTL
+OPTIONS_DEFAULT=	APACHE MYSQLS POSTFIX DOVECOT2 PROFTPD WEBALIZER MYSQLS PCNTL
 
 POSTFIX_RUN_DEPENDS=	postfix:mail/postfix
 
@@ -75,9 +72,7 @@ EXIM_RUN_DEPENDS=	exim:mail/exim
 
 DKIM_RUN_DEPENDS=	opendkim:mail/opendkim
 
-DOVECOT_RUN_DEPENDS=	dovecot>1:mail/dovecot
-
-DOVECOT2_RUN_DEPENDS=	dovecot2>=2:mail/dovecot2
+DOVECOT2_RUN_DEPENDS=	dovecot>=2:mail/dovecot
 
 COURIER_RUN_DEPENDS=	courier:mail/courier
 
@@ -85,7 +80,7 @@ PROFTPD_RUN_DEPENDS=	${LOCALBASE}/libexec/proftpd/mod_sql_mysql.so:databases/pro
 
 PUREFTPD_RUN_DEPENDS=	pure-ftpd:ftp/pure-ftpd
 
-POWERDNS_RUN_DEPENDS=	powerdns:dns/powerdns
+POWERDNS_RUN_DEPENDS=	pdns_control:dns/powerdns
 
 ISCDNS_RUN_DEPENDS=	bind>=9.9.0.0:dns/bind99
 

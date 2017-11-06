@@ -10,4 +10,4 @@ archive will give kgdb(1) session with crash core loaded in it. The script
 should be run with root privileges because it does chroot(8) before starting
 kgdb(1).
 
-WWW: http://bsdcrashtar.googlecode.com/
+WWW: https://code.google.com/archive/p/bsdcrashtar/

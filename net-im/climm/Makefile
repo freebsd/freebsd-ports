@@ -67,7 +67,7 @@ LIB_DEPENDS+=		libiksemel.so:textproc/iksemel \
 			libgcrypt.so:security/libgcrypt \
 			libgpg-error.so:security/libgpg-error
 .else
-USE_OPENSSL=		yes
+USES+=			ssl
 CONFIGURE_ARGS+=	--disable-xmpp --enable-ssl=openssl
 .endif
 

@@ -1,2 +1,3 @@
-SHA256 (cabal/semigroupoids-5.0.0.3.tar.gz) = 17dc07085806c6b8c79863f489f0ad534713578a529935b081691830bab4d292
-SIZE (cabal/semigroupoids-5.0.0.3.tar.gz) = 20789
+TIMESTAMP = 1499609808
+SHA256 (cabal/semigroupoids-5.2.tar.gz) = d957f8804ca0dc2b85ef68edcab92dba9cd5d61ea0dddc41c173dda6f97791bc
+SIZE (cabal/semigroupoids-5.2.tar.gz) = 23371

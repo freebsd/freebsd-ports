@@ -72,7 +72,7 @@ post-extract:
 	${TAR} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/${f} \
 		${EXTRACT_AFTER_ARGS} -C ${WRKSRC}/qw/skins
 .  endfor
-	(cd ${WRKSRC}/qw/skins && LANG=C ${SH} fixskins.sh)
+	(cd ${WRKSRC}/qw/skins && ${SH} fixskins.sh)
 .endif
 
 # Since these files are not generated, only unpacked, install(1) them with

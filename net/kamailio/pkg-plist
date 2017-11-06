@@ -8,12 +8,6 @@ sbin/kamdbctl
 @sample etc/kamailio/kamailio.cfg.sample
 @sample etc/kamailio/kamctlrc.sample
 %%TLS%%@sample etc/kamailio/tls.cfg.sample
-lib/kamailio/libbinrpc.so
-lib/kamailio/libbinrpc.so.0
-lib/kamailio/libkcore.so
-lib/kamailio/libkcore.so.1
-lib/kamailio/libkmi.so
-lib/kamailio/libkmi.so.1
 lib/kamailio/libprint.so
 lib/kamailio/libprint.so.1
 lib/kamailio/libsrdb1.so
@@ -27,13 +21,11 @@ lib/kamailio/libsrutils.so.1
 lib/kamailio/kamctl/kamctl.base
 lib/kamailio/kamctl/kamctl.ctlbase
 %%MYSQL%%lib/kamailio/kamctl/kamctl.dbtext
-lib/kamailio/kamctl/kamctl.fifo
 %%MYSQL%%lib/kamailio/kamctl/kamctl.mysql
 %%PGSQL%%lib/kamailio/kamctl/kamctl.pgsql
+lib/kamailio/kamctl/kamctl.rpcfifo
 lib/kamailio/kamctl/kamctl.ser
-lib/kamailio/kamctl/kamctl.ser_mi
 lib/kamailio/kamctl/kamctl.sqlbase
-lib/kamailio/kamctl/kamctl.unixsock
 lib/kamailio/kamctl/kamdbctl.base
 %%MYSQL%%lib/kamailio/kamctl/kamdbctl.dbtext
 %%MYSQL%%lib/kamailio/kamctl/kamdbctl.mysql
@@ -41,6 +33,7 @@ lib/kamailio/kamctl/kamdbctl.base
 %%MYSQL%%lib/kamailio/kamctl/dbtextdb/dbtextdb.py
 %%MYSQL%%lib/kamailio/modules/acc.so
 %%MYSQL%%lib/kamailio/modules/alias_db.so
+lib/kamailio/modules/app_jsdt.so
 %%PERL%%lib/kamailio/modules/app_perl.so
 lib/kamailio/modules/async.so
 lib/kamailio/modules/auth.so
@@ -82,7 +75,7 @@ lib/kamailio/modules/exec.so
 %%MYSQL%%lib/kamailio/modules/htable.so
 %%MYSQL%%lib/kamailio/modules/imc.so
 lib/kamailio/modules/ipops.so
-lib/kamailio/modules/jsonrpc-s.so
+lib/kamailio/modules/jsonrpcs.so
 lib/kamailio/modules/kex.so
 lib/kamailio/modules/log_custom.so
 lib/kamailio/modules/malloc_test.so
@@ -90,9 +83,6 @@ lib/kamailio/modules/mangler.so
 %%MYSQL%%lib/kamailio/modules/matrix.so
 lib/kamailio/modules/maxfwd.so
 lib/kamailio/modules/mediaproxy.so
-lib/kamailio/modules/mi_datagram.so
-lib/kamailio/modules/mi_fifo.so
-lib/kamailio/modules/mi_rpc.so
 %%MYSQL%%lib/kamailio/modules/mohqueue.so
 lib/kamailio/modules/mqueue.so
 %%MYSQL%%lib/kamailio/modules/msilo.so
@@ -134,6 +124,7 @@ lib/kamailio/modules/sms.so
 lib/kamailio/modules/smsops.so
 %%MYSQL%%lib/kamailio/modules/speeddial.so
 %%MYSQL%%lib/kamailio/modules/sqlops.so
+lib/kamailio/modules/ss7ops.so
 lib/kamailio/modules/sst.so
 lib/kamailio/modules/statistics.so
 lib/kamailio/modules/statsc.so
@@ -163,6 +154,7 @@ lib/kamailio/modules/xprint.so
 %%RADIUS%%lib/kamailio/modules/misc_radius.so
 %%RADIUS%%lib/kamailio/modules/peering.so
 %%PRESENCE%%lib/kamailio/modules/pua.so
+%%PRESENCE%%lib/kamailio/modules/pua_rpc.so
 %%PRESENCE%%lib/kamailio/modules/pua_xmpp.so
 %%PRESENCE%%lib/kamailio/modules/xcap_client.so
 %%PRESENCE%%lib/kamailio/modules/xcap_server.so
@@ -175,7 +167,6 @@ lib/kamailio/modules/xprint.so
 %%PRESENCE%%lib/kamailio/modules/presence_xml.so
 %%PRESENCE%%lib/kamailio/modules/pua_bla.so
 %%PRESENCE%%lib/kamailio/modules/pua_dialoginfo.so
-%%PRESENCE%%lib/kamailio/modules/pua_mi.so
 %%PRESENCE%%lib/kamailio/modules/pua_reginfo.so
 %%PRESENCE%%lib/kamailio/modules/pua_usrloc.so
 %%PRESENCE%%lib/kamailio/modules/rls.so
@@ -277,7 +268,6 @@ lib/kamailio/modules/xprint.so
 %%MYSQL%%%%DATADIR%%/mysql/carrierroute-create.sql
 %%MYSQL%%%%DATADIR%%/mysql/cpl-create.sql
 %%MYSQL%%%%DATADIR%%/mysql/dialog-create.sql
-%%MYSQL%%%%DATADIR%%/mysql/dialog_ng-create.sql
 %%MYSQL%%%%DATADIR%%/mysql/dialplan-create.sql
 %%MYSQL%%%%DATADIR%%/mysql/dispatcher-create.sql
 %%MYSQL%%%%DATADIR%%/mysql/domain-create.sql
@@ -287,6 +277,7 @@ lib/kamailio/modules/xprint.so
 %%MYSQL%%%%DATADIR%%/mysql/htable-create.sql
 %%MYSQL%%%%DATADIR%%/mysql/imc-create.sql
 %%MYSQL%%%%DATADIR%%/mysql/ims_charging_create.sql
+%%MYSQL%%%%DATADIR%%/mysql/ims_dialog-create.sql
 %%MYSQL%%%%DATADIR%%/mysql/ims_usrloc_pcscf-create.sql
 %%MYSQL%%%%DATADIR%%/mysql/ims_usrloc_scscf-create.sql
 %%MYSQL%%%%DATADIR%%/mysql/lcr-create.sql

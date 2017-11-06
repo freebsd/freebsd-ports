@@ -11,7 +11,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The geekest content helper management system
 
 NO_BUILD=	yes
-USES=		zip
+USES=		zip php
 USE_PHP=	xml iconv gd
 PLIST_SUB=	WWWOWN="${WWWOWN}"
 SUB_FILES=	pkg-message

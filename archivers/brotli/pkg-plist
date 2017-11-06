@@ -1,0 +1,17 @@
+bin/bro
+include/brotli/decode.h
+include/brotli/encode.h
+include/brotli/port.h
+include/brotli/types.h
+lib/libbrotlicommon.so
+lib/libbrotlicommon.so.0
+lib/libbrotlicommon.so.0.6.0
+lib/libbrotlidec.so
+lib/libbrotlidec.so.0
+lib/libbrotlidec.so.0.6.0
+lib/libbrotlienc.so
+lib/libbrotlienc.so.0
+lib/libbrotlienc.so.0.6.0
+libdata/pkgconfig/libbrotlicommon.pc
+libdata/pkgconfig/libbrotlidec.pc
+libdata/pkgconfig/libbrotlienc.pc

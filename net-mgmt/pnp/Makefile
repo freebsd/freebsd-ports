@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pnp
-PORTVERSION=	0.6.25
-PORTREVISION=	4
+PORTVERSION=	0.6.26
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/pnp4nagios/PNP-0.6
 DISTNAME=	pnp4nagios-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}
@@ -18,7 +17,7 @@ RUN_DEPENDS?=	${LOCALBASE}/bin/rrdtool:databases/rrdtool \
 		nagios:net-mgmt/nagios
 
 MAKE_JOBS_UNSAFE=	yes
-USES=		perl5 dos2unix
+USES=		dos2unix perl5 php php:web
 
 OPTIONS_DEFINE=	PDF
 OPTIONS_DEFAULT=	PDF
@@ -27,7 +26,6 @@ PDF_DESC=	Use built-in fpdf library to produce PDF views
 .include <bsd.port.options.mk>
 
 USE_PHP=	gd iconv json pcre session simplexml sockets xml zlib
-WANT_PHP_WEB=	yes
 
 USE_RC_SUBR=	npcd
 

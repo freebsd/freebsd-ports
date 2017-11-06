@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	go-bindata
-PORTVERSION=	3.0.7
+PORTVERSION=	3.1.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
@@ -12,25 +12,18 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/go:lang/go
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	jteeuwen
+GH_TAGNAME=	a0ff256
+GH_SUBDIR=	src/github.com/jteeuwen/go-bindata
 
 PLIST_FILES=	bin/go-bindata
 
 PORTDOCS=	CONTRIBUTING.md LICENSE README.md
 
-STRIP=		# stripping can break go binaries
-
 OPTIONS_DEFINE=	DOCS
-
-post-patch:
-	@cd ${WRKSRC} ; ${MKDIR} src/github.com/${GH_ACCOUNT}/${GH_PROJECT} ; \
-	${MV} CONTRIBUTING.md LICENSE README.md asset.go bytewriter.go \
-	config.go convert.go debug.go doc.go go-bindata release.go \
-	stringwriter.go testdata toc.go \
-	src/github.com/${GH_ACCOUNT}/${GH_PROJECT}
 
 do-build:
 	cd ${WRKSRC} ; \
-		${SETENV} GOPATH=${WRKSRC} go install ./...
+		${SETENV} GOPATH=${WRKSRC} go build -o bin/go-bindata ./go-bindata/
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/${PORTNAME} \

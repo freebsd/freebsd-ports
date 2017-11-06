@@ -1,6 +1,6 @@
---- src/utils/fs.py.orig	2010-05-23 14:46:21.000000000 +0400
-+++ src/utils/fs.py	2010-10-27 03:55:25.000000000 +0400
-@@ -203,9 +203,11 @@
+--- src/utils/fs.py.orig	2010-05-23 10:46:21 UTC
++++ src/utils/fs.py
+@@ -203,9 +203,11 @@ def get_system_fontdirs():
  	The function detects system font directories according to detected 
  	system type.
  	"""
@@ -13,7 +13,7 @@
  		try:
  			import _winreg
  		except ImportError:
-@@ -311,4 +313,4 @@
+@@ -311,4 +313,4 @@ def _test():
  if __name__ == '__main__':
      _test()
  	

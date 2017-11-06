@@ -12,7 +12,7 @@ LICENSE=	BSD4CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_LDCONFIG=	yes
-USE_OPENSSL=	yes
+USES+=		ssl
 GNU_CONFIGURE=	yes
 
 CONFIGURE_ARGS+=--sysconfdir=${PREFIX}/etc \
@@ -62,7 +62,7 @@ CYRUS_BUILD_TARGET?=	${PORTNAME}
 
 INSTALL_WRKSRC=	${WRKSRC}/plugins
 LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2
-USES=		libtool:build
+USES+=		libtool:build
 
 PLIST_FILES+=	lib/sasl2/lib${CYRUS_BUILD_TARGET}.a \
 		lib/sasl2/lib${CYRUS_BUILD_TARGET}.so \
@@ -96,20 +96,12 @@ SASLDB_NAME=	sasldb2
 SASLDB=	"@comment "
 .endif
 
-.if ${PORT_OPTIONS:MMYSQL} || ${PORT_OPTIONS:MPGSQL} || \
-    ${PORT_OPTIONS:MSQLITE2} || ${PORT_OPTIONS:MSQLITE3}
-CONFIGURE_ARGS+=--enable-sql
-.else
-SQL=	"@comment "
-.endif
-
 SUB_FILES=	pkg-deinstall pkg-install pkg-message
 SUB_LIST=	CYRUS_USER=${CYRUS_USER} CYRUS_GROUP=${CYRUS_GROUP} \
 		SASLDB_NAME=${SASLDB_NAME}
 
 PLIST_SUB+=	PREFIX=${PREFIX} \
 		SASLDB=${SASLDB} \
-		SQL=${SQL} \
 		DOCSDIR=${DOCSDIR:S/^${PREFIX}\///}
 
 post-patch:

@@ -1,5 +1,5 @@
---- Makefile.orig	Sat Jul 27 16:36:19 2002
-+++ Makefile	Thu Aug  8 02:14:43 2002
+--- Makefile.orig	2002-07-27 07:36:19 UTC
++++ Makefile
 @@ -6,9 +6,8 @@
  #
  # Makefile for the ncurses frontend of the library
@@ -12,7 +12,7 @@
  
  .SUFFIXES: .c .cpp .h
  
-@@ -23,16 +22,16 @@
+@@ -23,16 +22,16 @@ libtn.a: $(OBJS)
  	ar cru libtn.a $(OBJS)
  
  demo/demo: libtn.a demo/demo.cpp demo/myscheme.h

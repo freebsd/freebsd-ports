@@ -3,6 +3,7 @@
 
 PORTNAME=	ganyremote
 PORTVERSION=	6.3.3
+PORTREVISION=	1
 CATEGORIES=	deskutils comms gnome
 MASTER_SITES=	SF/anyremote/${PORTNAME}/${PORTVERSION}
 
@@ -10,15 +11,15 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNOME frontend for anyRemote
 
 LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	anyremote:comms/anyremote
 
-USES=		gettext python
+USES=		gettext python shebangfix
+SHEBANG_FILES=	ganyremote
 USE_GNOME=	pygtk2
 GNU_CONFIGURE=	yes
-
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+NO_ARCH=	yes
 
 OPTIONS_DEFINE=	DOCS
 

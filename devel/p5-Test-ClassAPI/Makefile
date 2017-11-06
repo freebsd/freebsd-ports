@@ -8,7 +8,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	lth@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Provides basic first-pass API testing for large class trees
 
 RUN_DEPENDS=	p5-Class-Inspector>=1.12:devel/p5-Class-Inspector \

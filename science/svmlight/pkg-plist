@@ -6,4 +6,3 @@ include/svmlight/svm_learn.h
 lib/libsvmlight.a
 lib/libsvmlight.so
 lib/libsvmlight.so.1
-%%PORTDOCS%%%%DOCSDIR%%/LICENSE.txt

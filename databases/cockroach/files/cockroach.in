@@ -1,0 +1,69 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: cockroach
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# cockroach_enable (bool):	Set to NO by default.
+#				Set it to YES to enable cockroach.
+# cockroach_user (user):        Set user to run cockroach.
+#                               Default is "cockroach".
+# cockroach_group (group):      Set group to run cockroach.
+#                               Default is "cockroach".
+# cockroach_dir (dir):          Set dir to run cockroach in.
+#                               Default is "path=/var/db/cockroach".
+# cockroach_flags (string):     Set additional flags with which to run cockroach.
+#                               Default is "--insecure --host=localhost".
+
+. /etc/rc.subr
+
+name=cockroach
+rcvar=cockroach_enable
+
+load_rc_config $name
+
+: ${cockroach_enable:="NO"}
+: ${cockroach_user:="cockroach"}
+: ${cockroach_group:="cockroach"}
+: ${cockroach_dir:="/var/db/cockroachdb"}
+: ${cockroach_store:="--store=path=${cockroach_dir}"}
+: ${cockroach_flags:="--insecure --host=localhost"}
+
+start_precmd=cockroach_startprecmd
+start_cmd=${name}_start
+stop_cmd=${name}_stop
+
+pidfile=/var/run/cockroach.pid
+command="%%PREFIX%%/bin/cockroach"
+
+cockroach_startprecmd()
+{
+        if [ ! -e ${pidfile} ]; then
+                install -o ${cockroach_user} -g ${cockroach_group} /dev/null ${pidfile};
+        fi
+
+        if [ ! -d ${cockroach_dir} ]; then
+                install -d -o ${cockroach_user} -g ${cockroach_group} ${cockroach_dir}
+        fi
+}
+
+cockroach_start() {
+	/usr/sbin/daemon -u ${cockroach_user} \
+		-p $pidfile ${command} \
+		start \
+		${cockroach_store} \
+		${cockroach_flags}
+}
+
+cockroach_stop() {
+	[ -f $pidfile ] \
+		&& ${command} quit --insecure \
+		|| echo ${name} not running? \(check ${pidfile}\)
+}
+
+run_rc_command "$1"

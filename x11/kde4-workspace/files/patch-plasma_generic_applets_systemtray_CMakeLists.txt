@@ -1,0 +1,16 @@
+Link to the full library as detected by CMake, so that the linker is passed
+"/full/path/to/libXss.so" instead of "-lXss", which can fail if -L/full/path/to
+is not passed as well.
+
+Not upstreamed because upstream is no longer releasing kde-workspace.
+--- plasma/generic/applets/systemtray/CMakeLists.txt
++++ plasma/generic/applets/systemtray/CMakeLists.txt
+@@ -43,7 +43,7 @@ include (CheckLibraryExists)
+ check_library_exists (Xss XScreenSaverQueryInfo "" HAVE_LIBXSS)
+ configure_file (${CMAKE_CURRENT_SOURCE_DIR}/config.h.in ${CMAKE_CURRENT_BINARY_DIR}/config.h)
+ IF (HAVE_LIBXSS)
+-   SET (IDLE_DETECTION_LIB "Xss")
++   SET (IDLE_DETECTION_LIB ${X11_Xscreensaver_LIB})
+ ENDIF (HAVE_LIBXSS)
+ 
+ kde4_add_plugin(plasma_applet_systemtray ${systemtray_SRCS})

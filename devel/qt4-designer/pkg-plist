@@ -1,5 +1,5 @@
-%%QT_BINDIR%%/designer-qt4
-%%DEBUG%%%%QT_BINDIR%%/designer-qt4.debug
+%%QT_BINDIR%%/designer
+%%DEBUG%%%%QT_BINDIR%%/designer.debug
 %%QT_INCDIR%%/QtDesigner/QAbstractExtensionFactory
 %%QT_INCDIR%%/QtDesigner/QAbstractExtensionManager
 %%QT_INCDIR%%/QtDesigner/QAbstractFormBuilder

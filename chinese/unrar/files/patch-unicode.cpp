@@ -1,6 +1,6 @@
---- unicode.cpp.orig	2011-01-04 20:28:47.000000000 +0800
-+++ unicode.cpp	2011-01-21 23:01:09.000000000 +0800
-@@ -7,6 +7,7 @@
+--- unicode.cpp.orig	2017-04-28 17:28:47 UTC
++++ unicode.cpp
+@@ -20,6 +20,7 @@ static const uint MappedStringMark=0xFFF
  bool WideToChar(const wchar *Src,char *Dest,size_t DestSize)
  {
    bool RetCode=true;

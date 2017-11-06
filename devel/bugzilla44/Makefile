@@ -8,7 +8,8 @@ MASTER_SITES=	MOZILLA/webtools MOZILLA/webtools/archived
 MAINTAINER=	bz-ports@FreeBSD.org
 COMMENT=	Bug-tracking system developed by Mozilla Project
 
-LICENSE=	MPL
+LICENSE=	MPL20
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 # see Bugzilla/Install/Requirements.pm
 # PR 194782: silence Module::Pluggable deprecated warnings

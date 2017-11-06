@@ -3,7 +3,7 @@
 
 PORTNAME=	secpanel
 PORTVERSION=	0.6.1
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	security tcl tk
 MASTER_SITES=	SF/${PORTNAME} \
@@ -25,8 +25,7 @@ NO_BUILD=	yes
 
 USES=		tk:wrapper
 
-DESKTOP_ENTRIES="SecPanel" "${COMMENT}" "${PORTNAME}" \
-		"${PORTNAME}" "" "false"
+DESKTOP_ENTRIES="SecPanel" "${COMMENT}" "${PORTNAME}" "${PORTNAME}" "" false
 
 post-patch:
 	@${REINPLACE_CMD} \

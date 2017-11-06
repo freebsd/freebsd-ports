@@ -1,4 +1,0 @@
-Minimal xlocale implementation for Solaris. This implements the subset of the
-xlocale APIs that libc++ depends on.
-
-WWW: http://libcxx.llvm.org

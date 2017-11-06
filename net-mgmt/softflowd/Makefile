@@ -2,26 +2,33 @@
 # $FreeBSD$
 
 PORTNAME=	softflowd
-PORTVERSION=	0.9.8
-PORTREVISION=	2
+PORTVERSION=	0.9.9
+PORTREVISION=	1
 CATEGORIES=	net-mgmt ipv6
-MASTER_SITES=	http://www2.mindrot.org/files/softflowd/
 
 MAINTAINER=	jmohacsi@bsd.hu
-COMMENT=	Softflowd is flow-based network traffic analyser with export
+COMMENT=	Flow-based network traffic analyzer and exporter
 
+LICENSE=	BSD2CLAUSE
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	irino
+GH_PROJECT=	softflowd
+GH_TAGNAME=	3aa2af5
+
+USES=		gmake autoreconf
 GNU_CONFIGURE=	yes
-USES=		gmake
+USE_RC_SUBR=	${PORTNAME}
+
 PLIST_FILES=	sbin/softflowd sbin/softflowctl \
 		man/man8/softflowd.8.gz \
 		man/man8/softflowctl.8.gz
 PORTDOCS=	README
-USE_RC_SUBR=	softflowd
 
 OPTIONS_DEFINE=	DOCS
 
-post-install:
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
+post-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	git
-DISTVERSION=	2.11.0
-PORTREVISION=	3
+DISTVERSION=	2.15.0
 CATEGORIES=	devel
 MASTER_SITES=	KERNEL_ORG/software/scm/git
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
@@ -33,9 +32,16 @@ MAKE_ENV+=	V=1
 USE_RC_SUBR=	git_daemon
 SHEBANG_FILES=	*.perl */*.perl */*/*.perl */*.pl */*/*.pl */*/*/*.pl \
 		t/*/*/pre t/*/*/post t/Git-SVN/Utils/*.t \
+		git-p4.py \
+		contrib/hg-to-git/hg-to-git.py \
 		contrib/hooks/update-paranoid \
+		contrib/hooks/multimail/post-receive.example \
+		contrib/hooks/multimail/git_multimail.py \
+		contrib/hooks/multimail/migrate-mailhook-config \
+		contrib/fast-import/import-zips.py \
+		contrib/remote-helpers/git-remote-bzr \
+		contrib/remote-helpers/git-remote-hg \
 		contrib/credential/netrc/git-credential-netrc \
-		contrib/diff-highlight/diff-highlight \
 		contrib/buildsystems/generate contrib/contacts/git-contacts \
 		contrib/svn-fe/svnrdump_sim.py
 TEST_TARGET=	test
@@ -71,8 +77,7 @@ PCRE_LIB_DEPENDS=	libpcre.so:devel/pcre
 PCRE_CONFIGURE_WITH=	libpcre
 
 SEND_EMAIL_IMPLIES=	PERL
-SEND_EMAIL_RUN_DEPENDS=	p5-Net-SMTP-SSL>=0:mail/p5-Net-SMTP-SSL \
-			p5-Authen-SASL>=0:security/p5-Authen-SASL
+SEND_EMAIL_RUN_DEPENDS=	p5-Authen-SASL>=0:security/p5-Authen-SASL
 
 ICONV_USES=		iconv
 ICONV_MAKE_ARGS_OFF=	NO_ICONV=1
@@ -149,6 +154,10 @@ post-patch:
 .endfor
 	@${REINPLACE_CMD} -e 's|share/man/man3|man/man3|' ${WRKSRC}/perl/Makefile.PL
 
+post-patch-CONTRIB-on:
+	@${REINPLACE_CMD} -e "s,/usr/bin/perl,${PERL}," \
+		${WRKSRC}/contrib/diff-highlight/Makefile
+
 post-patch-CVS-off:
 	@${REINPLACE_CMD} -e '/git-cvsexportcommit.perl/d; \
 		/git-cvsimport.perl/d; \
@@ -173,6 +182,10 @@ post-patch-P4-off:
 post-build:
 	@${FIND} ${WRKSRC} -name "*.bak" -delete
 .endif
+
+post-build-CONTRIB-on:
+	${SETENV} ${MAKE_ENV} ${MAKE_CMD} -C ${WRKSRC}/contrib/diff-highlight
+	${RM} ${WRKSRC}/contrib/diff-highlight/shebang.perl
 
 post-install:
 	(cd ${WRKDIR}/man1/ && ${COPYTREE_SHARE} . ${STAGEDIR}${MANPREFIX}/man/man1)

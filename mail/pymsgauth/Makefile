@@ -21,8 +21,8 @@ NO_ARCH=	yes
 
 SUB_FILES=	pkg-message
 
-DOCS=		BUGS CHANGELOG pymsgauth.txt pymsgauth.html
-EXAMPLES=	pymsgauthrc-example
+PORTDOCS=	BUGS CHANGELOG pymsgauth.txt pymsgauth.html
+PORTEXAMPLES=	pymsgauthrc-example
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
@@ -33,9 +33,13 @@ do-install:
 .for f in clean confirm mail
 	${LN} -sf ${DATADIR}/pymsgauth-${f} ${STAGEDIR}${PREFIX}/bin
 .endfor
+
+do-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	${INSTALL_DATA} ${EXAMPLES:S|^|${WRKSRC}/|} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${PORTEXAMPLES:S|^|${WRKSRC}/|} ${STAGEDIR}${EXAMPLESDIR}
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${DOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

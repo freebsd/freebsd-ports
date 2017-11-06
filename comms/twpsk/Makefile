@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	twpsk
-PORTVERSION=	4.1
+PORTVERSION=	4.3
 CATEGORIES=	comms hamradio
 MASTER_SITES=	http://wa0eir.bcts.info/src/
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
@@ -12,8 +12,9 @@ COMMENT=	X psk31 client
 LICENSE=	GPLv3
 
 USES=		motif pkgconfig
+USE_XORG=	sm ice xt x11
 
-LIB_DEPENDS+=	libpulse.so:audio/pulseaudio
+LIB_DEPENDS=	libpulse.so:audio/pulseaudio
 
 GNU_CONFIGURE=	yes
 CFLAGS+=	-L${LOCALBASE}/lib -I${PREFIX}/include

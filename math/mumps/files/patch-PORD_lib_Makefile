@@ -1,11 +1,20 @@
---- PORD/lib/Makefile.orig	2011-05-10 14:56:32.000000000 +0200
-+++ PORD/lib/Makefile	2013-08-11 18:31:47.000000000 +0200
-@@ -22,7 +22,7 @@
+--- PORD/lib/Makefile.orig	2011-05-10 12:56:32 UTC
++++ PORD/lib/Makefile
+@@ -21,10 +21,15 @@ OBJS = graph.o gbipart.o gbisect.o ddcre
+ .c.o:
  	$(CC) $(COPTIONS) -c $*.c $(OUTC)$*.o
  
- libpord$(LIBEXT):$(OBJS)
+-libpord$(LIBEXT):$(OBJS)
 -	$(AR)$@ $(OBJS)
++all: libpord$(LIBEXT) libpord.so.@SOVER@
++
++libpord$(LIBEXT): $(OBJS)
 +	$(AR) $@ $(OBJS)
  	$(RANLIB) $@
  
++libpord.so.@SOVER@: $(OBJS)
++	$(CC) -shared $(OBJS) -Wl,-soname,libpord$(PLAT).so.@SOVER@ -o libpord$(PLAT).so.@SOVER@ -Wl,-z,defs
++
  clean:
+ 	rm -f *.o
+ 

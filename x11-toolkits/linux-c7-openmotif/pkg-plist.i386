@@ -4,3 +4,7 @@ usr/lib/libUil.so.4
 usr/lib/libUil.so.4.0.4
 usr/lib/libXm.so.4
 usr/lib/libXm.so.4.0.4
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/RELEASE
+%%PORTDOCS%%%%DOCSDIR%%/RELNOTES

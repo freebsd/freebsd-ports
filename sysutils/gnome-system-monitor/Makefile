@@ -3,6 +3,7 @@
 
 PORTNAME=	gnome-system-monitor
 PORTVERSION=	3.16.0
+PORTREVISION=	1
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -17,11 +18,10 @@ RUN_DEPENDS=	gnome-icon-theme>=0:misc/gnome-icon-theme
 
 PORTSCOUT=	limitw:1,even
 
-USES=		alias gettext gmake pathfix pkgconfig tar:xz
+USES=		alias compiler:c++11-lang gettext gmake localbase pathfix pkgconfig tar:xz
+USE_CXXSTD=	c++11
 USE_GNOME=	gtkmm30 intlhack librsvg2 libwnck3
 GNU_CONFIGURE=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include
-LIBS+=		-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
 
 GLIB_SCHEMAS=	org.gnome.gnome-system-monitor.enums.xml \

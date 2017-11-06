@@ -1,0 +1,3 @@
+To complete your installation, copy %%ETCDIR%%/%%GRAPHITEAPI_APP%%.yaml.sample to
+%%ETCDIR%%/%%GRAPHITEAPI_APP%%.yaml and edit it as required, particularly ensuring
+your CORS allowed_origins are correct.

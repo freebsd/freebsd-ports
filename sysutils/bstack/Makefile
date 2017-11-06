@@ -5,7 +5,7 @@ PORTVERSION=	0.1
 PORTREVISION=	1
 CATEGORIES=	sysutils
 
-MAINTAINER=	luca.pizzamiglio@gmail.com
+MAINTAINER=	pizzamig@FreeBSD.org
 COMMENT=	Debug tool that shows the stack trace of a running process
 
 LICENSE=	BSD3CLAUSE

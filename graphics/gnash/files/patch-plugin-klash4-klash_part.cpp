@@ -1,6 +1,6 @@
---- plugin/klash4/klash_part.cpp.orig	2011-06-16 18:56:30.869545798 -0400
-+++ plugin/klash4/klash_part.cpp	2011-06-16 18:57:04.979892841 -0400
-@@ -148,7 +148,7 @@
+--- plugin/klash4/klash_part.cpp.orig	2016-07-21 12:25:09 UTC
++++ plugin/klash4/klash_part.cpp
+@@ -148,7 +148,7 @@ KDE_NO_CDTOR_EXPORT KlashPart::KlashPart
          }
      }
      KParts::Part::setWidget (new KlashView (wparent));

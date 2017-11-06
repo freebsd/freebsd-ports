@@ -1,37 +1,37 @@
---- tests/Makefile.am.orig	2015-06-11 11:38:55 UTC
+--- tests/Makefile.am.orig	2016-12-25 13:36:55 UTC
 +++ tests/Makefile.am
-@@ -346,7 +346,7 @@ libasm = -lasm
+@@ -382,7 +382,7 @@ libasm = -lasm
  libebl = -lebl
  else !STANDALONE
  if BUILD_STATIC
--libdw = ../libdw/libdw.a $(zip_LIBS) $(libelf) $(libebl) -ldl
-+libdw = ../libdw/libdw.a $(zip_LIBS) $(libelf) $(libebl)
- libelf = ../libelf/libelf.a
+-libdw = ../libdw/libdw.a -lz $(zip_LIBS) $(libelf) $(libebl) -ldl
++libdw = ../libdw/libdw.a -lz $(zip_LIBS) $(libelf) $(libebl)
+ libelf = ../libelf/libelf.a -lz
  libasm = ../libasm/libasm.a
  else
-@@ -389,27 +389,27 @@ funcretval_LDADD = $(libdw) $(argp_LDADD
+@@ -425,27 +425,27 @@ funcretval_LDADD = $(libdw) $(argp_LDADD
  allregs_LDADD = $(libdw) $(argp_LDADD)
  find_prologues_LDADD = $(libdw) $(argp_LDADD)
  #show_ciefde_LDADD = ../libdwarf/libdwarf.so $(libelf)
--asm_tst1_LDADD = $(libasm) $(libebl) $(libelf) -ldl
--asm_tst2_LDADD = $(libasm) $(libebl) $(libelf) -ldl
--asm_tst3_LDADD = $(libasm) $(libebl) $(libelf) -ldl
--asm_tst4_LDADD = $(libasm) $(libebl) $(libelf) -ldl
--asm_tst5_LDADD = $(libasm) $(libebl) $(libelf) -ldl
--asm_tst6_LDADD = $(libasm) $(libebl) $(libelf) -ldl
--asm_tst7_LDADD = $(libasm) $(libebl) $(libelf) -ldl
--asm_tst8_LDADD = $(libasm) $(libebl) $(libelf) -ldl
--asm_tst9_LDADD = $(libasm) $(libebl) $(libelf) -ldl
+-asm_tst1_LDADD = $(libasm) $(libebl) $(libelf) $(libdw) -ldl
+-asm_tst2_LDADD = $(libasm) $(libebl) $(libelf) $(libdw) -ldl
+-asm_tst3_LDADD = $(libasm) $(libebl) $(libelf) $(libdw) -ldl
+-asm_tst4_LDADD = $(libasm) $(libebl) $(libelf) $(libdw) -ldl
+-asm_tst5_LDADD = $(libasm) $(libebl) $(libelf) $(libdw) -ldl
+-asm_tst6_LDADD = $(libasm) $(libebl) $(libelf) $(libdw) -ldl
+-asm_tst7_LDADD = $(libasm) $(libebl) $(libelf) $(libdw) -ldl
+-asm_tst8_LDADD = $(libasm) $(libebl) $(libelf) $(libdw) -ldl
+-asm_tst9_LDADD = $(libasm) $(libebl) $(libelf) $(libdw) -ldl
 -dwflmodtest_LDADD = $(libdw) $(libebl) $(libelf) $(argp_LDADD) -ldl
-+asm_tst1_LDADD = $(libasm) $(libebl) $(libelf)
-+asm_tst2_LDADD = $(libasm) $(libebl) $(libelf)
-+asm_tst3_LDADD = $(libasm) $(libebl) $(libelf)
-+asm_tst4_LDADD = $(libasm) $(libebl) $(libelf)
-+asm_tst5_LDADD = $(libasm) $(libebl) $(libelf)
-+asm_tst6_LDADD = $(libasm) $(libebl) $(libelf)
-+asm_tst7_LDADD = $(libasm) $(libebl) $(libelf)
-+asm_tst8_LDADD = $(libasm) $(libebl) $(libelf)
-+asm_tst9_LDADD = $(libasm) $(libebl) $(libelf)
++asm_tst1_LDADD = $(libasm) $(libebl) $(libelf) $(libdw)
++asm_tst2_LDADD = $(libasm) $(libebl) $(libelf) $(libdw)
++asm_tst3_LDADD = $(libasm) $(libebl) $(libelf) $(libdw)
++asm_tst4_LDADD = $(libasm) $(libebl) $(libelf) $(libdw)
++asm_tst5_LDADD = $(libasm) $(libebl) $(libelf) $(libdw)
++asm_tst6_LDADD = $(libasm) $(libebl) $(libelf) $(libdw)
++asm_tst7_LDADD = $(libasm) $(libebl) $(libelf) $(libdw)
++asm_tst8_LDADD = $(libasm) $(libebl) $(libelf) $(libdw)
++asm_tst9_LDADD = $(libasm) $(libebl) $(libelf) $(libdw)
 +dwflmodtest_LDADD = $(libdw) $(libebl) $(libelf) $(argp_LDADD)
  rdwrmmap_LDADD = $(libelf)
 -dwfl_bug_addr_overflow_LDADD = $(libdw) $(libebl) $(libelf) -ldl
@@ -52,4 +52,4 @@
 +addrcfi_LDADD = $(libdw) $(libebl) $(libelf) $(argp_LDADD)
  test_flag_nobits_LDADD = $(libelf)
  rerequest_tag_LDADD = $(libdw)
- alldts_LDADD = $(libebl) $(libelf)
+ alldts_LDADD = $(libdw) $(libelf)

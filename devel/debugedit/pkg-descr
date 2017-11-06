@@ -1,0 +1,7 @@
+An ELF file debug information editor and extractor based on debugedit tool
+in the rpm package.
+
+The intention of this project is to have some fun playing with ELF as well as
+DWARF for the image files.
+
+WWW: https://github.com/CoryXie/DebugEdit

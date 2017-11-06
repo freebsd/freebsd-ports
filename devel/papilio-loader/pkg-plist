@@ -1,0 +1,5 @@
+bin/Papilio_Programmer.sh
+bin/papilio-prog
+%%DATADIR%%/bscan_spi_xc3s250e.bit
+%%DATADIR%%/bscan_spi_xc3s500e.bit
+%%DATADIR%%/bscan_spi_lx9.bit

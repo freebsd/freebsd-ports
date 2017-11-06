@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	octave-forge-geometry
-PORTVERSION=	2.1.1
+PORTVERSION=	3.0.0
 PORTREVISION=	1
 CATEGORIES=	math
 
@@ -16,14 +16,11 @@ LICENSE_FILE=	${WRKDIR}/${OCTSRC}/COPYING
 # It is usually ${OCTAVE_PKGNAME} or ${DISTNAME}.
 OCTSRC=		${DISTNAME}
 
-WRKSRC=		${WRKDIR}/${OCTSRC}
+WRKSRC=		${WRKDIR}/${OCTSRC}/src
 
 RUN_DEPENDS+=	py*-lxml>=0:devel/py-lxml
 
 .include "${.CURDIR}/../../Mk/bsd.octave.mk"
-
-do-build:
-	@${DO_NADA}
 
 post-build:
 	cd ${WRKDIR} && ${TAR} cfz ${DISTNAME}.tar.gz ${OCTSRC}

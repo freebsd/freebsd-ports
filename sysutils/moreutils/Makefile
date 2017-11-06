@@ -2,16 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	moreutils
-PORTVERSION=	0.59
-DISTVERSIONSUFFIX=	.orig
+PORTVERSION=	0.61
 CATEGORIES=	sysutils
-MASTER_SITES=	DEBIAN_POOL
-DISTNAME=	${PORTNAME}_${DISTVERSIONFULL}
+MASTER_SITES=	https://git.joeyh.name/index.cgi/moreutils.git/snapshot/ \
+		LOCAL/sunpoet
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Additional Unix utilities
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	p5-IPC-Run>=0:devel/p5-IPC-Run
 
@@ -21,8 +21,7 @@ OPTIONS_SUB=	yes
 
 ALL_TARGET=	errnos.h ${CANNED_MANPAGES:R}
 MAKE_JOBS_UNSAFE=	yes
-USES=		perl5 shebangfix
-WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSIONFULL}
+USES=		gmake perl5 shebangfix
 
 CANNED_MANPAGES=errno.1 \
 		ifdata.1 \
@@ -50,6 +49,7 @@ post-extract:
 post-patch:
 	@${REINPLACE_CMD} -e 's|parallel|moreutils-&|g' ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e 's|__APPLE__|__${OPSYS}__|' ${WRKSRC}/ifdata.c
+	@${REINPLACE_CMD} -e '/^CC = gcc/d' ${WRKSRC}/is_utf8/Makefile
 	@cd ${FILESDIR}/ && ${CP} ${CANNED_MANPAGES} ${WRKSRC}/
 
 post-build:

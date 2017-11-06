@@ -2,29 +2,26 @@
 # $FreeBSD$
 
 PORTNAME=	nss
-PORTVERSION=	3.21.3
-PORTREVISION=	1
+PORTVERSION=	3.28.4
+PORTREVISION=	2
 CATEGORIES=	security linux
-LIB_DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		nss-util-${PORTVERSION}-1.el6_8${EXTRACT_SUFX} \
-		nss-softokn-3.14.3-23.3.el6_8${EXTRACT_SUFX} \
-		nss-softokn-freebl-3.14.3-23.3.el6_8${EXTRACT_SUFX}
+LIB_DISTNAMES=	${DISTNAME} \
+		${PORTNAME}-util-${PORTVERSION}-1.el6_9 \
+		${PORTNAME}-softokn-3.14.3-23.3.el6_8
+SRC_DISTFILES=	${DISTNAME}${SRC_SUFX}:SOURCE \
+		${PORTNAME}-util-${PORTVERSION}-1.el6_9${SRC_SUFX}:SOURCE \
+		${PORTNAME}-softokn-3.14.3-23.3.el6_8${SRC_SUFX}:SOURCE
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Network Security Services (Linux CentOS ${LINUX_DIST_VER})
 
-LICENSE=	MPL
-
-RPMVERSION=	2.el6_8
-USES=		linux:c6
-USE_LINUX=	nspr sqlite3
-USE_LINUX_RPM=	yes
-USE_LDCONFIG=	yes
-
-SRC_DISTFILES=	${DISTNAME}${SRC_SUFX}:SOURCE \
-		nss-util-${PORTVERSION}-1.el6_8.src.rpm:SOURCE \
-		nss-softokn-3.14.3-23.3.el6_8.src.rpm:SOURCE
+LICENSE=	MPL20
 
 DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
+RPMVERSION=	4.el6_9
+USES=		linux:c6
+USE_LDCONFIG=	yes
+USE_LINUX=	nspr sqlite3
+USE_LINUX_RPM=	yes
 
 .include <bsd.port.mk>

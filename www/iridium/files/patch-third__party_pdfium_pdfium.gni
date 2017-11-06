@@ -1,0 +1,11 @@
+--- third_party/pdfium/pdfium.gni.orig	2017-05-09 19:03:55 UTC
++++ third_party/pdfium/pdfium.gni
+@@ -9,7 +9,7 @@ import("//build_overrides/pdfium.gni")
+ declare_args() {
+   # On Android there's no system FreeType. On Windows and Mac, only a few
+   # methods are used from it.
+-  pdfium_bundle_freetype = !is_linux
++  pdfium_bundle_freetype = false
+ 
+   # Build PDFium either with or without v8 support.
+   pdf_enable_v8 = pdf_enable_v8_override

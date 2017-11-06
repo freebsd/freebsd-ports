@@ -2,15 +2,17 @@
 # $FreeBSD$
 
 PORTNAME=	ansifilter
-PORTVERSION=	2.3
+PORTVERSION=	2.8
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.andre-simon.de/zip/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Customizable ANSI Code Converter
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+BROKEN_powerpc64=	fails to compile: cc1plus: error: unrecognized command line option -std=c++11
 
 USES=		gmake tar:bzip2
 MAKEFILE=	makefile

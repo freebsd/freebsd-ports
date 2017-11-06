@@ -1,11 +1,11 @@
---- setup.py.orig	2016-10-18 02:27:09 UTC
+--- setup.py.orig	2017-04-10 03:35:24 UTC
 +++ setup.py
-@@ -18,7 +18,7 @@ setuptools.setup(
-     keywords='reddit terminal praw curses',
-     packages=['rtv'],
-     package_data={'rtv': ['templates/*']},
+@@ -62,7 +62,7 @@ setuptools.setup(
+         'rtv': ['templates/*'],
+         'rtv.packages.praw': ['praw.ini']
+     },
 -    data_files=[("share/man/man1", ["rtv.1"])],
 +    data_files=[("man/man1", ["rtv.1"])],
-     install_requires=requirements,
-     entry_points={'console_scripts': ['rtv=rtv.__main__:main']},
-     classifiers=[
+     install_requires=install_requires,
+     tests_require=tests_require,
+     extras_require=extras_require,

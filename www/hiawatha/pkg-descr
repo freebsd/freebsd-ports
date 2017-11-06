@@ -4,4 +4,4 @@ other webserver has. Besides being very secure, it's also a very fast webserver.
 It's twice as fast as Apache for static content. It supports load-balanced
 FastCGI, which makes it fast and scalable for serving CGI.
 
-WWW: http://www.hiawatha-webserver.org/
+WWW: https://www.hiawatha-webserver.org/

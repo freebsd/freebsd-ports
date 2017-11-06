@@ -2,6 +2,8 @@
 
 PORTNAME=	kterm
 PORTVERSION=	6.2.0
+DISTVERSIONPREFIX=	v
+DISTVERSIONSUFFIX=	.fb6
 PORTREVISION=	14
 CATEGORIES=	japanese x11
 MASTER_SITES=	LOCAL/hrs:pcemu
@@ -21,7 +23,6 @@ USES=		imake
 USE_XORG=	ice sm x11 xaw xext xmu xpm xt
 USE_GITHUB=	yes
 GH_ACCOUNT=	hrs-allbsd
-GH_TAGNAME=	v6.2.0.fb6
 VGAFONT_USES=	fonts
 CFLAGS+=	-Wno-return-type
 PORTDOCS=	README.kt README.wallpaper.ja dot.termcap

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	shadowsocks-libev
-PORTVERSION=	1.6.4
+PORTVERSION=	2.4.7
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net
 
@@ -13,7 +13,7 @@ LICENSE=	GPLv3
 
 # fetch from github repo
 USE_GITHUB=	yes
-GH_ACCOUNT=	madeye
+GH_ACCOUNT=	shadowsocks
 
 GNU_CONFIGURE=	yes
 USES=		gmake libtool:keepla pathfix ssl

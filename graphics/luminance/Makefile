@@ -3,7 +3,7 @@
 
 PORTNAME=	luminance-hdr
 DISTVERSION=	2.3.1
-PORTREVISION=	9
+PORTREVISION=	15
 CATEGORIES=	graphics
 MASTER_SITES=	SF/qtpfsgui/luminance/${DISTVERSION}
 
@@ -20,6 +20,8 @@ LIB_DEPENDS=	libfftw3f.so:math/fftw3-float \
 		libgsl.so:math/gsl \
 		libraw_r.so:graphics/libraw \
 		libboost_system.so:devel/boost-libs
+
+BROKEN_powerpc64=	fails to compile: cc1plus: unrecognized command line option "-msse2"
 
 USES=		cmake jpeg tar:bzip2
 USE_QT4=	gui sql webkit xml linguist_build moc_build qmake_build \

@@ -5,8 +5,8 @@ PORTNAME=	kenny
 PORTVERSION=	1.7
 PORTREVISION=	1
 CATEGORIES=	misc perl5
-MASTER_SITES=	https://googledrive.com/host/0BwCT-sp3iBCaeDRPYm1jTjl1Qmc/ \
-				http://www.cgarbs.de/stuff/
+MASTER_SITES=	https://aklv.github.io/distfiles/ \
+		http://www.cgarbs.de/stuff/
 DISTNAME=	${PORTNAME}.pl-${PORTVERSION}
 EXTRACT_SUFX=	.gz
 

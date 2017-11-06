@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Config-Model
-PORTVERSION=	2.097
+PORTVERSION=	2.113
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -30,13 +30,14 @@ BUILD_DEPENDS=	p5-Carp-Assert-More>=0:devel/p5-Carp-Assert-More \
 		p5-Text-Diff>=0:textproc/p5-Text-Diff \
 		p5-Text-Levenshtein-Damerau>=0:devel/p5-Text-Levenshtein-Damerau
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-TEST_DEPENDS=	p5-Config-Model-Tester>=2.053:devel/p5-Config-Model-Tester \
+TEST_DEPENDS=	p5-Config-Model-Tester>=2.059:devel/p5-Config-Model-Tester \
 		p5-Test-Differences>=0:devel/p5-Test-Differences \
 		p5-Test-Exception>=0:devel/p5-Test-Exception \
 		p5-Test-File-Contents>=0:devel/p5-Test-File-Contents \
 		p5-Test-Memory-Cycle>=0:devel/p5-Test-Memory-Cycle \
 		p5-Test-Warn>=0.11:devel/p5-Test-Warn \
-		p5-YAML>=0.30.3:textproc/p5-YAML
+		p5-YAML>=0:textproc/p5-YAML \
+		p5-YAML-Tiny>=0:textproc/p5-YAML-Tiny
 
 NO_ARCH=	yes
 USES=		perl5

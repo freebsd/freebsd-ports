@@ -2,4 +2,4 @@ Dynagui is a GUI frontend to the dynamips Cisco 7200/36XX router
 simulator. It uses the dyna-gen library in order to communicate
 with the dynamips hypervisor.
 
-WWW: http://dynagui.sourceforge.net
+WWW: http://dynagui.sourceforge.net/

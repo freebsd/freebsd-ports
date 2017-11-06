@@ -3,13 +3,13 @@
 
 PORTNAME=	glest
 PORTVERSION=	3.2.2
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20source/${PORTVERSION}
 DISTNAME=	${PORTNAME}_source_${PORTVERSION}
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	mokhi64@gmail.com
+MAINTAINER=	mmokhi@FreeBSD.org
 COMMENT=	Free 3D real-time customizable strategy game
 
 LIB_DEPENDS=	libxerces-c.so:textproc/xerces-c3 \
@@ -40,7 +40,6 @@ EXTRACT_AFTER_ARGS=	-d ${WRKDIR}/${DISTNAME}
 .if ${PORT_OPTIONS:MEDITOR}
 USE_WX=		2.6+
 WX_CONF_ARGS=	relative
-WX_UNICODE=	yes
 HAVE_EDITOR=	true
 .endif
 

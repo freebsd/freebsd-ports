@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	stephon@gmail.com
 COMMENT=	Generate QR Code on Terminal
 
-LICENSE=	ART10 GPLv1
+LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	libqrencode>=2.0.0:graphics/libqrencode \

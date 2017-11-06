@@ -3,7 +3,7 @@
 
 PORTNAME=	ode
 PORTVERSION=	1.2.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel python
 MASTER_SITES=	SF/py${PORTNAME}/py${PORTNAME}/${PORTVERSION}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,7 +13,7 @@ DIST_SUBDIR=	python
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Python bindings for The Open Dynamics Engine
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libode.a:devel/ode
+LIB_DEPENDS=	libode.so:devel/ode
 
 USES=		python:2 tar:bzip2
 USE_PYTHON=	autoplist distutils

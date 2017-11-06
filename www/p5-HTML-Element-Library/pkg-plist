@@ -1,5 +1,2 @@
-%%PERL5_MAN3%%/HTML::Element::Library.3.gz
-%%PERL5_MAN3%%/HTML::Element::Library::Changes.3.gz
 %%SITE_PERL%%/HTML/Element/Library.pm
-%%SITE_PERL%%/HTML/Element/Library.pod
-%%SITE_PERL%%/HTML/Element/Library/Changes.pod
+%%PERL5_MAN3%%/HTML::Element::Library.3.gz

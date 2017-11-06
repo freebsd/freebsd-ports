@@ -2,6 +2,7 @@
 
 PORTNAME=	fidogate
 PORTVERSION=	4.4.10
+PORTREVISION=	1
 CATEGORIES=	news mail
 MASTER_SITES=	SF \
 		ftp://ftp.fu-berlin.de/unix/news/fidogate/
@@ -9,9 +10,14 @@ MASTER_SITES=	SF \
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Fido-Internet Gateway and Tosser
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 MAKE_JOBS_UNSAFE=	yes
 
 USES=		gmake perl5
+MAKE_ARGS=	OWNER=${UID} GROUP=$$(id -g)
+PLIST_SUB=	FIDOGATE_USER=${FIDOGATE_RUNAS}
 
 FIXDEST=	. doc doc/gatebau doc/html scripts/areas \
 		scripts/maintenance scripts/misc scripts/nodelist \
@@ -23,8 +29,8 @@ DOCLIST=	fidogate.texi fidogate.txt gatebau94.txt kludge-rfc.doc \
 		gatebau/msgid.tex gatebau/msgid.txt
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
-GID!=		id -g
-MAKE_ARGS=	OWNER=${UID} GROUP=${GID}
+
+FIDOGATE_RUNAS?=	news
 
 .include <bsd.port.options.mk>
 
@@ -40,10 +46,6 @@ pre-configure:
 	${REINPLACE_CMD} -e "s|.{PREFIX}|${PREFIX}|g" \
 		 -e "s|.{LOCALBASE}|${LOCALBASE}|g" \
 		 -e "s|^CC|#CC|" ${WRKSRC}/config.make
-.if defined(FIDOGATE_RUNAS)
-	${REINPLACE_CMD} -e "s|OWNER.*= news|OWNER		= ${FIDOGATE_RUNAS}|" \
-		${WRKSRC}/config.make
-.endif
 .if !${PORT_OPTIONS:MDOCS}
 	${REINPLACE_CMD} -e "s|test doc|test|" \
 		-e "s|cp ANNOUNCE|#cp ANNOUNCE|" \
@@ -53,14 +55,14 @@ pre-configure:
 
 pre-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/libexec/fidogate
-.if ${PORT_OPTIONS:MDOCS}
+
+pre-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/html \
 		${STAGEDIR}${DOCSDIR}/info \
 		${STAGEDIR}${DOCSDIR}/fido \
 		${STAGEDIR}${DOCSDIR}/howto \
 		${STAGEDIR}${DOCSDIR}/misc \
 		${STAGEDIR}${DOCSDIR}/gatebau
-.endif
 
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}

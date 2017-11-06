@@ -2,24 +2,24 @@
 # $FreeBSD$
 
 PORTNAME=	magit
-PORTVERSION=	2.8.0
+PORTVERSION=	2.11.0
 CATEGORIES=	devel elisp
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 
-MAINTAINER=	kuriyama@FreeBSD.org
+MAINTAINER=	yasu@utahime.org
 COMMENT=	Interface to Git for Emacs
 
-LICENSE=	GPLv3
+LICENSE=	GPLv3+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	dash.el>=2.12.1:devel/dash.el \
 		with-editor-${EMACS_PORT_NAME}>=2.5.0:editors/with-editor
 RUN_DEPENDS=	dash.el>=2.12.1:devel/dash.el \
 		with-editor-${EMACS_PORT_NAME}>=2.5.0:editors/with-editor
 
-USE_GITHUB=	yes
-
 USES=		gmake makeinfo
 USE_EMACS=	yes
+USE_GITHUB=	yes
 INFO=		magit magit-popup
 PORTDOCS=	AUTHORS.md
 NO_ARCH=	yes

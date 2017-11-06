@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	${DICT}-aspell
-DISTVERSION=	6-en-7.1-0
+SPELLVERSION=	6-en-7.1-0
 PORTREVISION=	1
 CATEGORIES=	textproc
 

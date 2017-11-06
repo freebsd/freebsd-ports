@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Term-Menus
-PORTVERSION=	2.99
+PORTVERSION=	3.015
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:REEDFISH
@@ -13,7 +13,8 @@ COMMENT=	Create Powerful Terminal, Console, and CMD Environment Menus
 
 LICENSE=	AGPLv3
 
-BUILD_DEPENDS=	p5-Data-Dump-Streamer>0:devel/p5-Data-Dump-Streamer \
+BUILD_DEPENDS=	p5-Capture-Tiny>0:devel/p5-Capture-Tiny \
+		p5-Data-Dump-Streamer>0:devel/p5-Data-Dump-Streamer \
 		p5-Devel-Symdump>0:devel/p5-Devel-Symdump \
 		p5-PadWalker>0:devel/p5-PadWalker \
 		p5-Term-RawInput>=1.20:devel/p5-Term-RawInput \

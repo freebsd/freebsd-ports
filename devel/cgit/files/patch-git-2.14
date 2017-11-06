@@ -1,0 +1,413 @@
+From 86a6d358f7a6c2432fde86b9e3c5011a656f20e4 Mon Sep 17 00:00:00 2001
+From: Jeff Smith <whydoubt@gmail.com>
+Date: Wed, 9 Aug 2017 19:02:56 -0500
+Subject: git: update to v2.14
+
+Numerous changes were made to git functions to use an object_id
+structure rather than sending sha1 hashes as raw unsigned character
+arrays.  The functions that affect cgit are: parse_object,
+lookup_commit_reference, lookup_tag, lookup_tree, parse_tree_indirect,
+diff_root_tree_sha1, diff_tree_sha1, and format_display_notes.
+
+Commit b2141fc (config: don't include config.h by default) made it
+necessary to that config.h be explicitly included when needed.
+
+Commit 07a3d41 (grep: remove regflags from the public grep_opt API)
+removed one way of specifying the ignore-case grep option.
+
+Signed-off-by: Jeff Smith <whydoubt@gmail.com>
+---
+ Makefile      |  2 +-
+ git           |  2 +-
+ scan-tree.c   |  5 +++--
+ shared.c      |  6 +++---
+ ui-blob.c     |  6 +++---
+ ui-clone.c    |  2 +-
+ ui-commit.c   |  6 +++---
+ ui-diff.c     | 18 +++++++++---------
+ ui-log.c      | 10 +++++-----
+ ui-patch.c    |  4 ++--
+ ui-plain.c    |  2 +-
+ ui-snapshot.c |  2 +-
+ ui-tag.c      |  4 ++--
+ ui-tree.c     | 18 +++++++++---------
+ 14 files changed, 44 insertions(+), 43 deletions(-)
+
+diff --git a/scan-tree.c b/scan-tree.c
+index 08f3f1d..6a2f65a 100644
+--- scan-tree.c
++++ scan-tree.c
+@@ -10,6 +10,7 @@
+ #include "scan-tree.h"
+ #include "configfile.h"
+ #include "html.h"
++#include <config.h>
+ 
+ /* return 1 if path contains a objects/ directory and a HEAD file */
+ static int is_git_dir(const char *path)
+@@ -48,7 +49,7 @@ out:
+ static struct cgit_repo *repo;
+ static repo_config_fn config_fn;
+ 
+-static void repo_config(const char *name, const char *value)
++static void scan_tree_repo_config(const char *name, const char *value)
+ {
+ 	config_fn(repo, name, value);
+ }
+@@ -178,7 +179,7 @@ static void add_repo(const char *base, struct strbuf *path, repo_config_fn fn)
+ 
+ 	strbuf_addstr(path, "cgitrc");
+ 	if (!stat(path->buf, &st))
+-		parse_configfile(path->buf, &repo_config);
++		parse_configfile(path->buf, &scan_tree_repo_config);
+ 
+ 	strbuf_release(&rel);
+ }
+diff --git a/shared.c b/shared.c
+index 13a65a9..df3f611 100644
+--- shared.c
++++ shared.c
+@@ -160,7 +160,7 @@ static struct refinfo *cgit_mk_refinfo(const char *refname, const struct object_
+ 
+ 	ref = xmalloc(sizeof (struct refinfo));
+ 	ref->refname = xstrdup(refname);
+-	ref->object = parse_object(oid->hash);
++	ref->object = parse_object(oid);
+ 	switch (ref->object->type) {
+ 	case OBJ_TAG:
+ 		ref->tag = cgit_parse_tag((struct tag *)ref->object);
+@@ -360,9 +360,9 @@ void cgit_diff_tree(const struct object_id *old_oid,
+ 	diff_setup_done(&opt);
+ 
+ 	if (old_oid && !is_null_oid(old_oid))
+-		diff_tree_sha1(old_oid->hash, new_oid->hash, "", &opt);
++		diff_tree_oid(old_oid, new_oid, "", &opt);
+ 	else
+-		diff_root_tree_sha1(new_oid->hash, "", &opt);
++		diff_root_tree_oid(new_oid, "", &opt);
+ 	diffcore_std(&opt);
+ 	diff_flush(&opt);
+ 
+diff --git a/ui-blob.c b/ui-blob.c
+index 793817f..761e886 100644
+--- ui-blob.c
++++ ui-blob.c
+@@ -56,7 +56,7 @@ int cgit_ref_path_exists(const char *path, const char *ref, int file_only)
+ 		goto done;
+ 	if (sha1_object_info(oid.hash, &size) != OBJ_COMMIT)
+ 		goto done;
+-	read_tree_recursive(lookup_commit_reference(oid.hash)->tree, "", 0, 0, &paths, walk_tree, &walk_tree_ctx);
++	read_tree_recursive(lookup_commit_reference(&oid)->tree, "", 0, 0, &paths, walk_tree, &walk_tree_ctx);
+ 
+ done:
+ 	free(path_items.match);
+@@ -89,7 +89,7 @@ int cgit_print_file(char *path, const char *head, int file_only)
+ 		return -1;
+ 	type = sha1_object_info(oid.hash, &size);
+ 	if (type == OBJ_COMMIT) {
+-		commit = lookup_commit_reference(oid.hash);
++		commit = lookup_commit_reference(&oid);
+ 		read_tree_recursive(commit->tree, "", 0, 0, &paths, walk_tree, &walk_tree_ctx);
+ 		if (!walk_tree_ctx.found_path)
+ 			return -1;
+@@ -145,7 +145,7 @@ void cgit_print_blob(const char *hex, char *path, const char *head, int file_onl
+ 	type = sha1_object_info(oid.hash, &size);
+ 
+ 	if ((!hex) && type == OBJ_COMMIT && path) {
+-		commit = lookup_commit_reference(oid.hash);
++		commit = lookup_commit_reference(&oid);
+ 		read_tree_recursive(commit->tree, "", 0, 0, &paths, walk_tree, &walk_tree_ctx);
+ 		type = sha1_object_info(oid.hash, &size);
+ 	}
+diff --git a/ui-clone.c b/ui-clone.c
+index 5f6606a..0d11672 100644
+--- ui-clone.c
++++ ui-clone.c
+@@ -17,7 +17,7 @@ static int print_ref_info(const char *refname, const struct object_id *oid,
+ {
+ 	struct object *obj;
+ 
+-	if (!(obj = parse_object(oid->hash)))
++	if (!(obj = parse_object(oid)))
+ 		return 0;
+ 
+ 	htmlf("%s\t%s\n", oid_to_hex(oid), refname);
+diff --git a/ui-commit.c b/ui-commit.c
+index db69d54..586fea0 100644
+--- ui-commit.c
++++ ui-commit.c
+@@ -31,7 +31,7 @@ void cgit_print_commit(char *hex, const char *prefix)
+ 				"Bad object id: %s", hex);
+ 		return;
+ 	}
+-	commit = lookup_commit_reference(oid.hash);
++	commit = lookup_commit_reference(&oid);
+ 	if (!commit) {
+ 		cgit_print_error_page(404, "Not found",
+ 				"Bad commit reference: %s", hex);
+@@ -39,7 +39,7 @@ void cgit_print_commit(char *hex, const char *prefix)
+ 	}
+ 	info = cgit_parse_commit(commit);
+ 
+-	format_display_notes(oid.hash, &notes, PAGE_ENCODING, 0);
++	format_display_notes(&oid, &notes, PAGE_ENCODING, 0);
+ 
+ 	load_ref_decorations(DECORATE_FULL_REFS);
+ 
+@@ -87,7 +87,7 @@ void cgit_print_commit(char *hex, const char *prefix)
+ 	free(tmp);
+ 	html("</td></tr>\n");
+ 	for (p = commit->parents; p; p = p->next) {
+-		parent = lookup_commit_reference(p->item->object.oid.hash);
++		parent = lookup_commit_reference(&p->item->object.oid);
+ 		if (!parent) {
+ 			html("<tr><td colspan='3'>");
+ 			cgit_print_error("Error reading parent commit");
+diff --git a/ui-diff.c b/ui-diff.c
+index 173d351..c7fb49b 100644
+--- ui-diff.c
++++ ui-diff.c
+@@ -385,7 +385,7 @@ void cgit_print_diff(const char *new_rev, const char *old_rev,
+ 		     const char *prefix, int show_ctrls, int raw)
+ {
+ 	struct commit *commit, *commit2;
+-	const unsigned char *old_tree_sha1, *new_tree_sha1;
++	const struct object_id *old_tree_oid, *new_tree_oid;
+ 	diff_type difftype;
+ 
+ 	/*
+@@ -407,13 +407,13 @@ void cgit_print_diff(const char *new_rev, const char *old_rev,
+ 			"Bad object name: %s", new_rev);
+ 		return;
+ 	}
+-	commit = lookup_commit_reference(new_rev_oid->hash);
++	commit = lookup_commit_reference(new_rev_oid);
+ 	if (!commit || parse_commit(commit)) {
+ 		cgit_print_error_page(404, "Not found",
+ 			"Bad commit: %s", oid_to_hex(new_rev_oid));
+ 		return;
+ 	}
+-	new_tree_sha1 = commit->tree->object.oid.hash;
++	new_tree_oid = &commit->tree->object.oid;
+ 
+ 	if (old_rev) {
+ 		if (get_oid(old_rev, old_rev_oid)) {
+@@ -428,15 +428,15 @@ void cgit_print_diff(const char *new_rev, const char *old_rev,
+ 	}
+ 
+ 	if (!is_null_oid(old_rev_oid)) {
+-		commit2 = lookup_commit_reference(old_rev_oid->hash);
++		commit2 = lookup_commit_reference(old_rev_oid);
+ 		if (!commit2 || parse_commit(commit2)) {
+ 			cgit_print_error_page(404, "Not found",
+ 				"Bad commit: %s", oid_to_hex(old_rev_oid));
+ 			return;
+ 		}
+-		old_tree_sha1 = commit2->tree->object.oid.hash;
++		old_tree_oid = &commit2->tree->object.oid;
+ 	} else {
+-		old_tree_sha1 = NULL;
++		old_tree_oid = NULL;
+ 	}
+ 
+ 	if (raw) {
+@@ -449,11 +449,11 @@ void cgit_print_diff(const char *new_rev, const char *old_rev,
+ 
+ 		ctx.page.mimetype = "text/plain";
+ 		cgit_print_http_headers();
+-		if (old_tree_sha1) {
+-			diff_tree_sha1(old_tree_sha1, new_tree_sha1, "",
++		if (old_tree_oid) {
++			diff_tree_oid(old_tree_oid, new_tree_oid, "",
+ 				       &diffopt);
+ 		} else {
+-			diff_root_tree_sha1(new_tree_sha1, "", &diffopt);
++			diff_root_tree_oid(new_tree_oid, "", &diffopt);
+ 		}
+ 		diffcore_std(&diffopt);
+ 		diff_flush(&diffopt);
+diff --git a/ui-log.c b/ui-log.c
+index 3220fd9..2d2bb31 100644
+--- ui-log.c
++++ ui-log.c
+@@ -150,9 +150,9 @@ static int show_commit(struct commit *commit, struct rev_info *revs)
+ 	rem_lines = 0;
+ 
+ 	DIFF_OPT_SET(&revs->diffopt, RECURSIVE);
+-	diff_tree_sha1(parent->tree->object.oid.hash,
+-		       commit->tree->object.oid.hash,
+-		       "", &revs->diffopt);
++	diff_tree_oid(&parent->tree->object.oid,
++		      &commit->tree->object.oid,
++		      "", &revs->diffopt);
+ 	diffcore_std(&revs->diffopt);
+ 
+ 	found = !diff_queue_is_empty();
+@@ -273,7 +273,7 @@ static void print_commit(struct commit *commit, struct rev_info *revs)
+ 				strbuf_addstr(&msgbuf, info->msg);
+ 				strbuf_addch(&msgbuf, '\n');
+ 			}
+-			format_display_notes(commit->object.oid.hash,
++			format_display_notes(&commit->object.oid,
+ 					     &msgbuf, PAGE_ENCODING, 0);
+ 			strbuf_addch(&msgbuf, '\n');
+ 			strbuf_ltrim(&msgbuf);
+@@ -436,7 +436,7 @@ void cgit_print_log(const char *tip, int ofs, int cnt, char *grep, char *pattern
+ 	setup_revisions(rev_argv.argc, rev_argv.argv, &rev, NULL);
+ 	load_ref_decorations(DECORATE_FULL_REFS);
+ 	rev.show_decorations = 1;
+-	rev.grep_filter.regflags |= REG_ICASE;
++	rev.grep_filter.ignore_case = 1;
+ 
+ 	rev.diffopt.detect_rename = 1;
+ 	rev.diffopt.rename_limit = ctx.cfg.renamelimit;
+diff --git a/ui-patch.c b/ui-patch.c
+index 047e2f9..69aa4a8 100644
+--- ui-patch.c
++++ ui-patch.c
+@@ -33,7 +33,7 @@ void cgit_print_patch(const char *new_rev, const char *old_rev,
+ 				"Bad object id: %s", new_rev);
+ 		return;
+ 	}
+-	commit = lookup_commit_reference(new_rev_oid.hash);
++	commit = lookup_commit_reference(&new_rev_oid);
+ 	if (!commit) {
+ 		cgit_print_error_page(404, "Not found",
+ 				"Bad commit reference: %s", new_rev);
+@@ -46,7 +46,7 @@ void cgit_print_patch(const char *new_rev, const char *old_rev,
+ 					"Bad object id: %s", old_rev);
+ 			return;
+ 		}
+-		if (!lookup_commit_reference(old_rev_oid.hash)) {
++		if (!lookup_commit_reference(&old_rev_oid)) {
+ 			cgit_print_error_page(404, "Not found",
+ 					"Bad commit reference: %s", old_rev);
+ 			return;
+diff --git a/ui-plain.c b/ui-plain.c
+index 8d541e3..e45d553 100644
+--- ui-plain.c
++++ ui-plain.c
+@@ -185,7 +185,7 @@ void cgit_print_plain(void)
+ 		cgit_print_error_page(404, "Not found", "Not found");
+ 		return;
+ 	}
+-	commit = lookup_commit_reference(oid.hash);
++	commit = lookup_commit_reference(&oid);
+ 	if (!commit || parse_commit(commit)) {
+ 		cgit_print_error_page(404, "Not found", "Not found");
+ 		return;
+diff --git a/ui-snapshot.c b/ui-snapshot.c
+index 9b8cddd..b2d95f7 100644
+--- ui-snapshot.c
++++ ui-snapshot.c
+@@ -116,7 +116,7 @@ static int make_snapshot(const struct cgit_snapshot_format *format,
+ 				"Bad object id: %s", hex);
+ 		return 1;
+ 	}
+-	if (!lookup_commit_reference(oid.hash)) {
++	if (!lookup_commit_reference(&oid)) {
+ 		cgit_print_error_page(400, "Bad request",
+ 				"Not a commit reference: %s", hex);
+ 		return 1;
+diff --git a/ui-tag.c b/ui-tag.c
+index afd7d61..909cde0 100644
+--- ui-tag.c
++++ ui-tag.c
+@@ -54,7 +54,7 @@ void cgit_print_tag(char *revname)
+ 			"Bad tag reference: %s", revname);
+ 		goto cleanup;
+ 	}
+-	obj = parse_object(oid.hash);
++	obj = parse_object(&oid);
+ 	if (!obj) {
+ 		cgit_print_error_page(500, "Internal server error",
+ 			"Bad object id: %s", oid_to_hex(&oid));
+@@ -64,7 +64,7 @@ void cgit_print_tag(char *revname)
+ 		struct tag *tag;
+ 		struct taginfo *info;
+ 
+-		tag = lookup_tag(oid.hash);
++		tag = lookup_tag(&oid);
+ 		if (!tag || parse_tag(tag) || !(info = cgit_parse_tag(tag))) {
+ 			cgit_print_error_page(500, "Internal server error",
+ 				"Bad tag object: %s", revname);
+diff --git a/ui-tree.c b/ui-tree.c
+index b310242..ca24a03 100644
+--- ui-tree.c
++++ ui-tree.c
+@@ -157,7 +157,7 @@ static void print_object(const unsigned char *sha1, char *path, const char *base
+ 
+ struct single_tree_ctx {
+ 	struct strbuf *path;
+-	unsigned char sha1[GIT_SHA1_RAWSZ];
++	struct object_id oid;
+ 	char *name;
+ 	size_t count;
+ };
+@@ -177,7 +177,7 @@ static int single_tree_cb(const unsigned char *sha1, struct strbuf *base,
+ 	}
+ 
+ 	ctx->name = xstrdup(pathname);
+-	hashcpy(ctx->sha1, sha1);
++	hashcpy(ctx->oid.hash, sha1);
+ 	strbuf_addf(ctx->path, "/%s", pathname);
+ 	return 0;
+ }
+@@ -195,13 +195,13 @@ static void write_tree_link(const unsigned char *sha1, char *name,
+ 		.nr = 0
+ 	};
+ 
+-	hashcpy(tree_ctx.sha1, sha1);
++	hashcpy(tree_ctx.oid.hash, sha1);
+ 
+ 	while (tree_ctx.count == 1) {
+ 		cgit_tree_link(name, NULL, "ls-dir", ctx.qry.head, rev,
+ 			       fullpath->buf);
+ 
+-		tree = lookup_tree(tree_ctx.sha1);
++		tree = lookup_tree(&tree_ctx.oid);
+ 		if (!tree)
+ 			return;
+ 
+@@ -300,17 +300,17 @@ static void ls_tail(void)
+ 	cgit_print_layout_end();
+ }
+ 
+-static void ls_tree(const unsigned char *sha1, char *path, struct walk_tree_context *walk_tree_ctx)
++static void ls_tree(const struct object_id *oid, char *path, struct walk_tree_context *walk_tree_ctx)
+ {
+ 	struct tree *tree;
+ 	struct pathspec paths = {
+ 		.nr = 0
+ 	};
+ 
+-	tree = parse_tree_indirect(sha1);
++	tree = parse_tree_indirect(oid);
+ 	if (!tree) {
+ 		cgit_print_error_page(404, "Not found",
+-			"Not a tree object: %s", sha1_to_hex(sha1));
++			"Not a tree object: %s", sha1_to_hex(oid->hash));
+ 		return;
+ 	}
+ 
+@@ -380,7 +380,7 @@ void cgit_print_tree(const char *rev, char *path)
+ 			"Invalid revision name: %s", rev);
+ 		return;
+ 	}
+-	commit = lookup_commit_reference(oid.hash);
++	commit = lookup_commit_reference(&oid);
+ 	if (!commit || parse_commit(commit)) {
+ 		cgit_print_error_page(404, "Not found",
+ 			"Invalid commit reference: %s", rev);
+@@ -390,7 +390,7 @@ void cgit_print_tree(const char *rev, char *path)
+ 	walk_tree_ctx.curr_rev = xstrdup(rev);
+ 
+ 	if (path == NULL) {
+-		ls_tree(commit->tree->object.oid.hash, NULL, &walk_tree_ctx);
++		ls_tree(&commit->tree->object.oid, NULL, &walk_tree_ctx);
+ 		goto cleanup;
+ 	}
+ 
+-- 
+cgit v1.1-9-ge9c1d
+

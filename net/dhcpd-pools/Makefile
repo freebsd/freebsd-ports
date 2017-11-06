@@ -4,7 +4,8 @@
 PORTNAME=	dhcpd-pools
 PORTVERSION=	2.28
 CATEGORIES=	net
-MASTER_SITES=	SF/${PORTNAME}
+MASTER_SITES=	SF/${PORTNAME} \
+		ZI
 
 MAINTAINER=	zi@FreeBSD.org
 COMMENT=	Tool to analyze isc-dhcp pool usage based on leases

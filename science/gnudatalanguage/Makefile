@@ -2,9 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	gnudatalanguage
-DISTVERSION=	0.9.7v1
+DISTVERSION=	0.9.7
+PORTREVISION=	9
 CATEGORIES=	science lang
-MASTER_SITES=	SF/${PORTNAME}/gdl/${PORTVERSION:R}
+MASTER_SITES=	SF/${PORTNAME}/gdl/${PORTVERSION}
 .if defined(BUILD_PYTHON_MODULE)
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 .endif
@@ -21,9 +22,16 @@ LIB_DEPENDS+=	libplplot.so:math/plplot	\
 		libps.so:print/pslib		\
 		libgsl.so:math/gsl
 
-USE_WX=		2.8
+USE_WX=		3.0+
 USE_XORG=	x11 sm ice xext
 USES=		cmake:outsource compiler:gcc-c++11-lib dos2unix ncurses pkgconfig readline tar:tgz
+
+# On FreeBSD < 11 libc++ lacks support for sized delete operators.
+# GCC dropped the builtin version of these operators in 6+ by
+# defaulting to gnu++14. Force c++11 instead.
+# For a more detailed discussion see:
+# https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=219484
+USE_CXXSTD=	gnu++11
 
 # Disable ncurses and readline from ports
 # Disable ImageMagick (does'nt work with plplot because dynamic drivers
@@ -42,7 +50,7 @@ LDFLAGS+=	-lpthread -L${LOCALBASE}/lib
 
 SLAVEDIRS=	science/py-gnudatalanguage
 
-OPTIONS_DEFINE=	EIGEN EXAMPLES FFTW GRAPHICSMAGICK GRIB HDF5 LIBPROJ4 MPICH2 NETCDF PYTHON UDUNITS
+OPTIONS_DEFINE=	EIGEN EXAMPLES FFTW GRAPHICSMAGICK GRIB HDF5 LIBPROJ4 MPICH2 NETCDF PYTHON QHULL UDUNITS
 OPTIONS_DEFAULT=EIGEN FFTW GRAPHICSMAGICK GRIB HDF5 LIBPROJ4 NETCDF PYTHON UDUNITS
 
 EIGEN_DESC=	Eigen3 support (boost performance)
@@ -89,11 +97,10 @@ PYTHON_RUN_DEPENDS=	${PYNUMPY} \
 PYTHON_CMAKE_ON=	-DPYTHON:BOOL=YES -DPYTHONVERSION:STRING="${PYTHON_VER}"
 PYTHON_CMAKE_OFF=	-DPYTHON:BOOL=NO
 
-# math/qhull conflicts with math/plplot
-#QHULL_DESC=		Enable Qhull support
-#QHULL_LIB_DEPENDS=	libqhull.so:math/qhull
-#QHULL_CMAKE_ON=		-DQHULL:BOOL=YES
-#QHULL_CMAKE_OFF=	-DQHULL:BOOL=NO
+QHULL_DESC=		Enable Qhull support
+QHULL_LIB_DEPENDS=	libqhull.so:math/qhull
+QHULL_CMAKE_ON=		-DQHULL:BOOL=YES
+QHULL_CMAKE_OFF=	-DQHULL:BOOL=NO
 
 UDUNITS_LIB_DEPENDS=	libudunits2.so:science/udunits
 UDUNITS_CMAKE_ON=	-DUDUNITS:BOOL=YES
@@ -102,7 +109,7 @@ UDUNITS_CMAKE_OFF=	-DUDUNITS:BOOL=NO
 .if defined(BUILD_PYTHON_MODULE)
 CATEGORIES+=	python
 CMAKE_ARGS+=	-DPYTHON_MODULE:BOOL=YES -DOPENMP:BOOL=NO
-PLIST=		pkg-plist.pymod
+PLIST=		${.CURDIR}/pkg-plist.pymod
 .else
 CMAKE_ARGS+=	-DPYTHON_MODULE:BOOL=NO
 .endif

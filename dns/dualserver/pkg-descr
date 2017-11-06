@@ -3,4 +3,4 @@ addresses while Caching DNS Server first try resolving from DHCP allotted
 names then from Cache then only forwarding to External DNS Servers. Auto
 Config and auto Dynamic DNS update.
 
-WWW: http://sourceforge.net/projects/dhcp-dns-server/
+WWW: https://sourceforge.net/projects/dhcp-dns-server/

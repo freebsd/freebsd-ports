@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	manaplus
-PORTVERSION=	1.6.12.24
+DISTVERSION=	1.7.10.28
 CATEGORIES=	games
 MASTER_SITES=	http://download.evolonline.org/manaplus/download/${PORTVERSION}/
 
@@ -14,8 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libxml2.so:textproc/libxml2 \
 		libpng.so:graphics/png \
-		libcurl.so:ftp/curl \
-		libphysfs.so:devel/physfs
+		libcurl.so:ftp/curl
 
 USES=		autoreconf pkgconfig:build tar:xz
 USE_XORG=	x11

@@ -1,6 +1,6 @@
---- configure.orig	2014-09-11 19:03:07 UTC
+--- configure.orig	2016-07-20 15:48:58 UTC
 +++ configure
-@@ -2088,7 +2088,7 @@
+@@ -2112,7 +2112,7 @@ $as_echo "$as_me: WARNING: Layout file $
  		s/^#.*$//m;
  		s/^\s+//gim;
  		s/\s+$/\n/gim;

@@ -33,7 +33,7 @@ _INCLUDE_USES_PGSQL_MK=	yes
 
 # When adding a version, please keep the comment in
 # Mk/bsd.default-versions.mk in sync.
-VALID_PGSQL_VER=	9.2 9.3 9.4 9.5 9.6
+VALID_PGSQL_VER=	9.2 9.3 9.4 9.5 9.6 10
 
 # Override non-default LIBVERS like this:
 #PGSQL99_LIBVER=6
@@ -57,13 +57,13 @@ PGSQL_DEFAULT?=	${$w_PGSQL_VER:C,^.,&.,}
 .  endfor
 
 .  ifdef DEFAULT_PGSQL_VER && WITH_PGSQL_VER
-IGNORE=		will not allow setting both DEFAULT_PGSQL_VER and WITH_PGSQL_VER.  Use DEFAULT_VERSIONS=pgsql=9.0 instead
+IGNORE=		will not allow setting both DEFAULT_PGSQL_VER and WITH_PGSQL_VER.  Use DEFAULT_VERSIONS=pgsql=9.6 instead
 .  endif
 
 # Setting/finding PostgreSQL version we want.
 PG_CONFIG?=	${LOCALBASE}/bin/pg_config
 .  if exists(${PG_CONFIG})
-_PGSQL_VER!=	${PG_CONFIG} --version | ${SED} -n 's/PostgreSQL[^0-9]*\([0-9][0-9]*\.[0-9][0-9]*\)[^0-9].*/\1/p'
+_PGSQL_VER!=	${PG_CONFIG} --version | ${SED} -n 's/PostgreSQL[^0-9]*\([0-9]\.*[0-9]\).*/\1/p'
 .  endif
 
 # Handle the + and - version stuff

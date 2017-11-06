@@ -11,6 +11,6 @@ doing anything worse than not having a core.1 manpage.  The normal
 mode is interactive and prompts for confirmation.  You are advised to
 have backups before using the non-interactive batch mode. ]
 
-WWW: http://sourceforge.net/projects/clean
+WWW: https://sourceforge.net/projects/clean/
 
 -Chuck Swiger <chuck@pkix.net>

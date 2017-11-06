@@ -2,8 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	gmt
-PORTVERSION=	4.5.14
+PORTVERSION=	4.5.16
 DISTVERSIONSUFFIX=	-src
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.soest.hawaii.edu/%SUBDIR%/ \
 		ftp://ftp.geologi.uio.no/pub/%SUBDIR%/ \
@@ -82,7 +83,7 @@ STRIP_BINS=	blockmean blockmedian blockmode filter1d fitcircle \
 STRIP_LIBS=	libgmt.so.4 libgmtps.so.4 libpsl.so.4
 
 # http://www.soest.hawaii.edu/pwessel/gshhg/
-GSHHG_DISTNAME=	gshhg-gmt-2.3.4
+GSHHG_DISTNAME=	gshhg-gmt-2.3.7
 
 pre-configure:
 	@(cd ${CONFIGURE_WRKSRC} && ${SETENV} AUTOHEADER="${TRUE}" \

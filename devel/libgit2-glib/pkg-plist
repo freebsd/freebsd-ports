@@ -43,6 +43,7 @@ include/libgit2-glib-1.0/libgit2-glib/ggit-object-factory.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-object.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-oid.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-patch.h
+include/libgit2-glib-1.0/libgit2-glib/ggit-proxy-options.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-push-options.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-rebase-operation.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-rebase-options.h

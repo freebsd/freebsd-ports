@@ -9,7 +9,7 @@ MASTER_SITES=	http://download.introversion.co.uk/defcon/linux/
 PKGNAMEPREFIX=	linux-
 DISTNAME=	${PORTNAME}-v${PORTVERSION}
 
-MAINTAINER=	mva@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Defcon for Linux
 
 ONLY_FOR_ARCHS=	i386 amd64

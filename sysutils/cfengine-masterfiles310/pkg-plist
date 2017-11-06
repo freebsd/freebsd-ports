@@ -123,5 +123,7 @@
 %%EXAMPLESDIR%%/masterfiles/update.cf
 %%EXAMPLESDIR%%/modules/packages/apt_get
 %%EXAMPLESDIR%%/modules/packages/freebsd_ports
+%%EXAMPLESDIR%%/modules/packages/nimclient
+%%EXAMPLESDIR%%/modules/packages/pkg
 %%EXAMPLESDIR%%/modules/packages/pkgsrc
 %%EXAMPLESDIR%%/modules/packages/yum

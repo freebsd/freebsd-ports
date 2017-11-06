@@ -6,9 +6,8 @@ share/icons/hicolor/48x48/apps/keepass.png
 %%DATADIR%%/KeePass.config.xml
 %%DATADIR%%/KeePass.exe
 %%DATADIR%%/KeePass.exe.config
-%%DATADIR%%/XSL/KDBX_DetailsFull.xsl
-%%DATADIR%%/XSL/KDBX_DetailsLite.xsl
-%%DATADIR%%/XSL/KDBX_PasswordsOnly.xsl
-%%DATADIR%%/XSL/KDBX_Styles.css
-%%DATADIR%%/XSL/KDBX_Tabular.xsl
-%%DATADIR%%/XSL/TableHeader.gif
+%%DATADIR%%/XSL/KDBX_Common.xsl
+%%DATADIR%%/XSL/KDBX_DetailsFull_HTML.xsl
+%%DATADIR%%/XSL/KDBX_DetailsLight_HTML.xsl
+%%DATADIR%%/XSL/KDBX_PasswordsOnly_TXT.xsl
+%%DATADIR%%/XSL/KDBX_Tabular_HTML.xsl

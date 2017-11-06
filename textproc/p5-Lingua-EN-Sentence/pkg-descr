@@ -3,5 +3,3 @@ which splits text into its constituent sentences, based on a regular
 expression and a list of abbreviations (built in and given).
 
 WWW: http://search.cpan.org/dist/Lingua-EN-Sentence/
-
-Seamus Venasse <svenasse@polaris.ca>

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME?=	subversion
-PORTVERSION=	1.8.17
+PORTVERSION=	1.8.19
 PORTREVISION?=	0
 CATEGORIES+=	devel
 MASTER_SITES=	APACHE/subversion
@@ -57,6 +57,8 @@ SERF_LIB_DEPENDS=		libserf-1.so:www/serf
 
 STATIC_CONFIGURE_ON=		--enable-all-static PKG_CONFIG="${LOCALBASE}/bin/pkg-config --static"
 
+LD_FLAGS+=			-lm
+
 # ===============================================================
 .include <bsd.port.options.mk>
 
@@ -108,8 +110,9 @@ post-patch:
 	@${ECHO_CMD} "#define ORGANIZATION_NAME \"${ORGANIZATION}\"" > ${WRKSRC}/subversion/freebsd-organization.h
 .endif
 # shebangfix
-	@${GREP} -Rl -e '#!/bin/b' -e '#!/bin/env' -e '#!/usr/bin/p' ${WRKSRC}/tools/ \
-		| ${XARGS} ${REINPLACE_CMD} -e '1s|#\!/bin/b|#\!/usr/local/bin/b|' \
+	@${FIND} ${WRKSRC}/tools/ -type f -exec ${GREP} -l -e '#!/bin/b' -e '#!/bin/env' \
+		-e '#!/usr/bin/p' {} + | ${XARGS} ${REINPLACE_CMD} -e \
+		'1s|#\!/bin/b|#\!/usr/local/bin/b|' \
 		-e '1s|#\!/bin/env|#\!/usr/bin/env|' \
 		-e '1s|#\!/usr/bin/p|#\!/usr/local/bin/p|'
 # remove all .bak files to clean the stage

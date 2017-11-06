@@ -1,7 +1,7 @@
---- include/CMakeLists.txt.orig	2012-11-28 17:49:47.000000000 +0200
-+++ include/CMakeLists.txt	2012-12-23 05:49:42.000000000 +0200
-@@ -54,17 +54,21 @@
-   handler_state.h
+--- include/CMakeLists.txt.orig	2017-04-30 11:09:29 UTC
++++ include/CMakeLists.txt
+@@ -55,20 +55,24 @@ SET(HEADERS 
+   handler_ername.h
  )
  
 +IF(FALSE)
@@ -22,3 +22,6 @@
    PATTERN mysql EXCLUDE
    REGEX "\\./(${EXCL_RE}$)" EXCLUDE)
 +ENDIF()
+ 
+ INSTALL(DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/. DESTINATION ${INSTALL_INCLUDEDIR}/private COMPONENT Development
+   FILES_MATCHING PATTERN "*.h"

@@ -1,6 +1,9 @@
 bin/geth
-%%BOOTNODE%%bin/bootnode
-%%ETHTEST%%bin/ethtest
-%%EVM%%bin/evm
-%%DISASM%%bin/disasm
-%%RLPDUMP%%bin/rlpdump
+%%DEVTOOLS%%bin/abigen
+%%DEVTOOLS%%bin/bootnode
+%%DEVTOOLS%%bin/evm
+%%DEVTOOLS%%bin/faucet
+%%DEVTOOLS%%bin/puppeth
+%%DEVTOOLS%%bin/rlpdump
+%%DEVTOOLS%%bin/swarm
+%%DEVTOOLS%%bin/wnode

@@ -5,9 +5,9 @@ PORTNAME=	PHP_ParserGenerator
 PORTVERSION=	0.1.7
 CATEGORIES=	devel www pear
 
-MAINTAINER=	joneum@bsdproject.de
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Convert files from lemon parser to php5
 
-USES=	pear
+USES=		pear
 
 .include <bsd.port.mk>

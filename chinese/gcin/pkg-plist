@@ -5,6 +5,7 @@ bin/gcin-kbm-toggle
 bin/gcin-message
 bin/gcin-tools
 bin/gcin2tab
+bin/gtab-db-gen
 bin/gtab-merge
 bin/juyin-learn
 bin/phoa2d
@@ -20,7 +21,6 @@ bin/tsd2a32
 bin/tsin2gtab-phrase
 bin/tslearn
 bin/txt2gtab-phrase
-%%QT_IM_MODULE%%lib/qt4/plugins/inputmethods/im-gcin.so
 %%ANTHY%%lib/gcin/anthy-module.so
 lib/gcin/gcin1.so
 lib/gcin/gcin2.so
@@ -132,7 +132,7 @@ share/icons/gcin/fcitx-wanfeng.png
 share/icons/gcin/full-simp.png
 share/icons/gcin/full-trad.png
 share/icons/gcin/gcb.png
-share/icons/gcin/gcin-tray.png
+share/icons/gcin/gcin_tray.png
 share/icons/gcin/gdayi3.png
 share/icons/gcin/german.png
 share/icons/gcin/greek.png

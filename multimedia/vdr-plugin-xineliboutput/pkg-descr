@@ -14,4 +14,4 @@ FreeBSD Note:  If you want to use VAAPI/VDPAU make sure the ffmpeg
 and libxine ports are (re)built with the corresponding knobs turned on!
 (make config in their port dirs.)
 
-WWW: http://sourceforge.net/projects/xineliboutput/
+WWW: https://sourceforge.net/projects/xineliboutput/

@@ -27,7 +27,6 @@ bin/pecl
 %%DATADIR%%/Console/Getopt.php
 %%DATADIR%%/OS/Guess.php
 %%DATADIR%%/PEAR.php
-%%DATADIR%%/PEAR/Autoloader.php
 %%DATADIR%%/PEAR/Builder.php
 %%DATADIR%%/PEAR/ChannelFile.php
 %%DATADIR%%/PEAR/ChannelFile/Parser.php
@@ -98,6 +97,7 @@ bin/pecl
 %%DATADIR%%/PEAR/PackageFile/v2/Validator.php
 %%DATADIR%%/PEAR/PackageFile/v2/rw.php
 %%DATADIR%%/PEAR/Packager.php
+%%DATADIR%%/PEAR/Proxy.php
 %%DATADIR%%/PEAR/REST.php
 %%DATADIR%%/PEAR/REST/10.php
 %%DATADIR%%/PEAR/REST/11.php

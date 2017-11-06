@@ -1,6 +1,0 @@
-Terminal widget with improved font, internationalisation and accessibility
-support for the GNOME 2 desktop.  Designed to replace libzvt.
-
-This port features the old 2.90 API.
-
-WWW: http://www.gnome.org/

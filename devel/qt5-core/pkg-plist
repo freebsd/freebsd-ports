@@ -24,10 +24,10 @@
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qdatetimeparser_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qdebug_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qdir_p.h
+%%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qdoublescanprint_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qelfparser_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qeucjpcodec_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qeuckrcodec_p.h
-%%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qeventdispatcher_blackberry_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qeventdispatcher_cf_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qeventdispatcher_glib_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qeventdispatcher_unix_p.h
@@ -103,6 +103,7 @@
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qorderedmutexlocker_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qparallelanimationgroup_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qpodlist_p.h
+%%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qpoll_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qppsattribute_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qppsattributeprivate_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qppsobject_p.h
@@ -176,7 +177,6 @@
 %%QT_INCDIR%%/QtCore/QAtomicInt
 %%QT_INCDIR%%/QtCore/QAtomicInteger
 %%QT_INCDIR%%/QtCore/QAtomicPointer
-%%QT_INCDIR%%/QtCore/QBBSystemLocaleData
 %%QT_INCDIR%%/QtCore/QBasicMutex
 %%QT_INCDIR%%/QtCore/QBasicTimer
 %%QT_INCDIR%%/QtCore/QBitArray
@@ -197,6 +197,7 @@
 %%QT_INCDIR%%/QtCore/QCollatorSortKey
 %%QT_INCDIR%%/QtCore/QCommandLineOption
 %%QT_INCDIR%%/QtCore/QCommandLineParser
+%%QT_INCDIR%%/QtCore/QConstOverload
 %%QT_INCDIR%%/QtCore/QContiguousCache
 %%QT_INCDIR%%/QtCore/QContiguousCacheData
 %%QT_INCDIR%%/QtCore/QContiguousCacheTypedData
@@ -319,6 +320,7 @@
 %%QT_INCDIR%%/QtCore/QMutex
 %%QT_INCDIR%%/QtCore/QMutexLocker
 %%QT_INCDIR%%/QtCore/QNoDebug
+%%QT_INCDIR%%/QtCore/QNonConstOverload
 %%QT_INCDIR%%/QtCore/QObject
 %%QT_INCDIR%%/QtCore/QObjectCleanupHandler
 %%QT_INCDIR%%/QtCore/QObjectData
@@ -448,6 +450,8 @@
 %%QT_INCDIR%%/QtCore/QXmlStreamStringRef
 %%QT_INCDIR%%/QtCore/QXmlStreamWriter
 %%QT_INCDIR%%/QtCore/Q_PID
+%%QT_INCDIR%%/QtCore/Q_SECURITY_ATTRIBUTES
+%%QT_INCDIR%%/QtCore/Q_STARTUPINFO
 %%QT_INCDIR%%/QtCore/Qt
 %%QT_INCDIR%%/QtCore/QtAlgorithms
 %%QT_INCDIR%%/QtCore/QtCleanUpFunction
@@ -479,16 +483,9 @@
 %%QT_INCDIR%%/QtCore/qarraydataops.h
 %%QT_INCDIR%%/QtCore/qarraydatapointer.h
 %%QT_INCDIR%%/QtCore/qatomic.h
-%%QT_INCDIR%%/QtCore/qatomic_armv5.h
-%%QT_INCDIR%%/QtCore/qatomic_armv6.h
-%%QT_INCDIR%%/QtCore/qatomic_armv7.h
 %%QT_INCDIR%%/QtCore/qatomic_bootstrap.h
 %%QT_INCDIR%%/QtCore/qatomic_cxx11.h
-%%QT_INCDIR%%/QtCore/qatomic_gcc.h
-%%QT_INCDIR%%/QtCore/qatomic_ia64.h
 %%QT_INCDIR%%/QtCore/qatomic_msvc.h
-%%QT_INCDIR%%/QtCore/qatomic_unix.h
-%%QT_INCDIR%%/QtCore/qatomic_x86.h
 %%QT_INCDIR%%/QtCore/qbasicatomic.h
 %%QT_INCDIR%%/QtCore/qbasictimer.h
 %%QT_INCDIR%%/QtCore/qbitarray.h
@@ -563,7 +560,6 @@
 %%QT_INCDIR%%/QtCore/qlinkedlist.h
 %%QT_INCDIR%%/QtCore/qlist.h
 %%QT_INCDIR%%/QtCore/qlocale.h
-%%QT_INCDIR%%/QtCore/qlocale_blackberry.h
 %%QT_INCDIR%%/QtCore/qlockfile.h
 %%QT_INCDIR%%/QtCore/qlogging.h
 %%QT_INCDIR%%/QtCore/qloggingcategory.h
@@ -660,14 +656,14 @@
 %%QT_INCDIR%%/QtCore/qwaitcondition.h
 %%QT_INCDIR%%/QtCore/qwineventnotifier.h
 %%QT_INCDIR%%/QtCore/qxmlstream.h
-%%QT_LIBDIR%%/cmake/Qt5/Qt5Config.cmake
-%%QT_LIBDIR%%/cmake/Qt5/Qt5ConfigVersion.cmake
-%%QT_LIBDIR%%/cmake/Qt5Core/Qt5CTestMacros.cmake
-%%QT_LIBDIR%%/cmake/Qt5Core/Qt5CoreConfig.cmake
-%%QT_LIBDIR%%/cmake/Qt5Core/Qt5CoreConfigExtras.cmake
-%%QT_LIBDIR%%/cmake/Qt5Core/Qt5CoreConfigExtrasMkspecDir.cmake
-%%QT_LIBDIR%%/cmake/Qt5Core/Qt5CoreConfigVersion.cmake
-%%QT_LIBDIR%%/cmake/Qt5Core/Qt5CoreMacros.cmake
+%%QT_CMAKEDIR%%/Qt5/Qt5Config.cmake
+%%QT_CMAKEDIR%%/Qt5/Qt5ConfigVersion.cmake
+%%QT_CMAKEDIR%%/Qt5Core/Qt5CTestMacros.cmake
+%%QT_CMAKEDIR%%/Qt5Core/Qt5CoreConfig.cmake
+%%QT_CMAKEDIR%%/Qt5Core/Qt5CoreConfigExtras.cmake
+%%QT_CMAKEDIR%%/Qt5Core/Qt5CoreConfigExtrasMkspecDir.cmake
+%%QT_CMAKEDIR%%/Qt5Core/Qt5CoreConfigVersion.cmake
+%%QT_CMAKEDIR%%/Qt5Core/Qt5CoreMacros.cmake
 %%QT_LIBDIR%%/libQt5Core.prl
 %%QT_LIBDIR%%/libQt5Core.so
 %%QT_LIBDIR%%/libQt5Core.so.5
@@ -677,5 +673,3 @@
 %%QT_MKSPECDIR%%/modules/qt_lib_core.pri
 %%QT_MKSPECDIR%%/modules/qt_lib_core_private.pri
 libdata/pkgconfig/Qt5Core.pc
-@comment Ensure that a (even empty) qconfig-modules.h exists.
-@exec touch %%QT_INCDIR%%/QtCore/qconfig-modules.h

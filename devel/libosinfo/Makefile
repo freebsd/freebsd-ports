@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	libosinfo
-PORTVERSION=	1.0.0
+PORTVERSION=	1.1.0
 CATEGORIES=	devel
-MASTER_SITES=	https://fedorahosted.org/releases/l/i/libosinfo/
+MASTER_SITES=	https://releases.pagure.org/libosinfo/
 
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	Library for managing OS information for virtualization

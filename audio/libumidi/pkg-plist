@@ -1,4 +1,5 @@
 include/umidi20.h 
+@comment lib/libumidi20_p.a
 lib/libumidi20.a
 lib/libumidi20.so
 lib/libumidi20.so.1

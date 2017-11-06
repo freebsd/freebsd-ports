@@ -4,7 +4,6 @@
 CATEGORIES=	devel
 PKGNAMESUFFIX=	-gdbint
 
-MAINTAINER=	freebsd-fpc@FreeBSD.org
 COMMENT=	Free Pascal unit providing interface to gdb
 
 USE_FPC=	yes

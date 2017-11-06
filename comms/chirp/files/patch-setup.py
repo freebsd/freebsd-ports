@@ -1,8 +1,20 @@
---- setup.py.orig	2012-03-24 02:01:12.000000000 -0500
-+++ setup.py	2012-09-21 16:49:59.000000000 -0500
-@@ -110,9 +110,9 @@
+--- setup.py.orig	2015-03-05 08:00:18 UTC
++++ setup.py
+@@ -109,7 +109,7 @@ def default_build():
+ 
+     desktop_files = glob("share/*.desktop")
+     # form_files = glob("forms/*.x?l")
+-    image_files = glob("images/*")
++#    image_files = glob("images/*")
+     _locale_files = glob("locale/*/LC_MESSAGES/CHIRP.mo")
+     stock_configs = glob("stock_configs/*")
+ 
+@@ -127,11 +127,11 @@ def default_build():
+         version=CHIRP_VERSION,
+         scripts=["chirpw"],
          data_files=[('share/applications', desktop_files),
-                     ('share/chirp/images', image_files),
+-                    ('share/chirp/images', image_files),
++#                    ('share/chirp/images', image_files),
                      ('share/chirp', xsd_files),
 -                    ('share/doc/chirp', ['COPYING']),
 +#                    ('share/doc/chirp', ['COPYING']),

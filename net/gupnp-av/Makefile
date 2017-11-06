@@ -24,9 +24,7 @@ GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USE_GNOME=	glib20 introspection:build libxml2
 USE_LDCONFIG=	yes
-USES=		gmake libtool pathfix pkgconfig tar:xz
-
-PORTDATA=	*
+USES=		gmake gnome libtool pathfix pkgconfig tar:xz
 
 VALA_BUILD_DEPENDS=	vala>=0.22:lang/vala
 VALA_CONFIGURE_ENV=	ac_cv_path_VAPIGEN=${LOCALBASE}/bin/vapigen

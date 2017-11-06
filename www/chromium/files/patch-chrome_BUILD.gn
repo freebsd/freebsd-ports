@@ -1,24 +1,24 @@
---- chrome/BUILD.gn.orig	2016-08-03 22:02:10.000000000 +0300
-+++ chrome/BUILD.gn	2016-09-03 00:02:50.206193000 +0300
-@@ -86,7 +86,7 @@
-     data = [
-       "$root_out_dir/resources.pak",
-     ]
--    if (is_linux || is_win) {
-+    if (is_linux || is_bsd || is_win) {
-       data += [
-         "$root_out_dir/chrome_100_percent.pak",
-         "$root_out_dir/locales/en-US.pak",
-@@ -160,7 +160,7 @@
-       sources += [ "app/chrome_exe_main_aura.cc" ]
-     }
+--- chrome/BUILD.gn.orig	2017-09-05 21:05:11.000000000 +0200
++++ chrome/BUILD.gn	2017-09-06 17:18:59.694120000 +0200
+@@ -165,7 +165,7 @@
+       ]
  
--    if (is_linux) {
-+    if (is_linux || is_bsd) {
-       sources += [
-         "app/chrome_dll_resource.h",
-         "app/chrome_main.cc",
-@@ -1461,7 +1461,7 @@
+       data += [ "$root_out_dir/resources.pak" ]
+-      if (is_linux || is_win) {
++      if (is_linux || is_bsd || is_win) {
+         data += [
+           "$root_out_dir/chrome_100_percent.pak",
+           "$root_out_dir/locales/en-US.pak",
+@@ -245,7 +245,7 @@
+         }
+       }
+ 
+-      if (is_linux) {
++      if (is_linux || is_bsd) {
+         sources += [
+           "app/chrome_dll_resource.h",
+           "app/chrome_main.cc",
+@@ -1783,7 +1783,7 @@
    }
  }
  

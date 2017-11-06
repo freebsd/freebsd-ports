@@ -9,7 +9,7 @@ MASTER_SITES=	http://cr.yp.to/software/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fastforward handles qmail forwarding according to a cdb database
 
-USES=	gmake
+USES=		gmake groff
 
 ALL_TARGET=	default
 

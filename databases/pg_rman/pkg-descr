@@ -5,4 +5,4 @@ backup and PITR as easy as pg_dump. Also, it maintains a backup
 catalog per database cluster. Users can maintain old backups including
 archive logs with one command.
 
-WWW: http://code.google.com/p/pg-rman/
+WWW: https://github.com/ossc-db/pg_rman

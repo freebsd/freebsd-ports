@@ -3,8 +3,8 @@ If you want users to be able to create their own web
 subdirectories off of the main web directory, you need to:
 
   1. Add a group for www admins (or use "%%WWWGRP%%")
-  2. chgrp thatgroup %%PREFIX%%/bin/makeweb %%WWWDIR%%
-  3. chmod g+sx %%PREFIX%%/bin/makeweb
+  2. chgrp thatgroup %%PREFIX%%/sbin/makeweb %%WWWDIR%%
+  3. chmod g+sx %%PREFIX%%/sbin/makeweb
   4. Tell users about makeweb(1)
 
 See http://www.acme.com/software/thttpd/notes.html for more

@@ -13,6 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 OPTIONS_DEFINE=	EXAMPLES
 
+USES=		php
 USE_PHP=	json filter
 NO_BUILD=	yes
 
@@ -28,6 +29,8 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${LIBDIR}
 	${INSTALL_DATA} ${WRKSRC}/include.php ${STAGEDIR}${LIBDIR}
 	cd ${WRKSRC} && ${COPYTREE_SHARE} lib ${STAGEDIR}${LIBDIR}
+
+do-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	cd ${WRKSRC}/example && ${COPYTREE_SHARE} \* ${STAGEDIR}${EXAMPLESDIR}
 

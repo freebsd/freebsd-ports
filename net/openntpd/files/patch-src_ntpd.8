@@ -1,4 +1,4 @@
---- src/ntpd.8.orig	2016-05-30 22:50:02 UTC
+--- src/ntpd.8.orig	2017-09-07 19:12:02 UTC
 +++ src/ntpd.8
 @@ -56,7 +56,7 @@ Use
  .Ar file
@@ -9,7 +9,7 @@
  .It Fl n
  Configtest mode.
  Only check the configuration file for validity.
-@@ -99,19 +99,19 @@ will be logged.
+@@ -99,18 +99,18 @@ will be logged.
  After the local clock is synchronized,
  .Nm
  adjusts the clock frequency using the
@@ -18,13 +18,12 @@
  system call to compensate for systematic drift.
  .Pp
  .Nm
- is usually started at boot time, and can be enabled by
- setting
+-is started at boot time by default via
 -.Va ntpd_flags
++is usually started at boot time, and can be enabled by setting
 +.Va openntpd_flags
  in
--.Pa /etc/rc.conf.local .
-+.Pa /etc/rc.conf .
+ .Pa /etc/rc.conf .
  See
  .Xr rc 8
  and
@@ -33,7 +32,7 @@
  for more information on the boot process
  and enabling daemons.
  .Pp
-@@ -124,8 +124,8 @@ and its initial clock drift from
+@@ -123,8 +123,8 @@ and its initial clock drift from
  .Pa /var/db/ntpd.drift .
  Clock drift is periodically written to the drift file thereafter.
  .Sh FILES
@@ -44,7 +43,7 @@
  Default configuration file.
  .It Pa /var/db/ntpd.drift
  Drift file.
-@@ -135,12 +135,12 @@ Socket file for communication with
+@@ -134,12 +134,12 @@ Socket file for communication with
  .El
  .Sh SEE ALSO
  .Xr date 1 ,

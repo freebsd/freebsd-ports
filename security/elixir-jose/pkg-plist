@@ -11,7 +11,6 @@ lib/elixir/lib/jose/ebin/Elixir.JOSE.Poison.LexicalEncoder.BitString.beam
 lib/elixir/lib/jose/ebin/Elixir.JOSE.Poison.LexicalEncoder.Date.beam
 lib/elixir/lib/jose/ebin/Elixir.JOSE.Poison.LexicalEncoder.DateTime.beam
 lib/elixir/lib/jose/ebin/Elixir.JOSE.Poison.LexicalEncoder.Float.beam
-lib/elixir/lib/jose/ebin/Elixir.JOSE.Poison.LexicalEncoder.HashDict.beam
 lib/elixir/lib/jose/ebin/Elixir.JOSE.Poison.LexicalEncoder.HashSet.beam
 lib/elixir/lib/jose/ebin/Elixir.JOSE.Poison.LexicalEncoder.Integer.beam
 lib/elixir/lib/jose/ebin/Elixir.JOSE.Poison.LexicalEncoder.List.beam
@@ -44,6 +43,7 @@ lib/elixir/lib/jose/ebin/jose_json.beam
 lib/elixir/lib/jose/ebin/jose_json_jiffy.beam
 lib/elixir/lib/jose/ebin/jose_json_jsone.beam
 lib/elixir/lib/jose/ebin/jose_json_jsx.beam
+lib/elixir/lib/jose/ebin/jose_json_ojson.beam
 lib/elixir/lib/jose/ebin/jose_json_poison.beam
 lib/elixir/lib/jose/ebin/jose_json_poison_compat_encoder.beam
 lib/elixir/lib/jose/ebin/jose_json_poison_lexical_encoder.beam
@@ -106,6 +106,7 @@ lib/elixir/lib/jose/ebin/jose_jws_alg_poly1305.beam
 lib/elixir/lib/jose/ebin/jose_jws_alg_rsa_pkcs1_v1_5.beam
 lib/elixir/lib/jose/ebin/jose_jws_alg_rsa_pss.beam
 lib/elixir/lib/jose/ebin/jose_jwt.beam
+lib/elixir/lib/jose/ebin/jose_public_key.beam
 lib/elixir/lib/jose/ebin/jose_server.beam
 lib/elixir/lib/jose/ebin/jose_sha3.beam
 lib/elixir/lib/jose/ebin/jose_sha3_keccakf1600_driver.beam

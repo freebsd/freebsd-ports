@@ -1,16 +1,20 @@
---- gpu/ipc/service/BUILD.gn.orig	2016-08-03 22:02:19.000000000 +0300
-+++ gpu/ipc/service/BUILD.gn	2016-10-10 14:57:36.952170000 +0300
-@@ -92,11 +92,12 @@
+--- gpu/ipc/service/BUILD.gn.orig	2017-08-03 00:05:13.000000000 +0200
++++ gpu/ipc/service/BUILD.gn	2017-08-10 04:15:47.963951000 +0200
+@@ -112,7 +112,7 @@
      ]
      libs += [ "android" ]
    }
 -  if (is_linux) {
 +  if (is_linux || is_bsd) {
-     sources += [ "image_transport_surface_linux.cc" ]
+     sources += [
+       "gpu_memory_buffer_factory_native_pixmap.cc",
+       "gpu_memory_buffer_factory_native_pixmap.h",
+@@ -120,7 +120,7 @@
+     ]
    }
    if (use_x11) {
-     sources += [ "x_util.h" ]
-+    configs += [ "//build/config/linux:x11" ]
+-    sources += [ "x_util.h" ]
++    sources += [ "//build/config/linux:x11" ]
    }
    if (use_ozone) {
-     sources += [
+     deps += [ "//ui/ozone" ]

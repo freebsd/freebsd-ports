@@ -8,8 +8,8 @@ CATEGORIES=	editors linux
 MASTER_SITES=	http://download.sublimetext.com/
 PKGNAMEPREFIX=	linux-
 PKGNAMESUFFIX=	3
+DISTNAME_amd64=	sublime_text_3_build_3126_x64
 DISTNAME_i386=	sublime_text_3_build_3126_x32
-DISTNAME_x86_64=sublime_text_3_build_3126_x64
 
 MAINTAINER=	miguelmclara@gmail.com
 COMMENT=	Sophisticated text editor for code, markup and prose

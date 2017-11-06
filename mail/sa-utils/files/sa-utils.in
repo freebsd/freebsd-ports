@@ -142,6 +142,14 @@ case "$daily_sa_enable" in
 		;;
 	esac
 
+	# In FreeBSD 12.0 the anticongestion function should be used
+	# instead of a hard-coded sleep
+	if [ -n "$anticongestion_sleeptime" ]; then
+	    anticongestion
+	else
+	    sleep $( jot -r 1 0 300 )
+	fi
+
 	update_rules || rc=$?
 	case ${rc} in
 	    0)

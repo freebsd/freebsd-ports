@@ -1,2 +1,3 @@
-SHA256 (cabal/gconf-0.13.0.2.tar.gz) = 930ac96d4e46d6fc8f5fb9c5a19ff79695f8d01fa3a110da25f1ba95828add77
-SIZE (cabal/gconf-0.13.0.2.tar.gz) = 35926
+TIMESTAMP = 1499627837
+SHA256 (cabal/gconf-0.13.1.0.tar.gz) = 57cfa606ef4dcd377e0d77d59b880439382ad05604b3e3d439fd64af64a21dad
+SIZE (cabal/gconf-0.13.1.0.tar.gz) = 26625

@@ -1,6 +1,6 @@
---- configure.orig	2016-01-24 14:18:29.899712000 +0100
-+++ configure	2016-01-24 14:18:52.644710000 +0100
-@@ -15944,7 +15944,7 @@
+--- configure.orig	2016-02-01 10:05:32.777229000 +0100
++++ configure	2016-02-01 10:05:56.624276000 +0100
+@@ -16587,7 +16587,7 @@
  
    test "x$prefix" = xNONE && prefix="$ac_default_prefix"
    test "x$exec_prefix" = xNONE && exec_prefix='${prefix}'
@@ -9,7 +9,7 @@
    ac_define_dir=`eval echo $ac_define_dir`
    MATELOCALEDIR="$ac_define_dir"
  
-@@ -17078,7 +17078,7 @@
+@@ -17434,7 +17434,7 @@
  
  	   ;;
         # list of supported OS cores that do not use libapm
@@ -18,7 +18,7 @@
            if test -n "${OS_SYS}"; then
  	       ACPIINC="-I${OS_SYS}"
  	   else
-@@ -17327,6 +17327,9 @@
+@@ -17683,6 +17683,9 @@
        *linux*)
           build_cpufreq_applet=yes
  	 ;;
@@ -28,7 +28,7 @@
        *)
           { $as_echo "$as_me:${as_lineno-$LINENO}: WARNING: ${host} is not supported by cpufreq applet, not building" >&5
  $as_echo "$as_me: WARNING: ${host} is not supported by cpufreq applet, not building" >&2;}
-@@ -17557,7 +17560,7 @@
+@@ -17949,7 +17952,7 @@
  
    test "x$prefix" = xNONE && prefix="$ac_default_prefix"
    test "x$exec_prefix" = xNONE && exec_prefix='${prefix}'
@@ -37,7 +37,7 @@
    ac_define_dir=`eval echo $ac_define_dir`
    MATE_ICONDIR="$ac_define_dir"
  
-@@ -17570,7 +17573,7 @@
+@@ -17962,7 +17965,7 @@
  
    test "x$prefix" = xNONE && prefix="$ac_default_prefix"
    test "x$exec_prefix" = xNONE && exec_prefix='${prefix}'
@@ -46,7 +46,7 @@
    ac_define_dir=`eval echo $ac_define_dir`
    MATE_PIXMAPSDIR="$ac_define_dir"
  
-@@ -17583,7 +17586,7 @@
+@@ -17975,7 +17978,7 @@
  
    test "x$prefix" = xNONE && prefix="$ac_default_prefix"
    test "x$exec_prefix" = xNONE && exec_prefix='${prefix}'
@@ -55,7 +55,7 @@
    ac_define_dir=`eval echo $ac_define_dir`
    PKGDATADIR="$ac_define_dir"
  
-@@ -17596,7 +17599,7 @@
+@@ -17988,7 +17991,7 @@
  
    test "x$prefix" = xNONE && prefix="$ac_default_prefix"
    test "x$exec_prefix" = xNONE && exec_prefix='${prefix}'
@@ -64,7 +64,7 @@
    ac_define_dir=`eval echo $ac_define_dir`
    GTK_BUILDERDIR="$ac_define_dir"
  
-@@ -17609,7 +17612,7 @@
+@@ -18001,7 +18004,7 @@
  
    test "x$prefix" = xNONE && prefix="$ac_default_prefix"
    test "x$exec_prefix" = xNONE && exec_prefix='${prefix}'
@@ -73,7 +73,16 @@
    ac_define_dir=`eval echo $ac_define_dir`
    DATADIR="$ac_define_dir"
  
-@@ -17622,7 +17625,7 @@
+@@ -18014,7 +18017,7 @@
+ 
+   test "x$prefix" = xNONE && prefix="$ac_default_prefix"
+   test "x$exec_prefix" = xNONE && exec_prefix='${prefix}'
+-  ac_define_dir=`eval echo $"${pkgdatadir}"`
++  ac_define_dir=`eval echo $pkgdatadir`
+   ac_define_dir=`eval echo $ac_define_dir`
+   PKG_DATA_DIR="$ac_define_dir"
+ 
+@@ -18027,7 +18030,7 @@
  
    test "x$prefix" = xNONE && prefix="$ac_default_prefix"
    test "x$exec_prefix" = xNONE && exec_prefix='${prefix}'
@@ -82,7 +91,7 @@
    ac_define_dir=`eval echo $ac_define_dir`
    SYSCONFDIR="$ac_define_dir"
  
-@@ -17635,7 +17638,7 @@
+@@ -18040,7 +18043,7 @@
  
    test "x$prefix" = xNONE && prefix="$ac_default_prefix"
    test "x$exec_prefix" = xNONE && exec_prefix='${prefix}'
@@ -91,7 +100,7 @@
    ac_define_dir=`eval echo $ac_define_dir`
    LIBDIR="$ac_define_dir"
  
-@@ -17648,7 +17651,7 @@
+@@ -18053,7 +18056,7 @@
  
    test "x$prefix" = xNONE && prefix="$ac_default_prefix"
    test "x$exec_prefix" = xNONE && exec_prefix='${prefix}'
@@ -100,3 +109,12 @@
    ac_define_dir=`eval echo $ac_define_dir`
    PREFIX="$ac_define_dir"
  
+@@ -18066,7 +18069,7 @@
+ 
+ 
+   EXP_VAR=DATADIR
+-  FROM_VAR="${datadir}"
++  FROM_VAR=$datadir
+ 
+     prefix_save=$prefix
+   exec_prefix_save=$exec_prefix

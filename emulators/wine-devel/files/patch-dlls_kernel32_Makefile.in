@@ -1,7 +1,7 @@
 Author: David Naylor <naylor.b.david@gmail.com>
 Date:   Mon Feb 2 22:10:55 2015 +0200
-Author:	Gerald Pfeifer <gerald@pfeifer.com>
-Date:	Sat Apr 2 17:11:55 UTC 2016
+Author: Gerald Pfeifer <gerald@pfeifer.com>
+Date:   Sat Apr 2 17:11:55 UTC 2016
 
     kernel32: force 4096 byte page alignment.
     

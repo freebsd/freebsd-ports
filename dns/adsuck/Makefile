@@ -3,7 +3,7 @@
 
 PORTNAME=	adsuck
 PORTVERSION=	2.3
-PORTREVISION=	3
+PORTREVISION=	6
 CATEGORIES=	dns
 MASTER_SITES=	http://opensource.conformal.com/snapshots/adsuck/ \
 		http://philpep.org/pub/
@@ -14,10 +14,10 @@ COMMENT=	DNS relay for ad blocking
 
 LICENSE=	ISCL
 
-LIB_DEPENDS+=	libevent.so:devel/libevent2 \
+LIB_DEPENDS+=	libevent.so:devel/libevent \
 		libldns.so:dns/ldns
 
-CFLAGS+= 	-I${LOCALBASE}/include
+CFLAGS+=	-I${LOCALBASE}/include
 
 USE_RC_SUBR=	adsuck
 

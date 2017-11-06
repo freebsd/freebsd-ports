@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	yii
-PORTVERSION=	1.1.17
+PORTVERSION=	1.1.19
 CATEGORIES=	www
 
 MAINTAINER=	ports@FreeBSD.org
@@ -14,10 +14,9 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	yiisoft
 
 NO_BUILD=	yes
-USES=		cpe
+USES=		cpe php:web
 CPE_PRODUCT=	yiiframework
 USE_PHP=	pcre spl
-WANT_PHP_WEB=	yes
 
 SUB_FILES=	pkg-message
 

@@ -15,8 +15,7 @@ BUILD_DEPENDS=	gm4:devel/m4
 LIB_DEPENDS=	libnetsnmp.so:net-mgmt/net-snmp
 
 GNU_CONFIGURE=	yes
-USE_OPENSSL=	yes
-USES=		bison
+USES=		bison ssl
 
 PLIST_SUB=	MIBS=share/snmp/mibs
 

@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	qalculate
-PORTVERSION=	0.9.9
+PORTVERSION=	1.0.0
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	math
 
@@ -16,6 +17,8 @@ LIB_DEPENDS=	libcln.so:math/cln \
 		libqalculate.so:math/libqalculate
 RUN_DEPENDS=	gnuplot:math/gnuplot \
 		wget:ftp/wget
+
+BROKEN_powerpc64=	fails to compile:  main.cc: undefined reference to Calculator::temporaryCategory[abi:cxx11]()
 
 USES=		autoreconf compiler:c++11-lang gettext gmake \
 		libtool:build localbase pkgconfig

@@ -15,8 +15,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USE_GITHUB=	yes
 GH_ACCOUNT=	macdice
 
-USES=		ncurses
-
 PLIST_FILES=	bin/ascii_invaders
 
 do-install:

@@ -1,0 +1,38 @@
+--- components/new_or_sad_tab_strings.grdp.orig	2017-08-02 19:00:40.657953000 +0200
++++ components/new_or_sad_tab_strings.grdp	2017-08-02 19:02:23.894386000 +0200
+@@ -58,7 +58,7 @@
+           Open page in Incognito mode (⇧⌘N)
+         </message>
+       </if>
+-      <if expr="is_win or is_linux or chromeos">
++      <if expr="is_win or is_posix or chromeos">
+         <message name="IDS_SAD_TAB_RELOAD_INCOGNITO" desc="One of the bullet points displayed on the web page if a reload failed to fix the issue, advising the user to open the web page in Chrome's Incognito mode." formatter_data="android_java">
+           Open page in Incognito mode (Ctrl-Shift-N)
+         </message>
+@@ -73,7 +73,7 @@
+           Close other tabs or apps
+         </message>
+       </if>
+-      <if expr="is_linux and not chromeos">
++      <if expr="is_posix and not chromeos">
+         <message name="IDS_SAD_TAB_RELOAD_CLOSE_TABS" desc="One of the bullet points displayed on the web page if a reload failed to fix the issue, advising the user to close other Chrome tabs or programs running on their computer." formatter_data="android_java">
+           Close other tabs or programs
+         </message>
+@@ -83,7 +83,7 @@
+           Close other apps
+         </message>
+       </if>
+-      <if expr="is_linux and not chromeos">
++      <if expr="is_posix and not chromeos">
+         <message name="IDS_SAD_TAB_RELOAD_CLOSE_NOTABS" desc="One of the bullet points displayed on the web page if a reload failed to fix the issue, advising the user to close other programs running on their computer (Linux)." formatter_data="android_java">
+           Close other programs
+         </message>
+@@ -98,7 +98,7 @@
+           Restart Chromium
+         </message>
+       </if>
+-      <if expr="is_win or is_linux or is_macosx or chromeos">
++      <if expr="is_win or is_posix or is_macosx or chromeos">
+         <message name="IDS_SAD_TAB_RELOAD_RESTART_DEVICE" desc="One of the bullet points displayed on the web page if a reload failed to fix the issue, advising the user to restart their computer." formatter_data="android_java">
+           Restart your computer
+         </message>

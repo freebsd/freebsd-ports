@@ -4,18 +4,6 @@ running a game.  For servers running a game, the server name, map name,
 current number of players, and response time are displayed.  Server rules
 and player information may also be displayed.  It can output templates for
 automatic HTML generation, and also has raw display mode for integration
-with custom server browsers.  Incomplete list of supported games includes:
+with custom server browsers.
 
-    - old Quake (NetQuake)
-    - QuakeWorld
-    - Hexen II
-    - HexenWorld
-    - Quake II
-    - Unreal
-    - Half-Life 2
-    - Half-Life
-    - Doom III
-    - Warsow
-    - Tremulous
-
-WWW: http://www.qstat.org/
+WWW: https://github.com/multiplay/qstat

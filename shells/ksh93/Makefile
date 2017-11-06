@@ -41,7 +41,7 @@ BROKEN_aarch64=		Fails to compile: error: unknown type name Dllscan_t
 .include <bsd.port.pre.mk>
 
 post-patch:
-.if ${OSVERSION} >= 1100093
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1100093
 	@${REINPLACE_CMD} -e 's|SF_FLAGS|SFIO_FLAGS|g' ${WRKSRC}/src/lib/libast/include/sfio*.h ${WRKSRC}/src/lib/libast/sfio/*.c
 .endif
 

@@ -3,7 +3,7 @@
 
 PORTNAME=	dcmtk
 DISTVERSION=	3.6.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	devel
 MASTER_SITES=	ftp://dicom.offis.de/pub/dicom/offis/software/${PORTNAME}/${PORTNAME}${PORTVERSION:S/.//g}/
 
@@ -15,8 +15,7 @@ LIB_DEPENDS=	libtiff.so:graphics/tiff \
 
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
-USE_OPENSSL=	yes
-USES=		cmake:outsource jpeg
+USES=		cmake:outsource jpeg ssl
 CMAKE_ARGS+=	-DDCMTK_WITH_DOXYGEN:BOOL=OFF \
 		-DDCMTK_WITH_OPENSSL:BOOL=ON
 
@@ -30,8 +29,6 @@ PLIST_SUB=	SHLIBVER=${SHLIBVER}
 PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS
-
-CFLAGS_amd64=	-fPIC
 
 post-patch:
 	${FIND} ${WRKSRC} -name "*.h.orig" -delete

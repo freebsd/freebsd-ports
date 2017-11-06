@@ -13,7 +13,7 @@ COMMENT=	Replacement and extension for Tripwire
 LIB_DEPENDS=	libmhash.so:security/mhash \
 		libpcre.so:devel/pcre
 
-USES=		autoreconf bison gmake
+USES=		autoreconf bison gmake localbase
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-mhash \
@@ -21,8 +21,7 @@ CONFIGURE_ARGS+=--with-mhash \
 		--mandir=${MANPREFIX}/man \
 		--with-config_file=${PREFIX}/etc/aide.conf
 
-LDFLAGS+=	-lpthread -L${LOCALBASE}/lib
-CFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-lpthread
 
 SUB_FILES=	pkg-message
 

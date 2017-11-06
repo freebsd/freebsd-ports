@@ -3,7 +3,7 @@
 
 PORTNAME=	code-eli
 PORTVERSION=	0.3.6
-PORTREVISION=	2
+PORTREVISION=	4
 CATEGORIES=	graphics
 
 MAINTAINER=	fernando.apesteguia@gmail.com
@@ -11,6 +11,8 @@ COMMENT=	Library with functionalities for geometries
 
 LICENSE=	EPL
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
+
+BROKEN=		Needs work to use math/eigen3 currently in ports
 
 BUILD_DEPENDS=	eigen>3:math/eigen3
 
@@ -32,6 +34,9 @@ EXAMPLES_LIB_DEPENDS=	libcpptest.so:devel/cpptest
 DOXYGEN_BUILD_DEPENDS=	${LOCALBASE}/bin/doxygen:devel/doxygen
 DOXYGEN_ALL_TARGET=	doc
 DOXYGEN_PORTDOCS=	html latex
+
+BROKEN_armv6=		fails to compile: undefined reference to cbrtl
+BROKEN_powerpc64=	fails to compile: there are no arguments to 'printf' that depend on a template parameter
 
 post-patch-EXAMPLES-off:
 	${REINPLACE_CMD} \

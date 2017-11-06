@@ -10,6 +10,8 @@ DISTNAME=	${PORTNAME}-client
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	AnimeNfo client
 
+BROKEN=		No public distfiles
+
 LICENSE=	GPLv2
 
 USES=		gmake tar:tgz

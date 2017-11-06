@@ -11,8 +11,7 @@ COMMENT=	Curses based password manager
 
 LICENSE=	GPLv3
 
-USES=		gmake ncurses
-USE_OPENSSL=	yes
+USES=		gmake ncurses ssl
 GNU_CONFIGURE=	yes
 
 OPTIONS_DEFINE=		CONVERTERS DOCS NLS

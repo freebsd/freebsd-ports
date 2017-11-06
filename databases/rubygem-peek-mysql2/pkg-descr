@@ -1,0 +1,7 @@
+Take a peek into the MySQL queries made during your application's requests.
+
+Things this peek view provides:
+- Total number of MySQL queries called during the request
+- The duration of the queries made during the request
+
+WWW: https://github.com/peek/peek-mysql2

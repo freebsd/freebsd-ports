@@ -2,12 +2,13 @@
 
 PORTNAME=	tmate
 PORTVERSION=	2.2.1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Instant terminal sharing
 
-LIB_DEPENDS=	libevent.so:devel/libevent2 \
+LIB_DEPENDS=	libevent.so:devel/libevent \
 		libmsgpackc.so:devel/msgpack \
 		libssh_threads.so:security/libssh
 

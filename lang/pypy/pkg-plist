@@ -22,6 +22,10 @@ bin/pypy
 %%PYPY_DIR%%/include/code.h
 %%PYPY_DIR%%/include/compile.h
 %%PYPY_DIR%%/include/complexobject.h
+%%PYPY_DIR%%/include/cpyext_descrobject.h
+%%PYPY_DIR%%/include/cpyext_memoryobject.h
+%%PYPY_DIR%%/include/cpyext_object.h
+%%PYPY_DIR%%/include/cpyext_unicodeobject.h
 %%PYPY_DIR%%/include/datetime.h
 %%PYPY_DIR%%/include/descrobject.h
 %%PYPY_DIR%%/include/dictobject.h
@@ -548,8 +552,8 @@ bin/pypy
 %%PYPY_DIR%%/lib-python/2.7/encodings/zlib_codec.py
 %%PYPY_DIR%%/lib-python/2.7/ensurepip/__init__.py
 %%PYPY_DIR%%/lib-python/2.7/ensurepip/__main__.py
-%%PYPY_DIR%%/lib-python/2.7/ensurepip/_bundled/pip-8.1.1-py2.py3-none-any.whl
-%%PYPY_DIR%%/lib-python/2.7/ensurepip/_bundled/setuptools-20.10.1-py2.py3-none-any.whl
+%%PYPY_DIR%%/lib-python/2.7/ensurepip/_bundled/pip-9.0.1-py2.py3-none-any.whl
+%%PYPY_DIR%%/lib-python/2.7/ensurepip/_bundled/setuptools-28.8.0-py2.py3-none-any.whl
 %%PYPY_DIR%%/lib-python/2.7/ensurepip/_uninstall.py
 %%PYPY_DIR%%/lib-python/2.7/filecmp.py
 %%PYPY_DIR%%/lib-python/2.7/fileinput.py
@@ -769,7 +773,6 @@ bin/pypy
 %%PYPY_DIR%%/lib-python/2.7/lib2to3/fixes/fix_asserts.py
 %%PYPY_DIR%%/lib-python/2.7/lib2to3/fixes/fix_basestring.py
 %%PYPY_DIR%%/lib-python/2.7/lib2to3/fixes/fix_buffer.py
-%%PYPY_DIR%%/lib-python/2.7/lib2to3/fixes/fix_callable.py
 %%PYPY_DIR%%/lib-python/2.7/lib2to3/fixes/fix_dict.py
 %%PYPY_DIR%%/lib-python/2.7/lib2to3/fixes/fix_except.py
 %%PYPY_DIR%%/lib-python/2.7/lib2to3/fixes/fix_exec.py
@@ -1234,6 +1237,7 @@ bin/pypy
 %%PYPY_DIR%%/lib-python/2.7/test/Sine-1000Hz-300ms.aif
 %%PYPY_DIR%%/lib-python/2.7/test/__init__.py
 %%PYPY_DIR%%/lib-python/2.7/test/_mock_backport.py
+%%PYPY_DIR%%/lib-python/2.7/test/allsans.pem
 %%PYPY_DIR%%/lib-python/2.7/test/audiodata/pluck-pcm16.aiff
 %%PYPY_DIR%%/lib-python/2.7/test/audiodata/pluck-pcm16.au
 %%PYPY_DIR%%/lib-python/2.7/test/audiodata/pluck-pcm16.wav
@@ -1270,7 +1274,6 @@ bin/pypy
 %%PYPY_DIR%%/lib-python/2.7/test/capath/99d0fa06.0
 %%PYPY_DIR%%/lib-python/2.7/test/capath/ce7b8643.0
 %%PYPY_DIR%%/lib-python/2.7/test/cfgparser.1
-%%PYPY_DIR%%/lib-python/2.7/test/check_soundcard.vbs
 %%PYPY_DIR%%/lib-python/2.7/test/cjkencodings/big5-utf8.txt
 %%PYPY_DIR%%/lib-python/2.7/test/cjkencodings/big5.txt
 %%PYPY_DIR%%/lib-python/2.7/test/cjkencodings/big5hkscs-utf8.txt
@@ -1536,6 +1539,7 @@ bin/pypy
 %%PYPY_DIR%%/lib-python/2.7/test/ssl_key.passwd.pem
 %%PYPY_DIR%%/lib-python/2.7/test/ssl_key.pem
 %%PYPY_DIR%%/lib-python/2.7/test/ssl_servers.py
+%%PYPY_DIR%%/lib-python/2.7/test/ssltests.py
 %%PYPY_DIR%%/lib-python/2.7/test/string_tests.py
 %%PYPY_DIR%%/lib-python/2.7/test/subprocessdata/sigchild_ignore.py
 %%PYPY_DIR%%/lib-python/2.7/test/symlink_support.py
@@ -2102,6 +2106,7 @@ bin/pypy
 %%PYPY_DIR%%/lib_pypy/_sqlite3_build.py
 %%PYPY_DIR%%/lib_pypy/_structseq.py
 %%PYPY_DIR%%/lib_pypy/_subprocess.py
+%%PYPY_DIR%%/lib_pypy/_sysconfigdata.py
 %%PYPY_DIR%%/lib_pypy/_syslog_build.py
 %%PYPY_DIR%%/lib_pypy/_syslog_cffi.%%PYPY_CFFI_VER%%.so
 %%PYPY_DIR%%/lib_pypy/_testcapi.py
@@ -2122,6 +2127,7 @@ bin/pypy
 %%PYPY_DIR%%/lib_pypy/cffi.egg-info/requires.txt
 %%PYPY_DIR%%/lib_pypy/cffi.egg-info/top_level.txt
 %%PYPY_DIR%%/lib_pypy/cffi/__init__.py
+%%PYPY_DIR%%/lib_pypy/cffi/_cffi_errors.h
 %%PYPY_DIR%%/lib_pypy/cffi/_cffi_include.h
 %%PYPY_DIR%%/lib_pypy/cffi/_embedding.h
 %%PYPY_DIR%%/lib_pypy/cffi/_pycparser/README
@@ -2147,6 +2153,7 @@ bin/pypy
 %%PYPY_DIR%%/lib_pypy/cffi/cffi_opcode.py
 %%PYPY_DIR%%/lib_pypy/cffi/commontypes.py
 %%PYPY_DIR%%/lib_pypy/cffi/cparser.py
+%%PYPY_DIR%%/lib_pypy/cffi/error.py
 %%PYPY_DIR%%/lib_pypy/cffi/ffiplatform.py
 %%PYPY_DIR%%/lib_pypy/cffi/gc_weakref.py
 %%PYPY_DIR%%/lib_pypy/cffi/lock.py

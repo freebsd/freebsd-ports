@@ -1,7 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	warzone2100
-PORTVERSION=	3.2.2
+PORTVERSION=	3.2.3
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/releases/${PORTVERSION}/
 
@@ -52,6 +53,6 @@ post-patch:
 	@${REINPLACE_CMD} -e '/INSTALL_DATA.*warzone2100.appdata.xml/d' ${WRKSRC}/icons/Makefile.*
 
 post-install:
-	@${RMDIR} ${STAGEDIR}${PREFIX}/share/appdata
+	@${RMDIR} ${STAGEDIR}${PREFIX}/share/metainfo
 
 .include <bsd.port.mk>

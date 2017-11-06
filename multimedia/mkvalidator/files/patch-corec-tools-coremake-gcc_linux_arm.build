@@ -1,6 +1,6 @@
---- corec/tools/coremake/gcc_linux_arm.build.orig	2012-12-16 11:29:34.000000000 +0100
-+++ corec/tools/coremake/gcc_linux_arm.build	2015-04-11 19:30:30.119705652 +0200
-@@ -19,8 +19,8 @@
+--- corec/tools/coremake/gcc_linux_arm.build.orig	2012-12-16 10:29:34 UTC
++++ corec/tools/coremake/gcc_linux_arm.build
+@@ -19,8 +19,8 @@ SVNDIR = linux_arm
  
  #define GLIBC
  

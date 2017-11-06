@@ -3,7 +3,7 @@
 
 PORTNAME=	fvwm-crystal
 PORTVERSION=	3.0.6
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://download.gna.org/fvwm-crystal/${PORTVERSION}/
 
@@ -14,7 +14,8 @@ RUN_DEPENDS=	fvwm>=2.5:x11-wm/fvwm2 \
 		bash:shells/bash
 
 USES=		gettext gmake python shebangfix
-SHEBANG_FILES=	addons/* bin/* fvwm/scripts/speed_value
+SHEBANG_FILES=	addons/* bin/* fvwm/scripts/speed_value \
+		fvwm/scripts/FvwmMPD/*.py
 MAKE_ENV=	prefix="${PREFIX}" addondir="${DOCSDIR}/addons"
 PORTDOCS=	*
 INSTALL_TARGET=	install
@@ -35,7 +36,7 @@ IMAGEMAGICK_RUN_DEPENDS=	display:graphics/ImageMagick
 XSCREENSAVER_RUN_DEPENDS=	xscreensaver:x11/xscreensaver
 TRAYER_RUN_DEPENDS=	trayer:x11/trayer
 SUDO_RUN_DEPENDS=	sudo:security/sudo
-SETROOT_RUN_DEPENDS=	hsetroot:graphics/hsetroot
+SETROOT_RUN_DEPENDS=	hsetroot:x11/hsetroot
 CMUS_RUN_DEPENDS=	cmus:audio/cmus
 DOCS_INSTALL_TARGET=	install-doc
 

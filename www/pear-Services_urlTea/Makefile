@@ -5,10 +5,10 @@ PORTNAME=	Services_urlTea
 PORTVERSION=	0.1.0
 CATEGORIES=	www pear
 
-MAINTAINER=	joneum@bsdproject.de
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	PHP interface to urlTea's API
 
-USES=	pear
+USES=		pear php
 USE_PHP=	curl
 
 .include <bsd.port.mk>

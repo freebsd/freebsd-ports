@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	adamw@FreeBSD.org
 COMMENT=	Optimized type checks for Moo + Type::Tiny
 
-LICENSE=	ART10 GPLv1
+LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Moo>=1.004003:devel/p5-Moo \

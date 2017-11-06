@@ -3,6 +3,7 @@
 
 PORTNAME=	rainbowstream
 PORTVERSION=	1.3.5
+PORTREVISION=	1
 CATEGORIES=	net python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -21,8 +22,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dateutil>0:devel/py-dateutil \
 		${PYTHON_PKGNAMEPREFIX}pillow>0:graphics/py-pillow \
 		${PYTHON_PKGNAMEPREFIX}pysocks>0:net/py-pysocks
 
-# Actually 2.7,3.2-3.4
-USES=		python:2.7-3.4
+# Actually 2.7,3.2-
+USES=		python:2.7-
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes

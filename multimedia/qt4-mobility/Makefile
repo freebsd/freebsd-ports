@@ -3,7 +3,7 @@
 
 PORTNAME=	mobility
 PORTVERSION=	1.2.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia
 MASTER_SITES=	http://dev.gentoo.org/~pesa/distfiles/ \
 		LOCAL/vg
@@ -62,17 +62,17 @@ OPTIONS_DEFAULT=BEARER CONNECTIVITY CONTACTS FEEDBACK GALLERY LOCATION \
 
 pre-configure:
 # Dirty hack because configure find paths and define empty if not found
-	@${MKDIR} ${STAGE}${PREFIX}/${QT_BINDIR_REL} \
-		${STAGE}${PREFIX}/${QT_INCDIR_REL} \
-		${STAGE}${PREFIX}/${QT_LIBDIR_REL} \
+	@${MKDIR} ${STAGE}${PREFIX}/bin \
+		${STAGE}${PREFIX}/include \
+		${STAGE}${PREFIX}/lib \
 		${STAEG}${PREFIX}/${QT_PLUGINDIR_REL}
 
-	cd ${WRKSRC} && ./configure \
+	cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ./configure \
 		-release \
 		-prefix ${STAGE}${PREFIX} \
-		-bindir ${STAGE}${PREFIX}/${QT_BINDIR_REL} \
-		-headerdir ${STAGE}${PREFIX}/${QT_INCDIR_REL} \
-		-libdir ${STAGE}${PREFIX}/${QT_LIBDIR_REL} \
+		-bindir ${STAGE}${PREFIX}/bin \
+		-headerdir ${STAGE}${PREFIX}/include \
+		-libdir ${STAGE}${PREFIX}/lib \
 		-plugindir ${STAEG}${PREFIX}/${QT_PLUGINDIR_REL} \
 		-modules "${MOBILITY_MODS}"
 

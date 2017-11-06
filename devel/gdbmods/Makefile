@@ -4,15 +4,19 @@
 PORTNAME=	gdbmods
 PORTVERSION=	20020824
 CATEGORIES=	devel
-MASTER_SITES=	http://people.freebsd.org/~gallatin/
+MASTER_SITES=	https://people.freebsd.org/~gallatin/
 DISTFILES=	gdbmods
 DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
-EXTRACT_ONLY=
+EXTRACT_ONLY=	# none
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Wrapper for gdb -k to provide kld symbol information
 
+LICENSE=	NONE
+
 NO_BUILD=	yes
+NO_ARCH=	yes
+
 PLIST_FILES=	bin/gdbmods
 
 do-install:

@@ -1,5 +1,5 @@
-bin/tlb
 bin/mungelist
+bin/tlb
 %%PORTDOCS%%share/doc/tlb/FAQ
 %%PORTDOCS%%share/doc/tlb/INSTALL
 %%PORTDOCS%%share/doc/tlb/README

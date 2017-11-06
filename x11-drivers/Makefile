@@ -3,7 +3,6 @@
 
     COMMENT = X11 drivers
 
-    SUBDIR += drm-kmod
     SUBDIR += xf86-input-acecad
     SUBDIR += xf86-input-egalax
     SUBDIR += xf86-input-elographics
@@ -12,6 +11,7 @@
     SUBDIR += xf86-input-hyperpen
     SUBDIR += xf86-input-joystick
     SUBDIR += xf86-input-keyboard
+    SUBDIR += xf86-input-libinput
     SUBDIR += xf86-input-mouse
     SUBDIR += xf86-input-mutouch
     SUBDIR += xf86-input-penmount
@@ -19,13 +19,15 @@
     SUBDIR += xf86-input-vmmouse
     SUBDIR += xf86-input-void
     SUBDIR += xf86-input-wacom
+    SUBDIR += xf86-video-amdgpu
     SUBDIR += xf86-video-apm
     SUBDIR += xf86-video-ark
+    SUBDIR += xf86-video-ast
     SUBDIR += xf86-video-ati
     SUBDIR += xf86-video-chips
     SUBDIR += xf86-video-cirrus
     SUBDIR += xf86-video-dummy
-    SUBDIR += xf86-video-fbdev
+    SUBDIR += xf86-video-geode
     SUBDIR += xf86-video-glint
     SUBDIR += xf86-video-i128
     SUBDIR += xf86-video-i740
@@ -51,5 +53,6 @@
     SUBDIR += xf86-video-vmware
     SUBDIR += xf86-video-voodoo
     SUBDIR += xorg-drivers
+    SUBDIR += xorgxrdp
 
 .include <bsd.port.subdir.mk>

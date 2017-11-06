@@ -5,17 +5,13 @@ PORTNAME=	dbase
 PORTVERSION=	5.1.0
 PORTREVISION=	1
 CATEGORIES=	databases pear
-MASTER_SITES=	http://pecl.php.net/get/
-PKGNAMEPREFIX=	pecl-
-EXTRACT_SUFX=	.tgz
-DIST_SUBDIR=	PECL
 
-MAINTAINER=	toomas@median.ee
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	dBase database file access functions for PHP
 
 LICENSE=	PHP301
 
-USES=		php:ext
-IGNORE_WITH_PHP=	70
+USES=		php:pecl
+IGNORE_WITH_PHP=	70 71
 
 .include <bsd.port.mk>

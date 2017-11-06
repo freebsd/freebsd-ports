@@ -1,6 +1,6 @@
---- readrc.c.orig	2010-01-09 23:30:28.000000000 -0800
-+++ readrc.c	2010-01-09 23:31:10.000000000 -0800
-@@ -46,7 +46,7 @@
+--- readrc.c.orig	2002-09-16 12:42:41 UTC
++++ readrc.c
+@@ -46,7 +46,7 @@ readrc(char **userp, char **passp, char 
      char b[8192], *p, *tok, *q, *home;
      char *user, *pass, *host, *port, *wdir;
  

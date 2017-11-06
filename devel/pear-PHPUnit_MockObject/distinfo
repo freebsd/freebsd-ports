@@ -1,2 +1,3 @@
-SHA256 (PEAR/PHPUnit_MockObject-1.2.2.tgz) = 79cf716da2fee75230b76081a20df013705884ad327c0e3d653f95d065849a47
-SIZE (PEAR/PHPUnit_MockObject-1.2.2.tgz) = 20347
+TIMESTAMP = 1489066331
+SHA256 (sebastianbergmann-phpunit-mock-objects-4.0.1_GH0.tar.gz) = b5519cc1f4f5b7949ea00d80d421d2eb286526c4dab66213fcd414f0b3f17e1f
+SIZE (sebastianbergmann-phpunit-mock-objects-4.0.1_GH0.tar.gz) = 36788

@@ -1,7 +1,7 @@
 %%SITE_PERL%%/Geo/GML.pm
 %%SITE_PERL%%/Geo/GML.pod
-%%SITE_PERL%%/Geo/GML/GeoPoint.pod
 %%SITE_PERL%%/Geo/GML/GeoPoint.pm
+%%SITE_PERL%%/Geo/GML/GeoPoint.pod
 %%SITE_PERL%%/Geo/GML/Util.pm
 %%SITE_PERL%%/Geo/GML/Util.pod
 %%SITE_PERL%%/Geo/GML/xsd/ReadMe.txt
@@ -14,10 +14,6 @@
 %%SITE_PERL%%/Geo/GML/xsd/gml2.1.1/feature.xsd
 %%SITE_PERL%%/Geo/GML/xsd/gml2.1.1/geometry.xsd
 %%SITE_PERL%%/Geo/GML/xsd/gml2.1.1/xlinks.xsd
-%%SITE_PERL%%/Geo/GML/xsd/gml2.1.2/ReadMe.txt
-%%SITE_PERL%%/Geo/GML/xsd/gml2.1.2/feature.xsd
-%%SITE_PERL%%/Geo/GML/xsd/gml2.1.2/geometry.xsd
-%%SITE_PERL%%/Geo/GML/xsd/gml2.1.2/xlinks.xsd
 %%SITE_PERL%%/Geo/GML/xsd/gml2.1.2.0/ReadMe.txt
 %%SITE_PERL%%/Geo/GML/xsd/gml2.1.2.0/feature.xsd
 %%SITE_PERL%%/Geo/GML/xsd/gml2.1.2.0/geometry.xsd
@@ -26,6 +22,10 @@
 %%SITE_PERL%%/Geo/GML/xsd/gml2.1.2.1/feature.xsd
 %%SITE_PERL%%/Geo/GML/xsd/gml2.1.2.1/geometry.xsd
 %%SITE_PERL%%/Geo/GML/xsd/gml2.1.2.1/xlinks.xsd
+%%SITE_PERL%%/Geo/GML/xsd/gml2.1.2/ReadMe.txt
+%%SITE_PERL%%/Geo/GML/xsd/gml2.1.2/feature.xsd
+%%SITE_PERL%%/Geo/GML/xsd/gml2.1.2/geometry.xsd
+%%SITE_PERL%%/Geo/GML/xsd/gml2.1.2/xlinks.xsd
 %%SITE_PERL%%/Geo/GML/xsd/gml3.0.0/base/basicTypes.xsd
 %%SITE_PERL%%/Geo/GML/xsd/gml3.0.0/base/coordinateOperations.xsd
 %%SITE_PERL%%/Geo/GML/xsd/gml3.0.0/base/coordinateReferenceSystems.xsd
@@ -283,5 +283,5 @@
 %%SITE_PERL%%/Geo/GML/xsd/xlink1.0.0/ReadMe.txt
 %%SITE_PERL%%/Geo/GML/xsd/xlink1.0.0/xlinks.xsd
 %%PERL5_MAN3%%/Geo::GML.3.gz
-%%PERL5_MAN3%%/Geo::GML::Util.3.gz
 %%PERL5_MAN3%%/Geo::GML::GeoPoint.3.gz
+%%PERL5_MAN3%%/Geo::GML::Util.3.gz

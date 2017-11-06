@@ -3,6 +3,7 @@
 
 PORTNAME=	fairymax
 PORTVERSION=	5.0b.20160316.1
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://freeheimdall.spdns.org/files/
 # http://hgm.nubati.net/cgi-bin/gitweb.cgi?p=fairymax.git;a=snapshot;h=${COMMIT_HASH};sf=tgz
@@ -34,11 +35,11 @@ post-patch:
 		${WRKSRC}/fairymax.c
 	@${REINPLACE_CMD} -E 's|^(prefix\|bindir\|mandir\|datadir\|plugindir\|fairydir) =|\1 ?=|' \
 		${WRKSRC}/Makefile
-	@${REINPLACE_CMD} -E 's|^	cp (.{srcdir}/fairymax .{srcdir}/shamax .{srcdir}/maxqi .\(DESTDIR\).\(bindir\))|	${INSTALL_PROGRAM} \1|' \
+	@${REINPLACE_CMD} -E 's|^	cp (.\{srcdir\}/fairymax .\{srcdir\}/shamax .\{srcdir\}/maxqi .\(DESTDIR\).\(bindir\))|	${INSTALL_PROGRAM} \1|' \
 		${WRKSRC}/Makefile
-	@${REINPLACE_CMD} -E 's|^	cp (.{srcdir}/data/)|	${INSTALL_DATA} \1|' \
+	@${REINPLACE_CMD} -E 's|^	cp (.\{srcdir\}/data/)|	${INSTALL_DATA} \1|' \
 		${WRKSRC}/Makefile
-	@${REINPLACE_CMD} -E 's|^	cp (.{srcdir}/fairymax.6.gz)|	${INSTALL_MAN} \1|' \
+	@${REINPLACE_CMD} -E 's|^	cp (.\{srcdir\}/fairymax.6.gz)|	${INSTALL_MAN} \1|' \
 		${WRKSRC}/Makefile
 
 post-install-DOCS-on:

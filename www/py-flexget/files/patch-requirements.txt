@@ -1,11 +1,33 @@
---- requirements.txt.orig	2016-08-14 10:12:26 UTC
+--- requirements.txt.orig	2017-06-21 02:13:55 UTC
 +++ requirements.txt
-@@ -16,7 +16,7 @@ python-dateutil>=2.5.2
+@@ -7,18 +7,15 @@ html5lib>=0.11
+ PyRSS2Gen
+ pynzb
+ #PY3 progressbar
+-rpyc==3.3.0
++rpyc
+ jinja2
+ # There is a bug in requests 2.4.0 where it leaks urllib3 exceptions
+-requests~=2.16.3
+-#Guessit requires python-dateutil<=2.5.2
++requests>=2.8.0, <3.0
+ python-dateutil>=2.5.3
  jsonschema>=2.0
  path.py>=8.1.1
- pathlib>=1.0
+ pathlib>=1.0; python_version<'3.4'
 -guessit<=2.0.4
-+guessit>=2.0.4
+-# Rebulk changes how guessit works higher than 0.8.2
+-rebulk==0.8.2
++guessit>=2.1.0
  apscheduler>=3.2.0
- # WebUI Requirements
+ terminaltables>=3.1.0
+ colorclass>=2.2.0
+@@ -26,7 +23,7 @@ colorclass>=2.2.0
  cherrypy>=3.7.0
+ flask>=0.7
+ flask-restful>=0.3.3
+-flask-restplus==0.10.1
++flask-restplus>=0.10.1
+ flask-compress>=1.2.1
+ flask-login>=0.4.0
+ flask-cors>=2.1.2

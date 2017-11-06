@@ -13,10 +13,11 @@ COMMENT=	Auto-adaptive genetic system designed for ALife research
 LICENSE=	GPLv3
 
 BROKEN_aarch64=		invokes x86 asm
+BROKEN_armv6=		invokes x86 asm
 BROKEN_mips=		invokes x86 asm
 BROKEN_mips64=		invokes x86 asm
 BROKEN_sparc64=		missing atomics implementation
-BROKEN_powerpc64=	Does not build on powerpc64
+BROKEN_powerpc64=	fails to compile: sibling call optimization does not allow automatic multiple TOCs
 
 USES=		cmake:outsource ncurses
 CMAKE_ARGS=	-DAPTO_UNIT_TESTS:BOOL=OFF \

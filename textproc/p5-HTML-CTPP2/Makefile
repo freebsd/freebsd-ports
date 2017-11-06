@@ -15,6 +15,8 @@ COMMENT=	Perl interface module to CTPP2 library
 BUILD_DEPENDS=	ctpp2>=2.5.1:textproc/ctpp2
 LIB_DEPENDS=	libctpp2.so:textproc/ctpp2
 
+BROKEN=		Fails to build with Perl >= 5.22
+
 USES=		perl5
 USE_PERL5=	configure
 
@@ -26,10 +28,4 @@ post-patch:
 		/^my $$CXX/s|g++|${CXX}|; /^my $$CC/s|gcc|${CC}|' \
 		${WRKSRC}/Makefile.PL
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} >= 502200
-BROKEN=		Fails to build with Perl >= 5.22
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

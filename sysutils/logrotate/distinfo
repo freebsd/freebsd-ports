@@ -1,2 +1,3 @@
-SHA256 (logrotate-logrotate-3.9.2_GH0.tar.gz) = 2de00c65e23fa9d7909cae6594e550b9abe9a7eb1553669ddeaca92d30f97009
-SIZE (logrotate-logrotate-3.9.2_GH0.tar.gz) = 80711
+TIMESTAMP = 1508013010
+SHA256 (logrotate-logrotate-3.13.0_GH0.tar.gz) = fb1ff8502e7ae4aedaa3d0da8d3740a6a0f44b72e34666af724e9094b166c942
+SIZE (logrotate-logrotate-3.13.0_GH0.tar.gz) = 82436

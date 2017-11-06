@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Net-Amazon-EC2
-PORTVERSION=	0.31
+PORTVERSION=	0.32
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Perl interface to the Amazon Elastic Compute Cloud
 
-LICENSE=	ART10 GPLv1
+LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-LWP-Protocol-https>=0:www/p5-LWP-Protocol-https \

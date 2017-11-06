@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	jsoncpp
-PORTVERSION=	1.8.0
-PORTREVISION=	1
+PORTVERSION=	1.8.1
+PORTREVISION=	2
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@rawbw.com
@@ -18,7 +18,8 @@ GH_ACCOUNT=	open-source-parsers
 USES=		compiler:features dos2unix scons
 USE_LDCONFIG=	yes
 
-MAKE_ARGS=	platform=linux-gcc
+PLATFORM=	linux-gcc-FreeBSD
+MAKE_ARGS=	platform=${PLATFORM}
 
 .include <bsd.port.pre.mk>
 
@@ -38,18 +39,21 @@ CXXFLAGS+=	--std=gnu++11 -D_GLIBCXX_USE_C99=1
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/include/jsoncpp
 	(cd ${WRKSRC}/include/ && ${COPYTREE_SHARE} json/ ${STAGEDIR}${PREFIX}/include/jsoncpp/)
-	${INSTALL_DATA} ${WRKSRC}/libs/linux-gcc-FreeBSD/libjsoncpp.a \
+	${INSTALL_DATA} ${WRKSRC}/libs/${PLATFORM}/libjsoncpp.a \
 		${STAGEDIR}${PREFIX}/lib
-	${INSTALL_LIB} ${WRKSRC}/libs/linux-gcc-FreeBSD/libjsoncpp.so.${DISTVERSION} \
+	${INSTALL_LIB} ${WRKSRC}/libs/${PLATFORM}/libjsoncpp.so.${DISTVERSION} \
 		${STAGEDIR}${PREFIX}/lib
 	${LN} -s libjsoncpp.so.${DISTVERSION} ${STAGEDIR}${PREFIX}/lib/libjsoncpp.so.1
 	${LN} -s libjsoncpp.so.${DISTVERSION} ${STAGEDIR}${PREFIX}/lib/libjsoncpp.so
 	${CP} ${WRKSRC}/pkg-config/jsoncpp.pc.in ${STAGEDIR}${PREFIX}/libdata/pkgconfig/jsoncpp.pc
 	@${REINPLACE_CMD} -i '' \
-		-e 's|@CMAKE_INSTALL_PREFIX@|${PREFIX}|g' \
-		-e 's|@CMAKE_INSTALL_LIBDIR@|lib|g' \
-		-e 's|@CMAKE_INSTALL_INCLUDEDIR@|include/jsoncpp|g' \
+		-e 's|@CMAKE_INSTALL_FULL_LIBDIR@|${PREFIX}/lib|g' \
+		-e 's|@CMAKE_INSTALL_FULL_INCLUDEDIR@|${PREFIX}/include/jsoncpp|g' \
 		-e 's|@JSONCPP_VERSION@|${DISTVERSION}|g' \
 		${STAGEDIR}${PREFIX}/libdata/pkgconfig/jsoncpp.pc
+
+do-test:
+	@${ECHO} "Please note that 3 testcases are known to fail: https://github.com/open-source-parsers/jsoncpp/issues/628"
+	@cd ${WRKSRC} && CXX=${CXX} ${SCONS} platform=${PLATFORM} check
 
 .include <bsd.port.post.mk>

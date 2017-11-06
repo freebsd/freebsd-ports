@@ -2,6 +2,7 @@
 
 PORTNAME=	linphone
 PORTVERSION=	3.10.2
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	net
 MASTER_SITES=	SAVANNAH/linphone/3.10.x/sources
@@ -54,7 +55,7 @@ UPNP_LIB_DEPENDS=	libupnp.so:devel/upnp
 
 VIDEO_CONFIGURE_ENABLE=	video
 
-.if defined(WITH_DEBUG) && !defined(WITHOUT_DEBUG)
+.if defined(WITH_DEBUG)
 CONFIGURE_ARGS+=--enable-debug
 .endif
 

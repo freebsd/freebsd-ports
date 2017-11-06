@@ -9,18 +9,18 @@ MASTER_SITES=	https://github.com/amadvance/advancemame/releases/download/${DISTN
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Frontend for AdvanceMAME, MAME, MESS, RAINE
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libexpat.so:textproc/expat2
 
-USES=		gmake
+USES=		gmake localbase:ldflags
 USE_SDL=	sdl
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-svgalib --disable-fb --disable-alsa --enable-oss \
 		--disable-slang --disable-ncurses --disable-kevent
 
-CFLAGS+=	-idirafter ${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+MAKE_JOBS_UNSAFE=	yes
 
 PORTDOCS=	*
 PLIST_FILES=	bin/advmenu man/man1/advmenu.1.gz
@@ -36,8 +36,6 @@ ASM_CONFIGURE_ENABLE=	asm
 FREETYPE_LIB_DEPENDS=	libfreetype.so:print/freetype2
 FREETYPE_CONFIGURE_ENABLE=	freetype
 
-MAKE_JOBS_UNSAFE=	yes
-
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|-lpthread|-pthread|' ${WRKSRC}/configure
@@ -45,14 +43,13 @@ post-patch:
 		's|@@|@|' ${WRKSRC}/Makefile.in
 
 do-install:
-	(cd ${WRKSRC} && ${INSTALL_PROGRAM} advmenu \
-		${STAGEDIR}${PREFIX}/bin)
-	(cd ${WRKSRC}/doc && ${INSTALL_MAN} advmenu.1 \
-		${STAGEDIR}${MANPREFIX}/man/man1)
+	${INSTALL_PROGRAM} ${WRKSRC}/advmenu ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/doc/advmenu.1 ${STAGEDIR}${MANPREFIX}/man/man1
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC} && ${INSTALL_DATA} HISTORY README RELEASE \
 		${STAGEDIR}${DOCSDIR})
-	(cd ${WRKSRC}/doc && ${INSTALL_DATA} advmenu.[ht]* \
-		${STAGEDIR}${DOCSDIR})
+	${INSTALL_DATA} ${WRKSRC}/doc/advmenu.[ht]* ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

@@ -3,7 +3,7 @@
 
 PORTNAME=	rhythmbox
 PORTVERSION=	3.2.1
-PORTREVISION=	2
+PORTREVISION=	4
 CATEGORIES=	audio gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -18,7 +18,7 @@ BUILD_DEPENDS=	${LOCALBASE}/include/linux/videodev2.h:multimedia/v4l_compat \
 LIB_DEPENDS=	libmusicbrainz5.so:audio/libmusicbrainz5 \
 		libtotem-plparser.so:multimedia/totem-pl-parser \
 		libdbus-glib-1.so:devel/dbus-glib \
-		libcheck.so:devel/libcheck \
+		libcheck.so:devel/check \
 		libpeas-1.0.so:devel/libpeas \
 		libjson-glib-1.0.so:devel/json-glib \
 		libsoup-gnome-2.4.so:devel/libsoup-gnome \
@@ -58,8 +58,8 @@ IPOD_CONFIGURE_WITH=	ipod
 IPOD_LIB_DEPENDS=	libgpod.so:audio/libgpod
 GRILO_DESC=		Media discovery with Grilo
 GRILO_CONFIGURE_ENABLE=	grilo
-GRILO_BUILD_DEPENDS=	grilo-plugins>=0:net/grilo-plugins
-GRILO_RUN_DEPENDS=	grilo-plugins>=0:net/grilo-plugins
+GRILO_BUILD_DEPENDS=	grilo-plugins2>=0:net/grilo-plugins2
+GRILO_RUN_DEPENDS=	grilo-plugins2>=0:net/grilo-plugins2
 LIRC_CONFIGURE_ENABLE=	lirc
 LIRC_LIB_DEPENDS=	liblirc_client.so:comms/lirc
 NOTIFY_CONFIGURE_ENABLE=	libnotify
@@ -77,8 +77,6 @@ PYTHON_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}libpeas>=0:devel/py3-libpeas
 #WEBKIT_CONFIGURE_WITH=	webkit
 #WEBKIT_LIB_DEPENDS=	libwebkitgtk-3.0.so:www/webkit-gtk3
 
-.include <bsd.port.pre.mk>
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|{MOZILLA_PLUGINDIR|{MOZILLA_PLUGINDIR}|g' \
 		${WRKSRC}/configure
@@ -87,4 +85,4 @@ post-patch:
 post-install:
 	@${RM} -r ${STAGEDIR}${PREFIX}/lib/rhythmbox/plugins/rbzeitgeist
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

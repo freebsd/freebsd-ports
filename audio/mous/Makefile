@@ -13,6 +13,8 @@ COMMENT=	Simple yet powerful audio player
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
+BROKEN=		fails to build
+
 USES=		cmake
 USE_LDCONFIG=	yes
 USE_GITHUB=	yes

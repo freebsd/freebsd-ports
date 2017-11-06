@@ -2,7 +2,7 @@
 
 PORTNAME=	poppler-qt4
 PORTVERSION=	0.18.1
-PORTREVISION=	7
+PORTREVISION=	9
 CATEGORIES=	graphics python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,14 +14,10 @@ COMMENT=	Python bindings for the Poppler-Qt4 PDF rendering library
 LICENSE=	LGPL21 LGPL3
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	sip:devel/py-sip \
-		${PYTHON_PKGNAMEPREFIX}qt4-gui>=0:x11-toolkits/py-qt4-gui \
-		${PYTHON_PKGNAMEPREFIX}qt4-xml>=0:textproc/py-qt4-xml
 LIB_DEPENDS=	libpoppler-qt4.so:graphics/poppler-qt4
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}qt4-gui>=0:x11-toolkits/py-qt4-gui \
-		${PYTHON_PKGNAMEPREFIX}qt4-xml>=0:textproc/py-qt4-xml
 
-USES=		pkgconfig python
+USES=		pkgconfig pyqt:4 python
+USE_PYQT=	gui xml sip_build
 USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

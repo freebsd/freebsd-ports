@@ -3,6 +3,7 @@
 
 PORTNAME=	osg
 PORTVERSION=	3.5.1
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	http://trac.openscenegraph.org/downloads/developer_releases/ \
 		http://mirror.amdmi3.ru/distfiles/
@@ -130,12 +131,6 @@ FORCE_IGNORE+=	ITK						# ports version doesn't build on 10.x
 FORCE_REQUIRE=	Threads OpenGL X11 JPEG PNG TIFF ZLIB		# common & lightweight
 
 .include <bsd.port.options.mk>
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1000000 && ${OSVERSION} < 1100000
-# workaround for make (?) problem leading to cflags
-# lost in osgjs
-USES+=			gmake
-.endif
 
 .if ${PORT_OPTIONS:MQT4} || ${PORT_OPTIONS:MQT5}
 CMAKE_ARGS+=		-DOSG_USE_QT:BOOL=ON

@@ -4,6 +4,7 @@
     COMMENT = Multimedia software
 
     SUBDIR += 2mandvd
+    SUBDIR += QtAV
     SUBDIR += ab25
     SUBDIR += abby
     SUBDIR += acidrip
@@ -16,15 +17,12 @@
     SUBDIR += audacious-plugins
     SUBDIR += audacious-plugins-gtk3
     SUBDIR += audiopreview
-    SUBDIR += avbin
     SUBDIR += avidemux
     SUBDIR += avidemux-cli
     SUBDIR += avidemux-plugins
     SUBDIR += avidemux-qt4
     SUBDIR += avinfo
     SUBDIR += baka-mplayer
-    SUBDIR += bangarang
-    SUBDIR += banshee
     SUBDIR += bino
     SUBDIR += bitstream
     SUBDIR += bombono
@@ -68,12 +66,10 @@
     SUBDIR += flvtool++
     SUBDIR += fpc-dts
     SUBDIR += fpc-libvlc
-    SUBDIR += freetuxtv
     SUBDIR += freevo
     SUBDIR += fxtv
     SUBDIR += gaupol
     SUBDIR += gavl
-    SUBDIR += gcap
     SUBDIR += gcfilms
     SUBDIR += gdialog
     SUBDIR += gdvrecv
@@ -84,6 +80,7 @@
     SUBDIR += gmp-api
     SUBDIR += gmtk
     SUBDIR += gnome-mplayer
+    SUBDIR += gnome-mpv
     SUBDIR += gnome-subtitles
     SUBDIR += gpac-libgpac
     SUBDIR += gpac-mp4box
@@ -125,6 +122,7 @@
     SUBDIR += gstreamer1-plugins-assrender
     SUBDIR += gstreamer1-plugins-bad
     SUBDIR += gstreamer1-plugins-core
+    SUBDIR += gstreamer1-plugins-dash
     SUBDIR += gstreamer1-plugins-dts
     SUBDIR += gstreamer1-plugins-dv
     SUBDIR += gstreamer1-plugins-dvdread
@@ -135,11 +133,14 @@
     SUBDIR += gstreamer1-plugins-libde265
     SUBDIR += gstreamer1-plugins-mpeg2dec
     SUBDIR += gstreamer1-plugins-mpeg2enc
+    SUBDIR += gstreamer1-plugins-mplex
     SUBDIR += gstreamer1-plugins-openh264
     SUBDIR += gstreamer1-plugins-resindvd
     SUBDIR += gstreamer1-plugins-rtmp
     SUBDIR += gstreamer1-plugins-schroedinger
+    SUBDIR += gstreamer1-plugins-smoothstreaming
     SUBDIR += gstreamer1-plugins-theora
+    SUBDIR += gstreamer1-plugins-ttml
     SUBDIR += gstreamer1-plugins-ugly
     SUBDIR += gstreamer1-plugins-v4l2
     SUBDIR += gstreamer1-plugins-vpx
@@ -203,6 +204,7 @@
     SUBDIR += libquvi-scripts
     SUBDIR += libquvi-scripts09
     SUBDIR += libquvi09
+    SUBDIR += librespot
     SUBDIR += librtmp
     SUBDIR += libsmacker
     SUBDIR += libtheora
@@ -210,8 +212,10 @@
     SUBDIR += libv4l
     SUBDIR += libva
     SUBDIR += libva-intel-driver
+    SUBDIR += libva-utils
     SUBDIR += libva-vdpau-driver
     SUBDIR += libvdpau
+    SUBDIR += libvdpau-va-gl
     SUBDIR += libvpx
     SUBDIR += libx264
     SUBDIR += libxine
@@ -260,7 +264,6 @@
     SUBDIR += mpgtx
     SUBDIR += mplayer
     SUBDIR += mplayer-skins
-    SUBDIR += mplayer2
     SUBDIR += mplex
     SUBDIR += mps-youtube
     SUBDIR += mpv
@@ -272,13 +275,11 @@
     SUBDIR += mythtv-frontend
     SUBDIR += naludump
     SUBDIR += nordlicht
-    SUBDIR += nxtvepg
     SUBDIR += obs-studio
     SUBDIR += oggvideotools
     SUBDIR += ogmrip
     SUBDIR += ogmtools
     SUBDIR += omxplayer
-    SUBDIR += opencinematools
     SUBDIR += openh264
     SUBDIR += openquicktime
     SUBDIR += openshot
@@ -319,7 +320,7 @@
     SUBDIR += pwcview
     SUBDIR += py-cec
     SUBDIR += py-enzyme
-    SUBDIR += py-ffmpeg
+    SUBDIR += py-flvlib
     SUBDIR += py-gstreamer
     SUBDIR += py-gstreamer1
     SUBDIR += py-guessit
@@ -363,9 +364,12 @@
     SUBDIR += replex
     SUBDIR += rox-videothumbnail
     SUBDIR += rtmpdump
+    SUBDIR += rubygem-av
     SUBDIR += rubygem-clutter-gstreamer
     SUBDIR += rubygem-flvtool2
     SUBDIR += rubygem-gstreamer
+    SUBDIR += rubygem-paperclip-av-transcoder
+    SUBDIR += rubygem-paperclip-av-transcoder-rails50
     SUBDIR += sabbu
     SUBDIR += schroedinger
     SUBDIR += shotcut
@@ -435,7 +439,6 @@
     SUBDIR += vid.stab
     SUBDIR += vlc
     SUBDIR += vlc-qt4
-    SUBDIR += vstream-client
     SUBDIR += vtkmpeg2encode
     SUBDIR += w_scan
     SUBDIR += webcamd

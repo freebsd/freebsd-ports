@@ -2,7 +2,7 @@
 
 PORTNAME=	llvm
 DISTVERSION=	3.8.1
-PORTREVISION=	5
+PORTREVISION=	9
 CATEGORIES=	devel lang
 MASTER_SITES=	http://llvm.org/${PRE_}releases/${LLVM_RELEASE}/${RCDIR}
 DISTNAME=	${PORTNAME}-${DISTVERSION}.src
@@ -12,7 +12,8 @@ PKGNAMESUFFIX=	${LLVM_SUFFIX}
 MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	LLVM and Clang
 
-BROKEN_powerpc64=	Does not build
+BROKEN_armv6=		fails to compile: fatal error: llvm/IR/Attributes.inc file not found
+BROKEN_powerpc64=	fails to compile: internal compiler error: Killed (program cc1plus)
 
 LLVM_RELEASE=	${DISTVERSION:C/rc.*//}
 RCDIR=		${DISTVERSION:S/${LLVM_RELEASE}//:C|(rc.*)|\1/|}
@@ -23,8 +24,13 @@ LLVM_PREFIX=	${PREFIX}/llvm${LLVM_SUFFIX}
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}${LLVM_SUFFIX}
 DATADIR=	${PREFIX}/share/${PORTNAME}${LLVM_SUFFIX}
 
-USES=		cmake:outsource compiler:c++11-lib libedit ninja perl5 tar:xz
+USES=		cmake:outsource compiler:c++11-lib libedit perl5 tar:xz \
+		shebangfix
 USE_LDCONFIG=	${LLVM_PREFIX}/lib
+SHEBANG_FILES=	utils/lit/lit.py utils/llvm-lit/llvm-lit.in \
+		tools/clang/tools/scan-view/bin/scan-view \
+		tools/clang/tools/clang-format/git-clang-format \
+		tools/clang/tools/clang-format/clang-format-diff.py
 
 SUB_FILES=	llvm-wrapper.sh
 SUB_LIST=	LLVM_PREFIX="${LLVM_PREFIX}" LLVM_SUFFIX="${LLVM_SUFFIX}"
@@ -71,14 +77,23 @@ EXTRAS_DISTFILES= clang-tools-extra-${DISTVERSION}.src${EXTRACT_SUFX}
 LIT_DESC=		Install lit and FileCheck test tools
 LLD_DESC=		Install lld, the LLVM linker
 LLD_DISTFILES=		lld-${DISTVERSION}.src${EXTRACT_SUFX}
-LLDB_DESC=		Install lldb, the LLVM debugger (ignored on 9.x)
 LLDB_BUILD_DEPENDS=	swig:devel/swig13
+LLDB_DESC=		Install lldb, the LLVM debugger
 LLDB_DISTFILES=		lldb-${DISTVERSION}.src${EXTRACT_SUFX}
+LLDB_IMPLIES=		CLANG
 OPENMP_DESC=		Install libomp, the LLVM OpenMP runtime library
 OPENMP_DISTFILES=	openmp-${DISTVERSION}.src${EXTRACT_SUFX}
+OPENMP_EXTRA_PATCHES=	${PATCHDIR}/openmp-patch-bug32279
 GOLD_DESC=		Build the LLVM Gold plugin for LTO
 GOLD_CMAKE_ON=		-DLLVM_BINUTILS_INCDIR=${LOCALBASE}/include
 GOLD_BUILD_DEPENDS=	${LOCALBASE}/bin/ld.gold:devel/binutils
+
+.if defined(WITH_DEBUG)
+CMAKE_BUILD_TYPE=	RelWithDebInfo
+STRIP=
+.endif
+
+_CRTLIBDIR=    ${LLVM_PREFIX:S|${PREFIX}/||}/lib/clang/${LLVM_RELEASE}/lib/freebsd
 
 # Emulate USE_GITHUB's ${WRKSRC_tag} to reduce diffs to ../llvm-devel
 .for option in CLANG COMPILER_RT EXTRAS LLD LLDB OPENMP
@@ -181,7 +196,6 @@ _USES_PYTHON=	python
 .if ! ${OPTIONS_DEFINE:MCOMPILER_RT}
 # Hack to disable COMPILER_RT in plist of unsupported architectures
 PLIST_SUB+=    COMPILER_RT="@comment "
-.else
 .endif
 
 .if ! ${OPTIONS_DEFINE:MGOLD}
@@ -206,11 +220,8 @@ MAN1SRCS+=	bugpoint.1 llc.1 lli.1 llvm-ar.1 llvm-as.1 \
 		llvm-profdata.1 llvm-readobj.1 llvm-stress.1 llvm-symbolizer.1 \
 		opt.1 tblgen.1
 
-NOT_FOR_ARCH=	ia64
-
 .include <bsd.port.pre.mk>
 
-_CRTLIBDIR=    ${LLVM_PREFIX:S|${PREFIX}/||}/lib/clang/${LLVM_RELEASE}/lib/freebsd
 .if ${ARCH} == "amd64"
 _COMPILER_RT_LIBS= \
 	libclang_rt.asan-preinit-x86_64.a \
@@ -247,17 +258,17 @@ _COMPILER_RT_LIBS+= \
 	libclang_rt.ubsan_standalone_cxx-i386.a
 .endif
 
-.if ${OPSYS} != "FreeBSD" || ${COMPILER_TYPE} == clang
 .if ${PORT_OPTIONS:MEXTRAS}
 COMMANDS+=	${EXTRAS_COMMANDS}
 MAN1SRCS+=	extraclangtools.1
 PORTDOCS+=	clang-tools
+SHEBANG_FILES+=	tools/clang/tools/extra/clang-tidy/tool/clang-tidy-diff.py \
+		tools/clang/tools/extra/clang-tidy/tool/run-clang-tidy.py
 .endif
 
 .if ${PORT_OPTIONS:MLLD}
 COMMANDS+=	lld
 PORTDOCS+=	lld
-.endif
 .endif
 
 .if ${PYTHON_REL} < 3400
@@ -269,30 +280,17 @@ LLDB_BUILD_DEPENDS+= \
 BROKEN=	LLDB does not build with Python 3
 .endif
 
-.if ${OPSYS} == "FreeBSD" && ${COMPILER_TYPE} != clang
-# Evil hack around gcc48 not providing a usable c++11 environment on 9.x
-PLIST_SUB:=	${PLIST_SUB:NEXTRAS=*} EXTRAS="@comment "
-PLIST_SUB:=	${PLIST_SUB:NLLD=*} LLD="@comment "
-PLIST_SUB:=	${PLIST_SUB:NLLDB=*} LLDB="@comment "
-.endif
-
 post-extract-CLANG-on:
 	${MV} ${WRKSRC_clang} ${PATCH_WRKSRC}/tools/clang
 
 post-extract-EXTRAS-on:
-.if ${OPSYS} != "FreeBSD" || ${COMPILER_TYPE} == clang
 	${MV} ${WRKSRC_extras} ${PATCH_WRKSRC}/tools/clang/tools/extra
-.endif
 
 post-extract-LLD-on:
-.if ${OPSYS} != "FreeBSD" || ${COMPILER_TYPE} == clang
 	${MV} ${WRKSRC_lld} ${PATCH_WRKSRC}/tools/lld
-.endif
 
 post-extract-LLDB-on:
-.if ${OPSYS} != "FreeBSD" || ${COMPILER_TYPE} == clang
 	${MV} ${WRKSRC_lldb} ${PATCH_WRKSRC}/tools/lldb
-.endif
 
 post-extract-OPENMP-on:
 	${MV} ${WRKSRC_openmp} ${PATCH_WRKSRC}/tools/openmp
@@ -302,9 +300,14 @@ post-patch:
 	    -e 's|from lit|from lit${LLVM_SUFFIX}|' \
 	    -e 's|lit\.|lit${LLVM_SUFFIX}.|' \
 	    ${WRKSRC}/utils/lit/lit.py ${WRKSRC}/utils/lit/lit/*.py
+	${REINPLACE_CMD} -e 's,/usr/local/,${LOCALBASE}/,' \
+	    ${WRKSRC}/CMakeLists.txt
 
 post-patch-COMPILER_RT-on:
 	cd ${WRKSRC_compiler_rt} && patch < ${PATCHDIR}/compiler-rt-patch-svn-261229
+	cd ${WRKSRC_compiler_rt} && patch < ${PATCHDIR}/compiler-rt-patch-svn-294806
+	cd ${WRKSRC_compiler_rt} && patch < ${PATCHDIR}/compiler-rt-patch-canonical-syscalls
+	cd ${WRKSRC_compiler_rt} && patch < ${PATCHDIR}/compiler-rt-patch-ino64
 .if ${ARCH} == "amd64"
 	cd ${WRKSRC_compiler_rt} && patch < ${PATCHDIR}/compiler-rt-patch-no-m32
 .endif
@@ -346,15 +349,12 @@ post-install-DOCS-on:
 .if ${PORT_OPTIONS:MCLANG}
 post-install-DOCS-off:
 	${RM} ${STAGEDIR}${LLVM_PREFIX}/share/man/man1/scan-build.1
-	${RMDIR} ${STAGEDIR}${LLVM_PREFIX}/share/man/man1/
-	${RMDIR} ${STAGEDIR}${LLVM_PREFIX}/share/man/
+	${RM} -r ${STAGEDIR}${LLVM_PREFIX}/share/man
 .endif
 
 post-install-LLDB-on:
-.if ${OPSYS} != "FreeBSD" || ${COMPILER_TYPE} == clang
 	${RM} ${STAGEDIR}${LLVM_PREFIX}/lib/python*/site-packages/lib
 	${RMDIR} ${STAGEDIR}${LLVM_PREFIX}/include/lldb/Host/windows/getopt
-.endif
 
 post-install-CLANG-on:
 	${LN} -f ${STAGEDIR}${LLVM_PREFIX}/bin/clang \
@@ -427,7 +427,6 @@ build-plist:
 	    if ($$0 !~ /libclang_rt/) {print}}' ${PLIST}.tmp >> ${PLIST}
 	${RM} ${PLIST}.tmp
 
-
 check-commands:
 .for command in ${COMMANDS}
 	test -e ${STAGEDIR}${LLVM_PREFIX}/bin/${command}
@@ -464,6 +463,16 @@ _LLVM_BASE=http://llvm.org/svn/llvm-project/lldb/trunk
 svn-patch-lldb:
 	svn log -c ${PATCH_REV} ${_LLVM_BASE} >> ${_PATCH_FILE}
 	svn diff -c ${PATCH_REV} ${_LLVM_BASE} | >> ${_PATCH_FILE}
+.endif
+.if make(svn-patch-llvm)
+.if !defined(PATCH_REV)
+.error svn-patch-llvm requires that PATCH_REV be set
+.endif
+_PATCH_FILE=${FILESDIR}/patch-svn-${PATCH_REV}
+_LLVM_BASE=http://llvm.org/svn/llvm-project/llvm/trunk
+svn-patch-llvm:
+	svn log -c ${PATCH_REV} ${_LLVM_BASE} >> ${_PATCH_FILE}
+	svn diff -c ${PATCH_REV} ${_LLVM_BASE} >> ${_PATCH_FILE}
 .endif
 
 .include <bsd.port.post.mk>

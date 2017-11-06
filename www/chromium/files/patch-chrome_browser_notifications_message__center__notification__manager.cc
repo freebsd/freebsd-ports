@@ -1,7 +1,7 @@
---- chrome/browser/notifications/message_center_notification_manager.cc.orig	2016-05-11 19:02:14 UTC
+--- chrome/browser/notifications/message_center_notification_manager.cc.orig	2017-06-05 19:03:02 UTC
 +++ chrome/browser/notifications/message_center_notification_manager.cc
-@@ -75,7 +75,7 @@ MessageCenterNotificationManager::Messag
-       new FullscreenNotificationBlocker(message_center)));
+@@ -62,7 +62,7 @@ MessageCenterNotificationManager::MessageCenterNotific
+       base::MakeUnique<FullscreenNotificationBlocker>(message_center));
  
  #if defined(OS_WIN) || defined(OS_MACOSX) \
 -  || (defined(OS_LINUX) && !defined(OS_CHROMEOS))

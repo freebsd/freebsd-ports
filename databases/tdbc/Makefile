@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	tdbc
-DISTVERSION=	1.0.4
+DISTVERSION=	1.0.5
 CATEGORIES=	databases
-MASTER_SITES=	TCLTK/tcl8_6 \
-		SF/tcl/Tcl/8.6.5
+MASTER_SITES=	SF/tcl/Tcl/8.6.7
 DISTFILES=	${PORTNAME}${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	tcltk@FreeBSD.org
@@ -23,9 +22,7 @@ OPTIONS_SUB=	yes
 USES=		tcl:86,tea
 USE_LDCONFIG=	yes
 MAKE_ENV+=	DESTDIR=${STAGEDIR}
-CONFIGURE_ARGS+=--with-tcloo=${TCL_LIBDIR} \
-		--with-tdbc=${WRKDIR}/tdbc${PORTVERSION} \
-		--enable-threads \
+CONFIGURE_ARGS+=--enable-threads \
 		--mandir=${PREFIX}/man \
 		--includedir=${PREFIX}/include/tdbc
 PLIST_SUB+=	VERSION=${DISTVERSION} \
@@ -33,6 +30,9 @@ PLIST_SUB+=	VERSION=${DISTVERSION} \
 		TCL_VER=${TCL_VER}
 
 MODULES=	tdbc
+
+# TDBC (code)
+tdbc_CONFIGURE_ARGS=	--with-tcloo=${TCL_LIBDIR}
 
 # MySQL
 MYSQL_VARS=		MODULES+=tdbcmysql
@@ -43,6 +43,7 @@ MYSQL_DISTFILES=	${PORTNAME}mysql${PORTVERSION}${EXTRACT_SUFX}
 ODBC_VARS=		MODULES+=tdbcodbc
 ODBC_LIB_DEPENDS=	libodbc.so:databases/unixODBC
 ODBC_DISTFILES=		${PORTNAME}odbc${PORTVERSION}${EXTRACT_SUFX}
+tdbcodbc_CONFIGURE_ARGS=--with-tdbc=${WRKDIR}/tdbc${PORTVERSION}
 
 # PostgreSQL
 PGSQL_VARS=		MODULES+=tdbcpostgres
@@ -72,7 +73,10 @@ do-configure:
 .for module in ${MODULES}
 	@echo "================================="
 	@echo "Configuring ${module}"
-	cd ${WRKDIR}/${module}${PORTVERSION} && ${SETENV} ${CONFIGURE_ENV} ${SH} configure ${CONFIGURE_ARGS}
+	cd ${WRKDIR}/${module}${PORTVERSION} && \
+	    ${SETENV} ${CONFIGURE_ENV} ${SH} configure \
+	    ${CONFIGURE_ARGS} ${${module}_CONFIGURE_ARGS}
+
 .endfor
 
 post-configure:

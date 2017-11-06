@@ -9,4 +9,4 @@ be used from shell scripts similarly to Savio Lam's "dialog". Newt
 provides the textual interface for the Red Hat and Debian boot
 disks.
 
-WWW: https://fedorahosted.org/newt/
+WWW: https://pagure.io/newt

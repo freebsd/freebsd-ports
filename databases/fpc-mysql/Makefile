@@ -4,7 +4,6 @@
 CATEGORIES=	databases lang
 PKGNAMESUFFIX=	-mysql
 
-MAINTAINER=	freebsd-fpc@FreeBSD.org
 COMMENT=	Free Pascal interface to MySQL
 
 USE_FPC=	yes

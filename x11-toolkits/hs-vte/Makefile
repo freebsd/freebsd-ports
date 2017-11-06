@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	vte
-PORTVERSION=	0.13.0.2
+PORTVERSION=	0.13.1.1
 CATEGORIES=	x11-toolkits haskell
 
 MAINTAINER=	haskell@FreeBSD.org

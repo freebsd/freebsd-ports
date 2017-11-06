@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	strongswan
-PORTVERSION=	5.5.1
+PORTVERSION=	5.6.0
 CATEGORIES=	security
 MASTER_SITES=	http://download.strongswan.org/ \
 		http://download2.strongswan.org/
@@ -12,7 +12,7 @@ COMMENT=	Open Source IKEv2 IPsec-based VPN solution
 
 LICENSE=	GPLv2
 
-USES=		cpe execinfo libtool:keepla pkgconfig tar:bzip2 ssl
+USES=		cpe libtool:keepla pkgconfig tar:bzip2 ssl
 USE_RC_SUBR=	strongswan
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	${PREFIX}/lib/ipsec
@@ -39,11 +39,11 @@ CONFIGURE_ARGS=	--enable-kernel-pfkey \
 		--with-lib-prefix=${PREFIX}
 
 OPTIONS_DEFINE=	CURL EAPAKA3GPP2 EAPDYNAMIC EAPRADIUS EAPSIMFILE GCM IKEv1 \
-		IPSECKEY KERNELLIBIPSEC LOADTESTER LDAP MYSQL PKI SCEP SMP \
-		SQLITE SWANCTL TESTVECTOR UNBOUND UNITY VICI XAUTH
+		IPSECKEY KERNELLIBIPSEC LOADTESTER LDAP MEDIATION MYSQL PKI SCEP SMP \
+		SQLITE SWANCTL TESTVECTOR TPM UNBOUND UNITY VICI XAUTH
 OPTIONS_DEFAULT=	IKEv1 BUILTIN PKI SWANCTL VICI
 OPTIONS_SINGLE=	PRINTF_HOOKS
-OPTIONS_SINGLE_PRINTF_HOOKS=	BUILTIN VSTR LIBC
+OPTIONS_SINGLE_PRINTF_HOOKS=	BUILTIN LIBC VSTR
 OPTIONS_SUB=	yes
 
 # Description of options
@@ -57,11 +57,13 @@ IKEv1_DESC=	Enable IKEv1 support
 IPSECKEY_DESC=	Enable authentication with IPSECKEY resource records with DNSSEC
 KERNELLIBIPSEC_DESC=	Enable IPSec userland backend
 LOADTESTER_DESC=	Enable load testing plugin
-TESTVECTOR_DESC=	Enable crypto test vectors
+MEDIATION_DESC=		Enable IKEv2 Mediation Extension
 PKI_DESC=	Enable PKI tools
 SCEP_DESC=	Enable Simple Certificate Enrollment Protocol
 SMP_DESC=	Enable XML-based management protocol (DEPRECATED)
 SWANCTL_DESC=	Install swanctl (requires VICI)
+TESTVECTOR_DESC=	Enable crypto test vectors
+TPM_DESC=	Enable TPM plugin
 UNBOUND_DESC=	Enable DNSSEC-enabled resolver
 UNITY_DESC=	Enable Cisco Unity extension plugin
 VICI_DESC=	Enable VICI management protocol
@@ -85,17 +87,19 @@ KERNELLIBIPSEC_CONFIGURE_ON=	--enable-kernel-libipsec
 LOADTESTER_CONFIGURE_ON=--enable-load-tester
 LDAP_CONFIGURE_ON=	--enable-ldap
 LDAP_USE=		OPENLDAP=yes
+MEDIATION_CONFIGURE_ON=	--enable-mediation
 MYSQL_CONFIGURE_ON=	--enable-mysql
 MYSQL_USES=		mysql
-SMP_LIB_DEPENDS=	libxml2.so:textproc/libxml2
-SMP_CONFIGURE_ON=	--enable-smp
-SWANCTL_CONFIGURE_ON=	--enable-swanctl
-SWANCTL_IMPLIES=	VICI
-SQLITE_CONFIGURE_ON=	--enable-sqlite
-SQLITE_LIB_DEPENDS=	libsqlite3.so:databases/sqlite3
-TESTVECTOR_CONFIGURE_ON=--enable-test-vectors
 PKI_CONFIGURE_OFF=	--disable-pki
 SCEP_CONFIGURE_OFF=	--disable-scepclient
+SMP_LIB_DEPENDS=	libxml2.so:textproc/libxml2
+SMP_CONFIGURE_ON=	--enable-smp
+SQLITE_CONFIGURE_ON=	--enable-sqlite
+SQLITE_LIB_DEPENDS=	libsqlite3.so:databases/sqlite3
+SWANCTL_CONFIGURE_ON=	--enable-swanctl
+SWANCTL_IMPLIES=	VICI
+TESTVECTOR_CONFIGURE_ON=--enable-test-vectors
+TPM_CONFIGURE_ON=	--enable-tpm
 UNBOUND_CONFIGURE_ON=	--enable-unbound
 UNBOUND_LIB_DEPENDS=	libunbound.so:dns/unbound \
 			libldns.so:dns/ldns

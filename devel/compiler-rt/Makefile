@@ -9,9 +9,9 @@ MASTER_SITES=	LOCAL/brooks
 MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	Compiler runtime library with Blocks support
 
-BROKEN_powerpc64=	Does not build
-
 BUILD_DEPENDS=	cmake:devel/cmake
+
+BROKEN_powerpc64=	does not build: undefined reference to fmax
 
 CONFIGURE_WRKSRC=	${WRKDIR}/build
 BUILD_WRKSRC=		${WRKDIR}/build
@@ -21,7 +21,6 @@ CMAKE_SOURCE_PATH=	${WRKSRC}
 
 USES=		cmake tar:bzip2
 USE_LDCONFIG=	yes
-MAKE_ARGS=	VERBOSE=1
 
 LLVM_SVN=	http://llvm.org/svn/llvm-project
 

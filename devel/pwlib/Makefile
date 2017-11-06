@@ -3,7 +3,7 @@
 
 PORTNAME=	pwlib
 PORTVERSION=	1.12.0
-PORTREVISION=	11
+PORTREVISION=	13
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	SF/openh323/${PORTNAME}/${PORTVERSION}
@@ -15,15 +15,16 @@ COMMENT=	Cross platform C++ library, used by OpenH323
 
 LIB_DEPENDS=	libexpat.so:textproc/expat2
 
+BROKEN_aarch64=		fails to compile: fatal error: trclib.h: No such file or directory
+BROKEN_mips64=		fails to compile: fatal error: trclib.h: No such file or directory
+
 CONFLICTS=	ptlib-2.*
 
 WRKSRC=		${WRKDIR}/ptlib_v${PORTVERSION:S/./_/g}
 
-USES=		bison gmake
+USES=		bison gmake ssl
 USE_GCC=	any
 USE_AUTOTOOLS=	autoconf
-WANT_GNOME=	yes
-USE_OPENSSL=	yes
 USE_LDCONFIG=	yes
 MAKE_JOBS_UNSAFE=	yes
 
@@ -36,6 +37,11 @@ CFLAGS+=		-O1
 MAKE_ENV=	STDCCFLAGS+="-I${LOCALBASE}"
 CPPFLAGS+=	-O1 -I${WRKSRC}/include -I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+
+# The port does not build with C++11 or later (bug 219275), and it also uses
+# CFLAGS instead of CXXFLAGS in parts of the build system, so we cannot just
+# use USE_CXXSTD.
+CFLAGS+=	-std=gnu++03
 
 CONFIGURE_ENV+=	ATOMICITY_H="<ext/atomicity.h>"
 
@@ -94,11 +100,11 @@ PLIST_SUB+=	DC1394="@comment "
 
 .include <bsd.port.pre.mk>
 
-.if (${ARCH} == "amd64") || (${ARCH} == "ia64") || (${ARCH} == "powerpc") || (${ARCH} == "sparc64")
+.if (${ARCH} == "amd64") || (${ARCH} == "powerpc") || (${ARCH} == "sparc64")
 CFLAGS+=	-fPIC
 .endif
 
-.if (${ARCH} == "amd64") || (${ARCH} == "i386") || (${ARCH} == "ia64") || (${ARCH} == "powerpc") || (${ARCH} == "sparc64")
+.if (${ARCH} == "amd64") || (${ARCH} == "i386") || (${ARCH} == "powerpc") || (${ARCH} == "sparc64")
 PLIST_SUB+=	BSDVIDEO=""
 .else
 PLIST_SUB+=	BSDVIDEO="@comment "

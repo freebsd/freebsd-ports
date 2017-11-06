@@ -1,0 +1,24 @@
+--- tools/Makefile.am.orig	2017-02-11 05:10:33 UTC
++++ tools/Makefile.am
+@@ -11,8 +11,8 @@ AM_CXXFLAGS = $(GCC_CXXFLAGS)
+ libshared_la_SOURCES = \
+ 		       shared.c \
+ 		       shared.h
+-libshared_la_CFLAGS = $(AM_CFLAGS) $(LIBEVDEV_CFLAGS)
+-libshared_la_LIBADD = $(LIBEVDEV_LIBS)
++libshared_la_CFLAGS = $(AM_CFLAGS) $(LIBEVDEV_CFLAGS) $(LIBUDEV_CFLAGS)
++libshared_la_LIBADD = $(LIBEVDEV_LIBS) $(LIBUDEV_LIBS)
+ 
+ event_debug_SOURCES = event-debug.c
+ event_debug_LDADD = ../src/libinput.la libshared.la $(LIBUDEV_LIBS) $(LIBEVDEV_LIBS)
+@@ -20,8 +20,9 @@ event_debug_LDFLAGS = -no-install
+ event_debug_CFLAGS = $(AM_CFLAGS) $(LIBUDEV_CFLAGS) $(LIBEVDEV_CFLAGS)
+ 
+ ptraccel_debug_SOURCES = ptraccel-debug.c
+-ptraccel_debug_LDADD = ../src/libfilter.la ../src/libinput.la
++ptraccel_debug_LDADD = ../src/libfilter.la ../src/libinput.la $(LIBUDEV_LIBS)
+ ptraccel_debug_LDFLAGS = -no-install
++ptraccel_debug_CFLAGS = $(LIBUDEV_CFLAGS)
+ 
+ libinput_list_devices_SOURCES = libinput-list-devices.c
+ libinput_list_devices_LDADD = ../src/libinput.la libshared.la $(LIBUDEV_LIBS)

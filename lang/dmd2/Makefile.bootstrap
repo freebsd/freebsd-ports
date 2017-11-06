@@ -3,10 +3,12 @@
 
 PORTNAME=	dmd
 PORTVERSION=	2.067.1
+MASTER_SITES=	http://ftp.digitalmars.com/
 CATEGORIES=	lang
 PKGNAMESUFFIX=	2
 DISTNAME=	dmd.${PORTVERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
+DISTINFO_FILE=	${MASTERDIR}/distinfo.bootstrap
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	D 2.0 compiler bootstrap
@@ -63,15 +65,9 @@ make-dmd:
 do-build: make-dmd make-phobos make-druntime
 
 do-install:
-	${INSTALL_MAN} ${WRKDIR}/dmd2/man/man1/dmd.1 ${STAGEDIR}${MANPREFIX}/man/man1/dmd.1
-	${INSTALL_MAN} ${WRKDIR}/dmd2/man/man5/dmd.conf.5 ${STAGEDIR}${MANPREFIX}/man/man5/dmd.conf.5
-	${INSTALL_DATA} ${WRKDIR}/dmd2/freebsd/bin${MODEL}/dmd.conf ${STAGEDIR}${PREFIX}/etc/dmd.conf.sample
+	${INSTALL_DATA} ${WRKDIR}/dmd2/freebsd/bin${MODEL}/dmd.conf ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/dmd ${STAGEDIR}${PREFIX}/bin/dmd
 	${INSTALL_DATA} ${WRKSRC}/../../freebsd/lib${MODEL}/libphobos2.a ${STAGEDIR}${PREFIX}/lib
-	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKDIR}/dmd2/freebsd/bin32/dmd.conf ${STAGEDIR}${EXAMPLESDIR}/dmd32.conf
-	${INSTALL_DATA} ${WRKDIR}/dmd2/freebsd/bin64/dmd.conf ${STAGEDIR}${EXAMPLESDIR}/dmd64.conf
-	cd ${WRKDIR}/dmd2 && ${COPYTREE_SHARE} samples ${STAGEDIR}${EXAMPLESDIR}
 	${MKDIR} ${STAGEDIR}${MODULEDIR}/etc/c
 	${INSTALL_DATA} ${WRKSRC}/../phobos/*.d ${STAGEDIR}${MODULEDIR}
 	${INSTALL_DATA} ${WRKSRC}/../phobos/etc/c/zlib.d ${STAGEDIR}${MODULEDIR}/etc/c
@@ -80,9 +76,6 @@ do-install:
 	cd ${WRKSRC}/../phobos && ${COPYTREE_SHARE} std ${STAGEDIR}${MODULEDIR}
 	${MKDIR} ${STAGEDIR}${MODULEDIR}/../druntime
 	cd ${WRKSRC}/../druntime && ${COPYTREE_SHARE} import ${STAGEDIR}${MODULEDIR}/../druntime
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/*.txt ${STAGEDIR}${DOCSDIR}
-	cd ${WRKDIR}/dmd2 && ${COPYTREE_SHARE} html ${STAGEDIR}${DOCSDIR}
 
 	${LN} -sf ${STAGEDIR}/${PREFIX}/bin/dmd ${WRKDIR}/dmd2/freebsd/bin${MODEL}/dmd
 

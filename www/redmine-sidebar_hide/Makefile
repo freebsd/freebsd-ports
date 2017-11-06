@@ -2,11 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	sidebar_hide
-PORTVERSION=	0.0.7
+PORTVERSION=	0.0.8
 CATEGORIES=	www
 
 MAINTAINER=	kozlov.sergey.404@gmail.com
 COMMENT=	Adds simple hide button for sidebar of Redmine
+
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 NO_ARCH=	yes
 

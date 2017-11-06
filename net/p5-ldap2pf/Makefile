@@ -1,13 +1,15 @@
 # $FreeBSD$
 
 PORTNAME=	ldap2pf
-PORTVERSION=	20151106
+PORTVERSION=	20170424
 CATEGORIES=	net
 MASTER_SITES=	GH
-PKGNAMEPREFIX=  p5-
+PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	des@FreeBSD.org
 COMMENT=	Create and update PF tables from LDAP groups
+
+LICENSE=	BSD3CLAUSE
 
 RUN_DEPENDS=	p5-Authen-SASL>=0:security/p5-Authen-SASL \
 		p5-IO-Socket-INET6>=0:net/p5-IO-Socket-INET6 \

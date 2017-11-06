@@ -40,7 +40,7 @@ SUB_LIST+=	FWDIR=${FWDIR} FIND=${FIND} CHMOD=${CHMOD} CHOWN=${CHOWN} \
 		TOUCH=${TOUCH} WWWOWN=${WWWOWN} WWWGRP=${WWWGRP} \
 		CONFDIR=${CONFDIR}
 MAINTAINER?=	glarkin@FreeBSD.org
-RUN_DEPENDS+=	${FWDEP:C/([^=<>]*)([=<>]*)(.*)/foswiki-\1\20.0.\3:${PORTSDIR}\/www\/foswiki-\1/}
+RUN_DEPENDS+=	${FWDEP:C/([^=<>]*)([=<>]*)(.*)/foswiki-\1\20.0.\3:www\/foswiki-\1/}
 
 make-dist:
 	${INSTALL} -d ${WRKDIR}/

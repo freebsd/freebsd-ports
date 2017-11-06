@@ -5,7 +5,7 @@ efficient for networks with frequent updates -- serving DHCP, for example.
 Updates to the zones are immediate, and do not require restarting sheerdns.
 
 SheerDNS is a good candidate for creating and RBL for mail, or web sites,
-as well as for providing DNS on embeded systems. Or anything else that
+as well as for providing DNS on embedded systems. Or anything else that
 requires a fast DNS, with very low overhead.
 
 WWW: http://BSDforge.com/projects/dns/sheerdns/

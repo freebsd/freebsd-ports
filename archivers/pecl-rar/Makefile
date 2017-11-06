@@ -2,22 +2,17 @@
 # $FreeBSD$
 
 PORTNAME=	rar
-PORTVERSION=	3.0.2
-PORTREVISION=	1
+PORTVERSION=	4.0.0
 CATEGORIES=	archivers pear
-MASTER_SITES=	http://pecl.php.net/get/
-PKGNAMEPREFIX=	pecl-
-DIST_SUBDIR=	PECL
 
-MAINTAINER=	joneum@bsdproject.de
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	PECL extension to create and read RAR files
 
 LICENSE=	PHP301
 
-USES=		php:ext tar:tgz
+USES=		php:pecl
 USE_PHP=	spl:build
-IGNORE_WITH_PHP=	70
-
+IGNORE_WITH_PHP=	70 71
 
 CONFIGURE_ARGS=	--enable-rar
 

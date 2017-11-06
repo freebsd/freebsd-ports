@@ -2,23 +2,25 @@
 # $FreeBSD$
 
 PORTNAME=	sol
-PORTVERSION=	1.0.7
-PORTREVISION=	5
+PORTVERSION=	1.0.8
 CATEGORIES=	games
 MASTER_SITES=	http://shh.thathost.com/pub-unix/files/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Solitaire card game for X Window System
 
-LIB_DEPENDS=	libshhopt.so.1:devel/libshhopt \
-		libshhmsg.so.1:devel/libshhmsg \
-		libxalloc.so.1:devel/libxalloc \
-		libshhcards.so.1:games/libshhcards
+LICENSE=	ART10
+
+LIB_DEPENDS=	libXaw.so:x11-toolkits/libXaw \
+		libshhcards.so:games/libshhcards \
+		libshhmsg.so:devel/libshhmsg \
+		libshhopt.so:devel/libshhopt \
+		libxalloc.so:devel/libxalloc
 
 CONFLICTS=	gnome-games-*
 
 USES=		gmake
-USE_XORG=	xpm x11 xaw
+USE_XORG=	ice sm x11 xext xmu xpm xt
 
 OPTIONS_DEFINE=	DOCS
 

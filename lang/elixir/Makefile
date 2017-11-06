@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	elixir
-PORTVERSION=	1.3.4
+PORTVERSION=	1.5.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	lang
 MASTER_SITES+=	https://github.com/elixir-lang/elixir/releases/download/${DISTVERSIONPREFIX}${PORTVERSION}/:doc
@@ -21,8 +21,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	elixir-lang
 
 USES=		gmake
-MAKE_ENV=	LANG=en_US.UTF-8
-ALL_TARGET=	#empty
+USE_LOCALE=	en_US.UTF-8
+ALL_TARGET=	# empty
 REINPLACE_ARGS=	-i ""
 NO_ARCH=	yes
 OPTIONS_SUB=	yes
@@ -36,10 +36,6 @@ SRC_DESC=	Install source code
 
 post-extract:
 	@${FIND} ${WRKDIR}/doc -name .build -delete
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|share/man|man|' ${WRKSRC}/Makefile
-	@${RM} ${WRKSRC}/bin/*.orig
 
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}

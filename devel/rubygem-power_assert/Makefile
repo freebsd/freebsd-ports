@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	power_assert
-PORTVERSION=	0.4.1
+PORTVERSION=	1.1.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 

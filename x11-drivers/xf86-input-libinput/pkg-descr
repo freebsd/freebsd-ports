@@ -1,0 +1,5 @@
+This package contains the X.Org xf86-input-libinput driver. It is a thin
+wrapper around libinput, so while it does provide all features that libinput
+supports it does little beyond.
+
+WWW: https://www.x.org/

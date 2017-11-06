@@ -2,7 +2,7 @@
 
 PORTNAME=	libodfgen
 PORTVERSION=	0.1.6
-PORTREVISION=	2
+PORTREVISION=	5
 CATEGORIES=	textproc
 MASTER_SITES=	SF/libwpd/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 PKGNAMESUFFIX=	01
@@ -10,7 +10,7 @@ PKGNAMESUFFIX=	01
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Library for generating documents in Open Document Format (ODF)
 
-LICENSE=	LGPL21 MPL
+LICENSE=	LGPL21 MPL20
 LICENSE_COMB=	dual
 
 LIB_DEPENDS=	librevenge-0.0.so:textproc/librevenge

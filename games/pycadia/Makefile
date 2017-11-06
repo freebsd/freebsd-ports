@@ -3,7 +3,7 @@
 
 PORTNAME=	pycadia
 PORTVERSION=	0.5.1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	games python
 MASTER_SITES=	GENTOO \
 		SF/nemysisfreebsdp/games/
@@ -19,8 +19,10 @@ RUN_DEPENDS=	${PYGAME}
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USES=		python:2
+USES=		python:2 shebangfix
 USE_GNOME=	pygtk2 libgnomeui
+SHEBANG_FILES=	*.py
+NO_ARCH=	yes
 
 PORTDOCS=	CHANGELOG README gravity.txt
 OPTIONS_DEFINE=	DOCS
@@ -57,6 +59,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/pixmaps/pysteroids.png \
 		${STAGEDIR}${PREFIX}/share/pixmaps/${PORTNAME}.png
 
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/doc/|} ${STAGEDIR}${DOCSDIR}
 

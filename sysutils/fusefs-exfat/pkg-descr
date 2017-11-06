@@ -1,6 +1,6 @@
 exfat-fuse is a free exFAT file system implementation with write support.
 exFAT is a simple file system created by Microsoft. It is intended to
-replace FAT32 removing some of it's limitations. exFAT is a standard FS for
+replace FAT32 removing some of its limitations. exFAT is a standard FS for
 SDXC memory cards.
 
 WWW: https://github.com/relan/exfat

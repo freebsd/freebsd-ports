@@ -3,7 +3,7 @@
 
 PORTNAME=	gotmail
 PORTVERSION=	0.9.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	mail perl5
 MASTER_SITES=	SF
 
@@ -14,8 +14,7 @@ LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	curl:ftp/curl \
-		p5-URI>=0:net/p5-URI \
-		p5-Net>=0:net/p5-Net
+		p5-URI>=0:net/p5-URI
 
 USES=		perl5 shebangfix
 SHEBANG_FILES=	gotmail

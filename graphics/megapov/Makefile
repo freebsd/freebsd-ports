@@ -10,7 +10,7 @@ MASTER_SITES=	http://megapov.inetart.net/packages/unix/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Unofficial extensions of POV-Ray
 
-BROKEN_powerpc64=	Does not build
+BROKEN_powerpc64=	Does not build: nputoutput.cpp:1: error: 64 bit CPU requiredd
 
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libtiff.so:graphics/tiff

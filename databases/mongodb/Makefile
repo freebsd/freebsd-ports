@@ -3,9 +3,13 @@
 
 PORTNAME=	mongodb
 PORTVERSION=	2.6.12
+PORTREVISION=	2
 CATEGORIES=	databases net
 MASTER_SITES=	http://downloads.mongodb.org/src/
 DISTNAME=	${PORTNAME}-src-r${PORTVERSION}
+
+PATCH_SITES=	https://github.com/${PORTNAME}/${PORTNAME:S|db$||}/commit/
+PATCHFILES=	0ee4735ab8fb.patch:-p1
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	NOSQL distributed document-oriented database
@@ -31,7 +35,7 @@ OPTIONS_DEFINE=	SSL SASL TEST
 OPTIONS_DEFAULT=SSL
 TEST_DESC=	Add support for running regression test
 
-USES=		cpe execinfo scons
+USES=		cpe scons
 MAKE_ARGS=	--prefix=${STAGEDIR}${PREFIX} --cc=${CC} --cxx=${CXX} \
 		--use-system-pcre --use-system-snappy --use-system-v8
 
@@ -45,7 +49,7 @@ PORTSCOUT=	limitw:1,even
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSSL}
-USE_OPENSSL=	yes
+USES+=		ssl
 MAKE_ARGS+=	--ssl
 .endif
 

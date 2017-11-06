@@ -5,7 +5,7 @@ PORTNAME=	midori
 PORTVERSION=	0.5.11
 CATEGORIES=	www xfce
 MASTER_SITES=	https://launchpadlibrarian.net/215909491/ \
-	https://launchpad.net/${PORTNAME}/trunk/${PORTVERSION}/+download/
+		https://launchpad.net/${PORTNAME}/trunk/${PORTVERSION}/+download/
 DIST_SUBDIR=	xfce4
 
 MAINTAINER=	xfce@FreeBSD.org
@@ -21,17 +21,16 @@ LIB_DEPENDS=	libnotify.so:devel/libnotify \
 		libgcr-3.so:security/gcr
 RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 CFLAGS+=	-Wno-return-type
 CMAKE_ARGS=	-DUSE_APIDOCS:BOOL=OFF \
-	-DUSE_GRANITE:BOOL=OFF
+		-DUSE_GRANITE:BOOL=OFF
 
+USES=		cmake desktop-file-utils gettext localbase:ldflags pkgconfig \
+		sqlite tar:bzip2
 USE_GNOME=	glib20 intltool libxml2
 USE_XORG=	xscrnsaver
 INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
-USES=		cmake desktop-file-utils gettext pkgconfig sqlite tar:bzip2
 
 PLIST_SUB=	VERSION="${PORTVERSION:R}"
 

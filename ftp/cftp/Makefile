@@ -11,6 +11,9 @@ MASTER_SITES=	ftp://ftp.giga.or.at/pub/nih/cftp/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Comfortable FTP, a full screen ftp client
 
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 USES=		ncurses
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-sftp

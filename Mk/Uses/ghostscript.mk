@@ -4,20 +4,22 @@
 #
 # Feature:	ghostscript
 # Usage:	USES=ghostscript or USES=ghostscript:args
-# Valid ARGS:	<version>, build, run, x11
+# Valid ARGS:	<version>, build, run, test, x11
 #
 # version 	The chooseable versions are 7, 8, 9 and agpl. If no version is
 #		specified version agpl is selected.
 #
 #		USES=ghostscript:7	# Use Ghostscript 7
-#		USES=ghostscript:run	# Use the set default Ghostscript as a run dependancy
-#		USES=ghostscript:8,build # Use ghostscript 8 as a build dependancy.
+#		USES=ghostscript:run	# Use the set default Ghostscript as a run dependency
+#		USES=ghostscript:8,build # Use ghostscript 8 as a build dependency.
 #
 # x11		Indicate that X11 support is required.
 # build		Indicates that Ghostscript is needed at build time and adds
 #		it as BUILD_DEPENDS.
 # run		Indicates that Ghostscript is needed at run time and adds
 #		it as RUN_DEPENDS.
+# test		Indicates that Ghostscript is needed at test time and adds
+#		it as TEST_DEPENDS.
 #
 # If build and run are omitted, Ghostscript will be added as BUILD_DEPENDS and
 # RUN_DEPENDS.
@@ -34,7 +36,7 @@ _GS_VERSION=	7 8 9 agpl
 
 _GS_ARGS=		${ghostscript_ARGS}
 
-.if ${_GS_ARGS:N[789]:Nagpl:Nx11:Nbuild:Nrun}
+.if ${_GS_ARGS:N[789]:Nagpl:Nx11:Nbuild:Nrun:Ntest}
 IGNORE?=	Unknown ghostscript argument ${_GS_ARGS}
 .endif
 
@@ -46,16 +48,20 @@ IGNORE?=	Invalid GHOSTSCRIPT_DEFAULT value: ${GHOSTSCRIPT_DEFAULT}, please selec
 # pollutes the build/run dependency detection
 .undef _GS_BUILD_DEP
 .undef _GS_RUN_DEP
+.undef _GS_TEST_DEP
 .if ${_GS_ARGS:Mbuild}
 _GS_BUILD_DEP=	yes
 .endif
 .if ${_GS_ARGS:Mrun}
 _GS_RUN_DEP=	yes
 .endif
+.if ${_GS_ARGS:Mtest}
+_GS_TEST_DEP=	yes
+.endif
 
-# The port does not specify a build or run dependency, assume both are
-# required.
-.if !defined(_GS_BUILD_DEP) && !defined(_GS_RUN_DEP)
+# The port does not specify a build, run, or test dependency, assume that
+# a build and run dependency is required.
+.if !defined(_GS_BUILD_DEP) && !defined(_GS_RUN_DEP) && !defined(_GS_TEST_DEP)
 _GS_BUILD_DEP=	yes
 _GS_RUN_DEP=	yes
 .endif
@@ -89,7 +95,7 @@ _GS_VERSION_MINOR=	7.07_32
 _GS_PORT=	ghostscript${_GS_SELECTED}-base
 _GS_X11_PORT=	ghostscript${_GS_SELECTED}-x11
 
-.for type in BUILD RUN
+.for type in BUILD RUN TEST
 .if defined(_GS_${type}_DEP)
 ${type}_DEPENDS+=	${_GS_PORT}>=${_GS_VERSION_MINOR}:print/${_GS_PORT}
 .if ${_GS_ARGS:Mx11}

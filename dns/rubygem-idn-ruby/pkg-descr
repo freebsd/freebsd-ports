@@ -1,0 +1,10 @@
+Ruby Bindings for the GNU LibIDN library, an implementation of the
+Stringprep, Punycode and IDNA specifications defined by the IETF
+Internationalized Domain Names (IDN) working group.
+
+Included are the most important parts of the Stringprep, Punycode and
+IDNA APIs like performing Stringprep processings, encoding to and
+decoding from Punycode strings and converting entire domain names to and
+from the ACE encoded form.
+  
+WWW: https://github.com/deepfryed/idn-ruby

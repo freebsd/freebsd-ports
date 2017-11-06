@@ -36,6 +36,7 @@
 %%QT_INCDIR%%/QtNetwork/%%FULLVER%%/QtNetwork/private/qnetworkconfiguration_p.h
 %%QT_INCDIR%%/QtNetwork/%%FULLVER%%/QtNetwork/private/qnetworkcookie_p.h
 %%QT_INCDIR%%/QtNetwork/%%FULLVER%%/QtNetwork/private/qnetworkcookiejar_p.h
+%%QT_INCDIR%%/QtNetwork/%%FULLVER%%/QtNetwork/private/qnetworkdatagram_p.h
 %%QT_INCDIR%%/QtNetwork/%%FULLVER%%/QtNetwork/private/qnetworkdiskcache_p.h
 %%QT_INCDIR%%/QtNetwork/%%FULLVER%%/QtNetwork/private/qnetworkinterface_p.h
 %%QT_INCDIR%%/QtNetwork/%%FULLVER%%/QtNetwork/private/qnetworkproxy_p.h
@@ -148,9 +149,9 @@
 %%QT_INCDIR%%/QtNetwork/qtcpsocket.h
 %%QT_INCDIR%%/QtNetwork/qtnetworkversion.h
 %%QT_INCDIR%%/QtNetwork/qudpsocket.h
-%%QT_LIBDIR%%/cmake/Qt5Network/Qt5NetworkConfig.cmake
-%%QT_LIBDIR%%/cmake/Qt5Network/Qt5NetworkConfigVersion.cmake
-%%QT_LIBDIR%%/cmake/Qt5Network/Qt5Network_QGenericEnginePlugin.cmake
+%%QT_CMAKEDIR%%/Qt5Network/Qt5NetworkConfig.cmake
+%%QT_CMAKEDIR%%/Qt5Network/Qt5NetworkConfigVersion.cmake
+%%QT_CMAKEDIR%%/Qt5Network/Qt5Network_QGenericEnginePlugin.cmake
 %%QT_LIBDIR%%/libQt5Network.prl
 %%QT_LIBDIR%%/libQt5Network.so
 %%QT_LIBDIR%%/libQt5Network.so.5

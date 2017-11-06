@@ -1,4 +1,4 @@
---- tools/depends/target/ffmpeg/autobuild.sh.orig	2016-02-20 15:21:19 UTC
+--- tools/depends/target/ffmpeg/autobuild.sh.orig	2016-10-08 UTC
 +++ tools/depends/target/ffmpeg/autobuild.sh
 @@ -1,4 +1,4 @@
 -#!/bin/bash
@@ -8,7 +8,7 @@
  #      http://xbmc.org
 @@ -27,7 +27,8 @@ BASE_URL=$(grep "BASE_URL=" FFMPEG-VERSI
  VERSION=$(grep "VERSION=" FFMPEG-VERSION | sed 's/VERSION=//g')
- ARCHIVE=ffmpeg-${VERSION}.tar.gz
+ ARCHIVE=ffmpeg-$(echo "${VERSION}" | sed 's/\//-/g').tar.gz
  
 -function usage {
 +usage()
@@ -16,7 +16,7 @@
    echo "usage $(basename $0) 
         [-p | --prefix]    ... ffmepg install prefix
         [-d | --download]  ... no build, download tarfile only
-@@ -82,6 +83,14 @@ do
+@@ -82,6 +83,46 @@ do
        FLAGS="$FLAGS --extra-cxxflags=\"${1#*=}\""
        shift
        ;;
@@ -28,10 +28,42 @@
 +      FLAGS="$FLAGS --cxx=${1#*=}"
 +      shift
 +      ;;
++    --disable-xlib)
++      FLAGS="$FLAGS --disable-xlib"
++      shift
++      ;;
++    --disable-libxcb)
++      FLAGS="$FLAGS --disable-libxcb"
++      shift
++      ;;
++    --disable-libxcb-shm)
++      FLAGS="$FLAGS --disable-libxcb-shm"
++      shift
++      ;;
++    --disable-libxcb-xfixes)
++      FLAGS="$FLAGS --disable-libxcb-xfixes"
++      shift
++      ;;
++    --disable-libxcb-shape)
++      FLAGS="$FLAGS --disable-libxcb-shape"
++      shift
++      ;;
++    --disable-fast-unaligned)
++      FLAGS="$FLAGS --disable-fast-unaligned"
++      shift
++      ;;
++    --disable-vfp)
++      FLAGS="$FLAGS --disable-vfp"
++      shift
++      ;;
++    --enable-neon)
++      FLAGS="$FLAGS --enable-neon --cpu=armv7-a"
++      shift
++      ;;
      -j)
        BUILDTHREADS=$2
        shift 2
-@@ -100,7 +109,7 @@ do
+@@ -100,7 +141,7 @@ do
    esac
  done
  
@@ -40,12 +72,16 @@
  [ ${BUILDTHREADS} -eq 0 ] && BUILDTHREADS=1
  
  [ -z ${VERSION} ] && exit 3
-@@ -110,10 +119,10 @@ then
+@@ -110,12 +151,12 @@ then
    [ "$VERSION" == "$CURVER" ] && exit 0
  fi
  
--[ -f ${ARCHIVE} ] || curl -Ls --create-dirs -f -o ${ARCHIVE} ${BASE_URL}/${VERSION}.tar.gz
-+#[ -f ${ARCHIVE} ] || curl -Ls --create-dirs -f -o ${ARCHIVE} ${BASE_URL}/${VERSION}.tar.gz
+-[ -f ${ARCHIVE} ] ||
+-  curl -Ls --create-dirs -f -o ${ARCHIVE} ${BASE_URL}/${VERSION}.tar.gz ||
+-  { echo "error fetching ${BASE_URL}/${VERSION}.tar.gz" ; exit 3; }
++#[ -f ${ARCHIVE} ] ||
++#  curl -Ls --create-dirs -f -o ${ARCHIVE} ${BASE_URL}/${VERSION}.tar.gz ||
++#  { echo "error fetching ${BASE_URL}/${VERSION}.tar.gz" ; exit 3; }
  [ $downloadonly ] && exit 0
  
 -[ -d ffmpeg-${VERSION} ] && rm -rf ffmpeg-${VERSION} && rm .ffmpeg-installed >/dev/null 2>&1
@@ -53,21 +89,21 @@
  if [ -d ${FFMPEG_PREFIX} ]
  then
    [ -w ${FFMPEG_PREFIX} ] || SUDO="sudo"
-@@ -121,9 +130,9 @@ else
+@@ -123,9 +164,9 @@ else
    [ -w $(dirname ${FFMPEG_PREFIX}) ] || SUDO="sudo"
  fi
  
--mkdir ffmpeg-${VERSION}
--cd ffmpeg-${VERSION} || exit 2
--tar --strip-components=1 -xf ../${ARCHIVE}
-+#mkdir ffmpeg-${VERSION}
-+cd FFmpeg-${VERSION} || exit 2
-+#tar --strip-components=1 -xf ../${ARCHIVE}
+-mkdir -p "ffmpeg-${VERSION}"
+-cd "ffmpeg-${VERSION}" || exit 2
+-tar --strip-components=1 -xf $MYDIR/${ARCHIVE}
++#mkdir -p "ffmpeg-${VERSION}"
++cd "FFmpeg-${VERSION}" || exit 2
++#tar --strip-components=1 -xf $MYDIR/${ARCHIVE}
  
  CFLAGS="$CFLAGS" CXXFLAGS="$CXXFLAGS" LDFLAGS="$LDFLAGS" \
  ./configure --prefix=$FFMPEG_PREFIX \
-@@ -162,11 +171,11 @@ CFLAGS="$CFLAGS" CXXFLAGS="$CXXFLAGS" LD
- 	--enable-libdcadec \
+@@ -162,11 +203,11 @@ CFLAGS="$CFLAGS" CXXFLAGS="$CXXFLAGS" LD
+ 	--disable-mipsdspr2 \
          ${FLAGS}
  
 -make -j ${BUILDTHREADS} 
@@ -75,8 +111,8 @@
  if [ $? -eq 0 ]
  then
    [ ${SUDO} ] && echo "Root privileges are required to install to ${FFMPEG_PREFIX}"
--  ${SUDO} make install && echo "$VERSION" > ../.ffmpeg-installed
-+  ${SUDO} gmake install && echo "$VERSION" > ../.ffmpeg-installed
+-  ${SUDO} make install && echo "$VERSION" > $MYDIR/.ffmpeg-installed
++  ${SUDO} gmake install && echo "$VERSION" > $MYDIR/.ffmpeg-installed
  else
    echo "ERROR: Building ffmpeg failed"
    exit 1

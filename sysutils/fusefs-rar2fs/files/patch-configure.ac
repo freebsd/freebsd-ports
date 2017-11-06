@@ -1,0 +1,24 @@
+--- configure.ac.orig	2017-01-05 12:03:06 UTC
++++ configure.ac
+@@ -434,6 +434,21 @@ if test x"$UNRAR_LIBS" != x; then
+ fi
+ ########################################################
+ 
++########################################################
++# Check if we need to set -DOPENSSL_AES
++if test x"$UNRAR_LIBS" != x; then
++    AC_CHECK_TOOL(PKG_STATIC,pkg-static)
++    AC_MSG_CHECKING([if unrar library needs -DOPENSSL_AES])
++    openssl_aes=`$PKG_STATIC query '%Ok %Ov' $LIBUNRAR_PKG | grep '^OPENSSL_AES' | cut -f 2 -d ' '`
++    if test x"$openssl_aes" != x"on"; then
++        AC_MSG_RESULT([no])
++    else
++        AC_MSG_RESULT([yes])
++        UNRAR_CXXFLAGS="$UNRAR_CXXFLAGS -DOPENSSL_AES"
++    fi
++fi
++########################################################
++
+ AM_ICONV
+ 
+ AC_MSG_CHECKING(for commit hash in git repo)

@@ -1,7 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	squid
-PORTVERSION=	4.0.17
+PORTVERSION=	4.0.21
+PORTREVISION=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	http://www.squid-cache.org/Versions/v4/ \
 		http://www2.us.squid-cache.org/Versions/v4/ \
@@ -26,13 +27,17 @@ COMMENT=	HTTP Caching Proxy
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_powerpc64=	fails to link: ext_time_quota_acl.cc: undefined reference to std::ctype
+
 CONFLICTS=	squid*-3.*
 
-USES=		compiler:c++11-lib cpe perl5 shebangfix tar:xz
+USES=		compiler:c++11-lib cpe perl5 shebangfix tar:xz bdb
 CPE_VENDOR=	squid-cache
 SHEBANG_FILES=	scripts/*.pl contrib/*.pl tools/*.pl
 GNU_CONFIGURE=	yes
 USE_RC_SUBR=	squid
+CPPFLAGS+=	-I${BDB_INCLUDE_DIR}
+LDFLAGS+=	-L${BDB_LIB_DIR}
 
 USERS=		squid
 GROUPS=		squid
@@ -69,7 +74,7 @@ AUTH_SASL_CPPFLAGS=		-I${LOCALBASE}/include
 AUTH_SASL_LDFLAGS=		-L${LOCALBASE}/lib
 AUTH_SASL_LIB_DEPENDS=		libsasl2.so:security/cyrus-sasl2
 AUTH_SASL_VARS=			BASIC_AUTH+=SASL
-AUTH_SMB_RUN_DEPENDS=		smbclient:net/samba43
+AUTH_SMB_USES=			samba:run
 AUTH_SMB_VARS=			BASIC_AUTH+=SMB EXTERNAL_ACL+=wbinfo_group
 AUTH_SQL_RUN_DEPENDS=		p5-DBI>=1.08:databases/p5-DBI
 AUTH_SQL_VARS=			EXTERNAL_ACL+=SQL_session
@@ -302,10 +307,6 @@ post-install:
 	(cd ${WRKSRC} && ${INSTALL_DATA} ${MYDOCS} ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.pre.mk>
-
-.if ${PORT_OPTIONS:MSSL} && ${SSL_DEFAULT:Mopenssl-devel}
-BROKEN=		Does not build with openssl-devel
-.endif
 
 .if ${CHOSEN_COMPILER_TYPE} == clang
 #CXXFLAGS+=	-Wno-unused-private-field

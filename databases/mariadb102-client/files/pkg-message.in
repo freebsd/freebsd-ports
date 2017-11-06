@@ -1,0 +1,7 @@
+************************************************************************
+
+MariaDB respects hier(7) and doesn't check /etc and /etc/mysql for
+my.cnf. Please move existing my.cnf files from those paths to
+%%PREFIX%%/etc and %%PREFIX%%/etc/mysql.
+
+************************************************************************

@@ -3,6 +3,8 @@ bin/hadoop-rcc
 bin/hdfs
 bin/mapred
 bin/yarn
+etc/hadoop/httpfs-env.sh
+etc/hadoop/kms-env.sh
 include/Pipes.hh
 include/SerialUtils.hh
 include/StringUtils.hh

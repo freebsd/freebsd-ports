@@ -17,6 +17,7 @@ USES=		fonts zip
 SUB_FILES=	pkg-message
 
 NO_BUILD=	yes
+NO_ARCH=	yes
 
 post-extract:
 	${MKDIR} ${WRKSRC}

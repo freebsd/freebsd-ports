@@ -2,47 +2,44 @@
 # $FreeBSD$
 
 PORTNAME=	ucspi-ssl
-PORTVERSION?=	0.70
-PORTREVISION=	1
+PORTVERSION=	0.99b
 CATEGORIES=	sysutils
-MASTER_SITES=	LOCAL/garga/ucspi-ssl \
-		http://www.superscript.com/ucspi-ssl/ \
-		http://dev.qmailrocks.org/downloads/qmailrocks_3.0-beta/ \
-		GENTOO
+MASTER_SITES=	http://www.fehcom.de/ipnet/ucspi-ssl/
 
-MAINTAINER?=	lx@FreeBSD.org
-COMMENT?=	UCSPI tools for building SSL client-server applications
+MAINTAINER=	lx@FreeBSD.org
+COMMENT=	UCSPI tools for building SSL client-server applications
 
 RUN_DEPENDS=	tcpserver:sysutils/ucspi-tcp \
 		${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 
-CONFLICTS?=	ucspi-ssl-tls-[0-9]*
-
-USES=		perl5 ssl
+USES=		perl5 ssl tar:tgz
 CFLAGS+=	-I${OPENSSLINC}
 
-PORTDOCS=	CHANGES TODO UCSPI-SSL
+PORTDOCS=	CERTS CHAIN-SSL CHANGES TODO UCSPI-SSL
 
 WRKSRC=		${WRKDIR}/host/superscript.com/net/${DISTNAME}
 
 SCRIPTS_TO_INSTALL=	https@ sslcat sslconnect
 
+.include <bsd.port.pre.mk>
+
 post-patch:
-	${REINPLACE_CMD} -e "s|\(-lssl -lcrypto\)|-L${OPENSSLLIB} \1|g"	\
-		${WRKSRC}/src/ssl.lib
 .for x in ${SCRIPTS_TO_INSTALL}
 	@${REINPLACE_CMD} -i ''	-e 's|HOME/command/|${PREFIX}/bin/|' \
 		${WRKSRC}/src/${x}.sh
 .endfor
 
 do-configure:
-	${ECHO_CMD} "${CC} ${CFLAGS}" > ${WRKSRC}/src/conf-cc
-	${ECHO_CMD} "${CC} ${CFLAGS}" > ${WRKSRC}/src/conf-ld
-	${ECHO_CMD} "${PREFIX}" > ${WRKSRC}/src/conf-home
-	${ECHO_CMD} "${PREFIX}/bin" > ${WRKSRC}/src/conf-tcpbin
-	${ECHO_CMD} "/etc/ssl" > ${WRKSRC}/src/conf-cadir
-	${ECHO_CMD} "/etc/ssl/cert.pem" > ${WRKSRC}/src/conf-cafile
-	${ECHO_CMD} "/etc/ssl/dh1024.pem" > ${WRKSRC}/src/conf-dhfile
+	${ECHO_CMD} "${CC} ${CFLAGS}" > ${WRKSRC}/conf-cc
+	${ECHO_CMD} "${CC} ${CFLAGS}" > ${WRKSRC}/conf-ld
+	${ECHO_CMD} "${PREFIX}" > ${WRKSRC}/conf-home
+	${ECHO_CMD} "${PREFIX}/bin" > ${WRKSRC}/conf-tcpbin
+	${ECHO_CMD} "/etc/ssl" > ${WRKSRC}/conf-cadir
+	${ECHO_CMD} "/etc/ssl/cert.pem" > ${WRKSRC}/conf-cafile
+	${ECHO_CMD} "/etc/ssl/dh1024.pem" > ${WRKSRC}/conf-dhfile
+.if ${SSL_DEFAULT} != base
+	${ECHO_CMD} "-lssl -lcrypto -L${LOCALBASE}/lib" > ${WRKSRC}/conf-ssllib
+.endif
 
 do-build:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} package/compile
@@ -55,6 +52,6 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/command/${x} ${STAGEDIR}${PREFIX}/bin
 .endfor
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	cd ${WRKSRC}/src && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC}/doc && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

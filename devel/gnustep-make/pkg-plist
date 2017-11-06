@@ -18,6 +18,7 @@ GNUstep/System/Library/Makefiles/Instance/Documentation/texi.make
 GNUstep/System/Library/Makefiles/Instance/Shared/bundle.make
 GNUstep/System/Library/Makefiles/Instance/Shared/headers.make
 GNUstep/System/Library/Makefiles/Instance/Shared/java.make
+GNUstep/System/Library/Makefiles/Instance/Shared/pkgconfig.make
 GNUstep/System/Library/Makefiles/Instance/Shared/stamp-string.make
 GNUstep/System/Library/Makefiles/Instance/Shared/strings.make
 GNUstep/System/Library/Makefiles/Instance/application.make
@@ -176,7 +177,6 @@ GNUstep/System/Makefiles
 @dir GNUstep/System/Library/Libraries/Resources
 @dir GNUstep/System/Library/Makefiles/Additional
 @dir GNUstep/System/Library/Makefiles/Auxiliary
-@dir GNUstep/System/Library/Makefiles/%%GNU_ARCH%%
 @dir GNUstep/System/Library/PostScript
 @dir GNUstep/System/Library/Sounds
 @dir GNUstep/System/Library/Services

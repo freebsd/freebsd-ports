@@ -4,7 +4,6 @@
 CATEGORIES=	graphics lang
 PKGNAMESUFFIX=	-hermes
 
-MAINTAINER=	freebsd-fpc@FreeBSD.org
 COMMENT=	Free Pascal hermes unit
 
 USE_FPC=	yes

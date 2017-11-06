@@ -44,7 +44,7 @@ extra_commands="reload"
 command_args="-p ${pidfile} /usr/bin/env ${procname} \
                 -config.file=${prometheus_config} \
                 -storage.local.path=${prometheus_data_dir} \
-                ${prometheus_args} > ${prometheus_log_file} 2>&1"
+                ${prometheus_args} >> ${prometheus_log_file} 2>&1"
 
 start_precmd=prometheus_startprecmd
 

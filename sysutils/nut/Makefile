@@ -3,7 +3,7 @@
 
 PORTNAME=	nut
 PORTVERSION=	2.7.4
-PORTREVISION=	1
+PORTREVISION=	6
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.networkupstools.org/source/${PORTVERSION:R}/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}${EXTRACT_SUFX}.sig
@@ -159,7 +159,7 @@ PLIST_SUB+=	NUT_IPMIPSU="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MOPENSSL}
-USE_OPENSSL=	yes
+USES+=	ssl
 CONFIGURE_ARGS+=	--with-openssl
 .else
 CONFIGURE_ARGS+=	--without-openssl --without-ssl

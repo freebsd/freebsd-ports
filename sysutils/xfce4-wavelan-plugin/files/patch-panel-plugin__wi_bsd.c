@@ -1,5 +1,5 @@
---- ./panel-plugin/wi_bsd.c.orig	2012-04-09 16:45:20.000000000 +0000
-+++ ./panel-plugin/wi_bsd.c	2014-05-20 21:29:11.000000000 +0000
+--- panel-plugin/wi_bsd.c.orig	2016-05-01 15:53:40 UTC
++++ panel-plugin/wi_bsd.c
 @@ -3,6 +3,8 @@
   *                    (OpenBSD support)
   *               2008 Pietro Cerutti <gahr@gahr.ch>
@@ -48,7 +48,7 @@
  #ifdef __NetBSD__
  #include <net80211/ieee80211.h>
  #include <net80211/ieee80211_ioctl.h>
-@@ -107,13 +98,9 @@
+@@ -107,13 +98,9 @@ struct wi_device
  };
  
  static int _wi_carrier(const struct wi_device *);
@@ -63,16 +63,16 @@
  #endif
  static int _wi_netname(const struct wi_device *, char *, size_t);
  static int _wi_quality(const struct wi_device *, int *);
-@@ -160,7 +147,7 @@
- 
+@@ -164,7 +151,7 @@ wi_query(struct wi_device *device, struc
    strlcpy(stats->ws_qunit, "dBm", 4);
+ #endif
    /* check vendor (independent of carrier state) */
 -#if defined(__FreeBSD_kernel__)
 +#if defined(__FreeBSD__) || defined(__FreeBSD_kernel__)
    if ((result = _wi_vendor(device, stats->ws_vendor, WI_MAXSTRLEN)) != WI_OK)
      return(result);
  #endif
-@@ -294,12 +281,10 @@
+@@ -305,12 +292,10 @@ _wi_rate(const struct wi_device *device,
  }
  #endif
  
@@ -86,7 +86,7 @@
     /*
      * We use sysctl to get a device description
      */
-@@ -316,59 +301,30 @@
+@@ -327,59 +312,30 @@ _wi_vendor(const struct wi_device *devic
     dev_number = (int)strtol(c, NULL, 10);
     *c = '\0';
  
@@ -163,7 +163,7 @@
  static int
  _wi_getval(const struct wi_device *device, struct ieee80211req_scan_result *scan)
  {
-@@ -393,7 +349,9 @@
+@@ -404,7 +360,9 @@ _wi_getval(const struct wi_device *devic
  
     return(WI_OK);
  }
@@ -174,7 +174,7 @@
  static int
  _wi_getval(const struct wi_device *device, struct wi_req *wr)
  {
-@@ -409,10 +367,11 @@
+@@ -420,10 +378,11 @@ _wi_getval(const struct wi_device *devic
    return(WI_OK);
  }
  #endif
@@ -187,7 +187,7 @@
     struct ieee80211req ireq;
  
     memset(&ireq, 0, sizeof(ireq));
-@@ -423,7 +382,7 @@
+@@ -434,7 +393,7 @@ _wi_netname(const struct wi_device *devi
     ireq.i_len = len; 
     if (ioctl(device->socket, SIOCG80211, &ireq) < 0) 
        return WI_NOSUCHDEV;
@@ -196,7 +196,7 @@
    struct wi_req wr;
    int result;
  
-@@ -443,7 +402,7 @@
+@@ -454,7 +413,7 @@ _wi_netname(const struct wi_device *devi
  static int
  _wi_quality(const struct wi_device *device, int *quality)
  {
@@ -205,7 +205,7 @@
     struct ieee80211req_scan_result req;
     int result;
     bzero(&req, sizeof(req));
-@@ -451,8 +410,16 @@
+@@ -462,8 +421,16 @@ _wi_quality(const struct wi_device *devi
     if((result = _wi_getval(device, &req)) != WI_OK)
        return (result);
  
@@ -224,7 +224,7 @@
    struct wi_req wr;
    int result;
  
-@@ -475,7 +442,7 @@
+@@ -486,7 +453,7 @@ _wi_quality(const struct wi_device *devi
  static int
  _wi_rate(const struct wi_device *device, int *rate)
  {
@@ -233,7 +233,7 @@
     struct ieee80211req_scan_result req;
     int result, i, high;
     bzero(&req, sizeof(req));
-@@ -488,7 +455,7 @@
+@@ -499,7 +466,7 @@ _wi_rate(const struct wi_device *device,
           high = req.isr_rates[i] & IEEE80211_RATE_VAL;
     
     *rate = high / 2;
@@ -242,7 +242,7 @@
    struct wi_req wr;
    int result;
  
-@@ -505,5 +472,4 @@
+@@ -516,5 +483,4 @@ _wi_rate(const struct wi_device *device,
    return(WI_OK);
  }
  

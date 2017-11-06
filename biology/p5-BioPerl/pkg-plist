@@ -36,7 +36,6 @@ bin/bp_netinstall.pl
 bin/bp_nexus2nh.pl
 bin/bp_nrdb.pl
 bin/bp_oligo_count.pl
-bin/bp_pairwise_kaks.pl
 bin/bp_parse_hmmsearch.pl
 bin/bp_process_gadfly.pl
 bin/bp_process_sgd.pl
@@ -769,10 +768,6 @@ bin/bp_unflatten_seq.pl
 %%SITE_PERL%%/Bio/Tools/Phylo/Gumby.pm
 %%SITE_PERL%%/Bio/Tools/Phylo/Molphy.pm
 %%SITE_PERL%%/Bio/Tools/Phylo/Molphy/Result.pm
-%%SITE_PERL%%/Bio/Tools/Phylo/PAML.pm
-%%SITE_PERL%%/Bio/Tools/Phylo/PAML/Codeml.pm
-%%SITE_PERL%%/Bio/Tools/Phylo/PAML/ModelResult.pm
-%%SITE_PERL%%/Bio/Tools/Phylo/PAML/Result.pm
 %%SITE_PERL%%/Bio/Tools/Phylo/Phylip/ProtDist.pm
 %%SITE_PERL%%/Bio/Tools/Prediction/Exon.pm
 %%SITE_PERL%%/Bio/Tools/Prediction/Gene.pm
@@ -893,7 +888,6 @@ bin/bp_unflatten_seq.pl
 %%PERL5_MAN1%%/bp_nexus2nh.pl.1.gz
 %%PERL5_MAN1%%/bp_nrdb.pl.1.gz
 %%PERL5_MAN1%%/bp_oligo_count.pl.1.gz
-%%PERL5_MAN1%%/bp_pairwise_kaks.pl.1.gz
 %%PERL5_MAN1%%/bp_parse_hmmsearch.pl.1.gz
 %%PERL5_MAN1%%/bp_process_gadfly.pl.1.gz
 %%PERL5_MAN1%%/bp_process_sgd.pl.1.gz
@@ -1623,10 +1617,6 @@ bin/bp_unflatten_seq.pl
 %%PERL5_MAN3%%/Bio::Tools::Phylo::Gumby.3.gz
 %%PERL5_MAN3%%/Bio::Tools::Phylo::Molphy.3.gz
 %%PERL5_MAN3%%/Bio::Tools::Phylo::Molphy::Result.3.gz
-%%PERL5_MAN3%%/Bio::Tools::Phylo::PAML.3.gz
-%%PERL5_MAN3%%/Bio::Tools::Phylo::PAML::Codeml.3.gz
-%%PERL5_MAN3%%/Bio::Tools::Phylo::PAML::ModelResult.3.gz
-%%PERL5_MAN3%%/Bio::Tools::Phylo::PAML::Result.3.gz
 %%PERL5_MAN3%%/Bio::Tools::Phylo::Phylip::ProtDist.3.gz
 %%PERL5_MAN3%%/Bio::Tools::Prediction::Exon.3.gz
 %%PERL5_MAN3%%/Bio::Tools::Prediction::Gene.3.gz

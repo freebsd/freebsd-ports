@@ -159,7 +159,7 @@ do_http_request() {
   if [ -n "${http_header_proxy_auth}" ]; then txt="${txt}${CR}${NL}Proxy-Authorization: ${http_header_proxy_auth}"; fi
   txt="${txt}${CR}${NL}User-Agent: bsdstats-${CURR_VERSION}"
   txt="${txt}${CR}${NL}Connection: close"
-  if [ -n "${content_type}" ]; then txt="${txt}${NL}Content-Type: ${content_type}"; fi
+  if [ -n "${content_type}" ]; then txt="${txt}${CR}${NL}Content-Type: ${content_type}"; fi
   if [ -n "${body}" ]; then txt="${txt}${CR}${NL}Content-Length: ${#body}"; fi
   txt="${txt}${CR}${NL}${CR}${NL}${body}"
 
@@ -494,8 +494,16 @@ report_all() {
   setup_proxies
   test_connection
   log "INIT" "Connected to ${checkin_server_description}"
-  # sleep random number of seconds by default
-  test X"$1" = X-nodelay || ${SLEEP} $(random)
+  # When non-interactive, sleep to reduce congestion on bsdstats.org
+  if [ "$1" != -nodelay ]; then
+	  # In FreeBSD 12.0 the anticongestion function should be used
+	  # instead of a hard-coded sleep
+	  if [ -n "$anticongestion_sleeptime" ]; then
+		  anticongestion
+	  else
+		  ${SLEEP} $(random)
+	  fi
+  fi
   # prepare
   get_id_token
   # begin

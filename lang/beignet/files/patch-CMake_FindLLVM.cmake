@@ -1,6 +1,6 @@
---- CMake/FindLLVM.cmake.orig	2015-04-17 03:59:38.000000000 +0200
-+++ CMake/FindLLVM.cmake	2015-05-09 00:27:01.012701000 +0200
-@@ -52,21 +52,21 @@
+--- CMake/FindLLVM.cmake.orig	2017-01-20 10:40:51 UTC
++++ CMake/FindLLVM.cmake
+@@ -46,21 +46,21 @@ endif (LLVM_FIND_VERSION_MAJOR AND LLVM_
  
  if (LLVM_INSTALL_DIR)
    find_program(CLANG_EXECUTABLE

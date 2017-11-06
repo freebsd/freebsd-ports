@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	bio
-PORTVERSION=	1.5.0
+PORTVERSION=	1.5.1
 CATEGORIES=	biology ruby
 MASTER_SITES=	http://bioruby.org/archive/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -14,9 +14,6 @@ COMMENT=	Integrated environment for Bioinformatics written in Ruby
 
 LICENSE=	GPLv2 RUBY
 LICENSE_COMB=	dual
-
-BROKEN_RUBY22=	yes
-BROKEN_RUBY23=	yes
 
 OPTIONS_DEFINE=	XMLPARSER BDB4 MYSQL PGSQL DOCS
 XMLPARSER_DESC=	xmlparser support for faster Blast processing

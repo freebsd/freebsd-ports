@@ -1,0 +1,20 @@
+--- src/exim.h.orig	2017-02-14 19:13:41.381402389 +0200
++++ src/exim.h	2017-02-14 19:13:53.330916377 +0200
+@@ -129,7 +129,6 @@
+ #endif
+ 
+ #include <sys/types.h>
+-#include <sys/file.h>
+ #include <dirent.h>
+ #include <netdb.h>
+ #ifndef NO_POLL_H
+--- src/exim_lock.c.orig	2017-02-14 19:21:09.709389008 +0200
++++ src/exim_lock.c	2017-02-14 19:21:23.994407794 +0200
+@@ -27,7 +27,6 @@
+ #include <utime.h>
+ #include <sys/utsname.h>
+ #include <sys/stat.h>
+-#include <sys/file.h>
+ #include <pwd.h>
+ 
+ /* Not all systems have flock() available. Those that do must define LOCK_SH

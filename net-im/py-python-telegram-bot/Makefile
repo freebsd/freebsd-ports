@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	python-telegram-bot
-PORTVERSION=	5.3.0
+PORTVERSION=	8.1.1
 CATEGORIES=	net-im devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,10 +12,8 @@ COMMENT=	Not just a Python wrapper around the Telegram Bot API
 
 LICENSE=	LGPL3
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}future>0:devel/py-future \
-		${PYTHON_PKGNAMEPREFIX}urllib3>0:net/py-urllib3
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}future>0:devel/py-future \
-		${PYTHON_PKGNAMEPREFIX}urllib3>0:net/py-urllib3
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}future>0:devel/py-future
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}future>0:devel/py-future
 
 NO_ARCH=	yes
 USES=		python

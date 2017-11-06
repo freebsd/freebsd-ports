@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	oslo.config
-PORTVERSION=	3.19.0
+PORTVERSION=	3.22.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,7 +14,7 @@ LICENSE=	APACHE20
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pbr>=1.6:devel/py-pbr
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}debtcollector>=1.2.0:devel/py-debtcollector \
-		${PYTHON_PKGNAMEPREFIX}rfc3986>=0.2.2:www/py-rfc3986 \
+		${PYTHON_PKGNAMEPREFIX}rfc3986>=0.3.1:www/py-rfc3986 \
 		${PYTHON_PKGNAMEPREFIX}netaddr>0:net/py-netaddr \
 		${PYTHON_PKGNAMEPREFIX}oslo.i18n>=2.1.0:devel/py-oslo.i18n \
 		${PYTHON_PKGNAMEPREFIX}six>=1.9.0:devel/py-six \

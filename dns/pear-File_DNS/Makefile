@@ -11,6 +11,6 @@ COMMENT=	PEAR class to read and write RFC1033-style DNS Zonefiles
 BUILD_DEPENDS=	${PEARDIR}/File.php:sysutils/pear-File
 RUN_DEPENDS=	${PEARDIR}/File.php:sysutils/pear-File
 
-USES=	pear
+USES=		pear
 
 .include <bsd.port.mk>

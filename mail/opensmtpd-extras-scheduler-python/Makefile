@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PKGNAMESUFFIX=		-scheduler-python
-PORTREVISION=		0
+PORTREVISION=		2
 
 COMMENT=		Python scheduler support for OpenSMTPD
 

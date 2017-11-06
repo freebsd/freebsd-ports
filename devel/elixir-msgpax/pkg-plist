@@ -15,7 +15,6 @@ lib/elixir/lib/msgpax/ebin/Elixir.Msgpax.Packer.Msgpax.Bin.beam
 lib/elixir/lib/msgpax/ebin/Elixir.Msgpax.Packer.Msgpax.Ext.beam
 lib/elixir/lib/msgpax/ebin/Elixir.Msgpax.Packer.beam
 lib/elixir/lib/msgpax/ebin/Elixir.Msgpax.UnpackError.beam
-lib/elixir/lib/msgpax/ebin/Elixir.Msgpax.Unpacker.Unpack.beam
 lib/elixir/lib/msgpax/ebin/Elixir.Msgpax.Unpacker.beam
 lib/elixir/lib/msgpax/ebin/Elixir.Msgpax.beam
 lib/elixir/lib/msgpax/ebin/msgpax.app

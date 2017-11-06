@@ -91,7 +91,7 @@
 #	USE_WX_NOT=	2.8
 #
 
-WX_Include_MAINTAINER=	alepulver@FreeBSD.org
+WX_Include_MAINTAINER=	ports@FreeBSD.org
 
 #
 # Global definitions.

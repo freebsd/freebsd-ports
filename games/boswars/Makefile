@@ -3,7 +3,7 @@
 
 PORTNAME=	boswars
 PORTVERSION=	2.6.1
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	games
 MASTER_SITES=	http://www.boswars.org/dist/releases/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
@@ -36,17 +36,19 @@ OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	@${REINPLACE_CMD} -e '\
-		s|/usr/local|${LOCALBASE}|g; \
-		s|lua51|lua-${LUA_VER}|g;' \
-	${WRKSRC}/SConstruct
+			s|/usr/local|${LOCALBASE}|g; \
+			s|lua51|lua-${LUA_VER}|g;' \
+		${WRKSRC}/SConstruct
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
-	${MKDIR} ${STAGEDIR}${DATADIR}
+	@${MKDIR} ${STAGEDIR}${DATADIR}
 .for f in campaigns graphics intro languages maps patches scripts sounds units
 	${CP} -R ${WRKSRC}/${f} ${STAGEDIR}${DATADIR}
 .endfor
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
+
+do-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/CHANGELOG ${WRKSRC}/README.txt ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
 

@@ -1,11 +1,14 @@
---- extra/CMakeLists.txt.orig	2012-11-28 17:49:47.000000000 +0200
-+++ extra/CMakeLists.txt	2012-12-23 02:41:57.000000000 +0200
-@@ -80,6 +80,8 @@
+--- extra/CMakeLists.txt.orig	2017-04-30 11:09:29 UTC
++++ extra/CMakeLists.txt
+@@ -80,9 +80,11 @@ IF(UNIX)
    MYSQL_ADD_EXECUTABLE(resolve_stack_dump resolve_stack_dump.c)
    TARGET_LINK_LIBRARIES(resolve_stack_dump mysys)
  
 +IF(FALSE)
    MYSQL_ADD_EXECUTABLE(mysql_waitpid mysql_waitpid.c COMPONENT Client)
    TARGET_LINK_LIBRARIES(mysql_waitpid mysys)
- ENDIF()
+ 
 +ENDIF()
+   MYSQL_ADD_EXECUTABLE(mysqld_safe_helper mysqld_safe_helper.c COMPONENT Server)
+   TARGET_LINK_LIBRARIES(mysqld_safe_helper mysys)
+ ENDIF()

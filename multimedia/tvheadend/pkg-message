@@ -2,9 +2,10 @@
 
 For the first start in your /etc/rc.conf:
   tvheadend_enable="YES"
-  tvheadend_flags="-C"
 
-The second line can be removed after the first start.
+If you plan to use webcamd you need to add tvheadend to the webcamd group.
+
+  pw usermod tvheadend -G webcamd
 
 Patches, feedback and help are always welcome!
 

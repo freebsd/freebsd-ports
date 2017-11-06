@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ardour5
-PORTVERSION=	5.5.0
+PORTVERSION=	5.12.0
 CATEGORIES=	audio
 MASTER_SITES=	https://github.com/beerml/ardour_releases/raw/master/
 # The original master side points to the latest release only:
@@ -36,22 +36,28 @@ LIB_DEPENDS=	libserd-0.so:devel/serd \
 		libfftw3f.so:math/fftw3-float \
 		libcurl.so:ftp/curl \
 		libogg.so:audio/libogg \
-		libFLAC.so:audio/flac \
-		libreadline.so:devel/readline
+		libFLAC.so:audio/flac
 
-USES=		desktop-file-utils gettext libarchive pkgconfig \
-		python:build readline tar:bzip2 waf
+USES=		compiler:c++11-lang desktop-file-utils gettext libarchive \
+		pkgconfig python:build readline:port tar:bzip2 waf
+USE_CXXSTD=	c++11
 USE_XORG=	x11
 USE_GNOME=	atk cairo cairomm gdkpixbuf2 glib20 glibmm gtk20 gtkmm24 pango
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
 
+BROKEN_aarch64=		fails to configure: Could not find the program gas,as,gcc
+BROKEN_powerpc64=	fails to compile: configuration_variable.cc: 'strtof' is not a member of 'std'
+
 PLIST_SUB=	ARDOURVERSION=${PORTVERSION}
-CONFLICTS_BUILD=	 libsmf-*
 
 CONFIGURE_ARGS=	--optimize --ptformat --freedesktop --no-phone-home \
-		--with-backends=jack,dummy --internal-shared-libs \
-		--also-include=${LOCALBASE}/include --also-libdir=${LOCALBASE}/lib
+		--with-backends=jack,dummy --internal-shared-libs
+
+post-patch:
+	@${REINPLACE_CMD} -e 's/obj\.use            = '\''libsmf libpbd'\''/obj\.use            = '\''libsmf_internal libpbd'\''/g' ${WRKSRC}/libs/evoral/wscript
+	@${REINPLACE_CMD} -e 's/libsmf\.name         = '\''libsmf'\''/libsmf\.name         = '\''libsmf_internal'\''/g' ${WRKSRC}/libs/evoral/wscript
+	@${REINPLACE_CMD} -e 's/libsmf\.target       = '\''smf'\''/libsmf\.target       = '\''smf_internal'\''/g' ${WRKSRC}/libs/evoral/wscript
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/appdata
@@ -93,11 +99,11 @@ post-install:
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "i386"
-WITH_ARCH_FLAGS=	--arch='-msse -mfpmath=sse' --dist-target=i386          
-.elif ${ARCH} == "amd64"                                                        
+WITH_ARCH_FLAGS=	--arch='-msse -mfpmath=sse' --dist-target=i386
+.elif ${ARCH} == "amd64"
 WITH_ARCH_FLAGS=	--arch='-msse -mfpmath=sse' --dist-target=x86_64
 .endif
-                                                                                
+
 .if defined(WITH_ARCH_FLAGS)
 CONFIGURE_ARGS+=	${WITH_ARCH_FLAGS}
 .endif

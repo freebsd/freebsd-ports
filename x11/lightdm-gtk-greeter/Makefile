@@ -3,6 +3,7 @@
 
 PORTNAME=	lightdm-gtk-greeter
 PORTVERSION=	2.0.2
+PORTREVISION=	2
 CATEGORIES=	x11
 MASTER_SITES=	https://launchpad.net/${PORTNAME}/${PORTVERSION:R}/${PORTVERSION}/+download/
 
@@ -19,5 +20,9 @@ GNU_CONFIGURE=	yes
 USE_GNOME=	cairo gdkpixbuf2 gtk30 intltool
 USE_XFCE=	libexo
 USE_XORG=	x11
+
+post-install:
+	(cd ${STAGEDIR}${PREFIX}/etc/lightdm && ${MV} lightdm-gtk-greeter.conf \
+		lightdm-gtk-greeter.conf.sample)
 
 .include <bsd.port.mk>

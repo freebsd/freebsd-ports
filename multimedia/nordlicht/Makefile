@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	nordlicht
-PORTVERSION=	0.4.4
+PORTVERSION=	0.4.5
 DISTVERSIONPREFIX=	v
 PORTREVISION=	2
 CATEGORIES=	multimedia
 
-MAINTAINER=	t@tobik.me
+MAINTAINER=	tobik@FreeBSD.org
 COMMENT=	Create moodbars from video files
 
 LICENSE=	GPLv2
@@ -20,10 +20,22 @@ LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
 
 USE_GITHUB=	yes
 
-USES=		cmake:outsource pkgconfig
+USES=		cmake:outsource pkgconfig shebangfix
 USE_LDCONFIG=	yes
+
+PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
 BROKEN_aarch64=		Fails to install: runaway process
 BROKEN_powerpc64=	Does not build
+
+SHEBANG_FILES=	utils/mpv-nordlicht
+
+post-patch:
+	@${REINPLACE_CMD} \
+		-e 's|$${CMAKE_INSTALL_LIBDIR}/pkgconfig|libdata/pkgconfig|' \
+		-e 's|share/man/man1|man/man1|' ${WRKSRC}/CMakeLists.txt
+
+post-install:
+	@cd ${WRKSRC}/utils && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>

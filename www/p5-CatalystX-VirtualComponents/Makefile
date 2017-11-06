@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	danny@dannywarren.com
 COMMENT=	Setup virtual Catalyst components
 
-LICENSE=	ART10 GPLv1
+LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-namespace-clean>0:devel/p5-namespace-clean \

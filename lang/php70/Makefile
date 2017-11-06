@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	php70
-PORTVERSION=	7.0.14
+PORTVERSION=	7.0.25
 PORTREVISION?=	0
 CATEGORIES?=	lang devel www
 MASTER_SITES=	PHP/distributions
@@ -44,6 +44,9 @@ OPTIONS_EXCLUDE_mips64=FPM
 OPTIONS_SUB=	yes
 
 OPTIONS_EXCLUDE_DragonFly=	DTRACE
+# ld(1) fails to link probes: Relocations in generic ELF (EM: 0)
+OPTIONS_EXCLUDE_aarch64=	DTRACE
+OPTIONS_EXCLUDE_sparc64=	DTRACE
 
 CLI_DESC=	Build CLI version
 CGI_DESC=	Build CGI version
@@ -116,20 +119,6 @@ CONFIGURE_ARGS+=--enable-phpdbg-debug
 PLIST_SUB+=	SAPI_INC=""
 .else
 PLIST_SUB+=	SAPI_INC="@comment "
-.endif
-
-.if !defined(WITH_REGEX_TYPE) || ${WITH_REGEX_TYPE} == "php"
-CONFIGURE_ARGS+=--with-regex=php
-.elif defined(WITH_REGEX_TYPE) && ${WITH_REGEX_TYPE} == "system"
-CONFIGURE_ARGS+=--with-regex=system
-.endif
-
-.if !defined(WITH_ZEND_VM) || ${WITH_ZEND_VM} == "CALL"
-CONFIGURE_ARGS+=--with-zend-vm=CALL
-.elif defined(WITH_ZEND_VM) && ${WITH_ZEND_VM} == "SWITCH"
-CONFIGURE_ARGS+=--with-zend-vm=SWITCH
-.elif defined(WITH_ZEND_VM) && ${WITH_ZEND_VM} == "GOTO"
-CONFIGURE_ARGS+=--with-zend-vm=GOTO
 .endif
 
 CONFIGURE_ENV+=	ac_cv_decimal_fp_supported="no" \

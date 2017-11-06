@@ -10,6 +10,8 @@ MASTER_SITES=	http://sites.inka.de/~bigred/sw/ \
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	NoCeM for C News and INN
 
+LICENSE=	PD
+
 FETCH_DEPENDS=	${DISTDIR}/c-news/c-news.tar.Z:${CNEWS_PORT}:checksum
 BUILD_DEPENDS=	${CNEWSWRK}/conf/substitutions:${CNEWS_PORT}:configure
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libcnews.a:${CNEWS_PORT} \

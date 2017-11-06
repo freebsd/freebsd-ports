@@ -17,16 +17,16 @@
 %%LMDB%%@sample %%ETCDIR%%/plugin-python-ldap.conf.sample
 lib/libbareos.la
 lib/libbareos.so
-lib/libbareos-16.2.4.so
+lib/libbareos-%%LIB_VERSION%%.so
 lib/libbareoscfg.la
 lib/libbareoscfg.so
-lib/libbareoscfg-16.2.4.so
+lib/libbareoscfg-%%LIB_VERSION%%.so
 lib/libbareosfind.la
 lib/libbareosfind.so
-lib/libbareosfind-16.2.4.so
+lib/libbareosfind-%%LIB_VERSION%%.so
 %%LMDB%%lib/libbareoslmdb.la
 %%LMDB%%lib/libbareoslmdb.so
-%%LMDB%%lib/libbareoslmdb-16.2.4.so
+%%LMDB%%lib/libbareoslmdb-%%LIB_VERSION%%.so
 %%PYTHON%%lib/bareos/plugins/BareosFdPluginBaseclass.py
 %%PYTHON%%lib/bareos/plugins/BareosFdPluginLDAP.py
 %%PYTHON%%lib/bareos/plugins/BareosFdPluginLocalFileset.py

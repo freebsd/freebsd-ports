@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	jenkins
-PORTVERSION=	2.32.1
+PORTVERSION=	2.73.2
 CATEGORIES=	devel java
 MASTER_SITES=	http://mirrors.jenkins-ci.org/war-stable/${PORTVERSION}/
 PKGNAMESUFFIX=	-lts
@@ -16,7 +16,7 @@ COMMENT=	Open-source continuous integration server
 LICENSE=	MIT
 
 CONFLICTS=	jenkins-[0-9]*
-USE_JAVA=	yes
+USE_JAVA=	1.8+
 
 NO_BUILD=	yes
 

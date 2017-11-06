@@ -1,0 +1,1213 @@
+--- cloudinit/config/cc_resizefs.py.orig	2016-12-23 16:37:45 UTC
++++ cloudinit/config/cc_resizefs.py
+@@ -33,7 +33,10 @@ disabled altogether by setting ``resize_rootfs`` to ``
+ """
+ 
+ import errno
++import getopt
+ import os
++import re
++import shlex
+ import stat
+ 
+ from cloudinit.settings import PER_ALWAYS
+@@ -58,6 +61,62 @@ def _resize_ufs(mount_point, devpth):
+     return ('growfs', devpth)
+ 
+ 
++def _get_dumpfs_output(mount_point):
++    dumpfs_res, err = util.subp(['dumpfs', '-m', mount_point])
++    return dumpfs_res
++
++
++def _get_gpart_output(part):
++    gpart_res, err = util.subp(['gpart', 'show', part])
++    return gpart_res
++
++
++def _can_skip_resize_ufs(mount_point, devpth):
++    # extract the current fs sector size
++    """
++    # dumpfs -m /
++    # newfs command for / (/dev/label/rootfs)
++      newfs -O 2 -U -a 4 -b 32768 -d 32768 -e 4096 -f 4096 -g 16384
++            -h 64 -i 8192 -j -k 6408 -m 8 -o time -s 58719232 /dev/label/rootf
++    """
++    cur_fs_sz = None
++    frag_sz = None
++    dumpfs_res = _get_dumpfs_output(mount_point)
++    for line in dumpfs_res.splitlines():
++        if not line.startswith('#'):
++            newfs_cmd = shlex.split(line)
++            opt_value = 'O:Ua:s:b:d:e:f:g:h:i:jk:m:o:'
++            optlist, args = getopt.getopt(newfs_cmd[1:], opt_value)
++            for o, a in optlist:
++                if o == "-s":
++                    cur_fs_sz = int(a)
++                if o == "-f":
++                    frag_sz = int(a)
++    # check the current partition size
++    """
++    # gpart show /dev/da0
++=>      40  62914480  da0  GPT  (30G)
++        40      1024    1  freebsd-boot  (512K)
++      1064  58719232    2  freebsd-ufs  (28G)
++  58720296   3145728    3  freebsd-swap  (1.5G)
++  61866024   1048496       - free -  (512M)
++    """
++    expect_sz = None
++    m = re.search('^(/dev/.+)p([0-9])$', devpth)
++    gpart_res = _get_gpart_output(m.group(1))
++    for line in gpart_res.splitlines():
++        if re.search(r"freebsd-ufs", line):
++            fields = line.split()
++            expect_sz = int(fields[1])
++    # Normalize the gpart sector size,
++    # because the size is not exactly the same as fs size.
++    normal_expect_sz = (expect_sz - expect_sz % (frag_sz / 512))
++    if normal_expect_sz == cur_fs_sz:
++        return True
++    else:
++        return False
++
++
+ # Do not use a dictionary as these commands should be able to be used
+ # for multiple filesystem types if possible, e.g. one command for
+ # ext2, ext3 and ext4.
+@@ -68,6 +127,10 @@ RESIZE_FS_PREFIXES_CMDS = [
+     ('ufs', _resize_ufs),
+ ]
+ 
++RESIZE_FS_PRECHECK_CMDS = {
++    'ufs': _can_skip_resize_ufs
++}
++
+ NOBLOCK = "noblock"
+ 
+ 
+@@ -90,6 +153,14 @@ def rootdev_from_cmdline(cmdline):
+     return "/dev/" + found
+ 
+ 
++def can_skip_resize(fs_type, resize_what, devpth):
++    fstype_lc = fs_type.lower()
++    for i, func in RESIZE_FS_PRECHECK_CMDS.items():
++        if fstype_lc.startswith(i):
++            return func(resize_what, devpth)
++    return False
++
++
+ def handle(name, cfg, _cloud, log, args):
+     if len(args) != 0:
+         resize_root = args[0]
+@@ -158,6 +229,11 @@ def handle(name, cfg, _cloud, log, args):
+         return
+ 
+     resizer = None
++    if can_skip_resize(fs_type, resize_what, devpth):
++        log.debug("Skip resize filesystem type %s for %s",
++                  fs_type, resize_what)
++        return
++
+     fstype_lc = fs_type.lower()
+     for (pfix, root_cmd) in RESIZE_FS_PREFIXES_CMDS:
+         if fstype_lc.startswith(pfix):
+--- cloudinit/distros/__init__.py.orig	2016-12-23 16:37:45 UTC
++++ cloudinit/distros/__init__.py
+@@ -142,6 +142,9 @@ class Distro(object):
+             ns, header=header, render_hwaddress=True)
+         return self.apply_network(contents, bring_up=bring_up)
+ 
++    def generate_fallback_config(self):
++        return net.generate_fallback_config()
++
+     def apply_network_config(self, netconfig, bring_up=False):
+         # apply network config netconfig
+         # This method is preferred to apply_network which only takes
+--- cloudinit/distros/freebsd.py.orig	2016-12-23 16:37:45 UTC
++++ cloudinit/distros/freebsd.py
+@@ -30,6 +30,7 @@ class Distro(distros.Distro):
+     login_conf_fn_bak = '/etc/login.conf.orig'
+     resolv_conf_fn = '/etc/resolv.conf'
+     ci_sudoers_fn = '/usr/local/etc/sudoers.d/90-cloud-init-users'
++    default_primary_nic = 'hn0'
+ 
+     def __init__(self, name, cfg, paths):
+         distros.Distro.__init__(self, name, cfg, paths)
+@@ -38,6 +39,8 @@ class Distro(distros.Distro):
+         # should only happen say once per instance...)
+         self._runner = helpers.Runners(paths)
+         self.osfamily = 'freebsd'
++        self.ipv4_pat = re.compile(r"\s+inet\s+\d+[.]\d+[.]\d+[.]\d+")
++        cfg['ssh_svcname'] = 'sshd'
+ 
+     # Updates a key in /etc/rc.conf.
+     def updatercconf(self, key, value):
+@@ -183,7 +186,6 @@ class Distro(distros.Distro):
+             "gecos": '-c',
+             "primary_group": '-g',
+             "groups": '-G',
+-            "passwd": '-h',
+             "shell": '-s',
+             "inactive": '-E',
+         }
+@@ -193,19 +195,11 @@ class Distro(distros.Distro):
+             "no_log_init": '--no-log-init',
+         }
+ 
+-        redact_opts = ['passwd']
+-
+         for key, val in kwargs.items():
+             if (key in adduser_opts and val and
+                isinstance(val, six.string_types)):
+                 adduser_cmd.extend([adduser_opts[key], val])
+ 
+-                # Redact certain fields from the logs
+-                if key in redact_opts:
+-                    log_adduser_cmd.extend([adduser_opts[key], 'REDACTED'])
+-                else:
+-                    log_adduser_cmd.extend([adduser_opts[key], val])
+-
+             elif key in adduser_flags and val:
+                 adduser_cmd.append(adduser_flags[key])
+                 log_adduser_cmd.append(adduser_flags[key])
+@@ -226,19 +220,21 @@ class Distro(distros.Distro):
+         except Exception as e:
+             util.logexc(LOG, "Failed to create user %s", name)
+             raise e
++        # Set the password if it is provided
++        # For security consideration, only hashed passwd is assumed
++        passwd_val = kwargs.get('passwd', None)
++        if passwd_val is not None:
++            self.set_passwd(name, passwd_val, hashed=True)
+ 
+     def set_passwd(self, user, passwd, hashed=False):
+-        cmd = ['pw', 'usermod', user]
+-
+         if hashed:
+-            cmd.append('-H')
++            hash_opt = "-H"
+         else:
+-            cmd.append('-h')
++            hash_opt = "-h"
+ 
+-        cmd.append('0')
+-
+         try:
+-            util.subp(cmd, passwd, logstring="chpasswd for %s" % user)
++            util.subp(['pw', 'usermod', user, hash_opt, '0'],
++                      data=passwd, logstring="chpasswd for %s" % user)
+         except Exception as e:
+             util.logexc(LOG, "Failed to set password for %s", user)
+             raise e
+@@ -270,6 +266,255 @@ class Distro(distros.Distro):
+         if 'ssh_authorized_keys' in kwargs:
+             keys = set(kwargs['ssh_authorized_keys']) or []
+             ssh_util.setup_user_keys(keys, name, options=None)
++
++    @staticmethod
++    def get_ifconfig_list():
++        cmd = ['ifconfig', '-l']
++        (nics, err) = util.subp(cmd, rcs=[0, 1])
++        if len(err):
++            LOG.warn("Error running %s: %s", cmd, err)
++            return None
++        return nics
++
++    @staticmethod
++    def get_ifconfig_ifname_out(ifname):
++        cmd = ['ifconfig', ifname]
++        (if_result, err) = util.subp(cmd, rcs=[0, 1])
++        if len(err):
++            LOG.warn("Error running %s: %s", cmd, err)
++            return None
++        return if_result
++
++    @staticmethod
++    def get_ifconfig_ether():
++        cmd = ['ifconfig', '-l', 'ether']
++        (nics, err) = util.subp(cmd, rcs=[0, 1])
++        if len(err):
++            LOG.warn("Error running %s: %s", cmd, err)
++            return None
++        return nics
++
++    @staticmethod
++    def get_interface_mac(ifname):
++        if_result = Distro.get_ifconfig_ifname_out(ifname)
++        for item in if_result.splitlines():
++            if item.find('ether ') != -1:
++                mac = str(item.split()[1])
++                if mac:
++                    return mac
++
++    @staticmethod
++    def get_devicelist():
++        nics = Distro.get_ifconfig_list()
++        return nics.split()
++
++    @staticmethod
++    def get_ipv6():
++        ipv6 = []
++        nics = Distro.get_devicelist()
++        for nic in nics:
++            if_result = Distro.get_ifconfig_ifname_out(nic)
++            for item in if_result.splitlines():
++                if item.find("inet6 ") != -1 and item.find("scopeid") == -1:
++                    ipv6.append(nic)
++        return ipv6
++
++    def get_ipv4(self):
++        ipv4 = []
++        nics = Distro.get_devicelist()
++        for nic in nics:
++            if_result = Distro.get_ifconfig_ifname_out(nic)
++            for item in if_result.splitlines():
++                print(item)
++                if self.ipv4_pat.match(item):
++                    ipv4.append(nic)
++        return ipv4
++
++    def is_up(self, ifname):
++        if_result = Distro.get_ifconfig_ifname_out(ifname)
++        pat = "^" + ifname
++        for item in if_result.splitlines():
++            if re.match(pat, item):
++                flags = item.split('<')[1].split('>')[0]
++                if flags.find("UP") != -1:
++                    return True
++
++    def _get_current_rename_info(self, check_downable=True):
++        """Collect information necessary for rename_interfaces."""
++        names = Distro.get_devicelist()
++        bymac = {}
++        for n in names:
++            bymac[Distro.get_interface_mac(n)] = {
++                'name': n, 'up': self.is_up(n), 'downable': None}
++
++        if check_downable:
++            nics_with_addresses = set()
++            ipv6 = self.get_ipv6()
++            ipv4 = self.get_ipv4()
++            for bytes_out in (ipv6, ipv4):
++                for i in ipv6:
++                    nics_with_addresses.update(i)
++                for i in ipv4:
++                    nics_with_addresses.update(i)
++
++        for d in bymac.values():
++            d['downable'] = (d['up'] is False or
++                             d['name'] not in nics_with_addresses)
++
++        return bymac
++
++    def _rename_interfaces(self, renames):
++        if not len(renames):
++            LOG.debug("no interfaces to rename")
++            return
++
++        current_info = self._get_current_rename_info()
++
++        cur_bymac = {}
++        for mac, data in current_info.items():
++            cur = data.copy()
++            cur['mac'] = mac
++            cur_bymac[mac] = cur
++
++        def update_byname(bymac):
++            return dict((data['name'], data)
++                        for data in bymac.values())
++
++        def rename(cur, new):
++            util.subp(["ifconfig", cur, "name", new], capture=True)
++
++        def down(name):
++            util.subp(["ifconfig", name, "down"], capture=True)
++
++        def up(name):
++            util.subp(["ifconfig", name, "up"], capture=True)
++
++        ops = []
++        errors = []
++        ups = []
++        cur_byname = update_byname(cur_bymac)
++        tmpname_fmt = "cirename%d"
++        tmpi = -1
++
++        for mac, new_name in renames:
++            cur = cur_bymac.get(mac, {})
++            cur_name = cur.get('name')
++            cur_ops = []
++            if cur_name == new_name:
++                # nothing to do
++                continue
++
++            if not cur_name:
++                errors.append("[nic not present] Cannot rename mac=%s to %s"
++                              ", not available." % (mac, new_name))
++                continue
++
++            if cur['up']:
++                msg = "[busy] Error renaming mac=%s from %s to %s"
++                if not cur['downable']:
++                    errors.append(msg % (mac, cur_name, new_name))
++                    continue
++                cur['up'] = False
++                cur_ops.append(("down", mac, new_name, (cur_name,)))
++                ups.append(("up", mac, new_name, (new_name,)))
++
++            if new_name in cur_byname:
++                target = cur_byname[new_name]
++                if target['up']:
++                    msg = "[busy-target] Error renaming mac=%s from %s to %s."
++                    if not target['downable']:
++                        errors.append(msg % (mac, cur_name, new_name))
++                        continue
++                    else:
++                        cur_ops.append(("down", mac, new_name, (new_name,)))
++
++                tmp_name = None
++                while tmp_name is None or tmp_name in cur_byname:
++                    tmpi += 1
++                    tmp_name = tmpname_fmt % tmpi
++
++                cur_ops.append(("rename", mac, new_name, (new_name, tmp_name)))
++                target['name'] = tmp_name
++                cur_byname = update_byname(cur_bymac)
++                if target['up']:
++                    ups.append(("up", mac, new_name, (tmp_name,)))
++
++            cur_ops.append(("rename", mac, new_name, (cur['name'], new_name)))
++            cur['name'] = new_name
++            cur_byname = update_byname(cur_bymac)
++            ops += cur_ops
++
++        opmap = {'rename': rename, 'down': down, 'up': up}
++        if len(ops) + len(ups) == 0:
++            if len(errors):
++                LOG.debug("unable to do any work for renaming of %s", renames)
++            else:
++                LOG.debug("no work necessary for renaming of %s", renames)
++        else:
++            LOG.debug("achieving renaming of %s with ops %s",
++                      renames, ops + ups)
++
++            for op, mac, new_name, params in ops + ups:
++                try:
++                    opmap.get(op)(*params)
++                except Exception as e:
++                    errors.append(
++                        "[unknown] Error performing %s%s for %s, %s: %s" %
++                        (op, params, mac, new_name, e))
++        if len(errors):
++            raise Exception('\n'.join(errors))
++
++    def apply_network_config_names(self, netcfg):
++        renames = []
++        for ent in netcfg.get('config', {}):
++            if ent.get('type') != 'physical':
++                continue
++            mac = ent.get('mac_address')
++            name = ent.get('name')
++            if not mac:
++                continue
++            renames.append([mac, name])
++        return self._rename_interfaces(renames)
++
++    @classmethod
++    def generate_fallback_config(self):
++        nics = Distro.get_ifconfig_ether()
++        if nics is None:
++            LOG.debug("Fail to get network interfaces")
++            return None
++        potential_interfaces = nics.split()
++        connected = []
++        for nic in potential_interfaces:
++            pat = "^" + nic
++            if_result = Distro.get_ifconfig_ifname_out(nic)
++            for item in if_result.split("\n"):
++                if re.match(pat, item):
++                    flags = item.split('<')[1].split('>')[0]
++                    if flags.find("RUNNING") != -1:
++                        connected.append(nic)
++        if connected:
++            potential_interfaces = connected
++        names = list(sorted(potential_interfaces))
++        default_pri_nic = Distro.default_primary_nic
++        if default_pri_nic in names:
++            names.remove(default_pri_nic)
++            names.insert(0, default_pri_nic)
++        target_name = None
++        target_mac = None
++        for name in names:
++            mac = Distro.get_interface_mac(name)
++            if mac:
++                target_name = name
++                target_mac = mac
++                break
++        if target_mac and target_name:
++            nconf = {'config': [], 'version': 1}
++            nconf['config'].append(
++                {'type': 'physical', 'name': target_name,
++                 'mac_address': target_mac, 'subnets': [{'type': 'dhcp'}]})
++            return nconf
++        else:
++            return None
+ 
+     def _write_network(self, settings):
+         entries = net_util.translate_network(settings)
+--- cloudinit/settings.py.orig	2016-12-23 16:37:45 UTC
++++ cloudinit/settings.py
+@@ -37,7 +37,7 @@ CFG_BUILTIN = {
+     ],
+     'def_log_file': '/var/log/cloud-init.log',
+     'log_cfgs': [],
+-    'syslog_fix_perms': ['syslog:adm', 'root:adm'],
++    'syslog_fix_perms': ['syslog:adm', 'root:adm', 'root:wheel'],
+     'system_info': {
+         'paths': {
+             'cloud_dir': '/var/lib/cloud',
+--- cloudinit/sources/DataSourceAzure.py.orig	2016-12-23 16:37:45 UTC
++++ cloudinit/sources/DataSourceAzure.py
+@@ -10,6 +10,7 @@ import crypt
+ from functools import partial
+ import os
+ import os.path
++import re
+ import time
+ from xml.dom import minidom
+ import xml.etree.ElementTree as ET
+@@ -32,19 +33,160 @@ BOUNCE_COMMAND = [
+ # azure systems will always have a resource disk, and 66-azure-ephemeral.rules
+ # ensures that it gets linked to this path.
+ RESOURCE_DISK_PATH = '/dev/disk/cloud/azure_resource'
++DEFAULT_PRIMARY_NIC = 'eth0'
++LEASE_FILE = '/var/lib/dhcp/dhclient.eth0.leases'
++DEFAULT_FS = 'ext4'
+ 
++
++def find_storvscid_from_sysctl_pnpinfo(sysctl_out, deviceid):
++    # extract the 'X' from dev.storvsc.X. if deviceid matches
++    """
++    dev.storvsc.1.%pnpinfo:
++        classid=32412632-86cb-44a2-9b5c-50d1417354f5
++        deviceid=00000000-0001-8899-0000-000000000000
++    """
++    for line in sysctl_out.splitlines():
++        if re.search(r"pnpinfo", line):
++            fields = line.split()
++            if len(fields) >= 3:
++                columns = fields[2].split('=')
++                if (len(columns) >= 2 and
++                        columns[0] == "deviceid" and
++                        columns[1].startswith(deviceid)):
++                    comps = fields[0].split('.')
++                    return comps[2]
++    return None
++
++
++def find_busdev_from_disk(camcontrol_out, disk_drv):
++    # find the scbusX from 'camcontrol devlist -b' output
++    # if disk_drv matches the specified disk driver, i.e. blkvsc1
++    """
++    scbus0 on ata0 bus 0
++    scbus1 on ata1 bus 0
++    scbus2 on blkvsc0 bus 0
++    scbus3 on blkvsc1 bus 0
++    scbus4 on storvsc2 bus 0
++    scbus5 on storvsc3 bus 0
++    scbus-1 on xpt0 bus 0
++    """
++    for line in camcontrol_out.splitlines():
++        if re.search(disk_drv, line):
++            items = line.split()
++            return items[0]
++    return None
++
++
++def find_dev_from_busdev(camcontrol_out, busdev):
++    # find the daX from 'camcontrol devlist' output
++    # if busdev matches the specified value, i.e. 'scbus2'
++    """
++    <Msft Virtual CD/ROM 1.0>          at scbus1 target 0 lun 0 (cd0,pass0)
++    <Msft Virtual Disk 1.0>            at scbus2 target 0 lun 0 (da0,pass1)
++    <Msft Virtual Disk 1.0>            at scbus3 target 1 lun 0 (da1,pass2)
++    """
++    for line in camcontrol_out.splitlines():
++        if re.search(busdev, line):
++            items = line.split('(')
++            if len(items) == 2:
++                dev_pass = items[1].split(',')
++                return dev_pass[0]
++    return None
++
++
++def get_dev_storvsc_sysctl():
++    try:
++        sysctl_out, err = util.subp(['sysctl', 'dev.storvsc'])
++    except util.ProcessExecutionError:
++        LOG.debug("Fail to execute sysctl dev.storvsc")
++        return None
++    return sysctl_out
++
++
++def get_camcontrol_dev_bus():
++    try:
++        camcontrol_b_out, err = util.subp(['camcontrol', 'devlist', '-b'])
++    except util.ProcessExecutionError:
++        LOG.debug("Fail to execute camcontrol devlist -b")
++        return None
++    return camcontrol_b_out
++
++
++def get_camcontrol_dev():
++    try:
++        camcontrol_out, err = util.subp(['camcontrol', 'devlist'])
++    except util.ProcessExecutionError:
++        LOG.debug("Fail to execute camcontrol devlist")
++        return None
++    return camcontrol_out
++
++
++def get_resource_disk_on_freebsd(port_id):
++    g0 = "00000000"
++    if port_id > 1:
++        g0 = "00000001"
++        port_id = port_id - 2
++    g1 = "000" + str(port_id)
++    g0g1 = "{0}-{1}".format(g0, g1)
++    """
++    search 'X' from
++       'dev.storvsc.X.%pnpinfo:
++           classid=32412632-86cb-44a2-9b5c-50d1417354f5
++           deviceid=00000000-0001-8899-0000-000000000000'
++    """
++    sysctl_out = get_dev_storvsc_sysctl()
++
++    storvscid = find_storvscid_from_sysctl_pnpinfo(sysctl_out, g0g1)
++    if not storvscid:
++        LOG.debug("Fail to find storvsc id from sysctl")
++        return None
++
++    camcontrol_b_out = get_camcontrol_dev_bus()
++    camcontrol_out = get_camcontrol_dev()
++    # try to find /dev/XX from 'blkvsc' device
++    blkvsc = "blkvsc{0}".format(storvscid)
++    scbusx = find_busdev_from_disk(camcontrol_b_out, blkvsc)
++    if scbusx:
++        devname = find_dev_from_busdev(camcontrol_out, scbusx)
++        if devname is None:
++            LOG.debug("Fail to find /dev/daX")
++            return None
++        return devname
++    # try to find /dev/XX from 'storvsc' device
++    storvsc = "storvsc{0}".format(storvscid)
++    scbusx = find_busdev_from_disk(camcontrol_b_out, storvsc)
++    if scbusx:
++        devname = find_dev_from_busdev(camcontrol_out, scbusx)
++        if devname is None:
++            LOG.debug("Fail to find /dev/daX")
++            return None
++        return devname
++    return None
++
++# update the FreeBSD specific information
++if util.is_FreeBSD():
++    DEFAULT_PRIMARY_NIC = 'hn0'
++    LEASE_FILE = '/var/db/dhclient.leases.hn0'
++    DEFAULT_FS = 'freebsd-ufs'
++    res_disk = get_resource_disk_on_freebsd(1)
++    if res_disk is not None:
++        LOG.debug("resource disk is not None")
++        RESOURCE_DISK_PATH = "/dev/" + res_disk
++    else:
++        LOG.debug("resource disk is None")
++
+ BUILTIN_DS_CONFIG = {
+     'agent_command': AGENT_START_BUILTIN,
+     'data_dir': "/var/lib/waagent",
+     'set_hostname': True,
+     'hostname_bounce': {
+-        'interface': 'eth0',
++        'interface': DEFAULT_PRIMARY_NIC,
+         'policy': True,
+         'command': BOUNCE_COMMAND,
+         'hostname_command': 'hostname',
+     },
+     'disk_aliases': {'ephemeral0': RESOURCE_DISK_PATH},
+-    'dhclient_lease_file': '/var/lib/dhcp/dhclient.eth0.leases',
++    'dhclient_lease_file': LEASE_FILE,
+ }
+ 
+ BUILTIN_CLOUD_CONFIG = {
+@@ -53,7 +195,7 @@ BUILTIN_CLOUD_CONFIG = {
+                        'layout': [100],
+                        'overwrite': True},
+     },
+-    'fs_setup': [{'filesystem': 'ext4',
++    'fs_setup': [{'filesystem': DEFAULT_FS,
+                   'device': 'ephemeral0.1',
+                   'replace_fs': 'ntfs'}],
+ }
+@@ -178,7 +320,11 @@ class DataSourceAzureNet(sources.DataSource):
+         for cdev in candidates:
+             try:
+                 if cdev.startswith("/dev/"):
+-                    ret = util.mount_cb(cdev, load_azure_ds_dir)
++                    if util.is_FreeBSD():
++                        ret = util.mount_cb(cdev, load_azure_ds_dir,
++                                            mtype="udf", sync=False)
++                    else:
++                        ret = util.mount_cb(cdev, load_azure_ds_dir)
+                 else:
+                     ret = load_azure_ds_dir(cdev)
+ 
+@@ -206,11 +352,13 @@ class DataSourceAzureNet(sources.DataSource):
+             LOG.debug("using files cached in %s", ddir)
+ 
+         # azure / hyper-v provides random data here
+-        seed = util.load_file("/sys/firmware/acpi/tables/OEM0",
+-                              quiet=True, decode=False)
+-        if seed:
+-            self.metadata['random_seed'] = seed
+ 
++        if not util.is_FreeBSD():
++            seed = util.load_file("/sys/firmware/acpi/tables/OEM0",
++                                  quiet=True, decode=False)
++            if seed:
++                self.metadata['random_seed'] = seed
++        # TODO. find the seed on FreeBSD platform
+         # now update ds_cfg to reflect contents pass in config
+         user_ds_cfg = util.get_cfg_by_path(self.cfg, DS_CFG_PATH, {})
+         self.ds_cfg = util.mergemanydict([user_ds_cfg, self.ds_cfg])
+@@ -619,8 +767,19 @@ def encrypt_pass(password, salt_id="$6$"):
+ def list_possible_azure_ds_devs():
+     # return a sorted list of devices that might have a azure datasource
+     devlist = []
+-    for fstype in ("iso9660", "udf"):
+-        devlist.extend(util.find_devs_with("TYPE=%s" % fstype))
++    if util.is_FreeBSD():
++        cdrom_dev = "/dev/cd0"
++        try:
++            util.subp(["mount", "-o", "ro", "-t", "udf", cdrom_dev,
++                       "/mnt/cdrom/secure"])
++        except util.ProcessExecutionError:
++            LOG.debug("Fail to mount cd")
++            return devlist
++        util.subp(["umount", "/mnt/cdrom/secure"])
++        devlist.append(cdrom_dev)
++    else:
++        for fstype in ("iso9660", "udf"):
++            devlist.extend(util.find_devs_with("TYPE=%s" % fstype))
+ 
+     devlist.sort(reverse=True)
+     return devlist
+--- cloudinit/sources/helpers/azure.py.orig	2016-12-23 16:37:45 UTC
++++ cloudinit/sources/helpers/azure.py
+@@ -29,6 +29,14 @@ def cd(newdir):
+         os.chdir(prevdir)
+ 
+ 
++def get_azure_endpoint():
++    if util.is_FreeBSD():
++        azure_endpoint = "option-245"
++    else:
++        azure_endpoint = "unknown-245"
++    return azure_endpoint
++
++
+ class AzureEndpointHttpClient(object):
+ 
+     headers = {
+@@ -236,7 +244,8 @@ class WALinuxAgentShim(object):
+         content = util.load_file(fallback_lease_file)
+         LOG.debug("content is %s", content)
+         for line in content.splitlines():
+-            if 'unknown-245' in line:
++            azure_endpoint = get_azure_endpoint()
++            if azure_endpoint in line:
+                 # Example line from Ubuntu
+                 # option unknown-245 a8:3f:81:10;
+                 leases.append(line.strip(' ').split(' ', 2)[-1].strip(';\n"'))
+--- cloudinit/stages.py.orig	2016-12-23 16:37:45 UTC
++++ cloudinit/stages.py
+@@ -616,7 +616,7 @@ class Init(object):
+                 return (None, loc)
+             if ncfg:
+                 return (ncfg, loc)
+-        return (net.generate_fallback_config(), "fallback")
++        return (self.distro.generate_fallback_config(), "fallback")
+ 
+     def apply_network_config(self, bring_up):
+         netcfg, src = self._find_networking_config()
+--- cloudinit/util.py.orig	2016-12-23 16:37:45 UTC
++++ cloudinit/util.py
+@@ -565,6 +565,10 @@ def is_ipv4(instr):
+     return len(toks) == 4
+ 
+ 
++def is_FreeBSD():
++    return system_info()['platform'].startswith('FreeBSD')
++
++
+ def get_cfg_option_bool(yobj, key, default=False):
+     if key not in yobj:
+         return default
+@@ -2091,11 +2095,56 @@ def parse_mtab(path):
+     return None
+ 
+ 
++def find_freebsd_part(label_part):
++    if label_part.startswith("/dev/label/"):
++        target_label = label_part[5:]
++        (label_part, err) = subp(['glabel', 'status', '-s'])
++        for labels in label_part.split("\n"):
++            items = labels.split()
++            if len(items) > 0 and items[0].startswith(target_label):
++                label_part = items[2]
++                break
++        label_part = str(label_part)
++    return label_part
++
++
++def get_path_dev_freebsd(path, mnt_list):
++    path_found = None
++    for line in mnt_list.split("\n"):
++        items = line.split()
++        if (len(items) > 2 and os.path.exists(items[1] + path)):
++            path_found = line
++            break
++    return path_found
++
++
++def get_mount_info_freebsd(path, log=LOG):
++    (result, err) = subp(['mount', '-p', path], rcs=[0, 1])
++    if len(err):
++        # find a path if the input is not a mounting point
++        (mnt_list, err) = subp(['mount', '-p'])
++        path_found = get_path_dev_freebsd(path, mnt_list)
++        if (path_found is None):
++            return None
++        result = path_found
++    ret = result.split()
++    label_part = find_freebsd_part(ret[0])
++    return "/dev/" + label_part, ret[2], ret[1]
++
++
+ def parse_mount(path):
+     (mountoutput, _err) = subp("mount")
+     mount_locs = mountoutput.splitlines()
+     for line in mount_locs:
+         m = re.search(r'^(/dev/[\S]+) on (/.*) \((.+), .+, (.+)\)$', line)
++        if not m:
++            continue
++        # check whether the dev refers to a label on FreeBSD
++        # for example, if dev is '/dev/label/rootfs', we should
++        # continue finding the real device like '/dev/da0'.
++        devm = re.search('^(/dev/.+)p([0-9])$', m.group(1))
++        if (not devm and is_FreeBSD()):
++            return get_mount_info_freebsd(path)
+         devpth = m.group(1)
+         mount_point = m.group(2)
+         fs_type = m.group(3)
+@@ -2357,7 +2406,8 @@ def read_dmi_data(key):
+     uname_arch = os.uname()[4]
+     if not (uname_arch == "x86_64" or
+             (uname_arch.startswith("i") and uname_arch[2:] == "86") or
+-            uname_arch == 'aarch64'):
++            uname_arch == 'aarch64' or
++            uname_arch == 'amd64'):
+         LOG.debug("dmidata is not supported on %s", uname_arch)
+         return None
+ 
+--- config/cloud.cfg-freebsd.orig	2016-12-23 16:37:45 UTC
++++ config/cloud.cfg-freebsd
+@@ -5,7 +5,7 @@ syslog_fix_perms: root:wheel
+ 
+ # This should not be required, but leave it in place until the real cause of
+ # not beeing able to find -any- datasources is resolved.
+-datasource_list: ['ConfigDrive', 'OpenStack', 'Ec2']
++datasource_list: ['ConfigDrive', 'Azure', 'OpenStack', 'Ec2']
+ 
+ # A set of users which may be applied and/or used by various modules
+ # when a 'default' entry is found it will reference the 'default_user'
+--- requirements.txt.orig	2016-12-23 16:37:45 UTC
++++ requirements.txt
+@@ -28,7 +28,7 @@ configobj>=5.0.2
+ pyyaml
+ 
+ # The new main entrypoint uses argparse instead of optparse
+-argparse
++# argparse
+ 
+ # Requests handles ssl correctly!
+ requests
+--- setup.py.orig	2016-12-23 16:37:45 UTC
++++ setup.py
+@@ -87,9 +87,9 @@ ETC = "/etc"
+ USR_LIB_EXEC = "/usr/lib"
+ LIB = "/lib"
+ if os.uname()[0] == 'FreeBSD':
++    ETC = "/usr/local/etc"
+     USR = "/usr/local"
+     USR_LIB_EXEC = "/usr/local/lib"
+-    ETC = "/usr/local/etc"
+ elif os.path.isfile('/etc/redhat-release'):
+     USR_LIB_EXEC = "/usr/libexec"
+ 
+@@ -166,8 +166,6 @@ else:
+         (ETC + '/cloud', glob('config/*.cfg')),
+         (ETC + '/cloud/cloud.cfg.d', glob('config/cloud.cfg.d/*')),
+         (ETC + '/cloud/templates', glob('templates/*')),
+-        (ETC + '/NetworkManager/dispatcher.d/', ['tools/hook-network-manager']),
+-        (ETC + '/dhcp/dhclient-exit-hooks.d/', ['tools/hook-dhclient']),
+         (USR_LIB_EXEC + '/cloud-init', ['tools/uncloud-init',
+                                         'tools/write-ssh-key-fingerprints']),
+         (USR + '/share/doc/cloud-init', [f for f in glob('doc/*') if is_f(f)]),
+@@ -175,8 +173,13 @@ else:
+             [f for f in glob('doc/examples/*') if is_f(f)]),
+         (USR + '/share/doc/cloud-init/examples/seed',
+             [f for f in glob('doc/examples/seed/*') if is_f(f)]),
+-        (LIB + '/udev/rules.d', [f for f in glob('udev/*.rules')]),
+     ]
++    if os.uname()[0] != 'FreeBSD':
++        data_files.append([
++            (ETC + '/NetworkManager/dispatcher.d/', ['tools/hook-network-manager']),
++            (ETC + '/dhcp/dhclient-exit-hooks.d/', ['tools/hook-dhclient']),
++            (LIB + '/udev/rules.d', [f for f in glob('udev/*.rules')]),
++        ])
+     # Use a subclass for install that handles
+     # adding on the right init system configuration files
+     cmdclass = {
+@@ -187,6 +190,9 @@ else:
+ requirements = read_requires()
+ if sys.version_info < (3,):
+     requirements.append('cheetah')
++if ((sys.version_info.major == 2 and sys.version_info.minor < 7) or
++   (sys.version_info.major == 3 and sys.version_info.minor < 2)):
++    requirements.append('argparse')
+ 
+ setuptools.setup(
+     name='cloud-init',
+--- sysvinit/freebsd/cloudconfig.orig	2016-12-23 16:37:45 UTC
++++ sysvinit/freebsd/cloudconfig
+@@ -7,23 +7,13 @@
+ . /etc/rc.subr
+ 
+ PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+-export CLOUD_CFG=/usr/local/etc/cloud/cloud.cfg
+ 
+ name="cloudconfig"
+ command="/usr/local/bin/cloud-init"
+ start_cmd="cloudconfig_start"
+ stop_cmd=":"
+ rcvar="cloudinit_enable"
+-start_precmd="cloudinit_override"
+ start_cmd="cloudconfig_start"
+-
+-cloudinit_override()
+-{
+-	# If there exist sysconfig/defaults variable override files use it...
+-	if [ -f /etc/defaults/cloud-init ]; then
+-		. /etc/defaults/cloud-init
+-	fi
+-}
+ 
+ cloudconfig_start()
+ {
+--- sysvinit/freebsd/cloudfinal.orig	2016-12-23 16:37:45 UTC
++++ sysvinit/freebsd/cloudfinal
+@@ -7,23 +7,13 @@
+ . /etc/rc.subr
+ 
+ PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+-export CLOUD_CFG=/usr/local/etc/cloud/cloud.cfg
+ 
+ name="cloudfinal"
+ command="/usr/local/bin/cloud-init"
+ start_cmd="cloudfinal_start"
+ stop_cmd=":"
+ rcvar="cloudinit_enable"
+-start_precmd="cloudinit_override"
+ start_cmd="cloudfinal_start"
+-
+-cloudinit_override()
+-{
+-	# If there exist sysconfig/defaults variable override files use it...
+-	if [ -f /etc/defaults/cloud-init ]; then
+-		 . /etc/defaults/cloud-init
+-	fi
+-}
+ 
+ cloudfinal_start()
+ {
+--- sysvinit/freebsd/cloudinit.orig	2016-12-23 16:37:45 UTC
++++ sysvinit/freebsd/cloudinit
+@@ -7,23 +7,13 @@
+ . /etc/rc.subr
+ 
+ PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+-export CLOUD_CFG=/usr/local/etc/cloud/cloud.cfg
+ 
+ name="cloudinit"
+ command="/usr/local/bin/cloud-init"
+ start_cmd="cloudinit_start"
+ stop_cmd=":"
+ rcvar="cloudinit_enable"
+-start_precmd="cloudinit_override"
+ start_cmd="cloudinit_start"
+-
+-cloudinit_override()
+-{
+-	# If there exist sysconfig/defaults variable override files use it...
+-	if [ -f /etc/defaults/cloud-init ]; then
+-		. /etc/defaults/cloud-init
+-	fi
+-}
+ 
+ cloudinit_start()
+ {
+--- sysvinit/freebsd/cloudinitlocal.orig	2016-12-23 16:37:45 UTC
++++ sysvinit/freebsd/cloudinitlocal
+@@ -1,29 +1,19 @@
+ #!/bin/sh
+ 
+ # PROVIDE: cloudinitlocal
+-# REQUIRE: mountcritlocal 
++# REQUIRE: ldconfig mountcritlocal 
+ # BEFORE:  NETWORKING FILESYSTEMS cloudinit cloudconfig cloudfinal
+ 
+ . /etc/rc.subr
+ 
+ PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+-export CLOUD_CFG=/usr/local/etc/cloud/cloud.cfg
+ 
+ name="cloudinitlocal"
+ command="/usr/local/bin/cloud-init"
+ start_cmd="cloudlocal_start"
+ stop_cmd=":"
+ rcvar="cloudinit_enable"
+-start_precmd="cloudinit_override"
+ start_cmd="cloudlocal_start"
+-
+-cloudinit_override()
+-{
+-	# If there exist sysconfig/defaults variable override files use it...
+-	if [ -f /etc/defaults/cloud-init ]; then
+-		. /etc/defaults/cloud-init
+-	fi
+-}
+ 
+ cloudlocal_start()
+ {
+--- tests/unittests/test_datasource/test_azure.py.orig	2016-12-23 16:37:45 UTC
++++ tests/unittests/test_datasource/test_azure.py
+@@ -3,6 +3,8 @@
+ from cloudinit import helpers
+ from cloudinit.util import b64e, decode_binary, load_file
+ from cloudinit.sources import DataSourceAzure
++from cloudinit.util import find_freebsd_part
++from cloudinit.util import get_path_dev_freebsd
+ 
+ from ..helpers import TestCase, populate_dir, mock, ExitStack, PY26, SkipTest
+ 
+@@ -95,6 +97,41 @@ class TestAzureDataSource(TestCase):
+         for module, name, new in patches:
+             self.patches.enter_context(mock.patch.object(module, name, new))
+ 
++    def _get_mockds(self):
++        mod = DataSourceAzure
++        sysctl_out = "dev.storvsc.3.%pnpinfo: "\
++                     "classid=ba6163d9-04a1-4d29-b605-72e2ffb1dc7f "\
++                     "deviceid=f8b3781b-1e82-4818-a1c3-63d806ec15bb\n"
++        sysctl_out += "dev.storvsc.2.%pnpinfo: "\
++                      "classid=ba6163d9-04a1-4d29-b605-72e2ffb1dc7f "\
++                      "deviceid=f8b3781a-1e82-4818-a1c3-63d806ec15bb\n"
++        sysctl_out += "dev.storvsc.1.%pnpinfo: "\
++                      "classid=32412632-86cb-44a2-9b5c-50d1417354f5 "\
++                      "deviceid=00000000-0001-8899-0000-000000000000\n"
++        camctl_devbus = """
++scbus0 on ata0 bus 0
++scbus1 on ata1 bus 0
++scbus2 on blkvsc0 bus 0
++scbus3 on blkvsc1 bus 0
++scbus4 on storvsc2 bus 0
++scbus5 on storvsc3 bus 0
++scbus-1 on xpt0 bus 0
++        """
++        camctl_dev = """
++<Msft Virtual CD/ROM 1.0>          at scbus1 target 0 lun 0 (cd0,pass0)
++<Msft Virtual Disk 1.0>            at scbus2 target 0 lun 0 (da0,pass1)
++<Msft Virtual Disk 1.0>            at scbus3 target 1 lun 0 (da1,pass2)
++        """
++        self.apply_patches([
++            (mod, 'get_dev_storvsc_sysctl', mock.MagicMock(
++                return_value=sysctl_out)),
++            (mod, 'get_camcontrol_dev_bus', mock.MagicMock(
++                return_value=camctl_devbus)),
++            (mod, 'get_camcontrol_dev', mock.MagicMock(
++                return_value=camctl_dev))
++        ])
++        return mod
++
+     def _get_ds(self, data, agent_command=None):
+ 
+         def dsdevs():
+@@ -176,6 +213,34 @@ class TestAzureDataSource(TestCase):
+         except AssertionError:
+             return
+         raise AssertionError("XML is the same")
++
++    def test_get_resource_disk(self):
++        ds = self._get_mockds()
++        dev = ds.get_resource_disk_on_freebsd(1)
++        self.assertEqual("da1", dev)
++
++    @mock.patch('cloudinit.util.subp')
++    def test_find_freebsd_part_on_Azure(self, mock_subp):
++        glabel_out = '''
++gptid/fa52d426-c337-11e6-8911-00155d4c5e47  N/A  da0p1
++                              label/rootfs  N/A  da0p2
++                                label/swap  N/A  da0p3
++'''
++        mock_subp.return_value = (glabel_out, "")
++        res = find_freebsd_part("/dev/label/rootfs")
++        self.assertEqual("da0p2", res)
++
++    def test_get_path_dev_freebsd_on_Azure(self):
++        mnt_list = '''
++/dev/label/rootfs  /                ufs     rw              1 1
++devfs              /dev             devfs   rw,multilabel   0 0
++fdescfs            /dev/fd          fdescfs rw              0 0
++/dev/da1s1         /mnt/resource    ufs     rw              2 2
++'''
++        with mock.patch.object(os.path, 'exists',
++                               return_value=True):
++            res = get_path_dev_freebsd('/etc', mnt_list)
++            self.assertNotEqual(res, None)
+ 
+     def test_basic_seed_dir(self):
+         odata = {'HostName': "myhost", 'UserName': "myuser"}
+--- tests/unittests/test_datasource/test_azure_helper.py.orig	2016-12-23 16:37:45 UTC
++++ tests/unittests/test_datasource/test_azure_helper.py
+@@ -72,10 +72,11 @@ class TestFindEndpoint(TestCase):
+ 
+     @staticmethod
+     def _build_lease_content(encoded_address):
++        endpoint = azure_helper.get_azure_endpoint()
+         return '\n'.join([
+             'lease {',
+             ' interface "eth0";',
+-            ' option unknown-245 {0};'.format(encoded_address),
++            ' option {0} {1};'.format(endpoint, encoded_address),
+             '}'])
+ 
+     def test_from_dhcp_client(self):
+--- tests/unittests/test_datasource/test_cloudstack.py.orig	2016-12-23 16:37:45 UTC
++++ tests/unittests/test_datasource/test_cloudstack.py
+@@ -15,6 +15,11 @@ class TestCloudStackPasswordFetching(TestCase):
+         mod_name = 'cloudinit.sources.DataSourceCloudStack'
+         self.patches.enter_context(mock.patch('{0}.ec2'.format(mod_name)))
+         self.patches.enter_context(mock.patch('{0}.uhelp'.format(mod_name)))
++        default_gw = "192.201.20.0"
++        mod_name = 'cloudinit.sources.DataSourceCloudStack.get_default_gateway'
++        get_default_gw = mock.MagicMock(return_value=default_gw)
++        self.patches.enter_context(
++            mock.patch(mod_name, get_default_gw))
+ 
+     def _set_password_server_response(self, response_string):
+         subp = mock.MagicMock(return_value=(response_string, ''))
+--- tests/unittests/test_distros/test_netconfig.py.orig	2016-12-23 16:37:45 UTC
++++ tests/unittests/test_distros/test_netconfig.py
+@@ -83,6 +83,20 @@ class WriteBuffer(object):
+ 
+ class TestNetCfgDistro(TestCase):
+ 
++    frbsd_ifout = """\
++hn0: flags=8843<UP,BROADCAST,RUNNING,SIMPLEX,MULTICAST> metric 0 mtu 1500
++        options=51b<RXCSUM,TXCSUM,VLAN_MTU,VLAN_HWTAGGING,TSO4,LRO>
++        ether 00:15:5d:4c:73:00
++        inet6 fe80::215:5dff:fe4c:7300%hn0 prefixlen 64 scopeid 0x2
++        inet 10.156.76.127 netmask 0xfffffc00 broadcast 10.156.79.255
++        nd6 options=23<PERFORMNUD,ACCEPT_RTADV,AUTO_LINKLOCAL>
++        media: Ethernet autoselect (10Gbase-T <full-duplex>)
++        status: active
++"""
++
++    def setUp(self):
++        super(TestNetCfgDistro, self).setUp()
++
+     def _get_distro(self, dname):
+         cls = distros.fetch(dname)
+         cfg = settings.CFG_BUILTIN
+@@ -126,6 +140,29 @@ class TestNetCfgDistro(TestCase):
+             self.assertIn(k, b1)
+         for (k, v) in b1.items():
+             self.assertEqual(v, b2[k])
++
++    @mock.patch('cloudinit.distros.freebsd.Distro.get_ifconfig_list')
++    @mock.patch('cloudinit.distros.freebsd.Distro.get_ifconfig_ifname_out')
++    def test_get_ip_nic_freebsd(self, ifname_out, iflist):
++        frbsd_distro = self._get_distro('freebsd')
++        iflist.return_value = "lo0 hn0"
++        ifname_out.return_value = self.frbsd_ifout
++        res = frbsd_distro.get_ipv4()
++        self.assertEqual(res, ['lo0', 'hn0'])
++        res = frbsd_distro.get_ipv6()
++        self.assertEqual(res, [])
++
++    @mock.patch('cloudinit.distros.freebsd.Distro.get_ifconfig_ether')
++    @mock.patch('cloudinit.distros.freebsd.Distro.get_ifconfig_ifname_out')
++    @mock.patch('cloudinit.distros.freebsd.Distro.get_interface_mac')
++    def test_generate_fallback_config_freebsd(self, mac, ifname_out, if_ether):
++        frbsd_distro = self._get_distro('freebsd')
++
++        if_ether.return_value = 'hn0'
++        ifname_out.return_value = self.frbsd_ifout
++        mac.return_value = '00:15:5d:4c:73:00'
++        res = frbsd_distro.generate_fallback_config()
++        self.assertIsNotNone(res)
+ 
+     def test_simple_write_rh(self):
+         rh_distro = self._get_distro('rhel')
+--- tests/unittests/test_util.py.orig	2016-12-23 16:37:45 UTC
++++ tests/unittests/test_util.py
+@@ -567,7 +567,8 @@ class TestSubp(helpers.TestCase):
+     def test_subp_capture_stderr(self):
+         data = b'hello world'
+         (out, err) = util.subp(self.stdin2err, capture=True,
+-                               decode=False, data=data)
++                               decode=False, data=data,
++                               update_env={'LC_ALL': 'C'})
+         self.assertEqual(err, data)
+         self.assertEqual(out, b'')
+ 
+--- tools/build-on-freebsd.orig	2016-12-23 16:37:45 UTC
++++ tools/build-on-freebsd
+@@ -3,16 +3,14 @@
+ # installing cloud-init. This script takes care of building and installing. It
+ # will optionally make a first run at the end.
+ 
+-fail() { echo "FAILED:" "$@" 1>&2; exit 1; }
++fail() { echo "FAILED:" "$@" 1>&2; exit 1;}
+ 
+ # Check dependencies:
+ depschecked=/tmp/c-i.dependencieschecked
+ pkgs="
+    dmidecode
+    e2fsprogs
+-   gpart
+    py27-Jinja2
+-   py27-argparse
+    py27-boto
+    py27-cheetah
+    py27-configobj
+@@ -38,7 +36,7 @@ python setup.py build
+ python setup.py install -O1 --skip-build --prefix /usr/local/ --init-system sysvinit_freebsd
+ 
+ # Install the correct config file:
+-cp config/cloud.cfg-freebsd /usr/local/etc/cloud/cloud.cfg
++cp config/cloud.cfg-freebsd /etc/cloud/cloud.cfg
+ 
+ # Enable cloud-init in /etc/rc.conf:
+ sed -i.bak -e "/cloudinit_enable=.*/d" /etc/rc.conf

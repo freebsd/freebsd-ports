@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	virtualenv
-PORTVERSION=	15.0.3
+PORTVERSION=	15.1.0
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -10,14 +10,14 @@ COMMENT=	Tool for creating isolated Python environments
 
 LICENSE=	MIT
 
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest \
+TEST_DEPENDS?=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest \
 		${PYTHON_PKGNAMEPREFIX}mock>0:devel/py-mock
 
 OPTIONS_DEFINE=	DOCS
 
-DOCS_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>=1.1.3:textproc/py-sphinx
+DOCS_BUILD_DEPENDS?=	${PYTHON_PKGNAMEPREFIX}sphinx>=1.1.3:textproc/py-sphinx
 
-USES=		python
+USES?=		python
 USE_GITHUB=	yes
 USE_PYTHON=	autoplist concurrent distutils
 

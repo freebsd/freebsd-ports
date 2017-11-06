@@ -1,0 +1,12 @@
+--- package.json.orig	2015-10-13 15:20:01 UTC
++++ package.json
+@@ -26,8 +26,5 @@
+   },
+   "files": [
+     "index.js"
+-  ],
+-  "dependencies": {
+-    "graceful-readlink": ">= 1.0.0"
+-  }
++  ]
+ }

@@ -13,8 +13,13 @@ COMMENT?=	Record CD-R[W]s in disk-at-once mode
 
 LICENSE=	GPLv2
 
-USES=		alias gmake tar:bzip2
+BROKEN_mips=		fails to compile: cc1plus: error: unrecognized command line option "-std=c++11"
+BROKEN_mips64=		fails to compile: cc1plus: error: unrecognized command line option "-std=c++11"
+BROKEN_powerpc64=	fails to compile: cc1plus: error: unrecognized command line option "-std=c++11"
+
 GNU_CONFIGURE=	yes
+USE_CXXSTD=	c++11
+USES=		alias gmake tar:bzip2
 
 MP3OGG_LIB_DEPENDS=	libao.so:audio/libao \
 			libmad.so:audio/libmad \
@@ -32,7 +37,6 @@ TOC2MP3_DESC=		Build with toc2mp3 (requires audio/lame)
 
 .if ${PORTNAME} == "gcdmaster"
 USES+=			pkgconfig shared-mime-info
-WANT_GNOME=		yes
 GCONF_SCHEMAS=		gcdmaster.schemas
 LIB_DEPENDS+=		${MP3OGG_LIB_DEPENDS} \
 			libgnomeuimm-2.6.so:x11-toolkits/libgnomeuimm26
@@ -64,23 +68,18 @@ CONFIGURE_ARGS+=	--with-mp3-support=no --with-ogg-support=no
 .endif
 .endif
 
+.include <bsd.port.pre.mk>
+
 CONFIGURE_ARGS+=	--without-pcctsbin --without-pcctsinc \
 			--with-posix-threads=no --with-scglib
-MAKE_ENV=		CCOM=cc LANG=C
-SCSILIBTARGET=		${ARCH:S/powerpc64/powerpc/}-freebsd-cc
-
-BROKEN_aarch64=		Fails to install: gmake: p: Command not found
-BROKEN_armv6=		Fails to install: gmake: p: Command not found
-BROKEN_mips=		Fails to install: gmake: p: Command not found
-BROKEN_mips64=		Fails to install: gmake: p: Command not found
-
-.include <bsd.port.pre.mk>
+MAKE_ENV=		CCOM=cc
+SCSILIBXARCH!=		${UNAME} -m
 
 post-extract:
 	@(cd ${WRKSRC}/scsilib/RULES && ${CP} os-freebsd.id os-dragonfly.id)
-.if ${SCSILIBTARGET} != "i386-freebsd-cc"
+.if ${SCSILIBXARCH} != "i386"
 	@${LN} -sf ${WRKSRC}/scsilib/RULES/i386-freebsd-cc.rul \
-		${WRKSRC}/scsilib/RULES/${SCSILIBTARGET}.rul
+		${WRKSRC}/scsilib/RULES/${SCSILIBXARCH}-${OPSYS:tl}-cc.rul
 .endif
 
 post-patch:
@@ -89,16 +88,22 @@ post-patch:
 	55readcd 55scgcheck 55scgskeleton 55rscsi 85man
 	@${RM} ${WRKSRC}/scsilib/TARGETS/${i}
 .endfor
-.for i in include/schily.h libschily/fexec.c
-	@${REINPLACE_CMD} -e 's|fexecve|js_fexecve|g' ${WRKSRC}/scsilib/${i}
+	@${REINPLACE_CMD} -e 's|"$$ac_declaration"|"$$ac_declarationXXX"|g' \
+		${WRKSRC}/configure
+.for i in include/schily.h libscg/scsitransp.c libschily/fexec.c \
+	libschily/stdio/fgetline.c
+	@${REINPLACE_CMD} -E -e 's|fexecve|js_fexecve|g; \
+		s|^getline|js_getline|g;s|([^f_])getline|\1js_getline|g' \
+		${WRKSRC}/scsilib/${i}
 .endfor
-	@${REINPLACE_CMD} -e 's|int	getline|int	get_line|g' ${WRKSRC}/scsilib/include/schily.h
-	@${REINPLACE_CMD} -e 's|(getline|(get_line|g' ${WRKSRC}/scsilib/libscg/scsitransp.c
-	@${REINPLACE_CMD} -e 's|^getline|get_line|g' ${WRKSRC}/scsilib/libschily/stdio/fgetline.c
 .if ${PORTNAME} == "gcdmaster"
+	@${REINPLACE_CMD} -E -e 's|(sigc\+\+/)object.h|\1trackable.h|g' \
+		${WRKSRC}/xdao/CdDevice.h
 	@${REINPLACE_CMD} -E -e 's|(^SUBDIRS.+) utils|\1|' ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -E -e 's|(^gladedir.+=).+|\1 ${DATADIR}|' \
 		${WRKSRC}/xdao/Makefile.in
+	@${REINPLACE_CMD} -E -e 's|[&]?(pixmap_) == 0|!\1|g' \
+		${WRKSRC}/xdao/SampleDisplay.cc
 	@${REINPLACE_CMD} -E -e \
 		's|(SET_CDRDAO_PATH.+path=)(cdrdao)|\1${LOCALBASE}\/bin\/\2|g' \
 		${WRKSRC}/xdao/Settings.cc
@@ -118,56 +123,59 @@ post-patch:
 .endfor
 .endif
 
-do-install:
 .if ${PORTNAME} == "gcdmaster"
-	@${INSTALL_PROGRAM} ${WRKSRC}/xdao/gcdmaster ${STAGEDIR}${PREFIX}/bin
-	@${INSTALL_MAN} ${WRKSRC}/xdao/gcdmaster.man \
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/xdao/gcdmaster ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/xdao/gcdmaster.man \
 		${STAGEDIR}${PREFIX}/man/man1/gcdmaster.1
 	@${MKDIR} ${STAGEDIR}${LOCALBASE}/share/pixmaps/document-icons
-	@${INSTALL_DATA} ${WRKSRC}/xdao/gcdmaster-doc.png \
+	${INSTALL_DATA} ${WRKSRC}/xdao/gcdmaster-doc.png \
 		${STAGEDIR}${LOCALBASE}/share/pixmaps/document-icons
 	@${MKDIR} ${STAGEDIR}${LOCALBASE}/share/application-registry
-	@${INSTALL_DATA} ${WRKSRC}/xdao/gcdmaster.applications \
+	${INSTALL_DATA} ${WRKSRC}/xdao/gcdmaster.applications \
 		${STAGEDIR}${LOCALBASE}/share/application-registry
-	@${INSTALL_DATA} ${WRKSRC}/xdao/gcdmaster.desktop \
+	${INSTALL_DATA} ${WRKSRC}/xdao/gcdmaster.desktop \
 		${STAGEDIR}${LOCALBASE}/share/applications
 	@${MKDIR} ${STAGEDIR}${LOCALBASE}/share/mime-info
-	@${INSTALL_DATA} ${WRKSRC}/xdao/gcdmaster.keys \
+	${INSTALL_DATA} ${WRKSRC}/xdao/gcdmaster.keys \
 		${STAGEDIR}${LOCALBASE}/share/mime-info
-	@${INSTALL_DATA} ${WRKSRC}/xdao/gcdmaster.mime \
+	${INSTALL_DATA} ${WRKSRC}/xdao/gcdmaster.mime \
 		${STAGEDIR}${LOCALBASE}/share/mime-info
-	@${INSTALL_DATA} ${WRKSRC}/xdao/gcdmaster.png \
+	${INSTALL_DATA} ${WRKSRC}/xdao/gcdmaster.png \
 		${STAGEDIR}${LOCALBASE}/share/pixmaps
 	@${MKDIR} ${STAGEDIR}${LOCALBASE}/etc/gconf/schemas
-	@${INSTALL_DATA} ${WRKSRC}/xdao/gcdmaster.schemas \
+	${INSTALL_DATA} ${WRKSRC}/xdao/gcdmaster.schemas \
 		${STAGEDIR}${LOCALBASE}/etc/gconf/schemas
 	@${MKDIR} ${STAGEDIR}${LOCALBASE}/share/mime/packages
-	@${INSTALL_DATA} ${WRKSRC}/xdao/gcdmaster.xml \
+	${INSTALL_DATA} ${WRKSRC}/xdao/gcdmaster.xml \
 		${STAGEDIR}${LOCALBASE}/share/mime/packages
 	@${MKDIR} ${STAGEDIR}${DATADIR}
-	@${INSTALL_DATA} ${WRKSRC}/xdao/glade/Preferences.glade \
+	${INSTALL_DATA} ${WRKSRC}/xdao/glade/Preferences.glade \
 		${STAGEDIR}${DATADIR}
-	@${INSTALL_DATA} ${WRKSRC}/xdao/glade/ProjectChooser.glade \
+	${INSTALL_DATA} ${WRKSRC}/xdao/glade/ProjectChooser.glade \
 		${STAGEDIR}${DATADIR}
 .else
-	@${INSTALL_PROGRAM} ${WRKSRC}/dao/cdrdao ${STAGEDIR}${PREFIX}/bin
-	@${INSTALL_MAN} ${WRKSRC}/dao/cdrdao.man \
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/dao/cdrdao ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/dao/cdrdao.man \
 		${STAGEDIR}${PREFIX}/man/man1/cdrdao.1
-	@${INSTALL_PROGRAM} ${WRKSRC}/utils/cue2toc ${STAGEDIR}${PREFIX}/bin
-	@${INSTALL_MAN} ${WRKSRC}/utils/cue2toc.1 ${STAGEDIR}${PREFIX}/man/man1
-	@${INSTALL_PROGRAM} ${WRKSRC}/utils/toc2cddb ${STAGEDIR}${PREFIX}/bin
-	@${INSTALL_MAN} ${WRKSRC}/utils/toc2cddb.1 ${STAGEDIR}${PREFIX}/man/man1
-	@${INSTALL_PROGRAM} ${WRKSRC}/utils/toc2cue ${STAGEDIR}${PREFIX}/bin
-	@${INSTALL_MAN} ${WRKSRC}/utils/toc2cue.1 ${STAGEDIR}${PREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/utils/cue2toc ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/utils/cue2toc.1 ${STAGEDIR}${PREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/utils/toc2cddb ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/utils/toc2cddb.1 ${STAGEDIR}${PREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/utils/toc2cue ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/utils/toc2cue.1 ${STAGEDIR}${PREFIX}/man/man1
 	@${MKDIR} ${STAGEDIR}${DATADIR}
-	@${INSTALL_DATA} ${WRKSRC}/dao/cdrdao.drivers \
+	${INSTALL_DATA} ${WRKSRC}/dao/cdrdao.drivers \
 		${STAGEDIR}${DATADIR}/drivers
-.if ${PORT_OPTIONS:MTOC2MP3}
-	@${INSTALL_PROGRAM} ${WRKSRC}/utils/toc2mp3 ${STAGEDIR}${PREFIX}/bin
-.endif
+
+do-install-TOC2MP3-on:
+	${INSTALL_PROGRAM} ${WRKSRC}/utils/toc2mp3 ${STAGEDIR}${PREFIX}/bin
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in CREDITS ChangeLog README README.PlexDAE
-	@${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
 .endif
 

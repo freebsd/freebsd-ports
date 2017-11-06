@@ -21,7 +21,7 @@ lib/libhunspell-%%SHLIB_VER%%.a
 lib/libhunspell-%%SHLIB_VER%%.la
 lib/libhunspell-%%SHLIB_VER%%.so
 lib/libhunspell-%%SHLIB_VER%%.so.0
-lib/libhunspell-%%SHLIB_VER%%.so.0.0.0
+lib/libhunspell-%%SHLIB_VER%%.so.0.0.1
 libdata/pkgconfig/hunspell.pc
 man/hu/man1/hunspell.1.gz
 man/man1/hunspell.1.gz

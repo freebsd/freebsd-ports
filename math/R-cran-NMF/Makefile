@@ -3,6 +3,7 @@
 
 PORTNAME=	NMF
 PORTVERSION=	0.20.6
+PORTREVISION=	1
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -25,6 +26,6 @@ RUN_DEPENDS=	R-cran-pkgmaker>=0.20:devel/R-cran-pkgmaker \
 		R-cran-ggplot2>0:graphics/R-cran-ggplot2 \
 		R-cran-reshape2>0:devel/R-cran-reshape2
 
-USES=	cran:auto-plist
+USES=		cran:auto-plist,compiles
 
 .include <bsd.port.mk>

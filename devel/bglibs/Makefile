@@ -2,21 +2,21 @@
 # $FreeBSD$
 
 PORTNAME=	bglibs
-PORTVERSION=	1.106
-PORTREVISION=	6
+PORTVERSION=	2.03
 PORTEPOCH=	1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://untroubled.org/${PORTNAME}/archive/ \
 		http://untroubled.org/${PORTNAME}/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	araujo@FreeBSD.org
 COMMENT=	One stop library package by Bruce Guenter
 
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		libtool:build perl5
-USE_PERL5=	run
+USE_PERL5=	run configure
 BGLIBS_INC=	${PREFIX}/include/${PORTNAME}
 BGLIBS_LIB=	${PREFIX}/lib/${PORTNAME}
 USE_LDCONFIG=	${BGLIBS_LIB}

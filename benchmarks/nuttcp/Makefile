@@ -3,6 +3,7 @@
 
 PORTNAME=	nuttcp
 PORTVERSION=	7.3.2
+PORTREVISION=	1
 CATEGORIES=	benchmarks net
 MASTER_SITES=	http://nuttcp.net/nuttcp/beta/ http://nuttcp.net/nuttcp/latest/:latest
 DISTFILES=	${PORTNAME}-${PORTVERSION}.c ${NUTTSCPDISTFILE} ${PORTNAME}.8:latest examples.txt:latest LICENSE:latest README:latest
@@ -11,6 +12,8 @@ EXTRACT_ONLY=	# none
 
 MAINTAINER=	pi@FreeBSD.org
 COMMENT=	TCP/UDP network testing tool
+
+LICENSE=	GPLv2
 
 NO_WRKSUBDIR=	yes
 USES=		shebangfix

@@ -2,40 +2,39 @@
 # $FreeBSD$
 
 PORTNAME=	wysiwyg
-DISTVERSION=	7.x-2.2
+DISTVERSION=	7.x-2.4
 CATEGORIES=	www
 
-MAINTAINER=	joneum@bsdproject.de
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Allows implementation of WYSIWYG editors for editing Drupal content
 
-#LICENSE from bsd.drupal.mk
+LICENSE=	GPLv2
 
 USES=		drupal:7,module
 
-MODULE_FILES=	editors/css/openwysiwyg.css \
-		editors/css/tinymce-2.css \
-		editors/css/tinymce-3.css \
+MODULE_FILES=	editors/css/tinymce-3.css \
+		editors/css/tinymce-4.css \
 		editors/js/ckeditor-3.0.js \
+		editors/js/epiceditor.js \
 		editors/js/fckeditor-2.6.js \
 		editors/js/fckeditor.config.js \
 		editors/js/jwysiwyg.js \
 		editors/js/markitup.js \
 		editors/js/nicedit.js \
 		editors/js/none.js \
-		editors/js/openwysiwyg.js \
-		editors/js/tinymce-2.js \
 		editors/js/tinymce-3.js \
+		editors/js/tinymce-4.js \
 		editors/js/whizzywig-56.js \
 		editors/js/whizzywig-60.js \
 		editors/js/whizzywig.js \
 		editors/js/wymeditor.js \
 		editors/js/yui.js \
 		editors/ckeditor.inc \
+		editors/epiceditor.inc \
 		editors/fckeditor.inc \
 		editors/jwysiwyg.inc \
 		editors/markitup.inc \
 		editors/nicedit.inc \
-		editors/openwysiwyg.inc \
 		editors/tinymce.inc \
 		editors/whizzywig.inc \
 		editors/wymeditor.inc \
@@ -45,6 +44,7 @@ MODULE_FILES=	editors/css/openwysiwyg.css \
 		wysiwyg.api.js \
 		wysiwyg.api.php \
 		wysiwyg.dialog.inc \
+		wysiwyg.features.inc \
 		wysiwyg.info \
 		wysiwyg.init.js \
 		wysiwyg.install \
@@ -66,17 +66,17 @@ MODULE_DIRS=	editors/css editors/js editors plugins/break/images \
 
 DOC_FILES=	CHANGELOG.txt README.txt LICENSE.txt
 
-OPTIONS_DEFINE=	TINYMCE3 CKEDITOR DOCS
+OPTIONS_DEFINE=	TINYMCE CKEDITOR DOCS
 
 CKEDITOR_DESC=	Install CKEditor
-CKEDITOR_RUN_DEPENDS=	CKEditor>0:www/ckeditor
+CKEDITOR_RUN_DEPENDS=	ckeditor>0:www/ckeditor
 CKEDITOR_PLIST_FILES=	${DRUPAL_MODLIB}/ckeditor
 
-TINYMCE3_DESC=	Install TinyMCE3 Editor
-TINYMCE3_RUN_DEPENDS=	tinymce3>0:www/tinymce3
-TINYMCE3_PLIST_FILES=	${DRUPAL_MODLIB}/tinymce
+TINYMCE_DESC=	Install TinyMCE Editor
+TINYMCE_RUN_DEPENDS=	tinymce>0:www/tinymce
+TINYMCE_PLIST_FILES=	${DRUPAL_MODLIB}/tinymce
 
-post-install-TINYMCE3-on:
+post-install-TINYMCE-on:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/${DRUPAL_MODLIB}
 	${LN} -fs ${PREFIX}/www/tinymce ${STAGEDIR}${PREFIX}/${DRUPAL_MODLIB}
 

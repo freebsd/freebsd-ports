@@ -1,0 +1,11 @@
+--- bin/cypher-shell.orig	2017-07-04 01:59:39 UTC
++++ bin/cypher-shell
+@@ -72,7 +72,7 @@ build_classpath() {
+ 
+   # Then try installation directory (prefix/bin and prefix/share/cypher-shell/lib)
+   if [[ -z "${JARPATH}" ]]; then
+-    APP_HOME="${APP_HOME}/../share/cypher-shell"
++    APP_HOME="${APP_HOME}/../neo4j/lib"
+     JARPATH="$(find "${APP_HOME}" -name "cypher-shell-all.jar" )"
+   fi
+ }

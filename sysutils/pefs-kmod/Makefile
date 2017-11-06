@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pefs
-DISTVERSION=	2016-11-27
+DISTVERSION=	2017-06-20
 CATEGORIES=	sysutils
 MASTER_SITES=	LOCAL/gleb
 PKGNAMESUFFIX=	-kmod
@@ -16,8 +16,10 @@ MAKE_JOBS_UNSAFE=yes
 MAKE_ENV=	BINDIR="${PREFIX}/sbin" MANDIR="${MANPREFIX}/man/man" \
 		NO_MANCOMPRESS=
 
-ONLY_FOR_ARCHS=	i386 amd64 armv6
-ONLY_FOR_ARCHS_REASON= Untested on any other arch.
+BROKEN_armv6=		fails to compile: implicit declaration of function 'cp15_pmccntr_get' is invalid in C99
+BROKEN_DragonFly=	fails to build: don't know how to make vnode_if.h
+ONLY_FOR_ARCHS=		amd64 armv6 i386
+ONLY_FOR_ARCHS_REASON=	untested on any other arch
 
 USES=		kmod uidfix
 
@@ -37,10 +39,12 @@ PLIST_FILES=	sbin/pefs \
 MAKE_ENV+=	PEFS_AESNI=yes
 .endif
 
-.if ${OSVERSION} >= 1100117
+.if ${OPSYS} == FreeBSD
+. if ${OSVERSION} >= 1100117
 PLIST_FILES+=	lib/pam_pefs.so.6
-.else
+. else
 PLIST_FILES+=	lib/pam_pefs.so.5
+. endif
 .endif
 
 .include <bsd.port.mk>

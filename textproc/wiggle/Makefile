@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	wiggle
-PORTVERSION=	1.0
-PORTREVISION=	1
+PORTVERSION=	1.1
 CATEGORIES=	textproc
 MASTER_SITES=	http://neil.brown.name/wiggle/
 
@@ -12,11 +11,9 @@ COMMENT=	Apply rejected patches and perform word-wise diffs
 
 LICENSE=	GPLv2
 
-BROKEN_powerpc64=	Does not build
-
 BUILD_DEPENDS=	bash:shells/bash
 
-USES=		compiler:nestedfct gmake ncurses
+USES=		gmake groff ncurses
 
 MAKE_ARGS+=	CFLAGS="${CFLAGS} -I. -Wall -Wstrict-prototypes -Wextra -Wno-unused-parameter"
 

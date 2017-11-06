@@ -1,0 +1,45 @@
+commit 12c4bd7f53e9cefcf7c3a7f8cbf9e552526cb963
+Author: John Baldwin <jhb@FreeBSD.org>
+Date:   Thu Oct 5 09:50:01 2017 -0700
+
+    Handle FreeBSD-specific AT_EHDRFLAGS and AT_HWCAP auxiliary vector types.
+    
+    FreeBSD recently added two additional ELF auxiliary vectors.  FreeBSD's
+    AT_HWCAP uses a different number compared to AT_HWCAP on Linux as the
+    numerical value was already in use for a different vector on FreeBSD.
+    
+    include/ChangeLog:
+    
+            * elf/common.h (AT_FREEBSD_EHDRFLAGS, AT_FREEBSD_HWCAP): Define.
+    
+    gdb/ChangeLog:
+    
+            * fbsd-tdep.c (fbsd_print_auxv_entry): Handle AT_EHDRFLAGS and
+            AT_HWCAP.
+
+diff --git gdb/fbsd-tdep.c gdb/fbsd-tdep.c
+index 727e28a645..fa4cd912ef 100644
+--- gdb/fbsd-tdep.c
++++ gdb/fbsd-tdep.c
+@@ -392,6 +392,8 @@ fbsd_print_auxv_entry (struct gdbarch *gdbarch, struct ui_file *file,
+       TAG (PAGESIZESLEN, _("Number of pagesizes"), AUXV_FORMAT_DEC);
+       TAG (TIMEKEEP, _("Pointer to timehands"), AUXV_FORMAT_HEX);
+       TAG (STACKPROT, _("Initial stack protection"), AUXV_FORMAT_HEX);
++      TAG (EHDRFLAGS, _("ELF header e_flags"), AUXV_FORMAT_HEX);
++      TAG (HWCAP, _("Machine-dependent CPU capability hints"), AUXV_FORMAT_HEX);
+     default:
+       default_print_auxv_entry (gdbarch, file, type, val);
+       return;
+diff --git include/elf/common.h include/elf/common.h
+index d08731cca1..f89ab32889 100644
+--- include/elf/common.h
++++ include/elf/common.h
+@@ -1144,6 +1144,8 @@
+ #define AT_FREEBSD_PAGESIZESLEN 21      /* Number of pagesizes. */
+ #define AT_FREEBSD_TIMEKEEP     22      /* Pointer to timehands. */
+ #define AT_FREEBSD_STACKPROT    23      /* Initial stack protection. */
++#define AT_FREEBSD_EHDRFLAGS    24      /* e_flags field from ELF header. */
++#define AT_FREEBSD_HWCAP        25      /* CPU feature flags. */
+ 
+ #define AT_SUN_UID      2000    /* Effective user ID.  */
+ #define AT_SUN_RUID     2001    /* Real user ID.  */

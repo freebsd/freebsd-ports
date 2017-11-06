@@ -25,7 +25,7 @@ OPTIONS_DEFINE=	DOCS
 .include <bsd.port.options.mk>
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/etc|${PREFIX}/etc|g' ${WRKSRC}/README
+	@${REINPLACE_CMD} -e 's|/etc|${PREFIX}/etc|g' ${WRKSRC}/docs/README
 	@${REINPLACE_CMD} -e 's|p0f.fp|${PREFIX}/etc/p0f.fp|g' ${WRKSRC}/config.h
 
 do-install:

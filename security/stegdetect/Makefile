@@ -3,7 +3,7 @@
 
 PORTNAME=	stegdetect
 PORTVERSION=	0.6
-PORTREVISION=	13
+PORTREVISION=	15
 CATEGORIES=	security
 MASTER_SITES=	http://www.sourcefiles.org/Graphics/Tools/Miscellaneous/
 
@@ -15,7 +15,7 @@ OPTIONS_DEFAULT=	X11
 
 OPTIONS_SUB=	yes
 
-X11_LIB_DEPENDS=	libevent.so:devel/libevent2
+X11_LIB_DEPENDS=	libevent.so:devel/libevent
 X11_USE=	GNOME=gtk12 XORG=x11,xext,xi
 X11_CONFIGURE_ENV+=	PATH_GTKCONFIG="${GTK_CONFIG}"
 

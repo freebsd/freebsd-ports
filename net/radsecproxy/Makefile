@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	radsecproxy
-PORTVERSION=	1.6.6
+PORTVERSION=	1.6.8
 CATEGORIES=	net
-MASTER_SITES=	http://software.uninett.no/radsecproxy/
+MASTER_SITES=	https://software.nordu.net/radsecproxy/
 
 MAINTAINER=	m.tsatsenko@gmail.com
 COMMENT=	Radsecproxy is a generic RADIUS proxy
@@ -12,12 +12,11 @@ COMMENT=	Radsecproxy is a generic RADIUS proxy
 LICENSE=	GPLv2 BSD3CLAUSE
 LICENSE_COMB=	dual
 
-USES=		cpe tar:xz
-CPE_VENDOR=	uninett
+USES=		cpe tar:xz ssl
+CPE_VENDOR=	nordunet
 
 GNU_CONFIGURE=	yes
 USE_RC_SUBR=	${PORTNAME}
-USE_OPENSSL=	yes
 CONFIGURE_ARGS=	--with-ssl=${OPENSSLBASE}
 
 post-install:

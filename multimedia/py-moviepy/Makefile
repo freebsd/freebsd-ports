@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	moviepy
-PORTVERSION=	0.2.2.11
-PORTREVISION=	1
+PORTVERSION=	0.2.2.13
+PORTREVISION=	2
 CATEGORIES=	multimedia python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,7 +17,7 @@ RUN_DEPENDS=	convert:graphics/ImageMagick \
 		${PYTHON_PKGNAMEPREFIX}decorator>0:devel/py-decorator \
 		${PYTHON_PKGNAMEPREFIX}tqdm>0:misc/py-tqdm \
 		${PYTHON_PKGNAMEPREFIX}imageio>0:graphics/py-imageio \
-		${PYTHON_SITELIBDIR}/cv.py:graphics/py-opencv2 \
+		${PYTHON_SITELIBDIR}/cv.py:graphics/py-opencv \
 		${PYTHON_PKGNAMEPREFIX}pillow>0:graphics/py-pillow \
 		${PYTHON_PKGNAMEPREFIX}scipy>=0:science/py-scipy
 

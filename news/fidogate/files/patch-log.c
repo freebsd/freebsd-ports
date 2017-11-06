@@ -1,6 +1,6 @@
---- src/common/log.c.orig	Sun Feb 16 16:38:56 2003
-+++ src/common/log.c	Sat Aug 21 11:10:09 2004
-@@ -69,8 +69,8 @@
+--- src/common/log.c.orig	2004-08-26 20:56:20 UTC
++++ src/common/log.c
+@@ -69,8 +69,8 @@ static int must_openlog = TRUE;
  char *strerror(int errnum)
  {
  #ifndef OS2

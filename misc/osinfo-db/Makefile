@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	osinfo-db
-PORTVERSION=	20161026
+PORTVERSION=	20170813
 CATEGORIES=	misc
-MASTER_SITES=	https://fedorahosted.org/releases/l/i/libosinfo/
+MASTER_SITES=	https://releases.pagure.org/libosinfo/
 
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	Osinfo database files

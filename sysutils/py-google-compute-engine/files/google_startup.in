@@ -1,0 +1,42 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: google_startup
+# BEFORE: LOGIN
+# REQUIRE: NETWORKING syslogd google_instance_setup google_network_setup
+# KEYWORD: shutdown
+#
+# google_startup_enable (bool): 		Set to NO by default.
+#						Set it to YES to enable google_startup.
+#
+
+. /etc/rc.subr
+
+name="google_startup"
+rcvar="google_startup_enable"
+
+load_rc_config "${name}"
+
+: ${google_startup_enable:="NO"}
+
+command_interpreter="%%PYTHON_CMD%%"
+command=%%PREFIX%%/bin/google_metadata_script_runner
+command_startup_args="--script-type startup"
+command_shutdown_args="--script-type shutdown"
+pidfile=/var/run/${name}.pid
+start_cmd="google_startup_start"
+stop_cmd="google_startup_stop"
+
+google_startup_start()
+{
+   ${command} ${command_startup_args}
+}
+
+google_startup_stop()
+{
+  echo "Stopping ${name}."
+  ${command} ${command_shutdown_args}
+}
+
+run_rc_command "$1"

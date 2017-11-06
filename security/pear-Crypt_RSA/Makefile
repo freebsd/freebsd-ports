@@ -6,10 +6,10 @@ PORTVERSION=	1.2.1
 PORTREVISION=	1
 CATEGORIES=	security www pear
 
-MAINTAINER=	joneum@bsdproject.de
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	PEAR class allows you to use two-key strong cryptography
 
-USES=	pear
+USES=		pear
 
 OPTIONS_DEFINE=	BCMATH GMP
 BCMATH_DESC=	PHP BCMath extension support

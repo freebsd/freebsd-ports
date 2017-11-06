@@ -12,7 +12,7 @@ COMMENT=	Binary file explorer
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/hachoir_parser/__init__.py:devel/hachoir-parser \
 		${PYTHON_SITELIBDIR}/urwid/__init__.py:devel/py-urwid
 
-USES=		python
+USES=		python:2.7
 USE_PYTHON=	distutils
 
 .include <bsd.port.mk>

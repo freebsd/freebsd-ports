@@ -3,6 +3,7 @@
 
 PORTNAME=	gnucap
 DISTVERSION=	2009-12-07
+PORTREVISION=	1
 CATEGORIES=	cad
 MASTER_SITES=	http://www.gnucap.org/devel/ \
 		http://www.gnucap.org/devel/archive/

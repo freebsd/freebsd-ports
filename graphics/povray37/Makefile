@@ -2,7 +2,7 @@
 
 PORTNAME=	povray
 DISTVERSION=	3.7.0.RC6
-PORTREVISION=	9
+PORTREVISION=	12
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.povray.org/beta/source/
 PKGNAMESUFFIX=	37
@@ -13,7 +13,7 @@ COMMENT=	Persistence of Vision Ray Tracer
 
 LIB_DEPENDS=	libboost_thread.so:devel/boost-libs
 
-BROKEN_powerpc64=	Does not build
+BROKEN_powerpc64=	Does not build: c++: Internal error: Killed (program cc1plus)
 
 OPTIONS_DEFINE=	X11 PNG JPEG TIFF OPENEXR STATIC IO EXAMPLES DOCS
 OPTIONS_DEFAULT=PNG JPEG

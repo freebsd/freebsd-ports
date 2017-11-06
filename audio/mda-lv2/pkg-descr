@@ -1,0 +1,10 @@
+MDA-LV2 is an LV2 port of the MDA plugins by Paul Kellett. It contains
+36 high-quality plugins for a variety of tasks.
+
+This is a more or less faithful port of both the effects and instrument
+plugins. The only functional difference in code is to support LV2-style
+toggle ports (> 0.0 is on, rather than 0.5). All the plugins have been
+tested, and thanks to several bug fixes this collection should be more
+reliable than the original.
+
+WWW: https://drobilla.net/software/mda-lv2

@@ -1,5 +1,14 @@
 --- src/linux/gl_glx.c.orig	Thu Jan 27 19:35:20 2005
 +++ src/linux/gl_glx.c	Wed Jul 26 22:32:32 2006
+@@ -54,7 +54,7 @@
+ #include <X11/keysym.h>
+ #include <X11/cursorfont.h>
+ 
+-#include <X11/extensions/xf86dga.h>
++#include <X11/extensions/Xxf86dga.h>
+ #include <X11/extensions/xf86vmode.h>
+ #ifdef Joystick
+ # if defined (__linux__)
 @@ -428,7 +428,6 @@
    while (XPending(dpy)) {
      //ri.Con_Printf(PRINT_ALL,"Bar");

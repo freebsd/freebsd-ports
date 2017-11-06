@@ -1,0 +1,11 @@
+--- errand.gemspec.orig	2017-07-29 22:04:06 UTC
++++ errand.gemspec
+@@ -23,7 +23,7 @@ Gem::Specification.new do |s|
+     s.specification_version = 3
+ 
+     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
+-      s.add_runtime_dependency(%q<rrd-ffi>.freeze, ["= 0.2.13"])
++      s.add_runtime_dependency(%q<rrd-ffi>.freeze, [">= 0.2.13"])
+       s.add_development_dependency(%q<rake>.freeze, [">= 0"])
+       s.add_development_dependency(%q<rspec>.freeze, [">= 0"])
+       s.add_development_dependency(%q<colorize>.freeze, [">= 0"])

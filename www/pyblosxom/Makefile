@@ -3,6 +3,7 @@
 
 PORTNAME=	pyblosxom
 DISTVERSION=	1.5.3
+PORTREVISION=	1
 CATEGORIES=	www python
 MASTER_SITES=	http://pyblosxom.github.io/download/
 
@@ -11,8 +12,9 @@ COMMENT=	Lightweight weblog system
 
 LICENSE=	MIT
 
-USES=		python:2
+USES=		python:2 shebangfix
 USE_PYTHON=	distutils
+SHEBANG_FILES=	Pyblosxom/data/pyblosxom.cgi
 
 OPTIONS_DEFINE=	DOCS
 

@@ -11,7 +11,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 # netchild@FreeBSD.org is willing to review patches and to provide background
 # infos regarding this port
-MAINTAINER=	cpm@fbsd.es
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Intels C/C++ compiler, set up to produce native FreeBSD binaries
 
 LICENSE=	EPL LGPL21

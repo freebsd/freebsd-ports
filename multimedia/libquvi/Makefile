@@ -10,8 +10,7 @@ MASTER_SITES=	SF/quvi/${PORTVERSION:R}/${PORTNAME}/
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Cross-platform library for parsing flash media stream URLs
 
-LICENSE=	LGPL21 LGPL3
-LICENSE_COMB=	dual
+LICENSE=	LGPL21+
 LICENSE_FILE_LGPL21=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	libquvi-scripts>=0.4.0:multimedia/libquvi-scripts
@@ -21,7 +20,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 OPTIONS_DEFINE=	DOCS LUAJIT
 LUAJIT_DESC=	Use LuaJIT instead of Lua
 
-PORTSCOUT=	limit:0.4.[0-9]*
+PORTSCOUT=	limit:^0\.4\.
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip

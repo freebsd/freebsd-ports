@@ -1,0 +1,7 @@
+
+As of version 0.0.2, FIRST no longer requires these packages:
+
+* distorm3
+* mongoengine
+
+You may want to remove them.

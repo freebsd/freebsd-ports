@@ -43,3 +43,12 @@
  	}
  			
        ~Exception() {};
+@@ -590,7 +596,7 @@ namespace pfs
+        *
+        * @return text description of the cause for the exception
+        */
+-      const char* getMessage()
++      const char* getMessage() const
+         {
+           return msg;
+ 	}

@@ -10,6 +10,7 @@ lib/libKF5Style.so
 lib/libKF5Style.so.5
 lib/libKF5Style.so.%%KDE_FRAMEWORKS_VERSION%%
 %%QT_PLUGINDIR%%/kf5/FrameworkIntegrationPlugin.so
+lib/libexec/kf5/kpackagehandlers/knshandler
 share/kf5/infopage/bar-bottom-left.png
 share/kf5/infopage/bar-bottom-middle.png
 share/kf5/infopage/bar-bottom-right.png

@@ -1003,7 +1003,7 @@
    THREADSLIB = -lposix4 -lthread
    MISCLIB = -lposix4 -lnsl -lsocket
    SO_OPTS = -Wl,-h,
-@@ -1390,6 +1394,39 @@
+@@ -1475,10 +1479,45 @@
    LIBRARY_VERSION := $(LIB_VERSION)
  endif
  
@@ -1040,10 +1040,7 @@
 +  LIBRARY_VERSION := $(LIB_VERSION)
 +endif
 +
- # x86 kfreebsd
- ifeq ($(strip $(filter-out %86 kfreebsd%,$(target_cpu) $(target_os))),)
-   LIBGNAT_TARGET_PAIRS = \
-@@ -1450,6 +1487,8 @@
+ # x86 FreeBSD
  ifeq ($(strip $(filter-out %86 freebsd%,$(target_cpu) $(target_os))),)
    LIBGNAT_TARGET_PAIRS = \
    a-intnam.ads<a-intnam-freebsd.ads \
@@ -1052,7 +1049,7 @@
    s-inmaop.adb<s-inmaop-posix.adb \
    s-intman.adb<s-intman-posix.adb \
    s-mudido.adb<s-mudido-affinity.adb \
-@@ -1467,6 +1506,8 @@
+@@ -1496,6 +1535,8 @@
    mlib-tgt-specific.adb<mlib-tgt-specific-linux.adb
    GNATLIB_SHARED = gnatlib-shared-dual
  
@@ -1061,7 +1058,7 @@
    EXTRA_GNATRTL_NONTASKING_OBJS=g-sse.o g-ssvety.o
  
    EH_MECHANISM=-gcc
-@@ -1480,6 +1521,8 @@
+@@ -1509,6 +1550,8 @@
  ifeq ($(strip $(filter-out %86_64 freebsd%,$(target_cpu) $(target_os))),)
    LIBGNAT_TARGET_PAIRS = \
    a-intnam.ads<a-intnam-freebsd.ads \
@@ -1070,7 +1067,7 @@
    s-inmaop.adb<s-inmaop-posix.adb \
    s-intman.adb<s-intman-posix.adb \
    s-mudido.adb<s-mudido-affinity.adb \
-@@ -1497,6 +1540,8 @@
+@@ -1526,6 +1569,8 @@
    mlib-tgt-specific.adb<mlib-tgt-specific-linux.adb
    GNATLIB_SHARED = gnatlib-shared-dual
  
@@ -1079,7 +1076,44 @@
    EXTRA_GNATRTL_NONTASKING_OBJS=g-sse.o g-ssvety.o
  
    EH_MECHANISM=-gcc
-@@ -1510,6 +1555,8 @@
+@@ -1535,10 +1580,45 @@
+   MISCLIB = -lutil
+ endif
+ 
++# aarch64 FreeBSD
++ifeq ($(strip $(filter-out %aarch64 freebsd%,$(target_cpu) $(target_os))),)
++  LIBGNAT_TARGET_PAIRS = \
++  a-intnam.ads<a-intnam-freebsd.ads \
++  g-socthi.adb<g-socthi-bsd.adb \
++  s-trasym.adb<s-trasym-bsd.adb \
++  s-inmaop.adb<s-inmaop-posix.adb \
++  s-intman.adb<s-intman-posix.adb \
++  s-mudido.adb<s-mudido-affinity.adb \
++  s-osinte.adb<s-osinte-freebsd.adb \
++  s-osinte.ads<s-osinte-freebsd.ads \
++  s-osprim.adb<s-osprim-posix.adb \
++  s-taprop.adb<s-taprop-posix.adb \
++  s-taspri.ads<s-taspri-posix.ads \
++  s-tpopsp.adb<s-tpopsp-posix.adb \
++  $(ATOMICS_TARGET_PAIRS) \
++  $(ATOMICS_BUILTINS_TARGET_PAIRS) \
++  system.ads<system-freebsd-x86_64.ads
++
++  TOOLS_TARGET_PAIRS = \
++  mlib-tgt-specific.adb<mlib-tgt-specific-linux.adb
++  GNATLIB_SHARED = gnatlib-shared-dual
++
++  EXTRA_LIBGNAT_SRCS+= traceback_symbolic.c
++  EXTRA_LIBGNAT_OBJS+= traceback_symbolic.o
++
++  EH_MECHANISM=-gcc
++  THREADSLIB= -lpthread
++  GMEM_LIB = gmemlib
++  LIBRARY_VERSION := $(LIB_VERSION)
++  MISCLIB = -lutil
++endif
++
+ # x86-64 DragonFly
  ifeq ($(strip $(filter-out %86_64 dragonfly%,$(target_cpu) $(target_os))),)
    LIBGNAT_TARGET_PAIRS = \
    a-intnam.ads<a-intnam-dragonfly.ads \
@@ -1088,10 +1122,78 @@
    s-inmaop.adb<s-inmaop-posix.adb \
    s-intman.adb<s-intman-posix.adb \
    s-mudido.adb<s-mudido-affinity.adb \
-@@ -1527,6 +1574,8 @@
+@@ -1556,6 +1636,76 @@
    mlib-tgt-specific.adb<mlib-tgt-specific-linux.adb
    GNATLIB_SHARED = gnatlib-shared-dual
  
++  EXTRA_LIBGNAT_SRCS+= traceback_symbolic.c
++  EXTRA_LIBGNAT_OBJS+= traceback_symbolic.o
++  EXTRA_GNATRTL_NONTASKING_OBJS=g-sse.o g-ssvety.o
++
++  EH_MECHANISM=-gcc
++  THREADSLIB= -lpthread
++  GMEM_LIB = gmemlib
++  LIBRARY_VERSION := $(LIB_VERSION)
++  MISCLIB = -lutil
++endif
++
++# x86 NetBSD
++ifeq ($(strip $(filter-out %86 netbsd%,$(target_cpu) $(target_os))),)
++  LIBGNAT_TARGET_PAIRS = \
++  a-intnam.ads<a-intnam-freebsd.ads \
++  g-socthi.adb<g-socthi-bsd.adb \
++  s-trasym.adb<s-trasym-bsd.adb \
++  s-inmaop.adb<s-inmaop-posix.adb \
++  s-intman.adb<s-intman-posix.adb \
++  s-mudido.adb<s-mudido-affinity.adb \
++  s-osinte.adb<s-osinte-netbsd.adb \
++  s-osinte.ads<s-osinte-netbsd.ads \
++  s-osprim.adb<s-osprim-posix.adb \
++  s-taprop.adb<s-taprop-posix.adb \
++  s-taspri.ads<s-taspri-posix.ads \
++  s-tpopsp.adb<s-tpopsp-posix.adb \
++  $(ATOMICS_TARGET_PAIRS) \
++  $(X86_TARGET_PAIRS) \
++  system.ads<system-freebsd-x86.ads
++
++  TOOLS_TARGET_PAIRS = \
++  mlib-tgt-specific.adb<mlib-tgt-specific-linux.adb
++  GNATLIB_SHARED = gnatlib-shared-dual
++
++  EXTRA_LIBGNAT_SRCS+= traceback_symbolic.c
++  EXTRA_LIBGNAT_OBJS+= traceback_symbolic.o
++  EXTRA_GNATRTL_NONTASKING_OBJS=g-sse.o g-ssvety.o
++
++  EH_MECHANISM=-gcc
++  THREADSLIB= -lpthread
++  GMEM_LIB = gmemlib
++  LIBRARY_VERSION := $(LIB_VERSION)
++  MISCLIB = -lutil
++endif
++
++# x86-64 NetBSD (must succeed x86 because %86 matches x86_64)
++ifeq ($(strip $(filter-out x86_64 netbsd%,$(target_cpu) $(target_os))),)
++  LIBGNAT_TARGET_PAIRS = \
++  a-intnam.ads<a-intnam-freebsd.ads \
++  g-socthi.adb<g-socthi-bsd.adb \
++  s-trasym.adb<s-trasym-bsd.adb \
++  s-inmaop.adb<s-inmaop-posix.adb \
++  s-intman.adb<s-intman-posix.adb \
++  s-mudido.adb<s-mudido-affinity.adb \
++  s-osinte.adb<s-osinte-netbsd.adb \
++  s-osinte.ads<s-osinte-netbsd.ads \
++  s-osprim.adb<s-osprim-posix.adb \
++  s-taprop.adb<s-taprop-posix.adb \
++  s-taspri.ads<s-taspri-posix.ads \
++  s-tpopsp.adb<s-tpopsp-posix.adb \
++  $(ATOMICS_TARGET_PAIRS) \
++  $(X86_64_TARGET_PAIRS) \
++  system.ads<system-freebsd-x86_64.ads
++
++  TOOLS_TARGET_PAIRS = \
++  mlib-tgt-specific.adb<mlib-tgt-specific-linux.adb
++  GNATLIB_SHARED = gnatlib-shared-dual
++
 +  EXTRA_LIBGNAT_SRCS+= traceback_symbolic.c
 +  EXTRA_LIBGNAT_OBJS+= traceback_symbolic.o
    EXTRA_GNATRTL_NONTASKING_OBJS=g-sse.o g-ssvety.o

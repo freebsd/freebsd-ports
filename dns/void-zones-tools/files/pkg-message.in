@@ -1,0 +1,16 @@
+To download the host lists and convert them to void zones,
+run the following script:
+%%PREFIX%%/bin/void-zones-update.sh
+
+To add your own white list/black list entries, to add over override
+the bundled listings, edit %%PREFIX%%/etc/void-zones/my_void_hosts.txt.
+Use the IP address 1.1.1.1 for whitelisting, and 0.0.0.0 for blacklisting.
+
+Add the following line to your unbound.conf, prior to any forwarder directives:
+include: /var/unbound/local-void.zones
+Then restart Unbound.
+
+For future updates, run void-zones-update.sh and restart Unbound.
+
+For more information, see %%PREFIX%%/share/doc/void-zones-tools/README.md
+or https://github.com/cyclaero/void-zones-tools

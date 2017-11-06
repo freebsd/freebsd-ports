@@ -7,7 +7,7 @@
 # Usage:        USES=ada
 # Valid ARGS:   5, 6, run
 #
-# MAINTAINER: marino@FreeBSD.org
+# MAINTAINER: ports@FreeBSD.org
 
 .if !defined(_INCLUDE_USES_ADA_MK)
 _INCLUDE_USES_ADA_MK=    yes

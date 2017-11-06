@@ -1,11 +1,10 @@
---- ./showimage.desktop.orig	2011-09-12 19:22:18.000000000 +0000
-+++ ./showimage.desktop	2014-03-16 17:44:11.238771371 +0000
-@@ -1,7 +1,7 @@
+--- showimage.desktop.orig	2017-03-29 22:15:56 UTC
++++ showimage.desktop
+@@ -1,6 +1,6 @@
  [Desktop Entry]
  Type=Application
- Encoding=UTF-8
 -Exec=showimage %F
-+Exec=showimage-kde4 %F
++Exec=showimage-kde %F
  Icon=showimage
  Categories=Graphics;RasterGraphics;Viewer;
  Terminal=false

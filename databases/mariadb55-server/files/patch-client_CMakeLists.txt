@@ -1,6 +1,6 @@
---- client/CMakeLists.txt.orig	2012-11-28 17:49:47.000000000 +0200
-+++ client/CMakeLists.txt	2012-12-23 02:37:04.000000000 +0200
-@@ -26,6 +26,7 @@
+--- client/CMakeLists.txt.orig	2017-04-30 11:09:29 UTC
++++ client/CMakeLists.txt
+@@ -26,6 +26,7 @@ INCLUDE_DIRECTORIES(
  )
  
  ADD_DEFINITIONS(${SSL_DEFINES})
@@ -8,7 +8,7 @@
  MYSQL_ADD_EXECUTABLE(mysql completion_hash.cc mysql.cc readline.cc
                             ${CMAKE_SOURCE_DIR}/sql/sql_string.cc)
  TARGET_LINK_LIBRARIES(mysql mysqlclient)
-@@ -33,6 +34,7 @@
+@@ -33,6 +34,7 @@ IF(UNIX)
    TARGET_LINK_LIBRARIES(mysql ${MY_READLINE_LIBRARY})
    SET_TARGET_PROPERTIES(mysql PROPERTIES ENABLE_EXPORTS TRUE)
  ENDIF(UNIX)
@@ -16,7 +16,7 @@
  
  MYSQL_ADD_EXECUTABLE(mysqltest mysqltest.cc COMPONENT Test)
  SET_SOURCE_FILES_PROPERTIES(mysqltest.cc PROPERTIES COMPILE_FLAGS "-DTHREADS")
-@@ -40,6 +42,7 @@
+@@ -40,6 +42,7 @@ TARGET_LINK_LIBRARIES(mysqltest mysqlcli
  SET_TARGET_PROPERTIES(mysqltest PROPERTIES ENABLE_EXPORTS TRUE)
  
  
@@ -24,9 +24,9 @@
  MYSQL_ADD_EXECUTABLE(mysqlcheck mysqlcheck.c)
  TARGET_LINK_LIBRARIES(mysqlcheck mysqlclient)
  
-@@ -48,17 +51,21 @@
- 
+@@ -49,17 +52,21 @@ TARGET_LINK_LIBRARIES(mysqldump mysqlcli
  MYSQL_ADD_EXECUTABLE(mysqlimport mysqlimport.c)
+ SET_SOURCE_FILES_PROPERTIES(mysqlimport.c PROPERTIES COMPILE_FLAGS "-DTHREADS")
  TARGET_LINK_LIBRARIES(mysqlimport mysqlclient)
 +ENDIF()
  
@@ -46,7 +46,7 @@
  MYSQL_ADD_EXECUTABLE(mysqlbinlog mysqlbinlog.cc)
  TARGET_LINK_LIBRARIES(mysqlbinlog mysqlclient)
  
-@@ -68,17 +75,20 @@
+@@ -69,17 +76,20 @@ TARGET_LINK_LIBRARIES(mysqladmin mysqlcl
  MYSQL_ADD_EXECUTABLE(mysqlslap mysqlslap.c)
  SET_SOURCE_FILES_PROPERTIES(mysqlslap.c PROPERTIES COMPILE_FLAGS "-DTHREADS")
  TARGET_LINK_LIBRARIES(mysqlslap mysqlclient)

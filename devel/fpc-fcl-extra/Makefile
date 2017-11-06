@@ -3,7 +3,6 @@
 CATEGORIES=	devel lang
 PKGNAMESUFFIX=	-fcl-extra
 
-MAINTAINER=	freebsd-fpc@FreeBSD.org
 COMMENT=	Free Pascal extra libraries (FCL)
 
 USE_FPC=	fcl-base fcl-res rtl-objpas

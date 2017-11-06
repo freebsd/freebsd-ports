@@ -7,82 +7,97 @@ depends on different modules with module-specific .api files.
 Also fixes a bug where dbus support drops multiple -I flags produced
 by pkg-config --cflags dbus-1 .
 
---- configure.py.orig	2016-04-24 10:55:08.000000000 +0000
-+++ configure.py	2016-10-30 22:16:19.159104000 +0000
-@@ -1482,13 +1482,13 @@
- 
-     generate_sip_module_code(target_config, verbose, no_timestamp, parts,
-             tracing, 'Qt', sip_flags)
--    subdirs.append('Qt')
- 
+--- configure.py.orig	2016-07-25 13:55:28.000000000 +0000
++++ configure.py	2016-09-14 18:42:40.977955000 +0000
+@@ -1460,8 +1460,9 @@
+
+     # Add the internal modules if they are required.
      if not target_config.no_tools:
--        # Generate pylupdate5 and pyrcc5.
--        for tool in ('pylupdate', 'pyrcc'):
--            generate_application_makefile(target_config, verbose, tool)
--            subdirs.append(tool)
+-        pyqt_modules.append('pylupdate')
+-        pyqt_modules.append('pyrcc')
 +        if "QtXml" in target_config.pyqt_modules:
-+            # Generate pylupdate5 and pyrcc5.
++            pyqt_modules.append('pylupdate')
++            pyqt_modules.append('pyrcc')
+
+     for mname in pyqt_modules:
+         metadata = MODULE_METADATA[mname]
+@@ -1504,18 +1505,19 @@
+
+     generate_sip_module_code(target_config, verbose, parts, tracing, 'Qt',
+             sip_flags, False)
+-    subdirs.append('Qt')
+
+     wrappers = []
+     if not target_config.no_tools:
+-        # Generate the pylupdate5 and pyrcc5 wrappers.
+-        for tool in ('pylupdate', 'pyrcc'):
+-            wrappers.append((tool,
+-                    generate_tool_wrapper(target_config, tool + '5',
+-                            'PyQt5.%s_main' % tool)))
+-
+-        # Generate the pyuic5 wrapper.
+-        wrappers.append(('pyuic',
++        if "QtXml" in target_config.pyqt_modules:
++            # Generate the pylupdate5 and pyrcc5 wrappers.
 +            for tool in ('pylupdate', 'pyrcc'):
-+                generate_application_makefile(target_config, verbose, tool)
-+                subdirs.append(tool)
- 
-         # Generate the pyuic5 wrapper.
-         pyuic_wrapper = generate_pyuic5_wrapper(target_config)
-@@ -1507,22 +1507,6 @@
++                wrappers.append((tool,
++                        generate_tool_wrapper(target_config, tool + '5',
++                                'PyQt5.%s_main' % tool)))
++
++        if "QtCore" in target_config.pyqt_modules:
++            # Generate the pyuic5 wrapper.
++            wrappers.append(('pyuic',
+                 generate_tool_wrapper(target_config, 'pyuic5',
+                         'PyQt5.uic.pyuic')))
+
+@@ -1533,23 +1535,6 @@
                      source_path('examples', 'quick', 'tutorials', 'extending',
                              'chapter6-plugins'))
- 
+
 -    # Generate the QScintilla API file.
 -    if target_config.qsci_api:
 -        inform("Generating the QScintilla API file...")
 -        f = open_for_writing('PyQt5.api')
 -
 -        for mname in target_config.pyqt_modules:
--            api = open(mname + '.api')
+-            if MODULE_METADATA[mname].public:
+-                api = open(mname + '.api')
 -
--            for l in api:
--                f.write('PyQt5.' + l)
+-                for l in api:
+-                    f.write('PyQt5.' + l)
 -
--            api.close()
--            os.remove(mname + '.api')
+-                api.close()
+-                os.remove(mname + '.api')
 -
 -        f.close()
 -
      # Generate the Python dbus module.
      if target_config.pydbus_module_dir != '':
          mname = 'dbus'
-@@ -1548,21 +1532,24 @@
+@@ -1577,14 +1562,18 @@
      out_f.write('''TEMPLATE = subdirs
  CONFIG += ordered nostrip
  SUBDIRS = %s
-+''' % ' '.join(subdirs))
- 
++''' % (' '.join(subdirs)))
+
 +    if "QtCore" in target_config.pyqt_modules:
 +        out_f.write('''
  init_py.files = %s
  init_py.path = %s
  INSTALLS += init_py
--''' % (' '.join(subdirs), source_path('__init__.py'), qmake_quote(target_config.pyqt_module_dir + '/PyQt5')))
-+''' % (source_path('__init__.py'), qmake_quote(target_config.pyqt_module_dir + '/PyQt5')))
- 
--    # Install the uic module and the pyuic5 wrapper.
+-''' % (' '.join(subdirs), source_path('__init__.py'), root_dir))
++''' % (source_path('__init__.py'), root_dir))
+
+-    # Install the uic module.
 -    out_f.write('''
-+        # Install the uic module and the pyuic5 wrapper.
-+        out_f.write('''
++        if not target_config.no_tools:
++            # Install the uic module.
++            out_f.write('''
  uic_package.files = %s
  uic_package.path = %s
  INSTALLS += uic_package
- ''' % (source_path('pyuic', 'uic'), qmake_quote(target_config.pyqt_module_dir + '/PyQt5')))
- 
--    if not target_config.no_tools:
--        out_f.write('''
-+        if not target_config.no_tools:
-+            out_f.write('''
- pyuic5.files = %s
- pyuic5.path = %s
- INSTALLS += pyuic5
-@@ -1579,11 +1566,12 @@
- 
+@@ -1620,11 +1609,12 @@
+
      # Install the QScintilla .api file.
      if target_config.qsci_api:
 +        api_list = ' '.join(['%s.api' % m for m in target_config.pyqt_modules])
@@ -93,17 +108,6 @@ by pkg-config --cflags dbus-1 .
  INSTALLS += qscintilla_api
 -''' % qmake_quote(target_config.qsci_api_dir + '/api/python'))
 +''' % (api_list, qmake_quote(target_config.qsci_api_dir + '/api/python')))
- 
+
      out_f.close()
- 
-@@ -2140,7 +2128,9 @@
-     else:
-         dlist = target_config.dbus_inc_dirs
- 
--    target_config.dbus_inc_dirs = []
-+    # Don't reset dbus_inc_dirs, because it will forget the flags
-+    # found for dbus, above (which might require multiple -I flags).
-+    # target_config.dbus_inc_dirs = []
- 
-     for d in dlist:
-         if os.access(os.path.join(d, 'dbus', 'dbus-python.h'), os.F_OK):
+

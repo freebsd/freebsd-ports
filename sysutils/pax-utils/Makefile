@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pax-utils
-PORTVERSION=	1.1.7
+PORTVERSION=	1.2.2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://dev.gentoo.org/~vapier/dist/ \
 		LOCAL/sbz

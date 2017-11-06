@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	gstreamer1-plugins-all
-PORTVERSION=	${GST1_VERSION}
-PORTREVISION=	4
+PORTVERSION=	1.12
+PORTREVISION=	0
 CATEGORIES=	multimedia
 
 MAINTAINER=	multimedia@FreeBSD.org

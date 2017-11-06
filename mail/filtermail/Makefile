@@ -23,8 +23,7 @@ EXTRACT_AFTER_ARGS=	| ${SED} 's/[mM][aA][iI][lL][fF][iI][lL][tT][eE][rR]/filterm
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-USES=		bison gmake
-USE_OPENSSL=	yes
+USES=		bison gmake ssl
 GNU_CONFIGURE=	yes
 MAKE_JOBS_UNSAFE=	yes
 

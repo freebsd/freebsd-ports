@@ -11,7 +11,7 @@ COMMENT=	NACK-Oriented Reliable Multicast (NORM)
 
 BROKEN_mips=	Does not build: named return values are no longer supported
 BROKEN_mips64=	Does not build: named return values are no longer supported
-BROKEN_powerpc64=	Does not build
+BROKEN_powerpc64=	Does not build: named return values are no longer supported
 BROKEN_sparc64=	Does not build: named return values are no longer supported
 
 WRKSRC=		${WRKDIR}/norm-${DISTVERSION}

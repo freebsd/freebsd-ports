@@ -11,7 +11,8 @@ DISTNAME=	py_lru_cache-${PORTVERSION}
 MAINTAINER=	philip@FreeBSD.org
 COMMENT=	LRU cache for Python
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE GPLv3
+LICENSE_COMB=	dual
 
 USES?=		python
 USE_PYTHON=	distutils autoplist

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dsbdriverd
-PORTVERSION=	0.1.4
+PORTVERSION=	0.2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://freeshell.de/~mk/download/
 
@@ -10,6 +10,7 @@ MAINTAINER=	mk@nic-nac-project.org
 COMMENT=	Hardware detecting, device driver loading daemon
 
 LICENSE=	BSD2CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		tar:tgz
 

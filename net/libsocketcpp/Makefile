@@ -13,6 +13,9 @@ COMMENT=	C++ wrapper library to the sockets
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Uses gets(3)
+EXPIRATION_DATE=	2017-11-05
+
 USES=		libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

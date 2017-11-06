@@ -7,7 +7,7 @@ PORTREVISION=	3
 CATEGORIES=	mail www
 DISTNAME=	${PORTNAME:S/-/_/}-${PORTVERSION}-1.4.0
 
-MAINTAINER=	itetcu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Check/display users' mail quota (filesystem, IMAP-based, and cPanel)
 
 USE_SM_COMPAT=	YES

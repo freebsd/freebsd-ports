@@ -15,6 +15,7 @@ LIB_DEPENDS=	libtai.so:devel/libtai
 
 ALL_TARGET=	it
 INSTALL_TARGET=	setup check
+USES=		groff
 
 MAN_FILES=	clockadd.1 clockspeed.1 clockview.1 sntpclock.1 \
 		taiclock.1 taiclockd.1

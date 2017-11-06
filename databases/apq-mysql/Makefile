@@ -7,7 +7,7 @@ PORTREVISION=	${DRV_MYSQL_PR}
 CATEGORIES=	databases
 MASTER_SITES=	LOCAL/marino
 
-MAINTAINER=	marino@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	APQ Ada95 MySQL database driver
 
 LICENSE=	GPLv2 GMGPL

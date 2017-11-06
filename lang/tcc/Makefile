@@ -34,10 +34,10 @@ PORTDOCS=	Changelog README TODO VERSION
 .include <bsd.port.options.mk>
 
 .if ${ARCH} == "amd64"
-CONFIGURE_ARGS+=	--cpu=x86-64 --extra-cflags="-DTCC_TARGET_X86_64 -DONE_SOURCE"
+CONFIGURE_ARGS+=--cpu=x86-64 --extra-cflags="-DTCC_TARGET_X86_64 -DONE_SOURCE"
 MAKE_ARGS+=	ARCH=x86-64
 CPUTYPE=	x86_64
-FILES=	bcheck.o alloca86_64.o libtcc1.o
+FILES=		bcheck.o alloca86_64.o libtcc1.o
 
 PLIST_SUB+=	AMD64=""
 .else
@@ -46,16 +46,14 @@ PLIST_SUB+=	AMD64="@comment "
 
 .if ${ARCH} == "i386"
 CPUTYPE=	i386
-FILES=	bcheck.o alloca86.o alloca86-bt.o
+FILES=		bcheck.o alloca86.o alloca86-bt.o
 
 PLIST_SUB+=	I386=""
 .else
 PLIST_SUB+=	I386="@comment "
 .endif
 
-.if ${CC:T:M*clang*} || ${OSVERSION} >= 1000024
 CFLAGS+=	-fheinous-gnu-extensions
-.endif
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/tcc
@@ -68,11 +66,11 @@ post-install:
 .endfor
 
 post-install-DOCS-on:
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 
 post-install-EXAMPLES-on:
-	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/examples/* ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>

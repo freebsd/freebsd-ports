@@ -12,9 +12,12 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Get information from Excel file
 
-BUILD_DEPENDS=	p5-OLE-Storage_Lite>=0.19:devel/p5-OLE-Storage_Lite \
-		p5-Crypt-RC4>=0:security/p5-Crypt-RC4 \
-		p5-Digest-Perl-MD5>=0:security/p5-Digest-Perl-MD5
+LICENSE=	ART10 GPLv1+
+LICENSE_COMB=	dual
+
+BUILD_DEPENDS=	p5-Crypt-RC4>=0:security/p5-Crypt-RC4 \
+		p5-Digest-Perl-MD5>=0:security/p5-Digest-Perl-MD5 \
+		p5-OLE-Storage_Lite>=0.19:devel/p5-OLE-Storage_Lite
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5 shebangfix
@@ -25,7 +28,9 @@ NO_ARCH=	yes
 
 OPTIONS_DEFINE=	EXAMPLES
 
-post-install:
+PORTEXAMPLES=	*
+
+post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/Excel
 	${INSTALL_DATA} ${WRKSRC}/sample/README ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/sample/*.pl ${STAGEDIR}${EXAMPLESDIR}

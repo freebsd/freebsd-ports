@@ -2,14 +2,14 @@
 # $FreeBSD$
 
 PORTNAME?=	mysql
-PORTVERSION=	5.7.17
-PORTREVISION?=	0
+PORTVERSION=	5.7.20
+PORTREVISION=	1
 CATEGORIES=	databases ipv6
 MASTER_SITES=	MYSQL/MySQL-5.7
 PKGNAMESUFFIX?=	57-server
 DISTNAME=	${PORTNAME}-boost-${PORTVERSION}
 
-MAINTAINER=	mokhi64@gmail.com
+MAINTAINER=	mmokhi@FreeBSD.org
 COMMENT?=	Multithreaded SQL database (server)
 
 LICENSE=	GPLv2
@@ -17,7 +17,7 @@ LICENSE=	GPLv2
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 SLAVEDIRS=	databases/mysql57-client
-USES=		bison:build cmake:outsource compiler:c11 compiler:c++11-lib \
+USES=		bison:build cmake:outsource,noninja compiler:c11 compiler:c++11-lib \
 		cpe libedit localbase perl5 shebangfix ssl
 
 USE_PERL5=	run
@@ -26,8 +26,10 @@ MY_DBDIR=	/var/db/mysql
 MY_SECDIR=	/var/db/mysql_secure
 MY_TMPDIR=	/var/db/mysql_tmpdir
 
-LIB_DEPENDS+=	libevent.so:devel/libevent2 \
-		liblz4.so:archivers/liblz4
+LIB_DEPENDS+=	libcurl.so:ftp/curl \
+		libevent.so:devel/libevent \
+		liblz4.so:archivers/liblz4 \
+		libprotobuf.so:devel/protobuf
 
 CMAKE_BUILD_TYPE=	Release
 
@@ -56,7 +58,10 @@ CMAKE_ARGS+=	-DINSTALL_LAYOUT=FREEBSD \
 		-DWITH_LIBEVENT=system \
 		-DWITH_LZ4=system \
 		-DWITH_ZLIB=system \
-		-DINSTALL_MYSQLTESTDIR=0
+		-DWITH_PROTOBUF=system \
+		-DWITH_CURL=system \
+		-DINSTALL_MYSQLTESTDIR=0 \
+		-DWITH_DEBUG=0
 
 SHEBANG_FILES=	scripts/*.pl* scripts/*.sh
 
@@ -72,12 +77,15 @@ PLIST_SUB=	MY_DBDIR=${MY_DBDIR} \
 		MY_SECDIR=${MY_SECDIR} \
 		MY_TMPDIR=${MY_TMPDIR}
 
+OPTIONS_SUB=		YES
+
 # MySQL-Server part
 .if !defined(CLIENT_ONLY)
 USES+=		mysql:57
 
 CONFLICTS_INSTALL=	mysql5[0-68-9]-server-* \
 			mysql[0-46-9][0-9]-server-* \
+			mysqlwsrep* \
 			mariadb[0-9][0-9]-server-* \
 			percona[0-9][0-9]-server-*
 
@@ -99,9 +107,8 @@ MMAN1=		my_print_defaults.1 myisam_ftdump.1 myisamchk.1 myisamlog.1 myisampack.1
 
 CMAKE_ARGS+=	-DWITH_EMBEDDED_SERVER="ON"
 
-OPTIONS_GROUP=		STORAGE
+OPTIONS_GROUP+=		STORAGE
 OPTIONS_GROUP_STORAGE=	ARCHIVE BLACKHOLE EXAMPLE FEDERATED INNOBASE PARTITION PERFSCHEMA
-OPTIONS_SUB=		YES
 STORAGE_DESC=		Permissible "Storage Engines" (to compile statically into the server)
 ARCHIVE_DESC=		Compile "Archive Storage" statically in server
 BLACKHOLE_DESC=		Compile "Blackhole Storage" statically in server
@@ -120,13 +127,19 @@ PARTITION_CMAKE_ON=	-DWITH_PARTITION_STORAGE_ENGINE=1
 PERFSCHEMA_CMAKE_ON=	-DWITH_PERFSCHEMA_STORAGE_ENGINE=1
 
 OPTIONS_GROUP+=		FEATURES
-OPTIONS_GROUP_FEATURES=	PERFSCHM
 FEATURES_DESC=		Default features knobs
+OPTIONS_GROUP_FEATURES=	PERFSCHM
 PERFSCHM_DESC=		Enable "Performance Schema" by default (High RAM usage)
 OPTIONS_DEFAULT+=	PERFSCHM
 
-PERFSCHM_SUB_LIST+=	PERFSCHEMRC=""
-PERFSCHM_SUB_LIST_OFF+=	PERFSCHEMRC="--skip-performance-schema"
+PERFSCHM_SUB_LIST+=		PERFSCHEMRC=""
+PERFSCHM_SUB_LIST_OFF+=		PERFSCHEMRC="--skip-performance-schema"
+FEDERATED_SUB_LIST+=		FEDER="--federated"
+FEDERATED_SUB_LIST_OFF+=	FEDER=""
+
+# issue 220865: Currently there's no source to be built with server-side support.
+#		But this keeps the pkg-plist not overlaping
+CMAKE_ARGS+=	-DWITH_AUTHENTICATION_LDAP=0
 .endif
 
 .include <bsd.port.pre.mk>
@@ -142,12 +155,14 @@ post-extract:
 
 post-patch:
 	@${REINPLACE_CMD} 's/*.1/${MMAN1}/' ${WRKSRC}/man/CMakeLists.txt
+	# issue 220865: MySQL developers forgot that FreeBSD != Linux
+	@${REINPLACE_CMD} -e 's|%%FREEBSD_LOCAL_LIB%%|${LOCALBASE}/lib|g' \
+	    ${WRKSRC}/cmake/plugin.cmake
 
 .if !defined(CLIENT_ONLY)
 post-install:
 	${MKDIR} ${STAGEDIR}${ETCDIR}
 	${INSTALL_DATA} ${WRKDIR}/my.cnf.sample ${STAGEDIR}${ETCDIR}/my.cnf.sample
-
 	${MKDIR} ${STAGEDIR}${ETCDIR}/keyring
 	${MKDIR} ${STAGEDIR}${MY_SECDIR}
 	${MKDIR} ${STAGEDIR}${MY_TMPDIR}

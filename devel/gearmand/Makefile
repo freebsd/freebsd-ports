@@ -3,7 +3,7 @@
 
 PORTNAME=	gearmand
 PORTVERSION=	1.0.6
-PORTREVISION=	7
+PORTREVISION=	12
 CATEGORIES=	devel
 MASTER_SITES=	http://launchpad.net/gearmand/1.0/${PORTVERSION}/+download/
 
@@ -12,7 +12,7 @@ COMMENT=	Gearman C Server and Library
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>=0:textproc/py-sphinx
 LIB_DEPENDS=	libboost_program_options.so:devel/boost-libs \
-		libevent.so:devel/libevent2 \
+		libevent.so:devel/libevent \
 		libuuid.so:misc/e2fsprogs-libuuid
 
 CONFLICTS=	p5-Gearman-Server-1.* gearmand-1.1.*
@@ -20,12 +20,11 @@ CONFLICTS=	p5-Gearman-Server-1.* gearmand-1.1.*
 USERS=		gearmand
 GROUPS=		gearmand
 
-BROKEN_powerpc64=	Does not build
 BROKEN_sparc64=		Does not build: cannot link with boost
 
 USE_PERL5=	build
 GNU_CONFIGURE=	yes
-USES=		pathfix gmake perl5 python:build libtool execinfo
+USES=		pathfix gmake perl5 python:build libtool
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	gearmand
 SUB_LIST+=	USERS=${USERS} GROUPS=${GROUPS}

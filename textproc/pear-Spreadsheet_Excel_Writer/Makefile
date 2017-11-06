@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Spreadsheet_Excel_Writer
-PORTVERSION=	0.9.3
+PORTVERSION=	0.9.4
 CATEGORIES=	textproc www pear
 
 MAINTAINER=	bofh@FreeBSD.org
@@ -14,5 +14,6 @@ BUILD_DEPENDS=	${PEARDIR}/OLE.php:devel/pear-OLE
 RUN_DEPENDS=	${PEARDIR}/OLE.php:devel/pear-OLE
 
 USES=	pear
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

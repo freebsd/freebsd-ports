@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=		cantata
-PORTVERSION=		2.0.1
+DISTVERSION=		2.2.0
 DISTVERSIONPREFIX=	v
 PORTREVISION=		1
 CATEGORIES=		audio kde
@@ -19,10 +19,11 @@ USE_QT5=		buildtools_build concurrent core dbus gui network \
 			qmake_build sql sql-sqlite3_run svg widgets xml
 
 CMAKE_ARGS=		-DENABLE_QT5:BOOL=TRUE	\
-			-DENABLE_KDE:BOOL=FALSE
+			-DENABLE_KDE:BOOL=FALSE	\
+			-DCMAKE_DISABLE_FIND_PACKAGE_UDev:BOOL=TRUE
 
 USES=			cmake:outsource cpe pkgconfig shebangfix
-SHEBANG_FILES=		dynamic/cantata-dynamic cantata-remote.cmake
+SHEBANG_FILES=		playlists/cantata-dynamic cantata-remote.cmake
 CPE_VENDOR=		craig_drummond
 USE_LDCONFIG=		yes
 

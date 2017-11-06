@@ -3,15 +3,13 @@
 
 PORTNAME=	grive
 PORTVERSION=	0.3.0
-PORTREVISION=	5
+PORTREVISION=	8
 CATEGORIES=	net
 
 MAINTAINER=	ktsin@acm.org
 COMMENT=	Open source client for Google Drive
 
 LICENSE=	GPLv2
-
-BROKEN_powerpc64=	Does not build
 
 LIB_DEPENDS=	libboost_filesystem.so:devel/boost-libs \
 		libcurl.so:ftp/curl \

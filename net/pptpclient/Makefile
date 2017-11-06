@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pptpclient
-PORTVERSION=	1.8.0
-PORTREVISION=	2
+PORTVERSION=	1.9.0
 CATEGORIES=	net
 MASTER_SITES=	SF/${PORTNAME}/pptp/pptp-${PORTVERSION}
 DISTNAME=	pptp-${PORTVERSION}
@@ -16,7 +15,7 @@ LICENSE=	GPLv2+
 USES=		perl5
 USE_RC_SUBR=	pptp
 MAKE_ARGS=	CC="${CC}" OPTIMIZE="${CFLAGS}" DEBUG="" \
-		PPPD="/usr/sbin/ppp" IP="/usr/bin/true"
+		PPPD="/usr/sbin/ppp"
 CFLAGS+=	-DUSER_PPP
 
 PLIST_FILES=	sbin/pptp man/man8/pptp.8.gz

@@ -3,6 +3,7 @@
 
 PORTNAME=	cplay
 PORTVERSION=	1.50
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	audio
 
@@ -16,7 +17,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	hukka
 
 USES=		gettext gmake python:-2.7 shebangfix
-SHEBANG_FILES=	${WRKSRC}/cplay
+SHEBANG_FILES=	${WRKSRC}/cplay cnq
 
 MAKE_ARGS=	PREFIX="${STAGEDIR}${PREFIX}"
 NO_ARCH=	yes

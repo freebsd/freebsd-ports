@@ -1,0 +1,11 @@
+--- sandbox/linux/BUILD.gn.orig	2017-04-24 14:40:29 UTC
++++ sandbox/linux/BUILD.gn
+@@ -284,7 +284,7 @@ if (is_linux) {
+       # TODO fix this and re-enable this warning.
+       "-Wno-sign-compare",
+     ]
+-    ldflags = [ "-pie", "-Wl,--no-keep-memory" ]
++    ldflags = [ "-pie" ]
+ 
+     import("//build/config/compiler/compiler.gni")
+     import("//build/config/sanitizers/sanitizers.gni")

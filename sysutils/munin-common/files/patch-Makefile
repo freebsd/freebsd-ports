@@ -1,4 +1,4 @@
---- Makefile.orig	2014-11-24 21:46:24 UTC
+--- Makefile.orig	2017-03-03 00:02:39 UTC
 +++ Makefile
 @@ -68,60 +68,47 @@ install: install-master-prime install-co
  
@@ -153,6 +153,15 @@
  
  
  install-common-prime: build-common install-common
+@@ -449,7 +432,7 @@ t/install:
+ 
+ # This builds */Build from Build.PL
+ %/Build: %/Build.PL
+-	cd $* && $(PERL) Build.PL
++	cd $* && $(PERL) Build.PL --config perl=$(PERL)
+ 
+ build-%: %/Build
+ 	cd $* && $(PERL) Build
 @@ -466,6 +449,7 @@ install-%: %/Build
              --install_path sbin=$(SBINDIR)		\
              --install_path bindoc=$(MANDIR)/man1	\

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	elmerfem
-PORTVERSION=	8.2.20161026
+PORTVERSION=	8.3.20170519
 PORTREVISION=	1
 CATEGORIES=	cad science
 
@@ -16,7 +16,7 @@ LIB_DEPENDS=	libparpack.so:math/arpack-ng-mpich	\
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	ElmerCSC
-GH_TAGNAME=	5172e02
+GH_TAGNAME=	c30fff2
 
 USES=		blaslapack:netlib cmake fortran gmake tcl
 
@@ -29,7 +29,7 @@ CMAKE_ARGS+=	-Wno-dev
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "amd64" || ${ARCH} == "ia64"
+.if ${ARCH} == "amd64"
 CFLAGS_${ARCH}=	-fPIC
 CXXFLAGS_${ARCH}= -fPIC
 FCFLAGS+=	-fPIC

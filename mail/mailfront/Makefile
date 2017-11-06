@@ -2,21 +2,19 @@
 # $FreeBSD$
 
 PORTNAME=	mailfront
-PORTVERSION=	2.01
-PORTREVISION=	1
+PORTVERSION=	2.12
 CATEGORIES=	mail
 MASTER_SITES=	http://untroubled.org/${PORTNAME}/ \
 		http://untroubled.org/${PORTNAME}/archive/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	araujo@FreeBSD.org
 COMMENT=	Mail server network protocol front-ends
 
-LIB_DEPENDS=	libcvm-v2client.so:security/cvm
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-OPTIONS_DEFINE=	LUA DOCS
-
-OPTIONS_DEFAULT=LUA
-OPTIONS_SUB=	yes
+LIB_DEPENDS=	libcvm-v2client.so:security/cvm \
+		libbg.so:devel/bglibs
 
 USES=		qmail:vars
 
@@ -32,19 +30,22 @@ MODULES_DIR=	${PREFIX}/libexec/${PORTNAME}
 ALL_TARGET=	all
 LATE_INSTALL_ARGS=	install_prefix=${STAGEDIR}
 
-DOCS=		NEWS README TODO *.html
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MLUA}
-ALL_TARGET+=	lua
-USES+=		lua:51
-CFLAGS+=	-I${LUA_INCDIR}
-CFLAGS_SO+=	-L${LUA_LIBDIR}
-LDFLAGS+=	-L${LUA_LIBDIR}
-.endif
+PORTDOCS=	NEWS README TODO *.html
 
 LDFLAGS+=	-rdynamic
+
+OPTIONS_DEFINE=	LUA DOCS
+OPTIONS_DEFAULT=LUA
+OPTIONS_SUB=	yes
+
+LUA_ALL_TARGET=	lua
+LUA_USES=	lua
+LUA_VARS=	CFLAGS+=-I${LUA_INCDIR} LUA_CFLAGS_SO+=-L${LUA_LIBDIR} LUA_LDFLAGS+=-L${LUA_LIBDIR}
+
+CPPFLAGS+=      -I${LUA_INCDIR}
+CFLAGS+=        -DHAVE_LUASCRIPT
+LDFLAGS+=       -L${LUA_LIBDIR} -llua-${LUA_VER}
+USES+=          lua:51
 
 do-configure:
 	${ECHO_CMD} "${PREFIX}/bin"	> ${WRKSRC}/conf-bin
@@ -58,12 +59,10 @@ do-configure:
 	${ECHO_CMD} "${QMAIL_PREFIX}"	> ${WRKSRC}/conf-qmail
 
 post-patch:
-	@${REINPLACE_CMD} 's,-llua,-llua-${LUA_VER},' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} 's,-llua-,-llua-${LUA_VER},' ${WRKSRC}/Makefile
 
-.if ${PORT_OPTIONS:MDOCS}
-post-install:
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${DOCSDIR}
-.endif
+	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

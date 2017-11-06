@@ -3,4 +3,4 @@ Features include: simple yet comprehensive API, secure mounting by non-root
 users, support for RELENG_6 and RELENG_7 FreeBSD kernels, multi-threaded
 operation.
 
-WWW: http://sourceforge.net/projects/fuse/
+WWW: https://sourceforge.net/projects/fuse/

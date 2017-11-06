@@ -1,6 +1,6 @@
---- authdaemonrc.in.orig	Tue Nov  9 19:42:04 2004
-+++ authdaemonrc.in	Tue Nov  9 19:42:04 2004
-@@ -59,6 +59,42 @@
+--- authdaemonrc.in.orig	2016-01-05 01:20:05 UTC
++++ authdaemonrc.in
+@@ -59,6 +59,42 @@ daemons=5
  
  authdaemonvar=@authdaemonvar@
  

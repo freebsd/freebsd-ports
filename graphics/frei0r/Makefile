@@ -28,10 +28,10 @@ USES+=	localbase
 .endif
 
 .if defined(BUILDING_FREI0R_OPENCV)
-PORTREVISION=	1
+PORTREVISION=	2
 COMMENT=	Frei0r OpenCV plugins
 PKGNAMESUFFIX=	-plugins-opencv
-LIB_DEPENDS+=	libopencv_legacy.so:graphics/opencv2
+LIB_DEPENDS+=	libopencv_legacy.so:graphics/opencv
 FREI0R_PLUGINS=	facebl0r facedetect
 
 CMAKE_ARGS+=	-DWITHOUT_OPENCV:BOOL=OFF \

@@ -1,0 +1,23 @@
+@sample etc/isns/isnsadm.conf.sample
+@sample etc/isns/isnsd.conf.sample
+@sample etc/isns/isnsdd.conf.sample
+%%DEV%%include/libisns/attrs.h
+%%DEV%%include/libisns/buffer.h
+%%DEV%%include/libisns/isns-proto.h
+%%DEV%%include/libisns/isns.h
+%%DEV%%include/libisns/message.h
+%%DEV%%include/libisns/paths.h
+%%DEV%%include/libisns/source.h
+%%DEV%%include/libisns/types.h
+%%DEV%%include/libisns/util.h
+%%DEV%%lib/libisns.a
+lib/libisns.so
+lib/libisns.so.0
+man/man5/isns_config.5.gz
+man/man8/isnsadm.8.gz
+man/man8/isnsd.8.gz
+man/man8/isnsdd.8.gz
+sbin/isnsadm
+sbin/isnsd
+sbin/isnsdd
+@dir /var/db/isns

@@ -2,6 +2,7 @@
 
 PORTNAME=	libxshmfence
 PORTVERSION=	1.2
+PORTREVISION=	2
 CATEGORIES=	x11
 
 MAINTAINER=	x11@FreeBSD.org
@@ -12,7 +13,8 @@ LICENSE=	MIT
 USE_XORG=	xproto
 XORG_CAT=	lib
 
-test: build
-	@cd ${WRKSRC} && ${MAKE} check
+CONFIGURE_ARGS=	--with-shared-memory-dir=/tmp
+INSTALL_TARGET=	install-strip
+TEST_TARGET=	check
 
 .include <bsd.port.mk>

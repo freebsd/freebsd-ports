@@ -3,7 +3,7 @@
 
 PORTNAME=	c3270
 PORTVERSION=	3.3.14ga11
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	http://x3270.bgp.nu/download/03.03.14/
 MASTER_SITES_VER_PATH=	${PORTVERSION:C/(0[0-9]\.0[0-9])/}
@@ -18,7 +18,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	ac_cv_search_libiconv=${ICONV_LIB}
 
 USES=		iconv readline gmake
-USE_OPENSSL=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
@@ -49,7 +48,8 @@ PORTDOCS=	*
 
 .if ! ${PORT_OPTIONS:MOPENSSL}
 CONFIGURE_ARGS+=	--disable-ssl
-.undef USE_OPENSSL
+.else
+USES+=		ssl
 .endif
 
 .if ! ${PORT_OPTIONS:MREADLINE}

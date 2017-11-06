@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Test-Fake-HTTPD
-PORTVERSION=	0.07
-PORTREVISION=	1
+PORTVERSION=	0.08
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -11,8 +10,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Fake HTTP server
 
-LICENSE=	ART10 GPLv1
+LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	p5-HTTP-Daemon>=0:www/p5-HTTP-Daemon \
 		p5-Plack>=0:www/p5-Plack \
@@ -27,7 +27,8 @@ TEST_DEPENDS=	p5-Test-Exception>=0:devel/p5-Test-Exception \
 
 OPTIONS_DEFINE=	SSL
 
-USE_PERL5=	configure
+NO_ARCH=	yes
+USE_PERL5=	modbuildtiny
 USES=		perl5
 
 SSL_BUILD_DEPENDS=	p5-HTTP-Daemon-SSL>=0:www/p5-HTTP-Daemon-SSL

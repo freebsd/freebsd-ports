@@ -45,21 +45,21 @@
             
          governor = g_strdup (_("Frequency Scaling Unsupported"));
          cur_freq = cpu * 1000;
---- cpufreq/src/cpufreq-applet.c.orig	Thu Jun 15 01:01:53 2006
-+++ cpufreq/src/cpufreq-applet.c	Sat Jun 17 13:42:50 2006
+--- cpufreq/src/cpufreq-applet.c.orig	2016-04-01 10:54:10.000000000 +0200
++++ cpufreq/src/cpufreq-applet.c	2016-04-19 13:56:00.550008000 +0200
 @@ -17,6 +17,7 @@
-  *  Software Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+  *  Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA.
   *
-  * Authors : Carlos García Campos <carlosgc@gnome.org>
+  * Authors : Carlos GarcÃ­a Campos <carlosgc@gnome.org>
 + *           Joe Marcus Clarke <marcus@FreeBSD.org>
   */
  
  #ifdef HAVE_CONFIG_H
-@@ -519,6 +524,7 @@ cpufreq_applet_about_cb (BonoboUICompone
+@@ -678,6 +679,7 @@
  {
          static const gchar *const authors[] = {
                  "Carlos Garcia Campos <carlosgc@gnome.org>",
-+		"Joe Marcus Clarke <marcus@FreeBSD.org> (FreeBSD support)",
++               "Joe Marcus Clarke <marcus@FreeBSD.org> (FreeBSD support)",
                  NULL
          };
          static const gchar *const documenters[] = {

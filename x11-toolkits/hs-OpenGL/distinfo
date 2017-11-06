@@ -1,2 +1,3 @@
-SHA256 (cabal/OpenGL-2.12.0.1.tar.gz) = 8b7cfc07cb4cc4a6c45910eeb9fdfe114be1f64090fa0705c3e550794c588ed5
-SIZE (cabal/OpenGL-2.12.0.1.tar.gz) = 125419
+TIMESTAMP = 1499613084
+SHA256 (cabal/OpenGL-3.0.2.0.tar.gz) = faa99459724d614d2cf2d2b83c7bda4898ee71752a253bf4699c096822450efb
+SIZE (cabal/OpenGL-3.0.2.0.tar.gz) = 130658

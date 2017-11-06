@@ -1,0 +1,40 @@
+commit b30ff123fbff63d6c8be1115320efd0158e49a7f
+Author: Yao Qi <yao.qi@linaro.org>
+Date:   Thu Jun 22 13:41:27 2017 +0100
+
+    Regenerate two regformats/i386/.dat files
+    
+    The self tests which compare pre-generated target descriptions and
+    dynamically created target descriptions fail, and it turns out that two
+    pre-generated target descriptions are wrong, so regenerate them.
+    
+    gdb:
+    
+    2017-06-22  Yao Qi  <yao.qi@linaro.org>
+    
+            * regformats/i386/amd64-avx-mpx-avx512-pku-linux.dat: Regenerated.
+            * regformats/i386/amd64-avx-mpx-avx512-pku.dat: Regenerated.
+
+diff --git gdb/regformats/i386/amd64-avx-mpx-avx512-pku-linux.dat gdb/regformats/i386/amd64-avx-mpx-avx512-pku-linux.dat
+index 3ae6b0e472..9cd0fae820 100644
+--- gdb/regformats/i386/amd64-avx-mpx-avx512-pku-linux.dat
++++ gdb/regformats/i386/amd64-avx-mpx-avx512-pku-linux.dat
+@@ -157,3 +157,4 @@ expedite:rbp,rsp,rip
+ 256:zmm29h
+ 256:zmm30h
+ 256:zmm31h
++32:pkru
+diff --git gdb/regformats/i386/amd64-avx-mpx-avx512-pku.dat gdb/regformats/i386/amd64-avx-mpx-avx512-pku.dat
+index 88185fd8c3..b3340d3276 100644
+--- gdb/regformats/i386/amd64-avx-mpx-avx512-pku.dat
++++ gdb/regformats/i386/amd64-avx-mpx-avx512-pku.dat
+@@ -60,9 +60,6 @@ expedite:rbp,rsp,rip
+ 128:xmm14
+ 128:xmm15
+ 32:mxcsr
+-64:orig_rax
+-64:fs_base
+-64:gs_base
+ 128:ymm0h
+ 128:ymm1h
+ 128:ymm2h

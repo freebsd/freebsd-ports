@@ -12,7 +12,7 @@ if [ -d %%WWWDIR%% ]; then
 		echo "NOTE:"
 		echo "There are still some configuration, state and/or data files left"
 		echo "in %%WWWDIR%%."
-		echo "If you want to completely remove ajaxplorer use"
+		echo "If you want to completely remove pydio use"
 		echo "'rm -rf %%WWWDIR%%' to delete them."
 		echo
 	fi

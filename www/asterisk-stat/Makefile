@@ -14,8 +14,8 @@ COMMENT=	ASTERISK call detail records analyzer
 LIB_DEPENDS=	libgd.so:graphics/gd
 
 NO_BUILD=	yes
+USES=		php:web
 USE_PHP=	session gd pcre
-WANT_PHP_WEB=	yes
 ASTERISKDIR?=	${WWWDIR}
 SITE_SUBDIR=	asterisk-stat-v2
 WRKSRC=		${WRKDIR}/${SITE_SUBDIR}

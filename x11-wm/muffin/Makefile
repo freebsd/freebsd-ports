@@ -18,7 +18,7 @@ LIB_DEPENDS=	libstartup-notification-1.so:x11/startup-notification \
 		libcinnamon-desktop.so:x11/cinnamon-desktop
 RUN_DEPENDS=	zenity>=3.0.0:x11/zenity
 
-USES=		autoreconf:build execinfo gettext libtool gmake \
+USES=		autoreconf:build gettext libtool gmake \
 		pathfix pkgconfig python:2
 USE_GITHUB=	yes
 GH_ACCOUNT=	linuxmint
@@ -43,5 +43,6 @@ pre-configure:
 post-patch:
 	@${REINPLACE_CMD} -e 's|REQUIRED_AUTOMAKE_VERSION=1.10|REQUIRED_AUTOMAKE_VERSION=1.14|g' \
 		${WRKSRC}/autogen.sh
+	@${REINPLACE_CMD} -e 's|--warn-error||g' ${WRKSRC}/src/Makefile.am
 
 .include <bsd.port.mk>

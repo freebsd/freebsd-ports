@@ -20,9 +20,9 @@
 -	mkdir -p $(DESTDIR)/usr/include/fastcommon
 -	install -m 644 $(HEADER_FILES) $(DESTDIR)/usr/include/fastcommon
 +	mkdir -p $(DESTDIR)$(PREFIX)/$(LIB_VERSION)
-+	install -m 755 $(SHARED_LIBS) $(DESTDIR)$(PREFIX)/$(LIB_VERSION)
++	${BSD_INSTALL_LIB} $(SHARED_LIBS) $(DESTDIR)$(PREFIX)/$(LIB_VERSION)
 +	mkdir -p $(DESTDIR)$(PREFIX)/include/fastcommon
-+	install -m 644 $(HEADER_FILES) $(DESTDIR)$(PREFIX)/include/fastcommon
++	${BSD_INSTALL_DATA} $(HEADER_FILES) $(DESTDIR)$(PREFIX)/include/fastcommon
  clean:
  	rm -f $(ALL_OBJS) $(ALL_PRGS) $(ALL_LIBS)
  

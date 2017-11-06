@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	miniupnpc
-PORTVERSION=	2.0.20161216
+PORTVERSION=	2.0.20170509
 CATEGORIES?=	net
 MASTER_SITES=	http://miniupnp.free.fr/files/
 

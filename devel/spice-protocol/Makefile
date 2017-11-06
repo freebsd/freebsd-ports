@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	spice-protocol
-PORTVERSION=	0.12.12
+PORTVERSION=	0.12.13
 CATEGORIES=	devel
 MASTER_SITES=	http://www.spice-space.org/download/releases/
 

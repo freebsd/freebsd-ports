@@ -1,2 +1,3 @@
-SHA256 (cabal/cereal-0.4.1.1.tar.gz) = df047216179ba3817134e32c73ef9e3b5dddbd4efff604f50ca0ca0c93753097
-SIZE (cabal/cereal-0.4.1.1.tar.gz) = 22656
+TIMESTAMP = 1499627824
+SHA256 (cabal/cereal-0.5.4.0.tar.gz) = daca6c5aeff21ca233bebe006c158b0e4421b239c722768b568fca9b32cafee7
+SIZE (cabal/cereal-0.5.4.0.tar.gz) = 19504

@@ -1,14 +1,16 @@
 --- tracker/Makefile.in.orig	2016-08-08 07:17:50 UTC
 +++ tracker/Makefile.in
-@@ -1,7 +1,7 @@
+@@ -1,8 +1,8 @@
  .SUFFIXES: .c .o
  
  COMPILE = $(CC) $(CFLAGS)
 -INC_PATH = -I../common -I/usr/include/fastcommon
+-LIB_PATH = $(LIBS) -lfastcommon
 +INC_PATH = -I../common -I$(LOCALBASE)/include/fastcommon
- LIB_PATH = $(LIBS) -lfastcommon
++LIB_PATH = $(LIBS) -L${LOCALBASE}/lib -lfastcommon
  TARGET_PATH = $(TARGET_PREFIX)/bin
  CONFIG_PATH = $(TARGET_CONF_PATH)
+ 
 @@ -26,7 +26,8 @@ all: $(ALL_OBJS) $(ALL_PRGS)
  install:
  	mkdir -p $(TARGET_PATH)

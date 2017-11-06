@@ -1,6 +1,6 @@
---- src/qt/preconfig.sh.orig	2015-05-24 22:51:56.181745985 +0900
-+++ src/qt/preconfig.sh	2015-05-25 07:48:59.018524838 +0900
-@@ -182,5 +182,6 @@
+--- src/qt/preconfig.sh.orig	2016-01-24 18:24:05 UTC
++++ src/qt/preconfig.sh
+@@ -187,5 +187,6 @@ if [[ -n "$SILENT" ]]; then
      exec >& /dev/null
  fi
  

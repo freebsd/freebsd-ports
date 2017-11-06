@@ -5,13 +5,13 @@ PORTNAME=	SOAP
 PORTVERSION=	0.13.0
 CATEGORIES=	net www pear
 
-MAINTAINER=	joneum@bsdproject.de
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	PEAR SOAP Client/Server for PHP
 
 BUILD_DEPENDS=	${PEARDIR}/HTTP/Request.php:www/pear-HTTP_Request
 RUN_DEPENDS=	${PEARDIR}/HTTP/Request.php:www/pear-HTTP_Request
 
-USES=	pear
+USES=		pear
 
 OPTIONS_DEFINE=	PEAR_MAIL PEAR_MAIL_MIME PEAR_NET_DIME
 PEAR_MAIL_DESC=	PEAR::Mail support

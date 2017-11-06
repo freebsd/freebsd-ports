@@ -1,13 +1,14 @@
 # $FreeBSD$
 
 PORTNAME=	powerdxx
-PORTVERSION=	0.1.5
+PORTVERSION=	0.2.5
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
-MAINTAINER=	kami@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	CPU clock speed/frequency daemon
 
-LICENSE=	BSD2CLAUSE
+LICENSE=	ISCL
 
 USES=		compiler:c++11-lib
 

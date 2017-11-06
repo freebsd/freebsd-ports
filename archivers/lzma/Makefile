@@ -2,17 +2,17 @@
 # $FreeBSD$
 
 PORTNAME=	lzma
-PORTVERSION=	9.22
+PORTVERSION=	16.04
 CATEGORIES=	archivers
 MASTER_SITES=	SF/sevenzip/LZMA%20SDK/
 DISTNAME=	lzma${PORTVERSION:S/.//g}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	amutu@amutu.com
 COMMENT=	High-ratio LZMA compressor
 
 CONFLICTS=	lzmautils-[0-9]* xz-[0-9]*
 
-USES=		tar:bzip2 gmake dos2unix
+USES=		7z gmake dos2unix
 NO_WRKSUBDIR=	yes
 BUILD_WRKSRC=	${WRKSRC}/CPP/7zip/Bundles/LzmaCon
 MAKEFILE=	makefile.gcc
@@ -26,7 +26,7 @@ CFLAGS+=	-D_LZMA_PROB32
 #enable some optimizations in LZMA Decoder to get smaller executable code
 CFLAGS+=	-D_LZMA_SIZE_OPT
 .endif
-PORTDOCS=	7zC.txt 7zFormat.txt Methods.txt history.txt lzma.txt
+PORTDOCS=	7zC.txt 7zFormat.txt Methods.txt lzma-history.txt lzma.txt
 
 OPTIONS_DEFINE=	DOCS
 
@@ -42,8 +42,10 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+
+do-install-DOCS-on:
 	@${INSTALL} -d ${STAGEDIR}${DOCSDIR}
-	(cd ${WRKSRC}/&&${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR})
+	(cd ${WRKSRC}/DOC/&&${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR})
 
 do-test:
 	${BUILD_WRKSRC}/${PORTNAME} b

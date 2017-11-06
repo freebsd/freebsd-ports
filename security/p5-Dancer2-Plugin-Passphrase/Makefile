@@ -3,20 +3,20 @@
 
 PORTNAME=	Dancer2-Plugin-Passphrase
 PORTVERSION=	3.3.0
+PORTREVISION=	1
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	hvo.pm@xs4all.nl
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Passphrases and Passwords as objects for Dancer2
 
-LICENSE=	ART10 GPLv1
+LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Dancer2>=0.200000:www/p5-Dancer2 \
 		p5-Data-Entropy>=0.005:security/p5-Data-Entropy \
-		p5-Digest-Bcrypt>0:security/p5-Digest-Bcrypt \
-		p5-Digest-SHA>=5.74:security/p5-Digest-SHA
+		p5-Digest-Bcrypt>=0:security/p5-Digest-Bcrypt
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes

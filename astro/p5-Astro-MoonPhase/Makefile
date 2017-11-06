@@ -11,6 +11,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl interface to calculate information about the phase of the moon
 
+LICENSE=	CC0-1.0
+
+NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
 

@@ -5,7 +5,7 @@ PORTNAME=	PEAR_PackageFileManager_Plugins
 PORTVERSION=	1.0.4
 CATEGORIES=	devel www pear
 
-MAINTAINER=	joneum@bsdproject.de
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	The plugins for PEAR_PackageFileManager
 
 BUILD_DEPENDS=	${PEARDIR}/XML/Serializer.php:devel/pear-XML_Serializer

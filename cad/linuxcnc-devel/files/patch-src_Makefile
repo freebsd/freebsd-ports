@@ -1,6 +1,6 @@
---- src/Makefile.orig	2016-06-25 02:19:12 UTC
-+++ src/Makefile
-@@ -183,7 +183,7 @@ $(shell $(VECHO) 1>&2 Done reading depen
+--- src/Makefile.orig	2017-07-08 02:09:02.000000000 +0100
++++ src/Makefile	2017-07-06 12:52:07.633525000 +0100
+@@ -183,7 +183,7 @@ $(shell $(VECHO) 1>&2 Done reading dependencies)
  endif
  
  # Each directory in $(INCLUDES) is passed as a -I directory when compiling.
@@ -24,7 +24,7 @@
  endif
  
  # Rules to make .o (object) files
-@@ -498,7 +500,7 @@ $(patsubst %,../include/%,$(wildcard *.h
+@@ -501,7 +503,7 @@ $(patsubst %,../include/%,$(wildcard *.hh)): ../includ
  
  DIR=install -d -m 0755 -o root
  FILE=install -m 0644 -o root
@@ -33,7 +33,7 @@
  CONFIGFILE=install -m 0644
  EXE=install -m 0755 -o root
  SETUID=install -m 4755 -o root
-@@ -546,7 +548,7 @@ install-dirs:
+@@ -549,7 +551,7 @@ install-dirs:
  		$(DESTDIR)$(sysconfdir)/linuxcnc $(DESTDIR)$(bindir) \
  		$(DESTDIR)$(libdir) $(DESTDIR)$(includedir)/linuxcnc \
  		$(DESTDIR)$(docsdir) $(DESTDIR)$(ncfilesdir) \
@@ -42,9 +42,9 @@
  		$(DESTDIR)$(tcldir)/scripts \
  		$(DESTDIR)$(mandir)/man1 \
  		$(DESTDIR)$(mandir)/man3 \
-@@ -600,15 +602,14 @@ install-kernel-indep: install-dirs
- 	$(EXE) ../scripts/gladevcp_demo $(DESTDIR)$(bindir)
+@@ -605,14 +607,13 @@ install-kernel-indep: install-dirs
  	$(EXE) ../scripts/linuxcncmkdesktop $(DESTDIR)$(bindir)
+ 	$(EXE) ../scripts/update_ini $(DESTDIR)$(bindir)
  	$(FILE) $(filter ../lib/%.a ../lib/%.so.0,$(TARGETS)) $(DESTDIR)$(libdir)
 -	cp --no-dereference $(filter ../lib/%.so, $(TARGETS)) $(DESTDIR)$(libdir)
 -	-ldconfig $(DESTDIR)$(libdir)
@@ -55,13 +55,11 @@
  	$(TREE) $(NC_FILES) $(DESTDIR)$(ncfilesdir)
  	$(EXE) ../nc_files/M101 $(DESTDIR)$(ncfilesdir)
 -	$(FILE) ../tcl/TkLinuxCNC $(DESTDIR)/etc/X11/app-defaults
--	$(FILE) ../app-defaults/XEmc $(DESTDIR)/etc/X11/app-defaults
 +	$(FILE) ../tcl/TkLinuxCNC $(DESTDIR)$(prefix)/share/X11/app-defaults
-+	$(FILE) ../app-defaults/XEmc $(DESTDIR)$(prefix)/share/X11/app-defaults
  	$(FILE) Makefile.modinc $(DESTDIR)$(datadir)/linuxcnc
  	$(EXE) $(TCL) $(DESTDIR)$(tcldir)
  	$(FILE) ../tcl/hal.so $(DESTDIR)$(tcldir)
-@@ -713,6 +714,7 @@ endif
+@@ -720,6 +721,7 @@ endif
  # that's what kbuild seems to require
  
  EXTRA_CFLAGS := $(filter-out -ffast-math,$(RTFLAGS)) -D__MODULE__ -I$(BASEPWD) -I$(BASEPWD)/libnml/linklist \
@@ -69,24 +67,24 @@
  	-I$(BASEPWD)/libnml/cms -I$(BASEPWD)/libnml/rcs -I$(BASEPWD)/libnml/inifile \
  	-I$(BASEPWD)/libnml/os_intf -I$(BASEPWD)/libnml/nml -I$(BASEPWD)/libnml/buffer \
  	-I$(BASEPWD)/libnml/posemath -I$(BASEPWD)/rtapi -I$(BASEPWD)/hal \
-@@ -823,11 +825,11 @@ hal_gm-objs := hal/drivers/hal_gm.o $(MA
+@@ -830,11 +832,11 @@ hal_gm-objs := hal/drivers/hal_gm.o $(MATHSTUB)
  obj-$(CONFIG_HAL_PPMC) += hal_ppmc.o
  hal_ppmc-objs := hal/drivers/hal_ppmc.o $(MATHSTUB)
  
 -obj-$(CONFIG_HOSTMOT2) += hostmot2.o hm2_test.o hm2_pci.o hm2_7i43.o hm2_7i90.o setsserial.o
 -ifeq ($(BUILD_SYS),uspace)
--obj-$(CONFIG_HOSTMOT2) += hm2_eth.o hm2_spi.o
+-obj-$(CONFIG_HOSTMOT2) += hm2_eth.o hm2_spi.o hm2_rpspi.o hal_bb_gpio.o
 -endif
 -hostmot2-objs :=			  \
 +#obj-$(CONFIG_HOSTMOT2) += hostmot2.o hm2_test.o hm2_pci.o hm2_7i43.o hm2_7i90.o setsserial.o
 +#ifeq ($(BUILD_SYS),uspace)
-+#obj-$(CONFIG_HOSTMOT2) += hm2_eth.o hm2_spi.o
++#obj-$(CONFIG_HOSTMOT2) += hm2_eth.o hm2_spi.o hm2_rpspi.o hal_bb_gpio.o
 +#endif
 +#hostmot2-objs :=			  \
      hal/drivers/mesa-hostmot2/hostmot2.o  \
      hal/drivers/mesa-hostmot2/ioport.o	  \
      hal/drivers/mesa-hostmot2/encoder.o   \
-@@ -848,29 +850,29 @@ hostmot2-objs :=			  \
+@@ -855,35 +857,35 @@ hostmot2-objs :=			  \
      hal/drivers/mesa-hostmot2/raw.o	  \
      hal/drivers/mesa-hostmot2/bitfile.o   \
      $(MATHSTUB)
@@ -113,6 +111,14 @@
 +#hm2_spi-objs  :=			  \
      hal/drivers/mesa-hostmot2/hm2_spi.o   \
      $(MATHSTUB)
+-hm2_rpspi-objs  :=			  \
++#hm2_rpspi-objs  :=			  \
+     hal/drivers/mesa-hostmot2/hm2_rpspi.o   \
+     $(MATHSTUB)
+-hal_bb_gpio-objs  :=			  \
++#hal_bb_gpio-objs  :=			  \
+     hal/drivers/hal_bb_gpio.o		  \
+     $(MATHSTUB)
 -hm2_test-objs :=			  \
 +#hm2_test-objs :=			  \
      hal/drivers/mesa-hostmot2/hm2_test.o  \
@@ -123,9 +129,9 @@
      hal/drivers/mesa-hostmot2/setsserial.o  \
      $(MATHSTUB)
  
-@@ -1045,13 +1047,13 @@ endif
- ../rtlib/pumakins$(MODULE_EXT): $(addprefix objects/rt,$(pumakins-objs))
- ../rtlib/scarakins$(MODULE_EXT): $(addprefix objects/rt,$(scarakins-objs))
+@@ -1083,13 +1085,13 @@ endif
+ ../rtlib/rosekins$(MODULE_EXT): $(addprefix objects/rt,$(rosekins-objs))
+ ../rtlib/scorbot-kins$(MODULE_EXT): $(addprefix objects/rt,$(scorbot-kins-objs))
  ../rtlib/hal_gm$(MODULE_EXT): $(addprefix objects/rt,$(hal_gm-objs))
 -../rtlib/hostmot2$(MODULE_EXT): $(addprefix objects/rt,$(hostmot2-objs))
 -../rtlib/hm2_test$(MODULE_EXT): $(addprefix objects/rt,$(hm2_test-objs))

@@ -11,8 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Load config files of various types
 
-LICENSE= ART10 GPLv1
-LICENSE_COMB= dual
+LICENSE=	ART10 GPLv1+
+LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Catalyst-Runtime>=5.7008:www/p5-Catalyst-Runtime \
 		p5-Data-Visitor>=0.24:devel/p5-Data-Visitor \

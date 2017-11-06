@@ -10,6 +10,7 @@ include/axa/axa.h
 include/axa/axa_endian.h
 include/axa/bits.h
 include/axa/client.h
+include/axa/client_config.h
 include/axa/dns_walk.h
 include/axa/fields.h
 include/axa/json.h

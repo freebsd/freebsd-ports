@@ -5,7 +5,7 @@ PORTNAME=	PhpDocumentor
 PORTVERSION=	1.4.4
 CATEGORIES=	devel www pear
 
-MAINTAINER=	joneum@bsdproject.de
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Provides automatic documenting of php-api from the source
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:devel/pear
@@ -13,7 +13,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 CONFLICTS=	pear-PHPDoc-[0-9]*
 
-USES=	pear
+USES=		pear
 OPTIONS_DEFINE=	XML_BEAUTIFIER
 XML_BEAUTIFIER_DESC=	XML_Beautifier support
 

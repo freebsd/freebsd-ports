@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	iocell
-PORTVERSION=	2.0.0
+PORTVERSION=	2.1.1
 DISTVERSIONPREFIX=v
 CATEGORIES=	sysutils
 
@@ -21,8 +21,6 @@ GH_ACCOUNT=	bartekrutkowski
 
 NO_BUILD=	yes
 NO_ARCH=	yes
-
-IGNORE_FreeBSD_9=	requires FreeBSD 10.x or newer
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|/usr/local/lib/iocell|${PREFIX}/lib/iocell|g" ${WRKSRC}/iocell

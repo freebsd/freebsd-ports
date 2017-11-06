@@ -1,8 +1,8 @@
-%%PERL5_MAN3%%/POE::Component::Generic.3.gz
-%%PERL5_MAN3%%/POE::Component::Generic::Child.3.gz
-%%PERL5_MAN3%%/POE::Component::Generic::Net::SSH2.3.gz
-%%PERL5_MAN3%%/POE::Component::Generic::Object.3.gz
 %%SITE_PERL%%/POE/Component/Generic.pm
 %%SITE_PERL%%/POE/Component/Generic/Child.pm
 %%SITE_PERL%%/POE/Component/Generic/Net/SSH2.pm
 %%SITE_PERL%%/POE/Component/Generic/Object.pm
+%%PERL5_MAN3%%/POE::Component::Generic.3.gz
+%%PERL5_MAN3%%/POE::Component::Generic::Child.3.gz
+%%PERL5_MAN3%%/POE::Component::Generic::Net::SSH2.3.gz
+%%PERL5_MAN3%%/POE::Component::Generic::Object.3.gz

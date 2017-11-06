@@ -7,4 +7,4 @@ parser to be used in environment with limited resources.  A minimal
 library with all symbols stripped away on FreeBSD has a size below
 19 KByte.
 
-WWW: http://sourceforge.net/projects/nunnimcax/
+WWW: https://sourceforge.net/projects/nunnimcax/

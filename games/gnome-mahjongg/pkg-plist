@@ -3,6 +3,7 @@ man/man6/gnome-mahjongg.6.gz
 share/appdata/gnome-mahjongg.appdata.xml
 share/applications/gnome-mahjongg.desktop
 %%DATADIR%%/maps/mahjongg.map
+%%DATADIR%%/themes/edu_kang_xi.png
 %%DATADIR%%/themes/maya.png
 %%DATADIR%%/themes/postmodern.svg
 %%DATADIR%%/themes/smooth.png
@@ -690,6 +691,7 @@ share/locale/eu/LC_MESSAGES/gnome-mahjongg.mo
 share/locale/fa/LC_MESSAGES/gnome-mahjongg.mo
 share/locale/fi/LC_MESSAGES/gnome-mahjongg.mo
 share/locale/fr/LC_MESSAGES/gnome-mahjongg.mo
+share/locale/fur/LC_MESSAGES/gnome-mahjongg.mo
 share/locale/ga/LC_MESSAGES/gnome-mahjongg.mo
 share/locale/gl/LC_MESSAGES/gnome-mahjongg.mo
 share/locale/gu/LC_MESSAGES/gnome-mahjongg.mo

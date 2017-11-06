@@ -1,0 +1,12 @@
+------------------------------------------------------------------
+
+ To enable this theme edit:
+
+ %%PREFIX%%/etc/sddm.conf
+
+ This theme use the x11-fonts/montserrat font by default. However, it
+ can be changed to any desired font editing:
+
+ %%PREFIX%%/share/sddm/themes/sddm-freebsd-black-theme/theme.conf
+
+------------------------------------------------------------------

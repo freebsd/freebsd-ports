@@ -2,17 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	qmail-autoresponder
-PORTVERSION=	0.97
-PORTREVISION=	2
+PORTVERSION=	0.98
 CATEGORIES=	mail
 MASTER_SITES=	http://untroubled.org/${PORTNAME}/archive/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	araujo@FreeBSD.org
 COMMENT=	Rate-limited autoresponder for qmail
 
-LIB_DEPENDS=	libbg-sysdeps.so:devel/bglibs
+LIB_DEPENDS=	libbg.so:devel/bglibs
 
-USE_MYSQL=	yes
+USES=		mysql
 
 CFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/bglibs
 LDFLAGS+=	-L${LOCALBASE}/lib/mysql -L${LOCALBASE}/lib/bglibs

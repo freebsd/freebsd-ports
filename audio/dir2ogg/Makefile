@@ -3,6 +3,7 @@
 
 PORTNAME=	dir2ogg
 PORTVERSION=	0.12
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://jak-linux.org/projects/dir2ogg/${PORTVERSION}/
 

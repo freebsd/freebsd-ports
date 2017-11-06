@@ -1,0 +1,198 @@
+From cb91f4c43bd4158daa6561c73921a6455176f278 Mon Sep 17 00:00:00 2001
+From: Jan Beulich <jbeulich@suse.com>
+Date: Mon, 31 Jul 2017 15:17:56 +0100
+Subject: [PATCH] gnttab: split maptrack lock to make it fulfill its purpose
+ again
+
+The way the lock is currently being used in get_maptrack_handle(), it
+protects only the maptrack limit: The function acts on current's list
+only, so races on list accesses are impossible even without the lock.
+
+Otoh list access races are possible between __get_maptrack_handle() and
+put_maptrack_handle(), due to the invocation of the former for other
+than current from steal_maptrack_handle(). Introduce a per-vCPU lock
+for list accesses to become race free again. This lock will be
+uncontended except when it becomes necessary to take the steal path,
+i.e. in the common case there should be no meaningful performance
+impact.
+
+When in get_maptrack_handle adds a stolen entry to a fresh, empty,
+freelist, we think that there is probably no concurrency.  However,
+this is not a fast path and adding the locking there makes the code
+clearly correct.
+
+Also, while we are here: the stolen maptrack_entry's tail pointer was
+not properly set.  Set it.
+
+This is XSA-228.
+
+Reported-by: Ian Jackson <ian.jackson@eu.citrix.com>
+Signed-off-by: Jan Beulich <jbeulich@suse.com>
+Signed-off-by: Ian Jackson <Ian.Jackson@eu.citrix.com>
+---
+ docs/misc/grant-tables.txt    |  7 ++++++-
+ xen/common/grant_table.c      | 30 ++++++++++++++++++++++++------
+ xen/include/xen/grant_table.h |  2 +-
+ xen/include/xen/sched.h       |  1 +
+ 4 files changed, 32 insertions(+), 8 deletions(-)
+
+diff --git a/docs/misc/grant-tables.txt b/docs/misc/grant-tables.txt
+index 417ce2d..64da5cf 100644
+--- a/docs/misc/grant-tables.txt
++++ b/docs/misc/grant-tables.txt
+@@ -87,7 +87,8 @@ is complete.
+                                inconsistent grant table state such as current
+                                version, partially initialized active table pages,
+                                etc.
+-  grant_table->maptrack_lock : spinlock used to protect the maptrack free list
++  grant_table->maptrack_lock : spinlock used to protect the maptrack limit
++  v->maptrack_freelist_lock  : spinlock used to protect the maptrack free list
+   active_grant_entry->lock   : spinlock used to serialize modifications to
+                                active entries
+ 
+@@ -102,6 +103,10 @@ is complete.
+  The maptrack free list is protected by its own spinlock. The maptrack
+  lock may be locked while holding the grant table lock.
+ 
++ The maptrack_freelist_lock is an innermost lock.  It may be locked
++ while holding other locks, but no other locks may be acquired within
++ it.
++
+  Active entries are obtained by calling active_entry_acquire(gt, ref).
+  This function returns a pointer to the active entry after locking its
+  spinlock. The caller must hold the grant table read lock before
+diff --git a/xen/common/grant_table.c b/xen/common/grant_table.c
+index f9654f1..593121c 100644
+--- a/xen/common/grant_table.c
++++ b/xen/common/grant_table.c
+@@ -304,11 +304,16 @@ __get_maptrack_handle(
+ {
+     unsigned int head, next, prev_head;
+ 
++    spin_lock(&v->maptrack_freelist_lock);
++
+     do {
+         /* No maptrack pages allocated for this VCPU yet? */
+         head = read_atomic(&v->maptrack_head);
+         if ( unlikely(head == MAPTRACK_TAIL) )
++        {
++            spin_unlock(&v->maptrack_freelist_lock);
+             return -1;
++        }
+ 
+         /*
+          * Always keep one entry in the free list to make it easier to
+@@ -316,12 +321,17 @@ __get_maptrack_handle(
+          */
+         next = read_atomic(&maptrack_entry(t, head).ref);
+         if ( unlikely(next == MAPTRACK_TAIL) )
++        {
++            spin_unlock(&v->maptrack_freelist_lock);
+             return -1;
++        }
+ 
+         prev_head = head;
+         head = cmpxchg(&v->maptrack_head, prev_head, next);
+     } while ( head != prev_head );
+ 
++    spin_unlock(&v->maptrack_freelist_lock);
++
+     return head;
+ }
+ 
+@@ -380,6 +390,8 @@ put_maptrack_handle(
+     /* 2. Add entry to the tail of the list on the original VCPU. */
+     v = currd->vcpu[maptrack_entry(t, handle).vcpu];
+ 
++    spin_lock(&v->maptrack_freelist_lock);
++
+     cur_tail = read_atomic(&v->maptrack_tail);
+     do {
+         prev_tail = cur_tail;
+@@ -388,6 +400,8 @@ put_maptrack_handle(
+ 
+     /* 3. Update the old tail entry to point to the new entry. */
+     write_atomic(&maptrack_entry(t, prev_tail).ref, handle);
++
++    spin_unlock(&v->maptrack_freelist_lock);
+ }
+ 
+ static inline int
+@@ -411,10 +425,6 @@ get_maptrack_handle(
+      */
+     if ( nr_maptrack_frames(lgt) >= max_maptrack_frames )
+     {
+-        /*
+-         * Can drop the lock since no other VCPU can be adding a new
+-         * frame once they've run out.
+-         */
+         spin_unlock(&lgt->maptrack_lock);
+ 
+         /*
+@@ -426,8 +436,12 @@ get_maptrack_handle(
+             handle = steal_maptrack_handle(lgt, curr);
+             if ( handle == -1 )
+                 return -1;
++            spin_lock(&curr->maptrack_freelist_lock);
++            maptrack_entry(lgt, handle).ref = MAPTRACK_TAIL;
+             curr->maptrack_tail = handle;
+-            write_atomic(&curr->maptrack_head, handle);
++            if ( curr->maptrack_head == MAPTRACK_TAIL )
++                write_atomic(&curr->maptrack_head, handle);
++            spin_unlock(&curr->maptrack_freelist_lock);
+         }
+         return steal_maptrack_handle(lgt, curr);
+     }
+@@ -460,12 +474,15 @@ get_maptrack_handle(
+     smp_wmb();
+     lgt->maptrack_limit += MAPTRACK_PER_PAGE;
+ 
++    spin_unlock(&lgt->maptrack_lock);
++    spin_lock(&curr->maptrack_freelist_lock);
++
+     do {
+         new_mt[i - 1].ref = read_atomic(&curr->maptrack_head);
+         head = cmpxchg(&curr->maptrack_head, new_mt[i - 1].ref, handle + 1);
+     } while ( head != new_mt[i - 1].ref );
+ 
+-    spin_unlock(&lgt->maptrack_lock);
++    spin_unlock(&curr->maptrack_freelist_lock);
+ 
+     return handle;
+ }
+@@ -3474,6 +3491,7 @@ grant_table_destroy(
+ 
+ void grant_table_init_vcpu(struct vcpu *v)
+ {
++    spin_lock_init(&v->maptrack_freelist_lock);
+     v->maptrack_head = MAPTRACK_TAIL;
+     v->maptrack_tail = MAPTRACK_TAIL;
+ }
+diff --git a/xen/include/xen/grant_table.h b/xen/include/xen/grant_table.h
+index 4e77899..100f2b3 100644
+--- a/xen/include/xen/grant_table.h
++++ b/xen/include/xen/grant_table.h
+@@ -78,7 +78,7 @@ struct grant_table {
+     /* Mapping tracking table per vcpu. */
+     struct grant_mapping **maptrack;
+     unsigned int          maptrack_limit;
+-    /* Lock protecting the maptrack page list, head, and limit */
++    /* Lock protecting the maptrack limit */
+     spinlock_t            maptrack_lock;
+     /* The defined versions are 1 and 2.  Set to 0 if we don't know
+        what version to use yet. */
+diff --git a/xen/include/xen/sched.h b/xen/include/xen/sched.h
+index 1fbda87..ff0f38f 100644
+--- a/xen/include/xen/sched.h
++++ b/xen/include/xen/sched.h
+@@ -223,6 +223,7 @@ struct vcpu
+     int              controller_pause_count;
+ 
+     /* Maptrack */
++    spinlock_t       maptrack_freelist_lock;
+     unsigned int     maptrack_head;
+     unsigned int     maptrack_tail;
+ 
+-- 
+2.1.4
+

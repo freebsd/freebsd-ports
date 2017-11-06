@@ -16,7 +16,7 @@ LIB_DEPENDS=	libticalcs2.so:comms/libticalcs2 \
 		libticables2.so:comms/libticables2 \
 		libtifiles2.so:devel/libtifiles2
 
-USES=		gmake libtool pkgconfig
+USES=		gmake groff libtool pkgconfig
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk20 libglade2
 USE_SDL=	sdl

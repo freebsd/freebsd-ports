@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	mg
-PORTVERSION=	20161005
+PORTVERSION=	20171014
 CATEGORIES=	editors
 MASTER_SITES=	http://homepage.boetes.org/software/mg/
 
-MAINTAINER=	t@tobik.me
+MAINTAINER=	tobik@FreeBSD.org
 COMMENT=	Small, fast Emacs-like editor
 
 LICENSE=	PD

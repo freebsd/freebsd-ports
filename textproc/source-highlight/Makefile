@@ -3,7 +3,7 @@
 
 PORTNAME=	source-highlight
 PORTVERSION=	3.1.6
-PORTREVISION=	5
+PORTREVISION=	8
 CATEGORIES=	textproc
 MASTER_SITES=	GNU/src-highlite
 
@@ -16,7 +16,6 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	exctags:devel/ctags
 LIB_DEPENDS=	libboost_regex.so:devel/boost-libs
 
-BROKEN_powerpc64=	Does not build
 BROKEN_sparc64=	Does not compile with GCC 4.2
 
 GNU_CONFIGURE=	yes

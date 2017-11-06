@@ -4,7 +4,7 @@
 PORTNAME=	clblas
 PORTVERSION=	2.10
 DISTVERSIONPREFIX=	v
-PORTREVISION=	2
+PORTREVISION=	5
 CATEGORIES=	math
 
 MAINTAINER=	dieterich@ogolem.org
@@ -17,6 +17,8 @@ BUILD_DEPENDS=	opencl>=0:devel/opencl
 LIB_DEPENDS=	libOpenCL.so:devel/ocl-icd \
 		libboost_program_options.so:devel/boost-libs
 RUN_DEPENDS=	opencl>=0:devel/opencl
+
+BROKEN_powerpc64=	fails to compile: xgemm.cc: error: extra ';'
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	clMathLibraries

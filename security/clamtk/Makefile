@@ -10,7 +10,7 @@ MASTER_SITES=	SF/${PORTNAME}/ClamTk/${PORTVERSION}
 MAINTAINER=	tj@FreeBSD.org
 COMMENT=	GTK front-end for Clam Antivirus
 
-LICENSE=	ART10 GPLv1
+LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 RUN_DEPENDS=	p5-Config-Tiny>=2.12:devel/p5-Config-Tiny \

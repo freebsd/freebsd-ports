@@ -3,12 +3,15 @@
 
 PORTNAME=	smasher
 PORTVERSION=	1.1.7
-PORTREVISION=	4
+PORTREVISION=	6
 CATEGORIES=	audio
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cross platform audio loop slicer
+
+DEPRECATED=	Does not build with modern csound
+EXPIRATION_DATE=	2017-11-12
 
 LICENSE=	LGPL20
 LICENSE_FILE=	${WRKSRC}/COPYING.LIB
@@ -19,6 +22,7 @@ LIB_DEPENDS=	libsndfile.so:audio/libsndfile \
 
 GNU_CONFIGURE=	yes
 USES=		desktop-file-utils gmake pkgconfig
+USE_CXXSTD=	c++11
 USE_GCC=	yes
 USE_WX=		2.8
 WX_CONF_ARGS=	absolute

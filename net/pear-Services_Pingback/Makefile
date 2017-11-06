@@ -5,9 +5,9 @@ PORTNAME=	Services_Pingback
 PORTVERSION=	0.2.2
 CATEGORIES=	net www pear
 
-MAINTAINER=	joneum@bsdproject.de
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Pingback user-agent class
 
-USES=	pear
+USES=		pear
 
 .include <bsd.port.mk>

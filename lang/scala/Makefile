@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	scala
-PORTVERSION=	2.11.8
+PORTVERSION=	2.12.3
 CATEGORIES=	lang java
 MASTER_SITES=	http://www.scala-lang.org/files/archive/
 
-MAINTAINER=	mitsururike@gmail.com
+MAINTAINER=	jan0sch@mykolab.com
 COMMENT=	Scala Programming Language
 
 LICENSE=	BSD3CLAUSE
@@ -17,9 +17,10 @@ RUN_DEPENDS=	bash:shells/bash
 OPTIONS_DEFINE=	DOCS
 
 USES=		tar:tgz
+NO_ARCH=	yes
 NO_BUILD=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	1.6+
+JAVA_VERSION=	1.8+
 
 SCALA_HOME=	${DATADIR}
 SCALA_SHRDIRS=	lib

@@ -2,11 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	zookeeper
-PORTVERSION=	0.3.0
+PORTVERSION=	0.4.0
 CATEGORIES=	devel
-MASTER_SITES=	http://pecl.php.net/get/
-PKGNAMEPREFIX=	pecl-
-DIST_SUBDIR=	PECL
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	PHP extension for interfacing with Apache ZooKeeper
@@ -16,7 +13,9 @@ LICENSE=	PHP301
 LIB_DEPENDS=	libzookeeper_mt.so:devel/libzookeeper
 
 USE_PHP=	session:build
-USES=		php:ext tar:tgz
+USES=		php:pecl
+
+PLIST_FILES=	%%DATADIR%%/zookeeper-api.php
 
 post-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}/

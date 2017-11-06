@@ -1,0 +1,4 @@
+A perl extension for rxvt-unicode that allows changing the font size on the fly
+with keyboard shortcuts
+
+WWW: https://github.com/majutsushi/urxvt-font-size

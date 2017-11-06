@@ -3,7 +3,7 @@
 
 PORTNAME=	enblend
 PORTVERSION=	4.1.4
-PORTREVISION=	4
+PORTREVISION=	12
 CATEGORIES=	graphics
 MASTER_SITES=	SF/enblend/enblend-enfuse/enblend-enfuse-${PORTVERSION:R}
 DISTNAME=	enblend-enfuse-${PORTVERSION}
@@ -20,15 +20,15 @@ LIB_DEPENDS=	liblcms2.so:graphics/lcms2 \
 		libtiff.so:graphics/tiff \
 		libboost_filesystem.so:devel/boost-libs \
 		libvigraimpex.so:graphics/vigra \
-		libgsl.so:math/gsl
+		libgsl.so:math/gsl \
+		libpng.so:graphics/png
 RUN_DEPENDS=	OpenEXR>=1.0:graphics/OpenEXR
+
+BROKEN_powerpc64=	fails to configure: libvigraimpex is required to compile Enblend
 
 USE_AUTOTOOLS=	automake:env autoconf:env
 USES=		compiler:features gmake jpeg localbase makeinfo
-# We need a newer version of makeinfo for this.
-# Remove this line when we remove texinfo from the base system.
-CONFIGURE_ARGS=	MAKEINFO="${LOCALBASE}/bin/makeinfo" \
-		--with-boost-filesystem
+CONFIGURE_ARGS=	--with-boost-filesystem
 
 USE_GL=		glew glut
 GNU_CONFIGURE=	yes

@@ -5,17 +5,14 @@ PORTNAME=	uploadprogress
 PORTVERSION=	1.0.3
 PORTREVISION=	1
 CATEGORIES=	devel pear
-MASTER_SITES=	http://pecl.php.net/get/
-PKGNAMEPREFIX=	pecl-
-DIST_SUBDIR=	PECL
 
-MAINTAINER=	joneum@bsdproject.de
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Provides track progress of a file upload
 
 LICENSE=	PHP301
 
-USES=		php:ext tar:tgz
-IGNORE_WITH_PHP=	70
+USES=		php:pecl
+IGNORE_WITH_PHP=	70 71
 
 CONFIGURE_ARGS=	--enable-uploadprogress
 

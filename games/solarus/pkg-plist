@@ -25,6 +25,7 @@ include/solarus/Map.h
 include/solarus/MapData.h
 include/solarus/QuestProperties.h
 include/solarus/QuestResources.h
+include/solarus/ResourceProvider.h
 include/solarus/ResourceType.h
 include/solarus/Savegame.h
 include/solarus/SavegameConverterV1.h
@@ -229,4 +230,15 @@ include/solarus/third_party/snes_spc/spc.h
 lib/libsolarus-gui.so
 lib/libsolarus.so
 lib/libsolarus.so.1
-lib/libsolarus.so.1.5.1
+lib/libsolarus.so.1.5.3
+share/applications/solarus.desktop
+share/icons/hicolor/128x128/apps/solarus.png
+share/icons/hicolor/16x16/apps/solarus.png
+share/icons/hicolor/24x24/apps/solarus.png
+share/icons/hicolor/256x256/apps/solarus.png
+share/icons/hicolor/32x32/apps/solarus.png
+share/icons/hicolor/48x48/apps/solarus.png
+share/icons/hicolor/512x512/apps/solarus.png
+share/icons/hicolor/64x64/apps/solarus.png
+share/man/man6/solarus-run.6
+share/man/man6/solarus.6

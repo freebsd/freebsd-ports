@@ -18,7 +18,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	jonabbey
 GH_TAGNAME=	7905901
 
-CONFLICTS_INSTALL=	imap-uw-20*
+CONFLICTS_INSTALL=	imap-uw-20* courier-0.65.*
 
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}${PKGNAMESUFFIX}
 SUB_FILES=	pkg-message
@@ -48,7 +48,7 @@ MAKE_ARGS+=	WITH_DRAC=yes
 .if ! ${PORT_OPTIONS:MSSL}
 MAKE_ARGS+=	SSLTYPE=none SSLDIR=${OPENSSLBASE}
 .else
-USE_OPENSSL=	yes
+USES+=		ssl
 .if ${PORT_OPTIONS:MSSL_AND_PLAINTEXT}
 MAKE_ARGS+=	SSLTYPE=unix
 .else
@@ -69,11 +69,11 @@ post-patch:
 	@${RM} ${WRKSRC}/docs/imaprc.txt.bak
 
 pre-build:
-	@${SH} ${PKGREQ}.rev ${LOCALBASE}/include/c-client/portrevision.h ${PORTVERSION}
+	@${SH} ${FILESDIR}/pkg-req.rev ${LOCALBASE}/include/c-client/portrevision.h ${PORTVERSION}
 .if ${PORT_OPTIONS:MSSL}
-	@${SH} ${PKGREQ}.ssl ${LOCALBASE}/include/c-client/portrevision.h yes
+	@${SH} ${FILESDIR}/pkg-req.ssl ${LOCALBASE}/include/c-client/portrevision.h yes
 .else
-	@${SH} ${PKGREQ}.ssl ${LOCALBASE}/include/c-client/portrevision.h no
+	@${SH} ${FILESDIR}/pkg-req.ssl ${LOCALBASE}/include/c-client/portrevision.h no
 .endif
 
 do-install:

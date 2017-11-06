@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ipsumdump
-PORTVERSION=	1.85
+PORTVERSION=	1.86
 CATEGORIES=	net
 MASTER_SITES=	http://www.cs.ucla.edu/~kohler/ipsumdump/
 

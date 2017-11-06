@@ -1,8 +1,8 @@
 	here is a new patch file in order not to use sed;
 % cat files/patch-configure
---- configure.orig      2003-12-28 17:53:30.000000000 +0900
-+++ configure   2012-01-29 11:25:20.000000000 +0900
-@@ -3874,11 +3874,6 @@
+--- configure.orig	2003-12-28 08:53:30 UTC
++++ configure
+@@ -3874,11 +3874,6 @@ for lt_ac_sed in $lt_ac_sed_list /usr/xp
    cat /dev/null > conftest.in
    lt_ac_count=0
    echo $ECHO_N "0123456789$ECHO_C" >conftest.in
@@ -14,7 +14,3 @@
    while true; do
      cat conftest.in conftest.in >conftest.tmp
      mv conftest.tmp conftest.in
-
-	
-
-

@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	faye-websocket
-PORTVERSION=	0.10.5
+PORTVERSION=	0.10.7
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 

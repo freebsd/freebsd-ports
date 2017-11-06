@@ -8,6 +8,7 @@ include/gmm/gmm_conjugated.h
 include/gmm/gmm_def.h
 include/gmm/gmm_dense_Householder.h
 include/gmm/gmm_dense_lu.h
+include/gmm/gmm_dense_matrix_functions.h
 include/gmm/gmm_dense_qr.h
 include/gmm/gmm_dense_sylvester.h
 include/gmm/gmm_domain_decomp.h

@@ -3,7 +3,7 @@
 
 PORTNAME=	gillo
 DISTVERSION=	1.0beta1
-PORTREVISION=	8
+PORTREVISION=	10
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/1.0beta1
 DISTNAME=	${PORTNAME}-${DISTVERSION}-src
@@ -15,8 +15,8 @@ LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	${JAM}:devel/jam \
-		${LOCALBASE}/lib/libode.a:devel/ode \
 		${LOCALBASE}/lib/libplibsg.a:x11-toolkits/plib
+LIB_DEPENDS=	libode.so:devel/ode
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

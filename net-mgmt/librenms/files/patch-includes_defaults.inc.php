@@ -1,15 +1,6 @@
---- includes/defaults.inc.php.orig	2015-10-16 23:09:41 UTC
+--- includes/defaults.inc.php.orig	2017-03-26 12:06:00 UTC
 +++ includes/defaults.inc.php
-@@ -40,7 +40,7 @@ $config['project_name'] = 'LibreNMS';
- $config['project_id']   = strtolower($config['project_name']);
- 
- $config['temp_dir']    = '/tmp';
--$config['install_dir'] = '/opt/'.$config['project_id'];
-+$config['install_dir'] = '/usr/local/www/'.$config['project_id'];
- $config['log_dir']     = $config['install_dir'].'/logs';
- 
- // MySQL extension to use
-@@ -50,26 +50,26 @@ $config['db']['extension']       = 'mysq
+@@ -41,26 +41,26 @@ $config['db_port']               = 3306;
  $config['own_hostname'] = 'localhost';
  
  // Location of executables

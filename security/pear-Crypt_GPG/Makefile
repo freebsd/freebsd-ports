@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Crypt_GPG
-PORTVERSION=	1.4.2
+PORTVERSION=	1.4.3
 CATEGORIES=	security www pear
 
 MAINTAINER=	dem.procopiou@gmail.com

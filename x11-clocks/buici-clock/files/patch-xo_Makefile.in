@@ -1,0 +1,11 @@
+--- xo/Makefile.in.orig	2017-04-02 09:20:26 UTC
++++ xo/Makefile.in
+@@ -61,7 +61,7 @@ CXXFLAGS=@CXXFLAGS@
+ #CXXFLAGS=-${CXXFLAGS} -O2
+ #CXXFLAGS=-${CXXFLAGS} -fomit-frame-pointer
+ CXXFLAGS_=-g @CFLAGS_W@@X_CFLAGS@
+-LFLAGS=-g @LDFLAGS@@X_LIBS@@LIBS@ -lX11 -lXext @X_EXTRA_LIBS@
++LFLAGS=-g @LDFLAGS@@X_LIBS@ @LIBS@ -lX11 -lXext @X_EXTRA_LIBS@
+ FLEX=@LEX@
+ YACC=@YACC@
+ 

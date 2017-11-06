@@ -1,0 +1,15 @@
+!_TAG_FILE_SORTED	2	/0=unsorted, 1=sorted, 2=foldcase/
+CATEGORIES	/usr/home/ricky/FreeBSD/ports/security/highwayhash/Makefile	/^CATEGORIES=	security$/;"	m	language:Make
+COMMENT	/usr/home/ricky/FreeBSD/ports/security/highwayhash/Makefile	/^COMMENT=	Fast strong hash functions: SipHash\/HighwayHash$/;"	m	language:Make
+GH_ACCOUNT	/usr/home/ricky/FreeBSD/ports/security/highwayhash/Makefile	/^GH_ACCOUNT=	google$/;"	m	language:Make
+GH_TAGNAME	/usr/home/ricky/FreeBSD/ports/security/highwayhash/Makefile	/^GH_TAGNAME=	2b666ae$/;"	m	language:Make
+LICENSE	/usr/home/ricky/FreeBSD/ports/security/highwayhash/Makefile	/^LICENSE=	APACHE20$/;"	m	language:Make
+LICENSE_FILE	/usr/home/ricky/FreeBSD/ports/security/highwayhash/Makefile	/^LICENSE_FILE=	${WRKSRC}\/LICENSE$/;"	m	language:Make
+MAINTAINER	/usr/home/ricky/FreeBSD/ports/security/highwayhash/Makefile	/^MAINTAINER=	yuri@rawbw.com$/;"	m	language:Make
+ONLY_FOR_ARCHS	/usr/home/ricky/FreeBSD/ports/security/highwayhash/Makefile	/^ONLY_FOR_ARCHS=	amd64 arm64 powerpc powerpc64$/;"	m	language:Make
+ONLY_FOR_ARCHS_REASON	/usr/home/ricky/FreeBSD/ports/security/highwayhash/Makefile	/^ONLY_FOR_ARCHS_REASON=	Assembly is implemented only for specific architectures in highwayhash\/tsc_timer.h$/;"	m	language:Make
+PORTNAME	/usr/home/ricky/FreeBSD/ports/security/highwayhash/Makefile	/^PORTNAME=	highwayhash$/;"	m	language:Make
+PORTVERSION	/usr/home/ricky/FreeBSD/ports/security/highwayhash/Makefile	/^PORTVERSION=	g20170512$/;"	m	language:Make
+USES	/usr/home/ricky/FreeBSD/ports/security/highwayhash/Makefile	/^USES=		gmake$/;"	m	language:Make
+USE_GITHUB	/usr/home/ricky/FreeBSD/ports/security/highwayhash/Makefile	/^USE_GITHUB=	yes$/;"	m	language:Make
+USE_LDCONFIG	/usr/home/ricky/FreeBSD/ports/security/highwayhash/Makefile	/^USE_LDCONFIG=	yes$/;"	m	language:Make

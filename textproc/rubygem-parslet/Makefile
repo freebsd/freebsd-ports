@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	parslet
-PORTVERSION=	1.7.1
+PORTVERSION=	1.8.0
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
@@ -10,8 +10,7 @@ MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Parser construction library with great error reporting in Ruby
 
 LICENSE=	MIT
-
-RUN_DEPENDS=	rubygem-blankslate>=2:devel/rubygem-blankslate
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 NO_ARCH=	yes
 USE_RUBY=	yes

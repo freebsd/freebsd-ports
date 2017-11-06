@@ -3,7 +3,7 @@
 %%XPI_XPIDIR%%/about.html
 %%XPI_XPIDIR%%/advanced-settings.html
 %%XPI_XPIDIR%%/asset-viewer.html
-%%XPI_XPIDIR%%/assets/checksums.txt
+%%XPI_XPIDIR%%/assets/assets.json
 %%XPI_XPIDIR%%/assets/thirdparties/easylist-downloads.adblockplus.org/easylist.txt
 %%XPI_XPIDIR%%/assets/thirdparties/easylist-downloads.adblockplus.org/easyprivacy.txt
 %%XPI_XPIDIR%%/assets/thirdparties/mirror1.malwaredomains.com/files/justdomains
@@ -15,7 +15,6 @@
 %%XPI_XPIDIR%%/assets/thirdparties/www.malwaredomainlist.com/hostslist/README.md
 %%XPI_XPIDIR%%/assets/ublock/badware.txt
 %%XPI_XPIDIR%%/assets/ublock/experimental.txt
-%%XPI_XPIDIR%%/assets/ublock/filter-lists.json
 %%XPI_XPIDIR%%/assets/ublock/filters.txt
 %%XPI_XPIDIR%%/assets/ublock/privacy.txt
 %%XPI_XPIDIR%%/assets/ublock/resources.txt
@@ -64,6 +63,7 @@
 %%XPI_XPIDIR%%/js/assets.js
 %%XPI_XPIDIR%%/js/background.js
 %%XPI_XPIDIR%%/js/cloud-ui.js
+%%XPI_XPIDIR%%/js/commands.js
 %%XPI_XPIDIR%%/js/contentscript.js
 %%XPI_XPIDIR%%/js/contextmenu.js
 %%XPI_XPIDIR%%/js/cosmetic-filtering.js
@@ -141,9 +141,12 @@
 %%XPI_XPIDIR%%/locale/id/messages.properties
 %%XPI_XPIDIR%%/locale/it/messages.properties
 %%XPI_XPIDIR%%/locale/ja/messages.properties
+%%XPI_XPIDIR%%/locale/ka/messages.properties
+%%XPI_XPIDIR%%/locale/kn/messages.properties
 %%XPI_XPIDIR%%/locale/ko/messages.properties
 %%XPI_XPIDIR%%/locale/lt/messages.properties
 %%XPI_XPIDIR%%/locale/lv/messages.properties
+%%XPI_XPIDIR%%/locale/ml/messages.properties
 %%XPI_XPIDIR%%/locale/mr/messages.properties
 %%XPI_XPIDIR%%/locale/nb/messages.properties
 %%XPI_XPIDIR%%/locale/nl/messages.properties

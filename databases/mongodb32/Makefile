@@ -37,7 +37,7 @@ SASL_MAKE_ARGS=		--use-sasl-client
 SSL_USE=	yes
 SSL_MAKE_ARGS=	--ssl
 
-USES=		compiler cpe execinfo python:build scons
+USES=		compiler cpe python:build scons
 
 MAKE_ARGS=	--prefix=${STAGEDIR}${PREFIX} \
 		--use-system-pcre --use-system-snappy \
@@ -57,10 +57,10 @@ TEST_TARGET=	unittests
 #  - https://jira.mongodb.org/browse/SERVER-21217
 #  - https://jira.mongodb.org/browse/SERVER-22740
 .if ${COMPILER_TYPE} == clang && ${COMPILER_VERSION} < 37
-BUILD_DEPENDS+=	${LOCALBASE}/bin/clang37:lang/clang37
-CPP=	${LOCALBASE}/bin/clang-cpp37
-CC=	${LOCALBASE}/bin/clang37
-CXX=	${LOCALBASE}/bin/clang++37
+BUILD_DEPENDS+=	${LOCALBASE}/bin/clang40:devel/llvm40
+CPP=	${LOCALBASE}/bin/clang-cpp40
+CC=	${LOCALBASE}/bin/clang40
+CXX=	${LOCALBASE}/bin/clang++40
 .endif
 
 post-install:

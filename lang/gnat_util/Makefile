@@ -8,13 +8,13 @@ CATEGORIES=	lang
 MASTER_SITES=	GCC/${MS_SUBDIR}
 DISTNAME=	${IDENTIFICATION}
 
-MAINTAINER=	marino@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library used to build GNAT tools such as ASIS
 
 LICENSE=	GPLv3 GPLv3RLE
 LICENSE_COMB=	multi
 
-USES=		ada tar:bzip2
+USES=		ada
 NO_MTREE=	yes
 DISTINFO_FILE=	${.CURDIR}/../${ADAXX}-aux/distinfo
 WRKSRC=		${WRKDIR}/${PORTNAME}
@@ -22,13 +22,8 @@ MAKE_ENV=	MAKEOBJDIR=${WRKSRC}/obj
 
 .include "${.CURDIR}/Makefile.sources"
 
-.if defined(ADA_DEFAULT) && ${ADA_DEFAULT} == 49
-.include "${.CURDIR}/../gcc-aux/Makefile.version"
-.elif defined(ADA_DEFAULT) && ${ADA_DEFAULT} == 5
-.include "${.CURDIR}/../gcc5-aux/Makefile.version"
-.else
+USES+=		tar:xz
 .include "${.CURDIR}/../gcc6-aux/Makefile.version"
-.endif
 
 post-extract:
 	@${MKDIR} ${WRKSRC}/obj

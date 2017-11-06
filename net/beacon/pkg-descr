@@ -3,4 +3,4 @@ the RTP protocol to provide useful statistics and diagnostic information
 about a given multicast group.  The Multicast Beacon can be used as a
 general-purpose active multicast measurement tool.
 
-WWW: http://sourceforge.net/projects/multicastbeacon
+WWW: https://sourceforge.net/projects/multicastbeacon/

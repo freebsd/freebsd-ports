@@ -1,6 +1,6 @@
---- cache.h	2004-05-29 16:00:08.000000000 -0700
-+++ cache.h	2005-09-22 22:37:43.000000000 -0700
-@@ -102,7 +102,7 @@
+--- cache.h.orig	2004-05-29 23:00:08 UTC
++++ cache.h
+@@ -102,7 +102,7 @@ class c_nntp_server_article {
  		ulong bytes,lines;
  		c_nntp_server_article(ulong serverid,const c_group_info::ptr &group,ulong articlenum,ulong bytes,ulong lines);
  };
@@ -9,7 +9,7 @@
  typedef pair<c_nntp_server_article*,c_server::ptr> t_real_server_article;
  typedef multimap<float,t_real_server_article,greater<float> > t_nntp_server_articles_prioritized;
  class c_nntp_part {
-@@ -118,7 +118,7 @@
+@@ -118,7 +118,7 @@ class c_nntp_part {
  			c_nntp_server_article *highest_sa=NULL;
  			float highprio=-10000.0,f;
  			for (;nsai!=articles.end();++nsai) {
@@ -18,7 +18,7 @@
  				for (t_server_list_range servers = nconfig.getservers(sa->serverid); servers.first!=servers.second; ++servers.first)
  					if ((f=nconfig.trustsizes->getserverpriority(servers.first->second)) > highprio){
  						highest_sa=sa;
-@@ -137,7 +137,41 @@
+@@ -137,15 +137,49 @@ class c_nntp_part {
  };
  
  
@@ -30,7 +30,7 @@
 +		const_iterator i = lower_bound(partnum);
 +		return (i != end() && (*i)->partnum == partnum);
 +	}
-+
+ 
 +	c_nntp_part* part(int partnum) {
 +		iterator i = lower_bound(partnum);
 +		if (i != end() && (*i)->partnum == partnum)
@@ -58,10 +58,10 @@
 +		return ((c_nntp_file_parts*)this)->lower_bound(partnum);
 +	}
 +};
- 
++
  //#define FILEFLAG_READ 1
  
-@@ -145,7 +179,7 @@
+ typedef map<ulong,int> t_server_have_map;
  
  class c_nntp_file : public c_nntp_file_base, public c_refcounted<c_nntp_file>{
  	public:
@@ -70,7 +70,7 @@
  		int have;
  //		ulong bytes,lines;
  		ulong flags;
-@@ -161,13 +195,13 @@
+@@ -161,13 +195,13 @@ class c_nntp_file : public c_nntp_file_base, public c_
  		bool iscomplete(void) const {return (have>=req) || maybe_a_textreply();}
  		void get_server_have_map(t_server_have_map &have_map) const;
  //		ulong banum(void){assert(!parts.empty());return (*parts.begin()).second->articlenum;}
@@ -88,7 +88,16 @@
  			}\
  			return b;\
  		}
-@@ -311,9 +345,9 @@
+@@ -228,7 +262,7 @@ class c_message_state : public c_refcounted<c_message_
+ };
+ 
+ #ifdef HAVE_WORKING_HASH_MAP
+-typedef hash_map<const char*, c_message_state::ptr, hash<const char*>, eqstr> t_message_state_list;
++typedef hash_map<const char*, c_message_state::ptr, std::hash<const char*>, eqstr> t_message_state_list;
+ #else
+ typedef map<const char*, c_message_state::ptr, ltstr> t_message_state_list;
+ #endif
+@@ -311,9 +345,9 @@ class meta_mid_info {
  		}
  		void insert(const c_nntp_file::ptr &f){
  			const string &mid=f->bamid();

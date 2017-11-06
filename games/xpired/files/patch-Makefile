@@ -1,11 +1,15 @@
---- Makefile.orig	2013-10-18 04:17:46.000000000 +1100
-+++ Makefile	2013-10-18 04:17:55.000000000 +1100
-@@ -2,7 +2,7 @@
+--- Makefile.orig	2002-08-01 18:42:51 UTC
++++ Makefile
+@@ -1,8 +1,8 @@
+-PREFIX=/usr/local
++PREFIX?=/usr/local
  SHARE_PREFIX=$(PREFIX)/share/xpired
- CFLAGS=`sdl-config --cflags` -DUNIX -DPREFIX=\"$(PREFIX)\" -DSHARE_PREFIX=\"$(SHARE_PREFIX)\"
- LDFLAGS=`sdl-config --libs` -lSDL -lSDL_mixer -lSDL_image -lSDL_gfx
+-CFLAGS=`sdl-config --cflags` -DUNIX -DPREFIX=\"$(PREFIX)\" -DSHARE_PREFIX=\"$(SHARE_PREFIX)\"
+-LDFLAGS=`sdl-config --libs` -lSDL -lSDL_mixer -lSDL_image -lSDL_gfx
 -CC=gcc
-+CC=cc
++CFLAGS+=`sdl-config --cflags` -DUNIX -DPREFIX=\"$(PREFIX)\" -DSHARE_PREFIX=\"$(SHARE_PREFIX)\"
++LDFLAGS+=`sdl-config --libs` -lSDL -lSDL_mixer -lSDL_image -lSDL_gfx
++CC?=cc
  
  BINARIES = xpired xpiredit
  

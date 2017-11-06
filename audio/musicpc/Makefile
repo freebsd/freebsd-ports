@@ -3,11 +3,12 @@
 
 PORTNAME=	musicpc
 PORTVERSION=	0.28
+PORTREVISION=	1
 CATEGORIES=	audio ipv6
 MASTER_SITES=	http://www.musicpd.org/download/mpc/0/
 DISTNAME=	mpc-${PORTVERSION}
 
-MAINTAINER=	udvzsolt@gmail.com
+MAINTAINER=	uzsolt@uzsolt.hu
 COMMENT=	Command line client for the musicpd
 
 LICENSE=	GPLv2+

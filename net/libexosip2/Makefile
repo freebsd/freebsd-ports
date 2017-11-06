@@ -18,9 +18,8 @@ CONFLICTS_INSTALL=	libeXosip2-legacy-[0-9]*
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
-USES=		libtool
+USES=		libtool ssl
 USE_LDCONFIG=	yes
-USE_OPENSSL=	yes
 SHLIB_VER=	11
 
 PLIST_SUB+=	SHLIB_VER=${SHLIB_VER}

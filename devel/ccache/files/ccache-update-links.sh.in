@@ -29,6 +29,22 @@ in
 	;;
 esac
 
+strip_path() {
+	local IFS=":"
+	local path
+	set -- ${PATH}
+	while [ $# -gt 0 ]; do
+		if ! [ "${1}" = "${PREFIX}/libexec/ccache" ]; then
+			path="${path}${path:+:}${1}"
+		fi
+		shift
+	done
+	echo "${path}"
+}
+
+# Remove ccache wrappers from PATH
+PATH=$(strip_path)
+
 # create compiler links
 for comp in ${CCACHE_COMPILERS}
 do

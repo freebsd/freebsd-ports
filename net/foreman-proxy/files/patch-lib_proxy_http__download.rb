@@ -1,4 +1,4 @@
---- lib/proxy/http_download.rb.orig	2015-12-24 23:13:02 UTC
+--- lib/proxy/http_download.rb.orig	2017-05-08 15:18:42 UTC
 +++ lib/proxy/http_download.rb
 @@ -6,7 +6,7 @@ module Proxy
  

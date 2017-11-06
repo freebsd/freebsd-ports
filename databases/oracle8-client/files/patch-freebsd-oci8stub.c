@@ -8,7 +8,7 @@
  #include <assert.h>
  #include <errno.h>
  #include <dlfcn.h>
-@@ -119,6 +120,13 @@
+@@ -119,6 +120,14 @@
  
  int __l_sigprocmask(int how, const sigset_t *set, sigset_t *oldset);
  
@@ -18,11 +18,12 @@
 +};
 +
 +int __l_connect(int s, const struct l_sockaddr *l_sa, socklen_t addrlen);
++int __l_sigaction(int signum, const struct sigaction *l_act, struct sigaction *oldact);
 +
  #ifdef stdin
  #undef stdin
  #undef stdout
-@@ -528,3 +536,14 @@
+@@ -528,3 +537,27 @@ __l_sigprocmask(int l_how, const sigset_
  
  	return sigprocmask(how, set, oldset);
  }
@@ -37,3 +38,16 @@
 +	sa.sa_family = l_sa->sa_family;
 +	return connect(s, &sa, addrlen);
 +}
++
++int 
++__l_sigaction(int signum, const struct sigaction *l_act, struct sigaction *oldact)
++{
++	struct sigaction act;
++
++	act.sa_handler = l_act->sa_handler;
++	act.sa_flags = l_act->sa_flags & (SA_ONSTACK | SA_RESTART | SA_RESETHAND |
++		SA_NOCLDSTOP | SA_NODEFER | SA_NOCLDWAIT | SA_SIGINFO);
++	act.sa_mask = l_act->sa_mask;
++	return sigaction(signum, &act, oldact);
++}
++

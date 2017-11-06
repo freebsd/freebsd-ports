@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	keepassx
-PORTVERSION=	2.0.2
+PORTVERSION=	2.0.3
+PORTREVISION=	1
 CATEGORIES=	security
 PKGNAMESUFFIX=	-devel
 
@@ -20,7 +21,7 @@ LICENSE_PERMS_NOKIA-LGPL-EXCEPTION=	dist-mirror dist-sell pkg-mirror pkg-sell au
 
 LIB_DEPENDS=	libgcrypt.so:security/libgcrypt
 
-CONFLICTS_INSTALL=	keepassx-0.* keepassx2-*
+CONFLICTS_INSTALL=	keepassx-0.* keepassx2-* keepassxc-*
 
 USES=		cmake compiler:c++11-lib desktop-file-utils shared-mime-info
 USE_LDCONFIG=	yes
@@ -31,7 +32,7 @@ USE_XORG=	ice inputproto sm x11 xcursor xext xfixes xi xrandr xrender \
 		xt xtst
 
 USE_GITHUB=	yes
-GH_TAGNAME=	b654fde
+GH_TAGNAME=	55869e8
 
 CMAKE_ARGS+=	-DZLIB_SUPPORTS_GZIP:BOOL=ON
 

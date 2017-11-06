@@ -4,7 +4,7 @@ PORTNAME=	listserialc
 PORTVERSION=	1.1.0
 CATEGORIES=	devel java
 
-MAINTAINER=	bsdports@kyle-evans.net
+MAINTAINER=	kevans@FreeBSD.org
 COMMENT=	Simple multiplatform program to list serial ports with vid/pid/iserial
 
 LICENSE=	LGPL3+

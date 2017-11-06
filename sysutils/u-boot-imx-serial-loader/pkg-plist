@@ -1,0 +1,9 @@
+bin/imx_uart
+bin/imx_usb
+etc/imx-loader.d/imx_usb.conf
+etc/imx-loader.d/mx50_usb_work.conf
+etc/imx-loader.d/mx51_usb_work.conf
+etc/imx-loader.d/mx53_usb_work.conf
+etc/imx-loader.d/mx6_usb_work.conf
+etc/imx-loader.d/mx7_usb_work.conf
+etc/imx-loader.d/vybrid_usb_work.conf

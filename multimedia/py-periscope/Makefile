@@ -5,7 +5,7 @@ PORTNAME=	periscope
 PORTVERSION=	0.2.4
 PORTREVISION=	3
 CATEGORIES=	multimedia python
-MASTER_SITES=	GOOGLE_CODE
+MASTER_SITES=	https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/periscope/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTFILES=	python-${PORTNAME}_${PORTVERSION}.orig${EXTRACT_SUFX} \
 		periscope.desktop
@@ -17,8 +17,6 @@ COMMENT=	Subtitles searching module
 
 LICENSE=	LGPL3
 
-BROKEN=		Unfetchable (google code has gone away)
-
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/BeautifulSoup.py:www/py-beautifulsoup32
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
@@ -27,10 +25,8 @@ NO_WRKSUBDIR=	yes
 USES=		desktop-file-utils python
 
 OPTIONS_DEFINE=	UNRAR
-UNRAR_DESC=	rar support (.rar) for compressed subtitles
-UNRAR_RUN_DEPENDS=	unrar:archivers/unrar
-
 OPTIONS_DEFAULT=	UNRAR
+UNRAR_RUN_DEPENDS=	unrar:archivers/unrar
 
 PLIST_FILES=	share/applications/periscope.desktop
 

@@ -3,6 +3,7 @@
 
 PORTNAME=	shx
 PORTVERSION=	0.2.4
+PORTREVISION=	1
 CATEGORIES=	net-p2p
 MASTER_SITES=	http://synhxd.sourceforge.net/releases/
 

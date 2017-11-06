@@ -19,7 +19,7 @@ RUN_DEPENDS+=	update-mime-database:misc/shared-mime-info \
 
 PORTSCOUT=	ignore:1
 
-USES=		gettext gmake libtool pathfix perl5 pkgconfig tar:xz
+USES=		gettext gmake libtool localbase:ldflags pathfix perl5 pkgconfig tar:xz
 USE_PERL5=	build
 MAKE_JOBS_UNSAFE=	yes
 USE_LDCONFIG=	yes
@@ -29,8 +29,6 @@ USE_XORG=	xext xrender x11 xinerama xi xrandr xcursor xfixes xdamage \
 		xcomposite
 PATCHDIR=	${.CURDIR}/../../x11-toolkits/gtk20/files
 CONFIGURE_ARGS=	--enable-static --with-xinput=yes
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 BUILD_WRKSRC=	${WRKSRC}/gtk
 ALL_TARGET=	${PORTNAME}
 PLIST_FILES=	bin/gtk-update-icon-cache
@@ -48,9 +46,9 @@ pre-configure:
 	fi
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/gtk/gtk-update-icon-cache \
+	${INSTALL_PROGRAM} ${WRKSRC}/gtk/gtk-update-icon-cache \
 		${STAGEDIR}${PREFIX}/bin/
-#	@${INSTALL_MAN} ${WRKSRC}/docs/reference/gtk/gtk-update-icon-cache.1 \
+#	${INSTALL_MAN} ${WRKSRC}/docs/reference/gtk/gtk-update-icon-cache.1 \
 #		${STAGEDIR}${PREFIX}/man/man1/
 
 .include <bsd.port.mk>

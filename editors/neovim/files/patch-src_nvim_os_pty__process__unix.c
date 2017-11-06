@@ -1,6 +1,6 @@
---- src/nvim/os/pty_process_unix.c.orig	2016-11-08 05:50:09 UTC
+--- src/nvim/os/pty_process_unix.c.orig	2017-05-04 05:10:42 UTC
 +++ src/nvim/os/pty_process_unix.c
-@@ -9,7 +9,7 @@
+@@ -12,7 +12,7 @@
  #include <sys/ioctl.h>
  
  // forkpty is not in POSIX, so headers are platform-specific

@@ -2,12 +2,17 @@
 # $FreeBSD$
 
 PORTNAME=	radvd
-PORTVERSION=	2.15
+PORTVERSION=	2.17
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.litech.org/radvd/dist/
 
 MAINTAINER=	farrokhi@FreeBSD.org
 COMMENT=	Linux/BSD IPv6 router advertisement daemon
+
+LICENSE=	RADVD
+LICENSE_NAME=	RADVD License
+LICENSE_FILE=	${WRKSRC}/COPYRIGHT
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 LIB_DEPENDS=	libdaemon.so:devel/libdaemon
 

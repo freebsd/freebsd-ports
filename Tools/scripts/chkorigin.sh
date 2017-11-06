@@ -30,7 +30,7 @@
 #
 # $FreeBSD$
 #
-# MAINTAINER=	erwin@FreeBSD.org
+# MAINTAINER=	portmgr@FreeBSD.org
 #
 # PKGORIGIN connects packaged or installed ports to the directory they
 # originally came from. Although often overlooked, they are extremly

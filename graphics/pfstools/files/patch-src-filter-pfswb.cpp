@@ -1,6 +1,6 @@
---- src/filter/pfswb.cpp.orig	2016-02-12 17:10:27 UTC
+--- src/filter/pfswb.cpp.orig	2016-08-12 19:10:44 UTC
 +++ src/filter/pfswb.cpp
-@@ -0,0 +1,297 @@
+@@ -0,0 +1,299 @@
 +/**
 + * @file pfswb.cpp
 + * @brief Adjust white balance in RGB color space
@@ -184,10 +184,12 @@
 +      float nmin = 1e20, nmax = -1e20;
 +      for (int i=s; i--; )
 +      {
-+        float const &l = ((*Y)(i)-amin)*k+min;
++        float const l = ((*Y)(i)-amin)*k+min;
 +        if (nmin > l) nmin = l;
 +        if (nmax < l) nmax = l;
 +        (*Y)(i) = l;
++        (*X)(i) *= k;
++        (*Z)(i) *= k;
 +      }
 +      VERBOSE_STR << "restored luminance range: " << nmin << ":" << nmax << std::endl;
 +    }

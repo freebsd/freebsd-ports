@@ -12,10 +12,13 @@ man/man8/lynis.8.gz
 %%DATADIR%%/db/languages/en-GB
 %%DATADIR%%/db/languages/en-US
 %%DATADIR%%/db/languages/es
+%%DATADIR%%/db/languages/fi
 %%DATADIR%%/db/languages/fr
+%%DATADIR%%/db/languages/he
 %%DATADIR%%/db/languages/hu
 %%DATADIR%%/db/languages/it
 %%DATADIR%%/db/languages/ja
+%%DATADIR%%/db/languages/nb-NO
 %%DATADIR%%/db/languages/nl
 %%DATADIR%%/db/languages/nl-BE
 %%DATADIR%%/db/languages/nl-NL
@@ -23,6 +26,7 @@ man/man8/lynis.8.gz
 %%DATADIR%%/db/languages/pt
 %%DATADIR%%/db/languages/ru
 %%DATADIR%%/db/languages/se
+%%DATADIR%%/db/languages/tr
 %%DATADIR%%/db/malware-susp.db
 %%DATADIR%%/db/malware.db
 %%DATADIR%%/db/sbl.db
@@ -72,7 +76,6 @@ man/man8/lynis.8.gz
 %%DATADIR%%/include/tests_scheduling
 %%DATADIR%%/include/tests_shells
 %%DATADIR%%/include/tests_snmp
-%%DATADIR%%/include/tests_solaris
 %%DATADIR%%/include/tests_squid
 %%DATADIR%%/include/tests_ssh
 %%DATADIR%%/include/tests_storage

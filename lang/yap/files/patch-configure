@@ -1,0 +1,25 @@
+https://sourceforge.net/p/yap/yap-6.3/ci/139f64a45900
+https://sourceforge.net/p/yap/yap-6.3/ci/da61f1c31fed
+
+--- configure.orig	2011-10-23 22:11:24 UTC
++++ configure
+@@ -4397,7 +4397,7 @@ then
+        C_PARSER_FLAGS="-O3 -Wall -Wstrict-prototypes -Wmissing-prototypes $CFLAGS"
+        CFLAGS="-O3 -fomit-frame-pointer -Wall -Wstrict-prototypes -Wmissing-prototypes $CFLAGS"
+        case "`$CC --version < /dev/null`" in
+-	  *3.4*) CFLAGS="-fno-gcse -fno-crossjumping $CFLAGS" ;;
++	  gcc-3.4*) CFLAGS="-fno-gcse -fno-crossjumping $CFLAGS" ;;
+        esac
+        case "$target_cpu" in
+         i*86*)
+@@ -4434,10 +4434,6 @@ then
+            CFLAGS="-march=i486 $CFLAGS"
+            CXXFLAGS="-march=i486 $CXXFLAGS"
+           ;;
+-          i386*)
+-           CFLAGS="-march=i386 $CFLAGS"
+-           CXXFLAGS="-march=i386 $CXXFLAGS"
+-          ;;
+          esac
+        fi
+    fi

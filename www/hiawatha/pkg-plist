@@ -5,15 +5,6 @@ bin/ssi-cgi
 @sample %%ETCDIR%%/index.xslt.sample
 @sample %%ETCDIR%%/mimetype.conf.sample
 @sample %%ETCDIR%%/toolkit.conf.sample
-lib/hiawatha/libmbedcrypto.so
-lib/hiawatha/libmbedcrypto.so.0
-lib/hiawatha/libmbedcrypto.so.2.2.1
-lib/hiawatha/libmbedtls.so
-lib/hiawatha/libmbedtls.so.10
-lib/hiawatha/libmbedtls.so.2.2.1
-lib/hiawatha/libmbedx509.so
-lib/hiawatha/libmbedx509.so.0
-lib/hiawatha/libmbedx509.so.2.2.1
 man/man1/cgi-wrapper.1.gz
 man/man1/hiawatha.1.gz
 man/man1/ssi-cgi.1.gz
@@ -22,6 +13,5 @@ sbin/cgi-wrapper
 sbin/hiawatha
 sbin/wigwam
 @sample %%WWWDIR%%/index.html.sample
-@dir /var/lib/hiawatha
-@dir /var/lib
 @dir /var/log/hiawatha
+@dir /var/db/hiawatha

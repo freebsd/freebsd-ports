@@ -2,13 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	netsurf
-PORTVERSION=	3.6
-PORTREVISION=	1
+PORTVERSION=	3.7
 CATEGORIES=	www
 MASTER_SITES=	http://download.netsurf-browser.org/netsurf/releases/source/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
-MAINTAINER=	olivierd@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lightweight web browser
 
 LICENSE=	GPLv2 MIT
@@ -33,6 +32,10 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 RUN_DEPENDS=	duk:lang/duktape \
 		${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 
+BROKEN_powerpc64=	fails to compile: dukky.h:40: expected declaration specifiers or '...' before 'dom_string'
+
+USES=		bison desktop-file-utils gettext-runtime gmake iconv jpeg \
+		localbase pkgconfig shebangfix ssl
 ALL_TARGET=	#empty
 LDFLAGS+=	-L${OPENSSLLIB} -lssl -lcrypto ${ICONV_LIB}
 CFLAGS+=	-I${OPENSSLINC}
@@ -41,20 +44,15 @@ MAKE_ARGS=	HOST_CC="${CC}" CC="${CC}" CCOPT="" HOST="${OPSYS}" \
 		WARNFLAGS="" Q="" OPTCFLAGS="${CFLAGS}"
 MAKE_ENV+=	COMPONENT_TYPE="lib-shared" \
 		FLEX="${LOCALBASE}/bin/flex"
-USES=		bison desktop-file-utils gettext-runtime gmake iconv jpeg \
-		localbase pkgconfig shebangfix ssl
 USE_GNOME=	glib20 gtk30 cairo librsvg2
-
 WRKSRC=		${WRKDIR}/${DISTNAME:S/-src//}
 
 SHEBANG_FILES=	utils/split-messages.pl
 perl_CMD=	${SETENV} perl
 
-OPTIONS_DEFINE=	GSTREAMER
+OPTIONS_DEFINE=		GSTREAMER
 OPTIONS_EXCLUDE=	GSTREAMER
 GSTREAMER_USE=		GSTREAMER=yes, good
-
-.include <bsd.port.pre.mk>
 
 post-patch:
 	@${REINPLACE_CMD} '/CFLAGS/d' \
@@ -70,10 +68,10 @@ do-configure:
 	@${REINPLACE_CMD} '/NETSURF_USE_LIBICONV_PLUG/ s|NO|YES|' \
 		${WRKSRC}/Makefile.config
 .endif
-.if ${PORT_OPTIONS:MGSTREAMER}
+
+do-configure-GSTREAMER-on:
 	@${REINPLACE_CMD} '/NETSURF_USE_VIDEO/ s|NO|YES|' \
 		${WRKSRC}/Makefile.config
-.endif
 
 post-install:
 	cd ${STAGEDIR}${PREFIX}/bin && ${LN} -sf netsurf-gtk3 \
@@ -86,4 +84,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/frontends/gtk/res/netsurf.xpm \
 		${STAGEDIR}${PREFIX}/share/pixmaps
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

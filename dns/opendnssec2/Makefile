@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	opendnssec
-PORTVERSION=	2.0.3
+PORTVERSION=	2.1.3
 CATEGORIES=	dns
 MASTER_SITES=	http://dist.opendnssec.org/source/
 PKGNAMESUFFIX=	2
@@ -11,19 +11,21 @@ MAINTAINER=	jaap@NLnetLabs.nl
 COMMENT=	Tool suite for maintaining DNSSEC
 
 LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	ldns>=1.6.16:dns/ldns
 LIB_DEPENDS=	libldns.so:dns/ldns
 
+USES=		ssl
+USE_RC_SUBR=	opendnssec
+USE_GNOME=	libxml2
+USE_LDCONFIG=	yes
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir="${PREFIX}/var" \
 		--with-ssl=${OPENSSLBASE}
-USE_RC_SUBR=	opendnssec
-USE_GNOME=	libxml2
-USES=		ssl
-USE_LDCONFIG=	yes
 
-SUB_FILES+=	pkg-message
+SUB_FILES=	pkg-message
 
 CONFLICTS=	opendnssec-1.[0-4]*
 
@@ -34,14 +36,15 @@ PORTDOCS=	MIGRATION NEWS README.md
 MIGRATE=	README.md find_problematic_zones.sql \
 		convert_mysql mysql_convert.sql \
 		convert_sqlite sqlite_convert.sql
+CONVERT=	convert_mysql_to_sqlite convert_sqlite_to_mysql
+SCHEMAS=	schema.mysql schema.sqlite
 
 OPTIONS_DEFINE=		SOFTHSM DOCS
+OPTIONS_DEFAULT=	SQLITE
 OPTIONS_SUB=		yes
 
 OPTIONS_SINGLE=		DB
 OPTIONS_SINGLE_DB=	SQLITE MYSQL
-
-OPTIONS_DEFAULT=	DOCS SQLITE
 
 SOFTHSM_DESC=		SoftHSM cryptographic store for PKCS \#11 interface
 
@@ -72,5 +75,23 @@ post-install-DOCS-on:
 	${INSTALL_DATA} \
 		${MIGRATE:S|^|${WRKSRC}/enforcer/utils/1.4-2.0_db_convert/|} \
 		${STAGEDIR}${DOCSDIR}/1.4-2.0_db_convert
+	${INSTALL_DATA} \
+		${CONVERT:S|^|${WRKSRC}/enforcer/utils/|} \
+		${STAGEDIR}${DOCSDIR}
+	${REINPLACE_CMD} -e 's|enforcer/utils/|${DOCSDIR}/|' \
+		${STAGEDIR}${DOCSDIR}/MIGRATION
+	${INSTALL_DATA} \
+		${SCHEMAS:S|^|${WRKSRC}/enforcer/src/db/|} \
+		${STAGEDIR}${DOCSDIR}
+	${REINPLACE_CMD} -e 's|../src/db/schema|${DOCSDIR}/schema|' \
+		-e 's|mysql_convert.sql|${DOCSDIR}/1.4-2.0_db_convert/&|' \
+		-e 's|sqlite_convert.sql|${DOCSDIR}/1.4-2.0_db_convert/&|' \
+		-e 's|find_problematic_zones.sql|${DOCSDIR}/1.4-2.0_db_convert/&|' \
+		${STAGEDIR}${DOCSDIR}/convert_*
+	${REINPLACE_CMD} -e 's|../../src/db/schema|${DOCSDIR}/schema|' \
+		-e 's|mysql_convert.sql|${DOCSDIR}/1.4-2.0_db_convert/&|' \
+		-e 's|sqlite_convert.sql|${DOCSDIR}/1.4-2.0_db_convert/&|' \
+		-e 's|find_problematic_zones.sql|${DOCSDIR}/1.4-2.0_db_convert/&|' \
+		${STAGEDIR}${DOCSDIR}/1.4-2.0_db_convert/convert_*
 
 .include <bsd.port.mk>

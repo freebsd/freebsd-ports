@@ -3,7 +3,7 @@
 
 PORTNAME=	gutenmark
 PORTVERSION=	20090510
-PORTREVISION=	3
+PORTREVISION=	5
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.sandroid.org/GutenMark/wasftp.GutenMark/SoftwareSnapshots/
 DISTNAME=	GutenMark_source_dev-${PORTVERSION}
@@ -16,7 +16,6 @@ WRKSRC=		${WRKDIR}/GutenMark-source
 USES=		compiler:c++11-lib gmake
 USE_CXXSTD=	c++11
 USE_WX=		3.0
-WX_UNICODE=	yes
 ALL_TARGET=	default
 
 PLIST_FILES=	bin/GutenMark bin/GutenSplit bin/GUItenMark \

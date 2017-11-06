@@ -1,0 +1,4 @@
+Django superusers/admins can login and work on behalf of other users without
+having to know their credentials.
+
+WWW: https://github.com/arteria/django-hijack

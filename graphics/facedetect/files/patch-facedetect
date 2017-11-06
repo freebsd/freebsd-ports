@@ -1,0 +1,11 @@
+--- facedetect.orig	2017-07-20 10:43:10 UTC
++++ facedetect
+@@ -34,7 +34,7 @@ if 'cv' in dir(cv2):
+ 
+ 
+ # Profiles
+-DATA_DIR = '/usr/share/opencv/'
++DATA_DIR = '%%LOCALBASE%%/share/OpenCV/'
+ CASCADES = {}
+ 
+ PROFILES = {

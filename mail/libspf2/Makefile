@@ -14,8 +14,6 @@ COMMENT=	Sender Rewriting Scheme 2 C Implementation
 LICENSE=	BSD2CLAUSE LGPL21 LGPL3
 LICENSE_COMB=	dual
 
-CONFLICTS=	${PORTNAME}-1.0.* p5-Mail-SPF-Query-[0-9]*
-
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USES=		libtool

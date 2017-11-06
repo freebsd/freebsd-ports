@@ -12,22 +12,22 @@ COMMENT=	LXDE Icon Theme
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gmake iconv tar:xz
+USES=		tar:xz
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--prefix=${PREFIX}
 NO_ARCH=	yes
 
 DATADIR=	${PREFIX}/share/lxde
-INSTALLS_ICONS=	YES
+INSTALLS_ICONS=	yes
 
 PORTDOCS=	AUTHORS
+
 OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|cp -raf --no-preserve=ownership|cp -RpPf|' \
 		${WRKSRC}/Makefile.in
 
-post-install:
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 

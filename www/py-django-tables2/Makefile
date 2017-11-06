@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	django-tables2
-PORTVERSION=	1.0.5
+PORTVERSION=	1.2.9
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,6 +11,7 @@ MAINTAINER=	kozlov.sergey.404@gmail.com
 COMMENT=	Table/data-grid framework for Django
 
 LICENSE=	BSD2CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django18>=0:www/py-django18 \
 		${PYTHON_PKGNAMEPREFIX}six>=0:devel/py-six

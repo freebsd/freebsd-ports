@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	peg-e
-PORTVERSION=	1.2.2
+PORTVERSION=	1.2.3
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://gottcode.org/peg-e/ \
 		http://mirror.amdmi3.ru/distfiles/

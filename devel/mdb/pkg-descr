@@ -1,0 +1,6 @@
+This is a port of the Solaris Modular Debugger to FreeBSD.  Currently it
+only supports debugging of FreeBSD/amd64 kernels via kernel crashes
+(vmcores) or live systems via /dev/mem.  It does not include a port of the
+in-kernel kmdb debugger.
+
+WWW: https://docs.oracle.com/cd/E19683-01/806-6545/index.html

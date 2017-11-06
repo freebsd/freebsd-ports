@@ -1,3 +1,5 @@
+Don't use special compiler flags.
+Add upstream patch to make dependencies explicit; needed for ninja builds.
 --- tools/CMakeLists.txt.orig	2014-03-15 15:11:32 UTC
 +++ tools/CMakeLists.txt
 @@ -4,7 +4,6 @@ PROJECT(${PROJECT})
@@ -8,3 +10,12 @@
  endif()
  
  SET(CPP_SRC osmpbf-outline.cpp)
+@@ -10,6 +10,8 @@ endif()
+ SET(CPP_SRC osmpbf-outline.cpp)
+ SET(HPP_SRC "")
+ SET(C_SRC "")
++set_source_files_properties(${CPP_SRC}
++    OBJECT_DEPENDS "${CMAKE_SOURCE_DIR}/include/osmpbf/fileformat.pb.h;${CMAKE_SOURCE_DIR}/include/osmpbf/osmformat.pb.h")
+ include_directories("${CMAKE_SOURCE_DIR}/include")
+ 
+ add_executable(${PROJECT} ${HPP_SRC} ${CPP_SRC} ${C_SRC})

@@ -1,4 +1,4 @@
 Libva driver for intel graphics cards with hardware accelerated
 features for video encode/decode.
 
-WWW: http://cgit.freedesktop.org/vaapi/intel-driver
+WWW: https://github.com/01org/intel-vaapi-driver

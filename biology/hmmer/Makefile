@@ -11,6 +11,8 @@ MASTER_SITES=	ftp://selab.janelia.org/pub/software/hmmer3/3.0/ \
 MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Profile hidden Markov models for biological sequence analysis
 
+BROKEN=		No public distfiles
+
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
@@ -30,7 +32,7 @@ OPTIONS_DEFINE=	DOCS EXAMPLES
 # HMMER is useless without SSE and any PC in use today should support it
 # Should probably also do enable-vmx on Power processors to enable
 # Altivec/VMX, but I don't have a machine to test this.
-.if ${ARCH} == "amd64" || ${ARCH} == "ia64" || ${ARCH} == "i386"
+.if ${ARCH} == "amd64" || ${ARCH} == "i386"
 CONFIGURE_ARGS+=--enable-sse
 .endif
 

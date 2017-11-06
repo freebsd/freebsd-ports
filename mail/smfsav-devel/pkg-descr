@@ -1,0 +1,15 @@
+It's a lightweight, fast and reliable Sendmail milter that implements
+a real-time Sender e-Mail Address Verification technology. This technology
+can stop some kinds of SPAM with a spoofed sender's e-Mail address.
+Also it implements a real-time Recipient e-Mail Address Verification
+technology. It can be useful if your machine is a backup MX for the recipient's
+domains or if your machine forwards all e-Mail messages as a relay host for your
+domains to another internal or external e-Mail servers.
+It's a lite alternative for the spamilter, milter-sender and milter-ahead
+milters.
+
+This is a fork of smf-sav which was originally written by Eugene Kurmanin.
+It is a "reloaded" version with heavy bugfixes maintained by Gabriele
+Maria Plutzar.
+
+WWW: http://smf-sav.anw.at/

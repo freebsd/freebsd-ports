@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	monit
-PORTVERSION=	5.20.0
+PORTVERSION=	5.24.0
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.mmonit.com/monit/dist/
 
@@ -10,6 +10,7 @@ MAINTAINER=	martinp@tildeslash.com
 COMMENT=	Unix system management and proactive monitoring
 
 LICENSE=	AGPLv3
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes
 USES=		bison gmake

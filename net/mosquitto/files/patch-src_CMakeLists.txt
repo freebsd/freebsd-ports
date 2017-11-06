@@ -1,6 +1,14 @@
---- src/CMakeLists.txt.orig	2015-05-07 13:21:22 UTC
+--- src/CMakeLists.txt.orig	2016-08-17 11:05:14 UTC
 +++ src/CMakeLists.txt
-@@ -86,7 +86,7 @@ if (UNIX)
+@@ -77,6 +77,7 @@ if (WIN32 OR CYGWIN)
+ endif (WIN32 OR CYGWIN)
+ 
+ add_definitions (-DWITH_BROKER)
++add_definitions (-DWITH_THREADING)
+ 
+ add_executable(mosquitto ${MOSQ_SRCS})
+ 
+@@ -86,7 +87,7 @@ if (UNIX)
  	if (APPLE)
  		set (MOSQ_LIBS ${MOSQ_LIBS} dl m)
  	else (APPLE)
@@ -9,7 +17,7 @@
  	endif (APPLE)
  endif (UNIX)
  
-@@ -127,6 +127,5 @@ if (${WITH_TLS} STREQUAL ON)
+@@ -127,6 +128,5 @@ if (${WITH_TLS} STREQUAL ON)
  endif (${WITH_TLS} STREQUAL ON)
  
  if (UNIX)

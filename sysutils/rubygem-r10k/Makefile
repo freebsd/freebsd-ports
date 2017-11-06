@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	r10k
-PORTVERSION=	2.5.1
+PORTVERSION=	2.5.5
 PORTREVISION=	1
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
@@ -16,10 +16,9 @@ RUN_DEPENDS=	rubygem-colored>=1.2:textproc/rubygem-colored \
 		rubygem-cri>=2.6.1:devel/rubygem-cri \
 		rubygem-gettext-setup>=0.5:devel/rubygem-gettext-setup \
 		rubygem-log4r>=1.1.10:sysutils/rubygem-log4r \
-		rubygem-minitar>=0:archivers/rubygem-minitar \
 		rubygem-multi_json>=1.10:devel/rubygem-multi_json \
 		rubygem-puppet_forge>=2.1.5:sysutils/rubygem-puppet_forge \
-		rubygem-semantic_puppet>=0.1.0:devel/rubygem-semantic_puppet
+		rubygem-semantic_puppet>=1.0:devel/rubygem-semantic_puppet
 
 NO_ARCH=	yes
 USE_RUBY=	yes

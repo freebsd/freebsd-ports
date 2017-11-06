@@ -1,0 +1,3 @@
+bin/dsblogoutmgr
+man/man1/dsblogoutmgr.1.gz
+%%DATADIR%%/dsblogoutmgr_de.qm

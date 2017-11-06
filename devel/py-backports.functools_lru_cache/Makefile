@@ -1,19 +1,20 @@
 # $FreeBSD$
 
 PORTNAME=	backports.functools_lru_cache
-PORTVERSION=	1.3
+PORTVERSION=	1.4
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	mva@FreeBSD.org
-COMMENT=	Backport of the lru_cache function from Python 3.3's functools
+MAINTAINER=	sunpoet@FreeBSD.org
+COMMENT=	Backport of functools.lru_cache from Python 3.3
 
 LICENSE=	MIT
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools_scm>=1.9:devel/py-setuptools_scm
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools_scm>=1.15.0:devel/py-setuptools_scm
 
-USES=		python:2.7
+NO_ARCH=	yes
 USE_PYTHON=	autoplist distutils
+USES=		python:2.7
 
 .include <bsd.port.mk>

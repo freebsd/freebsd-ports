@@ -156,7 +156,7 @@
 +#ifdef __FreeBSD__
 +    u_int n = thinkpad_state->volume_level;
 +
-+    if (sysctlbyname("dec.acpi_ibm.0.volume", NULL, NULL, &n, sizeof(n)) != 0)
++    if (sysctlbyname("dev.acpi_ibm.0.volume", NULL, NULL, &n, sizeof(n)) != 0)
 +      fprintf(stderr, _("Unable to set volume sysctl"));
 +    else {
 +#endif

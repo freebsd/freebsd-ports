@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	seed7
-DISTVERSION=	05_20161231
+DISTVERSION=	05_20170915
 CATEGORIES=	lang
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${DISTNAME}/
 DISTNAME=	${PORTNAME}_${DISTVERSION}
@@ -16,12 +16,15 @@ COMMENT=	High-level, extensible programming language
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi
 
+ONLY_FOR_ARCHS=		amd64 i386 sparc64
+
+LIB_DEPENDS=	libodbc.so:databases/unixODBC
+
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
-USES=		ncurses tar:tgz
+USES=		mysql:client ncurses pgsql sqlite tar:tgz
 USE_XORG=	x11
-
-ONLY_FOR_ARCHS=	i386 amd64 sparc64
+WANT_PGSQL=	client
 
 WRKSRC=		${WRKDIR}/${PORTNAME}/src
 MAKE_ENV+=	S7_LIB_DIR=${S7_LIB_DIR} \

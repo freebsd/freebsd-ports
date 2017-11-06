@@ -1,4 +1,4 @@
---- rtgui/soundman.cc.orig	2017-01-14 17:35:19 UTC
+--- rtgui/soundman.cc.orig	2017-01-26 22:12:22 UTC
 +++ rtgui/soundman.cc
 @@ -24,9 +24,7 @@
  #ifdef WIN32
@@ -11,7 +11,7 @@
  #include <canberra-gtk.h>
  #endif
  
-@@ -65,7 +63,7 @@ void SoundManager::playSoundAsync(const 
+@@ -67,7 +65,7 @@ void SoundManager::playSoundAsync(const 
      wchar_t *wfilename = (wchar_t*)g_utf8_to_utf16 (sound.c_str(), -1, NULL, NULL, NULL);
      PlaySoundW(wfilename, NULL, sndParam);
      g_free( wfilename );

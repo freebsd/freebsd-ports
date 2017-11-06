@@ -1,4 +1,5 @@
 bin/minitube
+share/appdata/minitube.appdata.xml
 share/applications/minitube.desktop
 share/icons/hicolor/128x128/apps/minitube.png
 share/icons/hicolor/16x16/apps/minitube.png
@@ -31,7 +32,6 @@ share/icons/hicolor/scalable/apps/minitube.svg
 %%NLS%%%%DATADIR%%/locale/he_IL.qm
 %%NLS%%%%DATADIR%%/locale/hr.qm
 %%NLS%%%%DATADIR%%/locale/hu.qm
-%%NLS%%%%DATADIR%%/locale/ia.qm
 %%NLS%%%%DATADIR%%/locale/id.qm
 %%NLS%%%%DATADIR%%/locale/it.qm
 %%NLS%%%%DATADIR%%/locale/ja_JP.qm
@@ -50,6 +50,7 @@ share/icons/hicolor/scalable/apps/minitube.svg
 %%NLS%%%%DATADIR%%/locale/sk.qm
 %%NLS%%%%DATADIR%%/locale/sl.qm
 %%NLS%%%%DATADIR%%/locale/sq.qm
+%%NLS%%%%DATADIR%%/locale/sr.qm
 %%NLS%%%%DATADIR%%/locale/sv_SE.qm
 %%NLS%%%%DATADIR%%/locale/th.qm
 %%NLS%%%%DATADIR%%/locale/tr.qm

@@ -1,0 +1,23 @@
+This patch does two things:
+1) Add the include directories for 'libxcb' to the compiler search directories,
+2) Remove VirtualTerminal.cpp from the sources that need to be built.
+   see also 'patch-src_daemon_Display.cpp'
+
+--- src/daemon/CMakeLists.txt.orig	2016-08-28 11:54:03 UTC
++++ src/daemon/CMakeLists.txt
+@@ -3,6 +3,7 @@ include_directories(
+     "${CMAKE_SOURCE_DIR}/src/auth"
+ )
+ include_directories("${CMAKE_BINARY_DIR}/src/common")
++include_directories("${LIBXCB_INCLUDE_DIR}")
+ 
+ set(DAEMON_SOURCES
+     ${CMAKE_SOURCE_DIR}/src/common/Configuration.cpp
+@@ -26,7 +27,6 @@ set(DAEMON_SOURCES
+     SeatManager.cpp
+     SignalHandler.cpp
+     SocketServer.cpp
+-    VirtualTerminal.cpp
+ )
+ 
+ qt5_add_dbus_adaptor(DAEMON_SOURCES "${CMAKE_SOURCE_DIR}/data/interfaces/org.freedesktop.DisplayManager.xml"          "DisplayManager.h" SDDM::DisplayManager)

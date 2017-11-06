@@ -4,7 +4,7 @@
  
  
  
-+execinfo_libs="-L%%LOCALBASE%%/lib -lexecinfo"
++execinfo_libs="-lexecinfo"
 +LIBS="$execinfo_libs $LIBS"
  for ac_func in backtrace_symbols_fd backtrace_symbols backtrace
  do

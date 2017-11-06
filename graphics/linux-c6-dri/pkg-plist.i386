@@ -1,5 +1,4 @@
 etc/drirc
-lib/udev/rules.d/91-drm-modeset.rules
 usr/lib/dri/i915_dri.so
 usr/lib/dri/i965_dri.so
 usr/lib/dri/r200_dri.so
@@ -32,6 +31,7 @@ usr/lib/libglapi.so.0
 usr/lib/libglapi.so.0.0.0
 usr/lib/libglut.so.3
 usr/lib/libglut.so.3.9.0
+usr/lib/udev/rules.d/91-drm-modeset.rules
 usr/share/doc/freeglut-2.6.0/AUTHORS
 usr/share/doc/freeglut-2.6.0/COPYING
 usr/share/doc/freeglut-2.6.0/ChangeLog

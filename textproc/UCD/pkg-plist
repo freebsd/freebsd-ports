@@ -38,6 +38,15 @@
 %%DATADIR%%/USourceData.txt
 %%DATADIR%%/USourceGlyphs.pdf
 %%DATADIR%%/UnicodeData.txt
+%%HAN%%%%DATADIR%%/Unihan_DictionaryIndices.txt
+%%HAN%%%%DATADIR%%/Unihan_DictionaryLikeData.txt
+%%HAN%%%%DATADIR%%/Unihan_IRGSources.txt
+%%HAN%%%%DATADIR%%/Unihan_NumericValues.txt
+%%HAN%%%%DATADIR%%/Unihan_OtherMappings.txt
+%%HAN%%%%DATADIR%%/Unihan_RadicalStrokeCounts.txt
+%%HAN%%%%DATADIR%%/Unihan_Readings.txt
+%%HAN%%%%DATADIR%%/Unihan_Variants.txt
+%%HAN%%%%DATADIR%%/Unihan.zip
 %%DATADIR%%/auxiliary/GraphemeBreakProperty.txt
 %%DATADIR%%/auxiliary/GraphemeBreakTest.html
 %%DATADIR%%/auxiliary/GraphemeBreakTest.txt

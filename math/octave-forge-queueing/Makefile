@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	octave-forge-queueing
-PORTVERSION=	1.2.4
+PORTVERSION=	1.2.5
 PORTREVISION=	1
 CATEGORIES=	math
 

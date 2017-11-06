@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	multidimensional
-PORTVERSION=	0.012
+PORTVERSION=	0.013
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:ILMARI
@@ -11,15 +11,14 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Disables multidimensional array emulation
 
-LICENSE=	ART10 GPLv1
+LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	p5-B-Hooks-OP-Check>=0.19:devel/p5-B-Hooks-OP-Check \
-		p5-ExtUtils-Depends>=0:devel/p5-ExtUtils-Depends \
 		p5-Lexical-SealRequireHints>=0.005:devel/p5-Lexical-SealRequireHints
-RUN_DEPENDS=	p5-B-Hooks-OP-Check>=0.19:devel/p5-B-Hooks-OP-Check \
-		p5-Lexical-SealRequireHints>=0.005:devel/p5-Lexical-SealRequireHints
+RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS+=	p5-ExtUtils-Depends>=0:devel/p5-ExtUtils-Depends
 
 USE_PERL5=	configure
 USES=		perl5

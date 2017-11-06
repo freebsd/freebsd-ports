@@ -2,6 +2,7 @@
 
 PORTNAME=	seqtools
 PORTVERSION=	4.44.1
+PORTREVISION=	2
 CATEGORIES=	biology
 MASTER_SITES=	ftp://ftp.sanger.ac.uk/pub4/resources/software/seqtools/PRODUCTION/
 
@@ -15,7 +16,9 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2
 
-USES=		compiler:c++14-lang execinfo gettext libtool pkgconfig
+BROKEN_powerpc64=	fails to compile: jsoncpp.cpp: 'snprintf' is not a member of 'std'
+
+USES=		compiler:c++14-lang gettext libtool pkgconfig
 GNU_CONFIGURE=	yes
 USE_GNOME=	cairo gdkpixbuf2 gtk20
 USE_XORG=	x11

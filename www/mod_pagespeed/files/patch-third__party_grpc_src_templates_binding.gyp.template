@@ -1,0 +1,76 @@
+--- third_party/grpc/src/templates/binding.gyp.template.orig	2016-08-19 00:55:10 UTC
++++ third_party/grpc/src/templates/binding.gyp.template
+@@ -93,11 +93,13 @@
+               'cflags': [
+                 '-ftest-coverage',
+                 '-fprofile-arcs',
+-                '-O0'
++                '-O0',
++                '-I/usr/local/include'
+               ],
+               'ldflags': [
+                 '-ftest-coverage',
+-                '-fprofile-arcs'
++                '-fprofile-arcs',
++                '-Wl,-z,defs',
+               ]
+             }
+            ],
+@@ -148,7 +151,8 @@
+             'cflags': [
+               '-std=c99',
+               '-Wall',
+-              '-Werror'
++              '-Werror',
++              '-I/usr/local/include'
+             ],
+             'target_name': '${lib.name}',
+             'product_prefix': 'lib',
+@@ -178,7 +182,8 @@
+         'cflags': [
+           '-std=c99',
+           '-Wall',
+-          '-Werror'
++          '-Werror',
++          '-I/usr/local/include'
+         ],
+         'target_name': '${lib.name}',
+         'product_prefix': 'lib',
+@@ -212,12 +217,14 @@
+           '-Wall',
+           '-pthread',
+           '-g',
+-          '-zdefs',
++          '-Wl,-z,defs',
+           '-Werror',
+-          '-Wno-error=deprecated-declarations'
++          '-Wno-error=deprecated-declarations',
++          '-I/usr/local/include'
+         ],
+         'ldflags': [
+-          '-g'
++          '-g',
++          '-Wl,-z,defs'
+         ],
+         "conditions": [
+           ['OS=="mac"', {
+@@ -225,7 +233,8 @@
+               'MACOSX_DEPLOYMENT_TARGET': '10.9',
+               'OTHER_CFLAGS': [
+                 '-stdlib=libc++',
+-                '-std=c++11'
++                '-std=c++11',
++                '-I/usr/local/include'
+               ]
+             }
+           }],
+@@ -240,7 +249,8 @@
+           }],
+           ['OS=="linux"', {
+             'ldflags': [
+-              '-Wl,-wrap,memcpy'
++              '-Wl,-wrap,memcpy',
++              '-Wl,-z,defs'
+             ]
+           }]
+         ],

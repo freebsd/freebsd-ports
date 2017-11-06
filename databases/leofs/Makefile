@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	leofs
-PORTVERSION=	1.3.0
+PORTVERSION=	1.3.7
 CATEGORIES=	databases
 DIST_SUBDIR=	${PORTNAME}
 
@@ -11,16 +11,16 @@ COMMENT=	Highly scalable, fault-tolerant distributed file system
 
 LICENSE=	APACHE20
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/erlang17/bin/erlc:lang/erlang-runtime17 \
+BUILD_DEPENDS=	${LOCALBASE}/lib/erlang18/bin/erlc:lang/erlang-runtime18 \
 		${LOCALBASE}/bin/cmake:devel/cmake \
-		${LOCALBASE}/lib/libcheck.a:devel/libcheck
+		${LOCALBASE}/lib/libcheck.a:devel/check
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	leo-project
 
 BROKEN_aarch64=		Does not compile: fatal error: lzo/lzo1x.h file not found
-BROKEN_powerpc64=	Does not build
-BROKEN_sparc64=		Does not build: error Please implement AtomicPointer for this platform
+NOT_FOR_ARCHS=		powerpc64 sparc64
+NOT_FOR_ARCHS_REASON=	does not build: error Please implement AtomicPointer for this platform
 
 LEOFS_USER=	leofs
 LEOFS_GROUP=	leofs
@@ -56,70 +56,59 @@ SUB_LIST+=	LEOFS_USER=${LEOFS_USER} \
 
 SUB_FILES+=	${LEOFS_SBIN_FILES:S/^/sbin-/}
 
-USES=		gmake pkgconfig dos2unix
+USES=		dos2unix gmake pkgconfig ssl
 USE_RC_SUBR=	${PORTNAME}
 
-DOS2UNIX_FILES=	deps/leo_*/snmp/snmpa_*/leo_*_snmp.config
+DOS2UNIX_FILES=	apps/leo_*/snmp/snmpa_*/leo_*_snmp.config
 
 ALL_TARGET=	release
 MAKE_JOBS_UNSAFE=yes
-MAKE_ENV=	PATH=${LOCALBASE}/lib/erlang17/bin:${PATH}
+MAKE_ENV=	PATH=${LOCALBASE}/lib/erlang18/bin:${PATH}
 
 LEOFS_DEPS=	\
-	leo-project/leo_gateway=${PORTVERSION}:leo_gateway \
-	leo-project/leo_manager=${PORTVERSION}:leo_manager \
-	leo-project/leo_storage=${PORTVERSION}:leo_storage \
-	DeadZen/goldrush=0.1.7:goldrush \
-	basho/bitcask=2.0.1:bitcask \
-	basho/cuttlefish=2.0.5:cuttlefish \
-	basho/eleveldb=2.1.10:eleveldb \
-	basho/lager=2.2.0:lager \
-	basho/leveldb=2.0.10:leveldb \
-	davisp/jiffy=0.14.7:jiffy \
-	eproxus/meck=0.8.2:meck \
-	extend/cowlib=1.0.0:cowlib \
+	DeadZen/goldrush=0.1.9:goldrush \
+	basho/eleveldb=2.0.33:eleveldb \
+	basho/getopt=v0.8.2:getopt \
+	basho/leveldb=2.0.33:leveldb \
+	basho/neotoma=1.7.4:neotoma \
+	davisp/jiffy=0.14.8:jiffy \
+	eproxus/meck=0.8.6:meck \
+	erlang-lager/lager=3.5.0:lager \
+	erlangpack/bcrypt=1.0.1:bcrypt \
+	esl/elarm=5885c90:elarm \
 	extend/ranch=1.0.0:ranch \
-	ferd/recon=2.2.1:recon \
-	jcomellas/getopt=v0.8.2:getopt \
+	ferd/recon=2.3.1:recon \
 	leo-project/bear=0.8.2-for-leofs:bear \
+	leo-project/bitcask=2.0.8.2-for-leofs:bitcask \
 	leo-project/cowboy=for-leofs-1.4:cowboy \
-	leo-project/elarm=d9e8a6f:elarm \
-	leo-project/erpcgen=0.2.4:erpcgen \
-	leo-project/fifo_utils=d19b92c:fifo_utils \
-	leo-project/folsom=0.8.2-for-leofs:folsom \
-	leo-project/leo_backend_db=1.2.2:leo_backend_db \
-	leo-project/leo_cache=0.8.0:leo_cache \
-	leo-project/leo_commons=1.1.6:leo_commons \
-	leo-project/leo_dcerl=0.4.5:leo_dcerl \
-	leo-project/leo_logger=1.2.2:leo_logger \
-	leo-project/leo_mcerl=0.6.3:leo_mcerl \
-	leo-project/leo_mq=1.4.5:leo_mq \
-	leo-project/leo_object_storage=1.2.22:leo_object_storage \
-	leo-project/leo_ordning_reda=1.2.0:leo_ordning_reda \
-	leo-project/leo_pod=0.6.6:leo_pod \
-	leo-project/leo_redundant_manager=1.9.26:leo_redundant_manager \
-	leo-project/leo_rpc=0.10.8:leo_rpc \
-	leo-project/leo_s3_libs=1.2.5:leo_s3_libs \
-	leo-project/leo_statistics=1.1.12:leo_statistics \
-	leo-project/leo_watchdog=0.12.3:leo_watchdog \
-	leo-project/leo_tran=0.2.5:leo_tran \
-	leo-project/libcutil=0.4.4:libcutil \
-	leo-project/nfs_rpc_server=0.2.4:nfs_rpc_server \
-	leo-project/savanna_agent=0.4.15:savanna_agent \
-	leo-project/savanna_commons=0.10.1:savanna_commons \
-	manopapad/proper=1b773ee:proper \
-	seancribbs/neotoma=1.7.3:neotoma \
+	leo-project/cuttlefish=2.0.9-for-leofs:cuttlefish \
+	leo-project/erlpass=dev-for-leofs:erlpass \
+	leo-project/erpcgen=0.2.6:erpcgen \
+	leo-project/folsom=0.8.2-p1:folsom \
+	leo-project/leo_backend_db=1.2.20:leo_backend_db \
+	leo-project/leo_cache=0.8.5:leo_cache \
+	leo-project/leo_commons=1.1.10:leo_commons \
+	leo-project/leo_dcerl=0.4.8:leo_dcerl \
+	leo-project/leo_logger=1.2.6:leo_logger \
+	leo-project/leo_mcerl=0.6.6:leo_mcerl \
+	leo-project/leo_mq=1.5.8:leo_mq \
+	leo-project/leo_object_storage=1.3.17:leo_object_storage \
+	leo-project/leo_ordning_reda=1.2.6:leo_ordning_reda \
+	leo-project/leo_pod=0.6.9:leo_pod \
+	leo-project/leo_redundant_manager=1.9.50:leo_redundant_manager \
+	leo-project/leo_rpc=0.10.13:leo_rpc \
+	leo-project/leo_s3_libs=1.2.14:leo_s3_libs \
+	leo-project/leo_statistics=1.1.18:leo_statistics \
+	leo-project/leo_tran=0.2.9:leo_tran \
+	leo-project/leo_watchdog=1.0.2:leo_watchdog \
+	leo-project/libcutil=0.4.5:libcutil \
+	leo-project/nfs_rpc_server=0.2.6:nfs_rpc_server \
+	leo-project/savanna_agent=0.4.21:savanna_agent \
+	leo-project/savanna_commons=0.10.7:savanna_commons \
+	manopapad/proper=f558989:proper \
+	ninenines/cowlib=1.0.0:cowlib \
 
-.for dep in ${LEOFS_DEPS}
-account=	${dep:C,/.*$,,}
-project=	${dep:C,^[^/]+/([^=]+)=.*$,\1,}
-tagname=	${dep:C,^[^=]+=([^:]+):.*$,\1,}
-label=		${dep:C,^.*:,,}
-GH_ACCOUNT:=	${GH_ACCOUNT} ${account}:${label}
-GH_PROJECT:=	${GH_PROJECT} ${project}:${label}
-GH_TAGNAME:=	${GH_TAGNAME} ${tagname}:${label}
-GH_SUBDIR:=	${GH_SUBDIR} deps/${label}:${label}
-.endfor
+GH_TUPLE=	${LEOFS_DEPS:C,(.*)/(.*)=(.*):(.*),\1:\2:\3:\4/deps/\4,}
 
 post-extract:
 .for dep in ${LEOFS_DEPS}
@@ -140,25 +129,25 @@ post-patch:
 	@${REINPLACE_CMD} 's|%%PREFIX%%|${PREFIX}|g; \
 		s|%%LEOFS_DBDIR%%|${LEOFS_DBDIR}|g; \
 		s|%%LEOFS_LOGDIR%%|${LEOFS_LOGDIR}|g;' \
-		${WRKSRC}/deps/leo_gateway/priv/leo_gateway.conf \
-		${WRKSRC}/deps/leo_gateway/priv/leo_gateway.schema \
-		${WRKSRC}/deps/leo_gateway/snmp/snmpa_gateway_0/leo_gateway_snmp.config \
-		${WRKSRC}/deps/leo_manager/priv/leo_manager_0.conf \
-		${WRKSRC}/deps/leo_manager/priv/leo_manager_0.schema \
-		${WRKSRC}/deps/leo_manager/priv/leo_manager_1.conf \
-		${WRKSRC}/deps/leo_manager/priv/leo_manager_1.schema \
-		${WRKSRC}/deps/leo_manager/snmp/snmpa_manager_0/leo_manager_snmp.config \
-		${WRKSRC}/deps/leo_manager/snmp/snmpa_manager_1/leo_manager_snmp.config \
-		${WRKSRC}/deps/leo_storage/priv/leo_storage.conf \
-		${WRKSRC}/deps/leo_storage/priv/leo_storage.schema \
-		${WRKSRC}/deps/leo_storage/snmp/snmpa_storage_0/leo_storage_snmp.config
+		${WRKSRC}/apps/leo_gateway/priv/leo_gateway.conf \
+		${WRKSRC}/apps/leo_gateway/priv/leo_gateway.schema \
+		${WRKSRC}/apps/leo_gateway/snmp/snmpa_gateway_0/leo_gateway_snmp.config \
+		${WRKSRC}/apps/leo_manager/priv/leo_manager_0.conf \
+		${WRKSRC}/apps/leo_manager/priv/leo_manager_0.schema \
+		${WRKSRC}/apps/leo_manager/priv/leo_manager_1.conf \
+		${WRKSRC}/apps/leo_manager/priv/leo_manager_1.schema \
+		${WRKSRC}/apps/leo_manager/snmp/snmpa_manager_0/leo_manager_snmp.config \
+		${WRKSRC}/apps/leo_manager/snmp/snmpa_manager_1/leo_manager_snmp.config \
+		${WRKSRC}/apps/leo_storage/priv/leo_storage.conf \
+		${WRKSRC}/apps/leo_storage/priv/leo_storage.schema \
+		${WRKSRC}/apps/leo_storage/snmp/snmpa_storage_0/leo_storage_snmp.config
 
 pre-build:
 	(cd ${WRKSRC}/deps/erpcgen && ${MAKE_ENV} ${MAKE})
 	(cd ${WRKSRC} && ${MAKE_ENV} ./deps/erpcgen/priv/erpcgen \
-		-a [svc_callback,xdr,hrl] deps/leo_gateway/src/leo_nfs_proto3.x)
+		-a [svc_callback,xdr,hrl] apps/leo_gateway/src/leo_nfs_proto3.x)
 	(cd ${WRKSRC} && ${MAKE_ENV} ./deps/erpcgen/priv/erpcgen \
-		-a [svc_callback,xdr,hrl] deps/leo_gateway/src/leo_nfs_mount3.x)
+		-a [svc_callback,xdr,hrl] apps/leo_gateway/src/leo_nfs_mount3.x)
 	(cd ${WRKSRC}/deps/nfs_rpc_server/src && \
 		${MAKE_ENV} erl -noshell -pa ../../erpcgen/ebin \
 		-eval 'erpcgen:file(pmap,    [xdrlib,clnt])' -s init stop)
@@ -236,10 +225,10 @@ do-install:
 	    ${FIND} ${LEOFS_BASEDIR:S/${PREFIX}\///}			\
 		${LEOFS_LIBXDIR:S/${PREFIX}\///} -type f -o -type l	\
 		| ${SORT} > ${WRKDIR}/PLIST.leofs
-	cd ${STAGEDIR}${PREFIX} ; 					\
+	cd ${STAGEDIR}${PREFIX} ;					\
 	    ${FIND} ${LEOFS_BASEDIR:S/${PREFIX}\///}			\
 		${LEOFS_LIBXDIR:S/${PREFIX}\///} -type d -empty		\
-		| ${SORT} -r | ${SED} -e 's/^/@dir /' 			\
+		| ${SORT} -r | ${SED} -e 's/^/@dir /'			\
 		>> ${WRKDIR}/PLIST.leofs
 	${ECHO_CMD} "r ${TMPPLIST}"			>  ${WRKDIR}/ex.script
 	${ECHO_CMD} "/Insert PLIST.leofs"		>> ${WRKDIR}/ex.script

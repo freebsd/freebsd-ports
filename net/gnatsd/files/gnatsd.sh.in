@@ -7,7 +7,7 @@
 #
 # gnatsd_enable (bool):		Set it to "YES" to enable gnatsd server.
 #				Default is "NO".
-# gnatsd_username:		User name to run as. default "nobody"
+# gnatsd_user:			User name to run as. default "nobody"
 # gnatsd_options:		Options to pass gnatsd server
 #
 
@@ -18,11 +18,11 @@ rcvar=`set_rcvar`
 
 load_rc_config ${name}
 : ${gnatsd_enable="NO"}
-: ${gnatsd_username="nobody"}
+: ${gnatsd_user="nobody"}
 : ${gnatsd_options="-c %%PREFIX%%/etc/gnatsd.conf"}
 
 command=/usr/sbin/daemon
 procname=%%PREFIX%%/bin/gnatsd
-command_args="-u ${gnatsd_username} ${procname} ${gnatsd_options}"
+command_args="${procname} ${gnatsd_options}"
 
 run_rc_command "$1"

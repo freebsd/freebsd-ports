@@ -1,0 +1,81 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: bro
+# REQUIRE: NETWORKING
+# REQUIRE: LOGIN FILESYSTEMS
+# KEYWORD: shutdown
+
+. /etc/rc.subr
+
+name="bro"
+rcvar=`set_rcvar`
+node=$2
+
+start_cmd="bro_start"
+stop_cmd="bro_stop"
+restart_cmd="bro_restart"
+deploy_cmd="bro_deploy"
+install_cmd="bro_install"
+cleanup_cmd="bro_cleanup"
+restart_cmd="bro_restart"
+status_cmd="bro_status"
+
+extra_commands="deploy install cleanup status restart"
+
+: ${broctl_program:=%%PREFIX%%/bin/broctl}
+
+bro_enable=${bro_enable-"NO"}
+
+bro_start() {
+    if [ ! "${node}" ];
+    then
+        $broctl_program start
+    else
+        $broctl_program start $node
+    fi
+}
+
+bro_stop() {
+    if [ ! "${node}" ];
+    then
+        $broctl_program stop
+    else
+        $broctl_program stop $node
+    fi
+}
+
+bro_restart() {
+    if [ ! "${node}" ];
+    then
+        $broctl_program restart
+    else
+        $broctl_program restart $node
+    fi
+}
+
+bro_deploy() {
+    $broctl_program deploy
+}
+
+bro_install() {
+    $broctl_program install
+}
+
+bro_cleanup() {
+    if [ ! "${node}" ];
+    then
+        $broctl_program cleanup
+    else
+        $broctl_program cleanup ${node}
+    fi
+}
+
+bro_status() {
+    $broctl_program status
+}
+
+load_rc_config $name
+run_rc_command "$1"

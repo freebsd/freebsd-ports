@@ -2,15 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	mysql
-PORTREVISION?=	1
 PKGNAMESUFFIX=	80-client
 
 COMMENT=	Multithreaded SQL database (client)
 
 LICENSE+=	LGPL21
 
-BROKEN_powerpc64=	Does not build
-BROKEN_sparc64=	Does not build: reports unsupported compiler
+BROKEN_powerpc64=	does not build: reports unsupported compiler
+BROKEN_sparc64=		does not build: reports unsupported compiler
 
 MASTERDIR=	${.CURDIR}/../mysql80-server
 
@@ -23,7 +22,7 @@ CONFLICTS_INSTALL=	mysql8[1-9]-client-* \
 			mariadb[0-9][0-9]-client-* \
 			percona[0-9][0-9]-client-*
 
-CMAKE_ARGS+=	-DWITHOUT_SERVER=1
+CMAKE_ARGS+=	-DWITHOUT_SERVER=1 -DINSTALL_SUPPORTFILESDIR=0
 
 USE_LDCONFIG+=	${PREFIX}/lib/mysql
 

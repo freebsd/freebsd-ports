@@ -1,0 +1,62 @@
+--- Makefile.in.orig	2017-03-30 13:30:41 UTC
++++ Makefile.in
+@@ -115,7 +115,7 @@ POST_UNINSTALL = :
+ build_triplet = @build@
+ host_triplet = @host@
+ target_triplet = @target@
+-bin_PROGRAMS = avrdude$(EXEEXT)
++bin_PROGRAMS = $(PKGNAMEPREFIX)avrdude$(EXEEXT)
+ subdir = .
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
+ am__aclocal_m4_deps = $(top_srcdir)/m4/libtool.m4 \
+@@ -540,7 +540,7 @@ EXTRA_DIST = \
+ 	ChangeLog-2011 \
+ 	ChangeLog-2012 \
+ 	ChangeLog-2013 \
+-	avrdude.1 \
++	$(PKGNAMEPREFIX)avrdude.1 \
+ 	avrdude.spec \
+ 	bootstrap
+ 
+@@ -664,8 +664,8 @@ avrdude_SOURCES = \
+ 	term.c \
+ 	term.h
+ 
+-man_MANS = avrdude.1
+-sysconf_DATA = avrdude.conf
++man_MANS = $(PKGNAMEPREFIX)avrdude.1
++sysconf_DATA = $(PKGNAMEPREFIX)avrdude.conf
+ ACLOCAL_AMFLAGS = -I m4
+ all: $(BUILT_SOURCES) ac_cfg.h
+ 	$(MAKE) $(AM_MAKEFLAGS) all-recursive
+@@ -823,8 +823,8 @@ clean-binPROGRAMS:
+ 	echo " rm -f" $$list; \
+ 	rm -f $$list
+ 
+-avrdude$(EXEEXT): $(avrdude_OBJECTS) $(avrdude_DEPENDENCIES) $(EXTRA_avrdude_DEPENDENCIES) 
+-	@rm -f avrdude$(EXEEXT)
++$(PKGNAMEPREFIX)avrdude$(EXEEXT): $(avrdude_OBJECTS) $(avrdude_DEPENDENCIES) $(EXTRA_avrdude_DEPENDENCIES) 
++	@rm -f $(PKGNAMEPREFIX)avrdude$(EXEEXT)
+ 	$(AM_V_CCLD)$(avrdude_LINK) $(avrdude_OBJECTS) $(avrdude_LDADD) $(LIBS)
+ 
+ mostlyclean-compile:
+@@ -2490,14 +2490,14 @@ dist-hook:
+ install-exec-local: backup-avrdude-conf
+ 
+ distclean-local:
+-	rm -f avrdude.conf
++	rm -f $(PKGNAMEPREFIX)avrdude.conf
+ 
+ # This will get run before the config file is installed.
+ backup-avrdude-conf:
+-	@echo "Backing up avrdude.conf in ${DESTDIR}${sysconfdir}"
+-	@if test -e ${DESTDIR}${sysconfdir}/avrdude.conf; then \
+-		cp -pR ${DESTDIR}${sysconfdir}/avrdude.conf \
+-			${DESTDIR}${sysconfdir}/avrdude.conf.bak; \
++	@echo "Backing up ${PKGNAMEPREFIX}avrdude.conf in ${DESTDIR}${sysconfdir}"
++	@if test -e ${DESTDIR}${sysconfdir}/$(PKGNAMEPREFIX)avrdude.conf; then \
++		cp -pR ${DESTDIR}${sysconfdir}/$(PKGNAMEPREFIX)avrdude.conf \
++			${DESTDIR}${sysconfdir}/$(PKGNAMEPREFIX)avrdude.conf.bak; \
+ 	fi
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.

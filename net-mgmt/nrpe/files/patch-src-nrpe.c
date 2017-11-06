@@ -1,5 +1,5 @@
---- ./src/nrpe.c.orig	2013-09-06 17:27:13.000000000 +0200
-+++ ./src/nrpe.c	2013-10-05 17:15:33.000000000 +0200
+--- src/nrpe.c.orig	2013-09-06 15:27:13 UTC
++++ src/nrpe.c
 @@ -30,6 +30,8 @@
  #include "utils.h"
  #include "acl.h"
@@ -19,6 +19,15 @@
  
  
  int main(int argc, char **argv){
+@@ -266,7 +270,7 @@ int main(int argc, char **argv){
+ 
+ 		/* use anonymous DH ciphers */
+ 		SSL_CTX_set_cipher_list(ctx,"ADH");
+-		dh=get_dh512();
++		dh=get_dh2048();
+ 		SSL_CTX_set_tmp_dh(ctx,dh);
+ 		DH_free(dh);
+ 		if(debug==TRUE)
 @@ -969,8 +973,14 @@
  					continue;
  

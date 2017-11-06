@@ -24,7 +24,9 @@ airfoil/sc2_0404.af
 bin/vsp
 bin/vspaero
 bin/vspscript
+bin/vspslicer
 bin/vspviewer
+matlab/OpenVSPParasiteDragPlotData.m
 matlab/plotDegenPlate.m
 matlab/plotDegenStick.m
 matlab/plotDegenSurf.m
@@ -33,6 +35,7 @@ scripts/CreateEditGeom.vspscript
 scripts/DegenGeom.vspscript
 scripts/DumpResults.vspscript
 scripts/Fuselage.vspscript
+scripts/ParasiteDragScriptTest.vspscript
 scripts/SnapToDemo.vspscript
 scripts/Stack.vspscript
 scripts/SubSurface.vspscript
@@ -41,6 +44,10 @@ scripts/TestAnalysis.vspscript
 scripts/TestAnalysisVSPAERO.vspscript
 scripts/TestAreaProj.vspscript
 scripts/TestDXF.vspscript
+scripts/TestFacet.vspscript
+scripts/TestMassProperties.vspscript
+scripts/TestSVG.vspscript
+scripts/TestSaveLoad.vspscript
 scripts/Wing.vspscript
 %%DATADIR%%/23015.af
 %%DATADIR%%/Box.vsppart
@@ -57,6 +64,8 @@ scripts/Wing.vspscript
 %%DATADIR%%/N0012_VSP.af
 %%DATADIR%%/N0012_VSP_sym.af
 %%DATADIR%%/OnOffExample.vsppart
+%%DATADIR%%/OpenVSPParasiteDragPlotData.m
+%%DATADIR%%/ParasiteDragScriptTest.vspscript
 %%DATADIR%%/PodMan.vsppart
 %%DATADIR%%/Seat.vsppart
 %%DATADIR%%/SeatGroup.vsppart
@@ -69,6 +78,10 @@ scripts/Wing.vspscript
 %%DATADIR%%/TestAnalysisVSPAERO.vspscript
 %%DATADIR%%/TestAreaProj.vspscript
 %%DATADIR%%/TestDXF.vspscript
+%%DATADIR%%/TestFacet.vspscript
+%%DATADIR%%/TestMassProperties.vspscript
+%%DATADIR%%/TestSVG.vspscript
+%%DATADIR%%/TestSaveLoad.vspscript
 %%DATADIR%%/TransportFuse.vsppart
 %%DATADIR%%/Wing.vspscript
 %%DATADIR%%/b737a.af
@@ -92,4 +105,5 @@ textures/window.tga
 vsp
 vspaero
 vspscript
+vspslicer
 vspviewer

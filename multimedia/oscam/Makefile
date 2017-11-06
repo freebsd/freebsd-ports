@@ -12,7 +12,7 @@ COMMENT=	Softcam software to decrypt digital tv channels
 
 LICENSE=	GPLv3
 
-BROKEN_powerpc64=	Does not build
+BROKEN_powerpc64=	does not build: gmake: clang: Command not found
 
 USES=		gmake ssl tar:bzip2
 USE_RC_SUBR=	oscam

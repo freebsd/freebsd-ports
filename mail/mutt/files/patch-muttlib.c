@@ -1,6 +1,6 @@
 --- muttlib.c.orig	2016-10-08 19:35:50 UTC
 +++ muttlib.c
-@@ -779,16 +779,15 @@ void mutt_merge_envelopes(ENVELOPE* base
+@@ -802,16 +802,15 @@ void mutt_merge_envelopes(ENVELOPE* base
  void _mutt_mktemp (char *s, size_t slen, const char *prefix, const char *suffix,
                     const char *src, int line)
  {

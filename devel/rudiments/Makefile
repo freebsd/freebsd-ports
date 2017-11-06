@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	rudiments
-PORTVERSION=	0.57.0
+PORTVERSION=	1.0.5
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	SF
 
@@ -11,8 +12,11 @@ COMMENT=	C++ class library for daemons, clients, servers, and more
 
 LICENSE=	LGPL20
 
+LIB_DEPENDS=	libgssapi_krb5.so:security/krb5 \
+		libcurl.so:ftp/curl
+
 GNU_CONFIGURE=	yes
-USES=		libtool pathfix pkgconfig shebangfix
+USES=		libtool pathfix pkgconfig readline shebangfix ssl
 PATHFIX_MAKEFILEIN=	Makefile
 SHEBANG_FILES=	doc/programming/insert.pl
 USE_LDCONFIG=	yes
@@ -31,6 +35,6 @@ SSL_CONFIGURE_ON=	--with-ssl-includes=-I${OPENSSLINC} \
 			--with-ssl-libs=-L${OPENSSLLIB}
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/librudiments.so.3.0.0
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/librudiments.so.4.0.5
 
 .include <bsd.port.mk>

@@ -1,6 +1,6 @@
---- ircd/Makefile.in	2007-10-29 21:16:57.000000000 -0400
-+++ ircd/Makefile.in	2008-04-12 21:30:24.000000000 -0400
-@@ -288,7 +288,7 @@
+--- ircd/Makefile.in.orig	2017-04-29 08:34:19 UTC
++++ ircd/Makefile.in
+@@ -291,7 +291,7 @@ install-with-symlink: build mkbindir
  	@${RM} /tmp/ircd.tag
  	${INSTALL} -s -m 700 -o ${IRCDOWN} -g ${IRCDGRP} umkpasswd ${BINDIR}
  	${INSTALL} -s -m 700 -o ${IRCDOWN} -g ${IRCDGRP} convert-conf ${BINDIR}
@@ -9,7 +9,7 @@
  
  install-no-symlink: build mkbindir
  	@if [ ! -d ${DPATH} -a ! -f ${DPATH} ]; then \
-@@ -302,7 +302,7 @@
+@@ -305,7 +305,7 @@ install-no-symlink: build mkbindir
  	${INSTALL} -m ${IRCDMODE} -o ${IRCDOWN} -g ${IRCDGRP} ircd ${BINDIR}/ircd
  	${INSTALL} -s -m 700 -o ${IRCDOWN} -g ${IRCDGRP} umkpasswd ${BINDIR}
  	${INSTALL} -s -m 700 -o ${IRCDOWN} -g ${IRCDGRP} convert-conf ${BINDIR}

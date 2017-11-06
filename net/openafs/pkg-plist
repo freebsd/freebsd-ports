@@ -23,9 +23,9 @@ bin/unlog
 bin/up
 bin/xstat_cm_test
 bin/xstat_fs_test
-@sample etc/openafs/CellServDB.sample
-@sample etc/openafs/ThisCell.sample
-@sample etc/openafs/cacheinfo.sample
+%%KMOD%%@sample etc/openafs/CellServDB.sample
+%%KMOD%%@sample etc/openafs/ThisCell.sample
+%%KMOD%%@sample etc/openafs/cacheinfo.sample
 include/openafs/afs/acl.h
 include/openafs/afs/afs.h
 include/openafs/afs/afs_args.h
@@ -574,7 +574,7 @@ sbin/vsys
 %%DATADIR%%/C/afszcm.cat
 %%FUSE%%man/man8/afsd.fuse.8.gz
 %%FUSE%%sbin/afsd.fuse
-/%%KMODDIR%%/libafs.ko
-@dir /%%AFSCACHEDIR%%
-@dir /%%AFSMNTDIR%%
-@dir /%%AFSSTATEDIR%%
+%%KMOD%%/%%KMODDIR%%/libafs.ko
+%%KMOD%%@dir /%%AFSCACHEDIR%%
+%%KMOD%%@dir /%%AFSMNTDIR%%
+%%KMOD%%@dir /%%AFSSTATEDIR%%

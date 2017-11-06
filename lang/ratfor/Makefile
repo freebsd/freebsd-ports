@@ -3,7 +3,7 @@
 
 PORTNAME=	ratfor
 PORTVERSION=	1985.06
-PORTREVISION=	6
+PORTREVISION=	8
 CATEGORIES=	lang
 MASTER_SITES=	LOCAL/obrien \
 		http://sepwww.stanford.edu/sep/prof/
@@ -12,7 +12,8 @@ DISTFILES=	ratfor.shar.2 local.ratfor77.shar
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Rational FORTRAN compiler
 
-BROKEN_powerpc=	./ratfor -o test.f test.r keeps creating huge output file
+BROKEN_aarch64=		./ratfor -o test.f test.r keeps creating huge output file
+BROKEN_powerpc=		./ratfor -o test.f test.r keeps creating huge output file
 BROKEN_powerpc64=	./ratfor -o test.f test.r keeps creating huge output file
 
 NO_WRKSUBDIR=	yes

@@ -1,15 +1,6 @@
---- setup.py.orig	2015-09-10 14:42:44 UTC
+--- setup.py.orig	2017-04-02 13:48:04 UTC
 +++ setup.py
-@@ -147,7 +147,7 @@ nvenc4_ENABLED          = pkg_config_ok(
- nvenc5_ENABLED          = pkg_config_ok("--exists", "nvenc5")
- #elif os.path.exists("C:\\nvenc_3.0_windows_sdk")
- #...
--csc_opencl_ENABLED      = pkg_config_ok("--exists", "OpenCL") and check_pyopencl_AMD()
-+csc_opencl_ENABLED      = pkg_config_ok("--exists", "OpenCL")
- memoryview_ENABLED      = PYTHON3
- 
- warn_ENABLED            = True
-@@ -1560,12 +1560,12 @@ if WIN32:
+@@ -1804,12 +1804,12 @@ if WIN32:
  else:
      #OSX and *nix:
      scripts += ["scripts/xpra", "scripts/xpra_launcher"]
@@ -22,14 +13,23 @@
 -    add_data_files("share/icons",         ["xdg/xpra.png"])
 +    add_data_files("share/pixmaps",       ["xdg/xpra.png"])
      add_data_files("share/appdata",       ["xdg/xpra.appdata.xml"])
-     html5_dir = "share/xpra/www"
  
-@@ -1688,7 +1688,7 @@ if html5_ENABLED:
+     #here, we override build and install so we can
+@@ -1842,7 +1842,7 @@ else:
+             if printing_ENABLED and os.name=="posix":
+                 #install "/usr/lib/cups/backend" with 0700 permissions:
+                 xpraforwarder_src = os.path.join("cups", "xpraforwarder")
+-                cups_backend_dir = os.path.join(self.install_dir, "lib", "cups", "backend")
++                cups_backend_dir = os.path.join(self.install_dir, "libexec", "cups", "backend")
+                 self.mkpath(cups_backend_dir)
+                 xpraforwarder_dst = os.path.join(cups_backend_dir, "xpraforwarder")
+                 shutil.copyfile(xpraforwarder_src, xpraforwarder_dst)
+@@ -1894,7 +1894,7 @@ else:
+         add_packages("xpra.platform.xposix")
+         remove_packages("xpra.platform.win32", "xpra.platform.darwin")
+         #not supported by all distros, but doesn't hurt to install it anyway:
+-        add_data_files("/usr/lib/tmpfiles.d", ["tmpfiles.d/xpra.conf"])
++        #add_data_files("/usr/lib/tmpfiles.d", ["tmpfiles.d/xpra.conf"])
  
- if printing_ENABLED and os.name=="posix":
-     #"/usr/lib/cups/backend":
--    cups_backend_dir = os.path.join(sys.prefix, "lib", "cups", "backend")
-+    cups_backend_dir = os.path.join(sys.prefix, "libexec", "cups", "backend")
-     add_data_files(cups_backend_dir, ["cups/xpraforwarder"])
- 
- 
+     #gentoo does weird things, calls --no-compile with build *and* install
+     #then expects to find the cython modules!? ie:

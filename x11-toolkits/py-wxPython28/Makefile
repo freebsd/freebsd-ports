@@ -4,7 +4,7 @@
 PORTNAME=	wxPython
 PORTVERSION=	2.8.12.1
 DISTVERSIONPREFIX=	src-
-PORTREVISION?=	8
+PORTREVISION?=	9
 CATEGORIES=	x11-toolkits python
 MASTER_SITES=	SF/wxpython/wxPython/${PORTVERSION}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,7 +19,8 @@ WRKSRC_SUBDIR=	wxPython
 
 DIST_SUBDIR=	python
 USE_PYTHON=	distutils
-USES=		gettext gmake pkgconfig python tar:bzip2
+USES=		gettext gmake pkgconfig python shebangfix tar:bzip2
+SHEBANG_FILES=	wx/tools/Editra/Editra.pyw
 
 PYDISTUTILS_BUILDARGS=	\
 			WX_CONFIG="${WX_CONFIG}" \
@@ -83,7 +84,6 @@ PYDISTUTILS_BUILDARGS+=	\
 			NO_SCRIPTS=1 \
 			INSTALL_MULTIVERSION=1
 
-WX_UNICODE=	yes
 
 PYDISTUTILS_BUILDARGS+=	\
 			UNICODE=1

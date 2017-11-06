@@ -3,26 +3,34 @@
 
 PORTNAME=	simh
 PORTVERSION=	3.9.0
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	emulators
-MASTER_SITES=	http://simh.trailing-edge.com/sources/
+MASTER_SITES=	http://simh.trailing-edge.com/sources/:src \
+		http://www.ml1.org.uk/distfiles/:pdf \
+		http://www.ancientgeek.org.uk/distfiles/:pdf
 DISTNAME=	${PORTNAME}v${PORTVERSION:R:S/.//}-${PORTVERSION:E}
+DISTFILES=	${PORTNAME}v${PORTVERSION:R:S/.//}-${PORTVERSION:E}.zip:src \
+		${PORTNAME}_docpdf.zip:pdf
 
 MAINTAINER=	bob@eager.cx
 COMMENT=	Emulates classic DEC, HP, GRI, IBM, Altair, SDS, Honeywell, and others
 
 LICENSE=	BSD3CLAUSE
 
+BROKEN_powerpc64=	fails to compile: cc1: error: unrecognized command line option "-Wno-logical-op-parentheses"
+
 NO_WRKSUBDIR=	yes
 
 USES=		gmake dos2unix zip
-CFLAGS+=	-Wno-format-extra-args -Wno-comment -Wno-logical-op-parentheses -Wno-bitwise-op-parentheses
+DOS2UNIX_GLOB=	*.c *.h *.txt *.mak *.ini makefile
+CFLAGS+=	-Wno-format-extra-args -Wno-comment -Wno-logical-op-parentheses -Wno-bitwise-op-parentheses -Wno-shift-negative-value
 MAKE_ENV=	GCC="${CC}" CFLAGS_O="${CFLAGS}" USE_NETWORK=1
 MAKEFILE=	makefile
 
-SUB_FILES=	pkg-message
+SUB_FILES=	pkg-message simh.1
 
-PORTDOCS=	0readme_${PORTVERSION:R:S/.//}.txt 0readme_ethernet.txt
+READMES=	0readme_${PORTVERSION:R:S/.//}.txt 0readme_ethernet.txt
+PORTDOCS=	${READMES} pdf/*
 
 OPTIONS_DEFINE=	DOCS
 
@@ -37,16 +45,20 @@ post-patch:
 		's|%%DATADIR%%|${DATADIR}|' ${WRKSRC}/VAX/vax_sysdev.c
 
 post-build:
-# eclipse conflicts with java/eclipse, install it as simh-eclipse
+# eclipse, gri and nova conflict with other ports, prefix with simh-
 	@${MV} ${WRKSRC}/BIN/eclipse ${WRKSRC}/BIN/simh-eclipse
+	@${MV} ${WRKSRC}/BIN/gri ${WRKSRC}/BIN/simh-gri
+	@${MV} ${WRKSRC}/BIN/nova ${WRKSRC}/BIN/simh-nova
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/BIN/* ${STAGEDIR}${PREFIX}/bin
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/VAX/ka655x.bin ${STAGEDIR}${DATADIR}
+	${INSTALL_MAN} ${WRKDIR}/simh.1 ${STAGEDIR}${MANPREFIX}/man/man1
 
 do-install-DOCS-on:
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	(cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR})
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}/pdf
+	(cd ${WRKSRC} && ${INSTALL_DATA} ${READMES} ${STAGEDIR}${DOCSDIR})
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} pdf ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>

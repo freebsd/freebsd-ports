@@ -14,9 +14,10 @@ COMMENT=	Chess game and PGN viewer/editor written in Java
 LICENSE=	GPLv2
 
 USES=		tar:tgz
+USE_ANT=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
-USE_ANT=	yes
+USE_LOCALE=	en_US.ISO8859-1
 NO_ARCH=	yes
 
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
@@ -29,8 +30,6 @@ SUB_LIST=	JARFILE=${JARFILE} \
 PORTDOCS=	*
 
 JARFILE=	JChessBoard.jar
-
-MAKE_ENV=	LANG=en_US.ISO8859-1
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin

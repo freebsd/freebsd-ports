@@ -2,21 +2,18 @@
 # $FreeBSD$
 
 PORTNAME=	pthreads
-PORTVERSION=	2.0.10
-PORTREVISION=	1
+PORTVERSION=	3.1.6
 CATEGORIES=	devel
-MASTER_SITES=	http://pecl.php.net/get/
-PKGNAMEPREFIX=	pecl-
-DIST_SUBDIR=	PECL
 
 MAINTAINER=	johnpupu@gmail.com
-COMMENT=	Compatible Threading API for PHP5.3+
+COMMENT=	Compatible Threading API for PHP7.0+
 
 LICENSE=	PHP301
 
 CFLAGS+=	-I${LOCALBASE}/include
 
-USES=		php:ext tar:tgz
+USES=		php:pecl
+IGNORE_WITH_PHP=56 71
 
 .include <bsd.port.options.mk>
 

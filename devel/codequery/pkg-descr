@@ -1,0 +1,12 @@
+This is a tool to index, then query or search C, C++, Java, Python, Ruby, Go
+and Javascript source code. It builds upon the databases of cscope and
+Exuberant ctags. It can also work with Universal ctags, which is a drop-in
+replacement for Exuberant ctags.
+
+The databases of cscope and ctags would be processed by the cqmakedb tool
+to generate the CodeQuery database file.
+
+The CodeQuery database file can be viewed and queried using the codequery
+GUI tool.
+
+WWW: https://ruben2020.github.io/codequery/

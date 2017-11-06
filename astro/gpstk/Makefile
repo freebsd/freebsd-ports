@@ -2,23 +2,20 @@
 # $FreeBSD$
 
 PORTNAME=	gpstk
-PORTVERSION=	2.5
-PORTREVISION=	1
+PORTVERSION=	2.10
+DISTVERSIONPREFIX=	v
 CATEGORIES=	astro devel
-MASTER_SITES=	SF
-DISTNAME=	${PORTNAME}-${PORTVERSION}.src
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Toolkit for developing GPS applications
 
 LICENSE=	LGPL3
 
-USES=		cmake:outsource python:run
-USE_GCC=	yes
+USES=		cmake:outsource
 USE_LDCONFIG=	yes
 
-CMAKE_SOURCE_PATH=	${WRKSRC}/dev
-
-EXTRACT_AFTER_ARGS=	--exclude .git
+USE_GITHUB=	yes
+GH_ACCOUNT=	SGL-UT
+GH_PROJECT=	GPSTk
 
 .include <bsd.port.mk>

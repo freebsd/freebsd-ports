@@ -3,6 +3,7 @@
 
 PORTNAME=	ptkei
 PORTVERSION=	2.00.0
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	SF/ptkei2
 
@@ -12,7 +13,8 @@ COMMENT=	Python/Tk graphical client for Wolfpack Empire servers
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tkinter>0:x11-toolkits/py-tkinter \
 		${PYTHON_SITELIBDIR}/Pmw/__init__.py:x11-toolkits/py-Pmw
 
-USES=		python
+USES=		python shebangfix
+SHEBANG_FILES=	empire.py scripts/*.py
 
 do-build:
 	@${FIND} ${WRKSRC} -name "*.pyc" -delete

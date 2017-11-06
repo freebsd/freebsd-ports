@@ -9,23 +9,33 @@ PKGNAMESUFFIX=	-devel
 MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	LLVM and Clang
 
-BROKEN_powerpc64=	Does not build
+BROKEN_powerpc64=	Does not build: error: vsnprintf was not declared in this scope
 
 LLVM_SUFFIX=	-devel
 LLVM_PREFIX=	${PREFIX}/llvm${LLVM_SUFFIX}
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}${LLVM_SUFFIX}
 DATADIR=	${PREFIX}/share/${PORTNAME}${LLVM_SUFFIX}
 
-USES=		cmake:outsource compiler:c++11-lib libedit ninja perl5
+USES=		cmake:outsource compiler:c++11-lib libedit perl5 \
+		shebangfix
 USE_LDCONFIG=	${LLVM_PREFIX}/lib
 _USES_PYTHON?=	python:build
 USES+=		${_USES_PYTHON}
+SHEBANG_FILES=	utils/lit/lit.py utils/llvm-lit/llvm-lit.in \
+		tools/clang/tools/scan-view/bin/scan-view \
+		tools/clang/tools/clang-format/git-clang-format \
+		tools/clang/tools/clang-format/clang-format-diff.py \
+		tools/clang/tools/extra/clang-tidy/tool/clang-tidy-diff.py \
+		tools/clang/tools/extra/clang-tidy/tool/run-clang-tidy.py \
+		tools/clang/tools/extra/include-fixer/find-all-symbols/tool/run-find-all-symbols.py
 
 SUB_FILES=	llvm-wrapper.sh
 SUB_LIST=	LLVM_PREFIX="${LLVM_PREFIX}" LLVM_SUFFIX="${LLVM_SUFFIX}"
 
 CMAKE_INSTALL_PREFIX=	${LLVM_PREFIX}
 CMAKE_ARGS=	-DLLVM_BUILD_LLVM_DYLIB=ON
+CMAKE_ARGS+=	-DLLVM_DEFAULT_TARGET_TRIPLE=${CONFIGURE_TARGET}
+CMAKE_ARGS+=	-DLLVM_HOST_TRIPLE=${CONFIGURE_TARGET}
 # Following commit https://github.com/kitware/cmake/commit/956054
 # we need to either change the whole man-shuffle below, or simply
 # redefine CMAKE_INSTALL_MANDIR
@@ -43,6 +53,7 @@ OPTIONS_DEFINE_i386=	COMPILER_RT
 OPTIONS_DEFAULT=	CLANG EXTRAS LIT LLD LLDB
 OPTIONS_DEFAULT_amd64=	COMPILER_RT GOLD OPENMP
 OPTIONS_DEFAULT_i386=	COMPILER_RT
+OPTIONS_EXCLUDE_FreeBSD_10=	LLDB
 OPTIONS_SUB=	yes
 
 PLIST_FILES=
@@ -51,6 +62,9 @@ CLANG_DESC=	Build clang
 CLANG_EXTRA_PATCHES= \
 	${PATCHDIR}/clang-patch-fformat_extensions.diff \
 	${PATCHDIR}/clang-patch-fopenmp.diff \
+	${PATCHDIR}/clang-patch-tools_clang_tools_clang-format_clang-format.py \
+	${PATCHDIR}/clang-patch-tools_clang_tools_clang-format_clang-format-sublime.py \
+	${PATCHDIR}/clang-patch-tools_clang_tools_clang-format_git-clang-format \
 	${PATCHDIR}/clang-patch-tools_clang_lib_Headers_CMakeLists.txt
 CLANG_CONFLICTS_INSTALL=	clang-devel-3.[1234567]*
 CLANG_GH_PROJECT=	clang:clang
@@ -75,23 +89,24 @@ EXTRAS_GH_PROJECT=	clang-tools-extra:extras
 EXTRAS_GH_SUBDIR=	tools/clang/tools/extra:extras
 EXTRAS_GH_TAGNAME=	${EXTRAS_COMMIT}:extras
 LIT_DESC=		Install lit and FileCheck test tools
-LLDB_VARS=		_USES_PYTHON=python
 LLD_DESC=		Install lld, the LLVM linker
 LLD_GH_PROJECT=		lld:lld
 LLD_GH_SUBDIR=		tools/lld:lld
 LLD_GH_TAGNAME=		${LLD_COMMIT}:lld
+LLDB_BUILD_DEPENDS=	swig3.0:devel/swig30
 LLDB_DESC=		Install lldb, the LLVM debugger
-LLDB_BUILD_DEPENDS=	swig:devel/swig13
 LLDB_GH_PROJECT=	lldb:lldb
 LLDB_GH_SUBDIR=		tools/lldb:lldb
 LLDB_GH_TAGNAME=	${LLDB_COMMIT}:lldb
-LLDB_USES=		execinfo
+LLDB_IMPLIES=		CLANG
 LLDB_VARS=		_USES_PYTHON=python
 OPENMP_DESC=		Install libomp, the LLVM OpenMP runtime library
 OPENMP_CONFLICTS_INSTALL=	libiomp5-devel-*
 OPENMP_GH_PROJECT=	openmp:openmp
-OPENMP_GH_SUBDIR=	tools/openmp:openmp
+OPENMP_GH_SUBDIR=	projects/openmp:openmp
 OPENMP_GH_TAGNAME=	${OPENMP_COMMIT}:openmp
+OPENMP_EXTRA_PATCHES= \
+	${PATCHDIR}/openmp-patch-bug32279
 GOLD_DESC=		Build the LLVM Gold plugin for LTO
 GOLD_CMAKE_ON=		-DLLVM_BINUTILS_INCDIR=${LOCALBASE}/include
 GOLD_BUILD_DEPENDS=	${LOCALBASE}/bin/ld.gold:devel/binutils
@@ -100,7 +115,7 @@ OPTIONS_SUB=	yes
 
 DOCS_BUILD_DEPENDS=		sphinx-build:textproc/py-sphinx
 
-PLIST_SUB+=	LLVM_LIB_VER=${LLVM_MAJOR:C/\.//} \
+PLIST_SUB+=	LLVM_LIB_VER=${LLVM_MAJOR:C/\..*//} \
 		LLVM_MAJOR=${LLVM_MAJOR} \
 		LLVM_RELEASE=${LLVM_RELEASE}
 
@@ -111,10 +126,13 @@ COMMANDS=	bugpoint \
 		llvm-as \
 		llvm-bcanalyzer \
 		llvm-cat \
+		llvm-cfi-verify \
 		llvm-config \
 		llvm-cov \
+		llvm-cvtres \
 		llvm-diff \
 		llvm-dis \
+		llvm-dlltool \
 		llvm-dwarfdump \
 		llvm-dwp \
 		llvm-extract \
@@ -122,11 +140,16 @@ COMMANDS=	bugpoint \
 		llvm-mc \
 		llvm-mcmarkup \
 		llvm-modextract \
+		llvm-mt \
 		llvm-nm \
+		llvm-objcopy \
 		llvm-objdump \
 		llvm-opt-report \
+		llvm-pdbutil \
 		llvm-profdata \
 		llvm-ranlib \
+		llvm-rc \
+		llvm-readelf \
 		llvm-readobj \
 		llvm-rtdyld \
 		llvm-size \
@@ -173,6 +196,22 @@ EXTRAS_PATTERN=	${EXTRAS_COMMANDS:tW:C/  */|/g}|${EXTRAS_LIBS:tW:C/  */|/g}
 
 .include <bsd.port.options.mk>
 
+# keep in sync with /usr/src/lib/clang/clang.build.mk 
+# ----------- start of sync block ------------------
+# Armv6 and armv7 uses hard float abi, unless the CPUTYPE has soft in it.
+# arm (for armv4 and armv5 CPUs) always uses the soft float ABI.
+# For all other targets, we stick with 'unknown'.
+.if ${ARCH:Marmv[67]*} && (!defined(CPUTYPE) || ${CPUTYPE:M*soft*} == "")
+TARGET_ABI=	-gnueabihf
+.elif ${ARCH:Marm*}
+TARGET_ABI=	-gnueabi  
+.else
+TARGET_ABI=
+.endif
+
+CONFIGURE_TARGET:=${ARCH:C/amd64/x86_64/:C/arm64/aarch64/}-portbld-${OPSYS:tl}${OSREL}${TARGET_ABI}
+# ----------- end of sync block --------------------
+
 .if ${PORT_OPTIONS:MCLANG}
 COMMANDS+=	c-index-test \
 		clang \
@@ -180,8 +219,10 @@ COMMANDS+=	c-index-test \
 		clang-check \
 		clang-cpp \
 		clang-format \
+		clang-func-mapping \
 		clang-import-test \
 		clang-offload-bundler \
+		clangd \
 		scan-build \
 		scan-view
 MAN1SRCS+=	clang.1 \
@@ -190,7 +231,7 @@ CLANG_PATTERN=	(c-index-test|clang|scan-|Reporter.py|ScanView.py|scanview.css|so
 .endif
 
 .if ${PORT_OPTIONS:MCOMPILER_RT}
-COMPILER_RT_PATTERN=	(asan_blacklist.txt|sanitizer|xray_interface.h)
+COMPILER_RT_PATTERN=	(asan_blacklist.txt|sanitizer|include.xray)
 .endif
 
 .if ${PORT_OPTIONS:MLIT}
@@ -199,7 +240,8 @@ LIT_COMMANDS=	lit llvm-lit FileCheck
 .endif
 
 .if ${PORT_OPTIONS:MLLD}
-COMMANDS+=	ld.lld
+COMMANDS+=	ld.lld \
+		ld64.lld
 .endif
 
 .if ${PORT_OPTIONS:MLLDB}
@@ -231,14 +273,18 @@ MAN1SRCS+=	bugpoint.1 llc.1 lli.1 llvm-ar.1 llvm-as.1 \
 		llvm-bcanalyzer.1 llvm-build.1 llvm-config.1 llvm-cov.1 \
 		llvm-diff.1 llvm-dis.1 llvm-dwarfdump.1 \
 		llvm-extract.1 llvm-lib.1 llvm-link.1 llvm-nm.1 \
+		llvm-pdbutil.1 \
 		llvm-profdata.1 llvm-readobj.1 llvm-stress.1 llvm-symbolizer.1 \
 		opt.1 tblgen.1
 
-NOT_FOR_ARCH=	ia64
-
 .include <bsd.port.pre.mk>
 
-_CRTLIBDIR=	${LLVM_PREFIX:S|${PREFIX}/||}/lib/freebsd
+.if defined(WITH_DEBUG)
+CMAKE_BUILD_TYPE=	RelWithDebInfo
+STRIP=
+.endif
+
+_CRTLIBDIR=	${LLVM_PREFIX:S|${PREFIX}/||}/lib/clang/${LLVM_RELEASE}/lib/freebsd
 .if ${ARCH} == "amd64"
 _COMPILER_RT_LIBS= \
 	libclang_rt.asan-preinit-x86_64.a \
@@ -259,8 +305,12 @@ _COMPILER_RT_LIBS= \
 	libclang_rt.tsan-x86_64.a.syms \
 	libclang_rt.tsan_cxx-x86_64.a \
 	libclang_rt.tsan_cxx-x86_64.a.syms \
+	libclang_rt.ubsan_minimal-x86_64.a \
+	libclang_rt.ubsan_minimal-x86_64.a.syms \
+	libclang_rt.ubsan_minimal-x86_64.so \
 	libclang_rt.ubsan_standalone-x86_64.a \
 	libclang_rt.ubsan_standalone-x86_64.a.syms \
+	libclang_rt.ubsan_standalone-x86_64.so \
 	libclang_rt.ubsan_standalone_cxx-x86_64.a \
 	libclang_rt.ubsan_standalone_cxx-x86_64.a.syms
 .endif
@@ -271,11 +321,15 @@ _COMPILER_RT_LIBS+= \
 	libclang_rt.asan-preinit-i386.a \
 	libclang_rt.asan_cxx-i386.a \
 	libclang_rt.builtins-i386.a \
+	libclang_rt.lsan-i386.a \
 	libclang_rt.profile-i386.a \
 	libclang_rt.safestack-i386.a \
 	libclang_rt.stats-i386.a \
 	libclang_rt.stats_client-i386.a \
+	libclang_rt.ubsan_minimal-i386.a \
+	libclang_rt.ubsan_minimal-i386.so \
 	libclang_rt.ubsan_standalone-i386.a \
+	libclang_rt.ubsan_standalone-i386.so \
 	libclang_rt.ubsan_standalone_cxx-i386.a
 .endif
 
@@ -291,19 +345,19 @@ COMMANDS+=	lld \
 PORTDOCS+=	lld
 .endif
 
-.if ${OPSYS} == "FreeBSD" && ${COMPILER_TYPE} != clang
-BROKEN=	Working C++11 compiler and library required
-.endif
-
-.if ${PORT_OPTIONS:MLLDB} && ${PYTHON_REL} >= 3000
-BROKEN=	LLDB does not build with Python 3
-.endif
-
 post-patch:
 	${REINPLACE_CMD} -e 's|import lit|import lit${LLVM_SUFFIX}|' \
 	    -e 's|from lit|from lit${LLVM_SUFFIX}|' \
 	    -e 's|lit\.|lit${LLVM_SUFFIX}.|' \
 	    ${WRKSRC}/utils/lit/lit.py ${WRKSRC}/utils/lit/lit/*.py
+	${REINPLACE_CMD} -e 's,/usr/local/,${LOCALBASE}/,' \
+	    ${WRKSRC}/CMakeLists.txt
+
+post-patch-CLANG-on:
+	${REINPLACE_CMD} -e 's|%%LLVM_SUFFIX%%|${LLVM_SUFFIX}|' \
+	    ${PATCH_WRKSRC}/tools/clang/tools/clang-format/clang-format.py \
+	    ${PATCH_WRKSRC}/tools/clang/tools/clang-format/clang-format-sublime.py \
+	    ${PATCH_WRKSRC}/tools/clang/tools/clang-format/git-clang-format
 
 post-build-COMPILER_RT-on:
 	${MKDIR} ${WRKDIR}/compiler-rt-build
@@ -347,10 +401,14 @@ post-install-CLANG-on:
 
 post-install-COMPILER_RT-on:
 	cd ${WRKDIR}/compiler-rt-build && \
-	${MAKE_ENV} ${MAKE_CMD} ${INSTALL_TARGET}
+	    ${MAKE_ENV} ${MAKE_CMD} ${INSTALL_TARGET}
 .if ${ARCH} == "amd64"
 	${RM} ${STAGEDIR}${LLVM_PREFIX}/lib/freebsd/libclang_rt*i386*
 .endif
+	${MKDIR} ${STAGEDIR}${PREFIX}/${_CRTLIBDIR}
+	${MV} ${STAGEDIR}${LLVM_PREFIX}/lib/freebsd/* \
+	    ${STAGEDIR}${PREFIX}/${_CRTLIBDIR}
+	${RMDIR} ${STAGEDIR}${LLVM_PREFIX}/lib/freebsd
 
 post-install-LIT-on:
 	${INSTALL_SCRIPT} ${PATCH_WRKSRC}/utils/lit/lit.py \
@@ -369,6 +427,9 @@ post-install-LIT-on:
 	${LN} -f ${STAGEDIR}${LLVM_PREFIX}/bin/FileCheck \
 	    ${STAGEDIR}${PREFIX}/bin/FileCheck${LLVM_SUFFIX}
 
+post-install-LLDB-on:
+	${RMDIR} ${STAGEDIR}${LLVM_PREFIX}/include/lldb/API
+
 TEST_CMD=	'(cd ${WRKSRC}/test; ${SETENV} ${MAKE_ENV} LD_LIBRARY_PATH=${WRKSRC}/Release/lib ${MAKE_CMD} check-local-lit)'
 regression-test: ${BUILD_COOKIE}
 	if [ `${ID} -u` = 0 ]; then \
@@ -380,6 +441,8 @@ regression-test: ${BUILD_COOKIE}
 
 build-plist:
 	${RM} ${PLIST} ${PLIST}.tmp
+	${ECHO_CMD} "@comment >>>>> GENERATED FILE, DO NOT EDIT <<<<<" >> ${PLIST}.tmp
+	${ECHO_CMD} "@comment Alter build-plist target and regenerate as required" >> ${PLIST}.tmp
 .for command in ${COMMANDS}
 	${ECHO_CMD} bin/${command}${LLVM_SUFFIX} >> ${PLIST}.tmp
 .endfor
@@ -394,7 +457,8 @@ build-plist:
 	    -e 's|release.cmake|%%CMAKE_BUILD_TYPE%%.cmake|' \
 	    -e 's|${LLVM_RELEASE:C/\./\\./g}|%%LLVM_RELEASE%%|' \
 	    -e 's|${LLVM_MAJOR:C/\./\\./}|%%LLVM_MAJOR%%|' \
-	    -e 's|${LLVM_MAJOR:C/\.//}|%%LLVM_LIB_VER%%|' | \
+	    -e 's|\.${LLVM_MAJOR:C/\..*//}|.%%LLVM_LIB_VER%%|' \
+	    -e 's|${PYTHON_SITELIBDIR:C|${PREFIX}/||}|%%PYTHON_SITELIBDIR%%|' | \
 	    ${SORT} >> ${PLIST}.tmp
 	${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR}/lit${LLVM_SUFFIX} -type f | \
 	    ${SED} -e 's|${STAGEDIR}${PYTHON_SITELIBDIR}|%%LIT%%%%PYTHON_SITELIBDIR%%|' \
@@ -408,7 +472,7 @@ build-plist:
 	    if ($$0 ~ /lld/ && $$0 !~ /lldb/) {printf "%%%%LLD%%%%"} \
 	    if ($$0 ~ /(${EXTRAS_PATTERN})/) {printf "%%%%EXTRAS%%%%"} \
 	    if ($$0 ~ /(argdumper|lldb|six.py)/) {printf "%%%%LLDB%%%%"} \
-	    if ($$0 ~ /lib.*omp/) {printf "%%%%OPENMP%%%%"} \
+	    if ($$0 ~ /(lib[ig]*omp|omp.h)/) {printf "%%%%OPENMP%%%%"} \
 	    if ($$0 ~ /LLVMgold/) {printf "%%%%GOLD%%%%"} \
 	    if ($$0 !~ /libclang_rt/) {print} \
 	}' ${PLIST}.tmp >> ${PLIST}

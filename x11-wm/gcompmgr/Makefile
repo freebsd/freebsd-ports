@@ -12,6 +12,8 @@ COMMENT=	GNOME interface to xcompmgr
 
 RUN_DEPENDS=	xcompmgr:x11-wm/xcompmgr
 
+BROKEN=		fails to compile: ustring.h: expected ';' at end of declaration list
+
 GNU_CONFIGURE=	yes
 LIBS+=		-L${LOCALBASE}/lib -lX11
 USES=		autoreconf libtool pkgconfig

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Image-Info
-PORTVERSION=	1.39
+PORTVERSION=	1.41
 CATEGORIES=	graphics perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module for getting image information
 
-LICENSE=	ART10 GPLv1
+LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-IO-String>=0:devel/p5-IO-String \

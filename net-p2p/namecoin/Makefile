@@ -4,7 +4,7 @@
 PORTNAME=	namecoin
 PORTVERSION=	0.3.80
 DISTVERSIONPREFIX=	nc
-PORTREVISION=	5
+PORTREVISION=	13
 PORTEPOCH=	1
 CATEGORIES=	net-p2p dns
 
@@ -15,6 +15,8 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libboost_date_time.so:devel/boost-libs
+
+BROKEN_powerpc64=	fails to build: util.cpp: undefined reference to boost::program_options::to_internal
 
 OPTIONS_DEFINE=	X11 UPNP QRCODES DBUS
 OPTIONS_DEFAULT=	X11 QRCODES

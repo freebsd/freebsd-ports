@@ -3,7 +3,7 @@
 
 PORTNAME=	gtkglextmm
 PORTVERSION=	1.2.0
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	SF/gtkglext/${PORTNAME}/${PORTVERSION}
 
@@ -13,7 +13,9 @@ COMMENT=	C++ wrapper for GtkGLExt
 LIB_DEPENDS=	libgtkglext-x11-1.0.so:x11-toolkits/gtkglext \
 		libgtkmm-2.4.so:x11-toolkits/gtkmm24
 
-USES=		pathfix pkgconfig gettext gmake tar:bzip2 libtool
+USES=		compiler:c++11-lang pathfix pkgconfig gettext gmake tar:bzip2 \
+		libtool
+USE_CXXSTD=	c++11
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnomeprefix gtk20
 USE_LDCONFIG=	yes

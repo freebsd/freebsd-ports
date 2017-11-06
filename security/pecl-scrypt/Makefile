@@ -4,16 +4,14 @@
 PORTNAME=	scrypt
 PORTVERSION=	1.4.2
 CATEGORIES=	security pear
-MASTER_SITES=	http://pecl.php.net/get/
-PKGNAMEPREFIX=	pecl-
 
-MAINTAINER=	dbaio@bsd.com.br
+MAINTAINER=	dbaio@FreeBSD.org
 COMMENT=	PHP wrapper to Colin Percival's scrypt implementation
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		php:ext tar:tgz
+USES=		php:pecl
 USE_PHP=	hash:build
 
 OPTIONS_DEFINE=	DOCS EXAMPLES

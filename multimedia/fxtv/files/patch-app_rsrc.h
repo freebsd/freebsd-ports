@@ -1,4 +1,4 @@
---- app_rsrc.h.orig	2001-02-12 22:17:53.000000000 +0100
+--- app_rsrc.h.orig	2001-02-12 21:17:53 UTC
 +++ app_rsrc.h
 @@ -525,96 +525,95 @@ static XtResource Resources[] = {
  };

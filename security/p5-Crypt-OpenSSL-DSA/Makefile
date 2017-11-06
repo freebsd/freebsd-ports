@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Crypt-OpenSSL-DSA
-PORTVERSION=	0.18
+PORTVERSION=	0.19
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl5 module to DSA signature verification using OpenSSL
 
-LICENSE=	ART10 GPLv1
+LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 USES=		perl5 ssl

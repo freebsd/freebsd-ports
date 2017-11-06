@@ -1,4 +1,4 @@
-# Created by: Gerhard Häring <gh@ghaering.de>
+# Created by: Gerhard HÃ¤ring <gh@ghaering.de>
 # $FreeBSD$
 
 PORTNAME=	rdiff-backup
@@ -9,18 +9,18 @@ CATEGORIES=	sysutils
 MASTER_SITES=	SAVANNAH \
 		LOCAL/vd/${PORTNAME}${PKGNAMESUFFIX}
 
-MAINTAINER=	udvzsolt@gmail.com
+MAINTAINER=	uzsolt@uzsolt.hu
 COMMENT=	Local/remote mirroring+incremental backup
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	librsync.so:net/librsync1
+LIB_DEPENDS=	librsync.so:net/librsync2
 
 CONFLICTS=	rdiff-backup-devel-[0-9]* rdiff-backup-1.0*
 
 PORTSCOUT=	limitw:1,even
 
-USES=		python
+USES=		python:-2.7
 USE_PYTHON=	distutils
 USE_LDCONFIG=	yes
 

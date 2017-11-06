@@ -1,6 +1,6 @@
---- utests/builtin_exp.cpp.orig	2015-01-16 10:24:13 UTC
+--- utests/builtin_exp.cpp.orig	2017-01-20 10:40:51 UTC
 +++ utests/builtin_exp.cpp
-@@ -25,7 +25,11 @@ static void cpu_compiler_math(float *dst
+@@ -27,7 +27,11 @@ static void cpu_compiler_math(float *dst
  
    dst[0] = exp(x);
    dst[1] = exp2(x);

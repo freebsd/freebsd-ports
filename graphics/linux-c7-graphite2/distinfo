@@ -1,0 +1,7 @@
+TIMESTAMP = 1507236975
+SHA256 (centos/graphite2-1.3.10-1.el7_3.i686.rpm) = c3e6a22ff94cc8f2dff08a00f4fb2bdf24dad7c113f2e92e57ab2d58f2395b0c
+SIZE (centos/graphite2-1.3.10-1.el7_3.i686.rpm) = 118888
+SHA256 (centos/graphite2-1.3.10-1.el7_3.x86_64.rpm) = 06cc9092a8016778f4708c4d6443e76e4bc628b047dc83af8155ee694e6035df
+SIZE (centos/graphite2-1.3.10-1.el7_3.x86_64.rpm) = 117936
+SHA256 (centos/graphite2-1.3.10-1.el7_3.src.rpm) = 346757f69f162461ef4a26d2e08994c53837f4858c5a64fc46d0e483f522f2b5
+SIZE (centos/graphite2-1.3.10-1.el7_3.src.rpm) = 3626298

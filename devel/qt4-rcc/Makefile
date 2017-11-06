@@ -3,13 +3,12 @@
 
 PORTNAME=	rcc
 DISTVERSION=	${QT4_VERSION}
+PORTREVISION=	1
 CATEGORIES=	devel
 PKGNAMEPREFIX=	qt4-
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt Resource Compiler
-
-BROKEN_arm=	does not compile
 
 USE_QT4=	qmake_build
 QT_DIST=	yes

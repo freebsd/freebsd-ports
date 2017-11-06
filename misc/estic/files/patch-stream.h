@@ -1,5 +1,5 @@
---- spunk/stream.h.orig	1996-11-07 18:06:52.000000000 +0100
-+++ spunk/stream.h	2014-11-14 08:10:27.000000000 +0100
+--- spunk/stream.h.orig	1996-11-07 17:06:52 UTC
++++ spunk/stream.h
 @@ -44,25 +44,53 @@
  #include <stdio.h>
  #include <string.h>

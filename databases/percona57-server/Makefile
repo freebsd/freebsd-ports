@@ -3,7 +3,7 @@
 
 PORTNAME?=	percona
 DISTVERSION=	5.7.16-10
-PORTREVISION?=	1
+PORTREVISION?=	5
 CATEGORIES=	databases ipv6
 MASTER_SITES=	http://www.percona.com/downloads/Percona-Server-5.7/Percona-Server-${DISTVERSION}/source/tarball/:percona \
 		SF/boost/boost/1.59.0:boost
@@ -17,14 +17,14 @@ COMMENT?=	Multithreaded SQL database (server)
 
 LICENSE?=	GPLv2+
 
-LIB_DEPENDS=	libevent.so:devel/libevent2 \
+LIB_DEPENDS=	libevent.so:devel/libevent \
 		liblz4.so:archivers/liblz4
 
 BROKEN_powerpc64=	Does not build
 
 SLAVEDIRS=	databases/percona57-client \
 		databases/percona57-pam-for-mysql
-USES=		bison:build cmake compiler:c11 compiler:c++11-lib \
+USES=		bison:build cmake:noninja compiler:c11 compiler:c++11-lib \
 		cpe libedit localbase perl5 shebangfix
 
 MY_DBDIR=	/var/db/mysql
@@ -101,6 +101,7 @@ TOKUDB_EXTRA_PATCHES=${PATCHDIR}/extrapatch-tokudb
 USES+=mysql:57p
 
 CONFLICTS_INSTALL=	mysql*-server-* \
+			mysqlwsrep* \
 			mariadb*-server-* \
 			percona5[0-68-9]-server-*
 

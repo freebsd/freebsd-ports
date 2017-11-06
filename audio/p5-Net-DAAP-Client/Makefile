@@ -8,7 +8,7 @@ CATEGORIES=	audio perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	lth@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Client for Apple iTunes DAAP service
 
 RUN_DEPENDS=	p5-Digest-MD5-M4p>=0:security/p5-Digest-MD5-M4p \

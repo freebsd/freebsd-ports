@@ -1,9 +1,9 @@
 ************************************************************************
 
 NTP Analyzer has been installed. If this is the first time remember to
-create a MySQL or PostgreSQL user and database first.
+create a MariaDB, MySQL or PostgreSQL user and database first.
 
 If you are upgrading from a previous version of NTP Analyzer be sure to
-make a backup of your database before starting ntpa in upgrade mode.
+take a backup of your database before starting ntpa in upgrade mode.
 
 ************************************************************************

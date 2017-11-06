@@ -1,0 +1,11 @@
+--- configure.ac.orig	2017-07-25 06:31:48 UTC
++++ configure.ac
+@@ -68,7 +68,7 @@ AC_CHECK_LIB(matheval, evaluator_get_var
+ 
+ if test $H5MATH = yes; then
+ 	MORE_H5UTILS="h5math\$(EXEEXT) $MORE_H5UTILS"
+-	MORE_H5UTILS_MANS="h5math.1 $MORE_H5UTILS_MANS"
++	MORE_H5UTILS_MANS="doc/man/h5math.1 $MORE_H5UTILS_MANS"
+ else
+ 	AC_MSG_WARN([can't find libmatheval: won't be able to compile h5math])
+ fi

@@ -2,17 +2,15 @@
 
 PORTNAME=	libcmis
 PORTVERSION=	0.5.1
-PORTREVISION=	2
+PORTREVISION=	5
 CATEGORIES=	net devel
 MASTER_SITES=	http://dev-www.libreoffice.org/src/
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Client library for the CMIS interface
 
-LICENSE=	LGPL20 MPL GPLv2
+LICENSE=	LGPL20 MPL11 GPLv2
 LICENSE_COMB=	dual
-
-BROKEN_powerpc64=	Does not build
 
 LIB_DEPENDS=	libcurl.so:ftp/curl
 BUILD_DEPENDS=	cppunit-config:devel/cppunit \

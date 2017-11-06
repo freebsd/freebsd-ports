@@ -1,4 +1,4 @@
---- appl/kf/Makefile.in.orig	2017-01-03 19:44:14 UTC
+--- appl/kf/Makefile.in.orig	2017-06-10 19:27:47 UTC
 +++ appl/kf/Makefile.in
 @@ -154,9 +154,13 @@ am__installdirs = "$(DESTDIR)$(bindir)" 
  PROGRAMS = $(bin_PROGRAMS) $(libexec_PROGRAMS)

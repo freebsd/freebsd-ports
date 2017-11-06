@@ -5,7 +5,7 @@ PORTNAME=	XML_Serializer
 PORTVERSION=	0.21.0
 CATEGORIES=	devel www pear
 
-MAINTAINER=	joneum@bsdproject.de
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	PEAR Swiss-army knive for reading and writing XML files
 
 LICENSE=	BSD2CLAUSE

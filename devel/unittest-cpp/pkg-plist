@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 include/UnitTest++/AssertException.h
 include/UnitTest++/CheckMacros.h
 include/UnitTest++/Checks.h

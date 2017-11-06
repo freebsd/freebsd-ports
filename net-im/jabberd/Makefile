@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	jabberd
-PORTVERSION=	2.4.0
+PORTVERSION=	2.6.1
 PORTREVISION=	1
 CATEGORIES=	net-im
 MASTER_SITES=	https://github.com/jabberd2/jabberd2/releases/download/${PORTNAME}-${DISTVERSION}/ \
@@ -101,10 +101,6 @@ EXPERIMENTAL_CONFIGURE_ENABLE=	experimental
 EXPERIMENTAL_DESC=	Enable experimental features (TLS-Everywhere)
 
 .include <bsd.port.options.mk>
-
-.if ${OPSYS} != FreeBSD
-WITH_OPENSSL_PORT=	yes
-.endif
 
 .if ${PORT_OPTIONS:MPGSQL}
 _REQUIRE+=		postgresql

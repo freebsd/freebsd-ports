@@ -7,5 +7,5 @@ since lists are mutable in Python, tuples are closer in meaning), and lazy
 equivalents for map, filter, reduce, and zip.  It also includes some
 higher-order functions for composing functions.
 
-WWW: http://sourceforge.net/projects/xoltar-toolkit/
+WWW: https://sourceforge.net/projects/xoltar-toolkit/
 See also: http://www-106.ibm.com/developerworks/library/l-prog.html

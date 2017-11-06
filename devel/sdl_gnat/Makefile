@@ -3,11 +3,11 @@
 
 PORTNAME=	sdl_gnat
 PORTVERSION=	2013
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel
 MASTER_SITES=	http://downloads.dragonlace.net/src/
 
-MAINTAINER=	marino@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ada thin bindings for SDL (GPLv3)
 
 LICENSE=	GPLv3

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	lxappearance
-PORTVERSION=	0.6.2
+PORTVERSION=	0.6.3
 CATEGORIES=	x11-themes gnome
 MASTER_SITES=	SF/lxde/LXAppearance
 
@@ -11,11 +11,15 @@ COMMENT=	Desktop-independent theme switcher for GTK+
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib
+LIB_DEPENDS=	libdbus-1.so:devel/dbus \
+		libdbus-glib-1.so:devel/dbus-glib \
+		libfreetype.so:print/freetype2 \
+		libfontconfig.so:x11-fonts/fontconfig
 
 USES=		gettext-tools gmake localbase pathfix pkgconfig tar:xz
 GNU_CONFIGURE=	yes
-USE_GNOME=	gtk20 intltool
+USE_XORG=	x11
+USE_GNOME=	cairo gdkpixbuf2 gtk20 intltool
 CONFIGURE_ARGS=	--enable-dbus
 
 PORTDOCS=	AUTHORS README

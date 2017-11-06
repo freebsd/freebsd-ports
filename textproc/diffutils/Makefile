@@ -2,9 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	diffutils
-PORTVERSION=	3.5
+PORTVERSION=	3.6
 CATEGORIES=	textproc
 MASTER_SITES=	GNU
+
+LICENSE=	GPLv3+
 
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	The GNU diff utilities

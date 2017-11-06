@@ -1,0 +1,69 @@
+#!/bin/sh
+# 
+# $FreeBSD$
+
+# PROVIDE: unbound_exporter
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# unbound_exporter_enable (bool):	Set to NO by default
+#							Set it to YES to enable unbound_exporter
+# unbound_exporter_user (string):	Set user to run unbound_exporter
+#							Default is "%%USERS%%"
+# unbound_exporter_group (string):	Set group to run unbound_exporter
+#							Default is "%%GROUPS%%"
+# unbound_exporter_log_file (string):	Set file that unbound_exporter will log to
+#							Default is "/var/log/unbound_exporter.log"
+# unbound_exporter_ca (string):		Set unbound ca filename
+#							Default	is /usr/local/etc/unbound/unbound_server.pem
+# unbound_exporter_cert (string):	Set unbound control cert filename
+#							Default is /usr/local/etc/unbound/unbound_control.pem
+# unbound_exporter_key (string):	Set unbound control key filename
+#							Default is /usr/local/etc/unbound/unbound_control.key
+# unbound_exporter_bind (string): 	Set address to listen on
+#							Default is :9167
+# unbound_exporter_args (string):	Set additional command line arguments
+#							Default is ""
+
+. /etc/rc.subr
+
+name=unbound_exporter
+rcvar=unbound_exporter_enable
+
+load_rc_config $name
+
+: ${unbound_exporter_enable:=NO}
+: ${unbound_exporter_user:=unbound}
+: ${unbound_exporter_group:=unbound}
+: ${unbound_exporter_log_file=/var/log/unbound_exporter.log}
+: ${unbound_exporter_ca=%%PREFIX%%/etc/unbound/unbound_server.pem}
+: ${unbound_exporter_cert=%%PREFIX%%/etc/unbound/unbound_control.pem}
+: ${unbound_exporter_key=%%PREFIX%%/etc/unbound/unbound_control.key}
+: ${unbound_exporter_bind=:9167}
+
+pidfile=/var/run/unbound_exporter.pid
+command=/usr/sbin/daemon
+procname="%%PREFIX%%/bin/unbound_exporter"
+command_args="-p ${pidfile} /usr/bin/env ${procname} \
+				-unbound.ca ${unbound_exporter_ca} \
+				-unbound.cert ${unbound_exporter_cert} \
+				-unbound.key ${unbound_exporter_key} \
+				-web.listen-address ${unbound_exporter_bind} \
+                                ${unbound_exporter_args} > ${unbound_exporter_log_file} 2>&1"
+
+start_precmd=unbound_exporter_startprecmd
+
+unbound_exporter_startprecmd()
+{
+        if [ ! -e ${pidfile} ]; then
+                install -o ${unbound_exporter_user} -g ${unbound_exporter_group} /dev/null ${pidfile};
+        fi
+        if [ ! -f "${unbound_exporter_log_file}" ]; then
+                install -o ${unbound_exporter_user} -g ${unbound_exporter_group} -m 640 /dev/null ${unbound_exporter_log_file};
+        fi
+}
+
+run_rc_command "$1"

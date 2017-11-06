@@ -5,12 +5,17 @@ Vavoom has been installed.
 There are 2 wrapper scripts: "vavoom" and "vavoom-dedicated", calling the real
 executables (suffixed with ".bin") from the data directory, and using the
 common WAD directory.
+If you have extra WAD files, specify the full path of the containing directory 
+as the first argument of the wrapper script.
 
 To run in OpenGL mode add the "-opengl" parameter, and "-openal" for OpenAL.
 
 If you want to install enhanced textures, models or soundtracks use the
 "games/vavoom-extras" port. Note that textures require OPENGL and soundtracks
 need VORBIS (build options).
+
+Refer to %%DOCSDIR%%/vavoom.txt for other options such as 
+game selection, network options and so on.
 
 If you enabled LAUNCHER (build option), run "vlaunch" for a launcher GUI.
 

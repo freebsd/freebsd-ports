@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	spoofer
-PORTVERSION=	1.0.5
-PORTREVISION=	1
+PORTVERSION=	1.2.0
+PORTREVISION=	3
 CATEGORIES=	net
 MASTER_SITES=	http://www.caida.org/projects/spoofer/downloads/
 
@@ -13,6 +13,7 @@ COMMENT=	Spoofer Project testing software
 LICENSE=	GPLv3
 
 BUILD_DEPENDS=	protoc:devel/protobuf
+RUN_DEPENDS=	scamper:net/scamper
 LIB_DEPENDS=	libprotobuf-lite.so:devel/protobuf
 
 PORTDOCS=	README

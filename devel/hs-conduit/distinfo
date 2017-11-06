@@ -1,2 +1,3 @@
-SHA256 (cabal/conduit-1.2.5.tar.gz) = b100cdb428731923205372dded60b6529d33728f69a0eb951a01f53c182c2a46
-SIZE (cabal/conduit-1.2.5.tar.gz) = 46805
+TIMESTAMP = 1499543753
+SHA256 (cabal/conduit-1.2.11.tar.gz) = 0b66423f04d991262b800174064d0c6046fba0009eddcca616f9afaf84dca8f7
+SIZE (cabal/conduit-1.2.11.tar.gz) = 50240

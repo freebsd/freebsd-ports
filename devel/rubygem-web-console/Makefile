@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	web-console
-PORTVERSION=	3.4.0
+PORTVERSION=	3.5.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -11,9 +11,10 @@ COMMENT=	Debugging tool for your Ruby on Rails applications
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
-RUN_DEPENDS=	rubygem-activemodel4>=4.2:databases/rubygem-activemodel4 \
-		rubygem-debug_inspector>=0:devel/rubygem-debug_inspector \
-		rubygem-railties4>=4.2:www/rubygem-railties4
+RUN_DEPENDS=	rubygem-activemodel5>=5.0:databases/rubygem-activemodel5 \
+		rubygem-actionview5>=5.0:devel/rubygem-actionview5 \
+		rubygem-bindex>=0:devel/rubygem-bindex \
+		rubygem-railties5>=5.0:www/rubygem-railties5
 
 NO_ARCH=	yes
 USE_RUBY=	yes

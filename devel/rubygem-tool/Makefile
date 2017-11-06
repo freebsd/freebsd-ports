@@ -7,7 +7,7 @@ CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	General purpose Ruby library used by Sinatra 2.0, Mustermann and related projects
+COMMENT=	Ruby library used by Sinatra 2.0, Mustermann and related projects
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -3,6 +3,7 @@
 
 PORTNAME=	emacs
 PORTVERSION=	${EMACS_VER}
+PORTREVISION=	1
 PORTEPOCH=	3
 CATEGORIES=	editors ipv6
 MASTER_SITES=	GNU
@@ -18,7 +19,9 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 CONFLICTS_INSTALL?=	emacs-devel-[0-9]* emacs-nox11-[0-9]*
 
-EMACS_VER=	25.1
+BROKEN_aarch64=		Fails to link: missing sbrk
+
+EMACS_VER=	25.3
 GNU_CONFIGURE=	yes
 USES=		cpe gmake makeinfo ncurses pkgconfig tar:xz
 # Building with GCC 4.6+ requires it; remove after 9.3 EOL
@@ -34,8 +37,6 @@ CONFIGURE_ARGS=	--localstatedir=/var \
 		--with-gameuser=games:games
 
 PLIST_SUB=	EMACS_VER=${EMACS_VER} GNU_HOST=${CONFIGURE_TARGET}
-
-MAKE_ENV=	LC_ALL=C
 
 INFO=	ada-mode auth autotype bovine calc ccmode cl dbus dired-x ebrowse ede	\
 	ediff edt efaq eieio eintr elisp emacs emacs-gnutls emacs-mime epa erc	\
@@ -55,7 +56,7 @@ OPTIONS_GROUP_GRAPHICS=		CAIRO GIF JPEG MAGICK PNG SVG TIFF XPM
 OPTIONS_GROUP_NEEDX11=		GCONF GSETTINGS M17N OTF SCROLLBARS XFT XIM     \
 				XWIDGETS
 
-OPTIONS_DEFAULT?=	ACL DBUS GCONF GIF GNUTLS GSETTINGS GTK2 JPEG KQUEUE    \
+OPTIONS_DEFAULT?=	ACL DBUS GCONF GIF GNUTLS GSETTINGS GTK3 JPEG KQUEUE    \
 			M17N MAGICK MODULES OSS OTF PNG SCROLLBARS SOURCES SVG  \
 			TIFF X11 XFT XIM XML XPM
 

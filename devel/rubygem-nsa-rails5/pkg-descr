@@ -1,0 +1,4 @@
+Listen to Rails ActiveSupport::Notifications and deliver to a Statsd backend.
+This gem also supports writing your own custom collectors.
+
+WWW: https://github.com/localshred/nsa

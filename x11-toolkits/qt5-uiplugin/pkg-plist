@@ -7,6 +7,6 @@
 %%QT_INCDIR%%/QtUiPlugin/customwidget.h
 %%QT_INCDIR%%/QtUiPlugin/qdesignerexportwidget.h
 %%QT_INCDIR%%/QtUiPlugin/qtuipluginversion.h
-%%QT_LIBDIR%%/cmake/Qt5UiPlugin/Qt5UiPluginConfig.cmake
-%%QT_LIBDIR%%/cmake/Qt5UiPlugin/Qt5UiPluginConfigVersion.cmake
+%%QT_CMAKEDIR%%/Qt5UiPlugin/Qt5UiPluginConfig.cmake
+%%QT_CMAKEDIR%%/Qt5UiPlugin/Qt5UiPluginConfigVersion.cmake
 %%QT_MKSPECDIR%%/modules/qt_lib_uiplugin.pri

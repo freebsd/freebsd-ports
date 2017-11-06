@@ -1,3 +1,4 @@
+@mode 0755
 bin/filedumper
 bin/filedumper-slim
 bin/filedumperx
@@ -7,6 +8,7 @@ bin/router
 bin/router+lib
 bin/router+lib-slim
 bin/router-slim
+@mode
 %%PORTDOCS%%%%DOCSDIR%%/ALGORITHM.txt
 %%PORTDOCS%%%%DOCSDIR%%/CONFIGURATION.txt
 %%PORTDOCS%%%%DOCSDIR%%/DATA.txt
@@ -35,12 +37,14 @@ bin/router-slim
 %%PORTDOCS%%%%DOCSDIR%%/html/tagging.html
 %%PORTDOCS%%%%DOCSDIR%%/html/usage.html
 include/routino.h
+@mode 0644
 lib/libroutino-slim.so
 lib/libroutino-slim.so.0
 lib/libroutino-slim.so.0.0.0
 lib/libroutino.so
 lib/libroutino.so.0
 lib/libroutino.so.0.0.0
+@mode
 %%DATADIR%%/profiles.xml
 %%DATADIR%%/tagging-drive.xml
 %%DATADIR%%/tagging-ride.xml
@@ -48,6 +52,7 @@ lib/libroutino.so.0.0.0
 %%DATADIR%%/tagging.xml
 %%DATADIR%%/translations.xml
 %%WWWDIR%%/INSTALL.txt
+@mode 0755
 %%WWWDIR%%/bin/filedumper
 %%WWWDIR%%/bin/filedumper-slim
 %%WWWDIR%%/bin/filedumperx
@@ -55,6 +60,7 @@ lib/libroutino.so.0.0.0
 %%WWWDIR%%/bin/planetsplitter-slim
 %%WWWDIR%%/bin/router
 %%WWWDIR%%/bin/router-slim
+@mode
 %%WWWDIR%%/data/create.sh
 %%WWWDIR%%/data/profiles.xml
 %%WWWDIR%%/data/tagging-drive.xml

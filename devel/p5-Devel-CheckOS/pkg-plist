@@ -31,6 +31,8 @@ bin/use-devel-assertos
 %%PERL5_MAN3%%/Devel::AssertOS::MacOSX::v10_0.3.gz
 %%PERL5_MAN3%%/Devel::AssertOS::MacOSX::v10_1.3.gz
 %%PERL5_MAN3%%/Devel::AssertOS::MacOSX::v10_10.3.gz
+%%PERL5_MAN3%%/Devel::AssertOS::MacOSX::v10_11.3.gz
+%%PERL5_MAN3%%/Devel::AssertOS::MacOSX::v10_12.3.gz
 %%PERL5_MAN3%%/Devel::AssertOS::MacOSX::v10_2.3.gz
 %%PERL5_MAN3%%/Devel::AssertOS::MacOSX::v10_3.3.gz
 %%PERL5_MAN3%%/Devel::AssertOS::MacOSX::v10_4.3.gz
@@ -106,6 +108,8 @@ bin/use-devel-assertos
 %%SITE_PERL%%/Devel/AssertOS/MacOSX/v10_0.pm
 %%SITE_PERL%%/Devel/AssertOS/MacOSX/v10_1.pm
 %%SITE_PERL%%/Devel/AssertOS/MacOSX/v10_10.pm
+%%SITE_PERL%%/Devel/AssertOS/MacOSX/v10_11.pm
+%%SITE_PERL%%/Devel/AssertOS/MacOSX/v10_12.pm
 %%SITE_PERL%%/Devel/AssertOS/MacOSX/v10_2.pm
 %%SITE_PERL%%/Devel/AssertOS/MacOSX/v10_3.pm
 %%SITE_PERL%%/Devel/AssertOS/MacOSX/v10_4.pm

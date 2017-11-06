@@ -20,6 +20,8 @@ Licenses_db_Include_MAINTAINER=         portmgr@FreeBSD.org
 #   https://spdx.org/licenses/
 #
 # See also:
+# - Copyfree Licenses
+#   http://copyfree.org/standard/licenses
 # - Wikipedia (article "Comparison of Free Software Licenses")
 #   http://en.wikipedia.org/wiki/Comparison_of_free_software_licences
 #
@@ -40,8 +42,8 @@ Licenses_db_Include_MAINTAINER=         portmgr@FreeBSD.org
 #
 
 _LICENSE_LIST= 	BSL CDDL CPAL-1.0 ClArtistic EPL GFDL GMGPL \
-				ISCL MIT MPL NCSA OFL10 OFL11 OWL OpenSSL PD PSFL PostgreSQL \
-				RUBY ZLIB ZPL21
+				ISCL MIT NCSA OFL10 OFL11 OWL OpenSSL PD PSFL PostgreSQL \
+				RUBY UNLICENSE WTFPL1 WTFPL ZLIB ZPL21
 
 # GNU family
 _LICENSE_LIST+= AGPLv3 GPLv1 GPLv2 GPLv3 GPLv3RLE LGPL20 LGPL21 LGPL3
@@ -71,6 +73,9 @@ _LICENSE_LIST+=	CC0-1.0 \
 				CC-BY-NC-ND-1.0 CC-BY-NC-ND-2.0 CC-BY-NC-ND-2.5 CC-BY-NC-ND-3.0 CC-BY-NC-ND-4.0 \
 				CC-BY-NC-SA-1.0 CC-BY-NC-SA-2.0 CC-BY-NC-SA-2.5 CC-BY-NC-SA-3.0 CC-BY-NC-SA-4.0 \
 				CC-BY-SA-1.0 CC-BY-SA-2.0 CC-BY-SA-2.5 CC-BY-SA-3.0 CC-BY-SA-4.0
+
+# MPL family
+_LICENSE_LIST+= MPL10 MPL11 MPL20
 
 # Others
 _LICENSE_LIST+= NONE
@@ -346,8 +351,14 @@ _LICENSE_PERMS_LPPL13c=	dist-mirror dist-sell
 _LICENSE_NAME_MIT=	MIT license / X11 license
 _LICENSE_GROUPS_MIT=	COPYFREE FSF GPL OSI
 
-_LICENSE_NAME_MPL=	Mozilla Public License
-_LICENSE_GROUPS_MPL=	FSF OSI
+_LICENSE_NAME_MPL10=	Mozilla Public License version 1.0
+_LICENSE_GROUPS_MPL10=	FSF OSI
+
+_LICENSE_NAME_MPL11=	Mozilla Public License version 1.1
+_LICENSE_GROUPS_MPL11=	FSF OSI
+
+_LICENSE_NAME_MPL20=	Mozilla Public License version 2.0
+_LICENSE_GROUPS_MPL20=	FSF OSI
 
 _LICENSE_NAME_NCSA=	University of Illinois/NCSA Open Source License
 _LICENSE_GROUPS_NCSA=	COPYFREE FSF GPL OSI
@@ -387,7 +398,16 @@ _LICENSE_GROUPS_RUBY=	FSF
 
 _LICENSE_NAME_NONE=	No license specified
 _LICENSE_GROUPS_NONE=	# empty
-_LICENSE_PERMS_NONE=	# empty
+_LICENSE_PERMS_NONE=	none
+
+_LICENSE_NAME_UNLICENSE=	The Unlicense
+_LICENSE_GROUPS_UNLICENSE=	COPYFREE FSF GPL
+
+_LICENSE_NAME_WTFPL1=	Do What the Fuck You Want To Public License version 1
+_LICENSE_GROUPS_WTFPL1=	GPL FSF COPYFREE
+
+_LICENSE_NAME_WTFPL=	Do What the Fuck You Want To Public License version 2
+_LICENSE_GROUPS_WTFPL=	GPL FSF COPYFREE
 
 _LICENSE_NAME_ZLIB=		zlib License
 _LICENSE_GROUPS_ZLIB=	GPL FSF OSI
@@ -399,8 +419,6 @@ _LICENSE_GROUPS_ZPL21=	GPL OSI
 
 .for lic in ${_LICENSE_LIST}
 .	if !defined(_LICENSE_PERMS_${lic})
-# note that space before = is needed to correctly handle licenses
-# ending with a plus sign
-_LICENSE_PERMS_${lic} =	${_LICENSE_PERMS_DEFAULT}
+_LICENSE_PERMS_${lic}=	${_LICENSE_PERMS_DEFAULT}
 .	endif
 .endfor

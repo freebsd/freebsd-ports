@@ -1,14 +1,15 @@
 # $FreeBSD$
 
 PORTNAME=	git-lfs
-PORTVERSION=	1.5.4
 DISTVERSIONPREFIX=	v
+DISTVERSION=	2.3.4
 CATEGORIES=	devel
 
 MAINTAINER=	kenji@k2r.org
 COMMENT=	Git extension for versioning large files
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 BUILD_DEPENDS=	bash:shells/bash
 RUN_DEPENDS=	bash:shells/bash

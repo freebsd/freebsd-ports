@@ -2,7 +2,7 @@
 
 PORTNAME=	roxlib
 PORTVERSION=	2.0.6
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel python
 MASTER_SITES=	SF/rox/ROX-Lib/${PORTVERSION}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,8 +11,9 @@ DISTNAME=	rox-lib2-${PORTVERSION}
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Python libraries for ROX
 
-USES=		python tar:bzip2
+USES=		python shebangfix tar:bzip2
 USE_GNOME=	pygtk2:run
+SHEBANG_FILES=	ROX-Lib2/AppRun ROX-Lib2/python/make_docs.py
 
 RUN_DEPENDS=	${LOCALBASE}/bin/rox:x11-fm/rox-filer
 

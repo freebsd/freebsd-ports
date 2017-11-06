@@ -1,0 +1,412 @@
+From: Jan Beulich <jbeulich@suse.com>
+Subject: guest_physmap_remove_page() needs its return value checked
+
+Callers, namely such subsequently freeing the page, must not blindly
+assume success - the function may namely fail when needing to shatter a
+super page, but there not being memory available for the then needed
+intermediate page table.
+
+As it happens, guest_remove_page() callers now also all check the
+return value.
+
+Furthermore a missed put_gfn() on an error path in gnttab_transfer() is
+also being taken care of.
+
+This is part of XSA-222.
+
+Reported-by: Julien Grall <julien.grall@arm.com>
+Signed-off-by: Jan Beulich <jbeulich@suse.com>
+Signed-off-by: Julien Grall <julien.grall@arm.com>
+Reviewed-by: Andrew Cooper <andrew.cooper3@citrix.com>
+
+--- a/xen/arch/arm/mm.c
++++ b/xen/arch/arm/mm.c
+@@ -1299,13 +1299,14 @@ int replace_grant_host_mapping(unsigned
+ {
+     unsigned long gfn = (unsigned long)(addr >> PAGE_SHIFT);
+     struct domain *d = current->domain;
++    int rc;
+ 
+     if ( new_addr != 0 || (flags & GNTMAP_contains_pte) )
+         return GNTST_general_error;
+ 
+-    guest_physmap_remove_page(d, gfn, mfn, 0);
++    rc = guest_physmap_remove_page(d, gfn, mfn, 0);
+ 
+-    return GNTST_okay;
++    return rc ? GNTST_general_error : GNTST_okay;
+ }
+ 
+ int is_iomem_page(unsigned long mfn)
+--- a/xen/arch/arm/p2m.c
++++ b/xen/arch/arm/p2m.c
+@@ -1313,15 +1313,14 @@ int guest_physmap_add_entry(struct domai
+                              d->arch.p2m.default_access);
+ }
+ 
+-void guest_physmap_remove_page(struct domain *d,
+-                               unsigned long gpfn,
+-                               unsigned long mfn, unsigned int page_order)
++int guest_physmap_remove_page(struct domain *d, unsigned long gfn,
++                              unsigned long mfn, unsigned int page_order)
+ {
+-    apply_p2m_changes(d, REMOVE,
+-                      pfn_to_paddr(gpfn),
+-                      pfn_to_paddr(gpfn + (1<<page_order)),
+-                      pfn_to_paddr(mfn), MATTR_MEM, 0, p2m_invalid,
+-                      d->arch.p2m.default_access);
++    return apply_p2m_changes(d, REMOVE,
++                             pfn_to_paddr(gfn),
++                             pfn_to_paddr(gfn + (1 << page_order)),
++                             pfn_to_paddr(mfn), MATTR_MEM, 0, p2m_invalid,
++                             d->arch.p2m.default_access);
+ }
+ 
+ int p2m_alloc_table(struct domain *d)
+--- a/xen/arch/x86/domain.c
++++ b/xen/arch/x86/domain.c
+@@ -802,7 +802,15 @@ int arch_domain_soft_reset(struct domain
+         ret = -ENOMEM;
+         goto exit_put_gfn;
+     }
+-    guest_physmap_remove_page(d, gfn, mfn, PAGE_ORDER_4K);
++
++    ret = guest_physmap_remove_page(d, gfn, mfn, PAGE_ORDER_4K);
++    if ( ret )
++    {
++        printk(XENLOG_G_ERR "Failed to remove Dom%d's shared_info frame %lx\n",
++               d->domain_id, gfn);
++        free_domheap_page(new_page);
++        goto exit_put_gfn;
++    }
+ 
+     ret = guest_physmap_add_page(d, gfn, page_to_mfn(new_page), PAGE_ORDER_4K);
+     if ( ret )
+--- a/xen/arch/x86/domain_build.c
++++ b/xen/arch/x86/domain_build.c
+@@ -427,7 +427,9 @@ static __init void pvh_add_mem_mapping(s
+         if ( !iomem_access_permitted(d, mfn + i, mfn + i) )
+         {
+             omfn = get_gfn_query_unlocked(d, gfn + i, &t);
+-            guest_physmap_remove_page(d, gfn + i, mfn_x(omfn), PAGE_ORDER_4K);
++            if ( guest_physmap_remove_page(d, gfn + i, mfn_x(omfn),
++                                           PAGE_ORDER_4K) )
++                /* nothing, best effort only */;
+             continue;
+         }
+ 
+--- a/xen/arch/x86/hvm/ioreq.c
++++ b/xen/arch/x86/hvm/ioreq.c
+@@ -267,8 +267,9 @@ bool_t is_ioreq_server_page(struct domai
+ static void hvm_remove_ioreq_gmfn(
+     struct domain *d, struct hvm_ioreq_page *iorp)
+ {
+-    guest_physmap_remove_page(d, iorp->gmfn,
+-                              page_to_mfn(iorp->page), 0);
++    if ( guest_physmap_remove_page(d, iorp->gmfn,
++                                   page_to_mfn(iorp->page), 0) )
++        domain_crash(d);
+     clear_page(iorp->va);
+ }
+ 
+--- a/xen/arch/x86/mm.c
++++ b/xen/arch/x86/mm.c
+@@ -4271,7 +4271,11 @@ static int replace_grant_p2m_mapping(
+                 type, mfn_x(old_mfn), frame);
+         return GNTST_general_error;
+     }
+-    guest_physmap_remove_page(d, gfn, frame, PAGE_ORDER_4K);
++    if ( guest_physmap_remove_page(d, gfn, frame, PAGE_ORDER_4K) )
++    {
++        put_gfn(d, gfn);
++        return GNTST_general_error;
++    }
+ 
+     put_gfn(d, gfn);
+     return GNTST_okay;
+@@ -4793,7 +4797,7 @@ int xenmem_add_to_physmap_one(
+     struct page_info *page = NULL;
+     unsigned long gfn = 0; /* gcc ... */
+     unsigned long prev_mfn, mfn = 0, old_gpfn;
+-    int rc;
++    int rc = 0;
+     p2m_type_t p2mt;
+ 
+     switch ( space )
+@@ -4867,25 +4871,30 @@ int xenmem_add_to_physmap_one(
+     {
+         if ( is_xen_heap_mfn(prev_mfn) )
+             /* Xen heap frames are simply unhooked from this phys slot. */
+-            guest_physmap_remove_page(d, gpfn, prev_mfn, PAGE_ORDER_4K);
++            rc = guest_physmap_remove_page(d, gpfn, prev_mfn, PAGE_ORDER_4K);
+         else
+             /* Normal domain memory is freed, to avoid leaking memory. */
+-            guest_remove_page(d, gpfn);
++            rc = guest_remove_page(d, gpfn);
+     }
+     /* In the XENMAPSPACE_gmfn case we still hold a ref on the old page. */
+     put_gfn(d, gpfn);
+ 
++    if ( rc )
++        goto put_both;
++
+     /* Unmap from old location, if any. */
+     old_gpfn = get_gpfn_from_mfn(mfn);
+     ASSERT( old_gpfn != SHARED_M2P_ENTRY );
+     if ( space == XENMAPSPACE_gmfn || space == XENMAPSPACE_gmfn_range )
+         ASSERT( old_gpfn == gfn );
+     if ( old_gpfn != INVALID_M2P_ENTRY )
+-        guest_physmap_remove_page(d, old_gpfn, mfn, PAGE_ORDER_4K);
++        rc = guest_physmap_remove_page(d, old_gpfn, mfn, PAGE_ORDER_4K);
+ 
+     /* Map at new location. */
+-    rc = guest_physmap_add_page(d, gpfn, mfn, PAGE_ORDER_4K);
++    if ( !rc )
++        rc = guest_physmap_add_page(d, gpfn, mfn, PAGE_ORDER_4K);
+ 
++ put_both:
+     /* In the XENMAPSPACE_gmfn, we took a ref of the gfn at the top */
+     if ( space == XENMAPSPACE_gmfn || space == XENMAPSPACE_gmfn_range )
+         put_gfn(d, gfn);
+--- a/xen/arch/x86/mm/p2m.c
++++ b/xen/arch/x86/mm/p2m.c
+@@ -2837,10 +2837,12 @@ int p2m_add_foreign(struct domain *tdom,
+     {
+         if ( is_xen_heap_mfn(prev_mfn) )
+             /* Xen heap frames are simply unhooked from this phys slot */
+-            guest_physmap_remove_page(tdom, gpfn, prev_mfn, 0);
++            rc = guest_physmap_remove_page(tdom, gpfn, prev_mfn, 0);
+         else
+             /* Normal domain memory is freed, to avoid leaking memory. */
+-            guest_remove_page(tdom, gpfn);
++            rc = guest_remove_page(tdom, gpfn);
++        if ( rc )
++            goto put_both;
+     }
+     /*
+      * Create the new mapping. Can't use guest_physmap_add_page() because it
+@@ -2853,6 +2855,7 @@ int p2m_add_foreign(struct domain *tdom,
+                  "gpfn:%lx mfn:%lx fgfn:%lx td:%d fd:%d\n",
+                  gpfn, mfn, fgfn, tdom->domain_id, fdom->domain_id);
+ 
++ put_both:
+     put_page(page);
+ 
+     /*
+--- a/xen/common/grant_table.c
++++ b/xen/common/grant_table.c
+@@ -1768,6 +1768,7 @@ gnttab_transfer(
+     for ( i = 0; i < count; i++ )
+     {
+         bool_t okay;
++        int rc;
+ 
+         if (i && hypercall_preempt_check())
+             return i;
+@@ -1818,27 +1819,33 @@ gnttab_transfer(
+             goto copyback;
+         }
+ 
+-        guest_physmap_remove_page(d, gop.mfn, mfn, 0);
++        rc = guest_physmap_remove_page(d, gop.mfn, mfn, 0);
+         gnttab_flush_tlb(d);
++        if ( rc )
++        {
++            gdprintk(XENLOG_INFO,
++                     "gnttab_transfer: can't remove GFN %"PRI_xen_pfn" (MFN %lx)\n",
++                     gop.mfn, mfn);
++            gop.status = GNTST_general_error;
++            goto put_gfn_and_copyback;
++        }
+ 
+         /* Find the target domain. */
+         if ( unlikely((e = rcu_lock_domain_by_id(gop.domid)) == NULL) )
+         {
+-            put_gfn(d, gop.mfn);
+             gdprintk(XENLOG_INFO, "gnttab_transfer: can't find domain %d\n",
+                     gop.domid);
+-            page->count_info &= ~(PGC_count_mask|PGC_allocated);
+-            free_domheap_page(page);
+             gop.status = GNTST_bad_domain;
+-            goto copyback;
++            goto put_gfn_and_copyback;
+         }
+ 
+         if ( xsm_grant_transfer(XSM_HOOK, d, e) )
+         {
+-            put_gfn(d, gop.mfn);
+             gop.status = GNTST_permission_denied;
+         unlock_and_copyback:
+             rcu_unlock_domain(e);
++        put_gfn_and_copyback:
++            put_gfn(d, gop.mfn);
+             page->count_info &= ~(PGC_count_mask|PGC_allocated);
+             free_domheap_page(page);
+             goto copyback;
+@@ -1887,12 +1894,8 @@ gnttab_transfer(
+                          "Transferee (d%d) has no headroom (tot %u, max %u)\n",
+                          e->domain_id, e->tot_pages, e->max_pages);
+ 
+-            rcu_unlock_domain(e);
+-            put_gfn(d, gop.mfn);
+-            page->count_info &= ~(PGC_count_mask|PGC_allocated);
+-            free_domheap_page(page);
+             gop.status = GNTST_general_error;
+-            goto copyback;
++            goto unlock_and_copyback;
+         }
+ 
+         /* Okay, add the page to 'e'. */
+@@ -1921,13 +1924,8 @@ gnttab_transfer(
+ 
+             if ( drop_dom_ref )
+                 put_domain(e);
+-            rcu_unlock_domain(e);
+-
+-            put_gfn(d, gop.mfn);
+-            page->count_info &= ~(PGC_count_mask|PGC_allocated);
+-            free_domheap_page(page);
+             gop.status = GNTST_general_error;
+-            goto copyback;
++            goto unlock_and_copyback;
+         }
+ 
+         page_list_add_tail(page, &e->page_list);
+--- a/xen/common/memory.c
++++ b/xen/common/memory.c
+@@ -250,8 +250,12 @@ int guest_remove_page(struct domain *d,
+     mfn = mfn_x(get_gfn_query(d, gmfn, &p2mt)); 
+     if ( unlikely(p2m_is_paging(p2mt)) )
+     {
+-        guest_physmap_remove_page(d, gmfn, mfn, 0);
++        rc = guest_physmap_remove_page(d, gmfn, mfn, 0);
+         put_gfn(d, gmfn);
++
++        if ( rc )
++            return rc;
++
+         /* If the page hasn't yet been paged out, there is an
+          * actual page that needs to be released. */
+         if ( p2mt == p2m_ram_paging_out )
+@@ -315,7 +319,9 @@ int guest_remove_page(struct domain *d,
+         return -ENXIO;
+     }
+ 
+-    if ( test_and_clear_bit(_PGT_pinned, &page->u.inuse.type_info) )
++    rc = guest_physmap_remove_page(d, gmfn, mfn, 0);
++
++    if ( !rc && test_and_clear_bit(_PGT_pinned, &page->u.inuse.type_info) )
+         put_page_and_type(page);
+ 
+     /*
+@@ -326,16 +332,14 @@ int guest_remove_page(struct domain *d,
+      * For this purpose (and to match populate_physmap() behavior), the page
+      * is kept allocated.
+      */
+-    if ( !is_domain_direct_mapped(d) &&
++    if ( !rc && !is_domain_direct_mapped(d) &&
+          test_and_clear_bit(_PGC_allocated, &page->count_info) )
+         put_page(page);
+ 
+-    guest_physmap_remove_page(d, gmfn, mfn, 0);
+-
+     put_page(page);
+     put_gfn(d, gmfn);
+ 
+-    return 0;
++    return rc;
+ }
+ 
+ static void decrease_reservation(struct memop_args *a)
+@@ -570,7 +574,8 @@ static long memory_exchange(XEN_GUEST_HA
+             gfn = mfn_to_gmfn(d, mfn);
+             /* Pages were unshared above */
+             BUG_ON(SHARED_M2P(gfn));
+-            guest_physmap_remove_page(d, gfn, mfn, 0);
++            if ( guest_physmap_remove_page(d, gfn, mfn, 0) )
++                domain_crash(d);
+             put_page(page);
+         }
+ 
+@@ -1120,7 +1125,7 @@ long do_memory_op(unsigned long cmd, XEN
+         page = get_page_from_gfn(d, xrfp.gpfn, NULL, P2M_ALLOC);
+         if ( page )
+         {
+-            guest_physmap_remove_page(d, xrfp.gpfn, page_to_mfn(page), 0);
++            rc = guest_physmap_remove_page(d, xrfp.gpfn, page_to_mfn(page), 0);
+             put_page(page);
+         }
+         else
+--- a/xen/drivers/passthrough/arm/smmu.c
++++ b/xen/drivers/passthrough/arm/smmu.c
+@@ -2783,9 +2783,7 @@ static int arm_smmu_unmap_page(struct do
+ 	if ( !is_domain_direct_mapped(d) )
+ 		return -EINVAL;
+ 
+-	guest_physmap_remove_page(d, gfn, gfn, 0);
+-
+-	return 0;
++	return guest_physmap_remove_page(d, gfn, gfn, 0);
+ }
+ 
+ static const struct iommu_ops arm_smmu_iommu_ops = {
+--- a/xen/include/asm-arm/p2m.h
++++ b/xen/include/asm-arm/p2m.h
+@@ -177,10 +177,6 @@ static inline int guest_physmap_add_page
+     return guest_physmap_add_entry(d, gfn, mfn, page_order, p2m_ram_rw);
+ }
+ 
+-void guest_physmap_remove_page(struct domain *d,
+-                               unsigned long gpfn,
+-                               unsigned long mfn, unsigned int page_order);
+-
+ unsigned long gmfn_to_mfn(struct domain *d, unsigned long gpfn);
+ 
+ /*
+--- a/xen/include/asm-x86/p2m.h
++++ b/xen/include/asm-x86/p2m.h
+@@ -558,11 +558,6 @@ static inline int guest_physmap_add_page
+     return guest_physmap_add_entry(d, gfn, mfn, page_order, p2m_ram_rw);
+ }
+ 
+-/* Remove a page from a domain's p2m table */
+-int guest_physmap_remove_page(struct domain *d,
+-                              unsigned long gfn,
+-                              unsigned long mfn, unsigned int page_order);
+-
+ /* Set a p2m range as populate-on-demand */
+ int guest_physmap_mark_populate_on_demand(struct domain *d, unsigned long gfn,
+                                           unsigned int order);
+--- a/xen/include/xen/p2m-common.h
++++ b/xen/include/xen/p2m-common.h
+@@ -1,6 +1,7 @@
+ #ifndef _XEN_P2M_COMMON_H
+ #define _XEN_P2M_COMMON_H
+ 
++#include <xen/mm.h>
+ #include <public/vm_event.h>
+ 
+ /*
+@@ -33,6 +34,11 @@ typedef enum {
+     /* NOTE: Assumed to be only 4 bits right now on x86. */
+ } p2m_access_t;
+ 
++/* Remove a page from a domain's p2m table */
++int __must_check
++guest_physmap_remove_page(struct domain *d, unsigned long gfn,
++                          unsigned long mfn, unsigned int page_order);
++
+ /* Map MMIO regions in the p2m: start_gfn and nr describe the range in
+  *  * the guest physical address space to map, starting from the machine
+  *   * frame number mfn. */
+--- a/xen/include/xen/mm.h
++++ b/xen/include/xen/mm.h
+@@ -510,7 +510,7 @@ int xenmem_add_to_physmap_one(struct dom
+                               unsigned long idx, xen_pfn_t gpfn);
+ 
+ /* Returns 0 on success, or negative on error. */
+-int guest_remove_page(struct domain *d, unsigned long gmfn);
++int __must_check guest_remove_page(struct domain *d, unsigned long gmfn);
+ 
+ #define RAM_TYPE_CONVENTIONAL 0x00000001
+ #define RAM_TYPE_RESERVED     0x00000002

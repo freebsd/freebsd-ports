@@ -5,7 +5,7 @@ PORTNAME=	apg
 PORTVERSION=	2.3.0b
 PORTREVISION=	5
 CATEGORIES=	security
-MASTER_SITES=	http://www.adel.nursat.kz/apg/download/
+MASTER_SITES=	LOCAL/matthew
 
 MAINTAINER=	matthew@FreeBSD.org
 COMMENT=	Automated password generator

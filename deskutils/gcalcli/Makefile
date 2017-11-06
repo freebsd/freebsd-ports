@@ -4,7 +4,7 @@
 PORTNAME=	gcalcli
 PORTVERSION=	3.2
 DISTVERSIONPREFIX=	v
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	deskutils python
 
 MAINTAINER=	ports@thelanman.net
@@ -18,8 +18,9 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dateutil>=0:devel/py-dateutil \
 		${PYTHON_PKGNAMEPREFIX}httplib2>=0:www/py-httplib2 \
 		${PYTHON_PKGNAMEPREFIX}python-gflags>=0:devel/py-python-gflags
 
-USES=		python:-2.7
+USES=		python:-2.7 shebangfix
 USE_GITHUB=	yes
+SHEBANG_FILES=	gcalcli
 
 GH_ACCOUNT=	insanum
 

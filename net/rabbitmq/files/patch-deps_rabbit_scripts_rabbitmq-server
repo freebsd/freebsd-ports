@@ -1,9 +1,9 @@
---- deps/rabbit/scripts/rabbitmq-server.orig	2016-11-22 00:22:59 UTC
+--- deps/rabbit/scripts/rabbitmq-server.orig	2017-03-16 21:19:29 UTC
 +++ deps/rabbit/scripts/rabbitmq-server
-@@ -151,6 +151,7 @@ start_rabbitmq_server() {
-     ensure_thread_pool_size
+@@ -157,6 +157,7 @@ start_rabbitmq_server() {
      check_start_params &&
      RABBITMQ_CONFIG_FILE=$RABBITMQ_CONFIG_FILE \
+     ERL_MAX_ETS_TABLES=$ERL_MAX_ETS_TABLES \
 +    HOME=/var/db/rabbitmq \
      exec ${ERL_DIR}erl \
          -pa ${RABBITMQ_SERVER_CODE_PATH} ${RABBITMQ_EBIN_ROOT} \

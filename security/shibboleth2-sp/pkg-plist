@@ -96,11 +96,14 @@ lib/libshibsp.so.7
 lib/libshibsp.so
 lib/shibboleth/adfs.so
 lib/shibboleth/adfs-lite.so
-lib/shibboleth/odbc-store.so
+%%MEMCACHED%%lib/shibboleth/memcache-store.so
+%%ODBC%%lib/shibboleth/odbc-store.so
 lib/shibboleth/plugins-lite.so
 lib/shibboleth/plugins.so
 %%WITH_APACHE_22%%lib/shibboleth/mod_shib_22.so
 %%WITH_APACHE_24%%lib/shibboleth/mod_shib_24.so
+%%FASTCGI%%lib/shibboleth/shibauthorizer
+%%FASTCGI%%lib/shibboleth/shibresponder
 lib/libshibsp-lite.so.7
 lib/libshibsp-lite.so
 sbin/shibd

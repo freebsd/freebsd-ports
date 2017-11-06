@@ -2,10 +2,8 @@
 # $FreeBSD$
 
 CATEGORIES=	devel lang
-PORTREVISION=	2
 PKGNAMESUFFIX=	-bfd
 
-MAINTAINER=	freebsd-fpc@FreeBSD.org
 COMMENT=	Free Pascal interface for the GNU Binary Format description
 
 USE_FPC=	yes

@@ -3,7 +3,7 @@
 
 PORTNAME=	cinnamon
 PORTVERSION=	2.4.6
-PORTREVISION=	3
+PORTREVISION=	7
 CATEGORIES=	x11 gnome
 DIST_SUBDIR=	gnome3
 
@@ -69,6 +69,8 @@ post-patch:
 .for d in bin lib share
 	@${MV} ${WRKSRC}/files/usr/${d} ${WRKSRC}/files${PREFIX}
 .endfor
+
+	@${REINPLACE_CMD} -e 's|--warn-error||g' ${WRKSRC}/src/Makefile.am
 
 	@${REINPLACE_CMD} -e 's|/usr/share/cinnamon|${STAGEDIR}${PREFIX}/share/|g ;\
 		s|/usr/lib|${STAGEDIR}${PREFIX}/share/|g' \

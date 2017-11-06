@@ -11,12 +11,11 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl5 interface to the OpenSSL pseudo-random number generator
 
-LICENSE=	ART10 GPLv1
+LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 MAKE_ARGS=	PASTHRU_INC=-I${OPENSSLINC}
-USES=		perl5
-USE_OPENSSL=	yes
+USES=		perl5 ssl
 USE_PERL5=	configure
 
 post-install:

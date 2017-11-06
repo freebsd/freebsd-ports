@@ -11,14 +11,15 @@ MAINTAINER=	jpaetzel@FreeBSD.org
 COMMENT=	Portable abstraction library for DVD decryption
 
 LICENSE=	GPLv2
-LICENSE_FILES=	${WRKSRC}/COPYING
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 RESTRICTED=	CSS code may violate the DMCA
 
-GNU_CONFIGURE=	yes
-INSTALL_TARGET=	install-strip
 USES=		gmake libtool pathfix tar:bzip2
+GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
+INSTALL_TARGET=	install-strip
+
 PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOXYGEN DOCS

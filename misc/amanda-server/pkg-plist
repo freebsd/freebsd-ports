@@ -3,6 +3,7 @@
 @comment
 @comment plist for misc/amanda-server below
 @comment
+%%SERVER_ONLY%%%%ETCDIR%%/amanda-security.conf
 %%SERVER_ONLY%%lib/amanda/libamdevice-%%SHLIBVER%%.so
 %%SERVER_ONLY%%lib/amanda/libamdevice.a
 %%SERVER_ONLY%%lib/amanda/libamdevice.so
@@ -33,6 +34,7 @@
 %%SERVER_ONLY%%%%SITE_PERL%%/Amanda/Interactivity/tty.pm
 %%SERVER_ONLY%%%%SITE_PERL%%/Amanda/Interactivity/tty_email.pm
 %%SERVER_ONLY%%%%SITE_PERL%%/Amanda/Logfile.pm
+%%SERVER_ONLY%%%%SITE_PERL%%/Amanda/Message.pm
 %%SERVER_ONLY%%%%SITE_PERL%%/Amanda/Recovery/Clerk.pm
 %%SERVER_ONLY%%%%SITE_PERL%%/Amanda/Recovery/Planner.pm
 %%SERVER_ONLY%%%%SITE_PERL%%/Amanda/Recovery/Scan.pm
@@ -258,6 +260,7 @@
 %%CLIENT_ONLY%%man/man5/amanda-archive-format.5.gz
 %%CLIENT_ONLY%%man/man5/amanda-client.conf.5.gz
 %%CLIENT_ONLY%%man/man5/amanda.conf.5.gz
+%%CLIENT_ONLY%%man/man5/amanda-security.conf.5.gz
 %%CLIENT_ONLY%%man/man7/amanda-applications.7.gz
 %%CLIENT_ONLY%%man/man7/amanda-auth.7.gz
 %%CLIENT_ONLY%%man/man7/amanda-match.7.gz

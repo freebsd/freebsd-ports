@@ -11,9 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Low level access to the HTTP protocol
 
-USES=		perl5
+USES=		perl5 ssl
 USE_PERL5=	configure patch
-USE_OPENSSL=	yes
 CONFIGURE_ENV=	GOTSSL=yes
 CONFIGURE_ARGS=	--default
 

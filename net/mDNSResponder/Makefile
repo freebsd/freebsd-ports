@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mDNSResponder
-PORTVERSION=	765.30.11
+PORTVERSION=	878.1.1
 CATEGORIES=	net dns
 MASTER_SITES=	http://opensource.apple.com/tarballs/${PORTNAME}/
 
@@ -13,7 +13,7 @@ LICENSE=	APACHE20 BSD3CLAUSE
 LICENSE_COMB=	dual
 
 # lib/libdns_sd.so.1 sbin/mdnsd
-CONFLICTS_INSTALL=	avahi-libdns- openmdns-
+CONFLICTS_INSTALL=	avahi-libdns openmdns
 
 OPTIONS_DEFINE=	IPV6
 
@@ -35,6 +35,7 @@ EXTRA_MAN8=	dnsextd.8 mDNSResponderPosix.8
 EXTRA_SBIN=	dnsextd
 
 post-patch:
+	@${REINPLACE_CMD} -e '/^CFLAGS_DEBUG/ s|-Os|${CFLAGS}|' ${WRKSRC}/mDNSPosix/Makefile
 	@${REINPLACE_CMD} -e 's|\(#define IPV6_2292_PKTINFO \).*|\1IPV6_PKTINFO|; s|\(#define IPV6_2292_HOPLIMIT \).*|\1IPV6_HOPLIMIT|' ${WRKSRC}/mDNSPosix/mDNSUNP.h
 	@${MV} ${WRKSRC}/mDNSShared/mDNSResponder.8 ${WRKSRC}/mDNSShared/mDNSResponderPosix.8
 

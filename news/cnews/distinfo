@@ -1,8 +1,8 @@
-TIMESTAMP = 1478588176
+TIMESTAMP = 1505201300
 SHA256 (c-news/c-news.tar.Z) = 897ffa8e05bcf3fe8734cf83c893ca78416266665e06106ff52b733d319835d3
 SIZE (c-news/c-news.tar.Z) = 676481
-SHA256 (c-news/pgpverify-1.12) = 8c96efad40f06ffd520eb41bc5fd84233718b92b55c3e140c9b9e6e1d22d0a88
-SIZE (c-news/pgpverify-1.12) = 16510
+SHA256 (c-news/pgpverify-1.29) = 457ee3c3439a9b3a5d3eee76e6342b8c56334b12a88221b053c19c4add0f04f9
+SIZE (c-news/pgpverify-1.29) = 33835
 SHA256 (c-news/c-news-patch-fileart.c) = fd45eadc39af53dc7c7aef60446e27ef110cfe53d0a6ae17131aa793869317bc
 SIZE (c-news/c-news-patch-fileart.c) = 841
 SHA256 (c-news/c-news-patch-namelen) = e247c5c4e003dbf03b1f3a1d725097883a02b26b2bf445d7fb777d4395bd23b6

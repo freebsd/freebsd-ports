@@ -13,6 +13,7 @@ bin/codelite_xterm
 %%CLANG37%%lib/codelite/LLDBDebugger.so
 %%CLANG38%%bin/codelite-lldb
 %%CLANG38%%lib/codelite/LLDBDebugger.so
+lib/codelite/AutoSave.so
 lib/codelite/CMakePlugin.so
 lib/codelite/CallGraph.so
 lib/codelite/CodeFormatter.so
@@ -20,6 +21,7 @@ lib/codelite/CodeLiteDiff.so
 lib/codelite/ContinuousBuild.so
 lib/codelite/Copyright.so
 lib/codelite/DatabaseExplorer.so
+lib/codelite/EditorConfigPlugin.so
 lib/codelite/ExternalTools.so
 lib/codelite/HelpPlugin.so
 lib/codelite/MemCheck.so
@@ -29,6 +31,7 @@ lib/codelite/QMakePlugin.so
 lib/codelite/SnipWiz.so
 lib/codelite/SpellCheck.so
 lib/codelite/Subversion.so
+lib/codelite/Tail.so
 lib/codelite/Tweaks.so
 lib/codelite/UnitTestsPP.so
 lib/codelite/WebTools.so
@@ -82,7 +85,6 @@ share/applications/codelite.desktop
 %%DATADIR%%/gdb_printers/qt4.py
 %%DATADIR%%/gdb_printers/wx.py
 %%DATADIR%%/images/common_tasks.png
-%%DATADIR%%/images/cubes.png
 %%DATADIR%%/images/help_earth.png
 %%DATADIR%%/images/plugin_not_ok.png
 %%DATADIR%%/images/plugin_ok.png

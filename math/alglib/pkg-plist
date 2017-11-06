@@ -1,0 +1,16 @@
+include/libalglib/alglibinternal.h
+include/libalglib/alglibmisc.h
+include/libalglib/ap.h
+include/libalglib/dataanalysis.h
+include/libalglib/diffequations.h
+include/libalglib/fasttransforms.h
+include/libalglib/integration.h
+include/libalglib/interpolation.h
+include/libalglib/linalg.h
+include/libalglib/optimization.h
+include/libalglib/solvers.h
+include/libalglib/specialfunctions.h
+include/libalglib/statistics.h
+include/libalglib/stdafx.h
+lib/libalglib.so
+lib/libalglib.so.3

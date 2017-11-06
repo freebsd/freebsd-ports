@@ -32,7 +32,7 @@ CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 .else
 CONFIGURE_ARGS+=ac_cv_search_mhash_init=no
-USE_OPENSSL=	yes
+USES+=		ssl
 .endif
 
 # Prevent sendfile() from being detected by configure and rejected

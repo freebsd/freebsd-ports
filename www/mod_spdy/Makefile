@@ -3,7 +3,7 @@
 
 PORTNAME=	mod_spdy
 PORTVERSION=	0.9.4.1
-PORTREVISION=	2
+PORTREVISION=	4
 CATEGORIES=	www
 MASTER_SITES=	http://www.club.kyutech.ac.jp/~masaki/ports/:mod_spdy \
 		APACHE_HTTPD:apache22
@@ -26,7 +26,7 @@ BUILD_DEPENDS=	python:lang/python \
 
 ONLY_FOR_ARCHS=	amd64 i386
 USE_APACHE=	22
-USES=		compiler execinfo gmake python:2 ssl tar:xz
+USES=		compiler gmake python:2 ssl tar:xz
 REINPLACE_ARGS=	-i ""
 
 WRKSRC=		${WRKDIR}/${PORTNAME}_source_${PORTVERSION}/mod_spdy/src
@@ -38,7 +38,7 @@ GYP_DEFINES+=	\
 		system_include_path_httpd=${LOCALBASE}/include/apache22 \
 		system_include_path_apr=${LOCALBASE}/include/apr-1 \
 		system_include_path_aprutil=${LOCALBASE}/include/apr-1 \
-		system_include_path_execinfo=${LOCALBASE}/include \
+		system_include_path_execinfo=/usr/include \
 		include_dirs=${LOCALBASE}/include
 
 SUB_FILES+=	mod_spdy.conf
@@ -46,15 +46,26 @@ SUB_LIST+=	APACHEMODDIR=${APACHEMODDIR}
 
 OPTIONS_DEFINE=	GCC DEBUG
 
+# workaround for archs with no clang in base, part 1:
+# do not include the option to turn GCC off.  Instead, force its use.
+OPTIONS_EXCLUDE_sparc64=	GCC
+
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MGCC}
+# workaround for archs with no clang in base, part 2
+.if ${PORT_OPTIONS:MGCC} || ${ARCH} == sparc64
+FORCE_GCC=	yes
+.else
+FORCE_GCC=	no
+.endif
+
+.if ${FORCE_GCC} == yes
 BUILD_DEPENDS+=	${LOCALBASE}/bin/as:devel/binutils
 CONFIGURE_ENV+=	COMPILER_PATH=${LOCALBASE}/bin
 MAKE_ENV+=	COMPILER_PATH=${LOCALBASE}/bin
 .endif
 
-.if ${PORT_OPTIONS:MGCC}
+.if ${FORCE_GCC} == yes
 USE_GCC?=	yes
 GYP_DEFINES+=	gcc_version=${CXX:S/g++//}
 .else
@@ -82,11 +93,10 @@ CONFIGURE_ENV+=	CFLAGS="${CFLAGS}" \
 		LDFLAGS="${LDFLAGS}"
 MAKE_ENV+=	BUILDTYPE=${BUILDTYPE}
 
-.include <bsd.port.pre.mk>
+BROKEN_SSL=		libressl libressl-devel
+BROKEN_SSL_REASON=	please use www/apache24 with mod_http2
 
-.if ${SSL_DEFAULT:Mlibressl*}
-IGNORE=		${PORTNAME} is incompatible with LibreSSL, please use www/apache24 with mod_http2
-.endif
+.include <bsd.port.pre.mk>
 
 .if ${COMPILER_TYPE} == clang && ${COMPILER_VERSION} >= 36
 CXXFLAGS+=	-Wno-unused-local-typedef
@@ -104,7 +114,7 @@ post-patch:
 		-e 's,%%FILESDIR%%,${FILESDIR},g' \
 			-e 's,%%OPENSSLBASE%%,${OPENSSLBASE},g' \
 			${WRKSRC}/build_modssl_with_npn.sh
-.if ${PORT_OPTIONS:MGCC}
+.if ${FORCE_GCC} == yes
 	@${REINPLACE_CMD} -e 's,%%GCCCXXFLAGS%%,-I${LOCALBASE}/lib/gcc${CXX:S/g++//}/include,g' \
 		-e 's,%%GCCLDFLAGS%%,-L${LOCALBASE}/lib/gcc${CXX:S/g++//},g' \
 			${WRKSRC}/Makefile

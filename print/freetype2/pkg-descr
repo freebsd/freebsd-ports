@@ -1,10 +1,10 @@
-This includes some tools that are in FreeType 1's contrib directory.
+FreeType is a freely available software library to render fonts.
 
-ttf2pfb: Converting TrueType fonts to the Postscript Type 1 format.
-ttf2pk:  A simple conversion tool to bring TrueType quality to the
-         TeX world.
-ttf2bdf: Produce bitmapped fonts from TrueType files for your X11
-         applications.
-ttfbanner: make posters using a TrueType font
+It is written in C, designed to be small, efficient, highly customizable,
+and portable while capable of producing high-quality output (glyph images)
+of most vector and bitmap font formats.
 
-WWW: http://www.freetype.org/
+Some products that use FreeType for rendering fonts on screen or on paper,
+either exclusively or partially:
+
+WWW: https://www.freetype.org/

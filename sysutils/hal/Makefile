@@ -4,7 +4,7 @@
 
 PORTNAME=	hal
 DISTVERSION=	0.5.14
-PORTREVISION=	31
+PORTREVISION=	32
 CATEGORIES=	sysutils
 MASTER_SITES=	http://hal.freedesktop.org/releases/
 
@@ -15,7 +15,7 @@ BUILD_DEPENDS=	${LOCALBASE}/include/linux/videodev2.h:multimedia/v4l_compat
 # keep shlib version, to prevent confusion with polkit-* from sysutils/polkit
 LIB_DEPENDS=	libpolkit.so.2:sysutils/policykit \
 		libvolume_id.so:devel/libvolume_id \
-		libck-connector.so:sysutils/consolekit
+		libck-connector.so:sysutils/consolekit2
 RUN_DEPENDS=	${LOCALBASE}/share/pciids/pci.ids:misc/pciids
 
 USES=		gettext gmake libtool:keepla pathfix pkgconfig python shebangfix

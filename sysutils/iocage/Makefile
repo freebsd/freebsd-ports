@@ -1,32 +1,34 @@
-# Created by: Bartek Rutkowski <robak@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	iocage
-PORTVERSION=	1.7.6
-DISTVERSIONPREFIX=v
-CATEGORIES=	sysutils
+PORTVERSION=	0.9.9.2
+CATEGORIES=	sysutils python
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	robak@FreeBSD.org
-COMMENT=	Full featured, no dependency Jail container manager
+MAINTAINER=	araujo@FreeBSD.org
+COMMENT=	FreeBSD jail manager written in Python3
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest-runner>=2.0.0:devel/py3-pytest-runner
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}click>=6.7:devel/py3-click \
+		${PYTHON_PKGNAMEPREFIX}tqdm>=4.10.0:misc/py3-tqdm \
+		${PYTHON_PKGNAMEPREFIX}coloredlogs>0:devel/py3-coloredlogs \
+		${PYTHON_PKGNAMEPREFIX}verboselogs>0:devel/py3-verboselogs \
+		ca_root_nss>0:security/ca_root_nss \
+		${PYTHON_PKGNAMEPREFIX}texttable>=0.8.7:textproc/py3-texttable \
+		${PYTHON_PKGNAMEPREFIX}pytest-runner>=2.0.0:devel/py3-pytest-runner \
+		${PYTHON_PKGNAMEPREFIX}requests>=2.11.1:www/py3-requests \
+		${PYTHON_PKGNAMEPREFIX}libzfs>=1.0.2:devel/py3-libzfs \
+		${PYTHON_PKGNAMEPREFIX}pygit2>=0.24.1:devel/py3-pygit2
+
 USE_GITHUB=	yes
 
-NO_BUILD=	yes
 NO_ARCH=	yes
+USES=		python:3.6
+USE_PYTHON=	autoplist distutils
 
-post-patch:
-	@${REINPLACE_CMD} -e "s|/usr/local/lib/iocage|${PREFIX}/lib/iocage|g" ${WRKSRC}/iocage
-
-pre-install:
-	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/iocage
-
-do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/rc.d/iocage ${STAGEDIR}${PREFIX}/etc/rc.d
-	${INSTALL_SCRIPT} ${WRKSRC}/iocage ${STAGEDIR}${PREFIX}/sbin
-	(cd ${WRKSRC}/lib/ && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/lib/iocage)
-	${INSTALL_MAN} ${WRKSRC}/iocage.8 ${STAGEDIR}${PREFIX}/man/man8
+CONFLICTS=	py27-iocage-[0-9]*
 
 .include <bsd.port.mk>

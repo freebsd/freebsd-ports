@@ -10,6 +10,8 @@ MASTER_SITES=	http://rpm5.org/files/popt/
 MAINTAINER=	jpaetzel@FreeBSD.org
 COMMENT=	Getopt(3) like library with a number of enhancements, from Redhat
 
+LICENSE=	MIT
+
 OPTIONS_DEFINE=	NLS
 
 GNU_CONFIGURE=	yes

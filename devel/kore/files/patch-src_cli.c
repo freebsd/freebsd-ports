@@ -13,3 +13,11 @@
  static struct cfile_list	source_files;
  static struct buildopt_list	build_options;
  static int			source_files_count;
+@@ -1459,6 +1459,7 @@ cli_build_flags_common(struct kore_buf* 
+ 	    "-fPIC -I%s/src -I%s/src/includes ", rootdir, rootdir);
+ #if defined(PREFIX)
+ 	kore_buf_appendf(buf, "-I%s/include ", PREFIX);
++	kore_buf_appendf(buf, "-I%s/include/%%KORE_BIN%% ", PREFIX);
+ #else
+ 	kore_buf_appendf(buf, "-I/usr/local/include ");
+ #endif

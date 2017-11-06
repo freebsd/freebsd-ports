@@ -3,6 +3,7 @@
 
 PORTNAME=	libsystem
 PORTVERSION=	0.3.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.defora.org/os/download/download/4446/
 PKGNAMEPREFIX=	deforaos-

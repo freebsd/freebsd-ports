@@ -17,23 +17,23 @@ LIB_DEPENDS=	libtre.so:textproc/libtre \
 		libuninum.so:devel/libuninum \
 		libutf8proc.so:textproc/utf8proc
 RUN_DEPENDS=	iwidgets>=0:x11-toolkits/iwidgets
-TEST_DEPENDS=	${LOCALBASE}/bin/bash:shells/bash
 
-BROKEN_aarch64=	Fails to link: missing sbrk
+BROKEN_aarch64=		fails to link: missing sbrk
 
+USES=		gettext localbase tk:wrapper,run
 CONFIGURE_ENV=	ac_cv_lib_tre_regwcomp=yes
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-MAKE_ENV+=	INCLUDES="-I${LOCALBASE}/include"
 GNU_CONFIGURE=	yes
-USES=		gettext tk:wrapper,run
 TEST_TARGET=	test
-TEST_ENV=	LC_ALL=C
 
 PLIST_FILES=	bin/msg bin/msort man/man1/msort.1.gz
 
 post-patch:
-	@${REINPLACE_CMD} -e "s|bash|${LOCALBASE}/bin/bash|g" ${WRKSRC}/RegressionTests/Makefile
-	@${REINPLACE_CMD} -e "s|msort|../&|g" ${WRKSRC}/RegressionTests/RunTests.sh \
+	@${MV} ${WRKSRC}/limits.h ${WRKSRC}/${PORTNAME}_limits.h
+	@${REINPLACE_CMD} -e 's,limits\.h,${PORTNAME}_&,' \
+		${WRKSRC}/Makefile.in ${WRKSRC}/info.c \
+		${WRKSRC}/input.c ${WRKSRC}/msort.c
+	@${REINPLACE_CMD} -e 's|bash|sh|' ${WRKSRC}/RegressionTests/Makefile
+	@${REINPLACE_CMD} -e 's|msort|../&|' \
+		${WRKSRC}/RegressionTests/RunTests.sh
 
 .include <bsd.port.mk>

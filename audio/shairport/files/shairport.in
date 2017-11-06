@@ -27,11 +27,10 @@ load_rc_config ${name}
 : ${shairport_enable="NO"}
 : ${shairport_user="nobody"}
 
-command="%%PREFIX%%/bin/${name}.pl"
+command="%%PREFIX%%/bin/${name}"
 pidfile="/var/run/${name}/${name}.pid"
-command_interpreter="%%PERL%%"
 
-command_args="-d -w ${pidfile}"
+command_args="-d -P ${pidfile}"
 start_precmd="install -d -o ${shairport_user} -g wheel -m 755 /var/run/${name}"
 
 run_rc_command "$1"

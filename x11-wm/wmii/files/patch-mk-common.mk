@@ -1,4 +1,4 @@
---- mk/common.mk.orig	2007-11-16 21:59:15 +0800
+--- mk/common.mk.orig	2007-11-16 13:59:15 UTC
 +++ mk/common.mk
 @@ -4,9 +4,9 @@ install: all
  

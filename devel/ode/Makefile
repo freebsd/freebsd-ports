@@ -3,7 +3,7 @@
 
 PORTNAME=	ode
 PORTVERSION=	0.13
-PORTREVISION=	2
+PORTREVISION=	4
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	SF/opende/ODE/${PORTVERSION}
@@ -14,9 +14,11 @@ COMMENT=	Articulated rigid body dynamics library
 LICENSE=	LGPL21 BSD3CLAUSE
 LICENSE_COMB=	dual
 
-USES=		tar:bzip2 gmake libtool
+USES=		tar:bzip2 libtool pathfix
 USE_GL=		yes
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--enable-shared
+TEST_TARGET=	check
 
 OPTIONS_DEFINE=		GIMPACT DOUBLE OU
 
@@ -29,11 +31,7 @@ GIMPACT_CONFIGURE_OFF=	--with-trimesh=opcode
 DOUBLE_CONFIGURE_ENABLE=	double-precision
 OU_CONFIGURE_ENABLE=		ou
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "amd64" || ${ARCH} == "ia64"
-CFLAGS+=	-fPIC -DPIC
-.endif
+.include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGIMPACT} && ${PORT_OPTIONS:MDOUBLE}
 IGNORE=		currently double precision is not supported by gimpact
@@ -54,7 +52,4 @@ post-install:
 	${SED} -e '/PACKAGE/ s|^|//|; /VERSION/ s|^|//|' ${WRKSRC}/ode/src/config.h \
 		> ${STAGEDIR}${PREFIX}/include/ode/config.h
 
-regression-test: build
-	@(cd ${WRKSRC} && ${MAKE} check)
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

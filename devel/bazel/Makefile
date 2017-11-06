@@ -2,39 +2,89 @@
 # $FreeBSD$
 
 PORTNAME=		bazel
-PORTVERSION=		0.4.2r # rc2 of 0.4.2
+PORTVERSION=		0.7.0
 CATEGORIES=		devel java
-MASTER_SITES=		https://storage.googleapis.com/bazel/0.4.2/rc2/
-DISTNAME=		bazel-0.4.2rc2-dist
+MASTER_SITES=		https://storage.googleapis.com/bazel/${PORTVERSION}/rc${FINALRC}/
+DISTNAME=		bazel-${PORTVERSION}rc${FINALRC}-dist
 
-MAINTAINER=		aehlig@linta.de
+MAINTAINER?=		aehlig@linta.de
 COMMENT=		Fast and correct build system
 
 LICENSE=		APACHE20
-LICENSE_FILE=		${WRKSRC}/LICENSE.txt
+LICENSE_FILE=		${WRKSRC}/LICENSE
+
+BROKEN_armv6=		fails to package: cp: bazel: No such file or directory
 
 BUILD_DEPENDS=		bash:shells/bash \
 			zip:archivers/zip
 
-NO_WRKSUBDIR=		YES
-USES=			shebangfix zip
-SHEBANG_FILES=		${WRKSRC}/tools/cpp/link_dynamic_library.sh
+# In bazel, a release is always code-wise identical to the final release candidate.
+# Hence we can also download that one and so have a simple way to also test earlier release
+# candidates.
+FINALRC=		2
+
+USES=			shebangfix zip:infozip python
+SHEBANG_REGEX=		.*(sh|txt|_stub|stub_.*|bazel|get_workspace_status|protobuf_support|_so)
 USE_JAVA=		yes
 JAVA_VENDOR=		openjdk
 JAVA_VERSION=		1.8
 JAVA_BUILD=		yes
 JAVA_RUN=		yes
 
-PLIST_FILES=		bin/bazel
+NO_WRKSUBDIR=		YES
+
+CONFLICTS_INSTALL?=	bazel-clang38
+
+OPTIONS_DEFINE=	CLANG38
+CLANG38_DESC=	Use clang38 as default crosstool
+CLANG38_BUILD_DEPENDS=	clang38:devel/llvm38
+CLANG38_RUN_DEPENDS=	clang38:devel/llvm38
+
+STRIP=	# The bazel binary is also a zip archive (extracted by the elf part), it must not be stripped
+
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "i386"
+EXTRA_PATCHES=	${FILESDIR}/extra-i386_src_BUILD
+.endif
+
+# Have the location of the system-wide rc file reside ${ETCDIR}.
+# Also adapt the sample file to disable persistent java workers as they
+# do not work reliably on FreeBSD.
+post-patch:
+	@${REINPLACE_CMD} \
+	-e "s|\"/etc/bazel.bazelrc\"|\"${ETCDIR}/bazel.bazelrc\"|" \
+	${WRKSRC}/src/main/cpp/blaze_util_posix.cc
+	@${ECHO_CMD} build --strategy=Javac=standalone >> ${WRKSRC}/scripts/packages/bazel.bazelrc
+	@${ECHO_CMD} build --python_path=${PYTHON_CMD} >> ${WRKSRC}/scripts/packages/bazel.bazelrc
+	@${REINPLACE_CMD} \
+	-e 's|\$$command|$$command --python_path=${PYTHON_CMD}|' \
+	${WRKSRC}/scripts/bootstrap/bootstrap.sh
+	@${REINPLACE_CMD} \
+	-e 's|/usr/bin/env python|${PYTHON_CMD}|' \
+	${WRKSRC}/src/main/java/com/google/devtools/build/lib/bazel/rules/python/BazelPythonSemantics.java
+
+post-patch-CLANG38-on:
+	@${REINPLACE_CMD} -e 's=/usr/lib/clang=${LOCALBASE}/llvm38/lib/clang=' \
+	-e 's=/usr/bin/clang=${LOCALBASE}/bin/clang38=' ${WRKSRC}/tools/cpp/CROSSTOOL
 
 do-build:
 	@${MKDIR} ${WRKDIR}/bazel_tmp
-	(cd ${WRKSRC} && \
+	(if [ -z "$${SOURCE_DATE_EPOCH}" ] ; \
+	  then SOURCE_DATE_EPOCH=`grep TIMESTAMP ${DISTINFO_FILE} \
+	    | ${SED} -e 's/[^0-9]//g'`; \
+	fi ; \
+	cd ${WRKSRC} && \
 	${SETENV} BAZEL_SH=${LOCALBASE}/bin/bash \
 	TMPDIR=${WRKDIR}/bazel_tmp \
+	EMBED_LABEL='${PORTVERSION}' \
+	PATH=${LOCALBASE}/bin:$$PATH \
+	SOURCE_DATE_EPOCH=$${SOURCE_DATE_EPOCH} \
 	${LOCALBASE}/bin/bash ./compile.sh)
 
 do-install:
-	@${CP} ${WRKSRC}/output/bazel ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/output/bazel ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${ETCDIR}
+	${INSTALL_DATA} ${WRKSRC}/scripts/packages/bazel.bazelrc ${STAGEDIR}${ETCDIR}/bazel.bazelrc.sample
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

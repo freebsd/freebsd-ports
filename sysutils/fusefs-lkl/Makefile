@@ -4,7 +4,7 @@
 PORTNAME=	lkl
 DISTVERSIONPREFIX=	v
 DISTVERSION=	4.8-493
-PORTREVISION=	1
+PORTREVISION=	3
 DISTVERSIONSUFFIX=	-g4b77c32b1a88
 CATEGORIES=	sysutils
 PKGNAMEPREFIX=	fusefs-
@@ -26,7 +26,6 @@ GH_PROJECT=	linux
 ONLY_FOR_ARCHS=	amd64
 ONLY_FOR_ARCHS_REASON=No one has added other architecture ld formats yet
 
-IGNORE_FreeBSD_9=	requires FreeBSD 11 or newer
 IGNORE_FreeBSD_10=	requires FreeBSD 11 or newer
 
 WRKSRC_SUBDIR=	tools/lkl
@@ -34,7 +33,7 @@ ALL_TARGET=	lklfuse
 MAKE_JOBS_UNSAFE=yes
 MAKE_ARGS+=	V=1
 # Need ports versions of 'bc', 'ld' to build!
-MAKE_ARGS+=	PATH="${LOCALBASE}/bin:${PATH}"
+MAKE_ARGS+=	PATH="${LOCALBASE}/bin:${PATH}" CC="${CC}" HOSTCC="${CC}"
 
 PLIST_FILES=	bin/lklfuse lib/liblkl.a
 

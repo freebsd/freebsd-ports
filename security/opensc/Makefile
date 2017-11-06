@@ -2,9 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	opensc
-PORTVERSION=	0.16.0
+PORTVERSION=	0.17.0
+PORTREVISION=	2
 CATEGORIES=	security devel
-MASTER_SITES=	SF/${PORTNAME}/OpenSC/${DISTNAME}
+MASTER_SITES=	https://github.com/OpenSC/OpenSC/releases/download/${PORTVERSION}/
+
+PATCH_SITES=	https://github.com/OpenSC/OpenSC/commit/
+PATCHFILES=	8d7346406d166a9db4afd239e6669df3e3b99f79.patch \
+		def06389bfeec4eabfb88801c388ae30a6f7b693.patch
+PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	Libraries and utilities to access smart cards
@@ -15,14 +21,14 @@ OPTIONS_SINGLE=	BACKEND
 OPTIONS_SINGLE_BACKEND=PCSC OPENCT CTAPI
 OPTIONS_DEFINE=	SM DOCS MANPAGES
 OPTIONS_DEFAULT=PCSC SM MANPAGES
+OPTIONS_SUB=	yes
 
 PCSC_DESC=	Use PC/SC backend
 OPENCT_DESC=	Use OpenCT backend
 CTAPI_DESC=	Use CT-API backend
 SM_DESC=	Enable secure messaging support
 
-USES=		libtool pkgconfig gmake
-USE_OPENSSL=	yes
+USES=		libtool pkgconfig gmake ssl
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
@@ -32,6 +38,20 @@ CONFIGURE_ENV=	\
 		OPENSSL_LIBS="-L${OPENSSLLIB} -lcrypto"
 
 PORTDOCS=	*
+
+MANPAGES_CONFIGURE_ENABLE=	man
+
+OPENCT_LIB_DEPENDS=	libopenct.so:security/openct
+OPENCT_CONFIGURE_ENABLE=	openct
+
+PCSC_LIB_DEPENDS=	libpcsclite.so:devel/pcsc-lite
+PCSC_CONFIGURE_ENABLE=	pcsc
+
+CTAPI_CONFIGURE_ENABLE=		ctapi
+
+SM_CONFIGURE_ENABLE=		sm
+
+DOCS_CONFIGURE_ENABLE=		doc
 
 .include <bsd.port.options.mk>
 
@@ -43,39 +63,6 @@ CONFIGURE_ARGS+=--with-xsl-stylesheetsdir=${LOCALBASE}/share/xsl/docbook
 .else
 CONFIGURE_ENV+=	XSLTPROC="${FALSE}"
 CONFIGURE_ARGS+=--without-xsl-stylesheetsdir
-.endif
-
-.if ${PORT_OPTIONS:MMANPAGES}
-PLIST_SUB+=	MANPAGES=""
-.else
-CONFIGURE_ARGS+=--disable-man
-PLIST_SUB+=	MANPAGES="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MOPENCT}
-LIB_DEPENDS+=	libopenct.so:security/openct
-CONFIGURE_ARGS+=--enable-openct
-.endif
-
-.if ${PORT_OPTIONS:MPCSC}
-LIB_DEPENDS+=	libpcsclite.so:devel/pcsc-lite
-.else
-CONFIGURE_ARGS+=--disable-pcsc
-.endif
-
-.if ${PORT_OPTIONS:MCTAPI}
-CONFIGURE_ARGS+=--enable-ctapi
-.endif
-
-.if ${PORT_OPTIONS:MSM}
-PLIST_SUB+=	SM=""
-.else
-CONFIGURE_ARGS+=--disable-sm
-PLIST_SUB+=	SM="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MDOCS}
-CONFIGURE_ARGS+=--enable-doc
 .endif
 
 .include <bsd.port.mk>

@@ -1,0 +1,17 @@
+--- StorageController/GNUmakefile.orig	2006-10-30 21:46:08 UTC
++++ StorageController/GNUmakefile
+@@ -1,8 +1,4 @@
+-ifeq "$(GNUSTEP_SYSTEM_ROOT)" ""
+-  include Makefile
+-else
+-
+-BUNDLE_INSTALL_DIR=$(GNUSTEP_INSTALLATION_DIR)/Library/Bundles/Paje
++BUNDLE_INSTALL_DIR=$(DESTDIR)/$(GNUSTEP_SYSTEM_LIBRARY)/Bundles/Paje
+ 
+ include $(GNUSTEP_MAKEFILES)/common.make
+ 
+@@ -27,4 +23,3 @@ h.template
+ include $(GNUSTEP_MAKEFILES)/bundle.make
+ -include GNUmakefile.postamble
+ 
+-endif

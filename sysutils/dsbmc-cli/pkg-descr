@@ -1,0 +1,6 @@
+dsbmc-cli is a command-line client for DSBMD that provides a simple interface
+to query information about storage devices, and to send requests to mount,
+unmount and eject these. Furthermore, it can be used as automounter and
+autounmounter.
+
+WWW: http://freeshell.de/~mk/projects/dsbmc-cli.html

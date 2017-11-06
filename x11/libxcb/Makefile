@@ -3,6 +3,7 @@
 
 PORTNAME=	libxcb
 PORTVERSION=	1.12
+PORTREVISION=	2
 CATEGORIES=	x11 python
 MASTER_SITES=	http://xcb.freedesktop.org/dist/
 
@@ -12,7 +13,7 @@ COMMENT=	The X protocol C-language Binding (XCB) library
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libcheck.a:devel/libcheck \
+BUILD_DEPENDS=	${LOCALBASE}/lib/libcheck.a:devel/check \
 		xcb-proto>=1.9:x11/xcb-proto \
 		${LOCALBASE}/libdata/pkgconfig/pthread-stubs.pc:devel/libpthread-stubs
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/pthread-stubs.pc:devel/libpthread-stubs

@@ -12,10 +12,10 @@ EXTRACT_SUFX=	-tar.gz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Allow others to run commands as root
 
-LICENSE=	ART10 GPLv1
+LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 LICENSE_FILE_ART10=	${WRKSRC}/Artistic
-LICENSE_FILE_GPLv1=	${WRKSRC}/Copying
+LICENSE_FILE_GPLv1+ =	${WRKSRC}/Copying
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir="${PREFIX}/var"

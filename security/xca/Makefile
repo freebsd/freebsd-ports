@@ -29,7 +29,8 @@ OPTIONS_DEFAULT=	QT4
 
 QT4_USE=		qt4=gui,linguist_build,moc_build,qmake_build \
 			qt4=rcc_build,uic_build
-QT5_USE=		qt5=widgets,buildtools_build,linguist_build
+QT5_USE=		qt5=widgets,buildtools_build,linguist_build \
+			CXXSTD=c++11
 TOOLKIT_DESC=		Qt toolkit
 
 post-patch:

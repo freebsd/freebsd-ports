@@ -9,6 +9,7 @@ share/pixmaps/openttd.32.xpm
 %%DATADIR%%/ai/compat_1.4.nut
 %%DATADIR%%/ai/compat_1.5.nut
 %%DATADIR%%/ai/compat_1.6.nut
+%%DATADIR%%/ai/compat_1.7.nut
 %%DATADIR%%/baseset/no_music.obm
 %%DATADIR%%/baseset/no_sound.obs
 %%DATADIR%%/baseset/openttd.grf
@@ -16,6 +17,7 @@ share/pixmaps/openttd.32.xpm
 %%DATADIR%%/baseset/orig_dos.obg
 %%DATADIR%%/baseset/orig_dos.obs
 %%DATADIR%%/baseset/orig_dos_de.obg
+%%DATADIR%%/baseset/orig_extra.grf
 %%DATADIR%%/baseset/orig_win.obg
 %%DATADIR%%/baseset/orig_win.obm
 %%DATADIR%%/baseset/orig_win.obs

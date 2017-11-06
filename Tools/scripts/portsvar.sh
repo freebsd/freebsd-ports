@@ -29,7 +29,7 @@
 #
 # $FreeBSD$
 #
-# MAINTAINER= daichi@freebsd.org
+# MAINTAINER= daichi@FreeBSD.org
 
 usage_msg="usage:
     portsvar.sh [-a] [-e] [-w target] [-h] [var=val ...] var1 [var2 ...]

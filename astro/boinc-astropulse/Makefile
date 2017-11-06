@@ -3,7 +3,7 @@
 
 PORTNAME=	boinc-astropulse
 PORTVERSION=	6.01
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	astro
 MASTER_SITES=	LOCAL/rene
 DISTNAME=	astropulse-svn-1702 # modified archive, see leftout in top directory
@@ -18,6 +18,8 @@ BUILD_DEPENDS=	${LOCALBASE}/include/fftw3.h:math/fftw3 \
 		${NONEXISTENT}:astro/boinc-setiathome-v7:patch
 RUN_DEPENDS=	boinc_client:net/boinc-client
 LIB_DEPENDS=	libfftw3f.so:math/fftw3-float
+
+BROKEN_armv6=		fails to compile: call to abs is ambiguous
 
 GNU_CONFIGURE=	yes
 USES=		autoreconf gmake libtool pkgconfig tar:xz

@@ -6,7 +6,7 @@ PORTVERSION=	6.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 
-MAINTAINER=	dbaio@bsd.com.br
+MAINTAINER=	dbaio@FreeBSD.org
 COMMENT=	Fight Flash Fraud or Fight Fake Flash test tool
 
 LICENSE=	GPLv3

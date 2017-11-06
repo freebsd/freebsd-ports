@@ -10,10 +10,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Generate world unique message-ids
 
-LICENSE=	ART10 GPLv1
+LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Email-Address>=1.80:mail/p5-Email-Address
+BUILD_DEPENDS=	p5-Email-Address>=1.800:mail/p5-Email-Address
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes

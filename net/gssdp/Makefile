@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gssdp
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.2
 CATEGORIES=	net
 MASTER_SITES=	GNOME
 
@@ -12,11 +12,11 @@ COMMENT=	Framework for UPnP devices
 LICENSE=	LGPL20
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	gobject-introspection>=0.6.7:devel/gobject-introspection
+BUILD_DEPENDS=	gobject-introspection>=0.6.7:devel/gobject-introspection \
+		libsoup>=2.26.1:devel/libsoup
 LIB_DEPENDS=	libsoup-2.4.so:devel/libsoup
 
 OPTIONS_DEFINE=	GTK3 VALA
-OPTIONS_DEFAULT=GTK3
 OPTIONS_SUB=	yes
 VALA_DESC=	Vala binding
 
@@ -25,7 +25,7 @@ GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USE_GNOME=	glib20 introspection:build
 USE_LDCONFIG=	yes
-USES=		gmake libtool pathfix pkgconfig tar:xz
+USES=		gmake gnome libtool pathfix pkgconfig tar:xz
 
 GTK3_CONFIGURE_WITH=	gtk
 GTK3_USE=		GNOME=gtk30

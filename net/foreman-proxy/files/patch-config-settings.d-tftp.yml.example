@@ -1,5 +1,5 @@
---- config/settings.d/tftp.yml.example.orig	2016-08-24 09:01:39.000000000 +0200
-+++ config/settings.d/tftp.yml.example	2016-09-05 23:44:01.480711000 +0200
+--- config/settings.d/tftp.yml.example.orig	2017-05-08 15:18:42 UTC
++++ config/settings.d/tftp.yml.example
 @@ -2,6 +2,6 @@
  # Can be true, false, or http/https to enable just one of the protocols
  :enabled: false

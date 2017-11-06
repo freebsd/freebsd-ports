@@ -11,7 +11,7 @@ lib/liblogging-rfc3195.so.0.0.0
 lib/liblogging-stdlog.a
 lib/liblogging-stdlog.so
 lib/liblogging-stdlog.so.0
-lib/liblogging-stdlog.so.0.0.0
+lib/liblogging-stdlog.so.0.1.0
 libdata/pkgconfig/liblogging-rfc3195.pc
 libdata/pkgconfig/liblogging-stdlog.pc
 man/man1/stdlogctl.1.gz

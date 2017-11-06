@@ -1,0 +1,11 @@
+--- puppetboard/templates/fact.html.orig
++++ puppetboard/templates/fact.html
+@@ -7,7 +7,7 @@
+ var data = [
+ {% for fact in facts|groupby('value') %}
+   {
+-  label: '{{ fact.grouper.replace("\n", " ") }}',
++  label: '{{ ("%s" % fact.grouper).replace("\n", " ") }}',
+   value: {{ fact.list|length }}
+   },
+ {% endfor %}

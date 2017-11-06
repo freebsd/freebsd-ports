@@ -2509,7 +2509,6 @@ include/CGAL/compiler_config.h
 include/CGAL/compute_average_spacing.h
 include/CGAL/compute_outer_frame_margin.h
 include/CGAL/config.h
-include/CGAL/config.h.orig
 include/CGAL/connect_holes.h
 include/CGAL/constant.h
 include/CGAL/constructions/Polygon_offset_cons_ftC2.h
@@ -2912,6 +2911,9 @@ lib/CGAL/CGAL_ImageIOExports.cmake
 lib/CGAL/CGAL_ImageIOLibConfig.cmake
 lib/CGAL/CGAL_Locate_CGAL_TAUCS.cmake
 lib/CGAL/CGAL_Macros.cmake
+%%QT5%%lib/CGAL/CGAL_Qt5Exports-%%CMAKE_BUILD_TYPE%%.cmake
+%%QT5%%lib/CGAL/CGAL_Qt5Exports.cmake
+%%QT5%%lib/CGAL/CGAL_Qt5LibConfig.cmake
 lib/CGAL/CGAL_SCM.cmake
 lib/CGAL/CGAL_SetupBoost.cmake
 lib/CGAL/CGAL_SetupDependencies.cmake
@@ -2967,4 +2969,7 @@ lib/libCGAL_Core.so.12.0.0
 lib/libCGAL_ImageIO.so
 lib/libCGAL_ImageIO.so.12
 lib/libCGAL_ImageIO.so.12.0.0
+%%QT5%%lib/libCGAL_Qt5.so
+%%QT5%%lib/libCGAL_Qt5.so.12
+%%QT5%%lib/libCGAL_Qt5.so.12.0.0
 man/man1/cgal_create_cmake_script.1.gz

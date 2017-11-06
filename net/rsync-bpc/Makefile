@@ -2,14 +2,17 @@
 # $FreeBSD$
 
 PORTNAME=	rsync-bpc
-PORTVERSION=	3.0.9.3
+PORTVERSION=	3.0.9.8
 CATEGORIES=	net
-MASTER_SITES=	SF/backuppc/backuppc-beta/4.0.0alpha3
 
 MAINTAINER=	moiseev@mezonplus.ru
 COMMENT=	Modified rsync that used as part of BackupPC
 
 LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	backuppc
 
 USES=		perl5
 USE_PERL5=	build

@@ -4,7 +4,6 @@
 CATEGORIES=	security lang
 PKGNAMESUFFIX=	-openssl
 
-MAINTAINER=	freebsd-fpc@FreeBSD.org
 COMMENT=	Free Pascal unit for OpenSSL
 
 USE_FPC=	rtl-extra
@@ -17,6 +16,6 @@ OPTIONS_DEFINE=	OPENSSL
 OPENSSL_DESC=	Install SSL and crypto library
 OPTIONS_DEFAULT=	OPENSSL
 
-OPENSSL_USE=	OPENSSL=yes
+OPENSSL_USES=		ssl
 
 .include "${MASTERDIR}/Makefile"

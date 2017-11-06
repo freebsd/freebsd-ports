@@ -18,7 +18,7 @@
 %%DATADIR%%/lib/camel/camel-core-%%CAMELVERSION%%.jar
 %%DATADIR%%/lib/camel/camel-jms-%%CAMELVERSION%%.jar
 %%DATADIR%%/lib/camel/camel-spring-%%CAMELVERSION%%.jar
-%%DATADIR%%/lib/extra/mqtt-client-1.13.jar
+%%DATADIR%%/lib/extra/mqtt-client-1.14.jar
 %%DATADIR%%/lib/geronimo-j2ee-management_1.1_spec-1.0.1.jar
 %%DATADIR%%/lib/geronimo-jms_1.1_spec-1.1.1.jar
 %%DATADIR%%/lib/geronimo-jta_1.0.1B_spec-1.0.1.jar
@@ -51,8 +51,8 @@
 %%DATADIR%%/lib/optional/hawtdispatch-scala-2.11-1.22.jar
 %%DATADIR%%/lib/optional/hawtdispatch-transport-1.22.jar
 %%DATADIR%%/lib/optional/hawtjni-runtime-1.9.jar
-%%DATADIR%%/lib/optional/httpclient-4.5.1.jar
-%%DATADIR%%/lib/optional/httpcore-4.4.4.jar
+%%DATADIR%%/lib/optional/httpclient-4.5.2.jar
+%%DATADIR%%/lib/optional/httpcore-4.4.5.jar
 %%DATADIR%%/lib/optional/insight-log-core-1.2.0.Beta4.jar
 %%DATADIR%%/lib/optional/insight-log4j-1.2.0.Beta4.jar
 %%DATADIR%%/lib/optional/jackson-annotations-2.6.3.jar
@@ -61,7 +61,7 @@
 %%DATADIR%%/lib/optional/jasypt-spring31-1.9.2.jar
 %%DATADIR%%/lib/optional/jasypt-1.9.2.jar
 %%DATADIR%%/lib/optional/jaxb2-basics-runtime-%%LVDBVERSION%%.4.jar
-%%DATADIR%%/lib/optional/jettison-1.3.7.jar
+%%DATADIR%%/lib/optional/jettison-1.3.8.jar
 %%DATADIR%%/lib/optional/jmdns-3.4.1.jar
 %%DATADIR%%/lib/optional/leveldb-%%LVDBVERSION%%.jar
 %%DATADIR%%/lib/optional/leveldb-api-%%LVDBVERSION%%.jar
@@ -70,7 +70,7 @@
 %%DATADIR%%/lib/optional/org.apache.servicemix.bundles.josql-1.5_5.jar
 %%DATADIR%%/lib/optional/org.linkedin.util-core-1.4.0.jar
 %%DATADIR%%/lib/optional/org.linkedin.zookeeper-impl-1.4.0.jar
-%%DATADIR%%/lib/optional/proton-j-0.14.0.jar
+%%DATADIR%%/lib/optional/proton-j-0.16.0.jar
 %%DATADIR%%/lib/optional/scala-library-2.11.0.jar
 %%DATADIR%%/lib/optional/shiro-core-1.2.4.jar
 %%DATADIR%%/lib/optional/shiro-spring-1.2.4.jar
@@ -86,9 +86,9 @@
 %%DATADIR%%/lib/optional/spring-oxm-%%SPRINGVERSION%%.RELEASE.jar
 %%DATADIR%%/lib/optional/spring-tx-%%SPRINGVERSION%%.RELEASE.jar
 %%DATADIR%%/lib/optional/velocity-1.7.jar
-%%DATADIR%%/lib/optional/xbean-spring-3.18.jar
+%%DATADIR%%/lib/optional/xbean-spring-4.2.jar
 %%DATADIR%%/lib/optional/xpp3-1.1.4c.jar
-%%DATADIR%%/lib/optional/xstream-1.4.8.jar
+%%DATADIR%%/lib/optional/xstream-1.4.9.jar
 %%DATADIR%%/lib/optional/zookeeper-3.4.6.jar
 %%DATADIR%%/lib/slf4j-api-1.7.13.jar
 %%DATADIR%%/lib/web/apache-el-8.0.9.M3.jar
@@ -105,8 +105,8 @@
 %%DATADIR%%/lib/web/rome-1.0.jar
 %%DATADIR%%/lib/web/spring-web-%%SPRINGVERSION%%.RELEASE.jar
 %%DATADIR%%/lib/web/spring-webmvc-%%SPRINGVERSION%%.RELEASE.jar
-%%DATADIR%%/lib/web/taglibs-standard-impl-1.2.3.jar
-%%DATADIR%%/lib/web/taglibs-standard-spec-1.2.3.jar
+%%DATADIR%%/lib/web/taglibs-standard-impl-1.2.5.jar
+%%DATADIR%%/lib/web/taglibs-standard-spec-1.2.5.jar
 %%DATADIR%%/lib/web/tomcat-servlet-api-8.0.24.jar
 %%DATADIR%%/lib/web/tomcat-websocket-api-8.0.24.jar
 %%DATADIR%%/webapps-demo/demo/META-INF/LICENSE

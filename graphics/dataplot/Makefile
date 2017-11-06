@@ -3,7 +3,7 @@
 
 PORTNAME=	dataplot
 PORTVERSION=	20132012
-PORTREVISION=	5
+PORTREVISION=	7
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.nist.gov/pub/dataplot/unix/:source \
 		LOCAL/beech:source \
@@ -29,14 +29,14 @@ MAXOBV?=	400000	# Change if you need more observations/variable
 
 .include <bsd.port.options.mk>
 
-.if ((${ARCH}=="amd64") || (${ARCH}=="sparc64") || (${ARCH}=="ia64"))
+.if ${ARCH} == amd64 || ${ARCH} == sparc64
 FFLAGS+= -DDD -DI32 -fdefault-real-8 -fdefault-double-8
 .else
 FFLAGS+= -DSD -DI32 -fdefault-real-8 -fdefault-double-8
 .endif
 
 post-extract:
-	@${INSTALL_DATA} ${FILESDIR}/Makefile.tmpl ${WRKSRC}/Makefile
+	${INSTALL_DATA} ${FILESDIR}/Makefile.tmpl ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} \
 		-e 's;%%CFLAGS%%;${CFLAGS};' \
 		-e 's;%%FFLAGS%%;${FFLAGS};' \

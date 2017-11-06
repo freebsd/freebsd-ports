@@ -9,4 +9,4 @@ For a given port determine its dependencies using any combination of the
 and show them as a pseudo graphical tree.
 Use back references for cross-connections.
 
-WWW: http://code.google.com/p/porttree/
+WWW: https://sourceforge.net/projects/porttree/

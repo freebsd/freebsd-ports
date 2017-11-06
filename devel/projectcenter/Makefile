@@ -3,6 +3,7 @@
 
 PORTNAME=	projectcenter
 PORTVERSION=	0.6.2
+PORTREVISION=	1
 CATEGORIES=	devel gnustep
 MASTER_SITES=	GNUSTEP/dev-apps
 DISTNAME=	ProjectCenter-${PORTVERSION}

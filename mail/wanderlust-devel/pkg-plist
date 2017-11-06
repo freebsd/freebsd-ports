@@ -47,6 +47,8 @@
 %%WL_LISPDIR%%/elmo-nntp.elc
 %%WL_LISPDIR%%/elmo-null.el
 %%WL_LISPDIR%%/elmo-null.elc
+%%WL_LISPDIR%%/elmo-passwd.el
+%%WL_LISPDIR%%/elmo-passwd.elc
 %%WL_LISPDIR%%/elmo-pipe.el
 %%WL_LISPDIR%%/elmo-pipe.elc
 %%WL_LISPDIR%%/elmo-pop3.el

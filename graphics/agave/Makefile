@@ -3,7 +3,7 @@
 
 PORTNAME=	agave
 PORTVERSION=	0.4.7
-PORTREVISION=	3
+PORTREVISION=	7
 CATEGORIES=	graphics gnome
 MASTER_SITES=	http://download.gna.org/colorscheme/releases/
 
@@ -15,7 +15,8 @@ LICENSE=	GPLv2+
 LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 		libglademm-2.4.so:devel/libglademm24
 
-USES=		gettext gmake pathfix pkgconfig tar:bzip2
+USES=		compiler:c++11-lang gettext gmake pathfix pkgconfig tar:bzip2
+USE_CXXSTD=	c++11
 USE_GNOME=	gconfmm26 gnomedocutils gnomeprefix gtkmm24 intltool
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-scrollkeeper \
@@ -33,6 +34,8 @@ OPTIONS_DEFINE=		GNOME
 
 GNOME_USE=		gnome=libgnomeui
 GNOME_CONFIGURE_ENABLE=	gnome
+
+BROKEN_aarch64=		Fails to compile: variable has incomplete type union compat_IEEEl2bits
 
 post-patch:
 	@${REINPLACE_CMD} -e \

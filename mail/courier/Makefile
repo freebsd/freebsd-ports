@@ -56,8 +56,7 @@ CALENDIR=	/var/spool/calendar
 MIMETYPES=	${LOCALBASE}/etc/mime.types
 WITH_TRANSPORT=	local esmtp dsn
 
-USES=		fam gettext gmake libtool perl5 pkgconfig tar:bzip2
-USE_OPENSSL=	yes
+USES=		fam gettext gmake libtool perl5 pkgconfig tar:bzip2 ssl
 USE_SUBMAKE=	yes
 USE_RC_SUBR=	courier
 

@@ -1,2 +1,3 @@
-SHA256 (rubygem/rb-gsl-1.16.0.4.gem) = bc6573cc36410d2ec88672d4b12e2c908684796b276a8743c19345bbb44bef94
-SIZE (rubygem/rb-gsl-1.16.0.4.gem) = 588288
+TIMESTAMP = 1493451497
+SHA256 (rubygem/gsl-2.1.0.2.gem) = bb748021a950ae51a7f0eeadffbcd9b039734fcbb99a04a313ca48c4e60dd9ba
+SIZE (rubygem/gsl-2.1.0.2.gem) = 735232

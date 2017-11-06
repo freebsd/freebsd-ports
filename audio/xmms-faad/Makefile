@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	faad2
-PORTVERSION=	2.7
-PORTREVISION=	5
+PORTVERSION=	2.8.6
 CATEGORIES=	audio
-MASTER_SITES=	SF/faac/${PORTNAME}-src/${PORTNAME}-${PORTVERSION}
+MASTER_SITES=	SF/faac/${PORTNAME}-src/${PORTNAME}-${PORTVERSION:R}.0
 PKGNAMEPREFIX=	xmms-
 
 MAINTAINER=	ports@FreeBSD.org
@@ -19,9 +18,8 @@ LIB_DEPENDS=	libxmms.so:multimedia/xmms \
 
 WRKSRC_SUBDIR=	plugins/xmms/src
 
+USES=		pkgconfig
 USE_GNOME=	gtk12
-USES=		pkgconfig tar:bzip2
-WANT_GNOME=	yes
 EXTRA_CFLAGS=	`xmms-config --cflags`
 EXTRA_LDFLAGS=	`xmms-config --libs`
 

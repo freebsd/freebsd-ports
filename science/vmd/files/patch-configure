@@ -5,14 +5,25 @@
  
  # Directory where VMD startup script is installed, should be in users' paths.
 -$install_bin_dir="/usr/local/bin";
-+$install_bin_dir="\${DESTDIR}%%PREFIX%%/bin";
++$install_bin_dir="\${DESTDIR}\${PREFIX}/bin";
  
  # Directory where VMD files and executables are installed
 -$install_library_dir="/usr/local/lib/$install_name";
-+$install_library_dir="\${DESTDIR}%%PREFIX%%/lib/$install_name";
++$install_library_dir="\${DESTDIR}\${PREFIX}/lib/$install_name";
  
  
  # optionally override hard-coded defaults above with environment variables
+@@ -729,8 +729,8 @@ $tcl_include      = "-I$stock_tcl_includ
+ if ($config_tk) { $tcl_include .= " -I$stock_tk_include_dir"; }
+ $tcl_library      = "-L$stock_tcl_library_dir";
+ if ($config_tk) { $tcl_library .= " -L$stock_tk_library_dir"; }
+-$tcl_libs         = "-ltcl8.5";  
+-if ($config_tk) { $tcl_libs = "-ltk8.5 -lX11 " . $tcl_libs; }
++$tcl_libs         = "\${TCLLDFLAGS}";
++if ($config_tk) { $tcl_libs = "\${TKLDFLAGS} " . $tcl_libs; }
+ 
+ @tcl_cc           = ();
+ @tcl_cu           = ();
 @@ -1105,8 +1105,8 @@ if ($config_liboptix) {
  # This may be commented out if not required.
  $libtachyon_defines     = "-DVMDLIBTACHYON";

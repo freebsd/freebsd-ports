@@ -16,9 +16,8 @@ LIB_DEPENDS=	libp11.so:security/libp11
 
 OPTIONS_DEFINE=	DOCS
 
-USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
-USES=		libtool pkgconfig
+USES=		libtool pkgconfig ssl
 
 CONFIGURE_ENV=	OPENSSL_CFLAGS="-I${OPENSSLINC}" \
 		OPENSSL_LIBS="-L${OPENSSLLIB} -lssl"

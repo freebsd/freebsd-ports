@@ -1,2 +1,3 @@
-SHA256 (goprotobuf-20151207.tar.gz) = 6b83cccaf719ab3716c3b886f2df5372a0390cc5058ace3613da0d2089b7f8ee
-SIZE (goprotobuf-20151207.tar.gz) = 178783
+TIMESTAMP = 1495867884
+SHA256 (golang-protobuf-20170527-9f174c9_GH0.tar.gz) = 150eb67cd2cf7d00e5cfc322c9d563843389716ab3713a61e8cc2c10289d50e2
+SIZE (golang-protobuf-20170527-9f174c9_GH0.tar.gz) = 252154

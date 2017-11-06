@@ -16,7 +16,7 @@ LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib \
 		libgstfarsight-0.10.so:net-im/farsight2
 
 GNU_CONFIGURE=	yes
-USES=		gmake libtool pathfix pkgconfig python
+USES=		gmake libtool pathfix pkgconfig python:2
 USE_LDCONFIG=	yes
 USE_GNOME=	glib20 libxslt:build
 CPPFLAGS+=	-I${LOCALBASE}/include

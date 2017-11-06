@@ -3,7 +3,7 @@
 
 PORTNAME=	sqlite
 PORTVERSION=	2.8.17
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	databases
 MASTER_SITES=	http://www.sqlite.org/
 

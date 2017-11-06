@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	Crypt-Sodium
-PORTVERSION=	0.08
+PORTVERSION=	0.11
+PORTREVISION=	1
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -10,7 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	freebsd@daemon.de
 COMMENT=	Perl bindings for portable NaCL (libsodium)
 
-LICENSE=	ART10 GPLv1
+LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 LIB_DEPENDS=	libsodium.so:security/libsodium

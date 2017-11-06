@@ -1,0 +1,7 @@
+mod_auth_openidc is an authentication/authorization module for the Apache 2.x
+HTTP server that functions as an OpenID Connect Relying Party, authenticating
+users against an OpenID Connect Provider. It can also function as an OAuth 2.0
+Resource Server, validating OAuth 2.0 access tokens presented by OAuth 2.0
+Clients.
+
+WWW: https://github.com/pingidentity/mod_auth_openidc/

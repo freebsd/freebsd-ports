@@ -1,22 +1,22 @@
 # $FreeBSD$
 
 PORTNAME=	dnscrypt-wrapper
-PORTVERSION=	0.2.1
+PORTVERSION=	0.3
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
-PORTREVISION=	3
 CATEGORIES=	dns
 
 MAINTAINER=	freebsd@toyingwithfate.com
 COMMENT=	Adds dnscrypt support to any name resolver
 
-LICENSE=	GPLv2
+LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libsodium.so:security/libsodium \
-		libevent.so:devel/libevent2
+		libevent.so:devel/libevent
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	Cofyc
+GH_ACCOUNT=	cofyc
 
 USERS=		_dnscrypt-wrapper
 ETCDNSCRYPTWRAPPER=	${PREFIX}/etc/${PORTNAME}

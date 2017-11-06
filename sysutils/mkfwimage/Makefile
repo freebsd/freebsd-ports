@@ -11,6 +11,8 @@ DISTNAME=	ubnt-${PORTNAME}-${DISTVERSION}
 MAINTAINER=	adrian@FreeBSD.org
 COMMENT=	Ubiquiti Embedded Board Image Generator
 
+LICENSE=	GPLv2+
+
 MAKE_ARGS+=	PREFIX=${STAGEDIR}${PREFIX}
 PLIST_FILES=	bin/mkfwimage
 

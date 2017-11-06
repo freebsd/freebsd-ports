@@ -1,0 +1,4 @@
+This package defines typeclasses used for converting Haskell data types to
+and from HTTP API data.
+
+WWW: https://hackage.haskell.org/package/http-api-data

@@ -2,4 +2,4 @@ Mousetrap is a JavaScript library for handling keyboard shortcuts.
 
 This gem integrates Mousetrap with the Rails asset pipeline.
 
-WWW: http://kugaevsky.github.io/mousetrap-rails/
+WWW: https://kugaevsky.github.io/mousetrap-rails/

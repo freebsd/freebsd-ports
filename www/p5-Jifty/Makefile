@@ -2,15 +2,17 @@
 # $FreeBSD$
 
 PORTNAME=	Jifty
-PORTVERSION=	1.10518
-PORTREVISION=	3
+PORTVERSION=	1.50430
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	CPAN:SARTAK
+MASTER_SITE_SUBDIR=	CPAN:ALEXMV
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Jifty -- Just Do It -- Yet another web framework
+
+LICENSE=	ART10 GPLv1+
+LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Any-Moose>=0:devel/p5-Any-Moose \
 		p5-App-CLI>=0.03:devel/p5-App-CLI \
@@ -55,7 +57,6 @@ BUILD_DEPENDS=	p5-Any-Moose>=0:devel/p5-Any-Moose \
 		p5-Hash-Merge>0:textproc/p5-Hash-Merge \
 		p5-Hook-LexWrap>0:devel/p5-Hook-LexWrap \
 		p5-IO-Handle-Util>=0:devel/p5-IO-Handle-Util \
-		p5-IPC-PubSub>=0.23:devel/p5-IPC-PubSub \
 		p5-IPC-Run3>0:devel/p5-IPC-Run3 \
 		p5-Jifty-DBI>=0.57:databases/p5-Jifty-DBI \
 		p5-JSON-XS>=2.27:converters/p5-JSON-XS \
@@ -72,7 +73,6 @@ BUILD_DEPENDS=	p5-Any-Moose>=0:devel/p5-Any-Moose \
 		p5-PerlIO-gzip>=0:archivers/p5-PerlIO-gzip \
 		p5-Plack>=0:www/p5-Plack \
 		p5-Plack-Middleware-Deflater>=0:www/p5-Plack-Middleware-Deflater \
-		p5-Pod-Simple>0:textproc/p5-Pod-Simple \
 		p5-Scalar-Defer>=0.10:devel/p5-Scalar-Defer \
 		p5-Shell-Command>=0:sysutils/p5-Shell-Command \
 		p5-SQL-ReservedWords>0:databases/p5-SQL-ReservedWords \
@@ -101,10 +101,11 @@ TEST_DEPENDS=	p5-Test-Base>=0.44:devel/p5-Test-Base \
 		p5-Test-WWW-Mechanize-PSGI>=0:devel/p5-Test-WWW-Mechanize-PSGI \
 		p5-Test-WWW-Selenium>=0:devel/p5-Test-WWW-Selenium
 
+NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
 
 post-patch:
-	${REINPLACE_CMD} -e '/auto_install/d' ${WRKSRC}/Makefile.PL
+	@${REINPLACE_CMD} -e '/auto_install/d' ${WRKSRC}/Makefile.PL
 
 .include <bsd.port.mk>

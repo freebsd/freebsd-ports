@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Minion
-PORTVERSION=	5.09
+PORTVERSION=	7.09
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:SRI
@@ -14,7 +14,7 @@ COMMENT=	Asynchronous job queue for Mojolicious
 LICENSE=	ART20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	p5-Mojolicious>=6.0:www/p5-Mojolicious
+BUILD_DEPENDS=	p5-Mojolicious>=7.29:www/p5-Mojolicious
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes
@@ -23,7 +23,7 @@ USE_PERL5=	configure
 
 OPTIONS_DEFINE=	PGSQL
 
-PGSQL_BUILD_DEPENDS=	p5-Mojo-Pg>=2.18:databases/p5-Mojo-Pg
+PGSQL_BUILD_DEPENDS=	p5-Mojo-Pg>=4.0:databases/p5-Mojo-Pg
 PGSQL_RUN_DEPENDS=	${PGSQL_BUILD_DEPENDS}
 
 .include <bsd.port.mk>

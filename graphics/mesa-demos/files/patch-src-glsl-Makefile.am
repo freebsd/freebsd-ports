@@ -1,6 +1,8 @@
---- src/glsl/Makefile.am.orig	2012-12-15 08:17:06.000000000 +0100
-+++ src/glsl/Makefile.am	2013-03-08 14:03:15.236159234 +0100
-@@ -34,7 +34,7 @@
+# Prevent conflict with x11/bitmap
+#
+--- src/glsl/Makefile.am.orig	2014-03-22 12:59:24 UTC
++++ src/glsl/Makefile.am
+@@ -38,7 +38,7 @@ if HAVE_GLUT
  bin_PROGRAMS = \
  	array \
          bezier \
@@ -9,7 +11,7 @@
  	brick \
  	bump \
  	blinking-teapot \
-@@ -76,7 +76,7 @@
+@@ -83,7 +83,7 @@ samplers_array_SOURCES = samplers.c
  samplers_array_CFLAGS = $(AM_CFLAGS) -DSAMPLERS_ARRAY
  
  array_LDADD = ../util/libutil.la

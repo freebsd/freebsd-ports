@@ -1,0 +1,8 @@
+--- LICENSE.orig	2017-02-10 11:16:11.937494000 +1300
++++ LICENSE	2017-02-10 11:16:26.902116000 +1300
+@@ -1,4 +1,4 @@
+-Copyright (c) 2015 Tomaž Šolc <tomaz.solc@tablix.org>
++Copyright (c) 2015 Tomaz Solc <tomaz.solc@tablix.org>
+ 
+ Python module included in this distribution is based on the code downloaded
+ from http://code.google.com/p/python-public-suffix-list/, which is

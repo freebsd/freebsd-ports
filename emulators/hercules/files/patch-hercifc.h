@@ -1,6 +1,6 @@
---- hercifc.h.orig	Fri Feb 24 18:36:35 2006
-+++ hercifc.h	Fri Feb 24 18:39:41 2006
-@@ -77,7 +77,11 @@
+--- hercifc.h.orig	2017-03-26 19:44:49 UTC
++++ hercifc.h
+@@ -73,7 +73,11 @@
  // --------------------------------------------------------------------
  
  #define  HERCIFC_CMD  "hercifc"           // Interface config command

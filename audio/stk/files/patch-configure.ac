@@ -1,0 +1,60 @@
+--- configure.ac.orig	2017-09-01 00:28:55 UTC
++++ configure.ac
+@@ -85,7 +85,6 @@ if test "$debug" = "yes"; then
+ else
+   AC_SUBST( debug, [no] )
+   AC_SUBST( cppflag, [] )
+-  AC_SUBST( cxxflag, [-O3] )
+   AC_SUBST( object_path, [Release] )
+ fi
+ AC_MSG_RESULT($debug)
+@@ -100,7 +99,7 @@ fi
+ CPPFLAGS="$CPPFLAGS $cppflag"
+ 
+ # For debugging and optimization ... overwrite default because it has both -g and -O2
+-CXXFLAGS="$cxxflag"
++CXXFLAGS="$CXXFLAGS $cxxflag"
+ 
+ # Check compiler and use -Wall if gnu.
+ if [test $GXX = "yes" ;] then
+@@ -134,27 +133,27 @@ api="$api -D__UNIX_JACK__"
+   AC_CHECK_LIB(jack, jack_client_open, , AC_MSG_ERROR(JACK support requires the jack library!))])
+ 
+   case $host in
+-    *-*-linux*)
++    *-*-linux*|*-*-freebsd*)
+     # Look for ALSA flag
+-    AC_ARG_WITH(alsa, [  --with-alsa = choose native ALSA API support (linux only)])
+-    AS_IF([test "x$with_alsa" == "xyes"], [
+-    api="$api -D__LINUX_ALSA__"
+-    AC_MSG_RESULT(using ALSA)
+-    AC_CHECK_LIB(asound, snd_pcm_open, , AC_MSG_ERROR(ALSA support requires the asound library!))])
++    #AC_ARG_WITH(alsa, [  --with-alsa = choose native ALSA API support (linux only)])
++    #AS_IF([test "x$with_alsa" == "xyes"], [
++    #api="$api -D__LINUX_ALSA__"
++    #AC_MSG_RESULT(using ALSA)
++    #AC_CHECK_LIB(asound, snd_pcm_open, , AC_MSG_ERROR(ALSA support requires the asound library!))])
+ 
+     # Look for OSS flag
+     AC_ARG_WITH(oss, [  --with-oss = choose OSS API support (unixes only)])
+     AS_IF([test "x$with_oss" == "xyes"], [
+-    api="$api -D__LINUX_OSS__ -D__LINUX_ALSA__"
++    api="$api -D__LINUX_OSS__"
+     AC_MSG_RESULT(using OSS)
+-    AC_CHECK_LIB(asound, snd_pcm_open, , AC_MSG_ERROR(OSS support requires ALSA for RtMidi!))])
++    #AC_CHECK_LIB(asound, snd_pcm_open, , AC_MSG_ERROR(OSS support requires ALSA for RtMidi!))])
+ 
+     # If no audio api flags specified, use ALSA
+-    AS_IF([test "$api" == ""], [
+-      AC_MSG_RESULT(using ALSA)
+-      AC_SUBST( api, [-D__LINUX_ALSA__] )
+-      AC_CHECK_LIB(asound, snd_pcm_open, , AC_MSG_ERROR(ALSA support requires the asound library!))
+-    ])
++    #AS_IF([test "$api" == ""], [
++    #  AC_MSG_RESULT(using ALSA)
++    #  AC_SUBST( api, [-D__LINUX_ALSA__] )
++    #  AC_CHECK_LIB(asound, snd_pcm_open, , AC_MSG_ERROR(ALSA support requires the asound library!))
++    #])
+ 
+     AC_CHECK_LIB(pthread, pthread_create, , AC_MSG_ERROR(RtAudio requires the pthread library!))
+     ;;

@@ -2,4 +2,4 @@ N-Gram-Based Text Categorization library to guess the language that input text
 is written in. Fundamentally an adaption of of wiseguys libtextcat extended to
 be UTF-8 aware.
 
-WWW: http://www.freedesktop.org/wiki/Software/libexttextcat/
+WWW: https://wiki.documentfoundation.org/Libexttextcat

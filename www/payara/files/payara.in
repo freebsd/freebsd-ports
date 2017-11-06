@@ -1,0 +1,80 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: payara
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# payara_enable (bool):
+#   Set to NO by default.
+#   Set it to YES to enable payara. 
+#
+# payara_java_home (string):
+#   Used to set JAVA_HOME (optional).
+#
+# payara_java_opts (string):
+#   Used to set JAVA_OPTS (optional).
+#
+# payara_domain_name (string):
+#   Set the name of the Payara domain to start (default: domain1).
+
+. /etc/rc.subr
+
+name=payara
+rcvar=payara_enable
+
+load_rc_config $name
+
+: ${payara_enable:=NO}
+: ${payara_java_home=""}
+: ${payara_java_opts=""}
+: ${payara_domain_name="domain1"}
+: ${payara_home="%%DATADIR%%/glassfish"}
+
+procname="${payara_java_home}/bin/java"
+
+# Since we receive the JAVA_HOME variable by default from the Java package
+# we depend on, we override JAVA_HOME only if the user overrid it.
+if [ ! -z ${payara_java_home} ] ; then
+  export JAVA_HOME=${payara_java_home}
+else
+  export JAVA_HOME=%%JAVA_HOME%%
+fi
+
+export PATH=${JAVA_HOME}/bin:${PATH}
+export JAVA_OPTS=${payara_java_opts}
+
+start_precmd="payara_prestart"
+start_cmd="${payara_home}/bin/asadmin start-domain ${payara_domain_name}"
+stop_cmd="${payara_home}/bin/asadmin stop-domain ${payara_domain_name}"
+status_cmd="payara_status"
+
+payara_prestart()
+{
+  if [ -z ${payara_domain_name} ] ; then
+    warn "Payara domain name cannot be empty, Payara will NOT start."
+    return 1
+  fi
+}
+
+payara_status()
+{
+  # The output of list-domains -l in payara 4.1 is the following:
+  # 
+  # DOMAIN   ADMIN_HOST  ADMIN_PORT  RUNNING  RESTART_REQUIRED
+  # domain1  localhost   4848        true     false
+  IS_DOMAIN_RUNNING=$(${payara_home}/bin/asadmin list-domains -l | grep "^${payara_domain_name}" | awk '{ print $4; }')
+  if checkyesno IS_DOMAIN_RUNNING ; then
+    echo Payara is running.
+    return 0
+  else
+    echo Payara is not running.
+    return 1
+  fi
+}
+
+run_rc_command "$1"

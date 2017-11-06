@@ -1,0 +1,5 @@
+*** ATTENTION ***
+
+Before using this tool you should do the following as root:
+# sysctl security.bsd.map_at_zero=1
+# mount -t linprocfs linproc /compat/linux/proc

@@ -1,2 +1,3 @@
-SHA256 (cabal/dns-2.0.0.tar.gz) = 5ec9e58f71022bbc50888ec8b34be3be6f9e8d1566647b59b6e9bf169b1401cb
-SIZE (cabal/dns-2.0.0.tar.gz) = 20570
+TIMESTAMP = 1499620675
+SHA256 (cabal/dns-2.0.10.tar.gz) = ba03bc8fe25b58fd066588569eb5707a245cb098181e2d5cca72c239849aa6a3
+SIZE (cabal/dns-2.0.10.tar.gz) = 24142

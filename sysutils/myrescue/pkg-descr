@@ -1,0 +1,6 @@
+myrescue is a program to rescue the still-readable data from a damaged 
+hard-disk. It is similar in purpose to dd_rescue, but it tries to quickly get
+out of damaged areas, handling the non-damaged areas and then returning to
+the damaged sections later.
+
+WWW: https://sourceforge.net/projects/myrescue

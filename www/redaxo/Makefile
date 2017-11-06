@@ -15,6 +15,7 @@ LICENSE=	GPLv2
 NO_BUILD=	yes
 
 SUB_FILES+=	pkg-message pkg-deinstall
+
 USE_PHP=	mysql session xml zlib
 USES=		cpe zip:infozip
 
@@ -26,9 +27,10 @@ GD_DESC=	Enable Image Manager extension (requires gd)
 
 OPTIONS_DEFAULT=	APACHE MYSQLS GD
 
-MYSQLS_USE=	MYSQL=server
+MYSQLS_USES=	mysql:server
 
-APACHE_VARS=	WANT_PHP_MOD=yes
+APACHE_USES=	php:mod
+APACHE_USES_OFF=	php
 
 GD_USE=	PHP=gd
 

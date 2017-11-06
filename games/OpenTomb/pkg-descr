@@ -1,0 +1,7 @@
+OpenTomb is an open-source engine reimplementation project intended to
+play levels from all classic-era Tomb Raider games (TR 1-5) and custom
+TRLE levels.  The project does not use any old Tomb Raider source
+code, because all attempts to retrieve sources from Eidos / Core were
+in vain.
+
+WWW: https://opentomb.github.io/

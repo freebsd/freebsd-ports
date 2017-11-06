@@ -2,21 +2,24 @@
 # $FreeBSD$
 
 PORTNAME=	squirrelmail
-PORTVERSION=	20161030
+PORTVERSION=	20170705
 CATEGORIES=	mail www
-MASTER_SITES=	LOCAL/adamw/squirrelmail
+MASTER_SITES=	http://snapshots.squirrelmail.org/ \
+	http://freebsd.uzsolt.hu/src/
 DISTNAME=	${PORTNAME}-${PORTVERSION}_0200-SVN.stable
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	uzsolt@uzsolt.hu
 COMMENT=	Webmail system which accesses mail over IMAP
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/doc/COPYING
 
 USES=		cpe gettext perl5 php:web tar:bzip2
 USE_PHP=	session hash gettext mbstring pcre openssl xml
 USE_PERL5=	run
 NO_ARCH=	yes
+PORTSCOUT=	ignore:1
 
 WRKSRC=		${WRKDIR}/${PORTNAME}.stable/${PORTNAME}
 
@@ -84,6 +87,7 @@ do-install:
 		${COPYTREE_SHARE} "attach class config data functions help images include locale plugins po scripts src themes" \
 			${STAGEDIR}${SQUIRRELDIR})
 
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
 

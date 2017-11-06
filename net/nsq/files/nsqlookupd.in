@@ -1,0 +1,39 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: nsqlookupd
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+
+# Add the following lines to /etc/rc.conf to enable nsqlookupd:
+# nsqlookupd_enable="YES"
+# nsqlookupd_args="<set as needed>"
+
+
+. /etc/rc.subr
+
+name=nsqlookupd
+rcvar=nsqlookupd_enable
+
+load_rc_config $name
+
+: ${nsqlookupd_enable:="NO"}
+: ${nsqlookupd_args:=""}
+
+pidfile=/var/run/nsqlookupd.pid
+procname="%%PREFIX%%/bin/nsqlookupd"
+command="/usr/sbin/daemon"
+command_args="-f -p ${pidfile} ${procname} ${nsqlookupd_args}"
+
+start_precmd="nsqlookupd_prestart"
+
+nsqlookupd_prestart()
+{
+	if [ ! -d /var/db/nsq/nsqlookupd ] ; then
+		mkdir -p /var/db/nsq/nsqlookupd
+	fi
+	cd /var/db/nsq/nsqlookupd
+}
+
+run_rc_command "$1"

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xfce4-mpc-plugin
-PORTVERSION=	0.4.5
+PORTVERSION=	0.5.0
 PORTREVISION=	1
 CATEGORIES=	audio xfce
 MASTER_SITES=	XFCE/src/panel-plugins/${PORTNAME}/${PORTVERSION:R}
@@ -18,8 +18,10 @@ RUN_DEPENDS=	musicpd:audio/musicpd
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
-USES=		gettext gmake libtool pkgconfig xfce tar:bzip2
-USE_GNOME=	gtk20 intltool intlhack
+USES=		gettext gmake libtool pkgconfig tar:bzip2 xfce:gtk3
+USE_GNOME=	gtk30 intltool cairo gdkpixbuf2
 USE_XFCE=	panel
+
+CONFIGURE_ARGS+=	--with-libmpd=${LOCALBASE}
 
 .include <bsd.port.mk>

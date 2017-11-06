@@ -93,11 +93,11 @@ share/java/jedit/keymaps/jEdit_keys.props
 %%MACROS%%share/java/jedit/macros/Misc/Display_Character_Code.bsh
 %%MACROS%%share/java/jedit/macros/Misc/Display_Shortcuts.bsh
 %%MACROS%%share/java/jedit/macros/Misc/Evaluate_Buffer_in_BeanShell.bsh
-%%MACROS%%share/java/jedit/macros/Misc/Generate Encodings List.bsh
-%%MACROS%%share/java/jedit/macros/Misc/Generate Modes List.bsh
+%%MACROS%%share/java/jedit/macros/Misc/Generate_Encodings_List.bsh
+%%MACROS%%share/java/jedit/macros/Misc/Generate_Modes_List.bsh
 %%MACROS%%share/java/jedit/macros/Misc/Hex_Convert.bsh
 %%MACROS%%share/java/jedit/macros/Misc/HyperSearch_Results_to_Buffer.bsh
-%%MACROS%%share/java/jedit/macros/Misc/Insert Plugins List.bsh
+%%MACROS%%share/java/jedit/macros/Misc/Insert_Plugins_List.bsh
 %%MACROS%%share/java/jedit/macros/Misc/Make_Bug_Report.bsh
 %%MACROS%%share/java/jedit/macros/Misc/Run_Script.bsh
 %%MACROS%%share/java/jedit/macros/Misc/Show_Threads.bsh
@@ -167,6 +167,7 @@ share/java/jedit/modes/dart.xml
 share/java/jedit/modes/django.xml
 share/java/jedit/modes/dot.xml
 share/java/jedit/modes/doxygen.xml
+share/java/jedit/modes/drawj2d.xml
 share/java/jedit/modes/dsssl.xml
 share/java/jedit/modes/eiffel.xml
 share/java/jedit/modes/embperl.xml
@@ -205,6 +206,7 @@ share/java/jedit/modes/java.xml
 share/java/jedit/modes/javacc.xml
 share/java/jedit/modes/javafx.xml
 share/java/jedit/modes/javascript.xml
+share/java/jedit/modes/java-module-info.xml
 share/java/jedit/modes/jcl.xml
 share/java/jedit/modes/jedit-actions.xml
 share/java/jedit/modes/jflex.xml
@@ -222,12 +224,14 @@ share/java/jedit/modes/logs.xml
 share/java/jedit/modes/logtalk.xml
 share/java/jedit/modes/lotos.xml
 share/java/jedit/modes/lua.xml
+share/java/jedit/modes/m4.xml
 share/java/jedit/modes/macroscheduler.xml
 share/java/jedit/modes/mail.xml
 share/java/jedit/modes/makefile.xml
 share/java/jedit/modes/maple.xml
 share/java/jedit/modes/markdown.xml
 share/java/jedit/modes/maven.xml
+share/java/jedit/modes/mavscript.xml
 share/java/jedit/modes/ml.xml
 share/java/jedit/modes/modula3.xml
 share/java/jedit/modes/moin.xml
@@ -265,6 +269,7 @@ share/java/jedit/modes/powershell.xml
 share/java/jedit/modes/progress.xml
 share/java/jedit/modes/prolog.xml
 share/java/jedit/modes/props.xml
+share/java/jedit/modes/proto.xml
 share/java/jedit/modes/psp.xml
 share/java/jedit/modes/ptl.xml
 share/java/jedit/modes/pure.xml
@@ -308,6 +313,7 @@ share/java/jedit/modes/squidconf.xml
 share/java/jedit/modes/ssharp.xml
 share/java/jedit/modes/stata.xml
 share/java/jedit/modes/svn-commit.xml
+share/java/jedit/modes/swift.xml
 share/java/jedit/modes/swig.xml
 share/java/jedit/modes/tcl.xml
 share/java/jedit/modes/tex.xml

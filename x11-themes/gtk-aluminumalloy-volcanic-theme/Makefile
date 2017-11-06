@@ -7,16 +7,16 @@ PORTREVISION?=	8
 CATEGORIES=	x11-themes gnome
 MASTER_SITES=	http://www.users.monornet.hu/linux/gtk2/oldies/
 PKGNAMEPREFIX?=	${TYPE}-
-PKGNAMESUFFIX?=	-${FLAVOR}-theme
-DISTNAME=	aa_${FLAVOR}
+PKGNAMESUFFIX?=	-${THEME_FLAVOR}-theme
+DISTNAME=	aa_${THEME_FLAVOR}
 
 MAINTAINER=	danfe@FreeBSD.org
-COMMENT=	Port of Mac OS X theme Aluminum Alloy (${FLAVOR} flavor)
+COMMENT=	Port of Mac OS X theme Aluminum Alloy (${THEME_FLAVOR} flavor)
 
 TYPE?=		gtk
-FLAVOR?=	volcanic
+THEME_FLAVOR?=	volcanic
 
-THEME_NAME=	AluminumAlloy-${FLAVOR:tu:C/^(.).*$/\1/g}${FLAVOR:C/^(.)//}
+THEME_NAME=	AluminumAlloy-${THEME_FLAVOR:tu:C/^(.).*$/\1/g}${THEME_FLAVOR:C/^(.)//}
 WRKSRC=		${WRKDIR}/${THEME_NAME}
 
 USES=	tar:bzip2

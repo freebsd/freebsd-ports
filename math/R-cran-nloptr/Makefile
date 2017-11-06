@@ -3,6 +3,7 @@
 
 PORTNAME=	nloptr
 PORTVERSION=	1.0.4
+PORTREVISION=	1
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -13,7 +14,7 @@ LICENSE=	LGPL3
 
 LIB_DEPENDS=	libnlopt.so:math/nlopt
 
-USES=	cran:auto-plist pkgconfig
+USES=		cran:auto-plist,compiles pkgconfig
 
 post-patch:
 	@${REINPLACE_CMD} -e 's/<<</</' ${WRKSRC}/configure

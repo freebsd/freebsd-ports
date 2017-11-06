@@ -1,4 +1,12 @@
-Extensive Toolkit for template processing.
+The Template Toolkit is a fast, flexible and highly extensible template
+processing system. It is free (in both senses: beer and speech) open source
+software and runs on virtually every modern operating system known to man. It
+is written in the Perl programming language with certain key elements coded in
+C for maximum speed. However you don't need to know any Perl (or C) to be able
+to use it.
 
-WWW: http://search.cpan.org/dist/Template-Toolkit/
+It is ideally suited, but not limited to, the creation of static and dynamic
+web content and incorporates various modules and tools to simplify this
+process. It is mature, robust, reliable and well documented.
+
 WWW: http://www.template-toolkit.org/

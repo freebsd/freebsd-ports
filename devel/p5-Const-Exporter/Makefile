@@ -17,6 +17,8 @@ LICENSE=	ART20
 BUILD_DEPENDS=	p5-Const-Fast>=0.014:devel/p5-Const-Fast \
 		p5-Package-Stash>=0:devel/p5-Package-Stash
 RUN_DEPENDS:=	${BUILD_DEPENDS}
+TEST_DEPENDS=	p5-Hash-Objectify>=0:devel/p5-Hash-Objectify \
+		p5-Test-Most>=0:devel/p5-Test-Most
 
 NO_ARCH=	yes
 USE_PERL5=	configure

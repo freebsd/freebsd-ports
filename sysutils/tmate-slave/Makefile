@@ -2,12 +2,13 @@
 
 PORTNAME=	tmate-slave
 PORTVERSION=	0.0.0.2016051901
+PORTREVISION=	2
 CATEGORIES=	sysutils
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Instant terminal sharing server
 
-LIB_DEPENDS=	libevent.so:devel/libevent2 \
+LIB_DEPENDS=	libevent.so:devel/libevent \
 		libmsgpackc.so:devel/msgpack \
 		libssh_threads.so:security/libssh
 

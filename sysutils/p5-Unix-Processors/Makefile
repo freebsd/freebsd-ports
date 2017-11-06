@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Unix-Processors
-PORTVERSION=	2.044
+PORTVERSION=	2.046
 CATEGORIES=	sysutils perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	jadawin@FreeBSD.org
 COMMENT=	Interface to processor (CPU) information
 
-LICENSE=	ART10 GPLv1
+LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 USES=		perl5

@@ -4,7 +4,7 @@
 PORTNAME=	x86
 PORTREVISION=	${X86_PR}
 
-MAINTAINER=	marino@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C/Ada cross-compiler, target: Android x86
 
 DROID_TARGET=	i686-aux-linux-android

@@ -2,7 +2,7 @@
 
 PORTNAME=	riak-cs
 PORTVERSION=	2.1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://s3.amazonaws.com/downloads.basho.com/riak-cs/${PORTVERSION:R}/${PORTVERSION}/ \
 		http://downloads.basho.com.s3.amazonaws.com/riak-cs/${PORTVERSION:R}/${PORTVERSION}/

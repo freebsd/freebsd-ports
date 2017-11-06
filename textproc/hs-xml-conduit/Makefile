@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	xml-conduit
-PORTVERSION=	1.3.1
+PORTVERSION=	1.5.1
 CATEGORIES=	textproc haskell
 
 MAINTAINER=	haskell@FreeBSD.org

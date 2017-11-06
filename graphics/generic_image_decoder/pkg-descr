@@ -1,6 +1,6 @@
 The Generic Image Decoder (GID) is an Ada package for decoding a broad
 variety on image formats from any data stream to any kind of medium.
-Examples include in-memory bitmap, a GUI objecct, another stream, floating
+Examples include in-memory bitmap, a GUI object, another stream, floating
 point data for scientific calculations, a browser element or a device.
 Animations are also supported.  GID features:
 

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fancybox
-PORTVERSION=	2.1.6
+PORTVERSION=	3.1.25
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 
@@ -14,13 +14,12 @@ NO_BUILD=	yes
 USES=		cpe
 
 GH_ACCOUNT=	fancyapps
-GH_PROJECT=	fancyBox
 USE_GITHUB=	yes
 
 CPE_VENDOR=	fancybox_project
 
 do-install:
 	${MKDIR} ${STAGEDIR}${WWWDIR}/
-	cd ${WRKSRC}/source/ && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR}/
+	cd ${WRKSRC}/dist/ && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR}/
 
 .include <bsd.port.mk>

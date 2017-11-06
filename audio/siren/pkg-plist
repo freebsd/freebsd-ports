@@ -4,6 +4,9 @@ lib/siren/ip/mad.so
 lib/siren/ip/opus.so
 lib/siren/ip/vorbis.so
 lib/siren/ip/wavpack.so
+%%FFMPEG%%lib/siren/ip/ffmpeg.so
+%%MPG123%%lib/siren/ip/mpg123.so
 %%OSS%%lib/siren/op/oss.so
 %%PULSEAUDIO%%lib/siren/op/pulse.so
+%%SNDIO%%lib/siren/op/sndio.so
 man/man1/siren.1.gz

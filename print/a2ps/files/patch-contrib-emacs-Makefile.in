@@ -1,7 +1,6 @@
-Index: contrib/emacs/Makefile.in
---- contrib/emacs/Makefile.in.orig	2011-09-27 15:17:26.000000000 +0900
-+++ contrib/emacs/Makefile.in	2011-09-27 15:18:10.000000000 +0900
-@@ -159,8 +159,9 @@
+--- contrib/emacs/Makefile.in.orig	2000-02-24 18:01:08 UTC
++++ contrib/emacs/Makefile.in
+@@ -159,8 +159,9 @@ Makefile: $(srcdir)/Makefile.in  $(top_b
  
  install-dist_lispLISP: $(dist_lisp_LISP) $(ELCFILES)
  	@$(NORMAL_INSTALL)
@@ -13,7 +12,7 @@ Index: contrib/emacs/Makefile.in
  	  if test -f "$$p"; then d= ; else d="$(srcdir)/"; fi; \
  	  f="`echo $$p | sed -e 's|^.*/||'`"; \
  	  echo " $(INSTALL_DATA) $$d$$p $(DESTDIR)$(lispdir)/$$f"; \
-@@ -169,7 +170,8 @@
+@@ -169,7 +170,8 @@ install-dist_lispLISP: $(dist_lisp_LISP)
  	    echo " $(INSTALL_DATA) $${p}c $(DESTDIR)$(lispdir)/$${f}c"; \
  	    $(INSTALL_DATA) $${p}c $(DESTDIR)$(lispdir)/$${f}c; \
  	  else : ; fi; \

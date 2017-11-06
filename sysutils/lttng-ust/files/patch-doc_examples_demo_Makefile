@@ -1,0 +1,17 @@
+--- doc/examples/demo/Makefile.orig	2016-08-08 21:25:36 UTC
++++ doc/examples/demo/Makefile
+@@ -14,12 +14,8 @@
+ #
+ # This makefile is purposefully kept simple to support GNU and BSD make.
+ 
+-ifdef AM_CC
+-	CC = $(AM_CC)
+-endif
+-
+-LIBS = -ldl	# On Linux
+-#LIBS = -lc	# On BSD
++#LIBS = -ldl	# On Linux
++LIBS =	# On FreeBSD
+ LOCAL_CPPFLAGS += -I.
+ 
+ all: demo lttng-ust-provider-ust-tests-demo.so lttng-ust-provider-ust-tests-demo3.so

@@ -4,6 +4,7 @@
 PORTNAME=	lmms
 PORTVERSION=	1.1.3
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	audio
 
@@ -18,6 +19,7 @@ LIB_DEPENDS=	libFLAC.so:audio/flac \
 		libsamplerate.so:audio/libsamplerate \
 		libsndfile.so:audio/libsndfile \
 		libvorbis.so:audio/libvorbis \
+		libogg.so:audio/libogg \
 		libfftw3.so:math/fftw3 \
 		libfftw3f.so:math/fftw3-float \
 		libsamplerate.so:audio/libsamplerate \
@@ -27,10 +29,11 @@ RUN_DEPENDS=	${LOCALBASE}/share/ladspa/rdf/caps.rdf:audio/caps-plugins \
 		${LOCALBASE}/share/ladspa/rdf/swh-plugins.rdf:audio/swhplugins \
 		${LOCALBASE}/share/ladspa/rdf/tap-plugins.rdf:audio/tap-plugins
 
-OPTIONS_DEFINE=	JACK PULSEAUDIO SDL
+OPTIONS_DEFINE=	OSS JACK PULSEAUDIO PORTAUDIO SDL
+OPTIONS_DEFAULT=OSS
 
 USE_LDCONFIG=	yes
-USE_XORG=	xft
+USE_XORG=	x11 xext xft ice sm
 USE_QT4=	corelib gui xml moc_build uic_build rcc_build \
 		qmake_build
 USE_GITHUB=	yes
@@ -54,6 +57,9 @@ JACK_CMAKE_OFF=		-DWANT_JACK:BOOL=OFF
 PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
 PULSEAUDIO_CMAKE_OFF=	-DWANT_PULSEAUDIO:BOOL=OFF
 
+PORTAUDIO_LIB_DEPENDS=	libportaudio.so:audio/portaudio
+PORTAUDIO_CMAKE_OFF=	-DWANT_PORTAUDIO:BOOL=OFF
+
 SDL_USE=		SDL=sdl
 SDL_CMAKE_OFF=		-DWANT_SDL:BOOL=OFF
 
@@ -76,6 +82,12 @@ post-patch:
 .endfor
 	@${REINPLACE_CMD} -e 's/lib64/lib/' \
 		${WRKSRC}/cmake/modules/DetectMachine.cmake
+
+post-patch-OSS-off:
+	@${REINPLACE_CMD} \
+		-e 's|SET(LMMS_HAVE_OSS TRUE)|SET(LMMS_HAVE_OSS FALSE)|; \
+		    s|SET(STATUS_OSS "OK")|SET(STATUS_OSS "<disabled>")|' \
+		${WRKSRC}/CMakeLists.txt
 
 post-install:
 	@${LN} -sf ${DATADIR}/themes/default/icon.png \

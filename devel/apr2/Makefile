@@ -16,7 +16,7 @@ LICENSE=	APACHE20
 
 LIB_DEPENDS=	libexpat.so:textproc/expat2
 
-NO_PACKAGE=	Developper only package
+NO_PACKAGE=	Developer only package
 
 # r1676013
 SNAPDATE=	20150425134304

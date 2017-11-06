@@ -3,7 +3,7 @@
 
 PORTNAME=	x10
 PORTVERSION=	2.2.1
-PORTREVISION=	4
+PORTREVISION=	6
 CATEGORIES=	lang devel java
 MASTER_SITES=	http://dist.codehaus.org/x10/dependencies/ \
 		SF
@@ -24,6 +24,8 @@ MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Object-oriented parallel programming language
 
 LICENSE=	EPL
+
+BROKEN=		Fails to build with modern compilers (cf. PR 219282)
 
 USES=	tar:bzip2
 USE_JAVA=	yes

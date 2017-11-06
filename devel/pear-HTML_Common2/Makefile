@@ -10,6 +10,6 @@ COMMENT=	PEAR::HTML_Common2 is a base class for other HTML classes
 
 LICENSE=	BSD2CLAUSE
 
-USES=	pear
+USES=		pear
 
 .include <bsd.port.mk>

@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	apertium
-PORTVERSION=	3.4.0
+PORTVERSION=	3.4.2
 CATEGORIES=	textproc
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION:R}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bofs@FreeBSD.org
 COMMENT=	Toolbox to build shallow-transfer machine translation systems
 
 LICENSE=	GPLv2+
@@ -17,15 +17,12 @@ LIB_DEPENDS=	liblttoolbox3.so:textproc/lttoolbox \
 		libpcre.so:devel/pcre
 RUN_DEPENDS=	bash:shells/bash
 
-USES=		autoreconf pathfix pkgconfig libtool
+USES=		autoreconf pathfix pkgconfig libtool localbase:ldflags
 USE_GNOME=	libxml2 libxslt
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 MAKE_JOBS_UNSAFE=	yes
-
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 
 PLIST_SUB=	APVER="${PORTVERSION:R}"
 

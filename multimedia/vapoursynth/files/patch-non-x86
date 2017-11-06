@@ -9,13 +9,15 @@
  #include <sys/auxv.h>
  
  void getCPUFeatures(CPUFeatures *cpuFeatures) {
-@@ -89,5 +89,7 @@ void getCPUFeatures(CPUFeatures *cpuFeat
+@@ -98,5 +98,9 @@ void getCPUFeatures(CPUFeatures *cpuFeatures) {
  #endif
  }
  #else
 -#error Do not know how to get CPU features.
 +void getCPUFeatures(CPUFeatures *cpuFeatures) {
 +    memset(cpuFeatures, 0, sizeof(CPUFeatures));
++
++    cpuFeatures->can_run_vs = 1;
 +}
  #endif
 --- src/core/cpufeatures.h.orig	2016-02-02 16:12:42 UTC

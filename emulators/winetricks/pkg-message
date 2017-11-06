@@ -1,2 +1,5 @@
-This port requires one of the wine ports installed.
-Please pick between wine, wine-devel, or wine-staging.
+The winetricks port requires a 32 bit version of Wine
+
+Please install one of the following packages:
+ wine, wine-devel, or wine-staging on i386
+ i386-wine, i386-wine-devel, or i386-wine-staging on amd64

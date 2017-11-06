@@ -1,4 +1,7 @@
+@mode 755
 arduino/arduino
+bin/arduino
+@mode
 %%EXAMPLES%%arduino/examples/01.Basics/AnalogReadSerial/AnalogReadSerial.ino
 %%EXAMPLES%%arduino/examples/01.Basics/BareMinimum/BareMinimum.ino
 %%EXAMPLES%%arduino/examples/01.Basics/Blink/Blink.ino
@@ -565,8 +568,7 @@ arduino/lib/core.jar
 arduino/lib/ecj.jar
 arduino/lib/jna.jar
 arduino/lib/keywords.txt
-arduino/lib/librxtxSerial.so
-arduino/lib/librxtxSerial64.so
+arduino/lib/librxtxSerial%%ARCH%%.so
 arduino/lib/pde.jar
 arduino/lib/preferences.txt
 arduino/lib/theme/buttons.gif
@@ -1265,4 +1267,3 @@ arduino/revisions.txt
 arduino/tools/Mangler/make.sh
 arduino/tools/Mangler/src/Mangler.java
 arduino/tools/howto.txt
-bin/arduino

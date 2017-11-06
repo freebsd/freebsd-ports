@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	BioPerl
-PORTVERSION=	1.007001
+PORTVERSION=	1.007002
 CATEGORIES=	biology perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:CJFIELDS
@@ -11,11 +11,12 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Collection of Perl modules for bioinformatics
 
-LICENSE=	ART10 GPLv1
+LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Algorithm-Munkres>=0:math/p5-Algorithm-Munkres \
 		p5-Array-Compare>=0:misc/p5-Array-Compare \
+		p5-CGI>=0:www/p5-CGI \
 		p5-Clone>=0:devel/p5-Clone \
 		p5-Convert-Binary-C>=0:converters/p5-Convert-Binary-C \
 		p5-DBD-mysql>=0:databases/p5-DBD-mysql \
@@ -54,9 +55,10 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Most>=0:devel/p5-Test-Most \
 		p5-URI>=0:net/p5-URI
 
-USES=		perl5
+USES=		perl5 shebangfix
 USE_PERL5=	modbuild
 NO_ARCH=	yes
+SHEBANG_FILES=	scripts/Bio-DB-SeqFeature-Store/bp_seqfeature_load.pl
 
 PORTDATA=	*
 PORTDOCS=	*
@@ -90,11 +92,4 @@ post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${CP} -R ${WRKSRC}/examples/* ${STAGEDIR}${EXAMPLESDIR}
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} >= 502200
-BUILD_DEPENDS+=	p5-CGI>=0:www/p5-CGI
-RUN_DEPENDS+=	p5-CGI>=0:www/p5-CGI
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -26,6 +26,7 @@ lib/erlang/lib/relx-%%VERSION%%/include/relx.hrl
 lib/erlang/lib/relx-%%VERSION%%/priv/templates/bin
 lib/erlang/lib/relx-%%VERSION%%/priv/templates/bin_windows
 lib/erlang/lib/relx-%%VERSION%%/priv/templates/builtin_hook_pid
+lib/erlang/lib/relx-%%VERSION%%/priv/templates/builtin_hook_status
 lib/erlang/lib/relx-%%VERSION%%/priv/templates/builtin_hook_wait_for_process
 lib/erlang/lib/relx-%%VERSION%%/priv/templates/builtin_hook_wait_for_vm_start
 lib/erlang/lib/relx-%%VERSION%%/priv/templates/erl_ini

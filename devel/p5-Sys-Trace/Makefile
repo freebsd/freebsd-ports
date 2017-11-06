@@ -11,10 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Interface to system call tracing interfaces
 
-LICENSE=	WTFPL2
-LICENSE_NAME=	Do What The Fuck You Want To Public License version 2
+LICENSE=	WTFPL
 LICENSE_FILE=	${WRKSRC}/README
-LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 USES=		perl5
 USE_PERL5=	configure

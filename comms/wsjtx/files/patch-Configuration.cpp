@@ -1,18 +1,19 @@
---- Configuration.cpp.orig	2017-01-05 15:57:44 UTC
+--- Configuration.cpp.orig	2017-10-19 22:13:43 UTC
 +++ Configuration.cpp
-@@ -2548,13 +2548,13 @@ void Configuration::impl::fill_port_comb
- 
+@@ -2681,14 +2681,14 @@ void Configuration::impl::fill_port_comb
  auto Configuration::impl::apply_calibration (Frequency f) const -> Frequency
  {
--  return std::llround (frequency_calibration_intercept_
-+  return llround (frequency_calibration_intercept_
-                        + (1. + frequency_calibration_slope_ppm_ / 1.e6) * f);
+   if (frequency_calibration_disabled_) return f;
+-  return std::llround (calibration_.intercept
++  return llround (calibration_.intercept
+                        + (1. + calibration_.slope_ppm / 1.e6) * f);
  }
  
  auto Configuration::impl::remove_calibration (Frequency f) const -> Frequency
  {
--  return std::llround ((f - frequency_calibration_intercept_)
-+  return llround ((f - frequency_calibration_intercept_)
-                        / (1. + frequency_calibration_slope_ppm_ / 1.e6));
+   if (frequency_calibration_disabled_) return f;
+-  return std::llround ((f - calibration_.intercept)
++  return llround ((f - calibration_.intercept)
+                        / (1. + calibration_.slope_ppm / 1.e6));
  }
  

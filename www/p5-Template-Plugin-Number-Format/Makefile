@@ -7,7 +7,7 @@ CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	lth@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Plugin/filter interface to Number::Format
 
 RUN_DEPENDS=	p5-Number-Format>0:textproc/p5-Number-Format \

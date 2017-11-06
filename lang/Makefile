@@ -20,7 +20,6 @@
     SUBDIR += basic256
     SUBDIR += beignet
     SUBDIR += bf2c
-    SUBDIR += bigloo
     SUBDIR += bsh
     SUBDIR += bwbasic
     SUBDIR += c
@@ -37,8 +36,6 @@
     SUBDIR += clang33
     SUBDIR += clang34
     SUBDIR += clang35
-    SUBDIR += clang36
-    SUBDIR += clang37
     SUBDIR += clang38
     SUBDIR += cling
     SUBDIR += clojure
@@ -50,7 +47,9 @@
     SUBDIR += cparser
     SUBDIR += csharp-mode.el
     SUBDIR += cython
+    SUBDIR += cython3
     SUBDIR += diveintopython
+    SUBDIR += dlang-tools
     SUBDIR += dlv
     SUBDIR += dmd1
     SUBDIR += dmd2
@@ -69,6 +68,7 @@
     SUBDIR += erlang-runtime17
     SUBDIR += erlang-runtime18
     SUBDIR += erlang-runtime19
+    SUBDIR += erlang-runtime20
     SUBDIR += erlang-wx
     SUBDIR += execline
     SUBDIR += expect
@@ -85,7 +85,6 @@
     SUBDIR += fpc-rtl-extra
     SUBDIR += fpc-rtl-objpas
     SUBDIR += fpc-rtl-unicode
-    SUBDIR += fpc-tcl
     SUBDIR += fpc-units
     SUBDIR += fpc-utils
     SUBDIR += fsharp
@@ -99,17 +98,20 @@
     SUBDIR += gcc48
     SUBDIR += gcc49
     SUBDIR += gcc5
-    SUBDIR += gcc5-aux
-    SUBDIR += gcc5-devel
     SUBDIR += gcc6
     SUBDIR += gcc6-aux
     SUBDIR += gcc6-devel
+    SUBDIR += gcc7
     SUBDIR += gcc7-devel
+    SUBDIR += gcc8-devel
     SUBDIR += gcl
     SUBDIR += gforth
     SUBDIR += ghc
     SUBDIR += gjs
     SUBDIR += gnat_util
+    SUBDIR += gnatcross-aarch64
+    SUBDIR += gnatcross-binutils-aarch64
+    SUBDIR += gnatcross-sysroot-aarch64
     SUBDIR += gnatdroid-armv7
     SUBDIR += gnatdroid-binutils
     SUBDIR += gnatdroid-binutils-x86
@@ -151,9 +153,9 @@
     SUBDIR += kturtle
     SUBDIR += lafontaine
     SUBDIR += lci
+    SUBDIR += ldc
     SUBDIR += lfe
     SUBDIR += libhx
-    SUBDIR += libjit
     SUBDIR += libobjc2
     SUBDIR += librep
     SUBDIR += libstdc++_stldoc_4.2.2
@@ -181,6 +183,7 @@
     SUBDIR += mosml
     SUBDIR += mtasc
     SUBDIR += munger
+    SUBDIR += myrddin
     SUBDIR += nawk
     SUBDIR += nbc
     SUBDIR += nbfc
@@ -198,10 +201,10 @@
     SUBDIR += ocaml
     SUBDIR += ocaml-autoconf
     SUBDIR += ocaml-nox11
-    SUBDIR += ofc
     SUBDIR += ohugs
     SUBDIR += onyx
     SUBDIR += oo2c
+    SUBDIR += opencoarrays
     SUBDIR += opendylan
     SUBDIR += p2c
     SUBDIR += p5-Data-JavaScript
@@ -214,11 +217,11 @@
     SUBDIR += p5-JavaScript-Squish
     SUBDIR += p5-JavaScript-Value-Escape
     SUBDIR += p5-List-MoreUtils
+    SUBDIR += p5-List-MoreUtils-XS
     SUBDIR += p5-Marpa
     SUBDIR += p5-Marpa-PP
     SUBDIR += p5-Marpa-XS
     SUBDIR += p5-Modern-Perl
-    SUBDIR += p5-Parse-Perl
     SUBDIR += p5-Perl6-Subs
     SUBDIR += p5-Promises
     SUBDIR += p5-Pugs-Compiler-Rule
@@ -239,9 +242,9 @@
     SUBDIR += pcc
     SUBDIR += pecl-perl
     SUBDIR += perl5-devel
-    SUBDIR += perl5.20
     SUBDIR += perl5.22
     SUBDIR += perl5.24
+    SUBDIR += perl5.26
     SUBDIR += petite-chez
     SUBDIR += pfe
     SUBDIR += phantomjs
@@ -252,6 +255,8 @@
     SUBDIR += php56-extensions
     SUBDIR += php70
     SUBDIR += php70-extensions
+    SUBDIR += php71
+    SUBDIR += php71-extensions
     SUBDIR += php_doc
     SUBDIR += picoc
     SUBDIR += pike78
@@ -260,6 +265,7 @@
     SUBDIR += ptoc
     SUBDIR += pure
     SUBDIR += py-clojure
+    SUBDIR += py-hy
     SUBDIR += py-mx-base
     SUBDIR += py-prolog
     SUBDIR += py-qt5-qml
@@ -275,7 +281,6 @@
     SUBDIR += python2
     SUBDIR += python27
     SUBDIR += python3
-    SUBDIR += python33
     SUBDIR += python34
     SUBDIR += python35
     SUBDIR += python36
@@ -293,7 +298,6 @@
     SUBDIR += rexx-wrapper
     SUBDIR += rhino
     SUBDIR += rubinius
-    SUBDIR += ruby21
     SUBDIR += ruby22
     SUBDIR += ruby23
     SUBDIR += ruby24
@@ -326,6 +330,7 @@
     SUBDIR += spidermonkey170
     SUBDIR += spidermonkey185
     SUBDIR += spidermonkey24
+    SUBDIR += spidermonkey38
     SUBDIR += spl
     SUBDIR += squeak
     SUBDIR += squirrel
@@ -353,7 +358,6 @@
     SUBDIR += v8-devel
     SUBDIR += vala
     SUBDIR += visualworks
-    SUBDIR += whitespace
     SUBDIR += x10
     SUBDIR += yabasic
     SUBDIR += yap

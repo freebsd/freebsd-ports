@@ -39,5 +39,7 @@ post-install:
 	${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py \
 		-f -d ${PYTHONPREFIX_SITELIBDIR} \
 		${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
+	${STRIP_CMD} ${STAGEDIR}/${PREFIX}/bin/sip 
+	${STRIP_CMD} ${STAGEDIR}/${PYTHON_SITELIBDIR}/sip.so
 
 .include <bsd.port.mk>

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	global
-PORTVERSION=	6.5.6
+PORTVERSION=	6.5.7
 CATEGORIES=	devel
 MASTER_SITES=	GNU
 
@@ -24,6 +24,7 @@ PORTDOCS=	AUTHORS COPYING ChangeLog FAQ INSTALL LICENSE NEWS README THANKS
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^gtags_DATA = / s|AUTHOR.*THANKS||' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e '1d' ${WRKSRC}/plugin-factory/pygments_parser.py.in
 
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/

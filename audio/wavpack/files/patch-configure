@@ -1,0 +1,11 @@
+--- configure.orig	2017-01-17 04:32:28 UTC
++++ configure
+@@ -13715,7 +13715,7 @@ $as_echo_n "checking if assembly optimiz
+   i386|i486|i586|i686|i786) :
+     $as_echo "#define OPT_ASM_X86 1" >>confdefs.h
+  asm_selected=x86 ;; #(
+-  x86_64) :
++  x86_64|amd64) :
+     $as_echo "#define OPT_ASM_X64 1" >>confdefs.h
+  asm_selected=x64 ;; #(
+   arm*) :

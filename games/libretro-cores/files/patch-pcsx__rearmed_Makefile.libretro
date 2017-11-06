@@ -1,7 +1,7 @@
---- pcsx_rearmed/Makefile.libretro.orig	2015-11-01 09:25:51 UTC
+--- pcsx_rearmed/Makefile.libretro.orig	2016-10-18 03:38:59 UTC
 +++ pcsx_rearmed/Makefile.libretro
-@@ -23,7 +23,6 @@ TARGET_NAME := pcsx_rearmed
- LIBM := -lm
+@@ -24,7 +24,6 @@ CFLAGS ?=
+ TARGET_NAME := pcsx_rearmed
  LIBZ := -lz
  LIBPTHREAD := -lpthread
 -LIBDL := -ldl

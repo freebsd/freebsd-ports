@@ -6,4 +6,4 @@ and backtracking of PROLOG, and allows a programmer to instrument
 Python classes with PROLOG code.  Callbacks from PROLOG to Python are
 also supported.
 
-WWW: http://sourceforge.net/projects/pyprolog/
+WWW: https://sourceforge.net/projects/pyprolog/

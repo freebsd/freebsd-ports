@@ -1,2 +1,3 @@
-SHA256 (cabal/directory-tree-0.12.0.tar.gz) = ff09c6e66a5038f905ea423700d60e538286c12b83fecda70b2932ee4eb5b3c5
-SIZE (cabal/directory-tree-0.12.0.tar.gz) = 12024
+TIMESTAMP = 1499627831
+SHA256 (cabal/directory-tree-0.12.1.tar.gz) = e2084495b3a226cf54d949635c86fc14e89daa09d86cce39e3c3cf898ae6e517
+SIZE (cabal/directory-tree-0.12.1.tar.gz) = 12261

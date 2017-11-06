@@ -28,7 +28,7 @@ RUN_DEPENDS=	p5-Locale-gettext>=0:devel/p5-Locale-gettext \
 DIST_SUBDIR=	vdr
 PATCH_STRIP=	-p1
 USES=		shebangfix tar:bzip2
-SHEBANG_FILES=	vdradmind vdradmind.pl
+SHEBANG_FILES=	vdradmind.pl
 WRKSRC=		${WRKDIR}/${PORTNAME:S/_/-/}-${DISTVERSION}
 NO_BUILD=	yes
 NO_ARCH=	yes

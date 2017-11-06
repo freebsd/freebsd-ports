@@ -4,29 +4,32 @@
 PORTNAME=	syslog-ng
 PORTVERSION=	3.7.3
 PORTREVISION=	7
+CATEGORIES=	sysutils
+#MASTER_SITES=	https://github.com/balabit/syslog-ng/releases/download/syslog-ng-${DISTVERSION}/
+DISTNAME=	syslog-ng-${DISTVERSION}_with_man
+MASTER_SITES=   http://peter.czanik.hu/freebsd/
+
 .if !defined(MASTERDIR)
 PKGNAMESUFFIX=	37
 .endif
-CATEGORIES=	sysutils
-DISTVERSION=	${PORTVERSION:S/a/alpha/:S/b/beta/:S/r/rc/}
-#DISTFILES=	syslog-ng-${DISTVERSION}.tar.gz
-#MASTER_SITES=	https://github.com/balabit/syslog-ng/releases/download/syslog-ng-${DISTVERSION}/
-DISTFILES=      syslog-ng-${DISTVERSION}_with_man.tar.gz
-MASTER_SITES=   http://peter.czanik.hu/freebsd/
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Powerful syslogd replacement
 
-BROKEN_sparc64=		Does not compile on sparc64: gcc core dump
-
 LIB_DEPENDS=	libevtlog.so:sysutils/eventlog \
 		libpcre.so:devel/pcre \
 		libuuid.so:misc/e2fsprogs-libuuid
-BUILD_DEPENDS=		xsltproc:textproc/libxslt \
+BUILD_DEPENDS=		xsltproc:textproc/libxslt
+
+BROKEN_powerpc64=	fails to link: Internal error: Segmentation fault (program ld)
+BROKEN_sparc64=		fails to link: Internal error: Segmentation fault (program ld)
 
 CONFLICTS?=	syslog-ng-[0-9]* syslog-ng[0-9]-[0-9]* \
 		syslog-ng[0-9][0-9]-[0-9]* \
-		syslog-ng-devel-[0-9]*
+		syslog-ng[0-9][0-9][0-9]-[0-9]* \
+		syslog-ng-devel-[0-9]* \
+		syslog-ng-incubator-*
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 
 MAKE_JOBS_UNSAFE=	yes
@@ -53,7 +56,7 @@ INSTALL_TARGET=	install-strip
 CONFIGURE_ARGS=	--sysconfdir=${LOCALBASE}/etc --localstatedir=/var/db \
 		--enable-dynamic-linking --enable-manpages \
 		--disable-linux-caps \
-		--datadir=${PREFIX}/share/syslog-ng/ 
+		--datadir=${PREFIX}/share/syslog-ng/
 
 CONFIGURE_ENV+=		OPENSSL_CFLAGS="-I${OPENSSLINC}" \
 			OPENSSL_LIBS="-L${OPENSSLLIB} -lcrypto -lssl"
@@ -92,28 +95,28 @@ MONGO_PLIST_FILES=		lib/syslog-ng/libafmongodb.so
 
 JSON_CONFIGURE_ENABLE=		json
 JSON_LIB_DEPENDS=		libjson-c.so:devel/json-c
-JSON_PLIST_FILES= 		lib/syslog-ng/libjson-plugin.so
+JSON_PLIST_FILES=		lib/syslog-ng/libjson-plugin.so
 
 JAVA_CONFIGURE_ENABLE=		java
 JAVA_BROKEN=			Unsupported maven downloads.
 JAVA_USE_JAVA=			yes
 JAVA_BUILD_DEPENDS=		gradle:devel/gradle
 JAVA_BUILD_DEPENDS=		bash:shells/bash
-JAVA_PLIST_FILES= 		lib/syslog-ng/libmod-java.so \
-			lib/syslog-ng/java-modules/syslog-ng-core.jar \
-			lib/syslog-ng/java-modules/log4j-1.2.16.jar \
-			lib/syslog-ng/java-modules/elastic.jar \
-			lib/syslog-ng/java-modules/http.jar \
-			lib/syslog-ng/java-modules/kafka.jar \
-			lib/syslog-ng/java-modules/java-modules.jar \
-			lib/syslog-ng/java-modules/hdfs.jar \
-			lib/syslog-ng/java-modules/syslog-ng-common.jar \
-			lib/syslog-ng/java-modules/dummy.jar
+JAVA_PLIST_FILES=		lib/syslog-ng/libmod-java.so \
+				lib/syslog-ng/java-modules/syslog-ng-core.jar \
+				lib/syslog-ng/java-modules/log4j-1.2.16.jar \
+				lib/syslog-ng/java-modules/elastic.jar \
+				lib/syslog-ng/java-modules/http.jar \
+				lib/syslog-ng/java-modules/kafka.jar \
+				lib/syslog-ng/java-modules/java-modules.jar \
+				lib/syslog-ng/java-modules/hdfs.jar \
+				lib/syslog-ng/java-modules/syslog-ng-common.jar \
+				lib/syslog-ng/java-modules/dummy.jar
 
 PYTHON_CONFIGURE_ON=		--enable-python --with-python=2.7
 PYTHON_CONFIGURE_OFF=		--disable-python
 PYTHON_USES=			python:2.7
-PYTHON_PLIST_FILES= 		lib/syslog-ng/libmod-python.so
+PYTHON_PLIST_FILES=		lib/syslog-ng/libmod-python.so
 
 .include <bsd.port.pre.mk>
 

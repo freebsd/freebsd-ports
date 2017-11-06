@@ -1,2 +1,3 @@
-SHA256 (cabal/language-javascript-0.5.14.2.tar.gz) = 2a86bd58b1821f1522be191c8d77a80e35550d43637a37644cbb15caac37d546
-SIZE (cabal/language-javascript-0.5.14.2.tar.gz) = 48466
+TIMESTAMP = 1499627848
+SHA256 (cabal/language-javascript-0.6.0.10.tar.gz) = caf14c410bf4463fda497af2b9ea750eddff34e55bc1cfc696f2fb4a36983e54
+SIZE (cabal/language-javascript-0.6.0.10.tar.gz) = 101770

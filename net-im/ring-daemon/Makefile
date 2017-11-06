@@ -4,13 +4,15 @@
 PORTNAME=	ring-daemon
 PORTVERSION=	0.160516
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
+PORTREVISION=	6
 CATEGORIES=	net-im net-p2p
 
 MAINTAINER=	yuri@rawbw.com
 COMMENT=	Daemon part of the Ring VoIP SIP phone and IM
 
 LICENSE=	GPLv3
+
+BROKEN=		fails to build
 
 BUILD_DEPENDS=	${LOCALBASE}/include/linux/videodev2.h:multimedia/v4l_compat
 LIB_DEPENDS=	libyaml-cpp.so:devel/yaml-cpp \
@@ -56,6 +58,8 @@ DBUS_LIB_DEPENDS=	\
 	libdbus-1.so:devel/dbus \
 	libdbus-c++-1.so:devel/dbus-c++
 OPTIONS_SUB=	yes
+
+BROKEN_aarch64=		Fails to configure: machine arm64-portbld not recognized
 
 .include <bsd.port.pre.mk>
 

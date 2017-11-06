@@ -1,11 +1,8 @@
 # $FreeBSD$
 
-PORTNAME=	iccexamin
-PORTVERSION=	0.55
-PORTREVISION=	2
+PORTNAME=	icc-examin
+PORTVERSION=	0.56
 CATEGORIES=	graphics
-MASTER_SITES=	SF/oyranos/ICC%20Examin/ICC%20Examin%20${PORTVERSION}
-DISTNAME=	icc_examin-${PORTVERSION}
 
 MAINTAINER=	bsam@FreeBSD.org
 COMMENT=	ICC profile viewer and colour visualisation
@@ -13,17 +10,24 @@ COMMENT=	ICC profile viewer and colour visualisation
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	libfltk.so:x11-toolkits/fltk \
+		libfontconfig.so:x11-fonts/fontconfig \
+		libfreetype.so:print/freetype2 \
 		libftgl.so:graphics/ftgl \
-		liblcms.so:graphics/lcms \
+		liblcms2.so:graphics/lcms2 \
+		libOyranos.so:graphics/oyranos \
 		libpng.so:graphics/png \
 		libtiff.so:graphics/tiff \
-		liboyranos.so:graphics/oyranos
+		libXcm.so:x11/libXcm 
+
+USE_GITHUB=     yes
+GH_ACCOUNT=     oyranos-cms
 
 MAKE_JOBS_UNSAFE=	yes
-USES=		desktop-file-utils gettext iconv jpeg pkgconfig tar:bzip2
+USES=		desktop-file-utils gettext iconv jpeg pkgconfig
 HAS_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
-USE_XORG=	#
+USE_GL=		gl glu
+USE_XORG=	x11 xcursor xext xfixes xft xinerama xpm xrandr xxf86vm
 CONFIGURE_ARGS+=--mandir=${PREFIX}/man --disable-openmp
 
 post-patch:

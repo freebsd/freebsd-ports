@@ -22,30 +22,26 @@ OPTIONS_SUB=	yes
 NLS_USES=	gettext
 NLS_CONFIGURE_ENABLE=	nls
 
-.include <bsd.port.options.mk>
-
 post-patch:
 	@${GREP} -lR "/usr/share/games/glchess" ${WRKSRC} | ${XARGS} \
 		${REINPLACE_CMD} -e 's|/usr/share/games/glchess|${DATADIR}|g'
 	@${REINPLACE_CMD} -e 's|share/games/glchess|share/glchess|g ; \
 		 s|share/gconf/schemas|etc/gconf/schemas|g' ${WRKSRC}/setup.py
 
-post-build:
-.if ${PORT_OPTIONS:MNLS}
+post-build-NLS-on:
 	@(for lang in `${MAKE} -f ${WRKSRC}/Makefile -V LANGUAGES` ; do \
 		cd ${WRKSRC}/po ; \
 		${LOCALBASE}/bin/msgfmt $$lang.po -o $$lang.mo ; \
 	done)
-.endif
 
-post-install:
-.if ${PORT_OPTIONS:MNLS}
+post-install-NLS-on:
 	@(for lang in `${MAKE} -f ${WRKSRC}/Makefile -V LANGUAGES` ; do \
 		${MKDIR} ${STAGEDIR}${PREFIX}/share/locale/$$lang/LC_MESSAGES ; \
 		${INSTALL_DATA} ${WRKSRC}/po/$$lang.mo \
 		${STAGEDIR}${PREFIX}/share/locale/$$lang/LC_MESSAGES/glchess.mo ; \
 	done)
-.endif
+
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for file in ChangeLog README TODO
 	${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${DOCSDIR}

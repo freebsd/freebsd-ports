@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	oslo.policy
-PORTVERSION=	1.16.0
+PORTVERSION=	1.18.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,7 +18,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>=1.9.0:devel/py-six \
 		${PYTHON_PKGNAMEPREFIX}oslo.serialization>=1.10.0:devel/py-oslo.serialization \
 		${PYTHON_PKGNAMEPREFIX}oslo.i18n>=2.1.0:devel/py-oslo.i18n \
 		${PYTHON_PKGNAMEPREFIX}oslo.config>=3.14.0:devel/py-oslo.config \
-		${PYTHON_PKGNAMEPREFIX}requests>=2.10.0:www/py-requests
+		${PYTHON_PKGNAMEPREFIX}requests>=2.10.0:www/py-requests \
+		${PYTHON_PKGNAMEPREFIX}stevedore>=1.17.1:devel/py-stevedore
 
 NO_ARCH=	yes
 

@@ -2,10 +2,12 @@
 #
 # $FreeBSD$
 #
+
 # PROVIDE: munin-sched
 # REQUIRE: DAEMON
 # BEFORE:  cron
 # KEYWORD: shutdown
+
 #
 # Add the following lines to /etc/rc.conf to enable munin-sched:
 # munin_sched_enable (bool):      Set to "NO" by default.
@@ -16,17 +18,18 @@
 . /etc/rc.subr
 
 name=munin_sched
+desc="munin scheduler daemon"
 rcvar=munin_sched_enable
 
 load_rc_config $name
-
-: ${munin_sched_enable:=NO}
-: ${munin_sched_config="%%PREFIX%%/etc/munin/munin-node.conf"}
 
 command="%%PREFIX%%/sbin/munin-sched"
 start_precmd=find_pidfile
 status_precmd=find_pidfile
 stop_precmd=find_pidfile
+
+munin_sched_enable=${munin_sched_enable:-NO}
+munin_sched_config=${munin_sched_config:-"%%PREFIX%%/etc/munin/munin-node.conf"}
 
 find_pidfile()
 {

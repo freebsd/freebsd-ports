@@ -1,5 +1,5 @@
---- ../ebnetd-1.0-dist/doc-ja/ebnetd-ja.texi	Wed Sep  3 20:26:39 2003
-+++ doc-ja/ebnetd-ja.texi	Sat Oct  2 23:50:34 2004
+--- doc-ja/ebnetd-ja.texi.orig	2003-09-03 11:26:39 UTC
++++ doc-ja/ebnetd-ja.texi
 @@ -8,9 +8,7 @@
  
  @dircategory CD-ROM Book Utilities

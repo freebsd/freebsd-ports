@@ -1,0 +1,14 @@
+The primary goal of scriptine is to make it easy to write shell scripts with
+python.
+
+Features:
+
+ * Easy command creation. Each command is just a function.
+ * Automatic option parsing
+ * Automatic help text (--help)
+ * Log handling (with -v, --verbose and -q, --quiet handling)
+ * Testing scripts in dry-mode.
+ * Easy execution of other shell scripts.
+ * Convenient working with files and directories.
+
+WWW: https://pypi.python.org/pypi/scriptine

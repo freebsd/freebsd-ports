@@ -9,9 +9,7 @@ MAINTAINER=	rakuco@FreeBSD.org
 COMMENT=	Monospace bitmap font well suited for programming and terminal use
 
 LICENSE=	WTFPL
-LICENSE_NAME=	Do What The Fuck You Want To Public License, Version 2
 LICENSE_FILE=	${WRKSRC}/COPYING-LICENSE
-LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 USES=		fonts
 NO_BUILD=	yes

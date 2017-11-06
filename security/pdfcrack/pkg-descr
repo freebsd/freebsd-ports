@@ -4,4 +4,4 @@ pdfs that uses the standard security handler but the pdf-parsing
 routines are a bit of a quick hack so you might stumble across some
 pdfs where the parser needs to be fixed to handle.
 
-WWW: http://sourceforge.net/projects/pdfcrack/
+WWW: https://sourceforge.net/projects/pdfcrack/

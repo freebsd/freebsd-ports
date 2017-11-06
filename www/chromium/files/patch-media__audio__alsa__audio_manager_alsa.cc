@@ -1,6 +1,6 @@
---- media/audio/alsa/audio_manager_alsa.cc.orig	2016-04-07 19:01:10 UTC
+--- media/audio/alsa/audio_manager_alsa.cc.orig	2017-06-05 19:03:08 UTC
 +++ media/audio/alsa/audio_manager_alsa.cc
-@@ -128,7 +128,9 @@ void AudioManagerAlsa::GetAlsaAudioDevic
+@@ -138,7 +138,9 @@ void AudioManagerAlsa::GetAlsaAudioDevices(StreamType 
    int card = -1;
  
    // Loop through the sound cards to get ALSA device hints.
@@ -10,7 +10,7 @@
      void** hints = NULL;
      int error = wrapper_->DeviceNameHint(card, kPcmInterfaceName, &hints);
      if (!error) {
-@@ -140,7 +142,9 @@ void AudioManagerAlsa::GetAlsaAudioDevic
+@@ -150,7 +152,9 @@ void AudioManagerAlsa::GetAlsaAudioDevices(StreamType 
        DLOG(WARNING) << "GetAlsaAudioDevices: unable to get device hints: "
                      << wrapper_->StrError(error);
      }
@@ -19,8 +19,8 @@
 +#endif
  }
  
- void AudioManagerAlsa::GetAlsaDevicesInfo(
-@@ -226,7 +230,11 @@ bool AudioManagerAlsa::IsAlsaDeviceAvail
+ void AudioManagerAlsa::GetAlsaDevicesInfo(AudioManagerAlsa::StreamType type,
+@@ -232,7 +236,11 @@ bool AudioManagerAlsa::IsAlsaDeviceAvailable(
      // goes through software conversion if needed (e.g. incompatible
      // sample rate).
      // TODO(joi): Should we prefer "hw" instead?
@@ -32,7 +32,7 @@
      return strncmp(kDeviceTypeDesired,
                     device_name,
                     arraysize(kDeviceTypeDesired) - 1) == 0;
-@@ -250,7 +258,9 @@ bool AudioManagerAlsa::HasAnyAlsaAudioDe
+@@ -256,7 +264,9 @@ bool AudioManagerAlsa::HasAnyAlsaAudioDevice(
    // Loop through the sound cards.
    // Don't use snd_device_name_hint(-1,..) since there is a access violation
    // inside this ALSA API with libasound.so.2.0.0.
@@ -42,7 +42,7 @@
      int error = wrapper_->DeviceNameHint(card, kPcmInterfaceName, &hints);
      if (!error) {
        for (void** hint_iter = hints; *hint_iter != NULL; hint_iter++) {
-@@ -274,7 +284,9 @@ bool AudioManagerAlsa::HasAnyAlsaAudioDe
+@@ -280,7 +290,9 @@ bool AudioManagerAlsa::HasAnyAlsaAudioDevice(
        DLOG(WARNING) << "HasAnyAudioDevice: unable to get device hints: "
                      << wrapper_->StrError(error);
      }

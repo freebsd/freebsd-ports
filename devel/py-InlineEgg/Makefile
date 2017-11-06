@@ -15,6 +15,7 @@ FETCH_BEFORE_ARGS=-o ${DISTFILES}
 USES=		dos2unix python shebangfix
 SHEBANG_FILES=	examples/*.py
 USE_PYTHON=	distutils autoplist
+BROKEN=		checksum mismatch
 
 PORTDOCS=	InlineEgg.html Changelog README
 PORTEXAMPLES=	*

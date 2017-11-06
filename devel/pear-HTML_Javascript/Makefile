@@ -5,9 +5,9 @@ PORTNAME=	HTML_Javascript
 PORTVERSION=	1.1.2
 CATEGORIES=	devel www pear
 
-MAINTAINER=	joneum@bsdproject.de
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Provides an interface for creating simple JS scripts
 
-USES=	pear
+USES=		pear
 
 .include <bsd.port.mk>

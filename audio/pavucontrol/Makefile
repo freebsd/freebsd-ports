@@ -3,6 +3,7 @@
 
 PORTNAME=	pavucontrol
 PORTVERSION=	3.0
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://freedesktop.org/software/pulseaudio/${PORTNAME}/
 
@@ -15,8 +16,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libpulse.so:audio/pulseaudio
 
 GNU_CONFIGURE=	yes
-USES=		gmake pkgconfig gettext tar:xz
+USES=		gmake pkgconfig gettext tar:xz compiler:c++11-lang
 USE_GNOME=	glibmm intltool libsigc++20
+USE_CXXSTD=	c++11
 
 OPTIONS_SUB=	yes
 OPTIONS_SINGLE=	GTK

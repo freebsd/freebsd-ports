@@ -2,6 +2,7 @@
 
 PORTNAME=	distel
 PORTVERSION=	4.1.1
+PORTREVISION=	1
 CATEGORIES=	devel elisp
 
 MAINTAINER=	olgeni@FreeBSD.org

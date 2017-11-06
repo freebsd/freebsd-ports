@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	MooseX-Types-LoadableClass
-PORTVERSION=	0.013
+PORTVERSION=	0.015
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:ETHER
@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	az@FreeBSD.org
 COMMENT=	ClassName type constraint with coercion to load the class
 
-LICENSE=	ART10 GPLv1
+LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 RUN_DEPENDS=	p5-Module-Runtime>=0:devel/p5-Module-Runtime \

@@ -3,7 +3,7 @@
 
 PORTNAME=	capicity
 PORTVERSION=	1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	SF/capitalism/Capi%20City/${PORTVERSION}/
 DISTNAME=	CapiCity_${DISTVERSION}
@@ -14,8 +14,8 @@ COMMENT=	Qt client for the Monopd server
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/copying.txt
 
-LIB_DEPENDS=	libpthread-stubs.so:devel/libpthread-stubs \
-		libpcre.so:devel/pcre \
+BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/pthread-stubs.pc:devel/libpthread-stubs
+LIB_DEPENDS=	libpcre.so:devel/pcre \
 		libpng.so:graphics/png \
 		libfreetype.so:print/freetype2 \
 		libexpat.so:textproc/expat2 \

@@ -2,21 +2,20 @@
 # $FreeBSD$
 
 PORTNAME=	Perl-Critic
-PORTVERSION=	1.12.6
+PORTVERSION=	1.130
 CATEGORIES=	textproc devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
-DISTNAME=	${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Critique Perl source for style and standards
 
-LICENSE=	ART10 GPLv1
+LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-B-Keywords>=1.05:devel/p5-B-Keywords \
 		p5-Config-Tiny>=2:devel/p5-Config-Tiny \
-		p5-Email-Address>=1.88.9:mail/p5-Email-Address \
+		p5-Email-Address>=1.889:mail/p5-Email-Address \
 		p5-Exception-Class>=1.23:devel/p5-Exception-Class \
 		p5-File-HomeDir>=0:devel/p5-File-HomeDir \
 		p5-File-Which>=0:sysutils/p5-File-Which \
@@ -35,8 +34,8 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Deep>=0:devel/p5-Test-Deep \
 		p5-Test-Memory-Cycle>=0:devel/p5-Test-Memory-Cycle
 
+NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	modbuild
-NO_ARCH=	yes
 
 .include <bsd.port.mk>

@@ -4,7 +4,7 @@
 PORTNAME=	zetacoin
 PORTVERSION=	0.11.2.3
 DISTVERSIONPREFIX=	v
-PORTREVISION=	4
+PORTREVISION=	12
 CATEGORIES=	net-p2p finance
 
 MAINTAINER=	daniel@morante.net
@@ -18,7 +18,8 @@ USES+=		autoreconf compiler:c++0x gmake libtool pkgconfig:build ssl
 CFLAGS+=	-I${OPENSSLINC}
 LDFLAGS+=	-L${OPENSSLLIB}
 
-BROKEN_armv6=	AtomicPointer not implemented
+BROKEN_armv6=		AtomicPointer not implemented
+BROKEN_powerpc64=	fails to configure: No working boost sleep implementation found
 
 USE_GITHUB=	yes
 
@@ -98,7 +99,7 @@ GROUPS=		${PORTNAME}
 
 .if ${SSL_DEFAULT:Mlibressl*}
 # The configure script will output this message, so save the user the trouble
-IGNORE=	Detected LibreSSL: This is NOT supported, and may break consensus compatibility!
+IGNORE=	detected LibreSSL: This is NOT supported, and may break consensus compatibility!
 .endif
 
 post-patch:

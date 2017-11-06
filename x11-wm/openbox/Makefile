@@ -3,7 +3,7 @@
 
 PORTNAME=	openbox
 PORTVERSION=	3.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://openbox.org/dist/openbox/
 
@@ -12,11 +12,16 @@ COMMENT=	Small, fast, standards compliant, extensible window manager
 
 LICENSE=	GPLv2
 
+LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
+		libfreetype.so:print/freetype2
+
 GNU_CONFIGURE=	yes
-USES=		gmake libtool pathfix pkgconfig
-USE_GNOME=	glib20 libxml2
-USE_XORG=	xcursor xext xft xinerama xrandr xau
+USES=		gmake libtool pathfix python:run pkgconfig shebangfix
+USE_GNOME=	cairo glib20 libxml2
+USE_XORG=	ice sm x11 xcursor xext xft xinerama xrandr \
+		xrender xau
 USE_LDCONFIG=	yes
+SHEBANG_FILES=	data/autostart/openbox-xdg-autostart
 
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -lXext

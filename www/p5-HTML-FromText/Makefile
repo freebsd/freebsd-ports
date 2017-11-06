@@ -11,7 +11,7 @@ PKGNAMEPREFIX=		p5-
 MAINTAINER=		danilo@FreeBSD.org
 COMMENT=	Mark up text as HTML
 
-LICENSE=	ART10 GPLv1
+LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Email-Find>=0.09:mail/p5-Email-Find \

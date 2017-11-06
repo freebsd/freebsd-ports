@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Workflow
-PORTVERSION=	1.42
+PORTVERSION=	1.45
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -10,20 +10,22 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	svysh.fbsd@gmail.com
 COMMENT=	Simple, flexible system to implement workflows
 
-LICENSE=	ART10 GPLv1
+LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	p5-Class-Accessor>=0.18:devel/p5-Class-Accessor \
 		p5-Class-Factory>=1:devel/p5-Class-Factory \
 		p5-Class-Observable>=1.04:devel/p5-Class-Observable \
 		p5-DBI>=0:databases/p5-DBI \
+		p5-Data-UUID>=0:devel/p5-Data-UUID \
 		p5-DateTime>=0.15:devel/p5-DateTime \
 		p5-DateTime-Format-Strptime>=1:devel/p5-DateTime-Format-Strptime \
 		p5-Exception-Class>=1.1:devel/p5-Exception-Class \
+		p5-File-Slurp>=0:devel/p5-File-Slurp \
 		p5-Log-Dispatch>=2:devel/p5-Log-Dispatch \
 		p5-Log-Log4perl>=0.34:devel/p5-Log-Log4perl \
-		p5-Data-UUID>=0:devel/p5-Data-UUID \
-		p5-File-Slurp>=0:devel/p5-File-Slurp \
+		p5-SPOPS>=0:devel/p5-SPOPS \
 		p5-XML-Simple>=2:textproc/p5-XML-Simple
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-DBD-Mock>=0.1:databases/p5-DBD-Mock \

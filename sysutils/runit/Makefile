@@ -3,7 +3,7 @@
 
 PORTNAME=	runit
 PORTVERSION=	2.1.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://smarden.org/${PORTNAME}/ \
 		http://www.bayofrum.net/dist/${PORTNAME}/
@@ -27,6 +27,8 @@ DOCS=		package/CHANGES package/README \
 CONFIG=		etc/freebsd/1 etc/2 etc/freebsd/3 etc/freebsd/ctrlaltdel \
 		etc/freebsd/getty-ttyv4/run etc/freebsd/getty-ttyv4/finish \
 		etc/freebsd/getty-ttyv4/whichtty
+
+OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	${REINPLACE_CMD} -i '' 's!/service/!${SERVICE_DIR}!' \
@@ -57,9 +59,9 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/etc/[123c]* ${STAGEDIR}${ETCDIR}
 	${INSTALL_SCRIPT} ${WRKDIR}/etc/getty-ttyv4/* \
 		${STAGEDIR}${ETCDIR}/getty-ttyv4
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for doc in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/${doc} ${STAGEDIR}${DOCSDIR}
-.endfor
+	${INSTALL_DATA} ${DOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

@@ -3,7 +3,7 @@
 
 PORTNAME?=	mame
 PORTVERSION=	0.166
-PORTREVISION?=	1
+PORTREVISION?=	5
 CATEGORIES=	emulators
 
 MAINTAINER=	ports@FreeBSD.org
@@ -19,7 +19,7 @@ ONLY_FOR_ARCHS_REASON=	not yet ported to any arch other than x86
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	mamedev
-GH_PROJECT=	mame 				# explicit (master port)
+GH_PROJECT=	mame				# explicit (master port)
 GH_TAGNAME=	mame${PORTVERSION:S/.//}
 
 USES=		compiler:c11 gmake jpeg pkgconfig python:2,build shebangfix

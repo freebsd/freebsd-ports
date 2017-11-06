@@ -19,8 +19,7 @@ LIB_DEPENDS=	libgdbm.so:databases/gdbm
 
 BROKEN_aarch64=	Fails to link: missing sbrk
 
-USES=		gmake
-USE_OPENSSL=	yes
+USES=		gmake ssl
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-config_subdir="" \
 		--with-filterdir=${PREFIX}/libexec/filters \

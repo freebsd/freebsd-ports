@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	RSA
-PORTVERSION=	2.1.0.1
+PORTVERSION=	2.3.0
 CATEGORIES=	security haskell
 
 MAINTAINER=	haskell@FreeBSD.org

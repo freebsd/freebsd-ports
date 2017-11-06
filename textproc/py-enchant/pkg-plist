@@ -16,9 +16,9 @@
 %%PYTHON_SITELIBDIR%%/enchant/checker/tests.py
 %%PYTHON_SITELIBDIR%%/enchant/checker/tests.pyc
 %%PYTHON_SITELIBDIR%%/enchant/checker/tests.pyo
-%%PYTHON_SITELIBDIR%%/enchant/checker/wxSpellCheckerDialog.py
-%%PYTHON_SITELIBDIR%%/enchant/checker/wxSpellCheckerDialog.pyc
-%%PYTHON_SITELIBDIR%%/enchant/checker/wxSpellCheckerDialog.pyo
+%%WX%%%%PYTHON_SITELIBDIR%%/enchant/checker/wxSpellCheckerDialog.py
+%%WX%%%%PYTHON_SITELIBDIR%%/enchant/checker/wxSpellCheckerDialog.pyc
+%%WX%%%%PYTHON_SITELIBDIR%%/enchant/checker/wxSpellCheckerDialog.pyo
 %%PYTHON_SITELIBDIR%%/enchant/errors.py
 %%PYTHON_SITELIBDIR%%/enchant/errors.pyc
 %%PYTHON_SITELIBDIR%%/enchant/errors.pyo
@@ -40,8 +40,8 @@
 %%PYTHON_SITELIBDIR%%/enchant/utils.py
 %%PYTHON_SITELIBDIR%%/enchant/utils.pyc
 %%PYTHON_SITELIBDIR%%/enchant/utils.pyo
-%%PYTHON_SITELIBDIR%%/pyenchant-1.6.8-py%%PYTHON_VER%%.egg-info/PKG-INFO
-%%PYTHON_SITELIBDIR%%/pyenchant-1.6.8-py%%PYTHON_VER%%.egg-info/SOURCES.txt
-%%PYTHON_SITELIBDIR%%/pyenchant-1.6.8-py%%PYTHON_VER%%.egg-info/dependency_links.txt
-%%PYTHON_SITELIBDIR%%/pyenchant-1.6.8-py%%PYTHON_VER%%.egg-info/eager_resources.txt
-%%PYTHON_SITELIBDIR%%/pyenchant-1.6.8-py%%PYTHON_VER%%.egg-info/top_level.txt
+%%PYTHON_SITELIBDIR%%/pyenchant-%%VER%%-py%%PYTHON_VER%%.egg-info/PKG-INFO
+%%PYTHON_SITELIBDIR%%/pyenchant-%%VER%%-py%%PYTHON_VER%%.egg-info/SOURCES.txt
+%%PYTHON_SITELIBDIR%%/pyenchant-%%VER%%-py%%PYTHON_VER%%.egg-info/dependency_links.txt
+%%PYTHON_SITELIBDIR%%/pyenchant-%%VER%%-py%%PYTHON_VER%%.egg-info/eager_resources.txt
+%%PYTHON_SITELIBDIR%%/pyenchant-%%VER%%-py%%PYTHON_VER%%.egg-info/top_level.txt

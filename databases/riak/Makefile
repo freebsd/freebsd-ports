@@ -2,7 +2,7 @@
 
 PORTNAME=	riak
 PORTVERSION=	1.4.12
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	databases
 MASTER_SITES=	http://s3.amazonaws.com/downloads.basho.com/riak/${PORTVERSION:R}/${PORTVERSION}/ \
 		http://downloads.basho.com.s3.amazonaws.com/riak/${PORTVERSION:R}/${PORTVERSION}/
@@ -11,6 +11,8 @@ MAINTAINER=	robak@FreeBSD.org
 COMMENT=	Open source, distributed, noSQL database
 
 LICENSE=	APACHE20
+
+BROKEN=		No public distfiles
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/erlang15/bin/erlc:lang/erlang-runtime15
 
@@ -45,7 +47,7 @@ MAKE_JOBS_UNSAFE=yes
 MAKE_ENV=	PATH=${LOCALBASE}/lib/erlang15/bin:${PATH}
 
 BROKEN_aarch64=		Does not compile: error: Unknown CPU architecture
-BROKEN_powerpc64=	Does not build
+BROKEN_powerpc64=	Does not compile: error: Unknown CPU architecture
 BROKEN_sparc64=		Does not compile: Please implement AtomicPointer for this platform
 
 .include <bsd.port.pre.mk>

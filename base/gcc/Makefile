@@ -41,8 +41,6 @@ PLIST_SUB=	TARGETARCH=${TARGET_ARCH} \
 TARGET_ARCH=	${CROSS_TOOLCHAIN:C,-.*$,,}
 EXTRA_PATCHES+= ${.CURDIR}/../../devel/powerpc64-gcc/files/freebsd-format-extensions
 
-CONFIGURE_ENV=	LC_ALL=C
-MAKE_ENV=	LC_ALL=C
 GNU_CONFIGURE=	yes
 CONFIGURE_OUTSOURCE=	yes
 CONFIGURE_ARGS+=--target=${GCC_TARGET} --disable-nls \

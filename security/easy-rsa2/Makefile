@@ -2,6 +2,7 @@
 
 PORTNAME=	easy-rsa
 DISTVERSION=	2.2.2
+PORTREVISION=	1
 CATEGORIES=	security net-mgmt
 PKGNAMESUFFIX=	2
 
@@ -19,5 +20,8 @@ GH_ACCOUNT=	OpenVPN
 
 GNU_CONFIGURE=	yes
 USES=		autoreconf
+
+post-install:
+	@${MV} ${STAGEDIR}${DATADIR}/vars ${STAGEDIR}${DATADIR}/vars.sample
 
 .include <bsd.port.mk>

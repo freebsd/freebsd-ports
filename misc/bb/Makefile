@@ -16,7 +16,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libaa.so:graphics/aalib \
 		libmikmod.so:audio/libmikmod
 
-BROKEN_aarch64=	Fails to build: regparm is not valid on this platform
+BROKEN_aarch64=		fails to build: regparm is not valid on this platform
+BROKEN_armv6=		fails to build: regparm is not valid on this platform
 
 GNU_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}/bb-1.3.0

@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	simple_bayes
-DISTVERSION=	0.11.0
+DISTVERSION=	1.0.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 PKGNAMEPREFIX=	elixir-
@@ -10,6 +10,8 @@ MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Naive Bayes machine learning implementation in Elixir
 
 LICENSE=	MIT
+
+BROKEN=		fails to build
 
 USES=		elixir
 USE_GITHUB=	yes

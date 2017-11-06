@@ -1,8 +1,9 @@
-bin/ipaudit
-bin/ipstrings
+bin/makelocal
 bin/total
 etc/ipaudit.conf.sample
-man/man1/ipaudit.1.gz
-man/man1/ipstrings.1.gz
 man/man1/total.1.gz
+man/man8/ipaudit.8.gz
+man/man8/ipstrings.8.gz
+sbin/ipaudit
+sbin/ipstrings
 %%PORTDOCS%%%%DOCSDIR%%/README

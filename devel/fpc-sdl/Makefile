@@ -4,7 +4,6 @@
 CATEGORIES=	devel lang
 PKGNAMESUFFIX=	-sdl
 
-MAINTAINER=	freebsd-fpc@FreeBSD.org
 COMMENT=	Free Pascal interface to SDL library
 
 USE_FPC=	pthreads x11

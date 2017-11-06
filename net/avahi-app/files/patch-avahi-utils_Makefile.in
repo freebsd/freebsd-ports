@@ -1,6 +1,6 @@
---- avahi-utils/Makefile.in.orig	2012-07-09 20:07:19.000000000 +0200
-+++ avahi-utils/Makefile.in	2012-07-09 20:10:46.000000000 +0200
-@@ -518,16 +518,16 @@
+--- avahi-utils/Makefile.in.orig	2017-09-15 01:20:16 UTC
++++ avahi-utils/Makefile.in
+@@ -518,16 +518,16 @@ clean-binPROGRAMS:
  	rm -f $$list
  avahi-browse$(EXEEXT): $(avahi_browse_OBJECTS) $(avahi_browse_DEPENDENCIES) $(EXTRA_avahi_browse_DEPENDENCIES) 
  	@rm -f avahi-browse$(EXEEXT)

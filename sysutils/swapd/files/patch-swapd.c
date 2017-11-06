@@ -1,5 +1,5 @@
---- swapd.c.orig	2005-02-18 20:32:30.000000000 -0800
-+++ swapd.c	2010-06-25 12:16:07.000000000 -0700
+--- swapd.c.orig	2013-10-06 16:09:13 UTC
++++ swapd.c
 @@ -1,3 +1,6 @@
 +#include <syslog.h>
 +#include <stdarg.h>
@@ -7,7 +7,7 @@
  #include "compat.h"
  
  #ifdef HAVE_STDIO_H
-@@ -187,15 +190,18 @@
+@@ -188,15 +191,18 @@ int swapd_swapon(const char *swapfile) {
  #  ifdef SWAPON_TAKES_2_ARGS
  	/* Linux */
  	swaponret = swapon(swapfile, 0);
@@ -26,7 +26,7 @@
  #  else
  #    error Dont know how to swapon() on this platform!
  #  endif
-@@ -286,7 +292,9 @@
+@@ -287,7 +293,9 @@ swap_t *swapd_mkswap(const char *swapdir
  
  int swapd_swapoff(swap_t *swapfile) {
  	int swapoffret = -1;
@@ -36,7 +36,7 @@
  
  	if (swapfile == NULL) {
  		return(-1);
-@@ -299,11 +307,13 @@
+@@ -300,11 +308,13 @@ int swapd_swapoff(swap_t *swapfile) {
  /* Prefer the swapoff() system call ... */
  #ifdef HAVE_SWAPOFF
  	swapoffret = swapoff(swapfile->pathname);
@@ -50,7 +50,7 @@
  #  else
  /*  ... otherwise, issue a warning since we don't know what to do. */
  #    warning Dont know how to swapoff on this platform
-@@ -444,6 +454,8 @@
+@@ -445,6 +455,8 @@ int main(int argc, char **argv) {
  	int chdirret = 0, statret = 0;
  	int gfm_errorcount = 0;
  
@@ -59,7 +59,7 @@
  	if (!swapd_init_stats()) {
  		return(EXIT_FAILURE);
  	}
-@@ -518,7 +530,7 @@
+@@ -519,7 +531,7 @@ int main(int argc, char **argv) {
  
  	daemonize();
  
@@ -68,7 +68,7 @@
  
  	if (dh != NULL) {
  		inactive_swaps = 0;
-@@ -587,7 +599,7 @@
+@@ -588,7 +600,7 @@ int main(int argc, char **argv) {
  				}
  			}
  
@@ -77,7 +77,7 @@
  
  			if (swapfile != NULL) {
  				free(swapfile);
-@@ -637,6 +649,7 @@
+@@ -638,6 +650,7 @@ int main(int argc, char **argv) {
  					if (swaps[i]->active == 0 && swaps[i]->pathname != NULL) {
  						inactive_swaps++;
  						if (inactive_swaps > max_inactive_swaps) {
@@ -85,7 +85,7 @@
  							unlink(swaps[i]->pathname);
  							free(swaps[i]->pathname);
  							free(swaps[i]);
-@@ -658,5 +671,6 @@
+@@ -659,5 +672,6 @@ int main(int argc, char **argv) {
  
  	}
  

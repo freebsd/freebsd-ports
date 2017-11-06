@@ -1,0 +1,7 @@
+czipfile is a replacement for Python's builtin "zipfile" module, and
+provides much faster, C-based zipfile decryption. The code is actually
+95% identical to Python 2.6.5's Lib/zipfile.py, with some very minor
+modifications to allow it to compile in Cython, and the _ZipDecrypter
+class adapted to take advantage of native C datatypes.
+
+WWW: http://pypi.python.org/pypi/czipfile

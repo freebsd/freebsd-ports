@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	espen@tagestad.no
 COMMENT=	Option keywords to your object (Mo/Moo/Moose)
 
-LICENSE=	ART10 GPLv1
+LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Data-Record>=0:devel/p5-Data-Record \

@@ -15,8 +15,8 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lazy>0:devel/py-lazy \
-		${PYTHON_PKGNAMEPREFIX}paramiko1>0:security/py-paramiko1 \
-		${PYTHON_PKGNAMEPREFIX}setuptools${PYTHON_SUFFIX}>0:devel/py-setuptools${PYTHON_SUFFIX}
+		${PYTHON_PKGNAMEPREFIX}paramiko>0:security/py-paramiko \
+		${PYTHON_PKGNAMEPREFIX}setuptools>0:devel/${PYTHON_PKGNAMEPREFIX}setuptools
 
 USES=		python
 USE_PYTHON=	autoplist distutils

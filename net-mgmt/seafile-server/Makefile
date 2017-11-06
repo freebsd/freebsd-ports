@@ -1,12 +1,12 @@
 # $FreeBSD$
 
 PORTNAME=	seafile-server
-PORTVERSION=	6.0.7
 DISTVERSIONPREFIX=	v
+DISTVERSION=	${SEAFILE_VER}
 DISTVERSIONSUFFIX=	-server
 CATEGORIES=	net-mgmt
 
-MAINTAINER=	ultima1252@gmail.com
+MAINTAINER=	ultima@FreeBSD.org
 COMMENT=	Open Source Cloud Storage (Server)
 
 LICENSE=	GPLv3
@@ -19,7 +19,7 @@ LIB_DEPENDS=	libsearpc.so:devel/libsearpc \
 		libcurl.so:ftp/curl \
 		libinotify.so:devel/libinotify \
 		libccnet.so:net-mgmt/ccnet-server \
-		libevent.so:devel/libevent2 \
+		libevent.so:devel/libevent \
 		libuuid.so:misc/e2fsprogs-libuuid \
 		libjansson.so:devel/jansson
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3 \
@@ -28,48 +28,31 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3 \
 
 CONFLICTS=	seafile-[0-9]*
 
+USES=		autoreconf iconv libarchive libtool localbase mysql \
+		pathfix pgsql pkgconfig python:-2.7 shebangfix sqlite ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	haiwen
-
-USES=		autoreconf gettext iconv libarchive libtool mysql pathfix \
-		pgsql pkgconfig python:-2.7 shebangfix sqlite ssl
 USE_GNOME=	glib20
+USE_LDCONFIG=	yes
+USE_RC_SUBR=	seafile
+
 SHEBANG_FILES=	scripts/*.sh scripts/upgrade/*.sh *.sh scripts/build/*.py \
 		scripts/*.py scripts/upgrade/*.py tools/seafile-admin
 GNU_CONFIGURE=	yes
-USE_LDCONFIG=	yes
 CONFIGURE_ENV=	SSL_CFLAGS="${OPENSSLINC}" SSL_LIBS="-L${OPENSSLLIB} -lssl -lcrypto"
 
 PATHFIX_MAKEFILEIN=	Makefile.am
 
 INSTALL_TARGET=	install-strip
-CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/evhtp
-LDFLAGS+=	-L${LOCALBASE}/lib
-
-HAIWENDIR=	www/haiwen
-SEAFILE_SERVER=	${HAIWENDIR}/seafile-server
-SEABIN=		${SEAFILE_SERVER}/seafile/bin
-SEALIB=		${SEAFILE_SERVER}/seafile/lib
-
-USERS=		seafile
-GROUPS=		${USERS}
-
-USE_RC_SUBR=	seafile
-PLIST_SUB=	USERS=${USERS} \
-		GROUPS=${GROUPS} \
-		SEAFILE_SERVER=${SEAFILE_SERVER} \
-		HAIWENDIR=${HAIWENDIR}
+CPPFLAGS+=	-I${LOCALBASE}/include/evhtp
 
 SUB_FILES=	pkg-message
 
-SUB_LIST+=	USERS=${USERS} \
-		GROUPS=${GROUPS} \
-		SEAFILE_SERVER=${SEAFILE_SERVER} \
-		HAIWENDIR=${HAIWENDIR}
-
 MAKE_JOBS_UNSAFE=	yes
 
-OPTIONS_DEFINE=		FUSE
+OPTIONS_DEFINE=		FUSE NLS
+OPTIONS_DEFAULT=	FUSE
+OPTIONS_EXCLUDE_DragonFly=	FUSE
 OPTIONS_SUB=		yes
 
 FUSE_DESC=		Use file system in userspace
@@ -77,14 +60,13 @@ FUSE_DESC=		Use file system in userspace
 FUSE_CONFIGURE_ENABLE=	fuse
 FUSE_LIB_DEPENDS=	libfuse.so:sysutils/fusefs-libs
 
-OPTIONS_DEFAULT=	FUSE
-OPTIONS_EXCLUDE_DragonFly=	FUSE
+NLS_USES=		gettext
 
 .include <bsd.port.options.mk>
 
 post-patch:
 # Fix P_KTHREAD r295435
-.if ${OSVERSION} >= 1100097
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1100097
 	${REINPLACE_CMD} 's/P_KTHREAD/P_KPROC/' ${WRKSRC}/lib/utils.c
 .endif
 	${REINPLACE_CMD} 's/python/${PYTHON_VERSION}/' \
@@ -93,6 +75,9 @@ post-patch:
 			${WRKSRC}/scripts/seaf-cli-wrapper.sh
 	${REINPLACE_CMD} 's/<evhtp.h>/<evhtp\/evhtp.h>/' ${WRKSRC}/server/upload-file.c \
 			${WRKSRC}/server/access-file.c ${WRKSRC}/server/http-server.c
+	${REINPLACE_CMD} -E 's/stat.+\$$/stat -f %Su $$/' ${WRKSRC}/scripts/seafile.sh
+	${REINPLACE_CMD} 's/%%SEAFILE_USER%%/${USERS:[1]}/ ; s/%%SEAFILE_GROUP%%/${GROUPS:[1]}/' \
+			${WRKSRC}/scripts/setup-seafile.sh ${WRKSRC}/scripts/setup-seafile-mysql.py
 post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/${SEABIN} ${STAGEDIR}${PREFIX}/${SEALIB} \
 		${STAGEDIR}${PREFIX}/${SEAFILE_SERVER}/seafile/share/doc/seafile \
@@ -105,14 +90,12 @@ post-install:
 	fi
 .endfor
 .for SERVPROG in seafile-controller seaf-server
-	${LN} -s ${PREFIX}/${SEABIN}/${SERVPROG} ${STAGEDIR}${PREFIX}/bin/
+	${LN} -s "../${SEABIN}/${SERVPROG}" ${STAGEDIR}${PREFIX}/bin/${SERVPROG}
 .endfor
 
 	(cd ${STAGEDIR}${PREFIX}/lib && \
 		${COPYTREE_SHARE} ${PYTHON_VERSION} ${STAGEDIR}${PREFIX}/${SEALIB})
 	@${RM} -rf ${STAGEDIR}${PREFIX}/lib/${PYTHON_VERSION} \
-		${WRKSRC}/scripts/sqlite2mysql.[ps][yh] \
-		${WRKSRC}/scripts/setup-seafile.sh \
 		${STAGEDIR}${PREFIX}/bin/seafile-admin
 	${INSTALL_SCRIPT} ${WRKSRC}/scripts/*.[ps][yh] ${STAGEDIR}${PREFIX}/${SEAFILE_SERVER}
 	${INSTALL_SCRIPT} ${WRKSRC}/scripts/upgrade/*.[ps][yh] \
@@ -121,5 +104,12 @@ post-install:
 		${STAGEDIR}${PREFIX}/${SEAFILE_SERVER}/seafile/share/doc/seafile/
 	(cd ${WRKSRC}/scripts/upgrade && \
 		${COPYTREE_SHARE} sql ${STAGEDIR}${PREFIX}/${SEAFILE_SERVER}/upgrade)
+
+makesum-all:
+.for PORT in net-mgmt/ccnet-server net-mgmt/seafile-server www/py-seafdav www/py-seafobj www/seahub
+	${MAKE} -C "${PORTSDIR}/${PORT}" makesum
+.endfor
+
+.include "${.CURDIR}/Makefile.include"
 
 .include <bsd.port.mk>

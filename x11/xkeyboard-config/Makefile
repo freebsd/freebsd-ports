@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	xkeyboard-config
-PORTVERSION=	2.19
+PORTVERSION=	2.21
 CATEGORIES=	x11
 MASTER_SITES=	XORG/individual/${XORG_CAT}/${PORTNAME}
 
@@ -15,16 +15,12 @@ BUILD_DEPENDS=	xkbcomp:x11/xkbcomp
 XORG_CAT=	data
 
 NO_ARCH=	yes
-USES=		gmake pathfix perl5 tar:bzip2
+USES=		gmake localbase pathfix perl5
 USE_GNOME=	intlhack libxslt:build
 USE_PERL5=	build
-GNU_CONFIGURE=	yes
-INSTALL_TARGET=	install-strip
 
 CONFIGURE_ARGS=	--with-xkb-base=${PREFIX}/share/X11/xkb \
 		--with-xkb-rules-symlink=xorg
-CPPFLAGS+=	-I${LOCALBASE}/include
-LIBS+=		-L${LOCALBASE}/lib
 
 OPTIONS_DEFINE=	ETERSOFT
 ETERSOFT_DESC=	Add pre-1918 Russian letters to typographic layout

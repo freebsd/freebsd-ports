@@ -5,8 +5,8 @@ PORTNAME=	websieve
 PORTVERSION=	0.63.a
 PORTREVISION=	3
 CATEGORIES=	mail
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${DISTVERSION}
-DISTNAME?=	${PORTNAME}-${DISTVERSION}
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${SIEVEVERSION}
+DISTNAME?=	${PORTNAME}-${SIEVEVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Web based Cyrus IMAP user admin client
@@ -14,7 +14,7 @@ COMMENT=	Web based Cyrus IMAP user admin client
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/GPL
 
-DISTVERSION=	063a
+SIEVEVERSION=	${PORTVERSION:S/.//g}
 
 USES=		perl5 shebangfix
 USE_PERL5=	run
@@ -26,7 +26,8 @@ NO_ARCH=	yes
 OPTIONS_SINGLE=	TYPE
 OPTIONS_SINGLE_TYPE=	PERL CYRUS
 OPTIONS_RADIO=	CYRDEP
-OPTIONS_RADIO_CYRDEP=	CYRUS_IMAPD_23 CYRUS_IMAPD_24 CYRUS_IMAPD_25
+OPTIONS_RADIO_CYRDEP=	CYRUS_IMAPD_23 CYRUS_IMAPD_24 CYRUS_IMAPD_25 \
+			CYRUS_IMAPD_30
 OPTIONS_DEFAULT=	CYRUS CYRUS_IMAPD_24
 
 TYPE_DESC=	Choose which sieve backend to use
@@ -36,7 +37,9 @@ CYRDEP_DESC=	Which version of Cyrus IMAPd to depend on
 CYRUS_IMAPD_23_DESC=	Cyrus IMAPd version 2.3.x
 CYRUS_IMAPD_24_DESC=	Cyrus IMAPd version 2.4.x
 CYRUS_IMAPD_25_DESC=	Cyrus IMAPd version 2.5.x
+CYRUS_IMAPD_30_DESC=	Cyrus IMAPd version 3.0.x
 
+CYRUS_IMAPD_30_RUN_DEPENDS=	${SITE_ARCH}/Cyrus/SIEVE/managesieve.pm:mail/cyrus-imapd30
 CYRUS_IMAPD_25_RUN_DEPENDS=	${SITE_ARCH}/Cyrus/SIEVE/managesieve.pm:mail/cyrus-imapd25
 CYRUS_IMAPD_24_RUN_DEPENDS=	${SITE_ARCH}/Cyrus/SIEVE/managesieve.pm:mail/cyrus-imapd24
 CYRUS_IMAPD_23_RUN_DEPENDS=	${SITE_ARCH}/Cyrus/SIEVE/managesieve.pm:mail/cyrus-imapd23
@@ -57,7 +60,10 @@ SUB_FILES=	pkg-message
 _check-config: my-check-config
 my-check-config:
 .if ${PORT_OPTIONS:MPERL}
-.if !empty(PORT_OPTIONS:MCYRUS_IMAPD_23) || !empty(PORT_OPTIONS:MCYRUS_IMAPD_24) || !empty(PORT_OPTIONS:MCYRUS_IMAPD_25)
+.if !empty(PORT_OPTIONS:MCYRUS_IMAPD_23) || \
+    !empty(PORT_OPTIONS:MCYRUS_IMAPD_24) || \
+    !empty(PORT_OPTIONS:MCYRUS_IMAPD_25) || \
+    !empty(PORT_OPTIONS:MCYRUS_IMAPD_30)
 	@${ECHO_MSG} "====> You cannot select a dependency on cyrus with the PERL option"
 _CHECK_CONFIG_ERROR=	true
 .endif

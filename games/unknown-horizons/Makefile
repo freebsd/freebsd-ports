@@ -9,6 +9,8 @@ CATEGORIES=	games
 MAINTAINER=	fiziologus@gmail.com
 COMMENT=	Real time simulation game
 
+LICENSE=	GPLv2+
+
 BUILD_DEPENDS=	${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:textproc/docbook-xsl \
 		${LOCALBASE}/bin/xsltproc:textproc/libxslt
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/fife/__init__.py:games/py-fife \
@@ -47,9 +49,8 @@ post-patch:
 
 # Install multiplayer lib (enet+pyenet)
 post-install:
-	${MKDIR} ${STAGEDIR}${PYTHON_SITELIBDIR}/horizons/network/libs
-	${MKDIR} ${STAGEDIR}${PYTHON_SITELIBDIR}/horizons/network/libs/freebsd-${ENET_DIR}
-	${INSTALL} ${WRKSRC}/horizons/network/libs/freebsd-${ENET_DIR}/enet.so \
+	@${MKDIR} ${STAGEDIR}${PYTHON_SITELIBDIR}/horizons/network/libs/freebsd-${ENET_DIR}
+	${INSTALL_LIB} ${WRKSRC}/horizons/network/libs/freebsd-${ENET_DIR}/enet.so \
 		${STAGEDIR}${PYTHON_SITELIBDIR}/horizons/network/libs/freebsd-${ENET_DIR}/enet.so
 # (rene) prune unwanted files to pass 'make check-plist'
 	${RM} -r ${STAGEDIR}${PYTHON_SITELIBDIR}/UnknownHorizons-_unknown_-py${PYTHON_VER}.egg-info

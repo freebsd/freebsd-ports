@@ -3,7 +3,7 @@
 
 PORTNAME=	uim-el
 PORTVERSION=	1.8.6
-PORTREVISION=	3
+PORTREVISION=	5
 CATEGORIES=	textproc
 MASTER_SITES=	https://github.com/uim/uim/releases/download/uim-${PORTVERSION}/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
@@ -12,7 +12,6 @@ DISTNAME=	uim-${PORTVERSION}
 MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT?=	Emacs lisp for uim input method library
 
-PROJECTHOST=	uim
 CONFLICTS?=	uim-el-xemacs21-mule-[0-9]* \
 		uim-el-emacs22-[0-9]* \
 		uim-el-emacs21-[0-9]*

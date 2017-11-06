@@ -1,24 +1,24 @@
 # Created by: Lars Balker Rasmussen <lbr@FreeBSD.org>
 # $FreeBSD$
 
-PORTNAME=	Search-Xapian10
+PORTNAME=	Search-Xapian
 PORTVERSION=	1.0.23.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases perl5
 MASTER_SITES=	http://oligarchy.co.uk/xapian/${PORTVERSION:R}/
 PKGNAMEPREFIX=	p5-
-DISTNAME=	${PORTNAME:S/10$//}-${PORTVERSION}
+PKGNAMESUFFIX=	10
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl XS frontend to the Xapian C++ search library
 
-LICENSE=	ART10 GPLv1
+LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	xapian-core10>=1.0.22:databases/xapian-core10
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-CONFLICTS=	p5-Search-Xapian-1.[^0]*
+CONFLICTS_INSTALL=	p5-Search-Xapian12
 
 USES=		perl5
 USE_PERL5=	configure
@@ -26,5 +26,8 @@ CC=		${CXX}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's/^if (defined $$builddir/if (0/' ${WRKSRC}/Makefile.PL
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Search/Xapian/Xapian.so
 
 .include <bsd.port.mk>

@@ -5,7 +5,7 @@
      gint ystdout;
      GError *err = NULL;
 -    const gchar *argv[] = { "man", "-Z", "-Tutf8", "-EUTF-8", path, NULL };
-+    const gchar *argv[] = { LIBEXECDIR "/yelp-groff", path, NULL };
++    const gchar *argv[] = { "%%LIBEXECDIR%%", "/yelp-groff", path, NULL };
      gchar **my_argv;
  
      /* g_strdupv() should accept a "const gchar **". */

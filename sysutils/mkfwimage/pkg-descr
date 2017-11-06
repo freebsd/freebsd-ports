@@ -14,4 +14,4 @@ default Linux-centric images. The only change is the addition of
 a separate "execute address" field, rather than assuming the kernel load
 address is the kernel execute address.
 
-WWW: http://people.freebsd.org/~adrian/mkfwimage/
+WWW: https://people.freebsd.org/~adrian/mkfwimage/

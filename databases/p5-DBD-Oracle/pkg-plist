@@ -1,7 +1,7 @@
 bin/ora_explain
 %%SITE_ARCH%%/DBD/Oracle.pm
 %%SITE_ARCH%%/DBD/Oracle/GetInfo.pm
-%%MKTA%%%%SITE_ARCH%%/DBD/mkta.pl
+%%SITE_ARCH%%/DBD/mkta.pl
 %%SITE_ARCH%%/Oraperl.pm
 %%SITE_ARCH%%/auto/DBD/Oracle/Oracle.h
 %%SITE_ARCH%%/auto/DBD/Oracle/Oracle.so

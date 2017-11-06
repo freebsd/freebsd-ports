@@ -417,6 +417,7 @@
 %%WWWDIR%%/include/classes/validators/CDecimalStringValidator.php
 %%WWWDIR%%/include/classes/validators/CDecimalValidator.php
 %%WWWDIR%%/include/classes/validators/CFunctionValidator.php
+%%WWWDIR%%/include/classes/validators/CHtmlUrlValidator.php
 %%WWWDIR%%/include/classes/validators/CIPRangeValidator.php
 %%WWWDIR%%/include/classes/validators/CIPValidator.php
 %%WWWDIR%%/include/classes/validators/CIdValidator.php
@@ -716,7 +717,6 @@
 %%WWWDIR%%/popup_media.php
 %%WWWDIR%%/popup_right.php
 %%WWWDIR%%/popup_trexpr.php
-%%WWWDIR%%/popup_usrgrp.php
 %%WWWDIR%%/profile.php
 %%WWWDIR%%/queue.php
 %%WWWDIR%%/report2.php

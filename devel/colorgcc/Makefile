@@ -2,21 +2,21 @@
 # $FreeBSD$
 
 PORTNAME=	colorgcc
-PORTVERSION=	1.3.2
+PORTVERSION=	1.4.4
 CATEGORIES=	devel misc
-MASTER_SITES=	http://schlueters.de/
-DISTNAME=	${PORTNAME}.${PORTVERSION}
-EXTRACT_SUFX=	.txt
-DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	sbz@FreeBSD.org
 COMMENT=	Perl script to colorize the terminal output of GCC
 
-RUN_DEPENDS=	p5-Term-ANSIColor>=0:devel/p5-Term-ANSIColor
-BUILD_DEPENDS:=	${RUN_DEPENDS}
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		shebangfix
-SHEBANG_FILES=	colorgcc
+SHEBANG_FILES=	colorgcc.pl
+USE_GITHUB=	yes
+
+GH_ACCOUNT=	olibre
+GH_TAGNAME=	d844212
 
 PLIST_FILES=	bin/${PORTNAME} \
 		share/examples/${PORTNAME}/${PORTNAME}rc
@@ -24,13 +24,10 @@ SUB_FILES=	pkg-message
 
 NO_BUILD=yes
 
-do-extract:
-	@${MKDIR} ${WRKSRC}
-	@${CP} ${_DISTDIR}/${DISTNAME}${EXTRACT_SUFX} ${WRKSRC}/${PORTNAME}
-
 do-install:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	@${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
-	@${INSTALL_DATA} ${FILESDIR}/${PORTNAME}rc ${STAGEDIR}${EXAMPLESDIR}/
+	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}.pl \
+		${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}rc ${STAGEDIR}${EXAMPLESDIR}/
 
 .include <bsd.port.mk>

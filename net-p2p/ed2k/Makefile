@@ -12,6 +12,9 @@ EXTRACT_ONLY=
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Calculates 'eMule' hashes or producing ed2k:// file links
 
+LICENSE=	PD BSD3CLAUSE
+LICENSE_COMB=	multi
+
 CONFLICTS=	amule-*
 
 NO_WRKSUBDIR=	yes
@@ -22,12 +25,12 @@ PLIST_FILES=	bin/ed2k
 OPTIONS_DEFINE=	OPENSSL
 OPTIONS_DEFAULT=OPENSSL
 OPENSSL_DESC=	use faster hash libs from OpenSSL
+OPENSSL_USES=	ssl
 
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MOPENSSL}
 OPENSSLSUFFIX=	-openssl
-USE_OPENSSL=	yes
 LDLIBS+=	-lmd
 .else
 OPENSSLSUFFIX=	-rsa

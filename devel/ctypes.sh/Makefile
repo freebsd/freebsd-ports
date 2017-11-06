@@ -1,9 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	ctypes.sh
-PORTVERSION=	0.1
+PORTVERSION=	1.1
 CATEGORIES=	devel
-MASTER_SITES=	https://github.com/taviso/${PORTNAME}/releases/download/v0.01/
+MASTER_SITES=	https://github.com/taviso/${PORTNAME}/releases/download/v${PORTVERSION}/
 DISTNAME=	ctypes-sh-${PORTVERSION}
 
 MAINTAINER=	swills@FreeBSD.org

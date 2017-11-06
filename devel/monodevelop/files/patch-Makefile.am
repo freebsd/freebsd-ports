@@ -1,0 +1,11 @@
+--- Makefile.am.orig	2017-05-01 15:02:45 UTC
++++ Makefile.am
+@@ -13,7 +13,7 @@ buildinfo = $(top_builddir)/build/bin/bu
+ 
+ all: vcrevision
+ 
+-all-local: vcrevision restore-packages sln_build
++all-local: vcrevision sln_build
+ 
+ clean: clean-local
+ 

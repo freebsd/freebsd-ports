@@ -1,0 +1,4 @@
+librenms-agent is an agent based on check_mk used with xinetd to provide
+monitoring informations of machine to librenms server.
+
+WWW: https://github.com/librenms/librenms-agent

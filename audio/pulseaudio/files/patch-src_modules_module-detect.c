@@ -1,6 +1,6 @@
---- src/modules/module-detect.c.orig	2016-05-10 12:28:04 UTC
+--- src/modules/module-detect.c.orig	2017-09-03 11:41:12 UTC
 +++ src/modules/module-detect.c
-@@ -160,11 +160,45 @@ static int detect_oss(pa_core *c, int ju
+@@ -160,11 +160,41 @@ static int detect_oss(pa_core *c, int ju
                  continue;
  
          } else if (sscanf(line, "pcm%u: ", &device) == 1) {
@@ -14,34 +14,30 @@
 +                continue;
 +
 +            if (!pa_endswith(line, "default"))
-+                continue;
+                 continue;
 +
 +            const char *p = strrchr(line, '(');
 +
 +            if (!p)
-                 continue;
++                continue;
 +
-+            if (!c->default_sink && (strstr(p, "play") || (strstr(p, "p:") && !strstr(p, "(0p:")))) {
++            if (!c->configured_default_sink && (strstr(p, "play") || (strstr(p, "p:") && !strstr(p, "(0p:")))) {
 +                uint32_t idx = PA_IDXSET_INVALID;
 +                pa_sink *s;
 +                PA_IDXSET_FOREACH(s, c->sinks, idx) {
 +                    if (s->module == m) {
-+                        if (!pa_namereg_set_default_sink(c, s))
-+                            pa_log_error("failed to set default sink for device: /dev/dsp%u", device);
-+
++                        pa_core_set_configured_default_sink(c, s->name);
 +                        break;
 +                    }
 +                }
 +            }
 +
-+            if (!c->default_source && (strstr(p, "rec") || (strstr(p, "r:") && !strstr(p, "/0r:")))) {
++            if (!c->configured_default_source && (strstr(p, "rec") || (strstr(p, "r:") && !strstr(p, "/0r:")))) {
 +                uint32_t idx = PA_IDXSET_INVALID;
 +                pa_source *s;
 +                PA_IDXSET_FOREACH(s, c->sources, idx) {
 +                    if (s->module == m) {
-+                        if (!pa_namereg_set_default_source(c, s))
-+                            pa_log_error("failed to set default source for device: /dev/dsp%u", device);
-+
++                        pa_core_set_configured_default_source(c, s->name);
 +                        break;
 +                    }
 +                }

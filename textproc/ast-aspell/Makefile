@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	${DICT}-aspell
-DISTVERSION=	6-ast-0.01
+SPELLVERSION=	6-ast-0.01
 CATEGORIES=	textproc
 
 MAINTAINER=	office@FreeBSD.org

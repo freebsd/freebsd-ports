@@ -2,20 +2,17 @@
 # $FreeBSD$
 
 PORTNAME=	amqp
-PORTVERSION=	1.4.0
-PORTREVISION=	2
+PORTVERSION=	1.9.0
 CATEGORIES=	net pear
-MASTER_SITES=	http://pecl.php.net/get/
-PKGNAMEPREFIX=	pecl-
-EXTRACT_SUFX=	.tgz
-DIST_SUBDIR=	PECL
 
 MAINTAINER=	jnlin@freebsd.cs.nctu.edu.tw
 COMMENT=	PHP extension for AMQP API
 
+LICENSE=	PHP301
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
 LIB_DEPENDS=	librabbitmq.so:net/rabbitmq-c-devel
 
-USES=		php:ext
-IGNORE_WITH_PHP=	70
+USES=		php:pecl
 
 .include <bsd.port.mk>

@@ -1,9 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	libphutil
-PORTVERSION=	20161003
+PORTVERSION=	20170630
 CATEGORIES=	devel
-PKGNAMEPREFIX=	php5-
+PKGNAMEPREFIX=	php-
 
 MAINTAINER=	grembo@FreeBSD.org
 COMMENT=	Collection of PHP utility classes
@@ -18,7 +18,7 @@ USE_GITHUB=	yes
 NO_BUILD=	yes
 NO_ARCH=	yes
 GH_ACCOUNT=	phacility
-GH_TAGNAME=	4b12a4f
+GH_TAGNAME=	0a4487d
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/${PHP_DESTDIR}

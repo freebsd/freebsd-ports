@@ -6,10 +6,11 @@ PORTREVISION=	2
 CATEGORIES=	x11-fm
 MASTER_SITES=	http://emelfm2.net/rel/
 
-MAINTAINER=	mva@FreeBSD.org
-COMMENT=	The gtk2+ port of emelfm, a fast graphical filemanager
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Gtk2+ port of emelfm, a fast graphical filemanager
 
-LICENSE=	GPLv3
+LICENSE=	GPLv3+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		gmake pkgconfig tar:bzip2
 USE_LDCONFIG=	yes
@@ -20,8 +21,8 @@ MAKE_ENV=	DOC_DIR="${DOCSDIR}/" \
 		WITH_OUTPUTSTYLES=1 \
 		WITH_CUSTOMMOUSE=1
 
-DOCFILES=	ACTIONS CONFIGURATION CREDITS GPL HACKING INSTALL LGPL NEWS \
-		README SPEC TODO USAGE WARNING
+DOCFILES=	ACTIONS CONFIGURATION CREDITS HACKING NEWS \
+		README TODO USAGE WARNING
 
 OPTIONS_DEFINE=		DEBUG DOCS GAMIN THUMB TRACKER HAL NLS
 OPTIONS_DEFAULT=	GTK2
@@ -64,8 +65,8 @@ do-install:
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for file in ${DOCFILES}
-	${INSTALL_DATA} ${WRKSRC}/docs/${file} ${STAGEDIR}${DOCSDIR}
+.for f in ${DOCFILES}
+	${INSTALL_DATA} ${WRKSRC}/docs/${f} ${STAGEDIR}${DOCSDIR}
 .endfor
 
 .include <bsd.port.mk>

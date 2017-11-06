@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dkimpy
-PORTVERSION=	0.5.6
+PORTVERSION=	0.6.1
 CATEGORIES=	mail python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,7 +16,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dns>=0:dns/py-dns
 
 NO_ARCH=	yes
 
-USES=		python:2
+USES=		python:2.7
 USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>

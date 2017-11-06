@@ -30,8 +30,6 @@ MAKE_JOBS_UNSAFE=yes
 PLIST_SUB=	VERSION="${PORTVERSION}" \
 		TARGET="${CONFIGURE_TARGET}"
 
-# breaks in ext/uvecor.c on some locales
-MAKE_ENV+=	LANG=C
 # avoids a problem with with ccache's pre-processor optimization
 MAKE_ENV+=	CCACHE_CPP2=1
 

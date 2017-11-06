@@ -1,7 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	erlang
-PORTVERSION=	19.2
+PORTVERSION=	19.3.6.2
+PORTREVISION=	1
+PORTEPOCH=	1
 CATEGORIES=	lang parallel
 MASTER_SITES=	http://www.erlang.org/download/:erlangorg		\
 		http://erlang.stacken.kth.se/download/:erlangorg	\
@@ -14,7 +16,9 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 PATCH_SITES=	http://olgeni.olgeni.com/~olgeni/distfiles/ \
 		LOCAL/olgeni
-PATCHFILES=
+PATCHFILES=	patch-otp-19.3.1 patch-otp-19.3.2 patch-otp-19.3.3 \
+		patch-otp-19.3.4 patch-otp-19.3.5 patch-otp-19.3.6 \
+		patch-otp-19.3.6.1 patch-otp-19.3.6.2
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Erlang bindings for wxWindows
@@ -32,7 +36,7 @@ MAKE_JOBS_UNSAFE=yes
 
 OPTIONS_DEFINE=	DOCS
 
-ERL_RELEASE=	19.2
+ERL_RELEASE=	19.3
 
 USES=		gmake
 USE_GL=		gl glu
@@ -55,14 +59,12 @@ WX_COMPS=	wx contrib
 
 ERLANG_DOCS=	otp_doc_html_${ERL_RELEASE}.tar.gz
 
-.if ${ARCH} == i386
-MAKE_ARGS+=	ARCH=x86
-.endif
-
 do-build:
 	cd ${WRKSRC}/lib/wx && ${GMAKE} ERL_TOP=${WRKSRC} TARGET=${CONFIGURE_TARGET}
 	${STRIP_CMD} ${WRKSRC}/lib/wx/priv/${CONFIGURE_TARGET}/erl_gl.so
 	${STRIP_CMD} ${WRKSRC}/lib/wx/priv/${CONFIGURE_TARGET}/wxe_driver.so
+	${MV} ${WRKSRC}/lib/wx/priv/${CONFIGURE_TARGET}/*.so ${WRKSRC}/lib/wx/priv
+	${RMDIR} ${WRKSRC}/lib/wx/priv/${CONFIGURE_TARGET}
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${APP_DIR}

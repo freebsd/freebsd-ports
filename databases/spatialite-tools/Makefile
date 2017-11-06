@@ -5,7 +5,7 @@ PORTVERSION=	4.3.0
 CATEGORIES=	databases geography
 MASTER_SITES=	http://www.gaia-gis.it/gaia-sins/
 
-MAINTAINER=	coder@tuxfamily.org
+MAINTAINER=	lbartoletti@tuxfamily.org
 COMMENT=	Collection of CLI tools supporting SpatiaLite
 
 LICENSE=	GPLv3

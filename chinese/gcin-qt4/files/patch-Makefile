@@ -1,0 +1,47 @@
+--- Makefile.orig	2012-03-05 12:26:54 UTC
++++ Makefile
+@@ -1,14 +1,17 @@
+-include ../config.mak
++#include ../config.mak
++prefix=%%PREFIX%%
++libdir=$(prefix)/lib
+ QT=qt4
++QT4_MOC=%%MOC%%
+ QTIM=$(QT)/plugins/inputmethods
+-IMMODULES=$(libdir)/$(DEB_BUILD_MULTIARCH)/$(QTIM)
++IMMODULES=$(libdir)/$(QTIM)
+ 
+-INCS=-I../im-client -I/usr/include/X11 `pkg-config QtCore QtGui --cflags`
+-CXXFLAGS=$(OPTFLAGS) $(INCS) -Wall -D_REENTRANT -DUNIX=1 -fPIC  -DQT4 -DQT_SHARED \
++INCS=-I../im-client -I$(prefix)/include `pkg-config QtCore QtGui --cflags`
++CXXFLAGS+= $(INCS) -Wall -D_REENTRANT -DUNIX=1 -fPIC  -DQT4 -DQT_SHARED \
+ -DQT_IMMODULE -DPIC
+ OBJS= moc_gcin-qt.o gcin-qt.o im-gcin-qt.o gcin-imcontext-qt.o
+ .SUFFIXES:	.c .cpp .a .so .E .h
+-LDFLAGS=-L../im-client -lgcin-im-client `pkg-config QtCore QtGui --libs`
++LDFLAGS=-L$(prefix)/lib -L$(prefix)/lib/gcin -lgcin-im-client `pkg-config QtCore QtGui --libs`
+ all:    im-gcin.so
+ 
+ .cpp.E:
+@@ -22,17 +25,13 @@ im-gcin.so: $(OBJS)
+ 	$(CXX) $(gcc_ld_run_path) -fno-exceptions -shared -o $@ $(OBJS) $(LDFLAGS)
+ 	rm -f core.*
+ install:
+-	if [ $(prefix) = /usr/local ]; then \
+-		install -d $(DESTDIR)/$(QT4_IM_DIR); \
+-		install -m 755 im-gcin.so $(DESTDIR)/$(QT4_IM_DIR); \
+-	else \
+-		install -d $(IMMODULES); \
+-                install -m 755 im-gcin.so $(IMMODULES); \
+-	fi
++	$(MKDIR) $(DESTDIR)/$(IMMODULES);
++	$(INSTALL_PROGRAM) -m 755 im-gcin.so $(DESTDIR)/$(IMMODULES);
++
+ clean:
+ 	rm -f $(OBJS) im-gcin.so *~ core.* *moc*.cpp *.E .depend
+ 
+ .depend:
+ 	$(CXX) $(CXXFLAGS) -MM *.cpp > $@
+ 
+-include .depend
++#include .depend

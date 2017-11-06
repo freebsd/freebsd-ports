@@ -4,4 +4,4 @@ standard intel-hex output format for use with PAULMON2 and EPROM programmers.
 AS31 is a good tool for building small 8051-based projects that are written
 in 100% 8051 assembly language.
 
-WWW: http://www.pjrc.com/tech/8051/
+WWW: https://www.pjrc.com/tech/8051/

@@ -1,0 +1,32 @@
+--- Makefile.orig	2017-10-08 20:06:29 UTC
++++ Makefile
+@@ -1,9 +1,9 @@
+ 
+-CFLAGS = -Wall -O3 -fopenmp -I ../../../SPOOLES.2.2 -DARCH="Linux" -DSPOOLES -DARPACK -DMATRIXSTORAGE -DNETWORKOUT
+-FFLAGS = -Wall -O3 -fopenmp
++CFLAGS += -O3 -fopenmp -I%%LOCALBASE%%/include -I%%LOCALBASE%%/include/spooles -DARCH="FreeBSD" -DSPOOLES -DARPACK -DMATRIXSTORAGE -DNETWORKOUT
++FFLAGS += -O3 -fopenmp
+ 
+-CC=cc
+-FC=gfortran
++CC=%%CC%%
++FC=%%FC%%
+ 
+ .c.o :
+ 	$(CC) $(CFLAGS) -c $<
+@@ -21,12 +21,11 @@ OCCXMAIN = $(SCCXMAIN:.c=.o)
+ DIR=../../../SPOOLES.2.2
+ 
+ LIBS = \
+-       $(DIR)/spooles.a \
+-	../../../ARPACK/libarpack_INTEL.a \
+-       -lpthread -lm -lc
++       -lspooles -larpack %%BLAS_LIBS%% %%LAPACK_LIBS%% \
++       -lm
+ 
+ ccx_2.13: $(OCCXMAIN) ccx_2.13.a  $(LIBS)
+-	./date.pl; $(CC) $(CFLAGS) -c ccx_2.13.c; $(FC) -fopenmp -Wall -O3 -o $@ $(OCCXMAIN) ccx_2.13.a $(LIBS)
++	./date.pl; $(CC) $(CFLAGS) -c ccx_2.13.c; $(FC) -fopenmp -Wall -O3 -o $@ $(OCCXMAIN) ccx_2.13.a $(LIBS) $(LDFLAGS)
+ 
+ ccx_2.13.a: $(OCCXF) $(OCCXC)
+ 	ar vr $@ $?

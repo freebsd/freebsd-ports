@@ -1,5 +1,3 @@
-%%SOFTMMU%%bin/ivshmem-client
-%%SOFTMMU%%bin/ivshmem-server
 %%SOFTMMU%%bin/qemu-ga
 %%SOFTMMU%%bin/qemu-img
 %%SOFTMMU%%bin/qemu-io
@@ -18,7 +16,6 @@
 %%NONX86%%bin/qemu-system-mips64el
 %%NONX86%%bin/qemu-system-mipsel
 %%NONX86%%bin/qemu-system-moxie
-%%NONX86%%bin/qemu-system-or32
 %%NONX86%%bin/qemu-system-ppc
 %%NONX86%%bin/qemu-system-ppc64
 %%NONX86%%bin/qemu-system-ppcemb
@@ -48,6 +45,8 @@
 %%SOFTMMU%%@sample etc/qemu-ifdown.sample
 %%SOFTMMU%%man/man1/qemu.1.gz
 %%SOFTMMU%%man/man1/qemu-img.1.gz
+%%PORTDOCS%%%%SOFTMMU%%man/man7/qemu-ga-ref.7.gz
+%%PORTDOCS%%%%SOFTMMU%%man/man7/qemu-qmp-ref.7.gz
 %%SOFTMMU%%man/man8/qemu-ga.8.gz
 %%SOFTMMU%%man/man8/qemu-nbd.8.gz
 %%SOFTMMU%%%%DATADIR%%/QEMU,cgthree.bin
@@ -132,6 +131,7 @@
 %%SOFTMMU%%%%DATADIR%%/vgabios-virtio.bin
 %%SOFTMMU%%%%DATADIR%%/vgabios-vmware.bin
 %%SOFTMMU%%%%DATADIR%%/vgabios.bin
+%%SOFTMMU%%%%DATADIR%%/skiboot.lid
 %%GTK2%%share/locale/bg/LC_MESSAGES/qemu.mo
 %%GTK2%%share/locale/de_DE/LC_MESSAGES/qemu.mo
 %%GTK2%%share/locale/fr_FR/LC_MESSAGES/qemu.mo
@@ -139,3 +139,8 @@
 %%GTK2%%share/locale/it/LC_MESSAGES/qemu.mo
 %%GTK2%%share/locale/tr/LC_MESSAGES/qemu.mo
 %%GTK2%%share/locale/zh_CN/LC_MESSAGES/qemu.mo
+%%PORTDOCS%%%%DOCSDIR%%/qemu-doc.txt
+%%PORTDOCS%%%%DOCSDIR%%/qemu-ga-ref.html
+%%PORTDOCS%%%%DOCSDIR%%/qemu-ga-ref.txt
+%%PORTDOCS%%%%DOCSDIR%%/qemu-qmp-ref.html
+%%PORTDOCS%%%%DOCSDIR%%/qemu-qmp-ref.txt

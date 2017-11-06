@@ -228,7 +228,7 @@ _INCLUDE_USES_PYTHON_MK=	yes
 # What Python version and what Python interpreters are currently supported?
 # When adding a version, please keep the comment in
 # Mk/bsd.default-versions.mk in sync.
-_PYTHON_VERSIONS=		2.7 3.6 3.5 3.4 3.3	# preferred first
+_PYTHON_VERSIONS=		2.7 3.6 3.5 3.4	# preferred first
 _PYTHON_PORTBRANCH=		2.7		# ${_PYTHON_VERSIONS:[1]}
 _PYTHON_BASECMD=		${LOCALBASE}/bin/python
 _PYTHON_RELPORTDIR=		lang/python
@@ -354,7 +354,7 @@ _PYTHON_VERSION_NONSUPPORTED=	${_PYTHON_VERSION_MAXIMUM} at most
 .if defined(_PYTHON_VERSION_NONSUPPORTED)
 .if defined(PYTHON_VERSION) || defined(PYTHON_CMD)
 _PV:=		${_PYTHON_VERSION}	# preserve the specified python version
-WARNING+=	"needs Python ${_PYTHON_VERSION_NONSUPPORTED}. But a port depending on this one specified ${_PV}"
+IGNORE=		needs Python ${_PYTHON_VERSION_NONSUPPORTED}, but ${_PV} was specified
 .endif # defined(PYTHON_VERSION) || defined(PYTHON_CMD)
 .undef _PYTHON_VERSION
 .for ver in ${PYTHON2_DEFAULT} ${PYTHON3_DEFAULT} ${_PYTHON_VERSIONS}
@@ -377,7 +377,8 @@ IGNORE=		needs an unsupported version of Python
 # try to find a different one, if the passed version fits into
 # the supported version range.
 PYTHON_VERSION?=	python${_PYTHON_VERSION}
-.if !defined(PYTHON_NO_DEPENDS)
+.if !defined(PYTHON_NO_DEPENDS) && \
+    ${PYTHON_VERSION} != ${PYTHON_DEFAULT_VERSION}
 DEPENDS_ARGS+=		PYTHON_VERSION=${PYTHON_VERSION}
 .endif
 
@@ -472,18 +473,18 @@ UNIQUE_SUFFIX=		-${PYTHON_VER}
 .if defined(_PYTHON_FEATURE_AUTOPLIST)
 UNIQUE_FIND_SUFFIX_FILES=	\
 	${SED} -e 's|^${PREFIX}/||' ${_PYTHONPKGLIST} ${TMPPLIST} | \
-	${GREP} -e '^bin/.*$$\|^sbin/.*$$\|^libexec/.*$$'
+	${EGREP} -e '^bin/.*$$|^sbin/.*$$|^libexec/.*$$'
 .else
 UNIQUE_FIND_SUFFIX_FILES=	\
-	${GREP} -he '^bin/.*$$\|^sbin/.*$$\|^libexec/.*$$' ${TMPPLIST} 2>/dev/null
+	${EGREP} -he '^bin/.*$$|^sbin/.*$$|^libexec/.*$$' ${TMPPLIST} 2>/dev/null
 .endif
 .endif # defined(_PYTHON_FEATURE_CONCURRENT)
 
 _CURRENTPORT:=	${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}
 .if defined(_PYTHON_FEATURE_DISTUTILS) && \
-	${_CURRENTPORT:S/${PYTHON_SUFFIX}$//} != ${PYTHON_PKGNAMEPREFIX}setuptools
-BUILD_DEPENDS+=		${PYTHON_PKGNAMEPREFIX}setuptools${PYTHON_SUFFIX}>0:devel/py-setuptools${PYTHON_SUFFIX}
-RUN_DEPENDS+=		${PYTHON_PKGNAMEPREFIX}setuptools${PYTHON_SUFFIX}>0:devel/py-setuptools${PYTHON_SUFFIX}
+	${_CURRENTPORT} != ${PYTHON_PKGNAMEPREFIX}setuptools
+BUILD_DEPENDS+=		${PYTHON_PKGNAMEPREFIX}setuptools>0:devel/${PYTHON_PKGNAMEPREFIX}setuptools
+RUN_DEPENDS+=		${PYTHON_PKGNAMEPREFIX}setuptools>0:devel/${PYTHON_PKGNAMEPREFIX}setuptools
 .endif
 
 # distutils support

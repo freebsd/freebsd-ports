@@ -1,0 +1,11 @@
+--- samhain-install.sh.in	Wed Jan 15 16:51:57 2003
++++ samhain-install.sh.in	Wed Jan 15 16:52:10 2003
+@@ -13,7 +13,7 @@
+ mandir=@mandir@
+ 
+ sysconfdir=@sysconfdir@
+-configfile=@myconffile@
++configfile=/usr/local/etc/yulerc.sample
+ 
+ pid_file=@mylockfile@
+ pid_dir=@mylockdir@

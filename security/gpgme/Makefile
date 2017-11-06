@@ -2,15 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	gpgme
-PORTVERSION=	1.8.0
-PORTREVISION?=	0
+PORTVERSION=	1.9.0
+PORTREVISION?=	1
 CATEGORIES?=	security
 MASTER_SITES=	GNUPG/gpgme
 
 MAINTAINER=	jhale@FreeBSD.org
 COMMENT?=	Library to make access to GnuPG easier
 
-LICENSE?=	LGPL21
+LICENSE?=	LGPL21+
 LICENSE_FILE?=	${WRKSRC}/COPYING.LESSER
 
 LIB_DEPENDS=	libassuan.so:security/libassuan \
@@ -21,6 +21,7 @@ USES=		cpe gmake libtool localbase:ldflags tar:bzip2
 USE_LDCONFIG=	yes
 
 INSTALL_TARGET=	install-strip
+TEST_TARGET=	check
 
 CPE_VENDOR=	gnu
 
@@ -57,6 +58,7 @@ CONFIGURE_ARGS+=	--disable-gpgsm-test
 LIB_DEPENDS+=	libgpgme.so:security/gpgme
 BUILD_WRKSRC=	${WRKSRC}/lang/${BINDING_NAME}
 INSTALL_WRKSRC=	${WRKSRC}/lang/${BINDING_NAME}
+NO_TEST=	yes
 
 .  if ${SLAVEPORT} == "cpp"
 CONFIGURE_ARGS+=--enable-languages="cpp"
@@ -74,8 +76,8 @@ USE_QT5=	buildtools_build core testlib
 
 .  if ${SLAVEPORT} == "python"
 BUILD_DEPENDS+=	swig3.0:devel/swig30 \
-		${PYTHON_PKGNAMEPREFIX}setuptools${PYTHON_SUFFIX}>0:devel/py-setuptools${PYTHON_SUFFIX}
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}setuptools${PYTHON_SUFFIX}>0:devel/py-setuptools${PYTHON_SUFFIX}
+		${PYTHON_PKGNAMEPREFIX}setuptools>0:devel/${PYTHON_PKGNAMEPREFIX}setuptools
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}setuptools>0:devel/${PYTHON_PKGNAMEPREFIX}setuptools
 USES+=		python
 USE_PYTHON=	py3kplist
 CONFIGURE_ENV+=	SWIG=${LOCALBASE}/bin/swig3.0

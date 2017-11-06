@@ -1,0 +1,6 @@
+If you're using Rails 4 strong parameters, you will get a
+ForbiddenAttributesProtection exceptions when mass-assigning attributes. This
+gem allows mass assignment. It prevents Mash from responding to :permitted? and
+therefore triggering this behavior in ForbiddenAttributesProtection.
+
+WWW: https://github.com/Maxim-Filimonov/hashie-forbidden_attributes

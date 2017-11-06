@@ -1,2 +1,3 @@
-SHA256 (cabal/zlib-0.5.4.2.tar.gz) = 75d617d8a77d85ba5a0d69e42c2cd5371b56140b5fb028be3e75bff1cfd41096
-SIZE (cabal/zlib-0.5.4.2.tar.gz) = 127818
+TIMESTAMP = 1499611868
+SHA256 (cabal/zlib-0.6.1.2.tar.gz) = e4eb4e636caf07a16a9730ce469a00b65d5748f259f43edd904dd457b198a2bb
+SIZE (cabal/zlib-0.6.1.2.tar.gz) = 142413

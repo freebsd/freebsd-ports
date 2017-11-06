@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	groonga
-PORTVERSION=	6.0.7
+PORTVERSION=	7.0.6
 CATEGORIES=	textproc
 MASTER_SITES=	http://packages.groonga.org/source/groonga/
 
@@ -12,7 +12,7 @@ LICENSE=	LGPL21
 
 LIB_DEPENDS=	libpcre.so:devel/pcre
 
-USES=		execinfo gmake libedit libtool pathfix pkgconfig
+USES=		gmake libedit libtool pathfix pkgconfig
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-benchmark \
 		--disable-document \
@@ -37,7 +37,7 @@ MECAB_DESC=		Morphological analysis support via MeCab
 MECAB_LIB_DEPENDS=	libmecab.so:japanese/mecab
 MECAB_CONFIGURE_OFF=	--without-mecab
 SUGGEST_DESC=		Suggestions support
-SUGGEST_LIB_DEPENDS=	libevent.so:devel/libevent2 \
+SUGGEST_LIB_DEPENDS=	libevent.so:devel/libevent \
 			libmsgpackc.so:devel/msgpack \
 			libzmq.so:net/libzmq2
 SUGGEST_CONFIGURE_ON=	--with-libevent=${LOCALBASE} \
@@ -57,7 +57,7 @@ post-patch:
 		'/NGX_PID_PATH/s|mkdir|${TRUE}| ; \
 		 /NGX_HTTP_LOG_PATH/s|mkdir|${TRUE}| ; \
 		 /NGX_ERROR_LOG_PATH/s|mkdir|${TRUE}|' \
-		${WRKSRC}/vendor/nginx-1.11.3/auto/install
+		${WRKSRC}/vendor/nginx-1.13.4/auto/install
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/sbin/groonga-httpd

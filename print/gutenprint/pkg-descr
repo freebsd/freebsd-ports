@@ -1,6 +1,4 @@
-The "meta-port" for GutenPrint
-
-High quality drivers for Canon, Epson, Lexmark, and PCL printers
-for use with Ghostscript, CUPS, Foomatic, and the Gimp
+High quality drivers for Canon, Epson, Lexmark, Sony, Olympus, and PCL
+printers for use with CUPS and GIMP.
 
 WWW: http://gimp-print.sourceforge.net/

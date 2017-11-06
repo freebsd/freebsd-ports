@@ -1,4 +1,4 @@
---- examples/chrony.conf.example1.orig	2015-10-19 09:18:37 UTC
+--- examples/chrony.conf.example1.orig	2017-01-31 10:22:11 UTC
 +++ examples/chrony.conf.example1
 @@ -1,8 +1,8 @@
  # Use public NTP servers from the pool.ntp.org project.
@@ -9,5 +9,5 @@
 -driftfile /var/lib/chrony/drift
 +driftfile /var/db/chrony/drift
  
- # In first three updates step the system clock instead of slew
- # if the adjustment is larger than 1 second.
+ # Allow the system clock to be stepped in the first three updates
+ # if its offset is larger than 1 second.

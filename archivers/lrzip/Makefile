@@ -4,8 +4,7 @@
 PORTNAME=	lrzip
 PORTVERSION=	0.631
 CATEGORIES=	archivers
-MASTER_SITES=	http://ck.kolivas.org/apps/lrzip/ \
-		http://files.gslin.org/Software/
+MASTER_SITES=	http://ck.kolivas.org/apps/lrzip/
 
 MAINTAINER=	delphij@FreeBSD.org
 COMMENT=	Long Range ZIP or Lzma RZIP
@@ -19,7 +18,7 @@ CFLAGS+=	-I${LOCALBASE}/include
 CONFIGURE_ARGS+=	--enable-asm
 GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib
-USES=		alias gmake libtool pathfix perl5 shebangfix tar:bzip2
+USES=		alias libtool pathfix perl5 shebangfix tar:bzip2
 SHEBANG_FILES=	${WRKSRC}/lrztar
 USE_PERL5=	build
 USE_LDCONFIG=	yes

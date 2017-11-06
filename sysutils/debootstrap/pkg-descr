@@ -7,4 +7,4 @@ a subdirectory of your existing FreeBSD installation (i386 or amd64)
 and then run Debian GNU/kFreeBSD (i386 or amd64) or Debian Linux (i386)
 in a jail or chroot.
 
-WWW: http://wiki.debian.org/Debootstrap
+WWW: https://wiki.debian.org/Debootstrap

@@ -5,7 +5,7 @@ PORTNAME=	pstack
 PORTVERSION=	1.3
 CATEGORIES=	sysutils
 
-MAINTAINER=	luca.pizzamiglio@gmail.com
+MAINTAINER=	pizzamig@FreeBSD.org
 COMMENT=	Retrieve process/core file stack traces
 
 LICENSE=	BSD2CLAUSE

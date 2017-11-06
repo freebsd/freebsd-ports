@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	oauth2
-PORTVERSION=	0.8.2
+PORTVERSION=	0.9.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net
 PKGNAMEPREFIX=	elixir-
@@ -17,5 +17,6 @@ MIX_BUILD_DEPS=	devel/elixir-plug \
 USES=		elixir
 USE_GITHUB=	yes
 GH_ACCOUNT=	scrogson
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

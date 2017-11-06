@@ -11,8 +11,10 @@ MAINTAINER=	rm@FreeBSD.org
 COMMENT=	gpodder.net API client library for Python
 
 LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		python:2
-USE_PYTHON=	distutils autoplist
+NO_ARCH=	yes
+USES=		python:2.7
+USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>

@@ -1,2 +1,3 @@
-SHA256 (cabal/BNFC-2.8.tar.gz) = 21be5fddcfe8e1970c94872f36d5f29d07709f69e8e139b68bf6b27e75677f34
-SIZE (cabal/BNFC-2.8.tar.gz) = 183591
+TIMESTAMP = 1499627811
+SHA256 (cabal/BNFC-2.8.1.tar.gz) = 2c1bea5c034483813091eea0ea5c830fdde8fedd31b1fc021ea69823b30a5920
+SIZE (cabal/BNFC-2.8.1.tar.gz) = 225015

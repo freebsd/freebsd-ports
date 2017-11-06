@@ -2,15 +2,17 @@
 # $FreeBSD$
 
 PORTNAME=	metaf2xml
-PORTVERSION=	2.0
+PORTVERSION=	2.2
+PORTREVISION=	1
 CATEGORIES=	science perl5
 MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Parse and Decode METAR, TAF, SYNOP, BUOY and AMDAR and Write as XML
 
-LICENSE=	GPLv2 GPLv3
-LICENSE_COMB=	dual
+LICENSE=	GPLv2+
+
+RUN_DEPENDS=	p5-CGI>0:www/p5-CGI
 
 OPTIONS_DEFINE=	APACHE DOCS
 OPTIONS_SUB=	yes
@@ -25,7 +27,8 @@ MAKE_ARGS=	CGI_BIN_DIR=${WWWDIR}/cgi-bin \
 		METAF2XML_DOC=${DOCSDIR} \
 		METAF2XML_MAN=${PREFIX}/man \
 		METAF2XML_XSL=${DATADIR} \
-		BUILD_ROOT=${STAGEDIR}
+		BUILD_ROOT=${STAGEDIR} \
+		PERL=${LOCALBASE}/bin/perl
 NO_BUILD=	yes
 NO_ARCH=	yes
 USES=		perl5 shebangfix tar:tgz
@@ -34,17 +37,12 @@ SHEBANG_FILES=	metaf.pl metaf2xml.pl metafsrc2raw.pl
 
 PLIST_SUB=	VERSION=${PORTVERSION}
 
-.include <bsd.port.pre.mk>
+APACHE_MAKE_ARGS=	CONF_DIR=${PREFIX}/${APACHEETCDIR}/Includes
+APACHE_USE=		APACHE_RUN=22+
 
-.if ${PERL_LEVEL} >= 502200
-RUN_DEPENDS+=	p5-CGI>0:www/p5-CGI
-.endif
+post-patch:
+	${REINPLACE_CMD} 's|%%METAF2XML_XSL%%|../../../${DATADIR_REL}| ; \
+		s|%%METAF2XML_BIN%%|../../../bin|' \
+		${WRKSRC}/install.pl
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MAPACHE}
-USE_APACHE_RUN=	22+
-MAKE_ARGS+=	CONF_DIR=${PREFIX}/${APACHEETCDIR}/Includes
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

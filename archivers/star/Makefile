@@ -11,7 +11,7 @@ COMMENT=	Unique standard tape archiver with many enhancements
 
 LICENSE=	CDDL GPLv2
 LICENSE_COMB=	multi
-LICENSE_FILES=	${WRKSRC}/CDDL.Schily.txt
+LICENSE_FILE=	${WRKSRC}/CDDL.Schily.txt
 
 BUILD_DEPENDS=	smake:devel/smake
 

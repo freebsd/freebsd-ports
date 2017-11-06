@@ -1,12 +1,13 @@
---- sysdeps.h.orig	Wed Jan  2 22:15:27 2002
-+++ sysdeps.h	Fri Sep  5 21:24:44 2003
-@@ -25,7 +25,9 @@
+--- sysdeps.h.orig	2002-01-02 21:15:27 UTC
++++ sysdeps.h
+@@ -25,8 +25,10 @@ extern "C"
  #endif
  
  #ifdef HAVE_VALUES_H
 +#if !defined(__FreeBSD__)
  #include <values.h>
-+#endif
  #endif
++#endif
  
  #ifdef HAVE_STRINGS_H
+ #include <strings.h>

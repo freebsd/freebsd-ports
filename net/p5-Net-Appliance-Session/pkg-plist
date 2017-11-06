@@ -1,8 +1,8 @@
 bin/nas
-%%PERL5_MAN3%%/Net::Appliance::Session.3.gz
 %%SITE_PERL%%/Net/Appliance/Session.pm
 %%SITE_PERL%%/Net/Appliance/Session/Async.pm
 %%SITE_PERL%%/Net/Appliance/Session/Engine.pm
 %%SITE_PERL%%/Net/Appliance/Session/Scripting.pm
 %%SITE_PERL%%/Net/Appliance/Session/Transport.pm
 %%PERL5_MAN1%%/nas.1.gz
+%%PERL5_MAN3%%/Net::Appliance::Session.3.gz

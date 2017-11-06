@@ -1,6 +1,6 @@
 bin/focuswriter
 man/man1/focuswriter.1.gz
-share/appdata/focuswriter.appdata.xml
+share/metainfo/focuswriter.appdata.xml
 share/applications/focuswriter.desktop
 share/icons/hicolor/1024x1024/apps/focuswriter.png
 share/icons/hicolor/128x128/apps/focuswriter.png

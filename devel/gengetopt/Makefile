@@ -13,7 +13,6 @@ COMMENT=	Tool for generating a C function which parses command line arguments
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gmake
 GNU_CONFIGURE=	yes
 MAKE_JOBS_UNSAFE=yes
 

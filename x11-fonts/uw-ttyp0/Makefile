@@ -2,8 +2,9 @@
 
 PORTNAME=	uw-ttyp0
 PORTVERSION=	1.3
+PORTREVISION=	1
 CATEGORIES=	x11-fonts
-MASTER_SITES=	http://people.mpi-inf.mpg.de/~uwe/misc/uw-ttyp0/
+MASTER_SITES=	https://people.mpi-inf.mpg.de/~uwe/misc/uw-ttyp0/
 
 MAINTAINER=	rakuco@FreeBSD.org
 COMMENT=	Monospaced bitmap fonts for X11

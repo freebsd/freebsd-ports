@@ -2,25 +2,25 @@
 # $FreeBSD$
 
 PORTNAME=	rkhunter
-PORTVERSION=	1.4.2
-PORTREVISION=	2
+PORTVERSION=	1.4.4
 CATEGORIES=	security
 MASTER_SITES=	SF
 
 MAINTAINER=	lukasz@wasikowski.net
 COMMENT=	Rootkit detection tool
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/files/LICENSE
 
 OPTIONS_DEFINE=	LSOF NMAP DOCS
 OPTIONS_DEFAULT=LSOF
 
-RUN_DEPENDS+=	p5-Digest-SHA1>=0:security/p5-Digest-SHA1 \
-		${LOCALBASE}/bin/wget:ftp/wget
+RUN_DEPENDS+=	p5-Digest-SHA1>=0:security/p5-Digest-SHA1
 
 USES=		perl5 shebangfix
 SHEBANG_FILES=	files/check_modules.pl files/filehashsha.pl \
 		files/stat.pl
+NO_ARCH=	yes
 NO_BUILD=	yes
 SUB_FILES=	415.${PORTNAME}
 

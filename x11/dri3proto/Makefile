@@ -7,6 +7,8 @@ CATEGORIES=	x11
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	DRI3 prototype headers
 
+LICENSE=	MIT
+
 XORG_CAT=	proto
 
 .include <bsd.port.mk>

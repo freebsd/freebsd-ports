@@ -3,7 +3,7 @@
 
 PORTNAME=	aegisub
 PORTVERSION=	3.2.2
-PORTREVISION=	13
+PORTREVISION=	23
 CATEGORIES=	multimedia
 MASTER_SITES=	http://ftp.aegisub.org/pub/archives/releases/source/ \
 		ftp://ftp.aegisub.org/pub/archives/releases/source/ \
@@ -63,6 +63,8 @@ PORTAUDIO_CONFIGURE_OFF=\
 PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
 PULSEAUDIO_CONFIGURE_OFF=\
 			--without-libpulse
+
+BROKEN_aarch64=		Fails to compile: no support for this architecture (yet)
 
 # src/audio_display.o: undefined reference to symbol '__atomic_load_8@@LIBATOMIC_1.0'
 .if empty(CFLAGS:M-march=*)

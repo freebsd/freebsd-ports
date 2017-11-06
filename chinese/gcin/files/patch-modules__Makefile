@@ -1,5 +1,5 @@
---- modules/Makefile.orig	2013-10-05 11:31:52.000000000 +0800
-+++ modules/Makefile	2014-04-12 10:57:02.970548467 +0800
+--- modules/Makefile.orig	2013-10-05 03:31:52 UTC
++++ modules/Makefile
 @@ -38,4 +38,4 @@ clean:
  .depend:
  	$(CCX) $(CFLAGS) -MM *.cpp > $@

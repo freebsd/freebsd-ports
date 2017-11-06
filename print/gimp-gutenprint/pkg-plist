@@ -1,1 +1,5 @@
+lib/libgutenprintui2.so
+lib/libgutenprintui2.so.1
+lib/libgutenprintui2.so.1.0.0
+libdata/pkgconfig/gutenprintui2.pc
 libexec/gimp/2.2/plug-ins/gutenprint

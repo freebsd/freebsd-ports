@@ -1,6 +1,6 @@
---- ogonkify/Makefile.in.orig	Tue Apr 20 00:07:03 1999
-+++ ogonkify/Makefile.in	Tue Apr 20 00:07:07 1999
-@@ -37,7 +37,7 @@
+--- ogonkify/Makefile.in.orig	2000-01-07 13:00:49 UTC
++++ ogonkify/Makefile.in
+@@ -33,7 +33,7 @@ mandir = @mandir@
  
  DESTDIR =
  

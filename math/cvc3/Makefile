@@ -3,7 +3,7 @@
 
 PORTNAME=	cvc3
 PORTVERSION=	2.4.1
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	math
 MASTER_SITES=	http://www.cs.nyu.edu/acsys/cvc3/download/${PORTVERSION}/
 
@@ -21,6 +21,7 @@ CXXFLAGS+=	-fPIC
 GNU_CONFIGURE=	yes
 USES=		bison gmake pathfix perl5
 PATHFIX_MAKEFILEIN=	Makefile
+USE_CXXSTD=	gnu++98
 USE_GCC=	any
 USE_LDCONFIG=	yes
 

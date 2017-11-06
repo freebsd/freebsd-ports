@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	GitPython
-PORTVERSION=	1.0.1
+DISTVERSION=	2.1.7
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,15 +12,16 @@ COMMENT=	Python Git Library
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gitdb>=0.6.4:devel/py-gitdb
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>=0:devel/py-nose \
-		${PYTHON_PKGNAMEPREFIX}mock>=0:devel/py-mock \
-		${PYTHON_PKGNAMEPREFIX}gitdb>=0.6.4:devel/py-gitdb
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ddt>=1.1.1:devel/py-ddt \
+		${PYTHON_PKGNAMEPREFIX}gitdb2>=2.0.0:devel/py-gitdb2
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mock>=0:devel/py-mock \
+		${PYTHON_PKGNAMEPREFIX}nose>=0:devel/py-nose
 
+NO_ARCH=	yes
 USES=		python
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	autoplist concurrent distutils
 
-regression-test: build
+do-test:
 	cd ${WRKSRC} && ${PYTHON_CMD} -m nose
 
 .include <bsd.port.mk>

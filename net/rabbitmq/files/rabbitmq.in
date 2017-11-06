@@ -54,15 +54,15 @@ rabbitmq_start()
 		chown -R ${rabbitmq_user}:${rabbitmq_user} ${RABBITMQ_HOME}
 	fi
 
-	if [ -d ${RABBITMQ_LOG_BASE} ]; then
-		chown -R ${rabbitmq_user}:${rabbitmq_user} ${RABBITMQ_LOG_BASE}
-	fi
+	mkdir -p ${RABBITMQ_LOG_BASE}
+ 
+	chown ${rabbitmq_user}:${rabbitmq_user} ${RABBITMQ_LOG_BASE}
 
 	if [ -f ${RABBITMQ_HOME}/.erlang.cookie ]; then
 		chmod 600 ${RABBITMQ_HOME}/.erlang.cookie
 	fi
 
-	env HOME=${RABBITMQ_HOME} daemon -c -f -u ${rabbitmq_user} -p ${pidfile} -P ${daemon_pidfile} ${rabbitmq_server}
+	env HOME=${RABBITMQ_HOME} /usr/sbin/daemon -c -f -u ${rabbitmq_user} -p ${pidfile} -P ${daemon_pidfile} ${rabbitmq_server}
 	debug "Running: rabbitmqctl wait ${pidfile}"
 	${rabbitmq_ctl} wait ${pidfile} >/dev/null 2>&1
 }

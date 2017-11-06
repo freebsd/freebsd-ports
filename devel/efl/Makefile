@@ -2,9 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	efl
-PORTVERSION=	1.18.4
+PORTVERSION=	1.19.2
 CATEGORIES=	devel enlightenment
 MASTER_SITES=	http://download.enlightenment.org/rel/libs/${PORTNAME}/
+DIST_SUBDIR=	enlightenment
 
 MAINTAINER=	enlightenment@FreeBSD.org
 COMMENT=	Enlightenment Foundation Libraries
@@ -20,9 +21,8 @@ LIB_DEPENDS=	libgif.so:graphics/giflib \
 		libdbus-1.so:devel/dbus \
 		libsndfile.so:audio/libsndfile
 
-DIST_SUBDIR=	enlightenment
 GNU_CONFIGURE=	yes
-USES=		autoreconf compiler:c++11-lib gettext-tools gmake iconv jpeg \
+USES=		autoreconf compiler:c++14-lang gettext-tools gmake iconv jpeg \
 		libtool pathfix pkgconfig shared-mime-info tar:xz
 USE_XORG=	x11 xcursor xcomposite xdamage xext xfixes xi xinerama xp \
 		xrandr xrender xtst xscrnsaver
@@ -35,7 +35,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 PLIST_SUB=	BRANCHVERSION=${PORTVERSION:R} PORTVERSION=${PORTVERSION}
 
-OPTIONS_DEFINE=		AVAHI FRIBIDI HARFBUZZ NLS NVIDIA PHYSICS PULSEAUDIO SSL
+OPTIONS_DEFINE=		AVAHI FRIBIDI HARFBUZZ NLS PHYSICS PULSEAUDIO SSL
 OPTIONS_GROUP=		EMOTION INPUT LOADER
 OPTIONS_GROUP_EMOTION=	GSTREAMER LIBXINE V4L VLC
 OPTIONS_GROUP_INPUT=	IBUS SCIM
@@ -46,7 +46,6 @@ OPTIONS_DEFAULT=	FRIBIDI HARFBUZZ PHYSICS SSL GSTREAMER PDF SVG OPENGL
 OPTIONS_SUB=		yes
 
 HARFBUZZ_DESC=		OpenType text shaping engine
-NVIDIA_DESC=		Apply Nvidia workaround
 PHYSICS_DESC=		Physics effects
 VLC_DESC=		Multimedia support by VLC
 IBUS_DESC=		Intelligent Input Bus
@@ -115,10 +114,6 @@ SDL_CONFIGURE_ENABLE=		sdl
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MNVIDIA}
-EXTRA_PATCHES+=			${FILESDIR}/extra-patch-src-lib-ecore_x-ecore_x_vsync_tool.c
-.endif
-
 .if ${PORT_OPTIONS:MPULSEAUDIO}
 PLIST_SUB+=			AUDIO=""
 .else
@@ -128,7 +123,6 @@ PLIST_SUB+=			AUDIO="@comment "
 
 .if ${PORT_OPTIONS:MSSL}
 USES+=				ssl
-WITH_OPENSSL_PORT=		yes
 .else
 CONFIGURE_ARGS+=		--with-crypto=none
 .endif
@@ -143,7 +137,7 @@ CONFIGURE_ARGS+=		--disable-ibus --with-glib=no
 CONFIGURE_ARGS+=		--with-opengl=none
 .endif
 
-.if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
+.if ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
 USES+=				lua
 CONFIGURE_ARGS+=		--enable-lua-old
 PLIST_SUB+=			ELUA="@comment "

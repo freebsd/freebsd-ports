@@ -1,2 +1,3 @@
-SHA256 (cabal/hoauth2-0.4.8.tar.gz) = 6e489820dee16b926225e58555032e32d345b234b5a798db6e5a1d63d2843093
-SIZE (cabal/hoauth2-0.4.8.tar.gz) = 8599
+TIMESTAMP = 1501281503
+SHA256 (cabal/hoauth2-0.5.9.tar.gz) = ffa512787b4ef5a32260aa8659260fdd7e0fcafae7c2482275dd85e7a202b25e
+SIZE (cabal/hoauth2-0.5.9.tar.gz) = 10864

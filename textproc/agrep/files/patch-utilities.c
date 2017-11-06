@@ -1,5 +1,5 @@
---- utilities.c.orig	Fri Jan 17 20:14:43 1992
-+++ utilities.c	Sun Jul 21 03:50:47 2002
+--- utilities.c.orig	1992-01-17 19:14:43 UTC
++++ utilities.c
 @@ -2,6 +2,7 @@
     and manipulating regular expression syntax trees.	*/
  

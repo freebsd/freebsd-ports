@@ -3,7 +3,7 @@
 
 PORTNAME=	libkcompactdisc
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio kde kde-kde4
 
 MAINTAINER=	kde@FreeBSD.org

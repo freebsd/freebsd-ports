@@ -19,4 +19,6 @@ NO_ARCH=	yes
 USE_PYTHON=	autoplist concurrent distutils
 USES=		python
 
+CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}progressbar231
+
 .include <bsd.port.mk>

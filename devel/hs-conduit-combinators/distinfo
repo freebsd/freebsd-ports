@@ -1,2 +1,3 @@
-SHA256 (cabal/conduit-combinators-1.0.3.tar.gz) = 29c1f3dd854d11212474692c6c3a4158ed2929e8443ff2878eee5ea1ed6700bf
-SIZE (cabal/conduit-combinators-1.0.3.tar.gz) = 38172
+TIMESTAMP = 1499627827
+SHA256 (cabal/conduit-combinators-1.1.1.tar.gz) = a022e80d54d6cae017ae69e04b44fd6f57f8bac6b889e574dc09d30170ac0918
+SIZE (cabal/conduit-combinators-1.1.1.tar.gz) = 38380

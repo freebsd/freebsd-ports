@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cloudpickle
-PORTVERSION=	0.2.1
+PORTVERSION=	0.3.1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,6 +12,8 @@ COMMENT=	Extended pickling support for Python objects
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tornado>0:www/py-tornado
 
 USES=		python
 USE_PYTHON=	autoplist distutils

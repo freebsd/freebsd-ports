@@ -1,12 +1,12 @@
 # $FreeBSD$
 
 PORTNAME=	s3transfer
-PORTVERSION=	0.1.10
+PORTVERSION=	0.1.11
 CATEGORIES=	net python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	bradleythughes@fastmail.fm
+MAINTAINER=	bhughes@FreeBSD.org
 COMMENT=	Amazon S3 Transfer Manager for Python
 
 LICENSE=	APACHE20

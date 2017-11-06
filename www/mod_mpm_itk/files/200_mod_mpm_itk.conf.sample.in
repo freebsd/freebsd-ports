@@ -1,0 +1,11 @@
+## $FreeBSD$
+## vim: set filetype=apache:
+##
+## module file for mod_mpm_itk
+##
+## PROVIDE: mod_mpm_itk
+## REQUIRE: mod_mpm_prefork
+
+<IfModule mpm_prefork_module>
+  LoadModule mpm_itk_module %%APACHEMODDIR%%/mod_mpm_itk.so
+</IfModule>

@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xfce4-mount-plugin
-PORTVERSION=	0.6.7
-PORTREVISION=	4
+PORTVERSION=	1.1.2
 CATEGORIES=	sysutils xfce
 MASTER_SITES=	XFCE/src/panel-plugins/${PORTNAME}/${PORTVERSION:R}
 DIST_SUBDIR=	xfce4
@@ -19,8 +18,8 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 INSTALL_TARGET=	install-strip
-USES=		gettext gmake libtool pkgconfig xfce tar:bzip2
-USE_GNOME=	gtk20 cairo intltool intlhack
+USES=		gettext gmake libtool pkgconfig tar:bzip2 xfce:gtk3
+USE_GNOME=	gtk30 cairo intltool
 USE_LDCONFIG=	yes
 USE_XFCE=	panel
 

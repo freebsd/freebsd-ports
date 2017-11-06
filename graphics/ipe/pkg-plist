@@ -97,6 +97,10 @@ man/man1/ipetoipe.1.gz
 %%DATADIR%%/%%VERSION%%/icons/mode_circle1.png
 %%DATADIR%%/%%VERSION%%/icons/mode_circle2.png
 %%DATADIR%%/%%VERSION%%/icons/mode_circle3.png
+%%DATADIR%%/%%VERSION%%/icons/mode_graph.png
+%%DATADIR%%/%%VERSION%%/icons/mode_graph@2x.png
+%%DATADIR%%/%%VERSION%%/icons/mode_graph_32x32.png
+%%DATADIR%%/%%VERSION%%/icons/mode_graph_32x32@2x.png
 %%DATADIR%%/%%VERSION%%/icons/mode_ink.png
 %%DATADIR%%/%%VERSION%%/icons/mode_ink@2x.png
 %%DATADIR%%/%%VERSION%%/icons/mode_ink_32x32.png
@@ -194,4 +198,6 @@ man/man1/ipetoipe.1.gz
 %%DATADIR%%/%%VERSION%%/styles/colors.isy
 %%DATADIR%%/%%VERSION%%/styles/decorations.isy
 %%DATADIR%%/%%VERSION%%/styles/presentation.isy
+%%DATADIR%%/%%VERSION%%/styles/note-paper.isy
+%%DATADIR%%/%%VERSION%%/styles/tikz-shapes.isy
 share/pixmaps/ipe.png

@@ -16,7 +16,6 @@ COMMENT?=	Input method library
 BROKEN_aarch64=	Fails to build: The collector has not been ported to this machine/OS combination
 
 USE_LDCONFIG=	yes
-WANT_GNOME=	yes
 USE_GNOME+=	glib20 intltool
 USES+=		gettext gmake iconv libedit libtool pathfix pkgconfig perl5 tar:bzip2
 USE_PERL5=	build
@@ -59,11 +58,7 @@ PLIST_SUB+=	X11=""
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "ia64"
-IGNORE=		not yet ported to ia64
-.endif
-
-.if ${ARCH} == "amd64" || ${ARCH} == "ia64" || ${ARCH} == "sparc64"
+.if ${ARCH} == "amd64" || ${ARCH} == "sparc64"
 CONFIGURE_ARGS+=	--enable-storage=fatty
 .endif
 

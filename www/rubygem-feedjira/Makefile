@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	feedjira
-PORTVERSION=	2.1.0
+PORTVERSION=	2.1.2
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 

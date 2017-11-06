@@ -1,12 +1,13 @@
 # $FreeBSD$
 
 PORTNAME=	puppet
-PORTVERSION=	4.8.1
+PORTVERSION=	4.10.8
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://downloads.puppetlabs.com/puppet/
 PKGNAMESUFFIX=	4
 
-MAINTAINER=	freebsd@zleslie.info
+MAINTAINER=	puppet@FreeBSD.org
 COMMENT=	Configuration management framework written in Ruby
 
 LICENSE=	APACHE20
@@ -20,7 +21,7 @@ RUN_DEPENDS=	rubygem-hiera>=2.0:sysutils/rubygem-hiera \
 
 USES=		cpe
 CPE_VENDOR=	puppetlabs
-CONFLICTS_INSTALL=	puppet38-* puppet37-*
+CONFLICTS_INSTALL=	puppet5-*
 NO_ARCH=	yes
 NO_BUILD=	yes
 USE_RUBY=	yes
@@ -75,14 +76,15 @@ post-patch:
 		${WRKSRC}/ext/rack/config.ru
 
 do-install:
-	@cd ${WRKSRC} && ${SETENV} PREFIX=${PREFIX} ${RUBY} ${WRKSRC}/install.rb --no-configs --destdir=${STAGEDIR}
+	@cd ${WRKSRC} && ${SETENV} PREFIX=${PREFIX} LC_ALL=C.UTF-8 ${RUBY} ${WRKSRC}/install.rb --no-configs --destdir=${STAGEDIR} \
+		--localedir=/var/puppet/share/locales
 
 post-install:
 	${MKDIR} ${STAGEDIR}${ETCDIR}/manifests
 	${MKDIR} ${STAGEDIR}${ETCDIR}/modules
 	${MKDIR} ${STAGEDIR}/var/puppet
 	${INSTALL_DATA} ${WRKSRC}/conf/auth.conf ${STAGEDIR}${ETCDIR}/auth.conf-dist
-	${RUBY} -I ${STAGEDIR}/${RUBY_SITELIBDIR} ${STAGEDIR}${PREFIX}/bin/puppet agent --genconfig \
+	${SETENV} LC_ALL=C.UTF-8 ${RUBY} -I ${STAGEDIR}/${RUBY_SITELIBDIR} ${STAGEDIR}${PREFIX}/bin/puppet agent --genconfig \
 		--confdir=${ETCDIR} \
 		--rundir=/var/run/puppet \
 		--vardir=/var/puppet \

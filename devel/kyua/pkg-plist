@@ -1,5 +1,5 @@
 bin/kyua
-etc/kyua/kyua.conf
+@sample etc/kyua/kyua.conf.sample
 man/man1/kyua-about.1.gz
 man/man1/kyua-config.1.gz
 man/man1/kyua-db-exec.1.gz

@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	dbus
-PORTVERSION=	1.10.14
-PORTREVISION=	2
+PORTVERSION=	1.10.16
+PORTREVISION=	1
 CATEGORIES=	devel gnome
 MASTER_SITES=	http://dbus.freedesktop.org/releases/dbus/
 
@@ -16,7 +16,7 @@ LIB_DEPENDS=	libexpat.so:textproc/expat2
 
 PORTSCOUT=	limitw:1,even
 
-USES=		cpe gmake libtool localbase pathfix
+USES=		cpe gmake libtool localbase pathfix python:build shebangfix
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--with-test-socket-dir=${WRKDIR} \
@@ -25,6 +25,7 @@ CONFIGURE_ARGS=	--with-test-socket-dir=${WRKDIR} \
 		--disable-apparmor \
 		--disable-systemd
 INSTALL_TARGET=	install-strip
+SHEBANG_FILES=	tools/GetAllMatchRules.py
 
 CPE_VENDOR=	d-bus_project
 CPE_PRODUCT=	d-bus

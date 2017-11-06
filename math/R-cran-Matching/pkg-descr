@@ -1,0 +1,6 @@
+Provides functions for multivariate and propensity score matching and
+for finding optimal balance based on a genetic search algorithm. A
+variety of univariate and multivariate metrics to determine if balance
+has been obtained are also provided.
+
+WWW: http://sekhon.berkeley.edu/matching

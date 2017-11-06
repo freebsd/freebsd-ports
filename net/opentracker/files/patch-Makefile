@@ -1,6 +1,8 @@
---- Makefile.orig	2010-05-30 16:16:13.000000000 +0100
-+++ Makefile	2010-05-30 16:17:20.000000000 +0100
-@@ -8,14 +8,14 @@
+diff --git a/Makefile b/Makefile
+index da2c8f1..9b16f13 100644
+--- Makefile
++++ Makefile
+@@ -8,14 +8,14 @@ CC?=gcc
  # LIBOWFAT_LIBRARY=$(PREFIX)/lib
  
  # BSD flavour
@@ -21,16 +23,16 @@
  
  BINDIR?=$(PREFIX)/bin
  
-@@ -35,7 +35,7 @@
- #FEATURES+=-DWANT_MODEST_FULLSCRAPES
+@@ -37,7 +37,7 @@ BINDIR?=$(PREFIX)/bin
  #FEATURES+=-DWANT_SPOT_WOODPECKER
  #FEATURES+=-DWANT_SYSLOGS
+ #FEATURES+=-DWANT_DEV_RANDOM
 -FEATURES+=-DWANT_FULLSCRAPE
 +#FEATURES+=-DWANT_FULLSCRAPE
  
  #FEATURES+=-D_DEBUG_HTTPERROR
  
-@@ -56,14 +56,13 @@
+@@ -59,7 +59,7 @@ OBJECTS_proxy_debug = $(SOURCES_proxy:%.c=%.debug.o)
  
  .SUFFIXES: .debug.o .o .c
  
@@ -39,10 +41,3 @@
  
  CFLAGS_production = $(CFLAGS) $(OPTS_production) $(FEATURES)
  CFLAGS_debug = $(CFLAGS) $(OPTS_debug) $(FEATURES)
- 
- $(BINARY): $(OBJECTS) $(HEADERS)
- 	$(CC) -o $@ $(OBJECTS) $(LDFLAGS)
--	strip $@
- $(BINARY).debug: $(OBJECTS_debug) $(HEADERS)
- 	$(CC) -o $@ $(OBJECTS_debug) $(LDFLAGS)
- proxy: $(OBJECTS_proxy) $(HEADERS)

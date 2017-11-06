@@ -3,6 +3,7 @@
 
 PORTNAME=	compass-import-once
 PORTVERSION=	1.0.5
+PORTREVISION=	1
 CATEGORIES=	textproc ruby
 MASTER_SITES=	RG
 
@@ -12,7 +13,7 @@ COMMENT=	Compass core stylesheet library and minimum required ruby extensions
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	rubygem-sass>=3.2:textproc/rubygem-sass
+RUN_DEPENDS=	rubygem-sass34>=0:textproc/rubygem-sass34
 
 NO_ARCH=	yes
 USE_RUBY=	yes

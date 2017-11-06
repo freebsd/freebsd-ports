@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	audacious-plugins
-PORTVERSION=	3.8.1
+PORTVERSION=	3.9
 PORTREVISION=	1
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://distfiles.audacious-media-player.org/
 
-MAINTAINER=	olivierd@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Plugins needed for audacious
 
 LICENSE=	GPLv3
@@ -21,9 +21,9 @@ RUN_DEPENDS=	audacious:multimedia/audacious
 
 CONFLICTS_INSTALL=	audacious-plugins-gtk3-3.*
 
-GNU_CONFIGURE=	yes
-USES=		compiler:c++11-lib execinfo gettext-tools gmake iconv \
+USES=		compiler:c++11-lib gettext-tools gmake iconv \
 	localbase pkgconfig tar:bzip2
+GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_GNOME=	gtk20 glib20 libxml2 cairo gdkpixbuf2
 USE_XORG=	x11
@@ -37,7 +37,7 @@ OPTIONS_DEFINE=	AAC ALSA AMIDI AOSD BS2B CDDA CUE FFMPEG \
 		OPENGL OSS PULSEAUDIO SAMPLERATE SCROBBLER SDL SID SNDFILE \
 		SPEEDPITCH VORBIS WAVPACK
 OPTIONS_DEFAULT=	AAC AOSD CDDA CUE FFMPEG FLAC MP3 \
-		MMS NEON NLS NOTIFY OSS SCROBBLER VORBIS WAVPACK
+		MMS MPRIS NEON NLS NOTIFY OSS SCROBBLER VORBIS WAVPACK
 
 AAC_LIB_DEPENDS=	libfaad.so:audio/faad
 AAC_CONFIGURE_OFF=	--disable-aac
@@ -120,6 +120,8 @@ MPRIS_DESC=	NPRIS plugin
 post-patch:
 	${REINPLACE_CMD} -e 's| $${MFLAGS}||g' \
 		${WRKSRC}/buildsys.mk.in
+	${FIND} ${WRKSRC} -type f -name 'Makefile' \
+		| ${XARGS} ${REINPLACE_CMD} -e 's| -Wno-bool-operation||'
 
 post-install:
 	@${FIND} ${STAGEDIR}${PREFIX}/lib/audacious/ -name "*.so" \

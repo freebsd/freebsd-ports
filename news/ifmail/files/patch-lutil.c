@@ -1,5 +1,5 @@
---- iflib/lutil.c.orig	Sun Feb  1 23:11:53 1998
-+++ iflib/lutil.c	Mon Aug 11 17:29:35 2003
+--- iflib/lutil.c.orig	1998-02-01 22:11:53 UTC
++++ iflib/lutil.c
 @@ -4,7 +4,11 @@
  #include <stdio.h>
  #include <sys/stat.h>
@@ -12,7 +12,7 @@
  #include <errno.h>
  #include <time.h>
  #ifdef HAS_SYSLOG
-@@ -126,17 +130,27 @@
+@@ -126,17 +130,27 @@ char c;
  		syslog(level,"\terrno=%d : %s",\
                          errno,strerror(errno));
  
@@ -40,7 +40,7 @@
  	if (verbose)
  	{
  		PRINT_DEBUG(fmt,args);
-@@ -166,17 +180,27 @@
+@@ -166,17 +180,27 @@ va_dcl
  	return;
  }
  
@@ -68,7 +68,7 @@
  	if (verbose)
  	{
  		PRINT_DEBUG(fmt,args);
-@@ -206,16 +230,26 @@
+@@ -206,16 +230,26 @@ va_dcl
  	return;
  }
  

@@ -1,0 +1,6 @@
+This is a Ruby implementation of a RDF Normalize for RDF.rb.  It is a Graph
+normalizer for the RDF.rb library suite.  It generates normalized output for an
+RDF Dataset using the algorithm defined in RDF Normalize.  It also implements an
+RDF Writer interface, which can be used to serialize normalized statements.
+
+WWW: http://github.com/gkellogg/rdf-normalize

@@ -1,2 +1,3 @@
-SHA256 (cabal/streaming-commons-0.1.12.1.tar.gz) = d5bd8dd0b11a13d1d128d15dce31b3f2f4625c7f72d4420e749d85bf170a4fd7
-SIZE (cabal/streaming-commons-0.1.12.1.tar.gz) = 86864
+TIMESTAMP = 1499627857
+SHA256 (cabal/streaming-commons-0.1.18.tar.gz) = 27af2efb901a003c83fc6c71563eb70f45b4823516c299759d800a48d9f083cb
+SIZE (cabal/streaming-commons-0.1.18.tar.gz) = 87832

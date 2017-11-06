@@ -45,7 +45,6 @@ man/man5/muttrc.5.gz
 %%HTML%%%%PORTDOCS%%%%DOCSDIR%%/reference.html
 %%HTML%%%%PORTDOCS%%%%DOCSDIR%%/security.html
 %%HTML%%%%PORTDOCS%%%%DOCSDIR%%/tuning.html
-%%XML%%%%HTML%%%%COMPRESSED_FOLDERS%%%%PORTDOCS%%%%DOCSDIR%%/compressed-folders.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Mush.rc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Pine.rc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Tin.rc
@@ -76,6 +75,7 @@ man/man5/muttrc.5.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pgp6.rc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample.mailcap
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample.muttrc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample.muttrc-compress
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample.muttrc-sidebar
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample.muttrc-tlr
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample.vimrc-sidebar

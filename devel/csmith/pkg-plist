@@ -2,7 +2,6 @@ bin/compiler_test.in
 bin/compiler_test.pl
 bin/csmith
 bin/launchn.pl
-bin/test_csmith.pl
 include/%%PKGNAME%%/csmith.h
 include/%%PKGNAME%%/csmith_minimal.h
 include/%%PKGNAME%%/custom_limits.h

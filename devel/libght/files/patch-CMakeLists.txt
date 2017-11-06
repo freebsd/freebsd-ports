@@ -1,0 +1,10 @@
+--- CMakeLists.txt.orig	2013-07-11 17:41:23 UTC
++++ CMakeLists.txt
+@@ -53,6 +53,7 @@ find_package (LibXml2 REQUIRED)
+ mark_as_advanced (CLEAR LIBXML2_INCLUDE_DIR)
+ mark_as_advanced (CLEAR LIBXML2_LIBRARIES)
+ include_directories (${LIBXML2_INCLUDE_DIR})
++link_directories (${CMAKE_INSTALL_PREFIX}/lib)
+ 
+ #------------------------------------------------------------------------------
+ # need libLAS and Proj4 for file translation tools

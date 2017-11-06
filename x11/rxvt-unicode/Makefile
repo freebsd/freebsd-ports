@@ -193,7 +193,7 @@ pre-everything::
 
 .if ${PORT_OPTIONS:MIMLOCALE_FIX}
 post-patch:
-	${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-imlocale
+	${PATCH} -d ${PATCH_WRKSRC} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-imlocale
 	cd ${WRKSRC}/src && ./gentables
 .endif
 

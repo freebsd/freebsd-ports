@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	puppet-lint
-PORTVERSION=	2.0.0
+PORTVERSION=	2.3.3
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	tdb@FreeBSD.org
+MAINTAINER=	puppet@FreeBSD.org
 COMMENT=	Checks Puppet manifests against the style guide
 
 LICENSE=	MIT

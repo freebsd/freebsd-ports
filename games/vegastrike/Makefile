@@ -3,7 +3,7 @@
 
 PORTNAME=	vegastrike
 PORTVERSION=	0.5.1.r1
-PORTREVISION=	6
+PORTREVISION=	10
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION:R}/
 DISTNAME=	${PORTNAME}-src-${PORTVERSION}
@@ -47,6 +47,8 @@ MESHER_DESC=	Enable mesher modelling tool
 MESHER_PLIST_FILES=	bin/mesher
 MESHER_LIB_DEPENDS=	libOgreMain.so:graphics/ogre3d
 MESHER_CONFIGURE_ENABLE=	ogre
+
+BROKEN_aarch64=		Fails to compile: POSH cannot determine target CPU
 
 post-patch:
 	@${REINPLACE_CMD} -E 's,/usr/(local|X11R6),${LOCALBASE},' \

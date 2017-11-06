@@ -1,0 +1,52 @@
+From fa7268b94f8a0a7792ee12d5b8e23a60e52a3a84 Mon Sep 17 00:00:00 2001
+From: Andrew Cooper <andrew.cooper3@citrix.com>
+Date: Tue, 20 Jun 2017 19:18:54 +0100
+Subject: [PATCH] x86/grant: Disallow misaligned PTEs
+
+Pagetable entries must be aligned to function correctly.  Disallow attempts
+from the guest to have a grant PTE created at a misaligned address, which
+would result in corruption of the L1 table with largely-guest-controlled
+values.
+
+This is XSA-227
+
+Signed-off-by: Andrew Cooper <andrew.cooper3@citrix.com>
+Reviewed-by: Jan Beulich <jbeulich@suse.com>
+---
+ xen/arch/x86/mm.c | 13 +++++++++++++
+ 1 file changed, 13 insertions(+)
+
+diff --git a/xen/arch/x86/mm.c b/xen/arch/x86/mm.c
+index 97b3b4b..00f517a 100644
+--- a/xen/arch/x86/mm.c
++++ b/xen/arch/x86/mm.c
+@@ -3763,6 +3763,9 @@ static int create_grant_pte_mapping(
+     l1_pgentry_t ol1e;
+     struct domain *d = v->domain;
+ 
++    if ( !IS_ALIGNED(pte_addr, sizeof(nl1e)) )
++        return GNTST_general_error;
++
+     adjust_guest_l1e(nl1e, d);
+ 
+     gmfn = pte_addr >> PAGE_SHIFT;
+@@ -3819,6 +3822,16 @@ static int destroy_grant_pte_mapping(
+     struct page_info *page;
+     l1_pgentry_t ol1e;
+ 
++    /*
++     * addr comes from Xen's active_entry tracking so isn't guest controlled,
++     * but it had still better be PTE-aligned.
++     */
++    if ( !IS_ALIGNED(addr, sizeof(ol1e)) )
++    {
++        ASSERT_UNREACHABLE();
++        return GNTST_general_error;
++    }
++
+     gmfn = addr >> PAGE_SHIFT;
+     page = get_page_from_gfn(d, gmfn, NULL, P2M_ALLOC);
+ 
+-- 
+2.1.4
+

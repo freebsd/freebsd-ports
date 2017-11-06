@@ -5,7 +5,6 @@ PORTVERSION=	4.02
 PORTREVISION=	3
 CATEGORIES=	comms hamradio
 MASTER_SITES=	http://www.nitehawk.com/sm5bsz/linuxdsp/archive/\
-		http://g7rau.demon.co.uk/sm5bsz/linuxdsp/archive/\
 		http://www.sm5bsz.com/linuxdsp/archive/
 DISTNAME=	lir04-02
 EXTRACT_SUFX=	.tbz
@@ -32,7 +31,10 @@ LINRAD_DOCFILES=	z_APM.txt z_BUFFERS.txt z_CALIBRATE.txt \
 			z_PARALLEL_PORT.txt z_SETTINGS.txt \
 			z_USERS_EXTRA.txt z_USERS_HWARE.txt
 
-BROKEN_sparc64=		Fails to compile: implicit declaration of function outb
+BROKEN_aarch64=		fails to compile: implicit declaration of function outb
+BROKEN_armv6=		fails to configure: can not find /nxb-bin/usr/bin/cc
+BROKEN_powerpc64=	fails to compile: implicit declaration of function outb
+BROKEN_sparc64=		fails to compile: implicit declaration of function outb
 
 .include <bsd.port.pre.mk>
 .if ${ARCH} == "i386"

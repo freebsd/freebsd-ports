@@ -1,0 +1,7 @@
+lib/postgresql/plpgsql_check.so
+share/postgresql/extension/plpgsql_check--1.0--1.1.sql
+share/postgresql/extension/plpgsql_check--1.0.sql
+share/postgresql/extension/plpgsql_check--1.1--1.2.sql
+share/postgresql/extension/plpgsql_check--1.1.sql
+share/postgresql/extension/plpgsql_check--1.2.sql
+share/postgresql/extension/plpgsql_check.control

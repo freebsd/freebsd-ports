@@ -11,6 +11,8 @@ bin/metafy
 %%SITE_PERL%%/Acme/MetaSyntactic/foo.pm
 %%SITE_PERL%%/Test/MetaSyntactic.pm
 %%SITE_PERL%%/eta.pm
+%%PERL5_MAN1%%/meta.1.gz
+%%PERL5_MAN1%%/metafy.1.gz
 %%PERL5_MAN3%%/Acme::MetaSyntactic.3.gz
 %%PERL5_MAN3%%/Acme::MetaSyntactic::Alias.3.gz
 %%PERL5_MAN3%%/Acme::MetaSyntactic::List.3.gz
@@ -22,5 +24,3 @@ bin/metafy
 %%PERL5_MAN3%%/Acme::MetaSyntactic::foo.3.gz
 %%PERL5_MAN3%%/Test::MetaSyntactic.3.gz
 %%PERL5_MAN3%%/eta.3.gz
-%%PERL5_MAN1%%/meta.1.gz
-%%PERL5_MAN1%%/metafy.1.gz

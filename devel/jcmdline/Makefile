@@ -9,7 +9,7 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Java command line processor
 
-LICENSE=	MPL
+LICENSE=	MPL11
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USE_JAVA=	yes

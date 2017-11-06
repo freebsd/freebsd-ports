@@ -1,0 +1,16 @@
+--- third_party/yasm/BUILD.gn.orig	2017-04-19 19:06:53 UTC
++++ third_party/yasm/BUILD.gn
+@@ -32,7 +32,12 @@ import("//build/config/compiler/compiler
+ if (current_toolchain == host_toolchain) {
+   # Various files referenced by multiple targets.
+   yasm_gen_include_dir = "$target_gen_dir/include"
+-  config_makefile = "source/config/$host_os/Makefile"
++  # HACK for All BSD derivatives use openbsd include directory
++  if (is_bsd) {
++    config_makefile = "source/config/openbsd/Makefile"
++  } else {
++    config_makefile = "source/config/$host_os/Makefile"
++  }
+   version_file = "version.mac"
+ 
+   import("//build/compiled_action.gni")

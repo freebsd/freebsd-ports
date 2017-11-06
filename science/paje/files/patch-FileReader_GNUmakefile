@@ -1,0 +1,11 @@
+--- FileReader/GNUmakefile.orig	2005-05-07 16:34:58 UTC
++++ FileReader/GNUmakefile
+@@ -24,7 +24,7 @@ include $(GNUSTEP_MAKEFILES)/common.make
+ PACKAGE_NAME=FileReader
+ BUNDLE_NAME=FileReader
+ BUNDLE_EXTENSION=.bundle
+-BUNDLE_INSTALL_DIR=$(GNUSTEP_INSTALLATION_DIR)/Library/Bundles/Paje
++BUNDLE_INSTALL_DIR=$(DESTDIR)/$(GNUSTEP_SYSTEM_LIBRARY)/Bundles/Paje
+ FileReader_PRINCIPAL_CLASS=PajeFileReader
+ 
+ 

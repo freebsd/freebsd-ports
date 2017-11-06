@@ -1,9 +1,0 @@
-TIMESTAMP = 1466257418
-SHA256 (rpm/x86_64/centos/6.8/curl-7.19.7-52.el6.x86_64.rpm) = 117dce005a11f3266fa34bc2d4c0cc5b3196485672766b8690b2c0bf84dbb468
-SIZE (rpm/x86_64/centos/6.8/curl-7.19.7-52.el6.x86_64.rpm) = 202032
-SHA256 (rpm/x86_64/centos/6.8/libcurl-7.19.7-52.el6.i686.rpm) = 95a3fa97b2731cd2659bd13c046b0682ad81964fb9a80caaa5e8511d849f042b
-SIZE (rpm/x86_64/centos/6.8/libcurl-7.19.7-52.el6.i686.rpm) = 180320
-SHA256 (rpm/x86_64/centos/6.8/libcurl-7.19.7-52.el6.x86_64.rpm) = e7577360ab4ab39894a26658f989257a6fb5a156e4eb1355a706e43833f459c3
-SIZE (rpm/x86_64/centos/6.8/libcurl-7.19.7-52.el6.x86_64.rpm) = 173332
-SHA256 (rpm/x86_64/centos/6.8/curl-7.19.7-52.el6.src.rpm) = 8c9d8dfa6675082e9c20c31ee04b3fcd8c56062c3406f4a240b36abd72b0f41a
-SIZE (rpm/x86_64/centos/6.8/curl-7.19.7-52.el6.src.rpm) = 2169451

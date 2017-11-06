@@ -1,0 +1,22 @@
+Index: lib/imapoptions
+diff -u lib/imapoptions.orig lib/imapoptions
+--- lib/imapoptions.orig	2008-10-12 21:22:03.000000000 +0900
++++ lib/imapoptions	2008-10-12 21:23:33.000000000 +0900
+@@ -893,7 +893,7 @@
+ { "seenstate_db", "skiplist", STRINGLIST("flat", "berkeley", "berkeley-hash", "skiplist")}
+ /* The cyrusdb backend to use for the seen state. */
+ 
+-{ "sendmail", "/usr/lib/sendmail", STRING }
++{ "sendmail", "/usr/sbin/sendmail", STRING }
+ /* The pathname of the sendmail executable.  Sieve invokes sendmail
+    for sending rejections, redirects and vacation responses. */
+ 
+@@ -956,7 +956,7 @@
+ /* If enabled, timsieved will expect a capability response after a successful
+    SASL authentication, per draft-martin-mangesieve-12.txt . */
+ 
+-{ "sievedir", "/usr/sieve", STRING }
++{ "sievedir", "/var/imap/sieve", STRING }
+ /* If sieveusehomedir is false, this directory is searched for Sieve
+    scripts. */
+ 

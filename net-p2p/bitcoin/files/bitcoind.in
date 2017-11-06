@@ -12,7 +12,7 @@
 # bitcoind_user (str)		Set to "bitcoin" by default.
 # bitcoind_group (str)		Set to "bitcoin" by default.
 # bitcoind_conf (str)		Set to "%%PREFIX%%/etc/bitcoind.conf" by default.
-# bitcoind_data (str)		Set to "/var/lib/bitcoind" by default.
+# bitcoind_data (str)		Set to "/var/lib/bitcoin" by default.
 # bitcoindlimits_enable (bool)	Set to "NO" by default.
 #				Set it to "YES" to enable bitcoindlimits
 # bitcoindlimits_args		Set to "-e -U ${bitcoind_user}" by default
@@ -32,7 +32,6 @@ status_cmd="bitcoind_status"
 stop_cmd="bitcoind_stop"
 stop_postcmd="bitcoind_wait"
 command="%%PREFIX%%/bin/bitcoind"
-cli_command="%%PREFIX%%/bin/bitcoin-cli"
 daemon_command="/usr/sbin/daemon"
 #pidfile="/var/run/${name}.pid"
 extra_commands="configtest"
@@ -45,7 +44,7 @@ load_rc_config ${name}
 
 : ${bitcoind_user:="bitcoin"}
 : ${bitcoind_group:="bitcoin"}
-: ${bitcoind_data_dir:="/var/db/bitcoind"}
+: ${bitcoind_data_dir:="/var/db/bitcoin"}
 : ${bitcoind_config_file:="%%PREFIX%%/etc/bitcoin.conf"}
 : ${bitcoindlimits_args:="-e -U ${bitcoind_user}"}
 
@@ -134,7 +133,7 @@ bitcoind_stop()
     echo "Bitcoind is not running"
     return 1
   else
-    ${cli_command} -conf="${bitcoind_config_file}" -datadir="${bitcoind_data_dir}" stop
+    kill ${pid}
   fi
 }
 

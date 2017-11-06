@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	shairport-sync
-PORTVERSION=	2.8.6
+DISTVERSION=	3.2d8
 CATEGORIES=	audio
 
 MAINTAINER=	ehaupt@FreeBSD.org
@@ -10,29 +10,44 @@ COMMENT=	AirPlay audio player with multi-room audio synchronisation capability
 
 LICENSE=	BSD3CLAUSE
 
-LIB_DEPENDS=	libasound.so:audio/alsa-lib \
+LIB_DEPENDS=	libavahi-client.so:net/avahi-app \
 		libconfig.so:devel/libconfig \
 		libdaemon.so:devel/libdaemon \
 		libpopt.so:devel/popt \
-		libsoxr.so:audio/libsoxr \
-		libavahi-client.so:net/avahi-app
+		libsoxr.so:audio/libsoxr
 
 GNU_CONFIGURE=	yes
 USES=		autoreconf libtool pkgconfig ssl
+
 USE_GITHUB=	yes
+GH_ACCOUNT=	mikebrady
 
 USE_RC_SUBR=	${PORTNAME}
 
-GH_ACCOUNT=	mikebrady
+OPTIONS_DEFINE=	ALAC ALSA SNDIO PULSEAUDIO
+OPTIONS_DEFAULT=SNDIO
+ALAC_DESC=	Build with libalac support (experimental)
 
 CONFIGURE_ARGS=	--sysconfdir=${LOCALBASE}/etc \
 		--with-piddir=/var/run/shairport-sync --with-avahi \
-		--with-ssl=openssl --with-metadata --with-soxr --with-alsa \
+		--with-ssl=openssl --with-metadata --with-soxr \
 		--with-stdout --with-pipe
 
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-lcrypto
 
 CONFIGURE_ENV+=	SSL_CFLAGS=-I${OPENSSLINC} SSL_LIBS=-L${OPENSSLLIB}
+
+ALAC_LIB_DEPENDS=	libalac.so:audio/alac
+ALAC_CONFIGURE_ON=	--with-apple-alac
+
+ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
+ALSA_CONFIGURE_ON=	--with-alsa
+
+SNDIO_CONFIGURE_ON=	--with-sndio
+SNDIO_LIB_DEPENDS=	libsndio.so:audio/sndio
+
+PULSEAUDIO_CONFIGURE_ON=--with-pa
+PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
 
 .include <bsd.port.mk>

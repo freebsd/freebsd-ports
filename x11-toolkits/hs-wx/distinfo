@@ -1,2 +1,3 @@
-SHA256 (cabal/wx-0.91.0.0.tar.gz) = 5eba8936c4e783bb0d97ea8b8bc4140a0ff13e7529f5a2c2e1be63b707936c8c
-SIZE (cabal/wx-0.91.0.0.tar.gz) = 48926
+TIMESTAMP = 1499625642
+SHA256 (cabal/wx-0.92.3.0.tar.gz) = bdcbabeb1841c61d0fee5ac5c797ee9b825edf97028990c9bd1101855ee28c11
+SIZE (cabal/wx-0.92.3.0.tar.gz) = 50940

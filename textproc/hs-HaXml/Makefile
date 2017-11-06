@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	HaXml
-PORTVERSION=	1.25.3
+PORTVERSION=	1.25.4
 CATEGORIES=	textproc haskell
 
 MAINTAINER=	haskell@FreeBSD.org

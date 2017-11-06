@@ -1,5 +1,5 @@
-%%PERL5_MAN3%%/LockFile::Simple.3.gz
 %%SITE_PERL%%/LockFile/Lock.pm
 %%SITE_PERL%%/LockFile/Lock/Simple.pm
 %%SITE_PERL%%/LockFile/Manager.pm
 %%SITE_PERL%%/LockFile/Simple.pm
+%%PERL5_MAN3%%/LockFile::Simple.3.gz

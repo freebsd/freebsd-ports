@@ -1,11 +1,14 @@
---- doc/automake.texi.orig	2012-04-21 07:38:05.000000000 -0700
-+++ doc/automake.texi	2012-04-26 11:05:39.000000000 -0700
-@@ -38,3 +38,3 @@
+--- doc/automake.texi.orig	2017-06-17 01:28:31 UTC
++++ doc/automake.texi
+@@ -38,17 +38,11 @@ section entitled ``GNU Free Documentatio
+ @end quotation
+ @end copying
  
 -@dircategory Software development
 +@dircategory Programming & development toolS
  @direntry
-@@ -43,8 +43,2 @@
+ * Automake: (automake).         Making GNU standards-compliant Makefiles.
+ @end direntry
  
 -@dircategory Individual utilities
 -@direntry
@@ -14,3 +17,5 @@
 -@end direntry
 -
  @titlepage
+ @title GNU Automake
+ @subtitle For version @value{VERSION}, @value{UPDATED}

@@ -4,7 +4,6 @@
 CATEGORIES=	graphics lang
 PKGNAMESUFFIX=	-proj4
 
-MAINTAINER=	freebsd-fpc@FreeBSD.org
 COMMENT=	Free Pascal interface to proj library
 
 USE_FPC=	yes

@@ -1,9 +1,7 @@
 lib/erlang/lib/mimetypes-%%VERSION%%/ebin/mimetypes.app
 lib/erlang/lib/mimetypes-%%VERSION%%/ebin/mimetypes.beam
 lib/erlang/lib/mimetypes-%%VERSION%%/ebin/mimetypes_app.beam
-lib/erlang/lib/mimetypes-%%VERSION%%/ebin/mimetypes_disp.beam
 lib/erlang/lib/mimetypes-%%VERSION%%/ebin/mimetypes_loader.beam
-lib/erlang/lib/mimetypes-%%VERSION%%/ebin/mimetypes_map.beam
 lib/erlang/lib/mimetypes-%%VERSION%%/ebin/mimetypes_parse.beam
 lib/erlang/lib/mimetypes-%%VERSION%%/ebin/mimetypes_scan.beam
 lib/erlang/lib/mimetypes-%%VERSION%%/ebin/mimetypes_sup.beam

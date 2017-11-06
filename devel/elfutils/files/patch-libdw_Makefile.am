@@ -1,4 +1,4 @@
---- libdw/Makefile.am.orig	2015-06-10 19:44:33 UTC
+--- libdw/Makefile.am.orig	2016-12-25 13:36:55 UTC
 +++ libdw/Makefile.am
 @@ -105,14 +105,14 @@ am_libdw_pic_a_OBJECTS = $(libdw_a_SOURC
  libdw_so_SOURCES =
@@ -8,12 +8,12 @@
 +	  ../libelf/libelf.so ../lib/libeu.a
  # The rpath is necessary for libebl because its $ORIGIN use will
  # not fly in a setuid executable that links in libdw.
- 	$(LINK) -shared -o $@ -Wl,--soname,$@.$(VERSION),-z,defs \
+ 	$(AM_V_CCLD)$(LINK) -shared -o $@ -Wl,--soname,$@.$(VERSION),-z,defs \
  		-Wl,--enable-new-dtags,-rpath,$(pkglibdir) \
  		-Wl,--version-script,$<,--no-undefined \
  		-Wl,--whole-archive $(filter-out $<,$^) -Wl,--no-whole-archive\
--		-ldl $(argp_LDADD) $(zip_LIBS)
-+		$(argp_LDADD) $(zip_LIBS)
+-		-ldl -lz $(argp_LDADD) $(zip_LIBS)
++		-lz $(argp_LDADD) $(zip_LIBS)
  	@$(textrel_check)
- 	ln -fs $@ $@.$(VERSION)
+ 	$(AM_V_at)ln -fs $@ $@.$(VERSION)
  

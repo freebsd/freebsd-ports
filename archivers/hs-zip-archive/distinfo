@@ -1,2 +1,3 @@
-SHA256 (cabal/zip-archive-0.2.3.7.tar.gz) = 41623b3831795e785329b017f42af3116f6332a690361f7eac7ed15f729f3699
-SIZE (cabal/zip-archive-0.2.3.7.tar.gz) = 12902
+TIMESTAMP = 1499611845
+SHA256 (cabal/zip-archive-0.3.1.1.tar.gz) = 9e868e649e6fd06cf50c2f0f1e480ce36640494449e415abf2509f9347f08325
+SIZE (cabal/zip-archive-0.3.1.1.tar.gz) = 16107

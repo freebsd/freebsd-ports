@@ -4,7 +4,7 @@ PORTNAME?=	mcollective-nrpe-common
 PORTVERSION=	3.1.0
 CATEGORIES=	sysutils
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	puppet@FreeBSD.org
 COMMENT?=	MCollective common files to interact with the NRPE monitoring system
 
 LICENSE=	APACHE20

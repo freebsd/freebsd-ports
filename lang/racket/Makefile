@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	racket
-PORTVERSION=	6.7
+PORTVERSION=	6.11
 CATEGORIES=	lang scheme
 MASTER_SITES=	http://mirror.racket-lang.org/installers/${PORTVERSION}/ \
 		http://www.cs.utah.edu/plt/installers/${PORTVERSION}/ \
@@ -22,11 +22,12 @@ LIB_DEPENDS=	libffi.so:devel/libffi		\
 		libcairo.so:graphics/cairo	\
 		libpng.so:graphics/png
 
-BROKEN_aarch64=	does not build: error: Unported platform
-BROKEN_sparc64=	does not build
+BROKEN_powerpc64=	fails to build: jit.c: 'JIT_LOCAL4' undeclared (first use in this function)
 BROKEN_FreeBSD_10_i386=	segfaults during build
 BROKEN_FreeBSD_11_i386=	segfaults during build
 BROKEN_FreeBSD_12_i386=	segfaults during build
+NOT_FOR_ARCHS=		aarch64 armv6 sparc64
+NOT_FOR_ARCHS_REASON=	not yet ported to this arch
 
 MAKE_JOBS_UNSAFE=yes
 

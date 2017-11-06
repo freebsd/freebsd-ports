@@ -1,0 +1,11 @@
+--- aws.cabal.orig	2017-07-10 15:40:11 UTC
++++ aws.cabal
+@@ -145,7 +145,7 @@ Library
+                        unordered-containers >= 0.2,
+                        utf8-string          >= 0.3     && < 1.1,
+                        vector               >= 0.10,
+-                       xml-conduit          >= 1.2     && <1.5
++                       xml-conduit          >= 1.2     && <1.6
+  
+   if !impl(ghc >= 7.6)
+     Build-depends: ghc-prim

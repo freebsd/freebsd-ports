@@ -2,7 +2,7 @@
 
 PORTNAME=	haskell-xmpp
 PORTVERSION=	1.0.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-im haskell
 
 MAINTAINER=	haskell@FreeBSD.org

@@ -3,6 +3,7 @@
 
 PORTNAME=	plyr
 PORTVERSION=	1.8.4
+PORTREVISION=	1
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -17,7 +18,7 @@ LICENSE_PERMS_HW=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 RUN_DEPENDS=	R-cran-Rcpp>=0.11.0:devel/R-cran-Rcpp
 
-USES=	cran:auto-plist
+USES=		cran:auto-plist,compiles
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/R/library/plyr/libs/plyr.so

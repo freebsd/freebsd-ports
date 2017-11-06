@@ -1,4 +1,14 @@
 === Configuration details ===
+The following is recommended for /var/db/mysql/my.cnf
+
+NOTE: these are global settings.  Please read this first:
+
+http://dev.mysql.com/doc/refman/5.7/en/sql-mode.html
+
+[mysqld]
+innodb_file_per_table=1
+sql-mode=""
+
 You can mostly follow the guide at:
 http://docs.librenms.org/
 
@@ -6,8 +16,13 @@ with the following notes:
 - Installation directory is %%WWWDIR%%
 - The following lines should be added to /etc/crontab:
 
+PATH=/etc:/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin
 33	*/6	*	*	*	www	cd %%WWWDIR%% && %%PHP%% discovery.php -h all >> /dev/null 2>&1
 */5	*	*	*	*	www	cd %%WWWDIR%% && %%PHP%% discovery.php -h new >> /dev/null 2>&1
 */5	*	*	*	*	www	cd %%WWWDIR%% && %%PYTHON%% poller-wrapper.py 16 >> /dev/null 2>&1
-15	0	*	*	*	www	sh %%WWWDIR%%/daily.sh >> /dev/null 2>&1
+15	0	*	*	*	www	%%LOCALBASE%%/bin/bash %%WWWDIR%%/daily.sh >> /dev/null 2>&1
 *	*	*	*	*	www	%%PHP%% %%WWWDIR%%/alerts.php >> /dev/null 2>&1
+*/5 	*	*	*	*	www	%%PHP%% %%WWWDIR%%/poll-billing.php >> /dev/null 2>&1
+01	*	*	*	*	www	%%PHP%% %%WWWDIR%%/billing-calculate.php >> /dev/null 2>&1
+*/5	*	*	*	*	www	%%PHP%% %%WWWDIR%%/check-services.php >> /dev/null 2>&1
+

@@ -2,25 +2,23 @@
 # $FreeBSD$
 
 PORTNAME=	libnsgif
-PORTVERSION=	0.1.4
+PORTVERSION=	0.2.0
 CATEGORIES=	graphics
 MASTER_SITES=	http://download.netsurf-browser.org/libs/releases/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
-MAINTAINER=	olivierd@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	NetSurf GIF Decoder
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	netsurf-buildsystem>=1.5:devel/netsurf-buildsystem
 
-USES=	gmake
+USES=		gmake
 USE_LDCONFIG=	yes
-
-WRKSRC=	${WRKDIR}/${DISTNAME:S/-src//}
-
+WRKSRC=		${WRKDIR}/${DISTNAME:S/-src//}
 MAKE_ENV+=	COMPONENT_TYPE="lib-shared"
-
 PLIST_SUB+=	VERSION=${PORTVERSION}
 
 post-install:

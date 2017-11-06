@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	usb
-PORTVERSION=	1.0.0b1
-PORTREVISION=	1
+PORTVERSION=	1.0.0
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -27,7 +26,7 @@ do-install-DOCS-on:
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/docs/,} ${STAGEDIR}${DOCSDIR}
 
-regression-test: extract
+test: extract
 	@(cd ${WRKSRC}/tests && ${PYTHON_CMD} testall.py)
 
 .include <bsd.port.mk>

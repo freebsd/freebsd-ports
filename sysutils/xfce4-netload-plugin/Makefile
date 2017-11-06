@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xfce4-netload-plugin
-PORTVERSION=	1.2.4
-PORTREVISION=	1
+PORTVERSION=	1.3.1
 CATEGORIES=	sysutils xfce
 MASTER_SITES=	XFCE/src/panel-plugins/${PORTNAME}/${PORTVERSION:R}
 DIST_SUBDIR=	xfce4
@@ -15,10 +14,11 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes
-USE_GNOME=	intltool intlhack
+USE_GNOME=	gtk30 intltool cairo
 USE_XFCE=	panel
-USES=		gmake pkgconfig libtool gettext-tools xfce tar:bzip2
+USES=		gettext-tools gmake libtool pkgconfig tar:bzip2 xfce:gtk3
 INSTALLS_ICONS=	yes
+INSTALL_TARGET=	install-strip
 
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes
@@ -26,20 +26,13 @@ OPTIONS_SUB=	yes
 NLS_CONFIGURE_ENABLE=	nls
 NLS_USES=	gettext-runtime
 
-.include <bsd.port.options.mk>
-
-do-patch:
+post-patch:
 	@${REINPLACE_CMD} -e 's, || __FreeBSD_kernel__,,' \
 		${WRKSRC}/panel-plugin/net.c \
 		${WRKSRC}/panel-plugin/net.h \
 		${WRKSRC}/panel-plugin/os.h
 
-.if ${PORT_OPTIONS:MNLS}
-	${REINPLACE_CMD} -e \
-		's|$$(prefix)/$$(DATADIRNAME)/locale|$$(datarootdir)/locale|' \
-		${WRKSRC}/po/Makefile.in.in
-.else
+post-patch-NLS-off:
 	${REINPLACE_CMD} -e 's|po ||' ${WRKSRC}/Makefile.in
-.endif
 
 .include <bsd.port.mk>

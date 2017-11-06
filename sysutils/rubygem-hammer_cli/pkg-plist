@@ -1,3 +1,0 @@
-bin/hammer
-@sample etc/hammer/cli_config.yml.sample
-@dir etc/hammer/cli.modules.d

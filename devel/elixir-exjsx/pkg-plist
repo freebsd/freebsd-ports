@@ -4,11 +4,10 @@ lib/elixir/lib/exjsx/ebin/Elixir.JSX.Encoder.Atom.beam
 lib/elixir/lib/exjsx/ebin/Elixir.JSX.Encoder.BitString.beam
 lib/elixir/lib/exjsx/ebin/Elixir.JSX.Encoder.Float.beam
 lib/elixir/lib/exjsx/ebin/Elixir.JSX.Encoder.Function.beam
-lib/elixir/lib/exjsx/ebin/Elixir.JSX.Encoder.HashDict.beam
-lib/elixir/lib/exjsx/ebin/Elixir.JSX.Encoder.HashSet.beam
 lib/elixir/lib/exjsx/ebin/Elixir.JSX.Encoder.Integer.beam
 lib/elixir/lib/exjsx/ebin/Elixir.JSX.Encoder.List.beam
 lib/elixir/lib/exjsx/ebin/Elixir.JSX.Encoder.Map.beam
+lib/elixir/lib/exjsx/ebin/Elixir.JSX.Encoder.MapSet.beam
 lib/elixir/lib/exjsx/ebin/Elixir.JSX.Encoder.PID.beam
 lib/elixir/lib/exjsx/ebin/Elixir.JSX.Encoder.Port.beam
 lib/elixir/lib/exjsx/ebin/Elixir.JSX.Encoder.Range.beam

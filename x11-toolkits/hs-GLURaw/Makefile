@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	GLURaw
-PORTVERSION=	1.5.0.1
+PORTVERSION=	2.0.0.3
 CATEGORIES=	x11-toolkits haskell
 
 MAINTAINER=	haskell@FreeBSD.org

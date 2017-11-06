@@ -1,6 +1,6 @@
---- spunk/menue.cc.orig	Sat Feb 26 17:58:13 2000
-+++ spunk/menue.cc	Sat Feb 26 17:58:32 2000
-@@ -495,8 +495,8 @@
+--- spunk/menue.cc.orig	1997-01-26 17:17:32 UTC
++++ spunk/menue.cc
+@@ -495,8 +495,8 @@ void GenericMenue::DynamicRight ()
  
  i16 GenericMenue::GetChoice ()
  {

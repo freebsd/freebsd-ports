@@ -2,6 +2,8 @@
 
 PORTNAME=	shotcut
 PORTVERSION=	${FULLVERSION:R}
+DISTVERSIONPREFIX=	v
+PORTREVISION=	3
 CATEGORIES=	multimedia
 
 MAINTAINER=	avilla@FreeBSD.org
@@ -16,9 +18,8 @@ RUN_DEPENDS=	ffmpeg:multimedia/ffmpeg \
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	mltframework
-GH_TAGNAME=	v${PORTVERSION}
 # Needed to be able to correctly check for updates in-app.
-FULLVERSION=	17.01.02
+FULLVERSION=	17.02.01
 
 USES=		pkgconfig qmake
 USE_QT5=	buildtools_build concurrent_build core \

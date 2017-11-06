@@ -3,13 +3,14 @@
 
 PORTNAME=	ptlib
 PORTVERSION=	2.10.11
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	GNOME
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Cross platform C++ library, used by OPAL
 
-LICENSE=	MPL
+LICENSE=	MPL10
 
 LIB_DEPENDS=	libexpat.so:textproc/expat2
 

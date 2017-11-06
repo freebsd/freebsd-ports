@@ -22,6 +22,7 @@ include/atkmm-1.6/atkmm/private/implementor_p.h
 include/atkmm-1.6/atkmm/private/noopobject_p.h
 include/atkmm-1.6/atkmm/private/object_p.h
 include/atkmm-1.6/atkmm/private/objectaccessible_p.h
+include/atkmm-1.6/atkmm/private/range_p.h
 include/atkmm-1.6/atkmm/private/relation_p.h
 include/atkmm-1.6/atkmm/private/relationset_p.h
 include/atkmm-1.6/atkmm/private/selection_p.h
@@ -30,6 +31,7 @@ include/atkmm-1.6/atkmm/private/streamablecontent_p.h
 include/atkmm-1.6/atkmm/private/table_p.h
 include/atkmm-1.6/atkmm/private/text_p.h
 include/atkmm-1.6/atkmm/private/value_p.h
+include/atkmm-1.6/atkmm/range.h
 include/atkmm-1.6/atkmm/relation.h
 include/atkmm-1.6/atkmm/relationset.h
 include/atkmm-1.6/atkmm/selection.h

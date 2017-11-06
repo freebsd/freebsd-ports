@@ -3,7 +3,7 @@
 
 PORTNAME=	hsftp
 PORTVERSION=	1.15
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	ftp
 MASTER_SITES=	http://la-samhna.de/hsftp/ \
 		http://www.alaskaparadise.com/freebsd/

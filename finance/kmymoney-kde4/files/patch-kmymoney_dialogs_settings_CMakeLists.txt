@@ -1,0 +1,32 @@
+The project is actually called 'KMyMoney' not 'KMyMoney2'. Therefore the top-directory variables are:
+  * KMyMoney_BINARY_DIR
+  * KMyMoney_SOURCE_DIR
+
+Further fix the paths to point to the proper subdirectory, and add a custom_target to depend on.
+
+--- kmymoney/dialogs/settings/CMakeLists.txt.orig	2016-06-14 19:16:15 UTC
++++ kmymoney/dialogs/settings/CMakeLists.txt
+@@ -1,12 +1,13 @@
+ add_custom_command(
+-  OUTPUT ${KMyMoney2_BINARY_DIR}/kmymoneysettings.h  ${KMyMoney2_BINARY_DIR}/kmymoneysettings.cpp
+-  DEPENDS ${KMyMoney2_SOURCE_DIR}/kmymoney.kcfg ${KMyMoney2_SOURCE_DIR}/kmymoneysettings.kcfgc
+-  COMMAND ${KDE4_KCFGC_EXECUTABLE} -d ${KMyMoney2_BINARY_DIR}/ ${KMyMoney2_SOURCE_DIR}/kmymoney.kcfg ${KMyMoney2_SOURCE_DIR}/kmymoneysettings.kcfgc
++  OUTPUT ${KMyMoney_BINARY_DIR}/kmymoneysettings.h  ${KMyMoney_BINARY_DIR}/kmymoneysettings.cpp
++  DEPENDS ${KMyMoney_SOURCE_DIR}/kmymoney/kmymoney.kcfg ${KMyMoney_SOURCE_DIR}/kmymoney/kmymoneysettings.kcfgc
++  COMMAND ${KDE4_KCFGC_EXECUTABLE} -d ${KMyMoney_BINARY_DIR}/kmymoney ${KMyMoney_SOURCE_DIR}/kmymoney/kmymoney.kcfg ${KMyMoney_SOURCE_DIR}/kmymoney/kmymoneysettings.kcfgc
+   )
+ 
++add_custom_target(generate-kmymoneysettings_h DEPENDS ${KMyMoney_BINARY_DIR}/kmymoneysettings.h)
+ 
+ set (libsettings_a_SOURCES
+-  ${KMyMoney2_BINARY_DIR}/kmymoneysettings.h
++  ${KMyMoney_BINARY_DIR}/kmymoneysettings.h
+   ksettingscolors.cpp
+   ksettingsfonts.cpp
+   ksettingsforecast.cpp
+@@ -32,4 +33,5 @@ kde4_add_ui_files(libsettings_a_SOURCES ${libsettings_
+ 
+ kde4_add_library(settings STATIC ${libsettings_a_SOURCES})
+ 
++add_dependencies(settings generate-kmymoneysettings_h)
+ add_dependencies(settings widgets kmm_config)

@@ -3,6 +3,7 @@
 
 PORTNAME=	xmlsec1
 PORTVERSION=	1.2.23
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.aleksey.com/xmlsec/download/ \
 		ftp://ftp.aleksey.com/pub/xmlsec/releases/ \
@@ -27,13 +28,13 @@ CONFIGURE_ARGS=	--with-openssl="${OPENSSLBASE}" \
 		--with-gcrypt="${LOCALBASE}"
 MAKE_ENV=	ABS_BUILDDIR=${WRKSRC} TMPFOLDER=${WRKSRC}
 INSTALL_TARGET=	install-strip
-PORTDOCS= api authors.html bugs.html c14n.html documentation.html	\
-	download.html faq.html favicon.ico images/bart.gif		\
-	images/libxml2-logo.png images/libxslt-logo.png			\
-	images/logo.gif images/openssl-logo.png				\
-	images/xmlsec-logo.gif index.html news.html related.html	\
-	xmldsig-verifier.html xmldsig.html xmlenc.html			\
-	xmlsec-man.html
+PORTDOCS=	api authors.html bugs.html c14n.html documentation.html		\
+		download.html faq.html favicon.ico images/bart.gif		\
+		images/libxml2-logo.png images/libxslt-logo.png			\
+		images/logo.gif images/openssl-logo.png				\
+		images/xmlsec-logo.gif index.html news.html related.html	\
+		xmldsig-verifier.html xmldsig.html xmlenc.html			\
+		xmlsec-man.html
 
 OPTIONS_DEFINE=	DOCS GNUTLS NSS
 OPTIONS_SUB=	yes
@@ -52,10 +53,6 @@ NSS_LIB_DEPENDS=	libnss3.so:security/nss \
 			libnspr4.so:devel/nspr \
 			libplds4.so:devel/nspr \
 			libplc4.so:devel/nspr
-
-.if !defined(.PARSEDIR)
-MAKE_ARGS+=	-EABS_BUILDDIR
-.endif
 
 post-patch-GNUTLS-on:
 # Don't rely on broken autodetection

@@ -1,6 +1,6 @@
---- pidof.c.orig	Mon May  2 07:26:03 2005
-+++ pidof.c	Mon May  2 07:40:31 2005
-@@ -53,10 +53,19 @@
+--- pidof.c.orig	2005-05-01 16:26:19 UTC
++++ pidof.c
+@@ -53,10 +53,19 @@ get_pid_of_process(char *process_name)
  	if ((kd = kvm_open("/dev/null", "/dev/null", "/dev/null", O_RDONLY, "kvm_open")) == NULL) 
  			 (void)errx(1, "%s", kvm_geterr(kd));
  	else {

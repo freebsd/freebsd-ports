@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	oslo.messaging
-PORTVERSION=	5.12.0
+PORTVERSION=	5.17.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,14 +12,14 @@ COMMENT=	Oslo Messaging API
 
 LICENSE=	APACHE20
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pbr>=1.6:devel/py-pbr
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pbr>=1.8:devel/py-pbr
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}futures>=3.0:devel/py-futures \
 		${PYTHON_PKGNAMEPREFIX}stevedore>=1.17.1:devel/py-stevedore \
 		${PYTHON_PKGNAMEPREFIX}six>=1.9.0:devel/py-six \
 		${PYTHON_PKGNAMEPREFIX}retrying>=0:devel/py-retrying \
 		${PYTHON_PKGNAMEPREFIX}pika-pool>=0.1.3:devel/py-pika-pool \
 		${PYTHON_PKGNAMEPREFIX}pika>=0.10.0:devel/py-pika \
-		${PYTHON_PKGNAMEPREFIX}oslo.utils>=3.17.0:devel/py-oslo.utils \
+		${PYTHON_PKGNAMEPREFIX}oslo.utils>=3.18.0:devel/py-oslo.utils \
 		${PYTHON_PKGNAMEPREFIX}oslo.service>=1.10.0:devel/py-oslo.service \
 		${PYTHON_PKGNAMEPREFIX}oslo.serialization>=1.10.0:devel/py-oslo.serialization \
 		${PYTHON_PKGNAMEPREFIX}oslo.middleware>=3.0.0:devel/py-oslo.middleware \
@@ -36,7 +36,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}futures>=3.0:devel/py-futures \
 		${PYTHON_PKGNAMEPREFIX}cachetools>=1.1.0:devel/py-cachetools \
 		${PYTHON_PKGNAMEPREFIX}amqp>=0:net/py-amqp \
 		${PYTHON_PKGNAMEPREFIX}webob>=1.6.0:www/py-webob \
-		${PYTHON_PKGNAMEPREFIX}yaml>=3.10.0:devel/py-yaml
+		${PYTHON_PKGNAMEPREFIX}yaml>=3.10.0:devel/py-yaml \
+		${PYTHON_PKGNAMEPREFIX}tenacity>=3.2.1:devel/py-tenacity
 
 NO_ARCH=	yes
 

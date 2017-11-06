@@ -64,24 +64,6 @@ check-depends::
 	@${FALSE}
 .  endif
 
-# OpenSSL in the base system may not include IDEA for patent licensing reasons.
-.  if defined(MAKE_IDEA) && !defined(OPENSSL_IDEA)
-OPENSSL_IDEA=		${MAKE_IDEA}
-.  else
-OPENSSL_IDEA?=		NO
-.  endif
-
-.  if ${OPENSSL_IDEA} == "NO"
-# XXX This is a hack to work around the fact that /etc/make.conf clobbers
-#     our CFLAGS. It might not be enough for all future ports.
-.    if defined(HAS_CONFIGURE)
-CFLAGS+=		-DNO_IDEA
-.    else
-OPENSSL_CFLAGS+=	-DNO_IDEA
-.    endif
-MAKE_ARGS+=		OPENSSL_CFLAGS="${OPENSSL_CFLAGS}"
-.  endif
-
 .else # ${SSL_DEFAULT} != base
 
 OPENSSLBASE=		${LOCALBASE}
@@ -93,6 +75,26 @@ OPENSSL_PORT=		security/${SSL_DEFAULT}
 
 .  if !defined(OPENSSL_SHLIBVER)
 .error You are using an unsupported SSL provider ${SSL_DEFAULT}
+.  endif
+
+.  if defined(BROKEN_SSL) && ${BROKEN_SSL:M${SSL_DEFAULT}}
+.    if defined(BROKEN_SSL_REASON_${SSL_DEFAULT})
+BROKEN=	does not build with DEFAULT_VERSIONS+=ssl=${SSL_DEFAULT}: ${BROKEN_SSL_REASON_${SSL_DEFAULT}}
+.    elif defined(BROKEN_SSL_REASON)
+BROKEN=	does not build with DEFAULT_VERSIONS+=ssl=${SSL_DEFAULT}: ${BROKEN_SSL_REASON}
+.    else
+BROKEN=	does not build with DEFAULT_VERSIONS+=ssl=${SSL_DEFAULT}
+.    endif
+.  endif
+
+.  if defined(IGNORE_SSL) && ${IGNORE_SSL:M${SSL_DEFAULT}}
+.    if defined(IGNORE_SSL_REASON_${SSL_DEFAULT})
+IGNORE=	not compatible DEFAULT_VERSIONS+=ssl=${SSL_DEFAULT}: ${IGNORE_SSL_REASON_${SSL_DEFAULT}}
+.    elif defined(IGNORE_SSL_REASON)
+IGNORE=	not compatible DEFAULT_VERSIONS+=ssl=${SSL_DEFAULT}: ${IGNORE_SSL_REASON}
+.    else
+IGNORE=	not compatible DEFAULT_VERSIONS+=ssl=${SSL_DEFAULT}
+.    endif
 .  endif
 
 OPENSSLDIR?=		${OPENSSLBASE}/openssl

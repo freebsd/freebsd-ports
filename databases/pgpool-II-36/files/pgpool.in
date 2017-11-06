@@ -1,0 +1,36 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#        
+# PROVIDE: pgpool
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# pgpool_enable (bool):		Set to NO by default.
+#				Set it to YES to enable pgpool.
+# pgpool_conf (file):		Set location of your config.
+#				Default is "%%PREFIX%%/etc/pgpool.conf"
+# pgpool_user (uid):		User ID to run as (default nobody)
+#
+
+. /etc/rc.subr
+
+name=pgpool
+rcvar=pgpool_enable
+
+load_rc_config $name
+
+: ${pgpool_enable="NO"}
+: ${pgpool_conf="%%PREFIX%%/etc/pgpool.conf"}
+: ${pgpool_user="nobody"}
+
+command="%%PREFIX%%/bin/pgpool"
+command_args="-f ${pgpool_conf}"
+stop_cmd="${command} ${command_args} stop"
+
+required_files="${pgpool_conf}"
+
+run_rc_command "$1"

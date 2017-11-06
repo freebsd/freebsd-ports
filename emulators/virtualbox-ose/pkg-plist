@@ -545,10 +545,10 @@ lib/virtualbox/components/VirtualBox_XPCOM.xpt
 %%NLS%%%%DATADIR%%/nls/VirtualBox_en.qm
 %%NLS%%%%DATADIR%%/nls/VirtualBox_es.qm
 %%NLS%%%%DATADIR%%/nls/VirtualBox_eu.qm
-%%NLS%%%%DATADIR%%/nls/VirtualBox_fa_IR.qm
+%%NLS%%%%DATADIR%%/nls/VirtualBox_fa.qm
 %%NLS%%%%DATADIR%%/nls/VirtualBox_fi.qm
 %%NLS%%%%DATADIR%%/nls/VirtualBox_fr.qm
-%%NLS%%%%DATADIR%%/nls/VirtualBox_gl_ES.qm
+%%NLS%%%%DATADIR%%/nls/VirtualBox_gl.qm
 %%NLS%%%%DATADIR%%/nls/VirtualBox_he.qm
 %%NLS%%%%DATADIR%%/nls/VirtualBox_hu.qm
 %%NLS%%%%DATADIR%%/nls/VirtualBox_id.qm
@@ -567,6 +567,7 @@ lib/virtualbox/components/VirtualBox_XPCOM.xpt
 %%NLS%%%%DATADIR%%/nls/VirtualBox_sl.qm
 %%NLS%%%%DATADIR%%/nls/VirtualBox_sr.qm
 %%NLS%%%%DATADIR%%/nls/VirtualBox_sv.qm
+%%NLS%%%%DATADIR%%/nls/VirtualBox_th.qm
 %%NLS%%%%DATADIR%%/nls/VirtualBox_tr.qm
 %%NLS%%%%DATADIR%%/nls/VirtualBox_uk.qm
 %%NLS%%%%DATADIR%%/nls/VirtualBox_zh_CN.qm
@@ -581,10 +582,10 @@ lib/virtualbox/components/VirtualBox_XPCOM.xpt
 %%NLS%%%%DATADIR%%/nls/qt_en.qm
 %%NLS%%%%DATADIR%%/nls/qt_es.qm
 %%NLS%%%%DATADIR%%/nls/qt_eu.qm
-%%NLS%%%%DATADIR%%/nls/qt_fa_IR.qm
+%%NLS%%%%DATADIR%%/nls/qt_fa.qm
 %%NLS%%%%DATADIR%%/nls/qt_fi.qm
 %%NLS%%%%DATADIR%%/nls/qt_fr.qm
-%%NLS%%%%DATADIR%%/nls/qt_gl_ES.qm
+%%NLS%%%%DATADIR%%/nls/qt_gl.qm
 %%NLS%%%%DATADIR%%/nls/qt_he.qm
 %%NLS%%%%DATADIR%%/nls/qt_hu.qm
 %%NLS%%%%DATADIR%%/nls/qt_id.qm
@@ -603,6 +604,7 @@ lib/virtualbox/components/VirtualBox_XPCOM.xpt
 %%NLS%%%%DATADIR%%/nls/qt_sl.qm
 %%NLS%%%%DATADIR%%/nls/qt_sr.qm
 %%NLS%%%%DATADIR%%/nls/qt_sv.qm
+%%NLS%%%%DATADIR%%/nls/qt_th.qm
 %%NLS%%%%DATADIR%%/nls/qt_tr.qm
 %%NLS%%%%DATADIR%%/nls/qt_uk.qm
 %%NLS%%%%DATADIR%%/nls/qt_zh_CN.qm

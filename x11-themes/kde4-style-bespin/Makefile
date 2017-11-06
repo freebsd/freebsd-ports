@@ -3,7 +3,7 @@
 
 PORTNAME=	bespin
 PORTVERSION=	201303202227
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	x11-themes kde
 MASTER_SITES=	http://bsd.e-shell.net/local/
 PKGNAMEPREFIX=	kde4-style-
@@ -16,7 +16,7 @@ LICENSE=	LGPL21
 
 WRKSRC=		${WRKDIR}/cloudcity
 
-USES=		cmake kde:4
+USES=		cmake:noninja kde:4
 USE_KDE=	kdelibs automoc4 workspace
 USE_QT4=	corelib qmake_build moc_build rcc_build uic_build
 

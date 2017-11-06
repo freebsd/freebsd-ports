@@ -3,7 +3,7 @@
 
 PORTNAME=	kaudiocreator
 PORTVERSION=	1.3
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	audio kde
 MASTER_SITES=	http://kde-look.org/CONTENT/content-files/
 DISTNAME=	107645-${PORTNAME}-${PORTVERSION}
@@ -12,6 +12,8 @@ MAINTAINER=	dbn@FreeBSD.org
 COMMENT=	Audio-cd ripper and encoder for KDE4
 
 LICENSE=	GPLv2
+
+BROKEN=		No public distfiles
 
 LIB_DEPENDS=	libdiscid.so:audio/libdiscid \
 		libtag.so:audio/taglib

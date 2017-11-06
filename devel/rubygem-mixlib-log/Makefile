@@ -2,15 +2,17 @@
 # $FreeBSD$
 
 PORTNAME=	mixlib-log
-PORTVERSION=	1.6.0
+PORTVERSION=	1.7.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	renchap@cocoa-x.com
 COMMENT=	Provides a simple mixin for log functionality
 
-NO_ARCH=	yes
+LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
+NO_ARCH=	yes
 USE_RUBY=	yes
 USES=		gem
 

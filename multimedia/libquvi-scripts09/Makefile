@@ -3,6 +3,7 @@
 
 PORTNAME=	libquvi-scripts
 PORTVERSION=	0.9.20131130
+PORTREVISION=	1
 CATEGORIES=	multimedia devel
 MASTER_SITES=	SF/quvi/${PORTVERSION}/${PORTNAME}/
 PKGNAMESUFFIX=	09
@@ -11,6 +12,12 @@ MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Embedded lua scripts for libquvi and utility scripts
 
 LICENSE=	AGPLv3
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+RUN_DEPENDS=	${LUA_PKGNAMEPREFIX}bitop>=1.0.1:devel/lua-bitop \
+		${LUA_PKGNAMEPREFIX}luaexpat>=1.2.0:textproc/luaexpat \
+		${LUA_PKGNAMEPREFIX}json>=1.1.1:converters/lua-json \
+		${LUA_PKGNAMEPREFIX}luasocket>=2.0.2:net/luasocket
 
 OPTIONS_DEFINE=	NSFW
 OPTIONS_SUB=	yes

@@ -1,7 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	phonon
-PORTVERSION=	0.9.0
+PORTVERSION=	0.9.1
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	KDE/stable/${PORTNAME}/${PORTNAME}-backend${PKGNAMESUFFIX}/${PORTVERSION}
 PKGNAMEPREFIX=	qt5-
@@ -12,9 +13,10 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	VLC backend for Phonon 4 Qt 5
 
-LIB_DEPENDS=	libvlc.so:multimedia/vlc
+LICENSE=	LGPL21+
+LICENSE_FILE=	${WRKSRC}/COPYING.LIB
 
-WRKSRC=		${WRKDIR}/${DISTNAME:S/-backend//}
+LIB_DEPENDS=	libvlc.so:multimedia/vlc
 
 USES=		cmake:outsource kde:5 pkgconfig tar:xz
 USE_KDE=	ecm

@@ -1,0 +1,6 @@
+This is yet another Ruby distributed lock using Redis, with an emphasis on
+transparency. It requires Redis version 2.6.12 or later, because it uses the
+syntax for SET introduced in that version to easily implement the robust
+algorithm described in the SET command documentation.
+
+WWW: https://github.com/marioizquierdo/mario-redis-lock

@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	exaile
-PORTVERSION=	4.0
+PORTVERSION=	4.0.${COMMITDATE}
 CATEGORIES=	audio
 PKGNAMESUFFIX=	-devel
 
@@ -17,7 +17,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mutagen>0:audio/py-mutagen \
 		${PYTHON_PKGNAMEPREFIX}bsddb3>0:databases/py-bsddb3
 
 USE_GITHUB=	yes
-GH_TAGNAME=	22c75bf
+GH_TAGNAME=	9ba2cc8
+COMMITDATE=	20171027
 
 NO_ARCH=	yes
 USES=		desktop-file-utils gmake gnome python:2.7
@@ -31,7 +32,7 @@ NLS_INSTALL_TARGET_OFF=	install_no_locale
 CDDB_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cddb>0:audio/py-cddb
 HAL_LIB_DEPENDS=	libhal.so:sysutils/hal
 
-MAKE_ENV=	PREFIX=${PREFIX} \
+MAKE_ENV=	EPREFIX=${PREFIX} \
 		PYTHON2_CMD=${PYTHON_CMD} \
 		XDGCONFDIR=${PREFIX}/etc/xdg \
 		MANPREFIX=${PREFIX}

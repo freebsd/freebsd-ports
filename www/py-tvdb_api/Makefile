@@ -2,15 +2,27 @@
 # $FreeBSD$
 
 PORTNAME=	tvdb_api
-PORTVERSION=	1.10
+PORTVERSION=	2.0
+PORTREVISION=	1
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	API interface to TheTVDB.com
 
-USES=		python:2
-USE_PYTHON=	distutils autoplist
+LICENSE=	UNLICENSE
+LICENSE_FILE=	${WRKSRC}/UNLICENSE
+
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>0:www/py-requests \
+		${PYTHON_PKGNAMEPREFIX}requests-cache>0:www/py-requests-cache
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest
+
+USES=		python
+USE_PYTHON=	autoplist distutils
+NO_ARCH=	yes
+
+do-test:
+	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYDISTUTILS_SETUP} test
 
 .include <bsd.port.mk>

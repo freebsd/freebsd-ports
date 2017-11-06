@@ -3,7 +3,7 @@
 
 PORTNAME=	libopkele
 PORTVERSION=	2.0.4
-PORTREVISION=	5
+PORTREVISION=	10
 CATEGORIES=	devel
 MASTER_SITES=	http://kin.klever.net/dist/
 
@@ -17,6 +17,8 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libexpat.so:textproc/expat2 \
 		libtidy.so:www/tidy-lib \
 		libxslt.so:textproc/libxslt
+
+BROKEN_powerpc64=	fails to compile: iterator.h: error: invalid abstract return type
 
 USE_LDCONFIG=	yes
 USES=		libtool gmake pathfix pkgconfig compiler:c++11-lang ssl

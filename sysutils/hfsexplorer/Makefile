@@ -18,7 +18,6 @@ DESKTOP_ENTRIES="hfsexplorer" "reader Mac-formatted harddisk" \
 		"System;Utility;Java;" false
 
 USE_GITHUB=	yes
-GH_PROJECT=	${PORTNAME}
 GH_ACCOUNT=	unsound
 
 USE_JAVA=	yes

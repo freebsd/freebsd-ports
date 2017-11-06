@@ -1,0 +1,4 @@
+Net::LibIDN2 provides bindings for GNU Libidn2, a C library for handling
+internationalized domain names based on IDNA 2008, Punycode and TR46.
+
+WWW: http://search.cpan.org/dist/Net-LibIDN2/

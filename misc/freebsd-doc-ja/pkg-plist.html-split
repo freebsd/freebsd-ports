@@ -154,7 +154,6 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/eresources-news.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/eresources-web.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/eresources.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/firewalls.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/floppies.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/freebsd-glossary.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/fs-acl.html
@@ -165,7 +164,8 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/introduction.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/ipsec.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/ix01.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/kerberos.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/kerberos5.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/kerberosIV.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/kernelconfig-building.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/kernelconfig-config.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/kernelconfig-custom-kernel.html
@@ -236,7 +236,10 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/raid.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/scanners.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/securing-freebsd.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/security-accounting.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/security-advisories.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/security-intro.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/security-portaudit.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/security.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/sendmail.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/serial.html
@@ -249,8 +252,8 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/sound-mp3.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/sound-setup.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/svn.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/synching.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/system-administration.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/tcpwrappers.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/term.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/trademarks.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/tvcard.html

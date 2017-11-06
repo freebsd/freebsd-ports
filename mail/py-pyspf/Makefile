@@ -39,7 +39,7 @@ post-patch:
 
 post-install:
 	${CHMOD} ${BINMODE} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/spf.py
-	${LN} -s ${PYTHONPREFIX_SITELIBDIR}/spf.py ${STAGEDIR}${PREFIX}/bin/
+	${RLN} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/spf.py ${STAGEDIR}${PREFIX}/bin/
 
 do-test:
 	cd ${WRKSRC}/ && ${PYTHON_CMD} -m test.testspf

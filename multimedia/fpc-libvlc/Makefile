@@ -1,10 +1,10 @@
 # Created by: Alonso Cardenas Marquez <acm@FreeBSD.org>
 # $FreeBSD$
 
+PORTREVISION=	1
 CATEGORIES=	multimedia lang
 PKGNAMESUFFIX=	-libvlc
 
-MAINTAINER=	freebsd-fpc@FreeBSD.org
 COMMENT=	Free Pascal interface to vlc media player library
 
 USE_FPC=	fcl-base fcl-res rtl-objpas

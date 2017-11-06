@@ -1,0 +1,11 @@
+--- src/nomos/agent/GENSEARCHDATA.orig	2017-02-28 09:04:41 UTC
++++ src/nomos/agent/GENSEARCHDATA
+@@ -84,7 +84,7 @@ sed -e 's/ =FEW= /.{0,30}/g' -e 's/ =SOM
+ @EOF@
+ chmod 755 _STRFILTER
+ ## awk --lint '
+-awk -v SRC=$NEW_C -v HDR=$NEW_H '
++gawk -v SRC=$NEW_C -v HDR=$NEW_H '
+ #####
+ # All strings to be encoded MUST be include double-quotes; this way,
+ # we can check for syntax-errors and bail out when an error is found.

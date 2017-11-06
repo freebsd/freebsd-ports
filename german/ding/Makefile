@@ -3,6 +3,7 @@
 
 PORTNAME=	ding
 PORTVERSION=	1.8.1
+PORTREVISION=	1
 CATEGORIES=	german tk
 MASTER_SITES=	ftp://ftp.tu-chemnitz.de/pub/Local/urz/ding/ \
 		LOCAL/ehaupt
@@ -12,7 +13,7 @@ COMMENT=	German-English dictionary program for X windows/Unix
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	wish8.4:x11-toolkits/tk84 \
+RUN_DEPENDS=	wish8.5:x11-toolkits/tk85 \
 		agrep:textproc/agrep
 
 USES=		perl5
@@ -21,7 +22,7 @@ DICTFILE=	de-en.txt
 SWISSDICT=	de_ch-en.txt
 
 do-build:
-	${SED} -E -e '1,/^exec/ s!wish!wish8.4!' \
+	${SED} -E -e '1,/^exec/ s!wish!wish8.5!' \
 	  -e 's!/usr/share/dict/de-en.txt!${PREFIX}/share/ding/de-en.txt!' \
 	  ${WRKSRC}/ding > ${WRKSRC}/dingX
 	${SED} -E -e 's!/usr/share/bin/!${PREFIX}/bin/!' \

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	CPANPLUS
-PORTVERSION=	0.9160
+PORTVERSION=	0.9172
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:BINGOS
@@ -11,10 +11,16 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Ameliorated interface to the CPAN
 
-LICENSE=	ART10 GPLv1
+LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Module-Signature>=0:security/p5-Module-Signature
+BUILD_DEPENDS=	p5-Archive-Extract>=0.16:archivers/p5-Archive-Extract \
+		p5-Log-Message>=0.01:devel/p5-Log-Message \
+		p5-Module-Pluggable>=2.4:devel/p5-Module-Pluggable \
+		p5-Module-Signature>=0.06:security/p5-Module-Signature \
+		p5-Object-Accessor>=0.44:devel/p5-Object-Accessor \
+		p5-Package-Constants>=0.01:devel/p5-Package-Constants \
+		p5-Term-UI>=0.18:devel/p5-Term-UI
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 OPTIONS_DEFINE=	TEST_REPORTER YAML

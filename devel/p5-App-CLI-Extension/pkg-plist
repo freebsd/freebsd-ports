@@ -1,11 +1,3 @@
-%%PERL5_MAN3%%/App::CLI::Extension.3.gz
-%%PERL5_MAN3%%/App::CLI::Extension::Component::Config.3.gz
-%%PERL5_MAN3%%/App::CLI::Extension::Component::ErrorHandler.3.gz
-%%PERL5_MAN3%%/App::CLI::Extension::Component::InstallCallback.3.gz
-%%PERL5_MAN3%%/App::CLI::Extension::Component::OriginalArgv.3.gz
-%%PERL5_MAN3%%/App::CLI::Extension::Component::RunCommand.3.gz
-%%PERL5_MAN3%%/App::CLI::Extension::Component::Stash.3.gz
-%%PERL5_MAN3%%/App::CLI::Extension::Exception.3.gz
 %%SITE_PERL%%/App/CLI/Extension.pm
 %%SITE_PERL%%/App/CLI/Extension/Component/Config.pm
 %%SITE_PERL%%/App/CLI/Extension/Component/ErrorHandler.pm
@@ -15,3 +7,11 @@
 %%SITE_PERL%%/App/CLI/Extension/Component/Stash.pm
 %%SITE_PERL%%/App/CLI/Extension/Exception.pm
 %%SITE_PERL%%/App/CLI/README.pod
+%%PERL5_MAN3%%/App::CLI::Extension.3.gz
+%%PERL5_MAN3%%/App::CLI::Extension::Component::Config.3.gz
+%%PERL5_MAN3%%/App::CLI::Extension::Component::ErrorHandler.3.gz
+%%PERL5_MAN3%%/App::CLI::Extension::Component::InstallCallback.3.gz
+%%PERL5_MAN3%%/App::CLI::Extension::Component::OriginalArgv.3.gz
+%%PERL5_MAN3%%/App::CLI::Extension::Component::RunCommand.3.gz
+%%PERL5_MAN3%%/App::CLI::Extension::Component::Stash.3.gz
+%%PERL5_MAN3%%/App::CLI::Extension::Exception.3.gz

@@ -1,6 +1,5 @@
-diff -ur src.old/machdep_freebsd.c src/machdep_freebsd.c
---- src.old/machdep_freebsd.c	2010-11-13 17:56:21.000000000 +0200
-+++ src/machdep_freebsd.c	2012-02-21 23:18:00.000000000 +0200
+--- src/machdep_freebsd.c.orig	2014-09-23 14:36:23 UTC
++++ src/machdep_freebsd.c
 @@ -12,6 +12,8 @@
  
  #define GETSYSCTL(name, var)    getsysctl(name, &(var), sizeof (var))
@@ -10,7 +9,7 @@ diff -ur src.old/machdep_freebsd.c src/machdep_freebsd.c
  static int
  getsysctl (char *name, void *ptr, size_t len)
  {
-@@ -32,7 +34,6 @@
+@@ -32,7 +34,6 @@ getsysctl (char *name, void *ptr, size_t
  static int
  swapinfo (int *total, int *used)
  {
@@ -18,7 +17,7 @@ diff -ur src.old/machdep_freebsd.c src/machdep_freebsd.c
    size_t mibsize, size;
    struct xswdev xsw;
    int mib[16], n;
-@@ -61,8 +62,8 @@
+@@ -61,8 +62,8 @@ swapinfo (int *total, int *used)
  	  return 1;
  	}
  
@@ -29,7 +28,7 @@ diff -ur src.old/machdep_freebsd.c src/machdep_freebsd.c
        *total += tmp_total;
        *used += tmp_used;
      }
-@@ -82,8 +83,6 @@
+@@ -82,8 +83,6 @@ _mem_get_values (ci, phys_used, sw_used,
  {
    int total_pages, inactive_pages, free_pages;
  
@@ -38,7 +37,7 @@ diff -ur src.old/machdep_freebsd.c src/machdep_freebsd.c
    if (GETSYSCTL ("vm.stats.vm.v_page_count", total_pages))
      {
        warnx ("can't read sysctl \"vm.stats.vm.v_page_count\"");
-@@ -102,8 +101,8 @@
+@@ -102,8 +101,8 @@ _mem_get_values (ci, phys_used, sw_used,
        return;
      }
  

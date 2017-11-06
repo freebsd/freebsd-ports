@@ -13,7 +13,7 @@ COMMENT=	Legacy locale data for FreeBSD 6+
 USES=		tar:bzip2
 NO_BUILD=	yes
 
-ONLY_FOR_ARCHS=	amd64 ia64 i386 pc98 sparc64
+ONLY_FOR_ARCHS=	amd64 i386 sparc64
 
 TARGET_DIR=	${PREFIX}/share/compat
 

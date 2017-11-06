@@ -1,2 +1,3 @@
-SHA256 (cabal/safe-0.3.9.tar.gz) = d0319ea7b55947e70092f0256aa9f9d2496a93b0e2a0887c0f8eaa0d7fb9b6c9
-SIZE (cabal/safe-0.3.9.tar.gz) = 6931
+TIMESTAMP = 1499627855
+SHA256 (cabal/safe-0.3.15.tar.gz) = a35e4ae609aabd568da7e7d220ab529c34040b71ae50df1ee353896445a66a2d
+SIZE (cabal/safe-0.3.15.tar.gz) = 9988

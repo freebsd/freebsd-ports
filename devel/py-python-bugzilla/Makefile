@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	python-bugzilla
-PORTVERSION=	1.2.1
+PORTVERSION=	2.1.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>0:www/py-requests
 
-USES=		python zip
+USES=		python
 USE_PYTHON=	autoplist distutils
 
 regression-test: build

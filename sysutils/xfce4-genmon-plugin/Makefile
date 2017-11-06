@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xfce4-genmon-plugin
-PORTVERSION=	3.4.0
-PORTREVISION=	5
+PORTVERSION=	4.0.1
 CATEGORIES=	sysutils xfce
 MASTER_SITES=	XFCE/src/panel-plugins/${PORTNAME}/${PORTVERSION:R}
 DIST_SUBDIR=	xfce4
@@ -15,10 +14,8 @@ LICENSE=	LGPL21
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
-USES=		gettext gmake libtool pkgconfig xfce tar:bzip2
-USE_GNOME=	gtk20 intltool intlhack
+USES=		gettext gmake libtool pkgconfig tar:bzip2 xfce:gtk3
+USE_GNOME=	glib20 gtk30 intltool cairo gdkpixbuf2
 USE_XFCE=	panel
-
-WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
 
 .include <bsd.port.mk>

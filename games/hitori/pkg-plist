@@ -1,6 +1,6 @@
 bin/hitori
-share/appdata/hitori.appdata.xml
-share/applications/hitori.desktop
+share/appdata/org.gnome.Hitori.appdata.xml
+share/applications/org.gnome.Hitori.desktop
 share/help/C/hitori/customization.page
 share/help/C/hitori/figures/hitori_main_window.png
 share/help/C/hitori/game.page
@@ -92,14 +92,16 @@ share/help/zh_CN/hitori/index.page
 share/help/zh_CN/hitori/legal.xml
 share/help/zh_CN/hitori/playing.page
 share/help/zh_CN/hitori/strategy.page
-share/icons/hicolor/16x16/apps/hitori.png
-share/icons/hicolor/22x22/apps/hitori.png
-share/icons/hicolor/32x32/apps/hitori.png
-share/icons/hicolor/48x48/apps/hitori.png
-share/icons/hicolor/symbolic/apps/hitori-symbolic.svg
+share/icons/hicolor/16x16/apps/org.gnome.Hitori.png
+share/icons/hicolor/22x22/apps/org.gnome.Hitori.png
+share/icons/hicolor/32x32/apps/org.gnome.Hitori.png
+share/icons/hicolor/48x48/apps/org.gnome.Hitori.png
+share/icons/hicolor/symbolic/apps/org.gnome.Hitori-symbolic.svg
 share/locale/an/LC_MESSAGES/hitori.mo
 share/locale/ar/LC_MESSAGES/hitori.mo
 share/locale/as/LC_MESSAGES/hitori.mo
+share/locale/be/LC_MESSAGES/hitori.mo
+share/locale/bg/LC_MESSAGES/hitori.mo
 share/locale/bs/LC_MESSAGES/hitori.mo
 share/locale/ca/LC_MESSAGES/hitori.mo
 share/locale/ca@valencia/LC_MESSAGES/hitori.mo
@@ -111,6 +113,7 @@ share/locale/en_GB/LC_MESSAGES/hitori.mo
 share/locale/eo/LC_MESSAGES/hitori.mo
 share/locale/es/LC_MESSAGES/hitori.mo
 share/locale/eu/LC_MESSAGES/hitori.mo
+share/locale/fa/LC_MESSAGES/hitori.mo
 share/locale/fi/LC_MESSAGES/hitori.mo
 share/locale/fr/LC_MESSAGES/hitori.mo
 share/locale/fur/LC_MESSAGES/hitori.mo
@@ -128,6 +131,7 @@ share/locale/oc/LC_MESSAGES/hitori.mo
 share/locale/pa/LC_MESSAGES/hitori.mo
 share/locale/pl/LC_MESSAGES/hitori.mo
 share/locale/pt_BR/LC_MESSAGES/hitori.mo
+share/locale/pt/LC_MESSAGES/hitori.mo
 share/locale/ro/LC_MESSAGES/hitori.mo
 share/locale/ru/LC_MESSAGES/hitori.mo
 share/locale/sk/LC_MESSAGES/hitori.mo

@@ -1,0 +1,4 @@
+This library allows the usage of unicode_util from Erlang R20 in
+older erlang >= R18.
+
+WWW: https://github.com/benoitc/unicode_util_compat

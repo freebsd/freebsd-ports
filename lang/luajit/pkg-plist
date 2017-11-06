@@ -1,11 +1,11 @@
 bin/luajit
 bin/luajit-%%VERSION%%
+include/luajit-2.0/lauxlib.h
 include/luajit-2.0/lua.h
+include/luajit-2.0/lua.hpp
 include/luajit-2.0/luaconf.h
 include/luajit-2.0/luajit.h
 include/luajit-2.0/lualib.h
-include/luajit-2.0/lauxlib.h
-include/luajit-2.0/lua.hpp
 lib/libluajit-5.1.a
 lib/libluajit-5.1.so
 lib/libluajit-5.1.so.2
@@ -16,9 +16,9 @@ share/luajit-%%VERSION%%/jit/bcsave.lua
 share/luajit-%%VERSION%%/jit/dis_arm.lua
 share/luajit-%%VERSION%%/jit/dis_mips.lua
 share/luajit-%%VERSION%%/jit/dis_mipsel.lua
+share/luajit-%%VERSION%%/jit/dis_ppc.lua
 share/luajit-%%VERSION%%/jit/dis_x64.lua
 share/luajit-%%VERSION%%/jit/dis_x86.lua
-share/luajit-%%VERSION%%/jit/dis_ppc.lua
 share/luajit-%%VERSION%%/jit/dump.lua
 share/luajit-%%VERSION%%/jit/v.lua
 share/luajit-%%VERSION%%/jit/vmdef.lua

@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libcmime
-PORTVERSION=	0.1.15
-PORTREVISION=	2
+PORTVERSION=	0.2.1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.libcmime.org/files/
 
@@ -11,8 +10,9 @@ MAINTAINER=	ast@treibsand.com
 COMMENT=	Lightweight C mime library
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		bison cmake pkgconfig
+USES=		bison cmake:noninja pkgconfig
 USE_LDCONFIG=	yes
 CMAKE_ARGS=	--no-warn-unused-cli
 
@@ -29,9 +29,9 @@ DOXYGEN_BUILD_DEPENDS=	doxygen>=1.8:devel/doxygen \
 DOXYGEN_CMAKE_BOOL=	ENABLE_DOC
 
 post-patch:
-	@${REINPLACE_CMD} -E -e 's|\$${CMAKE_INSTALL_LIBDIR}(/pkgconfig)|$${CMAKE_INSTALL_PREFIX}/libdata\1|' \
+	@${REINPLACE_CMD} -E -e 's|\$$\{CMAKE_INSTALL_LIBDIR}(/pkgconfig)|$${CMAKE_INSTALL_PREFIX}/libdata\1|' \
 		${WRKSRC}/CMakeLists.txt
-	@${REINPLACE_CMD} -E -e 's|libcmime-\$${CMIME_MAJOR_VERSION}.\$${CMIME_MINOR_VERSION}.\$${CMIME_MICRO_VERSION}|libcmime|' \
+	@${REINPLACE_CMD}  -e 's|libcmime-\$${CMIME_MAJOR_VERSION}.\$${CMIME_MINOR_VERSION}.\$${CMIME_MICRO_VERSION}|libcmime|' \
 		${WRKSRC}/CMakeLists.txt
 	@${REINPLACE_CMD} -E -e 's|STRIP_FROM_PATH        = ../src|STRIP_FROM_PATH        = ../|' \
 		${WRKSRC}/Doxyfile.cmake

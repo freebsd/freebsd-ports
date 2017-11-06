@@ -1,4 +1,4 @@
---- configure.ac.orig	2016-08-04 06:12:29 UTC
+--- configure.ac.orig	2017-02-12 09:19:02 UTC
 +++ configure.ac
 @@ -19,7 +19,7 @@ if [ test "$GCC" = "yes" ];then
  fi
@@ -9,7 +9,7 @@
  
  AX_CODE_COVERAGE
  
-@@ -133,7 +133,7 @@ if test "$test_for_libnl" = yes;then
+@@ -140,7 +140,7 @@ if test "$test_for_libnl" = yes;then
  fi
  
  have_readline=no
@@ -18,18 +18,18 @@
  #include <stdio.h>
  #include <readline/readline.h>], [rl_replace_line(0,0);])
    if test x$ac_cv_libreadline = xyes; then
-@@ -183,6 +183,7 @@ AC_ARG_WITH(pam,
+@@ -190,6 +190,7 @@ AC_ARG_WITH(pam,
  
  pam_enabled=no
  
 +oldlibs=$LIBS
  if test "$test_for_pam" = yes;then
+ oldlibs=$LIBS
  LIBS="$oldlibs -lpam"
- AC_MSG_CHECKING([for pam library])
-@@ -496,7 +497,7 @@ if test "$NEED_LIBOPTS_DIR" = "true";the
- 			cp -f $i $nam
- 		fi
- 	done
+@@ -511,7 +512,7 @@ if test "$NEED_LIBOPTS_DIR" = "true";the
+ 			 src/ocpasswd-args.h:src/ocpasswd/ocpasswd-args.h.in
+ 			 src/ocserv-args.c:src/ocserv-args.c.in
+ 			 src/ocserv-args.h:src/ocserv-args.h.in])
 -	AC_SUBST([AUTOGEN], [:])
 +	AC_SUBST([AUTOGEN], [autogen])
  	enable_local_libopts=yes

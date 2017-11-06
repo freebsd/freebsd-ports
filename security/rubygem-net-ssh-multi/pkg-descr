@@ -1,4 +1,4 @@
 SSH connection multiplexing: execute commands simultaneously on multiple hosts
 via SSH.
 
-WWW: https://github.com/net-ssh/net-ssh
+WWW: https://github.com/net-ssh/net-ssh-multi

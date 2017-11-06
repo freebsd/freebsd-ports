@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	netcdf
-PORTVERSION=	4.4.1.1
+PORTVERSION=	4.5.0
 CATEGORIES=	science
 MASTER_SITES=	http://www.unidata.ucar.edu/downloads/netcdf/ftp/ \
 		ftp://ftp.unidata.ucar.edu/pub/netcdf/ \
@@ -10,6 +10,11 @@ MASTER_SITES=	http://www.unidata.ucar.edu/downloads/netcdf/ftp/ \
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	C library for machine-independent, array-oriented data access
+
+LICENSE=	UCAR_UNIDATA
+LICENSE_NAME=	University Corporation for Atmospheric Research/Unidata
+LICENSE_FILE=	${WRKSRC}/COPYRIGHT
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 LIB_DEPENDS=	libhdf5.so:science/hdf5
 

@@ -19,4 +19,3 @@ man/man8/postfwd2.8.gz
 %%PORTDOCS%%%%DOCSDIR%%/versions.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/postfwd.plugins.sample
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/request.sample
-

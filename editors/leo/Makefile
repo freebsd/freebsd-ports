@@ -3,6 +3,7 @@
 
 PORTNAME=	leo
 PORTVERSION=	5.3
+PORTREVISION=	1
 CATEGORIES=	editors python
 MASTER_SITES=	SF/${PORTNAME}/Leo/${PORTVERSION}-final
 DISTNAME=	Leo-${PORTVERSION}-final
@@ -15,16 +16,15 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.TXT
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3 \
-		${PYTHON_PKGNAMEPREFIX}qt4-svg>0:graphics/py-qt4-svg \
 		${PYTHON_PKGNAMEPREFIX}docutils>0:textproc/py-docutils \
-		silvercity>0:textproc/silvercity \
-		${PYTHON_PKGNAMEPREFIX}qt4-gui>0:x11-toolkits/py-qt4-gui
+		silvercity>0:textproc/silvercity
 
-NO_ARCH=	yes
-
-USES=		python:2 shebangfix zip
-SHEBANG_FILES=	leo/doc/html/fixup.pl leo/external/saveleo
+USES=		pyqt:4 python:2 shebangfix zip
+SHEBANG_FILES=	leo/doc/html/fixup.pl leo/external/saveleo \
+		leo/dist/leo-install.py leo/scripts/leo
+USE_PYQT=	gui_run svg_run
 USE_PYTHON=	autoplist distutils
+NO_ARCH=	yes
 
 DESKTOP_ENTRIES="Leo" "Literate Editor with Outlines" \
 		"${PYTHONPREFIX_SITELIBDIR}/leo/Icons/leoapp32.png" "leo" "" ""

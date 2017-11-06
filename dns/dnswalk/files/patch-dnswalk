@@ -1,0 +1,32 @@
+--- dnswalk.orig	2017-05-12 19:34:32 UTC
++++ dnswalk
+@@ -56,9 +56,9 @@ sub dowalk {
+     return unless $domain;
+     print "Checking $domain\n";
+     @subdoms=&doaxfr($domain);
+-    &check_zone($domain) if (defined(@zone) && @zone);
++    &check_zone($domain) if (@zone);
+     undef @zone;
+-    return if (!(defined(@subdoms) && @subdoms));
++    return if (! @subdoms);
+     @sortdoms = sort byhostname @subdoms;
+     local ($subdom);
+     if ($opt_r) {
+@@ -84,7 +84,7 @@ sub doaxfr {
+ 	my $res = new Net::DNS::Resolver;
+ 	$res->nameservers($server);
+ 	@zone=$res->axfr($domain);
+-	unless (defined(@zone) && @zone) {
++	unless (@zone) {
+ 	    print STDERR "failed\n";
+ 		&printerr("FAIL",
+ 			"Zone transfer of $domain from $server failed: ".
+@@ -104,7 +104,7 @@ sub doaxfr {
+         print STDERR "done.\n";
+         last SERVER;
+     } # foreach #
+-    unless (defined(@zone) && @zone) {
++    unless (@zone) {
+ 	    &printerr("BAD","All zone transfer attempts of $domain failed!\n");
+ 	    return undef;
+     }

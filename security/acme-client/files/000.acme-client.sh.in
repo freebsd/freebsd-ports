@@ -25,7 +25,7 @@ case "$weekly_acme_client_enable" in
 		if [ -n "$weekly_acme_client_challengedir" ] ; then
 			weekly_acme_client_args="$weekly_acme_client_args -C $weekly_acme_client_challengedir"
 		fi
-		%%LOCALBASE%%/bin/acme-client $weekly_acme_client_args $weekly_acme_client_domains
+		%%PREFIX%%/bin/acme-client $weekly_acme_client_args $weekly_acme_client_domains
 	fi
 
 	if [ -n "$weekly_acme_client_deployscript" ] ; then

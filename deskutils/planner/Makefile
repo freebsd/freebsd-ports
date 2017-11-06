@@ -16,7 +16,6 @@ USES=		desktop-file-utils gettext gmake libtool pathfix pkgconfig \
 		shared-mime-info tar:xz
 USE_GNOME=	gnomeprefix intlhack libgnomeui libgnomeprintui \
 		libgsf
-WANT_GNOME=	yes
 INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes
 INSTALL_TARGET=	install-strip

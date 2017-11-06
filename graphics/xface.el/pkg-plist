@@ -1,9 +1,5 @@
 %%LISPDIR%%/x-face.el
 %%LISPDIR%%/x-face.elc
-%%XEMACS_ONLY%%%%LISPDIR%%/x-face-xmas.el
-%%XEMACS_ONLY%%%%LISPDIR%%/x-face-xmas.elc
-%%E21_ONLY%%%%LISPDIR%%/x-face-e21.el
-%%E21_ONLY%%%%LISPDIR%%/x-face-e21.elc
 %%PORTDOCS%%%%DOCSDIR%%/METHOD.ja
 %%PORTDOCS%%%%DOCSDIR%%/README.ja
 %%PORTDOCS%%%%DOCSDIR%%/README-Anim.ja

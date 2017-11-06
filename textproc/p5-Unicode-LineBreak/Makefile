@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Unicode-LineBreak
-PORTVERSION=	2016.003
+PORTVERSION=	2017.004
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	Olivier.Girard@univ-angers.fr
 COMMENT=	Unicode-LineBreak package
 
-LICENSE=	ART10 GPLv1
+LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-MIME-Charset>=1.006.2:mail/p5-MIME-Charset

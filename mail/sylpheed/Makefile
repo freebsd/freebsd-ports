@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sylpheed
-PORTVERSION=	3.5.1
+PORTVERSION=	3.6.0
 PORTREVISION=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	http://sylpheed.sraoss.jp/sylpheed/v${PORTVERSION:C/\.[^\.]*$//}/  \
@@ -29,7 +29,6 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--enable-ipv6 \
 		--prefix=${PREFIX} \
-		--with-libintl-prefix=${LOCALBASE} \
 		--program-transform-name=''
 
 CONFLICTS=	sylpheed-1.[0-8]* sylpheed-2.[0-9]* sylpheed-gtk2-[0-9]*
@@ -49,7 +48,6 @@ ONIGURUMA_DESC=	Oniguruma support
 OPTIONS_DEFAULT=CA_BUNDLE CURL GTKSPELL GPGME SSL
 
 CA_BUNDLE_RUN_DEPENDS=		${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
-CA_BUNDLE_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-libsylph_ssl.c
 
 COMPFACE_LIB_DEPENDS=		libcompface.so:mail/faces
 COMPFACE_CONFIGURE_ENABLE=	compface
@@ -77,11 +75,11 @@ JPILOT_CONFIGURE_ENABLE=	jpilot
 LDAP_CONFIGURE_ENABLE=		ldap
 LDAP_USE=			openldap=yes
 
-ONIGURUMA_BUILD_DEPENDS=	${LOCALBASE}/lib/libonig.a:devel/oniguruma5
+ONIGURUMA_LIB_DEPENDS=		libonig.so:devel/oniguruma6
 ONIGURUMA_CONFIGURE_ENABLE=	oniguruma
 
 SSL_CONFIGURE_ENABLE=		ssl
-SSL_USE=			openssl=yes
+SSL_USES=			ssl
 
 .include <bsd.port.options.mk>
 

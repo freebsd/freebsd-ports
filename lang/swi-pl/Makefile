@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	swi-pl
-PORTVERSION=	7.2.3
+PORTVERSION=	7.4.2
 PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://www.swi-prolog.org/download/stable/src/
@@ -11,14 +11,24 @@ DISTNAME=	swipl-${PORTVERSION}
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Edinburgh-style Prolog compiler
 
+LICENSE=	BSD2CLAUSE
+
 LIB_DEPENDS=	libgmp.so:math/gmp \
-		libodbc.so:databases/unixODBC
+		libodbc.so:databases/unixODBC \
+		libfontconfig.so:x11-fonts/fontconfig \
+		libfreetype.so:print/freetype2
+
+BROKEN_mips=		fails to link: libswipl.so: undefined reference to '__sync_sub_and_fetch_4'
+BROKEN_mips64=		fails to link: libswipl.so: undefined reference to '__sync_sub_and_fetch_4'
+BROKEN_powerpc64=	fails to compile: pce_principal.pl:155: Shared object "pl2xpce" not found, required by "swipl"
 
 SWIPLDIR=	${PORTNAME:C/-//}-${PORTVERSION}
 
 NOPRECIOUSMAKEVARS=	yes
-USE_XORG=	xft xpm xt
-USES=		gmake jpeg libarchive pathfix pkgconfig shebangfix ssl
+USE_XORG=	ice sm x11 xext xft xinerama xpm xt 
+
+USES=		libedit gmake jpeg libarchive pathfix pkgconfig \
+		readline shebangfix ssl
 MAKE_JOBS_UNSAFE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ARCH=${ARCH}-${OPSYS:tl}
@@ -39,18 +49,18 @@ PLIST_SUB=	DISTNAME=${SWIPLDIR} ARCH=${ARCH} OS=${OPSYS:tl} \
 
 .include <bsd.port.pre.mk>
 
-.if (${ARCH} == "i386" || ${ARCH} == "powerpc" || ${ARCH} == "armv6")
+.if (${ARCH} == armv6 || ${ARCH} == armv7 || ${ARCH} == i386 || ${ARCH} == powerpc)
 PLIST_SUB+=	BITS=32
 .else
 PLIST_SUB+=	BITS=64
 .endif
 
-.if (${ARCH} == "amd64")
+.if (${ARCH} == amd64)
 ARCH=		x86_64
 .endif
 
 post-configure:
-.if ${ARCH} != "i386"
+.if ${ARCH} != i386
 	@${REINPLACE_CMD} -e '/^CMFLAGS=/s/$$/ -fPIC/' \
 		${WRKSRC}/packages/Dialect.defs
 .endif

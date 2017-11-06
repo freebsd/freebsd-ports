@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	freerdp
-PORTVERSION=	2.0.0.g2016.11.24
+DISTVERSION=	2.0.0-rc0
 PORTREVISION=	2
 CATEGORIES=	net comms ipv6
 
-MAINTAINER=	bsdports@kyle-evans.net
+MAINTAINER=	kevans@FreeBSD.org
 COMMENT=	Free implementation of Remote Desktop Protocol
 
 LICENSE=	APACHE20
@@ -15,9 +15,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USE_GITHUB=	yes
 GH_ACCOUNT=	FreeRDP
 GH_PROJECT=	${GH_ACCOUNT}
-GH_TAGNAME=	2a6dbab
 
-USES=		alias cmake:outsource compiler:c++11-lib cpe execinfo gettext localbase pathfix pkgconfig ssl
+USES=		alias cmake:outsource compiler:c++11-lib cpe gettext localbase pathfix pkgconfig ssl
 USE_LDCONFIG=	yes
 CPE_VENDOR=	freerdp_project
 
@@ -26,12 +25,14 @@ CMAKE_ARGS+=	-DWITH_LIBSYSTEMD=OFF -DWITH_WAYLAND=OFF -DWITH_GSTREAMER_0_10=OFF 
 CMAKE_ARGS_aarch64=	-DWITH_NEON=ON
 CFLAGS_aarch64=		-D__ARM_NEON__=__ARM_NEON # clang
 
-OPTIONS_DEFINE=		ALSA CUPS FFMPEG GSTREAMER PULSEAUDIO SSE X11
+OPTIONS_DEFINE=		ALSA CUPS FFMPEG GSTREAMER PULSEAUDIO X11
 OPTIONS_DEFAULT=	CUPS GSTREAMER X11
 OPTIONS_SUB=		yes
 
 OPTIONS_DEFINE_armv6=	NEON
-OPTIONS_EXCLUDE_armv6=	SSE
+OPTIONS_DEFINE_amd64=	SSE
+OPTIONS_DEFINE_i386=	SSE
+OPTIONS_DEFAULT_amd64=	SSE
 
 ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
 ALSA_CMAKE_BOOL=	WITH_ALSA
@@ -83,8 +84,6 @@ post-patch:
 		${WRKSRC}/client/X11/CMakeLists.txt
 	@${REINPLACE_CMD} -e 's/NetBSD__)/NetBSD__) || defined(__FreeBSD__)/' \
 		${WRKSRC}/winpr/libwinpr/utils/trio/triodef.h
-	@${REINPLACE_CMD} -e 's|<malloc.h>|<stdlib.h>|' \
-		${WRKSRC}/channels/drive/client/statvfs.c
 	@${RM} ${WRKSRC}/cmake/FindOpenSSL.cmake
 	@${REINPLACE_CMD} -e 's|$${CMAKE_INSTALL_LIBDIR}/cmake|$${CMAKE_INSTALL_PREFIX}/share/cmake/Modules|' \
 		${WRKSRC}/client/CMakeLists.txt \

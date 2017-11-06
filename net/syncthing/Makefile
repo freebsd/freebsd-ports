@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	syncthing
-PORTVERSION=	0.14.19
+PORTVERSION=	0.14.39
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net
 
@@ -20,12 +20,9 @@ PORTDOCS=	*
 USERS=		syncthing
 GROUPS=		syncthing
 
-STRIP=		# stripping can break go binaries
-
 do-build:
-	# timestamp here refers to source, not build time
 	@cd ${WRKSRC}/src/github.com/${PORTNAME}/${PORTNAME} ; \
-		${SETENV} GOPATH=${WRKSRC} go run build.go -no-upgrade=true -version v${PORTVERSION}
+		${SETENV} go run build.go -no-upgrade=true -version v${PORTVERSION}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/github.com/${PORTNAME}/${PORTNAME}/bin/syncthing \

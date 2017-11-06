@@ -1,8 +1,0 @@
-bin/doscmd
-man/man1/doscmd.1.gz
-share/doscmd/emsdriv.sys
-%%X11%%share/doscmd/fonts/cp437-8x14.pcf.gz
-%%X11%%share/doscmd/fonts/cp437-8x16.pcf.gz
-%%X11%%share/doscmd/fonts/cp437-8x8.pcf.gz
-%%X11%%share/doscmd/fonts/fonts.dir
-share/doscmd/redir.com

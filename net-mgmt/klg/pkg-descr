@@ -3,4 +3,4 @@ back routing information from Cisco, Juniper and Zebra/Quagga
 routers. It can also lookup AS numbers to names via WHOIS interfaces,
 and supports friendly BGP community names via MySQL database.
 
-WWW: http://sourceforge.net/projects/klg
+WWW: https://sourceforge.net/projects/klg/

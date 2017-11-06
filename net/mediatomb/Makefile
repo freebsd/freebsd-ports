@@ -3,7 +3,7 @@
 
 PORTNAME=	mediatomb
 PORTVERSION=	0.12.1
-PORTREVISION=	15
+PORTREVISION=	19
 CATEGORIES=	net multimedia
 MASTER_SITES=	SF/${PORTNAME}/MediaTomb/${PORTVERSION}
 
@@ -22,6 +22,12 @@ CONFIGURE_ARGS=	--with-search="${LOCALBASE}" \
 CONFIGURE_ENV=	PTHREAD_LIBS="-lpthread"
 USES=		compiler:gcc-c++11-lib iconv localbase:ldflags
 USE_RC_SUBR=	mediatomb
+
+# Workaround for FreeBSD 10, whose libc++ does not have an overload for C++14's
+# `operator delete(void*, size_t)'. Since GCC 6 uses -std=gnu++14 by default,
+# linking fails when a dependency (such as taglib) is built with clang and
+# lacking the overload. FreeBSD >= 11 is fine.
+USE_CXXSTD=	gnu++11
 
 USERS=		mediatomb
 GROUPS=		${USERS}
@@ -63,10 +69,10 @@ SQLITE_CONFIGURE_ON=		--with-sqlite3-h="${LOCALBASE}/include" \
 
 MYSQL_USES=			mysql
 MYSQL_CONFIGURE_ENABLE=		mysql
-MYSQL_CONFIGURE_ON= 		--with-mysql-cfg="${LOCALBASE}/bin/mysql_config"
+MYSQL_CONFIGURE_ON=		--with-mysql-cfg="${LOCALBASE}/bin/mysql_config"
 
 JS_CONFIGURE_ENABLE=		libjs
-JS_CONFIGURE_ON=		--with-js-h="${LOCALBASE}/include" \
+JS_CONFIGURE_ON=		--with-js-h="${LOCALBASE}/include/js-1.7" \
 				--with-js-libs="${LOCALBASE}/lib"
 JS_LIB_DEPENDS=			libjs.so:lang/spidermonkey17
 
@@ -85,7 +91,7 @@ FFMPEGTHUMBNAILER_LIB_DEPENDS=		libffmpegthumbnailer.so:multimedia/ffmpegthumbna
 # CURL is only useful in combination with EXTERNAL_TRANSCODING
 CURL_IMPLIES=			EXTERNAL_TRANSCODING
 CURL_CONFIGURE_ENABLE=		curl
-CURL_CONFIGURE_ON= 		--with-curl-cfg="${LOCALBASE}/bin/curl-config"
+CURL_CONFIGURE_ON=		--with-curl-cfg="${LOCALBASE}/bin/curl-config"
 CURL_LIB_DEPENDS=		libcurl.so:ftp/curl
 
 FFMPEG_CONFIGURE_ENABLE=	ffmpeg

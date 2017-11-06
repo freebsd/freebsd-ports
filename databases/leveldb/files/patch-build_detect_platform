@@ -1,0 +1,11 @@
+--- build_detect_platform.orig	2017-03-02 00:08:02 UTC
++++ build_detect_platform
+@@ -224,7 +224,7 @@ EOF
+     rm -f $CXXOUTPUT 2>/dev/null
+ 
+     # Test if gcc SSE 4.2 is supported
+-    $CXX $CXXFLAGS -x c++ - -o $CXXOUTPUT -msse4.2 2>/dev/null  <<EOF
++    $CXX $CXXFLAGS -x c++ -Werror - -o $CXXOUTPUT -msse4.2 2>/dev/null  <<EOF
+       int main() {}
+ EOF
+     if [ "$?" = 0 ]; then

@@ -1,0 +1,18 @@
+fgallery is a static photo gallery generator with no frills that has a stylish,
+minimalist look. fgallery shows your photos, and nothing else.
+
+There is no server-side processing, only static generation. The resulting
+gallery can be uploaded anywhere without additional requirements and works with
+any modern browser.
+
+Key features:
+
+ * Automatically orients pictures without quality loss
+ * Adapts to the current screen size and proportions, switching from
+   horizontal/vertical layout and scaling thumbnails automatically
+ * Supports face detection for improved thumbnail centering
+ * Loads fast
+ * Includes original (raw) pictures in a zip file for downloading
+ * Panoramas can be seen full-size by default
+
+WWW: http://www.thregr.org/~wavexx/software/fgallery/

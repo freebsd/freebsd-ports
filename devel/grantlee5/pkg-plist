@@ -35,10 +35,10 @@ lib/cmake/Grantlee5/Grantlee5ConfigVersion.cmake
 lib/cmake/Grantlee5/GrantleeMacros.cmake
 lib/cmake/Grantlee5/GrantleeTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Grantlee5/GrantleeTargets.cmake
-lib/grantlee/%%GRANTLEE_VERSION_SHORT%%/grantlee_defaultfilters.so
-lib/grantlee/%%GRANTLEE_VERSION_SHORT%%/grantlee_defaulttags.so
-lib/grantlee/%%GRANTLEE_VERSION_SHORT%%/grantlee_i18ntags.so
-lib/grantlee/%%GRANTLEE_VERSION_SHORT%%/grantlee_loadertags.so
+lib/grantlee/%%GRANTLEE_VERSION_SHORT%%/grantlee_defaultfilters%%GRANTLEE_DEBUG_SUFFIX%%.so
+lib/grantlee/%%GRANTLEE_VERSION_SHORT%%/grantlee_defaulttags%%GRANTLEE_DEBUG_SUFFIX%%.so
+lib/grantlee/%%GRANTLEE_VERSION_SHORT%%/grantlee_i18ntags%%GRANTLEE_DEBUG_SUFFIX%%.so
+lib/grantlee/%%GRANTLEE_VERSION_SHORT%%/grantlee_loadertags%%GRANTLEE_DEBUG_SUFFIX%%.so
 lib/libGrantlee_Templates.so
 lib/libGrantlee_Templates.so.5
 lib/libGrantlee_Templates.so.%%GRANTLEE_VERSION_FULL%%

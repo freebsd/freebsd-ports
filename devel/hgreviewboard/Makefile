@@ -12,7 +12,8 @@ DIST_SUBDIR=	hgreviewboard
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mercurial reviewboard extension
 
-LICENSE=	BSD2CLAUSE
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	hg:devel/mercurial \
 		rbt:devel/rbtools
@@ -21,16 +22,17 @@ WRKSRC=		${WRKDIR}/ccaughie-hgreviewboard-e461a0baf62d
 USES=		python
 
 NO_BUILD=	yes
+NO_ARCH=	yes
 
 post-patch:
-	${SED} -i '' -e 's/import simplejson/import json as simplejson/' \
+	@${REINPLACE_CMD} -e 's/import simplejson/import json as simplejson/' \
 		${WRKSRC}/reviewboard.py
 
 do-install:
-	${MKDIR} ${STAGEDIR}${PYTHON_SITELIBDIR}/reviewboard
+	@${MKDIR} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/reviewboard
 	${INSTALL_DATA} ${WRKSRC}/__init__.py \
-		${STAGEDIR}${PYTHON_SITELIBDIR}/reviewboard
+		${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/reviewboard
 	${INSTALL_DATA} ${WRKSRC}/reviewboard.py \
-		${STAGEDIR}${PYTHON_SITELIBDIR}/reviewboard
+		${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/reviewboard
 
 .include <bsd.port.mk>

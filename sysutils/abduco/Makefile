@@ -16,7 +16,7 @@ MAKE_ARGS=	CPPFLAGS="${CPPFLAGS}" STRIP="${STRIP_CMD}" \
 PLIST_FILES=	bin/abduco \
 		man/man1/abduco.1.gz
 
-MAKE_JOBS_UNSAFE= 	yes
+MAKE_JOBS_UNSAFE=	yes
 
 pre-everything::
 	@${ECHO_MSG} "You can build abduco with your own config.h using the ABDUCO_CONF knob:"

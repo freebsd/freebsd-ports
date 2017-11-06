@@ -10,6 +10,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Standalone vanity address generator for bitcoin
 
 LICENSE=	AGPLv3
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libpcre.so:devel/pcre
 
@@ -17,8 +18,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	samr7
 GH_TAGNAME=	cd1a728
 
-USES=		gmake
-USE_OPENSSL=	yes
+USES=		gmake ssl
 ALL_TARGET=	most
 
 PLIST_FILES=	bin/keyconv bin/vanitygen

@@ -1,4 +1,4 @@
---- haup_remote.c.orig
+--- haup_remote.c.orig	2000-05-21 15:10:04 UTC
 +++ haup_remote.c
 @@ -38,9 +38,16 @@
  #include <sys/fcntl.h>

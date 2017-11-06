@@ -61,7 +61,7 @@ OPTIONS_DEFAULT=	SMTP FLOCK
 
 .if ${PORT_OPTIONS:MTLS}
 CONFIGURE_ARGS+=	--with-tls
-USE_OPENSSL=	yes
+USES+=			ssl
 .endif
 
 .if defined(WITH_DEBUG)
@@ -71,5 +71,6 @@ DEBUG_FLAGS+=	-O0 -Wall -Wextra -g
 .endif
 
 CONFLICTS=	ja-mh-[0-9]*
+CONFLICTS_INSTALL=	pixie-* p5-Dist-Joseki-*
 
 .include <bsd.port.mk>

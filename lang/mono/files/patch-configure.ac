@@ -1,0 +1,19 @@
+--- configure.ac.orig	2017-04-12 10:51:18 UTC
++++ configure.ac
+@@ -355,6 +355,7 @@ AC_SUBST(extra_runtime_ldflags)
+ AM_CONDITIONAL(HOST_WIN32, test x$host_win32 = xyes)
+ AM_CONDITIONAL(TARGET_WIN32, test x$target_win32 = xyes)
+ AM_CONDITIONAL(PLATFORM_LINUX, echo x$target_os | grep -q linux)
++AM_CONDITIONAL(PLATFORM_FREEBSD, echo x$target_os | grep -q freebsd)
+ AM_CONDITIONAL(PLATFORM_DARWIN, test x$host_darwin = xyes)
+ AM_CONDITIONAL(PLATFORM_SIGPOSIX, test x$use_sigposix = xyes)
+ AM_CONDITIONAL(PLATFORM_ANDROID, test x$platform_android = xyes)
+@@ -363,7 +364,7 @@ if test -z "$PLATFORM_DARWIN_TRUE"; then
+ PLATFORM_AOT_SUFFIX=.dylib
+ fi
+ 
+-if test -z "$PLATFORM_LINUX_TRUE"; then :
++if test -z "$PLATFORM_LINUX_TRUE" -o -z "$PLATFORM_FREEBSD_TRUE"; then :
+ PLATFORM_AOT_SUFFIX=.so
+ fi
+ 

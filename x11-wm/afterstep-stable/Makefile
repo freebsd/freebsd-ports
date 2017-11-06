@@ -3,7 +3,7 @@
 
 PORTNAME=	afterstep
 PORTVERSION=	2.2.12
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	x11-wm afterstep
 MASTER_SITES=	AFTERSTEP/stable
 DISTNAME=	AfterStep-${PORTVERSION}
@@ -19,7 +19,8 @@ LIB_DEPENDS=	libdbus-1.so:devel/dbus \
 		libtiff.so:graphics/tiff
 RUN_DEPENDS=	xli:graphics/xli
 
-USES=		execinfo gmake jpeg pkgconfig shebangfix tar:bzip2
+USES=		gmake jpeg pkgconfig shebangfix tar:bzip2
+USE_CSTD=	gnu89
 USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk20 librsvg2 pango
 USE_XORG+=	ice sm x11 xcomposite xcursor xdamage xext xfixes xi xinerama \
 		xrandr xrender
@@ -55,10 +56,6 @@ PLIST_SUB+=	GNOME=""
 PLIST_SUB+=	GNOME="@comment "
 .endif
 
-.if !exists(/usr/lib/libexecinfo.so)
-STATIC_LIBEXECINFO=	${LOCALBASE}/lib/libexecinfo.a
-.endif
-
 post-extract:
 	${CP} ${FILESDIR}/monitor_bsd.xpm \
 		${WRKSRC}/afterstep/desktop/icons/xml/monitor-bsd.xpm
@@ -84,9 +81,6 @@ post-patch:
 	@${REINPLACE_CMD} -e 's,%%LOCALBASE%%,${LOCALBASE},g' \
 		${WRKSRC}/${f}
 .endfor
-	@${REINPLACE_CMD} \
-		-e 's,%%STATIC_LIBEXECINFO%%,${STATIC_LIBEXECINFO},g' \
-		${WRKSRC}/configure
 
 .if exists(${PREFIX}/share/gnome/wm-properties)
 pre-install:

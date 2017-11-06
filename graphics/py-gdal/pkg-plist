@@ -20,5 +20,6 @@ bin/gdalident.py
 bin/gdalimport.py
 bin/gdalmove.py
 bin/mkgraticule.py
+bin/ogrmerge.py
 bin/pct2rgb.py
 bin/rgb2pct.py

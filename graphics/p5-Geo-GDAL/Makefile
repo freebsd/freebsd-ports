@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Geo-GDAL
-PORTVERSION=	2.1.2
-PORTREVISION=	2
+PORTVERSION=	2.2.2
 CATEGORIES=	graphics perl5
 MASTER_SITES=	http://download.osgeo.org/gdal/${PORTVERSION}/ \
 		ftp://ftp.remotesensing.org/pub/gdal/${PORTVERSION}/ \
@@ -17,6 +16,7 @@ COMMENT=	Perl binding for GDAL
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/../../LICENSE.TXT
 
+BUILD_DEPENDS=	p5-Capture-Tiny>=0:devel/p5-Capture-Tiny
 LIB_DEPENDS=	libgdal.so:graphics/gdal
 
 USES=		perl5 tar:xz
@@ -24,8 +24,8 @@ USES=		perl5 tar:xz
 WRKSRC_SUBDIR=	swig/perl
 
 post-patch:
-	@${RM} ${WRKSRC}/../../GDALmake.opt.in
-	@${REINPLACE_CMD} -e 's| install| pure_install|' ${WRKSRC}/${MAKEFILE}
+	@${LN} -s ${LOCALBASE}/bin/gdal-config ${WRKSRC}/../../apps/gdal-config
+	@${REINPLACE_CMD} -e 's| INSTALL_BASE=.*||; s| install| pure_install|' ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e 's|(const char \*)""|(char \*)""|' ${WRKSRC}/gdal_wrap.cpp ${WRKSRC}/ogr_wrap.cpp
 
 post-install:

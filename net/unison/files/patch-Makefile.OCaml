@@ -1,0 +1,34 @@
+--- Makefile.OCaml.orig	2017-03-23 16:39:49 UTC
++++ Makefile.OCaml
+@@ -32,7 +32,11 @@ ifeq ($(shell uname),OpenBSD)
+ else
+ ifeq ($(shell uname),NetBSD)
+   OSARCH=NetBSD
++else
++ifeq ($(shell uname),FreeBSD)
++  OSARCH=FreeBSD
+ endif
++endif
+ ifeq ($(shell uname),Linux)
+   OSARCH=Linux
+ endif
+@@ -311,6 +315,10 @@ ifeq ($(OSARCH),Linux)
+ -include fsmonitor/linux/Makefile src/fsmonitor/linux/Makefile
+ endif
+ 
++ifeq ($(OSARCH),FreeBSD)
++-include fsmonitor/linux/Makefile src/fsmonitor/linux/Makefile
++endif
++
+ ifeq ($(OSARCH),win32gnuc)
+ -include fsmonitor/windows/Makefile src/fsmonitor/windows/Makefile
+ endif
+@@ -436,7 +444,7 @@ win32rc/unison.res.lib: win32rc/unison.res
+ 
+ %.o %.obj: %.c
+ 	@echo "$(OCAMLOPT): $< ---> $@"
+-	$(CAMLC) $(CAMLFLAGS) -ccopt $(OUTPUT_SEL)$(CWD)/$@ -c $(CWD)/$<
++	$(CAMLC) $(CAMLFLAGS) -ccopt $(OUTPUT_SEL)$(CWD)/$@ -c $(CFLAGS) $(CWD)/$<
+ 
+ $(NAME)$(EXEC_EXT): $(CAMLOBJS) $(COBJS)
+ 	@echo Linking $@

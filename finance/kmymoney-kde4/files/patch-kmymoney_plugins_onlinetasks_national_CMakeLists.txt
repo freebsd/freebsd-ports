@@ -1,0 +1,12 @@
+--- kmymoney/plugins/onlinetasks/national/CMakeLists.txt.orig	2017-04-17 10:49:10 UTC
++++ kmymoney/plugins/onlinetasks/national/CMakeLists.txt
+@@ -20,7 +20,8 @@ kde4_add_ui_files( konlinetasks_national_SCRS
+ )
+ 
+ # Make this plugin unit testable
+-automoc4(konlinetasks_national_OBJECTS konlinetasks_national_SCRS)
++# CMAKE_AUTOMOC is set to TRUE, so don't do it manually too.
++# automoc4(konlinetasks_national_OBJECTS konlinetasks_national_SCRS)
+ add_library( konlinetasks_national_OBJECTS OBJECT ${konlinetasks_national_SCRS} )
+ 
+ # Add plugin which is not allowed in the unit test

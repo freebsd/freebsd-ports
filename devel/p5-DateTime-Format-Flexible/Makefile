@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	DateTime-Format-Flexible
-PORTVERSION=	0.26
-PORTREVISION=	2
+PORTVERSION=	0.28
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -11,7 +10,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Flexibly parse strings and turn them into DateTime objects
 
-LICENSE=	ART10 GPLv1
+LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-DateTime>=0:devel/p5-DateTime \

@@ -3,12 +3,15 @@
 
 PORTNAME=	abraca
 PORTVERSION=	0.8.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	SF/${PORTNAME}
 
 MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	GTK2 client for the XMMS2 music player
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING.GPL
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/valac:lang/vala
 LIB_DEPENDS=	libxmmsclient.so:audio/xmms2 \

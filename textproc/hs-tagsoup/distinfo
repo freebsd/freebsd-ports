@@ -1,2 +1,3 @@
-SHA256 (cabal/tagsoup-0.13.3.tar.gz) = 32a862118d7836e9beb25fe4b317472fab6e1d41daefa86067231b328cff668d
-SIZE (cabal/tagsoup-0.13.3.tar.gz) = 42279
+TIMESTAMP = 1499624839
+SHA256 (cabal/tagsoup-0.14.1.tar.gz) = 028be660a864e0918f99f90471caea72af2bfbf8a64a423e181b2b29f9c64aeb
+SIZE (cabal/tagsoup-0.14.1.tar.gz) = 44031

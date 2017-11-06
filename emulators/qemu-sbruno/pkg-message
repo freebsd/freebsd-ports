@@ -44,7 +44,7 @@ FreeBSD host notes
   the same way.
 
 - The -smb option (smb-export local dir to guest using the default
-  slirp networking) needs the net/samba36 port/package installed
+  slirp networking) needs the samba port/package installed
   in addition to qemu. (SAMBA knob.)
 
 - If you want to use usb devices connected to the host in the guest
@@ -168,15 +168,5 @@ processing error - resetting ehci HC
   So if you see slow throughput and `pcap_send: packet size > ..., truncating'
   messages on qemu's tty try disabling TSO etc on the host interface at least
   while using pcap.
-
-- kqemu is no longer supported in qemu upstream after the 0.11 branch
-  was created, which means also not in this version.  (Linux has moved
-  on to kvm now for qemu(-like) virtualization needs, so if you want qemu
-  to go faster and don't want to switch to virtualbox or stick to the older
-  emulators/qemu port which is at 0.11.1 atm and as such still supports
-  kqemu you should help getting the FreeBSD kvm port updated and
-  completed:
-
-	http://wiki.freebsd.org/FabioChecconi/PortingLinuxKVMToFreeBSD
 
   )

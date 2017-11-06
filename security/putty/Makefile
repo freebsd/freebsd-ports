@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	putty
-PORTVERSION=	0.67
+PORTVERSION=	0.70
 CATEGORIES=	security ipv6
 MASTER_SITES=	http://the.earth.li/~sgtatham/putty/${PORTVERSION}/ \
 		ftp://ftp.chiark.greenend.org.uk/users/sgtatham/putty-latest/
@@ -23,27 +23,48 @@ CPE_VENDOR=	simon_tatham
 PLIST_FILES=	bin/plink bin/pscp bin/psftp bin/puttygen
 PLIST_FILES+=	man/man1/plink.1.gz man/man1/pscp.1.gz man/man1/psftp.1.gz man/man1/puttygen.1.gz
 
-OPTIONS_DEFINE=	GSSAPI GTK2
-OPTIONS_DEFAULT=GSSAPI GTK2
+OPTIONS_DEFINE=	GTK3
+OPTIONS_DEFAULT=GSSAPI_BASE GTK3
+OPTIONS_SINGLE=	GSSAPI_SELECT
+OPTIONS_SINGLE_GSSAPI_SELECT=	GSSAPI_NONE GSSAPI_BASE GSSAPI_HEIMDAL \
+				GSSAPI_MIT
 
 CONFLICTS_INSTALL?=	pssh-[0-9]* putty-nogtk-[0-9]*
 
 .include <bsd.port.options.mk>
 
 CFLAGS+=	-DBSD_PTYS -DOMIT_UTMP -DIPV6
+LDFLAGS+=	-Wl,--as-needed
 
-.if ${PORT_OPTIONS:MGTK2} && !defined(WITHOUT_X11)
-USE_GNOME=	gtk20
-PLIST_FILES+=	bin/pterm bin/putty bin/puttytel
-PLIST_FILES+=	man/man1/pterm.1.gz man/man1/putty.1.gz man/man1/puttytel.1.gz
-MAKE_ARGS+=	PUTTY_WITH_GTK=yes GTK_CONFIG="pkg-config gtk+-2.0 x11 --cflags"
+.if ${PORT_OPTIONS:MGTK3} && !defined(WITHOUT_X11)
+USE_GNOME=	cairo gdkpixbuf2 gtk30
+USE_XORG=	x11
+
+PLIST_FILES+=	bin/pageant bin/pterm bin/putty bin/puttytel
+PLIST_FILES+=	man/man1/pageant.1.gz man/man1/pterm.1.gz man/man1/putty.1.gz man/man1/puttytel.1.gz
+PLIST_FILES+=	share/pixmaps/putty.ico
+MAKE_ARGS+=	PUTTY_WITH_GTK=yes GTK_CONFIG="pkg-config gtk+-3.0 x11 --cflags"
+DESKTOP_ENTRIES="PuTTY" \
+		"${COMMENT}" \
+		"${PREFIX}/share/pixmaps/${PORTNAME}.ico" \
+		"${PORTNAME}" \
+		"" \
+		false
 .else
 MAKE_ARGS+=	GTK_CONFIG=:
 .endif
 
-.if ${PORT_OPTIONS:MGSSAPI}
+.if ${PORT_OPTIONS:MGSSAPI_BASE}
 _COMPAT=		-DSTATIC_GSSAPI
 USES+=		gssapi:base,flags
+MAKE_ARGS+=	KRB5CONFIG=${KRB5CONFIG}
+.elif ${PORT_OPTIONS:MGSSAPI_HEIMDAL}
+_COMPAT=		-DSTATIC_GSSAPI
+USES+=		gssapi:heimdal,flags
+MAKE_ARGS+=	KRB5CONFIG=${KRB5CONFIG}
+.elif ${PORT_OPTIONS:MGSSAPI_MIT}
+_COMPAT=		-DSTATIC_GSSAPI
+USES+=		gssapi:mit,flags
 MAKE_ARGS+=	KRB5CONFIG=${KRB5CONFIG}
 .else
 _COMPAT=		-DNO_GSSAPI
@@ -51,7 +72,7 @@ _COMPAT=		-DNO_GSSAPI
 
 _COMPAT+=	-DOMIT_UTMP
 
-.if defined(WITH_DEBUG) && ${WITH_DEBUG} != "no"
+.if defined(WITH_DEBUG)
 XFLAGS=		-DDEBUG
 .endif
 
@@ -69,5 +90,10 @@ post-patch:
 	@${REINPLACE_CMD} -e 's,prefix=/usr/local,prefix=${PREFIX},;\
 			      s,make,${MAKE_CMD},'\
 		${WRKSRC}/${MAKEFILE}
+
+post-install-GTK3-on:
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/pixmaps
+	${INSTALL_DATA} ${WRKSRC}/../windows/putty.ico \
+		${STAGEDIR}${PREFIX}/share/pixmaps/
 
 .include <bsd.port.mk>

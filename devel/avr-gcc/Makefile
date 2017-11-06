@@ -1,14 +1,14 @@
 # $FreeBSD$
 
 PORTNAME=	gcc
-PORTVERSION=	4.9.3
+PORTVERSION=	5.4.0
 CATEGORIES=	devel
-MASTER_SITES=	GCC/releases/gcc-${DISTVERSION}
+MASTER_SITES=	GCC/releases/gcc-${DIST_VERSION}
 PKGNAMEPREFIX=	avr-
-# DISTNAME=	gcc-${DISTVERSION}
+DISTNAME=	gcc-${DIST_VERSION}
 
 MAINTAINER=	joerg@FreeBSD.org
-COMMENT=	FSF GCC 4.x for Atmel AVR 8-bit RISC cross-development
+COMMENT=	FSF GCC for Atmel AVR 8-bit RISC cross-development
 
 LICENSE=	GPLv3 GPLv3RLE
 LICENSE_COMB=	multi
@@ -21,11 +21,11 @@ LIB_DEPENDS=	libmpfr.so:math/mpfr \
 RUN_DEPENDS=	avr-as:devel/avr-binutils \
 		avr-ld:devel/avr-binutils
 
-# DISTVERSION relates to downloads, GCC_VERSION and SUFFIX to names
+# DIST_VERSION relates to downloads, GCC_VERSION and SUFFIX to names
 # of executables and directories once installed.  A PORTVERSION of
 # 4.Y.2.s20130808 results in values of 4.Y-20130808, 4.Y.2, and 4Y
 # for these three.
-DISTVERSION=	${PORTVERSION:C/([0-9]+\.[0-9]+).*\.s([0-9]+)/\1-\2/}
+DIST_VERSION=	${PORTVERSION:C/([0-9]+\.[0-9]+).*\.s([0-9]+)/\1-\2/}
 GCC_VERSION=	${PORTVERSION:C/(.+)\.s[0-9]{8}/\1/}
 SUFFIX=		${PORTVERSION:C/([0-9]+).([0-9]+).*/\1\2/}
 
@@ -46,6 +46,9 @@ OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes
 NLS_USES=	gettext
 NLS_CONFIGURE_ENABLE=	nls
+
+BROKEN_aarch64=		Fails to package: cannot find manpages
+BROKEN_mips64=		Fails to configure: cannot compute suffix of object files
 
 .include <bsd.port.pre.mk>
 

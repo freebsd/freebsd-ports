@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libdap
-PORTVERSION=	3.18.2
+PORTVERSION=	3.19.1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.opendap.org/pub/source/ \
 		LOCAL/sunpoet
@@ -17,12 +17,10 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libuuid.so:misc/e2fsprogs-libuuid \
 		libxml2.so:textproc/libxml2
 
-BROKEN_powerpc64=	does not build
-
 CONFIGURE_ARGS=	ac_cv_type_max_align_t=yes
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
-USES=		bison charsetfix gmake libtool localbase pathfix
+USES=		bison charsetfix gmake libtool localbase pathfix ssl
 
 .include <bsd.port.mk>

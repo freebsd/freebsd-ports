@@ -33,7 +33,10 @@ GENSHI_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Genshi>=0:textproc/py-genshi
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|share/man|man|g' ${WRKSRC}/setup.py
-	@${REINPLACE_CMD} -i '' -e 's|/etc/bcfg2.conf|${PREFIX}/etc/bcfg2.conf|g' ${WRKSRC}/src/sbin/* ${WRKSRC}/src/lib/Bcfg2/Options.py ${WRKSRC}/src/lib/Bcfg2/Server/models.py
+	@${REINPLACE_CMD} -i '' -e 's|/etc/bcfg2.conf|${PREFIX}/etc/bcfg2.conf|g' \
+		${WRKSRC}/src/sbin/bcfg2-build-reports \
+		${WRKSRC}/src/lib/Bcfg2/Options.py \
+		${WRKSRC}/src/lib/Bcfg2/Server/models.py
 	@${REINPLACE_CMD} -i '' -e 's|DEFAULT_INSTALL_PREFIX = ./usr.|DEFAULT_INSTALL_PREFIX = "${PREFIX}"|' ${WRKSRC}/src/lib/Bcfg2/Options.py
 	@${REINPLACE_CMD} -i '' -e 's|/var/lock|/var/run|' ${WRKSRC}/src/lib/Bcfg2/Options.py
 

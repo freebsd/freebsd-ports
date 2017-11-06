@@ -3,6 +3,7 @@
 
 PORTNAME=	period
 PORTVERSION=	0.5
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	http://www.biostat.wisc.edu/~annis/creations/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,7 +13,8 @@ COMMENT=	Basic time period checking library
 
 LICENSE=	ART10 # same as perl
 
-USES=		python
+USES=		python shebangfix
+SHEBANG_FILES=	period.py
 NO_BUILD=	yes
 NO_ARCH=	yes
 

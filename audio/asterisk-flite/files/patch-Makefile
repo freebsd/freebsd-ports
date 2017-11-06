@@ -1,31 +1,31 @@
---- Makefile.orig	2016-03-20 14:01:21 UTC
+--- Makefile.orig	2016-09-12 20:39:22 UTC
 +++ Makefile
-@@ -7,30 +7,15 @@
+@@ -7,30 +7,16 @@
  # at the top of the source tree.
  
- INSTALL=install
+ INSTALL:=install
 -ASTLIBDIR:=$(shell awk '/moddir/{print $$3}' /etc/asterisk/asterisk.conf)
 -ifeq ($(strip $(ASTLIBDIR)),)
--	MODULES_DIR=$(INSTALL_PREFIX)/usr/lib/asterisk/modules
+-	MODULES_DIR:=$(INSTALL_PREFIX)/usr/lib/asterisk/modules
 -else
--	MODULES_DIR=$(INSTALL_PREFIX)$(ASTLIBDIR)
+-	MODULES_DIR:=$(INSTALL_PREFIX)$(ASTLIBDIR)
 -endif
--ASTETCDIR=$(INSTALL_PREFIX)/etc/asterisk
+-ASTETCDIR:=$(INSTALL_PREFIX)/etc/asterisk
 +MODULES_DIR=$(PREFIX)/lib/asterisk/modules
 +ASTETCDIR=$(PREFIX)/etc/asterisk
- SAMPLENAME=flite.conf.sample
--CONFNAME=$(basename $(SAMPLENAME))
--
+ SAMPLENAME:=flite.conf.sample
+-CONFNAME:=$(basename $(SAMPLENAME))
+ 
 -CC=gcc
 -OPTIMIZE=-O2
 -DEBUG=-g
-+CONFNAME=$(SAMPLENAME)
++CC?=gcc
  
 -LIBS+=-lflite_cmu_us_kal -lflite_cmu_us_kal16 -lflite_cmu_us_awb -lflite_cmu_us_rms -lflite_cmu_us_slt -lflite_usenglish -lflite_cmulex -lflite
 +LIBS+=$(LDFLAGS) -lflite_cmu_us_kal -lflite_cmu_us_kal16 -lflite_cmu_us_awb -lflite_cmu_us_rms -lflite_cmu_us_slt -lflite_usenglish -lflite_cmulex -lflite
- CFLAGS+=-pipe -fPIC -Wall -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -D_REENTRANT -D_GNU_SOURCE
+ CFLAGS+=-pipe -fPIC -Wall -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -D_REENTRANT -D_GNU_SOURCE -DAST_MODULE_SELF_SYM=__internal_app_flite_self
  
- all: _all
+ all: app_flite.so
 -	@echo " +--------- app_flite Build Complete --------+"
 -	@echo " + app_flite has successfully been built,    +"
 -	@echo " + and can be installed by running:          +"
@@ -33,10 +33,10 @@
 -	@echo " +               make install                +"
 -	@echo " +-------------------------------------------+"
  
- _all: app_flite.so
- 
-@@ -46,20 +31,7 @@ clean:
- install: _all
+ app_flite.o: app_flite.c
+ 	$(CC) $(CFLAGS) $(DEBUG) $(OPTIMIZE) -c -o app_flite.o app_flite.c
+@@ -44,20 +30,7 @@ clean:
+ install: all
  	$(INSTALL) -m 755 -d $(DESTDIR)$(MODULES_DIR)
  	$(INSTALL) -m 755 app_flite.so $(DESTDIR)$(MODULES_DIR)
 -	@echo " +---- app_flite Installation Complete ------+"

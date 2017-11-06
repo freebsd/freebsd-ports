@@ -2,6 +2,7 @@
 
 PORTNAME=	icedtea-web
 PORTVERSION=	1.6.2
+PORTREVISION=	3
 CATEGORIES=	java www
 MASTER_SITES=	http://icedtea.wildebeest.org/download/source/ \
 		http://icedtea.classpath.org/download/source/
@@ -26,12 +27,6 @@ USE_PERL5=	build
 USE_XORG=	x11
 USES=		desktop-file-utils gmake perl5 pkgconfig shebangfix
 SHEBANG_FILES=	jrunscript.in launcher/launchers.in
-
-WANT_GNOME=	yes
-
-EXTRACT_CMD=	${GZIP_CMD}
-EXTRACT_BEFORE_ARGS=	-dc
-EXTRACT_AFTER_ARGS=	| ${SETENV} LC_ALL=en_US.UTF-8 ${TAR} -xf -
 
 CONFIGURE_ARGS=		--with-hamcrest="${HAMCREST_JAR}"
 CONFIGURE_ARGS+=	--with-jdk-home="${JAVA_HOME}"
@@ -68,11 +63,12 @@ TAGSOUP_RUN_DEPENDS=	${TAGSOUP_BUILD_DEPENDS}
 TAGSOUP_VARS=		TAGSOUP_JAR="${JAVALIBDIR}/tagsoup.jar"
 TAGSOUP_VARS_OFF=	TAGSOUP_JAR=no
 
+PLUGIN_BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/libxul.pc:www/libxul
 PLUGIN_CONFIGURE_ENABLE=plugin
 PLUGIN_PORTDOCS=	plugin
 PLUGIN_TEST_TARGET=	plugin-tests
 PLUGIN_USE=		GNOME=glib20
-PLUGIN_USES=		gecko webplugin:native
+PLUGIN_USES=		webplugin:native
 PLUGIN_VARS=		WEBPLUGIN_DIR=${PREFIX}/lib
 PLUGIN_VARS+=		WEBPLUGIN_FILES=IcedTeaPlugin.so
 

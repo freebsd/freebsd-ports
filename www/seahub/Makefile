@@ -1,12 +1,12 @@
 # $FreeBSD$
 
 PORTNAME=	seahub
-PORTVERSION=	6.0.5
 DISTVERSIONPREFIX=	v
+DISTVERSION=	${SEAHUB_VER}
 DISTVERSIONSUFFIX=	-pro
 CATEGORIES=	www
 
-MAINTAINER=	ultima1252@gmail.com
+MAINTAINER=	ultima@FreeBSD.org
 COMMENT=	Web frontend for Seafile
 
 LICENSE=	APACHE20
@@ -19,25 +19,28 @@ RUN_DEPENDS=	bash:shells/bash \
 		${PYTHON_PKGNAMEPREFIX}django-statici18n>=0:www/py-django-statici18n \
 		${PYTHON_PKGNAMEPREFIX}djangorestframework>=0:www/py-djangorestframework \
 		${PYTHON_PKGNAMEPREFIX}django_compressor>=0:www/py-django_compressor \
+		${PYTHON_PKGNAMEPREFIX}django-formtools>=0:www/py-django-formtools \
 		${PYTHON_PKGNAMEPREFIX}django-post_office>=0:www/py-django-post_office \
 		${PYTHON_PKGNAMEPREFIX}django-constance>=0:www/py-django-constance \
 		${PYTHON_PKGNAMEPREFIX}gunicorn>=0:www/py-gunicorn \
 		${PYTHON_PKGNAMEPREFIX}flup>=0:www/py-flup \
 		${PYTHON_PKGNAMEPREFIX}chardet>=0:textproc/py-chardet \
 		${PYTHON_PKGNAMEPREFIX}dateutil>=0:devel/py-dateutil \
+		${PYTHON_PKGNAMEPREFIX}requests>=0:www/py-requests \
 		${PYTHON_PKGNAMEPREFIX}six>=0:devel/py-six \
 		${PYTHON_PKGNAMEPREFIX}openpyxl>=0:textproc/py-openpyxl \
 		${PYTHON_PKGNAMEPREFIX}pillow>=0:graphics/py-pillow \
-		${PYTHON_PKGNAMEPREFIX}MySQLdb>0:databases/py-MySQLdb
-
-USE_GITHUB=	yes
-GH_ACCOUNT=	haiwen
+		${PYTHON_PKGNAMEPREFIX}MySQLdb>0:databases/py-MySQLdb \
+		${PYTHON_PKGNAMEPREFIX}qrcode>0:textproc/py-qrcode \
+		${PYTHON_PKGNAMEPREFIX}futures>0:devel/py-futures
 
 USES=		python:-2.7 shebangfix
+USE_GITHUB=	yes
+GH_ACCOUNT=	haiwen
 SHEBANG_FILES=	*.sh tests/*.sh *.template *.py tools/*.py seahub/*.py
 
-NO_BUILD=	yes
 NO_ARCH=	yes
+NO_BUILD=	yes
 
 OPTIONS_DEFINE=		SEAFOBJ SEAFDAV NLS
 OPTIONS_DEFAULT=	SEAFOBJ SEAFDAV
@@ -55,32 +58,9 @@ SEAFDAV_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}seafdav>0:www/py-seafdav
 NLS_USES=		gettext iconv
 NLS_CONFIGURE_OFF=	--disable-nls
 
-HAIWENDIR=	www/haiwen
-SEAFILE_SERVER=	${HAIWENDIR}/seafile-server
-SEAHUBDIR=	${SEAFILE_SERVER}/seahub
-SEALIB=		${SEAFILE_SERVER}/seafile/lib
-SITEPACKAGEDIR=	${SEAHUBDIR}/thirdpart
-SEAFILE_VER=	`${CAT} ${.CURDIR}/../../net-mgmt/seafile-server/Makefile | ${GREP} -Eom1 '[0-9]+\.[0-9]+\.[0-9]+'`
-SEAHUB_DATA_DIR=	${HAIWENDIR}/seahub-data
-
-USERS=		seafile
-GROUPS=		${USERS}
-
 USE_RC_SUBR=	${PORTNAME}
-PLIST_SUB=	USERS=${USERS} \
-		GROUPS=${GROUPS} \
-		SEAFILE_SERVER=${SEAFILE_SERVER} \
-		SEAHUBDIR=${SEAHUBDIR} \
-		HAIWENDIR=${HAIWENDIR} \
-		SITEPACKAGEDIR=${SITEPACKAGEDIR}
 
 SUB_FILES=	pkg-message
-
-SUB_LIST+=	USERS=${USERS} \
-		GROUPS=${GROUPS} \
-		SEAFILE_SERVER=${SEAFILE_SERVER} \
-		HAIWENDIR=${HAIWENDIR} \
-		PYTHON=${PYTHON_VERSION}
 
 do-patch:
 	echo "${WRKSRC}..."
@@ -114,5 +94,7 @@ do-install:
 		 ${STAGEDIR}${PREFIX}/${SEAHUB_DATA_DIR})
 	${LN} -fs ../../../seahub-data/avatars \
 		${STAGEDIR}${PREFIX}/${SEAHUBDIR}/media/avatars
+
+.include "${.CURDIR}/../../net-mgmt/seafile-server/Makefile.include"
 
 .include <bsd.port.mk>

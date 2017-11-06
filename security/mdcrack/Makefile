@@ -15,6 +15,7 @@ PLIST_FILES=	bin/mdcrack
 MAKE_ARGS=	LDFLAGS="${LDFLAGS} -lncurses"
 
 USES=		compiler:features ncurses
+BROKEN=		checksum mismatch
 
 .include <bsd.port.pre.mk>
 

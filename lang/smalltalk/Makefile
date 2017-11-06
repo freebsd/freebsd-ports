@@ -3,7 +3,7 @@
 
 PORTNAME=	smalltalk
 PORTVERSION=	3.2.5
-PORTREVISION=	8
+PORTREVISION=	10
 CATEGORIES=	lang
 MASTER_SITES=	GNU
 
@@ -15,15 +15,13 @@ BUILD_DEPENDS=	zip:archivers/zip \
 LIB_DEPENDS=	libgdbm.so:databases/gdbm \
 		libcairo.so:graphics/cairo
 
-OPTIONS_DEFINE=	TK PGSQL SDL
-OPTIONS_DEFAULT=TK PGSQL SDL
+OPTIONS_DEFINE=	PGSQL SDL
+OPTIONS_DEFAULT=PGSQL SDL
 OPTIONS_SUB=	yes
-TK_USES=	tk:84
-TK_CONFIGURE_WITH=tcl=${LOCALBASE}/lib/tcl8.4 tk=${LOCALBASE}/lib/tk8.4
 PGSQL_USES=	pgsql
 SDL_USE=	SDL=image,mixer,sdl,sound,ttf
 
-USES=		execinfo gmake iconv libtool localbase makeinfo pathfix pkgconfig \
+USES=		gmake iconv libtool localbase makeinfo pathfix pkgconfig \
 		shebangfix sqlite tar:xz
 USE_GNOME=	pango
 USE_XORG=	ice xi xmu
@@ -66,7 +64,7 @@ post-install:
 	@${LN} -sf gst-load.1 ${STAGEDIR}${MANPREFIX}/man/man1/gst-reload.1
 	@${MKDIR} ${STAGEDIR}${DATADIR}/gtk
 	${INSTALL_DATA} ${WRKSRC}/*.el ${STAGEDIR}${PREFIX}/share/emacs/site-lisp
-	@${LS} -1 ${STAGEDIR}${PREFIX}/bin/gst* |grep -v config|xargs ${STRIP_CMD}
+	@${LS} -1 ${STAGEDIR}${PREFIX}/bin/gst* |grep -v config|${XARGS} ${STRIP_CMD}
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/smalltalk/*.so
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libgst.so
 

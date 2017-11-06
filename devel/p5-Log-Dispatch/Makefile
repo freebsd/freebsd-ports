@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	Log-Dispatch
-PORTVERSION=	2.58
+PORTVERSION=	2.67
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,7 +15,10 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	p5-Devel-GlobalDestruction>=0:devel/p5-Devel-GlobalDestruction \
 		p5-Dist-CheckConflicts>=0.02:devel/p5-Dist-CheckConflicts \
 		p5-Module-Runtime>=0:devel/p5-Module-Runtime \
-		p5-Params-Validate>=1.03:devel/p5-Params-Validate
+		p5-Params-ValidationCompiler>=0:devel/p5-Params-ValidationCompiler \
+		p5-Specio>=0.32:devel/p5-Specio \
+		p5-Try-Tiny>=0:lang/p5-Try-Tiny \
+		p5-namespace-autoclean>=0:devel/p5-namespace-autoclean
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-IPC-Run3>=0:devel/p5-IPC-Run3 \
 		p5-Test-Fatal>=0:devel/p5-Test-Fatal \

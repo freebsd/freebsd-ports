@@ -2,6 +2,7 @@
 
 PORTNAME=	svgpart
 PORTVERSION=	${KDE4_VERSION}
+PORTREVISION=	1
 CATEGORIES=	graphics kde kde-kde4
 PKGNAMEPREFIX=	kdegraphics-
 

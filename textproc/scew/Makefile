@@ -3,7 +3,7 @@
 
 PORTNAME=	scew
 PORTVERSION=	1.1.7
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	textproc
 MASTER_SITES=	SAVANNAH/${PORTNAME}/
 
@@ -32,7 +32,7 @@ post-install:
 .endfor
 
 .ifdef MAINTAINER_MODE
-LIB_DEPENDS+=	libcheck.so:devel/libcheck
+LIB_DEPENDS+=	libcheck.so:devel/check
 regression-test: build
 	${MAKE_CMD} -C ${WRKSRC}/tests check
 .endif

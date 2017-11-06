@@ -17,4 +17,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}DecoratorTools>=1.7:devel/py-decoratortools
 USES=		python zip
 USE_PYTHON=	distutils autoplist
 
+BROKEN=	checksum mismatch
+
 .include <bsd.port.mk>

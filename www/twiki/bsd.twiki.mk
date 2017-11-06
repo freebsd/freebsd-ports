@@ -28,7 +28,7 @@ SUB_LIST+=	TWDIR="${TWDIR}" WWWOWN="${WWWOWN}" WWWGRP="${WWWGRP}"
 SUB_FILES+=	pkg-install pkg-deinstall
 MAINTAINER?=	ports@FreeBSD.org
 DIST_SUBDIR?=	twiki
-RUN_DEPENDS+=	${TWDEP:C/([^=<>]*)([=<>]*)(.*)/twiki-\1\20.0.\3:${PORTSDIR}\/www\/twiki-\1/}
+RUN_DEPENDS+=	${TWDEP:C/([^=<>]*)([=<>]*)(.*)/twiki-\1\20.0.\3:www\/twiki-\1/}
 
 make-dist:
 	@${INSTALL} -d ${WRKDIR}/
@@ -57,7 +57,6 @@ make-twdep: extract
 			n=p5-$${a%%,*}; v=$${a##*,}; \
 			o=\`echo ${PORTSDIR}/*/$$n\`; : $${o:=${PORTSDIR}/X/$$n}; \
 			echo $$n$$v:'$${PORTSDIR}'$${o##${PORTSDIR}}; done`"
-
 
 make-port:
 	@for n in ${name} ${names}; do\

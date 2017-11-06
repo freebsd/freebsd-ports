@@ -44,6 +44,7 @@ share/icons/terminology.png
 %%DATADIR%%/themes/solarized.edj
 %%DATADIR%%/themes/solarized_light.edj
 %%NLS%%share/locale/ca/LC_MESSAGES/terminology.mo
+%%NLS%%share/locale/da/LC_MESSAGES/terminology.mo
 %%NLS%%share/locale/de/LC_MESSAGES/terminology.mo
 %%NLS%%share/locale/el/LC_MESSAGES/terminology.mo
 %%NLS%%share/locale/eo/LC_MESSAGES/terminology.mo
@@ -54,5 +55,7 @@ share/icons/terminology.png
 %%NLS%%share/locale/it/LC_MESSAGES/terminology.mo
 %%NLS%%share/locale/ko/LC_MESSAGES/terminology.mo
 %%NLS%%share/locale/ms/LC_MESSAGES/terminology.mo
+%%NLS%%share/locale/sl/LC_MESSAGES/terminology.mo
 %%NLS%%share/locale/sr/LC_MESSAGES/terminology.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/terminology.mo
+%%NLS%%share/locale/vi/LC_MESSAGES/terminology.mo

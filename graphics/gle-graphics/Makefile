@@ -3,7 +3,7 @@
 
 PORTNAME=	gle-graphics
 DISTVERSION=	4.2.4cf
-PORTREVISION=	6
+PORTREVISION=	9
 CATEGORIES=	graphics print
 MASTER_SITES=	SF/glx/gle4%20%28Current%20Active%20Version%29/${DISTVERSION:C,.$,,1}
 DISTNAME=	${PORTNAME}-${DISTVERSION}-src
@@ -14,15 +14,13 @@ COMMENT=	Graphics language that produces images from script files
 LICENSE=	BSD3CLAUSE GPLv2
 LICENSE_COMB=	multi
 
-BUILD_DEPENDS=	qmake-qt4:devel/qmake4
-
 BITMAP_IMAGES_CONFIGURE_WITH=	jpeg=${LOCALBASE} tiff=${LOCALBASE} png=${LOCALBASE}
 BITMAP_IMAGES_DESC=	Support for including bitmap images
 BITMAP_IMAGES_LIB_DEPENDS=	libpng.so:graphics/png \
 		libtiffxx.so:graphics/tiff
 BITMAP_IMAGES_USES=	jpeg
 
-CONFIGURE_ARGS=	--with-extrafonts=yes
+CONFIGURE_ARGS=	--with-extrafonts=yes --with-qt=${QT_ARCHDIR}
 
 ALL_TARGET=	all
 
@@ -44,10 +42,9 @@ PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 
 REINPLACE_FILES=	configure
 
-USE_GCC=	yes
 USE_GL=	yes
 USE_LDCONFIG=	yes
-USE_QT4=	gui moc network opengl rcc
+USE_QT4=	corelib gui moc network opengl rcc qmake_build
 USES=		gmake ncurses pathfix
 CPPFLAGS+=	-I${NCURSESINC}
 

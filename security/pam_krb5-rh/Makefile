@@ -5,7 +5,7 @@ PORTNAME=	pam_krb5
 DISTVERSION=	2.4.13
 CATEGORIES=	security
 MASTER_SITES=	https://fedorahosted.org/released/${PORTNAME}/ \
-		http://mirrors.rit.edu/zi/
+		ZI
 PKGNAMESUFFIX=	-rh
 
 MAINTAINER=	zi@FreeBSD.org

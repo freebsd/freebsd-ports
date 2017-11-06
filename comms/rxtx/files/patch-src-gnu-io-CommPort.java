@@ -1,6 +1,6 @@
---- src/gnu/io/CommPort.java.orig	2007-04-26 06:26:05.000000000 +0100
-+++ src/gnu/io/CommPort.java	2015-05-11 16:51:34.000000000 +0100
-@@ -73,7 +73,7 @@
+--- src/gnu/io/CommPort.java.orig	2007-04-26 05:26:05 UTC
++++ src/gnu/io/CommPort.java
+@@ -73,7 +73,7 @@ import java.io.IOException;
    */
  public abstract class CommPort extends Object {
  	protected String name;
@@ -9,7 +9,7 @@
  
  	public abstract void enableReceiveFraming( int f ) 
  		throws UnsupportedCommOperationException;
-@@ -94,6 +94,7 @@
+@@ -94,6 +94,7 @@ public abstract class CommPort extends O
  	public abstract int getInputBufferSize();
  	public abstract void setOutputBufferSize( int size );
  	public abstract int getOutputBufferSize();
@@ -17,7 +17,7 @@
  	public void close() 
  	{
  		if (debug) System.out.println("CommPort:close()");
-@@ -102,12 +103,23 @@
+@@ -102,12 +103,23 @@ public abstract class CommPort extends O
  		{
  			CommPortIdentifier cp = 
  				CommPortIdentifier.getPortIdentifier(this);

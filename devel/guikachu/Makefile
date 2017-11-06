@@ -14,6 +14,8 @@ COMMENT=	Resource editor for PalmOS(tm) systems
 LIB_DEPENDS=	libgnomeuimm-2.6.so:x11-toolkits/libgnomeuimm26 \
 		libgnomevfsmm-2.6.so:devel/gnome-vfsmm
 
+BROKEN=		fails to build: ustring.h: expected ';' at end of declaration list
+
 USES=		gmake pathfix pkgconfig shared-mime-info desktop-file-utils
 USE_GNOME=	gnomeprefix intlhack libgnomeui
 GNU_CONFIGURE=	yes

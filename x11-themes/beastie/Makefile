@@ -13,22 +13,23 @@ DISTNAME=	Beastie-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gnome theme with FreeBSD Colors
 
-RUN_DEPENDS+=	gtk-engines2>=2.7.4_1:x11-themes/gtk-engines2 \
+LICENSE=	NONE
+
+RUN_DEPENDS=	gtk-engines2>=2.7.4_1:x11-themes/gtk-engines2 \
 		gnome-themes>=2.11.91:x11-themes/gnome-themes
 
 WRKSRC=		${WRKDIR}/Beastie
 NO_BUILD=	yes
+NO_ARCH=	yes
 
 THEME_FILES=	README index.theme gtk-2.0/gtkrc
 THEME_DIR=	share/themes/Beastie/
 PLIST_FILES=	${THEME_FILES:S|^|${THEME_DIR}|}
 
-.include <bsd.port.pre.mk>
-
 do-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/${THEME_DIR}/gtk-2.0
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${THEME_DIR}/gtk-2.0
 .for f in ${THEME_FILES}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${PREFIX}/${THEME_DIR}/${f}
 .endfor
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

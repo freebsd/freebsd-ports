@@ -44,4 +44,12 @@ MANPAGE_BUILD_DEPENDS=	docbook-xml>=0:textproc/docbook-xml \
 		docbook-xsl>=0:textproc/docbook-xsl
 MANPAGES_USE=	GNOME=libxslt:build
 
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc || ${ARCH} == powerpc64
+post-patch:
+	@${REINPLACE_CMD} -e 's|-Wtype-limits||g' \
+		${WRKSRC}/configure
+.endif
+
 .include <bsd.port.mk>

@@ -5,7 +5,6 @@ lib/geany/geniuspaste.so
 %%DATADIR%%/geniuspaste/pastebins/paste.debian.net.conf
 %%DATADIR%%/geniuspaste/pastebins/pastebin.geany.org.conf
 %%DATADIR%%/geniuspaste/pastebins/sprunge.us.conf
-%%DATADIR%%/geniuspaste/pastebins/tinypaste.com.conf
 %%DOCSDIR%%/geniuspaste/AUTHORS
 %%DOCSDIR%%/geniuspaste/COPYING
 %%DOCSDIR%%/geniuspaste/ChangeLog

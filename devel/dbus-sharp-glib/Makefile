@@ -1,17 +1,19 @@
 # $FreeBSD$
 
 PORTNAME=	dbus-sharp-glib
-PORTVERSION=	0.5.0
+PORTVERSION=	0.6
+DISTVERSIONPREFIX=v
 CATEGORIES=	devel
-MASTER_SITES=	GHC
 
 MAINTAINER=	mono@FreeBSD.org
 COMMENT=	D-Bus for .NET: GLib integration module
 
-BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/dbus-sharp-1.0.pc:devel/dbus-sharp
-RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/dbus-sharp-1.0.pc:devel/dbus-sharp
+LICENSE=	MIT
 
-USES=		gmake pathfix pkgconfig
+BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/dbus-sharp-2.0.pc:devel/dbus-sharp
+RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/dbus-sharp-2.0.pc:devel/dbus-sharp
+
+USES=		autoreconf gmake pathfix pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	mono
 

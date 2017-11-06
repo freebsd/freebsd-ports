@@ -21,6 +21,7 @@
 # tor_disable_default_instance (str):	Doesn't run the default instance.
 #			Only valid when tor_instances is used.
 #			Default: NO
+# tor_setuid (str):	Runtime setuid.  Default: NO
 #
 # The instance definition that tor_instances expects:
 # inst_name{:inst_conf:inst_user:inst_group:inst_pidfile:inst_data_dir}
@@ -42,6 +43,7 @@ load_rc_config ${name}
 : ${tor_pidfile="/var/run/tor/tor.pid"}
 : ${tor_datadir="/var/db/tor"}
 : ${tor_disable_default_instance="NO"}
+: ${tor_setuid="NO"}
 
 instance=${slave_instance}
 if [ -n "${instance}" ]; then
@@ -111,6 +113,18 @@ pidfile=${tor_pidfile}
 command="%%PREFIX%%/bin/${name}"
 command_args="-f ${tor_conf} --PidFile ${tor_pidfile} --RunAsDaemon 1 --DataDirectory ${tor_datadir}"
 extra_commands="reload"
+
+if [ $tor_setuid = "YES" ]; then
+  if ! grep -q "^User ${tor_user}$" ${tor_conf}; then
+    echo "User ${tor_user}" >> ${tor_conf}
+  fi
+  tor_user="root"
+  tor_group="wheel"
+else
+  if grep -q "^User ${tor_user}$" ${tor_conf}; then
+    sed -i '' -e "s/^User ${tor_user}$//" ${tor_conf}
+  fi
+fi
 
 if ! run_rc_command "$1"; then
   exit_code=1

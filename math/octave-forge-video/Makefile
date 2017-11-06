@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	octave-forge-video
-PORTVERSION=	1.2.3
+PORTVERSION=	1.2.4
 PORTREVISION=	2
 CATEGORIES=	math
 

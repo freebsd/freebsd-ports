@@ -1,0 +1,8 @@
+DNS Replay Tool (drool) can replay DNS traffic from packet capture
+(PCAP) files and send it to a specified server, with options such
+as to manipulate the timing between packets, as well as loop packets
+infinitely or for a set number of iterations. This tool's goal is
+to be able to produce a high amount of UDP packets per second and
+TCP sessions per second on common hardware.
+
+WWW: https://www.dns-oarc.net/tools/drool

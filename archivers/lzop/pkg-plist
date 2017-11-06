@@ -1,0 +1,13 @@
+bin/lzop
+man/man1/lzop.1.gz
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/THANKS
+%%PORTDOCS%%%%DOCSDIR%%/lzop.html
+%%PORTDOCS%%%%DOCSDIR%%/lzop.man
+%%PORTDOCS%%%%DOCSDIR%%/lzop.pod
+%%PORTDOCS%%%%DOCSDIR%%/lzop.ps
+%%PORTDOCS%%%%DOCSDIR%%/lzop.tex
+%%PORTDOCS%%%%DOCSDIR%%/lzop.txt

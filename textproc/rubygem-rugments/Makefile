@@ -11,9 +11,7 @@ COMMENT=	Simple, easy to extend drop in replacement for pygments
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-GEM_NAME=	${PORTNAME}-${DISTVERSION}
 NO_ARCH=	yes
-
 USE_RUBY=	yes
 USES=		gem
 

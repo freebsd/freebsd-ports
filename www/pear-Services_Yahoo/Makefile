@@ -5,9 +5,9 @@ PORTNAME=	Services_Yahoo
 PORTVERSION=	0.2.0
 CATEGORIES=	www pear
 
-MAINTAINER=	joneum@bsdproject.de
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Provides access to the Yahoo! Web Services
 
-USES=	pear
+USES=		pear
 
 .include <bsd.port.mk>

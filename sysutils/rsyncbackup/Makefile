@@ -2,25 +2,21 @@
 # $FreeBSD$
 
 PORTNAME=	rsyncbackup
-PORTVERSION=	1.0
+PORTVERSION=	1.1
 CATEGORIES=	sysutils
-MASTER_SITES=	GOOGLE_CODE
-PROJECTHOST=	rsync-backup
-DISTNAME=	rsyncbackup
+MASTER_SITES=	http://BSDforge.com/projects/source/sysutils/rsyncbackup/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	portmaster@bsdforge.com
 COMMENT=	Rsync frontend written in Perl
 
 LICENSE=	GPLv2+
-
-BROKEN=		Unfetchable (google code has gone away)
 
 RUN_DEPENDS=	rsync:net/rsync
 
 CONFIGSRC=	${WRKSRC}/config
 CONFIGFILES=	backupset.conf config.conf destinations.conf sources.conf
 
-USES=		perl5 zip
+USES=		perl5 tar:xz
 NO_BUILD=	yes
 NO_ARCH=	yes
 

@@ -15,26 +15,25 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 CONFLICTS=	emacs25-[0-9]* emacs-nox11-[0-9]*
 
+BROKEN_aarch64=		Segfaults during build
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	emacs-mirror
-GH_TAGNAME=	2dae636
+GH_TAGNAME=	92045f4
 
-EMACS_VER=	26.0.50
-EMACS_REV=	20161225
+EMACS_VER=	27.0.50
+EMACS_REV=	20171004
 GNU_CONFIGURE=	yes
-USES=		autoreconf cpe gmake makeinfo ncurses pkgconfig
+USES=		autoreconf:build cpe gmake makeinfo ncurses pkgconfig
 INFO_PATH=	${DATADIR_REL}/info
 CPE_VENDOR=	gnu
 
 SUB_FILES=	sources.el
 SUB_LIST=	EMACS_VER=${EMACS_VER}
 
-CONFIGURE_ARGS=	--localstatedir=/var \
-		--with-gameuser=games:games
+CONFIGURE_ARGS=	--with-gameuser=games:games
 
 PLIST_SUB=	EMACS_VER=${EMACS_VER} GNU_HOST=${CONFIGURE_TARGET}
-
-MAKE_ENV=	LC_ALL=C
 
 INFO=	ada-mode auth autotype bovine calc ccmode cl dbus dired-x ebrowse ede	\
 	ediff edt efaq eieio eintr elisp emacs emacs-gnutls emacs-mime epa erc	\
@@ -43,7 +42,9 @@ INFO=	ada-mode auth autotype bovine calc ccmode cl dbus dired-x ebrowse ede	\
 	rcirc reftex remember sasl sc semantic ses sieve smtpmail speedbar	\
 	srecode todo-mode tramp url vhdl-mode vip viper widget wisent woman
 
-OPTIONS_DEFINE=	ACL DBUS GNUTLS LLDB MODULES SOURCES THREADS X11 XML
+MAKE_JOBS_UNSAFE=	yes
+
+OPTIONS_DEFINE=	ACL DBUS GNUTLS LCMS2 LLDB MODULES SOURCES THREADS X11 XML
 
 OPTIONS_RADIO=			FILENOTIFY SOUND X11TOOLKIT
 OPTIONS_RADIO_FILENOTIFY=	GFILE KQUEUE
@@ -55,7 +56,7 @@ OPTIONS_GROUP_NEEDX11=		GCONF GSETTINGS M17N OTF SCROLLBARS XFT XIM     \
 				XWIDGETS
 
 OPTIONS_DEFAULT=	ACL DBUS FREEDESKTOP GCONF GIF GNUTLS GSETTINGS GTK2    \
-			JPEG KQUEUE M17N MAGICK MODULES OSS OTF PNG SCROLLBARS  \
+			JPEG KQUEUE LCMS2 M17N MAGICK MODULES OSS OTF PNG SCROLLBARS  \
 			SOURCES SVG THREADS TIFF X11 XFT XIM XML XPM
 
 ACL_DESC=	Access control list support
@@ -120,6 +121,8 @@ JPEG_USES=		jpeg
 JPEG_CONFIGURE_WITH=	jpeg
 JPEG_IMPLIES=		X11
 KQUEUE_CONFIGURE_ON=	--with-file-notification=kqueue
+LCMS2_CONFIGURE_WITH=	lcms2
+LCMS2_LIB_DEPENDS=	liblcms2.so:graphics/lcms2
 LLDB_EXTRA_PATCHES=	${PATCHDIR}/extrapatch-lldb-gud.el
 #LTO_CONFIGURE_ON=	--enable-link-time-optimization
 M17N_LIB_DEPENDS=	libm17n.so:devel/m17n-lib
@@ -176,8 +179,11 @@ XPM_CONFIGURE_WITH=	xpm
 XPM_IMPLIES=		X11
 XWIDGETS_USE=		XORG=xcomposite
 XWIDGETS_CONFIGURE_WITH=xwidgets
-XWIDGETS_LIB_DEPENDS=	libwebkitgtk-3.0.so:www/webkit-gtk3
+XWIDGETS_LIB_DEPENDS=	libwebkit2gtk-4.0.so:www/webkit2-gtk3
 XWIDGETS_IMPLIES=	GTK3
+
+pre-configure:
+	@(cd ${WRKSRC} && ./autogen.sh all)
 
 # With a desktop entry stage-qa will give a warning about requiring
 # desktop-file-utils and portlint -C will give a warning about INSTALL_ICONS,

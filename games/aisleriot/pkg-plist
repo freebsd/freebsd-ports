@@ -115,7 +115,7 @@ man/man6/sol.6.gz
 %%DATADIR%%/sounds/slide.ogg
 %%DATADIR%%/sounds/splat.ogg
 %%DATADIR%%/sounds/victory.ogg
-share/appdata/sol.appdata.xml
+share/metainfo/sol.appdata.xml
 share/applications/sol.desktop
 share/help/C/aisleriot/accordion.xml
 share/help/C/aisleriot/agnes.xml
@@ -1929,6 +1929,7 @@ share/locale/eu/LC_MESSAGES/aisleriot.mo
 share/locale/fa/LC_MESSAGES/aisleriot.mo
 share/locale/fi/LC_MESSAGES/aisleriot.mo
 share/locale/fr/LC_MESSAGES/aisleriot.mo
+share/locale/fur/LC_MESSAGES/aisleriot.mo
 share/locale/ga/LC_MESSAGES/aisleriot.mo
 share/locale/gl/LC_MESSAGES/aisleriot.mo
 share/locale/gu/LC_MESSAGES/aisleriot.mo
@@ -1987,21 +1988,21 @@ share/locale/xh/LC_MESSAGES/aisleriot.mo
 share/locale/zh_CN/LC_MESSAGES/aisleriot.mo
 share/locale/zh_HK/LC_MESSAGES/aisleriot.mo
 share/locale/zh_TW/LC_MESSAGES/aisleriot.mo
-@dir share/help/zh_CN/aisleriot/figures
-@dir share/help/sv/aisleriot/figures
-@dir share/help/sr@latin/aisleriot/figures
-@dir share/help/sr/aisleriot/figures
-@dir share/help/sl/aisleriot/figures
-@dir share/help/ru/aisleriot/figures
-@dir share/help/pt_BR/aisleriot/figures
-@dir share/help/oc/aisleriot/figures
-@dir share/help/hu/aisleriot/figures
-@dir share/help/gl/aisleriot/figures
-@dir share/help/fr/aisleriot/figures
-@dir share/help/eu/aisleriot/figures
-@dir share/help/es/aisleriot/figures
-@dir share/help/en_GB/aisleriot/figures
-@dir share/help/el/aisleriot/figures
-@dir share/help/de/aisleriot/figures
-@dir share/help/cs/aisleriot/figures
 @dir share/help/ca/aisleriot/figures
+@dir share/help/cs/aisleriot/figures
+@dir share/help/de/aisleriot/figures
+@dir share/help/el/aisleriot/figures
+@dir share/help/en_GB/aisleriot/figures
+@dir share/help/es/aisleriot/figures
+@dir share/help/eu/aisleriot/figures
+@dir share/help/fr/aisleriot/figures
+@dir share/help/gl/aisleriot/figures
+@dir share/help/hu/aisleriot/figures
+@dir share/help/oc/aisleriot/figures
+@dir share/help/pt_BR/aisleriot/figures
+@dir share/help/ru/aisleriot/figures
+@dir share/help/sl/aisleriot/figures
+@dir share/help/sr/aisleriot/figures
+@dir share/help/sr@latin/aisleriot/figures
+@dir share/help/sv/aisleriot/figures
+@dir share/help/zh_CN/aisleriot/figures

@@ -17,15 +17,10 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=2.2:devel/py-pytest \
 		${PYTHON_PKGNAMEPREFIX}execnet>=1.2:sysutils/py-execnet
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest
 
-OPTIONS_DEFINE=	TESTS
-
-TESTS_DESC=		Install test suite requirements
-TESTS_BUILD_DEPENDS=	${TEST_DEPENDS}
-
+NO_ARCH=	yes
 USES=		python
 USE_PYTHON=	autoplist distutils
-
-regression-test: build
-	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYDISTUTILS_SETUP} test
+DO_MAKE_TEST=	${SETENV} ${TEST_ENV} ${PYTHON_CMD} ${PYDISTUTILS_SETUP}
+TEST_TARGET=	test
 
 .include <bsd.port.mk>

@@ -10,11 +10,13 @@ DIST_SUBDIR=	gnome3
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Translations for the cinnamon desktop
 
-USES=		gettext-tools tar:xz
-NO_CONFIGURE=	yes
-INSTALL_TARGET=	all
 USE_GITHUB=	yes
 GH_ACCOUNT=	linuxmint
+
+USES=		gettext-tools
+NO_CONFIGURE=	yes
+INSTALL_TARGET=	all
+NO_ARCH=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|usr/share|${STAGEDIR}${PREFIX}/share|g' \

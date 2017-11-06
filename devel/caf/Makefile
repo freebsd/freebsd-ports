@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	caf
-PORTVERSION=	0.14.5
+PORTVERSION=	0.15.3
+PORTREVISION=	2
 CATEGORIES=	devel
 
 MAINTAINER=	vallentin@icir.org
@@ -11,7 +12,7 @@ COMMENT=	C++ actor framework
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_powerpc64=	Does not build
+BROKEN_powerpc64=	does not build: error: to_string is not a member of std
 
 CXXFLAGS+=	-std=c++11 -Wextra -Wall -pedantic
 LDFLAGS+=	-pthread

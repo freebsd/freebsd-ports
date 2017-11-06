@@ -1,4 +1,4 @@
 Ruby/ProgressBar is a text progress bar library for Ruby. It can indicate
 progress with percentage, a progress bar, and estimated remaining time.
 
-WWW: https://github.com/peleteiro/progressbar
+WWW: https://github.com/jfelchner/ruby-progressbar

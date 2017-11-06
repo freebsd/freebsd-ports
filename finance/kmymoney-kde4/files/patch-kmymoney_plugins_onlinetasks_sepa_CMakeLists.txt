@@ -1,0 +1,12 @@
+--- kmymoney/plugins/onlinetasks/sepa/CMakeLists.txt.orig	2017-04-17 10:48:39 UTC
++++ kmymoney/plugins/onlinetasks/sepa/CMakeLists.txt
+@@ -12,7 +12,8 @@ kde4_add_ui_files( sepaOnlineTasks_SRCS
+   ui/sepacredittransferedit.ui
+ )
+ 
+-automoc4( konlinetasks_sepa_OBJECTS sepaOnlineTasks_SRCS)
++# CMAKE_AUTOMOC is set to TRUE, so don't do it manually too.
++# automoc4( konlinetasks_sepa_OBJECTS sepaOnlineTasks_SRCS)
+ add_library( konlinetasks_sepa_OBJECTS OBJECT ${sepaOnlineTasks_SRCS} )
+ 
+ # Add actual plugin here it is not part of the objects

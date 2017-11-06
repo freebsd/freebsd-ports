@@ -3,7 +3,7 @@
 
 PORTNAME=	scotch
 DISTVERSION=	5.1.12b_esmumps
-PORTREVISION=	6
+PORTREVISION=	8
 CATEGORIES=	cad science
 MASTER_SITES=	https://gforge.inria.fr/frs/download.php/28978/
 DISTNAME=	${PORTNAME}_${DISTVERSION}
@@ -16,7 +16,7 @@ LICENSE_NAME=	CeCILL-C
 LICENSE_FILE=	${WRKSRC}/doc/CeCILL-C_V1-en.txt
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-CONFLICTS=	gbase-0.* gmap-2006.*
+CONFLICTS=	gbase-0.* gmap-2015.*
 
 USES=		gmake
 

@@ -2,18 +2,18 @@
 # $FreeBSD$
 
 PORTNAME=	Bread-Board
-PORTVERSION=	0.32
-PORTREVISION=	1
+PORTVERSION=	0.36
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	CPAN:DOY
+MASTER_SITE_SUBDIR=	CPAN:YANICK
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Solderless way to wire up your application components
 
-LICENSE=	ART10 GPLv1
+LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	p5-Module-Runtime>=0:devel/p5-Module-Runtime \
 		p5-Moose>=2.1200:devel/p5-Moose \

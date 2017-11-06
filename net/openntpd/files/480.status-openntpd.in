@@ -1,0 +1,27 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+if [ -r /etc/defaults/periodic.conf ] ; then
+    . /etc/defaults/periodic.conf
+    source_periodic_confs
+fi
+
+ntpctl=%%PREFIX%%/sbin/ntpctl
+
+rc=0
+
+case "$daily_status_openntpd_enable" in
+    [Yy][Ee][Ss])
+	echo
+	echo 'OpenNTPD status:'
+
+	synced=$($ntpctl -s status | tee /dev/stderr | grep 'clock synced')
+	if [ -z "$synced" ] ; then
+		rc=1
+	fi
+	;;
+esac
+
+exit $rc

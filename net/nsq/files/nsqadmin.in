@@ -1,0 +1,39 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: nsqadmin
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+
+# Add the following lines to /etc/rc.conf to enable nsqadmin:
+# nsqadmin_enable="YES"
+# nsqadmin_args="<set as needed>"
+
+
+. /etc/rc.subr
+
+name=nsqadmin
+rcvar=nsqadmin_enable
+
+load_rc_config $name
+
+: ${nsqadmin_enable:="NO"}
+: ${nsqadmin_args:=""}
+
+pidfile=/var/run/nsqadmin.pid
+procname="%%PREFIX%%/bin/nsqadmin"
+command="/usr/sbin/daemon"
+command_args="-f -p ${pidfile} ${procname} ${nsqadmin_args}"
+
+start_precmd="nsqadmin_prestart"
+
+nsqadmin_prestart()
+{
+	if [ ! -d /var/db/nsq/nsqadmin ] ; then
+		mkdir -p /var/db/nsq/nsqadmin
+	fi
+	cd /var/db/nsq/nsqadmin
+}
+
+run_rc_command "$1"

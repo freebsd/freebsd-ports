@@ -1,0 +1,11 @@
+--- recording.c.orig	2012-06-09 13:57:30 UTC
++++ recording.c
+@@ -2075,7 +2075,7 @@ cUnbufferedFile *cFileName::SetOffset(in
+            }
+         // found a non existing file suffix
+         }
+-     if (Open() >= 0) {
++     if (Open()) {
+         if (!record && Offset >= 0 && file && file->Seek(Offset, SEEK_SET) != Offset) {
+            LOG_ERROR_STR(fileName);
+            return NULL;

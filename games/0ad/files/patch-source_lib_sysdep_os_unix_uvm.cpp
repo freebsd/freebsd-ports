@@ -1,4 +1,4 @@
---- source/lib/sysdep/os/unix/uvm.cpp.orig	2013-12-06 00:42:50 UTC
+--- source/lib/sysdep/os/unix/uvm.cpp.orig	2017-07-28 19:57:26 UTC
 +++ source/lib/sysdep/os/unix/uvm.cpp
 @@ -40,7 +40,7 @@ namespace vm {
  void* ReserveAddressSpace(size_t size, size_t UNUSED(commitSize), PageType UNUSED(pageType), int UNUSED(prot))
@@ -9,7 +9,7 @@
  	if(p == MAP_FAILED)
  		return 0;
  	return p;
-@@ -77,7 +77,7 @@ bool Commit(uintptr_t address, size_t si
+@@ -77,7 +77,7 @@ bool Commit(uintptr_t address, size_t size, PageType U
  bool Decommit(uintptr_t address, size_t size)
  {
  	errno = 0;

@@ -1,0 +1,49 @@
+# Created by: Green Dog <fiziologus@gmail.com>
+# $FreeBSD$
+
+PORTNAME=	fifechan
+PORTVERSION=	0.1.4
+PORTREVISION=	1
+CATEGORIES=	devel games
+
+MAINTAINER=	fiziologus@gmail.com
+COMMENT=	Small, efficient C++ GUI library designed for games
+
+LICENSE=	LGPL21
+LICENSE_FILE=	${WRKSRC}/LICENSE.md
+
+USES=	cmake:outsource
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	fifengine
+
+PLIST_SUB=	PORTVERSION=${PORTVERSION}
+
+OPTIONS_DEFINE=	ALLEGRO IRRLICHT OPENGL SDL SDL_CONTRIB
+ALLEGRO_DESC=	Allegro extension
+IRRLICHT_DESC=	Irrlicht extension
+OPENGL_DESC=	OpenGL extension (need for FIFE)
+SDL_DESC=	SDL extension (need for FIFE)
+SDL_CONTRIB_DESC=	SDL contrib extension (need SDL)
+
+OPTIONS_DEFAULT=	ALLEGRO IRRLICHT OPENGL SDL
+
+OPTIONS_SUB=	yes
+
+ALLEGRO_CMAKE_BOOL=	ENABLE_ALLEGRO
+ALLEGRO_LIB_DEPENDS=	liballeg.so:devel/allegro
+
+IRRLICHT_CMAKE_BOOL=	ENABLE_IRRLICHT
+IRRLICHT_LIB_DEPENDS=	libIrrlicht.so:x11-toolkits/irrlicht
+
+OPENGL_CMAKE_BOOL=	ENABLE_OPENGL
+OPENGL_USE=	gl=gl,glu
+
+SDL_CMAKE_BOOL=	ENABLE_SDL
+SDL_USE=	sdl=sdl2,image2
+
+SDL_CONTRIB_CMAKE_BOOL=	ENABLE_SDL_CONTRIB
+SDL_CONTRIB_USE=	sdl=ttf2
+SDL_CONTRIB_IMPLIES=	SDL
+
+.include <bsd.port.mk>

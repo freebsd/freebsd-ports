@@ -3,7 +3,7 @@
 
 PORTNAME=	numarray
 PORTVERSION=	1.5.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	math python
 MASTER_SITES=	SF/numpy/Old%20Numarray/${PORTVERSION}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,7 +13,8 @@ COMMENT=	Numeric array manipulation extension module for Python
 
 LICENSE=	BSD3CLAUSE
 
-USES=		python
+USES=		python shebangfix
+SHEBANG_FILES=	Examples/convolve/benchmark.py
 USE_PYTHON=	distutils autoplist
 
 PORTDOCS=	*

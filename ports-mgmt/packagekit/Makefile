@@ -4,7 +4,7 @@
 
 PORTNAME=	PackageKit
 PORTVERSION=	0.6.11
-PORTREVISION?=	8
+PORTREVISION?=	9
 CATEGORIES=	ports-mgmt sysutils
 MASTER_SITES=	http://www.packagekit.org/releases/
 
@@ -14,13 +14,13 @@ COMMENT?=	DBUS packaging abstraction layer
 BUILD_DEPENDS=	${LOCALBASE}/bin/docbook2man:textproc/docbook-utils
 LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib \
 		libpolkit-gobject-1.so:sysutils/polkit \
-		libck-connector.so:sysutils/consolekit
+		libck-connector.so:sysutils/consolekit2
 RUN_DEPENDS=	lsof:sysutils/lsof \
 		bash:shells/bash
 
 IGNORE=		does not build with new polkit
 
-USES=		cpe execinfo gettext gmake iconv libtool pathfix pkgconfig \
+USES=		cpe gettext gmake iconv libtool pathfix pkgconfig \
 		python:build shared-mime-info shebangfix sqlite:3
 CPE_VENDOR=	packagekit_project
 SHEBANG_FILES=	backends/test/helpers/search-name.sh \
@@ -28,8 +28,7 @@ SHEBANG_FILES=	backends/test/helpers/search-name.sh \
 USE_GNOME=	glib20 intltool introspection
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include
-LIBS+=		-L${LOCALBASE}/lib -lexecinfo
+LIBS+=		-lexecinfo
 CONFIGURE_ARGS+=--with-security-framework=polkit \
 		--localstatedir=/var \
 		--disable-static \

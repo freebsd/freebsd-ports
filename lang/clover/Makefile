@@ -2,33 +2,39 @@
 
 PORTNAME=	clover
 PORTVERSION=	${MESAVERSION}
-PORTREVISION=	0
 CATEGORIES=	lang
 
 COMMENT=	Mesa "Clover" OpenCL library
 
-BUILD_DEPENDS=	opencl>=0:devel/opencl
-LIB_DEPENDS=	libdrm.so:graphics/libdrm \
-		libOpenCL.so:devel/ocl-icd \
-		libexpat.so:textproc/expat2
+BUILD_DEPENDS=	libclc>=0.2.0.20160915:devel/libclc \
+		opencl>=0:devel/opencl
+LIB_DEPENDS=	libOpenCL.so:devel/ocl-icd
 RUN_DEPENDS=	opencl>=0:devel/opencl
 
-USES=		ssl
-USE_XORG=	glproto x11 xext xxf86vm xdamage xfixes dri2proto \
-		presentproto xvmc xshmfence
-
-ONLY_FOR_ARCHS=	i386 amd64
-ONLY_FOR_ARCHS_REASON=	Clover needs a graphics driver supported by the Radeon KMS driver
+ONLY_FOR_ARCHS=		i386 amd64
+ONLY_FOR_ARCHS_REASON=	Clover needs a GPU supported by the Radeon KMS driver
 
 .include <bsd.port.options.mk>
-.include "${.CURDIR}/../../graphics/libGL/Makefile.common"
+.include "${.CURDIR:H:H}/graphics/mesa-dri/Makefile.common"
 
-#MESA_BUILD_WRKSRC=	src/util src/glsl src/mesa src/gallium
+CONFIGURE_ARGS+=	--enable-opencl --enable-opencl-icd --disable-dri \
+			--disable-egl --disable-gbm --disable-gles2 --disable-glx \
+			--disable-va --disable-vdpau --disable-xvmc \
+			--with-gallium-drivers=r600,radeonsi	# only supported GPUs
+
+#MESA_BUILD_WRKSRC=	src/util src/compiler src/mesa src/gallium
 MESA_INSTALL_WRKSRC=	src/gallium/targets/opencl src/gallium/targets/pipe-loader
 
-.include "${.CURDIR}/../../graphics/libGL/Makefile.targets"
+.include "${MASTERDIR}/Makefile.targets"
+
+pre-configure:
+	@if [ -e ${LOCALBASE}/bin/llvm-config${MESA_LLVM_VER} ] && \
+		! [ -e ${LOCALBASE}/bin/clang${MESA_LLVM_VER} ]; then \
+		${ECHO_MSG} "Your llvm${MESA_LLVM_VER} is not built with clang support, which is required."; \
+		${FALSE}; \
+	fi
 
 post-install:
 	@${MV} ${STAGEDIR}/etc/OpenCL ${STAGEDIR}${PREFIX}/etc/
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

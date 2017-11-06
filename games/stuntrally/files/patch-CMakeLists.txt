@@ -1,0 +1,17 @@
+--- CMakeLists.txt.orig	2015-09-18 09:21:11 UTC
++++ CMakeLists.txt
+@@ -16,14 +16,6 @@ if(CMAKE_SOURCE_DIR STREQUAL CMAKE_BINAR
+ 	message(FATAL_ERROR "In-source builds are not permitted. Make a separate folder for building:\nmkdir build; cd build; cmake ..\nBefore that, remove the files already created:\nrm -rf CMakeCache.txt CMakeFiles")
+ endif(CMAKE_SOURCE_DIR STREQUAL CMAKE_BINARY_DIR)
+ 
+-# Add a sensible build type default and warning because empty means no optimization and no debug info.
+-if(NOT CMAKE_BUILD_TYPE)
+-	message("WARNING: CMAKE_BUILD_TYPE is not defined!\n         Defaulting to CMAKE_BUILD_TYPE=RelWithDebInfo. Use ccmake to set a proper value.")
+-	set(CMAKE_BUILD_TYPE RelWithDebInfo
+-	CACHE STRING "Type of build, options are: None Debug Release RelWithDebInfo MinSizeRel." FORCE)
+-endif(NOT CMAKE_BUILD_TYPE)
+-
+-
+ # Set default compile flags for GCC
+ if(CMAKE_COMPILER_IS_GNUCXX)
+ 	message(STATUS "GCC detected, adding compile flags")

@@ -2,10 +2,12 @@
 %%SITE_PERL%%/Test/Nginx/LWP.pm
 %%SITE_PERL%%/Test/Nginx/Socket.pm
 %%SITE_PERL%%/Test/Nginx/Socket/Lua.pm
+%%SITE_PERL%%/Test/Nginx/Socket/Lua/Dgram.pm
 %%SITE_PERL%%/Test/Nginx/Socket/Lua/Stream.pm
 %%SITE_PERL%%/Test/Nginx/Util.pm
 %%PERL5_MAN3%%/Test::Nginx.3.gz
 %%PERL5_MAN3%%/Test::Nginx::LWP.3.gz
 %%PERL5_MAN3%%/Test::Nginx::Socket.3.gz
 %%PERL5_MAN3%%/Test::Nginx::Socket::Lua.3.gz
+%%PERL5_MAN3%%/Test::Nginx::Socket::Lua::Dgram.3.gz
 %%PERL5_MAN3%%/Test::Nginx::Socket::Lua::Stream.3.gz

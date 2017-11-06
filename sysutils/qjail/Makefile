@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	qjail
-PORTVERSION=	5.0
+PORTVERSION=	5.4
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/${PORTNAME}
 
@@ -24,24 +24,23 @@ USES=		tar:bzip2
 NO_BUILD=	yes
 NO_ARCH=	yes
 
-IGNORE_FreeBSD_9=	Only for FreeBSD 11+
-IGNORE_FreeBSD_10=	Only for FreeBSD 11+
+IGNORE_FreeBSD_10=	This version only for FreeBSD 11+
 
 do-install:
-.for i in qjail qjail.vnet.be
-	${INSTALL_SCRIPT} ${WRKSRC}/${i} ${STAGEDIR}${PREFIX}/bin
-.endfor
+	${INSTALL_SCRIPT} ${WRKSRC}/qjail                      \
+		${STAGEDIR}${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/qjail.bootime              \
 		${STAGEDIR}${PREFIX}/etc/rc.d
 	${INSTALL_DATA}   ${WRKSRC}/qjail.portsnap.conf        \
 		${STAGEDIR}${PREFIX}/etc/qjail.portsnap.conf.sample
-.for i in qjail qjail-intro qjail-howto
+.for i in qjail qjail-intro qjail-howto qjail-vnet-howto \
+	qjail-ipv6-testing
 	${INSTALL_MAN}   ${WRKSRC}/${i}.8 ${STAGEDIR}${MAN8PREFIX}/man/man8
 .endfor
 
 # note examples are mandatory. qjail will not function without them
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	(cd ${WRKSRC}/examples/ \
-	    && ${COPYTREE_SHARE} \* ${STAGEDIR}${EXAMPLESDIR})
+		&& ${COPYTREE_SHARE} \* ${STAGEDIR}${EXAMPLESDIR})
 
 .include <bsd.port.mk>

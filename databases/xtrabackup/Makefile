@@ -13,8 +13,6 @@ COMMENT=	OpenSource version of InnoDB backup with support of Percona extensions
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_powerpc64=	Does not build
-
 # quilt is required by build.sh
 BUILD_DEPENDS=	bash:shells/bash \
 		cmake:devel/cmake \
@@ -26,8 +24,12 @@ LIB_DEPENDS=	libev.so:devel/libev \
 RUN_DEPENDS=	p5-DBD-mysql>=0:databases/p5-DBD-mysql \
 		qpress:archivers/qpress
 
+BROKEN_armv6=		fails to compile: cannot combine with previous 'type-name' declaration specifier
+BROKEN_mips64=		fails to compile: 'fpsetmask' was not declared in this scope
+BROKEN_powerpc64=	fails to link: ld: final link failed: Bad value
+
 # autotool is in use for 5.1 builds
-USES=		alias autoreconf:build cpe gettext cmake libtool perl5 shebangfix
+USES=		alias autoreconf:build cpe gettext cmake:noninja libtool perl5 shebangfix
 CPE_VENDOR=	percona
 SHEBANG_FILES=	storage/innobase/xtrabackup/xbcloud_osenv.sh
 

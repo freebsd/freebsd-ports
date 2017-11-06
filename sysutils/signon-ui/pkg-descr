@@ -1,0 +1,5 @@
+Sign-on UI is the component responsible for handling the user interactions
+which can happen during the login process of an online account.
+It can show password dialogs and dialogs with embedded web pages.
+
+WWW: https://gitlab.com/accounts-sso/signon-ui

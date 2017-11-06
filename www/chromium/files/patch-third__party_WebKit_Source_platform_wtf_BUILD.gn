@@ -1,0 +1,13 @@
+--- third_party/WebKit/Source/platform/wtf/BUILD.gn.orig	2017-06-05 19:03:26 UTC
++++ third_party/WebKit/Source/platform/wtf/BUILD.gn
+@@ -315,6 +315,10 @@ component("platform_wtf") {
+     libs = [ "dl" ]
+   }
+ 
++  if (is_bsd) {
++    libs = [ "execinfo" ]
++  }
++
+   if (is_mac) {
+     libs = [
+       "CoreFoundation.framework",

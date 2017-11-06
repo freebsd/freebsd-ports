@@ -16,11 +16,14 @@ LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		libtool
-CONFLICTS_INSTALL=	oniguruma[56]-.*
+CONFLICTS_INSTALL=	oniguruma[56]
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 DOCS=		HISTORY README doc/*
+
+DEPRECATED=	Upstream no longer maintained, superseded by devel/oniguruma6
+EXPIRATION_DATE=2017-11-12
 
 PKGNAMESUFFIX=	4
 

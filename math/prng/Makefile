@@ -11,7 +11,7 @@ COMMENT=	Portable, high-performance ANSI-C pseudorandom number generators
 
 LICENSE=	GPLv2
 
-CFLAGS+=	-fgnu89-inline
+USE_CSTD=	gnu89
 GNU_CONFIGURE=	yes
 INFO=		prng
 PLIST_FILES=	include/prng.h lib/libprng.a

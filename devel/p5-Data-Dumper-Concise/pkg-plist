@@ -1,6 +1,6 @@
-%%PERL5_MAN3%%/Data::Dumper::Concise.3.gz
-%%PERL5_MAN3%%/Data::Dumper::Concise::Sugar.3.gz
-%%PERL5_MAN3%%/Devel::Dwarn.3.gz
 %%SITE_PERL%%/Data/Dumper/Concise.pm
 %%SITE_PERL%%/Data/Dumper/Concise/Sugar.pm
 %%SITE_PERL%%/Devel/Dwarn.pm
+%%PERL5_MAN3%%/Data::Dumper::Concise.3.gz
+%%PERL5_MAN3%%/Data::Dumper::Concise::Sugar.3.gz
+%%PERL5_MAN3%%/Devel::Dwarn.3.gz

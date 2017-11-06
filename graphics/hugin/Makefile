@@ -2,10 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	hugin
-PORTVERSION=	2016.2.0
-DISTVERSION=	2016.2.0
-WRKSRC=		${WRKDIR}/hugin-2016.2.0
-PORTREVISION=	2
+PORTVERSION=	2017.0.0
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION:R}
 
@@ -29,14 +27,18 @@ RUN_DEPENDS=	enblend>=4.1.4:graphics/enblend \
 		gmake:devel/gmake
 
 USES=		cmake compiler:c++11-lib desktop-file-utils \
-		gettext jpeg pkgconfig shared-mime-info tar:bzip2
+		gettext jpeg pkgconfig shared-mime-info shebangfix tar:bzip2
 CMAKE_ARGS=	-DwxWidgets_CONFIG_EXECUTABLE=${WX_CONFIG}
 USE_WX=		3.0+
 USE_GL=		glew glut
 INSTALLS_ICONS=	yes
 
+SHEBANG_FILES=	src/hugin_script_interface/hpi.py \
+		src/hugin_script_interface/plugins/*.py \
+		src/hugin_script_interface/plugins-dev/*.py
+
 OPTIONS_DEFINE=		PANOMATIC AUTOPANOSIFTC PYTHON
-OPTIONS_DEFAULT=	PANOMATIC AUTOPANOSIFTC PYTHON
+OPTIONS_DEFAULT=	PANOMATIC PYTHON
 OPTIONS_SUB=		yes
 
 PANOMATIC_DESC=		Install graphics/panomatic

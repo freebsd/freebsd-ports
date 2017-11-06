@@ -1,5 +1,5 @@
-%%ETCDIR%%/master.sample
-%%ETCDIR%%/minion.sample
+@sample %%ETCDIR%%/master.sample
+@sample %%ETCDIR%%/minion.sample
 %%PYTHON_SITELIBDIR%%/salt/_syspaths.py
 %%PYTHON_SITELIBDIR%%/salt/_syspaths.pyc
 %%PYTHON_SITELIBDIR%%/salt/_syspaths.pyo

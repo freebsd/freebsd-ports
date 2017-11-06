@@ -2,7 +2,7 @@
 
 PORTNAME=	xine
 PORTVERSION=	0.99.9
-PORTREVISION=	3
+PORTREVISION=	5
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-ui/${PORTVERSION}
 DISTNAME=	${PORTNAME}-ui-${PORTVERSION}
@@ -15,7 +15,7 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libxine.so:multimedia/libxine
 
-USES=		desktop-file-utils execinfo gmake iconv jpeg pkgconfig readline \
+USES=		desktop-file-utils gmake iconv jpeg pkgconfig readline \
 		shared-mime-info tar:xz
 USE_XORG=	x11 xext xinerama xscrnsaver xtst xv xxf86vm
 GNU_CONFIGURE=	yes

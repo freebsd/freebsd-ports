@@ -3,7 +3,7 @@
 
 PORTNAME=	gotoblas
 PORTVERSION=	2.${GOTOBLAS2VER}.${LAPACKVER}
-PORTREVISION=	8
+PORTREVISION=	11
 CATEGORIES=	math
 MASTER_SITES=	LOCAL/maho/gotoblas \
 		NL/lapack:lapack NL/lapack/timing:lapack_tmg
@@ -13,13 +13,15 @@ DISTFILES=	GotoBLAS2-${GOTOBLAS2VER}_bsd.tar.gz \
 DIST_SUBDIR=	gotoblas
 EXTRACT_ONLY=	${GOTOBLAS2_SRCFILE}
 
-MAINTAINER=	cpm@fbsd.es
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast implementation of Basic Linear Algebra Subprograms
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/00License.txt
 
-BROKEN_powerpc64=	does not build
+BROKEN_aarch64=		does not build: undefined reference to get_libname
+BROKEN_armv6=		does not build: undefined reference to get_libname
+BROKEN_powerpc64=	does not build: error: macro names must be identifiers
 BROKEN_i386=		does not build (terminates with SIGBUS)
 
 GOTOBLAS2VER=	1.13

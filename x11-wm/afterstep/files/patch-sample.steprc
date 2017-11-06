@@ -1,112 +1,76 @@
-*** sample.steprc.orig	Sun Mar  9 06:30:22 1997
---- sample.steprc	Thu Mar 20 21:37:46 1997
-***************
-*** 166,176 ****
-  # ModulePath is a colon-separated list, just like a regular unix PATH
-  # Any Module must be found within the path in order to be located
-  # and executed
-! ModulePath          /usr/lib/X11/afterstep:/usr/X11R6/lib/X11/afterstep
-  # Another colon-separated list pointing to your pixmaps (color icons)
-! PixmapPath          /usr/include/X11/pixmaps/
-  # Path for your ugly black&white icons
-! IconPath            /usr/include/X11/bitmaps/
-  
-  # Various styles which can be associated with specific applications
-  # Sticky -- remains "stuck" on all desks
---- 166,176 ----
-  # ModulePath is a colon-separated list, just like a regular unix PATH
-  # Any Module must be found within the path in order to be located
-  # and executed
-! ModulePath          %%PREFIX%%/lib/X11/afterstep
-  # Another colon-separated list pointing to your pixmaps (color icons)
-! PixmapPath          %%PREFIX%%/include/X11/pixmaps/
-  # Path for your ugly black&white icons
-! IconPath            %%PREFIX%%/include/X11/bitmaps/
-  
-  # Various styles which can be associated with specific applications
-  # Sticky -- remains "stuck" on all desks
-***************
-*** 290,296 ****
-          # Place the green carpet image onto the background upon startup
-          # I personally recommend xli/xloadimage, but xv seems to be
-          # ubiquitous in the unix world so I'll use that 
-! 	# Exec	"I"	exec xv -root -quit /usr/lib/X11/afterstep/backgrounds/carpet.green.jpg
-  	Exec	"I"	exec xsetroot -solid DarkGrey
-  EndFunction
-  
---- 290,296 ----
-          # Place the green carpet image onto the background upon startup
-          # I personally recommend xli/xloadimage, but xv seems to be
-          # ubiquitous in the unix world so I'll use that 
-! 	# Exec	"I"	exec xv -root -quit %%PREFIX%%/lib/X11/afterstep/backgrounds/carpet.green.jpg
-  	Exec	"I"	exec xsetroot -solid DarkGrey
-  EndFunction
-  
-***************
-*** 465,485 ****
-  # Images ... quick way to view the included default background images
-  Popup "Images"
-  	Title	"Images"
-! 	Exec	"Brick"		exec xv -root -quit /usr/lib/X11/afterstep/backgrounds/brick.jpg
-! 	Exec	"Coins"		exec xv -root -quit /usr/lib/X11/afterstep/backgrounds/coins.jpg
-! 	Exec	"Dark Wood"	exec xv -root -quit /usr/lib/X11/afterstep/backgrounds/darkwood.jpg
-! 	Exec	"Eyes"		exec xv -root -quit /usr/lib/X11/afterstep/backgrounds/eyes.jpg
-! 	Exec	"Glass"		exec xv -root -quit /usr/lib/X11/afterstep/backgrounds/glass.jpg
-! 	Exec	"Green Carpet"	exec xv -root -quit /usr/lib/X11/afterstep/backgrounds/carpet.green.jpg
-! 	Exec	"Parquet"	exec xv -root -quit /usr/lib/X11/afterstep/backgrounds/parquet.jpg
-! 	Exec	"Pebbles"	exec xv -root -quit /usr/lib/X11/afterstep/backgrounds/pebbles.jpg
-! 	Exec	"Rock"		exec xv -root -quit /usr/lib/X11/afterstep/backgrounds/rock.tile.jpg
-! 	Exec	"Rope"		exec xv -root -quit /usr/lib/X11/afterstep/backgrounds/rope.weave.jpg
-! 	Exec	"Stucco"	exec xv -root -quit /usr/lib/X11/afterstep/backgrounds/stucco.jpg
-! 	Exec	"Tile"		exec xv -root -quit /usr/lib/X11/afterstep/backgrounds/tile.check.jpg
-! 	Exec	"Tree Bark"	exec xv -root -quit /usr/lib/X11/afterstep/backgrounds/bark.jpg
-! 	Exec	"Volcanic"	exec xv -root -quit /usr/lib/X11/afterstep/backgrounds/volcanic.jpg
-! 	Exec	"Wood"		exec xv -root -quit /usr/lib/X11/afterstep/backgrounds/wood.jpg
-  EndPopup
-  
-  # Background settings ... choose from either Solid Colors or Color Images
---- 465,485 ----
-  # Images ... quick way to view the included default background images
-  Popup "Images"
-  	Title	"Images"
-! 	Exec	"Brick"		exec xv -root -quit %%PREFIX%%/lib/X11/afterstep/backgrounds/brick.jpg
-! 	Exec	"Coins"		exec xv -root -quit %%PREFIX%%/lib/X11/afterstep/backgrounds/coins.jpg
-! 	Exec	"Dark Wood"	exec xv -root -quit %%PREFIX%%/lib/X11/afterstep/backgrounds/darkwood.jpg
-! 	Exec	"Eyes"		exec xv -root -quit %%PREFIX%%/lib/X11/afterstep/backgrounds/eyes.jpg
-! 	Exec	"Glass"		exec xv -root -quit %%PREFIX%%/lib/X11/afterstep/backgrounds/glass.jpg
-! 	Exec	"Green Carpet"	exec xv -root -quit %%PREFIX%%/lib/X11/afterstep/backgrounds/carpet.green.jpg
-! 	Exec	"Parquet"	exec xv -root -quit %%PREFIX%%/lib/X11/afterstep/backgrounds/parquet.jpg
-! 	Exec	"Pebbles"	exec xv -root -quit %%PREFIX%%/lib/X11/afterstep/backgrounds/pebbles.jpg
-! 	Exec	"Rock"		exec xv -root -quit %%PREFIX%%/lib/X11/afterstep/backgrounds/rock.tile.jpg
-! 	Exec	"Rope"		exec xv -root -quit %%PREFIX%%/lib/X11/afterstep/backgrounds/rope.weave.jpg
-! 	Exec	"Stucco"	exec xv -root -quit %%PREFIX%%/lib/X11/afterstep/backgrounds/stucco.jpg
-! 	Exec	"Tile"		exec xv -root -quit %%PREFIX%%/lib/X11/afterstep/backgrounds/tile.check.jpg
-! 	Exec	"Tree Bark"	exec xv -root -quit %%PREFIX%%/lib/X11/afterstep/backgrounds/bark.jpg
-! 	Exec	"Volcanic"	exec xv -root -quit %%PREFIX%%/lib/X11/afterstep/backgrounds/volcanic.jpg
-! 	Exec	"Wood"		exec xv -root -quit %%PREFIX%%/lib/X11/afterstep/backgrounds/wood.jpg
-  EndPopup
-  
-  # Background settings ... choose from either Solid Colors or Color Images
-***************
-*** 605,614 ****
-  Module Audio    
-  
-  # Select your normal audio player
-! #*AudioPlayCmd /usr/bin/showaudio
-  
-  # Select the directory containing your sounds
-! #*AudioDir /home/frank/mac/sounds
-  
-  #*AudioDelay 1
-  
---- 605,614 ----
-  Module Audio    
-  
-  # Select your normal audio player
-! #*AudioPlayCmd /usr/local/bin/showaudio
-  
-  # Select the directory containing your sounds
-! #*AudioDir %%PREFIX%%/lib/X11/afterstep/sounds
-  
-  #*AudioDelay 1
-  
+--- sample.steprc.orig	1997-05-04 15:28:05 UTC
++++ sample.steprc
+@@ -167,11 +167,11 @@ DeskTopScale 32
+ # ModulePath is a colon-separated list, just like a regular unix PATH
+ # Any Module must be found within the path in order to be located
+ # and executed
+-ModulePath          /usr/lib/X11/afterstep:/usr/X11R6/lib/X11/afterstep
++ModulePath          %%PREFIX%%/lib/X11/afterstep
+ # Another colon-separated list pointing to your pixmaps (color icons)
+-PixmapPath          /usr/include/X11/pixmaps/
++PixmapPath          %%PREFIX%%/include/X11/pixmaps/
+ # Path for your ugly black&white icons
+-IconPath            /usr/include/X11/bitmaps/
++IconPath            %%PREFIX%%/include/X11/bitmaps/
+ 
+ # Various styles which can be associated with specific applications
+ # Sticky -- remains "stuck" on all desks
+@@ -291,7 +291,7 @@ Function "InitFunction"
+         # Place the green carpet image onto the background upon startup
+         # I personally recommend xli/xloadimage, but xv seems to be
+         # ubiquitous in the unix world so I'll use that 
+-	# Exec	"I"	exec xv -root -quit /usr/lib/X11/afterstep/backgrounds/carpet.green.jpg
++	# Exec	"I"	exec xv -root -quit %%PREFIX%%/lib/X11/afterstep/backgrounds/carpet.green.jpg
+ 	Exec	"I"	exec xsetroot -solid DarkGrey
+ EndFunction
+ 
+@@ -466,21 +466,21 @@ EndPopup
+ # Images ... quick way to view the included default background images
+ Popup "Images"
+ 	Title	"Images"
+-	Exec	"Brick"		exec xv -root -quit /usr/lib/X11/afterstep/backgrounds/brick.jpg
+-	Exec	"Coins"		exec xv -root -quit /usr/lib/X11/afterstep/backgrounds/coins.jpg
+-	Exec	"Dark Wood"	exec xv -root -quit /usr/lib/X11/afterstep/backgrounds/darkwood.jpg
+-	Exec	"Eyes"		exec xv -root -quit /usr/lib/X11/afterstep/backgrounds/eyes.jpg
+-	Exec	"Glass"		exec xv -root -quit /usr/lib/X11/afterstep/backgrounds/glass.jpg
+-	Exec	"Green Carpet"	exec xv -root -quit /usr/lib/X11/afterstep/backgrounds/carpet.green.jpg
+-	Exec	"Parquet"	exec xv -root -quit /usr/lib/X11/afterstep/backgrounds/parquet.jpg
+-	Exec	"Pebbles"	exec xv -root -quit /usr/lib/X11/afterstep/backgrounds/pebbles.jpg
+-	Exec	"Rock"		exec xv -root -quit /usr/lib/X11/afterstep/backgrounds/rock.tile.jpg
+-	Exec	"Rope"		exec xv -root -quit /usr/lib/X11/afterstep/backgrounds/rope.weave.jpg
+-	Exec	"Stucco"	exec xv -root -quit /usr/lib/X11/afterstep/backgrounds/stucco.jpg
+-	Exec	"Tile"		exec xv -root -quit /usr/lib/X11/afterstep/backgrounds/tile.check.jpg
+-	Exec	"Tree Bark"	exec xv -root -quit /usr/lib/X11/afterstep/backgrounds/bark.jpg
+-	Exec	"Volcanic"	exec xv -root -quit /usr/lib/X11/afterstep/backgrounds/volcanic.jpg
+-	Exec	"Wood"		exec xv -root -quit /usr/lib/X11/afterstep/backgrounds/wood.jpg
++	Exec	"Brick"		exec xv -root -quit %%PREFIX%%/lib/X11/afterstep/backgrounds/brick.jpg
++	Exec	"Coins"		exec xv -root -quit %%PREFIX%%/lib/X11/afterstep/backgrounds/coins.jpg
++	Exec	"Dark Wood"	exec xv -root -quit %%PREFIX%%/lib/X11/afterstep/backgrounds/darkwood.jpg
++	Exec	"Eyes"		exec xv -root -quit %%PREFIX%%/lib/X11/afterstep/backgrounds/eyes.jpg
++	Exec	"Glass"		exec xv -root -quit %%PREFIX%%/lib/X11/afterstep/backgrounds/glass.jpg
++	Exec	"Green Carpet"	exec xv -root -quit %%PREFIX%%/lib/X11/afterstep/backgrounds/carpet.green.jpg
++	Exec	"Parquet"	exec xv -root -quit %%PREFIX%%/lib/X11/afterstep/backgrounds/parquet.jpg
++	Exec	"Pebbles"	exec xv -root -quit %%PREFIX%%/lib/X11/afterstep/backgrounds/pebbles.jpg
++	Exec	"Rock"		exec xv -root -quit %%PREFIX%%/lib/X11/afterstep/backgrounds/rock.tile.jpg
++	Exec	"Rope"		exec xv -root -quit %%PREFIX%%/lib/X11/afterstep/backgrounds/rope.weave.jpg
++	Exec	"Stucco"	exec xv -root -quit %%PREFIX%%/lib/X11/afterstep/backgrounds/stucco.jpg
++	Exec	"Tile"		exec xv -root -quit %%PREFIX%%/lib/X11/afterstep/backgrounds/tile.check.jpg
++	Exec	"Tree Bark"	exec xv -root -quit %%PREFIX%%/lib/X11/afterstep/backgrounds/bark.jpg
++	Exec	"Volcanic"	exec xv -root -quit %%PREFIX%%/lib/X11/afterstep/backgrounds/volcanic.jpg
++	Exec	"Wood"		exec xv -root -quit %%PREFIX%%/lib/X11/afterstep/backgrounds/wood.jpg
+ EndPopup
+ 
+ # Background settings ... choose from either Solid Colors or Color Images
+@@ -606,10 +606,10 @@ Key Down        A       C       Scroll +
+ Module Audio    
+ 
+ # Select your normal audio player
+-#*AudioPlayCmd /usr/bin/showaudio
++#*AudioPlayCmd %%LOCALBASE%%/bin/showaudio
+ 
+ # Select the directory containing your sounds
+-#*AudioDir /home/frank/mac/sounds
++#*AudioDir %%PREFIX%%/lib/X11/afterstep/sounds
+ 
+ #*AudioDelay 1
+ 

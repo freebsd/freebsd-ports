@@ -1,5 +1,7 @@
 etc/fonts/conf.avail/20-unhint-aozoramincho.conf
 etc/fonts/conf.avail/62-fonts-aozoramincho.conf
+etc/fonts/conf.d/20-unhint-aozoramincho.conf
+etc/fonts/conf.d/62-fonts-aozoramincho.conf
 %%FONTSDIR%%/AozoraMincho-bold.ttf
 %%FONTSDIR%%/AozoraMincho-thin.ttf
 %%FONTSDIR%%/AozoraMinchoBlack.ttf

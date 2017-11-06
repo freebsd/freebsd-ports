@@ -1,27 +1,26 @@
 # $FreeBSD$
 
 PORTNAME=	noto
-PORTVERSION=	1.0.4
+PORTVERSION=	1.0.5
 PORTREVISION=	1
 CATEGORIES=	x11-fonts
-MASTER_SITES=	https://noto-website.storage.googleapis.com/pkgs/ \
-		https://github.com/googlei18n/noto-emoji/raw/master/:emoji
+MASTER_SITES=	https://noto-website.storage.googleapis.com/pkgs/
 DISTNAME=	${PORTNAME:S|n|N|}-hinted
-DISTFILES=	${DISTNAME}.zip NotoEmoji-Regular.ttf:emoji
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
+DISTFILES=	${DISTNAME}.zip \
+		${PORTNAME:S|n|N|}SerifCJKjp-hinted.zip \
+		${PORTNAME:S|n|N|}SerifCJKkr-hinted.zip \
+		${PORTNAME:S|n|N|}SerifCJKsc-hinted.zip \
+		${PORTNAME:S|n|N|}SerifCJKtc-hinted.zip
 
 MAINTAINER=	kevlo@FreeBSD.org
 COMMENT=	Google font family
 
-LICENSE=	APACHE20 OFL11
-LICENSE_COMB=	multi
+LICENSE=	OFL11
+LICENSE_FILE=	${WRKSRC}/LICENSE_OFL.txt
 
 USES=		fonts zip
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
-
-post-extract:
-	${CP} ${DISTDIR}/NotoEmoji-Regular.ttf ${WRKSRC}
 
 do-install:
 	${MKDIR} ${STAGEDIR}${FONTSDIR}

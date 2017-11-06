@@ -3,11 +3,12 @@
 
 PORTNAME=	oracle8-client
 PORTVERSION=	0.2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases
-MASTER_SITES=	LOCAL/fjoe
+MASTER_SITES=	LOCAL/fjoe \
+		http://www.grosbein.net/freebsd/distfiles/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bonkor@gmail.com
 COMMENT=	Oracle 8 client
 
 USES=		tar:bzip2

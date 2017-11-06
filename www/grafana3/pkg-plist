@@ -42868,6 +42868,8 @@ share/grafana/public_gen/vendor/zero_clipboard.js
 share/grafana/public_gen/vendor/zero_clipboard.swf
 share/grafana/public_gen/views/500.html
 share/grafana/public_gen/views/index.html
+share/grafana/vendor/phantomjs/render.js
+share/grafana/vendor/phantomjs/phantomjs
 @dir share/grafana/data/log
 @dir /var/db/grafana3/dashboards
 @dir /var/db/grafana3/plugins

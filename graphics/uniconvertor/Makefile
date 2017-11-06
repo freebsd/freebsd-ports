@@ -4,13 +4,16 @@
 PORTNAME=	uniconvertor
 PORTVERSION=	1.1.5
 CATEGORIES=	graphics python
-MASTER_SITES=	GOOGLE_CODE \
-		http://mirror.amdmi3.ru/distfiles/
+MASTER_SITES=	https://downloads.sk1project.net/uniconvertor/v1.1.5/ \
+		https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/uniconvertor/
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Universal vector graphics translator
 
-BROKEN=		Unfetchable (google code has gone away)
+LICENSE=	LGPL20+ GPLv2+
+LICENSE_COMB=	multi
+LICENSE_FILE_GPLv2+ =	${WRKSRC}/src/GNU_GPL_v2
+LICENSE_FILE_LGPL20+ =	${WRKSRC}/src/GNU_LGPL_v2
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/sk1libs/__init__.py:graphics/sk1libs
 
@@ -18,6 +21,6 @@ USES=		python
 USE_PYTHON=	distutils
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/uniconvertor/app/modules/*.so
+	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/uniconvertor/app/modules/*.so
 
 .include <bsd.port.mk>

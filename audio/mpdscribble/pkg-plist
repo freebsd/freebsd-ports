@@ -1,0 +1,6 @@
+bin/mpdscribble
+@sample etc/mpdscribble.conf.sample
+man/man1/mpdscribble.1.gz
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/NEWS

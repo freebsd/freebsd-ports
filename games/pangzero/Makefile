@@ -3,7 +3,7 @@
 
 PORTNAME=	pangzero
 PORTVERSION=	1.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	SF \
 		SF/nemysisfreebsdp/${CATEGORIES}/:icons
@@ -16,11 +16,11 @@ COMMENT=	Clone of Super Pang
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	p5-Carp>=0:devel/p5-Carp \
-		p5-SDL>=0:devel/p5-SDL
+RUN_DEPENDS=	p5-SDL>=0:devel/p5-SDL
 
-USES=		perl5
+NO_ARCH=	yes
 NO_BUILD=	yes
+USES=		perl5
 
 PORTDOCS=	AUTHORS ChangeLog README
 
@@ -46,6 +46,7 @@ do-install:
 	${LN} -sf ${DATADIR}/data/icon.png \
 		${STAGEDIR}${PREFIX}/share/pixmaps/${PORTNAME}.png
 
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 

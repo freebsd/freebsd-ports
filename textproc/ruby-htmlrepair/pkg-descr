@@ -1,7 +1,0 @@
-This is htmlrepair.rb, a Ruby library to repair unclosed tags in an
-HTML document.
-
-It is used with htmlsplit.rb and adds a method "repair" to the
-HTMLSplit class.
-
-WWW: http://raa.ruby-lang.org/project/htmlrepair

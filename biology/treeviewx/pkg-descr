@@ -1,8 +1,0 @@
-TreeView X is program to display phylogenetic trees on Unix-like platforms.
-It can read and display NEXUS and Newick format tree files (such as those
-output by PAUP*, ClustalX, TREE-PUZZLE, and other programs). It has a
-subset of the functionality of the version of TreeView available for the
-Mac Classic and Windows (it is roughly equivalent to version 0.95 of
-TreeView).
-
-WWW: https://code.google.com/p/treeviewx/

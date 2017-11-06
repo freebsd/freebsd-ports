@@ -1,2 +1,3 @@
-SHA256 (cabal/async-2.0.2.tar.gz) = db54d384259eee2f3ca525821f45fe509b9a101fbf3a8df7132aa9622626fd2b
-SIZE (cabal/async-2.0.2.tar.gz) = 8565
+TIMESTAMP = 1499444628
+SHA256 (cabal/async-2.1.1.1.tar.gz) = cd83e471466ea6885b2e8fb60f452db3ac3fdf3ea2d6370aa1e071ebc37544e2
+SIZE (cabal/async-2.1.1.1.tar.gz) = 10608

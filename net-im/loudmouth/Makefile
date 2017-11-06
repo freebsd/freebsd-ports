@@ -35,7 +35,7 @@ OPTIONS_RADIO_SSL=	GNUTLS OPENSSL
 LIB_DEPENDS+=	libgnutls.so:security/gnutls
 CONFIGURE_ARGS+=--with-ssl=gnutls
 .elif ${PORT_OPTIONS:MOPENSSL}
-USE_OPENSSL=	yes
+USES+=		ssl
 CONFIGURE_ARGS+=--with-ssl=openssl
 RUN_DEPENDS+=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 .else

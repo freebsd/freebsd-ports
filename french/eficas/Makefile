@@ -3,7 +3,7 @@
 
 PORTNAME=	eficas
 DISTVERSION=	2016.0-1
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	french cad
 
 MAINTAINER=	thierry@FreeBSD.org
@@ -18,7 +18,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Pmw>0:x11-toolkits/py-Pmw	\
 
 USES=		python shebangfix
 #USE_GCC=	yes # To be removed - Needed as a work-around for numpy, see PR ports/188114
-SHEBANG_FILES=	eficas eficasQt
+SHEBANG_FILES=	eficasQt
 REINPLACE_ARGS=	-i ""
 NO_BUILD=	yes
 

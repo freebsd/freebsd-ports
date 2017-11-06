@@ -1,27 +1,33 @@
---- source/fitz/load-jpx.c.orig	2016-04-21 11:14:32 UTC
+--- source/fitz/load-jpx.c.orig	2017-04-05 11:02:21 UTC
 +++ source/fitz/load-jpx.c
-@@ -1,14 +1,6 @@
- #include "mupdf/fitz.h"
+@@ -444,14 +444,18 @@ fz_load_jpx_info(fz_context *ctx, unsign
  
--/* Without the definition of OPJ_STATIC, compilation fails on windows
-- * due to the use of __stdcall. We believe it is required on some
-- * linux toolchains too. */
--#define OPJ_STATIC
--#ifndef _MSC_VER
--#define OPJ_HAVE_STDINT_H
--#endif
--
+ #else /* HAVE_LURATECH */
+ 
++#ifdef __cplusplus
++extern "C"
++{
+ #define OPJ_STATIC
+ #define OPJ_HAVE_INTTYPES_H
+ #if !defined(_WIN32) && !defined(_WIN64)
+ #define OPJ_HAVE_STDINT_H
+ #endif
++#endif
+ #define USE_JPIP
+ 
 -#include <openjpeg.h>
-+#include <openjpeg-2.1/openjpeg.h>
++#include <openjpeg-2.3/openjpeg.h>
  
- static void fz_opj_error_callback(const char *msg, void *client_data)
+ struct fz_jpxd_s
  {
-@@ -117,7 +109,7 @@ fz_load_jpx(fz_context *ctx, unsigned ch
- 	opj_stream_set_read_function(stream, fz_opj_stream_read);
- 	opj_stream_set_skip_function(stream, fz_opj_stream_skip);
- 	opj_stream_set_seek_function(stream, fz_opj_stream_seek);
--	opj_stream_set_user_data(stream, &sb);
-+	opj_stream_set_user_data(stream, &sb,NULL);
- 	/* Set the length to avoid an assert */
- 	opj_stream_set_user_data_length(stream, size);
+@@ -919,6 +923,10 @@ fz_load_jpx_info(fz_context *ctx, unsign
+ 	*yresp = state.yres;
+ }
  
++#ifdef __cplusplus
++}
++#endif
++
+ #endif /* HAVE_LURATECH */
+ 
+ #else /* FZ_ENABLE_JPX */

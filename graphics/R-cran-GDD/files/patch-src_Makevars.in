@@ -1,0 +1,10 @@
+--- src/Makevars.in.orig	2017-08-30 01:39:25 UTC
++++ src/Makevars.in
+@@ -1,7 +1,4 @@
+ # we need to add JNI specific stuff here
+-ifdef DEBUG
+-  PKG_CFLAGS+=-DJGD_DEBUG
+-endif
+ PKG_CFLAGS+=@CFLAGS@
+ PKG_CPPFLAGS+=@CPPFLAGS@ -I. -Iinclude
+ PKG_LIBS+=@LDFLAGS@ @LIBS@

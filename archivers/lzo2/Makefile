@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	lzo2
-PORTVERSION=	2.09
+PORTVERSION=	2.10
+PORTREVISION=	1
 CATEGORIES=	archivers devel
 MASTER_SITES=	http://www.oberhumer.com/opensource/lzo/download/ \
 		LOCAL/mandree
@@ -15,12 +16,12 @@ LICENSE=	GPLv2
 
 USES=		libtool
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-shared --docdir=${DOCSDIR}
+CONFIGURE_ARGS=	--enable-shared --docdir=${DOCSDIR} --with-pkgconfigdir=${PREFIX}/libdata/pkgconfig
 USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
-DOCS_INSTALL_TARGET_OFF=	install-exec install-pkgincludeHEADERS
+DOCS_INSTALL_TARGET_OFF=	install-exec install-pkgincludeHEADERS install-pkgconfigDATA
 
 post-build:
 .if !defined(WITHOUT_CHECKS)

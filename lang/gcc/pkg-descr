@@ -1,10 +1,7 @@
 GCC, the GNU Compiler Collection, supports a number of languages.  This
-port installs the C, C++, Fortran and Java front ends as gcc49, g++49,
-gfortran49, and gcj49, respectively.
+port pulls in gcc5 (or another version-specific port) and defines symlinks
+called gcc, g++, and gfortran.
 
-It can be used interchangibly with the lang/gcc49 port, which tracks
-GCC 4.9 releases, and will move to lang/gcc5 and later over time.
-
-WWW: http://gcc.gnu.org/
+WWW: https://gcc.gnu.org
 
 Gerald Pfeifer <gerald@FreeBSD.org>

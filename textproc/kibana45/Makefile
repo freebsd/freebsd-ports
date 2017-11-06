@@ -14,7 +14,7 @@ COMMENT=	Browser based analytics and search interface to ElasticSearch
 
 LICENSE=	APACHE20
 
-RUN_DEPENDS=	node4>=4.3.2:www/node4
+RUN_DEPENDS?=	node4>=4.3.2:www/node4
 
 NO_BUILD=	yes
 NO_ARCH=	yes

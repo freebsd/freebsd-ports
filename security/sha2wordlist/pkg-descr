@@ -1,0 +1,5 @@
+This program takes data on stdin and outputs the SHA256 checksum of that
+data together with the PGP Wordlist representation of the checksum.
+This could be very useful when verifying checksums verbally.
+
+WWW: https://github.com/kirei/sha2wordlist

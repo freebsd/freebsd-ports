@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	foreman
-PORTVERSION=	0.78.0
+PORTVERSION=	0.84.0
 PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
@@ -14,11 +14,11 @@ LICENSE=	MIT
 RUN_DEPENDS=	rubygem-thor>=0.19.1:devel/rubygem-thor
 
 NO_ARCH=	yes
-
 USE_RUBY=	yes
 USES=		gem shebangfix
-SHEBANG_FILES=	spec/resources/bin/env
 
 PLIST_FILES=	bin/foreman
+
+SHEBANG_FILES=	spec/resources/bin/env
 
 .include <bsd.port.mk>

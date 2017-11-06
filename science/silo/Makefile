@@ -3,12 +3,12 @@
 
 PORTNAME=	silo
 PORTVERSION=	4.10.2
-PORTREVISION=	1
+PORTREVISION=	5
 DISTVERSIONSUFFIX=	-bsd
 CATEGORIES=	science
 MASTER_SITES=	http://wci.llnl.gov/content/assets/docs/simulation/computer-codes/${PORTNAME}/silo-${PORTVERSION}/
 
-MAINTAINER=	dbaio@bsd.com.br
+MAINTAINER=	dbaio@FreeBSD.org
 COMMENT=	Mesh and field I/O library and scientific database
 
 LICENSE=	BSD3CLAUSE

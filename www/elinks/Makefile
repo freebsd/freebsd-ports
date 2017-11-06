@@ -3,20 +3,21 @@
 
 PORTNAME=	elinks
 DISTVERSION=	0.11.7
-PORTREVISION=	6
+PORTREVISION=	8
 CATEGORIES=	www
 MASTER_SITES=	http://elinks.or.cz/download/
 
 MAINTAINER=	beat@FreeBSD.org
 COMMENT=	Links text WWW browser with enhancements
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 GNU_CONFIGURE=	yes
-USES=		bison cpe execinfo gmake localbase ssl tar:bzip2
+USES=		bison cpe gmake localbase ssl tar:bzip2
 CONFIGURE_ARGS=	--without-zlib
 
 LIBS+=		-lexecinfo
-
-SAMBA_PORT?=	net/samba36
 
 OPTIONS_DEFINE=		88COLORS 256COLORS SPIDERMONKEY XBELMARKS LOCAL_CGI \
 			FINGER GOPHER BITTORRENT NNTP FTP FSP SMB EXMODE \
@@ -61,8 +62,7 @@ HIGHLIGHT_CONFIGURE_ON=	--enable-html-highlight
 
 EXMODE_CONFIGURE_ON=	--enable-exmode
 
-SMB_RUN_DEPENDS=	smbclient:${SAMBA_PORT}
-SMB_BUILD_DEPENDS=	smbclient:${SAMBA_PORT}
+SMB_USES=		samba # smbclient
 SMB_CONFIGURE_ENABLE=	smb
 
 FSP_RUN_DEPENDS=	${LOCALBASE}/lib/libfsplib.a:net/fsplib
@@ -94,7 +94,8 @@ XBELNARKS_CONFIGURE_OFF=--disable-xbel
 SPIDERMONKEY_BUILD_DEPENDS=	${LOCALBASE}/lib/libjs.so:lang/spidermonkey17
 SPIDERMONKEY_RUN_DEPENDS=	js:lang/spidermonkey17
 SPIDERMONKEY_LIB_DEPENDS=	libnspr4.so:devel/nspr
-SPIDERMONKEY_CFLAGS=		-I${LOCALBASE}/include/nspr
+SPIDERMONKEY_CFLAGS=		-I${LOCALBASE}/include/nspr \
+				-I${LOCALBASE}/include/js-1.7
 SPIDERMONKEY_LDFLAGS=		-lnspr4 -pthread -lpthread -lm
 SPIDERMONKEY_CONFIGURE_ON=	--enable-sm-scripting --with-spidermonkey
 SPIDERMONKEY_CONFIGURE_OFF=	--disable-sm-scripting --without-spidermonkey

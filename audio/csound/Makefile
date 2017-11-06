@@ -3,7 +3,7 @@
 
 PORTNAME=	csound
 PORTVERSION=	5.19.01
-PORTREVISION=	5
+PORTREVISION=	9
 CATEGORIES=	audio lang
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}5/${PORTNAME}${PORTVERSION:R} \
 		SF/${PORTNAME}/${PORTNAME}5/${PORTNAME}${PORTVERSION:R}/manual:manual
@@ -13,6 +13,9 @@ DIST_SUBDIR=	csound
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Sound synthesizer
 
+DEPRECATED=	Not supported upstream anymore, use csound6
+EXPIRATION_DATE=	2017-11-12
+
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
@@ -21,13 +24,18 @@ BUILD_DEPENDS=	swig13>0:devel/swig13 \
 		gmm++>0:math/gmm++
 LIB_DEPENDS=	libsndfile.so:audio/libsndfile
 
+BROKEN_powerpc64=	Does not build
+
 PORTSCOUT=	limit:^5\.
 
 CONFLICTS_INSTALL=	outguess-* csound6
 
 WRKSRC=		${WRKDIR}/${PORTNAME:S/c/C/}${PORTVERSION}
 
-USES=		bison cpe gettext scons compiler:openmp python
+USES=		bison cpe gettext scons compiler:gcc-c++11-lib python
+USE_CSTD=	gnu89
+# math/gmm++ requires c++11
+USE_CXXSTD=	c++11
 CPE_VENDOR=	csounds
 MAKE_ARGS=	instdir="${STAGEDIR}" prefix="${PREFIX}" \
 		CC="${CC}" CXX="${CXX}" \
@@ -101,15 +109,13 @@ DOCS_DISTFILES=		Csound${PORTVERSION:R}_manual_html.zip:manual
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == amd64 || ${ARCH} == sparc64 || ${ARCH} == ia64
+.if ${ARCH} == amd64 || ${ARCH} == sparc64
 MAKE_ARGS+=	Word64=1
 .endif
 
 .if ${OPSYS} == FreeBSD
 CXXLIB=		c++
 .endif
-
-BROKEN_powerpc64=	Does not build
 
 post-patch:
 	@${SED} -e "s|%%LOCALBASE%%|${LOCALBASE}|g; \

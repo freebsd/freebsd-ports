@@ -2,13 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	di
-PORTVERSION=	4.43
+PORTVERSION=	4.44
 CATEGORIES=	sysutils
 MASTER_SITES=	https://gentoo.com/di/ \
 		http://www.cyberbotx.com/di/
 
 MAINTAINER=	cyberbotx@cyberbotx.com
 COMMENT=	Disk Information Utility
+
+LICENSE=	ZLIB
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 MAKE_ENV=	prefix="${PREFIX}"
 MAKE_ARGS=	-e

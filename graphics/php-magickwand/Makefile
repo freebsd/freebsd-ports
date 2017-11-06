@@ -3,7 +3,7 @@
 
 PORTNAME=	magickwand
 PORTVERSION=	1.0.9
-PORTREVISION=	5
+PORTREVISION=	7
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.magickwand.org/download/php/
 PKGNAMEPREFIX=	php-
@@ -15,7 +15,7 @@ COMMENT=	PHP extension to manipulate images
 LIB_DEPENDS=	libMagickWand-6.so:graphics/ImageMagick
 
 USES=		php:ext pkgconfig
-IGNORE_WITH_PHP=	70
+IGNORE_WITH_PHP=	70 71
 
 CONFIGURE_ARGS=	--with-magickwand=${LOCALBASE}
 

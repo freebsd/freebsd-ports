@@ -8,18 +8,20 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://www.edwinh.org/flexbackup/tarball/ \
 		http://www.reynoldsnet.org/flexbackup/tarball/
 
-MAINTAINER=	mva@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl-based flexible backup system that can use dump/afio/cpio/tar
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	gtar:archivers/gtar
 
 USES=		perl5
 MAKE_ARGS=	PERLPATH=${PERL} CONFFILE=${PREFIX}/etc/flexbackup.conf
 TAR_CMD=	${PREFIX}/bin/gtar
+NO_ARCH=	yes
 
-SUB_FILES+=	pkg-message
+SUB_FILES=	pkg-message
 
 OPTIONS_DEFINE=	AFIO BUFFER MBUFFER ZIP DOCS
 AFIO_DESC=	Enable afio support
@@ -39,13 +41,13 @@ post-patch:
 		${WRKSRC}/flexbackup.conf
 
 do-install:
-	@${INSTALL_SCRIPT} ${WRKSRC}/fb.install \
+	${INSTALL_SCRIPT} ${WRKSRC}/fb.install \
 		${STAGEDIR}${PREFIX}/bin/flexbackup
-	@${INSTALL_DATA} ${WRKSRC}/flexbackup.conf \
+	${INSTALL_DATA} ${WRKSRC}/flexbackup.conf \
 		${STAGEDIR}${PREFIX}/etc/flexbackup.conf.sample
-	@${INSTALL_MAN} ${WRKSRC}/flexbackup.1 \
+	${INSTALL_MAN} ${WRKSRC}/flexbackup.1 \
 		${STAGEDIR}${MAN1PREFIX}/man/man1
-	@${INSTALL_MAN} ${WRKSRC}/flexbackup.conf.5 \
+	${INSTALL_MAN} ${WRKSRC}/flexbackup.conf.5 \
 		${STAGEDIR}${MAN5PREFIX}/man/man5
 
 post-install-DOCS-on:

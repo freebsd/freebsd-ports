@@ -2,9 +2,10 @@
 
 PORTNAME=	bossa
 PORTVERSION=	1.7.0
+PORTREVISION=	4
 CATEGORIES=	devel
 
-MAINTAINER=	bsdports@kyle-evans.net
+MAINTAINER=	kevans@FreeBSD.org
 COMMENT=	Flash programmer for Atmel SAM microcontrollers
 
 LICENSE=	BSD3CLAUSE

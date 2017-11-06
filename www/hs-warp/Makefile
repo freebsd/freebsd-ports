@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	warp
-PORTVERSION=	3.1.3
+PORTVERSION=	3.2.13
 CATEGORIES=	www haskell
 
 MAINTAINER=	haskell@FreeBSD.org

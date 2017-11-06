@@ -1,0 +1,82 @@
+libexec/novnc/utils/websockify/CHANGES.txt
+libexec/novnc/utils/websockify/LICENSE.txt
+libexec/novnc/utils/websockify/MANIFEST.in
+libexec/novnc/utils/websockify/Makefile
+libexec/novnc/utils/websockify/README.md
+libexec/novnc/utils/websockify/Windows/Windows Service Readme.txt
+libexec/novnc/utils/websockify/Windows/noVNC Websocket Service Project/Program.cs
+libexec/novnc/utils/websockify/Windows/noVNC Websocket Service Project/ProjectInstaller.Designer.cs
+libexec/novnc/utils/websockify/Windows/noVNC Websocket Service Project/ProjectInstaller.cs
+libexec/novnc/utils/websockify/Windows/noVNC Websocket Service Project/ProjectInstaller.resx
+libexec/novnc/utils/websockify/Windows/noVNC Websocket Service Project/Properties/AssemblyInfo.cs
+libexec/novnc/utils/websockify/Windows/noVNC Websocket Service Project/Service1.Designer.cs
+libexec/novnc/utils/websockify/Windows/noVNC Websocket Service Project/Service1.cs
+libexec/novnc/utils/websockify/Windows/noVNC Websocket Service Project/noVNC Websocket.csproj
+libexec/novnc/utils/websockify/Windows/noVNC Websocket Service Project/noVNC Websocket.sln
+libexec/novnc/utils/websockify/docs/LICENSE.GPL-3
+libexec/novnc/utils/websockify/docs/LICENSE.LGPL-3
+libexec/novnc/utils/websockify/docs/LICENSE.MPL-2.0
+libexec/novnc/utils/websockify/docs/TODO
+libexec/novnc/utils/websockify/docs/flash_policy.txt
+libexec/novnc/utils/websockify/docs/latency_results.txt
+libexec/novnc/utils/websockify/docs/notes
+libexec/novnc/utils/websockify/docs/release.txt
+libexec/novnc/utils/websockify/docs/websockify.1
+libexec/novnc/utils/websockify/include/VT100.js
+libexec/novnc/utils/websockify/include/base64.js
+libexec/novnc/utils/websockify/include/keysym.js
+libexec/novnc/utils/websockify/include/util.js
+libexec/novnc/utils/websockify/include/web-socket-js/README.txt
+libexec/novnc/utils/websockify/include/web-socket-js/WebSocketMain.swf
+libexec/novnc/utils/websockify/include/web-socket-js/swfobject.js
+libexec/novnc/utils/websockify/include/web-socket-js/web_socket.js
+libexec/novnc/utils/websockify/include/websock.js
+libexec/novnc/utils/websockify/include/webutil.js
+libexec/novnc/utils/websockify/include/wsirc.js
+libexec/novnc/utils/websockify/include/wstelnet.js
+libexec/novnc/utils/websockify/other/Makefile
+libexec/novnc/utils/websockify/other/README.md
+libexec/novnc/utils/websockify/other/js/README.md
+libexec/novnc/utils/websockify/other/js/package.json
+libexec/novnc/utils/websockify/other/js/websockify.js
+libexec/novnc/utils/websockify/other/launch.sh
+libexec/novnc/utils/websockify/other/project.clj
+libexec/novnc/utils/websockify/other/websocket.c
+libexec/novnc/utils/websockify/other/websocket.h
+libexec/novnc/utils/websockify/other/websocket.rb
+libexec/novnc/utils/websockify/other/websockify.c
+libexec/novnc/utils/websockify/other/websockify.clj
+libexec/novnc/utils/websockify/other/websockify.rb
+libexec/novnc/utils/websockify/other/wswrap
+libexec/novnc/utils/websockify/rebind
+libexec/novnc/utils/websockify/rebind.c
+libexec/novnc/utils/websockify/run
+libexec/novnc/utils/websockify/setup.py
+libexec/novnc/utils/websockify/test-requirements.txt
+libexec/novnc/utils/websockify/tests/b64_vs_utf8.py
+libexec/novnc/utils/websockify/tests/base64.html
+libexec/novnc/utils/websockify/tests/base64.js
+libexec/novnc/utils/websockify/tests/echo.html
+libexec/novnc/utils/websockify/tests/echo.py
+libexec/novnc/utils/websockify/tests/echo.rb
+libexec/novnc/utils/websockify/tests/include
+libexec/novnc/utils/websockify/tests/latency.html
+libexec/novnc/utils/websockify/tests/latency.py
+libexec/novnc/utils/websockify/tests/load.html
+libexec/novnc/utils/websockify/tests/load.py
+libexec/novnc/utils/websockify/tests/plain_echo.html
+libexec/novnc/utils/websockify/tests/simple.html
+libexec/novnc/utils/websockify/tests/test_auth_plugins.py
+libexec/novnc/utils/websockify/tests/test_websocket.py
+libexec/novnc/utils/websockify/tests/test_websocketproxy.py
+libexec/novnc/utils/websockify/tests/utf8-list.py
+libexec/novnc/utils/websockify/tox.ini
+libexec/novnc/utils/websockify/websockify.py
+libexec/novnc/utils/websockify/websockify/__init__.py
+libexec/novnc/utils/websockify/websockify/auth_plugins.py
+libexec/novnc/utils/websockify/websockify/token_plugins.py
+libexec/novnc/utils/websockify/websockify/websocket.py
+libexec/novnc/utils/websockify/websockify/websocketproxy.py
+libexec/novnc/utils/websockify/wsirc.html
+libexec/novnc/utils/websockify/wstelnet.html
+@dir libexec/novnc/utils/websockify/include/web-socket-js-project

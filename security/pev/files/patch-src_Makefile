@@ -1,0 +1,38 @@
+--- src/Makefile.orig	2017-01-07 22:34:07 UTC
++++ src/Makefile
+@@ -24,7 +24,7 @@ docdir = $(datarootdir)/doc/pev
+ infodir = $(datarootdir)/info
+ localedir = $(datarootdir)/locale
+ 
+-mandir = $(datarootdir)/man
++mandir = $(prefix)/man
+ manext = .1
+ man1dir = $(mandir)/man1
+ man1ext = .1
+@@ -52,7 +52,7 @@ endif
+ 
+ ####### Compiler options
+ 
+-override LDFLAGS += -L$(LIBPE) -lpe -ldl
++override LDFLAGS += -L$(LIBPE) -lpe
+ override CFLAGS += -I$(LIBPE) -I"../include" -W -Wall -Wextra -std=c99 -pedantic
+ override CPPFLAGS += -D_GNU_SOURCE -DSHAREDIR="\"$(SHAREDIR)"\"
+ 
+@@ -153,6 +153,17 @@ install: installdirs
+ 	$(INSTALL_DATA) $(srcdir)/userdb.txt $(DESTDIR)$(SHAREDIR)
+ 	cd $(PLUGINS_DIR) && $(MAKE) $@
+ 
++install-strip: installdirs
++	for prog in $(PROGS); do \
++		$(INSTALL_PROGRAM) -s $(pev_BUILDDIR)/$$prog $(DESTDIR)$(bindir); \
++		$(CHK_FILE_EXISTS) $(MANDIR)/$$prog$(man1ext) && \
++			gzip -c -9 $(MANDIR)/$$prog$(man1ext) > $(DESTDIR)$(man1dir)/$$prog$(man1ext).gz || \
++			echo -n; \
++	done
++
++	$(INSTALL_DATA) $(srcdir)/userdb.txt $(DESTDIR)$(SHAREDIR)
++	cd $(PLUGINS_DIR) && $(MAKE) $@
++
+ installdirs:
+ 	@$(CHK_DIR_EXISTS) $(DESTDIR) || $(MKDIR) $(DESTDIR)
+ 	@$(CHK_DIR_EXISTS) $(DESTDIR)$(bindir) || $(MKDIR) $(DESTDIR)$(bindir)

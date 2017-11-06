@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	enumerize
-PORTVERSION=	0.11.0
+PORTVERSION=	2.1.2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 

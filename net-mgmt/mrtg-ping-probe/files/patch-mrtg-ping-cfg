@@ -1,5 +1,5 @@
---- mrtg-ping-cfg.org	Sat Jan 17 22:28:55 2004
-+++ mrtg-ping-cfg	Sat Jan 17 22:35:40 2004
+--- mrtg-ping-cfg.orig	1997-02-19 06:55:51 UTC
++++ mrtg-ping-cfg
 @@ -1,4 +1,4 @@
 -#!/bin/ksh
 +#!/bin/sh

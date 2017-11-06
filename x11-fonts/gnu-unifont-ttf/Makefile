@@ -1,30 +1,15 @@
 # $FreeBSD$
 
-PORTNAME=	gnu-unifont-ttf
-PORTVERSION=	7.0.03
-PORTREVISION=	1
-PORTEPOCH=	1
-CATEGORIES=	x11-fonts
-MASTER_SITES=	GNU/unifont/unifont-${PORTVERSION}
-DISTNAME=	unifont-${PORTVERSION}
+MASTERDIR=	${.CURDIR}/../gnu-unifont
 
-MAINTAINER=	bsdports@gmail.com
-COMMENT=	Unicode TrueType Font
+PKGNAMESUFFIX=	-ttf
 
-USES=		fonts
+COMMENT=	GNU Unicode TrueType font
 
-NO_BUILD=	yes
-WRKSRC_SUBDIR=	font/precompiled
+FONTFILES=	${PORTNAME} ${PORTNAME}_csur ${PORTNAME}_upper
+FONTSUFFIX=	.ttf
 
-do-install:
-	@${MKDIR} ${STAGEDIR}${FONTSDIR}
-	${INSTALL_DATA} ${WRKSRC}/unifont-${PORTVERSION}.ttf \
-		${STAGEDIR}${FONTSDIR}/unifont.ttf
-	${INSTALL_DATA} ${WRKSRC}/unifont_csur-${PORTVERSION}.ttf \
-		${STAGEDIR}${FONTSDIR}/unifont_csur.ttf
-	${INSTALL_DATA} ${WRKSRC}/unifont_upper-${PORTVERSION}.ttf \
-		${STAGEDIR}${FONTSDIR}/unifont_upper.ttf
-	${INSTALL_DATA} ${WRKSRC}/unifont_upper_csur-${PORTVERSION}.ttf \
-		${STAGEDIR}${FONTSDIR}/unifont_upper_csur.ttf
+DESCR=		${.CURDIR}/pkg-descr
+DISTINFO_FILE=	${.CURDIR}/distinfo
 
-.include <bsd.port.mk>
+.include "${MASTERDIR}/Makefile"

@@ -1,0 +1,7 @@
+hsaudiotag is a pure Python library that lets you read metadata (bitrate,
+sample rate, duration and tags) from mp3, mp4, wma, ogg, flac and aiff files.
+It can only read tags, not write to them, but unlike more complete libraries
+(like Mutagen), it is BSD licensed, making it suitable for most projects.
+It is also backed by a nifty test suite.
+
+WWW: http://hg.hardcoded.net/hsaudiotag

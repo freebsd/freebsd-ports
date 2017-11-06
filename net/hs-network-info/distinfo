@@ -1,2 +1,3 @@
-SHA256 (cabal/network-info-0.2.0.7.tar.gz) = ef36e2c3d60d120c91d07dfe1081c87b73d0917cee858fba42598f284301405d
-SIZE (cabal/network-info-0.2.0.7.tar.gz) = 6023
+TIMESTAMP = 1499623594
+SHA256 (cabal/network-info-0.2.0.8.tar.gz) = ecdff121f3e154c480f363bc8660959a051790bfae5b5fe573810873cedbcd76
+SIZE (cabal/network-info-0.2.0.8.tar.gz) = 5998

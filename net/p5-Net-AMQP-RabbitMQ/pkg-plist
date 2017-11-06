@@ -1,0 +1,3 @@
+%%SITE_ARCH%%/Net/AMQP/RabbitMQ.pm
+%%SITE_ARCH%%/auto/Net/AMQP/RabbitMQ/RabbitMQ.so
+%%PERL5_MAN3%%/Net::AMQP::RabbitMQ.3.gz

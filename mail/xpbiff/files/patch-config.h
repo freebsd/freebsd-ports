@@ -1,5 +1,5 @@
---- config.h.orig	Wed Oct 19 06:56:25 1994
-+++ config.h	Fri Dec 12 13:16:55 2003
+--- config.h.orig	1994-10-19 14:56:25.000000000 +0900
++++ config.h	2016-12-28 17:42:39.753535000 +0900
 @@ -8,7 +8,7 @@
  /*
   *	For X11R6
@@ -9,6 +9,15 @@
  
  /*
   *	For System V
+@@ -19,7 +19,7 @@
+  *	For Solaris
+  */
+ #undef SOLARIS
+-#undef UcbLibDir	-L/usr/ucblib
++#undef UcbLibDir
+ 
+ /*
+  *	For slow work station
 @@ -33,6 +33,12 @@
  #undef NO_CUSERID
  
@@ -22,7 +31,7 @@
   *	For MH scan users
   */
  
-@@ -42,12 +48,12 @@
+@@ -42,55 +48,82 @@
   *	For Shape Extension
   */
  
@@ -37,7 +46,10 @@
  
  /*
   *	Set Local Spool pathname
-@@ -57,30 +63,47 @@
+  */
+-#undef SPOOLPATH	"/usr/mail"
++#undef SPOOLPATH
+ 
  /*
   *	For X pixmap
   */
@@ -91,17 +103,18 @@
  
  /*
   *	For SUN Audio
-@@ -88,9 +111,19 @@
+  */
  #undef SUN_AUDIO
- #undef AudioIncDir /usr/demo/SOUND
- 
+-#undef AudioIncDir /usr/demo/SOUND
++#undef AudioIncDir
++
 +/*
 + * For BSD Audio (FreeBSD)
 + */
 +#ifndef __alpha
 +#define BSD_AUDIO
 +#endif
-+
+ 
  /* 
   * For YOUBIN Service
  */

@@ -2,17 +2,22 @@
 # $FreeBSD$
 
 PORTNAME=	validator
-PORTVERSION=	1.3
-PORTREVISION=	2
+DISTVERSIONPREFIX=	${PORTNAME}-
+DISTVERSION=	1_3
+DISTVERSIONSUFFIX=	-release
+PORTREVISION=	3
 CATEGORIES=	www
-MASTER_SITES=	http://validator.w3.org/dist/ \
-		http://www.cyberbotx.com/w3c-validator/
-DISTFILES=	validator-${PORTVERSION:S/./_/g}.tar.gz sgml-lib-${PORTVERSION:S/./_/g}.tar.gz
 
 MAINTAINER=	cyberbotx@cyberbotx.com
 COMMENT=	Markup Validation Service from the World Wide Web Consortium (W3C)
 
+LICENSE=	W3C2002
+LICENSE_NAME=	W3C Software Notice and License (2002/12/31)
+LICENSE_TEXT=	See https://www.w3.org/Consortium/Legal/2002/copyright-software-20021231
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+
 RUN_DEPENDS=	onsgmls:textproc/opensp \
+		p5-CGI.pm>=0:www/p5-CGI.pm \
 		p5-Config-General>=0:devel/p5-Config-General \
 		p5-Encode-HanExtra>=0:chinese/p5-Encode-HanExtra \
 		p5-Encode-JIS2K>=0:converters/p5-Encode-JIS2K \
@@ -26,7 +31,11 @@ RUN_DEPENDS=	onsgmls:textproc/opensp \
 		p5-URI>=0:net/p5-URI \
 		p5-XML-LibXML>=0:textproc/p5-XML-LibXML
 
+USE_GITHUB=	yes
+GH_ACCOUNT=	w3c
+GH_PROJECT=	markup-validator
 USES=		perl5 shebangfix
+NO_ARCH=	yes
 NO_BUILD=	yes
 USE_PERL5=	run
 SHEBANG_FILES=	httpd/cgi-bin/check \
@@ -39,12 +48,6 @@ OPTIONS_DEFAULT=HTML_TIDY
 HTML_TIDY_DESC=	Enable HTML Markup Cleaning
 
 HTML_TIDY_RUN_DEPENDS=	p5-HTML-Tidy>=0:textproc/p5-HTML-Tidy
-
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} >= 502200
-RUN_DEPENDS+=	p5-CGI.pm>=0:www/p5-CGI.pm
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%WWWDIR%%|${WWWDIR}|' \
@@ -68,4 +71,4 @@ do-install:
 	(cd ${WRKSRC}/httpd && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR}/httpd/)
 	(cd ${WRKSRC}/share && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR}/share/)
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

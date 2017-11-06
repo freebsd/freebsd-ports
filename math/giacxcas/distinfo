@@ -1,5 +1,6 @@
-SHA256 (giacxcas/giac_1.2.2-57.tar.gz) = a1d03bf191f49362c98a3c6941082393129b286febe643c5534bd6aebaeabef6
-SIZE (giacxcas/giac_1.2.2-57.tar.gz) = 50571933
+TIMESTAMP = 1498891257
+SHA256 (giacxcas/giac_1.2.3-55.tar.gz) = bc0d1a6a90d75fa910d23b98a639eda68e48faa2005afae7d1032c912f57fb9d
+SIZE (giacxcas/giac_1.2.3-55.tar.gz) = 50701369
 SHA256 (giacxcas/CoCoALib-0.9950.tgz) = b30d840593e1930c1629467918b508c429e0a983ef0d1343eab570f238275678
 SIZE (giacxcas/CoCoALib-0.9950.tgz) = 4120680
 SHA256 (giacxcas/fltk-giac.tar.gz) = 538243c536a62e562bc26dec1c54454f54ce614cc540371f5ccfe71d8ed27cf7

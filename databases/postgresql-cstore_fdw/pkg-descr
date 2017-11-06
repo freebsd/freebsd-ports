@@ -1,0 +1,18 @@
+Cstore_fdw is a extension of PostgreSQL. This extension uses the Optimized Row
+Columnar (ORC) format for its data layout. ORC improves upon the RCFile format
+developed at Facebook, and brings the following benefits:
+	- Compression: Reduces in-memory and on-disk data size by 2-4x. Can be
+	  extended to support different codecs.
+	- Column projections: Only reads column data relevant to the query. 
+	  Improves performance for I/O bound queries.
+	- Skip indexes: Stores min/max statistics for row groups, and uses them
+	  to skip over unrelated rows.
+Further, cstore_fdw used the Postgres foreign data wrapper APIs and type
+representations with this extension. This brings:
+	- Support for 40+ Postgres data types. The user can also create new types
+	  and use them.
+	- Statistics collection. PostgreSQL's query optimizer uses these stats to
+	  evaluate different query plans and pick the best one.
+	- Simple setup. Create foreign table and copy data. Run SQL.
+
+WWW: https://github.com/citusdata/cstore_fdw

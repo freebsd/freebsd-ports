@@ -17,7 +17,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	gsed:textproc/gsed
 RUN_DEPENDS=	lsof:sysutils/lsof
 
-USES=		bison gettext ghostscript:build gmake iconv libtool:build
+USES=		bison gettext ghostscript:build gmake groff iconv libtool:build
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_header_linux_kd_h=no
 USE_LDCONFIG=	yes

@@ -2,13 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	c-icap
-PORTVERSION=	0.4.3
+PORTVERSION=	0.4.5
 CATEGORIES=	www security
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}${PKGNAMESUFFIX}/0.4.x/
 PKGNAMESUFFIX=	-modules
 DISTNAME=	c_icap_modules-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	Modules for c-icap: virus_scan and srv_url_check
 
 LICENSE=	GPLv2+

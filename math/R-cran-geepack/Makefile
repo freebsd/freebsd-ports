@@ -2,6 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	geepack
+PORTREVISION=	1
 DISTVERSION=	1.2-1
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${DISTVERSION}
@@ -11,6 +12,6 @@ COMMENT=	Generalized Estimating Equation Package
 
 LICENSE=	GPLv3
 
-USES=		cran:auto-plist
+USES=		cran:auto-plist,compiles
 
 .include <bsd.port.mk>

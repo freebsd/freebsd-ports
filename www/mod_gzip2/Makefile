@@ -27,8 +27,8 @@ post-patch:
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	@${INSTALL_DATA} ${WRKSRC}/my_cfg.txt ${STAGEDIR}${EXAMPLESDIR}/mod_gzip2.conf.sample
+	${INSTALL_DATA} ${WRKSRC}/my_cfg.txt ${STAGEDIR}${EXAMPLESDIR}/mod_gzip2.conf.sample
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	@${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

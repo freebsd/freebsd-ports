@@ -18,6 +18,9 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	liborc-0.4.so:devel/orc
 
+NOT_FOR_ARCHS=		aarch64
+NOT_FOR_ARCHS_REASON=	invokes x86 asm
+
 PORTSCOUT=	limit:0\.10\..*
 
 LIBAV_VERSION=	0.7.7
@@ -62,14 +65,6 @@ FFMPEG_CFLAGS_OFF+=-msse
 .endif
 
 .include <bsd.port.pre.mk>
-
-.if ${ARCH} == aarch64 || ${ARCH} == armv6
-CONFIGURE_ENV+=	ASFLAGS=-no-integrated-as
-CFLAGS+=	-no-integrated-as
-BUILD_DEPENDS+=	${LOCALBASE}/bin/as:devel/binutils
-CONFIGURE_ENV+=	COMPILER_PATH=${LOCALBASE}/bin
-MAKE_ENV+=	COMPILER_PATH=${LOCALBASE}/bin
-.endif
 
 .if ! ${PORT_OPTIONS:MFFMPEG}
 

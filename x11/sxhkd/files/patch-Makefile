@@ -1,6 +1,6 @@
---- Makefile.orig	2016-10-30 12:28:09 UTC
+--- Makefile.orig	2017-07-14 18:57:47 UTC
 +++ Makefile
-@@ -2,14 +2,14 @@ NAME     = sxhkd
+@@ -2,14 +2,15 @@ OUT      = sxhkd
  VERCMD  ?= git describe 2> /dev/null
  VERSION := $(shell $(VERCMD) || cat VERSION)
  
@@ -13,30 +13,31 @@
  PREFIX    ?= /usr/local
 -BINPREFIX ?= $(PREFIX)/bin
 -MANPREFIX ?= $(PREFIX)/share/man
--DOCPREFIX ?= $(PREFIX)/share/doc/$(NAME)
+-DOCPREFIX ?= $(PREFIX)/share/doc/$(OUT)
 +BINPREFIX  = $(PREFIX)/bin
 +MANPREFIX  = $(PREFIX)/man
-+EXPREFIX   = $(PREFIX)/share/examples/$(NAME)
++DOCPREFIX  = $(PREFIX)/share/doc/$(OUT)
++EXPREFIX   = $(PREFIX)/share/examples/$(OUT)
  
- SRC := $(wildcard *.c)
- OBJ := $(SRC:.c=.o)
-@@ -28,11 +28,15 @@ $(NAME): $(OBJ)
+ all: $(OUT)
+ 
+@@ -28,11 +29,15 @@ $(OUT): $(OBJ)
  
  install:
  	mkdir -p "$(DESTDIR)$(BINPREFIX)"
--	cp -pf $(NAME) "$(DESTDIR)$(BINPREFIX)"
-+	${BSD_INSTALL_PROGRAM} $(NAME) "$(DESTDIR)$(BINPREFIX)"
+-	cp -pf $(OUT) "$(DESTDIR)$(BINPREFIX)"
++	${BSD_INSTALL_PROGRAM} $(OUT) "$(DESTDIR)$(BINPREFIX)"
  	mkdir -p "$(DESTDIR)$(MANPREFIX)"/man1
--	cp -p doc/$(NAME).1 "$(DESTDIR)$(MANPREFIX)"/man1
+-	cp -p doc/$(OUT).1 "$(DESTDIR)$(MANPREFIX)"/man1
 -	mkdir -p "$(DESTDIR)$(DOCPREFIX)"
 -	cp -pr examples "$(DESTDIR)$(DOCPREFIX)"/examples
-+	${BSD_INSTALL_MAN} doc/$(NAME).1 "$(DESTDIR)$(MANPREFIX)"/man1
-+	mkdir -p "$(DESTDIR)$(EXPREFIX)/background_shell"
++	${BSD_INSTALL_MAN} doc/$(OUT).1 "$(DESTDIR)$(MANPREFIX)"/man1
++	mkdir -p "$(DESTDIR)$(EXPREFIX)"/background_shell
 +	${BSD_INSTALL_DATA} examples/background_shell/* \
-+		"$(DESTDIR)$(EXPREFIX)/background_shell"
-+	mkdir -p "$(DESTDIR)$(EXPREFIX)/notification"
++		"$(DESTDIR)$(EXPREFIX)"/background_shell
++	mkdir -p "$(DESTDIR)$(EXPREFIX)"/notification
 +	${BSD_INSTALL_DATA} examples/notification/* \
-+		"$(DESTDIR)$(EXPREFIX)/notification"
++		"$(DESTDIR)$(EXPREFIX)"/notification
  
  uninstall:
- 	rm -f "$(DESTDIR)$(BINPREFIX)"/$(NAME)
+ 	rm -f "$(DESTDIR)$(BINPREFIX)"/$(OUT)

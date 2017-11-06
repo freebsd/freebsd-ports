@@ -5,6 +5,7 @@
 
     SUBDIR += autobench
     SUBDIR += blogbench
+    SUBDIR += bombardier
     SUBDIR += bonnie
     SUBDIR += bonnie++
     SUBDIR += clpeak
@@ -17,11 +18,13 @@
     SUBDIR += fhourstones
     SUBDIR += filebench
     SUBDIR += fio
+    SUBDIR += flamegraph
     SUBDIR += flops
     SUBDIR += flowgrind
     SUBDIR += forkbomb
     SUBDIR += glmark2
     SUBDIR += gtkperf
+    SUBDIR += hey
     SUBDIR += himenobench
     SUBDIR += hpl
     SUBDIR += hs-criterion
@@ -80,6 +83,7 @@
     SUBDIR += thrulay
     SUBDIR += tsung
     SUBDIR += ttcp
+    SUBDIR += typometer
     SUBDIR += ubench
     SUBDIR += unixbench
     SUBDIR += webbench

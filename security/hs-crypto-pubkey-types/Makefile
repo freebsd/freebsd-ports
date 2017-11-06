@@ -2,6 +2,7 @@
 
 PORTNAME=	crypto-pubkey-types
 PORTVERSION=	0.4.3
+PORTREVISION=	1
 CATEGORIES=	security haskell
 
 MAINTAINER=	haskell@FreeBSD.org

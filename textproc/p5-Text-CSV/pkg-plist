@@ -1,4 +1,4 @@
-%%PERL5_MAN3%%/Text::CSV.3.gz
-%%PERL5_MAN3%%/Text::CSV_PP.3.gz
 %%SITE_PERL%%/Text/CSV.pm
 %%SITE_PERL%%/Text/CSV_PP.pm
+%%PERL5_MAN3%%/Text::CSV.3.gz
+%%PERL5_MAN3%%/Text::CSV_PP.3.gz

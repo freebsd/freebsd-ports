@@ -2,13 +2,18 @@
 # $FreeBSD$
 
 PORTNAME=	udunits
-PORTVERSION=	2.2.21
+PORTVERSION=	2.2.25
 CATEGORIES=	science math
 MASTER_SITES=	ftp://ftp.unidata.ucar.edu/pub/udunits/ \
 		LOCAL/sunpoet
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Library for manipulating units of physical quantities
+
+LICENSE=	UCAR_UNIDATA
+LICENSE_FILE=	${WRKSRC}/COPYRIGHT
+LICENSE_NAME=	University Corporation for Atmospheric Research/Unidata
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 LIB_DEPENDS=	libexpat.so:textproc/expat2
 
@@ -22,8 +27,6 @@ USE_LDCONFIG=	yes
 USES=		libtool localbase
 
 INFO=		udunits2 udunits2lib udunits2prog
-PORTDATA=	*
-PORTDOCS=	*
 
 post-patch:
 	@${REINPLACE_CMD} -e '/install-data-hook$$/d' ${WRKSRC}/lib/Makefile.in

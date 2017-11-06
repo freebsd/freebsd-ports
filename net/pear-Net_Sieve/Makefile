@@ -2,11 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	Net_Sieve
-PORTVERSION=	1.3.4
+PORTVERSION=	1.4.1
 CATEGORIES=	net www pear
 
-MAINTAINER=	joneum@bsdproject.de
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	PEAR class to handle talking to timsieved
+
+LICENSE=	BSD3CLAUSE
 
 BUILD_DEPENDS=	${PEARDIR}/Net/Socket.php:net/pear-Net_Socket
 RUN_DEPENDS=	${PEARDIR}/Net/Socket.php:net/pear-Net_Socket

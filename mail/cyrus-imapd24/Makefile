@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	cyrus-imapd
-PORTVERSION=	2.4.18
-PORTREVISION=	4
+PORTVERSION=	2.4.20
+#PORTREVISION=	0
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.cyrusimap.org/cyrus-imapd/ \
 		http://cyrusimap.org/releases/
@@ -17,12 +17,12 @@ LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2 \
 		libpcre.so:devel/pcre
 
-CONFLICTS=	cyrus-1.* cyrus-imapd-2.[^4].* cyrus-imapd2[^4]-2.[^4].*
+CONFLICTS_INSTALL=	cyrus-imapd-2.[^4].* cyrus-imapd2[^4]-2.[^4].* \
+			cyrus-imapd3*
 
 USE_RC_SUBR=	imapd
 
-USES=		cpe perl5
-USE_OPENSSL=	yes
+USES=		cpe perl5 ssl
 GNU_CONFIGURE=	yes
 CYRUS_PREFIX=	${PREFIX}/cyrus
 CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc \
@@ -103,6 +103,7 @@ GSSAPI_MIT_CONFIGURE_ON=	--enable-gssapi="${GSSAPIBASEDIR}" \
 AUTOCREATE_VERSION=	0.10-0
 AUTOCREATE_PATCH_SITES=	LOCAL/mm:autocreate
 AUTOCREATE_PATCHFILES=	${PORTNAME}-2.4.4-autocreate-${AUTOCREATE_VERSION}.patch:-p1:autocreate
+AUTOCREATE_BROKEN=	Patch is not applicable
 
 AUTOSIEVE_VERSION=	0.6.0
 AUTOSIEVE_PATCH_SITES=	LOCAL/mm:autosieve

@@ -1,0 +1,20 @@
+ConsoleKit2 is a framework for defining and tracking users, login
+sessions, and seats. It allows multiple users to be logged in at the
+same time and share hardware for their graphical session. ConsoleKit2
+will keep track of those resources and whichever session is active
+will have use of the hardware at that time.
+ 
+What is a seat?
+===============
+A seat is a collection of sessions and a set of hardware (usually at
+least a keyboard and mouse). Only one session may be active on a
+seat at a time.
+
+What is a session?
+==================
+A session is a collection of all processes that originate from a single
+common ancestor and retain knowledge of a secret. As an implementation
+detail, this secret may be stored in the process environment by the
+login manager under the name XDG_SESSION_COOKIE.
+
+WWW: https://github.com/ConsoleKit2/ConsoleKit2

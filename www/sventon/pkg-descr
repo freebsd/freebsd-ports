@@ -1,7 +1,0 @@
-sventon is a free, open source, web client for browsing Subversion repositories.
-It is powerful, straightforward to use, and super easy to install.
-
-sventon is a pure Java application, all you need to run it is a Java SE 6
-runtime and a Servlet 2.4/JSP 2.0 compliant webserver, such as Tomcat 6.0.
-
-WWW: http://www.sventon.org/

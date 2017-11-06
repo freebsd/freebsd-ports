@@ -2,19 +2,21 @@
 # $FreeBSD$
 
 PORTNAME=	ExtUtils-XSpp
-PORTVERSION=	0.16.03
-PORTREVISION=	1
+PORTVERSION=	0.18
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
-DISTNAME=	${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	XS for C++ in Perl
 
-BUILD_DEPENDS=	p5-Test-Base>=0:devel/p5-Test-Base \
+LICENSE=	ART10 GPLv1+
+LICENSE_COMB=	dual
+
+TEST_DEPENDS=	p5-Test-Base>=0:devel/p5-Test-Base \
 		p5-Test-Differences>=0:devel/p5-Test-Differences
 
+NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	modbuild
 

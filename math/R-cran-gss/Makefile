@@ -2,15 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	gss
-DISTVERSION=	2.1-6
+DISTVERSION=	2.1-7
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	dbn@FreeBSD.org
 COMMENT=	General Smoothing Splines
 
-LICENSE=	GPLv2 GPLv3
-LICENSE_COMB=	dual
+LICENSE=	GPLv2+
 
 USES=		cran:auto-plist,compiles
 

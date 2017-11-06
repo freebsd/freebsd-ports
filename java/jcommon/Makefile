@@ -11,6 +11,8 @@ COMMENT=	Collection of useful classes used by JFreeChart and JFreeReport
 
 LICENSE=	LGPL21
 
+BROKEN_armv6=		fails to package: find: *: No such file or directory
+
 USES=		zip
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+

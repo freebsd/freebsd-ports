@@ -2,27 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	fira
-PORTVERSION=	4.104
+PORTVERSION=	4.203
 CATEGORIES=	www
-MASTER_SITES=	http://www.carrois.com/downloads/%SUBDIR%/:sans,mono \
-		SF/horia/${CATEGORIES}/${PORTNAME}${PKGNAMESUFFIX}/%SUBDIR%/:sans,mono,bp
-MASTER_SITE_SUBDIR=	${PORTNAME}_4_1/:sans,bp ${PORTNAME}_mono_3_2/:mono
+MASTER_SITES=	https://carrois.com/downloads/Fira/
 PKGNAMESUFFIX=	-webfont
-DISTNAME=	${PORTNAME:S|f|F|}
-DISTFILES=	${DISTNAME}Boilerplate${PORTVERSION:S|.||}${EXTRACT_SUFX}:bp \
-		${DISTNAME}Fonts${PORTVERSION:S|.||}${EXTRACT_SUFX}:sans \
-		${DISTNAME}MonoFonts${MONO_VERSION}${EXTRACT_SUFX}:mono
-EXTRACT_ONLY=	${DISTFILES:C|:[^:]+$||:M*.zip}
+DISTFILES=	Fira_Code_3_2.zip Fira_Mono_3_2.zip Fira_Sans_4_2.zip
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Sans-serif and monospaced Web Font for small screens
 
 LICENSE=	OFL11
-LICENSE_FILE=	${WRKSRC}/${DISTNAME}Fonts${PORTVERSION:S|.||}/License.txt
-
-BROKEN=		unfetchable
-DEPRECATED=	Broken for more than 6 months
-EXPIRATION_DATE=	2017-02-08
 
 USES=		zip
 NO_ARCH=	yes
@@ -35,46 +24,19 @@ PLIST_SUB=	WWWDIR_REL="${WWWDIR_REL}"
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}${PKGNAMESUFFIX}
 PORTDOCS=	*.pdf *.rtf
 
-EXAMPLESDIR=	${PREFIX}/share/examples/${PORTNAME}${PKGNAMESUFFIX}
-PORTEXAMPLES=	*
-
-MONO_VERSION=	3204
-
-OPTIONS_DEFINE=	DOCS EXAMPLES
-EXAMPLES_DESC=	UFO source files
-
-DOCS_DISTFILES=	${DISTNAME}_4_1_Version_Report.rtf:sans \
-		${DISTNAME}PDF${PORTVERSION:S|.||}${EXTRACT_SUFX}:sans \
-		${DISTNAME}MonoPDF${MONO_VERSION}${EXTRACT_SUFX}:mono
-EXAMPLES_DISTFILES=	${DISTNAME}UFO_beta${PORTVERSION:S|.||}${EXTRACT_SUFX}:sans \
-			${DISTNAME}MonoUFO_beta${MONO_VERSION}${EXTRACT_SUFX}:mono
-
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=	DOCS
 
 do-install:
-	@${MKDIR} ${STAGEDIR}${WWWDIR}
-.for b in index.html ${PORTNAME:S|$|.css|}
-	${INSTALL_DATA} \
-		${WRKSRC}/${DISTNAME}Boilerplate${PORTVERSION:S|.||}/${b} \
-		${STAGEDIR}${WWWDIR}
-.endfor
 .for w in eot ttf woff woff2
 	@${MKDIR} ${STAGEDIR}${WWWDIR}/${w}
-	${INSTALL_DATA} ${WRKSRC}/${DISTNAME}*Fonts*/WEB/${w:tu}/${DISTNAME}*.${w} \
-		${STAGEDIR}${WWWDIR}/${w}/
+	${FIND} ${WRKSRC}/Fira* -type f -name \*.${w} | while read f; do \
+		${INSTALL_DATA} $$f ${STAGEDIR}${WWWDIR}/${w} ; done
 .endfor
-.if ${PORT_OPTIONS:MDOCS}
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${CP} ${DISTDIR}/${DISTFILES:C|:[^:]+$||:M*.rtf} ${WRKSRC}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|:M*.rtf} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/${DISTNAME}*PDF*/|:M*.pdf} \
+	${INSTALL_DATA} ${WRKSRC}/Fira*/PDF/*.pdf ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/Fira_Sans_4_2/Fira_4_2_Version_Log.rtf \
 		${STAGEDIR}${DOCSDIR}
-.endif
-.if ${PORT_OPTIONS:MEXAMPLES}
-	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-. for e in ${EXAMPLES_DISTFILES:R:C|:[^:]+$||}
-	(cd ${WRKSRC}/${e} && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR})
-. endfor
-.endif
 
 .include <bsd.port.mk>

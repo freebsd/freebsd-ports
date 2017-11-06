@@ -33,6 +33,7 @@
     SUBDIR += gbase
     SUBDIR += gbsdconv
     SUBDIR += hs-aeson
+    SUBDIR += hs-aeson-compat
     SUBDIR += hs-aeson-pretty
     SUBDIR += hs-dataenc
     SUBDIR += hs-json
@@ -142,9 +143,12 @@
     SUBDIR += php70-iconv
     SUBDIR += php70-mbstring
     SUBDIR += php70-recode
+    SUBDIR += php71-iconv
+    SUBDIR += php71-mbstring
+    SUBDIR += php71-recode
     SUBDIR += psiconv
     SUBDIR += py-bcode
-    SUBDIR += py-bencode
+    SUBDIR += py-bencode.py
     SUBDIR += py-bencoder
     SUBDIR += py-better-bencode
     SUBDIR += py-bsdconv
@@ -154,9 +158,13 @@
     SUBDIR += py-zfec
     SUBDIR += rcctools
     SUBDIR += recode
-    SUBDIR += ruby-dump.rb
     SUBDIR += rubygem-base32
     SUBDIR += rubygem-bsdconv
+    SUBDIR += rubygem-json-ld
+    SUBDIR += rubygem-json-ld-preloaded
+    SUBDIR += rubygem-po_to_json
+    SUBDIR += rubygem-url_safe_base64
+    SUBDIR += rubygem-xdr
     SUBDIR += shftool
     SUBDIR += showkey
     SUBDIR += ta2as

@@ -11,7 +11,7 @@ MAINTAINER=	alexey@renatasystems.org
 COMMENT=	Network interface statistics monitoring tool
 
 GNU_CONFIGURE=	yes
-USE_OPENSSL=	yes
+USES=		ssl
 
 OPTIONS_DEFINE=	SNMP
 SNMP_LIB_DEPENDS=	libnetsnmp.so:net-mgmt/net-snmp

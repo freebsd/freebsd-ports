@@ -63,6 +63,7 @@ AUTH_DIGEST_DESC=		RFC2617 Digest authentication
 AUTH_FORM_DESC=			Form authentication
 AUTOINDEX_DESC=			Directory listing
 
+BROTLI_DESC=			Brotli compression support
 BUCKETEER_DESC=			(dev) buckets manipulation filter
 BUFFER_DESC=			Filter Buffering
 
@@ -99,7 +100,7 @@ FILTER_DESC=			Smart Filtering
 HEADERS_DESC=			HTTP header control
 HEARTBEAT_DESC=			Generates Heartbeats
 HEARTMONITOR_DESC=		Collects Heartbeats
-HTTP2_DESC=			HTTP/2 (RFC 7540) support (experimental)
+HTTP2_DESC=			HTTP/2 (RFC 7540) support
 
 IDENT_DESC=			RFC 1413 ident lookups
 IMAGEMAP_DESC=			Server-side imagemaps
@@ -139,7 +140,7 @@ PROXY_FTP_DESC=			FTP support module for mod_proxy
 PROXY_HCHECK_DESC=		Dynamic health check of Balancer members (workers) for mod_proxy
 PROXY_HTML_DESC=		Fix HTML Links in a Reverse Proxy
 PROXY_HTTP_DESC=		HTTP support module for mod_proxy
-PROXY_HTTP2_DESC=		Experimental http2 proxy module for h2 and h2c
+PROXY_HTTP2_DESC=		HTTP/2 support module for h2 and h2c
 PROXY_SCGI_DESC=		SCGI gateway module for mod_proxy
 PROXY_WSTUNNEL_DESC=		Websockets Tunnel module for mod_proxy
 

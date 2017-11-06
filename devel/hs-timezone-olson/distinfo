@@ -1,2 +1,3 @@
-SHA256 (cabal/timezone-olson-0.1.7.tar.gz) = 232f55b670531dced3b4f86b97b8f597073da6540e2b4e085936f73f30dea6aa
-SIZE (cabal/timezone-olson-0.1.7.tar.gz) = 11313
+TIMESTAMP = 1499450481
+SHA256 (cabal/timezone-olson-0.1.8.tar.gz) = b96b01015ae5191a56d6bbdbbc3d084f0afb9acd72d84c301792f07871dd3747
+SIZE (cabal/timezone-olson-0.1.8.tar.gz) = 11356

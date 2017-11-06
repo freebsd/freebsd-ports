@@ -2,11 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	pdal
-PORTVERSION=	1.1.0
-PORTREVISION=	3
+DISTVERSION=	1.6
 CATEGORIES=	math databases graphics
 
-MAINTAINER=	coder@tuxfamily.org
+MAINTAINER=	lbartoletti@tuxfamily.org
 COMMENT=	Library for translating and manipulating point cloud data
 
 LICENSE=	BSD3CLAUSE
@@ -14,9 +13,12 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 LIB_DEPENDS=	libgdal.so:graphics/gdal \
 		libgeos.so:graphics/geos \
-		libboost_thread.so:devel/boost-libs
-
-BROKEN=		does not build (error: typedef redefinition with different types ('struct GTIFS *' vs 'struct gtiff'))
+		libboost_thread.so:devel/boost-libs \
+		libcurl.so:ftp/curl \
+		libgeotiff.so:graphics/libgeotiff \
+		libxml2.so:textproc/libxml2 \
+		liblaszip.so:archivers/laszip \
+		libjsoncpp.so:devel/jsoncpp
 
 USES=		cmake:outsource compiler:c++11-lib pathfix pkgconfig
 USE_LDCONFIG=	yes
@@ -27,12 +29,16 @@ GH_PROJECT=	${GH_ACCOUNT}
 # Unhide std::to_string() to fix build with GCC (see ports/193528 for details).
 CXXFLAGS+=	-D_GLIBCXX_USE_C99
 
-OPTIONS_DEFINE=	GEOTIFF LIBXML2 LASZIP APPS BASH ATTRIBUTE \
-		ICEBRIDGE PGPOINTCLOUD SQLITE \
+CMAKE_ARGS+=	-DWITH_LASZIP:BOOL=TRUE #Doesn't build without laszip. LASZIP is recommended
+
+OPTIONS_DEFINE=	BASH \
+		ICEBRIDGE PGPOINTCLOUD SQLITE MBIO \
 		PYTHON TESTS
-OPTIONS_DEFAULT=	GEOTIFF LIBXML2 LASZIP APPS
+OPTIONS_DEFAULT=	PYTHON PGPOINTCLOUD SQLITE
+#Option without port
+#lazperf
 #Plugins with lib not in port:
-#RivLib, Matlab, MrSID, CPD, GeoWave, GreyHound, HexBin
+#RivLib, Matlab, MrSID, CPD, GeoWave, GreyHound, HexBin, NITF (nitro)
 OPTIONS_SUB=	yes
 
 PGPOINTCLOUD_DESC=	Enable Coherent PostgreSQL Point Cloud plugin
@@ -56,33 +62,24 @@ TESTS_DESC=	Enable Tests
 TESTS_CMAKE_ON=	-DBUILD_PLUGIN_TESTS:BOOL=TRUE
 TESTS_CMAKE_OFF=	DBUILD_PLUGIN_TESTS:BOOL=FALSE
 
-ATTRIBUTE_DESC=	Enable attribute plugin
-ATTRIBUTE_CMAKE_ON=	-DBUILD_PLUGIN_ATTRIBUTE:BOOL=TRUE
-ATTRIBUTE_CMAKE_OFF=	-DBUILD_PLUGIN_ATTRIBUTE:BOOL=FALSE
-
 ICEBRIDGE_DESC=	Enable Icebridge plugin
-ICEBRIDGE_LIB_DEPENDS=	libhdf5.so:science/hdf5
+ICEBRIDGE_LIB_DEPENDS=	libhdf5.so:science/hdf5 \
+			libsz.so:science/szip
 ICEBRIDGE_CMAKE_ON=	-DBUILD_PLUGIN_ICEBRIDGE:BOOL=TRUE
 ICEBRIDGE_CMAKE_OFF=	-DBUILD_PLUGIN_ICEBRIDGE:BOOL=FALSE
 
-APPS_DESC=	PDAL command line application
-APPS_CMAKE_ON=	-DWITH_APPS:BOOL=TRUE
-APPS_CMAKE_OFF=	-DWITH_APPS:BOOL=FALSE
+MBIO_DESC=	Enable MBIO plugin
+MBIO_CMAKE_ON=		-DBUILD_PLUGIN_MBIO:BOOL=TRUE
+MBIO_CMAKE_OFF=		-DBUILD_PLUGIN_MBIO:BOOL=FALSE
 
 BASH_DESC=	BASH completion
-BASH_CMAKE_ON=	-DWITH_BASH:BOOL=TRUE
+BASH_CMAKE_ON=	-DWITH_COMPLETION:BOOL=TRUE
 BASH_RUN_DEPENDS=	bash:shells/bash
-BASH_CMAKE_OFF=	-DWITH_BASH:BOOL=FALSE
+BASH_CMAKE_OFF=	-DWITH_COMPLETION:BOOL=FALSE
 
-LASZIP_DESC=	Enable LASZip support (Recommended)
-LASZIP_LIB_DEPENDS=	liblaszip.so:archivers/laszip
-
-GEOTIFF_CMAKE_ON=	-DWITH_GEOTIFF:BOOL=TRUE
-GEOTIFF_LIB_DEPENDS=	libgeotiff.so:graphics/libgeotiff
-GEOTIFF_CMAKE_OFF=	-DWITH_GEOTIFF:BOOL=FALSE
-
-LIBXML2_CMAKE_ON=	-DWITH_LIBXML2:BOOL=TRUE
-LIBXML2_LIB_DEPENDS=	libxml2.so:textproc/libxml2
-LIBXML2_CMAKE_OFF=	-DWITH_LIBXML2:BOOL=FALSE
+post-install-BASH-on:
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/bash-completion/completions
+	${INSTALL_DATA} ${WRKSRC}/scripts/bash-completion/pdal \
+		${STAGEDIR}${PREFIX}/share/bash-completion/completions
 
 .include <bsd.port.mk>

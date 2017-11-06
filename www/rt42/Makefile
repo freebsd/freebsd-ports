@@ -1,13 +1,15 @@
 # $FreeBSD$
 
 PORTNAME=	rt
-DISTVERSION=	4.2.13
+DISTVERSION=	4.2.14
 CATEGORIES=	www
 MASTER_SITES=	http://download.bestpractical.com/pub/rt/release/
 PKGNAMESUFFIX=	42
 
 MAINTAINER=	matthew@FreeBSD.org
 COMMENT=	RT is an industrial-grade ticketing system written in Perl
+
+LICENSE=	GPLv2
 
 CONFLICTS_INSTALL=	rt40-4.0* rt44-4.4* brlcad-[0-9]*
 
@@ -26,14 +28,14 @@ NO_ARCH=	yes
 # builtin webserver, simply deselect all of the web options.
 #
 # See doc/full_text_indexing.pod if you need to set up full text
-# indexes on your ticket database.  PostgreSQL or Oracle are
+# indexes on your ticket database.  PostgreSQL is
 # recommended in this case: the MYSQL / SphinxSearch combination
 # mentioned in the docs is currently unsupported in the ports, but see
 # http://www.infracaninophile.co.uk/articles/sphinxse.html
 
 OPTIONS_DEFINE=		DEVELOPER GD GPG GRAPHVIZ SMIME DOCS
 OPTIONS_SINGLE=		DB
-OPTIONS_SINGLE_DB=	MYSQL ORACLE PGSQL SQLITE
+OPTIONS_SINGLE_DB=	MYSQL PGSQL SQLITE
 OPTIONS_RADIO=		WEB
 OPTIONS_RADIO_WEB=	AP_MODFASTCGI AP_MODPERL LIGHTTPD SPAWN_FCGI
 
@@ -80,16 +82,17 @@ SPAWN_FCGI_RUN_DEPENDS=		${LOCALBASE}/bin/spawn-fcgi:www/spawn-fcgi \
 				${FASTCGI_DEPS}
 
 MYSQL_RUN_DEPENDS=		${MYSQL_DEPS}
+MYSQL_VARS=			DB_TYPE=mysql DB_DBA_USER=root
 
 PGSQL_RUN_DEPENDS=		${PGSQL_DEPS}
-
-ORACLE_RUN_DEPENDS=		${ORACLE_DEPS}
+PGSQL_VARS=			DB_TYPE=Pg DB_DBA_USER=pgsql
 
 SQLITE_RUN_DEPENDS=		${SQLITE_DEPS}
+SQLITE_VARS=			DB_TYPE=SQLite DB_DBA_USER=root
 
 DEVELOPER_DESC=			Configure for Developers
 DEVELOPER_RUN_DEPENDS=		${DEVELOPER_DEPS}
-DEVELOPER_CONFIGURE_ENABLE=		developer
+DEVELOPER_CONFIGURE_ENABLE=	developer
 
 SMIME_DESC=			Enable Secure MIME support
 SMIME_RUN_DEPENDS=		${SMIME_DEPS}
@@ -108,34 +111,6 @@ GD_CONFIGURE_ENABLE=		gd
 
 BUILD_DEPENDS+=	${RUN_DEPENDS}
 
-.include <bsd.port.options.mk>
-
-.if !${PORT_OPTIONS:MMYSQL} && !${PORT_OPTIONS:MPGSQL} && \
-	! ${PORT_OPTIONS:MORACLE} && !${PORT_OPTIONS:MSQLITE}
-IGNORE=	please select one of MYSQL, PGSQL, ORACLE or SQLITE
-.endif
-
-.if ${PORT_OPTIONS:MMYSQL}
-DB_TYPE=	mysql
-.endif
-
-.if ${PORT_OPTIONS:MPGSQL}
-DB_TYPE=	Pg
-.endif
-
-.if ${PORT_OPTIONS:MORACLE}
-DB_TYPE=	Oracle
-.endif
-
-.if ${PORT_OPTIONS:MSQLITE}
-DB_TYPE=	SQLite
-.endif
-
-.if ${PORT_OPTIONS:MPGSQL}
-DB_DBA_USER?=	pgsql
-.else
-DB_DBA_USER?=	root
-.endif
 DB_DBA_PASSWORD?=
 DB_USER?=	rt_user
 DB_PASSWORD?=	rt_pass
@@ -179,10 +154,10 @@ pre-fetch:
 	@${ECHO} "      DB_DBA_PASSWORD=password        Password of database administrator"
 	@${ECHO} "      DB_USER=username                Name of database user for RT (rt_user)"
 	@${ECHO} "      DB_PASSWORD=password            Name of database password for RT (rt_pass)"
-.if ${PORT_OPTIONS:MSQLITE}
+
+pre-fetch-SQLITE-on:
 	@${ECHO} ""
 	@${ECHO} "SQLITE is not recommended for production use"
-.endif
 
 post-patch:
 	@${RM} ${WRKSRC}/lib/RT.pm.in.orig
@@ -201,10 +176,4 @@ post-install:
 	(cd ${WRKSRC}/etc && \
 	    ${COPYTREE_SHARE} upgrade ${STAGEDIR}${DOCSDIR} "! -name *\.in")
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} >= 502200
-CORE_DEPS+=     p5-CGI>4.0:www/p5-CGI
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

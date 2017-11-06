@@ -3,7 +3,7 @@
 
 PORTNAME=	gnash
 PORTVERSION=	0.8.10
-PORTREVISION=	23
+PORTREVISION=	31
 CATEGORIES=	graphics
 MASTER_SITES=	http://git.savannah.gnu.org/cgit/gnash.git/snapshot/
 DISTNAME=	gnash-2b3bdede0305c4fc3ad21a0a4197330606c9b880
@@ -15,7 +15,6 @@ LICENSE=	GPLv3
 
 LIB_DEPENDS=	libltdl.so:devel/libltdl \
 		libnspr4.so:devel/nspr \
-		libc++.so.1:devel/libc++ \
 		libgif.so:graphics/giflib \
 		libpng.so:graphics/png \
 		libcurl.so:ftp/curl \
@@ -185,7 +184,7 @@ CONFIGURE_ARGS+=	--enable-renderer=${GNASH_RENDERERS:S/^ //W:S/ /,/gW}
 #
 .if ${PORT_OPTIONS:MVAAPI}
 .if empty(PORT_OPTIONS:MFFMPEG)
-IGNORE=			VAAPI currently works only with FFMPEG. Please rerun 'make config' and enable FFMPEG
+IGNORE=			option VAAPI currently works only with FFMPEG. Please rerun 'make config' and enable FFMPEG
 .endif
 LIB_DEPENDS+=		libva.so:multimedia/libva
 CONFIGURE_ARGS+=	--enable-device=egl,x11,vaapi
@@ -228,6 +227,8 @@ post-patch:
 		${WRKSRC}/libmedia/ffmpeg/VideoDecoderFfmpegVaapi.cpp
 
 post-install:
+	# eglinfo conflicts with mesa-demos
+	${MV} ${STAGEDIR}/${PREFIX}/bin/eglinfo ${STAGEDIR}/${PREFIX}/bin/eglinfo-gnash
 .for conf in ${CONFIG_FILES}
 	${MV} ${STAGEDIR}/${SYSCONFIGDIR}/${conf} ${STAGEDIR}${SYSCONFIGDIR}/${conf}.dist
 .endfor

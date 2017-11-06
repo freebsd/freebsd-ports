@@ -2,7 +2,9 @@
 man/man8/debootstrap.8.gz
 %%DATADIR%%/functions
 %%DATADIR%%/scripts/aequorea
+%%DATADIR%%/scripts/artful
 %%DATADIR%%/scripts/bartholomea
+%%DATADIR%%/scripts/bionic
 %%DATADIR%%/scripts/breezy
 %%DATADIR%%/scripts/bullseye
 %%DATADIR%%/scripts/buster

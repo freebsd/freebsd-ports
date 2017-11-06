@@ -1,0 +1,4 @@
+To enable dual-stack DHCP, set
+  dhclient_program="/usr/local/sbin/dual-dhclient"
+in /etc/rc.conf (and make sure the appropriate ifconfig_* lines include
+DHCP or SYNCDHCP).

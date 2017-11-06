@@ -1,11 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	arduino-builder
-PORTVERSION=	1.3.21
-PORTREVISION=	3
+PORTVERSION=	1.3.25
 CATEGORIES=	devel
 
-MAINTAINER=	bsdports@kyle-evans.net
+MAINTAINER=	kevans@FreeBSD.org
 COMMENT=	Command line tool for building Arduino sketches
 
 LICENSE=	GPLv2
@@ -15,10 +14,10 @@ BUILD_DEPENDS=	go:lang/go
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	arduino
-GH_SUBDIR=	src/github.com/${GH_ACCOUNT}/${PORTNAME}
-GH_TUPLE=	go-errors:errors:a418503:goerrors/src/github.com/go-errors/errors \
-		stretchr:testify:v1.1.3:stretchr/src/github.com/stretchr/testify \
-		jstemmer:go-junit-report:833f8ea:jstemmer/src/github.com/jstemmer/go-junit-report
+GH_SUBDIR=	src/github.com/${GH_ACCOUNT_DEFAULT}/${PORTNAME}
+GH_TUPLE=	go-errors:errors:8fa88b0:goerrors/src/github.com/go-errors/errors \
+		stretchr:testify:v1.1.4:stretchr/src/github.com/stretchr/testify \
+		jstemmer:go-junit-report:6aeed67:jstemmer/src/github.com/jstemmer/go-junit-report
 
 OPTIONS_DEFINE=	TOOLS
 OPTIONS_DEFAULT=TOOLS
@@ -28,7 +27,6 @@ TOOLS_RUN_DEPENDS=	arduino-tools>=${_COMPAT_VER}:devel/arduino-tools
 TOOLS_PLIST_FILES=	arduino/arduino-builder.options
 
 GO_ENV+=	GOPATH=${WRKSRC}
-STRIP=		# stripping can break go binaries
 _COMPAT_VER=	1.6.12
 _IDE_VER=	10612
 

@@ -8,3 +8,12 @@
  
  #define __need_error_t
  #include <errno.h>
+@@ -65,7 +65,7 @@ const argp_option _argp_default_options[
+ 
+ string _argp_progname(const char *arg)
+ {
+-char *p=strrchr(arg,'/');
++const char *p=strrchr(arg,'/');
+ return p==NULL ? arg : p+1;
+ }
+ 

@@ -45,7 +45,7 @@ OSS_CONFIGURE_ON=	--driver oss
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "amd64" || ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
+.if ${ARCH} == "amd64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
 CONFIGURE_ARGS+=	--PIC
 .endif
 

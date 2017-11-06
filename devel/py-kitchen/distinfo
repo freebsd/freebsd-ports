@@ -1,3 +1,3 @@
-TIMESTAMP = 1464772761
-SHA256 (fedora-infra-kitchen-1.2.4_GH0.tar.gz) = 8a23652c4f35efc67ecfee47182290145abe66431218d9cd0ed2c0c598457df9
-SIZE (fedora-infra-kitchen-1.2.4_GH0.tar.gz) = 257399
+TIMESTAMP = 1506084348
+SHA256 (fedora-infra-kitchen-1.2.5-v1.2.5_GH0.tar.gz) = 1258af80868fc8c30170a43040b1eb5434bc5ffa5ff4ab98ffb9ee3d3c1e2f76
+SIZE (fedora-infra-kitchen-1.2.5-v1.2.5_GH0.tar.gz) = 257845

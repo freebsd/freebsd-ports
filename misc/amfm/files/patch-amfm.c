@@ -1,5 +1,5 @@
---- ./amfm.c.orig	2009-06-28 13:47:21.000000000 +0900
-+++ ./amfm.c	2009-06-28 14:24:15.000000000 +0900
+--- amfm.c.orig	2017-02-27 12:28:56 UTC
++++ amfm.c
 @@ -12,6 +12,7 @@
  
  #include <stdio.h>
@@ -8,7 +8,7 @@
  #include <unistd.h>
  #include <hid.h>
  
-@@ -28,7 +29,7 @@
+@@ -28,7 +29,7 @@ int main(int argc, const char** argv) {
    HIDInterface* hid;
    HIDInterfaceMatcher matcher = { RADIO_VENDID, RADIO_DEVID, NULL, NULL, 0 };
  

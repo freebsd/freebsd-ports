@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	perl
-DISTVERSION=	${PERL_VERSION}-RC5
-PORTREVISION=	0
+DISTVERSION=	${PERL_VERSION}
 CATEGORIES=	lang devel perl5
 MASTER_SITES=	CPAN/../../src/5.0 CPAN/../by-authors/id/S/SH/SHAY
 DIST_SUBDIR=	perl
@@ -11,13 +10,13 @@ DIST_SUBDIR=	perl
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Practical Extraction and Report Language
 
-LICENSE=	ART10 GPLv1
+LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 LICENSE_FILE_ART10=	${WRKSRC}/Artistic
-LICENSE_FILE_GPLv1=	${WRKSRC}/Copying
+LICENSE_FILE_GPLv1+ =	${WRKSRC}/Copying
 
-DEPRECATED=	Support ends when 5.26 is released mid-2017, please upgrade to a more recent version of Perl
-EXPIRATION_DATE=2017-12-31
+DEPRECATED=	Support ends three years after .0 release, please upgrade to a more recent version of Perl
+EXPIRATION_DATE=2018-06-01
 
 TEST_TARGET=	test_harness
 TEST_ENV=	${MAKE_ENV} TEST_JOBS=${MAKE_JOBS_NUMBER} \
@@ -89,7 +88,7 @@ CONFIGURE_ARGS=	-sde -Dprefix=${PREFIX} \
 	-Ui_malloc -Ui_iconv -Uinstallusrbinperl -Dusenm=n \
 	-Dcc="${CC}" -Duseshrplib -Dinc_version_list=none \
 	-Dcf_by=${MAINTAINER:C,@.*,,} -Dcf_email=${MAINTAINER} \
-	-Dcf_time="`env LANG=C ${STAT} -t \"%a %b %d %T %Z %Y\" -f %Sm ${_DISTDIR}/${DISTNAME}${EXTRACT_SUFX}`"
+	-Dcf_time="`${STAT} -t \"%a %b %d %T %Z %Y\" -f %Sm ${_DISTDIR}/${DISTNAME}${EXTRACT_SUFX}`"
 # Keep the following two in sync.
 # lddlflags is used for all .so linking
 # shrpldflags is used for libperl.so, so remove all the extra bits inherited from lddlflags.
@@ -100,11 +99,7 @@ CONFIGURE_ARGS+= \
 # Give a hint of where libperl.so can be found.
 USE_LDCONFIG=	${PREFIX}/${_ARCH_LIB}/CORE
 
-LOCALE_CLEANUP=	LANG="" LC_ALL="" LC_COLLATE="" LC_CTYPE="" \
-		LC_MESSAGES="" LC_MONETARY="" LC_NUMERIC="" \
-		LC_TIME=""
-CONFIGURE_ENV+=	${LOCALE_CLEANUP} UNAME_v="$$(uname -v | sed 'y/=/ /')"
-MAKE_ENV+=	${LOCALE_CLEANUP}
+CONFIGURE_ENV+=	UNAME_v="$$(uname -v | sed 'y/=/ /')"
 
 SUB_LIST+=	PERL_VERSION=${PERL_VERSION} \
 		PERL_VER=${PERL_VER} \

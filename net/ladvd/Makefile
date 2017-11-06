@@ -2,17 +2,17 @@
 # $FreeBSD$
 
 PORTNAME=	ladvd
-PORTVERSION=	1.1.0
+PORTVERSION=	1.1.1
 DISTVERSIONPREFIX=v
 CATEGORIES=	net
 
-MAINTAINER=	sten@blinkenlights.nl
+MAINTAINER=	woodsb02@FreeBSD.org
 COMMENT=	Minimal LLDP/CDP/EDP/FDP/NDP sender daemon
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/doc/LICENSE
 
-LIB_DEPENDS=	libevent.so:devel/libevent2
+LIB_DEPENDS=	libevent.so:devel/libevent
 
 USERS=		ladvd
 GROUPS=		${USERS}

@@ -1,3 +1,3 @@
-%%PERL5_MAN3%%/Petal::Mail.3.gz
 %%SITE_PERL%%/Petal/Mail.pm
 %%SITE_PERL%%/Petal/fake_sendmail.pl
+%%PERL5_MAN3%%/Petal::Mail.3.gz

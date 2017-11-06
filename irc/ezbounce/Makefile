@@ -3,7 +3,7 @@
 
 PORTNAME=	ezbounce
 PORTVERSION=	1.99.15
-PORTREVISION=	4
+PORTREVISION=	9
 CATEGORIES=	irc
 MASTER_SITES=	http://BSDforge.com/projects/source/irc/ezbounce/
 
@@ -14,7 +14,7 @@ OPTIONS_DEFINE=	DOCS SSL COMPRESS
 OPTIONS_DEFAULT=SSL COMPRESS
 OPTIONS_SUB=	yes
 
-SSL_USE=		OPENSSL=YES
+SSL_USES=		ssl
 SSL_CONFIGURE_WITH=	ssl
 COMPRESS_BUILD_DEPENDS=	${LOCALBASE}/include/boost/function.hpp:devel/boost-libs
 COMPRESS_CONFIGURE_WITH=boost
@@ -23,6 +23,10 @@ COMPRESS_DESC=		Chat log compression (requires boost)
 GNU_CONFIGURE=	yes
 USES=		gmake
 USE_GCC=	any
+
+# ezbounce 1.99.15 isn't compatible with C++11 and later, which some compilers
+# such as GCC 6 default to.
+USE_CXXSTD=	gnu++03
 
 SUB_FILES=	pkg-message
 

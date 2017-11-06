@@ -3,29 +3,30 @@
 
 PORTNAME=	kBuild
 DISTVERSION=	${KBUILD_VERSION}
-PORTREVISION=	6
+PORTREVISION=	9
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp.netlabs.org/pub/kbuild/ \
-		http://tmp.chruetertee.ch/ \
-		http://disasterarea.chruetertee.ch/
-DISTNAME=	${PORTNAME}-${DISTVERSION}r2695-src
+MASTER_SITES=	LOCAL/jkim
+DISTNAME=	${PORTNAME}-${DISTVERSION}r3050-src
 
 MAINTAINER=	vbox@FreeBSD.org
 COMMENT=	Makefile framework
 
-BROKEN_powerpc64=	Does not build
+LICENSE=	BSD3CLAUSE GPLv3+
+LICENSE_COMB=	multi
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/flex:textproc/flex
+BROKEN_powerpc64=	does not build: fatal error: xmmintrin.h: No such file or directory
+NOT_FOR_ARCHS=		aarch64 armv6 mips mips64
+NOT_FOR_ARCHS_REASON=	./kBuild/env.sh: unknown cpu/arch
 
 USE_GCC=	any
-USES=		autoreconf:build gmake makeinfo
+USES=		autoreconf:build gmake makeinfo tar:xz
 
 CONFLICTS_INSTALL=	kBuild-devel-[0-9]*
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 
 KBUILD_VERSION=	0.1.9998
-KBUILD_ARCH=	${MACHINE_ARCH:S/i386/x86/:S/x86_64/amd64/:S/powerpc/ppc32/}
+KBUILD_ARCH=	${MACHINE_ARCH:S/i386/x86/:S/x86_64/amd64/:S/powerpc/ppc32/:S/armv6/arm/}
 KBUILD_ENV=	ACLOCAL=${ACLOCAL} \
 		AUTOMAKE=${AUTOMAKE} \
 		AUTORECONF=${AUTORECONF} \
@@ -33,26 +34,20 @@ KBUILD_ENV=	ACLOCAL=${ACLOCAL} \
 		CFLAGS="-D_WITH_GETLINE -D_WITH_DPRINTF"
 KBUILD_TARGET=	${OPSYS:tl}
 
-KBUILD_BINS=	kDepIDB kDepPre kObjCache kmk kmk_append kmk_ash kmk_cat \
-		kmk_chmod kmk_cmp kmk_cp kmk_echo kmk_expr kmk_gmake \
+KBUILD_BINS=	kDepIDB kDepObj kDepPre kObjCache kmk kmk_append kmk_ash \
+		kmk_cat kmk_chmod kmk_cmp kmk_cp kmk_echo kmk_expr kmk_gmake \
 		kmk_install kmk_ln kmk_md5sum kmk_mkdir kmk_mv kmk_printf \
-		kmk_redirect kmk_rm kmk_rmdir kmk_sed kmk_sleep kmk_test kmk_time
+		kmk_redirect kmk_rm kmk_rmdir kmk_sed kmk_sleep kmk_test \
+		kmk_time
 PORTDOCS=	QuickReference-kmk.html \
 		QuickReference-kmk.txt
 
-# bmake doesn't know about unsetenv=true
-.if defined(.PARSEDIR)
 ENV=
 .export ENV
-.else
-.SHELL:		path="/bin/sh" unsetenv=true
-.endif
 
 OPTIONS_DEFINE=	DOCS
 
 post-patch:
-	${REINPLACE_CMD} -e '11269d;11274d' ${WRKSRC}/src/sed/configure
-	${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/Config.kmk
 	for f in ${WRKSRC}/kBuild/tools/*.kmk; do \
 		${REINPLACE_CMD} -e 's|gcc|${CC}|g' $$f ; \
 	done

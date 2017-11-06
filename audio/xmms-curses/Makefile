@@ -3,16 +3,16 @@
 
 PORTNAME=	xmms-curses
 PORTVERSION=	0.2.2
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	audio
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	itetcu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ncurses program for (remote) controlling multimedia/xmms
 
-BUILD_DEPENDS=	xmms:multimedia/xmms
+BUILD_DEPENDS=	xmms:multimedia/xmms \
+		${LOCALBASE}/libdata/pkgconfig/pthread-stubs.pc:devel/libpthread-stubs
 RUN_DEPENDS=	xmms:multimedia/xmms
-LIB_DEPENDS=	libpthread-stubs.so:devel/libpthread-stubs
 
 USES=		gettext iconv ncurses
 USE_GNOME=	gtk12

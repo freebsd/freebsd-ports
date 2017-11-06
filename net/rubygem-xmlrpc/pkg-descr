@@ -1,0 +1,5 @@
+The Ruby standard library package 'xmlrpc' enables you to create a server that
+implements remote procedures and a client that calls them. Very little code is
+required to achieve either of these.
+
+WWW: https://github.com/ruby/xmlrpc

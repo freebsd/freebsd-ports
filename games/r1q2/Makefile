@@ -3,7 +3,7 @@
 
 PORTNAME=	r1q2
 PORTVERSION=	8012
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	http://old.r1ch.net/stuff/r1q2/src/
 DISTNAME=	${PORTNAME}-b${PORTVERSION}-src
@@ -14,7 +14,7 @@ COMMENT=	Enhanced Quake II client/server focusing on stability
 ONLY_FOR_ARCHS=	i386 amd64
 ONLY_FOR_ARCHS_REASON=	sets the FPU rounding mode and precision (not available in fenv.h)
 
-USES=		dos2unix execinfo gmake zip
+USES=		dos2unix gmake zip
 NO_WRKSUBDIR=	yes
 BUILD_WRKSRC=	${WRKSRC}/binaries
 ALL_TARGET=	#

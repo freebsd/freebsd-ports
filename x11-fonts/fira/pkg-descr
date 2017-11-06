@@ -1,10 +1,14 @@
-The Fira font family was designed to cover the legibility needs for a large
-range of handsets varying in screen quality and rendering. It comes in a
-Sans Serif with 16 weights all accompanied by italic styles. The package also
-includes a Mono Spaced variant with 3 weights (regular, medium and bold). The
-UFO source files are included in examples.
+Originally designed as a typeface for the Mozilla OS, Fira Sans has
+developed towards a standalone Open Source project.  Over the last years,
+Fira covered more and more languages and provided further weights and
+styles.
 
-Available formats: Open Type
-*supports advanced Open Type typographic layout features and languages
+In version 4.2 the Fira Sans Family comprises 16 weights in 2 styles Roman
+and Italic.  And Fira grew even more.  We added a Condensed, Condensed
+Roman, plus a Compressed and Compressed Italic.  All fonts of Fira Sans
+contain more than 2600 glyphs each.
 
-WWW: http://www.carrois.com/fira-4-1/
+Fira Mono is still in progress.  Though, it covers almost 1500 glyphs and
+comes in three weights.
+
+WWW: https://carrois.com/projects/Fira/

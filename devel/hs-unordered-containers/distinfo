@@ -1,2 +1,3 @@
-SHA256 (cabal/unordered-containers-0.2.5.1.tar.gz) = 6e5878ade3ea65f2a7cb0a1df155f88f7e710d5bb975a5cbf1b45fb8cfee811a
-SIZE (cabal/unordered-containers-0.2.5.1.tar.gz) = 26093
+TIMESTAMP = 1499596921
+SHA256 (cabal/unordered-containers-0.2.8.0.tar.gz) = a4a188359ff28640359131061953f7dbb8258da8ecf0542db0d23f08bfa6eea8
+SIZE (cabal/unordered-containers-0.2.8.0.tar.gz) = 31824

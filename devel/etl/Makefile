@@ -19,7 +19,7 @@ OPTIONS_DEFINE=	DOCS
 
 SYNFIG_VERSION=	1.0.2
 
-USES=		gmake pathfix pkgconfig
+USES=		pathfix pkgconfig
 GNU_CONFIGURE=	yes
 
 post-install:

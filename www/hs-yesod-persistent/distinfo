@@ -1,2 +1,3 @@
-SHA256 (cabal/yesod-persistent-1.4.0.3.tar.gz) = 6455b79eda028e12caefc9d89808fbc611ece36ef64bab3426f90a26cacf3b5f
-SIZE (cabal/yesod-persistent-1.4.0.3.tar.gz) = 4283
+TIMESTAMP = 1499625386
+SHA256 (cabal/yesod-persistent-1.4.2.tar.gz) = d938894209e27a7f2a6e41906a9db02cf5c66df2236a864361571ba4e63b1056
+SIZE (cabal/yesod-persistent-1.4.2.tar.gz) = 4887

@@ -75,12 +75,12 @@ _USE_GNOME_ALL= esound intlhack intltool introspection \
 _USE_GNOME_ALL+= gdkpixbuf glib12 gtk12
 
 # GNOME 2 components
-_USE_GNOME_ALL+= atk atspi cairo gal2 \
+_USE_GNOME_ALL+= atk cairo \
 		gdkpixbuf2 gconf2 glib20 \
 		gnomedocutils gnomesharp20 \
-		gnomespeech gnomevfs2 gtk-update-icon-cache gtk20 gtkhtml3 \
+		gnomevfs2 gtk-update-icon-cache gtk20 gtkhtml3 \
 		gtksharp20 gtksourceview gtksourceview2 gvfs libartlgpl2 libbonobo \
-		libbonoboui libgda4 libglade2 libgnome \
+		libbonoboui libglade2 libgnome \
 		libgnomecanvas libgnomekbd libgnomeprint libgnomeprintui \
 		libgnomeui libgsf libgtkhtml libidl librsvg2 libwnck \
 		libxml2 libxslt \
@@ -95,7 +95,7 @@ _USE_GNOME_ALL+=dconf evolutiondataserver3 gnomecontrolcenter3 gnomedesktop3 \
 
 # C++ bindings
 _USE_GNOME_ALL+=atkmm cairomm gconfmm26 glibmm gtkmm20 gtkmm24 \
-		gtkmm30 gtksourceviewmm3 libgdamm libgdamm5 \
+		gtkmm30 gtksourceviewmm3 libgdamm5 \
 		libgtksourceviewmm libxml++26 libsigc++12 libsigc++20 \
 		pangomm
 
@@ -161,10 +161,6 @@ gtksourceviewmm3_DETECT=		${LOCALBASE}/libdata/pkgconfig/gtksourceviewmm-3.0.pc
 gtksourceviewmm3_LIB_DEPENDS=		libgtksourceviewmm-3.0.so:x11-toolkits/gtksourceviewmm3
 gtksourceviewmm3_USE_GNOME_IMPL=	gtkmm30 gtksourceview3
 
-libgdamm_DETECT=	${LOCALBASE}/libdata/pkgconfig/libgdamm-4.0.pc
-libgdamm_LIB_DEPENDS=	libgdamm-4.0.so:databases/libgdamm
-libgdamm_USE_GNOME_IMPL=libgda4 glibmm
-
 libgdamm5_DETECT=		${LOCALBASE}/libdata/pkgconfig/libgdamm-5.0.pc
 libgdamm5_LIB_DEPENDS=		libgdamm-5.0.so:databases/libgdamm5
 libgdamm5_USE_GNOME_IMPL=	libgda5 glibmm
@@ -213,7 +209,8 @@ gnomemimedata_DETECT=	${LOCALBASE}/libdata/pkgconfig/gnome-mime-data-2.0.pc
 gnomemimedata_BUILD_DEPENDS=${gnomemimedata_DETECT}:misc/gnome-mime-data
 gnomemimedata_RUN_DEPENDS=${gnomemimedata_DETECT}:misc/gnome-mime-data
 
-glib20_LIB_DEPENDS=	libglib-2.0.so:devel/glib20
+glib20_LIB_DEPENDS=	libglib-2.0.so:devel/glib20 \
+					libintl.so:devel/gettext-runtime
 glib20_DETECT=		${LOCALBASE}/libdata/pkgconfig/glib-2.0.pc
 
 atk_LIB_DEPENDS=	libatk-1.0.so:accessibility/atk
@@ -322,10 +319,6 @@ libgnomeui_LIB_DEPENDS=		libgnomeui-2.so:x11-toolkits/libgnomeui
 libgnomeui_DETECT=		${LOCALBASE}/libdata/pkgconfig/libgnomeui-2.0.pc
 libgnomeui_USE_GNOME_IMPL=	libbonoboui
 
-atspi_LIB_DEPENDS=	libspi.so:accessibility/at-spi
-atspi_DETECT=		${LOCALBASE}/libdata/pkgconfig/cspi-1.0.pc
-atspi_USE_GNOME_IMPL=	gtk20 libbonobo
-
 libgtkhtml_LIB_DEPENDS=	libgtkhtml-2.so:www/libgtkhtml
 libgtkhtml_DETECT=	${LOCALBASE}/libdata/pkgconfig/libgtkhtml-2.0.pc
 libgtkhtml_USE_GNOME_IMPL=libxslt gnomevfs2
@@ -361,18 +354,10 @@ nautilus3_USE_GNOME_IMPL=gnomedesktop3 gvfs libxml2
 metacity_LIB_DEPENDS=	libmetacity-private.so:x11-wm/metacity
 metacity_DETECT=	${LOCALBASE}/libdata/pkgconfig/libmetacity-private.pc
 
-gal2_LIB_DEPENDS=	libgal-2.4.so:x11-toolkits/gal2
-gal2_DETECT=		${LOCALBASE}/libdata/pkgconfig/gal-2.4.pc
-gal2_USE_GNOME_IMPL=gnomeui libgnomeprintui
-
 gnomecontrolcenter3_DETECT=	${LOCALBASE}/libdata/pkgconfig/gnome-keybindings.pc
 gnomecontrolcenter3_BUILD_DEPENDS=	${gnomecontrolcenter3_DETECT}:sysutils/gnome-control-center
 gnomecontrolcenter3_RUN_DEPENDS=	${gnomecontrolcenter3_DETECT}:sysutils/gnome-control-center
 gnomecontrolcenter3_USE_GNOME_IMPL=	gnomedesktop3
-
-libgda4_LIB_DEPENDS=	libgda-4.0.so:databases/libgda4
-libgda4_DETECT=		${LOCALBASE}/libdata/pkgconfig/libgda-4.0.pc
-libgda4_USE_GNOME_IMPL=	glib20 libxslt
 
 libgda5_LIB_DEPENDS=	libgda-5.0.so:databases/libgda5
 libgda5_DETECT=		${LOCALBASE}/libdata/pkgconfig/libgda-5.0.pc
@@ -443,10 +428,6 @@ gtkhtml4_LIB_DEPENDS=	libgtkhtml-4.0.so:www/gtkhtml4
 gtkhtml4_DETECT=	${LOCALBASE}/libdata/pkgconfig/libgtkhtml-4.0.pc
 gtkhtml4_USE_GNOME_IMPL=gtk30 libxml2
 
-gnomespeech_LIB_DEPENDS=libgnomespeech.so:accessibility/gnome-speech
-gnomespeech_DETECT=	${LOCALBASE}/libdata/pkgconfig/gnome-speech-1.0.pc
-gnomespeech_USE_GNOME_IMPL=libbonobo
-
 evolutiondataserver3_LIB_DEPENDS=	libedataserver-1.2.so:databases/evolution-data-server
 evolutiondataserver3_DETECT=		${LOCALBASE}/libdata/pkgconfig/libedataserverui-3.0.pc
 evolutiondataserver3_USE_GNOME_IMPL=	libxml2 gtk30
@@ -495,70 +476,6 @@ USE_GNOME+=	gtk-update-icon-cache
 .endif
 
 # End component definition section
-
-# This section defines tests for optional software.  These work off four
-# types of variables:  WANT_GNOME, WITH_GNOME, HAVE_GNOME and USE_GNOME.
-# The logic of this is that a port can WANT support for a package; a user
-# specifies if they want ports compiled WITH certain features; this section
-# tests if we HAVE these features; and the port is then free to USE them.
-
-# The logic of this section is like this:
-#
-# .if defined(WANT_GNOME) && !defined(WITHOUT_GNOME)
-#   .for foo in ALL_GNOME_COMPONENTS
-#     .if defined(WITH_GNOME)
-#       HAVE_GNOME += foo
-#     .elif (foo installed)
-#       HAVE_GNOME += foo
-#     .else
-#       Print option message
-#     .endif
-#   .endfor
-# .endif
-#
-# Although it appears a little more convoluted in the tests.
-
-# Ports can make use of this like so:
-#
-# WANT_GNOME=		yes
-#
-# .include <bsd.port.pre.mk>
-#
-# .if ${HAVE_GNOME:Mfoo}!=""
-# ... Do some things ...
-# USE_GNOME=		foo
-# .else
-# ... Do some other things ...
-# .endif
-
-# We also check each component to see if it has a desktop requirement.  If
-# it does, and its requirement disagrees with the user's chosen desktop,
-# do not add the component to the HAVE_GNOME list.
-
-_USE_GNOME_SAVED:=${USE_GNOME}
-HAVE_GNOME?=
-.if (defined(WANT_GNOME) && !defined(WITHOUT_GNOME))
-. for component in ${_USE_GNOME_ALL}
-.         if exists(${${component}_DETECT})
-HAVE_GNOME+=	${component}
-.         elif defined(WITH_GNOME)
-.            if ${WITH_GNOME}=="yes" || ${WITH_GNOME:M${component}}!="" \
-		|| ${WITH_GNOME}=="1"
-HAVE_GNOME+=	${component}
-.            endif
-.         endif
-. endfor
-.elif defined(WITHOUT_GNOME)
-.  if ${WITHOUT_GNOME}!="yes" && ${WITHOUT_GNOME}!="1"
-.    for component in ${_USE_GNOME_ALL}
-.      if ${WITHOUT_GNOME:M${component}}==""
-.        if exists(${${component}_DETECT})
-HAVE_GNOME+=	${component}
-.        endif
-.      endif
-.    endfor
-.  endif
-.endif
 
 .if defined(USE_GNOME)
 # First of all expand all USE_GNOME_IMPL recursively
@@ -646,15 +563,6 @@ GNOME_PRE_PATCH+=	; ${${component}_PRE_PATCH}
 . if defined(GCONF_SCHEMAS)
 MAKE_ENV+=	GCONF_DISABLE_MAKEFILE_SCHEMA_INSTALL=1
 . endif
-.endif
-
-.if defined(WANT_GNOME)
-USE_GNOME?=
-.  if ${_USE_GNOME_SAVED}==${USE_GNOME}
-PLIST_SUB+=	GNOME:="@comment " NOGNOME:=""
-.  else
-PLIST_SUB+=	GNOME:="" NOGNOME:="@comment "
-.  endif
 .endif
 
 .if defined(USE_GNOME_SUBR)

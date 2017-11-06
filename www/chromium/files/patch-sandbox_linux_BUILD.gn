@@ -1,0 +1,36 @@
+--- sandbox/linux/BUILD.gn.orig	2017-08-02 15:43:44.385043000 +0200
++++ sandbox/linux/BUILD.gn	2017-08-02 15:45:22.965205000 +0200
+@@ -12,12 +12,12 @@
+ }
+ 
+ declare_args() {
+-  compile_suid_client = is_linux
++  compile_suid_client = is_linux && !is_bsd
+ 
+-  compile_credentials = is_linux
++  compile_credentials = is_linux && !is_bsd
+ 
+   # On Android, use plain GTest.
+-  use_base_test_suite = is_linux
++  use_base_test_suite = is_linux && !is_bsd
+ }
+ 
+ if (is_nacl_nonsfi) {
+@@ -360,7 +360,7 @@
+     public_deps += [ ":sandbox_services_headers" ]
+   }
+ 
+-  if (is_nacl_nonsfi) {
++  if (is_nacl_nonsfi || is_bsd) {
+     cflags = [ "-fgnu-inline-asm" ]
+ 
+     sources -= [
+@@ -368,6 +368,8 @@
+       "services/init_process_reaper.h",
+       "services/scoped_process.cc",
+       "services/scoped_process.h",
++      "services/syscall_wrappers.cc",
++      "services/syscall_wrappers.h",
+       "services/yama.cc",
+       "services/yama.h",
+       "syscall_broker/broker_channel.cc",

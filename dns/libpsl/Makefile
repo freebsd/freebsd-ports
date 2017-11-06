@@ -2,8 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	libpsl
-PORTVERSION=	0.16.1
+PORTVERSION=	0.18.0
 DISTVERSIONPREFIX=	${PORTNAME}-
+PORTREVISION=	1
 CATEGORIES=	dns
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -29,6 +30,7 @@ CONFIGURE_ARGS=	--enable-man \
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
+USE_LOCALE=	en_US.UTF-8
 USES=		autoreconf libtool localbase:ldflags pathfix pkgconfig python:build shebangfix
 
 GH_ACCOUNT=	rockdaboot

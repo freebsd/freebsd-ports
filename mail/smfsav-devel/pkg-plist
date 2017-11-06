@@ -1,0 +1,5 @@
+sbin/smf-sav
+@sample etc/smf-sav.conf.sample
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/readme
+@dir(smfs,smfs,700) %%SMFSAV_RUN_DIR%%

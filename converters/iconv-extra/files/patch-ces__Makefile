@@ -11,3 +11,18 @@
  .endif
  
  INTERNALLIB =
+@@ -14,11 +14,11 @@ NOMAN =
+ 
+ NOOBJ =
+ 
+-CLEANFILES =	${CHARSETS_SO} *.So
++CLEANFILES =	${CHARSETS_SO} *.So .pico
+ 
+-.SUFFIXES:	.so .So
++.SUFFIXES:	.so .So .pico
+ 
+-.So.so:
++.So.so .pico.so:
+ 		@${LDDESTDIRENV} ${CC} -shared -Wl,-x -o ${.TARGET} \
+ 		-Wl,-soname,${.TARGET} `lorder ${.ALLSRC} | tsort -q` \
+ 		${LDDESTDIR} ${LDADD}

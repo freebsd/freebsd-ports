@@ -1,6 +1,6 @@
---- chrome/common/extensions/command.cc.orig	2016-05-11 19:02:17 UTC
+--- chrome/common/extensions/command.cc.orig	2017-06-05 19:03:03 UTC
 +++ chrome/common/extensions/command.cc
-@@ -306,7 +306,7 @@ std::string Command::CommandPlatform() {
+@@ -303,7 +303,7 @@ std::string Command::CommandPlatform() {
    return values::kKeybindingPlatformMac;
  #elif defined(OS_CHROMEOS)
    return values::kKeybindingPlatformChromeOs;

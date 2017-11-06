@@ -3,6 +3,7 @@ lib/libgnome-games-support-1.so
 lib/libgnome-games-support-1.so.2
 lib/libgnome-games-support-1.so.2.0.4
 libdata/pkgconfig/libgnome-games-support-1.pc
+share/locale/be/LC_MESSAGES/libgnome-games-support.mo
 share/locale/bg/LC_MESSAGES/libgnome-games-support.mo
 share/locale/ca/LC_MESSAGES/libgnome-games-support.mo
 share/locale/cs/LC_MESSAGES/libgnome-games-support.mo
@@ -19,6 +20,7 @@ share/locale/fr/LC_MESSAGES/libgnome-games-support.mo
 share/locale/fur/LC_MESSAGES/libgnome-games-support.mo
 share/locale/gl/LC_MESSAGES/libgnome-games-support.mo
 share/locale/he/LC_MESSAGES/libgnome-games-support.mo
+share/locale/hr/LC_MESSAGES/libgnome-games-support.mo
 share/locale/hu/LC_MESSAGES/libgnome-games-support.mo
 share/locale/id/LC_MESSAGES/libgnome-games-support.mo
 share/locale/it/LC_MESSAGES/libgnome-games-support.mo
@@ -38,5 +40,6 @@ share/locale/sr@latin/LC_MESSAGES/libgnome-games-support.mo
 share/locale/sv/LC_MESSAGES/libgnome-games-support.mo
 share/locale/tr/LC_MESSAGES/libgnome-games-support.mo
 share/locale/uk/LC_MESSAGES/libgnome-games-support.mo
+share/locale/zh_CN/LC_MESSAGES/libgnome-games-support.mo
 share/locale/zh_TW/LC_MESSAGES/libgnome-games-support.mo
 share/vala/vapi/libgnome-games-support-1.vapi

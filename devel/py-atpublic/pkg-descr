@@ -1,0 +1,5 @@
+This is a very simple decorator and function which populates a module's 
+__all__ and optionally the module globals. This provides both a pure-Python 
+implementation and an optional C implementation.
+
+WWW: http://public.readthedocs.io

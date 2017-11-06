@@ -2,18 +2,23 @@
 # $FreeBSD$
 
 PORTNAME=	winetricks
-PORTVERSION=	20161228
+PORTVERSION=	20171018
 CATEGORIES=	emulators
 
 MAINTAINER=	lifanov@FreeBSD.org
 COMMENT=	Easy way to work around problems in Wine
 
 LICENSE=	LGPL21
-LICENSE_FILE=	${WRKSRC}/src/COPYING
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+RUN_DEPENDS=	cabextract:archivers/cabextract
 
 .if !defined(WITHOUT_X11)
-RUN_DEPENDS=	zenity>0:x11/zenity
+RUN_DEPENDS+=	zenity:x11/zenity xdg-open:devel/xdg-utils
 .endif
+
+USES=		perl5
+USE_PERL5=	run
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	Winetricks

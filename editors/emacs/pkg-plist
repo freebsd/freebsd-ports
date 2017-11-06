@@ -874,7 +874,6 @@ share/applications/emacs.desktop
 %%DATADIR%%/%%EMACS_VER%%/etc/refcards/de-refcard.tex
 %%DATADIR%%/%%EMACS_VER%%/etc/refcards/dired-ref.tex
 %%DATADIR%%/%%EMACS_VER%%/etc/refcards/emacsver.tex
-%%DATADIR%%/%%EMACS_VER%%/etc/refcards/emacsver.tex.in
 %%DATADIR%%/%%EMACS_VER%%/etc/refcards/fr-dired-ref.tex
 %%DATADIR%%/%%EMACS_VER%%/etc/refcards/fr-refcard.tex
 %%DATADIR%%/%%EMACS_VER%%/etc/refcards/fr-survival.tex
@@ -883,12 +882,18 @@ share/applications/emacs.desktop
 %%DATADIR%%/%%EMACS_VER%%/etc/refcards/gnus-refcard.tex
 %%DATADIR%%/%%EMACS_VER%%/etc/refcards/orgcard.tex
 %%DATADIR%%/%%EMACS_VER%%/etc/refcards/pdflayout.sty
+%%DATADIR%%/%%EMACS_VER%%/etc/refcards/pl-refcard.pdf
 %%DATADIR%%/%%EMACS_VER%%/etc/refcards/pl-refcard.tex
+%%DATADIR%%/%%EMACS_VER%%/etc/refcards/pt-br-refcard.pdf
 %%DATADIR%%/%%EMACS_VER%%/etc/refcards/pt-br-refcard.tex
 %%DATADIR%%/%%EMACS_VER%%/etc/refcards/refcard.tex
+%%DATADIR%%/%%EMACS_VER%%/etc/refcards/ru-refcard.pdf
 %%DATADIR%%/%%EMACS_VER%%/etc/refcards/ru-refcard.tex
+%%DATADIR%%/%%EMACS_VER%%/etc/refcards/sk-dired-ref.pdf
 %%DATADIR%%/%%EMACS_VER%%/etc/refcards/sk-dired-ref.tex
+%%DATADIR%%/%%EMACS_VER%%/etc/refcards/sk-refcard.pdf
 %%DATADIR%%/%%EMACS_VER%%/etc/refcards/sk-refcard.tex
+%%DATADIR%%/%%EMACS_VER%%/etc/refcards/sk-survival.pdf
 %%DATADIR%%/%%EMACS_VER%%/etc/refcards/sk-survival.tex
 %%DATADIR%%/%%EMACS_VER%%/etc/refcards/survival.tex
 %%DATADIR%%/%%EMACS_VER%%/etc/refcards/vipcard.tex

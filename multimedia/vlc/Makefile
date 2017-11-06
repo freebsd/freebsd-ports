@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	vlc
-DISTVERSION=	2.2.4
-PORTREVISION=	6
+DISTVERSION=	2.2.6
+PORTREVISION=	2
 PORTEPOCH=	4
 CATEGORIES=	multimedia audio ipv6 net www
 MASTER_SITES=	http://download.videolan.org/pub/videolan/${PORTNAME}/${DISTVERSION:S/a$//}/ \
@@ -24,7 +24,13 @@ BUILD_DEPENDS=	ffmpeg>=2.0:multimedia/ffmpeg \
 		yasm:devel/yasm
 RUN_DEPENDS=	ffmpeg>=2.0:multimedia/ffmpeg
 
-USES=		compiler:c11 desktop-file-utils gmake iconv libtool pathfix \
+# VLC git (post 2.2.4) requires C++11 support and passes the appropriate flag
+# to the compiler. Until the port is updated, we explicitly pass -std=c++11 to
+# the compiler because Qt 5.7+ requires C++11 support, and FreeBSD 10.3's clang
+# does not default to C++11 mode.
+USE_CXXSTD=	c++11
+
+USES=		compiler:c++11-lib desktop-file-utils gmake iconv libtool pathfix \
 		pkgconfig tar:xz
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
@@ -48,7 +54,7 @@ CONFIGURE_ARGS=	--enable-avcodec --enable-avformat --enable-dvbpsi \
 		--disable-wasapi --disable-x26410b \
 		--with-kde-solid=${PREFIX}/share/apps/solid/actions \
 		ac_cv_search_pthread_rwlock_init=-pthread
-.if defined(WITH_DEBUG) && !defined(WITHOUT_DEBUG)
+.if defined(WITH_DEBUG)
 CONFIGURE_ARGS+=--enable-debug
 .endif
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -268,7 +274,7 @@ SHOUTCAST_CONFIGURE_ENABLE=	shout
 SNDIO_LIB_DEPENDS=	libsndio.so:audio/sndio
 SNDIO_CONFIGURE_ENABLE=	sndio
 
-SMB_LIB_DEPENDS=	libsmbclient.so:net/samba-libsmbclient
+SMB_USES=		samba:lib
 SMB_CONFIGURE_ENABLE=	smbclient
 
 STREAM_CONFIGURE_ENABLE=sout

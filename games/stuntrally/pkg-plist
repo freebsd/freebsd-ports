@@ -1,0 +1,7 @@
+%%EDITOR%%bin/sr-editor
+%%MASTER_SERVER%%bin/sr-masterserver
+%%GAME%%bin/stuntrally
+%%EDITOR%%share/applications/sr-editor.desktop
+%%GAME%%share/applications/stuntrally.desktop
+%%EDITOR%%share/icons/hicolor/64x64/apps/sr-editor.png
+%%GAME%%share/icons/hicolor/64x64/apps/stuntrally.png

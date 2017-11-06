@@ -60,4 +60,6 @@ sbin/dicod
 %%NLS%%share/locale/fi/LC_MESSAGES/dico.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/dico.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/dico.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/dico.mo
+%%NLS%%share/locale/sr/LC_MESSAGES/dico.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/dico.mo

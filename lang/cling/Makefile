@@ -3,12 +3,12 @@
 
 PORTNAME=		cling
 PORTVERSION=		0.4
-PORTREVISION?=		0
+PORTREVISION?=		3
 CATEGORIES=		lang devel
 MASTER_SITES=		https://root.cern.ch/download/cling/
 DISTNAME=		${PORTNAME}_2016-12-29_sources
 
-MAINTAINER=		mokhi64@gmail.com
+MAINTAINER=		mmokhi@FreeBSD.org
 COMMENT=		Interactive C++ Interpreter Based on LLVM and Clang Libs
 
 LICENSE=		LLVM NCSA
@@ -18,6 +18,9 @@ LICENSE_FILE_LLVM=	${WRKSRC}/LICENSE.TXT
 LICENSE_FILE_NCSA=	${WRKSRC}/tools/cling/LICENSE.TXT
 LICENSE_PERMS_LLVM=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
+BROKEN_armv6=		fails to compile: AArch64TargetMachine.cpp: relocation truncated to fit: R_ARM_CALL against symbol '__aeabi_uldivmod'
+BROKEN_powerpc64=	fails to compile: IncrementalParser.cpp: 'to_string' is not a member of 'std'
+
 WRKSRC=		${WRKDIR}/src
 
 LLVM_RELEASE=	3.9.0
@@ -25,8 +28,12 @@ LLVM_SUFFIX=	39_cern-root
 LLVM_PREFIX=	${PREFIX}/llvm${LLVM_SUFFIX}
 
 USES=		cmake:outsource compiler:c11 compiler:c++11-lib cpe \
-	    python:build tar:bzip2
+		python:build shebangfix tar:bzip2
 USE_LDCONFIG=	${LLVM_PREFIX}/lib
+
+SHEBANG_FILES=	tools/clang/tools/clang-format/clang-format-diff.py \
+		tools/clang/tools/clang-format/git-clang-format \
+		tools/clang/tools/scan-view/bin/scan-view
 
 SUB_FILES=	llvm-wrapper.sh
 SUB_LIST+=	LLVM_PREFIX="${LLVM_PREFIX}" LLVM_SUFFIX="${LLVM_SUFFIX}"

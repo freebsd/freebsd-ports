@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	flake8
-PORTVERSION=	2.5.4
+PORTVERSION=	3.3.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,11 +12,13 @@ COMMENT=	Code checking using pep8 and pyflakes
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mccabe>=0.2.1:devel/py-mccabe \
-		${PYTHON_PKGNAMEPREFIX}pep8>=1.5.7:devel/pep8 \
+BUILD_DEPENDS?=	${PYTHON_PKGNAMEPREFIX}pytest-runner>=0:devel/py-pytest-runner
+RUN_DEPENDS?=	${PYTHON_PKGNAMEPREFIX}mccabe>=0.5.0:devel/py-mccabe \
+		${PYTHON_PKGNAMEPREFIX}pycodestyle>=2.0.0:devel/py-pycodestyle \
 		${PYTHON_PKGNAMEPREFIX}pyflakes>=0.8.1:devel/py-pyflakes
 
-USES=		python
-USE_PYTHON=	autoplist distutils
+USES?=		python
+USE_PYTHON=	autoplist concurrent distutils
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

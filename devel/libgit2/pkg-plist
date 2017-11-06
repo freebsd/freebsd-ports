@@ -34,6 +34,7 @@ include/git2/oidarray.h
 include/git2/pack.h
 include/git2/patch.h
 include/git2/pathspec.h
+include/git2/proxy.h
 include/git2/rebase.h
 include/git2/refdb.h
 include/git2/reflog.h
@@ -58,13 +59,16 @@ include/git2/sys/filter.h
 include/git2/sys/hashsig.h
 include/git2/sys/index.h
 include/git2/sys/mempack.h
+include/git2/sys/merge.h
 include/git2/sys/odb_backend.h
 include/git2/sys/openssl.h
 include/git2/sys/refdb_backend.h
 include/git2/sys/reflog.h
 include/git2/sys/refs.h
+include/git2/sys/remote.h
 include/git2/sys/repository.h
 include/git2/sys/stream.h
+include/git2/sys/time.h
 include/git2/sys/transport.h
 include/git2/tag.h
 include/git2/trace.h

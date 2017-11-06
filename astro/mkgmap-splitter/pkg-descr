@@ -3,4 +3,4 @@ meaning that you have to split an .osm file that contains large
 well mapped regions into a number of smaller tiles. This program
 does that.
 
-WWW: http://www.mkgmap.org.uk/page/tile-splitter
+WWW: http://www.mkgmap.org.uk/doc/splitter.html

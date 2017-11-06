@@ -36,7 +36,7 @@ shell> db2batch -d zabbix -f data.sql
 To upgrade an existing database, see the scripts in
 %%DATADIR%%/%%ZABBIX_BUILD%%/upgrades.
 
-Please see http://www.zabbix.com/documentation/2.0/manual/installation/install for installation instructions.
+Please see https://www.zabbix.com/documentation/2.0/manual/installation/install for installation instructions.
 
 For use NMAP please edit sudoers
 ======================================================================

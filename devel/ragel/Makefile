@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ragel
-PORTVERSION=	6.9
+PORTVERSION=	6.10
 CATEGORIES=	devel
 MASTER_SITES=	http://www.colm.net/files/${PORTNAME}/
 

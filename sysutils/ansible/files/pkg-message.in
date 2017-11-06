@@ -8,22 +8,15 @@ host database and a sample configuration file:
   %%EXAMPLESDIR%%/ansible.cfg
 
 To use Ansible to control FreeBSD hosts, you need to
-install the lang/python package on remote machines.
-
-To use Ansible to control systems other than FreeBSD,
-set the Python interpreter in the host database for
-that system. Example:
+install the lang/python package on remote machines
+and set up a path to the python interpreter. Example:
 
   [freebsd]
   host1
   host2
 
-  [centos]
-  host3
-  host4
-
-  [centos:vars]
-  ansible_python_interpreter=/usr/bin/python
+  [freebsd:vars]
+  ansible_python_interpreter=%%PYTHON_CMD%%
 
 Python notes:
 
@@ -31,8 +24,5 @@ Python 3.x support is BETA. Most modules should work
 and important ones have been audited and tested.
 If you have issues with Python 3, please set
 ansible_python_interpreter=%%LOCALBASE%%/bin/python2
-
-Ansible 2 requires that lang/python port is built
-with SEM option enabled, which is the default
 
 ===============================================================================

@@ -2,19 +2,26 @@
 # $FreeBSD$
 
 PORTNAME=	horde_lz4
-PORTVERSION=	1.0.7
-PORTREVISION=	1
+PORTVERSION=	1.0.10
 CATEGORIES=	archivers pear
 MASTER_SITES=	http://pear.horde.org/get/
 PKGNAMEPREFIX=	php-
-EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	PECL
 
 MAINTAINER=	mm@FreeBSD.org
 COMMENT=	Horde LZ4 Compression Extension for php
 
-USES=	php:ext
-IGNORE_WITH_PHP=	70
+LICENSE=	MIT
+
+USES=	php:ext tar:tgz
+
+OPTIONS_DEFINE=	LZ4
+OPTIONS_DEFAULT=LZ4
+
+LZ4_DESC=	Use archivers/liblz4 instead of bundled lz4
+LZ4_LIB_DEPENDS=	liblz4.so:archivers/liblz4
+LZ4_CONFIGURE_WITH=	liblz4
+LZ4_USES=	pkgconfig
 
 CONFIGURE_ARGS=	--enable-horde_lz4
 

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	httpi
-PORTVERSION=	0.9.7
+PORTVERSION=	2.4.2
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -10,14 +10,13 @@ MAINTAINER=	joe@thrallingpenguin.com
 COMMENT=	Library for common HTTP client API
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-rack>=1.4.5:www/rubygem-rack
+RUN_DEPENDS=	rubygem-rack>=0:www/rubygem-rack \
+		rubygem-socksify>=0:www/rubygem-socksify
 
 NO_ARCH=	yes
-
 USE_RUBY=	yes
 USES=		gem
-
-PORTSCOUT=	limit:^0\.9\.
 
 .include <bsd.port.mk>

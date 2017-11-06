@@ -1,0 +1,8 @@
+%%RESSCRIPTS%%bin/extresso
+%%RESSCRIPTS%%bin/genresscript
+bin/icotool
+bin/wrestool
+%%RESSCRIPTS%%man/man1/extresso.1.gz
+%%RESSCRIPTS%%man/man1/genresscript.1.gz
+man/man1/icotool.1.gz
+man/man1/wrestool.1.gz

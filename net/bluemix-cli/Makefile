@@ -1,18 +1,18 @@
 # $FreeBSD$
 
 PORTNAME=	bluemix-cli
-PORTVERSION=	0.4.5
-DISTNAME=	Bluemix_CLI_${PORTVERSION}_386
+PORTVERSION=	0.4.6
 CATEGORIES=	net
 MASTER_SITES=	http://public.dhe.ibm.com/cloud/${PORTNAME:C/-.*//}/cli/${PORTNAME}/
+DISTNAME=	Bluemix_CLI_${PORTVERSION}_386
 
 MAINTAINER=	avilla@FreeBSD.org
 COMMENT=	Bluemix command line interface
 
 LICENSE=	BLUEMIX
-LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 LICENSE_NAME=	IBM Bluemix Service Description
 LICENSE_FILE=	${WRKSRC}/bin/LICENSE
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 RUN_DEPENDS=	cf:net/cf
 

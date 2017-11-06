@@ -3,6 +3,7 @@
 
 PORTNAME=	imdbpy
 PORTVERSION=	5.1.1
+PORTREVISION=	1
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP \
 		SF/${PORTNAME}/IMDbPY/${PORTVERSION}
@@ -23,7 +24,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>=0:devel/py-lxml \
 OPTIONS_DEFINE=	DOCS
 
 USES=		python:2 shebangfix
-SHEBANG_FILES=	docs/goodies/reduce.sh
+SHEBANG_FILES=	docs/goodies/download_applydiffs.py \
+		docs/goodies/reduce.sh
 USE_PYTHON=	distutils autoplist
 
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}

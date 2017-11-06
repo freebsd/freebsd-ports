@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	pureMD5
-PORTVERSION=	2.1.2.1
-PORTREVISION=	10
+PORTVERSION=	2.1.3
 CATEGORIES=	security haskell
 
 MAINTAINER=	haskell@FreeBSD.org

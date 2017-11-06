@@ -3,6 +3,7 @@
 
 PORTNAME=	expedite
 PORTVERSION=	1.7.10
+PORTREVISION=	2
 CATEGORIES=	benchmarks enlightenment
 MASTER_SITES=	http://download.enlightenment.org/releases/
 
@@ -15,8 +16,9 @@ LIB_DEPENDS=	libefl.so:devel/efl
 
 DIST_SUBDIR=	enlightenment
 GNU_CONFIGURE=	yes
-USES=		tar:bzip2 pkgconfig
+USES=		pkgconfig python:run shebangfix tar:bzip2
 USE_LDCONFIG=	yes
+SHEBANG_FILES=	src/bin/expedite-cmp
 
 OPTIONS_DEFINE=	OPENGL SDL X11
 OPTIONS_DEFAULT=OPENGL X11
@@ -27,5 +29,7 @@ X11_DESC=	Enable X11 evas engine
 OPENGL_CONFIGURE_ENABLE=	opengl-x11
 SDL_CONFIGURE_ENABLE=		software-sdl
 X11_CONFIGURE_ENABLE=		software-x11 xrender-x11
+
+BROKEN=		Do not build with devel/efl 1.19.x
 
 .include <bsd.port.mk>

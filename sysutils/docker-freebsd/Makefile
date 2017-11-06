@@ -3,9 +3,10 @@
 
 PORTNAME=	docker-freebsd
 PORTVERSION=	20150625
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
-MAINTAINER=	kmoore@FreeBSD.org
+MAINTAINER=	amutu@amutu.com
 COMMENT=	Docker containment system
 
 LICENSE=	APACHE20

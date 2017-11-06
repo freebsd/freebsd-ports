@@ -1,6 +1,3 @@
-SHA256 (google-styleguide-66/cpplint.py) = 573f92ea3572a1b052281eedb2b45c489649f5619854ba6e349554e654f77210
-SIZE (google-styleguide-66/cpplint.py) = 123503
-SHA256 (google-styleguide-66/cpplint_unittest.py) = 1fc17c263fc4176932540dbc3b2e1d8581d448c741ff6750ae93fb3e31f9faf2
-SIZE (google-styleguide-66/cpplint_unittest.py) = 116012
-SHA256 (google-styleguide-66/README) = 1c0500c633b2161633abffccc942f8b18dddb04a9b099d40db09b959078044c8
-SIZE (google-styleguide-66/README) = 2228
+TIMESTAMP = 1499059178
+SHA256 (google-styleguide-20170630-d75bd35_GH0.tar.gz) = cfc10b66a8676884a5bd3b8352fc3600a74ed89b0d0a33b3473da863d3e63ff7
+SIZE (google-styleguide-20170630-d75bd35_GH0.tar.gz) = 1015158

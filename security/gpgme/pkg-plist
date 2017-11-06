@@ -6,5 +6,5 @@ lib/common-lisp/gpgme/gpgme.asd
 lib/common-lisp/gpgme/gpgme.lisp
 lib/libgpgme.so
 lib/libgpgme.so.11
-lib/libgpgme.so.11.17.0
+lib/libgpgme.so.11.18.0
 share/aclocal/gpgme.m4

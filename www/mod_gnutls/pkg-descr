@@ -1,0 +1,5 @@
+mod_gnutls uses the GnuTLS library to provide SSL 3.0, TLS 1.0, TLS
+1.1 and 1.2 encryption for Apache HTTPD. It is similar to mod_ssl in
+purpose, but does not use OpenSSL.
+
+WWW: https://mod.gnutls.org

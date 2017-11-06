@@ -3,7 +3,7 @@
 
 PORTNAME=	milter-callback
 PORTVERSION=	1.6.0
-PORTREVISION=	2
+PORTREVISION=	4
 CATEGORIES=	mail
 MASTER_SITES=	LOCAL/ehaupt
 
@@ -12,9 +12,9 @@ COMMENT=	Milter to perform a envelope-from sender verification on target MX
 
 LICENSE=	GPLv3
 
-BROKEN_powerpc64=	Does not build
-
 LIB_DEPENDS=	libspf2.so:mail/libspf2
+
+BROKEN_powerpc64=	Does not build: error: nested functions are disabled, use -fnested-functions to re-enable
 
 USES=		tar:xz
 USE_RC_SUBR=	milter-callback

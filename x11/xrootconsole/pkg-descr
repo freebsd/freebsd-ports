@@ -4,4 +4,4 @@ command line or, by default, from stdin.  It is most useful when it reads
 from a FIFO; this allows you to redirect multiple commands to the FIFO
 and monitor their output.
 
-WWW: http://sourceforge.net/projects/xrootconsole/
+WWW: https://sourceforge.net/projects/xrootconsole/

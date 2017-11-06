@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	compat9x
-PORTVERSION=	9.3.903000.20161027
+PORTVERSION=	9.3.903000.20170608
 CATEGORIES=	misc
 MASTER_SITES=	LOCAL/des
 PKGNAMESUFFIX=	-${ARCH}
@@ -20,11 +20,7 @@ USE_LDCONFIG=	${TARGET_DIR}
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 900000
-IGNORE=		is for FreeBSD 9.x and newer
-.endif
-
-.if ${OSVERSION} >= 1100000
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1100000
 RUN_DEPENDS=	compat10x-${ARCH}>=0:misc/compat10x
 .endif
 

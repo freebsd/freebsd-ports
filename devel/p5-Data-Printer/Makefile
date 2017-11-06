@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Data-Printer
-PORTVERSION=	0.38
+PORTVERSION=	0.40
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Colored pretty-print of Perl data structures and objects
 
-LICENSE=	ART10 GPLv1
+LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Clone-PP>=0:devel/p5-Clone-PP \

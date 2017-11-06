@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	Alex.Bakhtin@gmail.com
 COMMENT=	Build and install Perl applications
 
-LICENSE=	ART10 GPLv1
+LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-App-Options>=0:devel/p5-App-Options \

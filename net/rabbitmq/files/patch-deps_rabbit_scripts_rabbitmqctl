@@ -1,4 +1,4 @@
---- deps/rabbit/scripts/rabbitmqctl.orig	2016-11-22 00:23:32 UTC
+--- deps/rabbit/scripts/rabbitmqctl.orig	2017-05-22 09:52:24 UTC
 +++ deps/rabbit/scripts/rabbitmqctl
 @@ -28,6 +28,7 @@ fi
  # (e.g. forget_cluster_node --offline) require us to impersonate the

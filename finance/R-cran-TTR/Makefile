@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	TTR
-DISTVERSION=	0.23-1
+DISTVERSION=	0.23-2
 CATEGORIES=	finance
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -11,8 +11,12 @@ COMMENT=	Technical Trading Rules
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	R-cran-xts>=0.9.3:math/R-cran-xts
+CRAN_DEPENDS=	R-cran-xts>=0.10.0:math/R-cran-xts \
+		R-cran-zoo>0:math/R-cran-zoo \
+		R-cran-curl>0:ftp/R-cran-curl
+BUILD_DEPENDS=	${CRAN_DEPENDS}
+RUN_DEPENDS=	${CRAN_DEPENDS}
 
-USES=	cran:auto-plist
+USES=		cran:auto-plist,compiles
 
 .include <bsd.port.mk>

@@ -1,0 +1,11 @@
+--- src/BUILD.orig	2017-07-31 10:06:21.426927000 +0200
++++ src/BUILD	2017-07-31 10:06:44.279345000 +0200
+@@ -179,7 +179,7 @@
+             "//src/java_tools/singlejar:SingleJar_deploy.jar",
+         ],
+         "//conditions:default": [
+-            "//src/tools/singlejar:singlejar",
++            "//src/java_tools/singlejar:SingleJar_deploy.jar",
+         ],
+     }) + select({
+         "//tools/jdk:jdk7": [],

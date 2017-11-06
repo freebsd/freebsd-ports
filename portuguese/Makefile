@@ -5,8 +5,6 @@
 
     SUBDIR += aspell-pt_BR
     SUBDIR += aspell-pt_PT
-    SUBDIR += calligra-l10n
-    SUBDIR += calligra-l10n-pt_BR
     SUBDIR += eric6
     SUBDIR += gimp-help-pt_BR
     SUBDIR += hunspell

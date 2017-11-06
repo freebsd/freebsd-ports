@@ -1,4 +1,4 @@
-etc/lightdm/lightdm-gtk-greeter.conf
+@sample etc/lightdm/lightdm-gtk-greeter.conf.sample
 sbin/lightdm-gtk-greeter
 %%PORTDOCS%%%%DOCSDIR%%/sample-lightdm-gtk-greeter.css
 share/icons/hicolor/scalable/places/budgie-desktop_badge-symbolic.svg

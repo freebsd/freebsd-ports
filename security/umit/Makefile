@@ -3,7 +3,7 @@
 
 PORTNAME=	umit
 PORTVERSION=	1.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	security
 MASTER_SITES=	SF
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,10 +19,13 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3 \
 
 NO_ARCH=	yes
 
-USES=		python tar:bzip2
+USES=		python shebangfix tar:bzip2
 USE_GNOME=	pygtk2
 USE_PYTHON=	distutils
 INSTALLS_ICONS=	yes
+SHEBANG_FILES=	*.py umit/gui/*.py higwidgets/*.py umit/interfaceeditor/*.py \
+		umit/plugin/*.py umit/core/*.py umit/merger/*.py \
+		umit/interfaceeditor/selectborder/*.py
 
 PORTDOCS=	*
 

@@ -3,7 +3,7 @@
 # $FreeBSD$
 #
 # PROVIDE: postgresql
-# REQUIRE: LOGIN
+# REQUIRE: sshd
 # KEYWORD: shutdown
 #
 # Add the following line to /etc/rc.conf to enable PostgreSQL:

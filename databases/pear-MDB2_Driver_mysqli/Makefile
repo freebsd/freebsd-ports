@@ -5,7 +5,7 @@ PORTNAME=	MDB2_Driver_mysqli
 DISTVERSION=	1.5.0b4
 CATEGORIES=	databases www pear
 
-MAINTAINER=	joneum@bsdproject.de
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	PEAR MySQL MDB2 driver
 
 LICENSE=	BSD3CLAUSE
@@ -14,7 +14,7 @@ BUILD_DEPENDS=	pear-MDB2>=0:databases/pear-MDB2
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes
-USES=		pear
+USES=		pear php
 USE_PHP=	mysqli
 
 .include <bsd.port.mk>

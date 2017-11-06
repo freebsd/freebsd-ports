@@ -3,6 +3,7 @@
 
 PORTNAME=	sympa
 PORTVERSION=	6.2.16
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	http://www.sympa.org/distribution/ \
 		http://www.sympa.org/distribution/old/
@@ -44,7 +45,6 @@ RUN_DEPENDS=	\
 	p5-MIME-Charset>=0:mail/p5-MIME-Charset	\
 	p5-Net-CIDR>=0:net-mgmt/p5-Net-CIDR	\
 	p5-Proc-ProcessTable>=0:devel/p5-Proc-ProcessTable	\
-	p5-Time-HiRes>=0:devel/p5-Time-HiRes	\
 	p5-Crypt-SMIME>=0:security/p5-Crypt-SMIME	\
 	p5-CGI>=0:www/p5-CGI \
 	p5-Data-Password>=0:security/p5-Data-Password
@@ -79,7 +79,8 @@ CONFIGURE_ARGS+=--bindir=${PREFIX}/bin \
 		--with-cgidir=${PREFIX}/libexec/${PORTNAME}	\
 		--without-smrshdir
 
-CONFIGURE_ENV+=	lt_cv_sys_max_cmd_len=${CONFIGURE_MAX_CMD_LEN}
+CONFIGURE_ENV+=	lt_cv_sys_max_cmd_len=${CONFIGURE_MAX_CMD_LEN} \
+		ac_cv_path_POSTALIAS=${LOCALBASE}/sbin/postalias
 MAKE_ENV?=	PERL_EXTUTILS_AUTOINSTALL=--skip
 SUB_FILES=	pkg-install pkg-message apache.sample nginx.sample fcgi.sample
 SUB_LIST=	DB_TYPE=${DB_TYPE} PERL=${PERL} WRKSRC=${WRKSRC} BINDIR=${STAGEDIR}${PREFIX}
@@ -92,7 +93,7 @@ CONFLICTS=	sympa-5*
 OPTIONS_DEFINE=	FASTCGI APACHE NLS
 OPTIONS_DEFAULT=APACHE
 OPTIONS_RADIO=	DATABASE
-OPTIONS_RADIO_DATABASE=	ORACLE PGSQL SYBASE MYSQL
+OPTIONS_RADIO_DATABASE=	PGSQL SYBASE MYSQL
 OPTIONS_SUB=	yes
 
 SYBASE_DESC=	Sybase database
@@ -114,8 +115,6 @@ APACHE_IMPLIES=	FASTCGI
 APACHE_USE=	APACHE_RUN=22+
 APACHE_RUN_DEPENDS=	${LOCALBASE}/${APACHEMODDIR}/mod_fastcgi.so:www/mod_fastcgi
 
-ORACLE_RUN_DEPENDS=	p5-DBD-Oracle>=0:databases/p5-DBD-Oracle
-ORACLE_VARS=	DB_TYPE=oracle
 PGSQL_SUB_LIST=	REQ_PGSQL=postgresql
 PGSQL_SUB_LIST_OFF=	REQ_PGSQL=""
 PGSQL_RUN_DEPENDS=	p5-DBD-Pg>=0:databases/p5-DBD-Pg

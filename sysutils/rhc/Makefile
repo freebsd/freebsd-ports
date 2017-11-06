@@ -3,7 +3,7 @@
 
 PORTNAME=	rhc
 PORTVERSION=	1.32.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	RG
 
@@ -13,8 +13,8 @@ COMMENT=	Administration console client for RedHat OpenShift
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${LOCALBASE}/bin/minitar:archivers/rubygem-archive-tar-minitar \
-		${LOCALBASE}/bin/commander:devel/rubygem-commander \
+RUN_DEPENDS=	minitar:archivers/rubygem-minitar-cli \
+		commander:devel/rubygem-commander \
 		rubygem-highline>=1.6.11:devel/rubygem-highline \
 		rubygem-httpclient>=2.4:www/rubygem-httpclient \
 		rubygem-net-scp>=1.1.2:security/rubygem-net-scp \

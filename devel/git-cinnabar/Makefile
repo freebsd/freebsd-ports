@@ -1,14 +1,16 @@
 # $FreeBSD$
 
 PORTNAME=	git-cinnabar
-DISTVERSION=	0.4.0rc2-24
-DISTVERSIONSUFFIX=	-g84b8e6b # release branch
+DISTVERSION=	0.5.0b2
+PORTREVISION=	6
 CATEGORIES=	devel
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Git remote helper to interact with Mercurial repositories
 
 LICENSE=	GPLv2
+
+BROKEN=		fails to build against git-2.15.*
 
 BUILD_DEPENDS=	${NONEXISTENT}:devel/git:configure
 RUN_DEPENDS=	git:devel/git \

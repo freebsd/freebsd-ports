@@ -27,7 +27,6 @@ RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/dmx.pc:x11/libdmx \
 		${LOCALBASE}/libdata/pkgconfig/xext.pc:x11/libXext \
 		${LOCALBASE}/libdata/pkgconfig/xfixes.pc:x11/libXfixes \
 		${LOCALBASE}/libdata/pkgconfig/xfont.pc:x11-fonts/libXfont \
-		${LOCALBASE}/libdata/pkgconfig/xfont.pc:x11-fonts/libXfont \
 		${LOCALBASE}/libdata/pkgconfig/xfontcache.pc:x11-fonts/libXfontcache \
 		${LOCALBASE}/libdata/pkgconfig/xft.pc:x11-fonts/libXft \
 		${LOCALBASE}/libdata/pkgconfig/xi.pc:x11/libXi \

@@ -1,12 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	portfind
-PORTVERSION=	1.6.1
-PORTREVISION=	1
+PORTVERSION=	1.6.3
 CATEGORIES=	ports-mgmt perl5
-MASTER_SITES=	http://dynsoft.com/files/
+MASTER_SITES=	http://gug-it.de/files/
 
-MAINTAINER=	thorsten@dynsoft.com
+MAINTAINER=	thorsten@gug-it.de
 COMMENT=	Search the ports tree
 
 LICENSE=	BSD3CLAUSE
@@ -16,6 +15,8 @@ RUN_DEPENDS=	sqlite3:databases/sqlite3
 
 USES=		perl5
 USE_PERL5=	build
+
+PLIST_FILES=	bin/portfind man/man1/portfind.1.gz
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/portfind ${STAGEDIR}${PREFIX}/bin

@@ -3,14 +3,14 @@
 
 PORTNAME=	nylon
 PORTVERSION=	1.21
-PORTREVISION=	7
+PORTREVISION=	9
 CATEGORIES=	net
 MASTER_SITES=	http://monkey.org/~marius/nylon/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Unix SOCKS 4 and 5 proxy server
 
-LIB_DEPENDS=	libevent.so:devel/libevent2
+LIB_DEPENDS=	libevent.so:devel/libevent
 
 USE_RC_SUBR=	nylon
 

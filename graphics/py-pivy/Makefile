@@ -15,6 +15,8 @@ LICENSE=	MIT
 BUILD_DEPENDS=	${LOCALBASE}/bin/swig:devel/swig13
 LIB_DEPENDS=	libSoQt.so:x11-toolkits/soqt
 
+BROKEN_powerpc64=	fails to link: coin_wrap.o: relocation truncated to fit: R_PPC64_TOC16_DS
+
 USES=		zip python:2
 USE_PYTHON=	autoplist distutils
 

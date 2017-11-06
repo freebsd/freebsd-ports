@@ -1,4 +1,4 @@
---- lib/hdb/Makefile.in.orig	2017-01-03 19:44:16 UTC
+--- lib/hdb/Makefile.in.orig	2017-06-10 19:27:47 UTC
 +++ lib/hdb/Makefile.in
 @@ -225,26 +225,46 @@ libhdb_la_LINK = $(LIBTOOL) $(AM_V_lt) -
  PROGRAMS = $(noinst_PROGRAMS)
@@ -51,7 +51,7 @@
  	../asn1/libasn1.la $(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
  	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1)
  AM_V_P = $(am__v_P_@AM_V@)
-@@ -574,7 +594,8 @@ heim_verbose_0 = @echo "  GEN    "$@;
+@@ -575,7 +595,8 @@ heim_verbose_0 = @echo "  GEN    "$@;
  BUILT_SOURCES = \
  	$(gen_files_hdb:.x=.c)	\
  	hdb_err.c \

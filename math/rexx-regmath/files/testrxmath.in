@@ -1,0 +1,123 @@
+#!/usr/local/bin/regina
+
+/*
+ * Tests and examples for RxMath
+ *
+ * Bob Eager   August 2017
+ *
+ */
+
+/* Load the library */
+
+rc = RxFuncAdd('MathLoadFuncs','rxmath','MathLoadFuncs')
+say 'MathLoadFuncs =>' rc
+call MathLoadFuncs
+
+say ''
+say '+++ Pi +++'
+
+rc = RxCalcPi()
+say 'RxCalcPi =>' rc
+
+say ''
+say '+++ Trig functions using degrees +++'
+
+rc = RxCalcSin(30)
+say "RxCalcSin(30) =>" rc '(should be about 0.5)'
+rc = RxCalcSin(30,'d')
+say "RxCalcSin(30,'d' =>" rc '(should be about 0.5)'
+rc = RxCalcSin(30,,6)
+say "RxCalcSin(30,,6) =>" rc '(should be about 0.5)'
+rc = RxCalcSin(30,'d',6)
+say "RxCalcSin(30,'d',6) =>" rc '(should be about 0.5)'
+rc = RxCalcArcSin(0.5,'d',6)
+say "RxCalcArcSin(0.5,'d',6) =>" rc '(should be about 30)'
+rc = RxCalcCos(30,'d',6)
+say "RxCalcCos(30,'d',6) =>" rc '(should be about 0.866025)'
+rc = RxCalcArcCos(0.866025,'d',6)
+say "RxCalcArcCos(0.866025,'d',6) =>" rc '(should be about 30)'
+rc = RxCalcTan(45,'d',6)
+say "RxCalcTan(45,'d',6) =>" rc '(should be about 1)'
+rc = RxCalcArcTan(1,'d',6)
+say "RxCalcArcTan(1,'d',6) =>" rc '(should be about 45)'
+rc = RxCalcCotan(30,'d',6)
+say "RxCalcCoTan(30,'d',6) =>" rc '(should be about 1.73205)'
+
+say ''
+say '+++ Trig functions using radians +++'
+
+pi = RxCalcPi()
+rad30 = 30*(pi/180)
+rad45 = 45*(pi/180)
+rc = RxCalcSin(rad30,'r',6)
+say "RxCalcSin(rad30,'r',6) =>" rc '(should be about 0.5)'
+rc = RxCalcArcSin(0.5,'r',6)
+say "RxCalcArcSin(0.5,'r',6) =>" rc '(should be about' format(rad30,1,6)')'
+rc = RxCalcCos(rad30,'r',6)
+say "RxCalcCos(rad30,'r',6) =>" rc '(should be about 0.866025)'
+rc = RxCalcArcCos(0.866025,'r',6)
+say "RxCalcArcCos(0.866025,'r',6) =>" rc '(should be about' format(rad30,1,6)')'
+rc = RxCalcTan(rad45,'r',6)
+say "RxCalcTan(rad45,'r',6) =>" rc '(should be about 1)'
+rc = RxCalcArcTan(1,'r',6)
+say "RxCalcArcTan(1,'r',6) =>" rc '(should be about' format(rad45,1,6)')'
+rc = RxCalcCoTan(rad30,'r',6)
+say "RxCalcCoTan(rad30,'r',6) =>" rc '(should be about 1.73205)'
+
+say ''
+say '+++ Trig functions using gradians +++'
+
+pi = RxCalcPi()
+grad30 = 30*(400/360)
+grad45 = 45*(400/360)
+rc = RxCalcSin(grad30,'g',6)
+say "RxCalcSin(grad30,'g',6) =>" rc '(should be about 0.5)'
+rc = RxCalcArcSin(0.5,'g',6)
+say "RxCalcArcSin(0.5,'g',6) =>" rc '(should be about' format(grad30,2,6)')'
+rc = RxCalcCos(grad30,'g',6)
+say "RxCalcCos(grad30,'g',6) =>" rc '(should be about 0.866025)'
+rc = RxCalcArcCos(0.866025,'g',6)
+say "RxCalcArcCos(0.866025,'g',6) =>" rc '(should be about' format(grad30,2,6)')'
+rc = RxCalcTan(grad45,'g',6)
+say "RxCalcTan(grad45,'g',6) =>" rc '(should be about 1)'
+rc = RxCalcArcTan(1,'g',6)
+say "RxCalcArcTan(1,'g',6) =>" rc '(should be about' format(grad45,2,6)')'
+rc = RxCalcCotan(grad30,'g',6)
+say "RxCalcCoTan(grad30,'g',6) =>" rc '(should be about 1.73205)'
+
+say ''
+say '+++ Exponential functions +++'
+
+rc = RxCalcExp(0)
+say 'RxCalcExp(0) =>' rc '(should be about 1)'
+rc = RxCalcExp(0,6)
+say 'RxCalcExp(0,6) =>' rc '(should be about 1)'
+rc = RxCalcExp(1,6)
+say 'RxCalcExp(1,6) =>' rc '(should be about 2.71828)'
+rc = RxCalcLog(1,6)
+say 'RxCalcLog(1,6) =>' rc '(should be about 0)'
+rc = RxCalcLog10(2,6)
+say 'RxCalcLog10(2,6) =>' rc '(should be about 0.30103)'
+rc = RxCalcSqrt(2,6)
+say 'RxCalcSqrt(2,6) =>' rc '(should be about 1.41421)'
+rc = RxCalcPower(3,3)
+say 'RxCalcPower(3,3) =>' rc '(should be about 27)'
+rc = RxCalcPower(3,3,6)
+say 'RxCalcPower(3,3,6) =>' rc '(should be about 27)'
+
+say ''
+say '+++ Hyperbolic functions +++'
+
+rc = RxCalcSinH(2)
+say 'RxCalcSinH(2) =>' rc '(should be about 3.6268604)'
+rc = RxCalcSinH(2,6)
+say 'RxCalcSinH(2,6) =>' rc '(should be about 3.6268604)'
+rc = RxCalcCosH(2,6)
+say 'RxCalcCosH(2,6) =>' rc '(should be about 3.7621956)'
+rc = RxCalcTanH(2,6)
+say 'RxCalcTanH(2,6) =>' rc '(should be about 0.9640275)'
+
+exit
+
+/* end */
+

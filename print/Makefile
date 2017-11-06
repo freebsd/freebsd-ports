@@ -6,7 +6,6 @@
     SUBDIR += R-cran-knitr
     SUBDIR += a2pdf
     SUBDIR += a2ps
-    SUBDIR += abc2mtex
     SUBDIR += abcm2ps
     SUBDIR += adobe-cmaps
     SUBDIR += afm
@@ -15,7 +14,6 @@
     SUBDIR += apsfilter
     SUBDIR += asprint
     SUBDIR += auctex
-    SUBDIR += axpoint
     SUBDIR += bibcursed
     SUBDIR += biblio-py
     SUBDIR += bibview
@@ -33,6 +31,7 @@
     SUBDIR += cups-pk-helper
     SUBDIR += cups-smb-backend
     SUBDIR += deforaos-pdfviewer
+    SUBDIR += derelict-ft
     SUBDIR += detex
     SUBDIR += dot2tex
     SUBDIR += dvi2tty
@@ -43,6 +42,8 @@
     SUBDIR += enscript-a4
     SUBDIR += enscript-letter
     SUBDIR += enscript-letterdj
+    SUBDIR += epson-inkjet-printer-201401w
+    SUBDIR += epson-inkjet-printer-201601w
     SUBDIR += epson-inkjet-printer-escpr
     SUBDIR += epsonepl
     SUBDIR += fig2dev
@@ -83,12 +84,9 @@
     SUBDIR += gsview
     SUBDIR += gtklp
     SUBDIR += gutenprint
-    SUBDIR += gutenprint-base
-    SUBDIR += gutenprint-cups
-    SUBDIR += gutenprint-foomatic
-    SUBDIR += gutenprint-ijs
     SUBDIR += gv
     SUBDIR += harfbuzz
+    SUBDIR += harfbuzz-icu
     SUBDIR += hp2xx
     SUBDIR += hpijs
     SUBDIR += hplip
@@ -138,7 +136,6 @@
     SUBDIR += mp-a4
     SUBDIR += mp-letter
     SUBDIR += mpage
-    SUBDIR += musixtex
     SUBDIR += muttprint
     SUBDIR += nenscript
     SUBDIR += okc321
@@ -153,6 +150,7 @@
     SUBDIR += p5-PostScript-Simple
     SUBDIR += p5-Text-PDF
     SUBDIR += p5-XML-ApacheFOP
+    SUBDIR += p5-XML-Handler-AxPoint
     SUBDIR += p910nd
     SUBDIR += panda
     SUBDIR += papersize-default-a4
@@ -165,6 +163,7 @@
     SUBDIR += pdfcube
     SUBDIR += pdflib
     SUBDIR += pdflib-perl
+    SUBDIR += pdfstitch
     SUBDIR += pdftk
     SUBDIR += pear-File_PDF
     SUBDIR += pecl-haru
@@ -193,16 +192,21 @@
     SUBDIR += py-fonttools
     SUBDIR += py-fpdf
     SUBDIR += py-pdf
+    SUBDIR += py-pdf2
     SUBDIR += py-pollyreports
     SUBDIR += py-preppy
     SUBDIR += py-pycups
     SUBDIR += py-pyscript
+    SUBDIR += py-python-ly
     SUBDIR += py-qt5-printsupport
     SUBDIR += py-relatorio
     SUBDIR += py-reportlab
     SUBDIR += py-reportlab1
     SUBDIR += py-rtf
+    SUBDIR += py-stapler
     SUBDIR += py-trml2pdf
+    SUBDIR += py3-fonttools
+    SUBDIR += py3-pycups
     SUBDIR += qpdf
     SUBDIR += qpdfview
     SUBDIR += qt5-printsupport
@@ -224,6 +228,7 @@
     SUBDIR += rubygem-prawn-layout
     SUBDIR += rubygem-prawn-security
     SUBDIR += rubygem-prawn-svg
+    SUBDIR += rubygem-prawn_shapes
     SUBDIR += rubygem-rbpdf
     SUBDIR += rubygem-rbpdf-font
     SUBDIR += rubygem-ttfunk

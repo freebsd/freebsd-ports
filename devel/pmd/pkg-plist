@@ -30,6 +30,7 @@ bin/pmd
 %%DATADIR%%/pmd-scala-%%PORTVERSION%%.jar
 %%DATADIR%%/pmd-swift-%%PORTVERSION%%.jar
 %%DATADIR%%/pmd-ui-%%PORTVERSION%%.jar
+%%DATADIR%%/pmd-visualforce-%%PORTVERSION%%.jar
 %%DATADIR%%/pmd-vm-%%PORTVERSION%%.jar
 %%DATADIR%%/pmd-xml-%%PORTVERSION%%.jar
 %%DATADIR%%/rhino-1.7.7.jar

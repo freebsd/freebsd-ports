@@ -3,6 +3,7 @@
 
 PORTNAME=	cataclysm-dda
 PORTVERSION=	0.C
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	games
 
@@ -12,7 +13,11 @@ COMMENT=	Fork/variant of Cataclysm Roguelike by Whales
 LICENSE=	CC-BY-SA-3.0
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USES=		alias compiler:c++11-lib execinfo gmake shebangfix
+BROKEN_aarch64=		fails to compile: comparison of integers of different signs: wchar_t and const int
+BROKEN_armv6=		fails to compile: comparison of integers of different signs: wchar_t and const int
+BROKEN_powerpc64=	fails to compile: overmap.cpp: 'pow' is not a member of 'std'
+
+USES=		alias compiler:c++11-lib gmake shebangfix
 SHEBANG_FILES=	lang/*.sh
 bash_CMD=	/bin/sh
 
@@ -22,8 +27,7 @@ GH_PROJECT=	Cataclysm-DDA
 
 MAKE_ARGS=	CXX="${CXX}" LD="${CXX}" RELEASE=1
 
-CPPFLAGS+=	${EXECINFO_CPPFLAGS}
-LDFLAGS+=	${EXECINFO_LDFLAGS} -lexecinfo
+LDFLAGS+=	-lexecinfo
 
 MAKE_JOBS_UNSAFE=	yes
 
@@ -58,8 +62,6 @@ SOUND_MAKE_ARGS=	SOUND=1
 SOUND_IMPLIES=		SDL
 
 SOUND_FILES=	cataclysmthemeREV6.ogg Dark_Days_Ahead_demo_2.ogg
-
-BROKEN_aarch64=		Fails to compile: error: comparison of integers of different signs: wchar_t and const int
 
 .include <bsd.port.pre.mk>
 

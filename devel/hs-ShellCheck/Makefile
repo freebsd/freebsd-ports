@@ -1,10 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	ShellCheck
-PORTVERSION=	0.4.4
+PORTVERSION=	0.4.6
 CATEGORIES=	devel haskell
 
-MAINTAINER=	luca.pizzamiglio@gmail.com
+MAINTAINER=	pizzamig@FreeBSD.org
 COMMENT=	Shell script analysis tool
 
 LICENSE=	GPLv3

@@ -12,7 +12,7 @@ COMMENT=	Hacked version of a Links WWW browser
 
 LICENSE=	GPLv2
 
-USES=		autoreconf execinfo ssl
+USES=		autoreconf ssl
 USE_CSTD=	gnu89
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-ssl --without-pmshell --without-atheos --without-fb

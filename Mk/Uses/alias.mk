@@ -8,7 +8,7 @@
 # Usage:        USES=alias or USES=alias:ARGS
 # Valid ARGS:   9 (default), 10, 11
 #
-# MAINTAINER:	marino@FreeBSD.org
+# MAINTAINER:	ports@FreeBSD.org
 
 .if !defined(_INCLUDE_USES_ALIAS_MK)
 _INCLUDE_USES_ALIAS_MK=    yes

@@ -22,8 +22,8 @@ COMPILE_DESC=	Install the pre-compiled .jar file
 
 .if ${PORT_OPTIONS:MCOMPILE}
 USE_ANT=	yes
+USE_LOCALE=	en_US.ISO8859-1
 ALL_TARGET=	build
-MAKE_ENV=	LANG=en_US.ISO8859-1
 .if ${PORT_OPTIONS:MDOCS}
 ALL_TARGET+=	javadoc
 .endif

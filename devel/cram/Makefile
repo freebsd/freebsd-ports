@@ -8,9 +8,10 @@ MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	cem@FreeBSD.org
-COMMENT=	A simple testing framework for command line applications
+COMMENT=	Simple testing framework for command line applications
 
 LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING.txt
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}check-manifest>=0:devel/py-check-manifest \
 		${PYTHON_PKGNAMEPREFIX}coverage>=0:devel/py-coverage \

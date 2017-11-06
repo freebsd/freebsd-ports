@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	gsoap
-PORTVERSION=	2.8.33
+PORTVERSION=	2.8.54
 CATEGORIES=	devel
-MASTER_SITES=	SF/${PORTNAME}2/gSOAP
+MASTER_SITES=	SF/${PORTNAME}2/gsoap-2.8
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	bofh@FreeBSD.org
@@ -27,13 +27,14 @@ GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls \
 GNUTLS_CONFIGURE_ON=	--enable-gnutls
 GNUTLS_LDFLAGS=		-L${LOCALBASE}/lib
 OPENSSL_CONFIGURE_ENABLE=	ssl
+CFLAGS+=	-fPIC
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|sys/timeb.h | |' \
 	    -e 's|-DSOAPCPP_IMPORT_PATH=|-DSOAPCPP2_IMPORT_PATH=|' \
 	    -e 's|-DWSDL_IMPORT_PATH=|-DWSDL2H_IMPORT_PATH=|' \
 	    ${WRKSRC}/configure.ac
-	${REINPLACE_CMD} -e 's|$$(libdir)|$$(libdir)data|' \
+	@${REINPLACE_CMD} -e 's|$$(libdir)|$$(libdir)data|' \
 	    ${WRKSRC}/Makefile.am
 
 post-install:

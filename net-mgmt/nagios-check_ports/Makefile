@@ -2,19 +2,22 @@
 # $FreeBSD$
 
 PORTNAME=	check_ports
-PORTVERSION=	0.7.1
+PORTVERSION=	0.7.3
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
 CATEGORIES=	net-mgmt
 PKGNAMEPREFIX=	nagios-
 
 MAINTAINER=	ryanrfrederick@gmail.com
-COMMENT=	monitor FreeBSD ports for updates or vulnerabilities
+COMMENT=	Monitor FreeBSD ports for updates or vulnerabilities
+
+LICENSE=	BSD2CLAUSE
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	rfrederick
 
 NO_BUILD=	yes
+
+PLIST_FILES=	libexec/nagios/check_ports
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/libexec/nagios

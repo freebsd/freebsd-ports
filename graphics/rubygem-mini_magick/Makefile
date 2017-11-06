@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mini_magick
-PORTVERSION=	4.2.10
+PORTVERSION=	4.8.0
 CATEGORIES=	graphics rubygems
 MASTER_SITES=	RG
 
@@ -10,6 +10,7 @@ MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Manipulate images with minimal use of memory via ImageMagick
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
 OPTIONS_DEFINE=	X11
 OPTIONS_DEFAULT=X11

@@ -322,7 +322,7 @@ kgdb_thr_next(struct kthr *kt)
 	return (kt->next);
 }
 
-char *
+const char *
 kgdb_thr_extra_thread_info(int tid)
 {
 	char comm[MAXCOMLEN + 1];

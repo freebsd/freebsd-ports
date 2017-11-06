@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	widelands
-DISTVERSION=	build18
-PORTREVISION=	8
+DISTVERSION=	build19
+PORTREVISION=	4
 CATEGORIES=	games
-MASTER_SITES=	https://launchpadlibrarian.net/167260749/ \
+MASTER_SITES=	https://launchpad.net/widelands/${DISTVERSION}/${DISTVERSION}/+download/ \
 		http://mirror.amdmi3.ru/distfiles/
 DISTNAME=	${PORTNAME}-${DISTVERSION}-src
 
@@ -15,23 +15,22 @@ COMMENT=	Realtime strategy game inspired by Settlers II
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libpng.so:graphics/png
-BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:devel/boost-libs
+LIB_DEPENDS=	libpng.so:graphics/png \
+		libicuuc.so:devel/icu \
+		libboost_regex.so:devel/boost-libs
 
-USES=		cmake:outsource compiler:c++11-lib execinfo gettext \
-		lua:51 tar:bzip2 python:build
-CMAKE_ARGS=	-DWL_INSTALL_PREFIX="${PREFIX}" \
-		-DWL_INSTALL_DATADIR="share/widelands" \
-		-DWL_INSTALL_BINDIR="bin" \
+USES=		cmake:outsource compiler:c++11-lib gettext \
+		tar:bzip2 python:build
+CMAKE_ARGS=	-DWL_INSTALL_BASEDIR="${PREFIX}" \
+		-DWL_INSTALL_DATADIR="${DATADIR}" \
+		-DWL_INSTALL_DOCDIR="${DOCSDIR}" \
 		-DWL_VERSION="${DISTVERSION}" \
-		-DWL_COMPILERFLAG_OPTIMIZATIONS=""
-USE_GL=		glew
-USE_SDL=	sdl mixer image net ttf gfx
+		-DWL_OPTIMIZE_FLAGS=""
+USE_GL=		gl glew
+USE_SDL=	sdl2 mixer2 image2 net2 ttf2
 
-PLIST_FILES=	bin/widelands
 PORTDATA=	*
-PLIST_DIRS=	%%DATADIR%%/maps/Desert\ Tournament.wmf/scripting \
-		%%DATADIR%%/maps/Swamp\ Monks.wmf/scripting
+PORTDOCS=	*
 
 DESKTOP_ENTRIES="Widelands" \
 		"" \

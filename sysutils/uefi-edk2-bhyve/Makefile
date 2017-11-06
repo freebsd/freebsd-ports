@@ -2,7 +2,7 @@
 
 PORTNAME=	uefi-edk2-bhyve
 PORTVERSION=	20160704
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 
 MAINTAINER=	fabian.freyer@physik.tu-berlin.de

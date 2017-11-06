@@ -1,6 +1,6 @@
---- mutt.h.orig	2016-10-08 19:30:21 UTC
+--- mutt.h.orig	2017-09-04 23:39:03 UTC
 +++ mutt.h
-@@ -190,6 +190,7 @@ enum
+@@ -211,6 +211,7 @@ enum
    MUTT_EXPIRED,
    MUTT_SUPERSEDED,
    MUTT_TRASH,
@@ -8,7 +8,7 @@
  
    /* actions for mutt_pattern_comp/mutt_pattern_exec */
    MUTT_AND,
---- pattern.c.orig	2016-10-08 19:30:21 UTC
+--- pattern.c.orig	2017-09-04 23:39:03 UTC
 +++ pattern.c
 @@ -56,6 +56,7 @@ static const struct pattern_flags
  }
@@ -18,10 +18,10 @@
    { 'A', MUTT_ALL,			0,		NULL },
    { 'b', MUTT_BODY,		MUTT_FULL_MSG,	eat_regexp },
    { 'B', MUTT_WHOLE_MSG,		MUTT_FULL_MSG,	eat_regexp },
-@@ -1185,6 +1186,16 @@ mutt_pattern_exec (struct pattern_t *pat
-                                              2, h->env->to, h->env->cc));
-     case MUTT_LIST:	/* known list, subscribed or not */
-       return (pat->not ^ mutt_is_list_cc (pat->alladdr, h->env->to, h->env->cc));
+@@ -1270,6 +1271,16 @@ mutt_pattern_exec (struct pattern_t *pat
+       else
+         result = mutt_is_list_cc (pat->alladdr, h->env->to, h->env->cc);
+       return (pat->not ^ result);
 +    case MUTT_THREADCOMPLETE:
 +      { static pattern_t tmp;
 +        static short pattern_set = 0;
@@ -33,5 +33,5 @@
 +        return (pat->not ^ (h->env && match_threadcomplete(&tmp, flags, ctx, h->thread, 1, 1, 1, 1)));
 +      } 
      case MUTT_SUBSCRIBED_LIST:
-       return (pat->not ^ mutt_is_list_recipient (pat->alladdr, h->env->to, h->env->cc));
-     case MUTT_PERSONAL_RECIP:
+       if (cache)
+       {

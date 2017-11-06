@@ -3,7 +3,7 @@
 
 PORTNAME=	catapult
 PORTVERSION=	0.13.0
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	emulators
 MASTER_SITES=	https://github.com/openMSX/openMSX/releases/download/RELEASE_${PORTVERSION:S/./_/g}/
 DISTNAME=	openmsx-${PORTNAME}-${PORTVERSION}
@@ -35,6 +35,9 @@ MAKE_ARGS=	INSTALL_BASE="${PREFIX}" \
 		PYTHON="${PYTHON_CMD}"
 
 MAKE_JOBS_UNSAFE=	yes
+
+BROKEN_aarch64=	fails to link: fails to detect libxml2 even though it is installed
+BROKEN_armv6=	fails to link: fails to detect libxml2 even though it is installed
 
 .include <bsd.port.options.mk>
 

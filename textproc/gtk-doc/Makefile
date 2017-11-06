@@ -3,7 +3,7 @@
 #    $MCom: ports/trunk/textproc/gtk-doc/Makefile 19804 2014-08-13 14:55:11Z kwm $
 
 PORTNAME=	gtk-doc
-PORTVERSION=	1.24
+PORTVERSION=	1.25
 CATEGORIES=	textproc
 MASTER_SITES=	GNOME
 

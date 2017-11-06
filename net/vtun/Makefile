@@ -10,12 +10,12 @@ MASTER_SITES=	SF
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Virtual Tunnels over TCP/IP networks with traffic shaping
 
-LICENSE=        GPLv2
+LICENSE=	GPLv2
 
 LIB_DEPENDS=	liblzo2.so:archivers/lzo2
 
-CFLAGS+=	-ansi -Wno-pointer-sign -I${LOCALBASE}/include
-USES=		autoreconf ssl
+CFLAGS+=	-ansi -Wno-pointer-sign
+USES=		autoreconf localbase ssl
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=/var \
 		--with-ssl-headers=${OPENSSLINC} \

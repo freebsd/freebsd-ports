@@ -2,15 +2,18 @@
 # $FreeBSD$
 
 PORTNAME=	php-libawl
-PORTVERSION=	0.54
+PORTVERSION=	0.57
+DISTVERSIONPREFIX=	r
 CATEGORIES=	devel
-MASTER_SITES=	http://debian.mcmillan.net.nz/debian/pool/awm/a/awl/
-DISTNAME=	awl-${PORTVERSION}
+MASTER_SITES=	https://gitlab.com/davical-project/awl/repository/archive.tar.gz?ref=${DISTVERSIONPREFIX}${PORTVERSION}&dummy=/
+DISTNAME=	awl-${DISTVERSIONPREFIX}${PORTVERSION}
 
 MAINTAINER=	cristianorolim@outlook.com
 COMMENT=	Andrew.s Web Libraries - PHP Utility Libraries
 
-WRKSRC=		${WRKDIR}/awl-${PORTVERSION}
+LICENSE=	GPLv2 LGPL21
+LICENSE_COMB=	multi
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 OPTIONS_DEFINE=	PHP
 OPTIONS_DEFAULT=	PHP
@@ -27,6 +30,9 @@ PLIST_SUB+=	LIBAWLDIR=${LIBAWLDIR}
 pre-everything::
 	@${ECHO_CMD} "# you can customize the installation directory"
 	@${ECHO_CMD} "# by setting LIBAWLDIR in /etc/make.conf"
+
+post-extract:
+	@${MV} ${WRKDIR}/${DISTNAME}-* ${WRKSRC}
 
 post-patch:
 	${RM} ${WRKSRC}/inc/*.orig

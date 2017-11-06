@@ -1,6 +1,6 @@
 --- Makefile.am.orig	2014-06-10 17:24:39.000000000 +0000
 +++ Makefile.am
-@@ -7,18 +7,15 @@ SCOREFILE = xlogical.scores
+@@ -7,18 +7,12 @@ SCOREFILE = xlogical.scores
  FILEOWNER = bin
  FILEGROUP = games
  install-exec-am: $(bin_PROGRAMS)
@@ -19,11 +19,8 @@
 -	chmod 660 $(localstatedir)/xlogical/xlogical.scores
 +	$(SHELL) ./mkinstalldirs $(DESTDIR)$(datadir)/xlogical
 +	$(BSD_INSTALL_DATA) $(DATAFILES) $(DESTDIR)$(datadir)/xlogical
-+	chmod 640 $(DESTDIR)$(datadir)/xlogical/xlogical.levels
-+	chmod 644 $(DESTDIR)$(datadir)/xlogical/xlogical.properties
 +	$(SHELL) ./mkinstalldirs $(DESTDIR)$(localstatedir)/xlogical
-+	$(BSD_INSTALL_DATA) $(SCOREFILE) $(DESTDIR)$(localstatedir)/xlogical
-+	chmod 660 $(DESTDIR)$(localstatedir)/xlogical/xlogical.scores
++	$(BSD_INSTALL_DATA) $(SCOREFILE) $(DESTDIR)$(localstatedir)/xlogical/$(SCOREFILE).sample
  uninstall:
  	rm -f $(datadir)/xlogical/xlogical.levels
  	rm -f $(datadir)/xlogical/xlogical.properties

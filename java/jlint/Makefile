@@ -3,7 +3,7 @@
 
 PORTNAME=	jlint
 PORTVERSION=	3.1.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	java devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -12,8 +12,6 @@ COMMENT=	Java program analyzer and checker
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
-
-USE_GCC=	yes
 
 PLIST_FILES=	bin/jlint \
 		bin/jlint.sh \

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rubinius
-PORTVERSION=	3.69
+PORTVERSION=	3.86
 CATEGORIES=	lang
 MASTER_SITES=	http://releases.rubini.us/:source
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:source
@@ -11,15 +11,13 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	LLVM based ruby language implementation
 
-LICENSE=	MPL
+LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/bundle:sysutils/rubygem-bundler \
 		${LOCALBASE}/bin/bison:devel/bison \
 		${LLVM_CONFIG_PATH}:${LLVM_PORT}
 LIB_DEPENDS=	libyaml.so:textproc/libyaml
-
-BROKEN_RUBY23=	yes
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	-P "${PREFIX}" \
@@ -39,18 +37,17 @@ CONFIGURE_ARGS=	-P "${PREFIX}" \
 		--system-name ${OPSYS}
 
 OPTIONS_RADIO=		LLVM
-OPTIONS_DEFAULT=	LLVM39
-OPTIONS_RADIO_LLVM=	LLVM36 LLVM37 LLVM38 LLVM39
+OPTIONS_DEFAULT=	LLVM40
+OPTIONS_RADIO_LLVM=	LLVM38 LLVM39 LLVM40
 
 ONLY_FOR_ARCHS=	amd64
 
-LLVM36_DESC=	LLVM 3.6
-LLVM37_DESC=	LLVM 3.7
 LLVM38_DESC=	LLVM 3.8
 LLVM39_DESC=	LLVM 3.9
+LLVM40_DESC=	LLVM 4.0
 
-USES=		execinfo gmake perl5 readline tar:bzip2 libedit
-USE_OPENSSL=	yes
+USES=		gmake perl5 readline tar:bzip2 libedit ssl
+USE_LOCALE=	en_US.UTF-8
 USE_RUBY=	yes
 RUBY_NO_RUN_DEPENDS=	yes
 USE_PERL5=	build
@@ -70,9 +67,6 @@ MAKE_ENV+=	HOME=${WRKSRC}
 # Hack to switch to a local gem path so locally activated rake can be used
 MAKE_ENV+=	GEM_PATH=${GEM_PATH}
 
-# Hack to build under a UTF-8 locale
-MAKE_ENV+=	LANG=en_US.UTF-8
-
 F_OS=		${OPSYS:tl}
 F_MAJOR=	${OSREL:C/\..*$//}
 FREEBSD_DIR=	${F_ARCH}-${F_OS}-${F_MAJOR}
@@ -80,14 +74,6 @@ LLVM_CC_PATH=	${LOCALBASE}/bin/${LLVM_CC}
 LLVM_CXX_PATH=	${LOCALBASE}/bin/${LLVM_CXX}
 LLVM_CONFIG_PATH=	${LOCALBASE}/bin/${LLVM_CONFIG}
 
-LLVM36_VARS=	LLVM_CONFIG=llvm-config36 \
-		LLVM_PORT=devel/llvm36 \
-		LLVM_CC=clang36 \
-		LLVM_CXX=clang++36
-LLVM37_VARS=	LLVM_CONFIG=llvm-config37 \
-		LLVM_PORT=devel/llvm37 \
-		LLVM_CC=clang37 \
-		LLVM_CXX=clang++37
 LLVM38_VARS=	LLVM_CONFIG=llvm-config38 \
 		LLVM_PORT=devel/llvm38 \
 		LLVM_CC=clang38 \
@@ -96,12 +82,12 @@ LLVM39_VARS=	LLVM_CONFIG=llvm-config39 \
 		LLVM_PORT=devel/llvm39 \
 		LLVM_CC=clang39 \
 		LLVM_CXX=clang++39
+LLVM40_VARS=	LLVM_CONFIG=llvm-config40 \
+		LLVM_PORT=devel/llvm40 \
+		LLVM_CC=clang40 \
+		LLVM_CXX=clang++40
 
 .include <bsd.port.pre.mk>
-
-.if !exists(/usr/lib/libexecinfo.so)
-CONFIGURE_ARGS+=	--with-opt-dir "${LOCALBASE}"
-.endif
 
 .if ${ARCH} == "sparc64"
 BROKEN=		Does not compile on sparc64

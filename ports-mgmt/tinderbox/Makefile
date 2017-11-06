@@ -3,7 +3,7 @@
 
 PORTNAME=	tinderbox
 PORTVERSION=	4.2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	http://tinderbox.marcuscom.com/
 DIST_SUBDIR=	${PORTNAME}
@@ -49,7 +49,7 @@ WEBUI=		yes
 .endif
 
 .if defined(WEBUI)
-WANT_PHP_WEB=	yes
+USES+=		php:web
 USE_PHP=	session
 PLIST_SUB+=	WEBUI=""
 .else
@@ -68,7 +68,7 @@ RUN_DEPENDS+=	p5-DBD-Pg>=0:databases/p5-DBD-Pg
 .if defined(WEBUI)
 USE_PHP+=	mysql pdo_mysql
 .endif
-USE_MYSQL=	yes
+USES+=		mysql
 RUN_DEPENDS+=	p5-DBD-mysql>=0:databases/p5-DBD-mysql
 .endif
 
@@ -87,10 +87,6 @@ RUN_DEPENDS+=	lighttpd:www/lighttpd
 RUN_DEPENDS+=	hiawatha:www/hiawatha
 .elif ${PORT_OPTIONS:MNGINX}
 RUN_DEPENDS+=	nginx:www/nginx
-.endif
-
-.if ${PORT_OPTIONS:MEMAILS}
-RUN_DEPENDS+=	p5-Net>=0:net/p5-Net
 .endif
 
 .if ${PORT_OPTIONS:MLSOF}

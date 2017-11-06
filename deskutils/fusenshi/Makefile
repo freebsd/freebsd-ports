@@ -3,14 +3,15 @@
 
 PORTNAME=	fusenshi
 PORTVERSION=	0.9.0
-PORTREVISION=	14
+PORTREVISION=	15
 CATEGORIES=	deskutils
 MASTER_SITES=	http://www.ongs.co.jp/projects/fusenshi/
 
 MAINTAINER=	ozawa@ongs.co.jp
 COMMENT=	Post-it(R) like application with network support
 
-USES=		gettext pkgconfig tar:tgz
+USES=		compiler:c++11-lang gettext pkgconfig tar:tgz
+USE_CXXSTD=	c++11
 USE_GNOME=	gtkmm24 gtksourceview libxml2
 USE_XORG=	x11
 MAKE_JOBS_UNSAFE=	yes

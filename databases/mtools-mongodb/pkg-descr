@@ -21,4 +21,4 @@ complex MongoDB test environments on a local machine:
 * mgenerate * generates structured pseudo-random data based on a
   template for testing and reproduction.
 
-WWW: https://github.com/rueckstiess/mtools/
+WWW: https://github.com/rueckstiess/mtools

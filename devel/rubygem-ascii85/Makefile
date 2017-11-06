@@ -8,13 +8,12 @@ MASTER_SITES=	RG
 DISTNAME=	Ascii85-${PORTVERSION}
 
 MAINTAINER=	ruby@FreeBSD.org
-COMMENT=	Encode/decode Adobe's binary-to-text encoding of the same name
+COMMENT=	Encode/decode Adobe's binary-to-text encoding of the same name #'
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-GEM_NAME=	${DISTNAME}
 NO_ARCH=	yes
-
 USE_RUBY=	yes
 USES=		gem
 

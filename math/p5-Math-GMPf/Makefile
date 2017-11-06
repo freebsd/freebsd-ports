@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Math-GMPf
-PORTVERSION=	0.42
+PORTVERSION=	0.43
 CATEGORIES=	math perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Perl interface to the GMP library floating point (mpf) functions
 
-LICENSE=	ART10 GPLv1
+LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 LIB_DEPENDS=	libgmp.so:math/gmp

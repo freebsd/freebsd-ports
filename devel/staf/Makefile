@@ -3,7 +3,7 @@
 
 PORTNAME=	staf
 PORTVERSION=	3.4.23
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel net
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/V${PORTVERSION}
 DISTNAME=	STAF${PORTVERSION:S/.//g}-src
@@ -108,9 +108,7 @@ STAF_VAR_DIR?=	/var/db/STAF
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MPERL}
-.if ${PERL_LEVEL} >= 502200
 BROKEN=	Perl >= 5.22 is not supported
-.endif
 
 .for i in ${STAF_PERL_VERSIONS}
 .if ${PERL_V} != ${i}

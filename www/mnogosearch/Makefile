@@ -48,7 +48,7 @@ SQLITE3_CONFIGURE_ON=	--with-sqlite3=${LOCALBASE}
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSSL}
-USE_OPENSSL=	yes
+USES+=	ssl
 .endif
 
 .if ${PORT_OPTIONS:MTHREADS}

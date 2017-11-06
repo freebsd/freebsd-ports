@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	monad-control
-PORTVERSION=	1.0.0.4
+PORTVERSION=	1.0.2.1
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org

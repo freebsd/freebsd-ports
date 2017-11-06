@@ -3,11 +3,11 @@
 
 PORTNAME=	kile
 PORTVERSION=	2.1.3
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	editors kde
 MASTER_SITES=	SF/${PORTNAME}/stable/${PORTNAME}-${DISTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	kde@FreeBSD.org
 COMMENT=	LaTeX source editor for KDE
 
 RUN_DEPENDS=	identify:graphics/ImageMagick

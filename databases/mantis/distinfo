@@ -1,2 +1,15 @@
-SHA256 (mantisbt-1.2.19.tar.gz) = 0814d2113de4a53498bb67fa531ca36dee821e5c22df150deb75dc918eed86de
-SIZE (mantisbt-1.2.19.tar.gz) = 2615171
+TIMESTAMP = 1506987384
+SHA256 (mantisbt-mantisbt-2.6.0-063cce6182568cf2eba81e3ca59cdd67606e7bab_GH0.tar.gz) = 22c221478380f3cafc9d5ccdaa3916b7826327750ebf75b746b324b77df40855
+SIZE (mantisbt-mantisbt-2.6.0-063cce6182568cf2eba81e3ca59cdd67606e7bab_GH0.tar.gz) = 4523391
+SHA256 (mantisbt-swagger-ui-0beaf61f94c3e6359ee0cdaf7b23ad4b365d761f_GH0.tar.gz) = 5c67f724da6d2daa8931920b82f92319098badc47b57848c385a942a1420bdf4
+SIZE (mantisbt-swagger-ui-0beaf61f94c3e6359ee0cdaf7b23ad4b365d761f_GH0.tar.gz) = 1401641
+SHA256 (mantisbt-ADOdb-cc2c13e337f1441e3aa1e17497722c1cd98b281b_GH0.tar.gz) = a9334857b2dfefb42273f5296ef89166e6d65fcca26857702bce579ba1add102
+SIZE (mantisbt-ADOdb-cc2c13e337f1441e3aa1e17497722c1cd98b281b_GH0.tar.gz) = 342578
+SHA256 (mantisbt-disposable_email_checker-6a7ddc0598810bdb91d270b489cec2e1033e047f_GH0.tar.gz) = a2df1d7eb889ee175abb9c9d7a698260416bdb9c8d768262f68ca2050563921f
+SIZE (mantisbt-disposable_email_checker-6a7ddc0598810bdb91d270b489cec2e1033e047f_GH0.tar.gz) = 9205
+SHA256 (mantisbt-parsedown-20ff8bbb57205368b4b42d094642a3e52dac85fb_GH0.tar.gz) = a5fa28b2c0a546e34679ea78a9dbd811820351bd9b64df97d0b1fd29eb94f26b
+SIZE (mantisbt-parsedown-20ff8bbb57205368b4b42d094642a3e52dac85fb_GH0.tar.gz) = 17633
+SHA256 (mantisbt-PHPMailer-e066a6277ad41fcfdb8d3b8536aaa55ec9b6399b_GH0.tar.gz) = 61ef72758060af029320478343f70250aea6cf3434e526283c0911ba907ba1ab
+SIZE (mantisbt-PHPMailer-e066a6277ad41fcfdb8d3b8536aaa55ec9b6399b_GH0.tar.gz) = 92355
+SHA256 (mantisbt-securimage-65d446e137db4fe84e7f7edb9e7b06fce521a63b_GH0.tar.gz) = 490a47dd550e20de5a8f1f4841e55803232ab5716e502cc1e292cdc7dc52af30
+SIZE (mantisbt-securimage-65d446e137db4fe84e7f7edb9e7b06fce521a63b_GH0.tar.gz) = 7590715

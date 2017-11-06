@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	amanda
-PORTVERSION=	3.3.6
-PORTREVISION=	3
+PORTVERSION=	3.3.9
 PORTEPOCH=	1
 CATEGORIES=	misc
 MASTER_SITES=	SF/amanda/amanda%20-%20stable/${PORTVERSION}
@@ -20,9 +19,8 @@ SLAVEDIRS=	misc/amanda-client
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
-USES=		charsetfix gmake libtool perl5 pkgconfig
+USES=		charsetfix gmake libtool perl5 pkgconfig ssl
 USE_GNOME=	glib20
-USE_OPENSSL=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--libexecdir=${PREFIX}/libexec/amanda \
 		--without-amlibexecdir \
@@ -33,7 +31,7 @@ CONFIGURE_ARGS=	--libexecdir=${PREFIX}/libexec/amanda \
 		--with-user=${USERS} --with-group=${AMANDA_GROUP} \
 		--with-bsdtcp-security --with-bsdudp-security \
 		--with-ssh-security \
-		--disable-installperms
+		--disable-installperms --with-security-file=${ETCDIR}/security.conf
 CONFIGURE_ENV=	PERL=${LOCALBASE}/bin/perl-amanda
 PKG_MESSAGE=	${WRKDIR}/pkg-message
 SUB_FILES=	pkg-message
@@ -122,9 +120,7 @@ CONFIGURE_ARGS+=	--without-gnuplot
 .endif
 
 .if ${PORT_OPTIONS:MSAMBA}
-SAMBA_PORT?=	samba36
-BUILD_DEPENDS+=	smbclient:net/${SAMBA_PORT}
-RUN_DEPENDS+=	smbclient:net/${SAMBA_PORT}
+USES+=		pkgconfig samba
 CONFIGURE_ARGS+=	--with-smbclient=${LOCALBASE}/bin/smbclient
 .endif
 

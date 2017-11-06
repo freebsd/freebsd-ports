@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	postgis
-PORTVERSION=	2.3.1
+PORTVERSION=	2.3.3
 CATEGORIES=	databases geography
 MASTER_SITES=	http://download.osgeo.org/postgis/source/
 PKGNAMESUFFIX=	23
@@ -16,7 +16,6 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libproj.so:graphics/proj \
 		libgeos.so:graphics/geos \
 		libjson-c.so:devel/json-c
-RUN_DEPENDS=	postmaster:databases/postgresql${PGSQL_VER_NODOT}-server
 
 CONFLICTS=	postgis20-2.0.*  postgis-2.1.* postgis-22*
 
@@ -29,6 +28,7 @@ SHEBANG_FILES=	extensions/address_standardizer/*.pl raster/test/regress/*.pl \
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
 USE_PERL5=	build
+WANT_PGSQL=	lib server
 
 OPTIONS_DEFINE=		LOADERGUI RASTER TOPOLOGY SFCGAL ADDRSTD
 OPTIONS_DEFAULT=	TOPOLOGY ADDRSTD
@@ -57,6 +57,7 @@ SFCGAL_IMPLIES=		RASTER
 ADDRSTD_CONFIGURE_WITH=	address-standardizer
 ADDRSTD_IMPLIES=	RASTER
 ADDRSTD_LIB_DEPENDS=	libpcre.so:devel/pcre
+ADDRSTD_VARS=		WANT_PGSQL+=contrib
 
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

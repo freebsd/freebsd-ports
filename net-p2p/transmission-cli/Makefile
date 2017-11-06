@@ -2,7 +2,7 @@
 
 PORTNAME=	transmission
 PORTVERSION=	2.92
-PORTREVISION?=	1
+PORTREVISION?=	3
 CATEGORIES?=	net-p2p
 MASTER_SITES=	https://github.com/transmission/transmission-releases/raw/master/ \
 		http://transmission.cachefly.net/
@@ -37,7 +37,7 @@ GEN_LIB_DEPENDS=libb64.so:converters/libb64 \
 		libminiupnpc.so:net/miniupnpc \
 		libnatpmp.so:net/libnatpmp \
 		libutp.so:net/libutp \
-		libevent.so:devel/libevent2
+		libevent.so:devel/libevent
 GEN_RUN_DEPENDS=${LOCALBASE}/share/transmission/web/index.html:www/transmission-web
 
 # This is master port of transmission-*, so don't override USES definition
@@ -66,7 +66,7 @@ OPTIONS_SINGLE_SSL+=	OPENSSL POLARSSL WOLFSSL
 
 LITE_CONFIGURE_ENABLE=	lightweight
 
-OPENSSL_USE=		OPENSSL=yes
+OPENSSL_USES=		ssl
 OPENSSL_CONFIGURE_ENV=	OPENSSL_CFLAGS="-I${OPENSSLINC}" \
 			OPENSSL_LIBS="-L${OPENSSLLIB} -lcrypto"
 OPENSSL_CONFIGURE_ON=	--with-crypto=openssl

@@ -2,14 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	Gnome2-VFS
-PORTVERSION=	1.082
-PORTREVISION=	2
+PORTVERSION=	1.083
 CATEGORIES=	x11-toolkits gnome perl5
 MASTER_SITES=	SF/gtk2-perl/Gnome2_VFS/${PORTVERSION}
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Allows you to use the GNOME Virtual File System library from Perl
+
+LICENSE=	LGPL21
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	p5-ExtUtils-Depends>=0:devel/p5-ExtUtils-Depends \
 		p5-ExtUtils-PkgConfig>=0:devel/p5-ExtUtils-PkgConfig \

@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	python-statsd
-PORTVERSION=	2.0.0
+PORTVERSION=	2.1.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,8 +11,9 @@ COMMENT=	Statsd is a client for Etsy's node-js statsd server
 
 LICENSE=	BSD3CLAUSE
 
+NO_ARCH=	yes
 USES=		python
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	autoplist distutils
 
 post-extract:
 	${RM} -r ${WRKSRC}/tests

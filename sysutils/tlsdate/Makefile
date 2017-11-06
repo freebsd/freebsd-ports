@@ -3,6 +3,7 @@
 PORTNAME=	tlsdate
 PORTVERSION=	0.0.13
 DISTVERSIONPREFIX=	${PORTNAME}-
+PORTREVISION=	2
 CATEGORIES=	sysutils
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -10,7 +11,7 @@ COMMENT=	Secure parasitic rdate replacement
 
 LICENSE=	BSD3CLAUSE
 
-LIB_DEPENDS=	libevent.so:devel/libevent2
+LIB_DEPENDS=	libevent.so:devel/libevent
 
 OPTIONS_DEFINE=	DOCS
 

@@ -5,7 +5,7 @@ PORTNAME=	HTML_Template_PHPLIB
 PORTVERSION=	1.6.0
 CATEGORIES=	devel www pear
 
-MAINTAINER=	joneum@bsdproject.de
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	PEAR template API ported from PHPLIB
 
 LICENSE=	LGPL3

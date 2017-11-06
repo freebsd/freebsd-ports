@@ -3,7 +3,7 @@
 
 PORTNAME=	archivemail
 PORTVERSION=	0.9.0
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	mail
 MASTER_SITES=	SF/${PORTNAME}/
 
@@ -13,9 +13,11 @@ COMMENT=	Archive or delete mail older than N days
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		python
+USES=		python shebangfix
 NO_BUILD=	yes
 NO_ARCH=	yes
+SHEBANG_FILES=	archivemail  \
+		test_archivemail
 
 DOCS=		CHANGELOG FAQ NEWS README TODO
 EXAMPLES=	test_archivemail examples/archivemail_all

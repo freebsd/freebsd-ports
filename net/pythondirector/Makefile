@@ -3,26 +3,28 @@
 
 PORTNAME=	pydirector
 PORTVERSION=	1.0.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net python
 MASTER_SITES=	SF/pythondirector/pythondirector/pythondirector-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	python@FreeBSD.org
 COMMENT=	TCP load balancer written in Python
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/doc/LICENSE.txt
 
-USES=		python twisted:run
-USE_PYTHON=	distutils autoplist
-NO_ARCH=	yes
-
-PORTDOCS=	*
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}twisted>=0:devel/py-twisted
 
 OPTIONS_DEFINE=	DOCS
 
+NO_ARCH=	yes
+USE_PYTHON=	autoplist distutils
+USES=		python
+
+PORTDOCS=	*
+
 post-install-DOCS-on:
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}/
+	${MKDIR} ${STAGEDIR}${DOCSDIR}/
 	${INSTALL_DATA} ${WRKSRC}/doc/* ${STAGEDIR}${DOCSDIR}/
 
 .include <bsd.port.mk>

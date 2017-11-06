@@ -1,0 +1,10 @@
+--- hackage-security.cabal.orig	2016-08-28 22:57:40 UTC
++++ hackage-security.cabal
+@@ -101,7 +101,6 @@ library
+                        bytestring        >= 0.9     && < 0.11,
+                        Cabal             >= 1.14    && < 1.26,
+                        containers        >= 0.4     && < 0.6,
+-                       directory         >= 1.1.0.2 && < 1.3,
+                        ed25519           >= 0.0     && < 0.1,
+                        filepath          >= 1.2     && < 1.5,
+                        mtl               >= 2.2     && < 2.3,

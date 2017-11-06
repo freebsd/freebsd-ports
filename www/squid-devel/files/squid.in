@@ -42,6 +42,9 @@
 # squid_krb5_ktname:
 #		Alternative Kerberos 5 Key Table.
 #		Default: none
+# squid_krb5_config:
+#		Alternative Kerberos 5 config file
+#		Default: none
 
 . /etc/rc.subr
 
@@ -88,6 +91,12 @@ squid_prestart()
 	squid_krb5_ktname=${squid_krb5_ktname:-"NONE"}
 	if [ "${squid_krb5_ktname}" != "NONE" ]; then
 		export KRB5_KTNAME=${squid_krb5_ktname}
+	fi
+
+	# setup KRB5_CONFIG:
+	squid_krb5_config=${squid_krb5_config:-"NONE"}
+	if [ "${squid_krb5_config}" != "NONE" ]; then
+		export KRB5_CONFIG=${squid_krb5_config}
 	fi
 
 	# setup FIB tables:

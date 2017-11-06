@@ -24,7 +24,4 @@ post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Verilog/Parser/*.so
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Verilog/Preproc/*.so
 
-regression-test: build
-	make test -C ${WRKSRC}
-
 .include <bsd.port.mk>

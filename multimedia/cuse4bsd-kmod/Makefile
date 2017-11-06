@@ -11,6 +11,9 @@ COMMENT=	Cuse4BSD character device loopback driver for userspace
 
 CONFLICTS=	video4bsd-kmod*
 
+BROKEN_armv6=		fails to compile: implicit declaration of function 'cp15_pmccntr_get' is invalid in C99
+BROKEN_powerpc64=	fails to compile: pcpu.h: error: size of array '__assert_0' is negative
+
 KMODNAME=	cuse4bsd
 LIBDIR=		${PREFIX}/lib
 INCLUDEDIR=	${PREFIX}/include

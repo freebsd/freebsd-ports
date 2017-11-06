@@ -9,7 +9,7 @@ MASTER_SITES=	GHC http://mirrors.rit.edu/zi/
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	High performance XML data processing with Tcl (ARGS for OpenACS)
 
-LICENSE=	MPL MIT
+LICENSE=	MPL11 MIT
 LICENSE_COMB=	multi
 LICENSE_FILE_MIT=	${WRKSRC}/expat/COPYING
 
@@ -20,7 +20,6 @@ USE_GITHUB=	yes
 CONFIGURE_ARGS=	--enable-threads --disable-tdomalloc
 
 TEST_TARGET=	test
-TEST_ENV=	LANG=C
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 

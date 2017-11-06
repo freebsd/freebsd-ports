@@ -1,0 +1,7 @@
+This package contains the current stable release of the client drivers for DRI2+
+
+With a X Server configured for DRI, they allow direct rendering of hardware-
+accelerated OpenGL. This package also includes the software renderer, either
+llvmpipe or classic SWrast.
+
+WWW: http://www.mesa3d.org/

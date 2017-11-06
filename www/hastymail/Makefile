@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 NO_BUILD=	yes
 SUB_FILES=	pkg-message
 
-WANT_PHP_WEB=	yes
+USES=		php:web
 USE_PHP=	session imap pcre
 
 PLIST_SUB=	WWWOWN="${WWWOWN}" WWWGRP="${WWWGRP}"

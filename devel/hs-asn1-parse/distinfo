@@ -1,2 +1,3 @@
-SHA256 (cabal/asn1-parse-0.9.1.tar.gz) = e18087baa87225a5ea41c9758f7499b362ba6293931cb9c5bc3548c90f3133de
-SIZE (cabal/asn1-parse-0.9.1.tar.gz) = 2785
+TIMESTAMP = 1499545839
+SHA256 (cabal/asn1-parse-0.9.4.tar.gz) = c6a328f570c69db73f8d2416f9251e8a03753f90d5d19e76cbe69509a3ceb708
+SIZE (cabal/asn1-parse-0.9.4.tar.gz) = 2860

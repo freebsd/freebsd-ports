@@ -1,6 +1,6 @@
 In short: getting and installing SSL/TLS certificates made easy.
 
-The Let's Encrypt Client is a tool to automatically receive and install
+Certbot is a tool to automatically receive and install
 X.509 certificates to enable TLS on servers. The client will
 interoperate with the Let's Encrypt CA which will be issuing
 browser-trusted certificates for free.

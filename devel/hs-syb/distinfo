@@ -1,2 +1,3 @@
-SHA256 (cabal/syb-0.5.1.tar.gz) = 81b05f0e78d03e1cabe9610a6045a5ae74d88eaed7e79464d436ccaa6af93846
-SIZE (cabal/syb-0.5.1.tar.gz) = 39469
+TIMESTAMP = 1499627857
+SHA256 (cabal/syb-0.7.tar.gz) = b8757dce5ab4045c49a0ae90407d575b87ee5523a7dd5dfa5c9d54fcceff42b5
+SIZE (cabal/syb-0.7.tar.gz) = 39566

@@ -6,4 +6,4 @@ h5utils also includes programs to convert HDF5 datasets into the formats
 required by other free visualization software (e.g. plain text, Vis5d,
 and VTK).
 
-WWW: http://ab-initio.mit.edu/wiki/index.php/H5utils
+WWW: https://github.com/stevengj/h5utils

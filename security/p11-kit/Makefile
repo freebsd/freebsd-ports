@@ -2,12 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	p11-kit
-PORTVERSION=	0.23.3
+PORTVERSION=	0.23.9
 CATEGORIES=	security devel
 MASTER_SITES=	https://github.com/p11-glue/p11-kit/releases/download/${PORTVERSION}/
 
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	Library for loading and enumerating of PKCS\#11 modules
+
+LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 BUILD_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
@@ -22,6 +25,8 @@ INSTALL_TARGET=	install-strip
 
 USES=		gmake libtool pathfix pkgconfig
 USE_LDCONFIG=	yes
+
+TEST_TARGET=	check
 
 pre-configure:
 	@${REINPLACE_CMD} -e \

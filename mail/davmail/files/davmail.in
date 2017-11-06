@@ -12,6 +12,7 @@
 # davmail_config (path):	Set to 
 #				"%%PREFIX%%/etc/davmail.properties"
 #				by default
+# davmail_profiles:             Set to "" by default
 
 . /etc/rc.subr
 
@@ -38,6 +39,55 @@ pidfiledir="/var/run/davmail"
 pidfile="${pidfiledir}/davmail.pid"
 procname="$(davmail_procname)"
 required_files=${davmail_config}
+
+if [ -n "$2" ]; then
+        profile="$2"
+        if [ "x${davmail_profiles}" != "x" ]; then
+                if [ ! -f %%PREFIX%%/etc/davmail.${profile}.properties ]; then
+                        echo "You must setup a davmail.${profile}.properties config file"
+                        return 1
+                fi
+                eval davmail_enable="\${davmail_${profile}_enable:-${davmail_enable}}"
+                pidfile="${pidfiledir}/davmail.${profile}.pid"
+                davmail_config="%%PREFIX%%/etc/davmail.${profile}.properties"
+                required_files="${davmail_config}"
+        fi
+else
+        if [ "x${davmail_profiles}" != "x" -a "x$1" != "x" ]; then
+                for profile in ${davmail_profiles}; do
+                        eval _enable="\${davmail_${profile}_enable}"
+                        case "x${_enable:-${davmail_enable}}" in
+                        x|x[Nn][Oo]|x[Nn][Oo][Nn][Ee])
+                                continue
+                                ;;
+                        x[Yy][Ee][Ss])
+                                ;;
+                        *)
+                                if test -z "$_enable"; then
+                                        _var=davmail_enable
+                                else
+                                        _var=davmail_"${profile}"_enable
+                                fi
+                                echo "Bad value" \
+                                        "'${_enable:-${davmail_enable}}'" \
+                                        "for ${_var}. " \
+                                        "Profile ${profile} skipped."
+                                continue
+                                ;;
+                        esac
+                        echo "===> davmail profile: ${profile}"
+                        %%PREFIX%%/etc/rc.d/davmail $1 ${profile}
+                        retcode="$?"
+                        if [ "0${retcode}" -ne 0 ]; then
+                                failed="${profile} (${retcode}) ${failed:-}"
+                        else
+                                success="${profile} ${success:-}"
+                        fi
+                done
+                exit 0
+        fi
+fi
+
 
 command="/usr/sbin/daemon"
 command_args="-p ${pidfile} %%LOCALBASE%%/bin/java -cp '%%DATADIR%%/davmail.jar:%%DATADIR%%/lib/*' davmail.DavGateway '${davmail_config}'"

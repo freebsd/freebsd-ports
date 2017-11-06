@@ -4,8 +4,9 @@ include/szlib.h
 lib/libaec.a
 lib/libaec.so
 lib/libaec.so.0
-lib/libaec.so.0.0.6
+lib/libaec.so.0.0.7
 lib/libsz.a
 lib/libsz.so
 lib/libsz.so.2
 lib/libsz.so.2.0.1
+man/man1/aec.1.gz

@@ -21,4 +21,4 @@ some unfinished backends for SPARC, ARM
 * working ia32 backend with support for x87 and SSE2 floating point
 * handwritten recursive descent C90/C99 frontend available (lang/cparser)
 
-WWW: http://sourceforge.net/projects/libfirm/
+WWW: https://sourceforge.net/projects/libfirm/

@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	emptyepsilon
-PORTVERSION=	2016.09.02
+PORTVERSION=	2017.05.06
+PORTREVISION=	1
 DISTVERSIONPREFIX=	EE-
 CATEGORIES=	games
 
@@ -14,9 +15,11 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libsfml-system.so:devel/sfml
 
+BROKEN_powerpc64=	fails to compile: scienceDatabase.cpp: call of overloaded 'abs(float)' is ambiguous
+
 USE_GITHUB=	yes
-GH_TUPLE=	daid:EmptyEpsilon:${DISTVERSIONFULL}
-GH_TUPLE+=	daid:SeriousProton:${DISTVERSIONFULL}:sproton
+GH_ACCOUNT=	daid
+GH_PROJECT=	EmptyEpsilon SeriousProton:sproton
 
 USES=		cmake compiler:c++11-lib
 USE_GL=		gl glu

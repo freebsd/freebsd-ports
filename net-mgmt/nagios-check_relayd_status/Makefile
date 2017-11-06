@@ -11,7 +11,7 @@ DISTFILES=	# none
 MAINTAINER=	rand@iteris.com
 COMMENT=	Nagios plug-in to check on the status of relayd
 
-LICENSE=	MPL
+LICENSE=	MPL11
 
 RUN_DEPENDS=	${LOCALBASE}/sbin/relayctl:net/relayd
 

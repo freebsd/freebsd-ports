@@ -1,0 +1,36 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: consul_exporter
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# consul_exporter_enable (bool):      Set to NO by default.
+#                                       Set it to YES to enable consul exporter.
+# consul_exporter_env (string):       Set environment variables used with consul exporter.
+#                                          Default is "".
+# consul_exporter_args (string):      Set flags used with consul-exporter.
+#                                          Default is "".
+
+. /etc/rc.subr
+
+name=consul_exporter
+rcvar=consul_exporter_enable
+extra_commands="reload"
+
+load_rc_config $name
+
+: ${consul_exporter_enable:="NO"}
+: ${consul_exporter_env:=""}
+: ${consul_exporter_args:=""}
+
+pidfile=/var/run/consul_exporter.pid
+procname="%%PREFIX%%/bin/consul_exporter"
+command="/usr/sbin/daemon"
+command_args="-f -p ${pidfile} /usr/bin/env ${consul_env} ${procname} ${consul_exporter_args}"
+
+run_rc_command "$1"

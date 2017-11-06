@@ -2,7 +2,7 @@ include/cminpack-1/cminpack.h
 include/cminpack-1/minpack.h
 lib/libcminpack_s.a
 libdata/pkgconfig/cminpack.pc
-share/cmake/Modules/FindCMinpack.cmake
+share/cmake/CMinpack/CMinpackConfig.cmake
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/chkdrv.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/chkdrv_.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/cmpfiles.c

@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	oleg@mamontov.net
 COMMENT=	Subclassable and hostless URIs
 
-LICENSE=	ART10 GPLv1
+LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Class-C3-Componentised>=0:devel/p5-Class-C3-Componentised \

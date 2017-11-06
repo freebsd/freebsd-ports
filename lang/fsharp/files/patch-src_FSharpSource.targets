@@ -1,9 +1,0 @@
---- src/FSharpSource.targets.orig	2016-10-10 06:34:42 UTC
-+++ src/FSharpSource.targets
-@@ -643,6 +643,5 @@ Some other NuGET monikers to support in 
-   </Target>
-   <Import Project="$(FSharpSourcesRoot)\..\.nuget\NuGet.targets" />
-   <Target Name="BeforeBuild" BeforeTargets="Build">
--    <Exec Command="$(NuGetCommand) restore packages.config -PackagesDirectory packages -ConfigFile $(FSharpSourcesRoot)\..\.nuget\NuGet.Config" WorkingDirectory="$(FSharpSourcesRoot)\.."/>
-   </Target>
- </Project>

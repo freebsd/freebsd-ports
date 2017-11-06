@@ -3,7 +3,7 @@
 
 PORTNAME=	dgen-sdl
 PORTVERSION=	1.33
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	emulators
 MASTER_SITES=	SF/dgen/dgen/${PORTVERSION}
 
@@ -28,5 +28,11 @@ BUILD_DEPENDS+=	nasm:devel/nasm
 .else
 CONFIGURE_ARGS+=	--disable-asm
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e '/@NASM@/s/--//' \
+		${WRKSRC}/Makefile.in \
+		${WRKSRC}/mz80/Makefile.in \
+		${WRKSRC}/star/Makefile.in
 
 .include <bsd.port.post.mk>

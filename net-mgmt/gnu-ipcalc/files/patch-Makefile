@@ -1,0 +1,19 @@
+--- Makefile.orig	2017-05-15 12:33:58 UTC
++++ Makefile
+@@ -1,7 +1,7 @@
+ USE_GEOIP?=yes
+ USE_DYN_GEOIP?=yes
+ 
+-LIBPATH?=/usr/lib64
++#LIBPATH?=/usr/lib64
+ #LIBPATH=/usr/lib/x86_64-linux-gnu
+ 
+ LIBS?=
+@@ -12,7 +12,6 @@ LDFLAGS=$(LIBS)
+ 
+ ifeq ($(USE_GEOIP),yes)
+ ifeq ($(USE_DYN_GEOIP),yes)
+-LDFLAGS+=-ldl
+ CFLAGS+=-DUSE_GEOIP -DUSE_DYN_GEOIP -DLIBPATH="\"$(LIBPATH)\""
+ else
+ LDFLAGS+=-lGeoIP

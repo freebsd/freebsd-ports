@@ -11,6 +11,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ embedded database engine with Python and Tcl support
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/../license.terms
 
 GNU_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	../unix/configure
@@ -25,21 +26,15 @@ OPTIONS_DEFINE=	PYTHON TCL DOCS
 OPTIONS_DEFAULT=	PYTHON
 OPTIONS_SUB=	yes
 
-.include <bsd.port.options.mk>
+PYTHON_USES=		python
+PYTHON_CONFIGURE_ON=	--with-python=${LOCALBASE}
+PYTHON_CATEGORIES=	python
 
-.if ${PORT_OPTIONS:MPYTHON}
-USES+=		python
-CONFIGURE_ARGS+=	--with-python=${LOCALBASE}
-CATEGORIES+=	python
-.endif
-
-.if ${PORT_OPTIONS:MTCL}
-USES+=		tcl:85
-CATEGORIES+=	tcl
-CONFIGURE_ARGS+=--with-tcl=${TCL_INCLUDEDIR}
-CONFIGURE_ENV+=	TCL_LIBDIR=${TCL_LIBDIR}
-PLIST_SUB+=	TCL_V="${TCL_VER}"
-.endif
+TCL_USES=		tcl:85
+TCL_CATEGORIES=		tcl
+TCL_CONFIGURE_ON=	--with-tcl=${TCL_INCLUDEDIR}
+TCL_CONFIGURE_ENV=	TCL_LIBDIR=${TCL_LIBDIR}
+TCL_PLIST_SUB=		TCL_V="${TCL_VER}"
 
 pre-patch:
 	@${REINPLACE_CMD} -e "s=doc/==" ${WRKSRC}/../Metakit.html
@@ -61,6 +56,8 @@ post-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/libmk4.so \
 		${STAGEDIR}${PREFIX}/lib/libmk4.so.0
 	${LN} -sf libmk4.so.0 ${STAGEDIR}${PREFIX}/lib/libmk4.so
+
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${TAR} -C ${WRKSRC}/../doc --exclude "*CVS" -cf - . | \
 		${TAR} -C ${STAGEDIR}${DOCSDIR} --unlink -xf -

@@ -1,6 +1,6 @@
---- ./c2hs/c/CAST.hs.orig	2012-11-12 00:26:43.000000000 +0100
-+++ ./c2hs/c/CAST.hs	2013-05-28 11:02:33.000000000 +0200
-@@ -1125,6 +1125,9 @@
+--- c2hs/c/CAST.hs.orig	2017-01-14 09:17:54 UTC
++++ c2hs/c/CAST.hs
+@@ -1125,6 +1125,9 @@ instance Binary CStorageSpec where
      put_ bh (CTypedef ae) = do
              putByte bh 4
              put_ bh ae
@@ -10,7 +10,7 @@
      get bh = do
              h <- getByte bh
              case h of
-@@ -1143,6 +1146,9 @@
+@@ -1143,6 +1146,9 @@ instance Binary CStorageSpec where
                4 -> do
                      ae <- get bh
                      return (CTypedef ae)

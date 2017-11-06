@@ -1,0 +1,8 @@
+Plaintext editor from the Lumina Desktop.
+Capabilities:
+* Syntax highlighting for various file formats
+* Multiple file support via tabs.
+* Find/replace support
+* Line numbers and line wrap support
+
+WWW: http://lumina-desktop.org

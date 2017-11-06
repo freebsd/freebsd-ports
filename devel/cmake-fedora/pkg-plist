@@ -25,6 +25,7 @@ share/cmake/Modules/ManageUpload.cmake
 share/cmake/Modules/ManageVariable.cmake
 share/cmake/Modules/ManageVersion.cmake
 share/cmake/Modules/ManageZanata.cmake
+share/cmake/Modules/ManageZanataDefinition.cmake
 share/cmake/Modules/ManageZanataScript.cmake
 share/cmake/Modules/ManageZanataSuggest.cmake
 share/cmake/Modules/cmake_install.cmake

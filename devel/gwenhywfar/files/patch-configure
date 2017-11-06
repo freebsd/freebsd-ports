@@ -1,6 +1,10 @@
---- configure.orig	2016-04-23 16:22:43 UTC
+Fix dectection of fox libs
+Allow configuring the locations of lrelease and lupdate
+Prevent linking to unneeded Qt5 libraries
+
+--- configure.orig	2017-07-30 14:20:32 UTC
 +++ configure
-@@ -948,6 +948,8 @@ with_x
+@@ -951,6 +951,8 @@ with_x
  with_qt5_qmake
  with_qt5_moc
  with_qt5_uic
@@ -9,7 +13,7 @@
  with_docpath
  enable_release
  enable_memtrace
-@@ -1668,6 +1670,8 @@ Optional Packages:
+@@ -1672,6 +1674,8 @@ Optional Packages:
    --with-qt5-qmake=FILE    uses given qmake
    --with-qt5-moc=FILE      uses given qt moc
    --with-qt5-uic=FILE      uses given qt uic
@@ -18,7 +22,7 @@
    --with-docpath=DIR where to store the apidoc
    --with-buffer-hardlimit=VALUE new default buffer hard limit
    --with-plugins-ct=LIST list of CT plugins to build
-@@ -21079,7 +21083,7 @@ $as_echo_n "checking for fox libraries..
+@@ -21084,7 +21088,7 @@ $as_echo_n "checking for fox libraries..
  
  # Check whether --with-fox-libs was given.
  if test "${with_fox_libs+set}" = set; then :
@@ -27,18 +31,53 @@
  else
  
        ac_ext=cpp
-@@ -22445,8 +22449,8 @@ percent.commands = @echo -n "\$(\$(@))\ 
+@@ -22415,43 +22419,16 @@ $as_echo_n "checking for Qt... " >&6; }
+     am_have_qt_makefile=`mktemp`
+     # http://qt-project.org/doc/qt-5/qmake-variable-reference.html#qt
+     cat > $am_have_qt_pro << EOF
+-qtHaveModule(axcontainer):       QT += axcontainer
+-qtHaveModule(axserver):          QT += axserver
+-qtHaveModule(concurrent):        QT += concurrent
+ qtHaveModule(core):              QT += core
+-qtHaveModule(dbus):              QT += dbus
+-qtHaveModule(declarative):       QT += declarative
+-qtHaveModule(designer):          QT += designer
+ qtHaveModule(gui):               QT += gui
+-qtHaveModule(help):              QT += help
+-qtHaveModule(multimedia):        QT += multimedia
+-qtHaveModule(multimediawidgets): QT += multimediawidgets
+-qtHaveModule(network):           QT += network
+-qtHaveModule(opengl):            QT += opengl
+-qtHaveModule(printsupport):      QT += printsupport
+-qtHaveModule(qml):               QT += qml
+-qtHaveModule(qmltest):           QT += qmltest
+-qtHaveModule(x11extras):         QT += x11extras
+-qtHaveModule(script):            QT += script
+-qtHaveModule(scripttools):       QT += scripttools
+-qtHaveModule(sensors):           QT += sensors
+-qtHaveModule(serialport):        QT += serialport
+-qtHaveModule(sql):               QT += sql
+-qtHaveModule(svg):               QT += svg
+-qtHaveModule(testlib):           QT += testlib
+-qtHaveModule(uitools):           QT += uitools
+-qtHaveModule(webkit):            QT += webkit
+-qtHaveModule(webkitwidgets):     QT += webkitwidgets
+-qtHaveModule(xml):               QT += xml
+-qtHaveModule(xmlpatterns):       QT += xmlpatterns
+ qtHaveModule(widgets):           QT += widgets
+ percent.target = %
+ percent.commands = @echo -n "\$(\$(@))\ "
  QMAKE_EXTRA_TARGETS += percent
  EOF
      $QT_QMAKE $am_have_qt_pro -o $am_have_qt_makefile
--    QT_CXXFLAGS=`make -f $am_have_qt_makefile CXXFLAGS INCPATH`
--    QT_LIBS=`make -f $am_have_qt_makefile LIBS`
-+    QT_CXXFLAGS=`make -f $am_have_qt_makefile -VCXXFLAGS -VINCPATH | tr '\n' ' '`
-+    QT_LIBS=`make -f $am_have_qt_makefile -VLIBS | tr '\n' ' '`
+-    QT_CXXFLAGS=`make -s -f $am_have_qt_makefile CXXFLAGS INCPATH`
+-    QT_LIBS=`make -s -f $am_have_qt_makefile LIBS`
++    QT_CXXFLAGS=`make -s -f $am_have_qt_makefile -VCXXFLAGS -VINCPATH | tr '\n' ' '`
++    QT_LIBS=`make -s -f $am_have_qt_makefile -VLIBS | tr '\n' ' '`
      rm $am_have_qt_pro $am_have_qt_makefile
  
      # Look for specific tools in $PATH
-@@ -22469,9 +22473,21 @@ else
+@@ -22474,9 +22451,21 @@ else
  
  fi
  

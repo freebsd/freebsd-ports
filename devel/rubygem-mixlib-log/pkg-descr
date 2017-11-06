@@ -1,4 +1,4 @@
 Mixlib::Log provides a mixin for enabling a class based logger object, a-la
 Merb, Chef, and Nanite.
 
-WWW: http://www.opscode.com
+WWW: https://www.chef.io/

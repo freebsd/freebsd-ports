@@ -1,19 +1,19 @@
---- Makefile.in.orig	2011-11-21 08:06:56.000000000 -0800
-+++ Makefile.in	2014-05-30 22:28:35.966716249 -0700
-@@ -540,7 +540,6 @@
+--- Makefile.in.orig	2017-01-31 21:35:07.000000000 -0800
++++ Makefile.in	2017-02-02 00:55:45.246665000 -0800
+@@ -727,7 +727,6 @@
  
  install-data-am:
  	@$(NORMAL_INSTALL)
 -	$(MAKE) $(AM_MAKEFLAGS) install-data-hook
+ install-dvi: install-dvi-recursive
  
- install-exec-am:
- 
-@@ -589,7 +588,7 @@
+ install-dvi-am:
+@@ -797,7 +796,7 @@
  
  
  install-data-hook:
 -	prefix="$(prefix)" sysconfdir="$(sysconfdir)" \
 +	STGDIR="$$STAGEDIR" prefix="$(prefix)" sysconfdir="$(sysconfdir)" \
          path_to_vi="$(path_to_vi)" path_to_sendmail="$(path_to_sendmail)" \
-         ./install/install.sh
- # Tell versions [3.59,3.63) of GNU make to not export all variables.
+         ./installer/install.sh
+ 

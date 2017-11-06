@@ -14,9 +14,8 @@ LICENSE_FILE=	${WRKSRC}/docs/COPYING
 BUILD_DEPENDS=	${LOCALBASE}/share/re/re.mk:audio/re
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USES=		gmake
+USES=		gmake ssl
 USE_LDCONFIG=	yes
-USE_OPENSSL=	yes
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/include/${PORTNAME}

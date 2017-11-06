@@ -11,7 +11,7 @@ COMMENT=	Container Management for FreeBSD Jails
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}yaml>0:devel/py-yaml \
 		${PYTHON_PKGNAMEPREFIX}Jinja2>0:devel/py-Jinja2 \
-		${PYTHON_PKGNAMEPREFIX}setuptools${PYTHON_SUFFIX}>0:devel/py-setuptools${PYTHON_SUFFIX} \
+		${PYTHON_PKGNAMEPREFIX}setuptools>0:devel/${PYTHON_PKGNAMEPREFIX}setuptools \
 		${PYTHON_PKGNAMEPREFIX}pyliblzma>0:archivers/py-pyliblzma \
 		${PYTHON_PKGNAMEPREFIX}ploy>=1.2.0:sysutils/py-ploy \
 		${PYTHON_PKGNAMEPREFIX}ploy_ansible>=1.3.0:sysutils/py-ploy_ansible \

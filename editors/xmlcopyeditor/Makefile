@@ -3,7 +3,7 @@
 
 PORTNAME=	xmlcopyeditor
 PORTVERSION=	1.2.1.3
-PORTREVISION=	3
+PORTREVISION=	6
 CATEGORIES=	editors
 MASTER_SITES=	SF/xml-copy-editor/${PORTNAME}-linux/${PORTVERSION}
 
@@ -23,7 +23,6 @@ LIB_DEPENDS=	libxerces-c.so.3:textproc/xerces-c3 \
 USE_WX=		2.8+
 WX_COMPS=	wx contrib
 WX_CONF_ARGS=	absolute
-WX_UNICODE=	yes
 USES=		dos2unix gettext gmake iconv libtool
 USE_GNOME=	intltool
 GNU_CONFIGURE=	yes

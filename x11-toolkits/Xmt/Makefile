@@ -16,7 +16,6 @@ WRKSRC=		${WRKDIR}/xmt400
 
 USES=		motif imake tar:tgz
 USE_LDCONFIG=	yes
-MAKE_ENV=	LANG=C
 
 post-patch:
 	${TOUCH} ${WRKSRC}/clients/mockup.man

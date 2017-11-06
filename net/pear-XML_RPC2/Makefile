@@ -5,7 +5,7 @@ PORTNAME=	XML_RPC2
 PORTVERSION=	1.1.3
 CATEGORIES=	net devel pear
 
-MAINTAINER=	joneum@bsdproject.de
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	XML-RPC client/server library
 
 LICENSE=	PHP301

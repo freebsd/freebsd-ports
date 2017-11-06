@@ -5,7 +5,7 @@ PORTNAME=	Services_Delicious
 PORTVERSION=	0.6.0
 CATEGORIES=	www pear
 
-MAINTAINER=	joneum@bsdproject.de
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	PEAR Client for the del.icio.us web service
 
 BUILD_DEPENDS=	${PEARDIR}/XML/Serializer.php:devel/pear-XML_Serializer \
@@ -13,7 +13,7 @@ BUILD_DEPENDS=	${PEARDIR}/XML/Serializer.php:devel/pear-XML_Serializer \
 RUN_DEPENDS=	${PEARDIR}/XML/Serializer.php:devel/pear-XML_Serializer \
 		${PEARDIR}/HTTP/Request.php:www/pear-HTTP_Request
 
-USES=		dos2unix pear
+USES=		dos2unix pear php
 USE_PHP=	openssl
 
 .include <bsd.port.mk>

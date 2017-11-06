@@ -1,0 +1,10 @@
+--- configure.orig	2017-04-19 21:38:22 UTC
++++ configure
+@@ -7528,6 +7528,7 @@ if test $ac_compiler_gnu = yes; then
+ else
+   G77=
+ fi
++G77=yes
+ ac_ext=c
+ ac_cpp='$CPP $CPPFLAGS'
+ ac_compile='$CC -c $CFLAGS $CPPFLAGS conftest.$ac_ext >&5'

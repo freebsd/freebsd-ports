@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	phalcon
-PORTVERSION=	3.0.3
+PORTVERSION=	3.2.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 
@@ -14,7 +14,7 @@ LICENSE=	BSD3CLAUSE
 USES=		php:ext
 USE_PHP=	hash:build json:build pdo:build
 
-ONLY_FOR_ARCHS=	amd64 armv6 i386
+ONLY_FOR_ARCHS=		amd64 armv6 armv7 i386
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	phalcon
@@ -25,7 +25,12 @@ CONFIGURE_ARGS=	--enable-phalcon
 
 .include <bsd.port.pre.mk>
 
-PBITS=		${ARCH:S/amd64/64/:S/armv6/32/:S/i386/32/:S/x86_64/64/}
+PBITS=		${ARCH:S/amd64/64/:C/armv.*/32/:S/i386/32/:S/x86_64/64/}
 WRKSRC_SUBDIR=	build/php${PHP_VER:C/.$//}/${PBITS}bits
+
+post-patch:
+.if ${PHP_VER} >= 70 && ${PBITS} == 32
+	@${REINPLACE_CMD} -e 's| ZEPHIR_FASTCALL | |' ${WRKSRC}/phalcon.zep.c
+.endif
 
 .include <bsd.port.post.mk>

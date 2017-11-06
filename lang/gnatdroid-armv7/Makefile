@@ -6,16 +6,16 @@ PORTVERSION=	${SNAPSHOT}
 PORTREVISION?=	${ARMV7_PR}
 CATEGORIES=	lang
 MASTER_SITES=	GCC/releases/gcc-${GCC_VERSION}
-PKGNAMEPREFIX=	gnatdroid-
-DISTFILES=	${IDENTIFICATION}.tar.bz2
+PKGNAMEPREFIX?=	gnatdroid-
+DISTFILES=	${IDENTIFICATION}.tar.xz
 
-MAINTAINER?=	marino@FreeBSD.org
+MAINTAINER?=	ports@FreeBSD.org
 COMMENT?=	C/Ada cross-compiler, target: Android ARMv7
 
 LICENSE=	GPLv3 GPLv3RLE
 LICENSE_COMB=	multi
 
-BUILD_DEPENDS=	${SYSROOT}>=19:lang/${SYSROOT} \
+BUILD_DEPENDS=	${SYSROOT}>=0:lang/${SYSROOT} \
 		${GDBINUTILS}>=2.21:lang/${GDBINUTILS}
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
@@ -40,17 +40,23 @@ CPUVERSION?=		ARMv7
 ARG_ARCH?=		--with-arch=armv7-a
 ARG_FPU?=		--with-fpu=neon
 ARG_FLOATSOFT?=		--with-float=soft
+ARG_TARGET_SPECIFIC?=	--enable-target-optspace \
+			--enable-cxx-flags=-frtti \
+			--disable-sjlj-exceptions \
+			--disable-tls
 ALL_TARGET=		all
 GARCH=			${ARCH:S/amd64/x86_64/}
 BITS=			${GARCH:S/x86_64/64/:S/i386/32/}
-OS_LABEL4VERS=		[${OPSYS}${BITS} x Android ${CPUVERSION}]
+LABEL_TARGET?=		Android ${CPUVERSION}	
+OS_LABEL4VERS=		[${OPSYS}${BITS} x ${LABEL_TARGET}]
 WRKSRC=			${WRKDIR}/${IDENTIFICATION}
 BUILD_WRKSRC=		${WRKDIR}/build
-PATCHDIR=		${.CURDIR}/../${AUXPORT}/files
+DIFFDIR=		${.CURDIR}/../${AUXPORT}/files
 CFG_SCRIPT=		${WRKSRC}/configure
 REVFILE=		${WRKSRC}/gcc/REVISION
 SRPREFIX?=		${LOCALBASE}/android
-PREFIX=			${SRPREFIX}/${CPUVERSION}
+GNATPREFIX?=		${SRPREFIX}/${CPUVERSION}
+PREFIX=			${GNATPREFIX}
 SYSROOT?=		gnatdroid-sysroot
 GDBINUTILS?=		gnatdroid-binutils
 PLIST_SUB+=		TARGET="${DROID_TARGET}"
@@ -65,14 +71,13 @@ CROSS=			gnat gnatbind gnatchop gnatclean gnatfind gnatkr \
 
 .if ${PORT_OPTIONS:MFORT}
 LANGS+=		fortran
-APPLY_DIFFS+=	fortran
 .endif
 
 .if ${PORT_OPTIONS:MOBJC}
 LANGS+=		objc
 .endif
 
-INSTALL_ENV=	${MAKE_ENV:C/^PATH=/&${SRPREFIX}\/${CPUVERSION}\/bin:/}
+INSTALL_ENV=	${MAKE_ENV:C/^PATH=/&${PREFIX}\/bin:/}
 
 ADA_CONFIG_ARGS=	--enable-languages=${LANGS:Q}
 ADA_CONFIG_ARGS+=	--target=${DROID_TARGET}
@@ -87,9 +92,8 @@ ADA_CONFIG_ARGS+=	${ICONV_CONFIGURE_ARG}
 ADA_CONFIG_ARGS+=	--with-sysroot=${SRPREFIX}
 ADA_CONFIG_ARGS+=	${ARG_FLOATSOFT}
 ADA_CONFIG_ARGS+=	${ARG_FPU}
-ADA_CONFIG_ARGS+=	--enable-target-optspace
+ADA_CONFIG_ARGS+=	${ARG_TARGET_SPECIFIC}
 ADA_CONFIG_ARGS+=	--enable-threads=posix
-ADA_CONFIG_ARGS+=	--enable-cxx-flags=-frtti
 ADA_CONFIG_ARGS+=	--enable-checking=release
 ADA_CONFIG_ARGS+=	--disable-bootstrap
 ADA_CONFIG_ARGS+=	--disable-shared
@@ -99,26 +103,34 @@ ADA_CONFIG_ARGS+=	--disable-libmudflap
 ADA_CONFIG_ARGS+=	--disable-libquadmath
 ADA_CONFIG_ARGS+=	--disable-libsanitizer
 ADA_CONFIG_ARGS+=	--disable-libitm
-ADA_CONFIG_ARGS+=	--disable-sjlj-exceptions
-ADA_CONFIG_ARGS+=	--disable-tls
+ADA_CONFIG_ARGS+=	--disable-libcc1
 ADA_CONFIG_ARGS+=	--disable-nls
 
 post-extract:
 	# Personalize GNAT for each different machine
 	@${ECHO} "-=> GNAT AUX ${OS_LABEL4VERS}" > ${REVFILE}
-	${MKDIR} ${WRKSRC}/libstdc++-v3/config/locale/dragonfly
-	${MKDIR} ${WRKSRC}/libstdc++-v3/config/os/bsd/dragonfly
 	# Apply required composite diff files
 .for suffix in ${APPLY_DIFFS}
 	@${ECHO} "Applying composite patch diff-${suffix}"
-	@${PATCH} -d ${WRKSRC} -s -E < ${PATCHDIR}/diff-${suffix}
+	@${PATCH} -d ${WRKSRC} -s -E < ${DIFFDIR}/diff-${suffix}
 .endfor
 	@(cd ${WRKSRC}/gcc/testsuite/ada/acats && \
 		${CP} run_remote.sh run_all.sh)
+	@${CHMOD} 755 ${WRKSRC}/gcc/testsuite/ada/acats/run_all.sh
 	${REINPLACE_CMD} -e 's|@REMOTE_TARGET@|${DROID_TARGET}|' \
 		${WRKSRC}/gcc/testsuite/ada/acats/run_all.sh
 	${REINPLACE_CMD} -e 's|<syscall.h>|<sys/syscall.h>|' \
 		${WRKSRC}/libstdc++-v3/libsupc++/guard.cc
+
+post-patch:
+	# Update LINK_SPEC to add gcc-aux lib runpath in every binary
+	@${ECHO} "Configuring LINK_SPEC runpath"
+	@${REINPLACE_CMD} -e 's;\@PREFIX\@;${LOCALBASE};' \
+		-e 's;\@GCCAUX\@;${AUXPORT};' \
+		${WRKSRC}/gcc/config/dragonfly.h \
+		${WRKSRC}/gcc/config/i386/freebsd64.h \
+		${WRKSRC}/gcc/config/i386/freebsd.h \
+		${WRKSRC}/gcc/config/aarch64/aarch64-freebsd.h
 
 do-configure:
 	${MKDIR} ${BUILD_WRKSRC}

@@ -3,63 +3,17 @@
 OPTIONS_DEFINE=	NTPSNMPD \
 		SSL \
 		IPV6 \
+		DEBUG \
 		NTP_SIGND \
-		BANCOMM	 \
-		GPSVME \
-		ACTS \
-		ARBITER	 \
-		ARCRON_MSF \
-		AS2201 \
-		ATOM \
-		CHRONOLOG \
-		CHU \
-		AUDIO_CHU \
-		DATUM \
-		DUMBCLOCK \
-		FG \
-		HEATH \
-		HOPFSERIAL \
-		HOPFPCI	 \
-		HPGPS \
-		IRIG \
-		JJY \
-		JUPITER \
-		LEITCH \
-		LOCAL_CLOCK \
-		MX4200 \
-		NEOCLOCK4X \
-		NMEA \
-		ONCORE \
-		PALISADE \
-		PCF \
 		PERL_UTILS \
-		PST \
-		RIPENCC \
-		SHM \
-		SPECTRACOM \
-		TRUETIME \
-		ULINK \
-		WWV \
-		ZYFER \
-		COMPUTIME \
-		DCF7000	 \
-		HOPF6021 \
-		MEINBERG \
-		RAWDCF	 \
-		RCC8000 \
-		SCHMID \
-		SEL240X \
-		TRIMTAIP \
-		TRIMTSIP \
-		WHARTON	 \
-		VARITEXT \
 		DOCS \
-		EXAMPLES
+		EXAMPLES \
+		MD5 \
+		${NTP_DRIVERS}
 
 OPTIONS_DEFAULT=	SSL \
-		ATOM \
 		PERL_UTILS \
-		NMEA
+		${NTP_DRIVERS_DEFAULT}
 
 NTPSNMPD_DESC=	Build and install ntpsnmpd
 NTP_SIGND_DESC=	Enable signed NTP
@@ -112,6 +66,7 @@ TRIMTAIP_DESC=	Enable Trimble GPS receiver/TAIP protocol
 TRIMTSIP_DESC=	Enable Trimble GPS receiver/TSIP protocol
 WHARTON_DESC=	Enable WHARTON 400A Series clock
 VARITEXT_DESC=	Enable VARITEXT clock
+MD5_DESC=	Add libwww md5 dependency for sntp (implies SSL)
 
 # Not supported by FreeBSD:   	TPRO	Enable KSI/Odetics TPRO/S GPS receiver/IRIG
 # XXX Broken under FreeBSD: TT560	Enable TrueTime 560 IRIG-B decoder
@@ -165,3 +120,36 @@ NTP_DRIVERS= \
 		TRIMTSIP \
 		WHARTON \
 		VARITEXT
+
+NTP_DRIVERS_DEFAULT= \
+		ACTS \
+		ARBITER \
+		ARCRON_MSF \
+		AS2201 \
+		ATOM \
+		CHRONOLOG \
+		CHU \
+		DATUM \
+		DUMBCLOCK \
+		FG \
+		HEATH \
+		HOPFPCI \
+		HOPFSERIAL \
+		HPGPS \
+		IRIG \
+		JJY \
+		JUPITER \
+		LEITCH \
+		LOCAL_CLOCK \
+		NEOCLOCK4X \
+		NMEA \
+		ONCORE \
+		PALISADE \
+		PCF \
+		PST \
+		SHM \
+		SPECTRACOM \
+		TRUETIME \
+		ULINK \
+		WWV \
+		ZYFER

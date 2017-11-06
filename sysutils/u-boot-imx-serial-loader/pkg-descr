@@ -1,0 +1,11 @@
+This program boots an i.MX or Vybrid system using a copy of U-Boot
+transferred to the system over an OTG or UART connection.  It can be
+used to "unbrick" a system which has a corrupted or missing copy of
+U-Boot in nonvolatile media such as nand flash or eeprom.  i.MX systems
+use the OTG port, Vybrid systems use the UART port.
+
+To use this, connect the OTG port of your i.MX board to a USB host
+port on your computer, power on the board, then run imx_usb <filename>
+where filename is the board-specific u-boot.imx file to boot with.
+
+WWW: https://github.com/boundarydevices/imx_usb_loader

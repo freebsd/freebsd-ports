@@ -4,7 +4,7 @@
 PORTNAME=	seqan-apps
 PORTVERSION=	2.2.0
 DISTVERSIONPREFIX=	seqan-v
-PORTREVISION=	2
+PORTREVISION=	8
 CATEGORIES=	biology
 
 MAINTAINER=	h2+fbsdports@fsfe.org
@@ -25,6 +25,9 @@ USES=		cmake:outsource
 CMAKE_ARGS=	-DSEQAN_BUILD_SYSTEM="SEQAN_RELEASE_APPS"
 
 USE_GCC=	yes
+
+BROKEN_aarch64=		fails to compile: Error: unknown mnemonic rep -- rep
+BROKEN_powerpc64=	fails to compile: Error: unrecognized opcode: rep
 
 .include <bsd.port.pre.mk>
 

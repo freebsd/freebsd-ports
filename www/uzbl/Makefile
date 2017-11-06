@@ -4,6 +4,7 @@
 PORTNAME=	uzbl
 PORTVERSION=	0.9.1
 DISTVERSIONPREFIX=v
+PORTREVISION=	2
 CATEGORIES=	www
 
 MAINTAINER=	aehlig@linta.de
@@ -12,7 +13,7 @@ COMMENT=	Web interface tools which adhere to the unix philosophy
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools${PYTHON_SUFFIX}>0:devel/py-setuptools${PYTHON_SUFFIX}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>0:devel/${PYTHON_PKGNAMEPREFIX}setuptools
 LIB_DEPENDS=	libwebkitgtk-1.0.so:www/webkit-gtk2 \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2  \
@@ -21,7 +22,7 @@ RUN_DEPENDS=	socat:net/socat \
 		dmenu:x11/dmenu \
 		${PYTHON_PKGNAMEPREFIX}configparser>0:devel/py-configparser
 
-USES=		gmake pkgconfig python:2 desktop-file-utils gettext-runtime
+USES=		gmake pkgconfig python:2 desktop-file-utils gettext-runtime shebangfix
 USE_XORG=	x11
 USE_GNOME=	gtk20 pygtk2 cairo
 USE_LDCONFIG=	yes
@@ -29,6 +30,10 @@ INSTALLS_ICONS=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	uzbl
+
+SHEBANG_FILES=	examples/data/scripts/auth.py \
+		examples/data/scripts/scheme.py \
+		examples/data/scripts/uzblcat
 
 MAKE_ENV=	PYTHON=${PYTHON_VERSION} \
 		MANDIR=${STAGEDIR}${MANPREFIX}/man

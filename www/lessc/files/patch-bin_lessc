@@ -1,0 +1,20 @@
+--- bin/lessc.orig	2017-05-02 22:40:55 UTC
++++ bin/lessc
+@@ -316,8 +316,8 @@ function printUsage() {
+     }
+ 
+     if (sourceMapOptions.sourceMapRootpath === undefined) {
+-        var pathToMap = path.dirname(sourceMapFileInline ? output : sourceMapOptions.sourceMapFullFilename),
+-            pathToInput = path.dirname(sourceMapOptions.sourceMapInputFilename);
++        var pathToMap = path.dirname(sourceMapFileInline ? output : sourceMapOptions.sourceMapFullFilename || '.'),
++            pathToInput = path.dirname(sourceMapOptions.sourceMapInputFilename || '.');
+         sourceMapOptions.sourceMapRootpath = path.relative(pathToMap, pathToInput);
+     }
+ 
+@@ -484,4 +484,4 @@ function printUsage() {
+             parseLessFile(false, buffer);
+         });
+     }
+-})();
+\ No newline at end of file
++})();

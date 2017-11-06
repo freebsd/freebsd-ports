@@ -1,5 +1,5 @@
---- ../../include/licq/icq/filetransfer.h.orig	2013-08-25 11:45:17.000000000 +0200
-+++ ../../include/licq/icq/filetransfer.h	2014-02-13 21:38:18.000000000 +0100
+--- ../../include/licq/icq/filetransfer.h.orig	2014-06-01 19:16:42 UTC
++++ ../../include/licq/icq/filetransfer.h
 @@ -76,6 +76,7 @@
  #include <cstring>
  #include <list>

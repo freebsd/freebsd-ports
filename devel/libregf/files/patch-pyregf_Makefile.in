@@ -1,8 +1,8 @@
 # Allow building when an older version of libregf is installed
 
---- pyregf/Makefile.in.orig	2015-12-24 12:55:58 UTC
+--- pyregf/Makefile.in.orig	2017-02-03 08:51:17 UTC
 +++ pyregf/Makefile.in
-@@ -193,7 +193,7 @@ AM_V_at = $(am__v_at_@AM_V@)
+@@ -191,7 +191,7 @@ AM_V_at = $(am__v_at_@AM_V@)
  am__v_at_ = $(am__v_at_@AM_DEFAULT_V@)
  am__v_at_0 = @
  am__v_at_1 = 

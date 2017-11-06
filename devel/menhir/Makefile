@@ -2,26 +2,28 @@
 # $FreeBSD$
 
 PORTNAME=	menhir
-PORTVERSION=	20160303
+PORTVERSION=	20170712
 CATEGORIES=	devel
 MASTER_SITES=	http://cristal.inria.fr/~fpottier/menhir/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	amutu@amutu.com
 COMMENT=	LR(1) parser generator for OCaml
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+USES=		gmake shebangfix
 USE_OCAML=	yes
 USE_OCAML_FINDLIB=	yes
 USE_OCAMLFIND_PLIST=	yes
 OCAML_PKGDIRS=		menhirLib
 
-USES=		gmake shebangfix
 SHEBANG_FILES=	demos/find-menhir.sh
 MAKE_JOBS_UNSAFE=	yes
 
 DOCSDIR=	${PREFIX}/share/doc/ocaml/${PORTNAME}
 
 PORTDOCS=	*
-PLIST_FILES=	bin/menhir man/man1/menhir.1.gz %%DATADIR%%/standard.mly
 
 OPTIONS_DEFINE=	DOCS
 

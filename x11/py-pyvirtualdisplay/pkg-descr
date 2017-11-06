@@ -1,0 +1,3 @@
+PyVirtualDisplay is a python wrapper for Xvfb, Xephyr and Xvnc.
+
+WWW: https://github.com/ponty/pyvirtualdisplay

@@ -9,28 +9,19 @@ MASTER_SITES=	http://cr.yp.to/primegen/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Small, fast library to generate prime numbers in order
 
-ALL_TARGET=
+USES=		groff
+ALL_TARGET=	default
 
-PROGRAM_FILES=	primes primegaps
-HEADER_FILES=	primegen.h
-LIB_FILES=	libprimegen.a
-
-# programs
-PLIST_FILES+=	${PROGRAM_FILES:S,^,bin/,}
-
-# header files
-PLIST_FILES+=	${HEADER_FILES:S,^,include/,}
-
-# libraries
-PLIST_FILES+=	${LIB_FILES:S,^,lib/,}
-
-# man pages
-PLIST_FILES+=	man/man1/primes.1.gz man/man1/primegaps.1.gz \
+PLIST_FILES=	bin/primes bin/primegaps \
+		include/primegen.h \
+		lib/libprimegen.a \
+		man/man1/primes.1.gz \
+		man/man1/primegaps.1.gz \
 		man/man3/primegen.3.gz
 
 post-patch:
-	@${FIND} ${WRKSRC} -type f -exec \
-		${REINPLACE_CMD} -E -e 's!(primegen.a)!lib\1!' {} \;
+	@${REINPLACE_CMD} -e 's,primegen\.a,lib&,' ${WRKSRC}/Makefile \
+		${WRKSRC}/TARGETS ${WRKSRC}/hier.c
 
 do-configure:
 	@${ECHO_CMD} '${CC} ${CFLAGS} -fsigned-char -fPIC' > ${WRKSRC}/conf-cc
@@ -38,15 +29,10 @@ do-configure:
 	@${ECHO_CMD} '${PREFIX}' > ${WRKSRC}/conf-home
 
 do-install:
-.for file in ${PROGRAM_FILES}
-	${INSTALL_PROGRAM} ${WRKSRC}/${file} ${STAGEDIR}${PREFIX}/bin
-.endfor
-.for file in ${HEADER_FILES}
-	${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${PREFIX}/include
-.endfor
-.for file in ${LIB_FILES}
-	${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${PREFIX}/lib
-.endfor
+	${INSTALL_PROGRAM} ${WRKSRC}/primes ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/primegaps ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/primegen.h ${STAGEDIR}${PREFIX}/include
+	${INSTALL_DATA} ${WRKSRC}/libprimegen.a ${STAGEDIR}${PREFIX}/lib
 	${INSTALL_MAN} ${WRKSRC}/primes.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/primegaps.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/primegen.3 ${STAGEDIR}${MAN3PREFIX}/man/man3

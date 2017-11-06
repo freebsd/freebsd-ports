@@ -3,16 +3,18 @@
 
 PORTNAME=	yakuake
 PORTVERSION=	2.9.9
-PORTREVISION=	6
+PORTREVISION=	8
 CATEGORIES=	x11 kde
 MASTER_SITES=	KDE/stable/${PORTNAME}/${PORTVERSION}/src
 PKGNAMESUFFIX=	-kde4
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Drop-down terminal emulator for KDE
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+RUN_DEPENDS=	konsole:x11/konsole
 
 USES=		cmake gettext kde:4 shebangfix tar:xz
 SHEBANG_FILES=	data/updaters/yakuake-${PORTVERSION}-startupnotification.pl

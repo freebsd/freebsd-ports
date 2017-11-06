@@ -10,6 +10,6 @@ MASTERDIR=	${.CURDIR}/../../archivers/unrar
 EXTRA_PATCHES=	${.CURDIR}/files/patch-arcread.cpp \
 		${.CURDIR}/files/patch-unicode.cpp
 
-CONFLICTS_INSTALL=	unrar-[0-9]* unrar-iconv-[0-9]*
+CONFLICTS_INSTALL=	unrar unrar-iconv
 
 .include "${MASTERDIR}/Makefile"

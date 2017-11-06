@@ -1,4 +1,4 @@
---- etc/rtgtargmkr.pl.in.orig	2016-10-25 16:28:59 UTC
+--- etc/rtgtargmkr.pl.in.orig	2016-11-04 16:36:53 UTC
 +++ etc/rtgtargmkr.pl.in
 @@ -126,7 +126,7 @@ sub find_router_id {
          &sql_insert($sql);
@@ -9,3 +9,21 @@
            &sql_insert($sql);
          }
      }
+@@ -289,7 +289,7 @@ sub main {
+       $year + 1900, $hour, $min;
+     print CFG "# Host\tOID\tBits\tCommunity\tTable\tID\tDescription\n";
+ 
+-    foreach $router (@routers) {
++    POKE: foreach $router (@routers) {
+         $bits = $counterBits{$router};
+         # Sanity check bits
+         $bits = $defbits if ( ( $bits != 32 ) && ( $bits != 64 ) );
+@@ -304,7 +304,7 @@ sub main {
+         $system = join ( ' ', @result );
+         print "System: $system\n" if $DEBUG;
+         $session = SNMP_Session->open( $router, $communities{$router}, 161 )
+-          || die "Error opening SNMP session to $router";
++          || ( print "Error opening SNMP session to $router" and next POKE );
+         if ( $system =~ /.*Cisco.*WS-.*/ ) {
+             $system = "Catalyst";
+             $session->map_table( $catalyst, \&process );

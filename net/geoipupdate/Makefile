@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	geoipupdate
-PORTVERSION=	2.3.1
+PORTVERSION=	2.5.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net geography
 
@@ -21,7 +21,13 @@ GNU_CONFIGURE=	yes
 
 OPTIONS_DEFINE=	DOCS
 
+post-patch:
+# This directory is handled by net/GeoIP
+	@${REINPLACE_CMD} -e '/MKDIR_P.*(datarootdir)\/GeoIP/ d' \
+		${WRKSRC}/Makefile.am
+
 post-install:
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/GeoIP
 	${MV} ${STAGEDIR}${DOCSDIR}/GeoIP.conf.default \
 		${STAGEDIR}${PREFIX}/etc/GeoIP.conf.sample
 

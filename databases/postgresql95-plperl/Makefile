@@ -2,8 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	postgresql
+PORTREVISION=	0
 CATEGORIES=	databases perl5
-PKGNAMESUFFIX?=	${DISTVERSION:R:S/.//}${COMPONENT}
+PKGNAMESUFFIX?=	${WANT_PGSQL_VER:S/.//}${COMPONENT}
 
 MAINTAINER=	pgsql@FreeBSD.org
 COMMENT=	Write SQL functions for PostgreSQL using Perl5

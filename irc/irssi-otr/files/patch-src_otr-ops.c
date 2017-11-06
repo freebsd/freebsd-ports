@@ -1,5 +1,5 @@
---- src/otr-ops.c	2014-02-12 18:50:45.000000000 -0600
-+++ src/otr-ops.c	2016-04-07 17:35:00.000000000 +0530
+--- src/otr-ops.c.orig	2016-12-07 21:24:08 UTC
++++ src/otr-ops.c
 @@ -21,6 +21,7 @@
  
  #include "key.h"
@@ -8,7 +8,7 @@
  
  static OtrlPolicy OTR_DEFAULT_POLICY =
  	OTRL_POLICY_MANUAL | OTRL_POLICY_WHITESPACE_START_AKE;
-@@ -206,8 +207,13 @@ static void ops_handle_msg_event(void *opdata, OtrlMessageEvent msg_event,
+@@ -206,8 +207,13 @@ static void ops_handle_msg_event(void *o
  		 * submit a patch or email me a better way.
  		 */
  		signal_remove("message private", (SIGNAL_FUNC) sig_message_private);

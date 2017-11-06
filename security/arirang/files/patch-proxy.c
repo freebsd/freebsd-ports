@@ -3,9 +3,9 @@ a DNS-failure, not perror().
 
 	-mi
 
---- proxy.c	2011-05-17 22:19:11.000000000 -0400
-+++ proxy.c	2015-03-23 09:46:34.000000000 -0400
-@@ -94,15 +94,13 @@
+--- proxy.c.orig	2011-05-18 02:19:11 UTC
++++ proxy.c
+@@ -94,15 +94,13 @@ proxy_connect(char *scanhost, unsigned i
      struct hostent *he;
  
      if ((he = gethostbyname(proxyhost)) == NULL) {

@@ -1,8 +1,0 @@
-PyMe is a Python interface to GPGME library.
-
-PyMe's development model is GPGME + Python + SWIG (just like m2crypto is
-an OpenSSL + Python + SWIG) combination which means that most of the
-functions and types are converted from C into Python automatically by SWIG.
-In short, to be able to use PyMe you need to be familiar with GPGME.
-
-WWW: http://pyme.sourceforge.net/

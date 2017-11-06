@@ -1,6 +1,6 @@
---- ./Makefile.PL.orig	2014-01-01 12:53:34.000000000 +0100
-+++ ./Makefile.PL	2014-08-09 13:50:03.000000000 +0200
-@@ -33,9 +33,9 @@
+--- Makefile.PL.orig	2017-07-24 11:59:06 UTC
++++ Makefile.PL
+@@ -33,9 +33,9 @@ my %wm = (
  $ExtUtils::MakeMaker::VERSION > 6.30 and $wm{LICENSE} = "perl";
  
  unless (exists $ENV{AUTOMATED_TESTING} and $ENV{AUTOMATED_TESTING} == 1) {

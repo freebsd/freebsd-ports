@@ -6,7 +6,7 @@ PORTVERSION=	6.4.2
 PORTREVISION=	3
 CATEGORIES=	net
 MASTER_SITES=	NETBSD/traceroute-nanog \
-		http://mirrors.rit.edu/zi/
+		ZI
 DISTNAME=	traceroute.c
 EXTRACT_SUFX=
 DIST_SUBDIR=	${PORTNAME}

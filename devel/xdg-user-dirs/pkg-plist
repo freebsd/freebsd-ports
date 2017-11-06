@@ -1,5 +1,6 @@
 bin/xdg-user-dir
 bin/xdg-user-dirs-update
+etc/xdg/autostart/xdg-user-dirs.desktop
 etc/xdg/user-dirs.conf
 etc/xdg/user-dirs.defaults
 man/man1/xdg-user-dir.1.gz
@@ -31,6 +32,7 @@ share/locale/fa/LC_MESSAGES/xdg-user-dirs.mo
 share/locale/fi/LC_MESSAGES/xdg-user-dirs.mo
 share/locale/fr/LC_MESSAGES/xdg-user-dirs.mo
 share/locale/ga/LC_MESSAGES/xdg-user-dirs.mo
+share/locale/gd/LC_MESSAGES/xdg-user-dirs.mo
 share/locale/gl/LC_MESSAGES/xdg-user-dirs.mo
 share/locale/gu/LC_MESSAGES/xdg-user-dirs.mo
 share/locale/he/LC_MESSAGES/xdg-user-dirs.mo

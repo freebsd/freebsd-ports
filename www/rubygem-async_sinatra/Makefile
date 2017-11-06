@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	async_sinatra
-PORTVERSION=	1.2.1
-PORTREVISION=	1
+PORTVERSION=	1.3.0
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -12,8 +11,8 @@ COMMENT=	Sinatra plugin to provide async responses
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-rack>=1.4.1:www/rubygem-rack \
-		rubygem-sinatra>=1.3.2:www/rubygem-sinatra
+RUN_DEPENDS=	rubygem-rack>=2.0.0:www/rubygem-rack \
+		rubygem-sinatra>=1.4.8:www/rubygem-sinatra
 
 NO_ARCH=	yes
 USE_RUBY=	yes

@@ -154,5 +154,5 @@ libexec/ifmail/nlpatch
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/zmailer/routes
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/zmailer/scheduler.conf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/zmailer/sm.conf
-@exec echo "updating /etc/services"; cp /etc/services /etc/services.bak; (grep -v ^ifcico /etc/services.bak ; echo "ifcico		60179/tcp  #ifcico server (ifmail)") > /etc/services
-@unexec echo "updating /etc/services"; cp /etc/services /etc/services.bak; (grep -v ^ifcico /etc/services.bak ) > /etc/services
+@preexec echo "updating /etc/services"; cp /etc/services /etc/services.bak; (grep -v ^ifcico /etc/services.bak ; echo "ifcico		60179/tcp  #ifcico server (ifmail)") > /etc/services
+@postunexec echo "updating /etc/services"; cp /etc/services /etc/services.bak; (grep -v ^ifcico /etc/services.bak ) > /etc/services

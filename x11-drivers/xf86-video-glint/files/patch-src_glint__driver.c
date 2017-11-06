@@ -1,19 +1,15 @@
---- src/glint_driver.c.orig	2012-07-16 02:50:47 UTC
+# Correct the type of a few variables
+#
+--- src/glint_driver.c.orig	2017-01-17 22:34:15 UTC
 +++ src/glint_driver.c
-@@ -52,8 +52,6 @@
- #include "compiler.h"
- #include "mipointer.h"
+@@ -1326,8 +1326,8 @@ GLINTPreInit(ScrnInfoPtr pScrn, int flag
+ 		    int basecopro = 
+ 			PCI_REGION_BASE(pGlint->MultiPciInfo[0], 0, REGION_MEM) & 0xFFFFC000;
+ 		    int basedelta = PCI_REGION_BASE(pGlint->PciInfo, 0, REGION_MEM)  & 0xFFFFC000;
+-		    int dummy;
+-		    int base3copro, offset;
++		    uint32_t dummy;
++		    uint32_t base3copro, offset;
  
--#include "mibstore.h"
--
- #include "pm3_regs.h"
- #include "glint_regs.h"
- #include "IBM.h"
-@@ -2904,7 +2902,6 @@ GLINTScreenInit(SCREEN_INIT_ARGS_DECL)
-         }
-     }
- 
--    miInitializeBackingStore(pScreen);
-     xf86SetBackingStore(pScreen);
-     xf86SetSilkenMouse(pScreen);
- 
+     		    if( (basedelta & 0x20000) ^ (basecopro & 0x20000) ) {
+  			if ((pGlint->MultiChip == PCI_CHIP_3DLABS_PERMEDIA) ||

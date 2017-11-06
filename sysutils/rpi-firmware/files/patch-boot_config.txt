@@ -1,0 +1,7 @@
+--- boot/config.txt.orig	2017-08-19 16:23:10 UTC
++++ boot/config.txt
+@@ -0,0 +1,4 @@
++init_uart_clock=3000000
++enable_uart=1
++kernel=u-boot.bin
++kernel7=u-boot.bin

@@ -6,4 +6,4 @@ The AccountsService project provides
  o  An implementation of these interfaces based on the usermod(8),
     useradd(8) and userdel(8) commands.
 
-WWW: http://cgit.freedesktop.org/accountsservice/
+WWW: https://cgit.freedesktop.org/accountsservice/

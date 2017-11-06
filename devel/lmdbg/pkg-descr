@@ -7,4 +7,4 @@ and double frees. However, unlike others, LMDBG generates full
 stacktraces and separates the logging process from analysis, thus
 allowing you to analyze an application on a per-module basis.
 
-WWW: http://sourceforge.net/projects/lmdbg
+WWW: https://sourceforge.net/projects/lmdbg/

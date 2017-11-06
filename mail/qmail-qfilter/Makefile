@@ -3,14 +3,16 @@
 
 PORTNAME=	qmail-qfilter
 PORTVERSION=	2.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	mail
 MASTER_SITES=	http://untroubled.org/${PORTNAME}/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	araujo@FreeBSD.org
 COMMENT=	Front-end for qmail-queue to run messages through filters
 
-LIB_DEPENDS=	libbg-sysdeps.so:devel/bglibs
+LICENSE=	GPLv2
+
+LIB_DEPENDS=	libbg.so:devel/bglibs
 
 BGLIBS_INC=	${LOCALBASE}/include/bglibs
 BGLIBS_LIB=	${LOCALBASE}/lib/bglibs

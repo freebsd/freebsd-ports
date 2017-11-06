@@ -3,7 +3,7 @@
 
 PORTNAME=	ardour
 PORTVERSION=	2.8.16
-PORTREVISION=	5
+PORTREVISION=	8
 CATEGORIES=	audio
 MASTER_SITES=	http://freebsd.nsu.ru/distfiles/
 
@@ -12,6 +12,8 @@ COMMENT=	Multichannel digital audio workstation
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+BROKEN=		fails to build
 
 LIB_DEPENDS=	liblo.so:audio/liblo \
 		liblrdf.so:textproc/liblrdf \

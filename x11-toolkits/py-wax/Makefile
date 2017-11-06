@@ -14,7 +14,6 @@ COMMENT=	User-friendly layer on top of wxPython
 NO_BUILD=	yes
 USES=		python
 USE_WX=		2.8
-WX_UNICODE=	yes
 WX_COMPS=	python:run
 
 DATADIR=	${PYTHON_SITELIBDIR}

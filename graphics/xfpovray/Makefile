@@ -14,6 +14,9 @@ COMMENT=	Graphical interface to POV-Ray
 LIB_DEPENDS=	libforms.so:x11-toolkits/xforms
 RUN_DEPENDS=	povray:graphics/povray-meta
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 USES=		tar:tgz uidfix
 USE_XORG=	x11 xext xpm
 MAKEFILE=	${FILESDIR}/BSDmakefile

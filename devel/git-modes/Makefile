@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	git-modes
-PORTVERSION=	1.2.2
+PORTVERSION=	1.2.6
 PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	devel elisp
@@ -20,6 +20,7 @@ GH_ACCOUNT=	magit
 USES=		gmake
 USE_EMACS=	yes
 PORTDOCS=	README.md
+NO_ARCH=	yes
 
 ALL_TARGET=	lisp
 

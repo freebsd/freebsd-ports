@@ -77,11 +77,9 @@ bin/nb
 %%DATADIR%%/plugins/weblog_status.sh
 %%DATADIR%%/plugins/z001_articles_meta.sh
 %%DATADIR%%/welcome-to-nb.txt
-%%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/TODO
-%%PORTDOCS%%%%DOCSDIR%%/copyright
 %%PORTDOCS%%%%DOCSDIR%%/html/nanoblogger.html
 @dir %%DATADIR%%/plugins/page/mod
 @dir %%DATADIR%%/plugins/entry/mod

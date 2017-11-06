@@ -12,10 +12,11 @@ include/libgxps/gxps-links.h
 include/libgxps/gxps-page.h
 include/libgxps/gxps-version.h
 include/libgxps/gxps.h
+lib/girepository-1.0/GXPS-0.1.typelib
 lib/libgxps.a
 lib/libgxps.so
 lib/libgxps.so.2
-lib/libgxps.so.2.2.0
+lib/libgxps.so.2.2.1
 libdata/pkgconfig/libgxps.pc
 %%PORTDOCS%%%%DOCSDIR%%/GXPSCoreProperties.html
 %%PORTDOCS%%%%DOCSDIR%%/GXPSDocument.html
@@ -29,7 +30,6 @@ libdata/pkgconfig/libgxps.pc
 %%PORTDOCS%%%%DOCSDIR%%/ch01.html
 %%PORTDOCS%%%%DOCSDIR%%/home.png
 %%PORTDOCS%%%%DOCSDIR%%/index.html
-%%PORTDOCS%%%%DOCSDIR%%/index.sgml
 %%PORTDOCS%%%%DOCSDIR%%/left-insensitive.png
 %%PORTDOCS%%%%DOCSDIR%%/left.png
 %%PORTDOCS%%%%DOCSDIR%%/libgxps-GXPS-Links.html
@@ -41,3 +41,4 @@ libdata/pkgconfig/libgxps.pc
 %%PORTDOCS%%%%DOCSDIR%%/style.css
 %%PORTDOCS%%%%DOCSDIR%%/up-insensitive.png
 %%PORTDOCS%%%%DOCSDIR%%/up.png
+share/gir-1.0/GXPS-0.1.gir

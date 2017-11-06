@@ -1,0 +1,10 @@
+#!/bin/sh
+# Wrap nx: it finds game data files
+#  relative to itself
+
+if [ ! -d "$HOME"/.nxengine ]; then
+	mkdir -p "$HOME"/.nxengine
+	ln -s %%DATADIR%%/* "$HOME"/.nxengine/
+fi
+cd "$HOME"/.nxengine && exec ./nx "$@"
+

@@ -79,6 +79,9 @@ share/icons/hicolor/scalable/apps/lyx.svg
 %%DATADIR%%/doc/UserGuide.lyx
 %%DATADIR%%/doc/biblio/LyXDocs.bib
 %%DATADIR%%/doc/biblio/alphadin.bst
+%%DATADIR%%/doc/ar/Intro.lyx
+%%DATADIR%%/doc/ar/Shortcuts.lyx
+%%DATADIR%%/doc/ar/Tutorial.lyx
 %%DATADIR%%/doc/ca/Intro.lyx
 %%DATADIR%%/doc/clipart/Abstract.pdf
 %%DATADIR%%/doc/clipart/BoxInsetDefault.png
@@ -301,6 +304,7 @@ share/icons/hicolor/scalable/apps/lyx.svg
 %%DATADIR%%/examples/de/Lebenslauf.lyx
 %%DATADIR%%/examples/de/MultilingualCaptions.lyx
 %%DATADIR%%/examples/de/PDF-comment.lyx
+%%DATADIR%%/examples/de/PDF-form.lyx
 %%DATADIR%%/examples/de/beamer-article.lyx
 %%DATADIR%%/examples/de/beamer.lyx
 %%DATADIR%%/examples/de/beispiel_gelyxt.lyx
@@ -2326,7 +2330,10 @@ share/icons/hicolor/scalable/apps/lyx.svg
 %%DATADIR%%/layouts/tcolorbox.module
 %%DATADIR%%/layouts/theorems-ams-bytype.inc
 %%DATADIR%%/layouts/theorems-ams-bytype.module
+%%DATADIR%%/layouts/theorems-ams-chap-bytype.inc
+%%DATADIR%%/layouts/theorems-ams-chap-bytype.module
 %%DATADIR%%/layouts/theorems-ams-extended-bytype.module
+%%DATADIR%%/layouts/theorems-ams-extended-chap-bytype.module
 %%DATADIR%%/layouts/theorems-ams-extended.module
 %%DATADIR%%/layouts/theorems-ams.inc
 %%DATADIR%%/layouts/theorems-ams.module

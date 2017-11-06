@@ -13,6 +13,10 @@ COMMENT=	Open source distributed database management system
 
 LICENSE=	APACHE20
 
+BROKEN=		crash with current OpenJDK
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2017-11-09
+
 JAVA_VERSION=	1.7
 JAVA_VENDOR=	openjdk
 REINPLACE_ARGS=	-i ''
@@ -47,7 +51,7 @@ SUB_FILES=	repaircluster
 
 RUN_DEPENDS+=	${JAVALIBDIR}/snappy-java.jar:archivers/snappy-java
 
-MX4J_RUN_DEPENDS=	${JAVAJARDIR}/mx4j-tools.jar:java/mx4j
+MX4J_RUN_DEPENDS=	${JAVALIBDIR}/mx4j-tools.jar:java/mx4j
 CQL_USES=	python:2
 
 PORTDOCS=	javadoc *.txt

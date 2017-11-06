@@ -1,0 +1,11 @@
+--- docs/README.logtail.orig	2017-01-25 21:08:04 UTC
++++ docs/README.logtail
+@@ -28,7 +28,7 @@ Logtail2, a different executeable, also 
+ guessing a file name that might have been the target of log rotation
+ and printing that file's contents starting with the stored offset. If
+ you have a non-standard rotation scheme, you can drop your own
+-heuristic into /usr/share/logtail/detectrotate/ and have it
++heuristic into %%DATADIR%%/detectrotate/ and have it
+ automatically picked up by logtail2.
+ ======================================================================
+ COMMANDLINE ARGUMENTS

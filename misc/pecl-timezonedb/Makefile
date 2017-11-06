@@ -2,11 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	timezonedb
-PORTVERSION=	2016.10
+PORTVERSION=	2017.3
 CATEGORIES=	misc
-MASTER_SITES=	http://pecl.php.net/get/
-PKGNAMEPREFIX=	pecl-
-DIST_SUBDIR=	PECL
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Timezone Database to be used with PHP date and time functions
@@ -15,6 +12,6 @@ LICENSE=	PHP301
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 CONFIGURE_ARGS=	--enable-timezonedb
-USES=		php:ext tar:tgz
+USES=		php:pecl
 
 .include <bsd.port.mk>

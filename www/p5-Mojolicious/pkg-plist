@@ -31,6 +31,7 @@ bin/morbo
 %%SITE_PERL%%/Mojo/IOLoop/Server.pm
 %%SITE_PERL%%/Mojo/IOLoop/Stream.pm
 %%SITE_PERL%%/Mojo/IOLoop/Subprocess.pm
+%%SITE_PERL%%/Mojo/IOLoop/TLS.pm
 %%SITE_PERL%%/Mojo/IOLoop/resources/server.crt
 %%SITE_PERL%%/Mojo/IOLoop/resources/server.key
 %%SITE_PERL%%/Mojo/JSON.pm
@@ -42,6 +43,7 @@ bin/morbo
 %%SITE_PERL%%/Mojo/Message/Response.pm
 %%SITE_PERL%%/Mojo/Parameters.pm
 %%SITE_PERL%%/Mojo/Path.pm
+%%SITE_PERL%%/Mojo/Promise.pm
 %%SITE_PERL%%/Mojo/Reactor.pm
 %%SITE_PERL%%/Mojo/Reactor/EV.pm
 %%SITE_PERL%%/Mojo/Reactor/Poll.pm
@@ -50,6 +52,8 @@ bin/morbo
 %%SITE_PERL%%/Mojo/Server/Daemon.pm
 %%SITE_PERL%%/Mojo/Server/Hypnotoad.pm
 %%SITE_PERL%%/Mojo/Server/Morbo.pm
+%%SITE_PERL%%/Mojo/Server/Morbo/Backend.pm
+%%SITE_PERL%%/Mojo/Server/Morbo/Backend/Poll.pm
 %%SITE_PERL%%/Mojo/Server/PSGI.pm
 %%SITE_PERL%%/Mojo/Server/Prefork.pm
 %%SITE_PERL%%/Mojo/Template.pm
@@ -92,6 +96,7 @@ bin/morbo
 %%SITE_PERL%%/Mojolicious/Guides/Growing.pod
 %%SITE_PERL%%/Mojolicious/Guides/Rendering.pod
 %%SITE_PERL%%/Mojolicious/Guides/Routing.pod
+%%SITE_PERL%%/Mojolicious/Guides/Testing.pod
 %%SITE_PERL%%/Mojolicious/Guides/Tutorial.pod
 %%SITE_PERL%%/Mojolicious/Lite.pm
 %%SITE_PERL%%/Mojolicious/Plugin.pm
@@ -168,6 +173,7 @@ bin/morbo
 %%PERL5_MAN3%%/Mojo::IOLoop::Server.3.gz
 %%PERL5_MAN3%%/Mojo::IOLoop::Stream.3.gz
 %%PERL5_MAN3%%/Mojo::IOLoop::Subprocess.3.gz
+%%PERL5_MAN3%%/Mojo::IOLoop::TLS.3.gz
 %%PERL5_MAN3%%/Mojo::JSON.3.gz
 %%PERL5_MAN3%%/Mojo::JSON::Pointer.3.gz
 %%PERL5_MAN3%%/Mojo::Loader.3.gz
@@ -177,6 +183,7 @@ bin/morbo
 %%PERL5_MAN3%%/Mojo::Message::Response.3.gz
 %%PERL5_MAN3%%/Mojo::Parameters.3.gz
 %%PERL5_MAN3%%/Mojo::Path.3.gz
+%%PERL5_MAN3%%/Mojo::Promise.3.gz
 %%PERL5_MAN3%%/Mojo::Reactor.3.gz
 %%PERL5_MAN3%%/Mojo::Reactor::EV.3.gz
 %%PERL5_MAN3%%/Mojo::Reactor::Poll.3.gz
@@ -185,6 +192,8 @@ bin/morbo
 %%PERL5_MAN3%%/Mojo::Server::Daemon.3.gz
 %%PERL5_MAN3%%/Mojo::Server::Hypnotoad.3.gz
 %%PERL5_MAN3%%/Mojo::Server::Morbo.3.gz
+%%PERL5_MAN3%%/Mojo::Server::Morbo::Backend.3.gz
+%%PERL5_MAN3%%/Mojo::Server::Morbo::Backend::Poll.3.gz
 %%PERL5_MAN3%%/Mojo::Server::PSGI.3.gz
 %%PERL5_MAN3%%/Mojo::Server::Prefork.3.gz
 %%PERL5_MAN3%%/Mojo::Template.3.gz
@@ -227,6 +236,7 @@ bin/morbo
 %%PERL5_MAN3%%/Mojolicious::Guides::Growing.3.gz
 %%PERL5_MAN3%%/Mojolicious::Guides::Rendering.3.gz
 %%PERL5_MAN3%%/Mojolicious::Guides::Routing.3.gz
+%%PERL5_MAN3%%/Mojolicious::Guides::Testing.3.gz
 %%PERL5_MAN3%%/Mojolicious::Guides::Tutorial.3.gz
 %%PERL5_MAN3%%/Mojolicious::Lite.3.gz
 %%PERL5_MAN3%%/Mojolicious::Plugin.3.gz

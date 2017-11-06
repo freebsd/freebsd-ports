@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mma
-PORTVERSION=	15.12
+PORTVERSION=	16.06
 PORTREVISION=	0
 CATEGORIES=	audio
 MASTER_SITES=	http://www.mellowood.ca/${PORTNAME}/
@@ -29,6 +29,7 @@ SUB_FILES=	mma_g.py
 SUB_LIST=	PYTHON_CMD=${PYTHON_CMD}
 
 USES=		python shebangfix
+USE_PYTHON=	py3kplist
 
 WRKDOC=	${WRKDIR}/${PORTNAME}-pdf-${DISTVERSION:S,a,,}
 WRKSRC=	${WRKDIR}/${PORTNAME}-bin-${DISTVERSION}
@@ -40,8 +41,8 @@ post-patch:
 	${REINPLACE_CMD} mma-splitrec util/mma-splitrec.py)
 
 do-build:
+	@${PYTHON_CMD} -m compileall -f ${WRKSRC}/MMA
 	@${PYTHON_CMD} -O -m compileall -f ${WRKSRC}/MMA
-	@${PYTHON_CMD} -OO -m compileall -f ${WRKSRC}/MMA
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}

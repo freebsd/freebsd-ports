@@ -2,6 +2,7 @@ bin/weechat
 bin/weechat-curses
 include/weechat/weechat-plugin.h
 lib/weechat/plugins/alias.so
+lib/weechat/plugins/buflist.so
 lib/weechat/plugins/exec.so
 lib/weechat/plugins/fifo.so
 lib/weechat/plugins/irc.so

@@ -3,7 +3,7 @@
 
 PORTNAME=	pycallgraph
 PORTVERSION=	0.5.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	devel python
 MASTER_SITES=	http://pycallgraph.slowchop.com/files/download/ \
 		http://www.cs.nctu.edu.tw/~lwhsu/ports/distfiles/
@@ -16,13 +16,13 @@ LICENSE=	GPLv2
 
 RUN_DEPENDS+=	dot:graphics/graphviz
 
-USES=		python
+USES=		python shebangfix
 USE_PYTHON=	distutils
+SHEBANG_FILES=	examples/*.py
 
 EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
 
 OPTIONS_DEFINE=	EXAMPLES
-
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/man/pycallgraph.1 ${STAGEDIR}${MAN1PREFIX}/man/man1

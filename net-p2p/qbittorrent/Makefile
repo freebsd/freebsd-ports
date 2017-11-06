@@ -2,25 +2,24 @@
 # $FreeBSD$
 
 PORTNAME=	qbittorrent
-PORTVERSION=	3.3.10
-PORTREVISION=	1
+DISTVERSION=	3.3.16
 CATEGORIES=	net-p2p ipv6
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	yuri@rawbw.com
 COMMENT?=	Bittorrent client using Qt4/5 and libtorrent-rasterbar
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libtorrent-rasterbar.so:net-p2p/libtorrent-rasterbar \
 		libboost_system.so:devel/boost-libs
 
-USES=		compiler:c++11-lib execinfo pkgconfig tar:xz
-QT4_USE=	QT4=corelib,network,xml,qmake_build,linguisttools_build,moc_build,rcc_build,uic_build
-QT5_USE=	QT5=core,network,xml,qmake_build,buildtools_build,linguisttools_build
+USES=		compiler:c++11-lib pkgconfig tar:xz
+GNU_CONFIGURE=	yes
+USE_QT5=	core network xml qmake_build buildtools_build linguisttools_build
 QT_NONSTANDARD=	yes
 DESTDIRNAME=	INSTALL_ROOT
-GNU_CONFIGURE=	yes
 
 PORTDOCS=	AUTHORS Changelog README.md
 
@@ -28,59 +27,40 @@ PORTDOCS=	AUTHORS Changelog README.md
 WITH_GUI:=	yes
 .else
 WITH_GUI:=	no
+SUFFIX:=	-nox
 .endif
 
 OPTIONS_DEFINE=		DBUS DEBUG DOCS
-OPTIONS_SINGLE=		QT
-OPTIONS_SINGLE_QT=	QT4 QT5
-OPTIONS_DEFAULT=	QT5
-OPTION_QT=		${SELECTED_OPTIONS:MQT*}
 
 DEBUG_CONFIGURE_ENABLE=	debug
 DBUS_CONFIGURE_ENABLE=	qt-dbus
-QT4_CONFIGURE_ON=	--with-qt4
+DBUS_USE=		qt5=dbus
 
 .if ${WITH_GUI} == "yes"
 LIB_DEPENDS+=		libGeoIP.so:net/GeoIP
 USES+=			desktop-file-utils
-QT4_USE+=		QT4=gui
-QT5_USE+=		QT5=concurrent,gui,widgets GL=gl
+USE_QT5+=		concurrent gui widgets
+USE_GL+=		gl
 OPTIONS_DEFAULT+=	DBUS
 .else
 CONFIGURE_ARGS+=	--disable-gui
 .endif
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MDBUS}
-USE_${OPTION_QT}+=	dbus
-.endif
-
 CONFIGURE_ARGS+=	CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS}"
 
 post-patch:
-.if ${PORT_OPTIONS:MQT4}
-	${REINPLACE_CMD} 's,^\$$QT_QMAKE,${LOCALBASE}/bin/qmake-qt4,' \
-		${WRKSRC}/${CONFIGURE_SCRIPT}
-.else
-	${REINPLACE_CMD} 's,^\$$QT_QMAKE,${LOCALBASE}/lib/qt5/bin/qmake,' \
-		${WRKSRC}/${CONFIGURE_SCRIPT}
-.endif
+	@${REINPLACE_CMD} \
+		-e 's/#ifdef Q_OS_MAC/#if defined(Q_OS_MAC) || (defined(__FreeBSD__) \&\& __FreeBSD_version < 1003506)/' \
+		${WRKSRC}/src/base/utils/string.cpp
 
 post-install:
-.if ${WITH_GUI} == "yes"
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/qbittorrent
-	${INSTALL_MAN} ${WRKSRC}/doc/qbittorrent.1 \
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/qbittorrent${SUFFIX}
+	${INSTALL_MAN} ${WRKSRC}/doc/qbittorrent${SUFFIX}.1 \
 		${STAGEDIR}${MAN1PREFIX}/man/man1/
-.else
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/qbittorrent-nox
-	${INSTALL_MAN} ${WRKSRC}/doc/qbittorrent-nox.1 \
-		${STAGEDIR}${MAN1PREFIX}/man/man1/
-.endif
-	@${RM} -r ${STAGEDIR}${PREFIX}/share/man
+	${RM} -r ${STAGEDIR}${PREFIX}/share/man
 
 post-install-DOCS-on:
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

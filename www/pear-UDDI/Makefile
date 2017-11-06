@@ -5,7 +5,7 @@ PORTNAME=	UDDI
 PORTVERSION=	0.2.4
 CATEGORIES=	www pear finance
 
-MAINTAINER=	joneum@bsdproject.de
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	PEAR UDDI for PHP
 
 BUILD_DEPENDS=	${PEARDIR}/XML/Parser.php:devel/pear-XML_Parser \
@@ -13,6 +13,6 @@ BUILD_DEPENDS=	${PEARDIR}/XML/Parser.php:devel/pear-XML_Parser \
 RUN_DEPENDS=	${PEARDIR}/XML/Parser.php:devel/pear-XML_Parser \
 		${PEARDIR}/XML/Util.php:devel/pear-XML_Util
 
-USES=	pear
+USES=		pear
 
 .include <bsd.port.mk>

@@ -2,11 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	wargus
-PORTVERSION=	2.3.0
+PORTVERSION=	2.4.1
+DISTVERSIONPREFIX=	v
 PORTREVISION=	1
 CATEGORIES=	games
-MASTER_SITES=	http://launchpadlibrarian.net/200671642/
-DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Warcraft 2 mod that allows you to play Warcraft 2 with Stratagus
@@ -19,6 +18,9 @@ RUN_DEPENDS=	stratagus:games/stratagus \
 		cdparanoia:audio/cdparanoia
 BUILD_DEPENDS=	stratagus:games/stratagus
 LIB_DEPENDS=	libpng.so:graphics/png
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	Wargus
 
 USES=		cmake pkgconfig
 CMAKE_ARGS=	-DGAMEDIR:STRING="bin" \
@@ -33,7 +35,9 @@ OPTIONS_DEFINE=	DOCS
 
 post-install:
 	cd ${WRKSRC}/doc && ${INSTALL_MAN} *.6 ${STAGEDIR}${MAN6PREFIX}/man/man6/
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
+
+post-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README.md ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

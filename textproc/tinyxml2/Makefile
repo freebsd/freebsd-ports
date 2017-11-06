@@ -2,42 +2,32 @@
 # $FreeBSD$
 
 PORTNAME=	tinyxml2
-PORTVERSION=	2.2.0
+PORTVERSION=	5.0.1
 PORTEPOCH=	1
 CATEGORIES=	textproc
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Small C++ XML Parser
 
 LICENSE=	ZLIB
 
-USE_GITHUB=	yes
-USE_LDCONFIG=	yes
-USES=		cmake dos2unix
-
-GH_ACCOUNT=	leethomason
-
-PLIST_FILES=	include/tinyxml2.h \
-		lib/libtinyxml2.a \
-		lib/libtinyxml2.so \
-		lib/libtinyxml2.so.2 \
-		lib/libtinyxml2.so.2.2.0 \
-		libdata/pkgconfig/tinyxml2.pc
-PORTEXAMPLES=	xmltest.cpp resources
-
 OPTIONS_DEFINE=	EXAMPLES
 
-post-patch:
-	@${REINPLACE_CMD} -E \
-		-e 's@(DESTINATION )(.*)(/pkgconfig)@\1${PREFIX}/libdata\3@' \
-		${WRKSRC}/CMakeLists.txt
+CMAKE_ARGS=	-DBUILD_SHARED_LIBS=ON -DBUILD_STATIC_LIBS=ON -DBUILD_TESTS=OFF
+USE_LDCONFIG=	yes
+USES=		cmake dos2unix pathfix
 
-check regression-test test: build
-	@cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} test ; \
-	./test
+PLIST_SUB=	PORTVERSION=${PORTVERSION} SHLIB_VER=${PORTVERSION:R:R}
+PORTEXAMPLES=	*
 
-post-install:
-	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	@cd ${WRKSRC}; ${COPYTREE_SHARE} "${PORTEXAMPLES}" ${STAGEDIR}${EXAMPLESDIR}
+GH_ACCOUNT=	leethomason
+USE_GITHUB=	yes
+
+post-install-EXAMPLES-on:
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/
+	cd ${WRKSRC}/ && ${COPYTREE_SHARE} resources ${STAGEDIR}${EXAMPLESDIR}/
+
+do-test:
+	cd ${WRKSRC}/ && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} xmltest && ./xmltest
 
 .include <bsd.port.mk>

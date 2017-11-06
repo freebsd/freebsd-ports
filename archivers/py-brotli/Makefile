@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	brotli
-PORTVERSION=	0.5.2
-PORTREVISION=	2
+PORTVERSION=	0.6.0
+PORTREVISION=	1
 CATEGORIES=	archivers
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,12 +16,14 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USE_PYTHON=	autoplist concurrent distutils
-USES=		compiler:c++0x python zip
+USES=		compiler:c++0x python shebangfix zip
 
 PLIST_FILES=	bin/brotli
 
+SHEBANG_FILES=	python/bro.py
+
 post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/python/bro.py ${STAGEDIR}${PREFIX}/bin/brotli
-	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/brotli.so
+	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/_brotli.so
 
 .include <bsd.port.mk>

@@ -1,2 +1,3 @@
-SHA256 (cabal/HUnit-1.2.5.2.tar.gz) = 0af5ad34dba27de48b94ce6d5f7ee3aa6af6183bdc4a3967b811e28520369a41
-SIZE (cabal/HUnit-1.2.5.2.tar.gz) = 24889
+TIMESTAMP = 1499627813
+SHA256 (cabal/HUnit-1.6.0.0.tar.gz) = 7448e6b966e98e84b7627deba23f71b508e9a61e7bc571d74304a25d30e6d0de
+SIZE (cabal/HUnit-1.6.0.0.tar.gz) = 21937

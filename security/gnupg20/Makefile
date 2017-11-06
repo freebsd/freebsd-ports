@@ -2,6 +2,7 @@
 
 PORTNAME=	gnupg
 PORTVERSION=	2.0.30
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	GNUPG
 PKGNAMESUFFIX=	20
@@ -22,8 +23,11 @@ LIB_DEPENDS=	libassuan.so:security/libassuan \
 BUILD_DEPENDS=	libgpg-error>=1.11:security/libgpg-error
 RUN_DEPENDS=	pinentry:security/pinentry
 
-CONFLICTS=	gnupg-2.1.*
+CONFLICTS=	gnupg-2.1.* gnupg-2.2.*
 CPE_VENDOR=	gnupg
+
+DEPRECATED=	Will reach EOL upstream on 2017-12-31
+EXPIRATION_DATE=2017-12-31
 
 USES=		cpe gmake iconv readline tar:bzip2
 USE_LDCONFIG=	yes
@@ -32,7 +36,7 @@ CONFIGURE_ARGS=	--enable-symcryptrun
 INFO=		gnupg
 
 OPTIONS_DEFINE=	LDAP SCDAEMON CURL GPGSM KDNS STD_SOCKET NLS DOCS SUID_GPG
-OPTIONS_DEFAULT=CURL
+OPTIONS_DEFAULT=CURL SCDAEMON
 NO_OPTIONS_SORT=yes
 OPTIONS_SUB=	yes
 

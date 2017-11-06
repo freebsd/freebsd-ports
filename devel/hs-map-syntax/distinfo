@@ -1,2 +1,3 @@
-SHA256 (cabal/map-syntax-0.2.tar.gz) = 395cb1c7c4152252dea825ba54c02dca28a386f495a8bff872eb6383f06e610b
-SIZE (cabal/map-syntax-0.2.tar.gz) = 7129
+TIMESTAMP = 1499627850
+SHA256 (cabal/map-syntax-0.2.0.2.tar.gz) = b18f95a6369a600fda189c6f475606cbf5f5f1827f96ca3384f33ae76bda4d8a
+SIZE (cabal/map-syntax-0.2.0.2.tar.gz) = 6944

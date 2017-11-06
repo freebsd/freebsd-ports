@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	BSON
-PORTVERSION=	1.2.2
+PORTVERSION=	1.4.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
@@ -16,8 +16,9 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	p5-Moo>=2.002004:devel/p5-Moo \
-		p5-namespace-clean>=0:devel/p5-namespace-clean \
-		p5-Tie-IxHash>=0:devel/p5-Tie-IxHash
+		p5-Tie-IxHash>=0:devel/p5-Tie-IxHash \
+		p5-boolean>=0.45:devel/p5-boolean \
+		p5-namespace-clean>=0:devel/p5-namespace-clean
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-JSON-MaybeXS>=0:converters/p5-JSON-MaybeXS \
 		p5-Path-Tiny>=0.054:devel/p5-Path-Tiny \

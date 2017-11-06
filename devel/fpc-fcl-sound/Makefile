@@ -3,7 +3,6 @@
 CATEGORIES=	devel lang
 PKGNAMESUFFIX=	-fcl-sound
 
-MAINTAINER=	freebsd-fpc@FreeBSD.org
 COMMENT=	Free Pascal sound loading, storing and converion (FCL)
 
 USE_FPC=	fcl-base fcl-res rtl-objpas

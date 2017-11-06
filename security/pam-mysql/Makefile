@@ -28,7 +28,7 @@ PORTDOCS=	*
 PLIST_FILES=	lib/pam_mysql.so lib/pam_mysql.la
 
 OPTIONS_DEFINE= SSL
-SSL_DESC= 	Build with OpenSSL support (non-crypt()ish MD5 hash)
+SSL_DESC=	Build with OpenSSL support (non-crypt()ish MD5 hash)
 SSL_CONFIGURE_WITH= openssl
 
 post-install:

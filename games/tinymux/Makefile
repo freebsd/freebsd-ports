@@ -3,9 +3,8 @@
 
 PORTNAME=	tinymux
 PORTVERSION=	2.10.1.${PATCHLEVEL}
-PORTREVISION=	1
 CATEGORIES=	games net
-MASTER_SITES=	GOOGLE_CODE
+MASTER_SITES=	ftp://ftp.tinymux.org/tinymux-2.10/${PATCHLEVEL}/
 DISTNAME=	mux-${PORTVERSION}.unix
 
 MAINTAINER=	ports@FreeBSD.org
@@ -14,15 +13,13 @@ COMMENT=	Multi-Player FreeForm adventure Program
 LICENSE=	ART10
 LICENSE_FILE=	${WRKSRC}/copyright.h
 
-BROKEN=		Unfetchable (google code has gone away)
-
 WRKSRC=		${WRKDIR}/mux2.10/src
 
 USES=		gmake
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
-PATCHLEVEL=	12
+PATCHLEVEL=	13
 
 PORTDOCS=	*
 

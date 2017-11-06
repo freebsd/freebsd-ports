@@ -2,14 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	robocode
-PORTVERSION=	1.9.2.6
+PORTVERSION=	1.9.3.0
 CATEGORIES=	games java
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${DISTVERSION}-setup.jar
 EXTRACT_SUFX=	# empty
 DIST_SUBDIR=	java
 
-MAINTAINER=	dbaio@bsd.com.br
+MAINTAINER=	dbaio@FreeBSD.org
 COMMENT=	Game for learning Java[tm] programming language
 
 LICENSE=	EPL

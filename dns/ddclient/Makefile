@@ -3,6 +3,7 @@
 
 PORTNAME=	ddclient
 PORTVERSION=	3.8.3
+PORTREVISION=	3
 CATEGORIES=	dns
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -18,8 +19,6 @@ USE_PERL5=	run
 
 USE_RC_SUBR=	${PORTNAME}
 
-RUN_DEPENDS=	p5-JSON-Any>=0:converters/p5-JSON-Any
-
 SUB_FILES=	pkg-message ddclient_force
 
 OPTIONS_DEFINE=	SSL
@@ -31,7 +30,7 @@ SSL_RUN_DEPENDS=ca_root_nss>0:security/ca_root_nss \
 PORTDOCS=	COPYRIGHT ChangeLog README.cisco README.ssl README.md \
 		sample-etc_cron.d_ddclient sample-etc_dhclient-exit-hooks \
 		sample-etc_dhcpc_dhcpcd-eth0.exe sample-etc_ppp_ip-up.local
-PLIST_FILES=	etc/ddclient.conf.sample etc/periodic/daily/ddclient_force \
+PLIST_FILES=	"@sample etc/ddclient.conf.sample" etc/periodic/daily/ddclient_force \
 		sbin/ddclient
 
 post-patch:

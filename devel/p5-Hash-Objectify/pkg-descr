@@ -1,0 +1,11 @@
+Hash::Objectify turns a hash reference into a simple object with accessors for
+each of the keys.
+
+One application of this module could be to create lightweight response objects
+without the extra work of setting up an entire response class with the framework
+of your choice.
+
+Using Hash::Objectify is slower than accessing the keys of the hash directly,
+but does provide "typo protection" since a misspelled method is an error.
+
+WWW: http://search.cpan.org/dist/Hash-Objectify/

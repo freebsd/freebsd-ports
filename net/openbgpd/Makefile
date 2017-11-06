@@ -28,12 +28,7 @@ GROUPS=		_bgpd
 OPTIONS_DEFINE=	IPV6LLPEER
 OPTIONS_DEFAULT=IPV6LLPEER
 IPV6LLPEER_DESC=Support nexthop using IPv6 link-local address
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MIPV6LLPEER}
-MAKE_ARGS+=	-DIPV6_LINKLOCAL_PEER
-.endif
+IPV6LLPEER_MAKE_ARGS=	-DIPV6_LINKLOCAL_PEER
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g"	\

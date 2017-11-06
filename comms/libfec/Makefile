@@ -3,7 +3,7 @@
 
 PORTNAME=	libfec
 PORTVERSION=	3.0.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	comms astro hamradio math
 MASTER_SITES=	http://www.ka9q.net/code/fec/ \
 		LOCAL/db
@@ -13,6 +13,8 @@ MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Several forward error correction (FEC) decoders
 
 LICENSE=	LGPL21
+
+BROKEN_powerpc64=	fails to compile: cc1: error: unrecognized command line option -faltivec
 
 MAKEFILE=	makefile
 
@@ -26,11 +28,8 @@ PLIST_FILES=	include/fec.h		\
 		man/man3/rs.3.gz	\
 		man/man3/simd-viterbi.3.gz
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "amd64"
+# makefile tries to create libfec.so from object files compiled without -fPIC.
 CFLAGS+=	-fPIC
-.endif
 
 post-patch:
 	@${CP} ${FILESDIR}/cpu_mode.c ${WRKSRC}
@@ -46,4 +45,4 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/${_man} ${STAGEDIR}${MAN3PREFIX}/man/man3
 .endfor
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

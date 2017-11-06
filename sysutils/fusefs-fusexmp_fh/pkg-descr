@@ -4,4 +4,4 @@ For example: `fusexmp_fh
 -omodules=iconv:subdir,from_code=big5,to_code=utf8,subdir=/mnt/big5
 /mnt/utf8`
 
-WWW: http://sourceforge.net/projects/fuse/
+WWW: https://sourceforge.net/projects/fuse/

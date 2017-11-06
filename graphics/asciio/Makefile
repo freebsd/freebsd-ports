@@ -3,6 +3,7 @@
 
 PORTNAME=	asciio
 PORTVERSION=	1.51.3
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://mirror.switch.ch/ftp/mirror/CPAN/authors/id/N/NK/NKH/ \
 		LOCAL/ehaupt
@@ -11,7 +12,7 @@ DISTNAME=	App-Asciio-${PORTVERSION}
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Perl/GTK application that lets you draw ASCII charts using a GUI
 
-LICENSE=	ART10 GPLv1
+LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Algorithm-Diff>=0:devel/p5-Algorithm-Diff \

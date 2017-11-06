@@ -77,6 +77,7 @@ lib/sbcl/sb-cover/sb-cover.asd
 lib/sbcl/sb-cover/test-data-1.lisp
 lib/sbcl/sb-cover/test-data-2.lisp
 lib/sbcl/sb-cover/test-data-3.lisp
+lib/sbcl/sb-cover/test-data-branching-forms.lisp
 lib/sbcl/sb-cover/tests.lisp
 lib/sbcl/sb-executable/sb-executable.lisp
 lib/sbcl/sb-gmp/bench.lisp
@@ -106,9 +107,11 @@ lib/sbcl/sb-posix/constants.lisp
 lib/sbcl/sb-posix/defpackage.lisp
 lib/sbcl/sb-posix/designator.lisp
 lib/sbcl/sb-posix/interface.lisp
+lib/sbcl/sb-posix/libc-tests.lisp
 lib/sbcl/sb-posix/macros.lisp
 lib/sbcl/sb-posix/posix-tests.lisp
 lib/sbcl/sb-posix/sb-posix.asd
+lib/sbcl/sb-posix/strtod.lisp
 lib/sbcl/sb-queue/package.lisp
 lib/sbcl/sb-queue/sb-queue.asd
 lib/sbcl/sb-rotate-byte/arm-vm.lisp
@@ -140,26 +143,7 @@ lib/sbcl/sb-simple-streams/string.lisp
 lib/sbcl/sb-simple-streams/terminal.lisp
 lib/sbcl/sb-sprof/sb-sprof.lisp
 lib/sbcl/sb-sprof/test.lisp
-lib/sbcl/sbcl_core
+lib/sbcl/sbcl.mk
+lib/sbcl/sbcl%%CORE_SUFFIX%%
 man/man1/sbcl.1.gz
-%%PORTDOCS%%%%DOCSDIR%%/BUGS
-%%PORTDOCS%%%%DOCSDIR%%/COPYING
-%%PORTDOCS%%%%DOCSDIR%%/CREDITS
-%%PORTDOCS%%%%DOCSDIR%%/NEWS
-%%PORTDOCS%%%%DOCSDIR%%/PRINCIPLES
-%%PORTDOCS%%%%DOCSDIR%%/TLA
-%%PORTDOCS%%%%DOCSDIR%%/TODO
-%%PORTDOCS%%%%DOCSDIR%%/asdf.html
-%%PORTDOCS%%%%DOCSDIR%%/asdf/README.SBCL
-%%PORTDOCS%%%%DOCSDIR%%/asdf/README.md
-%%PORTDOCS%%%%DOCSDIR%%/sb-aclrepl/README
-%%PORTDOCS%%%%DOCSDIR%%/sb-bsd-sockets/FAQ
-%%PORTDOCS%%%%DOCSDIR%%/sb-bsd-sockets/NEWS
-%%PORTDOCS%%%%DOCSDIR%%/sb-gmp/README.md
-%%PORTDOCS%%%%DOCSDIR%%/sb-md5/README
-%%PORTDOCS%%%%DOCSDIR%%/sb-mpfr/README.md
-%%PORTDOCS%%%%DOCSDIR%%/sb-posix/README
-%%PORTDOCS%%%%DOCSDIR%%/sb-rotate-byte/README
-%%PORTDOCS%%%%DOCSDIR%%/sb-simple-streams/README
-%%PORTDOCS%%%%DOCSDIR%%/sbcl.html
-@dir lib/sbcl/site-systems
+@sample etc/sbclrc.sample

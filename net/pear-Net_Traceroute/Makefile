@@ -5,9 +5,9 @@ PORTNAME=	Net_Traceroute
 PORTVERSION=	0.21.3
 CATEGORIES=	net pear
 
-MAINTAINER=	joneum@bsdproject.de
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	PEAR class to execute traceroute
 
-USES=	pear
+USES=		pear
 
 .include <bsd.port.mk>

@@ -1,2 +1,3 @@
-SHA256 (cabal/MemoTrie-0.6.2.tar.gz) = 9ddc11172db26a54681f14dd8ce881c87a3b0e72dcc7a15b74132f30b4408bbc
-SIZE (cabal/MemoTrie-0.6.2.tar.gz) = 6250
+TIMESTAMP = 1499627814
+SHA256 (cabal/MemoTrie-0.6.8.tar.gz) = 5fd9495722d94ff61aa6cde0287fe8222926f5adf929d52fef0532d483429da4
+SIZE (cabal/MemoTrie-0.6.8.tar.gz) = 8399

@@ -1,0 +1,5 @@
+PyXB is a pure Python package that generates Python code for classes that
+correspond to data structures defined by XMLSchema. In concept it is similar
+to JAXB for Java and CodeSynthesis XSD for C++.
+
+WWW: http://pyxb.sourceforge.net

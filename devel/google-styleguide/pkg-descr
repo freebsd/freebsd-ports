@@ -1,17 +1,17 @@
-This is automated checker to make sure a C++ file follows Google's C++ style
-guide (http://google-styleguide.googlecode.com/svn/trunk/cppguide.xml). As it
-heavily relies on regular expressions, cpplint.py won't catch all violations of
-the style guide and will very occasionally report a false positive. There is a
-list of things we currently don't handle very well at the top of cpplint.py,
-and we welcome patches to improve it.
+This project contains coding style guides used at Google.  There are style
+guides for AngularJS, C++, Common Lisp, HTML/CSS, Java, JavaScript, Objective-C,
+Python, R, Shell, and Vimscript.  Also included is:
 
-The linting tool takes a list of files as input. For full usage instructions,
-please see the output of:
+- cpplint, an automated checker to make sure a C++ file follows Google's C++
+  style guide
+- google-c-style.el, an Emacs minor mode to provide Google's C/C++ coding style
+  within Emacs
+- google_python_style.vim, which indents Python code in the Google way when
+  using Vim.
 
-  ./cpplint.py --help
+If your project requires that you create a new XML document format, the included
+"XML Document Format Style Guide" may be helpful.  In addition to actual style
+rules, it also contains advice on designing your own versus adapting an existing
+format, on XML instance document formatting, and on elements versus attributes.
 
-Unit tests are provided in cpplint_unittest.py. This file can safely be ignored
-by end users who have downloaded this package and only want to run the lint
-tool.
-
-WWW: http://code.google.com/p/google-styleguide/
+WWW: https://github.com/google/styleguide

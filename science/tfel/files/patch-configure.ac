@@ -1,6 +1,6 @@
---- configure.ac.orig	2016-09-04 19:29:53 UTC
+--- configure.ac.orig	2016-09-22 08:21:19 UTC
 +++ configure.ac
-@@ -69,6 +69,9 @@ case $host in
+@@ -70,6 +70,9 @@ case $host in
  	TFEL_ARCH32="yes"
          ;;
  # machine amd opteron, 64 bits

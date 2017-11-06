@@ -43,7 +43,7 @@ MUTT_XFACE_DESC=	Adds mutt X-Face support
 MUTT_FLOCK_DESC=	Use flock() for file locks
 MUTT_ICONV_DESC=	Enable mutt's iconv character conversion feature
 
-USE_OPENSSL=	yes
+USES+=	ssl
 
 .if defined (MUTT_LITE)
 PKGNAMESUFFIX=	14-lite
@@ -153,7 +153,7 @@ post-patch:
 .if ${PORT_OPTIONS:MDOCS}
 post-build:
 	@${TOUCH} ${WRKSRC}/doc/mutt.man ${WRKSRC}/doc/manual.sgml
-	@${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-doc-ref
+	@${PATCH} -d ${PATCH_WRKSRC} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-doc-ref
 	@${REINPLACE_CMD} -E -e 's|\$$\{PREFIX\}|${PREFIX}|g' \
 		-e 's|\$$\{DOCSDIR\}|${DOCSDIR}|g' \
 		-e 's|\$$\{EXAMPLESDIR\}|${EXAMPLESDIR}|g' \

@@ -1,4 +1,4 @@
---- lily/include/lily-guile.hh.orig	2016-08-30 10:23:53 UTC
+--- lily/include/lily-guile.hh.orig	2017-02-26 12:08:59 UTC
 +++ lily/include/lily-guile.hh
 @@ -20,6 +20,8 @@
  #ifndef LILY_GUILE_HH

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	memcached
-PORTVERSION=	1.4.34
+PORTVERSION=	1.5.2
 CATEGORIES=	databases
 MASTER_SITES=	http://www.memcached.org/files/ \
 		GENTOO
@@ -13,9 +13,21 @@ COMMENT=	High-performance distributed memory object cache system
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libevent.so:devel/libevent2
+LIB_DEPENDS=	libevent.so:devel/libevent
 
 CONFLICTS=	memcached-1.2*
+
+USES=		cpe shebangfix autoreconf
+SHEBANG_FILES=	scripts/memcached-tool
+
+USE_RC_SUBR=	memcached
+SUB_LIST+=	RC_SUBR_SUFFIX=${RC_SUBR_SUFFIX}
+
+USE_CSTD=	c99
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-libevent=${LOCALBASE} \
+		--program-prefix= \
+		--disable-coverage
 
 # Dtrace option disabled until it is fixed upstream
 OPTIONS_DEFINE=		SASL DOCS DTRACE
@@ -27,21 +39,11 @@ OPTIONS_EXCLUDE+=	DTRACE
 
 OPTIONS_EXCLUDE_FreeBSD_10+=	DTRACE
 OPTIONS_EXCLUDE_i386=		DTRACE
+# ld(1) fails to link probes: Relocations in generic ELF (EM: 0)
+OPTIONS_EXCLUDE_aarch64=	DTRACE
 
 DTRACE_DESC=	Enable dtrace probes
 SASL_DESC=	Enable SASL Authentication
-
-USE_RC_SUBR=	memcached
-SUB_LIST+=	RC_SUBR_SUFFIX=${RC_SUBR_SUFFIX}
-
-USES=		cpe shebangfix autoreconf
-SHEBANG_FILES=	scripts/memcached-tool
-
-USE_CSTD=	c99
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-libevent=${LOCALBASE} \
-		--program-prefix= \
-		--disable-coverage
 
 DOCS_BUILD_DEPENDS=	xml2rfc:textproc/xml2rfc
 DOCS_CONFIGURE_ENABLE=	docs

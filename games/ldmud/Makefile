@@ -16,8 +16,7 @@ BUILD_DEPENDS=	help2man:misc/help2man
 LIB_DEPENDS=	libpcre.so:devel/pcre
 
 GNU_CONFIGURE=	yes
-USE_OPENSSL=	yes
-USES=		iconv pkgconfig
+USES=		iconv pkgconfig ssl
 CONFIGURE_ARGS+=--libdir=${DATADIR} \
 		--bindir=${PREFIX}/sbin \
 		--enable-use-pcre \

@@ -1,6 +1,6 @@
---- libraries/Cabal/Cabal/Distribution/Simple/GHC.hs.orig	2015-04-01 00:24:45 UTC
+--- libraries/Cabal/Cabal/Distribution/Simple/GHC.hs.orig	2017-01-03 15:59:20 UTC
 +++ libraries/Cabal/Cabal/Distribution/Simple/GHC.hs
-@@ -875,7 +875,7 @@ getRPaths lbi clbi | supportRPaths hostO
+@@ -996,7 +996,7 @@ getRPaths lbi clbi | supportRPaths hostOS = do
      supportRPaths Linux       = True
      supportRPaths Windows     = False
      supportRPaths OSX         = True

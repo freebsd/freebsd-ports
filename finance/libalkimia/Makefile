@@ -2,7 +2,7 @@
 
 PORTNAME=	libalkimia
 PORTVERSION=	5.0.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	finance kde
 MASTER_SITES=	KDE/stable/alkimia/${PORTVERSION}/src
 

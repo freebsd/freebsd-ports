@@ -3,7 +3,7 @@
 
 PORTNAME=	magicpoint
 PORTVERSION=	1.13a
-PORTREVISION=	18
+PORTREVISION=	19
 CATEGORIES?=	misc
 MASTER_SITES=	ftp://sh.wide.ad.jp/WIDE/free-ware/mgp/
 
@@ -21,7 +21,6 @@ MAKE_JOBS_UNSAFE=	yes
 USES=		imake:env perl5 pkgconfig
 USE_PERL5=	run
 USE_XORG=	x11 xext xmu xt sm ice xi xtst
-WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-vflib --enable-locale
 CONFIGURE_ENV=	mgp_cv_path_perl=${PERL}
@@ -81,6 +80,7 @@ post-install:
 		${STAGEDIR}${PREFIX}/man/man1/
 	${INSTALL} ${WRKSRC}/contrib/xmindpath/xmindpath \
 		${STAGEDIR}${PREFIX}/bin/
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/xmindpath
 
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}

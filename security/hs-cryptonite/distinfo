@@ -1,2 +1,3 @@
-SHA256 (cabal/cryptonite-0.6.tar.gz) = a016ccaa38579beb4517807a8917801baf6e6ddb830a74af91fc064c35acf853
-SIZE (cabal/cryptonite-0.6.tar.gz) = 319290
+TIMESTAMP = 1499539235
+SHA256 (cabal/cryptonite-0.24.tar.gz) = 17c3312343ef9bbfa87566d1f701d24870c2d34e015b104ff02faf1c9e1b5a86
+SIZE (cabal/cryptonite-0.24.tar.gz) = 579387

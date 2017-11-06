@@ -13,8 +13,10 @@ lib/libolecf.a
 lib/libolecf.so
 lib/libolecf.so.1
 lib/libolecf.so.1.0.0
-%%PYTHON_SITELIBDIR%%/pyolecf.a
-%%PYTHON_SITELIBDIR%%/pyolecf.so
+%%PYTHON2_SITELIBDIR%%/pyolecf.a
+%%PYTHON2_SITELIBDIR%%/pyolecf.so
+%%PYTHON3_SITELIBDIR%%/pyolecf.a
+%%PYTHON3_SITELIBDIR%%/pyolecf.so
 libdata/pkgconfig/libolecf.pc
 man/man1/olecfexport.1.gz
 man/man1/olecfinfo.1.gz

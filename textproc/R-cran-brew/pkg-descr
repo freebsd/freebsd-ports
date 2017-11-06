@@ -1,0 +1,5 @@
+brew implements a templating framework for mixing text and R code
+for report generation. brew template syntax is similar to PHP,
+Ruby's erb module, Java Server Pages, and Python's psp module.
+
+WWW: https://cran.r-project.org/web/packages/brew/

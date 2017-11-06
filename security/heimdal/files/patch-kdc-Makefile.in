@@ -1,4 +1,4 @@
---- kdc/Makefile.in.orig	2017-01-03 19:44:12 UTC
+--- kdc/Makefile.in.orig	2017-06-10 19:27:47 UTC
 +++ kdc/Makefile.in
 @@ -213,6 +213,8 @@ PROGRAMS = $(bin_PROGRAMS) $(libexec_PRO
  am_digest_service_OBJECTS = digest-service.$(OBJEXT)
@@ -74,7 +74,7 @@
  	$(top_builddir)/lib/krb5/libkrb5.la $(am__DEPENDENCIES_1) \
  	$(top_builddir)/lib/asn1/libasn1.la $(am__DEPENDENCIES_1) \
  	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
-@@ -636,6 +656,8 @@ libkdc_la_LDFLAGS = -version-info 2:0:0 
+@@ -637,6 +657,8 @@ libkdc_la_LDFLAGS = -version-info 2:0:0 
  hprop_LDADD = \
  	$(top_builddir)/lib/hdb/libhdb.la \
  	$(top_builddir)/lib/krb5/libkrb5.la \
@@ -83,7 +83,7 @@
  	$(LIB_kdb)  \
  	$(LIB_hcrypto) \
  	$(top_builddir)/lib/asn1/libasn1.la \
-@@ -645,6 +667,8 @@ hprop_LDADD = \
+@@ -646,6 +668,8 @@ hprop_LDADD = \
  hpropd_LDADD = \
  	$(top_builddir)/lib/hdb/libhdb.la \
  	$(top_builddir)/lib/krb5/libkrb5.la \
@@ -92,7 +92,7 @@
  	$(LIB_kdb)  \
  	$(LIB_hcrypto) \
  	$(top_builddir)/lib/asn1/libasn1.la \
-@@ -671,17 +695,24 @@ LDADD = $(top_builddir)/lib/hdb/libhdb.l
+@@ -672,17 +696,24 @@ LDADD = $(top_builddir)/lib/hdb/libhdb.l
  	$(LIB_roken) \
  	$(DB3LIB) $(DB1LIB) $(LMDBLIB) $(NDBMLIB)
  

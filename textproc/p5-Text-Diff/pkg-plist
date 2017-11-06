@@ -1,6 +1,6 @@
-%%PERL5_MAN3%%/Text::Diff.3.gz
-%%PERL5_MAN3%%/Text::Diff::Config.3.gz
-%%PERL5_MAN3%%/Text::Diff::Table.3.gz
 %%SITE_PERL%%/Text/Diff.pm
 %%SITE_PERL%%/Text/Diff/Config.pm
 %%SITE_PERL%%/Text/Diff/Table.pm
+%%PERL5_MAN3%%/Text::Diff.3.gz
+%%PERL5_MAN3%%/Text::Diff::Config.3.gz
+%%PERL5_MAN3%%/Text::Diff::Table.3.gz

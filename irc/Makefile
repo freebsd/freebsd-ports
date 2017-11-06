@@ -51,12 +51,13 @@
     SUBDIR += irssi
     SUBDIR += irssi-dcc_send_limiter
     SUBDIR += irssi-fish
+    SUBDIR += irssi-icb
     SUBDIR += irssi-otr
     SUBDIR += irssi-scripts
     SUBDIR += irssi-xmpp
     SUBDIR += irssistats
     SUBDIR += keitairc2
-    SUBDIR += konversation-kde4
+    SUBDIR += konversation
     SUBDIR += kvirc
     SUBDIR += kvirc-qt4
     SUBDIR += libircclient
@@ -94,7 +95,6 @@
     SUBDIR += polari
     SUBDIR += psybnc
     SUBDIR += py-fishcrypt
-    SUBDIR += py-gozerbot
     SUBDIR += py-irc
     SUBDIR += py-limnoria
     SUBDIR += py-supybot
@@ -107,9 +107,6 @@
     SUBDIR += rbot
     SUBDIR += riece
     SUBDIR += roxirc
-    SUBDIR += ruby-irc
-    SUBDIR += ruby-rica
-    SUBDIR += ruby-rice
     SUBDIR += rubygem-cinch
     SUBDIR += rubygem-cogbot
     SUBDIR += rubygem-lita-irc
@@ -121,7 +118,6 @@
     SUBDIR += smartirc4net
     SUBDIR += srvx
     SUBDIR += thales
-    SUBDIR += tircd
     SUBDIR += tircproxy
     SUBDIR += undernet-ircu
     SUBDIR += unreal

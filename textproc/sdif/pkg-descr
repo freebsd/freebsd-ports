@@ -1,0 +1,13 @@
+sdif is inspired by System V sdiff(1) command.  The basic feature of
+sdif is making a side-by-side listing of two different files.  All
+contents of two files are listed on left and right sides.  Center
+column is used to indicate how different those lines.  No mark means
+no difference.  Added, deleted and modified lines are marked with `-'
+and `+' character.
+
+It also reads and formats the output from diff command from standard
+input.  Besides normal diff output, context diff -c and unified diff
+-u output will be handled properly.  Combined diff format is also
+supported, but currently limited upto three files.
+
+WWW: https://github.com/kaz-utashiro/sdif

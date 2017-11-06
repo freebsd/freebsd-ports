@@ -1,0 +1,4 @@
+This gem provides programmable interface for ffmpeg and avconv. The idea is to
+have a common API for both CLIs.
+
+WWW: https://github.com/ruby-av

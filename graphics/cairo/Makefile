@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cairo
-PORTVERSION=	1.14.6
+PORTVERSION=	1.14.8
 PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	graphics
@@ -11,8 +11,10 @@ MASTER_SITES=	http://cairographics.org/releases/
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Vector graphics library with cross-device output support
 
-LICENSE=	LGPL21 MPL
+LICENSE=	LGPL21 MPL11
 LICENSE_COMB=	dual
+LICENSE_FILE_LGPL21=	${WRKSRC}/COPYING-LGPL-2.1
+LICENSE_FILE_MPL11=	${WRKSRC}/COPYING-MPL-1.1
 
 USES=		tar:xz
 
@@ -28,7 +30,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-html-dir=${DOCSDIR} \
 		--disable-directfb \
 		--enable-tee
-USES+=		cpe libtool pathfix pkgconfig
+USES+=		cpe gnome libtool pathfix pkgconfig
 CPE_VENDOR=	cairographics
 USE_XORG=	pixman
 USE_GNOME=	referencehack
@@ -53,6 +55,7 @@ X11_CONFIGURE_ENABLE=xlib
 OPENGL_USE=	gl=gl,egl xorg=glproto:both,dri2proto:both
 OPENGL_CONFIGURE_ENABLE=gl egl
 OPENGL_IMPLIES=	X11
+GLIB_USES=	gettext-runtime
 GLIB_USE=	gnome=glib20
 GLIB_CONFIGURE_ENABLE=	gobject
 XCB_BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/xcb-renderutil.pc:x11/xcb-util-renderutil
@@ -64,7 +67,7 @@ MIPS_BUILD_DEPENDS=	${LOCALBASE}/include/atomic_ops.h:devel/libatomic_ops
 MIPS_USES=	localbase
 MIPS_CONFIGURE_ENV=	cairo_cv_atomic_primitives="libatomic-ops"
 
-PLIST_SUB+=	LIBVER=2.11400.6
+PLIST_SUB+=	LIBVER=2.11400.8
 
 post-patch:
 	@${REINPLACE_CMD} -e '/strings/s/ - / -a /' \

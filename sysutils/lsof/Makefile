@@ -2,12 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	lsof
-DISTVERSION=	4.90G
-PORTREVISION=	1
+DISTVERSION=	4.90Q
 PORTEPOCH=	8
 CATEGORIES=	sysutils
-MASTER_SITES=	http://ftp.cerias.purdue.edu/pub/tools/unix/sysutils/lsof/ \
-		ftp://lsof.itap.purdue.edu/pub/tools/unix/lsof/  \
+MASTER_SITES=	ftp://lsof.itap.purdue.edu/pub/tools/unix/lsof/ \
 		ftp://lsof.itap.purdue.edu/pub/tools/unix/lsof/NEW/ \
 		LOCAL/ler/lsof \
 		ftp://ftp.ayamura.org/pub/lsof/ \
@@ -26,10 +24,10 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}${DISTNAME_SUFFIX}
 MAINTAINER=	ler@FreeBSD.org
 COMMENT=	Lists information about open files (similar to fstat(1))
 
-LICENSE=lsof
-LICENSE_NAME=lsof
-LICENSE_FILE=${FILESDIR}/LICENSE
-LICENSE_PERMS=	 dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+LICENSE=	lsof
+LICENSE_NAME=	lsof
+LICENSE_FILE=	${FILESDIR}/LICENSE
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 #Please leave the below line in for the next clean up.
 FIXUP_RELEASE=	YES

@@ -1,4 +1,4 @@
---- tvcapture.c.orig
+--- tvcapture.c.orig	2001-02-12 18:59:22 UTC
 +++ tvcapture.c
 @@ -34,11 +34,18 @@
  #include <stdlib.h>

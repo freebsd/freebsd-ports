@@ -1,0 +1,19 @@
+phpLiteAdmin is a web-based SQLite database admin tool written in PHP with
+support for SQLite3 and SQLite2.
+
+Features
+
+-   Lightweight - consists of a single 200KB source file for portability
+-   Specify and manage an unlimited number of databases
+-   Specify a directory and optionally its subdirectories to scan for databases
+-   Create and delete databases
+-   Add, delete, rename, empty, and drop tables
+-   Browse, add, edit, and delete records
+-   Add, delete, and edit table columns
+-   Manage table indexes
+-   Manage table triggers
+-   Import and export tables, structure, indexes, and data (SQL, CSV)
+-   View data as bar, pie, and line charts
+-   And many other...
+
+WWW: https://www.phpliteadmin.org/

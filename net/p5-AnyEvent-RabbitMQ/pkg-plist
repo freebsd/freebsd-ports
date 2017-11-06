@@ -1,8 +1,8 @@
-%%PERL5_MAN3%%/AnyEvent::RabbitMQ.3.gz
-%%PERL5_MAN3%%/AnyEvent::RabbitMQ::Channel.3.gz
 %%SITE_PERL%%/AnyEvent/RabbitMQ.pm
 %%SITE_PERL%%/AnyEvent/RabbitMQ/Channel.pm
 %%SITE_PERL%%/AnyEvent/RabbitMQ/LocalQueue.pm
 %%SITE_PERL%%/auto/share/dist/AnyEvent-RabbitMQ/README
 %%SITE_PERL%%/auto/share/dist/AnyEvent-RabbitMQ/fixed_amqp0-8.xml
 %%SITE_PERL%%/auto/share/dist/AnyEvent-RabbitMQ/fixed_amqp0-9-1.xml
+%%PERL5_MAN3%%/AnyEvent::RabbitMQ.3.gz
+%%PERL5_MAN3%%/AnyEvent::RabbitMQ::Channel.3.gz

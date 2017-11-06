@@ -2,7 +2,7 @@
 
 PORTNAME=	glmnet
 DISTVERSION=	1.8-5
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -11,6 +11,6 @@ COMMENT=	Lasso and elastic-net regularized generalized linear models
 
 LICENSE=	GPLv2
 
-USES=	cran:auto-plist
+USES=		cran:auto-plist,compiles
 
 .include <bsd.port.mk>

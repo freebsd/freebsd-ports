@@ -4,9 +4,7 @@ PORTNAME=	ebook2cwgui
 PORTVERSION=	0.1.2
 PORTREVISION=	2
 CATEGORIES=	comms hamradio
-MASTER_SITES=	http://fkurz.net/ham/ebook2cw/ \
-		http://distfiles.bsdjunk.com/ \
-		LOCAL/db
+MASTER_SITES=	http://fkurz.net/ham/ebook4cw/
 
 MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	gui front end for ebooks2cw
@@ -14,7 +12,6 @@ COMMENT=	gui front end for ebooks2cw
 RUN_DEPENDS=	ebook2cw:comms/ebook2cw
 
 USE_WX=	2.8
-WX_UNICODE=	yes
 
 PORTDOCS=	*
 
@@ -29,7 +26,7 @@ do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/ebook2cwgui ${STAGEDIR}${PREFIX}/bin/ebook2cwgui
 	@${INSTALL_DATA} ${WRKSRC}/ebook2cwgui.1 ${STAGEDIR}${MANPREFIX}/man/man1
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for 	f in README COPYING ChangeLog
+.for f in README COPYING ChangeLog
 	@${INSTALL_DATA} ${WRKSRC}/$f ${STAGEDIR}${DOCSDIR}/$f
 .endfor
 

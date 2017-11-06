@@ -3,7 +3,7 @@
 
 PORTNAME=	flyhard
 PORTVERSION=	0.42
-PORTREVISION=	10
+PORTREVISION=	13
 CATEGORIES=	games
 MASTER_SITES=	http://www.markboyd.me.uk/games/flyhard/ \
 		http://mirror.amdmi3.ru/distfiles/
@@ -16,6 +16,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libpng.so:graphics/png
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:devel/boost-libs
+
+BROKEN_armv6=		dumps core: Assertion failed: (!NodePtr->isKnownSentinel()), function operator*, file ilist_iterator.h
 
 GNU_CONFIGURE=	yes
 USES=		gmake

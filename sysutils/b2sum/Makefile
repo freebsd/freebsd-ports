@@ -2,12 +2,12 @@
 
 PORTNAME=	b2sum
 PORTVERSION=	0.0.d${B2VERSION}
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	sysutils security
 MASTER_SITES=	http://blake2.net/
 DISTNAME=	blake2_code_${B2VERSION}${EXTRACT_SUFFX}
 
-MAINTAINER=	matthew@reztek.cz
+MAINTAINER=	rezny@FreeBSD.org
 COMMENT=	Fast secure hashing
 
 LICENSE=	CC0-1.0

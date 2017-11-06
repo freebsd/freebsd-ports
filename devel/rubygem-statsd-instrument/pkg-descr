@@ -1,0 +1,9 @@
+This is a ruby client for statsd. It provides a lightweight way to track and
+measure metrics in your application.
+
+It calls out to statsd by sending data over a UDP socket.  UDP sockets are fast,
+but unreliable.  There is no guarantee that your data will ever arrive at its
+location.  In other words, fire and forget. This is perfect for this use case
+because it means your code does not get bogged down trying to log statistics.
+
+WWW: https://github.com/Shopify/statsd-instrument/

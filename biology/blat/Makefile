@@ -5,11 +5,13 @@ PORTNAME=	blat
 PORTVERSION=	36
 CATEGORIES=	biology
 MASTER_SITES=	http://hgwdev.cse.ucsc.edu/~kent/src/ \
-		http://users.soe.ucsc.edu/~kent/src/
+		https://users.soe.ucsc.edu/~kent/src/
 DISTNAME=	${PORTNAME}Src${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast tool for local sequence similarity searches
+
+LICENSE=	NONE
 
 LIB_DEPENDS=	libpng.so:graphics/png
 
@@ -51,13 +53,10 @@ post-patch:
 
 do-install:
 .for exe in ${EXECUTABLES}
-	(cd ${WRKSRC}/bin/${ARCH} && ${INSTALL_PROGRAM} ${exe} \
-		${STAGEDIR}${PREFIX}/bin)
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/${ARCH}/${exe} ${STAGEDIR}${PREFIX}/bin
 .endfor
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/blat/webBlat
-	(cd ${WRKSRC}/webBlat && ${INSTALL_PROGRAM} webBlat \
-		${STAGEDIR}${PREFIX}/lib/blat/webBlat)
-	(cd ${WRKSRC}/webBlat && ${INSTALL_DATA} install.txt \
-		${STAGEDIR}${PREFIX}/lib/blat/webBlat)
+	${INSTALL_PROGRAM} ${WRKSRC}/webBlat/webBlat ${STAGEDIR}${PREFIX}/lib/blat/webBlat
+	${INSTALL_DATA} ${WRKSRC}/webBlat/install.txt ${STAGEDIR}${PREFIX}/lib/blat/webBlat
 
 .include <bsd.port.mk>

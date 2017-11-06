@@ -1,5 +1,5 @@
---- image/rlelib.c.bak	2007-05-18 01:47:33.000000000 +0900
-+++ image/rlelib.c	2008-11-06 23:38:04.000000000 +0900
+--- image/rlelib.c.orig	2007-05-17 16:47:33 UTC
++++ image/rlelib.c
 @@ -13,7 +13,7 @@
  #include <stdio.h>
  #include <math.h>

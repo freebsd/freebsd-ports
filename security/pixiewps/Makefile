@@ -3,7 +3,7 @@
 
 PORTNAME=	pixiewps
 PORTVERSION=	1.2.2
-DISTVERSIONPREFIX= v
+DISTVERSIONPREFIX=	v
 CATEGORIES=	security
 
 MAINTAINER=	franz@bett.ag
@@ -11,10 +11,8 @@ COMMENT=	Offline WPS bruteforce utility
 
 LICENSE=	GPLv3
 
-USE_OPENSSL=	yes
-
-USES=		gmake
-WRKSRC_SUBDIR=	src/
+USES=		gmake ssl
+WRKSRC_SUBDIR=	src
 USE_GITHUB=	yes
 GH_ACCOUNT=	wiire
 

@@ -22,6 +22,7 @@ include/gtksourceview-3.0/gtksourceview/gtksourcemap.h
 include/gtksourceview-3.0/gtksourceview/gtksourcemark.h
 include/gtksourceview-3.0/gtksourceview/gtksourcemarkattributes.h
 include/gtksourceview-3.0/gtksourceview/gtksourceprintcompositor.h
+include/gtksourceview-3.0/gtksourceview/gtksourceregion.h
 include/gtksourceview-3.0/gtksourceview/gtksourcesearchcontext.h
 include/gtksourceview-3.0/gtksourceview/gtksourcesearchsettings.h
 include/gtksourceview-3.0/gtksourceview/gtksourcestyle.h
@@ -30,15 +31,18 @@ include/gtksourceview-3.0/gtksourceview/gtksourcestyleschemechooser.h
 include/gtksourceview-3.0/gtksourceview/gtksourcestyleschemechooserbutton.h
 include/gtksourceview-3.0/gtksourceview/gtksourcestyleschemechooserwidget.h
 include/gtksourceview-3.0/gtksourceview/gtksourcestyleschememanager.h
+include/gtksourceview-3.0/gtksourceview/gtksourcetag.h
 include/gtksourceview-3.0/gtksourceview/gtksourcetypes.h
 include/gtksourceview-3.0/gtksourceview/gtksourceundomanager.h
 include/gtksourceview-3.0/gtksourceview/gtksourceutils.h
+include/gtksourceview-3.0/gtksourceview/gtksourceversion.h
+include/gtksourceview-3.0/gtksourceview/gtksourceview-enumtypes.h
 include/gtksourceview-3.0/gtksourceview/gtksourceview-typebuiltins.h
 include/gtksourceview-3.0/gtksourceview/gtksourceview.h
 lib/girepository-1.0/GtkSource-3.0.typelib
 lib/libgtksourceview-3.0.so
 lib/libgtksourceview-3.0.so.1
-lib/libgtksourceview-3.0.so.1.5.0
+lib/libgtksourceview-3.0.so.1.7.0
 libdata/pkgconfig/gtksourceview-3.0.pc
 %%PORTDOCS%%%%DOCSDIR%%-3.0/GtkSourceBuffer.html
 %%PORTDOCS%%%%DOCSDIR%%-3.0/GtkSourceCompletion.html
@@ -62,6 +66,7 @@ libdata/pkgconfig/gtksourceview-3.0.pc
 %%PORTDOCS%%%%DOCSDIR%%-3.0/GtkSourceMark.html
 %%PORTDOCS%%%%DOCSDIR%%-3.0/GtkSourceMarkAttributes.html
 %%PORTDOCS%%%%DOCSDIR%%-3.0/GtkSourcePrintCompositor.html
+%%PORTDOCS%%%%DOCSDIR%%-3.0/GtkSourceRegion.html
 %%PORTDOCS%%%%DOCSDIR%%-3.0/GtkSourceSearchContext.html
 %%PORTDOCS%%%%DOCSDIR%%-3.0/GtkSourceSearchSettings.html
 %%PORTDOCS%%%%DOCSDIR%%-3.0/GtkSourceStyle.html
@@ -70,6 +75,7 @@ libdata/pkgconfig/gtksourceview-3.0.pc
 %%PORTDOCS%%%%DOCSDIR%%-3.0/GtkSourceStyleSchemeChooserButton.html
 %%PORTDOCS%%%%DOCSDIR%%-3.0/GtkSourceStyleSchemeChooserWidget.html
 %%PORTDOCS%%%%DOCSDIR%%-3.0/GtkSourceStyleSchemeManager.html
+%%PORTDOCS%%%%DOCSDIR%%-3.0/GtkSourceTag.html
 %%PORTDOCS%%%%DOCSDIR%%-3.0/GtkSourceUndoManager.html
 %%PORTDOCS%%%%DOCSDIR%%-3.0/GtkSourceView.html
 %%PORTDOCS%%%%DOCSDIR%%-3.0/annotation-glossary.html
@@ -85,6 +91,8 @@ libdata/pkgconfig/gtksourceview-3.0.pc
 %%PORTDOCS%%%%DOCSDIR%%-3.0/api-index-3-14.html
 %%PORTDOCS%%%%DOCSDIR%%-3.0/api-index-3-16.html
 %%PORTDOCS%%%%DOCSDIR%%-3.0/api-index-3-18.html
+%%PORTDOCS%%%%DOCSDIR%%-3.0/api-index-3-20.html
+%%PORTDOCS%%%%DOCSDIR%%-3.0/api-index-3-22.html
 %%PORTDOCS%%%%DOCSDIR%%-3.0/api-index-3-4.html
 %%PORTDOCS%%%%DOCSDIR%%-3.0/api-index-deprecated.html
 %%PORTDOCS%%%%DOCSDIR%%-3.0/api-index-full.html
@@ -98,6 +106,7 @@ libdata/pkgconfig/gtksourceview-3.0.pc
 %%PORTDOCS%%%%DOCSDIR%%-3.0/ch08.html
 %%PORTDOCS%%%%DOCSDIR%%-3.0/ch09.html
 %%PORTDOCS%%%%DOCSDIR%%-3.0/gtksourceview-3.0-GtkSourceUtils.html
+%%PORTDOCS%%%%DOCSDIR%%-3.0/gtksourceview-3.0-Version-Information.html
 %%PORTDOCS%%%%DOCSDIR%%-3.0/gtksourceview-3.0.devhelp2
 %%PORTDOCS%%%%DOCSDIR%%-3.0/home.png
 %%PORTDOCS%%%%DOCSDIR%%-3.0/index.html
@@ -107,6 +116,8 @@ libdata/pkgconfig/gtksourceview-3.0.pc
 %%PORTDOCS%%%%DOCSDIR%%-3.0/left.png
 %%PORTDOCS%%%%DOCSDIR%%-3.0/object-tree.html
 %%PORTDOCS%%%%DOCSDIR%%-3.0/pt01.html
+%%PORTDOCS%%%%DOCSDIR%%-3.0/pt02.html
+%%PORTDOCS%%%%DOCSDIR%%-3.0/pt03.html
 %%PORTDOCS%%%%DOCSDIR%%-3.0/right-insensitive.png
 %%PORTDOCS%%%%DOCSDIR%%-3.0/right.png
 %%PORTDOCS%%%%DOCSDIR%%-3.0/style-reference.html

@@ -3,6 +3,7 @@
 
 PORTNAME=	gcc
 PORTVERSION=	${GCCVERSION}
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	GCC
@@ -20,6 +21,8 @@ RUN_DEPENDS=	${PKGNAMEPREFIX}as:devel/${PKGNAMEPREFIX}binutils
 LIB_DEPENDS=	libgmp.so:math/gmp \
 		libmpfr.so:math/mpfr \
 		libmpc.so:math/mpc
+
+BROKEN_powerpc64=	fails to configure: error: cannot compute suffix of object files: cannot compile
 
 GCCVERSION=	4.8.1
 

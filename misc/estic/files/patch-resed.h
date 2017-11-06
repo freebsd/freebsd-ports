@@ -1,6 +1,6 @@
---- spunk/resed.h.orig	Fri Feb 21 12:05:28 1997
-+++ spunk/resed.h	Mon Oct  9 12:07:54 2006
-@@ -184,7 +184,7 @@
+--- spunk/resed.h.orig	1997-02-21 11:05:28 UTC
++++ spunk/resed.h
+@@ -184,7 +184,7 @@ protected:
      void IDPrompt (i16& ID, int& Abort);
      void EditIDPrompt (i16& ID, int& Abort);
      void MinMaxPrompt (i32& Min, i32& Max, i32 MinVal, i32 MaxVal, int& Abort);

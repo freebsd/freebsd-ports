@@ -8,7 +8,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	lth@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Simple set of building blocks for both unit and runtime testing
 
 RUN_DEPENDS=	p5-Log-Trace>0:devel/p5-Log-Trace

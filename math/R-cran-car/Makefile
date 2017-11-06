@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	car
-DISTVERSION=	2.1-4
+DISTVERSION=	2.1-5
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -22,7 +22,5 @@ TEST_DEPENDS=	R-cran-lmtest>0:finance/R-cran-lmtest \
 		R-cran-survey>0:math/R-cran-survey
 
 USES=		cran:auto-plist
-
-NO_ARCH=	yes
 
 .include <bsd.port.mk>

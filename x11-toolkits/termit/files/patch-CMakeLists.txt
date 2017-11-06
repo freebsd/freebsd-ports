@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2016-07-12 17:38:44 UTC
++++ CMakeLists.txt
+@@ -60,7 +60,7 @@ IF(ENABLE_NLS)
+   ADD_SUBDIRECTORY(po)
+ ENDIF(ENABLE_NLS)
+ ADD_SUBDIRECTORY(utils)
+-ADD_SUBDIRECTORY(etc)
++
+ 
+ MESSAGE("\n  termit ${TERMIT_PACKAGE_VERSION}\n")
+ MESSAGE("Prefix dir:.......... ${CMAKE_INSTALL_PREFIX}")

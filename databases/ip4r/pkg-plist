@@ -1,3 +1,9 @@
 lib/postgresql/ip4r.so
-share/doc/postgresql/contrib/README.ip4r
-share/postgresql/contrib/ip4r.sql
+share/doc/postgresql/extension/README.ip4r
+share/postgresql/extension/ip4r--2.0--2.1.sql
+share/postgresql/extension/ip4r--2.1--2.2.sql
+share/postgresql/extension/ip4r--2.2.sql
+share/postgresql/extension/ip4r--unpackaged1--2.0.sql
+share/postgresql/extension/ip4r--unpackaged2.0--2.0.sql
+share/postgresql/extension/ip4r--unpackaged2.1--2.1.sql
+share/postgresql/extension/ip4r.control

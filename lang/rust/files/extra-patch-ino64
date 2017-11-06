@@ -1,0 +1,385 @@
+--- ./src/liblibc/src/unix/bsd/freebsdlike/freebsd/aarch64.rs.orig	2017-04-24 18:56:45.000000000 +0000
++++ ./src/liblibc/src/unix/bsd/freebsdlike/freebsd/aarch64.rs	2017-05-30 07:55:40.703709000 +0000
+@@ -7,10 +7,12 @@
+     pub struct stat {
+         pub st_dev: ::dev_t,
+         pub st_ino: ::ino_t,
+-        pub st_mode: ::mode_t,
+         pub st_nlink: ::nlink_t,
++        pub st_mode: ::mode_t,
++        pub st_pad0: ::uint16_t,
+         pub st_uid: ::uid_t,
+         pub st_gid: ::gid_t,
++        pub st_pad1: ::uint32_t,
+         pub st_rdev: ::dev_t,
+         pub st_atime: ::time_t,
+         pub st_atime_nsec: ::c_long,
+@@ -18,13 +20,13 @@
+         pub st_mtime_nsec: ::c_long,
+         pub st_ctime: ::time_t,
+         pub st_ctime_nsec: ::c_long,
++        pub st_birthtime: ::time_t,
++        pub st_birthtime_nsec: ::c_long,
+         pub st_size: ::off_t,
+         pub st_blocks: ::blkcnt_t,
+         pub st_blksize: ::blksize_t,
+         pub st_flags: ::fflags_t,
+-        pub st_gen: ::uint32_t,
+-        pub st_lspare: ::int32_t,
+-        pub st_birthtime: ::time_t,
+-        pub st_birthtime_nsec: ::c_long,
++        pub st_gen: ::uint64_t,
++        pub st_spare: [::uint64_t; 10],
+     }
+ }
+--- ./src/liblibc/src/unix/bsd/freebsdlike/freebsd/mod.rs.orig	2017-04-24 18:56:45.000000000 +0000
++++ ./src/liblibc/src/unix/bsd/freebsdlike/freebsd/mod.rs	2017-05-25 16:28:37.280076000 +0000
+@@ -1,8 +1,8 @@
+ pub type fflags_t = u32;
+ pub type clock_t = i32;
+-pub type ino_t = u32;
++pub type ino_t = u64;
+ pub type lwpid_t = i32;
+-pub type nlink_t = u16;
++pub type nlink_t = u64;
+ pub type blksize_t = u32;
+ pub type clockid_t = ::c_int;
+ pub type sem_t = _sem;
+@@ -40,10 +40,13 @@
+     }
+ 
+     pub struct dirent {
+-        pub d_fileno: u32,
++        pub d_fileno: u64,
++        pub d_off: u64,
+         pub d_reclen: u16,
+         pub d_type: u8,
+-        pub d_namlen: u8,
++        pub d_pad0: u8,
++        pub d_namlen: u16,
++        pub d_pad1: u16,
+         pub d_name: [::c_char; 256],
+     }
+ 
+--- ./src/liblibc/src/unix/bsd/freebsdlike/freebsd/x86.rs.orig	2017-04-24 18:56:45.000000000 +0000
++++ ./src/liblibc/src/unix/bsd/freebsdlike/freebsd/x86.rs	2017-05-25 16:25:42.303616000 +0000
+@@ -7,25 +7,30 @@
+     pub struct stat {
+         pub st_dev: ::dev_t,
+         pub st_ino: ::ino_t,
+-        pub st_mode: ::mode_t,
+         pub st_nlink: ::nlink_t,
++        pub st_mode: ::mode_t,
++        pub st_pad0: ::uint16_t,
+         pub st_uid: ::uid_t,
+         pub st_gid: ::gid_t,
++        pub st_pad1: ::uint32_t,
+         pub st_rdev: ::dev_t,
++        pub st_atime_ext: ::int32_t,
+         pub st_atime: ::time_t,
+         pub st_atime_nsec: ::c_long,
++        pub st_mtime_ext: ::int32_t,
+         pub st_mtime: ::time_t,
+         pub st_mtime_nsec: ::c_long,
++        pub st_ctime_ext: ::int32_t,
+         pub st_ctime: ::time_t,
+         pub st_ctime_nsec: ::c_long,
++        pub st_birthtime_ext: ::int32_t,
++        pub st_birthtime: ::time_t,
++        pub st_birthtime_nsec: ::c_long,
+         pub st_size: ::off_t,
+         pub st_blocks: ::blkcnt_t,
+         pub st_blksize: ::blksize_t,
+         pub st_flags: ::fflags_t,
+-        pub st_gen: ::uint32_t,
+-        pub st_lspare: ::int32_t,
+-        pub st_birthtime: ::time_t,
+-        pub st_birthtime_nsec: ::c_long,
+-        __unused: [u8; 8],
++        pub st_gen: ::uint64_t,
++        pub st_spare: [::uint64_t; 10],
+     }
+ }
+--- ./src/liblibc/src/unix/bsd/freebsdlike/freebsd/x86_64.rs.orig	2017-04-24 18:56:45.000000000 +0000
++++ ./src/liblibc/src/unix/bsd/freebsdlike/freebsd/x86_64.rs	2017-05-25 16:25:42.303910000 +0000
+@@ -7,10 +7,12 @@
+     pub struct stat {
+         pub st_dev: ::dev_t,
+         pub st_ino: ::ino_t,
+-        pub st_mode: ::mode_t,
+         pub st_nlink: ::nlink_t,
++        pub st_mode: ::mode_t,
++        pub st_pad0: ::uint16_t,
+         pub st_uid: ::uid_t,
+         pub st_gid: ::gid_t,
++        pub st_pad1: ::uint32_t,
+         pub st_rdev: ::dev_t,
+         pub st_atime: ::time_t,
+         pub st_atime_nsec: ::c_long,
+@@ -18,13 +20,13 @@
+         pub st_mtime_nsec: ::c_long,
+         pub st_ctime: ::time_t,
+         pub st_ctime_nsec: ::c_long,
++        pub st_birthtime: ::time_t,
++        pub st_birthtime_nsec: ::c_long,
+         pub st_size: ::off_t,
+         pub st_blocks: ::blkcnt_t,
+         pub st_blksize: ::blksize_t,
+         pub st_flags: ::fflags_t,
+-        pub st_gen: ::uint32_t,
+-        pub st_lspare: ::int32_t,
+-        pub st_birthtime: ::time_t,
+-        pub st_birthtime_nsec: ::c_long,
++        pub st_gen: ::uint64_t,
++        pub st_spare: [::uint64_t; 10],
+     }
+ }
+--- ./src/liblibc/src/unix/bsd/freebsdlike/mod.rs.orig	2017-04-24 18:56:45.000000000 +0000
++++ ./src/liblibc/src/unix/bsd/freebsdlike/mod.rs	2017-05-25 16:25:42.304391000 +0000
+@@ -1,4 +1,4 @@
+-pub type dev_t = u32;
++pub type dev_t = u64;
+ pub type mode_t = u16;
+ pub type pthread_attr_t = *mut ::c_void;
+ pub type rlim_t = i64;
+--- ./src/libstd/os/freebsd/raw.rs.orig	2017-04-24 18:53:46.000000000 +0000
++++ ./src/libstd/os/freebsd/raw.rs	2017-05-25 16:25:42.304715000 +0000
+@@ -38,32 +38,52 @@
+ #[stable(feature = "raw_ext", since = "1.1.0")]
+ pub struct stat {
+     #[stable(feature = "raw_ext", since = "1.1.0")]
+-    pub st_dev: u32,
++    pub st_dev: u64,
+     #[stable(feature = "raw_ext", since = "1.1.0")]
+-    pub st_ino: u32,
++    pub st_ino: u64,
+     #[stable(feature = "raw_ext", since = "1.1.0")]
++    pub st_nlink: u64,
++    #[stable(feature = "raw_ext", since = "1.1.0")]
+     pub st_mode: u16,
+     #[stable(feature = "raw_ext", since = "1.1.0")]
+-    pub st_nlink: u16,
++    pub st_pad0: u16,
+     #[stable(feature = "raw_ext", since = "1.1.0")]
+     pub st_uid: u32,
+     #[stable(feature = "raw_ext", since = "1.1.0")]
+     pub st_gid: u32,
+     #[stable(feature = "raw_ext", since = "1.1.0")]
+-    pub st_rdev: u32,
++    pub st_pad1: u32,
+     #[stable(feature = "raw_ext", since = "1.1.0")]
++    pub st_rdev: u64,
++    #[cfg(target_arch = "x86")]
++    #[stable(feature = "raw_ext", since = "1.1.0")]
++    pub st_atime_ext: c_long,
++    #[stable(feature = "raw_ext", since = "1.1.0")]
+     pub st_atime: c_long,
+     #[stable(feature = "raw_ext", since = "1.1.0")]
+     pub st_atime_nsec: c_long,
++    #[cfg(target_arch = "x86")]
+     #[stable(feature = "raw_ext", since = "1.1.0")]
++    pub st_mtime_ext: c_long,
++    #[stable(feature = "raw_ext", since = "1.1.0")]
+     pub st_mtime: c_long,
+     #[stable(feature = "raw_ext", since = "1.1.0")]
+     pub st_mtime_nsec: c_long,
++    #[cfg(target_arch = "x86")]
+     #[stable(feature = "raw_ext", since = "1.1.0")]
++    pub st_ctime_ext: c_long,
++    #[stable(feature = "raw_ext", since = "1.1.0")]
+     pub st_ctime: c_long,
+     #[stable(feature = "raw_ext", since = "1.1.0")]
+     pub st_ctime_nsec: c_long,
++    #[cfg(target_arch = "x86")]
+     #[stable(feature = "raw_ext", since = "1.1.0")]
++    pub st_birthtime_ext: c_long,
++    #[stable(feature = "raw_ext", since = "1.1.0")]
++    pub st_birthtime: c_long,
++    #[stable(feature = "raw_ext", since = "1.1.0")]
++    pub st_birthtime_nsec: c_long,
++    #[stable(feature = "raw_ext", since = "1.1.0")]
+     pub st_size: i64,
+     #[stable(feature = "raw_ext", since = "1.1.0")]
+     pub st_blocks: i64,
+@@ -72,14 +92,7 @@
+     #[stable(feature = "raw_ext", since = "1.1.0")]
+     pub st_flags: u32,
+     #[stable(feature = "raw_ext", since = "1.1.0")]
+-    pub st_gen: u32,
++    pub st_gen: u64,
+     #[stable(feature = "raw_ext", since = "1.1.0")]
+-    pub st_lspare: i32,
+-    #[stable(feature = "raw_ext", since = "1.1.0")]
+-    pub st_birthtime: c_long,
+-    #[stable(feature = "raw_ext", since = "1.1.0")]
+-    pub st_birthtime_nsec: c_long,
+-    #[cfg(target_arch = "x86")]
+-    #[stable(feature = "raw_ext", since = "1.1.0")]
+-    pub __unused: [u8; 8],
++    pub st_spare: [u64; 10],
+ }
+--- ./src/libstd/os/freebsd/fs.rs.orig	2017-04-24 18:53:46.000000000 +0000
++++ ./src/libstd/os/freebsd/fs.rs	2017-05-25 16:25:42.304989000 +0000
+@@ -74,8 +74,6 @@
+     fn st_flags(&self) -> u32;
+     #[stable(feature = "metadata_ext2", since = "1.8.0")]
+     fn st_gen(&self) -> u32;
+-    #[stable(feature = "metadata_ext2", since = "1.8.0")]
+-    fn st_lspare(&self) -> u32;
+ }
+ 
+ #[stable(feature = "metadata_ext", since = "1.1.0")]
+@@ -146,9 +144,6 @@
+     }
+     fn st_flags(&self) -> u32 {
+         self.as_inner().as_inner().st_flags as u32
+-    }
+-    fn st_lspare(&self) -> u32 {
+-        self.as_inner().as_inner().st_lspare as u32
+     }
+ }
+ 
+--- ./src/vendor/libc/src/unix/bsd/freebsdlike/freebsd/aarch64.rs.orig	2017-04-24 20:20:26.000000000 +0000
++++ ./src/vendor/libc/src/unix/bsd/freebsdlike/freebsd/aarch64.rs	2017-05-30 07:57:19.874957000 +0000
+@@ -7,10 +7,12 @@
+     pub struct stat {
+         pub st_dev: ::dev_t,
+         pub st_ino: ::ino_t,
+-        pub st_mode: ::mode_t,
+         pub st_nlink: ::nlink_t,
++        pub st_mode: ::mode_t,
++        pub st_pad0: ::uint16_t,
+         pub st_uid: ::uid_t,
+         pub st_gid: ::gid_t,
++        pub st_pad1: ::uint32_t,
+         pub st_rdev: ::dev_t,
+         pub st_atime: ::time_t,
+         pub st_atime_nsec: ::c_long,
+@@ -18,13 +20,13 @@
+         pub st_mtime_nsec: ::c_long,
+         pub st_ctime: ::time_t,
+         pub st_ctime_nsec: ::c_long,
++        pub st_birthtime: ::time_t,
++        pub st_birthtime_nsec: ::c_long,
+         pub st_size: ::off_t,
+         pub st_blocks: ::blkcnt_t,
+         pub st_blksize: ::blksize_t,
+         pub st_flags: ::fflags_t,
+-        pub st_gen: ::uint32_t,
+-        pub st_lspare: ::int32_t,
+-        pub st_birthtime: ::time_t,
+-        pub st_birthtime_nsec: ::c_long,
++        pub st_gen: ::uint64_t,
++        pub st_spare: [::uint64_t; 10],
+     }
+ }
+--- ./src/vendor/libc/src/unix/bsd/freebsdlike/freebsd/x86_64.rs.orig	2017-04-24 20:20:26.000000000 +0000
++++ ./src/vendor/libc/src/unix/bsd/freebsdlike/freebsd/x86_64.rs	2017-05-25 16:25:42.305261000 +0000
+@@ -7,10 +7,12 @@
+     pub struct stat {
+         pub st_dev: ::dev_t,
+         pub st_ino: ::ino_t,
+-        pub st_mode: ::mode_t,
+         pub st_nlink: ::nlink_t,
++        pub st_mode: ::mode_t,
++        pub st_pad0: ::uint16_t,
+         pub st_uid: ::uid_t,
+         pub st_gid: ::gid_t,
++        pub st_pad1: ::uint32_t,
+         pub st_rdev: ::dev_t,
+         pub st_atime: ::time_t,
+         pub st_atime_nsec: ::c_long,
+@@ -18,13 +20,13 @@
+         pub st_mtime_nsec: ::c_long,
+         pub st_ctime: ::time_t,
+         pub st_ctime_nsec: ::c_long,
++        pub st_birthtime: ::time_t,
++        pub st_birthtime_nsec: ::c_long,
+         pub st_size: ::off_t,
+         pub st_blocks: ::blkcnt_t,
+         pub st_blksize: ::blksize_t,
+         pub st_flags: ::fflags_t,
+-        pub st_gen: ::uint32_t,
+-        pub st_lspare: ::int32_t,
+-        pub st_birthtime: ::time_t,
+-        pub st_birthtime_nsec: ::c_long,
++        pub st_gen: ::uint64_t,
++        pub st_spare: [::uint64_t; 10],
+     }
+ }
+--- ./src/vendor/libc/src/unix/bsd/freebsdlike/freebsd/mod.rs.orig	2017-04-24 20:20:26.000000000 +0000
++++ ./src/vendor/libc/src/unix/bsd/freebsdlike/freebsd/mod.rs	2017-05-25 16:28:29.708287000 +0000
+@@ -1,8 +1,8 @@
+ pub type fflags_t = u32;
+ pub type clock_t = i32;
+-pub type ino_t = u32;
++pub type ino_t = u64;
+ pub type lwpid_t = i32;
+-pub type nlink_t = u16;
++pub type nlink_t = u64;
+ pub type blksize_t = u32;
+ pub type clockid_t = ::c_int;
+ pub type sem_t = _sem;
+@@ -40,10 +40,13 @@
+     }
+ 
+     pub struct dirent {
+-        pub d_fileno: u32,
++        pub d_fileno: u64,
++        pub d_off: u64,
+         pub d_reclen: u16,
+         pub d_type: u8,
+-        pub d_namlen: u8,
++        pub d_pad0: u8,
++        pub d_namlen: u16,
++        pub d_pad1: u16,
+         pub d_name: [::c_char; 256],
+     }
+ 
+--- ./src/vendor/libc/src/unix/bsd/freebsdlike/freebsd/x86.rs.orig	2017-04-24 20:20:26.000000000 +0000
++++ ./src/vendor/libc/src/unix/bsd/freebsdlike/freebsd/x86.rs	2017-05-25 16:25:42.305967000 +0000
+@@ -7,25 +7,30 @@
+     pub struct stat {
+         pub st_dev: ::dev_t,
+         pub st_ino: ::ino_t,
+-        pub st_mode: ::mode_t,
+         pub st_nlink: ::nlink_t,
++        pub st_mode: ::mode_t,
++        pub st_pad0: ::uint16_t,
+         pub st_uid: ::uid_t,
+         pub st_gid: ::gid_t,
++        pub st_pad1: ::uint32_t,
+         pub st_rdev: ::dev_t,
++        pub st_atime_ext: ::int32_t,
+         pub st_atime: ::time_t,
+         pub st_atime_nsec: ::c_long,
++        pub st_mtime_ext: i32,
+         pub st_mtime: ::time_t,
+         pub st_mtime_nsec: ::c_long,
++        pub st_ctime_ext: ::int32_t,
+         pub st_ctime: ::time_t,
+         pub st_ctime_nsec: ::c_long,
++        pub st_birthtime_ext: ::int32_t,
++        pub st_birthtime: ::time_t,
++        pub st_birthtime_nsec: ::c_long,
+         pub st_size: ::off_t,
+         pub st_blocks: ::blkcnt_t,
+         pub st_blksize: ::blksize_t,
+         pub st_flags: ::fflags_t,
+-        pub st_gen: ::uint32_t,
+-        pub st_lspare: ::int32_t,
+-        pub st_birthtime: ::time_t,
+-        pub st_birthtime_nsec: ::c_long,
+-        __unused: [u8; 8],
++        pub st_gen: ::uint64_t,
++        pub st_spare: [::uint64_t; 10],
+     }
+ }
+--- ./src/vendor/libc/src/unix/bsd/freebsdlike/mod.rs.orig	2017-04-24 20:20:26.000000000 +0000
++++ ./src/vendor/libc/src/unix/bsd/freebsdlike/mod.rs	2017-05-25 16:25:42.306480000 +0000
+@@ -1,4 +1,4 @@
+-pub type dev_t = u32;
++pub type dev_t = u64;
+ pub type mode_t = u16;
+ pub type pthread_attr_t = *mut ::c_void;
+ pub type rlim_t = i64;

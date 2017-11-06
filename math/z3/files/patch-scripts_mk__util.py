@@ -14,7 +14,7 @@
          CXX = find_cxx_compiler()
          CC  = find_c_compiler()
 -        SLIBEXTRAFLAGS = ''
-+        SLIBEXTRAFLAGS = LDFLAGS
++        SLIBEXTRAFLAGS = '%s -Wl,-soname,libz3.so.0' % LDFLAGS
          if GPROF:
              CXXFLAGS = '%s -pg' % CXXFLAGS
              LDFLAGS  = '%s -pg' % LDFLAGS

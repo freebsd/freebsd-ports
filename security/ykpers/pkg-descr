@@ -1,4 +1,4 @@
 The YubiKey Personalization package contains a library and command line tool
 used to personalize (i.e., set a AES key) YubiKeys.
 
-WWW: https://code.google.com/p/yubikey-personalization/
+WWW: https://developers.yubico.com/yubikey-personalization/

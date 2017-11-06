@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	jnlin@freebsd.cs.nctu.edu.tw
 COMMENT=	Logging to date/time stamped files
 
-LICENSE=	ART10 GPLv1
+LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Log-Dispatch>=2.38:devel/p5-Log-Dispatch \

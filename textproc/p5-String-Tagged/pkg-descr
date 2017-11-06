@@ -1,0 +1,17 @@
+String::Tagged implements an object class, instances of which store a (mutable)
+string buffer that supports tags. A tag is a name/value pair that applies to
+some non-empty extent of the underlying string.
+
+The types of tag names ought to be strings, or at least values that are
+well-behaved as strings, as the names will often be used as the keys in hashes
+or applied to the eq operator.
+
+The types of tag values are not restricted - any scalar will do. This could be a
+simple integer or string, ARRAY or HASH reference, or even a CODE reference
+containing an event handler of some kind.
+
+Tags may be arbitrarily overlapped. Any given offset within the string has in
+effect, a set of uniquely named tags. Tags of different names are independent.
+For tags of the same name, only the latest, shortest tag takes effect.
+
+WWW: http://search.cpan.org/dist/String-Tagged/

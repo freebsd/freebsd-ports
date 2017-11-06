@@ -5,4 +5,4 @@ It will accept encoding streams from encoders like winamp, shout and ices.
 It can also add itself to a directory server such as our own
 icecast.linuxpower.org or Nullsoft's yp.shoutcast.com.
 
-WWW: https://github.com/karlheyes/icecast-kh/
+WWW: https://github.com/karlheyes/icecast-kh

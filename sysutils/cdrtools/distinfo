@@ -1,2 +1,5 @@
+TIMESTAMP = 1501001984
 SHA256 (cdrtools-3.01.tar.bz2) = ed282eb6276c4154ce6a0b5dee0bdb81940d0cbbfc7d03f769c4735ef5f5860f
 SIZE (cdrtools-3.01.tar.bz2) = 2087416
+SHA256 (cdrtools-3.01-fix-20151126-mkisofs-isoinfo.patch) = 4e07a2be599c0b910ab3401744cec417dbdabf30ea867ee59030a7ad1906498b
+SIZE (cdrtools-3.01-fix-20151126-mkisofs-isoinfo.patch) = 14606

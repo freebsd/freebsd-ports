@@ -8,15 +8,17 @@ CATEGORIES=	databases
 PKGNAMEPREFIX=	php70-
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	Memcached extension for PHP 7
+COMMENT=	Memcached extension for PHP 7.0
 
 LICENSE=	PHP30
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 OPTIONS_DEFINE=	EXAMPLES
 
+PORTSCOUT=	skipv:start
+
 CONFIGURE_ARGS=	--with-zlib-dir=/usr
-IGNORE_WITH_PHP=56
+IGNORE_WITH_PHP=56 71
 PHP_VER=	70
 USE_CSTD=	gnu89
 USE_PHP=	session:build zlib:build

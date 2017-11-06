@@ -1,0 +1,30 @@
+--- muttlib.c.orig	2017-06-03 02:20:37 UTC
++++ muttlib.c
+@@ -1378,6 +1378,12 @@ void mutt_FormatString (char *dest,		/* 
+ 	count = 0;
+         while (count < sizeof (ifstring) && *src && *src != '?' && *src != '&')
+ 	{
++	  if (*src == '\\')
++	  {
++	    src++;
++	    if (!*src)
++	      break;
++	  }
+           *cp++ = *src++;
+ 	  count++;
+ 	}
+@@ -1390,7 +1396,13 @@ void mutt_FormatString (char *dest,		/* 
+ 	count = 0;
+ 	while (count < sizeof (elsestring) && *src && *src != '?')
+ 	{
+-	  *cp++ = *src++;
++	  if (*src == '\\')
++	  {
++	    src++;
++	    if (!*src)
++	      break;
++	  }
++          *cp++ = *src++;
+ 	  count++;
+ 	}
+ 	*cp = 0;

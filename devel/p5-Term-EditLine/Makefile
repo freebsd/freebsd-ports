@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Term-EditLine
-PORTVERSION=	0.05
-PORTREVISION=	2
+PORTVERSION=	0.11
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN \
 		LOCAL/ehaupt
@@ -12,12 +11,11 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Perl interface to the NetBSD editline library
 
-USES=		libedit perl5
-USE_PERL5=	configure
+LICENSE=	ART10 GPLv1+
+LICENSE_COMB=	dual
 
-# new upstream author added myriads of his own perl modules as dependencies
-# in new releases. those dependencies come with no additional value.
-PORTSCOUT=	ignore:1
+USES=		libedit perl5 pkgconfig
+USE_PERL5=	configure
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Term/EditLine/EditLine.so

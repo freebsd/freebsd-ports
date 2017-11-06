@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	speedtables
-PORTVERSION=	1.10.1
+PORTVERSION=	1.13.8
 DISTVERSIONPREFIX=	v
-PORTREVISION=	3
+PORTREVISION=	0
 CATEGORIES=	databases
 
 MAINTAINER=	gahr@FreeBSD.org
@@ -15,14 +15,15 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libtclx8.4.so:lang/tclX \
 		libboost_graph.so:devel/boost-libs
-
-USE_GITHUB=	yes
-GH_ACCOUNT=	flightaware
+RUN_DEPENDS=	${LOCALBASE}/lib/tcllib/ncgi/ncgi.tcl:devel/tcllib
 
 USES=		autoreconf tcl:tea
 CONFIGURE_ARGS=	--with-boost=${LOCALBASE}
 MAKE_ENV=	TCLSH=${TCLSH}
 TEST_TARGET=	test
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	flightaware
 
 PORTDOCS=	*
 
@@ -33,8 +34,6 @@ PGSQL_LIB_DEPENDS=	libpgtcl2.0.0.so:databases/postgresql94-pgtcl
 CASSANDRA_CONFIGURE_ON=	--with-casstcl=${LOCALBASE}
 CASSANDRA_LIB_DEPENDS=	libcasstcl.so:databases/casstcl
 
-post-configure:
-	${CHMOD} a+x ${WRKSRC}/ctable_server/sttp
 post-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC}/ctables/docs/manual && \

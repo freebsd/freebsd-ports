@@ -6,7 +6,7 @@ steps as root:
 
 * Add webmin_enable="YES" to your /etc/rc.conf
 
-* Start Webmin for the first time by running %%LOCALBASE%%/etc/rc.d/webmin start
+* Start Webmin for the first time by running "service webmin start"
 
 The parameters requested by setup.sh may then be changed from within Webmin
 itself.

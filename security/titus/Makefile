@@ -3,12 +3,15 @@
 
 PORTNAME=	titus
 PORTVERSION=	0.3
+PORTREVISION=	2
 CATEGORIES=	security
 
 MAINTAINER=	feld@FreeBSD.org
 COMMENT=	TLS/SSL proxy server
 
 LICENSE=	MIT
+
+BROKEN_powerpc64=	fails to compile: child.cpp: undefined reference to std::__cxx11::basic_string
 
 USES=		compiler:c++11-lang ssl
 USE_RC_SUBR=	titus

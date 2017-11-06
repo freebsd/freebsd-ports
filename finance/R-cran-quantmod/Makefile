@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	quantmod
-DISTVERSION=	0.4-7
+DISTVERSION=	0.4-10
 CATEGORIES=	finance
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -13,7 +13,8 @@ LICENSE=	GPLv3
 
 CRAN_DEPENDS=	R-cran-xts>=0.9.0:math/R-cran-xts \
 		R-cran-zoo>0:math/R-cran-zoo \
-		R-cran-TTR>=0.2:finance/R-cran-TTR
+		R-cran-TTR>=0.2:finance/R-cran-TTR \
+		R-cran-curl>0:ftp/R-cran-curl
 BUILD_DEPENDS=	${CRAN_DEPENDS}
 RUN_DEPENDS=	${CRAN_DEPENDS}
 

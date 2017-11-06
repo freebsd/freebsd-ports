@@ -38,7 +38,6 @@ MAKEFILE=	makefile
 NO_ARCH=	yes
 USES=		gettext gmake python:-2.7 shebangfix
 SHEBANG_FILES=	src/gpodder/*.py share/gpodder/examples/*.py share/gpodder/extensions/*.py
-WANT_GNOME=	yes
 INSTALLS_ICONS=	yes
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 PORTDOCS=	PKG-INFO README

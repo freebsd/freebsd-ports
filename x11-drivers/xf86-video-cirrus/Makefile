@@ -2,6 +2,7 @@
 
 PORTNAME=	xf86-video-cirrus
 PORTVERSION=	1.5.3
+PORREVISION=	1
 CATEGORIES=	x11-drivers
 
 MAINTAINER=	x11@FreeBSD.org

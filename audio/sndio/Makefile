@@ -3,10 +3,11 @@
 
 PORTNAME=	sndio
 PORTVERSION=	1.2.0
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://www.sndio.org/
 
-MAINTAINER=	t@tobik.me
+MAINTAINER=	tobik@FreeBSD.org
 COMMENT=	Small audio and MIDI framework from the OpenBSD project
 
 LICENSE=	ISCL
@@ -23,6 +24,11 @@ GROUPS=		_sndio
 # Parallel build leads to problems, but sndio is very quick to compile
 # as is so not worth fixing
 MAKE_JOBS_UNSAFE=	yes
+
+post-patch:
+# Make sure sndiod can be started inside jails as root
+	@${REINPLACE_CMD} 's|err(1, "setpriority")|warn("setpriority")|' \
+		${WRKSRC}/sndiod/sndiod.c
 
 post-install:
 	@${STRIP_CMD} \

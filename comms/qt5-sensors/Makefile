@@ -1,6 +1,6 @@
 # $FreeBSD$
 
-PORTNAME= 	sensors
+PORTNAME=	sensors
 DISTVERSION=	${QT5_VERSION}
 CATEGORIES=	comms
 PKGNAMEPREFIX=	qt5-

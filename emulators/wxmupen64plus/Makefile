@@ -3,17 +3,14 @@
 
 PORTNAME=	wxmupen64plus
 PORTVERSION=	0.3
-PORTREVISION=	3
+PORTREVISION=	5
 CATEGORIES=	emulators
-MASTER_SITES=	GOOGLE_CODE \
-		LOCAL/acm/${PORTNAME} \
-		http://cdn.bitbucket.org/auria/wxmupen64plus/downloads/
+MASTER_SITES=	https://bitbucket.org/auria/wxmupen64plus/get/
+DISTNAME=	${PORTVERSION}
 DIST_SUBDIR=	${PORTNAME:S/wx//}
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Mupen64Plus 2.0 GUI frontend written using wxWidgets
-
-BROKEN=		Unfetchable (google code has gone away)
 
 LIB_DEPENDS=	libmupen64plus.so.2:emulators/mupen64plus-core
 RUN_DEPENDS=	${LOCALBASE}/lib/libmupen64plus.so.2:emulators/mupen64plus-core \
@@ -23,12 +20,12 @@ RUN_DEPENDS=	${LOCALBASE}/lib/libmupen64plus.so.2:emulators/mupen64plus-core \
 		${LOCALBASE}/lib/mupen64plus/mupen64plus-video-rice.so:emulators/mupen64plus-video-rice \
 		mupen64plus:emulators/mupen64plus-ui-console
 
-PROJECTHOST=	bsdistfiles
+WRKSRC=		${WRKDIR}/auria-${PORTNAME}-0564db396383
+
 USES=		compiler:c++11-lib python
 USE_CXXSTD=	c++11
 USE_SDL=	yes
 USE_WX=		3.0
-WX_UNICODE=	yes
 WAF_SCRIPT=	waf
 
 post-patch:
@@ -53,6 +50,6 @@ do-build:
 do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	@cd ${WRKSRC}/data && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}
-	@${INSTALL_PROGRAM} ${WRKSRC}/build/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+	${INSTALL_PROGRAM} ${WRKSRC}/build/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>

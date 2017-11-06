@@ -501,13 +501,16 @@ setJavaHome() {
         for version in ${JAVA_VERSION}; do
             case "${version}" in
                 1.6+)
-                    _JAVAVM_VERSION="${_JAVAVM_VERSION} 1.6 1.7 1.8"
+                    _JAVAVM_VERSION="${_JAVAVM_VERSION} 1.6 1.7 1.8 1.9"
                     ;;
                 1.7+)
-                    _JAVAVM_VERSION="${_JAVAVM_VERSION} 1.7 1.8"
+                    _JAVAVM_VERSION="${_JAVAVM_VERSION} 1.7 1.8 1.9"
                     ;;
                 1.8+)
-                    _JAVAVM_VERSION="${_JAVAVM_VERSION} 1.8"
+                    _JAVAVM_VERSION="${_JAVAVM_VERSION} 1.8 1.9"
+                    ;;
+                1.9+)
+                    _JAVAVM_VERSION="${_JAVAVM_VERSION} 1.9"
                     ;;
                 *)
                     _JAVAVM_VERSION="${_JAVAVM_VERSION} ${version}"

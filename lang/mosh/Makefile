@@ -3,10 +3,9 @@
 
 PORTNAME=	mosh
 PORTVERSION=	0.2.7
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	lang
-MASTER_SITES=	GOOGLE_CODE
-PROJECTHOST=	mosh-scheme
+MASTER_SITES=	https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/mosh-scheme/
 PKGNAMESUFFIX=	-scheme
 
 MAINTAINER=	mjt@cltn.org
@@ -14,15 +13,17 @@ COMMENT=	Fast R6RS Scheme interpreter
 
 LICENSE=	BSD2CLAUSE
 
-BROKEN=		Unfetchable (google code has gone away)
-
 LIB_DEPENDS=	libgmp.so:math/gmp \
-		libonig.so:devel/oniguruma5
+		libonig.so:devel/oniguruma6
+
+BROKEN_armv6=		fails to link: os_dep.c: undefined reference to '__stack_base__'
+BROKEN_mips64=		fails to compile: os_dep.c: redefinition of 'GC_register_dynamic_libraries'
+NOT_FOR_ARCHS=		aarch64
+NOT_FOR_ARCHS_REASON=	gcconfig.h: the collector has not been ported to this machine/OS combination
 
 CONFLICTS_INSTALL=	mosh-1.[0-9].*
 
-USES=		gmake
-USE_OPENSSL=	yes
+USES=		gmake ssl
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--datadir=${PREFIX}/lib
 

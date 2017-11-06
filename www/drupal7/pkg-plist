@@ -1,5 +1,3 @@
-@owner www
-@group www
 %%PORTDOCS%%%%DOCSDIR%%/CHANGELOG.txt
 %%PORTDOCS%%%%DOCSDIR%%/COPYRIGHT.txt
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL.mysql.txt
@@ -10,6 +8,8 @@
 %%PORTDOCS%%%%DOCSDIR%%/MAINTAINERS.txt
 %%PORTDOCS%%%%DOCSDIR%%/README.txt
 %%PORTDOCS%%%%DOCSDIR%%/UPGRADE.txt
+@owner www
+@group www
 %%DRUPAL_BASE%%/.htaccess
 %%DRUPAL_BASE%%/authorize.php
 %%DRUPAL_BASE%%/cron.php
@@ -639,12 +639,12 @@
 %%DRUPAL_BASE%%/modules/simpletest/tests/batch_test.callbacks.inc
 %%DRUPAL_BASE%%/modules/simpletest/tests/batch_test.info
 %%DRUPAL_BASE%%/modules/simpletest/tests/batch_test.module
-%%DRUPAL_BASE%%/modules/simpletest/tests/bootstrap.test
 %%DRUPAL_BASE%%/modules/simpletest/tests/boot.test
 %%DRUPAL_BASE%%/modules/simpletest/tests/boot_test_1.info
 %%DRUPAL_BASE%%/modules/simpletest/tests/boot_test_1.module
 %%DRUPAL_BASE%%/modules/simpletest/tests/boot_test_2.info
 %%DRUPAL_BASE%%/modules/simpletest/tests/boot_test_2.module
+%%DRUPAL_BASE%%/modules/simpletest/tests/bootstrap.test
 %%DRUPAL_BASE%%/modules/simpletest/tests/cache.test
 %%DRUPAL_BASE%%/modules/simpletest/tests/common.test
 %%DRUPAL_BASE%%/modules/simpletest/tests/common_test.css
@@ -756,11 +756,14 @@
 %%DRUPAL_BASE%%/modules/simpletest/tests/theme_test.info
 %%DRUPAL_BASE%%/modules/simpletest/tests/theme_test.module
 %%DRUPAL_BASE%%/modules/simpletest/tests/theme_test.template_test.tpl.php
+%%DRUPAL_BASE%%/modules/simpletest/tests/themes/engines/nyan_cat/nyan_cat.engine
 %%DRUPAL_BASE%%/modules/simpletest/tests/themes/test_basetheme/test_basetheme.info
 %%DRUPAL_BASE%%/modules/simpletest/tests/themes/test_subtheme/test_subtheme.info
 %%DRUPAL_BASE%%/modules/simpletest/tests/themes/test_theme/template.php
 %%DRUPAL_BASE%%/modules/simpletest/tests/themes/test_theme/templates/node--1.tpl.php
 %%DRUPAL_BASE%%/modules/simpletest/tests/themes/test_theme/test_theme.info
+%%DRUPAL_BASE%%/modules/simpletest/tests/themes/test_theme_nyan_cat/templates/theme_test_template_test.nyan-cat.html
+%%DRUPAL_BASE%%/modules/simpletest/tests/themes/test_theme_nyan_cat/test_theme_nyan_cat.info
 %%DRUPAL_BASE%%/modules/simpletest/tests/unicode.test
 %%DRUPAL_BASE%%/modules/simpletest/tests/update.test
 %%DRUPAL_BASE%%/modules/simpletest/tests/update_script_test.info
@@ -921,6 +924,7 @@
 %%DRUPAL_BASE%%/modules/update/tests/drupal.1.xml
 %%DRUPAL_BASE%%/modules/update/tests/drupal.2-sec.xml
 %%DRUPAL_BASE%%/modules/update/tests/drupal.dev.xml
+%%DRUPAL_BASE%%/modules/update/tests/themes/update_test_admintheme/update_test_admintheme.info
 %%DRUPAL_BASE%%/modules/update/tests/themes/update_test_basetheme/update_test_basetheme.info
 %%DRUPAL_BASE%%/modules/update/tests/themes/update_test_subtheme/update_test_subtheme.info
 %%DRUPAL_BASE%%/modules/update/tests/update_test.info
@@ -958,11 +962,11 @@
 %%DRUPAL_BASE%%/modules/user/user.permissions.js
 %%DRUPAL_BASE%%/modules/user/user.test
 %%DRUPAL_BASE%%/modules/user/user.tokens.inc
+%%DRUPAL_BASE%%/profiles/README.txt
 %%DRUPAL_BASE%%/profiles/minimal/minimal.info
 %%DRUPAL_BASE%%/profiles/minimal/minimal.install
 %%DRUPAL_BASE%%/profiles/minimal/minimal.profile
 %%DRUPAL_BASE%%/profiles/minimal/translations/README.txt
-%%DRUPAL_BASE%%/profiles/README.txt
 %%DRUPAL_BASE%%/profiles/standard/standard.info
 %%DRUPAL_BASE%%/profiles/standard/standard.install
 %%DRUPAL_BASE%%/profiles/standard/standard.profile
@@ -1100,7 +1104,6 @@
 %%DRUPAL_BASE%%/update.php
 %%DRUPAL_BASE%%/web.config
 %%DRUPAL_BASE%%/xmlrpc.php
-%%WWWDIR%%/modules/update/tests/themes/update_test_admintheme/update_test_admintheme.info
 @dir %%DRUPAL_BASE%%/sites/all/libraries
 @dir %%DRUPAL_BASE%%/sites/default/files
 @unexec rm -f %%DRUPAL_BASE%%/files/.htaccess 2> /dev/null || true

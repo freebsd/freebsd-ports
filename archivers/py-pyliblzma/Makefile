@@ -14,8 +14,8 @@ COMMENT=	Python binding for the LZMA compression library
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		pkgconfig python tar:bzip2
-USE_PYTHON=	distutils autoplist
+USES=		pkgconfig python:-2.7 tar:bzip2
+USE_PYTHON=	autoplist distutils
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/lzma.so

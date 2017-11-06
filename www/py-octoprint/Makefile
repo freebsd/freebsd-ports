@@ -6,7 +6,7 @@ PORTREVISION=	1
 CATEGORIES=	www python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	bsdports@kyle-evans.net
+MAINTAINER=	kevans@FreeBSD.org
 COMMENT=	Web interface for controlling a 3D printer
 
 LICENSE=	AGPLv3
@@ -43,6 +43,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Flask>=0.11.1:www/py-flask \
 USES=		python
 
 USE_PYTHON=	autoplist distutils
+BROKEN=		checksum mismatch
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	kevans91

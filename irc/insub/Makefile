@@ -3,6 +3,7 @@
 
 PORTNAME=	insub
 PORTVERSION=	16.0
+PORTREVISION=	1
 CATEGORIES=	irc
 
 MAINTAINER=	ports@FreeBSD.org
@@ -14,16 +15,19 @@ RUN_DEPENDS=	cowsay:games/cowsay \
 USE_GITHUB=	yes
 GH_ACCOUNT=	cjones
 
-USES=		perl5 python:2.5+
+USES=		perl5 python:2.5+ shebangfix
+SHEBANG_FILES=	insub.py
 USE_PERL5=	run
+NO_BUILD=	yes
+NO_ARCH=	yes
+
+DATADIR=	${PREFIX}/share/cows
 
 OPTIONS_DEFINE=	COWS
 OPTIONS_DEFAULT=COWS
-COWS_DESC=	Install a collection of cowsay(1) cows
 OPTIONS_SUB=	yes
 
-NO_BUILD=	yes
-DATADIR=	${PREFIX}/share/cows
+COWS_DESC=	Install a collection of cowsay(1) cows
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,/usr/local,${PREFIX},g' \

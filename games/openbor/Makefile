@@ -1,41 +1,61 @@
 # $FreeBSD$
 
 PORTNAME=	openbor
-PORTVERSION=	3.0.r4426
+# Hint: svn revision is git rev-list --count ${GH_TAGNAME}
+PORTVERSION?=	4542
+.ifndef PKGNAMESUFFIX
+PORTREVISION=	0
+.endif
 CATEGORIES=	games
-MASTER_SITES=	LOCAL/jbeich \
-		https://svn.code.sf.net/p/${PORTNAME}/engine/engine/:svn
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Moddable fighting game engine (aka Beats of Rage)
 
-LICENSE=	BSD3CLAUSE GPLv2+ ISCL
+LICENSE=	BSD3CLAUSE GPLv2+
+.if ${PORTVERSION} >= 4134
+LICENSE+=	ISCL
+.endif
 LICENSE_COMB=	multi
 LICENSE_FILE_BSD3CLAUSE=${WRKSRC}/LICENSE
 LICENSE_FILE_GPLv2+ =	${_LICENSE_STORE}/GPLv2 # source/gfxlib/hq2x.c
 LICENSE_FILE_ISCL=	${WRKSRC}/source/webmlib/nestegg/LICENSE
 
-LIB_DEPENDS=	libpng.so:graphics/png \
-		libvpx.so:multimedia/libvpx
+LIB_DEPENDS=	libpng.so:graphics/png
+.if ${PORTVERSION} >= 4134
+LIB_DEPENDS+=	libvpx.so:multimedia/libvpx
+.endif
 
-USES=		gmake pkgconfig tar:xz
+USE_GITHUB=	yes
+GH_ACCOUNT=	DCurrent
+GH_TAGNAME?=	55b816d
+
+USES+=		gmake pkgconfig
+.if ${PORTVERSION} < 4433
+USE_CSTD=	gnu89
+.endif
+.if ${PORTVERSION} < 4108
+USE_SDL=	gfx
+.else
 USE_SDL=	gfx2
+.endif
+WRKSRC_SUBDIR=	engine
 MAKE_ENV=	BUILD_LINUX=1 SDKPATH="${LOCALBASE}" \
 		GCC_TARGET="${CONFIGURE_TARGET:S/amd64/x86_64/}"
 MAKE_ARGS=	CC="${CC}" LIBRARIES="${LOCALBASE}/lib" \
 		TARGET_ARCH=${ARCH:S/i386/x86/} ARCHFLAGS="" \
-		TARGET_FINAL='${TARGET}' BUILD_MMX=""
-CFLAGS+=	-fgnu89-inline ${CFLAGS_${OPSYS}}
-CFLAGS_DragonFly=	-D_GCC_MAX_ALIGN_T # system stddef.h
+		TARGET_FINAL='${TARGET}' BUILD_MMX="" ECHO="${ECHO}"
 LDFLAGS+=	-Wl,--as-needed # ogg, pthread, zlib
-PLIST_FILES=	bin/${PORTNAME} \
-		share/pixmaps/${PORTNAME}.png
+SUB_FILES=	pkg-message
+SUB_LIST=	PKGBASE=${PKGBASE}
+PLIST_FILES=	bin/${PKGBASE} \
+		share/pixmaps/${PKGBASE}.png
+DOCSDIR=	${PREFIX}/share/doc/${PKGBASE}
 PORTDOCS=	README
 
-DESKTOP_ENTRIES="OpenBOR" \
+DESKTOP_ENTRIES="OpenBOR v3.0 Build ${PORTVERSION}" \
 		"" \
-		"${PORTNAME}" \
-		"${PORTNAME}" \
+		"${PKGBASE}" \
+		"${PKGBASE}" \
 		"Game;ArcadeGame;" \
 		""
 
@@ -51,55 +71,21 @@ TREMOR_LIB_DEPENDS=	libvorbisidec.so:audio/libtremor
 TREMOR_MAKE_ARGS=	BUILD_TREMOR=1 BUILD_VORBIS=""
 TREMOR_LIB_DEPENDS_OFF=	libvorbisfile.so:audio/libvorbis
 
-#
-# To update snapshot: make makesum BOOTSTRAP=
-# Specific snapshot:  make makesum SVN_FETCH= PORTVERSION=1.0.r1234
-#
-.if defined(BOOTSTRAP)
-# XXX SED and _MASTER_SITES_svn aren't defined yet
-SED?=		/usr/bin/sed
-SVN_REV!=	${SETENV} LC_ALL=C svn info \
-			${MASTER_SITES:M*\:svn:S/:svn//} | \
-		${SED} -n 's/^Last Changed Rev: //p'
-PORTVERSION:=	${PORTVERSION:R}.r${SVN_REV}
-.else
-SVN_REV?=	${PORTVERSION:E:S/r//}
-.endif
-
-.if defined(BOOTSTRAP) || defined(SVN_FETCH)
-FETCH_DEPENDS+=	svn:devel/subversion
-
-NO_CHECKSUM=	yes
-
-do-fetch:
-	${MKDIR} ${WRKDIR}
-	svn export -r${SVN_REV} ${_MASTER_SITES_svn} ${WRKSRC}
-	(cd ${WRKDIR} && ${TAR} cJvf \
-		${_DISTDIR}/${DISTNAME}${EXTRACT_SUFX} \
-		--uid 0 --gid 0 ${DISTNAME})
-. ifmake makesum
-	${REINPLACE_CMD} -i '' '/^PORTVERSION=/s/r.*/r${SVN_REV}/' \
-		${MASTERDIR}/Makefile
-. endif
-. if ${USER} == ${MAINTAINER:C/@.*//}
-	-scp ${_DISTDIR}/${DISTNAME}${EXTRACT_SUFX} \
-		freefall.freebsd.org:public_distfiles/
-. endif
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's/ -O[0-9]//; s/ -g//; s/ -Werror//' \
 		-e 's/ -fomit-frame-pointer//' \
 		-e 's/ -freorder-blocks//' \
-		-e 's/ -Wno-unused-result//' \
 		-e 's/ -Wl,-rpath,$$(LIBRARIES)//' \
 		-e '/echo/!s/	@/	/' \
+		-e 's/@echo/@$$(ECHO)/' \
 		-e 's/$$(LIBS)/$$(LDFLAGS) &/' \
 		${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's/\.openbor/.${PKGBASE}/' \
+		${WRKSRC}/sdl/sdlport.c
 	@${GREP} -Flr 'malloc.h' ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} \
 		's,malloc\.h,stdlib.h,'
 	@${REINPLACE_CMD} -e 's/^function \(.*\) {/\1() {/' \
-		-e 's/^get_revnum$$/VERSION_BUILD=${SVN_REV}/' \
+		-e 's/^get_revnum$$/VERSION_BUILD=${PORTVERSION}/' \
 		${WRKSRC}/version.sh
 
 do-configure:
@@ -107,9 +93,9 @@ do-configure:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/OpenBOR.elf \
-		${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+		${STAGEDIR}${PREFIX}/bin/${PKGBASE}
 	${INSTALL_DATA} ${WRKSRC}/resources/OpenBOR_Icon_128x128.png \
-		${STAGEDIR}${PREFIX}/share/pixmaps/${PORTNAME}.png
+		${STAGEDIR}${PREFIX}/share/pixmaps/${PKGBASE}.png
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} \
 		"${PORTDOCS}" ${STAGEDIR}${DOCSDIR})
 

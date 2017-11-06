@@ -1,5 +1,5 @@
---- src/constants.py.in.orig	2011-09-25 22:42:09.742559932 -0500
-+++ src/constants.py.in	2011-09-25 22:43:06.091693624 -0500
+--- src/constants.py.in.orig	2015-05-29 06:45:34 UTC
++++ src/constants.py.in
 @@ -51,7 +51,7 @@ import gettext
  try:
      locale.setlocale(locale.LC_ALL, '')

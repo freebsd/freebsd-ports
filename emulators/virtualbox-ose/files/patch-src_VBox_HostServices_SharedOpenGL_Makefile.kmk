@@ -1,0 +1,10 @@
+--- src/VBox/HostServices/SharedOpenGL/Makefile.kmk.orig	2017-10-18 07:12:48 UTC
++++ src/VBox/HostServices/SharedOpenGL/Makefile.kmk
+@@ -436,6 +436,7 @@ if (   defined(VBOX_WITH_QTGUI) \
+     $(if $(VBOX_WITH_CROGL), VBOX_WITH_CROGL,) \
+     $(if $(VBOX_WITH_VIDEOHWACCEL), VBOX_WITH_VIDEOHWACCEL,)
+   ifdef VBOX_WITH_VIDEOHWACCEL
++   VBoxTestOGL_CXXFLAGS.freebsd += -std=c++11
+    VBoxTestOGL_QT_MODULES   += Core Gui OpenGL Widgets
+    VBoxTestOGL_LIBS.linux   += xcb
+    VBoxTestOGL_LIBS.solaris += xcb

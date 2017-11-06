@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	pyang
-PORTVERSION=	1.4.1
+PORTVERSION=	1.7.3
 CATEGORIES=	net-mgmt python
-MASTER_SITES=	GOOGLE_CODE
+MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	bofh@FreeBSD.org
@@ -12,10 +12,9 @@ COMMENT=	Validator and code generator for YANG (RFC 4741)
 
 LICENSE=	MIT
 
-BROKEN=		Unfetchable (google code has gone away)
-
 USES=		python
-USE_PYTHON=	distutils
+USE_PYTHON=	autoplist distutils
+NO_ARCH=	yes
 
 DATADIR=	${PREFIX}/share/yang
 

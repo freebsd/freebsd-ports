@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	doublecmd
-PORTVERSION=	0.7.7
-PORTREVISION=	1
+PORTVERSION=	0.7.8
+PORTREVISION=	4
 CATEGORIES=	x11-fm
 MASTER_SITES=	SF/${PORTNAME}/Double%20Commander%20Source
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
@@ -26,12 +26,11 @@ USE_FPC=	cairo fcl-base fcl-db fcl-image fcl-json fcl-registry \
 		fcl-xml iconvenc pasjpeg rtl-extra x11
 USE_XORG=	x11
 DOS2UNIX_FILES=	src/dmhelpmanager.pas
-WANT_GNOME=	yes
 
 PLIST=		${WRKDIR}/pkg-plist
 
 PROJECT_FILE=	src/doublecmd.lpi
-LAZARUS_VER=	1.6.2
+LAZARUS_VER=	1.6.4
 LAZBUILD_CMD=	${LOCALBASE}/bin/lazbuild -d --pcp=${WRKSRC}/tmppcp
 LAZARUS_DIR=	${LOCALBASE}/share/lazarus-${LAZARUS_VER}
 MAKE_ENV+=	LDVER=ld.bfd # for DragonFly
@@ -107,7 +106,7 @@ QT4_LIB_DEPENDS=	libQt4Pas.so:x11-toolkits/qt4pas
 QT4_BUILD_DEPENDS=	${LAZARUS_DIR}/lcl/units/${BUILDNAME}/${LCL_PLATFORM}/interfaces.ppu:editors/lazarus-lcl-qt
 
 WCX_UNRAR_LIB_DEPENDS=	libunrar.so.5:archivers/libunrar5
-WFX_SAMBA_LIB_DEPENDS=	libsmbclient.so:net/samba-libsmbclient
+WFX_SAMBA_USES=		samba:lib
 WLX_MPLAYER_RUN_DEPENDS=	mplayer:multimedia/mplayer
 
 .include <bsd.port.options.mk>

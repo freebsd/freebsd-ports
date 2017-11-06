@@ -1,10 +1,3 @@
-%%PERL5_MAN3%%/Data::FormValidator.3.gz
-%%PERL5_MAN3%%/Data::FormValidator::Constraints.3.gz
-%%PERL5_MAN3%%/Data::FormValidator::Constraints::Dates.3.gz
-%%PERL5_MAN3%%/Data::FormValidator::Constraints::Upload.3.gz
-%%PERL5_MAN3%%/Data::FormValidator::ConstraintsFactory.3.gz
-%%PERL5_MAN3%%/Data::FormValidator::Filters.3.gz
-%%PERL5_MAN3%%/Data::FormValidator::Results.3.gz
 %%SITE_PERL%%/Data/FormValidator.pm
 %%SITE_PERL%%/Data/FormValidator/Constraints.pm
 %%SITE_PERL%%/Data/FormValidator/Constraints/Dates.pm
@@ -12,3 +5,11 @@
 %%SITE_PERL%%/Data/FormValidator/ConstraintsFactory.pm
 %%SITE_PERL%%/Data/FormValidator/Filters.pm
 %%SITE_PERL%%/Data/FormValidator/Results.pm
+%%SITE_PERL%%/Data/README.pod
+%%PERL5_MAN3%%/Data::FormValidator.3.gz
+%%PERL5_MAN3%%/Data::FormValidator::Constraints.3.gz
+%%PERL5_MAN3%%/Data::FormValidator::Constraints::Dates.3.gz
+%%PERL5_MAN3%%/Data::FormValidator::Constraints::Upload.3.gz
+%%PERL5_MAN3%%/Data::FormValidator::ConstraintsFactory.3.gz
+%%PERL5_MAN3%%/Data::FormValidator::Filters.3.gz
+%%PERL5_MAN3%%/Data::FormValidator::Results.3.gz

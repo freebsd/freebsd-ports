@@ -13,12 +13,15 @@ LICENSE_COMB=	multi
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 BUILD_DEPENDS=	asciidoc:textproc/asciidoc \
-		xmlto:textproc/xmlto
+		minixmlto:textproc/minixmlto
 
 USES=		pkgconfig gmake ssl
 USE_GITHUB=	yes
 
 PLIST_FILES=	bin/proxytunnel man/man1/proxytunnel.1.gz
+
+post-patch:
+	${REINPLACE_CMD} -e "s/xmlto/minixmlto/g" ${WRKSRC}/docs/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin

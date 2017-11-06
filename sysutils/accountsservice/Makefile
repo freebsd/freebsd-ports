@@ -16,13 +16,11 @@ LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib \
 		libpolkit-gobject-1.so:sysutils/polkit
 
 USE_GNOME=	glib20 intlhack introspection:build libxslt
-USES=		cpe gettext gmake libtool pathfix pkgconfig tar:xz
+USES=		cpe gettext gmake libtool localbase:ldflags pathfix pkgconfig tar:xz
 CPE_VENDOR=	ray_stode
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--disable-systemd --localstatedir=/var/
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
 
 post-patch:

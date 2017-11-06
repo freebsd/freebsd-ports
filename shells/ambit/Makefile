@@ -19,6 +19,7 @@ AMBITDIR?=	/var/spool/${PORTNAME}
 NO_BUILD=	yes
 NO_ARCH=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+BROKEN=		checksum mismatch
 
 PLIST_SUB=	AMBITDIR=${AMBITDIR}
 

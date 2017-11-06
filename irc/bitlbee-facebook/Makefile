@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	bitlbee-facebook
-PORTVERSION=	1.0.0
+PORTVERSION=	1.1.2
 DISTVERSIONPREFIX=v
-PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	irc
 
@@ -20,6 +19,7 @@ BUILD_DEPENDS=	bitlbee:irc/bitlbee
 USES=		autoreconf gettext-runtime libtool pkgconfig
 USE_GNOME=	glib20
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS+=--with-plugindir=${PREFIX}/lib/bitlbee
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	bitlbee

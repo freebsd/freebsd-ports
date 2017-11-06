@@ -1,0 +1,12 @@
+Snap is an open telemetry framework designed to simplify the collection,
+processing and publishing of system data through a single API. The goals
+of this project are to:
+
+- Empower systems to expose a consistent set of telemetry data
+- Simplify telemetry ingestion across ubiquitous storage systems
+- Allow flexible processing of telemetry data on agent (e.g. filtering
+  and decoration)
+- Provide powerful clustered control of telemetry workflows across small
+  or large clusters
+
+WWW: https://github.com/intelsdi-x/snap

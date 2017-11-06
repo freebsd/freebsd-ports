@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	perdition
-PORTVERSION=	2.1
+PORTVERSION=	2.2
 CATEGORIES=	mail net security
 MASTER_SITES=	http://horms.net/projects/perdition/download/${PORTVERSION}/
 

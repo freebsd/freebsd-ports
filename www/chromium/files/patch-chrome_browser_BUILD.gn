@@ -1,6 +1,6 @@
---- chrome/browser/BUILD.gn.orig	2016-08-03 22:02:11.000000000 +0300
-+++ chrome/browser/BUILD.gn	2016-09-27 09:40:30.879973000 +0300
-@@ -540,7 +540,7 @@
+--- chrome/browser/BUILD.gn.orig	2017-06-15 21:03:01.000000000 +0200
++++ chrome/browser/BUILD.gn	2017-06-18 05:06:25.091310000 +0200
+@@ -2296,7 +2296,7 @@
      deps += [ "//device/udev_linux" ]
    }
  
@@ -9,44 +9,30 @@
      deps += [ "//third_party/speech-dispatcher" ]
    }
  
-@@ -730,6 +730,22 @@
-     sources += rebase_path(gypi_values.chrome_browser_non_mobile_sources,
-                            ".",
-                            "//chrome")
-+    if (is_bsd) {
-+      sources -= [
-+        "media_galleries/linux/mtp_device_delegate_impl_linux.cc",
-+        "media_galleries/linux/mtp_device_delegate_impl_linux.h",
-+        "media_galleries/linux/mtp_device_object_enumerator.cc",
-+        "media_galleries/linux/mtp_device_object_enumerator.h",
-+        "media_galleries/linux/mtp_device_task_helper.cc",
-+        "media_galleries/linux/mtp_device_task_helper.h",
-+        "media_galleries/linux/mtp_device_task_helper_map_service.cc",
-+        "media_galleries/linux/mtp_device_task_helper_map_service.h",
-+        "media_galleries/linux/mtp_read_file_worker.cc",
-+        "media_galleries/linux/mtp_read_file_worker.h",
-+        "media_galleries/linux/snapshot_file_details.cc",
-+        "media_galleries/linux/snapshot_file_details.h",
-+      ]
-+    }
-   }
- 
-   if (!is_chrome_branded) {
-@@ -857,7 +873,7 @@
+@@ -3721,7 +3721,7 @@
      }
    }
  
 -  if (is_linux) {
 +  if (is_linux || is_bsd) {
      if (use_aura) {
-       configs += [ "//build/config/linux/dbus" ]
-       deps += [
-@@ -871,7 +887,7 @@
+       deps += [ "//build/linux:fontconfig" ]
+       if (use_dbus) {
+@@ -3734,7 +3734,7 @@
      }
    }
  
+-  if (is_linux || is_win || is_mac) {
++  if (is_linux || is_win || is_mac || is_bsd) {
+     sources += [
+       "payments/chrome_payment_request_delegate.cc",
+       "payments/chrome_payment_request_delegate.h",
+@@ -3744,7 +3744,7 @@
+     deps += [ "//components/payments/content" ]
+   }
+ 
 -  if (is_linux || is_win) {
-+  if (is_linux || is_bsd || is_win) {
-     sources += rebase_path(gypi_values.chrome_browser_non_mac_desktop_sources,
-                            ".",
-                            "//chrome")
++  if (is_linux || is_win || is_bsd) {
+     sources += [
+       "renderer_context_menu/spelling_options_submenu_observer.cc",
+       "renderer_context_menu/spelling_options_submenu_observer.h",

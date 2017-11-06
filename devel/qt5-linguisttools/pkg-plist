@@ -1,6 +1,6 @@
-%%QT_LIBDIR%%/cmake/Qt5LinguistTools/Qt5LinguistToolsConfig.cmake
-%%QT_LIBDIR%%/cmake/Qt5LinguistTools/Qt5LinguistToolsConfigVersion.cmake
-%%QT_LIBDIR%%/cmake/Qt5LinguistTools/Qt5LinguistToolsMacros.cmake
+%%QT_CMAKEDIR%%/Qt5LinguistTools/Qt5LinguistToolsConfig.cmake
+%%QT_CMAKEDIR%%/Qt5LinguistTools/Qt5LinguistToolsConfigVersion.cmake
+%%QT_CMAKEDIR%%/Qt5LinguistTools/Qt5LinguistToolsMacros.cmake
 %%QT_BINDIR%%/lconvert
 %%QT_BINDIR%%/lrelease
 %%QT_BINDIR%%/lupdate

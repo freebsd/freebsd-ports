@@ -1,3 +1,2 @@
 %%SITE_PERL%%/POE/Component/IRC/Plugin/Bollocks.pm
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/synopsis.pl
 %%PERL5_MAN3%%/POE::Component::IRC::Plugin::Bollocks.3.gz

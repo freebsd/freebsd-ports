@@ -13,7 +13,7 @@ EXTRACT_ONLY=
 MAINTAINER=	gerald@FreeBSD.org
 COMMENT=	Gecko Layout Engine for Wine development branch (HTML support)
 
-LICENSE=	MPL GPLv2 GPLv3 LGPL21 LGPL3
+LICENSE=	MPL20 GPLv2 GPLv3 LGPL21 LGPL3
 LICENSE_COMB=	multi
 
 NO_BUILD=	yes

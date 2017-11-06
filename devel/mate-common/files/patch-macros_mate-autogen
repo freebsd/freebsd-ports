@@ -1,9 +1,9 @@
 https://bugs.gentoo.org/show_bug.cgi?id=427432
 https://bugzilla.gnome.org/show_bug.cgi?id=680363
 
---- macros/mate-autogen.orig	2015-01-12 08:15:17.000000000 +0100
-+++ macros/mate-autogen	2015-01-13 07:59:16.690666241 +0100
-@@ -97,6 +97,7 @@
+--- macros/mate-autogen.orig	2016-09-17 07:36:20.000000000 +0200
++++ macros/mate-autogen	2016-11-23 20:00:33.508805000 +0100
+@@ -94,6 +94,7 @@
      vc_min_version=$4
      vc_source=$5
      vc_status=1
@@ -11,11 +11,11 @@ https://bugzilla.gnome.org/show_bug.cgi?id=680363
      local ${vc_variable}_VERSION
  
      vc_checkprog=`eval echo "\\$$vc_variable"`
-@@ -110,11 +111,19 @@
-     else
- 	vc_comparator=">="
+@@ -102,11 +103,18 @@
+ 	return 0
      fi
-+
+ 
+-    printbold "checking for $vc_package >= $vc_min_version..."
 +    # The most reliable way to check pkg-config version is to query the actual
 +    # virtual
 +    # pkg-config package entry's modversion.  This works in all known
@@ -23,7 +23,7 @@ https://bugzilla.gnome.org/show_bug.cgi?id=680363
 +    if test "x$vc_package" = "xpkg-config"; then
 +	vc_option="--modversion pkg-config"
 +    fi
-     printbold "checking for $vc_package $vc_comparator $vc_min_version..."
++    printbold "checking for $vc_package $vc_comparator $vc_min_version..."
      for vc_checkprog in $vc_checkprogs; do
  	echo $ECHO_N "  testing $vc_checkprog... " $ECHO_C
 -	if $vc_checkprog --version < /dev/null > /dev/null 2>&1; then

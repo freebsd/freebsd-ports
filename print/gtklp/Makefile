@@ -18,10 +18,9 @@ LIB_DEPENDS=	libcups.so:print/cups
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-USES=		autoreconf gettext libtool pkgconfig
+USES=		autoreconf gettext libtool pkgconfig ssl
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk20
-USE_OPENSSL=	yes
 INSTALLS_ICONS=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include

@@ -2,11 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	audacity
-PORTVERSION=	2.1.2
-PORTREVISION=	4
+PORTVERSION=	2.1.3
+DISTVERSIONPREFIX=	Audacity-
+PORTREVISION=	3
 CATEGORIES=	audio
-MASTER_SITES=	https://github.com/audacity/audacity/archive/
-DISTNAME=	Audacity-${PORTVERSION}
 
 MAINTAINER=	xxjack12xx@gmail.com
 COMMENT=	GUI editor for digital audio waveforms
@@ -20,12 +19,11 @@ BUILD_DEPENDS=	autogen:devel/autogen \
 LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libsndfile.so:audio/libsndfile
 
-BROKEN_powerpc64=	Does not build
-
-WRKSRC=		${WRKDIR}/${PORTNAME}-Audacity-${PORTVERSION}
+BROKEN_aarch64=		fails to configure: checking whether C++ compiler accepts -msse... no
+BROKEN_powerpc64=	fails to build
 
 GNU_CONFIGURE=	yes
-USES=		autoreconf compiler:c++11-lib cpe desktop-file-utils gettext-tools gmake iconv libtool pkgconfig shared-mime-info shebangfix dos2unix
+USES=		autoreconf compiler:c++11-lib cpe desktop-file-utils gettext-tools gmake iconv libtool pkgconfig shared-mime-info shebangfix dos2unix localbase
 NLS_USES=	gettext-runtime
 NLS_CONFIGURE_ENABLE=	nls
 NLS_CONFIGURE_WITH=	libintl-prefix="${LOCALBASE}"
@@ -36,6 +34,7 @@ INSTALLS_ICONS=	yes
 PORTDOCS=	README.txt
 DOS2UNIX_GLOB=	Makefile.* *.c* *.h
 SHEBANG_FILES=	lib-src/lv2/build
+USE_GITHUB=	yes
 
 OPTIONS_DEFINE=	NLS DEBUG DOCS ALSA DYNLOAD FFMPEG FLAC ID3TAG LADSPA LAME LV2 \
 		MAD SBSMS SOUNDTOUCH TWOLAME VAMP VORBIS VST
@@ -51,7 +50,6 @@ DYNLOAD_DESC=	Enable dynamic loading of lame and FFmpeg
 LAME_DESC=	Use lame for import and export support
 LV2_DESC=	Add LV2 plug-in support
 MAD_DESC=	Use libmad for mp2/3 decoding support
-MIDI_DESC=	Use portSMF for Midi support
 SBSMS_DESC=	Use libsbsms for pitch and tempo changing
 SOUNDTOUCH_DESC=	Use libSoundTouch for pitch and tempo changing
 TAGLIB_DESC=	Use TagLib for metadata support
@@ -61,16 +59,17 @@ VST_DESC=	VST plug-in support
 
 CONFIGURE_ENV+=	WX_CONFIG="${WX_CONFIG}"
 
-CONFIGURE_ARGS+=	--enable-unicode \
+CONFIGURE_ARGS+=	--disable-option-checking \
+			--enable-unicode \
 			${ICONV_CONFIGURE_ARG} \
 			--with-lib-preference="local" \
 			--with-expat=system \
 			--with-libsndfile=system \
 			--with-libsoxr \
-			--with-portaudio \
 			--with-midi \
-			--with-widgetextra \
-			--with-portmixer=yes
+			--with-portaudio \
+			--with-portmixer=yes \
+			--with-widgetextra
 
 CONFIGURE_SHELL?=	${LOCALBASE}/bin/bash
 
@@ -131,21 +130,17 @@ VAMP_CONFIGURE_WITH=	libvamp=system
 VAMP_LIB_DEPENDS=	libvamp-hostsdk.so:audio/vamp-plugin-sdk
 
 VORBIS_CONFIGURE_WITH=	libvorbis=system
-VORBIS_LIB_DEPENDS=	libvorbis.so:audio/libvorbis
+VORBIS_LIB_DEPENDS=	libvorbis.so:audio/libvorbis \
+			libogg.so:audio/libogg
 
 VST_CONFIGURE_ENABLE=	vst
 
-.include <bsd.port.pre.mk>
-
-.if ${CHOSEN_COMPILER_TYPE} == gcc
-CXXFLAGS+=	-std=c++11
-.endif
-
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+	@${RM} ${STAGEDIR}${DOCSDIR}/LICENSE.txt
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

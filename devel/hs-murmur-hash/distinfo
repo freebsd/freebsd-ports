@@ -1,2 +1,3 @@
-SHA256 (cabal/murmur-hash-0.1.0.8.tar.gz) = 6cb9f4dc4a7d5b35e843bb8767d2e2c9745bcfbdacb5daf4fce5f4e05f983a06
-SIZE (cabal/murmur-hash-0.1.0.8.tar.gz) = 4072
+TIMESTAMP = 1499450881
+SHA256 (cabal/murmur-hash-0.1.0.9.tar.gz) = 89b9db94ead4cc0784dbcfb47c51b5664c1718860db00cd8ada3ef6fdd4465ad
+SIZE (cabal/murmur-hash-0.1.0.9.tar.gz) = 4204

@@ -3,6 +3,7 @@
 
 PORTNAME=	git-cvs
 PORTVERSION=	0.1.0
+PORTREVISION=	1
 CATEGORIES=	devel python
 
 MAINTAINER=	mp39590@gmail.com
@@ -17,7 +18,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USE_GITHUB=	yes
 GH_ACCOUNT=	ustuehler
 
-USES=		python:2.7
+USES=		python:2.7 shebangfix
 USE_PYTHON=	autoplist distutils
+SHEBANG_FILES=	scripts/git-cvs
 
 .include <bsd.port.mk>

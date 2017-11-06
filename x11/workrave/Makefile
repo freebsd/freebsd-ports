@@ -3,17 +3,20 @@
 
 PORTNAME=	workrave
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1_10_15
+DISTVERSION=	1_10_16
+PORTREVISION=	1
 CATEGORIES=	x11
 
-MAINTAINER=	t@tobik.me
+MAINTAINER=	tobik@FreeBSD.org
 COMMENT=	RSI prevention tool
 
 LICENSE=	GPLv3+
 
 LIB_DEPENDS=	libgdome.so:textproc/gdome2
 
-USES=		autoreconf:build gettext gmake libtool pathfix pkgconfig
+USES=		compiler:c++11-lang autoreconf:build gettext gmake libtool \
+		localbase pathfix pkgconfig
+USE_CXXSTD=	c++11
 USE_XORG=	ice recordproto sm x11 xext xmu xscrnsaver xtst
 USE_GNOME=	intltool intlhack introspection gtkmm30
 GNU_CONFIGURE=	yes
@@ -30,9 +33,6 @@ USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	rcaelers
-
-CFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 
 INSTALL_TARGET=	install-strip
 

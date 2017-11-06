@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	URI-UTF8-Punycode
-PORTVERSION=	1.00
-PORTREVISION=	1
+PORTVERSION=	1.05
 CATEGORIES=	converters perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,5 +14,8 @@ LICENSE=	GPLv3
 
 USES=		perl5
 USE_PERL5=	configure
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${SITE_ARCH}/auto/URI/UTF8/Punycode/Punycode.so
 
 .include <bsd.port.mk>

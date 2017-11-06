@@ -1,2 +1,3 @@
-SHA256 (wildfly-10.0.0.Final.tar.gz) = e00c4e4852add7ac09693e7600c91be40fa5f2791d0b232e768c00b2cb20a84b
-SIZE (wildfly-10.0.0.Final.tar.gz) = 137189474
+TIMESTAMP = 1484476942
+SHA256 (wildfly-10.1.0.Final.tar.gz) = 80781609be387045273f974662dadf7f64ad43ee93395871429bc6b7786ec8bc
+SIZE (wildfly-10.1.0.Final.tar.gz) = 139025162

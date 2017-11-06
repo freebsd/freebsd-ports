@@ -1,0 +1,73 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: ndproxy
+# REQUIRE: NETWORKING sysctl
+# KEYWORD: nojail
+
+. /etc/rc.subr
+
+name="ndproxy"
+rcvar=ndproxy_enable
+start_cmd="ndproxy_start"
+stop_cmd="ndproxy_stop"
+
+ndproxy_start()
+{
+    echo "Starting ndproxy:"
+    if ! sysctl net.inet6.ndproxyconf_uplink_interface > /dev/null 2>&1; then
+	if ! kldload ndproxy > /dev/null 2>&1; then
+	    echo Failure loading ndproxy.
+	    return;
+	fi
+    fi
+
+    sysctl net.inet6.ndproxycount=0
+
+    if [ -z "${ndproxy_uplink_interface}" ]; then
+	echo "Warning: ndproxy_uplink_interface should be defined in rc.conf (see ndproxy(4))."
+    fi
+    sysctl net.inet6.ndproxyconf_uplink_interface=${ndproxy_uplink_interface}
+
+    if [ -z "${ndproxy_downlink_mac_address}" ]; then
+	echo "Warning: ndproxy_downlink_mac_address should be defined in rc.conf (see ndproxy(4))."
+    fi
+    sysctl net.inet6.ndproxyconf_downlink_mac_address=${ndproxy_downlink_mac_address}
+
+    if [ -z "${ndproxy_uplink_ipv6_addresses}" ]; then
+	echo "Warning: ndproxy_uplink_ipv6_addresses should be defined in rc.conf (see ndproxy(4))."
+    fi
+    sysctl net.inet6.ndproxyconf_exception_ipv6_addresses=${ndproxy_exception_ipv6_addresses}
+
+    # Note that ndproxy_exception_ipv6_addresses may be left empty.
+
+    if [ -n "${ndproxy_uplink_interface}" ]; then
+	if ! ifconfig ${ndproxy_uplink_interface} | head -1 | grep -q PPROMISC; then
+	    echo "Putting interface ${ndproxy_uplink_interface} into permanently promiscuous mode."
+	    ifconfig ${ndproxy_uplink_interface} promisc
+	fi
+    fi
+    sysctl net.inet6.ndproxyconf_uplink_ipv6_addresses=${ndproxy_uplink_ipv6_addresses}
+
+    echo Done.
+}
+
+ndproxy_stop()
+{
+    echo "Stopping ndproxy:"
+
+    if ! sysctl net.inet6.ndproxyconf_uplink_interface > /dev/null 2>&1; then
+	echo Failure unloading ndproxy.
+    else
+	if ! kldunload ndproxy > /dev/null 2>&1; then
+	    echo Failure unloading ndproxy.
+	else
+	    echo Done.
+	fi
+    fi
+}
+
+load_rc_config $name
+run_rc_command "$1"

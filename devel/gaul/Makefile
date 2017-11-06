@@ -13,7 +13,7 @@ COMMENT=	Genetic Algorithm Utility Library
 
 LIB_DEPENDS=	libslang.so:devel/libslang2
 
-USES=		gmake libtool ncurses tar:bzip2
+USES=		libtool ncurses tar:bzip2
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -lncurses

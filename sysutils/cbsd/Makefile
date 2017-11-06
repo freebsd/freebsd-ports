@@ -1,23 +1,23 @@
 # $FreeBSD$
 
 PORTNAME=	cbsd
-PORTVERSION=	11.0.6
-PORTREVISION=	1
+DISTVERSION=	11.1.9
 CATEGORIES=	sysutils
 
 MAINTAINER=	olevole@olevole.ru
 COMMENT=	Yet another FreeBSD Jail and Bhyve Management Utility
 
 LICENSE=	BSD2CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rsync:net/rsync \
 		sudo:security/sudo \
-		sqlite3:databases/sqlite3
+		sqlite3:databases/sqlite3 \
+		${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 LIB_DEPENDS=	libssh2.so:security/libssh2 \
 		libsqlite3.so:databases/sqlite3
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	olevole
 
 USES=	libedit
 USE_RC_SUBR=	cbsdd cbsdrsyncd

@@ -1,2 +1,3 @@
-SHA256 (cabal/hspec-core-2.1.10.tar.gz) = 682e7e77e6f6256caefa6c0582d89dbee8efd864ac14a98cfba4707a9eb20ee0
-SIZE (cabal/hspec-core-2.1.10.tar.gz) = 31124
+TIMESTAMP = 1499627845
+SHA256 (cabal/hspec-core-2.4.4.tar.gz) = 601d321cdf7f2685880ee80c31154763884cb90dc512906005c4a485e8c8bfdf
+SIZE (cabal/hspec-core-2.4.4.tar.gz) = 40871

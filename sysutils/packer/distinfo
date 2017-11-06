@@ -1,3 +1,3 @@
-TIMESTAMP = 1482335186
-SHA256 (mitchellh-packer-v0.12.1_GH0.tar.gz) = 015f151ac6f4bf4e97df9b54b2d8ca744d587002162acf63284b4b3ca41d900b
-SIZE (mitchellh-packer-v0.12.1_GH0.tar.gz) = 4010194
+TIMESTAMP = 1508077096
+SHA256 (hashicorp-packer-v1.1.1_GH0.tar.gz) = 5c3eb3ee17e10c7fcb9c0bef6d325a98ca341d6af6bb13d698984ae44316cba2
+SIZE (hashicorp-packer-v1.1.1_GH0.tar.gz) = 5899177

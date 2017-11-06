@@ -3,6 +3,7 @@
 
 PORTNAME=	renameutils
 PORTVERSION=	0.12.0
+PORTREVISION=	1
 CATEGORIES=	sysutils converters
 MASTER_SITES=	SAVANNAH
 

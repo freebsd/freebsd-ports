@@ -28,9 +28,8 @@
 +	    -e 's/@set en/@set ja/' mew.texi > tmp.ja.texi
  	$(RM) mew.ja.info*
  	$(TOUCH) mew.ja.info
--	$(EMACS) -batch -q -no-site-file -l texinfmt \
+ 	$(EMACS) -batch -q -no-site-file -l texinfmt \
 -		-f batch-texinfo-format mew.texi
-+	LC_ALL=C $(EMACS) -batch -q -no-site-file -l texinfmt \
 +		-f batch-texinfo-format tmp.ja.texi
 +	$(RM) tmp.ja.texi
  

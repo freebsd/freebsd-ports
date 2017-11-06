@@ -1,8 +1,8 @@
-# Created by: José García Juanino <jjuanino@gmail.com>
+# Created by: JosÃ© GarcÃ­a Juanino <jjuanino@gmail.com>
 # $FreeBSD$
 
 PORTNAME=	borgbackup
-PORTVERSION=	1.0.9
+DISTVERSION=	1.1.1
 CATEGORIES=	archivers python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -28,11 +28,13 @@ USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.pre.mk>
 
-.if defined(PACKAGE_BUILDING) && ${PYTHON_VER} != ${PYTHON_DEFAULT}
+.if defined(PACKAGE_BUILDING) && !defined(PACKAGE_BUILDING_FLAVORS) && \
+    ${PYTHON_VER} != ${PYTHON_DEFAULT}
 IGNORE=	you have python ${PYTHON_DEFAULT} set as the default, and this needs ${PYTHON_VER}
 .endif
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/borg/*.so
+	@${FIND} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/borg/ -name "*.so" \
+		-exec ${STRIP_CMD} {} \;
 
 .include <bsd.port.post.mk>

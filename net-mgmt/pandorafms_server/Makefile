@@ -2,6 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pandora_server
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	koichiro@rworks.jp
@@ -22,19 +23,17 @@ PANDORA_DEPS=	p5-DBI>=0:databases/p5-DBI \
 BUILD_DEPENDS=	${PANDORA_DEPS}
 RUN_DEPENDS=	p5-libwww>=0:www/p5-libwww \
 		p5-DBD-mysql>=4:databases/p5-DBD-mysql \
-		${LOCALBASE}/bin/wmic:net-mgmt/wmi-client \
-		${LOCALBASE}/bin/nmap:security/nmap \
-		p5-Storable>=0:devel/p5-Storable \
+		wmic:net-mgmt/wmi-client \
+		nmap:security/nmap \
 		p5-Encode-Locale>=0:converters/p5-Encode-Locale \
 		${PANDORA_DEPS}
 
-OPTIONS_DEFINE=	DOCS TENTACLE XPROBE PGSQL ORACLE EXTRAS
+OPTIONS_DEFINE=	DOCS TENTACLE XPROBE PGSQL EXTRAS
 OPTIONS_DEFAULT=	TENTACLE XPROBE EXTRAS
 DOCS_DESC=	Install AUTHORS, ChangeLog and README
 TENTACLE_DESC=	Install tentacle_server
 XPROBE_DESC=	Install xprobe
 PGSQL_DESC=	Use PostgreSQL backend (experimental)
-ORACLE_DESC=	Use Oracle backend (experimental)
 EXTRAS_DESC=	Extra dependencies for util scripts
 
 USES=		perl5 shebangfix
@@ -82,9 +81,6 @@ RUN_DEPENDS+=	${LOCALBASE}/bin/xprobe2:net/xprobe
 .endif
 .if ${PORT_OPTIONS:MPGSQL}
 RUN_DEPENDS+=	p5-DBD-Pg>=0:databases/p5-DBD-Pg
-.endif
-.if ${PORT_OPTIONS:MORACLE}
-RUN_DEPENDS+=	p5-DBD-Oracle>=0:databases/p5-DBD-Oracle
 .endif
 .if ${PORT_OPTIONS:MEXTRAS}
 # plugin/bgp_pluin.pl

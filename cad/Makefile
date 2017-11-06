@@ -14,6 +14,7 @@
     SUBDIR += brickutils
     SUBDIR += brlcad
     SUBDIR += calculix
+    SUBDIR += calculix-ccx
     SUBDIR += cascade
     SUBDIR += chipvault
     SUBDIR += cider
@@ -45,6 +46,7 @@
     SUBDIR += jspice3
     SUBDIR += kicad
     SUBDIR += kicad-devel
+    SUBDIR += kicad-library
     SUBDIR += klayout
     SUBDIR += layouteditor
     SUBDIR += ldraw
@@ -92,5 +94,6 @@
     SUBDIR += verilog-mode.el
     SUBDIR += xcircuit
     SUBDIR += z88
+    SUBDIR += zcad
 
 .include <bsd.port.subdir.mk>

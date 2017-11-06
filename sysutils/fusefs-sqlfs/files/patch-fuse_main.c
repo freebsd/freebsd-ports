@@ -1,6 +1,6 @@
---- fuse_main.c.orig	Wed Oct 25 19:28:26 2006
-+++ fuse_main.c	Wed Feb  7 21:34:03 2007
-@@ -17,12 +17,60 @@
+--- fuse_main.c.orig	2006-10-25 15:28:26 UTC
++++ fuse_main.c
+@@ -17,12 +17,60 @@ Foundation, Inc., 51 Franklin Street, Fi
  
  *****************************************************************************/
  

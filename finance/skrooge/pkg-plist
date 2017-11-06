@@ -1,22 +1,20 @@
 bin/skrooge
+bin/skrooge-sabb.py
+bin/skrooge-yahoodl.py
 bin/skroogeconvert
 etc/xdg/skrooge_monthly.knsrc
 etc/xdg/skrooge_unit.knsrc
-lib/libskgbankgui.so
 lib/libskgbankgui.so.2
 lib/libskgbankgui.so.%%SHLIB_VER%%
-lib/libskgbankmodeler.so
 lib/libskgbankmodeler.so.2
 lib/libskgbankmodeler.so.%%SHLIB_VER%%
-lib/libskgbasegui.so
 lib/libskgbasegui.so.2
 lib/libskgbasegui.so.%%SHLIB_VER%%
-lib/libskgbasemodeler.so
 lib/libskgbasemodeler.so.2
 lib/libskgbasemodeler.so.%%SHLIB_VER%%
 %%QT_PLUGINDIR%%/designer/libskgbankguidesigner.so
 %%QT_PLUGINDIR%%/designer/libskgbaseguidesigner.so
-%%QT_PLUGINDIR%%/grantlee/%%GRANTLEE_VERSION_SHORT%%/grantlee_skgfilters.so
+%%QT_PLUGINDIR%%/grantlee/%%GRANTLEE_VERSION_SHORT%%/grantlee_skgfilters%%GRANTLEE_DEBUG_SUFFIX%%.so
 %%QT_PLUGINDIR%%/skg_advice.so
 %%QT_PLUGINDIR%%/skg_bookmark.so
 %%QT_PLUGINDIR%%/skg_dashboard.so
@@ -60,7 +58,7 @@ lib/libskgbasemodeler.so.%%SHLIB_VER%%
 %%QT_PLUGINDIR%%/skrooge_search.so
 %%QT_PLUGINDIR%%/skrooge_tracker.so
 %%QT_PLUGINDIR%%/skrooge_unit.so
-%%SQLCIPHER%%%%QT_PLUGINDIR%%/sqldrivers/libskgsqlcipher.so
+%%QT_PLUGINDIR%%/sqldrivers/libskgsqlcipher.so
 share/applications/org.kde.skrooge.desktop
 share/config.kcfg/skgbasegui_settings.kcfg
 share/config.kcfg/skgbookmark_settings.kcfg
@@ -91,6 +89,7 @@ share/doc/HTML/en/skrooge/analysis_report_5.png
 share/doc/HTML/en/skrooge/analysis_report_6.png
 share/doc/HTML/en/skrooge/analysis_trackers_view.png
 share/doc/HTML/en/skrooge/apply_process.png
+share/doc/HTML/en/skrooge/apply_template.png
 share/doc/HTML/en/skrooge/back_forward.png
 share/doc/HTML/en/skrooge/balance_evolution.png
 share/doc/HTML/en/skrooge/bank_accounts.png
@@ -132,7 +131,6 @@ share/doc/HTML/en/skrooge/edition_panel_buttons.png
 share/doc/HTML/en/skrooge/export_graph_menu.png
 share/doc/HTML/en/skrooge/export_table_menu.png
 share/doc/HTML/en/skrooge/fast_edition.png
-share/doc/HTML/en/skrooge/frozen.png
 share/doc/HTML/en/skrooge/graph_on_tracker.png
 share/doc/HTML/en/skrooge/histogram.png
 share/doc/HTML/en/skrooge/history_browser.png
@@ -383,6 +381,9 @@ share/kservices5/org.kde.skg-plugin-selectall.desktop
 share/kservices5/org.kde.skg-plugin-statistic.desktop
 share/kservices5/org.kde.skg-plugin-undoredo.desktop
 share/kservices5/org.kde.skrooge-import-afb120.desktop
+share/kservices5/org.kde.skrooge-import-backend-aqbanking.desktop
+share/kservices5/org.kde.skrooge-import-backend-weboob.desktop
+share/kservices5/org.kde.skrooge-import-backend-weboob0g.desktop
 share/kservices5/org.kde.skrooge-import-backend.desktop
 share/kservices5/org.kde.skrooge-import-csv.desktop
 share/kservices5/org.kde.skrooge-import-gnc.desktop
@@ -412,6 +413,7 @@ share/kservices5/org.kde.skrooge-plugin-search.desktop
 share/kservices5/org.kde.skrooge-plugin-tracker.desktop
 share/kservices5/org.kde.skrooge-plugin-unit.desktop
 share/kservicetypes5/org.kde.skg-plugin.desktop
+share/kservicetypes5/org.kde.skrooge-import-backend-type.desktop
 share/kservicetypes5/org.kde.skrooge-import-plugin.desktop
 share/kxmlgui5/skg/skgmainpanel.rc
 share/kxmlgui5/skg_advice/skg_advice.rc
@@ -481,8 +483,6 @@ share/locale/zh_CN/LC_MESSAGES/skrooge.mo
 share/locale/zh_TW/LC_MESSAGES/skrooge.mo
 share/metainfo/org.kde.skrooge.appdata.xml
 share/mime/packages/x-skg.xml
-%%DATADIR%%/backends/weboob.backend
-%%DATADIR%%/backends/weboob0g.backend
 %%DATADIR%%/categories/fr/associations.qif
 %%DATADIR%%/categories/fr/liberal.qif
 %%DATADIR%%/categories/fr/plan_comptable.qif
@@ -694,16 +694,17 @@ share/mime/packages/x-skg.xml
 %%DATADIR%%/currency/zwl.desktop
 %%DATADIR%%/extractors/allo_pneus.extractor
 %%DATADIR%%/extractors/bebe_au_naturel.extractor
-%%DATADIR%%/extractors/biofan.extractor
 %%DATADIR%%/extractors/easycartouche.extractor
 %%DATADIR%%/extractors/engie.extractor
 %%DATADIR%%/extractors/etikolo.extractor
 %%DATADIR%%/extractors/free.extractor
 %%DATADIR%%/extractors/free_mobile.extractor
 %%DATADIR%%/extractors/ldlc.extractor
-%%DATADIR%%/extractors/oscaro.extractor
+%%DATADIR%%/extractors/oscaro_v1.extractor
+%%DATADIR%%/extractors/oscaro_v2.extractor
 %%DATADIR%%/extractors/oxybul.extractor
 %%DATADIR%%/extractors/pixmania.extractor
+%%DATADIR%%/extractors/sarenza.extractor
 %%DATADIR%%/extractors/spartoo.extractor
 %%DATADIR%%/extractors/topachat.extractor
 %%DATADIR%%/html/dark.txt
@@ -767,6 +768,7 @@ share/mime/packages/x-skg.xml
 %%DATADIR%%/images/logo/caisse_epargne.png
 %%DATADIR%%/images/logo/capitec__470010.png
 %%DATADIR%%/images/logo/cic__30066.png
+%%DATADIR%%/images/logo/citadele.png
 %%DATADIR%%/images/logo/citibank.png
 %%DATADIR%%/images/logo/cnp.png
 %%DATADIR%%/images/logo/commonwealth.png
@@ -793,6 +795,7 @@ share/mime/packages/x-skg.xml
 %%DATADIR%%/images/logo/hellobank.png
 %%DATADIR%%/images/logo/home_credit_bank.png
 %%DATADIR%%/images/logo/hsbc.png
+%%DATADIR%%/images/logo/humanis.png
 %%DATADIR%%/images/logo/ing_direct__14559.png
 %%DATADIR%%/images/logo/ing_direct__30438.png
 %%DATADIR%%/images/logo/investec__580105.png
@@ -820,6 +823,7 @@ share/mime/packages/x-skg.xml
 %%DATADIR%%/images/logo/medicinos_bankas.png
 %%DATADIR%%/images/logo/merrill_lynch.png
 %%DATADIR%%/images/logo/monabanq.png
+%%DATADIR%%/images/logo/morning.png
 %%DATADIR%%/images/logo/national_bank.png
 %%DATADIR%%/images/logo/nationwide.png
 %%DATADIR%%/images/logo/natwest.png
@@ -855,8 +859,8 @@ share/mime/packages/x-skg.xml
 %%DATADIR%%/images/logo/westpac.png
 %%DATADIR%%/images/logo/woori_bank.png
 %%DATADIR%%/images/splash.png
+%%DATADIR%%/quotes/BitcoinAverage.txt
 %%DATADIR%%/quotes/BitcoinCharts.txt
 %%DATADIR%%/quotes/GrandTrunk.txt
 %%DATADIR%%/quotes/Skrooge.txt
-%%DATADIR%%/quotes/Stooq monthly history.txt
 %%DATADIR%%/quotes/Stooq.txt

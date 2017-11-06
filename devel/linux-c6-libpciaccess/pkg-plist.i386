@@ -1,4 +1,4 @@
 usr/lib/libpciaccess.so.0
 usr/lib/libpciaccess.so.0.11.1
-%%PORTDOCS%%usr/share/doc/libpciaccess-0.13.4/AUTHORS
-%%PORTDOCS%%usr/share/doc/libpciaccess-0.13.4/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/COPYING

@@ -3,10 +3,9 @@
 
 PORTNAME=	htmldoc
 PORTVERSION=	1.8.28
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	textproc
-MASTER_SITES=	http://www.msweet.org/files/project1/ \
-		EASYSW/${PORTNAME}/${PORTVERSION}
+MASTER_SITES=	https://github.com/michaelrsweet/htmldoc/releases/download/release-${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-source
 
 MAINTAINER=	jose@diasfernandes.pt
@@ -19,8 +18,7 @@ LIB_DEPENDS=	libpng.so:graphics/png
 OPTIONS_DEFINE=	HTMLDOCGUI
 HTMLDOCGUI_DESC=	Build GUI front-end
 
-USES=		jpeg tar:bzip2
-USE_OPENSSL=	yes
+USES=		jpeg tar:bzip2 ssl
 
 GNU_CONFIGURE=	yes
 # Configure seems broken and ignores these ATM:

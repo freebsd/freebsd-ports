@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	activerecord
-PORTVERSION=	4.2.7.1
+PORTVERSION=	4.2.10
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	4
@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
 RUN_DEPENDS=	rubygem-activemodel4>=${PORTVERSION}:databases/rubygem-activemodel4 \
 		rubygem-activesupport4>=${PORTVERSION}:devel/rubygem-activesupport4 \
-		rubygem-arel6>=6.0.0:databases/rubygem-arel6
+		rubygem-arel6>=6.0:databases/rubygem-arel6
 
 NO_ARCH=	yes
 USE_RUBY=	yes

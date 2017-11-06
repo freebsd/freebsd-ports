@@ -1,0 +1,15 @@
+--- src/argdata.h
++++ src/argdata.h
+@@ -34,7 +34,11 @@
+ #define ARGDATA_MAX_ALIGN __declspec(align(8))
+ #else
+ #include <stdalign.h>
+-#define ARGDATA_MAX_ALIGN alignas(max_align_t)
++struct argdata_max_align {
++  long long a;
++  long double b;
++};
++#define ARGDATA_MAX_ALIGN alignas(struct argdata_max_align)
+ #endif
+ 
+ struct timespec;

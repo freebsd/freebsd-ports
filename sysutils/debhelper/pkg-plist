@@ -8,6 +8,7 @@ bin/dh_bugfiles
 bin/dh_builddeb
 bin/dh_clean
 bin/dh_compress
+bin/dh_dwz
 bin/dh_fixperms
 bin/dh_gconf
 bin/dh_gencontrol
@@ -35,6 +36,7 @@ bin/dh_installmime
 bin/dh_installmodules
 bin/dh_installpam
 bin/dh_installppp
+bin/dh_installsystemd
 bin/dh_installudev
 bin/dh_installwm
 bin/dh_installxfonts
@@ -43,6 +45,7 @@ bin/dh_lintian
 bin/dh_listpackages
 bin/dh_makeshlibs
 bin/dh_md5sums
+bin/dh_missing
 bin/dh_movefiles
 bin/dh_perl
 bin/dh_prep
@@ -99,6 +102,8 @@ bin/prerm-wm
 %%SITE_PERL%%/Debian/Debhelper/Buildsystem/autoconf.pm
 %%SITE_PERL%%/Debian/Debhelper/Buildsystem/cmake.pm
 %%SITE_PERL%%/Debian/Debhelper/Buildsystem/makefile.pm
+%%SITE_PERL%%/Debian/Debhelper/Buildsystem/meson.pm
+%%SITE_PERL%%/Debian/Debhelper/Buildsystem/ninja.pm
 %%SITE_PERL%%/Debian/Debhelper/Buildsystem/perl_build.pm
 %%SITE_PERL%%/Debian/Debhelper/Buildsystem/perl_makemaker.pm
 %%SITE_PERL%%/Debian/Debhelper/Buildsystem/python_distutils.pm
@@ -108,5 +113,6 @@ bin/prerm-wm
 %%SITE_PERL%%/Debian/Debhelper/Dh_Getopt.pm
 %%SITE_PERL%%/Debian/Debhelper/Dh_Lib.pm
 %%SITE_PERL%%/Debian/Debhelper/Sequence/build_stamp.pm
+%%SITE_PERL%%/Debian/Debhelper/Sequence/dwz.pm
 %%SITE_PERL%%/Debian/Debhelper/Sequence/python_support.pm
 %%SITE_PERL%%/Debian/Debhelper/Sequence/systemd.pm

@@ -1,26 +1,23 @@
 # $FreeBSD$
 
 PORTNAME=	citra
-PORTVERSION=	s20161230
-PORTREVISION?=	1
+PORTVERSION=	s20171028
+PORTREVISION?=	0
 CATEGORIES=	emulators
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Nintendo 3DS emulator/debugger
 
-LICENSE=	BSD2CLAUSE BSD3CLAUSE BSL GPLv2+ LGPL21+ UNLICENSE
+LICENSE=	BSD2CLAUSE BSD3CLAUSE BSL GPLv2+ LGPL21+ MIT UNLICENSE
 LICENSE_COMB=	multi
-LICENSE_FILE_BSD2CLAUSE=${WRKSRC}/externals/dynarmic/externals/fmt/LICENSE.rst
+LICENSE_FILE_BSD2CLAUSE=${WRKSRC}/externals/fmt/LICENSE.rst
 LICENSE_FILE_BSD3CLAUSE=${WRKSRC}/externals/inih/inih/LICENSE.txt
-LICENSE_FILE_BSL=	${WRKSRC}/externals/catch/LICENSE_1_0.txt
+LICENSE_FILE_BSL=	${WRKSRC}/externals/catch/LICENSE.txt
 LICENSE_FILE_GPLv2+ =	${WRKSRC}/license.txt
-LICENSE_FILE_LGPL21+ =	${WRKSRC}/externals/qhexedit/license.txt
-LICENSE_NAME_UNLICENSE=	The Unlicense
-LICENSE_TEXT_UNLICENSE=	See http://unlicense.org/
-LICENSE_PERMS_UNLICENSE=	${_LICENSE_PERMS_PD}
-LICENSE_GROUPS_UNLICENSE=	${_LICENSE_GROUPS_PD}
+LICENSE_FILE_MIT=	${WRKSRC}/externals/enet/LICENSE
+LICENSE_FILE_LGPL21+ =	${_LICENSE_STORE}/LGPL21 # soundtouch
 
-BUILD_DEPENDS=	boost-libs>=1.57:devel/boost-libs
+BUILD_DEPENDS=	boost-libs>=1.63:devel/boost-libs
 LIB_DEPENDS=	libpng.so:graphics/png
 
 # backend_x64/hostloc.h:93:8: fatal error: no type named 'Reg64' in namespace 'Xbyak'
@@ -28,27 +25,34 @@ ONLY_FOR_ARCHS=	amd64
 ONLY_FOR_ARCHS_REASON=	https://github.com/MerryMage/dynarmic/issues/35
 
 USE_GITHUB=	yes
-GH_TUPLE=	citra-emu:${PORTNAME}:f7dd8d5e \
-		citra-emu:ext-soundtouch:5274ec4:soundtouch/externals/soundtouch \
-		MerryMage:dynarmic:70f4235:dynarmic/externals/dynarmic \
-		fmtlib:fmt:3.0.0-146-g796beaa:fmt/externals/dynarmic/externals/fmt \
+GH_ACCOUNT=	citra-emu
+GH_TAGNAME=	1f6da9fb
+GH_TUPLE=	citra-emu:ext-soundtouch:019d208:soundtouch/externals/soundtouch \
+		MerryMage:dynarmic:8f15e3f:dynarmic/externals/dynarmic \
+		fmtlib:fmt:3.0.0-187-gac5484c:fmt/externals/fmt \
 		herumi:xbyak:v5.40:xbyak/externals/xbyak \
-		neobrain:nihstro:26a0a04:nihstro/externals/nihstro \
-		philsquared:Catch:v1.4.0:catch/externals/catch \
-		svn2github:inih:603729d:inih/externals/inih/inih
+		lsalzman:enet:a84c120:enet/externals/enet \
+		neobrain:nihstro:7e24743:nihstro/externals/nihstro \
+		philsquared:Catch:v1.9.4:catch/externals/catch \
+		svn2github:inih:603729d:inih/externals/inih/inih \
+		weidai11:cryptopp:CRYPTOPP_5_6_5-610-g24bc2b8:cryptopp/externals/cryptopp/cryptopp
 
 USES=		cmake:outsource compiler:c++14-lang iconv localbase:ldflags
-FAVORITE_COMPILER=	${COMPILER_TYPE} # c++14-lib
+USE_SDL=	sdl2
 CXXFLAGS+=	-D_GLIBCXX_USE_C99 -D_GLIBCXX_USE_C99_MATH_TR1 \
 		-D_DECLARE_C99_LDBL_MATH # XXX ports/193528
-LDFLAGS+=	-Wl,--as-needed # GL
 
+OPTIONS_DEFINE=	CURL
+OPTIONS_DEFAULT=CURL
 OPTIONS_MULTI=	GUI
 OPTIONS_MULTI_GUI=	QT5 SDL
 OPTIONS_SLAVE?=	SDL
 OPTIONS_EXCLUDE:=	${OPTIONS_MULTI_GUI}
 
-SDL_USE=	SDL=sdl2
+CURL_GH_TUPLE=	whoshuu:cpr:1.3.0-12-gb5758fb:cpr/externals/cpr
+CURL_LIB_DEPENDS=libcurl.so:ftp/curl
+CURL_CMAKE_BOOL=ENABLE_WEB_SERVICE USE_SYSTEM_CURL
+
 SDL_CMAKE_BOOL=	ENABLE_SDL2
 SDL_PLIST_FILES=bin/${PORTNAME} \
 		man/man6/${PORTNAME}.6.gz
@@ -64,6 +68,7 @@ QT5_PLIST_FILES=bin/${PORTNAME}-qt \
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,share/man,man,' \
+		-e '/check_submodules_present()/d' \
 		${WRKSRC}/CMakeLists.txt
 	@${REINPLACE_CMD} -e 's/@GIT_BRANCH@/master/' \
 		-e 's/@GIT_DESC@/${GH_TAGNAME}/' \

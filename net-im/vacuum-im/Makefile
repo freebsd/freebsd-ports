@@ -10,6 +10,7 @@ MAINTAINER=	vg@FreeBSD.org
 COMMENT=	Crossplatform Jabber client
 
 LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	Vacuum-IM

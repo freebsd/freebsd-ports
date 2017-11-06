@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	eaglemode
-PORTVERSION=	0.92.0
+PORTVERSION=	0.93.0
+PORTREVISION=	2
 CATEGORIES=	x11
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -19,7 +20,6 @@ USES=		compiler:features jpeg perl5 pkgconfig shebangfix tar:bzip2
 USE_PERL5=	build
 USE_XORG=	x11 xext xxf86vm
 SUB_FILES=	eaglemode.sh
-WANT_GNOME=	yes
 
 BUILD_ARGS=	continue=no
 

@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	florist-gpl
-PORTVERSION=	2016
+PORTVERSION=	2017
 CATEGORIES=	devel
 MASTER_SITES=	http://downloads.dragonlace.net/src/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
-MAINTAINER=	marino@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	POSIX Ada binding, IEEE Standards 1003.5(b,c)
 
 LICENSE=	GPLv3

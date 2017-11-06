@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	darcs
-PORTVERSION=	2.10.1
+PORTVERSION=	2.12.5
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -10,12 +10,12 @@ COMMENT=	Distributed, interactive, smart revision control system
 
 LICENSE=	GPLv2
 
-USE_CABAL=	attoparsec>=0.11 base16-bytestring>=0.1 cryptohash>=0.4 \
-		data-ordlist>=0.4 dataenc>=0.11 hashable>=1.0 html \
-		mmap>=0.5 mtl>=2.1 parsec>=3.1 random>=1.0 \
-		regex-applicative>=0.2 regex-compat-tdfa>=0.95.1 tar>=0.4 \
-		text>=0.11.2.0 transformers-compat>=0.4 unix-compat>=0.1.2 \
-		utf8-string>=0.3.6 vector>=0.7 zip-archive>=0.2.3 zlib>=0.5.3.0
+USE_CABAL=	async attoparsec base16-bytestring cryptohash \
+		data-ordlist dataenc fgl graphviz hashable html HTTP \
+		mmap mtl parsec random \
+		regex-applicative regex-compat-tdfa sandi tar \
+		text transformers-compat unix-compat \
+		utf8-string vector zip-archive zlib
 
 EXECUTABLE=	darcs
 

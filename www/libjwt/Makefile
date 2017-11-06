@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libjwt
-PORTVERSION=	1.7.2
+PORTVERSION=	1.8.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 
@@ -12,7 +12,7 @@ COMMENT=	JSON Web Token implementation in C
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING.LIB
 
-LIB_DEPENDS=	libcheck.so:devel/libcheck \
+LIB_DEPENDS=	libcheck.so:devel/check \
 		libjansson.so:devel/jansson
 
 USE_GITHUB=	yes

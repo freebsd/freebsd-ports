@@ -1,0 +1,12 @@
+lv2file is a simple program which you can use to apply effects to your audio
+files without much hassle. Possible use cases are:
+* When you want to apply an effect without having to open a GUI or start
+  a project.
+* When you want to apply effects to a large number of files, or in
+  an automated manner.
+* When you need a deterministic environment to debug a plugin.
+* You like everything to be on the command line.
+
+lv2file uses the LV2 plugin format (http://lv2plug.in/) for the effects it uses.
+
+WWW: https://github.com/jeremysalwen/lv2file

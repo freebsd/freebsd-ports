@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	jwm
-PORTVERSION=	2.3.6
+PORTVERSION=	2.3.7
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://joewing.net/projects/jwm/releases/
 

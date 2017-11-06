@@ -10,6 +10,6 @@ include/riemann/simple.h
 lib/libriemann-client.a
 lib/libriemann-client.so
 lib/libriemann-client.so.0
-lib/libriemann-client.so.0.9.1
+lib/libriemann-client.so.0.10.1
 libdata/pkgconfig/riemann-client.pc
 man/man1/riemann-client.1.gz

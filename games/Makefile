@@ -13,12 +13,15 @@
     SUBDIR += 4stattack
     SUBDIR += 54321
     SUBDIR += 7kaa
+    SUBDIR += 90secondportraits
     SUBDIR += CaribbeanStud
     SUBDIR += HeroesOfMightAndMagic
     SUBDIR += KnightCap
+    SUBDIR += OpenTomb
     SUBDIR += abbayedesmorts
     SUBDIR += abe
     SUBDIR += abuse_sdl
+    SUBDIR += ace-of-penguins
     SUBDIR += acm
     SUBDIR += adgali
     SUBDIR += adom
@@ -27,7 +30,9 @@
     SUBDIR += affenspiel
     SUBDIR += afternoonstalker
     SUBDIR += agame
+    SUBDIR += ags
     SUBDIR += aisleriot
+    SUBDIR += aklabeth
     SUBDIR += alephone
     SUBDIR += alephone-data
     SUBDIR += alephone-scenarios
@@ -61,12 +66,14 @@
     SUBDIR += atr3d
     SUBDIR += atris
     SUBDIR += atris-sounds
+    SUBDIR += auralquiz
     SUBDIR += avanor
     SUBDIR += avoision
     SUBDIR += awale
     SUBDIR += awele
     SUBDIR += balazar
     SUBDIR += balazarbrothers
+    SUBDIR += ballerburg
     SUBDIR += banihstypos
     SUBDIR += barbie_seahorse_adventures
     SUBDIR += barrage
@@ -75,6 +82,8 @@
     SUBDIR += battalion
     SUBDIR += battletanks
     SUBDIR += belooted
+    SUBDIR += beret
+    SUBDIR += billardgl
     SUBDIR += biloba
     SUBDIR += biniax2
     SUBDIR += biorythm
@@ -171,7 +180,6 @@
     SUBDIR += crafty-open-large
     SUBDIR += crafty-open-medium
     SUBDIR += crafty-tablebase-no-pawn
-    SUBDIR += crafty-tablebase-pawn
     SUBDIR += crashtest
     SUBDIR += cre
     SUBDIR += cretan-hubris
@@ -195,12 +203,12 @@
     SUBDIR += dangerdeep
     SUBDIR += dangerdeep-data
     SUBDIR += darkplaces
-    SUBDIR += dcross
     SUBDIR += defendguin
     SUBDIR += dhewm3
     SUBDIR += diameter
     SUBDIR += diaspora
     SUBDIR += digger-vgl
+    SUBDIR += divide-and-succeed
     SUBDIR += dmjava
     SUBDIR += dodgindiamond2
     SUBDIR += domination
@@ -235,7 +243,6 @@
     SUBDIR += einstein
     SUBDIR += el
     SUBDIR += el-data
-    SUBDIR += ember
     SUBDIR += emptyepsilon
     SUBDIR += endgame-singularity
     SUBDIR += endgame-singularity-music
@@ -246,6 +253,7 @@
     SUBDIR += entombed
     SUBDIR += enygma
     SUBDIR += epiar
+    SUBDIR += epiphany-game
     SUBDIR += etracer
     SUBDIR += euchre
     SUBDIR += evilfinder
@@ -372,11 +380,11 @@
     SUBDIR += gnushogi
     SUBDIR += gnustep-ladder
     SUBDIR += gnustep-sudoku
+    SUBDIR += gogrepo
     SUBDIR += golddig
     SUBDIR += goldencheetah
     SUBDIR += golly
     SUBDIR += gomoku
-    SUBDIR += gondola
     SUBDIR += goonies
     SUBDIR += gottet
     SUBDIR += gracer
@@ -400,6 +408,7 @@
     SUBDIR += gturing
     SUBDIR += gtypist
     SUBDIR += gunfudeadlands
+    SUBDIR += gzdoom
     SUBDIR += hangman
     SUBDIR += hedgewars
     SUBDIR += help_hannahs_horse
@@ -407,7 +416,6 @@
     SUBDIR += heroes
     SUBDIR += hex-a-hop
     SUBDIR += hexalate
-    SUBDIR += hexglass
     SUBDIR += hexxagon
     SUBDIR += highmoon
     SUBDIR += hinversi
@@ -419,6 +427,7 @@
     SUBDIR += hoverboard-sdl
     SUBDIR += hs-scroll
     SUBDIR += hypatia_engine
+    SUBDIR += hyperrogue
     SUBDIR += iagno
     SUBDIR += icbm3d
     SUBDIR += icebreaker
@@ -431,8 +440,6 @@
     SUBDIR += instead
     SUBDIR += interlogic
     SUBDIR += ioquake3
-    SUBDIR += ioquake3-devel
-    SUBDIR += ioquake3-devel-server
     SUBDIR += ioquake3-server
     SUBDIR += iortcw
     SUBDIR += iourbanterror
@@ -519,8 +526,6 @@
     SUBDIR += lgeneral
     SUBDIR += lianliankan
     SUBDIR += libdungeonmaker
-    SUBDIR += libfov
-    SUBDIR += libgames-support
     SUBDIR += libggz
     SUBDIR += libgnome-games-support
     SUBDIR += libkdegames
@@ -572,7 +577,6 @@
     SUBDIR += lmpc
     SUBDIR += lolcat
     SUBDIR += lordsawar
-    SUBDIR += lostfeathers
     SUBDIR += lpairs
     SUBDIR += lskat
     SUBDIR += ltris
@@ -589,6 +593,7 @@
     SUBDIR += maitretarot
     SUBDIR += manaplus
     SUBDIR += mangband
+    SUBDIR += mari0
     SUBDIR += marsnomercy
     SUBDIR += masterserver
     SUBDIR += maxr
@@ -616,9 +621,11 @@
     SUBDIR += monsterz
     SUBDIR += moon-buggy
     SUBDIR += moonlander
+    SUBDIR += moonlight-embedded
     SUBDIR += mopesnake
     SUBDIR += moria
     SUBDIR += motogt
+    SUBDIR += mrboom
     SUBDIR += mt_dolphin_ia
     SUBDIR += mt_gtk_client
     SUBDIR += mtaserver
@@ -664,6 +671,7 @@
     SUBDIR += numptyphysics
     SUBDIR += numptyphysics-npcomplete
     SUBDIR += nwndata
+    SUBDIR += nxengine
     SUBDIR += odamex
     SUBDIR += oldrunner
     SUBDIR += omega
@@ -672,6 +680,7 @@
     SUBDIR += oneko-sakura
     SUBDIR += oolite
     SUBDIR += oonsoo
+    SUBDIR += open-adventure
     SUBDIR += openalchemist
     SUBDIR += openarena
     SUBDIR += openarena-data
@@ -679,6 +688,10 @@
     SUBDIR += openarena-server
     SUBDIR += openastromenace
     SUBDIR += openbor
+    SUBDIR += openbor3482
+    SUBDIR += openbor3711
+    SUBDIR += openbor3979
+    SUBDIR += openbor4432
     SUBDIR += openbubbles
     SUBDIR += opencity
     SUBDIR += openclonk
@@ -692,6 +705,7 @@
     SUBDIR += openomf
     SUBDIR += openpref
     SUBDIR += openra
+    SUBDIR += openrct2
     SUBDIR += opensfx
     SUBDIR += opensonic
     SUBDIR += openspades
@@ -733,6 +747,7 @@
     SUBDIR += pengpong
     SUBDIR += penguin-command
     SUBDIR += pengupop
+    SUBDIR += pentobi
     SUBDIR += phalanx
     SUBDIR += phlipple
     SUBDIR += picmi
@@ -744,7 +759,6 @@
     SUBDIR += pipenightdreams
     SUBDIR += pipepanic
     SUBDIR += pipewalker
-    SUBDIR += plee-the-bear
     SUBDIR += plutocracy
     SUBDIR += pmars
     SUBDIR += pmars-sdl
@@ -752,11 +766,11 @@
     SUBDIR += poker-eval
     SUBDIR += pokerth
     SUBDIR += polyglot
-    SUBDIR += polypuzzle
     SUBDIR += pongix
     SUBDIR += popstar
     SUBDIR += pouetchess
     SUBDIR += powder
+    SUBDIR += powder-toy
     SUBDIR += powermanga
     SUBDIR += powwow
     SUBDIR += ppracer
@@ -844,7 +858,6 @@
     SUBDIR += rfksay
     SUBDIR += ri-li
     SUBDIR += rnd_jue
-    SUBDIR += robocalypto
     SUBDIR += robocode
     SUBDIR += robocode-naval
     SUBDIR += robotfindskitten
@@ -855,6 +868,7 @@
     SUBDIR += rtb
     SUBDIR += rubix
     SUBDIR += rubygem-fortune_gem
+    SUBDIR += rubygem-vimgolf
     SUBDIR += sampsvr
     SUBDIR += sarien
     SUBDIR += sauerbraten
@@ -874,6 +888,7 @@
     SUBDIR += sdl_jewels
     SUBDIR += sdl_lopan
     SUBDIR += sdl_scavenger
+    SUBDIR += sdlpop
     SUBDIR += sdlroids
     SUBDIR += sdlsand
     SUBDIR += sea-defender
@@ -927,6 +942,7 @@
     SUBDIR += stormbaancoureur
     SUBDIR += stransball2
     SUBDIR += stratagus
+    SUBDIR += stuntrally
     SUBDIR += sudoku-sensei
     SUBDIR += sudoku_solver
     SUBDIR += sudsol
@@ -978,7 +994,6 @@
     SUBDIR += traingame
     SUBDIR += tremulous
     SUBDIR += trenchbroom
-    SUBDIR += trigger-data
     SUBDIR += trigger-rally
     SUBDIR += trimines
     SUBDIR += triplane
@@ -988,6 +1003,7 @@
     SUBDIR += tt
     SUBDIR += ttraffic
     SUBDIR += ttt
+    SUBDIR += tty-solitaire
     SUBDIR += tux-aqfh
     SUBDIR += tuxfighter
     SUBDIR += tuxkart
@@ -1145,7 +1161,6 @@
     SUBDIR += xrally
     SUBDIR += xrick
     SUBDIR += xrisk
-    SUBDIR += xroach
     SUBDIR += xrobots
     SUBDIR += xrot
     SUBDIR += xrubik

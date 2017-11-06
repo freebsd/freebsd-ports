@@ -3,19 +3,19 @@
 
 PORTNAME=	uplink-demo
 PORTVERSION=	1.55
-PORTREVISION=	2
+PORTREVISION=	4
 CATEGORIES=	games linux
 MASTER_SITES=	http://www.introversion.co.uk/uplink/downloads/
 PKGNAMEPREFIX=	linux-
 DISTNAME=	${PORTNAME}-${PORTVERSION}DEMO
 EXTRACT_SUFX=	.sh
 
-MAINTAINER=	mva@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	High tech computer crime and industrial espionage on the Internet
 
 ONLY_FOR_ARCHS=	i386 amd64
 USES=		linux
-USE_LINUX=	dri jpeg libvorbis mikmod sdl12 sdlmixer xorglibs
+USE_LINUX=	dri jpeg sdl12 sdlmixer
 USE_LDCONFIG=	yes
 NO_CDROM=	Redistribution is limited, see license
 NO_BUILD=	yes

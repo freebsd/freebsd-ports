@@ -123,6 +123,7 @@ include/FL/Fl_Window.H
 include/FL/Fl_Wizard.H
 include/FL/Fl_XBM_Image.H
 include/FL/Fl_XPM_Image.H
+include/FL/abi-version.h
 include/FL/dirent.h
 include/FL/filename.H
 include/FL/fl_ask.H

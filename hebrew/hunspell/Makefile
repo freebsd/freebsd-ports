@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	hunspell
-PORTVERSION=	1.3
+PORTVERSION=	1.4
 CATEGORIES=	hebrew textproc
 MASTER_SITES=	http://hspell.ivrix.org.il/ \
 		LOCAL/sunpoet/${PORTNAME}

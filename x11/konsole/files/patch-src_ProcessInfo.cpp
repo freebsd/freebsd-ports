@@ -1,3 +1,13 @@
+* Fix handling of symlinked homedir
+*
+* Fix readArguments to get all instead of only the first
+*
+* Implement readEnvironment for FreeBSD
+*
+* Fix args parsing for remote (SSH) sessions
+*
+* Add %U (user@) for remote sessions
+*
 --- src/ProcessInfo.cpp.orig	2014-11-01 04:17:02 UTC
 +++ src/ProcessInfo.cpp
 @@ -60,6 +60,9 @@

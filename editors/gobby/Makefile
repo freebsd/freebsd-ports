@@ -2,12 +2,11 @@
 
 PORTNAME=	gobby
 PORTVERSION=	0.4.13
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	editors
-MASTER_SITES=	http://releases.0x539.de/gobby/ \
-		LOCAL/sbz
+MASTER_SITES=	http://releases.0x539.de/gobby/
 
-MAINTAINER=	sbz@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Free collaborative editor
 
 LICENSE=	GPLv2
@@ -21,7 +20,8 @@ OPTIONS_DEFINE=	GTKSPELL NLS
 GTKSPELL_DESC=	Enable GtkSpell support
 
 USE_GNOME=	gtksourceview2 intltool
-USES=		gmake pkgconfig pathfix
+USES=		compiler:c++11-lang gmake pkgconfig pathfix
+USE_CXXSTD=	c++11
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 

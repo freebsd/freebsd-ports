@@ -1,6 +1,6 @@
---- lib/Test/OpenLDAP.pm.orig	2013-03-13 19:05:02.000000000 +0900
-+++ lib/Test/OpenLDAP.pm	2014-05-23 00:01:21.347461487 +0900
-@@ -95,6 +95,8 @@
+--- lib/Test/OpenLDAP.pm.orig	2013-03-13 10:05:02 UTC
++++ lib/Test/OpenLDAP.pm
+@@ -95,6 +95,8 @@ sub new {
        File::Spec->catdir( $self->{slapd_d_directory}, 'cn=config' );
      $self->{cn_schema_directory} =
        File::Spec->catdir( $self->{cn_config_directory}, 'cn=schema' );
@@ -9,7 +9,7 @@
      $self->{cn_schema_ldif_path} =
        File::Spec->catfile( $self->{cn_config_directory}, 'cn=schema.ldif' );
      $self->{cn_schema_core_ldif_path} =
-@@ -123,6 +125,7 @@
+@@ -123,6 +125,7 @@ sub new {
      mkdir $self->{db_directory}, oct USER_READ_WRITE_EXECUTE_PERMISSIONS()
        or Carp::croak("Failed to mkdir $self->{db_directory}:$OS_ERROR");
      $self->_create_config_ldif();
@@ -17,7 +17,7 @@
      $self->_create_schema_ldif();
      $self->_create_schema_core_ldif();
      $self->{olc_database_for_config} = '{0}config';
-@@ -372,6 +375,34 @@
+@@ -372,6 +375,34 @@ __CONFIG_LDIF__
      return;
  }
  
@@ -52,7 +52,7 @@
  sub _create_schema_ldif {
      my ($self)      = @_;
      my $write_flags = Fcntl::O_WRONLY() | Fcntl::O_CREAT() | Fcntl::O_EXCL();
-@@ -1697,6 +1728,10 @@
+@@ -1697,6 +1728,10 @@ sub DESTROY {
        or Carp::croak(
          "Failed to unlink '$self->{olc_database_config_path}':$OS_ERROR");
      $self->_remove_cn_schema_directory();

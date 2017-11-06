@@ -1,6 +1,6 @@
---- ext/gtk3/extconf.rb.orig	2016-01-22 18:41:23.871812000 +0000
-+++ ext/gtk3/extconf.rb	2016-01-22 18:43:47.587265000 +0000
-@@ -39,6 +39,7 @@
+--- ext/gtk3/extconf.rb.orig	2017-07-08 14:41:53 UTC
++++ ext/gtk3/extconf.rb
+@@ -39,6 +39,7 @@ package_id = "gtk+-3.0"
  require "mkmf-gnome2"
  
  depended_packages = [

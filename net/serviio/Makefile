@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	serviio
-PORTVERSION=	1.7.1
+PORTVERSION=	1.9
 PORTREVISION=	1
-#PORTREVISION=	0
 CATEGORIES=	net multimedia java www
 MASTER_SITES=	http://download.serviio.org/releases/
 EXTRACT_SUFX=	-linux.tar.gz

@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	feedgnuplot
-PORTVERSION=	1.39
+PORTVERSION=	1.44
 CATEGORIES=	graphics perl5
 MASTER_SITES=	http://search.cpan.org/CPAN/authors/id/D/DK/DKOGAN/
 PKGNAMEPREFIX=	p5-
@@ -15,6 +15,7 @@ LICENSE_COMB=	dual
 BUILD_DEPENDS=	p5-String-ShellQuote>=0.50:textproc/p5-String-ShellQuote \
 		p5-IPC-Run>=0:devel/p5-IPC-Run
 RUN_DEPENDS:=	${BUILD_DEPENDS} \
+		p5-List-MoreUtils>=0:lang/p5-List-MoreUtils \
 		gnuplot:math/gnuplot
 
 USES=		perl5

@@ -2,7 +2,7 @@
 
 PORTNAME=	cryptominisat
 PORTVERSION=	5.0.1
-PORTREVISION=	2
+PORTREVISION=	7
 CATEGORIES=	math
 
 MAINTAINER=	6yearold@gmail.com
@@ -14,6 +14,8 @@ LICENSE_FILE_LGPL21=	${WRKSRC}/LICENSE-SCALMC
 
 BUILD_DEPENDS=	xxd:editors/vim-lite # for xxd tool
 LIB_DEPENDS=	libboost_program_options.so:devel/boost-libs
+
+BROKEN_powerpc64=	fails to compile: main.cpp: undefined reference to boost::program_options::abstract_variables_map::operator[]
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	msoos

@@ -4,7 +4,7 @@
 
 PORTNAME=	gconfmm
 PORTVERSION=	2.28.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -16,7 +16,9 @@ LIB_DEPENDS=	libglibmm-2.4.so:devel/glibmm
 BUILD_DEPENDS=	gm4:devel/m4 \
 		${LOCALBASE}/lib/libgtkmm-2.4.so.1:x11-toolkits/gtkmm24
 
-USES=		gmake libtool:keepla pathfix pkgconfig tar:bzip2
+USES=		compiler:c++11-lang gmake libtool:keepla pathfix pkgconfig \
+		tar:bzip2
+USE_CXXSTD=	c++11
 USE_XORG=	x11
 USE_GNOME=	gconf2 referencehack
 GNU_CONFIGURE=	yes

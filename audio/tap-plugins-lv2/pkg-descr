@@ -1,0 +1,7 @@
+This is the LV2 porty of Tom's Audio Processing plugins.
+Tom's Audio Processing plugins is a selection of LADSPA plugins for audio
+engineering on the Linux platform. Intended for use in a professional DAW
+environment such as Ardour, it includes high quality reverberation, echo,
+eq, limiter & more.
+
+WWW: http://tap-plugins.sourceforge.net/

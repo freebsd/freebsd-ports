@@ -1,0 +1,6 @@
+bin/schismtracker
+man/man1/schismtracker.1.gz
+share/applications/itf.desktop
+share/applications/schism.desktop
+share/pixmaps/schism-icon-128.png
+share/pixmaps/schism-itf-icon-128.png

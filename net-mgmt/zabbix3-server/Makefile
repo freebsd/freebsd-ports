@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	zabbix3
-PORTVERSION=	3.0.5
+PORTVERSION=	3.0.12
 PORTREVISION?=	0
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/zabbix/ZABBIX%20Latest%20Stable/${PORTVERSION}
@@ -12,9 +12,10 @@ DISTNAME=	zabbix-${PORTVERSION}
 MAINTAINER=	pg@pakhom.spb.ru
 COMMENT=	Enterprise-class open source distributed monitoring (${PKGNAMESUFFIX:S/^-//}) LTS
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-CONFLICTS=	zabbix2${PKGNAMESUFFIX}-[0-9]* zabbix22${PKGNAMESUFFIX}-[0-9]* zabbix24${PKGNAMESUFFIX}-[0-9]* zabbix32${PKGNAMESUFFIX}-[0-9]*
+CONFLICTS=	zabbix[0-9][0-9]${PKGNAMESUFFIX} zabbix[0-24-9]${PKGNAMESUFFIX}
 
 IGNORE_WITH_MYSQL=	41
 
@@ -56,7 +57,6 @@ CONFIGURE_ARGS+=	--enable-${ZABBIX_BUILD} \
 
 .if ${ZABBIX_BUILD} != "agent"
 LIB_DEPENDS=	libnetsnmp.so:net-mgmt/net-snmp
-USES+=		execinfo
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 
@@ -67,7 +67,7 @@ CONFIGURE_ARGS+=	--with-net-snmp
 OPTIONS_DEFINE=		IPV6 FPING JABBER CURL LDAP IPMI SSH NMAP JAVAGW \
 			LIBXML2
 
-OPTIONS_DEFAULT=	IPV6 FPING CURL UNIXODBC MYSQL OPENSSL
+OPTIONS_DEFAULT=	FPING CURL UNIXODBC MYSQL OPENSSL
 OPTIONS_SUB=		yes
 
 CURL_DESC=		Support for web monitoring
@@ -137,6 +137,8 @@ LIBXML2_LIB_DEPENDS=	libxml2.so:textproc/libxml2
 
 OPENSSL_CONFIGURE_WITH=	openssl
 OPENSSL_USES=		ssl
+OPENSSL_VARS=		BROKEN_SSL="libressl libressl-devel" \
+			BROKEN_SSL_REASON="PSK is not provided by LibreSSL"
 
 GNUTLS_CONFIGURE_WITH=	gnutls
 GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls
@@ -145,14 +147,6 @@ POLARSSL_CONFIGURE_WITH=mbedtls
 POLARSSL_LIB_DEPENDS=	libmbedtls.so:security/polarssl13
 
 .include <bsd.port.pre.mk>
-
-.if ${SSL_DEFAULT} == base
-IGNORE_FreeBSD_9=	Requires OpenSSL >= 1.0.1 (set DEFAULT_VERSIONS+=ssl=openssl)
-.endif
-
-.if ${SSL_DEFAULT:Mlibressl*}
-IGNORE=	requires PSK which is unsupported by the selected LibreSSL
-.endif
 
 post-patch:
 	@${GREP} -rl "/etc/zabbix" ${WRKSRC} \

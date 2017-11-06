@@ -1,0 +1,11 @@
+--- doc/CMakeLists.txt.orig	2017-08-29 15:56:46 UTC
++++ doc/CMakeLists.txt
+@@ -4,7 +4,7 @@ set(sc_MANS
+   )
+ 
+ if(NOT DEFINED MAN_DIR)
+-  set(MAN_DIR share/man)
++  set(MAN_DIR man)
+ endif(NOT DEFINED MAN_DIR)
+ 
+ if(NOT WIN32)

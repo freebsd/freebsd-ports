@@ -1,6 +1,7 @@
 bin/vmdkinfo
 bin/vmdkmount
 include/libvmdk.h
+include/libvmdk/codepage.h
 include/libvmdk/definitions.h
 include/libvmdk/error.h
 include/libvmdk/extern.h

@@ -1,0 +1,6 @@
+usr/lib/libasyncns.so.0
+usr/lib/libasyncns.so.0.3.1
+usr/lib64/libasyncns.so.0
+usr/lib64/libasyncns.so.0.3.1
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/README

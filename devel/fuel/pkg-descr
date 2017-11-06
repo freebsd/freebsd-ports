@@ -1,4 +1,4 @@
-Fuel is a cross-platform GUI front-end to the excellent fossil SCM tool,
-implemented in Qt.
+Fuel is a cross-platform GUI front-end for the excellent Fossil SCM tool
+written in Qt.
 
-WWW: https://code.google.com/p/fuel-scm/
+WWW: https://fuel-scm.org/fossil/home

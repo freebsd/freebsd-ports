@@ -5,7 +5,7 @@ PORTNAME=	spectrogram
 PORTVERSION=	20161017
 CATEGORIES=	audio
 
-MAINTAINER=	t@tobik.me
+MAINTAINER=	tobik@FreeBSD.org
 COMMENT=	Audio visualization for sndio
 
 LICENSE=	ISCL

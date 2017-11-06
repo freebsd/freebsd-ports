@@ -2,33 +2,40 @@
 # $FreeBSD$
 
 PORTNAME=	fdm
-PORTVERSION=	1.8
+PORTVERSION=	1.9
+PORTREVISION=	1
 CATEGORIES=	mail
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Fetches and delivers mail
 
 LICENSE=	ISCL
 
-LIB_DEPENDS=	libpcre.so:devel/pcre \
-		libtdb.so:databases/tdb
+LIB_DEPENDS=	libtdb.so:databases/tdb
 
-USES=		ssl
-HAS_CONFIGURE=	yes
-MAKE_ARGS=	-DPCRE -DDB INSTALLBIN="${INSTALL_PROGRAM}"
+USE_GITHUB=	yes
+GH_ACCOUNT=	nicm
+USES=		autoreconf:build ssl
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc
 
 PLIST_FILES=	bin/fdm man/man1/fdm.1.gz man/man5/fdm.conf.5.gz
 PORTDOCS=	CHANGES README MANUAL
-PORTEXAMPLES=	n-marriott.conf f-terbeck.conf t-ulmer.conf w-maier.conf g-lando.conf
+PORTEXAMPLES=	*
 
-OPTIONS_DEFINE=	DOCS EXAMPLES
+OPTIONS_DEFINE=	DOCS EXAMPLES PCRE
+OPTIONS_DEFAULT=PCRE
+
+PCRE_CFLAGS=	-DPCRE
+PCRE_LIBS=	-lpcre
+PCRE_LIB_DEPENDS=libpcre.so:devel/pcre
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/etc|${PREFIX}/etc|g' ${WRKSRC}/*.[ch15]
-	@${REINPLACE_CMD} -e 's|/usr/local/include/openssl|${OPENSSLINC}|;\
-		s|-I-||g; s|-g bin -o root||g; s|^FDEBUG|#&|;\
-		s|/usr/local|${LOCALBASE}|g' ${WRKSRC}/${MAKEFILE}
+	@${REINPLACE_CMD} -e 's|/etc|${PREFIX}/etc|g' ${WRKSRC}/*.[15] ${WRKSRC}/MANUAL
+	@${ECHO_CMD} 'lex.c: parse.h' >> ${WRKSRC}/Makefile.am
+
+pre-configure:
+	@cd ${WRKSRC} && sh autogen.sh
 
 post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}

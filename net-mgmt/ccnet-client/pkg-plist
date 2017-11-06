@@ -1,9 +1,5 @@
 bin/ccnet
-bin/ccnet-demo-client
-bin/ccnet-demo-server
 bin/ccnet-init
-bin/ccnet-servtool
-bin/ccnet-tool
 include/ccnet.h
 include/ccnet/async-rpc-proc.h
 include/ccnet/ccnet-client.h

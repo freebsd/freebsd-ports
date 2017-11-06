@@ -2,4 +2,4 @@ cflow reads files as C or assembler program source and prints a graph
 of the function call hierarchy. Called functions are indented according
 to their caller-callee relationship, in the order of occurrence.
 
-WWW: http://bitbucket.org/marcusva/cflow
+WWW: https://bitbucket.org/marcusva/cflow

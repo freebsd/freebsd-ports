@@ -1,5 +1,3 @@
-$FreeBSD$
-
 --- src/zm_logger.cpp	
 +++ src/zm_logger.cpp	
 @@ -504,7 +504,8 @@ 

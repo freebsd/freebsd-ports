@@ -3,11 +3,11 @@
 
 PORTNAME=	pianobar
 PORTVERSION=	2016.06.02
-PORTREVISION=	2
+PORTREVISION=	4
 CATEGORIES=	audio
 MASTER_SITES=	http://6xq.net/projects/${PORTNAME}/
 
-MAINTAINER=	john@pcbsd.org
+MAINTAINER=	jhixson@gmail.com
 COMMENT=	Command line Pandora player
 
 LICENSE=	MIT

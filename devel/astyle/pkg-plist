@@ -4,3 +4,16 @@ bin/astyle
 %%PORTDOCS%%%%DOCSDIR%%/news.html
 %%PORTDOCS%%%%DOCSDIR%%/notes.html
 %%PORTDOCS%%%%DOCSDIR%%/styles.css
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/allman.ini
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/astyle.ini
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/chromium.ini
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gnu.ini
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/google.ini
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/horstmann.ini
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/java.ini
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/linux.ini
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/llvm.ini
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mozilla.ini
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/stroustrup.ini
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/visualstudio.ini
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/webkit.ini

@@ -14,6 +14,9 @@ DISTNAME=	${PORTNAME}${PORTVERSION}-src
 MAINTAINER=	tcltk@FreeBSD.org
 COMMENT=	Tool Command Language
 
+DEPRECATED=		Tcl/Tk 8.4 is no longer maintained, please use 8.5+
+EXPIRATION_DATE=	2017-11-20
+
 LICENSE=	TclTk
 LICENSE_NAME=	Tcl/Tk License
 LICENSE_FILE=	${WRKSRC}/../license.terms
@@ -27,6 +30,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION}/unix
 
 ALL_TARGET=	all
 INSTALL_TARGET=	install install-libraries
+TEST_TARGET=	test
 
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
@@ -40,8 +44,7 @@ SHORT_TCL_VER=	${TCL_VER:S/8./8/}
 MAN_SUFFIX=	${PKGBASE}
 
 MAKE_ENV=	SHORT_TCL_VER="${SHORT_TCL_VER}" \
-		MAN_SUFFIX=.${MAN_SUFFIX} \
-		LANG=C LC_ALL=C	# LANG=C is required for some of UTF-using tests
+		MAN_SUFFIX=.${MAN_SUFFIX}
 
 PLIST_SUB=	TCL_VER=${TCL_VER} \
 		SHORT_TCL_VER=${SHORT_TCL_VER}
@@ -77,8 +80,5 @@ post-configure:
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/tclsh${TCL_VER}
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libtcl${SHORT_TCL_VER}.so.1
-
-regression-test:	build
-	cd ${WRKSRC} && LC_ALL=C ${MAKE} test
 
 .include <bsd.port.mk>

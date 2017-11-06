@@ -3,6 +3,7 @@
 
 PORTNAME=	mpd2
 PORTVERSION=	0.5.5
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	audio python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,7 +19,7 @@ GH_ACCOUNT=	Mic92
 GH_PROJECT=	python-${PORTNAME}
 
 USES=		shebangfix python
-SHEBANG_FILES=	examples/helloworld.py
+SHEBANG_FILES=	examples/*.py doc/*.py
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes

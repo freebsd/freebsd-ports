@@ -9,8 +9,10 @@ MASTER_SITES=	RG
 MAINTAINER=	don@na.rim.or.jp
 COMMENT=	Ruby interface to HTML Tidy Library Project
 
-NO_ARCH=	yes
+LICENSE=	BSD2CLAUSE RUBY
+LICENSE_COMB=	dual
 
+NO_ARCH=	yes
 USE_RUBY=	yes
 USES=		gem
 

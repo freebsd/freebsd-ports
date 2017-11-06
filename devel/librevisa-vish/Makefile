@@ -12,7 +12,6 @@ COMMENT=	Open Source VISA shell for interfacing test and measurement equipment
 
 LIB_DEPENDS=	libvisa.so:devel/librevisa
 
-USES=		gmake
 GNU_CONFIGURE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include

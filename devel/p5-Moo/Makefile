@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Moo
-PORTVERSION=	2.003000
+PORTVERSION=	2.003002
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:HAARG
@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Minimalist Object Orientation (with Moose compatibility)
 
-LICENSE=	ART10 GPLv1
+LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Class-Method-Modifiers>=1.10:devel/p5-Class-Method-Modifiers \
@@ -32,11 +32,4 @@ USE_PERL5=	configure
 XS_BUILD_DEPENDS=	p5-Class-XSAccessor>=1.18:devel/p5-Class-XSAccessor
 XS_RUN_DEPENDS=		${XS_BUILD_DEPENDS}
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 502200 && ${PORT_OPTIONS:MXS}
-BUILD_DEPENDS+=	p5-Scalar-List-Utils>=0:lang/p5-Scalar-List-Utils
-RUN_DEPENDS+=	p5-Scalar-List-Utils>=0:lang/p5-Scalar-List-Utils
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

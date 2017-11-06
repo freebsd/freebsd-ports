@@ -1,11 +1,14 @@
 bin/dunelegacy
 %%DATADIR%%/Dune2-Versions.txt
+%%DATADIR%%/GFXHD.PAK
 %%DATADIR%%/LEGACY.PAK
 %%DATADIR%%/OPENSD2.PAK
 %%DATADIR%%/locale/English.en.po
 %%DATADIR%%/locale/French.fr.po
 %%DATADIR%%/locale/German.de.po
+%%DATADIR%%/locale/Spanish.es.po
 %%DATADIR%%/locale/dunelegacy.pot
+%%DATADIR%%/maps/multiplayer/2P - 32x128 - Gatekeeper.ini
 %%DATADIR%%/maps/multiplayer/2P - 32x32 - X-Factor.ini
 %%DATADIR%%/maps/multiplayer/2P - 64x32 - Cliffs Of Rene.ini
 %%DATADIR%%/maps/multiplayer/2P - 64x64 - Bottle Neck.ini
@@ -14,15 +17,41 @@ bin/dunelegacy
 %%DATADIR%%/maps/multiplayer/2P - 64x64 - Face Off.ini
 %%DATADIR%%/maps/multiplayer/2P - 64x64 - Great Divide.ini
 %%DATADIR%%/maps/multiplayer/2P - 64x64 - Sanctuarys.ini
+%%DATADIR%%/maps/multiplayer/4P - 128x128 - Deserted.ini
+%%DATADIR%%/maps/multiplayer/4P - 128x128 - Equilibrium.ini
+%%DATADIR%%/maps/multiplayer/4P - 128x128 - Four Cities.ini
+%%DATADIR%%/maps/multiplayer/4P - 128x128 - Hungry Hippos.ini
+%%DATADIR%%/maps/multiplayer/4P - 128x128 - Silicon Valley XL.ini
+%%DATADIR%%/maps/multiplayer/4P - 128x128 - Snake Pass.ini
+%%DATADIR%%/maps/multiplayer/4P - 128x128 - Spicestorm.ini
 %%DATADIR%%/maps/multiplayer/4P - 128x128 - The Sardaukar Outpost.ini
+%%DATADIR%%/maps/multiplayer/4P - 128x128 - Worm Investation.ini
+%%DATADIR%%/maps/multiplayer/4P - 128x128 - Wormhole.ini
+%%DATADIR%%/maps/multiplayer/4P - 128x64 - Gamma Sector.ini
+%%DATADIR%%/maps/multiplayer/4P - 64x64 - Channels.ini
 %%DATADIR%%/maps/multiplayer/4P - 64x64 - Clear Path.ini
+%%DATADIR%%/maps/multiplayer/4P - 64x64 - Combed.ini
 %%DATADIR%%/maps/multiplayer/4P - 64x64 - Four Chambers.ini
 %%DATADIR%%/maps/multiplayer/4P - 64x64 - Four Courners.ini
 %%DATADIR%%/maps/multiplayer/4P - 64x64 - Sietch Stefan.ini
+%%DATADIR%%/maps/multiplayer/4P - 64x64 - Silicon Valley.ini
+%%DATADIR%%/maps/multiplayer/4P - 64x64 - Stronghold.ini
 %%DATADIR%%/maps/multiplayer/4P - 64x64 - Vast Armies Have Arrived.ini
+%%DATADIR%%/maps/multiplayer/5P - 128x128 - Fortress.ini
+%%DATADIR%%/maps/multiplayer/5P - 128x128 - Gridlocked.ini
+%%DATADIR%%/maps/multiplayer/5P - 128x128 - Hellvetika.ini
+%%DATADIR%%/maps/multiplayer/5P - 128x128 - Kragetam.ini
+%%DATADIR%%/maps/multiplayer/5P - 128x128 - Meadow.ini
+%%DATADIR%%/maps/multiplayer/5P - 128x64 - Watch Your Track.ini
+%%DATADIR%%/maps/multiplayer/6P - 128x128 - Gargantuan Mountains.ini
+%%DATADIR%%/maps/multiplayer/6P - 64x128 - Rocking Fields.ini
+%%DATADIR%%/maps/multiplayer/6P - 64x64 - Fertile Basin.ini
 %%DATADIR%%/maps/singleplayer/2P - 32x128 - Canyon.ini
 %%DATADIR%%/maps/singleplayer/2P - 64x64 - Duality.ini
 %%DATADIR%%/maps/singleplayer/2P - 64x64 - North vs. South.ini
 %%DATADIR%%/maps/singleplayer/2P - 64x64 - Twin Fists.ini
 %%DATADIR%%/maps/singleplayer/3P - 64x32 - Middle Man.ini
+%%DATADIR%%/maps/singleplayer/4P - 64x64 - 3 vs 1.ini
 %%DATADIR%%/maps/singleplayer/5P - 128x128 - All against Atreides.ini
+%%DATADIR%%/maps/singleplayer/5P - 128x128 - Sardaukar Base Easy.ini
+%%DATADIR%%/maps/singleplayer/5P - 128x128 - Sardaukar Base.ini

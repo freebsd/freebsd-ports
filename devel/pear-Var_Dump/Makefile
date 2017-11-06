@@ -6,7 +6,7 @@ PORTVERSION=	1.0.4
 PORTREVISION=	1
 CATEGORIES=	devel www pear
 
-MAINTAINER=	joneum@bsdproject.de
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Provides methods for dumping structured information about a variable
 
 LICENSE=	PHP30

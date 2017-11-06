@@ -11,7 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Encode::Encoding subclass that detects the encoding of data
 
-LICENSE=	MPL
+LICENSE=	MPL11
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		perl5
 USE_PERL5=	modbuild

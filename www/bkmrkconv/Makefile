@@ -18,7 +18,7 @@ NO_ARCH=	yes
 OPTIONS_DEFINE=	DOCS
 
 post-patch:
-	@${FIND} ${WRKSRC} -name '*.pl' | ${XARGS} ${REINPLACE_CMD} -i '' -e \
+	@${FIND} ${WRKSRC} -type f -name '*.pl' | ${XARGS} ${REINPLACE_CMD} -i '' -e \
 		's|/usr/bin/perl|${PERL}|g ; \
 		 s|%%PREFIX%%|${PREFIX}|g'
 

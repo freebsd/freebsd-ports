@@ -3,16 +3,25 @@
 
 PORTNAME=	xpired
 PORTVERSION=	1.22
-PORTREVISION=	22
+PORTREVISION=	23
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-linux/${PORTVERSION}
 DISTNAME=	${PORTNAME}-${PORTVERSION}-linux_source
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Action-puzzle maze escape game (SDL)
+COMMENT=	Action-puzzle maze escape game
+
+LICENSE=	GPLv2+
 
 USE_SDL=	gfx image mixer sdl
 WRKSRC=		${WRKDIR}/src
+
+DESKTOP_ENTRIES="Xpired" \
+		"" \
+		"${DATADIR}/img/icon.bmp" \
+		"${PORTNAME}" \
+		"Game;LogicGame;ActionGame;" \
+		""
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/xpired ${WRKSRC}/xpiredit \

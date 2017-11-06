@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	MechanicalSoup
-PORTVERSION=	0.6.0
+PORTVERSION=	0.9.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,16 +13,20 @@ COMMENT=	Python library for automating interaction with websites
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>=2.11:www/py-requests \
-		${PYTHON_PKGNAMEPREFIX}beautifulsoup>4:www/py-beautifulsoup \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest-runner>=0:devel/py-pytest-runner
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}beautifulsoup>=4:www/py-beautifulsoup \
+		${PYTHON_PKGNAMEPREFIX}lxml>=0:devel/py-lxml \
+		${PYTHON_PKGNAMEPREFIX}requests>=2.11:www/py-requests \
 		${PYTHON_PKGNAMEPREFIX}six>=1.10:devel/py-six
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=0:devel/py-pytest \
+		${PYTHON_PKGNAMEPREFIX}pytest-cov>=0:devel/py-pytest-cov \
+		${PYTHON_PKGNAMEPREFIX}pytest-mock>=0:devel/py-pytest-mock \
+		${PYTHON_PKGNAMEPREFIX}requests-mock>=0:www/py-requests-mock
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	hickford
-
-USES=		python
-USE_PYTHON=	distutils autoplist
 
 NO_ARCH=	yes
+USES=		python
+USE_PYTHON=	autoplist concurrent distutils
 
 .include <bsd.port.mk>

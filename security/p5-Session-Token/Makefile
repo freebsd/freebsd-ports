@@ -8,10 +8,10 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:FRACTAL
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	hvo.pm@xs4all.nl
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Secure, efficient, simple random session token generation
 
-LICENSE=	ART10 GPLv1
+LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 USES=		perl5

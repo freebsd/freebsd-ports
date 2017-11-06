@@ -2,14 +2,14 @@
 
 PORTNAME=	libpagemaker
 PORTVERSION=	0.0.3
-PORTREVISION=	2
+PORTREVISION=	5
 CATEGORIES=	print graphics devel
 MASTER_SITES=	LIBREOFFICE_DEV
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Library and tools for parsing Aldus/Adobe PageMaker documents
 
-LICENSE=	MPL
+LICENSE=	MPL20
 
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/format.hpp:devel/boost-libs
 LIB_DEPENDS=	librevenge-0.0.so:textproc/librevenge

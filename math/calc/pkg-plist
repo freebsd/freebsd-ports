@@ -312,6 +312,7 @@ man/man1/calc.1.gz
 %%DATADIR%%/help/lowbit
 %%DATADIR%%/help/ltol
 %%DATADIR%%/help/makelist
+%%DATADIR%%/help/man
 %%DATADIR%%/help/mat
 %%DATADIR%%/help/matdim
 %%DATADIR%%/help/matfill
@@ -457,7 +458,6 @@ man/man1/calc.1.gz
 %%DATADIR%%/lnseries.cal
 %%DATADIR%%/lucas.cal
 %%DATADIR%%/lucas_chk.cal
-%%DATADIR%%/lucas_tbl.cal
 %%DATADIR%%/mersenne.cal
 %%DATADIR%%/mfactor.cal
 %%DATADIR%%/mod.cal

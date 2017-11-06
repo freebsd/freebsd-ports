@@ -6,7 +6,7 @@ PORTVERSION=	2.2
 CATEGORIES=	security
 MASTER_SITES=	http://www.foofus.net/~jmk/tools/
 
-MAINTAINER=	dbaio@bsd.com.br
+MAINTAINER=	dbaio@FreeBSD.org
 COMMENT=	Speedy, massively parallel, modular, login brute-forcer
 
 LICENSE=	GPLv2+
@@ -15,8 +15,6 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libssh2.so:security/libssh2
 
 USES=	ssl
-
-BROKEN_ia64=	Does not build on ia64
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-module-ncp=no --enable-module-afp=no

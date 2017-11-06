@@ -6,7 +6,7 @@ PORTVERSION=	0.1.1
 PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://buhacoff.net/2009/products/check_mysql_slave/archive/ \
-		http://mirrors.rit.edu/zi/
+		ZI
 PKGNAMEPREFIX=	nagios-
 
 MAINTAINER=	zi@FreeBSD.org

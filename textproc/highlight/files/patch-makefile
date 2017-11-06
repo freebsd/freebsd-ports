@@ -1,5 +1,5 @@
---- makefile.orig	2014-04-25 16:45:48.000000000 +0200
-+++ makefile	2014-04-25 16:46:45.000000000 +0200
+--- makefile.orig	2017-03-30 18:12:23 UTC
++++ makefile
 @@ -4,10 +4,10 @@
  # Installation directories:
  
@@ -13,7 +13,7 @@
  
  # Location of the highlight data files:
  data_dir = ${PREFIX}/share/highlight/
-@@ -16,7 +16,7 @@
+@@ -16,7 +16,7 @@ data_dir = ${PREFIX}/share/highlight/
  bin_dir = ${PREFIX}/bin/
  
  # Location of the highlight man page:
@@ -22,7 +22,7 @@
  
  # Location of the highlight documentation:
  doc_dir = ${PREFIX}/share/doc/highlight/
-@@ -25,8 +25,8 @@
+@@ -25,8 +25,8 @@ doc_dir = ${PREFIX}/share/doc/highlight/
  examples_dir = ${doc_dir}examples/
  
  # Location of the highlight config files:

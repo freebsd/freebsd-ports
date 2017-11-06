@@ -1,6 +1,8 @@
---- src/glsl/Makefile.in.orig	2014-07-05 05:13:28.000000000 -0400
-+++ src/glsl/Makefile.in	2015-04-17 16:41:57.556848000 -0400
-@@ -103,7 +103,7 @@
+# Prevent conflict with x11/bitmap
+#
+--- src/glsl/Makefile.in.orig	2015-12-09 21:24:01 UTC
++++ src/glsl/Makefile.in
+@@ -113,7 +113,7 @@ POST_UNINSTALL = :
  build_triplet = @build@
  host_triplet = @host@
  @HAVE_GLUT_TRUE@bin_PROGRAMS = array$(EXEEXT) bezier$(EXEEXT) \
@@ -9,7 +11,7 @@
  @HAVE_GLUT_TRUE@	blinking-teapot$(EXEEXT) convolutions$(EXEEXT) \
  @HAVE_GLUT_TRUE@	deriv$(EXEEXT) fragcoord$(EXEEXT) \
  @HAVE_GLUT_TRUE@	fsraytrace$(EXEEXT) \
-@@ -149,9 +149,9 @@
+@@ -158,9 +158,9 @@ am__v_lt_1 = 
  bezier_SOURCES = bezier.c
  bezier_OBJECTS = bezier.$(OBJEXT)
  bezier_DEPENDENCIES = ../util/libutil.la
@@ -22,7 +24,7 @@
  blinking_teapot_SOURCES = blinking-teapot.c
  blinking_teapot_OBJECTS = blinking-teapot.$(OBJEXT)
  blinking_teapot_DEPENDENCIES = ../util/libutil.la
-@@ -535,7 +535,7 @@
+@@ -546,7 +546,7 @@ gsraytrace_SOURCES = gsraytrace.cpp
  samplers_array_SOURCES = samplers.c
  samplers_array_CFLAGS = $(AM_CFLAGS) -DSAMPLERS_ARRAY
  array_LDADD = ../util/libutil.la
@@ -31,7 +33,7 @@
  bezier_LDADD = ../util/libutil.la
  brick_LDADD = ../util/libutil.la
  bump_LDADD = ../util/libutil.la
-@@ -684,9 +684,9 @@
+@@ -694,9 +694,9 @@ bezier$(EXEEXT): $(bezier_OBJECTS) $(bez
  	@rm -f bezier$(EXEEXT)
  	$(AM_V_CCLD)$(LINK) $(bezier_OBJECTS) $(bezier_LDADD) $(LIBS)
  

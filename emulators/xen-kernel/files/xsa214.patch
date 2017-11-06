@@ -1,0 +1,41 @@
+From: Jan Beulich <jbeulich@suse.com>
+Subject: x86: discard type information when stealing pages
+
+While a page having just a single general reference left necessarily
+has a zero type reference count too, its type may still be valid (and
+in validated state; at present this is only possible and relevant for
+PGT_seg_desc_page, as page tables have their type forcibly zapped when
+their type reference count drops to zero, and
+PGT_{writable,shared}_page pages don't require any validation). In
+such a case when the page is being re-used with the same type again,
+validation is being skipped. As validation criteria differ between
+32- and 64-bit guests, pages to be transferred between guests need to
+have their validation indicator zapped (and with it we zap all other
+type information at once).
+
+This is XSA-214.
+
+Reported-by: Jann Horn <jannh@google.com>
+Signed-off-by: Jan Beulich <jbeulich@suse.com>
+Reviewed-by: Andrew Cooper <andrew.cooper3@citrix.com>
+
+--- a/xen/arch/x86/mm.c
++++ b/xen/arch/x86/mm.c
+@@ -4466,6 +4466,17 @@ int steal_page(
+         y = cmpxchg(&page->count_info, x, x & ~PGC_count_mask);
+     } while ( y != x );
+ 
++    /*
++     * With the sole reference dropped temporarily, no-one can update type
++     * information. Type count also needs to be zero in this case, but e.g.
++     * PGT_seg_desc_page may still have PGT_validated set, which we need to
++     * clear before transferring ownership (as validation criteria vary
++     * depending on domain type).
++     */
++    BUG_ON(page->u.inuse.type_info & (PGT_count_mask | PGT_locked |
++                                      PGT_pinned));
++    page->u.inuse.type_info = 0;
++
+     /* Swizzle the owner then reinstate the PGC_allocated reference. */
+     page_set_owner(page, NULL);
+     y = page->count_info;

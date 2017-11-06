@@ -1,0 +1,4 @@
+Ref::Util::XS is the XS implementation of Ref::Util (Utility functions for
+checking references).
+
+WWW: http://search.cpan.org/dist/Ref-Util-XS/

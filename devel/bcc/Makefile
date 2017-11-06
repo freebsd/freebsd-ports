@@ -3,14 +3,15 @@
 
 PORTNAME=	bcc
 PORTVERSION=	1995.03.12
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel lang
+MASTER_SITES=	LOCAL/joerg
 DISTNAME=	${PORTNAME}
 
 MAINTAINER=	joerg@FreeBSD.org
 COMMENT=	Bruce's C compiler (with as and ld); can do 16-bit code
 
-BROKEN=		unfetchable (MASTER_SITES not defined)
+LICENSE=	GPLv2
 
 USES=		uidfix
 

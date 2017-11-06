@@ -3,7 +3,7 @@
 
 PORTNAME=	clementine
 PORTVERSION=	1.3.1
-PORTREVISION=	5
+PORTREVISION=	14
 CATEGORIES=	audio
 PKGNAMESUFFIX=	-player
 
@@ -14,7 +14,6 @@ LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:devel/boost-libs
-
 LIB_DEPENDS=	libtag.so:audio/taglib \
 		libchromaprint.so:audio/chromaprint \
 		libprotobuf.so:devel/protobuf \
@@ -24,6 +23,8 @@ LIB_DEPENDS=	libtag.so:audio/taglib \
 		libechonest.so:audio/libechonest \
 		libcryptopp.so:security/cryptopp
 
+BROKEN_powerpc64=	fails to compile: tagreader.cpp: undefined reference to TagLib::String::String
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	${PORTNAME}${PKGNAMESUFFIX}
 GH_PROJECT=	Clementine
@@ -31,7 +32,6 @@ GH_PROJECT=	Clementine
 USES=		cmake \
 		compiler:c++11-lib \
 		desktop-file-utils \
-		execinfo \
 		gettext-tools \
 		pkgconfig \
 		sqlite
@@ -61,7 +61,7 @@ USE_GSTREAMER1=	cdparanoia \
 		faad \
 		flac \
 		lame \
-		mad \
+		mpg123 \
 		neon \
 		shout2 \
 		soup \

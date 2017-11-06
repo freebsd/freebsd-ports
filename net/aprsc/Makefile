@@ -1,9 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	aprsc
-PORTVERSION=	2.0.19
-PORTREVISION=	0
-DISTVERSIONSUFFIX=	.g05a4d35
+PORTVERSION=	2.1.4
+DISTVERSIONSUFFIX=	.g408ed49
+PORTREVISION=	2
 CATEGORIES=	net hamradio
 MASTER_SITES=	http://he.fi/aprsc/down/ \
 		LOCAL/db
@@ -14,15 +14,13 @@ COMMENT=	Plain APRS-IS server
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libevent.so:devel/libevent2
+LIB_DEPENDS=	libevent.so:devel/libevent
 
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 MAKEFILE=	GNUmakefile
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 GNU_CONFIGURE=	yes
-USES=		perl5 gmake shebangfix
+USES=		localbase:ldflags ssl perl5 gmake shebangfix
 SHEBANG_FILES=	aprsc_munin
 
 CONFIGURE_ARGS=	--with-openssl

@@ -1,0 +1,4 @@
+grape-route-helpers provides named route helpers for Grape APIs, similar to
+Rails' route helpers.
+
+WWW: https://github.com/reprah/grape-route-helpers

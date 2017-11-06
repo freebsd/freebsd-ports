@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	squidview
-PORTVERSION=	0.84
+PORTVERSION=	0.86
 CATEGORIES=	www
 MASTER_SITES=	http://www.rillion.net/squidview/
 

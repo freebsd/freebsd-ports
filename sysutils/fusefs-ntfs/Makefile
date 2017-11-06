@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ntfs
-PORTVERSION=	2016.2.22
-PORTREVISION=	1
+PORTVERSION=	2017.3.23
 CATEGORIES=	sysutils
 MASTER_SITES=	http://tuxera.com/opensource/
 PKGNAMEPREFIX=	fusefs-

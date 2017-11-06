@@ -9,7 +9,7 @@ MASTER_SITES=	http://downloads.dragonlace.net/src/
 DISTNAME=	gps-gpl-${PORTVERSION}-src
 PKGNAMESUFFIX=	-ide
 
-MAINTAINER=	marino@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNAT Programming Studio - IDE for Ada and many other languages
 
 LICENSE=	GPLv3

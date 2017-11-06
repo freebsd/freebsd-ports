@@ -85,9 +85,10 @@ share/help/zh_CN/tali/legal.xml
 share/icons/hicolor/16x16/apps/tali.png
 share/icons/hicolor/22x22/apps/tali.png
 share/icons/hicolor/24x24/apps/tali.png
+share/icons/hicolor/256x256/apps/tali.png
 share/icons/hicolor/32x32/apps/tali.png
 share/icons/hicolor/48x48/apps/tali.png
-share/icons/hicolor/scalable/apps/tali.svg
+share/icons/hicolor/512x512/apps/tali.png
 share/icons/hicolor/symbolic/apps/tali-symbolic.svg
 share/locale/af/LC_MESSAGES/tali.mo
 share/locale/am/LC_MESSAGES/tali.mo
@@ -119,6 +120,7 @@ share/locale/eu/LC_MESSAGES/tali.mo
 share/locale/fa/LC_MESSAGES/tali.mo
 share/locale/fi/LC_MESSAGES/tali.mo
 share/locale/fr/LC_MESSAGES/tali.mo
+share/locale/fur/LC_MESSAGES/tali.mo
 share/locale/ga/LC_MESSAGES/tali.mo
 share/locale/gl/LC_MESSAGES/tali.mo
 share/locale/gu/LC_MESSAGES/tali.mo

@@ -13,7 +13,6 @@ COMMENT=	Lightweight and fast MySQL driver for go
 
 USES=		go
 USE_GITHUB=	yes
-GH_ACCOUNT=	${PORTNAME}
 GH_PROJECT=	mysql
 
 GO_PKGNAME=	github.com/${PORTNAME}/${GH_PROJECT}

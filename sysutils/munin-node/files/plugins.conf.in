@@ -45,15 +45,17 @@ env.leasefile /var/db/dhcpd.leases
 group mail
 env.exim %%LOCALBASE%%/sbin/exim
 
-[smart_*]
+[fail2ban*]
 user root
-group operator
-env.smartpath %%LOCALBASE%%/sbin/smartctl
+env.client %%LOCALBASE%%/bin/fail2ban-client
 
 [hddtemp_smartctl]
 user root
 group operator
 env.smartctl %%LOCALBASE%%/sbin/smartctl
+
+[ipmi_*]
+user root
 
 [mbmon*]
 env.mbmon %%LOCALBASE%%/bin/mbmon
@@ -62,6 +64,10 @@ env.mbmon %%LOCALBASE%%/bin/mbmon
 env.mysql %%LOCALBASE%%/bin/mysql
 env.mysqladmin %%LOCALBASE%%/bin/mysqladmin
 env.mysqlshow %%LOCALBASE%%/bin/mysqlshow
+
+[nut*]
+env.upsc    %%LOCALBASE%%/bin/upsc
+env.upsconf %%LOCALBASE%%/etc/nut/ups.conf
 
 [postfix*]
 user root
@@ -72,11 +78,8 @@ group wheel
 env.mspqueue /var/spool/clientmqueue
 env.mailstats /usr/sbin/mailstats
 
-[fail2ban*]
+[smart_*]
 user root
-env.client %%LOCALBASE%%/bin/fail2ban-client
-
-[nut*]
-env.upsc    %%LOCALBASE%%/bin/upsc
-env.upsconf %%LOCALBASE%%/etc/nut/ups.conf
+group operator
+env.smartpath %%LOCALBASE%%/sbin/smartctl
 

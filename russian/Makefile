@@ -6,11 +6,9 @@
     SUBDIR += artwiz-ru
     SUBDIR += aspell
     SUBDIR += bugzilla44
-    SUBDIR += calligra-l10n
     SUBDIR += d1489
     SUBDIR += emkatic
     SUBDIR += eric6
-    SUBDIR += fortuneru
     SUBDIR += gd
     SUBDIR += gimp-help
     SUBDIR += hunspell

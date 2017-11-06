@@ -1,10 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	mednafen
-PORTVERSION=	0.9.38.7
+PORTVERSION=	0.9.45.1
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	emulators games
-MASTER_SITES=	http://mednafen.fobby.net/releases/files/
+MASTER_SITES=	https://mednafen.github.io/releases/files/
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Portable multi-system emulator
@@ -16,7 +17,8 @@ LIB_DEPENDS=	libcdio.so:sysutils/libcdio \
 		libsndfile.so:audio/libsndfile \
 		libvorbis.so:audio/libvorbis
 
-BROKEN_sparc64=	does not compile due to internal compiler error
+BROKEN_powerpc64=	fails to compile: mednafen.cpp: 'to_string' is not a member of 'std'
+BROKEN_sparc64=		fails to compile due to internal compiler error
 
 GNU_CONFIGURE=	yes
 USE_SDL=	sdl net
@@ -29,7 +31,7 @@ SUB_FILES=	pkg-message
 CONFIGURE_ARGS+=--disable-alsa --disable-alsatest \
 		--with-sdl-prefix=${LOCALBASE}
 
-USES=		compiler:c++11-lib cpe iconv pkgconfig:build tar:bzip2
+USES=		compiler:c++11-lib cpe iconv pkgconfig:build tar:xz
 CPE_VENDOR=	david_shadoff
 
 OPTIONS_DEFINE=	NLS DOCS JACK

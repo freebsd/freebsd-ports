@@ -428,6 +428,7 @@
 %%WWWDIR%%/include/classes/validators/CDecimalStringValidator.php
 %%WWWDIR%%/include/classes/validators/CDecimalValidator.php
 %%WWWDIR%%/include/classes/validators/CFunctionValidator.php
+%%WWWDIR%%/include/classes/validators/CHtmlUrlValidator.php
 %%WWWDIR%%/include/classes/validators/CIPRangeValidator.php
 %%WWWDIR%%/include/classes/validators/CIPValidator.php
 %%WWWDIR%%/include/classes/validators/CIdValidator.php
@@ -438,7 +439,6 @@
 %%WWWDIR%%/include/classes/validators/CPartialValidatorInterface.php
 %%WWWDIR%%/include/classes/validators/CRegexValidator.php
 %%WWWDIR%%/include/classes/validators/CStringValidator.php
-%%WWWDIR%%/include/classes/validators/CTagValidator.php
 %%WWWDIR%%/include/classes/validators/CTimePeriodValidator.php
 %%WWWDIR%%/include/classes/validators/CValidator.php
 %%WWWDIR%%/include/classes/validators/event/CEventSourceObjectValidator.php
@@ -462,7 +462,6 @@
 %%WWWDIR%%/include/func.inc.php
 %%WWWDIR%%/include/gettextwrapper.inc.php
 %%WWWDIR%%/include/graphs.inc.php
-%%WWWDIR%%/include/groups.inc.php
 %%WWWDIR%%/include/hosts.inc.php
 %%WWWDIR%%/include/html.inc.php
 %%WWWDIR%%/include/httptest.inc.php
@@ -668,6 +667,8 @@
 %%WWWDIR%%/locale/bg/LC_MESSAGES/frontend.po
 %%WWWDIR%%/locale/cs/LC_MESSAGES/frontend.mo
 %%WWWDIR%%/locale/cs/LC_MESSAGES/frontend.po
+%%WWWDIR%%/locale/ca/LC_MESSAGES/frontend.mo
+%%WWWDIR%%/locale/ca/LC_MESSAGES/frontend.po
 %%WWWDIR%%/locale/de/LC_MESSAGES/frontend.mo
 %%WWWDIR%%/locale/de/LC_MESSAGES/frontend.po
 %%WWWDIR%%/locale/el/LC_MESSAGES/frontend.mo
@@ -736,7 +737,6 @@
 %%WWWDIR%%/popup_httpstep.php
 %%WWWDIR%%/popup_media.php
 %%WWWDIR%%/popup_trexpr.php
-%%WWWDIR%%/popup_usrgrp.php
 %%WWWDIR%%/profile.php
 %%WWWDIR%%/queue.php
 %%WWWDIR%%/report2.php

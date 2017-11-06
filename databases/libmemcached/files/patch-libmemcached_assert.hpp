@@ -1,4 +1,4 @@
---- libmemcached/assert.hpp.orig	2014-12-10 05:16:11 UTC
+--- libmemcached/assert.hpp.orig	2014-02-09 11:52:42 UTC
 +++ libmemcached/assert.hpp
 @@ -51,8 +51,10 @@
  # ifdef _WIN32

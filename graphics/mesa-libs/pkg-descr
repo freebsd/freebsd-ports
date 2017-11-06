@@ -1,0 +1,5 @@
+This package contains the Mesa OpenGL libraries for GLX and EGL clients.
+These include libEGL, libGL, and libglesv2 as well as utlity libraries
+libglapi and gbm.
+
+WWW: http://www.mesa3d.org/

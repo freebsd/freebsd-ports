@@ -2,7 +2,8 @@
 #   $MCom: ports/finance/gnucash/Makefile,v 1.26 2008/12/31 03:25:18 mezz Exp $
 
 PORTNAME=	gnucash
-PORTVERSION=	2.6.15
+PORTVERSION=	2.6.18
+DISTVERSIONSUFFIX=-1
 CATEGORIES=	finance gnome
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20%28stable%29/${PORTVERSION}
 
@@ -41,8 +42,10 @@ AQBANKING_CONFIGURE_ENABLE=aqbanking
 AQBANKING_LIB_DEPENDS=	libgwengui-gtk2.so:devel/gwenhywfar-gtk2 \
 			libktoblzcheck.so:finance/ktoblzcheck \
 			libaqbanking.so:finance/aqbanking
+AQBANKING_VARS=		GLIB_SCHEMAS+=org.gnucash.dialogs.import.hbci.gschema.xml
 OFX_CONFIGURE_ENABLE=	ofx
 OFX_LIB_DEPENDS=	libofx.so:finance/libofx
+OFX_VARS=		GLIB_SCHEMAS+=org.gnucash.dialogs.import.ofx.gschema.xml
 DATABASE_CONFIGURE_ENABLE=dbi
 DATABASE_BUILD_DEPENDS=	libdbi-drivers>=0:databases/libdbi-drivers
 DATABASE_LIB_DEPENDS=	libdbi.so:databases/libdbi
@@ -61,9 +64,10 @@ GUILE2_LIB_DEPENDS=     libguile-2.0.so:lang/guile2
 GUILE2_BUILD_DEPENDS=	slib-guile2>0:lang/slib-guile2
 GUILE2_RUN_DEPENDS=	slib-guile2>0:lang/slib-guile2
 
-USE_XORG=	x11
 USES=		compiler:c++11-lib desktop-file-utils gettext gmake libtool localbase \
 		perl5 pkgconfig shebangfix tar:bzip2
+USE_XORG=	x11
+USE_CXXSTD=	c++11
 INSTALLS_ICONS=	yes
 USE_GNOME+=	cairo gtk20 intltool libgnomecanvas libxml2 libxslt
 GNU_CONFIGURE=	yes
@@ -71,6 +75,7 @@ USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--disable-error-on-warning \
 		--disable-doxygen
 SHEBANG_FILES=	src/gnc-test-env.pl src/quotes/gnc-fq-dump
+WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 
 GLIB_SCHEMAS=	org.gnucash.dialogs.business.gschema.xml \
 		org.gnucash.dialogs.checkprinting.gschema.xml \
@@ -89,24 +94,13 @@ GLIB_SCHEMAS=	org.gnucash.dialogs.business.gschema.xml \
 		org.gnucash.window.pages.account.tree.gschema.xml \
 		org.gnucash.window.pages.gschema.xml
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MAQBANKING}
-GLIB_SCHEMAS+=	org.gnucash.dialogs.import.hbci.gschema.xml
-.endif
-
-.if ${PORT_OPTIONS:MOFX}
-GLIB_SCHEMAS+=	org.gnucash.dialogs.import.ofx.gschema.xml
-.endif
-
 .include <bsd.port.pre.mk>
 
 .if ${CHOSEN_COMPILER_TYPE} == gcc
 LDFLAGS+=	-lstdc++
 .endif
 
-post-install:
-.if ${PORT_OPTIONS:MPYTHON}
+post-install-PYTHON-on:
 	@(cd ${STAGEDIR}${PREFIX} \
 		&& ${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py \
 		-d ${PYTHONPREFIX_SITELIBDIR} -f ${PYTHONPREFIX_SITELIBDIR:S;${PREFIX}/;;}/${PORTNAME})
@@ -114,7 +108,8 @@ post-install:
 		&& ${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py \
 		-d ${PYTHONPREFIX_SITELIBDIR} -f ${PYTHONPREFIX_SITELIBDIR:S;${PREFIX}/;;}/${PORTNAME})
 	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/gnucash/_gnucash_core_c.so
-.endif
+
+post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/lib*so*
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/gnucash/lib*.so
 

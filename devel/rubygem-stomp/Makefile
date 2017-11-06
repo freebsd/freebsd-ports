@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	stomp
-PORTVERSION=	1.4.3
+PORTVERSION=	1.4.4
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -13,8 +13,10 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USES=		gem
+USES=		gem shebangfix
 
 PLIST_FILES=	bin/catstomp bin/stompcat
+
+SHEBANG_FILES=	examples/*.sh test/*.sh
 
 .include <bsd.port.mk>

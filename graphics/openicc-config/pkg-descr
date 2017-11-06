@@ -1,0 +1,10 @@
+The OpenICC configuration data base allows to store, share and
+manipulate colour management informations.
+
+Part of that is a file format based on JSON and a implementation
+of an according library for easy access.
+
+Features:
+  *  access to OpenICC device JSON DB
+
+WWW: https://github.com/OpenICC/config

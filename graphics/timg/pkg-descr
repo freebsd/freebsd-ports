@@ -1,0 +1,11 @@
+timg - Terminal Image Viewer
+
+A viewer that uses 24-Bit color capabilities and unicode
+character blocks to display images in the terminal.
+Displays regular images, plays animated gifs or allows to
+scroll static images.
+
+Very useful for if you want to have a quick visual check
+without starting a bulky image viewer or in an SSH session.
+
+WWW: https://github.com/hzeller/timg

@@ -3,7 +3,7 @@
 
 PORTNAME=	cursor-neutral-theme
 DISTVERSION=	1.13a
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-themes
 MASTER_SITES=	http://www.gnome-look.org/CONTENT/content-files/
 DISTNAME=	28310-neutral-${DISTVERSION}
@@ -16,8 +16,8 @@ NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/neutral
 
 do-install:
-	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/X11/icons/neutral/cursors
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/neutral/cursors
 	${INSTALL_DATA} ${WRKSRC}/cursors/* \
-		${STAGEDIR}${PREFIX}/lib/X11/icons/neutral/cursors
+		${STAGEDIR}${PREFIX}/share/icons/neutral/cursors
 
 .include <bsd.port.mk>

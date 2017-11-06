@@ -5,18 +5,15 @@ PORTNAME=	expect
 PORTVERSION=	0.3.3
 PORTREVISION=	2
 CATEGORIES=	devel pear
-MASTER_SITES=	http://pecl.php.net/get/
-PKGNAMEPREFIX=	pecl-
-DIST_SUBDIR=	PECL
 
-MAINTAINER=	joneum@bsdproject.de
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	PHP extension for expect library
 
 LICENSE=	PHP301
 
 LIB_DEPENDS=	libexpect.so:lang/expect
 
-USES=		php:ext tar:tgz tcl:86
+USES=		php:pecl tcl:86
 IGNORE_WITH_PHP=	70
 
 CFLAGS+=	-I${TCL_INCLUDEDIR}

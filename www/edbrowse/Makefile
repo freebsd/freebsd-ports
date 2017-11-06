@@ -2,7 +2,7 @@
 
 PORTNAME=	edbrowse
 PORTVERSION=	3.5.1
-PORTREVISION=	1
+PORTREVISION=	4
 CATEGORIES=	www editors
 MASTER_SITES=	http://the-brannons.com/edbrowse/ \
 		http://rithmomachia.org/edbrowse/
@@ -17,8 +17,9 @@ LIB_DEPENDS=	libpcre.so:devel/pcre \
 		libmozjs-24.so:lang/spidermonkey24 \
 		libcurl.so:ftp/curl
 
-USE_OPENSSL=	yes
-USES=		compiler:c11 readline zip
+BROKEN_powerpc64=	fails to link: html.o: undefined reference to std::__cxx11::basic_string
+
+USES=		compiler:c11 readline zip ssl
 
 OPTIONS_DEFINE=	DOCS
 

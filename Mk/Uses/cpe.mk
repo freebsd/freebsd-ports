@@ -16,7 +16,7 @@
 #			otherwise ${ARCH}.
 # CPE_OTHER		Defaults to ${PORTREVISION} if non-zero.
 #
-# MAINTAINER: ports-secteam@freebsd.org
+# MAINTAINER: ports-secteam@FreeBSD.org
 
 .if !defined(_INCLUDE_USES_CPE_MK)
 _INCLUDE_USES_CPE_MK=    yes

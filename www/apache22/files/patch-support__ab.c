@@ -1,6 +1,6 @@
 Backport ab from apache 2.4.x (r1663405)
 =============================================================
---- support/ab.c.orig	2014-03-12 11:53:12 UTC
+--- support/ab.c.orig	2017-01-05 18:57:49 UTC
 +++ support/ab.c
 @@ -156,25 +156,8 @@
  #include "ap_config_auto.h"
@@ -29,7 +29,7 @@ Backport ab from apache 2.4.x (r1663405)
  #include <openssl/rsa.h>
  #include <openssl/crypto.h>
  #include <openssl/x509.h>
-@@ -224,19 +207,25 @@ typedef STACK_OF(X509) X509_STACK_TYPE;
+@@ -232,19 +215,25 @@ typedef STACK_OF(X509) X509_STACK_TYPE;
  /* maximum number of requests on a time limited test */
  #define MAX_REQUESTS (INT_MAX > 50000 ? 50000 : INT_MAX)
  
@@ -61,7 +61,7 @@ Backport ab from apache 2.4.x (r1663405)
      int state;
      apr_size_t read;            /* amount of bytes read */
      apr_size_t bread;           /* amount of body read */
-@@ -267,8 +256,8 @@ struct data {
+@@ -275,8 +264,8 @@ struct data {
      apr_interval_time_t time;     /* time for connection */
  };
  
@@ -72,7 +72,7 @@ Backport ab from apache 2.4.x (r1663405)
  #define ap_round_ms(a) ((apr_time_t)((a) + 500)/1000)
  #define ap_double_ms(a) ((double)(a)/1000.0)
  #define MAX_CONCURRENCY 20000
-@@ -277,35 +266,38 @@ struct data {
+@@ -285,35 +274,38 @@ struct data {
  
  int verbosity = 0;      /* no verbosity by default */
  int recverrok = 0;      /* ok to proceed after socket receive errors */
@@ -125,7 +125,7 @@ Backport ab from apache 2.4.x (r1663405)
  int isproxy = 0;
  apr_interval_time_t aprtimeout = apr_time_from_sec(30); /* timeout value */
  
-@@ -348,7 +340,7 @@ BIO *bio_out,*bio_err;
+@@ -356,7 +348,7 @@ BIO *bio_out,*bio_err;
  apr_time_t start, lasttime, stoptime;
  
  /* global request (and its length) */
@@ -134,7 +134,7 @@ Backport ab from apache 2.4.x (r1663405)
  char *request = _request;
  apr_size_t reqlen;
  
-@@ -364,6 +356,7 @@ apr_pool_t *cntxt;
+@@ -372,6 +364,7 @@ apr_pool_t *cntxt;
  
  apr_pollset_t *readbits;
  
@@ -142,7 +142,7 @@ Backport ab from apache 2.4.x (r1663405)
  apr_sockaddr_t *destsa;
  
  #ifdef NOT_ASCII
-@@ -377,7 +370,7 @@ static void close_connection(struct conn
+@@ -385,7 +378,7 @@ static void close_connection(struct conn
  
  /* simple little function to write an error string and exit */
  
@@ -151,7 +151,7 @@ Backport ab from apache 2.4.x (r1663405)
  {
      fprintf(stderr, "%s\n", s);
      if (done)
-@@ -387,7 +380,7 @@ static void err(char *s)
+@@ -395,7 +388,7 @@ static void err(char *s)
  
  /* simple little function to write an APR error string and exit */
  
@@ -160,7 +160,7 @@ Backport ab from apache 2.4.x (r1663405)
  {
      char buf[120];
  
-@@ -399,6 +392,87 @@ static void apr_err(char *s, apr_status_
+@@ -407,6 +400,87 @@ static void apr_err(char *s, apr_status_
      exit(rv);
  }
  
@@ -248,7 +248,7 @@ Backport ab from apache 2.4.x (r1663405)
  /* --------------------------------------------------------- */
  /* write out request to a connection - assumes we can write
   * (small) request out in one go into our new socket buffer
-@@ -464,7 +538,6 @@ static int ssl_rand_choosenum(int l, int
+@@ -472,7 +546,6 @@ static int ssl_rand_choosenum(int l, int
  
  static void ssl_rand_seed(void)
  {
@@ -256,7 +256,7 @@ Backport ab from apache 2.4.x (r1663405)
      int n, l;
      time_t t;
      pid_t pid;
-@@ -476,7 +549,6 @@ static void ssl_rand_seed(void)
+@@ -484,7 +557,6 @@ static void ssl_rand_seed(void)
      t = time(NULL);
      l = sizeof(time_t);
      RAND_seed((unsigned char *)&t, l);
@@ -264,7 +264,7 @@ Backport ab from apache 2.4.x (r1663405)
  
      /*
       * seed in the current process id (usually just 4 bytes)
-@@ -484,14 +556,12 @@ static void ssl_rand_seed(void)
+@@ -492,14 +564,12 @@ static void ssl_rand_seed(void)
      pid = getpid();
      l = sizeof(pid_t);
      RAND_seed((unsigned char *)&pid, l);
@@ -279,7 +279,7 @@ Backport ab from apache 2.4.x (r1663405)
  }
  
  static int ssl_print_connection_info(BIO *bio, SSL *ssl)
-@@ -514,6 +584,7 @@ static int ssl_print_connection_info(BIO
+@@ -522,6 +592,7 @@ static int ssl_print_connection_info(BIO
  static void ssl_print_cert_info(BIO *bio, X509 *cert)
  {
      X509_NAME *dn;
@@ -287,7 +287,7 @@ Backport ab from apache 2.4.x (r1663405)
      char buf[1024];
  
      BIO_printf(bio, "Certificate version: %ld\n", X509_get_version(cert)+1);
-@@ -525,8 +596,10 @@ static void ssl_print_cert_info(BIO *bio
+@@ -533,8 +604,10 @@ static void ssl_print_cert_info(BIO *bio
      ASN1_UTCTIME_print(bio, X509_get_notAfter(cert));
      BIO_printf(bio,"\n");
  
@@ -299,7 +299,7 @@ Backport ab from apache 2.4.x (r1663405)
  
      dn = X509_get_issuer_name(cert);
      X509_NAME_oneline(dn, buf, sizeof(buf));
-@@ -553,7 +626,6 @@ static void ssl_print_info(struct connec
+@@ -561,7 +634,6 @@ static void ssl_print_info(struct connec
          for (i=1; i<count; i++) {
              cert = (X509 *)SK_VALUE(sk, i);
              ssl_print_cert_info(bio_out, cert);
@@ -307,7 +307,7 @@ Backport ab from apache 2.4.x (r1663405)
      }
      }
      cert = SSL_get_peer_certificate(c->ssl);
-@@ -574,7 +646,6 @@ static void ssl_proceed_handshake(struct
+@@ -582,7 +654,6 @@ static void ssl_proceed_handshake(struct
  
      while (do_next) {
          int ret, ecode;
@@ -315,7 +315,7 @@ Backport ab from apache 2.4.x (r1663405)
  
          ret = SSL_do_handshake(c->ssl);
          ecode = SSL_get_error(c->ssl, ret);
-@@ -596,7 +667,7 @@ static void ssl_proceed_handshake(struct
+@@ -604,7 +675,7 @@ static void ssl_proceed_handshake(struct
                  else
                      pk_bits = 0;  /* Anon DH */
  
@@ -324,7 +324,7 @@ Backport ab from apache 2.4.x (r1663405)
                  apr_snprintf(ssl_info, 128, "%s,%s,%d,%d",
                               SSL_get_version(c->ssl),
                               SSL_CIPHER_get_name(ci),
-@@ -606,11 +677,7 @@ static void ssl_proceed_handshake(struct
+@@ -614,11 +685,7 @@ static void ssl_proceed_handshake(struct
              do_next = 0;
              break;
          case SSL_ERROR_WANT_READ:
@@ -337,7 +337,7 @@ Backport ab from apache 2.4.x (r1663405)
              do_next = 0;
              break;
          case SSL_ERROR_WANT_WRITE:
-@@ -634,6 +701,10 @@ static void ssl_proceed_handshake(struct
+@@ -642,6 +709,10 @@ static void ssl_proceed_handshake(struct
  
  static void write_request(struct connection * c)
  {
@@ -348,7 +348,7 @@ Backport ab from apache 2.4.x (r1663405)
      do {
          apr_time_t tnow;
          apr_size_t l = c->rwrite;
-@@ -649,7 +720,7 @@ static void write_request(struct connect
+@@ -657,7 +728,7 @@ static void write_request(struct connect
              c->connect = tnow;
              c->rwrote = 0;
              c->rwrite = reqlen;
@@ -357,7 +357,7 @@ Backport ab from apache 2.4.x (r1663405)
                  c->rwrite += postlen;
          }
          else if (tnow > c->connect + aprtimeout) {
-@@ -686,16 +757,9 @@ static void write_request(struct connect
+@@ -694,16 +765,9 @@ static void write_request(struct connect
          c->rwrite -= l;
      } while (c->rwrite);
  
@@ -376,7 +376,7 @@ Backport ab from apache 2.4.x (r1663405)
  }
  
  /* --------------------------------------------------------- */
-@@ -760,7 +824,10 @@ static void output_results(int sig)
+@@ -768,7 +832,10 @@ static void output_results(int sig)
  #endif
      printf("\n");
      printf("Document Path:          %s\n", path);
@@ -388,7 +388,7 @@ Backport ab from apache 2.4.x (r1663405)
      printf("\n");
      printf("Concurrency Level:      %d\n", concurrency);
      printf("Time taken for tests:   %.3f seconds\n", timetaken);
-@@ -769,16 +836,16 @@ static void output_results(int sig)
+@@ -777,16 +844,16 @@ static void output_results(int sig)
      if (bad)
          printf("   (Connect: %d, Receive: %d, Length: %d, Exceptions: %d)\n",
              err_conn, err_recv, err_length, err_except);
@@ -410,7 +410,7 @@ Backport ab from apache 2.4.x (r1663405)
      printf("HTML transferred:       %" APR_INT64_T_FMT " bytes\n", totalbread);
  
      /* avoid divide by zero */
-@@ -791,11 +858,11 @@ static void output_results(int sig)
+@@ -799,11 +866,11 @@ static void output_results(int sig)
                 (double) timetaken * 1000 / done);
          printf("Transfer rate:          %.2f [Kbytes/sec] received\n",
                 (double) totalread / 1024 / timetaken);
@@ -425,7 +425,7 @@ Backport ab from apache 2.4.x (r1663405)
          }
      }
  
-@@ -943,9 +1010,8 @@ static void output_results(int sig)
+@@ -951,9 +1018,8 @@ static void output_results(int sig)
              printf("              min   avg   max\n");
  #define CONF_FMT_STRING "%5" APR_TIME_T_FMT " %5" APR_TIME_T_FMT "%5" APR_TIME_T_FMT "\n"
              printf("Connect:    " CONF_FMT_STRING, mincon, meancon, maxcon);
@@ -437,7 +437,7 @@ Backport ab from apache 2.4.x (r1663405)
              printf("Total:      " CONF_FMT_STRING, mintot, meantot, maxtot);
  #undef CONF_FMT_STRING
          }
-@@ -972,7 +1038,7 @@ static void output_results(int sig)
+@@ -980,7 +1046,7 @@ static void output_results(int sig)
                  exit(1);
              }
              fprintf(out, "" "Percentage served" "," "Time in ms" "\n");
@@ -446,7 +446,7 @@ Backport ab from apache 2.4.x (r1663405)
                  double t;
                  if (i == 0)
                      t = ap_double_ms(stats[0].time);
-@@ -1033,9 +1099,14 @@ static void output_html_results(void)
+@@ -1041,9 +1107,14 @@ static void output_html_results(void)
      printf("<tr %s><th colspan=2 %s>Document Path:</th>"
         "<td colspan=2 %s>%s</td></tr>\n",
         trstring, tdstring, tdstring, path);
@@ -464,7 +464,7 @@ Backport ab from apache 2.4.x (r1663405)
      printf("<tr %s><th colspan=2 %s>Concurrency Level:</th>"
         "<td colspan=2 %s>%d</td></tr>\n",
         trstring, tdstring, tdstring, concurrency);
-@@ -1062,14 +1133,11 @@ static void output_html_results(void)
+@@ -1070,14 +1141,11 @@ static void output_html_results(void)
      printf("<tr %s><th colspan=2 %s>Total transferred:</th>"
         "<td colspan=2 %s>%" APR_INT64_T_FMT " bytes</td></tr>\n",
         trstring, tdstring, tdstring, totalread);
@@ -483,7 +483,7 @@ Backport ab from apache 2.4.x (r1663405)
      printf("<tr %s><th colspan=2 %s>HTML transferred:</th>"
         "<td colspan=2 %s>%" APR_INT64_T_FMT " bytes</td></tr>\n",
         trstring, tdstring, tdstring, totalbread);
-@@ -1078,19 +1146,19 @@ static void output_html_results(void)
+@@ -1086,19 +1154,19 @@ static void output_html_results(void)
      if (timetaken) {
          printf("<tr %s><th colspan=2 %s>Requests per second:</th>"
             "<td colspan=2 %s>%.2f</td></tr>\n",
@@ -508,7 +508,7 @@ Backport ab from apache 2.4.x (r1663405)
          }
      }
      {
-@@ -1154,7 +1222,7 @@ static void start_connect(struct connect
+@@ -1162,7 +1230,7 @@ static void start_connect(struct connect
      apr_status_t rv;
  
      if (!(started < requests))
@@ -517,7 +517,7 @@ Backport ab from apache 2.4.x (r1663405)
  
      c->read = 0;
      c->bread = 0;
-@@ -1171,18 +1239,30 @@ static void start_connect(struct connect
+@@ -1179,18 +1247,30 @@ static void start_connect(struct connect
                  SOCK_STREAM, 0, c->ctx)) != APR_SUCCESS) {
      apr_err("socket", rv);
      }
@@ -550,7 +550,7 @@ Backport ab from apache 2.4.x (r1663405)
                                  windowsize);
          if (rv != APR_SUCCESS && rv != APR_ENOTIMPL) {
              apr_err("socket receive buffer", rv);
-@@ -1215,21 +1295,12 @@ static void start_connect(struct connect
+@@ -1223,21 +1303,12 @@ static void start_connect(struct connect
  #endif
      if ((rv = apr_socket_connect(c->aprsock, destsa)) != APR_SUCCESS) {
          if (APR_STATUS_IS_EINPROGRESS(rv)) {
@@ -574,7 +574,7 @@ Backport ab from apache 2.4.x (r1663405)
              apr_socket_close(c->aprsock);
              err_conn++;
              if (bad++ > 10) {
-@@ -1237,15 +1308,14 @@ static void start_connect(struct connect
+@@ -1245,15 +1316,14 @@ static void start_connect(struct connect
                     "\nTest aborted after 10 failures\n\n");
                  apr_err("apr_socket_connect()", rv);
              }
@@ -592,7 +592,7 @@ Backport ab from apache 2.4.x (r1663405)
  #ifdef USE_SSL
      if (c->ssl) {
          ssl_proceed_handshake(c);
-@@ -1274,7 +1344,7 @@ static void close_connection(struct conn
+@@ -1282,7 +1352,7 @@ static void close_connection(struct conn
              /* first time here */
              doclen = c->bread;
          }
@@ -601,7 +601,7 @@ Backport ab from apache 2.4.x (r1663405)
              bad++;
              err_length++;
          }
-@@ -1293,21 +1363,15 @@ static void close_connection(struct conn
+@@ -1301,21 +1371,15 @@ static void close_connection(struct conn
          }
      }
  
@@ -630,7 +630,7 @@ Backport ab from apache 2.4.x (r1663405)
  
      /* connect again */
      start_connect(c);
-@@ -1337,11 +1401,21 @@ static void read_connection(struct conne
+@@ -1345,11 +1409,21 @@ static void read_connection(struct conne
                  good++;
                  close_connection(c);
              }
@@ -653,7 +653,7 @@ Backport ab from apache 2.4.x (r1663405)
                  ERR_print_errors(bio_err);
                  close_connection(c);
              }
-@@ -1425,10 +1499,7 @@ static void read_connection(struct conne
+@@ -1433,10 +1507,7 @@ static void read_connection(struct conne
              }
              else {
              /* header is in invalid or too big - close connection */
@@ -665,7 +665,7 @@ Backport ab from apache 2.4.x (r1663405)
                  apr_socket_close(c->aprsock);
                  err_response++;
                  if (bad++ > 10) {
-@@ -1444,12 +1515,14 @@ static void read_connection(struct conne
+@@ -1452,12 +1523,14 @@ static void read_connection(struct conne
                   * this is first time, extract some interesting info
                   */
                  char *p, *q;
@@ -682,7 +682,7 @@ Backport ab from apache 2.4.x (r1663405)
                  }
                  *q = 0;
              }
-@@ -1491,12 +1564,12 @@ static void read_connection(struct conne
+@@ -1499,12 +1572,12 @@ static void read_connection(struct conne
                  if (cl) {
                      c->keepalive = 1;
                      /* response to HEAD doesn't have entity body */
@@ -697,7 +697,7 @@ Backport ab from apache 2.4.x (r1663405)
                  }
              }
              c->bread += c->cbx - (s + l - c->cbuff) + r - tocopy;
-@@ -1517,7 +1590,7 @@ static void read_connection(struct conne
+@@ -1525,7 +1598,7 @@ static void read_connection(struct conne
              /* first time here */
              doclen = c->bread;
          }
@@ -706,7 +706,7 @@ Backport ab from apache 2.4.x (r1663405)
              bad++;
              err_length++;
          }
-@@ -1552,7 +1625,8 @@ static void read_connection(struct conne
+@@ -1560,7 +1633,8 @@ static void read_connection(struct conne
  static void test(void)
  {
      apr_time_t stoptime;
@@ -716,7 +716,7 @@ Backport ab from apache 2.4.x (r1663405)
      int i;
      apr_status_t status;
      int snprintf_res = 0;
-@@ -1578,11 +1652,16 @@ static void test(void)
+@@ -1586,11 +1660,16 @@ static void test(void)
      fflush(stdout);
      }
  
@@ -736,7 +736,7 @@ Backport ab from apache 2.4.x (r1663405)
          apr_err("apr_pollset_create failed", status);
      }
  
-@@ -1612,12 +1691,12 @@ static void test(void)
+@@ -1620,12 +1699,12 @@ static void test(void)
      }
  
      /* setup request */
@@ -751,7 +751,7 @@ Backport ab from apache 2.4.x (r1663405)
              (isproxy) ? fullurl : path,
              keepalive ? "Connection: Keep-Alive\r\n" : "",
              cookie, auth, hdrs);
-@@ -1630,32 +1709,28 @@ static void test(void)
+@@ -1638,32 +1717,28 @@ static void test(void)
              "Content-type: %s\r\n"
              "%s"
              "\r\n",
@@ -791,7 +791,7 @@ Backport ab from apache 2.4.x (r1663405)
          strcpy(buff, request);
          memcpy(buff + reqlen, postdata, postlen);
          request = buff;
-@@ -1673,8 +1748,20 @@ static void test(void)
+@@ -1681,8 +1756,20 @@ static void test(void)
      }
  #endif              /* NOT_ASCII */
  
@@ -814,7 +814,7 @@ Backport ab from apache 2.4.x (r1663405)
         != APR_SUCCESS) {
          char buf[120];
          apr_snprintf(buf, sizeof(buf),
-@@ -1686,7 +1773,7 @@ static void test(void)
+@@ -1694,7 +1781,7 @@ static void test(void)
      start = lasttime = apr_time_now();
      stoptime = tlimit ? (start + apr_time_from_sec(tlimit)) : AB_MAX;
  
@@ -823,7 +823,7 @@ Backport ab from apache 2.4.x (r1663405)
      /* Output the results if the user terminates the run early. */
      apr_signal(SIGINT, output_results);
  #endif
-@@ -1699,24 +1786,19 @@ static void test(void)
+@@ -1707,24 +1794,19 @@ static void test(void)
  
      do {
          apr_int32_t n;
@@ -853,7 +853,7 @@ Backport ab from apache 2.4.x (r1663405)
  
              /*
               * If the connection isn't connected how can we check it?
-@@ -1724,7 +1806,7 @@ static void test(void)
+@@ -1732,7 +1814,7 @@ static void test(void)
              if (c->state == STATE_UNCONNECTED)
                  continue;
  
@@ -862,7 +862,7 @@ Backport ab from apache 2.4.x (r1663405)
  
  #ifdef USE_SSL
              if (c->state == STATE_CONNECTED && c->ssl && SSL_in_init(c->ssl)) {
-@@ -1745,22 +1827,25 @@ static void test(void)
+@@ -1753,22 +1835,25 @@ static void test(void)
               * connection is done and we loop here endlessly calling
               * apr_poll().
               */
@@ -896,7 +896,7 @@ Backport ab from apache 2.4.x (r1663405)
                          apr_socket_close(c->aprsock);
                          err_conn++;
                          if (bad++ > 10) {
-@@ -1768,13 +1853,11 @@ static void test(void)
+@@ -1776,13 +1861,11 @@ static void test(void)
                                      "\nTest aborted after 10 failures\n\n");
                              apr_err("apr_socket_connect()", rv);
                          }
@@ -911,7 +911,7 @@ Backport ab from apache 2.4.x (r1663405)
  #ifdef USE_SSL
                          if (c->ssl)
                              ssl_proceed_handshake(c);
-@@ -1787,25 +1870,9 @@ static void test(void)
+@@ -1795,25 +1878,9 @@ static void test(void)
                      write_request(c);
                  }
              }
@@ -938,7 +938,7 @@ Backport ab from apache 2.4.x (r1663405)
      if (heartbeatres)
          fprintf(stderr, "Finished %d requests\n", done);
      else
-@@ -1823,14 +1890,14 @@ static void test(void)
+@@ -1831,14 +1898,14 @@ static void test(void)
  static void copyright(void)
  {
      if (!use_html) {
@@ -955,7 +955,7 @@ Backport ab from apache 2.4.x (r1663405)
          printf(" Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/<br>\n");
          printf(" Licensed to The Apache Software Foundation, http://www.apache.org/<br>\n");
          printf("</p>\n<p>\n");
-@@ -1849,12 +1916,16 @@ static void usage(const char *progname)
+@@ -1857,12 +1924,16 @@ static void usage(const char *progname)
   */
      fprintf(stderr, "Options are:\n");
      fprintf(stderr, "    -n requests     Number of requests to perform\n");
@@ -975,7 +975,7 @@ Backport ab from apache 2.4.x (r1663405)
      fprintf(stderr, "                    'application/x-www-form-urlencoded'\n");
      fprintf(stderr, "                    Default is 'text/plain'\n");
      fprintf(stderr, "    -v verbosity    How much troubleshooting info to print\n");
-@@ -1863,7 +1934,7 @@ static void usage(const char *progname)
+@@ -1871,7 +1942,7 @@ static void usage(const char *progname)
      fprintf(stderr, "    -x attributes   String to insert as table attributes\n");
      fprintf(stderr, "    -y attributes   String to insert as tr attributes\n");
      fprintf(stderr, "    -z attributes   String to insert as td or th attributes\n");
@@ -984,7 +984,7 @@ Backport ab from apache 2.4.x (r1663405)
      fprintf(stderr, "    -H attribute    Add Arbitrary header line, eg. 'Accept-Encoding: gzip'\n");
      fprintf(stderr, "                    Inserted after all normal header lines. (repeatable)\n");
      fprintf(stderr, "    -A attribute    Add Basic WWW Authentication, the attributes\n");
-@@ -1875,9 +1946,12 @@ static void usage(const char *progname)
+@@ -1883,9 +1954,12 @@ static void usage(const char *progname)
      fprintf(stderr, "    -k              Use HTTP KeepAlive feature\n");
      fprintf(stderr, "    -d              Do not show percentiles served table.\n");
      fprintf(stderr, "    -S              Do not show confidence estimators and warnings.\n");
@@ -997,8 +997,8 @@ Backport ab from apache 2.4.x (r1663405)
      fprintf(stderr, "    -h              Display usage information (this message)\n");
  #ifdef USE_SSL
  
-@@ -1887,6 +1961,12 @@ static void usage(const char *progname)
- #define SSL2_HELP_MSG ""
+@@ -1901,6 +1975,12 @@ static void usage(const char *progname)
+ #define SSL3_HELP_MSG ""
  #endif
  
 +#ifndef OPENSSL_NO_SSL3
@@ -1010,18 +1010,7 @@ Backport ab from apache 2.4.x (r1663405)
  #ifdef HAVE_TLSV1_X
  #define TLS1_X_HELP_MSG ", TLS1.1, TLS1.2"
  #else
-@@ -1894,8 +1974,8 @@ static void usage(const char *progname)
- #endif
- 
-     fprintf(stderr, "    -Z ciphersuite  Specify SSL/TLS cipher suite (See openssl ciphers)\n");
--    fprintf(stderr, "    -f protocol     Specify SSL/TLS protocol\n"); 
--    fprintf(stderr, "                    (" SSL2_HELP_MSG "SSL3, TLS1" TLS1_X_HELP_MSG " or ALL)\n");
-+    fprintf(stderr, "    -f protocol     Specify SSL/TLS protocol\n");
-+    fprintf(stderr, "                    (" SSL2_HELP_MSG SSL3_HELP_MSG "TLS1" TLS1_X_HELP_MSG " or ALL)\n");
- #endif
-     exit(EINVAL);
- }
-@@ -1904,7 +1984,7 @@ static void usage(const char *progname)
+@@ -1918,7 +1998,7 @@ static void usage(const char *progname)
  
  /* split URL into parts */
  
@@ -1030,7 +1019,7 @@ Backport ab from apache 2.4.x (r1663405)
  {
      char *cp;
      char *h;
-@@ -1935,9 +2015,7 @@ static int parse_url(char *url)
+@@ -1949,9 +2029,7 @@ static int parse_url(char *url)
  
      if ((cp = strchr(url, '/')) == NULL)
          return 1;
@@ -1041,7 +1030,7 @@ Backport ab from apache 2.4.x (r1663405)
      rv = apr_parse_addr_port(&hostname, &scope_id, &port, h, cntxt);
      if (rv != APR_SUCCESS || !hostname || scope_id) {
          return 1;
-@@ -1974,9 +2052,9 @@ static int parse_url(char *url)
+@@ -1988,9 +2066,9 @@ static int parse_url(char *url)
  
  /* ------------------------------------------------------- */
  
@@ -1053,7 +1042,7 @@ Backport ab from apache 2.4.x (r1663405)
  {
      apr_file_t *postfd;
      apr_finfo_t finfo;
-@@ -1997,11 +2075,7 @@ static int open_postfile(const char *pfi
+@@ -2011,11 +2089,7 @@ static int open_postfile(const char *pfi
          return rv;
      }
      postlen = (apr_size_t)finfo.size;
@@ -1066,7 +1055,7 @@ Backport ab from apache 2.4.x (r1663405)
      rv = apr_file_read_full(postfd, postdata, postlen, NULL);
      if (rv != APR_SUCCESS) {
          fprintf(stderr, "ab: Could not read POST data file: %s\n",
-@@ -2009,7 +2083,7 @@ static int open_postfile(const char *pfi
+@@ -2023,7 +2097,7 @@ static int open_postfile(const char *pfi
          return rv;
      }
      apr_file_close(postfd);
@@ -1075,7 +1064,7 @@ Backport ab from apache 2.4.x (r1663405)
  }
  
  /* ------------------------------------------------------- */
-@@ -2017,11 +2091,11 @@ static int open_postfile(const char *pfi
+@@ -2031,11 +2105,11 @@ static int open_postfile(const char *pfi
  /* sort out command-line args and call test */
  int main(int argc, const char * const argv[])
  {
@@ -1089,7 +1078,7 @@ Backport ab from apache 2.4.x (r1663405)
      char c;
  #ifdef USE_SSL
      AB_SSL_METHOD_CONST SSL_METHOD *meth = SSLv23_client_method();
-@@ -2033,12 +2107,13 @@ int main(int argc, const char * const ar
+@@ -2047,12 +2121,13 @@ int main(int argc, const char * const ar
      tdstring = "bgcolor=white";
      cookie = "";
      auth = "";
@@ -1104,7 +1093,7 @@ Backport ab from apache 2.4.x (r1663405)
  
  #ifdef NOT_ASCII
      status = apr_xlate_open(&to_ascii, "ISO-8859-1", APR_DEFAULT_CHARSET, cntxt);
-@@ -2058,15 +2133,17 @@ int main(int argc, const char * const ar
+@@ -2072,15 +2147,17 @@ int main(int argc, const char * const ar
      }
  #endif
  
@@ -1125,7 +1114,7 @@ Backport ab from apache 2.4.x (r1663405)
                  if (requests <= 0) {
                      err("Invalid number of requests\n");
                  }
-@@ -2078,76 +2155,80 @@ int main(int argc, const char * const ar
+@@ -2092,76 +2169,80 @@ int main(int argc, const char * const ar
                  heartbeatres = 0;
                  break;
              case 'c':
@@ -1235,7 +1224,7 @@ Backport ab from apache 2.4.x (r1663405)
                  tmp[l] = '\0';
  
                  auth = apr_pstrcat(cntxt, auth, "Authorization: Basic ", tmp,
-@@ -2157,27 +2238,27 @@ int main(int argc, const char * const ar
+@@ -2171,27 +2252,27 @@ int main(int argc, const char * const ar
                  /*
                   * assume username passwd already to be in colon separated form.
                   */
@@ -1271,7 +1260,7 @@ Backport ab from apache 2.4.x (r1663405)
                      opt_useragent = 1;
                  }
                  break;
-@@ -2190,7 +2271,7 @@ int main(int argc, const char * const ar
+@@ -2204,7 +2285,7 @@ int main(int argc, const char * const ar
                   */
              case 'x':
                  use_html = 1;
@@ -1280,7 +1269,7 @@ Backport ab from apache 2.4.x (r1663405)
                  break;
              case 'X':
                  {
-@@ -2198,22 +2279,22 @@ int main(int argc, const char * const ar
+@@ -2212,22 +2293,22 @@ int main(int argc, const char * const ar
                      /*
                       * assume proxy-name[:port]
                       */
@@ -1307,7 +1296,7 @@ Backport ab from apache 2.4.x (r1663405)
                  break;
              case 'h':
                  usage(argv[0]);
-@@ -2221,26 +2302,35 @@ int main(int argc, const char * const ar
+@@ -2235,28 +2316,34 @@ int main(int argc, const char * const ar
              case 'V':
                  copyright();
                  return 0;
@@ -1318,11 +1307,10 @@ Backport ab from apache 2.4.x (r1663405)
              case 'Z':
 -                ssl_cipher = strdup(optarg);
 +                ssl_cipher = strdup(opt_arg);
-+                break;
+                 break;
 +            case 'm':
 +                method = CUSTOM_METHOD;
 +                method_str[CUSTOM_METHOD] = strdup(opt_arg);
-                 break;
              case 'f':
 -                if (strncasecmp(optarg, "ALL", 3) == 0) {
 +                if (strncasecmp(opt_arg, "ALL", 3) == 0) {
@@ -1332,11 +1320,11 @@ Backport ab from apache 2.4.x (r1663405)
 +                } else if (strncasecmp(opt_arg, "SSL2", 4) == 0) {
                      meth = SSLv2_client_method();
  #endif
+ #ifndef OPENSSL_NO_SSL3
 -                } else if (strncasecmp(optarg, "SSL3", 4) == 0) {
-+#ifndef OPENSSL_NO_SSL3
 +                } else if (strncasecmp(opt_arg, "SSL3", 4) == 0) {
                      meth = SSLv3_client_method();
-+#endif
+ #endif
  #ifdef HAVE_TLSV1_X
 -                } else if (strncasecmp(optarg, "TLS1.1", 6) == 0) {
 +                } else if (strncasecmp(opt_arg, "TLS1.1", 6) == 0) {
@@ -1350,7 +1338,7 @@ Backport ab from apache 2.4.x (r1663405)
                      meth = TLSv1_client_method();
                  }
                  break;
-@@ -2253,6 +2343,10 @@ int main(int argc, const char * const ar
+@@ -2269,6 +2356,10 @@ int main(int argc, const char * const ar
          usage(argv[0]);
      }
  
@@ -1361,7 +1349,7 @@ Backport ab from apache 2.4.x (r1663405)
      if (parse_url(apr_pstrdup(cntxt, opt->argv[opt->ind++]))) {
          fprintf(stderr, "%s: invalid URL\n", argv[0]);
          usage(argv[0]);
-@@ -2296,6 +2390,10 @@ int main(int argc, const char * const ar
+@@ -2312,6 +2403,10 @@ int main(int argc, const char * const ar
          exit(1);
      }
      SSL_CTX_set_options(ssl_ctx, SSL_OP_ALL);

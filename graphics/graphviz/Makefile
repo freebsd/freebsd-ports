@@ -3,7 +3,7 @@
 
 PORTNAME=	graphviz
 PORTVERSION=	2.40.1
-PORTREVISION=	0
+PORTREVISION=	2
 CATEGORIES=	graphics tk
 MASTER_SITES=	http://www.graphviz.org/pub/graphviz/ARCHIVE/
 
@@ -22,15 +22,18 @@ LIB_DEPENDS=	libltdl.so:devel/libltdl \
 
 USES=		bison cpe gmake jpeg libtool:keepla pkgconfig pathfix shebangfix
 GNU_CONFIGURE=	yes
+# sincos is broken on armv6, see ports/220591
+CFLAGS_armv6=	-fno-builtin-sincos -fno-builtin-sin -fno-builtin-cos \
+		-fno-builtin-sincosf -fno-builtin-sinf -fno-builtin-cosf \
+		-fno-builtin-sincosl -fno-builtin-sinl -fno-builtin-cosl
+CFLAGS_armv7=	-fno-builtin-sincos -fno-builtin-sin -fno-builtin-cos \
+		-fno-builtin-sincosf -fno-builtin-sinf -fno-builtin-cosf \
+		-fno-builtin-sincosl -fno-builtin-sinl -fno-builtin-cosl
 LDFLAGS+=	-L${LOCALBASE}/lib
 CPPFLAGS+=	-I${LOCALBASE}/include
 PLIST_SUB=	PORTVERSION="${PORTVERSION}"
 
 MAKE_ENV=	EXPR_COMPAT=yes
-
-SHEBANG_LANG=	tcl
-tcl_OLD_CMD=	/usr/bin/tclsh
-tcl_CMD=	${TCLSH}
 
 FIX_INCLUDE=	\
 		lib/cdt/dthdr.h \
@@ -58,8 +61,8 @@ OPTIONS_DEFINE=	XPM DIGCOLA IPSEPCOLA ICONV NLS PANGOCAIRO LIBRSVG2 POPPLER \
 OPTIONS_DEFAULT=	XPM DIGCOLA IPSEPCOLA ICONV PANGOCAIRO NVTHREADS
 NO_OPTIONS_SORT=yes
 OPTIONS_SUB=	yes
-DIGCOLA_DESC=	neato layout engine wiwth DIGCOLA features
-IPSEPCOLA_DESC=	neato layout engine wiwth IPSEPCOLA features
+DIGCOLA_DESC=	neato layout engine with DIGCOLA features
+IPSEPCOLA_DESC=	neato layout engine with IPSEPCOLA features
 PANGOCAIRO_DESC=pangocairo support
 ANN_DESC=	ANN edge bundling support
 GTS_DESC=	GNU Triangulated Surface Library support
@@ -100,6 +103,7 @@ RUBY_USE=	RUBY=yes
 LUA_USES=	lua
 TCL_USES=	tcl:build
 TK_USES=	tk:build
+TK_IMPLIES=	TCL
 POPPLER_LIB_DEPENDS=	libpoppler-glib.so:graphics/poppler-glib
 ANN_LIB_DEPENDS=	libann.so:math/ann
 GTS_LIB_DEPENDS=	libgts.so:graphics/gts
@@ -113,39 +117,53 @@ GUILE_LIB_DEPENDS=	libguile-2.0.so:lang/guile2 \
 XPM_CONFIGURE_WITH=		x
 DIGCOLA_CONFIGURE_WITH=		digcola
 IPSEPCOLA_CONFIGURE_WITH=	ipsepcola
+IPSEPCOLA_IMPLIES=		DIGCOLA
 NLS_CONFIGURE_ENABLE=		nls
 PANGOCAIRO_CONFIGURE_WITH=	pangocairo
 LIBRSVG2_CONFIGURE_WITH=	rsvg
+LIBRSVG2_IMPLIES=		PANGOCAIRO
 POPPLER_CONFIGURE_WITH=		poppler
 ANN_CONFIGURE_WITH=		ann
 ANN_CONFIGURE_ENV=	ANN_CFLAGS=-I${LOCALBASE}/include ANN_LIBS=-lann
 GTS_CONFIGURE_WITH=		gts
 GTK2_CONFIGURE_WITH=		gtk
+GTK2_IMPLIES=			PANGOCAIRO
 GDK_CONFIGURE_WITH=		gdk
 GDK_PIXBUF_CONFIGURE_WITH=	gdk-pixbuf
+GDK_PIXBUF_IMPLIES=		GTK2 GDK
 GNOMEUI_CONFIGURE_WITH=		gnomeui
+GNOMEUI_IMPLIES=		GTK2
 SMYRNA_CONFIGURE_WITH=		smyrna glade gtkgl gtkglext
+SMYRNA_IMPLIES=			GTK2 GTS
 GVEDIT_CONFIGURE_ON=		--with-gvedit=yes
 GVEDIT_CONFIGURE_OFF=		--with-qt=no
 MING_CONFIGURE_WITH=		ming
 DEVIL_CONFIGURE_WITH=		devil
 GHOSTSCRIPT_CONFIGURE_OFF=	--with-ghostscript=no
+GHOSTSCRIPT_IMPLIES=		PANGOCAIRO
 PERL_CONFIGURE_ENABLE=		perl
+PERL_VARS=		SHEBANG_FILES+=tclpkg/gv/demo/modgraph.pl
 PHP_CONFIGURE_ENABLE=		php
 PHP_CPPFLAGS=		-I${LOCALBASE}/include/php/Zend
+PHP_VARS=		SHEBANG_FILES+=tclpkg/gv/demo/modgraph.php
 PYTHON_CONFIGURE_ENABLE=	python
-PYTHON_LDFLAGS=		"-L${PYTHON_LIBDIR}"
+PYTHON_LDFLAGS=		"-L${PYTHONBASE}/lib"
+PYTHON_VARS=		SHEBANG_FILES+=tclpkg/gv/demo/modgraph.py
 RUBY_CONFIGURE_ENABLE=		ruby
 RUBY_CONFIGURE_ENV=	RUBY="${RUBY}"
+RUBY_VARS=		SHEBANG_FILES+=tclpkg/gv/demo/modgraph.rb
 LUA_CONFIGURE_ENABLE=		lua
 LUA_CFLAGS=		-I${LUA_INCDIR}
 LUA_LDFLAGS=		-L${LUA_LIBDIR} -lm
 LUA_CONFIGURE_ENV=	LUA="${LUA_BINDIR}/lua" \
 			LUA_INSTALL_DIR=${PREFIX}/lib/lua/${LUA_VER}
+LUA_VARS=		SHEBANG_FILES+=tclpkg/gv/demo/modgraph.lua
 TCL_CONFIGURE_ENABLE=		tcl
 TCL_CPPFLAGS=		-I${TK_INCLUDEDIR}
 TCL_CONFIGURE_ON=	--with-tclsh=${TCLSH} --enable-tcl=yes
 TCL_CONFIGURE_ENV=	TCLCONFIG="${TCL_LIBDIR}/tclConfig.sh"
+TCL_VARS=		SHEBANG_FILES+=tclpkg/gv/demo/modgraph.tcl \
+			PLIST_SUB+=TCL_VER="${TCL_VER}"
 TK_CPPFLAGS=		-I${TK_INCLUDEDIR}
 TK_CONFIGURE_ON=	--with-wish=${WISH}
 TK_CONFIGURE_ENV=	TKCONFIG="${TK_LIBDIR}/tkConfig.sh"
@@ -172,15 +190,8 @@ BROKEN=	Ming incomplete, uses removed libgraph
 .endif
 
 .if ${PORT_OPTIONS:MTK}
-.if empty(PORT_OPTIONS:MTCL)
-IGNORE=	option TCL is required for option TK
-.endif
 # USES=tk:build is BROKEN: Does not allow to set both tcl and tk depedencies
 BUILD_DEPENDS+=	tclsh${TCL_VER}:lang/tcl${_TCLTK_WANTED_VERSION}
-.endif
-
-.if ${PORT_OPTIONS:MTCL}
-PLIST_SUB+=	TCL_VER="${TCL_VER}"
 .endif
 
 .if ${PORT_OPTIONS:MICONV}
@@ -188,52 +199,6 @@ CONFIGURE_ARGS+=	--with-iconvlibdir=${ICONV_PREFIX}/lib
 CONFIGURE_ARGS+=	--with-iconvincludedir=${ICONV_PREFIX}/include
 .else
 CONFIGURE_ARGS+=	--without-libiconv-prefix
-.endif
-
-.if ${PORT_OPTIONS:MLIBRSVG2}
-.if empty(PORT_OPTIONS:MPANGOCAIRO)
-IGNORE=	option PANGOCAIRO is required for option LIBRVG2
-.endif
-.endif
-
-.if ${PORT_OPTIONS:MGHOSTSCRIPT}
-.if empty(PORT_OPTIONS:MPANGOCAIRO)
-IGNORE=	option PANGOCAIRO is required for option GHOSTSCRIPT
-.endif
-.endif
-
-.if ${PORT_OPTIONS:MGTK2}
-.if empty(PORT_OPTIONS:MPANGOCAIRO)
-IGNORE=	option PANGOCAIRO is required for option GTK2
-.endif
-.else
-.if ${PORT_OPTIONS:MGNOMEUI}
-IGNORE=	option GTK2 is required for option GNOMEUI
-.endif
-.endif
-
-.if ${PORT_OPTIONS:MGDK_PIXBUF}
-.if empty(PORT_OPTIONS:MGTK2)
-IGNORE=	option GTK2 is required for option GDK_PIXBUF
-.endif
-.if empty(PORT_OPTIONS:MGDK)
-IGNORE=	option GDK is required for option GDK_PIXBUF
-.endif
-.endif
-
-.if ${PORT_OPTIONS:MSMYRNA}
-.if empty(PORT_OPTIONS:MGTK2)
-IGNORE=	option GTK2 is required for option SMYRNA
-.endif
-.if empty(PORT_OPTIONS:MGTS)
-IGNORE=	option GTS is required for option SMYRNA
-.endif
-.endif
-
-.if ${PORT_OPTIONS:MIPSEPCOLA}
-.if empty(PORT_OPTIONS:MDIGCOLA)
-IGNORE=		option WITH_DIGCOLA is required for option WITH_IPSEPCOLA
-.endif
 .endif
 
 .if ${PORT_OPTIONS:MPERL} || ${PORT_OPTIONS:MPHP} || ${PORT_OPTIONS:MPYTHON} || \
@@ -248,21 +213,13 @@ CONFIGURE_ARGS+=	--disable-swig
 CONFIGURE_ENV+=		SWIG="/nonexistent"
 .endif
 
+.include <bsd.port.pre.mk>
+
 .if ${PORT_OPTIONS:MPHP}
-SHEBANG_FILES+=	tclpkg/gv/demo/modgraph.php
-PHP_VER=	70
+.if ${PHP_VER} < 70
+# force old PHP API
+MAKE_ARGS+=	SWIG_PHP_OPT=-php5
 .endif
-
-.if ${PORT_OPTIONS:MRUBY}
-SHEBANG_FILES+=	tclpkg/gv/demo/modgraph.rb
-.endif
-
-.if ${PORT_OPTIONS:MLUA}
-SHEBANG_FILES+=	tclpkg/gv/demo/modgraph.lua
-.endif
-
-.if ${PORT_OPTIONS:MTCL}
-SHEBANG_FILES+=	tclpkg/gv/demo/modgraph.tcl
 .endif
 
 post-patch:
@@ -303,22 +260,21 @@ post-patch:
 	${REINPLACE_CMD} -e 's|SF_FLAGS|SFIO_FLAGS|g' \
 		${WRKSRC}/lib/sfio/*.[ch]
 .endif
-.if ! ${PORT_OPTIONS:MDOCS}
+
+post-patch-DOCS-off:
 	${REINPLACE_CMD} -e 's| install-txtDATA$$||' \
 		${WRKSRC}/Makefile.in
-.endif
 
-.if ${PORT_OPTIONS:MPHP}
-pre-install:
+pre-install-PHP-on:
 	${MKDIR} "${STAGEDIR}/${PREFIX}/share/php"
-.endif
 
 post-install: install-ldconfig-file
 	cd ${WRKSRC}/lib/expr && \
 		${MAKE_ENV} ${MAKE} ${MAKE_ARGS} ${INSTALL_TARGET}
 	cd ${WRKSRC} && \
 		${INSTALL_DATA} ${FIX_INCLUDE} ${STAGEDIR}${PREFIX}/include/graphviz/
-.if ${PORT_OPTIONS:MDOCS}
+
+post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/html
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/pdf
@@ -326,8 +282,8 @@ post-install: install-ldconfig-file
 		${INSTALL_DATA} ${PDOCS_TXT} ${STAGEDIR}${DOCSDIR}/ && \
 		${INSTALL_DATA} ${PDOCS_PDF} ${STAGEDIR}${DOCSDIR}/pdf/ && \
 		${INSTALL_DATA} ${PDOCS_HTML} ${STAGEDIR}${DOCSDIR}/html/
-.endif
-.if ${PORT_OPTIONS:MEXAMPLES}
+
+post-install-EXAMPLES-on:
 	@${ECHO_MSG} "Installing demo data..."
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_SCRIPT} \
@@ -346,6 +302,5 @@ post-install: install-ldconfig-file
 	${INSTALL_DATA} \
 		${WRKSRC}/tclpkg/tclpathplan/demo/pathplan_data/*.dat \
 		${STAGEDIR}${EXAMPLESDIR}/pathplan_data/
-.endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

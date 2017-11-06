@@ -7,6 +7,7 @@ include/apr-1/apr_atomic.h
 include/apr-1/apr_base64.h
 include/apr-1/apr_buckets.h
 include/apr-1/apr_crypto.h
+include/apr-1/apr_cstr.h
 include/apr-1/apr_date.h
 include/apr-1/apr_dbd.h
 include/apr-1/apr_dbm.h
@@ -36,12 +37,14 @@ include/apr-1/apr_mmap.h
 include/apr-1/apr_network_io.h
 include/apr-1/apr_optional.h
 include/apr-1/apr_optional_hooks.h
+include/apr-1/apr_perms_set.h
 include/apr-1/apr_poll.h
 include/apr-1/apr_pools.h
 include/apr-1/apr_portable.h
 include/apr-1/apr_proc_mutex.h
 include/apr-1/apr_queue.h
 include/apr-1/apr_random.h
+include/apr-1/apr_redis.h
 include/apr-1/apr_reslist.h
 include/apr-1/apr_ring.h
 include/apr-1/apr_rmm.h
@@ -49,6 +52,7 @@ include/apr-1/apr_sdbm.h
 include/apr-1/apr_sha1.h
 include/apr-1/apr_shm.h
 include/apr-1/apr_signal.h
+include/apr-1/apr_siphash.h
 include/apr-1/apr_skiplist.h
 include/apr-1/apr_strings.h
 include/apr-1/apr_strmatch.h
@@ -78,12 +82,12 @@ lib/apr-util-1/.keep.me
 %%SSL%%lib/apr-util-1/apr_crypto_openssl-1.so
 %%SSL%%lib/apr-util-1/apr_crypto_openssl.a
 %%SSL%%lib/apr-util-1/apr_crypto_openssl.so
-%%FREETDS%%lib/apr-util-1/apr_dbd_freetds-1.so
-%%FREETDS%%lib/apr-util-1/apr_dbd_freetds.a
-%%FREETDS%%lib/apr-util-1/apr_dbd_freetds.so
 %%MYSQL%%lib/apr-util-1/apr_dbd_mysql-1.so
 %%MYSQL%%lib/apr-util-1/apr_dbd_mysql.a
 %%MYSQL%%lib/apr-util-1/apr_dbd_mysql.so
+%%ODBC%%lib/apr-util-1/apr_dbd_odbc-1.so
+%%ODBC%%lib/apr-util-1/apr_dbd_odbc.a
+%%ODBC%%lib/apr-util-1/apr_dbd_odbc.so
 %%PGSQL%%lib/apr-util-1/apr_dbd_pgsql-1.so
 %%PGSQL%%lib/apr-util-1/apr_dbd_pgsql.a
 %%PGSQL%%lib/apr-util-1/apr_dbd_pgsql.so
@@ -114,7 +118,9 @@ lib/libaprutil-1.so.0
 lib/libaprutil-1.so.%%SHLIB_APU_MAJOR%%
 libdata/pkgconfig/apr-1.pc
 libdata/pkgconfig/apr-util-1.pc
+%%DATADIR%%/build-1/apr_common.m4
 %%DATADIR%%/build-1/apr_rules.mk
+%%DATADIR%%/build-1/find_apr.m4
 %%DATADIR%%/build-1/libtool
 %%DATADIR%%/build-1/make_exports.awk
 %%DATADIR%%/build-1/make_var_export.awk

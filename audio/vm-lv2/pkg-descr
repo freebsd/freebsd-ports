@@ -1,0 +1,12 @@
+Currently the following plugins are contained in this plugin bundle:
+* Control VM
+  Virtual machine for LV2 Control ports. Features 8 inputs and 8 outputs.
+* CV VM
+  Virtual machine for LV2 Control Voltage ports. Features 8 inputs
+  and 8 outputs.
+* Audio VM
+  Virtual machine for LV2 Audio ports. Features 8 inputs and 8 outputs.
+* Atom VM
+  Virtual machine for LV2 Atom event ports. Features 8 inputs and 8 outputs.
+
+WWW: https://open-music-kontrollers.ch/lv2/vm/

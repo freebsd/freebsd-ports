@@ -1,0 +1,10 @@
+--- translations/Makefile.orig	2016-10-28 07:41:05 UTC
++++ translations/Makefile
+@@ -15,6 +15,6 @@ $(obj): $(src)
+ 	$(MSGFMT) -o $@ $<
+ 
+ %.inst: %.mo
+-	$(INSTALL) -D -m 644 $< $(DESTDIR)/$(PREFIX)/share/locale/$*/LC_MESSAGES/radeontop.mo
++	$(INSTALL) -m 644 $< $(DESTDIR)$(PREFIX)/share/locale/$*/LC_MESSAGES/radeontop.mo
+ 
+ install: all $(inst)

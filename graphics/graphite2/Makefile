@@ -1,13 +1,13 @@
 # $FreeBSD$
 
 PORTNAME=	graphite2
-PORTVERSION=	1.3.9
+PORTVERSION=	1.3.10
 CATEGORIES=	graphics print
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Rendering capabilities for complex non-Roman writing systems
 
-LICENSE=	GPLv2 LGPL21 MPL
+LICENSE=	GPLv2 LGPL21 MPL20
 LICENSE_COMB=	dual
 
 USE_GITHUB=	yes

@@ -2,7 +2,7 @@
 # $FreeBSD$
 #   $MCom: ports/trunk/x11/gnome3-lite/Makefile 18610 2013-06-30 16:33:05Z marcus $
 
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	x11 gnome
 PKGNAMESUFFIX=	-lite
 

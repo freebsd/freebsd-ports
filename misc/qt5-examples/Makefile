@@ -5,7 +5,6 @@ PORTNAME=	examples
 DISTVERSION=	${QT5_VERSION}
 CATEGORIES=	misc
 MASTER_SITES=	QT/official_releases/qt/${QT5_VERSION:R}/${QT5_VERSION}/single
-
 PKGNAMEPREFIX=	qt5-
 DISTNAME=	qt-everywhere-opensource-src-${QT5_VERSION}
 DIST_SUBDIR=	KDE/Qt/${QT5_VERSION}
@@ -28,13 +27,14 @@ EXAMPLESDIR=	${PREFIX}/share/examples/qt5
 # qtscript and qtserialbus where the examples are looked up in $EXAMPLESDIR/.
 # This way, the examples show up in qtcreator on the examples front page.
 
-EXAMPLES=	qt3d qtbase qtcanvas3d qtconnectivity qtdeclarative qtenginio \
-		qtlocation qtmultimedia qtquickcontrols qtquickcontrols2 \
-		qtscript qtsensors qtserialbus qtserialport qtsvg qttools \
-		qtwebchannel qtwebsockets qtxmlpatterns
+EXAMPLES=	qt3d qtbase qtcanvas3d qtcharts qtconnectivity qtdeclarative \
+		qtgamepad qtlocation qtmultimedia qtpurchasing qtquickcontrols \
+		qtquickcontrols2 qtscript qtscxml qtsensors qtserialbus \
+		qtserialport qtsvg qttools qtvirtualkeyboard qtwebchannel \
+		qtwebsockets qtxmlpatterns
 
 .for example in ${EXAMPLES}
-EXTRACT_AFTER_ARGS+=	${DISTNAME:C,\-[0-9]$,,}/${example}/examples
+EXTRACT_AFTER_ARGS+=	${DISTNAME}/${example}/examples
 .endfor
 
 do-install:

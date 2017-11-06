@@ -3,7 +3,7 @@
 PORTNAME=	grafana
 PORTVERSION=	3.1.1
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
+PORTREVISION=	3
 PKGNAMESUFFIX=	3
 CATEGORIES=	www
 
@@ -13,6 +13,9 @@ COMMENT=	Dashboard and graph editor for Graphite, InfluxDB & OpenTSDB
 LICENSE=	APACHE20
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/go:lang/go
+
+RUN_DEPENDS=	${LOCALBASE}/bin/phantomjs:lang/phantomjs \
+		webfonts>=0:x11-fonts/webfonts
 
 ONLY_FOR_ARCHS=	i386 amd64
 
@@ -94,8 +97,6 @@ SUB_LIST+=	GRAFANA_USER=${GRAFANA_USER} \
 
 PLIST_SUB+=	GRAFANAHOMEDIR=${GRAFANAHOMEDIR}
 
-STRIP=
-
 post-extract:
 	@${MKDIR} ${WRKSRC}/src/github.com/grafana/grafana
 .for src in .bowerrc .bra.toml .editorconfig .github .gitignore .hooks \
@@ -140,6 +141,10 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/src/github.com/grafana/grafana/conf/defaults.ini \
 		${STAGEDIR}${GRAFANAHOMEDIR}/conf/defaults.ini
 	${INSTALL_DATA} ${WRKDIR}/grafana3.conf ${STAGEDIR}${PREFIX}/etc/grafana3.conf.sample
+	${MKDIR} ${STAGEDIR}${GRAFANAHOMEDIR}/vendor/phantomjs/
+	${INSTALL_DATA} ${WRKSRC}/src/github.com/grafana/grafana/vendor/phantomjs/render.js \
+		${STAGEDIR}${GRAFANAHOMEDIR}/vendor/phantomjs/
+	${LN} -s /usr/local/bin/phantomjs ${STAGEDIR}${GRAFANAHOMEDIR}/vendor/phantomjs/phantomjs
 
 .include <bsd.port.pre.mk>
 

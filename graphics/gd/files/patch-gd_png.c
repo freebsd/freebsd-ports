@@ -1,6 +1,6 @@
---- src/gd_png.c.orig	2013-06-25 11:58:23.000000000 +0200
-+++ src/gd_png.c	2013-08-01 07:08:18.000000000 +0200
-@@ -196,6 +196,14 @@
+--- src/gd_png.c.orig	2016-10-12 08:13:44 UTC
++++ src/gd_png.c
+@@ -277,6 +277,14 @@ BGD_DECLARE(gdImagePtr) gdImageCreateFro
  	png_read_info (png_ptr, info_ptr);	/* read all PNG info up to image data */
  
  	png_get_IHDR (png_ptr, info_ptr, &width, &height, &bit_depth, &color_type, &interlace_type, NULL, NULL);

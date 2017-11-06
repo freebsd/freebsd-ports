@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	zenphoto
-PORTVERSION=	1.4.13
+PORTVERSION=	1.4.14
 DISTVERSIONPREFIX=	${PORTNAME}-
 CATEGORIES=	www
 
@@ -24,7 +24,7 @@ USE_GITHUB=	yes
 
 post-extract:
 	@${MKDIR} ${WRKSRC}/cache/
-	@${FIND} ${WRKSRC} -name .gitignore -delete
+	@${FIND} ${WRKSRC} -name '.git*' -delete
 	@${FIND} -s ${WRKSRC}/ -type d -empty | ${XARGS} -I % ${TOUCH} %/.keepme
 	@${RM} ${WRKSRC}/doc_files/Zenphoto\ license.txt ${WRKSRC}/doc_files/README.html ${WRKSRC}/zp-core/Zenphoto.package
 
@@ -40,7 +40,7 @@ MS_PLIST=	${WRKDIR}/.ms-pkg-plist
 genplist: do-clean extract
 	${ECHO_CMD} '@owner www' > ${MS_PLIST}
 	${ECHO_CMD} '@group www' >> ${MS_PLIST}
-	cd ${WRKSRC}/ && ${FIND} * -type f | ${SETENV} LC_ALL=C ${SORT} | ${SED} 's|^|%%WWWDIR%%/|' >> ${MS_PLIST}
+	cd ${WRKSRC}/ && ${FIND} * -type f | ${SORT} | ${SED} 's|^|%%WWWDIR%%/|' >> ${MS_PLIST}
 .for dir in ${MS_DIR}
 	${ECHO_CMD} '@dir %%WWWDIR%%/${dir}' >> ${MS_PLIST}
 .endfor

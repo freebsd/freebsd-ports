@@ -7,6 +7,9 @@ bin/dancer2-generate-crypted-password
 %%SITE_PERL%%/Dancer2/Plugin/Auth/Extensible/Role/Provider.pm
 %%SITE_PERL%%/Dancer2/Plugin/Auth/Extensible/Test.pm
 %%SITE_PERL%%/Dancer2/Plugin/Auth/Extensible/Test/App.pm
+%%SITE_PERL%%/auto/share/dist/Dancer2-Plugin-Auth-Extensible/views/login.tt
+%%SITE_PERL%%/auto/share/dist/Dancer2-Plugin-Auth-Extensible/views/login_denied.tt
+%%SITE_PERL%%/auto/share/dist/Dancer2-Plugin-Auth-Extensible/views/transparent_login.tt
 %%PERL5_MAN3%%/Dancer2::Plugin::Auth::Extensible.3.gz
 %%PERL5_MAN3%%/Dancer2::Plugin::Auth::Extensible::Provider::Config.3.gz
 %%PERL5_MAN3%%/Dancer2::Plugin::Auth::Extensible::Provider::Example.3.gz

@@ -3,6 +3,7 @@
 
 PORTNAME=	omniorb
 DISTVERSION=	4.2.1-2
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	SF/${PORTNAME}/omniORBpy/omniORBpy-${DISTVERSION:S/-2//}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -28,12 +29,17 @@ PLIST_SUB=	SONUM=2
 WRKSRC=		${WRKDIR}/${DISTNAME:S/-2//}
 OMNIORB_WRKSRC!=	cd ${.CURDIR}/../omniORB && ${MAKE} -V WRKSRC
 
-USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_OUTSOURCE=	yes
 MAKEFILE=	GNUmakefile
 USE_LDCONFIG=	yes
-USES=		gmake python tar:bzip2
+USES=		gmake python shebangfix ssl tar:bzip2
+SHEBANG_FILES=	examples/tests/*.py examples/poa/*.py \
+		examples/fortune/*.py examples/embed/*.py \
+		examples/valuetype/tests/*.py \
+		examples/valuetype/simple/*.py \
+		examples/ami/*.py examples/tictactoe/*.py \
+		examples/echo/*.py
 
 CONFIGURE_ENV+=	PYTHON=${PYTHON_CMD}
 CONFIGURE_ARGS=	--with-openssl=${OPENSSLBASE} --with-omniorb=${LOCALBASE}

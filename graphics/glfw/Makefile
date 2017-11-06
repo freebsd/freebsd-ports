@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	glfw
-PORTVERSION=	3.1.2
-PORTREVISION=	1
+PORTVERSION=	3.2.1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
@@ -12,17 +12,11 @@ COMMENT=	Portable framework for OpenGL development
 
 LICENSE=	ZLIB
 
-LIB_DEPENDS=	libXinerama.so:x11/libXinerama \
-		libXcursor.so:x11/libXcursor
-
-USES=		cmake zip
-USE_XORG=	xi xrandr
+USES=		cmake localbase zip
+USE_XORG=	x11 xcursor xinerama xrandr xxf86vm
 USE_GL=		glu
-USE_GCC=	yes
 USE_LDCONFIG=	yes
-
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+CMAKE_ARGS=	-DBUILD_SHARED_LIBS:BOOL=ON
 
 PORTDOCS=	*
 

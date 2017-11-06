@@ -48,8 +48,8 @@
 %%QT_INCDIR%%/QtSql/qsqlresult.h
 %%QT_INCDIR%%/QtSql/qsqltablemodel.h
 %%QT_INCDIR%%/QtSql/qtsqlversion.h
-%%QT_LIBDIR%%/cmake/Qt5Sql/Qt5SqlConfig.cmake
-%%QT_LIBDIR%%/cmake/Qt5Sql/Qt5SqlConfigVersion.cmake
+%%QT_CMAKEDIR%%/Qt5Sql/Qt5SqlConfig.cmake
+%%QT_CMAKEDIR%%/Qt5Sql/Qt5SqlConfigVersion.cmake
 %%QT_LIBDIR%%/libQt5Sql.prl
 %%QT_LIBDIR%%/libQt5Sql.so
 %%QT_LIBDIR%%/libQt5Sql.so.5

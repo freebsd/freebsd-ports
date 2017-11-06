@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	bacula
-DISTVERSION=	7.4.4
-PORTREVISION=   2
+PORTVERSION=	7.4.7
+PORTREVISION=	2
 CATEGORIES?=	sysutils
 MASTER_SITES=	SF/bacula/bacula/${PORTVERSION}
 PKGNAMEPREFIX?=	#
@@ -12,10 +12,9 @@ PKGNAMESUFFIX?=	-server
 MAINTAINER=	dvl@FreeBSD.org
 COMMENT?=	Network backup solution (server)
 
-USES+=		libtool readline shebangfix
+USES+=		libtool readline shebangfix ssl
 SHEBANG_FILES=	scripts/dvd-handler.in src/cats/make_catalog_backup.pl.in
 python_OLD_CMD=	@PYTHON@
-USE_OPENSSL=	yes
 
 CONFLICTS?=	bacula5-server-*
 
@@ -32,9 +31,16 @@ USE_LDCONFIG=	yes
 CPPFLAGS+=	-I/usr/include/readline -I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-OPTIONS_DEFINE?=	SQLITE3 MYSQL PGSQL MTX PYTHON NLS IPV6
-OPTIONS_DEFAULT?=	NLS PGSQL
+OPTIONS_DEFINE?=	MTX PYTHON NLS IPV6
 MTX_DESC=		Install mtx for control of autochanger devices
+
+.if ${PKGNAMESUFFIX} == "-server"
+OPTIONS_MULTI=		BACKEND
+OPTIONS_MULTI_BACKEND=	SQLITE3 MYSQL PGSQL
+OPTIONS_DEFAULT+=	PGSQL
+.endif
+
+OPTIONS_SUB=		yes
 
 .if ${PKGNAMESUFFIX} == "-client" || ${PKGNAMESUFFIX} == "-server"  #Till end of the file
 
@@ -42,7 +48,7 @@ PYTHON_USES=		python
 PYTHON_CONFIGURE_ON=	--with-python=yes
 
 .if !defined(WITH_CLIENT_ONLY)
-LIB_DEPENDS+=	libbac-${DISTVERSION}.so:sysutils/bacula-client
+LIB_DEPENDS+=	libbac-${PORTVERSION}.so:sysutils/bacula-client
 USE_RC_SUBR?=	bacula-dir bacula-sd
 .endif
 
@@ -111,26 +117,14 @@ CONFFILES=		sd dir
 # Server default database
 
 MYSQL_CONFIGURE_ON=	--with-mysql=yes
-MYSQL_USE=		MYSQL=yes
+MYSQL_USES=		mysql
 SQLITE3_CONFIGURE_ON=	--with-sqlite3=yes
-SQLITE3_LIB_DEPENDS=	libsqlite3.so:databases/sqlite3
+SQLITE3_USES=		sqlite:3
 PGSQL_CONFIGURE_ON=	--with-postgresql=yes
 PGSQL_USES=		pgsql
 
 MTX_RUN_DEPENDS=	${LOCALBASE}/sbin/mtx:misc/mtx
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MMYSQL}
-DBTYPE=			mysql
-SUB_LIST+=		REQ_MYSQL=mysql REQ_PGSQL=""
-.elif ${PORT_OPTIONS:MSQLITE3}
-DBTYPE=			sqlite3
-.else
-DBTYPE=			postgresql
-SUB_LIST+=		REQ_MYSQL="" REQ_PGSQL=postgresql
-.endif
-PLIST_SUB+=		DBTYPE=${DBTYPE}
 .endif
 
 .include <bsd.port.pre.mk>
@@ -190,6 +184,9 @@ post-patch:
 
 .if !target(post-install)
 post-install:
+.if ! ${PORT_OPTIONS:MPYTHON}
+	${RM} ${STAGEDIR}${DATADIR}/dvd-handler
+.endif
 .if defined(WITH_CLIENT_ONLY)
 	${MV} ${STAGEDIR}${ETCDIR}/bconsole.conf ${STAGEDIR}${ETCDIR}/bconsole.conf.sample
 	${INSTALL_DATA} ${WRKSRC}/examples/sample-query.sql ${STAGEDIR}${LOCALBASE}/share/bacula/query.sql.sample

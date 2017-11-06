@@ -3,11 +3,11 @@
 
 PORTNAME=	lincity-ng
 PORTVERSION=	2.0
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	games
 MASTER_SITES=	BERLIOS
 
-MAINTAINER=	mokhi64@gmail.com
+MAINTAINER=	mmokhi@FreeBSD.org
 COMMENT=	Improved rich city simulation game for X
 
 BUILD_DEPENDS=	jam:devel/jam

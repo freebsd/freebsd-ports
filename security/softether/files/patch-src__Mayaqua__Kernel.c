@@ -1,6 +1,6 @@
---- src/Mayaqua/Kernel.c.orig	2014-06-08 06:19:14 UTC
+--- src/Mayaqua/Kernel.c.orig	2016-05-03 06:16:53 UTC
 +++ src/Mayaqua/Kernel.c
-@@ -2160,7 +2160,7 @@
+@@ -2213,7 +2213,7 @@ void AbortExitEx(char *msg)
  		msg = "Unknown Error";
  	}
  

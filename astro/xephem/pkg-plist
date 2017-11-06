@@ -35,6 +35,7 @@ lib/X11/xephem/auxil/uranus.9910
 lib/X11/xephem/auxil/wmm.cof
 lib/X11/xephem/auxil/xephem_sites
 lib/X11/xephem/auxil/xephem_skyhist
+lib/X11/xephem/auxil/._wmm.cof
 lib/X11/xephem/catalogs/Messier.edb
 lib/X11/xephem/catalogs/SKY2k65.edb
 lib/X11/xephem/fifos/Makefile
@@ -166,4 +167,5 @@ lib/X11/xephem/help/png/valid-html401.png
 lib/X11/xephem/help/png/wcssolver.png
 lib/X11/xephem/help/xephem.html
 lib/X11/xephem/lo/lodb.xml
+lib/X11/xephem/lo/._lodb.xml
 man/man1/xephem.1.gz

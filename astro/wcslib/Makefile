@@ -2,13 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	wcslib
-PORTVERSION=	5.15
-PORTREVISION=	1
+PORTVERSION=	5.17
 CATEGORIES=	astro
 MASTER_SITES=	ftp://ftp.atnf.csiro.au/pub/software/wcslib/
 
 MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	Library for parsing/generating FITS headers
+
+LICENSE=	GPLv3
 
 GNU_CONFIGURE=	yes
 USES=		tar:bzip2 gmake fortran
@@ -29,7 +30,9 @@ PGPLOT_DESC=	Add pgplot support (for tests only)
 CFITSIO_CONFIGURE_WITH=	cfitsio
 CFITSIO_LIB_DEPENDS=	libcfitsio.so:astro/cfitsio
 PGPLOT_CONFIGURE_WITH=	pgplot
-PGPLOT_LIB_DEPENDS=	libpgplot.so:graphics/pgplot
+PGPLOT_LIB_DEPENDS=	libpgplot.so:graphics/pgplot \
+			libpng16.so:graphics/png
+PGPLOT_USE=		XORG=x11
 
 post-patch:
 	@${REINPLACE_CMD} -e 's#%%PKGDIR%%#${STAGEDIR}${PREFIX}/libdata#g' \

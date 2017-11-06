@@ -7,19 +7,6 @@ PREFIX=${PKG_PREFIX-/usr/local}
 
 case $2 in
 POST-INSTALL)
-	/bin/rm -f ${PREFIX}/lib/libGL.so*
-	/bin/ln -f ${PREFIX}/lib/.nvidia/libGL.so.1 ${PREFIX}/lib/libGL.so
-	/bin/ln -f ${PREFIX}/lib/.nvidia/libGL.so.1 ${PREFIX}/lib/libGL.so.1
-	if [ -f ${PREFIX}/lib/.nvidia/libEGL.so.1 ]; then
-		/bin/rm -f ${PREFIX}/lib/libEGL.so*
-		/bin/ln -f ${PREFIX}/lib/.nvidia/libEGL.so.1 ${PREFIX}/lib/libEGL.so
-		/bin/ln -f ${PREFIX}/lib/.nvidia/libEGL.so.1 ${PREFIX}/lib/libEGL.so.1
-	fi
-	if [ -f ${PREFIX}/lib/.nvidia/libGLESv2.so.2 ]; then
-		/bin/rm -f ${PREFIX}/lib/libGLESv2.so*
-		/bin/ln -f ${PREFIX}/lib/.nvidia/libGLESv2.so.2 ${PREFIX}/lib/libGLESv2.so
-		/bin/ln -f ${PREFIX}/lib/.nvidia/libGLESv2.so.2 ${PREFIX}/lib/libGLESv2.so.2
-	fi
 	/bin/ln -f ${PREFIX}/lib/xorg/modules/extensions/.nvidia/libglx.so.1 \
 		${PREFIX}/lib/xorg/modules/extensions/libglx.so
 	;;

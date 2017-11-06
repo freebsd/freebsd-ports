@@ -3,6 +3,7 @@
 
 PORTNAME=	aeskulap
 PORTVERSION=	0.2.2.20140119
+PORTREVISION=	1
 CATEGORIES=	graphics
 
 MAINTAINER=	ports@FreeBSD.org
@@ -18,8 +19,9 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	pipelka
 GH_TAGNAME=	ea0a119
 
-USES=		autoreconf desktop-file-utils gettext gmake libtool localbase \
-		pkgconfig
+USES=		compiler:c++11-lang autoreconf desktop-file-utils gettext gmake \
+		libtool localbase pkgconfig
+USE_CXXSTD=	c++11
 USE_GNOME=	gconfmm26 gtkmm24 intltool
 GCONF_SCHEMAS=	aeskulap.schemas
 USE_LDCONFIG=	${PREFIX}/lib/aeskulap

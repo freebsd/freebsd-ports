@@ -2,6 +2,7 @@
 
 PORTNAME=	yami4
 PORTVERSION=	1.10.0
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	http://www.inspirel.com/yami4/files/
 DISTNAME=	yami4-gpl-1.10.0
@@ -12,7 +13,7 @@ COMMENT=	Messaging library for distributed systems
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/gpl-3.0.txt
 
-BROKEN_powerpc64=	Does not build
+BROKEN_powerpc64=	Does not build: error: snprintf is not a member of std
 
 # USES=		compiler:c++11-lib
 

@@ -1,0 +1,10 @@
+--- liblttng-ust/Makefile.in.orig	2016-11-29 22:25:14 UTC
++++ liblttng-ust/Makefile.in
+@@ -482,8 +482,7 @@ liblttng_ust_la_LIBADD = \
+ 	-lpthread \
+ 	-lrt \
+ 	-lurcu-cds \
+-	-ldl \
+ 	$(top_builddir)/snprintf/libustsnprintf.la \
+ 	$(top_builddir)/liblttng-ust-comm/liblttng-ust-comm.la \
+ 	liblttng-ust-tracepoint.la \

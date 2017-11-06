@@ -1,0 +1,5 @@
+Acalc is simple and pretty expression calculator, based on Qt 4 toolkit.
+It offers standard functions (sin, asinh, etc.), pre-defined constants,
+variables, hex/octal/binary I/O, original and user-friendly interface.
+
+WWW: https://github.com/anpp/acalc

@@ -3,7 +3,7 @@
 
 PORTNAME=	vavoom
 PORTVERSION=	1.33
-PORTREVISION=	10
+PORTREVISION=	14
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/Vavoom-source/${PORTVERSION}
 
@@ -14,7 +14,7 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libpng.so:graphics/png
 
-USES=		cmake dos2unix jpeg tar:bzip2
+USES=		cmake:noninja dos2unix jpeg tar:bzip2
 DOS2UNIX_REGEX=	((.*\.(c|cpp|h|s|asm|inc|vc|ls|acs|cfg|txt|vs|mak|mgw"))$$|\/(makefile\..*|makefile|Makefile)$$)
 
 OPTIONS_DEFINE=	FLAC LAUNCHER MAD MIKMOD OPENAL OPTIMIZED_CFLAGS VORBIS SDL DOCS
@@ -25,75 +25,45 @@ SDL_DESC=	Use SDL for OpenGL support
 
 SUB_FILES=	pkg-message
 
-.include <bsd.port.options.mk>
-
 # The `-fno-strict-aliasing' flag (default on FreeBSD 6.0+) produces
 # non-working code for `vcc', so we remove it here if present.
 CFLAGS:=	${CFLAGS:N-fno-strict-aliasing}
 CXXFLAGS:=	${CFLAGS:N-fno-strict-aliasing}
 
-.if ${PORT_OPTIONS:MFLAC}
-LIB_DEPENDS+=	libFLAC.so:audio/flac
-CMAKE_ARGS+=	-DWITH_FLAC=Y
-.else
-CMAKE_ARGS+=	-DWITH_FLAC=N
-.endif
+OPTIONS_SUB=				yes
 
-.if ${PORT_OPTIONS:MLAUNCHER}
-USE_WX=		2.8+
-WX_UNICODE=	yes
-CMAKE_ARGS+=	-DENABLE_LAUNCHER=Y \
-		-DwxWidgets_CONFIG_EXECUTABLE="${WX_CONFIG}"
-PLIST_SUB+=	LAUNCHER=""
-.else
-CMAKE_ARGS+=	-DENABLE_LAUNCHER=N
-PLIST_SUB+=	LAUNCHER="@comment "
-.endif
+FLAC_LIB_DEPENDS=			libFLAC.so:audio/flac
+FLAC_CMAKE_ON=				-DWITH_FLAC:BOOL=ON
+FLAC_CMAKE_OFF=				-DWITH_FLAC:BOOL=OFF
 
-.if ${PORT_OPTIONS:MMAD}
-LIB_DEPENDS+=	libmad.so:audio/libmad
-CMAKE_ARGS+=	-DWITH_LIBMAD=Y
-.else
-CMAKE_ARGS+=	-DWITH_LIBMAD=N
-.endif
+LAUNCHER_USE=				WX=2.8+
+LAUNCHER_CMAKE_ON=			-DENABLE_LAUNCHER:BOOL=ON \
+	-DwxWidgets_CONFIG_EXECUTABLE="${WX_CONFIG}"
+LAUNCHER_CMAKE_OFF=			-DENABLE_LAUNCHER:BOOL=OFF
 
-.if ${PORT_OPTIONS:MMIKMOD}
-LIB_DEPENDS+=	libmikmod.so:audio/libmikmod
-CMAKE_ARGS+=	-DWITH_MIKMOD=Y
-.else
-CMAKE_ARGS+=	-DWITH_MIKMOD=N
-.endif
+MAD_LIB_DEPENDS=			libmad.so:audio/libmad
+MAD_CMAKE_ON=				-DWITH_LIBMAD:BOOL=ON
+MAD_CMAKE_OFF=				-DWITH_LIBMAD:BOOL=OFF
 
-.if ${PORT_OPTIONS:MOPENAL}
-USES+=		openal:al
-CMAKE_ARGS+=	-DWITH_OPENAL=Y
-.else
-CMAKE_ARGS+=	-DWITH_OPENAL=N
-.endif
+MIKMOD_LIB_DEPENDS=			libmikmod.so:audio/libmikmod
+MIKMOD_CMAKE_ON=			-DWITH_MIKMOD:BOOL=ON
+MIKMOD_CMAKE_OFF=			-DWITH_MIKMOD:BOOL=OFF
 
-.if ${PORT_OPTIONS:MOPTIMIZED_CFLAGS}
-CFLAGS+=	-O3 -ffast-math -fomit-frame-pointer
-.endif
+OPENAL_USES=				openal:al
+OPENAL_CMAKE_ON=			-DWITH_OPENAL:BOOL=ON
+OPENAL_CMAKE_OFF=			-DWITH_OPENAL:BOOL=OFF
 
-.if ${PORT_OPTIONS:MVORBIS}
-LIB_DEPENDS+=	libvorbis.so:audio/libvorbis
-CMAKE_ARGS+=	-DWITH_VORBIS=Y
-.else
-CMAKE_ARGS+=	-DWITH_VORBIS=N
-.endif
+VORBIS_LIB_DEPENDS=			libvorbis.so:audio/libvorbis
+VORBIS_CMAKE_ON=			-DWITH_VORBIS:BOOL=ON
+VORBIS_CMAKE_OFF=			-DWITH_VORBIS:BOOL=OFF
 
-.if ${PORT_OPTIONS:MSDL}
-USE_SDL=	mixer sdl
-CMAKE_ARGS+=	-DWITH_SDL=Y
-USE_GL=		yes
-CMAKE_ARGS+=	-DWITH_OPENGL=Y
-.else
-CMAKE_ARGS+=	-DWITH_SDL=N
-CMAKE_ARGS+=	-DWITH_OPENGL=N
-.endif
+SDL_USE=					SDL=mixer,sdl GL=yes
+SDL_CMAKE_ON=				-DWITH_SDL:BOOL=ON -DWITH_OPENGL:BOOL=ON
+SDL_CMAKE_OFF=				-DWITH_SDL:BOOL=OFF -DWITH_OPENGL:BOOL=OFF
 
-.if ${PORT_OPTIONS:MWXUNICODE}
-.endif
+OPTIMIZED_CFLAGS_CFLAGS=	-O3 -ffast-math -fomit-frame-pointer
+
+.include <bsd.port.options.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|$$\* ||; s|$${IWADDIR}|-iwaddir ${DMDIR} $$*|' \

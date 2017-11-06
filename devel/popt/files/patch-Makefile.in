@@ -1,6 +1,6 @@
---- Makefile.in.orig	2010-05-05 04:55:59.000000000 +0800
-+++ Makefile.in	2010-06-16 00:29:47.000000000 +0800
-@@ -92,7 +92,7 @@
+--- Makefile.in.orig	2017-07-12 14:39:00 UTC
++++ Makefile.in
+@@ -92,7 +92,7 @@ am__base_list = \
  am__installdirs = "$(DESTDIR)$(usrlibdir)" "$(DESTDIR)$(man3dir)" \
  	"$(DESTDIR)$(pkgconfigdir)" "$(DESTDIR)$(includedir)"
  LTLIBRARIES = $(usrlib_LTLIBRARIES)
@@ -9,7 +9,7 @@
  am_libpopt_la_OBJECTS = popt.lo poptparse.lo poptconfig.lo popthelp.lo \
  	poptint.lo
  libpopt_la_OBJECTS = $(am_libpopt_la_OBJECTS)
-@@ -349,16 +349,16 @@
+@@ -349,16 +349,16 @@ AM_CPPFLAGS = -I. -I$(top_srcdir)
  noinst_HEADERS = poptint.h system.h
  test1_SOURCES = test1.c
  test1_LDFLAGS = 

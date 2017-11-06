@@ -278,9 +278,9 @@ index b19d30e..14b0a0f 100644
  	options->macs = NULL;
  	options->kex_algorithms = NULL;
 +	options->transport = -1;
- 	options->protocol = SSH_PROTO_UNKNOWN;
  	options->fwd_opts.gateway_ports = -1;
  	options->fwd_opts.streamlocal_bind_mask = (mode_t)-1;
+ 	options->fwd_opts.streamlocal_bind_unlink = -1;
 @@ -315,6 +316,8 @@ fill_default_server_options(ServerOptions *options)
  		options->allow_streamlocal_forwarding = FORWARD_ALLOW;
  	if (options->allow_agent_forwarding == -1)
@@ -438,9 +438,9 @@ index b19d30e..14b0a0f 100644
 +			    filename, linenum);
 +		break;
 +
- 	case sProtocol:
- 		intptr = &options->protocol;
- 		arg = strdelim(&cp);
+ 	case sSubsystem:
+ 		if (options->num_subsystems >= MAX_SUBSYSTEMS) {
+ 			fatal("%s line %d: too many subsystems defined.",
 @@ -1992,6 +2111,7 @@ copy_set_server_options(ServerOptions *dst, ServerOptions *src, int preauth)
  	M_CP_INTOPT(allow_streamlocal_forwarding);
  	M_CP_INTOPT(allow_agent_forwarding);
@@ -482,9 +482,9 @@ index f4137af..63a0637 100644
  	char   *macs;		/* Supported SSH2 macs. */
  	char   *kex_algorithms;	/* SSH2 kex methods in order of preference. */
 +	int transport;	/* Transport protocol(s) used */
- 	int	protocol;	/* Supported protocol versions. */
  	struct ForwardOptions fwd_opts;	/* forwarding options */
  	SyslogFacility log_facility;	/* Facility for system logging. */
+ 	LogLevel log_level;<--->/* Level for system logging. */
 diff --git a/ssh.1 b/ssh.1
 index cc53343..b1a45e8 100644
 --- a/ssh.1
@@ -566,7 +566,7 @@ index caf13a6..a088f30 100644
 @@ -1597,6 +1597,12 @@ This is important in scripts, and many users want it too.
  .Pp
  To disable TCP keepalive messages, the value should be set to
- .Dq no .
+ .Cm no .
 +.It Cm Transport
 +Specifies the transport protocol while connecting. Valid values are
 +.Dq TCP
@@ -686,9 +686,9 @@ index 430569c..4ca58ed 100644
 +#include <netinet/sctp.h>
 +#endif
 +
- #ifndef O_NOCTTY
- #define O_NOCTTY	0
- #endif
+ /* Re-exec fds */
+ #define REEXEC_DEVCRYPTO_RESERVED_FD	(STDERR_FILENO + 1)
+ #define REEXEC_STARTUP_PIPE_FD		(STDERR_FILENO + 2)
 @@ -1164,6 +1168,12 @@ server_listen(void)
  	for (ai = options.listen_addrs; ai; ai = ai->ai_next) {
  		if (ai->ai_family != AF_INET && ai->ai_family != AF_INET6)
@@ -853,7 +853,7 @@ index a37a3ac..24e3826 100644
 @@ -1508,6 +1508,17 @@ This avoids infinitely hanging sessions.
  .Pp
  To disable TCP keepalive messages, the value should be set to
- .Dq no .
+ .Cm no .
 +.It Cm Transport
 +Specifies the transport protocol that should be used by
 +.Xr sshd 8 .

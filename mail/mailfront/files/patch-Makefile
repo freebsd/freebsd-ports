@@ -1,0 +1,59 @@
+--- Makefile.orig	2015-02-12 14:10:37 UTC
++++ Makefile
+@@ -31,11 +31,12 @@ clean: TARGETS
+ clean-spac: clean AUTOFILES
+ 	rm -f `cat AUTOFILES`
+ 
+-compile: conf-cc
+-	( echo '#!/bin/sh'; \
++compile: conf-cc conf-bgincs
++	( bgincs=`head -n 1 conf-bgincs`; \
++	  echo '#!/bin/sh'; \
+ 	  echo 'source=$$1; shift'; \
+ 	  echo 'base=`echo "$$source" | sed -e s:\\\\.c$$::`'; \
+-	  echo exec `head -n 1 conf-cc` -I.  '-o $${base}.o -c $$source $${1+"$$@"}'; \
++	  echo exec `head -n 1 conf-cc` -I. "-I /usr/local/include/" "-I'$${bgincs}'" '-o $${base}.o -c $$source $${1+"$$@"}'; \
+ 	) >compile
+ 	chmod 755 compile
+ 
+@@ -79,10 +80,11 @@ iobytes.o: compile iobytes.c
+ 
+ libraries: pop3.a plugin-starttls-ucspi.so plugin-rbl.so plugin-clamav.so plugin-cvm-authenticate.so plugin-patterns.so backend-echo.so plugin-counters.so backend-qmail.so plugin-cvm-validate.so protocol-qmtp.so backend-queuedir.so plugin-check-fqdn.so plugin-mailrules.so protocol-smtp.so plugin-add-received.so plugin-qmail-validate.so protocol-qmqp.so plugin-spamassassin.so
+ 
+-load: conf-ld
+-	( echo '#!/bin/sh';\
++load: conf-ld conf-bglibs
++	( bglibs=`head -n 1 conf-bglibs`; \
++	  echo '#!/bin/sh';\
+ 	  echo 'main="$$1"; shift';\
+-	  echo exec `head -n 1 conf-ld` -L. '-o "$$main" "$$main.o" $${1+"$$@"}'; \
++	  echo exec `head -n 1 conf-ld` -L. "-L'$${bglibs}'" "-Wl,-R'$${bglibs}'" '-o "$$main" "$$main.o" $${1+"$$@"}'; \
+ 	) >load
+ 	chmod 755 load
+ 
+@@ -103,11 +105,13 @@ makelib: 
+ 	) >makelib
+ 	chmod 755 makelib
+ 
+-makeso: conf-ccso conf-ld
+-	( echo '#!/bin/sh'; \
++makeso: conf-ccso conf-ld conf-bglibs conf-bgincs
++	( bglibs=`head -n 1 conf-bglibs`; \
++	  bgincs=`head -n 1 conf-bgincs`; \
++	  echo '#!/bin/sh'; \
+ 	  echo 'source=$$1; shift'; \
+ 	  echo 'base=`echo "$$source" | sed -e s:\\\\.c$$::`'; \
+-	  echo exec `head -n 1 conf-ccso` -DSHARED -I. -L. '-o $${base}.so $$source $${1+"$$@"}'; \
++	  echo exec `head -n 1 conf-ccso` -DSHARED -I. -L. "-L'$${bglibs}'" "-Wl,-R'$${bglibs}'" "-I'$${bgincs}'" "-I /usr/local/include" '-o $${base}.so $$source $${1+"$$@"}'; \
+ 	) >makeso
+ 	chmod 755 makeso
+ 
+@@ -133,7 +137,7 @@ plugin-cvm-validate.so: makeso plugin-cv
+ 	./makeso plugin-cvm-validate.c  -lcvm-v2client -lbg 
+ 
+ plugin-lua.so: makeso plugin-lua.c mailfront.h responses.h constants.h
+-	./makeso plugin-lua.c  -lbg -llua 
++	./makeso plugin-lua.c  -lbg -llua- 
+ 
+ plugin-mailrules.so: makeso plugin-mailrules.c mailfront.h responses.h constants.h
+ 	./makeso plugin-mailrules.c  -lbg 

@@ -11,8 +11,8 @@ MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Module for using Textile in Ruby
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-GEM_NAME=	${DISTNAME}
 USE_RUBY=	yes
 USES=		gem
 

@@ -4,7 +4,6 @@
 CATEGORIES=	databases lang
 PKGNAMESUFFIX=	-fpindexer
 
-MAINTAINER=	freebsd-fpc@FreeBSD.org
 COMMENT=	Database indexer with database/flat file backend
 
 USE_FPC=	chm dblib fcl-base fcl-db fcl-json fcl-xml ibase mysql odbc \

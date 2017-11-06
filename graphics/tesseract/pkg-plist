@@ -40,7 +40,7 @@ include/tesseract/unicharset.h
 lib/libtesseract.a
 lib/libtesseract.so
 lib/libtesseract.so.3
-lib/libtesseract.so.3.0.4
+lib/libtesseract.so.3.0.5
 libdata/pkgconfig/tesseract.pc
 man/man1/ambiguous_words.1.gz
 man/man1/cntraining.1.gz

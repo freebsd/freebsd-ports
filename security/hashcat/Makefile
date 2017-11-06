@@ -2,8 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	hashcat
-PORTVERSION=	3.30
+PORTVERSION=	4.0.0
 DISTVERSIONPREFIX=	v
+PORTEPOCH=	1
 CATEGORIES=	security
 
 MAINTAINER=	lifanov@FreeBSD.org
@@ -18,13 +19,14 @@ BUILD_DEPENDS=	${LOCALBASE}/include/CL/cl.h:devel/opencl \
 USE_GITHUB=	yes
 
 ALL_TARGET=	default
-USES=		gmake localbase shebangfix
+USES=		gmake iconv localbase shebangfix
 SHEBANG_FILES=	extra/tab_completion/install
-USE_CSTD=	c99
+USE_CSTD=	gnu99
 
-MAKE_ARGS=	CC="${CC}" \
-		CFLAGS_NATIVE="${CFLAGS} -Iinclude/ -IOpenCL/" \
-		LFLAGS_NATIVE="${LDFLAGS} -lpthread"
+MAKE_ARGS=	SHARED=1 \
+		CC="${CC}" \
+		LFLAGS_NATIVE="${LDFLAGS} -lpthread" \
+		CFLAGS_NATIVE="${CFLAGS} -Iinclude -IOpenCL -Iinclude/lzma_sdk"
 
 pre-install:
 	${STRIP_CMD} ${WRKSRC}/libhashcat.so

@@ -8,6 +8,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/filtering-bridges/article.txt
 %%DOCSDIR%%/%%DOCLANG%%/articles/fonts/article.txt
 %%DOCSDIR%%/%%DOCLANG%%/articles/freebsd-questions/article.txt
+%%DOCSDIR%%/%%DOCLANG%%/articles/freebsd-releng/article.txt
 %%DOCSDIR%%/%%DOCLANG%%/articles/freebsd-update-server/article.txt
 %%DOCSDIR%%/%%DOCLANG%%/articles/geom-class/article.txt
 %%DOCSDIR%%/%%DOCLANG%%/articles/gjournal-desktop/article.txt

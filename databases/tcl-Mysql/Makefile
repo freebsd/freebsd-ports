@@ -11,9 +11,11 @@ DISTNAME=	tcl-sql-${PORTVERSION}
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	TCL module for accessing MySQL databases
 
-OPTIONS_DEFINE=	DOCS
-
 PATCH_DEPENDS=	rcsdiff:devel/rcs
+
+BROKEN_armv6=		fails to package: libTclMySQL.so.*: No such file or directory
+
+OPTIONS_DEFINE=	DOCS
 
 USES=		mysql tcl tar:tgz
 TCL_NODOT=	tcl${TCL_VER:S/.//}

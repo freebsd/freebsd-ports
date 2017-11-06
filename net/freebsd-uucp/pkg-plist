@@ -43,16 +43,17 @@ bin/cu
 bin/uustat
 libexec/uucp/uucico
 @owner
-@exec pw usermod uucp -s %D/libexec/uucp/uucico
-@exec mtree -deU -f %D/etc/mtree/uucp-var.mtree -p /var
-@exec mtree -deU -f %D/etc/mtree/uucp-local.mtree -p %D
-@unexec rm -d /var/spool/uucppublic 2>/dev/null || true
-@unexec rm -d /var/spool/uucp/.Preserve 2>/dev/null || true
-@unexec rm -d /var/spool/uucp/.Sequence 2>/dev/null || true
-@unexec rm -d /var/spool/uucp/.Status 2>/dev/null || true
-@unexec rm -d /var/spool/uucp/.Temp 2>/dev/null || true
-@unexec rm -d /var/spool/uucp/.Xqtdir 2>/dev/null || true
-@unexec rm -d /var/spool/uucp 2>/dev/null || true
-%%VAR_LOG%%@unexec rm -d /var/log/uucp 2>/dev/null || true
-@exec echo "updating /etc/services"; cp /etc/services /etc/services.bak; (grep -v ^suucp /etc/services.bak ; echo "suucp               4031/tcp  #UUCP over SSL";  echo "suucp               4031/udp  #UUCP over SSL") > /etc/services
-@unexec echo "updating /etc/services"; cp /etc/services /etc/services.bak; (grep -v ^suucp /etc/services.bak ) > /etc/services
+@group
+@preexec pw usermod uucp -s %D/libexec/uucp/uucico
+@preexec mtree -deU -f %D/etc/mtree/uucp-var.mtree -p /var
+@preexec mtree -deU -f %D/etc/mtree/uucp-local.mtree -p %D
+@preexec echo "updating /etc/services"; cp /etc/services /etc/services.bak; (grep -v ^suucp /etc/services.bak ; echo "suucp               4031/tcp  #UUCP over SSL";  echo "suucp               4031/udp  #UUCP over SSL") > /etc/services
+@postunexec echo "updating /etc/services"; cp /etc/services /etc/services.bak; (grep -v ^suucp /etc/services.bak ) > /etc/services
+%%VAR_LOG%%@dir(uucp,uucp,775) /var/log/uucp
+@dir(uucp,uucp,775) /var/spool/uucp/.Preserve
+@dir(uucp,uucp,775) /var/spool/uucp/.Sequence
+@dir(uucp,uucp,775) /var/spool/uucp/.Status
+@dir(uucp,uucp,775) /var/spool/uucp/.Temp
+@dir(uucp,uucp,775) /var/spool/uucp/.Xqtdir
+@dir(uucp,uucp,775) /var/spool/uucp
+@dir(uucp,uucp,777) /var/spool/uucppublic

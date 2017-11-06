@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Jinja2
-PORTVERSION=	2.8
+PORTVERSION=	2.9.5
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,8 +14,8 @@ COMMENT?=	Fast and easy to use stand-alone template engine
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}MarkupSafe>=0.18:textproc/py-MarkupSafe
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}MarkupSafe>=0.18:textproc/py-MarkupSafe
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}MarkupSafe>=0.23:textproc/py-MarkupSafe
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}MarkupSafe>=0.23:textproc/py-MarkupSafe
 
 NO_ARCH=	yes
 USES=		python
@@ -34,8 +34,6 @@ BABEL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Babel>=1.3:devel/py-babel
 PY2TO3_CMD=	${LOCALBASE}/bin/2to3-${PYTHON_VER}
 PY2TO3_ARGS=	--fix=all --no-diffs --nobackups --verbose --write
 
-.include <bsd.port.options.mk>
-
 .include <bsd.port.pre.mk>
 
 .if ${PKGNAMESUFFIX} == "-doc"
@@ -43,9 +41,7 @@ BUILD_DEPENDS+=	${PKGNAMEPREFIX}sphinx>=1.1.3:textproc/py-sphinx
 DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
 PORTDOCS=	*
 PORT_OPTIONS:=	${PORT_OPTIONS:NEXAMPLES}
-.endif
 
-.if ${PKGNAMESUFFIX} == "-doc"
 do-build:
 	(cd ${WRKSRC}/docs && ${MAKE} html)
 

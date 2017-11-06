@@ -1,4 +1,4 @@
---- src/status.cpp.orig	2016-04-17 05:41:01 UTC
+--- src/status.cpp.orig	2017-05-25 13:30:40 UTC
 +++ src/status.cpp
 @@ -21,6 +21,8 @@
  #include <boost/date_time/posix_time/posix_time.hpp>
@@ -7,5 +7,5 @@
 +#include <sys/types.h>
 +#include <sys/socket.h>
  
- #include "browser.h"
- #include "charset.h"
+ #include "curses/menu_impl.h"
+ #include "screens/browser.h"

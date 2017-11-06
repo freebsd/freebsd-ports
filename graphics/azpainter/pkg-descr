@@ -1,0 +1,10 @@
+AzPainter is a full color painting application for Unix-like systems for
+illustration drawing.  It is not suitable for "dot editing" or pixel-art.
+Since the color is handled internally with 16-bit precision (15-bit fixed
+point), color accuracy is increased at the expense of more memory usage.
+
+It provides considerable subset of functionality offered by GIMP and even
+Adobe Photoshop (particularly, has one of the best support for its native
+PSD format among FOSS) while being very lightweight and blazingly fast.
+
+WWW: http://azsky2.html.xdomain.jp/linux/azpainter.html

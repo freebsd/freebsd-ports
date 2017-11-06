@@ -1,5 +1,0 @@
-Geo::Coder::Geocoder::US geocodes addresses by looking them up on the
-http://geocoder.us/ website. Because this site throttles access, this class does
-to, to one request every 15 seconds.
-
-WWW: http://search.cpan.org/dist/Geo-Coder-Geocoder-US/

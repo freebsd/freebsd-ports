@@ -18,11 +18,11 @@ GH_ACCOUNT=	dprokoptsev
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
-USES=		autoreconf bison gmake libtool
+USES=		autoreconf bison libtool
 USE_LDCONFIG=	yes
 TEST_TARGET=	check
 
-ONLY_FOR_ARCHS=	amd64 i386 ia64
+ONLY_FOR_ARCHS=		amd64 i386
 ONLY_FOR_ARCHS_REASON=	not yet ported to big-endian platforms
 
 .include <bsd.port.mk>

@@ -20,7 +20,7 @@ OPTIONS_DEFINE=	DOCS
 ALL_TARGET=	lib
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USES=		gmake libtool:build
+USES=		libtool:build
 
 DOCS=		README doc/libmaa.600dpi.ps
 PLIST_FILES=	include/maa.h \

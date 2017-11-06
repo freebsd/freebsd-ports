@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	AccessControl
-PORTVERSION=	3.0.12
+PORTVERSION=	3.0.13
 CATEGORIES=	security python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -33,5 +33,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Acquisition>=0:devel/py-Acquisition \
 
 USES=		python:2.7
 USE_PYTHON=	autoplist distutils
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/AccessControl/cAccessControl.so
 
 .include <bsd.port.mk>

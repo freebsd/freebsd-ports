@@ -13,6 +13,8 @@ DISTNAME=	Pike-v${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Dynamic programming language with a syntax similar to C++
 
+BROKEN=		fails to build
+
 LIB_DEPENDS=	libtiff.so:graphics/tiff \
 		libgdbm.so:databases/gdbm \
 		libpcre.so:devel/pcre \

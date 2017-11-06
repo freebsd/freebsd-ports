@@ -1,0 +1,7 @@
+Need to compare software, package or whatever versions? Comparing
+1.0 and 1.1 could be easy, but are you ready for more complex cases
+like 1.2-x.3~alpha4? libversion is, which is proven by using the
+library in Repology project which relies on comparing software
+version strings, even if they are written in different formats.
+
+WWW: https://github.com/repology/libversion

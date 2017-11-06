@@ -1,12 +1,12 @@
 # $FreeBSD$
 
 PORTNAME=	http-prompt
-PORTVERSION=	0.8.0
+PORTVERSION=	0.11.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	dbaio@bsd.com.br
+MAINTAINER=	dbaio@FreeBSD.org
 COMMENT=	Interactive command-line HTTP client
 
 LICENSE=	MIT

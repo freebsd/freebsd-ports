@@ -22,15 +22,15 @@ BUILD_DEPENDS=	OpenSP>=0:textproc/opensp \
 		sdocbook-xml>=0:textproc/sdocbook-xml
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-CONFLICTS_INSTALL=	docbook-utils-*
+# bin/docbook2man bin/docbook2texi man/man1/docbook2man.1.gz man/man1/docbook2texi.1.gz
+CONFLICTS_INSTALL=	docbook-utils
 
 OPTIONS_DEFINE=	DOCS
 
 CONFIGURE_ENV=	PERL=${PERL}
 GNU_CONFIGURE=	yes
 USE_GNOME=	libxslt
-USES=		gmake iconv perl5
-WANT_GNOME=	yes
+USES=		gmake gnome iconv perl5
 
 INFO=		docbook2X docbook2man-xslt docbook2texi-xslt
 

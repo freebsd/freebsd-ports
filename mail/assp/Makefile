@@ -85,7 +85,7 @@ RUN_DEPENDS+=	p5-File-ReadBackwards>=1.05:devel/p5-File-ReadBackwards
 .endif
 
 .if ${PORT_OPTIONS:MCLAMAV}
-RUN_DEPENDS+=	p5-File-Scan-ClamAV>=1.9.1:security/p5-File-Scan-ClamAV
+RUN_DEPENDS+=	p5-File-Scan-ClamAV>=1.91:security/p5-File-Scan-ClamAV
 PLIST_SUB+=	ASSP_CLAMAV=""
 .else
 PLIST_SUB+=	ASSP_CLAMAV="@comment "

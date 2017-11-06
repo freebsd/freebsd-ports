@@ -3,8 +3,9 @@
 
 PORTNAME=	pelican
 PORTVERSION=	3.6.3
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	www textproc python
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	jlaffaye@FreeBSD.org
 COMMENT=	Static site generator written in Python
@@ -12,7 +13,7 @@ COMMENT=	Static site generator written in Python
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rst2html:textproc/py-docutils \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}docutils>0:textproc/py-docutils \
 		${PYTHON_PKGNAMEPREFIX}Jinja2>=2.7:devel/py-Jinja2 \
 		${PYTHON_PKGNAMEPREFIX}feedgenerator>=1.6:www/py-feedgenerator \
 		${PYTHON_PKGNAMEPREFIX}pytz>0:devel/py-pytz \
@@ -22,9 +23,12 @@ RUN_DEPENDS=	rst2html:textproc/py-docutils \
 		${PYTHON_PKGNAMEPREFIX}dateutil>0:devel/py-dateutil
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mock>0:devel/py-mock
 
-USES=		python
+NO_ARCH=	yes
+USES=		python shebangfix
 USE_GITHUB=	yes
 USE_PYTHON=	autoplist concurrent distutils
+SHEBANG_FILES=	pelican/tools/templates/publishconf.py.in \
+		pelican/tools/*.py
 
 GH_ACCOUNT=	getpelican
 

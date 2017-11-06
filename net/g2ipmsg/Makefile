@@ -12,10 +12,9 @@ COMMENT=	Popup style message communication tool for GNOME2
 
 LICENSE=	GPLv2+
 
-USES=		gettext gmake pathfix pkgconfig
+USES=		gettext gmake pathfix pkgconfig ssl
 USE_GNOME=	gnomeprefix intltool libgnomeui
 USE_GSTREAMER=	vorbis
-USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-doxygen-doc \
 		--enable-systray \

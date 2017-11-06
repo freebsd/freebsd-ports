@@ -4,11 +4,10 @@
 # With helpful hints from net/gpxe
 
 PORTNAME=	ipxe
-PORTVERSION=	20160213
-PORTREVISION=	2
+PORTVERSION=	20170924
 CATEGORIES=	net
 
-MAINTAINER=	t@tobik.me
+MAINTAINER=	tobik@FreeBSD.org
 COMMENT=	Open source network boot firmware
 
 LICENSE=	GPLv2
@@ -17,6 +16,9 @@ BUILD_DEPENDS=	${LOCALBASE}/share/syslinux/bios/core/isolinux.bin:sysutils/sysli
 		bash:shells/bash \
 		mkisofs:sysutils/cdrtools
 
+USES=		gmake perl5 shebangfix
+USE_BINUTILS=	yes
+USE_GCC=	yes
 USE_GITHUB=	yes
 GH_PROJECT=	ipxe
 # iPXE hasn't had a release since 2010.
@@ -27,15 +29,22 @@ GH_PROJECT=	ipxe
 #   A: iPXE uses a rolling release model, in which every commit is intended
 #      to be production-ready.  You should always use the latest code.
 #
-GH_TAGNAME=	7ecfe7159f94193a666200a17057d4cd5981b850
+GH_TAGNAME=	1b67a0564657b6fcef18b1588ea6491ca1b1996d
+USE_PERL5=	build
 
-USES=		gmake perl5 shebangfix
-USE_BINUTILS=	yes
-USE_GCC=	yes
 MAKE_ARGS=	PERL=${PERL} \
 		CC=${CC} \
 		HOST_CC=${CC} \
-		OBJCOPY="${LOCALBASE}/bin/objcopy" \
+		AS=${AS} \
+		LD=${LD} \
+		SIZE=${SIZE} \
+		AR=${AR} \
+		RANLIB=${RANLIB} \
+		OBJCOPY=${OBJCOPY} \
+		NM=${NM} \
+		OBJDUMP=${OBJDUMP} \
+		NO_WERROR=1 \
+		V=1 \
 		ISOLINUX_BIN="${WRKSRC}/isolinux.bin" \
 		LDLINUX_C32="${LOCALBASE}/share/syslinux/bios/com32/elflink/ldlinux/ldlinux.c32"
 WRKSRC_SUBDIR=	src
@@ -89,3 +98,5 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/bin/ipxe.lkrn ${STAGEDIR}${DATADIR}
 
 .include <bsd.port.mk>
+
+RUN_DEPENDS:=	${RUN_DEPENDS:Ngcc*}

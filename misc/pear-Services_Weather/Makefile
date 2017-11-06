@@ -6,7 +6,7 @@ PORTVERSION=	1.4.6
 PORTEPOCH=	1
 CATEGORIES=	misc www pear geography
 
-MAINTAINER=	joneum@bsdproject.de
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	PEAR interface to various online weather-services
 
 LICENSE=	BSD2CLAUSE
@@ -17,7 +17,7 @@ PORTSCOUT=	skipv:1.4.7
 
 NO_ARCH=	yes
 USE_PHP=	ctype pcre
-USES=		pear
+USES=		pear php
 
 OPTIONS_DEFINE=	PEAR_NET_FTP PEAR_CACHE PEAR_DB PEAR_SOAP PEAR_XML_SERIALIZER
 PEAR_NET_FTP_DESC=	PEAR::Net::FTP support

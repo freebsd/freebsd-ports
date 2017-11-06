@@ -3,6 +3,7 @@
 
 PORTNAME=	flashrom
 PORTVERSION=	0.9.9
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://download.flashrom.org/releases/
 

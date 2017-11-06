@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	cups
-PORTVERSION=	2.2.1
+PORTVERSION=	2.2.6
 DISTVERSIONPREFIX=v
-PORTREVISION=	1
 CATEGORIES=	print
 
 MAINTAINER=	tijl@FreeBSD.org
@@ -38,7 +37,7 @@ CONFIGURE_ARGS=	--disable-dnssd						\
 		--with-pam-module="unix"				\
 		ac_cv_path_JAVA= ac_cv_path_PERL= ac_cv_path_PHPCGI=	\
 		ac_cv_path_PHP= ac_cv_path_PYTHON=
-USES=		cpe gmake iconv localbase pkgconfig tar:bzip2
+USES=		cpe gmake iconv localbase pkgconfig
 CPE_VENDOR=	apple
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	cupsd
@@ -96,13 +95,8 @@ post-patch:
 	@${REINPLACE_CMD} 's/usblp/ulpt/g' ${WRKSRC}/backend/usb-libusb.c
 	@${REINPLACE_CMD} -e 's|/usr/local/etc/pam.d|${LOCALBASE}/etc/pam.d|' \
 		-e 's/-fstack-protector//' ${WRKSRC}/configure
-	@${REINPLACE_CMD} 's|http://www.cups.org|https://cups.org|' \
-		${WRKSRC}/doc/index.html.in \
-		${WRKSRC}/doc/??/index.html.in \
-		${WRKSRC}/templates/header.tmpl.in \
-		${WRKSRC}/templates/??/header.tmpl.in \
-		${WRKSRC}/templates/help-header.tmpl \
-		${WRKSRC}/templates/??/help-header.tmpl
+	@${FIND} ${WRKSRC}/doc ${WRKSRC}/templates -type f -exec ${SED} -i '' \
+		's|http://www.cups.org|https://www.cups.org|g' {} +
 	@${REINPLACE_CMD} '/stripopt=/s/-x//' ${WRKSRC}/install-sh
 	@${REINPLACE_CMD} 's|/etc/cups|${LOCALBASE}/etc/cups|g' \
 		${WRKSRC}/man/*.man*
@@ -112,16 +106,10 @@ post-patch:
 
 post-patch-DOCS-off:
 # Link to online documentation.
-	@${REINPLACE_CMD} \
-		's|"/*help/|"https://cups.org/documentation.php/doc-${PORTVERSION:R}/|' \
-		${WRKSRC}/doc/index.html.in \
-		${WRKSRC}/doc/??/index.html.in \
-		${WRKSRC}/templates/choose-uri.tmpl \
-		${WRKSRC}/templates/??/choose-uri.tmpl \
-		${WRKSRC}/templates/header.tmpl.in \
-		${WRKSRC}/templates/??/header.tmpl.in \
-		${WRKSRC}/templates/samba-export.tmpl \
-		${WRKSRC}/templates/??/samba-export.tmpl
+	@${FIND} ${WRKSRC}/doc ${WRKSRC}/templates -type f -exec ${SED} -i '' \
+		-e 's|[Hh][Rr][Ee][Ff]="/*help/\([{"]\)|href="https://www.cups.org/documentation.html\1|g' \
+		-e '/have_gssapi/s|[Hh][Rr][Ee][Ff]="/*help/|href="https\\://www.cups.org/doc/|g' \
+		-e 's|[Hh][Rr][Ee][Ff]="/*help/|href="https://www.cups.org/doc/|g' {} +
 
 post-install:
 	${LN} -sf lpr ${STAGEDIR}${PREFIX}/bin/lpr-cups

@@ -3,7 +3,7 @@
 
 PORTNAME=	fsbackup
 PORTVERSION=	1.2.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.opennet.ru/dev/fsbackup/src/
 DISTNAME=	fsbackup-1.2pl1
@@ -11,16 +11,17 @@ DISTNAME=	fsbackup-1.2pl1
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	File system backup and synchronization utility
 
-RUN_DEPENDS=	p5-Net>=0:net/p5-Net
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		shebangfix perl5
-SHEBANG_FILES=	contrib/*.pl \
-		*.pl
-
+NO_ARCH=	yes
 NO_BUILD=	yes
+USES=		perl5 shebangfix
+
+SHEBANG_FILES=	*.pl contrib/*.pl
 
 do-install:
-	@cd ${WRKSRC};./install.pl --prefix=${PREFIX}/fsbackup --prefix-man=${MANPREFIX}/man/man1 --dest=${STAGEDIR}
-	@${RM} ${STAGEDIR}${PREFIX}/fsbackup/fsbackup.1
+	cd ${WRKSRC}; ./install.pl --prefix=${PREFIX}/fsbackup --prefix-man=${MANPREFIX}/man/man1 --dest=${STAGEDIR}
+	${RM} ${STAGEDIR}${PREFIX}/fsbackup/fsbackup.1
 
 .include <bsd.port.mk>

@@ -9,7 +9,9 @@ MASTER_SITES=	SF
 MAINTAINER=	ap@page2rss.com
 COMMENT=	Template system for C
 
-USES=	gmake
+BROKEN_armv6=		fails to compile: assigning to char * from incompatible type const char *
+
+USES=		gmake
 GNU_CONFIGURE=	yes
 
 PLIST_FILES+=	bin/h2ap

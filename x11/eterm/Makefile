@@ -15,13 +15,23 @@ BUILD_DEPENDS=	man2html:textproc/man2html
 LIB_DEPENDS=	libast.so:devel/libast \
 		libImlib2.so:graphics/imlib2
 
-BROKEN_aarch64=	Fails to install: gdb.scr: no such file or directory
+BROKEN_aarch64=		fails to package: gdb.scr: no such file or directory
+BROKEN_mips=		fails to package: gdb.scr: no such file or directory
+BROKEN_mips64=		fails to package: gdb.scr: no such file or directory
+BROKEN_powerpc64=	fails to package: gdb.scr: no such file or directory
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS?=--enable-trans --enable-utmp \
 		--enable-xim --with-theme-update \
 		--with-backspace=bs --without-terminfo \
 		--enable-multi-charset
+
+.if exists(/usr/libexec/gdb)
+CONFIGURE_ENV=	GDB=/usr/libexec/gdb
+.else
+CONFIGURE_ENV=	GDB=/usr/bin/gdb
+.endif
+
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 USES=		iconv libtool shebangfix

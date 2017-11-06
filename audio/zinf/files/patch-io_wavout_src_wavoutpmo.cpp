@@ -8,3 +8,12 @@
  #include <string>
  
  /* project headers */
+@@ -124,7 +124,7 @@ Init(OutputInfo* info)
+    // it, appending an ! to the filename, and changing the extention
+    // to wav
+    std::string path;
+-   char *pPtr = strrchr(GetUrl().c_str(), DIR_MARKER);
++   const char *pPtr = strrchr(GetUrl().c_str(), DIR_MARKER);
+    if (pPtr){
+       path = pPtr+1;
+       pPtr = strrchr(path.c_str(), '.');

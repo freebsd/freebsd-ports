@@ -1,26 +1,21 @@
 # Created by: Piotr Kubaj <pkubaj@anongoth.pl>
 # $FreeBSD$
 
-PORTNAME=	tiff
+PORTNAME=	libtiff
 PORTVERSION=	4.0.3
+PORTREVISION=	3
 CATEGORIES=	graphics linux
-BIN_DISTFILES=	${LINUX_NAME}-tools-${PORTVERSION}-${RPMVERSION}${EXTRACT_SUFX}
-LIB_DISTFILES=	${LINUX_NAME}-${PORTVERSION}-${RPMVERSION}${EXTRACT_SUFX}
-SRC_DISTFILES=	${LINUX_NAME}-${PORTVERSION}-${RPMVERSION}${SRC_SUFX}:SOURCE
 
 MAINTAINER=	emulation@FreeBSD.org
-COMMENT=	TIFF library (Linux CentOS ${LINUX_DIST_VER})
+COMMENT=	Library routines for working with TIFF images (Linux CentOS ${LINUX_DIST_VER})
 
-CONFLICTS=	linux-f10-${PORTNAME}-[0-9]* linux-c6-${PORTNAME}-[0-9]*
+CONFLICTS=	linux-c6-${PORTNAME}-[0-9]*
 
-LINUX_NAME=	lib${PORTNAME}
-RPMVERSION=	25.el7_2
+DESCR=		${.CURDIR}/../tiff/pkg-descr
+RPMVERSION=	27.el7_3
 USES=		linux:c7
 USE_LDCONFIG=	yes
 USE_LINUX=	jbigkit jpeg
 USE_LINUX_RPM=	yes
-
-DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
-DOCSDIR=	${PREFIX}/usr/share/doc/${LINUX_NAME}-${PORTVERSION}
 
 .include <bsd.port.mk>

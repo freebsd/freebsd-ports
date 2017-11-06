@@ -13,7 +13,7 @@ COMMENT=	Load URI::Escape::XS preferentially over URI::Escape
 
 RUN_DEPENDS:=	p5-URI-Escape-XS>=0:www/p5-URI-Escape-XS
 
-LICENSE=	ART10 GPLv1
+LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 USES=		perl5

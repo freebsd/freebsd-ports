@@ -1,8 +1,0 @@
-GuiLoader is a high-performance and compact GuiXml loader library.
-This library allows GTK+ applications to create GUI widgets and
-objects at run-time from GuiXml resource files. GuiLoader is
-written in the C language as a GObject subclass and has
-a trivial language-independent API. GuiLoader was designed to be
-easily wrapped for any language that has GTK+ bindings.
-
-WWW: http://www.crowdesigner.org/

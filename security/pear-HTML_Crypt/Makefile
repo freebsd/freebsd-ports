@@ -5,9 +5,9 @@ PORTNAME=	HTML_Crypt
 PORTVERSION=	1.3.4
 CATEGORIES=	security www pear
 
-MAINTAINER=	joneum@bsdproject.de
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Encrypts text which is later decoded using JavaScript on the client side
 
-USES=	pear
+USES=		pear
 
 .include <bsd.port.mk>

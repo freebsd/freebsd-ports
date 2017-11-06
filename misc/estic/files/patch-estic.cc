@@ -1,5 +1,5 @@
---- estic/estic.cc.orig	Wed Mar  5 21:20:42 1997
-+++ estic/estic.cc	Tue Sep  6 09:54:21 2005
+--- estic/estic.cc.orig	1997-03-05 20:20:42 UTC
++++ estic/estic.cc
 @@ -80,9 +80,9 @@
  
  

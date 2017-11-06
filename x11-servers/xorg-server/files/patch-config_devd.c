@@ -1,6 +1,6 @@
---- config/devd.c.orig	2015-05-19 19:41:49 UTC
+--- config/devd.c.orig	2017-01-19 15:20:42 UTC
 +++ config/devd.c
-@@ -0,0 +1,531 @@
+@@ -0,0 +1,532 @@
 +/*
 + * Copyright (c) 2012 Baptiste Daroussin
 + * Copyright (c) 2013, 2014 Alex Kozlov
@@ -64,7 +64,7 @@
 +static int sock_devd;
 +static bool is_console_kbd = false;
 +static bool is_kbdmux = false;
-+OsTimerPtr rtimer;
++static OsTimerPtr rtimer = NULL;
 +
 +struct hw_type {
 +	const char *driver;
@@ -417,6 +417,7 @@
 +			disconnect_devd(sock_devd);
 +			rtimer = TimerSet(NULL, 0, 1, reconnect_handler, NULL);
 +			LogMessage(X_WARNING, "config/devd: devd socket is lost\n");
++			free(buf);
 +			return -1;
 +		}
 +		if (c == '\n')

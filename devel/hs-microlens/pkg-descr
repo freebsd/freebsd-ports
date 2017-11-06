@@ -1,0 +1,6 @@
+This library is an extract from lens (with no dependencies). It's not a toy
+lenses library, unsuitable for “real world”, but merely a small one. It is
+compatible with lens, and should have same performance. It also has better
+documentation.
+
+WWW: http://hackage.haskell.org/package/microlens

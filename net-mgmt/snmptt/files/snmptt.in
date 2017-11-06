@@ -9,36 +9,27 @@
 #
 # Add the following lines to /etc/rc.conf to enable snmptt:
 #
-# snmptt_enable="YES"
-# snmptt_flags="<set as needed>"
-#
-# See snmptt documentation for flags.
+# snmptt_enable:    Set to NO by default. Set it to YES to enable it.
+# snmptt_user:      The user account snmptt runs as what
+#                   you want it to be. It uses 'snmptt' user by
+#                   default.
+# snmptt_flags:     See snmptt documentation for flags.
 #
 
 . /etc/rc.subr
 
 name=snmptt
-rcvar=snmptt_enable
+rcvar=${name}_enable
 
 command=%%PREFIX%%/sbin/${name}
-command_args=">/dev/null --daemon"
-pidfile=/var/run/${name}.pid
-# XXX: Makes assumptions about the interpreter path and version. However,
-# USE_PERL5 should guarantee that this path is valid. In any event, we
-# don't sed-ify the #! operators.
-procname=/usr/bin/perl
-required_files=%%PREFIX%%/etc/snmp/${name}.ini
-
-# set defaults
-
-snmptt_enable=${snmptt_enable:-"NO"}
-
-stop_postcmd=stop_postcmd
-
-stop_postcmd()
-{
-  rm -f $pidfile
-}
+command_args="--daemon > /dev/null 2>&1"
+command_interpreter=%%PERL%%
 
 load_rc_config ${name}
+
+: ${snmptt_enable:="NO"}
+: ${snmptt_user:="snmptt"}
+
+required_files=%%PREFIX%%/etc/snmp/${name}.ini
+
 run_rc_command "$1"

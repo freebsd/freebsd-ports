@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	liveMedia
-PORTVERSION=	2016.11.28
+PORTVERSION=	2017.09.12
 PORTEPOCH=	2
 CATEGORIES=	net devel
 MASTER_SITES=	http://www.live555.com/liveMedia/public/ \
@@ -16,6 +16,8 @@ LICENSE=	LGPL21
 
 NO_CDROM=	'dated material'
 
+BROKEN_sparc64=		Fails to compile
+
 WRKSRC=		${WRKDIR}/live
 
 HAS_CONFIGURE=	yes
@@ -28,14 +30,10 @@ USE_LDCONFIG=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "amd64" || ${ARCH} == "ia64"
+.if ${ARCH} == "amd64"
 CFLAGS+=	-fPIC
 .else
 CFLAGS+=	-fpic
-.endif
-
-.if ${ARCH} == "sparc64"
-BROKEN=		Does not compile
 .endif
 
 post-extract:

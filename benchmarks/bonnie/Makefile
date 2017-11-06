@@ -5,8 +5,7 @@ PORTNAME=	bonnie
 PORTVERSION=	2.0.6
 PORTREVISION=	1
 CATEGORIES=	benchmarks
-MASTER_SITES=	http://www.acnc.com/benchmarks/ \
-		http://www.textuality.com/bonnie/
+MASTER_SITES=	http://www.textuality.com/bonnie/
 DISTNAME=	bonnie
 
 MAINTAINER=	kuriyama@FreeBSD.org

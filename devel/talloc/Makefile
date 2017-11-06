@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=		talloc
-PORTVERSION=		2.1.8
+PORTVERSION=		2.1.9
 PORTREVISION=		0
 PORTEPOCH=		0
 CATEGORIES=		devel
@@ -41,6 +41,10 @@ PLIST_FILES+=		include/pytalloc.h \
 			lib/libpytalloc-util.so.2 \
 			%%PYTHON_SITELIBDIR%%/talloc.so \
 			%%PKGCONFIGDIR%%/pytalloc-util.pc
+.endif
+
+.if ${ARCH} == powerpc64 || ${ARCH} == powerpc
+EXTRA_PATCHES+=		${FILESDIR}/powerpc-patch-lib_replace_wscript
 .endif
 
 .include <bsd.port.pre.mk>

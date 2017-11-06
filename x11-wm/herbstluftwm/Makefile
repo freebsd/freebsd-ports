@@ -2,10 +2,11 @@
 
 PORTNAME=	herbstluftwm
 PORTVERSION=	0.7.0
+PORTREVISION=	2
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://herbstluftwm.org/tarballs/
 
-MAINTAINER=	udvzsolt@gmail.com
+MAINTAINER=	uzsolt@uzsolt.hu
 COMMENT=	Manual tiling window manager for X11
 
 LICENSE=	BSD2CLAUSE

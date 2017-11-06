@@ -3,6 +3,8 @@
 %%WWWDIR%%/INSTALL
 %%WWWDIR%%/LICENSE
 %%WWWDIR%%/README
+%%WWWDIR%%/%%AP_NAME%%.conf.nginx
+%%WWWDIR%%/Dockerfile
 %%WWWDIR%%/classes/Cache.php
 %%WWWDIR%%/classes/Cache/APC.php
 %%WWWDIR%%/classes/Cache/Enabled.php
@@ -106,6 +108,7 @@
 %%WWWDIR%%/modules/_shared/lang/Hungarian.cat
 %%WWWDIR%%/modules/_shared/lang/Hungarian.lang
 %%WWWDIR%%/modules/_shared/lang/Italian.cat
+%%WWWDIR%%/modules/_shared/lang/Italian.lang
 %%WWWDIR%%/modules/_shared/lang/Japanese.cat
 %%WWWDIR%%/modules/_shared/lang/Japanese.lang
 %%WWWDIR%%/modules/_shared/lang/Norwegian_NB.cat
@@ -416,6 +419,9 @@
 %%WWWDIR%%/skins/default/img/flags/cc.png
 %%WWWDIR%%/skins/default/img/flags/commflagged.png
 %%WWWDIR%%/skins/default/img/flags/cutlist.png
+%%WWWDIR%%/skins/default/img/flags/damaged.png
+%%WWWDIR%%/skins/default/img/flags/hd1080.png
+%%WWWDIR%%/skins/default/img/flags/hd720.png
 %%WWWDIR%%/skins/default/img/flags/hd.png
 %%WWWDIR%%/skins/default/img/flags/no.png
 %%WWWDIR%%/skins/default/img/flags/no_autoexpire.png

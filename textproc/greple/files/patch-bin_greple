@@ -1,0 +1,18 @@
+--- bin/greple.orig	2017-03-31 08:39:29 UTC
++++ bin/greple
+@@ -43,15 +43,6 @@ use Encode::Guess;
+ ##
+ use warnings FATAL => 'utf8';
+ 
+-##
+-## Setup greple/lib to be a module directory if exists.
+-##
+-BEGIN {
+-    if ((my $lib = abs_path($0)) =~ s{/ \K (?:bin/)? \w+ $}{lib}x) {
+-	push @INC, $lib if -d "$lib/App/Greple";
+-    }
+-}
+-
+ use Getopt::EX::Loader;
+ use Getopt::EX::Func qw(parse_func);
+ 

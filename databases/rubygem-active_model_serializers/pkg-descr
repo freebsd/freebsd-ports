@@ -1,0 +1,5 @@
+This gem is an ActiveModel Serializer implementation with Rails hooks.
+It provides a means to generate JSON in an object-oriented and
+convention-driven manner.
+
+WWW: https://github.com/rails-api/active_model_serializers

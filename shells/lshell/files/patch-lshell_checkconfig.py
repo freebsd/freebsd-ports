@@ -1,6 +1,6 @@
---- lshell/checkconfig.py.orig	2013-08-19 19:59:37 UTC
+--- lshell/checkconfig.py	2017-01-11 18:12:28 UTC
 +++ lshell/checkconfig.py
-@@ -307,7 +307,7 @@ class CheckConfig:
+@@ -238,7 +238,7 @@
              try:
                  if logfilename == "syslog":
                      from logging.handlers import SysLogHandler

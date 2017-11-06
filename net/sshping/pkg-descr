@@ -1,0 +1,7 @@
+Utility to test the performance of interactive ssh sessions or scp file
+transfers. It uses ssh to log into a remote system, then runs two tests: the
+first test sends one character at a time, waiting for each character to be
+returned while it records the latency time for each. The second test sends a
+dummy file over scp to /dev/null on the remote system.
+
+WWW: https://github.com/spook/sshping/

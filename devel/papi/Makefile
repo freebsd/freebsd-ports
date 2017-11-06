@@ -3,11 +3,11 @@
 
 PORTNAME=	papi
 PORTVERSION=	5.4.3
-PORTREVISION=	2
+PORTREVISION=	4
 CATEGORIES=	devel
 MASTER_SITES=	http://icl.cs.utk.edu/projects/papi/downloads/
 
-MAINTAINER=	luca.pizzamiglio@gmail.com
+MAINTAINER=	pizzamig@FreeBSD.org
 COMMENT=	API to access the performance counter hw in the microprocessor
 
 LICENSE=	BSD3CLAUSE

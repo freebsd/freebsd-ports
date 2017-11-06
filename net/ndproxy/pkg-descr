@@ -1,0 +1,14 @@
+The ndproxy(4) kernel module implements IPv6 Neighbor Discovery
+proxying with many options to handle several use-cases.
+
+It replies to a neighbor solicitation with a specific neighbor
+advertisement, in order to let the PE uplink router send further
+packets to a CPE downlink router, that may or may not be the same
+node that the one which runs ndproxy.
+
+The main difference with the ndp(8) command-line tool is that, with
+ndproxy(4), the host running ndp can be used only to redirect
+packets to another IPv6 internal router, for instance a dedicated
+one with hardware support of IPv6 routing processes.
+
+WWW: http://www.fenyo.net/newweb/ndproxy.html

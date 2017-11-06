@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	cimg
-DISTVERSIONPREFIX=	v
-DISTVERSION=	1.7.9
-PORTREVISION=	2
+DISTVERSION=	2.1.3
+PORTREVISION=	1
 PORTEPOCH=	3
 CATEGORIES=	graphics devel
 
@@ -20,13 +19,13 @@ LICENSE_FILE_CeCILL=	${WRKSRC}/Licence_CeCILL_V2-en.txt
 LICENSE_PERMS_CeCILL_C=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 LICENSE_PERMS_CeCILL=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-ONLY_FOR_ARCHS=	i386 amd64
+ONLY_FOR_ARCHS=	amd64 i386
 ONLY_FOR_ARCHS_REASON=	invokes i386 asm
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	dtschump
 GH_PROJECT=	CImg
-GH_TAGNAME=	${DISTVERSIONPREFIX}.${DISTVERSION:S/.//g}
+GH_TAGNAME=	v.${DISTVERSION:S/.//g}
 
 .if !defined(WITHOUT_LAPACK)
 . if defined(WITH_ATLAS)
@@ -55,11 +54,10 @@ LIB_DEPENDS+=	libcurl.so:ftp/curl			\
 		libpng.so:graphics/png			\
 		libtiff.so:graphics/tiff		\
 		libHalf.so:graphics/ilmbase		\
-		libIlmImf.so:graphics/OpenEXR		\
 		libgimp-2.0.so:graphics/gimp-app	\
 		libfftw3.so:math/fftw3			\
-		libopencv_legacy.so:graphics/opencv2	\
-		libopencv_core.so:graphics/opencv2-core	\
+		libopencv_legacy.so:graphics/opencv	\
+		libopencv_core.so:graphics/opencv-core	\
 		libGraphicsMagick.so:graphics/GraphicsMagick
 USES+=		jpeg
 ALL_TARGET=	Mlinux

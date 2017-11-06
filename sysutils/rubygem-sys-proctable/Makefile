@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sys-proctable
-PORTVERSION=	1.1.3
+PORTVERSION=	1.1.5
 DISTVERSIONSUFFIX=	-universal-freebsd
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
@@ -14,7 +14,6 @@ LICENSE=	APACHE20
 
 RUN_DEPENDS=	rubygem-ffi>=0:devel/rubygem-ffi
 
-GEM_NAME=	${PORTNAME}-${DISTVERSIONFULL}
 NO_ARCH=	yes
 USE_RUBY=	yes
 USES=		gem

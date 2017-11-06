@@ -113,3 +113,4 @@ etc/bloboats.dirs
 %%DATADIR%%/defaults/private/ghost/ghost.txt
 %%DATADIR%%/defaults/private/records/records.txt
 %%DATADIR%%/defaults/private/levels.dat
+share/pixmaps/bloboats.png

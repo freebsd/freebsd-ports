@@ -36,9 +36,9 @@ CDDIRS=		Help Logs Maps Music Sounds System Textures Web
 #   - Verify CD was correctly mounted by checking for incorrect NetGamesUSA.com.
 #     -b option may be needed to mount it.
 .if !defined(CDROM_MOUNT)
-IGNORE= 	requires CDROM_MOUNT set to mount point of CD
+IGNORE=		requires CDROM_MOUNT set to mount point of CD
 .elif exists(${CDROM_MOUNT}/netgam~1.com)
-IGNORE= 	requires CD mounting with -b option
+IGNORE=		requires CD mounting with -b option
 .endif
 
 # Anthology install.

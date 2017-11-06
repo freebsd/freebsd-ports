@@ -1,5 +1,5 @@
---- config/settings.yml.example.orig	2016-08-24 09:01:39.000000000 +0200
-+++ config/settings.yml.example	2016-09-05 23:33:49.472857000 +0200
+--- config/settings.yml.example.orig	2017-05-08 15:18:42 UTC
++++ config/settings.yml.example
 @@ -38,7 +38,7 @@
  #:foreman_ssl_key: ssl/private_keys/fqdn.pem
  

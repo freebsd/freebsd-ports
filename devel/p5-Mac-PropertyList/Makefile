@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT=	Perl extension for parsing Mac OS X property lists
 
-LICENSE=	ART10 GPLv1
+LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-XML-Entities>=0:textproc/p5-XML-Entities

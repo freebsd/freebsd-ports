@@ -1,0 +1,47 @@
+--- bin/secpanel.orig	2017-04-08 17:52:46 UTC
++++ bin/secpanel
+@@ -29,7 +29,7 @@ exec wish "$0" "$@"
+ 
+ set spversion 0.6.0
+ 
+-set libdir "[file dirname [info script]]/../lib/secpanel"
++set libdir "/usr/local/share/secpanel"
+ # set libdir "$env(HOME)/secpanel_devel/secpanel-0x/lib"
+ set sshdir "$env(HOME)/.ssh"
+ 
+@@ -142,7 +142,7 @@ proc initconfigs {} {
+     global configs
+     foreach {bintag binprog} \
+ 	{sshbin ssh keygenbin ssh-keygen agentbin ssh-agent \
+-	     addbin ssh-add askpassbin ssh-askpass scpbin scp sftpbin Filezilla termver Xterm browserbin firefox \
++	     addbin ssh-add askpassbin ssh-askpass scpbin scp sftpbin Filezilla Thunar termver Xterm browserbin firefox \
+ 	     } {
+ 		 if {! [info exists configs($bintag)]} {
+ 		     set configs($bintag) $binprog
+@@ -1142,6 +1142,9 @@ proc connect_sftp {} {
+ 		    "Filezilla" {
+ 			set runstring "filezilla -l interactive "
+ 		    }
++		    "Thunar" {
++			set runstring "thunar "
++		    }
+ 		    "GNOME-Nautilus" {
+ 			set runstring "nautilus "
+ 		    }
+@@ -2439,6 +2442,7 @@ proc main {argc argv} {
+     foreach {sftptag sftpprog} {
+ 	"KDE-Konqueror" konqueror
+ 	"GNOME-Nautilus" nautilus
++	"Thunar" thunar
+ 	"Filezilla" filezilla
+     } {
+ 	if {! [catch {exec which "$sftpprog"}]} {
+@@ -2498,7 +2502,7 @@ proc main {argc argv} {
+ 	.mc1 add command -label "Multi Xterm (not found)" -command "multiconnect multixterm" -state "disabled"
+     }
+ 
+-    if {[catch {exec which "filezilla"}] && [catch {exec which "nautilus"}] && [catch {exec which "konqueror"}]
++    if {[catch {exec which "filezilla"}] && [catch {exec which "thunar"}] && [catch {exec which "nautilus"}] && [catch {exec which "konqueror"}]
+ } {
+ 	.top17.fra46.fra26.fra29.fra36.but34 configure -state "disabled"
+     }

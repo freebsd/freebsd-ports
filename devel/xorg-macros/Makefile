@@ -2,12 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	xorg-macros
-PORTVERSION=	1.19.0
+PORTVERSION=	1.19.1
 CATEGORIES=	devel x11
 DISTNAME=	util-macros-${PORTVERSION}
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X.Org development aclocal macros
+
+LICENSE=	MIT
 
 XORG_CAT=	util
 

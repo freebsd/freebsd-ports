@@ -1,0 +1,7 @@
+PacketQ is a command line tool to run SQL queries directly on PCAP
+files, the results can be outputted as JSON (default),
+formatted/compact CSV and XML. It also contain a very simplistic
+web-server in order to inspect PCAP files remotely.
+PacketQ was known as DNS2db but renamed in 2011.
+
+WWW: https://www.dns-oarc.net/tools/packetq

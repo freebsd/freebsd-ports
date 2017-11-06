@@ -2,9 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	mpfr
-PORTVERSION=	3.1.5
+PORTVERSION=	3.1.6
 CATEGORIES=	math devel
-MASTER_SITES=	http://www.mpfr.org/mpfr-current/
+MASTER_SITES=	http://www.mpfr.org/mpfr-current/ \
+		GNU/${PORTNAME}
 DIST_SUBDIR=	${DISTNAME}
 
 PATCH_SITES=	${MASTER_SITES}
@@ -18,7 +19,7 @@ LICENSE=	LGPL3
 #PATCH_DEPENDS=	gpatch:devel/patch
 LIB_DEPENDS=	libgmp.so:math/gmp
 
-#PATCHLEVEL=	1
+#PATCHLEVEL=	2
 #PATCHFILES!=	/usr/bin/jot -s " " -w patch%02d ${PATCHLEVEL} 1 ${PATCHLEVEL}
 #PATCH=		${LOCALBASE}/bin/gpatch
 
@@ -26,6 +27,7 @@ USES=		libtool tar:xz
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-gmp=${LOCALBASE}
 INSTALL_TARGET=	install-strip
+TEST_TARGET=	check
 USE_LDCONFIG=	yes
 
 INFO=		mpfr

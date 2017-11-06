@@ -15,7 +15,6 @@ LICENSE=	MIT
 
 RUN_DEPENDS=	rubygem-zentest>=4.3:devel/rubygem-zentest
 
-GEM_NAME=	${DISTNAME}
 NO_ARCH=	yes
 USE_RUBY=	yes
 USES=		gem shebangfix

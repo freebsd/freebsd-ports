@@ -1,0 +1,10 @@
+--- Makefile.orig	2017-03-21 13:20:48 UTC
++++ Makefile
+@@ -36,7 +36,6 @@ build: build/$(BUILD_STAMP)
+ 
+ build/$(BUILD_STAMP): $(SRCFILES)
+ 	$(PYTHON) setup.py build $(BUILD_ARGS)
+-	touch $@
+ 
+ docs: build
+ 	PYTHONPATH=build/$(BUILD_DIR) $(SPHINX) -b html sphinx/ $(DOCS_OUTPUT)

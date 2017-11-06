@@ -1,4 +1,4 @@
---- kwin/opengltest/CMakeLists.txt.orig	2014-11-06 22:36:58 UTC
+--- kwin/opengltest/CMakeLists.txt.orig	2015-06-26 03:17:21 UTC
 +++ kwin/opengltest/CMakeLists.txt
 @@ -2,9 +2,11 @@
  

@@ -3,16 +3,16 @@
 
 PORTNAME=	slowloris
 PORTVERSION=	0.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	benchmarks
 MASTER_SITES=	ftp://ftp.renatasystems.org/pub/FreeBSD/ports/distfiles/
 
 MAINTAINER=	alexey@renatasystems.org
 COMMENT=	The low bandwidth, yet greedy and poisonous HTTP client
 
-RUN_DEPENDS=	p5-IO-Socket-SSL>=0:security/p5-IO-Socket-SSL \
-		p5-Getopt-Long>=0:devel/p5-Getopt-Long
+RUN_DEPENDS=	p5-IO-Socket-SSL>=0:security/p5-IO-Socket-SSL
 
+NO_ARCH=	yes
 NO_BUILD=	yes
 
 USES=		perl5 shebangfix

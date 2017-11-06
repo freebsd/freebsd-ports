@@ -3,18 +3,18 @@
 
 PORTNAME=	mysqlviz
 PORTVERSION=	0.3
+PORTREVISION=	1
 CATEGORIES=	textproc
-MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	MySQL and SQLite Database Visualisation Tool
 
 LICENSE=	GPLv3
 
-BROKEN=		Unfetchable (google code has gone away)
-
 NO_BUILD=	yes
 USES=	php:cli tar:bzip2
+USE_GITHUB=	yes
+GH_ACCOUNT=	globalcitizen
 
 PLIST_FILES=	bin/${PORTNAME}
 
@@ -29,6 +29,8 @@ post-patch:
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+
+do-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTEXAMPLES} ${STAGEDIR}${EXAMPLESDIR}
 

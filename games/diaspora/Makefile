@@ -3,6 +3,7 @@
 
 PORTNAME=	diaspora
 PORTVERSION=	1.1.1
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://diaspora.fs2downloads.com/ \
 		http://www.freespacemods.net/e107_files/downloads/:freespacemods \
@@ -65,6 +66,8 @@ WXLAUNCHER_SUB_FILES=	fs2_open_${PORTNAME}_launcher
 WXLAUNCHER_VARS=	PORTDATA+="resources *.ini *.png *.bmp"
 
 POST_PLIST+=	build-plist-empty
+
+BROKEN_aarch64=		Fails to compile: cast from pointer to smaller type loses information
 
 post-extract: .SILENT
 .for v in 1.1 1.1.1

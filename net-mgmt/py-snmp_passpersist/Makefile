@@ -1,11 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	snmp_passpersist
-PORTVERSION=    1.3.0
-CATEGORIES=     net-mgmt python
-PKGNAMEPREFIX=  ${PYTHON_PKGNAMEPREFIX}
+PORTVERSION=	1.3.0
+CATEGORIES=	net-mgmt python
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=     surajravi@gmail.com
+MAINTAINER=	surajravi@gmail.com
 COMMENT=	Python client library for Net-SNMP pass persist backend
 
 LICENSE=	GPLv3

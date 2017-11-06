@@ -12,7 +12,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:C|00$||}
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module for portably manipulating file specifications
 
-LICENSE=	ART10 GPLv1
+LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 USES=		perl5

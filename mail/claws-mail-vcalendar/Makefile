@@ -6,6 +6,8 @@ PORTREVISION=	0
 
 COMMENT=	vCalendar plugin for Claws Mail
 
+LIB_DEPENDS=	libical.so:devel/libical
+
 CLAWS_PLUGINS_BUILD=	vcalendar
 
 .include "../claws-mail/Makefile.claws"

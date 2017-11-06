@@ -4,7 +4,6 @@
 CATEGORIES=	x11 lang
 PKGNAMESUFFIX=	-x11
 
-MAINTAINER=	freebsd-fpc@FreeBSD.org
 COMMENT=	Free Pascal interface to X windows server
 
 USE_FPC=	yes

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	bogofilter
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	mail
 PKGNAMESUFFIX=	-sqlite
 

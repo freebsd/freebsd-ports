@@ -2,6 +2,7 @@
 
 PORTNAME=	libmediawiki
 PORTVERSION=	4.12.0
+PORTREVISION=	1
 CATEGORIES=	net kde
 
 MAINTAINER=	kde@FreeBSD.org

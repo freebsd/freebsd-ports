@@ -3,6 +3,7 @@
 
 PORTNAME=	subtitleeditor
 PORTVERSION=	0.41.1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	http://download.gna.org/${PORTNAME}/${PORTVERSION:C/\.[0-9]*$//}/
 
@@ -17,7 +18,7 @@ LIB_DEPENDS=	libglademm-2.4.so:devel/libglademm24 \
 		libenchant.so:textproc/enchant
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USES=		desktop-file-utils gettext gmake libtool pkgconfig
+USES=		compiler:c++11-lang desktop-file-utils gettext gmake libtool pkgconfig
 USE_GNOME=	gtkmm24 intltool
 USE_GSTREAMER=	good mm
 GNU_CONFIGURE=	yes
@@ -25,6 +26,7 @@ INSTALL_TARGET=	install-strip
 INSTALLS_ICONS=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
+CXXFLAGS+=	-std=c++11
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 OPTIONS_DEFINE=	NLS OPENGL

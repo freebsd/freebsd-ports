@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	zoneminder-h264
-PORTVERSION=	1.30.20161104
+PORTVERSION=	1.30.20170222
 PORTREVISION=	1
 CATEGORIES=	multimedia
 
@@ -9,6 +9,8 @@ MAINTAINER=	bsd@abinet.ru
 COMMENT=	Complete security camera solution, fully web based with image analysis
 
 LICENSE=	GPLv2
+
+CONFLICTS_INSTALL=	zoneminder
 
 ZM_DEPENDS=	p5-DBI>=0:databases/p5-DBI \
 		p5-DBD-mysql>=0:databases/p5-DBD-mysql \
@@ -32,15 +34,16 @@ LIB_DEPENDS=	libx264.so:multimedia/libx264 \
 RUN_DEPENDS=	${ZM_DEPENDS} \
 		p5-MIME-Tools>=0:mail/p5-MIME-Tools \
 		sudo:security/sudo \
+		p5-Device-SerialPort>=0:comms/p5-Device-SerialPort \
 		zip:archivers/zip
 
 USE_GITHUB=	yes
-GH_TUPLE=	zoneminder:ZoneMinder:a2f782d \
+GH_TUPLE=	zoneminder:ZoneMinder:e723b6d \
 		FriendsOfCake:crud:c3976f1:crud
 
-USES=		cmake jpeg mysql perl5 php shebangfix ssl
+USES=		cmake:noninja jpeg mysql perl5 php shebangfix ssl
 USE_RC_SUBR=	zoneminder
-USE_PHP=	json pdo_mysql session gd sockets
+USE_PHP=	json pdo_mysql session gd sockets ctype
 
 ONLY_FOR_ARCHS=	amd64 i386
 
@@ -50,7 +53,6 @@ NLS_USES=	gettext
 NLS_CONFIGURE_ENABLE=	nls
 V4L_BUILD_DEPENDS=	${LOCALBASE}/include/linux/videodev2.h:multimedia/v4l_compat
 V4L_LIB_DEPENDS=	libv4l2.so:multimedia/libv4l
-OPTIONS_DEFAULT=	NLS
 
 PLIST_SUB=	WWWOWN="${WWWOWN}" WWWGRP="${WWWGRP}"
 

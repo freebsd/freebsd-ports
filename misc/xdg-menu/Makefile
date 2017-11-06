@@ -3,7 +3,7 @@
 
 PORTNAME=	xdg-menu
 PORTVERSION=	1.5
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	misc
 MASTER_SITES=	SF \
 		SF/nemysisfreebsdp/${CATEGORIES}/:icons
@@ -25,7 +25,8 @@ RUN_DEPENDS=	${LOCALBASE}/bin/rox:x11-fm/rox-filer \
 WRKSRC=		${WRKDIR}/XDG-Menu
 DATADIR=	${PREFIX}/apps/XDG-Menu
 
-USES=		python
+USES=		python shebangfix
+SHEBANG_FILES=	AppRun AppletRun
 INSTALLS_ICONS=	yes
 NO_ARCH=	yes
 

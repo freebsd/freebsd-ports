@@ -5,7 +5,7 @@ PORTNAME=	libtabe
 PORTVERSION=	0.2.6
 PORTREVISION=	8
 CATEGORIES=	chinese
-MASTER_SITES=	DEBIAN/pool/main/libt/libtabe/
+MASTER_SITES=	http://old-releases.ubuntu.com/ubuntu/pool/universe/libt/libtabe/
 DISTNAME=	libtabe_${PORTVERSION}.orig
 
 MAINTAINER=	ports@FreeBSD.org

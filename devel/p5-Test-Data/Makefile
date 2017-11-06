@@ -2,16 +2,18 @@
 # $FreeBSD$
 
 PORTNAME=	Test-Data
-PORTVERSION=	1.24
-PORTREVISION=	2
+PORTVERSION=	1.241
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	CPAN:BDFOY
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	lth@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Test functions for particular variable types
 
+LICENSE=	ART10 GPLv1+
+LICENSE_COMB=	dual
+
+NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
 

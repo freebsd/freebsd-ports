@@ -15,7 +15,7 @@ LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib \
 		libtelepathy-glib.so:net-im/telepathy-glib \
 		libfarstream-0.2.so:net-im/farstream
 
-USES=		gmake libtool pathfix pkgconfig python
+USES=		gmake libtool pathfix pkgconfig python:2
 USE_GNOME=	glib20 libxslt:build introspection:build
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

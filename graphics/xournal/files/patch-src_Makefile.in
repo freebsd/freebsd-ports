@@ -1,0 +1,11 @@
+--- src/Makefile.in.orig	2017-08-20 23:55:48 UTC
++++ src/Makefile.in
+@@ -342,7 +342,7 @@ top_srcdir = @top_srcdir@
+ @WIN32_FALSE@SUBDIRS = ttsubset
+ @WIN32_TRUE@SUBDIRS = ttsubset win32
+ INCLUDES = \
+-	-DPACKAGE_DATA_DIR=\""$(datadir)"\" \
++	-DPACKAGE_DATA_DIR=\""$(DATADIR)/pixmaps"\" \
+ 	-DPACKAGE_LOCALE_DIR=\""$(prefix)/$(DATADIRNAME)/locale"\" \
+ 	@PACKAGE_CFLAGS@
+ 

@@ -1,11 +1,10 @@
---- cmake/CMakeLists.txt.orig	2014-02-26 18:22:04 UTC
+--- cmake/CMakeLists.txt.orig	2017-02-24 21:33:00 UTC
 +++ cmake/CMakeLists.txt
-@@ -3,6 +3,6 @@ set(PKG_EXTERNAL_DEPS "")
- set(pkg_conf_file ${CMAKE_CURRENT_BINARY_DIR}/cminpack.pc)
+@@ -11,6 +11,6 @@ if (USE_BLAS AND BLAS_FOUND)
+ endif()
  configure_file(cminpack.pc.in ${pkg_conf_file} @ONLY)
  install(FILES ${pkg_conf_file}
 -    DESTINATION ${CMINPACK_LIB_INSTALL_DIR}/pkgconfig/ COMPONENT pkgconfig)
 +    DESTINATION libdata/pkgconfig/ COMPONENT pkgconfig)
  
--install(FILES FindCMinpack.cmake DESTINATION ${CMAKE_ROOT}/Modules)
-+install(FILES FindCMinpack.cmake DESTINATION share/cmake/Modules)
+ install(FILES CMinpackConfig.cmake DESTINATION share/cmake/CMinpack)

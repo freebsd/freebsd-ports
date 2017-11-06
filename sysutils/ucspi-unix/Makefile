@@ -2,22 +2,20 @@
 # $FreeBSD$
 
 PORTNAME=	ucspi-unix
-PORTVERSION=	0.36
-PORTREVISION=	5
+PORTVERSION=	1.0
 CATEGORIES=	sysutils
 MASTER_SITES=	http://untroubled.org/${PORTNAME}/archive/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	araujo@FreeBSD.org
 COMMENT=	Unix-domain socket client-server command-line tools
 
 LICENSE=	GPLv2
 
 BUILD_DEPENDS=	${BGLIBS_LIB}/libbg.a:devel/bglibs
 
+USES=		libtool:build localbase:ldflags
 BGLIBS_INC=	${LOCALBASE}/include/bglibs
 BGLIBS_LIB=	${LOCALBASE}/lib/bglibs
-CFLAGS+=	-I${BGLIBS_INC}
-LDFLAGS+=	-L${BGLIBS_LIB}
 
 PLIST_FILES=	bin/unixcat bin/unixclient bin/unixserver \
 		man/man1/unixclient.1.gz man/man1/unixserver.1.gz
@@ -37,7 +35,11 @@ post-patch: .SILENT
 	${ECHO_CMD} "${BGLIBS_LIB}"	> ${WRKSRC}/conf-bglibs
 
 do-install:
-	cd ${WRKSRC} && ./installer
+	${INSTALL_SCRIPT} ${WRKSRC}/unixcat ${STAGEDIR}${PREFIX}/bin/
+	${INSTALL_PROGRAM} ${WRKSRC}/unixclient ${STAGEDIR}${PREFIX}/bin/
+	${INSTALL_PROGRAM} ${WRKSRC}/unixserver ${STAGEDIR}${PREFIX}/bin/
+	${INSTALL_MAN} ${WRKSRC}/unixclient.1 ${STAGEDIR}${MANPREFIX}/man/man1/
+	${INSTALL_MAN} ${WRKSRC}/unixserver.1 ${STAGEDIR}${MANPREFIX}/man/man1/
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

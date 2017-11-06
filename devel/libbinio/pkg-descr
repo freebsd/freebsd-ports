@@ -8,4 +8,4 @@ representation.
 It further employs no special I/O protocol and can be used on arbitrary
 binary data sources.
 
-WWW: http://libbinio.sourceforge.net/
+WWW: http://adplug.github.io/libbinio/

@@ -2,18 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	with-editor
-PORTVERSION=	2.5.7
+PORTVERSION=	2.7.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	editors elisp
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 
 MAINTAINER=	yasu@utahime.org
-COMMENT=	Use the Emacsclient as the $EDITOR of child processes
+COMMENT=	Use the Emacsclient as the $$EDITOR of child processes
 
-LICENSE=	GPLv3
-
-BUILD_DEPENDS=	dash.el>0:devel/dash.el
-RUN_DEPENDS=	dash.el>0:devel/dash.el
+LICENSE=	GPLv3+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	magit
@@ -29,7 +27,8 @@ OPTIONS_DEFINE=	DOCS
 MAKE_ENV+=	EFLAGS="-L ${PREFIX}/${EMACS_SITE_LISPDIR}"
 
 PLIST_FILES=	${EMACS_VERSION_SITE_LISPDIR}/with-editor.el \
-		${EMACS_VERSION_SITE_LISPDIR}/with-editor.elc
+		${EMACS_VERSION_SITE_LISPDIR}/with-editor.elc \
+		${EMACS_VERSION_SITE_LISPDIR}/with-editor-autoloads.el
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/${EMACS_VERSION_SITE_LISPDIR} ${STAGEDIR}${DOCSDIR}

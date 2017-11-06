@@ -27,4 +27,4 @@ addresses) but only scripted attacks. Even a user repeatedly clicking on
 is fully tweakable through the Apache configuration file, easy to incorporate
 into your web server, and easy to use.
 
-WWW: http://www.zdziarski.com/blog/?page_id=442
+WWW: https://github.com/jzdziarski/mod_evasive

@@ -1,2 +1,7 @@
-SHA256 (unifont-7.0.03.tar.gz) = 3b5f2f3aa1bee9fdd3b23b17c0a3206948c3148dfd3ca0404696ea06d63c72cd
-SIZE (unifont-7.0.03.tar.gz) = 18372349
+TIMESTAMP = 1503957706
+SHA256 (unifont-10.0.06.ttf) = 669a9764fb640c832a8ebfbd2c351be744b55c6f65b40f1fb203144309659ac0
+SIZE (unifont-10.0.06.ttf) = 12291504
+SHA256 (unifont_csur-10.0.06.ttf) = c6bbd70acb29bec83611732cce1e41953c48cb59516506dbf0ed94a23f71753a
+SIZE (unifont_csur-10.0.06.ttf) = 750816
+SHA256 (unifont_upper-10.0.06.ttf) = be9d9670632b65113bc280d687fbc806990847f6b4567af89f1db45ae97f5b92
+SIZE (unifont_upper-10.0.06.ttf) = 1375664

@@ -6,4 +6,4 @@ A PHP replacement for bugzilla, focusing on separating the presentation,
 application, and database layers by using templates and a database
 abstraction layer.
 
-WWW: http://sourceforge.net/projects/phpbt/
+WWW: https://sourceforge.net/projects/phpbt/

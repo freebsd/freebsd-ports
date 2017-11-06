@@ -1,31 +1,33 @@
---- Makefile.orig	2016-03-19 11:15:32 UTC
+--- Makefile.orig	2017-01-08 00:20:52 UTC
 +++ Makefile
-@@ -7,30 +7,15 @@
+@@ -6,31 +6,18 @@
+ # the GNU General Public License Version 2. See the COPYING file
  # at the top of the source tree.
  
- INSTALL=install
--ASTLIBDIR:=$(shell awk '/moddir/{print $$3}' /etc/asterisk/asterisk.conf)
+-ASTLIBDIR:=$(shell awk '/moddir/{print $$3}' /etc/asterisk/asterisk.conf 2> /dev/null)
 -ifeq ($(strip $(ASTLIBDIR)),)
--	MODULES_DIR=$(INSTALL_PREFIX)/usr/lib/asterisk/modules
+-	MODULES_DIR:=$(INSTALL_PREFIX)/usr/lib/asterisk/modules
 -else
--	MODULES_DIR=$(INSTALL_PREFIX)$(ASTLIBDIR)
+-	MODULES_DIR:=$(INSTALL_PREFIX)$(ASTLIBDIR)
 -endif
--ASTETCDIR=$(INSTALL_PREFIX)/etc/asterisk
+-ASTETCDIR:=$(INSTALL_PREFIX)/etc/asterisk
 +MODULES_DIR=$(PREFIX)/lib/asterisk/modules
 +ASTETCDIR=$(PREFIX)/etc/asterisk
- SAMPLENAME=espeak.conf.sample
--CONFNAME=$(basename $(SAMPLENAME))
--
--CC=gcc
--OPTIMIZE=-O2
--DEBUG=-g
-+CONFNAME=$(SAMPLENAME)
+ SAMPLENAME:=espeak.conf.sample
+-CONFNAME:=$(basename $(SAMPLENAME))
++CONFNAME:=$(SAMPLENAME)
+ 
+ INSTALL:=install
+-CC:=gcc
+-OPTIMIZE:=-O2
+-DEBUG:=-g
++CC?=gcc
  
 -LIBS+=-lespeak -lsamplerate
 +LIBS+=$(LDFLAGS) -lespeak -lsamplerate
- CFLAGS+=-pipe -fPIC -Wall -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -D_REENTRANT -D_GNU_SOURCE
+ CFLAGS+=-pipe -fPIC -Wall -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -D_REENTRANT -D_GNU_SOURCE -DAST_MODULE_SELF_SYM=__internal_app_espeak_self
  
- all: _all
+ all: app_espeak.so
 -	@echo " +-------- app_espeak Build Complete --------+"
 -	@echo " + app_espeak has successfully been built,   +"
 -	@echo " + and can be installed by running:          +"
@@ -33,10 +35,10 @@
 -	@echo " +               make install                +"
 -	@echo " +-------------------------------------------+"
  
- _all: app_espeak.so
- 
-@@ -46,21 +31,7 @@ clean:
- install: _all
+ app_espeak.o: app_espeak.c
+ 	$(CC) $(CFLAGS) $(DEBUG) $(OPTIMIZE) -c -o $@ $*.c
+@@ -44,20 +31,7 @@ clean:
+ install: all
  	$(INSTALL) -m 755 -d $(DESTDIR)$(MODULES_DIR)
  	$(INSTALL) -m 755 app_espeak.so $(DESTDIR)$(MODULES_DIR)
 -	@echo " +---- app_espeak Installation Complete -----+"
@@ -56,4 +58,3 @@
 -	fi ;
  	$(INSTALL) -m 644 $(SAMPLENAME) $(DESTDIR)$(ASTETCDIR)/$(CONFNAME)
 -	@echo " ------- app_esepak confing Installed --------"
--

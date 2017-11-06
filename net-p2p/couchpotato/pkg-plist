@@ -100,6 +100,8 @@
 %%DATADIR%%/couchpotato/core/media/_base/providers/torrent/torrentpotato.py
 %%DATADIR%%/couchpotato/core/media/_base/providers/torrent/torrentshack.py
 %%DATADIR%%/couchpotato/core/media/_base/providers/torrent/torrentz.py
+%%DATADIR%%/couchpotato/core/media/_base/providers/torrent/yts.py
+%%DATADIR%%/couchpotato/core/media/movie/providers/torrent/yts.py
 %%DATADIR%%/couchpotato/core/media/_base/providers/userscript/__init__.py
 %%DATADIR%%/couchpotato/core/media/_base/providers/userscript/base.py
 %%DATADIR%%/couchpotato/core/media/_base/search/__init__.py
@@ -216,6 +218,7 @@
 %%DATADIR%%/couchpotato/core/notifications/core/index.py
 %%DATADIR%%/couchpotato/core/notifications/core/main.py
 %%DATADIR%%/couchpotato/core/notifications/core/static/notification.js
+%%DATADIR%%/couchpotato/core/notifications/discord.py
 %%DATADIR%%/couchpotato/core/notifications/email_.py
 %%DATADIR%%/couchpotato/core/notifications/emby.py
 %%DATADIR%%/couchpotato/core/notifications/growl.py
@@ -231,6 +234,7 @@
 %%DATADIR%%/couchpotato/core/notifications/pushalot.py
 %%DATADIR%%/couchpotato/core/notifications/pushbullet.py
 %%DATADIR%%/couchpotato/core/notifications/pushover.py
+%%DATADIR%%/couchpotato/core/notifications/script.py
 %%DATADIR%%/couchpotato/core/notifications/slack.py
 %%DATADIR%%/couchpotato/core/notifications/synoindex.py
 %%DATADIR%%/couchpotato/core/notifications/telegrambot.py

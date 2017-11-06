@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	noto
-PORTVERSION=	1.0.4
+PORTVERSION=	1.0.5
 CATEGORIES=	x11-fonts
 MASTER_SITES=	https://noto-website.storage.googleapis.com/pkgs/ \
 		https://github.com/googlei18n/noto-emoji/raw/master/:emoji
@@ -22,10 +22,10 @@ NO_WRKSUBDIR=	yes
 
 CONFLICTS_INSTALL=	noto*
 
-LIST= NotoEmoji-Regular.ttf NotoSans-Bold.ttf NotoSans-BoldItalic.ttf NotoSans-Italic.ttf NotoSans-Regular.ttf NotoSansLinearB-Regular.ttf NotoSansSymbols-Regular.ttf NotoSerif-Bold.ttf NotoSerif-BoldItalic.ttf NotoSerif-Italic.ttf NotoSerif-Regular.ttf
+LIST=	NotoEmoji-Regular.ttf NotoSans-Bold.ttf NotoSans-BoldItalic.ttf NotoSans-Italic.ttf NotoSans-Regular.ttf NotoSansLinearB-Regular.ttf NotoSansSymbols-Regular.ttf NotoSerif-Bold.ttf NotoSerif-BoldItalic.ttf NotoSerif-Italic.ttf NotoSerif-Regular.ttf
 
 .for f in ${LIST}
-PLIST_FILES+=   ${FONTSDIR}/${f}
+PLIST_FILES+=	${FONTSDIR}/${f}
 .endfor
 
 post-extract:

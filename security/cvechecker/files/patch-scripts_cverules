@@ -1,0 +1,37 @@
+--- scripts/cverules.orig	2017-10-11 10:44:44 UTC
++++ scripts/cverules
+@@ -19,26 +19,11 @@ then
+ fi
+ 
+ 
+-if [ -f /etc/gentoo-release ];
+-then
+-	cd /var/db/pkg;
+-	for CAT in *;
+-	do
+-		cd ${CAT};
+-		for PKG in *;
+-		do
+-			echo "!!!! Checking ${PKG}";
+-			typeset PKGNAME=$(echo ${PKG} | sed -e 's:\(.*\)-[0-9][0-9]*.*:\1:g');
+-			typeset PKGVERSION=$(echo ${PKG} | sed -e 's:.*-\([0-9][0-9]*.*\):\1:g' | sed -e 's:-r[0-9]*$::g' | sed -e 's:\.:\\.:g');
+-			export IGNORESTRINGS="tmp/portage";
+-			qlist ${PKG} | egrep '(bin/|\.so)' | cvegenversdat ${PKGNAME} ${PKGVERSION} ${CONFFILE} breakon;
+-		done
+-		cd ..
+-	done
+-else
+-	echo "Could not deduce if this system is a supported distribution or platform.";
+-	echo "Currently supported platforms are: Gentoo."
+-	echo "If you wish to help expand the supported distributions or platforms, please";
+-	echo "do not hesitate to contact the author at sven.vermeulen@siphos.be.";
+-	exit 1;
+-fi
++for PKG in $(pkg info -q)
++do
++	echo "!!!! Checking ${PKG}"
++	set -- $(echo ${PKG} | sed -e 's:,[0-9][0-9]*$::; s:_[0-9][0-9]*$::; s:\(.*\)-r\{0,1\}\([0-9][0-9]*.*\):\1 \2:; s:\.:\\.:g')
++	PKGNAME=$1
++	PKGVERSION=$2
++	pkg list ${PKG} | egrep '(/bin/|/sbin/|/libexec/|\.so\.|\.so$)' | cvegenversdat ${PKGNAME} ${PKGVERSION} ${CONFFILE} breakon
++done

@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Reflex
-PORTVERSION=	0.099
-PORTREVISION=	2
+PORTVERSION=	0.100
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:RCAPUTO
@@ -12,22 +11,27 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Class library for flexible, reactive programs
 
-LICENSE=	ART10 GPLv1
+LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	p5-POE>=1.294:devel/p5-POE \
-		p5-Moose>=2.0203:devel/p5-Moose \
-		p5-MooseX-Role-Parameterized>=0.23:devel/p5-MooseX-Role-Parameterized
+BUILD_DEPENDS=	p5-Moose>=2.0203:devel/p5-Moose \
+		p5-MooseX-Role-Parameterized>=0.23:devel/p5-MooseX-Role-Parameterized \
+		p5-POE>=1.294:devel/p5-POE
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+NO_ARCH=	yes
 USES=		perl5 shebangfix
 USE_PERL5=	configure
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
+PORTDOCS=	*
+PORTEXAMPLES=	*
+
 SHEBANG_FILES=	eg/*.pl
 
-post-extract:
+post-patch:
 	@${RM} ${WRKSRC}/bench.pl
 	@${REINPLACE_CMD} -e '/^bench.pl$$/d' ${WRKSRC}/MANIFEST
 

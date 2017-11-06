@@ -1,0 +1,13 @@
+Link to OpenGL libraries earlier to avoid crash with Nvidia's libGL
+
+--- Source/Core/Common/CMakeLists.txt.orig	2016-06-24 08:09:07.000000000 +0000
++++ Source/Core/Common/CMakeLists.txt	2017-01-12 20:59:59.578506000 +0000
+@@ -88,7 +88,7 @@
+         set(SRCS ${SRCS} GL/GLInterface/GLX.cpp)
+         # GLX has a hard dependency on libGL.
+         # Make sure to link to it if using GLX.
+-        set(LIBS ${LIBS} ${OPENGL_LIBRARIES})
++        set(LIBS ${OPENGL_LIBRARIES} ${LIBS})
+     endif()
+     set(SRCS ${SRCS} GL/GLInterface/X11_Util.cpp)
+     set(LIBS ${LIBS} ${XRANDR_LIBRARIES})

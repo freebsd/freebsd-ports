@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	doomlegacy
-PORTVERSION=	1.45.2
+PORTVERSION=	1.46.3
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${DISTVERSION:S,_,%20,}/
@@ -19,8 +20,6 @@ USES=		gmake tar:bzip2
 USE_GL=		glu
 USE_SDL=	mixer sdl
 
-CFLAGS+=	-DSVN_REV=\\\"1139\\\"
-
 PLIST_FILES=	bin/${PORTNAME} share/doom/legacy.wad
 PORTDOCS=	*
 
@@ -33,30 +32,22 @@ IPX_DESC=	IPX protocol support
 .endif
 
 ASM_BUILD_DEPENDS=	nasm:devel/nasm
-ASM_MAKE_ENV=		USEASM=1 OLD_DEPENDENCIES=1
+ASM_MAKE_ENV=		USEASM=1
 
 .include <bsd.port.options.mk>
 
 post-patch: .SILENT
 # Adjust default WAD search path
-	${REINPLACE_CMD} -e '/DEFWADS1/s|/.*|${DMDIR}"|' \
+	${REINPLACE_CMD} -e '/DEFWADS20/s|/.*|${DMDIR}"|' \
 		${WRKSRC}/src/doomdef.h
-# Provide better support for relative paths (for `-iwad' switch)
-	${REINPLACE_CMD} -e "s|s\[0\] ==[^)]*|strchr(s, '/')|" \
-		${WRKSRC}/src/d_main.c
-# Unbreak against Clang (https://llvm.org/bugs/show_bug.cgi?id=10365)
-	${REINPLACE_CMD} -e 's,%cc,cc,' ${WRKSRC}/src/m_fixed.h
-# Unbreak against Clang 3.7.0
-	${REINPLACE_CMD} -e '/draw_dir_line(/s,inline,static &,' \
-		${WRKSRC}/src/m_menu.c
 .if ! ${PORT_OPTIONS:MIPX}
 	${REINPLACE_CMD} -e '/USE_IPX/s|define|undef|' ${WRKSRC}/src/doomdef.h
-	${REINPLACE_CMD} -e 's| -lipx||' ${WRKSRC}/Makefile
+	${REINPLACE_CMD} -e 's| -lipx||' ${WRKSRC}/src/Makefile
 .endif
 
 pre-build:
-	${ECHO_CMD} CC_ENVIRONMENT=1 MAKE_OPTIONS_PRESENT=1 HAVE_MIXER=1 | \
-		${XARGS} -n 1 > ${BUILD_WRKSRC}/make_options
+	${ECHO_CMD} CC_ENVIRONMENT=1 OS=${OPSYS:tu} | \
+		${XARGS} -n 1 >> ${BUILD_WRKSRC}/make_options
 	${MAKE_CMD} -C ${BUILD_WRKSRC} dirs
 	${MAKE_CMD} -C ${BUILD_WRKSRC} depend
 

@@ -31,4 +31,3 @@ post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/${TCL_PKG}/lib${TCL_PKG}.so
 
 .include <bsd.port.mk>
-

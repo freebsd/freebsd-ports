@@ -1,0 +1,51 @@
+--- Makefile.orig	2016-10-28 07:41:05 UTC
++++ Makefile
+@@ -12,7 +12,7 @@
+ 
+ PREFIX ?= /usr
+ INSTALL ?= install
+-LIBDIR ?= lib
++LIBDIR = lib
+ 
+ nls ?= 1
+ xcb ?= 1
+@@ -42,6 +42,7 @@ CFLAGS += $(shell pkg-config --cflags nc
+ # Comment this if you don't want translations
+ ifeq ($(nls), 1)
+ 	CFLAGS += -DENABLE_NLS=1
++	LIBS += -lintl
+ endif
+ 
+ ifeq ($(amdgpu), 1)
+@@ -62,13 +63,12 @@ LIBS += $(shell pkg-config --libs pciacc
+ LIBS += $(shell pkg-config --libs libdrm)
+ ifeq ($(xcb), 1)
+ 	xcb_LIBS += $(shell pkg-config --libs xcb xcb-dri2)
+-	LIBS += -ldl
+ endif
+ 
+ # On some distros, you might have to change this to ncursesw
+ LIBS += $(shell pkg-config --libs ncursesw 2>/dev/null || \
+ 		shell pkg-config --libs ncurses 2>/dev/null || \
+-		echo "-lncurses")
++		echo "-lncursesw")
+ 
+ .PHONY: all clean install man dist
+ 
+@@ -98,12 +98,12 @@ trans:
+ 	xgettext -o translations/radeontop.pot -k_ *.c \
+ 	--package-name radeontop
+ 
+-install: all
+-	$(INSTALL) -D -m755 $(bin) $(DESTDIR)/$(PREFIX)/sbin/$(bin)
++install:
++	$(INSTALL) -m755 $(bin) $(DESTDIR)$(PREFIX)/sbin
+ ifeq ($(xcb), 1)
+-	$(INSTALL) -D -m755 $(xcblib) $(DESTDIR)/$(PREFIX)/$(LIBDIR)/$(xcblib)
++	$(INSTALL) -m755 $(xcblib) $(DESTDIR)$(PREFIX)/$(LIBDIR)
+ endif
+-	$(INSTALL) -D -m644 radeontop.1 $(DESTDIR)/$(PREFIX)/share/man/man1/radeontop.1
++	$(INSTALL) -m644 radeontop.1 $(DESTDIR)$(MANPREFIX)/man/man1
+ ifeq ($(nls), 1)
+ 	$(MAKE) -C translations install PREFIX=$(PREFIX)
+ endif

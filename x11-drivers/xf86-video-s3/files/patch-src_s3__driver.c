@@ -1,18 +1,13 @@
+# Correct a string that should be const
+#
 --- src/s3_driver.c.orig	2012-07-17 04:50:05 UTC
 +++ src/s3_driver.c
-@@ -52,7 +52,6 @@
- #include "compiler.h"
- #include "mipointer.h"
- #include "micmap.h"
--#include "mibstore.h"
- #include "fb.h"
- #include "inputstr.h"
- #include "shadowfb.h"
-@@ -822,7 +821,6 @@ static Bool S3ScreenInit(SCREEN_INIT_ARG
- 	fbPictureInit (pScreen, 0, 0);
- 	S3DGAInit(pScreen);
+@@ -309,7 +308,7 @@ static Bool S3PreInit(ScrnInfoPtr pScrn,
+ 	Gamma gzeros = {0.0, 0.0, 0.0};
+ 	int i, vgaCRIndex, vgaCRReg;
+ 	unsigned char tmp;
+-	char *s;
++	const char *s;
  
--        miInitializeBackingStore(pScreen);
-         xf86SetBackingStore(pScreen);
- 
- 	/* framebuffer manager setup */
+         if (flags & PROBE_DETECT)
+                 return FALSE;

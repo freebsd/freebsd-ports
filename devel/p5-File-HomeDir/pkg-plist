@@ -1,13 +1,3 @@
-%%PERL5_MAN3%%/File::HomeDir.3.gz
-%%PERL5_MAN3%%/File::HomeDir::Darwin.3.gz
-%%PERL5_MAN3%%/File::HomeDir::Darwin::Carbon.3.gz
-%%PERL5_MAN3%%/File::HomeDir::Darwin::Cocoa.3.gz
-%%PERL5_MAN3%%/File::HomeDir::Driver.3.gz
-%%PERL5_MAN3%%/File::HomeDir::FreeDesktop.3.gz
-%%PERL5_MAN3%%/File::HomeDir::MacOS9.3.gz
-%%PERL5_MAN3%%/File::HomeDir::Test.3.gz
-%%PERL5_MAN3%%/File::HomeDir::Unix.3.gz
-%%PERL5_MAN3%%/File::HomeDir::Windows.3.gz
 %%SITE_PERL%%/File/HomeDir.pm
 %%SITE_PERL%%/File/HomeDir/Darwin.pm
 %%SITE_PERL%%/File/HomeDir/Darwin/Carbon.pm
@@ -18,3 +8,13 @@
 %%SITE_PERL%%/File/HomeDir/Test.pm
 %%SITE_PERL%%/File/HomeDir/Unix.pm
 %%SITE_PERL%%/File/HomeDir/Windows.pm
+%%PERL5_MAN3%%/File::HomeDir.3.gz
+%%PERL5_MAN3%%/File::HomeDir::Darwin.3.gz
+%%PERL5_MAN3%%/File::HomeDir::Darwin::Carbon.3.gz
+%%PERL5_MAN3%%/File::HomeDir::Darwin::Cocoa.3.gz
+%%PERL5_MAN3%%/File::HomeDir::Driver.3.gz
+%%PERL5_MAN3%%/File::HomeDir::FreeDesktop.3.gz
+%%PERL5_MAN3%%/File::HomeDir::MacOS9.3.gz
+%%PERL5_MAN3%%/File::HomeDir::Test.3.gz
+%%PERL5_MAN3%%/File::HomeDir::Unix.3.gz
+%%PERL5_MAN3%%/File::HomeDir::Windows.3.gz

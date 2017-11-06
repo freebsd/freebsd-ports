@@ -1,6 +1,6 @@
---- src/Makefile.in.orig	Thu Jul 15 15:23:01 2004
-+++ src/Makefile.in	Thu Jul 15 15:23:41 2004
-@@ -73,7 +73,7 @@
+--- src/Makefile.in.orig	2007-08-16 17:11:33 UTC
++++ src/Makefile.in
+@@ -73,7 +73,7 @@ bin_PROGRAMS = dd2
  dd2_SOURCES = menu.c SDL_plus.c cfg.c engine.c control.c engine.h control.h cfg.h SDL_plus.h menu.h main.c main.h
  EXTRA_DIST = menu.c SDL_plus.c cfg.c engine.c control.c engine.h control.h cfg.h SDL_plus.h menu.h main.c main.h
  

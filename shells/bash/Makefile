@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=		bash
-PATCHLEVEL=		5
+PATCHLEVEL=		12
 PORTVERSION=		4.4.${PATCHLEVEL:S/^0//g}
-PORTREVISION?=		0
+PORTREVISION?=		3
 CATEGORIES=		shells
 MASTER_SITES=		GNU/${PORTNAME}
 DISTNAME=		${PORTNAME}-${PORTVERSION:R}
@@ -19,11 +19,14 @@ PATCHFILES!=		/usr/bin/jot -s " " -w \
 MAINTAINER=		ehaupt@FreeBSD.org
 COMMENT=		GNU Project's Bourne Again SHell
 
-LICENSE=		GPLv3
+LICENSE=		GPLv3+
+LICENSE_FILE=		${WRKSRC}/COPYING
 
-OPTIONS_DEFINE=		COLONBREAKSWORDS HELP NLS STATIC SYSLOG DOCS
+OPTIONS_DEFINE=		COLONBREAKSWORDS FDESCFS HELP NLS STATIC SYSBASHRC SYSLOG DOCS
 COLONBREAKSWORDS_DESC=	Colons break words
+FDESCFS_DESC=		Enable use of /dev/fd
 HELP_DESC=		Enable builtin help
+SYSBASHRC_DESC=		Enable system-wide rc files
 
 OPTIONS_DEFAULT=	COLONBREAKSWORDS HELP
 
@@ -33,6 +36,9 @@ OPTIONS_SUB=		yes
 CPE_VENDOR=		gnu
 
 COLONBREAKSWORDS_EXTRA_PATCHES=	${PATCHDIR}/extrapatch-colonbreakswords
+
+FDESCFS_CONFIGURE_ENV_OFF=	bash_cv_dev_fd=absent
+FDESCFS_SUB_FILES=	pkg-message
 
 HELP_CONFIGURE_ENABLE=	help-builtin
 NLS_CONFIGURE_ENABLE=	nls
@@ -64,6 +70,9 @@ CONFIGURE_ARGS+=	--disable-static-link
 # "enable -f". (Plugins are not supported for bash-static.)
 CFLAGS+=		-Wl,-export-dynamic
 .endif
+STANDARD_PATH=		/sbin:/bin:/usr/sbin:/usr/bin
+CPPFLAGS+=		-DDEFAULT_PATH_VALUE='\"${STANDARD_PATH}:${LOCALBASE}/sbin:${LOCALBASE}/bin\"' \
+			-DSTANDARD_UTILS_PATH='\"${STANDARD_PATH}\"'
 
 post-patch:
 # Ensure y.tab.c is regenerated
@@ -75,6 +84,11 @@ post-patch:
 	    -e "s|/\*.*#define SYSLOG_HISTORY .*\*/|#define SYSLOG_HISTORY|g" \
 	    ${WRKSRC}/config-top.h
 .endif
+
+post-patch-SYSBASHRC-on:
+	@${REINPLACE_CMD} \
+		-e "s|.*\(#define SYS_BASH.*\)\(/etc/.*\"\).*|\1${PREFIX}\2|" \
+		${WRKSRC}/config-top.h
 
 post-configure:
 	@${FIND} ${WRKSRC} -name Makefile -print0 | ${XARGS} -0 \

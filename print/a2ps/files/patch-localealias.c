@@ -1,6 +1,6 @@
---- intl/localealias.c.orig	Tue Aug 31 13:29:35 1999
-+++ intl/localealias.c	Tue Aug 12 11:09:53 2003
-@@ -329,6 +329,17 @@
+--- intl/localealias.c.orig	1999-08-31 17:29:35 UTC
++++ intl/localealias.c
+@@ -329,6 +329,17 @@ read_alias_file (fname, fname_len)
  		      FREE_BLOCKS (block_list);
  		      return added;
  		    }

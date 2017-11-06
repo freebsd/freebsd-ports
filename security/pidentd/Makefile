@@ -16,10 +16,12 @@ PATCH_DIST_STRIP=	-p0
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	RFC1413 identification server
 
+BROKEN_FreeBSD_12=	fails to compile: k_freebsd2.c: storage size of 'pcbp' isn't known
+
 CONFLICTS_INSTALL=	fakeident-[0-9]*
 
 GNU_CONFIGURE=	yes
-USE_OPENSSL=	yes
+USES=		ssl
 
 PLIST_FILES=	sbin/ibench sbin/identd sbin/idecrypt sbin/ikeygen \
 		man/man8/identd.8.gz man/man8/idecrypt.8.gz

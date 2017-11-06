@@ -3,6 +3,7 @@
 
 PORTNAME=	asir
 PORTVERSION=	20140819
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.jssac.org/pub/distfiles/asir/ \
 		ftp://ftp.asir.org/pub/asir/src/ \
@@ -19,6 +20,10 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 LIB_DEPENDS=	libpari.so:math/pari
+
+BROKEN=		does not compile: paridecl.h: conflicting types for 'mulreal'
+NOT_FOR_ARCHS=		aarch64
+NOT_FOR_ARCHS_REASON=	fails to compile: the collector has not been ported to this machine/OS combination
 
 MAKE_JOBS_UNSAFE=	yes
 USES=		autoreconf readline tar:bz2

@@ -4,12 +4,15 @@
 PORTNAME=	lessc
 PORTVERSION=	2.5.1
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	www devel
 
 MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	Javascript CSS pre-processor
 
 LICENSE=	APACHE20
+
+BROKEN=		fails to package
 
 BUILD_DEPENDS=	npm>=0:www/npm
 RUN_DEPENDS=	npm>=0:www/npm

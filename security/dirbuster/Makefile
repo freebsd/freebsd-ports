@@ -10,18 +10,20 @@ DISTNAME=	DirBuster-1.0-RC1
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	DirBuster allows file and directory brute forcing on web servers
 
+LICENSE=	LGPL21+ CC-BY-SA-3.0
+LICENSE_COMB=	multi
+
 USES=		zip
-USE_JAVA=	YES
+USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 NO_BUILD=	yes
+NO_ARCH=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 
-.include <bsd.port.pre.mk>
-
 post-extract:
-	${RM} ${WRKSRC}/${DISTNAME}.sh
-	${RM} ${WRKSRC}/${DISTNAME}.bat
+	@${RM} ${WRKSRC}/${DISTNAME}.sh
+	@${RM} ${WRKSRC}/${DISTNAME}.bat
 
 pre-install:
 	@${SED} -e 's:%%PATH%%:${DATADIR}/:' \
@@ -30,8 +32,7 @@ pre-install:
 		< ${FILESDIR}/${PORTNAME}.sh > ${WRKDIR}/${PORTNAME}
 
 do-install:
-	${MKDIR} ${STAGEDIR}${DATADIR}
-	${CP} -R ${WRKSRC}/* ${STAGEDIR}${DATADIR}
 	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	@cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

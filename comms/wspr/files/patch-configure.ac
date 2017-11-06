@@ -1,4 +1,4 @@
---- configure.ac.orig	2016-04-08 05:56:23 UTC
+--- configure.ac.orig	2017-09-27 19:55:15 UTC
 +++ configure.ac
 @@ -10,18 +10,33 @@ dnl ------------------------------------
  dnl path vars

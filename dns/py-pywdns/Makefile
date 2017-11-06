@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	pywdns
-PORTVERSION=	0.8.0
+PORTVERSION=	0.9.0
 CATEGORIES=	dns python
 MASTER_SITES=	FARSIGHT LOCAL/truckman/farsight
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,8 +14,8 @@ LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
 LIB_DEPENDS=	libwdns.so:dns/wdns
 
-USE_PYTHON=	autoplist distutils
 USES=		pkgconfig python
+USE_PYTHON=	autoplist distutils
 
 post-patch:
 	${REINPLACE_CMD} -e "1s+ python+ ${PYTHON_CMD}+" ${WRKSRC}/gen_pywdns_constants

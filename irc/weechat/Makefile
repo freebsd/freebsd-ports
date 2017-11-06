@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	weechat
-PORTVERSION=	1.6
+PORTVERSION=	1.9.1
 CATEGORIES=	irc
 MASTER_SITES=	https://weechat.org/files/src/
 
@@ -12,13 +12,11 @@ COMMENT=	Lightweight and user friendly ncurses based IRC client
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-CONFLICTS=	weechat-devel-[0-9]*
-
 LIB_DEPENDS+=	libcurl.so:ftp/curl \
 		libgcrypt.so:security/libgcrypt \
 		libgpg-error.so:security/libgpg-error
 
-USES=		cmake:outsource ncurses tar:bzip2
+USES=		cmake:outsource,noninja ncurses tar:xz
 USE_LDCONFIG=	yes
 
 CMAKE_ARGS+=	-DENABLE_GUILE=no \
@@ -27,6 +25,9 @@ CMAKE_ARGS+=	-DENABLE_GUILE=no \
 OPTIONS_DEFINE=		BACKTRACE DOCS CA_BUNDLE GNUTLS ICON ICONV MANPAGES NLS
 OPTIONS_DEFAULT=	ASPELL BACKTRACE CA_BUNDLE CHARSET GNUTLS ICON LUA MANPAGES PERL PYTHON RUBY TCL
 OPTIONS_SUB=		yes
+
+# BROKEN: ruby.h: error: wrong number of arguments specified for 'deprecated' attribute
+OPTIONS_EXCLUDE_powerpc64=	RUBY
 
 OPTIONS_GROUP=		PLUGINS
 OPTIONS_GROUP_PLUGINS=	ASPELL CHARSET JAVASCRIPT LUA PERL PYTHON RUBY TCL
@@ -45,7 +46,6 @@ ASPELL_CMAKE_BOOLL=	ENABLE_ASPELL
 ASPELL_LIB_DEPENDS=	libaspell.so:textproc/aspell
 
 BACKTRACE_CMAKE_BOOL=	ENABLE_BACKTRACE
-BACKTRACE_USES=		execinfo
 
 CA_BUNDLE_CMAKE_ON=	-DCA_FILE=${LOCALBASE}/share/certs/ca-root-nss.crt
 CA_BUNDLE_RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
@@ -90,10 +90,14 @@ TCL_USES=		tcl:85+
 
 .include <bsd.port.pre.mk>
 
-.if defined(PORT_OPTIONS:MPYTHON) && ${PYTHON_MAJOR_VER} >= 3
+.if !empty(PORT_OPTIONS:MPYTHON) && ${PYTHON_MAJOR_VER} >= 3
 WARNING=	"Using Python 3.x is NOT recommended because many \"official\" scripts won\'t work"
 CMAKE_ARGS+=	-DENABLE_PYTHON3:BOOL=true \
 		-DPYTHON_LIBRARY:FILEPATH=${LOCALBASE}/lib/libpython${PYTHON_VER}m.so
+.endif
+
+.if !empty(PORT_OPTIONS:MRUBY) && (${ARCH} == "amd64" || ${ARCH} == "i386")
+LIB_DEPENDS+=   libunwind.so:devel/libunwind
 .endif
 
 post-patch:

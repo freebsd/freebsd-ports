@@ -1,5 +1,5 @@
 bin/gngeo
 man/man1/gngeo.1.gz
 %%DATADIR%%/gngeo_data.zip
+%%DATADIR%%/romrc
 %%EXAMPLESDIR%%/gngeorc
-@unexec rmdir %D/%%DATADIR%% >/dev/null 2>&1 || echo "If you are permanently removing this port, you should remove the Neo-Geo BIOS files left in %D/%%DATADIR%%."

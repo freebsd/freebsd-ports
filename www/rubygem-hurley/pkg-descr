@@ -1,0 +1,6 @@
+Hurley is a ruby gem with no runtime dependencies that
+provides a common interface for working with
+different HTTP adapters. It is an evolution of Faraday,
+with rethought internals.
+
+WWW: https://github.com/lostisland/hurley

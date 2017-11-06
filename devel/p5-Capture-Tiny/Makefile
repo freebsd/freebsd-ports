@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Capture-Tiny
-PORTVERSION=	0.28
+PORTVERSION=	0.46
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:DAGOLDEN
@@ -18,5 +18,6 @@ TEST_DEPENDS=	p5-Inline>=0.50:devel/p5-Inline
 
 USES=		perl5
 USE_PERL5=	configure
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

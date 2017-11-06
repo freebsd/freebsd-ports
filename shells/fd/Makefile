@@ -11,7 +11,7 @@ DISTNAME=	FD-${PORTVERSION}
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	CUI-based file and directory management tool
 
-MAKE_ENV=	LANG=ja
+USE_LOCALE=	ja
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" \
 		PREFIX="\$$(DESTDIR)${PREFIX}" \
 		CONFDIR="\$$(DESTDIR)${PREFIX}/etc" \

@@ -22,7 +22,7 @@
 %%PHPBT%%/config-dist.php
 %%PHPBT%%/config.php
 %%PHPBT%%/contrib/.htaccess
-%%PHPBT%%/contrib/gnats-to-phpbt.py
+%%GNATS%%%%PHPBT%%/contrib/gnats-to-phpbt.py
 %%PHPBT%%/docs/html/adminguide.html
 %%PHPBT%%/docs/html/bugdetail.html
 %%PHPBT%%/docs/html/bugsearch.html

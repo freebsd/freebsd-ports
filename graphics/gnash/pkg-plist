@@ -1,4 +1,4 @@
-bin/eglinfo
+bin/eglinfo-gnash
 bin/gnash
 %%GTK2%%bin/gnash-gtk-launcher
 %%GTK2%%bin/gtk-gnash

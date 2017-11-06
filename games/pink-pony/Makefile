@@ -3,7 +3,7 @@
 
 PORTNAME=	pink-pony
 PORTVERSION=	1.4.1
-PORTREVISION=	1
+PORTREVISION=	6
 CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -21,7 +21,8 @@ LIB_DEPENDS=	libIL.so:graphics/devil \
 USE_GITHUB=	yes
 GH_ACCOUNT=	ginkgo
 
-USES=		pkgconfig scons tar:bzip2
+USES=		pkgconfig scons compiler:c++11-lang
+USE_CXXSTD=	c++11
 USE_GL=		gl glu
 USE_SDL=	mixer
 SUB_FILES=	pink-pony.sh

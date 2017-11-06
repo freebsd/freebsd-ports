@@ -2,23 +2,24 @@
 # $FreeBSD$
 
 PORTNAME=	nfdump
-PORTVERSION=	1.6.13
-PORTREVISION=	2
+PORTVERSION=	1.6.15
+PORTREVISION=	1
+DISTVERSIONPREFIX=v
 CATEGORIES=	net-mgmt
-MASTER_SITES=	SF/${PORTNAME}/stable/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	cpm@fbsd.es
+MAINTAINER=	pi@FreeBSD.org
 COMMENT=	Command-line tools to collect and process NetFlow data
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/BSD-license.txt
 
+USES=		autoreconf libtool
 GNU_CONFIGURE=	yes
-USES=	libtool
-USE_AUTOTOOLS=	autoconf:env autoheader:env
 USE_CSTD=	gnu89
 USE_LDCONFIG=	yes
 MAKE_JOBS_UNSAFE=	yes
+USE_GITHUB=	yes
+GH_ACCOUNT=	phaag
 
 #flow-tools support
 OPTIONS_DEFINE=		DOCS FT2NFDUMP NFPROFILE FIXTIMEBUG READPCAP NFTRACK \
@@ -54,6 +55,7 @@ CONFIGURE_ARGS+=	--disable-nsel
 .endif
 
 PLIST_FILES=	bin/nfanon bin/nfcapd bin/nfdump bin/nfexpire bin/nfreplay \
+		lib/libnfdump-${PORTVERSION}.so \
 		man/man1/nfanon.1.gz man/man1/nfcapd.1.gz man/man1/nfdump.1.gz \
 		man/man1/nfexpire.1.gz man/man1/nfreplay.1.gz
 PORTDOCS=	AUTHORS ChangeLog INSTALL NEWS README
@@ -107,35 +109,26 @@ CONFIGURE_ARGS+=	--disable-sflow
 
 do-install:
 .for binary in nfanon nfcapd nfdump nfexpire nfreplay
-	${INSTALL_DATA} ${WRKSRC}/bin/${binary} ${STAGEDIR}${PREFIX}/bin
-	${CHMOD} +x ${STAGEDIR}${PREFIX}/bin/${binary}
-	${STRIP_CMD}	${STAGEDIR}${PREFIX}/bin/${binary}
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/.libs/${binary} ${STAGEDIR}${PREFIX}/bin
 .endfor
+	${INSTALL_DATA} ${WRKSRC}/bin/.libs/libnfdump-${PORTVERSION}.so ${STAGEDIR}${PREFIX}/lib
 
 .if ${PORT_OPTIONS:MNFPROFILE}
-	${INSTALL_DATA}	${WRKSRC}/bin/nfprofile	${STAGEDIR}${PREFIX}/bin
-	${CHMOD} +x ${STAGEDIR}${PREFIX}/bin/nfprofile
-	${STRIP_CMD}	${STAGEDIR}${PREFIX}/bin/nfprofile
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/.libs/nfprofile ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN}	${WRKSRC}/man/nfprofile.1 ${STAGEDIR}${PREFIX}/man/man1
 .endif
 
 .if ${PORT_OPTIONS:MNFTRACK}
-	${INSTALL_DATA}	${WRKSRC}/bin/nftrack	${STAGEDIR}${PREFIX}/bin
-	${CHMOD} +x ${STAGEDIR}${PREFIX}/bin/nftrack
-	${STRIP_CMD}	${STAGEDIR}${PREFIX}/bin/nftrack
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/.libs/nftrack ${STAGEDIR}${PREFIX}/bin
 .endif
 
 .if ${PORT_OPTIONS:MFT2NFDUMP}
-	${INSTALL_DATA}	${WRKSRC}/bin/ft2nfdump	${STAGEDIR}${PREFIX}/bin
-	${CHMOD} +x ${STAGEDIR}${PREFIX}/bin/ft2nfdump
-	${STRIP_CMD}	${STAGEDIR}${PREFIX}/bin/ft2nfdump
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/.libs/ft2nfdump ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN}	${WRKSRC}/man/ft2nfdump.1 ${STAGEDIR}${PREFIX}/man/man1
 .endif
 
 .if ${PORT_OPTIONS:MSFLOW}
-	${INSTALL_DATA}	${WRKSRC}/bin/sfcapd	${STAGEDIR}${PREFIX}/bin
-	${CHMOD} +x ${STAGEDIR}${PREFIX}/bin/sfcapd
-	${STRIP_CMD}	${STAGEDIR}${PREFIX}/bin/sfcapd
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/.libs/sfcapd ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN}	${WRKSRC}/man/sfcapd.1	${STAGEDIR}${PREFIX}/man/man1
 .endif
 

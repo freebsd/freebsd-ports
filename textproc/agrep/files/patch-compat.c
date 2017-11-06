@@ -1,5 +1,5 @@
---- compat.c.orig	1992-01-21 14:36:26.000000000 +0100
-+++ compat.c	2011-11-27 13:25:35.000000000 +0100
+--- compat.c.orig	1992-01-21 13:36:26 UTC
++++ compat.c
 @@ -1,17 +1,18 @@
  /* test the conflicts between options */
  #include <stdio.h>

@@ -5,6 +5,7 @@ include/google/protobuf/any.proto
 include/google/protobuf/api.pb.h
 include/google/protobuf/api.proto
 include/google/protobuf/arena.h
+include/google/protobuf/arena_impl.h
 include/google/protobuf/arenastring.h
 include/google/protobuf/compiler/code_generator.h
 include/google/protobuf/compiler/command_line_interface.h
@@ -16,6 +17,7 @@ include/google/protobuf/compiler/java/java_generator.h
 include/google/protobuf/compiler/java/java_names.h
 include/google/protobuf/compiler/javanano/javanano_generator.h
 include/google/protobuf/compiler/js/js_generator.h
+include/google/protobuf/compiler/js/well_known_types_embed.h
 include/google/protobuf/compiler/objectivec/objectivec_generator.h
 include/google/protobuf/compiler/objectivec/objectivec_helpers.h
 include/google/protobuf/compiler/parser.h
@@ -40,6 +42,7 @@ include/google/protobuf/field_mask.proto
 include/google/protobuf/generated_enum_reflection.h
 include/google/protobuf/generated_enum_util.h
 include/google/protobuf/generated_message_reflection.h
+include/google/protobuf/generated_message_table_driven.h
 include/google/protobuf/generated_message_util.h
 include/google/protobuf/has_bits.h
 include/google/protobuf/io/coded_stream.h
@@ -60,6 +63,7 @@ include/google/protobuf/map_type_handler.h
 include/google/protobuf/message.h
 include/google/protobuf/message_lite.h
 include/google/protobuf/metadata.h
+include/google/protobuf/metadata_lite.h
 include/google/protobuf/reflection.h
 include/google/protobuf/reflection_ops.h
 include/google/protobuf/repeated_field.h
@@ -74,10 +78,9 @@ include/google/protobuf/stubs/atomicops_internals_arm64_gcc.h
 include/google/protobuf/stubs/atomicops_internals_arm_gcc.h
 include/google/protobuf/stubs/atomicops_internals_arm_qnx.h
 include/google/protobuf/stubs/atomicops_internals_atomicword_compat.h
+include/google/protobuf/stubs/atomicops_internals_generic_c11_atomic.h
 include/google/protobuf/stubs/atomicops_internals_generic_gcc.h
-include/google/protobuf/stubs/atomicops_internals_macosx.h
 include/google/protobuf/stubs/atomicops_internals_mips_gcc.h
-include/google/protobuf/stubs/atomicops_internals_pnacl.h
 include/google/protobuf/stubs/atomicops_internals_power.h
 include/google/protobuf/stubs/atomicops_internals_ppc_gcc.h
 include/google/protobuf/stubs/atomicops_internals_solaris.h
@@ -110,6 +113,7 @@ include/google/protobuf/timestamp.proto
 include/google/protobuf/type.pb.h
 include/google/protobuf/type.proto
 include/google/protobuf/unknown_field_set.h
+include/google/protobuf/util/delimited_message_util.h
 include/google/protobuf/util/field_comparator.h
 include/google/protobuf/util/field_mask_util.h
 include/google/protobuf/util/json_util.h
@@ -124,15 +128,15 @@ include/google/protobuf/wrappers.pb.h
 include/google/protobuf/wrappers.proto
 lib/libprotobuf-lite.a
 lib/libprotobuf-lite.so
-lib/libprotobuf-lite.so.11
-lib/libprotobuf-lite.so.11.0.0
+lib/libprotobuf-lite.so.14
+lib/libprotobuf-lite.so.14.0.0
 lib/libprotobuf.a
 lib/libprotobuf.so
-lib/libprotobuf.so.11
-lib/libprotobuf.so.11.0.0
+lib/libprotobuf.so.14
+lib/libprotobuf.so.14.0.0
 lib/libprotoc.a
 lib/libprotoc.so
-lib/libprotoc.so.11
-lib/libprotoc.so.11.0.0
+lib/libprotoc.so.14
+lib/libprotoc.so.14.0.0
 libdata/pkgconfig/protobuf-lite.pc
 libdata/pkgconfig/protobuf.pc

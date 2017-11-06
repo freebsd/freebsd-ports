@@ -1,6 +1,23 @@
---- Makefile.in.orig	2007-08-05 03:43:38 UTC
+--- Makefile.in.orig	2017-08-23 23:12:17 UTC
 +++ Makefile.in
-@@ -67,12 +67,7 @@ top_blddir=@abs_builddir@
+@@ -49,13 +49,9 @@
+ @INCLUDE_RULES@
+ @INCLUDE_OUTPUTS@
+ 
+-ifneq ($(CC_OLD),$(CC))
+-    CC=$(CC_OLD)
+-endif
+-
+-ifneq ($(LIBTOOL_OLD),$(LIBTOOL))
+-    LIBTOOL=$(LIBTOOL_OLD)
+-endif
++CC=$(CC_OLD)
++
++LIBTOOL=$(LIBTOOL_OLD)
+ 
+ LINK          = $(LIBTOOL) $(LTFLAGS) --mode=link $(LT_LDFLAGS) $(COMPILE) -version-info $(TCNATIVE_LIBTOOL_VERSION) $(ALL_LDFLAGS) -o $@
+ CLEAN_SUBDIRS = test
+@@ -77,12 +73,7 @@
  
  
  install: $(TARGET_LIB)

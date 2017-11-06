@@ -5,7 +5,7 @@ PORTNAME=	pragmarcs
 PORTVERSION=	20161207
 CATEGORIES=	devel
 
-MAINTAINER=	marino@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PragmAda Reusable Components
 
 LICENSE=	GPLv2 GMGPL

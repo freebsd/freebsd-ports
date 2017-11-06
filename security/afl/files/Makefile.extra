@@ -1,0 +1,10 @@
+.PHONY: libdislocator llvm_mode test_llvm_mode
+
+libdislocator:
+	$(MAKE) -C libdislocator
+	
+llvm_mode:
+	$(MAKE) -C llvm_mode
+
+test_llvm_mode:
+	$(MAKE) -C llvm_mode test_build

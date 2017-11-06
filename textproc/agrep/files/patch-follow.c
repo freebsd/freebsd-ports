@@ -1,5 +1,5 @@
---- follow.c.orig	Fri Jan 17 20:14:42 1992
-+++ follow.c	Sun Jul 21 03:50:47 2002
+--- follow.c.orig	1992-01-17 19:14:42 UTC
++++ follow.c
 @@ -3,14 +3,12 @@
     construction.						*/
  

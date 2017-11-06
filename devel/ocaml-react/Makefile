@@ -2,21 +2,20 @@
 # $FreeBSD$
 
 PORTNAME=	react
-PORTVERSION=	1.2.0
+PORTVERSION=	1.2.1
 CATEGORIES=	devel
 MASTER_SITES=	http://erratique.ch/software/react/releases/
 PKGNAMEPREFIX=	ocaml-
-EXTRACT_SUFX=	.tbz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OCaml module for functional reactive programming
 
 LICENSE=	BSD3CLAUSE
 
+USES=		tar:tbz
+USE_OCAML=		yes
 OPTIONS_DEFINE=	X11
 OPTIONS_DEFAULT=	X11
-
-USE_OCAML=		yes
 
 .include <bsd.port.options.mk>
 

@@ -1,6 +1,6 @@
---- uscsi_subr.c.orig	2011-11-15 19:51:44.387439246 +0200
-+++ uscsi_subr.c	2011-11-27 16:41:07.706327140 +0200
-@@ -412,6 +412,7 @@ uscsi_command(int flags, struct uscsi_de
+--- uscsi_subr.c.orig	2017-05-25 17:18:25 UTC
++++ uscsi_subr.c
+@@ -412,6 +412,7 @@ uscsi_command(int flags, struct uscsi_dev *disc,
  	struct scsi_sense_data *cam_sense_data;
  	union ccb ccb;
  	uint32_t cam_sense;
@@ -8,7 +8,7 @@
  	uint8_t *keypos;
  	int camflags;
  
-@@ -468,17 +469,33 @@ uscsi_command(int flags, struct uscsi_de
+@@ -468,17 +469,33 @@ uscsi_command(int flags, struct uscsi_dev *disc,
  
  	/* print sense info */
  	cam_sense_data = &ccb.csio.sense_data;

@@ -10,8 +10,7 @@ MASTER_SITES=	ftp://ftp.racoon2.wide.ad.jp/pub/racoon2/
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Racoon2 IPsec daemon
 
-USES=		perl5 tar:tgz
-USE_OPENSSL=	YES
+USES=		perl5 tar:tgz ssl
 CONFIGURE_ARGS+=	--disable-kinkd
 PLIST_SUB+=	KINK="@comment "
 

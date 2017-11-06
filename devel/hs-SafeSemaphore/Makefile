@@ -2,7 +2,7 @@
 
 PORTNAME=	SafeSemaphore
 PORTVERSION=	0.10.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org

@@ -4,22 +4,22 @@
 PORTNAME=	eiskaltdcpp
 PORTVERSION=	2.2.10
 DISTVERSIONPREFIX=	v
-PORTREVISION=	3
+PORTREVISION=	8
 CATEGORIES=	net-p2p
 PKGNAMESUFFIX?=	-lib
 
 MAINTAINER=	fjoe@FreeBSD.org
 COMMENT=	Direct Connect client shared library
 
-LICENSE=	GPLv3
+LICENSE=	GPLv3+
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USE_GITHUB=	yes
 
 .if !defined (MASTERDIR)
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs
 
-USES=		cmake gettext compiler:c++11-lib
-USE_OPENSSL=	yes
+USES=		cmake gettext compiler:c++11-lib ssl
 USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	LUA PCRE IDN DHT MINIUPNP

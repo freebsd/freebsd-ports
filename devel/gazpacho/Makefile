@@ -3,9 +3,9 @@
 
 PORTNAME=	gazpacho
 PORTVERSION=	0.7.2
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	devel python
-MASTER_SITES=	GNOME/sources/gazpacho/0.7
+MASTER_SITES=	GNOME/sources/gazpacho/${PORTVERSION:R}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GUI builder for the GTK+ toolkit
@@ -13,8 +13,8 @@ COMMENT=	GUI builder for the GTK+ toolkit
 LICENSE=	LGPL21+ # source mentions LGPL20+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/kiwi-i18n:x11-toolkits/py-kiwi-gtk
-RUN_DEPENDS=	${LOCALBASE}/bin/kiwi-i18n:x11-toolkits/py-kiwi-gtk
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}kiwi-gtk>=0:x11-toolkits/py-kiwi-gtk
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		desktop-file-utils gettext python
 USE_GNOME=	pygtk2
@@ -22,7 +22,7 @@ USE_PYTHON=	distutils
 NO_BUILD=	yes
 NO_ARCH=	yes
 
-PORTDOCS=	AUTHORS ChangeLog CONTRIBUTORS COPYING README NEWS
+PORTDOCS=	AUTHORS ChangeLog CONTRIBUTORS README NEWS
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	zoneinfo
-DISTVERSION=	2016j
+DISTVERSION=	2017c
 CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.iana.org/tz/releases/ \
 		ftp://munnari.oz.au/pub/
@@ -17,9 +17,21 @@ NO_WRKSUBDIR=	yes
 PREFIX=		/usr
 NO_ARCH=	yes
 
+OPTIONS_DEFINE=	BACKWARD
+OPTIONS_DEFAULT=	BACKWARD
+OPTIONS_SUB=	yes
+
+BACKWARD_DESC= Include backwards compatible zones
+
 TZFILES=	africa antarctica asia australasia etcetera europe \
 		factory northamerica southamerica systemv
 POSIXRULES=	America/New_York
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MBACKWARD}
+TZFILES+=	backward
+.endif
 
 # Run with "DEVELOPER=1 make check-plist" before commiting!
 

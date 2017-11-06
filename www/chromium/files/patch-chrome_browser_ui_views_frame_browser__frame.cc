@@ -1,7 +1,7 @@
---- chrome/browser/ui/views/frame/browser_frame.cc.orig	2016-05-11 19:02:16 UTC
-+++ chrome/browser/ui/views/frame/browser_frame.cc
+--- chrome/browser/ui/views/frame/browser_frame.cc.orig	2017-07-25 21:04:51.000000000 +0200
++++ chrome/browser/ui/views/frame/browser_frame.cc	2017-08-02 00:17:41.951632000 +0200
 @@ -36,7 +36,7 @@
- #include "ui/native_theme/native_theme_dark_aura.h"
+ #include "components/user_manager/user_manager.h"
  #endif
  
 -#if defined(OS_LINUX)
@@ -9,7 +9,7 @@
  #include "chrome/browser/ui/views/frame/browser_command_handler_linux.h"
  #endif
  
-@@ -88,7 +88,7 @@ void BrowserFrame::InitBrowserFrame() {
+@@ -97,7 +97,7 @@
      non_client_view()->set_context_menu_controller(this);
    }
  

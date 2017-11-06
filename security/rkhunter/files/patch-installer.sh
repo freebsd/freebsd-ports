@@ -1,6 +1,6 @@
---- ./installer.sh.orig	2012-04-27 00:10:12.000000000 +0200
-+++ ./installer.sh	2012-07-03 23:56:30.000000000 +0200
-@@ -392,7 +392,7 @@
+--- installer.sh.orig	2014-02-24 02:37:15 UTC
++++ installer.sh
+@@ -392,7 +392,7 @@ selectTemplate() { # Take input from the "--install pa
  	RKHINST_ETC_DIR="${SYSCONFIGDIR}"
  	RKHINST_BIN_DIR="${BINDIR}"
  	RKHINST_SCRIPT_DIR="${LIBDIR}/${APPNAME}/scripts"
@@ -9,7 +9,7 @@
  
  	if [ "${RKHINST_LAYOUT}" = "oldschool" ]; then
  		RKHINST_DB_DIR="${VARDIR}/${APPNAME}/db"
-@@ -406,12 +406,12 @@
+@@ -406,12 +406,12 @@ selectTemplate() { # Take input from the "--install pa
  	elif [ "${RKHINST_LAYOUT}" = "TXZ" ]; then
  		RKHINST_DB_DIR="${VARDIR}/lib/${APPNAME}/db"
  		RKHINST_TMP_DIR="${VARDIR}/lib/${APPNAME}/tmp"
@@ -24,10 +24,11 @@
  	fi
  
  	RKHINST_LANG_DIR="${RKHINST_DB_DIR}/i18n"
-@@ -1076,22 +1076,6 @@
+@@ -1099,22 +1099,6 @@ doRemove()  {
+ 			fi
  		fi
  	done
- 
+-
 -
 -	# Application
 -	for FILE in ${RKHINST_BIN_FILES}; do
@@ -43,7 +44,6 @@
 -		fi
 -	done
 -
--
+ 
  	# Configuration file
  	for FILE in ${RKHINST_ETC_FILE}; do
- 		if [ -f "${RKHINST_ETC_DIR}/${FILE}" ]; then

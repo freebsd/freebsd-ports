@@ -1,4 +1,4 @@
---- bin/oj_linux.sh.orig	2016-01-08 09:30:28 UTC
+--- bin/oj_linux.sh.orig	2016-05-29 14:45:28 UTC
 +++ bin/oj_linux.sh
 @@ -4,9 +4,11 @@
  ## if unset defaults to
@@ -28,11 +28,12 @@
    cp -R -a "$1"/bin/OpenJUMP.app/Contents "$1" &&\
    awk '{sub(/..\/oj_/,"bin/oj_",$0)}1' "$1"/bin/OpenJUMP.app/Contents/Resources/script > "$1"/Contents/Resources/script &&\
    echo patched oj.app
-@@ -110,13 +114,19 @@ esac
+@@ -109,14 +113,20 @@ case "$1" in
+ esac
  
  ## cd into jump home
- OLD_DIR=`pwd`
 +echo "#####  pwd = '$OLD_DIR'"
+ OLD_DIR=`pwd`
  cd "$JUMP_HOME"
 +PWD_DIR=`pwd`
 +echo "##### cd '$JUMP_HOME', pwd = '$PWD_DIR'"
@@ -212,8 +213,3 @@
    # output info
    echo set max. memory limit to $MEM_MAX_MB MiB
  fi
-@@ -318,3 +360,4 @@ cd "$OLD_DIR"
- 
- ## run end function
- end
-+

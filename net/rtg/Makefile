@@ -3,7 +3,7 @@
 
 PORTNAME=	rtg
 PORTVERSION=	0.7.4
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	net
 MASTER_SITES=	SF \
 		ftp://ftpmirror.uk/freebsd-ports/rtg/
@@ -19,7 +19,7 @@ RUN_DEPENDS=	p5-DBI>=0:databases/p5-DBI \
 
 USE_RC_SUBR=	rtgpoll
 WANT_PERL=	yes
-USES=		shebangfix mysql:client
+USES=		shebangfix mysql:client ssl
 SHEBANG_FILES=	etc/95.pl etc/report.pl etc/rtgtargmkr.pl.in
 SUB_FILES=	pkg-message
 GNU_CONFIGURE=	yes
@@ -46,5 +46,8 @@ LDFLAGS+=	-fstack-protector
 post-patch:
 	@${MV} ${WRKSRC}/etc/rtg.conf ${WRKSRC}/etc/rtg.conf.sample
 	@${MV} ${WRKSRC}/etc/routers ${WRKSRC}/etc/routers.sample
+	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/etc/95.pl
+	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/etc/report.pl
+	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/etc/common.php.in
 
 .include <bsd.port.mk>

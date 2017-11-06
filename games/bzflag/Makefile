@@ -1,7 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	bzflag
-PORTVERSION=	2.4.6
+PORTVERSION=	2.4.10
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	https://download.bzflag.org/bzflag/source/${PORTVERSION}/
 
@@ -23,8 +24,6 @@ USE_GL=		gl glu
 USE_SDL=	sdl
 USE_XORG=	x11 xext xxf86vm sm ice
 .endif
-
-MAKE_JOBS_UNSAFE=	yes
 
 CONFIGURE_ARGS=	--enable-ares-build
 CPPFLAGS+=	-I ${LOCALBASE}/include

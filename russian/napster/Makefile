@@ -14,7 +14,6 @@ CONFLICTS=	nap-[0-9]*
 USES=		ncurses
 WITH_ENCODING_PATCH=	yes
 
-pre-configure:
-	@${PATCH} ${PATCH_ARGS} < ${.CURDIR}/files/extra-win2koi
+EXTRA_PATCHES=	${.CURDIR}/files/extra-win2koi
 
 .include "${MASTERDIR}/Makefile"

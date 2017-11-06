@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	oauth2
-PORTVERSION=	1.2.0
+PORTVERSION=	1.4.0
 PORTREVISION=	1
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
@@ -14,7 +14,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 RUN_DEPENDS=	rubygem-faraday>=0.8:www/rubygem-faraday \
-		rubygem-jwt>=1:www/rubygem-jwt \
+		rubygem-jwt>=1.0:www/rubygem-jwt \
 		rubygem-multi_json>=1.3:devel/rubygem-multi_json \
 		rubygem-multi_xml>=0.5:textproc/rubygem-multi_xml \
 		rubygem-rack>=1.2:www/rubygem-rack

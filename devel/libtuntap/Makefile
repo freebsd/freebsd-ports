@@ -3,10 +3,11 @@
 
 PORTNAME=	libtuntap
 DISTVERSION=	0.3-23
+PORTREVISION=	2
 DISTVERSIONSUFFIX=	-ga8bcade
 CATEGORIES=	devel net
 
-MAINTAINER=	mokhi64@gmail.com
+MAINTAINER=	mmokhi@FreeBSD.org
 COMMENT=	Configuring TUN or TAP devices API in a portable manner
 
 LICENSE=	MIT

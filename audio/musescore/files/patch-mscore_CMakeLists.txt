@@ -1,20 +1,20 @@
---- mscore/CMakeLists.txt.orig	2015-07-16 21:02:34 UTC
+--- mscore/CMakeLists.txt.orig	2017-04-27 04:14:22 UTC
 +++ mscore/CMakeLists.txt
-@@ -474,7 +474,6 @@ else (MINGW)
-       ${ALSA_LIB}
-       ${QT_LIBRARIES}
-       z
--      dl
-       pthread
-       )
-     if (USE_PORTAUDIO)
-@@ -509,9 +508,6 @@ else (MINGW)
+@@ -493,7 +493,6 @@ else (MINGW)
+             ${ALSA_LIB}
+             ${QT_LIBRARIES}
+             z
+-            dl
+             pthread
+             )
  
-    # gold does not use indirect shared libraries for symbol resolution, Linux only
-    if (NOT APPLE)
--      if(USE_JACK)
--         target_link_libraries(mscore dl)
--      endif(USE_JACK)
-       target_link_libraries(mscore rt)
-    endif (NOT APPLE)
+@@ -550,9 +549,6 @@ else (MINGW)
+ 
+       # gold does not use indirect shared libraries for symbol resolution, Linux only
+       if (NOT APPLE)
+-            if (USE_JACK)
+-                  target_link_libraries(mscore dl)
+-            endif (USE_JACK)
+                   target_link_libraries(mscore rt)
+       endif (NOT APPLE)
  

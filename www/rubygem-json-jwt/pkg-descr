@@ -1,0 +1,4 @@
+JSON Web Token and its family (JSON Web Signature, JSON Web Encryption and JSON
+Web Key) in Ruby
+
+WWW: https://github.com/nov/json-jwt

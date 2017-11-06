@@ -1,2 +1,3 @@
-SHA256 (cabal/test-framework-quickcheck2-0.3.0.3.tar.gz) = cc96c6f30c29b16a3f7ec5c108f320a6c0f0d3ef71afff8a1cb98caf33ffe18a
-SIZE (cabal/test-framework-quickcheck2-0.3.0.3.tar.gz) = 3518
+TIMESTAMP = 1499627859
+SHA256 (cabal/test-framework-quickcheck2-0.3.0.4.tar.gz) = d763afb99fa14cffaccbfad259534a656be129329ba12246fed2e4330619486e
+SIZE (cabal/test-framework-quickcheck2-0.3.0.4.tar.gz) = 3813

@@ -1,9 +1,0 @@
-This module provides the capability to parse a string at runtime as
-Perl source code, so that the resulting compiled code can be later
-executed. This is part of the job of the string form of the eval
-operator, but in this module it is separated out from the other jobs
-of eval. Parsing of Perl code is generally influenced by its lexical
-context, and this module provides some explicit control over this
-process, by reifying lexical environments as Perl objects.
-
-WWW: http://search.cpan.org/dist/Parse-Perl/

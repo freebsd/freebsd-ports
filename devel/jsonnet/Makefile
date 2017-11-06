@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	jsonnet
-PORTVERSION=	0.9.0
+PORTVERSION=	0.9.3
+PORTREVISION=	2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
@@ -20,7 +21,7 @@ USE_CXXSTD=	c++11
 USE_LDCONFIG=	yes
 
 ALL_TARGET=	jsonnet libjsonnet.so
-CXXFLAGS+=	-fPIC -Iinclude
+CXXFLAGS+=	-fPIC -Iinclude -Ithird_party/md5
 PLIST_FILES=	bin/jsonnet include/libjsonnet.h lib/libjsonnet.so
 
 do-install:

@@ -7,28 +7,22 @@ PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	GNU
 
-MAINTAINER=	sanpei@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Display word differences between text files
 
-LICENSE=	GPLv3
-
-GNU_CONFIGURE=	yes
+LICENSE=	GPLv3+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		charsetfix makeinfo
-
-OPTIONS_DEFINE=	NLS
+GNU_CONFIGURE=	yes
 
 INFO=		wdiff
 
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=	NLS
+OPTIONS_SUB=	yes
 
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
-CFLAGS+=	-I${LOCALBASE}/include
-PLIST_SUB+=	NLS=""
-.else
-CONFIGURE_ARGS+=	--disable-nls
-PLIST_SUB+=	NLS="@comment "
-.endif
+NLS_CONFIGURE_ENABLE=	nls
+NLS_CFLAGS=		-isystem${LOCALBASE}/include
+NLS_USES=		gettext
 
 .include <bsd.port.mk>

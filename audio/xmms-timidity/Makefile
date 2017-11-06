@@ -10,6 +10,8 @@ MASTER_SITES=	http://www.shikadi.net/utils/files/
 MAINTAINER=	beyert@cs.ucr.edu
 COMMENT=	XMMS input plugin to play midi files (via timidity)
 
+BROKEN=		No public distfiles
+
 LIB_DEPENDS=	libxmms.so:multimedia/xmms
 RUN_DEPENDS=	timidity:audio/timidity
 

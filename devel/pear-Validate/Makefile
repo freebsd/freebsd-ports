@@ -6,7 +6,7 @@ PORTVERSION=	0.8.5
 PORTREVISION=	1
 CATEGORIES=	devel www pear
 
-MAINTAINER=	dbaio@bsd.com.br
+MAINTAINER=	dbaio@FreeBSD.org
 COMMENT=	PEAR Validation class
 
 LICENSE=	BSD3CLAUSE
@@ -20,7 +20,7 @@ DATE_RUN_DEPENDS=	${PEARDIR}/Date.php:devel/pear-Date
 IDNA_DESC=	Net_IDNA - Punycode encoding and decoding package
 IDNA_RUN_DEPENDS=	${PEARDIR}/Net/IDNA.php:net/pear-Net_IDNA
 
-USES=	pear
+USES=		pear
 NO_ARCH=	yes
 
 .include <bsd.port.mk>

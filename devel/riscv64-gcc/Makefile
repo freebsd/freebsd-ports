@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gcc
-PORTVERSION=	6.1.0
+PORTVERSION=	7.1.1
 CATEGORIES=	devel
 PKGNAMEPREFIX=	riscv64-
 
@@ -17,17 +17,17 @@ LIB_DEPENDS=	libgmp.so:math/gmp \
 		libmpfr.so:math/mpfr \
 		libmpc.so:math/mpc
 
+USES=	iconv gmake libtool makeinfo
+
+USE_LDCONFIG=	yes
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	freebsd-riscv
 GH_PROJECT=	riscv-gcc
-GH_TAGNAME=	095b1d6
-
-USES=	iconv gmake libtool makeinfo
+GH_TAGNAME=	b2cdb72
 
 GCC_TARGET=	${PKGNAMEPREFIX}unknown-${OPSYS:tl}${OSREL}
 
-CONFIGURE_ENV=	LC_ALL=C
-MAKE_ENV=	LC_ALL=C
 GNU_CONFIGURE=	yes
 CONFIGURE_OUTSOURCE=	yes
 CONFIGURE_ARGS=	--target=${GCC_TARGET} \
@@ -64,5 +64,7 @@ PLIST_SUB=	GCC_TARGET=${GCC_TARGET} \
 post-install:
 	@if [ -d ${STAGEDIR}${PREFIX}/${INFO_PATH} ] ; then ${RM} -r ${STAGEDIR}${PREFIX}/${INFO_PATH}; fi
 	@${RM} ${STAGEDIR}${PREFIX}/man/man7/*
+
+BROKEN_aarch64=		fails to package
 
 .include <bsd.port.mk>

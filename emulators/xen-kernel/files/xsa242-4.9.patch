@@ -1,0 +1,43 @@
+From: Jan Beulich <jbeulich@suse.com>
+Subject: x86: don't allow page_unlock() to drop the last type reference
+
+Only _put_page_type() does the necessary cleanup, and hence not all
+domain pages can be released during guest cleanup (leaving around
+zombie domains) if we get this wrong.
+
+This is XSA-242.
+
+Signed-off-by: Jan Beulich <jbeulich@suse.com>
+
+--- a/xen/arch/x86/mm.c
++++ b/xen/arch/x86/mm.c
+@@ -1923,7 +1923,11 @@ void page_unlock(struct page_info *page)
+ 
+     do {
+         x = y;
++        ASSERT((x & PGT_count_mask) && (x & PGT_locked));
++
+         nx = x - (1 | PGT_locked);
++        /* We must not drop the last reference here. */
++        ASSERT(nx & PGT_count_mask);
+     } while ( (y = cmpxchg(&page->u.inuse.type_info, x, nx)) != x );
+ }
+ 
+@@ -2611,6 +2615,17 @@ static int _put_page_type(struct page_in
+                    (page->count_info & PGC_page_table)) )
+                 page_set_tlbflush_timestamp(page);
+         }
++        else if ( unlikely((nx & (PGT_locked | PGT_count_mask)) ==
++                           (PGT_locked | 1)) )
++        {
++            /*
++             * We must not drop the second to last reference when the page is
++             * locked, as page_unlock() doesn't do any cleanup of the type.
++             */
++            cpu_relax();
++            y = page->u.inuse.type_info;
++            continue;
++        }
+ 
+         if ( likely((y = cmpxchg(&page->u.inuse.type_info, x, nx)) == x) )
+             break;

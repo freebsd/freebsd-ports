@@ -2,6 +2,7 @@
 
 PORTNAME=	cursor-dmz-aa-theme
 PORTVERSION=	0.4.4
+PORTREVISION=	1
 CATEGORIES=	x11-themes
 MASTER_SITES=	DEBIAN/pool/main/d/dmz-cursor-theme
 DISTNAME=	dmz-cursor-theme_${PORTVERSION}
@@ -15,7 +16,7 @@ BUILD_DEPENDS=	xcursorgen:x11/xcursorgen
 
 NO_ARCH=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME:S/_/-/}/DMZ-Black
-DATADIR=	${PREFIX}/lib/X11/icons/Vanilla-DMZ-AA
+DATADIR=	${PREFIX}/share/icons/Vanilla-DMZ-AA
 
 do-build:
 	(cd ${WRKSRC}/pngs && ${SH} make.sh)

@@ -1,0 +1,4 @@
+Implements an S3 class for storing and formatting time-of-day values,
+based on the 'difftime' class.
+
+WWW: https://cran.r-project.org/web/packages/hms/

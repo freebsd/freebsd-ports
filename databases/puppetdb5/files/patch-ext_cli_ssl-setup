@@ -1,0 +1,11 @@
+--- ext/cli/ssl-setup.orig	2016-03-17 04:17:10 UTC
++++ ext/cli/ssl-setup
+@@ -230,7 +230,7 @@ else
+   user=puppetdb
+   group=puppetdb
+ 
+-  puppetdb_confdir="/etc/puppetlabs/puppetdb"
++  puppetdb_confdir="%%PREFIX%%/etc/puppetdb"
+ fi
+ 
+ set -e

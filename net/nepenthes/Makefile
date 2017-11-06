@@ -3,7 +3,7 @@
 
 PORTNAME=	nepenthes
 PORTVERSION=	0.2.2
-PORTREVISION=	10
+PORTREVISION=	12
 CATEGORIES=	net
 MASTER_SITES=	SF/${PORTNAME}/Nepenthes%20development/${PORTVERSION}
 
@@ -17,6 +17,7 @@ LIB_DEPENDS=	libpcre.so:devel/pcre \
 
 USES=		dos2unix libtool perl5
 DOS2UNIX_FILE=	modules/shellcode-generic/sch_generic_connect_trans.cpp
+USE_CXXSTD=	gnu++98
 USE_GCC=	any
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=/var

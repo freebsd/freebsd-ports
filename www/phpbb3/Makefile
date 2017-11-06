@@ -2,22 +2,21 @@
 # $FreeBSD$
 
 PORTNAME=	phpbb
-PORTVERSION=	3.1.10
+PORTVERSION=	3.2.1
 CATEGORIES=	www
 MASTER_SITES=	https://www.phpbb.com/files/release/
 PKGNAMESUFFIX=	3
 DISTNAME=	phpBB-${PORTVERSION}
 
-MAINTAINER=	joneum@bsdproject.de
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	PHP-based bulletin board / discussion forum system
 
 LICENSE=	GPLv2
 
-CONFLICTS=	phpbb-tw-[0-9]* phpbb-devel-[0-9]* \
-		phpbb-[0-2]*
+CONFLICTS=	phpbb-[0-2]*
 
 USES=		php tar:bzip2
-USE_PHP=	ctype hash json
+USE_PHP=	ctype hash json tokenizer
 
 OPTIONS_DEFINE=	DOCS
 

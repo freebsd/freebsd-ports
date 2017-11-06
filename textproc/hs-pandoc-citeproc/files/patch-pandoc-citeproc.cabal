@@ -1,0 +1,38 @@
+--- pandoc-citeproc.cabal.orig	2017-06-04 18:38:13 UTC
++++ pandoc-citeproc.cabal
+@@ -99,7 +99,7 @@ library
+     ghc-prof-options: -fprof-auto-exported
+     build-depends:    containers, directory, mtl,
+                       bytestring, filepath,
+-                      pandoc-types >= 1.16 && < 1.18,
++                      pandoc-types >= 1.16 && < 1.20,
+                       pandoc >= 1.16 && < 2.1,
+                       tagsoup,
+                       aeson >= 0.7 && < 1.3,
+@@ -146,7 +146,7 @@ executable pandoc-citeproc
+     ghc-options:      -funbox-strict-fields -Wall
+     ghc-prof-options: -fprof-auto-exported -rtsopts
+     build-depends:    base >= 4, pandoc-citeproc,
+-                      pandoc-types >= 1.16 && < 1.18,
++                      pandoc-types >= 1.16 && < 1.20,
+                       pandoc >= 1.16 && < 2.1,
+                       aeson,
+                       aeson-pretty >= 0.8, yaml, bytestring, syb, attoparsec, text,
+@@ -169,7 +169,7 @@ executable test-citeproc
+   else
+     Buildable:    False
+   build-depends:  base >= 4, aeson, directory, text, mtl,
+-                  pandoc-types >= 1.16 && < 1.18,
++                  pandoc-types >= 1.16 && < 1.20,
+                   pandoc >= 1.16 && < 2.1,
+                   filepath,
+                   bytestring, pandoc-citeproc, process, temporary >= 1.1,
+@@ -185,7 +185,7 @@ test-suite test-pandoc-citeproc
+                   Prelude
+   Hs-Source-Dirs: tests, prelude, compat
+   build-depends:  base >= 4, aeson, directory, text,
+-                  pandoc-types >= 1.16 && < 1.18, mtl,
++                  pandoc-types >= 1.16 && < 1.20, mtl,
+                   pandoc >= 1.16 && < 2.1, filepath,
+                   bytestring, pandoc-citeproc, process, temporary >= 1.1,
+                   yaml >= 0.8.8.7

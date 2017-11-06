@@ -1,4 +1,4 @@
---- src/xf86Wacom.c.orig	2015-10-23 17:26:33 UTC
+--- src/xf86Wacom.c.orig	2017-02-24 04:04:55 UTC
 +++ src/xf86Wacom.c
 @@ -667,6 +667,17 @@ void wcmReadPacket(InputInfoPtr pInfo)
  

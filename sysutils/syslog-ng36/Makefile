@@ -2,26 +2,28 @@
 # $FreeBSD$
 
 PORTNAME=	syslog-ng
-PORTVERSION=	3.6.4
+DISTVERSION=	3.6.4
+PORTREVISION=	1
+CATEGORIES=	sysutils
+MASTER_SITES=	https://github.com/balabit/${PORTNAME}/releases/download/${PORTNAME}-${DISTVERSION}/ \
+		http://www.balabit.com/downloads/files/syslog-ng/open-source-edition/${DISTVERSION}/source/ \
+
 .if !defined(MASTERDIR)
 PKGNAMESUFFIX=	36
 .endif
-CATEGORIES=	sysutils
-DISTVERSION=	${PORTVERSION:S/a/alpha/:S/b/beta/:S/r/rc/}
-DISTFILES=	syslog-ng-${DISTVERSION}.tar.gz
-MASTER_SITES=	https://github.com/balabit/${PORTNAME}/releases/download/${PORTNAME}-${DISTVERSION}/ \
-		http://www.balabit.com/downloads/files/syslog-ng/open-source-edition/${DISTVERSION}/source/ \
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Powerful syslogd replacement
 
-BROKEN_sparc64=		Does not compile on sparc64: gcc core dump
-
 LIB_DEPENDS=	libevtlog.so:sysutils/eventlog \
 		libpcre.so:devel/pcre
 
+BROKEN_powerpc64=	fails to link: cc: Internal error: Segmentation fault (program ld)
+BROKEN_sparc64=		fails to compile: gcc core dump
+
 CONFLICTS?=	syslog-ng-[0-9]* syslog-ng[0-9]-[0-9]* \
 		syslog-ng[0-9][0-9]-[0-9]* \
+		syslog-ng[0-9][0-9][0-9]-[0-9]* \
 		syslog-ng-devel-[0-9]*
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 
@@ -52,8 +54,7 @@ CONFIGURE_ARGS=	--sysconfdir=${LOCALBASE}/etc --localstatedir=/var/db \
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MOPENSSL}
-USE_OPENSSL=		yes
-WITH_OPENSSL_PORT=	yes
+USES+=			ssl
 CONFIGURE_ARGS+=	--enable-ssl
 CONFIGURE_ENV+=		OPENSSL_CFLAGS="-I${OPENSSLINC}" \
 			OPENSSL_LIBS="-L${OPENSSLLIB} -lcrypto -lssl"
@@ -119,7 +120,7 @@ CONFIGURE_ARGS+=	--disable-sql
 .if ${PORT_OPTIONS:MJSON}
 LIB_DEPENDS+=		libjson-c.so:devel/json-c
 CONFIGURE_ARGS+=	--enable-json
-PLIST_FILES+= 		lib/syslog-ng/libjson-plugin.so
+PLIST_FILES+=		lib/syslog-ng/libjson-plugin.so
 .else
 CONFIGURE_ARGS+=        --disable-json
 .endif

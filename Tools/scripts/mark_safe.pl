@@ -1,8 +1,8 @@
-#!/usr/bin/env perl -w
+#!/usr/bin/env perl
 
 # $FreeBSD$
 #
-# MAINTAINER=   pgollucci@FreeBSD.org
+# MAINTAINER=   ports@FreeBSD.org
 # all committers may commit to this file without approval
 
 ## core

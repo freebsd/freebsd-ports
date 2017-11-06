@@ -8,4 +8,4 @@ CommonMark, or an XML representation of the AST.  It also provides a
 command-line program (cmark) for parsing and rendering CommonMark
 documents.
 
-WWW: https://github.com/jgm/cmark
+WWW: https://github.com/commonmark/cmark

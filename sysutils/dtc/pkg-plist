@@ -4,7 +4,7 @@ bin/fdtdump
 bin/fdtget
 bin/fdtput
 bin/dtdiff
-lib/libfdt-1.4.2.so
+lib/libfdt-1.4.4.so
 lib/libfdt.a
 lib/libfdt.so
 lib/libfdt.so.1

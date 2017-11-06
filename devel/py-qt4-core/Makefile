@@ -2,6 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	core
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	devel python
 

@@ -4,7 +4,6 @@
 CATEGORIES=	databases lang
 PKGNAMESUFFIX=	-gdbm
 
-MAINTAINER=	freebsd-fpc@FreeBSD.org
 COMMENT=	Free Pascal interface to the GNU database system
 
 USE_FPC=	yes

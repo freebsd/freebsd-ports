@@ -1,11 +1,20 @@
---- Makefile.orig	2016-10-17 09:59:22 UTC
+--- Makefile.orig	2017-05-18 12:29:44 UTC
 +++ Makefile
-@@ -601,7 +601,7 @@ stress-cpu.o: stress-cpu.c
+@@ -21,7 +21,7 @@ VERSION=0.08.02
+ # Codename "harmful hardware harasser"
+ #
+ 
+-CFLAGS += -Wall -Wextra -DVERSION='"$(VERSION)"' -O2 -std=gnu99
++CFLAGS += -Wall -Wextra -DVERSION='"$(VERSION)"' -O2 -std=gnu11
+ 
+ #
+ # Pedantic flags
+@@ -786,7 +786,7 @@ stress-cpu.o: stress-cpu.c
  	@rm -f test-decimal.c test-decimal.o
  
  perf.o: perf.c perf-event.c
 -	@gcc -E perf-event.c | grep "PERF_COUNT" | sed 's/,/ /' | awk {'print "#define _SNG_" $$1 " (1)"'} > perf-event.h
 +	@$(CC) -E perf-event.c | grep "PERF_COUNT" | sed 's/,/ /' | awk {'print "#define _SNG_" $$1 " (1)"'} > perf-event.h
- 	$(CC) $(CFLAGS) -c -o $@ $<
+ 	@echo $(CC) $(CFLAGS) -c -o $@ $<
+ 	@$(CC) $(CFLAGS) -c -o $@ $<
  
- stress-wcstr.o: stress-wcstr.c

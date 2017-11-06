@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	screen
-PORTVERSION=	4.4.0
-PORTREVISION=	2
+PORTVERSION=	4.6.2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://ftp.gnu.org/gnu/screen/ \
 		ftp://ftp.gnu.org/gnu/screen/ \
@@ -21,9 +20,11 @@ COMMENT=	Multi-screen window manager
 LICENSE=	GPLv3
 
 OPTIONS_DEFINE=		INFO MAN NETHACK XTERM_256 SHOWENC SYSTEM_SCREENRC
-OPTIONS_DEFAULT=	INFO MAN NETHACK XTERM_256 SOCKETS SYSTEM_SCREENRC
-OPTIONS_SINGLE=		IPC
+OPTIONS_DEFAULT=	INFO MAN NETHACK XTERM_256 SOCKETS SYSTEM_SCREENRC \
+			NCURSES_DEFAULT
+OPTIONS_SINGLE=		IPC NCURSES
 OPTIONS_SINGLE_IPC=	SOCKETS NAMED_PIPES
+OPTIONS_SINGLE_NCURSES=	NCURSES_DEFAULT NCURSES_BASE NCURSES_PORT
 INFO_DESC=		Build and install info documentation
 MAN_DESC=		Build and install man pages
 NETHACK_DESC=		Enable nethack-style messages
@@ -32,16 +33,26 @@ SHOWENC_DESC=		Show encoding on the status line
 SOCKETS_DESC=		Use new (4.2.1+) sockets for IPC (default)
 NAMED_PIPES_DESC=	Use legacy (4.0.3) named pipes for IPC (override)
 SYSTEM_SCREENRC_DESC=	Install system screenrc with helpful status line
+NCURSES_DEFAULT_DESC=	Depend on ncurses (ports if installed, otherwise base)
+NCURSES_BASE_DESC=	Depend on ncurses in base
+NCURSES_PORT_DESC=	Depend on devel/ncurses in ports
+
+NCURSES_DEFAULT_USES=	ncurses
+NCURSES_BASE_USES=	ncurses:base
+NCURSES_PORT_USES=	ncurses:port
 
 OPTIONS_SUB=
 
-USES=		gmake cpe ncurses
+USES=		gmake cpe
 
 CPE_VENDOR=	gnu
 
 .include <bsd.port.options.mk>
 
 GNU_CONFIGURE=	yes
+CFLAGS+=	-I${NCURSESINC}
+LDFLAGS+=	-L${NCURSESLIB}
+
 .if ${PORT_OPTIONS:MMAN}
 MAKE_ARGS+=	WITH_MAN=1
 PLIST_SUB+=	MAN=""
@@ -75,8 +86,8 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/dev/ptmx|/nonexistent|' ${WRKSRC}/configure
 
 # Bug 191029:	Users can choose whether to use sockets or named pipes.
-# 		Choose sockets if you don't know what the difference is.
-# 		Choose named pipes if your environment is heterogeneous,
+#		Choose sockets if you don't know what the difference is.
+#		Choose named pipes if your environment is heterogeneous,
 #		using both screen 4.0.3 and 4.2.1.
 # Bug 191017
 post-configure-NAMED_PIPES-on:

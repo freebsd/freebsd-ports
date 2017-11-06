@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mate
-PORTVERSION=	1.12.0
+PORTVERSION=	1.18.0
 CATEGORIES=	x11 mate
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -15,7 +15,7 @@ RUN_DEPENDS=	mate-base>=1.8.0:x11/mate-base \
 		mate-icon-theme-faenza>=1.8.0:x11-themes/mate-icon-theme-faenza \
 		mate-terminal:x11/mate-terminal \
 		mate-screensaver:x11/mate-screensaver \
-		galculator:math/galculator \
+		mate-calc:math/mate-calc \
 		mate-screenshot:deskutils/mate-utils \
 		mate-system-monitor:sysutils/mate-system-monitor \
 		eom:graphics/eom \

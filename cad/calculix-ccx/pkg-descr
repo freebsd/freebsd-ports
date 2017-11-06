@@ -1,0 +1,12 @@
+A Three-Dimensional Structural Finite Element Program
+
+CalculiX Finite Element Models can be built, calculated, and
+post-processed.
+
+Notice: The authors acknowledge that naming conventions and input style
+formats for CalculiX are based on those used by ABAQUS, a proprietary,
+general purpose finite element code developed and supported by Hibbitt,
+Karlsson & Sorensen, Inc (HKS) and are used with kind permission from HKS.
+Results obtained from CalculiX are in no way connected to ABAQUS.
+
+WWW: http://www.calculix.de

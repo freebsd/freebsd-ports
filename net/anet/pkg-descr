@@ -17,4 +17,4 @@ Anet is a networking library for the Ada programming language featuring:
   * Support for IPv4/IPv6 multicast
   * UDP/IPv4 packet creation and validation
 
-WWW: http://www.codelabs.ch/anet/
+WWW: https://www.codelabs.ch/anet/

@@ -1,7 +1,8 @@
-YOURLS is a small set of PHP scripts that will allow you
-to run your own URL shortening service (a la TinyURL).
+YOURLS stands for Your Own URL Shortener. It is a small set of PHP scripts that
+will allow you to run your own URL shortening service (a la TinyURL or bitly).
 
-You can make it private or public, you can pick custom
-keyword URLs, it comes with its own API.
+Running your own URL shortener is fun, geeky and useful: you own your data and
+don't depend on third party services. It's also a great way to add branding to
+your short URLs, instead of using the same public URL shortener everyone uses.
 
-WWW: http://yourls.org/
+WWW: https://yourls.org/

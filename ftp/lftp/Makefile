@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	lftp
-PORTVERSION=	4.7.4
+PORTVERSION=	4.8.3
 CATEGORIES=	ftp ipv6
-MASTER_SITES=	http://lftp.yar.ru/ftp/ \
-		http://lftp.yar.ru/ftp/old/ \
+MASTER_SITES=	http://lftp.tech/ftp/ \
+		http://lftp.tech/ftp/old/ \
 		http://lftp.cybermirror.org/ \
 		http://lftp.cybermirror.org/old/ \
 		http://ftp.st.ryukoku.ac.jp/pub/network/ftp/lftp/ \
@@ -20,11 +20,10 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libexpat.so:textproc/expat2 \
-		libidn.so:dns/libidn
+		libidn2.so:dns/libidn2
 
 USES=		charsetfix iconv libtool localbase readline shebangfix
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	ac_cv_type_max_align_t=yes
 
 PORTDOCS=	AUTHORS BUGS ChangeLog FAQ FEATURES INSTALL \
 		MIRRORS NEWS README README.debug-levels README.modules \
@@ -56,6 +55,10 @@ post-install-DOCS-on:
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.pre.mk>
+
+.if ${ARCH} == powerpc64
+USE_GCC=	yes
+.endif
 
 .if ${SSL_DEFAULT:Mopenssl-devel}
 BROKEN=		Does not build with openssl-devel

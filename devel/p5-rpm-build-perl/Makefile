@@ -19,4 +19,10 @@ USE_PERL5=	configure
 post-patch:
 	@${REINPLACE_CMD} -e 's| perl.clean||' ${WRKSRC}/Makefile.PL
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} >= 502501
+BROKEN=		Does not build, op_sibling usage. https://rt.cpan.org/Public/Bug/Display.html?id=117350
+.endif
+
+.include <bsd.port.post.mk>

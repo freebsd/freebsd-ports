@@ -1,0 +1,8 @@
+FreeBSD port of the AmdMsrTweaker program to adjust P-states for AMD 10h,
+12h, and 15h family processors, originally written by Martin Kinkelin and
+extended by Marcus Pollice.
+
+It has been tested with a 14h (AMD E-350) and a 15h (AMD A10-5700) CPUs,
+but should work with all processors supported by AmdMsrTweaker.
+
+WWW: https://github.com/danfe/amdmsrtweaker-lnx

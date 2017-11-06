@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tarsnap
-PORTVERSION=	1.0.37
-PORTREVISION=	1
+PORTVERSION=	1.0.39
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.tarsnap.com/download-http/
 DISTNAME=	${PORTNAME}-autoconf-${PORTVERSION}
@@ -15,8 +14,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CFLAGS="-I${OPENSSLINC} ${CFLAGS}" \
 		LDFLAGS="-L${OPENSSLLIB} ${LDFLAGS}"
 
-USES=		gmake tar:tgz
-USE_OPENSSL=	yes
+USES=		gmake tar:tgz ssl
 
 .include <bsd.port.pre.mk>
 
@@ -25,9 +23,5 @@ USE_OPENSSL=	yes
 RESTRICTED=	license only allows redistribution and use of unmodified source and binaries
 .endif
 LEGAL_TEXT=	license restricts redistribution of source and binaries
-
-.if ${SSL_DEFAULT:Mopenssl-devel}
-BROKEN=		Does not build with openssl-devel
-.endif
 
 .include <bsd.port.post.mk>

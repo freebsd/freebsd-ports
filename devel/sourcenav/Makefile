@@ -3,7 +3,7 @@
 
 PORTNAME=	sourcenav
 PORTVERSION=	4.5
-PORTREVISION=	4
+PORTREVISION=	6
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/NG${PORTVERSION}
@@ -14,6 +14,8 @@ COMMENT=	Source code analysis tool
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+BROKEN_aarch64=		fails to build: undefined reference to fpsetround
 
 USES=		shebangfix tar:bzip2
 SHEBANG_FILES=	${WRKSRC}/snavigator/demo/c++/contrib/perl/sample_client

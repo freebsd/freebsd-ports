@@ -51,23 +51,11 @@ index b483cd1..f1dd1f0 100644
      # basic stuff for everything
      'include_internal_video_render': 0,
      'clang_use_chrome_plugins': 0,
-diff --git media/webrtc/signaling/test/common.build media/webrtc/signaling/test/common.build
-index b483cd1..f1dd1f0 100644
---- media/webrtc/signaling/test/common.build
-+++ media/webrtc/signaling/test/common.build
-@@ -99,6 +99,7 @@ if CONFIG['JS_SHARED_LIBRARY']:
- 
- USE_LIBS += ['mozglue']
- 
-+OS_LIBS += CONFIG['MOZ_LIBV4L2_LIBS']
- OS_LIBS += CONFIG['MOZ_WEBRTC_X11_LIBS']
- OS_LIBS += CONFIG['REALTIME_LIBS']
- 
 diff --git media/webrtc/trunk/webrtc/modules/video_capture/linux/device_info_linux.cc media/webrtc/trunk/webrtc/modules/video_capture/linux/device_info_linux.cc
 index 239a292..bab496c 100644
 --- media/webrtc/trunk/webrtc/modules/video_capture/linux/device_info_linux.cc
 +++ media/webrtc/trunk/webrtc/modules/video_capture/linux/device_info_linux.cc
-@@ -25,10 +25,21 @@
+@@ -25,6 +25,9 @@
  #else
  #include <linux/videodev2.h>
  #endif
@@ -77,6 +65,9 @@ index 239a292..bab496c 100644
  
  #include "webrtc/system_wrappers/interface/ref_count.h"
  #include "webrtc/system_wrappers/interface/trace.h"
+@@ -34,6 +37,15 @@
+ #define BUF_LEN     ( 1024 * ( EVENT_SIZE + 16 ) )
+ #endif
  
 +#ifdef HAVE_LIBV4L2
 +#define open	v4l2_open
@@ -86,10 +77,11 @@ index 239a292..bab496c 100644
 +#define mmap	v4l2_mmap
 +#define munmap	v4l2_munmap
 +#endif
- 
++
  namespace webrtc
  {
-@@ -130,6 +142,11 @@ WebRtc_Word32 DeviceInfoLinux::GetDeviceName(
+ namespace videocapturemodule
+@@ -274,6 +286,11 @@ int32_t DeviceInfoLinux::GetDeviceName(
      memset(deviceNameUTF8, 0, deviceNameLength);
      memcpy(cameraName, cap.card, sizeof(cap.card));
  
@@ -115,10 +107,11 @@ index 12df1b3..e9863ba 100644
  
  #include <new>
  
-@@ -26,6 +31,15 @@
- #include "critical_section_wrapper.h"
- #include "video_capture_linux.h"
- 
+@@ -32,6 +35,15 @@
+ #include "webrtc/modules/video_capture/linux/video_capture_linux.h"
+ #include "webrtc/system_wrappers/include/critical_section_wrapper.h"
+ #include "webrtc/system_wrappers/include/trace.h"
++
 +#ifdef HAVE_LIBV4L2
 +#define open	v4l2_open
 +#define close	v4l2_close
@@ -127,10 +120,9 @@ index 12df1b3..e9863ba 100644
 +#define mmap	v4l2_mmap
 +#define munmap	v4l2_munmap
 +#endif
-+
- namespace webrtc
- {
- namespace videocapturemodule
+ 
+ namespace webrtc {
+ namespace videocapturemodule {
 diff --git media/webrtc/trunk/webrtc/modules/video_capture/video_capture.gypi media/webrtc/trunk/webrtc/modules/video_capture/video_capture.gypi
 index d46b5aa..e452223 100644
 --- media/webrtc/trunk/webrtc/modules/video_capture/video_capture.gypi
@@ -145,7 +137,7 @@ index d46b5aa..e452223 100644
    'targets': [
      {
        'target_name': 'video_capture_module',
-@@ -75,6 +78,19 @@
+@@ -76,6 +76,19 @@
                  'linux/video_capture_linux.cc',
                  'linux/video_capture_linux.h',
                ],
@@ -162,7 +154,7 @@ index d46b5aa..e452223 100644
 +                  ],
 +                }],
 +              ],
-             }],  # linux
+             }],
              ['OS=="mac"', {
                'sources': [
 diff --git toolkit/library/moz.build toolkit/library/moz.build

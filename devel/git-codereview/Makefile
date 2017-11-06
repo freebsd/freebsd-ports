@@ -16,8 +16,6 @@ GH_TAGNAME=	77ae237
 
 PLIST_FILES=	bin/git-codereview
 
-STRIP=		# stripping can break go binaries
-
 post-patch:
 	@${MKDIR} ${WRKSRC}/src/golang.org/x/review
 .for src in .gitattributes AUTHORS CONTRIBUTING.md CONTRIBUTORS LICENSE PATENTS \

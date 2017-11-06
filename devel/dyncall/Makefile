@@ -13,6 +13,8 @@ COMMENT=	Highly dynamic multi-platform foreign function call interface library
 
 LICENSE=	ISCL
 
+BROKEN_armv6=		fails to compile: unexpected token in operand
+
 HAS_CONFIGURE=	yes
 
 CFLAGS+=	-fPIC
@@ -21,10 +23,6 @@ CFLAGS+=	-fPIC
 # library, so install it manually.
 
 .include <bsd.port.pre.mk>
-
-.if ${ARCH} == "ia64"
-BROKEN=		Does not install (unsupported architecture)
-.endif
 
 do-install:
 	${INSTALL_DATA} \

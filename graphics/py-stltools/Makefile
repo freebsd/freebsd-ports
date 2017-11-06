@@ -3,7 +3,7 @@
 
 PORTNAME=		stltools
 PORTVERSION=		3.2
-PORTREVISION=	1
+PORTREVISION=		1
 CATEGORIES=		graphics python
 MASTER_SITES=		http://rsmith.home.xs4all.nl/files/
 PKGNAMEPREFIX=		${PYTHON_PKGNAMEPREFIX}
@@ -17,27 +17,25 @@ RUN_DEPENDS=		${PYNUMPY}
 
 USES=			zip python:2.7
 USE_PYTHON=		distutils
+NO_ARCH=		yes
 
 DOCS=			README.txt
 EXAMPLES=		test/cube.stl test/cube_bin.stl
 
-OPTIONS_DEFINE=		PYCAIRO DOCS
+OPTIONS_DEFINE=		PYCAIRO DOCS EXAMPLES
 PYCAIRO_DESC=		Use (py)Cairo to enable stl2pdf to function.
+PYCAIRO_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cairo>1.8:graphics/py-cairo
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MPYCAIRO}
-RUN_DEPENDS+=		${PYTHON_PKGNAMEPREFIX}cairo>1.8:graphics/py-cairo
-.endif
-
-post-install:
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in ${DOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
+
+post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 .for i in ${EXAMPLES}
-	@${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${EXAMPLESDIR}
 .endfor
 
 .include <bsd.port.mk>

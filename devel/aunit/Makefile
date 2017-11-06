@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	aunit
-PORTVERSION=	2016
+PORTVERSION=	2017
 CATEGORIES=	devel
 MASTER_SITES=	http://downloads.dragonlace.net/src/
 DISTNAME=	aunit-gpl-${PORTVERSION}-src
 
-MAINTAINER=	marino@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ada unit testing framework
 
 LICENSE=	GPLv3

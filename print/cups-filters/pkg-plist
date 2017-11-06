@@ -1,3 +1,4 @@
+bin/driverless
 bin/foomatic-rip
 bin/ttfread
 etc/cups/cups-browsed.conf
@@ -6,6 +7,7 @@ include/cupsfilters/colord.h
 include/cupsfilters/colormanager.h
 include/cupsfilters/driver.h
 include/cupsfilters/image.h
+include/cupsfilters/ppdgenerator.h
 include/cupsfilters/raster.h
 include/fontembed/bitset.h
 include/fontembed/embed.h
@@ -23,9 +25,11 @@ lib/libfontembed.so.1.0.0
 libdata/pkgconfig/libcupsfilters.pc
 libdata/pkgconfig/libfontembed.pc
 libexec/cups/backend/beh
+libexec/cups/backend/driverless
 libexec/cups/backend/implicitclass
 libexec/cups/backend/parallel
 libexec/cups/backend/serial
+libexec/cups/driver/driverless
 libexec/cups/filter/bannertopdf
 %%BRAILLE%%libexec/cups/filter/brftoembosser
 libexec/cups/filter/commandtoescpx
@@ -41,7 +45,7 @@ libexec/cups/filter/gstoraster
 %%BRAILLE%%libexec/cups/filter/imagetoubrl
 %%BRAILLE%%libexec/cups/filter/imageubrltoindexv3
 %%BRAILLE%%libexec/cups/filter/imageubrltoindexv4
-libexec/cups/filter/mupdftoraster
+%%MUPDF%%libexec/cups/filter/mupdftoraster
 %%IJS%%libexec/cups/filter/pdftoijs
 libexec/cups/filter/pdftoopvp
 libexec/cups/filter/pdftopdf
@@ -58,7 +62,7 @@ libexec/cups/filter/sys5ippprinter
 libexec/cups/filter/texttopdf
 libexec/cups/filter/texttops
 libexec/cups/filter/texttotext
-libexec/cups/filter/urftopdf
+man/man1/driverless.1.gz
 man/man1/foomatic-rip.1.gz
 man/man5/cups-browsed.conf.5.gz
 man/man8/cups-browsed.8.gz
@@ -97,7 +101,7 @@ share/cups/drv/cupsfilters.drv
 %%BRAILLE%%share/cups/mime/braille.convs
 %%BRAILLE%%share/cups/mime/braille.types
 share/cups/mime/cupsfilters-ghostscript.convs
-share/cups/mime/cupsfilters-mupdf.convs
+%%MUPDF%%share/cups/mime/cupsfilters-mupdf.convs
 share/cups/mime/cupsfilters-poppler.convs
 share/cups/mime/cupsfilters.convs
 share/cups/mime/cupsfilters.types
@@ -107,7 +111,7 @@ share/cups/ppdc/escp.h
 %%BRAILLE%%share/cups/ppdc/imagemagick.defs
 %%BRAILLE%%share/cups/ppdc/index.defs
 %%BRAILLE%%share/cups/ppdc/liblouis.defs
-%%BRAILLE%%share/cups/ppdc/liblouis1.defs
+%%BRAILLE%%share/cups/ppdc/liblouis1.defs.gen.in
 %%BRAILLE%%share/cups/ppdc/liblouis2.defs
 %%BRAILLE%%share/cups/ppdc/liblouis3.defs
 %%BRAILLE%%share/cups/ppdc/liblouis4.defs

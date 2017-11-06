@@ -1,0 +1,7 @@
+This library provides a command-line-interface (CLI) and Python library to make
+access to Planet's public API easy to use.
+
+The command line interface is intended to be functional for many tasks but is
+just a thin layer on the lower level Python API.
+
+WWW: https://pypi.python.org/pypi/planet

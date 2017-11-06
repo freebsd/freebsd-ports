@@ -9,7 +9,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	koue@chaosophia.net
 COMMENT=	Perl module to plot graphs using GNUPLOT on the fly
 
-LICENSE=	ART10 GPLv1
+LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 RUN_DEPENDS=	gnuplot:math/gnuplot

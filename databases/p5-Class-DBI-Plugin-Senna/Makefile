@@ -16,8 +16,6 @@ BUILD_DEPENDS=	p5-Class-DBI>=0:databases/p5-Class-DBI \
 USES=		perl5
 USE_PERL5=	configure
 
-BROKEN_ia64=	fails to configure with coredump
-
 # With $TRYBROKEN, do "perl Makefile.PL" in verbose mode.
 do-configure:
 	cd ${CONFIGURE_WRKSRC} && \

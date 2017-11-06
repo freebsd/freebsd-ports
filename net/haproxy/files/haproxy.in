@@ -29,17 +29,27 @@
 name="haproxy"
 rcvar=haproxy_enable
 command="%%PREFIX%%/sbin/haproxy"
-extra_commands="reload configtest"
+extra_commands="reload configtest hardstop hardreload"
 reload_cmd="haproxy_reload"
+hardreload_cmd="haproxy_reload"
+hardreload_precmd="def_hardreload_option"
 stop_cmd="haproxy_stop"
+hardstop_cmd="haproxy_stop"
+hardstop_precmd="def_hardstop_signal"
 
 : ${haproxy_enable:="NO"}
 : ${haproxy_config:="%%PREFIX%%/etc/${name}.conf"}
 pidfile=${haproxy_pidfile:-"/var/run/haproxy.pid"}
 
-if [ -z "$rc_force" ]; then
-    sig_stop="USR1"
-fi
+def_hardreload_option()
+{
+    reload_opt="-st"
+}
+
+def_hardstop_signal()
+{
+    sig_stop="TERM"
+}
 
 load_rc_config $name
 
@@ -81,6 +91,8 @@ fi
 configtest_cmd="$command -c -f $haproxy_config"
 start_precmd="$command -q -c -f $haproxy_config"
 required_files=$haproxy_config
+sig_stop=SIGUSR1
+reload_opt="-sf"
 
 haproxy_reload()
 {
@@ -90,11 +102,7 @@ haproxy_reload()
 	fi
 	rc_pid=$(check_pidfile ${pidfile} ${command})
 	if [ $rc_pid ]; then
-		if [ -z "$rc_force" ]; then
-			${command} ${haproxy_flags} -sf $(cat ${pidfile})
-		else
-			${command} ${haproxy_flags} -st $(cat ${pidfile})
-		fi
+		${command} ${haproxy_flags} $reload_opt $(cat ${pidfile})
 	else
 		_run_rc_notrunning
 		return 1

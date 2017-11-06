@@ -10,15 +10,15 @@ COMMENT=	Examine periodic stack traces of all running processes
 
 LICENSE=	BSD3CLAUSE
 
-BROKEN_i386=		does not build: don't know how to make sample_support_i386.c
-BROKEN_powerpc64=	does not build
-BROKEN_sparc64=		does not build: don't know how to make sample_support_sparc64.c
-
 BUILD_DEPENDS=	${LOCALBASE}/lib/libbfd.a:devel/libbfd \
 		${LOCALBASE}/lib/libiberty.a:devel/gnulibiberty \
 		${LOCALBASE}/lib/libxo.a:devel/libxo \
 		${LOCALBASE}/bin/cython:lang/cython \
 		${LOCALBASE}/bin/python:lang/python
+
+BROKEN_i386=		does not build: don't know how to make sample_support_i386.c
+BROKEN_powerpc64=	does not build: don't know how to make sample_support_powerpc64.c
+BROKEN_sparc64=		does not build: don't know how to make sample_support_sparc64.c
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	freenas

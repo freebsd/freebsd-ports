@@ -5,7 +5,7 @@ PORTNAME=	ares
 PORTVERSION=	1.1.1
 PORTREVISION=	1
 CATEGORIES=	dns
-MASTER_SITES=	http://mirrors.rit.edu/zi/ \
+MASTER_SITES=	ZI \
 		ftp://athena-dist.mit.edu/pub/ATHENA/ares/
 
 MAINTAINER=	zi@FreeBSD.org

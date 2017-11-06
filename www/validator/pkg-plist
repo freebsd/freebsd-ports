@@ -333,9 +333,9 @@
 %%WWWDIR%%/htdocs/index.html
 %%WWWDIR%%/htdocs/intro.html
 %%WWWDIR%%/htdocs/misc/compaq-logo.gif
+%%WWWDIR%%/htdocs/no_referer.asis
 %%WWWDIR%%/htdocs/robots.txt
 %%WWWDIR%%/htdocs/scripts/combined.js
-%%WWWDIR%%/htdocs/scripts/combined.js.gz
 %%WWWDIR%%/htdocs/scripts/mootools-1.2.5-core-nc.js
 %%WWWDIR%%/htdocs/scripts/mootools-1.2.5.1-more.js
 %%WWWDIR%%/htdocs/scripts/w3c-validator.js
@@ -647,9 +647,7 @@
 %%WWWDIR%%/htdocs/sgml-lib/xml.soc
 %%WWWDIR%%/htdocs/source/index.html
 %%WWWDIR%%/htdocs/style/base.css
-%%WWWDIR%%/htdocs/style/base.css.gz
 %%WWWDIR%%/htdocs/style/results.css
-%%WWWDIR%%/htdocs/style/results.css.gz
 %%WWWDIR%%/htdocs/todo.html
 %%WWWDIR%%/htdocs/validator-news.xsl
 %%WWWDIR%%/htdocs/whatsnew.html

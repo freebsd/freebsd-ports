@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	python
-DISTVERSION=	${PYTHON_PORTVERSION}
+PORTVERSION=	${PYTHON_PORTVERSION}
 CATEGORIES=	lang python ipv6
 MASTER_SITES=	PYTHON/ftp/python/${PYTHON_PORTVERSION}
 PKGNAMESUFFIX=	${PYTHON_SUFFIX}
@@ -14,10 +14,14 @@ COMMENT=	Interpreted object-oriented programming language
 
 LICENSE=	PSFL
 
-USES=		cpe ncurses pathfix pkgconfig readline ssl tar:xz
+BROKEN_SSL=	openssl-devel
+
+USES=		cpe ncurses pathfix pkgconfig readline:port ssl tar:xz shebangfix
 PATHFIX_MAKEFILEIN=	Makefile.pre.in
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
+python_CMD=	${PREFIX}/bin/python${PYTHON_PORTVERSION:R}
+SHEBANG_FILES=	Lib/lib2to3/tests/data/*.py Lib/encodings/*.py
 
 CPE_VENDOR=	python
 CPE_PRODUCT=	${CPE_VENDOR}
@@ -74,7 +78,6 @@ LIBFFI_LIB_DEPENDS=	libffi.so:devel/libffi
 # Use CPPFLAGS over CFLAGS due to -I ordering, causing elementtree and pyexpat
 # to break in Python 2.7, or preprocessor complaints in Python >= 3.3
 # Upstream Issue: http://bugs.python.org/issue6299
-
 NLS_USES=		gettext
 NLS_CPPFLAGS=		-I${LOCALBASE}/include
 NLS_LIBS=		-L${LOCALBASE}/lib -lintl
@@ -107,7 +110,7 @@ PLIST_FILES+=	libdata/pkgconfig/python-%%XYDOT%%%%ABI%%.pc
 # http://bugs.python.org/issue22521
 # http://bugs.python.org/issue23042
 .if ${ARCH} == i386 && !${PORT_OPTIONS:MLIBFFI}
-BROKEN=	You must use libffi from ports on i386. Enable the LIBFFI option
+BROKEN=		You must use libffi from ports on i386. Enable the LIBFFI option
 .endif
 
 .if ${ARCH} == sparc64
@@ -122,17 +125,35 @@ DISABLED_EXTENSIONS+=	nis
 PLIST_SUB+=	NO_NIS=""
 .endif
 
+post-patch:
+# readline shared library is present on base before FreeBSD 11 - r268461
+# force setup.py ignore base and use readline from ports
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1100000
+	${REINPLACE_CMD} -e \
+		"s|lib_dirs,\ \'readline\'|[\'${LOCALBASE}/lib\',\ \'.\'],\ \'readline\'|" \
+		${WRKSRC}/setup.py
+.endif
+	${REINPLACE_CMD} -e 's|/usr/local/bin/python|${python_CMD}|' \
+		${WRKSRC}/Lib/cgi.py
+
 post-install:
 .if ! ${PORT_OPTIONS:MDEBUG}
 	${RM} ${STAGEDIR}${PREFIX}/lib/libpython3.so						# Upstream Issue: http://bugs.python.org/issue17975
 .endif
 	for i in ${STAGEDIR}${PREFIX}/lib/python${PYTHON_VER}/lib-dynload/*.so; do \
 		${STRIP_CMD} $$i; done								# Strip shared extensions
-
-.include <bsd.port.pre.mk>
-
-.if ${SSL_DEFAULT:Mopenssl-devel}
-BROKEN=		Does not build with openssl-devel
+# This code block exists for the qemu-user enabled cross build environment.
+# When using this environment in poudriere, CC is not set to the default
+# of /usr/bin/cc and a cross-compile toolchain is used.  We need to hand
+# edit this so that the run time configuration for python matches what the
+# FreeBSD base system provides.  sbruno 02Aug2017
+.if ${CC} == /nxb-bin/usr/bin/cc
+	@${REINPLACE_CMD} -e 's=/nxb-bin==' \
+		${STAGEDIR}${PREFIX}/lib/python3.5/_sysconfigdata.py
+	@${REINPLACE_CMD} -e 's=/nxb-bin==' \
+		${STAGEDIR}${PREFIX}/lib/python3.5/config-3.5m/Makefile
 .endif
+	${INSTALL_DATA} ${WRKSRC}/Tools/gdb/libpython.py \
+		${STAGEDIR}${PREFIX}/lib/libpython${PYTHON_VER}${ABIFLAGS}.so.1.0-gdb.py
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

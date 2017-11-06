@@ -4,4 +4,4 @@ columns, you can often use it without arguments and it'll guess the right
 thing to do. Otherwise, you can specify arguments to direct how the columns
 are separated on input and rejoined in the aligned output.
 
-WWW: http://www.cs.indiana.edu/~kinzler/align/
+WWW: https://kinzler.com/me/align/

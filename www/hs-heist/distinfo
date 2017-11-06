@@ -1,2 +1,3 @@
-SHA256 (cabal/heist-0.14.1.1.tar.gz) = 2934ece5e58b4a180a6975c0404a2a48e46b85693822aa6ab18f700a44438e43
-SIZE (cabal/heist-0.14.1.1.tar.gz) = 65797
+TIMESTAMP = 1499625374
+SHA256 (cabal/heist-1.0.1.0.tar.gz) = fd4ff3c1bfc1473feb9e913a5cdecaf56bc9db022abc27a76768cb6345c68bcb
+SIZE (cabal/heist-1.0.1.0.tar.gz) = 71050

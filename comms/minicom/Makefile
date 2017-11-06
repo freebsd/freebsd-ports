@@ -2,15 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	minicom
-PORTVERSION=	2.7
-PORTREVISION=	1
+PORTVERSION=	2.7.1
 CATEGORIES=	comms
-MASTER_SITES=	https://alioth.debian.org/frs/download.php/file/3977/ \
-		http://alioth.debian.org/frs/download.php/file/3977/ \
+MASTER_SITES=	https://alioth.debian.org/frs/download.php/file/4215/ \
+		http://alioth.debian.org/frs/download.php/file/4215/ \
 		http://fossies.org/linux/misc/
 
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	MS-DOS Telix serial communication program "workalike"
+
+LICENSE=	GPLv2+
 
 RUN_DEPENDS=	lrz:comms/lrzsz
 
@@ -37,7 +38,7 @@ post-patch:
 
 post-install:
 	${INSTALL} -d -m 0755 ${STAGEDIR}${PREFIX}/etc/minicom
-	${INSTALL} -d -o root -g wheel -m 0755 ${STAGEDIR}${DOCSDIR}
+	${INSTALL} -d -m 0755 ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/AUTHORS ${STAGEDIR}${DOCSDIR}/
 	${INSTALL_DATA} ${WRKSRC}/COPYING ${STAGEDIR}${DOCSDIR}/
 	${INSTALL_DATA} ${WRKSRC}/ChangeLog ${STAGEDIR}${DOCSDIR}/

@@ -7,7 +7,7 @@ CATEGORIES=	mail perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	lth@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Unified interface to MIME encoding and decoding
 
 RUN_DEPENDS=	p5-MIME-Base64>3.05:converters/p5-MIME-Base64

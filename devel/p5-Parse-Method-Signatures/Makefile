@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Parse-Method-Signatures
-PORTVERSION=	1.003017
+PORTVERSION=	1.003019
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Perl6 like method signature parser
 
-LICENSE=	ART10 GPLv1
+LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Class-Load>=0.19:devel/p5-Class-Load \

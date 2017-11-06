@@ -3,4 +3,4 @@ yet still collecting both standard out and standard error
 and providing full control over environment, working directory,
 uid, gid, etc.
 
-WWW: http://www.opscode.com
+WWW: https://www.chef.io/

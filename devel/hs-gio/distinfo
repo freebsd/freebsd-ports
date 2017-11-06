@@ -1,2 +1,3 @@
-SHA256 (cabal/gio-0.13.1.0.tar.gz) = b274b121b7814d25e0125f3129287a2407c83f458731040297a6fc6ebf6cabe3
-SIZE (cabal/gio-0.13.1.0.tar.gz) = 79367
+TIMESTAMP = 1499627838
+SHA256 (cabal/gio-0.13.3.1.tar.gz) = ac63f42321800731b9dc1f753f27ee877c04fdf7bcbcab0e2c57348a4739d827
+SIZE (cabal/gio-0.13.3.1.tar.gz) = 70058

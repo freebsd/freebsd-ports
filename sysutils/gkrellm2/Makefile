@@ -2,7 +2,7 @@
 
 PORTNAME=	gkrellm
 PORTVERSION=	2.3.10
-#PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	sysutils ipv6
 MASTER_SITES=	http://gkrellm.srcbox.net/releases/ \
 		LOCAL/ume
@@ -15,7 +15,6 @@ LICENSE=	GPLv3
 
 USES=		gmake pkgconfig tar:bzip2
 USE_RC_SUBR=	gkrellmd
-WANT_GNOME=	yes
 
 OPTIONS_DEFINE=		DOCS CLIENT NLS NTLM OPENSSL
 OPTIONS_DEFAULT=	CLIENT NTLM OPENSSL

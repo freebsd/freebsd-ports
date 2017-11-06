@@ -1,0 +1,20 @@
+--- third_party/webrtc/system_wrappers/BUILD.gn.orig	2017-04-19 19:07:53 UTC
++++ third_party/webrtc/system_wrappers/BUILD.gn
+@@ -87,7 +87,7 @@ rtc_static_library("system_wrappers") {
+     libs += [ "log" ]
+   }
+ 
+-  if (is_linux) {
++  if (is_linux || is_bsd) {
+     defines += [ "WEBRTC_THREAD_RR" ]
+ 
+     if (!build_with_chromium) {
+@@ -97,7 +97,7 @@ rtc_static_library("system_wrappers") {
+     libs += [ "rt" ]
+   }
+ 
+-  if (is_linux || is_android) {
++  if (is_linux || is_android || is_bsd) {
+     sources += [ "source/atomic32_non_darwin_unix.cc" ]
+   }
+ 

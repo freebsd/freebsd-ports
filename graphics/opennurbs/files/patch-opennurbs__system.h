@@ -1,4 +1,4 @@
---- opennurbs_system.h.orig	2015-08-14 13:19:05 UTC
+--- opennurbs_system.h.orig	2017-02-11 10:13:51 UTC
 +++ opennurbs_system.h
 @@ -219,11 +219,7 @@
  

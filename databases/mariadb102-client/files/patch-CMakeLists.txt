@@ -1,0 +1,27 @@
+--- CMakeLists.txt.orig	2017-04-04 19:11:32 UTC
++++ CMakeLists.txt
+@@ -170,6 +170,8 @@ IF(DISABLE_SHARED)
+ ENDIF()
+ OPTION(ENABLED_PROFILING "Enable profiling" ON)
+ OPTION(WITHOUT_SERVER "Build only the client library and clients" OFF)
++OPTION(WITHOUT_CLIENT "Build only the server components" OFF)
++OPTION(WITHOUT_DOCS   "Do not install documentation" OFF)
+ IF(UNIX)
+   OPTION(WITH_VALGRIND "Valgrind instrumentation" OFF)
+ ENDIF()
+@@ -454,6 +456,7 @@ ADD_CUSTOM_TARGET(INFO_BIN ALL
+   WORKING_DIRECTORY ${CMAKE_BINARY_DIR}
+ )
+ 
++IF(NOT WITHOUT_DOCS)
+ INSTALL_DOCUMENTATION(README.md CREDITS COPYING COPYING.thirdparty
+                       EXCEPTIONS-CLIENT COMPONENT Readme)
+ 
+@@ -465,6 +468,7 @@ IF(UNIX)
+   INSTALL_DOCUMENTATION(Docs/INSTALL-BINARY COMPONENT Readme)
+   INSTALL_DOCUMENTATION(Docs/INSTALL-BINARY Docs/README-wsrep COMPONENT Readme)
+ ENDIF()
++ENDIF()
+ 
+ INCLUDE(CPack)
+ 

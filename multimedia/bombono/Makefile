@@ -3,7 +3,7 @@
 
 PORTNAME=	bombono
 PORTVERSION=	1.2.2
-PORTREVISION=	12
+PORTREVISION=	19
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-dvd/${PORTVERSION:R}
 DISTNAME=	${PORTNAME}-dvd-${PORTVERSION}
@@ -25,8 +25,11 @@ RUN_DEPENDS=	gm:graphics/GraphicsMagick \
 		growisofs:sysutils/dvd+rw-tools \
 		toolame:audio/toolame
 
+BROKEN=		fails to compile: weakref.h: macro "static_assert" passed 3 arguments, but takes just 2
+
 USES=		desktop-file-utils gettext pkgconfig scons shared-mime-info \
 		tar:bzip2
+USE_CXXSTD=	gnu++98
 USE_GNOME=	gtkmm24
 INSTALLS_ICONS=	yes
 

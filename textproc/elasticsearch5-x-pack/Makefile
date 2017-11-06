@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	x-pack
-PORTVERSION=	5.0.2
+PORTVERSION=	5.3.0
 CATEGORIES=	textproc java
 MASTER_SITES=	https://artifacts.elastic.co/downloads/packs/x-pack/
 PKGNAMEPREFIX=	elasticsearch5-
@@ -11,7 +11,7 @@ MAINTAINER=	tj@FreeBSD.org
 COMMENT=	Elasticsearch X-Pack plugins
 
 
-RUN_DEPENDS:=	elasticsearch5>=5.0.0:textproc/elasticsearch5
+RUN_DEPENDS:=	elasticsearch5>=5.3.0:textproc/elasticsearch5
 
 NO_BUILD=	yes
 

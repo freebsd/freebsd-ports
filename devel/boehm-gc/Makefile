@@ -55,8 +55,6 @@ OPTIONS_DEFINE+=DOCS
 PORTDOCS=	*
 .endif
 
-NOT_FOR_ARCHS=	ia64
-
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDEBUG}

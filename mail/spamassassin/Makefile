@@ -3,12 +3,12 @@
 
 PORTNAME=	spamassassin
 PORTVERSION=	3.4.1
-PORTREVISION?=	9	# also bump japanese/spamassassin
+PORTREVISION?=	11	# also bump japanese/spamassassin
 CATEGORIES?=	mail perl5
 MASTER_SITES=	APACHE/spamassassin/source CPAN/Mail
 DISTNAME=	Mail-SpamAssassin-${PORTVERSION}
 
-MAINTAINER?=	ports@FreeBSD.org
+MAINTAINER?=	zeising@FreeBSD.org
 COMMENT?=	Highly efficient mail filter for identifying spam
 
 LICENSE=	APACHE20
@@ -19,6 +19,9 @@ BUILD_DEPENDS=	p5-Encode-Detect>=0:converters/p5-Encode-Detect \
 		p5-Net-DNS>=0.63:dns/p5-Net-DNS \
 		p5-NetAddr-IP>=4.010:net-mgmt/p5-NetAddr-IP
 RUN_DEPENDS:=	${BUILD_DEPENDS} \
+		p5-Net-IDN-Encode>=0:textproc/p5-Net-IDN-Encode \
+		p5-Net-LibIDN>=0:dns/p5-Net-LibIDN \
+		p5-URI>=0:net/p5-URI \
 		re2c>=.12.0:devel/re2c
 
 .for dep in DCC DKIM MYSQL PGSQL PYZOR RAZOR RELAY_COUNTRY SPF_QUERY SSL
@@ -46,13 +49,13 @@ CONFIGURE_ARGS=	SYSCONFDIR="${PREFIX}/etc" \
 		LOCALSTATEDIR="${DBDIR}/spamassassin" \
 		BUILD_SPAMC=yes
 
-OPTIONS_DEFINE=		AS_ROOT SSL
+OPTIONS_DEFINE=		AS_ROOT DOCS SSL
 OPTIONS_GROUP=		DATABASE GPG PLUGINS
 OPTIONS_GROUP_DATABASE=	MYSQL PGSQL
 OPTIONS_GROUP_PLUGINS=	DCC DKIM PYZOR RAZOR RELAY_COUNTRY SPF_QUERY
 OPTIONS_SINGLE=		GPG
 OPTIONS_SINGLE_GPG=	GNUPG_NONE GNUPG GNUPG2
-OPTIONS_DEFAULT=	AS_ROOT GNUPG SSL UPDATE_AND_COMPILE
+OPTIONS_DEFAULT=	AS_ROOT DKIM GNUPG SSL SPF_QUERY
 
 AS_ROOT_DESC=		Run spamd as root (recommended)
 
@@ -88,7 +91,8 @@ MYSQL_RUN_DEPENDS=	p5-DBD-mysql>=0:databases/p5-DBD-mysql
 PGSQL_RUN_DEPENDS=	p5-DBD-Pg>=0:databases/p5-DBD-Pg
 PYZOR_RUN_DEPENDS=	pyzor:mail/pyzor
 RAZOR_RUN_DEPENDS=	razor-agents>=2.84:mail/razor-agents
-RELAY_COUNTRY_RUN_DEPENDS=	p5-Geo-IP>=0:net/p5-Geo-IP
+RELAY_COUNTRY_RUN_DEPENDS=	p5-Geo-IP>=0:net/p5-Geo-IP \
+			p5-IP-Country>=0:net/p5-IP-Country
 SPF_QUERY_RUN_DEPENDS=	p5-Mail-SPF>=0:mail/p5-Mail-SPF
 
 SSL_USES=		ssl

@@ -3,6 +3,7 @@
 
 PORTNAME=	rtree
 PORTVERSION=	0.8.3
+PORTREVISION=	1
 CATEGORIES=	devel science python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,8 +14,8 @@ COMMENT=	R-Tree Spatial Index For Python GIS
 
 LICENSE=	LGPL21
 
-BUILD_DEPENDS+=	${LOCALBASE}/include/spatialindex/SpatialIndex.h:devel/spatialindex
-RUN_DEPENDS+=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${LOCALBASE}/include/spatialindex/SpatialIndex.h:devel/spatialindex
+RUN_DEPENDS=	${LOCALBASE}/include/spatialindex/SpatialIndex.h:devel/spatialindex
 
 USES=		python
 USE_PYTHON=	autoplist distutils

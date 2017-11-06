@@ -5,11 +5,6 @@ PORTNAME=	zabbix3
 CATEGORIES=	net-mgmt
 PKGNAMESUFFIX=	-frontend
 
-MAINTAINER=	pg@pakhom.spb.ru
-COMMENT=	Enterprise-class open source distributed monitoring (${PKGNAMESUFFIX:S/^-//}) LTS
-
-LICENSE=	GPLv2
-
 MASTERDIR=	${.CURDIR}/../zabbix3-server
 
 NO_BUILD=	yes
@@ -17,14 +12,16 @@ NO_ARCH=	yes
 PATCHDIR=
 PLIST=		${PKGDIR}/pkg-plist.frontend
 
-USE_PHP=	bcmath ctype gd pcre snmp sockets mbstring session dom xml \
-		xmlreader xmlwriter simplexml gettext ldap
+USE_PHP=	bcmath ctype dom gd gettext json ldap mbstring pcre \
+		session simplexml snmp sockets xml xmlreader xmlwriter
 
 USES=	php:web gettext
 
 OPTIONS_DEFINE=		MYSQL MYSQLI PGSQL SQLITE ORACLE
 OPTIONS_DEFAULT=	MYSQLI
 MYSQLI_DESC=		MySQLI backend
+
+MYSQL_VARS=	IGNORE_WITH_PHP+=70 71
 
 .include <bsd.port.options.mk>
 

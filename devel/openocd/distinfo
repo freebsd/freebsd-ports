@@ -1,2 +1,3 @@
-SHA256 (openocd-0.9.0.tar.bz2) = 837042ac9a156b9363cbffa1fcdaf463bfb83a49331addf52e63119642b5f443
-SIZE (openocd-0.9.0.tar.bz2) = 3873090
+TIMESTAMP = 1485961502
+SHA256 (openocd-0.10.0.tar.bz2) = 7312e7d680752ac088b8b8f2b5ba3ff0d30e0a78139531847be4b75c101316ae
+SIZE (openocd-0.10.0.tar.bz2) = 4792636

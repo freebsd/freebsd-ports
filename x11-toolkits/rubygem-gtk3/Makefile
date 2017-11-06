@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gtk3
-PORTVERSION=	3.1.0
+PORTVERSION=	3.1.9
 CATEGORIES=	x11-toolkits rubygems
 MASTER_SITES=	RG
 
@@ -20,6 +20,6 @@ RUN_DEPENDS=	rubygem-atk>=${PORTVERSION}:accessibility/rubygem-atk \
 
 USE_GNOME=	gtk30
 USE_RUBY=	yes
-USES=		gem
+USES=		gem gnome
 
 .include <bsd.port.mk>

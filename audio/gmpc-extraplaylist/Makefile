@@ -5,8 +5,7 @@ PORTNAME=	gmpc-extraplaylist
 PORTVERSION=	0.20.0
 PORTREVISION=	6
 CATEGORIES=	audio
-MASTER_SITES=	http://download.sarine.nl/Programs/gmpc/${PORTVERSION}/ \
-		http://freebsd.unixfreunde.de/sources/
+MASTER_SITES=	http://download.sarine.nl/Programs/gmpc/${PORTVERSION}/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Favorites plugin for gmpc

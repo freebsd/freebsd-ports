@@ -1,8 +1,8 @@
---- wcmgr.c.orig	2008-06-02 07:27:57.000000000 +0200
-+++ wcmgr.c	2008-07-05 08:49:42.000000000 +0200
-@@ -73,6 +73,10 @@
- #include <db.h>
- #include "webalizer.h"
+--- wcmgr.c.orig	2013-08-26 04:35:57 UTC
++++ wcmgr.c
+@@ -78,6 +78,10 @@ int main()
+ #define str(x) xstr(x)
+ #define SMAXHOST str(MAXHOST)   /* String version of MAXHOST value */
  
 +#ifndef DB_NOTFOUND
 +#define DB_NOTFOUND 1
@@ -11,7 +11,7 @@
  /*********************************************/
  /* Forward reference local functions         */
  /*********************************************/
-@@ -104,7 +108,11 @@
+@@ -109,7 +113,11 @@ int       verbose    = 0;               
  int       rec_ttl    = 7;                  /* purge TTL in days           */
  DB        *dns_db    = NULL;               /* DNS cache database          */
  DB        *out_db    = NULL;               /* output cache db if needed   */
@@ -23,7 +23,7 @@
  DBT       q, r;                            /* query/reply structures      */
  char      *in_file   = NULL;               /* input cache filename        */
  char      out_file[MAXHOST+4];             /* output cache filename       */
-@@ -131,18 +139,24 @@
+@@ -138,18 +146,24 @@ struct dnsRec
  
  void print_ver()
  {
@@ -48,7 +48,7 @@
        printf("Mod Date: %s\n",moddate);
     }
     printf("\n");
-@@ -168,7 +182,9 @@
+@@ -175,7 +189,9 @@ void print_help(void)
     printf(" -l         List cache file contents\n");
     printf(" -n name    hostname (used for add)\n");
     printf(" -p num     Purge after num days\n");
@@ -58,7 +58,7 @@
     printf(" -t num     TTL value (for add and stats)\n");
     printf(" -x name    Export cache to tab file\n");
     printf("\n");
-@@ -233,7 +249,9 @@
+@@ -240,7 +256,9 @@ int main(int argc, char *argv[])
           case 'h':  print_help();                                     break;
           case 'n':  strncpy(name,optarg,sizeof(name)-1);              break;
           case 'p':  action='p'; if (optarg!=NULL) rec_ttl=atoi(optarg); break;
@@ -68,7 +68,7 @@
           case 't':  rec_ttl=atoi(optarg);                             break;
           case 'v':  verbose=1;                                        break;
           case 'V':  print_ver();                                      break;
-@@ -250,12 +268,14 @@
+@@ -257,12 +275,14 @@ int main(int argc, char *argv[])
     if (argc - optind == 0) print_help();   /* gots to have a filename!!     */
     in_file = argv[optind];
  
@@ -83,7 +83,7 @@
  
     /* force sane TTL value */
     if (rec_ttl > 99) rec_ttl=99;
-@@ -269,7 +289,9 @@
+@@ -276,7 +296,9 @@ int main(int argc, char *argv[])
        case 'd': del_rec();                                            break;
        case 'f': find_rec();                                           break;
        case 'i': import_cache();                                       break;
@@ -93,7 +93,7 @@
        case 'p': purge_cache();                                        break;
        case 'x': export_cache();                                       break;
        case 'l':
-@@ -290,19 +312,31 @@
+@@ -297,19 +319,31 @@ void list_cache()
     u_int64_t t_num=0;
  
     /* open the database (read-only) */
@@ -125,7 +125,7 @@
  
     /* get our runtime for TTL calculations */
     time(&runtime);
-@@ -321,7 +355,12 @@
+@@ -328,7 +362,12 @@ void list_cache()
     memset(&dns_rec, 0, sizeof(struct dnsRec));
  
     /* Loop through database */
@@ -138,7 +138,7 @@
     {
        /* got a record */
        t_rec++;
-@@ -338,6 +377,9 @@
+@@ -346,6 +385,9 @@ void list_cache()
        /* done, clear for next rec */
        memset(&q, 0, sizeof(DBT));
        memset(&r, 0, sizeof(DBT));
@@ -148,7 +148,7 @@
     }
  
     if (verbose)
-@@ -368,15 +410,29 @@
+@@ -376,15 +418,29 @@ void purge_cache()
                          rec_ttl, in_file);
  
     /* open the input database (read-write) */
@@ -178,7 +178,7 @@
  
     /* Try to lock the file */
     our_flock.l_whence=SEEK_SET;
-@@ -391,30 +447,44 @@
+@@ -399,30 +455,44 @@ void purge_cache()
        exit(1);
     }
  
@@ -223,7 +223,7 @@
        exit(1);
     }
  
-@@ -426,7 +496,12 @@
+@@ -434,7 +504,12 @@ void purge_cache()
     memset(&r, 0, sizeof(DBT));
  
     /* Loop through database */
@@ -236,7 +236,7 @@
     {
        /* got a record */
        t_in++;
-@@ -439,9 +514,17 @@
+@@ -447,9 +522,17 @@ void purge_cache()
        if ( age <= (rec_ttl*86400) )
        {
           /* Good record.. insert into new cache file */
@@ -254,7 +254,7 @@
              exit(1);
           }
           else t_out++;
-@@ -462,13 +545,21 @@
+@@ -470,13 +553,21 @@ void purge_cache()
        /* done, clear for next rec */
        memset(&q, 0, sizeof(DBT));
        memset(&r, 0, sizeof(DBT));
@@ -276,7 +276,7 @@
  
     /* rename files */
     if (rename(out_file, in_file))
-@@ -485,6 +576,7 @@
+@@ -493,6 +584,7 @@ void purge_cache()
  /* STAT_CACHE - Display cache stats/info     */
  /*********************************************/
  
@@ -284,15 +284,15 @@
  void stat_cache()
  {
     /* Define some variables */
-@@ -576,6 +668,7 @@
-    printf("Record Size Errors : %llu\n",t_err);
+@@ -566,6 +658,7 @@ void stat_cache()
+    if (t_err) printf("Record Size Errors : %llu\n",t_err);
     printf("\n");
  }
 +#endif
  
  /*********************************************/
  /* FIND_REC - Find IP record in cache        */
-@@ -587,10 +680,20 @@
+@@ -577,10 +670,20 @@ void find_rec()
     char  ip_buf[48];
  
     /* open the database (read-only) */
@@ -313,7 +313,7 @@
        exit(1);
     }
  
-@@ -605,7 +708,11 @@
+@@ -595,7 +698,11 @@ void find_rec()
     /* search the cache */
     q.data = &addr;
     q.size = strlen(addr);
@@ -325,7 +325,7 @@
     {
        /* We found it! display info */
        memset(ip_buf, 0, sizeof(ip_buf));
-@@ -644,7 +751,11 @@
+@@ -635,7 +742,11 @@ void find_rec()
        if (i==DB_NOTFOUND)
           printf("%s not found!\n",addr);
        else
@@ -337,7 +337,7 @@
     }
  }
  
-@@ -669,10 +780,20 @@
+@@ -660,10 +771,20 @@ void del_rec()
     cp=addr; while (*cp!='\0') *cp++=tolower(*cp);
  
     /* open the database (read-write) */
@@ -358,7 +358,7 @@
        exit(1);
     }
  
-@@ -686,7 +807,11 @@
+@@ -677,7 +798,11 @@ void del_rec()
     q.size = strlen(addr);
  
     /* Try to delete the record */
@@ -370,7 +370,7 @@
     {
        if (i==DB_NOTFOUND)
        {
-@@ -695,11 +820,19 @@
+@@ -686,11 +811,19 @@ void del_rec()
        }
        else
        {
@@ -390,7 +390,7 @@
     if (verbose)
        printf("%s sucessfully deleted from cache file\n",addr);
  }
-@@ -736,10 +869,20 @@
+@@ -727,10 +860,20 @@ void add_rec()
     }
  
     /* open the database (read-write) */
@@ -411,7 +411,7 @@
        exit(1);
     }
  
-@@ -754,7 +897,11 @@
+@@ -745,7 +888,11 @@ void add_rec()
     /* search the cache */
     q.data = &addr;
     q.size = strlen(addr);
@@ -423,7 +423,7 @@
     {
        fprintf(stderr,"Error: %s already exists in cache!\n",addr);
        exit(1);
-@@ -763,7 +910,11 @@
+@@ -754,7 +901,11 @@ void add_rec()
     {
        if (i!=DB_NOTFOUND)
        {
@@ -435,7 +435,7 @@
           exit(1);
        }
        else
-@@ -777,7 +928,11 @@
+@@ -768,7 +919,11 @@ void add_rec()
  
           /* put it in the database */
           if (db_put(addr, name, (strcmp(name,addr))?0:1, runtime)==0)
@@ -447,7 +447,7 @@
           if (verbose)
              printf("%s sucessfully added to cache file\n",addr);
        }
-@@ -793,14 +948,28 @@
+@@ -784,14 +939,28 @@ void create_cache()
     int   i;
  
     /* create the database */
@@ -476,7 +476,7 @@
     if (verbose) printf("Cache file %s created successfully\n",in_file);
  }
  
-@@ -817,11 +986,23 @@
+@@ -808,11 +977,23 @@ void import_cache()
     char      buffer[4096];
  
     /* open the database (read-write) */
@@ -500,7 +500,7 @@
        exit(1);
     }
  
-@@ -859,7 +1040,11 @@
+@@ -850,7 +1031,11 @@ void import_cache()
        }
     }
     else fprintf(stderr,"Error: File not found: %s\n",out_file);
@@ -512,7 +512,7 @@
  
     if (verbose) printf("%llu records imported into '%s' from file '%s'\n",
                         t_rec, in_file, out_file);
-@@ -885,19 +1070,31 @@
+@@ -876,19 +1061,31 @@ void export_cache()
     }
  
     /* open the database (read-only) */
@@ -544,7 +544,7 @@
  
     /* stat output file */
     if ( !(lstat(out_file, &out_stat)) )
-@@ -923,7 +1120,12 @@
+@@ -914,7 +1111,12 @@ void export_cache()
     memset(&dns_rec, 0, sizeof(struct dnsRec));
  
     /* Loop through database */
@@ -557,15 +557,14 @@
     {
        /* got a record */
        t_rec++;
-@@ -941,8 +1143,15 @@
+@@ -932,8 +1134,15 @@ void export_cache()
        /* done, clear for next rec */
        memset(&q, 0, sizeof(DBT));
        memset(&r, 0, sizeof(DBT));
--   }
 +#ifdef USE_DB185
 +      cursorp = dns_db->seq(dns_db, &q, &r, R_NEXT);
 +#endif
-+   }
+    }
 +#ifdef USE_DB185
 +   dns_db->close(dns_db);
 +#else
@@ -574,7 +573,7 @@
     fclose(out_fp);
  
     if (verbose) printf("%llu records exported from '%s' to file '%s'\n",
-@@ -989,8 +1198,13 @@
+@@ -980,8 +1189,13 @@ static int db_put(char *key, char *value
           v.size = recSize;
           v.data = recPtr;
  

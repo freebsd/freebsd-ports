@@ -1,2 +1,3 @@
-SHA256 (xfsprogs_2.9.8-1.tar.gz) = 84e8e32c9b2ead2ce6b97cc11da23f90a825c0593263508e14e0ef3ea4f61dff
-SIZE (xfsprogs_2.9.8-1.tar.gz) = 1003288
+TIMESTAMP = 1438219249
+SHA256 (xfsprogs-3.2.4.tar.gz) = dde65ead82d3cbfa9b4ded9796b6d22095d7d759a22d41ae6f1a4ec458bb0465
+SIZE (xfsprogs-3.2.4.tar.gz) = 1482424

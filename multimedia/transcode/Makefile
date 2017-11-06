@@ -3,7 +3,7 @@
 
 PORTNAME=	transcode
 PORTVERSION=	1.1.7
-PORTREVISION=	28
+PORTREVISION=	30
 CATEGORIES=	multimedia
 MASTER_SITES=	https://bitbucket.org/france/transcode-tcforge/downloads/
 
@@ -16,7 +16,6 @@ LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg
 
 USE_LDCONFIG=	yes
 USES=		gmake libtool pkgconfig tar:bzip2
-WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-oss
 CPPFLAGS+=	-I${LOCALBASE}/include

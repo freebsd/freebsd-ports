@@ -1,0 +1,30 @@
+From ea3e6da62247572e92c4ba00f70eab73f6254adf Mon Sep 17 00:00:00 2001
+From: Tobias Stoeckmann <tobias@stoeckmann.org>
+Date: Sat, 14 Oct 2017 10:22:31 +0200
+Subject: [PATCH] Fix OOB while reading bar input.
+
+If the status bar script returns NUL as the first character through
+stdin, spectrwm is prone to an out of boundary access. Depending on
+the memory layout of the machine, it could turn into an OOB write.
+
+The fix is simple: If the string is empty, do not further check for
+newline character.
+
+Signed-off-by: Tobias Stoeckmann <tobias@stoeckmann.org>
+---
+ spectrwm.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/spectrwm.c b/spectrwm.c
+index 9d3ec23..9b0ad2c 100644
+--- spectrwm.c
++++ spectrwm.c
+@@ -2761,7 +2761,7 @@ bar_extra_update(void)
+ 	while (fgets(b, sizeof(b), stdin) != NULL) {
+ 		if (bar_enabled) {
+ 			len = strlen(b);
+-			if (b[len - 1] == '\n') {
++			if (len > 0 && b[len - 1] == '\n') {
+ 				/* Remove newline. */
+ 				b[--len] = '\0';
+ 

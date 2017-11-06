@@ -2,6 +2,7 @@
 
 PORTNAME=	kubrick
 PORTVERSION=	${KDE4_VERSION}
+PORTREVISION=	2
 CATEGORIES=	games kde kde-kde4
 
 MAINTAINER=	kde@FreeBSD.org

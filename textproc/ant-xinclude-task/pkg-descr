@@ -5,4 +5,4 @@ Harold. You need the xincluder.jar file for the XInclude task to
 work properly. Please put this JAR in your CLASSPATH along with
 the xinclude-task JAR file.
 
-WWW: http://people.freebsd.org/~znerd/xinclude-task/
+WWW: https://people.freebsd.org/~znerd/xinclude-task/

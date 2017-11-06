@@ -5,7 +5,8 @@ PORTNAME=	proxsmtp
 PORTVERSION=	1.10
 PORTREVISION=	1
 CATEGORIES=	mail security
-MASTER_SITES=	http://thewalter.net/stef/software/proxsmtp/
+MASTER_SITES=	http://thewalter.net/stef/software/proxsmtp/ \
+		ZI
 
 MAINTAINER=	zi@FreeBSD.org
 COMMENT=	Flexible SMTP filter which can act also as transparent proxy

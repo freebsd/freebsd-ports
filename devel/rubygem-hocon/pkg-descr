@@ -1,0 +1,5 @@
+This is a port of the Typesafe Config library to Ruby.
+
+The library provides Ruby support for the HOCON configuration file format.
+
+WWW: https://github.com/puppetlabs/ruby-hocon

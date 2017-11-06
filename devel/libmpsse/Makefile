@@ -2,52 +2,48 @@
 
 PORTNAME=	libmpsse
 PORTVERSION=	1.3
+PORTREVISION=	1
 CATEGORIES=	devel
-MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open source library for SPI/I2C control via FTDI chips
 
-LICENSE=	GPLv2
+LICENSE=	BSD2CLAUSE
+LICENSE_FILE=	${WRKSRC}/../docs/LICENSE
 
-BUILD_DEPENDS=	swig2.0:devel/swig20
+BUILD_DEPENDS=	swig3.0:devel/swig30
 LIB_DEPENDS=	libftdi.so:devel/libftdi
 
-BROKEN=		Unfetchable (google code has gone away)
+USE_GITHUB=	yes
+GH_ACCOUNT=	devttys0
+GH_TAGNAME=	f1a6744b220d
 
-USES=		gmake pkgconfig python:2
-USE_AUTOTOOLS=	autoconf
-USE_LDCONFIG=	yes
+USES=		autoreconf localbase:ldflags pkgconfig python:2
 GNU_CONFIGURE=	yes
-CFLAGS+=	-I${LOCALBASE}/include -fPIC
-LDFLAGS+=	-L${LOCALBASE}/lib -lftdi
+CONFIGURE_ENV=	SWIG="swig3.0"
+USE_LDCONFIG=	yes
 
-CONFIGURE_WRKSRC=	${WRKSRC}/src
-BUILD_WRKSRC=		${WRKSRC}/src
-INSTALL_WRKSRC=		${WRKSRC}/src
+WRKSRC_SUBDIR=	src
 
-MAKE_JOBS_UNSAFE=	yes
-
-CONFIGURE_ENV=  SWIG="swig2.0"
-
-MAKE_ARGS=	CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
-
-PORTDOCS=	INSTALL COPYING README README.* AN_135_MPSSE_Basics.pdf
+PORTDOCS=	README README.* AN_135_MPSSE_Basics.pdf
 PORTEXAMPLES=	*
 
-PLIST_FILES= ${LOCALBASE}/lib/libmpsse.so ${LOCALBASE}/lib/libmpsse.a ${LOCALBASE}/include/mpsse.h \
-				${PYTHON_SITELIBDIR}/mpsse.py ${PYTHON_SITELIBDIR}/pylibmpsse.py ${PYTHON_SITELIBDIR}/_pylibmpsse.so
+PLIST_FILES=	lib/libmpsse.so lib/libmpsse.a include/mpsse.h \
+		${PYTHONPREFIX_SITELIBDIR}/_pylibmpsse.so \
+		${PYTHONPREFIX_SITELIBDIR}/mpsse.py \
+		${PYTHONPREFIX_SITELIBDIR}/pylibmpsse.py
 
-pre-install:
-	${MKDIR} ${STAGEDIR}/${LOCALBASE}/lib/
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
 post-install:
-	${MKDIR} ${STAGEDIR}/${DOCSDIR}
-	(cd ${WRKSRC}/docs && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR} "! -name Makefile")
-	${MKDIR} ${STAGEDIR}/${EXAMPLESDIR}
-	(cd ${WRKSRC}/src/examples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR} "! -name Makefile")
+	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/_pylibmpsse.so
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libmpsse.so
 
-	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/_pylibmpsse.so
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libmpsse.so
+post-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC}/../docs && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
+
+post-install-EXAMPLES-on:
+	@(cd ${WRKSRC}/../src/examples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR} "! -name Makefile")
 
 .include <bsd.port.mk>

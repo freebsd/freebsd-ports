@@ -11,23 +11,16 @@ DISTNAME=	3414-qnxtheme-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	QNX-inspired theme for GTK1 and GTK2
 
-OPTIONS_DEFINE=	GTK2
-OPTIONS_DEFAULT=	GTK2
-GTK2_DESC=	Build the GTK2 theme as well
-
+NO_ARCH=	yes
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 
-WANT_GNOME=	yes
+OPTIONS_DEFINE=	GTK2
+OPTIONS_DEFAULT=	GTK2
+OPTIONS_SUB=	yes
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MGTK2}
-USE_GNOME=	gtk20
-PLIST_SUB+=	GTK2=""
-.else
-PLIST_SUB+=	GTK2="@comment "
-.endif
+GTK2_DESC=	Build the GTK2 theme as well
+GTK2_USE=	GNOME=gtk20
 
 post-patch:
 .for file in gtk/gtkrc gtk-2.0/gtkrc
@@ -42,10 +35,10 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/themes/qnxtheme/gtk
 	@(cd ${WRKSRC}/QNX/gtk \
 		&& ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/share/themes/qnxtheme/gtk)
-.if ${PORT_OPTIONS:MGTK2}
+
+do-install-GTK2-on:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/themes/qnxtheme/gtk-2.0
 	@(cd ${WRKSRC}/QNX/gtk-2.0 \
 		&& ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/share/themes/qnxtheme/gtk-2.0)
-.endif
 
 .include <bsd.port.mk>

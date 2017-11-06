@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gconf
-PORTVERSION=	0.13.0.2
+PORTVERSION=	0.13.1.0
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org

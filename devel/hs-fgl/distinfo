@@ -1,2 +1,3 @@
-SHA256 (cabal/fgl-5.5.2.1.tar.gz) = 0c2e745b7c2532f67b87a1c97ef016dca7444113d3901722c48c3193e71bd5d9
-SIZE (cabal/fgl-5.5.2.1.tar.gz) = 51963
+TIMESTAMP = 1499541554
+SHA256 (cabal/fgl-5.5.3.1.tar.gz) = dea97201d22c55b57a38b8f5a1ff272be8ba83db3824ab0f1232c60b8dcc2e4c
+SIZE (cabal/fgl-5.5.3.1.tar.gz) = 54868

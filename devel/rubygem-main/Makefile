@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	main
-PORTVERSION=	6.2.1
+PORTVERSION=	6.2.2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -15,7 +15,7 @@ LICENSE_COMB=	dual
 RUN_DEPENDS=	rubygem-arrayfields>=4.7.4:devel/rubygem-arrayfields \
 		rubygem-chronic>=0.6.2:devel/rubygem-chronic \
 		rubygem-fattr>=2.2.0:devel/rubygem-fattr \
-		rubygem-map>=5.1.0:devel/rubygem-map
+		rubygem-map>=6.1.0:devel/rubygem-map
 
 NO_ARCH=	yes
 USE_RUBY=	yes

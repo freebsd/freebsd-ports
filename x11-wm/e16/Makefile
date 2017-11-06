@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	e16
-PORTVERSION=	1.0.17
+PORTVERSION=	1.0.18
 CATEGORIES=	x11-wm enlightenment
 MASTER_SITES=	SF/enlightenment/${PORTNAME}/${PORTVERSION}/
 
@@ -29,8 +29,9 @@ NLS_CONFIGURE_OFF=	--disable-nls
 DOCS_CONFIGURE_ON=	--enable-docs=yes
 DOCS_CONFIGURE_OFF=	--enable-docs=no
 
-USE_XORG=	compositeproto damageproto xextproto x11 xbitmaps xcomposite xdamage \
-		xext xfixes xft xinerama xrandr xrender xxf86vm
+USE_XORG=	compositeproto damageproto ice sm xextproto x11 xbitmaps \
+		xcomposite xdamage xext xfixes xft xinerama xrandr xrender \
+		xxf86vm
 USES=		gettext gmake iconv libtool perl5 pkgconfig shebangfix
 SHEBANG_FILES=	scripts/e_gen_menu
 CFLAGS+=	-Wno-unused-parameter

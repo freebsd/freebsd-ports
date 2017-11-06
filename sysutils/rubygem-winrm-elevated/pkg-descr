@@ -1,0 +1,4 @@
+Ruby library for running commands via WinRM as elevated through a scheduled
+task
+
+WWW: https://github.com/WinRb/winrm-elevated

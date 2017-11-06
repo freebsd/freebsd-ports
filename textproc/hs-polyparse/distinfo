@@ -1,2 +1,3 @@
-SHA256 (cabal/polyparse-1.11.tar.gz) = 30ef045a25bd7de0f3507ed1161aab35b5711120d315b15f23558205903b81fc
-SIZE (cabal/polyparse-1.11.tar.gz) = 22978
+TIMESTAMP = 1499543355
+SHA256 (cabal/polyparse-1.12.tar.gz) = f54c63584ace968381de4a06bd7328b6adc3e1a74fd336e18449e0dd7650be15
+SIZE (cabal/polyparse-1.12.tar.gz) = 32625

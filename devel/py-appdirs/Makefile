@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	appdirs
-PORTVERSION=	1.4.0
+PORTVERSION=	1.4.3
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -15,7 +15,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 USE_GITHUB=	yes
 GH_ACCOUNT=	ActiveState
 
+NO_ARCH=	yes
 USES=		python
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>

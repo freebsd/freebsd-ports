@@ -1,6 +1,6 @@
---- content/renderer/media/webrtc/processed_local_audio_source.cc.orig	2016-07-20 22:03:24.000000000 +0300
-+++ content/renderer/media/webrtc/processed_local_audio_source.cc	2016-08-01 03:25:27.013281000 +0300
-@@ -269,8 +269,8 @@
+--- content/renderer/media/webrtc/processed_local_audio_source.cc.orig	2017-06-05 19:03:07 UTC
++++ content/renderer/media/webrtc/processed_local_audio_source.cc
+@@ -269,8 +269,8 @@ void ProcessedLocalAudioSource::Capture(const media::A
                                          bool key_pressed) {
  #if defined(OS_WIN) || defined(OS_MACOSX)
    DCHECK_LE(volume, 1.0);

@@ -2,28 +2,25 @@
 # $FreeBSD$
 
 PORTNAME=	nsgenbind
-PORTVERSION=	0.4
+PORTVERSION=	0.5
 CATEGORIES=	devel
 MASTER_SITES=	http://download.netsurf-browser.org/libs/releases/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
-MAINTAINER=	olivierd@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	NetSurf Generator for JavaScript bindings
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	netsurf-buildsystem>=1.5:devel/netsurf-buildsystem \
 		${LOCALBASE}/bin/flex:textproc/flex
 
-USES=	bison gmake
-
-WRKSRC=	${WRKDIR}/${DISTNAME:S/-src//}
-
+USES=		bison gmake
+WRKSRC=		${WRKDIR}/${DISTNAME:S/-src//}
 MAKE_ENV+=	COMPONENT_TYPE="lib-shared" \
 		FLEX="${LOCALBASE}/bin/flex"
-
 PLIST_FILES=	bin/nsgenbind
-
 MAKE_JOBS_UNSAFE=	yes
 
 post-install:

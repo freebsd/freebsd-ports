@@ -3,31 +3,31 @@
 
 PORTNAME=	lostirc
 PORTVERSION=	0.4.6
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	irc
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple and minimal IRC client for X
 
-LICENSE=	GPLv2 GPLv3
-LICENSE_COMB=	dual
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libgtkmm-2.4.so:x11-toolkits/gtkmm24
 
-USES=		pathfix pkgconfig gettext
+BROKEN_powerpc64=	fails to build: Socket.cpp: 'strerror' was not declared in this scope
+
+USES=		compiler:c++11-lang pathfix pkgconfig gettext
+USE_CXXSTD=	c++11
 USE_GNOME=	gnomeprefix
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-kde
 
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-
 OPTIONS_DEFINE=	DOCS
 
-post-install:
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for file in AUTHORS ChangeLog TODO README INSTALL
+.for file in AUTHORS ChangeLog TODO README
 	${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${DOCSDIR}
 .endfor
 

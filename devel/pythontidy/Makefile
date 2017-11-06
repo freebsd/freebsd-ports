@@ -3,6 +3,7 @@
 
 PORTNAME=	pythontidy
 PORTVERSION=	1.23
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	http://www.lacusveris.com/PythonTidy/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -25,7 +26,7 @@ do-extract:
 	@${CP} ${DISTDIR}/${DIST_SUBDIR}/${DISTFILES} ${WRKDIR}
 
 do-patch:
-	${REINPLACE_CMD} -e 's,#!/usr/bin/python,#!/usr/bin/env python,' \
+	${REINPLACE_CMD} -e 's,/usr/bin/python,${PYTHON_CMD},' \
 		${WRKDIR}/${DISTFILES}
 
 do-install:

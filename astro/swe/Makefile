@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	swe
-PORTVERSION=	2.05.01
+PORTVERSION=	2.06
 CATEGORIES=	astro devel
 MASTER_SITES=	ftp://ftp.astro.com/pub/swisseph/
 DISTNAME=	${PORTNAME}_unix_src_${PORTVERSION}
@@ -19,6 +19,9 @@ MAKE_ARGS=	CFLAGS="${CFLAGS}"
 USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	DOCS
+
+post-patch:
+	${REINPLACE_CMD} 's|-ldl||' ${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/libswe.a ${STAGEDIR}${PREFIX}/lib

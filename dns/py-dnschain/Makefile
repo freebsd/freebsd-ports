@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	yuri@rawbw.com
 COMMENT=	Library for looking up blockchain data via DNSChain
 
-LICENSE=	MPL
+LICENSE=	MPL20
 
 USES=		python
 USE_PYTHON=	autoplist distutils

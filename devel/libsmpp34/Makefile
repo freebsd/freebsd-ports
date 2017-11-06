@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libxml2.so:textproc/libxml2
 
-USES=		autoreconf libtool gmake pathfix
+USES=		autoreconf libtool pathfix
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip

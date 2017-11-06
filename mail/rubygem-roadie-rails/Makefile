@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	roadie-rails
-PORTVERSION=	1.1.1
+PORTVERSION=	1.2.1
 CATEGORIES=	mail rubygems
 MASTER_SITES=	RG
 
@@ -16,6 +16,8 @@ RUN_DEPENDS=	rubygem-railties4>=3.0:www/rubygem-railties4 \
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USES=		gem
+USES=		gem shebangfix
+
+SHEBANG_FILES=	setup.sh
 
 .include <bsd.port.mk>

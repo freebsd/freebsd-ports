@@ -16,15 +16,13 @@ LICENSE=	MIT
 PORTSCOUT=	ignore:1
 
 BROKEN_mips64=		Does not build
-BROKEN_powerpc64=	Does not build
 
 USES=		tar:tgz
 WRKSRC=		${WRKDIR}/pgp263in/src
 MAKEFILE=	makefile
 ALL_TARGET=	freebsd-${ARCH} OS_CFLAGS="${CFLAGS}"
 PGPLIB=		${STAGEDIR}${PREFIX}/lib/pgpin
-
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=	DOCS
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/pgp ${STAGEDIR}${PREFIX}/bin/pgpin
@@ -33,11 +31,11 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/../pgp.hlp ${PGPLIB}/
 	${INSTALL_DATA} ${WRKSRC}/../language.txt ${PGPLIB}/language.txt.sample
 	${INSTALL_DATA} ${WRKSRC}/../config.txt ${PGPLIB}/config.txt.sample
-.if ${PORT_OPTIONS:MDOCS}
+
+post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${FILESDIR}/CHANGES ${STAGEDIR}${DOCSDIR}/
 	${INSTALL_DATA} ${WRKSRC}/../doc/pgpdoc1.txt \
 		${WRKSRC}/../doc/pgpdoc2.txt ${STAGEDIR}${DOCSDIR}/
-.endif
 
 .include <bsd.port.mk>

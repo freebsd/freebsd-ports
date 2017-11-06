@@ -1,0 +1,10 @@
+--- lukefile.orig	2017-07-15 22:20:52 UTC
++++ lukefile
+@@ -103,7 +103,6 @@ modules  = {
+             ifdef          = '_XOPEN_REALTIME',
+             include        = 'unistd.h',
+             checksymbol    = 'clock_gettime',
+-            library        = 'rt',
+          },
+       },
+       sources   = 'ext/posix/time.c',

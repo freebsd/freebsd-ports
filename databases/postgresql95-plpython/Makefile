@@ -2,7 +2,8 @@
 
 PORTNAME=	postgresql
 CATEGORIES=	databases python
-PKGNAMESUFFIX?=	${DISTVERSION:R:S/.//}${COMPONENT}
+PORTREVISION=	0
+PKGNAMESUFFIX?=	${WANT_PGSQL_VER:S/.//}${COMPONENT}
 
 MAINTAINER=	pgsql@FreeBSD.org
 COMMENT=	Module for using Python to write SQL functions

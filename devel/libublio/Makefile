@@ -36,7 +36,7 @@ post-extract:
 # this pre-install is only for debugging pointyhat failures
 pre-install:
 	@${ECHO_CMD} "===> Environment:"
-	@${SETENV} | ${SETENV} LC_ALL=C ${SORT} -f
+	@${SETENV} | ${SORT} -f
 	@${ECHO_CMD} "===> Makefiles used:"
 	@${ECHO_CMD} ${.MAKEFILE_LIST}
 

@@ -2,6 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	RJSONIO
+PORTREVISION=	1
 DISTVERSION=	1.3-0
 CATEGORIES=	converters
 DISTNAME=	${PORTNAME}_${DISTVERSION}
@@ -11,6 +12,6 @@ COMMENT=	Serialize R objects to JSON, JavaScript Object Notation
 
 LICENSE=	BSD3CLAUSE
 
-USES=	cran:auto-plist
+USES=		cran:auto-plist,compiles
 
 .include <bsd.port.mk>

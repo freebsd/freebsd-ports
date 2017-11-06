@@ -1,11 +1,9 @@
 # Created by: Alonso Cardenas Marquez <acm@FreeBSD.org>
 # $FreeBSD$
 
-PORTREVISION=	1
 CATEGORIES=	math lang
 PKGNAMESUFFIX=	-numlib
 
-MAINTAINER=	freebsd-fpc@FreeBSD.org
 COMMENT=	Free Pascal unit to numerical methods
 
 USE_FPC=	yes

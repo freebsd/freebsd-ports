@@ -1,0 +1,20 @@
+Stapler is a pure Python alternative to PDFtk, a tool for manipulating PDF
+documents from the command line. Like pdftk, stapler is a command-line tool.
+
+With the select command, you can cherry-pick pages from pdfs and concatenate
+them into a new pdf file.
+
+The delete command works almost exactly the same as select, but inverse.
+It uses the pages and ranges which you didn't specify.
+
+The split command splits the specified pdf files into their single pages and
+writes each page into it's own pdf file.
+
+With the zip command, you can cherry-pick pages from pdfs (like select).
+The pages from each pdf are merged together in an interleaving manner.
+This can be used to collate a pdf with odd pages and a pdf with even pages
+into a single file.
+
+The info command shows information on the metadata stored inside a PDF file.
+
+WWW: https://github.com/hellerbarde/stapler

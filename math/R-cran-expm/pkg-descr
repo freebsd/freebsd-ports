@@ -1,0 +1,4 @@
+Computation of the matrix exponential, logarithm, sqrt, and related
+quantities.
+
+WWW: https://cran.r-project.org/web/packages/expm/

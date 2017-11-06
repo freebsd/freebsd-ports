@@ -1,2 +1,3 @@
-SHA256 (cabal/libmpd-0.9.0.2.tar.gz) = 5fb64d0196204a29bfb655118891c19310969e452599fda2667f7ff7d265d4e0
-SIZE (cabal/libmpd-0.9.0.2.tar.gz) = 38392
+TIMESTAMP = 1499538914
+SHA256 (cabal/libmpd-0.9.0.6.tar.gz) = bdebb946bba078ed85de12d71ef2e7efa7f28c1ed806d9a390a20d5e4590c937
+SIZE (cabal/libmpd-0.9.0.6.tar.gz) = 38707

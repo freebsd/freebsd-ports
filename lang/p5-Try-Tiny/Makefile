@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Try-Tiny
-PORTVERSION=	0.24
+PORTVERSION=	0.28
 CATEGORIES=	lang perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:ETHER
@@ -12,16 +12,12 @@ MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	Minimal try/catch with proper localization of $$@
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENCE
 
 TEST_DEPENDS=	p5-Capture-Tiny>=0.12:devel/p5-Capture-Tiny
 
 USES=		perl5
 USE_PERL5=	configure
+NO_ARCH=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 502104
-TEST_DEPENDS+=	p5-Scalar-List-Utils>=0:lang/p5-Scalar-List-Utils
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

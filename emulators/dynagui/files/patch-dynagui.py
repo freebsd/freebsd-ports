@@ -1,6 +1,6 @@
---- dynagui.py.orig	2007-12-13 16:04:43.000000000 -0500
-+++ dynagui.py	2009-02-05 18:42:36.000000000 -0500
-@@ -27,17 +27,17 @@
+--- dynagui.py.orig	2007-12-13 21:04:43 UTC
++++ dynagui.py
+@@ -27,17 +27,17 @@ import sys
  import pygtk; pygtk.require('2.0')
  import gtk
  import gobject
@@ -29,7 +29,7 @@
  
  
  ui_popup = \
-@@ -509,7 +509,7 @@
+@@ -509,7 +509,7 @@ class DynaguiFrame(gtk.Window):
          if len(lab.devices)>0:
              text = 'Select routers from which to extract configuration'
              rcd = RouterSelectionDialog(lab.devices, text, show_path=True)

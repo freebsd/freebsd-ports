@@ -1,0 +1,7 @@
+The GStreamer sndio plugin allows applications that use GStreamer to
+play and record to/from an sndio server.
+
+This includes WebKit-based browsers, video players like Totem, and
+audio players like Rhythmbox.
+
+WWW: https://github.com/t6/gstreamer1-plugins-sndio/

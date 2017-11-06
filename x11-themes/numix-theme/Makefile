@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	numix
-PORTVERSION=	2.6.5
+PORTVERSION=	2.6.7
 CATEGORIES=	x11-themes xfce
 PKGNAMESUFFIX=	-theme
 
-MAINTAINER=	olivierd@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gtk flat themes
 
 LICENSE=	GPLv3
@@ -17,9 +17,10 @@ RUN_DEPENDS=	gtk-murrine-engine>=0.98.2:x11-themes/gtk-murrine-engine
 GH_ACCOUNT=	numixproject
 GH_PROJECT=	numix-gtk-theme
 
+USES=		gmake
 USE_GITHUB=	yes
-USES=	gmake
 USE_GNOME=	glib20 gdkpixbuf2
+NO_ARCH=	yes
 INSTALL_TARGET=	# empty
 
 OPTIONS_DEFINE=	NOTIFYD

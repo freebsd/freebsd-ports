@@ -3,7 +3,7 @@
 
 PORTNAME=	dumb
 PORTVERSION=	0.9.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	audio
 MASTER_SITES=	SF
 
@@ -23,9 +23,8 @@ ALLEGRO_CONFLICTS=	dumb-[0-9]*
 ALLEGRO_MAKE_ARGS_OFF=	_PORT_ALLEGRO_CFLAGS=
 ALLEGRO_CONFLICTS_OFF=	dumb-allegro-[0-9]*
 
-CFLAGS_amd64=	-fPIC
-CFLAGS_ia64=	-fPIC
-CFLAGS_sparc64=	-fPIC
+# libdumb.a is linked into libaudiere.so from audio/audiere.
+CFLAGS+=	-fPIC
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|_INSTALL_PATH := |&$${DESTDIR}|' ${WRKSRC}/Makefile

@@ -1,11 +1,15 @@
 Index: configure
-@@ -1,4 +1,4 @@
+@@ -1,15 +1,15 @@
 -#!/usr/bin/env bash
 +#!/bin/sh
  
  CONFIG="config.mk"
  PREFIX="/usr/local"
-@@ -8,7 +8,7 @@ DEBUG=
+ 
+ DEBUG=
+ LIQSRCDIR=./lib
+-LIQCONFIGURE=(--quiet)
++LIQCONFIGURE=--quiet
  SSE=auto
  OPENMP=
  LIBPNG_DIR=.
@@ -14,8 +18,8 @@ Index: configure
      COCOA_READER=auto
      LCMS2=0
  else
-@@ -38,7 +38,7 @@ for i in "$@"; do
-         echo
+@@ -41,7 +41,7 @@
+         help "--with-libimagequant=<dir>    external libimagequant (lib/ default)"
          help "--with-openmp=static          compile with multicore support"
          help "--with-lcms2/--without-lcms2  compile with color profile support"
 -if [[ "$OSTYPE" =~ "darwin" ]]; then
@@ -23,7 +27,71 @@ Index: configure
          help "--with-cocoa/--without-cocoa  use Cocoa framework to read images"
  fi
          help "--with-libpng=<dir>           search for libpng in directory"
-@@ -109,7 +109,7 @@ done
+@@ -56,35 +56,35 @@
+     CC=*)
+         CC=${i#*=}
+         SKIP_CC_CHECK=1
+-        LIQCONFIGURE+=("$i")
++        LIQCONFIGURE="$LIQCONFIGURE $i"
+         ;;
+     CFLAGS=*)
+         CFLAGS=${i#*=}
+-        LIQCONFIGURE+=("$i")
++        LIQCONFIGURE="$LIQCONFIGURE $i"
+         ;;
+     LDFLAGS=*)
+         LDFLAGS=${i#*=}
+-        LIQCONFIGURE+=("$i")
++        LIQCONFIGURE="$LIQCONFIGURE $i"
+         ;;
+     --enable-debug)
+         DEBUG=1
+-        LIQCONFIGURE+=("$i")
++        LIQCONFIGURE="$LIQCONFIGURE $i"
+         ;;
+     --enable-sse)
+         SSE=1
+-        LIQCONFIGURE+=("$i")
++        LIQCONFIGURE="$LIQCONFIGURE $i"
+         ;;
+     --disable-sse)
+         SSE=0
+-        LIQCONFIGURE+=("$i")
++        LIQCONFIGURE="$LIQCONFIGURE $i"
+         ;;
+     --with-openmp)
+         OPENMP=1
+-        LIQCONFIGURE+=("$i")
++        LIQCONFIGURE="$LIQCONFIGURE $i"
+         ;;
+     --with-openmp=static)
+         OPENMP=static
+-        LIQCONFIGURE+=("$i")
++        LIQCONFIGURE="$LIQCONFIGURE $i"
+         ;;
+     --with-lcms2)
+         LCMS2=1
+@@ -111,16 +111,16 @@
+         ;;
+     --prefix=*)
+         PREFIX=${i#*=}
+-        LIQCONFIGURE+=("$i")
++        LIQCONFIGURE="$LIQCONFIGURE $i"
+         ;;
+     # can be used multiple times or in quotes to set multiple flags
+     --extra-cflags=*)
+         EXTRA_CFLAGS="$EXTRA_CFLAGS ${i#*=}"
+-        LIQCONFIGURE+=("$i")
++        LIQCONFIGURE="$LIQCONFIGURE $i"
+         ;;
+     --extra-ldflags=*)
+         EXTRA_LDFLAGS="$EXTRA_LDFLAGS ${i#*=}"
+-        LIQCONFIGURE+=("$i")
++        LIQCONFIGURE="$LIQCONFIGURE $i"
+         ;;
+     *)
+         echo "warning: unknown switch ${i%%=*} (see $0 --help for the list)"
+@@ -130,7 +130,7 @@
  
  # If someone runs sudo make install as very first command, and configure later,
  # $CONFIG cannot be overwritten, and must be deleted before continuing.
@@ -32,7 +100,7 @@ Index: configure
      echo "Cannot overwrite file $CONFIG! Please delete it."
      exit 1
  fi
-@@ -146,7 +146,7 @@ find_h() {
+@@ -167,7 +167,7 @@
  
  find_pkgconfig() {
      local LIBNAME=$1
@@ -40,8 +108,8 @@ Index: configure
 +    if pkg-config --exists "$LIBNAME" >/dev/null; then
          cflags "$(pkg-config --cflags "$LIBNAME")"
          lflags "$(pkg-config --libs "$LIBNAME")"
-         status "$LIBNAME" "shared ($(pkg-config --modversion "$LIBNAME"))"
-@@ -210,9 +210,13 @@ find_library() {
+         LIBRARY_FOUND_VERSION=$(pkg-config --modversion "$LIBNAME")
+@@ -248,9 +248,13 @@
          return 0
      fi
  
@@ -58,20 +126,22 @@ Index: configure
              return 0
          fi
      done
-@@ -262,10 +266,8 @@ fi
- 
+@@ -305,12 +309,8 @@
  # SSE
  if [ "$SSE" = 'auto' ]; then
--    if [[ "$(uname -m)" =~ (amd|x86_)64 ||
--          "$(grep -E -m1 "^flags" /proc/cpuinfo)" =~ "sse" ]]; then
--        SSE=1
+     SSE=0
+-    if type uname > /dev/null; then
+-        if [[ "$(uname -m)" =~ "amd64" || "$(uname -m)" =~ "x86_64" ||
+-              "$(grep -E -m1 "^flags" /proc/cpuinfo)" =~ "sse" ]]; then
+-            SSE=1
+-        fi
 -    fi
 +    echo $(uname -m) | grep -E -q '(amd|x86_)64' && SSE=1
 +    grep -E -m1 -q '^flags.*sse' /proc/cpuinfo 2>/dev/null && SSE=1
  fi
  
  if [ "$SSE" -eq 1 ]; then
-@@ -288,9 +290,8 @@ if [ -n "$OPENMP" ]; then
+@@ -333,9 +333,8 @@
      else
          OPENMPFLAGS="-fopenmp"
      fi
@@ -83,7 +153,7 @@ Index: configure
          cflags "$OPENMPFLAGS"
          lflags "$OPENMPFLAGS"
          status "OpenMP" "yes"
-@@ -305,11 +306,13 @@ else
+@@ -350,11 +349,13 @@
  fi
  
  # Cocoa
@@ -99,7 +169,7 @@ Index: configure
          COCOA_READER=1
          cflags "-DUSE_COCOA=1"
          lflags "-framework Cocoa"
-@@ -320,25 +323,24 @@ if [[ "$OSTYPE" =~ "darwin" ]]; then
+@@ -365,32 +366,29 @@
  fi
  
  # pairs of possible *.h and lib*.so locations
@@ -111,7 +181,15 @@ Index: configure
 +    DIRS="$(libpng-config --prefix) $(libpng-config --libdir)"
  fi
  
--DIRS+=("/usr/local/include /usr/local/lib"
+-if [ -n $"LIQSRCDIR" ]; then
+-    DIRS+=("$LIQSRCDIR" "$LIQSRCDIR") # local libimagequant
++if [ -n "$LIQSRCDIR" ]; then
++    DIRS="$DIRS $LIQSRCDIR $LIQSRCDIR" # local libimagequant
+ fi
+ 
+-DIRS+=(
+-      "/usr/local/include /usr/local/lib"
+-      "/usr/include /usr/lib64"
 -      "/usr/include /usr/lib"
 -      "/opt/local/include /opt/local/lib" # macports
 -      )
@@ -128,12 +206,14 @@ Index: configure
      XCODE_PATH=$($XCODE_CMD -p)
 -    DIRS+=("$XCODE_PATH/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk/usr/include $XCODE_PATH/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk/usr/lib")
 -    DIRS+=("$XCODE_PATH/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/usr/include $XCODE_PATH/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/usr/lib")
+-elif [[ "$OSTYPE" =~ "msys" ]]; then
 +    DIRS="$DIRS $XCODE_PATH/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk/usr/include $XCODE_PATH/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk/usr/lib"
 +    DIRS="$DIRS $XCODE_PATH/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/usr/include $XCODE_PATH/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/usr/lib"
++elif echo "$OSTYPE" | grep -q "msys" ; then
+     SOLIBSUFFIX=dll
  else
      SOLIBSUFFIX=so
- fi
-@@ -350,7 +352,7 @@ HAS_LIBPNG=0
+@@ -431,7 +429,7 @@
  if echo "#include \"png.h\"
      int main(){
      return !png_create_write_struct(PNG_LIBPNG_VER_STRING, NULL, NULL, NULL);
@@ -142,16 +222,16 @@ Index: configure
      status "libpng" "custom flags"
      HAS_LIBPNG=1
  fi
-@@ -361,7 +363,7 @@ if [ "$HAS_LIBPNG" -eq 0 ]; then
+@@ -442,7 +440,7 @@
      if [ -n "$PNGH" ]; then
          PNGH_STRING=$(pngh_string "$PNGH")
          PNGH_MAJMIN=$(pngh_majmin "$PNGH")
 -        if [[ -n "$PNGH_STRING" && -n "$PNGH_MAJMIN" ]]; then
 +        if [ -n "$PNGH_STRING" -a -n "$PNGH_MAJMIN" ]; then
              LIBPNGA=$(find_f "$LIBPNG_DIR" "libpng${PNGH_MAJMIN}.a")
-             if [ -n "$LIBPNGA" ]; then
-                 cflags "-I${PNGH%/*}"
-@@ -377,14 +379,19 @@ if [ "$HAS_LIBPNG" -eq 0 ]; then
+             if [ -z "$LIBPNGA" ]; then
+                 LIBPNGA=$(find_f "$LIBPNG_DIR" "libpng.a")
+@@ -461,14 +459,19 @@
      if find_pkgconfig libpng; then
          HAS_LIBPNG=1
      else
@@ -176,7 +256,7 @@ Index: configure
                      if [ -n "$LIBPNGSO" ]; then
                          cflags "-I${PNGH%/*}"
                          lflags "-L${LIBPNGSO%/*} -lpng${PNGH_MAJMIN}"
-@@ -398,7 +405,7 @@ if [ "$HAS_LIBPNG" -eq 0 ]; then
+@@ -482,7 +485,7 @@
      fi
  fi
  if [ "$HAS_LIBPNG" -eq 0 ]; then
@@ -185,3 +265,11 @@ Index: configure
          LIBPNG_CMD='`brew install libpng`'
      else
          LIBPNG_CMD='`apt-get install libpng16-dev` or `apt-get install libpng-dev` or `yum install libpng-devel`'
+@@ -550,6 +553,6 @@
+ SOLIBSUFFIX = $SOLIBSUFFIX
+ STATICLIBDEPS = $STATICLIBDEPS
+ LIQSRCDIR = $LIQSRCDIR
+-LIQCONFIGUREFLAGS = $(printf "'%s' " "${LIQCONFIGURE[@]}")
++LIQCONFIGUREFLAGS = "$LIQCONFIGURE"
+ " > "$CONFIG"
+ 

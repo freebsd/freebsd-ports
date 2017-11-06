@@ -1,0 +1,9 @@
+facedetect is a simple face detector for batch processing. It answers the basic
+question: "Is there a face in this image?" and gives back either an exit code or
+the coordinates of each detected face in the standard output.
+
+The aim is to provide a basic command-line interface that's consistent and easy
+to use with software such as ImageMagick, while progressively improving the
+detection algorithm over time.
+
+WWW: https://www.thregr.org/~wavexx/software/facedetect/

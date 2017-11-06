@@ -3,22 +3,24 @@
 
 PORTNAME=	vertex
 PORTVERSION=	0.3.1
+PORTREVISION=	1
 CATEGORIES=	net-p2p python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	Vertex-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Vertex is an implementation of the Q2Q protocol
 
-BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/epsilon/__init__.py:devel/py-epsilon \
-		${PYTHON_SITELIBDIR}/OpenSSL/__init__.py:security/py-openssl
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/epsilon/__init__.py:devel/py-epsilon \
-		${PYTHON_SITELIBDIR}/OpenSSL/__init__.py:security/py-openssl
-
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		python twisted
-USE_PYTHON=	distutils autoplist
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}epsilon>=0:devel/py-epsilon \
+		${PYTHON_PKGNAMEPREFIX}openssl>=0:security/py-openssl \
+		${PYTHON_PKGNAMEPREFIX}twisted>=0:devel/py-twisted
+
+NO_ARCH=	yes
+USE_PYTHON=	autoplist distutils
+USES=		python
 
 .include <bsd.port.mk>

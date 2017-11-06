@@ -6,9 +6,11 @@ lib/cmake/KDED/KDEDTargets.cmake
 lib/libkdeinit5_kded5.so
 man/ca/man8/kded5.8.gz
 man/de/man8/kded5.8.gz
+man/es/man8/kded5.8.gz
 man/it/man8/kded5.8.gz
 man/man8/kded5.8.gz
 man/nl/man8/kded5.8.gz
+man/pt/man8/kded5.8.gz
 man/pt_BR/man8/kded5.8.gz
 man/ru/man8/kded5.8.gz
 man/sv/man8/kded5.8.gz

@@ -1,0 +1,19 @@
+Extended attributes are arbitrarily named pieces of data associated with
+a file and managed by the file system.
+
+The names and the values for the attributes are freely chosen by
+applications and/or users, with very few restrictions.  Many recent
+systems and filesystems support extended attributes, but the interfaces
+used to manage them are far from identical.
+
+Linux, FreeBSD, and Mac OS X all provide similar extended attributes
+functionality.
+
+The pxattr package aims at providing a single interface to extended
+attributes on all three systems.  It consists in a single C++ module
+(one source and one include file), which is to be included in the
+application source code, or can be built as a reference command-line
+utility to manage user extended attributes in a uniform and cross-
+platform way.  It includes an attributes archive/restore facility.
+
+WWW: http://www.lesbonscomptes.com/pxattr/

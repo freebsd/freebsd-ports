@@ -86,6 +86,7 @@ bin/aseprite
 %%DATADIR%%/data/widgets/new_folder_window.xml
 %%DATADIR%%/data/widgets/new_layer.xml
 %%DATADIR%%/data/widgets/new_sprite.xml
+%%DATADIR%%/data/widgets/open_sequence.xml
 %%DATADIR%%/data/widgets/options.xml
 %%DATADIR%%/data/widgets/palette_from_sprite.xml
 %%DATADIR%%/data/widgets/palette_popup.xml

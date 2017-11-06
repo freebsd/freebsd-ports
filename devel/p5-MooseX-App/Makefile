@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	MooseX-App
-PORTVERSION=	1.37
+PORTVERSION=	1.39
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Write user-friendly command line apps with even less suffering
 
-LICENSE=	ART10 GPLv1
+LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Config-Any>=0:devel/p5-Config-Any \
@@ -28,4 +28,11 @@ NO_ARCH=	yes
 USE_PERL5=	configure
 USES=		perl5
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 502502
+BUILD_DEPENDS+=	p5-Scalar-List-Utils>=1.44:lang/p5-Scalar-List-Utils
+RUN_DEPENDS+=	p5-Scalar-List-Utils>=1.44:lang/p5-Scalar-List-Utils
+.endif
+
+.include <bsd.port.post.mk>

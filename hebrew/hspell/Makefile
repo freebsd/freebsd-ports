@@ -2,21 +2,28 @@
 # $FreeBSD$
 
 PORTNAME=	hspell
-PORTVERSION=	1.1
+PORTVERSION=	1.4
 CATEGORIES=	hebrew
-MASTER_SITES=	http://hspell.ivrix.org.il/ \
-		LOCAL/makc
+MASTER_SITES=	http://hspell.ivrix.org.il/
 
 MAINTAINER=	onatan@gmail.com
 COMMENT=	Hebrew spellchecker and morphology engine
 
-USES=		shebangfix gmake perl5
+LICENSE=	AGPLv3
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+USES=		gmake perl5 shebangfix
+SHEBANG_FILES=	pmerge multispell
+USE_LDCONFIG=	yes
 USE_PERL5=	build
 GNU_CONFIGURE=	yes
 CFLAGS+=	-fPIC
-SHEBANG_FILES=	pmerge multispell
+CONFIGURE_ARGS=	--enable-fatverb \
+		--enable-shared
 
 SUB_FILES=	pkg-message
-SUB_LIST=	PORTSDIR=${PORTSDIR}
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libhspell.so
 
 .include <bsd.port.mk>

@@ -1,2 +1,3 @@
-SHA256 (cabal/pcre-light-0.4.0.3.tar.gz) = 6e6309fe0f759fe685c8c58a14dd204f7691675b15adbd88208ee332b5702d50
-SIZE (cabal/pcre-light-0.4.0.3.tar.gz) = 16574
+TIMESTAMP = 1499627854
+SHA256 (cabal/pcre-light-0.4.0.4.tar.gz) = 02c97e39263d18fd26aa63d52c88c4bfbb5c3f66ab40564552e7f11d5d889e75
+SIZE (cabal/pcre-light-0.4.0.4.tar.gz) = 15065

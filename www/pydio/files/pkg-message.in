@@ -1,10 +1,10 @@
 ************************************************************************
 
-Ajaxplorer has been installed in %%WWWDIR%%.
+Pydio has been installed in %%WWWDIR%%.
 
 You need to configure your webserver to publish that directory.
 
-Please also read http://ajaxplorer.info/documentation/administration/
+Please also read https://pydio.com/en/docs/v8/installation-guide/
 for further details on how to secure and configure your installation.
 
 ************************************************************************
@@ -36,3 +36,45 @@ Please also read the upgrading notes at:
 http://pyd.io/pydio-core-5.2.0#Upgrading
 
 ************************************************************************
+
+If you are upgrading from Pydio 5 to Pydio 7, a direct upgrade is not
+supported without upgrading from Pydio 5 to Pydio 6, then to Pydio 7.
+Either backup your data and reinstall Pydio 7 from scratch or manually
+upgrade by using this guide:
+
+https://pydio.com/forum/f/topic/troubleshooting-upgrade-to-v6/
+
+Then doing the upgrade from Pydio 6 to Pydio 7. You may have to
+manually upgrade the database, depending on your backend:
+
+https://raw.githubusercontent.com/pydio/pydio-core/develop/dist/php/7.0.1.mysql
+https://raw.githubusercontent.com/pydio/pydio-core/develop/dist/php/7.0.1.pgsql
+https://raw.githubusercontent.com/pydio/pydio-core/develop/dist/php/7.0.1.sqlite
+
+Choosing the file matching your backend, then parsing it. Once this process
+is completed, Pydio may be updated using the web interface.
+
+************************************************************************
+
+************************************************************************
+
+If you are upgrading from Pydio 7 to Pydio 8, please read follow the
+following quickstart guide for FreeBSD users.
+
+When using MySQL as database backend and the user you use for accessing
+the database might temporary need all privileges (GRANT ALL PRIVILEGES)
+on the Pydio database during the upgrade process.
+The privileges may be set back afterwards.
+
+If you use a cache driver (Doctrine), the upgrade process may fail. To
+disable the cache driver temporarily, edit:
+
+%%WWWDIR%%/pydio/plugins/boot.conf/bootstrap.json
+
+and remove the "core.cache" part. It can be added once the upgrade
+finished or re-configured in the admin panel.
+
+Additionally cleaning the following temporary directory might be
+helpful:
+
+%%WWWDIR%%/pydio/cache

@@ -1,6 +1,6 @@
---- arcread.cpp.orig	2013-12-01 16:10:14.000000000 +0800
-+++ arcread.cpp	2014-02-04 09:23:21.669710373 +0800
-@@ -1272,6 +1272,7 @@
+--- arcread.cpp.orig	2017-04-28 17:28:45 UTC
++++ arcread.cpp
+@@ -1308,6 +1308,7 @@ void Archive::ConvertAttributes()
  
  void Archive::ConvertFileHeader(FileHeader *hd)
  {
@@ -8,7 +8,7 @@
    if (Format==RARFMT15 && hd->UnpVer<20 && (hd->FileAttr & 0x10))
      hd->Dir=true;
    if (hd->HSType==HSYS_UNKNOWN)
-@@ -1282,6 +1283,16 @@
+@@ -1323,6 +1324,16 @@ void Archive::ConvertFileHeader(FileHead
  
    for (wchar *s=hd->FileName;*s!=0;s++)
    {

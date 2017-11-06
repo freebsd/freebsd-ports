@@ -4,7 +4,7 @@
 PORTNAME=	ledger
 PORTVERSION=	3.1.1
 DISTVERSIONPREFIX=	v
-PORTREVISION=	2
+PORTREVISION=	7
 CATEGORIES=	finance
 
 MAINTAINER=	woodycarey@hotmail.com
@@ -17,6 +17,8 @@ BUILD_DEPENDS=	${LOCALBASE}/include/utf8.h:devel/utf8cpp
 LIB_DEPENDS=	libgmp.so:math/gmp \
 		libmpfr.so:math/mpfr \
 		libboost_system.so:devel/boost-libs
+
+BROKEN_powerpc64=	fails to link: ibledger.so.3: undefined reference to boost::match_results
 
 USE_GITHUB=	yes
 

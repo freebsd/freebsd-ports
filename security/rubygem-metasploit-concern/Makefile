@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	metasploit-concern
-PORTVERSION=	2.0.3
+PORTVERSION=	2.0.5
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 

@@ -1,8 +1,8 @@
-# Created by: Anton Törnqvist <antont@inbox.lv>
+# Created by: Anton Tornqvist <antont@inbox.lv>
 # $FreeBSD$
 
 PORTNAME=	sxhkd
-PORTVERSION=	0.5.7
+PORTVERSION=	0.5.8
 CATEGORIES=	x11
 
 MAINTAINER=	gor@clogic.com.ua
@@ -13,10 +13,12 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libxcb-keysyms.so:x11/xcb-util-keysyms
 
+USES=		gmake pkgconfig
+
+USE_XORG=	xcb
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	baskerville
-
-USES=		gmake pkgconfig
 
 PORTEXAMPLES=	*
 PLIST_FILES=	bin/sxhkd \

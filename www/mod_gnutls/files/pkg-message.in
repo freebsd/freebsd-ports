@@ -1,0 +1,27 @@
+*********************************************************************
+
+Sample %%PREFIX%%/%%APACHEETCDIR%%/httpd.conf:
+
+    #LoadModule ssl_module %%APACHEMODDIR%%/mod_ssl.so
+    LoadModule gnutls_module %%APACHEMODDIR%%/mod_gnutls.so
+
+    <IfModule gnutls_module>
+        Include %%APACHEETCDIR%%/extra/httpd-gnutls.conf
+    </IfModule>
+
+Sample %%PREFIX%%/%%APACHEETCDIR%%/extra/httpd-gnutls.conf:
+
+    Listen 443
+
+    GnuTLSCache dbm %%DBDIR%%/tls-cache
+    GnuTLSCacheTimeout 500
+
+    <VirtualHost _default_:443>
+        GnuTLSEnable on
+        GnuTLSKeyFile %%PREFIX%%/etc/ssl/certs/private/example_com.key.pem
+        GnuTLSCertificateFile %%PREFIX%%/etc/ssl/certs/example_com.crt.pem
+        GnuTLSClientCAFile %%PREFIX%%/etc/ssl/certs/example_com.ca.pem
+        GnuTLSPriorities NORMAL:%COMPAT
+    </VirtualHost>
+
+*********************************************************************

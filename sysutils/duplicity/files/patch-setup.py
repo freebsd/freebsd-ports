@@ -1,4 +1,4 @@
---- setup.py.orig	2016-08-20 19:13:49 UTC
+--- setup.py.orig	2017-06-15 18:48:07 UTC
 +++ setup.py
 @@ -23,7 +23,6 @@
  import sys
@@ -35,11 +35,10 @@
                ]
  
  top_dir = os.path.dirname(os.path.abspath(__file__))
-@@ -69,48 +65,9 @@ for root, dirs, files in os.walk(os.path
-                 ('share/locale/%s/LC_MESSAGES' % lang,
+@@ -70,46 +66,9 @@ for root, dirs, files in os.walk(os.path
                   ["po/%s/duplicity.mo" % lang]))
  
--
+ 
 -class TestCommand(test):
 -
 -    def run(self):
@@ -80,11 +79,10 @@
 -        if self.build_lib != top_dir:
 -            testing_dir = os.path.join(self.build_lib, 'testing')
 -            os.system("rm -rf %s" % testing_dir)
--
+ 
          install.run(self)
  
- 
-@@ -177,11 +134,7 @@ setup(name="duplicity",
+@@ -177,11 +136,7 @@ setup(name="duplicity",
        url="http://duplicity.nongnu.org/index.html",
        packages=['duplicity',
                  'duplicity.backends',
@@ -97,11 +95,11 @@
        package_dir={"duplicity": "duplicity",
                     "duplicity.backends": "duplicity/backends", },
        ext_modules=[Extension("duplicity._librsync",
-@@ -192,10 +145,7 @@ setup(name="duplicity",
+@@ -192,10 +147,7 @@ setup(name="duplicity",
        scripts=['bin/rdiffdir', 'bin/duplicity'],
        data_files=data_files,
-       install_requires=['lockfile'],
--      tests_require=['lockfile', 'mock', 'pexpect'],
+       install_requires=['fasteners'],
+-      tests_require=['fasteners', 'mock', 'pexpect'],
 -      test_suite='testing',
 -      cmdclass={'test': TestCommand,
 -                'install': InstallCommand,

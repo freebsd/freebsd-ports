@@ -1,2 +1,3 @@
-SHA256 (xorg/driver/xf86-video-nv-2.1.20.tar.bz2) = 8395f65501f16f9cbaae8f598b02c6f18e78f4d3d30a08cb8d547dc2e00c10bf
-SIZE (xorg/driver/xf86-video-nv-2.1.20.tar.bz2) = 396982
+TIMESTAMP = 1484715801
+SHA256 (xorg/driver/xf86-video-nv-2.1.21.tar.bz2) = 1f98649e6ff0e8214b9d5dcac661f1d004be8e73823d8247b9c7025fd81db32d
+SIZE (xorg/driver/xf86-video-nv-2.1.21.tar.bz2) = 424091

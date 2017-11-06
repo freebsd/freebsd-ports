@@ -1,0 +1,3 @@
+Gitaly is a Git RPC service for handling all the git calls made by GitLab.
+
+WWW: https://gitlab.com/gitlab-org/gitaly

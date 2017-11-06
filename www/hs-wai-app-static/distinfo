@@ -1,2 +1,3 @@
-SHA256 (cabal/wai-app-static-3.1.1.tar.gz) = 5b7ed5028584bbefbbf3da6869ad9fe5ed4fe28ad599ca5d9ad715a1cee43e2a
-SIZE (cabal/wai-app-static-3.1.1.tar.gz) = 21781
+TIMESTAMP = 1499625380
+SHA256 (cabal/wai-app-static-3.1.6.1.tar.gz) = b318acf31e2e809411f119744a016ba0a78f52554ac7321a3a1410a218886668
+SIZE (cabal/wai-app-static-3.1.6.1.tar.gz) = 22686

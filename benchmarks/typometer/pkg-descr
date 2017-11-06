@@ -1,0 +1,19 @@
+Typometer is a tool to measure and analyze visual latency of text/code
+editors.  Its features:
+
+  - Cross-platform (Windows, Mac, Unix)
+  - Native API calls for faster screen access
+  - Synchronous and asynchronous modes
+  - Import and export of CSV data
+  - Summary statistics, frequency distribution
+  - Line/bar charts (including comparative ones)
+  - Chart image export (with legend)
+
+Editor latency is delay between an input event and a corresponding screen
+update, in particular -- delay between keystroke and character appearance.
+While there are many kinds of delays (caret movement, line editing, etc.),
+typing latency is a major predictor of editor usability.
+
+Java 8 or latter is required to run the program.
+
+WWW: https://pavelfatin.com/typometer/

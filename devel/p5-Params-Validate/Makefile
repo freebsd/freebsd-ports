@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Params-Validate
-PORTVERSION=	1.26
+PORTVERSION=	1.29
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,7 +14,7 @@ LICENSE=	ART20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	p5-Module-Implementation>=0.04:devel/p5-Module-Implementation
-RUN_DEPENDS=	p5-Module-Implementation>=0.04:devel/p5-Module-Implementation
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Readonly>=0:devel/p5-Readonly \
 		p5-Test-Fatal>=0:devel/p5-Test-Fatal \
 		p5-Test-Requires>0:devel/p5-Test-Requires \

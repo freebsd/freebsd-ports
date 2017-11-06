@@ -4,6 +4,7 @@
     COMMENT = Things that used to be on the desktop before computers were invented
 
     SUBDIR += affiche
+    SUBDIR += alarm-clock-applet
     SUBDIR += anamnesis
     SUBDIR += appwrapper
     SUBDIR += aspostit
@@ -19,7 +20,6 @@
     SUBDIR += cal
     SUBDIR += calcurse
     SUBDIR += calibre
-    SUBDIR += california
     SUBDIR += cartotheque
     SUBDIR += cdcat
     SUBDIR += charmap
@@ -40,7 +40,6 @@
     SUBDIR += drivel
     SUBDIR += easystroke
     SUBDIR += egroupware
-    SUBDIR += epoch
     SUBDIR += etask
     SUBDIR += everygui
     SUBDIR += fbreader
@@ -56,14 +55,12 @@
     SUBDIR += genius
     SUBDIR += gkrellm-reminder2
     SUBDIR += glabels
-    SUBDIR += gnome-blog
     SUBDIR += gnome-calendar
     SUBDIR += gnome-characters
     SUBDIR += gnome-clocks
     SUBDIR += gnome-contacts
     SUBDIR += gnome-dictionary
     SUBDIR += gnome-documents
-    SUBDIR += gnome-epub-thumbnailer
     SUBDIR += gnome-font-viewer
     SUBDIR += gnome-initial-setup
     SUBDIR += gnome-maps
@@ -71,7 +68,6 @@
     SUBDIR += gnome-screenshot
     SUBDIR += gnome-search-tool
     SUBDIR += gnome-shell-extension-audio-output-switcher
-    SUBDIR += gnome-shell-extension-backslide
     SUBDIR += gnome-shell-extension-coverflow
     SUBDIR += gnome-shell-extension-dashtodock
     SUBDIR += gnome-shell-extension-filesmenu
@@ -96,6 +92,7 @@
     SUBDIR += gnustep-wrapper
     SUBDIR += go-for-it
     SUBDIR += gourmet
+    SUBDIR += gpicker
     SUBDIR += griffith
     SUBDIR += growl-for-linux
     SUBDIR += gruler
@@ -118,12 +115,13 @@
     SUBDIR += horde-nag
     SUBDIR += hot-babe
     SUBDIR += howm
+    SUBDIR += hs-fdo-notify
     SUBDIR += ical
     SUBDIR += ithought
     SUBDIR += jjclient
     SUBDIR += jlj
     SUBDIR += kcharselect
-    SUBDIR += kchmviewer-kde4
+    SUBDIR += kchmviewer
     SUBDIR += kdeconnect
     SUBDIR += kdepim4
     SUBDIR += kdepim4-runtime
@@ -132,7 +130,6 @@
     SUBDIR += kruler
     SUBDIR += ksshaskpass
     SUBDIR += launchy
-    SUBDIR += libgcal
     SUBDIR += libopensync-plugin-vformat-devel
     SUBDIR += libstreamanalyzer
     SUBDIR += libstreams
@@ -140,6 +137,15 @@
     SUBDIR += ljclive
     SUBDIR += ljit
     SUBDIR += logjam
+    SUBDIR += lumina-archiver
+    SUBDIR += lumina-calculator
+    SUBDIR += lumina-fileinfo
+    SUBDIR += lumina-fm
+    SUBDIR += lumina-mediaplayer
+    SUBDIR += lumina-notify
+    SUBDIR += lumina-screenshot
+    SUBDIR += lumina-textedit
+    SUBDIR += lumina-xdg-entry
     SUBDIR += mate-notification-daemon
     SUBDIR += mate-utils
     SUBDIR += mdh
@@ -151,15 +157,14 @@
     SUBDIR += multisync-backup
     SUBDIR += multisync-syncml
     SUBDIR += myitcrm
-    SUBDIR += nagaina
     SUBDIR += nautilus-actions
     SUBDIR += nautilus-sendto
     SUBDIR += nemo-extensions
     SUBDIR += note
     SUBDIR += notecase
+    SUBDIR += noti
     SUBDIR += notification-daemon
     SUBDIR += notify-osd
-    SUBDIR += openproj
     SUBDIR += orage
     SUBDIR += osmo
     SUBDIR += osynctool
@@ -182,7 +187,6 @@
     SUBDIR += plasma-applet-daisy
     SUBDIR += plasma-applet-fancytasks
     SUBDIR += plasma-applet-panelspacer
-    SUBDIR += plasma-applet-playwolf
     SUBDIR += plasma-applet-qstardict
     SUBDIR += plasma-applet-serverstatuswidget
     SUBDIR += plasma-applet-simpleweatherforecast
@@ -190,6 +194,7 @@
     SUBDIR += plasma-applet-yawp
     SUBDIR += plopfolio
     SUBDIR += preferences
+    SUBDIR += projectlibre
     SUBDIR += puush
     SUBDIR += py-bugwarrior
     SUBDIR += py-khal
@@ -226,17 +231,18 @@
     SUBDIR += strigiutils
     SUBDIR += sugarcrm
     SUBDIR += superkaramba
-    SUBDIR += superswitcher
     SUBDIR += surrealtodo
     SUBDIR += syncthing-gtk
     SUBDIR += systempreferences
     SUBDIR += tagutils
     SUBDIR += taskcoach
     SUBDIR += taskd
+    SUBDIR += tasksh
     SUBDIR += taskwarrior
     SUBDIR += teapot
     SUBDIR += tel
     SUBDIR += thinkingrock
+    SUBDIR += timewarrior
     SUBDIR += tine20
     SUBDIR += tnote
     SUBDIR += todo
@@ -249,7 +255,6 @@
     SUBDIR += treeline
     SUBDIR += treesheets
     SUBDIR += tuxcards
-    SUBDIR += vboxgtk
     SUBDIR += virt-manager
     SUBDIR += vit
     SUBDIR += vnc2flv

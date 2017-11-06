@@ -2,10 +2,10 @@
 
 PORTNAME=	cvsync
 PORTVERSION=	0.25.0
-DISTVERSION=	0.24.19
 CATEGORIES=	net ipv6
 MASTER_SITES=	ftp://ftp.cvsync.org/pub/cvsync/ \
 		ftp://ftp.allbsd.org/pub/cvsync/
+DISTNAME=	${PORTNAME}-0.24.19
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Portable CVS repository synchronization utility
@@ -13,9 +13,8 @@ COMMENT=	Portable CVS repository synchronization utility
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/doc/COPYRIGHT
 
-USES=		gmake
+USES=		gmake ssl
 USE_RC_SUBR=	cvsyncd
-USE_OPENSSL=	yes
 
 PORTDOCS=	ChangeLog FAQ TODO
 PORTEXAMPLES=	cvsync.conf cvsyncd-FreeBSD.conf \

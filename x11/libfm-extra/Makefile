@@ -4,7 +4,7 @@
 PORTNAME=	libfm
 PKGNAMESUFFIX=	-extra
 
-MAINTAINER=	olivierd@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	LibFM-Extra library
 
 LICENSE=	LGPL21

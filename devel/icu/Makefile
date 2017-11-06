@@ -2,11 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	icu
-DISTVERSION=	58_2
+DISTVERSION=	59_1
 PORTREVISION?=	0 # keep for icu-lx
 PORTEPOCH?=	1
 CATEGORIES?=	devel
-MASTER_SITES=	http://download.icu-project.org/files/icu4c/${PORTVERSION}/
+MASTER_SITES=	http://download.icu-project.org/files/icu4c/${PORTVERSION}/ \
+		SF/${PORTNAME}/${PORTNAME:tu}4C/${PORTVERSION}
 DISTNAME=	icu4c-${DISTVERSION}-src
 
 MAINTAINER=	office@FreeBSD.org
@@ -26,23 +27,14 @@ CONFIGURE_ARGS+=--with-data-packaging=archive \
 CPPFLAGS+=	-DICU_NO_USER_DATA_OVERRIDE
 MAKE_ARGS=	VERBOSE=1
 TEST_TARGET=	check
-USES+=		compiler:c++0x gmake pathfix tar:tgz
+USES+=		compiler:c++11-lib gmake pathfix tar:tgz
 USE_LDCONFIG=	yes
 WRKSRC=		${WRKDIR}/icu/source
 
 ICUMAJOR=	${PORTVERSION:C/\..*//}
 PLIST_SUB+=	ICUMAJOR=${ICUMAJOR} ICUVER=${PORTVERSION}
 
-.include <bsd.port.options.mk>
-
 .ifndef PKGNAMESUFFIX
-.if ${ARCH} == "mips" || ${ARCH} == "mips64" || ${ARCH} == "sparc64" \
- || ${ARCH} == "powerpc" || ${ARCH} == "powerpc64"
-PLIST_FILES+=	%%DATADIR%%/%%ICUVER%%/icudt%%ICUMAJOR%%b.dat
-.else
-PLIST_FILES+=	%%DATADIR%%/%%ICUVER%%/icudt%%ICUMAJOR%%l.dat
-.endif
-
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/g* \
 		${STAGEDIR}${PREFIX}/bin/*conv \
@@ -50,6 +42,9 @@ post-install:
 		${STAGEDIR}${PREFIX}/bin/derb \
 		${STAGEDIR}${PREFIX}/bin/pkgdata
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/sbin/*
+# Filename varies by endianness: icudt<major>b.dat vs. icudt<major>l.dat
+	@(cd ${STAGEDIR}${PREFIX} && ${ECHO_CMD} \
+		${DATADIR_REL}/${PORTVERSION}/icudt*.dat >>${TMPPLIST})
 .endif # PKGNAMESUFFIX
 
 .include <bsd.port.mk>

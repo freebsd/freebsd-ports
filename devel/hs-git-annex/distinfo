@@ -1,2 +1,3 @@
-SHA256 (cabal/git-annex-5.20150727.tar.gz) = 9826836bd0eb4e35be8664862405afbf2ff4dff9a643b2f8ec61c295bd16099f
-SIZE (cabal/git-annex-5.20150727.tar.gz) = 5095110
+TIMESTAMP = 1499627839
+SHA256 (cabal/git-annex-6.20170520.tar.gz) = f8cf9b44172ce1914c8be8134795c4197d02960b81a2ba596712cbd35e002717
+SIZE (cabal/git-annex-6.20170520.tar.gz) = 1124314

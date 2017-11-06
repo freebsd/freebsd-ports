@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	discid
-PORTVERSION=	1.1.0
+PORTVERSION=	1.1.1
 CATEGORIES=	audio python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,5 +16,10 @@ LIB_DEPENDS=	libdiscid.so:audio/libdiscid
 
 USES=		python
 USE_PYTHON=	autoplist distutils
+
+NO_ARCH=	yes
+
+TEST_TARGET=	test
+DO_MAKE_TEST=	${SETENV} ${TEST_ENV} ${PYTHON_CMD} ${PYSETUP}
 
 .include <bsd.port.mk>

@@ -12,6 +12,8 @@ DISTFILES=		${DISTNAME}-sources.tar.gz \
 MAINTAINER=		nivit@FreeBSD.org
 COMMENT=		Tool for rapid development of small sites
 
+BROKEN_armv6=		fails to compile: build.xml: tools/ant/lib not found
+
 ANT=			${STAGEDIR}${DATADIR}/tools/ant/bin/ant
 ANT_TARGET=		local-deploy
 

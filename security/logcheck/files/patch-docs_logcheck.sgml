@@ -1,0 +1,17 @@
+--- docs/logcheck.sgml.orig	2017-01-25 21:08:04 UTC
++++ docs/logcheck.sgml
+@@ -244,10 +244,10 @@ manpage.1: manpage.sgml
+   <refsect1>
+     <title>FILES</title>
+ 
+-    <para>/etc/logcheck/logcheck.conf is the main configuration file.</para>
+-    <para>/etc/logcheck/logcheck.logfiles is the list of files to monitor.</para>
+-    <para>/etc/logcheck/logcheck.logfiles.d is the directory of lists of files to monitor.</para>
+-    <para>/usr/share/doc/logcheck-database/README.logcheck-database.gz for hints on how to write, test and maintain rules.</para>
++    <para>%%ETCDIR%%/logcheck.conf is the main configuration file.</para>
++    <para>%%ETCDIR%%/logcheck.logfiles is the list of files to monitor.</para>
++    <para>%%ETCDIR%%/logcheck.logfiles.d is the directory of lists of files to monitor.</para>
++    <para>%%DOCSDIR%%/README.logcheck-database for hints on how to write, test and maintain rules.</para>
+   </refsect1>
+   <refsect1>
+     <title>EXIT STATUS</title>

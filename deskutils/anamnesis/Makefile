@@ -3,7 +3,7 @@
 
 PORTNAME=	anamnesis
 PORTVERSION=	1.0.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	deskutils
 MASTER_SITES=	SF
 
@@ -16,10 +16,11 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3 \
 		${PYTHON_PKGNAMEPREFIX}gtk2>0:x11-toolkits/py-gtk2 \
 		${PYTHON_PKGNAMEPREFIX}xdg>0:devel/py-xdg
 
-USES=		python
+USES=		python shebangfix
 PORTDOCS=	ChangeLog README
 OPTIONS_DEFINE=	DOCS
 NO_ARCH=	yes
+SHEBANG_FILES=	source/anamnesis.py
 
 post-patch:
 	@${REINPLACE_CMD} 's|cfg_files.reverse()|cfg_files += [os.path.join("'${PREFIX}/etc/'",cfg_filename)]; cfg_files.reverse()|' \

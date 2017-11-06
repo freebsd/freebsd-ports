@@ -1,0 +1,4 @@
+RSpec JUnit Formatter is a formatter of RSpec results for Jenkins and probably a
+few other CI services.
+
+WWW: https://github.com/sj26/rspec_junit_formatter

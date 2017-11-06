@@ -21,8 +21,6 @@ USE_XORG=	x11 xext sm ice xxf86vm
 USE_QT4=	corelib gui qt3support svg assistantclient \
 		linguisttools_build qmake_build moc_build uic_build rcc_build
 
-CMAKE_ARGS=	-DQTTRANS_LRELEASE_EXECUTABLE="${LOCALBASE}/bin/lrelease-qt4"
-
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 PORTDOCS=	*
@@ -34,6 +32,9 @@ post-patch:
 	@${REINPLACE_CMD} -e '/asm\/types.h/ d' ${WRKSRC}/src/argyll/spectro/hidio.c
 	@${REINPLACE_CMD} -e '/DESTINATION/ s|data/|share/${PORTNAME}/data/|' \
 		${WRKSRC}/data/CMakeLists.txt ${WRKSRC}/src/CMakeLists.txt
+# Patch in the correct prefix of the Qt binaries into the sources.
+	@${REINPLACE_CMD} -e 's|%%QT_ARCHDIR%%|${QT_ARCHDIR}|g' \
+		${WRKSRC}/src/lprofqt/config.cpp
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/data/icons/lprof.png ${STAGEDIR}${PREFIX}/share/pixmaps

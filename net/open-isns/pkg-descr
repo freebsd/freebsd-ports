@@ -1,0 +1,9 @@
+This is a partial implementation of iSNS,
+the Internet Storage Name Service, according to RFC4171.
+
+iSNS facilitates scalable configuration and management of iSCSI and
+Fibre Channel (FCP) storage devices in an IP network by providing a
+set of services comparable to that available in Fibre Channel
+networks.
+
+WWW: https://github.com/open-iscsi/open-isns/

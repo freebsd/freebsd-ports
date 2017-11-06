@@ -3,4 +3,4 @@ EAGAIN and EINPROGRESS. It is intended for use with the Unicorn and Rainbows!
 Rack servers, but may be used by other applications (that run on Unix-like
 platforms).
 
-WWW: http://bogomips.org/kgio/
+WWW: https://bogomips.org/kgio/

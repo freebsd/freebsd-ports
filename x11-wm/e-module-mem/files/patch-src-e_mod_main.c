@@ -1,7 +1,6 @@
-diff -ur src.old/e_mod_main.c src/e_mod_main.c
---- src.old/e_mod_main.c	2010-11-13 17:56:21.000000000 +0200
-+++ src/e_mod_main.c	2012-02-21 23:43:46.548797357 +0200
-@@ -424,11 +424,9 @@
+--- src/e_mod_main.c.orig	2014-09-23 14:36:23 UTC
++++ src/e_mod_main.c
+@@ -422,11 +422,9 @@ _mem_cb_check (void *data)
  
     if (!inst->ci->show_percent)
       {

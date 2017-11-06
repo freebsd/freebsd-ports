@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	octave-forge-tsa
-PORTVERSION=	4.4.1
+PORTVERSION=	4.4.5
 PORTREVISION=	1
 CATEGORIES=	math
 
@@ -14,9 +14,11 @@ LICENSE_FILE=	${WRKDIR}/${OCTSRC}/COPYING
 
 # OCTSRC is the name of the directory of the package.
 # It is usually ${OCTAVE_PKGNAME} or ${DISTNAME}.
-OCTSRC=		${OCTAVE_PKGNAME}
+OCTSRC=		${DISTNAME}
 
 WRKSRC=		${WRKDIR}/${OCTSRC}/src
+
+RUN_DEPENDS+=	${TARBALLS_DIR}/nan.tar.gz:math/octave-forge-nan
 
 .include "${.CURDIR}/../../Mk/bsd.octave.mk"
 

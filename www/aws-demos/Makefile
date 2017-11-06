@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	aws
-PORTVERSION=	17.1.0
+PORTVERSION=	17.1
 CATEGORIES=	www
 PKGNAMESUFFIX=	-demos
 
-MAINTAINER=	marino@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Adacore Ada Web Server demos
 
 LICENSE=	GPLv3 GPLv3RLE
@@ -19,8 +19,7 @@ BUILD_DEPENDS=	gprbuild:devel/gprbuild \
 USES=		ada gmake python
 USE_GITHUB=	yes
 GH_ACCOUNT=	AdaCore
-GH_TAGNAME=	${PORTVERSION:R}
-GH_TUPLE=	AdaCore:templates-parser:${PORTVERSION:R}:tp/templates_parser
+GH_TUPLE=	AdaCore:templates-parser:${PORTVERSION}:tp/templates_parser
 
 DISTINFO_FILE=	${PORTSDIR}/www/aws/distinfo
 

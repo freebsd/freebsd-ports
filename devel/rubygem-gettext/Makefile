@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gettext
-PORTVERSION=	3.1.6
+PORTVERSION=	3.2.2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 

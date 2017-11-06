@@ -14,6 +14,8 @@ MASTERDIR=	${.CURDIR}/../unixcw
 PLIST=		${.CURDIR}/pkg-plist
 USE_QT5=	buildtools gui widgets qmake_build
 USES=		gettext
+# Qt from 5.7.0 on requires c++11.
+USE_CXXSTD=	c++11
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-xcwcp
 XCWCP=		yes

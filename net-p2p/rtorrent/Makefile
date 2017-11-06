@@ -2,7 +2,7 @@
 
 PORTNAME=	rtorrent
 PORTVERSION=	0.9.6
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	net-p2p
 MASTER_SITES=	http://rtorrent.net/downloads/
 
@@ -15,8 +15,6 @@ LICENSE_FILE_GPLv2=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libtorrent.so:net-p2p/libtorrent
-
-BROKEN_arm=	does not configure on arm
 
 USES=		compiler:c++11-lang ncurses pkgconfig
 GNU_CONFIGURE=	yes

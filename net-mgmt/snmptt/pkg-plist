@@ -1,3 +1,4 @@
+@sample etc/snmp/newsyslog-snmptt.conf.sample etc/newsyslog.conf.d/snmptt.conf
 @sample etc/snmp/snmptt.conf.generic.sample
 @sample etc/snmp/snmptt.ini.sample
 sbin/snmptt
@@ -5,9 +6,7 @@ sbin/snmptt-net-snmp-test
 sbin/snmpttconvert
 sbin/snmpttconvertmib
 sbin/snmptthandler
-%%DOCSDIR%%/faqs.html
-%%DOCSDIR%%/index.html
-%%DOCSDIR%%/layout1.css
-%%DOCSDIR%%/snmptt.html
-%%DOCSDIR%%/snmpttconvert.html
-%%DOCSDIR%%/snmpttconvertmib.html
+%%PORTDOCS%%@dir %%DOCSDIR%%
+@dir(snmptt,snmptt,775) /var/log/snmptt
+@dir(snmptt,snmptt,775) /var/run/snmptt
+@dir(snmptt,snmptt,700) /var/spool/snmptt

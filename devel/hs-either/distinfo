@@ -1,2 +1,3 @@
-SHA256 (cabal/either-4.4.1.tar.gz) = 91e57debc09bcaa7d4b884902ea6d3201ca3fec77625a059edd84bcaeb5909cb
-SIZE (cabal/either-4.4.1.tar.gz) = 9243
+TIMESTAMP = 1499627832
+SHA256 (cabal/either-4.4.1.1.tar.gz) = b087cb0fb63fec2fbdcac05fef0d03751daef5deb86cda3c732b9a6a31e634d3
+SIZE (cabal/either-4.4.1.1.tar.gz) = 9376

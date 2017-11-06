@@ -85,7 +85,7 @@ man/man1/mcview.1.gz
 %%NLS%%man/pl/man1/mc.1.gz
 %%NLS%%man/ru/man1/mc.1.gz
 %%NLS%%man/sr/man1/mc.1.gz
-share/applications/mc.desktop
+%%X11%%share/applications/mc.desktop
 %%NLS%%share/locale/az/LC_MESSAGES/mc.mo
 %%NLS%%share/locale/be/LC_MESSAGES/mc.mo
 %%NLS%%share/locale/bg/LC_MESSAGES/mc.mo
@@ -223,7 +223,13 @@ share/applications/mc.desktop
 %%DATADIR%%/skins/modarin256root.ini
 %%DATADIR%%/skins/nicedark.ini
 %%DATADIR%%/skins/sand256.ini
+%%DATADIR%%/skins/seasons-autumn16M.ini
+%%DATADIR%%/skins/seasons-spring16M.ini
+%%DATADIR%%/skins/seasons-summer16M.ini
+%%DATADIR%%/skins/seasons-winter16M.ini
 %%DATADIR%%/skins/xoria256.ini
+%%DATADIR%%/skins/yadt256-defbg.ini
+%%DATADIR%%/skins/yadt256.ini
 %%EDITOR%%%%DATADIR%%/syntax/PKGBUILD.syntax
 %%EDITOR%%%%DATADIR%%/syntax/Syntax
 %%EDITOR%%%%DATADIR%%/syntax/ada95.syntax
@@ -277,6 +283,8 @@ share/applications/mc.desktop
 %%EDITOR%%%%DATADIR%%/syntax/nemerle.syntax
 %%EDITOR%%%%DATADIR%%/syntax/nroff.syntax
 %%EDITOR%%%%DATADIR%%/syntax/octave.syntax
+%%EDITOR%%%%DATADIR%%/syntax/opencl.syntax
+%%EDITOR%%%%DATADIR%%/syntax/osl.syntax
 %%EDITOR%%%%DATADIR%%/syntax/pascal.syntax
 %%EDITOR%%%%DATADIR%%/syntax/perl.syntax
 %%EDITOR%%%%DATADIR%%/syntax/php.syntax
@@ -286,6 +294,7 @@ share/applications/mc.desktop
 %%EDITOR%%%%DATADIR%%/syntax/properties.syntax
 %%EDITOR%%%%DATADIR%%/syntax/puppet.syntax
 %%EDITOR%%%%DATADIR%%/syntax/python.syntax
+%%EDITOR%%%%DATADIR%%/syntax/r.syntax
 %%EDITOR%%%%DATADIR%%/syntax/ruby.syntax
 %%EDITOR%%%%DATADIR%%/syntax/sh.syntax
 %%EDITOR%%%%DATADIR%%/syntax/slang.syntax
@@ -302,6 +311,7 @@ share/applications/mc.desktop
 %%EDITOR%%%%DATADIR%%/syntax/verilog.syntax
 %%EDITOR%%%%DATADIR%%/syntax/vhdl.syntax
 %%EDITOR%%%%DATADIR%%/syntax/xml.syntax
+%%EDITOR%%%%DATADIR%%/syntax/yaml.syntax
 %%EDITOR%%%%DATADIR%%/syntax/yum-repo.syntax
 %%EDITOR%%%%DATADIR%%/syntax/yxx.syntax
-share/pixmaps/mc.png
+%%X11%%share/pixmaps/mc.png

@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gtklife
-PORTVERSION=	5.1
-PORTREVISION=	8
+PORTVERSION=	5.2
 CATEGORIES=	games
 MASTER_SITES=	http://ironphoenix.org/tril/gtklife/
 
@@ -11,11 +10,11 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK+ implementation of Conways Game of Life
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-WANT_GNOME=	yes
-INSTALLS_ICONS=	yes
 USES=		gmake
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" PREFIX="${PREFIX}" docdir="${DOCSDIR}"
+INSTALLS_ICONS=	yes
 
 PORTDATA=	*
 PORTDOCS=	*
@@ -30,34 +29,31 @@ DESKTOP_ENTRIES="GtkLife" \
 		"Game;Simulation;" \
 		${STARTUP_NOTIFY}
 
-OPTIONS_DEFINE=	GTK2
+OPTIONS_DEFINE=	GTK2 DOCS
+
 GTK2_DESC=	GTK2 gui toolkit support (beta)
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MGTK2}
-USE_GNOME+=	gtk20
-MAKE_ARGS+=	gtk2=yes
-STARTUP_NOTIFY=	true
-.else
-USE_GNOME+=	gtk12
-STARTUP_NOTIFY=	false
-.endif
+GTK2_USE=	GNOME=gtk20 XORG=x11
+GTK2_USES=	pkgconfig
+GTK2_USE_OFF=	GNOME=gtk12
+GTK2_MAKE_ARGS=	gtk2=yes
+GTK2_LDFLAGS=	-lX11
+GTK2_VARS=	STARTUP_NOTIFY=true
+GTK2_VARS_OFF=	STARTUP_NOTIFY=false
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|gtk-config|${GTK_CONFIG}|' ${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/gtklife ${STAGEDIR}${PREFIX}/bin
-	cd ${WRKSRC} && \
-	${FIND} ${DATA_SUBDIRS} -type d ! -empty -exec ${MKDIR} "${STAGEDIR}${DATADIR}/{}" \; && \
-	${FIND} ${DATA_SUBDIRS} ! -type d -exec ${INSTALL_DATA} {} "${STAGEDIR}${DATADIR}/{}" \;
+	cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}
 .for s in ${ICON_SIZES}
-	${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/${s}/apps
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/${s}/apps
 	${INSTALL_DATA} ${WRKSRC}/icon_${s}.png \
 		${STAGEDIR}${PREFIX}/share/icons/hicolor/${s}/apps/gtklife.png
 .endfor
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
+
+do-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/* ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

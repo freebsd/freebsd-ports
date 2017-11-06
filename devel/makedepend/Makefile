@@ -9,6 +9,8 @@ CATEGORIES=	devel
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Dependency generator for makefiles
 
+LICENSE=	MIT
+
 XORG_CAT=	util
 USE_XORG=	xproto
 

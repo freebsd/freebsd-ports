@@ -1,5 +1,9 @@
-TIMESTAMP = 1467132324
-SHA256 (dmd.2.071.1.freebsd-64.zip) = 8e078b2b35783ef3fd84652b328311f366b06990d2e58de52318fc3b84f0f998
-SIZE (dmd.2.071.1.freebsd-64.zip) = 25188858
-SHA256 (dmd.2.067.1.zip) = 24fd32d3b1401309187a3fcd235014e38c651beb3af29b0e656f6f4add4ec95b
-SIZE (dmd.2.067.1.zip) = 56083735
+TIMESTAMP = 1489142044
+SHA256 (dlang-dmd-v2.073.2_GH0.tar.gz) = 1cd983d73b0fa1a20232fb46dbc3a39434adfa00fc7668563983ec8ca210726a
+SIZE (dlang-dmd-v2.073.2_GH0.tar.gz) = 2815046
+SHA256 (dlang-druntime-v2.073.2_GH0.tar.gz) = 9c0c1a818deb6a0d410f83f067450cc5b41287328c44c2d46c0d2e7de84aa68e
+SIZE (dlang-druntime-v2.073.2_GH0.tar.gz) = 1496527
+SHA256 (dlang-phobos-v2.073.2_GH0.tar.gz) = 6a3b16649a33bcc3db522404a1fe98f046eedf082a96648f7972ab112c2cb289
+SIZE (dlang-phobos-v2.073.2_GH0.tar.gz) = 2168692
+SHA256 (dlang-dlang.org-v2.073.2_GH0.tar.gz) = 2417617ebca97594ad69a0602813f64d50590fc65b42a7099f44328d3d022bce
+SIZE (dlang-dlang.org-v2.073.2_GH0.tar.gz) = 2321393

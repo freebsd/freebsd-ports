@@ -6,6 +6,7 @@ bin/shptool
 man/man1/lgc-pg.1.gz
 man/man6/lgeneral.6.gz
 share/applications/lgeneral.desktop
+share/icons/hicolor/48x48/apps/lgeneral.png
 %%PORTDOCS%%%%DOCSDIR%%/README.lgc-pg
 %%PORTDOCS%%%%DOCSDIR%%/README.lgeneral
 %%PORTDOCS%%%%DOCSDIR%%/README.redit
@@ -216,7 +217,6 @@ share/applications/lgeneral.desktop
 %%NLS%%share/locale/de/LC_MESSAGES/pg.mo
 %%NLS%%share/locale/en/LC_MESSAGES/lgeneral.mo
 %%NLS%%share/locale/en/LC_MESSAGES/pg.mo
-share/pixmaps/lgeneral.png
 @dir %%DATADIR%%/terrain
 @dir %%DATADIR%%/music
 @dir %%DATADIR%%/ai_modules

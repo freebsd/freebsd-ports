@@ -8,8 +8,11 @@ CATEGORIES=	accessibility devel python
 MASTER_SITES=	SF/ocemp/${PORTNAME}/${PORTVERSION}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	mva@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ATK accessibility wrapper for python
+
+LICENSE=	BSD2CLAUSE
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		pkgconfig python:2
 USE_GNOME=	atk
@@ -21,11 +24,11 @@ EXAMPLES=	atkaction.py atkapplication.py atkcapi.c atktext.py atkvalue.py \
 OPTIONS_DEFINE=	EXAMPLES
 
 post-patch:
-	${REINPLACE_CMD} -i "" -e 's|: docfiles|: []|g' ${WRKSRC}/setup.py
+	@${REINPLACE_CMD} -i "" -e 's|: docfiles|: []|g' ${WRKSRC}/setup.py
 
-post-install:
-	@${INSTALL} -d ${STAGEDIR}${EXAMPLESDIR}/
-	@cd ${WRKSRC}/doc/examples && \
+post-install-EXAMPLES-on:
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/
+	cd ${WRKSRC}/doc/examples && \
 		${INSTALL_DATA} ${EXAMPLES} ${STAGEDIR}${EXAMPLESDIR}/
 
 .include <bsd.port.mk>

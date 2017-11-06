@@ -7,7 +7,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	lth@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	POE Component providing TCP client services for test cases
 
 BUILD_DEPENDS=	p5-POE>=1.28:devel/p5-POE

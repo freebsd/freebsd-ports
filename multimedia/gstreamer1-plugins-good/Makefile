@@ -30,7 +30,6 @@ do-build:
 do-install:
 .for dir in ${GOOD_GST_DIRS}
 	@(cd ${INSTALL_WRKSRC}/${dir} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${INSTALL_TARGET})
-
 .endfor
 
 .include "${MASTERDIR}/Makefile"

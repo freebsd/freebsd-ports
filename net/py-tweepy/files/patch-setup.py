@@ -1,4 +1,4 @@
---- setup.py.orig	2015-02-21 19:28:08 UTC
+--- setup.py.orig	2015-11-20 05:42:25 UTC
 +++ setup.py
 @@ -15,7 +15,10 @@ else:
      raise RuntimeError("Unable to find version string in %s." % (VERSIONFILE,))

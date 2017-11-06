@@ -1,6 +1,6 @@
---- tvscreen.c.ORI	Sun May 21 15:49:47 2000
-+++ tvscreen.c	Wed Jun  7 10:19:30 2006
-@@ -480,6 +480,9 @@
+--- tvscreen.c.orig	2000-05-21 13:49:47 UTC
++++ tvscreen.c
+@@ -480,6 +480,9 @@ void TVSCREENInit( TV_XSCREEN *s,
      dga_avail = FALSE;
  
  #ifdef HAVE_XFREE86
@@ -10,4 +10,3 @@
      if ( !XUTILXServerIsLocal( TVDISPLAY ) )
          SUPRINTF(( "XF86DGA not available...X Server isn't local.\n" ));
      else {
-

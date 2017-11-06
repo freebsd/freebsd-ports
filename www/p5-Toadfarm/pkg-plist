@@ -1,5 +1,6 @@
 %%SITE_PERL%%/Toadfarm.pm
 %%SITE_PERL%%/Toadfarm/Command/reload.pm
+%%SITE_PERL%%/Toadfarm/Command/restart.pm
 %%SITE_PERL%%/Toadfarm/Command/start.pm
 %%SITE_PERL%%/Toadfarm/Command/status.pm
 %%SITE_PERL%%/Toadfarm/Command/stop.pm
@@ -14,6 +15,7 @@
 %%SITE_PERL%%/Toadfarm/Plugin/Reload.pm
 %%PERL5_MAN3%%/Toadfarm.3.gz
 %%PERL5_MAN3%%/Toadfarm::Command::reload.3.gz
+%%PERL5_MAN3%%/Toadfarm::Command::restart.3.gz
 %%PERL5_MAN3%%/Toadfarm::Command::start.3.gz
 %%PERL5_MAN3%%/Toadfarm::Command::status.3.gz
 %%PERL5_MAN3%%/Toadfarm::Command::stop.3.gz

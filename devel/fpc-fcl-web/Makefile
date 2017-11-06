@@ -4,7 +4,6 @@
 CATEGORIES=	devel lang
 PKGNAMESUFFIX=	-fcl-web
 
-MAINTAINER=	freebsd-fpc@FreeBSD.org
 COMMENT=	Free Pascal web application libary (FCL)
 
 USE_FPC=	dblib fcl-async fcl-base fcl-db fcl-xml fcl-json fcl-net \

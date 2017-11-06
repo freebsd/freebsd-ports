@@ -1,9 +1,7 @@
-tcbasic implements a small subset of BASIC known as Tiny BASIC.
-It provides the following statements and commands: INPUT, PRINT,
-LET, GOTO, GOSUB, RETURN, IF, END, CLEAR, LIST, RUN, and STOP.
-Integer and floating point arithmetic is supported, and strings
-may be PRINTed. The following built-in functions are provided:
-SIN, COS, TAN, COT, ATN, EXP, LOG, ABS, SQR, RND.
+tcbasic implements a small subset of BASIC known as Tiny BASIC
+with added support for floating point numbers and many of the
+built-in mathematical functions in Dartmouth BASIC. It supports
+basic I/O, flow control, subroutines, and debug tracing.
 
 The small size of the language make it easy to learn and master
 while providing all of the building blocks needed to develop many

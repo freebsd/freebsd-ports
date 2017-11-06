@@ -3,8 +3,8 @@ include/courier-unicode-script-tab.h
 include/courier-unicode.h
 lib/libcourier-unicode.a
 lib/libcourier-unicode.so
-lib/libcourier-unicode.so.3
-lib/libcourier-unicode.so.3.0.0
+lib/libcourier-unicode.so.4
+lib/libcourier-unicode.so.4.0.0
 man/man3/unicode::iconvert::convert.3.gz
 man/man3/unicode::iconvert::convert_tocase.3.gz
 man/man3/unicode::iconvert::fromu.3.gz
@@ -74,3 +74,4 @@ man/man3/unicode_wbscan_end.3.gz
 man/man3/unicode_wbscan_init.3.gz
 man/man3/unicode_wbscan_next.3.gz
 man/man7/courier-unicode.7.gz
+share/aclocal/courier-unicode.m4

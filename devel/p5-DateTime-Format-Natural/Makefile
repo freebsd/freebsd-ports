@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	DateTime-Format-Natural
-PORTVERSION=	1.04
-PORTREVISION=	1
+PORTVERSION=	1.05
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -11,7 +10,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Create machine readable date/time with natural parsing logic
 
-LICENSE=	ART10 GPLv1
+LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-boolean>=0:devel/p5-boolean \

@@ -1,4 +1,4 @@
---- tvcapture.h.orig
+--- tvcapture.h.orig	2001-02-12 18:57:43 UTC
 +++ tvcapture.h
 @@ -34,8 +34,14 @@
  #include <X11/Intrinsic.h>

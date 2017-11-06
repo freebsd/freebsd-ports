@@ -1,10 +1,10 @@
-include/itcl4.0/itcl.h
-include/itcl4.0/itcl2TclOO.h
-include/itcl4.0/itclDecls.h
-include/itcl4.0/itclInt.h
-include/itcl4.0/itclIntDecls.h
-include/itcl4.0/itclMigrate2TclCore.h
-include/itcl4.0/itclTclIntStubsFcn.h
+include/itcl%%SHORT_PKGVER%%/itcl.h
+include/itcl%%SHORT_PKGVER%%/itcl2TclOO.h
+include/itcl%%SHORT_PKGVER%%/itclDecls.h
+include/itcl%%SHORT_PKGVER%%/itclInt.h
+include/itcl%%SHORT_PKGVER%%/itclIntDecls.h
+include/itcl%%SHORT_PKGVER%%/itclMigrate2TclCore.h
+include/itcl%%SHORT_PKGVER%%/itclTclIntStubsFcn.h
 lib/itcl%%PKGVER%%/itcl.tcl
 lib/itcl%%PKGVER%%/itclConfig.sh
 lib/itcl%%PKGVER%%/itclHullCmds.tcl

@@ -66,7 +66,7 @@ cbsdd_prestart() {
 	%%PREFIX%%/bin/cbsd netinv
 	update_netinfo
 	env sqlcolnames="1" ${miscdir}/sqlcli ${dbdir}/local.sqlite "SELECT * FROM local" > ${inventory}
-
+	${miscdir}/sqlcli ${dbdir}/local.sqlite "UPDATE jails SET status='0' WHERE status='3'"
 	[ -n "$nat_enable" ] && %%PREFIX%%/bin/cbsd naton
 	/usr/sbin/daemon -f ${rcddir}/jails-astart start
 }

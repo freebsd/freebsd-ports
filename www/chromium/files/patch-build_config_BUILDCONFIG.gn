@@ -1,7 +1,7 @@
---- build/config/BUILDCONFIG.gn.orig	2016-10-06 04:02:08.000000000 +0300
-+++ build/config/BUILDCONFIG.gn	2016-10-13 04:48:31.029743000 +0300
-@@ -134,12 +134,13 @@
-   is_debug = !is_official_build
+--- build/config/BUILDCONFIG.gn.orig	2017-09-05 21:05:11.000000000 +0200
++++ build/config/BUILDCONFIG.gn	2017-09-06 17:04:08.044575000 +0200
+@@ -131,13 +131,13 @@
+   is_official_build = false
  
    # Whether we're a traditional desktop unix.
 -  is_desktop_linux = current_os == "linux"
@@ -9,14 +9,14 @@
  
    # Set to true when compiling with the Clang compiler. Typically this is used
    # to configure warnings.
-   is_clang = current_os == "mac" || current_os == "ios" ||
--             current_os == "linux" || current_os == "chromeos"
-+             current_os == "linux" || current_os == "chromeos" ||
-+             current_os == "bsd"
- 
-   # Allows the path to a custom target toolchain to be injected as a single
-   # argument, and set as the default toolchain.
-@@ -183,8 +184,8 @@
+   is_clang =
+       current_os == "mac" || current_os == "ios" || current_os == "chromeos" ||
+-      current_os == "fuchsia" || current_os == "android" ||
++      current_os == "fuchsia" || current_os == "android" || current_os == "bsd" ||
+       (current_os == "linux" && current_cpu != "s390x" &&
+        current_cpu != "s390" && current_cpu != "ppc64" &&
+        current_cpu != "ppc" && current_cpu != "mips" && current_cpu != "mips64")
+@@ -190,8 +190,8 @@
    # TODO(dpranke): Add some sort of assert here that verifies that
    # no toolchain omitted host_toolchain from its toolchain_args().
  
@@ -27,22 +27,23 @@
        # TODO(dpranke) - is_clang normally applies only to the target
        # build, and there is no way to indicate that you want to override
        # it for both the target build *and* the host build. Do we need to
-@@ -220,7 +221,7 @@
+@@ -229,7 +229,7 @@
    } else {
-     _default_toolchain = "//build/toolchain/android:$target_cpu"
+     _default_toolchain = "//build/toolchain/android:android_$target_cpu"
    }
 -} else if (target_os == "chromeos" || target_os == "linux") {
 +} else if (target_os == "chromeos" || target_os == "linux" || target_os == "bsd") {
    # See comments in build/toolchain/cros/BUILD.gn about board compiles.
    if (is_clang) {
      _default_toolchain = "//build/toolchain/linux:clang_$target_cpu"
-@@ -340,8 +341,17 @@
+@@ -379,8 +379,18 @@
    is_nacl = false
    is_posix = true
    is_win = false
 +} else if (current_os == "bsd") {
 +  is_android = false
 +  is_chromeos = false
++  is_fuchsia = false
 +  is_ios = false
 +  is_linux = false
 +  is_bsd = true
@@ -55,7 +56,7 @@
  # =============================================================================
  # SOURCES FILTERS
  # =============================================================================
-@@ -410,7 +420,7 @@
+@@ -450,7 +460,7 @@
  if (!is_mac && !is_ios) {
    sources_assignment_filter += [ "*.mm" ]
  }

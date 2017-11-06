@@ -1,12 +1,18 @@
---- doc/Makefile.in.orig	Mon Oct 16 13:58:44 2006
-+++ doc/Makefile.in	Thu Apr  5 01:51:13 2007
-@@ -44,3 +44,3 @@
+--- doc/Makefile.in.orig	2012-04-25 02:40:26 UTC
++++ doc/Makefile.in
+@@ -65,13 +65,13 @@ CONFIG_CLEAN_FILES =
+ CONFIG_CLEAN_VPATH_FILES =
+ SOURCES =
  DIST_SOURCES =
 -INFO_DEPS = $(srcdir)/autoconf.info $(srcdir)/standards.info
 +INFO_DEPS = $(srcdir)/autoconf.info
- TEXINFO_TEX = $(top_srcdir)/build-aux/texinfo.tex
-@@ -51,3 +51,3 @@
+ am__TEXINFO_TEX_DIR = $(srcdir)/../build-aux
+ DVIS = autoconf.dvi standards.dvi
+ PDFS = autoconf.pdf standards.pdf
+ PSS = autoconf.ps standards.ps
  HTMLS = autoconf.html standards.html
 -TEXINFOS = autoconf.texi standards.texi
 +TEXINFOS = autoconf.texi
+ TEXI2DVI = texi2dvi
  TEXI2PDF = $(TEXI2DVI) --pdf --batch
+ MAKEINFOHTML = $(MAKEINFO) --html

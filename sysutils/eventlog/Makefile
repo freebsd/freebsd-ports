@@ -11,6 +11,10 @@ DISTFILES=	${PORTNAME}_${PORTVERSION}.tar.gz
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Replacement of the simple syslog() API providing structure to messages
 
+#	Reminder: Retire this port sysutils/syslog-ng310 is retired.
+#	syslog-ng311 and subsequent ports make use of a private copy of
+#	eventlog. sysutils/syslog-ng* is this port's only consumer.
+
 GNU_CONFIGURE=	yes
 USES=		libtool pathfix pkgconfig
 USE_LDCONFIG=	yes

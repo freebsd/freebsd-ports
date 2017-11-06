@@ -1,4 +1,4 @@
---- libelf/elf.h.orig	2015-06-10 19:44:33 UTC
+--- libelf/elf.h.orig	2016-12-25 13:36:55 UTC
 +++ libelf/elf.h
 @@ -54,6 +54,7 @@ typedef uint64_t Elf64_Off;
  /* Type for section indices, which are 16-bit quantities.  */
@@ -8,7 +8,7 @@
  
  /* Type for version symbol information.  */
  typedef Elf32_Half Elf32_Versym;
-@@ -972,6 +973,7 @@ typedef struct
+@@ -1109,6 +1110,7 @@ typedef struct
  	 on 64-bit platforms and vice versa.  */
      } a_un;
  } Elf64_auxv_t;

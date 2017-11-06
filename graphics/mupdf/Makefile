@@ -2,15 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	mupdf
-PORTVERSION=	1.9a
-PORTREVISION=	1
+PORTVERSION=	1.11
+PORTREVISION=	2
 DISTVERSIONSUFFIX=	-source
 PORTEPOCH=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.mupdf.com/downloads/ \
 		http://www.mupdf.com/downloads/archive/
 
-MAINTAINER=	udvzsolt@gmail.com
+MAINTAINER=	uzsolt@uzsolt.hu
 COMMENT=	Lightweight PDF viewer and toolkit
 
 LICENSE=	AGPLv3
@@ -22,52 +22,46 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libjbig2dec.so:graphics/jbig2dec \
 		libopenjp2.so:graphics/openjpeg
 
-CFLAGS+=	-I${WRKSRC}/include/mupdf
+CFLAGS+=	-I${WRKSRC}/include/mupdf -fPIC
 LIBS+=		-L${LOCALBASE}/lib
-MAKE_ARGS=	build=release prefix=${PREFIX} mandir=${PREFIX}/man verbose=yes
+MAKE_ARGS=	build=release prefix=${PREFIX} mandir=${PREFIX}/man verbose=yes \
+		SOVERSION=${PORTVERSION}
 USES=		cpe compiler:c++11-lang gmake jpeg pkgconfig
 USE_XORG=	x11 xcursor xext xinerama xrandr
-USE_GL=	gl
+USE_GL=		gl
+USE_LDCONFIG=	yes
 
 CPE_VENDOR=	artifex
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-source
-
-OPTIONS_DEFINE=	SCROLL JS
+OPTIONS_DEFINE=	JS SCROLL
 OPTIONS_DEFAULT=SCROLL
 
-SCROLL_DESC=	Build with scroll hacks
 JS_DESC=	JavaScript support (V8 engine)
+SCROLL_DESC=	Build with scroll hacks
 
+JS_LIB_DEPENDS=	libv8.so:lang/v8
+JS_MAKE_ARGS=	V8_PRESENT=1 V8LIBS=-lv8
 SCROLL_EXTRA_PATCHES=	${FILESDIR}/scroll_hack-platform__x11__pdfapp.c
-JS_LIB_DEPENDS=		libv8.so:lang/v8
-JS_MAKE_ARGS=		V8_PRESENT=1 V8LIBS=-lv8
+
+PLIST_SUB=	SOVERSION=${PORTVERSION}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's/-pipe -O2 //' \
-		-e 's|/usr/local|${LOCALBASE}|' \
-		-e 's/Linux/FreeBSD/' \
 		${WRKSRC}/Makerules
+	@${REINPLACE_CMD} -e 's/-ldl //' ${WRKSRC}/Makerules ${WRKSRC}/Makethird
 	@${RM} -r ${WRKSRC}/thirdparty/curl \
-		${WRKSRC}/thirdparty/jbig2dec \
 		${WRKSRC}/thirdparty/freetype \
 		${WRKSRC}/thirdparty/harfbuzz \
-		${WRKSRC}/thirdparty/jpeg \
+		${WRKSRC}/thirdparty/jbig2dec \
+		${WRKSRC}/thirdparty/libjpeg \
 		${WRKSRC}/thirdparty/openjpeg \
 		${WRKSRC}/thirdparty/zlib
 
-post-build:
-	(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} \
-		${MAKEFILE} ${MAKE_ARGS} OUT=build/pic XCFLAGS=-fpic libs)
-
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/build/pic/libmupdf.a \
-		${STAGEDIR}${PREFIX}/lib/libmupdf_pic.a
-	${INSTALL_DATA} ${WRKSRC}/build/pic/libmupdfthird.a \
-		${STAGEDIR}${PREFIX}/lib/libmupdfthird_pic.a
 	${MV} ${STAGEDIR}${PREFIX}/bin/mupdf-x11 ${STAGEDIR}${PREFIX}/bin/mupdf
-.for binary in mutool mujstest mupdf mupdf-gl mupdf-x11-curl
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${binary}
-.endfor
+	${LN} -s libmupdf.so.${PORTVERSION} \
+		${STAGEDIR}${PREFIX}/lib/libmupdf.so
+	${LN} -s libmupdfthird.so.${PORTVERSION} \
+		${STAGEDIR}${PREFIX}/lib/libmupdfthird.so
 
 .include <bsd.port.mk>

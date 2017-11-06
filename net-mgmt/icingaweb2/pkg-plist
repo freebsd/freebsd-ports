@@ -327,6 +327,9 @@
 %%WWWDIR%%/library/Icinga/Exception/Http/HttpNotFoundException.php
 %%WWWDIR%%/library/Icinga/Exception/IcingaException.php
 %%WWWDIR%%/library/Icinga/Exception/InvalidPropertyException.php
+%%WWWDIR%%/library/Icinga/Exception/Json/JsonDecodeException.php
+%%WWWDIR%%/library/Icinga/Exception/Json/JsonEncodeException.php
+%%WWWDIR%%/library/Icinga/Exception/Json/JsonException.php
 %%WWWDIR%%/library/Icinga/Exception/MissingParameterException.php
 %%WWWDIR%%/library/Icinga/Exception/NotFoundError.php
 %%WWWDIR%%/library/Icinga/Exception/NotImplementedError.php
@@ -386,6 +389,7 @@
 %%WWWDIR%%/library/Icinga/Util/File.php
 %%WWWDIR%%/library/Icinga/Util/Format.php
 %%WWWDIR%%/library/Icinga/Util/GlobFilter.php
+%%WWWDIR%%/library/Icinga/Util/Json.php
 %%WWWDIR%%/library/Icinga/Util/String.php
 %%WWWDIR%%/library/Icinga/Util/StringHelper.php
 %%WWWDIR%%/library/Icinga/Util/TimezoneDetect.php

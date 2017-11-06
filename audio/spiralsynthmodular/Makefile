@@ -24,8 +24,6 @@ LIBS+=		-L${LOCALBASE}/lib
 
 WRKSRC=		${WRKDIR}/spiralmodular-0.2.2
 
-BROKEN_ia64=	Does not compile on ia64
-
 OPTIONS_DEFINE=	OPTIMIZED_CFLAGS
 
 OPTIMIZED_CFLAGS_CFLAGS=-O3 -ffast-math

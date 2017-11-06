@@ -3,7 +3,7 @@
 
 PORTNAME=	rkward
 PORTVERSION=	0.6.5
-PORTREVISION=	1
+PORTREVISION=	6
 CATEGORIES=	math
 MASTER_SITES=	KDE/stable/${PORTNAME}/${PORTVERSION}/src
 PKGNAMESUFFIX=	-kde4
@@ -13,17 +13,15 @@ COMMENT=	IDE/GUI for the R-project
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/R:math/R
-LIB_DEPENDS=	libsoprano.so:textproc/soprano
-RUN_DEPENDS=	${LOCALBASE}/bin/R:math/R \
-		${KDE_PREFIX}/lib/kde4/katepart.so:editors/kate
+LIB_DEPENDS=	libR.so:math/R \
+		libsoprano.so:textproc/soprano
+RUN_DEPENDS=	${KDE_PREFIX}/lib/kde4/katepart.so:editors/kate
 
 USES=		cmake gettext fortran kde:4 php:cli shared-mime-info
 USE_QT4=	corelib dbus gui qmake_build moc_build network phonon rcc_build	\
 		script svg uic_build webkit xml
 USE_XORG=	x11
 USE_KDE=	automoc4 kdelibs
-INSTALLS_ICONS=	yes
 
 CFLAGS+=	-I${LOCALBASE}/include
 

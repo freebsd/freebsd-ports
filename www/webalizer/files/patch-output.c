@@ -1,6 +1,6 @@
---- output.c.orig	2008-06-10 09:50:08.000000000 +0200
-+++ output.c	2008-06-20 18:43:04.000000000 +0200
-@@ -989,6 +989,20 @@
+--- output.c.orig	2013-02-26 05:37:27 UTC
++++ output.c
+@@ -992,6 +992,20 @@ int all_sites_page(u_int64_t h_reg, u_in
        hptr=*pointer++;
        if (hptr->flag == OBJ_REG)
        {

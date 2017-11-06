@@ -1,13 +1,15 @@
---- Makefile.orig	2016-10-01 08:13:53 UTC
+--- Makefile.orig	2017-09-02 15:29:54 UTC
 +++ Makefile
-@@ -1,5 +1,5 @@
+@@ -3,7 +3,7 @@ PO4A ?= po4a
+ POD2MAN ?= pod2man
+ 
  # List of files of dh_* commands. Sorted for debhelper man page.
--COMMANDS=$(shell find . -maxdepth 1 -type f -perm /100 -name "dh_*" -printf "%f\n" | LC_ALL=C sort)
-+COMMANDS=$(shell find . -maxdepth 1 -type f -perm +a+x -name "dh_*" -print | cut -c3- | LC_ALL=C sort)
+-COMMANDS=$(shell find . -maxdepth 1 -type f -perm /100 -name "dh_*" -printf "%f\n" | grep -v '~$$' | LC_ALL=C sort)
++COMMANDS=$(shell find . -maxdepth 1 -type f -perm +a+x -name "dh_*" -print | grep -v '~$$' | cut -c3- | LC_ALL=C sort)
+ MANPAGES=$(COMMANDS:=.1) dh.1
  
  # Find deprecated commands by looking at their synopsis.
- DEPRECATED=$(shell egrep -l '^dh_.* - .*deprecated' $(COMMANDS))
-@@ -94,17 +94,16 @@ endif
+@@ -118,17 +118,16 @@ endif
  	done;
  
  install:
@@ -20,16 +22,16 @@
 +		$(DESTDIR)${SITE_PERL}/Debian/Debhelper/Buildsystem
  	install dh $(COMMANDS) $(DESTDIR)$(PREFIX)/bin
 -	install -m 0644 autoscripts/* $(DESTDIR)$(PREFIX)/share/debhelper/autoscripts
--	install -m 0644 Debian/Debhelper/*.pm $(DESTDIR)$(PERLLIBDIR)
+-	install -m 0644 lib/Debian/Debhelper/*.pm $(DESTDIR)$(PERLLIBDIR)
 +	install -m 0644 autoscripts/* $(DESTDIR)$(PREFIX)/bin
-+	install -m 0644 Debian/Debhelper/*.pm $(DESTDIR)${SITE_PERL}/Debian/Debhelper
++	install -m 0644 lib/Debian/Debhelper/*.pm $(DESTDIR)${SITE_PERL}/Debian/Debhelper
  	[ "$(PREFIX)" = /usr ] || \
 -		sed -i '/$$prefix=/s@/usr@$(PREFIX)@g' $(DESTDIR)$(PERLLIBDIR)/Dh_Lib.pm
--	install -m 0644 Debian/Debhelper/Sequence/*.pm $(DESTDIR)$(PERLLIBDIR)/Sequence
--	install -m 0644 Debian/Debhelper/Buildsystem/*.pm $(DESTDIR)$(PERLLIBDIR)/Buildsystem
+-	install -m 0644 lib/Debian/Debhelper/Sequence/*.pm $(DESTDIR)$(PERLLIBDIR)/Sequence
+-	install -m 0644 lib/Debian/Debhelper/Buildsystem/*.pm $(DESTDIR)$(PERLLIBDIR)/Buildsystem
 +		sed -i '' '/$$prefix=/s@/usr@$(PREFIX)@g' $(DESTDIR)${SITE_PERL}/Debian/Debhelper/Dh_Lib.pm
-+	install -m 0644 Debian/Debhelper/Sequence/*.pm $(DESTDIR)${SITE_PERL}/Debian/Debhelper/Sequence
-+	install -m 0644 Debian/Debhelper/Buildsystem/*.pm $(DESTDIR)${SITE_PERL}/Debian/Debhelper/Buildsystem
++	install -m 0644 lib/Debian/Debhelper/Sequence/*.pm $(DESTDIR)${SITE_PERL}/Debian/Debhelper/Sequence
++	install -m 0644 lib/Debian/Debhelper/Buildsystem/*.pm $(DESTDIR)${SITE_PERL}/Debian/Debhelper/Buildsystem
  
  test: version
- 	./run perl -MTest::Harness -e 'runtests grep { ! /CVS/ && ! /\.svn/ && -f && -x } @ARGV' t/* t/*/*
+ 	MAKEFLAGS= HARNESS_OPTIONS=j$(TEST_JOBS) ./run perl -MTest::Harness -e 'runtests grep { ! /CVS/ && ! /\.svn/ && -f && -x && m/\.t$$/ } @ARGV' t/* t/*/*

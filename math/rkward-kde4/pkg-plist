@@ -3,6 +3,7 @@ lib/R/library/rkward/CITATION
 lib/R/library/rkward/DESCRIPTION
 lib/R/library/rkward/INDEX
 lib/R/library/rkward/Meta/Rd.rds
+lib/R/library/rkward/Meta/features.rds
 lib/R/library/rkward/Meta/hsearch.rds
 lib/R/library/rkward/Meta/links.rds
 lib/R/library/rkward/Meta/nsInfo.rds
@@ -22,6 +23,7 @@ lib/R/library/rkwardtests/CITATION
 lib/R/library/rkwardtests/DESCRIPTION
 lib/R/library/rkwardtests/INDEX
 lib/R/library/rkwardtests/Meta/Rd.rds
+lib/R/library/rkwardtests/Meta/features.rds
 lib/R/library/rkwardtests/Meta/hsearch.rds
 lib/R/library/rkwardtests/Meta/links.rds
 lib/R/library/rkwardtests/Meta/nsInfo.rds

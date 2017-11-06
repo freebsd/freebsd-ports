@@ -17,7 +17,7 @@ LIB_DEPENDS=	libosmocore.so:devel/libosmocore \
 
 BROKEN_mips=	Does not build: undefined reference to __bswap_16
 BROKEN_mips64=	Does not build: undefined reference to __bswap_16
-BROKEN_powerpc64=	Does not build
+BROKEN_powerpc64=	Does not build: undefined reference to __bswap_16
 BROKEN_sparc64=	Does not build: undefined reference to __bswap_16
 
 USES=		autoreconf libtool pathfix pkgconfig

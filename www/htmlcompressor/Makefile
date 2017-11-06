@@ -5,7 +5,7 @@ PORTNAME=	htmlcompressor
 PORTVERSION=	1.5.3
 PORTREVISION=	2
 CATEGORIES=	www java
-MASTER_SITES=	GOOGLE_CODE
+MASTER_SITES=	https://github.com/serg472/htmlcompressor/releases/download/${PORTVERSION}/
 EXTRACT_SUFX=	.jar
 EXTRACT_ONLY=	# empty
 
@@ -14,11 +14,10 @@ COMMENT=	HTML/XML Compressor
 
 LICENSE=	APACHE20
 
-BROKEN=		Unfetchable (google code has gone away)
-
 NO_WRKSUBDIR=	yes
 USE_JAVA=	yes
 NO_BUILD=	yes
+NO_ARCH=	yes
 
 PLIST_FILES=	bin/htmlcompressor %%JAVAJARDIR%%/htmlcompressor.jar
 SUB_FILES=	htmlcompressor

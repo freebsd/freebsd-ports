@@ -3,12 +3,14 @@
 
 PORTNAME=	mapchan
 PORTVERSION=	3.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils converters
 MASTER_SITES=	SF
 
 MAINTAINER=	bsam@FreeBSD.org
 COMMENT=	Transform the input and output of a terminal (SCO Unix alike)
+
+LICENSE=	GPLv2
 
 USES=		iconv tar:tgz
 WRKSRC=		${WRKDIR}/${PORTNAME}

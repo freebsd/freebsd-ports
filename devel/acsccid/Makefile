@@ -9,7 +9,8 @@ MASTER_SITES=	SF
 MAINTAINER=	mp39590@gmail.com
 COMMENT=	PC/SC driver for CS CCID smart card readers
 
-LICENSE=	GPLv2
+LICENSE=	LGPL21+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libpcsclite.so:devel/pcsc-lite
 

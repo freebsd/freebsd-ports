@@ -1,4 +1,4 @@
---- examples/chrony.conf.example3.orig	2015-10-19 09:18:37 UTC
+--- examples/chrony.conf.example3.orig	2017-01-31 10:22:11 UTC
 +++ examples/chrony.conf.example3
 @@ -1,7 +1,7 @@
  #######################################################################
@@ -9,7 +9,7 @@
  # want to enable.  The more obscure options are not included.  Refer
  # to the documentation for these.
  #
-@@ -47,7 +47,9 @@
+@@ -31,7 +31,9 @@
  ! server bar.example.net iburst
  ! server baz.example.net iburst
  
@@ -18,18 +18,9 @@
 +# a workstation with a full-time internet connection:
 +pool 0.freebsd.pool.ntp.org iburst
   
- # However, for dial-up use you probably want these instead.  The word
- # 'offline' means that the server is not visible at boot time.  Use
-@@ -58,7 +60,7 @@
- ! server bar.example.net offline
- ! server baz.example.net offline
- 
--! pool pool.ntp.org offline
-+! pool 0.freebsd.pool.ntp.org offline
- 
- # You may want to specify NTP 'peers' instead.  If you run a network
- # with a lot of computers and want several computers running chrony to
-@@ -93,12 +95,12 @@
+ #######################################################################
+ ### AVOIDING POTENTIALLY BOGUS CHANGES TO YOUR CLOCK
+@@ -65,12 +67,12 @@
  # immediately so that it doesn't gain or lose any more time.  You
  # generally want this, so it is uncommented.
  
@@ -44,7 +35,7 @@
  
  # chronyd can save the measurement history for the servers to files when
  # it it exits.  This is useful in 2 situations:
-@@ -116,7 +118,7 @@ driftfile /var/lib/chrony/drift
+@@ -88,7 +90,7 @@ driftfile /var/lib/chrony/drift
  # Enable these two options to use this.
  
  ! dumponexit
@@ -53,7 +44,7 @@
  
  # chronyd writes its process ID to a file.  If you try to start a second
  # copy of chronyd, it will detect that the process named in the file is
-@@ -145,6 +147,10 @@ driftfile /var/lib/chrony/drift
+@@ -117,6 +119,10 @@ driftfile /var/lib/chrony/drift
  # only need this if you really enjoy looking at the logs, you want to
  # produce some graphs of your system's timekeeping performance, or you
  # need help in debugging a problem.
@@ -64,7 +55,7 @@
  
  ! logdir /var/log/chrony
  ! log measurements statistics tracking
-@@ -259,7 +265,7 @@ driftfile /var/lib/chrony/drift
+@@ -253,7 +259,7 @@ driftfile /var/lib/chrony/drift
  # You need to have 'enhanced RTC support' compiled into your Linux
  # kernel.  (Note, these options apply only to Linux.)
  

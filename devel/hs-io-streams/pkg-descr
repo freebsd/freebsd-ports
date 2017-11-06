@@ -1,0 +1,4 @@
+The io-streams library contains simple and easy-to-use primitives for I/O using
+streams.
+
+WWW: http://hackage.haskell.org/package/io-streams

@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	IO-YAML
-PORTVERSION=	0.08
-PORTREVISION=	1
+PORTVERSION=	0.10
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -11,10 +10,12 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Read and write YAML streams incrementally
 
+LICENSE=	ART10 GPLv1+
+LICENSE_COMB=	dual
+
 BUILD_DEPENDS=	p5-IO-stringy>=0:devel/p5-IO-stringy \
-		p5-YAML>=0:textproc/p5-YAML
-RUN_DEPENDS=	p5-IO-stringy>=0:devel/p5-IO-stringy \
-		p5-YAML>=0:textproc/p5-YAML
+		p5-YAML-LibYAML>=0:textproc/p5-YAML-LibYAML
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	modbuild

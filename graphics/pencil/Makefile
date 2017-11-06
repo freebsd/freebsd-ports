@@ -3,7 +3,7 @@
 
 PORTNAME=	pencil
 PORTVERSION=	0.4.4b
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}-planner/Pencil/${PORTVERSION}eta
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
@@ -15,6 +15,8 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libming.so:graphics/ming \
 		libpng.so:graphics/png
+
+BROKEN_armv6=		fails to compile: no matching function for call to 'qMax'
 
 USES=		qmake zip
 USE_QT4=	gui opengl xml moc_build rcc_build

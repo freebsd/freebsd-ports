@@ -3,7 +3,7 @@
 
 PORTNAME=	dangerdeep
 PORTVERSION=	0.3.0
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/danger_from_the_deep-src/${PORTVERSION}
 DIST_SUBDIR=	${PORTNAME}
@@ -14,7 +14,7 @@ COMMENT=	Open source World War II German submarine simulation
 LIB_DEPENDS=	libfftw3.so:math/fftw3
 RUN_DEPENDS=	dangerdeep-data>0:games/dangerdeep-data
 
-USES=		execinfo scons
+USES=		scons
 USE_GL=		yes
 USE_SDL=	sdl mixer image net
 

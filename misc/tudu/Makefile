@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tudu
-PORTVERSION=	0.10
+PORTVERSION=	0.10.2
 CATEGORIES=	misc
 MASTER_SITES=	http://code.meskio.net/tudu/
 

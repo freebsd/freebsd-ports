@@ -1,0 +1,19 @@
+--- dub.json.orig	2017-04-11 13:32:24 UTC
++++ dub.json
+@@ -8,14 +8,10 @@
+     "targetName": "dlangide",
+     "targetPath": "bin",
+     "targetType": "executable",
+-
++    "libs": ["dlangui","dsymbol","dparse","dlib","dcd","emsi_containers","msgpack-d", "DerelictFT","DerelictUtil","DerelictGL3","DerelictSDL2"],
++    "lflags":["-L/usr/local/lib/d","-L/usr/local/lib"],
+     "stringImportPaths": ["views", "views/res", "views/res/i18n", "views/res/mdpi", "views/res/hdpi"],
+ 
+-    "dependencies": {
+-        "dlangui": "==0.9.50",
+-        "dcd": "~>0.9.0-alpha4"
+-    },
+-
+     "copyFiles-windows": [
+         "libs/windows/x86/mago-mi.exe"
+     ],

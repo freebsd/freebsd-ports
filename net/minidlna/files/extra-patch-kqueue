@@ -1,6 +1,8 @@
---- ./configure.ac.orig	2013-11-02 05:06:41.000000000 +0400
-+++ ./configure.ac	2013-11-13 17:25:27.000000000 +0400
-@@ -453,7 +453,7 @@
+diff --git configure.ac configure.ac
+index f343d21..374c3c3 100644
+--- configure.ac
++++ configure.ac
+@@ -488,7 +488,7 @@ AC_CHECK_LIB(avahi-client, avahi_threaded_poll_new,
  ################################################################################################################
  ### Header checks
  
@@ -9,22 +11,60 @@
  
  AC_CHECK_FUNCS(inotify_init, AC_DEFINE(HAVE_INOTIFY,1,[Whether kernel has inotify support]), [
      AC_MSG_CHECKING([for __NR_inotify_init syscall])
---- ./inotify.c.orig	2013-11-02 05:06:41.000000000 +0400
-+++ ./inotify.c	2013-11-13 17:25:27.000000000 +0400
-@@ -15,9 +15,10 @@
-  * You should have received a copy of the GNU General Public License
-  * along with MiniDLNA. If not, see <http://www.gnu.org/licenses/>.
+diff --git minidlna.c minidlna.c
+index 322d04d..ff1bd9d 100644
+--- minidlna.c
++++ minidlna.c
+@@ -46,6 +46,7 @@
+  * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+  * POSSIBILITY OF SUCH DAMAGE.
   */
-+
- #include "config.h"
++#define FD_SETSIZE 8192
+ #include <stdlib.h>
+ #include <unistd.h>
+ #include <string.h>
+@@ -357,6 +358,7 @@ rescan:
+ 		open_db(&db);
+ 		if (*scanner_pid == 0) /* child (scanner) process */
+ 		{
++			DPRINTF(E_DEBUG, L_GENERAL, "Starting scanner in forked child\n");
+ 			start_scanner();
+ 			sqlite3_close(db);
+ 			log_close();
+@@ -366,6 +368,7 @@ rescan:
+ 		}
+ 		else if (*scanner_pid < 0)
+ 		{
++			DPRINTF(E_DEBUG, L_GENERAL, "Starting scanner in parent\n");
+ 			start_scanner();
+ 		}
+ #else
+@@ -1057,6 +1060,15 @@ main(int argc, char **argv)
+ 		else if (pthread_create(&inotify_thread, NULL, start_inotify, NULL) != 0)
+ 			DPRINTF(E_FATAL, L_GENERAL, "ERROR: pthread_create() failed for start_inotify. EXITING\n");
+ 	}
++#elif defined(HAVE_SYS_EVENT_H)
++	if( GETFLAG(INOTIFY_MASK) )
++	{
++		if (!sqlite3_threadsafe() || sqlite3_libversion_number() < 3005001)
++			DPRINTF(E_ERROR, L_GENERAL, "SQLite library is not threadsafe!	"
++			"Kqueue will be disabled.\n");
++		else if (pthread_create(&inotify_thread, NULL, start_kqueue, NULL) != 0)
++			DPRINTF(E_FATAL, L_GENERAL, "ERROR: pthread_create() failed for start_kqueue. EXITING\n");
++	}
+ #endif
+ 	smonitor = OpenAndConfMonitorSocket();
  
+diff --git monitor.c monitor.c
+index ebe8095..e3eaddc 100644
+--- monitor.c
++++ monitor.c
+@@ -29,16 +29,21 @@
+ #include <sys/types.h>
+ #include <sys/stat.h>
+ #include <sys/time.h>
 -#ifdef HAVE_INOTIFY
 +#if defined(HAVE_INOTIFY) || defined(HAVE_SYS_EVENT_H)
- #include <stdio.h>
- #include <string.h>
- #include <stdlib.h>
-@@ -31,11 +32,16 @@
- #include <sys/time.h>
  #include <sys/resource.h>
  #include <poll.h>
 +#ifdef HAVE_INOTIFY
@@ -34,43 +74,63 @@
 +#else /*HAVE_SYS_INOTIFY_H*/
  #include "linux/inotify.h"
  #include "linux/inotify-syscalls.h"
+-#endif
+-#endif
 +#endif /*HAVE_SYS_INOTIFY_H*/
-+#else
++#else /*HAVE_INOTIFY*/
 +#include <sys/event.h>
 +#include <fcntl.h>
- #endif
++#endif /*HAVE_INOTIFY*/
++#endif /*defined(HAVE_INOTIFY) || defined(HAVE_SYS_EVENT_H)*/
  #include "libav.h"
  
-@@ -49,11 +55,13 @@
- #include "playlist.h"
- #include "log.h"
+ #include "upnpglobalvars.h"
+@@ -53,12 +58,14 @@
  
--#define EVENT_SIZE  ( sizeof (struct inotify_event) )
--#define BUF_LEN     ( 1024 * ( EVENT_SIZE + 16 ) )
-+#ifdef HAVE_INOTIFY
-+#define EVENT_SIZE	( sizeof (struct inotify_event) )
-+#define BUF_LEN		 ( 1024 * ( EVENT_SIZE + 16 ) )
+ static time_t next_pl_fill = 0;
+ 
++#if defined(HAVE_INOTIFY) || defined(HAVE_SYS_EVENT_H)
+ #ifdef HAVE_INOTIFY
+ #define EVENT_SIZE  ( sizeof (struct inotify_event) )
+ #define BUF_LEN     ( 1024 * ( EVENT_SIZE + 16 ) )
  #define DESIRED_WATCH_LIMIT 65536
  
  #define PATH_BUF_SIZE PATH_MAX
-+#endif
++#endif /*HAVE_INOTIFY*/
  
  struct watch
  {
-@@ -86,12 +94,34 @@
+@@ -85,6 +92,7 @@ get_path_from_wd(int wd)
+ 	return NULL;
+ }
+ 
++#ifdef HAVE_INOTIFY
+ static unsigned int
+ next_highest(unsigned int num)
+ {
+@@ -107,6 +115,7 @@ raise_watch_limit(unsigned int limit)
+ 	fprintf(max_watches, "%u", next_highest(limit));
+ 	fclose(max_watches);
+ }
++#endif /*HAVE_INOTIFY*/
+ 
+ static int
+ add_watch(int fd, const char * path)
+@@ -114,6 +123,7 @@ add_watch(int fd, const char * path)
  	struct watch *nw;
  	int wd;
  
 +#ifdef HAVE_INOTIFY
  	wd = inotify_add_watch(fd, path, IN_CREATE|IN_CLOSE_WRITE|IN_DELETE|IN_MOVE);
- 	if( wd < 0 )
+ 	if( wd < 0 && errno == ENOSPC)
  	{
+@@ -125,6 +135,27 @@ add_watch(int fd, const char * path)
  		DPRINTF(E_ERROR, L_INOTIFY, "inotify_add_watch(%s) [%s]\n", path, strerror(errno));
  		return -1;
  	}
 +#else /*HAVE_INOTIFY*/
 +	wd = open(path, O_RDONLY);
-+	if (wd == -1)
++	if (wd < 0)
 +	{
 +		DPRINTF(E_ERROR, L_INOTIFY, "inotify_add_watch[kqueue,open](%s) [%s]\n", path, strerror(errno));
 +		return -1;
@@ -83,30 +143,30 @@
 +		NOTE_DELETE | NOTE_WRITE | NOTE_EXTEND /*| NOTE_ATTRB*/,
 +		0, NULL);
 +
-+	if( kevent(fd, &ke, 1, NULL, 0, NULL) == -1 )
++	if( kevent(fd, &ke, 1, NULL, 0, NULL) < 0 )
 +	{
 +		DPRINTF(E_ERROR, L_INOTIFY, "inotify_add_watch[kqueue](%s) [%s]\n", path, strerror(errno));
 +		return -1;
 +	}
-+#endif
++#endif /*HAVE_INOTIFY*/
  
  	nw = malloc(sizeof(struct watch));
  	if( nw == NULL )
-@@ -125,7 +155,12 @@
+@@ -158,7 +189,12 @@ remove_watch(int fd, const char * path)
  	for( w = watches; w; w = w->next )
  	{
  		if( strcmp(path, w->path) == 0 )
 +#ifdef HAVE_INOTIFY
  			return(inotify_rm_watch(fd, w->wd));
-+#else
++#else /*HAVE_INOTIFY*/
 +			close(w->wd); /* kqueue cleans up events when handle dies*/
 +			return(0);
-+#endif
++#endif /*HAVE_INOTIFY*/
  	}
  
  	return 1;
-@@ -145,15 +180,14 @@
- int
+@@ -167,8 +203,7 @@ remove_watch(int fd, const char * path)
+ static int
  inotify_create_watches(int fd)
  {
 -	FILE * max_watches;
@@ -115,275 +175,130 @@
  	char **result;
  	int i, rows = 0;
  	struct media_dir_s * media_path;
- 
- 	for( media_path = media_dirs; media_path != NULL; media_path = media_path->next )
- 	{
--		DPRINTF(E_DEBUG, L_INOTIFY, "Add watch to %s\n", media_path->path);
-+		DPRINTF(E_DEBUG, L_INOTIFY, "Setiing up monitoring on %s\n", media_path->path);
- 		add_watch(fd, media_path->path);
- 		num_watches++;
- 	}
-@@ -165,7 +199,11 @@
- 		num_watches++;
+@@ -188,6 +223,10 @@ inotify_create_watches(int fd)
  	}
  	sqlite3_free_table(result);
--		
-+
+ 		
 +#ifdef HAVE_INOTIFY
 +	FILE * max_watches;
 +	unsigned int watch_limit;
-+
++	
  	max_watches = fopen("/proc/sys/fs/inotify/max_user_watches", "r");
  	if( max_watches )
  	{
-@@ -194,16 +232,17 @@
- 			else
- 			{
- 				DPRINTF(E_WARN, L_INOTIFY, "WARNING: Inotify max_user_watches [%u] is low or close to the number of used watches [%u] "
--				                        "and I do not have permission to increase this limit.  Please do so manually by "
--				                        "writing a higher value into /proc/sys/fs/inotify/max_user_watches.\n", watch_limit, num_watches);
-+																"and I do not have permission to increase this limit.	Please do so manually by "
-+																"writing a higher value into /proc/sys/fs/inotify/max_user_watches.\n", watch_limit, num_watches);
- 			}
- 		}
+@@ -224,6 +263,7 @@ inotify_create_watches(int fd)
+ 		DPRINTF(E_WARN, L_INOTIFY, "WARNING: Could not read inotify max_user_watches!  "
+ 		                        "Hopefully it is enough to cover %u current directories plus any new ones added.\n", num_watches);
  	}
- 	else
- 	{
--		DPRINTF(E_WARN, L_INOTIFY, "WARNING: Could not read inotify max_user_watches!  "
--		                        "Hopefully it is enough to cover %u current directories plus any new ones added.\n", num_watches);
-+		DPRINTF(E_WARN, L_INOTIFY, "WARNING: Could not read inotify max_user_watches!	"
-+														"Hopefully it is enough to cover %u current directories plus any new ones added.\n", num_watches);
- 	}
-+#endif
++#endif /*HAVE_INOTIFY*/
  
  	return rows;
  }
-@@ -218,7 +257,11 @@
+@@ -238,7 +278,11 @@ inotify_remove_watches(int fd)
  	while( w )
  	{
  		last_w = w;
 +#ifdef HAVE_INOTIFY
  		inotify_rm_watch(fd, w->wd);
-+#else
++#else /*HAVE_INOTIFY*/
 +		close(w->wd); /*kqueue cleans up after fhandle dies*/
-+#endif
++#endif /*HAVE_INOTIFY*/
  		free(w->path);
  		rm_watches++;
  		w = w->next;
-@@ -261,10 +304,10 @@
- 		while( (e = readdir(ds)) )
- 		{
- 			if( strcmp(e->d_name, ".") == 0 ||
--			    strcmp(e->d_name, "..") == 0 )
-+					strcmp(e->d_name, "..") == 0 )
- 				continue;
- 			if( (e->d_type == DT_DIR) ||
--			    (e->d_type == DT_UNKNOWN && resolve_unknown_type(dir, NO_MEDIA) == TYPE_DIR) )
-+					(e->d_type == DT_UNKNOWN && resolve_unknown_type(dir, NO_MEDIA) == TYPE_DIR) )
- 				i += add_dir_watch(fd, dir, e->d_name);
- 		}
- 	}
-@@ -294,6 +337,8 @@
- 	struct media_dir_s * media_path = media_dirs;
- 	struct stat st;
+@@ -247,7 +291,7 @@ inotify_remove_watches(int fd)
  
-+	DPRINTF(E_DEBUG, L_INOTIFY, "inotify_insert_file: %s @ %s\n", name, path);
-+
- 	/* Is it cover art for another file? */
- 	if( is_image(path) )
- 		update_if_album_art(path);
-@@ -341,14 +386,14 @@
- 			break;
- 		case TYPE_VIDEO|TYPE_IMAGES:
- 			if( !is_image(path) &&
--			    !is_video(path) )
-+					!is_video(path) )
- 				return -1;
- 			break;
- 		case TYPE_IMAGES:
- 			if( !is_image(path) )
- 				return -1;
- 			break;
--                default:
-+								default:
- 			return -1;
- 			break;
- 	}
-@@ -371,11 +416,11 @@
- 		inotify_remove_file(path);
- 	}
+ 	return rm_watches;
+ }
+-#endif
++#endif /*defined(HAVE_INOTIFY) || defined(HAVE_SYS_EVENT_H)*/
  
--	/* Find the parentID.  If it's not found, create all necessary parents. */
-+	/* Find the parentID.	If it's not found, create all necessary parents. */
- 	len = strlen(path)+1;
- 	if( !(path_buf = malloc(len)) ||
--	    !(last_dir = malloc(len)) ||
--	    !(base_name = malloc(len)) )
-+			!(last_dir = malloc(len)) ||
-+			!(base_name = malloc(len)) )
- 		return -1;
- 	base_copy = base_name;
- 	while( depth )
-@@ -386,9 +431,9 @@
- 
- 		do
- 		{
--			//DEBUG DPRINTF(E_DEBUG, L_INOTIFY, "Checking %s\n", parent_buf);
-+			/*DEBUG DPRINTF(E_DEBUG, L_INOTIFY, "Checking %s\n", parent_buf);*/
- 			id = sql_get_text_field(db, "SELECT OBJECT_ID from OBJECTS o left join DETAILS d on (d.ID = o.DETAIL_ID)"
--			                            " where d.PATH = '%q' and REF_ID is NULL", parent_buf);
-+																	" where d.PATH = '%q' and REF_ID is NULL", parent_buf);
- 			if( id )
- 			{
- 				if( !depth )
-@@ -446,6 +491,8 @@
- 	struct media_dir_s* media_path;
- 	struct stat st;
- 
-+	DPRINTF(E_DEBUG, L_INOTIFY, "inotify_insert_directory: %s @ %s\n", name, path);
-+
- 	if( access(path, R_OK|X_OK) != 0 )
- 	{
- 		DPRINTF(E_WARN, L_INOTIFY, "Could not access %s [%s]\n", path, strerror(errno));
-@@ -459,7 +506,7 @@
- 
-  	parent_buf = strdup(path);
- 	id = sql_get_text_field(db, "SELECT OBJECT_ID from OBJECTS o left join DETAILS d on (d.ID = o.DETAIL_ID)"
--	                            " where d.PATH = '%q' and REF_ID is NULL", dirname(parent_buf));
-+															" where d.PATH = '%q' and REF_ID is NULL", dirname(parent_buf));
- 	if( !id )
- 		id = sqlite3_mprintf("%s", BROWSEDIR_ID);
- 	insert_directory(name, path, BROWSEDIR_ID, id+2, get_next_available_id("OBJECTS", id));
-@@ -554,27 +604,25 @@
- 	{
- 		sql_exec(db, "DELETE from PLAYLISTS where ID = %lld", detailID);
- 		sql_exec(db, "DELETE from DETAILS where ID ="
--		             " (SELECT DETAIL_ID from OBJECTS where OBJECT_ID = '%s$%llX')",
--		         MUSIC_PLIST_ID, detailID);
-+								 " (SELECT DETAIL_ID from OBJECTS where OBJECT_ID = '%s$%llX')",
-+						 MUSIC_PLIST_ID, detailID);
- 		sql_exec(db, "DELETE from OBJECTS where OBJECT_ID = '%s$%llX' or PARENT_ID = '%s$%llX'",
--		         MUSIC_PLIST_ID, detailID, MUSIC_PLIST_ID, detailID);
-+						 MUSIC_PLIST_ID, detailID, MUSIC_PLIST_ID, detailID);
- 	}
- 	else
- 	{
- 		/* Delete the parent containers if we are about to empty them. */
--		snprintf(sql, sizeof(sql), "SELECT PARENT_ID from OBJECTS where DETAIL_ID = %lld"
--		                           " and PARENT_ID not like '64$%%'",
--		                           (long long int)detailID);
-+		snprintf(sql, sizeof(sql), "SELECT PARENT_ID from OBJECTS where DETAIL_ID = %lld", (long long int)detailID);
- 		if( (sql_get_table(db, sql, &result, &rows, NULL) == SQLITE_OK) )
- 		{
- 			int i, children;
--			for( i = 1; i <= rows; i++ )
-+			for( i=1; i <= rows; i++ )
- 			{
- 				/* If it's a playlist item, adjust the item count of the playlist */
- 				if( strncmp(result[i], MUSIC_PLIST_ID, strlen(MUSIC_PLIST_ID)) == 0 )
- 				{
- 					sql_exec(db, "UPDATE PLAYLISTS set FOUND = (FOUND-1) where ID = %d",
--					         atoi(strrchr(result[i], '$') + 1));
-+									 atoi(strrchr(result[i], '$') + 1));
- 				}
- 
- 				children = sql_get_int_field(db, "SELECT count(*) from OBJECTS where PARENT_ID = '%s'", result[i]);
-@@ -582,6 +630,8 @@
+ int
+ monitor_remove_file(const char * path)
+@@ -304,6 +348,8 @@ monitor_remove_file(const char * path)
  					continue;
  				if( children < 2 )
  				{
 +					sql_exec(db, "DELETE from DETAILS where ID ="
-+											 " (SELECT DETAIL_ID from OBJECTS where OBJECT_ID = '%s')", result[i]);
++						" (SELECT DETAIL_ID from OBJECTS where OBJECT_ID = '%s')", result[i]);
  					sql_exec(db, "DELETE from OBJECTS where OBJECT_ID = '%s'", result[i]);
  
  					ptr = strrchr(result[i], '$');
-@@ -589,6 +639,8 @@
+@@ -311,6 +357,8 @@ monitor_remove_file(const char * path)
  						*ptr = '\0';
  					if( sql_get_int_field(db, "SELECT count(*) from OBJECTS where PARENT_ID = '%s'", result[i]) == 0 )
  					{
 +						sql_exec(db, "DELETE from DETAILS where ID ="
-+												 " (SELECT DETAIL_ID from OBJECTS where OBJECT_ID = '%s')", result[i]);
++							" (SELECT DETAIL_ID from OBJECTS where OBJECT_ID = '%s')", result[i]);
  						sql_exec(db, "DELETE from OBJECTS where OBJECT_ID = '%s'", result[i]);
  					}
  				}
-@@ -613,11 +665,13 @@
- 	int64_t detailID = 0;
- 	int rows, i, ret = 1;
+@@ -342,6 +390,7 @@ monitor_insert_file(char * name, const char * path)
+ 	media_types types = ALL_MEDIA;
+ 	struct media_dir_s * media_path = media_dirs;
+ 	struct stat st;
++	struct timeval now;
  
-+	DPRINTF(E_DEBUG, L_INOTIFY, "inotify_remove_directory: %s\n", path);
-+
- 	/* Invalidate the scanner cache so we don't insert files into non-existent containers */
- 	valid_cache = 0;
- 	remove_watch(fd, path);
- 	sql = sqlite3_mprintf("SELECT ID from DETAILS where (PATH > '%q/' and PATH <= '%q/%c')"
--	                      " or PATH = '%q'", path, path, 0xFF, path);
-+												" or PATH = '%q'", path, path, 0xFF, path);
- 	if( (sql_get_table(db, sql, &result, &rows, NULL) == SQLITE_OK) )
+ 	/* Is it cover art for another file? */
+ 	if( is_image(path) )
+@@ -405,6 +454,16 @@ monitor_insert_file(char * name, const char * path)
+ 	/* If it's already in the database and hasn't been modified, skip it. */
+ 	if( stat(path, &st) != 0 )
+ 		return -1;
++	
++	(void)gettimeofday(&now, NULL);
++	while (now.tv_sec < st.st_mtime + 3)
++	{
++		DPRINTF(E_DEBUG, L_INOTIFY, "Sleeping until %s is stable for a few seconds ...\n", path);
++		sleep(1);
++		(void)gettimeofday(&now, NULL);
++		if (stat(path, &st) != 0)
++			return -1;
++	}
+ 
+ 	ts = sql_get_int_field(db, "SELECT TIMESTAMP from DETAILS where PATH = '%q'", path);
+ 	if( !ts && is_playlist(path) && (sql_get_int_field(db, "SELECT ID from PLAYLISTS where PATH = '%q'", path) > 0) )
+@@ -528,7 +587,7 @@ monitor_insert_directory(int fd, char *name, const char * path)
+ 
+ 	if( fd > 0 )
  	{
- 		if( rows )
-@@ -639,6 +693,7 @@
+-		#ifdef HAVE_INOTIFY
++		#if defined(HAVE_INOTIFY) || defined(HAVE_SYS_EVENT_H)
+ 		int wd = add_watch(fd, path);
+ 		if( wd == -1 )
+ 		{
+@@ -538,7 +597,7 @@ monitor_insert_directory(int fd, char *name, const char * path)
+ 		{
+ 			DPRINTF(E_INFO, L_INOTIFY, "Added watch to %s [%d]\n", path, wd);
+ 		}
+-		#endif
++		#endif /*defined(HAVE_INOTIFY) || defined(HAVE_SYS_EVENT_H)*/
+ 	}
+ 
+ 	media_path = media_dirs;
+@@ -604,7 +663,7 @@ monitor_remove_directory(int fd, const char * path)
+ 	valid_cache = 0;
+ 	if( fd > 0 )
+ 	{
+-		#ifdef HAVE_INOTIFY
++		#if defined(HAVE_INOTIFY) || defined(HAVE_SYS_EVENT_H)
+ 		remove_watch(fd, path);
+ 		#endif
+ 	}
+@@ -631,6 +690,7 @@ monitor_remove_directory(int fd, const char * path)
  	return ret;
  }
  
-+#ifdef HAVE_INOTIFY
++#if defined(HAVE_INOTIFY) || defined(HAVE_SYS_EVENT_H)
+ #ifdef HAVE_INOTIFY
  void *
- start_inotify()
- {
-@@ -649,7 +704,7 @@
- 	int length, i = 0;
- 	char * esc_name = NULL;
- 	struct stat st;
--        
-+
- 	pollfds[0].fd = inotify_init();
- 	pollfds[0].events = POLLIN;
- 
-@@ -664,13 +719,13 @@
- 	}
- 	inotify_create_watches(pollfds[0].fd);
- 	if (setpriority(PRIO_PROCESS, 0, 19) == -1)
--		DPRINTF(E_WARN, L_INOTIFY,  "Failed to reduce inotify thread priority\n");
-+		DPRINTF(E_WARN, L_INOTIFY,	"Failed to reduce inotify thread priority\n");
- 	sqlite3_release_memory(1<<31);
- 	av_register_all();
--        
-+
- 	while( !quitting )
- 	{
--                length = poll(pollfds, 1, timeout);
-+		length = poll(pollfds, 1, timeout);
- 		if( !length )
- 		{
- 			if( next_pl_fill && (time(NULL) >= next_pl_fill) )
-@@ -707,12 +762,12 @@
- 				sprintf(path_buf, "%s/%s", get_path_from_wd(event->wd), event->name);
- 				if ( event->mask & IN_ISDIR && (event->mask & (IN_CREATE|IN_MOVED_TO)) )
- 				{
--					DPRINTF(E_DEBUG, L_INOTIFY,  "The directory %s was %s.\n",
-+					DPRINTF(E_DEBUG, L_INOTIFY,	"The directory %s was %s.\n",
- 						path_buf, (event->mask & IN_MOVED_TO ? "moved here" : "created"));
- 					inotify_insert_directory(pollfds[0].fd, esc_name, path_buf);
- 				}
- 				else if ( (event->mask & (IN_CLOSE_WRITE|IN_MOVED_TO|IN_CREATE)) &&
--				          (lstat(path_buf, &st) == 0) )
-+									(lstat(path_buf, &st) == 0) )
- 				{
- 					if( S_ISLNK(st.st_mode) )
- 					{
-@@ -726,7 +781,7 @@
- 					else if( event->mask & (IN_CLOSE_WRITE|IN_MOVED_TO) && st.st_size > 0 )
- 					{
- 						if( (event->mask & IN_MOVED_TO) ||
--						    (sql_get_int_field(db, "SELECT TIMESTAMP from DETAILS where PATH = '%q'", path_buf) != st.st_mtime) )
-+								(sql_get_int_field(db, "SELECT TIMESTAMP from DETAILS where PATH = '%q'", path_buf) != st.st_mtime) )
- 						{
- 							DPRINTF(E_DEBUG, L_INOTIFY, "The file %s was %s.\n",
- 								path_buf, (event->mask & IN_MOVED_TO ? "moved here" : "changed"));
-@@ -755,4 +810,234 @@
+ start_inotify(void)
+@@ -754,4 +814,232 @@ quitting:
  
  	return 0;
  }
-+#else
+-#endif
++#else /*HAVE_INOTIFY*/
 +void *
 +start_kqueue()
 +{
@@ -436,7 +351,7 @@
 +		if (ke.fflags & NOTE_DELETE)
 +		{
 +			DPRINTF(E_DEBUG, L_INOTIFY, "Path [%s] deleted.\n", dir_path);
-+			inotify_remove_directory(ke.ident, dir_path);
++			monitor_remove_directory(ke.ident, dir_path);
 +		}
 +		else if ((ke.fflags & (NOTE_WRITE | NOTE_LINK)) == (NOTE_WRITE | NOTE_LINK))
 +		{
@@ -460,7 +375,7 @@
 +				if (access(result[i], R_OK) == -1)
 +				{
 +					/* actually, global_kqueue_handle is not used here */
-+					inotify_remove_directory(global_kqueue_handle, result[i]);
++					monitor_remove_directory(global_kqueue_handle, result[i]);
 +				}
 +			}
 +
@@ -505,7 +420,7 @@
 +					{
 +						char * esc_name = NULL;
 +						esc_name = modifyString(strdup(entry->d_name), "&", "&amp;amp;", 0);
-+						inotify_insert_directory(global_kqueue_handle, esc_name, tmp_path);
++						monitor_insert_directory(global_kqueue_handle, esc_name, tmp_path);
 +						free(esc_name);
 +					}
 +				}
@@ -537,7 +452,7 @@
 +				DPRINTF(E_DEBUG, L_INOTIFY, "Indexed content: %s\n", result[i]);
 +				if (access(result[i], R_OK) == -1) /*oops, our file is gone*/
 +				{
-+					inotify_remove_file(result[i]);
++					monitor_remove_file(result[i]);
 +				}
 +			}
 +
@@ -591,9 +506,9 @@
 +
 +						esc_name = modifyString(strdup(entry->d_name), "&", "&amp;amp;", 0);
 +						if ( S_ISDIR(st.st_mode) )
-+							inotify_insert_directory(global_kqueue_handle, esc_name, tmp_path);
++							monitor_insert_directory(global_kqueue_handle, esc_name, tmp_path);
 +						else
-+							inotify_insert_file(esc_name, tmp_path);
++							monitor_insert_file(esc_name, tmp_path);
 +						free(esc_name);
 +					}
 +				}
@@ -610,79 +525,25 @@
 +
 +	return 0;
 +}
- #endif
-+
-+#endif // defined(HAVE_INOTIFY) || defined(HAVE_SYS_EVENT_H)
-+
---- ./inotify.h.orig	2013-11-02 05:06:41.000000000 +0400
-+++ ./inotify.h	2013-11-13 17:25:27.000000000 +0400
-@@ -4,4 +4,10 @@
- 
++#endif /*HAVE_INOTIFY*/
++#endif /*defined(HAVE_INOTIFY) || defined(HAVE_SYS_EVENT_H)*/
+diff --git monitor.h monitor.h
+index 92ae41a..d0dd7e4 100644
+--- monitor.h
++++ monitor.h
+@@ -13,4 +13,7 @@ monitor_remove_directory(int fd, const char * path);
+ #ifdef HAVE_INOTIFY
  void *
  start_inotify();
 +#elif defined(HAVE_SYS_EVENT_H)
-+int
-+inotify_remove_file(const char* path);
-+
 +void *
 +start_kqueue();
  #endif
---- ./metadata.c.orig	2013-11-02 05:06:41.000000000 +0400
-+++ ./metadata.c	2013-11-13 17:25:27.000000000 +0400
-@@ -183,7 +183,7 @@
- 	strcat(file, ".srt");
- 	if( access(file, R_OK) == 0 )
- 	{
--		sql_exec(db, "INSERT into CAPTIONS"
-+		sql_exec(db, "INSERT OR REPLACE into CAPTIONS"
- 		             " (ID, PATH) "
- 		             "VALUES"
- 		             " (%lld, %Q)", detailID, file);
---- ./minidlna.c.orig	2013-11-02 05:06:41.000000000 +0400
-+++ ./minidlna.c	2013-11-13 17:25:27.000000000 +0400
-@@ -46,6 +46,7 @@
-  * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
-  * POSSIBILITY OF SUCH DAMAGE.
-  */
-+#define FD_SETSIZE 8192
- #include <stdlib.h>
- #include <unistd.h>
- #include <string.h>
-@@ -365,6 +365,7 @@
- 		open_db(&db);
- 		if (*scanner_pid == 0) /* child (scanner) process */
- 		{
-+			DPRINTF(E_DEBUG, L_GENERAL, "Starting scanner in forked child\n");
- 			start_scanner();
- 			sqlite3_close(db);
- 			log_close();
-@@ -373,6 +374,7 @@
- 		}
- 		else if (*scanner_pid < 0)
- 		{
-+			DPRINTF(E_DEBUG, L_GENERAL, "Starting scanner in parent\n");
- 			start_scanner();
- 		}
- #else
-@@ -997,6 +999,15 @@
- 		else if (pthread_create(&inotify_thread, NULL, start_inotify, NULL) != 0)
- 			DPRINTF(E_FATAL, L_GENERAL, "ERROR: pthread_create() failed for start_inotify. EXITING\n");
- 	}
-+#elif defined(HAVE_SYS_EVENT_H)
-+	if( GETFLAG(INOTIFY_MASK) )
-+	{
-+		if (!sqlite3_threadsafe() || sqlite3_libversion_number() < 3005001)
-+			DPRINTF(E_ERROR, L_GENERAL, "SQLite library is not threadsafe!	"
-+			"Kqueue will be disabled.\n");
-+		else if (pthread_create(&inotify_thread, NULL, start_kqueue, NULL) != 0)
-+			DPRINTF(E_FATAL, L_GENERAL, "ERROR: pthread_create() failed for start_kqueue. EXITING\n");
-+	}
- #endif
- 	smonitor = OpenAndConfMonitorSocket();
- 
---- upnpevents.c.orig	2013-11-02 02:06:41.000000000 +0100
-+++ upnpevents.c	2013-12-24 12:22:41.533935174 +0100
-@@ -416,6 +416,10 @@
+diff --git upnpevents.c upnpevents.c
+index 06ec43a..9827e6e 100644
+--- upnpevents.c
++++ upnpevents.c
+@@ -417,6 +417,10 @@ void upnpevents_selectfds(fd_set *readset, fd_set *writeset, int * max_fd)
  {
  	struct upnp_event_notify * obj;
  	for(obj = notifylist.lh_first; obj != NULL; obj = obj->entries.le_next) {
@@ -693,30 +554,3 @@
  		DPRINTF(E_DEBUG, L_HTTP, "upnpevents_selectfds: %p %d %d\n",
  		       obj, obj->state, obj->s);
  		if(obj->s >= 0) {
---- inotify.c.orig	2013-12-26 13:49:59.985302596 +0000
-+++ inotify.c	2013-12-26 13:50:04.281302535 +0000
-@@ -336,6 +336,7 @@
- 	media_types types = ALL_MEDIA;
- 	struct media_dir_s * media_path = media_dirs;
- 	struct stat st;
-+	struct timeval now;
- 
- 	DPRINTF(E_DEBUG, L_INOTIFY, "inotify_insert_file: %s @ %s\n", name, path);
- 
-@@ -402,6 +403,16 @@
- 	if( stat(path, &st) != 0 )
- 		return -1;
- 
-+	(void)gettimeofday(&now, NULL);
-+	while (now.tv_sec < st.st_mtime + 3)
-+	{
-+		DPRINTF(E_DEBUG, L_INOTIFY, "Sleeping until %s is stable for a few seconds ...\n", path);
-+		sleep(1);
-+		(void)gettimeofday(&now, NULL);
-+		if (stat(path, &st) != 0)
-+			return -1;
-+	}
-+
- 	ts = sql_get_int_field(db, "SELECT TIMESTAMP from DETAILS where PATH = '%q'", path);
- 	if( !ts && is_playlist(path) && (sql_get_int_field(db, "SELECT ID from PLAYLISTS where PATH = '%q'", path) > 0) )
- 	{

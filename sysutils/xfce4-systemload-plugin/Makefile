@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xfce4-systemload-plugin
-PORTVERSION=	1.1.2
-PORTREVISION=	3
+PORTVERSION=	1.2.1
 CATEGORIES=	sysutils xfce
 MASTER_SITES=	XFCE/src/panel-plugins/${PORTNAME}/${PORTVERSION:R}
 DIST_SUBDIR=	xfce4
@@ -18,8 +17,8 @@ LIB_DEPENDS=	libupower-glib.so:sysutils/upower
 SSP_UNSAFE=	yes
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
-USES=		gmake libtool pkgconfig gettext-tools xfce tar:bzip2
-USE_GNOME=	gtk20 intltool intlhack
+USES=		gettext-tools gmake libtool pkgconfig tar:bzip2 xfce:gtk3
+USE_GNOME=	gtk30 intltool cairo gdkpixbuf2
 USE_XFCE=	panel
 
 OPTIONS_DEFINE= NLS

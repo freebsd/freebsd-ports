@@ -7,7 +7,7 @@ PORTREVISION=	4
 CATEGORIES=	print
 MASTER_SITES=	SF
 
-MAINTAINER=	mva@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C-library for generating multi page PostScript documents
 
 LICENSE=	GPLv2
@@ -25,6 +25,7 @@ INSTALL_TARGET=	install-strip
 
 OPTIONS_DEFINE=	EXAMPLES MANPAGES NLS
 OPTIONS_DEFAULT=	MANPAGES
+OPTIONS_SUB=	yes
 
 .include <bsd.port.pre.mk>
 

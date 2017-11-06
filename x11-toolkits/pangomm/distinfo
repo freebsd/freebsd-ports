@@ -1,2 +1,3 @@
-SHA256 (gnome2/pangomm-2.36.0.tar.xz) = a8d96952c708d7726bed260d693cece554f8f00e48b97cccfbf4f5690b6821f0
-SIZE (gnome2/pangomm-2.36.0.tar.xz) = 773628
+TIMESTAMP = 1491167697
+SHA256 (gnome2/pangomm-2.40.1.tar.xz) = 9762ee2a2d5781be6797448d4dd2383ce14907159b30bc12bf6b08e7227be3af
+SIZE (gnome2/pangomm-2.40.1.tar.xz) = 810384

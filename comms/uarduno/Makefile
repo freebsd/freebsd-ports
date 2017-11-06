@@ -12,6 +12,8 @@ COMMENT=	FreeBSD Kernel Driver for the Arduino Uno USB interface
 
 LICENSE=	BSD4CLAUSE
 
+BROKEN_powerpc64=	fails to compile: pcpu.h: error: size of array '__assert_0' is negative
+
 USES=		kmod uidfix
 
 # some test targets need a predictable source directory

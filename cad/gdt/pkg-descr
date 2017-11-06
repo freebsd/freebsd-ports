@@ -2,4 +2,4 @@ This is GDT (graphics data text) format translator written in C/C++ that
 converts a binary gdsii file to a text format that is compact and
 easy to parse.
 
-WWW: http://sourceforge.net/projects/gds2/
+WWW: https://sourceforge.net/projects/gds2/

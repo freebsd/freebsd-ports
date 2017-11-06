@@ -2,24 +2,26 @@
 # $FreeBSD$
 
 PORTNAME=	openjdk6
-PORTVERSION=	b40
-PORTREVISION=	1
+PORTVERSION=	b44
 PORTEPOCH=	1
 CATEGORIES=	java devel
 MASTER_SITES=	APACHE/ant/binaries/:ant \
 		https://java.net/downloads/openjdk6/:jdk \
 		LOCAL/jkim:jdk,jtreg
-DISTNAME=	openjdk-6-src-${PORTVERSION}-${OPENJDK_BUILDDATE}
+PATCH_SITES=	LOCAL/glewis/openjdk6
 DISTFILES=	${ANTFILE}:ant \
-		${DISTNAME}${EXTRACT_SUFX}:jdk
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX} ${ANTFILE}
+		${JDK_SRC_DISTFILE}${EXTRACT_SUFX}:jdk
+EXTRACT_ONLY=	${JDK_SRC_DISTFILE}${EXTRACT_SUFX} ${ANTFILE}
+PATCHFILES=	patch-6-b42.xz \
+		patch-6-b43.xz \
+		patch-6-b44.xz
 
 MAINTAINER=	java@FreeBSD.org
 COMMENT?=	Oracle's Java 6 virtual machine release under the GPL v2
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
-LICENSE_DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
+LICENSE_DISTFILES=	${JDK_SRC_DISTFILE}${EXTRACT_SUFX}
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/zip:archivers/zip \
 		${LOCALBASE}/bin/unzip:archivers/unzip \
@@ -28,7 +30,8 @@ LIB_DEPENDS=	libfreetype.so:print/freetype2
 RUN_DEPENDS=	javavm:java/javavmwrapper \
 		dejavu>0:x11-fonts/dejavu
 
-OPENJDK_BUILDDATE=	22_aug_2016
+OPENJDK_BUILDDATE=	04_jan_2017
+JDK_SRC_DISTFILE=	openjdk-6-src-b41-${OPENJDK_BUILDDATE}
 
 OPTIONS_DEFINE=	ICEDTEA IPV6 POLICY SOUND TZUPDATE
 OPTIONS_DEFAULT=ICEDTEA TZUPDATE
@@ -83,7 +86,7 @@ NOPRECIOUSMAKEVARS=	yes
 ONLY_FOR_ARCHS=	amd64 i386
 
 BOOTSTRAP_JDKS=	${LOCALBASE}/openjdk6 \
-		${LOCALBASE}/bootstrap-openjdk
+		${LOCALBASE}/bootstrap-openjdk6
 
 # do we have valid native jdk installed?
 .for CJDK in ${BOOTSTRAP_JDKS}
@@ -94,11 +97,11 @@ BOOTSTRAPJDKDIR=	${CJDK}
 
 # if no valid jdk found, set dependency
 .if !defined(BOOTSTRAPJDKDIR)
-BOOTSTRAPJDKDIR?=	${LOCALBASE}/bootstrap-openjdk
-BUILD_DEPENDS+=		${BOOTSTRAPJDKDIR}/bin/javac:java/bootstrap-openjdk
+BOOTSTRAPJDKDIR?=	${LOCALBASE}/bootstrap-openjdk6
+BUILD_DEPENDS+=		${BOOTSTRAPJDKDIR}/bin/javac:java/bootstrap-openjdk6
 .endif
 
-MAKE_ENV=	LANG=C LC_ALL=C OS= \
+MAKE_ENV=	OS= \
 		ALT_JDK_IMPORT_PATH=${BOOTSTRAPJDKDIR} \
 		ALT_BOOTDIR=${BOOTSTRAPJDKDIR} \
 		ALT_CACERTS_FILE=${FILESDIR}/cacerts \

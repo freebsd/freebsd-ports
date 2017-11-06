@@ -66,6 +66,7 @@ man/man5/nanorc.5.gz
 %%DATADIR%%/man.nanorc
 %%DATADIR%%/mgp.nanorc
 %%DATADIR%%/mutt.nanorc
+%%DATADIR%%/nanohelp.nanorc
 %%DATADIR%%/nanorc.nanorc
 %%DATADIR%%/nftables.nanorc
 %%DATADIR%%/objc.nanorc

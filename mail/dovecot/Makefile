@@ -1,168 +1,158 @@
-# Created by: Dominic Marks <dominic.marks@btinternet.com>
+# Created by: Nagy, Attila <bra@fsn.hu>
 # $FreeBSD$
 
-PORTNAME=	dovecot
-PORTVERSION=	1.2.17
-PORTREVISION=	6
-CATEGORIES=	mail ipv6
-MASTER_SITES=	http://www.dovecot.org/releases/${PORTVERSION:R}/ \
-		http://www.rename-it.nl/dovecot/${PORTVERSION:R}/
+######################################################################
+# Anytime PORTVERSION changes please bump PORTREVISION of            #
+# mail/dovecot-pigeonhole. See ports/146029 for an explanation.      #
+#                                                                    #
+# Please be careful when updating this port as changes to this port  #
+# can break mail/dovecot-pigeonhole. In order to ensure the least    #
+# amount of breakage possible please consult the maintainer of that  #
+# port before updating this one.                                     #
+######################################################################
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Secure and compact IMAP and POP3 servers
+PORTNAME=	dovecot
+PORTVERSION=	2.2.33.2
+PORTREVISION=	1
+CATEGORIES=	mail ipv6
+MASTER_SITES=	https://www.dovecot.org/releases/2.2/
+
+MAINTAINER=	adamw@FreeBSD.org
+COMMENT=	Secure, fast and powerful IMAP and POP3 server
 
 LICENSE=	LGPL21 MIT
 LICENSE_COMB=	dual
+LICENSE_FILE_LGPL21=	${WRKSRC}/COPYING.LGPL
+LICENSE_FILE_MIT=	${WRKSRC}/COPYING.MIT
 
-CONFLICTS=	dovecot2-2.[0-9].*
-
-######################################################################
-# Anytime PORTVERSION changes please bump PORTREVISIONs of           #
-# mail/dovecot-antispam, mail/dovecot-managesieve and                #
-# mail/dovecot-sieve. Please see ports/135311 and ports/146029 for   #
-# an explanation.                                                    #
-#                                                                    #
-# Please be careful when updating this port as changes to this port  #
-# can break mail/dovecot-sieve and mail/dovecot-managesieve. In      #
-# order to ensure the least amount of breakage possible please       #
-# consult the maintainer of those ports before updating this one.    #
-######################################################################
-
-USES=		cpe iconv libtool:keepla ssl
+USES=		cpe iconv libtool ssl
 USE_RC_SUBR=	dovecot
 
-PORTSCOUT=	limit:^1\.2
-
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--localstatedir=/var \
 		--with-statedir=/var/db/dovecot \
-		--without-shadow
+		--without-shadow \
+		--with-ssl=openssl \
+		--with-docs
 
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+USE_LDCONFIG=	${PREFIX}/lib/dovecot
+INSTALL_TARGET=	install-strip
 
-USE_LDCONFIG=	${PREFIX}/lib/dovecot \
-		${PREFIX}/lib/dovecot/imap \
-		${PREFIX}/lib/dovecot/pop3 \
-		${PREFIX}/lib/dovecot/lda
-
-USERS=		dovecot
+USERS=		dovecot dovenull
 GROUPS=		${USERS}
 
-PROTOCOLS=	imap pop3
+OPTIONS_DEFINE=	LIBWRAP LZ4 VPOPMAIL DOCS EXAMPLES
+OPTIONS_DEFAULT=GSSAPI_NONE LIBWRAP
+OPTIONS_SUB=	yes
+
+OPTIONS_GROUP=		DB FTS
+OPTIONS_GROUP_DB=	CDB LDAP MYSQL PGSQL SQLITE
+OPTIONS_GROUP_FTS=	ICU LUCENE SOLR TEXTCAT
+
+OPTIONS_SINGLE=		GSSAPI
+OPTIONS_SINGLE_GSSAPI=	GSSAPI_NONE GSSAPI_BASE GSSAPI_HEIMDAL GSSAPI_MIT
+
+LZ4_DESC=	LZ4 compression support
+VPOPMAIL_DESC=	vpopmail support
+
+DB_DESC=	Database support
+CDB_DESC=	CDB database support
+
+FTS_DESC=	Full text search plugins
+ICU_DESC=	Use libicu for FTS unicode normalization
+LUCENE_DESC=	CLucene FTS support
+SOLR_DESC=	Solr FTS support
+TEXTCAT_DESC=	Libtextcat FTS support
+
+GSSAPI_NONE_DESC=	Build without GSSAPI support
+GSSAPI_BASE_DESC=	Use GSSAPI from base
+GSSAPI_HEIMDAL_DESC=	Use Heimdal GSSAPI from security/heimdal
+GSSAPI_MIT_DESC=	Use MIT GSSAPI from security/krb5
+
+# General options
+LIBWRAP_CONFIGURE_WITH=	libwrap
+
+LZ4_CONFIGURE_WITH=	lz4
+LZ4_LIB_DEPENDS=	liblz4.so:archivers/liblz4
+
+VPOPMAIL_BUILD_DEPENDS=	vpopmail>=0:mail/vpopmail
+VPOPMAIL_CONFIGURE_WITH=vpopmail
+
+# Databases
+CDB_CONFIGURE_WITH=	cdb
+CDB_LIB_DEPENDS=	libcdb.so:databases/tinycdb
+
+LDAP_USE=		OPENLDAP=yes
+LDAP_CONFIGURE_WITH=	ldap
+
+MYSQL_USES=		mysql
+MYSQL_CONFIGURE_WITH=	mysql
+
+PGSQL_USES=		pgsql
+PGSQL_CONFIGURE_WITH=	pgsql
+
+SQLITE_USES=		sqlite
+SQLITE_CONFIGURE_WITH=	sqlite
+
+# FTS
+ICU_CONFIGURE_WITH=	icu
+ICU_LIB_DEPENDS=	libicui18n.so:devel/icu
+ICU_USES=		pkgconfig
+
+LUCENE_CONFIGURE_WITH=	lucene
+LUCENE_LIB_DEPENDS=	libclucene-core.so:textproc/clucene
+
+SOLR_CONFIGURE_WITH=	solr
+SOLR_LIB_DEPENDS=	libcurl.so:ftp/curl \
+			libexpat.so:textproc/expat2
+
+TEXTCAT_CONFIGURE_WITH=	textcat
+TEXTCAT_LIB_DEPENDS=	libtextcat.so:textproc/libtextcat
+
+# GSSAPI
+GSSAPI_NONE_CONFIGURE_ON=	--without-gssapi
+GSSAPI_NONE_CONFIGURE_OFF=	--with-gssapi ${GSSAPI_CONFIGURE_ARGS}
+GSSAPI_BASE_USES=		gssapi
+GSSAPI_HEIMDAL_USES=		gssapi:heimdal
+GSSAPI_MIT_USES=		gssapi:mit
+
+DOCS=		AUTHORS COPYING INSTALL NEWS TODO README
+PORTDOCS=	*
+PORTEXAMPLES=	*
 
 # Default requirement for dovecot rc script
 _REQUIRE=	LOGIN
 
-OPTIONS_DEFINE=	KQUEUE SSL MANAGESIEVE GSSAPI VPOPMAIL BDB LDAP PGSQL MYSQL SQLITE DOCS
-OPTIONS_DEFAULT=	KQUEUE SSL MANAGESIEVE
-KQUEUE_DESC=		kqueue(2) support
-MANAGESIEVE_DESC=	ManageSieve support
-VPOPMAIL_DESC=		VPopMail support
-
-OPTIONS_SUB=		yes
-BDB_CFLAGS=		-I${BDB_INCLUDE_DIR} -L${BDB_LIB_DIR}
-BDB_CONFIGURE_WITH=	db
-BDB_USES=		bdb
-DOCS_CONFIGURE_WITH=	docs
-GSSAPI_CONFIGURE_WITH=	gssapi
-GSSAPI_LDFLAGS=		-lgssapi_krb5
-KQUEUE_CONFIGURE_ON=	--with-ioloop=kqueue
-LDAP_CONFIGURE_WITH=	ldap
-LDAP_USE=		OPENLDAP=yes
-MYSQL_CONFIGURE_WITH=	mysql
-MYSQL_USE=		MYSQL=yes
-PGSQL_CONFIGURE_WITH=	pgsql
-PGSQL_USES=		pgsql
-SQLITE_CONFIGURE_WITH=	sqlite
-SQLITE_USES=		sqlite:3
-SSL_CONFIGURE_OFF=	--without-ssl
-SSL_CONFIGURE_ON=	--with-ssl=openssl
-VPOPMAIL_BUILD_DEPENDS=	${LOCALBASE}/vpopmail/bin/vchkpw:mail/vpopmail
-VPOPMAIL_CONFIGURE_WITH=vpopmail
-
-.include <bsd.port.options.mk>
-
-.if ${ARCH} == "arm"
-BROKEN=		Does not build on arm
-.endif
-
-DOCS=		AUTHORS COPYING COPYING.LGPL COPYING.MIT INSTALL NEWS TODO README
-PORTDOCS=	*
-
-.if ${PORT_OPTIONS:MSSL}
-PROTOCOLS+=	imaps pop3s
-.endif
-
-.if ${PORT_OPTIONS:MLDAP}
-_REQUIRE+=	slapd
-.endif
-
-.if ${PORT_OPTIONS:MPGSQL}
-_REQUIRE+=	postgresql
-.endif
-
-.if ${PORT_OPTIONS:MMYSQL}
-_REQUIRE+=	mysql
-.endif
+LDAP_VARS=	_REQUIRE+=slapd
+MYSQL_VARS=	_REQUIRE+=mysql
+PGSQL_VARS=	_REQUIRE+=postgresql
 
 SUB_LIST+=	REQUIRE="${_REQUIRE}"
-SUB_FILES+=	pkg-deinstall pkg-message
+SUB_FILES+=	pkg-message
 
-# sed script for dovecot.conf
-REINPLACE=	s!%%PROTOCOLS%%!${PROTOCOLS}!g;\
-		s!/usr/!${PREFIX}/!g;\
-		s!=/usr!=${PREFIX}!g;\
-		s!=/etc !=${PREFIX}/etc !g;\
-		s!/etc/dovecot!${PREFIX}&!g;\
-		s![[:<:]]doc/(dovecot-[^-]+)-example.conf[[:>:]]!${EXAMPLESDIR}/\1.conf!g;\
-		s!\#sendmail_path = /usr/.*!sendmail_path = /usr/sbin/sendmail!g;
-
-.if ${PORT_OPTIONS:MBDB}
-REINPLACE+=	s!^\#(dict_db_config)!\1!;
-.endif
-
-.if ${PORT_OPTIONS:MMANAGESIEVE}
-MANAGESIEVEVERSION!=	${MAKE} -C ${.CURDIR}/../dovecot-managesieve -V PORTVERSION
-PATCH_SITES!=		${MAKE} -C ${.CURDIR}/../dovecot-managesieve -V MASTER_SITES
-PATCHFILES+=		dovecot-${PORTVERSION}-managesieve-${MANAGESIEVEVERSION}.diff.gz
-PATCH_DIST_STRIP=	-p1
-PROTOCOLS+=		managesieve
-DOCS+=			README.managesieve
-.endif
-
-.if ${PORT_OPTIONS:MPGSQL} || ${PORT_OPTIONS:MMYSQL} || ${PORT_OPTIONS:MSQLITE}
-PLIST_SUB+=	SQL=""
-.else
-PLIST_SUB+=	SQL="@comment "
-.endif
+CPPFLAGS+=	-I${LOCALBASE}/include -I${OPENSSLINC}
+LDFLAGS+=	-L${LOCALBASE}/lib -L${OPENSSLLIB}
 
 post-patch:
-	@${REINPLACE_CMD} -E -e '${REINPLACE}' \
-		${WRKSRC}/dovecot-example.conf
-	@${REINPLACE_CMD} -E -e'\
-		s!-example\.conf[[:>:]]!.conf!g;\
-		s!^(confdir[[:space:]]+=[[:space:]]+)\$$\(sysconfdir\)!\1${EXAMPLESDIR}!g;\
-		' ${WRKSRC}/*/Makefile.in ${WRKSRC}/Makefile.in
-	@${LN} -f ${WRKSRC}/dovecot-example.conf		${WRKSRC}/dovecot.conf
-	@${LN} -f ${WRKSRC}/doc/dovecot-db-example.conf		${WRKSRC}/doc/dovecot-db.conf
-	@${LN} -f ${WRKSRC}/doc/dovecot-dict-sql-example.conf	${WRKSRC}/doc/dovecot-dict-sql.conf
-	@${LN} -f ${WRKSRC}/doc/dovecot-ldap-example.conf	${WRKSRC}/doc/dovecot-ldap.conf
-	@${LN} -f ${WRKSRC}/doc/dovecot-sql-example.conf	${WRKSRC}/doc/dovecot-sql.conf
+	@${REINPLACE_CMD} -e 's,/etc/dovecot,${PREFIX}/etc/dovecot,g; \
+		s,sysconfdir=/etc,sysconfdir=${PREFIX}/etc,g' \
+		${WRKSRC}/doc/example-config/*.conf ${WRKSRC}/doc/example-config/conf.d/*
+	@${REINPLACE_CMD} -e '/^LIBS =/s/$$/ @LTLIBICONV@/' \
+		${WRKSRC}/src/lib-mail/Makefile.in
+# Install the sample config files into ETCDIR/example-config/
+	@${REINPLACE_CMD} -e '/^exampledir =/s|\$$(docdir)|${ETCDIR}|' \
+		${WRKSRC}/doc/example-config/Makefile.in \
+		${WRKSRC}/doc/example-config/conf.d/Makefile.in
+	@${REINPLACE_CMD} -e 's|/usr/bin|${LOCALBASE}/bin|' \
+		${WRKSRC}/src/plugins/fts/decode2text.sh
 
 post-install:
-	${FIND} ${STAGEDIR}${PREFIX}/lib/ -name \*.so | ${XARGS} strip
-	${INSTALL_DATA} ${WRKSRC}/dovecot.conf ${STAGEDIR}${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/dovecot-db.conf ${STAGEDIR}${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/dovecot-dict-sql.conf ${STAGEDIR}${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/dovecot-ldap.conf ${STAGEDIR}${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/dovecot-sql.conf ${STAGEDIR}${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/dovecot-openssl.cnf ${STAGEDIR}${EXAMPLESDIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/doc/mkcert.sh ${STAGEDIR}${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${MV} ${STAGEDIR}${DOCSDIR}/dovecot-openssl.cnf ${STAGEDIR}${EXAMPLESDIR}
+	${MV} ${STAGEDIR}${DOCSDIR}/mkcert.sh ${STAGEDIR}${EXAMPLESDIR}
 
-.if ${PORT_OPTIONS:MDOCS}
-	${INSTALL_DATA} ${DOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
-.endif
+post-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>

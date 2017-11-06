@@ -10,11 +10,10 @@ MASTER_SITES=	MYSQL/eventum
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Eventum issue tracking system
 
-USES=		cpe
+USES=		cpe php:web
 CPE_VENDOR=	mysql
 NO_BUILD=	yes
 USE_PHP=	pcre session mysql gd gettext
-WANT_PHP_WEB=	yes
 PLIST_SUB=	WWWOWN="${WWWOWN}" WWWGRP="${WWWGRP}"
 
 pre-install:
