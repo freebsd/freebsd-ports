@@ -51,7 +51,10 @@ PLIST_SUB+=	KATEDJ="@comment "
 .endif
 
 post-patch:
-.if ! ${PORT_OPTIONS:MKATEDJ}
+.if ${PORT_OPTIONS:MKATEDJ}
+	@${REINPLACE_CMD} -e 's|PYTHON=python|PYTHON=${PYTHON_CMD}|' \
+		${WRKSRC}/misc/autotools/py-compile
+.else
 	@${REINPLACE_CMD} -e \
 		"s|  HAVE_PYTHON_TRUE=$$|  HAVE_PYTHON_TRUE='#'|; \
 			s|  HAVE_PYTHON_FALSE=\'#\'$$|  HAVE_PYTHON_FALSE=|" \
