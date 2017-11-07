@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libressl
-PORTVERSION=	2.6.2
+PORTVERSION=	2.6.3
 CATEGORIES=	security devel
 MASTER_SITES=	OPENBSD/LibreSSL
 PKGNAMESUFFIX=	-devel
@@ -24,7 +24,6 @@ CONFLICTS_INSTALL=	libressl-[0-9]* \
 			openssl-[0-9]* \
 			openssl-devel-[0-9]*
 
-MAN3_USES_OFF=		autoreconf
 NC_CONFIGURE_ENABLE=	nc
 
 GNU_CONFIGURE=	yes
@@ -37,7 +36,9 @@ INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
 
 post-patch-MAN3-off:
-	${CP} ${FILESDIR}/extra-Makefile-no-MAN3 ${WRKSRC}/man/Makefile.am 
+	${REINPLACE_CMD} -e 's/^install-man: install-man3/install-man:/' \
+		-e '/$$(MAKE) $$(AM_MAKEFLAGS) install-data-hook/d' \
+		${WRKSRC}/man/Makefile.in
 
 post-install:
 	${RM} -r ${STAGEDIR}/${PREFIX}/etc/ssl/cert.pem
