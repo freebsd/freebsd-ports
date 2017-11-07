@@ -86,7 +86,7 @@
    src/compiler/python_generator.cc
    src/compiler/ruby_generator.cc
  )
-+set_target_properties(grpc_plugin_support PROPERTIES VERSION ${PACKAGE_VERSION} SOVERSION 1)
++set_target_properties(grpc_plugin_support PROPERTIES VERSION 2.0.0 SOVERSION 2)
  
  if(WIN32 AND MSVC)
    set_target_properties(grpc_plugin_support PROPERTIES COMPILE_PDB_NAME "grpc_plugin_support"
@@ -98,3 +98,11 @@
  
  if(WIN32 AND MSVC)
    set_target_properties(grpc_csharp_ext PROPERTIES COMPILE_PDB_NAME "grpc_csharp_ext"
+@@ -10740,7 +10752,6 @@ add_executable(grpc_cpp_plugin
+   src/compiler/cpp_plugin.cc
+ )
+ 
+-
+ target_include_directories(grpc_cpp_plugin
+   PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}
+   PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include

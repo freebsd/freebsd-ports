@@ -197,8 +197,8 @@ lib/libgrpc_csharp_ext.so
 lib/libgrpc_csharp_ext.so.1
 lib/libgrpc_csharp_ext.so.%%SOVERSION%%
 lib/libgrpc_plugin_support.so
-lib/libgrpc_plugin_support.so.1
-lib/libgrpc_plugin_support.so.%%SOVERSION%%
+lib/libgrpc_plugin_support.so.2
+lib/libgrpc_plugin_support.so.2.0.0
 lib/libgrpc_unsecure.so
 lib/libgrpc_unsecure.so.1
 lib/libgrpc_unsecure.so.%%SOVERSION%%
