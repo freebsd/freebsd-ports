@@ -1,10 +1,9 @@
 # Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
 # $FreeBSD$
 
-PORTNAME=	btchip
-PORTVERSION=	0.1.21
+PORTNAME=	btchip-python
+PORTVERSION=	0.1.22
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
 CATEGORIES=	security python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -24,6 +23,5 @@ USE_GITHUB=	yes
 USE_PYTHON=	autoplist distutils
 
 GH_ACCOUNT=	LedgerHQ
-GH_PROJECT=	btchip-python
 
 .include <bsd.port.mk>

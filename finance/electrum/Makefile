@@ -3,7 +3,7 @@
 
 PORTNAME=	electrum
 PORTVERSION=	2.9.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	finance python
 MASTER_SITES=	https://download.electrum.org/${PORTVERSION}/ \
 		http://download.electrum.org/${PORTVERSION}/
@@ -38,7 +38,7 @@ OPTIONS_DEFAULT=LEDGER TREZOR
 LEDGER_DESC=	Enable LEDGER Bitcoin hardware wallet support
 TREZOR_DESC=	Enable TREZOR Bitcoin hardware wallet support
 
-LEDGER_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}btchip>0:security/py-btchip
+LEDGER_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}btchip-python>0:security/py-btchip-python
 TREZOR_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}trezor>0:security/py-trezor
 
 LEDGER_PLIST_FILES=	"@sample etc/devd/ledger_wallet.conf.sample"
