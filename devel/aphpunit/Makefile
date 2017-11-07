@@ -2,6 +2,7 @@
 
 PORTNAME=	aphpunit
 DISTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	devel www
 MASTER_SITES=	http://phar.toco-domains.de/
 EXTRACT_SUFX=	.phar
@@ -12,7 +13,7 @@ COMMENT=	Testing framework for unit tests
 LICENSE=	BSD2CLAUSE
 
 USES=	php
-USE_PHP=	pcntl sysvmsg
+USE_PHP=	pcntl phar posix sysvmsg
 
 NO_ARCH=	yes
 NO_BUILD=	yes
