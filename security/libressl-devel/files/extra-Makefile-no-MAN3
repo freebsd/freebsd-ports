@@ -1,3 +1,0 @@
-dist_man_MANS =
-dist_man_MANS += openssl.cnf.5
-dist_man_MANS += x509v3.cnf.5
