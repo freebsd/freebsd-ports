@@ -1,0 +1,10 @@
+--- src/recompiler/Makefile.kmk.orig	2013-11-29 14:25:09.000000000 -0500
++++ src/recompiler/Makefile.kmk	2013-12-13 14:23:11.000000000 -0500
+@@ -41,6 +41,7 @@
+ #
+ ifneq ($(KBUILD_TARGET),win)
+  VBoxRemPrimary_TEMPLATE       = VBOXR3NP
++ VBoxRemPrimary_TOOL.freebsd   = VBoxGccFreeBSD
+  # workaround the regparm bug in gcc <= 3.3
+  VBoxRemPrimary_DEFS           = $(if $(VBOX_GCC_BUGGY_REGPARM),GCC_WITH_BUGGY_REGPARM,)
+ else
