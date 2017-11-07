@@ -2,6 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	arm
+DEPRECATED=	arm has been replaced by security/nyx
 DISTVERSION=	1.4.5.0
 PORTREVISION=	1
 CATEGORIES=	security net python
