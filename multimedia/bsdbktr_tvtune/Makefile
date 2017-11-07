@@ -9,9 +9,11 @@ MASTER_SITES=	http://mina.naguib.ca/dist/
 MAINTAINER=	mina.website@naguib.ca
 COMMENT=	Console Brooktree (bktr) TV tuner
 
+LICENSE=	NONE
+
 ONLY_FOR_ARCHS=	i386
 PLIST_FILES=	bin/bsdbktr_tvtune
-WRKSRC=	${WRKDIR}/${PORTNAME}
+WRKSRC=		${WRKDIR}/${PORTNAME}
 ALL_TARGET=	bsdbktr_tvtune
 
 do-install:
