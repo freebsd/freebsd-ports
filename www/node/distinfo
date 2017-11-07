@@ -1,3 +1,3 @@
-TIMESTAMP = 1509020523
-SHA256 (node-v8.8.1.tar.gz) = 1725bbbe623d6a13ee14522730dfc90eac1c9ebe9a0a8f4c3322a402dd7e75a2
-SIZE (node-v8.8.1.tar.gz) = 30315618
+TIMESTAMP = 1509977904
+SHA256 (node-v9.0.0.tar.gz) = fe06dafd4f034d2372d34bb064c65ebf5ab4d3d6e04d1745fd108c2a97a9d424
+SIZE (node-v9.0.0.tar.gz) = 30889520
