@@ -130,6 +130,7 @@
     SUBDIR += espeak
     SUBDIR += esperanza
     SUBDIR += etcd
+    SUBDIR += eteroj-lv2
     SUBDIR += etktab
     SUBDIR += exaile
     SUBDIR += exaile-devel

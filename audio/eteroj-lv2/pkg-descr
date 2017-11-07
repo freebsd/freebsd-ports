@@ -1,0 +1,24 @@
+LV2 plugin bundle from OpenMusicKontrollers:
+* (De)Cloak
+  Embed OSC in MIDI Sysex messages. Use this to smuggle arbitrary OSC packets
+  via MIDI to a given destination.
+* Control
+  This is an OSC learn plugin. It translates OSC messages directly to LV2
+  Control ports and features automatic range detection.
+* Disk
+  Record/Playback of OSC to/from disk. Record all incoming OSC message with
+  sample accuracy and play them back later from disk.
+* IO
+  A plugin able to inject/eject OSC packets into/from the plugin graph to/from
+  network and serial lines.
+* Ninja
+  Embed Turtle RDF in OSC as string. Use this to smuggle arbitrary LV2 atom
+  messages via OSC to a given destination.
+* (Un)Pack
+  Embed arbitrary 1-3 byte MIDI commands (but Sysex) in OSC messages. Use this
+  to send MIDI commands via OSC to a given destination.
+* Query
+  This plugin implements our OSC Introspect specification. It thus exports any
+  methods and parameters of a given OSC device transparently to LV2 properties.
+
+WWW: https://open-music-kontrollers.ch/lv2/eteroj/
