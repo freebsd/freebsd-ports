@@ -473,6 +473,7 @@
     SUBDIR += lollypop
     SUBDIR += lpac
     SUBDIR += lua51-mpd
+    SUBDIR += luppp
     SUBDIR += lv2
     SUBDIR += lv2file
     SUBDIR += lvtk
