@@ -10,12 +10,13 @@ DISTNAME=	${PORTNAME}${PORTVERSION:S/.//g}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	VISCII->Unicode conversion
 
-USES=		zip:infozip
+USES=		zip
 NO_WRKSUBDIR=	yes
-EXTRACT_BEFORE_ARGS=	-qoL
+
+PLIST_FILES=	bin/vis2u
 
 do-build:
-	cd ${WRKSRC} ; make vis2u
+	${CC} -x c ${CFLAGS} ${WRKSRC}/VIS2U.C -o ${WRKSRC}/vis2u
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/vis2u ${STAGEDIR}${PREFIX}/bin
