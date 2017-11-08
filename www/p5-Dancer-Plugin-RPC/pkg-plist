@@ -9,6 +9,7 @@
 %%SITE_PERL%%/Dancer/RPCPlugin/DispatchMethodList.pm
 %%SITE_PERL%%/Dancer/RPCPlugin/ErrorResponse.pm
 %%SITE_PERL%%/Dancer/RPCPlugin/FlattenData.pm
+%%SITE_PERL%%/Dancer/RPCPlugin/PluginNames.pm
 %%PERL5_MAN3%%/Dancer::Plugin::RPC.3.gz
 %%PERL5_MAN3%%/Dancer::Plugin::RPC::JSONRPC.3.gz
 %%PERL5_MAN3%%/Dancer::Plugin::RPC::RESTRPC.3.gz
@@ -20,3 +21,4 @@
 %%PERL5_MAN3%%/Dancer::RPCPlugin::DispatchMethodList.3.gz
 %%PERL5_MAN3%%/Dancer::RPCPlugin::ErrorResponse.3.gz
 %%PERL5_MAN3%%/Dancer::RPCPlugin::FlattenData.3.gz
+%%PERL5_MAN3%%/Dancer::RPCPlugin::PluginNames.3.gz
