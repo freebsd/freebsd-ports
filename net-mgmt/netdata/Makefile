@@ -4,6 +4,7 @@
 PORTNAME=	netdata
 PORTVERSION=	1.8.0
 DISTVERSIONPREFIX=v
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	mmokhi@FreeBSD.org
@@ -14,6 +15,8 @@ LICENSE=	GPLv3
 BUILD_DEPENDS=	${LOCALBASE}/include/uuid/uuid.h:misc/e2fsprogs-libuuid
 LIB_DEPENDS=	libuuid.so:misc/e2fsprogs-libuuid
 
+USES=		autoreconf pathfix pkgconfig:both python shebangfix
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	firehol
 
@@ -21,9 +24,7 @@ NETDATA_CACHE=	/var/cache/${PORTNAME}
 NETDATA_LOG=	/var/log/${PORTNAME}
 NETDATA_PERST=	/var/db/${PORTNAME}
 
-USES=		autoreconf pathfix pkgconfig:both python shebangfix
 USE_LDCONFIG=	yes
-
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-D_WANT_VMMETER -I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
@@ -42,6 +43,12 @@ SUB_FILES=	${PORTNAME}.conf.sample
 
 USERS=		netdata
 GROUPS=		netdata
+
+OPTIONS_DEFINE=	FREEIPMI
+OPTIONS_SUB=	YES
+FREEIPMI_DESC=	Enable support for freeipmi
+
+FREEIPMI_LIB_DEPENDS=	libfreeipmi.so:sysutils/freeipmi
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%NETDATA_CACHE%%|${NETDATA_CACHE}|g' \
