@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	pick
-PORTVERSION=	1.6.1
+PORTVERSION=	2.0.0
 CATEGORIES=	sysutils
 MASTER_SITES=	https://github.com/calleerlandsson/pick/releases/download/v${PORTVERSION}/
 
