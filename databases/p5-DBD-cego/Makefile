@@ -18,6 +18,7 @@ LIB_DEPENDS=	libcego.so:databases/cego
 USES=		gmake perl5
 USE_PERL5=	configure
 CC:=		${CXX}
+CONFIGURE_ARGS+=	--prefix=${PREFIX}
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/DBD/Cego/Cego.so
