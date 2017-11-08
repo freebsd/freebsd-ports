@@ -5103,6 +5103,7 @@
     SUBDIR += py3-ply
     SUBDIR += py3-pretend
     SUBDIR += py3-prompt_toolkit
+    SUBDIR += py3-protobuf
     SUBDIR += py3-py
     SUBDIR += py3-pyasn1
     SUBDIR += py3-pycodestyle
