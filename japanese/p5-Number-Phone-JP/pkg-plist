@@ -6,6 +6,7 @@
 %%SITE_PERL%%/Number/Phone/JP/Table/Freedial.pm
 %%SITE_PERL%%/Number/Phone/JP/Table/Home.pm
 %%SITE_PERL%%/Number/Phone/JP/Table/Ipphone.pm
+%%SITE_PERL%%/Number/Phone/JP/Table/M2m.pm
 %%SITE_PERL%%/Number/Phone/JP/Table/Mobile.pm
 %%SITE_PERL%%/Number/Phone/JP/Table/Pager.pm
 %%SITE_PERL%%/Number/Phone/JP/Table/Phs.pm
