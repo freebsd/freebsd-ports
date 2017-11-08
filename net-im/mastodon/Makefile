@@ -3,7 +3,7 @@
 PORTNAME=	mastodon
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.0.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-im www
 
 MAINTAINER=	jrm@FreeBSD.org
@@ -96,7 +96,7 @@ USE_RC_SUBR=	mastodon_stream mastodon_web mastodon_workers
 USE_RUBY=	yes
 
 NODE_BIN=	${LOCALBASE}/bin/node
-NODE_ABI=	${NODE_VER:C/v4.*/46/:C/v6.*/48/:C/v8.*/57/}
+NODE_ABI=	${NODE_VER:C/v4.*/46/:C/v6.*/48/:C/v8.*/57/:C/v9.*/59/}
 PLIST_SUB=	NODE_ABI=${NODE_ABI}
 
 SHEBANG_FILES=	bin/*
