@@ -3,6 +3,7 @@
 
 PORTNAME=		hitch
 PORTVERSION=		1.4.6
+PORTREVISION=		1
 DISTVERSIONPREFIX=	${PORTNAME}-
 CATEGORIES=		security
 
@@ -11,14 +12,13 @@ COMMENT=		TLS proxy to forward connections to an unencrypted backend
 
 LICENSE=		BSD2CLAUSE
 
-BUILD_DEPENDS=		rst2man:textproc/py-docutils \
-			pkg-config:devel/pkgconf
+BUILD_DEPENDS=		rst2man:textproc/py-docutils
 LIB_DEPENDS=		libev.so:devel/libev
 
 USERS=			nobody
 GROUPS=			nobody
 
-USES=			autoreconf ssl
+USES=			autoreconf pkgconfig ssl
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS=		--localstatedir=/var/run
 CONFIGURE_ENV=		CRYPTO_CFLAGS="-I${OPENSSLINC}" CRYPTO_LIBS="-L${OPENSSLLIB}" \
