@@ -3,13 +3,15 @@
 
 PORTNAME=	nwnclient
 PORTVERSION=	1.69
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	games linux
-MASTER_SITES=	http://na.llnet.bioware.cdn.ea.com/u/f/eagames/bioware/neverwinternights/updates/linux/${PORTVERSION:S/.//}/:CLIENT \
-		http://nwdownloads.bioware.com/neverwinternights/linux/129/:ORIG \
-		http://nwdownloads.bioware.com/neverwinternights/linux/gold/:GOLD \
-		http://nwdownloads.bioware.com/neverwinternights/linux/161/:HOTU \
-		http://home.roadrunner.com/~nwmovies/nwmovies/:NWMOVIES \
+NWN_SITE_1=	http://na.llnet.bioware.cdn.ea.com/u/f/eagames/bioware/neverwinternights/updates/linux/
+NWN_SITE_2=	http://lvlt.bioware.cdn.ea.com/bioware/u/f/eagames/bioware/neverwinternights/updates/linux/
+MASTER_SITES=	${NWN_SITE_1}${PORTVERSION:S/.//}/:CLIENT \
+		${NWN_SITE_2}${PORTVERSION:S/.//}/:CLIENT \
+		${NWN_SITE_1}:ORIG,GOLD,HOTU \
+		${NWN_SITE_2}:ORIG,GOLD,HOTU \
+		https://github.com/nwnlinux/nwmovies/raw/master/:NWMOVIES \
 		http://www.radgametools.com/down/Bink/:BINK
 PKGNAMEPREFIX=	linux-
 DISTFILES=	${CLIENT_FILES} \
@@ -18,10 +20,6 @@ DIST_SUBDIR=	${PKGNAMEPREFIX}${PORTNAME}
 
 MAINTAINER=	scf@FreeBSD.org
 COMMENT=	Neverwinter Nights Linux (x86) Client
-
-BROKEN=		does not fetch
-DEPRECATED=	Broken for more than 6 months
-EXPIRATION_DATE=	2017-11-09
 
 RUN_DEPENDS=	${LOCALBASE}/share/nwndata/docs/readme.txt:games/nwndata
 
@@ -32,7 +30,7 @@ USE_LINUX=	dri sdl12 xorglibs
 NWNDATADIR=	${LOCALBASE}/share/nwndata
 
 OPTIONS_DEFINE=	NWMOVIES
-NWMOVIES_DESC=	Support for movies using BinkPlayer
+NWMOVIES_DESC=	Support for movies using BinkPlayer (experimental!)
 
 .include <bsd.port.options.mk>
 
@@ -43,10 +41,10 @@ CLIENT_FILES=	nwclientgold.tar.gz:GOLD \
 		English_linuxclient169_xp2.tar.gz:CLIENT
 .if ${PORT_OPTIONS:MNWMOVIES}
 NWMOVIESFILE=	nwmovies-v4-public.20090223.080954.tar.gz
-BINKPLAYERFILE=	BinkLinuxPlayer.zip
+BINKPLAYERFILE=	BinkLinuxPlayer.7z
 CLIENT_NWMOVIES=${NWMOVIESFILE}:NWMOVIES \
 		${BINKPLAYERFILE}:BINK
-USE_LINUX+=	mikmod sdlmixer
+USE_LINUX+=	sdlmixer
 PLIST_SUB+=	NWMOVIES=""
 .else
 PLIST_SUB+=	NWMOVIES="@comment "

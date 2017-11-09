@@ -365,5 +365,5 @@
 %%ORIGINAL%%%%DATADIR%%/dialog.tlk
 @dir %%DATADIR%%/servervault
 @dir %%DATADIR%%/saves
-@dir %%DATADIR%%/portraits
+%%ORIGINAL%%@dir %%DATADIR%%/portraits
 @dir %%DATADIR%%/hak

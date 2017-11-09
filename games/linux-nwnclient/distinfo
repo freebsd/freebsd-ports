@@ -1,3 +1,4 @@
+TIMESTAMP = 1510192086
 SHA256 (linux-nwnclient/English_linuxclient169_orig.tar.gz) = 50932f9647ea7968dbb8f7ab1fc6478035fff0826379a45762c1de8e46d1d2b0
 SIZE (linux-nwnclient/English_linuxclient169_orig.tar.gz) = 473297170
 SHA256 (linux-nwnclient/English_linuxclient169_xp2.tar.gz) = 09715e2b95c025ef7f00d218deec1b1edce501530d8cba51d61097c69699763f
@@ -10,5 +11,5 @@ SHA256 (linux-nwnclient/nwclienthotu.tar.gz) = 0a4ace1aacd69fb166d09bd249ce5ae98
 SIZE (linux-nwnclient/nwclienthotu.tar.gz) = 39611339
 SHA256 (linux-nwnclient/nwmovies-v4-public.20090223.080954.tar.gz) = 4ce60791183a0623d09b37c9f00ba42a2f7e7d953eba35b090a96cc891254f14
 SIZE (linux-nwnclient/nwmovies-v4-public.20090223.080954.tar.gz) = 137697
-SHA256 (linux-nwnclient/BinkLinuxPlayer.zip) = ba3102eb70627f7a97c82f3a9efaacbccef64d1f48dda2b4338b0f27d5f50418
-SIZE (linux-nwnclient/BinkLinuxPlayer.zip) = 85507
+SHA256 (linux-nwnclient/BinkLinuxPlayer.7z) = 055c9cc22acad954962159c1c5963772cb82a3c3b4a024659c20a027cbad24e1
+SIZE (linux-nwnclient/BinkLinuxPlayer.7z) = 826686
