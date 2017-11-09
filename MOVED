@@ -9606,3 +9606,4 @@ databases/puppetdb-terminus3|databases/puppetdb-terminus4|2017-11-03|Has expired
 databases/puppetdb3|databases/puppetdb4|2017-11-03|Has expired: End of life upstream
 net/libsocketcpp||2017-11-06|Has expired: Uses gets(3)
 security/py-btchip|security/py-btchip-python|2017-11-07|Rename to reflect official Python modules naming scheme
+devel/pear-PPW||2017-11-09|Has expired: Project is EoL
