@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	icu
-DISTVERSION=	59_1
+DISTVERSION=	60_1
 PORTREVISION?=	0 # keep for icu-lx
 PORTEPOCH?=	1
 CATEGORIES?=	devel
