@@ -1,6 +1,6 @@
---- doc/fr/Makefile.in.orig
+--- doc/fr/Makefile.in.orig	2014-09-05 15:08:04 UTC
 +++ doc/fr/Makefile.in
-@@ -285,7 +285,7 @@
+@@ -389,7 +389,7 @@ libdir = @libdir@
  libexecdir = @libexecdir@
  localedir = @localedir@
  localstatedir = @localstatedir@
