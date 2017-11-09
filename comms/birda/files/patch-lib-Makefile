@@ -1,8 +1,8 @@
---- lib/Makefile.orig  Mon Nov 14 10:43:07 2005
-+++ lib/Makefile       Mon Nov 14 10:42:14 2005
-@@ -9,4 +9,6 @@
- NOPIC=                yes
- MKLINKLIB=    no
+--- lib/Makefile.orig	2005-11-14 12:12:28 UTC
++++ lib/Makefile
+@@ -9,4 +9,6 @@ NOPROFILE=	yes
+ NOPIC=		yes
+ MKLINKLIB=	no
  
 +install:
 +
