@@ -1,12 +1,14 @@
---- src/vendor/openssl-sys/build.rs.orig	2017-10-10 20:21:44 UTC
+--- src/vendor/openssl-sys/build.rs.orig	2017-10-09 21:52:49 UTC
 +++ src/vendor/openssl-sys/build.rs
-@@ -260,8 +260,12 @@ fn validate_headers(include_dirs: &[PathBuf]) -> Versi
+@@ -307,8 +307,14 @@ fn validate_headers(include_dirs: &[PathBuf]) -> Versi
  #include <openssl/opensslv.h>
  #include <openssl/opensslconf.h>
  
 -#if LIBRESSL_VERSION_NUMBER >= 0x20601000
-+#if LIBRESSL_VERSION_NUMBER >= 0x20603000
++#if LIBRESSL_VERSION_NUMBER >= 0x20604000
  RUST_LIBRESSL_NEW
++#elif LIBRESSL_VERSION_NUMBER >= 0x20603000
++RUST_LIBRESSL_263
 +#elif LIBRESSL_VERSION_NUMBER >= 0x20602000
 +RUST_LIBRESSL_262
 +#elif LIBRESSL_VERSION_NUMBER >= 0x20601000
@@ -14,7 +16,7 @@
  #elif LIBRESSL_VERSION_NUMBER >= 0x20600000
  RUST_LIBRESSL_260
  #elif LIBRESSL_VERSION_NUMBER >= 0x20506000
-@@ -356,42 +360,63 @@ See rust-openssl README for more information:
+@@ -403,42 +409,70 @@ See rust-openssl README for more information:
          println!("cargo:rustc-cfg=libressl");
          println!("cargo:rustc-cfg=libressl250");
          println!("cargo:libressl=true");
@@ -75,6 +77,13 @@
 +        println!("cargo:rustc-cfg=libressl262");
 +        println!("cargo:libressl=true");
 +        println!("cargo:libressl_version=262");
++        println!("cargo:version=101");
++        Version::Libressl
++    } else if expanded.contains("RUST_LIBRESSL_263") {
++        println!("cargo:rustc-cfg=libressl");
++        println!("cargo:rustc-cfg=libressl263");
++        println!("cargo:libressl=true");
++        println!("cargo:libressl_version=263");
          println!("cargo:version=101");
          Version::Libressl
      } else if expanded.contains("RUST_OPENSSL_110F") {
