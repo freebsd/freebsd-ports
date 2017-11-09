@@ -45,7 +45,10 @@ TARGET_ORDER_OVERRIDE=610:fix-shebang
 BUILD_WRKSRC=	${WRKSRC}/module
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
 MAKE_ENV+=	RENPY_DEPS_INSTALL="${LOCALBASE}"
-PORTDATA=	gui launcher renpy renpy.py templates
+PORTDATA=	launcher renpy renpy.py templates
+.ifndef PKGNAMESUFFIX
+PORTDATA+=	gui
+.endif
 PORTDOCS=	*
 PLIST_FILES=	bin/${PORTNAME}
 

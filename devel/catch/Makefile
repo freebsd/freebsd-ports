@@ -16,13 +16,11 @@ TEST_DEPENDS=	cmake:devel/cmake
 
 USES=		compiler:c++11-lang
 USE_GITHUB=	yes
-GH_ACCOUNT=	philsquared
-GH_PROJECT=	Catch
+GH_ACCOUNT=	catchorg
+GH_PROJECT=	Catch2
 
 NO_BUILD=	yes
 NO_ARCH=	yes
-
-WRKSRC=		${WRKDIR}/${GH_PROJECT}2-${PORTVERSION}
 
 REPORTERS=	catch_reporter_automake.hpp \
 		catch_reporter_bases.cpp \

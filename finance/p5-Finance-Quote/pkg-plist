@@ -3,6 +3,7 @@
 %%SITE_PERL%%/Finance/Quote/AIAHK.pm
 %%SITE_PERL%%/Finance/Quote/ASEGR.pm
 %%SITE_PERL%%/Finance/Quote/ASX.pm
+%%SITE_PERL%%/Finance/Quote/AlphaVantage.pm
 %%SITE_PERL%%/Finance/Quote/BMONesbittBurns.pm
 %%SITE_PERL%%/Finance/Quote/BSERO.pm
 %%SITE_PERL%%/Finance/Quote/Bourso.pm

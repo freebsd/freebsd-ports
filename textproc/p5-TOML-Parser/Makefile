@@ -19,6 +19,8 @@ BUILD_DEPENDS=	p5-Types-Serialiser>=0:devel/p5-Types-Serialiser
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Deep>=0:devel/p5-Test-Deep
 
+PORTSCOUT=	limit:^[0-9\.]*$$
+
 NO_ARCH=	yes
 USE_PERL5=	modbuildtiny
 USES=		perl5

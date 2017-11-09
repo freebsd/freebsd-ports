@@ -3,7 +3,7 @@
 
 PORTNAME=	bind
 PORTVERSION=	${ISCVERSION:S/-P/P/:S/b/.b/:S/a/.a/:S/rc/.rc/}
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	dns net ipv6
 MASTER_SITES=	ISC/bind9/${ISCVERSION}
 PKGNAMESUFFIX=	910
@@ -14,6 +14,9 @@ COMMENT=	BIND DNS suite with updated DNSSEC and DNS64
 
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
+
+DEPRECATED=	Going out of support, please migrate to dns/bind911
+EXPIRATION_DATE=	2018-06-30
 
 # ISC releases things like 9.8.0-P1, which our versioning doesn't like
 ISCVERSION=	9.10.6

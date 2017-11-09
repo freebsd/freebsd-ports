@@ -1,0 +1,10 @@
+Fuzzy finder written on C. fzy is faster and shows better results than other
+fuzzy finders. Most other fuzzy matchers sort based on the length of a match.
+fzy tries to find the result the user intended. It does this by favouring 
+matches on consecutive letters and starts of words. This allows matching using
+acronyms or different parts of the path. fzy is designed to be used both as an
+editor plugin and on the command line. Rather than clearing the screen, fzy
+displays its interface directly below the current cursor position, scrolling
+the screen if necessary.
+
+WWW: https://github.com/jhawthorn/fzy

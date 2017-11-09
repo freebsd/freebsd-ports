@@ -16,9 +16,7 @@ LICENSE_NAME=	RAR license
 LICENSE_FILE=	${WRKSRC}/license.txt
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-BROKEN_powerpc=		fails to install: File format not recognized
-BROKEN_sparc64=		fails to install: File format not recognized
-
+IA32_BINARY_PORT=	yes
 RESTRICTED=	only unmodified original package can be distributed
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/rar
@@ -26,17 +24,6 @@ PLIST_FILES=	bin/rar lib/default.sfx etc/rarfiles.lst man/cat1/rar.1.gz
 PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS
-
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "amd64"
-.if !defined(HAVE_COMPAT_IA32_KERN)
-HAVE_COMPAT_IA32_KERN!=	if ${SYSCTL} -n compat.ia32.maxvmem >/dev/null 2>&1; then ${ECHO_CMD} YES; fi
-.endif
-.if !defined(HAVE_COMPAT_IA32_KERN)
-IGNORE=	requires a kernel with compiled-in IA32 compatibility
-.endif
-.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/rar ${STAGEDIR}${PREFIX}/bin
@@ -49,4 +36,4 @@ post-install-DOCS-on:
 	${INSTALL_DATA} ${WRKSRC}/*.txt ${WRKSRC}/order.htm \
 		${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

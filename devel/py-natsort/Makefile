@@ -18,8 +18,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest \
 		${PYTHON_PKGNAMEPREFIX}hypothesis>=3.8.0:devel/py-hypothesis \
 		${PYTHON_PKGNAMEPREFIX}mock>0:devel/py-mock \
 		${PYTHON_PKGNAMEPREFIX}pathlib>0:devel/py-pathlib \
-		${PYTHON_PKGNAMEPREFIX}coverage>0:devel/py-coverage \
-		${RUN_DEPENDS}
+		${PYTHON_PKGNAMEPREFIX}coverage>0:devel/py-coverage
 
 USES=		python
 USE_PYTHON=	autoplist distutils

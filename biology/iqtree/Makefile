@@ -18,8 +18,7 @@ RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/eigen3.pc:math/eigen3
 USES=		cmake compiler:openmp
 USE_GITHUB=	yes
 GH_ACCOUNT=	Cibiv
-
-WRKSRC=		${WRKDIR}/IQ-TREE-${DISTVERSION}
+GH_PROJECT=	IQ-TREE
 
 PLIST_FILES=	bin/iqtree
 PORTEXAMPLES=	example.cf example.nex example.phy models.nex

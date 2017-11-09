@@ -3,7 +3,7 @@
 
 PORTNAME=	gts
 PORTVERSION=	0.7.6
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
@@ -16,25 +16,18 @@ CONFLICTS=	pcb-[0-9]*
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
-USES=		libtool pathfix pkgconfig
+USES=		libtool localbase pathfix pkgconfig
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	NETPBM
 OPTIONS_SUB=	yes
 
-NETPBM_DESC=		Build with libnetpbm support
+NETPBM_CONFIGURE_ENV_OFF=	ac_cv_lib_netpbm_pgm_init=no
 NETPBM_LIB_DEPENDS=	libnetpbm.so:graphics/netpbm
 
-CPPFLAGS+=	-I${LOCALBASE}/include
-LIBS+=		-L${LOCALBASE}/lib
-
-.include <bsd.port.options.mk>
-
-post-patch:
-.if ! ${PORT_OPTIONS:MNETPBM}
-	@${REINPLACE_CMD} -e 's|netpbm="true"|netpbm="false"|' \
-		${WRKSRC}/configure
-.endif
+post-patch-NETPBM-on:
+	@${REINPLACE_CMD} -e 's|<pgm.h>|<netpbm/pgm.h>|' \
+		${WRKSRC}/examples/happrox.c
 
 .include <bsd.port.mk>
