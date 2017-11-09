@@ -40,8 +40,6 @@ SHEBANG_FILES=	bin/svnweb-install
 USE_PERL5=	configure
 CONFIGURE_ARGS=	--skip_questions
 
-BROKEN_powerpc=	Does not configure on powerpc
-
 post-install:
 	@${MKDIR} -p ${STAGEDIR}${WWWDIR}
 	${CP} -R ${WRKSRC}/SVN-Web.psgi ${WRKSRC}/template ${WRKSRC}/css ${STAGEDIR}${WWWDIR}
