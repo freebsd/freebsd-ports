@@ -1,6 +1,6 @@
---- main/Makefile.orig	2017-03-24 08:40:58 UTC
+--- main/Makefile.orig	2017-10-13 17:46:56 UTC
 +++ main/Makefile
-@@ -81,9 +81,12 @@ endif
+@@ -75,9 +75,12 @@ endif
  
  ifeq ($(OSARCH),FreeBSD)
    # -V is understood by BSD Make, not by GNU make.
