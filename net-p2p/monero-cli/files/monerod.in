@@ -1,0 +1,91 @@
+#!/bin/sh
+# $FreeBSD$
+
+# PROVIDE: monerod
+# REQUIRE: LOGIN cleanvar
+# KEYWORD: shutdown
+
+# Add the following to %%LOCALBASE%%/etc/rc.conf.d/monerod to influence
+# the behavior of this script (default values are listed):
+#
+# monerod_enable="NO"  # change to "YES" to enable
+# monerod_user="monero"
+# monerod_group="monero"
+# monerod_data_dir="/var/db/monero"
+# monerod_conf="%%PREFIX%%/etc/monerod.conf"
+# monerod_log="/var/log/monero.log"
+# monerod_bind_addr="0.0.0.0"
+# monerod_bind_port="18080"
+# monerod_mine_for=""    # Do mining for the given address (empty: no mining)
+# monerod_mine_threads=""
+# monerod_mine_max_cpu_pct=""
+# monerod_extra_args=""  # See monerod --help
+
+. /etc/rc.subr
+
+name="monerod"
+rcvar=monerod_enable
+
+load_rc_config ${name}
+
+: ${monerod_enable:="NO"}
+: ${monerod_user:="monero"}
+: ${monerod_group:="monero"}
+: ${monerod_data_dir:="/var/db/monero"}
+: ${monerod_conf:="%%PREFIX%%/etc/${name}.conf"}
+: ${monerod_log:="/var/log/${name}.log"}
+: ${monerod_bind_addr:="0.0.0.0"}
+: ${monerod_bind_port:="18080"}
+
+start_precmd="monerod_start_precmd"
+pidfile="/var/run/${name}.pid"
+command="%%PREFIX%%/bin/monerod"
+command_args=""
+command_args="${command_args} --data-dir=${monerod_data_dir}"
+command_args="${command_args} --detach"
+command_args="${command_args} --log-file=${monerod_log}"
+command_args="${command_args} --non-interactive"
+command_args="${command_args} --p2p-bind-ip=${monerod_bind_addr}"
+command_args="${command_args} --p2p-bind-port=${monerod_bind_port}"
+command_args="${command_args} --pidfile=${pidfile}"
+
+if [ -e "${monerod_conf}" ] ; then
+	command_args="${command_args} --config-file=${monerod_conf}"
+fi
+
+if [ -n "${monerod_mine_for}" ] ; then
+	a="--bg-mining-enable --start-mining=${monerod_mine_for}"
+
+	if [ -n "${monerod_mine_threads}" ] ; then
+		a="${a} --mining-threads=${monerod_mine_threads}"
+	fi
+
+	if [ -n "${monerod_mine_max_cpu_pct}" ] ; then
+		a="${a} --bg-mining-miner-target=${monerod_mine_max_cpu_pct}"
+	fi
+
+	command_args="${command_args} ${a}"
+fi
+
+command_args="${command_args} ${monerod_extra_args}"
+command_args="${command_args} >${monerod_data_dir}/monerod.stdout"
+command_args="${command_args} 2>${monerod_data_dir}/monerod.stderr"
+
+monerod_start_precmd()
+{
+	if [ ! -e "${pidfile}" ]; then
+		install -o ${monerod_user} -g ${monerod_group} -m 644 /dev/null "${pidfile}"
+	fi
+
+	if [ ! -e "${monerod_log}" ]; then
+		install -o ${monerod_user} -g ${monerod_group} -m 600 /dev/null "${monerod_log}"
+	fi
+
+	if [ ! -d "${monerod_data_dir}" ]; then
+		install -d -o ${monerod_user} -g ${monerod_group} -m 700 "${monerod_data_dir}"
+	fi
+
+	cd "${monerod_data_dir}"
+}
+
+run_rc_command "$1"

@@ -728,7 +728,7 @@ openxpki:*:777:777::0:0:OpenXPKI Owner:/nonexistent:/usr/sbin/nologin
 litecoin:*:778:778::0:0:litecoin Daemon:/var/db/litecoin:/usr/sbin/nologin
 bitcoin:*:779:779::0:0:bitcoin Daemon:/var/db/bitcoin:/usr/sbin/nologin
 zetacoin:*:780:780::0:0:ZetaCoin Daemon:/nonexistent:/usr/sbin/nologin
-# free: 781
+monero:*:781:781::0:0:Monero Daemon:/var/db/monero:/usr/sbin/nologin
 # free: 782
 # free: 783
 # free: 784
