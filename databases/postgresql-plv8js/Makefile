@@ -9,7 +9,7 @@ CATEGORIES=	databases
 PKGNAMEPREFIX=	postgresql${PGSQL_VER:S/.//}-
 PKGNAMESUFFIX=	js
 
-MAINTAINER=	vanilla@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PL/v8js procedural language for PostgreSQL database
 
 LICENSE=	PostgreSQL
