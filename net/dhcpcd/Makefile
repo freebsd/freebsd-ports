@@ -3,6 +3,7 @@
 
 PORTNAME=	dhcpcd
 PORTVERSION=	6.11.5
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://roy.marples.name/downloads/dhcpcd/ \
 		ftp://roy.marples.name/pub/dhcpcd/\
