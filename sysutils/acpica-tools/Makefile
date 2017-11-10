@@ -14,8 +14,6 @@ COMMENT=	Tools from the ACPI Component Architecture (ACPICA) project
 LICENSE=	BSD3CLAUSE GPLv2
 LICENSE_COMB=	dual
 
-BROKEN_armv6=		fails to compile: comparison of constant -1 with expression of type char is always true
-BROKEN_aarch64=		fails to compile: comparison of constant -1 with expression of type char is always true
 BROKEN_powerpc64=	fails to compile: comparison is always true due to limited range of data type
 
 USES=		gmake
