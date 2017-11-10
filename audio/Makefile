@@ -806,6 +806,7 @@
     SUBDIR += tkeca
     SUBDIR += toolame
     SUBDIR += tosha
+    SUBDIR += triceratops-lv2
     SUBDIR += trommler
     SUBDIR += tse3
     SUBDIR += tta
