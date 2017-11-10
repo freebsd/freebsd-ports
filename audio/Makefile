@@ -178,6 +178,7 @@
     SUBDIR += fluidsynth-dssi
     SUBDIR += fmit
     SUBDIR += foo-yc20
+    SUBDIR += fomp-lv2
     SUBDIR += forked-daapd
     SUBDIR += fpc-a52
     SUBDIR += fpc-mad
