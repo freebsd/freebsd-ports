@@ -108,7 +108,6 @@ $3 !~ /^20[0-3][0-9]-[01][0-9]-[0-3][0-9]$/ {
 END {
     for (port in resurrected) {
         printf "%5d: %s must be marked as resurrected\n", resurrected[port], port | sort
-        error[resurrected[port]] = 1
     }
 
     for (port in missing) {
