@@ -4,6 +4,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/README.txt
 %%PORTDOCS%%%%DOCSDIR%%/demos/boolean/baffles.geo
 %%PORTDOCS%%%%DOCSDIR%%/demos/boolean/boolean.geo
+%%PORTDOCS%%%%DOCSDIR%%/demos/boolean/coherence.geo
 %%PORTDOCS%%%%DOCSDIR%%/demos/boolean/component8.step
 %%PORTDOCS%%%%DOCSDIR%%/demos/boolean/compsolid.geo
 %%PORTDOCS%%%%DOCSDIR%%/demos/boolean/compsolid2.geo
@@ -35,6 +36,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/demos/boolean/thrusections.geo
 %%PORTDOCS%%%%DOCSDIR%%/demos/boolean/transfinite.geo
 %%PORTDOCS%%%%DOCSDIR%%/demos/boolean/transform.geo
+%%PORTDOCS%%%%DOCSDIR%%/demos/boolean/twist.geo
 %%PORTDOCS%%%%DOCSDIR%%/demos/post_processing/anim.script
 %%PORTDOCS%%%%DOCSDIR%%/demos/post_processing/encode.script
 %%PORTDOCS%%%%DOCSDIR%%/demos/post_processing/isosurf.script
