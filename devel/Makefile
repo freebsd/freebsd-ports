@@ -5142,6 +5142,7 @@
     SUBDIR += py35-setuptools
     SUBDIR += py36-setuptools
     SUBDIR += py_static_check
+    SUBDIR += pybind11
     SUBDIR += pybugz
     SUBDIR += pycharm-ce
     SUBDIR += pychecker
