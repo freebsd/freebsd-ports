@@ -1,0 +1,12 @@
+This is a little package that will help with learning how quantum spin and
+entanglement work. It is meant to complement some of the "theoretical
+minimum" lectures and other web resources.
+* https://en.wikipedia.org/wiki/Pauli_matrices
+* https://en.wikipedia.org/wiki/Triplet_state
+* https://en.wikipedia.org/wiki/Von_Neumann_entropy
+* Book: Quantum Mechanics - The Theoretical Minimum, Leanoard Susskind and
+  Art Friedman, Basic Books, 2014. (mostly chapters 6&7)
+* http://theoreticalminimum.com/courses/quantum-mechanics/2012/winter/lecture-6
+  and lecture 7
+
+WWW: https://bitbucket.org/donald_gavel/qspin
