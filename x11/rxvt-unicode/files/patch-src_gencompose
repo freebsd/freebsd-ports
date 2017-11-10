@@ -1,8 +1,8 @@
---- ./src/gencompose.orig	Wed Aug  4 04:59:09 2004
-+++ ./src/gencompose	Tue Aug 10 00:03:21 2004
+--- src/gencompose.orig	2014-05-22 18:53:16 UTC
++++ src/gencompose
 @@ -1,4 +1,4 @@
--#!/opt/bin/perl
+-#!/usr/bin/perl
 +#!/usr/bin/env perl
  
- # the generated tables mostly have NOT been checked so far!
- 
+ open UNIDATA, "<", "www.unicode.org/Public/UNIDATA/UnicodeData.txt"
+    or die "www.unicode.org/Public/UNIDATA/UnicodeData.txt: $!";

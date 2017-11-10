@@ -30,8 +30,6 @@ NLS_USES=	gettext
 NLS_VARS=	FEATURES+=INT
 OPTIMIZED_CFLAGS_VARS=	FEATURES+=OPT
 
-.include <bsd.port.options.mk>
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/share/electric/lib/|${DATADIR}/lib/|; \
 		s|/usr/share/electric/doc/|${DOCSDIR}/|; \

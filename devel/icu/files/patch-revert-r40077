@@ -1,0 +1,297 @@
+Revert https://ssl.icu-project.org/trac/changeset/40077
+until https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=222433
+
+--- common/cmemory.h.orig	2017-10-06 01:37:59 UTC
++++ common/cmemory.h
+@@ -162,6 +162,7 @@ class LocalMemory : public LocalPointerBase<T> { (publ
+      * @param p simple pointer to an array of T items that is adopted
+      */
+     explicit LocalMemory(T *p=NULL) : LocalPointerBase<T>(p) {}
++#if U_HAVE_RVALUE_REFERENCES
+     /**
+      * Move constructor, leaves src with isNull().
+      * @param src source smart pointer
+@@ -169,12 +170,14 @@ class LocalMemory : public LocalPointerBase<T> { (publ
+     LocalMemory(LocalMemory<T> &&src) U_NOEXCEPT : LocalPointerBase<T>(src.ptr) {
+         src.ptr=NULL;
+     }
++#endif
+     /**
+      * Destructor deletes the memory it owns.
+      */
+     ~LocalMemory() {
+         uprv_free(LocalPointerBase<T>::ptr);
+     }
++#if U_HAVE_RVALUE_REFERENCES
+     /**
+      * Move assignment operator, leaves src with isNull().
+      * The behavior is undefined if *this and src are the same object.
+@@ -184,6 +187,7 @@ class LocalMemory : public LocalPointerBase<T> { (publ
+     LocalMemory<T> &operator=(LocalMemory<T> &&src) U_NOEXCEPT {
+         return moveFrom(src);
+     }
++#endif
+     /**
+      * Move assignment, leaves src with isNull().
+      * The behavior is undefined if *this and src are the same object.
+--- common/unicode/localpointer.h.orig	2017-04-26 20:23:44 UTC
++++ common/unicode/localpointer.h
+@@ -213,6 +213,7 @@ class LocalPointer : public LocalPointerBase<T> { (pub
+             errorCode=U_MEMORY_ALLOCATION_ERROR;
+         }
+     }
++#if U_HAVE_RVALUE_REFERENCES
+     /**
+      * Move constructor, leaves src with isNull().
+      * @param src source smart pointer
+@@ -221,6 +222,7 @@ class LocalPointer : public LocalPointerBase<T> { (pub
+     LocalPointer(LocalPointer<T> &&src) U_NOEXCEPT : LocalPointerBase<T>(src.ptr) {
+         src.ptr=NULL;
+     }
++#endif
+     /**
+      * Destructor deletes the object it owns.
+      * @stable ICU 4.4
+@@ -228,6 +230,7 @@ class LocalPointer : public LocalPointerBase<T> { (pub
+     ~LocalPointer() {
+         delete LocalPointerBase<T>::ptr;
+     }
++#if U_HAVE_RVALUE_REFERENCES
+     /**
+      * Move assignment operator, leaves src with isNull().
+      * The behavior is undefined if *this and src are the same object.
+@@ -238,6 +241,7 @@ class LocalPointer : public LocalPointerBase<T> { (pub
+     LocalPointer<T> &operator=(LocalPointer<T> &&src) U_NOEXCEPT {
+         return moveFrom(src);
+     }
++#endif
+     // do not use #ifndef U_HIDE_DRAFT_API for moveFrom, needed by non-draft API
+     /**
+      * Move assignment, leaves src with isNull().
+@@ -358,6 +362,7 @@ class LocalArray : public LocalPointerBase<T> { (publi
+             errorCode=U_MEMORY_ALLOCATION_ERROR;
+         }
+     }
++#if U_HAVE_RVALUE_REFERENCES
+     /**
+      * Move constructor, leaves src with isNull().
+      * @param src source smart pointer
+@@ -366,6 +371,7 @@ class LocalArray : public LocalPointerBase<T> { (publi
+     LocalArray(LocalArray<T> &&src) U_NOEXCEPT : LocalPointerBase<T>(src.ptr) {
+         src.ptr=NULL;
+     }
++#endif
+     /**
+      * Destructor deletes the array it owns.
+      * @stable ICU 4.4
+@@ -373,6 +379,7 @@ class LocalArray : public LocalPointerBase<T> { (publi
+     ~LocalArray() {
+         delete[] LocalPointerBase<T>::ptr;
+     }
++#if U_HAVE_RVALUE_REFERENCES
+     /**
+      * Move assignment operator, leaves src with isNull().
+      * The behavior is undefined if *this and src are the same object.
+@@ -383,6 +390,7 @@ class LocalArray : public LocalPointerBase<T> { (publi
+     LocalArray<T> &operator=(LocalArray<T> &&src) U_NOEXCEPT {
+         return moveFrom(src);
+     }
++#endif
+     // do not use #ifndef U_HIDE_DRAFT_API for moveFrom, needed by non-draft API
+     /**
+      * Move assignment, leaves src with isNull().
+@@ -484,6 +492,7 @@ class LocalArray : public LocalPointerBase<T> { (publi
+  * @see LocalPointer
+  * @stable ICU 4.4
+  */
++#if U_HAVE_RVALUE_REFERENCES
+ #define U_DEFINE_LOCAL_OPEN_POINTER(LocalPointerClassName, Type, closeFunction) \
+     class LocalPointerClassName : public LocalPointerBase<Type> { \
+     public: \
+@@ -517,6 +526,34 @@ class LocalArray : public LocalPointerBase<T> { (publi
+             ptr=p; \
+         } \
+     }
++#else
++#define U_DEFINE_LOCAL_OPEN_POINTER(LocalPointerClassName, Type, closeFunction) \
++    class LocalPointerClassName : public LocalPointerBase<Type> { \
++    public: \
++        using LocalPointerBase<Type>::operator*; \
++        using LocalPointerBase<Type>::operator->; \
++        explicit LocalPointerClassName(Type *p=NULL) : LocalPointerBase<Type>(p) {} \
++        ~LocalPointerClassName() { closeFunction(ptr); } \
++        LocalPointerClassName &moveFrom(LocalPointerClassName &src) U_NOEXCEPT { \
++            if (ptr != NULL) { closeFunction(ptr); } \
++            LocalPointerBase<Type>::ptr=src.ptr; \
++            src.ptr=NULL; \
++            return *this; \
++        } \
++        void swap(LocalPointerClassName &other) U_NOEXCEPT { \
++            Type *temp=LocalPointerBase<Type>::ptr; \
++            LocalPointerBase<Type>::ptr=other.ptr; \
++            other.ptr=temp; \
++        } \
++        friend inline void swap(LocalPointerClassName &p1, LocalPointerClassName &p2) U_NOEXCEPT { \
++            p1.swap(p2); \
++        } \
++        void adoptInstead(Type *p) { \
++            if (ptr != NULL) { closeFunction(ptr); } \
++            ptr=p; \
++        } \
++    }
++#endif
+ 
+ U_NAMESPACE_END
+ 
+--- common/unicode/platform.h.orig	2017-10-05 00:47:38 UTC
++++ common/unicode/platform.h
+@@ -499,6 +499,22 @@ namespace std {
+ #endif
+ 
+ /**
++ * \def U_HAVE_RVALUE_REFERENCES
++ * Set to 1 if the compiler supports rvalue references.
++ * C++11 feature, necessary for move constructor & move assignment.
++ * @internal
++ */
++#ifdef U_HAVE_RVALUE_REFERENCES
++    /* Use the predefined value. */
++#elif U_CPLUSPLUS_VERSION >= 11 || __has_feature(cxx_rvalue_references) \
++        || defined(__GXX_EXPERIMENTAL_CXX0X__) \
++        || (defined(_MSC_VER) && _MSC_VER >= 1600)  /* Visual Studio 2010 */
++#   define U_HAVE_RVALUE_REFERENCES 1
++#else
++#   define U_HAVE_RVALUE_REFERENCES 0
++#endif
++
++/**
+  * \def U_NOEXCEPT
+  * "noexcept" if supported, otherwise empty.
+  * Some code, especially STL containers, uses move semantics of objects only
+--- common/unicode/unistr.h.orig	2017-09-14 19:20:49 UTC
++++ common/unicode/unistr.h
+@@ -1891,6 +1891,7 @@ class U_COMMON_API UnicodeString : public Replaceable 
+    */
+   UnicodeString &fastCopyFrom(const UnicodeString &src);
+ 
++#if U_HAVE_RVALUE_REFERENCES
+   /**
+    * Move assignment operator, might leave src in bogus state.
+    * This string will have the same contents and state that the source string had.
+@@ -1902,7 +1903,7 @@ class U_COMMON_API UnicodeString : public Replaceable 
+   UnicodeString &operator=(UnicodeString &&src) U_NOEXCEPT {
+     return moveFrom(src);
+   }
+-
++#endif
+   // do not use #ifndef U_HIDE_DRAFT_API for moveFrom, needed by non-draft API
+   /**
+    * Move assignment, might leave src in bogus state.
+@@ -3349,6 +3350,7 @@ class U_COMMON_API UnicodeString : public Replaceable 
+    */
+   UnicodeString(const UnicodeString& that);
+ 
++#if U_HAVE_RVALUE_REFERENCES
+   /**
+    * Move constructor, might leave src in bogus state.
+    * This string will have the same contents and state that the source string had.
+@@ -3356,6 +3358,7 @@ class U_COMMON_API UnicodeString : public Replaceable 
+    * @stable ICU 56
+    */
+   UnicodeString(UnicodeString &&src) U_NOEXCEPT;
++#endif
+ 
+   /**
+    * 'Substring' constructor from tail of source string.
+--- common/unistr.cpp.orig	2017-04-26 20:23:44 UTC
++++ common/unistr.cpp
+@@ -308,10 +308,12 @@ UnicodeString::UnicodeString(const UnicodeString& that
+   copyFrom(that);
+ }
+ 
++#if U_HAVE_RVALUE_REFERENCES
+ UnicodeString::UnicodeString(UnicodeString &&src) U_NOEXCEPT {
+   fUnion.fFields.fLengthAndFlags = kShortString;
+   moveFrom(src);
+ }
++#endif
+ 
+ UnicodeString::UnicodeString(const UnicodeString& that,
+                              int32_t srcStart) {
+--- test/intltest/itutil.cpp.orig	2017-04-26 20:23:44 UTC
++++ test/intltest/itutil.cpp
+@@ -375,6 +375,7 @@ void LocalPointerTest::TestLocalPointerMoveSwap() {
+     if(s3.getAlias() != p1 || s1.isValid()) {
+         errln("LocalPointer.moveFrom() did not move");
+     }
++#if U_HAVE_RVALUE_REFERENCES
+     infoln("TestLocalPointerMoveSwap() with rvalue references");
+     s1 = static_cast<LocalPointer<UnicodeString> &&>(s3);
+     if(s1.getAlias() != p1 || s3.isValid()) {
+@@ -384,6 +385,9 @@ void LocalPointerTest::TestLocalPointerMoveSwap() {
+     if(s4.getAlias() != p2 || s2.isValid()) {
+         errln("LocalPointer move constructor did not move");
+     }
++#else
++    infoln("TestLocalPointerMoveSwap() without rvalue references");
++#endif
+ 
+     // Move self assignment leaves the object valid but in an undefined state.
+     // Do it to make sure there is no crash,
+@@ -468,6 +472,7 @@ void LocalPointerTest::TestLocalArrayMoveSwap() {
+     if(a3.getAlias() != p1 || a1.isValid()) {
+         errln("LocalArray.moveFrom() did not move");
+     }
++#if U_HAVE_RVALUE_REFERENCES
+     infoln("TestLocalArrayMoveSwap() with rvalue references");
+     a1 = static_cast<LocalArray<UnicodeString> &&>(a3);
+     if(a1.getAlias() != p1 || a3.isValid()) {
+@@ -477,6 +482,9 @@ void LocalPointerTest::TestLocalArrayMoveSwap() {
+     if(a4.getAlias() != p2 || a2.isValid()) {
+         errln("LocalArray move constructor did not move");
+     }
++#else
++    infoln("TestLocalArrayMoveSwap() without rvalue references");
++#endif
+ 
+     // Move self assignment leaves the object valid but in an undefined state.
+     // Do it to make sure there is no crash,
+@@ -636,6 +644,7 @@ void LocalPointerTest::TestLocalXyzPointerMoveSwap() {
+     if(f3.getAlias() != p1 || f1.isValid()) {
+         errln("LocalUNormalizer2Pointer.moveFrom() did not move");
+     }
++#if U_HAVE_RVALUE_REFERENCES
+     infoln("TestLocalXyzPointerMoveSwap() with rvalue references");
+     f1 = static_cast<LocalUNormalizer2Pointer &&>(f3);
+     if(f1.getAlias() != p1 || f3.isValid()) {
+@@ -645,6 +654,9 @@ void LocalPointerTest::TestLocalXyzPointerMoveSwap() {
+     if(f4.getAlias() != p2 || f2.isValid()) {
+         errln("LocalUNormalizer2Pointer move constructor did not move");
+     }
++#else
++    infoln("TestLocalXyzPointerMoveSwap() without rvalue references");
++#endif
+     // Move self assignment leaves the object valid but in an undefined state.
+     // Do it to make sure there is no crash,
+     // but do not check for any particular resulting value.
+--- test/intltest/ustrtest.cpp.orig	2017-09-21 23:45:08 UTC
++++ test/intltest/ustrtest.cpp
+@@ -2160,6 +2160,7 @@ UnicodeStringTest::TestMoveSwap() {
+     if(s6.getBuffer() != abc || s6.length() != 3) {
+         errln("UnicodeString.moveFrom(alias) did not move");
+     }
++#if U_HAVE_RVALUE_REFERENCES
+     infoln("TestMoveSwap() with rvalue references");
+     s1 = static_cast<UnicodeString &&>(s6);
+     if(s1.getBuffer() != abc || s1.length() != 3) {
+@@ -2169,6 +2170,10 @@ UnicodeStringTest::TestMoveSwap() {
+     if(s7.getBuffer() != p || s7.length() != 100 || !s4.isBogus()) {
+         errln("UnicodeString move constructor did not move");
+     }
++#else
++    infoln("TestMoveSwap() without rvalue references");
++    UnicodeString s7;
++#endif
+ 
+     // Move self assignment leaves the object valid but in an undefined state.
+     // Do it to make sure there is no crash,

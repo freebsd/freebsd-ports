@@ -1,0 +1,4 @@
+This package contains copies of CLDR annotation files for the versioned tarball:
+http://www.unicode.org/repos/cldr/trunk/common/annotations
+
+WWW: https://github.com/fujiwarat/cldr-emoji-annotation

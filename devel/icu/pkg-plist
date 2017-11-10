@@ -90,6 +90,8 @@ include/unicode/messagepattern.h
 include/unicode/msgfmt.h
 include/unicode/normalizer2.h
 include/unicode/normlzr.h
+include/unicode/nounit.h
+include/unicode/numberformatter.h
 include/unicode/numfmt.h
 include/unicode/numsys.h
 include/unicode/parseerr.h
@@ -117,6 +119,7 @@ include/unicode/smpdtfmt.h
 include/unicode/sortkey.h
 include/unicode/std_string.h
 include/unicode/strenum.h
+include/unicode/stringoptions.h
 include/unicode/stringpiece.h
 include/unicode/stringtriebuilder.h
 include/unicode/stsearch.h

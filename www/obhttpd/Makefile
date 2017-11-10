@@ -2,7 +2,7 @@
 
 PORTNAME=	obhttpd
 PORTVERSION=	6.0.20161006
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 
 MAINTAINER=	koue@chaosophia.net
@@ -44,8 +44,26 @@ post-install:
 
 .include <bsd.port.pre.mk>
 
-.if empty(SSL_DEFAULT:Mlibressl*)
-IGNORE=		needs LibreSSL to build. Set DEFAULT_VERSIONS+=ssl=libressl and rebuild everything
-.endif
+.if ! ${SSL_DEFAULT:Mlibressl*}
+BUILD_DEPENDS+=		${NONEXISTENT}:security/libressl:stage
+
+do-configure:
+	${REINPLACE_CMD} -e 's|/usr/local|${WRKDIR}/libressl|g' \
+			${WRKSRC}/usr.sbin/httpd/Makefile
+	${REINPLACE_CMD} -e 's|LOCALBASE|LIBRESSLBASE|g' \
+			${WRKSRC}/usr.sbin/httpd/Makefile
+	${REINPLACE_CMD} -e 's|/usr/local|${WRKDIR}/libressl|g' \
+			${WRKSRC}/usr.bin/htpasswd/Makefile
+	${REINPLACE_CMD} -e 's|LOCALBASE|LIBRESSLBASE|g' \
+			${WRKSRC}/usr.bin/htpasswd/Makefile
+
+. ifnmake describe
+STAGEDIR_libressl!=	${MAKE} -V STAGEDIR -C ${PORTSDIR}/security/libressl
+. endif
+
+pre-configure:
+	@(cd ${STAGEDIR_libressl}${LOCALBASE} && ${COPYTREE_SHARE} \
+		. ${WRKDIR}/libressl "! -name *.so*")
+.endif # SSL_DEFAULT
 
 .include <bsd.port.post.mk>

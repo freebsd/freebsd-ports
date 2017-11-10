@@ -3891,7 +3891,6 @@
     SUBDIR += pear-PHP_Timer
     SUBDIR += pear-PHP_TokenStream
     SUBDIR += pear-PHP_UML
-    SUBDIR += pear-PPW
     SUBDIR += pear-Pager
     SUBDIR += pear-PhpDocumentor
     SUBDIR += pear-Pirum

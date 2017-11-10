@@ -3,7 +3,7 @@
 
 PORTNAME=	iridium
 PORTVERSION=	58.0
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	www
 MASTER_SITES=	https://downloads.iridiumbrowser.de/source/
 PKGNAMESUFFIX=	-browser

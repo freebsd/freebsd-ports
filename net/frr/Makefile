@@ -2,6 +2,7 @@
 
 PORTNAME=	frr
 PORTVERSION=	3.0.2
+DISTVERSIONPREFIX=	frr-
 CATEGORIES=	net ipv6
 
 MAINTAINER=	olivier@FreeBSD.org
@@ -17,8 +18,6 @@ CONFLICTS=	openbgpd openospfd zebra quagga-esr quagga
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	FRRouting
-GH_PROJECT=	frr
-GH_TAGNAME=	frr-${PORTVERSION}
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip

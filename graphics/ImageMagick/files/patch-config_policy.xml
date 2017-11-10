@@ -1,14 +1,14 @@
---- config/policy.xml.orig	2017-09-23 07:22:04.000000000 -0500
-+++ config/policy.xml	2017-11-06 17:11:58.450893000 -0600
-@@ -70,7 +70,11 @@
-   <!-- <policy domain="resource" name="thread" value="4"/> -->
-   <!-- <policy domain="resource" name="throttle" value="0"/> -->
-   <!-- <policy domain="resource" name="time" value="3600"/> -->
-+  <!-- <policy domain="coder" rights="none" pattern="EPHEMERAL" /> -->
-+  <!-- <policy domain="coder" rights="none" pattern="URL" /> -->
-+  <!-- <policy domain="coder" rights="none" pattern="HTTPS" /> -->
-   <!-- <policy domain="coder" rights="none" pattern="MVG" /> -->
-+  <!-- <policy domain="coder" rights="none" pattern="MSL" /> -->
-   <!-- <policy domain="delegate" rights="none" pattern="HTTPS" /> -->
-   <!-- <policy domain="path" rights="none" pattern="@*" /> -->
-   <!-- <policy domain="cache" name="memory-map" value="anonymous"/> -->
+--- config/policy.xml.orig	2017-09-23 12:22:04 UTC
++++ config/policy.xml
+@@ -64,6 +64,11 @@
+   <!-- <policy domain="resource" name="map" value="4GiB"/> -->
+   <!-- <policy domain="resource" name="width" value="10KP"/> -->
+   <!-- <policy domain="resource" name="height" value="10KP"/> -->
++  <policy domain="coder" rights="none" pattern="EPHEMERAL" />
++  <policy domain="coder" rights="none" pattern="URL" />
++  <policy domain="coder" rights="none" pattern="HTTPS" />
++  <policy domain="coder" rights="none" pattern="MVG" />
++  <policy domain="coder" rights="none" pattern="MSL" />
+   <!-- <policy domain="resource" name="area" value="100MP"/> -->
+   <!-- <policy domain="resource" name="disk" value="16EiB"/> -->
+   <!-- <policy domain="resource" name="file" value="768"/> -->

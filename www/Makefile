@@ -360,6 +360,7 @@
     SUBDIR += libjwt
     SUBDIR += libmicrohttpd
     SUBDIR += libnghttp2
+    SUBDIR += libresonic-standalone
     SUBDIR += libsocialweb
     SUBDIR += libwww
     SUBDIR += libxul

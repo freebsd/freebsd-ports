@@ -38,6 +38,7 @@
     SUBDIR += chord2html
     SUBDIR += cinnamon-translations
     SUBDIR += clex
+    SUBDIR += cldr-emoji-annotation
     SUBDIR += cloc
     SUBDIR += clpbar
     SUBDIR += cmatrix
