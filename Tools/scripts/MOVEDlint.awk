@@ -83,7 +83,7 @@ $3 !~ /^20[0-3][0-9]-[01][0-9]-[0-3][0-9]$/ {
     if (system("test -f " portsdir "/" $1 "/Makefile")) {
         delete missing[$1]
     } else {
-        printf "%5d: %s must be marked as resurrected\n", NR, port | sort
+        printf "%5d: %s must be marked as resurrected\n", NR, $1 | sort
     }
 
     if ($2) {
