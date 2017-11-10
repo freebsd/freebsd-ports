@@ -17,28 +17,25 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 CONFLICTS_INSTALL?=	vim-lite-[0-9]*
 
 USES=		cpe iconv ncurses pkgconfig shebangfix
-MAKE_JOBS_UNSAFE=	yes
-
 USE_GITHUB=	yes
-SHEBANG_FILES=	runtime/tools/demoserver.py runtime/tools/efm_perl.pl
-CPE_VERSION=	${PORTVERSION:R}
-PORTSCOUT=	site:https://github.com/vim/vim/releases
 
+CONFIGURE_ARGS=	--prefix=${PREFIX} \
+		--enable-gui=${GUI} \
+		--enable-multibyte \
+		--with-tlib=ncurses
+MAKE_ARGS=	STRIP="${STRIP_CMD}" \
+		VIMRCLOC=${ETCDIR} \
+		VIMRUNTIMEDIR=${PREFIX}/share/vim/${VIM_VER}
+
+CPE_VERSION=	${PORTVERSION:R}
+HAS_CONFIGURE=	yes
+MAKE_JOBS_UNSAFE=	yes
 PLIST_SUB=	VIM_VER=${VIM_VER}
 PORTDATA=	${VIM_VER}
-SLAVEDIRS=	editors/vim-lite
 REINPLACE_ARGS=	-i ''
+SHEBANG_FILES=	runtime/tools/demoserver.py runtime/tools/efm_perl.pl
+SLAVEDIRS=	editors/vim-lite
 VIM_VER=	${PORTNAME}${PORTVERSION:R:S|.||g}
-
-ALL_TARGET=	# empty
-MAKE_ARGS+=	CC="${CC}" \
-		CONF_ARGS="--prefix=${PREFIX}" \
-		STRIP="${STRIP_CMD}" \
-		VIMRUNTIMEDIR=${PREFIX}/share/vim/${VIM_VER} \
-		VIMRCLOC=${ETCDIR} \
-		CONF_OPT_MULTIBYTE=--enable-multibyte \
-		CONF_TERM_LIB=--with-tlib=ncurses \
-		CONF_OPT_PYTHON="${CONF_OPT_PYTHON}"
 
 # OPTIONS
 OPTIONS_DEFAULT=	CSCOPE DEFAULT_VIMRC EXUBERANT_CTAGS GTK2 PERL PYTHON2 RUBY
@@ -73,78 +70,76 @@ LANGBIND_DESC=		Optional language bindings
 OPTIONS_EXCLUDE_powerpc64=	RUBY
 
 # GENERAL OPTIONS
-CSCOPE_MAKE_ARGS=	CONF_OPT_CSCOPE=--enable-cscope
-CSCOPE_MAKE_ARGS_OFF=	CONF_OPT_CSCOPE=--disable-cscope
+CSCOPE_ENABLE=		cscope
 CSCOPE_RUN_DEPENDS=	cscope:devel/cscope
 
 EXUBERANT_CTAGS_RUN_DEPENDS=	exctags:devel/ctags
 
-NLS_MAKE_ARGS=		CONF_OPT_NLS=--enable-nls
-NLS_MAKE_ARGS_OFF=	CONF_OPT_NLS=--disable-nls
+NLS_ENABLE=		nls
 NLS_USES=		gettext
 
 # UI
-ATHENA_MAKE_ARGS=	CONF_OPT_GUI=--enable-gui=athena
+ATHENA_CONFIGURE_ENABLE=athena-check
 ATHENA_PLIST_SUB=	GUI="" DESKTOP="@comment "
 ATHENA_USE=		XORG=ice,sm,x11,xaw,xmu,xpm,xt
+ATHENA_VARS=		GUI=athena
 
-CONSOLE_MAKE_ARGS=	CONF_OPT_GUI="--enable-gui=no --without-x"
-CONSOLE_MAKE_ARGS_OFF=	CONF_OPT_INPUT=--enable-xim \
-			CONF_OPT_OUTPUT=--enable-fontset
+CONSOLE_CONFIGURE_OFF=	--enable-xim --enable-fontset
 CONSOLE_PLIST_SUB=	GUI="@comment " DESKTOP="@comment "
+CONSOLE_VARS=		GUI=no
 
-GNOME_MAKE_ARGS=	CONF_OPT_GUI=--enable-gui=gnome2
+GNOME_CONFIGURE_ENABLE=	gnome-check
 GNOME_PLIST_SUB=	GUI="" DESKTOP=""
 GNOME_IMPLIES=		NLS
 GNOME_USE=		GNOME=gdkpixbuf2,libgnomeui XORG=ice,sm,glproto,x11,xpm,xt
 GNOME_USES=		desktop-file-utils
-GNOME_VARS=		INSTALLS_ICONS=yes
+GNOME_VARS=		GUI=gnome2 INSTALLS_ICONS=yes
 
-GTK2_MAKE_ARGS=		CONF_OPT_GUI=--enable-gui=gtk2
+GTK2_CONFIGURE_ENABLE=	gtk2-check
 GTK2_PLIST_SUB=		GUI="" DESKTOP=""
 GTK2_USE=		GNOME=gdkpixbuf2,gtk20 XORG=ice,sm,x11,xpm,xt
 GTK2_USES=		desktop-file-utils
-GTK2_VARS=		INSTALLS_ICONS=yes
+GTK2_VARS=		GUI=gtk2 INSTALLS_ICONS=yes
 
-GTK3_MAKE_ARGS=		CONF_OPT_GUI=--enable-gui=gtk3
+GTK3_CONFIGURE_ENABLE=	gtk3-check
 GTK3_PLIST_SUB=		GUI="" DESKTOP=""
 GTK3_USE=		GNOME=cairo,gdkpixbuf2,gtk30 XORG=ice,sm,x11,xpm,xt
 GTK3_USES=		desktop-file-utils
-GTK3_VARS=		INSTALLS_ICONS=yes
+GTK3_VARS=		GUI=gtk3 INSTALLS_ICONS=yes
 
-MOTIF_MAKE_ARGS=	CONF_OPT_GUI='--enable-gui=motif --with-motif-lib="${MOTIFLIB}"' MOTIFHOME=${LOCALBASE}
+MOTIF_CONFIGURE_ENABLE=	motif-check
+MOTIF_CONFIGURE_ENV=	MOTIFHOME=${LOCALBASE}
+MOTIF_CONFIGURE_WITH=	motif-lib="${MOTIFLIB}"
 MOTIF_PLIST_SUB=	GUI="" DESKTOP="@comment "
-MOTIF_USES=		motif
 MOTIF_USE=		XORG=ice,sm,x11,xmu,xt
+MOTIF_USES=		motif
+MOTIF_VARS=		GUI=motif
 
-X11_MAKE_ARGS=		CONF_OPT_GUI="--enable-gui=no --with-x"
+X11_CONFIGURE_WITH=	x
 X11_PLIST_SUB=		GUI="@comment " DESKTOP="@comment "
 X11_USE=		XORG=ice,sm,x11,xt
+X11_VARS=		GUI=no
 
 # LANGUAGE BINDINGS
-LUA_MAKE_ARGS=		CONF_OPT_LUA=--enable-luainterp=dynamic CONF_OPT_LUA_PREFIX=--with-lua-prefix=${LOCALBASE}
-LUA_MAKE_ARGS_OFF=	CONF_OPT_LUA=--disable-luainterp
+LUA_CONFIGURE_ENABLE=	luainterp
+LUA_CONFIGURE_WITH=	lua-prefix=${LOCALBASE}
 LUA_USES=		lua
 
-PERL_MAKE_ARGS=		CONF_OPT_PERL=--enable-perlinterp
-PERL_MAKE_ARGS_OFF=	CONF_OPT_PERL=--disable-perlinterp
+PERL_CONFIGURE_ENABLE=	perlinterp
 PERL_USES=		perl5
 
-PYTHON2_VARS=		CONF_OPT_PYTHON+=--enable-pythoninterp
-PYTHON2_VARS_OFF=	CONF_OPT_PYTHON+=--disable-pythoninterp
+PYTHON2_CONFIGURE_ENABLE=	pythoninterp
 PYTHON2_BUILD_DEPENDS=	python${PYTHON2_DEFAULT}:lang/python${PYTHON2_DEFAULT:S/.//}
 PYTHON2_RUN_DEPENDS=	${PYTHON2_BUILD_DEPENDS}
 
-PYTHON3_VARS=		CONF_OPT_PYTHON+=--enable-python3interp
-PYTHON3_VARS_OFF=	CONF_OPT_PYTHON+=--disable-python3interp
+PYTHON3_CONFIGURE_ENABLE=	python3interp
 PYTHON3_USES=		python:3.4+
 
-RUBY_MAKE_ARGS=		CONF_OPT_RUBY=--enable-rubyinterp
-RUBY_MAKE_ARGS_OFF=	CONF_OPT_RUBY=--disable-rubyinterp
+RUBY_CONFIGURE_ENABLE=	rubyinterp
 RUBY_USE=		RUBY=yes
 
-TCL_MAKE_ARGS=		CONF_OPT_TCL="--enable-tclinterp --with-tclsh=tclsh${TCL_VER}"
-TCL_MAKE_ARGS_OFF=	CONF_OPT_TCL=--disable-tclinterp
+TCL_CONFIGURE_ENABLE=	tclinterp
+TCL_CONFIGURE_WITH=	tclsh=tclsh${TCL_VER}
 TCL_USES=		tcl:85+
 
 post-extract:
@@ -158,12 +153,7 @@ post-patch:
 # Work around qa-check shebang error
 	@${REINPLACE_CMD} -e 1d ${WRKSRC}/runtime/tools/demoserver.py
 
-pre-configure:
-	@${CP} ${WRKSRC}/src/config.mk.dist ${WRKSRC}/src/auto/config.mk
-	@${DO_MAKE_BUILD} -C ${WRKSRC}/src distclean
-
 post-configure:
-	@${DO_MAKE_BUILD} -C ${WRKSRC}/src scratch config
 # Needed when devel/libsysinfo is installed:
 	@${REINPLACE_CMD} -e '/#define HAVE_SYSINFO 1/ d' ${WRKSRC}/src/auto/config.h
 
