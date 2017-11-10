@@ -3828,7 +3828,6 @@ www/momspider||2012-11-28|Has expired: No more public distfiles
 japanese/perl5||2012-11-28|Has expired: Recent perl supports correctly japanese, consider using them
 sysutils/fuser||2012-11-28|Has expired: No more public distfiles
 textproc/ascii2pdf||2012-11-28|Has expired: No more public distfiles
-devel/p5-SPOPS||2012-11-28|Has expired: Depend on the expired p5-Class-Fields
 textproc/lemmatizer||2012-11-28|Has expired: No more public distfiles
 net/relay||2012-11-28|Has expired: No more public distfiles
 x11-clocks/bmp-alarm||2012-11-28|Has expired: No more public distfiles
@@ -3961,7 +3960,6 @@ net-mgmt/nfdump-devel||2013-01-22|Has expired: use nfdump instead
 devel/p4v||2013-01-22|No longer publishes FreeBSD version
 multimedia/libdvdplay||2013-01-27|Has expired: No more public_distfiles
 www/p5-Bundle-Sledge||2013-01-27|Removed
-devel/p5-Class-Fields||2013-01-27|Has expired: considered obsolete by upstream
 databases/ruby-kyotocabinet||2013-01-27|Has expired: Broken for more than 6 months
 x11-themes/kde-icons-amaranth-althaea||2013-01-27|Has expired: Broken for more than 6 months
 net/bpfstat||2013-01-27|Has expired: Merge in netstat on all supported version of FreeBSD
