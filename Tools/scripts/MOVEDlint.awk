@@ -80,10 +80,11 @@ $3 !~ /^20[0-3][0-9]-[01][0-9]-[0-3][0-9]$/ {
     }
     lastdate = $3
 
-    if (system("test -f " portsdir "/" $1 "/Makefile"))
+    if (system("test -f " portsdir "/" $1 "/Makefile")) {
         delete missing[$1]
-    else
+    } else {
         resurrected[$1] = NR
+    }
 
     if ($2) {
         if (system("test -f " portsdir "/" $2 "/Makefile"))
