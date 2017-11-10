@@ -342,6 +342,7 @@
     SUBDIR += jack_mixer
     SUBDIR += jack_umidi
     SUBDIR += jalv
+    SUBDIR += jalv-select
     SUBDIR += jamin
     SUBDIR += jid3lib
     SUBDIR += jmusic

@@ -1,0 +1,18 @@
+A little gtkmm GUI to select lv2 plugs from a list and run them with jalv.
+
+Features:
+* select jalv interpreter from combo box
+* select LV2 plugin from list
+* select preset to load from menu
+* search plugins by regex or plugin class
+* reload lilv world to catch new installed plugins or presets
+* load plugin with selected preset
+* minimize app to systray (global Hotkey SHIFT+ESCAPE)
+* wake up app from systray (global Hotkey SHIFT+ESCAPE)
+* left mouse click on systray to show or hide app
+* right mouse click to show quit menu item
+* command-line start-up options
+* command-line runtime options
+* keyboard shortcuts
+
+WWW: https://github.com/brummer10/jalv_select
