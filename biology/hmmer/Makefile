@@ -2,47 +2,41 @@
 # $FreeBSD$
 
 PORTNAME=	hmmer
-PORTVERSION=	3.0
-PORTREVISION=	1
+PORTVERSION=	3.1b2
 CATEGORIES=	biology
-MASTER_SITES=	ftp://selab.janelia.org/pub/software/hmmer3/3.0/ \
-		http://selab.janelia.org/software/hmmer3/3.0/
+MASTER_SITES=	http://eddylab.org/software/hmmer3/${PORTVERSION}/
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	mzaki@niid.go.jp
 COMMENT=	Profile hidden Markov models for biological sequence analysis
-
-BROKEN=		No public distfiles
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+USES=		gmake
 GNU_CONFIGURE=	yes
-USES=		perl5
-CONFIGURE_ARGS+=--enable-threads
+MAKE_ARGS=	V=1
 
-DOCFILES=	COPYRIGHT INSTALL LICENSE Userguide.pdf
-EXAMPLES=	7LESS_DROME Pkinase.sto fn3.sto globins4.sto minifam.h3f minifam.h3p \
-		HBB_HUMAN fn3.hmm globins4.hmm globins45.fa minifam.h3i \
-		Pkinase.hmm fn3.out globins4.out minifam minifam.h3m
+OPTIONS_DEFINE=	DOCS EXAMPLES TEST
+TEST_TEST_TARGET=	check
+TEST_USES=	shebangfix perl5
+TEST_VARS=	shebang_glob=*.pl shebang_files=easel/devkit/* use_perl5=build
 
-OPTIONS_DEFINE=	DOCS EXAMPLES
+DOCFILES=	COPYRIGHT Userguide.pdf
+EXAMPLES=	7LESS_DROME HBB_HUMAN MADE1.hmm MADE1.out MADE1.sto \
+		Pkinase.hmm Pkinase.sto dna_target.fa fn3.hmm fn3.out fn3.sto \
+		globins4.hmm globins4.out globins4.sto globins45.fa \
+		minifam minifam.h3f minifam.h3i minifam.h3m minifam.h3p
 
-.include <bsd.port.options.mk>
-
-# HMMER is useless without SSE and any PC in use today should support it
-# Should probably also do enable-vmx on Power processors to enable
-# Altivec/VMX, but I don't have a machine to test this.
-.if ${ARCH} == "amd64" || ${ARCH} == "i386"
-CONFIGURE_ARGS+=--enable-sse
-.endif
+post-build-TEST-on:	do-test
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/*
-	(cd ${WRKSRC}/documentation/man; for i in *.man; do \
-		${INSTALL_MAN} $$i ${STAGEDIR}${PREFIX}/man/man1/`echo $$i|${SED} 's/.man/.1/'`; \
-	done)
+
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${DOCFILES:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
+
+post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${EXAMPLES:S,^,${WRKSRC}/tutorial/,} ${STAGEDIR}${EXAMPLESDIR}
 
