@@ -1,0 +1,7 @@
+Drumstick is a tool to play music. This is a set of C++ MIDI libraries using
+Qt5 objects, idioms and style. It contains a C++ wrapper around software
+support for MIDI. A complementary library provides classes for SMF
+(Standard MIDI files: .MID/.KAR), Cakewalk (.WRK), and Overture (.OVE) file
+formats processing. A multiplatform realtime MIDI I/O library is also provided.
+
+WWW: https://sourceforge.net/projects/drumstick

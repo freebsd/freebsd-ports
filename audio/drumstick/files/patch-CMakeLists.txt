@@ -1,0 +1,87 @@
+--- CMakeLists.txt.orig	2016-09-24 21:08:24 UTC
++++ CMakeLists.txt
+@@ -24,7 +24,7 @@ endif()
+ project(DRUMSTICK)
+ 
+ if(CMAKE_SIZEOF_VOID_P MATCHES "8")
+-    set(_INIT_LIB_SUFFIX "64")
++    set(_INIT_LIB_SUFFIX "")
+ else()
+     set(_INIT_LIB_SUFFIX "")
+ endif()
+@@ -65,13 +65,13 @@ add_definitions(-DVERSION=${VERSION})
+ message(STATUS "drumstick ${VERSION} prefix: ${CMAKE_INSTALL_PREFIX}")
+ 
+ set(_DBUS_INIT OFF)
+-if(${CMAKE_SYSTEM} MATCHES "Linux")
++if(${CMAKE_SYSTEM} MATCHES "Linux|FreeBSD")
+ 	set(_DBUS_INIT ON)
+ endif()
+ 
+ # User options
+ option(STATIC_DRUMSTICK "Build static libraries instead of dynamic" OFF)
+-option(USE_DBUS "Include DBus support (required for RealtimeKit)" ${_DBUS_INIT})
++#option(USE_DBUS "Include DBus support (required for RealtimeKit)" ${_DBUS_INIT})
+ 
+ message(STATUS "Build configuration: ${CMAKE_BUILD_TYPE}")
+ 
+@@ -99,8 +99,8 @@ else()
+     message(FATAL_ERROR "Program pkg-config not found")
+ endif()
+ 
+-if(${CMAKE_SYSTEM} MATCHES "Linux")
+-    pkg_check_modules(ALSA alsa>=1.0.0)
++if(${CMAKE_SYSTEM} MATCHES "Linux|FreeBSD")
++    #pkg_check_modules(ALSA alsa>=1.0.0)
+     if(ALSA_FOUND)
+         set(ALSA_LIBS ${ALSA_LIBRARIES})
+         list(APPEND ALSA_LIB_DIR ${ALSA_LIBRARY_DIRS} ${ALSA_LIBDIR})
+@@ -108,7 +108,9 @@ if(${CMAKE_SYSTEM} MATCHES "Linux")
+     else()
+         message(STATUS "Warning: ALSA library not found.")
+     endif()
+-    pkg_check_modules(PULSE libpulse-simple)
++    if (USE_PULSEAUDIO)
++      pkg_check_modules(PULSE libpulse-simple)
++    endif()
+     if(NOT PULSE_FOUND)
+         message(STATUS "Warning: PulseAudio library not found.")
+     endif()
+@@ -128,7 +130,7 @@ if(BUILD_TESTING)
+   add_subdirectory(tests)
+ endif()
+ 
+-if(${CMAKE_SYSTEM} MATCHES "Linux")
++if(${CMAKE_SYSTEM} MATCHES "Linux|FreeBSD")
+     find_package(Doxygen)
+     if(DOXYGEN_FOUND)
+         configure_file(
+@@ -139,12 +141,14 @@ if(${CMAKE_SYSTEM} MATCHES "Linux")
+             ${DOXYGEN} Doxyfile
+             WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR})
+     endif()
+-    add_subdirectory(doc)
+-    configure_file(drumstick-alsa.pc.in drumstick-alsa.pc IMMEDIATE @ONLY)
++    if (BUILD_DOCS)
++      add_subdirectory(doc)
++    endif()
++    #configure_file(drumstick-alsa.pc.in drumstick-alsa.pc IMMEDIATE @ONLY)
+     configure_file(drumstick.spec.in drumstick.spec IMMEDIATE @ONLY)
+-    install(FILES
+-	${CMAKE_CURRENT_BINARY_DIR}/drumstick-alsa.pc
+-	DESTINATION lib${LIB_SUFFIX}/pkgconfig )
++    #install(FILES
++    #	${CMAKE_CURRENT_BINARY_DIR}/drumstick-alsa.pc
++    #	DESTINATION lib${LIB_SUFFIX}/pkgconfig )
+     # XML mime types
+     set( SHARED_MIME_INFO_MINIMUM_VERSION "0.30" )
+     set( XDG_MIME_INSTALL_DIR "${CMAKE_INSTALL_DATAROOTDIR}/mime/packages" )
+@@ -174,7 +178,7 @@ configure_file(
+ add_custom_target( uninstall
+     "${CMAKE_COMMAND}" -P "${CMAKE_CURRENT_BINARY_DIR}/cmake_uninstall.cmake")
+ 
+-if(${CMAKE_SYSTEM} MATCHES "Linux")
++if(${CMAKE_SYSTEM} MATCHES "Linux|FreeBSD")
+     # tarball target
+     add_custom_target( tarball
+         COMMAND mkdir -p drumstick-${VERSION}

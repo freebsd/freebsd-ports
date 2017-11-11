@@ -114,6 +114,7 @@
     SUBDIR += dream
     SUBDIR += drumgizmo
     SUBDIR += drumpiler
+    SUBDIR += drumstick
     SUBDIR += dsbmixer
     SUBDIR += dssi
     SUBDIR += dtmfdial
