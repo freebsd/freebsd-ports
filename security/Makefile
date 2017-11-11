@@ -975,7 +975,6 @@
     SUBDIR += py-virustotal-api
     SUBDIR += py-volatility
     SUBDIR += py-vulndb
-    SUBDIR += py-xmlsec
     SUBDIR += py-yara
     SUBDIR += py-yubioath-desktop
     SUBDIR += py-zope.app.authentication
@@ -1124,7 +1123,6 @@
     SUBDIR += rubygem-webpush
     SUBDIR += s2n
     SUBDIR += safesh
-    SUBDIR += samba-virusfilter
     SUBDIR += samhain
     SUBDIR += samhain-client
     SUBDIR += samhain-server

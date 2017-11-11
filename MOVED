@@ -9605,3 +9605,17 @@ databases/puppetdb3|databases/puppetdb4|2017-11-03|Has expired: End of life upst
 net/libsocketcpp||2017-11-06|Has expired: Uses gets(3)
 security/py-btchip|security/py-btchip-python|2017-11-07|Rename to reflect official Python modules naming scheme
 devel/pear-PPW||2017-11-09|Has expired: Project is EoL
+lang/ats||2017-11-11|Has expired: Unmaintained, outdated, needs lots of refreshment
+games/lordsawar||2017-11-11|Has expired: Broken for more than 6 months
+databases/elixir-ecto_migrate||2017-11-11|Has expired: Broken for more than 6 months
+audio/gspeakers||2017-11-11|Has expired: Broken for more than 6 months
+net/p5-Filesys-SmbClient||2017-11-11|Has expired: Broken for more than 6 months
+audio/tclmidi||2017-11-11|Has expired: Broken for more than 6 months
+security/py-xmlsec||2017-11-11|Has expired: Broken for more than 6 months
+security/samba-virusfilter||2017-11-11|Has expired: Broken for more than 6 months
+textproc/ocaml-pxp||2017-11-11|Has expired: Broken for more than 6 months
+audio/sooperlooper||2017-11-11|Has expired: Broken for more than 6 months
+devel/dwarves||2017-11-11|Has expired: Broken for more than 6 months
+devel/cl-cffi-sbcl||2017-11-11|Has expired: Broken for more than 6 months
+devel/pinba_engine||2017-11-11|Has expired: Broken for more than 6 months
+devel/py-event||2017-11-11|Has expired: Broken for more than 6 months

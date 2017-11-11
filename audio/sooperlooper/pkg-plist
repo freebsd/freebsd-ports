@@ -1,9 +1,0 @@
-bin/slconsole
-%%WXGTK%%bin/slgui
-bin/slregister
-bin/sooperlooper
-%%DATADIR%%/presets/bcf2000.slb
-%%DATADIR%%/presets/edp4.slb
-%%DATADIR%%/presets/midiwizard.slb
-%%DATADIR%%/presets/oxy8.slb
-%%WXGTK%%%%DATADIR%%/sl_logo.xpm

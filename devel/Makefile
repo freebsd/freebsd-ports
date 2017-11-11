@@ -296,7 +296,6 @@
     SUBDIR += cl-alexandria-sbcl
     SUBDIR += cl-asdf
     SUBDIR += cl-cffi
-    SUBDIR += cl-cffi-sbcl
     SUBDIR += cl-infix
     SUBDIR += cl-infix-sbcl
     SUBDIR += cl-port
@@ -475,7 +474,6 @@
     SUBDIR += dulwich
     SUBDIR += duplo
     SUBDIR += dwarfdump
-    SUBDIR += dwarves
     SUBDIR += dxa65
     SUBDIR += dyncall
     SUBDIR += e00compr
@@ -4068,7 +4066,6 @@
     SUBDIR += pig
     SUBDIR += pijul
     SUBDIR += piklab
-    SUBDIR += pinba_engine
     SUBDIR += pipestatus
     SUBDIR += pire
     SUBDIR += pit
@@ -4377,7 +4374,6 @@
     SUBDIR += py-epdb
     SUBDIR += py-epsilon
     SUBDIR += py-evdev
-    SUBDIR += py-event
     SUBDIR += py-exam
     SUBDIR += py-extras
     SUBDIR += py-extremes

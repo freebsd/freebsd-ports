@@ -524,7 +524,6 @@
     SUBDIR += ny-aspell
     SUBDIR += ocaml-csv
     SUBDIR += ocaml-expat
-    SUBDIR += ocaml-pxp
     SUBDIR += ocaml-text
     SUBDIR += ocaml-tyxml
     SUBDIR += odt2txt

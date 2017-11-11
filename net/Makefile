@@ -556,7 +556,6 @@
     SUBDIR += p5-Event-tcp
     SUBDIR += p5-File-Rsync
     SUBDIR += p5-File-RsyncP
-    SUBDIR += p5-Filesys-SmbClient
     SUBDIR += p5-Frontier-RPC
     SUBDIR += p5-Geo-IP
     SUBDIR += p5-Geo-IP-PurePerl
