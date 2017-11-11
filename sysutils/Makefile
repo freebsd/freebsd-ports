@@ -1222,6 +1222,7 @@
     SUBDIR += u-boot-rpi2
     SUBDIR += u-boot-rpi3
     SUBDIR += u-boot-sinovoip-bpi-m3
+    SUBDIR += u-boot-sopine
     SUBDIR += u-boot-utilite
     SUBDIR += u-boot-wandboard
     SUBDIR += u-boot-zedboard
