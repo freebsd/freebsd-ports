@@ -328,6 +328,7 @@
     SUBDIR += py-kaa-imlib2
     SUBDIR += py-kaa-metadata
     SUBDIR += py-librtmp
+    SUBDIR += py-mido
     SUBDIR += py-mlt
     SUBDIR += py-moviepy
     SUBDIR += py-openlp
