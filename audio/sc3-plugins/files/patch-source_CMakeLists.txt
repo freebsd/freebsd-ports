@@ -1,0 +1,23 @@
+--- source/CMakeLists.txt.orig	2017-08-11 11:25:31 UTC
++++ source/CMakeLists.txt
+@@ -146,7 +146,7 @@ endif()
+ GET_GCC_VERSION(gcc_version)
+ 
+ 
+-if (CMAKE_SYSTEM_NAME MATCHES "Linux")
++if (CMAKE_SYSTEM_NAME MATCHES "Linux|FreeBSD")
+     set(INSTALL_DESTINATION "lib/SuperCollider/plugins")
+     if (QUARKS)
+         set(INSTALL_DESTINATION_LADSPALIST
+@@ -235,9 +235,9 @@ BUILD_PLUGIN(MembraneUGens "MembraneUGen
+ 
+ # LadspaUGen
+ if(NOT WIN32)
+-    BUILD_PLUGIN(LadspaUGen "LadspaUGen/LadspaUGen.cpp;LadspaUGen/search.c" "dl" "LadspaUGen")
++    BUILD_PLUGIN(LadspaUGen "LadspaUGen/LadspaUGen.cpp;LadspaUGen/search.c""" "LadspaUGen")
+     add_executable(ladspalist LadspaUGen/ladspalist.c LadspaUGen/search.c)
+-    target_link_libraries(ladspalist dl)
++    target_link_libraries(ladspalist)
+ endif()
+ 
+ # OteyPianoUGens

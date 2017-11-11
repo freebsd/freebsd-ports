@@ -722,6 +722,7 @@
     SUBDIR += s3mod
     SUBDIR += sayonara
     SUBDIR += sbagen
+    SUBDIR += sc3-plugins
     SUBDIR += schismtracker
     SUBDIR += scrobbler
     SUBDIR += sdl2_mixer
