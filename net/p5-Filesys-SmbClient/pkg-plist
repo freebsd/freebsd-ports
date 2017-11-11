@@ -1,4 +1,0 @@
-%%SITE_ARCH%%/auto/Filesys/SmbClient/SmbClient.so
-%%SITE_ARCH%%/auto/Filesys/SmbClient/autosplit.ix
-%%SITE_ARCH%%/Filesys/SmbClient.pm
-%%PERL5_MAN3%%/Filesys::SmbClient.3.gz

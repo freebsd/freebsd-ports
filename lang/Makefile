@@ -14,7 +14,6 @@
     SUBDIR += asis
     SUBDIR += asn1c
     SUBDIR += atlast
-    SUBDIR += ats
     SUBDIR += awka
     SUBDIR += bas2tap
     SUBDIR += basic256
