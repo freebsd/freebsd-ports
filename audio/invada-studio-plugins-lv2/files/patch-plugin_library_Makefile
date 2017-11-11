@@ -1,0 +1,14 @@
+--- plugin/library/Makefile.orig	2009-04-07 04:07:51 UTC
++++ plugin/library/Makefile
+@@ -18,9 +18,9 @@
+ 
+ # GENERAL
+ 
+-CC		=	gcc
++CC ?= cc
+ LD		=	ld
+-CFLAGS		=	-I. -O3 -Wall -fomit-frame-pointer -fstrength-reduce -funroll-loops -ffast-math -c -fPIC -DPIC
++CFLAGS +=	-I. -Wall -fomit-frame-pointer -funroll-loops -ffast-math -c -fPIC
+ 
+ 
+ 

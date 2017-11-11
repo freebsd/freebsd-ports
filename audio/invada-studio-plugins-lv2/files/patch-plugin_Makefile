@@ -1,0 +1,17 @@
+--- plugin/Makefile.orig	2009-07-11 07:41:01 UTC
++++ plugin/Makefile
+@@ -19,10 +19,10 @@
+ 
+ # GENERAL
+ 
+-CC		=	gcc
+-LD		=	gcc
+-CFLAGS		=	-I. -O3 -Wall -fomit-frame-pointer -fstrength-reduce -funroll-loops -ffast-math -c -fPIC -DPIC
+-LDFLAGS		=	-shared -Llibrary -lc -lm  -linv_common -fPIC -DPIC
++CC ?= cc
++LD ?= cc
++CFLAGS +=	-I. -Wall -fomit-frame-pointer -funroll-loops -ffast-math -c -fPIC
++LDFLAGS +=	-shared -Llibrary -lc -lm  -linv_common -fPIC
+ 
+ PLUGINS		=	inv_compressor.so \
+                         inv_delay.so \
