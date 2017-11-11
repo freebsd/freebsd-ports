@@ -1,0 +1,14 @@
+Botan is a crypto library written in C++. It provides a variety of
+cryptographic algorithms, including common ones such as AES, MD5, SHA,
+HMAC, RSA, Diffie-Hellman, DSA, and ECDSA, as well as many others that
+are more obscure or specialized. It also offers X.509v3 certificates
+and CRLs, and PKCS #10 certificate requests. A message processing
+system that uses a filter/pipeline metaphor allows for many common
+cryptographic tasks to be completed with just a few lines of code.
+Assembly optimizations for common CPUs, including x86, x86-64, and
+PowerPC, offers further speedups for critical tasks such as SHA-1
+hashing and multiple precision integer operations.
+
+Botan is licensed under the same permissive terms as FreeBSD itself.
+
+WWW: http://botan.randombit.net/
