@@ -1,0 +1,26 @@
+commit a8fee72c6fc1
+Author: Andrew McCreight <continuation@gmail.com>
+Date:   Fri Oct 20 16:11:26 2017 -0400
+
+    Bug 1407740 - Fix a crash by setting a flag to true. r=bz, a=lizzard
+    
+    --HG--
+    extra : source : 23d3b458f69c56b0f3b2b8faa1453f79e32ce70c
+---
+ docshell/base/nsDocShell.cpp | 3 +++
+ 1 file changed, 3 insertions(+)
+
+diff --git docshell/base/nsDocShell.cpp docshell/base/nsDocShell.cpp
+index 6748a2722e5a..f7dc1508a74d 100644
+--- docshell/base/nsDocShell.cpp
++++ docshell/base/nsDocShell.cpp
+@@ -881,6 +881,9 @@ nsDocShell::~nsDocShell()
+ {
+   MOZ_ASSERT(!mObserved);
+ 
++  // Avoid notifying observers while we're in the dtor.
++  mIsBeingDestroyed = true;
++
+   Destroy();
+ 
+   nsCOMPtr<nsISHistoryInternal> shPrivate(do_QueryInterface(mSessionHistory));

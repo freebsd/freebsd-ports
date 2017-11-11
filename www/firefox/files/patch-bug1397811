@@ -1,0 +1,48 @@
+commit 2bffd0136caf
+Author: Olli Pettay <Olli.Pettay@helsinki.fi>
+Date:   Fri Oct 20 11:02:29 2017 +0100
+
+    Bug 1397811 - In order to not leak properties, ensure all the properties of adopted nodes are removed in case the adopt call fails. r=bz, a=lizzard
+    
+    --HG--
+    extra : source : b609906f34b50f8e4236d0fee8d01338181dd906
+---
+ dom/base/nsNodeUtils.cpp | 21 +++++++++------------
+ 1 file changed, 9 insertions(+), 12 deletions(-)
+
+diff --git dom/base/nsNodeUtils.cpp dom/base/nsNodeUtils.cpp
+index dd958aa443ce..20e714d54065 100644
+--- dom/base/nsNodeUtils.cpp
++++ dom/base/nsNodeUtils.cpp
+@@ -605,6 +605,15 @@ nsNodeUtils::CloneAndAdopt(nsINode *aNode, bool aClone, bool aDeep,
+     }
+   }
+ 
++  if (aNodesWithProperties && aNode->HasProperties()) {
++    bool ok = aNodesWithProperties->AppendObject(aNode);
++    MOZ_RELEASE_ASSERT(ok, "Out of memory");
++    if (aClone) {
++      ok = aNodesWithProperties->AppendObject(clone);
++      MOZ_RELEASE_ASSERT(ok, "Out of memory");
++    }
++  }
++
+   if (aDeep && (!aClone || !aNode->IsNodeOfType(nsINode::eATTRIBUTE))) {
+     // aNode's children.
+     for (nsIContent* cloneChild = aNode->GetFirstChild();
+@@ -664,15 +673,6 @@ nsNodeUtils::CloneAndAdopt(nsINode *aNode, bool aClone, bool aDeep,
+   }
+ #endif
+ 
+-  if (aNodesWithProperties && aNode->HasProperties()) {
+-    bool ok = aNodesWithProperties->AppendObject(aNode);
+-    if (aClone) {
+-      ok = ok && aNodesWithProperties->AppendObject(clone);
+-    }
+-
+-    NS_ENSURE_TRUE(ok, NS_ERROR_OUT_OF_MEMORY);
+-  }
+-
+   clone.forget(aResult);
+ 
+   return NS_OK;
