@@ -1,0 +1,9 @@
+--- man/CMakeLists.txt.orig	2015-12-29 15:59:14 UTC
++++ man/CMakeLists.txt
+@@ -21,5 +21,5 @@ IF(XSLTPROC_EXECUTABLE)
+     CREATE_MANPAGES(vmpk.xml)
+ ELSE(XSLTPROC_EXECUTABLE)
+     MESSAGE(STATUS "XSLTPROC NOT Found")
+-    INSTALL( FILES vmpk.1 DESTINATION share/man/man1 )
++    INSTALL( FILES vmpk.1 DESTINATION man/man1 )
+ ENDIF(XSLTPROC_EXECUTABLE)
