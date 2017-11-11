@@ -312,6 +312,7 @@
     SUBDIR += guspat
     SUBDIR += gvolwheel
     SUBDIR += gxmms2
+    SUBDIR += gxplugins-lv2
     SUBDIR += harp
     SUBDIR += herrie
     SUBDIR += hexter
