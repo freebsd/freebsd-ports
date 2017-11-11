@@ -1,0 +1,12 @@
+--- source/StkInst/CMakeLists.txt.orig	2017-08-11 11:25:31 UTC
++++ source/StkInst/CMakeLists.txt
+@@ -51,6 +51,9 @@ endif()
+ 
+ if(SUPERNOVA)
+     add_library(${PROJECT}_supernova MODULE ${PROJECT}.cpp ${STKSources})
++    if(SYSTEM_STK)
++        target_link_libraries(${PROJECT}_supernova ${STK_LIBRARY})
++    endif()
+     set_property(TARGET ${PROJECT}_supernova APPEND PROPERTY COMPILE_DEFINITIONS  "SUPERNOVA")
+     include_directories(${SC_PATH}/external_libraries
+                     ${SC_PATH}/external_libraries/boost-lockfree
