@@ -4,6 +4,8 @@ bin/poudriere
 %%ETCDIR%%/hooks/pkgbuild.sh.sample
 @sample etc/poudriered.conf.sample
 etc/rc.d/poudriered
+libexec/poudriere/cachec
+libexec/poudriere/cached
 libexec/poudriere/clock
 libexec/poudriere/cpdup
 libexec/poudriere/dirempty
@@ -25,7 +27,6 @@ man/man8/poudriere.8.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/httpd.conf.sample
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/nginx.conf.sample
 %%DATADIR%%/MANIFESTS
-%%DATADIR%%/api.sh
 %%DATADIR%%/awk/dependency_loop.awk
 %%DATADIR%%/awk/humanize.awk
 %%DATADIR%%/awk/json.awk
@@ -33,6 +34,7 @@ man/man8/poudriere.8.gz
 %%DATADIR%%/awk/json_top.awk
 %%DATADIR%%/awk/processonelog2.awk
 %%DATADIR%%/awk/siginfo_buildtime.awk
+%%DATADIR%%/api.sh
 %%DATADIR%%/bulk.sh
 %%DATADIR%%/clean.sh
 %%DATADIR%%/common.sh
@@ -71,6 +73,8 @@ man/man8/poudriere.8.gz
 %%DATADIR%%/html/index.html
 %%DATADIR%%/html/jail.html
 %%DATADIR%%/html/robots.txt
+%%DATADIR%%/image.sh
+%%DATADIR%%/include/cache.sh
 %%DATADIR%%/include/colors.pre.sh
 %%DATADIR%%/include/colors.sh
 %%DATADIR%%/include/common.sh.dragonfly
@@ -80,7 +84,10 @@ man/man8/poudriere.8.gz
 %%DATADIR%%/include/hash.sh
 %%DATADIR%%/include/html.sh
 %%DATADIR%%/include/parallel.sh
+%%DATADIR%%/include/shared_hash.sh
+%%DATADIR%%/include/util.sh
 %%DATADIR%%/jail.sh
+%%DATADIR%%/logclean.sh
 %%DATADIR%%/options.sh
 %%DATADIR%%/pkgclean.sh
 %%DATADIR%%/ports.sh
