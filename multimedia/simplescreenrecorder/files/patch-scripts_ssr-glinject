@@ -1,0 +1,8 @@
+--- scripts/ssr-glinject.orig	2017-07-25 22:43:33 UTC
++++ scripts/ssr-glinject
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/bin/sh
+ 
+ set -e
+ 

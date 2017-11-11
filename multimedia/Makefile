@@ -373,6 +373,7 @@
     SUBDIR += sabbu
     SUBDIR += schroedinger
     SUBDIR += shotcut
+    SUBDIR += simplescreenrecorder
     SUBDIR += smpeg
     SUBDIR += smpeg2
     SUBDIR += smplayer
