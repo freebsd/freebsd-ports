@@ -19,8 +19,7 @@ CONFLICTS_INSTALL?=	vim-lite-[0-9]*
 USES=		cpe iconv ncurses pkgconfig shebangfix
 USE_GITHUB=	yes
 
-CONFIGURE_ARGS=	--prefix=${PREFIX} \
-		--enable-gui=${GUI} \
+CONFIGURE_ARGS=	--enable-gui=${GUI} \
 		--enable-multibyte \
 		--with-tlib=ncurses
 MAKE_ARGS=	STRIP="${STRIP_CMD}" \
@@ -28,7 +27,7 @@ MAKE_ARGS=	STRIP="${STRIP_CMD}" \
 		VIMRUNTIMEDIR=${PREFIX}/share/vim/${VIM_VER}
 
 CPE_VERSION=	${PORTVERSION:R}
-HAS_CONFIGURE=	yes
+GNU_CONFIGURE=	yes
 MAKE_JOBS_UNSAFE=	yes
 PLIST_SUB=	VIM_VER=${VIM_VER}
 PORTDATA=	${VIM_VER}
@@ -43,7 +42,7 @@ OPTIONS_DEFINE=		CSCOPE DEFAULT_VIMRC EXUBERANT_CTAGS NLS XTERM_SAVE
 OPTIONS_SINGLE=		UI
 OPTIONS_SINGLE_UI=	ATHENA CONSOLE GNOME GTK2 GTK3 MOTIF X11
 OPTIONS_GROUP=		LANGBIND
-OPTIONS_GROUP_LANGBIND=	LUA PERL PYTHON2 PYTHON3 RUBY TCL
+OPTIONS_GROUP_LANGBIND=	LUA PERL PYTHON2 PYTHON3 RUBY SCHEME TCL
 OPTIONS_SUB=		yes
 
 .if defined(LITE)
@@ -65,6 +64,7 @@ CSCOPE_DESC=		cscope support
 CONSOLE_DESC=		Console/terminal mode
 
 LANGBIND_DESC=		Optional language bindings
+SCHEME_DESC=		MzScheme (Racket) bindings
 
 # BROKEN: ruby.h: error: wrong number of arguments specified for 'deprecated' attribute
 OPTIONS_EXCLUDE_powerpc64=	RUBY
@@ -137,6 +137,10 @@ PYTHON3_USES=		python:3.4+
 
 RUBY_CONFIGURE_ENABLE=	rubyinterp
 RUBY_USE=		RUBY=yes
+
+SCHEME_CONFIGURE_ENABLE=mzschemeinterp
+SCHEME_BUILD_DEPENDS=	mzscheme:lang/racket
+SCHEME_RUN_DEPENDS=	${SCHEME_BUILD_DEPENDS}
 
 TCL_CONFIGURE_ENABLE=	tclinterp
 TCL_CONFIGURE_WITH=	tclsh=tclsh${TCL_VER}
