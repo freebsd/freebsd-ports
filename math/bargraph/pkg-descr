@@ -1,6 +1,0 @@
-Scriptable bar graph generator with stacked and clustered bars support, using
-gnuplot to produce fig output and then mangle it to fill in the bars. Any number
-of clustered datasets are supported, as well as automatic averaging and other
-features.
-
-WWW: http://www.burningcutlery.com/derek/bargraph/
