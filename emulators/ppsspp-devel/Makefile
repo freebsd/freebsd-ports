@@ -1,11 +1,11 @@
 # $FreeBSD$
 
-DISTVERSION=	1.4.2-663
-DISTVERSIONSUFFIX=	-g70c70b1e7
+DISTVERSION=	1.4.2-704
+DISTVERSIONSUFFIX=	-g08041d877
 PORTREVISION?=	0
 PKGNAMESUFFIX?=	-devel
 
-GH_TUPLE=	hrydgard:glslang:136b1e2d:glslang/ext/glslang \
+GH_TUPLE=	hrydgard:glslang:2edde666:glslang/ext/glslang \
 		hrydgard:${PORTNAME}-lang:4fddbc9:lang/assets/lang \
 		KhronosGroup:SPIRV-Cross:90966d5:SPIRV/ext/SPIRV-Cross \
 		Kingcom:armips:v0.9-26-g770365d:armips/ext/armips \
