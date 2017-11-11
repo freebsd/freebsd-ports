@@ -635,6 +635,7 @@
     SUBDIR += pm3umpdl
     SUBDIR += pms
     SUBDIR += pocketsphinx
+    SUBDIR += polyphone
     SUBDIR += portaudio
     SUBDIR += praat
     SUBDIR += pragha
