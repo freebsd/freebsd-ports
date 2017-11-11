@@ -891,6 +891,7 @@
     SUBDIR += xvmixer
     SUBDIR += xwave
     SUBDIR += yell
+    SUBDIR += yoshimi
     SUBDIR += zinf
     SUBDIR += zita-convolver
     SUBDIR += zita-resampler
