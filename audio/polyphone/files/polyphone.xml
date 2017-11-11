@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<mime-info xmlns='http://www.freedesktop.org/standards/shared-mime-info'>
+  <mime-type type="audio/x-soundfont">
+    <comment>SoundFont sf2</comment>
+    <magic priority="50">
+      <match type="string" offset="0" value="RIFF">
+        <match type="string" offset="8" value="sfbk"/>
+      </match>
+    </magic>
+    <glob pattern="*.sf2"/>
+  </mime-type>
+  <mime-type type="audio/x-soundfont">
+    <comment>SoundFont sfz</comment>
+    <glob pattern="*.sfz"/>
+  </mime-type>
+  <mime-type type="audio/x-soundfont">
+    <comment>SoundFont archive sfArk</comment>
+    <glob pattern="*.sfArk"/>
+  </mime-type>
+</mime-info>
