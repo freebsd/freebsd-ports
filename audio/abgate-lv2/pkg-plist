@@ -1,0 +1,9 @@
+lib/lv2/abGate.lv2/background.png
+lib/lv2/abGate.lv2/bypass_off.png
+lib/lv2/abGate.lv2/bypass_on.png
+lib/lv2/abGate.lv2/gate.so
+lib/lv2/abGate.lv2/gate.ttl
+lib/lv2/abGate.lv2/gate_gui.so
+lib/lv2/abGate.lv2/knob.png
+lib/lv2/abGate.lv2/libabGateQt.so
+lib/lv2/abGate.lv2/manifest.ttl
