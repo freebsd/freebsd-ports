@@ -1,0 +1,28 @@
+commit b2d46387afc9
+Author: Boris Zbarsky <bzbarsky@mit.edu>
+Date:   Wed Oct 11 22:19:06 2017 -0400
+
+    Bug 1407375 - Make sure to call NodeInfoChanged whenever we change the nodeinfo on a node. r=peterv, a=ritu
+    
+    MozReview-Commit-ID: 71k1jv8thFA
+    
+    --HG--
+    extra : source : 51ff2d13e50c1e8f7731e4c7243064bb96d2e4d0
+---
+ dom/base/nsNodeUtils.cpp | 3 +++
+ 1 file changed, 3 insertions(+)
+
+diff --git dom/base/nsNodeUtils.cpp dom/base/nsNodeUtils.cpp
+index 64ab9e852966..dd958aa443ce 100644
+--- dom/base/nsNodeUtils.cpp
++++ dom/base/nsNodeUtils.cpp
+@@ -593,6 +593,9 @@ nsNodeUtils::CloneAndAdopt(nsINode *aNode, bool aClone, bool aDeep,
+             aNode->OwnerDoc()->UnregisterActivityObserver(aNode->AsElement());
+           }
+           aNode->mNodeInfo.swap(newNodeInfo);
++          if (elem) {
++            elem->NodeInfoChanged(newDoc);
++          }
+           if (wasRegistered) {
+             aNode->OwnerDoc()->RegisterActivityObserver(aNode->AsElement());
+           }

@@ -1,0 +1,120 @@
+commit 677c707a4f11
+Author: Jon Coppeard <jcoppeard@mozilla.com>
+Date:   Mon Oct 9 10:03:20 2017 +0100
+
+    Bug 1400003 - Mark Heap<T> and barrier classes as MOZ_NON_MEMMOVABLE. r=sfink, r=froydnj, a=lizzard
+    
+    --HG--
+    extra : source : 6ad5b916c9659aeb4b901d8f9ec7f121dc2c4418
+---
+ js/public/RootingAPI.h | 10 +++++++++-
+ js/src/gc/Barrier.h    |  5 ++++-
+ xpcom/ds/nsTArray.h    | 27 +++++++++++++--------------
+ 3 files changed, 26 insertions(+), 16 deletions(-)
+
+diff --git js/public/RootingAPI.h js/public/RootingAPI.h
+index 74a61af93703..f8ec7c5a1f5b 100644
+--- js/public/RootingAPI.h
++++ js/public/RootingAPI.h
+@@ -231,7 +231,7 @@ AssertGCThingIsNotAnObjectSubclass(js::gc::Cell* cell) {}
+  * Type T must be a public GC pointer type.
+  */
+ template <typename T>
+-class Heap : public js::HeapBase<T, Heap<T>>
++class MOZ_NON_MEMMOVABLE Heap : public js::HeapBase<T, Heap<T>>
+ {
+     // Please note: this can actually also be used by nsXBLMaybeCompiled<T>, for legacy reasons.
+     static_assert(js::IsHeapConstructibleType<T>::value,
+@@ -1246,6 +1246,14 @@ class JS_PUBLIC_API(ObjectPtr)
+ 
+     explicit ObjectPtr(JSObject* obj) : value(obj) {}
+ 
++    ObjectPtr(const ObjectPtr& other) : value(other.value) {}
++
++    ObjectPtr(ObjectPtr&& other)
++      : value(other.value)
++    {
++        other.value = nullptr;
++    }
++
+     /* Always call finalize before the destructor. */
+     ~ObjectPtr() { MOZ_ASSERT(!value); }
+ 
+diff --git js/src/gc/Barrier.h js/src/gc/Barrier.h
+index 9c4f53975752..1740315c14e9 100644
+--- js/src/gc/Barrier.h
++++ js/src/gc/Barrier.h
+@@ -318,8 +318,11 @@ struct InternalBarrierMethods<jsid>
+ };
+ 
+ // Base class of all barrier types.
++//
++// This is marked non-memmovable since post barriers added by derived classes
++// can add pointers to class instances to the store buffer.
+ template <typename T>
+-class BarrieredBase
++class MOZ_NON_MEMMOVABLE BarrieredBase
+ {
+   protected:
+     // BarrieredBase is not directly instantiable.
+diff --git xpcom/ds/nsTArray.h xpcom/ds/nsTArray.h
+index 424a50ba421e..4e9b57126bfb 100644
+--- xpcom/ds/nsTArray.h
++++ xpcom/ds/nsTArray.h
+@@ -37,6 +37,7 @@
+ namespace JS {
+ template<class T>
+ class Heap;
++class ObjectPtr;
+ } /* namespace JS */
+ 
+ class nsRegion;
+@@ -708,7 +709,7 @@ struct nsTArray_CopyWithConstructors
+ template<class E>
+ struct MOZ_NEEDS_MEMMOVABLE_TYPE nsTArray_CopyChooser
+ {
+-  typedef nsTArray_CopyWithMemutils Type;
++  using Type = nsTArray_CopyWithMemutils;
+ };
+ 
+ //
+@@ -719,14 +720,18 @@ struct MOZ_NEEDS_MEMMOVABLE_TYPE nsTArray_CopyChooser
+   template<>                                            \
+   struct nsTArray_CopyChooser<T>                        \
+   {                                                     \
+-    typedef nsTArray_CopyWithConstructors<T> Type;      \
++    using Type = nsTArray_CopyWithConstructors<T>;      \
+   };
+ 
+-template<class E>
+-struct nsTArray_CopyChooser<JS::Heap<E>>
+-{
+-  typedef nsTArray_CopyWithConstructors<JS::Heap<E>> Type;
+-};
++#define DECLARE_USE_COPY_CONSTRUCTORS_FOR_TEMPLATE(T)   \
++  template<typename S>                                  \
++  struct nsTArray_CopyChooser<T<S>>                     \
++  {                                                     \
++    using Type = nsTArray_CopyWithConstructors<T<S>>;   \
++  };
++
++DECLARE_USE_COPY_CONSTRUCTORS_FOR_TEMPLATE(JS::Heap)
++DECLARE_USE_COPY_CONSTRUCTORS_FOR_TEMPLATE(std::function)
+ 
+ DECLARE_USE_COPY_CONSTRUCTORS(nsRegion)
+ DECLARE_USE_COPY_CONSTRUCTORS(nsIntRegion)
+@@ -740,13 +745,7 @@ DECLARE_USE_COPY_CONSTRUCTORS(mozilla::dom::indexedDB::SerializedStructuredClone
+ DECLARE_USE_COPY_CONSTRUCTORS(JSStructuredCloneData)
+ DECLARE_USE_COPY_CONSTRUCTORS(mozilla::dom::MessagePortMessage)
+ DECLARE_USE_COPY_CONSTRUCTORS(mozilla::SourceBufferTask)
+-
+-template<typename T>
+-struct nsTArray_CopyChooser<std::function<T>>
+-{
+-  typedef nsTArray_CopyWithConstructors<std::function<T>> Type;
+-};
+-
++DECLARE_USE_COPY_CONSTRUCTORS(JS::ObjectPtr)
+ 
+ //
+ // Base class for nsTArray_Impl that is templated on element type and derived

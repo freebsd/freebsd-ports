@@ -1,0 +1,35 @@
+commit 390b56f13f00
+Author: Andrea Marchesini <amarchesini@mozilla.com>
+Date:   Fri Oct 13 07:11:40 2017 +0200
+
+    Bug 1407751 - DefineOSFileConstants should return false if OSFileConstants service is not initialized. r=froydnj, a=ritu
+    
+    --HG--
+    extra : source : 2f76e40db328035331dd6aa79d0e5fbf04db7c96
+---
+ dom/system/OSFileConstants.cpp | 5 ++---
+ 1 file changed, 2 insertions(+), 3 deletions(-)
+
+diff --git dom/system/OSFileConstants.cpp dom/system/OSFileConstants.cpp
+index edafe9f1c560..3cd77f6c3c12 100644
+--- dom/system/OSFileConstants.cpp
++++ dom/system/OSFileConstants.cpp
+@@ -346,6 +346,7 @@ void CleanupOSFileConstants()
+ 
+   gInitialized = false;
+   delete gPaths;
++  gPaths = nullptr;
+ }
+ 
+ 
+@@ -874,9 +875,7 @@ bool SetStringProperty(JSContext *cx, JS::Handle<JSObject*> aObject, const char
+  */
+ bool DefineOSFileConstants(JSContext *cx, JS::Handle<JSObject*> global)
+ {
+-  MOZ_ASSERT(gInitialized);
+-
+-  if (gPaths == nullptr) {
++  if (!gInitialized || gPaths == nullptr) {
+     // If an initialization error was ignored, we may end up with
+     // |gInitialized == true| but |gPaths == nullptr|. We cannot
+     // |MOZ_ASSERT| this, as this would kill precompile_cache.js,

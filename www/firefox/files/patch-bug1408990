@@ -1,0 +1,34 @@
+commit 53a3958e0a76
+Author: Valentin Gosu <valentin.gosu@gmail.com>
+Date:   Sat Oct 28 00:15:01 2017 +0200
+
+    Bug 1408990 - Only add the entry to the performance object if the loading document's principal is the same as the triggering principal. r=bz, r=dragana, a=lizzard
+    
+    MozReview-Commit-ID: 7o8XKHioP1p
+    
+    --HG--
+    extra : rebase_source : 33d4044b4901cee460cc69a0bae1fe0e84dab2aa
+    extra : source : ff9e841ff8544053f184d2e425500d5dd13ee14d
+---
+ netwerk/protocol/http/HttpBaseChannel.cpp | 8 ++++++++
+ 1 file changed, 8 insertions(+)
+
+diff --git netwerk/protocol/http/HttpBaseChannel.cpp netwerk/protocol/http/HttpBaseChannel.cpp
+index 8a5c4d8d9f45..16e59241e2fc 100644
+--- netwerk/protocol/http/HttpBaseChannel.cpp
++++ netwerk/protocol/http/HttpBaseChannel.cpp
+@@ -4088,6 +4088,14 @@ HttpBaseChannel::GetPerformance()
+     return nullptr;
+   }
+ 
++  // We only add to the document's performance object if it has the same
++  // principal as the one triggering the load. This is to prevent navigations
++  // triggered _by_ the iframe from showing up in the parent document's
++  // performance entries if they have different origins.
++  if (!mLoadInfo->TriggeringPrincipal()->Equals(loadingDocument->NodePrincipal())) {
++    return nullptr;
++  }
++
+   nsCOMPtr<nsPIDOMWindowInner> innerWindow = loadingDocument->GetInnerWindow();
+   if (!innerWindow) {
+     return nullptr;

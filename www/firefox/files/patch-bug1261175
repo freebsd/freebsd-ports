@@ -1,0 +1,25 @@
+commit deccfad4c8ba
+Author: Matt Woodrow <mwoodrow@mozilla.com>
+Date:   Thu Oct 12 13:10:27 2017 +1300
+
+    Bug 1261175. r=tnikkel, a=ritu
+    
+    --HG--
+    extra : source : 8281ed36bd4946af69af747b199814cc1a51fb52
+---
+ view/nsViewManager.cpp | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git view/nsViewManager.cpp view/nsViewManager.cpp
+index f3540f3478da..230512c0dcc0 100644
+--- view/nsViewManager.cpp
++++ view/nsViewManager.cpp
+@@ -100,7 +100,7 @@ nsViewManager::~nsViewManager()
+     gViewManagers = nullptr;
+   }
+ 
+-  mPresShell = nullptr;
++  MOZ_RELEASE_ASSERT(!mPresShell, "Releasing nsViewManager without having called Destroy on the PresShell!");
+ }
+ 
+ // We don't hold a reference to the presentation context because it
