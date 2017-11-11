@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	vim
-PORTVERSION=	8.0.1264
+PORTVERSION=	8.0.1289
 DISTVERSIONPREFIX=	v
 CATEGORIES=	editors
 
@@ -33,7 +33,6 @@ PLIST_SUB=	VIM_VER=${VIM_VER}
 PORTDATA=	${VIM_VER}
 REINPLACE_ARGS=	-i ''
 SHEBANG_FILES=	runtime/tools/demoserver.py runtime/tools/efm_perl.pl
-SLAVEDIRS=	editors/vim-lite
 VIM_VER=	${PORTNAME}${PORTVERSION:R:S|.||g}
 
 # OPTIONS
@@ -79,7 +78,6 @@ NLS_ENABLE=		nls
 NLS_USES=		gettext
 
 # UI
-ATHENA_CONFIGURE_ENABLE=athena-check
 ATHENA_PLIST_SUB=	GUI="" DESKTOP="@comment "
 ATHENA_USE=		XORG=ice,sm,x11,xaw,xmu,xpm,xt
 ATHENA_VARS=		GUI=athena
@@ -88,26 +86,22 @@ CONSOLE_CONFIGURE_OFF=	--enable-xim --enable-fontset
 CONSOLE_PLIST_SUB=	GUI="@comment " DESKTOP="@comment "
 CONSOLE_VARS=		GUI=no
 
-GNOME_CONFIGURE_ENABLE=	gnome-check
 GNOME_PLIST_SUB=	GUI="" DESKTOP=""
 GNOME_IMPLIES=		NLS
 GNOME_USE=		GNOME=gdkpixbuf2,libgnomeui XORG=ice,sm,glproto,x11,xpm,xt
 GNOME_USES=		desktop-file-utils
 GNOME_VARS=		GUI=gnome2 INSTALLS_ICONS=yes
 
-GTK2_CONFIGURE_ENABLE=	gtk2-check
 GTK2_PLIST_SUB=		GUI="" DESKTOP=""
 GTK2_USE=		GNOME=gdkpixbuf2,gtk20 XORG=ice,sm,x11,xpm,xt
 GTK2_USES=		desktop-file-utils
 GTK2_VARS=		GUI=gtk2 INSTALLS_ICONS=yes
 
-GTK3_CONFIGURE_ENABLE=	gtk3-check
 GTK3_PLIST_SUB=		GUI="" DESKTOP=""
 GTK3_USE=		GNOME=cairo,gdkpixbuf2,gtk30 XORG=ice,sm,x11,xpm,xt
 GTK3_USES=		desktop-file-utils
 GTK3_VARS=		GUI=gtk3 INSTALLS_ICONS=yes
 
-MOTIF_CONFIGURE_ENABLE=	motif-check
 MOTIF_CONFIGURE_ENV=	MOTIFHOME=${LOCALBASE}
 MOTIF_CONFIGURE_WITH=	motif-lib="${MOTIFLIB}"
 MOTIF_PLIST_SUB=	GUI="" DESKTOP="@comment "
