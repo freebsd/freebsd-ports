@@ -476,6 +476,7 @@
     SUBDIR += umodunpack
     SUBDIR += unclutter
     SUBDIR += unclutter-xfixes
+    SUBDIR += unicode-emoji
     SUBDIR += upclient
     SUBDIR += us-zipcodes
     SUBDIR += usbids
