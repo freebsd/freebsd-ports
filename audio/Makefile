@@ -10,6 +10,7 @@
     SUBDIR += abcde
     SUBDIR += abcmidi
     SUBDIR += abcselect
+    SUBDIR += abgate-lv2
     SUBDIR += abraca
     SUBDIR += acoustid-fingerprinter
     SUBDIR += adplay
