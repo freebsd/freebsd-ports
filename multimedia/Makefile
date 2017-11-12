@@ -306,7 +306,6 @@
     SUBDIR += php-pHash
     SUBDIR += pitivi
     SUBDIR += playd
-    SUBDIR += plexhometheater
     SUBDIR += plexmediaserver
     SUBDIR += plexmediaserver-plexpass
     SUBDIR += plexpy
