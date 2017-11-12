@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	getdns
-PORTVERSION=	1.2.0
+PORTVERSION=	1.2.1
 CATEGORIES=	dns ipv6
 MASTER_SITES=	https://getdnsapi.net/dist/ \
 		ZI \
@@ -24,8 +24,8 @@ USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libidn=${LOCALBASE} --docdir=${DOCSDIR} \
 		--with-trust-anchor=${LOCALBASE}/etc/unbound/root.key
-SOVERSION=	6.2.0
-SOMAJVER=	${SOVERSION:C/([0-9]).*/\1/1}
+SOMAJVER=	6
+SOVERSION=	${SOMAJVER}.${PORTVERSION:C/[0-9].([0-9].[0-9])/\1/1}
 MAKE_JOBS_UNSAFE=yes
 
 PLIST_SUB+=	SOVERSION="${SOVERSION}" SOMAJVER="${SOMAJVER}"
