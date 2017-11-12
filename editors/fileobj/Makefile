@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fileobj
-PORTVERSION=	0.7.44
+PORTVERSION=	0.7.55
 DISTVERSIONPREFIX=	v
 CATEGORIES=	editors
 
@@ -17,5 +17,11 @@ USE_GITHUB=	yes
 
 USES=		python
 USE_PYTHON=	autoplist distutils
+
+PLIST_FILES=	man/man1/fileobj.1.gz
+
+post-install:
+	${INSTALL_MAN} ${WRKSRC}/doc/fileobj.1 \
+		${STAGEDIR}${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>
