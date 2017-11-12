@@ -211,6 +211,7 @@ bin/emptyepsilon
 %%DATADIR%%/scripts/comms_supply_drop.lua
 %%DATADIR%%/scripts/factionInfo.lua
 %%DATADIR%%/scripts/model_data.lua
+%%DATADIR%%/scripts/perlin_noise.lua
 %%DATADIR%%/scripts/scenario_00_basic.lua
 %%DATADIR%%/scripts/scenario_01_waves.lua
 %%DATADIR%%/scripts/scenario_02_beacon.lua
