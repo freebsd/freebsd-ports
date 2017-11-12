@@ -1819,7 +1819,6 @@
     SUBDIR += omniNotify
     SUBDIR += omniORB
     SUBDIR += omniORB-4.1
-    SUBDIR += oniguruma5
     SUBDIR += oniguruma6
     SUBDIR += onscripter
     SUBDIR += onscripter-1byte
