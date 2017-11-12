@@ -9625,3 +9625,4 @@ devel/oniguruma4|devel/oniguruma6|2017-11-12|Upstream no longer maintained, supe
 devel/oniguruma5|devel/oniguruma6|2017-11-12|Upstream no longer maintained, superseded by devel/oniguruma6
 devel/oniguruma6|devel/oniguruma|2017-11-12|Rename devel/oniguruma6 to oniguruma (no other versions in ports tree)
 multimedia/plexhometheater||2017-11-12|Has expired: Broken for more than 6 months
+databases/cassandra2||2017-11-12|Has expired: Broken for more than 6 months
