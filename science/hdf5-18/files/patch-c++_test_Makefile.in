@@ -1,6 +1,6 @@
---- c++/test/Makefile.in.orig	2016-05-10 21:24:51 UTC
+--- c++/test/Makefile.in.orig	2017-06-15 17:14:28 UTC
 +++ c++/test/Makefile.in
-@@ -400,8 +400,7 @@ AMTAR = @AMTAR@
+@@ -408,8 +408,7 @@ AMTAR = @AMTAR@
  AM_CFLAGS = @AM_CFLAGS@ @H5_CFLAGS@
  
  # Include src, test, and c++/src directories

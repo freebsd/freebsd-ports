@@ -1,6 +1,6 @@
---- hl/c++/test/Makefile.in.orig	2016-05-10 21:24:53 UTC
+--- hl/c++/test/Makefile.in.orig	2017-06-15 17:14:28 UTC
 +++ hl/c++/test/Makefile.in
-@@ -395,10 +395,11 @@ AMTAR = @AMTAR@
+@@ -404,10 +404,11 @@ AMTAR = @AMTAR@
  AM_CFLAGS = @AM_CFLAGS@ @H5_CFLAGS@
  
  # Include directories

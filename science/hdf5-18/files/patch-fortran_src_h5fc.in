@@ -1,0 +1,59 @@
+--- fortran/src/h5fc.in.orig	2017-06-15 15:46:52 UTC
++++ fortran/src/h5fc.in
+@@ -151,10 +151,10 @@ usage() {
+ }
+ 
+ # Show the configuration summary of the library recorded in the
+-# libhdf5.settings file reside in the lib directory.
++# libhdf5%%SUFF%%.settings file reside in the lib directory.
+ showconfigure()
+ {
+-  cat ${libdir}/libhdf5.settings
++  cat ${libdir}/libhdf5%%SUFF%%.settings
+   status=$?
+ }
+ 
+@@ -300,9 +300,9 @@ if test "x$do_link" = "xyes"; then
+   shared_link=""
+ # conditionnaly link with the hl library
+   if test "X$HL" = "Xhl"; then
+-   libraries=" $libraries -lhdf5hl_fortran -lhdf5_hl -lhdf5_fortran -lhdf5 "
++   libraries=" $libraries -lhdf5%%SUFF%%hl_fortran -lhdf5%%SUFF%%_hl -lhdf5%%SUFF%%_fortran -lhdf5%%SUFF%% "
+   else
+-   libraries=" $libraries -lhdf5_fortran -lhdf5 "
++   libraries=" $libraries -lhdf5%%SUFF%%_fortran -lhdf5%%SUFF%% "
+   fi
+   link_args="$link_args -L${libdir}"
+ 
+@@ -320,22 +320,22 @@ if test "x$do_link" = "xyes"; then
+   fi
+ 
+   if test "x$USE_SHARED_LIB" != "xyes"; then
+-    # The hdf5 library "-l" flags are in here already.  This is a static
++    # The hdf5%%SUFF%% library "-l" flags are in here already.  This is a static
+     # compile though, so change it to the static versions (.a) of the libraries.
+     new_libraries=""
+     for lib in $libraries; do
+       case "$lib" in
+-        -lhdf5)
+-          new_libraries="$new_libraries ${libdir}/libhdf5.a"
++        -lhdf5%%SUFF%%)
++          new_libraries="$new_libraries ${libdir}/libhdf5%%SUFF%%.a"
+           ;;
+-        -lhdf5_hl)
+-          new_libraries="$new_libraries ${libdir}/libhdf5_hl.a"
++        -lhdf5%%SUFF%%_hl)
++          new_libraries="$new_libraries ${libdir}/libhdf5%%SUFF%%_hl.a"
+           ;;
+-        -lhdf5_fortran)
+-          new_libraries="$new_libraries ${libdir}/libhdf5_fortran.a"
++        -lhdf5%%SUFF%%_fortran)
++          new_libraries="$new_libraries ${libdir}/libhdf5%%SUFF%%_fortran.a"
+           ;;
+-        -lhdf5hl_fortran)
+-          new_libraries="$new_libraries ${libdir}/libhdf5hl_fortran.a"
++        -lhdf5%%SUFF%%hl_fortran)
++          new_libraries="$new_libraries ${libdir}/libhdf5%%SUFF%%hl_fortran.a"
+           ;;
+         *)
+           new_libraries="$new_libraries $lib"

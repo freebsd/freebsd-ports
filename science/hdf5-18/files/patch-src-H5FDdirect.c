@@ -1,6 +1,6 @@
---- ./src/H5FDdirect.c.orig	2011-11-07 14:11:30.000000000 -0800
-+++ ./src/H5FDdirect.c	2011-12-21 16:50:03.000000000 -0800
-@@ -29,6 +29,8 @@
+--- src/H5FDdirect.c.orig	2017-06-15 15:47:13 UTC
++++ src/H5FDdirect.c
+@@ -27,6 +27,8 @@
   * this file. */
  /* #define _XOPEN_SOURCE 600 */
  
