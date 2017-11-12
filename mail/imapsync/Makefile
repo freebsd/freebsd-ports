@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	imapsync
-PORTVERSION=	1.727
-PORTREVISION=	1
+PORTVERSION=	1.836
 DISTVERSIONPREFIX=	v
 CATEGORIES=	mail perl5
 MASTER_SITES=	https://codeload.github.com/imapsync/imapsync/tar.gz/imapsync-${PORTVERSION}?dummy=/
@@ -22,7 +21,9 @@ RUN_DEPENDS=	p5-Mail-IMAPClient>0:mail/p5-Mail-IMAPClient \
 		p5-Readonly>0:devel/p5-Readonly \
 		p5-IO-Socket-SSL>0:security/p5-IO-Socket-SSL \
 		p5-Unicode-String>0:converters/p5-Unicode-String \
-		p5-File-Copy-Recursive>0:devel/p5-File-Copy-Recursive
+		p5-File-Copy-Recursive>0:devel/p5-File-Copy-Recursive \
+		p5-Sys-MemInfo>0:devel/p5-Sys-MemInfo \
+		p5-IO-Socket-INET6>0:net/p5-IO-Socket-INET6
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTNAME}-${PORTVERSION}
 
