@@ -9621,3 +9621,4 @@ devel/pinba_engine||2017-11-11|Has expired: Broken for more than 6 months
 devel/py-event||2017-11-11|Has expired: Broken for more than 6 months
 databases/glom||2017-11-11|Has expired: Broken for more than 6 months
 math/bargraph||2017-11-11|Has expired: Unfetchable for more than six months (google code has gone away)
+devel/oniguruma4|devel/oniguruma6|2017-11-12|Upstream no longer maintained, superseded by devel/oniguruma6
