@@ -236,7 +236,6 @@
     SUBDIR += geomorph
     SUBDIR += geomview
     SUBDIR += geos
-    SUBDIR += geos35
     SUBDIR += geoserver
     SUBDIR += gexiv2
     SUBDIR += giblib
