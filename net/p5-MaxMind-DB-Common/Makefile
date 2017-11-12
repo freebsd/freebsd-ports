@@ -3,6 +3,7 @@
 
 PORTNAME=	MaxMind-DB-Common
 PORTVERSION=	0.040001
+PORTREVISION=	1
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:MAXMIND
@@ -19,7 +20,6 @@ BUILD_DEPENDS=	p5-Data-Dumper-Concise>=0:devel/p5-Data-Dumper-Concise \
 		p5-List-AllUtils>=0:devel/p5-List-AllUtils \
 		p5-Moo>=0:devel/p5-Moo \
 		p5-MooX-StrictConstructor>=0:devel/p5-MooX-StrictConstructor \
-		p5-autodie>=0:devel/p5-autodie \
 		p5-namespace-autoclean>=0:devel/p5-namespace-autoclean
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
