@@ -2,6 +2,7 @@
 
 PORTNAME=	font-awesome
 DISTVERSION=	4.7.0
+PORTREVISION=	1
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://fontawesome.io/assets/
 
