@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	mod_auth_gssapi
-PORTVERSION=	1.5.1
+PORTVERSION=	1.6.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
@@ -12,11 +12,10 @@ COMMENT=	Apache module for authenticating users with GSSAPI
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+USES=		autoreconf bison gssapi:mit,flags libtool ssl
+USE_APACHE=	24+
 USE_GITHUB=	yes
 GH_ACCOUNT=	modauthgssapi
-
-USE_APACHE=	24+
-USES=		autoreconf libtool ssl gssapi:mit,flags
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	KRB5_CONFIG=${KRB5CONFIG}
 CONFIGURE_ARGS+=	OPENSSL_CFLAGS=-I${OPENSSLINC}
@@ -28,9 +27,6 @@ PLIST_FILES=	@sample\ ${APACHEETCDIR}/modules.d/%%APMOD_FILE%% \
 SUB_FILES=	${APMOD_FILE}
 APMOD_FILE=	240_${PORTNAME}.conf.sample
 PLIST_SUB+=	APMOD_FILE=${APMOD_FILE}
-
-IGNORE_SSL=	libressl libressl-devel
-IGNORE_SSL_REASON=	mod_auth_gssapi currently only supports OpenSSL
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/${APACHEMODDIR}
