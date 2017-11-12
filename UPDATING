@@ -5,6 +5,24 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20171112:
+  AFFECTS: consumers of devel/oniguruma*
+  AUTHOR: riggs@FreeBSD.org
+
+  Outdated versions of oniguruma have been removed from the ports
+  tree; devel/oniguruma is the only supported version, currently
+  replacing devel/oniguruma6.
+  pkg should handle this automatically while users of portmaster or
+  portupgrade might need to take additional manual steps:
+
+  for users of portmaster:
+	portmaster -o devel/oniguruma devel/oniguruma6
+	portmaster -r devel/oniguruma
+
+  for users of portupgrade:
+	portupgrade -o devel/oniguruma devel/oniguruma6
+	portupgrade -fr devel/oniguruma
+
 20171107:
   AFFECTS: users of www/node
   AUTHOR: bhughes@FreeBSD.org	
