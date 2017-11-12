@@ -9628,3 +9628,5 @@ multimedia/plexhometheater||2017-11-12|Has expired: Broken for more than 6 month
 databases/cassandra2||2017-11-12|Has expired: Broken for more than 6 months
 graphics/geos35|graphics/geos|2017-11-12|Has expired: legacy version, no longer needed
 astro/gmapcatcher||2017-11-12|Has expired: Unfetchable for more than six months (google code has gone away)
+audio/smasher||2017-11-12|Has expired: Does not build with modern csound
+audio/csound|audio/csound6|2017-11-12|Has expired: Not supported upstream anymore, use csound6
