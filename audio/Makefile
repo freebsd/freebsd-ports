@@ -88,7 +88,6 @@
     SUBDIR += cpp-xmms2
     SUBDIR += creox
     SUBDIR += crip
-    SUBDIR += csound
     SUBDIR += csound6
     SUBDIR += ctronome
     SUBDIR += cue2toc
@@ -746,7 +745,6 @@
     SUBDIR += siren
     SUBDIR += skype-call-recorder
     SUBDIR += slv2
-    SUBDIR += smasher
     SUBDIR += snack
     SUBDIR += snd
     SUBDIR += sndio
