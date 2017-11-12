@@ -9627,3 +9627,4 @@ devel/oniguruma6|devel/oniguruma|2017-11-12|Rename devel/oniguruma6 to oniguruma
 multimedia/plexhometheater||2017-11-12|Has expired: Broken for more than 6 months
 databases/cassandra2||2017-11-12|Has expired: Broken for more than 6 months
 graphics/geos35|graphics/geos|2017-11-12|Has expired: legacy version, no longer needed
+astro/gmapcatcher||2017-11-12|Has expired: Unfetchable for more than six months (google code has gone away)
