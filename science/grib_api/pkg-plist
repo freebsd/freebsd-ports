@@ -2935,10 +2935,13 @@ libdata/pkgconfig/grib_api_f90.pc
 %%DATADIR%%/definitions/grib2/template.4.55.def
 %%DATADIR%%/definitions/grib2/template.4.56.def
 %%DATADIR%%/definitions/grib2/template.4.57.def
+%%DATADIR%%/definitions/grib2/template.4.58.def
 %%DATADIR%%/definitions/grib2/template.4.59.def
 %%DATADIR%%/definitions/grib2/template.4.6.def
 %%DATADIR%%/definitions/grib2/template.4.60.def
 %%DATADIR%%/definitions/grib2/template.4.61.def
+%%DATADIR%%/definitions/grib2/template.4.67.def
+%%DATADIR%%/definitions/grib2/template.4.68.def
 %%DATADIR%%/definitions/grib2/template.4.7.def
 %%DATADIR%%/definitions/grib2/template.4.70.def
 %%DATADIR%%/definitions/grib2/template.4.71.def
