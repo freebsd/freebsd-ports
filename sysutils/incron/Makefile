@@ -1,0 +1,34 @@
+# Created by: mi@aldan.algebra.com
+# $FreeBSD$
+
+PORTNAME=	incron
+DISTVERSION=	2017-10-30
+CATEGORIES=	sysutils
+
+MAINTAINER=	mi@aldan.algebra.com
+COMMENT=	Handle finesystem-events the way cron handles time ones
+
+LICENSE=	GPLv2 LGPL21 MIT
+LICENSE_COMB=	dual
+LICENSE_FILE_GPLv2=	${WRKSRC}/LICENSE-GPL
+LICENSE_FILE_LGPL21=	${WRKSRC}/LICENSE-LGPL
+LICENSE_FILE_MIT=	${WRKSRC}/LICENSE-X11
+
+LIB_DEPENDS=	libinotify.so:devel/libinotify
+
+USE_GITHUB=	indeed
+GH_ACCOUNT=	ar-
+GH_TAGNAME=	e05b7c892f569cf7dadc3c02a464ec1824d27b8e
+CPPFLAGS+=	-I${LOCALBASE}/include -D__NR_inotify_init
+LDFLAGS+=	-L${LOCALBASE}/lib -linotify
+MAKE_ARGS=	PREFIX="${PREFIX}" USER=${UID}	\
+		DOCDIR="${PREFIX}/etc"	\
+		MANPATH=${MANPREFIX}/man
+
+post-patch:
+	${REINPLACE_CMD} -e 's,/etc/incron,${PREFIX}/etc/incron,'	\
+		${WRKSRC}/*conf* ${WRKSRC}/Makefile ${WRKSRC}/*.[158h]	\
+		${WRKSRC}/*.cpp
+	${REINPLACE_CMD} -e '/INITDIR/d' ${WRKSRC}/Makefile
+
+.include <bsd.port.mk>

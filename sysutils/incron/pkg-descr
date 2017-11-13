@@ -1,0 +1,9 @@
+This program is an "inotify cron" system. It consists of a daemon
+and a table manipulator. You can use it a similar way as the regular
+cron. The difference is that the inotify cron handles filesystem
+events rather than time periods.
+
+Written to use (and named after) Linux' "inotify", on BSD it uses
+the libinotify compatibility layer.
+
+WWW: http://inotify.aiken.cz/?section=incron&page=about
