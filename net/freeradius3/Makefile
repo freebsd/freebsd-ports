@@ -71,34 +71,35 @@ FREETDS_LIB_DEPENDS=		libct.so:databases/freetds
 HEIMDAL_CONFIGURE_ON=		--with-rlm-krb5-dir=/
 HEIMDAL_PORT_LIB_DEPENDS=	libkrb5.so:security/heimdal
 HEIMDAL_PORT_CONFIGURE_ON=	--with-rlm-krb5-dir=${LOCALBASE}
-HEIMDAL_VARS=			CONFLICTS_BUILD+=krb5-[0-9].*
+HEIMDAL_CONFLICTS_BUILD=	krb5-[0-9].*
 IDN_CONFIGURE_WITH=		rlm_idn
 IDN_LIB_DEPENDS=		libidn.so:dns/libidn
 FIREBIRD_CONFIGURE_WITH=	rlm_sql_firebird
-FIREBIRD_VARS=			USES+=firebird
+FIREBIRD_USES=			firebird
 LDAP_CONFIGURE_WITH=		rlm_ldap
 LDAP_LIB_DEPENDS=		libsasl2.so:security/cyrus-sasl2
 LDAP_USE=			OPENLDAP
 LDAP_VARS=			_REQUIRE+=slapd
 MITKRB_PORT_CONFIGURE_ON=	--with-rlm-krb5-dir=${LOCALBASE}
 MITKRB_PORT_LIB_DEPENDS=	libkrb5support.so:security/krb5
-MITKRB_VARS=			CONFLICTS_BUILD+=heimdal-[0-9].*
+MITKRB_CONFLICTS_BUILD=		heimdal-[0-9].*
 MYSQL_CONFIGURE_WITH=		rlm_sql_mysql
 MYSQL_USE=			MYSQL
 MYSQL_VARS=			_REQUIRE+=mysql
 NOKRB_CONFIGURE_ON=		--without-rlm_krb5
-NOKRB_VARS=			PLIST_SUB+=RLMKRB5="@comment "
-NOKRB_VARS_OFF=			PLIST_SUB+=RLMKRB5=""
+NOKRB_PLIST_SUB=		RLMKRB5="@comment "
+NOKRB_PLIST_SUB_OFF=		RLMKRB5=""
 PERL_CONFIGURE_WITH=		rlm_perl
 PERL_CONFIGURE_OFF=		--without-perl
-PERL_VARS=			USES+=perl5
-PGSQL_VARS=			USES+=pgsql _REQUIRE+=postgresql
+PERL_USES=			perl5
+PGSQL_USES=			pgsql
+PGSQL_VARS=			_REQUIRE+=postgresql
 PGSQL_CONFIGURE_WITH=		rlm_sql_postgresql
 PYTHON_CONFIGURE_WITH=		rlm_python
 PYTHON_CONFIGURE_ON=		--with-rlm-python-lib-dir=${PYTHON_LIBDIR} \
 				--with-rlm-python-include-dir=${PYTHON_INCLUDEDIR}
-PYTHON_VARS=			USES+=python USES+=gettext-runtime \
-				SHEBANG_FILES+=src/modules/rlm_python/*.py
+PYTHON_USES=			python gettext-runtime
+PYTHON_VARS=			SHEBANG_FILES+=src/modules/rlm_python/*.py
 REDIS_CONFIGURE_WITH=		rlm_redis rlm_rediswho
 REDIS_LIB_DEPENDS=		libhiredis.so:databases/hiredis
 REST_CONFIGURE_WITH=		rlm_rest
@@ -109,7 +110,7 @@ REST_LIB_DEPENDS=		libcurl.so:ftp/curl \
 				libjson-c.so:devel/json-c
 RUBY_CONFIGURE_WITH=		rlm_ruby
 RUBY_USE=			RUBY
-RUBY_VARS=			IGNORE+=with ruby support leaks memory, breaks signal handling.  Please disable RUBY support
+RUBY_IGNORE=			with ruby support leaks memory, breaks signal handling.  Please disable RUBY support
 SQLITE3_CONFIGURE_WITH=		rlm_sql_sqlite
 SQLITE3_LIB_DEPENDS=		libsqlite3.so:databases/sqlite3
 UDPFROMTO_CONFIGURE_OFF=	--without-udpfromto
