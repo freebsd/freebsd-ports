@@ -39,6 +39,7 @@
     SUBDIR += crf++
     SUBDIR += dcl
     SUBDIR += devisor
+    SUBDIR += dkh
     SUBDIR += dlpoly-classic
     SUBDIR += ecs
     SUBDIR += epte
