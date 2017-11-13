@@ -3,6 +3,7 @@
 
 PORTNAME=	newsboat
 PORTVERSION=	2.10.1
+DISTVERSIONPREFIX=	r
 CATEGORIES=	www
 
 MAINTAINER=	mt@markoturk.info
@@ -20,10 +21,9 @@ OPTIONS_DEFAULT=PODCAST
 OPTIONS_SUB=	yes
 PODCAST_DESC=	Podcast client (podbeuter)
 
-USE_GITHUB=	yes
-DISTVERSIONPREFIX=	r
 USES=		compiler:c++11-lib gettext gmake iconv:translit ncurses perl5 \
 		pkgconfig sqlite shebangfix ssl
+USE_GITHUB=	yes
 USE_CXXSTD=	gnu++11
 USE_PERL5=	build
 SHEBANG_FILES=	txt2h.pl

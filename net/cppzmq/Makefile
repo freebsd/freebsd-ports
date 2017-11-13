@@ -3,6 +3,7 @@
 
 PORTNAME=	cppzmq
 PORTVERSION=	4.2.2
+DISTVERSIONPREFIX=	v
 CATEGORIES=	net
 
 MAINTAINER=	vd@FreeBSD.org
@@ -20,7 +21,6 @@ CONFLICTS_INSTALL=	libzmq2
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	zeromq
-GH_TAGNAME=	v${PORTVERSION}
 
 PLIST_FILES=	\
 	include/zmq.hpp \
