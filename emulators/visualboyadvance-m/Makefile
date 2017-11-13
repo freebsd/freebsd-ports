@@ -3,7 +3,7 @@
 
 PORTNAME=	visualboyadvance-m
 PORTVERSION=	2.0.0b2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	emulators
 
 MAINTAINER=	root@cooltrainer.org
@@ -81,7 +81,7 @@ LIRC_CMAKE_BOOL=	ENABLE_LIRC
 
 post-patch:
 	@${REINPLACE_CMD} -e '/SET.*LIRC_CLIENT_LIBRARY/ s|lirc_client|${LOCALBASE}/lib/lib&.so|; \
-       		s|share/man|man|' ${WRKSRC}/CMakeLists.txt
+		s|share/man|man|' ${WRKSRC}/CMakeLists.txt
 
 maint-gen-distfile:
 	@if [ -f ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} ]; then \

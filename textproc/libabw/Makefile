@@ -9,7 +9,7 @@ MASTER_SITES=	LODEV/${PORTNAME}
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Library providing ability to interpret Abiword documents
 
-LICENSE=	MPL
+LICENSE=	MPL20
 
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/algorithm/string.hpp:devel/boost-libs
 LIB_DEPENDS=	librevenge-0.0.so:textproc/librevenge

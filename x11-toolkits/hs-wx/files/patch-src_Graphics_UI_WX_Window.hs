@@ -1,8 +1,8 @@
---- src/Graphics/UI/WX/Window.hs.orig	2014-08-11 14:58:24 UTC
+--- src/Graphics/UI/WX/Window.hs.orig	2017-11-09 22:05:23 UTC
 +++ src/Graphics/UI/WX/Window.hs
 @@ -1,4 +1,4 @@
--{-# LANGUAGE TypeSynonymInstances, FlexibleInstances #-}
+-{-# LANGUAGE FlexibleContexts      #-}
 +{-# LANGUAGE TypeSynonymInstances, FlexibleInstances, FlexibleContexts #-}
+ {-# LANGUAGE FlexibleInstances     #-}
+ {-# LANGUAGE TypeSynonymInstances  #-}
  --------------------------------------------------------------------------------
- {-|	Module      :  Window
- 	Copyright   :  (c) Daan Leijen 2003

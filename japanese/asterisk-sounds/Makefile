@@ -14,6 +14,8 @@ DISTNAME=	asterisk-sound-jp_${PORTVERSION:S|.||}_pre
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Japanese sound files for Asterisk
 
+RUN_DEPENDS=	asterisk:net/asterisk13
+
 NO_BUILD=	yes
 ASTERISKDIR=	${PREFIX}/share/asterisk/sounds
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}${PKGNAMESUFFIX}
@@ -21,16 +23,6 @@ SUB_FILES=	pkg-message
 SUB_LIST=	PORTSDIR=${PORTSDIR}
 
 OPTIONS_DEFINE=	DOCS
-
-OPTIONS_SINGLE=		ASTVER
-OPTIONS_SINGLE_ASTVER=	ASTERISK11 ASTERISK13
-OPTIONS_DEFAULT=	ASTERISK13
-
-ASTERISK11_DESC=	Depend on Asterisk 11
-ASTERISK13_DESC=	Depend on Asterisk 13
-
-ASTERISK11_RUN_DEPENDS=	asterisk:net/asterisk11
-ASTERISK13_RUN_DEPENDS=	asterisk:net/asterisk13
 
 do-install:
 	@-${MKDIR} ${STAGEDIR}${ASTERISKDIR}/ja

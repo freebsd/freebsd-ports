@@ -90,9 +90,9 @@ post-patch:
 		s|%%LOCALBASE%%|${LOCALBASE}|g' \
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|\.dist|\.sample|g' \
-	    	${WRKSRC}/config/Makefile.in
+		${WRKSRC}/config/Makefile.in
 #	@${REINPLACE_CMD} -e 's|%%PYTHONCMD%%|${PYTHONCMD}|' \
-#	    	${WRKSRC}/contrib/shell_utils/afpstats
+#		${WRKSRC}/contrib/shell_utils/afpstats
 
 post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/contrib/macusers/macusers \

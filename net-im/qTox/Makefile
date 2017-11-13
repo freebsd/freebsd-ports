@@ -2,15 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	qTox
-PORTVERSION=	1.11.0
-PORTREVISION=	2
 DISTVERSIONPREFIX=	v
+DISTVERSION=	1.12.1
+PORTREVISION=	1
 CATEGORIES=	net-im net-p2p
 
 MAINTAINER=	yuri@rawbw.com
 COMMENT=	Qt 5 based Tox client
 
 LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${LOCALBASE}/include/linux/videodev2.h:multimedia/v4l_compat
 LIB_DEPENDS=	libtoxcore.so:net-im/tox \
@@ -26,29 +27,32 @@ LIB_DEPENDS=	libtoxcore.so:net-im/tox \
 		libfreetype.so:print/freetype2 \
 		libfontconfig.so:x11-fonts/fontconfig
 
+OPTIONS_DEFINE=	PLATFORM_EXTENSIONS
+OPTIONS_DEFAULT=PLATFORM_EXTENSIONS
+PLATFORM_EXTENSIONS_DESC=	Enable platform specific extensions
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	qTox
-
-SUB_FILES=	pkg-message
+GH_TAGNAME=	cd8a7ad
 
 USES=		compiler:c++11-lib desktop-file-utils gettext openal:soft pkgconfig cmake
-USE_GNOME=	glib20 gtk20 cairo gdkpixbuf2
-USE_XORG=	x11 xscrnsaver
-USE_GL=		gl
-USE_QT5=	core gui network xml opengl sql sql-sqlite3_run widgets svg testlib \
-		concurrent buildtools_build linguisttools_build
-# bug#220813: qmake isn't needed, but the build fails without qmake_build
+USE_GNOME=	gtk20 cairo
+USE_QT5=	core gui network xml opengl sql sql-sqlite3_run widgets svg \
+		concurrent_build buildtools_build linguisttools_build testlib_build
+# bug#220813: qmake isn't needed, but build fails without qmake_build
 USE_QT5+=	qmake_build
 CMAKE_ARGS=	-DGIT_DESCRIBE:STRING=${FULLVERSION}
 INSTALLS_ICONS=	yes
-ICON_SIZES=	14x14 16x16 22x22 24x24 32x32 36x36 48x48 64x64 72x72 96x96 128x128 192x192 256x256 512x512
+
+PLATFORM_EXTENSIONS_CMAKE_OFF=	-DPLATFORM_EXTENSIONS:BOOL=OFF
+PLATFORM_EXTENSIONS_USE=	XORG=x11,xscrnsaver
 
 PLIST_FILES=	bin/qtox \
 		share/applications/qtox.desktop \
 		share/icons/hicolor/scalable/apps/qtox.svgz \
 		share/appdata/qTox.appdata.xml
-.for SZ in ${ICON_SIZES}
-PLIST_FILES+=	share/icons/hicolor/${SZ}/apps/qtox.png
+.for SZ in 14 16 22 24 32 36 48 64 72 96 128 192 256 512
+PLIST_FILES+=	share/icons/hicolor/${SZ}x${SZ}/apps/qtox.png
 .endfor
 
 .include <bsd.port.pre.mk>
@@ -72,17 +76,5 @@ pre-everything::
 pre-configure:
 	@${REINPLACE_CMD} '/Comment/s,=.*,=${COMMENT},' \
 		${WRKSRC}/qtox.desktop
-
-post-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/scalable/apps
-	@${GZIP_CMD} \
-		< ${STAGEDIR}${PREFIX}/share/icons/hicolor/scalable/apps/qtox.svg \
-		> ${STAGEDIR}${PREFIX}/share/icons/hicolor/scalable/apps/qtox.svgz
-	@${RM} ${STAGEDIR}${PREFIX}/share/icons/hicolor/scalable/apps/qtox.svg
-.for SZ in ${ICON_SIZES}
-	@${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/${SZ}/apps
-	${INSTALL_DATA} ${WRKSRC}/img/icons/${SZ}/qtox.png \
-		${STAGEDIR}${PREFIX}/share/icons/hicolor/${SZ}/apps/qtox.png
-.endfor
 
 .include <bsd.port.post.mk>

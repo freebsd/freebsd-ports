@@ -1,6 +1,6 @@
 # $FreeBSD$
 
-PORTNAME=       Cisco-CopyConfig
+PORTNAME=	Cisco-CopyConfig
 PORTVERSION=	1.4
 CATEGORIES=	net-mgmt perl5
 MASTER_SITES=	CPAN

@@ -6,6 +6,7 @@ bin/fdfs_delete_file
 bin/fdfs_download_file
 bin/fdfs_file_info
 bin/fdfs_monitor
+bin/fdfs_status
 bin/fdfs_storaged
 bin/fdfs_test
 bin/fdfs_test1

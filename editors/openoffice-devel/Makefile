@@ -3,7 +3,7 @@
 
 PORTNAME=	apache-openoffice
 PORTVERSION=	${AOOVERSION1}.${AOOVERSION2}.${SVNREVISION}
-#PORTREVISION=	1
+PORTREVISION=	1
 PORTEPOCH=	4
 CATEGORIES=	editors java
 MASTER_SITES=	https://dist.apache.org/repos/dist/dev/openoffice/${AOOVERSION}-${AOORC}-r${SVNREVISION}/source/ \
@@ -25,8 +25,8 @@ MAINTAINER=	office@FreeBSD.org
 #Frequent Patch submitters should (optionally) sign the Apache iCLA
 COMMENT=	Integrated wordprocessor/dbase/spreadsheet/drawing/chart/browser (developer version)
 
-LICENSE=		APACHE20 ADOBE BSD3CLAUSE BSD4CLAUSE BSL ICU MIT MPL11 \
-			PSFL TWAIN W3C
+LICENSE=		APACHE20 ADOBE BSD3CLAUSE BSD4CLAUSE BSL ICU MIT MPL10 \
+			MPL11 PSFL TWAIN W3C
 LICENSE_COMB=		multi
 LICENSE_NAME_ADOBE=	Adobe Systems Incorporated license
 LICENSE_NAME_ICU=	ICU License
@@ -39,6 +39,7 @@ LICENSE_FILE_BSD4CLAUSE=	${WRKSRC}/LICENSE_BSD4CLAUSE
 LICENSE_FILE_BSL=	${WRKSRC}/LICENSE_BSL
 LICENSE_FILE_ICU=	${WRKSRC}/LICENSE_ICU
 LICENSE_FILE_MIT=	${WRKSRC}/LICENSE_MIT
+LICENSE_FILE_MPL10=	${WRKSRC}/LICENSE_MPL10
 LICENSE_FILE_MPL11=	${WRKSRC}/LICENSE_MPL11
 LICENSE_FILE_PSFL=	${WRKSRC}/LICENSE_PSFL
 LICENSE_FILE_TWAIN=	${WRKSRC}/LICENSE_TWAIN
@@ -96,6 +97,8 @@ RUN_DEPENDS=								\
 		${LOCALBASE}/share/fonts/Caladea/Caladea-Bold.ttf:x11-fonts/crosextrafonts-caladea-ttf \
 		${LOCALBASE}/share/fonts/Carlito/Carlito-Bold.ttf:x11-fonts/crosextrafonts-carlito-ttf \
 		${LOCALBASE}/share/fonts/ChromeOS/Arimo-Bold.ttf:x11-fonts/croscorefonts-fonts-ttf
+
+CONFLICTS_INSTALL=	apache-openoffice-4*
 
 AOOVERSION1=	4
 AOOVERSION2=	2
@@ -263,6 +266,7 @@ SUB_LIST=	EXECBASE=${EXECBASE} AOOTAG=${AOOTAG} AOOUDIR=${AOOUDIR} \
 CONFIGURE_ARGS+=							\
 			--with-unix-wrapper=${EXECBASE}			\
 			--with-alloc=system				\
+			--with-ant-home=${LOCALBASE}/share/java/apache-ant \
 			--with-system-apache-commons=yes		\
 			--with-commons-lang-jar=${JAVALIBDIR}/commons-lang3.jar \
 			--with-system-apr				\
@@ -288,6 +292,7 @@ CONFIGURE_ARGS+=							\
 			--with-external-dict-dir=${LOCALBASE}/share/hunspell \
 			--with-system-hyphen				\
 			--with-external-hyph-dir=${LOCALBASE}/share/hyphen \
+			--with-jdk-home=${JAVA_HOME}			\
 			--with-system-jpeg				\
 			--with-junit=${JAVALIBDIR}/junit.jar		\
 			--with-system-libtextcat			\
@@ -362,18 +367,20 @@ post-extract:
 		-e d  ${WRKSRC}/LICENSE > ${LICENSE_FILE_BSL}
 	${SED}  -e '\|^For main/i18npool/source/breakiterator|,/^__/p'	\
 		-e d  ${WRKSRC}/LICENSE > ${LICENSE_FILE_ICU}
-	${SED}  -e '\|^For Multi-Dimensional Data|,/^__/p'	\
+	${SED}  -e '\|^For Multi-Dimensional Data|,/^__/p'		\
 		-e '\|^For XSLT MathML Library|,/^__/p'			\
 		-e d  ${WRKSRC}/LICENSE > ${LICENSE_FILE_MIT}
-	${SED}  -e '\|^For XMLSec Library|,/^__/p'	\
+	${SED}  -e '\|^For XMLSec Library|,/^__/p'			\
 		-e d  ${WRKSRC}/LICENSE_category_b >> ${LICENSE_FILE_MIT}
-	${SED}  -e '\|^For Graphite|,$$d'	\
+	${SED}  -e '\|^For Saxon|,/^__/p'				\
+		-e d ${WRKSRC}/LICENSE_category_b > ${LICENSE_FILE_MPL10}
+	${SED}  -e '\|^For Saxon|,$$d'					\
 		      ${WRKSRC}/LICENSE_category_b > ${LICENSE_FILE_MPL11}
 	${SED}  -e '\|^For main/filter/source/config/tools/merge/pyAltFCFGMerge|,/^__/p'	\
 		-e d  ${WRKSRC}/LICENSE > ${LICENSE_FILE_PSFL}
-	${SED}  -e '\|^For main/twain|,/^__/p'	\
+	${SED}  -e '\|^For main/twain|,/^__/p'				\
 		-e d  ${WRKSRC}/LICENSE > ${LICENSE_FILE_TWAIN}
-	${SED}  -e '\|^For main/MathMLDTD|,/^__/p'	\
+	${SED}  -e '\|^For main/MathMLDTD|,/^__/p'			\
 		-e d  ${WRKSRC}/LICENSE > ${LICENSE_FILE_W3C}
 
 post-patch:

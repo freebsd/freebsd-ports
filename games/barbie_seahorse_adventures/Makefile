@@ -21,7 +21,7 @@ WRKSRC=		${WRKDIR}/barbie-${DISTVERSION}
 
 USES=		dos2unix python:2 shebangfix tar:tgz
 SHEBANG_FILES=	run_game.py create-upload.py
-DOS2UNIX_GLOB= 	*.py
+DOS2UNIX_GLOB=	*.py
 NO_BUILD=	yes
 NO_ARCH=	yes
 

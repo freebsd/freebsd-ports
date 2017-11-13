@@ -13,6 +13,8 @@ COMMENT=	Cloud-native SQL database that survive disasters
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/src/github.com/cockroachdb/cockroach/LICENSE
 
+BROKEN=		fails to build with go 1.9
+
 BUILD_DEPENDS=	bash:shells/bash \
 		cmake:devel/cmake \
 		go:lang/go
@@ -28,7 +30,7 @@ GROUPS=		cockroach
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-DCMAKE_CXX_FLAGS=-DNDEBUG)|-DCMAKE_CXX_FLAGS=-DNDEBUG) -DFAIL_ON_WARNINGS=OFF|g' \
-	  	${WRKSRC}/src/github.com/cockroachdb/cockroach/build/common.mk
+		${WRKSRC}/src/github.com/cockroachdb/cockroach/build/common.mk
 
 do-build:
 	@${SETENV} -i PATH="${PATH}" \

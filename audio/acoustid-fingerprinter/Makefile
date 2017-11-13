@@ -2,7 +2,7 @@
 
 PORTNAME=	acoustid-fingerprinter
 PORTVERSION=	0.6
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	audio
 
 MAINTAINER=	jhale@FreeBSD.org

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	flang
-DISTVERSION=	4.0-20171019
+DISTVERSION=	5.0-20171019
 PORTREVISION=	1
 CATEGORIES=	devel
 
@@ -12,9 +12,9 @@ COMMENT=	Fortran compiler targeting LLVM
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-BUILD_DEPENDS=	llvm40>=0:devel/llvm40 \
+BUILD_DEPENDS=	llvm50>=0:devel/llvm50 \
 		flang-clang>=0:devel/flang-clang
-RUN_DEPENDS=	llvm40>=0:devel/llvm40 \
+RUN_DEPENDS=	llvm50>=0:devel/llvm50 \
 		flang-clang>=0:devel/flang-clang
 
 ONLY_FOR_ARCHS=	amd64
@@ -33,11 +33,11 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	flang-compiler
 GH_TAGNAME=	e68c31f
 
-CMAKE_ARGS+=	-DLLVM_CONFIG=${LOCALBASE}/bin/llvm-config40 \
+CMAKE_ARGS+=	-DLLVM_CONFIG=${LOCALBASE}/bin/llvm-config50 \
 		-DCMAKE_CXX_COMPILER=${LOCALBASE}flang/bin/clang++ \
 		-DCMAKE_C_COMPILER=${LOCALBASE}/flang/bin/clang \
 		-DCMAKE_Fortran_COMPILER=${LOCALBASE}/flang/bin/flang \
-		-DFLANG_LIBOMP=${LOCALBASE}/llvm40/lib/libomp.so
+		-DFLANG_LIBOMP=${LOCALBASE}/llvm50/lib/libomp.so
 
 CMAKE_INSTALL_PREFIX=	${PREFIX}/flang
 

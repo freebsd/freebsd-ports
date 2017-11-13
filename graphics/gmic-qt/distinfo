@@ -1,0 +1,9 @@
+TIMESTAMP = 1509037058
+SHA256 (KDE/gmic-qt/gmic_stdlib.h) = 127f10099f86ee97a87571c6f4372cc419171b3cb139396e1189739911fcb865
+SIZE (KDE/gmic-qt/gmic_stdlib.h) = 3041437
+SHA256 (KDE/gmic-qt/c-koi-gmic-qt-v.204_GH0.tar.gz) = cd4170adbe916802e8ced03b6e63dea5ba9bf26a1e29e01cebf07a4001d1a126
+SIZE (KDE/gmic-qt/c-koi-gmic-qt-v.204_GH0.tar.gz) = 313433
+SHA256 (KDE/gmic-qt/dtschump-gmic-v.204_GH0.tar.gz) = 2a99e457b764bc843aa4d67d22842e0af6567934604ba9c3e3cf9dd9bbe381b4
+SIZE (KDE/gmic-qt/dtschump-gmic-v.204_GH0.tar.gz) = 37274742
+SHA256 (KDE/gmic-qt/dtschump-cimg-v.204_GH0.tar.gz) = 1663e1710f50b412bcaeeaf59725723d042b63242eaee8503e5cd13e28976dd3
+SIZE (KDE/gmic-qt/dtschump-cimg-v.204_GH0.tar.gz) = 11028464

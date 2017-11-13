@@ -3,7 +3,7 @@
 
 PORTNAME=	libgcrypt
 PORTVERSION=	1.5.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	security linux
 
 MAINTAINER=	emulation@FreeBSD.org
@@ -14,7 +14,7 @@ CONFLICTS=	linux-c6-${PORTNAME}-[0-9]*
 LICENSE=	LGPL21+
 
 DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
-RPMVERSION=	13.el7_3.1
+RPMVERSION=	14.el7
 USES=		linux:c7
 USE_LDCONFIG=	yes
 USE_LINUX=	libgpg-error

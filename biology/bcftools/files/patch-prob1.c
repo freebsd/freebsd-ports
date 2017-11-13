@@ -1,4 +1,4 @@
---- prob1.c.orig	2015-12-15 21:42:34 UTC
+--- prob1.c.orig	2017-09-28 11:22:48 UTC
 +++ prob1.c
 @@ -33,6 +33,12 @@ THE SOFTWARE.  */
  #include <zlib.h>

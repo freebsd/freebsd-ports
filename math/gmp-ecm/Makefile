@@ -11,10 +11,12 @@ DISTNAME=	ecm-${PORTVERSION}
 MAINTAINER=	culot@FreeBSD.org
 COMMENT=	Elliptic Curve Method for Integer Factorization
 
-LIB_DEPENDS=	libgmp.so:math/gmp
-
-LICENSE=	GPLv2 LGPL21
+LICENSE=	GPLv2+ LGPL21+
 LICENSE_COMB=	multi
+LICENSE_FILE_GPLv2+ =	${WRKSRC}/COPYING
+LICENSE_FILE_LGPL21+ =	${WRKSRC}/COPYING.LIB
+
+LIB_DEPENDS=	libgmp.so:math/gmp
 
 CONFLICTS=	ecm-[0-9]*
 

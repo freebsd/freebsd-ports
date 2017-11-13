@@ -1,13 +1,12 @@
-# Created by: Yuri Victorovich <yuri@rawbw.com>
 # $FreeBSD$
 
 PORTNAME=	alglib
-PORTVERSION=	3.11.0
+DISTVERSION=	3.12.0
 CATEGORIES=	math science
 MASTER_SITES=	http://www.alglib.net/translator/re/
 EXTRACT_SUFX=	.cpp.gpl.zip
 
-MAINTAINER=	yuri@rawbw.com
+MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Numerical analysis and data processing library
 
 LICENSE=	GPLv3

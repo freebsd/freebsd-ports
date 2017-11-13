@@ -12,6 +12,7 @@ lib/libhistory.so.7
 lib/libreadline.a
 lib/libreadline.so
 lib/libreadline.so.7
+libdata/pkgconfig/readline.pc
 man/man3/history.3.gz
 man/man3/readline.3.gz
 %%DATADIR%%/excallback.c

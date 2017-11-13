@@ -28,9 +28,7 @@ T1LIB_LIB_DEPENDS=	libt1.so:devel/t1lib
 T1LIB_VARS=	FEATURES+=T1LIB
 NLS_USES=	gettext
 NLS_VARS=	FEATURES+=INT
-OPTIMIZED_CFLAGS_VARS= 	FEATURES+=OPT
-
-.include <bsd.port.options.mk>
+OPTIMIZED_CFLAGS_VARS=	FEATURES+=OPT
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/share/electric/lib/|${DATADIR}/lib/|; \

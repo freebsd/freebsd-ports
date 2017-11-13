@@ -2,7 +2,6 @@ etc/X11/xinit/xinput.d/im-cedilla.conf
 etc/gtk-2.0/im-multipress.conf
 usr/bin/gtk-query-immodules-2.0-32
 usr/bin/gtk-query-immodules-2.0-64
-usr/bin/gtk-update-icon-cache
 usr/bin/update-gtk-immodules
 usr/lib/girepository-1.0/Gdk-2.0.typelib
 usr/lib/girepository-1.0/GdkX11-2.0.typelib
@@ -27,9 +26,9 @@ usr/lib/gtk-2.0/modules/libgail.so
 usr/lib/libgailutil.so.18
 usr/lib/libgailutil.so.18.0.1
 usr/lib/libgdk-x11-2.0.so.0
-usr/lib/libgdk-x11-2.0.so.0.2400.28
+usr/lib/libgdk-x11-2.0.so.0.2400.31
 usr/lib/libgtk-x11-2.0.so.0
-usr/lib/libgtk-x11-2.0.so.0.2400.28
+usr/lib/libgtk-x11-2.0.so.0.2400.31
 usr/lib64/girepository-1.0/Gdk-2.0.typelib
 usr/lib64/girepository-1.0/GdkX11-2.0.typelib
 usr/lib64/girepository-1.0/Gtk-2.0.typelib
@@ -53,13 +52,13 @@ usr/lib64/gtk-2.0/modules/libgail.so
 usr/lib64/libgailutil.so.18
 usr/lib64/libgailutil.so.18.0.1
 usr/lib64/libgdk-x11-2.0.so.0
-usr/lib64/libgdk-x11-2.0.so.0.2400.28
+usr/lib64/libgdk-x11-2.0.so.0.2400.31
 usr/lib64/libgtk-x11-2.0.so.0
-usr/lib64/libgtk-x11-2.0.so.0.2400.28
+usr/lib64/libgtk-x11-2.0.so.0.2400.31
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
-%%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
+usr/share/licenses/gtk2-2.24.31/COPYING
 %%NLS%%usr/share/locale/af/LC_MESSAGES/gtk20.mo
 %%NLS%%usr/share/locale/am/LC_MESSAGES/gtk20.mo
 %%NLS%%usr/share/locale/ang/LC_MESSAGES/gtk20.mo
@@ -168,7 +167,6 @@ usr/lib64/libgtk-x11-2.0.so.0.2400.28
 usr/share/man/man1/gtk-query-immodules-2.0-32.1.gz
 usr/share/man/man1/gtk-query-immodules-2.0-64.1.gz
 usr/share/man/man1/gtk-query-immodules-2.0.1.gz
-usr/share/man/man1/gtk-update-icon-cache.1.gz
 usr/share/man/man1/update-gtk-immodules.1.gz
 usr/share/themes/Default/gtk-2.0-key/gtkrc
 usr/share/themes/Emacs/gtk-2.0-key/gtkrc
@@ -177,5 +175,6 @@ usr/share/themes/Raleigh/gtk-2.0/gtkrc
 @dir usr/lib/gtk-2.0/immodules
 @dir usr/lib64/gtk-2.0/2.10.0/filesystems
 @dir usr/lib64/gtk-2.0/immodules
+@dir usr/share/gtk-2.0
 @postexec %D/usr/bin/gtk-query-immodules-2.0-32 --update-cache
 @postexec %D/usr/bin/gtk-query-immodules-2.0-64 --update-cache

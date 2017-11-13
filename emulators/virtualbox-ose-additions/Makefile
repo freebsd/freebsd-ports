@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	virtualbox-ose
-PORTVERSION=	5.1.30
+PORTVERSION=	5.2.0
 CATEGORIES=	emulators
 MASTER_SITES=	http://download.virtualbox.org/virtualbox/${PORTVERSION}/
 PKGNAMESUFFIX?=	-additions
@@ -15,7 +15,8 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	yasm:devel/yasm \
-		kmk:devel/kBuild
+		kmk:devel/kBuild \
+		xsltproc:textproc/libxslt
 
 CPE_VENDOR=	oracle
 CPE_PRODUCT=	vm_virtualbox
@@ -23,7 +24,7 @@ CPE_PRODUCT=	vm_virtualbox
 PATCHDIR=	${.CURDIR}/../${PORTNAME}/files
 WRKSRC=		${WRKDIR}/VirtualBox-${PORTVERSION}
 USE_RC_SUBR=	vboxguest vboxservice
-USES=		compiler:features cpe iconv kmod python:build tar:bzip2
+USES=		compiler:c++11-lang cpe iconv kmod python:build tar:bzip2
 ONLY_FOR_ARCHS=	i386 amd64
 MAKE_JOBS_UNSAFE=	yes
 
@@ -142,15 +143,11 @@ post-patch:
 	    ${WRKSRC}/LocalConfig.kmk
 	@${ECHO} 'VBOX_WITH_X11_ADDITIONS = ${VBOX_WITH_X11}' >> \
 	    ${WRKSRC}/LocalConfig.kmk
+	@${ECHO} 'VBOX_GCC_std = -std=c++11' >> ${WRKSRC}/LocalConfig.kmk
 .if ${COMPILER_TYPE} == clang
 	@${REINPLACE_CMD} -e 's| -finline-limit=8000||' \
 	    -e 's| -fno-merge-constants||' \
 	    -e 's| -mpreferred-stack-boundary=2||' ${WRKSRC}/Config.kmk
-.if ${COMPILER_FEATURES:Mlibc++}
-	@${ECHO} 'VBOX_GCC_std = -std=c++11' >> ${WRKSRC}/LocalConfig.kmk
-.endif
-	@${ECHO} 'VBOX_GCC_Wno-unused-parameter = -Wno-unused-parameter' >> \
-	    ${WRKSRC}/LocalConfig.kmk
 .endif
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
 	    ${WRKSRC}/Config.kmk ${WRKSRC}/configure \

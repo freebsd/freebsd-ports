@@ -1,0 +1,10 @@
+mkdesktop is a Bourne script that helps to standardize the process of FreeBSD
+desktop installation as much as possible per user, with plenty of flexibility as
+well as modularity. By default, you get 5 distinct stages for defining your
+desktop environment. But you can always add/subtract/customize the stages as
+much as you wish. Once you start using mkdesktop, you will pretty soon love it -
+particularly its post-processor which automatically kicks in once the stages
+have been processed - it sets up emulation layers and configuration of system
+files, if the user so desires.
+
+WWW: https://github.com/bourne-again/mkdesktop

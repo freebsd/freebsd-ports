@@ -51,3 +51,5 @@
 %%PERL5_MAN3%%/Connector::Proxy::Proc::SafeExec.3.gz
 %%PERL5_MAN3%%/Connector::Proxy::SOAP::Lite.3.gz
 %%PERL5_MAN3%%/Connector::Wrapper.3.gz
+%%SITE_PERL%%/Connector/Tee.pm
+%%PERL5_MAN3%%/Connector::Tee.3.gz

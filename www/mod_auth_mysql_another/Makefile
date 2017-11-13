@@ -21,7 +21,7 @@ AP_FAST_BUILD=	yes
 AP_GENPLIST=	yes
 AP_INC=	${LOCALBASE}/include/mysql
 AP_LIB=	${LOCALBASE}/lib/mysql
-AP_EXTRAS=	-lmysqlclient -lz -lm
+AP_EXTRAS=	-lmysqlclient_r -lz -lm
 
 PORTDOCS=	CONFIGURE CHANGES
 

@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 BUILD_DEPENDS=	sie-nmsg>0:net/sie-nmsg
 LIB_DEPENDS=	libmtbl.so:devel/mtbl	\
 		libyajl.so:devel/yajl	\
-		libwdns.so:dns/wdns 	\
+		libwdns.so:dns/wdns	\
 		libnmsg.so:net/nmsg
 RUN_DEPENDS=	sie-nmsg>0:net/sie-nmsg
 

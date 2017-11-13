@@ -8,7 +8,7 @@ CATEGORIES=	sysutils
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Populate values from Consul into a process environment
 
-LICENSE=	MPL
+LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/go:lang/go

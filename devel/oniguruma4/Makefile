@@ -22,6 +22,9 @@ USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 DOCS=		HISTORY README doc/*
 
+DEPRECATED=	Upstream no longer maintained, superseded by devel/oniguruma6
+EXPIRATION_DATE=2017-11-12
+
 PKGNAMESUFFIX=	4
 
 OPTIONS_DEFINE=	DOCS EXAMPLES

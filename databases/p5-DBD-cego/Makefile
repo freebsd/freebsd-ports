@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	DBD-cego
-PORTVERSION=	1.3.0
-PORTREVISION=	1
+PORTVERSION=	1.4.0
 CATEGORIES=	databases perl5
 MASTER_SITES=	http://www.lemke-it.com/
 PKGNAMEPREFIX=	p5-
@@ -19,6 +18,7 @@ LIB_DEPENDS=	libcego.so:databases/cego
 USES=		gmake perl5
 USE_PERL5=	configure
 CC:=		${CXX}
+CONFIGURE_ARGS+=	--prefix=${PREFIX}
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/DBD/Cego/Cego.so

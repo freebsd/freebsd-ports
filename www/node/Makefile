@@ -1,8 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	node
-PORTVERSION=	8.6.0
+PORTVERSION=	9.1.0
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://nodejs.org/dist/v${PORTVERSION}/
 
@@ -42,7 +43,7 @@ USES=		compiler:c++11-lib gmake python:2,build pkgconfig \
 HAS_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
-CONFLICTS_INSTALL=	node[456]-[0-9]* node01[02]-[0-9]* node-devel-[0-9]* iojs-[0-9]*
+CONFLICTS_INSTALL=	node[4568]-[0-9]*
 
 ONLY_FOR_ARCHS=		aarch64 amd64 armv6 armv7 i386
 
@@ -89,14 +90,6 @@ CXXFLAGS+=	-D_GLIBCXX_USE_C99
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' \
 		${WRKSRC}/deps/v8/src/v8.gyp
-	# So many different ways to run python. Fix them all.
-	@${REINPLACE_CMD} -e 's|/usr/bin/env python|${PYTHON_CMD}|' \
-		${WRKSRC}/configure
-	@${FIND} ${WRKSRC} -type f -name '*.gyp*' -print0 \
-		| ${XARGS} -0 ${REINPLACE_CMD} \
-			-e "s|'python'|'${PYTHON_CMD}'|" \
-			-e 's|<!(python |<!(${PYTHON_CMD} |' \
-			-e 's|\&\& python |\&\& ${PYTHON_CMD} |'
 
 post-configure:
 	# Post-process Makefile and *.mk files created by node-gyp and remove

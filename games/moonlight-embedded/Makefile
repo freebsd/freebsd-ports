@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	moonlight-embedded
-PORTVERSION=	2.4.3
 DISTVERSIONPREFIX=	v
+DISTVERSION=	2.4.4
 CATEGORIES=	games
 
 MAINTAINER=	tobik@FreeBSD.org
@@ -46,7 +46,7 @@ post-patch:
 		${WRKSRC}/libgamestream/CMakeLists.txt
 	@${RM} ${WRKSRC}/libgamestream/discover.c
 	@${REINPLACE_CMD} -e 's@/etc/moonlight/moonlight.conf@${PREFIX}/etc/moonlight.conf@' \
-		-e 's@moonligt@moonlight@' \
+		-e 's@moonligt@moonlight@g' \
 		${WRKSRC}/docs/README.pod
 
 post-install:

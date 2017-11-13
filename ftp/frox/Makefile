@@ -41,8 +41,8 @@ PF_DESC=		Build with pf(4) support
 VIRUS_SCAN_DESC=	Run external virus scaner on each download
 HTTP_CACHE_DESC=	Enable use of external cache
 LOCAL_CACHE_DESC=	Enable use of local cache
-CCP_DESC=	 	Ftp-proxy style command control programs
-ROOT_RUN_DESC=	 	Allow frox running as root (not recomended)
+CCP_DESC=		Ftp-proxy style command control programs
+ROOT_RUN_DESC=		Allow frox running as root (not recomended)
 
 IPFILTER_CONFIGURE_ENABLE=	ipfilter
 PF_CPPFLAGS=			-DPF

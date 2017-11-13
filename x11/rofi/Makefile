@@ -11,7 +11,7 @@ COMMENT=	Window switcher, run dialog and dmenu replacement
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS= 	checkmk:devel/check \
+BUILD_DEPENDS=	checkmk:devel/check \
 		${LOCALBASE}/bin/flex:textproc/flex
 LIB_DEPENDS=	libstartup-notification-1.so:x11/startup-notification \
 		libxcb-ewmh.so:x11/xcb-util-wm \

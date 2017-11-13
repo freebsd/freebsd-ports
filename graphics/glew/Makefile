@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	zeising@FreeBSD.org
 COMMENT=	OpenGL Extension Wrangler Library
 
 LICENSE=	MIT BSD3CLAUSE

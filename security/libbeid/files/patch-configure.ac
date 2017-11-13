@@ -1,23 +1,15 @@
---- configure.ac.orig	2017-05-10 13:28:54 UTC
+--- configure.ac.orig	2017-10-27 12:42:43 UTC
 +++ configure.ac
-@@ -1,6 +1,6 @@
- AC_PREREQ([2.61])
- AC_INIT([eid-mw],
--  m4_esyscmd_s(scripts/build-aux/genver.sh),
-+  [4.2.8-release],
-   [servicedesk@fedict.be],,
-   [http://eid.belgium.be])
- 
-@@ -64,8 +64,6 @@ then
- 	AC_MSG_ERROR([At least one version of GTK is required.])
+@@ -70,8 +70,6 @@ fi
+ AM_CONDITIONAL(GTK, [test "$have_gtk" != "no"])
+ if test "$have_gtk" != "no"
+ then
+-	PKG_CHECK_MODULES([XML2], [libxml-2.0])
+-	PKG_CHECK_MODULES([libproxy], [libproxy-1.0])
  fi
  
--PKG_CHECK_MODULES([XML2], [libxml-2.0])
--PKG_CHECK_MODULES([libproxy], [libproxy-1.0])
- 
  ###########################################################################
- ####### read user-specific requests from --enable directives         ######
-@@ -105,18 +103,6 @@ AC_FUNC_MALLOC
+@@ -119,18 +117,6 @@ AC_FUNC_MALLOC
  AC_FUNC_REALLOC
  AC_CHECK_FUNCS([gethostbyname socket strerror ftime memchr memset mkdir select strchr strdup strerror strncasecmp strrchr strstr strtol strtoul vasprintf])
  
@@ -36,9 +28,9 @@
  MAINVERSION=$(echo $PACKAGE_VERSION|sed -e 's/-.*$//')
  AC_DEFINE_UNQUOTED([MAINVERSION], $MAINVERSION, [do not change this])
  AC_SUBST(MAINVERSION)
-@@ -159,16 +145,6 @@ AC_CONFIG_FILES([Makefile
- 		 cardcomm/pkcs11/src/Makefile
+@@ -174,16 +160,6 @@ AC_CONFIG_FILES([Makefile
  		 cardcomm/pkcs11/src/libbeidpkcs11.pc
+ 		 cardcomm/pkcs11/src/beidpkcs11.json
  		 cardcomm/pkcs11/src/dialogs/dialogsgtk/po/Makefile.in
 -		 doc/sdk/include/rsaref220/Makefile
 -		 tests/unit/Makefile

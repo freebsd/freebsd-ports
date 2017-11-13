@@ -1,0 +1,15 @@
+IQ-TREE is efficient and versatile phylogenomic software, created as the
+successor of IQPNNI and TREE-PUZZLE (thus the name IQ-TREE).  Development was
+motivated by the rapid accumulation of phylogenomic data, leading to a need for
+efficient phylogenomic software that can handle a large amount of data and
+provide more complex models of sequence evolution. To this end, IQ-TREE can
+utilize multicore computers and distributed parallel computing to speed up the
+analysis. IQ-TREE automatically performs checkpointing to resume an interrupted
+analysis.
+
+As input IQ-TREE accepts all common sequence alignment formats including PHYLIP,
+FASTA, Nexus, Clustal and MSF. As output IQ-TREE will write a self-readable
+report file (name suffix .iqtree), a NEWICK tree file (.treefile) which can be
+visualized by tree viewer programs such as FigTree, Dendroscope or iTOL.
+
+WWW: http://www.iqtree.org/

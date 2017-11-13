@@ -32,7 +32,7 @@ DOCS_VARS=	DOCSDIR=${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME} \
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|$$(command \\which python)|${PYTHON_CMD}|1' \
-	       	${WRKSRC}/${PORTNAME}.sh
+		${WRKSRC}/${PORTNAME}.sh
 
 post-patch-DOCS-on:
 	@${REINPLACE_CMD} -e 's|python setup.py|${PYTHON_CMD} setup.py|' \

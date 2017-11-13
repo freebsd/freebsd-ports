@@ -177,6 +177,7 @@
     SUBDIR += telldus-core
     SUBDIR += thebridge
     SUBDIR += tilp2
+    SUBDIR += tio
     SUBDIR += tits
     SUBDIR += tkhylafax
     SUBDIR += tkscanfax

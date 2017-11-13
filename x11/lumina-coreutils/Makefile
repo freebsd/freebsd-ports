@@ -17,7 +17,7 @@ CONFLICTS_INSTALL=	lumina-1.2.*
 
 OPTIONS_DEFINE=	I18N
 OPTIONS_DEFAULT=	I18N
-I18N_DESC= Install localization files
+I18N_DESC=	Install localization files
 
 .include <bsd.port.options.mk>
 
@@ -34,8 +34,8 @@ GH_TAGNAME=	df0a6abc4622e4527fb8ef6f618485bb4fdc4cb1
 WRKSRC_SUBDIR=	src-qt5/core-utils
 
 .if${PORT_OPTIONS:MI18N}
-USE_QT5+= linguist_build
-QMAKE_ARGS+=CONFIG+=WITH_I18N
+USE_QT5+=	linguist_build
+QMAKE_ARGS+=	CONFIG+=WITH_I18N
 .endif
 
 .include <bsd.port.mk>

@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	git-up
-PORTVERSION=	1.3.0
+DISTVERSION=	1.4.5
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,12 +11,14 @@ COMMENT=	Python implementation of 'git up'
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}GitPython>=0.3.6:devel/py-gitpython \
-	${PYTHON_PKGNAMEPREFIX}colorama>=0.3.2:devel/py-colorama \
-	${PYTHON_PKGNAMEPREFIX}termcolor>=1.1.0:devel/py-termcolor \
-	${PYTHON_PKGNAMEPREFIX}docopt>=0.6.1:devel/py-docopt
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}click>=6.0.0:devel/py-click \
+		${PYTHON_PKGNAMEPREFIX}colorama>=0.3.7:devel/py-colorama \
+		${PYTHON_PKGNAMEPREFIX}GitPython>=2.1.1:devel/py-gitpython \
+		${PYTHON_PKGNAMEPREFIX}six>=1.10.0:devel/py-six \
+		${PYTHON_PKGNAMEPREFIX}termcolor>=1.1.0:devel/py-termcolor
 
-USES=		python zip dos2unix
-USE_PYTHON=	autoplist distutils
+NO_ARCH=	yes
+USES=		dos2unix python zip
+USE_PYTHON=	autoplist concurrent distutils
 
 .include <bsd.port.mk>

@@ -9,7 +9,7 @@ MASTER_SITES=	BERLIOS
 MAINTAINER=	fbsd@opal.com
 COMMENT=	MPEG transport, program, and elementary stream tools
 
-LICENSE=	MPL
+LICENSE=	MPL11
 
 MAKE_JOBS_UNSAFE=	yes
 

@@ -18,8 +18,9 @@ ONLY_FOR_ARCHS=	i386 amd64
 
 USE_SDL=	mixer sdl
 USES=		gmake dos2unix
-DOS2UNIX_FILES=	${WRKSRC}/ImageLib/src/gif/gif.h \
-		${WRKSRC}/ImageLib/src/gif/gif.cpp ${WRKSRC}/BlockOut/*.cpp
+DOS2UNIX_FILES=	ImageLib/src/gif/gif.h \
+		ImageLib/src/gif/gif.cpp BlockOut/*.cpp \
+		ImageLib/src/png/hpng.c
 USE_GL=		gl glu
 
 WRKSRC=		${WRKDIR}/BL_SRC

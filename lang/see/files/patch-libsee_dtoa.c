@@ -1,6 +1,6 @@
---- libsee/dtoa.c.orig	2009-04-26 23:04:58.000000000 +0200
-+++ libsee/dtoa.c	2015-03-16 15:46:21.218950229 +0100
-@@ -252,6 +252,14 @@
+--- libsee/dtoa.c.orig	2009-04-26 21:04:58 UTC
++++ libsee/dtoa.c
+@@ -252,6 +252,14 @@ static double private_mem[PRIVATE_mem], 
  #include "math.h"
  #endif
  

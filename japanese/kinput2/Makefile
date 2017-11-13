@@ -23,7 +23,7 @@ OPTIONS_DEFAULT=CANNA FREEWNN           SJ3
 TCP_DESC=		TCP transport support (not needed for most cases)
 
 CANNA_DESC=		Canna support
-CANNA_LIB_DEPENDS= 	libcanna16.so:japanese/canna-lib
+CANNA_LIB_DEPENDS=	libcanna16.so:japanese/canna-lib
 CANNA_CONF=		'\#define UseCanna' \
 			CANNASRC=${LOCALBASE}/include \
 			CANNALIB="-L${LOCALBASE}/lib -lcanna16"

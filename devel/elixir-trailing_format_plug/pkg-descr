@@ -1,0 +1,4 @@
+An Elixir plug to support legacy APIs that use a rails-like trailing
+format.
+
+WWW: https://github.com/mschae/trailing_format_plug

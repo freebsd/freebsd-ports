@@ -92,6 +92,7 @@
     SUBDIR += gnustep-wrapper
     SUBDIR += go-for-it
     SUBDIR += gourmet
+    SUBDIR += gpicker
     SUBDIR += griffith
     SUBDIR += growl-for-linux
     SUBDIR += gruler

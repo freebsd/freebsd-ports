@@ -117,6 +117,7 @@ include/wine/windows/amvideo.idl
 %%STAGING%%include/wine/windows/apiset.h
 include/wine/windows/appcompatapi.h
 include/wine/windows/appmgmt.h
+include/wine/windows/appmodel.h
 include/wine/windows/asptlb.h
 include/wine/windows/asptlb.idl
 include/wine/windows/asynot.idl
@@ -1044,6 +1045,7 @@ lib32/wine/advpack.dll.so
 lib32/wine/amstream.dll.so
 lib32/wine/api-ms-win-appmodel-identity-l1-1-0.dll.so
 lib32/wine/api-ms-win-appmodel-runtime-l1-1-1.dll.so
+lib32/wine/api-ms-win-appmodel-runtime-l1-1-2.dll.so
 lib32/wine/api-ms-win-core-apiquery-l1-1-0.dll.so
 lib32/wine/api-ms-win-core-appcompat-l1-1-1.dll.so
 lib32/wine/api-ms-win-core-appinit-l1-1-0.dll.so
@@ -1071,6 +1073,7 @@ lib32/wine/api-ms-win-core-fibers-l1-1-1.dll.so
 lib32/wine/api-ms-win-core-file-l1-1-0.dll.so
 lib32/wine/api-ms-win-core-file-l1-2-0.dll.so
 lib32/wine/api-ms-win-core-file-l1-2-1.dll.so
+lib32/wine/api-ms-win-core-file-l1-2-2.dll.so
 lib32/wine/api-ms-win-core-file-l2-1-0.dll.so
 lib32/wine/api-ms-win-core-file-l2-1-1.dll.so
 lib32/wine/api-ms-win-core-file-l2-1-2.dll.so
@@ -1091,6 +1094,7 @@ lib32/wine/api-ms-win-core-kernel32-private-l1-1-1.dll.so
 lib32/wine/api-ms-win-core-libraryloader-l1-1-0.dll.so
 lib32/wine/api-ms-win-core-libraryloader-l1-1-1.dll.so
 lib32/wine/api-ms-win-core-libraryloader-l1-2-0.dll.so
+lib32/wine/api-ms-win-core-libraryloader-l1-2-1.dll.so
 lib32/wine/api-ms-win-core-libraryloader-l1-2-2.dll.so
 lib32/wine/api-ms-win-core-localization-l1-1-0.dll.so
 lib32/wine/api-ms-win-core-localization-l1-2-0.dll.so
@@ -1136,6 +1140,7 @@ lib32/wine/api-ms-win-core-string-l1-1-0.dll.so
 lib32/wine/api-ms-win-core-string-l2-1-0.dll.so
 lib32/wine/api-ms-win-core-string-obsolete-l1-1-0.dll.so
 lib32/wine/api-ms-win-core-stringansi-l1-1-0.dll.so
+lib32/wine/api-ms-win-core-synch-ansi-l1-1-0.dll.so
 lib32/wine/api-ms-win-core-synch-l1-1-0.dll.so
 lib32/wine/api-ms-win-core-synch-l1-2-0.dll.so
 lib32/wine/api-ms-win-core-synch-l1-2-1.dll.so
@@ -1232,6 +1237,7 @@ lib32/wine/api-ms-win-service-private-l1-1-1.dll.so
 lib32/wine/api-ms-win-service-winsvc-l1-1-0.dll.so
 lib32/wine/api-ms-win-service-winsvc-l1-2-0.dll.so
 %%STAGING%%lib32/wine/api-ms-win-shcore-obsolete-l1-1-0.dll.so
+lib32/wine/api-ms-win-shcore-scaling-l1-1-1.dll.so
 %%STAGING%%lib32/wine/api-ms-win-shcore-stream-l1-1-0.dll.so
 %%STAGING%%lib32/wine/api-ms-win-shcore-thread-l1-1-0.dll.so
 lib32/wine/api-ms-win-shell-shellcom-l1-1-0.dll.so
@@ -1439,6 +1445,7 @@ lib32/wine/fakedlls/advpack.dll
 lib32/wine/fakedlls/amstream.dll
 lib32/wine/fakedlls/api-ms-win-appmodel-identity-l1-1-0.dll
 lib32/wine/fakedlls/api-ms-win-appmodel-runtime-l1-1-1.dll
+lib32/wine/fakedlls/api-ms-win-appmodel-runtime-l1-1-2.dll
 lib32/wine/fakedlls/api-ms-win-core-apiquery-l1-1-0.dll
 lib32/wine/fakedlls/api-ms-win-core-appcompat-l1-1-1.dll
 lib32/wine/fakedlls/api-ms-win-core-appinit-l1-1-0.dll
@@ -1466,6 +1473,7 @@ lib32/wine/fakedlls/api-ms-win-core-fibers-l1-1-1.dll
 lib32/wine/fakedlls/api-ms-win-core-file-l1-1-0.dll
 lib32/wine/fakedlls/api-ms-win-core-file-l1-2-0.dll
 lib32/wine/fakedlls/api-ms-win-core-file-l1-2-1.dll
+lib32/wine/fakedlls/api-ms-win-core-file-l1-2-2.dll
 lib32/wine/fakedlls/api-ms-win-core-file-l2-1-0.dll
 lib32/wine/fakedlls/api-ms-win-core-file-l2-1-1.dll
 lib32/wine/fakedlls/api-ms-win-core-file-l2-1-2.dll
@@ -1486,6 +1494,7 @@ lib32/wine/fakedlls/api-ms-win-core-kernel32-private-l1-1-1.dll
 lib32/wine/fakedlls/api-ms-win-core-libraryloader-l1-1-0.dll
 lib32/wine/fakedlls/api-ms-win-core-libraryloader-l1-1-1.dll
 lib32/wine/fakedlls/api-ms-win-core-libraryloader-l1-2-0.dll
+lib32/wine/fakedlls/api-ms-win-core-libraryloader-l1-2-1.dll
 lib32/wine/fakedlls/api-ms-win-core-libraryloader-l1-2-2.dll
 lib32/wine/fakedlls/api-ms-win-core-localization-l1-1-0.dll
 lib32/wine/fakedlls/api-ms-win-core-localization-l1-2-0.dll
@@ -1531,6 +1540,7 @@ lib32/wine/fakedlls/api-ms-win-core-string-l1-1-0.dll
 lib32/wine/fakedlls/api-ms-win-core-string-l2-1-0.dll
 lib32/wine/fakedlls/api-ms-win-core-string-obsolete-l1-1-0.dll
 lib32/wine/fakedlls/api-ms-win-core-stringansi-l1-1-0.dll
+lib32/wine/fakedlls/api-ms-win-core-synch-ansi-l1-1-0.dll
 lib32/wine/fakedlls/api-ms-win-core-synch-l1-1-0.dll
 lib32/wine/fakedlls/api-ms-win-core-synch-l1-2-0.dll
 lib32/wine/fakedlls/api-ms-win-core-synch-l1-2-1.dll
@@ -1627,6 +1637,7 @@ lib32/wine/fakedlls/api-ms-win-service-private-l1-1-1.dll
 lib32/wine/fakedlls/api-ms-win-service-winsvc-l1-1-0.dll
 lib32/wine/fakedlls/api-ms-win-service-winsvc-l1-2-0.dll
 %%STAGING%%lib32/wine/fakedlls/api-ms-win-shcore-obsolete-l1-1-0.dll
+lib32/wine/fakedlls/api-ms-win-shcore-scaling-l1-1-1.dll
 %%STAGING%%lib32/wine/fakedlls/api-ms-win-shcore-stream-l1-1-0.dll
 %%STAGING%%lib32/wine/fakedlls/api-ms-win-shcore-thread-l1-1-0.dll
 lib32/wine/fakedlls/api-ms-win-shell-shellcom-l1-1-0.dll
@@ -1879,6 +1890,7 @@ lib32/wine/fakedlls/itss.dll
 lib32/wine/fakedlls/joy.cpl
 lib32/wine/fakedlls/jscript.dll
 lib32/wine/fakedlls/jsproxy.dll
+lib32/wine/fakedlls/kerberos.dll
 lib32/wine/fakedlls/kernel32.dll
 lib32/wine/fakedlls/kernelbase.dll
 lib32/wine/fakedlls/keyboard.drv16
@@ -2329,6 +2341,7 @@ lib32/wine/itss.dll.so
 lib32/wine/joy.cpl.so
 lib32/wine/jscript.dll.so
 lib32/wine/jsproxy.dll.so
+lib32/wine/kerberos.dll.so
 lib32/wine/kernel32.dll.so
 lib32/wine/kernelbase.dll.so
 lib32/wine/keyboard.drv16.so

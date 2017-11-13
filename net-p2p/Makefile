@@ -59,6 +59,7 @@
     SUBDIR += mldonkey
     SUBDIR += mldonkey-core
     SUBDIR += mldonkey-gui
+    SUBDIR += monero-cli
     SUBDIR += namecoin
     SUBDIR += namecoin-daemon
     SUBDIR += napshare

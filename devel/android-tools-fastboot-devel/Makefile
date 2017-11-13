@@ -14,6 +14,5 @@ CONFLICTS_INSTALL=	${PORTNAME}-[0-9]*
 
 MASTERDIR=	${.CURDIR}/../android-tools-fastboot
 DISTINFO_FILE=	${.CURDIR}/distinfo
-EXTRA_PATCHES=	${.CURDIR}/files/patch-*
 
 .include "${MASTERDIR}/Makefile"

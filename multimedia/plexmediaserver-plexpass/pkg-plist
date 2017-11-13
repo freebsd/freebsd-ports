@@ -1441,7 +1441,6 @@
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/desktop/common/img/queue/email-links.f1b12dd82ea85b39a4c0fa07dd6df095.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/desktop/common/img/vendor-logos/gracenote.c86b1d7624b5ae14ca7a30d73674a808.svg
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/desktop/common/img/vendor-logos/songkick.19411461aa7bffd06675aaa8a3d0a056.svg
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/desktop/common/mp3/null.2036f08ba858d37814b7f6982d26414a.mp3
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/favicon-mask.svg
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/favicon.ico
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/blank.png
@@ -1457,10 +1456,11 @@
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/desktop/ios/startup-iphone-portrait@2x.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/desktop/ios/startup-iphone5-portrait@2x.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/index.html
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/js/main-0-d7947b2fee1af32eaaf2-plex-3.20.8-3826ed9.js
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/js/vendors-1-3ac296738498f2e339a6-plex-3.20.8-3826ed9.js
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/main.8883144fb7acc2430ef50eda6c1a41c8.css
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/main.v3.3a6aa4986f36a5810792d74118deda14.css
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/js/chunk-0-8fc032113c54ddf80f37-plex-3.26.2-e7e458d.js
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/js/main-1-d4730b1c894bf61f8cd3-plex-3.26.2-e7e458d.js
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/js/vendors-2-4e27218c1da9925514ec-plex-3.26.2-e7e458d.js
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/main.b1a281d419806dd0a0f1b6db53c1be5d.css
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/main.v3.03b2a9f6cf98db8b55a42aeedf97b47a.css
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/setup.html
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/translations/af.json
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/translations/ar.json
@@ -2810,6 +2810,7 @@
 %%DATADIR%%/libboost_iostreams.so.1.59.0
 %%DATADIR%%/libboost_locale.so.1.59.0
 %%DATADIR%%/libboost_program_options.so.1.59.0
+%%DATADIR%%/libboost_random.so.1.59.0
 %%DATADIR%%/libboost_regex.so.1.59.0
 %%DATADIR%%/libboost_system.so.1.59.0
 %%DATADIR%%/libboost_thread.so.1.59.0

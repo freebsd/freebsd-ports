@@ -10,7 +10,7 @@ DISTFILES=	jxrlib_${PORTVERSION}.orig.tar.gz	\
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Library for JPEG XR, a.k.a. Windows MediaTM Photo
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 
 BROKEN_aarch64=		fails to link: cc: linker command failed with exit code 1 (use -v to see invocation)
 BROKEN_mips=		fails to compile: cc1: unrecognized command line option "-Wno-extra-tokens"

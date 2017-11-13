@@ -1,18 +1,18 @@
---- src/VBox/Devices/Audio/DrvHostALSAAudio.cpp.orig	2016-07-18 11:52:55 UTC
+--- src/VBox/Devices/Audio/DrvHostALSAAudio.cpp.orig	2017-10-18 07:09:04 UTC
 +++ src/VBox/Devices/Audio/DrvHostALSAAudio.cpp
-@@ -982,6 +982,7 @@ static DECLCALLBACK(int) drvHostALSAAudi
-                             continue;
-                         }
+@@ -1231,6 +1231,7 @@ static DECLCALLBACK(int) drvHostALSAAudioStreamPlay(PP
+                         continue;
+                     }
  
 +#if EPIPE != ESTRPIPE
-                         case -ESTRPIPE:
-                         {
-                             /* Stream was suspended and waiting for a recovery. */
-@@ -995,6 +996,7 @@ static DECLCALLBACK(int) drvHostALSAAudi
-                             LogFlowFunc(("Resumed suspended output stream\n"));
-                             continue;
-                         }
+                     case -ESTRPIPE:
+                     {
+                         /* Stream was suspended and waiting for a recovery. */
+@@ -1244,6 +1245,7 @@ static DECLCALLBACK(int) drvHostALSAAudioStreamPlay(PP
+                         LogFlowFunc(("Resumed suspended output stream\n"));
+                         continue;
+                     }
 +#endif
  
-                         default:
-                             LogFlowFunc(("Failed to write %RI32 output frames, rc=%Rrc\n",
+                     default:
+                         LogFlowFunc(("Failed to write %RU32 bytes, error unknown\n", cbToWrite));

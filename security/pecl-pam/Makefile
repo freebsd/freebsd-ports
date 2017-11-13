@@ -9,9 +9,9 @@ CATEGORIES=	security pear
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	PECL classes for PAM integration
 
-LICENSE= 	PHP202
+LICENSE=	PHP202
 
 USES=		php:pecl
-IGNORE_WITH_PHP=	70 71
+IGNORE_WITH_PHP=70 71
 
 .include <bsd.port.mk>

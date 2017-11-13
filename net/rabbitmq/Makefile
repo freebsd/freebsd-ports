@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rabbitmq
-PORTVERSION=	3.6.12
+PORTVERSION=	3.6.14
 CATEGORIES=	net
 MASTER_SITES=	http://www.rabbitmq.com/releases/rabbitmq-server/v${PORTVERSION}/
 DISTNAME=	${PORTNAME}-server-${PORTVERSION}
@@ -24,10 +24,11 @@ OPTIONS_DEFINE=	ADMIN
 OPTIONS_SUB=	yes
 
 ADMIN_DESC=	Install rabbitmqadmin script
-ADMIN_USES=	python:run
+ADMIN_USES=	python
+ADMIN_USES_OFF=	python:build
 
 ALL_TARGET=	all manpages
-USES=		cpe gmake python:build shebangfix tar:xz
+USES=		cpe gmake shebangfix tar:xz
 USE_RC_SUBR=	rabbitmq
 NO_ARCH=	yes
 

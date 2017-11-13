@@ -47,7 +47,7 @@ CONFIGURE_ARGS=	--with-pkgconfigdir=${PREFIX}/libdata/pkgconfig \
 		--enable-glupy \
 		--disable-georeplication \
 		ac_cv_lib_aio_io_setup=no ac_cv_func_fallocate=no \
-		ac_cv_func_setfsuid=no 	ac_cv_func_fdatasync=no \
+		ac_cv_func_setfsuid=no ac_cv_func_fdatasync=no \
 		ac_cv_func_llistxattr=no ac_cv_func_malloc_stats=no
 CPPFLAGS+=	-I"${LOCALBASE}/include"
 LDFLAGS+=	-L"${LOCALBASE}/lib" -largp

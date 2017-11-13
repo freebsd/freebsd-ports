@@ -49,5 +49,5 @@ lib/cmake/assimp-4.0/assimp-config-version.cmake
 lib/cmake/assimp-4.0/assimp-config.cmake
 lib/libassimp.so
 lib/libassimp.so.4
-lib/libassimp.so.4.0.0
+lib/libassimp.so.%%SHLIB_VER%%
 libdata/pkgconfig/assimp.pc

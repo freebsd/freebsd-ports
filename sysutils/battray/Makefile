@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	battray
-PORTVERSION=	2.1
+PORTVERSION=	2.3
 CATEGORIES=	sysutils python
 MASTER_SITES=	http://code.arp242.net/${BB_PROJECT}/get/${BB_COMMIT}.tar.gz?dummy=/
 DISTNAME=	${BB_ACCOUNT}-${BB_PROJECT}-${BB_COMMIT}

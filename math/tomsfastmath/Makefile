@@ -17,7 +17,6 @@ USES=		compiler:features gmake tar:bzip2
 USE_GITHUB=	yes
 GH_ACCOUNT=	libtom
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 MAKEFILE=	makefile
 ALL_TARGET=	default
 CFLAGS+=	-fPIC

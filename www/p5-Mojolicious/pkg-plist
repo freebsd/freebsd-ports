@@ -43,6 +43,7 @@ bin/morbo
 %%SITE_PERL%%/Mojo/Message/Response.pm
 %%SITE_PERL%%/Mojo/Parameters.pm
 %%SITE_PERL%%/Mojo/Path.pm
+%%SITE_PERL%%/Mojo/Promise.pm
 %%SITE_PERL%%/Mojo/Reactor.pm
 %%SITE_PERL%%/Mojo/Reactor/EV.pm
 %%SITE_PERL%%/Mojo/Reactor/Poll.pm
@@ -182,6 +183,7 @@ bin/morbo
 %%PERL5_MAN3%%/Mojo::Message::Response.3.gz
 %%PERL5_MAN3%%/Mojo::Parameters.3.gz
 %%PERL5_MAN3%%/Mojo::Path.3.gz
+%%PERL5_MAN3%%/Mojo::Promise.3.gz
 %%PERL5_MAN3%%/Mojo::Reactor.3.gz
 %%PERL5_MAN3%%/Mojo::Reactor::EV.3.gz
 %%PERL5_MAN3%%/Mojo::Reactor::Poll.3.gz

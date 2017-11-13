@@ -2,14 +2,14 @@
 
 PORTNAME=	libe-book
 PORTVERSION=	0.1.2
-PORTREVISION=	16
+PORTREVISION=	17
 CATEGORIES=	textproc
 MASTER_SITES=	SF/libebook/${PORTNAME}-${PORTVERSION}/
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Library for import of reflowable e-book formats
 
-LICENSE=	MPL
+LICENSE=	MPL20
 
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/algorithm/string.hpp:devel/boost-libs
 LIB_DEPENDS=	libicui18n.so:devel/icu \

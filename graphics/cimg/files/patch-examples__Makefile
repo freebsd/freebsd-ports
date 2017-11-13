@@ -1,4 +1,4 @@
---- examples/Makefile.orig	2017-08-19 21:27:17 UTC
+--- examples/Makefile.orig	2017-10-27 09:00:53 UTC
 +++ examples/Makefile
 @@ -84,7 +84,7 @@ CIMG_EXTRA_FILES = use_tiff_stream use_j
  # Set correct variables and paths
@@ -60,14 +60,18 @@
  
  # Flags to enable native support for MINC2 image files, using the MINC2 library.
  # ( http://en.wikibooks.org/wiki/MINC/Reference/MINC2.0_Users_Guide )
-@@ -211,14 +211,14 @@ CIMG_MINC2_LIBS = -lminc_io -lvolume_io2
+@@ -210,15 +210,15 @@ CIMG_MINC2_LIBS = -lminc_io -lvolume_io2
+ 
  # Flags to enable native support for EXR image files, using the OpenEXR library.
  # ( http://www.openexr.com/ )
- CIMG_OPENEXR_DEFINE = -Dcimg_use_openexr
+-CIMG_OPENEXR_DEFINE = -Dcimg_use_openexr
 -CIMG_OPENEXR_INCDIR = -I/usr/include/OpenEXR
-+CIMG_OPENEXR_INCDIR = -I$(LOCALBASE)/include/OpenEXR
- CIMG_OPENEXR_CFLAGS = $(CIMG_OPENEXR_DEFINE) $(CIMG_OPENEXR_INCDIR)
- CIMG_OPENEXR_LIBS = -lIlmImf -lHalf
+-CIMG_OPENEXR_CFLAGS = $(CIMG_OPENEXR_DEFINE) $(CIMG_OPENEXR_INCDIR)
+-CIMG_OPENEXR_LIBS = -lIlmImf -lHalf
++#CIMG_OPENEXR_DEFINE = -Dcimg_use_openexr
++#CIMG_OPENEXR_INCDIR = -I$(LOCALBASE)/include/OpenEXR
++#CIMG_OPENEXR_CFLAGS = $(CIMG_OPENEXR_DEFINE) $(CIMG_OPENEXR_INCDIR)
++#CIMG_OPENEXR_LIBS = -lIlmImf -lHalf
  
  # Flags to enable native support for various video files, using the FFMPEG library.
  # ( http://www.ffmpeg.org/ )

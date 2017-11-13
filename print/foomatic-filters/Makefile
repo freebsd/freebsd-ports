@@ -55,7 +55,7 @@ MPAGE_RUN_DEPENDS=		mpage:print/mpage
 post-patch:
 	@${REINPLACE_CMD} -e 's|/bin/bash|${SH}|g' ${WRKSRC}/foomaticrip.c
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
-		   	  ${WRKSRC}/foomaticrip.c
+			 ${WRKSRC}/foomaticrip.c
 	@${REINPLACE_CMD} -e 's|ln -sf $$(BINDIR)|ln -sf ../../../bin|g' \
 			  -e '/filter.conf/ s|if.*||' \
 			  ${WRKSRC}/Makefile.am

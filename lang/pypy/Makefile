@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME?=	pypy
-DISTVERSION?=	5.8.0	# Also update bsd.pypy.cffi.mk
+DISTVERSION?=	5.9.0	# Also update bsd.pypy.cffi.mk
 CATEGORIES=	lang python
 MASTER_SITES=	https://bitbucket.org/pypy/pypy/downloads/ http://buildbot.pypy.org/mirror/
 DISTNAME?=	${PORTNAME}2-v${PORTVERSION}-src
@@ -15,7 +15,8 @@ LICENSE_COMB=	multi
 LICENSE_FILE_MIT=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libexpat.so:textproc/expat2 \
-		libffi.so:devel/libffi
+		libffi.so:devel/libffi \
+		libunwind.so:devel/libunwind
 TEST_DEPENDS=	${LOCALBASE}/${PYPY_DIR}/lib_pypy/_gdbm_cffi.${PYPY_CFFI_VER}.so:databases/pypy-gdbm \
 		${LOCALBASE}/${PYPY_DIR}/lib_pypy/_sqlite3_cffi.${PYPY_CFFI_VER}.so:databases/pypy-sqlite3 \
 		${LOCALBASE}/${PYPY_DIR}/lib_pypy/_tkinter/tklib_cffi.${PYPY_CFFI_VER}.so:x11-toolkits/pypy-tkinter
@@ -104,12 +105,9 @@ PLIST=		${.CURDIR}/pkg-plist
 .include "${MASTERDIR}/bsd.pypy.mk"
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "i386" || ${ARCH} == "armv6"
-PYPY_BITS=	32
-.elif ${ARCH} == "amd64" || ${ARCH} == "powerpc64"
-PYPY_BITS=	64
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1100000
+PYPY_ARGS=	--withoutmod-_vmprof
 .endif
-PLIST_SUB+=	PYPY_BITS="${PYPY_BITS}"
 
 post-extract:
 	${FIND} ${WRKSRC} -name '*.swn' -delete
@@ -120,7 +118,7 @@ pre-build:
 		${MKDIR} ${WRKDIR}/build; \
 		(cd ${WRKSRC}/pypy/goal; \
 			${SETENV} ${MAKE_ENV} TMPDIR=${WRKDIR}/build \
-			${PYTHON_CMD} ../../rpython/bin/rpython --source -Ojit targetpypystandalone.py); \
+			${PYTHON_CMD} ../../rpython/bin/rpython --source -Ojit targetpypystandalone.py ${PYPY_ARGS}); \
 	fi
 
 post-build:

@@ -25,7 +25,6 @@ share/applications/robocodeTwinDuel.desktop
 %%DATADIR%%/javadoc/overview-summary.html
 %%DATADIR%%/javadoc/overview-tree.html
 %%DATADIR%%/javadoc/package-list
-%%DATADIR%%/javadoc/resources/inherit.gif
 %%DATADIR%%/javadoc/robocode/AdvancedRobot.html
 %%DATADIR%%/javadoc/robocode/BattleEndedEvent.html
 %%DATADIR%%/javadoc/robocode/BattleResults.html
@@ -155,6 +154,7 @@ share/applications/robocodeTwinDuel.desktop
 %%DATADIR%%/javadoc/robocode/util/package-frame.html
 %%DATADIR%%/javadoc/robocode/util/package-summary.html
 %%DATADIR%%/javadoc/robocode/util/package-tree.html
+%%DATADIR%%/javadoc/script.js
 %%DATADIR%%/javadoc/serialized-form.html
 %%DATADIR%%/javadoc/stylesheet.css
 %%DATADIR%%/libs/codesize-1.1.jar

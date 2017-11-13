@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	nimble
-PORTVERSION=	0.8.2
 DISTVERSIONPREFIX=	v
+DISTVERSION=	0.8.8
 CATEGORIES=	devel
 
 MAINTAINER=	ports@nicandneal.net

@@ -2,7 +2,7 @@
 
 PORTNAME=		fastd
 PORTVERSION=		18
-PORTREVISION=		1
+PORTREVISION=		2
 CATEGORIES=		security net
 MASTER_SITES=		https://git.universe-factory.net/fastd/snapshot/
 
@@ -11,6 +11,8 @@ COMMENT=		Fast and Secure Tunnelling Daemon
 
 LICENSE=		BSD2CLAUSE
 LICENSE_FILE=		${WRKSRC}/COPYRIGHT
+
+BROKEN=			fails to build
 
 LIB_DEPENDS=		libjson-c.so:devel/json-c       \
 			libsodium.so:security/libsodium \

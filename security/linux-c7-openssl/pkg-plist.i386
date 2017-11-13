@@ -1,11 +1,11 @@
 etc/pki/tls/openssl.cnf
-usr/lib/.libcrypto.so.1.0.1e.hmac
+usr/lib/.libcrypto.so.1.0.2k.hmac
 usr/lib/.libcrypto.so.10.hmac
-usr/lib/.libssl.so.1.0.1e.hmac
+usr/lib/.libssl.so.1.0.2k.hmac
 usr/lib/.libssl.so.10.hmac
-usr/lib/libcrypto.so.1.0.1e
+usr/lib/libcrypto.so.1.0.2k
 usr/lib/libcrypto.so.10
-usr/lib/libssl.so.1.0.1e
+usr/lib/libssl.so.1.0.2k
 usr/lib/libssl.so.10
 usr/lib/openssl/engines/lib4758cca.so
 usr/lib/openssl/engines/libaep.so
@@ -18,7 +18,7 @@ usr/lib/openssl/engines/libnuron.so
 usr/lib/openssl/engines/libpadlock.so
 usr/lib/openssl/engines/libsureware.so
 usr/lib/openssl/engines/libubsec.so
-%%PORTDOCS%%%%DOCSDIR%%/LICENSE
+usr/share/licenses/openssl-libs-1.0.2k/LICENSE
 @dir etc/pki/tls/certs
 @dir etc/pki/tls/misc
 @dir etc/pki/tls/private

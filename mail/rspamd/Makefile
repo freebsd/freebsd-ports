@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rspamd
-PORTVERSION=	1.6.4
+PORTVERSION=	1.6.5
 PORTREVISION=	1
 CATEGORIES=	mail
 
@@ -20,11 +20,13 @@ BUILD_DEPENDS=	ragel:devel/ragel
 
 CONFLICTS_INSTALL=	rspamd-devel
 
-OPTIONS_DEFINE=	GPERF HYPERSCAN GD CGP
+OPTIONS_DEFINE=		GPERF GD CGP
+OPTIONS_DEFINE_amd64=	HYPERSCAN
+
+CGP_DESC=		Install Communigate Pro(tm) helper
+GD_DESC=		Enable libgd support for images fuzzy hashes
 GPERF_DESC=		Google perf-tools profiling
 HYPERSCAN_DESC=		Use hyperscan optimizations (amd64 only)
-GD_DESC=		Enable libgd support for images fuzzy hashes
-CGP_DESC=		Install Communigate Pro(tm) helper
 
 USE_RC_SUBR=	rspamd
 
@@ -69,7 +71,6 @@ GH_ACCOUNT=	vstakhov
 .if ${PORT_OPTIONS:MHYPERSCAN}
  CMAKE_ARGS+=		-DENABLE_HYPERSCAN=ON
  LIB_DEPENDS+=		libhs.so:devel/hyperscan
- ONLY_FOR_ARCHS=	amd64
 .endif
 
 .if ${PORT_OPTIONS:MCGP}

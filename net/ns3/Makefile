@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	ns3
-PORTVERSION=	3.26
-PORTREVISION=	1
+PORTVERSION=	3.27
 CATEGORIES=	net
 MASTER_SITES=	https://www.nsnam.org/release/
 DISTNAME=	ns-allinone-${PORTVERSION}

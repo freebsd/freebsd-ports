@@ -2,7 +2,7 @@
 
 PORTNAME=	frodo
 PORTVERSION=	4.1b
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	emulators tk
 MASTER_SITES=	http://frodo.cebix.net/downloads/
 DISTNAME=	FrodoV4_1b.Src
@@ -10,16 +10,13 @@ DISTNAME=	FrodoV4_1b.Src
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Emulates a Commodore 64
 
-DEPRECATED=		Tcl/Tk 8.4 is no longer maintained, please use 8.5+
-EXPIRATION_DATE=	2017-11-20
-
-RUN_DEPENDS=	wish8.4:x11-toolkits/tk84
-
+USES=		shebangfix tk:run
 USE_XORG=	x11 xt xext sm ice
 ALL_TARGET=	Frodo
 INSTALL_WRKSRC=	${WRKDIR}/Frodo-4.1b
 WRKSRC=		${INSTALL_WRKSRC}/Src
 GNU_CONFIGURE=	yes
+SHEBANG_FILES=	../TkGui.tcl
 
 ROM=		1541 Basic Char Kernal
 
@@ -32,9 +29,9 @@ OPTIONS_DEFAULT=SDL
 USE_SDL=	sdl
 .endif
 
-post-patch:
-	${REINPLACE_CMD} -e "s|%%LOCALBASE%%|${LOCALBASE}|g" \
-		${INSTALL_WRKSRC}/TkGui.tcl
+pre-configure:
+	${REINPLACE_CMD} -e 's|wish|wish${TK_VER}|' \
+		${WRKSRC}/C64_x.i
 
 do-install:
 	${SED} -e 's=\$${PREFIX}=${PREFIX}=g' \

@@ -3,7 +3,7 @@
 
 PORTNAME=	bind
 PORTVERSION=	${ISCVERSION:S/-P/P/:S/b/.b/:S/a/.a/:S/rc/.rc/}
-PORTREVISION=	0
+PORTREVISION=	3
 CATEGORIES=	dns net ipv6
 MASTER_SITES=	ISC/bind9/${ISCVERSION}
 PKGNAMESUFFIX=	99
@@ -14,6 +14,9 @@ COMMENT=	BIND DNS suite with updated DNSSEC and DNS64
 
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
+
+DEPRECATED=	Going out of support, please migrate to dns/bind911
+EXPIRATION_DATE=	2018-06-30
 
 # ISC releases things like 9.8.0-P1, which our versioning doesn't like
 ISCVERSION=	9.9.11
@@ -48,7 +51,7 @@ MAKE_JOBS_UNSAFE=	yes
 PORTDOCS=	*
 
 OPTIONS_DEFAULT=	SSL THREADS SIGCHASE IDN GSSAPI_NONE RRL DLZ_FILESYSTEM \
-			RPZ_NSIP RPZ_NSDNAME
+			RPZ_NSIP RPZ_NSDNAME PYTHON
 OPTIONS_DEFINE=		SSL IDN LARGE_FILE FIXED_RRSET SIGCHASE \
 			IPV6 THREADS FILTER_AAAA GOST PYTHON START_LATE MINCACHE \
 			RPZ_NSIP RPZ_NSDNAME RRL DOCS NEWSTATS \
@@ -202,8 +205,8 @@ post-install:
 	${INSTALL_DATA} ${FILESDIR}/empty.db ${STAGEDIR}${ETCDIR}/master
 	${INSTALL_DATA} ${FILESDIR}/localhost-forward.db ${STAGEDIR}${ETCDIR}/master
 	${INSTALL_DATA} ${FILESDIR}/localhost-reverse.db ${STAGEDIR}${ETCDIR}/master
-	${INSTALL_DATA} ${FILESDIR}/BIND.chroot.dist ${STAGEDIR}${PREFIX}/etc/mtree
-	${INSTALL_DATA} ${FILESDIR}/BIND.chroot.local.dist ${STAGEDIR}${PREFIX}/etc/mtree
+	${INSTALL_DATA} ${FILESDIR}/BIND.chroot.dist ${STAGEDIR}${PREFIX}/etc/mtree/BIND.chroot.dist.sample
+	${INSTALL_DATA} ${FILESDIR}/BIND.chroot.local.dist ${STAGEDIR}${PREFIX}/etc/mtree/BIND.chroot.local.dist.sample
 	${INSTALL_DATA} ${WRKSRC}/bin/rndc/rndc.conf \
 		${STAGEDIR}${ETCDIR}/rndc.conf.sample
 

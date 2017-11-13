@@ -1,0 +1,10 @@
+Pwned Passwords are hundreds of millions of real world passwords exposed in 
+data breaches. This exposure makes them unsuitable for ongoing use as they
+are at much greater risk of being used to take over other accounts. 
+
+This script uses a downloaded copy of the pwned passwort hashes available
+from https://haveibeenpwned.com/Passwords/ to allow passwords to be locally
+checked, whether they are known to have been obtained in a data breach and
+therefore should not be used.
+
+WWW: https://haveibeenpwned.com/

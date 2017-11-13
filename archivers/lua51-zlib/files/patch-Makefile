@@ -1,4 +1,4 @@
---- Makefile.orig	2016-11-05 19:21:22 UTC
+--- Makefile.orig	2017-01-03 01:42:12 UTC
 +++ Makefile
 @@ -3,7 +3,7 @@
  LUAPATH  ?= /usr/share/lua/5.1
@@ -19,11 +19,11 @@
  
  BSD_CFLAGS  = -O2 -fPIC $(WARN) $(INCDIR) $(DEFS)
 -BSD_LDFLAGS = -O -shared -fPIC $(LIBDIR)
-+BSD_LDFLAGS = -O -fPIC -shared $(LUALIBDIR)
++BSD_LDFLAGS = -O2 -shared $(LUALIBDIR)
  
  LNX_CFLAGS  = -O2 -fPIC $(WARN) $(INCDIR) $(DEFS)
 -LNX_LDFLAGS = -O -shared -fPIC $(LIBDIR)
-+LNX_LDFLAGS = -O -shared -fPIC $(LUALIBDIR)
++LNX_LDFLAGS = -O2 -shared -fPIC $(LUALIBDIR)
  
  MAC_ENV     = env MACOSX_DEPLOYMENT_TARGET='$(MACVER)'
  MAC_CFLAGS  = -O2 -fPIC -fno-common $(WARN) $(INCDIR) $(DEFS)

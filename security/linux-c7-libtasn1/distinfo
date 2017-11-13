@@ -1,7 +1,7 @@
-TIMESTAMP = 1482091760
-SHA256 (centos/libtasn1-3.8-3.el7.i686.rpm) = 4655a3e6186f90c59fd31c4080c2980d5b8fcd15e8f89c88058b5cb70b743490
-SIZE (centos/libtasn1-3.8-3.el7.i686.rpm) = 327540
-SHA256 (centos/libtasn1-3.8-3.el7.x86_64.rpm) = 8013a465a9f83d7779d13bc1abe139996971a4aafcca8e7fb5e444cd5ed82a33
-SIZE (centos/libtasn1-3.8-3.el7.x86_64.rpm) = 327420
-SHA256 (centos/libtasn1-3.8-3.el7.src.rpm) = 9daf4c25efe50c05c7de55b2907f77e16571134cc5afd61ba14bdaba61c26222
-SIZE (centos/libtasn1-3.8-3.el7.src.rpm) = 1883831
+TIMESTAMP = 1507317043
+SHA256 (centos/libtasn1-4.10-1.el7.i686.rpm) = 5c358877cdeeead802e5baaf828d666b3aaac0fb491c94f1b4967c57b9ca81f0
+SIZE (centos/libtasn1-4.10-1.el7.i686.rpm) = 328116
+SHA256 (centos/libtasn1-4.10-1.el7.x86_64.rpm) = 1eaec9f67f2e84e097979010b7ba623b8b309c6b54d14639b98abaeceb50f6bd
+SIZE (centos/libtasn1-4.10-1.el7.x86_64.rpm) = 328028
+SHA256 (centos/libtasn1-4.10-1.el7.src.rpm) = 61872de66392b69e32fdd55388399ea0eed5162376f5be468dd348c070c2bf20
+SIZE (centos/libtasn1-4.10-1.el7.src.rpm) = 1900605

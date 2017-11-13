@@ -19,6 +19,7 @@
 %%SITE_ARCH%%/Unicode/Collate/Locale/da.pl
 %%SITE_ARCH%%/Unicode/Collate/Locale/de_at_ph.pl
 %%SITE_ARCH%%/Unicode/Collate/Locale/de_phone.pl
+%%SITE_ARCH%%/Unicode/Collate/Locale/dsb.pl
 %%SITE_ARCH%%/Unicode/Collate/Locale/ee.pl
 %%SITE_ARCH%%/Unicode/Collate/Locale/eo.pl
 %%SITE_ARCH%%/Unicode/Collate/Locale/es.pl
@@ -46,6 +47,7 @@
 %%SITE_ARCH%%/Unicode/Collate/Locale/kn.pl
 %%SITE_ARCH%%/Unicode/Collate/Locale/ko.pl
 %%SITE_ARCH%%/Unicode/Collate/Locale/kok.pl
+%%SITE_ARCH%%/Unicode/Collate/Locale/lkt.pl
 %%SITE_ARCH%%/Unicode/Collate/Locale/ln.pl
 %%SITE_ARCH%%/Unicode/Collate/Locale/lt.pl
 %%SITE_ARCH%%/Unicode/Collate/Locale/lv.pl

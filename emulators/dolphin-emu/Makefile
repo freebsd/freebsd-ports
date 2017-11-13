@@ -3,7 +3,7 @@
 
 PORTNAME=	dolphin-emu
 PORTVERSION=	5.0
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	emulators
 
 MAINTAINER=	martymac@FreeBSD.org
@@ -22,12 +22,12 @@ LIB_DEPENDS=	libpulse.so:audio/pulseaudio \
 		libswscale.so:multimedia/ffmpeg \
 		libavutil.so:multimedia/ffmpeg \
 		libportaudio.so:audio/portaudio \
- 		liblzo2.so:archivers/lzo2 \
- 		libpng.so:graphics/png \
- 		libSoundTouch.so:audio/soundtouch \
- 		libsfml-system.so:devel/sfml \
+		liblzo2.so:archivers/lzo2 \
+		libpng.so:graphics/png \
+		libSoundTouch.so:audio/soundtouch \
+		libsfml-system.so:devel/sfml \
 		libminiupnpc.so:net/miniupnpc \
- 		libmbedtls.so:security/mbedtls \
+		libmbedtls.so:security/mbedtls \
 		libcurl.so:ftp/curl \
 		libgtest.so:devel/googletest
 

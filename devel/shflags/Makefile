@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	shflags
-PORTVERSION=	1.2.1
+PORTVERSION=	1.2.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
@@ -21,6 +21,6 @@ NO_BUILD=	yes
 PLIST_FILES=	lib/shflags
 
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/src/shflags ${STAGEDIR}${PREFIX}/lib
+	${INSTALL_DATA} ${WRKSRC}/shflags ${STAGEDIR}${PREFIX}/lib
 
 .include <bsd.port.mk>

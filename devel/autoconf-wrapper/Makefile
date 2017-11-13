@@ -9,12 +9,15 @@ DISTFILES=	# none
 MAINTAINER=	tijl@FreeBSD.org
 COMMENT?=	Wrapper script for GNU autoconf
 
+LICENSE=	BSD2CLAUSE
+
 WRKSRC=		${WRKDIR}
 NO_BUILD=	YES
 
 TOOL?=		AUTOCONF
 WRAPPED_TOOLS?=	autoconf autoheader autom4te autoreconf autoscan \
 		autoupdate ifnames
+
 .include <bsd.port.pre.mk>
 
 TOOLS_CASE!=	${ECHO_CMD} ${WRAPPED_TOOLS} | ${TR} ' ' '|'
@@ -31,9 +34,9 @@ do-configure:
 	    <${FILESDIR}/autotools-wrapper.sh >${WRKDIR}/${PORTNAME}.sh
 
 do-install:
-	@${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}.sh ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}.sh ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 .for tool in ${WRAPPED_TOOLS}
-	@${LN} -sf ${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${tool}
+	${LN} -sf ${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${tool}
 .endfor
 
 .include <bsd.port.post.mk>

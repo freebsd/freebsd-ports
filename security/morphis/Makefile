@@ -9,6 +9,8 @@ CATEGORIES=	security net-p2p
 MAINTAINER=	yuri@rawbw.com
 COMMENT=	Peer-to-peer high-performance distributed datastore and mail
 
+BROKEN=		Does not package
+
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 

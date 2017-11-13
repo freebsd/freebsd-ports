@@ -1,12 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	wsjtx
-PORTVERSION=	1.7.0
-PORTREVISION=	4
+PORTVERSION=	1.8.0
 CATEGORIES=	comms hamradio
-MASTER_SITES=	SF/wsjt/${PORTNAME}-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}
-DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
-
+MASTER_SITES=	SF/wsjt/${PORTNAME}-${PORTVERSION}${DISTVERSIONSUFFIX}
+DISTNAME=	${PORTNAME}-${PORTVERSION}
+EXTRACT_SUFX=	.tgz
 MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Weak signal ham radio communication package
 
@@ -23,7 +22,7 @@ LIB_DEPENDS=	libfftw3.so:math/fftw3 \
 
 MAKE_JOBS_UNSAFE=	yes
 USE_GL=		yes
-USE_QT5=	gui buildtools qmake_build widgets multimedia concurrent serialport
+USE_QT5=	gui buildtools qmake_build widgets multimedia concurrent printsupport serialport
 USES=		cmake compiler:c++11-lib dos2unix fortran pkgconfig tar:tgz
 CMAKE_ARGS+=	-DPORT_BUILDING::STRING="ON" \
 		-DCMAKE_PREFIX_PATH+=${LOCALBASE}/wsjtx/lib \

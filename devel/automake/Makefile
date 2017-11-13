@@ -9,6 +9,11 @@ MASTER_SITES=	GNU
 MAINTAINER=	tijl@FreeBSD.org
 COMMENT=	GNU Standards-compliant Makefile generator
 
+LICENSE=	GPLv2+ GFDL
+LICENSE_COMB=	multi
+LICENSE_FILE_GPLv2+ =	${WRKSRC}/COPYING
+LICENSE_FILE_GFDL=	${WRKSRC}/doc/fdl.texi
+
 BUILD_DEPENDS=	autoconf-2.69:devel/autoconf
 RUN_DEPENDS=	autoconf-2.69:devel/autoconf \
 		automake-wrapper:devel/automake-wrapper

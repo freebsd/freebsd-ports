@@ -3,7 +3,7 @@
 
 PORTNAME=	c6
 PORTVERSION=	${LINUX_DIST_VER}
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	emulators linux
 PKGNAMEPREFIX=	linux_base-
 BIN_DISTNAMES=	bash-4.1.2-48.el6 \
@@ -19,6 +19,7 @@ BIN_DISTNAMES=	bash-4.1.2-48.el6 \
 		keyutils-1.4-5.el6 \
 		less-436-13.el6 \
 		ncurses-5.7-4.20090207.el6 \
+		ncurses-base-5.7-4.20090207.el6 \
 		sed-4.2.1-10.el6 \
 		setserial-2.17-25.el6 \
 		which-2.19-6.el6 \

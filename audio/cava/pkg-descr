@@ -1,0 +1,7 @@
+C.A.V.A. is a bar spectrum audio visualizer for the terminal using
+ALSA, PulseAudio, sndio or fifo buffer for input.
+
+This program is not intended for scientific use.  It's written to look
+responsive and aesthetic when used to visualize music.
+
+WWW: https://karlstav.github.io/cava

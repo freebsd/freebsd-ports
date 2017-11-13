@@ -4,10 +4,7 @@
 PORTNAME=	cf
 PORTVERSION=	1.2.5
 CATEGORIES=	sysutils
-MASTER_SITES=	ftp://ee.lbl.gov/ \
-		http://www.tux.org//pub/net/ftp.ee.lbl.gov/ \
-		http://ftp.riken.go.jp/pub/net/lbl/ \
-		http://www.ftpdir.hu/ftp.ee.lbl.gov/
+MASTER_SITES=	ftp://ee.lbl.gov/
 PKGNAMEPREFIX=	lbl-
 
 MAINTAINER=	leres@FreeBSD.org

@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	madsonic
-PORTVERSION=	6.1.8700
-PORTREVISION=	2
+PORTVERSION=	6.2.9040
 CATEGORIES=	www java
-MASTER_SITES=	http://madsonic.org/download/6.1/
+MASTER_SITES=	http://madsonic.org/download/6.2/
 DISTFILES=	${DISTDATE}_${DISTNAME}-war-tomcat.zip \
 	${DISTDATE}_${DISTNAME}-war-jspc.zip
 
@@ -64,7 +63,7 @@ APE_RUN_DEPENDS=	mac:audio/mac
 .include <bsd.port.options.mk>
 
 NO_BUILD=	yes
-DISTDATE=	20160915
+DISTDATE=	20161208
 USE_JAVA=	yes
 JAVA_VERSION=	1.7+
 USES=	zip

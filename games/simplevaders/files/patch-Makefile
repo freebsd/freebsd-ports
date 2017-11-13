@@ -1,0 +1,25 @@
+--- Makefile.orig	2016-06-19 09:15:04 UTC
++++ Makefile
+@@ -1,6 +1,6 @@
+-CC=g++
+-CFLAGS=-c -Wall
+-LDFLAGS=-lGL -lGLU -lSDL -lSDL_ttf -lSDL_mixer -lSDL_image
++CXX?=g++
++CXXFLAGS+=-c -Wall
++LDFLAGS+=-lGL -lGLU -lSDL -lSDL_ttf -lSDL_mixer -lSDL_image
+ SOURCES=main.cpp
+ OBJECTS=$(SOURCES:.cpp=.o)
+ EXECUTABLE=simplevaders
+@@ -8,10 +8,10 @@ EXECUTABLE=simplevaders
+ all: $(SOURCES) $(EXECUTABLE)
+ 	
+ $(EXECUTABLE): $(OBJECTS)
+-	$(CC) $(LDFLAGS) $(OBJECTS) -o $@
++	$(CXX) $(LDFLAGS) $(OBJECTS) -o $@
+ 
+ .cpp.o:
+-	$(CC) $(CFLAGS) $< -o $@
++	$(CXX) $(CXXFLAGS) $< -o $@
+ 
+ clean:
+ 	rm *.o

@@ -8,7 +8,7 @@ CATEGORIES=	www
 MAINTAINER=	daniel@blodan.se
 COMMENT=	Proxy for using WebDriver clients with Gecko-based browsers
 
-LICENSE=	MPL
+LICENSE=	MPL20
 
 USES=		cargo
 USE_GITHUB=	yes

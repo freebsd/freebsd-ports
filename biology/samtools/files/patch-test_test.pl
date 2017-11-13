@@ -1,15 +1,6 @@
---- test/test.pl.orig	2015-12-22 22:43:15 UTC
+--- test/test.pl.orig	2017-10-18 06:08:39 UTC
 +++ test/test.pl
-@@ -136,7 +136,7 @@ sub _cmd
-     else
-     {
-         # child
--        exec('/bin/bash', '-o','pipefail','-c', "($cmd) 2> $err_filename") or error("Cannot execute the command [/bin/sh -o pipefail -c $cmd]: $!");
-+        exec('/usr/local/bin/bash', '-o','pipefail','-c', "($cmd) 2> $err_filename") or error("Cannot execute the command [/usr/local/bin/bash -o pipefail -c $cmd]: $!");
-     }
- }
- sub cmd
-@@ -560,7 +560,7 @@ sub test_usage
+@@ -636,7 +636,7 @@ sub test_usage
      my $command = $args{cmd};
      my $commandpath = $$opts{bin}."/".$command;
      my ($ret,$out,$err) = _cmd("$commandpath $args{redirection}");
@@ -18,7 +9,7 @@
  
      my @sections = ($err =~ m/(^[A-Za-z]+.*?)(?:(?=^[A-Za-z]+:)|\z)/msg);
  
-@@ -615,7 +615,7 @@ sub test_usage_subcommand
+@@ -694,7 +694,7 @@ sub test_usage_subcommand
      my $commandpath = $$opts{bin}."/".$command;
      my ($ret,$out,$err) = _cmd("$commandpath $subcommand $args{redirection}");
  

@@ -1,6 +1,6 @@
---- mmv.c	Thu Oct  5 10:36:36 2006
-+++ mmv.c	Thu Oct  5 10:38:31 2006
-@@ -73,7 +73,8 @@
+--- mmv.c.orig	2017-10-24 14:25:26 UTC
++++ mmv.c
+@@ -73,7 +73,8 @@ Use -- as the end of options.\n";
  %s [-m|x|r|c|o|a|l%s] [-h] [-d|p] [-g|t] [-v|n] [from to]\n\
  \n\
  Use #[l|u]N in the ``to'' pattern to get the [lowercase|uppercase of the]\n\
@@ -10,7 +10,7 @@
  \n\
  A ``from'' pattern containing wildcards should be quoted when given\n\
  on the command line. Also you may need to quote ``to'' pattern.\n\
-@@ -976,6 +977,9 @@
+@@ -977,6 +978,9 @@ static int parsepat()
  			lastname = p + 1;
  			break;
  		case '#':
@@ -20,7 +20,7 @@
  			c = *(++p);
  			if (c == 'l' || c == 'u') {
  #ifdef IS_MSDOS
-@@ -986,8 +990,8 @@
+@@ -987,8 +991,8 @@ static int parsepat()
  #endif
  			}
  			if (!isdigit(c)) {
@@ -31,7 +31,7 @@
  				return(-1);
  			}
  			for(x = 0; ;x *= 10) {
-@@ -998,8 +1002,8 @@
+@@ -999,8 +1003,8 @@ static int parsepat()
  				p++;
  			}
  			if (x < 1 || x > totwilds) {
@@ -42,7 +42,7 @@
  				return(-1);
  			}
  #ifdef IS_MSDOS
-@@ -1007,6 +1011,7 @@
+@@ -1008,6 +1012,7 @@ static int parsepat()
  				havedot = 1;
  #endif
  			break;
@@ -50,7 +50,19 @@
  		case ESC:
  			if ((c = *(++p)) == '\0') {
  				printf(TRAILESC, from, to, ESC);
-@@ -2029,7 +2034,7 @@
+@@ -1215,7 +1220,11 @@ static int keepmatch(ffrom, pathend, pk, needslash, di
+ 	getstat(pathbuf, ffrom);
+ 	if ((ffrom->fi_stflags & FI_ISDIR) ? !dirs : !fils)
+ #endif
++	{
++		if (verbose)
++			printf("ignoring directory %s\n", ffrom->fi_name);
+ 		return(0);
++	}
+ 
+ 	if (needslash) {
+ 		strcpy(pathend + *pk, SLASHSTR);
+@@ -2030,7 +2039,7 @@ static void makerep()
  	repbad = 0;
  	p = fullrep;
  	for (pat = to, l = 0; (c = *pat) != '\0'; pat++, l++) {
@@ -59,3 +71,12 @@
  			c = *(++pat);
  #ifndef IS_MSDOS
  			if (c == 'l') {
+@@ -2828,7 +2837,7 @@ static int getreply(m, failact)
+ 	static FILE *tty = NULL;
+ 	int c, r;
+ 
+-	fprintf(stderr, m);
++	fprintf(stderr, "%s", m);
+ 	if (tty == NULL && (tty = fopen(TTY, "r")) == NULL) {
+ 		fprintf(stderr, "Can not open %s to get reply.\n", TTY);
+ 		if (failact == -1)

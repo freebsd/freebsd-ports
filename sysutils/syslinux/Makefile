@@ -28,8 +28,8 @@ PLIST_FILES=	bin/syslinux \
 PORTDATA=	*
 
 pre-patch:
-	@(cd ${WRKSRC}; 						\
-	${FIND} . -type f -exec ${GREP} -le 'elf_i386' \{\} \; | 	\
+	@(cd ${WRKSRC};							\
+	${FIND} . -type f -exec ${GREP} -le 'elf_i386' \{\} \; |	\
 		${XARGS} ${REINPLACE_CMD} -e 's/elf_i386/elf_i386_fbsd/g;' )
 
 post-patch:

@@ -4,6 +4,7 @@
 PORTNAME=	guacamole-server
 PORTVERSION=	0.9.13
 DISTVERSIONSUFFIX=	-incubating
+PORTREVISION=	1
 CATEGORIES=	net
 
 MAINTAINER=	ultima@FreeBSD.org
