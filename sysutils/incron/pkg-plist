@@ -1,0 +1,9 @@
+bin/incrontab
+@sample etc/incron.conf.example
+sbin/incrond
+man/man1/incrontab.1.gz
+man/man5/incron.conf.5.gz
+man/man5/incrontab.5.gz
+man/man8/incrond.8.gz
+@dir etc/incron.d
+@dir /var/spool/incron

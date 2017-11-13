@@ -472,6 +472,7 @@
     SUBDIR += i7z
     SUBDIR += iat
     SUBDIR += immortal
+    SUBDIR += incron
     SUBDIR += inotify-tools
     SUBDIR += installwatch
     SUBDIR += intel-nvmupdate
