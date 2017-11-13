@@ -6,7 +6,7 @@ DISTVERSION=	2017-10-30
 CATEGORIES=	sysutils
 
 MAINTAINER=	mi@aldan.algebra.com
-COMMENT=	Handle finesystem-events the way cron handles time ones
+COMMENT=	Handle filesystem-events the way cron handles time ones
 
 LICENSE=	GPLv2 LGPL21 MIT
 LICENSE_COMB=	dual
