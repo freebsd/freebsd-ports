@@ -1,0 +1,14 @@
+diff -r 926deea0d506 -r fafb3a3083cb lib/util/gethostname.c
+--- lib/util/gethostname.c	Tue Oct 17 14:28:38 2017 -0600
++++ lib/util/gethostname.c	Fri Oct 20 07:37:40 2017 -0600
+@@ -42,7 +42,7 @@
+ 
+     hname = malloc(host_name_max + 1);
+     if (hname != NULL) {
+-	if (gethostname(hname, host_name_max + 1) == 0) {
++	if (gethostname(hname, host_name_max + 1) == 0 && *hname != '\0') {
+ 	    /* Old gethostname() may not NUL-terminate if there is no room. */
+ 	    hname[host_name_max] = '\0';
+ 	} else {
+
+
