@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	sh
-PORTVERSION=	1.11
+DISTVERSION=	1.12.14
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,6 +13,6 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 USES=		python
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	autoplist concurrent distutils
 
 .include <bsd.port.mk>
