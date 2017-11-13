@@ -14,8 +14,11 @@ share/trueos/handbook/_images/config5a.png
 share/trueos/handbook/_images/config6a.png
 share/trueos/handbook/_images/config7a.png
 share/trueos/handbook/_images/display3a.png
+share/trueos/handbook/_images/docchange1.png
+share/trueos/handbook/_images/docchange2.png
 share/trueos/handbook/_images/encrypt1.png
 share/trueos/handbook/_images/flash1.png
+share/trueos/handbook/_images/helprep1.png
 share/trueos/handbook/_images/install10b.png
 share/trueos/handbook/_images/install11d.png
 share/trueos/handbook/_images/install12c.png
@@ -74,9 +77,9 @@ share/trueos/handbook/_images/shrink1.png
 share/trueos/handbook/_images/shrink2.png
 share/trueos/handbook/_images/sound1.png
 share/trueos/handbook/_images/sound2.png
-share/trueos/handbook/_images/sound3.png
+share/trueos/handbook/_images/sound3a.png
 share/trueos/handbook/_images/tor1.png
-share/trueos/handbook/_images/translate1.png
+share/trueos/handbook/_images/translate1a.png
 share/trueos/handbook/_images/translate2.png
 share/trueos/handbook/_images/translate3.png
 share/trueos/handbook/_images/translate4.png
@@ -116,15 +119,16 @@ share/trueos/handbook/_static/comment-bright.png
 share/trueos/handbook/_static/comment-close.png
 share/trueos/handbook/_static/comment.png
 share/trueos/handbook/_static/css/badge_only.css
-share/trueos/handbook/_static/css/font_awesome.css
-share/trueos/handbook/_static/css/trueos_style.css
+share/trueos/handbook/_static/css/badge_only.css.map
+share/trueos/handbook/_static/css/theme.css
+share/trueos/handbook/_static/css/theme.css.map
 share/trueos/handbook/_static/doctools.js
 share/trueos/handbook/_static/down-pressed.png
 share/trueos/handbook/_static/down.png
 share/trueos/handbook/_static/file.png
 share/trueos/handbook/_static/fonts/FontAwesome.otf
 share/trueos/handbook/_static/fonts/Inconsolata-Bold.ttf
-share/trueos/handbook/_static/fonts/Inconsolata.ttf
+share/trueos/handbook/_static/fonts/Inconsolata-Regular.ttf
 share/trueos/handbook/_static/fonts/Lato-Bold.ttf
 share/trueos/handbook/_static/fonts/Lato-Regular.ttf
 share/trueos/handbook/_static/fonts/RobotoSlab-Bold.ttf
@@ -133,6 +137,7 @@ share/trueos/handbook/_static/fonts/fontawesome-webfont.eot
 share/trueos/handbook/_static/fonts/fontawesome-webfont.svg
 share/trueos/handbook/_static/fonts/fontawesome-webfont.ttf
 share/trueos/handbook/_static/fonts/fontawesome-webfont.woff
+share/trueos/handbook/_static/fonts/fontawesome-webfont.woff2
 share/trueos/handbook/_static/freenas2.png
 share/trueos/handbook/_static/information-icon.png
 share/trueos/handbook/_static/jquery-1.11.1.js
@@ -144,7 +149,6 @@ share/trueos/handbook/_static/newegg.jpg
 share/trueos/handbook/_static/plus.png
 share/trueos/handbook/_static/pygments.css
 share/trueos/handbook/_static/searchtools.js
-share/trueos/handbook/_static/sidebar.js
 share/trueos/handbook/_static/transparentfireball.png
 share/trueos/handbook/_static/trueos.ico
 share/trueos/handbook/_static/trueoslogo.png
@@ -163,6 +167,5 @@ share/trueos/handbook/postinstall.html
 share/trueos/handbook/preinstall.html
 share/trueos/handbook/search.html
 share/trueos/handbook/searchindex.js
-share/trueos/handbook/searchresults.html
 share/trueos/handbook/trueos.html
 share/trueos/handbook/using.html

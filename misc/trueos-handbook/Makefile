@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	trueos-handbook
-PORTVERSION=	201706210952
+PORTVERSION=	201711131332
 CATEGORIES=	misc
 
 MAINTAINER=	kmoore@FreeBSD.org
@@ -26,7 +26,7 @@ WRKSRC_SUBDIR=	trueos-handbook
 USE_GITHUB=	yes
 GH_ACCOUNT=	trueos
 GH_PROJECT=	trueos-docs
-GH_TAGNAME=	051e6ced447b48143a917c54af8714f197509433
+GH_TAGNAME=	0d3ad7b2a5fa24c27f4f8f6e360fd8629445ffe3
 
 .include <bsd.port.options.mk>
 

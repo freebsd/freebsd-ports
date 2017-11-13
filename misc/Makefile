@@ -37,8 +37,8 @@
     SUBDIR += chmlib
     SUBDIR += chord2html
     SUBDIR += cinnamon-translations
-    SUBDIR += clex
     SUBDIR += cldr-emoji-annotation
+    SUBDIR += clex
     SUBDIR += cloc
     SUBDIR += clpbar
     SUBDIR += cmatrix
@@ -370,7 +370,6 @@
     SUBDIR += proxyper
     SUBDIR += pspresent
     SUBDIR += ptsort
-    SUBDIR += py-YABT
     SUBDIR += py-cinder
     SUBDIR += py-crudini
     SUBDIR += py-fuzzy
