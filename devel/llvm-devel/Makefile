@@ -269,7 +269,7 @@ PLIST_SUB+=	OPENMP="@comment "
 .else
 .endif
 
-MAN1SRCS+=	bugpoint.1 llc.1 lli.1 llvm-ar.1 llvm-as.1 \
+MAN1SRCS+=	bugpoint.1 dsymutil.1 llc.1 lli.1 llvm-ar.1 llvm-as.1 \
 		llvm-bcanalyzer.1 llvm-build.1 llvm-config.1 llvm-cov.1 \
 		llvm-diff.1 llvm-dis.1 llvm-dwarfdump.1 \
 		llvm-extract.1 llvm-lib.1 llvm-link.1 llvm-nm.1 \
