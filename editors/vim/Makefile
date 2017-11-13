@@ -32,6 +32,7 @@ GNU_CONFIGURE=	yes
 MAKE_JOBS_UNSAFE=	yes
 PLIST_SUB=	VIM_VER=${VIM_VER}
 PORTDATA=	${VIM_VER}
+PORTSCOUT=	ignore:1
 REINPLACE_ARGS=	-i ''
 SHEBANG_FILES=	runtime/tools/demoserver.py runtime/tools/efm_perl.pl
 VIM_VER=	${PORTNAME}${PORTVERSION:R:S|.||g}
