@@ -1,0 +1,15 @@
+--- examples/Makefile.orig	2017-08-08 07:32:58 UTC
++++ examples/Makefile
+@@ -57,9 +57,10 @@ multiple_arithmetics_example:	$(LIBSMUMP
+ 
+ .SUFFIXES: .c .F .o
+ .F.o:
+-	$(FC) $(OPTF) $(INCS) -I. -I$(topdir)/include -c $*.F $(OUTF)$*.o
++	$(FC) $(OPTF) $(INCS) -I. -I$(topdir)/include -c $*.F $(OUTF) $*.o
++
+ .c.o:
+-	$(CC) $(OPTC) $(INCS) $(CDEFS) -I. -I$(topdir)/include -I$(topdir)/src -c $*.c $(OUTC)$*.o
++	$(CC) $(OPTC) $(INCS) $(CDEFS) -I. -I$(topdir)/include -I$(topdir)/src -c $*.c $(OUTC) $*.o
+ 
+ 
+ $(libdir)/libsmumps$(PLAT)$(LIBEXT):

@@ -2,25 +2,28 @@
 # $FreeBSD$
 
 PORTNAME=	metis-edf
-DISTVERSION=	4.0.3-1
-PORTREVISION=	3
+DISTVERSION=	5.1.0-aster1
 PORTEPOCH=	1
 CATEGORIES=	math
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Meshes partitioning tool used by Code_Aster
 
+LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
+
 CONFLICTS=	metis-[0-9]* metis4-4*
 
-ALL_TARGET=	default
-MAKE_ENV=	PICFLAG="${PICFLAG}" prefix="${PREFIX}" OPTFLAGS="${CFLAGS}"
+USES=		cmake:noninja
 
 PICFLAG?=	-fPIC
-LDFLAGS+=	-Wl,-soname,libmetis.so.0
+SHLIB_MAJOR?=	2
+CMAKE_ARGS=	-DSHARED=1 -DSHLIB_MAJOR="${SHLIB_MAJOR}"	\
+		-DGKLIB_PATH="${WRKSRC}/GKlib"
 
 WRKSRC=		${WRKDIR}/${PORTNAME:C|-edf||}-${PORTVERSION:R}
 
-DOCS=		CHANGES Doc/manual.ps
+DOCS=		Changelog manual/manual.pdf
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
@@ -30,16 +33,23 @@ OPTIONS_DEFINE=	DOCS EXAMPLES
 MACHINEARCH=	${ARCH}
 USE_LDCONFIG=	yes
 
+pre-configure:
+	# Borrowed from math/metis
+	${REINPLACE_CMD} -e "/^# Add compiler flags/,/^$$/d" \
+		-e "/^check_include_file(execinfo.h/d" \
+		${WRKSRC}/GKlib/GKlibSystem.cmake
+	${REINPLACE_CMD} -e "\|/home/karypis/|d" \
+		${WRKSRC}/programs/CMakeLists.txt
+
 post-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 . for df in ${DOCS}
 	${INSTALL_DATA} ${WRKSRC}/${df} ${STAGEDIR}${DOCSDIR}
 . endfor
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/Graphs/* ${STAGEDIR}${EXAMPLESDIR}
-	${INSTALL_PROGRAM} ${WRKSRC}/Graphs/mtest ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/graphs/* ${STAGEDIR}${EXAMPLESDIR}
 
 regression-test:
-	(cd ${WRKSRC}/Graphs && LD_LIBRARY_PATH=${WRKSRC} ./mtest 4elt.graph || ${TRUE})
+	(cd ${WRKSRC}/graphs && ../programs/gpmetis test.mgraph 2 || ${TRUE})
 
 .include <bsd.port.post.mk>

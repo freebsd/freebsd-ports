@@ -1,18 +1,18 @@
---- ./etc/astkrc/outils.orig	2009-12-23 15:53:05.000000000 +0100
-+++ ./etc/astkrc/outils	2010-01-26 23:20:42.000000000 +0100
-@@ -8,6 +8,11 @@
- ext : comm com0 com1 com2
- dist : on
+--- etc/astkrc/outils.orig	2017-07-13 07:40:52 UTC
++++ etc/astkrc/outils
+@@ -3,11 +3,6 @@
  #
-+nom : qtEficas
-+cmde : ?TOOLS_DIR?/eficasQt (@F)
-+ext : comm com0 com1 com2
-+dist : on
-+#
+ astkrc_version : 1.1
+ #
+-nom : Eficas
+-cmde : ?TOOLS_DIR?/eficas (@F)
+-ext : comm com0 com1 com2
+-dist : on
+-#
  nom : Gmsh
  cmde : ?TOOLS_DIR?/gmsh (@F)
  ext : geo msh pos
-@@ -23,3 +28,8 @@
+@@ -23,3 +18,8 @@ cmde : ?TOOLS_DIR?/xmgrace (@F)
  ext : dat
  dist : on
  #

@@ -1,0 +1,53 @@
+--- src/Makefile.orig	2017-08-08 07:32:58 UTC
++++ src/Makefile
+@@ -24,7 +24,9 @@ z:
+ include $(topdir)/Makefile.inc
+ 
+ mumps_lib:    $(libdir)/libmumps_common$(PLAT)$(LIBEXT) \
+-              $(libdir)/lib$(ARITH)mumps$(PLAT)$(LIBEXT)
++              $(libdir)/libmumps_common$(PLAT).so.@SOVER@ \
++              $(libdir)/lib$(ARITH)mumps$(PLAT)$(LIBEXT) \
++              $(libdir)/lib$(ARITH)mumps$(PLAT).so.@SOVER@
+ 
+ OBJS_COMMON_MOD = \
+         lr_common.o \
+@@ -168,13 +170,19 @@ OBJS_OTHER = \
+         $(ARITH)type3_root.o
+ 
+ $(libdir)/libmumps_common$(PLAT)$(LIBEXT):      $(OBJS_COMMON_MOD) $(OBJS_COMMON_OTHER)
+-	$(AR)$@ $?
++	$(AR) $@ $?
+ 	$(RANLIB) $@
+ 
++$(libdir)/libmumps_common$(PLAT).so.@SOVER@:	$(OBJS_COMMON_MOD) $(OBJS_COMMON_OTHER)
++	$(FC) -shared ${.ALLSRC} -Wl,-soname,libmumps_common$(PLAT).so.@SOVER@ -L$(libdir) $(LORDERINGS) $(LIBPAR) $(LIBOTHERS) -o $(libdir)/libmumps_common$(PLAT).so.@SOVER@
++
+ $(libdir)/lib$(ARITH)mumps$(PLAT)$(LIBEXT):    $(OBJS_MOD) $(OBJS_OTHER)
+-	$(AR)$@ $?
++	$(AR) $@ $?
+ 	$(RANLIB) $@
+ 
++$(libdir)/lib$(ARITH)mumps$(PLAT).so.@SOVER@:    $(OBJS_MOD) $(OBJS_OTHER)
++	$(FC) -shared ${.ALLSRC} -Wl,-soname,lib$(ARITH)mumps$(PLAT).so.@SOVER@ -L$(libdir) -lmumps_common$(PLAT) $(LORDERINGS) $(LIBPAR) -lblas $(SCALAP) $(LIBOTHERS) -o $(libdir)/lib$(ARITH)mumps$(PLAT).so.@SOVER@
++
+ # Dependencies between modules:
+ $(ARITH)mumps_load.o:		$(ARITH)mumps_comm_buffer.o \
+ 				$(ARITH)mumps_struc_def.o \
+@@ -290,13 +298,14 @@ $(OBJS_OTHER):$(OBJS_COMMON_MOD) $(OBJS_
+ 
+ .SUFFIXES: .c .F .o
+ .F.o:
+-	$(FC) $(OPTF) $(INCS) $(IORDERINGSF) $(ORDERINGSF) -I. -I../include -c $*.F $(OUTF)$*.o
++	$(FC) $(OPTF) $(INCS) $(IORDERINGSF) $(ORDERINGSF) -I. -I../include -c $*.F $(OUTF) $*.o
++
+ .c.o:
+-	$(CC) $(OPTC) $(INCS) -I../include $(CDEFS) $(IORDERINGSC) $(ORDERINGSC) -c $*.c $(OUTC)$*.o
++	$(CC) $(OPTC) $(INCS) -I../include $(CDEFS) $(IORDERINGSC) $(ORDERINGSC) -c $*.c $(OUTC) $*.o
+ 
+ $(ARITH)mumps_c.o:	mumps_c.c
+ 	$(CC) $(OPTC) $(INCS) $(CDEFS) -DMUMPS_ARITH=MUMPS_ARITH_$(ARITH) \
+-	      $(IORDERINGSC) $(ORDERINGSC) -I../include -c mumps_c.c $(OUTC)$@
++	      $(IORDERINGSC) $(ORDERINGSC) -I../include -c mumps_c.c $(OUTC) $@
+ 
+ 
+ clean:

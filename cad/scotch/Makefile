@@ -2,11 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	scotch
-DISTVERSION=	5.1.12b_esmumps
-PORTREVISION=	8
+DISTVERSION=	6.0.4-aster5
 CATEGORIES=	cad science
-MASTER_SITES=	https://gforge.inria.fr/frs/download.php/28978/
-DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Package for graph and mesh partitioning and sparse matrix ordering
@@ -18,43 +15,31 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 CONFLICTS=	gbase-0.* gmap-2015.*
 
-USES=		gmake
+USES=		bison gmake localbase
 
 MAKE_JOBS_UNSAFE=yes
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
-.if defined(MAINTAINER_MODE)
-USES+=		fortran
-.endif
-
-WRKSRC=		${WRKDIR}/${DISTNAME:C/b_/_/}
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
 BUILD_WRKSRC=	${WRKSRC}/src
-ALL_TARGET=	scotch
+INSTALL_WRKSRC=	${BUILD_WRKSRC}
+TEST_WRKSRC=	${BUILD_WRKSRC}
+ALL_TARGET=	esmumps
+TEST_TARGET=	check
+MAKE_ENV=	prefix=${STAGEDIR}${PREFIX} mandir=${STAGEDIR}${MANDIRS}	\
+		-DSCOTCH_PTHREAD_NUMBER=2
 
-CFLAGS+=	-I${LOCALBASE}/include
-
-VER=		${PORTVERSION:R}
-BINS=		acpl amk_ccc amk_fft2 amk_grf amk_hy amk_m2 amk_p2 atst	\
-		gbase gcv gmap gmk_hy gmk_m2 gmk_m3 gmk_msh gmk_ub2	\
-		gmtst gord gotst gout gpart gscat gtst mcv mmk_m2 mmk_m3\
-		mord mtst
-INCS=		esmumps.h scotch.h scotchf.h
-LIBS=		libesmumps.a libscotch.a libscotcherr.a libscotcherrexit.a libscotchmetis.a
-DOCVER=		${PORTVERSION:R:R:R}
-PORTDOCS=	ptscotch_user${DOCVER}.pdf scotch_user${DOCVER}.pdf
-EXAMPLES=	scotch_example_1.f scotch_example_2.f90
+DOCVER=		${PORTVERSION:R:R}
+PORTDOCS=	ptscotch_user${DOCVER}.pdf scotch_user${DOCVER}.pdf scotch_example.f
+EXAMPLES=	scotch_example.f
 
 .if !defined(WITHOUT_MPI)
 LIB_DEPENDS+=	libmpich.so:net/mpich2
 
-ALL_TARGET+=	ptscotch
+ALL_TARGET+=	ptesmumps
 MAKE_ENV+=	PATH=${PATH}:${LOCALBASE}/mpich2/bin
-
-INCS+=		ptscotch.h ptscotchf.h
-LIBS+=		libptesmumps.a libptscotch.a libptscotcherr.a libptscotcherrexit.a	\
-		libptscotchparmetis.a
-BINS+=		dggath dgmap dgord dgpart dgscat dgtst
+TEST_TARGET+=	ptcheck
 
 PLIST_SUB+=	MPI=""
 .else
@@ -85,32 +70,32 @@ pre-configure:
 	${REINPLACE_CMD} -E -e 's|cd (.*) ; * \$$\(MAKE\)|\$$(MAKE) -C \1|'	\
 		-e 's|\&\& \$$\(MAKE\)||' ${WRKSRC}/src/Makefile
 
-do-install:
-	${INSTALL_PROGRAM} ${BINS:S|^|${WRKSRC}/bin/|} ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_DATA} ${INCS:S|^|${WRKSRC}/include/|} ${STAGEDIR}${PREFIX}/include
-	${INSTALL_DATA} ${LIBS:S|^|${WRKSRC}/lib/|} ${STAGEDIR}${PREFIX}/lib
-	${INSTALL_MAN} ${WRKSRC}/man/man1/* ${STAGEDIR}${MANPREFIX}/man/man1
+post-stage:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/*
+
 do-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/doc/|} ${STAGEDIR}${DOCSDIR}
+
 do-install-EXAMPLES-on:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/grf ${STAGEDIR}${EXAMPLESDIR}/tgt
-	${INSTALL_DATA} ${EXAMPLES:S|^|${WRKSRC}/examples/|} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/grf/* ${STAGEDIR}${EXAMPLESDIR}/grf
 	${INSTALL_DATA} ${WRKSRC}/tgt/* ${STAGEDIR}${EXAMPLESDIR}/tgt
 
-.if defined(MAINTAINER_MODE)
-regression-test:	install
-	(amk_ccc 3 | acpl - ${WRKDIR}/ccc3.tgt &&	\
-	${GUNZIP_CMD} -c ${EXAMPLESDIR}/grf/bump.grf.gz |	\
-	gmap - ${WRKDIR}/ccc3.tgt ${WRKDIR}/brol.map)
-	(cd ${WRKSRC}/examples &&	\
-	${FC} -o scotch_test scotch_example_1.f ${FCFLAGS}	\
-		-I${PREFIX}/include ${LDFLAGS} -L${PREFIX}/lib -lscotch -lscotcherr -lm	\
-	&& ./scotch_test)
-. if !defined(WITHOUT_MPI)
-	(${GUNZIP_CMD} -c ${EXAMPLESDIR}/grf/bump.grf.gz | dgtst)
+.if !defined(WITHOUT_MPI)
+pre-test:
+. if !exists(${HOME}/.mpd.conf)
+	@${ECHO_CMD} "MPD_SECRETWORD=change_on_install" > ${HOME}/.mpd.conf
+	${CHMOD} go-r ${HOME}/.mpd.conf
+	@${ECHO_MSG} "${HOME}/.mpd.conf has been generated - please change the secret word!"
 . endif
+	${LOCALBASE}/bin/mpd &
 .endif
 
+.if !defined(WITHOUT_MPI)
+post-test:
+	${LOCALBASE}/bin/mpdallexit
+.endif
+
+.include "${.CURDIR}/../../french/aster/bsd.aster.mk"
 .include <bsd.port.mk>
