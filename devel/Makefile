@@ -5593,6 +5593,7 @@
     SUBDIR += rubygem-moneta
     SUBDIR += rubygem-moneta06
     SUBDIR += rubygem-mongo
+    SUBDIR += rubygem-mono_logger
     SUBDIR += rubygem-msgpack
     SUBDIR += rubygem-msgpack1
     SUBDIR += rubygem-mspec
