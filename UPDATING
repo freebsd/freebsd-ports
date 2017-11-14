@@ -5,6 +5,20 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20171114:
+  AFFECTS: users of ports-mgmt/poudriere
+  AUTHOR: bdrewery@FreeBSD.org
+
+  "poudriere options" now respects the -p flag while it did not before.
+  This means that it may create an empty directory when used now rather
+  than continue to use your existing options set.  You may want to not
+  use -p or move your existing options directory, in
+  /usr/local/etc/poudriere.d/*-options, to the new format with the
+  ports tree name in it.  Otherwise "poudriere bulk" will use the
+  new empty directory.
+
+  This behavior will likely change in 3.2.1 to be more backwards-compatible.
+
 20171112:
   AFFECTS: consumers of devel/oniguruma*
   AUTHOR: riggs@FreeBSD.org
