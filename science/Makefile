@@ -75,6 +75,7 @@
     SUBDIR += lamprop
     SUBDIR += libaec
     SUBDIR += libctl
+    SUBDIR += libefp
     SUBDIR += libgeodecomp
     SUBDIR += libghemical
     SUBDIR += libint
