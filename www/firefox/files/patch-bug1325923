@@ -1,0 +1,121 @@
+commit d9ad239a35bf
+Author: Blake Kaplan <mrbkap@gmail.com>
+Date:   Wed Aug 16 16:39:32 2017 -0700
+
+    Bug 1325923 - Implement the "cookie averse document" concept. r=Ehsan
+    
+    See https://html.spec.whatwg.org/multipage/dom.html#resource-metadata-management:cookie-averse-document-object
+    
+    MozReview-Commit-ID: GndxqhU77cS
+---
+ dom/base/nsIDocument.h | 28 ++++++++++++++++++++++++++++
+ 1 file changed, 28 insertions(+)
+
+diff --git dom/base/nsIDocument.h dom/base/nsIDocument.h
+index e834f5785cad..921e03e107d1 100644
+--- dom/base/nsIDocument.h
++++ dom/base/nsIDocument.h
+@@ -2073,6 +2073,34 @@ public:
+     return mMarkedCCGeneration;
+   }
+ 
++  /**
++   * Returns whether this document is cookie averse. See
++   * https://html.spec.whatwg.org/multipage/dom.html#cookie-averse-document-object
++   */
++  bool IsCookieAverse() const
++  {
++    // If we are a document that "has no browsing context."
++    if (!GetInnerWindow()) {
++      return true;
++    }
++
++    // If we are a document "whose URL's scheme is not a network scheme."
++    // NB: Explicitly allow file: URIs to store cookies.
++    nsCOMPtr<nsIURI> codebaseURI;
++    NodePrincipal()->GetURI(getter_AddRefs(codebaseURI));
++
++    if (!codebaseURI) {
++      return true;
++    }
++
++    nsAutoCString scheme;
++    codebaseURI->GetScheme(scheme);
++    return !scheme.EqualsLiteral("http") &&
++           !scheme.EqualsLiteral("https") &&
++           !scheme.EqualsLiteral("ftp") &&
++           !scheme.EqualsLiteral("file");
++  }
++
+   bool IsLoadedAsData()
+   {
+     return mLoadedAsData;
+
+commit 10775852824c
+Author: Blake Kaplan <mrbkap@gmail.com>
+Date:   Wed Aug 16 16:58:19 2017 -0700
+
+    Bug 1325923 - Use this new API. r=Ehsan
+    
+    MozReview-Commit-ID: 6tuaEqQA551
+---
+ dom/base/nsContentSink.cpp | 6 ++++++
+ 1 file changed, 6 insertions(+)
+
+diff --git dom/base/nsContentSink.cpp dom/base/nsContentSink.cpp
+index c52761c8521f..c3e9f43846d4 100644
+--- dom/base/nsContentSink.cpp
++++ dom/base/nsContentSink.cpp
+@@ -843,6 +843,12 @@ nsContentSink::ProcessMETATag(nsIContent* aContent)
+       return NS_OK;
+     }
+ 
++    // Don't allow setting cookies in <meta http-equiv> in cookie averse
++    // documents.
++    if (nsGkAtoms::setcookie->Equals(header) && mDocument->IsCookieAverse()) {
++      return NS_OK;
++    }
++
+     nsAutoString result;
+     aContent->GetAttr(kNameSpaceID_None, nsGkAtoms::content, result);
+     if (!result.IsEmpty()) {
+
+commit f48bc2cbf262
+Author: Blake Kaplan <mrbkap@gmail.com>
+Date:   Wed Aug 16 17:22:31 2017 -0700
+
+    Bug 1325923 - Use this API where we're supposed to. r=Ehsan
+    
+    MozReview-Commit-ID: HGU5YtUzv9U
+---
+ dom/html/nsHTMLDocument.cpp | 10 ++++++++++
+ 1 file changed, 10 insertions(+)
+
+diff --git dom/html/nsHTMLDocument.cpp dom/html/nsHTMLDocument.cpp
+index fa3d614854d9..b146698b6494 100644
+--- dom/html/nsHTMLDocument.cpp
++++ dom/html/nsHTMLDocument.cpp
+@@ -1347,6 +1347,11 @@ nsHTMLDocument::GetCookie(nsAString& aCookie, ErrorResult& rv)
+     return;
+   }
+ 
++  // If the document is a cookie-averse Document... return the empty string.
++  if (IsCookieAverse()) {
++    return;
++  }
++
+   // not having a cookie service isn't an error
+   nsCOMPtr<nsICookieService> service = do_GetService(NS_COOKIESERVICE_CONTRACTID);
+   if (service) {
+@@ -1400,6 +1405,11 @@ nsHTMLDocument::SetCookie(const nsAString& aCookie, ErrorResult& rv)
+     return;
+   }
+ 
++  // If the document is a cookie-averse Document... do nothing.
++  if (IsCookieAverse()) {
++    return;
++  }
++
+   // not having a cookie service isn't an error
+   nsCOMPtr<nsICookieService> service = do_GetService(NS_COOKIESERVICE_CONTRACTID);
+   if (service && mDocumentURI) {
