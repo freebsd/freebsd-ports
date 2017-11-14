@@ -6,6 +6,7 @@
 
 PORTNAME=	intellij
 PORTVERSION=	2017.2.6
+PORTREVISION=	1
 CATEGORIES=	java devel
 MASTER_SITES=	https://download.jetbrains.com/idea/ \
 		http://download.jetbrains.com/idea/
@@ -28,7 +29,7 @@ NO_ARCH=	yes
 NO_BUILD=	yes
 INSTALL_TARGET=	install-strip
 
-WRKSRC=		${WRKDIR}/idea-IC-172.4574.8
+WRKSRC=		${WRKDIR}/idea-IC-172.4574.11
 
 .include "common.mk"
 
