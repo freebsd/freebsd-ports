@@ -3,4 +3,4 @@ different version-control systems inside Geany IDE. Only small
 subset of vc is implemented, but, hey, you don't need anything
 besides diff, log, status, revert and commit most time.
 
-WWW: http://plugins.geany.org/geanyvc.html
+WWW: https://plugins.geany.org/geanyvc.html
