@@ -7,6 +7,9 @@ DISTVERSION=	1.6.1
 PORTREVISION=	2
 CATEGORIES=	multimedia
 
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES=	bc4bc9b6223d.patch:-p1
+
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	VP8/VP9 Codec SDK
 
