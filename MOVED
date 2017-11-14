@@ -9629,3 +9629,4 @@ graphics/geos35|graphics/geos|2017-11-12|Has expired: legacy version, no longer 
 astro/gmapcatcher||2017-11-12|Has expired: Unfetchable for more than six months (google code has gone away)
 audio/smasher||2017-11-12|Has expired: Does not build with modern csound
 audio/csound|audio/csound6|2017-11-12|Has expired: Not supported upstream anymore, use csound6
+french/eficas||2017-11-14|Removed with Code_Aster 13.4.0, should be replaced by aster-study in cad/salome

@@ -1,7 +1,7 @@
---- ./asrun/system.py.orig	2010-07-07 18:18:08.000000000 +0200
-+++ ./asrun/system.py	2010-08-16 20:51:28.000000000 +0200
-@@ -137,10 +137,10 @@
-     var = os.environ.get("TMPDIR") or os.environ.get('TEMP') or os.environ.get('TMP')
+--- asrun/system.py.orig	2017-07-13 07:40:52 UTC
++++ asrun/system.py
+@@ -133,10 +133,10 @@ def get_system_tmpdir():
+        or os.environ.get('TEMP') or os.environ.get('TMP')
      if var:
          return var
 -    if on_linux():
@@ -14,7 +14,7 @@
  
  
  def split_path(path):
-@@ -818,6 +818,8 @@
+@@ -854,6 +854,8 @@ class AsterSystem:
                      num = max([int(i) for i in l_ids]) + 1
              elif on_windows():
                  num = 1

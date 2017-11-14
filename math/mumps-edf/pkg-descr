@@ -1,0 +1,16 @@
+MUMPS is a Distributed Multifrontal Solver (F90, MPI based) with Dynamic
+Distributed Scheduling to accomodate both numerical fill-in and multi-user
+environment.
+
+- Solution of large linear systems with symmetric positive definite
+matrices; general symmetric matrices; general unsymmetric matrices.
+- Version for complex arithmetic.
+- Parallel factorization and solve phases (uniprocessor version also
+available).
+- Iterative refinement and backward error analysis.
+- Various matrix input formats: assembled format; distributed assembled
+format; elemental format.
+- Partial factorization and Schur complement matrix.
+- Several orderings interfaced : AMD, AMF, PORD, METIS
+
+WWW: http://graal.ens-lyon.fr/MUMPS/

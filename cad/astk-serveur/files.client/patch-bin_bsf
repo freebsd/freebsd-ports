@@ -1,20 +1,26 @@
---- ./bin/bsf.orig	2011-12-20 13:33:00.000000000 +0100
-+++ ./bin/bsf	2012-01-02 22:28:16.000000000 +0100
-@@ -17,15 +17,9 @@
+--- bin/bsf.orig	2017-07-13 07:40:52 UTC
++++ bin/bsf
+@@ -17,15 +17,11 @@
  #    1 AVENUE DU GENERAL DE GAULLE, 92141 CLAMART CEDEX, FRANCE.
  # ==============================================================================
  
 -set_prefix() {
--    local this=`readlink -n -f $1`
--    local bin=`dirname $this`
--    prefix=`dirname $bin`
+-    local this=`readlink -n -f "$1"`
+-    local bin=`dirname "${this}"`
+-    prefix=`dirname "${bin}"`
 -}
 +prefix=%%inst_dir%%/ASTK_CLIENT
  
--set_prefix $0
--
--ASTER_ROOT=$prefix
-+ASTER_ROOT=?ASTER_ROOT?
- ASTER_ETC=$ASTER_ROOT/etc
- if [ "$ASTER_ROOT" = "/usr" ]; then
-     ASTER_ETC=/etc
+ set_prefix "$0"
+ 
+-ASTER_ROOT="${prefix}"
++ASTER_ROOT="?ASTER_ROOT?"
+ export ASTER_ROOT
+ 
+ if [ -z "${ASTER_ETC}" ]; then
+@@ -46,4 +42,4 @@ if [ -z "${WISHEXECUTABLE}" ]; then
+    WISHEXECUTABLE=wish
+ fi
+ 
+-"${WISHEXECUTABLE}" "${ASTER_ROOT}"/lib/astk/bsf.tcl -- "${@}" &
++"${WISHEXECUTABLE}" $prefix/lib/bsf.tcl -- "${@}" &

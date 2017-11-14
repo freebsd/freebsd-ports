@@ -1,26 +1,26 @@
---- bin/astk.orig	2015-08-05 15:37:44 UTC
+--- bin/astk.orig	2017-07-13 07:40:52 UTC
 +++ bin/astk
 @@ -17,15 +17,9 @@
  #    1 AVENUE DU GENERAL DE GAULLE, 92141 CLAMART CEDEX, FRANCE.
  # ==============================================================================
  
 -set_prefix() {
--    local this=`readlink -n -f $1`
--    local bin=`dirname $this`
--    prefix=`dirname $bin`
+-    local this=`readlink -n -f "$1"`
+-    local bin=`dirname "${this}"`
+-    prefix=`dirname "${bin}"`
 -}
 -
--set_prefix $0
+-set_prefix "$0"
 +prefix=%%inst_dir%%/ASTK_CLIENT
  
--ASTER_ROOT=$prefix
-+ASTER_ROOT=?ASTER_ROOT?
- ASTER_ETC=$ASTER_ROOT/etc
- if [ "$ASTER_ROOT" = "/usr" ]; then
-     ASTER_ETC=/etc
-@@ -43,4 +37,4 @@ if [ -z "$WISHEXECUTABLE" ]; then
+-ASTER_ROOT="${prefix}"
++ASTER_ROOT="?ASTER_ROOT?"
+ export ASTER_ROOT
+ 
+ if [ -z "${ASTER_ETC}" ]; then
+@@ -46,4 +40,4 @@ if [ -z "${WISHEXECUTABLE}" ]; then
     WISHEXECUTABLE=wish
  fi
  
--$WISHEXECUTABLE $ASTER_ROOT/lib/astk/astk.tcl -- $* &
-+$WISHEXECUTABLE $prefix/lib/astk.tcl -- $* &
+-"${WISHEXECUTABLE}" "${ASTER_ROOT}"/lib/astk/astk.tcl -- "${@}" &
++"${WISHEXECUTABLE}" $prefix/lib/astk.tcl -- "${@}" &
