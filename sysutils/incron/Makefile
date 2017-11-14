@@ -6,7 +6,7 @@ DISTVERSION=	2017-11-13
 PORTREVISION=	1
 CATEGORIES=	sysutils
 
-MAINTAINER=	mi@aldan.algebra.com
+MAINTAINER=	joh.hendriks@gmail.com
 COMMENT=	Handle filesystem-events the way cron handles time ones
 
 LICENSE=	GPLv2 LGPL21 MIT
