@@ -4,6 +4,7 @@
 PORTNAME=	mumps
 DISTVERSION=	5.1.1-aster2
 CATEGORIES=	math
+PKGNAMESUFFIX=	-edf
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	MUltifrontal Massively Parallel sparse direct Solver for Code_Aster
