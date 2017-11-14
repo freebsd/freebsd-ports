@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	validates_hostname
-PORTVERSION=	1.0.7
+PORTVERSION=	1.0.8
 CATEGORIES=	dns rubygems
 MASTER_SITES=	RG
 
