@@ -3,7 +3,7 @@
 
 PORTNAME=	gcc
 PORTVERSION=	7.2.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	lang
 MASTER_SITES=	GCC/releases/gcc-${DISTVERSION}
 PKGNAMESUFFIX=	${SUFFIX}
@@ -82,6 +82,10 @@ CONFIGURE_ARGS+=--disable-bootstrap
 .else
 CONFIGURE_ARGS+=--with-build-config=bootstrap-debug
 ALL_TARGET=	bootstrap-lean
+.endif
+INSTALL_TARGET=	install-strip
+.if ${UID} != 0
+BINMODE=	755
 .endif
 CONFIGURE_ARGS+=--disable-nls \
 		--enable-gnu-indirect-function \
