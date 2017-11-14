@@ -144,6 +144,7 @@
     SUBDIR += p5-Physics-Unit
     SUBDIR += paje
     SUBDIR += paraview
+    SUBDIR += pcmsolver
     SUBDIR += pnetcdf
     SUBDIR += psychopy
     SUBDIR += pulseview

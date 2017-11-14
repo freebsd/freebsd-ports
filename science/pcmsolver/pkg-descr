@@ -1,0 +1,6 @@
+PCMSolver is a quantum chemistry library that aims to:
+* Provide a plug-and-play library for adding the Polarizable Continuum Model
+  functionality to any quantum chemistry program
+* Create a playground for easily extending the implementation of the model
+
+WWW: https://github.com/PCMSolver/pcmsolver
