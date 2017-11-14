@@ -1,0 +1,362 @@
+commit 256e249566d8
+Author: Christoph Kerschbaumer <ckerschb@christophkerschbaumer.com>
+Date:   Fri Aug 4 14:11:17 2017 +0200
+
+    Bug 1381761 - Treating 'data:' documents as unique, opaque origins should still inherit the CSP. r=smaug,dveditz
+---
+ caps/moz.build                   |  1 +
+ caps/nsScriptSecurityManager.cpp | 96 +++++++++++++++++++++++++---------------
+ 2 files changed, 62 insertions(+), 35 deletions(-)
+
+diff --git caps/moz.build caps/moz.build
+index 46331e93f097..af369e3268e0 100644
+--- caps/moz.build
++++ caps/moz.build
+@@ -56,6 +56,7 @@ LOCAL_INCLUDES += [
+     '/docshell/base',
+     '/dom/base',
+     '/js/xpconnect/src',
++    '/netwerk/base',
+ ]
+ 
+ if CONFIG['ENABLE_TESTS']:
+diff --git caps/nsScriptSecurityManager.cpp caps/nsScriptSecurityManager.cpp
+index a930b324a6a2..90695ebd126f 100644
+--- caps/nsScriptSecurityManager.cpp
++++ caps/nsScriptSecurityManager.cpp
+@@ -45,6 +45,7 @@
+ #include "nsIWindowWatcher.h"
+ #include "nsIConsoleService.h"
+ #include "nsIObserverService.h"
++#include "nsIOService.h"
+ #include "nsIContent.h"
+ #include "nsDOMJSUtils.h"
+ #include "nsAboutProtocolUtils.h"
+@@ -265,6 +266,61 @@ nsScriptSecurityManager::GetChannelResultPrincipalIfNotSandboxed(nsIChannel* aCh
+                                    /*aIgnoreSandboxing*/ true);
+ }
+ 
++static void
++InheritAndSetCSPOnPrincipalIfNeeded(nsIChannel* aChannel, nsIPrincipal* aPrincipal)
++{
++  // loading a data: URI into an iframe, or loading frame[srcdoc] need
++  // to inherit the CSP (see Bug 1073952, 1381761).
++  MOZ_ASSERT(aChannel && aPrincipal, "need a valid channel and principal");
++  if (!aChannel) {
++    return;
++  }
++
++  nsCOMPtr<nsILoadInfo> loadInfo = aChannel->GetLoadInfo();
++  if (!loadInfo ||
++      loadInfo->GetExternalContentPolicyType() != nsIContentPolicy::TYPE_SUBDOCUMENT) {
++    return;
++  }
++
++  nsCOMPtr<nsIURI> uri;
++  nsresult rv = aChannel->GetURI(getter_AddRefs(uri));
++  NS_ENSURE_SUCCESS_VOID(rv);
++  nsAutoCString URISpec;
++  rv = uri->GetSpec(URISpec);
++  NS_ENSURE_SUCCESS_VOID(rv);
++
++  bool isSrcDoc = URISpec.EqualsLiteral("about:srcdoc");
++  bool isData = (NS_SUCCEEDED(uri->SchemeIs("data", &isData)) && isData);
++
++  if (!isSrcDoc && !isData) {
++    return;
++  }
++
++  nsCOMPtr<nsIPrincipal> principalToInherit = loadInfo->PrincipalToInherit();
++  if (!principalToInherit) {
++    principalToInherit = loadInfo->TriggeringPrincipal();
++  }
++  nsCOMPtr<nsIContentSecurityPolicy> originalCSP;
++  principalToInherit->GetCsp(getter_AddRefs(originalCSP));
++  if (!originalCSP) {
++    return;
++  }
++
++  // if the principalToInherit had a CSP, add it to the before
++  // created NullPrincipal (unless it already has one)
++  MOZ_ASSERT(aPrincipal->GetIsNullPrincipal(),
++             "inheriting the CSP only valid for NullPrincipal");
++  nsCOMPtr<nsIContentSecurityPolicy> nullPrincipalCSP;
++  aPrincipal->GetCsp(getter_AddRefs(nullPrincipalCSP));
++  if (nullPrincipalCSP) {
++    MOZ_ASSERT(nullPrincipalCSP == originalCSP,
++               "There should be no other CSP here.");
++    // CSPs are equal, no need to set it again.
++    return;
++  }
++  aPrincipal->SetCsp(originalCSP);
++}
++
+ nsresult
+ nsScriptSecurityManager::GetChannelResultPrincipal(nsIChannel* aChannel,
+                                                    nsIPrincipal** aPrincipal,
+@@ -295,40 +351,7 @@ nsScriptSecurityManager::GetChannelResultPrincipal(nsIChannel* aChannel,
+         if (!aIgnoreSandboxing && loadInfo->GetLoadingSandboxed()) {
+           MOZ_ALWAYS_TRUE(NS_SUCCEEDED(loadInfo->GetSandboxedLoadingPrincipal(aPrincipal)));
+           MOZ_ASSERT(*aPrincipal);
+-            // if the new NullPrincipal (above) loads an iframe[srcdoc], we
+-            // need to inherit an existing CSP to avoid bypasses (bug 1073952).
+-            // We continue inheriting for nested frames with e.g., data: URLs.
+-            if (loadInfo->GetExternalContentPolicyType() == nsIContentPolicy::TYPE_SUBDOCUMENT) {
+-              nsCOMPtr<nsIURI> uri;
+-              aChannel->GetURI(getter_AddRefs(uri));
+-              nsAutoCString URISpec;
+-              uri->GetSpec(URISpec);
+-              bool isData = (NS_SUCCEEDED(uri->SchemeIs("data", &isData)) && isData);
+-              if (URISpec.EqualsLiteral("about:srcdoc") || isData) {
+-                nsCOMPtr<nsIPrincipal> principalToInherit = loadInfo->PrincipalToInherit();
+-                if (!principalToInherit) {
+-                  principalToInherit = loadInfo->TriggeringPrincipal();
+-                }
+-                nsCOMPtr<nsIContentSecurityPolicy> originalCSP;
+-                principalToInherit->GetCsp(getter_AddRefs(originalCSP));
+-                if (originalCSP) {
+-                  // if the principalToInherit had a CSP,
+-                  // add it to the newly created NullPrincipal
+-                  // (unless it already has one)
+-                  nsCOMPtr<nsIContentSecurityPolicy> nullPrincipalCSP;
+-                  (*aPrincipal)->GetCsp(getter_AddRefs(nullPrincipalCSP));
+-                  if (nullPrincipalCSP) {
+-                    MOZ_ASSERT(nullPrincipalCSP == originalCSP,
+-                              "There should be no other CSP here.");
+-                    // CSPs are equal, no need to set it again.
+-                    return NS_OK;
+-                  } else {
+-                    nsresult rv = (*aPrincipal)->SetCsp(originalCSP);
+-                    NS_ENSURE_SUCCESS(rv, rv);
+-                  }
+-                }
+-              }
+-            }
++          InheritAndSetCSPOnPrincipalIfNeeded(aChannel, *aPrincipal);
+           return NS_OK;
+         }
+ 
+@@ -376,7 +399,10 @@ nsScriptSecurityManager::GetChannelResultPrincipal(nsIChannel* aChannel,
+       }
+     }
+   }
+-  return GetChannelURIPrincipal(aChannel, aPrincipal);
++  nsresult rv = GetChannelURIPrincipal(aChannel, aPrincipal);
++  NS_ENSURE_SUCCESS(rv, rv);
++  InheritAndSetCSPOnPrincipalIfNeeded(aChannel, *aPrincipal);
++  return NS_OK;
+ }
+ 
+ /* The principal of the URI that this channel is loading. This is never
+
+commit 9427f1bbd826
+Author: Christoph Kerschbaumer <ckerschb@christophkerschbaumer.com>
+Date:   Fri Aug 4 14:10:21 2017 +0200
+
+    Bug 1381761 - Convert test browser_911547.js to comply with new data: URI inheritance model. r=dveditz
+---
+ .../components/sessionstore/test/browser_911547.js | 47 ++++++++++++++++------
+ .../sessionstore/test/browser_911547_sample.html   |  6 +--
+ 2 files changed, 37 insertions(+), 16 deletions(-)
+
+diff --git browser/components/sessionstore/test/browser_911547.js browser/components/sessionstore/test/browser_911547.js
+index f0da70ed8f8c..cb95ddad7f2a 100644
+--- browser/components/sessionstore/test/browser_911547.js
++++ browser/components/sessionstore/test/browser_911547.js
+@@ -1,11 +1,17 @@
+ /* Any copyright is dedicated to the Public Domain.
+    http://creativecommons.org/publicdomain/zero/1.0/ */
+ 
+-// This tests that session restore component does restore the right content
+-// security policy with the document.
+-// The policy being tested disallows inline scripts
++// This test is two fold:
++// a) if security.data_uri.unique_opaque_origin == false, then
++//    this tests that session restore component does restore the right
++//    content security policy with the document. (The policy being
++//    tested disallows inline scripts).
++// b) if security.data_uri.unique_opaque_origin == true, then
++//    this tests that data: URIs do not inherit the CSP from
++//    it's enclosing context.
+ 
+ add_task(async function test() {
++  let dataURIPref = Services.prefs.getBoolPref("security.data_uri.unique_opaque_origin");
+   // create a tab that has a CSP
+   let testURL = "http://mochi.test:8888/browser/browser/components/sessionstore/test/browser_911547_sample.html";
+   let tab = gBrowser.selectedTab = BrowserTestUtils.addTab(gBrowser, testURL);
+@@ -16,23 +22,33 @@ add_task(async function test() {
+ 
+   // this is a baseline to ensure CSP is active
+   // attempt to inject and run a script via inline (pre-restore, allowed)
+-  await injectInlineScript(browser, `document.getElementById("test_id").value = "fail";`);
++  await injectInlineScript(browser, `document.getElementById("test_id1").value = "id1_modified";`);
+ 
+   let loadedPromise = promiseBrowserLoaded(browser);
+   await ContentTask.spawn(browser, null, function() {
+-    is(content.document.getElementById("test_id").value, "ok",
++    is(content.document.getElementById("test_id1").value, "id1_initial",
+        "CSP should block the inline script that modifies test_id");
+ 
+-    // attempt to click a link to a data: URI (will inherit the CSP of the
+-    // origin document) and navigate to the data URI in the link.
++
++    // (a) if security.data_uri.unique_opaque_origin == false:
++    //     attempt to click a link to a data: URI (will inherit the CSP of
++    //     the origin document) and navigate to the data URI in the link.
++    // (b) if security.data_uri.unique_opaque_origin == true:
++    //     attempt to click a link to a data: URI (will *not* inherit the CSP of
++    //     the origin document) and navigate to the data URI in the link.
+     content.document.getElementById("test_data_link").click();
+   });
+ 
+   await loadedPromise;
+ 
+-  await ContentTask.spawn(browser, null, function() {
+-    is(content.document.getElementById("test_id2").value, "ok",
+-       "CSP should block the script loaded by the clicked data URI");
++  await ContentTask.spawn(browser, {dataURIPref}, function( {dataURIPref}) { // eslint-disable-line
++    if (dataURIPref) {
++      is(content.document.getElementById("test_id2").value, "id2_modified",
++         "data: URI should *not* inherit the CSP of the enclosing context");
++    } else {
++      is(content.document.getElementById("test_id2").value, "id2_initial",
++        "CSP should block the script loaded by the clicked data URI");
++    }
+   });
+ 
+   // close the tab
+@@ -43,9 +59,14 @@ add_task(async function test() {
+   await promiseTabRestored(tab);
+   browser = tab.linkedBrowser;
+ 
+-  await ContentTask.spawn(browser, null, function() {
+-    is(content.document.getElementById("test_id2").value, "ok",
+-       "CSP should block the script loaded by the clicked data URI after restore");
++  await ContentTask.spawn(browser, {dataURIPref}, function({dataURIPref}) { // eslint-disable-line
++    if (dataURIPref) {
++      is(content.document.getElementById("test_id2").value, "id2_modified",
++         "data: URI should *not* inherit the CSP of the enclosing context");
++    } else {
++      is(content.document.getElementById("test_id2").value, "id2_initial",
++        "CSP should block the script loaded by the clicked data URI after restore");
++    }
+   });
+ 
+   // clean up
+diff --git browser/components/sessionstore/test/browser_911547_sample.html browser/components/sessionstore/test/browser_911547_sample.html
+index ccc2011593d4..73cb99ee41f1 100644
+--- browser/components/sessionstore/test/browser_911547_sample.html
++++ browser/components/sessionstore/test/browser_911547_sample.html
+@@ -8,12 +8,12 @@
+ 
+   <!--
+    this element gets modified by an injected script;
+-   that script should be blocked by CSP.
++   that script should be blocked by CSP if security.data_uri.unique_opaque_origin == false;
+    Inline scripts can modify it, but not data uris.
+   -->
+-  <input type="text" id="test_id" value="ok">
++  <input type="text" id="test_id1" value="id1_initial">
+ 
+-  <a id="test_data_link" href="data:text/html;charset=utf-8,<input type='text' id='test_id2' value='ok'/> <script>document.getElementById('test_id2').value = 'fail';</script>">Test Link</a>
++  <a id="test_data_link" href="data:text/html;charset=utf-8,<input type='text' id='test_id2' value='id2_initial'/> <script>document.getElementById('test_id2').value = 'id2_modified';</script>">Test Link</a>
+ 
+ </body>
+ </html>
+
+commit 8b999864f0bb
+Author: Christoph Kerschbaumer <ckerschb@christophkerschbaumer.com>
+Date:   Fri Aug 4 14:10:38 2017 +0200
+
+    Bug 1381761 - Test data: URIs inherit the CSP even if treated as unique, opaque origins. r=dveditz
+---
+ .../test/csp/file_data_csp_inheritance.html        | 21 +++++++++++++
+ dom/security/test/csp/mochitest.ini                |  2 ++
+ .../test/csp/test_data_csp_inheritance.html        | 34 ++++++++++++++++++++++
+ 3 files changed, 57 insertions(+)
+
+diff --git dom/security/test/csp/file_data_csp_inheritance.html dom/security/test/csp/file_data_csp_inheritance.html
+new file mode 100644
+index 000000000000..299c30255aa6
+--- /dev/null
++++ dom/security/test/csp/file_data_csp_inheritance.html
+@@ -0,0 +1,21 @@
++<!DOCTYPE HTML>
++<html>
++<head>
++  <title>Bug 1381761 - Treating 'data:' documents as unique, opaque origins should still inherit the CSP</title>
++  <meta charset="utf-8">
++  <meta http-equiv="Content-Security-Policy" content= "img-src 'none'"/>
++</head>
++<body>
++<iframe id="dataFrame" src="data:text/html,<body>should inherit csp</body>"></iframe>
++
++<script type="application/javascript">
++  // get the csp in JSON notation from the principal
++  var frame = document.getElementById("dataFrame");
++  var principal = SpecialPowers.wrap(frame.contentDocument).nodePrincipal;
++  var cspJSON = principal.cspJSON;
++  var result = principal.cspJSON ? "dataInheritsCSP" : "dataDoesNotInheritCSP";
++  window.parent.postMessage({result}, "*");
++</script>
++
++</body>
++</html>
+diff --git dom/security/test/csp/mochitest.ini dom/security/test/csp/mochitest.ini
+index ba391ad59799..09f80b2969d7 100644
+--- dom/security/test/csp/mochitest.ini
++++ dom/security/test/csp/mochitest.ini
+@@ -217,6 +217,7 @@ support-files =
+   file_ignore_xfo.html^headers^
+   file_ro_ignore_xfo.html
+   file_ro_ignore_xfo.html^headers^
++  file_data_csp_inheritance.html
+   file_report_font_cache-1.html
+   file_report_font_cache-2.html
+   file_report_font_cache-2.html^headers^
+@@ -308,4 +309,5 @@ tags = mcb
+ [test_websocket_self.html]
+ skip-if = toolkit == 'android'
+ [test_ignore_xfo.html]
++[test_data_csp_inheritance.html]
+ [test_data_csp_merge.html]
+diff --git dom/security/test/csp/test_data_csp_inheritance.html dom/security/test/csp/test_data_csp_inheritance.html
+new file mode 100644
+index 000000000000..3afc4f7c02bc
+--- /dev/null
++++ dom/security/test/csp/test_data_csp_inheritance.html
+@@ -0,0 +1,34 @@
++<!DOCTYPE HTML>
++<html>
++<head>
++  <title>Bug 1381761 - Treating 'data:' documents as unique, opaque origins should still inherit the CSP</title>
++  <!-- Including SimpleTest.js so we can use waitForExplicitFinish !-->
++  <script type="text/javascript" src="/tests/SimpleTest/SimpleTest.js"></script>
++  <link rel="stylesheet" type="text/css" href="/tests/SimpleTest/test.css" />
++</head>
++<body>
++<iframe style="width:100%;" id="testframe"></iframe>
++
++<script class="testbody" type="text/javascript">
++
++SimpleTest.waitForExplicitFinish();
++
++/* Description of the test:
++ * We load an iframe using a meta CSP which includes another iframe
++ * using a data: URI. We make sure the CSP gets inherited into
++ * the data: URI iframe.
++ */
++
++window.addEventListener("message", receiveMessage);
++function receiveMessage(event) {
++  window.removeEventListener("message", receiveMessage);
++  is(event.data.result, "dataInheritsCSP",
++     "data: URI iframe inherits CSP from including context");
++  SimpleTest.finish();
++}
++
++document.getElementById("testframe").src = "file_data_csp_inheritance.html";
++
++</script>
++</body>
++</html>

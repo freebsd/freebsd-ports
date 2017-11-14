@@ -1,0 +1,53 @@
+commit 3708901c15ba
+Author: Byron Campen [:bwc] <docfaraday@gmail.com>
+Date:   Thu Oct 12 12:12:40 2017 -0500
+
+    Bug 1406154 - Ensure that we avoid truncating the interface description strings in a couple of corner cases. r=drno, a=sledru
+    
+    MozReview-Commit-ID: KMTpbkvA4N
+    
+    --HG--
+    extra : source : 5c8d4905c2bdbb3cfa0db5e07a3cd6ba4eb23fdd
+---
+ media/mtransport/nrinterfaceprioritizer.cpp                 | 2 +-
+ media/mtransport/third_party/nICEr/src/net/transport_addr.c | 6 +++++-
+ 2 files changed, 6 insertions(+), 2 deletions(-)
+
+diff --git media/mtransport/nrinterfaceprioritizer.cpp media/mtransport/nrinterfaceprioritizer.cpp
+index 37756991239c..34b941c53a45 100644
+--- media/mtransport/nrinterfaceprioritizer.cpp
++++ media/mtransport/nrinterfaceprioritizer.cpp
+@@ -28,7 +28,7 @@ public:
+   bool Init(const nr_local_addr& local_addr) {
+     ifname_ = local_addr.addr.ifname;
+ 
+-    char buf[MAXIFNAME + 41];
++    char buf[MAXIFNAME + 47];
+     int r = nr_transport_addr_fmt_ifname_addr_string(&local_addr.addr, buf, sizeof(buf));
+     if (r) {
+       MOZ_MTLOG(ML_ERROR, "Error formatting interface key.");
+diff --git media/mtransport/third_party/nICEr/src/net/transport_addr.c media/mtransport/third_party/nICEr/src/net/transport_addr.c
+index 99564a08e8b9..ae849f43387e 100644
+--- media/mtransport/third_party/nICEr/src/net/transport_addr.c
++++ media/mtransport/third_party/nICEr/src/net/transport_addr.c
+@@ -98,7 +98,8 @@ int nr_transport_addr_fmt_addr_string(nr_transport_addr *addr)
+ int nr_transport_addr_fmt_ifname_addr_string(const nr_transport_addr *addr, char *buf, int len)
+   {
+     int _status;
+-    char buffer[40];
++    /* leave room for a fully-expanded IPV4-mapped IPV6 address */
++    char buffer[46];
+ 
+     switch(addr->ip_version){
+       case NR_IPV4:
+@@ -114,7 +115,10 @@ int nr_transport_addr_fmt_ifname_addr_string(const nr_transport_addr *addr, char
+       default:
+         ABORT(R_INTERNAL);
+     }
++    buffer[sizeof(buffer) - 1] = '\0';
++
+     snprintf(buf,len,"%s:%s",addr->ifname,buffer);
++    buf[len - 1] = '\0';
+ 
+     _status=0;
+   abort:

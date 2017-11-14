@@ -1,0 +1,218 @@
+commit 485ed2f2b015
+Author: Jan de Mooij <jdemooij@mozilla.com>
+Date:   Mon Sep 18 15:08:44 2017 +0200
+
+    Bug 1384121 part 1 - Don't sweep ObjectGroups under IC helper functions. r=bhackett
+---
+ js/src/jit/IonCacheIRCompiler.cpp |  4 ++--
+ js/src/vm/ObjectGroup.h           |  2 ++
+ js/src/vm/TypeInference-inl.h     | 29 ++++++++++++++++++++++-------
+ js/src/vm/UnboxedObject.cpp       |  2 +-
+ 4 files changed, 27 insertions(+), 10 deletions(-)
+
+diff --git js/src/jit/IonCacheIRCompiler.cpp js/src/jit/IonCacheIRCompiler.cpp
+index b11aed7966b6..bbfbdae57b12 100644
+--- js/src/jit/IonCacheIRCompiler.cpp
++++ js/src/jit/IonCacheIRCompiler.cpp
+@@ -1324,9 +1324,9 @@ IonCacheIRCompiler::emitCallStringSplitResult()
+ static bool
+ GroupHasPropertyTypes(ObjectGroup* group, jsid* id, Value* v)
+ {
+-    if (group->unknownProperties())
++    if (group->unknownPropertiesDontCheckGeneration())
+         return true;
+-    HeapTypeSet* propTypes = group->maybeGetProperty(*id);
++    HeapTypeSet* propTypes = group->maybeGetPropertyDontCheckGeneration(*id);
+     if (!propTypes)
+         return true;
+     if (!propTypes->nonConstantProperty())
+diff --git js/src/vm/ObjectGroup.h js/src/vm/ObjectGroup.h
+index 237b5a152576..0eba71ee084f 100644
+--- js/src/vm/ObjectGroup.h
++++ js/src/vm/ObjectGroup.h
+@@ -390,6 +390,7 @@ class ObjectGroup : public gc::TenuredCell
+ 
+     /* Get a property only if it already exists. */
+     MOZ_ALWAYS_INLINE HeapTypeSet* maybeGetProperty(jsid id);
++    MOZ_ALWAYS_INLINE HeapTypeSet* maybeGetPropertyDontCheckGeneration(jsid id);
+ 
+     /*
+      * Iterate through the group's properties. getPropertyCount overapproximates
+@@ -471,6 +472,7 @@ class ObjectGroup : public gc::TenuredCell
+     }
+ 
+     inline uint32_t basePropertyCount();
++    inline uint32_t basePropertyCountDontCheckGeneration();
+ 
+   private:
+     inline void setBasePropertyCount(uint32_t count);
+diff --git js/src/vm/TypeInference-inl.h js/src/vm/TypeInference-inl.h
+index f7cd3459ef19..f2b0b9a52fbc 100644
+--- js/src/vm/TypeInference-inl.h
++++ js/src/vm/TypeInference-inl.h
+@@ -369,10 +369,10 @@ TypeMonitorCall(JSContext* cx, const js::CallArgs& args, bool constructing)
+ MOZ_ALWAYS_INLINE bool
+ TrackPropertyTypes(JSObject* obj, jsid id)
+ {
+-    if (obj->hasLazyGroup() || obj->group()->unknownProperties())
++    if (obj->hasLazyGroup() || obj->group()->unknownPropertiesDontCheckGeneration())
+         return false;
+ 
+-    if (obj->isSingleton() && !obj->group()->maybeGetProperty(id))
++    if (obj->isSingleton() && !obj->group()->maybeGetPropertyDontCheckGeneration(id))
+         return false;
+ 
+     return true;
+@@ -410,7 +410,7 @@ HasTrackedPropertyType(JSObject* obj, jsid id, TypeSet::Type type)
+     MOZ_ASSERT(id == IdToTypeId(id));
+     MOZ_ASSERT(TrackPropertyTypes(obj, id));
+ 
+-    if (HeapTypeSet* types = obj->group()->maybeGetProperty(id)) {
++    if (HeapTypeSet* types = obj->group()->maybeGetPropertyDontCheckGeneration(id)) {
+         if (!types->hasType(type))
+             return false;
+         // Non-constant properties are only relevant for singleton objects.
+@@ -1074,10 +1074,18 @@ TypeSet::getObjectClass(unsigned i) const
+ // ObjectGroup
+ /////////////////////////////////////////////////////////////////////
+ 
++inline uint32_t
++ObjectGroup::basePropertyCountDontCheckGeneration()
++{
++    uint32_t flags = flagsDontCheckGeneration();
++    return (flags & OBJECT_FLAG_PROPERTY_COUNT_MASK) >> OBJECT_FLAG_PROPERTY_COUNT_SHIFT;
++}
++
+ inline uint32_t
+ ObjectGroup::basePropertyCount()
+ {
+-    return (flags() & OBJECT_FLAG_PROPERTY_COUNT_MASK) >> OBJECT_FLAG_PROPERTY_COUNT_SHIFT;
++    maybeSweep(nullptr);
++    return basePropertyCountDontCheckGeneration();
+ }
+ 
+ inline void
+@@ -1134,14 +1142,14 @@ ObjectGroup::getProperty(JSContext* cx, JSObject* obj, jsid id)
+ }
+ 
+ MOZ_ALWAYS_INLINE HeapTypeSet*
+-ObjectGroup::maybeGetProperty(jsid id)
++ObjectGroup::maybeGetPropertyDontCheckGeneration(jsid id)
+ {
+     MOZ_ASSERT(JSID_IS_VOID(id) || JSID_IS_EMPTY(id) || JSID_IS_STRING(id) || JSID_IS_SYMBOL(id));
+     MOZ_ASSERT_IF(!JSID_IS_EMPTY(id), id == IdToTypeId(id));
+-    MOZ_ASSERT(!unknownProperties());
++    MOZ_ASSERT(!unknownPropertiesDontCheckGeneration());
+ 
+     Property* prop = TypeHashSet::Lookup<jsid, Property, Property>
+-                         (propertySet, basePropertyCount(), id);
++                         (propertySet, basePropertyCountDontCheckGeneration(), id);
+ 
+     if (!prop)
+         return nullptr;
+@@ -1150,6 +1158,13 @@ ObjectGroup::maybeGetProperty(jsid id)
+     return &prop->types;
+ }
+ 
++MOZ_ALWAYS_INLINE HeapTypeSet*
++ObjectGroup::maybeGetProperty(jsid id)
++{
++    maybeSweep(nullptr);
++    return maybeGetPropertyDontCheckGeneration(id);
++}
++
+ inline unsigned
+ ObjectGroup::getPropertyCount()
+ {
+diff --git js/src/vm/UnboxedObject.cpp js/src/vm/UnboxedObject.cpp
+index c155b7dc47c9..4e007489a67e 100644
+--- js/src/vm/UnboxedObject.cpp
++++ js/src/vm/UnboxedObject.cpp
+@@ -363,7 +363,7 @@ UnboxedPlainObject::ensureExpando(JSContext* cx, Handle<UnboxedPlainObject*> obj
+ bool
+ UnboxedPlainObject::containsUnboxedOrExpandoProperty(JSContext* cx, jsid id) const
+ {
+-    if (layout().lookup(id))
++    if (layoutDontCheckGeneration().lookup(id))
+         return true;
+ 
+     if (maybeExpando() && maybeExpando()->containsShapeOrElement(cx, id))
+commit e240cf665f74
+Author: Jan de Mooij <jdemooij@mozilla.com>
+Date:   Wed Sep 20 12:13:54 2017 +0200
+
+    Bug 1384121 part 2 - Add asserts to catch similar bugs and fix some false positives. r=nbp
+---
+ js/src/jit/Bailouts.cpp                 | 4 ----
+ js/src/jit/JSJitFrameIter.cpp           | 2 ++
+ js/src/jit/VMFunctions.cpp              | 1 -
+ js/src/jit/arm/Trampoline-arm.cpp       | 9 ++++++---
+ js/src/jit/arm64/Trampoline-arm64.cpp   | 9 ++++++---
+ js/src/jit/mips32/Trampoline-mips32.cpp | 9 ++++++---
+ js/src/jit/mips64/Trampoline-mips64.cpp | 9 ++++++---
+ js/src/jit/x64/Trampoline-x64.cpp       | 9 ++++++---
+ js/src/jit/x86/Trampoline-x86.cpp       | 9 ++++++---
+ js/src/vm/ObjectGroup-inl.h             | 1 +
+ js/src/vm/Stack.cpp                     | 2 ++
+ js/src/vm/TypeInference.cpp             | 3 +++
+ 12 files changed, 44 insertions(+), 23 deletions(-)
+
+diff --git js/src/jit/JSJitFrameIter.cpp js/src/jit/JSJitFrameIter.cpp
+index 3774b327d21c..ae76bc2abaf0 100644
+--- js/src/jit/JitFrameIterator.cpp
++++ js/src/jit/JitFrameIterator.cpp
+@@ -25,6 +25,8 @@ JSJitFrameIter::JSJitFrameIter(const JitActivation* activation)
+         current_ = activation_->bailoutData()->fp();
+         frameSize_ = activation_->bailoutData()->topFrameSize();
+         type_ = JitFrame_Bailout;
++    } else {
++        MOZ_ASSERT(!TlsContext.get()->inUnsafeCallWithABI);
+     }
+ }
+ 
+diff --git js/src/vm/ObjectGroup-inl.h js/src/vm/ObjectGroup-inl.h
+index 7e023ecbad8e..d7caa63d8725 100644
+--- js/src/vm/ObjectGroup-inl.h
++++ js/src/vm/ObjectGroup-inl.h
+@@ -16,6 +16,7 @@ ObjectGroup::needsSweep()
+ {
+     // Note: this can be called off thread during compacting GCs, in which case
+     // nothing will be running on the active thread.
++    MOZ_ASSERT(!TlsContext.get()->inUnsafeCallWithABI);
+     return generation() != zoneFromAnyThread()->types.generation;
+ }
+ 
+diff --git js/src/vm/Stack.cpp js/src/vm/Stack.cpp
+index d3c0038db5ca..0406195abd56 100644
+--- js/src/vm/Stack.cpp
++++ js/src/vm/Stack.cpp
+@@ -605,6 +605,8 @@ FrameIter::popInterpreterFrame()
+ void
+ FrameIter::settleOnActivation()
+ {
++    MOZ_ASSERT(!data_.cx_->inUnsafeCallWithABI);
++
+     while (true) {
+         if (data_.activations_.done()) {
+             data_.state_ = DONE;
+diff --git js/src/vm/TypeInference.cpp js/src/vm/TypeInference.cpp
+index f0562a4355f8..eba18e34397e 100644
+--- js/src/vm/TypeInference.cpp
++++ js/src/vm/TypeInference.cpp
+@@ -4428,6 +4428,8 @@ ObjectGroup::sweep(AutoClearTypeInferenceStateOnOOM* oom)
+ /* static */ void
+ JSScript::maybeSweepTypes(AutoClearTypeInferenceStateOnOOM* oom)
+ {
++    MOZ_ASSERT(!TlsContext.get()->inUnsafeCallWithABI);
++
+     if (!types_ || typesGeneration() == zone()->types.generation)
+         return;
+ 
+@@ -4611,6 +4613,7 @@ AutoClearTypeInferenceStateOnOOM::AutoClearTypeInferenceStateOnOOM(Zone* zone)
+   : zone(zone), oom(false)
+ {
+     MOZ_RELEASE_ASSERT(CurrentThreadCanAccessZone(zone));
++    MOZ_ASSERT(!TlsContext.get()->inUnsafeCallWithABI);
+     zone->types.setSweepingTypes(true);
+ }
+ 
