@@ -43,6 +43,7 @@
     SUBDIR += dlpoly-classic
     SUBDIR += ecs
     SUBDIR += epte
+    SUBDIR += erd
     SUBDIR += fastcap
     SUBDIR += fasthenry
     SUBDIR += fisicalab
