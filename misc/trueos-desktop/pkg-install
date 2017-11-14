@@ -101,4 +101,14 @@ if [ ! -e "/var/.openrc-migrate-9" ] ; then
 fi
 touch /var/.openrc-migrate-9
 
+if [ ! -e "/var/.openrc-migrate-10" ] ; then
+  cat /etc/rc.conf | grep -q "i915kms"
+  if [ $? -eq 0 ] ; then
+    cp /etc/rc.conf /etc/rc.conf.preUpgrade
+    cat /etc/rc.conf | grep -v "i915kms" > /etc/rc.conf.$$
+    mv /etc/rc.conf.$$ /etc/rc.conf
+  fi
+fi
+touch /var/.openrc-migrate-10
+
 exit 0
