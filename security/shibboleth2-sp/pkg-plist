@@ -92,8 +92,9 @@ include/shibsp/util/PropertySet.h
 include/shibsp/util/SPConstants.h
 include/shibsp/util/TemplateParameters.h
 include/shibsp/version.h
-lib/libshibsp.so.7
 lib/libshibsp.so
+lib/libshibsp.so.7
+lib/libshibsp.so.7.0.1
 lib/shibboleth/adfs.so
 lib/shibboleth/adfs-lite.so
 %%MEMCACHED%%lib/shibboleth/memcache-store.so
@@ -104,8 +105,9 @@ lib/shibboleth/plugins.so
 %%WITH_APACHE_24%%lib/shibboleth/mod_shib_24.so
 %%FASTCGI%%lib/shibboleth/shibauthorizer
 %%FASTCGI%%lib/shibboleth/shibresponder
-lib/libshibsp-lite.so.7
 lib/libshibsp-lite.so
+lib/libshibsp-lite.so.7
+lib/libshibsp-lite.so.7.0.1
 sbin/shibd
 share/xml/shibboleth/catalog.xml
 share/xml/shibboleth/shibboleth-2.0-afp-mf-basic.xsd
