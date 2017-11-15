@@ -1,0 +1,12 @@
+etc/rc.d/triton
+lib/smartdc/add-network-interface
+lib/smartdc/common.lib
+lib/smartdc/firstboot
+lib/smartdc/format-secondary-disk
+lib/smartdc/get-user-data
+lib/smartdc/run-operator-script
+lib/smartdc/run-user-script
+lib/smartdc/set-hostname
+lib/smartdc/set-root-authorized-keys
+lib/smartdc/set-rootpassword
+lib/smartdc/triton

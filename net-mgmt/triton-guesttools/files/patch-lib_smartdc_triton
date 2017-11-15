@@ -1,0 +1,23 @@
+--- lib/smartdc/triton.orig	2017-05-22 19:41:07 UTC
++++ lib/smartdc/triton
+@@ -13,12 +13,12 @@ export PS4='[\D{%FT%TZ}] ${BASH_SOURCE}:${LINENO}: ${F
+ export BASH_XTRACEFD=4
+ set -o xtrace
+ 
+-(/lib/smartdc/add-network-interface)
+-(/lib/smartdc/set-hostname)
+-(/lib/smartdc/set-root-authorized-keys)
+-if [ ! -f /lib/smartdc/.firstboot-complete-do-not-delete ] ; then
+-  (/lib/smartdc/firstboot)
++(%%PREFIX%%/lib/smartdc/add-network-interface)
++(%%PREFIX%%/lib/smartdc/set-hostname)
++(%%PREFIX%%/lib/smartdc/set-root-authorized-keys)
++if [ ! -f %%PREFIX%%/lib/smartdc/.firstboot-complete-do-not-delete ] ; then
++  (%%PREFIX%%/lib/smartdc/firstboot)
+ fi
+-(/lib/smartdc/run-operator-script)
+-(/lib/smartdc/get-user-data)
+-(/lib/smartdc/run-user-script)
++(%%PREFIX%%/lib/smartdc/run-operator-script)
++(%%PREFIX%%/lib/smartdc/get-user-data)
++(%%PREFIX%%/lib/smartdc/run-user-script)

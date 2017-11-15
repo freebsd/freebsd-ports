@@ -1,0 +1,21 @@
+--- lib/smartdc/common.lib.orig	2017-05-22 19:41:07 UTC
++++ lib/smartdc/common.lib
+@@ -3,15 +3,15 @@
+ #
+ # Copyright (c) 2016 Joyent Inc., All rights reserved.
+ #
+-# Common variables used by scripts in /lib/smartdc
++# Common variables used by scripts in %%PREFIX%%/lib/smartdc
+ 
+ # location of binaries that functions use
+ LOGGER=/usr/bin/logger
+-MDATA_GET='/usr/sbin/mdata-get'
++MDATA_GET='%%PREFIX%%/sbin/mdata-get'
+ 
+ set -o xtrace
+ 
+-# Common functions used by scripts /lib/smartdc
++# Common functions used by scripts %%PREFIX%%/lib/smartdc
+ 
+ lib_triton_fatal() {
+   echo "(fatal) - $0 - $@"
