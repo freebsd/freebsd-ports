@@ -128,6 +128,7 @@
     SUBDIR += emms
     SUBDIR += enscribe
     SUBDIR += epos-devel
+    SUBDIR += eq10q-lv2
     SUBDIR += esound
     SUBDIR += espeak
     SUBDIR += esperanza
