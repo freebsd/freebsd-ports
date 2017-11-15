@@ -587,6 +587,7 @@ include/wine/windows/ntddstor.h
 include/wine/windows/ntdef.h
 include/wine/windows/ntdsapi.h
 %%STAGING%%include/wine/windows/ntifs.h
+include/wine/windows/ntlsa.h
 include/wine/windows/ntquery.h
 include/wine/windows/ntsecapi.h
 include/wine/windows/ntsecpkg.h
