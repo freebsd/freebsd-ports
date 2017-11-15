@@ -1,12 +1,15 @@
-U-Boot loader and related files for Raspberry Pi 2
+U-Boot loader for Raspberry Pi 2
 
-To install this bootloader, copy ALL the files in the share/u-boot/u-boot-rpi2
-directory to the first partition, formatted as FAT32, on an SD card.
+To install this bootloader, copy u-boot.bin in the share/u-boot/u-boot-rpi
+directory to the first partition, formatted as FAT16 or FAT32, on an SD card.
+You will also need the firmware files from the rpi-firmware package.
 
 This version is patched so that:
  * ELF and API features are enabled.
- * The default environment is trimmed to just what's needed to boot.
- * The saveenv command writes to the file uboot.env on the FAT partition.
+ * The distroboot command knows how to load FreeBSD loader(8)
+ * By default, it loads ubldr.bin (PIE) from file ubldr.bin on the FAT
+   partition to address ${kernel_addr_r}, and launches it. If ubldr.bin is
+   not found, it falls back on ubldr
 
 For information about running FreeBSD on RaspberryPi, see
 WWW: http://wiki.freebsd.org/FreeBSD/arm/Raspberry%20Pi
