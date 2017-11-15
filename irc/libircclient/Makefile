@@ -9,7 +9,8 @@ MASTER_SITES=	SF
 MAINTAINER=	jlaffaye@FreeBSD.org
 COMMENT=	IRC library to create IRC clients
 
-LICENSE=	LGPL20
+LICENSE=	LGPL3+
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 OPTIONS_DEFINE=	OPENSSL IPV6 EXAMPLES
 OPTIONS_DEFAULT=	OPENSSL
@@ -24,14 +25,10 @@ BUILD_WRKSRC=	${WRKSRC}/src
 GNU_CONFIGURE=	yes
 
 do-install:
-	@${INSTALL_DATA} ${WRKSRC}/include/libircclient.h ${STAGEDIR}${PREFIX}/include
-	@${INSTALL_DATA} ${WRKSRC}/include/libirc_errors.h ${STAGEDIR}${PREFIX}/include
-	@${INSTALL_DATA} ${WRKSRC}/include/libirc_events.h ${STAGEDIR}${PREFIX}/include
-	@${INSTALL_DATA} ${WRKSRC}/include/libirc_options.h ${STAGEDIR}${PREFIX}/include
-	@${INSTALL_DATA} ${WRKSRC}/include/libirc_rfcnumeric.h ${STAGEDIR}${PREFIX}/include
-	@${INSTALL_DATA} ${WRKSRC}/src/libircclient.a ${STAGEDIR}${PREFIX}/lib
+	${INSTALL_DATA} ${WRKSRC}/include/*.h ${STAGEDIR}${PREFIX}/include
+	${INSTALL_DATA} ${WRKSRC}/src/libircclient.a ${STAGEDIR}${PREFIX}/lib
 
-post-install-EXAMPLES-on:
-	(cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} \* ${STAGEDIR}${EXAMPLESDIR})
+do-install-EXAMPLES-on:
+	(cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR})
 
 .include <bsd.port.mk>
