@@ -2,17 +2,21 @@
 # $FreeBSD$
 
 PORTNAME=	terminus-font
-PORTVERSION=	4.40
+PORTVERSION=	4.46
 CATEGORIES=	x11-fonts
 MASTER_SITES=	SF/${PORTNAME:tl}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	zeising@FreeBSD.org
 COMMENT=	Terminus Font - a clean fixed width font
 
+LICENSE=	OFL11
+
 BUILD_DEPENDS=	bdftopcf:x11-fonts/bdftopcf
 
-USES=		gmake fonts perl5
-USE_PERL5=	build
+USES=		gmake fonts python:build,3.4+ shebangfix
+NO_ARCH=	yes
+
+SHEBANG_FILES=	bin/*.py
 
 OPTIONS_DEFINE=	AO2 DV1 GE2 GQ2 IJ1 KA2 HI2 LL2 TD1
 AO2_DESC=	Variant of letter 'a'
@@ -29,7 +33,7 @@ SUB_FILES=	pkg-message
 
 .include <bsd.port.options.mk>
 
-ALL_TARGET=	pcf
+ALL_TARGET=	pcf pcf-8bit
 
 post-extract:
 .if ${PORT_OPTIONS:MAO2}
@@ -65,6 +69,9 @@ post-extract:
 .if ${PORT_OPTIONS:MTD1}
 	cd ${WRKSRC} && ${PATCH} -p1 -i alt/td1.diff
 .endif
+
+post-patch:
+	${REINPLACE_CMD} -e 's|python3|${PYTHON_CMD}|g' ${WRKSRC}/Makefile
 
 post-build:
 	@${GZIP_CMD} ${WRKSRC}/*.pcf
