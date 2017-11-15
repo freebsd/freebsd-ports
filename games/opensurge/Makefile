@@ -18,6 +18,7 @@ LICENSE_COMB=	multi
 LICENSE_FILE_GPLv2+ =	${WRKSRC}/licenses/GPLv2.txt
 LICENSE_FILE_CC-BY-SA-3.0=	${WRKSRC}/licenses/CC-BY-SA-3.0.txt
 
+BROKEN=		Does not build
 DEPRECATED=	Does not build
 EXPIRATION_DATE=2018-02-01
 
