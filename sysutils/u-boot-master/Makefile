@@ -61,6 +61,9 @@ UBOOT_ARCH_ALLWINNER64=aarch64
 UBOOT_PLIST_ZYNQ_7000=u-boot.img boot.bin uEnv.txt
 UBOOT_MOVE_ZYNQ_7000=${WRKSRC}/spl/boot.bin ${.CURDIR}/files/uEnv.txt
 
+# Overrides for RPI family
+UBOOT_PLIST_RPI=	u-boot.bin
+
 # Uboot variables
 .if !defined(UBOOT_VERSION) && defined(UBOOT_VERSION_${FAMILY:tu})
 UBOOT_VERSION=${UBOOT_VERSION_${FAMILY:tu}}
