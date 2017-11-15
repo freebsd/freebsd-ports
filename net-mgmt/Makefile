@@ -361,6 +361,7 @@
     SUBDIR += telegraf
     SUBDIR += tornova
     SUBDIR += torrus
+    SUBDIR += triton-guesttools
     SUBDIR += unbound_exporter
     SUBDIR += unifi5
     SUBDIR += victorops-nagios

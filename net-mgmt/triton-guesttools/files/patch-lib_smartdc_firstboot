@@ -1,0 +1,23 @@
+--- lib/smartdc/firstboot.orig	2017-05-22 19:41:07 UTC
++++ lib/smartdc/firstboot
+@@ -4,16 +4,16 @@
+ # For scripts that should be run on first boot only
+ 
+ # load common functions and vars
+-. /lib/smartdc/common.lib
++. %%PREFIX%%/lib/smartdc/common.lib
+ 
+ # Set root password if root_pw is set in the image manifest
+-(/lib/smartdc/set-rootpassword)
++(%%PREFIX%%/lib/smartdc/set-rootpassword)
+ 
+ # Format disk
+-(/lib/smartdc/format-secondary-disk)
++(%%PREFIX%%/lib/smartdc/format-secondary-disk)
+ 
+ # Disable firstboot once all scripts are run
+ lib_triton_info "Disabling firstboot"
+-touch /lib/smartdc/.firstboot-complete-do-not-delete
++touch %%PREFIX%%/lib/smartdc/.firstboot-complete-do-not-delete
+ 
+ exit 0
