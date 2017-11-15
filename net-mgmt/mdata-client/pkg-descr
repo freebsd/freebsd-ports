@@ -1,0 +1,5 @@
+Metadata retrieval and manipulation tools for use within guests of the SmartOS
+(and SDC) hypervisor. These guests may be either SmartOS Zones or KVM virtual
+machines.
+
+WWW: https://github.com/joyent/mdata-client

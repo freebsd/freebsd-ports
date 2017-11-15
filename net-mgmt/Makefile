@@ -120,6 +120,7 @@
     SUBDIR += libsmi
     SUBDIR += lldpd
     SUBDIR += mbrowse
+    SUBDIR += mdata-client
     SUBDIR += mk-livestatus
     SUBDIR += monitoring-plugins
     SUBDIR += mrtg
