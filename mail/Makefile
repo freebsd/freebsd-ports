@@ -488,6 +488,7 @@
     SUBDIR += php56-imap
     SUBDIR += php70-imap
     SUBDIR += php71-imap
+    SUBDIR += php72-imap
     SUBDIR += phplist
     SUBDIR += phpmailer
     SUBDIR += pine-pgp-filters

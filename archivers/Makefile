@@ -159,6 +159,10 @@
     SUBDIR += php71-phar
     SUBDIR += php71-zip
     SUBDIR += php71-zlib
+    SUBDIR += php72-bz2
+    SUBDIR += php72-phar
+    SUBDIR += php72-zip
+    SUBDIR += php72-zlib
     SUBDIR += pigz
     SUBDIR += pixz
     SUBDIR += plzip

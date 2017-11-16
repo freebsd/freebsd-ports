@@ -257,6 +257,8 @@
     SUBDIR += php70-extensions
     SUBDIR += php71
     SUBDIR += php71-extensions
+    SUBDIR += php72
+    SUBDIR += php72-extensions
     SUBDIR += php_doc
     SUBDIR += picoc
     SUBDIR += pike78
