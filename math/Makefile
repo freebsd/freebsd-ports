@@ -597,6 +597,8 @@
     SUBDIR += php70-gmp
     SUBDIR += php71-bcmath
     SUBDIR += php71-gmp
+    SUBDIR += php72-bcmath
+    SUBDIR += php72-gmp
     SUBDIR += physcalc
     SUBDIR += picosat
     SUBDIR += plman

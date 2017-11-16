@@ -114,7 +114,10 @@ DEFAULT_PHP_VER?=	${PHP_DEFAULT:S/.//}
 # When adding a version, please keep the comment in
 # Mk/bsd.default-versions.mk in sync.
 PHP_VER?=	${DEFAULT_PHP_VER}
-.    if ${PHP_VER} == 71
+.    if ${PHP_VER} == 72
+PHP_EXT_DIR=   20170718
+PHP_EXT_INC=    pcre spl
+.    elif ${PHP_VER} == 71
 PHP_EXT_DIR=   20160303
 PHP_EXT_INC=    pcre spl
 .    elif ${PHP_VER} == 70
@@ -301,9 +304,10 @@ _USE_PHP_ALL=	bcmath bitset bz2 calendar ctype curl dba dom \
 _USE_PHP_VER56=	${_USE_PHP_ALL} mssql mysql sybase_ct
 _USE_PHP_VER70=	${_USE_PHP_ALL}
 _USE_PHP_VER71=	${_USE_PHP_ALL}
+_USE_PHP_VER72=	${_USE_PHP_ALL} sodium
 
 bcmath_DEPENDS=	math/php${PHP_VER}-bcmath
-.    if ${PHP_VER} == 70 || ${PHP_VER} == 71
+.    if ${PHP_VER} == 70 || ${PHP_VER} == 71 || ${PHP_VER} == 72
 bitset_DEPENDS=	math/pecl-bitset
 .    else
 bitset_DEPENDS=	math/pecl-bitset2
@@ -328,7 +332,7 @@ iconv_DEPENDS=	converters/php${PHP_VER}-iconv
 igbinary_DEPENDS=	converters/pecl-igbinary
 imap_DEPENDS=	mail/php${PHP_VER}-imap
 interbase_DEPENDS=	databases/php${PHP_VER}-interbase
-.    if ${PHP_VER} == 70 || ${PHP_VER} == 71
+.    if ${PHP_VER} == 70 || ${PHP_VER} == 71 || ${PHP_VER} == 72
 intl_DEPENDS=	devel/php${PHP_VER}-intl
 .    else
 intl_DEPENDS=	devel/pecl-intl
