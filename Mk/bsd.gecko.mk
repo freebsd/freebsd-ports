@@ -426,7 +426,6 @@ MOZ_OPTIONS+=	--enable-dtrace \
 LIBS+=			-lelf
 . endif
 STRIP=
-LLD_UNSAFE=		yes
 .else
 MOZ_OPTIONS+=	--disable-dtrace
 .endif
