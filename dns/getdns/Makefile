@@ -3,10 +3,11 @@
 
 PORTNAME=	getdns
 PORTVERSION=	1.2.1
+PORTREVISION=	1
 CATEGORIES=	dns ipv6
 MASTER_SITES=	https://getdnsapi.net/dist/ \
 		ZI \
-		http://getdnsapi.net/dist/ \
+		http://getdnsapi.net/dist/
 
 MAINTAINER=	zi@FreeBSD.org
 COMMENT=	Modern asynchronous DNS API
@@ -32,11 +33,12 @@ PLIST_SUB+=	SOVERSION="${SOVERSION}" SOMAJVER="${SOMAJVER}"
 SUB_FILES+=	pkg-message
 
 OPTIONS_SUB=	yes
-OPTIONS_DEFINE=	DOCS LIBEV LIBEVENT LIBUV
+OPTIONS_DEFINE=	DOCS LIBEV LIBEVENT LIBUV STUBBY
 
 LIBEV_DESC=	Build with libev extension
 LIBEVENT_DESC=	Build with libevent extension
 LIBUV_DESC=	Build with libuv extension
+STUBBY_DESC=	Build with Stubby DNS/TLS resolver
 
 LIBEV_LIB_DEPENDS=	libev.so:devel/libev
 LIBEV_CONFIGURE_WITH=	libev
@@ -44,6 +46,8 @@ LIBEVENT_LIB_DEPENDS=	libevent_core.so:devel/libevent
 LIBEVENT_CONFIGURE_WITH=libevent
 LIBUV_LIB_DEPENDS=	libuv.so:devel/libuv
 LIBUV_CONFIGURE_WITH=	libuv
+STUBBY_LIB_DEPENDS=	libyaml.so:textproc/libyaml
+STUBBY_CONFIGURE_WITH=	stubby
 
 post-patch:
 	${REINPLACE_CMD} -Ee 's,^(sharedoc = ).*,\1${WRKDIR}/doc,' \
@@ -52,5 +56,12 @@ post-patch:
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libgetdns*.so.*
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/getdns_query
+
+post-stage-STUBBY-on:
+	${MV} ${STAGEDIR}${PREFIX}/etc/stubby/stubby.yml \
+		${STAGEDIR}${PREFIX}/etc/stubby/stubby.yml.sample
+
+post-install-STUBBY-on:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/stubby
 
 .include <bsd.port.mk>
