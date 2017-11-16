@@ -2375,6 +2375,7 @@
     SUBDIR += udmsearch
     SUBDIR += ufdbguard
     SUBDIR += uglifyjs
+    SUBDIR += unit
     SUBDIR += usermanager
     SUBDIR += uwsgi
     SUBDIR += uwsgitop
