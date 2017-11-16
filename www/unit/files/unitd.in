@@ -1,0 +1,44 @@
+#!/bin/sh
+#
+# $FreeBSD$
+
+# PROVIDE: unitd
+# REQUIRE: LOGIN cleanvar
+# KEYWORD: shutdown
+
+#
+# Add the following lines to /etc/rc.conf to enable nginx:
+# unitd_enable (bool):          Set to "NO" by default.
+#                               Set it to "YES" to enable unit
+# unitd_sockfile (str):         Set to "" by default.
+#                               Set it to "127.0.0.1:8443" to enable the unit control
+#                               socket on the network address
+
+. /etc/rc.subr
+
+name="unitd"
+rcvar=unitd_enable
+
+command="%%PREFIX%%/sbin/unitd"
+start_precmd=start_precmd
+
+start_precmd()
+{
+    rm -f %%UNIT_SOCK%%
+}
+
+load_rc_config $name
+
+# Default value
+: ${unitd_sockfile=""}
+
+pidfile=${unit_pidfile:-"%%UNIT_PIDFILE%%"}
+unitd_enable=${unitd_enable:-"NO"}
+sockfile=${unitd_sockfile}
+
+if [ x${sockfile} != "x" ]
+then
+    command_args="--control ${sockfile}"
+fi
+
+run_rc_command "$1"
