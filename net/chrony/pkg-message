@@ -1,4 +1,0 @@
-Unfortunately, this software has shameful history of several vulnerabilities
-previously discovered.  FreeBSD Project cannot guarantee that this spree had
-come to an end.  Please type ``pkg delete chrony'' to deinstall the port
-if tight security is a concern.
