@@ -1,0 +1,8 @@
+This Lua library is a Redis client driver for the ngx_lua nginx module:
+
+http://wiki.nginx.org/HttpLuaModule
+
+This Lua library takes advantage of ngx_lua's cosocket API, which ensures 100%
+nonblocking behavior.
+
+WWW: https://github.com/openresty/lua-resty-redis

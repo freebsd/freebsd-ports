@@ -164,6 +164,7 @@
     SUBDIR += linux-oracle-instantclient-sqlplus
     SUBDIR += liquibase
     SUBDIR += lmdb
+    SUBDIR += lua-resty-redis
     SUBDIR += lua-xapian
     SUBDIR += luadbi
     SUBDIR += luasql-firebird
