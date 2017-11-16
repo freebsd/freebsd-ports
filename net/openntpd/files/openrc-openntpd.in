@@ -23,7 +23,6 @@ command_args="$ntpd_args -f $openntpd_config -d -s"
 description="Network Time Protocol Daemon"
 supervisor=supervise-daemon
 supervise_daemon_args="-1 /var/log/openntpd.log -2 /var/log/openntpd.log"
-respawn_max=0
 respawn_delay=30
 
 depend()
