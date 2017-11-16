@@ -1,0 +1,4 @@
+bin/owrep
+%%ETCDIR%%.conf.sample
+man/man1/owrep.1.gz
+man/man5/owrep.conf.5.gz

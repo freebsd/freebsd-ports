@@ -286,6 +286,7 @@
     SUBDIR += osinfo-db
     SUBDIR += ossp-uuid
     SUBDIR += otter
+    SUBDIR += owrep
     SUBDIR += p5-Acme-ButFirst
     SUBDIR += p5-Array-Compare
     SUBDIR += p5-Array-Diff
