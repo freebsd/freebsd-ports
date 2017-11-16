@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	aphpunit
-DISTVERSION=	1.0
-PORTREVISION=	1
+DISTVERSION=	1.1
 CATEGORIES=	devel www
 MASTER_SITES=	http://phar.toco-domains.de/
 EXTRACT_SUFX=	.phar
