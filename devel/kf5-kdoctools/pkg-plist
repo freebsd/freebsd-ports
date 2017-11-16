@@ -166,6 +166,7 @@ share/kf5/kdoctools/customization/bg/lang.entities
 share/kf5/kdoctools/customization/bg/strings.entities
 share/kf5/kdoctools/customization/bg/user.entities
 share/kf5/kdoctools/customization/ca/catalog.xml
+share/kf5/kdoctools/customization/ca/entities/ccbysa4-notice.docbook
 share/kf5/kdoctools/customization/ca/entities/fdl-notice.docbook
 share/kf5/kdoctools/customization/ca/entities/gpl-notice.docbook
 share/kf5/kdoctools/customization/ca/entities/help-menu.docbook
@@ -175,6 +176,7 @@ share/kf5/kdoctools/customization/ca/entities/lgpl-notice.docbook
 share/kf5/kdoctools/customization/ca/entities/report-bugs.docbook
 share/kf5/kdoctools/customization/ca/entities/underArtisticLicense.docbook
 share/kf5/kdoctools/customization/ca/entities/underBSDLicense.docbook
+share/kf5/kdoctools/customization/ca/entities/underCCBYSA4.docbook
 share/kf5/kdoctools/customization/ca/entities/underFDL.docbook
 share/kf5/kdoctools/customization/ca/entities/underGPL.docbook
 share/kf5/kdoctools/customization/ca/entities/underLGPL.docbook
@@ -880,6 +882,7 @@ share/kf5/kdoctools/customization/tr/lang.entities
 share/kf5/kdoctools/customization/tr/strings.entities
 share/kf5/kdoctools/customization/tr/user.entities
 share/kf5/kdoctools/customization/uk/catalog.xml
+share/kf5/kdoctools/customization/uk/entities/ccbysa4-notice.docbook
 share/kf5/kdoctools/customization/uk/entities/fdl-notice.docbook
 share/kf5/kdoctools/customization/uk/entities/gpl-notice.docbook
 share/kf5/kdoctools/customization/uk/entities/help-menu.docbook
@@ -889,6 +892,7 @@ share/kf5/kdoctools/customization/uk/entities/lgpl-notice.docbook
 share/kf5/kdoctools/customization/uk/entities/report-bugs.docbook
 share/kf5/kdoctools/customization/uk/entities/underArtisticLicense.docbook
 share/kf5/kdoctools/customization/uk/entities/underBSDLicense.docbook
+share/kf5/kdoctools/customization/uk/entities/underCCBYSA4.docbook
 share/kf5/kdoctools/customization/uk/entities/underFDL.docbook
 share/kf5/kdoctools/customization/uk/entities/underGPL.docbook
 share/kf5/kdoctools/customization/uk/entities/underLGPL.docbook
