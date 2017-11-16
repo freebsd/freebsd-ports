@@ -6,4 +6,4 @@ sid-milter implements the -core and -protocol specifications.
 Additionally, sid-milter implements the "SPF Classic" record protocol
 (v=spf1) as defined by the SPF community.
 
-WWW: http://sendmail.net/sid-milter/
+WWW: https://sourceforge.net/projects/sid-milter/
