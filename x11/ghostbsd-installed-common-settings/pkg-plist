@@ -2,4 +2,5 @@ etc/PolicyKit/PolicyKit.conf
 etc/polkit-1/localauthority/50-local.d/org.freedesktop.consolekit.pkla
 etc/polkit-1/rules.d/05-shutdown.rules
 etc/xdg/autostart/desktopsound.desktop
+etc/xdg/autostart/user-dirs-update-gtk.desktop
 share/sounds/ghostbsd/desktop-login.ogg
