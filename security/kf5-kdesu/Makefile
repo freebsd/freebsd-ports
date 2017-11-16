@@ -1,8 +1,7 @@
-# Created by: tcberner
 # $FreeBSD$
 
 PORTNAME=	kdesu
-PORTVERSION=	${KDE_FRAMEWORKS_VERSION}
+DISTVERSION=	${KDE_FRAMEWORKS_VERSION}
 CATEGORIES=	security kde kde-frameworks
 
 MAINTAINER=	kde@FreeBSD.org

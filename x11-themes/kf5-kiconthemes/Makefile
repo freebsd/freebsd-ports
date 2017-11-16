@@ -1,8 +1,7 @@
-# Created by: tcberner
 # $FreeBSD$
 
 PORTNAME=	kiconthemes
-PORTVERSION=	${KDE_FRAMEWORKS_VERSION}
+DISTVERSION=	${KDE_FRAMEWORKS_VERSION}
 CATEGORIES=	x11-themes kde kde-frameworks
 
 MAINTAINER=	kde@FreeBSD.org
