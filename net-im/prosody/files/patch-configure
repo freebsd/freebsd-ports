@@ -1,17 +1,16 @@
---- configure.orig	2013-12-08 19:05:39.000000000 +0100
-+++ configure	2014-02-06 22:21:15.000000000 +0100
-@@ -13,11 +13,11 @@
- IDN_LIB=idn
+--- configure.orig	2017-09-28 13:07:47 UTC
++++ configure
+@@ -16,10 +16,10 @@ LUA_LIBDIR="/usr/lib"
+ IDN_LIB="idn"
  ICU_FLAGS="-licui18n -licudata -licuuc"
- OPENSSL_LIB=crypto
--CC=gcc
-+CC=cc
- CXX=g++
--LD=gcc
-+LD=cc
- RUNWITH=lua
--EXCERTS=yes
-+EXCERTS=no
+ OPENSSL_LIB="crypto"
+-CC="gcc"
+-LD="gcc"
++CC="cc"
++LD="cc"
+ RUNWITH="lua"
+-EXCERTS="yes"
++EXCERTS="no"
+ PRNG=
+ PRNGLIBS=
  
- CFLAGS="-fPIC -Wall"
- LDFLAGS="-shared"
