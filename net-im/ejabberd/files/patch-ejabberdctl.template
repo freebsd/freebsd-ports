@@ -1,17 +1,17 @@
---- ejabberdctl.template.orig	2017-09-17 17:17:31 UTC
+--- ejabberdctl.template.orig	2017-11-16 13:10:22 UTC
 +++ ejabberdctl.template
-@@ -56,8 +56,8 @@ done
+@@ -57,8 +57,8 @@ done
  
  # define ejabberd variables if not already defined from the command line
- : ${ETC_DIR:={{sysconfdir}}/ejabberd}
--: ${LOGS_DIR:={{localstatedir}}/log/ejabberd}
--: ${SPOOL_DIR:={{localstatedir}}/lib/ejabberd}
+ : "${ETC_DIR:="{{sysconfdir}}/ejabberd"}"
+-: "${LOGS_DIR:="{{localstatedir}}/log/ejabberd"}"
+-: "${SPOOL_DIR:="{{localstatedir}}/lib/ejabberd"}"
 +: ${LOGS_DIR:=/var/log/ejabberd}
 +: ${SPOOL_DIR:=/var/spool/ejabberd}
- : ${EJABBERD_CONFIG_PATH:="$ETC_DIR"/ejabberd.yml}
- : ${EJABBERDCTL_CONFIG_PATH:="$ETC_DIR"/ejabberdctl.cfg}
+ : "${EJABBERD_CONFIG_PATH:="$ETC_DIR/ejabberd.yml"}"
+ : "${EJABBERDCTL_CONFIG_PATH:="$ETC_DIR/ejabberdctl.cfg"}"
  [ -f "$EJABBERDCTL_CONFIG_PATH" ] && . "$EJABBERDCTL_CONFIG_PATH"
-@@ -77,7 +77,8 @@ if [ "$INET_DIST_INTERFACE" != "" ] ; th
+@@ -78,7 +78,8 @@ if [ -n "$INET_DIST_INTERFACE" ] ; then
          ERLANG_OPTS="$ERLANG_OPTS -kernel inet_dist_use_interface $INET_DIST_INTERFACE2"
      fi
  fi
