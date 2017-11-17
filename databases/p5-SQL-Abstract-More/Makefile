@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	SQL-Abstract-More
-PORTVERSION=	1.28
+PORTVERSION=	1.30
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,7 +15,7 @@ LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-MRO-Compat>0:devel/p5-MRO-Compat \
 		p5-Params-Validate>0:devel/p5-Params-Validate \
-		p5-SQL-Abstract>=1.73:databases/p5-SQL-Abstract \
+		p5-SQL-Abstract>=1.84:databases/p5-SQL-Abstract \
 		p5-namespace-clean>=0:devel/p5-namespace-clean
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-List-MoreUtils>=0:lang/p5-List-MoreUtils \
