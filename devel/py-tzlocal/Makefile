@@ -12,9 +12,9 @@ COMMENT=	Returns the tzinfo object for the local timezone
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytz>0:devel/py-pytz
+RUN_DEPENDS?=	${PYTHON_PKGNAMEPREFIX}pytz>0:devel/py-pytz
 
-USES=		python
+USES?=		python
 USE_PYTHON=	distutils autoplist
 NO_ARCH=	yes
 
