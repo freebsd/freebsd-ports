@@ -2142,6 +2142,7 @@
     SUBDIR += rubygem-rkelly-remix
     SUBDIR += rubygem-robotex
     SUBDIR += rubygem-robots
+    SUBDIR += rubygem-roda
     SUBDIR += rubygem-rqrcode
     SUBDIR += rubygem-rqrcode-rails3
     SUBDIR += rubygem-rtlit
