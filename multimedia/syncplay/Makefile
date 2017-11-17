@@ -1,9 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	syncplay
-PORTVERSION=	1.4.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
+DISTVERSION=	1.5.0
 CATEGORIES=	multimedia
 
 MAINTAINER=	heckendorfc@gmail.com
@@ -13,13 +12,11 @@ LICENSE=	APACHE20
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}twisted>=0:devel/py-twisted
 
+USES=		desktop-file-utils gmake python:2.7
 USE_GITHUB=	yes
 GH_ACCOUNT=	Syncplay
 
-USES=		desktop-file-utils gmake python:2
 NO_ARCH=	yes
-
-INSTALLS_ICONS=	yes
 
 OPTIONS_DEFINE=	GUI VLC
 OPTIONS_DEFAULT=	GUI VLC CLIENT SERVER
