@@ -80,10 +80,7 @@
     SUBDIR += gcb
     SUBDIR += gdkxft
     SUBDIR += gdm
-    SUBDIR += ghostbsd-gdm-theme
     SUBDIR += ghostbsd-installed-common-settings
-    SUBDIR += ghostbsd-kdm-theme
-    SUBDIR += ghostbsd-ksplash-theme
     SUBDIR += ghostbsd-live-common-settings
     SUBDIR += ghostbsd-slim-theme
     SUBDIR += glproto
@@ -133,8 +130,6 @@
     SUBDIR += kactivitymanagerd
     SUBDIR += kb2mb2
     SUBDIR += kbproto
-    SUBDIR += kde-installed-settings
-    SUBDIR += kde-live-settings
     SUBDIR += kde4
     SUBDIR += kde4-baseapps
     SUBDIR += kde4-runtime
