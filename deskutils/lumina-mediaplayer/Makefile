@@ -3,7 +3,7 @@
 
 PORTNAME=	lumina-mediaplayer
 PORTVERSION=	1.3.3
-PORTREVISION=	201711170731
+PORTREVISION=	201711170749
 CATEGORIES=	deskutils
 
 MAINTAINER=	kmoore@FreeBSD.org
@@ -28,7 +28,7 @@ USE_QT5=	core gui widgets network svg \
 USE_GITHUB=	yes
 GH_ACCOUNT=	trueos
 GH_PROJECT=	lumina
-GH_TAGNAME=	5312b9161aa82ec8139c73b5f7dddd269120f15d
+GH_TAGNAME=	ce1a1a4da425cb2a97c429aef8bb1e016f1d84a5
 WRKSRC_SUBDIR=	src-qt5/desktop-utils/${PORTNAME}
 
 .if${PORT_OPTIONS:MI18N}
