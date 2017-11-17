@@ -652,7 +652,6 @@
     SUBDIR += php71-pdo_sqlite
     SUBDIR += php71-pgsql
     SUBDIR += php71-sqlite3
-    SUBDIR += php72-pdo
     SUBDIR += php72-dba
     SUBDIR += php72-interbase
     SUBDIR += php72-mysqli
