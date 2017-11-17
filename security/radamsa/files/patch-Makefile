@@ -1,20 +1,33 @@
---- Makefile.orig	2014-03-14 15:53:14.654599833 +0200
-+++ Makefile	2014-03-14 15:56:03.358626694 +0200
-@@ -1,11 +1,11 @@
+--- Makefile.orig	2016-07-20 19:02:29 UTC
++++ Makefile
+@@ -1,15 +1,15 @@
  DESTDIR=
 -PREFIX=/usr
 +PREFIX=/usr/local
  BINDIR=/bin
- CFLAGS=-Wall -O3
- OFLAGS=-O1
+-CFLAGS=-Wall -O2
++CFLAGS=-Wall -O3 -pipe
+ OFLAGS=-O2
+ OWLVERSION=0.1.12
+-OWL=owl-lisp-$(OWLVERSION)/bin/vm owl-lisp-$(OWLVERSION)/fasl/init.fasl
+-USR_BIN_OL=/usr/bin/ol
++USR_BIN_OL=$(PREFIX)/bin/ol
++OWL=$(PREFIX)/bin/ovm $(PREFIX)/share/owl-lisp/fasl/init.fasl
+ 
  W32GCC=i586-mingw32msvc-gcc # sudo apt-get install mingw32 @ debian squeeze
  
--everything: bin/radamsa .seal-of-quality
+-everything: bin/radamsa
 +all everything: bin/radamsa
  
- bin/radamsa: radamsa.c
- 	mkdir -p bin
-@@ -21,8 +21,8 @@
+ build_radamsa:
+ 	test -x $(USR_BIN_OL)
+@@ -33,14 +33,13 @@ bin/radamsa.exe: radamsa.c
+ 	$(W32GCC) $(CFLAGS) -o bin/radamsa.exe radamsa.c -lwsock32
+ 
+ radamsa.c: rad/*.scm
+-	make get-owl
+ 	$(OWL) $(OFLAGS) -o radamsa.c rad/main.scm
+ 
  install: bin/radamsa
  	-mkdir -p $(DESTDIR)$(PREFIX)/bin
  	cp bin/radamsa $(DESTDIR)$(PREFIX)/bin
@@ -24,4 +37,13 @@
 +	cat doc/radamsa.1 | gzip -9 > $(DESTDIR)$(PREFIX)/man/man1/radamsa.1.gz
  
  clean:
- 	-rm radamsa.c bin/* .seal-of-quality
+ 	-rm radamsa.c bin/radamsa .seal-of-quality
+@@ -63,7 +62,7 @@ get-owl:
+ standalone:
+ 	-rm radamsa.c # likely old version
+ 	make radamsa.c
+-   # compile without seccomp and use of syscall
++# compile without seccomp and use of syscall
+ 	diet gcc -DNO_SECCOMP -O3 -Wall -o bin/radamsa radamsa.c
+ 
+ # a quick to compile vanilla bytecode executable

@@ -2,13 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	trackballs
-PORTVERSION=	1.1.4
-PORTREVISION=	22
+PORTVERSION=	1.2.4
+DISTVERSIONPREFIX=	v
 CATEGORIES=	games
-MASTER_SITES=	SF \
-		SF/${PORTNAME}/music/1.4/:music
-DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX} \
-		${PORTNAME}-music-1.4.tar.bz2:music
 
 MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	SDL-based Marble Madness clone
@@ -16,34 +12,22 @@ COMMENT=	SDL-based Marble Madness clone
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libguile.so:lang/guile
-RUN_DEPENDS=	bash:shells/bash
+LIB_DEPENDS=	libguile-2.0.so:lang/guile2 \
+		libgc.so:devel/boehm-gc
+
+USES=		cmake desktop-file-utils gettext-runtime pkgconfig
+
+USE_GITHUB=	yes
 
 USE_GL=		gl
-USE_SDL=	image mixer sdl ttf
-USES=		gmake gettext desktop-file-utils
-GNU_CONFIGURE=	yes
+USE_SDL=	image2 mixer2 sdl2 ttf2
+
 INSTALLS_ICONS=	yes
-MAKE_ARGS=	mkinstalldirs="${MKDIR}"
 
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib -lintl
-
-OPTIONS_DEFINE=	MUSIC NLS
-OPTIONS_DEFAULT=	MUSIC
+OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes
-MUSIC_DESC=	Install additional music
-NLS_USES=	gettext
-NLS_CONFIGURE_ENABLE=	nls
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|install -D|$$(INSTALL)|' \
-		${WRKSRC}/share/Makefile.in
-
-post-install-MUSIC-on:
-	${INSTALL_DATA} ${WRKDIR}/trackballs-music/*.ogg ${STAGEDIR}${DATADIR}/music/
-
-post-install:
-	${INSTALL_DATA} ${WRKSRC}/share/icons/${PORTNAME}-48x48.png ${STAGEDIR}${PREFIX}/share/pixmaps/${PORTNAME}.png
+NLS_USES=	gettext-tools
+NLS_CMAKE_ON=	-DDISABLE_NLS:BOOL=OFF
+NLS_CMAKE_OFF=	-DDISABLE_NLS:BOOL=ON
 
 .include <bsd.port.mk>

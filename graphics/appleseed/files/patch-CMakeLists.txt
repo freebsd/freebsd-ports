@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2016-03-29 16:02:26 UTC
+--- CMakeLists.txt.orig	2016-12-15 14:57:39 UTC
 +++ CMakeLists.txt
-@@ -107,6 +107,10 @@ option (USE_EXTERNAL_ZLIB               
+@@ -107,6 +107,10 @@ option (USE_EXTERNAL_ZLIB                   "Use exter
  option (WITH_CLI                            "Build appleseed.cli"                                   ON)
  option (WITH_STUDIO                         "Build appleseed.studio"                                ON)
  option (WITH_TOOLS                          "Build appleseed tools"                                 ON)
@@ -11,8 +11,8 @@
  option (WITH_PYTHON                         "Build Python bindings"                                 ON)
  option (WITH_ALEMBIC                        "Build Alembic support"                                 OFF)
  option (WITH_OSL                            "Build OSL support"                                     OFF)
-@@ -179,6 +183,9 @@ if (WITH_OSL)
-                     ${PROJECT_SOURCE_DIR}/src/appleseed/renderer/kernel/shading/stdosl.h)
+@@ -172,6 +176,9 @@ else ()
+                          "Edit ${CMAKE_CURRENT_LIST_FILE} to add support for it.")
  endif ()
  
 +# XXX: avoid picking up lz4 headers from /usr/local/include == ${Boost_INCLUDE_DIRS}
@@ -20,8 +20,8 @@
 +include_directories (src/lz4)
  
  #--------------------------------------------------------------------------------------------------
- # Boost libraries.
-@@ -285,7 +292,6 @@ endif ()
+ # Auto-generate version headers.
+@@ -297,7 +304,6 @@ endif ()
  # Common include paths.
  include_directories (
      src/appleseed
@@ -29,7 +29,7 @@
      ${PYTHON_INCLUDE_DIRS}
  )
  
-@@ -601,7 +607,7 @@ endif ()
+@@ -643,7 +649,7 @@ endif ()
  
  find_package (Doxygen)
  
@@ -38,7 +38,7 @@
      configure_file (${PROJECT_SOURCE_DIR}/scripts/appleseed.doxyfile.in ${PROJECT_BINARY_DIR}/appleseed.doxyfile @ONLY)
      add_custom_target (
          doc ${DOXYGEN_EXECUTABLE} ${PROJECT_BINARY_DIR}/appleseed.doxyfile
-@@ -650,23 +656,33 @@ endif ()
+@@ -692,23 +698,33 @@ endif ()
  install (
      DIRECTORY
          sandbox/docs
@@ -75,7 +75,7 @@
  install (
      DIRECTORY src/appleseed/foundation
      DESTINATION include
-@@ -684,3 +700,4 @@ install (
+@@ -726,3 +742,4 @@ install (
      DESTINATION include
      FILES_MATCHING PATTERN "*.h"
  )

@@ -5,7 +5,7 @@
  openssl_dhparam() {
 -	if [ -x "`which openssl 2>/dev/null`" ]; then
 -		o_output="`openssl dhparam -C "$@" 2>/dev/null`" || return 1
--		o_output="`echo "${o_output}" | sed 's/get_dh[0-9]\+/get_dhParams/'`" || return 1
+-		o_output="`echo "${o_output}" | sed 's/get_dh[0-9][0-9]*/get_dhParams/'`" || return 1
 -		o_output="`echo "${o_output}" | sed '/^-----BEGIN DH PARAMETERS-----$/,/^-----END DH PARAMETERS-----$/ d;/^#/ d'`" || return 1
 -
 -		echo "${o_output}"

@@ -1,0 +1,14 @@
+[Desktop Entry]
+Name=Polyphone
+Name[fr]=Polyphone
+Comment=soundfont editor
+Comment[fr]=éditeur de soundfonts
+TryExec=polyphone
+Exec=polyphone %F
+Icon=polyphone
+StartupNotify=true
+Terminal=false
+Type=Application
+Categories=Application;AudioVideo;Audio;Midi;Music
+Keywords=sf2;sfz;sfArk;soundfonts;editor;instrument
+MimeType=audio/x-soundfont;

@@ -269,6 +269,7 @@ llvm-devel/cfi_blacklist.txt
 %%CLANG%%llvm-devel/include/clang/AST/OperationKinds.h
 %%CLANG%%llvm-devel/include/clang/AST/ParentMap.h
 %%CLANG%%llvm-devel/include/clang/AST/PrettyPrinter.h
+%%CLANG%%llvm-devel/include/clang/AST/QualTypeNames.h
 %%CLANG%%llvm-devel/include/clang/AST/RawCommentList.h
 %%CLANG%%llvm-devel/include/clang/AST/RecordLayout.h
 %%CLANG%%llvm-devel/include/clang/AST/RecursiveASTVisitor.h
@@ -322,6 +323,7 @@ llvm-devel/cfi_blacklist.txt
 %%CLANG%%llvm-devel/include/clang/Analysis/Analyses/UninitializedValues.h
 %%CLANG%%llvm-devel/include/clang/Analysis/AnalysisDeclContext.h
 %%CLANG%%llvm-devel/include/clang/Analysis/AnalysisDiagnostic.h
+%%CLANG%%llvm-devel/include/clang/Analysis/BodyFarm.h
 %%CLANG%%llvm-devel/include/clang/Analysis/CFG.h
 %%CLANG%%llvm-devel/include/clang/Analysis/CFGStmtMap.h
 %%CLANG%%llvm-devel/include/clang/Analysis/CallGraph.h
@@ -612,7 +614,7 @@ llvm-devel/cfi_blacklist.txt
 %%CLANG%%llvm-devel/include/clang/StaticAnalyzer/Core/Analyses.def
 %%CLANG%%llvm-devel/include/clang/StaticAnalyzer/Core/AnalyzerOptions.h
 %%CLANG%%llvm-devel/include/clang/StaticAnalyzer/Core/BugReporter/BugReporter.h
-%%CLANG%%llvm-devel/include/clang/StaticAnalyzer/Core/BugReporter/BugReporterVisitor.h
+%%CLANG%%llvm-devel/include/clang/StaticAnalyzer/Core/BugReporter/BugReporterVisitors.h
 %%CLANG%%llvm-devel/include/clang/StaticAnalyzer/Core/BugReporter/BugType.h
 %%CLANG%%llvm-devel/include/clang/StaticAnalyzer/Core/BugReporter/CommonBugCategories.h
 %%CLANG%%llvm-devel/include/clang/StaticAnalyzer/Core/BugReporter/PathDiagnostic.h
@@ -671,18 +673,18 @@ llvm-devel/cfi_blacklist.txt
 %%CLANG%%llvm-devel/include/clang/Tooling/CompilationDatabasePluginRegistry.h
 %%CLANG%%llvm-devel/include/clang/Tooling/Core/Diagnostic.h
 %%CLANG%%llvm-devel/include/clang/Tooling/Core/Lookup.h
-%%CLANG%%llvm-devel/include/clang/Tooling/Core/QualTypeNames.h
 %%CLANG%%llvm-devel/include/clang/Tooling/Core/Replacement.h
 %%CLANG%%llvm-devel/include/clang/Tooling/DiagnosticsYaml.h
+%%CLANG%%llvm-devel/include/clang/Tooling/Execution.h
 %%CLANG%%llvm-devel/include/clang/Tooling/FileMatchTrie.h
 %%CLANG%%llvm-devel/include/clang/Tooling/FixIt.h
 %%CLANG%%llvm-devel/include/clang/Tooling/JSONCompilationDatabase.h
 %%CLANG%%llvm-devel/include/clang/Tooling/Refactoring.h
 %%CLANG%%llvm-devel/include/clang/Tooling/Refactoring/ASTSelection.h
 %%CLANG%%llvm-devel/include/clang/Tooling/Refactoring/AtomicChange.h
+%%CLANG%%llvm-devel/include/clang/Tooling/Refactoring/Extract/Extract.h
 %%CLANG%%llvm-devel/include/clang/Tooling/Refactoring/RecursiveSymbolVisitor.h
 %%CLANG%%llvm-devel/include/clang/Tooling/Refactoring/RefactoringAction.h
-%%CLANG%%llvm-devel/include/clang/Tooling/Refactoring/RefactoringActionRegistry.def
 %%CLANG%%llvm-devel/include/clang/Tooling/Refactoring/RefactoringActionRule.h
 %%CLANG%%llvm-devel/include/clang/Tooling/Refactoring/RefactoringActionRuleRequirements.h
 %%CLANG%%llvm-devel/include/clang/Tooling/Refactoring/RefactoringActionRules.h
@@ -701,8 +703,11 @@ llvm-devel/cfi_blacklist.txt
 %%CLANG%%llvm-devel/include/clang/Tooling/Refactoring/Rename/USRLocFinder.h
 %%CLANG%%llvm-devel/include/clang/Tooling/RefactoringCallbacks.h
 %%CLANG%%llvm-devel/include/clang/Tooling/ReplacementsYaml.h
+%%CLANG%%llvm-devel/include/clang/Tooling/StandaloneExecution.h
+%%CLANG%%llvm-devel/include/clang/Tooling/ToolExecutorPluginRegistry.h
 %%CLANG%%llvm-devel/include/clang/Tooling/Tooling.h
 %%LLD%%llvm-devel/include/lld/Common/Driver.h
+%%LLD%%llvm-devel/include/lld/Common/ErrorHandler.h
 %%LLD%%llvm-devel/include/lld/Common/LLVM.h
 %%LLD%%llvm-devel/include/lld/Common/Reproduce.h
 %%LLD%%llvm-devel/include/lld/Common/TargetOptionsCommandFlags.h
@@ -758,6 +763,7 @@ llvm-devel/cfi_blacklist.txt
 %%LLDB%%llvm-devel/include/lldb/Core/AddressResolverFileLine.h
 %%LLDB%%llvm-devel/include/lldb/Core/AddressResolverName.h
 %%LLDB%%llvm-devel/include/lldb/Core/ArchSpec.h
+%%LLDB%%llvm-devel/include/lldb/Core/Architecture.h
 %%LLDB%%llvm-devel/include/lldb/Core/Broadcaster.h
 %%LLDB%%llvm-devel/include/lldb/Core/ClangForward.h
 %%LLDB%%llvm-devel/include/lldb/Core/Communication.h
@@ -1140,6 +1146,7 @@ llvm-devel/include/llvm-c/Analysis.h
 llvm-devel/include/llvm-c/BitReader.h
 llvm-devel/include/llvm-c/BitWriter.h
 llvm-devel/include/llvm-c/Core.h
+llvm-devel/include/llvm-c/DebugInfo.h
 llvm-devel/include/llvm-c/Disassembler.h
 llvm-devel/include/llvm-c/ErrorHandling.h
 llvm-devel/include/llvm-c/ExecutionEngine.h
@@ -1484,6 +1491,8 @@ llvm-devel/include/llvm/CodeGen/SlotIndexes.h
 llvm-devel/include/llvm/CodeGen/StackMaps.h
 llvm-devel/include/llvm/CodeGen/StackProtector.h
 llvm-devel/include/llvm/CodeGen/TailDuplicator.h
+llvm-devel/include/llvm/CodeGen/TargetFrameLowering.h
+llvm-devel/include/llvm/CodeGen/TargetInstrInfo.h
 llvm-devel/include/llvm/CodeGen/TargetLoweringObjectFileImpl.h
 llvm-devel/include/llvm/CodeGen/TargetPassConfig.h
 llvm-devel/include/llvm/CodeGen/TargetSchedule.h
@@ -1849,6 +1858,7 @@ llvm-devel/include/llvm/MC/MCAsmInfoWasm.h
 llvm-devel/include/llvm/MC/MCAsmLayout.h
 llvm-devel/include/llvm/MC/MCAssembler.h
 llvm-devel/include/llvm/MC/MCCodeEmitter.h
+llvm-devel/include/llvm/MC/MCCodePadder.h
 llvm-devel/include/llvm/MC/MCCodeView.h
 llvm-devel/include/llvm/MC/MCContext.h
 llvm-devel/include/llvm/MC/MCDirectives.h
@@ -1961,6 +1971,7 @@ llvm-devel/include/llvm/Passes/PassBuilder.h
 llvm-devel/include/llvm/ProfileData/Coverage/CoverageMapping.h
 llvm-devel/include/llvm/ProfileData/Coverage/CoverageMappingReader.h
 llvm-devel/include/llvm/ProfileData/Coverage/CoverageMappingWriter.h
+llvm-devel/include/llvm/ProfileData/GCOV.h
 llvm-devel/include/llvm/ProfileData/InstrProf.h
 llvm-devel/include/llvm/ProfileData/InstrProfData.inc
 llvm-devel/include/llvm/ProfileData/InstrProfReader.h
@@ -2028,7 +2039,6 @@ llvm-devel/include/llvm/Support/FormatProviders.h
 llvm-devel/include/llvm/Support/FormatVariadic.h
 llvm-devel/include/llvm/Support/FormatVariadicDetails.h
 llvm-devel/include/llvm/Support/FormattedStream.h
-llvm-devel/include/llvm/Support/GCOV.h
 llvm-devel/include/llvm/Support/GenericDomTree.h
 llvm-devel/include/llvm/Support/GenericDomTreeConstruction.h
 llvm-devel/include/llvm/Support/GlobPattern.h
@@ -2101,6 +2111,7 @@ llvm-devel/include/llvm/Support/Valgrind.h
 llvm-devel/include/llvm/Support/Watchdog.h
 llvm-devel/include/llvm/Support/Win64EH.h
 llvm-devel/include/llvm/Support/WindowsError.h
+llvm-devel/include/llvm/Support/X86TargetParser.def
 llvm-devel/include/llvm/Support/YAMLParser.h
 llvm-devel/include/llvm/Support/YAMLTraits.h
 llvm-devel/include/llvm/Support/circular_raw_ostream.h
@@ -2126,8 +2137,6 @@ llvm-devel/include/llvm/Target/GlobalISel/Target.td
 llvm-devel/include/llvm/Target/Target.td
 llvm-devel/include/llvm/Target/TargetCallingConv.h
 llvm-devel/include/llvm/Target/TargetCallingConv.td
-llvm-devel/include/llvm/Target/TargetFrameLowering.h
-llvm-devel/include/llvm/Target/TargetInstrInfo.h
 llvm-devel/include/llvm/Target/TargetIntrinsicInfo.h
 llvm-devel/include/llvm/Target/TargetItinerary.td
 llvm-devel/include/llvm/Target/TargetLowering.h
@@ -2149,6 +2158,7 @@ llvm-devel/include/llvm/Transforms/GCOVProfiler.h
 llvm-devel/include/llvm/Transforms/IPO.h
 llvm-devel/include/llvm/Transforms/IPO/AlwaysInliner.h
 llvm-devel/include/llvm/Transforms/IPO/ArgumentPromotion.h
+llvm-devel/include/llvm/Transforms/IPO/CalledValuePropagation.h
 llvm-devel/include/llvm/Transforms/IPO/ConstantMerge.h
 llvm-devel/include/llvm/Transforms/IPO/CrossDSOCFI.h
 llvm-devel/include/llvm/Transforms/IPO/DeadArgumentElimination.h
@@ -2180,6 +2190,7 @@ llvm-devel/include/llvm/Transforms/Scalar.h
 llvm-devel/include/llvm/Transforms/Scalar/ADCE.h
 llvm-devel/include/llvm/Transforms/Scalar/AlignmentFromAssumptions.h
 llvm-devel/include/llvm/Transforms/Scalar/BDCE.h
+llvm-devel/include/llvm/Transforms/Scalar/CallSiteSplitting.h
 llvm-devel/include/llvm/Transforms/Scalar/ConstantHoisting.h
 llvm-devel/include/llvm/Transforms/Scalar/CorrelatedValuePropagation.h
 llvm-devel/include/llvm/Transforms/Scalar/DCE.h
@@ -2599,6 +2610,7 @@ llvm-devel/lib/libLTO.so.%%LLVM_RELEASE%%svn
 %%EXTRAS%%llvm-devel/lib/libclangTidyMPIModule.a
 %%EXTRAS%%llvm-devel/lib/libclangTidyMiscModule.a
 %%EXTRAS%%llvm-devel/lib/libclangTidyModernizeModule.a
+%%EXTRAS%%llvm-devel/lib/libclangTidyObjCModule.a
 %%EXTRAS%%llvm-devel/lib/libclangTidyPerformanceModule.a
 %%EXTRAS%%llvm-devel/lib/libclangTidyPlugin.a
 %%EXTRAS%%llvm-devel/lib/libclangTidyReadabilityModule.a
@@ -2645,6 +2657,7 @@ llvm-devel/lib/libLTO.so.%%LLVM_RELEASE%%svn
 %%LLDB%%llvm-devel/lib/liblldbPluginABISysV_s390x.a
 %%LLDB%%llvm-devel/lib/liblldbPluginABISysV_x86_64.a
 %%LLDB%%llvm-devel/lib/liblldbPluginAppleObjCRuntime.a
+%%LLDB%%llvm-devel/lib/liblldbPluginArchitectureArm.a
 %%LLDB%%llvm-devel/lib/liblldbPluginCPlusPlusLanguage.a
 %%LLDB%%llvm-devel/lib/liblldbPluginCXXItaniumABI.a
 %%LLDB%%llvm-devel/lib/liblldbPluginDisassemblerLLVM.a

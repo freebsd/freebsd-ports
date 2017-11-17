@@ -1,0 +1,14 @@
+--- Makefile.orig	2015-04-24 23:13:47 UTC
++++ Makefile
+@@ -18,9 +18,9 @@ HDRS = dynstr.h plat.h proto.h common.h base64.h crc32
+ CFLAGS = -I$(PWD) -Wall -Wextra -Werror -g -O2
+ LDLIBS =
+ 
+-BINDIR = /usr/sbin
++BINDIR = ${PREFIX}/sbin
+ MANSECT = 1m
+-MANDIR = /usr/share/man/man$(MANSECT)
++MANDIR = ${PREFIX}/man/man$(MANSECT)
+ DESTDIR = $(PWD)/proto
+ 
+ PROGS = \

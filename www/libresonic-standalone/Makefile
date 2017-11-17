@@ -53,7 +53,7 @@ NO_BUILD=	yes
 JAVA_VERSION=	1.8+
 JAVA_RUN=	yes
 # Don't waste UID/GID and reuse Subsonic's user.
-UERS=		subsonic
+USERS=		subsonic
 GROUPS=		subsonic
 LIBRESONIC_HOME=	/var/libresonic
 PLIST_SUB=	LIBRESONIC_HOME="${LIBRESONIC_HOME}" \

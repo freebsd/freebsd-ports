@@ -423,6 +423,7 @@ share/icons/breeze-dark/actions/16/flag-yellow.svg
 share/icons/breeze-dark/actions/16/flag.svg
 share/icons/breeze-dark/actions/16/flash.svg
 share/icons/breeze-dark/actions/16/folder-new.svg
+share/icons/breeze-dark/actions/16/folder-stash.svg
 share/icons/breeze-dark/actions/16/folder-sync.svg
 share/icons/breeze-dark/actions/16/followmouse.svg
 share/icons/breeze-dark/actions/16/font-face.svg
@@ -1821,6 +1822,7 @@ share/icons/breeze-dark/actions/22/flag.svg
 share/icons/breeze-dark/actions/22/flash.svg
 share/icons/breeze-dark/actions/22/flower-shape.svg
 share/icons/breeze-dark/actions/22/folder-new.svg
+share/icons/breeze-dark/actions/22/folder-stash.svg
 share/icons/breeze-dark/actions/22/folder-sync.svg
 share/icons/breeze-dark/actions/22/followmouse.svg
 share/icons/breeze-dark/actions/22/foreignkey_constraint.svg
@@ -7786,6 +7788,7 @@ share/icons/breeze/actions/16/flag-yellow.svg
 share/icons/breeze/actions/16/flag.svg
 share/icons/breeze/actions/16/flash.svg
 share/icons/breeze/actions/16/folder-new.svg
+share/icons/breeze/actions/16/folder-stash.svg
 share/icons/breeze/actions/16/folder-sync.svg
 share/icons/breeze/actions/16/followmouse.svg
 share/icons/breeze/actions/16/font-face.svg
@@ -9320,6 +9323,7 @@ share/icons/breeze/actions/22/flag.svg
 share/icons/breeze/actions/22/flash.svg
 share/icons/breeze/actions/22/flower-shape.svg
 share/icons/breeze/actions/22/folder-new.svg
+share/icons/breeze/actions/22/folder-stash.svg
 share/icons/breeze/actions/22/folder-sync.svg
 share/icons/breeze/actions/22/followmouse.svg
 share/icons/breeze/actions/22/foreignkey_constraint.svg

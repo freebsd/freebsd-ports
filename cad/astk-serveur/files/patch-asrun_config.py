@@ -1,6 +1,6 @@
---- asrun/config.py.orig	2013-01-08 09:55:52.000000000 +0100
-+++ asrun/config.py	2013-03-17 17:38:29.000000000 +0100
-@@ -44,8 +44,8 @@
+--- asrun/config.py.orig	2017-07-13 07:40:52 UTC
++++ asrun/config.py
+@@ -44,8 +44,8 @@ DEFAULTS = {
      'SRCHIST'         : ['histor'],
      # name of "binaries" (as results of a make)
      'MAKE'            : ['debug nodebug'],

@@ -89,6 +89,7 @@ FFMPEG_DESC?=		FFmpeg support (WMA, AIFF, AC3, APE...)
 FFTW_DESC?=		Discrete Fourier Transform support
 FINGER_DESC?=		finger(1) user information support
 FIREBIRD_DESC?=		Firebird (Interbase) database support
+FISH_DESC?=		Install programmable completions for Fish
 FLAC_DESC?=		FLAC lossless audio codec support
 FLICKR_DESC?=		Flickr support via flickcurl
 FLUIDSYNTH_DESC?=	MIDI playback support via FluidSynth

@@ -26,6 +26,8 @@ bin/exiftool
 %%SITE_PERL%%/Image/ExifTool/Charset/Arabic.pm
 %%SITE_PERL%%/Image/ExifTool/Charset/Baltic.pm
 %%SITE_PERL%%/Image/ExifTool/Charset/Cyrillic.pm
+%%SITE_PERL%%/Image/ExifTool/Charset/DOSLatin1.pm
+%%SITE_PERL%%/Image/ExifTool/Charset/DOSLatinUS.pm
 %%SITE_PERL%%/Image/ExifTool/Charset/Greek.pm
 %%SITE_PERL%%/Image/ExifTool/Charset/Hebrew.pm
 %%SITE_PERL%%/Image/ExifTool/Charset/JIS.pm

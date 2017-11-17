@@ -1,0 +1,49 @@
+--- c++/src/h5c++.in.orig	2017-06-15 15:46:52 UTC
++++ c++/src/h5c++.in
+@@ -159,7 +159,7 @@ usage() {
+ # libhdf5.settings file reside in the lib directory.
+ showconfigure()
+ {
+-  cat ${libdir}/libhdf5.settings
++  cat ${libdir}/libhdf5%%SUFF%%.settings
+   status=$?
+ }
+ 
+@@ -313,9 +313,9 @@ if test "x$do_link" = "xyes"; then
+   shared_link=""
+   # conditionnaly link with the hl library  
+   if test "X$HL" = "Xhl"; then
+-   libraries=" $libraries -lhdf5_hl_cpp -lhdf5_cpp -lhdf5_hl -lhdf5 "
++   libraries=" $libraries -lhdf5%%SUFF%%_hl_cpp -lhdf5%%SUFF%%_cpp -lhdf5%%SUFF%%_hl -lhdf5%%SUFF%% "
+   else
+-   libraries=" $libraries -lhdf5_cpp -lhdf5 "
++   libraries=" $libraries -lhdf5%%SUFF%%_cpp -lhdf5%%SUFF%% "
+   fi
+   link_args="$link_args -L${libdir}"
+ 
+@@ -345,17 +345,17 @@ if test "x$do_link" = "xyes"; then
+     new_libraries=""
+     for lib in $libraries; do
+       case "$lib" in
+-        -lhdf5)
+-          new_libraries="$new_libraries ${libdir}/libhdf5.a"
++        -lhdf5%%SUFF%%)
++          new_libraries="$new_libraries ${libdir}/libhdf5%%SUFF%%.a"
+           ;;
+-        -lhdf5_hl)
+-          new_libraries="$new_libraries ${libdir}/libhdf5_hl.a"
++        -lhdf5%%SUFF%%_hl)
++          new_libraries="$new_libraries ${libdir}/libhdf5%%SUFF%%_hl.a"
+           ;;
+-        -lhdf5_cpp)
+-          new_libraries="$new_libraries ${libdir}/libhdf5_cpp.a"
++        -lhdf5%%SUFF%%_cpp)
++          new_libraries="$new_libraries ${libdir}/libhdf5%%SUFF%%_cpp.a"
+           ;;
+-        -lhdf5_hl_cpp)
+-          new_libraries="$new_libraries ${libdir}/libhdf5_hl_cpp.a"
++        -lhdf5%%SUFF%%_hl_cpp)
++          new_libraries="$new_libraries ${libdir}/libhdf5%%SUFF%%_hl_cpp.a"
+           ;;
+         *)
+           new_libraries="$new_libraries $lib"

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	telegraf
-DISTVERSION=	1.4.3
+DISTVERSION=	1.4.4
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	girgen@FreeBSD.org
@@ -79,7 +79,7 @@ GH_TUPLE=	collectd:go-collectd:2ce1445:collectd_org/src/collectd.org \
 		rcrowley:go-metrics:1f30fe9:go_metrics/src/github.com/rcrowley/go-metrics \
 		samuel:go-zookeeper:1d7be4e:go_zookeeper/src/github.com/samuel/go-zookeeper \
 		satori:go.uuid:5bf94b6:go_uuid/src/github.com/satori/go.uuid \
-		shirou:gopsutil:9a4a916:gopsutil/src/github.com/shirou/gopsutil \
+		shirou:gopsutil:48fc561:gopsutil/src/github.com/shirou/gopsutil \
 		shirou:w32:3c9377f:w32/src/github.com/shirou/w32 \
 		Shopify:sarama:c01858a:sarama/src/github.com/Shopify/sarama \
 		Sirupsen:logrus:61e43dc:logrus/src/github.com/Sirupsen/logrus \

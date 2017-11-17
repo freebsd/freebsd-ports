@@ -1,0 +1,10 @@
+Computation of Wolf, Reiher, and Hess's Douglas-Kroll-Hess relativistic
+correction at 2nd-4th order wrapped in CMake for the Psi4 project.
+
+It is based on these publications:
+* A. Wolf, M. Reiher, B. A. Hess, J. Chem. Phys. 117, 9215 (2002);
+  http://dx.doi.org/10.1063/1.1515314
+* M. Reiher, A. Wolf, J. Chem. Phys. 121, 10945 (2004);
+  http://dx.doi.org/10.1063/1.1818681
+
+WWW: http://www.reiher.ethz.ch/software/dkh-x2c.html

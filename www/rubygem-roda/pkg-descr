@@ -1,0 +1,5 @@
+Roda is a high-performance, minimalistic Ruby web framework. It's based
+on a routing-tree paradigm, and comes with a huge set of plugins (many
+of which will require installing other gems).
+
+WWW: http://roda.jeremyevans.net/

@@ -120,6 +120,7 @@
     SUBDIR += libsmi
     SUBDIR += lldpd
     SUBDIR += mbrowse
+    SUBDIR += mdata-client
     SUBDIR += mk-livestatus
     SUBDIR += monitoring-plugins
     SUBDIR += mrtg
@@ -282,6 +283,7 @@
     SUBDIR += php56-snmp
     SUBDIR += php70-snmp
     SUBDIR += php71-snmp
+    SUBDIR += php72-snmp
     SUBDIR += phpip
     SUBDIR += phpipam
     SUBDIR += phpweathermap
@@ -360,6 +362,7 @@
     SUBDIR += telegraf
     SUBDIR += tornova
     SUBDIR += torrus
+    SUBDIR += triton-guesttools
     SUBDIR += unbound_exporter
     SUBDIR += unifi5
     SUBDIR += victorops-nagios

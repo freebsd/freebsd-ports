@@ -3,6 +3,7 @@
 
 PORTNAME=	ncurses
 PORTVERSION=	6.0.0s${SNAPSHOT}
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.invisible-island.net/${PORTNAME}/current/
 DISTNAME=	${PORTNAME}-6.0-${SNAPSHOT}

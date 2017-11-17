@@ -236,7 +236,6 @@
     SUBDIR += geomorph
     SUBDIR += geomview
     SUBDIR += geos
-    SUBDIR += geos35
     SUBDIR += geoserver
     SUBDIR += gexiv2
     SUBDIR += giblib
@@ -794,6 +793,8 @@
     SUBDIR += php70-gd
     SUBDIR += php71-exif
     SUBDIR += php71-gd
+    SUBDIR += php72-exif
+    SUBDIR += php72-gd
     SUBDIR += phplot
     SUBDIR += picpuz
     SUBDIR += piddle

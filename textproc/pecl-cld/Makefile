@@ -11,6 +11,9 @@ COMMENT=	PHP Bindings for Chromium Compact Language Detector
 
 LICENSE=	BSD2CLAUSE
 
+DEPRECATED=	Depends on expired devel/cld
+EXPIRATION_DATE=2017-12-12
+
 LIB_DEPENDS=	libcld.so:devel/cld
 
 CONFIGURE_ARGS=	--enable-cld --with-libcld-dir=${LOCALBASE}/lib

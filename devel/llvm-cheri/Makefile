@@ -20,6 +20,7 @@ USES=		cmake:outsource compiler:c++11-lib libedit perl5 \
 		shebangfix
 USE_LDCONFIG=	${LLVM_PREFIX}/lib
 SHEBANG_FILES=	utils/lit/lit.py utils/llvm-lit/llvm-lit.in \
+		tools/clang/tools/scan-view/bin/scan-view \
 		tools/clang/tools/clang-format/git-clang-format \
 		tools/clang/tools/clang-format/clang-format-diff.py
 
@@ -31,7 +32,7 @@ SUB_LIST+=	STACK_ALIGN=${STACK_ALIGN}
 STACK_ALIGN?=	-mstack-alignment=32
 
 CMAKE_INSTALL_PREFIX=	${LLVM_PREFIX}
-CMAKE_ARGS+=	-DBUILD_SHARED_LIBS=ON \
+CMAKE_ARGS+=	-DLLVM_BUILD_LLVM_DYLIB=ON \
 		-DLLVM_DEFAULT_TARGET_TRIPLE=cheri-unknown-freebsd
 
 USE_GITHUB=	yes
@@ -83,6 +84,7 @@ COMMANDS=	bugpoint \
 		llvm-as \
 		llvm-bcanalyzer \
 		llvm-cat \
+		llvm-cfi-verify \
 		llvm-config \
 		llvm-cov \
 		llvm-cvtres \
@@ -90,6 +92,7 @@ COMMANDS=	bugpoint \
 		llvm-cxx-filt \
 		llvm-diff \
 		llvm-dis \
+		llvm-dlltool \
 		llvm-dsymutil \
 		llvm-dwarfdump \
 		llvm-dwp \
@@ -100,12 +103,17 @@ COMMANDS=	bugpoint \
 		llvm-lto2 \
 		llvm-mc \
 		llvm-mcmarkup \
+		llvm-modextract \
+		llvm-mt \
 		llvm-nm \
+		llvm-objcopy \
 		llvm-objdump \
 		llvm-opt-report \
-		llvm-pdbdump \
+		llvm-pdbutil \
 		llvm-profdata \
 		llvm-ranlib \
+		llvm-rc \
+		llvm-readelf \
 		llvm-readobj \
 		llvm-rtdyld \
 		llvm-size \
@@ -138,6 +146,8 @@ COMMANDS+=	clang \
 		clang-check \
 		clang-cpp \
 		clang-format \
+		clang-refactor \
+		clang-rename \
 		scan-build \
 		scan-view
 MAN1SRCS+=	clang.1
@@ -151,7 +161,8 @@ LIT_COMMANDS=	lit llvm-lit FileCheck
 .endif
 
 .if ${PORT_OPTIONS:MLLD}
-COMMANDS+=	ld.lld
+COMMANDS+=	ld.lld \
+		ld64.lld
 .endif
 
 .if ${PORT_OPTIONS:MLLDB}
@@ -169,6 +180,7 @@ MAN1SRCS+=	bugpoint.1 llc.1 lli.1 llvm-ar.1 llvm-as.1 \
 		llvm-bcanalyzer.1 llvm-build.1 llvm-config.1 llvm-cov.1 \
 		llvm-diff.1 llvm-dis.1 llvm-dwarfdump.1 \
 		llvm-extract.1 llvm-lib.1 llvm-link.1 llvm-nm.1 \
+		llvm-pdbutil.1 \
 		llvm-profdata.1 llvm-readobj.1 llvm-stress.1 llvm-symbolizer.1 \
 		opt.1 tblgen.1
 

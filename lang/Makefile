@@ -14,7 +14,6 @@
     SUBDIR += asis
     SUBDIR += asn1c
     SUBDIR += atlast
-    SUBDIR += ats
     SUBDIR += awka
     SUBDIR += bas2tap
     SUBDIR += basic256
@@ -206,6 +205,7 @@
     SUBDIR += oo2c
     SUBDIR += opencoarrays
     SUBDIR += opendylan
+    SUBDIR += owl-lisp
     SUBDIR += p2c
     SUBDIR += p5-Data-JavaScript
     SUBDIR += p5-Error
@@ -257,6 +257,8 @@
     SUBDIR += php70-extensions
     SUBDIR += php71
     SUBDIR += php71-extensions
+    SUBDIR += php72
+    SUBDIR += php72-extensions
     SUBDIR += php_doc
     SUBDIR += picoc
     SUBDIR += pike78

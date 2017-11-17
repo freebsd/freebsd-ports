@@ -1,4 +1,4 @@
---- check_compilers_src.py.orig	2016-09-07 08:44:22 UTC
+--- check_compilers_src.py.orig	2017-08-26 13:56:41 UTC
 +++ check_compilers_src.py
 @@ -109,6 +109,9 @@ Code_Aster will be compiled without erro
  You must choose another compiler or change the optimization level.

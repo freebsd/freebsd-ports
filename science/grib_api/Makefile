@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	grib_api
-PORTVERSION=	1.23.1
+PORTVERSION=	1.24.0
 DISTVERSIONSUFFIX=	-Source
-PORTREVISION=	1
 CATEGORIES=	science
 MASTER_SITES=	https://software.ecmwf.int/wiki/download/attachments/3473437/ \
 		LOCAL/sunpoet

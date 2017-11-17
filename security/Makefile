@@ -48,6 +48,7 @@
     SUBDIR += blindelephant
     SUBDIR += boringssl
     SUBDIR += botan110
+    SUBDIR += botan2
     SUBDIR += bro
     SUBDIR += broccoli
     SUBDIR += bruteblock
@@ -817,6 +818,10 @@
     SUBDIR += php71-hash
     SUBDIR += php71-mcrypt
     SUBDIR += php71-openssl
+    SUBDIR += php72-filter
+    SUBDIR += php72-hash
+    SUBDIR += php72-openssl
+    SUBDIR += php72-sodium
     SUBDIR += phpdeadlock
     SUBDIR += phpsecinfo
     SUBDIR += pidentd
@@ -975,7 +980,6 @@
     SUBDIR += py-virustotal-api
     SUBDIR += py-volatility
     SUBDIR += py-vulndb
-    SUBDIR += py-xmlsec
     SUBDIR += py-yara
     SUBDIR += py-yubioath-desktop
     SUBDIR += py-zope.app.authentication
@@ -1090,6 +1094,7 @@
     SUBDIR += rubygem-pyu-ruby-sasl
     SUBDIR += rubygem-rack-oauth2
     SUBDIR += rubygem-razorback-scriptNugget
+    SUBDIR += rubygem-rbnacl
     SUBDIR += rubygem-recog
     SUBDIR += rubygem-rex-arch
     SUBDIR += rubygem-rex-bin_tools
@@ -1124,7 +1129,6 @@
     SUBDIR += rubygem-webpush
     SUBDIR += s2n
     SUBDIR += safesh
-    SUBDIR += samba-virusfilter
     SUBDIR += samhain
     SUBDIR += samhain-client
     SUBDIR += samhain-server

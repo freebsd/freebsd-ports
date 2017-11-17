@@ -49,7 +49,7 @@ include/saml/util/CommonDomainCookie.h
 include/saml/util/SAMLConstants.h
 lib/libsaml.so
 lib/libsaml.so.9
-lib/libsaml.so.9.0.0
+lib/libsaml.so.9.0.1
 libdata/pkgconfig/opensaml.pc
 %%PORTDOCS%%%%DOCSDIR%%/README.txt
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE.txt

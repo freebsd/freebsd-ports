@@ -1,0 +1,9 @@
+--- etc/README.in.orig	1999-05-23 16:54:18 UTC
++++ etc/README.in
+@@ -1,5 +1,4 @@
+-The last installation in this directory occurred the
+-	@date@
++The last installation in this directory occurred
+ for GNU a2ps version @version@.
+ 
+ The content of this directory (unless reorganized by the local

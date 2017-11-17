@@ -1,0 +1,24 @@
+A program that can record programs and games.
+
+Features:
+* Graphical user interface (Qt-based).
+* Faster than VLC and ffmpeg/avconv.
+* Records the entire screen or part of it, or records OpenGL
+  applications directly (similar to Fraps on Windows).
+* Synchronizes audio and video properly (a common issue with
+  VLC and ffmpeg/avconv).
+* Reduces the video frame rate if your computer is too slow
+  (rather than using up all your RAM like VLC does).
+* Fully multithreaded: small delays in any of the components
+  will never block the other components, resulting is smoother
+  video and better performance on computers with multiple processors.
+* Pause and resume recording at any time (either by clicking
+  a button or by pressing a hotkey).
+* Shows statistics during recording (file size, bit rate, total
+  recording time, actual frame rate, ...).
+* Can show a preview during recording, so you don't waste time
+  recording something only to figure out afterwards that some setting was wrong.
+* Supports many different codecs and file formats (adding more is trivial).
+* Can also do live streaming (experimental).
+
+WWW: http://www.maartenbaert.be/simplescreenrecorder/

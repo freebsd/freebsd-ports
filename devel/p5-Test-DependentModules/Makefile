@@ -3,6 +3,7 @@
 
 PORTNAME=	Test-DependentModules
 PORTVERSION=	0.26
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -20,8 +21,7 @@ BUILD_DEPENDS=	p5-Capture-Tiny>=0:devel/p5-Capture-Tiny \
 		p5-IPC-Run3>=0:devel/p5-IPC-Run3 \
 		p5-Log-Dispatch>=0:devel/p5-Log-Dispatch \
 		p5-MetaCPAN-Client>=0:devel/p5-MetaCPAN-Client \
-		p5-Try-Tiny>=0:lang/p5-Try-Tiny \
-		p5-autodie>=0:devel/p5-autodie
+		p5-Try-Tiny>=0:lang/p5-Try-Tiny
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-File-Copy-Recursive>=0:devel/p5-File-Copy-Recursive \
 		p5-Module-Build>=0:devel/p5-Module-Build \

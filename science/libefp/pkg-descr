@@ -1,0 +1,9 @@
+LIBEFP is a full implementation of the Effective Fragment Potential (EFP)
+method (EFP can be viewed as an advanced first-principles-based force-field,
+see Kaliman et al., JCC, 2013). LIBEFP facilitates extension of unique
+electronic structure methodologies designed for accurate simulations in the
+gas phase to condensed phases via QM/EFP. LIBEFP is designed to give developers
+of quantum chemistry software an easy way to add EFP support to their favourite
+package.
+
+WWW: https://libefp.github.io

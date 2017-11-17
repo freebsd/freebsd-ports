@@ -587,6 +587,7 @@ include/wine/windows/ntddstor.h
 include/wine/windows/ntdef.h
 include/wine/windows/ntdsapi.h
 %%STAGING%%include/wine/windows/ntifs.h
+include/wine/windows/ntlsa.h
 include/wine/windows/ntquery.h
 include/wine/windows/ntsecapi.h
 include/wine/windows/ntsecpkg.h
@@ -1813,6 +1814,7 @@ lib/wine/fakedlls/kernelbase.dll
 %%WINE32%%lib/wine/fakedlls/krnl386.exe16
 lib/wine/fakedlls/ksuser.dll
 lib/wine/fakedlls/ktmw32.dll
+%%MPG123%%lib/wine/fakedlls/l3codeca.acm
 lib/wine/fakedlls/loadperf.dll
 lib/wine/fakedlls/localspl.dll
 lib/wine/fakedlls/localui.dll
@@ -2142,7 +2144,6 @@ lib/wine/fakedlls/winehid.sys
 lib/wine/fakedlls/winemapi.dll
 lib/wine/fakedlls/winemenubuilder.exe
 lib/wine/fakedlls/winemine.exe
-%%MPG123%%lib/wine/fakedlls/winemp3.acm
 lib/wine/fakedlls/winemsibuilder.exe
 lib/wine/fakedlls/wineoss.drv
 lib/wine/fakedlls/winepath.exe
@@ -2291,6 +2292,7 @@ lib/wine/kernelbase.dll.so
 %%WINE32%%lib/wine/krnl386.exe16.so
 lib/wine/ksuser.dll.so
 lib/wine/ktmw32.dll.so
+%%MPG123%%lib/wine/l3codeca.acm.so
 lib/wine/libaclui.def
 lib/wine/libactiveds.def
 lib/wine/libadsiid.a
@@ -2805,7 +2807,6 @@ lib/wine/winehid.sys.so
 lib/wine/winemapi.dll.so
 lib/wine/winemenubuilder.exe.so
 lib/wine/winemine.exe.so
-%%MPG123%%lib/wine/winemp3.acm.so
 lib/wine/winemsibuilder.exe.so
 lib/wine/wineoss.drv.so
 lib/wine/winepath.exe.so

@@ -1,8 +1,8 @@
---- src/lookup.h.orig   2011-06-04 14:06:21.000000000 +0900
-+++ src/lookup.h        2011-06-04 14:20:51.000000000 +0900
-@@ -40,3 +40,16 @@
-        char * name;
-        struct in_addr ip;
+--- src/lookup.h.orig	2004-12-31 13:53:30 UTC
++++ src/lookup.h
+@@ -40,3 +40,16 @@ struct _l_node /* the node/leaf of the t
+ 	char * name;
+ 	struct in_addr ip;
  };
 +
 +char *

@@ -1,6 +1,0 @@
-IMPORTANT:
-Now you should add %%PREFIX%%/lib/tclmidi to your
-TCLLIBPATH environment variable!
-
-For example (with [t]csh:
-setenv TCLLIBPATH "%%PREFIX%%/lib/tclmidi %%PREFIX%%/lib/tcl8.0"

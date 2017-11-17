@@ -1,4 +1,6 @@
 bin/getdns_query
+%%STUBBY%%bin/stubby
+%%STUBBY%%@sample etc/stubby/stubby.yml.sample
 include/getdns/getdns.h
 include/getdns/getdns_extra.h
 %%LIBEV%%include/getdns/getdns_ext_libev.h

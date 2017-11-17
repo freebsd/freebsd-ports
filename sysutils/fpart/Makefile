@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fpart
-PORTVERSION=	0.9.3
+PORTVERSION=	1.0.0
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION} \
 		http://contribs.martymac.org/fpart/

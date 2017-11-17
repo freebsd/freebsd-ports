@@ -1,0 +1,8 @@
+man/man1/mdata-delete.1.gz
+man/man1/mdata-get.1.gz
+man/man1/mdata-list.1.gz
+man/man1/mdata-put.1.gz
+sbin/mdata-delete
+sbin/mdata-get
+sbin/mdata-list
+sbin/mdata-put

@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	dsbmc-cli
-PORTVERSION=	0.1.1
+PORTVERSION=	0.1.2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://freeshell.de/~mk/download/
 

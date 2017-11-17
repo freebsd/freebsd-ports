@@ -1,0 +1,2 @@
+Add to your /etc/mail/<hostname>.mc the following line:
+INPUT_MAIL_FILTER(`sid-filter',`S=local:/var/run/sid-filter')dnl

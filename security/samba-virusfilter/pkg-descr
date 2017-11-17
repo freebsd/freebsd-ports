@@ -1,9 +1,0 @@
-This is a set of various Samba VFS modules to scan and filter virus
-files on Samba file services with an anti-virus scanner.
-
-Supported Anti-Virus engines:
-  - ClamAV (clamd daemon)
-  - F-Secure Anti-Virus (fsavd daemon)
-  - Sophos Anti-Virus (savdid daemon)
-
-WWW: https://github.com/fumiyas/samba-virusfilter

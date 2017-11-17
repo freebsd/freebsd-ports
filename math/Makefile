@@ -115,7 +115,6 @@
     SUBDIR += aspcud
     SUBDIR += asymptote
     SUBDIR += atlas
-    SUBDIR += bargraph
     SUBDIR += biggles
     SUBDIR += blacs
     SUBDIR += blas
@@ -317,6 +316,7 @@
     SUBDIR += mtl
     SUBDIR += mtrxmath
     SUBDIR += mumps
+    SUBDIR += mumps-edf
     SUBDIR += mumps-mpich
     SUBDIR += muparser
     SUBDIR += naturalmath
@@ -597,6 +597,8 @@
     SUBDIR += php70-gmp
     SUBDIR += php71-bcmath
     SUBDIR += php71-gmp
+    SUBDIR += php72-bcmath
+    SUBDIR += php72-gmp
     SUBDIR += physcalc
     SUBDIR += picosat
     SUBDIR += plman

@@ -9,7 +9,9 @@ lib/elixir/lib/quantum/ebin/Elixir.Quantum.Job.beam
 lib/elixir/lib/quantum/ebin/Elixir.Quantum.JobBroadcaster.beam
 lib/elixir/lib/quantum/ebin/Elixir.Quantum.Normalizer.beam
 lib/elixir/lib/quantum/ebin/Elixir.Quantum.RunStrategy.All.beam
+lib/elixir/lib/quantum/ebin/Elixir.Quantum.RunStrategy.Local.beam
 lib/elixir/lib/quantum/ebin/Elixir.Quantum.RunStrategy.NodeList.Quantum.RunStrategy.All.beam
+lib/elixir/lib/quantum/ebin/Elixir.Quantum.RunStrategy.NodeList.Quantum.RunStrategy.Local.beam
 lib/elixir/lib/quantum/ebin/Elixir.Quantum.RunStrategy.NodeList.Quantum.RunStrategy.Random.beam
 lib/elixir/lib/quantum/ebin/Elixir.Quantum.RunStrategy.NodeList.beam
 lib/elixir/lib/quantum/ebin/Elixir.Quantum.RunStrategy.Random.beam
@@ -33,6 +35,7 @@ lib/elixir/lib/quantum/lib/quantum/job_bradcaster.ex
 lib/elixir/lib/quantum/lib/quantum/normalizer.ex
 lib/elixir/lib/quantum/lib/quantum/run_strategy.ex
 lib/elixir/lib/quantum/lib/quantum/run_strategy/all.ex
+lib/elixir/lib/quantum/lib/quantum/run_strategy/local.ex
 lib/elixir/lib/quantum/lib/quantum/run_strategy/random.ex
 lib/elixir/lib/quantum/lib/quantum/scheduler.ex
 lib/elixir/lib/quantum/lib/quantum/supervisor.ex

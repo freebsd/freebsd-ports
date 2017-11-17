@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	wine
-DISTVERSION=	2.20
+DISTVERSION=	2.21
 PORTEPOCH=	1
 CATEGORIES=	emulators
 MASTER_SITES=	SF/${PORTNAME}/Source \
@@ -18,6 +18,7 @@ LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 ONLY_FOR_ARCHS=	amd64 i386
+STAGING_BROKEN=	Staging patchset still not available for this version
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/flex:textproc/flex \
 		prelink:sysutils/prelink
@@ -36,6 +37,7 @@ CONFIGURE_ARGS+=--verbose --disable-tests \
 		--without-opencl \
 		--without-osmesa \
 		--with-oss \
+		--without-pulse \
 		--without-sane \
 		--without-tiff
 CONFIGURE_ENV=	CPPBIN="${CPP}" FLEX="${LOCALBASE}/bin/flex"
@@ -147,7 +149,6 @@ EXTRACT_DEPENDS=bash:shells/bash \
 		git:devel/git \
 		${AUTOCONF_DEPENDS}
 
-CONFIGURE_ARGS+=--without-pulse
 USE_AUTOTOOLS=	autoconf:env
 
 post-extract: fix-shebang

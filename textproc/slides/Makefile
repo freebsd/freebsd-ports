@@ -23,21 +23,16 @@ NO_BUILD=	yes
 
 USES=		tar:bzip2
 
+INSTDIR=	${PREFIX}/share/xsl/${PORTNAME}
+
 OPTIONS_DEFINE=	DOCS
 
-INSTDIR=	share/xsl/${PORTNAME}
-PINSTDIR=	${PREFIX}/${INSTDIR}
-COPYDIRS=	browser graphics schema xsl
-
-
 do-install:
-	@${MKDIR} ${STAGEDIR}${PINSTDIR}
-.for i in VERSION catalog
-	(cd ${WRKSRC} && ${INSTALL_DATA} ${i} ${STAGEDIR}${PINSTDIR})
-.endfor
-.for i in ${COPYDIRS}
-	@(cd ${WRKSRC} && ${COPYTREE_SHARE} ${i} ${STAGEDIR}${PINSTDIR})
-.endfor
+	@${MKDIR} ${STAGEDIR}${INSTDIR}
+	${INSTALL_DATA} ${WRKSRC}/VERSION ${WRKSRC}/catalog ${STAGEDIR}${INSTDIR}
+	@(cd ${WRKSRC} && ${COPYTREE_SHARE} "browser graphics schema xsl" ${STAGEDIR}${INSTDIR})
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	@(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
 

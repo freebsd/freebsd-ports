@@ -426,7 +426,6 @@ MOZ_OPTIONS+=	--enable-dtrace \
 LIBS+=			-lelf
 . endif
 STRIP=
-LLD_UNSAFE=		yes
 .else
 MOZ_OPTIONS+=	--disable-dtrace
 .endif
@@ -602,15 +601,6 @@ gecko-moz-pis-patch:
 .for moz in ${MOZ_PIS_SCRIPTS}
 	@${MOZCONFIG_SED} < ${FILESDIR}/${moz} > ${WRKDIR}/${moz}
 .endfor
-
-do-configure: gecko-do-configure
-
-gecko-do-configure:
-		@(if ! ${CONFIGURE_ENV} ${DO_MAKE_BUILD} configure; then \
-			 ${ECHO_MSG} "===>  Script \"${CONFIGURE_SCRIPT}\" failed unexpectedly."; \
-			 (${ECHO_CMD} ${CONFIGURE_FAIL_MESSAGE}) | ${FMT_80} ; \
-			 ${FALSE}; \
-		fi)
 
 pre-install: gecko-moz-pis-pre-install
 post-install-script: gecko-create-plist

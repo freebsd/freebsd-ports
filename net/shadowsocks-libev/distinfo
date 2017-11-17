@@ -1,3 +1,9 @@
-TIMESTAMP = 1503421104
-SHA256 (shadowsocks-shadowsocks-libev-v2.4.7_GH0.tar.gz) = 957265cc5339e020d8c8bb7414ab14936e3939dc7355f334aec896ec9b03c6ed
-SIZE (shadowsocks-shadowsocks-libev-v2.4.7_GH0.tar.gz) = 1485472
+TIMESTAMP = 1506953360
+SHA256 (shadowsocks-shadowsocks-libev-v3.1.0_GH0.tar.gz) = 305e29bbd67c8cac4b244352e1ef804cb3801f501aae12bec0fe42708d7ff8a2
+SIZE (shadowsocks-shadowsocks-libev-v3.1.0_GH0.tar.gz) = 260649
+SHA256 (shadowsocks-libcork-0220aa5_GH0.tar.gz) = 95d6e1a09695329ea03734a8e4f75e8a726fd2a6b6baa6b0d28eabc299c5a168
+SIZE (shadowsocks-libcork-0220aa5_GH0.tar.gz) = 184195
+SHA256 (shadowsocks-ipset-3ea7fe3_GH0.tar.gz) = e7b487c21a5352a3c9faef3256ed1a539f7ee46f38bf57922340c125c720da61
+SIZE (shadowsocks-ipset-3ea7fe3_GH0.tar.gz) = 64895
+SHA256 (shadowsocks-libbloom-7a9deb8_GH0.tar.gz) = 726469328f0288c1ecb87b244a8978d471316f04e1234417ac4669bc16c8b4b0
+SIZE (shadowsocks-libbloom-7a9deb8_GH0.tar.gz) = 1208059

@@ -39,9 +39,11 @@
     SUBDIR += crf++
     SUBDIR += dcl
     SUBDIR += devisor
+    SUBDIR += dkh
     SUBDIR += dlpoly-classic
     SUBDIR += ecs
     SUBDIR += epte
+    SUBDIR += erd
     SUBDIR += fastcap
     SUBDIR += fasthenry
     SUBDIR += fisicalab
@@ -74,6 +76,7 @@
     SUBDIR += lamprop
     SUBDIR += libaec
     SUBDIR += libctl
+    SUBDIR += libefp
     SUBDIR += libgeodecomp
     SUBDIR += libghemical
     SUBDIR += libint
@@ -142,6 +145,7 @@
     SUBDIR += p5-Physics-Unit
     SUBDIR += paje
     SUBDIR += paraview
+    SUBDIR += pcmsolver
     SUBDIR += pnetcdf
     SUBDIR += psychopy
     SUBDIR += pulseview
@@ -161,11 +165,13 @@
     SUBDIR += py-pysal
     SUBDIR += py-pyteomics
     SUBDIR += py-pyteomics.biolccc
+    SUBDIR += py-qspin
     SUBDIR += py-scikit-fuzzy
     SUBDIR += py-scikit-learn
     SUBDIR += py-scikit-sparse
     SUBDIR += py-scimath
     SUBDIR += py-scipy
+    SUBDIR += py-scoria
     SUBDIR += py-tensorflow
     SUBDIR += py-ws2300
     SUBDIR += pybrain

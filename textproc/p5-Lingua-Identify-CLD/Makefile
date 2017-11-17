@@ -13,6 +13,9 @@ COMMENT=	Interface to Chrome language detection library
 
 LICENSE=	BSD3CLAUSE
 
+DEPRECATED=	Depends on expired devel/cld
+EXPIRATION_DATE=2017-12-12
+
 BUILD_DEPENDS=	p5-Config-AutoConf>=0.17:devel/p5-Config-AutoConf \
 		p5-ExtUtils-LibBuilder>=0.04:devel/p5-ExtUtils-LibBuilder
 LIB_DEPENDS=	libcld.so:devel/cld

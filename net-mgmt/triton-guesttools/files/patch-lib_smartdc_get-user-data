@@ -1,0 +1,11 @@
+--- lib/smartdc/get-user-data.orig	2017-05-22 19:41:07 UTC
++++ lib/smartdc/get-user-data
+@@ -7,7 +7,7 @@
+ # before script "run-user-script"
+ 
+ # load common functions and vars
+-. /lib/smartdc/common.lib
++. %%PREFIX%%/lib/smartdc/common.lib
+ 
+ lib_triton_info "Retrieving metadata user-data"
+ $MDATA_GET user-data >/var/tmp/mdata-user-data.new

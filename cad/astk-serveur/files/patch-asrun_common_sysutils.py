@@ -1,6 +1,6 @@
---- ./asrun/common/sysutils.py.orig	2010-07-07 18:18:08.000000000 +0200
-+++ ./asrun/common/sysutils.py	2010-08-13 19:24:59.000000000 +0200
-@@ -67,7 +67,7 @@
+--- asrun/common/sysutils.py.orig	2017-07-13 07:40:52 UTC
++++ asrun/common/sysutils.py
+@@ -83,7 +83,7 @@ def on_mac():
  
  def on_linux():
      """Tell if it's running on a linux platform"""
@@ -9,12 +9,12 @@
  
  def on_64bits():
      """Tell if it's running on a 64 bits platform"""
-@@ -125,7 +125,7 @@
+@@ -212,7 +212,7 @@ class FileName(object):
          and fill properties = user, passwd, mach, path
          """
          # windows : only work on local files
 -        if not on_linux():
 +        if on_windows():
              self.path = pathname
+             return
          # posix
-         if type(pathname) not in (str, unicode):

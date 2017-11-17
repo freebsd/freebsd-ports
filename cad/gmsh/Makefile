@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gmsh
-DISTVERSION=	3.0.5
+DISTVERSION=	3.0.6
 CATEGORIES=	cad
 MASTER_SITES=	http://gmsh.info/src/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-source
@@ -13,10 +13,10 @@ COMMENT?=	Automatic 3D finite element mesh generator
 
 LICENSE=	AGPLv3+ APACHE20 GPLv3+ GPLv2+ LGPL21
 LICENSE_COMB=	multi
-LICENSE_FILE_GPLv2+ = ${WRKSRC}/LICENSE.txt
+LICENSE_FILE_GPLv2+=	${WRKSRC}/LICENSE.txt
 
-BROKEN_FreeBSD_12_i386=Does not build on FreeBSD 12 i386 due to a clang bug: https://llvm.org/bugs/show_bug.cgi?id=21903
-BROKEN_powerpc64=Does not build on powerpc64
+BROKEN_FreeBSD_12_i386=	Does not build on FreeBSD 12 i386 due to a clang bug: https://llvm.org/bugs/show_bug.cgi?id=21903
+BROKEN_powerpc64=	Does not build on powerpc64
 
 LIB_DEPENDS=	libfltk.so:x11-toolkits/fltk \
 		libfontconfig.so:x11-fonts/fontconfig \
@@ -32,12 +32,12 @@ USE_XORG=	x11 xcursor xext xinerama xfixes xft xrender
 
 SLAVEDIRS=	cad/gmsh-occ
 
-MAKE_JOBS_UNSAFE=yes
+MAKE_JOBS_UNSAFE=	yes
 
 CMAKE_ARGS=	-DCMAKE_SKIP_RPATH:BOOL=YES
 
-OPTIONS_DEFINE=	CGNS MED OCC SHARED STATIC
-OPTIONS_DEFAULT=MED
+OPTIONS_DEFINE=		CGNS MED OCC SHARED STATIC
+OPTIONS_DEFAULT=	MED
 
 CGNS_DESC=	Enable experimental CGNS mesh support
 MED_DESC=	Enable MED mesh and post file formats

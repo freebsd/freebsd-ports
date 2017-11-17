@@ -1,8 +1,8 @@
---- examples/default.orig Sat Dec 23 09:47:26 2000
-+++ examples/default Sun Aug 31 13:51:08 2003
+--- examples/default.orig	2005-09-18 08:03:13 UTC
++++ examples/default
 @@ -1,4 +1,4 @@
--tty5  altkoi.map
+-# Настройки mapchan по умолчанию
 +ttyv5  altkoi.map
- ttyS1  koiualt.map
- ttyS16 koiumain.map
- ttyS17  sm7238.map
+ #
+ # <tty> <map-file> <pty> <quiet> <debug> <logfile> <program>
+ #

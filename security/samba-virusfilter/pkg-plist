@@ -1,4 +1,0 @@
-bin/svf-notify
-lib/samba/vfs/svf-clamav.so
-lib/samba/vfs/svf-fsav.so
-lib/samba/vfs/svf-sophos.so

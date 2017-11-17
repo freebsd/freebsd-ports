@@ -534,7 +534,7 @@ LIB_DEPENDS+=	libc-client4.so.9:mail/cclient
 
 .if ${PHP_MODNAME} == "mbstring"
 .	if ${PORT_OPTIONS:MREGEX}
-LIB_DEPENDS+=	libonig.so:devel/oniguruma6
+LIB_DEPENDS+=	libonig.so:devel/oniguruma
 CONFIGURE_ARGS+=--with-onig=${LOCALBASE}
 .	else
 CONFIGURE_ARGS+=--disable-mbregex

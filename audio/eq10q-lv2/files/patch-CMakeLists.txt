@@ -1,0 +1,13 @@
+--- CMakeLists.txt.orig	2016-12-11 12:07:48 UTC
++++ CMakeLists.txt
+@@ -2,8 +2,8 @@
+ cmake_minimum_required(VERSION 2.8)
+ PROJECT(eq10q)
+ 
+-##ADD_DEFINITIONS(-Wall -O3 -fPIC -finline-functions -finline-functions-called-once  -msse -mfpmath=sse -std=c99)
+-set(CMAKE_C_FLAGS "-Wall -O3 -fPIC -finline-functions -finline-functions-called-once  -msse -mfpmath=sse -std=c99")
++##ADD_DEFINITIONS(-Wall -fPIC -finline-functions -finline-functions-called-once  -msse -mfpmath=sse -std=c99)
++set(CMAKE_C_FLAGS "-Wall -fPIC -finline-functions  -msse -mfpmath=sse -std=c99")
+ #set(CMAKE_C_FLAGS "-Wall -O0 -g -fPIC -finline-functions -finline-functions-called-once  -msse -mfpmath=sse -std=c99")
+ 
+ set(CMAKE_CXX_FLAGS "-Wall -fPIC -std=c++11")

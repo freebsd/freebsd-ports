@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	appleseed
-DISTVERSION=	1.5.2-beta
-PORTREVISION=	9
+DISTVERSION=	1.6.0-beta
 CATEGORIES=	graphics
 
 MAINTAINER=	danfe@FreeBSD.org
@@ -42,27 +41,28 @@ PLIST_SUB=	APPHOME=${CMAKE_INSTALL_PREFIX}
 SUB_FILES=	pkg-message
 SUB_LIST:=	${PLIST_SUB}
 
-OPTIONS_DEFINE=	EXAMPLES OSL DISNEY
+OPTIONS_DEFINE=	CPP11 EXAMPLES OSL DISNEY
 OPTIONS_DEFAULT=	DISNEY
 OPTIONS_SUB=	yes
 
+CPP11_DESC=	Build in C++11 mode
 OSL_DESC=	Open Shading Language support
 DISNEY_DESC=	Disney material support
+
+CPP11_CMAKE_ON=	-DUSE_CPP11:BOOL=ON
 
 EXAMPLES_CMAKE_OFF=	-DWITH_SAMPLES:BOOL=OFF
 
 OSL_CMAKE_ON=	-DWITH_OSL:BOOL=ON
 OSL_LIB_DEPENDS=	liboslexec.so:graphics/openshadinglanguage
 # src/appleseed/libappleseed.so: undefined reference to `typeinfo for OSL::RendererServices'
-OSL_BROKEN=	fails to build against openshadinglanguage-1.8.10
+OSL_BROKEN=	requires RTTI support in LLVM/OSL which is currently missing
 
 DISNEY_CMAKE_ON=	-DWITH_DISNEY_MATERIAL:BOOL=ON
 DISNEY_LIB_DEPENDS=	libOpenImageIO.so:graphics/openimageio \
 			libSeExprEditor.so:graphics/seexpr
 
 post-patch:
-	@${REINPLACE_CMD} -e 's,atomic<int,boost::&,' \
-		${WRKSRC}/src/appleseed/renderer/kernel/rendering/localsampleaccumulationbuffer.cpp
 	@${RMDIR} ${WRKSRC}/sandbox/docs/api
 
 .include <bsd.port.mk>

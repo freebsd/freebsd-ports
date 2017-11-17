@@ -80,16 +80,15 @@ $3 !~ /^20[0-3][0-9]-[01][0-9]-[0-3][0-9]$/ {
     }
     lastdate = $3
 
-    if (system("test -f " portsdir "/" $1 "/Makefile"))
+    if (system("test -f " portsdir "/" $1 "/Makefile")) {
         delete missing[$1]
-    else
-        resurrected[$1] = NR
+    } else {
+        printf "%5d: %s must be marked as resurrected\n", NR, $1 | sort
+    }
 
     if ($2) {
         if (system("test -f " portsdir "/" $2 "/Makefile"))
             missing[$2] = NR
-#        else
-#            delete resurrected[$2]
     }
 
 #    Produces too many false positives
@@ -105,11 +104,6 @@ $3 !~ /^20[0-3][0-9]-[01][0-9]-[0-3][0-9]$/ {
 }
 
 END {
-    for (port in resurrected) {
-        printf "%5d: %s must be marked as resurrected\n", resurrected[port], port | sort
-        error[resurrected[port]] = 1
-    }
-
     for (port in missing) {
         printf "%5d: %s not found\n", missing[port], port | sort
         error[missing[port]] = 1

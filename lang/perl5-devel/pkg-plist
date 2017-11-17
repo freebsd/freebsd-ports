@@ -577,6 +577,7 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%PRIV_LIB%%/Unicode/Collate/Locale/da.pl
 %%PRIV_LIB%%/Unicode/Collate/Locale/de_at_ph.pl
 %%PRIV_LIB%%/Unicode/Collate/Locale/de_phone.pl
+%%PRIV_LIB%%/Unicode/Collate/Locale/dsb.pl
 %%PRIV_LIB%%/Unicode/Collate/Locale/ee.pl
 %%PRIV_LIB%%/Unicode/Collate/Locale/eo.pl
 %%PRIV_LIB%%/Unicode/Collate/Locale/es.pl
@@ -604,6 +605,7 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%PRIV_LIB%%/Unicode/Collate/Locale/kn.pl
 %%PRIV_LIB%%/Unicode/Collate/Locale/ko.pl
 %%PRIV_LIB%%/Unicode/Collate/Locale/kok.pl
+%%PRIV_LIB%%/Unicode/Collate/Locale/lkt.pl
 %%PRIV_LIB%%/Unicode/Collate/Locale/ln.pl
 %%PRIV_LIB%%/Unicode/Collate/Locale/lt.pl
 %%PRIV_LIB%%/Unicode/Collate/Locale/lv.pl

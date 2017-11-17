@@ -1,0 +1,29 @@
+#!/bin/sh
+
+# PROVIDE: incrond
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf to
+# enable incrond:
+#
+# incrond_enable (bool): Set to NO by default.  Set it to YES to
+#         enable incrond.
+# incrond_config (string): Set to the standard config file path by
+#         default.
+#
+
+. /etc/rc.subr
+
+name="incrond"
+rcvar=incrond_enable
+
+load_rc_config $name
+
+: ${incrond_enable:=NO}
+: ${incrond_config:=%%PREFIX%%/etc/incron.conf}
+
+command="%%PREFIX%%/sbin/${name}"
+required_files="${incrond_config}"
+
+run_rc_command "$1"

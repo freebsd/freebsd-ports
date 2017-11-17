@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	networkmgr
-PORTVERSION=	2.4
+DISTVERSION=	2.5
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	ericturgeon.bsd@gmail.com
@@ -13,11 +13,11 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	doas:security/doas
 
+USES=		python:2.7 shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	GhostBSD
 
 NO_ARCH=	yes
-USES=		python:2.7 shebangfix
 USE_PYTHON=	distutils
 USE_GNOME=	pygtk2
 

@@ -14,6 +14,7 @@ LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BUILD_DEPENDS=	libidn2>=2.0.0:dns/libidn2
 LIB_DEPENDS=	libidn2.so:dns/libidn2
 
 USE_PERL5=	modbuild

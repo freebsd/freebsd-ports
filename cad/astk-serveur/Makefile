@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	astk
-DISTVERSION=	1.13.8-2
+DISTVERSION=	1.13.10-1
 CATEGORIES=	cad
 .if !defined(CLIENT_SEUL)
 PKGNAMESUFFIX=	-serveur
@@ -25,13 +25,14 @@ LICENSE=	GPLv2
 #
 #-----------------------------------------------------------------------
 
-# There exists a "logical" RUN_DEPENDS towards french/aster and french/eficas
-# for the server part, but it is not set to avoid circular dependences.
+# There exists a "logical" RUN_DEPENDS towards french/aster for the
+# server part, but it is not set to avoid circular dependences.
 
 RUN_DEPENDS+=	${SHELL_INSTALL_ASTER}:shells/${SHIADEP}
 
 .if !defined(CLIENT_SEUL)
-USES+=		gettext python tk:build
+USES+=		gettext python shebangfix tk:build
+SHEBANG_FILES=	unittest/run_test.py
 .else
 USES+=		tk
 .endif
@@ -55,12 +56,6 @@ S_PYLIBS=	share/codeaster/asrun/examples/alamain.py		\
 C_SCRIPTS=	bin/astk bin/bsf
 tools_dir=	${LOCALBASE}/aster/outils
 conf_dir=	${WRKSRC}/etc/astkrc
-
-.if defined(LANG) && ${LANG:Mfr*} != ""
-ASTK_LANG=	FR
-.else
-ASTK_LANG=	ENG
-.endif
 
 .include <bsd.port.pre.mk>
 
@@ -170,6 +165,12 @@ HOST_NAME=	this-hostname
 DOMAIN_NAME=	your.domain-name
 .endif
 
+.if defined(LANG) && ${LANG:Mfr*} != ""
+ASTK_LANG=	FR
+.else
+ASTK_LANG=	ENG
+.endif
+
 pre-configure:
 	${RM} ${PATCH2RM:C|^|${WRKSRC}/|:C|$|.orig|}
 
@@ -210,7 +211,7 @@ do-configure:
 	${REINPLACE_CMD} -e "s|/opt/aster/NEW9|${aster_dir}|"			\
 		 -e "s|/opt/aster/NEW10|${aster_dir}|"				\
 		-e "s|/opt/aster/ASTK|${inst_dir}|"				\
-		-e "s|/opt/aster/etc|${LOCALBASE}/aster/etc|"			\
+		-e "s|/opt/aster|${LOCALBASE}/aster|g"				\
 		-e "s|/usr/bin/editor|${WITH_ED}|"				\
 		-e "s|/usr/bin/nedit2|${WITH_ED}|"				\
 		-e "s|/usr/bin/nedit|${WITH_ED}|"				\

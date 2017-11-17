@@ -5,7 +5,7 @@
 
 PORTNAME=	ripgrep
 PORTVERSION=	0.7.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 
 MAINTAINER=	petteri.valkonen@iki.fi
@@ -19,16 +19,6 @@ LICENSE_FILE_UNLICENSE=	${WRKSRC}/UNLICENSE
 USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	BurntSushi
-
-OPTIONS_DEFINE=	BASH FISH ZSH
-OPTIONS_DEFAULT=BASH FISH ZSH
-FISH_DESC=	Install programmable completions for Fish
-
-PLIST_FILES=	bin/rg \
-		man/man1/rg.1.gz
-BASH_PLIST_FILES=	etc/bash_completion.d/rg.bash-completion
-FISH_PLIST_FILES=	share/fish/completions/rg.fish
-ZSH_PLIST_FILES=	share/zsh/site-functions/_rg
 
 CARGO_CRATES=	aho-corasick-0.6.3 \
 		ansi_term-0.9.0 \
@@ -74,21 +64,31 @@ CARGO_CRATES=	aho-corasick-0.6.3 \
 RIPGREP_OUTDIR=	${WRKDIR}/cargo-out
 CARGO_ENV=	RIPGREP_OUTDIR=${RIPGREP_OUTDIR}
 
-OPTIONS_DEFINE=	SIMD
-OPTIONS_DEFAULT=SIMD
+PLIST_FILES=	bin/rg \
+		man/man1/rg.1.gz
+
+OPTIONS_DEFINE=	BASH FISH ZSH SIMD
+OPTIONS_DEFAULT=BASH FISH ZSH SIMD
 
 OPTIONS_DEFINE_amd64=	AVX
 OPTIONS_DEFINE_i386=	AVX
 
 AVX_DESC=	${SSE_DESC:S/SSE/AVX/}
+FISH_DESC=	Install programmable completions for Fish
+
 AVX_VARS=	CARGO_FEATURES+=avx-accel RUSTFLAGS+="-C target-feature=+avx"
 AVX_IMPLIES=	SIMD
+
+BASH_PLIST_FILES=	etc/bash_completion.d/rg.bash-completion
+FISH_PLIST_FILES=	share/fish/completions/rg.fish
 
 # simd crate uses cfg_target_feature which isn't stable yet, so unlock
 # unstable features similar to how lang/rust bootstraps. www/firefox
 # uses the same hack when building with --enable-rust-simd.
 SIMD_MAKE_ENV=	RUSTC_BOOTSTRAP=1
 SIMD_VARS=	CARGO_FEATURES+=simd-accel
+
+ZSH_PLIST_FILES=	share/zsh/site-functions/_rg
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|OUT_DIR|RIPGREP_OUTDIR|' ${WRKSRC}/build.rs

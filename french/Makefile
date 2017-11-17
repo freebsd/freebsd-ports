@@ -5,7 +5,6 @@
 
     SUBDIR += aspell
     SUBDIR += aster
-    SUBDIR += eficas
     SUBDIR += eric6
     SUBDIR += fortune-mod-zarathoustra
     SUBDIR += geonext

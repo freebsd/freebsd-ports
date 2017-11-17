@@ -482,6 +482,7 @@
     SUBDIR += mod_php56
     SUBDIR += mod_php70
     SUBDIR += mod_php71
+    SUBDIR += mod_php72
     SUBDIR += mod_proctitle
     SUBDIR += mod_proxy_html
     SUBDIR += mod_proxy_uwsgi
@@ -520,6 +521,7 @@
     SUBDIR += moodle31
     SUBDIR += moodle32
     SUBDIR += moodle33
+    SUBDIR += moodle34
     SUBDIR += mozplugger
     SUBDIR += multisort
     SUBDIR += multiwatch
@@ -536,6 +538,7 @@
     SUBDIR += netstiff
     SUBDIR += netsurf
     SUBDIR += newsbeuter
+    SUBDIR += newsboat
     SUBDIR += nextcloud
     SUBDIR += nghttp2
     SUBDIR += nginx
@@ -1479,6 +1482,9 @@
     SUBDIR += php71-opcache
     SUBDIR += php71-session
     SUBDIR += php71-tidy
+    SUBDIR += php72-opcache
+    SUBDIR += php72-session
+    SUBDIR += php72-tidy
     SUBDIR += phpbb
     SUBDIR += phpbb3
     SUBDIR += phpgroupware
@@ -2139,6 +2145,7 @@
     SUBDIR += rubygem-rkelly-remix
     SUBDIR += rubygem-robotex
     SUBDIR += rubygem-robots
+    SUBDIR += rubygem-roda
     SUBDIR += rubygem-rqrcode
     SUBDIR += rubygem-rqrcode-rails3
     SUBDIR += rubygem-rtlit
@@ -2177,6 +2184,7 @@
     SUBDIR += rubygem-unicorn-worker-killer
     SUBDIR += rubygem-url_escape
     SUBDIR += rubygem-url_mount
+    SUBDIR += rubygem-vegas
     SUBDIR += rubygem-wasabi
     SUBDIR += rubygem-webkit-gtk
     SUBDIR += rubygem-webkit-gtk2
@@ -2375,6 +2383,7 @@
     SUBDIR += udmsearch
     SUBDIR += ufdbguard
     SUBDIR += uglifyjs
+    SUBDIR += unit
     SUBDIR += usermanager
     SUBDIR += uwsgi
     SUBDIR += uwsgitop

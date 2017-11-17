@@ -6,7 +6,7 @@ bin/h5copy-18
 bin/h5debug-18
 bin/h5diff-18
 bin/h5dump-18
-%%FORTRAN%%bin/h5fc
+%%FORTRAN%%bin/h5fc-18
 bin/h5import-18
 bin/h5jam-18
 bin/h5ls-18

@@ -1,6 +1,6 @@
---- cciss_vol_status.c.orig	2010-10-01 11:01:29.000000000 +0400
-+++ cciss_vol_status.c	2010-10-01 11:01:43.000000000 +0400
-@@ -697,7 +697,7 @@
+--- cciss_vol_status.c.orig	2017-10-18 07:49:43.578445000 +0200
++++ cciss_vol_status.c	2017-10-18 07:51:20.372056000 +0200
+@@ -1098,7 +1098,7 @@
  			break;
  		case 1: sprintf(raid_level, "RAID 4");
  			break;
