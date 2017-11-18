@@ -672,6 +672,7 @@
     SUBDIR += fuel
     SUBDIR += fujaba
     SUBDIR += funnelweb
+    SUBDIR += fuzzylite
     SUBDIR += gaa
     SUBDIR += gamin
     SUBDIR += gauche-readline
