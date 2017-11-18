@@ -21,7 +21,7 @@ BUILD_DEPENDS+=	flang:devel/flang
 RUN_DEPENDS+=	flang:devel/flang
 F77=		flang
 FC=		flang
-LDFLAGS+=	-L${LOCALBASE}/flang/lib -lflang -lexecinfo
+LDFLAGS+=	-L${LOCALBASE}/flang/lib -Wl,--as-needed -lflang -lexecinfo -Wl,--no-as-needed
 .else
 IGNORE=		USES=fortran: flang argument only available for amd64
 .endif
