@@ -4304,6 +4304,7 @@
     SUBDIR += py-cliapp
     SUBDIR += py-click
     SUBDIR += py-click-log
+    SUBDIR += py-click-plugins
     SUBDIR += py-click-threading
     SUBDIR += py-cliff
     SUBDIR += py-clint
