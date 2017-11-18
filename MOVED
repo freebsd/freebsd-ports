@@ -9630,3 +9630,4 @@ astro/gmapcatcher||2017-11-12|Has expired: Unfetchable for more than six months 
 audio/smasher||2017-11-12|Has expired: Does not build with modern csound
 audio/csound|audio/csound6|2017-11-12|Has expired: Not supported upstream anymore, use csound6
 french/eficas||2017-11-14|Removed with Code_Aster 13.4.0, should be replaced by aster-study in cad/salome
+databases/grass6|databases/grass7|2017-11-18|Removed in favor of grass 7

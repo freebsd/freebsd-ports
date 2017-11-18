@@ -95,7 +95,6 @@
     SUBDIR += gomdb
     SUBDIR += gosqlite3
     SUBDIR += gqlplus
-    SUBDIR += grass6
     SUBDIR += grass7
     SUBDIR += gtksql
     SUBDIR += hamsterdb
