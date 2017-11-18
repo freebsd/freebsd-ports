@@ -3,7 +3,7 @@
 
 PORTNAME=	mediastreamer
 PORTVERSION=	2.14.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net
 MASTER_SITES=	SAVANNAH/linphone/mediastreamer
 

@@ -3,7 +3,7 @@
 
 PORTNAME=	opencolorio
 PORTVERSION=	1.0.9
-PORTREVISION?=	2
+PORTREVISION?=	3
 CATEGORIES=	graphics multimedia
 
 MAINTAINER?=	FreeBSD@Shaneware.biz
