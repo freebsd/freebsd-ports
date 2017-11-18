@@ -3,7 +3,7 @@
 
 PORTNAME=	obfsproxy
 PORTVERSION=	0.2.13
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	security net python
 MASTER_SITES=	http://www.c-s.li/ports/
@@ -18,8 +18,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyptlib>=0.0.5:security/py-pyptlib \
 		${PYTHON_PKGNAMEPREFIX}twisted>=0:devel/py-twisted \
 		${PYTHON_PKGNAMEPREFIX}yaml>=0:devel/py-yaml
 
-USE_PYTHON=	distutils
 USES=		python
+USE_PYTHON=	distutils
 SUB_FILES=	pkg-message
 PYDISTUTILS_PKGNAME=obfsproxy
 
