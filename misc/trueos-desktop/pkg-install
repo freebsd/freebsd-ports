@@ -111,4 +111,35 @@ if [ ! -e "/var/.openrc-migrate-10" ] ; then
 fi
 touch /var/.openrc-migrate-10
 
+# 11-18-17
+# Prep for 17.12 release
+if [ ! -e "/var/.trueos-migrate-1" ] ; then
+  /sbin/rc-update add ipfw boot
+  /sbin/rc-update add devd boot
+  /sbin/rc-update add devfs boot
+  /sbin/rc-update add routing boot
+  /sbin/rc-update add automount default
+  /sbin/rc-update add statd default
+  /sbin/rc-update add lockd default
+  /sbin/rc-update add rpcbind default
+  /sbin/rc-update add cupsd default
+  /sbin/rc-update add cups_browsed default
+  /sbin/rc-update delete dhcpcd default
+  /sbin/rc-update delete wpa_supplicant default
+  /sbin/rc-update add openntpd default
+  /sbin/rc-update add pcdm default
+  /sbin/rc-update add sysadm default
+  /sbin/rc-update add dbus default
+  /sbin/rc-update add hald default
+  /sbin/rc-update add trueosinit default
+  /sbin/rc-update add moused default
+  /sbin/rc-update add bsdstats default
+  /sbin/rc-update add automountd default
+  /sbin/rc-update add autounmountd default
+  /sbin/rc-update delete sndiod default
+  /sbin/rc-update add mountlate default
+fi
+touch /var/.trueos-migrate-1
+
+
 exit 0
