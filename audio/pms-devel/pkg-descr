@@ -1,0 +1,9 @@
+Practical Music Search (PMS) is an interactive console client for the Music
+Player Daemon, written in Go. Its interface is similar to Vim, and aims to be
+fast, configurable, and practical. PMS has many features that involve sorting,
+searching, and navigating. It is designed to let you navigate your music
+collection in an effective way.
+This is a complete rewrite of the previously existing pms which was written in
+C++.
+
+WWW: https://github.com/ambientsound/pms
