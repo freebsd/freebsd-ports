@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tripwire
-PORTVERSION=	2.4.3.2
+PORTVERSION=	2.4.3.6
 CATEGORIES=	security
 
 MAINTAINER=	cy@FreeBSD.org
@@ -180,5 +180,6 @@ create-database:
 .endif
 
 post-install:	install-config-files create-database make-pkg-install
+	${INSTALL_DATA} ${WRKSRC}/COPYING ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.post.mk>
