@@ -1,0 +1,20 @@
+--- CMakeLists.txt.orig	2017-11-12 20:15:25 UTC
++++ CMakeLists.txt
+@@ -155,7 +155,7 @@ add_subdirectory(include)
+ # recursively add source directories
+ add_subdirectory(src)
+ 
+-#if (NOT ENABLE_PSI4)
++if (ENABLE_TESTS)
+     # test suite
+     enable_testing()
+     include(CTest)
+@@ -163,7 +163,7 @@ add_subdirectory(src)
+ 
+     # sample suite
+     add_subdirectory(samples)
+-#endif()
++endif()
+ 
+ # Add all targets to the build-tree export set
+ 
