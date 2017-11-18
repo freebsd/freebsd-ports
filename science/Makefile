@@ -51,6 +51,7 @@
     SUBDIR += fvcom-mpi
     SUBDIR += fvm
     SUBDIR += gchemutils
+    SUBDIR += gdma
     SUBDIR += getdp
     SUBDIR += ghemical
     SUBDIR += ghmm
