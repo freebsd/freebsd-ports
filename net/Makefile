@@ -1066,6 +1066,7 @@
     SUBDIR += py-ripe.atlas.tools
     SUBDIR += py-s3cmd
     SUBDIR += py-s3transfer
+    SUBDIR += py-shodan
     SUBDIR += py-smbpasswd
     SUBDIR += py-soap2py
     SUBDIR += py-soappy
