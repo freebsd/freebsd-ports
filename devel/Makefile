@@ -109,6 +109,7 @@
     SUBDIR += aphpunit
     SUBDIR += api-sanity-autotest
     SUBDIR += apiextractor
+    SUBDIR += apitrace
     SUBDIR += appstream-glib
     SUBDIR += apr1
     SUBDIR += apr2

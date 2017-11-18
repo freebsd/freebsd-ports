@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=QApiTrace
+GenericName=Graphics API tracing tool
+Comment=A set of tools to trace OpenGL and other graphics APIs
+Exec=qapitrace
+Terminal=false
+Type=Application
+Categories=Development;
+Keywords=opengl;graphics;debugging;
