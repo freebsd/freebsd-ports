@@ -10,4 +10,4 @@
 
 gnome_enable=${gnome_enable-"NO"}
 
-load_rc_config gnome
+#load_rc_config gnome
