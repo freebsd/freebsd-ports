@@ -11,6 +11,7 @@
 name=chronyd
 rcvar=chronyd_enable
 command=%%PREFIX%%/sbin/${name}
+rc_flags="${chronyd_flags}"
 
 load_rc_config ${name}
 

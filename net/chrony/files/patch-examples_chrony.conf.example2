@@ -17,7 +17,7 @@
  
  # Specify file containing keys for NTP authentication.
 -#keyfile /etc/chrony.keys
-+#keyfile /usr/local/etc/chrony.keys
++#keyfile %%PREFIX%%/etc/chrony.keys
  
  # Specify directory for log files.
  logdir /var/log/chrony
