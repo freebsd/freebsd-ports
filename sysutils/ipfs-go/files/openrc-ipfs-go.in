@@ -7,8 +7,11 @@
 : ${ipfs_go_path:="/root/.ipfs"}
 
 name=ipfs_go
+pidfile="/var/run/ipfs-go.pid"
 command="%%PREFIX%%/bin/ipfs-go"
 command_args="daemon"
+supervisor=supervise-daemon
+supervise_daemon_args="-1 /var/log/ipfs-go.log -2 /var/log/ipfs-go.log"
 
 start_pre() {
         [ -d ${ipfs_go_path}/datastore ] || env IPFS_PATH=${ipfs_go_path} ${command} init
