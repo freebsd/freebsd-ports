@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	bosh-gen
-PORTVERSION=	0.96.0
+PORTVERSION=	0.97.0
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
@@ -22,8 +22,10 @@ RUN_DEPENDS=	rubygem-activesupport4>=4.0:devel/rubygem-activesupport4 \
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USES=		gem
+USES=		gem shebangfix
 
 PLIST_FILES=	bin/bosh-gen
+
+SHEBANG_FILES=	lib/bosh/gen/generators/new_release_generator/templates/manifests/operators/pick-from-cloud-config.sh.tt
 
 .include <bsd.port.mk>
