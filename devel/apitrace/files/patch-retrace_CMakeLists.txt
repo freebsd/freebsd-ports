@@ -1,0 +1,18 @@
+--- retrace/CMakeLists.txt.orig	2017-10-13 17:18:18 UTC
++++ retrace/CMakeLists.txt
+@@ -123,6 +123,7 @@ if (WIN32 OR APPLE OR X11_FOUND)
+         retrace_common
+         glretrace_common
+         glhelpers
++        glproc
+         glproc_gl
+     )
+ 
+@@ -169,6 +170,7 @@ if (ENABLE_EGL AND X11_FOUND AND NOT WIN
+         retrace_common
+         glretrace_common
+         glhelpers
++        glproc
+         glproc_egl
+         ${X11_X11_LIB}
+         ${CMAKE_THREAD_LIBS_INIT}
