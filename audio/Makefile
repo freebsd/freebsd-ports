@@ -637,6 +637,7 @@
     SUBDIR += playmidi
     SUBDIR += pm3umpdl
     SUBDIR += pms
+    SUBDIR += pms-devel
     SUBDIR += pocketsphinx
     SUBDIR += polyphone
     SUBDIR += portaudio
