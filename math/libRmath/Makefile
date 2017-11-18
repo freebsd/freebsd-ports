@@ -3,7 +3,7 @@
 
 PORTNAME=	libRmath
 DISTVERSION=	3.4.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math lang
 MASTER_SITES=	CRAN/src/base/R-${PORTVERSION:C|\..*||}
 DISTNAME=	R-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}
@@ -31,22 +31,13 @@ USE_LDCONFIG=	yes
 
 PLIST_SUB=	RMATH_SOVERSION="${RMATH_SOVERSION}"
 
-OPTIONS_SINGLE=		FORTRAN
-OPTIONS_SINGLE_FORTRAN=	${OPTIONS_SINGLE_FORTRAN_${MACHINE_ARCH}}
-OPTIONS_SINGLE_FORTRAN_amd64=	GFORTRAN FLANG
-OPTIONS_DEFAULT_amd64=	FLANG
+OPTIONS_DEFINE=		FLANG
+OPTIONS_EXCLUDE_aarch64=FLANG
+OPTIONS_EXCLUDE_i386=	FLANG
 
-FLANG_DESC=		Build Fortran source with flang
-GFORTRAN_DESC=		Build Fortran source with gfortran
-
-GFORTRAN_USES=		fortran:gcc
+FLANG_DESC=		Use flang instead of the default Fortran compiler
 FLANG_USES=		fortran:flang
-
-.include <bsd.port.options.mk>
-
-.if ${ARCH} != amd64
-USES+=		fortran:gcc
-.endif
+FLANG_USES_OFF=		fortran
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|(libdir)/pkgconfig|(prefix)/libdata/pkgconfig|g'\
