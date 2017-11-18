@@ -3,7 +3,7 @@
 
 PORTNAME=	trenchbroom
 PORTVERSION=	2.0.0.b
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	games cad
 
 MAINTAINER=	danfe@FreeBSD.org

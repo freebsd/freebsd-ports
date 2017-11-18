@@ -3,7 +3,7 @@
 
 PORTNAME=	bino
 PORTVERSION=	1.4.2
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	multimedia
 MASTER_SITES=	http://download.savannah.nongnu.org/releases/bino/ http://levsha.me/ports/distfiles/
 
