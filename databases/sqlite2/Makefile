@@ -65,23 +65,27 @@ post-patch:
 .else
 	@${ECHO} "" > ${WRKSRC}/freebsd.hints
 .endif
-.if ${PORT_OPTIONS:MTHREADS}
+
+post-patch-THREADS-on:
 	@${ECHO} "config_TARGET_CFLAGS=\"-DTHREADSAFE=1\"" \
 		>> ${WRKSRC}/freebsd.hints
 	@${ECHO} "config_TARGET_LIBS=\"-lpthread\"" \
 		>> ${WRKSRC}/freebsd.hints
-.endif
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/sqlite
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libsqlite.so
-.if ${PORT_OPTIONS:MTCL}
+
+post-install-TCL-on:
 	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} install-tcl)
 	${INSTALL_DATA} ${FILESDIR}/pkgIndex.tcl ${STAGEDIR}${PREFIX}/lib/sqlite
-.endif
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
+
+post-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/* ${STAGEDIR}${DOCSDIR}
-	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+
+post-install-EXAMPLES-on:
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${FILESDIR}/example.tcl ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>
