@@ -87,7 +87,9 @@ post-patch:
 .endfor
 
 post-patch-STATIC-on:
-	@${REINPLACE_CMD} 's|$$(LD)|$$(LD) -static|g' ${WRKSRC}/common.mk
+	@${REINPLACE_CMD} -e 's|$$(LD)|$$(LD) -static|g' \
+		-e 's@$$(NETPBMLIBFNAME)@libnetpbm.a@' \
+		${WRKSRC}/common.mk
 
 # Disable building svgtopam by default.  It is the only program that
 # requires libxml2 and it is not useful in this day and age according
