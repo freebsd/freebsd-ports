@@ -21,6 +21,8 @@ bin/mark
 bin/mhbuild
 bin/mhfixmsg
 bin/mhlist
+bin/mhical
+bin/mhlogin
 bin/mhmail
 bin/mhn
 bin/mhparam
@@ -28,7 +30,6 @@ bin/mhpath
 bin/mhshow
 bin/mhstore
 bin/msgchk
-bin/msh
 bin/new
 bin/next
 bin/packf
@@ -48,6 +49,11 @@ bin/unseen
 bin/whatnow
 bin/whom
 @sample etc/nmh/MailAliases-dist etc/nmh/MailAliases
+@sample etc/nmh/bash_completion_nmh-dist etc/nmh/bash_completion_nmh
+@sample etc/nmh/mhical.12hour-dist etc/nmh/mhical.12hour
+@sample etc/nmh/mhical.24hour-dist etc/nmh/mhical.24hour
+@sample etc/nmh/mhl.replywithoutbody-dist etc/nmh/mhl.replywithoutbody
+@sample etc/nmh/rmmproc.messageid-dist etc/nmh/rmmproc.messageid
 @sample etc/nmh/components-dist etc/nmh/components
 @sample etc/nmh/digestcomps-dist etc/nmh/digestcomps
 @sample etc/nmh/distcomps-dist etc/nmh/distcomps
@@ -77,11 +83,9 @@ bin/whom
 @sample etc/nmh/scan.timely-dist etc/nmh/scan.timely
 @sample etc/nmh/scan.unseen-dist etc/nmh/scan.unseen
 libexec/nmh/ap
-libexec/nmh/conflict
 libexec/nmh/dp
 libexec/nmh/fmtdump
 libexec/nmh/mhl
-libexec/nmh/mhtest
 libexec/nmh/mkstemp
 libexec/nmh/post
 libexec/nmh/rcvdist
@@ -110,8 +114,10 @@ man/man1/mark.1.gz
 man/man1/mh-mkstemp.1.gz
 man/man1/mhbuild.1.gz
 man/man1/mhfixmsg.1.gz
+man/man1/mhical.1.gz
 man/man1/mhl.1.gz
 man/man1/mhlist.1.gz
+man/man1/mhlogin.1.gz
 man/man1/mhmail.1.gz
 man/man1/mhn.1.gz
 man/man1/mhparam.1.gz
@@ -119,7 +125,6 @@ man/man1/mhpath.1.gz
 man/man1/mhshow.1.gz
 man/man1/mhstore.1.gz
 man/man1/msgchk.1.gz
-man/man1/msh.1.gz
 man/man1/new.1.gz
 man/man1/next.1.gz
 man/man1/packf.1.gz
@@ -153,15 +158,14 @@ man/man5/mh-sequence.5.gz
 man/man5/mh-tailor.5.gz
 man/man5/mh_profile.5.gz
 man/man5/mts.conf.5.gz
+man/man7/MH.7.gz
 man/man7/mh-chart.7.gz
 man/man7/mh-mime.7.gz
 man/man7/nmh.7.gz
 man/man8/ap.8.gz
-man/man8/conflict.8.gz
 man/man8/dp.8.gz
 man/man8/fmtdump.8.gz
 man/man8/post.8.gz
-%%PORTDOCS%%%%DOCSDIR%%/COMPLETION-BASH
 %%PORTDOCS%%%%DOCSDIR%%/COMPLETION-TCSH
 %%PORTDOCS%%%%DOCSDIR%%/COMPLETION-ZSH
 %%PORTDOCS%%%%DOCSDIR%%/COPYRIGHT
@@ -175,14 +179,14 @@ man/man8/post.8.gz
 %%PORTDOCS%%%%DOCSDIR%%/README-ATTACHMENTS
 %%PORTDOCS%%%%DOCSDIR%%/README-HOOKS
 %%PORTDOCS%%%%DOCSDIR%%/README-components
-%%PORTDOCS%%%%DOCSDIR%%/README-iCalendar
 %%PORTDOCS%%%%DOCSDIR%%/README.SASL
 %%PORTDOCS%%%%DOCSDIR%%/README.about
 %%PORTDOCS%%%%DOCSDIR%%/README.developers
 %%PORTDOCS%%%%DOCSDIR%%/README.manpages
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%%%DOCSDIR%%/VERSION
-%%PORTDOCS%%%%DOCSDIR%%/contrib/build_nmh
+%%PORTDOCS%%%%DOCSDIR%%/contrib/localpostproc
 %%PORTDOCS%%%%DOCSDIR%%/contrib/ml
+%%PORTDOCS%%%%DOCSDIR%%/contrib/replaliases
 %%PORTDOCS%%%%DOCSDIR%%/contrib/replyfilter
 %%PORTDOCS%%%%DOCSDIR%%/contrib/vpick

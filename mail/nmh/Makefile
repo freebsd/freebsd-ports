@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nmh
-PORTVERSION=	1.6
-PORTREVISION=	1
+PORTVERSION=	1.7
 CATEGORIES=	mail
 MASTER_SITES=	SAVANNAH
 
@@ -12,12 +11,13 @@ COMMENT=	Cleaned up MH mailer suite
 
 LICENSE=	BSD3CLAUSE
 
-USES=		cpe gmake iconv ncurses shebangfix
+USES=		cpe gmake iconv ncurses readline shebangfix
 SHEBANG_FILES=	docs/contrib/ml docs/contrib/replyfilter docs/contrib/vpick
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--libdir=${PREFIX}/libexec/nmh \
-		--sysconfdir=${PREFIX}/etc/nmh \
+		--sysconfdir=${PREFIX}/etc \
 		--docdir=${DOCSDIR}
+LIB_DEPENDS=	libcurl.so:ftp/curl
 
 OPTIONS_DEFINE=	DOCS HASH_BKP SASL2 TLS REPLYFILTER
 OPTIONS_SINGLE=	MTS LOCKING
@@ -62,6 +62,8 @@ OPTIONS_DEFAULT=	SMTP FLOCK
 .if ${PORT_OPTIONS:MTLS}
 CONFIGURE_ARGS+=	--with-tls
 USES+=			ssl
+.else
+CONFIGURE_ARGS+=	--without-tls
 .endif
 
 .if defined(WITH_DEBUG)
@@ -72,5 +74,8 @@ DEBUG_FLAGS+=	-O0 -Wall -Wextra -g
 
 CONFLICTS=	ja-mh-[0-9]*
 CONFLICTS_INSTALL=	pixie-* p5-Dist-Joseki-*
+
+post-install:
+	@${FIND} ${STAGEDIR}${ETCDIR} -type f -exec ${MV} {} {}-dist \;
 
 .include <bsd.port.mk>
