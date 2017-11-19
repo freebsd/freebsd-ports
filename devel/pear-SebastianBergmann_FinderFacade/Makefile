@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	FinderFacade
-PORTVERSION=	1.2.1
+PORTVERSION=	1.2.2
 CATEGORIES=	devel pear
 PKGNAMEPREFIX=	pear-SebastianBergmann_
 
