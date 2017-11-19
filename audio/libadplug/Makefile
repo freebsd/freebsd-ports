@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	adplug
-PORTVERSION=	2.2.1
+PORTVERSION=	2.3
 DISTVERSIONPREFIX=	${PORTNAME}-
-PORTREVISION=	3
 CATEGORIES=	audio
 PKGNAMEPREFIX=	lib
 
@@ -26,8 +25,5 @@ INFO=		libadplug
 CONFIGURE_ARGS+=	--enable-maintainer-mode
 
 INSTALL_TARGET=	install-strip
-
-post-patch:
-	@${REINPLACE_CMD} -e '/stdc++/d' ${WRKSRC}/configure.in
 
 .include <bsd.port.mk>
