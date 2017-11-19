@@ -730,6 +730,7 @@
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/priv/msgs/zh.msg
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/priv/sql/lite.sql
 sbin/%%PORTNAME%%ctl
+%%DATADIR%%/captcha.sh
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 @dir /var/log/%%PORTNAME%%
 @dir /var/run/%%PORTNAME%%ctl
