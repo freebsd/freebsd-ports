@@ -1,0 +1,24 @@
+- Disable valgrind tests due to hangs, x86-only and missing TAppDecoder
+- Disable encode tests to avoid circular dependency on ffmpeg
+
+--- tests/Makefile.am.orig	2017-11-17 13:23:33 UTC
++++ tests/Makefile.am
+@@ -1,17 +1,7 @@
+ 
+ TESTS = $(check_PROGRAMS) \
+     test_external_symbols.sh \
+-    test_gop.sh \
+-    test_interlace.sh \
+-    test_intra.sh \
+-    test_invalid_input.sh \
+-    test_mv_constraint.sh \
+-    test_owf_wpp_tiles.sh \
+-    test_rate_control.sh \
+-    test_slices.sh \
+-    test_smp.sh \
+-    test_tools.sh \
+-    test_weird_shapes.sh
++    $(NULL)
+ 
+ check_PROGRAMS = kvazaar_tests
+ 
