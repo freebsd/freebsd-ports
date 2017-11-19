@@ -4,4 +4,4 @@ sound data, originally created for the AdLib (OPL2) audio board, directly
 from its original format on top of an OPL2 emulator or by using the real
 hardware. No OPL chip is required for playback.
 
-WWW: http://adplug.github.io/
+WWW: https://adplug.github.io/
