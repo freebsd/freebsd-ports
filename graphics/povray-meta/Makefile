@@ -40,8 +40,10 @@ DEFAULT${ver}_DESC=	Create link bin/povray -> bin/povray${ver}
 .include <bsd.port.options.mk>
 
 .for ver in ${POV_VERSIONS_ALL}
-. if ${PORT_OPTIONS:MDEFAULT${ver}} && !${PORT_OPTIONS:MPOVRAY${ver}}
+. if ${PORT_OPTIONS:MDEFAULT${ver}}
+.  if !${PORT_OPTIONS:MPOVRAY${ver}}
 PORT_OPTIONS+=	POVRAY${ver}
+.  endif
 POV_VERSION=	${ver}
 . endif
 . if ${PORT_OPTIONS:MPOVRAY${ver}}
