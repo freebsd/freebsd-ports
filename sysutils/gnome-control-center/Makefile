@@ -11,6 +11,9 @@ DIST_SUBDIR=	gnome3
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Control center for GNOME 3 project
 
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 BUILD_DEPENDS=	gnome-settings-daemon>=3.4.0:sysutils/gnome-settings-daemon \
 		gsettings-desktop-schemas>=3.2.2:devel/gsettings-desktop-schemas \
 		docbook-xsl>=0:textproc/docbook-xsl \
@@ -39,14 +42,12 @@ RUN_DEPENDS=	gnome-eject:sysutils/gnome-mount \
 CONFLICTS=	gnome-media-2.[0-9]*
 PORTSCOUT=	limitw:1,even
 
-USES=		compiler:c++11-lib gettext gmake gnome pathfix pkgconfig tar:xz
+USES=		compiler:c++11-lib gettext gmake gnome localbase:ldflags pathfix pkgconfig tar:xz
 USE_GNOME=	gnomedesktop3 intltool libxml2
 USE_XORG=	xscrnsaver x11 xxf86misc kbproto xi
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 
 OPTIONS_SUB=	yes
 OPTIONS_DEFINE=	CUPS
@@ -63,8 +64,6 @@ CUPS_USES=		samba:lib
 CUPS_CONFIGURE_ENABLE=	cups
 CHEESE_LIB_DEPENDS=	libcheese.so:multimedia/cheese
 CHEESE_CONFIGURE_WITH=	cheese
-
-.include <bsd.port.options.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|datetime wacom|datetime|g' \
