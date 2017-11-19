@@ -166,6 +166,7 @@
     SUBDIR += emc2
     SUBDIR += ent
     SUBDIR += entropy
+    SUBDIR += eprover
     SUBDIR += ess
     SUBDIR += eukleides
     SUBDIR += eval
