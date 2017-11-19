@@ -15,7 +15,7 @@ COMMENT=	GNU Compiler Collection 4.6
 LICENSE=	GPLv3 GPLv3RLE
 LICENSE_COMB=	multi
 
-DEPRECATED=	Unsupported by upstream. Use GCC 5 or newer instead.
+DEPRECATED=	Unsupported by upstream. Use GCC 6 or newer instead.
 EXPIRATION_DATE=2017-11-30
 ONLY_FOR_ARCHS=	amd64 i386 powerpc sparc64
 

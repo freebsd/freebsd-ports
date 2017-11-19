@@ -15,7 +15,7 @@ COMMENT=	GNU Compiler Collection 4.7
 LICENSE=	GPLv3 GPLv3RLE
 LICENSE_COMB=	multi
 
-DEPRECATED=	Unsupported by upstream. Use GCC 5 or newer instead.
+DEPRECATED=	Unsupported by upstream. Use GCC 6 or newer instead.
 ONLY_FOR_ARCHS=	amd64 i386 powerpc sparc64
 
 LIB_DEPENDS=	libgmp.so:math/gmp \
