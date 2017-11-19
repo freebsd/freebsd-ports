@@ -4,7 +4,7 @@
  		continue
  	fi
  
-+	# Try pkg-info(1) next
++	# Try pkg-info(8) next
 +	ans="$(pkg info -qI "$i" 2> /dev/null)"
 +	if [ $? -eq 0 ]; then
 +		echo "$i: $ans"
