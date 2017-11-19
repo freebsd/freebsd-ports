@@ -12,5 +12,6 @@ Congratulations, you have installed %%PORTNAME%%!
   o PLEASE NOTE! "ejabberd" user UID and GID have changed from version 2.0.3
     of this port! Users are advised to check all configuration files and data
     in /var/spool/ejabberd to ensure everything has the correct owner/group.
+  o To start using CAPTCHA functionality, please install ImageMagick port.
 
 ------------------------------------------------------------------------
