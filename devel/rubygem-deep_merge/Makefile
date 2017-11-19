@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	deep_merge
-PORTVERSION=	1.1.1
+PORTVERSION=	1.2.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
