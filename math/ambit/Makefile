@@ -4,7 +4,9 @@ PORTNAME=	ambit
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.2-37
 DISTVERSIONSUFFIX=	-g9c7049a
+PORTREVISION=	1
 CATEGORIES=	math
+PKGNAMESUFFIX=	-tensor # avoid clash with shells/ambit
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	C++ library for tensor product calculations
