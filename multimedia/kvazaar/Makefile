@@ -2,8 +2,8 @@
 
 PORTNAME=	kvazaar
 DISTVERSIONPREFIX=	v
-DISTVERSION?=	1.1.0
-PORTREVISION?=	2
+DISTVERSION?=	1.2.0
+PORTREVISION?=	0
 CATEGORIES=	multimedia
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -38,16 +38,14 @@ CRYPTOPP_CONFIGURE_ENV=	cryptopp_CFLAGS=" " cryptopp_LIBS="-lcryptopp"
 CRYPTOPP_CONFIGURE_WITH=cryptopp
 
 post-patch:
-	@${REINPLACE_CMD} 's/x86_64/&|amd64/' ${WRKSRC}/configure.ac
-
-post-patch-CRYPTOPP-on:
-# XXX Force C++ linking to avoid error with Clang
-	@${ECHO_CMD} nodist_EXTRA_kvazaar_tests_SOURCES \
-		= dummy.cpp >>${WRKSRC}/tests/Makefile.am
+	@${REINPLACE_CMD} -e 's/x86_64/&|amd64/' \
+		-e '/AM_INIT_AUTOMAKE/s/])/ serial-tests&/' \
+		${WRKSRC}/configure.ac
 
 pre-install:	do-test
 
 .include <bsd.port.mk>
 
+# XXX test_external_symbols.sh fails with CRYPTOPP=on
 # XXX beefy5 (fails) vs. beefy4 (succeeds). Missed CPUID check?
 do-test:	.IGNORE
