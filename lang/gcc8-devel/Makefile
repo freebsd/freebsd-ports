@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gcc
-PORTVERSION=	8.0.0.s20171112
+PORTVERSION=	8.0.0.s20171119
 CATEGORIES=	lang
 MASTER_SITES=	GCC/snapshots/${DIST_VERSION}
 PKGNAMESUFFIX=	${SUFFIX}-devel
@@ -59,21 +59,10 @@ CONFIGURE_ARGS+=	--disable-multilib
 
 .if ${ARCH} == amd64
 CONFIGURE_TARGET=	x86_64-portbld-${OPSYS:tl}${OSREL}
-.endif
 
-.if ${ARCH} == powerpc64
+.elif ${ARCH} == powerpc64
 CONFIGURE_ENV+=	UNAME_m="powerpc64"
 USE_GCC=	yes
-.endif
-
-.if ${ARCH} == armv6
-. if ${COMPILER_TYPE} == clang
-.  if empty(PORT_OPTIONS:MBOOTSTRAP)
-MAKE_ARGS+=CXXFLAGS=-fbracket-depth=512
-.  else
-MAKE_ARGS+=STAGE1_CXXFLAGS=-fbracket-depth=512
-.  endif
-. endif
 .endif
 
 LANGUAGES:=	c,c++,objc,fortran
