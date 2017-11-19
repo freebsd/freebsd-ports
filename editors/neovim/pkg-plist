@@ -54,6 +54,7 @@ share/nvim/runtime/autoload/paste.vim
 share/nvim/runtime/autoload/phpcomplete.vim
 share/nvim/runtime/autoload/provider.vim
 share/nvim/runtime/autoload/provider/clipboard.vim
+share/nvim/runtime/autoload/provider/node.vim
 share/nvim/runtime/autoload/provider/python.vim
 share/nvim/runtime/autoload/provider/python3.vim
 share/nvim/runtime/autoload/provider/pythonx.vim
@@ -765,6 +766,7 @@ share/nvim/runtime/print/ks_roman.ps
 share/nvim/runtime/print/latin1.ps
 share/nvim/runtime/print/mac-roman.ps
 share/nvim/runtime/print/prolog.ps
+share/nvim/runtime/rgb.txt
 share/nvim/runtime/scripts.vim
 share/nvim/runtime/synmenu.vim
 share/nvim/runtime/syntax/2html.vim
