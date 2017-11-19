@@ -4,3 +4,4 @@ share/applications/mpc-qt.desktop
 share/icons/hicolor/scalable/apps/mpc-qt.svg
 %%DATADIR%%/scripts/stats.lua
 %%DATADIR%%/translations/mpc-qt_it.qm
+%%DATADIR%%/translations/mpc-qt_ru.qm
