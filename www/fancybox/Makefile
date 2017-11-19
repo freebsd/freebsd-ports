@@ -2,12 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	fancybox
-PORTVERSION=	3.2.1
+PORTVERSION=	3.2.5
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	JavaScript library for image/html/multimedia content display
+
+LICENSE=	GPLv3
 
 NO_ARCH=	yes
 NO_BUILD=	yes
