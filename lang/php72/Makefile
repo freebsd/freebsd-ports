@@ -88,9 +88,6 @@ CONFIGURE_ARGS+=--enable-fpm \
 .endif
 
 .if defined(PKGNAMEPREFIX)
-USES+=	php
-PHP_VER=	72
-IGNORE_WITH_PHP=	56 70 71
 USE_APACHE=	22+
 .include "${PORTSDIR}/Mk/bsd.apache.mk"
 .if ${PORT_OPTIONS:MAP2FILTER}
@@ -138,7 +135,6 @@ CONFIGURE_ARGS+=--enable-debug
 .if ${PORT_OPTIONS:MZTS}
 CONFIGURE_ARGS+=--enable-maintainer-zts
 CONFIGURE_ENV+=	pthreads_working="yes"
-USES=	localhost
 .endif
 
 .if ${PORT_OPTIONS:MDTRACE}
