@@ -1,0 +1,70 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# Copyright (C) 2015 by Yuri Victorovich. All rights reserved.
+
+# PROVIDE: %%PORTNAME%%
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+
+#
+# Add the following line to /etc/rc.conf to enable %%PORTNAME%%:
+#
+#%%PORTNAME%%_enable="YES"
+
+. /etc/rc.subr
+
+name="%%PORTNAME%%"
+rcvar=%%PORTNAME%%_enable
+start_cmd="%%PORTNAME%%_start"
+stop_cmd="%%PORTNAME%%_stop"
+
+load_rc_config ${name}
+
+: ${%%PORTNAME%%_enable="NO"}
+
+is_process_running() {
+  local pidfile=$1
+  [ -f $pidfile ] && procstat `cat $pidfile` >/dev/null 2>&1
+}
+
+stop_daemon() {
+  # assume PID is also PGID (daemon(8) PID is always PGID)
+  [ -f "$1" ] && kill -- -$(cat $1)
+}
+
+%%PORTNAME%%_start() {
+  local logfile=/var/log/%%PORTNAME%%.log
+  local pidfile=/var/run/%%PORTNAME%%.pid
+  if is_process_running $pidfile; then
+    echo "%%PORTNAME%% is already running (pid=$(cat $pidfile))"
+    return 1
+  fi
+  export USER=%%GOGS_USER%%
+  export HOME=$(getent passwd %%GOGS_USER%% | cut -d: -f6)
+  touch $logfile
+  chmod 640 $logfile
+  cd %%PREFIX%%/libexec/%%PORTNAME%%
+  /usr/sbin/daemon -P $pidfile -u %%GOGS_USER%% %%PREFIX%%/libexec/%%PORTNAME%%/%%PORTNAME%% web >>$logfile 2>&1
+  if is_process_running $pidfile; then
+    echo "started %%PORTNAME%% (pid=$(cat $pidfile))"
+  else
+    echo "failed to start %%PORTNAME%%"
+  fi
+}
+
+%%PORTNAME%%_stop() {
+  local pidfile=/var/run/%%PORTNAME%%.pid
+  if is_process_running $pidfile; then
+    echo "stopping %%PORTNAME%% (pid=$(cat $pidfile))"
+    stop_daemon $pidfile
+  else
+    echo "%%PORTNAME%% isn't running"
+  fi
+}
+
+command="/usr/bin/true"
+
+run_rc_command "$1"
