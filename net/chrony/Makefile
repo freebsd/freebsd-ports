@@ -3,7 +3,7 @@
 
 PORTNAME=	chrony
 PORTVERSION=	3.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net
 MASTER_SITES=	http://download.tuxfamily.org/chrony/
 
@@ -42,6 +42,7 @@ IPV6_CONFIGURE_OFF=	--disable-ipv6
 
 NSS_DESC=		Add support for more hashing algorithms
 NSS_CONFIGURE_OFF=	--without-nss
+NSS_LIB_DEPENDS=	libfreebl3.so:security/nss
 NSS_USES=		pkgconfig
 
 post-install:
