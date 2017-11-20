@@ -4,15 +4,9 @@ Date: Thu, 3 Aug 2017 09:56:43 -0400
 Subject: Fix chunked decoding buffer overrun (CVE-2017-2885)
 
 https://bugzilla.gnome.org/show_bug.cgi?id=785774
----
- libsoup/soup-filter-input-stream.c | 22 +++++++++++-----------
- 1 file changed, 11 insertions(+), 11 deletions(-)
-
-diff --git a/libsoup/soup-filter-input-stream.c b/libsoup/soup-filter-input-stream.c
-index cde4d12..2c30bf9 100644
---- libsoup/soup-filter-input-stream.c
+--- libsoup/soup-filter-input-stream.c.orig	2016-02-05 15:05:33 UTC
 +++ libsoup/soup-filter-input-stream.c
-@@ -198,7 +198,7 @@ soup_filter_input_stream_read_until (SoupFilterInputStream  *fstream,
+@@ -201,7 +201,7 @@ soup_filter_input_stream_read_until (SoupFilterInputSt
  				     GCancellable           *cancellable,
  				     GError                **error)
  {
@@ -21,7 +15,7 @@ index cde4d12..2c30bf9 100644
  	guint8 *p, *buf, *end;
  	gboolean eof = FALSE;
  	GError *my_error = NULL;
-@@ -251,10 +251,11 @@ soup_filter_input_stream_read_until (SoupFilterInputStream  *fstream,
+@@ -254,10 +254,11 @@ soup_filter_input_stream_read_until (SoupFilterInputSt
  	} else
  		buf = fstream->priv->buf->data;
  
@@ -37,7 +31,7 @@ index cde4d12..2c30bf9 100644
  	for (p = buf; p <= end; p++) {
  		if (*p == *(guint8*)boundary &&
  		    !memcmp (p, boundary, boundary_length)) {
-@@ -268,10 +269,9 @@ soup_filter_input_stream_read_until (SoupFilterInputStream  *fstream,
+@@ -271,10 +272,9 @@ soup_filter_input_stream_read_until (SoupFilterInputSt
  	if (!*got_boundary && fstream->priv->buf->len < length && !eof)
  		goto fill_buffer;
  
@@ -53,6 +47,3 @@ index cde4d12..2c30bf9 100644
 +		read_length = p - buf;
 +	return read_from_buf (fstream, buffer, read_length);
  }
--- 
-cgit v0.12
-
