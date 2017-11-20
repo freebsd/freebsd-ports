@@ -13,7 +13,7 @@ LICENSE=	PHP301
 
 LIB_DEPENDS=	libicui18n.so:devel/icu
 
-IGNORE_WITH_PHP=70 71
+IGNORE_WITH_PHP=70 71 72
 USES=		php:pecl
 
 .include <bsd.port.mk>
