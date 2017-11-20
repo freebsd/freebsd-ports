@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tt-rss
-PORTVERSION=	g20171103
+PORTVERSION=	g20171120
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	https://git.tt-rss.org/git/tt-rss/archive/
@@ -13,7 +13,7 @@ COMMENT=	Tiny Tiny RSS: web-based news feed (RSS/Atom) aggregator
 
 LICENSE=	GPLv2
 
-GIT_TAGNAME=	8569b95a2
+GIT_TAGNAME=	d2957a2718
 
 NO_BUILD=	yes
 NO_ARCH=	yes
