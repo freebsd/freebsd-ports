@@ -62,6 +62,7 @@
 %%SITE_PERL%%/Test2/Tools/Ref.pm
 %%SITE_PERL%%/Test2/Tools/Subtest.pm
 %%SITE_PERL%%/Test2/Tools/Target.pm
+%%SITE_PERL%%/Test2/Tools/Tester.pm
 %%SITE_PERL%%/Test2/Tools/Warnings.pm
 %%SITE_PERL%%/Test2/Util/Grabber.pm
 %%SITE_PERL%%/Test2/Util/Ref.pm
@@ -136,6 +137,7 @@
 %%PERL5_MAN3%%/Test2::Tools::Ref.3.gz
 %%PERL5_MAN3%%/Test2::Tools::Subtest.3.gz
 %%PERL5_MAN3%%/Test2::Tools::Target.3.gz
+%%PERL5_MAN3%%/Test2::Tools::Tester.3.gz
 %%PERL5_MAN3%%/Test2::Tools::Warnings.3.gz
 %%PERL5_MAN3%%/Test2::Util::Grabber.3.gz
 %%PERL5_MAN3%%/Test2::Util::Ref.3.gz
