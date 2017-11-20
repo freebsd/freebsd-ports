@@ -1,6 +1,6 @@
 --- includes/defaults.inc.php.orig	2017-11-01 17:55:06.000000000 +0000
-+++ includes/defaults.inc.php	2017-11-20 21:06:51.816968000 +0000
-@@ -48,19 +48,19 @@
++++ includes/defaults.inc.php	2017-11-20 23:16:29.419902000 +0000
+@@ -48,19 +48,21 @@
  $config['fping_options']['timeout'] = 500;
  $config['fping_options']['count']   = 3;
  $config['fping_options']['millisec'] = 200;
@@ -23,6 +23,8 @@
 -$config['virsh']          = '/usr/bin/virsh';
 -$config['dot']            = '/usr/bin/dot';
 -$config['sfdp']           = '/usr/bin/sfdp';
++$config['rrdtool']        = '/usr/local/bin/rrdtool';
++$config['rrdtool_version'] = 1.7;
 +$config['ipmitool']       = '/usr/local/bin/ipmitool';
 +$config['virsh']          = '/usr/lacal/bin/virsh';
 +$config['dot']            = '/usr/local/bin/dot';
