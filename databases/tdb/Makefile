@@ -46,7 +46,7 @@ PLIST_FILES+=		include/tdb.h \
 .if defined(NO_PYTHON)
 CONFIGURE_ARGS+=	--disable-python
 .else
-USES+=			python:2.7+
+USES+=			python:2.7
 
 PLIST_FILES+=		%%PYTHON_SITELIBDIR%%/tdb.so \
 			%%PYTHON_SITELIBDIR%%/_tdb_text.py
