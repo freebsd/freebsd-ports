@@ -5,8 +5,11 @@
 #
 global:
   logging:
-    syslog:
-      enable: true
-      format: logfmt
+    - outlet: "stdout"
+      level:  "error"
+      format: "human"
+    - outlet: "syslog"
+      level:  "info"
+      format: "logfmt"
 
 # Add "jobs:" section(s) here for your specific use cases.
