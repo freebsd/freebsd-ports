@@ -18,7 +18,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libgd.so:graphics/gd \
 		libavutil.so:multimedia/ffmpeg
 
-IGNORE_WITH_PHP=70 71
+IGNORE_WITH_PHP=70 71 72
 USES=		localbase php:ext tar:xz
 
 .include <bsd.port.mk>
