@@ -16,6 +16,7 @@ include/nettle/camellia.h
 include/nettle/cast128.h
 include/nettle/cbc.h
 include/nettle/ccm.h
+include/nettle/cfb.h
 include/nettle/chacha-poly1305.h
 include/nettle/chacha.h
 include/nettle/ctr.h
@@ -31,6 +32,7 @@ include/nettle/ecdsa.h
 include/nettle/eddsa.h
 include/nettle/gcm.h
 include/nettle/gosthash94.h
+include/nettle/hkdf.h
 include/nettle/hmac.h
 include/nettle/knuth-lfib.h
 include/nettle/macros.h
@@ -47,6 +49,8 @@ include/nettle/pbkdf2.h
 include/nettle/pgp.h
 include/nettle/pkcs1.h
 include/nettle/poly1305.h
+include/nettle/pss-mgf1.h
+include/nettle/pss.h
 include/nettle/realloc.h
 include/nettle/ripemd160.h
 include/nettle/rsa.h
@@ -64,10 +68,10 @@ include/nettle/yarrow.h
 lib/libhogweed.a
 lib/libhogweed.so
 lib/libhogweed.so.4
-lib/libhogweed.so.4.3
+lib/libhogweed.so.4.4
 lib/libnettle.a
 lib/libnettle.so
 lib/libnettle.so.6
-lib/libnettle.so.6.3
+lib/libnettle.so.6.4
 libdata/pkgconfig/hogweed.pc
 libdata/pkgconfig/nettle.pc
