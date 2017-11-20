@@ -14,13 +14,13 @@ COMMENT=	Small alternative SSL implementation
 
 LICENSE=	GPLv2+
 
-OPTIONS_DEFINE=	DOCS EXAMPLES
-
 WRKSRC=		${WRKDIR}/${DISTNAME}/${PORTNAME}-${PORTVERSION:S/./-/g}-open
 
 USES=		gmake tar:tgz
 MAKE_ARGS=	CC="${CC}" DFLAGS="${CFLAGS}" STRIP="${TEST}"
 USE_LDCONFIG=	yes
+
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
 .include <bsd.port.pre.mk>
 
@@ -50,11 +50,12 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/core/*.h ${STAGEDIR}${PREFIX}/include/matrixssl/core
 	@${MKDIR} ${STAGEDIR}${PREFIX}/include/matrixssl/crypto
 	${INSTALL_DATA} ${WRKSRC}/crypto/*.h ${STAGEDIR}${PREFIX}/include/matrixssl/crypto
-.if ${PORT_OPTIONS:MDOCS}
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/* ${STAGEDIR}${DOCSDIR}
-.endif
-.if ${PORT_OPTIONS:MEXAMPLES}
+
+do-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/apps
 	${INSTALL_DATA} ${WRKSRC}/apps/Makefile ${STAGEDIR}${EXAMPLESDIR}/apps
 	${INSTALL_DATA} ${WRKSRC}/apps/*.c ${STAGEDIR}${EXAMPLESDIR}/apps
@@ -62,6 +63,5 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/sampleCerts
 	${INSTALL_DATA} ${WRKSRC}/sampleCerts/*.h ${STAGEDIR}${EXAMPLESDIR}/sampleCerts
 	${INSTALL_DATA} ${WRKSRC}/sampleCerts/*.pem ${STAGEDIR}${EXAMPLESDIR}/sampleCerts
-.endif
 
 .include <bsd.port.post.mk>
