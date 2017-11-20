@@ -22,7 +22,7 @@
 %%SITE_PERL%%/Mojolicious/Plugin/Minion/resources/public/minion/fonts/fontawesome-webfont.woff
 %%SITE_PERL%%/Mojolicious/Plugin/Minion/resources/public/minion/fonts/fontawesome-webfont.woff2
 %%SITE_PERL%%/Mojolicious/Plugin/Minion/resources/public/minion/logo-black.png
-%%SITE_PERL%%/Mojolicious/Plugin/Minion/resources/public/minion/logo-black@2x.png
+%%SITE_PERL%%/Mojolicious/Plugin/Minion/resources/public/minion/logo-black-2x.png
 %%SITE_PERL%%/Mojolicious/Plugin/Minion/resources/public/minion/moment/moment.js
 %%SITE_PERL%%/Mojolicious/Plugin/Minion/resources/templates/layouts/minion.html.ep
 %%SITE_PERL%%/Mojolicious/Plugin/Minion/resources/templates/minion/_limit.html.ep
