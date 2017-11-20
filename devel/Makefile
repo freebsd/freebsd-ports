@@ -842,6 +842,7 @@
     SUBDIR += goffice
     SUBDIR += goffice010
     SUBDIR += gogland-eap
+    SUBDIR += gogs
     SUBDIR += google-gdata
     SUBDIR += google-perftools
     SUBDIR += google-styleguide
