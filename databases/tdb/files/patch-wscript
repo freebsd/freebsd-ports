@@ -1,7 +1,7 @@
---- ./wscript.orig	2012-04-11 12:36:12.000000000 +0000
-+++ ./wscript	2013-01-29 20:56:34.289900427 +0000
-@@ -68,7 +68,7 @@
-                             io.c open.c transaction.c hash.c summary.c''')
+--- wscript.orig	2017-08-24 11:29:08 UTC
++++ wscript
+@@ -115,7 +115,7 @@ def build(bld):
+     COMMON_SRC = bld.SUBDIR('common', COMMON_FILES)
  
      if bld.env.standalone_tdb:
 -        bld.env.PKGCONFIGDIR = '${LIBDIR}/pkgconfig'
