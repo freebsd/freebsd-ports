@@ -560,6 +560,7 @@
     SUBDIR += npm
     SUBDIR += npm-less-plugin-clean-css
     SUBDIR += npm-node4
+    SUBDIR += npm-node6
     SUBDIR += npm2
     SUBDIR += npm3
     SUBDIR += npm4
