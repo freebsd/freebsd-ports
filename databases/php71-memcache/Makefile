@@ -18,7 +18,7 @@ OPTIONS_DEFINE=	EXAMPLES
 PORTSCOUT=	skipv:start
 
 CONFIGURE_ARGS=	--with-zlib-dir=/usr
-IGNORE_WITH_PHP=56 70
+IGNORE_WITH_PHP=56 70 72
 PHP_VER=	71
 USE_CSTD=	gnu89
 USE_PHP=	session:build zlib:build
