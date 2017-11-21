@@ -22,6 +22,9 @@ PORTEXAMPLES=	*
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
+MAKE_ENV+=	PROG.awk=/usr/bin/awk PROG.nm=/usr/bin/nm \
+		PROG.makedepend=/usr/bin/mkdep
+
 post-patch:
 	@${ECHO_CMD} "MKDEP ?= bmkdep" >> ${WRKSRC}/mk/sys.mk
 
