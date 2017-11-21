@@ -65,7 +65,7 @@ GH_TUPLE=	BurntSushi:toml:a368813:toml/src/github.com/BurntSushi/toml \
 
 OPTIONS_DEFINE=		MANPAGES
 OPTIONS_DEFAULT=	MANPAGES
-OPTIONS_SUB=		MANPAGES
+OPTIONS_SUB=		yes
 
 MANPAGES_DESC=	Build and/or install manual pages
 

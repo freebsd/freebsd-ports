@@ -25,7 +25,7 @@ SOX_DESC=	Sox audio support
 NLS_USES=		gettext
 NLS_CONFIGURE_ENABLE=	nls
 
-OPTIONS_SUB=	X11
+OPTIONS_SUB=	yes
 
 X11_USE=	GNOME=gtk12
 X11_CPPFLAGS=	-I../compface -I${LOCALBASE}/include

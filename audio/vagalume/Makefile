@@ -24,7 +24,7 @@ INSTALLS_ICONS=	yes
 
 OPTIONS_DEFINE=	DBUS TRAY NLS GCONF
 OPTIONS_DEFAULT=	DBUS TRAY
-OPTIONS_SUB=	NLS DBUS
+OPTIONS_SUB=	yes
 TRAY_DESC=	Tray icon and libnotify support
 
 DBUS_LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib

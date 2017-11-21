@@ -125,7 +125,7 @@ QT5_PLIST_SUB=		GUI_GTK="@comment "
 GTK2_PLIST_SUB=		GUI_GTK=""
 GTK3_PLIST_SUB=		GUI_GTK=""
 
-OPTIONS_SUB=		LUA
+OPTIONS_SUB=		yes
 
 .if defined(LITE)
 CONFIGURE_ARGS+=--enable-androiddump=no

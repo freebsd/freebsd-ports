@@ -28,7 +28,7 @@ SUB_FILES=	sams2.conf.sample
 PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS APACHE
-OPTIONS_SUB=	APACHE
+OPTIONS_SUB=	yes
 APACHE_USE=	APACHE=22+
 
 # We can't use <options> here, ${APACHE*} won't be populated
