@@ -3,6 +3,7 @@
 
 PORTNAME=	unit
 PORTVERSION=	0.2
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://unit.nginx.org/download/
 
@@ -133,22 +134,23 @@ PLIST_FILES+=	libexec/unit/python3.6.unit.so
 
 post-configure:
 .if ${PORT_OPTIONS:MGO}
-	@cd ${WRKSRC} && ./configure go --go=${PREFIX}/bin/go --go-path=${PREFIX}/go
+	@cd ${WRKSRC} && ./configure go --go=${LOCALBASE}/bin/go --go-path=${LOCALBASE}/go
 .endif
 .if ${PORT_OPTIONS:MPHP}
-	@cd ${WRKSRC} && ./configure php --config=${PREFIX}/bin/php-config --lib-path="${PREFIX}/lib"
+	@cd ${WRKSRC} && ./configure php --config=${LOCALBASE}/bin/php-config \
+		--lib-path="${LOCALBASE}/lib"
 .endif
 .if ${PORT_OPTIONS:MPYTHON27}
-	@cd ${WRKSRC} && ./configure python --config=${PREFIX}/bin/python2.7-config
+	@cd ${WRKSRC} && ./configure python --config=${LOCALBASE}/bin/python2.7-config
 .endif
 .if ${PORT_OPTIONS:MPYTHON34}
-	@cd ${WRKSRC} && ./configure python --config=${PREFIX}/bin/python3.4-config
+	@cd ${WRKSRC} && ./configure python --config=${LOCALBASE}/bin/python3.4-config
 .endif
 .if ${PORT_OPTIONS:MPYTHON35}
-	@cd ${WRKSRC} && ./configure python --config=${PREFIX}/bin/python3.5-config
+	@cd ${WRKSRC} && ./configure python --config=${LOCALBASE}/bin/python3.5-config
 .endif
 .if ${PORT_OPTIONS:MPYTHON36}
-	@cd ${WRKSRC} && ./configure python --config=${PREFIX}/bin/python3.6-config
+	@cd ${WRKSRC} && ./configure python --config=${LOCALBASE}/bin/python3.6-config
 .endif
 
 post-install:
