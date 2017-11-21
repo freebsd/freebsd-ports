@@ -1672,7 +1672,6 @@
     SUBDIR += sq-hunspell
     SUBDIR += sr-aspell
     SUBDIR += sr-hunspell
-    SUBDIR += srilm
     SUBDIR += ss-hunspell
     SUBDIR += ssddiff
     SUBDIR += stardict-dict-fa_IR

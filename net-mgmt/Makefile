@@ -186,7 +186,6 @@
     SUBDIR += netmask
     SUBDIR += netspoc
     SUBDIR += netustad
-    SUBDIR += netwag
     SUBDIR += networkmgr
     SUBDIR += netwox
     SUBDIR += netxms
