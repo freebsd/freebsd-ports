@@ -44,6 +44,7 @@ PLIST_FILES+=		include/tdb.h \
 			%%PKGCONFIGDIR%%/tdb.pc
 
 .if defined(NO_PYTHON)
+USES+=			python:2.7,build
 CONFIGURE_ARGS+=	--disable-python
 .else
 USES+=			python:2.7

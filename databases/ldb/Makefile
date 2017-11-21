@@ -77,7 +77,8 @@ PLIST_FILES=		include/ldb_version.h \
 			%%PKGCONFIGDIR%%/ldb.pc
 
 .if defined(NO_PYTHON)
-CONFIGURE_ARGS+=	--disable-python
+USES+=			python:2.7,build
+#CONFIGURE_ARGS+=	--disable-python
 .else
 USES+=			python:2.7
 
@@ -141,6 +142,25 @@ post-install:
 .if !defined(NO_PYTHON)
 			${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libpyldb-util.so
 			${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/ldb.so
+.else
+.for file in		include/pyldb.h \
+			lib/libpyldb-util.so \
+			lib/libpyldb-util.so.1 \
+			lib/ldb/libpytalloc-util.so.2
+				${RM} ${STAGEDIR}${PREFIX}/${file}
+.endfor
+.for file in		${PYTHON_SITELIBDIR}/ldb.so \
+			${PYTHON_SITELIBDIR}/_ldb_text.py \
+			${PYTHON_SITELIBDIR}/_tdb_text.py \
+			${PYTHON_SITELIBDIR}/_tevent.so \
+			${PYTHON_SITELIBDIR}/talloc.so \
+			${PYTHON_SITELIBDIR}/tdb.so \
+			${PYTHON_SITELIBDIR}/tevent.py \
+			${PKGCONFIGDIR}/pyldb-util.pc
+				${RM} ${STAGEDIR}/${file}
+.endfor
+			${RMDIR} ${STAGEDIR}${PYTHON_SITELIBDIR}
+			${RMDIR} ${STAGEDIR}${PYTHON_LIBDIR}
 .endif
 
 .include <bsd.port.post.mk>
