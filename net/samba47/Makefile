@@ -3,7 +3,7 @@
 
 PORTNAME?=	${SAMBA4_BASENAME}47
 PORTVERSION?=	${SAMBA4_VERSION}
-PORTREVISION?=	3
+PORTREVISION?=	4
 CATEGORIES?=	net
 EXTRACT_ONLY=
 
@@ -108,8 +108,8 @@ RUN_DEPENDS+=		talloc>=2.1.10:devel/talloc
 SAMBA4_BUNDLED_LIBS+=	!talloc
 
 # tevent
-BUILD_DEPENDS+=		tevent>=0.9.33:devel/tevent
-RUN_DEPENDS+=		tevent>=0.9.33:devel/tevent
+BUILD_DEPENDS+=		tevent>=0.9.34:devel/tevent
+RUN_DEPENDS+=		tevent>=0.9.34:devel/tevent
 SAMBA4_BUNDLED_LIBS+=	!tevent
 
 # tdb
