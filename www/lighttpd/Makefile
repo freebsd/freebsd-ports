@@ -3,6 +3,7 @@
 
 PORTNAME?=	lighttpd
 PORTVERSION=	1.4.48
+PORTREVISION=	1
 CATEGORIES?=	www
 MASTER_SITES?=	http://download.lighttpd.net/lighttpd/releases-1.4.x/
 
@@ -103,8 +104,13 @@ LIGHTTPD_CONF_D_FILES=	access_log.conf \
 	simple_vhost.conf ssi.conf status.conf \
 	trigger_b4_dl.conf userdir.conf webdav.conf
 
-LOGROOT=	/var/log/lighttpd
-PLIST_SUB=	LOGROOT="${LOGROOT}"
+USERS=		${WWWOWN}
+GROUPS=		${WWWGRP}
+CACHEDIR=	/var/cache/${PORTNAME}
+LOGDIR=		/var/log/${PORTNAME}
+HOMEDIR=	/var/run/${PORTNAME}
+PLIST_SUB+=	WWWOWN="${WWWOWN}" WWWGRP="${WWWGRP}"
+PLIST_SUB+=	CACHEDIR="${CACHEDIR}" HOMEDIR="${HOMEDIR}" LOGDIR="${LOGDIR}"
 
 .endif # !defined(_BUILDING_LIGHTTPD_MODULE)
 
@@ -118,17 +124,18 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|-std=gnu99||' \
 		${WRKSRC}/configure ${WRKSRC}/configure.ac
 	@${REINPLACE_CMD} -E -e \
-		's|^(server.document-root.*=).*|\1 "${PREFIX}/www/data/"|' \
-		-e "s|/etc/lighttpd|${PREFIX}/etc/lighttpd|g" \
+		's|^(server.document-root.*=).*|\1 "${PREFIX}/www" + "/data"|' \
+		-e "s|/etc/lighttpd|${ETCDIR}|g" \
 		-e 's|^(server.event-handler.*=).*|\1 "freebsd-kqueue"|' \
 		-e 's|^(server.network-backend.*=).*|\1 "writev"|' \
-		-e "s|^(server.username.*=).*|\1 \"${LIGHTTPD_USER}\"|" \
-		-e "s|^(server.groupname.*=).*|\1 \"${LIGHTTPD_GROUP}\"|" \
-		-e "s|^(var.log_root.*=).*|\1 \"${LIGHTTPD_LOGROOT}\"|" \
-		-e "s|^(var.home_dir.*=).*|\1 \"/var/spool/lighttpd\"|" \
-		-e "s|^(var.server_root.*=).*|\1 \"${LIGHTTPD_WEBROOT}\"|" \
+		-e "s|^(server.username.*=).*|\1 \"${WWWOWN}\"|" \
+		-e "s|^(server.groupname.*=).*|\1 \"${WWWGRP}\"|" \
+		-e "s|^(var.log_root.*=).*|\1 \"${LOGDIR}\"|" \
+		-e "s|^(var.server_root.*=).*|\1 \"${WWWDIR}\"|" \
+		-e "s|^(var.home_dir.*=).*|\1 \"${HOMEDIR}\"|" \
+		-e "s|^(var.cache_dir.*=).*|\1 \"${CACHEDIR}\"|" \
 		${WRKSRC}/doc/config/lighttpd.conf
-	@${REINPLACE_CMD} -e "s|/etc/lighttpd|${PREFIX}/etc/lighttpd|g" \
+	@${REINPLACE_CMD} -e "s|/etc/lighttpd|${ETCDIR}|g" \
 		${WRKSRC}/doc/config/conf.d/auth.conf
 	@${REINPLACE_CMD} -e "s|/usr/bin/python|${LOCALBASE}/bin/python|" \
 		${WRKSRC}/doc/config/conf.d/cgi.conf \
@@ -140,18 +147,21 @@ post-patch:
 		${WRKSRC}/doc/config/lighttpd.conf
 
 post-install:
-	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/lighttpd/conf.d ${STAGEDIR}${PREFIX}/etc/lighttpd/vhosts.d
+	@${MKDIR} ${STAGEDIR}${ETCDIR}/conf.d ${STAGEDIR}${ETCDIR}/vhosts.d
 .for FILE in ${LIGHTTPD_CONF_FILES}
 	${INSTALL_DATA} ${WRKSRC}/doc/config/${FILE} \
-		${STAGEDIR}${PREFIX}/etc/lighttpd/${FILE}.sample
+		${STAGEDIR}${ETCDIR}/${FILE}.sample
 .endfor
 .for FILE in ${LIGHTTPD_CONF_D_FILES}
 	${INSTALL_DATA} ${WRKSRC}/doc/config/conf.d/${FILE} \
-		${STAGEDIR}${PREFIX}/etc/lighttpd/conf.d/${FILE}.sample
+		${STAGEDIR}${ETCDIR}/conf.d/${FILE}.sample
 .endfor
 	${INSTALL_DATA} ${WRKSRC}/doc/config/vhosts.d/vhosts.template \
-		${STAGEDIR}${PREFIX}/etc/lighttpd/vhosts.d/vhosts.template
-	@${MKDIR} -m 0700 ${STAGEDIR}${LOGROOT}
+		${STAGEDIR}${ETCDIR}/vhosts.d/vhosts.template
+	@${MKDIR} ${STAGEDIR}${WWWDIR}
+	@${MKDIR} -m 0700 ${STAGEDIR}${CACHEDIR}
+	@${MKDIR} -m 0700 ${STAGEDIR}${HOMEDIR}/sockets
+	@${MKDIR} -m 0700 ${STAGEDIR}${LOGDIR}
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
