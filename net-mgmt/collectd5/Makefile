@@ -2,11 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	collectd
-PORTVERSION=	5.7.2
-PORTREVISION=	1
+PORTVERSION=	5.8.0
 CATEGORIES=	net-mgmt
-MASTER_SITES=	https://collectd.org/files/ \
-		http://collectd.org/files/
+MASTER_SITES=	https://storage.googleapis.com/collectd-tarballs/
 PKGNAMESUFFIX=	5
 
 MAINTAINER=	ports@bsdserwis.com
@@ -18,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 USES=		autoreconf gmake libtool pkgconfig shebangfix tar:bzip2
 GNU_CONFIGURE=	yes
 
-OPTIONS_DEFINE=		CGI DEBUG GCRYPT LOGSTASH VIRT
+OPTIONS_DEFINE=		CGI JAVA LOGGING GCRYPT LOGSTASH VIRT
 OPTIONS_GROUP=		INPUT OUTPUT
 OPTIONS_GROUP_OUTPUT=	KAFKA MONGODB NOTIFYDESKTOP NOTIFYEMAIL RIEMANN RRDTOOL \
 			TSDB
@@ -28,7 +26,7 @@ OPTIONS_GROUP_INPUT=	CHRONY CURL CURL_JSON CURL_XML DBI IPMI JSON \
 			SIGROK SNMP STATSD TOKYOTYRANT VARNISH XML \
 			XMMS ZOOKEEPER
 
-OPTIONS_DEFAULT=	DEBUG GCRYPT PING
+OPTIONS_DEFAULT=	LOGGING GCRYPT PING
 
 CGI_DESC=		Install collection.cgi (requires rrdtool)
 CHRONY_DESC=		Enable chronyd plugin
@@ -40,6 +38,7 @@ GCRYPT_DESC=		Build with libgcrypt
 IPMI_DESC=		Enable OpenIPMI plugin
 JSON_DESC=		Enable JSON plugins
 KAFKA_DESC=		Enable write_kafka plugin
+LOGGING_DESC=		Enable debug logging
 LOGSTASH_DESC=		Enable log_logstash plugin (requires json)
 MEMCACHEC_DESC=		Enable memcachec plugin
 MODBUS_DESC=		Enable modbus plugin
@@ -90,11 +89,9 @@ CONFIGURE_ARGS=	--localstatedir=/var \
 		--disable-ceph \
 		--disable-cgroups \
 		--disable-fhcount \
-		--without-java \
 		--without-libaquaero5 \
 		--without-libganglia \
 		--without-libiptc \
-		--without-libjvm \
 		--without-liblvm2app \
 		--without-libkstat \
 		--without-libldap \
@@ -127,7 +124,9 @@ CURL_JSON_CONFIGURE_ENABLE=	curl_json
 CURL_XML_IMPLIES=		CURL XML
 CURL_XML_CONFIGURE_ENABLE=	ascent bind curl_xml
 
-DEBUG_CONFIGURE_ENABLE=		debug
+JAVA_USE=			java
+JAVA_CONFIGURE_ENABLE=		java
+JAVA_CONFIGURE_WITH=		java=${LOCALBASE} libjvm
 
 DBI_LIB_DEPENDS=		libdbi.so:databases/libdbi
 DBI_CONFIGURE_WITH=		libdbi=${LOCALBASE}
@@ -147,6 +146,8 @@ JSON_CONFIGURE_WITH=		libyajl=${LOCALBASE}
 
 KAFKA_LIB_DEPENDS=		librdkafka.so:net/librdkafka
 KAFKA_CONFIGURE_ENABLE=		write_kafka
+
+LOGGING_CONFIGURE_ENABLE=	debug
 
 LOGSTASH_CONFIGURE_ENABLE=	log_logstash
 LOGSTASH_IMPLIES=		JSON
@@ -199,7 +200,8 @@ OPENLDAP_CONFIGURE_WITH=	libldap=${LOCALBASE}
 
 PERL_USES=			perl5
 PERL_CONFIGURE_ENABLE=		perl
-PERL_CONFIGURE_WITH=		perl=${PERL} perl-bindings
+PERL_CONFIGURE_DISABLE=		perl
+PERL_CONFIGURE_WITH=		perl=${PERL} perl-bindings libperl
 
 PGSQL_USES=			pgsql
 PGSQL_CONFIGURE_ENABLE=		postgresql
@@ -338,14 +340,14 @@ SHEBANG_FILES=	contrib/collection.cgi
 
 post-patch:
 	@${REINPLACE_CMD} 's/-Werror//' \
-		${WRKSRC}/configure.ac ${WRKSRC}/src/Makefile.am \
-		${WRKSRC}/src/libcollectdclient/Makefile.am
+		${WRKSRC}/configure.ac 
 	@${REINPLACE_CMD} \
 		-e 's;@prefix@/var/;/var/;' \
 		-e 's;/var/lib/;/var/db/;' \
 		-e 's;@localstatedir@/lib/;/var/db/;' \
 		${WRKSRC}/src/collectd.conf.in \
-		${WRKSRC}/src/collectd.conf.5
+		${WRKSRC}/src/collectd.conf.5 \
+		${WRKSRC}/src/collectd.conf.pod
 	@${REINPLACE_CMD} \
 		-e 's;/etc/collection\.conf;${WWWDIR}/collection.conf;' \
 		${WRKSRC}/contrib/collection.cgi
