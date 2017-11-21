@@ -10,9 +10,12 @@ include/collectd/client.h
 include/collectd/lcc_features.h
 include/collectd/network.h
 include/collectd/network_buffer.h
+include/collectd/network_parse.h
+include/collectd/server.h
+include/collectd/types.h
 lib/libcollectdclient.so
 lib/libcollectdclient.so.1
-lib/libcollectdclient.so.1.0.0
+lib/libcollectdclient.so.1.1.0
 lib/collectd/aggregation.so
 %%CURL%%lib/collectd/apache.so
 lib/collectd/apcups.so
@@ -34,6 +37,7 @@ lib/collectd/exec.so
 lib/collectd/filecount.so
 lib/collectd/interface.so
 %%IPMI%%lib/collectd/ipmi.so
+%%JAVA%%lib/collectd/java.so
 lib/collectd/load.so
 %%LOGSTASH%%lib/collectd/log_logstash.so
 lib/collectd/logfile.so
@@ -105,6 +109,8 @@ lib/collectd/write_log.so
 %%TSDB%%lib/collectd/write_tsdb.so
 %%XMMS%%lib/collectd/xmms.so
 lib/collectd/zfs_arc.so
+%%JAVA%%%%DATADIR%%/java/collectd-api.jar
+%%JAVA%%%%DATADIR%%/java/generic-jmx.jar
 %%ZOOKEEPER%%lib/collectd/zookeeper.so
 libdata/pkgconfig/libcollectdclient.pc
 %%DATADIR%%/postgresql_default.conf
