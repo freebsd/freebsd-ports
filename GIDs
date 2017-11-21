@@ -835,7 +835,7 @@ vuls:*:888:
 # free: 891
 # free: 892
 # free: 893
-# free: 894
+arangodb:*:894:
 snmptt:*:895:
 istat:*:896:
 znc:*:897:

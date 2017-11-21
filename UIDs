@@ -841,7 +841,7 @@ vuls:*:888:888::0:0:VULnerability Scanner:/var/db/vuls:/usr/sbin/nologin
 # free: 891
 # free: 892
 # free: 893
-# free: 894
+arangodb:*:894:894::0:0:ArangoDB pseudo-user:/var/db/arangodb:/usr/sbin/nologin
 snmptt:*:895:895::0:0:SNMPTT User:/var/spool/snmptt:/usr/sbin/nologin
 istat:*:896:896::0:0:istatserver user:/nonexistent:/usr/sbin/nologin
 znc:*:897:897::0:0:ZNC User:/nonexistent:/usr/sbin/nologin
