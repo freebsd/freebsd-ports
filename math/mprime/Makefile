@@ -1,31 +1,51 @@
-# Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
+# Created by: Rozhuk Ivan <rozhuk.im@gmail.com>
 # $FreeBSD$
 
-PORTNAME=	mprime
-PORTVERSION=	26.6
-CATEGORIES=	math benchmarks net
-MASTER_SITES=	http://www.mersenne.org/ftp_root/gimps/
-DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}-${OPSYS}
+PORTNAME=		mprime
+PORTVERSION=		28.10
+CATEGORIES=		math benchmarks net
+MASTER_SITES=		http://www.mersenne.org/ftp_root/gimps/ \
+			ftp://mersenne.org/gimps/
+DISTNAME=		p95v${PORTVERSION:R}${PORTVERSION:E}.source
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	mersenne.org distributed Great Internet Mersenne Prime Search
+MAINTAINER=		rozhuk.im@gmail.com
+COMMENT=		Great Internet Mersenne Prime Search
 
-LIB_DEPENDS=	libcrypto.so.6:misc/compat9x
+LICENSE=		EULA
+LICENSE_NAME=		EULA
+LICENSE_FILE=		${FILESDIR}/LICENSE
+LICENSE_PERMS=		dist-mirror pkg-mirror auto-accept
 
-ONLY_FOR_ARCHS=	i386
-NO_BUILD=	yes
-NO_WRKSUBDIR=	yes
+ONLY_FOR_ARCHS=		amd64 i386
 
-SUB_FILES=	pkg-message wrapper.sh
+LIB_DEPENDS=		libcurl.so:ftp/curl
 
-OPTIONS_DEFINE=	DOCS
+USES=			zip
+USE_LDCONFIG=		yes
+NO_WRKSUBDIR=		yes
+WRKSRC=			${WRKDIR}/${PORTNAME}-${PORTVERSION}
+ALL_TARGET=		mprime
+
+SUB_FILES=		wrapper.sh
+
+PLIST_FILES+=\
+			bin/mprime \
+			bin/mprime-real
+
+post-patch:
+	@${REINPLACE_CMD} -e 's| abs (| labs (|g ; \
+			s|(abs (|(labs (|g ; \
+			s| abs(| labs(|g ; \
+			s|(abs(|(labs(|g' \
+				${WRKSRC}/../gwnum/gwnum.c \
+				${WRKSRC}/../commonc.c \
+				${WRKSRC}/../ecm.c \
+				${WRKSRC}/../gwtest.c
+	@${REINPLACE_CMD} -e 's|__APPLE__|__FreeBSD__|g' \
+				${WRKSRC}/../gwnum/gwutil.c
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/mprime ${STAGEDIR}${PREFIX}/bin/mprime-real
 	${INSTALL_SCRIPT} ${WRKDIR}/wrapper.sh ${STAGEDIR}${PREFIX}/bin/mprime
-
-do-install-DOCS-on:
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/*.txt ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

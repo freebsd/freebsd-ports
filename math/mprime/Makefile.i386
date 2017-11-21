@@ -1,0 +1,26 @@
+# Created by: Rozhuk Ivan <rozhuk.im@gmail.com>
+# $FreeBSD$
+
+WRKSRC_SUBDIR=		linux
+
+post-extract:
+	@${RM} ${WRKSRC}/makefile
+	@${MV} ${WRKSRC}/makebsd ${WRKSRC}/Makefile
+
+pre-build:
+	@${REINPLACE_CMD} -e 's|-ldl||g ; \
+			s|-lstdc++||g ; \
+			s|gcc|${CC}|g ; \
+			s|cc|${CC}| ; \
+			s|-lz|| ; \
+			s|LFLAGS = -Wl,-M|LFLAGS = -L/usr/local/lib -Wl,-M| ; \
+			s|-Bstatic /usr/local/lib/libcurl.a|-lcurl| ; \
+			s|-Bdynamic -lssl|| ; \
+			s|-malign-double||' \
+				${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's|gcc|${CC}|g ; \
+			s|g++|${CC}| ; \
+			s|cc|${CC}| ; \
+			s|-malign-double||' \
+				${WRKSRC}/../gwnum/makemsys
+	@(cd ${WRKSRC}/../gwnum/ && ${MAKE} -f makemsys)
