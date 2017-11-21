@@ -3,7 +3,7 @@
 
 PORTNAME=	php72
 DISTVERSION=	7.2.0RC6
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES?=	lang devel www
 MASTER_SITES=	https://downloads.php.net/~pollita/
 DISTNAME=	php-${DISTVERSION}
