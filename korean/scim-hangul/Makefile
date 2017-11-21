@@ -19,7 +19,7 @@ GNU_CONFIGURE=	yes
 USES=		gmake libtool:keepla pkgconfig
 
 OPTIONS_DEFINE=	NLS
-OPTIONS_SUB=	NLS
+OPTIONS_SUB=	yes
 
 .include <bsd.port.options.mk>
 

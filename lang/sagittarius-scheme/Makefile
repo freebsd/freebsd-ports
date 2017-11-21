@@ -30,7 +30,7 @@ PLIST_SUB=	PORTNAME=sagittarius PORTVERSION=${PORTVERSION}
 ODBC_LIB_DEPENDS=	libiodbc.so:databases/libiodbc
 ODBC_CMAKE_ON=		-DODBC_INCLUDE_DIR:STRING=${LOCALBASE}/include/libiodbc
 SIMD_CMAKE_BOOL=	USE_SSE
-OPTIONS_SUB=		ODBC
+OPTIONS_SUB=		yes
 
 .include <bsd.port.pre.mk>
 
