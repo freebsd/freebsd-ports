@@ -1,6 +1,9 @@
 bin/lumina-config
 bin/lumina-search
 bin/lumina-xconfig
+man/man1/lumina-config.1.gz
+man/man1/lumina-search.1.gz
+man/man1/lumina-xconfig.1.gz
 share/applications/lumina-config.desktop
 share/applications/lumina-search.desktop
 share/applications/lumina-xconfig.desktop

@@ -1,4 +1,5 @@
 bin/lumina-archiver
+man/man1/lumina-archiver.1.gz
 share/applications/lumina-archiver.desktop
 share/lumina-desktop/i18n/l-archiver_af.qm
 share/lumina-desktop/i18n/l-archiver_ar.qm

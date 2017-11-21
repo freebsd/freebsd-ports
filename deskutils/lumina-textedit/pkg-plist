@@ -1,5 +1,6 @@
 bin/lte
 bin/lumina-textedit
+man/man1/lumina-textedit.1.gz
 share/applications/lumina-textedit.desktop
 share/lumina-desktop/i18n/l-te_af.qm
 share/lumina-desktop/i18n/l-te_ar.qm
