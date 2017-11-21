@@ -1,0 +1,85 @@
+#!/bin/sh
+
+# PROVIDE: arangod
+# REQUIRE: NETWORK ldconfig
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# arangod_enable (bool): Set to "NO" by default.
+#                        Set it to "YES" to enable arangod.
+# arangod_limits (bool): Set to "NO" by default.
+#                        Set it to yes to run `limits -e -U arangodb`
+#                        just before arangod starts.
+# arangod_dbpath (str):  Default to "/var/db/arangodb"
+#                        Base database directory.
+# arangod_logpath (str): Default to "/var/log/arangodb"
+#                        Base logging directory 
+# arangod_apppath (str): Default to "/var/db/arangodb-apps"
+#                        Base apps directory
+# arangod_flags (str):   Custom additional arguments to be passed to arangod.
+#                        Default to "".
+# arangod_config (str):	 Default to "%%PREFIX%%/etc/arangodb/arangod.conf"
+#                        Path to config file
+#
+
+. /etc/rc.subr
+
+name="arangod"
+rcvar=arangod_enable
+
+load_rc_config $name
+
+: ${arangod_enable="NO"}
+: ${arangod_limits="NO"}
+: ${arangod_dbpath="/var/db/arangodb"}
+: ${arangod_logpath="/var/log/arangodb"}
+: ${arangod_apppath="/var/db/arangodb-apps"}
+: ${arangod_flags=""}
+: ${arangod_user="arangodb"}
+: ${arangod_group="arangodb"}
+: ${arangod_config="%%PREFIX%%/etc/arangodb/arangod.conf"}
+
+pidfile="${arangod_dbpath}/arangod.lock"
+command=%%PREFIX%%/sbin/${name}
+command_args="--configuration $arangod_config --database.directory $arangod_dbpath --log.output ${arangod_logpath}/arangod.log --javascript.app-path ${arangod_apppath} --daemon --pid-file ${pidfile} >/dev/null 2>/dev/null"
+start_precmd="${name}_prestart"
+
+arangod_create_dbpath()
+{
+        mkdir ${arangod_dbpath} >/dev/null 2>/dev/null
+        [ $? -eq 0 ] && chown -R ${arangod_user}:${arangod_group} ${arangod_dbpath}
+}
+
+arangod_create_logpath()
+{
+        mkdir ${arangod_logpath} >/dev/null 2>/dev/null
+        [ $? -eq 0 ] && chown -R ${arangod_user}:${arangod_group} ${arangod_logpath}
+}
+
+arangod_create_apppath()
+{
+        mkdir ${arangod_apppath} >/dev/null 2>/dev/null
+        [ $? -eq 0 ] && chown -R ${arangod_user}:${arangod_group} ${arangod_apppath}
+}
+
+arangod_prestart()
+{
+        if [ ! -d ${arangod_dbpath} ]; then
+                arangod_create_dbpath || return 1
+        fi
+        if [ ! -d ${arangod_logpath} ]; then
+                arangod_create_logpath || return 1
+        fi
+        if [ ! -d ${arangod_apppath} ]; then
+                arangod_create_apppath || return 1
+        fi
+        if checkyesno arangod_limits; then
+                eval `/usr/bin/limits -e -U ${arangod_user}` 2>/dev/null
+        else
+                return 0
+        fi
+}
+
+run_rc_command "$1"
