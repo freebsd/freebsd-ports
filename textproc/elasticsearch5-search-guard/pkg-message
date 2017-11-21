@@ -1,0 +1,21 @@
+-------------------------------------------------------------------------------
+cd into %%PREFIX%%/lib/elasticsearch/plugins/search-guard-5/tools/
+
+Execute ./install_demo_configuration.sh, chmod the script first if necessary. 
+This will generate all required TLS certificates and add the Search Guard 
+configuration to your elasticsearch.yml file.
+
+Start Elasticsearch (service elasticsearch start)
+
+Execute ./sgadmin_demo.sh, chmod the script if necessary first. This will
+execute sgadmin and populate the Search Guard configuration index 
+with the files contained in the plugins/search-guard-<version>/sgconfig
+directory.
+
+Test the installation by visiting https://localhost:9200. When prompted,
+use admin/admin as username and password. This user has full access
+to the cluster.
+
+Display information about the currently logged in user by visiting
+ https://localhost:9200/_searchguard/authinfo
+-------------------------------------------------------------------------------

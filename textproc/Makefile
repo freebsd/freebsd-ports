@@ -162,6 +162,7 @@
     SUBDIR += elasticsearch2-plugin-migration
     SUBDIR += elasticsearch2-plugin-sql
     SUBDIR += elasticsearch5
+    SUBDIR += elasticsearch5-search-guard
     SUBDIR += elasticsearch5-x-pack
     SUBDIR += elixir-earmark
     SUBDIR += elixir-ex_doc
