@@ -11,7 +11,7 @@
 # lighttpd_enable (bool):	Set it to "YES" to enable lighttpd
 #				Default is "NO".
 # lighttpd_conf (path):		Set full path to configuration file.
-#				Default is "%%PREFIX%%/etc/lighttpd/lighttpd.conf".
+#				Default is "%%ETCDIR%%/lighttpd.conf".
 # lighttpd_pidfile (path):	Set full path to pid file.
 #				Default is "/var/run/lighttpd.pid".
 #
@@ -21,7 +21,7 @@
 # lighttpd_instances (string):	Instances of lighttpd
 #				Default is "" (no instances).
 # lighttpd_${i}_conf (path):	Set full path to instance configuration file.
-#				Default is "%%PREFIX%%/etc/lighttpd/${i}.conf".
+#				Default is "%%ETCDIR%%/${i}.conf".
 # lighttpd_${i}_pidfile (path):	Set full path to instance pid file
 #				Default is "/var/run/lighttpd_${i}.pid".
 #
@@ -43,7 +43,7 @@ if [ -z "${lighttpd_conf}" ]; then
 		deprecated_conf=1
 		lighttpd_conf="%%PREFIX%%/etc/lighttpd.conf"
 	else
-		lighttpd_conf="%%PREFIX%%/etc/lighttpd/lighttpd.conf"
+		lighttpd_conf="%%ETCDIR%%/lighttpd.conf"
 	fi
 fi
 
@@ -65,7 +65,7 @@ lighttpd_check_deprecated()
 		echo ""
 		echo "*** NOTICE: ***"
 		echo "The default location of %%PREFIX%%/etc/lighttpd.conf is deprecated"
-		echo "Please consider moving to %%PREFIX%%/etc/lighttpd/lighttpd.conf"
+		echo "Please consider moving to %%ETCDIR%%/lighttpd.conf"
 		echo ""
 	fi
 }
@@ -73,7 +73,7 @@ lighttpd_check_deprecated()
 lighttpd_checkconfig()
 {
 	echo "Performing sanity check on ${name} configuration:"
-	eval "${command} ${command_args} -t"
+	eval "${command} ${command_args} -tt"
 }
 
 lighttpd_gracefulstop()
@@ -96,7 +96,7 @@ lighttpd_run_instance()
 	_rcmd="$2"
 	name=${_orig_name}_${_i}
 	eval ${name}_enable=${lighttpd_enable}
-	eval lighttpd_conf=\"\${lighttpd_${_i}_conf:-"%%PREFIX%%/etc/lighttpd/${_i}.conf"}\"
+	eval lighttpd_conf=\"\${lighttpd_${_i}_conf:-"%%ETCDIR%%/${_i}.conf"}\"
 	eval lighttpd_pidfile=\"\${lighttpd_${_i}_pidfile:-"/var/run/lighttpd_${_i}.pid"}\"
 	command_args="-f ${lighttpd_conf}"
 	pidfile=${lighttpd_pidfile}

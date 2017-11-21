@@ -1,29 +1,29 @@
-@sample etc/lighttpd/lighttpd.conf.sample
-@sample etc/lighttpd/modules.conf.sample
-@sample etc/lighttpd/conf.d/access_log.conf.sample
-@sample etc/lighttpd/conf.d/auth.conf.sample
-@sample etc/lighttpd/conf.d/cgi.conf.sample
-@sample etc/lighttpd/conf.d/cml.conf.sample
-@sample etc/lighttpd/conf.d/compress.conf.sample
-@sample etc/lighttpd/conf.d/debug.conf.sample
-@sample etc/lighttpd/conf.d/dirlisting.conf.sample
-@sample etc/lighttpd/conf.d/evhost.conf.sample
-@sample etc/lighttpd/conf.d/expire.conf.sample
-@sample etc/lighttpd/conf.d/fastcgi.conf.sample
-@sample etc/lighttpd/conf.d/magnet.conf.sample
-@sample etc/lighttpd/conf.d/mime.conf.sample
-@sample etc/lighttpd/conf.d/mysql_vhost.conf.sample
-@sample etc/lighttpd/conf.d/proxy.conf.sample
-@sample etc/lighttpd/conf.d/rrdtool.conf.sample
-@sample etc/lighttpd/conf.d/scgi.conf.sample
-@sample etc/lighttpd/conf.d/secdownload.conf.sample
-@sample etc/lighttpd/conf.d/simple_vhost.conf.sample
-@sample etc/lighttpd/conf.d/ssi.conf.sample
-@sample etc/lighttpd/conf.d/status.conf.sample
-@sample etc/lighttpd/conf.d/trigger_b4_dl.conf.sample
-@sample etc/lighttpd/conf.d/userdir.conf.sample
-@sample etc/lighttpd/conf.d/webdav.conf.sample
-etc/lighttpd/vhosts.d/vhosts.template
+@sample %%ETCDIR%%/lighttpd.conf.sample
+@sample %%ETCDIR%%/modules.conf.sample
+@sample %%ETCDIR%%/conf.d/access_log.conf.sample
+@sample %%ETCDIR%%/conf.d/auth.conf.sample
+@sample %%ETCDIR%%/conf.d/cgi.conf.sample
+@sample %%ETCDIR%%/conf.d/cml.conf.sample
+@sample %%ETCDIR%%/conf.d/compress.conf.sample
+@sample %%ETCDIR%%/conf.d/debug.conf.sample
+@sample %%ETCDIR%%/conf.d/dirlisting.conf.sample
+@sample %%ETCDIR%%/conf.d/evhost.conf.sample
+@sample %%ETCDIR%%/conf.d/expire.conf.sample
+@sample %%ETCDIR%%/conf.d/fastcgi.conf.sample
+@sample %%ETCDIR%%/conf.d/magnet.conf.sample
+@sample %%ETCDIR%%/conf.d/mime.conf.sample
+@sample %%ETCDIR%%/conf.d/mysql_vhost.conf.sample
+@sample %%ETCDIR%%/conf.d/proxy.conf.sample
+@sample %%ETCDIR%%/conf.d/rrdtool.conf.sample
+@sample %%ETCDIR%%/conf.d/scgi.conf.sample
+@sample %%ETCDIR%%/conf.d/secdownload.conf.sample
+@sample %%ETCDIR%%/conf.d/simple_vhost.conf.sample
+@sample %%ETCDIR%%/conf.d/ssi.conf.sample
+@sample %%ETCDIR%%/conf.d/status.conf.sample
+@sample %%ETCDIR%%/conf.d/trigger_b4_dl.conf.sample
+@sample %%ETCDIR%%/conf.d/userdir.conf.sample
+@sample %%ETCDIR%%/conf.d/webdav.conf.sample
+%%ETCDIR%%/vhosts.d/vhosts.template
 lib/lighttpd/mod_access.so
 lib/lighttpd/mod_accesslog.so
 lib/lighttpd/mod_alias.so
@@ -72,4 +72,8 @@ man/man8/lighttpd.8.gz
 %%KRB5%%man/man8/lighttpd-angel.8.gz
 sbin/lighttpd
 sbin/lighttpd-angel
-@dir(www,www,700) %%LOGROOT%%
+@dir %%WWWDIR%%
+@dir(%%WWWOWN%%,%%WWWGRP%%,700) %%CACHEDIR%%
+@dir(%%WWWOWN%%,%%WWWGRP%%,700) %%HOMEDIR%%/sockets
+@dir(%%WWWOWN%%,%%WWWGRP%%,700) %%HOMEDIR%%
+@dir(%%WWWOWN%%,%%WWWGRP%%,700) %%LOGDIR%%
