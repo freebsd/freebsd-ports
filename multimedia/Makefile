@@ -40,7 +40,6 @@
     SUBDIR += devede
     SUBDIR += dirac
     SUBDIR += dragon
-    SUBDIR += dtv
     SUBDIR += dtv-scan-tables
     SUBDIR += dumpmpeg
     SUBDIR += dv2jpg
