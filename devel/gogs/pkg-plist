@@ -221,6 +221,7 @@ libexec/gogs/conf/locale/locale_nl-NL.ini
 libexec/gogs/conf/locale/locale_pl-PL.ini
 libexec/gogs/conf/locale/locale_pt-BR.ini
 libexec/gogs/conf/locale/locale_ru-RU.ini
+libexec/gogs/conf/locale/locale_sk-SK.ini
 libexec/gogs/conf/locale/locale_sr-SP.ini
 libexec/gogs/conf/locale/locale_sv-SE.ini
 libexec/gogs/conf/locale/locale_tr-TR.ini
@@ -251,7 +252,7 @@ libexec/gogs/public/assets/octicons-4.3.0/octicons.woff2
 libexec/gogs/public/config.codekit
 libexec/gogs/public/css/github.min.css
 libexec/gogs/public/css/gogs.css
-libexec/gogs/public/css/semantic-2.2.10.min.css
+libexec/gogs/public/css/semantic-2.2.13.min.css
 libexec/gogs/public/css/themes/basic/assets/fonts/icons.eot
 libexec/gogs/public/css/themes/basic/assets/fonts/icons.svg
 libexec/gogs/public/css/themes/basic/assets/fonts/icons.ttf
@@ -267,6 +268,7 @@ libexec/gogs/public/img/404.png
 libexec/gogs/public/img/500.png
 libexec/gogs/public/img/avatar_default.png
 libexec/gogs/public/img/checkmark.png
+libexec/gogs/public/img/dingtalk.png
 libexec/gogs/public/img/discord.png
 libexec/gogs/public/img/emoji/-1.png
 libexec/gogs/public/img/emoji/+1.png
@@ -1159,7 +1161,7 @@ libexec/gogs/public/js/jquery-1.11.3.min.js
 libexec/gogs/public/js/libs/clipboard-1.5.9.min.js
 libexec/gogs/public/js/libs/emojify-1.1.0.min.js
 libexec/gogs/public/js/libs/jquery.are-you-sure.js
-libexec/gogs/public/js/semantic-2.2.10.min.js
+libexec/gogs/public/js/semantic-2.2.13.min.js
 libexec/gogs/public/less/_admin.less
 libexec/gogs/public/less/_base.less
 libexec/gogs/public/less/_dashboard.less
@@ -1670,6 +1672,7 @@ libexec/gogs/templates/repo/settings/options.tmpl
 libexec/gogs/templates/repo/settings/protected_branch.tmpl
 libexec/gogs/templates/repo/settings/webhook/base.tmpl
 libexec/gogs/templates/repo/settings/webhook/delete_modal.tmpl
+libexec/gogs/templates/repo/settings/webhook/dingtalk.tmpl
 libexec/gogs/templates/repo/settings/webhook/discord.tmpl
 libexec/gogs/templates/repo/settings/webhook/gogs.tmpl
 libexec/gogs/templates/repo/settings/webhook/history.tmpl
