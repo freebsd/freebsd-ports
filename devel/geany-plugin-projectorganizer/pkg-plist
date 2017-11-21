@@ -4,11 +4,3 @@ lib/geany/projectorganizer.so
 %%PORTDOCS%%%%DOCSDIR%%/projectorganizer/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/projectorganizer/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/projectorganizer/README
-share/icons/hicolor/16x16/apps/prjorg-add-external.png
-share/icons/hicolor/16x16/apps/prjorg-collapse.png
-share/icons/hicolor/16x16/apps/prjorg-expand.png
-share/icons/hicolor/16x16/apps/prjorg-file.png
-share/icons/hicolor/16x16/apps/prjorg-follow.png
-share/icons/hicolor/16x16/apps/prjorg-header.png
-share/icons/hicolor/16x16/apps/prjorg-refresh.png
-share/icons/hicolor/16x16/apps/prjorg-source.png

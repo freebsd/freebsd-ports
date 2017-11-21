@@ -2,4 +2,4 @@ Plugin enables debugging in Geany. Currently supports GDB only, but
 was developed with multiple debuggers support in mind, so the other
 backends support is planned as well.
 
-WWW: http://plugins.geany.org/debugger.html
+WWW: https://plugins.geany.org/debugger.html

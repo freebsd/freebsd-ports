@@ -729,8 +729,10 @@
     SUBDIR += geany-plugin-tableconvert
     SUBDIR += geany-plugin-treebrowser
     SUBDIR += geany-plugin-updatechecker
+    SUBDIR += geany-plugin-utilslib
     SUBDIR += geany-plugin-vc
     SUBDIR += geany-plugin-webhelper
+    SUBDIR += geany-plugin-workbench
     SUBDIR += geany-plugin-xmlsnippets
     SUBDIR += geany-plugins
     SUBDIR += geany-plugins-l10n
