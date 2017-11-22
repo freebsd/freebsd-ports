@@ -19,8 +19,8 @@ include/pari/paripriv.h
 include/pari/paristio.h
 include/pari/parisys.h
 include/pari/paritune.h
-lib/libpari-gmp.so.%%PORTVERSION%%
-lib/libpari-gmp.so.5
+lib/libpari.so.%%PORTVERSION%%
+lib/libpari.so.5
 lib/libpari.so
 lib/pari/pari.cfg
 man/man1/gp-%%GP_VERSION%%.1.gz
