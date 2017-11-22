@@ -1,5 +1,14 @@
 --- configure.orig	2016-11-11 16:04:30 UTC
 +++ configure
+@@ -4193,7 +4193,7 @@ if ${ac_cv_path_NROFF+:} false; then :
+   $as_echo_n "(cached) " >&6
+ else
+   case $NROFF in
+-  [\\/]* | ?:[\\/]*)
++  [\\/]* | ?:[\\/]* | echo)
+   ac_cv_path_NROFF="$NROFF" # Let the user override the test with a path.
+   ;;
+   *)
 @@ -7408,7 +7408,7 @@ $as_echo "$as_me: WARNING: Ignoring libraries \"$X_PRE
  	LIBS="$LIBS -lX11 $X_EXTRA_LIBS"
  	CFLAGS="$CFLAGS $X_CFLAGS"
