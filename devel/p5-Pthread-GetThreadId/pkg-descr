@@ -1,0 +1,10 @@
+Pthread::GetThreadId is FreeBSD specific Perl module
+providing single non-portable function getthreadid_np()
+that returns kernel level POSIX thread id as integer value.
+
+It may be useful for Perl code running as hook/callback functions
+in embedded threaded Perl environment when code has no direct control
+on thread creation. For example, rlm_perl module of FreeRADIUS
+that may use multiple embedded Perl instances.
+
+WWW: http://www.grosbein.net/pthread/
