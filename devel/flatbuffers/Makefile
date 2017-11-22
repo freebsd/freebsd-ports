@@ -2,12 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	flatbuffers
-PORTVERSION=	1.7.1
-PORTREVISION=	1
 DISTVERSIONPREFIX=	v
+DISTVERSION=	1.8.0
 CATEGORIES=	devel
 
-MAINTAINER=	yuri@rawbw.com
+MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Memory efficient serialization library
 
 LICENSE=	APACHE20
@@ -20,5 +19,6 @@ GH_ACCOUNT=	google
 
 CMAKE_ARGS=	-DFLATBUFFERS_BUILD_SHAREDLIB:BOOL="ON"
 TEST_TARGET=	test
+PLIST_SUB=	SHLIB_VER=${PORTVERSION}
 
 .include <bsd.port.mk>
