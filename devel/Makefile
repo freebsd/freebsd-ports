@@ -319,6 +319,7 @@
     SUBDIR += clojure-cider
     SUBDIR += cloudabi
     SUBDIR += cloudabi-toolchain
+    SUBDIR += clthreads
     SUBDIR += cltune
     SUBDIR += cmake
     SUBDIR += cmake-doc
