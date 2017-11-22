@@ -1,8 +1,6 @@
 @owner %%SSP_OWN%%
 @group %%SSP_GRP%%
 @sample %%WWWDIR%%/conf/config.inc.php.sample
-%%WWWDIR%%/LICENCE
-%%WWWDIR%%/README.md
 %%WWWDIR%%/css/bootstrap-theme.css.map
 %%WWWDIR%%/css/bootstrap-theme.min.css
 %%WWWDIR%%/css/bootstrap.css.map
@@ -32,11 +30,13 @@
 %%WWWDIR%%/lang/cn.inc.php
 %%WWWDIR%%/lang/cs.inc.php
 %%WWWDIR%%/lang/de.inc.php
+%%WWWDIR%%/lang/el.inc.php
 %%WWWDIR%%/lang/en.inc.php
 %%WWWDIR%%/lang/es.inc.php
 %%WWWDIR%%/lang/fr.inc.php
 %%WWWDIR%%/lang/hu.inc.php
 %%WWWDIR%%/lang/it.inc.php
+%%WWWDIR%%/lang/ja.inc.php
 %%WWWDIR%%/lang/nl.inc.php
 %%WWWDIR%%/lang/pl.inc.php
 %%WWWDIR%%/lang/pt-BR.inc.php
@@ -44,17 +44,19 @@
 %%WWWDIR%%/lang/ru.inc.php
 %%WWWDIR%%/lang/sk.inc.php
 %%WWWDIR%%/lang/sl.inc.php
+%%WWWDIR%%/lang/sv.inc.php
 %%WWWDIR%%/lang/tr.inc.php
 %%WWWDIR%%/lang/uk.inc.php
 %%WWWDIR%%/lang/zh-CN.inc.php
 %%WWWDIR%%/lib/detectbrowserlanguage.php
 %%WWWDIR%%/lib/functions.inc.php
-%%WWWDIR%%/lib/vendor/PHPMailer/PHPMailerAutoload.php
+%%WWWDIR%%/lib/smsapi-example.inc.php
+%%WWWDIR%%/lib/vendor/autoload.php
+%%WWWDIR%%/lib/vendor/defuse-crypto.phar
 %%WWWDIR%%/lib/vendor/PHPMailer/class.phpmailer.php
-%%WWWDIR%%/lib/vendor/PHPMailer/class.phpmaileroauth.php
-%%WWWDIR%%/lib/vendor/PHPMailer/class.phpmaileroauthgoogle.php
 %%WWWDIR%%/lib/vendor/PHPMailer/class.pop3.php
 %%WWWDIR%%/lib/vendor/PHPMailer/class.smtp.php
+%%WWWDIR%%/lib/vendor/PHPMailer/PHPMailerAutoload.php
 %%WWWDIR%%/lib/vendor/ReCaptcha/ReCaptcha.php
 %%WWWDIR%%/lib/vendor/ReCaptcha/RequestMethod/Curl.php
 %%WWWDIR%%/lib/vendor/ReCaptcha/RequestMethod/CurlPost.php
@@ -64,11 +66,13 @@
 %%WWWDIR%%/lib/vendor/ReCaptcha/RequestMethod.php
 %%WWWDIR%%/lib/vendor/ReCaptcha/RequestParameters.php
 %%WWWDIR%%/lib/vendor/ReCaptcha/Response.php
-%%WWWDIR%%/lib/vendor/autoload.php
+%%WWWDIR%%/LICENCE
 %%WWWDIR%%/menu.php
 %%WWWDIR%%/pages/change.php
+%%WWWDIR%%/pages/changesshkey.php
 %%WWWDIR%%/pages/resetbyquestions.php
 %%WWWDIR%%/pages/resetbytoken.php
 %%WWWDIR%%/pages/sendsms.php
 %%WWWDIR%%/pages/sendtoken.php
 %%WWWDIR%%/pages/setquestions.php
+%%WWWDIR%%/README.md
