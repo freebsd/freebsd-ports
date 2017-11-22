@@ -12,6 +12,13 @@ DISTNAME=	firefox-${DISTVERSION}esr.source
 MAINTAINER?=	gecko@FreeBSD.org
 COMMENT?=	Mozilla runtime package that can be used to bootstrap XUL+XPCOM apps
 
+# Post libxul removal cleanup:
+# 1. Drop MOZILLA_VER < 59.* from Mk/bsd.gecko.mk
+# 2. Drop libxul support in USES=gecko
+# 3. Deprecate USES=webplugins (flash still uses it)
+DEPRECATED=	NPAPI are no longer supported
+EXPIRATION_DATE=2018-06-20
+
 BUILD_DEPENDS=	nspr>=4.12:devel/nspr \
 		nss>=3.21.3:security/nss \
 		libevent>=2.0.21_2:devel/libevent \
