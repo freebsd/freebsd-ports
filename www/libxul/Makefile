@@ -31,7 +31,6 @@ BUILD_DEPENDS=	nspr>=4.12:devel/nspr \
 LIB_DEPENDS=	libv4l2.so:multimedia/libv4l
 
 WRKSRC:=	${WRKDIR}/firefox-${DISTVERSION}esr
-CONFLICTS_INSTALL=	libxul-1.9.*
 
 USE_GL=		gl
 USES=		pathfix shebangfix tar:xz
