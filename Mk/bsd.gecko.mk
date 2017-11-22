@@ -333,16 +333,6 @@ MOZ_OPTIONS+=	--enable-gconf
 MOZ_OPTIONS+=	--disable-gconf
 .endif
 
-.if ${MOZILLA_VER:R:R} < 55
-.if ${PORT_OPTIONS:MGNOMEUI}
-BUILD_DEPENDS+=	${libgnomeui_DETECT}:${libgnomeui_LIB_DEPENDS:C/.*://}
-USE_GNOME+=		libgnomeui:build
-MOZ_OPTIONS+=	--enable-gnomeui
-.else
-MOZ_OPTIONS+=	--disable-gnomeui
-.endif
-.endif # Mozilla < 55
-
 .if ${PORT_OPTIONS:MLIBPROXY}
 LIB_DEPENDS+=	libproxy.so:net/libproxy
 MOZ_OPTIONS+=	--enable-libproxy
