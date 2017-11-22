@@ -101,6 +101,7 @@
     SUBDIR += fortune-mod-psalms
     SUBDIR += fortuneit
     SUBDIR += fpc-chm
+    SUBDIR += free42
     SUBDIR += freebsd-doc-all
     SUBDIR += freebsd-doc-bn
     SUBDIR += freebsd-doc-da
