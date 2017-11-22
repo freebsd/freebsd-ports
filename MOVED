@@ -9646,3 +9646,4 @@ net-mgmt/netwag||2017-11-21|Has expired: Tcl/Tk 8.4 is no longer maintained, ple
 net/hping-devel||2017-11-21|Has expired: Tcl/Tk 8.4 is no longer maintained, please use 8.5+
 www/linux-firefox||2017-11-22|Has expired: Use native www/firefox or www/firefox-esr instead
 www/linux-seamonkey||2017-11-22|Has expired: Use native www/seamonkey instead
+graphics/linux-adobesvg||2017-11-22|Has expired: not supported by linux-firefox 52 or later
