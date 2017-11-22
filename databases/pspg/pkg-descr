@@ -1,0 +1,5 @@
+pspg is a small specialized pager designed to be used with psql. It know how
+to work with tabular data, has the ability to freeze first few rows/columns
+and configurable colors.
+
+WWW: https://github.com/okbob/pspg
