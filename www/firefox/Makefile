@@ -46,7 +46,6 @@ MOZ_OPTIONS=	--enable-application=browser \
 		--enable-official-branding
 
 OPTIONS_DEFAULT=	BUNDLED_CAIRO
-OPTIONS_EXCLUDE=	GNOMEUI
 
 .include "${.CURDIR}/../../www/firefox/Makefile.options"
 
