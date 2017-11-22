@@ -377,10 +377,8 @@
     SUBDIR += links1
     SUBDIR += linux-c6-qt47-webkit
     SUBDIR += linux-c7-qtwebkit
-    SUBDIR += linux-firefox
     SUBDIR += linux-flashplayer
     SUBDIR += linux-opera
-    SUBDIR += linux-seamonkey
     SUBDIR += lionwiki
     SUBDIR += litmus
     SUBDIR += ljdeps
