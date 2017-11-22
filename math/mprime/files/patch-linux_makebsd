@@ -1,0 +1,22 @@
+--- linux/makebsd.orig	2016-10-30 18:42:16 UTC
++++ linux/makebsd
+@@ -1,14 +1,14 @@
+ # Makefile for FreeBSD 32-bit mprime
+ #
+ 
+-CC = gcc
+-CFLAGS = -I.. -I../gwnum -I/usr/local/include -O2 -march=i486 -malign-double
++CC = cc
++CFLAGS = -I.. -I../gwnum -I%%LOCALBASE%%/include -O2 -march=i486 
+ 
+ CPP = g++
+-CPPFLAGS = -I.. -I../gwnum -I/usr/local/include -O2 -march=i486 -malign-double
++CPPFLAGS = -I.. -I../gwnum -I%%LOCALBASE%%/include -O2 -march=i486 
+ 
+-LFLAGS = -Wl,-M
+-LIBS = ../gwnum/gwnum.a ../gwnum/gwnum.ld -lm -lpthread -Wl,-Bstatic /usr/local/lib/libcurl.a -lz -lcompat -lstdc++ -Wl,-Bdynamic -lssl
++LFLAGS = -L%%LOCALBASE%%/lib -Wl,-M
++LIBS = ../gwnum/gwnum.a ../gwnum/gwnum.ld -lm -lpthread -Wl,-lcurl  -lcompat  -Wl,
+ 
+ FACTOROBJ = factor32.o
+ OBJS = prime.o menu.o

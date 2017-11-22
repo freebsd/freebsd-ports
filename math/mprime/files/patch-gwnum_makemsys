@@ -1,0 +1,18 @@
+--- gwnum/makemsys.orig	2016-10-30 18:42:08 UTC
++++ gwnum/makemsys
+@@ -1,11 +1,11 @@
+ # Makefile for Mingw/msys gwnum library
+ #
+ 
+-CC = gcc
+-CFLAGS = -I.. -O2 -march=i486 -malign-double
++CC = cc
++CFLAGS = -I.. -O2 -march=i486 
+ 
+-CPP = g++
+-CPPFLAGS = -I.. -I../qd -O2 -march=i486 -malign-double
++CPP = cc
++CPPFLAGS = -I.. -I../qd -O2 -march=i486 
+ 
+ AR = ar
+ 
