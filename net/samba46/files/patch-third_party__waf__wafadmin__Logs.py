@@ -1,4 +1,4 @@
---- third_party/waf/wafadmin/Logs.py.orig	2016-01-26 11:45:47 UTC
+--- third_party/waf/wafadmin/Logs.py.orig	2017-01-11 07:55:16 UTC
 +++ third_party/waf/wafadmin/Logs.py
 @@ -23,6 +23,9 @@ colors_lst = {
  'cursor_off' :'\x1b[?25l',

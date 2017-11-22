@@ -1,5 +1,5 @@
---- lib/socket/wscript_build.orig	2017-03-27 02:15:03.351855000 +0000
-+++ lib/socket/wscript_build	2017-03-27 02:15:48.856130000 +0000
+--- lib/socket/wscript_build.orig	2017-01-11 07:55:14 UTC
++++ lib/socket/wscript_build
 @@ -2,6 +2,6 @@
  
  bld.SAMBA_LIBRARY('interfaces',

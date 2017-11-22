@@ -1,4 +1,4 @@
---- dynconfig/wscript.orig	2016-01-26 11:45:46 UTC
+--- dynconfig/wscript.orig	2017-01-11 07:55:14 UTC
 +++ dynconfig/wscript
 @@ -137,6 +137,8 @@ dynconfig = {
      'PKGCONFIGDIR' : {
@@ -15,12 +15,12 @@
      'CONFIGFILE' : {
 -         'STD-PATH':  '${CONFIGDIR}/smb.conf',
 -         'FHS-PATH':  '${CONFIGDIR}/smb.conf',
-+         'STD-PATH':  '${CONFIGDIR}/%%SAMBA4_CONFIG%%',
-+         'FHS-PATH':  '${CONFIGDIR}/%%SAMBA4_CONFIG%%',
++         'STD-PATH':  '${CONFIGDIR}/smb4.conf',
++         'FHS-PATH':  '${CONFIGDIR}/smb4.conf',
           'DELAY':     True,
      },
      'LMHOSTSFILE' : {
-@@ -300,9 +302,6 @@ def configure(conf):
+@@ -302,9 +304,6 @@ def configure(conf):
          flavor = 'FHS-PATH'
      else:
          flavor = 'STD-PATH'
