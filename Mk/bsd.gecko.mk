@@ -350,14 +350,6 @@ MOZ_OPTIONS+=	--enable-libproxy
 MOZ_OPTIONS+=	--disable-libproxy
 .endif
 
-.if ${PORT_OPTIONS:MPGO}
-USES:=		compiler:gcc-c++11-lib ${USES:Ncompiler*c++11*}
-USE_DISPLAY=yes
-
-ALL_TARGET=	profiledbuild
-MOZ_EXPORT+=MOZ_OPTIMIZE_FLAGS="-Os" MOZ_PGO_OPTIMIZE_FLAGS="${CFLAGS:M-O*}"
-.endif
-
 .if ${PORT_OPTIONS:MALSA}
 LIB_DEPENDS+=	libasound.so:audio/alsa-lib
 RUN_DEPENDS+=	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:audio/alsa-plugins
@@ -495,22 +487,6 @@ MOZ_OPTIONS+=	--disable-v1-string-abi
 .endif
 
 .else # bsd.port.post.mk
-
-pre-extract: gecko-pre-extract
-
-gecko-pre-extract:
-.if ${PORT_OPTIONS:MPGO}
-	@${ECHO} "*****************************************************************"
-	@${ECHO} "**************************** attention **************************"
-	@${ECHO} "*****************************************************************"
-	@${ECHO} "To build ${MOZILLA} with PGO support you need a running X server and"
-	@${ECHO} "   build this port with an user who could access the X server!   "
-	@${ECHO} ""
-	@${ECHO} "During the build a ${MOZILLA} instance will start and run some test."
-	@${ECHO} "      Do not interrupt or close ${MOZILLA} during these tests!       "
-	@${ECHO} "*****************************************************************"
-	@sleep 10
-.endif
 
 post-patch: gecko-post-patch gecko-moz-pis-patch
 
