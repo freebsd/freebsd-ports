@@ -55,15 +55,6 @@ SUB_FILES=	pkg-message
 
 .include <bsd.port.pre.mk>
 
-# XXX: newer autoconf's rely on the compiler result, not the preprocessor
-#      for checking headers, so the configure.in needs to be fixed upstream
-#      to properly include dependencies
-post-configure:
-	@${ECHO} "#define HAVE_NET_IF_H 1" >> ${WRKSRC}/config.h
-	@${ECHO} "#define HAVE_NETINET_IP_H 1" >> ${WRKSRC}/config.h
-	@${ECHO} "#define HAVE_NETINET_IP_FIL_H 1" >> ${WRKSRC}/config.h
-	@${ECHO} "#define HAVE_NETINET_IP_NAT_H 1" >> ${WRKSRC}/config.h
-
 pre-install:
 	@${STRIP_CMD} ${WRKSRC}/ftp-proxy/ftp-proxy
 
