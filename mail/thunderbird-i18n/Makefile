@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	thunderbird-i18n
-PORTVERSION=	52.4.0
+PORTVERSION=	52.5.0
 CATEGORIES=	mail news net-im
 MASTER_SITES=	MOZILLA/${PORTNAME:S|-i18n||}/releases/${DISTVERSION}/linux-i686/xpi \
-		MOZILLA/${PORTNAME:S|-i18n||}/candidates/${DISTVERSION}-candidates/build3/linux-i686/xpi
+		MOZILLA/${PORTNAME:S|-i18n||}/candidates/${DISTVERSION}-candidates/build1/linux-i686/xpi
 PKGNAMEPREFIX=
 DISTFILES=	${THUNDERBIRD_I18N_:S/$/.xpi/}
 DIST_SUBDIR=	xpi/${DISTNAME}
