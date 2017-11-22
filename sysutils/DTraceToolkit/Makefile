@@ -9,6 +9,9 @@ CATEGORIES=	sysutils
 MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Collection of useful scripts for DTrace
 
+DEPRECATED=     Now maintained as part of the base system
+EXPIRATION_DATE=        2018-01-01
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	opendtrace
 GH_PROJECT=	toolkit
