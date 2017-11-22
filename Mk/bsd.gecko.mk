@@ -89,6 +89,10 @@ CPE_VENDOR?=mozilla
 USE_PERL5=	build
 USE_XORG=	x11 xcomposite xdamage xext xfixes xrender xt
 
+.if ${MOZILLA} != "libxul"
+BUNDLE_LIBS=	yes
+.endif
+
 .if ${MOZILLA_VER:R:R} >= 49
 USES+=		compiler:c++14-lang
 CPPFLAGS+=	-D_GLIBCXX_USE_C99 -D_GLIBCXX_USE_C99_MATH_TR1 \
