@@ -46,7 +46,6 @@ SHEBANG_FILES=	xpcom/idl-parser/xpidl/xpidl.py \
 MAKE_ENV=	SKIP_GRE_REGISTRATION=1 mozappdir=${PREFIX}/lib/${MOZILLA}
 LDFLAGS+=	-Wl,-rpath,${PREFIX}/lib/${MOZ_RPATH}
 USE_LDCONFIG=	${PREFIX}/lib/${MOZILLA}
-BUNDLE_LIBS=	yes
 
 MOZ_OPTIONS?=	--enable-application=xulrunner
 MOZ_CHANNEL=	esr
