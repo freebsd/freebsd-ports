@@ -1,4 +1,4 @@
---- src/common/atomic.h.orig	2009-03-29 18:43:39 UTC
+--- src/common/atomic.h.orig	2009-03-29 18:43:40 UTC
 +++ src/common/atomic.h
 @@ -38,7 +38,7 @@
  #define CONFIG_SMP   /* ... the macro the kernel headers use */

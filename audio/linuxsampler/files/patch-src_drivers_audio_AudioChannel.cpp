@@ -1,4 +1,4 @@
---- src/drivers/audio/AudioChannel.cpp.orig	2009-07-04 12:13:58 UTC
+--- src/drivers/audio/AudioChannel.cpp.orig	2012-10-04 18:16:26 UTC
 +++ src/drivers/audio/AudioChannel.cpp
 @@ -26,7 +26,7 @@
  #include "../../common/global_private.h"

@@ -1,7 +1,10 @@
 bin/linuxsampler
+bin/ls_instr_script
+bin/lscp
 include/linuxsampler/EventListeners.h
 include/linuxsampler/Sampler.h
 include/linuxsampler/common/Condition.h
+include/linuxsampler/common/ConstCapacityArray.h
 include/linuxsampler/common/Exception.h
 include/linuxsampler/common/Mutex.h
 include/linuxsampler/common/SynchronizedConfig.h
@@ -20,6 +23,9 @@ include/linuxsampler/drivers/midi/VirtualMidiDevice.h
 include/linuxsampler/drivers/midi/midi.h
 include/linuxsampler/effects/Effect.h
 include/linuxsampler/effects/EffectChain.h
+include/linuxsampler/effects/EffectControl.h
+include/linuxsampler/effects/EffectFactory.h
+include/linuxsampler/effects/EffectInfo.h
 include/linuxsampler/engines/Engine.h
 include/linuxsampler/engines/EngineChannel.h
 include/linuxsampler/engines/FxSend.h
@@ -30,8 +36,8 @@ include/linuxsampler/plugins/InstrumentEditorFactory.h
 %%DSSI%%lib/dssi/linuxsampler.so
 lib/linuxsampler/liblinuxsampler.a
 lib/linuxsampler/liblinuxsampler.so
-lib/linuxsampler/liblinuxsampler.so.3
-lib/linuxsampler/liblinuxsampler.so.3.0.0
+lib/linuxsampler/liblinuxsampler.so.4
+lib/linuxsampler/liblinuxsampler.so.4.0.0
 lib/linuxsampler/plugins/.keep_me
 %%LV2%%lib/lv2/linuxsampler.lv2/linuxsampler.a
 %%LV2%%lib/lv2/linuxsampler.lv2/linuxsampler.so
@@ -39,6 +45,7 @@ lib/linuxsampler/plugins/.keep_me
 %%LV2%%lib/lv2/linuxsampler.lv2/manifest.ttl
 libdata/pkgconfig/linuxsampler.pc
 man/man1/linuxsampler.1.gz
+man/man1/lscp.1.gz
 /var/lib/linuxsampler/instruments.db
 @dir /var/lib/linuxsampler
 @dir /var/lib

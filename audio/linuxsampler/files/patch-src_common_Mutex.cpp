@@ -1,4 +1,4 @@
---- src/common/Mutex.cpp.orig	2007-11-15 00:23:37 UTC
+--- src/common/Mutex.cpp.orig	2007-11-14 23:42:15 UTC
 +++ src/common/Mutex.cpp
 @@ -36,7 +36,6 @@
  #if !defined(WIN32)
