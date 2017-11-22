@@ -1,0 +1,66 @@
+--- libs/Makefile.orig	2015-11-30 20:55:15 UTC
++++ libs/Makefile
+@@ -111,6 +111,10 @@
+ 	PLAT_LINUX := Yes
+ 	VIS	:= -fvisibility=hidden
+ endif
++ifeq ($(PLATFORM), FreeBSD)
++	PLAT_LINUX := Yes
++	VIS	:= -fvisibility=hidden
++endif
+ 
+ # boost
+ ARCHIVE_BOOST		:= boost_$(VER_BOOST).tar.gz
+@@ -368,9 +372,7 @@
+ libexpat libgmp libmpfr libssl libcurl libjasper
+ 
+ all: ./local$(MULTI_SUFFIX)/.xpt_libs
+-./local$(MULTI_SUFFIX)/.xpt_libs: boost mesa_headers zlib libpng \
+-libfreetype libjpeg libtiff libproj libgeotiff libsqlite lib3ds libcgal \
+-libsquish libdime libshp libexpat libgmp libmpfr libssl libcurl libjasper
++./local$(MULTI_SUFFIX)/.xpt_libs: libcgal libdime
+ 	@touch ./local$(MULTI_SUFFIX)/.xpt_libs
+ 	
+ clean:
+@@ -629,11 +631,7 @@
+ 
+ 
+ libcgal: ./local$(MULTI_SUFFIX)/lib/.xpt_libcgal
+-./local$(MULTI_SUFFIX)/lib/.xpt_libcgal: \
+-./local$(MULTI_SUFFIX)/lib/.xpt_zlib \
+-./local$(MULTI_SUFFIX)/lib/.xpt_libgmp \
+-./local$(MULTI_SUFFIX)/lib/.xpt_libmpfr \
+-./local$(MULTI_SUFFIX)/lib/.xpt_boost
++./local$(MULTI_SUFFIX)/lib/.xpt_libcgal:
+ 	@echo "building libcgal..."
+ 	@-mkdir -p "./local$(MULTI_SUFFIX)/include"
+ 	@-mkdir -p "./local$(MULTI_SUFFIX)/lib"
+@@ -663,24 +661,17 @@
+ endif
+ ifdef PLAT_LINUX
+ 	@cd "CGAL-$(VER_CGAL)" && \
++	sed -i.orig 81d src/CMakeLists.txt && \
+ 	cmake . -DCMAKE_INSTALL_PREFIX=$(DEFAULT_PREFIX) \
+ 	-DCMAKE_BUILD_TYPE=Release -DBUILD_SHARED_LIBS=FALSE \
+ 	-DCGAL_CXX_FLAGS="$(VIS) -I$(DEFAULT_INCDIR)" \
+ 	-DCGAL_MODULE_LINKER_FLAGS="-L$(DEFAULT_LIBDIR)" \
+ 	-DCGAL_SHARED_LINKER_FLAGS="-L$(DEFAULT_LIBDIR)" \
+ 	-DCGAL_EXE_LINKER_FLAGS="-L$(DEFAULT_LIBDIR)" \
+-	-DGMP_INCLUDE_DIR=$(DEFAULT_INCDIR) \
+-	-DGMP_LIBRARIES_DIR=$(DEFAULT_LIBDIR) \
+-	-DGMP_LIBRARIES=$(DEFAULT_LIBDIR)/libgmp.a \
+-	-DGMPXX_INCLUDE_DIR=$(DEFAULT_INCDIR) \
+-	-DGMPXX_LIBRARIES=$(DEFAULT_LIBDIR)/libgmpxx.a \
+-	-DMPFR_INCLUDE_DIR=$(DEFAULT_INCDIR) \
+-	-DMPFR_LIBRARIES_DIR=$(DEFAULT_LIBDIR) \
+-	-DMPFR_LIBRARIES=$(DEFAULT_LIBDIR)/libmpfr.a \
+ 	-DWITH_CGAL_ImageIO=OFF -DWITH_CGAL_PDB=OFF -DWITH_CGAL_Qt3=OFF \
+-	-DWITH_CGAL_Qt4=OFF -DBoost_INCLUDE_DIR=$(DEFAULT_PREFIX)/include \
+-	-DBOOST_ROOT=$(DEFAULT_PREFIX) $(BE_QUIET) && \
+-	make $(BE_QUIET) && make install $(BE_QUIET)
++	-DWITH_CGAL_Qt4=OFF \
++	$(BE_QUIET) && \
++	gmake $(BE_QUIET) && gmake install $(BE_QUIET)
+ endif
+ ifdef PLAT_MINGW
+ 	@cd "CGAL-$(VER_CGAL)" && \
