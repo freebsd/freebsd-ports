@@ -1,4 +1,4 @@
---- lib/crypto/wscript_configure.orig	2016-01-26 11:45:46 UTC
+--- lib/crypto/wscript_configure.orig	2017-01-11 07:55:14 UTC
 +++ lib/crypto/wscript_configure
 @@ -1,9 +1,9 @@
  if not conf.CHECK_FUNCS_IN('MD5Init', 'bsd', headers='bsd/md5.h',
