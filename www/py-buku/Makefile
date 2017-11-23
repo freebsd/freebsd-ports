@@ -28,7 +28,14 @@ GH_PROJECT=	Buku
 
 PLIST_FILES=	man/man1/buku.1.gz
 
+.include <bsd.port.pre.mk>
+
+.if defined(PACKAGE_BUILDING) && !defined(PACKAGE_BUILDING_FLAVORS) && \
+	${PYTHON_VER} != ${PYTHON_DEFAULT}
+IGNORE=	you have python ${PYTHON_DEFAULT} set as the default, and this needs ${PYTHON_VER}
+.endif
+
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/buku.1 ${STAGEDIR}${MANPREFIX}/man/man1
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
