@@ -82,6 +82,10 @@ CONFIGURE_ARGS+=--disable-bootstrap
 CONFIGURE_ARGS+=--with-build-config=bootstrap-debug
 ALL_TARGET=	bootstrap-lean
 .endif
+INSTALL_TARGET=	install-strip
+.if ${UID} != 0
+BINMODE=	755
+.endif
 CONFIGURE_ARGS+=--disable-nls \
 		--enable-gnu-indirect-function \
 		--libdir=${TARGLIB} \
