@@ -8,8 +8,7 @@ MOZILLA_VER=	52 # above + 3
 CATEGORIES?=	www mail news editors irc ipv6
 MASTER_SITES=	MOZILLA/${PORTNAME}/releases/${DISTVERSION}/source \
 		MOZILLA/${PORTNAME}/candidates/${DISTVERSION}-candidates/build4/source
-DISTFILES=	${PORTNAME}-${DISTVERSION}.source${EXTRACT_SUFX}
-EXTRACT_ONLY=	${PORTNAME}-${DISTVERSION}.source${EXTRACT_SUFX}
+DISTFILES=	${DISTNAME}.source${EXTRACT_SUFX}
 
 MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	The open source, standards compliant web browser
@@ -54,7 +53,6 @@ LDAP_DESC?=	LDAP support for Mailnews
 .include "${.CURDIR}/../../www/firefox/Makefile.options"
 .include <bsd.port.options.mk>
 
-WRKSRC:=	${WRKDIR}/${PORTNAME}-${DISTVERSION}
 MOZSRC:=	${WRKSRC}/mozilla
 
 .if ! ${PORT_OPTIONS:MLDAP}

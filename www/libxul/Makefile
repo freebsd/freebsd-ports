@@ -7,7 +7,8 @@ PORTREVISION=	9
 CATEGORIES?=	www devel
 MASTER_SITES=	MOZILLA/firefox/releases/${DISTVERSION}esr/source \
 		MOZILLA/firefox/candidates/${DISTVERSION}esr-candidates/build3/source
-DISTNAME=	firefox-${DISTVERSION}esr.source
+DISTNAME=	firefox-${DISTVERSION}esr
+DISTFILES=	${DISTNAME}.source${EXTRACT_SUFX}
 
 MAINTAINER?=	gecko@FreeBSD.org
 COMMENT?=	Mozilla runtime package that can be used to bootstrap XUL+XPCOM apps
@@ -36,8 +37,6 @@ BUILD_DEPENDS=	nspr>=4.12:devel/nspr \
 		zip:archivers/zip
 
 LIB_DEPENDS=	libv4l2.so:multimedia/libv4l
-
-WRKSRC:=	${WRKDIR}/firefox-${DISTVERSION}esr
 
 USE_GL=		gl
 USES=		pathfix shebangfix tar:xz

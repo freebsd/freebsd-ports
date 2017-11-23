@@ -46,8 +46,6 @@ OPTIONS_EXCLUDE=	DTRACE INTEGER_SAMPLES JACK SNDIO TEST
 
 .include "${.CURDIR}/../../www/firefox/Makefile.options"
 
-WRKSRC:=	${WRKDIR}/${GH_PROJECT}-${DISTVERSIONFULL}
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 		${WRKSRC}/browser/app/nsBrowserApp.cpp
