@@ -32,6 +32,7 @@
     SUBDIR += cgribex
     SUBDIR += checkmol
     SUBDIR += chemical-mime-data
+    SUBDIR += chemps2
     SUBDIR += chemtool
     SUBDIR += chemtool-devel
     SUBDIR += clhep
