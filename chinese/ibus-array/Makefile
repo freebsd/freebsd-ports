@@ -2,6 +2,7 @@
 
 PORTNAME=	ibus-array
 PORTVERSION=	0.1.0
+DISTVERSIONPREFIX=	release-
 CATEGORIES=	chinese
 
 MAINTAINER=	jiashiun@gmail.com
@@ -19,7 +20,6 @@ USE_GNOME+=	glib20
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	lexical
-GH_TAGNAME=	release-0.1.0
 
 OPTIONS_DEFINE=		NLS
 OPTIONS_SUB=		yes
