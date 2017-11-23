@@ -32,20 +32,3 @@ cat ~/.ssh/id_rsa.pub | ssh remote_host "cat >> .ssh/authorized_keys"
 The SSH server on remote_host must allow pub key authentication.
 
 ======================================================================
-
-Any bug reports should be addressed to the maintainers at:
-	gecko@FreeBSD.org
-You may also Cc: freebsd-ports@FreeBSD.org. Please do not send
-bug reports to any other addresses.
-
-Please include the following information with any bug report:
-* Output from 'uname -a'.
-* Output from 'ident /usr/ports/www/firefox/Makefile'
-* Where/when did the problem occur: configuring, building, or
-	running firefox
-* How can you reproduce the problem?
-
-Thank you for your help in testing and reporting bugs, and we hope you
-enjoy using Firefox.
-The Maintainers (gecko@)
-======================================================================
