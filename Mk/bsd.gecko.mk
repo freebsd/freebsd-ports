@@ -125,7 +125,6 @@ LLD_UNSAFE=	yes
 
 MOZILLA_SUFX?=	none
 MOZSRC?=	${WRKSRC}
-WRKSRC?=	${WRKDIR}/mozilla
 PLISTF?=	${WRKDIR}/plist_files
 
 MOZ_OBJDIR?=	${WRKSRC}/obj-${ARCH:C/amd64/x86_64/}-unknown-${OPSYS:tl}${OSREL}

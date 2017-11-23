@@ -3,12 +3,12 @@
 
 PORTNAME=	firefox
 DISTVERSION=	57.0
-DISTVERSIONSUFFIX=.source
 PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	MOZILLA/${PORTNAME}/releases/${DISTVERSION}/source \
 		MOZILLA/${PORTNAME}/candidates/${DISTVERSION}-candidates/build4/source
+DISTFILES=	${DISTNAME}.source${EXTRACT_SUFX}
 
 MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	Web browser based on the browser portion of Mozilla
@@ -49,8 +49,6 @@ MOZ_OPTIONS=	--enable-application=browser \
 OPTIONS_DEFAULT=	BUNDLED_CAIRO
 
 .include "${.CURDIR}/../../www/firefox/Makefile.options"
-
-WRKSRC:=	${WRKDIR}/${PORTNAME}-${DISTVERSION}
 
 post-extract:
 	@${SED} -e 's|@FIREFOX_ICON@|${FIREFOX_ICON}|' -e 's|@MOZILLA@|${MOZILLA}|' \
