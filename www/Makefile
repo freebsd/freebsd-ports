@@ -2035,6 +2035,7 @@
     SUBDIR += rubygem-hurley
     SUBDIR += rubygem-innate
     SUBDIR += rubygem-jekyll
+    SUBDIR += rubygem-jekyll-sanity
     SUBDIR += rubygem-jekyll-watch
     SUBDIR += rubygem-journey
     SUBDIR += rubygem-jquery-atwho-rails

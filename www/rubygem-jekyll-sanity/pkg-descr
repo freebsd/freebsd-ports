@@ -1,0 +1,5 @@
+Jekyll Sanity provides surface patches for Jekyll that provide useful methods
+for plugin authors, and site authors as well. Moves some insane instance methods
+to the class so that they can be used without having to store the entire site.
+
+WWW: https://github.com/envygeeks/jekyll-sanity
