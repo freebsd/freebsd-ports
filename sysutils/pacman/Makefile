@@ -3,7 +3,7 @@
 
 PORTNAME=	pacman
 PORTVERSION=	4.2.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.archlinux.org/other/pacman/ \
 		http://mirror.amdmi3.ru/distfiles/
@@ -15,54 +15,40 @@ LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	asciidoc:textproc/asciidoc \
-		bash:shells/bash
+		bash:shells/bash \
+		gm4:devel/m4
 RUN_DEPENDS=	bash:shells/bash
 LIB_DEPENDS=	libarchive.so.13:archivers/libarchive
 
-USES=		gmake libtool pathfix perl5 pkgconfig shebangfix
+USES=		gmake libtool localbase:ldflags pathfix perl5 pkgconfig shebangfix
 SHEBANG_FILES=	${WRKSRC}/scripts/makepkg-template.pl.in
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-root-dir="${PACMAN_ROOT}" \
 		--localstatedir=/var
 USE_LDCONFIG=	yes
 
-CFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-
 SUB_FILES=	pkg-message pkg-deinstall
 SUB_LIST=	PACMAN_ROOT="${PACMAN_ROOT}" PREFIX="${PREFIX}"
 PLIST_SUB=	PACMAN_ROOT="${PACMAN_ROOT:C/^${PREFIX}//}"
 
-PACMAN_ROOT?=	"${PREFIX}/pacman"
+PACMAN_ROOT?=	${PREFIX}/pacman
 
 PORTEXAMPLES=	*
 
 OPTIONS_DEFINE=	CURL GPGME EXAMPLES NLS
 OPTIONS_DEFAULT=CURL GPGME
+OPTIONS_SUB=	yes
+
 CURL_DESC=	Use libcurl fetcher instead of external curl/wget
+CURL_CONFIGURE_WITH=	libcurl=${LOCALBASE}
+CURL_LIB_DEPENDS=	libcurl.so:ftp/curl
 GPGME_DESC=	Use GPGME for PGP signature verification
+GPGME_CONFIGURE_WITH=	gpgme
+GPGME_LIB_DEPENDS=	libgpgme.so:security/gpgme
+NLS_USES=		gettext
+NLS_CONFIGURE_ENABLE=	nls
 
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MCURL}
-CONFIGURE_ARGS+=--with-libcurl=${LOCALBASE}
-LIB_DEPENDS+=	libcurl.so:ftp/curl
-.else
-CONFIGURE_ARGS+=--without-libcurl
-.endif
-
-.if ${PORT_OPTIONS:MGPGME}
-CONFIGURE_ARGS+=--with-gpgme
-LIB_DEPENDS+=	libgpgme.so:security/gpgme
-.endif
-
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
-PLIST_SUB+=	NLS=""
-.else
-CONFIGURE_ARGS+=--disable-nls
-PLIST_SUB+=	NLS="@comment "
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|m4|gm4|' ${WRKSRC}/scripts/Makefile.in
@@ -83,9 +69,11 @@ post-install:
 .for f in makepkg.conf pacman.conf
 	${INSTALL_DATA} ${WRKSRC}/etc/${f} ${STAGEDIR}${PREFIX}/etc/${f}.sample
 .endfor
-	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/PKGBUILD-example.txt ${STAGEDIR}${EXAMPLESDIR}/
-	${MKDIR} ${STAGEDIR}${PACMAN_ROOT}
+	@${MKDIR} ${STAGEDIR}${PACMAN_ROOT}
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libalpm.so
+
+post-install-EXAMPLES-on:
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/PKGBUILD-example.txt ${STAGEDIR}${EXAMPLESDIR}/
 
 .include <bsd.port.mk>
