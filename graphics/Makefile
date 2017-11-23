@@ -468,6 +468,7 @@
     SUBDIR += ksnapshot
     SUBDIR += kudu
     SUBDIR += l2p
+    SUBDIR += largetifftools
     SUBDIR += laternamagica
     SUBDIR += lcdtest
     SUBDIR += lcms
