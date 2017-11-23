@@ -12,8 +12,8 @@
     
     As these symbols are provided by str.a just avoid listing the object
     files as well.
---- Makefile.orig	2017-08-25 13:36:12.671931000 -0400
-+++ Makefile	2017-08-25 13:36:36.138079000 -0400
+--- Makefile.orig	2004-08-16 20:50:09.000000000 -0400
++++ Makefile	2017-11-23 16:49:00.505811000 -0500
 @@ -219,14 +219,14 @@
  
  safecat: \
@@ -24,8 +24,9 @@
 +hostname.o sig.o stat_dir.o str_diffn.o substdio_copy.o \
  substdi.o substdio.o taia_fmtfrac.o taia_now.o taia_tai.o tempfile.o \
  writefile.o
- 	./load safecat getln.a str.a stralloc.a strerr.a substdio.a \
+-	./load safecat getln.a str.a stralloc.a strerr.a substdio.a \
 -	alloc.o alloc_re.o byte_copy.o byte_cr.o envread.o error.o \
++	./load safecat getln.a stralloc.a strerr.a substdio.a str.a \
 +	alloc.o alloc_re.o byte_cr.o envread.o error.o \
  	error_str.o fmt_uint64.o hostname.o sig.o stat_dir.o str_diffn.o \
 -	str_len.o substdi.o substdio.o substdio_copy.o taia_fmtfrac.o \
