@@ -1,0 +1,13 @@
+https://github.com/kinetiknz/nestegg/commit/3b7f1ae5dfd5
+
+--- media/libnestegg/src/align.h.orig	2017-11-14 14:36:13 UTC
++++ media/libnestegg/src/align.h
+@@ -22,7 +22,7 @@
+  */
+ typedef double max_align_t;
+ 
+-#else
++#elif !defined(__CLANG_MAX_ALIGN_T_DEFINED) && !defined(_GCC_MAX_ALIGN_T)
+ 
+ /*
+  *	a type with the most strict alignment requirements

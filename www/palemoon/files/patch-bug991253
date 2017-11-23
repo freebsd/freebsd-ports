@@ -1,0 +1,17 @@
+--- extensions/spellcheck/hunspell/glue/mozHunspell.cpp.orig	2017-11-14 14:36:13 UTC
++++ extensions/spellcheck/hunspell/glue/mozHunspell.cpp
+@@ -400,6 +400,14 @@ mozHunspell::LoadDictionaryList(bool aNotifyChildProce
+     }
+   }
+ 
++  // load system hunspell dictionaries
++  nsCOMPtr<nsIFile> hunDir;
++  NS_NewNativeLocalFile(NS_LITERAL_CSTRING("%%LOCALBASE%%/share/hunspell"),
++                        true, getter_AddRefs(hunDir));
++  if (hunDir) {
++      LoadDictionariesFromDir(hunDir);
++  }
++
+   // find dictionaries from extensions requiring restart
+   nsCOMPtr<nsISimpleEnumerator> dictDirs;
+   rv = dirSvc->Get(DICTIONARY_SEARCH_DIRECTORY_LIST,
