@@ -4,4 +4,4 @@ processing time when any preloaded context is used in a JSON-LD document. As a
 consequence, changes made to these contexts after the gem release will not be
 loaded.
 
-WWW: http://github.com/ruby-rdf/json-ld-preloaded
+WWW: https://github.com/ruby-rdf/json-ld-preloaded
