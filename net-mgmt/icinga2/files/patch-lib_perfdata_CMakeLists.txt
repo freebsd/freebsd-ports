@@ -1,6 +1,6 @@
---- lib/perfdata/CMakeLists.txt.orig	2016-08-17 14:19:24 UTC
-+++ lib/perfdata/CMakeLists.txt
-@@ -41,27 +41,27 @@ set_target_properties (
+--- lib/perfdata/CMakeLists.txt.orig	2017-11-16 10:44:26.000000000 +0100
++++ lib/perfdata/CMakeLists.txt	2017-11-20 15:02:18.563301000 +0100
+@@ -43,32 +43,32 @@ set_target_properties (
  )
  
  install_if_not_exists(
@@ -18,6 +18,12 @@
  install_if_not_exists(
 -  ${PROJECT_SOURCE_DIR}/etc/icinga2/features-available/influxdb.conf
 +  ${PROJECT_SOURCE_DIR}/etc/icinga2/features-available/influxdb.conf.sample
+   ${CMAKE_INSTALL_SYSCONFDIR}/icinga2/features-available
+ )
+ 
+ install_if_not_exists(
+-  ${PROJECT_SOURCE_DIR}/etc/icinga2/features-available/elasticsearch.conf
++  ${PROJECT_SOURCE_DIR}/etc/icinga2/features-available/elasticsearch.conf.sample
    ${CMAKE_INSTALL_SYSCONFDIR}/icinga2/features-available
  )
  
