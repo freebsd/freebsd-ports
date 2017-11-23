@@ -1,7 +1,0 @@
-To use pspg as psql pager, add this alias:
-
-$ alias psql="env PAGER='pspg -bX' psql"
-
-For csh users:
-
-$ alias psql "env PAGER='pspg -bX' psql"

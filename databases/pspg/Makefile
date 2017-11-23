@@ -2,6 +2,7 @@
 
 PORTNAME=	pspg
 DISTVERSION=	0.6
+PORTREVISION=	1
 CATEGORIES=	databases
 
 MAINTAINER=	dg@syrec.org
@@ -18,6 +19,8 @@ GNU_CONFIGURE=	yes
 CFLAGS+=	-D_WITH_GETLINE # enable the getline prototype
 PLIST_FILES=	bin/pspg
 PORTDOCS=	README.md
+
+SUB_FILES=	pkg-message
 
 OPTIONS_DEFINE=	DOCS
 
