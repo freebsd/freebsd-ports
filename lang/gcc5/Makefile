@@ -84,10 +84,6 @@ INSTALL_TARGET=	install-strip
 .if ${UID} != 0
 BINMODE=	755
 .endif
-INSTALL_TARGET=	install-strip
-.if ${UID} != 0
-BINMODE=	755
-.endif
 CONFIGURE_ARGS+=--disable-nls \
 		--disable-libgcj \
 		--enable-gnu-indirect-function \
