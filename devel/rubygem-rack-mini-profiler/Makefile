@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rack-mini-profiler
-PORTVERSION=	0.10.6
+PORTVERSION=	0.10.7
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
