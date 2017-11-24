@@ -5,8 +5,7 @@ PORTNAME=	porttree
 PORTVERSION=	0.3.r${SVN_REV}
 PORTREVISION=	1
 CATEGORIES=	ports-mgmt python
-MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF/${PORTNAME}
 
 MAINTAINER=	Vladimir.Chukharev@gmail.com
 COMMENT=	Show dependences of FreeBSD port as pseudo graphical tree
