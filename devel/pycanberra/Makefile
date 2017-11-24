@@ -2,7 +2,6 @@
 # $FreeBSD$
 
 PORTNAME=		pycanberra
-# PORTVERSION=		1
 DISTVERSION=		1
 CATEGORIES=		devel
 
