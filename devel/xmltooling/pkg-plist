@@ -83,10 +83,10 @@ include/xmltooling/validation/ValidatorSuite.h
 include/xmltooling/version.h
 lib/libxmltooling-lite.so
 lib/libxmltooling-lite.so.7
-lib/libxmltooling-lite.so.7.0.0
+lib/libxmltooling-lite.so.7.0.2
 lib/libxmltooling.so
 lib/libxmltooling.so.7
-lib/libxmltooling.so.7.0.0
+lib/libxmltooling.so.7.0.2
 libdata/pkgconfig/xmltooling.pc
 share/xml/xmltooling/catalog.xml
 share/xml/xmltooling/soap-envelope.xsd
