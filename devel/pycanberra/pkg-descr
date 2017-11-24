@@ -1,0 +1,5 @@
+A very basic wrapper for libcanberra.
+
+Ensure all strings passed to libcanberra are byte strings.
+
+WWW: https://github.com/totdb/pycanberra
