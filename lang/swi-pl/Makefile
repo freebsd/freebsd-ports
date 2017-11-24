@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	swi-pl
-PORTVERSION=	7.4.2
-PORTREVISION=	1
+PORTVERSION=	7.6.2
 CATEGORIES=	lang
 MASTER_SITES=	http://www.swi-prolog.org/download/stable/src/
 DISTNAME=	swipl-${PORTVERSION}
@@ -70,7 +69,6 @@ post-configure:
 post-patch:
 	@${REINPLACE_CMD} -e 's!^mandir=@mandir@!mandir=${MANPREFIX}/man!' \
 		-e '/-o $$@ $$(PLOBJ)/s/$$/ $$(LIBS)/' \
-		-e '/ $$(SHAREDV) $$(SONAME)/d' \
 		${WRKSRC}/src/Makefile.in \
 		${WRKSRC}/packages/xpce/src/Makefile.in
 	@${REINPLACE_CMD} -e '/EXAMPLEEXE/s/INSTALL_PROGRAM/INSTALL_SCRIPT/' \
