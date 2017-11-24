@@ -538,6 +538,8 @@
     SUBDIR += newsbeuter
     SUBDIR += newsboat
     SUBDIR += nextcloud
+    SUBDIR += nextcloud-calendar
+    SUBDIR += nextcloud-contacts
     SUBDIR += nghttp2
     SUBDIR += nginx
     SUBDIR += nginx-devel

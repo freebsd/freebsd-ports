@@ -415,6 +415,8 @@
     SUBDIR += ncrypt
     SUBDIR += netpgp
     SUBDIR += nettle
+    SUBDIR += nextcloud-twofactor_totp
+    SUBDIR += nextcloud-twofactor_u2f
     SUBDIR += ngrok
     SUBDIR += nikto
     SUBDIR += nist-kat
