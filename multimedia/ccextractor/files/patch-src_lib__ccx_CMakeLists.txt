@@ -1,0 +1,10 @@
+--- src/lib_ccx/CMakeLists.txt.orig	2017-11-23 22:34:32 UTC
++++ src/lib_ccx/CMakeLists.txt
+@@ -1,6 +1,6 @@
+ cmake_policy (SET CMP0037 NEW)
+ 
+-set (CMAKE_C_FLAGS "-O0 -Wall -g -std=gnu99")
++set (CMAKE_C_FLAGS "-Wall -std=gnu99")
+ 
+ if (WITH_FFMPEG)
+   set (CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -DENABLE_FFMPEG")

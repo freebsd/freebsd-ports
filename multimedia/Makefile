@@ -28,6 +28,7 @@
     SUBDIR += bombono
     SUBDIR += bsdbktr_tvtune
     SUBDIR += camserv
+    SUBDIR += ccextractor
     SUBDIR += cclive
     SUBDIR += cheese
     SUBDIR += clipgrab
