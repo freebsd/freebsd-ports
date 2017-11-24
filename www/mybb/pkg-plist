@@ -1,5 +1,4 @@
-@owner www
-@group www
+%%WWWDIR%%/.gitattributes
 %%WWWDIR%%/.gitignore
 %%WWWDIR%%/CONTRIBUTING.md
 %%WWWDIR%%/LICENSE
@@ -30,6 +29,7 @@
 %%WWWDIR%%/admin/jscripts/codemirror/addon/fold/xml-fold.js
 %%WWWDIR%%/admin/jscripts/codemirror/addon/index.html
 %%WWWDIR%%/admin/jscripts/codemirror/addon/search/index.html
+%%WWWDIR%%/admin/jscripts/codemirror/addon/search/jump-to-line.js
 %%WWWDIR%%/admin/jscripts/codemirror/addon/search/match-highlighter.js
 %%WWWDIR%%/admin/jscripts/codemirror/addon/search/matchesonscrollbar.css
 %%WWWDIR%%/admin/jscripts/codemirror/addon/search/matchesonscrollbar.js
@@ -40,6 +40,8 @@
 %%WWWDIR%%/admin/jscripts/codemirror/lib/codemirror.js
 %%WWWDIR%%/admin/jscripts/codemirror/lib/index.html
 %%WWWDIR%%/admin/jscripts/codemirror/mode/css/css.js
+%%WWWDIR%%/admin/jscripts/codemirror/mode/css/gss.html
+%%WWWDIR%%/admin/jscripts/codemirror/mode/css/gss_test.js
 %%WWWDIR%%/admin/jscripts/codemirror/mode/css/index.html
 %%WWWDIR%%/admin/jscripts/codemirror/mode/css/less.html
 %%WWWDIR%%/admin/jscripts/codemirror/mode/css/less_test.js
@@ -59,9 +61,6 @@
 %%WWWDIR%%/admin/jscripts/codemirror/theme/index.html
 %%WWWDIR%%/admin/jscripts/codemirror/theme/mybb.css
 %%WWWDIR%%/admin/jscripts/index.html
-%%WWWDIR%%/admin/jscripts/jqueryui/css/redmond/images/animated-overlay.gif
-%%WWWDIR%%/admin/jscripts/jqueryui/css/redmond/images/ui-bg_flat_0_aaaaaa_40x100.png
-%%WWWDIR%%/admin/jscripts/jqueryui/css/redmond/images/ui-bg_flat_55_fbec88_40x100.png
 %%WWWDIR%%/admin/jscripts/jqueryui/css/redmond/images/ui-bg_glass_75_d0e5f5_1x400.png
 %%WWWDIR%%/admin/jscripts/jqueryui/css/redmond/images/ui-bg_glass_85_dfeffc_1x400.png
 %%WWWDIR%%/admin/jscripts/jqueryui/css/redmond/images/ui-bg_glass_95_fef1ec_1x400.png
@@ -380,6 +379,7 @@
 %%WWWDIR%%/inc/3rdparty/diff/Diff/Renderer/Context.php
 %%WWWDIR%%/inc/3rdparty/diff/Diff/Renderer/Inline.php
 %%WWWDIR%%/inc/3rdparty/diff/Diff/Renderer/Unified.php
+%%WWWDIR%%/inc/3rdparty/diff/Diff/Renderer/Unified/Colored.php
 %%WWWDIR%%/inc/3rdparty/diff/Diff/Renderer/index.html
 %%WWWDIR%%/inc/3rdparty/diff/Diff/String.php
 %%WWWDIR%%/inc/3rdparty/diff/Diff/ThreeWay.php
@@ -648,6 +648,7 @@
 %%WWWDIR%%/install/resources/upgrade39.php
 %%WWWDIR%%/install/resources/upgrade4.php
 %%WWWDIR%%/install/resources/upgrade40.php
+%%WWWDIR%%/install/resources/upgrade41.php
 %%WWWDIR%%/install/resources/upgrade5.php
 %%WWWDIR%%/install/resources/upgrade6.php
 %%WWWDIR%%/install/resources/upgrade7.php
@@ -662,6 +663,7 @@
 %%WWWDIR%%/jscripts/index.html
 %%WWWDIR%%/jscripts/inline_edit.js
 %%WWWDIR%%/jscripts/inline_moderation.js
+%%WWWDIR%%/jscripts/inline_reports.js
 %%WWWDIR%%/jscripts/jeditable/jeditable.min.js
 %%WWWDIR%%/jscripts/jquery.js
 %%WWWDIR%%/jscripts/jquery.plugins.js
