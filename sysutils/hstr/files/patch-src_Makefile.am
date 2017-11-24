@@ -1,0 +1,11 @@
+--- src/Makefile.am.orig	2017-11-23 08:02:07 UTC
++++ src/Makefile.am
+@@ -15,7 +15,7 @@
+ # limitations under the License.
+ 
+ # http://mij.oltrelinux.com/devel/autoconf-automake/
+-AM_CFLAGS = --pedantic -Wall -std=c99 -O2
++AM_CFLAGS = --pedantic -Wall -std=c99
+ AM_LDFLAGS =
+ 
+ # bin_ installs to bin; hh_ is the binary name
