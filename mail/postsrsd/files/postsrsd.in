@@ -14,7 +14,7 @@
 #	/etc/rc.conf.d/postsrsd
 #
 # postsrsd_enable (bool):   Set to "NO" by default.
-#                             Set it to "YES" to enable dkim-milter
+#                           Set it to "YES" to enable postsrsd.
 # postsrsd_uid (str):       Set username to run postsrsd.
 # postsrsd_secret (str):    Secret file file. See postsrsd(8)
 # postsrsd_domain (str):    Local domain name: rewrite to originate from this domain
