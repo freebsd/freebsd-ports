@@ -1,0 +1,9 @@
+The Calendar app is a user interface for Nextcloud's CalDAV server. Easily 
+sync events from various devices with your Nextcloud and edit them online.
+
+ * Integration with other Nextcloud apps! Currently Contacts - more to come.
+ * WebCal Support! Want to see your favorite team’s matchdays in your 
+   calendar? No problem!
+ * Attendees! Invite people to your events.
+ * We're not reinventing the wheel! Based on the great davclient.js, 
+   ical.js and fullcalendar libraries.

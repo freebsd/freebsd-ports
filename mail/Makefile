@@ -267,6 +267,7 @@
     SUBDIR += muttils
     SUBDIR += nbsmtp
     SUBDIR += neomutt
+    SUBDIR += nextcloud-mail
     SUBDIR += nmh
     SUBDIR += nmzmail
     SUBDIR += noattach
