@@ -160,6 +160,7 @@ lib/%%DISTNAME%%/doc/Manual/listing.html
 lib/%%DISTNAME%%/doc/Manual/lists.html
 lib/%%DISTNAME%%/doc/Manual/loadfilehook.html
 lib/%%DISTNAME%%/doc/Manual/locale.html
+lib/%%DISTNAME%%/doc/Manual/main.html
 lib/%%DISTNAME%%/doc/Manual/manipatom.html
 lib/%%DISTNAME%%/doc/Manual/manipmodule.html
 lib/%%DISTNAME%%/doc/Manual/manipstack.html
@@ -185,6 +186,7 @@ lib/%%DISTNAME%%/doc/Manual/ordsets.html
 lib/%%DISTNAME%%/doc/Manual/otherlicenses.html
 lib/%%DISTNAME%%/doc/Manual/overrule.html
 lib/%%DISTNAME%%/doc/Manual/overview.html
+lib/%%DISTNAME%%/doc/Manual/packs.html
 lib/%%DISTNAME%%/doc/Manual/pairs.html
 lib/%%DISTNAME%%/doc/Manual/pceemacs.html
 lib/%%DISTNAME%%/doc/Manual/persistency.html
@@ -340,6 +342,7 @@ lib/%%DISTNAME%%/doc/packages/libedit.html
 lib/%%DISTNAME%%/doc/packages/modules.gif
 lib/%%DISTNAME%%/doc/packages/nlp.html
 lib/%%DISTNAME%%/doc/packages/odbc.html
+lib/%%DISTNAME%%/doc/packages/pcre.html
 lib/%%DISTNAME%%/doc/packages/pdt.html
 lib/%%DISTNAME%%/doc/packages/penarch.png
 lib/%%DISTNAME%%/doc/packages/pengines.html
@@ -375,11 +378,13 @@ lib/%%DISTNAME%%/lib/%%ARCH%%-%%OS%%/json.so
 lib/%%DISTNAME%%/lib/%%ARCH%%-%%OS%%/libedit4pl.so
 lib/%%DISTNAME%%/lib/%%ARCH%%-%%OS%%/libswipl.a
 lib/%%DISTNAME%%/lib/%%ARCH%%-%%OS%%/libswipl.so
+lib/%%DISTNAME%%/lib/%%ARCH%%-%%OS%%/libswipl.so.7.6
 lib/%%DISTNAME%%/lib/%%ARCH%%-%%OS%%/libswipl.so.%%VER%%
 lib/%%DISTNAME%%/lib/%%ARCH%%-%%OS%%/md54pl.so
 lib/%%DISTNAME%%/lib/%%ARCH%%-%%OS%%/memfile.so
 lib/%%DISTNAME%%/lib/%%ARCH%%-%%OS%%/ntriples.so
 lib/%%DISTNAME%%/lib/%%ARCH%%-%%OS%%/odbc4pl.so
+lib/%%DISTNAME%%/lib/%%ARCH%%-%%OS%%/pcre4pl.so
 lib/%%DISTNAME%%/lib/%%ARCH%%-%%OS%%/pdt_console.so
 lib/%%DISTNAME%%/lib/%%ARCH%%-%%OS%%/pl2xpce.so
 lib/%%DISTNAME%%/lib/%%ARCH%%-%%OS%%/porter_stem.so
@@ -470,6 +475,7 @@ lib/%%DISTNAME%%/library/clp/clpqr/README
 lib/%%DISTNAME%%/library/clp/clpqr/class.pl
 lib/%%DISTNAME%%/library/clp/clpqr/dump.pl
 lib/%%DISTNAME%%/library/clp/clpqr/geler.pl
+lib/%%DISTNAME%%/library/clp/clpqr/highlight.pl
 lib/%%DISTNAME%%/library/clp/clpqr/itf.pl
 lib/%%DISTNAME%%/library/clp/clpqr/ordering.pl
 lib/%%DISTNAME%%/library/clp/clpqr/project.pl
@@ -627,13 +633,15 @@ lib/%%DISTNAME%%/library/optparse.pl
 lib/%%DISTNAME%%/library/ordsets.pl
 lib/%%DISTNAME%%/library/oset.pl
 lib/%%DISTNAME%%/library/pairs.pl
+lib/%%DISTNAME%%/library/pcre.pl
 lib/%%DISTNAME%%/library/pdt_console.pl
 lib/%%DISTNAME%%/library/pengines.pl
 lib/%%DISTNAME%%/library/pengines_io.pl
+lib/%%DISTNAME%%/library/pengines_sandbox.pl
 lib/%%DISTNAME%%/library/persistency.pl
 lib/%%DISTNAME%%/library/pio.pl
 lib/%%DISTNAME%%/library/pldoc.pl
-lib/%%DISTNAME%%/library/pldoc/README
+lib/%%DISTNAME%%/library/pldoc/README.md
 lib/%%DISTNAME%%/library/pldoc/doc_access.pl
 lib/%%DISTNAME%%/library/pldoc/doc_colour.pl
 lib/%%DISTNAME%%/library/pldoc/doc_html.pl
@@ -680,6 +688,7 @@ lib/%%DISTNAME%%/library/prolog_colour.pl
 lib/%%DISTNAME%%/library/prolog_format.pl
 lib/%%DISTNAME%%/library/prolog_history.pl
 lib/%%DISTNAME%%/library/prolog_install.pl
+lib/%%DISTNAME%%/library/prolog_jiti.pl
 lib/%%DISTNAME%%/library/prolog_metainference.pl
 lib/%%DISTNAME%%/library/prolog_pack.pl
 lib/%%DISTNAME%%/library/prolog_server.pl
@@ -791,7 +800,7 @@ lib/%%DISTNAME%%/swipl.home
 lib/%%DISTNAME%%/swipl.rc
 lib/%%DISTNAME%%/xpce/Defaults
 lib/%%DISTNAME%%/xpce/Defaults.user
-lib/%%DISTNAME%%/xpce/README
+lib/%%DISTNAME%%/xpce/README.md
 lib/%%DISTNAME%%/xpce/appl-help/customise.hlp
 lib/%%DISTNAME%%/xpce/appl-help/dialog.hlp
 lib/%%DISTNAME%%/xpce/appl-help/emacs.hlp
