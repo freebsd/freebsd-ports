@@ -3,8 +3,7 @@
 PORTNAME=	latte-dock
 DISTVERSION=	0.7.2
 CATEGORIES=	deskutils kde
-MASTER_SITES=	KDE
-MASTER_SITE_SUBDIR=	stable/latte-dock
+MASTER_SITES=	KDE/stable/latte-dock
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Launcher for Qt and Plasma desktops
