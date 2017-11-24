@@ -201,6 +201,7 @@
     SUBDIR += bison
     SUBDIR += bisoncpp
     SUBDIR += blame
+    SUBDIR += blitz
     SUBDIR += bmake
     SUBDIR += bmkdep
     SUBDIR += bnf
