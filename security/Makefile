@@ -289,6 +289,7 @@
     SUBDIR += isnprober
     SUBDIR += jbrofuzz
     SUBDIR += john
+    SUBDIR += kbfs
     SUBDIR += kc
     SUBDIR += kdbx-viewer
     SUBDIR += kedpm
