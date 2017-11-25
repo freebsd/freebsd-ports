@@ -140,7 +140,7 @@ if [ -n "$2" ]; then
 		eval fcgiwrap_enable="\${fcgiwrap_${profile}_enable:-${fcgiwrap_enable}}"
 		eval fcgiwrap_fib="\${fcgiwrap_${profile}_fib:-${fcgiwrap_fib}}"
 		eval fcgiwrap_user="\${fcgiwrap_${profile}_user:-${fcgiwrap_user}}"
-		eval fcgiwrap_group="\${fcgiwrap_${profile}_user:-${fcgiwrap_group}}"
+		eval fcgiwrap_group="\${fcgiwrap_${profile}_group:-${fcgiwrap_group}}"
 		eval fcgiwrap_socket="\${fcgiwrap_${profile}_socket:?}"
 		eval fcgiwrap_socket_mode="\${fcgiwrap_${profile}_socket_mode:-${fcgiwrap_socket_mode}}"
 		eval fcgiwrap_socket_owner="\${fcgiwrap_${profile}_socket_owner:-${fcgiwrap_socket_owner}}"
