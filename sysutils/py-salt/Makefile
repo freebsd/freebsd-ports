@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	salt
-PORTVERSION=	2017.7.1
-PORTREVISION=	1
+PORTVERSION=	2017.7.2
 CATEGORIES=	sysutils python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,6 +15,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Jinja2>0:devel/py-Jinja2 \
 		${PYTHON_PKGNAMEPREFIX}MarkupSafe>0:textproc/py-MarkupSafe \
+		${PYTHON_PKGNAMEPREFIX}boto3>0:www/py-boto3\
+		${PYTHON_PKGNAMEPREFIX}boto>=2.32.1:devel/py-boto \
 		${PYTHON_PKGNAMEPREFIX}botocore>0:devel/py-botocore \
 		${PYTHON_PKGNAMEPREFIX}libcloud>=0.14.0:net/py-libcloud \
 		${PYTHON_PKGNAMEPREFIX}msgpack-python>=0.3:devel/py-msgpack-python \
