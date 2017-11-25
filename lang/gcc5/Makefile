@@ -53,13 +53,8 @@ CONFIGURE_ARGS+=	--disable-multilib
 
 .if ${ARCH} == amd64
 CONFIGURE_TARGET=	x86_64-portbld-${OPSYS:tl}${OSREL}
-.endif
 
-.if ${ARCH} == powerpc64
-CONFIGURE_ENV+=	UNAME_m="powerpc64"
-.endif
-
-.if ${ARCH} == aarch64 || ${ARCH} == armv6
+.elif ${ARCH} == aarch64 || ${ARCH} == armv6 || ${ARCH} == armv7
 . if ${COMPILER_TYPE} == clang
 .  if empty(PORT_OPTIONS:MBOOTSTRAP)
 MAKE_ARGS+=CXXFLAGS=-fbracket-depth=512
@@ -67,6 +62,9 @@ MAKE_ARGS+=CXXFLAGS=-fbracket-depth=512
 MAKE_ARGS+=STAGE1_CXXFLAGS=-fbracket-depth=512
 .  endif
 . endif
+
+.elif ${ARCH} == powerpc64
+CONFIGURE_ENV+=	UNAME_m="powerpc64"
 .endif
 
 LANGUAGES:=	c,c++,objc,fortran
