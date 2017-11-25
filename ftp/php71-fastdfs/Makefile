@@ -19,10 +19,10 @@ GH_PROJECT=	fastdfs
 GH_TAGNAME=	1e50b4f
 
 USES=			php:ext
-IGNORE_WITH_PHP=	56 70
 PHP_VER=		71
 
 WRKSRC_SUBDIR=	php_client
+CONFIGURE_ENV=	ROOT=${LOCALBASE}
 
 PHP_MODNAME=	fastdfs_client
 
