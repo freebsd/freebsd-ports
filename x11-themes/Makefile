@@ -172,5 +172,6 @@
     SUBDIR += ubuntulooks
     SUBDIR += xcursor-themes
     SUBDIR += xfce-icons-elementary
+    SUBDIR += lumina-themes
 
 .include <bsd.port.subdir.mk>
