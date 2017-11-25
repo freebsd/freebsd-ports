@@ -1,9 +1,7 @@
 This is a C-language AMQP client library for use with AMQP servers
 speaking protocol versions 0-8 and 0-9-1. This port only speaks the
-0-8 protocol version, for 0-9-1 use net/rabbitmq-c-devel.
+0-9-1 protocol version, for 0-8 use net/rabbitmq-c.
 
- - <http://www.rabbitmq.com/>
- - <http://www.amqp.org/>
- - <http://hg.rabbitmq.com/rabbitmq-c>
-
-WWW: http://hg.rabbitmq.com/rabbitmq-c
+WWW: https://github.com/alanxz/rabbitmq-c
+WWW: http://www.rabbitmq.com/
+WWW: http://www.amqp.org/
