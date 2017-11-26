@@ -2,7 +2,7 @@
 
 PORTNAME=	sid-milter
 PORTVERSION=	1.0.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	mail
 MASTER_SITES=	SF/${PORTNAME}/SenderID%20Milter/${PORTVERSION}
 
@@ -11,7 +11,8 @@ COMMENT=	Milter module for sid and spf
 
 RESTRICTED=	May incorporate intellectual property, possible patent issues
 
-CFLAGS+=	-std=gnu89
+# on FreeBSD 11 optimized code fails with 'MalformedDomain'
+CFLAGS:=	${CFLAGS:S/-O2//g}
 WCONF=		${WRKSRC}/devtools/Site
 DOCSFILES=	FEATURES INSTALL KNOWNBUGS LICENSE README README-SenderID \
 		RELEASE_NOTES rfc4406.txt rfc4407.txt rfc4408.txt
