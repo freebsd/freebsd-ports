@@ -26,6 +26,7 @@
     SUBDIR += cdent
     SUBDIR += ceylon
     SUBDIR += cfortran
+    SUBDIR += chez-scheme
     SUBDIR += chibi-scheme
     SUBDIR += chicken
     SUBDIR += cilkplus
