@@ -3,8 +3,9 @@ include/tidy.h
 include/tidybuffio.h
 include/tidyenum.h
 include/tidyplatform.h
-lib/libtidy5.so
 lib/libtidy.so.5
 lib/libtidy.so.%%VER%%
+lib/libtidy5.so
 lib/libtidys.a
+libdata/pkgconfig/tidy.pc
 man/man1/tidy5.1.gz
