@@ -4,4 +4,4 @@ This is a makefile written by Martin Atelier that makes it possible
 to build Arduino sketches with gmake. An example sketch and Makefile;
 it is installed in share/examples/arduino-mk
 
-WWW: http://mjo.tc/atelier/2009/02/arduino-cli.html
+WWW: https://www.mjoldfield.com/atelier/2009/02/arduino-cli.html
