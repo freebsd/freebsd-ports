@@ -1,10 +1,10 @@
 bin/convert-dtsv0
 bin/dtc
+bin/dtdiff
 bin/fdtdump
 bin/fdtget
 bin/fdtput
-bin/dtdiff
-lib/libfdt-1.4.4.so
+lib/libfdt-1.4.5.so
 lib/libfdt.a
 lib/libfdt.so
 lib/libfdt.so.1
