@@ -2,4 +2,4 @@
 awk, basename, bc, cat, cleanname, date, dc, echo, grep, mk, rc, sed,
 seq, sleep, sort, tee, test, touch, tr, uniq, and yacc.
 
-WWW: http://tools.suckless.org/9base
+WWW: https://tools.suckless.org/9base
