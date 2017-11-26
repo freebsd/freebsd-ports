@@ -6,6 +6,15 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 20171126:
+  AFFECTS: users of security/p5-openxpki
+  AUTHOR: dbaio@FreeBSD.org
+
+  OpenXPKI has been updated to 1.19.4, some important changes were made, please
+  see the upgrading documentation for more details:
+
+  http://openxpki.readthedocs.io/en/latest/upgrading.html
+
+20171126:
   AFFECTS: users of mail/sympa
   AUTHOR: dgeo@centrale-marseille.fr
 
