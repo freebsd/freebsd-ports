@@ -1,9 +1,0 @@
-Use the qjail utility to deploy small or large numbers of jails quickly.
-
-First issue "rehash" command to enable the qjail command (if using csh).
-Then issue "man qjail-intro" to read the qjail introduction.
-After reading that do "man qjail" for the usage details.
-For the BIG PICTURE issue "man qjail-howto".
-
-This version supports older RELEASES 8.x and 9.x.
-Newer versions are better supported by sysutils/qjail.

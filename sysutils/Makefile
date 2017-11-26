@@ -936,7 +936,6 @@
     SUBDIR += pydf
     SUBDIR += qchroot
     SUBDIR += qjail
-    SUBDIR += qjail2
     SUBDIR += qjail4
     SUBDIR += qlogtools
     SUBDIR += qpxtool
