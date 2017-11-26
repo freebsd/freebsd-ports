@@ -5,6 +5,14 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20171126:
+  AFFECTS: users of mail/sympa
+  AUTHOR: dgeo@centrale-marseille.fr
+
+  Web's static dirs have moved to a single dedicated directory.
+  Users should review webserver's /static configuration (examples in
+  share/examples/sympa).
+
 20171119:
   AFFECTS: users of sysutils/zrepl
   AUTHOR: woodsb02@FreeBSD.org

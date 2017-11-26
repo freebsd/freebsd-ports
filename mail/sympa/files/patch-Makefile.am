@@ -1,0 +1,38 @@
+--- Makefile.am.orig	2017-09-11 13:22:01 UTC
++++ Makefile.am
+@@ -135,7 +135,7 @@ sympa_wizard.pl.inst: $(top_srcdir)/src/
+ installconfig: installdir sympa_wizard.pl.inst
+ 	@echo "Installing basic configuration ..."
+ 	-@export PERL5LIB=$(DESTDIR)$(modulesdir); \
+-	if [ ! -f  $(DESTDIR)$(confdir)/sympa.conf ]; then \
++	if [ ! -f  $(DESTDIR)$(confdir)/sympa.conf.sample ]; then \
+ 		echo "This looks like your first Sympa installation. The following wizard will assist you to create your first Sympa configuration.";\
+ 		if [ ! -d $(DESTDIR)$(confdir) ]; then \
+ 			$(INSTALL) -d -m 755 $(DESTDIR)$(confdir); \
+@@ -144,17 +144,17 @@ installconfig: installdir sympa_wizard.p
+ 		chgrp $(GROUP) $(DESTDIR)$(confdir); \
+ 		$(PERL) sympa_wizard.pl.inst \
+ 			--create sympa.conf \
+-			--target $(DESTDIR)$(confdir)/sympa.conf; \
+-		chown $(USER) $(DESTDIR)$(confdir)/sympa.conf; \
+-		chgrp $(GROUP) $(DESTDIR)$(confdir)/sympa.conf; \
++			--target $(DESTDIR)$(confdir)/sympa.conf.sample; \
++		chown $(USER) $(DESTDIR)$(confdir)/sympa.conf.sample; \
++		chgrp $(GROUP) $(DESTDIR)$(confdir)/sympa.conf.sample; \
+ 	fi
+-	-@if [ ! -f $(DESTDIR)$(sysconfdir)/data_structure.version ]; then \
++	-@if [ ! -f $(DESTDIR)$(sysconfdir)/data_structure.version.sample ]; then \
+ 		cd $(DESTDIR)$(sysconfdir); \
+-		echo "# automatically created file" >> data_structure.version; \
+-		echo "# you should not modify it" >> data_structure.version; \
+-		echo $(VERSION) >> data_structure.version; \
+-		chown $(USER) data_structure.version; \
+-		chgrp $(GROUP) data_structure.version; \
++		echo "# automatically created file" >> data_structure.version.sample; \
++		echo "# you should not modify it" >> data_structure.version.sample; \
++		echo $(VERSION) >> data_structure.version.sample; \
++		chown $(USER) data_structure.version.sample; \
++		chgrp $(GROUP) data_structure.version.sample; \
+ 	fi
+ 	-@for dir in create_list_templates custom_actions custom_conditions \
+ 		data_sources families global_task_models list_task_models \
