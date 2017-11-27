@@ -208,6 +208,7 @@ lib/inspircd/modules/m_sqloper.so
 %%OPENSSL%%lib/inspircd/modules/m_ssl_openssl.so
 %%PCRE%%lib/inspircd/modules/m_regex_pcre.so
 %%POSIX%%lib/inspircd/modules/m_regex_posix.so
+%%GEOIP%%lib/inspircd/modules/m_geoip.so
 lib/inspircd/modules/m_sslinfo.so
 lib/inspircd/modules/m_sslmodes.so
 lib/inspircd/modules/m_stripcolor.so
