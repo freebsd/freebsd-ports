@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	beignet
-PORTVERSION=	1.3.1
-PORTREVISION=	1
+DISTVERSION=	1.3.2
 DISTVERSIONSUFFIX=	-source
 CATEGORIES=	lang
 MASTER_SITES=	https://01.org/sites/default/files/
@@ -21,7 +20,7 @@ LIB_DEPENDS=	libOpenCL.so:devel/ocl-icd \
 RUN_DEPENDS=	opencl>=0:devel/opencl \
 		clang${LLVMVER}:devel/llvm${LLVMVER}
 
-WRKSRC=		${WRKDIR}/Beignet-${PORTVERSION}-Source
+WRKSRC=		${WRKDIR}/Beignet-${DISTVERSION}-Source
 
 USES=		cmake ncurses pkgconfig shebangfix
 USE_XORG=	sm ice x11 xext xfixes
@@ -49,7 +48,7 @@ post-patch:
 		s|clang |clang${LLVMVER} |g' \
 		${WRKSRC}/backend/kernels/compile.sh
 
-# XXX bug 213732: compiler_fill_gl_image() [FAILED]
+# XXX bug 213732: compiler_device_enqueue() Interrupt signal (SIGSEGV) received.
 do-test-TEST-on:
 	-@(cd ${TEST_WRKSRC}/utests; . ./setenv.sh; \
 		./flat_address_space; ./utest_run; )
