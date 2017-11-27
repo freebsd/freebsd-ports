@@ -535,7 +535,6 @@
     SUBDIR += netrik
     SUBDIR += netstiff
     SUBDIR += netsurf
-    SUBDIR += newsbeuter
     SUBDIR += newsboat
     SUBDIR += nextcloud
     SUBDIR += nextcloud-calendar
