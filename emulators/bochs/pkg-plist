@@ -1,4 +1,5 @@
 bin/bochs
+bin/bxhub
 bin/bximage
 man/man1/bochs.1.gz
 man/man1/bochs-dlx.1.gz
