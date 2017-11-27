@@ -753,6 +753,7 @@
     SUBDIR += solfege
     SUBDIR += sonata
     SUBDIR += sonic-visualiser
+    SUBDIR += sorcer-lv2
     SUBDIR += sound-juicer
     SUBDIR += soundconverter
     SUBDIR += soundgrab
