@@ -45,8 +45,6 @@ perl_OLD_CMD=	perl
 DOCSDIR=	share/doc/${PORTNAME}/${PORTVERSION}
 PLIST_SUB=	PARROT_VER="${PORTVERSION}"
 
-BROKEN_ia64=	Does not compile on ia64
-
 do-configure:
 	(cd ${WRKSRC} && ${PERL} ${CONFIGURE_SCRIPT} ${CONFIGURE_ARGS})
 
