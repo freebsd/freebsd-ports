@@ -1,0 +1,13 @@
+# Let ports handle default sample type
+
+--- old-configure.in~
++++ old-configure.in
+@@ -5144,7 +5144,7 @@ dnl Use integers over floats for audio o
+ dnl (regarless of the CPU architecture, because audio
+ dnl backends for those platforms don't support floats. We also
+ dnl use integers on ARM with other OS, because it's more efficient.
+-if test "$OS_TARGET" = "Android" -o "$CPU_ARCH" = "arm"; then
++if test -n "$MOZ_INTEGER_SAMPLES"; then
+     MOZ_SAMPLE_TYPE_S16=1
+     AC_DEFINE(MOZ_SAMPLE_TYPE_S16)
+     AC_SUBST(MOZ_SAMPLE_TYPE_S16)
