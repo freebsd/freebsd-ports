@@ -2,7 +2,7 @@
 
 PORTNAME=	mod_pagespeed
 PORTVERSION=	1.12.34.2
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	www devel
 MASTER_SITES=	LOCAL/mmokhi:boringssl,chromium_base,chromium_build,googleurl,gflags_arch,gflags_src,libjpeg_turbo_src,yasm_patched,libwebp,modpb64 \
@@ -14,7 +14,8 @@ COMMENT=	Apache module for rewriting web pages to reduce latency
 
 LICENSE=	APACHE20
 
-BROKEN=		fails to configure
+BROKEN_SSL=	base
+BROKEN_SSL_REASON_base=	needs openssl.pc
 
 BUILD_DEPENDS=	bash:shells/bash \
 		curl:ftp/curl \
@@ -41,7 +42,7 @@ SHEBANG_FILES=	build/fix_proto_and_invoke_protoc
 
 WRKSRC=		${WRKSRC_maindist}
 DOCSDIR=	${PREFIX}/share/doc/apache${APACHE_VERSION}
-CACHEDIR=	/var/cache/mod_pagespeed	
+CACHEDIR=	/var/cache/mod_pagespeed
 LOGSDIR=	/var/log/pagespeed
 CFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/apr-1 -I${WRKSRC} \
 		-Wno-error -Wno-deprecated-register -Wno-char-subscripts \
