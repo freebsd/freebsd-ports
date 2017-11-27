@@ -9648,3 +9648,4 @@ www/linux-firefox||2017-11-22|Has expired: Use native www/firefox or www/firefox
 www/linux-seamonkey||2017-11-22|Has expired: Use native www/seamonkey instead
 graphics/linux-adobesvg||2017-11-22|Has expired: not supported by linux-firefox 52 or later
 sysutils/qjail2||2017-11-26|Has expired: Only for FreeBSD 8 and 9, use sysutils/qjail[4] instead
+www/newsbeuter|www/newsboat|2017-11-27|Port was renamed
