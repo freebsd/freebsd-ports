@@ -2,13 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	bochs
-PORTVERSION=	2.6.8
-PORTREVISION=	4
+PORTVERSION=	2.6.9
 PORTEPOCH=	2
 CATEGORIES=	emulators
 MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mmokhi@FreeBSD.org
 COMMENT=	IA-32 (x86) PC emulator that runs DOS, Win 95, and more
 
 LICENSE=	LGPL21
@@ -16,6 +15,7 @@ LICENSE=	LGPL21
 BROKEN_i386=		does not build on i386 (../cpu.h:4513:117: error: 'regparm' parameter must be between 0 and 3 inclusive)
 
 USES=		gmake libtool:keepla pkgconfig
+USE_XORG=	x11
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_header_alsa_asoundlib_h=no \
 		ac_cv_header_ltdl_h=no
@@ -269,7 +269,7 @@ post-build:
 	@${LN} -sf .bochsrc ${WRKSRC}/bochsrc-sample.txt
 
 post-install:
-.for f in bochs bximage
+.for f in bochs bxhub bximage
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${f}
 .endfor
 
