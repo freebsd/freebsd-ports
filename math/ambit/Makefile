@@ -30,8 +30,8 @@ CMAKE_ARGS+=	-DENABLE_TESTS:BOOL=OFF # https://github.com/jturney/ambit/issues/2
 
 .if ${OPSYS} == FreeBSD && ${OSVERSION} < 1100000
 # It requires clang version >3.6
-BUILD_DEPENDS+=	clang38:lang/clang38
-RUN_DEPENDS+=	clang38:lang/clang38
+BUILD_DEPENDS+=	clang38:devel/llvm38
+RUN_DEPENDS+=	clang38:devel/llvm38
 CC=		clang38
 CXX=		clang++38
 .endif
