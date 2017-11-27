@@ -395,7 +395,7 @@ MOZ_OPTIONS+=	--enable-debug --disable-release
 STRIP=	# ports/184285
 .else
 MOZ_OPTIONS+=	--disable-debug --disable-debug-symbols --enable-release
-. if ${MOZILLA_VER:R:R} >= 56
+. if ${MOZILLA_VER:R:R} >= 56 && (${MACHINE_CPU:Msse2} || ${ARCH:Maarch64})
 MOZ_OPTIONS+=	--enable-rust-simd
 . endif
 .endif
