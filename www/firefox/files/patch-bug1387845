@@ -1,0 +1,38 @@
+commit 8687f49efa88
+Author: sotaro <sotaro.ikeda.g@gmail.com>
+Date:   Wed Aug 23 13:49:29 2017 +0900
+
+    Bug 1387845 - Add more NS_BUILD_REFCNT_LOGGING in AtomicRefCountedWithFinalize r=nical
+---
+ gfx/layers/AtomicRefCountedWithFinalize.h | 10 ++++++++--
+ 1 file changed, 8 insertions(+), 2 deletions(-)
+
+diff --git gfx/layers/AtomicRefCountedWithFinalize.h gfx/layers/AtomicRefCountedWithFinalize.h
+index 37f0a9f592a1..9941ccb13f2d 100644
+--- gfx/layers/AtomicRefCountedWithFinalize.h
++++ gfx/layers/AtomicRefCountedWithFinalize.h
+@@ -101,8 +101,12 @@ public:
+ private:
+     void AddRef() {
+       MOZ_ASSERT(mRefCount >= 0, "AddRef() during/after Finalize()/dtor.");
+-      mRefCount++;
+-      NS_LOG_ADDREF(this, mRefCount, mName, sizeof(*this));
++#ifdef NS_BUILD_REFCNT_LOGGING
++      int currCount = ++mRefCount;
++      NS_LOG_ADDREF(this, currCount, mName, sizeof(*this));
++#else
++      ++mRefCount;
++#endif
+     }
+ 
+     void Release() {
+@@ -118,7 +122,9 @@ private:
+         ++mRefCount;
+         return;
+       }
++#ifdef NS_BUILD_REFCNT_LOGGING
+       NS_LOG_RELEASE(this, currCount, mName);
++#endif
+ 
+       if (0 == currCount) {
+         mRefCount = detail::DEAD;

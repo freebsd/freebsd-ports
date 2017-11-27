@@ -1,0 +1,929 @@
+commit 2b68b38709b1
+Author: Andrew McCreight <continuation@gmail.com>
+Date:   Tue Aug 22 14:24:11 2017 -0700
+
+    Bug 1377587, part 1 - Always act like __exposedProps__ is missing. r=krizsa
+    
+    This patch gently removes support for __exposedProps__ by changing
+    ExposedPropertiesOnly::check() to always return false, while still
+    failing silently in deny for some kinds of access.
+    
+    The tests that I changed all involve testing the behavior with
+    __exposedProps__. I adjusted them to expect it to fail, or to adjust
+    the error message they get when they fail. That seemed better than
+    deleting them entirely.
+    
+    Note that test_bug1065185.html had a bug, so that it never executed
+    the first case. I fixed that, and then fixed up the test to work when
+    __exposedProps__ is not supported.
+    
+    This also removes various bits of the test framework that use
+    __exposedProps__, but don't actually need to.
+    
+    MozReview-Commit-ID: 8fvkAmITmXY
+    
+    --HG--
+    extra : rebase_source : ef7e2c55adc12511f17f3865ebb46c343875f0b3
+---
+ addon-sdk/source/lib/sdk/console/plain-text.js     |  10 --
+ addon-sdk/source/lib/sdk/test/loader.js            |   5 -
+ .../addons/e10s-content/lib/test-content-script.js |   6 +-
+ addon-sdk/source/test/test-content-script.js       |   6 +-
+ devtools/server/tests/unit/test_objectgrips-17.js  |   4 -
+ dom/base/nsDeprecatedOperationList.h               |   1 -
+ dom/base/test/chrome/cpows_child.js                |  12 +-
+ dom/locales/en-US/chrome/dom/dom.properties        |   2 -
+ js/xpconnect/src/XPCJSRuntime.cpp                  |   1 -
+ js/xpconnect/src/xpcprivate.h                      |   1 -
+ js/xpconnect/tests/chrome/test_bug1065185.html     |   6 +-
+ js/xpconnect/tests/chrome/test_cows.xul            |  80 +++------
+ js/xpconnect/tests/chrome/test_exposeInDerived.xul |  13 +-
+ js/xpconnect/tests/unit/test_bug1082450.js         |  20 +--
+ js/xpconnect/tests/unit/test_bug780370.js          |   7 +-
+ js/xpconnect/tests/unit/test_bug813901.js          |   2 +-
+ js/xpconnect/tests/unit/test_bug853709.js          |   4 +-
+ js/xpconnect/tests/unit/test_bug854558.js          |   2 +-
+ js/xpconnect/tests/unit/test_bug930091.js          |   2 +-
+ js/xpconnect/wrappers/AccessCheck.cpp              | 179 ---------------------
+ js/xpconnect/wrappers/AccessCheck.h                |  11 +-
+ js/xpconnect/wrappers/ChromeObjectWrapper.h        |   6 +-
+ js/xpconnect/wrappers/WrapperFactory.cpp           |   4 +-
+ js/xpconnect/wrappers/XrayWrapper.cpp              |   2 +-
+ testing/mochitest/tests/SimpleTest/ChromePowers.js |   9 --
+ .../specialpowers/content/MockPermissionPrompt.jsm |  12 --
+ .../components/addoncompat/RemoteAddonsParent.jsm  |   2 +-
+ 27 files changed, 74 insertions(+), 335 deletions(-)
+
+diff --git addon-sdk/source/lib/sdk/console/plain-text.js addon-sdk/source/lib/sdk/console/plain-text.js
+index 0e44cf106d52..07b8eb629e12 100644
+--- addon-sdk/source/lib/sdk/console/plain-text.js
++++ addon-sdk/source/lib/sdk/console/plain-text.js
+@@ -62,16 +62,6 @@ function PlainTextConsole(print, innerID) {
+     }
+   });
+ 
+-  // We defined the `__exposedProps__` in our console chrome object.
+-  //
+-  // Meanwhile we're investigating with the platform team if `__exposedProps__`
+-  // are needed, or are just a left-over.
+-
+-  console.__exposedProps__ = Object.keys(ConsoleAPI.prototype).reduce(function(exposed, prop) {
+-    exposed[prop] = "r";
+-    return exposed;
+-  }, {});
+-
+   Object.freeze(console);
+   return console;
+ };
+diff --git addon-sdk/source/lib/sdk/test/loader.js addon-sdk/source/lib/sdk/test/loader.js
+index 33ba2ca5a029..b555de63f02a 100644
+--- addon-sdk/source/lib/sdk/test/loader.js
++++ addon-sdk/source/lib/sdk/test/loader.js
+@@ -53,11 +53,6 @@ function HookedPlainTextConsole(hook, print, innerID) {
+   this.exception = hook.bind(null, "exception", innerID);
+   this.time = hook.bind(null, "time", innerID);
+   this.timeEnd = hook.bind(null, "timeEnd", innerID);
+-
+-  this.__exposedProps__ = {
+-    log: "rw", info: "rw", warn: "rw", error: "rw", debug: "rw",
+-    exception: "rw", time: "rw", timeEnd: "rw"
+-  };
+ }
+ 
+ // Creates a custom loader instance whose console module is hooked in order
+diff --git addon-sdk/source/test/addons/e10s-content/lib/test-content-script.js addon-sdk/source/test/addons/e10s-content/lib/test-content-script.js
+index 477895e40481..3dccfec618d3 100644
+--- addon-sdk/source/test/addons/e10s-content/lib/test-content-script.js
++++ addon-sdk/source/test/addons/e10s-content/lib/test-content-script.js
+@@ -444,7 +444,7 @@ exports["test Highlight toString Behavior"] = createProxyTest("", function (help
+   let strToString = helper.rawWindow.Object.prototype.toString.call("");
+   assert.ok(/\[object String.*\]/.test(strToString), "strings are strings");
+ 
+-  let o = {__exposedProps__:{}};
++  let o = {};
+   let objToString = helper.rawWindow.Object.prototype.toString.call(o);
+   assert.ok(/\[object Object.*\]/.test(objToString), "objects are objects");
+ 
+@@ -622,10 +622,6 @@ exports["test Functions"] = createProxyTest("", function (helper) {
+   helper.rawWindow.isEqual = function isEqual(a, b) {
+     return a == b;
+   };
+-  // bug 784116: workaround in order to allow proxy code to cache proxies on
+-  // these functions:
+-  helper.rawWindow.callFunction.__exposedProps__ = {__proxy: 'rw'};
+-  helper.rawWindow.isEqual.__exposedProps__ = {__proxy: 'rw'};
+ 
+   helper.createWorker(
+     'new ' + function ContentScriptScope() {
+diff --git addon-sdk/source/test/test-content-script.js addon-sdk/source/test/test-content-script.js
+index 709fb5a3aa91..a02e66f65eea 100644
+--- addon-sdk/source/test/test-content-script.js
++++ addon-sdk/source/test/test-content-script.js
+@@ -444,7 +444,7 @@ exports["test Highlight toString Behavior"] = createProxyTest("", function (help
+   let strToString = helper.rawWindow.Object.prototype.toString.call("");
+   assert.ok(/\[object String.*\]/.test(strToString), "strings are strings");
+ 
+-  let o = {__exposedProps__:{}};
++  let o = {};
+   let objToString = helper.rawWindow.Object.prototype.toString.call(o);
+   assert.ok(/\[object Object.*\]/.test(objToString), "objects are objects");
+ 
+@@ -622,10 +622,6 @@ exports["test Functions"] = createProxyTest("", function (helper) {
+   helper.rawWindow.isEqual = function isEqual(a, b) {
+     return a == b;
+   };
+-  // bug 784116: workaround in order to allow proxy code to cache proxies on
+-  // these functions:
+-  helper.rawWindow.callFunction.__exposedProps__ = {__proxy: 'rw'};
+-  helper.rawWindow.isEqual.__exposedProps__ = {__proxy: 'rw'};
+ 
+   helper.createWorker(
+     'new ' + function ContentScriptScope() {
+diff --git dom/base/nsDeprecatedOperationList.h dom/base/nsDeprecatedOperationList.h
+index 2523187c63a7..adcf4d9d8202 100644
+--- dom/base/nsDeprecatedOperationList.h
++++ dom/base/nsDeprecatedOperationList.h
+@@ -21,7 +21,6 @@ DEPRECATED_OPERATION(NodeValue)
+ DEPRECATED_OPERATION(TextContent)
+ DEPRECATED_OPERATION(EnablePrivilege)
+ DEPRECATED_OPERATION(DOMExceptionCode)
+-DEPRECATED_OPERATION(NoExposedProps)
+ DEPRECATED_OPERATION(MutationEvent)
+ DEPRECATED_OPERATION(Components)
+ DEPRECATED_OPERATION(PrefixedVisibilityAPI)
+diff --git dom/base/test/chrome/cpows_child.js dom/base/test/chrome/cpows_child.js
+index 6d240a7eaa51..fc7e3f2c9d0f 100644
+--- dom/base/test/chrome/cpows_child.js
++++ dom/base/test/chrome/cpows_child.js
+@@ -105,7 +105,13 @@ function parent_test(finish)
+ 
+   addMessageListener("cpows:from_parent", (msg) => {
+     let obj = msg.objects.obj;
+-    ok(obj.a == 1, "correct value from parent");
++    if (is_remote) {
++      ok(obj.a == undefined, "__exposedProps__ should not work");
++    } else {
++      // The same process test is not run as content, so the field can
++      // be accessed even though __exposedProps__ has been removed.
++      ok(obj.a == 1, "correct value from parent");
++    }
+ 
+     // Test that a CPOW reference to a function in the chrome process
+     // is callable from unprivileged content. Greasemonkey uses this
+@@ -260,11 +266,11 @@ function lifetime_test(finish)
+   var obj = {"will_die": {"f": 1}};
+   let [result] = sendRpcMessage("cpows:lifetime_test_1", {}, {obj: obj});
+   ok(result == 10, "got sync result");
+-  ok(obj.wont_die.f == 2, "got reverse CPOW");
++  ok(obj.wont_die.f == undefined, "got reverse CPOW");
+   obj.will_die = null;
+   Components.utils.schedulePreciseGC(function() {
+     addMessageListener("cpows:lifetime_test_3", (msg) => {
+-      ok(obj.wont_die.f == 2, "reverse CPOW still works");
++      ok(obj.wont_die.f == undefined, "reverse CPOW still works");
+       finish();
+     });
+     sendRpcMessage("cpows:lifetime_test_2");
+diff --git dom/locales/en-US/chrome/dom/dom.properties dom/locales/en-US/chrome/dom/dom.properties
+index 5c94a580287a..ac9dbed58e08 100644
+--- dom/locales/en-US/chrome/dom/dom.properties
++++ dom/locales/en-US/chrome/dom/dom.properties
+@@ -154,8 +154,6 @@ MediaEMENoCapabilitiesDeprecatedWarning=Calling navigator.requestMediaKeySystemA
+ MediaEMENoCodecsDeprecatedWarning=Calling navigator.requestMediaKeySystemAccess() (at %S) passing a candidate MediaKeySystemConfiguration containing audioCapabilities or videoCapabilities without a contentType with a “codecs” string is deprecated and will soon become unsupported.
+ # LOCALIZATION NOTE: Do not translate "DOMException", "code" and "name"
+ DOMExceptionCodeWarning=Use of DOMException’s code attribute is deprecated. Use name instead.
+-# LOCALIZATION NOTE: Do not translate "__exposedProps__"
+-NoExposedPropsWarning=Exposing chrome JS objects to content without __exposedProps__ is insecure and deprecated. See https://developer.mozilla.org/en/XPConnect_wrappers for more information.
+ # LOCALIZATION NOTE: Do not translate "Mutation Event" and "MutationObserver"
+ MutationEventWarning=Use of Mutation Events is deprecated. Use MutationObserver instead.
+ # LOCALIZATION NOTE: Do not translate "Components"
+diff --git js/xpconnect/src/XPCJSRuntime.cpp js/xpconnect/src/XPCJSRuntime.cpp
+index 455b9f8e963f..ff9aea0a41eb 100644
+--- js/xpconnect/src/XPCJSRuntime.cpp
++++ js/xpconnect/src/XPCJSRuntime.cpp
+@@ -93,7 +93,6 @@ const char* const XPCJSRuntime::mStrings[] = {
+     "item",                 // IDX_ITEM
+     "__proto__",            // IDX_PROTO
+     "__iterator__",         // IDX_ITERATOR
+-    "__exposedProps__",     // IDX_EXPOSEDPROPS
+     "eval",                 // IDX_EVAL
+     "controllers",          // IDX_CONTROLLERS
+     "Controllers",          // IDX_CONTROLLERS_CLASS
+diff --git js/xpconnect/src/xpcprivate.h js/xpconnect/src/xpcprivate.h
+index fb7e43c22cd0..5d877f09d301 100644
+--- js/xpconnect/src/xpcprivate.h
++++ js/xpconnect/src/xpcprivate.h
+@@ -460,7 +460,6 @@ public:
+         IDX_ITEM                    ,
+         IDX_PROTO                   ,
+         IDX_ITERATOR                ,
+-        IDX_EXPOSEDPROPS            ,
+         IDX_EVAL                    ,
+         IDX_CONTROLLERS             ,
+         IDX_CONTROLLERS_CLASS       ,
+diff --git js/xpconnect/tests/chrome/test_bug1065185.html js/xpconnect/tests/chrome/test_bug1065185.html
+index cdd65326f9c8..7ea81fc8aa6f 100644
+--- js/xpconnect/tests/chrome/test_bug1065185.html
++++ js/xpconnect/tests/chrome/test_bug1065185.html
+@@ -25,11 +25,11 @@ https://bugzilla.mozilla.org/show_bug.cgi?id=1065185
+ 
+   var gLoadCount = 0;
+   function loaded() {
+-    switch(++gLoadCount) {
++    switch(gLoadCount++) {
+       case 0:
+-        doMonitor([]);
++        doMonitor([/access to property "a"/i]);
+         window[0].wrappedJSObject.probe = { a: 2, __exposedProps__: { 'a': 'r' } };
+-        is(window[0].eval('probe.a'), 2, "Accessed exposed prop");
++        is(window[0].eval('probe.a'), undefined, "Accessed exposed prop");
+         endMonitor();
+         break;
+       case 1:
+diff --git js/xpconnect/tests/chrome/test_cows.xul js/xpconnect/tests/chrome/test_cows.xul
+index 75c5250dd150..adfdd686540b 100644
+--- js/xpconnect/tests/chrome/test_cows.xul
++++ js/xpconnect/tests/chrome/test_cows.xul
+@@ -49,13 +49,6 @@ sandbox.getCOW = getCOW;
+ const TEST_API = ['is', 'isnot', 'ok', 'todo_is', 'todo_isnot', 'todo'];
+ TEST_API.forEach(function(name) { sandbox[name] = window[name]; });
+ 
+-sandbox.alienObject = {
+-  __exposedProps__: {funProp: 'r'},
+-  funProp: function foo(x) {
+-    return x + 1;
+-  }
+-};
+-
+ sandbox.chromeGet = function (obj, prop) { return obj[prop]; };
+ 
+ function COWTests() {
+@@ -74,17 +67,6 @@ function COWTests() {
+     // functions like assertIsWritable(myObj, 'someproperty') might
+     // be useful.
+ 
+-    function isProp(obj, propName, value, desc) {
+-      try {
+-          is(obj[propName], value, "getting " + propName + " on " + desc);
+-          ok(propName in obj,
+-             propName + " on " + desc + " should exist");
+-          ok(Object.hasOwnProperty.call(obj, propName),
+-             propName + " on " + desc + " should exist");
+-      } catch (e) {
+-          ok(false, "getting " + propName + " on " + desc + " threw " + e);
+-      }
+-    }
+     function isPropHidden(obj, propName, desc) {
+       try {
+           is(obj[propName], undefined,
+@@ -103,7 +85,7 @@ function COWTests() {
+     var empty = {};
+     var nonempty = {foo: 42, bar: 33};
+     is(getCOW(empty).foo, undefined,
+-       "shouldn't throw when accessing exposed properties that doesn't exist");
++       "shouldn't throw when accessing exposed properties that don't exist");
+ 
+     PROPS_TO_TEST.forEach(function(name) {
+         isPropHidden(getCOW(nonempty), name, "object without exposedProps");
+@@ -135,18 +117,12 @@ function COWTests() {
+     var strict = { __exposedProps__: { foo: "r" }, foo: "foo property" };
+     var strictCOWr = getCOW(strict);
+     PROPS_TO_TEST.forEach(function(name) {
+-        if (name == "foo") {
+-            isProp(strictCOWr, name, "foo property",
+-                   "object with exposed 'foo'");
+-        }
+-        else {
+-            isPropHidden(strictCOW, name, "object with exposed 'foo'");
+-        }
++        isPropHidden(strictCOW, name, "object with exposed 'foo'");
+     });
+-    is(getNames(strictCOWr).length, 1,
+-       "object with exposedProps only enumerate exposed props");
+-    is(getNames(strictCOWr)[0], "foo",
+-       "object with exposedProps only enumerate exposed props");
++    is(getNames(strictCOWr).length, 0,
++       "exposed props does not enumerate anything");
++    is(getNames(strictCOWr)[0], undefined,
++       "exposed props does not enumerate anything");
+ 
+     // Test writable property
+     var writable = getCOW({ __exposedProps__: {foo: 'w'}});
+@@ -154,25 +130,18 @@ function COWTests() {
+         ok(!("foo" in writable),
+            "non-existing write-only property shouldn't exist");
+         writable.foo = 5;
+-        is(chromeGet(writable, "foo"), 5, "writing to a write-only exposed prop works");
+-        todo("foo" in writable,
+-             "existing write-only property should exist");
+-    } catch (e) {
+-        ok(false, "writing to a write-only exposed prop shouldn't throw " + e);
+-    }
+-    try {
+-        writable.foo;
+-        todo(false, "reading from a write-only exposed prop should throw");
++        ok(false, "writing to a write-only exposed prop should throw");
+     } catch (e) {
+-        todo(/Permission denied/.test(e),
+-             "reading from a write-only exposed prop should throw");
++        ok(/Permission denied/.test(e),
++           "writing to a write-only exposed prop should throw the right error");
+     }
++    is(writable.foo, undefined,
++       "reading from a write-only exposed prop should return undefined");
+     try {
+         delete writable.foo;
+-        is(chromeGet(writable, "foo"), undefined,
+-           "deleting a write-only exposed prop works");
++        ok(false, "deleting a write-only exposed prop should throw");
+     } catch (e) {
+-        ok(false, "deleting a write-only exposed prop shouldn't throw " + e);
++        ok(true, "deleting a write-only exposed prop should throw " + e);
+     }
+ 
+     // Test readable property
+@@ -180,8 +149,8 @@ function COWTests() {
+                      foo: 5,
+                      bar: 6 };
+     try {
+-        isProp(getCOW(readable), "foo", 5,
+-               "reading from a readable exposed prop works");
++        isPropHidden(getCOW(readable), "foo", undefined,
++                     "reading from a readable exposed prop shouldn't work");
+     } catch (e) {
+         ok(false, "reading from a readable exposed prop shouldn't throw " + e);
+     }
+@@ -202,8 +171,7 @@ function COWTests() {
+ 
+     try {
+         var props = getNames(getCOW(readable));
+-        is(props.length, 1, "COW w/ one exposed prop should enumerate once");
+-        is(props[0], 'foo', "COW w/ one exposed prop should enumerate it");
++        is(props.length, 0, "COW w/ one exposed prop should not enumerate");
+     } catch (e) {
+         ok(false, "COW w/ a readable prop should not raise exc " +
+                   "on enumeration: " + e);
+@@ -215,21 +183,17 @@ function COWTests() {
+         ok(!("foo" in readwrite),
+            "non-existing readwrite property shouldn't exist");
+         readwrite.foo = 5;
+-        is(readwrite.foo, 5, "writing to a readwrite exposed prop looks like it worked");
+-        is(chromeGet(readwrite, "foo"), 5, "writing to a readwrite exposed prop works");
+-        ok("foo" in readwrite,
+-           "existing readwrite property should exist");
++        ok(false, "writing to a readwrite exposed prop should throw");
+     } catch (e) {
+-        ok(false, "writing to a readwrite exposed prop shouldn't throw " + e);
++        ok(/Permission denied/.test(e),
++           "writing to a readwrite exposed prop should throw the right error");
+     }
+     try {
+         delete readwrite.foo;
+-        is(readwrite.foo, undefined, "deleting readwrite prop looks like it worked");
+-        ok(!("foo" in readwrite), "deleting readwrite prop looks like it really worked");
+-        is(chromeGet(readwrite, "foo"), undefined,
+-           "deleting a readwrite exposed prop works");
++        ok(false, "deleting a readwrite prop should throw");
+     } catch (e) {
+-        ok(false, "deleting a readwrite exposed prop shouldn't throw " + e);
++        ok(/Permission denied/.test(e),
++           "deleting a readwrite exposed prop should throw the right error");
+     }
+ 
+     // Readables and functions
+diff --git js/xpconnect/tests/chrome/test_exposeInDerived.xul js/xpconnect/tests/chrome/test_exposeInDerived.xul
+index 2ed3bb91e7fd..7e6c24e56db1 100644
+--- js/xpconnect/tests/chrome/test_exposeInDerived.xul
++++ js/xpconnect/tests/chrome/test_exposeInDerived.xul
+@@ -17,7 +17,7 @@ https://bugzilla.mozilla.org/show_bug.cgi?id=804630
+   <!-- test code goes here -->
+   <script type="application/javascript">
+   <![CDATA[
+-  /** Test to make sure that COWed objects can expose properties from their prototypes. **/
++  /** Test to make sure that COWed objects can't expose properties from their prototypes. **/
+   const Cu = Components.utils;
+ 
+   // Set up the sandbox.
+@@ -25,7 +25,7 @@ https://bugzilla.mozilla.org/show_bug.cgi?id=804630
+   sb.ok = ok;
+   sb.is = is;
+ 
+-  // Make a chrome object that exposes objects off its prototype.
++  // Make a chrome object that tries to expose objects off its prototype.
+   sb.proto = { read: 42, readWrite: 32, __exposedProps__: {} };
+   sb.obj = { __exposedProps__: { read: 'r', readWrite: 'rw' } };
+   sb.obj.__proto__ = sb.proto;
+@@ -36,10 +36,11 @@ https://bugzilla.mozilla.org/show_bug.cgi?id=804630
+                    'try { proto.readWrite = 12; wrote = true; } catch(e) {} ' +
+                    ' ok(!wrote, "Should not write proto property");', sb);
+ 
+-  // Make sure we can access the exposed properties via the derived object.
+-  Cu.evalInSandbox('is(obj.read, 42, "obj.read accessible");', sb);
+-  Cu.evalInSandbox('is(obj.readWrite, 32, "obj.readWrite is readable");', sb);
+-  Cu.evalInSandbox('obj.readWrite = 8; is(obj.readWrite, 8, "obj.readWrite is writable");', sb);
++  // Make sure we can't access the exposed properties via the derived object.
++  Cu.evalInSandbox('is(obj.read, undefined, "obj.read inaccessible");', sb);
++  Cu.evalInSandbox('is(obj.readWrite, undefined, "obj.readWrite is not readable");', sb);
++  Cu.evalInSandbox('try { obj.readWrite = 8; ok(false, "obj.readWrite is not writable"); } catch (e) {};',
++                   sb);
+ 
+   ]]>
+   </script>
+diff --git js/xpconnect/tests/unit/test_bug1082450.js js/xpconnect/tests/unit/test_bug1082450.js
+index 07f45f06beef..5880fcbcd4e6 100644
+--- js/xpconnect/tests/unit/test_bug1082450.js
++++ js/xpconnect/tests/unit/test_bug1082450.js
+@@ -5,9 +5,9 @@ function run_test() {
+   function checkThrows(str, rgxp) {
+     try {
+       sb.eval(str);
+-      do_check_true(false);
++      do_check_true(false, "eval should have thrown");
+     } catch (e) {
+-      do_check_true(rgxp.test(e));
++      do_check_true(rgxp.test(e), "error message should match");
+     }
+   }
+ 
+@@ -29,12 +29,12 @@ function run_test() {
+                         chromeCallableValueProp: 'r' }
+   };
+ 
+-  do_check_eq(sb.eval('exposed.simpleValueProp'), 42);
+-  do_check_eq(sb.eval('exposed.objectValueProp.val'), 42);
+-  checkThrows('exposed.getterProp;', /privileged accessor/i);
+-  checkThrows('exposed.setterProp = 42;', /privileged accessor/i);
+-  checkThrows('exposed.getterSetterProp;', /privileged accessor/i);
+-  checkThrows('exposed.getterSetterProp = 42;', /privileged accessor/i);
+-  do_check_eq(sb.eval('exposed.contentCallableValueProp()'), 42);
+-  checkThrows('exposed.chromeCallableValueProp();', /privileged or cross-origin callable/i);
++  do_check_eq(sb.eval('exposed.simpleValueProp'), undefined);
++  do_check_eq(sb.eval('exposed.objectValueProp'), undefined);
++  do_check_eq(sb.eval('exposed.getterProp;'), undefined);
++  do_check_eq(sb.eval('exposed.getterSetterProp;'), undefined);
++  checkThrows('exposed.setterProp = 42;', /Permission denied/i);
++  checkThrows('exposed.getterSetterProp = 42;', /Permission denied/i);
++  do_check_eq(sb.eval('exposed.contentCallableValueProp'), undefined);
++  checkThrows('exposed.chromeCallableValueProp();', /is not a function/i);
+ }
+diff --git js/xpconnect/tests/unit/test_bug780370.js js/xpconnect/tests/unit/test_bug780370.js
+index 40d6f9748015..7ae757f0cd01 100644
+--- js/xpconnect/tests/unit/test_bug780370.js
++++ js/xpconnect/tests/unit/test_bug780370.js
+@@ -14,10 +14,5 @@ function run_test()
+   var sb = Cu.Sandbox("http://www.example.com");
+   sb.obj = { foo: 42, __exposedProps__: { hasOwnProperty: 'r' } };
+   do_check_eq(Cu.evalInSandbox('typeof obj.foo', sb), 'undefined', "COW works as expected");
+-  try {
+-    Cu.evalInSandbox('obj.hasOwnProperty', sb);
+-    do_check_true(false);
+-  } catch (e) {
+-    do_check_true(/privileged or cross-origin callable/i.test(e));
+-  }
++  do_check_eq(Cu.evalInSandbox('obj.hasOwnProperty', sb), undefined);
+ }
+diff --git js/xpconnect/tests/unit/test_bug813901.js js/xpconnect/tests/unit/test_bug813901.js
+index 42f981581b51..2efc6539e879 100644
+--- js/xpconnect/tests/unit/test_bug813901.js
++++ js/xpconnect/tests/unit/test_bug813901.js
+@@ -21,5 +21,5 @@ function run_test() {
+   checkThrows('obj.foo = 3;', sb, /denied/);
+   Cu.evalInSandbox("var p = {__exposedProps__: {foo: 'rw'}};", sb);
+   sb.obj.__proto__ = sb.p;
+-  checkThrows('obj.foo = 4;', sb, /__exposedProps__/);
++  checkThrows('obj.foo = 4;', sb, /denied/);
+ }
+diff --git js/xpconnect/tests/unit/test_bug853709.js js/xpconnect/tests/unit/test_bug853709.js
+index c7e51757dc63..1667d2241f93 100644
+--- js/xpconnect/tests/unit/test_bug853709.js
++++ js/xpconnect/tests/unit/test_bug853709.js
+@@ -8,7 +8,7 @@ function setupChromeSandbox() {
+ function checkDefineThrows(sb, obj, prop, desc) {
+   var result = Cu.evalInSandbox('(function() { try { Object.defineProperty(' + obj + ', "' + prop + '", ' + desc.toSource() + '); return "nothrow"; } catch (e) { return e.toString(); }})();', sb);
+   do_check_neq(result, 'nothrow');
+-  do_check_true(!!/denied/.exec(result));
++  do_check_true(!!/denied|prohibited/.exec(result));
+   do_check_true(result.indexOf(prop) != -1); // Make sure the prop name is in the error message.
+ }
+ 
+@@ -19,7 +19,7 @@ function run_test() {
+   contentSB.chromeObj = chromeSB.chromeObj;
+   contentSB.chromeArr = chromeSB.chromeArr;
+ 
+-  do_check_eq(Cu.evalInSandbox('chromeObj.a', contentSB), 2);
++  do_check_eq(Cu.evalInSandbox('chromeObj.a', contentSB), undefined);
+   try {
+     Cu.evalInSandbox('chromeArr[1]', contentSB);
+     do_check_true(false);
+diff --git js/xpconnect/tests/unit/test_bug854558.js js/xpconnect/tests/unit/test_bug854558.js
+index d60d23a5baf8..574194dc3f52 100644
+--- js/xpconnect/tests/unit/test_bug854558.js
++++ js/xpconnect/tests/unit/test_bug854558.js
+@@ -7,5 +7,5 @@ function run_test() {
+   contentSB.foo = chromeSB.foo;
+   do_check_eq(Cu.evalInSandbox('foo.a', contentSB), undefined, "Default deny with no __exposedProps__");
+   Cu.evalInSandbox('this.foo.__exposedProps__ = {a: "r"}', chromeSB);
+-  do_check_eq(Cu.evalInSandbox('foo.a', contentSB), 2, "works with __exposedProps__");
++  do_check_eq(Cu.evalInSandbox('foo.a', contentSB), undefined, "Still not allowed with __exposedProps__");
+ }
+diff --git js/xpconnect/tests/unit/test_bug930091.js js/xpconnect/tests/unit/test_bug930091.js
+index aa11d5db2640..ecb2a60aed11 100644
+--- js/xpconnect/tests/unit/test_bug930091.js
++++ js/xpconnect/tests/unit/test_bug930091.js
+@@ -5,7 +5,7 @@ function checkThrows(fn) {
+     fn();
+     ok(false, "Should have thrown");
+   } catch (e) {
+-    do_check_true(/denied|insecure/.test(e));
++    do_check_true(/denied|insecure|prohibited/.test(e));
+   }
+ }
+ 
+diff --git js/xpconnect/wrappers/AccessCheck.cpp js/xpconnect/wrappers/AccessCheck.cpp
+index 07599ce7906a..b730310731e2 100644
+--- js/xpconnect/wrappers/AccessCheck.cpp
++++ js/xpconnect/wrappers/AccessCheck.cpp
+@@ -252,20 +252,6 @@ AccessCheck::checkPassToPrivilegedCode(JSContext* cx, HandleObject wrapper, Hand
+         return true;
+     }
+ 
+-    // COWs are fine to pass to chrome if and only if they have __exposedProps__,
+-    // since presumably content should never have a reason to pass an opaque
+-    // object back to chrome.
+-    if (AccessCheck::isChrome(js::UncheckedUnwrap(wrapper)) && WrapperFactory::IsCOW(obj)) {
+-        RootedObject target(cx, js::UncheckedUnwrap(obj));
+-        JSAutoCompartment ac(cx, target);
+-        RootedId id(cx, GetJSIDByIndex(cx, XPCJSContext::IDX_EXPOSEDPROPS));
+-        bool found = false;
+-        if (!JS_HasPropertyById(cx, target, id, &found))
+-            return false;
+-        if (found)
+-            return true;
+-    }
+-
+     // Same-origin wrappers are fine.
+     if (AccessCheck::wrapperSubsumes(obj))
+         return true;
+@@ -323,171 +309,6 @@ AccessCheck::reportCrossOriginDenial(JSContext* cx, JS::HandleId id,
+     MOZ_ALWAYS_TRUE(rv.MaybeSetPendingException(cx));
+ }
+ 
+-enum Access { READ = (1<<0), WRITE = (1<<1), NO_ACCESS = 0 };
+-
+-static void
+-EnterAndThrowASCII(JSContext* cx, JSObject* wrapper, const char* msg)
+-{
+-    JSAutoCompartment ac(cx, wrapper);
+-    JS_ReportErrorASCII(cx, "%s", msg);
+-}
+-
+-bool
+-ExposedPropertiesOnly::check(JSContext* cx, HandleObject wrapper, HandleId id, Wrapper::Action act)
+-{
+-    RootedObject wrappedObject(cx, Wrapper::wrappedObject(wrapper));
+-
+-    if (act == Wrapper::CALL)
+-        return false;
+-
+-    // For the case of getting a property descriptor, we allow if either GET or SET
+-    // is allowed, and rely on FilteringWrapper to filter out any disallowed accessors.
+-    if (act == Wrapper::GET_PROPERTY_DESCRIPTOR) {
+-        return check(cx, wrapper, id, Wrapper::GET) ||
+-               check(cx, wrapper, id, Wrapper::SET);
+-    }
+-
+-    RootedId exposedPropsId(cx, GetJSIDByIndex(cx, XPCJSContext::IDX_EXPOSEDPROPS));
+-
+-    // We need to enter the wrappee's compartment to look at __exposedProps__,
+-    // but we want to be in the wrapper's compartment if we call Deny().
+-    //
+-    // Unfortunately, |cx| can be in either compartment when we call ::check. :-(
+-    JSAutoCompartment ac(cx, wrappedObject);
+-
+-    bool found = false;
+-    if (!JS_HasPropertyById(cx, wrappedObject, exposedPropsId, &found))
+-        return false;
+-
+-    // If no __exposedProps__ existed, deny access.
+-    if (!found) {
+-        // Previously we automatically granted access to indexed properties and
+-        // .length for Array COWs. We're not doing that anymore, so make sure to
+-        // let people know what's going on.
+-        bool isArray;
+-        if (!JS_IsArrayObject(cx, wrappedObject, &isArray))
+-            return false;
+-        if (!isArray)
+-            isArray = JS_IsTypedArrayObject(wrappedObject);
+-        bool isIndexedAccessOnArray = isArray && JSID_IS_INT(id) && JSID_TO_INT(id) >= 0;
+-        bool isLengthAccessOnArray = isArray && JSID_IS_STRING(id) &&
+-                                     JS_FlatStringEqualsAscii(JSID_TO_FLAT_STRING(id), "length");
+-        if (isIndexedAccessOnArray || isLengthAccessOnArray) {
+-            JSAutoCompartment ac2(cx, wrapper);
+-            ReportWrapperDenial(cx, id, WrapperDenialForCOW,
+-                                "Access to elements and length of privileged Array not permitted");
+-        }
+-
+-        return false;
+-    }
+-
+-    if (id == JSID_VOID)
+-        return true;
+-
+-    Rooted<PropertyDescriptor> desc(cx);
+-    if (!JS_GetPropertyDescriptorById(cx, wrappedObject, exposedPropsId, &desc))
+-        return false;
+-
+-    if (!desc.object())
+-        return false;
+-
+-    if (desc.hasGetterOrSetter()) {
+-        EnterAndThrowASCII(cx, wrapper, "__exposedProps__ must be a value property");
+-        return false;
+-    }
+-
+-    RootedValue exposedProps(cx, desc.value());
+-    if (exposedProps.isNullOrUndefined())
+-        return false;
+-
+-    if (!exposedProps.isObject()) {
+-        EnterAndThrowASCII(cx, wrapper, "__exposedProps__ must be undefined, null, or an Object");
+-        return false;
+-    }
+-
+-    RootedObject hallpass(cx, &exposedProps.toObject());
+-
+-    if (!AccessCheck::subsumes(js::UncheckedUnwrap(hallpass), wrappedObject)) {
+-        EnterAndThrowASCII(cx, wrapper, "Invalid __exposedProps__");
+-        return false;
+-    }
+-
+-    Access access = NO_ACCESS;
+-
+-    if (!JS_GetPropertyDescriptorById(cx, hallpass, id, &desc)) {
+-        return false; // Error
+-    }
+-    if (!desc.object() || !desc.enumerable())
+-        return false;
+-
+-    if (!desc.value().isString()) {
+-        EnterAndThrowASCII(cx, wrapper, "property must be a string");
+-        return false;
+-    }
+-
+-    JSFlatString* flat = JS_FlattenString(cx, desc.value().toString());
+-    if (!flat)
+-        return false;
+-
+-    size_t length = JS_GetStringLength(JS_FORGET_STRING_FLATNESS(flat));
+-
+-    for (size_t i = 0; i < length; ++i) {
+-        char16_t ch = JS_GetFlatStringCharAt(flat, i);
+-        switch (ch) {
+-        case 'r':
+-            if (access & READ) {
+-                EnterAndThrowASCII(cx, wrapper, "duplicate 'readable' property flag");
+-                return false;
+-            }
+-            access = Access(access | READ);
+-            break;
+-
+-        case 'w':
+-            if (access & WRITE) {
+-                EnterAndThrowASCII(cx, wrapper, "duplicate 'writable' property flag");
+-                return false;
+-            }
+-            access = Access(access | WRITE);
+-            break;
+-
+-        default:
+-            EnterAndThrowASCII(cx, wrapper, "properties can only be readable or read and writable");
+-            return false;
+-        }
+-    }
+-
+-    if (access == NO_ACCESS) {
+-        EnterAndThrowASCII(cx, wrapper, "specified properties must have a permission bit set");
+-        return false;
+-    }
+-
+-    if ((act == Wrapper::SET && !(access & WRITE)) ||
+-        (act != Wrapper::SET && !(access & READ))) {
+-        return false;
+-    }
+-
+-    // Inspect the property on the underlying object to check for red flags.
+-    if (!JS_GetPropertyDescriptorById(cx, wrappedObject, id, &desc))
+-        return false;
+-
+-    // Reject accessor properties.
+-    if (desc.hasGetterOrSetter()) {
+-        EnterAndThrowASCII(cx, wrapper, "Exposing privileged accessor properties is prohibited");
+-        return false;
+-    }
+-
+-    // Reject privileged or cross-origin callables.
+-    if (desc.value().isObject()) {
+-        RootedObject maybeCallable(cx, js::UncheckedUnwrap(&desc.value().toObject()));
+-        if (JS::IsCallable(maybeCallable) && !AccessCheck::subsumes(wrapper, maybeCallable)) {
+-            EnterAndThrowASCII(cx, wrapper, "Exposing privileged or cross-origin callable is prohibited");
+-            return false;
+-        }
+-    }
+-
+-    return true;
+-}
+-
+ bool
+ ExposedPropertiesOnly::deny(JSContext* cx, js::Wrapper::Action act, HandleId id,
+                             bool mayThrow)
+diff --git js/xpconnect/wrappers/AccessCheck.h js/xpconnect/wrappers/AccessCheck.h
+index 678dce3e0b81..c4873760ab7a 100644
+--- js/xpconnect/wrappers/AccessCheck.h
++++ js/xpconnect/wrappers/AccessCheck.h
+@@ -104,10 +104,15 @@ struct CrossOriginAccessiblePropertiesOnly : public Policy {
+     }
+ };
+ 
+-// This policy only permits access to properties if they appear in the
+-// objects exposed properties list.
++// This class used to support permitting access to properties if they
++// appeared in an access list on the object, but now it acts like an
++// Opaque wrapper, with the exception that it fails silently for GET,
++// ENUMERATE, and GET_PROPERTY_DESCRIPTOR. This is done for backwards
++// compatibility. See bug 1397513.
+ struct ExposedPropertiesOnly : public Policy {
+-    static bool check(JSContext* cx, JS::HandleObject wrapper, JS::HandleId id, js::Wrapper::Action act);
++    static bool check(JSContext* cx, JS::HandleObject wrapper, JS::HandleId id, js::Wrapper::Action act) {
++        return false;
++    }
+ 
+     static bool deny(JSContext* cx, js::Wrapper::Action act, JS::HandleId id,
+                      bool mayThrow);
+diff --git js/xpconnect/wrappers/ChromeObjectWrapper.h js/xpconnect/wrappers/ChromeObjectWrapper.h
+index 8b273e470814..c17feed10b9a 100644
+--- js/xpconnect/wrappers/ChromeObjectWrapper.h
++++ js/xpconnect/wrappers/ChromeObjectWrapper.h
+@@ -16,9 +16,9 @@ namespace xpc {
+ struct ExposedPropertiesOnly;
+ 
+ // When a vanilla chrome JS object is exposed to content, we use a wrapper that
+-// supports __exposedProps__ for legacy reasons. For extra security, we override
+-// the traps that allow content to pass an object to chrome, and perform extra
+-// security checks on them.
++// fails silently on GET, ENUMERATE, and GET_PROPERTY_DESCRIPTOR for legacy
++// reasons. For extra security, we override the traps that allow content to pass
++// an object to chrome, and perform extra security checks on them.
+ #define ChromeObjectWrapperBase \
+   FilteringWrapper<js::CrossCompartmentSecurityWrapper, ExposedPropertiesOnly>
+ 
+diff --git js/xpconnect/wrappers/WrapperFactory.cpp js/xpconnect/wrappers/WrapperFactory.cpp
+index 6296f69fbea4..760d2c9afda8 100644
+--- js/xpconnect/wrappers/WrapperFactory.cpp
++++ js/xpconnect/wrappers/WrapperFactory.cpp
+@@ -514,8 +514,8 @@ WrapperFactory::Rewrap(JSContext* cx, HandleObject existing, HandleObject obj)
+             wrapper = &FilteringWrapper<CrossCompartmentSecurityWrapper, OpaqueWithCall>::singleton;
+         }
+ 
+-        // For Vanilla JSObjects exposed from chrome to content, we use a wrapper
+-        // that supports __exposedProps__. We'd like to get rid of these eventually,
++        // For vanilla JSObjects exposed from chrome to content, we use a wrapper
++        // that fails silently in a few cases. We'd like to get rid of this eventually,
+         // but in their current form they don't cause much trouble.
+         else if (IdentifyStandardInstance(obj) == JSProto_Object) {
+             wrapper = &ChromeObjectWrapper::singleton;
+diff --git js/xpconnect/wrappers/XrayWrapper.cpp js/xpconnect/wrappers/XrayWrapper.cpp
+index 44dd7cb47146..28e29ea13d93 100644
+--- js/xpconnect/wrappers/XrayWrapper.cpp
++++ js/xpconnect/wrappers/XrayWrapper.cpp
+@@ -291,7 +291,7 @@ ReportWrapperDenial(JSContext* cx, HandleId id, WrapperDenialType type, const ch
+         MOZ_ASSERT(type == WrapperDenialForCOW);
+         errorMessage.emplace("Security wrapper denied access to property %s on privileged "
+                              "Javascript object. Support for exposing privileged objects "
+-                             "to untrusted content via __exposedProps__ is being gradually "
++                             "to untrusted content via __exposedProps__ has been "
+                              "removed - use WebIDL bindings or Components.utils.cloneInto "
+                              "instead. Note that only the first denied property access from a "
+                              "given global object will be reported.",
+diff --git testing/mochitest/tests/SimpleTest/ChromePowers.js testing/mochitest/tests/SimpleTest/ChromePowers.js
+index 97de578157c0..7fbf66e2fd00 100644
+--- testing/mochitest/tests/SimpleTest/ChromePowers.js
++++ testing/mochitest/tests/SimpleTest/ChromePowers.js
+@@ -104,15 +104,6 @@ ChromePowers.prototype.executeAfterFlushingMessageQueue = function(aCallback) {
+   aCallback();
+ };
+ 
+-// Expose everything but internal APIs (starting with underscores) to
+-// web content.  We cannot use Object.keys to view SpecialPowers.prototype since
+-// we are using the functions from SpecialPowersAPI.prototype
+-ChromePowers.prototype.__exposedProps__ = {};
+-for (var i in ChromePowers.prototype) {
+-  if (i.charAt(0) != "_")
+-    ChromePowers.prototype.__exposedProps__[i] = "r";
+-}
+-
+ if ((window.parent !== null) &&
+     (window.parent !== undefined) &&
+     (window.parent.wrappedJSObject.SpecialPowers) &&
+diff --git testing/specialpowers/content/MockPermissionPrompt.jsm testing/specialpowers/content/MockPermissionPrompt.jsm
+index 71d0f5d2768a..1d86cc00e360 100644
+--- testing/specialpowers/content/MockPermissionPrompt.jsm
++++ testing/specialpowers/content/MockPermissionPrompt.jsm
+@@ -83,15 +83,3 @@ MockPermissionPromptInstance.prototype = {
+     request.allow();
+   }
+ };
+-
+-// Expose everything to content. We call reset() here so that all of the relevant
+-// lazy expandos get added.
+-MockPermissionPrompt.reset();
+-function exposeAll(obj) {
+-  var props = {};
+-  for (var prop in obj)
+-    props[prop] = "rw";
+-  obj.__exposedProps__ = props;
+-}
+-exposeAll(MockPermissionPrompt);
+-exposeAll(MockPermissionPromptInstance.prototype);
+diff --git toolkit/components/addoncompat/RemoteAddonsParent.jsm toolkit/components/addoncompat/RemoteAddonsParent.jsm
+index 1adbc0397729..d640c47d31f8 100644
+--- toolkit/components/addoncompat/RemoteAddonsParent.jsm
++++ toolkit/components/addoncompat/RemoteAddonsParent.jsm
+@@ -735,7 +735,7 @@ var SandboxParent = {
+     if (rest.length) {
+       // Do a shallow copy of the options object into the child
+       // process. This way we don't have to access it through a Chrome
+-      // object wrapper, which would require __exposedProps__.
++      // object wrapper, which would not let us access any properties.
+       //
+       // The only object property here is sandboxPrototype. We assume
+       // it's a child process object (since that's what Greasemonkey
+commit f89c72edb79e
+Author: Andrew McCreight <continuation@gmail.com>
+Date:   Thu Sep 7 11:17:16 2017 -0700
+
+    Bug 1377587, part 2 - Rename ExposedPropertiesOnly to OpaqueWithSilentFailing. r=krizsa
+    
+    This class doesn't have anything to do with __exposedProps__ any more,
+    so give it a more descriptive name. We'd still like to remove it
+    entirely eventually.
+    
+    MozReview-Commit-ID: 87KCpG6f8rI
+    
+    --HG--
+    extra : rebase_source : 98a51a6af0fc8446dbcd8efa083d6c79286279d3
+---
+ js/xpconnect/wrappers/AccessCheck.cpp       | 4 ++--
+ js/xpconnect/wrappers/AccessCheck.h         | 2 +-
+ js/xpconnect/wrappers/ChromeObjectWrapper.h | 4 ++--
+ 3 files changed, 5 insertions(+), 5 deletions(-)
+
+diff --git js/xpconnect/wrappers/AccessCheck.cpp js/xpconnect/wrappers/AccessCheck.cpp
+index b730310731e2..620f1f678f51 100644
+--- js/xpconnect/wrappers/AccessCheck.cpp
++++ js/xpconnect/wrappers/AccessCheck.cpp
+@@ -310,8 +310,8 @@ AccessCheck::reportCrossOriginDenial(JSContext* cx, JS::HandleId id,
+ }
+ 
+ bool
+-ExposedPropertiesOnly::deny(JSContext* cx, js::Wrapper::Action act, HandleId id,
+-                            bool mayThrow)
++OpaqueWithSilentFailing::deny(JSContext* cx, js::Wrapper::Action act, HandleId id,
++                              bool mayThrow)
+ {
+     // Fail silently for GET, ENUMERATE, and GET_PROPERTY_DESCRIPTOR.
+     if (act == js::Wrapper::GET || act == js::Wrapper::ENUMERATE ||
+diff --git js/xpconnect/wrappers/AccessCheck.h js/xpconnect/wrappers/AccessCheck.h
+index c4873760ab7a..6783258f8d94 100644
+--- js/xpconnect/wrappers/AccessCheck.h
++++ js/xpconnect/wrappers/AccessCheck.h
+@@ -109,7 +109,7 @@ struct CrossOriginAccessiblePropertiesOnly : public Policy {
+ // Opaque wrapper, with the exception that it fails silently for GET,
+ // ENUMERATE, and GET_PROPERTY_DESCRIPTOR. This is done for backwards
+ // compatibility. See bug 1397513.
+-struct ExposedPropertiesOnly : public Policy {
++struct OpaqueWithSilentFailing : public Policy {
+     static bool check(JSContext* cx, JS::HandleObject wrapper, JS::HandleId id, js::Wrapper::Action act) {
+         return false;
+     }
+diff --git js/xpconnect/wrappers/ChromeObjectWrapper.h js/xpconnect/wrappers/ChromeObjectWrapper.h
+index c17feed10b9a..da4870237501 100644
+--- js/xpconnect/wrappers/ChromeObjectWrapper.h
++++ js/xpconnect/wrappers/ChromeObjectWrapper.h
+@@ -13,14 +13,14 @@
+ 
+ namespace xpc {
+ 
+-struct ExposedPropertiesOnly;
++struct OpaqueWithSilentFailing;
+ 
+ // When a vanilla chrome JS object is exposed to content, we use a wrapper that
+ // fails silently on GET, ENUMERATE, and GET_PROPERTY_DESCRIPTOR for legacy
+ // reasons. For extra security, we override the traps that allow content to pass
+ // an object to chrome, and perform extra security checks on them.
+ #define ChromeObjectWrapperBase \
+-  FilteringWrapper<js::CrossCompartmentSecurityWrapper, ExposedPropertiesOnly>
++  FilteringWrapper<js::CrossCompartmentSecurityWrapper, OpaqueWithSilentFailing>
+ 
+ class ChromeObjectWrapper : public ChromeObjectWrapperBase
+ {
+

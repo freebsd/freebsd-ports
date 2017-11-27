@@ -1,0 +1,55 @@
+commit 5b8d4bd1ffaa
+Author: Jonathan Kew <jkew@mozilla.com>
+Date:   Wed Oct 18 10:24:03 2017 +0100
+
+    Bug 1408782 - Force punycode display for IDNs with a <dotless-i, combining mark above> sequence. r=valentin a=ritu
+---
+ netwerk/dns/nsIDNService.cpp       | 9 +++++++++
+ netwerk/test/unit/test_idn_urls.js | 7 +++++++
+ 2 files changed, 16 insertions(+)
+
+diff --git netwerk/dns/nsIDNService.cpp netwerk/dns/nsIDNService.cpp
+index e07910a7e70d..a89b4301ea07 100644
+--- netwerk/dns/nsIDNService.cpp
++++ netwerk/dns/nsIDNService.cpp
+@@ -867,6 +867,7 @@ bool nsIDNService::isLabelSafe(const nsAString &label)
+ 
+   Script lastScript = Script::INVALID;
+   uint32_t previousChar = 0;
++  uint32_t baseChar = 0; // last non-diacritic seen (base char for marks)
+   uint32_t savedNumberingSystem = 0;
+ // Simplified/Traditional Chinese check temporarily disabled -- bug 857481
+ #if 0
+@@ -948,6 +949,14 @@ bool nsIDNService::isLabelSafe(const nsAString &label)
+           }
+         }
+       }
++      // Check for diacritics on dotless-i, which would be indistinguishable
++      // from normal accented letter i.
++      if (baseChar == 0x0131 &&
++          ((ch >= 0x0300 && ch <= 0x0314) || ch == 0x031a)) {
++        return false;
++      }
++    } else {
++      baseChar = ch;
+     }
+ 
+     // Simplified/Traditional Chinese check temporarily disabled -- bug 857481
+diff --git netwerk/test/unit/test_idn_urls.js netwerk/test/unit/test_idn_urls.js
+index f39a9650a13b..e0d73ca512ee 100644
+--- netwerk/test/unit/test_idn_urls.js
++++ netwerk/test/unit/test_idn_urls.js
+@@ -300,6 +300,13 @@ const testcases = [
+     ["goo\u0650gle", "xn--google-yri", false, false, false],
+     // ...but Arabic diacritics are allowed on Arabic text
+     ["العَرَبِي", "xn--mgbc0a5a6cxbzabt", false, true, true],
++
++    // Accents above dotless-i are not allowed
++    ["na\u0131\u0308ve", "xn--nave-mza04z", false, false, false],
++    ["d\u0131\u0302ner", "xn--dner-lza40z", false, false, false],
++    // but the corresponding accented-i (based on dotted i) is OK
++    ["na\u00efve.com", "xn--nave-6pa.com", false, true, true],
++    ["d\u00eener.com", "xn--dner-0pa.com", false, true, true],
+ ];
+ 
+ const profiles = ["ASCII", "high", "moderate"];
