@@ -63,19 +63,13 @@ PLIST_SUB+=		RUST_TARGET=${RUST_TARGET}
 
 USES=		compiler gmake libedit pkgconfig python:2.7,build ssl
 
-OPTIONS_DEFINE=		DOCS GDB LLNEXTGEN PORT_LLVM SOURCES
+OPTIONS_DEFINE=		DOCS GDB LLNEXTGEN SOURCES
 GDB_DESC=		Install ports gdb (necessary for debugging rust programs)
 LLNEXTGEN_DESC=		Build with grammar verification
 SOURCES_DESC=		Install source files
 
 GDB_RUN_DEPENDS=		${LOCALBASE}/bin/gdb:devel/gdb
 LLNEXTGEN_BUILD_DEPENDS=	LLnextgen:devel/llnextgen
-
-# Rust may pass more regression tests with bundled LLVM
-PORT_LLVM_DESC=	Build against devel/llvm${LLVM_VER} instead of bundled version
-PORT_LLVM_BUILD_DEPENDS=	${LOCALBASE}/bin/FileCheck${LLVM_VER}:devel/llvm${LLVM_VER}
-LLVM_VER?=			40
-LLVM_CONFIG=			${LOCALBASE}/bin/llvm-config${LLVM_VER}
 
 # Rust manifests list all files and directories installed by rust-installer.
 # We use them in:
@@ -236,12 +230,6 @@ post-configure-DOCS-on:
 
 post-configure-DOCS-off:
 	${REINPLACE_CMD} -e 's,%DOCS%,false,' ${WRKSRC}/config.toml
-
-post-configure-PORT_LLVM-on:
-	${REINPLACE_CMD} -e 's,%LLVM_CONFIG%,${LLVM_CONFIG},' ${WRKSRC}/config.toml
-
-post-configure-PORT_LLVM-off:
-	${REINPLACE_CMD} -e '/%LLVM_CONFIG%/d' ${WRKSRC}/config.toml
 
 do-build:
 	cd ${WRKSRC} && \
