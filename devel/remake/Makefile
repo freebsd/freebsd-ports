@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	remake
-PORTVERSION=	1.3
+PORTVERSION=	1.4
 CATEGORIES=	devel
 MASTER_SITES=	SF/bashdb/remake/4.2+dbg-${PORTVERSION}/
 DISTNAME=	remake-4.2.1+dbg-${PORTVERSION}
