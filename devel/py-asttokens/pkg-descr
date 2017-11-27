@@ -1,0 +1,9 @@
+The asttokens module annotates Python abstract syntax trees (ASTs)
+with the positions of tokens and text in the source code that
+generated them.
+
+It makes it possible for tools that work with logical AST nodes to
+find the particular text that resulted in those nodes, for example
+for automated refactoring or highlighting.
+
+WWW: https://pypi.python.org/pypi/asttokens
