@@ -19,13 +19,17 @@
 #				Default: 8000
 # suricata_netmap (str):	Set to YES to enable netmap (Inline Mode)
 #				Default: NO
-
+# suricata_user (str):		Set the user to run suricata as
+#				Default: root
+# suricata_pidfile (str):	Pidfile to store pid of suricata process
+#				Default: /var/run/suricata.pid
 
 . /etc/rc.subr
 
 name="suricata"
 rcvar=suricata_enable
 
+start_precmd="suricata_prestart"
 command="%%PREFIX%%/bin/suricata"
 
 load_rc_config $name
@@ -35,6 +39,8 @@ load_rc_config $name
 [ -z "$suricata_flags" ]	&& suricata_flags="-D"
 [ -z "$suricata_divertport" ]	&& suricata_divertport="8000"
 [ -z "$suricata_netmap" ]	&& suricata_netmap="NO"
+[ -z "$suricata_user" ]		&& suricata_user="root"
+[ -z "$suricata_pidfile" ]	&& suricata_pidfile="/var/run/suricata.pid"
 
 if [ -n "$suricata_interface" ]; then
 	for interface in $suricata_interface; do
@@ -47,9 +53,16 @@ else
 	info "Inline Mode on divert port $suricata_divertport (suricata_interface not defined)"
 fi
 
-pidfile="/var/run/suricata.pid"
+pidfile=$suricata_pidfile
 suricata_flags="$suricata_flags --pidfile $pidfile"
 
 [ -n "$suricata_conf" ]	&& suricata_flags="$suricata_flags -c $suricata_conf"
+
+suricata_prestart()
+{
+	if ! run_rc_command status > /dev/null; then
+		rm -f "$pidfile"
+	fi
+}
 
 run_rc_command "$1"
