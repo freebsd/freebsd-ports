@@ -1,0 +1,47 @@
+commit f2e38d27a7e3
+Author: Emilio Cobos Álvarez <emilio@crisal.io>
+Date:   Tue Oct 24 17:44:12 2017 -0400
+
+    Bug 1406750 - Use GetStyleContextNoFlush in UpdateCurrentStyleSources, and avoid flushing mPresShell twice. r=bz, a=abillings
+    
+    MozReview-Commit-ID: Nfu9FZcIzQ
+    
+    --HG--
+    extra : source : c73db1c3b6e78a5fad216ca7cc7e4ce312c30a98
+    extra : amend_source : 9b31fa281368a9dc39a4a949cb85ae2f354a4308
+---
+ layout/style/nsComputedDOMStyle.cpp | 14 ++++++++++----
+ 1 file changed, 10 insertions(+), 4 deletions(-)
+
+diff --git layout/style/nsComputedDOMStyle.cpp layout/style/nsComputedDOMStyle.cpp
+index 062e00ffebc5..1aa07e691d4a 100644
+--- layout/style/nsComputedDOMStyle.cpp
++++ layout/style/nsComputedDOMStyle.cpp
+@@ -832,6 +832,11 @@ nsComputedDOMStyle::UpdateCurrentStyleSources(bool aNeedsLayoutFlush)
+     return;
+   }
+ 
++  nsCOMPtr<nsIPresShell> presShellForContent = GetPresShellForContent(mContent);
++  if (presShellForContent && presShellForContent != mPresShell) {
++    presShellForContent->FlushPendingNotifications(FlushType::Style);
++  }
++
+   // We need to use GetUndisplayedRestyleGeneration instead of
+   // GetRestyleGeneration, because the caching of mStyleContext is an
+   // optimization that is useful only for displayed elements.
+@@ -922,10 +927,11 @@ nsComputedDOMStyle::UpdateCurrentStyleSources(bool aNeedsLayoutFlush)
+ #endif
+     // Need to resolve a style context
+     RefPtr<nsStyleContext> resolvedStyleContext =
+-      nsComputedDOMStyle::GetStyleContext(mContent->AsElement(),
+-                                          mPseudo,
+-                                          mPresShell,
+-                                          mStyleType);
++      nsComputedDOMStyle::GetStyleContextNoFlush(
++          mContent->AsElement(),
++          mPseudo,
++          presShellForContent ? presShellForContent.get() : mPresShell,
++          mStyleType);
+     if (!resolvedStyleContext) {
+       ClearStyleContext();
+       return;

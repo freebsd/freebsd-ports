@@ -1,0 +1,49 @@
+commit 8ab8a207d511
+Author: Jamie Nicol <jnicol@mozilla.com>
+Date:   Mon Oct 9 17:48:59 2017 +0100
+
+    Bug 1395138 - Hold reference to layers in ContainerLayerComposite::mPrepared. r=mattwoodrow, a=sledru
+    
+    MozReview-Commit-ID: 6qUDRnRcFAw
+---
+ gfx/layers/composite/ContainerLayerComposite.cpp | 9 +++++----
+ 1 file changed, 5 insertions(+), 4 deletions(-)
+
+diff --git gfx/layers/composite/ContainerLayerComposite.cpp gfx/layers/composite/ContainerLayerComposite.cpp
+index aad2993629fc..28d9e79925a0 100755
+--- gfx/layers/composite/ContainerLayerComposite.cpp
++++ gfx/layers/composite/ContainerLayerComposite.cpp
+@@ -161,12 +161,12 @@ static gfx::IntRect ContainerVisibleRect(ContainerT* aContainer)
+ /* all of the per-layer prepared data we need to maintain */
+ struct PreparedLayer
+ {
+-  PreparedLayer(LayerComposite *aLayer,
++  PreparedLayer(Layer *aLayer,
+                 RenderTargetIntRect aClipRect,
+                 Maybe<gfx::Polygon>&& aGeometry)
+   : mLayer(aLayer), mClipRect(aClipRect), mGeometry(Move(aGeometry)) {}
+ 
+-  LayerComposite* mLayer;
++  RefPtr<Layer> mLayer;
+   RenderTargetIntRect mClipRect;
+   Maybe<Polygon> mGeometry;
+ };
+@@ -230,7 +230,8 @@ ContainerPrepare(ContainerT* aContainer,
+     CULLING_LOG("Preparing sublayer %p\n", layerToRender->GetLayer());
+ 
+     layerToRender->Prepare(clipRect);
+-    aContainer->mPrepared->mLayers.AppendElement(PreparedLayer(layerToRender, clipRect,
++    aContainer->mPrepared->mLayers.AppendElement(PreparedLayer(layerToRender->GetLayer(),
++                                                               clipRect,
+                                                                Move(layer.geometry)));
+   }
+ 
+@@ -408,7 +409,7 @@ RenderLayers(ContainerT* aContainer, LayerManagerComposite* aManager,
+     PreparedLayer& preparedData = aContainer->mPrepared->mLayers[i];
+ 
+     const gfx::IntRect clipRect = preparedData.mClipRect.ToUnknownRect();
+-    LayerComposite* layerToRender = preparedData.mLayer;
++    LayerComposite* layerToRender = static_cast<LayerComposite*>(preparedData.mLayer->ImplData());
+     const Maybe<gfx::Polygon>& childGeometry = preparedData.mGeometry;
+ 
+     Layer* layer = layerToRender->GetLayer();

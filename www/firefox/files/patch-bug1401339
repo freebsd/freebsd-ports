@@ -1,0 +1,76 @@
+commit 5d3c733f43dd
+Author: Gabriele Svelto <gsvelto@mozilla.com>
+Date:   Fri Sep 22 15:06:22 2017 +0200
+
+    Bug 1401339 - Look for libcurl under platform-specific paths; r=Dexter a=sylvestre
+    
+    MozReview-Commit-ID: 6wijqLsar56
+    
+    --HG--
+    extra : source : ebd3c3b2d64442c2b5eb7ab3e87c4b423311f3f4
+---
+ .../pingsender/pingsender_unix_common.cpp          | 40 +++++++++++++++-------
+ 1 file changed, 28 insertions(+), 12 deletions(-)
+
+diff --git toolkit/components/telemetry/pingsender/pingsender_unix_common.cpp toolkit/components/telemetry/pingsender/pingsender_unix_common.cpp
+index b1cea81f6288..ae20f4114193 100644
+--- toolkit/components/telemetry/pingsender/pingsender_unix_common.cpp
++++ toolkit/components/telemetry/pingsender/pingsender_unix_common.cpp
+@@ -80,29 +80,45 @@ CurlWrapper::~CurlWrapper()
+ bool
+ CurlWrapper::Init()
+ {
+-  // libcurl might show up under different names, try them all until we find it
++  const char* libcurlPaths[] = {
++    "/usr/lib",
++#ifdef XP_LINUX
++    "/usr/lib32",
++    "/usr/lib64",
++    "/usr/lib/i386-linux-gnu", // Debian 32-bit x86
++    "/usr/lib/x86_64-linux-gnu", // Debian 64-bit x86
++#endif // XP_LINUX
++  };
++
+   const char* libcurlNames[] = {
++#ifdef XP_LINUX
+     "libcurl.so",
+     "libcurl.so.4",
+     // Debian gives libcurl a different name when it is built against GnuTLS
++    "libcurl-gnutls.so",
+     "libcurl-gnutls.so.4",
+-    // Older libcurl if we can't find anything better
++    // Older versions in case we find nothing better
+     "libcurl.so.3",
+-#ifndef HAVE_64BIT_BUILD
+-    // 32-bit versions on 64-bit hosts
+-    "/usr/lib32/libcurl.so",
+-    "/usr/lib32/libcurl.so.4",
+-    "/usr/lib32/libcurl-gnutls.so.4",
+-    "/usr/lib32/libcurl.so.3",
+-#endif
++    "libcurl-gnutls.so.3", // See above for Debian
++#elif defined(XP_MACOSX)
+     // macOS
+     "libcurl.dylib",
+     "libcurl.4.dylib",
+-    "libcurl.3.dylib"
++    "libcurl.3.dylib",
++#endif
+   };
+ 
+-  for (const char* libname : libcurlNames) {
+-    mLib = dlopen(libname, RTLD_NOW);
++  // libcurl might show up under different names, try them all until we find it
++
++  for (const char* libpath : libcurlPaths) {
++    for (const char* libname : libcurlNames) {
++      string fullpath = string(libpath) + "/" + libname;
++      mLib = dlopen(fullpath.c_str(), RTLD_NOW);
++
++      if (mLib) {
++        break;
++      }
++    }
+ 
+     if (mLib) {
+       break;

@@ -1,0 +1,48 @@
+commit 5666a545d8a1
+Author: David Anderson <danderson@mozilla.com>
+Date:   Mon Oct 23 16:18:24 2017 -0400
+
+    Bug 1407032 - Reorder when GPUProcessHosts are destroyed. r=rhunt, a=ritu
+    
+    --HG--
+    extra : source : 2fb069813d832de4338028cf84c8dab483ba0fda
+---
+ gfx/ipc/GPUProcessHost.cpp | 19 ++++++-------------
+ 1 file changed, 6 insertions(+), 13 deletions(-)
+
+diff --git gfx/ipc/GPUProcessHost.cpp gfx/ipc/GPUProcessHost.cpp
+index 544baea242cf..249decc52a95 100644
+--- gfx/ipc/GPUProcessHost.cpp
++++ gfx/ipc/GPUProcessHost.cpp
+@@ -190,25 +190,18 @@ GPUProcessHost::Shutdown()
+ void
+ GPUProcessHost::OnChannelClosed()
+ {
+-  if (!mShutdownRequested) {
++  mChannelClosed = true;
++
++  if (!mShutdownRequested && mListener) {
+     // This is an unclean shutdown. Notify our listener that we're going away.
+-    mChannelClosed = true;
+-    if (mListener) {
+-      mListener->OnProcessUnexpectedShutdown(this);
+-    }
++    mListener->OnProcessUnexpectedShutdown(this);
++  } else {
++    DestroyProcess();
+   }
+ 
+   // Release the actor.
+   GPUChild::Destroy(Move(mGPUChild));
+   MOZ_ASSERT(!mGPUChild);
+-
+-  // If the owner of GPUProcessHost already requested shutdown, we can now
+-  // schedule destruction. Otherwise we must wait for someone to call
+-  // Shutdown. Note that GPUProcessManager calls Shutdown within
+-  // OnProcessUnexpectedShutdown.
+-  if (mShutdownRequested) {
+-    DestroyProcess();
+-  }
+ }
+ 
+ void
