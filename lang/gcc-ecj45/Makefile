@@ -8,7 +8,6 @@ MASTER_SITES=	SOURCEWARE/java/
 DISTNAME=	ecj-${PORTVERSION}.jar
 EXTRACT_SUFX=
 EXTRACT_ONLY=
-BROKEN=		yes
 
 MAINTAINER=	gerald@FreeBSD.org
 COMMENT=	Eclipse Java Compiler used to build GCC Java
