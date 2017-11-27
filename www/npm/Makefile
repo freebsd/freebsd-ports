@@ -3,6 +3,7 @@
 
 PORTNAME=	npm
 PORTVERSION=	5.4.2
+PORTREVISION= 1
 CATEGORIES=	www
 MASTER_SITES=	LOCAL/sunpoet
 
@@ -35,7 +36,7 @@ SHEBANG_FILES=	lib/node_modules/npm/node_modules/node-gyp/gyp/samples/samples
 
 NODE4_RUN_DEPENDS=	node4>=0.8.0:www/node4
 NODE6_RUN_DEPENDS=	node6>=0.8.0:www/node6
-NODE8_RUN_DEPENDS=	node>=0.8.0:www/node
+NODE8_RUN_DEPENDS=	node8>=0.8.0:www/node
 
 .include <bsd.port.pre.mk>
 
