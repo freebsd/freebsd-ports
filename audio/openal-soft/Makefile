@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	openal-soft
-PORTVERSION=	1.18.1
+PORTVERSION=	1.18.2
 CATEGORIES=	audio
 MASTER_SITES=	http://kcat.strangesoft.net/openal-releases/
 
