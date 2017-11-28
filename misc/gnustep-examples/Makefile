@@ -7,6 +7,10 @@ CATEGORIES=	misc gnustep
 MASTER_SITES=	GNUSTEP/usr-apps
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	GNUstep example applications
+
+LICENSE=	GPLv3+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		gnustep
 USE_GNUSTEP=	back build
@@ -14,7 +18,7 @@ USE_GNUSTEP=	back build
 l_GNUSTEP_MAKE_DIRS=	. gui/Finger gui/GFractal gui/HostAddress gui/MyGL
 
 post-patch:
-	${REINPLACE_CMD} -e 's|^//|#|' \
+	@${REINPLACE_CMD} -e 's|^//|#|' \
 		${WRKSRC}/gui/GFractal/GNUmakefile
 
 do-build:
@@ -31,7 +35,7 @@ do-install:
 	@(cd ${INSTALL_WRKSRC}/${i}; . ${GNUSTEP_MAKEFILES}/GNUstep.sh; \
 	    ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${INSTALL_TARGET})
 .endfor
-	${STRIP_CMD} \
+	@${STRIP_CMD} \
 		${STAGEDIR}${PREFIX}/GNUstep/System/Applications/Calculator.app/Calculator \
 		${STAGEDIR}${PREFIX}/GNUstep/System/Applications/CurrencyConverter.app/CurrencyConverter \
 		${STAGEDIR}${PREFIX}/GNUstep/System/Applications/Finger.app/Finger \
