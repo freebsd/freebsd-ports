@@ -3,7 +3,7 @@
 
 PORTNAME=	acme-client
 PORTVERSION=	0.1.16
-PORTREVISION=	1
+PORTREVISION=	2
 DISTVERSIONPREFIX=	portable-
 CATEGORIES=	security
 MASTER_SITES=	https://kristaps.bsd.lv/${PORTNAME}/snapshots/ \
@@ -58,7 +58,7 @@ STAGEDIR_libressl!=	${MAKE} -V STAGEDIR -C ${PORTSDIR}/security/libressl
 . endif
 
 pre-configure:
-	@(cd ${STAGEDIR_libressl}${LOCALBASE} && ${COPYTREE_SHARE} \
+	(cd ${STAGEDIR_libressl}${LOCALBASE} && ${COPYTREE_SHARE} \
 		. ${WRKDIR}/libressl "! -name *.so*")
 .endif # SSL_DEFAULT
 
