@@ -147,10 +147,12 @@ MOZ_PKGCONFIG_FILES?=	${MOZILLA}-gtkmozembed ${MOZILLA}-js \
 ALL_TARGET?=	build
 
 MOZ_EXPORT+=	${CONFIGURE_ENV} \
+				RUSTFLAGS="${RUSTFLAGS}" \
 				PERL="${PERL}"
 MOZ_OPTIONS+=	--prefix="${PREFIX}"
 MOZ_MK_OPTIONS+=MOZ_OBJDIR="${MOZ_OBJDIR}"
 
+RUSTFLAGS+=		${CFLAGS:M-march=*:S/-march=/-C target-cpu=/}
 LDFLAGS+=		-Wl,--as-needed
 
 .if ${MOZILLA_VER:R:R} < 55 && ${OPSYS} == FreeBSD && ${OSVERSION} < 1200032
