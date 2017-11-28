@@ -1,0 +1,7 @@
+The Elasticsearch Module for Icinga Web 2 integrates your Elastic stack into
+Icinga Web 2. Based on Elasticsearch instances and event types you configure,
+the module allows you to display data collected by Beats, Logstash and any
+other source. After you've installed and configured the module, you can browse
+events via the host action Elasticsearch Events.
+
+WWW: https://github.com/Icinga/icingaweb2-module-elasticsearch
