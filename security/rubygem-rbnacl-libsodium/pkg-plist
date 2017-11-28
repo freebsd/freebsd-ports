@@ -1,0 +1,4 @@
+%%GEM_LIB_DIR%%/vendor/libsodium/dist/lib/libsodium.so
+%%GEM_LIB_DIR%%/vendor/libsodium/dist/lib/libsodium.so.18
+%%GEM_LIB_DIR%%/vendor/libsodium/src/libsodium/.libs/libsodium.so
+%%GEM_LIB_DIR%%/vendor/libsodium/src/libsodium/.libs/libsodium.so.18
