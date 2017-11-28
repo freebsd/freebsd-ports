@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	stagit
-PORTVERSION=	0.7.1
+PORTVERSION=	0.7.2
 CATEGORIES=	www
 MASTER_SITES=	http://dl.2f30.org/releases/
 
