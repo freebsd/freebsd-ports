@@ -13,10 +13,12 @@ COMMENT=	Act of enabling/disabling features in your application
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+CONFLICTS_INSTALL=	rubygem-flipper
+
 PORTSCOUT=	limit:^0\.10\.
 
 NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
+USE_RUBY=	yes
 
 .include <bsd.port.mk>
