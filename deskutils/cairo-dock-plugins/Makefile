@@ -8,7 +8,7 @@ CATEGORIES=	deskutils
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cairo-Dock-Plugins for Cairo-Dock
 
-LICENSE=	GPLv3
+LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	wget:ftp/wget
@@ -37,7 +37,7 @@ OPTIONS_GROUP_PLUGINS=	ALSA_MIXER GMENU IMPULSE KEYBOARD_INDICATOR \
 OPTIONS_GROUP_ADDON=	EXIF ICAL UPOWER
 #OPTIONS_GROUP_TPI=	PYTHON RUBY MONO VALA
 
-OPTIONS_SUB=	yes
+OPTIONS_SUB=		yes
 
 OPTIONS_DEFAULT=	GMENU WEBLETS
 
@@ -69,95 +69,75 @@ ADDON_DESC=		Add On
 
 ALSA_MIXER_LIB_DEPENDS=	libasound.so:audio/alsa-lib
 ALSA_MIXER_RUN_DEPENDS=	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:audio/alsa-plugins
-ALSA_MIXER_CMAKE_ON=	-Denable-alsa-mixer:BOOL=TRUE
-ALSA_MIXER_CMAKE_OFF=	-Denable-alsa-mixer:BOOL=FALSE
+ALSA_MIXER_CMAKE_BOOL=	enable-alsa-mixer
 
 EXIF_LIB_DEPENDS=	libexif.so:graphics/libexif
-EXIF_CMAKE_ON=		-Denable-exif-support:BOOL=TRUE
-EXIF_CMAKE_OFF=		-Denable-exif-support:BOOL=FALSE
+EXIF_CMAKE_BOOL=	enable-exif-support
 
 GMENU_LIB_DEPENDS=	libgnome-menu-3.so:x11/gnome-menus
-GMENU_CMAKE_ON=		-Denable-gmenu:BOOL=TRUE
-GMENU_CMAKE_OFF=	-Denable-gmenu:BOOL=FALSE
+GMENU_CMAKE_BOOL=	enable-gmenu
 
 #GNOME_INTEGRATION_LIB_DEPENDS=
-GNOME_INTEGRATION_CMAKE_ON=	-Denable-gnome-integration:BOOL=TRUE
-GNOME_INTEGRATION_CMAKE_OFF=	-Denable-gnome-integration:BOOL=FALSE
+GNOME_INTEGRATION_CMAKE_BOOL=	enable-gnome-integration
 
 ICAL_LIB_DEPENDS=	libical.so:devel/libical
-ICAL_CMAKE_ON=		-Denable-ical-support:BOOL=TRUE
-ICAL_CMAKE_OFF=		-Denable-ical-support:BOOL=FALSE
+ICAL_CMAKE_BOOL=	enable-ical-support
 
 IMPULSE_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
-IMPULSE_CMAKE_ON=	-Denable-impulse:BOOL=TRUE
-IMPULSE_CMAKE_OFF=	-Denable-impulse:BOOL=FALSE
+IMPULSE_CMAKE_BOOL=	enable-impulse
 
 #KDE_INTEGRATION_LIB_DEPENDS=
 KDE_INTEGRATION_USE_QT4=	corelib
 KDE_INTEGRATION_USES=		kde:4
 KDE_INTEGRATION_USE=		KDE=kdelibs
-KDE_INTEGRATION_CMAKE_ON=	-Denable-kde-integration:BOOL=TRUE
-KDE_INTEGRATION_CMAKE_OFF=	-Denable-kde-integration:BOOL=FALSE
+KDE_INTEGRATION_CMAKE_BOOL=	enable-kde-integration
 
 KEYBOARD_INDICATOR_LIB_DEPENDS=	libexif.so:graphics/libexif \
 				libxklavier.so:x11/libxklavier
-KEYBOARD_INDICATOR_CMAKE_ON=	-Denable-keyboard-indicator:BOOL=TRUE
-KEYBOARD_INDICATOR_CMAKE_OFF=	-Denable-keyboard-indicator:BOOL=FALSE
+KEYBOARD_INDICATOR_CMAKE_BOOL=	enable-keyboard-indicator
 
 MAIL_LIB_DEPENDS=	libetpan.so:mail/libetpan
-MAIL_CMAKE_ON=		-Denable-mail:BOOL=TRUE
-MAIL_CMAKE_OFF=		-Denable-mail:BOOL=FALSE
+MAIL_CMAKE_BOOL=	enable-mail
 
 #MONO_BUILD_DEPENDS=	mono:lang/mono
 #MONO_RUN_DEPENDS=	mono:lang/mono
-#MONO_CMAKE_ON=		-Denable-mono-interface:BOOL=TRUE
-#MONO_CMAKE_OFF=	-Denable-mono-interface:BOOL=FALSE
+#MONO_CMAKE_BOOL=	enable-mono-interface
 CMAKE_ARGS+=		-Denable-mono-interface:BOOL=FALSE
 
 #PYTHON_LIB_DEPENDS=
-#PYTHON_CMAKE_ON=	-Denable-python-interface:BOOL=TRUE
-#PYTHON_CMAKE_OFF=	-Denable-python-interface:BOOL=FALSE
+#PYTHON_CMAKE_BOOL=	enable-python-interface
 CMAKE_ARGS+=		-Denable-python-interface:BOOL=FALSE
 
 #RUBY_LIB_DEPENDS=
-#RUBY_CMAKE_ON=		-Denable-ruby-interface:BOOL=TRUE
-#RUBY_CMAKE_OFF=		-Denable-ruby-interface:BOOL=FALSE
+#RUBY_CMAKE_BOOL=	enable-ruby-interface
 CMAKE_ARGS+=		-Denable-ruby-interface:BOOL=FALSE
 
 SOUND_EFFECTS_LIB_DEPENDS=	libasound.so:audio/alsa-lib
 SOUND_EFFECTS_RUN_DEPENDS=	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:audio/alsa-plugins
-SOUND_EFFECTS_CMAKE_ON=		-Denable-sound-effects:BOOL=TRUE
-SOUND_EFFECTS_CMAKE_OFF=	-Denable-sound-effects:BOOL=FALSE
+SOUND_EFFECTS_CMAKE_BOOL=	enable-sound-effects
 
 # Needs newer vte
 #TERMINAL_LIB_DEPENDS=	vte:x11-toolkits/vte
-#TERMINAL_CMAKE_ON=	-Denable-terminal:BOOL=TRUE
-#TERMINAL_CMAKE_OFF=	-Denable-terminal:BOOL=FALSE
+#TERMINAL_CMAKE_BOOL=	enable-terminal
 
 UPOWER_LIB_DEPENDS=	libupower-glib.so:sysutils/upower
-UPOWER_CMAKE_ON=	-Denable-upower-support:BOOL=TRUE
-UPOWER_CMAKE_OFF=	-Denable-upower-support:BOOL=FALSE
+UPOWER_CMAKE_BOOL=	enable-upower-support
 
 #VALA_LIB_DEPENDS=
-#VALA_CMAKE_ON=		-Denable-vala-interface:BOOL=TRUE
-#VALA_CMAKE_OFF=		-Denable-vala-interface:BOOL=FALSE
+#VALA_CMAKE_BOOL=	enable-vala-interface
 CMAKE_ARGS+=		-Denable-vala-interface:BOOL=FALSE
 
 WEBLETS_LIB_DEPENDS=	libwebkitgtk-3.0.so:www/webkit-gtk3
-WEBLETS_CMAKE_ON=	-Denable-weblets:BOOL=TRUE
-WEBLETS_CMAKE_OFF=	-Denable-weblets:BOOL=FALSE
+WEBLETS_CMAKE_BOOL=	enable-weblets
 
 XGAMMA_RUN_DEPENDS=	xgamma:x11/xgamma
-XGAMMA_CMAKE_ON=	-Denable-xgamma:BOOL=TRUE
-XGAMMA_CMAKE_OFF=	-Denable-xgamma:BOOL=FALSE
+XGAMMA_CMAKE_BOOL=	enable-xgamma
 
 XFCE_INTEGRATION_LIB_DEPENDS=	libexif.so:graphics/libexif
-XFCE_INTEGRATION_CMAKE_ON=	-Denable-xfce-integration:BOOL=TRUE
-XFCE_INTEGRATION_CMAKE_OFF=	-Denable-xfce-integration:BOOL=FALSE
+XFCE_INTEGRATION_CMAKE_BOOL=	enable-xfce-integration
 
 ZEITGEIST_LIB_DEPENDS=	libzeitgeist-2.0.so:sysutils/zeitgeist
-ZEITGEIST_CMAKE_ON=	-Denable-recent-events:BOOL=TRUE
-ZEITGEIST_CMAKE_OFF=	-Denable-recent-events:BOOL=FALSE
+ZEITGEIST_CMAKE_BOOL=	enable-recent-events
 
 post-patch:
 	@${FIND} ${WRKSRC} -type f \( -name "*.c" -o -name "*.conf" \
