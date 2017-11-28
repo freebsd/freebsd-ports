@@ -1,0 +1,8 @@
+This module integrates an existing Graphite installation in your Icinga Web 2
+frontend.
+
+It provides a new menu section with two general overviews for hosts and
+services as well as an extension to the host and service detail view of the
+monitoring module.
+
+WWW: https://github.com/Icinga/icingaweb2-module-graphite
