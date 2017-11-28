@@ -1,7 +1,4 @@
-This patch depends on the follow PR from the upsteram project
-https://github.com/GoogleCloudPlatform/compute-image-packages/pull/442
-
---- google_compute_engine/ip_forwarding/ip_forwarding_utils.py.orig	2017-07-18 16:43:14 UTC
+--- google_compute_engine/ip_forwarding/ip_forwarding_utils.py.orig	2017-09-14 18:08:49 UTC
 +++ google_compute_engine/ip_forwarding/ip_forwarding_utils.py
 @@ -17,6 +17,8 @@
  
