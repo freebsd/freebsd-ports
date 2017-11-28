@@ -61,7 +61,7 @@ USES=		gperf jpeg python:2,build pkgconfig \
 		qmake:norecursive,outsource shebangfix
 USE_GNOME=	glib20 libxml2 libxslt
 USE_QT5=	core designer gui location network qml quick webchannel \
-		widgets buildtools_build qmake_build
+		widgets printsupport buildtools_build qmake_build
 USE_XORG=	scrnsaverproto x11 xcomposite xcursor xext xi xproto \
 		xrandr xrender xscrnsaver xtst
 
