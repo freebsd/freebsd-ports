@@ -86,6 +86,10 @@
 %%DATADIR%%/spec/vcr_cassettes/http-push-disabled.yml
 %%DATADIR%%/spec/vcr_cassettes/lfs-authenticate-ok.yml
 %%DATADIR%%/spec/vcr_cassettes/notify-post-receive.yml
+%%DATADIR%%/spec/vcr_cassettes/post-receive-not-found.yml
+%%DATADIR%%/spec/vcr_cassettes/post-receive.yml
+%%DATADIR%%/spec/vcr_cassettes/pre-receive-not-found.yml
+%%DATADIR%%/spec/vcr_cassettes/pre-receive.yml
 %%DATADIR%%/spec/vcr_cassettes/ssh-key-not-found.yml
 %%DATADIR%%/spec/vcr_cassettes/ssh-key-not-implemented.yml
 %%DATADIR%%/spec/vcr_cassettes/ssh-key-ok.yml
