@@ -1,1 +1,1 @@
-USE_OPENRC_SUBR=	openrc-gitlab-runner
+USE_OPENRC_SUBR=	openrc-gitlab_runner
