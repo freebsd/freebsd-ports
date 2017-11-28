@@ -15,4 +15,4 @@ with third party libraries and SDKs.  It is a good candidate for software
 rendering (Raytracing / Rasterisation), image processing, physic simulations
 and any context that requires a simple and convenient mathematics library.
 
-WWW: http://glm.g-truc.net/
+WWW: https://glm.g-truc.net/
