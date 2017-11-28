@@ -862,6 +862,7 @@
     SUBDIR += py-gd
     SUBDIR += py-gdal
     SUBDIR += py-gimp
+    SUBDIR += py-gizeh
     SUBDIR += py-glewpy
     SUBDIR += py-goocanvas
     SUBDIR += py-gphoto2
