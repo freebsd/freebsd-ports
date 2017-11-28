@@ -377,6 +377,7 @@
     SUBDIR += ptsort
     SUBDIR += py-YABT
     SUBDIR += py-cinder
+    SUBDIR += py-colorbrewer
     SUBDIR += py-crudini
     SUBDIR += py-fuzzy
     SUBDIR += py-glance
