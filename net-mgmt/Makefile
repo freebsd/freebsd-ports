@@ -88,6 +88,7 @@
     SUBDIR += icingaweb2-module-businessprocess
     SUBDIR += icingaweb2-module-cube
     SUBDIR += icingaweb2-module-director
+    SUBDIR += icingaweb2-module-elasticsearch
     SUBDIR += icingaweb2-module-generictts
     SUBDIR += icingaweb2-module-grafana
     SUBDIR += icingaweb2-module-graphite
