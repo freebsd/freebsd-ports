@@ -3,11 +3,13 @@
 
 PORTNAME=	buildbot-worker
 PORTVERSION=	0.9.11
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	grembo@FreeBSD.org
-COMMENT=	Continuous Integration Framework (Worker)
+MAINTAINER=	koobs@FreeBSD.org
+COMMENT=	Buildbot Worker Daemon
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -17,7 +19,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}future>=0.15.2:devel/py-future \
 TEST_DEPENDS=	trial:devel/py-twisted \
 		${PYTHON_PKGNAMEPREFIX}mock>0:devel/py-mock
 
-USES=		python:2.7
+USES=		python
 USE_PYTHON=	autoplist distutils
 USE_RC_SUBR=	buildbot-worker
 

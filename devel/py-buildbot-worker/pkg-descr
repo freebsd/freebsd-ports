@@ -1,5 +1,5 @@
 This port is the worker part of BuildBot. For the buildmaster, install the
-devel/buildbot port.
+devel/py-buildbot port.
 
 For more information, please see: https://buildbot.net/trac
 
