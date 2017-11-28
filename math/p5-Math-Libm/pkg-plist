@@ -1,0 +1,6 @@
+@comment $FreeBSD$
+%%SITE_ARCH%%/Math/Libm.pm
+%%SITE_ARCH%%/auto/Math/Libm/.packlist
+%%SITE_ARCH%%/auto/Math/Libm/Libm.so
+%%SITE_ARCH%%/auto/Math/Libm/autosplit.ix
+%%PERL5_MAN3%%/Math::Libm.3.gz
