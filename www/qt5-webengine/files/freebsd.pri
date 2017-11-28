@@ -1,10 +1,12 @@
 include(desktop_linux.pri)
 
 GYP_CONFIG +=   disable_nacl=1          \
-                enable_basic_printing=1 \
+                enable_basic_printing=0  \
                 enable_printing=1       \
+                enable_print_preview=1   \
                 enable_webrtc=0         \
                 enable_hidpi=1          \
+                use_cups=1              \
                 use_dbus=1              \
                 use_openssl=1           \
                 use_pulseaudio=0
