@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	glpk
-PORTVERSION=	4.61
+DISTVERSION=	4.63
 CATEGORIES=	math
 MASTER_SITES=	GNU
 
@@ -16,8 +16,8 @@ LIB_DEPENDS=	libgmp.so:math/gmp
 
 CONFLICTS=	goblin-[0-9]*
 
-GNU_CONFIGURE=	yes
 USES=		gmake libtool localbase
+GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CFLAGS+=	-trigraphs
 CPPFLAGS+=	-D_LSEEK_DECLARED
