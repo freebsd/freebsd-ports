@@ -1,1 +1,1 @@
-USE_OPENRC_SUBR=	openrc-openhpi
+USE_OPENRC_SUBR=	openrc-openhpid

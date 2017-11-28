@@ -1,1 +1,1 @@
-USE_OPENRC_SUBR=	openrc-antivirus-mitler
+USE_OPENRC_SUBR=	openrc-antivirus-milter
