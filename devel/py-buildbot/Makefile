@@ -3,11 +3,13 @@
 
 PORTNAME=	buildbot
 PORTVERSION=	0.9.11
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	grembo@FreeBSD.org
-COMMENT=	Continuous Integration Framework (Master)
+MAINTAINER=	koobs@FreeBSD.org
+COMMENT=	Continuous Integration Framework
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -24,16 +26,16 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}twisted>=14.0.1:devel/py-twisted \
 		${PYTHON_PKGNAMEPREFIX}sqlalchemy10>=0.6:databases/py-sqlalchemy10 \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3 \
 		${PYTHON_PKGNAMEPREFIX}treq>0:www/py-treq
-TEST_DEPENDS=	buildbot-worker>=${PORTVERSION}:devel/buildbot-worker \
-		buildbot-www>=${PORTVERSION}:devel/buildbot-www \
-		${PYTHON_PKGNAMEPREFIX}mock>0.8.0:devel/py-mock \
-		${PYTHON_PKGNAMEPREFIX}boto3>0:www/py-boto3
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}boto3>0:www/py-boto3 \
+		${PYTHON_PKGNAMEPREFIX}buildbot-worker>=${PORTVERSION}:devel/py-buildbot-worker \
+		${PYTHON_PKGNAMEPREFIX}buildbot-www>=${PORTVERSION}:devel/py-buildbot-www \
+		${PYTHON_PKGNAMEPREFIX}mock>=2.0.0:devel/py-mock
 
-USES=		python:2.7
+USES=		python
 USE_RC_SUBR=	buildbot
 USE_PYTHON=	autoplist distutils
 
-SUB_LIST+=	PYTHON_CMD=${PYTHON_CMD}
+SUB_LIST=	PYTHON_CMD=${PYTHON_CMD}
 
 NO_ARCH=	yes
 
