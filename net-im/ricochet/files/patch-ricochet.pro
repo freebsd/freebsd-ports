@@ -1,6 +1,6 @@
---- ricochet.pro.orig	2015-06-17 04:00:47 UTC
+--- ricochet.pro.orig	2016-11-04 22:05:33 UTC
 +++ ricochet.pro
-@@ -46,18 +46,18 @@ CONFIG(release,debug|release):DEFINES +=
+@@ -52,18 +52,18 @@ CONFIG(release,debug|release):DEFINES +=
  
  contains(DEFINES, RICOCHET_NO_PORTABLE) {
      unix:!macx {
@@ -24,3 +24,15 @@
              bundletor.files = tor/*
              INSTALLS += bundletor
              DEFINES += BUNDLED_TOR_PATH=\\\"/usr/lib/ricochet/tor/\\\"
+@@ -108,7 +108,10 @@ INCLUDEPATH += src
+ 
+ unix {
+     !isEmpty(OPENSSLDIR) {
+-        INCLUDEPATH += $${OPENSSLDIR}/include
++        !equals(OPENSSLDIR, "/usr") {
++            # adding /usr/include to INCLUDEPATH breaks STL's include logic
++            INCLUDEPATH += $${OPENSSLDIR}/include
++        }
+         LIBS += -L$${OPENSSLDIR}/lib -lcrypto
+     } else:macx:!packagesExist(libcrypto) {
+         # Fall back to the OS-provided 0.9.8 if no other libcrypto is present
