@@ -1,15 +1,8 @@
-This patch fixes paths to rc scripts
-The PREFIX fix won't be necessary anymore in further versions
-See https://github.com/GoogleCloudPlatform/compute-image-packages/pull/440
-
---- google_compute_engine/instance_setup/instance_setup.py.orig	2017-07-18 16:43:14 UTC
+--- google_compute_engine/instance_setup/instance_setup.py.orig	2017-09-14 18:08:49 UTC
 +++ google_compute_engine/instance_setup/instance_setup.py
-@@ -143,14 +143,14 @@ class InstanceSetup(object):
-     """Initialize the SSH daemon."""
-     # Exit as early as possible.
+@@ -146,12 +146,12 @@ class InstanceSetup(object):
      # Instance setup systemd scripts block sshd from starting.
--    if os.path.exists('/bin/systemctl'):
-+    if os.path.exists('%%PREFIX%%/bin/systemctl'):
+     if os.path.exists(constants.LOCALBASE + '/bin/systemctl'):
        return
 -    elif (os.path.exists('/etc/init.d/ssh') or
 -          os.path.exists('/etc/init/ssh.conf')):
