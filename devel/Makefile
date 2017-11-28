@@ -4594,6 +4594,7 @@
     SUBDIR += py-mygpoclient
     SUBDIR += py-mypy
     SUBDIR += py-nagioscheck
+    SUBDIR += py-naiveBayesClassifier
     SUBDIR += py-natsort
     SUBDIR += py-natural
     SUBDIR += py-nbconvert
