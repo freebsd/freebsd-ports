@@ -1049,6 +1049,7 @@
     SUBDIR += rubygem-airbrussh
     SUBDIR += rubygem-attr_encrypted
     SUBDIR += rubygem-bcrypt
+    SUBDIR += rubygem-bcrypt_pbkdf
     SUBDIR += rubygem-bcrypt-ruby
     SUBDIR += rubygem-devise-two-factor
     SUBDIR += rubygem-devise-two-factor-rails5
