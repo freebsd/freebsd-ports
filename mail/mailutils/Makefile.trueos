@@ -1,1 +1,1 @@
-USE_OPENRC_SUBR=	openrc-comsatd openrc-imap4d openrc-pop3d
+USE_OPENRC_SUBR=	openrc-comstad openrc-imap4d openrc-pop3d

@@ -1,1 +1,1 @@
-USE_OPENRC_SUBR=	openrc-nagiostatd
+USE_OPENRC_SUBR=	openrc-nagiosstatd

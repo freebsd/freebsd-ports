@@ -1,1 +1,1 @@
-USE_OPENRC_SUBR=	open-ttrssd
+USE_OPENRC_SUBR=	openrc-ttrssd

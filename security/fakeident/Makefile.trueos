@@ -1,1 +1,1 @@
-USE_OPENRC_SUBR=	openrc-fakeident
+USE_OPENRC_SUBR=	openrc-fakeidentd
