@@ -55,7 +55,6 @@ CGI_DESC=	Build CGI version
 FPM_DESC=	Build FPM version
 EMBED_DESC=	Build embedded library
 PHPDBG_DESC=	Interactive PHP debugger
-DTRACE_DESC=	Enable DTrace support
 MAILHEAD_DESC=	Enable mail header patch
 LINKTHR_DESC=	Link thread lib (for threaded extensions)
 ZTS_DESC=	Force Zend Thread Safety (ZTS) build
