@@ -6,7 +6,7 @@ time between updates can be changed with the -wait option.
 Xearth  can  also  render  directly into PPM and GIF files
 instead of drawing in the root window.
 
-WWW: http://xearth.org
+WWW: http://xearth.org/
 
 There are three additional marker files installed in
 /usr/local/lib/X11/xearth which specify the locations of
