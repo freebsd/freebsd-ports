@@ -1,0 +1,21 @@
+Fuzzy string matching like a boss. It uses Levenshtein Distance to calculate
+the differences between sequences in a simple-to-use package.
+
+Simple Ratio
+
+>>> fuzz.ratio("this is a test", "this is a test!")
+    97
+
+Partial Ratio
+
+>>> fuzz.partial_ratio("this is a test", "this is a test!")
+    100
+
+Token Sort Ratio
+
+>>> fuzz.ratio("fuzzy wuzzy was a bear", "wuzzy fuzzy was a bear")
+    91
+>>> fuzz.token_sort_ratio("fuzzy wuzzy was a bear", "wuzzy fuzzy was a bear")
+    100
+
+WWW: https://pypi.python.org/pypi/naiveBayesClassifier
