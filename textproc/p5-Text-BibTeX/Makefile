@@ -21,6 +21,8 @@ USES=		perl5
 USE_PERL5=	modbuild
 USE_LDCONFIG=	yes
 
+CFLAGS_amd64=	-fPIC
+
 STRIP_FILES=	bin/dumpnames bin/biblex bin/bibparse \
 		${SITE_ARCH_REL}/auto/Text/BibTeX/BibTeX.so \
 		lib/libbtparse.so
@@ -30,10 +32,6 @@ STRIP_FILES=	bin/dumpnames bin/biblex bin/bibparse \
 .if ${PERL_LEVEL} < 502300
 BUILD_DEPENDS+=	p5-Scalar-List-Utils>=0.42:lang/p5-Scalar-List-Utils
 RUN_DEPENDS+=	p5-Scalar-List-Utils>=0.42:lang/p5-Scalar-List-Utils
-.endif
-
-.if ${ARCH} == "amd64" || ${ARCH} == "ia64"
-CFLAGS+=	-fPIC
 .endif
 
 post-install:
