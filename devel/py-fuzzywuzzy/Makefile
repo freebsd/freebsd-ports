@@ -3,6 +3,7 @@
 
 PORTNAME=	fuzzywuzzy
 PORTVERSION=	0.15.1
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,6 +13,8 @@ COMMENT=	Fuzzy string matching using Levenshtein Distance
 
 LICENSE=	GPL
 LICENSE_FILE=	LICENSE.txt
+
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}python-Levenshtein>0:devel/py-python-Levenshtein
 
 USES=		python
 USE_PYTHON=	distutils autoplist
