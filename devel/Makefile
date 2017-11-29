@@ -4265,6 +4265,7 @@
     SUBDIR += py-backports.shutil_get_terminal_size
     SUBDIR += py-backports.weakref
     SUBDIR += py-backports_abc
+    SUBDIR += py-backports.tempfile
     SUBDIR += py-bandit
     SUBDIR += py-bcdoc
     SUBDIR += py-billiard
