@@ -12,7 +12,6 @@ COMMENT=	XS++ enhanced flavour of Module::Build
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
-#LICENSE_FILE=
 
 BUILD_DEPENDS=	p5-ExtUtils-XSpp>0.11:devel/p5-ExtUtils-XSpp \
 	p5-Module-Build>=0.26:devel/p5-Module-Build \
