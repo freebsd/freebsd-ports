@@ -12,7 +12,6 @@
     SUBDIR += distilator
     SUBDIR += fastest_sites
     SUBDIR += freebsd-bugzilla-cli
-    SUBDIR += gbsdbserver
     SUBDIR += genpatch
     SUBDIR += genplist
     SUBDIR += hs-porte
