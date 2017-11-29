@@ -1,0 +1,16 @@
+This tool allows you to make your own unique cross stitch design from custom
+image. You can resize and rotate image, reduce the number of colors, change
+image palette, make cross stitch design, preview it, save and print. Cross
+stitch design edition available: colors and icons changing, new color addition,
+color fill, pixel draw, lines and half-stitches.
+
+Features:
+* Convert custom image to cross stitch design
+* Edit cross stitch design
+* Save and print the design that you created
+* Input pictures: BMP, GIF, ICO, JPEG, JPG, MNG, PBM, PGM, PNG, PPM, SVG, TIF,
+  TIFF, XBM, XPM
+* Output cross stitch design: BMP, ICO, JPEG, JPG, PNG, PPM, TIF, TIFF, XBM,
+  XPM, PDF, CST (crosti scheme text file)
+
+WWW: https://sourceforge.net/projects/crosti

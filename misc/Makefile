@@ -56,6 +56,7 @@
     SUBDIR += countrycodes
     SUBDIR += cpuid
     SUBDIR += crosspad
+    SUBDIR += crosti
     SUBDIR += cs
     SUBDIR += cstream
     SUBDIR += dahdi
