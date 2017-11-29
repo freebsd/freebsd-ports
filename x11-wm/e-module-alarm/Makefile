@@ -18,6 +18,7 @@ BUILD_DEPENDS=	enlightenment:x11-wm/enlightenment
 RUN_DEPENDS=	enlightenment:x11-wm/enlightenment
 
 BROKEN_armv6=		dumps core: gmake: Makefile:899: Abort trap (core dumped)
+#BROKEN_armv7=		dumps core: gmake: Makefile:899: Abort trap (core dumped)
 
 GNU_CONFIGURE=	yes
 USES=		gmake libtool pkgconfig tar:xz
