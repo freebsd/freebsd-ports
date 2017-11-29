@@ -103,6 +103,7 @@
     SUBDIR += dalbum
     SUBDIR += davical
     SUBDIR += dddbl
+    SUBDIR += ddgr
     SUBDIR += decss
     SUBDIR += deforaos-surfer
     SUBDIR += demoroniser
@@ -2097,7 +2098,6 @@
     SUBDIR += rubygem-pusher-client
     SUBDIR += rubygem-rabbirack
     SUBDIR += rubygem-rack
-    SUBDIR += rubygem-rack_csrf
     SUBDIR += rubygem-rack-accept
     SUBDIR += rubygem-rack-attack
     SUBDIR += rubygem-rack-cache
@@ -2114,6 +2114,7 @@
     SUBDIR += rubygem-rack-timeout
     SUBDIR += rubygem-rack15
     SUBDIR += rubygem-rack16
+    SUBDIR += rubygem-rack_csrf
     SUBDIR += rubygem-rails-settings-cached
     SUBDIR += rubygem-rails-settings-cached-rails5
     SUBDIR += rubygem-rails-settings-cached-rails50
