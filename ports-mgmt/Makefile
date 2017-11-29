@@ -11,6 +11,7 @@
     SUBDIR += dialog4ports-static
     SUBDIR += distilator
     SUBDIR += fastest_sites
+    SUBDIR += fbsdpkgupdate
     SUBDIR += freebsd-bugzilla-cli
     SUBDIR += genpatch
     SUBDIR += genplist
