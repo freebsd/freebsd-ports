@@ -1891,7 +1891,6 @@
     SUBDIR += qdecoder
     SUBDIR += qooxdoo
     SUBDIR += qt4-webkit
-    SUBDIR += qt5-webengine
     SUBDIR += qt5-webchannel
     SUBDIR += qt5-webengine
     SUBDIR += qt5-webkit
