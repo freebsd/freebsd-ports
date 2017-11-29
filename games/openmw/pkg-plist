@@ -11,9 +11,9 @@ bin/openmw-wizard
 %%ETCDIR%%/openmw.cfg
 %%ETCDIR%%/settings-default.cfg
 %%ETCDIR%%/version
-share/appdata/openmw.appdata.xml
 share/applications/openmw-cs.desktop
 share/applications/openmw.desktop
+share/metainfo/openmw.appdata.xml
 %%DATADIR%%/resources/defaultfilters
 %%DATADIR%%/resources/mygui/DejaVuLGCSansMono.ttf
 %%DATADIR%%/resources/mygui/OpenMWResourcePlugin.xml
@@ -55,6 +55,7 @@ share/applications/openmw.desktop
 %%DATADIR%%/resources/mygui/openmw_hud_energybar.skin.xml
 %%DATADIR%%/resources/mygui/openmw_infobox.layout
 %%DATADIR%%/resources/mygui/openmw_interactive_messagebox.layout
+%%DATADIR%%/resources/mygui/openmw_interactive_messagebox_notransp.layout
 %%DATADIR%%/resources/mygui/openmw_inventory_window.layout
 %%DATADIR%%/resources/mygui/openmw_itemselection_dialog.layout
 %%DATADIR%%/resources/mygui/openmw_jail_screen.layout
