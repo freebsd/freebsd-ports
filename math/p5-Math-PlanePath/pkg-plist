@@ -76,7 +76,6 @@
 %%SITE_PERL%%/Math/PlanePath/UlamWarburtonQuarter.pm
 %%SITE_PERL%%/Math/PlanePath/VogelFloret.pm
 %%SITE_PERL%%/Math/PlanePath/ZOrderCurve.pm
-%%SITE_ARCH%%/auto/Math/PlanePath/.packlist
 %%PERL5_MAN3%%/Math::NumSeq::PlanePathCoord.3.gz
 %%PERL5_MAN3%%/Math::PlanePath.3.gz
 %%PERL5_MAN3%%/Math::PlanePath::ArchimedeanChords.3.gz

@@ -8,7 +8,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	y@trombik.org
-COMMENT=	points on a path through the 2-D plane
+COMMENT=	Math::PlanePath -- points on a path through the 2-D plane
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -18,5 +18,6 @@ RUN_DEPENDS:= ${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
