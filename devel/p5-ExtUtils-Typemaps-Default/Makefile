@@ -8,15 +8,12 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	y@trombik.org
-COMMENT=	A set of useful typemaps
-
-BUILD_DEPENDS= p5-ExtUtils-ParseXS>=3.21:devel/p5-ExtUtils-ParseXS
-RUN_DEPENDS:= ${BUILD_DEPENDS}
+COMMENT=	ExtUtils::Typemap::Default - A set of useful typemaps
 
 LICENSE=	ARTPERL10
-#LICENSE_FILE=
 
 USES=		perl5
 USE_PERL5=	modbuild
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

@@ -12,7 +12,6 @@
 %%SITE_PERL%%/ExtUtils/Typemaps/STL/List.pm
 %%SITE_PERL%%/ExtUtils/Typemaps/STL/String.pm
 %%SITE_PERL%%/ExtUtils/Typemaps/STL/Vector.pm
-%%SITE_ARCH%%/auto/ExtUtils/Typemaps/Default/.packlist
 %%PERL5_MAN3%%/ExtUtils::Typemap::Basic.3.gz
 %%PERL5_MAN3%%/ExtUtils::Typemap::Default.3.gz
 %%PERL5_MAN3%%/ExtUtils::Typemap::ObjectMap.3.gz
