@@ -11,14 +11,14 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK2-based toolbar, like a smaller GNOME panel
 
 LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
+USES=		gmake pkgconfig localbase tar:bzip2
 USE_GNOME=	gtk20
-USES=		gmake pkgconfig tar:bzip2
 USE_XORG=	x11
 GNU_CONFIGURE=	yes
 
-CPPFLAGS+=	-I${LOCALBASE}/include
-LIBS+=		-L${LOCALBASE}/lib -lX11
+LIBS+=		-lX11
 
 OPTIONS_DEFINE=	CURL DOCS GTOP
 OPTIONS_DEFAULT=	CURL GTOP
@@ -40,7 +40,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|"getopt\.h"|<getopt.h>|g' ${WRKSRC}/src/mdh.c
 	@${REINPLACE_CMD} -e '/<curl\/types.h>/d' ${WRKSRC}/src/curl.c
 
-post-install:
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
