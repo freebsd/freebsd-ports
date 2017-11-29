@@ -3,7 +3,7 @@
 
 PORTNAME=	hedgewars
 PORTVERSION=	0.9.22
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	http://download.gna.org/hedgewars/ \
 		http://mirror.amdmi3.ru/distfiles/
@@ -38,7 +38,7 @@ PORTDATA=	*
 
 # VIDEOREC - broken with recent ffmpeg
 OPTIONS_DEFINE=	SERVER # VIDEOREC
-#OPTIONS_DEFAULT=SERVER # until it's unbroken
+OPTIONS_DEFAULT=SERVER
 
 SERVER_DESC=	Build server (requires haskell)
 #VIDEOREC_DESC=	Enable video recording (requires ffmpeg)
@@ -64,7 +64,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' ${WRKSRC}/cmake_modules/*.cmake
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/*
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/*
 	${INSTALL_DATA} ${WRKSRC}/share/hedgewars/Data/misc/hedgewars.desktop \
 		${STAGEDIR}${PREFIX}/share/applications/
 	${INSTALL_DATA} ${WRKSRC}/misc/hedgewars.png \
