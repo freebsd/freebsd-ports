@@ -65,6 +65,7 @@
     SUBDIR += cantata
     SUBDIR += caps-lv2
     SUBDIR += caps-plugins
+    SUBDIR += carla
     SUBDIR += cava
     SUBDIR += ccaudio2
     SUBDIR += cd-console
