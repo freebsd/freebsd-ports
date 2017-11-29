@@ -1,7 +1,6 @@
 # Created by: ijliao
 # $FreeBSD$
 
-# TODO create xvfb-run port
 PORTNAME=	OpenGL
 PORTVERSION=	0.66
 PORTREVISION=	6
@@ -26,6 +25,7 @@ USE_PERL5=	configure
 USE_GL=		glut
 USE_XORG=	x11 xext xmu xi ice
 
+# TODO create xvfb-run port
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' ${WRKSRC}/Makefile.PL
 
