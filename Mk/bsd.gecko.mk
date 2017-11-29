@@ -384,7 +384,7 @@ post-patch-SNDIO-on:
 . endfor
 	@${REINPLACE_CMD} -e 's|OS==\"openbsd\"|OS==\"${OPSYS:tl}\"|g' \
 		${MOZSRC}/media/webrtc/trunk/webrtc/build/common.gypi
-	@${ECHO} "OS_LIBS += ['sndio']" >> \
+	@${ECHO_CMD} "OS_LIBS += ['sndio']" >> \
 		${MOZSRC}/media/webrtc/signaling/test/common.build
 .endif
 
