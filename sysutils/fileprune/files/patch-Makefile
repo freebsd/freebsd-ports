@@ -6,7 +6,7 @@
  install: $(NAME)
 -	$(INSTALL) -s $(NAME) $(PREFIX)/bin
 -	gzip -c $(NAME).1 >$(PREFIX)/man/man1/$(NAME).1.gz
-+	$(INSTALL) -s $(NAME) $(DESTDIR)$(PREFIX)/bin
++	$(BSD_INSTALL_PROGRAM) $(NAME) $(DESTDIR)$(PREFIX)/bin
 +	gzip -c $(NAME).1 > $(DESTDIR)$(PREFIX)/man/man1/$(NAME).1.gz
  
  clean:
