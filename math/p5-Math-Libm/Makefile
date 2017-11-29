@@ -15,4 +15,7 @@ LICENSE=	NONE
 USES=		perl5
 USE_PERL5=	configure
 
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Math/Libm/Libm.so
+
 .include <bsd.port.mk>
