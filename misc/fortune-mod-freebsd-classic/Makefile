@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	fortune-mod-freebsd-classic
-DISTVERSION=	g20171121
+DISTVERSION=	g20171128
 CATEGORIES=	misc
 
 MAINTAINER=	jdc@koitsu.org
@@ -16,10 +16,10 @@ COMMENT=	Classic FreeBSD fortunes (including offensives)
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	koitsu
-GH_TAGNAME=	58ee9c5
+GH_TAGNAME=	b029e87
 NO_ARCH=	yes
 
-SRCF=		fortunes gerrold.limerick limerick murphy murphy-o startrek zippy
+SRCF=		fortunes fortunes-o gerrold.limerick limerick murphy murphy-o startrek zippy
 PLIST_FILES=	${SRCF:S|^|share/games/fortune/|} ${SRCF:S|^|share/games/fortune/|:S|$|.dat|}
 
 .if exists(/usr/games/strfile)
