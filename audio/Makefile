@@ -731,7 +731,6 @@
     SUBDIR += sdl_sound
     SUBDIR += sfront
     SUBDIR += shairplay
-    SUBDIR += shairport
     SUBDIR += shairport-sync
     SUBDIR += sherlock-lv2
     SUBDIR += shntool
