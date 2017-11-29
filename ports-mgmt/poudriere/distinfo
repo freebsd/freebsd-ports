@@ -1,3 +1,3 @@
-TIMESTAMP = 1511900282
-SHA256 (freebsd-poudriere-3.2.1_GH0.tar.gz) = f8977f572c9a134079ee308952681b59628d8094664582d53bb8ac26875bc5db
-SIZE (freebsd-poudriere-3.2.1_GH0.tar.gz) = 4356333
+TIMESTAMP = 1511988613
+SHA256 (freebsd-poudriere-3.2.2_GH0.tar.gz) = 1360435f1c7454b1ac73dc7c569976ce9c78bdbfc02cdf24385405eda334e730
+SIZE (freebsd-poudriere-3.2.2_GH0.tar.gz) = 4356169
