@@ -15,11 +15,8 @@ LICENSE_COMB=	dual
 #LICENSE_FILE=
 
 BUILD_DEPENDS=	p5-ExtUtils-XSpp>0.11:devel/p5-ExtUtils-XSpp \
-	p5-ExtUtils-CBuilder>0:devel/p5-ExtUtils-CBuilder \
 	p5-Module-Build>=0.26:devel/p5-Module-Build \
-	p5-ExtUtils-ParseXS>=2.2205:devel/p5-ExtUtils-ParseXS \
-	p5-ExtUtils-CppGuess>=0.04:devel/p5-ExtUtils-CppGuess \
-	p5-Digest-MD5>=0:security/p5-Digest-MD5
+	p5-ExtUtils-CppGuess>=0.04:devel/p5-ExtUtils-CppGuess
 RUN_DEPENDS:= ${BUILD_DEPENDS}
 
 USES=		perl5
