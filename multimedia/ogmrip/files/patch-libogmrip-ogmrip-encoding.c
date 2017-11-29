@@ -1,6 +1,6 @@
---- libogmrip/ogmrip-encoding.c.orig	2013-10-05 15:05:24.000000000 +0200
-+++ libogmrip/ogmrip-encoding.c	2014-06-07 08:00:31.601300584 +0200
-@@ -1197,7 +1197,7 @@
+--- libogmrip/ogmrip-encoding.c.orig	2015-01-10 13:39:43 UTC
++++ libogmrip/ogmrip-encoding.c
+@@ -1197,7 +1197,7 @@ ogmrip_encoding_spawn_suspended (OGMRipE
        encoding->priv->task.options,
        OGMRIP_TASK_SUSPEND,
        encoding->priv->task.type,
@@ -9,7 +9,7 @@
  }
  
  static void
-@@ -1208,7 +1208,7 @@
+@@ -1208,7 +1208,7 @@ ogmrip_encoding_spawn_resumed (OGMRipEnc
        encoding->priv->task.options,
        OGMRIP_TASK_RESUME,
        encoding->priv->task.type,
@@ -18,7 +18,7 @@
  }
  
  static void
-@@ -1706,10 +1706,10 @@
+@@ -1706,10 +1706,10 @@ ogmrip_encoding_analyze_video_stream (OG
      return OGMJOB_RESULT_ERROR;
  
    ogmrip_encoding_emit_task (encoding, spawn,
@@ -31,7 +31,7 @@
  
    if (result == OGMJOB_RESULT_SUCCESS)
    {
-@@ -1777,9 +1777,9 @@
+@@ -1777,9 +1777,9 @@ ogmrip_encoding_extract_chapters (OGMRip
    if (!spawn)
      return OGMJOB_RESULT_ERROR;
  
@@ -43,7 +43,7 @@
  
    if (result != OGMJOB_RESULT_SUCCESS)
    {
-@@ -1871,10 +1871,10 @@
+@@ -1871,10 +1871,10 @@ ogmrip_encoding_encode_subp_streams (OGM
          ogmrip_codec_set_options (OGMRIP_CODEC (spawn), encoding->priv->profile_section);
  
        ogmrip_encoding_emit_task (encoding, spawn, (OGMRipOptions *) &data->options,
@@ -56,7 +56,7 @@
  
        if (result != OGMJOB_RESULT_SUCCESS)
        {
-@@ -1987,10 +1987,10 @@
+@@ -1987,10 +1987,10 @@ ogmrip_encoding_encode_audio_streams (OG
        ogmrip_codec_set_options (OGMRIP_CODEC (spawn), encoding->priv->profile_section);
  
      ogmrip_encoding_emit_task (encoding, spawn, (OGMRipOptions *) &data->options,
@@ -69,7 +69,7 @@
  
      if (result != OGMJOB_RESULT_SUCCESS)
      {
-@@ -2058,10 +2058,10 @@
+@@ -2058,10 +2058,10 @@ ogmrip_encoding_crop (OGMRipEncoding *en
    {
      case OGMRIP_OPTIONS_AUTOMATIC:
        ogmrip_encoding_emit_task (encoding, OGMJOB_SPAWN (codec),
@@ -82,7 +82,7 @@
  
        if (result != OGMJOB_RESULT_SUCCESS)
          return OGMJOB_RESULT_CANCEL;
-@@ -2226,9 +2226,9 @@
+@@ -2226,9 +2226,9 @@ ogmrip_encoding_encode_video_stream (OGM
    if (encoding->priv->profile_section && encoding->priv->preset == OGMRIP_VIDEO_PRESET_USER)
        ogmrip_codec_set_options (OGMRIP_CODEC (codec), encoding->priv->profile_section);
  
@@ -94,7 +94,7 @@
  
    if (result == OGMJOB_RESULT_ERROR && error && !(*error))
      g_set_error (error, OGMRIP_ENCODING_ERROR, OGMRIP_ENCODING_ERROR_UNKNOWN,
-@@ -2258,9 +2258,9 @@
+@@ -2258,9 +2258,9 @@ ogmrip_encoding_merge (OGMRipEncoding *e
    ogmjob_log_printf ("\nMerging\n");
    ogmjob_log_printf ("-------\n\n");
  
@@ -106,7 +106,7 @@
  
    if (cwd)
    {
-@@ -2376,7 +2376,7 @@
+@@ -2376,7 +2376,7 @@ ogmrip_encoding_test_internal (OGMRipEnc
    relative = ogmrip_encoding_get_relative (encoding);
    ogmrip_encoding_set_relative_internal (encoding, TRUE);
  
@@ -115,7 +115,7 @@
  
    ogmrip_encoding_set_play_length (encoding, SAMPLE_LENGTH * SAMPLE_PERCENT);
  
-@@ -2430,7 +2430,7 @@
+@@ -2430,7 +2430,7 @@ ogmrip_encoding_test_internal (OGMRipEnc
      }
    }
  
@@ -124,7 +124,7 @@
  
    if (result == OGMJOB_RESULT_SUCCESS && files > 0)
    {
-@@ -5972,9 +5972,9 @@
+@@ -5972,9 +5972,9 @@ ogmrip_encoding_backup (OGMRipEncoding *
  
    OGMRIP_ENCODING_SET_FLAGS (encoding, OGMRIP_ENCODING_BACKUPING);
  
