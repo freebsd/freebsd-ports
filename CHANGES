@@ -13,6 +13,28 @@ All ports committers are allowed to commit to this file.
 20171130:
 AUTHOR: mat@FreeBSD.org
 
+  To help with flavored ports, helpers are available.  In these, replace <*>
+  with the flavor name.
+
+  *_PKGNAMEPREFIX *_PKGNAMESUFFIX *_PLIST *_DESCR will overwrite the variable.
+
+  *_CONFLICTS *_CONFLICTS_BUILD *_CONFLICTS_INSTALL *_PKG_DEPENDS
+  *_EXTRACT_DEPENDS *_PATCH_DEPENDS *_FETCH_DEPENDS *_BUILD_DEPENDS
+  *_LIB_DEPENDS *_RUN_DEPENDS *_TEST_DEPENDS will append to the variable.
+
+  For example:
+
+    flavor2_PKGNAMESUFFIX=	-foo
+
+  can replace:
+
+    .if ${FLAVOR:U} == flavor2
+    PKGNAMESUFFIX=	-foo
+    .endif
+
+20171130:
+AUTHOR: mat@FreeBSD.org
+
   Flavors are a way to have multiple variations of a port.  The port is built
   multiple times, with the variations.  To declare flavors, set the FLAVORS
   variable to the flavors you want defined.  The first flavor will be the

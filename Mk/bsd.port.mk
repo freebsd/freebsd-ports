@@ -1084,6 +1084,34 @@ _PORTS_DIRECTORIES+=	${PKG_DBDIR} ${PREFIX} ${WRKDIR} ${EXTRACT_WRKDIR} \
 # Do not leak flavors to childs make
 .MAKEOVERRIDES:=	${MAKEOVERRIDES:NFLAVOR=*}
 
+.if !empty(FLAVOR) && !defined(_DID_FLAVORS_HELPERS)
+_DID_FLAVORS_HELPERS=	yes
+_FLAVOR_HELPERS_OVERRIDE=	DESCR PLIST PKGNAMEPREFIX PKGNAMESUFFIX
+_FLAVOR_HELPERS_APPEND=	 	CONFLICTS CONFLICTS_BUILD CONFLICTS_INSTALL \
+							PKG_DEPENDS EXTRACT_DEPENDS PATCH_DEPENDS \
+							FETCH_DEPENDS BUILD_DEPENDS LIB_DEPENDS \
+							RUN_DEPENDS TEST_DEPENDS
+# These overwrite the current value
+.for v in ${_FLAVOR_HELPERS_OVERRIDE}
+.if defined(${FLAVOR}_${v})
+${v}=	${${FLAVOR}_${v}}
+.endif
+.endfor
+
+# These append to the current value
+.for v in ${_FLAVOR_HELPERS_APPEND}
+.if defined(${FLAVOR}_${v})
+${v}+=	${${FLAVOR}_${v}}
+.endif
+.endfor
+
+.for v in BROKEN IGNORE
+.if defined(${FLAVOR}_${v})
+${v}=	flavor "${FLAVOR}" ${${FLAVOR}_${v}}
+.endif
+.endfor
+.endif # defined(${FLAVOR})
+
 .if defined(CROSS_TOOLCHAIN)
 .if !defined(CROSS_SYSROOT)
 IGNORE=	CROSS_SYSROOT should be defined
