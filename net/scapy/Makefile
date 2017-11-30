@@ -12,10 +12,10 @@ COMMENT=	Powerful interactive packet manipulation program in python
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/dnet.so:net/py-libdnet \
-		${PYTHON_SITELIBDIR}/pcap.py:net/py-pcap
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/dnet.so:net/py-libdnet@${FLAVOR} \
+		${PYTHON_SITELIBDIR}/pcap.py:net/py-pcap@${FLAVOR}
 
-USES=		python
+USES=		python:2.7
 USE_PYTHON=	autoplist distutils
 NO_ARCH=	yes
 
@@ -30,9 +30,9 @@ NMAP_DESC=	nmap OS signatures database
 MANUF_DESC=	wireshark's MANUF MAC database
 SOX_DESC=	Support for VoIP
 
-PYX_RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pyx/__init__.py:graphics/py-PyX12
-PYCRYPTO_RUN_DEPENDS=	${PYTHON_SITELIBDIR}/Crypto/__init__.py:security/py-pycrypto
-PYGNUPLOT_RUN_DEPENDS=	${PYTHON_SITELIBDIR}/Gnuplot/__init__.py:math/py-gnuplot
+PYX_RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pyx/__init__.py:graphics/py-PyX12@${FLAVOR}
+PYCRYPTO_RUN_DEPENDS=	${PYTHON_SITELIBDIR}/Crypto/__init__.py:security/py-pycrypto@${FLAVOR}
+PYGNUPLOT_RUN_DEPENDS=	${PYTHON_SITELIBDIR}/Gnuplot/__init__.py:math/py-gnuplot@${FLAVOR}
 GRAPH_RUN_DEPENDS=	${LOCALBASE}/bin/MagickCore-config:graphics/ImageMagick \
 			${LOCALBASE}/bin/dot:graphics/graphviz
 P0F_BASE_RUN_DEPENDS=	${LOCALBASE}/etc/p0f.fp:net-mgmt/p0f

@@ -12,7 +12,7 @@ COMMENT=	Lightweight molecule manipulation codebase
 LICENSE=	APACHE20
 
 RUN_DEPENDS=	${PYNUMPY} \
-		${PYTHON_PKGNAMEPREFIX}scipy>0:science/py-scipy
+		${PYTHON_PKGNAMEPREFIX}scipy>0:science/py-scipy@${FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist distutils

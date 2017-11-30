@@ -10,18 +10,15 @@ MASTER_SITES=	CHEESESHOP
 MAINTAINER=	fullermd@over-yonder.net
 COMMENT=	Distributed version control system by Canonical
 
-# Often not needed, but it's cheap insurance
-BUILD_DEPENDS=	cython:lang/cython
-
 OPTIONS_DEFINE=	SFTP CA_BUNDLE
 SFTP_DESC=	Paramiko for SFTP support
 CA_BUNDLE_DESC=	Include CA bundle for SSL cert validation
 OPTIONS_DEFAULT=	SFTP CA_BUNDLE
 
-SFTP_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}paramiko>=0:security/py-paramiko
+SFTP_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}paramiko>=0:security/py-paramiko@${FLAVOR}
 CA_BUNDLE_RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 
-USE_PYTHON=	distutils
+USE_PYTHON=	distutils cython
 PYDISTUTILS_PKGNAME=	bzr
 USES=		gettext python:2
 MAKE_ENV=	BZR_LOG=/dev/null

@@ -13,7 +13,7 @@ COMMENT=	Python clone of WikiWiki
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/docs/licenses/COPYING
 
-USES=		cpe python shebangfix
+USES=		cpe python:2.7 shebangfix
 CPE_VENDOR=	moinmo
 USE_PYTHON=	distutils
 PYDISTUTILS_PKGNAME=	moin

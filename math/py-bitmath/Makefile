@@ -18,6 +18,6 @@ USE_PYTHON=	autoplist distutils
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-4
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}progressbar231>0:misc/py-progressbar231
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}progressbar231>0:misc/py-progressbar231@${FLAVOR}
 
 .include <bsd.port.mk>

@@ -12,11 +12,11 @@ COMMENT=	YubiKey PIV Manager
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	pyside${PYTHON_PKGNAMESUFFIX}>=1.0.9:devel/pyside \
+RUN_DEPENDS=	pyside${PYTHON_PKGNAMESUFFIX}>=1.0.9:devel/pyside@${FLAVOR} \
 		yubico-piv-tool:security/yubico-piv-tool
 
 NO_ARCH=	yes
-USES=		python
+USES=		python:2.7
 USE_PYTHON=	autoplist distutils
 
 PLIST_FILES+=	man/man1/pivman.1.gz \

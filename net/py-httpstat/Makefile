@@ -18,7 +18,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	reorx
 
 NO_ARCH=	yes
-USES=		python
+USES=		python:2.7
 USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>

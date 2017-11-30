@@ -8,13 +8,13 @@ MAINTAINER=	avilla@FreeBSD.org
 COMMENT=	Python bindings for libimobiledevice
 
 LIB_DEPENDS=	libimobiledevice.so:${MASTER_PORT}
-BUILD_DEPENDS=	cython:lang/cython \
-		${PYTHON_SITELIBDIR}/plist.so:devel/py-libplist
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/plist.so:devel/py-libplist
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}libplist>0:devel/py-libplist@${FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}libplist>0:devel/py-libplist@${FLAVOR}
 
 PORTSCOUT=	ignore:1
 
-USES=		python
+USES=		python:2.7
+USE_PYTHON=	flavors cython
 CONFIGURE_ENV=	PYTHON_LDFLAGS="`pkg-config --libs python-${PYTHON_VER}`"
 SLAVE_PORT=	yes
 MASTERDIR=	${.CURDIR:H:H}/comms/libimobiledevice

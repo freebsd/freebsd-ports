@@ -12,8 +12,8 @@ COMMENT=	Light weight python library for time series data analysis
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}scipy>0:science/py-scipy \
-	${PYTHON_PKGNAMEPREFIX}numpy>=1.6.2,1:math/py-numpy
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}scipy>0:science/py-scipy@${FLAVOR} \
+	${PYTHON_PKGNAMEPREFIX}numpy>=1.6.2,1:math/py-numpy@${FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist distutils

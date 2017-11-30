@@ -17,7 +17,7 @@ LICENSE_COMB=	dual
 BUILD_DEPENDS=	swig:devel/swig13
 LIB_DEPENDS=	libmecab.so:japanese/mecab
 
-USES=		python
+USES=		python:2.7
 USE_PYTHON=	distutils
 PYDISTUTILS_EGGINFO=	${PORTNAME}_python-${PORTVERSION}.post2-py${PYTHON_VER}.egg-info
 

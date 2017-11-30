@@ -11,10 +11,10 @@ COMMENT=	Python Client for Google Cloud Storage
 
 LICENSE=	APACHE20
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}google-cloud-core>0:www/py-google-cloud-core \
-		${PYTHON_PKGNAMEPREFIX}google-auth>0:security/py-google-auth \
-		${PYTHON_PKGNAMEPREFIX}google-resumable-media>0:www/py-google-resumable-media \
-		${PYTHON_PKGNAMEPREFIX}requests>0:www/py-requests
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}google-cloud-core>0:www/py-google-cloud-core@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}google-auth>0:security/py-google-auth@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}google-resumable-media>0:www/py-google-resumable-media@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}requests>0:www/py-requests@${FLAVOR}
 
 USES=		python
 USE_PYTHON=	distutils concurrent autoplist

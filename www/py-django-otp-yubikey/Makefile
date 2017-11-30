@@ -12,8 +12,8 @@ COMMENT=	Plugin that verifies YubiKey OTP tokens
 
 LICENSE=	BSD2CLAUSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}YubiOTP>=0.2.1:security/py-YubiOTP \
-		${PYTHON_PKGNAMEPREFIX}django-otp>0.4.0:www/py-django-otp
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}YubiOTP>=0.2.1:security/py-YubiOTP@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}django-otp>0.4.0:www/py-django-otp@${FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist distutils

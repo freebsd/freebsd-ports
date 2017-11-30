@@ -13,14 +13,14 @@ COMMENT=	Web interface tools which adhere to the unix philosophy
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>0:devel/${PYTHON_PKGNAMEPREFIX}setuptools
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>0:devel/py-setuptools@${PY_FLAVOR}
 LIB_DEPENDS=	libwebkitgtk-1.0.so:www/webkit-gtk2 \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2  \
 		libsoup-2.4.so:devel/libsoup
 RUN_DEPENDS=	socat:net/socat \
 		dmenu:x11/dmenu \
-		${PYTHON_PKGNAMEPREFIX}configparser>0:devel/py-configparser
+		${PYTHON_PKGNAMEPREFIX}configparser>0:devel/py-configparser@${PY_FLAVOR}
 
 USES=		gmake pkgconfig python:2 desktop-file-utils gettext-runtime shebangfix
 USE_XORG=	x11

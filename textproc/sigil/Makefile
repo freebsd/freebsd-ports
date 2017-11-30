@@ -14,14 +14,14 @@ LICENSE=	GPLv3+
 LIB_DEPENDS=	libminizip.so:archivers/minizip \
 		libpcre.so:devel/pcre \
 		libhunspell-1.6.so:textproc/hunspell
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>0:devel/py3-lxml
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>0:devel/py-lxml@${PY_FLAVOR}
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	Sigil-Ebook
 GH_PROJECT=	Sigil
 
 USES=		cmake:outsource compiler:c++11-lib desktop-file-utils \
-		pkgconfig python:3 shebangfix
+		pkgconfig python:3.4+ shebangfix
 SHEBANG_FILES=	src/Resource_Files/plugin_launchers/python/*.py \
 		src/Resource_Files/python3lib/*.py
 USE_QT5=	concurrent core gui network printsupport svg webkit \

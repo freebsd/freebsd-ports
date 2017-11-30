@@ -13,7 +13,7 @@ COMMENT=	Helpful CLI utilities for querying and connecting to EC2 instances
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}boto>=1.0:devel/py-boto \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}boto>=1.0:devel/py-boto@${FLAVOR} \
 		bash:shells/bash
 
 USE_PYTHON=	distutils autoplist

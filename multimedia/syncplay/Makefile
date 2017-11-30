@@ -10,7 +10,7 @@ COMMENT=	Synchronize video playback over networks
 
 LICENSE=	APACHE20
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}twisted>=0:devel/py-twisted
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}twisted>=0:devel/py-twisted@${PY_FLAVOR}
 
 USES=		desktop-file-utils gmake python:2.7
 USE_GITHUB=	yes

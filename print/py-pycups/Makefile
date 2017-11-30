@@ -17,9 +17,9 @@ LICENSE_COMB=	dual
 LIB_DEPENDS=	libcups.so:print/cups
 
 USE_PYTHON=	autoplist concurrent distutils
-USES?=		iconv localbase python tar:bzip2
+USES=		iconv localbase python tar:bzip2
 
-SLAVEDIRS=	print/py3-pycups
+SLAVEDIRS=	print/py-pycups@${PY_FLAVOR}
 
 .include <bsd.port.pre.mk>
 

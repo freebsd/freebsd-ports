@@ -13,12 +13,12 @@ COMMENT=	Battle-tested Apache Storm Multi-Lang implementation for Python
 
 LICENSE=	APACHE20
 
-USES=		python
+USES=		python:2.7
 USE_PYTHON=	autoplist distutils
 
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}simplejson>0:devel/py-simplejson
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}msgpack-python>0:devel/py-msgpack-python
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six@${FLAVOR}
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}simplejson>0:devel/py-simplejson@${FLAVOR}
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}msgpack-python>0:devel/py-msgpack-python@${FLAVOR}
 
 NO_ARCH=	yes
 

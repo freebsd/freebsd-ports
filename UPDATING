@@ -5,6 +5,20 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20171130:
+  AFFECTS: */py*
+  AUTHOR: mat@FreeBSD.org
+
+  Ports using Python via USES=python are now flavored.  All the py3-* ports
+  have been removed and folded into their py-* master ports.
+
+  People using Poudriere and binary packages do not have to do anything.
+
+  For other people, to build the Python 3.6 version of, for example,
+  databases/py-gdbm, you need to run:
+
+    # make FLAVOR=py36 install
+
 20171126:
   AFFECTS: users of security/p5-openxpki
   AUTHOR: dbaio@FreeBSD.org

@@ -15,8 +15,8 @@ LICENSE_COMB=	dual
 LICENSE_FILE_APACHE20=	${WRKSRC}/LICENSE.apache2
 LICENSE_FILE_MIT=	${WRKSRC}/LICENSE.mit
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}colorama>=0.3.3:devel/py-colorama \
-			${PYTHON_PKGNAMEPREFIX}six>=1.10.0:devel/py-six
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}colorama>=0.3.3:devel/py-colorama@${FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}six>=1.10.0:devel/py-six@${FLAVOR}
 
 NO_ARCH=	yes
 USES=		python

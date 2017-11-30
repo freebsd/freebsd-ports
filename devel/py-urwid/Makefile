@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 OPTIONS_DEFINE=	EXAMPLES
 
-USES?=		python
+USES=		python
 USE_PYTHON=	autoplist concurrent distutils
 
 PORTEXAMPLES=	*

@@ -12,8 +12,8 @@ COMMENT=	Pure-python implementation of ADB and Fastboot protocols
 
 LICENSE=	APACHE20
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}libusb115>=1.0.16:devel/py-libusb115 \
-		${PYTHON_PKGNAMEPREFIX}m2crypto>=0.21.1:security/py-m2crypto
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}libusb115>=1.0.16:devel/py-libusb115@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}m2crypto>=0.21.1:security/py-m2crypto@${FLAVOR}
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	google

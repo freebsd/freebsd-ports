@@ -12,8 +12,8 @@ COMMENT=	Utility library for mocking out the requests Python library
 
 LICENSE=	APACHE20
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>2.0.0:www/py-requests \
-		${PYTHON_PKGNAMEPREFIX}cookies>0:www/py-cookies
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>2.0.0:www/py-requests@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}cookies>0:www/py-cookies@${FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist distutils

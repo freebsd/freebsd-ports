@@ -14,8 +14,8 @@ COMMENT=	Provides Django integration for RQ (Redis Queue)
 LICENSE=	MIT
 
 TEST_DEPENDS=	redis-server:databases/redis
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django18>=1.5:www/py-django18 \
-		${PYTHON_PKGNAMEPREFIX}rq>=0.5.5:devel/py-rq
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django18>=1.5:www/py-django18@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}rq>=0.5.5:devel/py-rq@${FLAVOR}
 
 NO_ARCH=	yes
 

@@ -13,11 +13,11 @@ COMMENT=	Folder Content Type for Zope 3
 
 LICENSE=	ZPL21
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zope.container>=0:devel/py-zope.container \
-		${PYTHON_PKGNAMEPREFIX}zope.site>=0:devel/py-zope.site \
-		${PYTHON_PKGNAMEPREFIX}zope.app.content>=0:devel/py-zope.app.content
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zope.container>=0:devel/py-zope.container@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}zope.site>=0:devel/py-zope.site@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}zope.app.content>=0:devel/py-zope.app.content@${FLAVOR}
 
-USES=		python
+USES=		python:2.7
 USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

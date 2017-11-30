@@ -14,9 +14,9 @@ COMMENT=	Python SQL toolkit and Object Relational Mapper 1.1.x
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mock>=0:devel/py-mock \
-		${PYTHON_PKGNAMEPREFIX}pytest>=2.5.2:devel/py-pytest \
-		${PYTHON_PKGNAMEPREFIX}pytest-xdist>=0:devel/py-pytest-xdist
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mock>=0:devel/py-mock@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pytest>=2.5.2:devel/py-pytest@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pytest-xdist>=0:devel/py-pytest-xdist@${FLAVOR}
 
 CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}sqlalchemy0 ${PYTHON_PKGNAMEPREFIX}sqlalchemy10
 
@@ -31,11 +31,11 @@ USES=		python
 PORTDOCS=	*
 PORTEXAMPLES=	*
 
-MSSQL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mssql>=0:databases/py-pymssql
-MYSQL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pymysql>=0:databases/py-pymysql
-PGSQL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}psycopg2>=2.5.0:databases/py-psycopg2
-SQLITE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>=0:databases/py-sqlite3
-SYBASE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sybase>=0:databases/py-sybase
+MSSQL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mssql>=0:databases/py-pymssql@${FLAVOR}
+MYSQL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pymysql>=0:databases/py-pymysql@${FLAVOR}
+PGSQL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}psycopg2>=2.5.0:databases/py-psycopg2@${FLAVOR}
+SQLITE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>=0:databases/py-sqlite3@${FLAVOR}
+SYBASE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sybase>=0:databases/py-sybase@${FLAVOR}
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/sqlalchemy/*.so

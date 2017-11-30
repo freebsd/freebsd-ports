@@ -149,7 +149,7 @@ USE_TEX=	dvipsk:build formats:build
 
 .if ${PORT_OPTIONS:MPYTHON}
 USES+=		python
-USE_PYTHON=	distutils noegginfo
+USE_PYTHON=	distutils noegginfo noflavors
 PYDISTUTILS_PKGNAME=	vboxapi
 PYDISTUTILS_PKGVERSION=	1.0
 .else

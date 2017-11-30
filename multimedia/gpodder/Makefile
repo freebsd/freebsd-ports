@@ -14,12 +14,12 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	intltool-extract:textproc/intltool \
 		help2man:misc/help2man
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>=0:databases/py-sqlite3 \
-		${PYTHON_PKGNAMEPREFIX}html5lib>0:www/py-html5lib \
-		${PYTHON_PKGNAMEPREFIX}mygpoclient>=1.4:devel/py-mygpoclient \
-		${PYTHON_PKGNAMEPREFIX}podcastparser>0:devel/py-podcastparser \
-		${PYTHON_PKGNAMEPREFIX}dbus>=0:devel/py-dbus \
-		${PYTHON_PKGNAMEPREFIX}eyed3>=0:audio/py-eyed3
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>=0:databases/py-sqlite3@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}html5lib>0:www/py-html5lib@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}mygpoclient>=1.4:devel/py-mygpoclient@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}podcastparser>0:devel/py-podcastparser@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dbus>=0:devel/py-dbus@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}eyed3>=0:audio/py-eyed3@${PY_FLAVOR}
 
 OPTIONS_DEFINE=		GTK2 NOTIFY MUTAGEN OGG2MP3
 OPTIONS_DEFAULT=	GTK2
@@ -27,8 +27,8 @@ OPTIONS_SUB=		yes
 MUTAGEN_DESC=		Allow metadata manipulation
 OGG2MP3_DESC=		Ogg Vorbis conversion to MP3 support
 OPTIONS_EXCLUDE=	NLS
-NOTIFY_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}notify>=0:devel/py-notify
-MUTAGEN_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mutagen>=0:audio/py-mutagen
+NOTIFY_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}notify>=0:devel/py-notify@${PY_FLAVOR}
+MUTAGEN_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mutagen>=0:audio/py-mutagen@${PY_FLAVOR}
 OGG2MP3_RUN_DEPENDS=	lame:audio/lame \
 			oggdec:audio/vorbis-tools
 

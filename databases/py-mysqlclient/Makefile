@@ -11,7 +11,7 @@ COMMENT=	MySQL database connector for Python
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES?=		iconv mysql python ssl
+USES=		iconv mysql python ssl
 USE_PYTHON=	distutils autoplist
 USE_GITHUB=	yes
 GH_ACCOUNT=	pymysql

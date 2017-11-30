@@ -42,7 +42,7 @@ CUSTOM_BLAS_DESC=	Handcoded BLAS routines instead of Eigen
 CUSTOM_BLAS_CMAKE_BOOL=	CUSTOM_BLAS
 
 DOCS_BUILD_DEPENDS=	sphinx-build:textproc/py-sphinx
-DOCS_USES=		python:build
+DOCS_USES=		python:2.7,build
 DOCS_CMAKE_BOOL=	BUILD_DOCUMENTATION
 
 EXAMPLES_CMAKE_BOOL=	BUILD_EXAMPLES

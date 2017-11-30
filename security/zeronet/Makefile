@@ -12,9 +12,9 @@ COMMENT=	Decentralized websites using Bitcoin crypto and BitTorrent network
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}msgpack-python>0:devel/py-msgpack-python \
-		${PYTHON_PKGNAMEPREFIX}gevent>=1.0.2:devel/py-gevent \
-		${PYTHON_PKGNAMEPREFIX}stem>0:security/py-stem
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}msgpack-python>0:devel/py-msgpack-python@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}gevent>=1.0.2:devel/py-gevent@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}stem>0:security/py-stem@${PY_FLAVOR}
 
 SUB_FILES=	zeronet-service zeronet-cmd pkg-message
 SUB_LIST=	LOCALBASE=${LOCALBASE} USER=${USER} GROUP=${GROUP}
@@ -30,7 +30,7 @@ NO_ARCH=	yes
 
 OPTIONS_DEFINE=	DEBUG
 
-DEBUG_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}werkzeug>0:www/py-werkzeug
+DEBUG_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}werkzeug>0:www/py-werkzeug@${PY_FLAVOR}
 
 .include <bsd.port.options.mk>
 

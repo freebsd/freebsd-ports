@@ -23,7 +23,7 @@ USE_PYTHON=	distutils autoplist
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MBABEL}
-RUN_DEPENDS+=	${PKGNAMEPREFIX}Babel>=0.9.6:devel/py-babel
+RUN_DEPENDS+=	${PKGNAMEPREFIX}Babel>=0.9.6:devel/py-babel@${FLAVOR}
 .endif
 
 .include <bsd.port.mk>

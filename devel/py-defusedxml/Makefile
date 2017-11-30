@@ -12,7 +12,7 @@ COMMENT=	XML bomb protection for Python stdlib modules
 
 LICENSE=	PSFL
 
-USES?=		python
+USES=		python
 USE_PYTHON=	distutils autoplist
 
 PORTDOCS=	*

@@ -16,13 +16,12 @@ LICENSE_NAME_DejaVu=	Bitstream Vera and Arev fonts license
 LICENSE_FILE_DejaVu=	${WRKSRC}/renpy/common/DejaVuSans.txt
 LICENSE_PERMS_DejaVu=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-BUILD_DEPENDS?=	${PYTHON_PKGNAMEPREFIX}game_sdl2>0:devel/py-game_sdl2
-BUILD_DEPENDS+=	cython:lang/cython
+BUILD_DEPENDS?=	${PYTHON_PKGNAMEPREFIX}game_sdl2>0:devel/py-game_sdl2@${FLAVOR}
 LIB_DEPENDS=	libfribidi.so:converters/fribidi \
 		libpng.so:graphics/png \
 		libavcodec.so:multimedia/ffmpeg \
 		libfreetype.so:print/freetype2
-RUN_DEPENDS?=	${PYTHON_PKGNAMEPREFIX}game_sdl2>=${PORTVERSION}:devel/py-game_sdl2
+RUN_DEPENDS?=	${PYTHON_PKGNAMEPREFIX}game_sdl2>=${PORTVERSION}:devel/py-game_sdl2@${FLAVOR}
 
 CONFLICTS_INSTALL?=	${PORTNAME}6-*
 
@@ -31,7 +30,7 @@ PORTSCOUT?=	site:http://www.renpy.org/dl/release/
 
 USES=		python:2.7 shebangfix tar:bz2
 USE_GL=		glew
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	autoplist distutils cython
 USE_SDL?=	sdl2
 EXCLUDE=	gen 'module/*.py[co]' 'renpy/*.py[co]'
 EXTRACT_AFTER_ARGS=${EXCLUDE:S,^,--exclude ,}
@@ -70,7 +69,7 @@ EXAMPLES_VARS=	PORTDATA+="the_question tutorial"
 EXAMPLES_VARS+=	PORTDATA+="oldtutorial"
 .endif
 TKINTER_DESC=	Install Tkinter to allow choosing Projects Directory
-TKINTER_RUN_DEPENDS=${PYTHON_PKGNAMEPREFIX}tkinter>0:x11-toolkits/py-tkinter
+TKINTER_RUN_DEPENDS=${PYTHON_PKGNAMEPREFIX}tkinter>0:x11-toolkits/py-tkinter@${FLAVOR}
 
 . for lic in FREETYPE LIBJPEG LIBPNG MSVCR90
 DIST_VARS+=	LICENSE+=${lic}

@@ -12,10 +12,10 @@ COMMENT=	IPython Kernel for Jupyter
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING.md
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ipython>=4.0.0:devel/ipython \
-		${PYTHON_PKGNAMEPREFIX}jupyter_client>=0:devel/py-jupyter_client \
-		${PYTHON_PKGNAMEPREFIX}tornado>=4.0:www/py-tornado \
-		${PYTHON_PKGNAMEPREFIX}traitlets>=4.1.0:devel/py-traitlets
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ipython>=4.0.0:devel/ipython@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}jupyter_client>=0:devel/py-jupyter_client@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}tornado>=4.0:www/py-tornado@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}traitlets>=4.1.0:devel/py-traitlets@${FLAVOR}
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes

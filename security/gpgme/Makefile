@@ -76,10 +76,10 @@ USE_QT5=	buildtools_build core testlib
 
 .  if ${SLAVEPORT} == "python"
 BUILD_DEPENDS+=	swig3.0:devel/swig30 \
-		${PYTHON_PKGNAMEPREFIX}setuptools>0:devel/${PYTHON_PKGNAMEPREFIX}setuptools
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}setuptools>0:devel/${PYTHON_PKGNAMEPREFIX}setuptools
+		${PYTHON_PKGNAMEPREFIX}setuptools>0:devel/py-setuptools@${FLAVOR}
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}setuptools>0:devel/py-setuptools@${FLAVOR}
 USES+=		python
-USE_PYTHON=	py3kplist
+USE_PYTHON=	py3kplist flavors
 CONFIGURE_ENV+=	SWIG=${LOCALBASE}/bin/swig3.0
 PLIST_SUB+=	VERSION=${PORTVERSION}
 .  endif

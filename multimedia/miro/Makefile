@@ -13,29 +13,29 @@ COMMENT=	Video player to get internet TV broadcasts
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	pyrexc:devel/pyrex \
-		${PYTHON_SITELIBDIR}/webkit/__init__.py:www/py-webkitgtk \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyrex>0:devel/pyrex@${FLAVOR} \
+		${PYTHON_SITELIBDIR}/webkit/__init__.py:www/py-webkitgtk@${FLAVOR} \
 		update-mime-database:misc/shared-mime-info \
 		${LOCALBASE}/include/boost/numeric/ublas/matrix.hpp:devel/boost-libs \
 		${LOCALBASE}/include/taglib/taglib.h:audio/taglib
 LIB_DEPENDS=	libavutil.so:multimedia/ffmpeg \
 		libsqlite3.so:databases/sqlite3
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}bsddb>0:databases/py-bsddb \
-		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3 \
-		${PYTHON_SITELIBDIR}/dbus/glib.py:devel/py-dbus \
-		${PYTHON_SITELIBDIR}/gtk-2.0/pynotify/_pynotify.so:devel/py-notify \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}bsddb>0:databases/py-bsddb@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${FLAVOR} \
+		${PYTHON_SITELIBDIR}/dbus/glib.py:devel/py-dbus@${FLAVOR} \
+		${PYTHON_SITELIBDIR}/gtk-2.0/pynotify/_pynotify.so:devel/py-notify@${FLAVOR} \
 		${PYTHON_SITELIBDIR}/libtorrent.so:net-p2p/libtorrent-rasterbar-python \
-		${PYTHON_SITELIBDIR}/webkit/webkit.so:www/py-webkitgtk \
-		${PYTHON_SITELIBDIR}/gtk-2.0/gconf.so:x11-toolkits/py-gnome2 \
-		${PYTHON_SITELIBDIR}/pycurl.so:ftp/py-pycurl \
-		${PYTHON_SITELIBDIR}/mutagen/__init__.py:audio/py-mutagen
+		${PYTHON_SITELIBDIR}/webkit/webkit.so:www/py-webkitgtk@${FLAVOR} \
+		${PYTHON_SITELIBDIR}/gtk-2.0/gconf.so:x11-toolkits/py-gnome2@${FLAVOR} \
+		${PYTHON_SITELIBDIR}/pycurl.so:ftp/py-pycurl@${FLAVOR} \
+		${PYTHON_SITELIBDIR}/mutagen/__init__.py:audio/py-mutagen@${FLAVOR}
 
 BUILD_WRKSRC=	${WRKSRC}/linux
 INSTALL_WRKSRC=	${WRKSRC}/linux
 
 USE_GNOME=	gconf2 gtk20
 USE_GSTREAMER=	python gconf
-USES=		gettext gmake pkgconfig desktop-file-utils python shared-mime-info shebangfix
+USES=		gettext gmake pkgconfig desktop-file-utils python:2.7 shared-mime-info shebangfix
 SHEBANG_FILES=	resources/testdata/7digital-replies/generate.py \
 		resources/testdata/echonest-replies/generate.py
 USE_PYTHON=	distutils

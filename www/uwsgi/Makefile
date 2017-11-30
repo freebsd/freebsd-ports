@@ -14,7 +14,7 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		pkgconfig python ssl
-USE_PYTHON=	distutils
+USE_PYTHON=	distutils concurrent optsuffix
 USE_RC_SUBR=	uwsgi
 
 CFLAGS+=	-I${OPENSSLINC}

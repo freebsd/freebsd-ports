@@ -10,9 +10,9 @@ COMMENT=	Web-interface based binary newsgrabber in python, with nzb support
 LICENSE=	BSD2CLAUSE BSD3CLAUSE GPLv2+ ISCL MIT PSFL
 LICENSE_COMB=	multi
 
-RUN_DEPENDS=	cheetah:devel/py-cheetah \
-		${PYTHON_SITELIBDIR}/pythonutils/configobj.py:devel/py-utils \
-		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3
+RUN_DEPENDS=	cheetah:devel/py-cheetah@${PY_FLAVOR} \
+		${PYTHON_SITELIBDIR}/pythonutils/configobj.py:devel/py-utils@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR}
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	sabnzbd
@@ -43,9 +43,9 @@ FEEDPARSER_DESC=	rss-feed support
 YENC_DESC=	yenc support
 
 PAR2CMDLINE_RUN_DEPENDS=	par2repair:archivers/par2cmdline-tbb
-FEEDPARSER_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}feedparser>=0:textproc/py-feedparser
-YENC_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sabyenc>=0:news/py-sabyenc
-SSL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cryptography>=0:security/py-cryptography
+FEEDPARSER_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}feedparser>=0:textproc/py-feedparser@${PY_FLAVOR}
+YENC_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sabyenc>=0:news/py-sabyenc@${PY_FLAVOR}
+SSL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cryptography>=0:security/py-cryptography@${PY_FLAVOR}
 UNRAR_RUN_DEPENDS=	unrar:archivers/unrar
 7ZIP_RUN_DEPENDS=	7za:archivers/p7zip
 

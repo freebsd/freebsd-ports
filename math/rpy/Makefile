@@ -17,7 +17,7 @@ BUILD_DEPENDS=	${PYNUMPY}
 LIB_DEPENDS=	libR.so:math/R
 RUN_DEPENDS=	${PYNUMPY}
 
-USES=		python
+USES=		python:2.7
 USE_PYTHON=	distutils autoplist
 LDFLAGS+=	-L${LOCALBASE}/lib/R/modules -L${LOCALBASE}/lib/R/lib
 

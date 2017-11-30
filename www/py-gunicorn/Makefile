@@ -12,7 +12,7 @@ COMMENT=	WSGI HTTP Server for UNIX
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${FLAVOR}
 
 OPTIONS_DEFINE=		PROCTITLE
 OPTIONS_DEFAULT=	PROCTITLE
@@ -25,11 +25,11 @@ GEVENT_DESC=	Gevent async worker (Requires Python < 3.x)
 PROCTITLE_DESC=	Custom process titles with setproctitle(3)
 TORNADO_DESC=	Tornado async worker
 
-EVENTLET_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}eventlet>=0.9.7:net/py-eventlet
-GAIOHTTP_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aiohttp>0:www/py-aiohttp
-GEVENT_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gevent>=0.12.2:devel/py-gevent
-PROCTITLE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setproctitle>0:devel/py-setproctitle
-TORNADO_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tornado>=2.2:www/py-tornado
+EVENTLET_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}eventlet>=0.9.7:net/py-eventlet@${FLAVOR}
+GAIOHTTP_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aiohttp>0:www/py-aiohttp@${FLAVOR}
+GEVENT_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gevent>=0.12.2:devel/py-gevent@${FLAVOR}
+PROCTITLE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setproctitle>0:devel/py-setproctitle@${FLAVOR}
+TORNADO_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tornado>=2.2:www/py-tornado@${FLAVOR}
 
 USES=			python
 USE_GITHUB=		yes
@@ -46,7 +46,7 @@ NO_ARCH=	yes
 BROKEN=	GAIOHTTP requires Python 3.3+ but this port is building with Python ${PYTHON_VER}. \
 	Disable the GAIOHTTP option or change the version of Python to build with, using DEFAULT_VERSIONS
 .endif
-TEST_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}mock>0:devel/py-mock
+TEST_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}mock>0:devel/py-mock@${FLAVOR}
 .endif
 
 .if ${PYTHON_REL} > 3000 && ${PORT_OPTIONS:MGEVENT}

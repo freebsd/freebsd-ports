@@ -13,12 +13,12 @@ COMMENT=	Pluggable transport proxy
 
 LICENSE=	BSD3CLAUSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyptlib>=0.0.5:security/py-pyptlib \
-		${PYTHON_PKGNAMEPREFIX}pycrypto>=2.1:security/py-pycrypto \
-		${PYTHON_PKGNAMEPREFIX}twisted>=0:devel/py-twisted \
-		${PYTHON_PKGNAMEPREFIX}yaml>=0:devel/py-yaml
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyptlib>=0.0.5:security/py-pyptlib@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pycrypto>=2.1:security/py-pycrypto@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}twisted>=0:devel/py-twisted@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}yaml>=0:devel/py-yaml@${FLAVOR}
 
-USES=		python
+USES=		python:2.7
 USE_PYTHON=	distutils
 SUB_FILES=	pkg-message
 PYDISTUTILS_PKGNAME=obfsproxy

@@ -1886,9 +1886,6 @@
     SUBDIR += py-wsgidav
     SUBDIR += py-yarl
     SUBDIR += py-zope.app.wsgi
-    SUBDIR += py3-cssutils
-    SUBDIR += py3-httplib2
-    SUBDIR += py3-requests
     SUBDIR += pyblosxom
     SUBDIR += pycarddav
     SUBDIR += pydio

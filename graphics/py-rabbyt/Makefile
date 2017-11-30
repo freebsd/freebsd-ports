@@ -13,7 +13,7 @@ DISTNAME=	Rabbyt-${PORTVERSION}
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Fast sprite library for Python
 
-USES=		python
+USES=		python:2.7
 USE_PYTHON=	distutils autoplist
 USE_GL=		gl glu
 

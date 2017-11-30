@@ -31,7 +31,7 @@ OPTIONS_SUB=	yes
 CONV_DESC=	Install bind2csv2 tool (needs python)
 
 IPV6_CONFIGURE_ON=	--ipv6
-CONV_USES=	python:run
+CONV_USES=	python:2.7,run
 
 PORTDOCS=	*
 PORTEXAMPLES=	*

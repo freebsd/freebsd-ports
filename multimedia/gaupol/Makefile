@@ -20,7 +20,7 @@ RUN_DEPENDS=	iso-codes>=0:misc/iso-codes \
 
 USE_GNOME=	pygtk2 intltool
 USE_PYTHON=	distutils
-USES=		desktop-file-utils python
+USES=		desktop-file-utils python:2.7
 INSTALLS_ICONS=	yes
 NO_ARCH=	yes
 

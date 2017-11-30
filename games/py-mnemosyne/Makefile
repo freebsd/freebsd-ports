@@ -15,12 +15,12 @@ COMMENT=	Flash-card tool which optimises your learning process
 
 LICENSE=	LGPL3
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3 \
-		${PYTHON_PKGNAMEPREFIX}matplotlib>=1.2.0:math/py-matplotlib \
-		${PYTHON_PKGNAMEPREFIX}cherrypy>=3.2:www/py-cherrypy \
-		${PYTHON_PKGNAMEPREFIX}webob>=1.2.2:www/py-webob
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}matplotlib>=1.2.0:math/py-matplotlib@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}cherrypy>=3.2:www/py-cherrypy@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}webob>=1.2.2:www/py-webob@${FLAVOR}
 
-USES=		fortran pyqt:4 python
+USES=		fortran pyqt:4 python:2.7
 USE_PYQT=	gui_run network_run sql_run webkit_run
 USE_PYTHON=	distutils autoplist
 NO_ARCH=	yes

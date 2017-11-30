@@ -13,9 +13,9 @@ COMMENT=	Create efficient Encapsulated Postscript files from images
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pillow>0:graphics/py-pillow
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pillow>0:graphics/py-pillow@${FLAVOR}
 
-USES=			ghostscript:run python
+USES=			ghostscript:run python:2.7
 USE_PYTHON=		distutils
 
 post-install:

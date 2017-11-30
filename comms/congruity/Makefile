@@ -12,7 +12,7 @@ COMMENT=	GUI Logitech Harmony configuration tool
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}libconcord>=0:comms/py-libconcord
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}libconcord>=0:comms/py-libconcord@${PY_FLAVOR}
 
 MAKE_ARGS=	MANDIR=${PREFIX}/man
 USES=		desktop-file-utils gmake tar:bzip2 python:2.7+

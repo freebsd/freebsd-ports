@@ -22,7 +22,7 @@ PYDISTUTILS_BUILDARGS=		--fcompiler=gnu95
 PYDISTUTILS_CONFIGUREARGS=	--fcompiler=gnu95
 USES=		fortran python
 USE_GITHUB=	yes
-USE_PYTHON=	concurrent distutils py3kplist
+USE_PYTHON=	concurrent distutils py3kplist cython allflavors
 LDFLAGS+=	-shared
 
 OPTIONS_DEFINE=		DOCS SUITESPARSE TESTS
@@ -42,9 +42,7 @@ NETLIB_USES=	blaslapack:netlib
 NETLIB_LIB_DEPENDS=	libcblas.so:math/cblas
 OPENBLAS_USES=	blaslapack:openblas
 SUITESPARSE_LIB_DEPENDS=libumfpack.so:math/suitesparse
-TESTS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>=0:devel/py-nose
-
-BUILD_DEPENDS+=	cython:lang/cython
+TESTS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>=0:devel/py-nose@${FLAVOR}
 
 .include <bsd.port.pre.mk>
 

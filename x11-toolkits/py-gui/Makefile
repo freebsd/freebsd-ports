@@ -12,19 +12,19 @@ DISTNAME=	PyGUI-${PORTVERSION}-1
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Cross-platform pythonic GUI API
 
-BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/Pyrex/Distutils/__init__.py:devel/pyrex
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyrex>0:devel/pyrex@${FLAVOR}
 
 OPTIONS_DEFINE=	DOCS EXAMPLES OPENGL
 
 USE_GNOME=	pygtk2
-USES=		python
+USES=		python:2.7
 USE_PYTHON=	distutils autoplist
 
 DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
 EXAMPLESDIR=	${PREFIX}/share/examples/${PKGNAMEPREFIX}${PORTNAME}
 WRKSRC=		${WRKDIR}/PyGUI-${PORTVERSION}
 
-OPENGL_RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-2.0/gtk/gdkgl/__init__.py:x11-toolkits/py-gtkglext
+OPENGL_RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-2.0/gtk/gdkgl/__init__.py:x11-toolkits/py-gtkglext@${FLAVOR}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|"GUI.Cocoa",||g' ${WRKSRC}/setup.py

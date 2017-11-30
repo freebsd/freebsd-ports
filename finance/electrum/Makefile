@@ -14,33 +14,26 @@ COMMENT=	Easy to use Bitcoin client
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENCE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dnspython>0:dns/py3-dnspython \
-		${PYTHON_PKGNAMEPREFIX}ecdsa>0:security/py3-ecdsa \
-		${PYTHON_PKGNAMEPREFIX}httplib2>=0:www/py3-httplib2 \
-		${PYTHON_PKGNAMEPREFIX}jsonrpclib-pelix>0:devel/py-jsonrpclib-pelix \
-		${PYTHON_PKGNAMEPREFIX}pbkdf2>=1.3:security/py3-pbkdf2 \
-		${PYTHON_PKGNAMEPREFIX}protobuf>=2.6.0:devel/py3-protobuf \
-		${PYTHON_PKGNAMEPREFIX}pyaes>0:security/py3-pyaes \
-		${PYTHON_PKGNAMEPREFIX}pysocks>=0:net/py3-pysocks \
-		${PYTHON_PKGNAMEPREFIX}qrcode>=5.1:textproc/py3-qrcode \
-		${PYTHON_PKGNAMEPREFIX}requests>=2.4.3:www/py3-requests
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dnspython>0:dns/py-dnspython@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}ecdsa>0:security/py-ecdsa@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}httplib2>=0:www/py-httplib2@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}jsonrpclib-pelix>0:devel/py-jsonrpclib-pelix@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pbkdf2>=1.3:security/py-pbkdf2@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}protobuf>=2.6.0:devel/py-protobuf@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pyaes>0:security/py-pyaes@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pysocks>=0:net/py-pysocks@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}qrcode>=5.1:textproc/py-qrcode@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}requests>=2.4.3:www/py-requests@${FLAVOR}
 
 CONFLICTS_INSTALL=	electrum2-*
 
-USES=		desktop-file-utils pyqt:5 python:3
+USES=		desktop-file-utils pyqt:5 python:3.4+
 USE_PYQT=	gui_run sip widgets
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	autoplist distutils optsuffix
 PYDISTUTILS_PKGNAME=	Electrum
 NO_ARCH=	yes
-
-.include <bsd.port.pre.mk>
-
-.if defined(PACKAGE_BUILDING) && !defined(PACKAGE_BUILDING_FLAVORS) && \
-	${PYTHON_VER} != ${PYTHON_DEFAULT}
-IGNORE=	you have python ${PYTHON_DEFAULT} set as the default, and this needs ${PYTHON_VER}
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,%%PREFIX%%,${PREFIX},g' ${WRKSRC}/setup.py
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

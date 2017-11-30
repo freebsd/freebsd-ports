@@ -12,7 +12,7 @@ COMMENT=	Arrays of numbers for Python, optimized for small sizes
 
 LICENSE=	BSD2CLAUSE
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>=0:devel/py-nose
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>=0:devel/py-nose@${FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist distutils

@@ -12,10 +12,10 @@ COMMENT=	Simple integration of Flask and WTForms
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Flask>0:www/py-flask \
-		${PYTHON_PKGNAMEPREFIX}wtforms>0:textproc/py-wtforms
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>0:devel/py-nose \
-		${PYTHON_PKGNAMEPREFIX}Flask-Babel>0:devel/py-flask-babel
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Flask>0:www/py-flask@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}wtforms>0:textproc/py-wtforms@${FLAVOR}
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>0:devel/py-nose@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}Flask-Babel>0:devel/py-flask-babel@${FLAVOR}
 
 OPTIONS_DEFINE=		TESTS
 TESTS_DESC=		Install test suite dependencies

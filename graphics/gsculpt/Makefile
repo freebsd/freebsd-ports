@@ -15,8 +15,8 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libboost_python.so:devel/boost-python-libs
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}PyOpenGL>0:graphics/py-PyOpenGL \
-		${PYTHON_PKGNAMEPREFIX}gtkglext>0:x11-toolkits/py-gtkglext
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}PyOpenGL>0:graphics/py-PyOpenGL@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}gtkglext>0:x11-toolkits/py-gtkglext@${PY_FLAVOR}
 
 BROKEN_powerpc=		fails to compile
 BROKEN_sparc64=		fails to compile

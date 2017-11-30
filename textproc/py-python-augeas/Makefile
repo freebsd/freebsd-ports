@@ -12,7 +12,11 @@ COMMENT=	Pure python bindings for Augeas
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cffi>=1.1.0:devel/py-cffi
+py34_BROKEN=	does not package
+py35_BROKEN=	does not package
+py36_BROKEN=	does not package
+
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cffi>=1.1.0:devel/py-cffi@${FLAVOR}
 LIB_DEPENDS=	libaugeas.so:textproc/augeas
 
 USES=		python

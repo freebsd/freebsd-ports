@@ -11,9 +11,7 @@ COMMENT=	Fast Python bindings for the UnQLite embedded NoSQL database
 
 LICENSE=	MIT
 
-BUILD_DEPENDS=	cython>0:lang/cython
-
 USES=		python
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	distutils autoplist cython
 
 .include <bsd.port.mk>

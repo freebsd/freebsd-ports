@@ -13,7 +13,7 @@ COMMENT=	Open source library for manipulating fonts, written in Python
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES?=		python zip
+USES=		python zip
 USE_PYTHON=	autoplist concurrent distutils
 NO_ARCH=	yes
 

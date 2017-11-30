@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 RUN_DEPENDS=	tracd:www/trac \
 		trac-accountmanager>0:www/trac-accountmanager \
 		trac-ldap>0:www/trac-ldap \
-		${PYTHON_PKGNAMEPREFIX}ldap>0:net/py-ldap
+		${PYTHON_PKGNAMEPREFIX}ldap>0:net/py-ldap@${FLAVOR}
 
 NO_ARCH=	yes
 PORTSCOUT=	ignore:1

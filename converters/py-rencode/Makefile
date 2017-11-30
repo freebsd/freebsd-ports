@@ -11,9 +11,7 @@ COMMENT=	R-encoding and r-decoding implementation
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	cython:lang/cython
-
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	autoplist distutils cython
 USES=		python
 
 post-install:

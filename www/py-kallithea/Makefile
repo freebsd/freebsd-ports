@@ -15,28 +15,28 @@ COMMENT=	Fast and powerful management tool for Mercurial and Git
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}PasteScript>=1.6.3:www/py-pastescript
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}waitress>=0.8.8:www/py-waitress \
-		${PYTHON_PKGNAMEPREFIX}webob>=1.0.8:www/py-webob \
-		${PYTHON_PKGNAMEPREFIX}WebTest>=1.4.3:www/py-WebTest \
-		${PYTHON_PKGNAMEPREFIX}pylons>=1.0:www/py-pylons \
-		${PYTHON_PKGNAMEPREFIX}beaker>=1.6.4:www/py-beaker \
-		${PYTHON_PKGNAMEPREFIX}webhelpers>=1.3:www/py-webhelpers \
-		${PYTHON_PKGNAMEPREFIX}formencode>=1.2.4:www/py-formencode \
-		${PYTHON_PKGNAMEPREFIX}sqlalchemy10>=0.7.10:databases/py-sqlalchemy10 \
-		${PYTHON_PKGNAMEPREFIX}mako>=0.9.0:textproc/py-mako \
-		${PYTHON_PKGNAMEPREFIX}pygments>=1.5:textproc/py-pygments \
-		${PYTHON_PKGNAMEPREFIX}whoosh>=2.4.0:textproc/py-whoosh \
-		${PYTHON_PKGNAMEPREFIX}celery>=2.2.5:devel/py-celery \
-		${PYTHON_PKGNAMEPREFIX}Babel>=0.9.6:devel/py-babel \
-		${PYTHON_PKGNAMEPREFIX}dateutil>=2.1:devel/py-dateutil \
-		${PYTHON_PKGNAMEPREFIX}markdown>=2.2.1:textproc/py-markdown \
-		${PYTHON_PKGNAMEPREFIX}docutils>=0.8.1:textproc/py-docutils \
-		${PYTHON_PKGNAMEPREFIX}mock>0:devel/py-mock \
-		${PYTHON_PKGNAMEPREFIX}urlobject>=2.3.4:www/py-urlobject \
-		${PYTHON_PKGNAMEPREFIX}routes>=1.13:www/py-routes \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}PasteScript>=1.6.3:www/py-pastescript@${FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}waitress>=0.8.8:www/py-waitress@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}webob>=1.0.8:www/py-webob@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}WebTest>=1.4.3:www/py-WebTest@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pylons>=1.0:www/py-pylons@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}beaker>=1.6.4:www/py-beaker@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}webhelpers>=1.3:www/py-webhelpers@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}formencode>=1.2.4:www/py-formencode@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}sqlalchemy10>=0.7.10:databases/py-sqlalchemy10@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}mako>=0.9.0:textproc/py-mako@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pygments>=1.5:textproc/py-pygments@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}whoosh>=2.4.0:textproc/py-whoosh@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}celery>=2.2.5:devel/py-celery@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}Babel>=0.9.6:devel/py-babel@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dateutil>=2.1:devel/py-dateutil@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}markdown>=2.2.1:textproc/py-markdown@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}docutils>=0.8.1:textproc/py-docutils@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}mock>0:devel/py-mock@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}urlobject>=2.3.4:www/py-urlobject@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}routes>=1.13:www/py-routes@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dulwich>=0.9.9:devel/dulwich \
-		${PYTHON_PKGNAMEPREFIX}bcrypt>=0.3.0:security/py-bcrypt \
+		${PYTHON_PKGNAMEPREFIX}bcrypt>=0.3.0:security/py-bcrypt@${FLAVOR} \
 		mercurial>=2.9:devel/mercurial
 
 USES=		python:2.7
@@ -51,6 +51,6 @@ OPTIONS_DEFINE=	GIT LDAP
 GIT_DESC=	Git repositories support
 
 GIT_RUN_DEPENDS=	git:devel/git
-LDAP_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ldap:net/py-ldap
+LDAP_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ldap:net/py-ldap@${FLAVOR}
 
 .include <bsd.port.mk>

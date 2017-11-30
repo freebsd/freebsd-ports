@@ -15,18 +15,18 @@ COMMENT=	Open Source DNS benchmark utility
 
 LICENSE=	APACHE20
 
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}Jinja2>=2.5.5:devel/py-Jinja2 \
-	${PYTHON_PKGNAMEPREFIX}graphy>=1.0:graphics/py-graphy \
-	${PYTHON_PKGNAMEPREFIX}dnspython>=1.9.4:dns/py-dnspython \
-	${PYTHON_PKGNAMEPREFIX}httplib2>=0.6.0:www/py-httplib2 \
-	${PYTHON_PKGNAMEPREFIX}simplejson>=2.1.6:devel/py-simplejson
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}Jinja2>=2.5.5:devel/py-Jinja2@${FLAVOR} \
+	${PYTHON_PKGNAMEPREFIX}graphy>=1.0:graphics/py-graphy@${FLAVOR} \
+	${PYTHON_PKGNAMEPREFIX}dnspython>=1.9.4:dns/py-dnspython@${FLAVOR} \
+	${PYTHON_PKGNAMEPREFIX}httplib2>=0.6.0:www/py-httplib2@${FLAVOR} \
+	${PYTHON_PKGNAMEPREFIX}simplejson>=2.1.6:devel/py-simplejson@${FLAVOR}
 
 USES=	python tar:tgz
 
 .include <bsd.port.options.mk>
 
 .if ! ${PORT_OPTIONS:MX11}
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}tkinter>=2.7.1:x11-toolkits/py-tkinter
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}tkinter>=2.7.1:x11-toolkits/py-tkinter@${FLAVOR}
 .endif
 
 MAKE_ENV+=	NO_THIRD_PARTY=yes

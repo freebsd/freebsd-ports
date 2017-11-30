@@ -9,6 +9,7 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Python bindings for the Qt 5 toolkit (meta port)
 
 USES=		metaport python pyqt:5
+USE_PYTHON=	flavors
 
 OPTIONS_DEFINE=	core dbus dbussupport demo designer \
 		designerplugin doc gui multimedia multimediawidgets \

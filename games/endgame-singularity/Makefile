@@ -19,7 +19,7 @@ RUN_DEPENDS=	py*-game>=1.8:devel/py-game \
 
 USE_GITHUB=	yes
 
-USES=		python
+USES=		python:2.7
 USE_PYTHON=	autoplist distutils
 USE_SDL=	image mixer
 PORTDOCS=	AUTHORS Changelog README.txt TODO

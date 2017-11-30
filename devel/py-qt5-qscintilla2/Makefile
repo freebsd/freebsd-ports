@@ -22,6 +22,7 @@ QT_NONSTANDARD=	yes  # Do not add unknown arguments to CONFIGURE_ARGS.
 USES=		python pyqt:5
 USE_GL=		gl
 USE_PYQT=	sip core gui printsupport widgets
+USE_PYTHON=	flavors
 USE_QT5=	core gui printsupport widgets buildtools_build qmake_build
 
 OPTIONS_DEFINE=		DEBUG

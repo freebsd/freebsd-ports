@@ -10,7 +10,7 @@ MAINTAINER=	demon@FreeBSD.org
 COMMENT=	uWSGI top-like app
 
 USES=		python
-USE_PYTHON=	distutils
+USE_PYTHON=	distutils concurrent optsuffix
 
 PLIST_FILES=	bin/uwsgitop %%DOCSDIR%%/README.rst
 

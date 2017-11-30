@@ -12,13 +12,13 @@ COMMENT=	GRPC-like RPC library that supports file descriptor passing
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyPEG2>=2.15.2:textproc/py3-pyPEG2 \
-		${PYTHON_PKGNAMEPREFIX}toposort>=1.5:devel/py3-toposort
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyPEG2>=2.15.2:textproc/py-pyPEG2@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}toposort>=1.5:devel/py-toposort@${PY_FLAVOR}
 LIB_DEPENDS=	libargdata.so:devel/argdata
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyPEG2>=2.15.2:textproc/py3-pyPEG2 \
-		${PYTHON_PKGNAMEPREFIX}toposort>=1.5:devel/py3-toposort
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyPEG2>=2.15.2:textproc/py-pyPEG2@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}toposort>=1.5:devel/py-toposort@${PY_FLAVOR}
 
-USES=		cmake localbase:ldflags python:3 tar:xz
+USES=		cmake localbase:ldflags python:3.4+ tar:xz
 USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	NuxiNL

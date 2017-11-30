@@ -14,10 +14,10 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 BUILD_DEPENDS=	${PYNUMPY} \
-		${PYTHON_PKGNAMEPREFIX}d2to1>=0:devel/py-d2to1 \
-		${PYTHON_PKGNAMEPREFIX}stsci.distutils>=0:devel/py-stsci.distutils
+		${PYTHON_PKGNAMEPREFIX}d2to1>=0:devel/py-d2to1@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}stsci.distutils>=0:devel/py-stsci.distutils@${FLAVOR}
 RUN_DEPENDS=	${PYNUMPY} \
-		${PYTHON_PKGNAMEPREFIX}d2to1>=0:devel/py-d2to1
+		${PYTHON_PKGNAMEPREFIX}d2to1>=0:devel/py-d2to1@${FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist distutils

@@ -16,7 +16,7 @@ LICENSE_COMB=	dual
 RUN_DEPENDS=	cd-discid:audio/cd-discid \
 		cdparanoia:audio/cdparanoia \
 		lame:audio/lame \
-		${PYTHON_PKGNAMEPREFIX}eyed3>=0.7:audio/py-eyed3 \
+		${PYTHON_PKGNAMEPREFIX}eyed3>=0.7:audio/py-eyed3@${PY_FLAVOR} \
 		oggenc:audio/vorbis-tools \
 		bash:shells/bash
 

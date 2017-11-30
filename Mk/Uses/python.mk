@@ -71,8 +71,24 @@
 #			  prefix-less original name, e.g.
 #			  bin/foo-2.7 --> bin/foo.
 #
+#	cython		- Depend on lang/cython at build-time.
+#
+#	cython_run	- Depend on lang/cython at run-time.
+#
+#	flavors		- Force creation of flavors for Python 2 and 3 default
+#			  versions, where applicable.
+#
+#	noflavors	- Disable automatic creation of flavors if they would
+#			  otherwise be created and they are not wanted.
+#
+#	allflavors 	- Generate flavors for all possible versions and not
+#			  simply the default ones.
+#
+#	optsuffix	- Set PKGNAMESUFFIX to PYTHON_PKGNAMESUFFIX if not the
+#			  default python version.
+#
 #	distutils	- Use distutils as do-configure, do-build and
-#			  do-install targets.
+#			  do-install targets. implies flavors.
 #
 #	autoplist	- Automatically generates the packaging list for a
 #			  port that uses distutils when defined.
@@ -235,8 +251,18 @@ _PYTHON_RELPORTDIR=		lang/python
 
 # Make each individual feature available as _PYTHON_FEATURE_<FEATURENAME>
 .for var in ${USE_PYTHON}
-_PYTHON_FEATURE_${var:tu}=	yes
+_PYTHON_FEATURE_${var:C/=.*$//:tu}=	${var:C/.*=//:S/,/ /g}
 .endfor
+
+# distutils automatically generates flavors depending on the supported
+# versions.
+.if defined(_PYTHON_FEATURE_DISTUTILS)
+_PYTHON_FEATURE_FLAVORS=	yes
+.endif
+
+.if defined(_PYTHON_FEATURE_NOFLAVORS)
+.undef _PYTHON_FEATURE_FLAVORS
+.endif
 
 # Make sure that no dependency or some other environment variable
 # pollutes the build/run dependency detection
@@ -307,6 +333,7 @@ PYTHON3_DEFAULT_VERSION?=	python${PYTHON3_DEFAULT}
 PYTHON3_DEFAULT_VERSION?=	python${PYTHON3_DEFAULT}
 .endif
 
+# Keep this before the FLAVOR selection to get the meta port dependency.
 .if ${_PYTHON_ARGS} == "2"
 _PYTHON_ARGS=		${PYTHON2_DEFAULT_VERSION:S/^python//}
 _WANTS_META_PORT=	2
@@ -371,6 +398,60 @@ _PYTHON_VERSION=	${ver}
 IGNORE=		needs an unsupported version of Python
 .endif
 .endif	# defined(_PYTHON_VERSION_NONSUPPORTED)
+
+# Automatically generates FLAVORS if empty
+.if empty(FLAVORS) && defined(_PYTHON_FEATURE_FLAVORS)
+.  undef _VALID_PYTHON_VERSIONS
+.  for ver in ${PYTHON_DEFAULT} ${PYTHON2_DEFAULT} ${PYTHON3_DEFAULT} ${_PYTHON_VERSIONS}
+__VER=		${ver}
+.    if !(!empty(_PYTHON_VERSION_MINIMUM) && ( \
+		${__VER} < ${_PYTHON_VERSION_MINIMUM})) && \
+	!(!empty(_PYTHON_VERSION_MAXIMUM) && ( \
+		${__VER} > ${_PYTHON_VERSION_MAXIMUM}))
+.      if empty(_VALID_PYTHON_VERSIONS:M${ver})
+_VALID_PYTHON_VERSIONS+=	${ver}
+.      endif
+.    endif
+.  endfor
+# Get all possible flavors depending on version requirements
+.  if defined(_VALID_PYTHON_VERSIONS)
+_ALL_PYTHON_FLAVORS=	${_VALID_PYTHON_VERSIONS:S/.//:S/^/py/}
+.  else
+_ALL_PYTHON_FLAVORS=	${_PYTHON_VERSIONS:S/.//:S/^/py/}
+.  endif
+# Decide how many flavors we want.  By default, only generate the default
+# versions.
+.  if defined(BUILD_ALL_PYTHON_FLAVORS) || defined(_PYTHON_FEATURE_ALLFLAVORS)
+FLAVORS=	${_ALL_PYTHON_FLAVORS}
+.  else
+.    for _v in ${PYTHON3_DEFAULT} ${PYTHON2_DEFAULT} ${PYTHON_DEFAULT}
+_f=	py${_v:S/.//}
+.      if ${_ALL_PYTHON_FLAVORS:M${_f}} && !${FLAVORS:M${_f}}
+FLAVORS:=	${_f} ${FLAVORS}
+.      endif
+.    endfor
+.  endif
+.  if !empty(FLAVORS) && empty(FLAVOR)
+FLAVOR=	${FLAVORS:[1]}
+.  endif
+.endif
+
+.if ${FLAVOR:Mpy[23]*}
+_PYTHON_VERSION=	${FLAVOR:S/py//:C/(.)/\1./}
+.endif
+
+.if !empty(FLAVOR) && ${_PYTHON_VERSION} != ${PYTHON_DEFAULT}
+.if defined(_PYTHON_FEATURE_OPTSUFFIX)
+PKGNAMESUFFIX=	${PYTHON_PKGNAMESUFFIX}
+.endif
+.endif
+
+# To avoid having dependencies with @ and empty flavor:
+.if empty(FLAVOR)
+PY_FLAVOR=	${PYTHON_VERSION:S/^python/py/:S/.//}
+.else
+PY_FLAVOR=	${FLAVOR}
+.endif
 
 # Pass PYTHON_VERSION down the dependency chain. This ensures that
 # port A -> B -> C all will use the same python version and do not
@@ -460,6 +541,14 @@ PYTHON_PYOEXTENSION=	opt-1.pyc
 # - it uses USE_PYTHON=distutils
 #
 
+.if defined(_PYTHON_FEATURE_CYTHON)
+BUILD_DEPENDS+=	cython-${PYTHON_VER}:lang/cython@${PY_FLAVOR}
+.endif
+
+.if defined(_PYTHON_FEATURE_CYTHON_RUN)
+RUN_DEPENDS+=	cython-${PYTHON_VER}:lang/cython@${PY_FLAVOR}
+.endif
+
 .if defined(_PYTHON_FEATURE_CONCURRENT)
 _USES_POST+=		uniquefiles:dirs
 .if ${PYTHON_VERSION} == ${PYTHON_DEFAULT_VERSION}
@@ -483,8 +572,8 @@ UNIQUE_FIND_SUFFIX_FILES=	\
 _CURRENTPORT:=	${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}
 .if defined(_PYTHON_FEATURE_DISTUTILS) && \
 	${_CURRENTPORT} != ${PYTHON_PKGNAMEPREFIX}setuptools
-BUILD_DEPENDS+=		${PYTHON_PKGNAMEPREFIX}setuptools>0:devel/${PYTHON_PKGNAMEPREFIX}setuptools
-RUN_DEPENDS+=		${PYTHON_PKGNAMEPREFIX}setuptools>0:devel/${PYTHON_PKGNAMEPREFIX}setuptools
+BUILD_DEPENDS+=		${PYTHON_PKGNAMEPREFIX}setuptools>0:devel/py-setuptools@${PY_FLAVOR}
+RUN_DEPENDS+=		${PYTHON_PKGNAMEPREFIX}setuptools>0:devel/py-setuptools@${PY_FLAVOR}
 .endif
 
 # distutils support
@@ -565,9 +654,32 @@ CONFIGURE_ENV+=	PYTHON="${PYTHON_CMD}"
 CMAKE_ARGS+=	-DPython_ADDITIONAL_VERSIONS=${PYTHON_VER}
 
 # Python 3rd-party modules
-PYGAME=		${PYTHON_PKGNAMEPREFIX}game>0:devel/py-game
-PYNUMERIC=	${PYTHON_SITELIBDIR}/Numeric/Numeric.py:math/py-numeric
-PYNUMPY=	${PYTHON_SITELIBDIR}/numpy/core/numeric.py:math/py-numpy
+PYGAME=		${PYTHON_PKGNAMEPREFIX}game>0:devel/py-game@${PY_FLAVOR}
+PYNUMERIC=	${PYTHON_SITELIBDIR}/Numeric/Numeric.py:math/py-numeric@${PY_FLAVOR}
+PYNUMPY=	${PYTHON_SITELIBDIR}/numpy/core/numeric.py:math/py-numpy@${PY_FLAVOR}
+
+# Common Python modules that can be needed but only for some versions of Python.
+.if ${PYTHON_REL} < 3400
+PY_ENUM34=	${PYTHON_PKGNAMEPREFIX}enum34>0:devel/py-enum34@${PY_FLAVOR}
+PY_ENUM_COMPAT=	${PYTHON_PKGNAMEPREFIX}enum-compat>0:devel/py-enum-compat@${PY_FLAVOR}
+PY_PATHLIB=	${PYTHON_PKGNAMEPREFIX}pathlib>0:devel/py-pathlib@${PY_FLAVOR}
+.else
+PY_ENUM34=
+PY_ENUM_COMPAT=
+PY_PATHLIB=	
+.endif
+
+.if ${PYTHON_REL} < 3300
+PY_IPADDRESS=	${PYTHON_PKGNAMEPREFIX}ipaddress>0:net/py-ipaddress@${PY_FLAVOR}
+.else
+PY_IPADDRESS=
+.endif
+
+.if ${PYTHON_REL} < 3200
+PY_FUTURES=	${PYTHON_PKGNAMEPREFIX}futures>0:devel/py-futures@${PY_FLAVOR}
+.else
+PY_FUTURES=
+.endif
 
 # dependencies
 .if defined(_PYTHON_BUILD_DEP)

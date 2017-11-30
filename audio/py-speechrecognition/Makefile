@@ -16,7 +16,7 @@ GH_ACCOUNT=	Uberi
 GH_PROJECT=	speech_recognition
 
 RUN_DEPENDS=	flac:audio/flac \
-		${PYTHON_PKGNAMEPREFIX}pyaudio>0:audio/py-pyaudio
+		${PYTHON_PKGNAMEPREFIX}pyaudio>0:audio/py-pyaudio@${FLAVOR}
 
 NO_ARCH=	yes
 USES=		python
@@ -28,7 +28,7 @@ post-extract:
 .include <bsd.port.pre.mk>
 
 .if ${PYTHON_REL} < 3000
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}monotonic>=0.3:devel/py-monotonic
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}monotonic>=0.3:devel/py-monotonic@${FLAVOR}
 .endif
 
 .include <bsd.port.post.mk>

@@ -13,10 +13,10 @@ LICENSE_FILE=	${WRKSRC}/doc/GPL.txt
 
 LIB_DEPENDS=	liblo.so:audio/liblo \
 		libsndfile.so:audio/libsndfile
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyliblo>0:audio/py-pyliblo
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyliblo>0:audio/py-pyliblo@${PY_FLAVOR}
 
 USES=		compiler:c++11-lib desktop-file-utils gmake localbase \
-		pkgconfig pyqt:5 python:3 shared-mime-info tar:bz2
+		pkgconfig pyqt:5 python:3.4+ shared-mime-info tar:bz2
 USE_GITHUB=	yes
 GH_ACCOUNT=	falkTX
 USE_PYQT=	core_run gui_run svg_run widgets_run sip_build xml_build

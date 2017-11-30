@@ -14,7 +14,7 @@ COMMENT=	General Zope Exceptions
 
 LICENSE=	ZPL21
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zope.interface>0:devel/py-zope.interface
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zope.interface>0:devel/py-zope.interface@${FLAVOR}
 
 USES=		python
 USE_PYTHON=	distutils autoplist

@@ -12,11 +12,11 @@ COMMENT=	Automatically include ZCML
 
 LICENSE=	ZPL21
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zope.dottedname>=0:devel/py-zope.dottedname \
-		${PYTHON_PKGNAMEPREFIX}zope.interface>=0:devel/py-zope.interface \
-		${PYTHON_PKGNAMEPREFIX}zope.configuration>=0:devel/py-zope.configuration \
-		${PYTHON_PKGNAMEPREFIX}zope.schema>=0:devel/py-zope.schema \
-		${PYTHON_PKGNAMEPREFIX}zc.buildout>=0:devel/py-zc.buildout
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zope.dottedname>=0:devel/py-zope.dottedname@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}zope.interface>=0:devel/py-zope.interface@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}zope.configuration>=0:devel/py-zope.configuration@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}zope.schema>=0:devel/py-zope.schema@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}zc.buildout>=0:devel/py-zc.buildout@${FLAVOR}
 
 NO_ARCH=	yes
 USES=		python

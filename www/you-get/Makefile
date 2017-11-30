@@ -17,8 +17,8 @@ RUN_DEPENDS=	ffmpeg:multimedia/ffmpeg
 OPTIONS_DEFINE=	RTMPDUMP
 
 NO_ARCH=	yes
-USE_PYTHON=	autoplist distutils
-USES=		python:3
+USE_PYTHON=	autoplist distutils optsuffix
+USES=		python:3.4+
 
 RTMPDUMP_RUN_DEPENDS=	rtmpdump:multimedia/rtmpdump
 

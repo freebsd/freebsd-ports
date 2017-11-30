@@ -42,7 +42,7 @@ USE_GL=		gl
 USE_XORG=	x11 xt xext ice xdmcp xau xcb xfixes xdamage xxf86vm xrender sm
 USE_LDCONFIG=	yes
 USE_GSTREAMER=	yes
-USES=		alias desktop-file-utils cmake:outsource jpeg python shebangfix
+USES=		alias desktop-file-utils cmake:outsource jpeg python:2.7 shebangfix
 INSTALLS_ICONS=	yes
 
 CMAKE_ARGS+=	-DBUILD_SHARED_LIBS="ON" \

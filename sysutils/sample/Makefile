@@ -13,7 +13,6 @@ LICENSE=	BSD3CLAUSE
 BUILD_DEPENDS=	${LOCALBASE}/lib/libbfd.a:devel/libbfd \
 		${LOCALBASE}/lib/libiberty.a:devel/gnulibiberty \
 		${LOCALBASE}/lib/libxo.a:devel/libxo \
-		${LOCALBASE}/bin/cython:lang/cython \
 		${LOCALBASE}/bin/python:lang/python
 
 BROKEN_i386=		does not build: don't know how to make sample_support_i386.c
@@ -25,6 +24,7 @@ GH_ACCOUNT=	freenas
 GH_TAGNAME=	45e2b86
 
 USES=		python:build kmod
+USE_PYTHON=	cython
 
 MAKE_ENV=	SYSDIR=${SRC_BASE}/sys
 
