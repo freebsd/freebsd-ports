@@ -10,13 +10,14 @@ MASTER_SITES=	SF/ofset/${PORTNAME}/${PORTVERSION}
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	GTK interactive geometry software
 
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 LIB_DEPENDS=	libguile.so:lang/guile
 
 GNU_CONFIGURE=	yes
-USES=		gettext gmake pkgconfig pathfix
+USES=		gettext gmake localbase:ldflags pkgconfig pathfix
 USE_GNOME=	gnomeprefix intlhack libglade2
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 
 PORTDATA=	*
 
