@@ -12,7 +12,7 @@ you update your ports collection, before attempting any port upgrades.
   Ports using Python via USES=python are now flavored.  All the py3-* ports
   have been removed and folded into their py-* master ports.
 
-  People using Poudriere and binary packages do not have to do anything.
+  People using Poudriere 3.2+ and binary packages do not have to do anything.
 
   For other people, to build the Python 3.6 version of, for example,
   databases/py-gdbm, you need to run:
