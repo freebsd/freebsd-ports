@@ -15,6 +15,7 @@
 %%SITE_ARCH%%/Crypt/Cipher/Camellia.pm
 %%SITE_ARCH%%/Crypt/Cipher/DES.pm
 %%SITE_ARCH%%/Crypt/Cipher/DES_EDE.pm
+%%SITE_ARCH%%/Crypt/Cipher/IDEA.pm
 %%SITE_ARCH%%/Crypt/Cipher/KASUMI.pm
 %%SITE_ARCH%%/Crypt/Cipher/Khazad.pm
 %%SITE_ARCH%%/Crypt/Cipher/MULTI2.pm
@@ -28,6 +29,7 @@
 %%SITE_ARCH%%/Crypt/Cipher/SAFER_SK128.pm
 %%SITE_ARCH%%/Crypt/Cipher/SAFER_SK64.pm
 %%SITE_ARCH%%/Crypt/Cipher/SEED.pm
+%%SITE_ARCH%%/Crypt/Cipher/Serpent.pm
 %%SITE_ARCH%%/Crypt/Cipher/Skipjack.pm
 %%SITE_ARCH%%/Crypt/Cipher/Twofish.pm
 %%SITE_ARCH%%/Crypt/Cipher/XTEA.pm
@@ -93,7 +95,9 @@
 %%SITE_ARCH%%/Crypt/PRNG/Yarrow.pm
 %%SITE_ARCH%%/Crypt/Stream/ChaCha.pm
 %%SITE_ARCH%%/Crypt/Stream/RC4.pm
+%%SITE_ARCH%%/Crypt/Stream/Salsa20.pm
 %%SITE_ARCH%%/Crypt/Stream/Sober128.pm
+%%SITE_ARCH%%/Crypt/Stream/Sosemanuk.pm
 %%SITE_ARCH%%/CryptX.pm
 %%SITE_ARCH%%/Math/BigInt/LTM.pm
 %%SITE_ARCH%%/auto/CryptX/CryptX.so
@@ -114,6 +118,7 @@
 %%PERL5_MAN3%%/Crypt::Cipher::Camellia.3.gz
 %%PERL5_MAN3%%/Crypt::Cipher::DES.3.gz
 %%PERL5_MAN3%%/Crypt::Cipher::DES_EDE.3.gz
+%%PERL5_MAN3%%/Crypt::Cipher::IDEA.3.gz
 %%PERL5_MAN3%%/Crypt::Cipher::KASUMI.3.gz
 %%PERL5_MAN3%%/Crypt::Cipher::Khazad.3.gz
 %%PERL5_MAN3%%/Crypt::Cipher::MULTI2.3.gz
@@ -127,6 +132,7 @@
 %%PERL5_MAN3%%/Crypt::Cipher::SAFER_SK128.3.gz
 %%PERL5_MAN3%%/Crypt::Cipher::SAFER_SK64.3.gz
 %%PERL5_MAN3%%/Crypt::Cipher::SEED.3.gz
+%%PERL5_MAN3%%/Crypt::Cipher::Serpent.3.gz
 %%PERL5_MAN3%%/Crypt::Cipher::Skipjack.3.gz
 %%PERL5_MAN3%%/Crypt::Cipher::Twofish.3.gz
 %%PERL5_MAN3%%/Crypt::Cipher::XTEA.3.gz
@@ -192,6 +198,8 @@
 %%PERL5_MAN3%%/Crypt::PRNG::Yarrow.3.gz
 %%PERL5_MAN3%%/Crypt::Stream::ChaCha.3.gz
 %%PERL5_MAN3%%/Crypt::Stream::RC4.3.gz
+%%PERL5_MAN3%%/Crypt::Stream::Salsa20.3.gz
 %%PERL5_MAN3%%/Crypt::Stream::Sober128.3.gz
+%%PERL5_MAN3%%/Crypt::Stream::Sosemanuk.3.gz
 %%PERL5_MAN3%%/CryptX.3.gz
 %%PERL5_MAN3%%/Math::BigInt::LTM.3.gz
