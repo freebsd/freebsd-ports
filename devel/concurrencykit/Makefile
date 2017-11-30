@@ -14,9 +14,10 @@ COMMENT=	Lock-free data structures for high performance concurrent systems
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-ONLY_FOR_ARCHS=	aarch64 amd64 armv6 i386 powerpc powerpc64 sparc64
+ONLY_FOR_ARCHS=	aarch64 amd64 armv6 armv7 i386 powerpc powerpc64 sparc64
 BROKEN_aarch64=		Fails to configure: Detecting machine architecture...failed  [unsupported]
 BROKEN_armv6=		Fails to configure: Finding suitable compiler........failed  [not found]
+BROKEN_armv7=		Fails to configure: Finding suitable compiler........failed  [not found]
 
 OPTIONS_DEFINE=		RTM VMAPACK
 OPTIONS_DEFAULT=	VMAPACK
