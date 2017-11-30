@@ -455,7 +455,6 @@ CONFIGURE_ENV_aarch64_clang=	ASFLAGS=-no-integrated-as
 CONFIGURE_ENV_armv6_clang=	ASFLAGS=-no-integrated-as
 CONFIGURE_ENV_armv7_clang=	ASFLAGS=-no-integrated-as
 CONFIGURE_ARGS_armv6=		--disable-fast-unaligned
-CONFIGURE_ARGS_armv7=		--disable-fast-unaligned
 
 DOC_FILES=	Changelog CREDITS INSTALL.md LICENSE.md MAINTAINERS \
 		README.md RELEASE_NOTES
