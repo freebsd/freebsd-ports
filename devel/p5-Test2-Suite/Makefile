@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Test2-Suite
-PORTVERSION=	0.000084
+PORTVERSION=	0.000092
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:EXODIST
@@ -17,9 +17,10 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	p5-Importer>=0.024:devel/p5-Importer \
 		p5-Module-Pluggable>=2.7:devel/p5-Module-Pluggable \
-		p5-Sub-Info>=0.001:devel/p5-Sub-Info \
+		p5-Scope-Guard>=0:devel/p5-Scope-Guard \
+		p5-Sub-Info>=0.002:devel/p5-Sub-Info \
 		p5-Term-Table>=0.002:devel/p5-Term-Table \
-		p5-Test-Simple>=1.302102:devel/p5-Test-Simple
+		p5-Test-Simple>=1.302111:devel/p5-Test-Simple
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes
