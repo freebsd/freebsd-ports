@@ -15,7 +15,7 @@ LICENSE_COMB=	multi
 LIB_DEPENDS=	libmpfr.so:math/mpfr \
 		libgmp.so:math/gmp
 
-NOT_FOR_ARCHS=		aarch64 armv6 mips mips64
+NOT_FOR_ARCHS=		aarch64 armv6 armv7 mips mips64
 NOT_FOR_ARCHS_REASON=	needs code written to specify rounding control mechanism in Boost.Numeric.Interval
 
 USES=		bison gmake perl5

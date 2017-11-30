@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS+=		pkg-config:devel/pkgconf
 LIB_DEPENDS+=		libcapstone.so:devel/capstone4
 
-NOT_FOR_ARCHS=		aarch64 armv6 mips mips64 powerpc powerpc64 sparc64
+NOT_FOR_ARCHS=		aarch64 armv6 armv7 mips mips64 powerpc powerpc64 sparc64
 NOT_FOR_ARCHS_REASON=	does not build: Unsupported BSD architecture
 
 CONFIGURE_ARGS+=	--with-syscapstone
