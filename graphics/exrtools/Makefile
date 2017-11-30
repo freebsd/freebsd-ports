@@ -18,6 +18,7 @@ LIB_DEPENDS=	libImath-2_2.so:graphics/ilmbase \
 		libIlmImf.so:graphics/OpenEXR
 
 BROKEN_armv6=		fails to configure: checking for /nxb-bin/usr/bin/cc... no
+BROKEN_armv7=		fails to configure: checking for /nxb-bin/usr/bin/cc... no
 
 GNU_CONFIGURE=	yes
 USES=		gmake jpeg pkgconfig

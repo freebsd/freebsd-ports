@@ -28,6 +28,7 @@ MAKE_ARGS=	CC="${CC}" CXX="${CXX}" LD="${CXX}" \
 
 BROKEN_aarch64=		Fails to compile: error: invalid output constraint =A in asm
 BROKEN_armv6=		Fails to compile: error: invalid output constraint =A in asm
+BROKEN_armv7=		Fails to compile: error: invalid output constraint =A in asm
 
 do-install:
 .for i in encoder spriteed

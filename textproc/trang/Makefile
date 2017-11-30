@@ -12,6 +12,7 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/trang/copying.txt
 
 BROKEN_armv6=		fails to build: modbuild.xml: Java returned: 1
+BROKEN_armv7=		fails to build: modbuild.xml: Java returned: 1
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	relaxng

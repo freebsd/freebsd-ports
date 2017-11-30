@@ -24,6 +24,7 @@ LIB_DEPENDS=	libagg.so:graphics/agg \
 		libexpat.so:textproc/expat2
 
 BROKEN_armv6=		fails to configure: C++ compiler is not installed or does not work correctly
+BROKEN_armv7=		fails to configure: C++ compiler is not installed or does not work correctly
 
 #hack to get custom exactcode configure script to enable tiff support with
 #broken headers on c++ in base system:

@@ -14,6 +14,7 @@ COMMENT=	Berkeley DB Java Edition
 BUILD_DEPENDS=	${JAVALIBDIR}/junit.jar:java/junit
 
 BROKEN_armv6=		fails to build: build.xml: Java returned: 1
+BROKEN_armv7=		fails to build: build.xml: Java returned: 1
 
 OPTIONS_DEFINE=	DOCS EXAMPLES TEST
 

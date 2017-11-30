@@ -14,6 +14,7 @@ MAINTAINER=	eg@fbsd.lt
 COMMENT=	LALR parser generator in Java
 
 BROKEN_armv6=		fails to build: build.xml: Java returned: 1
+BROKEN_armv7=		fails to build: build.xml: Java returned: 1
 
 USE_JAVA=	yes
 USE_ANT=	yes

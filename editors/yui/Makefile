@@ -15,6 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
 BROKEN_aarch64=		fails to compile: cast from pointer to smaller type loses information
 BROKEN_armv6=		fails to link: undefined reference to HTAnchor_physical
+BROKEN_armv7=		fails to link: undefined reference to HTAnchor_physical
 BROKEN_mips64=		fails to compile: cast from unsigned char* to unsigned int loses precision
 BROKEN_sparc64=		fails to compile
 BROKEN_powerpc64=	fails to build: strip: open tyui/y failed: No such file or directory

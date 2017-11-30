@@ -16,6 +16,7 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libvorbis.so:audio/libvorbis
 
 BROKEN_armv6=		dumps core: Assertion failed: (!NodePtr->isKnownSentinel()), function operator*, file ilist_iterator.h
+BROKEN_armv7=		dumps core: Assertion failed: (!NodePtr->isKnownSentinel()), function operator*, file ilist_iterator.h
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	dhewm

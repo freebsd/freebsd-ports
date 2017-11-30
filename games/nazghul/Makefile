@@ -16,6 +16,7 @@ LIB_DEPENDS=	libpng.so:graphics/png
 
 BROKEN_aarch64=		fails to compile: no matching function for call to cmdwin_vpush
 BROKEN_armv6=		fails to compile: no matching function for call to cmdwin_vpush
+BROKEN_armv7=		fails to compile: no matching function for call to cmdwin_vpush
 
 USE_SDL=	sdl image mixer
 GNU_CONFIGURE=	yes

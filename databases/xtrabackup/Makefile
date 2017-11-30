@@ -25,6 +25,7 @@ RUN_DEPENDS=	p5-DBD-mysql>=0:databases/p5-DBD-mysql \
 		qpress:archivers/qpress
 
 BROKEN_armv6=		fails to compile: cannot combine with previous 'type-name' declaration specifier
+BROKEN_armv7=		fails to compile: cannot combine with previous 'type-name' declaration specifier
 BROKEN_mips64=		fails to compile: 'fpsetmask' was not declared in this scope
 BROKEN_powerpc64=	fails to link: ld: final link failed: Bad value
 

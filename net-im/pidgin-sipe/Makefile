@@ -22,6 +22,7 @@ LIB_DEPENDS=	libnss3.so:security/nss \
 RUN_DEPENDS=	pidgin:net-im/pidgin
 
 BROKEN_armv6=		fails to compile: cast from 'struct sipe_core_public *' to 'struct sipe_core_private *' increases required alignment from 4 to 8
+BROKEN_armv7=		fails to compile: cast from 'struct sipe_core_public *' to 'struct sipe_core_private *' increases required alignment from 4 to 8
 
 GNU_CONFIGURE=	yes
 USES=		gmake libtool localbase pkgconfig tar:bzip2 ssl

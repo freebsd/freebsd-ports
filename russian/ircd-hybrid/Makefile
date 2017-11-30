@@ -20,6 +20,7 @@ CONFLICTS_INSTALL=	ircd-[0-9]* irc-[0-9]* charybdis-[0-9]* Nefarious-[0-9]* ircd
 
 BROKEN_aarch64=		fails to compile: passing void * to parameter of incompatible type
 BROKEN_armv6=		fails to compile: passing void * to parameter of incompatible type
+BROKEN_armv7=		fails to compile: passing void * to parameter of incompatible type
 
 WRKSRC=		${WRKDIR}/${PORTNAME}${PKGNAMESUFFIX}-ru
 USES=		bison ssl

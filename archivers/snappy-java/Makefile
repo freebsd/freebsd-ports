@@ -26,6 +26,7 @@ LICENSE=	APACHE20
 BUILD_DEPENDS=	${LOCALBASE}/share/java/maven3/bin/mvn:devel/maven3
 
 BROKEN_armv6=		fails to build: maven-assembly-plugin: Failed to retrieve numeric file attributes
+BROKEN_armv7=		fails to build: maven-assembly-plugin: Failed to retrieve numeric file attributes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	xerial

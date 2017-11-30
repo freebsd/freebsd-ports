@@ -38,6 +38,7 @@ MAKE_JOBS_UNSAFE=	yes
 
 BROKEN_aarch64=	fails to link: fails to detect libxml2 even though it is installed
 BROKEN_armv6=	fails to link: fails to detect libxml2 even though it is installed
+BROKEN_armv7=	fails to link: fails to detect libxml2 even though it is installed
 
 .include <bsd.port.options.mk>
 

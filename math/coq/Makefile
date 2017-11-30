@@ -20,6 +20,7 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2
 
 BROKEN_armv6=		fails to compile: Fatal error: exception Invalid_argument("index out of bounds")
+BROKEN_armv7=		fails to compile: Fatal error: exception Invalid_argument("index out of bounds")
 BROKEN_powerpc=		fails to link
 
 USES=		gmake gettext-runtime

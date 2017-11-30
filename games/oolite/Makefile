@@ -54,6 +54,7 @@ OPTIONS_DEFINE=	DOCS
 
 BROKEN_aarch64=		fails to configure: error: These compiler flags are invalid: -O
 BROKEN_armv6=		fails to compile: your compiler does not follow the C++ specification for temporary object destruction order
+BROKEN_armv7=		fails to compile: your compiler does not follow the C++ specification for temporary object destruction order
 
 .include <bsd.port.pre.mk>
 

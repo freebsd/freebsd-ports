@@ -15,6 +15,7 @@ LIB_DEPENDS=	libpthsem.so:devel/pthsem
 BUILD_DEPENDS=	${LOCALBASE}/lib/libargp.a:devel/argp-standalone
 
 BROKEN_armv6=		fails to configure: checking for GNU Pth... Segmentation fault
+BROKEN_armv7=		fails to configure: checking for GNU Pth... Segmentation fault
 BROKEN_mips=		fails to configure: checking for GNU Pth... Segmentation fault
 BROKEN_mips64=		fails to configure: checking for GNU Pth... Segmentation fault
 

@@ -16,6 +16,7 @@ LIB_DEPENDS=	libvorbis.so:audio/libvorbis \
 		libpng.so:graphics/png
 
 BROKEN_armv6=		fails to compile: constant expression evaluates to -1 which cannot be narrowed to type char
+BROKEN_armv7=		fails to compile: constant expression evaluates to -1 which cannot be narrowed to type char
 BROKEN_aarch64=		fails to compile: constant expression evaluates to -1 which cannot be narrowed to type char
 
 USE_GITHUB=	yes
