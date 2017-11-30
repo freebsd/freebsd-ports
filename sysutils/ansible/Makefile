@@ -24,7 +24,7 @@ EXTRA_PATCHES?=	#
 
 NO_ARCH=	yes
 USES?=		cpe python
-USE_PYTHON=	autoplist distutils concurrent optsuffix
+USE_PYTHON=	autoplist distutils noflavors
 CPE_VENDOR=	ansibleworks
 
 SUB_FILES=	pkg-message
