@@ -4,7 +4,7 @@ GYP_CONFIG +=   disable_nacl=1          \
                 enable_basic_printing=0  \
                 enable_printing=0       \
                 enable_print_preview=0   \
-                enable_webrtc=0         \
+                enable_webrtc=1         \
                 enable_hidpi=1          \
                 use_cups=0              \
                 use_dbus=1              \
