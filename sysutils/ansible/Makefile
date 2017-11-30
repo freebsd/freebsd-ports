@@ -20,8 +20,6 @@ RUN_DEPENDS?=	${PYTHON_PKGNAMEPREFIX}Jinja2>0:devel/py-Jinja2@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pycrypto>0:security/py-pycrypto@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}yaml>0:devel/py-yaml@${FLAVOR}
 
-CONFLICTS?=	ansible1-* ansible23-*
-
 EXTRA_PATCHES?=	#
 
 NO_ARCH=	yes
