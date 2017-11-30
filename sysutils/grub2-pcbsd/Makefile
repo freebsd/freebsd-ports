@@ -92,6 +92,4 @@ post-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/50_otherbe ${STAGEDIR}${PREFIX}/etc/grub.d/
 	${MV} ${STAGEDIR}${PREFIX}/etc/grub.d/40_custom ${STAGEDIR}/${PREFIX}/etc/grub.d/40_custom.dist
 
-RUN_DEPENDS:=	${RUN_DEPENDS:Ngcc*}
-
 .include <bsd.port.post.mk>
