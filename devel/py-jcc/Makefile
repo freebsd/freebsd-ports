@@ -15,6 +15,7 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN_armv6=		fails to link: /nxb-bin/usr/bin/ld: cannot find -ljava
+BROKEN_armv7=		fails to link: /nxb-bin/usr/bin/ld: cannot find -ljava
 
 USES=		python
 USE_PYTHON=	distutils autoplist

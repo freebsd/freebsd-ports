@@ -13,6 +13,7 @@ RUN_DEPENDS=	clang33:lang/clang33
 LIB_DEPENDS=	libprotobuf.so:devel/protobuf
 
 BROKEN_armv6=		fails to link: cmTC_8106f uses VFP register arguments, testCCompiler.c.o does not
+BROKEN_armv7=		fails to link: cmTC_8106f uses VFP register arguments, testCCompiler.c.o does not
 
 SHEBANG_FILES=	scripts/highlight-transitions
 

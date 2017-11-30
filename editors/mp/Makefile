@@ -14,6 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BROKEN_aarch64=		fails to compile: conflicting types for __wcwidth
 BROKEN_armv6=		fails to compile: conflicting types for __wcwidth
+BROKEN_armv7=		fails to compile: conflicting types for __wcwidth
 
 USES=		iconv ncurses
 HAS_CONFIGURE=	yes

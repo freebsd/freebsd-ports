@@ -19,6 +19,7 @@ BUILD_DEPENDS=	aspell:textproc/aspell \
 		hunspell:textproc/hunspell
 
 BROKEN_armv6=		fails to install: hunspell-capmain-plus_de_DE.tmp: Error 1
+BROKEN_armv7=		fails to install: hunspell-capmain-plus_de_DE.tmp: Error 1
 
 USES=		gmake perl5 shebangfix tar:bzip2
 ALL_TARGET=	hunspell-all

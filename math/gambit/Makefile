@@ -14,6 +14,7 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BROKEN_armv6=		fails to compile: 'm_number' is a private member of 'Gambit::GamePlayerRep'
+BROKEN_armv7=		fails to compile: 'm_number' is a private member of 'Gambit::GamePlayerRep'
 
 USES=		compiler:c++11-lib
 USE_GNOME=	gtk20

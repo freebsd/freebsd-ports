@@ -13,6 +13,7 @@ COMMENT=	Symbolic Model Verifier System for checking finite state systems
 
 BROKEN_aarch64=		fails to build: undefined reference to sbrk
 BROKEN_armv6=		fails to build: error: non-void function check_bdd should return a value
+BROKEN_armv7=		fails to build: error: non-void function check_bdd should return a value
 
 USE_GCC=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}

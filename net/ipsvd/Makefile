@@ -13,6 +13,7 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/package/COPYING
 
 BROKEN_armv6=		fails to install: Checking udpsvd... drop: unable to read from socket: bad address
+BROKEN_armv7=		fails to install: Checking udpsvd... drop: unable to read from socket: bad address
 BROKEN_mips64=		fails to install: tcpsvd failed
 
 WRKSRC=		${WRKDIR}/net/${DISTNAME}

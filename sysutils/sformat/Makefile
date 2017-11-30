@@ -15,7 +15,8 @@ MAINTAINER=	marius@FreeBSD.org
 COMMENT=	Allows formatting/partitioning/analysis/repairing of SCSI disks
 
 BROKEN_aarch64=		does not build: No rule to make target RULES/arm64-freebsd-cc.rul
-BROKEN_armv6=		does not build: No rule to make target RULES/arm64-freebsd-cc.rul
+BROKEN_armv6=		does not build: No rule to make target RULES/arm-freebsd-cc.rul
+BROKEN_armv7=		does not build: No rule to make target RULES/arm-freebsd-cc.rul
 BROKEN_mips64=		does not build: No rule to make target RULES/mips-freebsd-cc.rul
 BROKEN_powerpc64=	does not install: powerpc-freebsd-cc/sformat: No such file or directory
 

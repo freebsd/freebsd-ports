@@ -16,6 +16,7 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/flex:textproc/flex \
 		${LOCALBASE}/bin/bash:shells/bash
 
 BROKEN_armv6=		fails to compile: calling a private constructor of class 'ReferenceNode'
+BROKEN_armv7=		fails to compile: calling a private constructor of class 'ReferenceNode'
 BROKEN_powerpc=		fails to build
 BROKEN_powerpc64=	fails to compile: unsupported relocation against r1
 

@@ -8,6 +8,7 @@ CATEGORIES=	multimedia
 COMMENT=	Gstreamer mpeg encoder plugin
 
 BROKEN_armv6=		fails to compile: 'format_codes.h' file not found
+BROKEN_armv7=		fails to compile: 'format_codes.h' file not found
 
 GST_PLUGIN=	mpeg2enc
 

@@ -14,6 +14,7 @@ LICENSE=	GPLv3
 
 BROKEN_aarch64=		invokes x86 asm
 BROKEN_armv6=		invokes x86 asm
+BROKEN_armv7=		invokes x86 asm
 BROKEN_mips=		invokes x86 asm
 BROKEN_mips64=		invokes x86 asm
 BROKEN_sparc64=		missing atomics implementation

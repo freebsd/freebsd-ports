@@ -14,6 +14,7 @@ LIB_DEPENDS=	libcurl.so:ftp/curl
 
 BROKEN_aarch64=		fails to build: runaway process
 BROKEN_armv6=		fails to build: runaway process
+BROKEN_armv7=		fails to build: runaway process
 BROKEN_powerpc64=	fails to build: runaway process
 
 USE_GITHUB=	yes

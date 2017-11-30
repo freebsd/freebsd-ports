@@ -14,6 +14,7 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BROKEN_armv6=		fails to compile: use of overloaded operator '<<' is ambiguous
+BROKEN_armv7=		fails to compile: use of overloaded operator '<<' is ambiguous
 
 USE_SDL=	sdl
 USES=		gmake

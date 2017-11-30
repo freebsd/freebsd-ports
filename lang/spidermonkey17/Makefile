@@ -21,6 +21,7 @@ MAKE_ARGS+=	JS_THREADSAFE=YES \
 CFLAGS+=	-I${LOCALBASE}/include/nspr
 
 BROKEN_armv6=		fails to link: final link failed: Nonrepresentable section on output
+BROKEN_armv7=		fails to link: /nxb-bin/usr/bin/ld: FreeBSD12.0-CURRENT_DBG.OBJ/js: hidden symbol `__aeabi_uidivmod' in /usr/lib/libgcc.a(aeabi_uidivmod.o) is referenced by DSO
 BROKEN_mips64=		fails to link: final link failed: Nonrepresentable section on output
 BROKEN_sparc64=		fails to link
 

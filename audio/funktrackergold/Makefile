@@ -23,6 +23,7 @@ PORTDOCS=	INSTALL
 PLIST_FILES=	bin/funkgold
 
 BROKEN_armv6=		fails to compile: function definition is not allowed here
+BROKEN_armv7=		fails to compile: function definition is not allowed here
 BROKEN_mips=		fails to compile: nested functions are disabled, use -fnested-functions to re-enable
 BROKEN_mips64=		fails to compile: nested functions are disabled, use -fnested-functions to re-enable
 BROKEN_powerpc64=	fails to compile: nested functions are disabled, use -fnested-functions to re-enable

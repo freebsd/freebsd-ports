@@ -26,6 +26,7 @@ SIMD_CONFIGURE_OFF=	--disable-builtin-popcount --disable-simd
 
 BROKEN_aarch64=		Does not build: invokes x86 asm
 BROKEN_armv6=		Does not build: invokes x86 asm
+BROKEN_armv7=		Does not build: invokes x86 asm
 BROKEN_mips64=		Does not build: invokes x86 asm
 BROKEN_powerpc64=	Does not build: invokes x86 asm
 BROKEN_sparc64=		Does not build: invokes x86 asm

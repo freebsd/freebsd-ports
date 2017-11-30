@@ -23,6 +23,7 @@ USE_LDCONFIG=	yes
 
 BROKEN_aarch64=		fails to compile: constant expression evaluates to -1
 BROKEN_armv6=		fails to compile: constant expression evaluates to -1
+BROKEN_armv7=		fails to compile: constant expression evaluates to -1
 BROKEN_powerpc64=	fails to compile: narrowing conversion of '-1' from 'int' to 'char'
 
 GNU_CONFIGURE=	yes

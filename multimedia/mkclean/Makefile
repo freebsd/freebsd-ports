@@ -27,6 +27,7 @@ PLIST_FILES=	bin/mkclean \
 
 BROKEN_aarch64=	Does not install: arm-none-linux-gnueabi-gcc: Command not found
 BROKEN_armv6=	Does not install: arm-none-linux-gnueabi-gcc: Command not found
+BROKEN_armv7=	Does not install: arm-none-linux-gnueabi-gcc: Command not found
 BROKEN_mips64=	Does not install: mipsel-linux-gcc: Command not found
 BROKEN_sparc64=	Does not install: gmake: GNUmakefile: No such file or directory
 
