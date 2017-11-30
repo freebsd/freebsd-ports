@@ -7,7 +7,7 @@ CATEGORIES=	databases
 MASTER_SITES=	https://www.percona.com/downloads/XtraBackup/Percona-XtraBackup-${PORTVERSION}/source/tarball/
 DISTNAME=	percona-${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	aleksandr.kuzminsky@percona.com
+MAINTAINER=	aleks@twindb.com
 COMMENT=	OpenSource version of InnoDB backup with support of Percona extensions
 
 LICENSE=	GPLv2
