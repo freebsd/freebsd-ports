@@ -51,6 +51,4 @@ post-configure:
 do-install:
 	@cd ${WRKSRC}/grub-core && ${GMAKE} install DESTDIR=${STAGEDIR}
 
-RUN_DEPENDS:=	${RUN_DEPENDS:Ngcc*}
-
 .include <bsd.port.post.mk>
