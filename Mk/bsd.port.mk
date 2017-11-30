@@ -1065,8 +1065,7 @@ FLAVOR?=
 .if !defined(_FLAVOR)
 _FLAVOR:=	${FLAVOR}
 .endif
-# XXX: We have no real FLAVORS support in ports or tools yet.
-#PORTS_FEATURES+=	FLAVORS
+PORTS_FEATURES+=	FLAVORS
 MINIMAL_PKG_VERSION=	1.6.0
 
 _PORTS_DIRECTORIES+=	${PKG_DBDIR} ${PREFIX} ${WRKDIR} ${EXTRACT_WRKDIR} \
@@ -1081,18 +1080,6 @@ _PORTS_DIRECTORIES+=	${PKG_DBDIR} ${PREFIX} ${WRKDIR} ${EXTRACT_WRKDIR} \
 .MAKE.EXPAND_VARIABLES= yes
 
 .include "${PORTSDIR}/Mk/bsd.commands.mk"
-
-.if !empty(FLAVOR)
-.  if empty(FLAVORS)
-IGNORE=	FLAVOR is defined while this port does not have FLAVORS.
-.  elif ! ${FLAVORS:M${FLAVOR}}
-IGNORE=	Unknown flavor '${FLAVOR}', possible flavors: ${FLAVORS}.
-.  endif
-.endif
-
-.if !empty(FLAVORS) && empty(FLAVOR)
-FLAVOR=	${FLAVORS:[1]}
-.endif
 
 # Do not leak flavors to childs make
 .MAKEOVERRIDES:=	${MAKEOVERRIDES:NFLAVOR=*}
@@ -1470,6 +1457,32 @@ ${_f}_ARGS:=	${f:C/^[^\:]*(\:|\$)//:S/,/ /g}
 .include "${USESDIR}/${f:C/\:.*//}.mk"
 .endfor
 
+.if !empty(FLAVORS)
+.  if ${FLAVORS:Mall}
+DEV_ERROR+=		"FLAVORS cannot contain 'all', it is a reserved value"
+.  endif
+.  for f in ${FLAVORS}
+.    if ${f:C/[[:lower:][:digit:]_]//g}
+_BAD_FLAVOR_NAMES+=		${f}
+.    endif
+.  endfor
+.  if !empty(_BAD_FLAVOR_NAMES)
+DEV_ERROR+=		"FLAVORS contains flavors that are not all [a-z0-9_]: ${_BAD_FLAVOR_NAMES}"
+.  endif
+.endif
+
+.if !empty(FLAVOR)
+.  if empty(FLAVORS)
+IGNORE=	FLAVOR is defined (to ${FLAVOR}) while this port does not have FLAVORS.
+.  elif ! ${FLAVORS:M${FLAVOR}}
+IGNORE=	Unknown flavor '${FLAVOR}', possible flavors: ${FLAVORS}.
+.  endif
+.endif
+
+.if !empty(FLAVORS) && empty(FLAVOR)
+FLAVOR=	${FLAVORS:[1]}
+.endif
+
 EXTRACT_SUFX?=			.tar.gz
 
 .if defined(USE_LINUX_PREFIX)
@@ -1562,6 +1575,9 @@ QA_ENV+=		STAGEDIR=${STAGEDIR} \
 				LOCALBASE=${LOCALBASE} \
 				"STRIP=${STRIP}" \
 				TMPPLIST=${TMPPLIST} \
+				CURDIR='${.CURDIR}' \
+				FLAVOR=${FLAVOR} \
+				FLAVORS='${FLAVORS}' \
 				BUNDLE_LIBS=${BUNDLE_LIBS} \
 				LDCONFIG_DIR="${LDCONFIG_DIR}" \
 				PKGORIGIN=${PKGORIGIN} \
@@ -4025,11 +4041,17 @@ deinstall-depends:
 fetch-specials:
 	@${ECHO_MSG} "===> Fetching all distfiles required by ${PKGNAME} for building"
 	@for dir in ${_DEPEND_SPECIALS}; do \
+		case $${dir} in \
+			*@*) \
+				flavor=$${dir#*@}; \
+				dir=$${dir%@*}; \
+				;; \
+		esac; \
 		case $$dir in \
 		/*) ;; \
 		*) dir=${PORTSDIR}/$$dir ;; \
 		esac; \
-		(cd $$dir; ${MAKE} fetch); \
+		(cd $$dir; ${MAKE} FLAVOR=$${flavor} fetch); \
 	done
 .endif
 
@@ -4323,6 +4345,7 @@ INDEX_OUT=${INDEX_TMPDIR}/${INDEXFILE}.desc.aggr
 INDEX_OUT=/dev/stdout
 .  endif
 
+.  if empty(FLAVORS) || defined(_DESCRIBE_WITH_FLAVOR)
 describe:
 	@(${ECHO_CMD} -n "${PKGNAME}|${.CURDIR}|${PREFIX}|"; \
 	${ECHO_CMD} -n ${COMMENT:Q}; \
@@ -4337,6 +4360,13 @@ describe:
 			;; \
 		esac; \
 	done < ${DESCR}; ${ECHO_CMD}) >>${INDEX_OUT}
+.  else # empty(FLAVORS)
+describe: ${FLAVORS:S/^/describe-/}
+.   for f in ${FLAVORS}
+describe-${f}:
+	@cd ${.CURDIR} && ${MAKE} -B FLAVOR=${f} -D_DESCRIBE_WITH_FLAVOR describe
+.   endfor
+.  endif # empty(FLAVORS)
 . endif
 
 www-site:
@@ -4616,6 +4646,25 @@ stage-qa:
 .if !defined(DEVELOPER)
 	@${ECHO_MSG} "/!\\ To run stage-qa automatically add DEVELOPER=yes to your environment /!\\"
 .endif
+.endif
+
+pretty-flavors-package-names: .PHONY
+.if empty(FLAVORS)
+	@${ECHO_CMD} "no flavor: ${PKGNAME}"
+.else
+.for f in ${FLAVORS}
+	@${ECHO_CMD} -n "${f}: "
+	@cd ${.CURDIR} && ${MAKE} -B FLAVOR=${f} -V PKGNAME
+.endfor
+.endif
+
+flavors-package-names: .PHONY
+.if empty(FLAVORS)
+	@${ECHO_CMD} "${PKGNAME}"
+.else
+.for f in ${FLAVORS}
+	@cd ${.CURDIR} && ${MAKE} -B FLAVOR=${f} -V PKGNAME
+.endfor
 .endif
 
 # Fake installation of package so that user can pkg delete it later.
