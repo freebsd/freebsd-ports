@@ -13,7 +13,6 @@ LICENSE=	APACHE20
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 		libcurl.so:ftp/curl
 
-BROKEN_armv6=		fails to configure: CMake: execution of make failed
 BROKEN_powerpc64=	fails to compile: cc1plus: error: unrecognized command line option "-std=c++11"
 
 USE_GITHUB=	yes
