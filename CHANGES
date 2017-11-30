@@ -89,6 +89,11 @@ AUTHOR: mat@FreeBSD.org
     OPTIONS_DEFAULT+=   FOO
     .endif
 
+  A tools guide is available at:
+        https://wiki.freebsd.org/Ports/FlavorsTools
+  A port migration guide is available at:
+        https://wiki.freebsd.org/Ports/FlavorsMigration
+
 20171020:
 AUTHOR: ak@FreeBSD.org
 
