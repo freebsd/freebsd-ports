@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ansible
-PORTVERSION?=	2.4.1.0
+PORTVERSION?=	2.4.2.0
 PORTREVISION?=	0
 CATEGORIES=	sysutils python
 MASTER_SITES=	http://releases.ansible.com/ansible/
@@ -45,7 +45,7 @@ PORTEXAMPLES=	ansible.cfg hosts
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
 post-patch:
-	${FIND} ${WRKSRC} -type f | ${XARGS} ${REINPLACE_CMD} \
+	${FIND} ${WRKSRC} -type f -print0 | ${XARGS} -0 ${REINPLACE_CMD} \
 		-e 's|/etc/ansible|${ETCDIR}|g' \
 		-e 's|/usr/share/ansible|${DATADIR}|g'
 
