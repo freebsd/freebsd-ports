@@ -54,6 +54,7 @@ OPTIONS_GROUP_LICENSE=	GPL3 NONFREE
 
 OPTIONS_DEFINE_amd64=	MMX SSE
 OPTIONS_DEFINE_armv6=	VFP NEON
+OPTIONS_DEFINE_armv7=	VFP NEON
 OPTIONS_DEFINE_i386=	MMX SSE
 OPTIONS_DEFAULT_amd64=	MMX SSE
 OPTIONS_DEFAULT_i386=	MMX SSE
@@ -354,7 +355,7 @@ VAAPI_CONFIGURE_ENABLE=	vaapi
 VDPAU_LIB_DEPENDS=	libvdpau.so:multimedia/libvdpau
 VDPAU_CONFIGURE_ENABLE=	vdpau
 
-# armv6
+# armv6/armv7
 VFP_CONFIGURE_ENABLE=	vfp
 NEON_CONFIGURE_ENABLE=	neon
 .if ! ${CFLAGS:M-march*}
@@ -453,7 +454,9 @@ CONFIGURE_ARGS+=--prefix="${PREFIX}" \
 
 CONFIGURE_ENV_aarch64_clang=	ASFLAGS=-no-integrated-as
 CONFIGURE_ENV_armv6_clang=	ASFLAGS=-no-integrated-as
+CONFIGURE_ENV_armv7_clang=	ASFLAGS=-no-integrated-as
 CONFIGURE_ARGS_armv6=		--disable-fast-unaligned
+CONFIGURE_ARGS_armv7=		--disable-fast-unaligned
 
 DOC_FILES=	Changelog CREDITS INSTALL.md LICENSE.md MAINTAINERS \
 		README.md RELEASE_NOTES
