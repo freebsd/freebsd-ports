@@ -3,7 +3,7 @@
 
 PORTNAME=	php72
 DISTVERSION=	7.2.0RC6
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES?=	lang devel www
 MASTER_SITES=	https://downloads.php.net/~pollita/
 DISTNAME=	php-${DISTVERSION}
@@ -54,14 +54,11 @@ CLI_DESC=	Build CLI version
 CGI_DESC=	Build CGI version
 FPM_DESC=	Build FPM version
 EMBED_DESC=	Build embedded library
-DEBUG_DESC=	Enable debug
 PHPDBG_DESC=	Interactive PHP debugger
-DTRACE_DESC=	Enable DTrace support
-IPV6_DESC=	Enable ipv6 support
 LINKTHR_DESC=	Link thread lib (for threaded extensions)
 ZTS_DESC=	Force Zend Thread Safety (ZTS) build
 
-CONFLICTS=	php56-* php70-*
+CONFLICTS=	php56-* php70-* php71-*
 
 DESTDIRNAME=	INSTALL_ROOT
 
@@ -88,9 +85,6 @@ CONFIGURE_ARGS+=--enable-fpm \
 .endif
 
 .if defined(PKGNAMEPREFIX)
-USES+=	php
-PHP_VER=	72
-IGNORE_WITH_PHP=	56 70 71
 USE_APACHE=	22+
 .include "${PORTSDIR}/Mk/bsd.apache.mk"
 .if ${PORT_OPTIONS:MAP2FILTER}
@@ -138,7 +132,6 @@ CONFIGURE_ARGS+=--enable-debug
 .if ${PORT_OPTIONS:MZTS}
 CONFIGURE_ARGS+=--enable-maintainer-zts
 CONFIGURE_ENV+=	pthreads_working="yes"
-USES=	localhost
 .endif
 
 .if ${PORT_OPTIONS:MDTRACE}

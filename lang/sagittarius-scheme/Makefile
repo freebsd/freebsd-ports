@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sagittarius
-PORTVERSION=	0.8.7
+PORTVERSION=	0.8.8
 CATEGORIES=	lang
 MASTER_SITES=	https://bitbucket.org/ktakashi/sagittarius-scheme/downloads/ \
 		LOCAL/ashish
@@ -30,7 +30,7 @@ PLIST_SUB=	PORTNAME=sagittarius PORTVERSION=${PORTVERSION}
 ODBC_LIB_DEPENDS=	libiodbc.so:databases/libiodbc
 ODBC_CMAKE_ON=		-DODBC_INCLUDE_DIR:STRING=${LOCALBASE}/include/libiodbc
 SIMD_CMAKE_BOOL=	USE_SSE
-OPTIONS_SUB=		ODBC
+OPTIONS_SUB=		yes
 
 .include <bsd.port.pre.mk>
 
@@ -45,7 +45,7 @@ PLIST_SUB+=	PLIST_ARCH=${PLIST_ARCH}
 
 pre-configure:
 	@${CC} ${CFLAGS} -o ${WRKDIR}/cpuid ${FILESDIR}/cpuid.c
-	@${REINPLACE_CMD} -e 's,%%CPUID%%,${WRKDIR}/cpuid,' ${WRKSRC}/cmake/FindSSE.cmake
+	@${REINPLACE_CMD} -e 's,cpuid,${WRKDIR}/cpuid,' ${WRKSRC}/cmake/FindSSE.cmake
 
 post-patch-ODBC-off:
 	@${REINPLACE_CMD} -e '/odbc odbc/d' ${WRKSRC}/ext/CMakeLists.txt

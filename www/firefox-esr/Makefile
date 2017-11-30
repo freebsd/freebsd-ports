@@ -3,12 +3,14 @@
 
 PORTNAME=	firefox
 DISTVERSION=	52.5.0
-DISTVERSIONSUFFIX=esr.source
+DISTVERSIONSUFFIX=esr
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	MOZILLA/${PORTNAME}/releases/${DISTVERSION}esr/source \
 		MOZILLA/${PORTNAME}/candidates/${DISTVERSION}esr-candidates/build2/source
 PKGNAMESUFFIX=	-esr
+DISTFILES=	${DISTNAME}.source${EXTRACT_SUFX}
 
 MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	Web browser based on the browser portion of Mozilla
@@ -33,7 +35,7 @@ LIB_DEPENDS=	libv4l2.so:multimedia/libv4l
 
 USE_GECKO=	gecko
 CPE_PRODUCT=	${PORTNAME}_esr
-CONFLICTS_INSTALL=	firefox-[0-9]*
+CONFLICTS_INSTALL=	firefox
 MOZ_PKGCONFIG_FILES=	# empty
 USE_MOZILLA=	-soundtouch
 MOZILLA_NAME=	Firefox
@@ -53,8 +55,6 @@ OPTIONS_SINGLE+=	TOOLKIT
 OPTIONS_SINGLE_TOOLKIT=	GTK2 GTK3
 
 .include "${.CURDIR}/../../www/firefox/Makefile.options"
-
-WRKSRC:=	${WRKDIR}/${PORTNAME}-${DISTVERSION}esr
 
 post-extract:
 	@${SED} -e 's|@FIREFOX_ICON@|${FIREFOX_ICON}|' -e 's|@MOZILLA@|${MOZILLA}|' \

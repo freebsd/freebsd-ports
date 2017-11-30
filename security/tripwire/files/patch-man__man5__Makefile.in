@@ -1,12 +1,10 @@
---- man/man5/Makefile.in.orig	2016-04-23 19:12:41.000000000 -0700
-+++ man/man5/Makefile.in	2016-04-29 23:17:14.071690000 -0700
-@@ -159,8 +159,8 @@
- target_os = @target_os@
- target_vendor = @target_vendor@
+--- man/man5/Makefile.in.orig	2017-10-01 19:49:45.000000000 -0700
++++ man/man5/Makefile.in	2017-11-17 22:29:30.161039000 -0800
+@@ -269,7 +269,7 @@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
  AUTOMAKE_OPTIONS = foreign no-dependencies
--man_MANS = twfiles.5
 -dist_man_MANS = twfiles.5
-+man_MANS = twfiles.5 twconfig.5 twpolicy.5
 +dist_man_MANS = twfiles.5 twconfig.5 twpolicy.5
  all: all-am
  

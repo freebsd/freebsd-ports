@@ -11,6 +11,7 @@ MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Implementation of ANSI Common Lisp in Java
 
 BROKEN_armv6=		fails to build: build.xml: Java returned: 1
+BROKEN_armv7=		fails to build: build.xml: Java returned: 1
 
 PLIST_FILES=	share/java/classes/abcl.jar \
 		share/java/classes/abcl-contrib.jar \

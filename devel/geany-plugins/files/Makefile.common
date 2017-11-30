@@ -36,6 +36,16 @@ INSTALL_WRKSRC=	${BUILD_WRKSRC}
 DATADIR=	share/geany-plugins
 DOCSDIR=	share/doc/geany-plugins
 
+.if ${GEANY_UTIL:M${GEANY_PLUGIN}}
+
+LIB_DEPENDS+=	libgeanypluginutils.so:devel/geany-plugin-utilslib
+CONFIGURE_ARGS+=--enable-utilslib
+
+pre-build:
+	(cd ${WRKSRC}/utils; ${DO_MAKE_BUILD} ${ALL_TARGET})
+
+.endif
+
 post-configure:
 	${FIND} ${BUILD_WRKSRC} -name Makefile | ${XARGS} \
 		${REINPLACE_CMD} -e '/^geanypluginsdir/s,${LOCALBASE},${PREFIX},'

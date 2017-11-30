@@ -1,0 +1,6 @@
+include/GDMA/GDMA_MANGLE.h
+lib/libgdma.so
+share/cmake/gdma/gdmaConfig.cmake
+share/cmake/gdma/gdmaConfigVersion.cmake
+share/cmake/gdma/gdmaTargets-%%CMAKE_BUILD_TYPE%%.cmake
+share/cmake/gdma/gdmaTargets.cmake

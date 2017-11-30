@@ -25,7 +25,7 @@ CONFIGURE_ARGS=	--with-zlib=system
 USES=		localbase
 
 OPTIONS_DEFINE=	GUI
-OPTIONS_SUB=	GUI
+OPTIONS_SUB=	yes
 
 GUI_ALL_TARGET=	gui
 GUI_USE=	QT4=gui,xml,network,webkit

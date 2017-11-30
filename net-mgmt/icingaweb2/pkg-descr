@@ -1,6 +1,6 @@
 Icinga Web 2 is the next generation open source monitoring web interface,
 framework and command-line interface developed by the Icinga Project,
 supporting Icinga 2, Icinga Core and any other monitoring backend compatible
-with the Livestatus Protocol.
+with the IDO database.
 
-WWW: https://github.com/Icinga/icingaweb2
+WWW: https://www.icinga.com/products/icinga-web-2

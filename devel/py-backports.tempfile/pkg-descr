@@ -1,0 +1,16 @@
+Yet another general purpose Naive Bayesian classifier.
+(under heavy development)
+
+Naive Bayes Classifier is probably the most widely used text classifier, 
+it's a supervised learning algorithm. It can be used to classify blog posts
+or news articles into different categories like sports, entertainment and
+so forth. 
+
+Naive Bayes is a simple technique for constructing classifiers: models that
+assign class labels to problem instances, represented as vectors of feature
+values, where the class labels are drawn from some finite set. It is not a
+single algorithm for training such classifiers, but a family of algorithms
+This package provides backports of new features in Python???s tempfile module
+under the backports namespace.
+
+WWW: https://github.com/pjdelport/backports.tempfile

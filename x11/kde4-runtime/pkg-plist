@@ -38,7 +38,7 @@ lib/kconf_update_bin/phonon_deviceuids_update
 lib/kde4/comicbookthumbnail.so
 lib/kde4/cursorthumbnail.so
 lib/kde4/djvuthumbnail.so
-lib/kde4/exrthumbnail.so
+%%OPENEXR%%lib/kde4/exrthumbnail.so
 lib/kde4/fixhosturifilter.so
 lib/kde4/htmlthumbnail.so
 lib/kde4/imagethumbnail.so
@@ -855,7 +855,7 @@ share/kde4/services/device_automounter_kcm.desktop
 share/kde4/services/directorythumbnail.desktop
 share/kde4/services/djvuthumbnail.desktop
 share/kde4/services/emoticons.desktop
-share/kde4/services/exrthumbnail.desktop
+%%OPENEXR%%share/kde4/services/exrthumbnail.desktop
 share/kde4/services/filetypes.desktop
 share/kde4/services/finger.protocol
 share/kde4/services/fish.protocol

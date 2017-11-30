@@ -1,0 +1,13 @@
+TIMESTAMP = 1511729125
+SHA256 (chez-scheme-boot-a6fb.tar.xz) = ee94286508cf6e9d76b9ec9faf9aa73a452b59b4a86a2ed957ea89e271feb659
+SIZE (chez-scheme-boot-a6fb.tar.xz) = 2217812
+SHA256 (chez-scheme-boot-i3fb.tar.xz) = 1733fe28401f7a68c802b31e246696eaeccb3f9e8e32f57751a591383c91effa
+SIZE (chez-scheme-boot-i3fb.tar.xz) = 2115580
+SHA256 (cisco-ChezScheme-v9.5_GH0.tar.gz) = a1d9f93bd8a683ea3d8f2f1b4880f85ea40bf9a482ee6b84cb0fe0ab6148a98c
+SIZE (cisco-ChezScheme-v9.5_GH0.tar.gz) = 29245837
+SHA256 (nanopass-nanopass-framework-scheme-v1.9_GH0.tar.gz) = 625b239f9030d0b1e86b1fffd8b69f7249a63e8b8ca85195a00cf22889f7fc86
+SIZE (nanopass-nanopass-framework-scheme-v1.9_GH0.tar.gz) = 3816290
+SHA256 (madler-zlib-v1.2.11_GH0.tar.gz) = 629380c90a77b964d896ed37163f5c3a34f6e6d897311f1df2a7016355c45eff
+SIZE (madler-zlib-v1.2.11_GH0.tar.gz) = 644492
+SHA256 (dybvig-stex-v1.2.1_GH0.tar.gz) = bf784ca46aaca9b665b7eb0c39f04f6a695aa40e99b11d8a6d4440648c1bf40e
+SIZE (dybvig-stex-v1.2.1_GH0.tar.gz) = 211011

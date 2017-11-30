@@ -1,0 +1,7 @@
+apitrace is a set of tools to:
+- trace OpenGL, OpenGL ES, Direct3D, and DirectDraw APIs calls to a file
+- replay OpenGL and OpenGL ES calls from a file
+- inspect OpenGL state at any call while retracing
+- visualize and edit trace files
+
+WWW: https://apitrace.github.io

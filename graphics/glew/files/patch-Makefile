@@ -1,0 +1,72 @@
+--- Makefile.orig	2017-10-30 16:24:12 UTC
++++ Makefile
+@@ -115,7 +115,7 @@ else ifneq ($(LIBTOOL),)
+ 	$(LIBTOOL) $@ $^
+ endif
+ ifneq ($(STRIP),)
+-	$(STRIP) -x $@
++	$(STRIP) $@
+ endif
+ 
+ lib/$(LIB.SHARED): $(LIB.SOBJS)
+@@ -125,8 +125,9 @@ ifneq ($(LN),)
+ 	$(LN) $(LIB.SHARED) lib/$(LIB.DEVLNK)
+ endif
+ ifneq ($(STRIP),)
+-	$(STRIP) -x $@
++	$(STRIP) $@
+ endif
++	/usr/bin/file $@
+ 
+ tmp/$(SYSTEM)/default/static/glew.o: src/glew.c include/GL/glew.h include/GL/wglew.h include/GL/glxew.h
+ 	@mkdir -p $(dir $@)
+@@ -142,14 +143,14 @@ tmp/$(SYSTEM)/default/shared/glew.o: src/glew.c includ
+ 
+ glew.pc: glew.pc.in
+ 	sed \
+-		-e "s|@prefix@|$(GLEW_PREFIX)|g" \
+-		-e "s|@libdir@|$(LIBDIR)|g" \
+-		-e "s|@exec_prefix@|$(BINDIR)|g" \
+-		-e "s|@includedir@|$(INCDIR)|g" \
+-		-e "s|@version@|$(GLEW_VERSION)|g" \
+-		-e "s|@cflags@||g" \
+-		-e "s|@libname@|$(NAME)|g" \
+-		-e "s|@requireslib@|$(LIBGLU)|g" \
++		-e 's|@prefix@|$(GLEW_PREFIX)|g' \
++		-e 's|@libdir@|$${prefix}/lib|g' \
++		-e 's|@exec_prefix@|$${prefix}/bin|g' \
++		-e 's|@includedir@|$${prefix}/include|g' \
++		-e 's|@version@|$(GLEW_VERSION)|g' \
++		-e 's|@cflags@||g' \
++		-e 's|@libname@|$(NAME)|g' \
++		-e 's|@requireslib@|$(LIBGLU)|g' \
+ 		< $< > $@
+ 
+ # GLEW utility programs
+@@ -180,22 +181,22 @@ bin:
+ bin/$(GLEWINFO.BIN): $(GLEWINFO.BIN.OBJ) lib/$(LIB.SHARED)
+ 	$(CC) $(CFLAGS) -o $@ $(GLEWINFO.BIN.OBJ) $(BIN.LIBS)
+ ifneq ($(STRIP),)
+-	$(STRIP) -x $@
++	$(STRIP) $@
+ endif
+ 
+ bin/$(VISUALINFO.BIN): $(VISUALINFO.BIN.OBJ) lib/$(LIB.SHARED)
+ 	$(CC) $(CFLAGS) -o $@ $(VISUALINFO.BIN.OBJ) $(BIN.LIBS)
+ ifneq ($(STRIP),)
+-	$(STRIP) -x $@
++	$(STRIP) $@
+ endif
+ 
+ $(GLEWINFO.BIN.OBJ): $(GLEWINFO.BIN.SRC) include/GL/glew.h include/GL/wglew.h include/GL/glxew.h
+ 	@mkdir -p $(dir $@)
+-	$(CC) -DGLEW_NO_GLU $(CFLAGS) $(CFLAGS.SO) -o $@ -c $<
++	$(CC) -DGLEW_NO_GLU $(CFLAGS) -o $@ -c $<
+ 
+ $(VISUALINFO.BIN.OBJ): $(VISUALINFO.BIN.SRC) include/GL/glew.h include/GL/wglew.h include/GL/glxew.h
+ 	@mkdir -p $(dir $@)
+-	$(CC) -DGLEW_NO_GLU $(CFLAGS) $(CFLAGS.SO) -o $@ -c $<
++	$(CC) -DGLEW_NO_GLU $(CFLAGS) -o $@ -c $<
+ 
+ # Install targets
+ 

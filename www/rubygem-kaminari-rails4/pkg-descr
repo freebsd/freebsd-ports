@@ -1,4 +1,4 @@
 Kaminari is a Scope & Engine based, clean, powerful, agnostic, customizable and
-sophisticated paginator for Rails 3
+sophisticated paginator for Rails 4+
 
-WWW: https://github.com/amatsuda/kaminari
+WWW: https://github.com/kaminari/kaminari

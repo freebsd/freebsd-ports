@@ -13,6 +13,7 @@ COMMENT=	Swallowable applet monitors the CPU usage, memory, and swap, etc
 LICENSE=	GPLv2
 
 BROKEN_armv6=		fails to compile: asmon.c: variable has incomplete type 'struct vmmeter'
+BROKEN_armv7=		fails to compile: asmon.c: variable has incomplete type 'struct vmmeter'
 BROKEN_mips=		fails to compile: asmon.c: storage size of 'sum' isn't known
 BROKEN_mips64=		fails to compile: asmon.c: storage size of 'sum' isn't known
 BROKEN_powerpc64=	fails to compile: asmon.c: storage size of 'sum' isn't known

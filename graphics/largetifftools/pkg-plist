@@ -1,0 +1,6 @@
+bin/tifffastcrop
+bin/tiffmakemosaic
+bin/tiffsplittiles
+man/man1/tifffastcrop.1.gz
+man/man1/tiffmakemosaic.1.gz
+man/man1/tiffsplittiles.1.gz

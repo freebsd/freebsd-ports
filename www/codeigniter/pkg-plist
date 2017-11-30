@@ -1,6 +1,5 @@
 %%APACHE%%%%CONFDIR%%/codeigniter.conf
 %%WWWDIR%%/application/.htaccess
-%%WWWDIR%%/application/cache/.htaccess
 %%WWWDIR%%/application/cache/index.html
 %%WWWDIR%%/application/config/index.html
 @sample %%WWWDIR%%/%%CI_CONF_DIR%%/autoload.php.sample

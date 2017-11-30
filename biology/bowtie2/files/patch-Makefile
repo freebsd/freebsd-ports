@@ -1,6 +1,6 @@
---- Makefile.orig	2016-12-30 15:40:06 UTC
+--- Makefile.orig	2017-10-05 16:45:18 UTC
 +++ Makefile
-@@ -21,8 +21,8 @@
+@@ -21,10 +21,11 @@
  # Makefile for bowtie, bowtie2-build, bowtie2-inspect
  #
  
@@ -9,36 +9,21 @@
 +PREFIX ?= /usr/local
 +bindir = $(PREFIX)/bin
  
- INC =
+ INC = $(if $(RELEASE_BUILD),-I$(CURDIR)/.include)
++INC += -I${LOCALBASE}/include
+ LIBS = $(LDFLAGS) $(if $(RELEASE_BUILD),-L$(CURDIR)/.lib) -lz
  GCC_PREFIX = $(shell dirname `which gcc`)
-@@ -62,6 +62,8 @@ ifeq (1, $(POPCNT_CAPABILITY))
-     INC += -I third_party
- endif
- 
-+INC += -I ${LOCALBASE}/include
-+
- MM_DEF =
- 
- ifeq (1,$(BOWTIE_MM))
-@@ -75,7 +77,7 @@ ifeq (1,$(BOWTIE_SHARED_MEM))
- endif
- 
- PTHREAD_PKG =
--PTHREAD_LIB =
-+PTHREAD_LIB = 
- 
- #if we're not using TBB, then we can't use queuing locks
- ifeq (1,$(NO_TBB))
-@@ -94,7 +96,7 @@ endif
+ GCC_SUFFIX =
+@@ -98,7 +99,7 @@ endif
  
  #default is to use Intel TBB
  ifneq (1,$(NO_TBB))
--	LIBS = $(PTHREAD_LIB) -ltbb -ltbbmalloc_proxy
-+	LIBS = $(PTHREAD_LIB) -L${LOCALBASE}/lib -ltbb -ltbbmalloc
+-	LIBS += $(PTHREAD_LIB) -ltbb -ltbbmalloc$(if $(RELEASE_BUILD),,_proxy)
++	LIBS += $(PTHREAD_LIB) -L${LOCALBASE}/lib -ltbb -ltbbmalloc
  	override EXTRA_FLAGS += -DWITH_TBB
  else
- 	LIBS = $(PTHREAD_LIB)
-@@ -185,7 +187,7 @@ SSE_FLAG=-msse2
+ 	LIBS += $(PTHREAD_LIB)
+@@ -189,7 +190,7 @@ SSE_FLAG=-msse2
  
  DEBUG_FLAGS    = -O0 -g3 -m64 $(SSE_FLAG)
  DEBUG_DEFS     = -DCOMPILER_OPTIONS="\"$(DEBUG_FLAGS) $(EXTRA_FLAGS)\""

@@ -14,6 +14,7 @@ COMMENT=	Highly dynamic multi-platform foreign function call interface library
 LICENSE=	ISCL
 
 BROKEN_armv6=		fails to compile: unexpected token in operand
+BROKEN_armv7=		fails to compile: unexpected token in operand
 
 HAS_CONFIGURE=	yes
 

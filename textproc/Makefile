@@ -162,6 +162,7 @@
     SUBDIR += elasticsearch2-plugin-migration
     SUBDIR += elasticsearch2-plugin-sql
     SUBDIR += elasticsearch5
+    SUBDIR += elasticsearch5-search-guard
     SUBDIR += elasticsearch5-x-pack
     SUBDIR += elixir-earmark
     SUBDIR += elixir-ex_doc
@@ -1671,7 +1672,6 @@
     SUBDIR += sq-hunspell
     SUBDIR += sr-aspell
     SUBDIR += sr-hunspell
-    SUBDIR += srilm
     SUBDIR += ss-hunspell
     SUBDIR += ssddiff
     SUBDIR += stardict-dict-fa_IR

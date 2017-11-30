@@ -42,6 +42,8 @@ post-patch:
 		${WRKSRC}/config.sh
 	${REINPLACE_CMD} -e 's|-liconv|${ICONV_LIB} -lcrypto -lncursesw|;s|-Werror||' \
 		${WRKSRC}/Makefile
+	${REINPLACE_CMD} -e 's|LDFLAGS+=-L. -fprofile-arcs -ftest-coverage|LDFLAGS+=-L.|' \
+		${WRKSRC}/Makefile
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/*boat

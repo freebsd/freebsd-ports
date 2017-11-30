@@ -743,6 +743,7 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%ARCH_LIB%%/CORE/parser.h
 %%ARCH_LIB%%/CORE/patchlevel.h
 %%ARCH_LIB%%/CORE/perl.h
+%%ARCH_LIB%%/CORE/perl_inc_macro.h
 %%ARCH_LIB%%/CORE/perl_langinfo.h
 %%ARCH_LIB%%/CORE/perlapi.h
 %%DTRACE%%%%ARCH_LIB%%/CORE/perldtrace.h
@@ -1001,6 +1002,7 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%MAN1%%/perl5274delta.1.gz
 %%MAN1%%/perl5275delta.1.gz
 %%MAN1%%/perl5276delta.1.gz
+%%MAN1%%/perl5277delta.1.gz
 %%MAN1%%/perl561delta.1.gz
 %%MAN1%%/perl56delta.1.gz
 %%MAN1%%/perl581delta.1.gz
@@ -1802,6 +1804,7 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%PRIV_LIB%%/pod/perl5274delta.pod
 %%PRIV_LIB%%/pod/perl5275delta.pod
 %%PRIV_LIB%%/pod/perl5276delta.pod
+%%PRIV_LIB%%/pod/perl5277delta.pod
 %%PRIV_LIB%%/pod/perl561delta.pod
 %%PRIV_LIB%%/pod/perl56delta.pod
 %%PRIV_LIB%%/pod/perl581delta.pod

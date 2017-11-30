@@ -11,6 +11,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Memory and swap monitoring dockapp
 
 BROKEN_armv6=		fails to compile: mem_freebsd.c: variable has incomplete type 'struct vmmeter'
+BROKEN_armv7=		fails to compile: mem_freebsd.c: variable has incomplete type 'struct vmmeter'
 BROKEN_mips=		fails to compile: mem_freebsd.c: storage size of 'vm' isn't known
 BROKEN_mips64=		fails to compile: mem_freebsd.c: storage size of 'vm' isn't known
 BROKEN_powerpc64=	fails to compile: mem_freebsd.c: storage size of 'vm' isn't known

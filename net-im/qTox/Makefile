@@ -3,48 +3,44 @@
 
 PORTNAME=	qTox
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.12.1
-PORTREVISION=	1
+DISTVERSION=	1.13.0
 CATEGORIES=	net-im net-p2p
 
-MAINTAINER=	yuri@rawbw.com
+MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Qt 5 based Tox client
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${LOCALBASE}/include/linux/videodev2.h:multimedia/v4l_compat
-LIB_DEPENDS=	libtoxcore.so:net-im/tox \
-		libopencv_highgui.so:graphics/opencv \
-		libopencv_core.so:graphics/opencv-core \
-		libavcodec.so:multimedia/ffmpeg \
-		libvpx.so:multimedia/libvpx \
-		libfilteraudio.so:audio/libfilteraudio \
-		libopus.so:audio/opus \
-		libsodium.so:security/libsodium \
-		libqrencode.so:graphics/libqrencode \
-		libsqlcipher.so:databases/sqlcipher \
+LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
+		libexif.so:graphics/libexif \
+		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
-		libfontconfig.so:x11-fonts/fontconfig
+		libopus.so:audio/opus \
+		libqrencode.so:graphics/libqrencode \
+		libsodium.so:security/libsodium \
+		libsqlcipher.so:databases/sqlcipher \
+		libtoxcore.so:net-im/tox \
+		libvpx.so:multimedia/libvpx
 
-OPTIONS_DEFINE=	PLATFORM_EXTENSIONS
-OPTIONS_DEFAULT=PLATFORM_EXTENSIONS
-PLATFORM_EXTENSIONS_DESC=	Enable platform specific extensions
-
+USES=		cmake compiler:c++11-lib desktop-file-utils gettext openal:soft pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	qTox
-GH_TAGNAME=	cd8a7ad
-
-USES=		compiler:c++11-lib desktop-file-utils gettext openal:soft pkgconfig cmake
 USE_GNOME=	gtk20 cairo
 USE_QT5=	core gui network xml opengl sql sql-sqlite3_run widgets svg \
-		concurrent_build buildtools_build linguisttools_build testlib_build
-# bug#220813: qmake isn't needed, but build fails without qmake_build
-USE_QT5+=	qmake_build
+		concurrent_build buildtools_build linguisttools_build qmake_build testlib_build
 CMAKE_ARGS=	-DGIT_DESCRIBE:STRING=${FULLVERSION}
 INSTALLS_ICONS=	yes
 
-PLATFORM_EXTENSIONS_CMAKE_OFF=	-DPLATFORM_EXTENSIONS:BOOL=OFF
+OPTIONS_DEFINE=			FILTERAUDIO PLATFORM_EXTENSIONS
+OPTIONS_DEFAULT=		FILTERAUDIO PLATFORM_EXTENSIONS
+PLATFORM_EXTENSIONS_DESC=	Enable platform specific extensions
+FILTERAUDIO_DESC=		Enable the echo canceling backend
+
+FILTERAUDIO_CMAKE_BOOL=		USE_FILTERAUDIO
+FILTERAUDIO_LIB_DEPENDS=	libfilteraudio.so:audio/libfilteraudio
+PLATFORM_EXTENSIONS_CMAKE_BOOL=	PLATFORM_EXTENSIONS
 PLATFORM_EXTENSIONS_USE=	XORG=x11,xscrnsaver
 
 PLIST_FILES=	bin/qtox \

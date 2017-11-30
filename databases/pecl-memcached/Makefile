@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	memcached
-PORTVERSION=	3.0.3
-PORTREVISION=	1
+PORTVERSION=	3.0.4
 CATEGORIES=	databases
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -12,6 +11,7 @@ COMMENT=	PHP extension for interfacing with memcached via libmemcached library
 LICENSE=	PHP30
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BUILD_DEPENDS=	libmemcached>=1.0.18:databases/libmemcached
 LIB_DEPENDS=	libmemcached.so:databases/libmemcached
 
 OPTIONS_DEFINE=	IGBINARY SASL

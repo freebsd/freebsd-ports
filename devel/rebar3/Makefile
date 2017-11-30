@@ -1,15 +1,15 @@
 # $FreeBSD$
 
 PORTNAME=	rebar3
-PORTVERSION=	3.4.4
+PORTVERSION=	3.4.7
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES+=	LOCAL/olgeni:deps \
 		http://olgeni.olgeni.com/~olgeni/distfiles/:deps \
 		https://s3.amazonaws.com/s3.hex.pm/tarballs/:hex
-DISTFILES=	rebar3-cache-13${EXTRACT_SUFX}:deps
+DISTFILES=	rebar3-cache-${CACHE_VERSION}${EXTRACT_SUFX}:deps
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX} \
-		rebar3-cache-13${EXTRACT_SUFX}
+		rebar3-cache-${CACHE_VERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Build tool for Erlang
@@ -31,23 +31,28 @@ PORTEXAMPLES=	rebar.config.sample
 BASH_PLIST_FILES=	share/bash-completion/completions/rebar3
 ZSH_PLIST_FILES=	share/zsh/site-functions/_rebar3
 
+CACHE_VERSION=	16
 # from rebar.config
 REBAR_DEPS=	bbmustache-1.3.0 \
 		certifi-2.0.0 \
 		cf-0.2.2 \
-		cth_readable-1.3.0 \
-		erlware_commons-1.0.0 \
-		eunit_formatters-0.3.1 \
-		getopt-0.8.2 \
-		providers-1.6.0 \
-		relx-3.23.1 \
-		ssl_verify_fun-1.1.2
+		cth_readable-1.3.2 \
+		erlware_commons-1.0.4 \
+		eunit_formatters-0.5.0 \
+		getopt-1.0.1 \
+		providers-1.7.0 \
+		relx-3.24.3 \
+		ssl_verify_fun-1.1.3
 
 .for _dep in ${REBAR_DEPS} ${REBAR_PLUGINS}
 DISTFILES+=	${_dep}.tar:hex
 .endfor
 
 .include <bsd.port.options.mk>
+
+# convenience target to rebuild the rebar3 cache file
+build-cache:
+	cd ${WRKDIR} && ${TAR} -c -v -z -f rebar3-cache-${CACHE_VERSION}${EXTRACT_SUFX} .cache
 
 post-extract:
 	@${REINPLACE_CMD} -e 's/{vsn, "git"}/{vsn, "${GH_TAGNAME}"}/' ${WRKSRC}/src/rebar.app.src

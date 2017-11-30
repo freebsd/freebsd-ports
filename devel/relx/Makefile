@@ -1,15 +1,15 @@
 # $FreeBSD$
 
 PORTNAME=	relx
-PORTVERSION=	3.24.0
+PORTVERSION=	3.24.3
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 MASTER_SITES+=	LOCAL/olgeni:deps \
 		http://olgeni.olgeni.com/~olgeni/distfiles/:deps \
 		https://s3.amazonaws.com/s3.hex.pm/tarballs/:hex
-DISTFILES=	relx-cache-15${EXTRACT_SUFX}:deps
+DISTFILES=	relx-cache-${CACHE_VERSION}${EXTRACT_SUFX}:deps
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX} \
-		relx-cache-15${EXTRACT_SUFX}
+		relx-cache-${CACHE_VERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Sane, simple release creation for Erlang
@@ -27,15 +27,21 @@ PLIST_SUB=	VERSION="${PORTVERSION}"
 USE_GITHUB=	yes
 GH_ACCOUNT=	erlware
 
+CACHE_VERSION=	17
+# from rebar.config
 REBAR_DEPS=	bbmustache-1.0.4 \
 		cf-0.2.2 \
-		erlware_commons-1.0.2 \
+		erlware_commons-1.0.4 \
 		getopt-1.0.1 \
-		providers-1.6.0
+		providers-1.7.0
 
 .for _dep in ${REBAR_DEPS}
 DISTFILES+=	${_dep}.tar:hex
 .endfor
+
+# convenience target to rebuild the relx cache file
+build-cache:
+	cd ${WRKDIR} && ${TAR} -c -v -z -f relx-cache-${CACHE_VERSION}${EXTRACT_SUFX} .cache
 
 # rebar3 insists on downloading dependencies, and some kind of package
 # index into the user's HOME. We need to trick it into behaving by

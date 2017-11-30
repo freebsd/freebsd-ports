@@ -17,10 +17,10 @@ CONFLICTS=	emacs25-[0-9]* emacs-nox11-[0-9]*
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	emacs-mirror
-GH_TAGNAME=	00995c8
+GH_TAGNAME=	6b8e9b7
 
 EMACS_VER=	27.0.50
-EMACS_REV=	20171109
+EMACS_REV=	20171118
 GNU_CONFIGURE=	yes
 USES=		autoreconf:build cpe gmake makeinfo ncurses pkgconfig
 INFO_PATH=	${DATADIR_REL}/info
@@ -179,6 +179,17 @@ XWIDGETS_USE=		XORG=xcomposite
 XWIDGETS_CONFIGURE_WITH=xwidgets
 XWIDGETS_LIB_DEPENDS=	libwebkit2gtk-4.0.so:www/webkit2-gtk3
 XWIDGETS_IMPLIES=	GTK3
+
+.include <bsd.port.options.mk>
+
+# has graphics/ImageMagick been compiled with OPENMP?
+.if ${PORT_OPTIONS:MMAGICK} && ${:!${GREP} -sc " \-fopenmp " ${LOCALBASE}/libdata/pkgconfig/ImageMagick.pc || true!} == "1"
+_MAGICK_WITH_OPENMP=	true
+.endif
+
+.ifdef _MAGICK_WITH_OPENMP
+USES+=	compiler:openmp
+.endif
 
 pre-configure:
 	@(cd ${WRKSRC} && ./autogen.sh all)

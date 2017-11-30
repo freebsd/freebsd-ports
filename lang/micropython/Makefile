@@ -20,6 +20,7 @@ USE_GITHUB=	yes
 PLIST_FILES=	bin/micropython
 
 BROKEN_armv6=	fails to assemble: error: invalid operand for instruction
+BROKEN_armv7=	fails to assemble: error: invalid operand for instruction
 
 WRKSRC_SUBDIR=	unix
 

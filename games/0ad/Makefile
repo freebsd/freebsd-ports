@@ -45,6 +45,7 @@ MAKE_ENV+=	JOBS=${_MAKE_JOBS}
 
 BROKEN_aarch64=		fails to compile: no member named verifyHeapAccessDisassembly
 BROKEN_armv6=		fails to link: fatal error: conftest: Unknown error: -1
+BROKEN_armv7=		fails to link: fatal error: conftest: Unknown error: -1
 BROKEN_powerpc64=	fails to compile: _psutil_bsd.c: error: 'struct xtcpcb' has no member named 'xt_tp'
 
 PORTDATA=	*

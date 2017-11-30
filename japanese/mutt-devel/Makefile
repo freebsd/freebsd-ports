@@ -49,6 +49,7 @@ RUN_DEPENDS=	urlview:textproc/urlview \
 
 BROKEN_aarch64=		fails to compile: conflicting types for __wcwidth
 BROKEN_armv6=		fails to compile: conflicting types for __wcwidth
+BROKEN_armv7=		fails to compile: conflicting types for __wcwidth
 
 CONFLICTS=	ja-mutt-[0-9]* mutt-[0-9]* mutt-devel-[0-9]* mutt-devel-lite-[0-9]* mutt-lite-[0-9]* zh-mutt-devel-[0-9]*
 

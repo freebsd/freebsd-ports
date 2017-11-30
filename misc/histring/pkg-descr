@@ -8,4 +8,4 @@ One of the most common things I use the program for is helping me parse the
 output of grep and diff. I think that this programs functionality should be
 folded in to those programs but until then histring does the job nicely.
 
-WWW: http://ess4.engr.uvic.ca/proj/histring/
+WWW: https://github.com/suntong/histring

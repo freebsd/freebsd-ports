@@ -1425,9 +1425,9 @@
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/TheTVDB.bundle/Contents/VERSION
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/TheTVDB.bundle/README.md
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Info.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/common/img/backgrounds/noise.0e9cf16a17adb19690cd31312cdaa809.png
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/common/img/backgrounds/preset-dark.5b95c8c24aab87067b69bca7ae11759a.png
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/common/img/backgrounds/preset-light.fce1a96aaadda47900f6fedf0a348ad1.png
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/common/img/backgrounds/noise.8b05ce45d0df59343e206bc9ae78d85d.png
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/common/img/backgrounds/preset-dark.64cc1c942221cd2c153244bd8ecfb67a.png
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/common/img/backgrounds/preset-light.770a0981b66e038d3ffffbcc4f5a26a4.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/common/img/plex-pass.e73cc397459c4930e842b86b27d05eb9.svg
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/common/img/ratings/rt-fresh-popcorn-simple-560.0b480f0fd472e41e3ec7b98e4486924e.svg
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/common/img/ratings/rt-rotten-splat-simple-560.cda5563a2ce74777ddb3bf362889830c.svg
@@ -1436,9 +1436,9 @@
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/desktop/common/img/platform-logos/linux.a66ceca3ea9d4b6261bc0bbbed31f8e1.svg
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/desktop/common/img/platform-logos/seagate.4f1104d9e8724381ca285aaaa8df0b5d.svg
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/desktop/common/img/platform-logos/synology.f796634e7aad4aaed474601d28c9f562.svg
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/desktop/common/img/queue/bookmarklet-steps-ie.3cbda4e75b0dd0e186e0c24999ab0d1d.png
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/desktop/common/img/queue/bookmarklet-steps.abc5147d9257f0ec59f7b2257db9cb8f.png
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/desktop/common/img/queue/email-links.f1b12dd82ea85b39a4c0fa07dd6df095.png
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/desktop/common/img/queue/bookmarklet-steps-ie.e1c6fdac9ebb412b44c23020cdcd9732.png
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/desktop/common/img/queue/bookmarklet-steps.3efabfa27f2ed5f581e1ea9b13c4e408.png
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/desktop/common/img/queue/email-links.6297c2e03777223f23acafccfe90ebbc.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/desktop/common/img/vendor-logos/gracenote.c86b1d7624b5ae14ca7a30d73674a808.svg
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/desktop/common/img/vendor-logos/songkick.19411461aa7bffd06675aaa8a3d0a056.svg
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/favicon-mask.svg
@@ -1456,11 +1456,11 @@
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/desktop/ios/startup-iphone-portrait@2x.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/desktop/ios/startup-iphone5-portrait@2x.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/index.html
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/js/chunk-0-8fc032113c54ddf80f37-plex-3.26.2-e7e458d.js
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/js/main-1-d4730b1c894bf61f8cd3-plex-3.26.2-e7e458d.js
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/js/vendors-2-4e27218c1da9925514ec-plex-3.26.2-e7e458d.js
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/js/chunk-0-bb830932ee7c29ff7909-plex-3.27.1-882399d.js
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/js/main-1-95fd3600d0e11d7adf89-plex-3.27.1-882399d.js
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/js/vendors-2-183d8893d9e39dde7229-plex-3.27.1-882399d.js
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/main.b1a281d419806dd0a0f1b6db53c1be5d.css
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/main.v3.03b2a9f6cf98db8b55a42aeedf97b47a.css
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/main.v3.eaef9ddd7819bc73b0acb588445171ef.css
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/setup.html
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/translations/af.json
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/translations/ar.json
@@ -1546,6 +1546,7 @@
 %%DATADIR%%/Resources/Profiles/Samsung SmartTV.xml
 %%DATADIR%%/Resources/Profiles/Samsung Tizen.xml
 %%DATADIR%%/Resources/Profiles/Samsung.xml
+%%DATADIR%%/Resources/Profiles/Sonos.xml
 %%DATADIR%%/Resources/Profiles/Sony Blu-ray 2013.xml
 %%DATADIR%%/Resources/Profiles/Sony Blu-ray.xml
 %%DATADIR%%/Resources/Profiles/Sony Bravia 2010.xml
@@ -2749,6 +2750,7 @@
 @mode 644
 %%DATADIR%%/Resources/com.plexapp.plugins.library.db
 @mode
+%%DATADIR%%/Resources/comskip.ini
 %%DATADIR%%/Resources/crossdomain.xml
 %%DATADIR%%/Resources/dh512.pem
 %%DATADIR%%/Resources/distribution.txt

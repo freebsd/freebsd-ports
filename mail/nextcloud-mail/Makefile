@@ -1,0 +1,38 @@
+# Created by: Bernard Spil <brnrd@freebsd.org>
+# $FreeBSD$
+
+PORTNAME=	mail
+PORTVERSION=	0.7.4
+DISTVERSIONPREFIX=	v
+CATEGORIES=	mail
+MASTER_SITES=	https://github.com/${PKGNAMEPREFIX:S/-//}/${PORTNAME}/releases/download/${DISTVERSIONPREFIX}${PORTVERSION}/
+PKGNAMEPREFIX=	nextcloud-
+DISTNAME=	${PORTNAME}
+DIST_SUBDIR=	${PKGNAMEPREFIX:S/-//}/${DISTNAME}-${DISTVERSIONPREFIX}${PORTVERSION}
+
+MAINTAINER=	brnrd@freebsd.org
+COMMENT=	Mail app for Nextcloud
+
+LICENSE=	AGPLv3
+
+RUN_DEPENDS=	nextcloud>=12:www/nextcloud
+
+USES=		gettext
+USE_PHP=	imap
+
+NO_BUILD=	yes
+NO_ARCH=	yes
+
+NEXTCLOUD_USERNAME?=	${WWWOWN}
+NEXTCLOUD_GROUPNAME?=	${WWWGRP}
+
+PLIST_SUB=	NEXTCLOUD_USERNAME=${NEXTCLOUD_USERNAME} \
+		NEXTCLOUD_GROUPNAME=${NEXTCLOUD_GROUPNAME}
+
+WWWDIR=		${PREFIX}/www/nextcloud/apps/${PORTNAME}
+
+do-install:
+	${MKDIR} ${STAGEDIR}${WWWDIR}
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR})
+
+.include <bsd.port.mk>

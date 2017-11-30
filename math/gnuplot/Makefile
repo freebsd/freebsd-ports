@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gnuplot
-PORTVERSION=	5.0.7
+PORTVERSION=	5.2.2
 CATEGORIES=	math graphics
 MASTER_SITES=	SF
 
@@ -13,17 +13,25 @@ LICENSE_NAME=	Gnuplot license
 LICENSE_FILE=	${WRKSRC}/Copyright
 LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 
-USES=		groff iconv lua pkgconfig readline
+USES+=		groff iconv jpeg lua:53 pkgconfig readline
 USE_TEX=	kpathsea
+USE_GNOME+=	atk cairo gtk20 gdkpixbuf2
+USE_WX=		2.8
+USE_XORG+=	x11
+LIB_DEPENDS+=	libfontconfig.so:x11-fonts/fontconfig \
+		libfreetype.so:print/freetype2 \
+		libgd.so:graphics/gd \
+		libpng16.so:graphics/png \
+		libtiff.so:graphics/tiff
 GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib ${ICONV_LIB}
-CONFIGURE_ENV=	LUA_VER="${LUA_VER}"
 CONFIGURE_ARGS+=--with-readline=gnu \
 		--with-kpsexpand \
 		--without-linux-vga \
 		--without-lisp-files \
 		--without-tutorial \
 		--with-bitmap-terminals \
+		--with-gd=${LOCALBASE} \
 		--with-gpic \
 		--with-mif \
 		--with-latex \
@@ -35,44 +43,12 @@ CONFIGURE_ARGS+=--with-readline=gnu \
 PORTDOCS=	*
 PORTEXAMPLES=	*
 
-# MAKE_JOBS_UNSAFE=yes
-
-OPTIONS_DEFINE=	CAIRO DOCS EXAMPLES GD GRIDBOX PDF THINSPLINES WX X11
+OPTIONS_DEFINE=	DOCS EXAMPLES GRIDBOX
 GRIDBOX_DESC=		Use the gridbox optimization for hidden3d
-THINSPLINES_DESC=	Enable thin plate splines for grids in dgrid3d
-WX_DESC=		wxWidgets (formerly wxWindows) support
-
-OPTIONS_DEFAULT=CAIRO GD WX X11
-OPTIONS_SUB=	yes
-
-CAIRO_LIB_DEPENDS=	libcairo.so:graphics/cairo
-CAIRO_USE=	GNOME=pango
-CAIRO_CONFIGURE_WITH=	cairo
-
-GD_LIB_DEPENDS=	libgd.so:graphics/gd
-GD_CONFIGURE_ON=	--with-gd=${LOCALBASE}
-GD_CONFIGURE_OFF+=	--without-gd
 
 GRIDBOX_CONFIGURE_OFF=	--disable-h3d-quadtree --enable-h3d-gridbox
 
-PDF_LIB_DEPENDS=	libpdf.so:print/pdflib
-PDF_CONFIGURE_ON=	--with-pdf=${LOCALBASE}
-PDF_CONFIGURE_OFF=	--without-pdf
-
-THINSPLINES_CONFIGURE_ENABLE=	thin-splines
-
-X11_USE=	XORG=x11
-
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MWX}
-# Version 3.x of WX currently cause gnuplot to crash.
-# Do not update without this without testing.
-USE_WX=			2.8
-WX_CONF_ARGS=		absolute
-.else
-CONFIGURE_ARGS+=	--disable-wxwidgets
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e \
@@ -88,9 +64,9 @@ post-build:
 .endif
 
 pre-install:
-	${MKDIR} ${STAGEDIR}${DATADIR}/5.0 ; \
+	${MKDIR} ${STAGEDIR}${DATADIR}/5.2 ; \
 		${INSTALL_DATA} ${WRKSRC}/share/gnuplotrc \
-		${STAGEDIR}${DATADIR}/5.0/gnuplotrc.sample
+		${STAGEDIR}${DATADIR}/5.2/gnuplotrc.sample
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}

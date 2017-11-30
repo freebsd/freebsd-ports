@@ -25,7 +25,6 @@ mandir = "%MANDIR%"
 channel = "%CHANNEL%"
 
 [target.%TARGET%]
-llvm-config = "%LLVM_CONFIG%"
 
 [dist]
 

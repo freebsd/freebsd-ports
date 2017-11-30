@@ -5,7 +5,6 @@
 
     SUBDIR += atp
     SUBDIR += aub
-    SUBDIR += brag
     SUBDIR += c-nocem
     SUBDIR += cg
     SUBDIR += cleanfeed

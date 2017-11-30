@@ -310,6 +310,15 @@ named_prestart()
 	if [ -n "${named_chrootdir}" ]; then
 		rc_flags="${rc_flags} -t ${named_chrootdir}"
 		checkyesno named_chroot_autoupdate && chroot_autoupdate
+
+		case "${altlog_proglist}" in
+		  named)
+		    ;;
+		  *)
+		    warn 'Using chroot without setting altlog_proglist, logging may not'
+		    warn 'work correctly.  Run sysrc altlog_proglist+=named'
+		    ;;
+		esac
 	else
 		named_symlink_enable=NO
 	fi

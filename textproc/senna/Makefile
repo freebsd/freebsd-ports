@@ -12,6 +12,7 @@ COMMENT=	Embeddable Fulltext Search Engine
 
 BROKEN_aarch64=		does not build: libsenna.so: undefined reference to SEN_ATOMIC_ADD_EX
 BROKEN_armv6=		does not build: libsenna.so: undefined reference to SEN_ATOMIC_ADD_EX
+BROKEN_armv7=		does not build: libsenna.so: undefined reference to SEN_ATOMIC_ADD_EX
 BROKEN_powerpc64=	does not build: relocation truncated to fit: R_PPC64_TOC16_DS
 BROKEN_sparc64=		does not build
 

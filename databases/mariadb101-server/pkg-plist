@@ -235,6 +235,9 @@ man/man8/mysqld.8.gz
 %%DATADIR%%/magic
 %%DATADIR%%/maria_add_gis_sp.sql
 %%DATADIR%%/maria_add_gis_sp_bootstrap.sql
+%%MROONGA%%%%DATADIR%%/groonga-normalizer-mysql/README.md
+%%MROONGA%%%%DATADIR%%/groonga/README.md
+%%MROONGA%%%%DATADIR%%/mroonga/AUTHORS
 %%MROONGA%%%%DATADIR%%/mroonga/install.sql
 %%MROONGA%%%%DATADIR%%/mroonga/uninstall.sql
 %%DATADIR%%/my-huge.cnf

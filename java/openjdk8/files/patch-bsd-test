@@ -1,5 +1,5 @@
---- ./hotspot/test/compiler/5091921/Test7005594.sh	Tue Jul 11 23:51:17 2017 -0700
-+++ ./hotspot/test/compiler/5091921/Test7005594.sh	Sat Aug 26 21:38:23 2017 -0700
+--- ./hotspot/test/compiler/5091921/Test7005594.sh	Tue Sep 05 18:34:11 2017 -0700
++++ ./hotspot/test/compiler/5091921/Test7005594.sh	Sat Nov 18 14:40:44 2017 -0800
 @@ -60,6 +60,15 @@
    # Windows/MKS
    MEM=`"$ROOTDIR/mksnt/sysinf" memory -v | grep "Total Physical Memory: " | sed 's/Total Physical Memory: *//g'`
@@ -16,8 +16,8 @@
  else
    echo "Unable to determine amount of physical memory on the machine"
  fi
---- ./hotspot/test/compiler/6894807/Test6894807.sh	Tue Jul 11 23:51:17 2017 -0700
-+++ ./hotspot/test/compiler/6894807/Test6894807.sh	Sat Aug 26 21:38:23 2017 -0700
+--- ./hotspot/test/compiler/6894807/Test6894807.sh	Tue Sep 05 18:34:11 2017 -0700
++++ ./hotspot/test/compiler/6894807/Test6894807.sh	Sat Nov 18 14:40:44 2017 -0800
 @@ -21,7 +21,7 @@
  # set platform-dependent variables
  OS=`uname -s`
@@ -27,8 +27,8 @@
      NULL=/dev/null
      PS=":"
      FS="/"
---- ./hotspot/test/runtime/7110720/Test7110720.sh	Tue Jul 11 23:51:17 2017 -0700
-+++ ./hotspot/test/runtime/7110720/Test7110720.sh	Sat Aug 26 21:38:23 2017 -0700
+--- ./hotspot/test/runtime/7110720/Test7110720.sh	Tue Sep 05 18:34:11 2017 -0700
++++ ./hotspot/test/runtime/7110720/Test7110720.sh	Sat Nov 18 14:40:44 2017 -0800
 @@ -28,7 +28,7 @@
  # set platform-dependent variables
  OS=`uname -s`
@@ -38,8 +38,8 @@
      FS="/"
      RM=/bin/rm
      CP=/bin/cp
---- ./hotspot/test/runtime/XCheckJniJsig/XCheckJSig.java	Tue Jul 11 23:51:17 2017 -0700
-+++ ./hotspot/test/runtime/XCheckJniJsig/XCheckJSig.java	Sat Aug 26 21:38:23 2017 -0700
+--- ./hotspot/test/runtime/XCheckJniJsig/XCheckJSig.java	Tue Sep 05 18:34:11 2017 -0700
++++ ./hotspot/test/runtime/XCheckJniJsig/XCheckJSig.java	Sat Nov 18 14:40:44 2017 -0800
 @@ -37,8 +37,8 @@
      public static void main(String args[]) throws Throwable {
  
@@ -51,8 +51,8 @@
              return;
          }
  
---- ./hotspot/test/test_env.sh	Tue Jul 11 23:51:17 2017 -0700
-+++ ./hotspot/test/test_env.sh	Sat Aug 26 21:38:23 2017 -0700
+--- ./hotspot/test/test_env.sh	Tue Sep 05 18:34:11 2017 -0700
++++ ./hotspot/test/test_env.sh	Sat Nov 18 14:40:44 2017 -0800
 @@ -53,7 +53,7 @@
  # set platform-dependent variables
  OS=`uname -s`
@@ -62,8 +62,8 @@
      NULL=/dev/null
      PS=":"
      FS="/"
---- ./jdk/test/com/sun/corba/5036554/TestCorbaBug.sh	Tue Jul 11 23:52:06 2017 -0700
-+++ ./jdk/test/com/sun/corba/5036554/TestCorbaBug.sh	Sat Aug 26 22:08:20 2017 -0700
+--- ./jdk/test/com/sun/corba/5036554/TestCorbaBug.sh	Tue Sep 05 18:56:11 2017 -0700
++++ ./jdk/test/com/sun/corba/5036554/TestCorbaBug.sh	Sat Nov 18 14:41:06 2017 -0800
 @@ -48,7 +48,7 @@
  # set platform-dependent variables
  OS=`uname -s`
@@ -73,8 +73,8 @@
      PS=":"
      FS="/"
      ;;
---- ./jdk/test/com/sun/corba/cachedSocket/7056731.sh	Tue Jul 11 23:52:06 2017 -0700
-+++ ./jdk/test/com/sun/corba/cachedSocket/7056731.sh	Sat Aug 26 22:08:20 2017 -0700
+--- ./jdk/test/com/sun/corba/cachedSocket/7056731.sh	Tue Sep 05 18:56:11 2017 -0700
++++ ./jdk/test/com/sun/corba/cachedSocket/7056731.sh	Sat Nov 18 14:41:06 2017 -0800
 @@ -31,7 +31,7 @@
  
  OS=`uname -s`
@@ -84,8 +84,8 @@
      PS=":"
      FS="/"
      ;;
---- ./jdk/test/com/sun/jdi/ImmutableResourceTest.sh	Tue Jul 11 23:52:06 2017 -0700
-+++ ./jdk/test/com/sun/jdi/ImmutableResourceTest.sh	Sat Aug 26 22:08:20 2017 -0700
+--- ./jdk/test/com/sun/jdi/ImmutableResourceTest.sh	Tue Sep 05 18:56:11 2017 -0700
++++ ./jdk/test/com/sun/jdi/ImmutableResourceTest.sh	Sat Nov 18 14:41:06 2017 -0800
 @@ -56,7 +56,7 @@
  
  OS=`uname -s`
@@ -95,8 +95,8 @@
        PATHSEP=":"
        ;;
  
---- ./jdk/test/com/sun/jdi/JITDebug.sh	Tue Jul 11 23:52:06 2017 -0700
-+++ ./jdk/test/com/sun/jdi/JITDebug.sh	Sat Aug 26 22:08:20 2017 -0700
+--- ./jdk/test/com/sun/jdi/JITDebug.sh	Tue Sep 05 18:56:11 2017 -0700
++++ ./jdk/test/com/sun/jdi/JITDebug.sh	Sat Nov 18 14:41:06 2017 -0800
 @@ -63,7 +63,7 @@
  OS=`uname -s`
  export TRANSPORT_METHOD
@@ -106,8 +106,8 @@
        PATHSEP=":"
        TRANSPORT_METHOD=dt_socket
        ;;
---- ./jdk/test/com/sun/jdi/PrivateTransportTest.sh	Tue Jul 11 23:52:06 2017 -0700
-+++ ./jdk/test/com/sun/jdi/PrivateTransportTest.sh	Sat Aug 26 22:08:20 2017 -0700
+--- ./jdk/test/com/sun/jdi/PrivateTransportTest.sh	Tue Sep 05 18:56:11 2017 -0700
++++ ./jdk/test/com/sun/jdi/PrivateTransportTest.sh	Sat Nov 18 14:41:06 2017 -0800
 @@ -106,7 +106,7 @@
      xx=`find ${jreloc}/lib -name libdt_socket.so`
      libloc=`dirname ${xx}`
@@ -117,8 +117,8 @@
      libloc=${jreloc}/lib
      ;;
    Windows*)
---- ./jdk/test/com/sun/jdi/ShellScaffold.sh	Tue Jul 11 23:52:06 2017 -0700
-+++ ./jdk/test/com/sun/jdi/ShellScaffold.sh	Sat Aug 26 22:08:20 2017 -0700
+--- ./jdk/test/com/sun/jdi/ShellScaffold.sh	Tue Sep 05 18:56:11 2017 -0700
++++ ./jdk/test/com/sun/jdi/ShellScaffold.sh	Sat Nov 18 14:41:06 2017 -0800
 @@ -284,7 +284,7 @@
           psCmd=ps
           jstack=jstack.exe
@@ -128,8 +128,8 @@
           transport=dt_socket
           address=
           devnull=/dev/null
---- ./jdk/test/com/sun/jdi/connect/spi/JdiLoadedByCustomLoader.sh	Tue Jul 11 23:52:06 2017 -0700
-+++ ./jdk/test/com/sun/jdi/connect/spi/JdiLoadedByCustomLoader.sh	Sat Aug 26 22:08:20 2017 -0700
+--- ./jdk/test/com/sun/jdi/connect/spi/JdiLoadedByCustomLoader.sh	Tue Sep 05 18:56:11 2017 -0700
++++ ./jdk/test/com/sun/jdi/connect/spi/JdiLoadedByCustomLoader.sh	Sat Nov 18 14:41:06 2017 -0800
 @@ -45,7 +45,7 @@
  
  OS=`uname -s`
@@ -139,8 +139,8 @@
      PS=":"
      ;;
    Windows* | CYGWIN*)
---- ./jdk/test/java/awt/JAWT/JAWT.sh	Tue Jul 11 23:52:06 2017 -0700
-+++ ./jdk/test/java/awt/JAWT/JAWT.sh	Sat Aug 26 22:08:20 2017 -0700
+--- ./jdk/test/java/awt/JAWT/JAWT.sh	Tue Sep 05 18:56:11 2017 -0700
++++ ./jdk/test/java/awt/JAWT/JAWT.sh	Sat Nov 18 14:41:06 2017 -0800
 @@ -62,6 +62,23 @@
  	MAKE="make"
  	LD_LIBRARY_PATH="."
@@ -174,8 +174,8 @@
      exit 0;
      ;;
    * )
---- ./jdk/test/java/awt/Toolkit/AutoShutdown/ShowExitTest/ShowExitTest.sh	Tue Jul 11 23:52:06 2017 -0700
-+++ ./jdk/test/java/awt/Toolkit/AutoShutdown/ShowExitTest/ShowExitTest.sh	Sat Aug 26 22:08:20 2017 -0700
+--- ./jdk/test/java/awt/Toolkit/AutoShutdown/ShowExitTest/ShowExitTest.sh	Tue Sep 05 18:56:11 2017 -0700
++++ ./jdk/test/java/awt/Toolkit/AutoShutdown/ShowExitTest/ShowExitTest.sh	Sat Nov 18 14:41:06 2017 -0800
 @@ -86,6 +86,14 @@
        TMP="/tmp"
        ;;
@@ -191,8 +191,8 @@
     Windows* )
        VAR="A different value for Win32"
        DEFAULT_JDK="C:/Program Files/Java/jdk1.8.0"
---- ./jdk/test/java/awt/Toolkit/Headless/WrappedToolkitTest/WrappedToolkitTest.sh	Tue Jul 11 23:52:06 2017 -0700
-+++ ./jdk/test/java/awt/Toolkit/Headless/WrappedToolkitTest/WrappedToolkitTest.sh	Sat Aug 26 22:08:20 2017 -0700
+--- ./jdk/test/java/awt/Toolkit/Headless/WrappedToolkitTest/WrappedToolkitTest.sh	Tue Sep 05 18:56:11 2017 -0700
++++ ./jdk/test/java/awt/Toolkit/Headless/WrappedToolkitTest/WrappedToolkitTest.sh	Sat Nov 18 14:41:06 2017 -0800
 @@ -59,7 +59,7 @@
  # Checking for proper OS
  OS=`uname -s`
@@ -202,8 +202,8 @@
        FILESEP="/"
        ;;
      
---- ./jdk/test/java/awt/appletviewer/IOExceptionIfEncodedURLTest/IOExceptionIfEncodedURLTest.sh	Tue Jul 11 23:52:06 2017 -0700
-+++ ./jdk/test/java/awt/appletviewer/IOExceptionIfEncodedURLTest/IOExceptionIfEncodedURLTest.sh	Sat Aug 26 22:08:20 2017 -0700
+--- ./jdk/test/java/awt/appletviewer/IOExceptionIfEncodedURLTest/IOExceptionIfEncodedURLTest.sh	Tue Sep 05 18:56:11 2017 -0700
++++ ./jdk/test/java/awt/appletviewer/IOExceptionIfEncodedURLTest/IOExceptionIfEncodedURLTest.sh	Sat Nov 18 14:41:06 2017 -0800
 @@ -119,6 +119,14 @@
        TMP="/tmp"
        ;;
@@ -219,8 +219,8 @@
     Windows* )
        VAR="A different value for Win32"
        DEFAULT_JDK="C:/Program Files/Java/jdk1.8.0"
---- ./jdk/test/java/io/File/GetXSpace.java	Tue Jul 11 23:52:06 2017 -0700
-+++ ./jdk/test/java/io/File/GetXSpace.java	Sat Aug 26 22:08:20 2017 -0700
+--- ./jdk/test/java/io/File/GetXSpace.java	Tue Sep 05 18:56:11 2017 -0700
++++ ./jdk/test/java/io/File/GetXSpace.java	Sat Nov 18 14:41:06 2017 -0800
 @@ -51,7 +51,7 @@
      private static final String dfFormat;
      static {
@@ -230,8 +230,8 @@
              // FileSystem Total Used Available Use% MountedOn
              dfFormat = "([^\\s]+)\\s+(\\d+)\\s+\\d+\\s+(\\d+)\\s+\\d+%\\s+([^\\s]+)";
          } else if (name.startsWith("Windows")) {
---- ./jdk/test/java/io/File/GetXSpace.sh	Tue Jul 11 23:52:06 2017 -0700
-+++ ./jdk/test/java/io/File/GetXSpace.sh	Sat Aug 26 22:08:20 2017 -0700
+--- ./jdk/test/java/io/File/GetXSpace.sh	Tue Sep 05 18:56:11 2017 -0700
++++ ./jdk/test/java/io/File/GetXSpace.sh	Sat Nov 18 14:41:06 2017 -0800
 @@ -26,7 +26,7 @@
  # set platform-dependent variable
  OS=`uname -s`
@@ -241,8 +241,8 @@
    Windows_98 )    return    ;;
    Windows* )      SID=`sid`; TMP="c:/temp"  ;;
    * )
---- ./jdk/test/java/io/Serializable/evolution/RenamePackage/run.sh	Tue Jul 11 23:52:06 2017 -0700
-+++ ./jdk/test/java/io/Serializable/evolution/RenamePackage/run.sh	Sat Aug 26 22:08:20 2017 -0700
+--- ./jdk/test/java/io/Serializable/evolution/RenamePackage/run.sh	Tue Sep 05 18:56:11 2017 -0700
++++ ./jdk/test/java/io/Serializable/evolution/RenamePackage/run.sh	Sat Nov 18 14:41:06 2017 -0800
 @@ -45,7 +45,7 @@
  # Need to determine the classpath separator and filepath separator based on the
  # operating system.
@@ -252,8 +252,8 @@
    PS=":"  ;;
  Windows* | CYGWIN* )
    PS=";"  ;;
---- ./jdk/test/java/io/Serializable/serialver/classpath/run.sh	Tue Jul 11 23:52:06 2017 -0700
-+++ ./jdk/test/java/io/Serializable/serialver/classpath/run.sh	Sat Aug 26 22:08:20 2017 -0700
+--- ./jdk/test/java/io/Serializable/serialver/classpath/run.sh	Tue Sep 05 18:56:11 2017 -0700
++++ ./jdk/test/java/io/Serializable/serialver/classpath/run.sh	Sat Nov 18 14:41:06 2017 -0800
 @@ -47,7 +47,7 @@
  # set platform-dependent variables
  OS=`uname -s`
@@ -263,8 +263,8 @@
      PS=":"    ;;
    Windows* | CYGWIN* )
      PS=";"    ;;
---- ./jdk/test/java/io/Serializable/serialver/nested/run.sh	Tue Jul 11 23:52:06 2017 -0700
-+++ ./jdk/test/java/io/Serializable/serialver/nested/run.sh	Sat Aug 26 22:08:20 2017 -0700
+--- ./jdk/test/java/io/Serializable/serialver/nested/run.sh	Tue Sep 05 18:56:11 2017 -0700
++++ ./jdk/test/java/io/Serializable/serialver/nested/run.sh	Sat Nov 18 14:41:06 2017 -0800
 @@ -47,7 +47,7 @@
  # set platform-dependent variables
  OS=`uname -s`
@@ -274,8 +274,8 @@
      PS=":"    ;;
    Windows* | CYGWIN* )
      PS=";"    ;;
---- ./jdk/test/java/lang/ClassLoader/Assert.sh	Tue Jul 11 23:52:06 2017 -0700
-+++ ./jdk/test/java/lang/ClassLoader/Assert.sh	Sat Aug 26 22:08:20 2017 -0700
+--- ./jdk/test/java/lang/ClassLoader/Assert.sh	Tue Sep 05 18:56:11 2017 -0700
++++ ./jdk/test/java/lang/ClassLoader/Assert.sh	Sat Nov 18 14:41:06 2017 -0800
 @@ -25,7 +25,7 @@
  
  OS=`uname -s`
@@ -285,8 +285,8 @@
      FS="/"
      CHMOD="${FS}bin${FS}chmod"
      ;;
---- ./jdk/test/java/lang/ClassLoader/deadlock/TestCrossDelegate.sh	Tue Jul 11 23:52:06 2017 -0700
-+++ ./jdk/test/java/lang/ClassLoader/deadlock/TestCrossDelegate.sh	Sat Aug 26 22:08:20 2017 -0700
+--- ./jdk/test/java/lang/ClassLoader/deadlock/TestCrossDelegate.sh	Tue Sep 05 18:56:11 2017 -0700
++++ ./jdk/test/java/lang/ClassLoader/deadlock/TestCrossDelegate.sh	Sat Nov 18 14:41:06 2017 -0800
 @@ -55,7 +55,7 @@
    Linux )
      FS="/"
@@ -296,8 +296,8 @@
      FS="/"
      ;;
    AIX )
---- ./jdk/test/java/lang/ClassLoader/deadlock/TestOneWayDelegate.sh	Tue Jul 11 23:52:06 2017 -0700
-+++ ./jdk/test/java/lang/ClassLoader/deadlock/TestOneWayDelegate.sh	Sat Aug 26 22:08:20 2017 -0700
+--- ./jdk/test/java/lang/ClassLoader/deadlock/TestOneWayDelegate.sh	Tue Sep 05 18:56:11 2017 -0700
++++ ./jdk/test/java/lang/ClassLoader/deadlock/TestOneWayDelegate.sh	Sat Nov 18 14:41:06 2017 -0800
 @@ -60,7 +60,7 @@
    Linux )
      FS="/"
@@ -307,8 +307,8 @@
      FS="/"
      ;;
    AIX )
---- ./jdk/test/java/lang/ProcessBuilder/DestroyTest.java	Tue Jul 11 23:52:06 2017 -0700
-+++ ./jdk/test/java/lang/ProcessBuilder/DestroyTest.java	Sat Aug 26 22:08:20 2017 -0700
+--- ./jdk/test/java/lang/ProcessBuilder/DestroyTest.java	Tue Sep 05 18:56:11 2017 -0700
++++ ./jdk/test/java/lang/ProcessBuilder/DestroyTest.java	Sat Nov 18 14:41:06 2017 -0800
 @@ -148,6 +148,9 @@
          } else if (osName.startsWith("Linux") == true) {
              return new UnixTest(
@@ -319,8 +319,8 @@
          } else if (osName.startsWith("Mac OS")) {
              return new MacTest(
                  File.createTempFile("ProcessTrap-", ".sh",null));
---- ./jdk/test/java/lang/ProcessBuilder/Zombies.java	Tue Jul 11 23:52:06 2017 -0700
-+++ ./jdk/test/java/lang/ProcessBuilder/Zombies.java	Sat Aug 26 22:08:20 2017 -0700
+--- ./jdk/test/java/lang/ProcessBuilder/Zombies.java	Tue Sep 05 18:56:11 2017 -0700
++++ ./jdk/test/java/lang/ProcessBuilder/Zombies.java	Sat Nov 18 14:41:06 2017 -0800
 @@ -34,7 +34,7 @@
  
      static final String os = System.getProperty("os.name");
@@ -330,8 +330,8 @@
          "/usr/bin/true" : "/bin/true";
  
      public static void main(String[] args) throws Throwable {
---- ./jdk/test/java/lang/StringCoding/CheckEncodings.sh	Tue Jul 11 23:52:06 2017 -0700
-+++ ./jdk/test/java/lang/StringCoding/CheckEncodings.sh	Sat Aug 26 22:08:20 2017 -0700
+--- ./jdk/test/java/lang/StringCoding/CheckEncodings.sh	Tue Sep 05 18:56:11 2017 -0700
++++ ./jdk/test/java/lang/StringCoding/CheckEncodings.sh	Sat Nov 18 14:41:06 2017 -0800
 @@ -30,7 +30,7 @@
  # set platform-dependent variables
  OS=`uname -s`
@@ -341,8 +341,8 @@
    Windows* | CYGWIN* )
      echo "Passed"; exit 0 ;;
    * ) echo "Unrecognized system!" ;  exit 1 ;;
---- ./jdk/test/java/lang/annotation/loaderLeak/LoaderLeak.sh	Tue Jul 11 23:52:06 2017 -0700
-+++ ./jdk/test/java/lang/annotation/loaderLeak/LoaderLeak.sh	Sat Aug 26 22:08:20 2017 -0700
+--- ./jdk/test/java/lang/annotation/loaderLeak/LoaderLeak.sh	Tue Sep 05 18:56:11 2017 -0700
++++ ./jdk/test/java/lang/annotation/loaderLeak/LoaderLeak.sh	Sat Nov 18 14:41:06 2017 -0800
 @@ -48,7 +48,7 @@
  # set platform-dependent variables
  OS=`uname -s`
@@ -352,8 +352,8 @@
      NULL=/dev/null
      PS=":"
      FS="/"
---- ./jdk/test/java/lang/instrument/MakeJAR2.sh	Tue Jul 11 23:52:06 2017 -0700
-+++ ./jdk/test/java/lang/instrument/MakeJAR2.sh	Sat Aug 26 22:08:20 2017 -0700
+--- ./jdk/test/java/lang/instrument/MakeJAR2.sh	Tue Sep 05 18:56:11 2017 -0700
++++ ./jdk/test/java/lang/instrument/MakeJAR2.sh	Sat Nov 18 14:41:06 2017 -0800
 @@ -55,7 +55,7 @@
  
  OS=`uname -s`
@@ -363,8 +363,8 @@
        PATHSEP=":"
        ;;
  
---- ./jdk/test/java/lang/instrument/appendToClassLoaderSearch/CommonSetup.sh	Tue Jul 11 23:52:06 2017 -0700
-+++ ./jdk/test/java/lang/instrument/appendToClassLoaderSearch/CommonSetup.sh	Sat Aug 26 22:08:20 2017 -0700
+--- ./jdk/test/java/lang/instrument/appendToClassLoaderSearch/CommonSetup.sh	Tue Sep 05 18:56:11 2017 -0700
++++ ./jdk/test/java/lang/instrument/appendToClassLoaderSearch/CommonSetup.sh	Sat Nov 18 14:41:06 2017 -0800
 @@ -43,7 +43,7 @@
      PS=":"
      FS="/"
@@ -374,8 +374,8 @@
      PS=":"
      FS="/"
      ;;
---- ./jdk/test/java/lang/management/OperatingSystemMXBean/GetSystemLoadAverage.java	Tue Jul 11 23:52:06 2017 -0700
-+++ ./jdk/test/java/lang/management/OperatingSystemMXBean/GetSystemLoadAverage.java	Sat Aug 26 22:08:20 2017 -0700
+--- ./jdk/test/java/lang/management/OperatingSystemMXBean/GetSystemLoadAverage.java	Tue Sep 05 18:56:11 2017 -0700
++++ ./jdk/test/java/lang/management/OperatingSystemMXBean/GetSystemLoadAverage.java	Sat Nov 18 14:41:06 2017 -0800
 @@ -79,8 +79,10 @@
          System.out.println("Test passed.");
      }
@@ -397,8 +397,8 @@
                  ? output.split(" ")
                  : output.split(",");
          double expected = Double.parseDouble(lavg[0]);
---- ./jdk/test/java/lang/management/OperatingSystemMXBean/TestSystemLoadAvg.sh	Tue Jul 11 23:52:06 2017 -0700
-+++ ./jdk/test/java/lang/management/OperatingSystemMXBean/TestSystemLoadAvg.sh	Sat Aug 26 22:08:20 2017 -0700
+--- ./jdk/test/java/lang/management/OperatingSystemMXBean/TestSystemLoadAvg.sh	Tue Sep 05 18:56:11 2017 -0700
++++ ./jdk/test/java/lang/management/OperatingSystemMXBean/TestSystemLoadAvg.sh	Sat Nov 18 14:41:06 2017 -0800
 @@ -61,7 +61,7 @@
  while true; do
    echo "Run $i: TestSystemLoadAvg"
@@ -408,8 +408,8 @@
           runOne GetSystemLoadAverage
           ;;
        * )
---- ./jdk/test/java/net/Authenticator/B4933582.sh	Tue Jul 11 23:52:06 2017 -0700
-+++ ./jdk/test/java/net/Authenticator/B4933582.sh	Sat Aug 26 22:08:20 2017 -0700
+--- ./jdk/test/java/net/Authenticator/B4933582.sh	Tue Sep 05 18:56:11 2017 -0700
++++ ./jdk/test/java/net/Authenticator/B4933582.sh	Sat Nov 18 14:41:06 2017 -0800
 @@ -26,7 +26,7 @@
  
  OS=`uname -s`
@@ -419,8 +419,8 @@
      PS=":"
      FS="/"
      ;;
---- ./jdk/test/java/net/DatagramSocket/Send12k.java	Tue Jul 11 23:52:06 2017 -0700
-+++ ./jdk/test/java/net/DatagramSocket/Send12k.java	Sat Aug 26 22:08:20 2017 -0700
+--- ./jdk/test/java/net/DatagramSocket/Send12k.java	Tue Sep 05 18:56:11 2017 -0700
++++ ./jdk/test/java/net/DatagramSocket/Send12k.java	Sat Nov 18 14:41:06 2017 -0800
 @@ -36,9 +36,10 @@
  
      public static void main(String args[]) throws Exception {
@@ -434,8 +434,8 @@
               SEND_SIZE = 16 * 576;
           } else {
               SEND_SIZE = 16 * 1024;
---- ./jdk/test/java/net/DatagramSocket/SendDatagramToBadAddress.java	Tue Jul 11 23:52:06 2017 -0700
-+++ ./jdk/test/java/net/DatagramSocket/SendDatagramToBadAddress.java	Sat Aug 26 22:08:20 2017 -0700
+--- ./jdk/test/java/net/DatagramSocket/SendDatagramToBadAddress.java	Tue Sep 05 18:56:11 2017 -0700
++++ ./jdk/test/java/net/DatagramSocket/SendDatagramToBadAddress.java	Sat Nov 18 14:41:06 2017 -0800
 @@ -45,6 +45,8 @@
              return (true);
          if (p.getProperty ("os.name").equals ("Linux"))
@@ -445,8 +445,8 @@
          if (p.getProperty ("os.name").startsWith ("Mac OS"))
              return (true);
          // Check for specific Solaris version from here
---- ./jdk/test/java/net/DatagramSocket/SetDatagramSocketImplFactory/ADatagramSocket.sh	Tue Jul 11 23:52:06 2017 -0700
-+++ ./jdk/test/java/net/DatagramSocket/SetDatagramSocketImplFactory/ADatagramSocket.sh	Sat Aug 26 22:08:20 2017 -0700
+--- ./jdk/test/java/net/DatagramSocket/SetDatagramSocketImplFactory/ADatagramSocket.sh	Tue Sep 05 18:56:11 2017 -0700
++++ ./jdk/test/java/net/DatagramSocket/SetDatagramSocketImplFactory/ADatagramSocket.sh	Sat Nov 18 14:41:06 2017 -0800
 @@ -27,11 +27,7 @@
  # set platform-dependent variables
  OS=`uname -s`
@@ -460,8 +460,8 @@
      PATHSEP=":"
      FILESEP="/"
      ;;
---- ./jdk/test/java/net/Socket/OldSocketImpl.sh	Tue Jul 11 23:52:06 2017 -0700
-+++ ./jdk/test/java/net/Socket/OldSocketImpl.sh	Sat Aug 26 22:08:20 2017 -0700
+--- ./jdk/test/java/net/Socket/OldSocketImpl.sh	Tue Sep 05 18:56:11 2017 -0700
++++ ./jdk/test/java/net/Socket/OldSocketImpl.sh	Sat Nov 18 14:41:06 2017 -0800
 @@ -28,7 +28,7 @@
  
  OS=`uname -s`
@@ -471,8 +471,8 @@
      PS=":"
      FS="/"
      ;;
---- ./jdk/test/java/net/URL/B5086147.sh	Tue Jul 11 23:52:06 2017 -0700
-+++ ./jdk/test/java/net/URL/B5086147.sh	Sat Aug 26 22:08:20 2017 -0700
+--- ./jdk/test/java/net/URL/B5086147.sh	Tue Sep 05 18:56:11 2017 -0700
++++ ./jdk/test/java/net/URL/B5086147.sh	Sat Nov 18 14:41:06 2017 -0800
 @@ -26,7 +26,7 @@
  
  OS=`uname -s`
@@ -482,8 +482,8 @@
      exit 0
      ;;
    CYGWIN* )
---- ./jdk/test/java/net/URLClassLoader/B5077773.sh	Tue Jul 11 23:52:06 2017 -0700
-+++ ./jdk/test/java/net/URLClassLoader/B5077773.sh	Sat Aug 26 22:08:20 2017 -0700
+--- ./jdk/test/java/net/URLClassLoader/B5077773.sh	Tue Sep 05 18:56:11 2017 -0700
++++ ./jdk/test/java/net/URLClassLoader/B5077773.sh	Sat Nov 18 14:41:06 2017 -0800
 @@ -34,11 +34,7 @@
  
  OS=`uname -s`
@@ -497,8 +497,8 @@
      PS=":"
      FS="/"
      ;;
---- ./jdk/test/java/net/URLClassLoader/sealing/checksealed.sh	Tue Jul 11 23:52:06 2017 -0700
-+++ ./jdk/test/java/net/URLClassLoader/sealing/checksealed.sh	Sat Aug 26 22:08:20 2017 -0700
+--- ./jdk/test/java/net/URLClassLoader/sealing/checksealed.sh	Tue Sep 05 18:56:11 2017 -0700
++++ ./jdk/test/java/net/URLClassLoader/sealing/checksealed.sh	Sat Nov 18 14:41:06 2017 -0800
 @@ -27,11 +27,7 @@
  
  OS=`uname -s`
@@ -512,8 +512,8 @@
      PS=":"
      FS="/"
      ;;
---- ./jdk/test/java/net/URLConnection/6212146/test.sh	Tue Jul 11 23:52:06 2017 -0700
-+++ ./jdk/test/java/net/URLConnection/6212146/test.sh	Sat Aug 26 22:08:20 2017 -0700
+--- ./jdk/test/java/net/URLConnection/6212146/test.sh	Tue Sep 05 18:56:11 2017 -0700
++++ ./jdk/test/java/net/URLConnection/6212146/test.sh	Sat Nov 18 14:41:06 2017 -0800
 @@ -33,11 +33,7 @@
  
  OS=`uname -s`
@@ -527,8 +527,8 @@
      PS=":"
      FS="/"
      ;;
---- ./jdk/test/java/nio/channels/FileChannel/Transfer.java	Tue Jul 11 23:52:06 2017 -0700
-+++ ./jdk/test/java/nio/channels/FileChannel/Transfer.java	Sat Aug 26 22:08:20 2017 -0700
+--- ./jdk/test/java/nio/channels/FileChannel/Transfer.java	Tue Sep 05 18:56:11 2017 -0700
++++ ./jdk/test/java/nio/channels/FileChannel/Transfer.java	Sat Nov 18 14:41:06 2017 -0800
 @@ -228,7 +228,7 @@
          // Windows and Linux can't handle the really large file sizes for a
          // truncate or a positional write required by the test for 4563125
@@ -538,8 +538,8 @@
              return;
          File source = File.createTempFile("blah", null);
          source.deleteOnExit();
---- ./jdk/test/java/nio/channels/spi/SelectorProvider/inheritedChannel/Launcher.c	Tue Jul 11 23:52:06 2017 -0700
-+++ ./jdk/test/java/nio/channels/spi/SelectorProvider/inheritedChannel/Launcher.c	Sat Aug 26 22:08:20 2017 -0700
+--- ./jdk/test/java/nio/channels/spi/SelectorProvider/inheritedChannel/Launcher.c	Tue Sep 05 18:56:11 2017 -0700
++++ ./jdk/test/java/nio/channels/spi/SelectorProvider/inheritedChannel/Launcher.c	Sat Nov 18 14:41:06 2017 -0800
 @@ -17,6 +17,12 @@
  
  #include "Launcher.h"
@@ -562,8 +562,8 @@
          _exit(-1);
      }
  
---- ./jdk/test/java/nio/charset/coders/CheckSJISMappingProp.sh	Tue Jul 11 23:52:06 2017 -0700
-+++ ./jdk/test/java/nio/charset/coders/CheckSJISMappingProp.sh	Sat Aug 26 22:08:20 2017 -0700
+--- ./jdk/test/java/nio/charset/coders/CheckSJISMappingProp.sh	Tue Sep 05 18:56:11 2017 -0700
++++ ./jdk/test/java/nio/charset/coders/CheckSJISMappingProp.sh	Sat Nov 18 14:41:06 2017 -0800
 @@ -34,7 +34,7 @@
  
  OS=`uname -s`
@@ -573,8 +573,8 @@
    # Skip locale test for Windows
    Windows* | CYGWIN* )
      echo "Passed"; exit 0 ;;
---- ./jdk/test/java/nio/charset/spi/basic.sh	Tue Jul 11 23:52:06 2017 -0700
-+++ ./jdk/test/java/nio/charset/spi/basic.sh	Sat Aug 26 22:08:20 2017 -0700
+--- ./jdk/test/java/nio/charset/spi/basic.sh	Tue Sep 05 18:56:11 2017 -0700
++++ ./jdk/test/java/nio/charset/spi/basic.sh	Sat Nov 18 14:41:06 2017 -0800
 @@ -48,7 +48,7 @@
  
  DIR=`pwd`
@@ -584,8 +584,8 @@
    Windows* )      CPS=';' ;;
    CYGWIN*  )
      DIR=`/usr/bin/cygpath -a -s -m $DIR`
---- ./jdk/test/java/nio/file/FileSystem/Basic.java	Tue Jul 11 23:52:06 2017 -0700
-+++ ./jdk/test/java/nio/file/FileSystem/Basic.java	Sat Aug 26 22:08:20 2017 -0700
+--- ./jdk/test/java/nio/file/FileSystem/Basic.java	Tue Sep 05 18:56:11 2017 -0700
++++ ./jdk/test/java/nio/file/FileSystem/Basic.java	Sat Nov 18 14:41:06 2017 -0800
 @@ -76,7 +76,7 @@
              checkSupported(fs, "posix", "unix", "owner", "acl", "user");
          if (os.equals("Linux"))
@@ -595,8 +595,8 @@
              checkSupported(fs, "posix", "unix", "owner");
          if (os.equals("Windows"))
              checkSupported(fs, "owner", "dos", "acl", "user");
---- ./jdk/test/java/nio/file/Files/CopyAndMove.java	Tue Jul 11 23:52:06 2017 -0700
-+++ ./jdk/test/java/nio/file/Files/CopyAndMove.java	Sat Aug 26 22:08:20 2017 -0700
+--- ./jdk/test/java/nio/file/Files/CopyAndMove.java	Tue Sep 05 18:56:11 2017 -0700
++++ ./jdk/test/java/nio/file/Files/CopyAndMove.java	Sat Nov 18 14:41:06 2017 -0800
 @@ -651,7 +651,7 @@
  
                  // check POSIX attributes are copied
@@ -615,8 +615,8 @@
          boolean isDirectory = isDirectory(file, NOFOLLOW_LINKS);
  
          if (isUnix) {
---- ./jdk/test/java/rmi/activation/Activatable/extLoadedImpl/ext.sh	Tue Jul 11 23:52:06 2017 -0700
-+++ ./jdk/test/java/rmi/activation/Activatable/extLoadedImpl/ext.sh	Sat Aug 26 22:08:20 2017 -0700
+--- ./jdk/test/java/rmi/activation/Activatable/extLoadedImpl/ext.sh	Tue Sep 05 18:56:11 2017 -0700
++++ ./jdk/test/java/rmi/activation/Activatable/extLoadedImpl/ext.sh	Sat Nov 18 14:41:06 2017 -0800
 @@ -33,7 +33,7 @@
  
  OS=`uname -s`
@@ -626,8 +626,8 @@
      PS=":"
      ;;
    Windows* | CYGWIN* )
---- ./jdk/test/java/rmi/registry/readTest/readTest.sh	Tue Jul 11 23:52:06 2017 -0700
-+++ ./jdk/test/java/rmi/registry/readTest/readTest.sh	Sat Aug 26 22:08:20 2017 -0700
+--- ./jdk/test/java/rmi/registry/readTest/readTest.sh	Tue Sep 05 18:56:11 2017 -0700
++++ ./jdk/test/java/rmi/registry/readTest/readTest.sh	Sat Nov 18 14:41:06 2017 -0800
 @@ -34,7 +34,7 @@
  REGARGS=""
  
@@ -637,8 +637,8 @@
      PS=":"
      FS="/"
      CHMOD="${FS}bin${FS}chmod"
---- ./jdk/test/java/security/Security/ClassLoaderDeadlock/ClassLoaderDeadlock.sh	Tue Jul 11 23:52:06 2017 -0700
-+++ ./jdk/test/java/security/Security/ClassLoaderDeadlock/ClassLoaderDeadlock.sh	Sat Aug 26 22:08:20 2017 -0700
+--- ./jdk/test/java/security/Security/ClassLoaderDeadlock/ClassLoaderDeadlock.sh	Tue Sep 05 18:56:11 2017 -0700
++++ ./jdk/test/java/security/Security/ClassLoaderDeadlock/ClassLoaderDeadlock.sh	Sat Nov 18 14:41:06 2017 -0800
 @@ -58,7 +58,7 @@
      PATHSEP=":"
      FILESEP="/"
@@ -648,8 +648,8 @@
      PATHSEP=":"
      FILESEP="/"
      ;;
---- ./jdk/test/java/security/Security/ClassLoaderDeadlock/Deadlock.sh	Tue Jul 11 23:52:06 2017 -0700
-+++ ./jdk/test/java/security/Security/ClassLoaderDeadlock/Deadlock.sh	Sat Aug 26 22:08:20 2017 -0700
+--- ./jdk/test/java/security/Security/ClassLoaderDeadlock/Deadlock.sh	Tue Sep 05 18:56:11 2017 -0700
++++ ./jdk/test/java/security/Security/ClassLoaderDeadlock/Deadlock.sh	Sat Nov 18 14:41:06 2017 -0800
 @@ -42,7 +42,7 @@
      PATHSEP=":"
      FILESEP="/"
@@ -659,8 +659,8 @@
      PATHSEP=":"
      FILESEP="/"
      ;;
---- ./jdk/test/java/security/Security/ClassLoaderDeadlock/Deadlock2.sh	Tue Jul 11 23:52:06 2017 -0700
-+++ ./jdk/test/java/security/Security/ClassLoaderDeadlock/Deadlock2.sh	Sat Aug 26 22:08:20 2017 -0700
+--- ./jdk/test/java/security/Security/ClassLoaderDeadlock/Deadlock2.sh	Tue Sep 05 18:56:11 2017 -0700
++++ ./jdk/test/java/security/Security/ClassLoaderDeadlock/Deadlock2.sh	Sat Nov 18 14:41:06 2017 -0800
 @@ -66,7 +66,7 @@
      PATHSEP=";"
      FILESEP="/"
@@ -670,8 +670,8 @@
      PATHSEP=":"
      FILESEP="/"
      ;;
---- ./jdk/test/java/security/Security/signedfirst/Dyn.sh	Tue Jul 11 23:52:06 2017 -0700
-+++ ./jdk/test/java/security/Security/signedfirst/Dyn.sh	Sat Aug 26 22:08:20 2017 -0700
+--- ./jdk/test/java/security/Security/signedfirst/Dyn.sh	Tue Sep 05 18:56:11 2017 -0700
++++ ./jdk/test/java/security/Security/signedfirst/Dyn.sh	Sat Nov 18 14:41:06 2017 -0800
 @@ -58,7 +58,7 @@
      PATHSEP=":"
      FILESEP="/"
@@ -681,8 +681,8 @@
      PATHSEP=":"
      FILESEP="/"
      ;;
---- ./jdk/test/java/security/Security/signedfirst/Static.sh	Tue Jul 11 23:52:06 2017 -0700
-+++ ./jdk/test/java/security/Security/signedfirst/Static.sh	Sat Aug 26 22:08:20 2017 -0700
+--- ./jdk/test/java/security/Security/signedfirst/Static.sh	Tue Sep 05 18:56:11 2017 -0700
++++ ./jdk/test/java/security/Security/signedfirst/Static.sh	Sat Nov 18 14:41:06 2017 -0800
 @@ -58,7 +58,7 @@
      PATHSEP=":"
      FILESEP="/"
@@ -692,8 +692,8 @@
      PATHSEP=":"
      FILESEP="/"
      ;;
---- ./jdk/test/java/util/Currency/PropertiesTest.sh	Tue Jul 11 23:52:06 2017 -0700
-+++ ./jdk/test/java/util/Currency/PropertiesTest.sh	Sat Aug 26 22:08:20 2017 -0700
+--- ./jdk/test/java/util/Currency/PropertiesTest.sh	Tue Sep 05 18:56:11 2017 -0700
++++ ./jdk/test/java/util/Currency/PropertiesTest.sh	Sat Nov 18 14:41:06 2017 -0800
 @@ -52,7 +52,7 @@
  # set platform-dependent variables
  OS=`uname -s`
@@ -703,8 +703,8 @@
      PS=":"
      FS="/"
      ;;
---- ./jdk/test/java/util/PluggableLocale/ExecTest.sh	Tue Jul 11 23:52:06 2017 -0700
-+++ ./jdk/test/java/util/PluggableLocale/ExecTest.sh	Sat Aug 26 22:08:20 2017 -0700
+--- ./jdk/test/java/util/PluggableLocale/ExecTest.sh	Tue Sep 05 18:56:11 2017 -0700
++++ ./jdk/test/java/util/PluggableLocale/ExecTest.sh	Sat Nov 18 14:41:06 2017 -0800
 @@ -62,7 +62,7 @@
  # set platform-dependent variables
  OS=`uname -s`
@@ -714,8 +714,8 @@
      PS=":"
      FS="/"
      ;;
---- ./jdk/test/java/util/ResourceBundle/Bug6299235Test.sh	Tue Jul 11 23:52:06 2017 -0700
-+++ ./jdk/test/java/util/ResourceBundle/Bug6299235Test.sh	Sat Aug 26 22:08:20 2017 -0700
+--- ./jdk/test/java/util/ResourceBundle/Bug6299235Test.sh	Tue Sep 05 18:56:11 2017 -0700
++++ ./jdk/test/java/util/ResourceBundle/Bug6299235Test.sh	Sat Nov 18 14:41:06 2017 -0800
 @@ -31,7 +31,7 @@
  # set platform-dependent variables
  OS=`uname -s`
@@ -725,8 +725,8 @@
      PATHSEP=":"
      FILESEP="/"
      ;;
---- ./jdk/test/java/util/ServiceLoader/basic.sh	Tue Jul 11 23:52:06 2017 -0700
-+++ ./jdk/test/java/util/ServiceLoader/basic.sh	Sat Aug 26 22:08:20 2017 -0700
+--- ./jdk/test/java/util/ServiceLoader/basic.sh	Tue Sep 05 18:56:11 2017 -0700
++++ ./jdk/test/java/util/ServiceLoader/basic.sh	Sat Nov 18 14:41:06 2017 -0800
 @@ -43,9 +43,7 @@
  
  OS=`uname -s`
@@ -738,8 +738,8 @@
        SEP=':' ;;
      * )
        SEP='\;' ;;
---- ./jdk/test/java/util/prefs/CheckUserPrefsStorage.sh	Tue Jul 11 23:52:06 2017 -0700
-+++ ./jdk/test/java/util/prefs/CheckUserPrefsStorage.sh	Sat Aug 26 22:08:20 2017 -0700
+--- ./jdk/test/java/util/prefs/CheckUserPrefsStorage.sh	Tue Sep 05 18:56:11 2017 -0700
++++ ./jdk/test/java/util/prefs/CheckUserPrefsStorage.sh	Sat Nov 18 14:41:06 2017 -0800
 @@ -31,7 +31,7 @@
  
  OS=`uname -s`
@@ -749,8 +749,8 @@
      PS=":"
      FS="/"
      ;;
---- ./jdk/test/javax/crypto/SecretKeyFactory/FailOverTest.sh	Tue Jul 11 23:52:06 2017 -0700
-+++ ./jdk/test/javax/crypto/SecretKeyFactory/FailOverTest.sh	Sat Aug 26 22:08:20 2017 -0700
+--- ./jdk/test/javax/crypto/SecretKeyFactory/FailOverTest.sh	Tue Sep 05 18:56:11 2017 -0700
++++ ./jdk/test/javax/crypto/SecretKeyFactory/FailOverTest.sh	Sat Nov 18 14:41:06 2017 -0800
 @@ -56,7 +56,7 @@
  # set platform-dependent variables
  OS=`uname -s`
@@ -760,8 +760,8 @@
      NULL=/dev/null
      PS=":"
      FS="/"
---- ./jdk/test/javax/imageio/metadata/IIOMetadataFormat/runMetadataFormatTest.sh	Tue Jul 11 23:52:06 2017 -0700
-+++ ./jdk/test/javax/imageio/metadata/IIOMetadataFormat/runMetadataFormatTest.sh	Sat Aug 26 22:08:20 2017 -0700
+--- ./jdk/test/javax/imageio/metadata/IIOMetadataFormat/runMetadataFormatTest.sh	Tue Sep 05 18:56:11 2017 -0700
++++ ./jdk/test/javax/imageio/metadata/IIOMetadataFormat/runMetadataFormatTest.sh	Sat Nov 18 14:41:06 2017 -0800
 @@ -89,7 +89,7 @@
        FILESEP="/"
        ;;
@@ -771,8 +771,8 @@
        VAR="A different value for Linux"
        DEFAULT_JDK=/none
        #DEFAULT_JDK=/usr/local/java/jdk1.4/linux-i386
---- ./jdk/test/javax/imageio/metadata/IIOMetadataFormat/runMetadataFormatThreadTest.sh	Tue Jul 11 23:52:06 2017 -0700
-+++ ./jdk/test/javax/imageio/metadata/IIOMetadataFormat/runMetadataFormatThreadTest.sh	Sat Aug 26 22:08:20 2017 -0700
+--- ./jdk/test/javax/imageio/metadata/IIOMetadataFormat/runMetadataFormatThreadTest.sh	Tue Sep 05 18:56:11 2017 -0700
++++ ./jdk/test/javax/imageio/metadata/IIOMetadataFormat/runMetadataFormatThreadTest.sh	Sat Nov 18 14:41:06 2017 -0800
 @@ -90,7 +90,7 @@
        FILESEP="/"
        ;;
@@ -782,8 +782,8 @@
        VAR="A different value for Linux"
        DEFAULT_JDK=/none
        #DEFAULT_JDK=/usr/local/java/jdk1.4/linux-i386
---- ./jdk/test/javax/imageio/stream/StreamCloserLeak/run_test.sh	Tue Jul 11 23:52:06 2017 -0700
-+++ ./jdk/test/javax/imageio/stream/StreamCloserLeak/run_test.sh	Sat Aug 26 22:08:20 2017 -0700
+--- ./jdk/test/javax/imageio/stream/StreamCloserLeak/run_test.sh	Tue Sep 05 18:56:11 2017 -0700
++++ ./jdk/test/javax/imageio/stream/StreamCloserLeak/run_test.sh	Sat Nov 18 14:41:06 2017 -0800
 @@ -108,6 +108,14 @@
        TMP="/tmp"
        ;;
@@ -799,8 +799,8 @@
     Windows* )
        VAR="A different value for Win32"
        DEFAULT_JDK="C:/Program Files/Java/jdk1.8.0"
---- ./jdk/test/javax/script/CommonSetup.sh	Tue Jul 11 23:52:06 2017 -0700
-+++ ./jdk/test/javax/script/CommonSetup.sh	Sat Aug 26 22:08:20 2017 -0700
+--- ./jdk/test/javax/script/CommonSetup.sh	Tue Sep 05 18:56:11 2017 -0700
++++ ./jdk/test/javax/script/CommonSetup.sh	Sat Nov 18 14:41:06 2017 -0800
 @@ -36,7 +36,7 @@
  
  OS=`uname -s`
@@ -810,8 +810,8 @@
      PS=":"
      FS="/"
      ;;
---- ./jdk/test/javax/security/auth/Subject/doAs/Test.sh	Tue Jul 11 23:52:06 2017 -0700
-+++ ./jdk/test/javax/security/auth/Subject/doAs/Test.sh	Sat Aug 26 22:08:20 2017 -0700
+--- ./jdk/test/javax/security/auth/Subject/doAs/Test.sh	Tue Sep 05 18:56:11 2017 -0700
++++ ./jdk/test/javax/security/auth/Subject/doAs/Test.sh	Sat Nov 18 14:41:06 2017 -0800
 @@ -43,7 +43,7 @@
      FS="/"
      RM="/bin/rm -f"
@@ -821,8 +821,8 @@
      PS=":"
      FS="/"
      RM="/bin/rm -f"
---- ./jdk/test/lib/security/java.policy/Ext_AllPolicy.sh	Tue Jul 11 23:52:06 2017 -0700
-+++ ./jdk/test/lib/security/java.policy/Ext_AllPolicy.sh	Sat Aug 26 22:08:20 2017 -0700
+--- ./jdk/test/lib/security/java.policy/Ext_AllPolicy.sh	Tue Sep 05 18:56:11 2017 -0700
++++ ./jdk/test/lib/security/java.policy/Ext_AllPolicy.sh	Sat Nov 18 14:41:06 2017 -0800
 @@ -53,7 +53,7 @@
  # set platform-dependent variables
  OS=`uname -s`
@@ -832,8 +832,8 @@
      NULL=/dev/null
      PS=":"
      FS="/"
---- ./jdk/test/lib/testlibrary/jdk/testlibrary/Platform.java	Tue Jul 11 23:52:06 2017 -0700
-+++ ./jdk/test/lib/testlibrary/jdk/testlibrary/Platform.java	Sat Aug 26 22:08:20 2017 -0700
+--- ./jdk/test/lib/testlibrary/jdk/testlibrary/Platform.java	Tue Sep 05 18:56:11 2017 -0700
++++ ./jdk/test/lib/testlibrary/jdk/testlibrary/Platform.java	Sat Nov 18 14:41:06 2017 -0800
 @@ -53,8 +53,13 @@
          return isOs("linux");
      }
@@ -849,8 +849,8 @@
      }
  
      public static String getOsName() {
---- ./jdk/test/sun/awt/dnd/8024061/bug8024061.java	Tue Jul 11 23:52:06 2017 -0700
-+++ ./jdk/test/sun/awt/dnd/8024061/bug8024061.java	Sat Aug 26 22:08:20 2017 -0700
+--- ./jdk/test/sun/awt/dnd/8024061/bug8024061.java	Tue Sep 05 18:56:11 2017 -0700
++++ ./jdk/test/sun/awt/dnd/8024061/bug8024061.java	Sat Nov 18 14:41:06 2017 -0800
 @@ -107,8 +107,8 @@
  
      public static void main(String[] args) throws AWTException, InvocationTargetException, InterruptedException {
@@ -862,8 +862,8 @@
                                 "skipping!");
              return;
          }
---- ./jdk/test/sun/management/jmxremote/bootstrap/GeneratePropertyPassword.sh	Tue Jul 11 23:52:06 2017 -0700
-+++ ./jdk/test/sun/management/jmxremote/bootstrap/GeneratePropertyPassword.sh	Sat Aug 26 22:08:20 2017 -0700
+--- ./jdk/test/sun/management/jmxremote/bootstrap/GeneratePropertyPassword.sh	Tue Sep 05 18:56:11 2017 -0700
++++ ./jdk/test/sun/management/jmxremote/bootstrap/GeneratePropertyPassword.sh	Sat Nov 18 14:41:06 2017 -0800
 @@ -42,7 +42,7 @@
  fi
  
@@ -873,8 +873,8 @@
      PATHSEP=":"
      FILESEP="/"
      DFILESEP=$FILESEP
---- ./jdk/test/sun/net/ftp/MarkResetTest.sh	Tue Jul 11 23:52:06 2017 -0700
-+++ ./jdk/test/sun/net/ftp/MarkResetTest.sh	Sat Aug 26 22:08:20 2017 -0700
+--- ./jdk/test/sun/net/ftp/MarkResetTest.sh	Tue Sep 05 18:56:11 2017 -0700
++++ ./jdk/test/sun/net/ftp/MarkResetTest.sh	Sat Nov 18 14:41:06 2017 -0800
 @@ -28,7 +28,7 @@
  
  OS=`uname -s`
@@ -884,8 +884,8 @@
      PS=":"
      FS="/"
      ;;
---- ./jdk/test/sun/net/www/http/HttpClient/RetryPost.sh	Tue Jul 11 23:52:06 2017 -0700
-+++ ./jdk/test/sun/net/www/http/HttpClient/RetryPost.sh	Sat Aug 26 22:08:20 2017 -0700
+--- ./jdk/test/sun/net/www/http/HttpClient/RetryPost.sh	Tue Sep 05 18:56:11 2017 -0700
++++ ./jdk/test/sun/net/www/http/HttpClient/RetryPost.sh	Sat Nov 18 14:41:06 2017 -0800
 @@ -28,7 +28,7 @@
  
  OS=`uname -s`
@@ -895,8 +895,8 @@
      PS=":"
      FS="/"
      ;;
---- ./jdk/test/sun/net/www/protocol/jar/B5105410.sh	Tue Jul 11 23:52:06 2017 -0700
-+++ ./jdk/test/sun/net/www/protocol/jar/B5105410.sh	Sat Aug 26 22:08:20 2017 -0700
+--- ./jdk/test/sun/net/www/protocol/jar/B5105410.sh	Tue Sep 05 18:56:11 2017 -0700
++++ ./jdk/test/sun/net/www/protocol/jar/B5105410.sh	Sat Nov 18 14:41:06 2017 -0800
 @@ -31,7 +31,7 @@
  
  OS=`uname -s`
@@ -906,8 +906,8 @@
      PS=":"
      FS="/"
      ;;
---- ./jdk/test/sun/net/www/protocol/jar/jarbug/run.sh	Tue Jul 11 23:52:06 2017 -0700
-+++ ./jdk/test/sun/net/www/protocol/jar/jarbug/run.sh	Sat Aug 26 22:08:20 2017 -0700
+--- ./jdk/test/sun/net/www/protocol/jar/jarbug/run.sh	Tue Sep 05 18:56:11 2017 -0700
++++ ./jdk/test/sun/net/www/protocol/jar/jarbug/run.sh	Sat Nov 18 14:41:06 2017 -0800
 @@ -31,7 +31,7 @@
  
  OS=`uname -s`
@@ -917,8 +917,8 @@
      PS=":"
      FS="/"
      CHMOD="${FS}bin${FS}chmod"
---- ./jdk/test/sun/nio/ch/SelProvider.java	Tue Jul 11 23:52:06 2017 -0700
-+++ ./jdk/test/sun/nio/ch/SelProvider.java	Sat Aug 26 22:08:20 2017 -0700
+--- ./jdk/test/sun/nio/ch/SelProvider.java	Tue Sep 05 18:56:11 2017 -0700
++++ ./jdk/test/sun/nio/ch/SelProvider.java	Sat Nov 18 14:41:06 2017 -0800
 @@ -39,7 +39,7 @@
                  expected = "sun.nio.ch.DevPollSelectorProvider";
              } else if ("Linux".equals(osname)) {
@@ -928,8 +928,8 @@
                  expected = "sun.nio.ch.KQueueSelectorProvider";
              } else {
                  return;
---- ./jdk/test/sun/security/krb5/runNameEquals.sh	Tue Jul 11 23:52:06 2017 -0700
-+++ ./jdk/test/sun/security/krb5/runNameEquals.sh	Sat Aug 26 22:08:20 2017 -0700
+--- ./jdk/test/sun/security/krb5/runNameEquals.sh	Tue Sep 05 18:56:11 2017 -0700
++++ ./jdk/test/sun/security/krb5/runNameEquals.sh	Sat Nov 18 14:41:06 2017 -0800
 @@ -52,7 +52,7 @@
  # set platform-dependent variables
  OS=`uname -s`
@@ -939,8 +939,8 @@
      PATHSEP=":"
      FILESEP="/"
      NATIVE=true
---- ./jdk/test/sun/security/mscapi/ShortRSAKey1024.sh	Tue Jul 11 23:52:06 2017 -0700
-+++ ./jdk/test/sun/security/mscapi/ShortRSAKey1024.sh	Sat Aug 26 22:08:20 2017 -0700
+--- ./jdk/test/sun/security/mscapi/ShortRSAKey1024.sh	Tue Sep 05 18:56:11 2017 -0700
++++ ./jdk/test/sun/security/mscapi/ShortRSAKey1024.sh	Sat Nov 18 14:41:06 2017 -0800
 @@ -50,7 +50,7 @@
  
  OS=`uname -s`
@@ -950,8 +950,8 @@
      FS="/"
      ;;
    Windows_* )
---- ./jdk/test/sun/security/pkcs11/Provider/ConfigQuotedString.sh	Tue Jul 11 23:52:06 2017 -0700
-+++ ./jdk/test/sun/security/pkcs11/Provider/ConfigQuotedString.sh	Sat Aug 26 22:08:20 2017 -0700
+--- ./jdk/test/sun/security/pkcs11/Provider/ConfigQuotedString.sh	Tue Sep 05 18:56:11 2017 -0700
++++ ./jdk/test/sun/security/pkcs11/Provider/ConfigQuotedString.sh	Sat Nov 18 14:41:06 2017 -0800
 @@ -66,7 +66,7 @@
      CP="${FS}bin${FS}cp"
      CHMOD="${FS}bin${FS}chmod"
@@ -961,8 +961,8 @@
      FS="/"
      PS=":"
      CP="${FS}bin${FS}cp"
---- ./jdk/test/sun/security/pkcs11/Provider/Login.sh	Tue Jul 11 23:52:06 2017 -0700
-+++ ./jdk/test/sun/security/pkcs11/Provider/Login.sh	Sat Aug 26 22:08:20 2017 -0700
+--- ./jdk/test/sun/security/pkcs11/Provider/Login.sh	Tue Sep 05 18:56:11 2017 -0700
++++ ./jdk/test/sun/security/pkcs11/Provider/Login.sh	Sat Nov 18 14:41:06 2017 -0800
 @@ -67,7 +67,7 @@
      CP="${FS}bin${FS}cp"
      CHMOD="${FS}bin${FS}chmod"
@@ -972,8 +972,8 @@
      FS="/"
      PS=":"
      CP="${FS}bin${FS}cp"
---- ./jdk/test/sun/security/provider/KeyStore/DKSTest.sh	Tue Jul 11 23:52:06 2017 -0700
-+++ ./jdk/test/sun/security/provider/KeyStore/DKSTest.sh	Sat Aug 26 22:08:20 2017 -0700
+--- ./jdk/test/sun/security/provider/KeyStore/DKSTest.sh	Tue Sep 05 18:56:11 2017 -0700
++++ ./jdk/test/sun/security/provider/KeyStore/DKSTest.sh	Sat Nov 18 14:41:06 2017 -0800
 @@ -50,7 +50,7 @@
  # set platform-dependent variables
  OS=`uname -s`
@@ -983,8 +983,8 @@
      PS=":"
      FS="/"
      ;;
---- ./jdk/test/sun/security/provider/PolicyFile/GrantAllPermToExtWhenNoPolicy.sh	Tue Jul 11 23:52:06 2017 -0700
-+++ ./jdk/test/sun/security/provider/PolicyFile/GrantAllPermToExtWhenNoPolicy.sh	Sat Aug 26 22:08:20 2017 -0700
+--- ./jdk/test/sun/security/provider/PolicyFile/GrantAllPermToExtWhenNoPolicy.sh	Tue Sep 05 18:56:11 2017 -0700
++++ ./jdk/test/sun/security/provider/PolicyFile/GrantAllPermToExtWhenNoPolicy.sh	Sat Nov 18 14:41:06 2017 -0800
 @@ -52,7 +52,7 @@
      PATHSEP=":"
      FILESEP="/"
@@ -994,8 +994,8 @@
      PATHSEP=":"
      FILESEP="/"
      ;;
---- ./jdk/test/sun/security/provider/PolicyFile/getinstance/getinstance.sh	Tue Jul 11 23:52:06 2017 -0700
-+++ ./jdk/test/sun/security/provider/PolicyFile/getinstance/getinstance.sh	Sat Aug 26 22:08:20 2017 -0700
+--- ./jdk/test/sun/security/provider/PolicyFile/getinstance/getinstance.sh	Tue Sep 05 18:56:11 2017 -0700
++++ ./jdk/test/sun/security/provider/PolicyFile/getinstance/getinstance.sh	Sat Nov 18 14:41:06 2017 -0800
 @@ -59,7 +59,7 @@
      PS=":"
      FS="/"
@@ -1005,8 +1005,8 @@
      PS=":"
      FS="/"
      ;;
---- ./jdk/test/sun/security/ssl/com/sun/net/ssl/internal/ssl/EngineArgs/DebugReportsOneExtraByte.sh	Tue Jul 11 23:52:06 2017 -0700
-+++ ./jdk/test/sun/security/ssl/com/sun/net/ssl/internal/ssl/EngineArgs/DebugReportsOneExtraByte.sh	Sat Aug 26 22:08:20 2017 -0700
+--- ./jdk/test/sun/security/ssl/com/sun/net/ssl/internal/ssl/EngineArgs/DebugReportsOneExtraByte.sh	Tue Sep 05 18:56:11 2017 -0700
++++ ./jdk/test/sun/security/ssl/com/sun/net/ssl/internal/ssl/EngineArgs/DebugReportsOneExtraByte.sh	Sat Nov 18 14:41:06 2017 -0800
 @@ -33,7 +33,7 @@
  
  OS=`uname -s`
@@ -1016,8 +1016,8 @@
      PS=":"
      FS="/"
      ;;
---- ./jdk/test/sun/security/ssl/com/sun/net/ssl/internal/ssl/SSLSocketImpl/NotifyHandshakeTest.sh	Tue Jul 11 23:52:06 2017 -0700
-+++ ./jdk/test/sun/security/ssl/com/sun/net/ssl/internal/ssl/SSLSocketImpl/NotifyHandshakeTest.sh	Sat Aug 26 22:08:20 2017 -0700
+--- ./jdk/test/sun/security/ssl/com/sun/net/ssl/internal/ssl/SSLSocketImpl/NotifyHandshakeTest.sh	Tue Sep 05 18:56:11 2017 -0700
++++ ./jdk/test/sun/security/ssl/com/sun/net/ssl/internal/ssl/SSLSocketImpl/NotifyHandshakeTest.sh	Sat Nov 18 14:41:06 2017 -0800
 @@ -46,7 +46,7 @@
  
  OS=`uname -s`
@@ -1027,8 +1027,8 @@
          FILESEP="/"
          PATHSEP=":"
          ;;
---- ./jdk/test/sun/security/ssl/sun/net/www/protocol/https/HttpsURLConnection/PostThruProxy.sh	Tue Jul 11 23:52:06 2017 -0700
-+++ ./jdk/test/sun/security/ssl/sun/net/www/protocol/https/HttpsURLConnection/PostThruProxy.sh	Sat Aug 26 22:08:20 2017 -0700
+--- ./jdk/test/sun/security/ssl/sun/net/www/protocol/https/HttpsURLConnection/PostThruProxy.sh	Tue Sep 05 18:56:11 2017 -0700
++++ ./jdk/test/sun/security/ssl/sun/net/www/protocol/https/HttpsURLConnection/PostThruProxy.sh	Sat Nov 18 14:41:06 2017 -0800
 @@ -32,7 +32,7 @@
  HOSTNAME=`uname -n`
  OS=`uname -s`
@@ -1038,8 +1038,8 @@
      PS=":"
      FS="/"
      ;;
---- ./jdk/test/sun/security/ssl/sun/net/www/protocol/https/HttpsURLConnection/PostThruProxyWithAuth.sh	Tue Jul 11 23:52:06 2017 -0700
-+++ ./jdk/test/sun/security/ssl/sun/net/www/protocol/https/HttpsURLConnection/PostThruProxyWithAuth.sh	Sat Aug 26 22:08:20 2017 -0700
+--- ./jdk/test/sun/security/ssl/sun/net/www/protocol/https/HttpsURLConnection/PostThruProxyWithAuth.sh	Tue Sep 05 18:56:11 2017 -0700
++++ ./jdk/test/sun/security/ssl/sun/net/www/protocol/https/HttpsURLConnection/PostThruProxyWithAuth.sh	Sat Nov 18 14:41:06 2017 -0800
 @@ -32,7 +32,7 @@
  HOSTNAME=`uname -n`
  OS=`uname -s`
@@ -1049,8 +1049,8 @@
      PS=":"
      FS="/"
      ;;
---- ./jdk/test/sun/security/tools/jarsigner/AlgOptions.sh	Tue Jul 11 23:52:06 2017 -0700
-+++ ./jdk/test/sun/security/tools/jarsigner/AlgOptions.sh	Sat Aug 26 22:08:20 2017 -0700
+--- ./jdk/test/sun/security/tools/jarsigner/AlgOptions.sh	Tue Sep 05 18:56:11 2017 -0700
++++ ./jdk/test/sun/security/tools/jarsigner/AlgOptions.sh	Sat Nov 18 14:41:06 2017 -0800
 @@ -46,7 +46,7 @@
  # set platform-dependent variables
  OS=`uname -s`
@@ -1060,8 +1060,8 @@
      NULL=/dev/null
      PS=":"
      FS="/"
---- ./jdk/test/sun/security/tools/jarsigner/PercentSign.sh	Tue Jul 11 23:52:06 2017 -0700
-+++ ./jdk/test/sun/security/tools/jarsigner/PercentSign.sh	Sat Aug 26 22:08:20 2017 -0700
+--- ./jdk/test/sun/security/tools/jarsigner/PercentSign.sh	Tue Sep 05 18:56:11 2017 -0700
++++ ./jdk/test/sun/security/tools/jarsigner/PercentSign.sh	Sat Nov 18 14:41:06 2017 -0800
 @@ -46,7 +46,7 @@
  # set platform-dependent variables
  OS=`uname -s`
@@ -1071,8 +1071,8 @@
      NULL=/dev/null
      PS=":"
      FS="/"
---- ./jdk/test/sun/security/tools/jarsigner/diffend.sh	Tue Jul 11 23:52:06 2017 -0700
-+++ ./jdk/test/sun/security/tools/jarsigner/diffend.sh	Sat Aug 26 22:08:20 2017 -0700
+--- ./jdk/test/sun/security/tools/jarsigner/diffend.sh	Tue Sep 05 18:56:11 2017 -0700
++++ ./jdk/test/sun/security/tools/jarsigner/diffend.sh	Sat Nov 18 14:41:06 2017 -0800
 @@ -47,6 +47,13 @@
      FS="/"
      CP="${FS}bin${FS}cp -f"
@@ -1087,8 +1087,8 @@
    CYGWIN* )
      NULL=/dev/null
      PS=";"
---- ./jdk/test/sun/security/tools/jarsigner/emptymanifest.sh	Tue Jul 11 23:52:06 2017 -0700
-+++ ./jdk/test/sun/security/tools/jarsigner/emptymanifest.sh	Sat Aug 26 22:08:20 2017 -0700
+--- ./jdk/test/sun/security/tools/jarsigner/emptymanifest.sh	Tue Sep 05 18:56:11 2017 -0700
++++ ./jdk/test/sun/security/tools/jarsigner/emptymanifest.sh	Sat Nov 18 14:41:06 2017 -0800
 @@ -39,6 +39,11 @@
    Windows_* )
      FS="\\"
@@ -1101,8 +1101,8 @@
    * )
      FS="/"
      ;;
---- ./jdk/test/sun/security/tools/jarsigner/oldsig.sh	Tue Jul 11 23:52:06 2017 -0700
-+++ ./jdk/test/sun/security/tools/jarsigner/oldsig.sh	Sat Aug 26 22:08:20 2017 -0700
+--- ./jdk/test/sun/security/tools/jarsigner/oldsig.sh	Tue Sep 05 18:56:11 2017 -0700
++++ ./jdk/test/sun/security/tools/jarsigner/oldsig.sh	Sat Nov 18 14:41:06 2017 -0800
 @@ -42,7 +42,7 @@
  # set platform-dependent variables
  OS=`uname -s`
@@ -1112,8 +1112,8 @@
      NULL=/dev/null
      PS=":"
      FS="/"
---- ./jdk/test/sun/security/tools/keytool/AltProviderPath.sh	Tue Jul 11 23:52:06 2017 -0700
-+++ ./jdk/test/sun/security/tools/keytool/AltProviderPath.sh	Sat Aug 26 22:08:20 2017 -0700
+--- ./jdk/test/sun/security/tools/keytool/AltProviderPath.sh	Tue Sep 05 18:56:11 2017 -0700
++++ ./jdk/test/sun/security/tools/keytool/AltProviderPath.sh	Sat Nov 18 14:41:06 2017 -0800
 @@ -46,7 +46,7 @@
  # set platform-dependent variables
  OS=`uname -s`
@@ -1123,8 +1123,8 @@
      NULL=/dev/null
      PS=":"
      FS="/"
---- ./jdk/test/sun/security/tools/keytool/CloneKeyAskPassword.sh	Tue Jul 11 23:52:06 2017 -0700
-+++ ./jdk/test/sun/security/tools/keytool/CloneKeyAskPassword.sh	Sat Aug 26 22:08:20 2017 -0700
+--- ./jdk/test/sun/security/tools/keytool/CloneKeyAskPassword.sh	Tue Sep 05 18:56:11 2017 -0700
++++ ./jdk/test/sun/security/tools/keytool/CloneKeyAskPassword.sh	Sat Nov 18 14:41:06 2017 -0800
 @@ -55,7 +55,7 @@
      PATHSEP=":"
      FILESEP="/"
@@ -1134,8 +1134,8 @@
      PATHSEP=":"
      FILESEP="/"
      ;;
---- ./jdk/test/sun/security/tools/keytool/NoExtNPE.sh	Tue Jul 11 23:52:06 2017 -0700
-+++ ./jdk/test/sun/security/tools/keytool/NoExtNPE.sh	Sat Aug 26 22:08:20 2017 -0700
+--- ./jdk/test/sun/security/tools/keytool/NoExtNPE.sh	Tue Sep 05 18:56:11 2017 -0700
++++ ./jdk/test/sun/security/tools/keytool/NoExtNPE.sh	Sat Nov 18 14:41:06 2017 -0800
 @@ -48,7 +48,7 @@
    Linux )
      FILESEP="/"
@@ -1145,8 +1145,8 @@
      FILESEP="/"
      ;;
    AIX )
---- ./jdk/test/sun/security/tools/keytool/SecretKeyKS.sh	Tue Jul 11 23:52:06 2017 -0700
-+++ ./jdk/test/sun/security/tools/keytool/SecretKeyKS.sh	Sat Aug 26 22:08:20 2017 -0700
+--- ./jdk/test/sun/security/tools/keytool/SecretKeyKS.sh	Tue Sep 05 18:56:11 2017 -0700
++++ ./jdk/test/sun/security/tools/keytool/SecretKeyKS.sh	Sat Nov 18 14:41:06 2017 -0800
 @@ -45,7 +45,7 @@
  # set platform-dependent variables
  OS=`uname -s`
@@ -1156,8 +1156,8 @@
      NULL=/dev/null
      PS=":"
      FS="/"
---- ./jdk/test/sun/security/tools/keytool/StandardAlgName.sh	Tue Jul 11 23:52:06 2017 -0700
-+++ ./jdk/test/sun/security/tools/keytool/StandardAlgName.sh	Sat Aug 26 22:08:20 2017 -0700
+--- ./jdk/test/sun/security/tools/keytool/StandardAlgName.sh	Tue Sep 05 18:56:11 2017 -0700
++++ ./jdk/test/sun/security/tools/keytool/StandardAlgName.sh	Sat Nov 18 14:41:06 2017 -0800
 @@ -46,7 +46,7 @@
  # set platform-dependent variables
  OS=`uname -s`
@@ -1167,8 +1167,8 @@
      NULL=/dev/null
      PS=":"
      FS="/"
---- ./jdk/test/sun/security/tools/keytool/StorePasswordsByShell.sh	Tue Jul 11 23:52:06 2017 -0700
-+++ ./jdk/test/sun/security/tools/keytool/StorePasswordsByShell.sh	Sat Aug 26 22:08:20 2017 -0700
+--- ./jdk/test/sun/security/tools/keytool/StorePasswordsByShell.sh	Tue Sep 05 18:56:11 2017 -0700
++++ ./jdk/test/sun/security/tools/keytool/StorePasswordsByShell.sh	Sat Nov 18 14:41:06 2017 -0800
 @@ -46,7 +46,7 @@
  # set platform-dependent variables
  OS=`uname -s`
@@ -1178,8 +1178,8 @@
      PATHSEP=":"
      FILESEP="/"
      ;;
---- ./jdk/test/sun/security/tools/keytool/i18n.sh	Tue Jul 11 23:52:06 2017 -0700
-+++ ./jdk/test/sun/security/tools/keytool/i18n.sh	Sat Aug 26 22:08:20 2017 -0700
+--- ./jdk/test/sun/security/tools/keytool/i18n.sh	Tue Sep 05 18:56:11 2017 -0700
++++ ./jdk/test/sun/security/tools/keytool/i18n.sh	Sat Nov 18 14:41:06 2017 -0800
 @@ -46,7 +46,7 @@
  # set platform-dependent variables
  OS=`uname -s`
@@ -1189,8 +1189,8 @@
      NULL=/dev/null
      PS=":"
      FS="/"
---- ./jdk/test/sun/security/tools/keytool/printssl.sh	Tue Jul 11 23:52:06 2017 -0700
-+++ ./jdk/test/sun/security/tools/keytool/printssl.sh	Sat Aug 26 22:08:20 2017 -0700
+--- ./jdk/test/sun/security/tools/keytool/printssl.sh	Tue Sep 05 18:56:11 2017 -0700
++++ ./jdk/test/sun/security/tools/keytool/printssl.sh	Sat Nov 18 14:41:06 2017 -0800
 @@ -40,7 +40,7 @@
  # set platform-dependent variables
  OS=`uname -s`
@@ -1200,8 +1200,8 @@
      FS="/"
      ;;
    CYGWIN* )
---- ./jdk/test/sun/security/tools/keytool/resource.sh	Tue Jul 11 23:52:06 2017 -0700
-+++ ./jdk/test/sun/security/tools/keytool/resource.sh	Sat Aug 26 22:08:20 2017 -0700
+--- ./jdk/test/sun/security/tools/keytool/resource.sh	Tue Sep 05 18:56:11 2017 -0700
++++ ./jdk/test/sun/security/tools/keytool/resource.sh	Sat Nov 18 14:41:06 2017 -0800
 @@ -43,7 +43,7 @@
  # set platform-dependent variables
  OS=`uname -s`
@@ -1211,8 +1211,8 @@
      NULL=/dev/null
      FS="/"
      ;;
---- ./jdk/test/sun/security/tools/keytool/standard.sh	Tue Jul 11 23:52:06 2017 -0700
-+++ ./jdk/test/sun/security/tools/keytool/standard.sh	Sat Aug 26 22:08:20 2017 -0700
+--- ./jdk/test/sun/security/tools/keytool/standard.sh	Tue Sep 05 18:56:11 2017 -0700
++++ ./jdk/test/sun/security/tools/keytool/standard.sh	Sat Nov 18 14:41:06 2017 -0800
 @@ -45,7 +45,7 @@
  # set platform-dependent variables
  OS=`uname -s`
@@ -1222,8 +1222,8 @@
      FS="/"
      ;;
    Windows_* )
---- ./jdk/test/sun/security/tools/policytool/Alias.sh	Tue Jul 11 23:52:06 2017 -0700
-+++ ./jdk/test/sun/security/tools/policytool/Alias.sh	Sat Aug 26 22:08:20 2017 -0700
+--- ./jdk/test/sun/security/tools/policytool/Alias.sh	Tue Sep 05 18:56:11 2017 -0700
++++ ./jdk/test/sun/security/tools/policytool/Alias.sh	Sat Nov 18 14:41:06 2017 -0800
 @@ -47,7 +47,7 @@
  # set platform-dependent variables
  OS=`uname -s`
@@ -1233,8 +1233,8 @@
      NULL=/dev/null
      PS=":"
      FS="/"
---- ./jdk/test/sun/security/tools/policytool/ChangeUI.sh	Tue Jul 11 23:52:06 2017 -0700
-+++ ./jdk/test/sun/security/tools/policytool/ChangeUI.sh	Sat Aug 26 22:08:20 2017 -0700
+--- ./jdk/test/sun/security/tools/policytool/ChangeUI.sh	Tue Sep 05 18:56:11 2017 -0700
++++ ./jdk/test/sun/security/tools/policytool/ChangeUI.sh	Sat Nov 18 14:41:06 2017 -0800
 @@ -46,7 +46,7 @@
  # set platform-dependent variables
  OS=`uname -s`
@@ -1244,8 +1244,8 @@
      NULL=/dev/null
      PS=":"
      FS="/"
---- ./jdk/test/sun/security/tools/policytool/OpenPolicy.sh	Tue Jul 11 23:52:06 2017 -0700
-+++ ./jdk/test/sun/security/tools/policytool/OpenPolicy.sh	Sat Aug 26 22:08:20 2017 -0700
+--- ./jdk/test/sun/security/tools/policytool/OpenPolicy.sh	Tue Sep 05 18:56:11 2017 -0700
++++ ./jdk/test/sun/security/tools/policytool/OpenPolicy.sh	Sat Nov 18 14:41:06 2017 -0800
 @@ -46,7 +46,7 @@
  # set platform-dependent variables
  OS=`uname -s`
@@ -1255,8 +1255,8 @@
      NULL=/dev/null
      PS=":"
      FS="/"
---- ./jdk/test/sun/security/tools/policytool/SaveAs.sh	Tue Jul 11 23:52:06 2017 -0700
-+++ ./jdk/test/sun/security/tools/policytool/SaveAs.sh	Sat Aug 26 22:08:20 2017 -0700
+--- ./jdk/test/sun/security/tools/policytool/SaveAs.sh	Tue Sep 05 18:56:11 2017 -0700
++++ ./jdk/test/sun/security/tools/policytool/SaveAs.sh	Sat Nov 18 14:41:06 2017 -0800
 @@ -47,7 +47,7 @@
  # set platform-dependent variables
  OS=`uname -s`
@@ -1266,8 +1266,8 @@
      NULL=/dev/null
      PS=":"
      FS="/"
---- ./jdk/test/sun/security/tools/policytool/UpdatePermissions.sh	Tue Jul 11 23:52:06 2017 -0700
-+++ ./jdk/test/sun/security/tools/policytool/UpdatePermissions.sh	Sat Aug 26 22:08:20 2017 -0700
+--- ./jdk/test/sun/security/tools/policytool/UpdatePermissions.sh	Tue Sep 05 18:56:11 2017 -0700
++++ ./jdk/test/sun/security/tools/policytool/UpdatePermissions.sh	Sat Nov 18 14:41:06 2017 -0800
 @@ -47,7 +47,7 @@
  # set platform-dependent variables
  OS=`uname -s`
@@ -1277,8 +1277,8 @@
      NULL=/dev/null
      PS=":"
      FS="/"
---- ./jdk/test/sun/security/tools/policytool/UsePolicy.sh	Tue Jul 11 23:52:06 2017 -0700
-+++ ./jdk/test/sun/security/tools/policytool/UsePolicy.sh	Sat Aug 26 22:08:20 2017 -0700
+--- ./jdk/test/sun/security/tools/policytool/UsePolicy.sh	Tue Sep 05 18:56:11 2017 -0700
++++ ./jdk/test/sun/security/tools/policytool/UsePolicy.sh	Sat Nov 18 14:41:06 2017 -0800
 @@ -46,7 +46,7 @@
  # set platform-dependent variables
  OS=`uname -s`
@@ -1288,8 +1288,8 @@
      NULL=/dev/null
      PS=":"
      FS="/"
---- ./jdk/test/sun/security/tools/policytool/i18n.sh	Tue Jul 11 23:52:06 2017 -0700
-+++ ./jdk/test/sun/security/tools/policytool/i18n.sh	Sat Aug 26 22:08:20 2017 -0700
+--- ./jdk/test/sun/security/tools/policytool/i18n.sh	Tue Sep 05 18:56:11 2017 -0700
++++ ./jdk/test/sun/security/tools/policytool/i18n.sh	Sat Nov 18 14:41:06 2017 -0800
 @@ -49,7 +49,7 @@
  # set platform-dependent variables
  OS=`uname -s`
@@ -1299,8 +1299,8 @@
      NULL=/dev/null
      PS=":"
      FS="/"
---- ./jdk/test/sun/tools/common/CommonSetup.sh	Tue Jul 11 23:52:06 2017 -0700
-+++ ./jdk/test/sun/tools/common/CommonSetup.sh	Sat Aug 26 22:08:20 2017 -0700
+--- ./jdk/test/sun/tools/common/CommonSetup.sh	Tue Sep 05 18:56:11 2017 -0700
++++ ./jdk/test/sun/tools/common/CommonSetup.sh	Sat Nov 18 14:41:06 2017 -0800
 @@ -47,6 +47,7 @@
  #   isLinux   - true if OS is Linux
  #   isSolaris - true if OS is Solaris
@@ -1328,8 +1328,8 @@
    Darwin )
      OS="Mac OS X"
      isMacos=true
---- ./jdk/test/sun/tools/jconsole/ResourceCheckTest.sh	Tue Jul 11 23:52:06 2017 -0700
-+++ ./jdk/test/sun/tools/jconsole/ResourceCheckTest.sh	Sat Aug 26 22:08:20 2017 -0700
+--- ./jdk/test/sun/tools/jconsole/ResourceCheckTest.sh	Tue Sep 05 18:56:11 2017 -0700
++++ ./jdk/test/sun/tools/jconsole/ResourceCheckTest.sh	Sat Nov 18 14:41:06 2017 -0800
 @@ -54,7 +54,7 @@
  
  OS=`uname -s`
@@ -1339,8 +1339,8 @@
        PATHSEP=":"
        ;;
  
---- ./jdk/test/sun/tools/native2ascii/resources/ImmutableResourceTest.sh	Tue Jul 11 23:52:06 2017 -0700
-+++ ./jdk/test/sun/tools/native2ascii/resources/ImmutableResourceTest.sh	Sat Aug 26 22:08:20 2017 -0700
+--- ./jdk/test/sun/tools/native2ascii/resources/ImmutableResourceTest.sh	Tue Sep 05 18:56:11 2017 -0700
++++ ./jdk/test/sun/tools/native2ascii/resources/ImmutableResourceTest.sh	Sat Nov 18 14:41:06 2017 -0800
 @@ -56,7 +56,7 @@
  
  OS=`uname -s`
@@ -1350,8 +1350,8 @@
        PATHSEP=":"
        ;;
  
---- ./jdk/test/tools/launcher/ExecutionEnvironment.java	Tue Jul 11 23:52:06 2017 -0700
-+++ ./jdk/test/tools/launcher/ExecutionEnvironment.java	Sat Aug 26 22:08:20 2017 -0700
+--- ./jdk/test/tools/launcher/ExecutionEnvironment.java	Tue Sep 05 18:56:11 2017 -0700
++++ ./jdk/test/tools/launcher/ExecutionEnvironment.java	Sat Nov 18 14:41:06 2017 -0800
 @@ -194,7 +194,7 @@
  
          Map<String, String> env = new HashMap<>();
@@ -1361,8 +1361,8 @@
              for (String x : LD_PATH_STRINGS) {
                  String pairs[] = x.split("=");
                  env.put(pairs[0], pairs[1]);
---- ./jdk/test/tools/launcher/RunpathTest.java	Tue Jul 11 23:52:06 2017 -0700
-+++ ./jdk/test/tools/launcher/RunpathTest.java	Sat Aug 26 22:08:20 2017 -0700
+--- ./jdk/test/tools/launcher/RunpathTest.java	Tue Sep 05 18:56:11 2017 -0700
++++ ./jdk/test/tools/launcher/RunpathTest.java	Sat Nov 18 14:41:06 2017 -0800
 @@ -69,7 +69,7 @@
      }
  
@@ -1372,8 +1372,8 @@
              RunpathTest rp = new RunpathTest();
              rp.testRpath();
          }
---- ./jdk/test/tools/launcher/Test7029048.java	Tue Jul 11 23:52:06 2017 -0700
-+++ ./jdk/test/tools/launcher/Test7029048.java	Sat Aug 26 22:08:20 2017 -0700
+--- ./jdk/test/tools/launcher/Test7029048.java	Tue Sep 05 18:56:11 2017 -0700
++++ ./jdk/test/tools/launcher/Test7029048.java	Sat Nov 18 14:41:06 2017 -0800
 @@ -223,7 +223,7 @@
          } else if (isSolaris && passes < 9) {
              throw new Exception("Test7029048: FAIL: " +
@@ -1383,8 +1383,8 @@
               throw new Exception("Test7029048: FAIL: " +
                      "all tests did not run, expected " + 6 + " got " + passes);
          } else {
---- ./jdk/test/tools/launcher/TestHelper.java	Tue Jul 11 23:52:06 2017 -0700
-+++ ./jdk/test/tools/launcher/TestHelper.java	Sat Aug 26 22:08:20 2017 -0700
+--- ./jdk/test/tools/launcher/TestHelper.java	Tue Sep 05 18:56:11 2017 -0700
++++ ./jdk/test/tools/launcher/TestHelper.java	Sat Nov 18 14:41:06 2017 -0800
 @@ -94,6 +94,8 @@
              System.getProperty("os.name", "unknown").startsWith("Linux");
      static final boolean isAIX =
@@ -1394,15 +1394,8 @@
      static final String LIBJVM = isWindows
                          ? "jvm.dll"
                          : "libjvm" + (isMacOSX ? ".dylib" : ".so");
---- ./langtools/.hgtags	Tue Jul 11 23:52:44 2017 -0700
-+++ ./langtools/.hgtags	Sat Aug 26 21:38:16 2017 -0700
-@@ -710,3 +710,4 @@
- 9a5ddb594b491ec32e9fafa7008631291ab66d6e jdk8u141-b13
- 553043f3a2319af6fd6bc704bc8fd7fa4500ee80 jdk8u141-b14
- 027f6df9fe82624fb7d489ffd848a26796de4868 jdk8u141-b15
-+4c355f7002c36bb626b42d5c1d42ea91d77ba5d6 jdk8u144-b00
---- ./langtools/test/Makefile	Tue Jul 11 23:52:44 2017 -0700
-+++ ./langtools/test/Makefile	Sat Aug 26 21:38:16 2017 -0700
+--- ./langtools/test/Makefile	Tue Sep 05 19:22:39 2017 -0700
++++ ./langtools/test/Makefile	Sat Nov 18 08:32:29 2017 -0800
 @@ -34,6 +34,14 @@
      ARCH=i586
    endif
@@ -1418,8 +1411,8 @@
  ifeq ($(OSNAME), Darwin)
    PLATFORM = bsd
    ARCH = $(shell uname -m)
---- ./langtools/test/tools/javah/ReadOldClass.sh	Tue Jul 11 23:52:44 2017 -0700
-+++ ./langtools/test/tools/javah/ReadOldClass.sh	Sat Aug 26 21:38:16 2017 -0700
+--- ./langtools/test/tools/javah/ReadOldClass.sh	Tue Sep 05 19:22:39 2017 -0700
++++ ./langtools/test/tools/javah/ReadOldClass.sh	Sat Nov 18 08:32:29 2017 -0800
 @@ -43,7 +43,7 @@
  # set platform-dependent variables
  OS=`uname -s`
@@ -1429,8 +1422,8 @@
      PS=":"
      FS="/"
      ;;
---- ./nashorn/test/script/jfx.js	Tue Jul 11 23:52:52 2017 -0700
-+++ ./nashorn/test/script/jfx.js	Sat Aug 26 21:38:18 2017 -0700
+--- ./nashorn/test/script/jfx.js	Tue Sep 05 19:25:16 2017 -0700
++++ ./nashorn/test/script/jfx.js	Sat Nov 18 08:32:58 2017 -0800
 @@ -93,6 +93,8 @@
          f2 = new File(sb.append(fsep + "linux.png").toString());
      } else if (OSInfo.getOSType() == OSType.MACOSX) {

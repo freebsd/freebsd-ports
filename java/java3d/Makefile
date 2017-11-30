@@ -14,6 +14,7 @@ LICENSE=	BSD2CLAUSE GPLv2
 LICENSE_COMB=	multi
 
 BROKEN_armv6=		fails to compile: build.xml: Compile failed; see the compiler error output for details
+BROKEN_armv7=		fails to compile: build.xml: Compile failed; see the compiler error output for details
 
 USES=		tar:bzip2
 USE_JAVA=	yes

@@ -17,6 +17,7 @@ lib/syncplay/resources/cross.png
 lib/syncplay/resources/cross_checkbox.png
 lib/syncplay/resources/delete.png
 lib/syncplay/resources/door_in.png
+lib/syncplay/resources/email_go.png
 lib/syncplay/resources/empty_checkbox.png
 lib/syncplay/resources/eye.png
 lib/syncplay/resources/film_add.png
@@ -25,6 +26,7 @@ lib/syncplay/resources/film_folder_edit.png
 lib/syncplay/resources/film_go.png
 lib/syncplay/resources/film_link.png
 lib/syncplay/resources/folder_explore.png
+lib/syncplay/resources/folder_film.png
 lib/syncplay/resources/help.png
 lib/syncplay/resources/house.png
 lib/syncplay/resources/key_go.png

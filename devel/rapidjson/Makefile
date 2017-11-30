@@ -17,6 +17,7 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 BROKEN_aarch64=		does not build: c++: error: the clang compiler does not support -march=native
 BROKEN_armv6=		does not build: c++: error: the clang compiler does not support -march=native
+BROKEN_armv7=		does not build: include/rapidjson/internal/../allocators.h:128:36: error: zero as null pointer constant
 BROKEN_sparc64=		does not build: c++: error: the clang compiler does not support -march=native
 BROKEN_powerpc64=	does not build: c++: error: the clang compiler does not support -march=native
 

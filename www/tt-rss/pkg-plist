@@ -2519,6 +2519,8 @@
 %%WWWDIR%%/schema/versions/mysql/129.sql
 %%WWWDIR%%/schema/versions/mysql/13.sql
 %%WWWDIR%%/schema/versions/mysql/130.sql
+%%WWWDIR%%/schema/versions/mysql/131.sql
+%%WWWDIR%%/schema/versions/mysql/132.sql
 %%WWWDIR%%/schema/versions/mysql/14.sql
 %%WWWDIR%%/schema/versions/mysql/15.sql
 %%WWWDIR%%/schema/versions/mysql/16.sql
@@ -2647,6 +2649,8 @@
 %%WWWDIR%%/schema/versions/pgsql/129.sql
 %%WWWDIR%%/schema/versions/pgsql/13.sql
 %%WWWDIR%%/schema/versions/pgsql/130.sql
+%%WWWDIR%%/schema/versions/pgsql/131.sql
+%%WWWDIR%%/schema/versions/pgsql/132.sql
 %%WWWDIR%%/schema/versions/pgsql/14.sql
 %%WWWDIR%%/schema/versions/pgsql/15.sql
 %%WWWDIR%%/schema/versions/pgsql/16.sql

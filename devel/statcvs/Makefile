@@ -15,6 +15,7 @@ LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/etc/LICENSE
 
 BROKEN_armv6=		fails to compile: build.xml: compilation failed
+BROKEN_armv7=		fails to compile: build.xml: compilation failed
 
 USES=		zip
 USE_JAVA=	yes

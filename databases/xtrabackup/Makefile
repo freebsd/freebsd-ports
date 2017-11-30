@@ -7,7 +7,7 @@ CATEGORIES=	databases
 MASTER_SITES=	https://www.percona.com/downloads/XtraBackup/Percona-XtraBackup-${PORTVERSION}/source/tarball/
 DISTNAME=	percona-${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	aleksandr.kuzminsky@percona.com
+MAINTAINER=	aleks@twindb.com
 COMMENT=	OpenSource version of InnoDB backup with support of Percona extensions
 
 LICENSE=	GPLv2
@@ -25,6 +25,7 @@ RUN_DEPENDS=	p5-DBD-mysql>=0:databases/p5-DBD-mysql \
 		qpress:archivers/qpress
 
 BROKEN_armv6=		fails to compile: cannot combine with previous 'type-name' declaration specifier
+BROKEN_armv7=		fails to compile: cannot combine with previous 'type-name' declaration specifier
 BROKEN_mips64=		fails to compile: 'fpsetmask' was not declared in this scope
 BROKEN_powerpc64=	fails to link: ld: final link failed: Bad value
 

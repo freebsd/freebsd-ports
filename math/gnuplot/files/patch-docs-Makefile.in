@@ -1,6 +1,15 @@
---- docs/Makefile.in.orig	2016-10-09 17:24:51 UTC
-+++ docs/Makefile.in
-@@ -927,15 +927,15 @@ groff: grotxt grodvi grops
+--- docs/Makefile.in.orig	2017-11-06 10:23:52.000000000 -0800
++++ docs/Makefile.in	2017-11-23 12:14:18.710252000 -0800
+@@ -907,7 +907,7 @@
+ $(GNUPLOT_EXE):
+ 	( cd ../src ; $(MAKE) gnuplot$(EXEEXT) )
+ @BUILD_LUA_TRUE@$(LUA_HELP): $(top_srcdir)/term/lua/gnuplot-tikz.lua
+-@BUILD_LUA_TRUE@	$(AM_V_GEN) $(LUA) $< termhelp > $@
++@BUILD_LUA_TRUE@	$(AM_V_GEN) $(LUA) $(top_srcdir)/term/lua/gnuplot-tikz.lua termhelp > $@
+ 
+ allterm.h: $(CORETERM) $(LUA_HELP)
+ 	$(AM_V_GEN) for e in `egrep "^[ 	]*START_HELP" $(CORETERM) |\
+@@ -933,15 +933,15 @@
  
  grotxt: gnuplot.txt
  gnuplot.txt: gnuplot.ms $(srcdir)/titlepag.ms
@@ -19,17 +28,3 @@
  
  ### doc2xxx dependencies
  gnuplot.ms: doc2ms$(EXEEXT) $(srcdir)/gnuplot.doc
-@@ -1077,11 +1077,11 @@ wxhelp/wgnuplot.html: doc2wxhtml$(EXEEXT
- 	$(AM_V_GEN) ./doc2wxhtml$(EXEEXT) $(srcdir)/gnuplot.doc wxhelp/
- 
- doc2wxhtml$(EXEEXT): wxhelp/doc2html.o termdoc.o xref.o $(SRC_VERSION_O)
--	$(AM_V_CCLD) $(LINK) $^
-+	$(AM_V_CCLD) $(LINK) wxhelp/doc2html.o termdoc.o xref.o $(SRC_VERSION_O)
- 
- wxhelp/doc2html.o: $(srcdir)/windows/doc2html.c $(BUILT_SOURCES)
- 	$(AM_V_AT)[ -d wxhelp ] || mkdir wxhelp
--	$(AM_V_CC) $(COMPILE) -c -o $@ -I.. -DALL_TERM_DOC -DWXHELP $<
-+	$(AM_V_CC) $(COMPILE) -c -o $@ -I.. -DALL_TERM_DOC -DWXHELP $(srcdir)/windows/doc2html.c
- 
- # HBB FIXME 2015-06-28: this is how the above really should be handled, but it causes
- # problems with the way automake handles its 'subdir-objects' option.

@@ -19,6 +19,7 @@ LICENSE_FILE_QPL10=	${WRKSRC}/LICENSE
 LICENSE_PERMS_QPL10=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 BROKEN_aarch64=		Does not build: No rule to make target aarch64.o, needed by libasmrun.a
+BROKEN_armv7=		Does not build: hasgot.c: undefined reference to `tgetent'
 BROKEN_powerpc64=	Does not build: error: too few arguments to function gethostbyname_r
 BROKEN_sparc64=	ocamlc.opt seg-faults, please try to fix
 BROKEN_mips64=	No ASM support
@@ -68,7 +69,7 @@ PORTDOCS=	htmlman ${DOCSDISTNAME}-refman.ps.gz ${DOCSDISTNAME}-refman.pdf
 PLIST_SUB+=	DOC="@comment "
 .endif
 
-.if ${ARCH} == armv6
+.if ${ARCH} == armv6 || ${ARCH} == armv7
 CONFIGURE_ARGS+=	-as "${AS} ${ASFLAGS} -meabi=5"
 .else
 CONFIGURE_ARGS+=	-as "${AS} ${ASFLAGS}"
@@ -98,7 +99,7 @@ CONFIGURE_ARGS+=-no-graph
 .include <bsd.port.pre.mk>
 .include "${FILESDIR}/manfiles"
 
-OCAML_ARCH=	${ARCH:S/x86_64/amd64/:S/powerpc/power/:S/armv6/arm/}
+OCAML_ARCH=	${ARCH:S/x86_64/amd64/:S/powerpc/power/:C/armv.*/arm/}
 
 .if defined(NO_PROFILE) || ${OCAML_ARCH:Mpower} || ${OCAML_ARCH:Mamd64}
 

@@ -22,7 +22,7 @@ IGBINARY_DESC=	Binary serializer support
 PORTSCOUT=	limit:^2\.
 
 CONFIGURE_ARGS=	--with-libmemcached-dir=${LOCALBASE}
-IGNORE_WITH_PHP=70 71
+IGNORE_WITH_PHP=70 71 72
 USE_PHP=	json:build session:build
 USES=		php:pecl pkgconfig
 

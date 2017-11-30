@@ -55,6 +55,7 @@
     SUBDIR += countrycodes
     SUBDIR += cpuid
     SUBDIR += crosspad
+    SUBDIR += crosti
     SUBDIR += cs
     SUBDIR += cstream
     SUBDIR += dahdi
@@ -96,10 +97,12 @@
     SUBDIR += fortune-mod-bible
     SUBDIR += fortune-mod-bofh
     SUBDIR += fortune-mod-epictetus
+    SUBDIR += fortune-mod-freebsd-classic
     SUBDIR += fortune-mod-futurama
     SUBDIR += fortune-mod-psalms
     SUBDIR += fortuneit
     SUBDIR += fpc-chm
+    SUBDIR += free42
     SUBDIR += freebsd-doc-all
     SUBDIR += freebsd-doc-bn
     SUBDIR += freebsd-doc-da
@@ -373,6 +376,7 @@
     SUBDIR += pspresent
     SUBDIR += ptsort
     SUBDIR += py-cinder
+    SUBDIR += py-colorbrewer
     SUBDIR += py-crudini
     SUBDIR += py-fuzzy
     SUBDIR += py-glance

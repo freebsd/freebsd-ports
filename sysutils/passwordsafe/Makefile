@@ -13,7 +13,7 @@ LIB_DEPENDS=	libuuid.so:misc/e2fsprogs-libuuid \
 		libxerces-c.so:textproc/xerces-c3
 BUILD_DEPENDS=	zip:archivers/zip
 
-NOT_FOR_ARCHS=		aarch64 armv6
+NOT_FOR_ARCHS=		aarch64 armv6 armv7
 NOT_FOR_ARCHS_REASON=	Cannot determine whether the target CPU is big or little endian - please fix PwsPlatform.h
 
 CONFLICTS=	pwsafe-[0-9]*

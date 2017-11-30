@@ -125,7 +125,6 @@ LLD_UNSAFE=	yes
 
 MOZILLA_SUFX?=	none
 MOZSRC?=	${WRKSRC}
-WRKSRC?=	${WRKDIR}/mozilla
 PLISTF?=	${WRKDIR}/plist_files
 
 MOZ_OBJDIR?=	${WRKSRC}/obj-${ARCH:C/amd64/x86_64/}-unknown-${OPSYS:tl}${OSREL}
@@ -148,11 +147,19 @@ MOZ_PKGCONFIG_FILES?=	${MOZILLA}-gtkmozembed ${MOZILLA}-js \
 ALL_TARGET?=	build
 
 MOZ_EXPORT+=	${CONFIGURE_ENV} \
+				RUSTFLAGS="${RUSTFLAGS}" \
 				PERL="${PERL}"
 MOZ_OPTIONS+=	--prefix="${PREFIX}"
 MOZ_MK_OPTIONS+=MOZ_OBJDIR="${MOZ_OBJDIR}"
 
 LDFLAGS+=		-Wl,--as-needed
+
+# Adjust -C target-cpu if -march/-mcpu is set by bsd.cpu.mk
+.if ${ARCH} == amd64 || ${ARCH} == i386
+RUSTFLAGS+=	${CFLAGS:M-march=*:S/-march=/-C target-cpu=/}
+.else
+RUSTFLAGS+=	${CFLAGS:M-mcpu=*:S/-mcpu=/-C target-cpu=/}
+.endif
 
 .if ${MOZILLA_VER:R:R} < 55 && ${OPSYS} == FreeBSD && ${OSVERSION} < 1200032
 # use jemalloc 3.0.0 (4.0 for firefox 43+) API for stats/tuning
@@ -337,29 +344,11 @@ MOZ_OPTIONS+=	--enable-gconf
 MOZ_OPTIONS+=	--disable-gconf
 .endif
 
-.if ${MOZILLA_VER:R:R} < 55
-.if ${PORT_OPTIONS:MGNOMEUI}
-BUILD_DEPENDS+=	${libgnomeui_DETECT}:${libgnomeui_LIB_DEPENDS:C/.*://}
-USE_GNOME+=		libgnomeui:build
-MOZ_OPTIONS+=	--enable-gnomeui
-.else
-MOZ_OPTIONS+=	--disable-gnomeui
-.endif
-.endif # Mozilla < 55
-
 .if ${PORT_OPTIONS:MLIBPROXY}
 LIB_DEPENDS+=	libproxy.so:net/libproxy
 MOZ_OPTIONS+=	--enable-libproxy
 .else
 MOZ_OPTIONS+=	--disable-libproxy
-.endif
-
-.if ${PORT_OPTIONS:MPGO}
-USES:=		compiler:gcc-c++11-lib ${USES:Ncompiler*c++11*}
-USE_DISPLAY=yes
-
-ALL_TARGET=	profiledbuild
-MOZ_EXPORT+=MOZ_OPTIMIZE_FLAGS="-Os" MOZ_PGO_OPTIMIZE_FLAGS="${CFLAGS:M-O*}"
 .endif
 
 .if ${PORT_OPTIONS:MALSA}
@@ -395,7 +384,7 @@ post-patch-SNDIO-on:
 . endfor
 	@${REINPLACE_CMD} -e 's|OS==\"openbsd\"|OS==\"${OPSYS:tl}\"|g' \
 		${MOZSRC}/media/webrtc/trunk/webrtc/build/common.gypi
-	@${ECHO} "OS_LIBS += ['sndio']" >> \
+	@${ECHO_CMD} "OS_LIBS += ['sndio']" >> \
 		${MOZSRC}/media/webrtc/signaling/test/common.build
 .endif
 
@@ -414,7 +403,7 @@ MOZ_OPTIONS+=	--enable-debug --disable-release
 STRIP=	# ports/184285
 .else
 MOZ_OPTIONS+=	--disable-debug --disable-debug-symbols --enable-release
-. if ${MOZILLA_VER:R:R} >= 56
+. if ${MOZILLA_VER:R:R} >= 56 && (${ARCH:Maarch64} || ${MACHINE_CPU:Msse2})
 MOZ_OPTIONS+=	--enable-rust-simd
 . endif
 .endif
@@ -499,22 +488,6 @@ MOZ_OPTIONS+=	--disable-v1-string-abi
 .endif
 
 .else # bsd.port.post.mk
-
-pre-extract: gecko-pre-extract
-
-gecko-pre-extract:
-.if ${PORT_OPTIONS:MPGO}
-	@${ECHO} "*****************************************************************"
-	@${ECHO} "**************************** attention **************************"
-	@${ECHO} "*****************************************************************"
-	@${ECHO} "To build ${MOZILLA} with PGO support you need a running X server and"
-	@${ECHO} "   build this port with an user who could access the X server!   "
-	@${ECHO} ""
-	@${ECHO} "During the build a ${MOZILLA} instance will start and run some test."
-	@${ECHO} "      Do not interrupt or close ${MOZILLA} during these tests!       "
-	@${ECHO} "*****************************************************************"
-	@sleep 10
-.endif
 
 post-patch: gecko-post-patch gecko-moz-pis-patch
 

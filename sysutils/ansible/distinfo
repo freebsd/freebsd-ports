@@ -1,3 +1,3 @@
-TIMESTAMP = 1509024964
-SHA256 (ansible-2.4.1.0.tar.gz) = da61afb29cc5bd6bc4737a2da06e673fb6fccc3ae2685130d19ab3a8e404fb6a
-SIZE (ansible-2.4.1.0.tar.gz) = 6675552
+TIMESTAMP = 1512049992
+SHA256 (ansible-2.4.2.0.tar.gz) = 315f1580b20bbc2c2f1104f8b5e548c6b4cac943b88711639c5e0d4dfc4d7658
+SIZE (ansible-2.4.2.0.tar.gz) = 6503595

@@ -1,0 +1,5 @@
+HSTR is a command line utility that brings improved shell command completion
+based on command history. It aims to make completion easier and more efficient
+than Ctrl+R.
+
+WWW: https://github.com/dvorka/hstr

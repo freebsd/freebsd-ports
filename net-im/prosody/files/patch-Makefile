@@ -1,20 +1,20 @@
---- Makefile.orig	2014-01-12 05:41:40.000000000 -0600
-+++ Makefile	2014-03-15 11:58:25.725744098 -0500
-@@ -6,7 +6,7 @@
- MODULES = $(DESTDIR)$(PREFIX)/lib/prosody/modules
- SOURCE = $(DESTDIR)$(PREFIX)/lib/prosody
+--- Makefile.orig	2017-09-28 13:07:47 UTC
++++ Makefile
+@@ -6,7 +6,7 @@ CONFIG = $(DESTDIR)$(SYSCONFDIR)
+ MODULES = $(DESTDIR)$(LIBDIR)/prosody/modules
+ SOURCE = $(DESTDIR)$(LIBDIR)/prosody
  DATA = $(DESTDIR)$(DATADIR)
 -MAN = $(DESTDIR)$(PREFIX)/share/man
 +MAN = $(DESTDIR)$(PREFIX)/man
  
- INSTALLEDSOURCE = $(PREFIX)/lib/prosody
+ INSTALLEDSOURCE = $(LIBDIR)/prosody
  INSTALLEDCONFIG = $(SYSCONFDIR)
-@@ -40,7 +40,7 @@
- 	umask 0022 && cp -r plugins/* $(MODULES)
- 	install -m644 certs/* $(CONFIG)/certs
- 	install -m644 man/prosodyctl.man $(MAN)/man1/prosodyctl.1
--	test -e $(CONFIG)/prosody.cfg.lua || install -m644 prosody.cfg.lua.install $(CONFIG)/prosody.cfg.lua
-+	install -m644 prosody.cfg.lua.install $(CONFIG)/prosody.cfg.lua.sample
- 	test -e prosody.version && install -m644 prosody.version $(SOURCE)/prosody.version || true
+@@ -53,7 +53,7 @@ install: prosody.install prosodyctl.install prosody.cf
+ 	$(INSTALL_DATA) plugins/mod_mam/*.lua $(MODULES)/mod_mam
+ 	$(INSTALL_DATA) certs/* $(CONFIG)/certs
+ 	$(INSTALL_DATA) man/prosodyctl.man $(MAN)/man1/prosodyctl.1
+-	test -f $(CONFIG)/prosody.cfg.lua || $(INSTALL_DATA) prosody.cfg.lua.install $(CONFIG)/prosody.cfg.lua
++	$(INSTALL_DATA) prosody.cfg.lua.install $(CONFIG)/prosody.cfg.lua.sample
+ 	-test -f prosody.version && $(INSTALL_DATA) prosody.version $(SOURCE)/prosody.version
  	$(MAKE) install -C util-src
  

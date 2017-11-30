@@ -23,6 +23,7 @@ LIB_DEPENDS=	liblcms2.so:graphics/lcms2 \
 RUN_DEPENDS=	jhindexer:java/javahelp
 
 BROKEN_armv6=		fails to compile: build.xml: exec returned: 1
+BROKEN_armv7=		fails to compile: build.xml: exec returned: 1
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	ktgw0316

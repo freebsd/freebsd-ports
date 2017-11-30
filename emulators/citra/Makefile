@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	citra
-PORTVERSION=	s20171109
+PORTVERSION=	s20171129
 PORTREVISION?=	0
 CATEGORIES=	emulators
 
@@ -26,9 +26,9 @@ ONLY_FOR_ARCHS_REASON=	https://github.com/MerryMage/dynarmic/issues/35
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	citra-emu
-GH_TAGNAME=	7ef905ea0
+GH_TAGNAME=	b2a99043
 GH_TUPLE=	citra-emu:ext-soundtouch:019d208:soundtouch/externals/soundtouch \
-		MerryMage:dynarmic:d3fb603:dynarmic/externals/dynarmic \
+		MerryMage:dynarmic:bb87d25:dynarmic/externals/dynarmic \
 		fmtlib:fmt:4.0.0:fmt/externals/fmt \
 		herumi:xbyak:v5.53-1-gc5da377:xbyak/externals/xbyak \
 		lsalzman:enet:a84c120:enet/externals/enet \
@@ -63,8 +63,8 @@ QT5_CMAKE_BOOL=	ENABLE_QT
 QT5_PLIST_FILES=bin/${PORTNAME}-qt \
 		man/man6/${PORTNAME}-qt.6.gz \
 		share/applications/${PORTNAME}.desktop \
-		share/mime/packages/${PORTNAME}.xml \
-		share/pixmaps/${PORTNAME}.svg
+		share/icons/hicolor/scalable/apps/${PORTNAME}.svg \
+		share/mime/packages/${PORTNAME}.xml
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,share/man,man,' \

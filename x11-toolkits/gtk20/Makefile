@@ -23,7 +23,8 @@ PORTSCOUT=	limitw:0,even
 RUN_DEPENDS+=	update-mime-database:misc/shared-mime-info \
 		${LOCALBASE}/share/icons/hicolor/index.theme:misc/hicolor-icon-theme
 
-USES+=		gettext gmake libtool pathfix perl5 pkgconfig python:run shebangfix
+USES+=		gettext gmake libtool localbase:ldflags pathfix perl5 \
+		pkgconfig python:run shebangfix
 SHEBANG_FILES=	gtk/gtk-builder-convert
 GNU_CONFIGURE=	yes
 USE_GNOME=	atk pango gdkpixbuf2 introspection:build \
@@ -33,8 +34,6 @@ USE_PERL5=	build
 USE_XORG=	xext xrender x11 xinerama xi xrandr xcursor xfixes xdamage \
 		xcomposite
 CONFIGURE_ARGS=	--with-xinput=yes
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
 
 OPTIONS_DEFINE=	CUPS DEBUG

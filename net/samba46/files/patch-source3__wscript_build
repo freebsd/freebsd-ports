@@ -1,6 +1,6 @@
---- source3/wscript_build.orig	2017-02-28 20:04:57.000000000 +0000
-+++ source3/wscript_build	2017-03-25 03:35:14.392623000 +0000
-@@ -741,6 +741,7 @@
+--- source3/wscript_build.orig	2017-05-23 08:19:23 UTC
++++ source3/wscript_build
+@@ -741,6 +741,7 @@ bld.SAMBA3_LIBRARY('smbd_base',
                          smbd_conn
                          param_service
                          AVAHI
@@ -8,7 +8,7 @@
                          PRINTBASE
                          PROFILE
                          LOCKING
-@@ -1123,6 +1124,7 @@
+@@ -1129,6 +1130,7 @@ bld.SAMBA3_BINARY('client/smbclient',
                        msrpc3
                        RPC_NDR_SRVSVC
                        cli_smb_common

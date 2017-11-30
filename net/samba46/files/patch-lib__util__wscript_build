@@ -1,6 +1,6 @@
---- lib/util/wscript_build.orig	2017-03-27 02:23:54.176730000 +0000
-+++ lib/util/wscript_build	2017-03-27 02:29:10.940173000 +0000
-@@ -132,7 +132,7 @@
+--- lib/util/wscript_build.orig	2017-01-11 07:55:14 UTC
++++ lib/util/wscript_build
+@@ -132,7 +132,7 @@ else:
  
      bld.SAMBA_LIBRARY('samba-modules',
                        source='modules.c',

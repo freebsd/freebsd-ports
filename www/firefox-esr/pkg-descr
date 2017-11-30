@@ -1,13 +1,4 @@
-Mozilla Firefox is a free and open source web browser descended from the
-Mozilla Application Suite. It is small, fast and easy to use, and offers
-many advanced features:
+Firefox ESR is an Extended Support Release of firefox.  Use this port
+only if you have a good reason: the canonical port is www/firefox.
 
- o Popup Blocking
- o Tabbed Browsing
- o Live Bookmarks (ie. RSS)
- o Extensions
- o Themes
- o FastFind
- o Improved Security
-
-WWW: http://www.mozilla.com/firefox
+WWW: https://www.mozilla.org/firefox/organizations/faq/

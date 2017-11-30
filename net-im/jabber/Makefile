@@ -14,7 +14,8 @@ DIST_SUBDIR=	jabber
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XMPP/Jabber server daemon
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libpopt.so:devel/popt \
 		libpth.so:devel/pth-hard \
@@ -22,23 +23,19 @@ LIB_DEPENDS=	libpopt.so:devel/popt \
 		libgnutls.so:security/gnutls \
 		libexpat.so:textproc/expat2
 
-OPTIONS_DEFINE= IPV6 MYSQL PGSQL DOCS
-
+USES=		gettext gmake iconv libtool localbase:ldflags pkgconfig
 GNU_CONFIGURE=	yes
-INSTALL_TARGET=	install-strip
-USES=		gettext gmake iconv libtool pkgconfig
 USE_RC_SUBR=	jabber
 CONFIGURE_ARGS=	--localstatedir=/var \
 		--sysconfdir=${JABBER_ETCDIR} \
 		--includedir=${PREFIX}/include/jabber \
 		--libdir=${PREFIX}/lib/jabber
+INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	${PREFIX}/lib/jabber
 MAKE_JOBS_UNSAFE=	yes
 
-CPPFLAGS+=	$$(pth-config --cflags) \
-		-I${LOCALBASE}/include
-LDFLAGS+=	$$(pth-config --ldflags) \
-		-L${LOCALBASE}/lib
+CPPFLAGS+=	$$(pth-config --cflags)
+LDFLAGS+=	$$(pth-config --ldflags)
 
 SUB_FILES=	pkg-message
 SUB_LIST=	JABBER_USER=${JABBER_USER} \
@@ -63,21 +60,17 @@ JABBER_RUNDIR=	/var/run/jabberd
 JABBER_SPOOLDIR=/var/spool/jabberd
 JABBER_LOGDIR=	/var/log/jabberd
 
+OPTIONS_DEFINE= IPV6 MYSQL PGSQL DOCS
+
+MYSQL_USES=		mysql
+MYSQL_CONFIGURE_ON=	--with-mysql=${LOCALBASE}
+
+PGSQL_USES=		pgsql
+PGSQL_CONFIGURE_ON=	--with-postgresql=${LOCALBASE}
+
+IPV6_CONFIGURE_ON=	--enable-ipv6
+
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MMYSQL}
-USE_MYSQL=	yes
-CONFIGURE_ARGS+=	--with-mysql=${LOCALBASE}
-.endif
-
-.if ${PORT_OPTIONS:MPGSQL}
-USES+=		pgsql
-CONFIGURE_ARGS+=	--with-postgresql=${LOCALBASE}
-.endif
-
-.if ${PORT_OPTIONS:MIPV6}
-CONFIGURE_ARGS+=	--enable-ipv6
-.endif
 
 .if exists(${LOCALBASE}/include/pth/pthread.h)
 IGNORE=	pth with soft syscalls is installed, please reinstall pth from devel/pth-hard
@@ -110,10 +103,12 @@ post-install:
 	@${TOUCH} ${STAGEDIR}${PREFIX}/include/jabber/platform-settings
 	(cd ${WRKSRC} && ${INSTALL_DATA} jabber.xml.dist \
 		${STAGEDIR}${PREFIX}/etc/jabber.xml.sample)
+
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in AUTHORS ChangeLog INSTALL NEWS README README.SQL README.config \
 	README.filespool README.karma README.protocols TODO UPGRADE mysql.sql
-	(cd ${WRKSRC} && ${INSTALL_DATA} ${i} ${STAGEDIR}${DOCSDIR})
+	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
 
 .include <bsd.port.mk>

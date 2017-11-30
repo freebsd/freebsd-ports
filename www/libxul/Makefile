@@ -3,14 +3,22 @@
 
 PORTNAME=	libxul
 DISTVERSION=	45.9.0
-PORTREVISION=	7
+PORTREVISION=	9
 CATEGORIES?=	www devel
 MASTER_SITES=	MOZILLA/firefox/releases/${DISTVERSION}esr/source \
 		MOZILLA/firefox/candidates/${DISTVERSION}esr-candidates/build3/source
-DISTNAME=	firefox-${DISTVERSION}esr.source
+DISTNAME=	firefox-${DISTVERSION}esr
+DISTFILES=	${DISTNAME}.source${EXTRACT_SUFX}
 
 MAINTAINER?=	gecko@FreeBSD.org
 COMMENT?=	Mozilla runtime package that can be used to bootstrap XUL+XPCOM apps
+
+# Post libxul removal cleanup:
+# 1. Drop MOZILLA_VER < 59.* from Mk/bsd.gecko.mk
+# 2. Drop libxul support in USES=gecko
+# 3. Deprecate USES=webplugins (flash still uses it)
+DEPRECATED=	NPAPI are no longer supported
+EXPIRATION_DATE=2018-06-20
 
 BUILD_DEPENDS=	nspr>=4.12:devel/nspr \
 		nss>=3.21.3:security/nss \
@@ -29,9 +37,6 @@ BUILD_DEPENDS=	nspr>=4.12:devel/nspr \
 		zip:archivers/zip
 
 LIB_DEPENDS=	libv4l2.so:multimedia/libv4l
-
-WRKSRC:=	${WRKDIR}/firefox-${DISTVERSION}esr
-CONFLICTS_INSTALL=	libxul-1.9.*
 
 USE_GL=		gl
 USES=		pathfix shebangfix tar:xz

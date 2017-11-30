@@ -8,6 +8,7 @@ CATEGORIES=	audio
 COMMENT=	Gstreamer taglib plugin
 
 BROKEN_armv6=		fails to compile: textidentificationframe.h file not found
+BROKEN_armv7=		fails to compile: textidentificationframe.h file not found
 
 GST_PLUGIN=	taglib
 

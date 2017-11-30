@@ -292,6 +292,7 @@
     SUBDIR += goocanvasmm2
     SUBDIR += goom
     SUBDIR += gource
+    SUBDIR += goxel
     SUBDIR += gpaint
     SUBDIR += gphoto2
     SUBDIR += gpicview
@@ -467,6 +468,7 @@
     SUBDIR += ksnapshot
     SUBDIR += kudu
     SUBDIR += l2p
+    SUBDIR += largetifftools
     SUBDIR += laternamagica
     SUBDIR += lcdtest
     SUBDIR += lcms
@@ -552,7 +554,6 @@
     SUBDIR += libzmf
     SUBDIR += lightzone
     SUBDIR += linplasma
-    SUBDIR += linux-adobesvg
     SUBDIR += linux-c6-cairo
     SUBDIR += linux-c6-dri
     SUBDIR += linux-c6-gdk-pixbuf2
@@ -862,6 +863,7 @@
     SUBDIR += py-gd
     SUBDIR += py-gdal
     SUBDIR += py-gimp
+    SUBDIR += py-gizeh
     SUBDIR += py-glewpy
     SUBDIR += py-goocanvas
     SUBDIR += py-gphoto2
@@ -904,6 +906,7 @@
     SUBDIR += py-sane
     SUBDIR += py-scikit-image
     SUBDIR += py-seqdiag
+    SUBDIR += py-sk1
     SUBDIR += py-sorl-thumbnail
     SUBDIR += py-soya3d
     SUBDIR += py-stltools

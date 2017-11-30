@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME?=	wireshark
-PORTVERSION=	2.4.1
+PORTVERSION=	2.4.2
 PORTREVISION?=	0
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.wireshark.org/download/src/ \
@@ -30,14 +30,18 @@ GNU_CONFIGURE=	yes
 USES=		alias cpe gettext-runtime gmake libtool pathfix perl5 \
 		pkgconfig python:build ssl tar:xz
 USE_PERL5=	build
-USE_GNOME=	glib20
+USE_GNOME=	glib20 libxml2
 CONFIGURE_ARGS+=	--program-transform-name="" \
 			--with-ssl=${OPENSSLBASE}
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 
 LIB_DEPENDS+=	libgpg-error.so:security/libgpg-error \
-		libgcrypt.so:security/libgcrypt
+		libgcrypt.so:security/libgcrypt \
+		liblz4.so:archivers/liblz4 \
+		libnghttp2.so:www/libnghttp2 \
+		libsnappy.so:archivers/snappy \
+		libspandsp.so:comms/spandsp
 
 CFLAGS+=	-funit-at-a-time
 LIBS+=		-L${LOCALBASE}/lib
@@ -125,7 +129,7 @@ QT5_PLIST_SUB=		GUI_GTK="@comment "
 GTK2_PLIST_SUB=		GUI_GTK=""
 GTK3_PLIST_SUB=		GUI_GTK=""
 
-OPTIONS_SUB=		LUA
+OPTIONS_SUB=		yes
 
 .if defined(LITE)
 CONFIGURE_ARGS+=--enable-androiddump=no

@@ -5,6 +5,45 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20171126:
+  AFFECTS: users of security/p5-openxpki
+  AUTHOR: dbaio@FreeBSD.org
+
+  OpenXPKI has been updated to 1.19.4, some important changes were made, please
+  see the upgrading documentation for more details:
+
+  http://openxpki.readthedocs.io/en/latest/upgrading.html
+
+20171126:
+  AFFECTS: users of mail/sympa
+  AUTHOR: dgeo@centrale-marseille.fr
+
+  Web's static dirs have moved to a single dedicated directory.
+  Users should review webserver's /static configuration (examples in
+  share/examples/sympa).
+
+20171119:
+  AFFECTS: users of sysutils/zrepl
+  AUTHOR: woodsb02@FreeBSD.org
+
+  Zrepl has been updated to 0.0.2, which introduces two changes that will
+  require existing users to change their zrepl.yml config file:
+    - global.logging is no longer a dictionary but a list.
+      Refer to the new format here: https://zrepl.github.io/configuration/logging.html
+    - source job field datasets renamed to filesystems.
+      Refer to the new format here: https://zrepl.github.io/configuration/jobs.html
+
+    https://zrepl.github.io/changelog.html#id1
+
+20171117:
+  AFFECTS: users of sysutils/terraform
+  AUTHOR: lifanov@FreeBSD.org
+
+  Terraform has been updated to 0.11, which introduces several incompatible
+  changes. Please follow upgrading guide when updating the package.
+
+    https://www.terraform.io/upgrade-guides/0-11.html
+
 20171114:
   AFFECTS: users of ports-mgmt/poudriere
   AUTHOR: bdrewery@FreeBSD.org
@@ -139,18 +178,6 @@ you update your ports collection, before attempting any port upgrades.
 
   The HPN option is currently disabled by default, and does not build,
   in the package.  This follows what happened in base as well.
-
- 20171006:
-  AFFECTS: users of graphics/netpbm
-  AUTHOR: tobik@FreeBSD.org
-
-  If you use portmaster/portupgrade/make to build your ports, please
-  uninstall the old netpbm version first before attempting to update to
-  netpbm 10.80.00:
-
-	pkg delete -f netpbm
-
-  It is recommended that you rebuild all dependent ports as well.
 
 20171004:
   AFFECTS: users of security/krb5-appl

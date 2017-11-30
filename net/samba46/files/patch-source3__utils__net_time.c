@@ -1,4 +1,4 @@
---- source3/utils/net_time.c.orig	2016-01-26 11:45:46 UTC
+--- source3/utils/net_time.c.orig	2017-01-11 07:55:15 UTC
 +++ source3/utils/net_time.c
 @@ -75,10 +75,15 @@ static const char *systime(time_t t)
  	if (!tm) {

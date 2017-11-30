@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Geo-GDAL
-PORTVERSION=	2.2.2
+PORTVERSION=	2.2.3
 CATEGORIES=	graphics perl5
 MASTER_SITES=	http://download.osgeo.org/gdal/${PORTVERSION}/ \
 		ftp://ftp.remotesensing.org/pub/gdal/${PORTVERSION}/ \

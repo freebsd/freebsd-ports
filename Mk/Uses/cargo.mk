@@ -72,6 +72,13 @@ CARGO_ENV+= \
 	RUSTDOC=${LOCALBASE}/bin/rustdoc \
 	RUSTFLAGS="${RUSTFLAGS}"
 
+# Adjust -C target-cpu if -march/-mcpu is set by bsd.cpu.mk
+.if ${ARCH} == amd64 || ${ARCH} == i386
+RUSTFLAGS+=	${CFLAGS:M-march=*:S/-march=/-C target-cpu=/}
+.else
+RUSTFLAGS+=	${CFLAGS:M-mcpu=*:S/-mcpu=/-C target-cpu=/}
+.endif
+
 # Helper to shorten cargo calls.
 CARGO_CARGO_RUN= \
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${CARGO_ENV} \

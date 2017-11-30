@@ -1,0 +1,10 @@
+Clone::Choose checks several different modules which provides a clone() function
+and selects an appropriate one. The default preference is:
+- Clone
+- Storable
+- Clone::PP
+
+This list might evolve in future. Please see ["EXPORTS"](#exports) how to pick a
+particular one.
+
+WWW: http://search.cpan.org/dist/Clone-Choose/

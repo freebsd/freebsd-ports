@@ -495,6 +495,7 @@ share/applications/emacs.desktop
 %%DATADIR%%/%%EMACS_VER%%/etc/images/icons/hicolor/48x48/apps/emacs.png
 %%DATADIR%%/%%EMACS_VER%%/etc/images/icons/hicolor/48x48/apps/emacs22.png
 %%DATADIR%%/%%EMACS_VER%%/etc/images/icons/hicolor/48x48/apps/emacs23.png
+%%DATADIR%%/%%EMACS_VER%%/etc/images/icons/hicolor/scalable/apps/emacs.ico
 %%DATADIR%%/%%EMACS_VER%%/etc/images/icons/hicolor/scalable/apps/emacs.svg
 %%DATADIR%%/%%EMACS_VER%%/etc/images/icons/hicolor/scalable/apps/emacs23.svg
 %%DATADIR%%/%%EMACS_VER%%/etc/images/icons/hicolor/scalable/mimetypes/emacs-document.svg
@@ -4104,6 +4105,7 @@ share/icons/hicolor/16x16/apps/emacs.png
 share/icons/hicolor/24x24/apps/emacs.png
 share/icons/hicolor/32x32/apps/emacs.png
 share/icons/hicolor/48x48/apps/emacs.png
+share/icons/hicolor/scalable/apps/emacs.ico
 share/icons/hicolor/scalable/apps/emacs.svg
 share/icons/hicolor/scalable/mimetypes/emacs-document.svg
 share/icons/hicolor/scalable/mimetypes/emacs-document23.svg

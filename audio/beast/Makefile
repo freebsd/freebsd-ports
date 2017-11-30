@@ -22,6 +22,7 @@ LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 RUN_DEPENDS=	xdg-open:devel/xdg-utils
 
 BROKEN_armv6=		fails to package: bseblockutils.SSE.so: No such file or directory
+BROKEN_armv7=		fails to package: bseblockutils.SSE.so: No such file or directory
 BROKEN_powerpc64=	fails to package: bseblockutils.SSE.so: No such file or directory
 
 USES=		desktop-file-utils gettext gmake libtool pathfix pkgconfig \

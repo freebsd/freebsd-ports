@@ -1,25 +1,23 @@
-# Created by: Jason Bacon
 # $FreeBSD$
 
 PORTNAME=	bowtie2
-PORTVERSION=	2.3.0
-PORTREVISION=	2
+PORTVERSION=	2.3.3.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	biology
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Ultrafast, memory-efficient short read aligner
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS+=	libtbb.so:devel/tbb
-
 # May also work on other 64-bit platforms, but untested
 ONLY_FOR_ARCHS=	amd64
+LIB_DEPENDS=	libtbb.so:devel/tbb
+
 USES=		gmake perl5 python shebangfix
 USE_PERL5=	run
-SHEBANG_FILES=	bowtie2-build bowtie2-inspect scripts/*.pl 
+SHEBANG_FILES=	bowtie2-build bowtie2-inspect scripts/*.pl
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	BenLangmead

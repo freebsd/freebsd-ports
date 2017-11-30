@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	pg_partman
-PORTVERSION=	3.0.2
+DISTVERSION=	3.1.0
 CATEGORIES=	databases
 
 MAINTAINER=	lacey.leanne@gmail.com
@@ -9,7 +9,7 @@ COMMENT=	PostgreSQL Partition Manager
 
 LICENSE=	PostgreSQL
 
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/psycopg2/__init__.py:databases/py-psycopg2
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/psycopg2/__init__.py:databases/py-psycopg2
 
 USES=		gmake pgsql:9.4+ python uidfix shebangfix
 WANT_PGSQL=	server

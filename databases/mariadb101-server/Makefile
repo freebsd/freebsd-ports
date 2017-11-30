@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME?=	mariadb
-PORTVERSION=	10.1.28
+PORTVERSION=	10.1.29
 PORTREVISION?=	0
 CATEGORIES=	databases ipv6
 MASTER_SITES=	http://ftp.osuosl.org/pub/${SITESDIR}/ \
@@ -141,6 +141,7 @@ LZO_CMAKE_ON=		-DWITH_INNODB_LZO=${LOCALBASE}/lib
 LZO_LIB_DEPENDS=	liblzo2.so:archivers/lzo2
 MAXKEY_EXTRA_PATCHES+=	${FILESDIR}/extra-patch-include_my__compare.h
 MROONGA_LIB_DEPENDS=	liblz4.so:archivers/liblz4
+MROONGA_VARS=		LICENSE+=LGPL20 LICENSE_COMB=multi
 MSGPACK_LIB_DEPENDS=	libmsgpackc.so:devel/msgpack
 OQGRAPH_LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 			libJudy.so:devel/judy
@@ -164,11 +165,19 @@ post-install:
 		${STAGEDIR}${PREFIX}/bin/mysql_config \
 		${STAGEDIR}${PREFIX}/bin/mysql_find_rows \
 		${STAGEDIR}${PREFIX}/bin/mysqlaccess \
-		${STAGEDIR}${PREFIX}/lib/mysql/plugin/client_ed25519.so
+		${STAGEDIR}${PREFIX}/lib/mysql/plugin/client_ed25519.so \
+		${STAGEDIR}${PREFIX}/share/groonga-normalizer-mysql/lgpl-2.0.txt \
+		${STAGEDIR}${PREFIX}/share/groonga/COPYING \
+		${STAGEDIR}${DATADIR}/mroonga/COPYING
 	${RM} -r ${STAGEDIR}${PREFIX}/share/mysql/policy \
 		${STAGEDIR}${PREFIX}/share/pkgconfig \
 		${STAGEDIR}${PREFIX}/mysql/mysql-test \
 		${STAGEDIR}${PREFIX}/mysql/sql-bench
+
+post-install-MROONGA-on:
+	${MV} ${STAGEDIR}${PREFIX}/share/groonga-normalizer-mysql \
+		${STAGEDIR}${PREFIX}/share/groonga \
+		${STAGEDIR}${PREFIX}/share/mysql
 .endif # defined(CLIENT_ONLY)
 
 .include <bsd.port.pre.mk>

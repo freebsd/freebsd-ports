@@ -1,11 +1,19 @@
---- setup.py.orig	2013-07-14 19:01:36.000000000 +0000
-+++ setup.py	2013-07-14 19:02:02.000000000 +0000
-@@ -31,7 +31,7 @@
+--- setup.py.orig	2017-11-03 11:21:18 UTC
++++ setup.py
+@@ -31,12 +31,14 @@ setup(
      install_requires = [
          'setuptools',
          'PyCrypto',
 -        'Twisted',
+-        'argparse',
 +        'Twisted_Core',
-         'argparse',
-         'pyptlib'
+         'pyptlib >= 0.0.6',
+         'pyyaml'
          ],
+ 
++    if sys.version_info < (2, 7):
++        install_requires.append('argparse')
++
+     extras_require = {
+         'SOCKS': ["txsocksx"]
+         }

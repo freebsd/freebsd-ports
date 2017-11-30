@@ -1,4 +1,4 @@
---- buildtools/wafsamba/samba_install.py.orig	2016-01-26 11:45:46 UTC
+--- buildtools/wafsamba/samba_install.py.orig	2017-01-11 07:55:14 UTC
 +++ buildtools/wafsamba/samba_install.py
 @@ -118,7 +118,7 @@ def install_library(self):
                  inst_name    = bld.make_libname(t.target)

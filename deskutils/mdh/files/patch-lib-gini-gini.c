@@ -1,6 +1,6 @@
---- lib/gini/gini.c.orig	Fri Jul  8 08:10:18 2005
-+++ lib/gini/gini.c	Fri Oct  7 03:35:03 2005
-@@ -190,7 +190,7 @@
+--- lib/gini/gini.c.orig	2005-07-07 23:10:18 UTC
++++ lib/gini/gini.c
+@@ -190,7 +190,7 @@ static void value_transform_string_ulong
  
  static void value_transform_string_int64(const GValue *src, GValue *dst)
  {

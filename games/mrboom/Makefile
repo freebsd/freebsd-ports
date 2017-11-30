@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mrboom
-PORTVERSION=	3.8
+PORTVERSION=	3.9
 CATEGORIES=	games
 
 MAINTAINER=	ehaupt@FreeBSD.org
@@ -18,7 +18,7 @@ USES=		gmake
 USE_GITHUB=	yes
 USE_SDL=	sdl2 mixer2
 
-GH_ACCOUNT=	libretro
+GH_ACCOUNT=	Javanaise
 GH_PROJECT=	mrboom-libretro
 
 ALL_TARGET=	mrboom

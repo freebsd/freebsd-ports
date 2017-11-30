@@ -1,0 +1,18 @@
+--- Makefile.orig	2017-07-09 16:40:08 UTC
++++ Makefile
+@@ -149,7 +149,6 @@ endif
+ 
+ ifeq ($(COMP),gcc)
+ 	comp=gcc
+-	CXX=g++
+ 	CXXFLAGS += -pedantic -Wextra -Wshadow
+ 
+ 	ifeq ($(ARCH),armv7)
+@@ -198,7 +197,6 @@ endif
+ 
+ ifeq ($(COMP),clang)
+ 	comp=clang
+-	CXX=clang++
+ 	CXXFLAGS += -pedantic -Wextra -Wshadow
+ 
+ 	ifeq ($(ARCH),armv7)

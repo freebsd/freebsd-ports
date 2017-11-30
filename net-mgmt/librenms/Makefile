@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	librenms
-PORTVERSION=	1.28
+PORTVERSION=	1.33.01
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt
 
@@ -15,8 +16,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	librenms
 
 USES=		php:cli python shebangfix
-SHEBANG_FILES=	mibs/process.pl scripts/auth_test.php scripts/deploy-docs.sh \
-		scripts/deploy-schema.sh scripts/github-remove \
+SHEBANG_FILES=	scripts/auth_test.php scripts/deploy-docs.sh scripts/github-remove \
 		scripts/Migration/Standard_Conversion/convert_no_xml.sh \
 		scripts/Migration/Standard_Conversion/destwork_no_xml.sh \
 		scripts/Migration/Standard_Conversion/mkdir.sh \
@@ -87,7 +87,7 @@ ROOT_FILES=	addhost.php adduser.php	alerts.php build-base.php build.sql \
 		delhost.php discovery-wrapper.py discovery.php dist-pollers.php irc.php \
 		mkdocs.yml pbin.sh phpunit.xml poll-billing.php poller.php poller-service.py \
 		poller-wrapper.py readmegen.yml renamehost.php services-wrapper.py \
-		snmp-scan.php snmptrap.php syslog.php validate.php
+		snmptrap.php syslog.php validate.php
 
 ROOT_DIRS=	LibreNMS contrib doc html includes lib mibs misc scripts sql-schema tests vendor
 

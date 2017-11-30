@@ -2,6 +2,7 @@
 
 PORTNAME=	ejabberd
 PORTVERSION=	17.09
+PORTREVISION=	1
 CATEGORIES=	net-im
 MASTER_SITES=	http://www.process-one.net/downloads/${PORTNAME}/${PORTVERSION}/:p1 \
 		http://distfiles.pirateparty.in/ashish/:deps \
@@ -86,6 +87,9 @@ DOCS_MAKE_ARGS_OFF=	NOPORTDOCS=yes
 post-extract:
 	@${LN} -s ${WRKDIR}/deps ${WRKSRC}/
 
+post-patch:
+	@${REINPLACE_CMD} -e 's,^convert,${LOCALBASE}/bin/convert,' ${WRKSRC}/tools/captcha.sh
+
 pre-configure:
 	@${REINPLACE_CMD} -e 's,/usr/local,${LOCALBASE},g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's,%%LOCALBASE%%,${LOCALBASE},g' \
@@ -106,5 +110,9 @@ post-install-PAM-on:
 post-install:
 	@${FIND} ${STAGEDIR}${PREFIX}/${EJABBERD_LIBDIR} -type f \
 		-name '*.so' -exec ${STRIP_CMD} {} \;
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	@${INSTALL} -m 0755 ${STAGEDIR}${PREFIX}/${EJABBERD_LIBDIR}/${PORTNAME}-${PORTVERSION}/priv/bin/captcha.sh \
+		${STAGEDIR}${DATADIR}
+	@${REINPLACE_CMD} -r -e '/captcha_cmd:/s,"[^"]+","${DATADIR}/captcha.sh",' ${STAGEDIR}${ETCDIR}/${PORTNAME}.yml.example
 
 .include <bsd.port.post.mk>

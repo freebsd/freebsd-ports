@@ -85,6 +85,7 @@
     SUBDIR += py-biom-format
     SUBDIR += py-biopython
     SUBDIR += py-bx-python
+    SUBDIR += py-cutadapt
     SUBDIR += py-pysam
     SUBDIR += pycogent
     SUBDIR += pyfasta

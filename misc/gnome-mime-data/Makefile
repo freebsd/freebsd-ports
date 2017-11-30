@@ -7,16 +7,17 @@ PORTVERSION=	2.18.0
 PORTREVISION=	5
 CATEGORIES=	misc gnome
 MASTER_SITES=	GNOME
-DISTNAME=	gnome-mime-data-${PORTVERSION}
 DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	MIME and Application database for GNOME
 
-USES=		gettext gmake pathfix tar:bzip2
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+USES=		gettext gmake localbase pathfix tar:bzip2
 USE_GNOME=	gnomeprefix intlhack
 GNU_CONFIGURE=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include
-LIBS+=		-L${LOCALBASE}/lib -lintl
+LIBS+=		-lintl
 
 .include <bsd.port.mk>

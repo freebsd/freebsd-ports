@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tcl-lmdb
-PORTVERSION=	0.3.5
+PORTVERSION=	0.3.6
 CATEGORIES=	databases
 
 MAINTAINER=	gahr@FreeBSD.org

@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	libzip
-PORTVERSION=	1.3.0
+PORTVERSION=	1.3.2
 CATEGORIES=	archivers devel
-MASTER_SITES=	https://www.nih.at/libzip/
+MASTER_SITES=	https://libzip.org/download/
 
 MAINTAINER=	rakuco@FreeBSD.org
 COMMENT=	C library for reading, creating, and modifying ZIP archives

@@ -1,0 +1,5 @@
+[Accounts]
+useradd_cmd = pw useradd {user} -m
+userdel_cmd = pw userdel {user} -r
+usermod_cmd = pw usermod {user} -G {groups}
+groupadd_cmd = pw groupadd {group}

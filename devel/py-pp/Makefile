@@ -2,13 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	pp
-PORTVERSION=	1.6.5
+PORTVERSION=	1.6.6
 CATEGORIES=	devel python
 MASTER_SITES=	http://www.parallelpython.com/downloads/pp/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	Parallel python execution server
+
+LICENSE=	BSD3CLAUSE
 
 USES=		python:2
 USE_PYTHON=	distutils autoplist

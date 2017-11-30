@@ -21,6 +21,7 @@ CONFLICTS=	fvwm-1.* fvwm-2.*
 
 BROKEN_aarch64=	Fails to build: error: GETLEFTBITS_ALIGNMENT must be 1
 BROKEN_armv6=	Fails to build: error: GETLEFTBITS_ALIGNMENT must be 1
+BROKEN_armv7=	Fails to build: error: GETLEFTBITS_ALIGNMENT must be 1
 
 USES=		gettext libtool localbase:ldflags pathfix pkgconfig python shebangfix tar:bzip2
 SHEBANG_FILES=	${WRKSRC}/fvwm-insitu/bin/fvwm-convert-2.4.in \

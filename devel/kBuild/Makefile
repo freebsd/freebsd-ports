@@ -3,10 +3,10 @@
 
 PORTNAME=	kBuild
 DISTVERSION=	${KBUILD_VERSION}
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	devel
 MASTER_SITES=	LOCAL/jkim
-DISTNAME=	${PORTNAME}-${DISTVERSION}r3050-src
+DISTNAME=	${PORTNAME}-${DISTVERSION}r3127-src
 
 MAINTAINER=	vbox@FreeBSD.org
 COMMENT=	Makefile framework
@@ -15,7 +15,7 @@ LICENSE=	BSD3CLAUSE GPLv3+
 LICENSE_COMB=	multi
 
 BROKEN_powerpc64=	does not build: fatal error: xmmintrin.h: No such file or directory
-NOT_FOR_ARCHS=		aarch64 armv6 mips mips64
+NOT_FOR_ARCHS=		aarch64 armv6 armv7 mips mips64
 NOT_FOR_ARCHS_REASON=	./kBuild/env.sh: unknown cpu/arch
 
 USE_GCC=	any
@@ -26,7 +26,7 @@ CONFLICTS_INSTALL=	kBuild-devel-[0-9]*
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 
 KBUILD_VERSION=	0.1.9998
-KBUILD_ARCH=	${MACHINE_ARCH:S/i386/x86/:S/x86_64/amd64/:S/powerpc/ppc32/:S/armv6/arm/}
+KBUILD_ARCH=	${MACHINE_ARCH:S/i386/x86/:S/x86_64/amd64/:S/powerpc/ppc32/:C/armv.*/arm/}
 KBUILD_ENV=	ACLOCAL=${ACLOCAL} \
 		AUTOMAKE=${AUTOMAKE} \
 		AUTORECONF=${AUTORECONF} \

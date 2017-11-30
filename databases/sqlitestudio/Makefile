@@ -3,11 +3,11 @@
 
 PORTNAME=	sqlitestudio
 PORTVERSION=	3.1.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	databases
 MASTER_SITES=	http://sqlitestudio.pl/files/sqlitestudio3/complete/tar/
 
-MAINTAINER=	yuri@rawbw.com
+MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	SQLite database GUI manager
 
 LICENSE=	GPLv3
@@ -34,14 +34,14 @@ OPTIONS_DEFAULT=	PLUGIN_CSV_IMPORT PLUGIN_CSV_EXPORT PLUGIN_HTML_EXPORT
 OPTIONS_DEFAULT+=	PLUGIN_JSON_EXPORT PLUGIN_PDF_EXPORT PLUGIN_PRINTING PLUGIN_REGEXP_IMPORT
 OPTIONS_DEFAULT+=	PLUGIN_SQL_FORMATTER_SIMPLE PLUGIN_SQL_EXPORT PLUGIN_SQL_ENTERPRISE_FORMATTER
 OPTIONS_DEFAULT+=	PLUGIN_XML_EXPORT
-OPTIONS_SUB=	yes
+OPTIONS_SUB=		yes
 
 WRKSRC=		${WRKDIR}/SQLiteStudio3
 
 USES=		compiler:c++11-lib gmake ncurses qmake readline sqlite
 USE_CXXSTD=	c++11
-USE_QT5=	core gui svg sql xml network sql-sqlite3_run widgets script \
-		concurrent uitools buildtools_build linguisttools_build
+USE_QT5=	core concurrent gui network script sql sql-sqlite3_run svg widgets xml \
+		uitools buildtools_build linguisttools_build
 USE_GL=		gl
 USE_LDCONFIG=	yes
 

@@ -21,6 +21,7 @@ LICENSE_FILE=	${WRKSRC}/00License.txt
 
 BROKEN_aarch64=		does not build: undefined reference to get_libname
 BROKEN_armv6=		does not build: undefined reference to get_libname
+BROKEN_armv7=		does not build: undefined reference to get_libname
 BROKEN_powerpc64=	does not build: error: macro names must be identifiers
 BROKEN_i386=		does not build (terminates with SIGBUS)
 

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	bjoern
-PORTVERSION=	2.0.1
+PORTVERSION=	2.0.4
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,8 +16,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libev.so:devel/libev
 
 LDFLAGS+=	-lc
-USES=		localbase python:2
-USE_PYTHON=	autoplist distutils
+USES=		localbase python
+USE_PYTHON=	autoplist concurrent distutils
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/*.so

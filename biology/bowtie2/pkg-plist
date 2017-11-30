@@ -34,7 +34,6 @@ bin/bowtie2-inspect-s
 %%PORTDOCS%%%%DOCSDIR%%/images/university.small.horizontal.white.png
 %%PORTDOCS%%%%DOCSDIR%%/manual.html
 %%PORTDOCS%%%%DOCSDIR%%/release.txt
-%%PORTDOCS%%%%DOCSDIR%%/strip_markdown.pl
 %%PORTDOCS%%%%DOCSDIR%%/style.css
 %%PORTDOCS%%%%DOCSDIR%%/website/faq.shtml
 %%PORTDOCS%%%%DOCSDIR%%/website/faq.ssi

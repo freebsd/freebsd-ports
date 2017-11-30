@@ -3,7 +3,7 @@
 
 PORTNAME=	balazarbrothers
 PORTVERSION=	0.3.1
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	games python
 MASTER_SITES=	http://download.gna.org/${PORTNAME:S/brothers//}/
 DISTNAME=	${PORTNAME:S/b/B/g}-${PORTVERSION}

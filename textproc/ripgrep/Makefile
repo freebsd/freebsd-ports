@@ -5,7 +5,7 @@
 
 PORTNAME=	ripgrep
 PORTVERSION=	0.7.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	textproc
 
 MAINTAINER=	petteri.valkonen@iki.fi
@@ -68,10 +68,14 @@ PLIST_FILES=	bin/rg \
 		man/man1/rg.1.gz
 
 OPTIONS_DEFINE=	BASH FISH ZSH SIMD
-OPTIONS_DEFAULT=BASH FISH ZSH SIMD
+OPTIONS_DEFAULT=BASH FISH ZSH
 
 OPTIONS_DEFINE_amd64=	AVX
 OPTIONS_DEFINE_i386=	AVX
+
+OPTIONS_DEFAULT_aarch64=SIMD
+OPTIONS_DEFAULT_amd64=	${OPTIONS_DEFAULT_i386}
+OPTIONS_DEFAULT_i386=	${MACHINE_CPU:tu:S/SSE2/SIMD/}
 
 AVX_DESC=	${SSE_DESC:S/SSE/AVX/}
 FISH_DESC=	Install programmable completions for Fish
@@ -86,7 +90,8 @@ FISH_PLIST_FILES=	share/fish/completions/rg.fish
 # unstable features similar to how lang/rust bootstraps. www/firefox
 # uses the same hack when building with --enable-rust-simd.
 SIMD_MAKE_ENV=	RUSTC_BOOTSTRAP=1
-SIMD_VARS=	CARGO_FEATURES+=simd-accel
+SIMD_VARS=	CARGO_FEATURES+=simd-accel ${SIMD_VARS_${ARCH}}
+SIMD_VARS_i386=	RUSTFLAGS+="-C target-feature=+sse2"
 
 ZSH_PLIST_FILES=	share/zsh/site-functions/_rg
 

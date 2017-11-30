@@ -26,6 +26,7 @@ HAS_CONFIGURE=	yes
 
 BROKEN_aarch64=		Does not build: error: cast from pointer to smaller type loses information
 BROKEN_armv6=		Does not build: error: Not supported ARM architecture
+BROKEN_armv7=		Does not build: error: invalid operand for instruction
 BROKEN_mips64=		Does not link: undefined reference to __sync_add_and_fetch_4
 BROKEN_powerpc64=	Does not build
 

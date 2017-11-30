@@ -5,6 +5,7 @@
 
     SUBDIR += 0d1n
     SUBDIR += 1password-client
+    SUBDIR += 2fa
     SUBDIR += ADMsmb
     SUBDIR += ADMsnmp
     SUBDIR += R-cran-ROAuth
@@ -288,6 +289,7 @@
     SUBDIR += isnprober
     SUBDIR += jbrofuzz
     SUBDIR += john
+    SUBDIR += kbfs
     SUBDIR += kc
     SUBDIR += kdbx-viewer
     SUBDIR += kedpm
@@ -414,6 +416,8 @@
     SUBDIR += ncrypt
     SUBDIR += netpgp
     SUBDIR += nettle
+    SUBDIR += nextcloud-twofactor_totp
+    SUBDIR += nextcloud-twofactor_u2f
     SUBDIR += ngrok
     SUBDIR += nikto
     SUBDIR += nist-kat
@@ -968,6 +972,7 @@
     SUBDIR += py-slowaes
     SUBDIR += py-spake2
     SUBDIR += py-ssh
+    SUBDIR += py-ssh-audit
     SUBDIR += py-sslstrip
     SUBDIR += py-stem
     SUBDIR += py-stix
@@ -1044,6 +1049,7 @@
     SUBDIR += rubygem-airbrussh
     SUBDIR += rubygem-attr_encrypted
     SUBDIR += rubygem-bcrypt
+    SUBDIR += rubygem-bcrypt_pbkdf
     SUBDIR += rubygem-bcrypt-ruby
     SUBDIR += rubygem-devise-two-factor
     SUBDIR += rubygem-devise-two-factor-rails5
@@ -1095,6 +1101,7 @@
     SUBDIR += rubygem-rack-oauth2
     SUBDIR += rubygem-razorback-scriptNugget
     SUBDIR += rubygem-rbnacl
+    SUBDIR += rubygem-rbnacl-libsodium
     SUBDIR += rubygem-recog
     SUBDIR += rubygem-rex-arch
     SUBDIR += rubygem-rex-bin_tools

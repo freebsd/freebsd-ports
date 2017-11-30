@@ -235,7 +235,6 @@
     SUBDIR += hostapd
     SUBDIR += howl
     SUBDIR += hping
-    SUBDIR += hping-devel
     SUBDIR += hs-aws
     SUBDIR += hs-connection
     SUBDIR += hs-gsasl
@@ -1066,6 +1065,7 @@
     SUBDIR += py-ripe.atlas.tools
     SUBDIR += py-s3cmd
     SUBDIR += py-s3transfer
+    SUBDIR += py-shodan
     SUBDIR += py-smbpasswd
     SUBDIR += py-soap2py
     SUBDIR += py-soappy
@@ -1228,6 +1228,7 @@
     SUBDIR += rubygem-omniauth-github-discourse
     SUBDIR += rubygem-omniauth-github11
     SUBDIR += rubygem-omniauth-google-oauth2
+    SUBDIR += rubygem-omniauth-kerberos
     SUBDIR += rubygem-omniauth-oauth
     SUBDIR += rubygem-omniauth-oauth2
     SUBDIR += rubygem-omniauth-openid

@@ -1,6 +1,6 @@
---- configure.orig	2015-01-01 10:56:10 UTC
-+++ configure
-@@ -17221,7 +17221,7 @@ case "$host" in
+--- configure.orig	2014-11-12 05:59:57.000000000 -0600
++++ configure	2017-07-13 14:20:48.680289000 -0500
+@@ -17221,7 +17221,7 @@
    mips-sgi-irix5.* | mips-sgi-irix6.* | mips*-*-rtems*)
  	TARGET=MIPS; TARGETDIR=mips
  	;;
@@ -9,3 +9,14 @@
  	# Support 128-bit long double for NewABI.
  	HAVE_LONG_DOUBLE='defined(__mips64)'
  	TARGET=MIPS; TARGETDIR=mips
+@@ -17254,6 +17254,10 @@
+   powerpc-*-freebsd* | powerpc-*-openbsd*)
+ 	TARGET=POWERPC_FREEBSD; TARGETDIR=powerpc
+ 	HAVE_LONG_DOUBLE_VARIANT=1
++	;;
++  powerpcspe-*-freebsd*)
++	TARGET=POWERPC_FREEBSD; TARGETDIR=powerpc
++	CFLAGS="$CFLAGS -D__NO_FPRS__"
+ 	;;
+   powerpc64-*-freebsd*)
+ 	TARGET=POWERPC; TARGETDIR=powerpc

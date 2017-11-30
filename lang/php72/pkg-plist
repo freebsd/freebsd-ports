@@ -70,6 +70,7 @@ include/php/Zend/zend_ptr_stack.h
 include/php/Zend/zend_range_check.h
 include/php/Zend/zend_signal.h
 include/php/Zend/zend_smart_str.h
+include/php/Zend/zend_smart_string.h
 include/php/Zend/zend_smart_str_public.h
 include/php/Zend/zend_smart_string_public.h
 include/php/Zend/zend_sort.h

@@ -13,7 +13,7 @@ LICENSE=	PHP301
 
 LIB_DEPENDS=	libgupnp-1.0.so:net/gupnp
 
-IGNORE_WITH_PHP=70 71
+IGNORE_WITH_PHP=70 71 72
 USES=		php:pecl pkgconfig
 
 post-patch:

@@ -14,7 +14,7 @@ LICENSE_COMB=	multi
 LICENSE_FILE_CDDL=	${WRKSRC}/CDDL.Schily.txt
 
 BROKEN_i386=		fails to compile
-NOT_FOR_ARCHS=		aarch64 armv6
+NOT_FOR_ARCHS=		aarch64 armv6 armv7
 NOT_FOR_ARCHS_REASON=	unknown rule to build: ./RULES/arm-freebsd-/nxb-bin/usr/bin/cc.rul
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:C/.a.*//g}

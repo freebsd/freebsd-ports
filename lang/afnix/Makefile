@@ -13,6 +13,7 @@ MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Multi-threaded functional programming language
 
 BROKEN_armv6=		fails to compile: operator new takes type size_t as first parameterk/er
+BROKEN_armv7=		fails to compile: operator new takes type size_t as first parameterk/er
 BROKEN_i386=		fails to build
 BROKEN_powerpc=		fails to configure
 BROKEN_powerpc64=	fails to build: afnix-setup: cannot determine linking type

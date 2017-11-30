@@ -36,10 +36,12 @@
 %%DOCSDIR%%/input-layout-alternating-left-right.png
 %%DOCSDIR%%/input-layout-alternating-right-left.png
 %%DOCSDIR%%/output-type-alternating.png
+%%NLS%%share/locale/bg/LC_MESSAGES/bino.mo
+%%NLS%%share/locale/cs/LC_MESSAGES/bino.mo
 %%NLS%%share/locale/de/LC_MESSAGES/bino.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/bino.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/bino.mo
-%%NLS%%share/locale/bg/LC_MESSAGES/bino.mo
+%%NLS%%share/locale/zh_cn/LC_MESSAGES/bino.mo
 bin/bino
 share/applications/bino.desktop
 share/icons/hicolor/16x16/apps/bino.png

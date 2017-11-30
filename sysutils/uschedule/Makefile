@@ -15,6 +15,7 @@ RUN_DEPENDS=	${LOCALBASE}/bin/multilog:sysutils/daemontools
 
 BROKEN_aarch64=		fails to build: regparm is not valid on this platform
 BROKEN_armv6=		fails to build: regparm is not valid on this platform
+BROKEN_armv7=		fails to build: regparm is not valid on this platform
 
 WRKSRC=		${WRKDIR}/admin/${DISTNAME}
 

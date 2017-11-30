@@ -20,6 +20,7 @@ RUN_DEPENDS=	lha:archivers/lha
 
 BROKEN_aarch64=		fails to compile: passing char * to parameter of incompatible type __builtin_va_list
 BROKEN_armv6=		fails to compile: passing char * to parameter of incompatible type __builtin_va_list
+BROKEN_armv7=		fails to compile: passing char * to parameter of incompatible type __builtin_va_list
 
 EXTRA_PATCHES=	${WRKDIR}/${PORTNAME}-${PORTVERSION}.diff
 

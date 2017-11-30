@@ -1,0 +1,11 @@
+--- src/Makefile.in.orig	2017-11-19 23:18:33 UTC
++++ src/Makefile.in
+@@ -428,7 +428,7 @@ top_srcdir = @top_srcdir@
+ 
+ # set the include path found by configure
+ AM_CPPFLAGS = $(all_includes) $(GIG_CFLAGS) $(SQLITE3_CFLAGS)
+-@HAVE_WINDOWS_FALSE@system_libs = -lpthread -ldl
++@HAVE_WINDOWS_FALSE@system_libs = -lpthread
+ @HAVE_WINDOWS_TRUE@system_libs = 
+ @HAVE_WINDOWS_FALSE@SHELL_SUBDIR = shell
+ @HAVE_WINDOWS_TRUE@SHELL_SUBDIR = 

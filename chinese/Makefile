@@ -51,6 +51,7 @@
     SUBDIR += gimp-help-zh_CN
     SUBDIR += gydict
     SUBDIR += hc
+    SUBDIR += ibus-array
     SUBDIR += ibus-chewing
     SUBDIR += ibus-libpinyin
     SUBDIR += ibus-pinyin

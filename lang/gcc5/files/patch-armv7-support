@@ -1,0 +1,28 @@
+--- UTC
+--- gcc/config.gcc.orig	2017-01-09 22:01:26.582656000 +0100
++++ gcc/config.gcc	2017-10-07 17:27:59.564810000 +0200
+@@ -1072,6 +1072,10 @@
+                tm_defines="${tm_defines} TARGET_FREEBSD_ARM_HARD_FLOAT=1"
+             fi
+ 	    ;;
++	armv7*-*-freebsd*)
++	    tm_defines="${tm_defines} TARGET_FREEBSD_ARMv7=1"
++            tm_defines="${tm_defines} TARGET_FREEBSD_ARM_HARD_FLOAT=1"
++	    ;;
+ 	esac
+ 	with_tls=${with_tls:-gnu}
+ 	;;
+--- gcc/config/arm/freebsd.h.orig	2016-06-15 21:17:15.860618000 +0200
++++ gcc/config/arm/freebsd.h	2017-10-09 21:38:03.395632000 +0200
+@@ -112,7 +112,10 @@
+ #undef  WCHAR_TYPE_SIZE
+ #define WCHAR_TYPE_SIZE BITS_PER_WORD
+ 
+-#if defined (TARGET_FREEBSD_ARMv6)
++#if defined (TARGET_FREEBSD_ARMv7)
++#undef  SUBTARGET_CPU_DEFAULT
++#define SUBTARGET_CPU_DEFAULT TARGET_CPU_genericv7a
++#elif defined (TARGET_FREEBSD_ARMv6)
+ #undef  SUBTARGET_CPU_DEFAULT
+ #define SUBTARGET_CPU_DEFAULT TARGET_CPU_arm1176jzs
+ #else

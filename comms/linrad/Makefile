@@ -33,6 +33,7 @@ LINRAD_DOCFILES=	z_APM.txt z_BUFFERS.txt z_CALIBRATE.txt \
 
 BROKEN_aarch64=		fails to compile: implicit declaration of function outb
 BROKEN_armv6=		fails to configure: can not find /nxb-bin/usr/bin/cc
+BROKEN_armv7=		fails to configure: can not find /nxb-bin/usr/bin/cc
 BROKEN_powerpc64=	fails to compile: implicit declaration of function outb
 BROKEN_sparc64=		fails to compile: implicit declaration of function outb
 

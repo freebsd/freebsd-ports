@@ -4,13 +4,10 @@ include/GL/glew.h
 include/GL/glxew.h
 include/GL/wglew.h
 lib/libGLEW.a
-lib/libGLEWmx.a
-lib/libGLEWmx.so
 lib/libGLEW.so
-lib/libGLEWmx.so.1
-lib/libGLEW.so.1
+lib/libGLEW.so.2
+lib/libGLEW.so.2.1.0
 libdata/pkgconfig/glew.pc
-libdata/pkgconfig/glewmx.pc
 %%PORTDOCS%%%%DOCSDIR%%/advanced.html
 %%PORTDOCS%%%%DOCSDIR%%/basic.html
 %%PORTDOCS%%%%DOCSDIR%%/build.html
@@ -25,4 +22,5 @@ libdata/pkgconfig/glewmx.pc
 %%PORTDOCS%%%%DOCSDIR%%/log.html
 %%PORTDOCS%%%%DOCSDIR%%/new.png
 %%PORTDOCS%%%%DOCSDIR%%/ogl_sm.jpg
+%%PORTDOCS%%%%DOCSDIR%%/travis.png
 %%PORTDOCS%%%%DOCSDIR%%/wglew.html

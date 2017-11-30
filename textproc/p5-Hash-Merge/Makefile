@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Hash-Merge
-PORTVERSION=	0.200
+PORTVERSION=	0.299
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -13,7 +13,7 @@ COMMENT=	Merges hashes
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Clone>=0:devel/p5-Clone
+BUILD_DEPENDS=	p5-Clone-Choose>=0.008:devel/p5-Clone-Choose
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes

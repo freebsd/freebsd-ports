@@ -1,0 +1,13 @@
+Build Linux aarch64 code in XPTCALL also on BSDs
+
+--- xpcom/reflect/xptcall/md/unix/moz.build.orig	2017-11-14 14:36:13 UTC
++++ xpcom/reflect/xptcall/md/unix/moz.build
+@@ -143,7 +143,7 @@ if CONFIG['OS_ARCH'] == 'NetBSD':
+             'xptcstubs_netbsd_m68k.cpp'
+         ]
+ 
+-if CONFIG['OS_ARCH'] == 'Linux':
++if CONFIG['OS_ARCH'] in ('Linux', 'FreeBSD', 'NetBSD', 'OpenBSD'):
+     if CONFIG['OS_TEST'] == 'aarch64':
+         SOURCES += [
+             'xptcinvoke_aarch64.cpp',

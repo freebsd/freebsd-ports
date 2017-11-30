@@ -13,6 +13,7 @@ LICENSE=	CDDL
 
 BROKEN_aarch64=		Fails to build: bin-aarch64: no such file or directory
 BROKEN_armv6=		Fails to build: bin-armv6: no such file or directory
+BROKEN_armv7=		Fails to build: bin-armv7: no such file or directory
 BROKEN_mips64=		Fails to build: bin-mips64: no such file or directory
 BROKEN_powerpc64=	Fails to build: bin-powerpc64: no such file or directory
 

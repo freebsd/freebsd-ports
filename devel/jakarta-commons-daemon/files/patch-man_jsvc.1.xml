@@ -1,6 +1,6 @@
---- man/jsvc.1.xml.orig	2012-06-13 12:42:23.000000000 +0200
-+++ man/jsvc.1.xml	2012-06-13 12:43:29.000000000 +0200
-@@ -142,7 +142,6 @@
+--- man/jsvc.1.xml.orig	2017-11-15 11:59:37 UTC
++++ man/jsvc.1.xml
+@@ -143,7 +143,6 @@
          <term><option>-wait</option> waittime</term>
          <listitem>
            <para>wait up to waittime seconds for the service to start

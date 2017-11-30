@@ -1,0 +1,6 @@
+fuzzylite is a free and open-source fuzzy logic control library programmed in
+C++ for multiple platforms (e.g., Windows, Linux, Mac, iOS). jfuzzylite is the
+equivalent library for Java and Android platforms.
+Together, they are the FuzzyLite Libraries for Fuzzy Logic Control.
+
+WWW: https://www.fuzzylite.com

@@ -1,3 +1,5 @@
-TIMESTAMP = 1509003114
-SHA256 (php-7.0.25.tar.xz) = 5cc14bd20fb2226f6d34465662425cd100441bde9042ea1cef2e4506d6ded8cc
-SIZE (php-7.0.25.tar.xz) = 11963668
+TIMESTAMP = 1511442099
+SHA256 (php-7.0.26.tar.xz) = ed5cbb4bbb0ddef8985f100bba2e94002ad22a230b5da2dccfe148915df5f199
+SIZE (php-7.0.26.tar.xz) = 11966888
+SHA256 (php-7.0.x-mail-header.patch) = b78cd5a36a4709ea4e43e5babe73648ae6ace870cc0e34a5417177045834b4f0
+SIZE (php-7.0.x-mail-header.patch) = 4504

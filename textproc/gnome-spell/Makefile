@@ -12,13 +12,14 @@ DIST_SUBDIR=	gnome
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME/Bonobo component for spell checking
 
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 LIB_DEPENDS=	libaspell.so:textproc/aspell
 
 USE_GNOME=	gnomeprefix intlhack libgnomeui
-USES=		gettext gmake libtool pathfix pkgconfig perl5 tar:bzip2
+USES=		gettext gmake libtool localbase:ldflags pathfix pkgconfig perl5 tar:bzip2
 GNU_CONFIGURE=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 PLIST_SUB=	VERSION=${PORTVERSION}
 INSTALL_TARGET=	install-strip
 

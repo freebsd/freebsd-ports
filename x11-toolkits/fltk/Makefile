@@ -15,12 +15,13 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libpng.so:graphics/png
 
-USES=		groff jpeg localbase pkgconfig
+USES=		jpeg localbase pkgconfig
 USE_XORG=	x11 xcursor xext xfixes xft xinerama
 USE_GL=		glu
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared
+CONFIGURE_ENV=	NROFF=echo
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 

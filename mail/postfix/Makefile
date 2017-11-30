@@ -280,7 +280,7 @@ pre-patch:
 	fi
 .endif
 
-	@${ECHO} '<HTML><BODY>See <A HREF="header_checks.5.html">header_checks.5.html</A></BODY></HTML>' \
+	@${ECHO_CMD} '<HTML><BODY>See <A HREF="header_checks.5.html">header_checks.5.html</A></BODY></HTML>' \
 		> ${WRKSRC}/html/body_checks.5.html
 	@${REINPLACE_CMD} -E -e 's!^(#define DEF_SGID_GROUP[^"]+)"postdrop"$$!\1"maildrop"!' \
 		${WRKSRC}/src/global/mail_params.h
@@ -290,12 +290,12 @@ pre-patch:
 
 post-patch:
 .for f in ${HTML1}
-	@${ECHO} '$$html_directory/$f:f:root:-:644' \
+	@${ECHO_CMD} '$$html_directory/$f:f:root:-:644' \
 		>> ${WRKSRC}/conf/postfix-files
 .endfor
-	@${ECHO} '$$manpage_directory/man1/posttls-finger.1:f:root:-:644' \
+	@${ECHO_CMD} '$$manpage_directory/man1/posttls-finger.1:f:root:-:644' \
 		>> ${WRKSRC}/conf/postfix-files
-	@${ECHO} '$$command_directory/posttls-finger:f:root:-:755' \
+	@${ECHO_CMD} '$$command_directory/posttls-finger:f:root:-:755' \
 		>> ${WRKSRC}/conf/postfix-files
 
 do-configure:
@@ -305,7 +305,7 @@ do-configure:
 	dynamicmaps=yes \
 	${POSTFIX_DYN_AUXLIBS} \
 	AUXLIBS="${POSTFIX_AUXLIBS}" && \
-	${ECHO} "all: default" >> Makefile)
+	${ECHO_CMD} "all: default" >> Makefile)
 
 pre-install-INST_BASE-on:
 	${MKDIR} ${STAGEDIR}/etc/rc.d

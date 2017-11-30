@@ -442,7 +442,6 @@
 %%CACTIDIR%%/include/phpmailer/language/phpmailer.lang-ru.php
 %%CACTIDIR%%/include/phpmailer/language/phpmailer.lang-sk.php
 %%CACTIDIR%%/include/phpmailer/language/phpmailer.lang-sl.php
-%%CACTIDIR%%/include/phpmailer/language/phpmailer.lang-sr.php
 %%CACTIDIR%%/include/phpmailer/language/phpmailer.lang-sv.php
 %%CACTIDIR%%/include/phpmailer/language/phpmailer.lang-tr.php
 %%CACTIDIR%%/include/phpmailer/language/phpmailer.lang-uk.php
@@ -1098,6 +1097,7 @@
 %%CACTIDIR%%/install/upgrades/1_1_17.php
 %%CACTIDIR%%/install/upgrades/1_1_20.php
 %%CACTIDIR%%/install/upgrades/1_1_26.php
+%%CACTIDIR%%/install/upgrades/1_1_28.php
 %%CACTIDIR%%/install/upgrades/index.php
 %%CACTIDIR%%/lib/aggregate.php
 %%CACTIDIR%%/lib/api_aggregate.php

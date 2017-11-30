@@ -2,12 +2,12 @@
 
 PORTNAME=	gmic-qt
 DISTVERSIONPREFIX=	v.
-DISTVERSION=	204
+DISTVERSION=	215
 CATEGORIES=	graphics kde
 MASTER_SITES=	http://gmic.eu/:stdlib \
 		LOCAL/tcberner/${PORTNAME}/${PORTVERSION}:stdlib
 DISTFILES=	gmic_stdlib.h:stdlib
-DIST_SUBDIR=	KDE/${PORTNAME}
+DIST_SUBDIR=	KDE/${PORTNAME}/${PORTVERSION}
 EXTRACT_ONLY=	${DISTNAME}.tar.gz ${DISTFILE_gmic} ${DISTFILE_cimg}
 
 MAINTAINER=	kde@FreeBSD.org
@@ -20,7 +20,7 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libfftw3.so:math/fftw3 \
 		libpng.so:graphics/png
 
-USES=		cmake:outsource pkgconfig
+USES=		cmake:outsource compiler:c++14-lang pkgconfig
 USE_QT5=	core gui network widgets \
 		buildtools_build linguisttools_build qmake_build
 USE_XORG=	ice sm x11 xext

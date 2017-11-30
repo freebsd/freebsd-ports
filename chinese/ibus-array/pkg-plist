@@ -1,0 +1,12 @@
+libexec/ibus-engine-array
+libexec/ibus-setup-array
+%%DATADIR%%/icons/ibus-array.png
+%%DATADIR%%/setup/config.py
+%%DATADIR%%/setup/config.pyc
+%%DATADIR%%/setup/config.pyo
+%%DATADIR%%/setup/main.py
+%%DATADIR%%/setup/main.pyc
+%%DATADIR%%/setup/main.pyo
+%%DATADIR%%/tables/array.db
+share/ibus/component/array.xml
+%%NLS%%share/locale/zh_TW/LC_MESSAGES/ibus-array.mo

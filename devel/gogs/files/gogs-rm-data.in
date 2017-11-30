@@ -1,0 +1,21 @@
+#!/bin/sh
+
+echo "(!!!)"
+echo "(!!!) This utility will delete all %%PORTNAME_FANCY%% databases, repositories and logs"
+echo "(!!!) without affecting %%PORTNAME_FANCY%% installation itself."
+echo "(!!!) Proceed with caution!"
+echo "(!!!)"
+echo "(!!!) Hit Ctrl-C now if in doubt."
+echo "(!!!)"
+
+while true; do
+  read -p "This will delete all %%PORTNAME_FANCY%% databases, are you sure you want to proceed? (yes/no) " yn
+  case $yn in
+    [Yy]* ) break;;
+    [Nn]* ) exit;;
+    * ) echo "Please answer yes or no.";;
+  esac
+done
+
+rm -rf %%GOGS_DBDIR%%/*/* %%GOGS_DBDIR%%/*/.ssh \
+    %%GOGS_LOGDIR%%/* /var/log/gogs.log

@@ -2,7 +2,7 @@
 
 PORTNAME=	hugo
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.30.2
+DISTVERSION=	0.31.1
 CATEGORIES=	www
 PKGNAMEPREFIX=	go
 DIST_SUBDIR=	${PKGNAMEPREFIX}${PORTNAME}
@@ -41,7 +41,7 @@ GH_TUPLE=	BurntSushi:toml:a368813:toml/src/github.com/BurntSushi/toml \
 		markbates:inflect:ea17041:inflect/src/github.com/markbates/inflect \
 		miekg:mmark:057eb9e:mmark/src/github.com/miekg/mmark \
 		mitchellh:mapstructure:d0303fe:mapstructure/src/github.com/mitchellh/mapstructure \
-		nicksnyder:go-i18n:ca33e78:go_i18n/src/github.com/nicksnyder/go-i18n \
+		nicksnyder:go-i18n:0dc1626:go_i18n/src/github.com/nicksnyder/go-i18n \
 		pelletier:go-toml:2009e44:go_toml/src/github.com/pelletier/go-toml \
 		russross:blackfriday:6d1ef89:blackfriday/src/github.com/russross/blackfriday \
 		shurcooL:sanitized_anchor_name:86672fc:sanitized_anchor_name/src/github.com/shurcooL/sanitized_anchor_name \
@@ -65,7 +65,7 @@ GH_TUPLE=	BurntSushi:toml:a368813:toml/src/github.com/BurntSushi/toml \
 
 OPTIONS_DEFINE=		MANPAGES
 OPTIONS_DEFAULT=	MANPAGES
-OPTIONS_SUB=		MANPAGES
+OPTIONS_SUB=		yes
 
 MANPAGES_DESC=	Build and/or install manual pages
 

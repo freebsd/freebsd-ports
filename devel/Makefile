@@ -109,6 +109,7 @@
     SUBDIR += aphpunit
     SUBDIR += api-sanity-autotest
     SUBDIR += apiextractor
+    SUBDIR += apitrace
     SUBDIR += appstream-glib
     SUBDIR += apr1
     SUBDIR += apr2
@@ -200,6 +201,7 @@
     SUBDIR += bison
     SUBDIR += bisoncpp
     SUBDIR += blame
+    SUBDIR += blitz
     SUBDIR += bmake
     SUBDIR += bmkdep
     SUBDIR += bnf
@@ -224,12 +226,6 @@
     SUBDIR += bugzilla44
     SUBDIR += bugzilla50
     SUBDIR += build
-    SUBDIR += buildbot
-    SUBDIR += buildbot-console-view
-    SUBDIR += buildbot-pkg
-    SUBDIR += buildbot-waterfall-view
-    SUBDIR += buildbot-worker
-    SUBDIR += buildbot-www
     SUBDIR += buildtool
     SUBDIR += buildtool-doc
     SUBDIR += bullet
@@ -318,6 +314,7 @@
     SUBDIR += clojure-cider
     SUBDIR += cloudabi
     SUBDIR += cloudabi-toolchain
+    SUBDIR += clthreads
     SUBDIR += cltune
     SUBDIR += cmake
     SUBDIR += cmake-doc
@@ -671,6 +668,7 @@
     SUBDIR += fuel
     SUBDIR += fujaba
     SUBDIR += funnelweb
+    SUBDIR += fuzzylite
     SUBDIR += gaa
     SUBDIR += gamin
     SUBDIR += gauche-readline
@@ -727,8 +725,10 @@
     SUBDIR += geany-plugin-tableconvert
     SUBDIR += geany-plugin-treebrowser
     SUBDIR += geany-plugin-updatechecker
+    SUBDIR += geany-plugin-utilslib
     SUBDIR += geany-plugin-vc
     SUBDIR += geany-plugin-webhelper
+    SUBDIR += geany-plugin-workbench
     SUBDIR += geany-plugin-xmlsnippets
     SUBDIR += geany-plugins
     SUBDIR += geany-plugins-l10n
@@ -840,6 +840,7 @@
     SUBDIR += goffice
     SUBDIR += goffice010
     SUBDIR += gogland-eap
+    SUBDIR += gogs
     SUBDIR += google-gdata
     SUBDIR += google-perftools
     SUBDIR += google-styleguide
@@ -2117,6 +2118,7 @@
     SUBDIR += p5-Class-XPath
     SUBDIR += p5-Class-XSAccessor
     SUBDIR += p5-Clone
+    SUBDIR += p5-Clone-Choose
     SUBDIR += p5-Clone-Fast
     SUBDIR += p5-Clone-More
     SUBDIR += p5-Clone-PP
@@ -3089,6 +3091,7 @@
     SUBDIR += p5-POSIX-strftime-Compiler
     SUBDIR += p5-POSIX-strptime
     SUBDIR += p5-PPerl
+    SUBDIR += p5-Pthread-GetThreadId
     SUBDIR += p5-PV
     SUBDIR += p5-Package-Constants
     SUBDIR += p5-Package-DeprecationManager
@@ -4246,6 +4249,7 @@
     SUBDIR += py-aspyct
     SUBDIR += py-astor
     SUBDIR += py-astroid
+    SUBDIR += py-asttokens
     SUBDIR += py-async_timeout
     SUBDIR += py-asyncio
     SUBDIR += py-atomiclong
@@ -4261,6 +4265,7 @@
     SUBDIR += py-backports.shutil_get_terminal_size
     SUBDIR += py-backports.weakref
     SUBDIR += py-backports_abc
+    SUBDIR += py-backports.tempfile
     SUBDIR += py-bandit
     SUBDIR += py-bcdoc
     SUBDIR += py-billiard
@@ -4276,7 +4281,13 @@
     SUBDIR += py-boto
     SUBDIR += py-botocore
     SUBDIR += py-bsd
+    SUBDIR += py-buildbot
+    SUBDIR += py-buildbot-console-view
     SUBDIR += py-buildbot-grid-view
+    SUBDIR += py-buildbot-pkg
+    SUBDIR += py-buildbot-waterfall-view
+    SUBDIR += py-buildbot-worker
+    SUBDIR += py-buildbot-www
     SUBDIR += py-cached-property
     SUBDIR += py-cachetools
     SUBDIR += py-calendar
@@ -4301,6 +4312,7 @@
     SUBDIR += py-cliapp
     SUBDIR += py-click
     SUBDIR += py-click-log
+    SUBDIR += py-click-plugins
     SUBDIR += py-click-threading
     SUBDIR += py-cliff
     SUBDIR += py-clint
@@ -4339,6 +4351,7 @@
     SUBDIR += py-cycler
     SUBDIR += py-d2to1
     SUBDIR += py-daemon
+    SUBDIR += py-daemon-runner
     SUBDIR += py-daemonize
     SUBDIR += py-daemons
     SUBDIR += py-dal
@@ -4429,6 +4442,7 @@
     SUBDIR += py-future
     SUBDIR += py-futures
     SUBDIR += py-futurist
+    SUBDIR += py-fuzzywuzzy
     SUBDIR += py-game
     SUBDIR += py-game_sdl2
     SUBDIR += py-gamin
@@ -4583,6 +4597,7 @@
     SUBDIR += py-mygpoclient
     SUBDIR += py-mypy
     SUBDIR += py-nagioscheck
+    SUBDIR += py-naiveBayesClassifier
     SUBDIR += py-natsort
     SUBDIR += py-natural
     SUBDIR += py-nbconvert
@@ -4745,6 +4760,7 @@
     SUBDIR += py-pytest-timeout
     SUBDIR += py-pytest-tornado
     SUBDIR += py-pytest-xdist
+    SUBDIR += py-python-Levenshtein
     SUBDIR += py-python-bugzilla
     SUBDIR += py-python-distutils-extra
     SUBDIR += py-python-dtrace
@@ -5071,6 +5087,7 @@
     SUBDIR += py27-setuptools
     SUBDIR += py3-Jinja2
     SUBDIR += py3-apipkg
+    SUBDIR += py3-asttokens
     SUBDIR += py3-babel
     SUBDIR += py3-cffi
     SUBDIR += py3-click
@@ -5149,6 +5166,7 @@
     SUBDIR += py_static_check
     SUBDIR += pybind11
     SUBDIR += pybugz
+    SUBDIR += pycanberra
     SUBDIR += pycharm-ce
     SUBDIR += pychecker
     SUBDIR += pycount
@@ -5460,6 +5478,7 @@
     SUBDIR += rubygem-filesize
     SUBDIR += rubygem-flexmock
     SUBDIR += rubygem-flipper
+    SUBDIR += rubygem-flipper010
     SUBDIR += rubygem-fluent-logger
     SUBDIR += rubygem-fog
     SUBDIR += rubygem-fog-core
@@ -6029,7 +6048,6 @@
     SUBDIR += tinyq
     SUBDIR += tkcon
     SUBDIR += tkcvs
-    SUBDIR += tkinspect
     SUBDIR += tkmerge
     SUBDIR += tkp4
     SUBDIR += tla

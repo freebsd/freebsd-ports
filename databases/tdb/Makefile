@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=		tdb
-PORTVERSION=		1.3.12
+PORTVERSION=		1.3.15
 PORTREVISION=		0
 PORTEPOCH=		1
 CATEGORIES=		databases
@@ -12,7 +12,7 @@ COMMENT=		Trivial Database
 
 LICENSE=		GPLv3
 
-CONFLICTS=		*samba3[0-4]-3.*
+IGNORE_NONTHREAD_PYTHON=needs port lang/python${PYTHON_SUFFIX} to be build with THREADS support
 
 USES=			compiler pkgconfig waf
 USE_LDCONFIG=		yes
@@ -32,12 +32,49 @@ MANPAGES_DESC=		Build and install manpages (requires textproc/docbook-xsl)
 
 .include <bsd.port.options.mk>
 
+TDB_BINS=		bin/tdbbackup \
+			bin/tdbdump \
+			bin/tdbrestore \
+			bin/tdbtool
+
+PLIST_FILES+=		include/tdb.h \
+			${TDB_BINS} \
+			lib/libtdb.so \
+			lib/libtdb.so.1 \
+			%%PKGCONFIGDIR%%/tdb.pc
+
 .if defined(NO_PYTHON)
+USES+=			python:2.7,build
 CONFIGURE_ARGS+=	--disable-python
 .else
-USES+=			python:2
+USES+=			python:2.7
+
 PLIST_FILES+=		%%PYTHON_SITELIBDIR%%/tdb.so \
 			%%PYTHON_SITELIBDIR%%/_tdb_text.py
+# XXX: This is a gross hack to make port use both Python 2.7+ and 3.3+
+# This is not officially supported, use at your own risk
+.if defined(WITH_SAMBA_PYTHON3) && ${WITH_SAMBA_PYTHON3:Mpython3\.[0-9]}
+SAMBA_PYTHON3=		${WITH_SAMBA_PYTHON3}
+SAMBA_PYTHON3_VERSION:=	${SAMBA_PYTHON3:S/^python//}
+SAMBA_PYTHON3_VER:=	${SAMBA_PYTHON3_VERSION:C/\.//}
+.if !exists(${PORTSDIR}/lang/python${SAMBA_PYTHON3_VER})
+.error			unsupported or unknown Python version ${SAMBA_PYTHON3_VERSION}
+.endif
+BUILD_DEPENDS+=		${SAMBA_PYTHON3}:lang/python${SAMBA_PYTHON3_VER}
+RUN_DEPENDS+=		${SAMBA_PYTHON3}:lang/python${SAMBA_PYTHON3_VER}
+# cpython-36m
+SAMBA_PYTHON3_SO_ABI!=	[ ! -f "${LOCALBASE}/bin/${SAMBA_PYTHON3}" ] || ${LOCALBASE}/bin/${SAMBA_PYTHON3} -c 'import sysconfig; print(sysconfig.get_config_var("SOABI") or "")' 2>/dev/null
+SAMBA_PYTHON3_SITELIBDIR=lib/python${SAMBA_PYTHON3_VERSION}/site-packages
+
+CONFIGURE_ENV+=		PYTHON3_SO_ABI_FLAG=.${SAMBA_PYTHON3_SO_ABI}
+CONFIGURE_ARGS+=	--extra-python=${LOCALBASE}/bin/${SAMBA_PYTHON3}
+
+PLIST_SUB+=		SAMBA_PYTHON3_SO_ABI=${SAMBA_PYTHON3_SO_ABI} \
+			SAMBA_PYTHON3_SITELIBDIR=${SAMBA_PYTHON3_SITELIBDIR}
+
+PLIST_FILES+=		%%SAMBA_PYTHON3_SITELIBDIR%%/tdb.so \
+			%%SAMBA_PYTHON3_SITELIBDIR%%/_tdb_text.py
+.endif
 .endif
 
 .include <bsd.port.pre.mk>
@@ -48,16 +85,6 @@ CONFIGURE_ENV+=		XSLTPROC="true"
 BUILD_DEPENDS+=		${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:textproc/docbook-xsl \
 			xsltproc:textproc/libxslt
 .endif
-
-PLIST_FILES+=		bin/tdbbackup \
-			bin/tdbdump \
-			bin/tdbrestore \
-			bin/tdbtool \
-			include/tdb.h \
-			lib/libtdb.so \
-			lib/libtdb.so.1 \
-			%%PKGCONFIGDIR%%/tdb.pc
-
 # No fancy color error messages
 .if ${COMPILER_TYPE} == "clang"
 CFLAGS+=		-fno-color-diagnostics
@@ -72,8 +99,6 @@ TDB_MAN8=		man/man8/tdbbackup.8.gz \
 
 PLIST_FILES+=		${TDB_MAN8}
 
-IGNORE_NONTHREAD_PYTHON=needs port lang/python${PYTHON_SUFFIX} to be build with THREADS support
-
 post-patch:
 			@${REINPLACE_CMD} -e 's|%%PKGCONFIGDIR%%|${PKGCONFIGDIR}|g' \
 				${BUILD_WRKSRC}/wscript
@@ -87,12 +112,21 @@ pre-configure:
 				${FALSE}; \
 			fi
 
-pre-build:
-.if ! ${PORT_OPTIONS:MMANPAGES}
+pre-build-MANPAGES-off:
 			-${MKDIR} ${BUILD_WRKSRC}/bin/default/man
-.	for man in ${TDB_MAN8}
+.for man in ${TDB_MAN8}
 			${INSTALL_MAN} ${FILESDIR}/`basename ${man} .gz` ${BUILD_WRKSRC}/bin/default/man
-.	endfor
+.endfor
+
+post-install:
+.for lib in ${TDB_BINS} lib/libtdb.so
+			${STRIP_CMD} ${STAGEDIR}${PREFIX}/${lib}
+.endfor
+.if !defined(NO_PYTHON)
+			${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/tdb.so
+.if defined(SAMBA_PYTHON3)
+			${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SAMBA_PYTHON3_SITELIBDIR}/tdb.so
+.endif
 .endif
 
 .include <bsd.port.post.mk>

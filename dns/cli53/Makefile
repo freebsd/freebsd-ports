@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cli53
-PORTVERSION=	0.8.8
+DISTVERSION=	0.8.12
 CATEGORIES=	dns
 
 MAINTAINER=	meta+ports@vmeta.jp

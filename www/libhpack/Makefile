@@ -16,6 +16,7 @@ LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN_armv6=	fails to compile: Can't define TIME_MAX #'
+BROKEN_armv7=	fails to compile: Can't define TIME_MAX #'
 
 LIB_DEPENDS=	libcheck.so:devel/check
 

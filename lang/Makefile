@@ -26,6 +26,7 @@
     SUBDIR += cdent
     SUBDIR += ceylon
     SUBDIR += cfortran
+    SUBDIR += chez-scheme
     SUBDIR += chibi-scheme
     SUBDIR += chicken
     SUBDIR += cilkplus
@@ -344,7 +345,6 @@
     SUBDIR += tcc
     SUBDIR += tcl-manual
     SUBDIR += tcl-wrapper
-    SUBDIR += tcl84
     SUBDIR += tcl85
     SUBDIR += tcl86
     SUBDIR += tcl87

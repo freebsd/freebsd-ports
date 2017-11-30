@@ -2,11 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	sympa
-PORTVERSION=	6.2.16
-PORTREVISION=	2
+PORTVERSION=	6.2.22
 CATEGORIES=	mail
-MASTER_SITES=	http://www.sympa.org/distribution/ \
-		http://www.sympa.org/distribution/old/
 
 MAINTAINER=	dgeo@centrale-marseille.fr
 COMMENT=	Sympa is an electronic mailing list manager
@@ -52,17 +49,25 @@ RUN_DEPENDS=	\
 # Ignore alpha/beta versions
 PORTSCOUT=	limit:^[0-9]+(\.[0-9]+)*$$
 
-PORTDOCS=	NEWS
+PORTDOCS=	NEWS.md
 
 USERS=		sympa
 GROUPS=		sympa
 # Shebang is corrected by configure script
-USES=		cpe fakeroot perl5
+USES=		autoreconf cpe fakeroot perl5 shebangfix
+
+SHEBANG_FILES=	po/sympa/xgettext.pl \
+		po/sympa/add-lang.pl \
+		src/bin/find_missing_messages.pl \
+		src/bin/arcrepair.pl
+
 GNU_CONFIGURE=	yes
 ICONSDIR?=	www/icons
-CONFIGURE_ARGS+=--bindir=${PREFIX}/bin \
+CONFIGURE_ARGS+=--enable-fhs	\
+		--bindir=${PREFIX}/bin	\
 		--libexecdir=${PREFIX}/libexec/${PORTNAME} \
 		--localedir=${PREFIX}/share/locale	\
+		--localstatedir=/var/${PORTNAME}	\
 		--sbindir=${PREFIX}/libexec/${PORTNAME}	\
 		--datadir=${DATADIR}	\
 		--sysconfdir=${ETCDIR}			\
@@ -73,6 +78,7 @@ CONFIGURE_ARGS+=--bindir=${PREFIX}/bin \
 		--without-initdir	\
 		--with-lockdir=/var/spool/lock		\
 		--with-modulesdir=${PREFIX}/libexec/${PORTNAME} \
+		--with-staticdir=${DATADIR}/static \
 		--with-piddir=/var/run/${PORTNAME} \
 		--with-scriptdir=${PREFIX}/libexec/${PORTNAME} \
 		--with-spooldir=/var/spool/${PORTNAME} \
@@ -85,6 +91,9 @@ MAKE_ENV?=	PERL_EXTUTILS_AUTOINSTALL=--skip
 SUB_FILES=	pkg-install pkg-message apache.sample nginx.sample fcgi.sample
 SUB_LIST=	DB_TYPE=${DB_TYPE} PERL=${PERL} WRKSRC=${WRKSRC} BINDIR=${STAGEDIR}${PREFIX}
 PORTEXAMPLES=	*
+
+USE_GITHUB=	YES
+GH_TUPLE=	sympa-community:sympa:${PORTVERSION}
 
 USE_RC_SUBR=	sympa
 
@@ -130,16 +139,14 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|^\( *staticdir=\).*$$|\1${DATADIR}|'	\
 	    -e 's|^\( *arcdir=\).*$$|\1${DATADIR}/arc|'			\
 	    -e 's|^\( *bouncedir=\).*$$|\1${DATADIR}/bounce|'		\
-	    -e 's|^\( *defaultdir=\).*$$|\1${DATADIR}/defaults|'		\
-	    -e 's|^\( *execcgidir=\).*$$|\1${PREFIX}/libexec/${PORTNAME}|' \
-		${WRKSRC}/configure
+		${WRKSRC}/configure.ac
 
 post-install:
 	for link in sympa.pl sympa_wizard.pl upgrade_bulk_spool.pl upgrade_send_spool.pl; do \
 		(cd ${STAGEDIR}${PREFIX}/bin && ${LN} -f -s ../libexec/sympa/$$link) \
 	done
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/NEWS ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/NEWS.md ${STAGEDIR}${DOCSDIR}
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKDIR}/apache.sample ${WRKDIR}/nginx.sample \
 		${WRKDIR}/fcgi.sample ${STAGEDIR}${EXAMPLESDIR}

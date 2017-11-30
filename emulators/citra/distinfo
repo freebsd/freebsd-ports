@@ -1,10 +1,10 @@
-TIMESTAMP = 1510279663
-SHA256 (citra-emu-citra-s20171109-7ef905ea0_GH0.tar.gz) = 955a73f245f8abe5ad528d8a327998a9b44d7ddad1e542a1a019283ec3526a13
-SIZE (citra-emu-citra-s20171109-7ef905ea0_GH0.tar.gz) = 1629290
+TIMESTAMP = 1511970348
+SHA256 (citra-emu-citra-s20171129-b2a99043_GH0.tar.gz) = 3d49cbb7b06ebc9927b4006a105cdbd4601cec3c5b73d181b57ec543cac64d3a
+SIZE (citra-emu-citra-s20171129-b2a99043_GH0.tar.gz) = 1635637
 SHA256 (citra-emu-ext-soundtouch-019d208_GH0.tar.gz) = f48c211bbabe7ad79e1c504af1082756c74241be6bab4aca13140803f4b694e7
 SIZE (citra-emu-ext-soundtouch-019d208_GH0.tar.gz) = 59366
-SHA256 (MerryMage-dynarmic-d3fb603_GH0.tar.gz) = a6e159eab0d40a39e868dbab7d250af5076fb3cef5a4030dcaa0eaa8ead71f66
-SIZE (MerryMage-dynarmic-d3fb603_GH0.tar.gz) = 421395
+SHA256 (MerryMage-dynarmic-bb87d25_GH0.tar.gz) = c9ac2c24b410526b94984d700081a77da8e28f5e5f553f18a1e2d99ff8fd54f8
+SIZE (MerryMage-dynarmic-bb87d25_GH0.tar.gz) = 1246108
 SHA256 (fmtlib-fmt-4.0.0_GH0.tar.gz) = 35300a0d356529447a79ed5ccf419239d8b34f916e5d4625f046fd37afa3650a
 SIZE (fmtlib-fmt-4.0.0_GH0.tar.gz) = 617818
 SHA256 (herumi-xbyak-v5.53-1-gc5da377_GH0.tar.gz) = 51129bc945fe2650f5fcd41f3b0166555b17589f03bda5d2216927234ef6446a

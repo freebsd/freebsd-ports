@@ -17,6 +17,7 @@ USES=		gmake
 ALL_TARGET=	build
 
 BROKEN_armv6=	fails to compile: invokes x86 asm
+BROKEN_armv7=	fails to compile: invokes x86 asm
 
 PLIST_FILES=	bin/${PORTNAME} bin/kio ${BIN_SYMLINKS}
 
