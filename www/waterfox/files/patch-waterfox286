@@ -1,0 +1,15 @@
+Revert 3e46c9b52447 as it has the opposite effect
+
+--- browser/branding/unofficial/configure.sh.orig	2017-11-30 00:13:43 UTC
++++ browser/branding/unofficial/configure.sh
+@@ -12,10 +12,3 @@ elif test "$OS_ARCH" = "Darwin"; then
+ else
+   MOZ_APP_PROFILE=Waterfox
+ fi
+-
+-MOZ_TELEMETRY_REPORTING=0
+-MOZ_REQUIRE_SIGNING=0
+-MOZ_ADOBE_EME=0
+-MOZ_SERVICES_HEALTHREPORT=0
+-MOZ_CRASHREPORTER=0
+-MOZ_DATA_REPORTING=0
