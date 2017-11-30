@@ -14,25 +14,25 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	bash:shells/bash \
 		${LOCALBASE}/www/haiwen/seafile-server/seafile/bin/seaf-server:net-mgmt/seafile-server \
-		${PYTHON_PKGNAMEPREFIX}django18>=0:www/py-django18 \
-		${PYTHON_PKGNAMEPREFIX}pytz>=0:devel/py-pytz \
-		${PYTHON_PKGNAMEPREFIX}django-statici18n>=0:www/py-django-statici18n \
-		${PYTHON_PKGNAMEPREFIX}djangorestframework>=0:www/py-djangorestframework \
-		${PYTHON_PKGNAMEPREFIX}django_compressor>=0:www/py-django_compressor \
-		${PYTHON_PKGNAMEPREFIX}django-formtools>=0:www/py-django-formtools \
-		${PYTHON_PKGNAMEPREFIX}django-post_office>=0:www/py-django-post_office \
-		${PYTHON_PKGNAMEPREFIX}django-constance>=0:www/py-django-constance \
-		${PYTHON_PKGNAMEPREFIX}gunicorn>=0:www/py-gunicorn \
-		${PYTHON_PKGNAMEPREFIX}flup>=0:www/py-flup \
-		${PYTHON_PKGNAMEPREFIX}chardet>=0:textproc/py-chardet \
-		${PYTHON_PKGNAMEPREFIX}dateutil>=0:devel/py-dateutil \
-		${PYTHON_PKGNAMEPREFIX}requests>=0:www/py-requests \
-		${PYTHON_PKGNAMEPREFIX}six>=0:devel/py-six \
-		${PYTHON_PKGNAMEPREFIX}openpyxl>=0:textproc/py-openpyxl \
-		${PYTHON_PKGNAMEPREFIX}pillow>=0:graphics/py-pillow \
-		${PYTHON_PKGNAMEPREFIX}MySQLdb>0:databases/py-MySQLdb \
-		${PYTHON_PKGNAMEPREFIX}qrcode>0:textproc/py-qrcode \
-		${PYTHON_PKGNAMEPREFIX}futures>0:devel/py-futures
+		${PYTHON_PKGNAMEPREFIX}django18>=0:www/py-django18@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pytz>=0:devel/py-pytz@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}django-statici18n>=0:www/py-django-statici18n@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}djangorestframework>=0:www/py-djangorestframework@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}django_compressor>=0:www/py-django_compressor@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}django-formtools>=0:www/py-django-formtools@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}django-post_office>=0:www/py-django-post_office@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}django-constance>=0:www/py-django-constance@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}gunicorn>=0:www/py-gunicorn@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}flup>=0:www/py-flup@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}chardet>=0:textproc/py-chardet@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dateutil>=0:devel/py-dateutil@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}requests>=0:www/py-requests@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}six>=0:devel/py-six@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}openpyxl>=0:textproc/py-openpyxl@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pillow>=0:graphics/py-pillow@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}MySQLdb>0:databases/py-MySQLdb@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}qrcode>0:textproc/py-qrcode@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}futures>0:devel/py-futures@${PY_FLAVOR}
 
 USES=		python:-2.7 shebangfix
 USE_GITHUB=	yes
@@ -50,10 +50,10 @@ SEAFOBJ_DESC=		Enable Seafile file object modeling support
 SEAFDAV_DESC=		Enable Seafile WsgiDav-based support
 
 SEAFOBJ_CONFIGURE_WITH=	seafobj
-SEAFOBJ_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}seafobj>0:www/py-seafobj
+SEAFOBJ_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}seafobj>0:www/py-seafobj@${PY_FLAVOR}
 
 SEAFDAV_CONFIGURE_WITH=	seafdav
-SEAFDAV_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}seafdav>0:www/py-seafdav
+SEAFDAV_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}seafdav>0:www/py-seafdav@${PY_FLAVOR}
 
 NLS_USES=		gettext iconv
 NLS_CONFIGURE_OFF=	--disable-nls

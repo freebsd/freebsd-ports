@@ -11,7 +11,7 @@ DISTNAME=	django-${PORTNAME}-${PORTVERSION}
 MAINTAINER=	tj@FreeBSD.org
 COMMENT=	Paging module for Django
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django18>=0:www/py-django18
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django18>=0:www/py-django18@${FLAVOR}
 
 USES=		python
 USE_PYTHON=	distutils autoplist

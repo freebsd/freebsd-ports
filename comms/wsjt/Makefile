@@ -21,9 +21,9 @@ LIB_DEPENDS=	libfftw3.so:math/fftw3 \
 		libsamplerate.so:audio/libsamplerate \
 		libportaudio.so:audio/portaudio
 
-WSJT_DEPENDS=	${PYTHON_LIBDIR}/lib-dynload/_tkinter.so:x11-toolkits/py-tkinter \
-		${PYTHON_SITELIBDIR}/scipy:science/py-scipy \
-		${PYTHON_SITELIBDIR}/PIL:graphics/py-pillow \
+WSJT_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tkinter>0:x11-toolkits/py-tkinter@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}scipy>0:science/py-scipy@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pillow>0:graphics/py-pillow@${PY_FLAVOR} \
 		${PYNUMPY}
 
 USE_GCC=	yes
@@ -102,10 +102,5 @@ post-install-DOCS-on:
 	calledby.txt wsjt7a.txt
 	${INSTALL_DATA} ${WRKSRC}/${d} ${STAGEDIR}${DOCSDIR}
 .endfor
-
-.if defined(PACKAGE_BUILDING) && !defined(PACKAGE_BUILDING_FLAVORS) && \
-    ${PYTHON_VER} != ${PYTHON_DEFAULT}
-IGNORE=	you have python ${PYTHON_DEFAULT} set as the default, and this needs ${PYTHON_VER}
-.endif
 
 .include <bsd.port.post.mk>

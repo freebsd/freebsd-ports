@@ -15,7 +15,7 @@ COMMENT=	Python module for ILM's OpenEXR image format and library
 
 LIB_DEPENDS=	libIlmImf.so:graphics/OpenEXR
 
-USES=		python
+USES=		python:2.7
 USE_PYTHON=	distutils autoplist
 
 post-extract:

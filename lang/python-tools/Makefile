@@ -39,10 +39,6 @@ UNIQUE_SUFFIX_FILES=	${SCRIPT_FILES:C/^.*/bin\/&/g} \
 SCRIPT_FILES+=	logmerge
 .endif
 
-.if ${PYTHON_VERSION} == ${PYTHON_DEFAULT_VERSION}
-UNIQUE_DEFAULT_LINKS=	yes
-.endif
-
 do-install:
 .for fname in ${SCRIPT_FILES}
 	${INSTALL_SCRIPT} ${INSTALL_WRKSRC}/${fname}.py \

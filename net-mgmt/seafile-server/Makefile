@@ -22,8 +22,8 @@ LIB_DEPENDS=	libsearpc.so:devel/libsearpc \
 		libevent.so:devel/libevent \
 		libuuid.so:misc/e2fsprogs-libuuid \
 		libjansson.so:devel/jansson
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3 \
-		${PYTHON_PKGNAMEPREFIX}urllib3>0:net/py-urllib3 \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}urllib3>0:net/py-urllib3@${PY_FLAVOR} \
 		bash:shells/bash
 
 CONFLICTS=	seafile-[0-9]*

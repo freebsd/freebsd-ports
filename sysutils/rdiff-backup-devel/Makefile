@@ -19,7 +19,7 @@ LIB_DEPENDS=	librsync.so:net/librsync2
 
 CONFLICTS=	rdiff-backup-[0-9]*
 
-USES=		python
+USES=		python:2.7
 USE_PYTHON=	distutils
 
 MAN1S=		rdiff-backup.1 rdiff-backup-statistics.1

@@ -13,7 +13,7 @@ COMMENT=	Parsing Expression Grammar (PEG) parser for Python
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USES?=		python
+USES=		python
 USE_PYTHON=	autoplist distutils
 NO_ARCH=	yes
 

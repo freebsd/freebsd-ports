@@ -17,7 +17,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	regit
 
 USES=		python
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	distutils autoplist concurrent optsuffix
 
 PLIST_FILES=	man/man1/coccigrep.1.gz \
 		${DATADIR_REL}/cocci-grep.el \

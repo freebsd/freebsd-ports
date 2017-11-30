@@ -11,7 +11,7 @@ COMMENT=	Pythonic argument parser, that will make you smile
 
 LICENSE=	MIT
 
-USES=		python
+USES=		python:2.7
 USE_PYTHON=	distutils autoplist
 
 PORTDOCS=	README.rst

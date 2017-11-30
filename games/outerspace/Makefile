@@ -12,7 +12,7 @@ COMMENT=	On-line strategy game
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pygame/__init__.py:devel/py-game
 
-USES=		python
+USES=		python:2.7
 NO_BUILD=	yes
 NO_ARCH=	yes
 

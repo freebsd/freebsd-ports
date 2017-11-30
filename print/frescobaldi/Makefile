@@ -13,14 +13,14 @@ COMMENT=	Music score editor for lilypond
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}poppler-qt4>=0:graphics/py-poppler-qt4 \
-		${PYTHON_PKGNAMEPREFIX}python-ly>=0:print/py-python-ly
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}poppler-qt4>=0:graphics/py-poppler-qt4@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}python-ly>=0:print/py-python-ly@${FLAVOR}
 
-USES=		gettext kde:4 python:-3.4 desktop-file-utils
+USES=		gettext kde:4 python:2.7 desktop-file-utils
 USE_GITHUB=	yes
 GH_ACCOUNT=	wbsoft
 USE_KDE=	kdelibs pykde4_build pykde4_run
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	distutils autoplist optsuffix
 
 INSTALLS_ICONS=	yes
 NO_ARCH=	yes

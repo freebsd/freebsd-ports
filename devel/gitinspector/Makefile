@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 RUN_DEPENDS=	git:devel/git
 
 NO_ARCH=	yes
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	autoplist distutils concurrent optsuffix
 USES=		python
 
 GH_ACCOUNT=	ejwa

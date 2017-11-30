@@ -11,9 +11,9 @@ COMMENT=	Helper to test command-line scripts
 
 LICENSE=	MIT
 
-TEST_DEPENDS?=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${FLAVOR}
 
-USES?=		python
+USES=		python
 USE_PYTHON=	autoplist distutils
 
 USE_GITHUB=	yes

@@ -12,7 +12,7 @@ COMMENT=	Shell combinators and more for python
 
 LICENSE=	MIT
 
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${FLAVOR}
 
 USES=		python
 USE_GITHUB=	yes

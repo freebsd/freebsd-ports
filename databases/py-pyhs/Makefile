@@ -12,7 +12,7 @@ DISTNAME=	python-handler-socket-${PORTVERSION}
 MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	HandlerSocket client for Python
 
-USES=		python
+USES=		python:2.7
 USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

@@ -12,7 +12,7 @@ MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Machine learning algorithms for python
 
 BUILD_DEPENDS=	${PYNUMPY} \
-		${PYTHON_SITELIBDIR}/scipy/version.py:science/py-scipy
+		${PYTHON_SITELIBDIR}/scipy/version.py:science/py-scipy@${FLAVOR}
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		fortran python

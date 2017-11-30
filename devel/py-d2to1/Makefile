@@ -11,8 +11,8 @@ COMMENT=	Distutils2-like setup.cfg files with setuptools setup.py
 
 LICENSE=	BSD3CLAUSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>0:devel/${PYTHON_PKGNAMEPREFIX}setuptools
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>0:devel/py-nose
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>0:devel/py-setuptools@${FLAVOR}
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>0:devel/py-nose@${FLAVOR}
 
 USES=		python
 USE_GITHUB=	yes

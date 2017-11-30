@@ -25,9 +25,9 @@ BUILD_DEPENDS=	gperf:devel/gperf \
 		node:www/node \
 		${LOCALBASE}/include/linux/videodev2.h:multimedia/v4l_compat \
 		${LOCALBASE}/share/usbids/usb.ids:misc/usbids \
-		${PYTHON_PKGNAMEPREFIX}Jinja2>0:devel/py-Jinja2 \
-		${PYTHON_PKGNAMEPREFIX}ply>0:devel/py-ply \
-		${PYTHON_PKGNAMEPREFIX}html5lib>0:www/py-html5lib
+		${PYTHON_PKGNAMEPREFIX}Jinja2>0:devel/py-Jinja2@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}ply>0:devel/py-ply@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}html5lib>0:www/py-html5lib@${PY_FLAVOR}
 
 LIB_DEPENDS=	libspeechd.so:accessibility/speech-dispatcher \
 		libsnappy.so:archivers/snappy \

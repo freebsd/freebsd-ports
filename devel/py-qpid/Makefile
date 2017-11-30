@@ -14,7 +14,7 @@ COMMENT=		Python library for qpid, a connection-oriented messaging API
 
 LICENSE=		APACHE20
 
-USES=			python
+USES=			python:2.7
 USE_PYTHON=		distutils autoplist
 
 .include <bsd.port.mk>

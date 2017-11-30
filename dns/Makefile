@@ -187,8 +187,6 @@
     SUBDIR += py-pydnstable
     SUBDIR += py-pywdns
     SUBDIR += py-tldextract
-    SUBDIR += py3-dnspython
-    SUBDIR += py3-idna
     SUBDIR += radns
     SUBDIR += rbldnsd
     SUBDIR += rbllookup

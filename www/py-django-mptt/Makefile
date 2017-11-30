@@ -12,7 +12,7 @@ COMMENT=	Utilities for implementing Modified Preorder Tree Traversal in Django
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/django/bin/django-admin.py:www/py-django18 # >= 1.8
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/django/bin/django-admin.py:www/py-django18@${FLAVOR} # >= 1.8
 
 CONFLICTS_INSTALL= py*-django-happenings
 

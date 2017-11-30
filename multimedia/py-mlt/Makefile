@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 BUILD_DEPENDS=	python:lang/python
 
 USES=		python:2
+USE_PYTHON=	flavors
 MASTERDIR=	${.CURDIR:H}/mlt
 SLAVEPORT=	swig Python
 

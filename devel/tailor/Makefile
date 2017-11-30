@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	${LOCALBASE}/bin/rsync:net/rsync
 
-USES=		python
+USES=		python:2.7
 USE_PYTHON=	distutils
 NO_ARCH=	yes
 

@@ -12,7 +12,7 @@ COMMENT=	Finds and removes adapter sequences, primers, poly-A tails, etc
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}xopen>0:archivers/py-xopen
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}xopen>0:archivers/py-xopen@${FLAVOR}
 
 USES=		python
 USE_PYTHON=	distutils

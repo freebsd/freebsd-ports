@@ -12,9 +12,9 @@ COMMENT=	Signal dispatching mechanism
 
 LICENSE=	BSD2CLAUSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>=0.8.3:devel/py-nose
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>=0.8.3:devel/py-nose@${FLAVOR}
 
-USES=		python
+USES=		python:2.7
 USE_PYTHON=	distutils autoplist
 NO_ARCH=	yes
 

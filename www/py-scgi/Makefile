@@ -14,7 +14,7 @@ COMMENT=	Python server implementation of the Simple Common Gateway Protocol
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USES=		python
+USES=		python:2.7
 USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

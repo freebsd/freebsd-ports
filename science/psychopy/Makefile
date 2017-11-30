@@ -11,14 +11,14 @@ COMMENT=	Psychophysics toolkit for Python
 
 LICENSE=	GPLv3+
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}configobj>=0:devel/py-configobj
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyglet>=0:graphics/py-pyglet \
-		${PYTHON_PKGNAMEPREFIX}lxml>0:devel/py-lxml \
-		${PYTHON_PKGNAMEPREFIX}pillow>0:graphics/py-pillow \
-		${PYTHON_PKGNAMEPREFIX}matplotlib>=0.90.1:math/py-matplotlib \
-		${PYTHON_PKGNAMEPREFIX}pandas>0:math/py-pandas \
-		${PYTHON_PKGNAMEPREFIX}scipy>=0.6.0:science/py-scipy \
-		${PYTHON_PKGNAMEPREFIX}openpyxl>0:textproc/py-openpyxl \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}configobj>=0:devel/py-configobj@${FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyglet>=0:graphics/py-pyglet@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}lxml>0:devel/py-lxml@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pillow>0:graphics/py-pillow@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}matplotlib>=0.90.1:math/py-matplotlib@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pandas>0:math/py-pandas@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}scipy>=0.6.0:science/py-scipy@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}openpyxl>0:textproc/py-openpyxl@${FLAVOR} \
 		dejavu>0:x11-fonts/dejavu \
 		${PYGAME} \
 		${PYNUMPY}
@@ -27,7 +27,7 @@ NO_ARCH=	yes
 
 USE_GITHUB=	yes
 
-USES=		fortran python
+USES=		fortran python:2.7
 USE_PYTHON=	autoplist distutils
 USE_WX=		2.8
 WX_COMPS=	python
@@ -45,7 +45,7 @@ OPTIONS_DEFINE_i386=	PYGLET
 OPTIONS_DEFAULT_i386=	PYGLET
 
 PYGLET_DESC=		Drawing support via Pyglet
-PYGLET_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyglet>=1.1.2:graphics/py-pyglet
+PYGLET_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyglet>=1.1.2:graphics/py-pyglet@${FLAVOR}
 
 .include <bsd.port.options.mk>
 

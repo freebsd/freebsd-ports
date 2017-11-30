@@ -14,12 +14,12 @@ COMMENT=	Advanced memory forensics framework
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>=0:databases/py-sqlite3 \
-		${PYTHON_PKGNAMEPREFIX}distorm>=0:devel/py-distorm \
-		${PYTHON_PKGNAMEPREFIX}pillow>=0:graphics/py-pillow \
-		${PYTHON_PKGNAMEPREFIX}pycrypto>=0:security/py-pycrypto \
-		${PYTHON_PKGNAMEPREFIX}yara>=0:security/py-yara \
-		${PYTHON_PKGNAMEPREFIX}openpyxl>=0:textproc/py-openpyxl
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>=0:databases/py-sqlite3@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}distorm>=0:devel/py-distorm@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pillow>=0:graphics/py-pillow@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pycrypto>=0:security/py-pycrypto@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}yara>=0:security/py-yara@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}openpyxl>=0:textproc/py-openpyxl@${FLAVOR}
 
 NO_ARCH=	yes
 USES=		python:2.7 shebangfix zip

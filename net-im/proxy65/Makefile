@@ -10,9 +10,9 @@ COMMENT=	XEP-0065 SOCKS5 Bytestreams external component for Jabber
 
 LICENSE=	MIT
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}twisted>=0:devel/py-twisted
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/OpenSSL/__init__.py:security/py-openssl \
-		${PYTHON_PKGNAMEPREFIX}twisted>=0:devel/py-twisted
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}twisted>=0:devel/py-twisted@${FLAVOR}
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/OpenSSL/__init__.py:security/py-openssl@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}twisted>=0:devel/py-twisted@${FLAVOR}
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	mmatuska

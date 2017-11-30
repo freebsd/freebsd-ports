@@ -42,7 +42,7 @@ OPTIONS_SUB=		yes
 
 DISTRIBUTION_DESC=	Build with networking support
 
-DBUS_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cheetah>0:devel/py-cheetah
+DBUS_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cheetah>0:devel/py-cheetah@${PY_FLAVOR}
 DBUS_CONFIGURE_ENABLE=	dbus
 DBUS_USES=	python:2.7
 

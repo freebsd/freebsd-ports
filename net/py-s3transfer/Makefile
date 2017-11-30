@@ -12,9 +12,9 @@ COMMENT=	Amazon S3 Transfer Manager for Python
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}botocore>=1.3.0:devel/py-botocore
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>=1.3.3:devel/py-nose \
-		${PYTHON_PKGNAMEPREFIX}mock>=1.3.0:devel/py-mock
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}botocore>=1.3.0:devel/py-botocore@${FLAVOR}
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>=1.3.3:devel/py-nose@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}mock>=1.3.0:devel/py-mock@${FLAVOR}
 
 #Actually -2.7,3.3-3.5
 USES=		python
@@ -25,7 +25,7 @@ NO_ARCH=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PYTHON_REL} < 3000
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}futures>=2.2.0:devel/py-futures
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}futures>=2.2.0:devel/py-futures@${FLAVOR}
 .endif
 
 # setup.py test runs integration tests which fail

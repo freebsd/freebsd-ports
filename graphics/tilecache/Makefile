@@ -10,13 +10,13 @@ MASTER_SITES=	http://tilecache.org/
 MAINTAINER=	joris.dedieu@gmail.com
 COMMENT=	Python-based WMS-C/TMS server
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}flup>0:www/py-flup \
-		${PYTHON_PKGNAMEPREFIX}Paste>0:www/py-paste
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}flup>0:www/py-flup@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}Paste>0:www/py-paste@${FLAVOR}
 
 LICENSE=	BSD3CLAUSE MIT
 LICENSE_COMB=	multi
 
-USES=		python shebangfix
+USES=		python:2.7 shebangfix
 USE_PYTHON=	distutils autoplist
 SHEBANG_FILES=	tilecache.cgi tilecache.fcgi
 

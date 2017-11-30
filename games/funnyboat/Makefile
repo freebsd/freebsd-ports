@@ -20,7 +20,7 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pygame/__init__.py:devel/py-game
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USES=		python:run zip
+USES=		python:2.7,run zip
 NO_BUILD=	yes
 NO_ARCH=	yes
 

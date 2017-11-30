@@ -19,7 +19,7 @@ RUN_DEPENDS=	trytond28_stock_supply>=2.8.1:finance/trytond28_stock_supply \
 
 CONFLICTS=	trytond_stock_supply_forecast-2.[46].*
 
-USES=		python
+USES=		python:2.7
 USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

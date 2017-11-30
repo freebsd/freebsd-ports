@@ -10,12 +10,12 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Templating library able to output odt and pdf files
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Genshi>=0.5:textproc/py-genshi \
-		${PYTHON_PKGNAMEPREFIX}lxml>=2.2:devel/py-lxml
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pycha>=0.5.0:graphics/py-pycha \
-		${PYTHON_PKGNAMEPREFIX}yaml>=3.07:devel/py-yaml
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Genshi>=0.5:textproc/py-genshi@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}lxml>=2.2:devel/py-lxml@${FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pycha>=0.5.0:graphics/py-pycha@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}yaml>=3.07:devel/py-yaml@${FLAVOR}
 
-USES=		python
+USES=		python:2.7
 USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

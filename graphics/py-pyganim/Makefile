@@ -13,7 +13,7 @@ COMMENT=	Sprite animation module for Pygame
 
 LICENSE=	BSD2CLAUSE
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}game>0:devel/py-game
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}game>0:devel/py-game@${FLAVOR}
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		python zip

@@ -13,7 +13,7 @@ COMMENT=	Determine the printable width of the terminal
 LICENSE=	MIT
 
 NO_ARCH=	yes
-USES?=		python
+USES=		python
 USE_PYTHON=	autoplist concurrent distutils
 
 .include <bsd.port.mk>

@@ -57,7 +57,7 @@ OWPERL_USE=			perl5=build,run
 OWPHP_CONFIGURE_ENABLE=		owphp
 
 OWPYTHON_CONFIGURE_ENABLE=	owpython
-OWPYTHON_USES=			python
+OWPYTHON_USES=			python:2.7
 
 # Additional CONFIGURE_ARGS is done below
 OWTCL_CONFIGURE_ENABLE=		owtcl

@@ -13,7 +13,7 @@ LICENSE=	MIT
 
 RUN_DEPENDS=	${LOCALBASE}/sbin/spamdb:mail/spamd
 
-USES=		python
+USES=		python:2.7
 USE_PYTHON=	distutils
 
 .include <bsd.port.mk>

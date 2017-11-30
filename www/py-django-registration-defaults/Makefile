@@ -13,7 +13,7 @@ COMMENT=	Default templates and settings for django-registration
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django-registration>=0:www/py-django-registration
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django-registration>=0:www/py-django-registration@${FLAVOR}
 
 USES=		python
 USE_PYTHON=	distutils autoplist

@@ -29,7 +29,7 @@ TOOLS_DESC=	Install tool scripts
 
 DEBUG_MAKE_ENV=	EXTRA_CFLAGS='-O0 -g'
 TOOLS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyelftools>=0:devel/py-pyelftools
-TOOLS_USES=	python
+TOOLS_USES=	python:2.7
 
 # build up the list of files in the compiled directory that should be executable
 EXEC_FILES=	app/cmdline_test \

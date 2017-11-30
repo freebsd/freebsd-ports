@@ -13,6 +13,7 @@ PYQT_DIST=	yes
 USES=		python pyqt:5
 USE_GL=		gl
 USE_PYQT=	sip_build core_run gui_run network_run
+USE_PYTHON=	flavors
 USE_QT5=	core gui multimedia network qmake_build
 
 OPTIONS_DEFINE=	API DEBUG

@@ -8,11 +8,11 @@ MAINTAINER=	avilla@FreeBSD.org
 COMMENT=	Python bindings for libplist
 
 LIB_DEPENDS=	libplist.so:${MASTER_PORT}
-BUILD_DEPENDS=	cython:lang/cython
 
 PORTSCOUT=	ignore:1
 
-USES=		python
+USES=		python:2.7
+USE_PYTHON=	flavors cython
 CONFIGURE_ENV=	PYTHON_LDFLAGS="`pkg-config --libs python-${PYTHON_VER}`"
 SLAVE_PORT=	yes
 MASTERDIR=	${.CURDIR:H:H}/devel/libplist

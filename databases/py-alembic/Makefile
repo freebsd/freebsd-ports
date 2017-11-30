@@ -11,8 +11,8 @@ COMMENT=	Database migration tool for SQLAlchemy
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlalchemy10>=0:databases/py-sqlalchemy10 \
-		${PYTHON_PKGNAMEPREFIX}mako>=0:textproc/py-mako
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlalchemy10>=0:databases/py-sqlalchemy10@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}mako>=0:textproc/py-mako@${FLAVOR}
 
 USES=		python
 USE_PYTHON=	distutils autoplist

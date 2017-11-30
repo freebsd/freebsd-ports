@@ -6,6 +6,7 @@ PORTVERSION=	0.26
 CATEGORIES=	lang python
 MASTER_SITES=	http://www.cython.org/release/ \
 		CHEESESHOP
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	Cython-${PORTVERSION}
 
 MAINTAINER=	vmagerya@gmail.com
@@ -14,8 +15,9 @@ COMMENT=	Compiler for Writing C Extensions for the Python Language
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USES?=		python
-USE_PYTHON+=	autoplist distutils
+
+USES=		python
+USE_PYTHON=	autoplist distutils concurrent allflavors
 
 post-install:
 	${FIND} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/Cython \

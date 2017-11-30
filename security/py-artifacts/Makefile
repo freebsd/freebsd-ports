@@ -14,8 +14,8 @@ COMMENT=	ForensicArtifacts.com Artifact Repository
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}yaml>=3.11:devel/py-yaml
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}yapf>=0:textproc/py-yapf
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}yaml>=3.11:devel/py-yaml@${FLAVOR}
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}yapf>=0:textproc/py-yapf@${FLAVOR}
 
 NO_ARCH=	yes
 USES=		python

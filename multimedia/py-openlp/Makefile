@@ -12,20 +12,20 @@ COMMENT=	Open Source Lyrics Projection
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sip>=0:devel/py-sip \
-		${PYTHON_PKGNAMEPREFIX}mako>0:textproc/py-mako \
-		${PYTHON_PKGNAMEPREFIX}sqlalchemy10>=1.0.13:databases/py-sqlalchemy10
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}beautifulsoup32>0:www/py-beautifulsoup32 \
-		${PYTHON_PKGNAMEPREFIX}lxml>=0:devel/py-lxml \
-		${PYTHON_PKGNAMEPREFIX}sqlalchemy10>=1.0.13:databases/py-sqlalchemy10 \
-		${PYTHON_PKGNAMEPREFIX}chardet>=0:textproc/py-chardet \
-		${PYTHON_PKGNAMEPREFIX}mako>0:textproc/py-mako \
-		${PYTHON_PKGNAMEPREFIX}enchant>0:textproc/py-enchant \
-		${PYTHON_PKGNAMEPREFIX}sqlalchemy-migrate>=0.6.1:databases/py-sqlalchemy-migrate \
-		${PYTHON_PKGNAMEPREFIX}sqlite3>=0:databases/py-sqlite3 \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sip>=0:devel/py-sip@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}mako>0:textproc/py-mako@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}sqlalchemy10>=1.0.13:databases/py-sqlalchemy10@${FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}beautifulsoup32>0:www/py-beautifulsoup32@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}lxml>=0:devel/py-lxml@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}sqlalchemy10>=1.0.13:databases/py-sqlalchemy10@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}chardet>=0:textproc/py-chardet@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}mako>0:textproc/py-mako@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}enchant>0:textproc/py-enchant@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}sqlalchemy-migrate>=0.6.1:databases/py-sqlalchemy-migrate@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}sqlite3>=0:databases/py-sqlite3@${FLAVOR} \
 		unoconv:textproc/unoconv
 
-USES=		desktop-file-utils pyqt:4 python
+USES=		desktop-file-utils pyqt:4 python:2.7
 USE_PYQT=	core gui \
 		network_run opengl_run phonon_run svg_run test_run webkit_run
 USE_PYTHON=	distutils autoplist

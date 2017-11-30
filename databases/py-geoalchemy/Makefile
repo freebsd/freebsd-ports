@@ -14,7 +14,7 @@ COMMENT=	Using SQLAlchemy with Spatial Databases
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlalchemy11>=0.6.1:databases/py-sqlalchemy11
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlalchemy11>=0.6.1:databases/py-sqlalchemy11@${FLAVOR}
 
 NO_ARCH=	yes
 USE_PYTHON=	autoplist distutils

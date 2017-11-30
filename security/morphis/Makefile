@@ -14,8 +14,8 @@ BROKEN=		Does not package
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pycrypto>0:security/py-pycrypto \
-		${PYTHON_PKGNAMEPREFIX}sqlalchemy11>0:databases/py-sqlalchemy11
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pycrypto>0:security/py-pycrypto@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}sqlalchemy11>0:databases/py-sqlalchemy11@${PY_FLAVOR}
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	yurivict
@@ -26,13 +26,6 @@ PLIST_SUB=	USER=${USER} GROUP=${GROUP}
 
 USES=		python:3.4+
 NO_ARCH=	yes
-
-.include <bsd.port.pre.mk>
-
-.if defined(PACKAGE_BUILDING) && !defined(PACKAGE_BUILDING_FLAVORS) && \
-    ${PYTHON_VER} != ${PYTHON_DEFAULT}
-IGNORE=	you have python ${PYTHON_DEFAULT} set as the default, and this needs ${PYTHON_VER}
-.endif
 
 USER=		nobody
 GROUP=		nobody
@@ -52,4 +45,4 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/morphis-cmd ${STAGEDIR}${PREFIX}/bin/morphis
 	${INSTALL_SCRIPT} ${WRKDIR}/morphis-service ${STAGEDIR}${PREFIX}/etc/rc.d/morphis
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

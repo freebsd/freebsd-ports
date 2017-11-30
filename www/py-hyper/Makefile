@@ -13,9 +13,9 @@ COMMENT=	HTTP/2 Client for Python
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest \
-		${PYTHON_PKGNAMEPREFIX}requests>0:www/py-requests \
-		${PYTHON_PKGNAMEPREFIX}mock>0:devel/py-mock
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}requests>0:www/py-requests@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}mock>0:devel/py-mock@${FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist distutils
@@ -25,7 +25,7 @@ NO_ARCH=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PYTHON_REL} == 3300 || (${PYTHON_VER} == 2.7 && ${PYTHON_REL} < 2709)
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}openssl>=0.14:security/py-openssl \
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}openssl>=0.14:security/py-openssl@${FLAVOR} \
 		${PYTHON_PGNAMEPREFIX}service_identity>=14.0.0:security/py-service_identity
 .endif
 

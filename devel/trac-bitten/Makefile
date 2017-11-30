@@ -34,7 +34,7 @@ BITTEN_MASTER_RUN_DEPENDS=	tracd:www/trac
 
 NO_BUILD=	yes
 NO_ARCH=	yes
-USES=		python
+USES=		python:2.7
 USE_PYTHON=	autoplist distutils
 SUB_LIST+=	PYTHON_CMD=${PYTHON_CMD} TOUCH=${TOUCH} CHOWN=${CHOWN} \
 		RM=${RM:Q} USERS=${USERS}

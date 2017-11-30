@@ -13,7 +13,7 @@ COMMENT=	Hierarchic visualization control for wxPython
 
 LICENSE=	BSD2CLAUSE
 
-USES=		python
+USES=		python:2.7
 USE_PYTHON=	distutils autoplist
 USE_WX=		3.0+
 WX_COMPS=	python

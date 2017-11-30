@@ -13,13 +13,13 @@ COMMENT=	Content Provider Framework for Zope Templates
 
 LICENSE=	ZPL21
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zope.component>=3.8.0:devel/py-zope.component \
-		${PYTHON_PKGNAMEPREFIX}zope.event>=0:devel/py-zope.event \
-		${PYTHON_PKGNAMEPREFIX}zope.interface>=0:devel/py-zope.interface \
-		${PYTHON_PKGNAMEPREFIX}zope.location>=0:devel/py-zope.location \
-		${PYTHON_PKGNAMEPREFIX}zope.publisher>=0:devel/py-zope.publisher \
-		${PYTHON_PKGNAMEPREFIX}zope.schema>=3.5.1dev:devel/py-zope.schema \
-		${PYTHON_PKGNAMEPREFIX}zope.tales>=0:devel/py-zope.tales
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zope.component>=3.8.0:devel/py-zope.component@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}zope.event>=0:devel/py-zope.event@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}zope.interface>=0:devel/py-zope.interface@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}zope.location>=0:devel/py-zope.location@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}zope.publisher>=0:devel/py-zope.publisher@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}zope.schema>=3.5.1dev:devel/py-zope.schema@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}zope.tales>=0:devel/py-zope.tales@${FLAVOR}
 
 USES=		python
 USE_PYTHON=	distutils autoplist

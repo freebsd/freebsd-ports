@@ -13,10 +13,10 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	chromaprint>=0.4:audio/chromaprint \
-		${PYTHON_PKGNAMEPREFIX}musicbrainz2>=0:audio/py-musicbrainz2 \
-		${PYTHON_PKGNAMEPREFIX}mutagen>=1.14:audio/py-mutagen \
-		${PYTHON_PKGNAMEPREFIX}configobj>=4.5.0:devel/py-configobj \
-		${PYTHON_PKGNAMEPREFIX}pyparsing>=1.5.1:devel/py-pyparsing
+		${PYTHON_PKGNAMEPREFIX}musicbrainz2>=0:audio/py-musicbrainz2@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}mutagen>=1.14:audio/py-mutagen@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}configobj>=4.5.0:devel/py-configobj@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pyparsing>=1.5.1:devel/py-pyparsing@${FLAVOR}
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	keithgg

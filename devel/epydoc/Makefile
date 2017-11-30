@@ -12,7 +12,7 @@ COMMENT=	Python API documentation generation tool
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USES=		python
+USES=		python:2.7
 USE_PYTHON=	distutils
 
 OPTIONS_DEFINE=	DOCS UTF8

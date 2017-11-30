@@ -18,7 +18,7 @@ OPTIONS_DEFINE=	HIREDIS
 
 HIREDIS_DESC=	High performance response parser (via hiredis)
 
-HIREDIS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hiredis>0:databases/py-hiredis
+HIREDIS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hiredis>0:databases/py-hiredis@${FLAVOR}
 
 USES=		python
 USE_PYTHON=	distutils autoplist concurrent

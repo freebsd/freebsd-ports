@@ -21,7 +21,7 @@ OPTIONS_DEFAULT=WX
 WX_DESC=	Provide a wxSpellCheckerDialog
 OPTIONS_SUB=	yes
 
-USES=		python
+USES=		python:2.7
 USE_PYTHON=	distutils
 
 WX_USE=		WX=3.0+

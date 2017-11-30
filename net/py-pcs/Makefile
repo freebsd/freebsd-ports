@@ -14,13 +14,11 @@ COMMENT=	Protocol Construction Set
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
-BUILD_DEPENDS=	cython>=0.11.2:lang/cython
-
 PORTDOCS=	pcs.pdf
 PORTEXAMPLES=	*
 
 USES=		python:2.7
-USE_PYTHON=	distutils pythonprefix
+USE_PYTHON=	distutils pythonprefix cython
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 

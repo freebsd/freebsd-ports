@@ -34,7 +34,7 @@ USE_PERL5+=	build run
 .endif
 
 .if ${PORT_OPTIONS:MPYTHON}
-USES+=		python
+USES+=		python:2.7
 PLIST_SUB+=	PYTHON_VER=${PYTHON_VER}
 .endif
 

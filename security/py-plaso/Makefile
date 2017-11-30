@@ -27,28 +27,27 @@ RUN_DEPENDS=	hachoir-core>=0:devel/hachoir-core \
 		libolecf>=a:devel/libolecf \
 		libregf>=a:devel/libregf \
 		libscca>=a:devel/libscca \
-		${PYTHON_PKGNAMEPREFIX}artifacts>=0:security/py-artifacts \
-		${PYTHON_PKGNAMEPREFIX}bencode.py>=0:converters/py-bencode.py \
-		${PYTHON_PKGNAMEPREFIX}binplist>=0:devel/py-binplist \
-		${PYTHON_PKGNAMEPREFIX}construct>=0:devel/py-construct \
-		${PYTHON_PKGNAMEPREFIX}dateutil>=0:devel/py-dateutil \
-		${PYTHON_PKGNAMEPREFIX}dfdatetime>=0:security/py-dfdatetime \
-		${PYTHON_PKGNAMEPREFIX}dfvfs>=0:security/py-dfvfs \
-		${PYTHON_PKGNAMEPREFIX}dfwinreg>=0:security/py-dfwinreg \
-		${PYTHON_PKGNAMEPREFIX}dpkt>=0:net/py-dpkt \
-		${PYTHON_PKGNAMEPREFIX}efilter>=0:devel/py-efilter \
-		${PYTHON_PKGNAMEPREFIX}pefile>=0:devel/py-pefile \
-		${PYTHON_PKGNAMEPREFIX}psutil>=0:sysutils/py-psutil \
-		${PYTHON_PKGNAMEPREFIX}pyparsing>=0:devel/py-pyparsing \
-		${PYTHON_PKGNAMEPREFIX}pytsk>=0:sysutils/py-pytsk \
-		${PYTHON_PKGNAMEPREFIX}pytz>=0:devel/py-pytz \
-		${PYTHON_PKGNAMEPREFIX}pyzmq>=0:net/py-pyzmq \
-		${PYTHON_PKGNAMEPREFIX}requests>=0:www/py-requests \
-		${PYTHON_PKGNAMEPREFIX}sqlite3>=0:databases/py-sqlite3 \
-		${PYTHON_PKGNAMEPREFIX}XlsxWriter>=0:textproc/py-xlsxwriter \
-		${PYTHON_PKGNAMEPREFIX}yaml>=0:devel/py-yaml \
-		${PYTHON_PKGNAMEPREFIX}yara>=0:security/py-yara
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mock>=0:devel/py-mock
+		${PYTHON_PKGNAMEPREFIX}artifacts>=0:security/py-artifacts@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}bencode.py>=0:converters/py-bencode.py@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}binplist>=0:devel/py-binplist@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}construct>=0:devel/py-construct@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dateutil>=0:devel/py-dateutil@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dfvfs>=0:security/py-dfvfs@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dfwinreg>=0:security/py-dfwinreg@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dpkt>=0:net/py-dpkt@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}efilter>=0:devel/py-efilter@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pefile>=0:devel/py-pefile@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}psutil>=0:sysutils/py-psutil@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pyparsing>=0:devel/py-pyparsing@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pytsk>=0:sysutils/py-pytsk@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pytz>=0:devel/py-pytz@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pyzmq>=0:net/py-pyzmq@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}requests>=0:www/py-requests@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}sqlite3>=0:databases/py-sqlite3@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}XlsxWriter>=0:textproc/py-xlsxwriter@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}yaml>=0:devel/py-yaml@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}yara>=0:security/py-yara@${FLAVOR}
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mock>=0:devel/py-mock@${FLAVOR}
 
 NO_ARCH=	yes
 USES=		python:2.7
@@ -59,7 +58,7 @@ TEST_ENV=	${MAKE_ENV} PYTHONHTTPSVERIFY=0
 .include <bsd.port.pre.mk>
 
 .if ${PYTHON_REL} < 3300
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pyliblzma>=0:archivers/py-pyliblzma
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pyliblzma>=0:archivers/py-pyliblzma@${FLAVOR}
 .endif
 
 do-test:

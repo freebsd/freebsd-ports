@@ -17,12 +17,12 @@ COMMENT=	Subtitles searching module
 
 LICENSE=	LGPL3
 
-BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/BeautifulSoup.py:www/py-beautifulsoup32
+BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/BeautifulSoup.py:www/py-beautifulsoup32@${FLAVOR}
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_PYTHON=	distutils autoplist
 NO_WRKSUBDIR=	yes
-USES=		desktop-file-utils python
+USES=		desktop-file-utils python:2.7
 
 OPTIONS_DEFINE=	UNRAR
 OPTIONS_DEFAULT=	UNRAR

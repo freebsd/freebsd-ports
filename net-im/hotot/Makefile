@@ -15,7 +15,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	lyricat
 GH_PROJECT=	Hotot
 
-USES=		cmake gettext kde:4 python
+USES=		cmake gettext kde:4 python:2.7
 USE_GNOME=	intltool
 INSTALLS_ICONS=	yes
 

@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	david@acz.org
 COMMENT=	Simple SQL database abstraction layer for Python
 
-USES=		python
-USE_PYTHON=	distutils
+USES=		python:2.7
+USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

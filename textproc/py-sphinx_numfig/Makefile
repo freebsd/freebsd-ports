@@ -12,9 +12,10 @@ COMMENT=	Autonumbering figures in Sphinx
 
 LICENSE=	BSD3CLAUSE
 
-RUN_DEPENDS=	${PKGNAMEPREFIX}sphinx>=1.3.1:textproc/py-sphinx
+RUN_DEPENDS=	${PKGNAMEPREFIX}sphinx>=1.3.1:textproc/py-sphinx@${FLAVOR}
 
-USES=		python tar:tgz
+USES=		python:2.7 tar:tgz
+USE_PYTHON=	flavors
 NO_BUILD=	yes
 SPHINXDIR=	${PYTHON_LIBDIR}/site-packages/sphinx
 PLIST_FILES=	${SPHINXDIR}/ext/numfig.py ${SPHINXDIR}/ext/numfig.pyc

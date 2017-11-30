@@ -12,9 +12,7 @@ COMMENT=	Multidict implementation
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	cython:lang/cython
-
 USES=		python:3.4+
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	autoplist distutils cython
 
 .include <bsd.port.mk>

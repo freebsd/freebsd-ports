@@ -13,6 +13,7 @@ PYQT_DIST=	yes
 
 USES=		python pyqt:4
 USE_PYQT=	sip_build core_run
+USE_PYTHON=	flavors
 USE_QT4=	moc_build corelib network qmake_build
 
 OPTIONS_DEFINE=	API DEBUG

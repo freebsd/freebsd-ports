@@ -12,7 +12,7 @@ COMMENT=	Python Owncloud client library
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>=2.0.1:www/py-requests
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>=2.0.1:www/py-requests@${FLAVOR}
 
 NO_ARCH=	yes
 USES=		python:2.7

@@ -12,7 +12,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Simple template language for XML based written in Python
 
-USES=		python shebangfix
+USES=		python:2.7 shebangfix
 USE_PYTHON=	distutils autoplist
 SHEBANG_FILES=	misc/upgrade-0.6.py
 

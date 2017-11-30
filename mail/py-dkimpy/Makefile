@@ -12,7 +12,7 @@ COMMENT=	Python library for DKIM email signing and verification
 
 LICENSE=	ZLIB
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dns>=0:dns/py-dns
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dns>=0:dns/py-dns@${FLAVOR}
 
 NO_ARCH=	yes
 

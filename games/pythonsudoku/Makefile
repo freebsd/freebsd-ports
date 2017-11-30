@@ -20,8 +20,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS+=	libcups.so:print/cups
 RUN_DEPENDS=	${PYGAME} \
-		${PYTHON_PKGNAMEPREFIX}pillow>=0:graphics/py-pillow \
-		${PYTHON_PKGNAMEPREFIX}reportlab1>=0:print/py-reportlab1
+		${PYTHON_PKGNAMEPREFIX}pillow>=0:graphics/py-pillow@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}reportlab1>=0:print/py-reportlab1@${FLAVOR}
 
 USES=		python:2 tar:bzip2
 USE_GNOME=	pygtk2

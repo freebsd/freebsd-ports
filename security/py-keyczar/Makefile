@@ -13,8 +13,8 @@ COMMENT=	Toolkit for safe and simple cryptography
 
 LICENSE=	APACHE20
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pycrypto>=2.0:security/py-pycrypto \
-		${PYTHON_PKGNAMEPREFIX}pyasn1>0:devel/py-pyasn1
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pycrypto>=2.0:security/py-pycrypto@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pyasn1>0:devel/py-pyasn1@${FLAVOR}
 
 NO_ARCH=	yes
 USES=		python:2

@@ -10,16 +10,16 @@ COMMENT=	Extensions to Twisted
 
 LICENSE=	APACHE20
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}twisted>=15.4.0:devel/py-twisted
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}twisted>=15.4.0:devel/py-twisted@${FLAVOR}
 RUN_DEPENDS=	\
- ${PYTHON_PKGNAMEPREFIX}cffi>=0.6:devel/py-cffi \
- ${PYTHON_PKGNAMEPREFIX}twisted>=15.4:devel/py-twisted
+ ${PYTHON_PKGNAMEPREFIX}cffi>=0.6:devel/py-cffi@${FLAVOR} \
+ ${PYTHON_PKGNAMEPREFIX}twisted>=15.4:devel/py-twisted@${FLAVOR}
 
 DAL_RUN_DEPENDS=	\
- ${PYTHON_PKGNAMEPREFIX}sqlparse01>=0.1.19:databases/py-sqlparse01 \
+ ${PYTHON_PKGNAMEPREFIX}sqlparse01>=0.1.19:databases/py-sqlparse01@${FLAVOR} \
 
 POSTGRES_RUN_DEPENDS=	\
- ${PYTHON_PKGNAMEPREFIX}pg8000>=1.10.2:databases/py-pg8000
+ ${PYTHON_PKGNAMEPREFIX}pg8000>=1.10.2:databases/py-pg8000@${FLAVOR}
 
 OPTIONS_DEFINE=	DAL POSTGRES
 DAL_DESC=	Enables use of the Database Abstraction Layer.

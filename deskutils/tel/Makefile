@@ -14,7 +14,7 @@ LICENSE=	MIT
 
 NO_ARCH=	yes
 
-USES=		gettext python shebangfix tar:bzip2
+USES=		gettext python:2.7 shebangfix tar:bzip2
 SHEBANG_FILES=	src/tel.py
 USE_PYTHON=	distutils
 

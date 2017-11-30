@@ -19,12 +19,12 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 BUILD_DEPENDS=	${LOCALBASE}/include/log4cplus/logger.h:devel/log4cplus \
 		sqlite3>=3.3.9:databases/sqlite3 \
-		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/${PYTHON_PKGNAMEPREFIX}sqlite3
+		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR}
 LIB_DEPENDS=	libbotan-1.10.so:security/botan110 \
 		liblog4cplus.so:devel/log4cplus \
 		libgmp.so:math/gmp \
 		libsqlite3.so:databases/sqlite3
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/${PYTHON_PKGNAMEPREFIX}sqlite3
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR}
 
 BROKEN_powerpc64=	fails to configure: checking for botan/botan.h... no
 
@@ -32,7 +32,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	bundy-dns
 GH_TAGNAME=	e640032
 
-USES=	compiler:c++11-lang pathfix pkgconfig libtool python:3 autoreconf ssl
+USES=	compiler:c++11-lang pathfix pkgconfig libtool python:3.4+ autoreconf ssl
 
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes

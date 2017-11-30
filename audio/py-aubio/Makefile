@@ -11,7 +11,7 @@ LIB_DEPENDS=	libaubio.so:audio/aubio
 BUILD_DEPENDS=	${PYNUMPY}
 RUN_DEPENDS=	${PYNUMPY}
 TEST_DEPENDS=	sox:audio/sox \
-		${PYTHON_PKGNAMEPREFIX}nose2>=0.6.5:devel/py-nose2
+		${PYTHON_PKGNAMEPREFIX}nose2>=0.6.5:devel/py-nose2@${FLAVOR}
 
 USES+=		python
 USE_PYTHON=	autoplist distutils

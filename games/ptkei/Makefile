@@ -13,7 +13,7 @@ COMMENT=	Python/Tk graphical client for Wolfpack Empire servers
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tkinter>0:x11-toolkits/py-tkinter \
 		${PYTHON_SITELIBDIR}/Pmw/__init__.py:x11-toolkits/py-Pmw
 
-USES=		python shebangfix
+USES=		python:2.7 shebangfix
 SHEBANG_FILES=	empire.py scripts/*.py
 
 do-build:

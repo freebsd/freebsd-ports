@@ -16,12 +16,12 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	lame:audio/lame \
 		mplayer:multimedia/mplayer \
-		${PYTHON_PKGNAMEPREFIX}pyaudio>0:audio/py-pyaudio \
-		${PYTHON_PKGNAMEPREFIX}sqlalchemy10>0:databases/py-sqlalchemy10 \
-		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3 \
-		${PYTHON_PKGNAMEPREFIX}beautifulsoup32>=0:www/py-beautifulsoup32 \
-		${PYTHON_PKGNAMEPREFIX}httplib2>0:www/py-httplib2 \
-		${PYTHON_PKGNAMEPREFIX}send2trash>0:deskutils/py-send2trash
+		${PYTHON_PKGNAMEPREFIX}pyaudio>0:audio/py-pyaudio@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}sqlalchemy10>0:databases/py-sqlalchemy10@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}beautifulsoup32>=0:www/py-beautifulsoup32@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}httplib2>0:www/py-httplib2@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}send2trash>0:deskutils/py-send2trash@${PY_FLAVOR}
 
 USES=		desktop-file-utils pyqt:4 python:2 shared-mime-info shebangfix tar:tgz
 SHEBANG_FILES=	tools/build_ui.sh tools/tests.sh

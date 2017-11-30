@@ -14,10 +14,10 @@ COMMENT=	Stripe Python bindings
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>=0.8.8:www/py-requests
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pycurl>=7.19:ftp/py-pycurl \
-		${PYTHON_PKGNAMEPREFIX}mock>0:devel/py-mock \
-		${PYTHON_PKGNAMEPREFIX}unittest2>0:devel/py-unittest2
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>=0.8.8:www/py-requests@${FLAVOR}
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pycurl>=7.19:ftp/py-pycurl@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}mock>0:devel/py-mock@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}unittest2>0:devel/py-unittest2@${FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist distutils

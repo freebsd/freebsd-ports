@@ -29,7 +29,7 @@ OPTIONS_DEFAULT=	PERL
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPYTHON}
-USES+=		python
+USES+=		python:2.7
 PLIST_SUB+=	WITH_PYTHON=""
 CONFIGURE_ARGS+=	--enable-python
 .else

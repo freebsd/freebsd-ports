@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	dynagen:emulators/dynagen
 
-USES=		python shebangfix
+USES=		python:2.7 shebangfix
 SHEBANG_FILES=	dynagui.py
 USE_PYTHON=	distutils
 IMGDIR=		${STAGEDIR}${PREFIX}/share/${PORTNAME}/img

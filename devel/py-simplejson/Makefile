@@ -14,7 +14,7 @@ COMMENT=	Simple, fast, extensible JSON encoder/decoder
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USES?=		python
+USES=		python
 USE_PYTHON=	autoplist concurrent distutils
 
 post-install:

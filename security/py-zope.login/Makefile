@@ -13,12 +13,12 @@ COMMENT=	Login helpers for zope.publisher / authentication
 
 LICENSE=	ZPL21
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zope.authentication>=0:security/py-zope.authentication \
-		${PYTHON_PKGNAMEPREFIX}zope.component>=0:devel/py-zope.component \
-		${PYTHON_PKGNAMEPREFIX}zope.interface>=0:devel/py-zope.interface \
-		${PYTHON_PKGNAMEPREFIX}zope.publisher>=0:devel/py-zope.publisher
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zope.authentication>=0:security/py-zope.authentication@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}zope.component>=0:devel/py-zope.component@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}zope.interface>=0:devel/py-zope.interface@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}zope.publisher>=0:devel/py-zope.publisher@${FLAVOR}
 
-USES=		python zip
+USES=		python:2.7 zip
 USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

@@ -12,9 +12,9 @@ COMMENT=	Test support for pytest runner in setup.py
 
 LICENSE=	MIT
 
-BUILD_DEPENDS?=	${PYTHON_PKGNAMEPREFIX}setuptools_scm>=1.15.0:devel/py-setuptools_scm
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools_scm>=1.15.0:devel/py-setuptools_scm@${FLAVOR}
 
-USES?=		python
+USES=		python
 USE_PYTHON=	autoplist distutils
 NO_ARCH=	yes
 

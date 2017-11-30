@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	jlaffaye@FreeBSD.org
 COMMENT=	yenc decoding module for Python in C
 
-USES=		python
+USES=		python:2.7
 USE_PYTHON=	distutils
 
 .include <bsd.port.mk>

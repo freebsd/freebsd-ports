@@ -17,7 +17,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	${PYGAME}
 
-USES=		python
+USES=		python:2.7
 USE_PYTHON=	distutils
 
 PORTDOCS=	POINTS manual.html manual.pdf manual.tex

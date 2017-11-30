@@ -13,13 +13,13 @@ COMMENT=	TCP load balancer written in Python
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/doc/LICENSE.txt
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}twisted>=0:devel/py-twisted
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}twisted>=0:devel/py-twisted@${FLAVOR}
 
 OPTIONS_DEFINE=	DOCS
 
 NO_ARCH=	yes
 USE_PYTHON=	autoplist distutils
-USES=		python
+USES=		python:2.7
 
 PORTDOCS=	*
 

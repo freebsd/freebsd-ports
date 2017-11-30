@@ -12,8 +12,8 @@ COMMENT=	New features in linecache backported to Python 2
 
 LICENSE=	PSFL
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pbr>0:devel/py-pbr
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pbr>0:devel/py-pbr
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pbr>0:devel/py-pbr@${FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pbr>0:devel/py-pbr@${FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist distutils

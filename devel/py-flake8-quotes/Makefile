@@ -13,9 +13,9 @@ COMMENT=	Flake8 lint for quotes
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS?=	${PYTHON_PKGNAMEPREFIX}flake8>=0:devel/py-flake8
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}flake8>=0:devel/py-flake8@${FLAVOR}
 
-USES?=		python
+USES=		python
 USE_PYTHON=	autoplist distutils
 NO_ARCH=	yes
 

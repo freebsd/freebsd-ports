@@ -23,7 +23,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	dswd
 GH_PROJECT=	Swine
 
-USES=		gmake python
+USES=		gmake python:2.7
 NO_BUILD=	yes
 USE_QT4=	linguist_build
 ONLY_FOR_ARCHS=	i386 amd64

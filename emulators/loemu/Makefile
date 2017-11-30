@@ -16,7 +16,7 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-2.0/gtk/__init__.py:x11-toolkits/py-gtk2 \
 		${PYTHON_SITELIBDIR}/libxml2.py:textproc/py-libxml2 \
 		${PYTHON_SITELIBDIR}/libxslt.py:textproc/py-libxslt
 
-USES=		gettext python shebangfix
+USES=		gettext python:2.7 shebangfix
 USE_PYTHON=	distutils
 NO_BUILD=	yes
 SHEBANG_FILES=	setup.py

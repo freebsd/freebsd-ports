@@ -11,8 +11,8 @@ COMMENT=	RabbitMQ client library for Python
 
 LICENSE=	BSD3CLAUSE
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pamqp>0:net/py-pamqp
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pamqp>0:net/py-pamqp
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pamqp>0:net/py-pamqp@${FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pamqp>0:net/py-pamqp@${FLAVOR}
 
 NO_ARCH=	yes
 USES=		python

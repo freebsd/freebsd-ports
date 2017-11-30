@@ -17,6 +17,7 @@ PORTSCOUT=	limit:^${PYQT5_VERSION}
 
 USES=		python pyqt:5
 USE_PYQT=	#
+USE_PYTHON=	flavors
 
 DOCSDIR=	${PREFIX}/share/doc/py-qt5
 

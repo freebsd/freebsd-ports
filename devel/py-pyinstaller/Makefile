@@ -22,7 +22,7 @@ BROKEN_sparc64=		Does not compile: error: size of array stb__testsize2_uinta is 
 OPTIONS_DEFINE=	DOCS
 
 EXTRACT_AFTER_ARGS=	--exclude doc/source --no-same-owner --no-same-permissions
-USES=		python
+USES=		python:2.7
 USE_PYTHON=	autoplist distutils
 
 DOCSDIR=	${PREFIX}/share/doc/${PYTHON_PKGNAMEPREFIX}${PORTNAME}

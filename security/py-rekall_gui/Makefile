@@ -16,12 +16,12 @@ IGNORE=		does not work with rekall-core 1.6.0
 DEPRECATED=	PoC that is no longer supported
 EXPIRATION_DATE=	2017-11-29
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}rekall-core>=1.5.0.p:security/py-rekall-core \
-		${PYTHON_PKGNAMEPREFIX}codegen>=1.0:devel/py-codegen \
-		${PYTHON_PKGNAMEPREFIX}Flask>=0.10.1:www/py-flask \
-		${PYTHON_PKGNAMEPREFIX}Flask-Sockets>=0:www/py-flask-sockets \
-		${PYTHON_PKGNAMEPREFIX}gevent>=1.0.2:devel/py-gevent \
-		${PYTHON_PKGNAMEPREFIX}gevent-websocket>=0.9.3:www/py-gevent-websocket
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}rekall-core>=1.5.0.p:security/py-rekall-core@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}codegen>=1.0:devel/py-codegen@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}Flask>=0.10.1:www/py-flask@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}Flask-Sockets>=0:www/py-flask-sockets@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}gevent>=1.0.2:devel/py-gevent@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}gevent-websocket>=0.9.3:www/py-gevent-websocket@${FLAVOR}
 
 NO_ARCH=	yes
 USES=		python:2.7

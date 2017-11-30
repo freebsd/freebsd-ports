@@ -854,16 +854,6 @@
     SUBDIR += py-whisper
     SUBDIR += py-xapian
     SUBDIR += py-zodbpickle
-    SUBDIR += py3-apsw
-    SUBDIR += py3-bsddb3
-    SUBDIR += py3-mysqlclient
-    SUBDIR += py3-psycopg2
-    SUBDIR += py34-gdbm
-    SUBDIR += py34-sqlite3
-    SUBDIR += py35-gdbm
-    SUBDIR += py35-sqlite3
-    SUBDIR += py36-gdbm
-    SUBDIR += py36-sqlite3
     SUBDIR += pydbx
     SUBDIR += pymongo
     SUBDIR += pypy-gdbm

@@ -18,7 +18,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tkinter>0:x11-toolkits/py-tkinter \
 		${PYTHON_PKGNAMEPREFIX}pillow>0:graphics/py-pillow
 
-USES=		python shebangfix tar:bzip2
+USES=		python:2.7 shebangfix tar:bzip2
 USE_PYTHON=	autoplist distutils
 NO_ARCH=	yes
 SHEBANG_FILES=	data/themes/clearlooks/create_imgs.py

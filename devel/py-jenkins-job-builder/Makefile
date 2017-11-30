@@ -13,12 +13,12 @@ COMMENT=	Manage Jenkins jobs with YAML
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${PKGNAMEPREFIX}pbr>0:devel/py-pbr
-RUN_DEPENDS=	${PKGNAMEPREFIX}yaml>0:devel/py-yaml \
-		${PKGNAMEPREFIX}pbr>0:devel/py-pbr \
-		${PKGNAMEPREFIX}six>0:devel/py-six \
-		${PKGNAMEPREFIX}stevedore>0:devel/py-stevedore \
-		${PKGNAMEPREFIX}python-jenkins>0:devel/py-python-jenkins
+BUILD_DEPENDS=	${PKGNAMEPREFIX}pbr>0:devel/py-pbr@${FLAVOR}
+RUN_DEPENDS=	${PKGNAMEPREFIX}yaml>0:devel/py-yaml@${FLAVOR} \
+		${PKGNAMEPREFIX}pbr>0:devel/py-pbr@${FLAVOR} \
+		${PKGNAMEPREFIX}six>0:devel/py-six@${FLAVOR} \
+		${PKGNAMEPREFIX}stevedore>0:devel/py-stevedore@${FLAVOR} \
+		${PKGNAMEPREFIX}python-jenkins>0:devel/py-python-jenkins@${FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist distutils

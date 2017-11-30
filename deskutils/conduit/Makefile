@@ -11,15 +11,15 @@ MASTER_SITES=	GNOME
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Synchronization application for GNOME
 
-BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/goocanvasmodule.so:graphics/py-goocanvas \
-		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3 \
-		${PYTHON_PKGNAMEPREFIX}vobject>=0.4.8:deskutils/py-vobject \
-		${PYTHON_PKGNAMEPREFIX}dbus>0:devel/py-dbus
+BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/goocanvasmodule.so:graphics/py-goocanvas@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}vobject>=0.4.8:deskutils/py-vobject@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dbus>0:devel/py-dbus@${PY_FLAVOR}
 LIB_DEPENDS=	libdbus-1.so:devel/dbus
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/goocanvasmodule.so:graphics/py-goocanvas \
-		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3 \
-		${PYTHON_PKGNAMEPREFIX}vobject>=0.4.8:deskutils/py-vobject \
-		${PYTHON_PKGNAMEPREFIX}dbus>0:devel/py-dbus \
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/goocanvasmodule.so:graphics/py-goocanvas@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}vobject>=0.4.8:deskutils/py-vobject@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dbus>0:devel/py-dbus@${PY_FLAVOR} \
 		xdg-open:devel/xdg-utils
 
 GNU_CONFIGURE=	yes

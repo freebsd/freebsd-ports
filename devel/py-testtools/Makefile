@@ -12,8 +12,8 @@ COMMENT=	Extensions to the Python library's unit testing framework
 
 LICENSE=	MIT
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pbr>=1.3:devel/py-pbr
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}extras>=0.0.3:devel/py-extras
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pbr>=1.3:devel/py-pbr@${FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}extras>=0.0.3:devel/py-extras@${FLAVOR}
 
 USES=		python
 USE_PYTHON=	distutils autoplist concurrent

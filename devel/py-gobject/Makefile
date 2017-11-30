@@ -24,6 +24,7 @@ PORTSCOUT=	ignore:1
 
 USES=		gmake libtool pathfix pkgconfig python:2 tar:xz shebangfix
 USE_GNOME=	glib20 introspection:build,run
+USE_PYTHON=	flavors
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--disable-docs --disable-introspection --with-ffi

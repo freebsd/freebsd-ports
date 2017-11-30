@@ -12,11 +12,11 @@ COMMENT=	Multiple GNOME terminals in one window
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}notify>=0:devel/py-notify \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}notify>=0:devel/py-notify@${FLAVOR} \
 		${PYTHON_SITELIBDIR}/keybinder/_keybinder.so:x11/keybinder \
-		${PYTHON_PKGNAMEPREFIX}vte>=0:x11-toolkits/py-vte
+		${PYTHON_PKGNAMEPREFIX}vte>=0:x11-toolkits/py-vte@${FLAVOR}
 
-USES=		python
+USES=		python:2.7
 USE_GNOME=	pygtk2 intltool
 USE_PYTHON=	distutils
 PYDISTUTILS_PKGNAME=	Terminator

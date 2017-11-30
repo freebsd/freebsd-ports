@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
 LIB_DEPENDS=	libwdns.so:dns/wdns
 
-USES=		pkgconfig python
+USES=		pkgconfig python:2.7
 USE_PYTHON=	autoplist distutils
 
 post-patch:

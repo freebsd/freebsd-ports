@@ -15,13 +15,15 @@ COMMENT=	User-profile application for Django
 
 LICENSE=	BSD3CLAUSE
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/django/bin/django-admin.py:www/py-django18
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/django/bin/django-admin.py:www/py-django18@${FLAVOR}
 
 WRKSRC=	${WRKDIR}/${PORTNAME}
 USES=		python
-USE_PYTHON=	distutils
-DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
+USE_PYTHON=	distutils autoplist
+DOCSDIR=	${PREFIX}/share/doc/${PYTHON_PKGNAMEPREFIX}${PORTNAME}
 OPTIONS_DEFINE=	DOCS
+
+PORTDOCS=	*
 
 .include <bsd.port.options.mk>
 

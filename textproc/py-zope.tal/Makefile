@@ -13,8 +13,8 @@ COMMENT=	Zope Template Application Language (TAL)
 
 LICENSE=	ZPL21
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zope.i18nmessageid>=0:textproc/py-zope.i18nmessageid \
-		${PYTHON_PKGNAMEPREFIX}zope.interface>=0:devel/py-zope.interface
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zope.i18nmessageid>=0:textproc/py-zope.i18nmessageid@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}zope.interface>=0:devel/py-zope.interface@${FLAVOR}
 
 USES=		python zip
 USE_PYTHON=	distutils autoplist

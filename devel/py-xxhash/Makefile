@@ -12,7 +12,7 @@ COMMENT=	Python bindings for the xxHash library
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>1:devel/py-nose
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>1:devel/py-nose@${FLAVOR}
 
 USES=		python zip
 USE_PYTHON=	distutils autoplist

@@ -47,7 +47,7 @@ TEST_CMAKE_BOOL=	BUILD_TESTS
 
 HTMLREPORT_DESC=	Install cppcheck-htmlreport
 HTMLREPORT_USES=	python:2,${PYUSE:C/ /,/W}
-HTMLREPORT_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pygments>0:textproc/py-pygments
+HTMLREPORT_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pygments>0:textproc/py-pygments@${PY_FLAVOR}
 HTMLREPORT_PLIST_FILES=	bin/cppcheck-htmlreport
 HTMLREPORT_VARS=	PYUSE+=run
 

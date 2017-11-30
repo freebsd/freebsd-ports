@@ -13,7 +13,7 @@ COMMENT=	Python SOCKS module
 
 LICENSE=	BSD3CLAUSE
 
-USES?=		python
+USES=		python
 USE_PYTHON=	autoplist concurrent distutils
 NO_ARCH=	yes
 

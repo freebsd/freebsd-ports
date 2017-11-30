@@ -12,9 +12,9 @@ COMMENT=	Python Knowledge Engine
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ply>=2.3:devel/py-ply
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ply>=2.3:devel/py-ply@${FLAVOR}
 
-USES=		python zip
+USES=		python:2.7 zip
 USE_PYTHON=	distutils
 
 OPTIONS_DEFINE=	DOCS

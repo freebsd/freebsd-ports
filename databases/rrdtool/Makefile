@@ -52,6 +52,7 @@ PERL_CONFIGURE_ON=	--enable-perl --enable-perl-site-install
 PERL_USES=		perl5
 PYTHON_CONFIGURE_ENABLE=python
 PYTHON_USES=		python
+PYTHON_USE=		python=flavors,optsuffix
 RUBY_CONFIGURE_ENABLE=	ruby
 RUBY_USE=		RUBY=yes
 

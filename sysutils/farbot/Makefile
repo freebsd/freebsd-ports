@@ -19,7 +19,7 @@ GH_ACCOUNT=	threerings
 GH_PROJECT=	farbot
 GH_TAGNAME=	c824009
 
-USES=		python
+USES=		python:2.7
 USE_PYTHON=	distutils autoplist
 PYDISTUTILS_PKGNAME=	farb
 PYDISTUTILS_PKGVERSION=	0.1

@@ -12,7 +12,7 @@ COMMENT=	Protobuf code generator for gRPC
 
 LICENSE=	BSD3CLAUSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}grpcio>1:devel/py-grpcio
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}grpcio>1:devel/py-grpcio@${FLAVOR}
 LIB_DEPENDS=	libcares.so:dns/c-ares
 
 USES=		localbase:ldflags python

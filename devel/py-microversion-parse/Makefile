@@ -13,7 +13,7 @@ COMMENT=	Openstack microversion header parser
 
 LICENSE=	APACHE20
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pbr>=1.6:devel/py-pbr
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pbr>=1.6:devel/py-pbr@${FLAVOR}
 
 NO_ARCH=	yes
 

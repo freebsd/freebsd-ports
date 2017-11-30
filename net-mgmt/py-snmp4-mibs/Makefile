@@ -15,7 +15,7 @@ COMMENT=	Additional python MIB files for pysnmp4 and friends
 
 LICENSE=	BSD3CLAUSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}snmp4>=4.2.3:net-mgmt/py-snmp4
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}snmp4>=4.2.3:net-mgmt/py-snmp4@${FLAVOR}
 
 USES=		python
 USE_PYTHON=	distutils autoplist

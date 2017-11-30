@@ -12,7 +12,7 @@ COMMENT=	SockJS python server implementation on top of Tornado framework
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tornado>0:www/py-tornado
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tornado>0:www/py-tornado@${FLAVOR}
 
 NO_ARCH=	yes
 USES=		python:2.7+

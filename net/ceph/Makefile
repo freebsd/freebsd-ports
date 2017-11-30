@@ -19,8 +19,7 @@ IGNORE_FreeBSD_10=	Doesnt build for FreeBSD 10.x
 BUILD_DEPENDS=	\
 	yasm:devel/yasm \
 	pkgconf:devel/pkgconf \
-	cython>=0.25.2:lang/cython \
-	sphinx-build:textproc/py-sphinx \
+	sphinx-build:textproc/py-sphinx@${PY_FLAVOR} \
 	gperf:devel/gperf \
 	${LOCALBASE}/lib/libatomic_ops.a:devel/libatomic_ops
 LIB_DEPENDS=	\
@@ -43,12 +42,13 @@ RUN_DEPENDS=	\
 	xml:textproc/xmlstarlet \
 	jq:textproc/jq \
 	flock:sysutils/flock \
-	virtualenv:devel/py-virtualenv \
-	${PYTHON_PKGNAMEPREFIX}prettytable>=0:devel/py-prettytable
+	virtualenv:devel/py-virtualenv@${PY_FLAVOR} \
+	${PYTHON_PKGNAMEPREFIX}prettytable>=0:devel/py-prettytable@${PY_FLAVOR}
 
 CONFLICTS_INSTALL=	ceph-devel
 
 USES=	gmake cmake:outsource,noninja python:2.7 fuse gettext-runtime shebangfix
+USE_PYTHON=	cython
 USE_GITHUB=	yes
 GH_ACCOUNT=	ceph:DEFAULT
 GH_TUPLE+=	ceph:ceph-erasure-code-corpus:2d7d78b:ceph_erasure_code_corpus/ceph-erasure-code-corpus

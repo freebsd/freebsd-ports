@@ -13,12 +13,12 @@ COMMENT=	Python library for parsing, manipulating, and generating STIX content
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dateutil>=0:devel/py-dateutil \
-		${PYTHON_PKGNAMEPREFIX}lxml>=2.3:devel/py-lxml \
-		${PYTHON_PKGNAMEPREFIX}cybox>=2.1.0.13:security/py-cybox \
-		${PYTHON_PKGNAMEPREFIX}mixbox>=1.0.2:security/py-mixbox
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>=0:devel/py-nose \
-		${PYTHON_PKGNAMEPREFIX}maec>=4.1.0.13:security/py-maec
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dateutil>=0:devel/py-dateutil@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}lxml>=2.3:devel/py-lxml@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}cybox>=2.1.0.13:security/py-cybox@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}mixbox>=1.0.2:security/py-mixbox@${FLAVOR}
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>=0:devel/py-nose@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}maec>=4.1.0.13:security/py-maec@${FLAVOR}
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	STIXProject

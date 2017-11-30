@@ -14,7 +14,7 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 NO_ARCH=	yes
-USES?=		python
+USES=		python
 USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

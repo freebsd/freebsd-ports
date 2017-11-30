@@ -70,7 +70,7 @@ PERL_CONFIGURE_WITH=	perl
 PERL_USES=		perl5
 
 PYTHON_CONFIGURE_WITH=	python
-PYTHON_USES=		python shebangfix
+PYTHON_USES=		python:2.7 shebangfix
 SHEBANG_FILES=		contrib/python/notify-bubble.py
 
 SQLITE_CONFIGURE_WITH=	sqlite3
