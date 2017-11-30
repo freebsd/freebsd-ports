@@ -962,7 +962,6 @@
     SUBDIR += py-python-social-auth
     SUBDIR += py-rekall
     SUBDIR += py-rekall-core
-    SUBDIR += py-rekall_gui
     SUBDIR += py-requests-kerberos
     SUBDIR += py-rsa
     SUBDIR += py-safe
