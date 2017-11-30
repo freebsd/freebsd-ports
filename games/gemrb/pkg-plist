@@ -3,7 +3,7 @@ bin/gemrb
 @sample %%ETCDIR%%/GemRB.cfg.noinstall.sample
 @sample %%ETCDIR%%/GemRB.cfg.sample
 lib/gemrb/libgemrb_core.so
-lib/gemrb/libgemrb_core.so.0.8.4
+lib/gemrb/libgemrb_core.so.%%PORTVERSION%%
 lib/gemrb/plugins/2DAImporter.so
 lib/gemrb/plugins/ACMReader.so
 lib/gemrb/plugins/AREImporter.so
@@ -37,14 +37,12 @@ lib/gemrb/plugins/PNGImporter.so
 lib/gemrb/plugins/PROImporter.so
 lib/gemrb/plugins/PSTOpcodes.so
 lib/gemrb/plugins/SAVImporter.so
-lib/gemrb/plugins/SDLAudio.so
 lib/gemrb/plugins/SDLVideo.so
 lib/gemrb/plugins/SPLImporter.so
 lib/gemrb/plugins/STOImporter.so
 lib/gemrb/plugins/TISImporter.so
 lib/gemrb/plugins/TLKImporter.so
 lib/gemrb/plugins/TTFImporter.so
-lib/gemrb/plugins/VLCPlayer.so
 lib/gemrb/plugins/WAVReader.so
 lib/gemrb/plugins/WEDImporter.so
 lib/gemrb/plugins/WMPImporter.so
@@ -149,12 +147,14 @@ share/applications/gemrb.desktop
 %%DATADIR%%/GUIScripts/GUILOAD.py
 %%DATADIR%%/GUIScripts/GUIMA.py
 %%DATADIR%%/GUIScripts/GUIMG.py
+%%DATADIR%%/GUIScripts/GUIMOVIE.py
 %%DATADIR%%/GUIScripts/GUIOPT.py
 %%DATADIR%%/GUIScripts/GUIOPTControls.py
 %%DATADIR%%/GUIScripts/GUIPR.py
 %%DATADIR%%/GUIScripts/GUIREC.py
 %%DATADIR%%/GUIScripts/GUIRECCommon.py
 %%DATADIR%%/GUIScripts/GUISAVE.py
+%%DATADIR%%/GUIScripts/GUISONGS.py
 %%DATADIR%%/GUIScripts/GUISTORE.py
 %%DATADIR%%/GUIScripts/GUIWORLD.py
 %%DATADIR%%/GUIScripts/GameCheck.py
@@ -189,9 +189,7 @@ share/applications/gemrb.desktop
 %%DATADIR%%/GUIScripts/bg1/GUICG9.py
 %%DATADIR%%/GUIScripts/bg1/GUIINV.py
 %%DATADIR%%/GUIScripts/bg1/GUIJRNL.py
-%%DATADIR%%/GUIScripts/bg1/GUIMOVIE.py
 %%DATADIR%%/GUIScripts/bg1/GUIMP.py
-%%DATADIR%%/GUIScripts/bg1/GUISONGS.py
 %%DATADIR%%/GUIScripts/bg1/ImportFile.py
 %%DATADIR%%/GUIScripts/bg1/LoadScreen.py
 %%DATADIR%%/GUIScripts/bg1/MessageWindow.py
@@ -229,8 +227,6 @@ share/applications/gemrb.desktop
 %%DATADIR%%/GUIScripts/bg2/GUICG9.py
 %%DATADIR%%/GUIScripts/bg2/GUIINV.py
 %%DATADIR%%/GUIScripts/bg2/GUIJRNL.py
-%%DATADIR%%/GUIScripts/bg2/GUIMOVIE.py
-%%DATADIR%%/GUIScripts/bg2/GUISONGS.py
 %%DATADIR%%/GUIScripts/bg2/ImportFile.py
 %%DATADIR%%/GUIScripts/bg2/ImportGame.py
 %%DATADIR%%/GUIScripts/bg2/LUHLASelection.py
@@ -265,7 +261,6 @@ share/applications/gemrb.desktop
 %%DATADIR%%/GUIScripts/iwd/CharGen.py
 %%DATADIR%%/GUIScripts/iwd/GUIINV.py
 %%DATADIR%%/GUIScripts/iwd/GUIJRNL.py
-%%DATADIR%%/GUIScripts/iwd/GUIMOVIE.py
 %%DATADIR%%/GUIScripts/iwd/LoadScreen.py
 %%DATADIR%%/GUIScripts/iwd/MessageWindow.py
 %%DATADIR%%/GUIScripts/iwd/PartyFormation.py
@@ -401,6 +396,7 @@ share/applications/gemrb.desktop
 %%DATADIR%%/unhardcoded/bg1/acidblob.pro
 %%DATADIR%%/unhardcoded/bg1/acidbloc.pro
 %%DATADIR%%/unhardcoded/bg1/aligns.2da
+%%DATADIR%%/unhardcoded/bg1/area_reverbs.2da
 %%DATADIR%%/unhardcoded/bg1/areapro.2da
 %%DATADIR%%/unhardcoded/bg1/arrow.pro
 %%DATADIR%%/unhardcoded/bg1/arrowex.pro
@@ -560,6 +556,7 @@ share/applications/gemrb.desktop
 %%DATADIR%%/unhardcoded/bg2/HPBARB.2da
 %%DATADIR%%/unhardcoded/bg2/ability.2da
 %%DATADIR%%/unhardcoded/bg2/aligns.2da
+%%DATADIR%%/unhardcoded/bg2/area_reverbs.2da
 %%DATADIR%%/unhardcoded/bg2/areapro.2da
 %%DATADIR%%/unhardcoded/bg2/at2xlvl.spl
 %%DATADIR%%/unhardcoded/bg2/avatars.2da
@@ -1029,6 +1026,7 @@ share/applications/gemrb.desktop
 %%DATADIR%%/unhardcoded/how/wvhith.pro
 %%DATADIR%%/unhardcoded/how/wwolf.pro
 %%DATADIR%%/unhardcoded/how/zlaura.pro
+%%DATADIR%%/unhardcoded/how/zzweaps.2da
 %%DATADIR%%/unhardcoded/iwd/ability.2da
 %%DATADIR%%/unhardcoded/iwd/abjurap.pro
 %%DATADIR%%/unhardcoded/iwd/abjurh.pro
@@ -1400,6 +1398,7 @@ share/applications/gemrb.desktop
 %%DATADIR%%/unhardcoded/iwd/wvhith.pro
 %%DATADIR%%/unhardcoded/iwd/wwolf.pro
 %%DATADIR%%/unhardcoded/iwd/zlaura.pro
+%%DATADIR%%/unhardcoded/iwd/zzweaps.2da
 %%DATADIR%%/unhardcoded/iwd2/24895.spl
 %%DATADIR%%/unhardcoded/iwd2/24896.spl
 %%DATADIR%%/unhardcoded/iwd2/35782.spl
@@ -1450,6 +1449,7 @@ share/applications/gemrb.desktop
 %%DATADIR%%/unhardcoded/iwd2/alteras.pro
 %%DATADIR%%/unhardcoded/iwd2/alterh.pro
 %%DATADIR%%/unhardcoded/iwd2/altert.pro
+%%DATADIR%%/unhardcoded/iwd2/area_reverbs.2da
 %%DATADIR%%/unhardcoded/iwd2/area1np.pro
 %%DATADIR%%/unhardcoded/iwd2/area1npl.pro
 %%DATADIR%%/unhardcoded/iwd2/area1p.pro
@@ -1730,6 +1730,7 @@ share/applications/gemrb.desktop
 %%DATADIR%%/unhardcoded/iwd2/pwsileh.pro
 %%DATADIR%%/unhardcoded/iwd2/pwstun.pro
 %%DATADIR%%/unhardcoded/iwd2/pwstunh.pro
+%%DATADIR%%/unhardcoded/iwd2/racskill.2da
 %%DATADIR%%/unhardcoded/iwd2/raceflag.2da
 %%DATADIR%%/unhardcoded/iwd2/races.2da
 %%DATADIR%%/unhardcoded/iwd2/rad100.pro
@@ -1847,7 +1848,9 @@ share/applications/gemrb.desktop
 %%DATADIR%%/unhardcoded/iwd2/uncanny.spl
 %%DATADIR%%/unhardcoded/iwd2/uward.pro
 %%DATADIR%%/unhardcoded/iwd2/uwardh.pro
+%%DATADIR%%/unhardcoded/iwd2/vcremap.2da
 %%DATADIR%%/unhardcoded/iwd2/vspherh.pro
+%%DATADIR%%/unhardcoded/iwd2/walksnd.2da
 %%DATADIR%%/unhardcoded/iwd2/wdeath1.pro
 %%DATADIR%%/unhardcoded/iwd2/wdeath2.pro
 %%DATADIR%%/unhardcoded/iwd2/web.pro
@@ -2157,6 +2160,8 @@ share/applications/gemrb.desktop
 %%DATADIR%%/unhardcoded/pst/weapprof.2da
 %%DATADIR%%/unhardcoded/pst/web.pro
 %%DATADIR%%/unhardcoded/pst/wmmos2b.mos
+%%DATADIR%%/unhardcoded/shared/REVERB.2DA
+%%DATADIR%%/unhardcoded/shared/avatar_shadows.2da
 %%DATADIR%%/unhardcoded/shared/avprefg.2da
 %%DATADIR%%/unhardcoded/shared/avprefix.2da
 %%DATADIR%%/unhardcoded/shared/axeflm.pro
