@@ -5,7 +5,7 @@ DISTVERSION=	56.0.s20171122
 CATEGORIES=	www ipv6
 
 MAINTAINER=	jbeich@FreeBSD.org
-COMMENT=	Distilled fork of Firefox ${MOZILLA_VER:R:R}
+COMMENT=	Distilled fork of Firefox
 
 DEPRECATED=	Temporary experiment
 EXPIRATION_DATE=2017-12-12
