@@ -920,6 +920,7 @@
     SUBDIR += solarwolf
     SUBDIR += sopwith
     SUBDIR += spacejunk
+    SUBDIR += spacezero
     SUBDIR += speak
     SUBDIR += species
     SUBDIR += spellathon
