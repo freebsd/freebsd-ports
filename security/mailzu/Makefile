@@ -22,9 +22,9 @@ RUN_DEPENDS=	${LOCALBASE}/sbin/amavisd:security/amavisd-new \
 
 PEARDIR?=	${LOCALBASE}/share/pear
 PLIST_SUB=	WWWOWN="${WWWOWN}" WWWGRP="${WWWGRP}"
-SUB_LIST+=	PKGNAME=${PKGNAME}
 SUB_FILES=	pkg-message
 NO_BUILD=	yes
+NO_ARCH=	yes
 USE_PHP=	sockets
 WANT_PHP_WEB=	yes
 
@@ -51,9 +51,11 @@ do-install:
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} "config contrib img lang lib templates" \
 		${STAGEDIR}${WWWDIR} "! -name *.orig")
 	(cd ${WRKSRC} && ${COPYTREE_BIN} scripts ${STAGEDIR}${WWWDIR})
+	${CHMOD} 644 ${STAGEDIR}${WWWDIR}/config/config.php.sample
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/CHANGELOG ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/docs/* ${STAGEDIR}${DOCSDIR}
-	${CHMOD} 644 ${STAGEDIR}${WWWDIR}/config/config.php.sample
 
 .include <bsd.port.mk>
