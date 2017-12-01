@@ -42,35 +42,31 @@ CLI_PLIST_FILES=	"@mode 4555"\
 			bin/mbmon \
 			@mode\
 			man/man1/mbmon.1.gz
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MCLI}
-USE_RC_SUBR=	mbmon
-.endif
+CLI_VARS=		USE_RC_SUBR=mbmon
 
 post-patch:
 	@${REINPLACE_CMD} -e 's+/usr/share/doc/mbmon+${DOCSDIR}+' \
 		${WRKSRC}/mbmon.1
-.if ${PORT_OPTIONS:MSMB}
+
+post-patch-SMB-on:
 	@${REINPLACE_CMD} -e 's/^DEFS=/&-DSMBUS_IOCTL /' ${WRKSRC}/Makefile.in
-.endif
 
 do-install:
-.if ${PORT_OPTIONS:MX11}
+	@${DO_NADA}
+
+do-install-X11-on:
 	${INSTALL_PROGRAM} ${WRKSRC}/xmbmon \
 		${STAGEDIR}${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/xmbmon.resources \
 		${STAGEDIR}${PREFIX}/lib/X11/app-defaults/XMBmon
 	${INSTALL_MAN} ${WRKSRC}/xmbmon.1x ${STAGEDIR}${MANPREFIX}/man/man1
-.endif
-.if ${PORT_OPTIONS:MCLI}
+
+do-install-CLI-on:
 	${INSTALL_PROGRAM} ${WRKSRC}/mbmon ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/mbmon.1 ${STAGEDIR}${MANPREFIX}/man/man1
-.endif
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
+
+do-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>
