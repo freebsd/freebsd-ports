@@ -1,0 +1,86 @@
+commit b5408a6b95e1
+Author: Andrea Marchesini <amarchesini@mozilla.com>
+Date:   Wed Nov 8 06:43:50 2017 +0100
+
+    Bug 1410106 - Better check about privateBrowsing for IDB. r=asuth, a=ritu
+    
+    --HG--
+    extra : source : 8a46aeb0b562dd2ac240657a53f489046deb9acb
+---
+ dom/indexedDB/ActorsParent.cpp           | 35 ++++++++++++++++++++++----------
+ dom/indexedDB/IDBFactory.cpp             |  1 -
+ dom/indexedDB/PBackgroundIDBFactory.ipdl |  1 -
+ 3 files changed, 24 insertions(+), 13 deletions(-)
+
+diff --git dom/indexedDB/ActorsParent.cpp dom/indexedDB/ActorsParent.cpp
+index 42aa9e38d630..21232cd4c0e3 100644
+--- dom/indexedDB/ActorsParent.cpp
++++ dom/indexedDB/ActorsParent.cpp
+@@ -21047,19 +21047,32 @@ FactoryOp::CheckPermission(ContentParent* aContentParent,
+   MOZ_ASSERT(mState == State::Initial || mState == State::PermissionRetry);
+ 
+   const PrincipalInfo& principalInfo = mCommonParams.principalInfo();
+-  if (principalInfo.type() != PrincipalInfo::TSystemPrincipalInfo &&
+-      NS_WARN_IF(!Preferences::GetBool(kPrefIndexedDBEnabled, false))) {
+-    if (aContentParent) {
+-      // The DOM in the other process should have kept us from receiving any
+-      // indexedDB messages so assume that the child is misbehaving.
+-      aContentParent->KillHard("IndexedDB CheckPermission 1");
++  if (principalInfo.type() != PrincipalInfo::TSystemPrincipalInfo) {
++    if (principalInfo.type() != PrincipalInfo::TContentPrincipalInfo) {
++      if (aContentParent) {
++        // We just want ContentPrincipalInfo or SystemPrincipalInfo.
++        aContentParent->KillHard("IndexedDB CheckPermission 0");
++      }
++
++      return NS_ERROR_DOM_INDEXEDDB_NOT_ALLOWED_ERR;
+     }
+-    return NS_ERROR_DOM_INDEXEDDB_NOT_ALLOWED_ERR;
+-  }
+ 
+-  if (NS_WARN_IF(mCommonParams.privateBrowsingMode())) {
+-    // XXX This is only temporary.
+-    return NS_ERROR_DOM_INDEXEDDB_NOT_ALLOWED_ERR;
++    if (NS_WARN_IF(!Preferences::GetBool(kPrefIndexedDBEnabled, false))) {
++      if (aContentParent) {
++        // The DOM in the other process should have kept us from receiving any
++        // indexedDB messages so assume that the child is misbehaving.
++        aContentParent->KillHard("IndexedDB CheckPermission 1");
++      }
++
++      return NS_ERROR_DOM_INDEXEDDB_NOT_ALLOWED_ERR;
++    }
++
++    const ContentPrincipalInfo& contentPrincipalInfo =
++      principalInfo.get_ContentPrincipalInfo();
++    if (contentPrincipalInfo.attrs().mPrivateBrowsingId != 0) {
++      // IndexedDB is currently disabled in privateBrowsing.
++      return NS_ERROR_DOM_INDEXEDDB_NOT_ALLOWED_ERR;
++    }
+   }
+ 
+   mFileHandleDisabled = !Preferences::GetBool(kPrefFileHandleEnabled);
+diff --git dom/indexedDB/IDBFactory.cpp dom/indexedDB/IDBFactory.cpp
+index 49e60ffc8927..3e12382a932e 100644
+--- dom/indexedDB/IDBFactory.cpp
++++ dom/indexedDB/IDBFactory.cpp
+@@ -638,7 +638,6 @@ IDBFactory::OpenInternal(JSContext* aCx,
+   MOZ_ASSERT_IF(!mWindow, !mPrivateBrowsingMode);
+ 
+   CommonFactoryRequestParams commonParams;
+-  commonParams.privateBrowsingMode() = mPrivateBrowsingMode;
+ 
+   PrincipalInfo& principalInfo = commonParams.principalInfo();
+ 
+diff --git dom/indexedDB/PBackgroundIDBFactory.ipdl dom/indexedDB/PBackgroundIDBFactory.ipdl
+index e6c64dca4e09..1e81e324dc7d 100644
+--- dom/indexedDB/PBackgroundIDBFactory.ipdl
++++ dom/indexedDB/PBackgroundIDBFactory.ipdl
+@@ -22,7 +22,6 @@ struct CommonFactoryRequestParams
+ {
+   DatabaseMetadata metadata;
+   PrincipalInfo principalInfo;
+-  bool privateBrowsingMode;
+ };
+ 
+ struct OpenDatabaseRequestParams
