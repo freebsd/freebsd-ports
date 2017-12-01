@@ -3,7 +3,7 @@
 
 PORTNAME=	Slic3r
 PORTVERSION=	1.2.9
-CATEGORIES=	devel
+CATEGORIES=	cad
 
 MAINTAINER=	y@trombik.org
 COMMENT=	Open Source toolpath generator for 3D printers
