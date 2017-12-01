@@ -1,3 +1,3 @@
-TIMESTAMP = 1510146009
-SHA256 (flake8-import-order-0.15.tar.gz) = fd8608a29df93589ecbe5281981222929261c915068f2aedfb51f243f05f5466
-SIZE (flake8-import-order-0.15.tar.gz) = 16692
+TIMESTAMP = 1511782163
+SHA256 (flake8-import-order-0.16.tar.gz) = 9699e8cf71a0e082a08bc2b08782575abf08292220f1f5ddb4a8bf25674135a7
+SIZE (flake8-import-order-0.16.tar.gz) = 17845
