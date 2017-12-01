@@ -10,7 +10,8 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Generate wrappers for calling C/C++ code from other languages
 
-LICENSE=	GPLv3
+LICENSE=	GPLv3+
+LICENSE_FILE=	${WRKSRC}/LICENSE-GPL
 
 LIB_DEPENDS=	libpcre.so:devel/pcre
 
@@ -23,9 +24,8 @@ GNU_CONFIGURE=	yes
 ALL_TARGET=	# none
 TEST_TARGET=	check
 
-CONFIGURE_ARGS+=--program-suffix=${VER}
-
-CONFIGURE_ARGS+=--with-lua=${LUA_BINDIR}/lua \
+CONFIGURE_ARGS=	--program-suffix=${VER} \
+		--with-lua=${LUA_BINDIR}/lua \
 		--with-luaincl=${LUA_INCDIR} \
 		--with-lualib=${LUA_LIBDIR}
 
@@ -34,31 +34,23 @@ OCTAVE_VER_CMD=	${LOCALBASE}/bin/octave-config -v 2>/dev/null || ${TRUE}
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
 post-patch:
-	${SETENV} OCTAVE_VER=$$(${OCTAVE_VER_CMD}) \
+	@${SETENV} OCTAVE_VER=$$(${OCTAVE_VER_CMD}) \
 	${REINPLACE_CMD} -e 's|$$RUBY |${RUBY} |; \
 		s|^PHP4CONFIG=.*$$|PHP4CONFIG=php-config|; \
 		s|OCTAVEDIR=".*"|OCTAVEDIR="${LOCALBASE}/include/octave-$${OCTAVE_VER}"|; \
 		s|MZSCHEME --mute-banner|MZSCHEME|; \
 		/^MZDYNOBJ/s|`$$|\| tail -n 1`|; \
 		' ${WRKSRC}/configure
-	${REINPLACE_CMD} -e 's|malloc.h|stdlib.h|' \
+	@${REINPLACE_CMD} -e 's|malloc.h|stdlib.h|' \
 		${WRKSRC}/Lib/lua/luarun.swg
 
 post-configure:
-	${REINPLACE_CMD} -e 's#null#&|| true#' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's#null#&|| true#' ${WRKSRC}/Makefile
 
 post-install-DOCS-on:
-	${MKDIR} ${STAGEDIR}${DOCSDIR}/${PORTVERSION}
-	cd ${WRKSRC}/Doc && ${FIND} . -type d \
-		-exec ${INSTALL} -d ${STAGEDIR}${DOCSDIR}/${PORTVERSION}/{} \;
-	cd ${WRKSRC}/Doc && ${FIND} . -type f \
-		-exec ${INSTALL_DATA} {} ${STAGEDIR}${DOCSDIR}/${PORTVERSION}/{} \;
+	@cd ${WRKSRC}/Doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}/${PORTVERSION}
 
 post-install-EXAMPLES-on:
-	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/${PORTVERSION}
-	cd ${WRKSRC}/Examples && ${FIND} . -type d \
-		-exec ${INSTALL} -d ${STAGEDIR}${EXAMPLESDIR}/${PORTVERSION}/{} \;
-	cd ${WRKSRC}/Examples && ${FIND} . -type f \
-		-exec ${INSTALL_DATA} {} ${STAGEDIR}${EXAMPLESDIR}/${PORTVERSION}/{} \;
+	@cd ${WRKSRC}/Examples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}/${PORTVERSION}
 
 .include <bsd.port.mk>
