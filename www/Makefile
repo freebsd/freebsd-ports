@@ -1388,7 +1388,6 @@
     SUBDIR += p5-WebService-Technorati
     SUBDIR += p5-WebService-YouTube
     SUBDIR += p5-WordPress-XMLRPC
-    SUBDIR += p5-Yahoo-Lifestyle
     SUBDIR += p5-Yahoo-Search
     SUBDIR += p5-ZConf-RSS
     SUBDIR += p5-ZConf-RSS-GUI-GTK

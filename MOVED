@@ -9803,3 +9803,7 @@ x11-toolkits/py35-tkinter|x11-toolkits/py-tkinter@py35|2017-11-30|Moved to a fla
 x11-toolkits/py36-tkinter|x11-toolkits/py-tkinter@py36|2017-11-30|Moved to a flavored, generic, version
 security/py-rekall_gui||2017-11-30|Has expired: PoC that is no longer supported
 security/webshag||2017-12-01|Has expired: Abandoned
+www/p5-Yahoo-Lifestyle||2017-12-01|Has expired: This service has been shut down
+games/linux-rtcw|games/iortcw|2017-12-01|Has expired: Use the native and open source games/iortcw instead
+java/bootstrap-openjdk|java/bootstrap-openjdk6|2017-12-01|Has expired: superseded by java/bootstrap-openjdk[68]
+lang/gcc46|lang/gcc6|2017-12-01|Has expired: Unsupported by upstream. Use GCC 6 or newer instead.
