@@ -1,0 +1,24 @@
+From 85ebf1e6190681820634c891af624bacde49a017 Mon Sep 17 00:00:00 2001
+From: Andy Thompson <me@andytson.com>
+Date: Sun, 11 Jun 2017 09:25:12 +0100
+Subject: [PATCH] Remove unneeded by-reference on built-in fuction
+
+PHP 7.2 is complaining about this. It also doesn't appear to be
+needed, as the argument array items aren't being passed by-reference.
+---
+ Archive/Tar.php | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/Archive/Tar.php b/Archive/Tar.php
+index 202fffb..0bd1c6c 100644
+--- go-pear-bundle/Tar.php
++++ go-pear-bundle/Tar.php
+@@ -659,7 +659,7 @@ public function setAttribute()
+         }
+
+         // ----- Get the arguments
+-        $v_att_list = & func_get_args();
++        $v_att_list = func_get_args();
+
+         // ----- Read the attributes
+         $i = 0;
