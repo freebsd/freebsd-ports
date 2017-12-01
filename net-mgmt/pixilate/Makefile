@@ -28,8 +28,8 @@ OPTIONS_DEFINE=	DOCS
 post-patch:
 	@cd ${WRKSRC} && ${RM} INSTALL install-sh missing mkinstalldirs
 
-post-install:
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
+post-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
