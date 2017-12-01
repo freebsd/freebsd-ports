@@ -1,6 +1,0 @@
-Yahoo::Lifestyle is a simple interface for Yahoo! Taiwan Lifestyle
-open APIs. And you will need the Yahoo::BBAuth for some authentication
-APIs. Before you use that, you have to register a appid and secret
-for APIs request.
-
-WWW: http://search.cpan.org/dist/Yahoo-Lifestyle/
