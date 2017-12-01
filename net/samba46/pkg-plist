@@ -125,12 +125,6 @@ include/samba4/util/tevent_werror.h
 include/samba4/util/time.h
 include/samba4/util_ldb.h
 include/samba4/wbclient.h
-@dir include/samba4/util
-@dir include/samba4/samba
-@dir include/samba4/ndr
-@dir include/samba4/gen_ndr
-@dir include/samba4/core
-@dir include/samba4
 lib/samba4/libdcerpc-binding.so
 lib/samba4/libdcerpc-binding.so.0
 lib/samba4/libdcerpc-samr.so
@@ -614,16 +608,6 @@ lib/shared-modules/vfs/zfsacl.so
 %%PYTHON_SITELIBDIR%%/samba/web_server/__init__.py
 %%PYTHON_SITELIBDIR%%/samba/xattr.py
 @unexec find %D/%%PYTHON_SITELIBDIR%%/samba -name '*.py[co]' -delete >/dev/null 2>&1
-@dir %%PYTHON_SITELIBDIR%%/samba/web_server
-@dir %%PYTHON_SITELIBDIR%%/samba/tests/samba_tool
-@dir %%PYTHON_SITELIBDIR%%/samba/tests/dcerpc
-@dir %%PYTHON_SITELIBDIR%%/samba/tests/blackbox
-@dir %%PYTHON_SITELIBDIR%%/samba/tests
-@dir %%PYTHON_SITELIBDIR%%/samba/samba3
-@dir %%PYTHON_SITELIBDIR%%/samba/provision
-@dir %%PYTHON_SITELIBDIR%%/samba/netcmd
-@dir %%PYTHON_SITELIBDIR%%/samba/dcerpc
-@dir %%PYTHON_SITELIBDIR%%/samba
 %%DATADIR%%/perl5/Parse/Pidl.pm
 %%DATADIR%%/perl5/Parse/Pidl/CUtil.pm
 %%DATADIR%%/perl5/Parse/Pidl/Compat.pm
@@ -649,14 +633,6 @@ lib/shared-modules/vfs/zfsacl.so
 %%DATADIR%%/perl5/Parse/Pidl/Util.pm
 %%DATADIR%%/perl5/Parse/Pidl/Wireshark/Conformance.pm
 %%DATADIR%%/perl5/Parse/Pidl/Wireshark/NDR.pm
-@dir %%DATADIR%%/perl5/Parse/Pidl/Wireshark
-@dir %%DATADIR%%/perl5/Parse/Pidl/Samba4/NDR
-@dir %%DATADIR%%/perl5/Parse/Pidl/Samba4/COM
-@dir %%DATADIR%%/perl5/Parse/Pidl/Samba4
-@dir %%DATADIR%%/perl5/Parse/Pidl/Samba3
-@dir %%DATADIR%%/perl5/Parse/Pidl
-@dir %%DATADIR%%/perl5/Parse
-@dir %%DATADIR%%/perl5
 %%AD_DC%%%%DATADIR%%/setup/DB_CONFIG
 %%AD_DC%%%%DATADIR%%/setup/ad-schema/MS-AD_Schema_2K8_Attributes.txt
 %%AD_DC%%%%DATADIR%%/setup/ad-schema/MS-AD_Schema_2K8_Classes.txt
@@ -745,10 +721,6 @@ lib/shared-modules/vfs/zfsacl.so
 %%AD_DC%%%%DATADIR%%/setup/slapd.conf
 %%AD_DC%%%%DATADIR%%/setup/spn_update_list
 %%AD_DC%%%%DATADIR%%/setup/ypServ30.ldif
-%%AD_DC%%@dir %%DATADIR%%/setup/display-specifiers
-%%AD_DC%%@dir %%DATADIR%%/setup/ad-schema
-%%AD_DC%%@dir %%DATADIR%%/setup
-%%AD_DC%%@dir %%DATADIR%%
 man/man1/dbwrap_tool.1.gz
 man/man1/findsmb.1.gz
 man/man1/gentest.1.gz
