@@ -3,7 +3,7 @@
 
 PORTNAME=	nginx
 PORTVERSION=	1.12.2
-PORTREVISION?=	1
+PORTREVISION?=	2
 PORTEPOCH=	2
 CATEGORIES=	www
 MASTER_SITES=	http://nginx.org/download/
@@ -1141,11 +1141,12 @@ CONFIGURE_ARGS+=--add-module=${WRKSRC_arrayvar}
 .endif
 
 .if ${PORT_OPTIONS:MBROTLI}
-NGINX_BROTLI_VERSION=	12529813
+NGINX_BROTLI_VERSION=	 990d925
 LIB_DEPENDS+=	libbrotlicommon.so:archivers/brotli
-GH_ACCOUNT+=	google:brotli
+GH_ACCOUNT+=	eustas:brotli
 GH_PROJECT+=	ngx_brotli:brotli
 GH_TAGNAME+=	${NGINX_BROTLI_VERSION}:brotli
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-brotli_config
 .if ${PORT_OPTIONS:MDSO}
 CONFIGURE_ARGS+=--add-dynamic-module=${WRKSRC_brotli}
 .else
@@ -1268,6 +1269,11 @@ post-patch:
 	@${REINPLACE_CMD} \
 		's!%%PREFIX%%!${LOCALBASE}!g' \
 		${WRKSRC_nginx_tarantool}/config
+.endif
+.if ${PORT_OPTIONS:MBROTLI}
+	@${REINPLACE_CMD} -E \
+		's!^brotli=.*!brotli="${LOCALBASE}"!' \
+		${WRKSRC_brotli}/config
 .endif
 
 pre-configure:
