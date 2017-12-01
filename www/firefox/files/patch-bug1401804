@@ -29,3 +29,30 @@ index 5a5dfbe9bed0..0c42d16e7117 100644
  }
  
  bool
+commit 3f1085447fa0
+Author: Jon Coppeard <jcoppeard@mozilla.com>
+Date:   Wed Sep 27 18:02:12 2017 +0100
+
+    Bug 1401804 - Expose wrappee if we create a new wrapper. r=sfink, a=sledru
+    
+    --HG--
+    extra : source : 60fdac23fbc5c4793c276107ce2a1c45759c2a2e
+---
+ js/src/jscompartment.cpp | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+diff --git js/src/jscompartment.cpp js/src/jscompartment.cpp
+index 7a65c69b55e0..ed024724711f 100644
+--- js/src/jscompartment.cpp
++++ js/src/jscompartment.cpp
+@@ -442,6 +442,10 @@ JSCompartment::getOrCreateWrapper(JSContext* cx, HandleObject existing, MutableH
+         return true;
+     }
+ 
++    // Ensure that the wrappee is exposed in case we are creating a new wrapper
++    // for a gray object.
++    ExposeObjectToActiveJS(obj);
++
+     // Create a new wrapper for the object.
+     auto wrap = cx->runtime()->wrapObjectCallbacks->wrap;
+     RootedObject wrapper(cx, wrap(cx, existing, obj));
