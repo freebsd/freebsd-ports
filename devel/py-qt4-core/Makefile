@@ -29,6 +29,10 @@ DEBUG_CONFIGURE_ON=	--debug --trace
 
 .include <bsd.port.pre.mk>
 
+.if ${PYTHON_MAJOR_VER} == "3"
+BROKEN=		fails to configure
+.endif
+
 # Bug 180467: We need to remove the port_v${VERSION} directory that does not
 # correspond to the Python version being used to avoid failures in the
 # bytecompilation calls in post-install.
