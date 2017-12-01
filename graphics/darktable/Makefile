@@ -3,7 +3,7 @@
 
 PORTNAME=	darktable
 PORTVERSION=	2.2.5
-PORTREVISION=	2
+PORTREVISION=	4
 CATEGORIES=	graphics
 MASTER_SITES=	https://github.com/darktable-org/${PORTNAME}/releases/download/release-${PORTVERSION:C/\.rc/rc/}/
 

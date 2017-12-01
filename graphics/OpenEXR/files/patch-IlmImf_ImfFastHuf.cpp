@@ -1,4 +1,4 @@
---- IlmImf/ImfFastHuf.cpp.orig	2014-08-10 04:23:56 UTC
+--- IlmImf/ImfFastHuf.cpp.orig	2017-11-17 23:00:24 UTC
 +++ IlmImf/ImfFastHuf.cpp
 @@ -107,7 +107,7 @@ FastHufDecoder::FastHufDecoder
      for (int i = 0; i <= MAX_CODE_LEN; ++i)

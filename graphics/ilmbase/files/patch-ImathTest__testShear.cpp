@@ -1,6 +1,6 @@
---- ./ImathTest/testShear.cpp.orig	2013-06-18 21:51:38.000000000 +0200
-+++ ./ImathTest/testShear.cpp	2014-01-29 13:16:44.000000000 +0100
-@@ -54,7 +54,6 @@
+--- ImathTest/testShear.cpp.orig	2017-11-17 23:00:23 UTC
++++ ImathTest/testShear.cpp
+@@ -54,7 +54,6 @@ testShear ()
  
      const float         epsilon = IMATH_INTERNAL_NAMESPACE::limits< float >::epsilon();
  
