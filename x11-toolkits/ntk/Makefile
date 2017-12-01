@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
-		libpng16.so:graphics/png
+		libpng.so:graphics/png
 
 USES=		jpeg localbase:ldflags pkgconfig waf
 USE_GITHUB=	yes

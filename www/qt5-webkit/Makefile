@@ -16,7 +16,7 @@ LIB_DEPENDS=		libfontconfig.so:x11-fonts/fontconfig \
 			libgstbase-1.0.so:multimedia/gstreamer1 \
 			libhyphen.so:textproc/hyphen \
 			libicui18n.so:devel/icu \
-			libpng16.so:graphics/png \
+			libpng.so:graphics/png \
 			libwebp.so:graphics/webp
 
 USES=			bison cmake:outsource gperf jpeg pathfix perl5 pkgconfig \

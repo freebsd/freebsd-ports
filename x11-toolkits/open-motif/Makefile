@@ -21,7 +21,7 @@ USE_XORG=	x11 xaw xbitmaps xext xft xt xmu xrender sm ice
 LIB_DEPENDS=	libXp.so:x11/libXp \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
-		libpng16.so:graphics/png
+		libpng.so:graphics/png
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CPPFLAGS+=	-DCSRG_BASED -DXUSE_MTSAFE_API -DXNO_MTSAFE_PWDAPI -I${PREFIX}/include

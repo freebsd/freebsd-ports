@@ -11,7 +11,7 @@ COMMENT=	Tools for tracing OpenGL and other graphics APIs
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libpng16.so:graphics/png
+LIB_DEPENDS=	libpng.so:graphics/png
 
 USES=		cmake:outsource compiler:c++11-lang pkgconfig python:2.7 shebangfix
 USE_GITHUB=	yes

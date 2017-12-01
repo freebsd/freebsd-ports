@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libaudiofile.so:audio/libaudiofile \
 		libgcrypt.so:security/libgcrypt \
-		libpng16.so:graphics/png \
+		libpng.so:graphics/png \
 		libspectrum.so:emulators/libspectrum
 
 USES=		gettext iconv jpeg pkgconfig

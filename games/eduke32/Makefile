@@ -26,7 +26,7 @@ LIB_DEPENDS=	libFLAC.so:audio/flac \
 		libogg.so:audio/libogg \
 		libvorbis.so:audio/libvorbis \
 		libvpx.so:multimedia/libvpx \
-		libpng16.so:graphics/png
+		libpng.so:graphics/png
 
 USES=		gmake pkgconfig tar:xz
 USE_GL=		gl glu

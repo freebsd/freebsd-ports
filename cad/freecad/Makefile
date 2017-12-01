@@ -18,7 +18,7 @@ LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libboost_python.so:devel/boost-python-libs \
 		libpyside-python2.7.so:devel/pyside \
 		libCoin.so:graphics/Coin \
-		libpng16.so:graphics/png \
+		libpng.so:graphics/png \
 		libtiff.so:graphics/tiff \
 		libvtkFiltersTexture-6.2.so:math/vtk6 \
 		libTKernel.so:cad/opencascade \
