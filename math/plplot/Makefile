@@ -50,7 +50,7 @@ FORTRAN_CMAKE_BOOL=	ENABLE_f95
 FORTRAN_CONFIGURE_ENV=	CMAKE_Fortran_COMPILER="${FC}"
 
 GD_LIB_DEPENDS=		libgd.so:graphics/gd \
-			libpng16.so:graphics/png
+			libpng.so:graphics/png
 GD_USES=		jpeg
 GD_CMAKE_BOOL=		PLD_png
 

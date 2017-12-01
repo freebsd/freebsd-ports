@@ -15,7 +15,7 @@ LICENSE=	AGPLv3
 
 BUILD_DEPENDS=	jam:devel/jam
 LIB_DEPENDS=	libtiff.so:graphics/tiff \
-		libpng16.so:graphics/png
+		libpng.so:graphics/png
 
 WRKSRC=		${WRKDIR}/Argyll_V${PORTVERSION}
 

@@ -32,7 +32,7 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libcharls.so:devel/dcmtk \
 		libdcmjpls.so:devel/dcmtk \
 		libsqlite3.so:databases/sqlite3 \
-		libpng16.so:graphics/png \
+		libpng.so:graphics/png \
 		libgtest.so:devel/googletest \
 		libpugixml.so:textproc/pugixml
 

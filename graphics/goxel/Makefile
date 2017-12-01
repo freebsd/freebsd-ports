@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libargp.so:devel/argp-standalone \
 		libglfw.so:graphics/glfw \
-		libpng16.so:graphics/png
+		libpng.so:graphics/png
 
 USES=		compiler:c++11-lang pkgconfig scons
 USE_GITHUB=	yes
