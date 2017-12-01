@@ -7,12 +7,14 @@ DISTVERSION=	3.2.8
 CATEGORIES=	databases net
 PKGNAMESUFFIX=	32
 
-MAINTAINER=	galu@packetdam.com	
+MAINTAINER=	galu@packetdam.com
 COMMENT=	ArangoDB is a distributed NoSQL database with multiple data models
 
 LICENSE=	APACHE20
 
-USES=		gmake ssl cmake:outsource,noninja python:2.7
+ONLY_FOR_ARCHS=	amd64
+ONLY_FOR_ARCHS_REASON=	"Only builds on amd64"
+USES=		gmake ssl cmake:outsource,noninja python:2.7 compiler
 USE_GITHUB=	yes
 
 CMAKE_ARGS=	-DUSE_JEMALLOC:BOOL=off \
@@ -22,6 +24,15 @@ CMAKE_ARGS=	-DUSE_JEMALLOC:BOOL=off \
 USERS=		arangodb
 GROUPS=		arangodb
 USE_RC_SUBR=	arangod
+
+.include <bsd.port.pre.mk>
+
+.if ${COMPILER_TYPE} == clang && ${COMPILER_VERSION} < 40
+BUILD_DEPENDS+=	${LOCALBASE}/bin/clang40:devel/llvm40
+CPP=    ${LOCALBASE}/bin/clang-cpp40
+CC= ${LOCALBASE}/bin/clang40
+CXX=    ${LOCALBASE}/bin/clang++40
+.endif
 
 post-install:
 .for section in 1 8
@@ -38,4 +49,5 @@ post-install:
 	${RMDIR} ${STAGEDIR}${PREFIX}/var/log/arangodb
 	${RMDIR} ${STAGEDIR}${PREFIX}/var/log
 	${RMDIR} ${STAGEDIR}${PREFIX}/var
-.include <bsd.port.mk>
+
+.include <bsd.port.post.mk>
