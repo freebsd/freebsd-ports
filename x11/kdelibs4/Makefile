@@ -9,7 +9,7 @@ CATEGORIES=	x11 kde kde-applications
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Base set of libraries needed by KDE programs
 
-LIB_DEPENDS=	libImath-2_2.so.12:graphics/ilmbase \
+LIB_DEPENDS=	libImath-2_2.so:graphics/ilmbase \
 		libjasper.so:graphics/jasper \
 		libpcre.so:devel/pcre \
 		libenchant.so:textproc/enchant \
