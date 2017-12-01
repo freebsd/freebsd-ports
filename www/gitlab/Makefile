@@ -3,6 +3,7 @@
 
 PORTNAME=	gitlab
 PORTVERSION=	10.1.4
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www devel
 
@@ -222,7 +223,6 @@ post-patch-MYSQL-off:
 	${REINPLACE_CMD} -e "/gem 'peek-mysql2'/d" ${WRKSRC}/Gemfile
 
 post-patch-PGSQL-on:
-	${REINPLACE_CMD} -e "/gem 'pg'/d" ${WRKSRC}/Gemfile
 	${CP} ${WRKSRC}/config/database.yml.postgresql ${WRKSRC}/config/database.yml.sample
 
 post-patch-PGSQL-off:
