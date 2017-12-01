@@ -26,7 +26,7 @@ RUN_DEPENDS=	\
 
 NO_ARCH=	yes
 USES=		python
-USE_PYTHON=	distutils
+USE_PYTHON=	distutils py3kplist
 
 GRAPHITEAPI_APP=	graphiteapi
 
