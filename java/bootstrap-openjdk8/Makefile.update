@@ -1,6 +1,6 @@
 # $FreeBSD$
 
-JDK_ARCH?=	${ARCH:C/armv.*/arm/}
+JDK_ARCH?=	${ARCH:C/armv.*/arm/:S/powerpc/ppc/}
 JDK_PORT?=	openjdk8
 JDK_ROOT?=	bootstrap-${JDK_PORT}
 
@@ -41,7 +41,7 @@ BUILD_ENV+=	java_openjdk8_UNSET="ALSA X11"
 JDK_BUILD_ARGS=	${BUILD_ARGS}
 
 .if !defined(TARGET_OS)
-.if ${ARCH} == aarch64 || ${ARCH:Marmv*}
+.if ${ARCH} == aarch64 || ${ARCH:Marmv*} || ${ARCH:Mpowerpc*}
 TARGET_OS=	11
 .else
 TARGET_OS=	10
