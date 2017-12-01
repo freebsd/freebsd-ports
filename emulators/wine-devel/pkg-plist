@@ -629,6 +629,7 @@ include/wine/windows/patchapi.h
 %%STAGING%%include/wine/windows/pathcch.h
 include/wine/windows/pdh.h
 include/wine/windows/pdhmsg.h
+include/wine/windows/perflib.h
 include/wine/windows/perhist.h
 include/wine/windows/perhist.idl
 include/wine/windows/physicalmonitorenumerationapi.h
@@ -667,6 +668,8 @@ include/wine/windows/rmxfguid.h
 include/wine/windows/rmxftmpl.h
 include/wine/windows/rmxftmpl.x
 include/wine/windows/roapi.h
+include/wine/windows/roparameterizediid.h
+include/wine/windows/roparameterizediid.idl
 include/wine/windows/row.idl
 include/wine/windows/rowchg.idl
 include/wine/windows/rowpos.idl
