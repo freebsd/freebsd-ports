@@ -9802,3 +9802,4 @@ x11-toolkits/py34-tkinter|x11-toolkits/py-tkinter@py34|2017-11-30|Moved to a fla
 x11-toolkits/py35-tkinter|x11-toolkits/py-tkinter@py35|2017-11-30|Moved to a flavored, generic, version
 x11-toolkits/py36-tkinter|x11-toolkits/py-tkinter@py36|2017-11-30|Moved to a flavored, generic, version
 security/py-rekall_gui||2017-11-30|Has expired: PoC that is no longer supported
+security/webshag||2017-12-01|Has expired: Abandoned
