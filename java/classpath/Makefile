@@ -3,7 +3,7 @@
 
 PORTNAME=	classpath
 PORTVERSION=	0.99
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	java devel
 MASTER_SITES=	GNU \
 		SAVANNAH
@@ -122,7 +122,7 @@ PLIST_SUB+=		QT4="@comment "
 .endif
 
 .if !defined(WITH_GCJ) && (${ARCH} == "amd64" || ${ARCH} == "i386")
-BUILD_DEPENDS+=		${LOCALBASE}/bootstrap-openjdk/bin/javac:java/bootstrap-openjdk
+BUILD_DEPENDS+=		${LOCALBASE}/bootstrap-openjdk/bin/javac:java/bootstrap-openjdk6
 JAR?=			${LOCALBASE}/bootstrap-openjdk/bin/jar
 JAVA?=			${LOCALBASE}/bootstrap-openjdk/bin/java
 JAVAC?=			${LOCALBASE}/bootstrap-openjdk/bin/javac
