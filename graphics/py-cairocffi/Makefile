@@ -13,15 +13,11 @@ COMMENT=	Cairo cffi-based cairo bindings for Python
 
 LICENSE=	BSD3CLAUSE
 
-py34_BROKEN=	does not package
-py35_BROKEN=	does not package
-py36_BROKEN=	does not package
-
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cffi>0:devel/py-cffi@${FLAVOR}
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 USES=		python
-USE_PYTHON=	autoplist distutils cffi
+USE_PYTHON=	distutils cffi py3kplist
 USE_GNOME=	cairo
 
 .include <bsd.port.mk>
