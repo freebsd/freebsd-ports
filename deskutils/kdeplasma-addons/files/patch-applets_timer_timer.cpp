@@ -1,4 +1,4 @@
-Fix ambiguous call on armv6.
+Fix ambiguous call on armv6/armv7.
 
 --- applets/timer/timer.cpp.orig	2017-01-12 05:36:14 UTC
 +++ applets/timer/timer.cpp
