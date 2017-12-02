@@ -1,0 +1,6 @@
+MACS is a tool for chromatin immunoprecipitation (ChIP) sequence analysis.
+MACS empirically models the length of the sequenced ChIP fragments, which
+tend to be shorter than sonication or library construction size estimates,
+and uses it to improve the spatial resolution of predicted binding sites.
+
+WWW: https://github.com/taoliu/MACS
