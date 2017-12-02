@@ -25,7 +25,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>=0:databases/py-sqlite3@${FLAVOR} \
 
 OPTIONS_DEFINE=		IPYTHON
 IPYTHON_DESC=		Interactive shell support
-IPYTHON_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ipython>0:devel/ipython
+IPYTHON_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ipython>0:devel/ipython@${FLAVOR}
 
 USES=		gettext python:-2.7
 USE_GNOME=	intltool pygnome2 pygtk2
