@@ -19,7 +19,7 @@ RUN_DEPENDS=	isympy:math/py-sympy@${FLAVOR} \
 		${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}pyembree>0:graphics/py-pyembree@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}matplotlib>=1.5.3:math/py-matplotlib@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}ipython>=1.0:devel/ipython
+		${PYTHON_PKGNAMEPREFIX}ipython>=1.0:devel/ipython@${FLAVOR}
 LIB_DEPENDS=	libembree.so:graphics/embree \
 		libomp.so:devel/openmp
 
