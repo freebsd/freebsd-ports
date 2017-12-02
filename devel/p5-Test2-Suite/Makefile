@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Test2-Suite
-PORTVERSION=	0.000092
+PORTVERSION=	0.000094
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:EXODIST
@@ -20,7 +20,7 @@ BUILD_DEPENDS=	p5-Importer>=0.024:devel/p5-Importer \
 		p5-Scope-Guard>=0:devel/p5-Scope-Guard \
 		p5-Sub-Info>=0.002:devel/p5-Sub-Info \
 		p5-Term-Table>=0.002:devel/p5-Term-Table \
-		p5-Test-Simple>=1.302111:devel/p5-Test-Simple
+		p5-Test-Simple>=1.302119:devel/p5-Test-Simple
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes
