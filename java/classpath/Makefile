@@ -122,10 +122,10 @@ PLIST_SUB+=		QT4="@comment "
 .endif
 
 .if !defined(WITH_GCJ) && (${ARCH} == "amd64" || ${ARCH} == "i386")
-BUILD_DEPENDS+=		${LOCALBASE}/bootstrap-openjdk/bin/javac:java/bootstrap-openjdk6
-JAR?=			${LOCALBASE}/bootstrap-openjdk/bin/jar
-JAVA?=			${LOCALBASE}/bootstrap-openjdk/bin/java
-JAVAC?=			${LOCALBASE}/bootstrap-openjdk/bin/javac
+BUILD_DEPENDS+=		${LOCALBASE}/bootstrap-openjdk6/bin/javac:java/bootstrap-openjdk6
+JAR?=			${LOCALBASE}/bootstrap-openjdk6/bin/jar
+JAVA?=			${LOCALBASE}/bootstrap-openjdk6/bin/java
+JAVAC?=			${LOCALBASE}/bootstrap-openjdk6/bin/javac
 .else
 USE_BINUTILS=		yes
 USE_GCC=		yes
