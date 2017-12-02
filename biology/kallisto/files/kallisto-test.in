@@ -1,0 +1,48 @@
+#!/bin/sh
+
+##########################################################################
+#   Script description:
+#       
+#   Arguments:
+#       
+#   Returns:
+#       
+#   History:
+#   Date        Name        Modification
+#   2016-03-21  Charlie &   Begin
+##########################################################################
+
+usage()
+{
+    printf "Usage: $0 test-directory\n"
+    exit 1
+}
+
+
+##########################################################################
+#   Main
+##########################################################################
+
+if [ $# != 1 ]; then
+    usage
+fi
+
+dir="$1"
+if [ -e "$dir" ]; then
+    printf "$dir already exists.  Remove it first or choose a different name.\n"
+    exit 1
+fi
+
+cp -iR %%EXAMPLESDIR%% "$dir"
+cd "$dir"
+kallisto index -i transcripts.idx transcripts.fasta.gz
+kallisto quant -i transcripts.idx -o output -b 100 reads_1.fastq.gz reads_2.fastq.gz
+ls -l output
+more output/abundance.tsv
+
+cat << EOM
+
+See https://pachterlab.github.io/kallisto/starting.html for instructions
+on interpreting the output above.
+
+EOM

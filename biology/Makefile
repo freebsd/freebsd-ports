@@ -41,6 +41,7 @@
     SUBDIR += iqtree
     SUBDIR += jalview
     SUBDIR += jellyfish
+    SUBDIR += kallisto
     SUBDIR += lagan
     SUBDIR += lamarc
     SUBDIR += libgtextutils
