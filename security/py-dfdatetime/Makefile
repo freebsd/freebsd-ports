@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dfdatetime
-PORTVERSION=	20170719
+PORTVERSION=	20171109
 CATEGORIES=	security devel python
 MASTER_SITES=	CHEESESHOP \
 		https://github.com/log2timeline/dfdatetime/releases/download/${PORTVERSION}/
@@ -21,7 +21,6 @@ USES=		python
 USE_PYTHON=	distutils autoplist
 
 do-test:
-	@${TOUCH} ${TEST_WRKSRC}/utils/__init__.py
 	@(cd ${TEST_WRKSRC} && ${SETENV} ${TEST_ENV} ${PYTHON_CMD} run_tests.py)
 
 .include <bsd.port.mk>
