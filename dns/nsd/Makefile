@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nsd
-PORTVERSION=	4.1.17
+PORTVERSION=	4.1.18
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://www.nlnetlabs.nl/downloads/nsd/	\
 		ftp://ftp.rhnet.is/pub/nsd/
@@ -51,7 +51,7 @@ PORTDOCS=	CREDITS ChangeLog LICENSE NSD-DATABASE NSD-DIFFFILE \
 
 OPTIONS_DEFINE=		ROOT_SERVER LARGEFILE IPV6 BIND8_STATS CHECKING \
 		MINRESPSIZE NSEC3 MMAP DOCS RRL ZONE_STATS MUNIN_PLUGIN \
-		RADIXTREE
+		RADIXTREE PACKED
 OPTIONS_DEFAULT=	LARGEFILE NSEC3 MINRESPSIZE RRL RADIXTREE
 OPTIONS_SUB=	yes
 
@@ -68,6 +68,7 @@ RRL_DESC=		Response Rate Limiting
 ZONE_STATS_DESC=	Separate statistics for each zone
 MUNIN_PLUGIN_DESC=	Install Munin plugin (requires BIND8_STATS)
 RADIXTREE_DESC=		Enabled: more (15%) memory use but less CPU cycles
+PACKED_DESC=		Enable packed structures for reduced memory use
 
 LIB_DEPENDS+=	libevent.so:devel/libevent
 
@@ -82,6 +83,7 @@ RRL_CONFIGURE_ENABLE=		ratelimit
 ZONE_STATS_CONFIGURE_ENABLE=	zone-stats
 IPV6_CONFIGURE_ENABLE=		ipv6
 RADIXTREE_CONFIGURE_ENABLE=	radix-tree
+PACKED_CONFIGURE_ENABLE=	packed
 
 post-build-MUNIN_PLUGIN-on:
 	${REINPLACE_CMD} \
