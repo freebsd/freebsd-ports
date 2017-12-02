@@ -33,9 +33,9 @@ JDK_DESC=	Build with native JDK
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MJDK}
-BUILD_DEPENDS+=	${LOCALBASE}/bootstrap-openjdk/bin/javac:java/bootstrap-openjdk6
-JAR=		${LOCALBASE}/bootstrap-openjdk/bin/jar
-JAVAC=		${LOCALBASE}/bootstrap-openjdk/bin/javac
+BUILD_DEPENDS+=	${LOCALBASE}/bootstrap-openjdk6/bin/javac:java/bootstrap-openjdk6
+JAR=		${LOCALBASE}/bootstrap-openjdk6/bin/jar
+JAVAC=		${LOCALBASE}/bootstrap-openjdk6/bin/javac
 .else
 .if defined(WITH_GCC)
 GCC_SUFX=	${WITH_GCC:S/.//}
