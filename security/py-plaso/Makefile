@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	plaso
-PORTVERSION=	20170930
-PORTREVISION=	1
+PORTVERSION=	20171118
 CATEGORIES=	security python
 MASTER_SITES=	https://github.com/log2timeline/plaso/releases/download/${PORTVERSION}/ \
 		LOCAL/antoine
@@ -15,10 +14,7 @@ COMMENT=	Automatic creation of a super timeline
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	hachoir-core>=0:devel/hachoir-core \
-		hachoir-metadata>=0:sysutils/hachoir-metadata \
-		hachoir-parser>=0:devel/hachoir-parser \
-		libesedb>=e:devel/libesedb \
+RUN_DEPENDS=	libesedb>=e:devel/libesedb \
 		libevt>=a:devel/libevt \
 		libevtx>=a:devel/libevtx \
 		libfwsi>=e:devel/libfwsi \
@@ -53,12 +49,17 @@ NO_ARCH=	yes
 USES=		python:2.7
 USE_LOCALE=	en_US.UTF-8
 USE_PYTHON=	distutils autoplist
-TEST_ENV=	${MAKE_ENV} PYTHONHTTPSVERIFY=0
 
 .include <bsd.port.pre.mk>
 
-.if ${PYTHON_REL} < 3300
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pyliblzma>=0:archivers/py-pyliblzma@${FLAVOR}
+.if ${PYTHON_REL} < 3000
+RUN_DEPENDS+=	hachoir-core>=0:devel/hachoir-core \
+		hachoir-metadata>=0:sysutils/hachoir-metadata \
+		hachoir-parser>=0:devel/hachoir-parser \
+		${PYTHON_PKGNAMEPREFIX}pyliblzma>=0:archivers/py-pyliblzma@${FLAVOR}
+TEST_ENV=	${MAKE_ENV} PYTHONHTTPSVERIFY=0
+.else
+TEST_DEPENDS+=	ca_root_nss>=0:security/ca_root_nss
 .endif
 
 do-test:
