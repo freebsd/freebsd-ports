@@ -65,6 +65,7 @@
     SUBDIR += R-cran-tidyr
     SUBDIR += R-cran-tidyselect
     SUBDIR += R-cran-withr
+    SUBDIR += RStudio
     SUBDIR += SpecTcl
     SUBDIR += aap
     SUBDIR += aarch64-binutils
