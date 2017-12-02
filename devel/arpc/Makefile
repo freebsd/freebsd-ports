@@ -22,6 +22,7 @@ USES=		cmake localbase:ldflags python:3.4+ tar:xz
 USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	NuxiNL
+BINARY_ALIAS=	python3=${PYTHON_VERSION}
 
 PLIST_FILES=	bin/aprotoc include/arpc++/arpc++.h \
 		lib/libarpc.so lib/libarpc.so.1
