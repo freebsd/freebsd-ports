@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	wordpress
-PORTVERSION=	4.9
+DISTVERSION=	4.9.1
 DISTVERSIONSUFFIX=	-fr_FR
 PORTEPOCH=	1
 CATEGORIES=	french www
@@ -21,8 +21,8 @@ USES=		php:web cpe
 USE_PHP=	curl gd hash mysqli pcre tokenizer xml zip zlib ftp
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-.if ${PORTVERSION:N*.*.*}
-CPE_VERSION=	${PORTVERSION}.0
+.if ${DISTVERSION:N*.*.*}
+CPE_VERSION=	${DISTVERSION}.0
 .endif
 
 SUB_FILES=	pkg-message
