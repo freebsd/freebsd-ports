@@ -3,7 +3,7 @@
 
 PORTNAME=	asciidoc
 PORTVERSION=	8.6.9
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	textproc
 MASTER_SITES=	SF
 
@@ -19,7 +19,7 @@ RUN_DEPENDS=	docbook-xsl>=0:textproc/docbook-xsl
 GNU_CONFIGURE=	yes
 NO_ARCH=	yes
 USE_GNOME=	libxml2:run libxslt:run
-USES=		gmake gnome python:2 shebangfix
+USES=		gmake gnome python:2.7 shebangfix
 
 SHEBANG_FILES=	a2x.py \
 		asciidoc.py \
