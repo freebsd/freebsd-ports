@@ -3,6 +3,7 @@
 
 PORTNAME=	npm
 PORTVERSION=	2.15.12
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	LOCAL/sunpoet
 PKGNAMESUFFIX=	2
@@ -31,7 +32,7 @@ MANPREFIX=	${PREFIX}/lib/node_modules/npm
 NO_ARCH=	yes
 NO_BUILD=	yes
 REINPLACE_ARGS=	-i ''
-USES=		cpe python:2 shebangfix tar:xz
+USES=		cpe python:2.7 shebangfix tar:xz
 
 CPE_VENDOR=	npmjs
 CPE_PRODUCT=	node_packaged_modules
