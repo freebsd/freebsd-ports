@@ -18,6 +18,9 @@ RUN_DEPENDS=	rubygem-fog-core>=1.38:devel/rubygem-fog-core \
 		rubygem-fog-xml>=0.1:textproc/rubygem-fog-xml \
 		rubygem-ipaddress>=0.8:net/rubygem-ipaddress
 
+DEPRECATED=	Use net/rubygem-fog-aws or net/rubygem-fog-aws1 instead
+EXPIRATION_DATE=2017-12-31
+
 PORTSCOUT=	limit:^0\.
 
 NO_ARCH=	yes
