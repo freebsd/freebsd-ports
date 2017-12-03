@@ -3,7 +3,7 @@
 
 PORTNAME=		krb5-appl
 PORTVERSION=		1.0.3
-PORTREVISION=		3
+PORTREVISION=		4
 CATEGORIES=		security
 MASTER_SITES=		http://web.mit.edu/kerberos/dist/${PORTNAME}/${PORTVERSION:C/^[0-9]*\.[0-9]*/&X/:C/X\.[0-9]*$//:C/X//}/
 DISTNAME=		${PORTNAME}-${PORTVERSION}-signed
@@ -34,7 +34,7 @@ OPTIONS_DEFINE=	KRB5_RENAME_FTP KRB5_RENAME_TELNET KRB5_RENAME_RLOGIN KRB5_RENAM
 OPTIONS_DEFAULT=	KRB5_PORT KRB5_RENAME_FTP KRB5_RENAME_TELNET \
 			KRB5_RENAME_RLOGIN KRB5_RENAME_RSH KRB5_RENAME_RCP
 OPTIONS_SINGLE=		KRB5_VERSION
-OPTIONS_SINGLE_KRB5_VERSION=	KRB5_PORT KRB5_113_PORT \
+OPTIONS_SINGLE_KRB5_VERSION=	KRB5_PORT \
 			KRB5_114_PORT KRB5_115_PORT
 KRB5_RENAME_FTP_DESC=		Rename ftp to kftp
 KRB5_RENAME_TELNET_DESC=	Rename telnet to ktelnet
@@ -42,7 +42,6 @@ KRB5_RENAME_RLOGIN_DESC=	Rename rlogin to krlogin
 KRB5_RENAME_RSH_DESC=		Rename rsh to krsh
 KRB5_RENAME_RCP_DESC=		Rename rcp to krcp
 KRB5_PORT_DESC=			Depend on security/krb5
-KRB5_113_PORT_DESC=		Depend on security/krb5-113
 KRB5_114_PORT_DESC=		Depend on security/krb5-114
 KRB5_115_PORT_DESC=		Depend on security/krb5-115
 
@@ -50,10 +49,8 @@ KRB5_115_PORT_DESC=		Depend on security/krb5-115
 
 KRB5_PORT_LIB_DEPENDS=		libkrb5support.so:security/krb5
 KRB5_PORT_RUN_DEPENDS=		kinit:security/krb5
-KRB5_113_PORT_LIB_DEPENDS=		libkrb5support.so:security/krb5-113
-KRB5_113_PORT_RUN_DEPENDS=		kinit:security/krb5-113
 KRB5_114_PORT_LIB_DEPENDS=		libkrb5support.so:security/krb5-114
-KRB5_114_PORT_RUN_DEPENDS=		kinit:security/krb5-113
+KRB5_114_PORT_RUN_DEPENDS=		kinit:security/krb5-114
 
 KRB5_DOC_BUILD_DEPENDS+=	texi2dvi:print/texinfo \
 			dvips:print/dvipsk-tetex
