@@ -5,6 +5,7 @@ PORTNAME=	pylint
 PORTVERSION=	1.7.4
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
+PKGNAMESUFFIX=	${PYTHON_PKGNAMESUFFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Analyzes python source code looking for bugs and signs of poor quality
@@ -24,7 +25,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}astroid>=1.5.1:devel/py-astroid@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}six>=0:devel/py-six@${FLAVOR}
 
 NO_ARCH=	yes
-USE_PYTHON=	concurrent distutils optsuffix
+USE_PYTHON=	concurrent distutils
 USES=		python shebangfix
 
 SHEBANG_FILES=	pylint/test/data/ascript
