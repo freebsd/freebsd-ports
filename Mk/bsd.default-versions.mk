@@ -39,7 +39,7 @@ FIREBIRD_DEFAULT?=	2.5
 FORTRAN_DEFAULT?=	gfortran
 # Possible values: 3.0.0
 FPC_DEFAULT?=		3.0.2
-# Possible values: 4.8, 4.9, 5, 6, 7
+# Possible values: 4.9, 5, 6, 7
 GCC_DEFAULT?=		6
 # Possible values: 7, 8, 9, agpl
 GHOSTSCRIPT_DEFAULT?=	agpl
