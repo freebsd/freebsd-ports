@@ -3,6 +3,7 @@
 
 PORTNAME=	pikopixel
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	graphics gnustep
 MASTER_SITES=	http://twilightedge.com/downloads/
 DISTNAME=	PikoPixel.Sources.1.0-b8

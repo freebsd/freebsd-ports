@@ -3,7 +3,7 @@
 
 PORTNAME=	charmap
 PORTVERSION=	0.2
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	deskutils gnustep
 MASTER_SITES=	http://www.sourcefiles.org/Utilities/GUI/
 
