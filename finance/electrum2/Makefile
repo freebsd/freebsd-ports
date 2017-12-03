@@ -41,8 +41,8 @@ OPTIONS_DEFAULT=LEDGER TREZOR
 LEDGER_DESC=	Enable LEDGER Bitcoin hardware wallet support
 TREZOR_DESC=	Enable TREZOR Bitcoin hardware wallet support
 
-LEDGER_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}btchip-python>0:security/py-btchip-python
-TREZOR_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}trezor>0:security/py-trezor
+LEDGER_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}btchip-python>0:security/py-btchip-python@${FLAVOR}
+TREZOR_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}trezor>0:security/py-trezor@${FLAVOR}
 
 LEDGER_PLIST_FILES=	"@sample etc/devd/ledger_wallet.conf.sample"
 TREZOR_PLIST_FILES=	"@sample etc/devd/trezor_wallet.conf.sample"
