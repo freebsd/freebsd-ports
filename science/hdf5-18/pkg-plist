@@ -143,7 +143,7 @@ lib/libhdf5-18_cpp.so.15.0.0
 %%FORTRAN%%lib/libhdf5-18_fortran.la
 %%FORTRAN%%lib/libhdf5-18_fortran.so
 %%FORTRAN%%lib/libhdf5-18_fortran.so.10
-%%FORTRAN%%lib/libhdf5-18_fortran.so.10.0.4
+%%FORTRAN%%lib/libhdf5-18_fortran.so.10.0.5
 lib/libhdf5-18_hl.a
 lib/libhdf5-18_hl.la
 lib/libhdf5-18_hl.so
@@ -158,7 +158,7 @@ lib/libhdf5-18_hl_cpp.so.11.1.1
 %%FORTRAN%%lib/libhdf5-18hl_fortran.la
 %%FORTRAN%%lib/libhdf5-18hl_fortran.so
 %%FORTRAN%%lib/libhdf5-18hl_fortran.so.10
-%%FORTRAN%%lib/libhdf5-18hl_fortran.so.10.0.3
+%%FORTRAN%%lib/libhdf5-18hl_fortran.so.10.0.4
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/README
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/c++/chunks.cpp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/c++/compound.cpp
