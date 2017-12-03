@@ -1554,6 +1554,7 @@
     SUBDIR += libtool
     SUBDIR += libtpl
     SUBDIR += libtrue
+    SUBDIR += libtsm
     SUBDIR += libtuntap
     SUBDIR += libublio
     SUBDIR += libudev-devd
