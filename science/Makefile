@@ -20,6 +20,7 @@
     SUBDIR += R-cran-som
     SUBDIR += R-cran-udunits2
     SUBDIR += afni
+    SUBDIR += aircraft-datcom
     SUBDIR += avogadro
     SUBDIR += bddsolve
     SUBDIR += bft
