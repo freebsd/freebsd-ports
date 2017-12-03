@@ -6,7 +6,6 @@ PORTVERSION=	0.17
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP \
 		https://bpython-interpreter.org/releases/
-PKGNAMESUFFIX=	${PYTHON_PKGNAMESUFFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Fancy interface to the Python interpreter
@@ -25,7 +24,7 @@ OPTIONS_DEFINE=	EXAMPLES NLS
 OPTIONS_SUB=	yes
 
 NO_ARCH=	yes
-USE_PYTHON=	autoplist concurrent distutils
+USE_PYTHON=	autoplist concurrent distutils optsuffix
 USES=		python
 
 PORTEXAMPLES=	light.theme sample.theme
