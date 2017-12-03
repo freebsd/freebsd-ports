@@ -3,7 +3,7 @@
 
 PORTNAME=	librtfcomp
 PORTVERSION=	1.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	archivers python
 MASTER_SITES=	SF/synce/SynCE/${PORTNAME}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -20,8 +20,7 @@ LIB_DEPENDS=	librtfcomp.so:archivers/librtfcomp
 CONFIGURE_ARGS=	--enable-python-bindings
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USES=		libtool python:2
-USE_PYTHON=	flavors
+USES=		libtool python:2.7
 
 BUILD_WRKSRC=	${WRKSRC}/python
 INSTALL_WRKSRC=	${WRKSRC}/python
