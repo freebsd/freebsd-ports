@@ -3,7 +3,7 @@
 
 PORTNAME=	qp
 PORTVERSION=	2.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www python
 MASTER_SITES=	http://www.mems-exchange.org/software/qp/ \
 		LOCAL/sunpoet
@@ -19,7 +19,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
 USE_PYTHON=	distutils
-USES=		python:2
+USES=		python:2.7
 
 SUB_FILES=	pkg-message
 
