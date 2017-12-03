@@ -3,7 +3,7 @@
 
 PORTNAME=	npm
 PORTVERSION=	5.4.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	LOCAL/sunpoet
 
@@ -27,7 +27,7 @@ NODE8_DESC=	Use Node.js 8.x (www/node8) as backend
 NO_ARCH=	yes
 NO_BUILD=	yes
 REINPLACE_ARGS=	-i ''
-USES=		cpe python:2,run shebangfix tar:xz
+USES=		cpe python:2.7,run shebangfix tar:xz
 
 CPE_VENDOR=	npmjs
 CPE_PRODUCT=	node_packaged_modules
