@@ -4,6 +4,7 @@
     COMMENT = Scientific ports
 
     SUBDIR += 2d-rewriter
+    SUBDIR += ALPSCore
     SUBDIR += InsightToolkit
     SUBDIR += R-cran-AMORE
     SUBDIR += R-cran-DCluster
