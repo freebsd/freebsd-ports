@@ -1,0 +1,4 @@
+Portend monitors TCP ports for bound or unbound states.
+It can wait with a timeout for a port to be occupied or free.
+
+WWW: https://github.com/jaraco/portend
