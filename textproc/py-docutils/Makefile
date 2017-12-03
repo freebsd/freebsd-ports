@@ -3,6 +3,7 @@
 
 PORTNAME=	docutils
 PORTVERSION=	0.14
+PORTREVISION=	1
 CATEGORIES=	textproc python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -28,7 +29,7 @@ SCRIPTS=	rst2html rst2latex rst2man rst2odt rst2odt_prepstyles \
 
 post-install:
 .for script in ${SCRIPTS}
-	${LN} -s ${script}.py ${STAGEDIR}${PREFIX}/bin/${script}
+	${LN} -s ${script}.py-${PYTHON_VER} ${STAGEDIR}${PREFIX}/bin/${script}
 .endfor
 
 .include <bsd.port.mk>
