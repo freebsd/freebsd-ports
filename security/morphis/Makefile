@@ -4,12 +4,11 @@
 PORTNAME=	morphis
 PORTVERSION=	0.8.18.6
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	security net-p2p
 
-MAINTAINER=	yuri@rawbw.com
+MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Peer-to-peer high-performance distributed datastore and mail
-
-BROKEN=		Does not package
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -17,15 +16,15 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pycrypto>0:security/py-pycrypto@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sqlalchemy11>0:databases/py-sqlalchemy11@${PY_FLAVOR}
 
+USES=		python:3.4+ shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	yurivict
+NO_ARCH=	yes
+SHEBANG_FILES=	contrib/morphisd/opt/morphis/setargv
 
 SUB_FILES=	morphis-service morphis-cmd pkg-message
 SUB_LIST=	LOCALBASE=${LOCALBASE} USER=${USER} GROUP=${GROUP}
 PLIST_SUB=	USER=${USER} GROUP=${GROUP}
-
-USES=		python:3.4+
-NO_ARCH=	yes
 
 USER=		nobody
 GROUP=		nobody
