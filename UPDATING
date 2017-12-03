@@ -5,6 +5,14 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20171203:
+  AFFECTS: users of sysutils/dsbmd
+  AUTHOR: mk@freeshell.de
+
+  Due to new configuration variables and new features, users of dsbmd
+  version 0.4.1 and earlier should consider recreating their dsbmd.conf from
+  the new dsbmd.conf.sample.
+
 20171130:
   AFFECTS: */py*
   AUTHOR: mat@FreeBSD.org
