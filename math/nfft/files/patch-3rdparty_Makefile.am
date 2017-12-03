@@ -1,0 +1,14 @@
+--- 3rdparty/Makefile.am.orig	2016-10-16 14:46:04 UTC
++++ 3rdparty/Makefile.am
+@@ -2,8 +2,8 @@
+ 
+ noinst_LTLIBRARIES = lib3rdparty.la
+ 
+-lib3rdparty_la_SOURCES =
++lib3rdparty_la_SOURCES = cpow.c
+ 
+ lib3rdparty_la_LIBADD = cstripack/libcstripack.la
+ 
+-EXTRA_DIST = README
+\ No newline at end of file
++EXTRA_DIST = README
