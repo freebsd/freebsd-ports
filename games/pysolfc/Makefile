@@ -15,8 +15,8 @@ COMMENT=	Solitaire game, written in Python and the successor of PySol
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tkinter>0:x11-toolkits/py-tkinter \
-		${PYTHON_PKGNAMEPREFIX}pillow>0:graphics/py-pillow
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tkinter>0:x11-toolkits/py-tkinter@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pillow>0:graphics/py-pillow@${FLAVOR}
 
 USES=		python:2.7 shebangfix tar:bzip2
 USE_PYTHON=	autoplist distutils

@@ -27,8 +27,8 @@ USE_XORG=	x11 xi xrandr
 USE_GL=		gl glu
 
 SERVER_USES=		python:2.7
-SERVER_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>=2.2:www/py-requests \
-			${PYTHON_PKGNAMEPREFIX}sqlite3>=0:databases/py-sqlite3
+SERVER_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>=2.2:www/py-requests@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}sqlite3>=0:databases/py-sqlite3@${PY_FLAVOR}
 SERVER_CMAKE_ON=	-DSERVER:BOOL=ON
 
 .include <bsd.port.options.mk>

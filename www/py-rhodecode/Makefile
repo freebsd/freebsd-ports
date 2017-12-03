@@ -26,7 +26,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pylons>=1.0:www/py-pylons@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}whoosh>=2.4.0:textproc/py-whoosh@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}Babel>=0.9.6:devel/py-babel@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dateutil>=1.5:devel/py-dateutil@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dulwich>=0.8.7:devel/dulwich \
+		${PYTHON_PKGNAMEPREFIX}dulwich>=0.8.7:devel/dulwich@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}markdown>=2.2.1:textproc/py-markdown@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}docutils>=0.8.1:textproc/py-docutils@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mock>=0:devel/py-mock@${FLAVOR} \
