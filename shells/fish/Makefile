@@ -17,6 +17,8 @@ USES=		autoreconf cpe gmake libtool ncurses pkgconfig pathfix python:3.4+ \
 		localbase compiler:c++11-lang shebangfix
 SHEBANG_FILES=	share/tools/*.py share/tools/web_config/webconfig.py
 
+CONFLICTS_INSTALL=	comms/mlan3
+
 GNU_CONFIGURE=	yes
 
 CPE_VENDOR=	fishshell
