@@ -12,7 +12,7 @@ COMMENT=	Calendar program for women
 
 LICENSE=	GPLv2+
 
-USES=		python:run shebangfix tar:bzip2
+USES=		python:2.7,run shebangfix tar:bzip2
 SHEBANG_FILES=	cycle.py
 USE_WX=		3.0+
 WX_COMPS=	python
