@@ -11,7 +11,7 @@ MASTER_SITES=	http://www.sourcefiles.org/Productivity_Tools/Calculators/ \
 MAINTAINER=	psh@iki.fi
 COMMENT=	Programmer's calculator
 
-USES=		python shebangfix
+USES=		python:2.7 shebangfix
 USE_GNOME=	pygtk2
 NO_BUILD=	yes
 
