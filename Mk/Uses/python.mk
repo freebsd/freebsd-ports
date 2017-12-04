@@ -448,6 +448,7 @@ _PYTHON_VERSION=	${FLAVOR:S/py//:C/(.)/\1./}
 
 .if !empty(FLAVOR) && ${_PYTHON_VERSION} != ${PYTHON_DEFAULT}
 .if defined(_PYTHON_FEATURE_OPTSUFFIX)
+DEV_WARNING+=	"USE_PYTHON=optsuffix is deprecated, consider migrating to using unconditional PKGNAMESUFFIX or PKGNAMEPREFIX"
 PKGNAMESUFFIX=	${PYTHON_PKGNAMESUFFIX}
 .endif
 .endif
