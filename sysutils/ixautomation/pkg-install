@@ -1,0 +1,25 @@
+#!/bin/sh
+# Script to install preload.conf
+
+PREFIX=${PKG_PREFIX-/usr/local}
+
+if [ "$2" != "POST-INSTALL" ] ; then
+   exit 0
+fi
+
+set +e
+
+# If this is during staging, we can skip for now
+echo $PREFIX | grep -q '/stage/'
+if [ $? -eq 0 ] ; then
+   exit 0
+fi
+
+# Configure vm-bhyve
+sysrc -f /etc/rc.conf vm_enable="YES"
+sysrc -f /etc/rc.conf vm_dir="/usr/local/ixautomation/vms"
+
+# Copy over ixautomation.cfg.dist if it does not exist
+if [ ! -f "/usr/local/etc/ixautomation.conf" ] ; then
+  cp /usr/local/etc/ixautomation.cfg.dist /usr/local/etc/ixautomation.cfg
+fi

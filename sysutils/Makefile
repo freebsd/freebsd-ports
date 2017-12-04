@@ -498,6 +498,7 @@
     SUBDIR += isomaster
     SUBDIR += isomd5sum
     SUBDIR += istatserver
+    SUBDIR += ixautomation
     SUBDIR += jadm
     SUBDIR += jail-primer
     SUBDIR += jailadmin

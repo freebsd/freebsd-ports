@@ -1,0 +1,15 @@
+bin/ixautomation
+etc/init.d/ixautomation
+etc/ixautomation.conf.dist
+etc/rc.d/ixautomation
+etc/sudoers.d/ixautomation
+ixautomation/vms/.config/system.conf
+ixautomation/vms/.templates/freenas.conf
+ixautomation/vms/.templates/trueos.conf
+lib/ixautomation/functions.py
+lib/ixautomation/functions_vm.py
+%%PYTHON_SITELIBDIR%%/ixautomation-0.10-py%%PYTHON_VER%%.egg-info/PKG-INFO
+%%PYTHON_SITELIBDIR%%/ixautomation-0.10-py%%PYTHON_VER%%.egg-info/SOURCES.txt
+%%PYTHON_SITELIBDIR%%/ixautomation-0.10-py%%PYTHON_VER%%.egg-info/dependency_links.txt
+%%PYTHON_SITELIBDIR%%/ixautomation-0.10-py%%PYTHON_VER%%.egg-info/requires.txt
+%%PYTHON_SITELIBDIR%%/ixautomation-0.10-py%%PYTHON_VER%%.egg-info/top_level.txt
