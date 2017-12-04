@@ -28,6 +28,11 @@
 #		it to RUN_DEPENDS.
 # test		Indicates that Python is needed at test time and adds
 # 		it to TEST_DEPENDS.
+# env		Indicates that the port does not require a dependency on Python
+#		itself but needs the environment set up. This is mainly used
+#		when depending on flavored python ports, or when a correct
+#		PYTHON_CMD is required.  It has the same effect than setting
+#		PYTHON_NO_DEPENDS.
 #
 # If build, run and test are omitted, Python will be added as BUILD_DEPENDS,
 # RUN_DEPENDS and TEST_DEPENDS. PYTHON_NO_DEPENDS can be set to not add any
@@ -281,6 +286,11 @@ _PYTHON_ARGS:=		${_PYTHON_ARGS:Nrun}
 .if ${_PYTHON_ARGS:Mtest}
 _PYTHON_TEST_DEP=	yes
 _PYTHON_ARGS:=		${_PYTHON_ARGS:Ntest}
+.endif
+.if ${_PYTHON_ARGS:Menv}
+PYTHON_NO_DEPENDS=	yes
+_PYTHON_ARGS:=		${_PYTHON_ARGS:Nenv}
+.endif
 .endif
 
 # The port does not specify a build, run or test dependency, assume all are
