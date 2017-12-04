@@ -1,0 +1,11 @@
+--- src/VBox/Devices/PC/ipxe/Makefile.kmk.orig	2013-11-29 14:23:32.000000000 -0500
++++ src/VBox/Devices/PC/ipxe/Makefile.kmk	2013-12-13 15:06:45.000000000 -0500
+@@ -35,7 +35,7 @@
+ iPxeBiosBin_CLEAN    = \
+ 	$(iPxeBiosBin_0_OUTDIR)/iPxeBiosBin.c \
+ 
+-if1of ($(KBUILD_TARGET), darwin os2 solaris win)
++if1of ($(KBUILD_TARGET), darwin freebsd os2 solaris win)
+  $$(iPxeBiosBin_0_OUTDIR)/iPxeBiosBin.c: $(PATH_SUB_CURRENT)/iPxeBiosBin.rom $(VBOX_BIN2C) | $$(dir $$@)
+ 	$(call MSG_TOOL,bin2c,iPxeBiosBin,$<,$@)
+ 	$(QUIET)$(VBOX_BIN2C) -min 32 -max 56 -mask 0x1ff -export NetBiosBinary $< $@

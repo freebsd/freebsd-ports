@@ -1,0 +1,27 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/ExtUtils/Typemap/Basic.pm
+%%SITE_PERL%%/ExtUtils/Typemap/Default.pm
+%%SITE_PERL%%/ExtUtils/Typemap/ObjectMap.pm
+%%SITE_PERL%%/ExtUtils/Typemap/STL.pm
+%%SITE_PERL%%/ExtUtils/Typemap/STL/String.pm
+%%SITE_PERL%%/ExtUtils/Typemap/STL/Vector.pm
+%%SITE_PERL%%/ExtUtils/Typemaps/Basic.pm
+%%SITE_PERL%%/ExtUtils/Typemaps/Default.pm
+%%SITE_PERL%%/ExtUtils/Typemaps/ObjectMap.pm
+%%SITE_PERL%%/ExtUtils/Typemaps/STL.pm
+%%SITE_PERL%%/ExtUtils/Typemaps/STL/List.pm
+%%SITE_PERL%%/ExtUtils/Typemaps/STL/String.pm
+%%SITE_PERL%%/ExtUtils/Typemaps/STL/Vector.pm
+%%PERL5_MAN3%%/ExtUtils::Typemap::Basic.3.gz
+%%PERL5_MAN3%%/ExtUtils::Typemap::Default.3.gz
+%%PERL5_MAN3%%/ExtUtils::Typemap::ObjectMap.3.gz
+%%PERL5_MAN3%%/ExtUtils::Typemap::STL.3.gz
+%%PERL5_MAN3%%/ExtUtils::Typemap::STL::String.3.gz
+%%PERL5_MAN3%%/ExtUtils::Typemap::STL::Vector.3.gz
+%%PERL5_MAN3%%/ExtUtils::Typemaps::Basic.3.gz
+%%PERL5_MAN3%%/ExtUtils::Typemaps::Default.3.gz
+%%PERL5_MAN3%%/ExtUtils::Typemaps::ObjectMap.3.gz
+%%PERL5_MAN3%%/ExtUtils::Typemaps::STL.3.gz
+%%PERL5_MAN3%%/ExtUtils::Typemaps::STL::List.3.gz
+%%PERL5_MAN3%%/ExtUtils::Typemaps::STL::String.3.gz
+%%PERL5_MAN3%%/ExtUtils::Typemaps::STL::Vector.3.gz

@@ -1,0 +1,6 @@
+Math::PlanePath -- points on a path through the 2-D plane
+
+This is a base class for some mathematical paths which map an integer position
+$n to and from coordinates $x,$y in the 2D plane.
+
+WWW: http://search.cpan.org/dist/Math-PlanePath/

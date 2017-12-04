@@ -1,0 +1,3 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/Module/Build/WithXSpp.pm
+%%PERL5_MAN3%%/Module::Build::WithXSpp.3.gz
