@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	glm
-PORTVERSION=	0.9.8.4
-PORTEPOCH=	1
+PORTVERSION=	0.9.8.5
 CATEGORIES=	math graphics
 
 MAINTAINER=	amdmi3@FreeBSD.org
