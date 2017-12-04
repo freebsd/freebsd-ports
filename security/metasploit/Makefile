@@ -86,9 +86,8 @@ NO_ARCH=	yes
 NO_ARCH_IGNORE=	template_x64_bsd.bin template_x86_bsd.bin CVE-2013-2171.bin
 STRIP=
 
-USES=		python shebangfix
+USES=		python:env shebangfix
 USE_RUBY=	yes
-PYTHON_NO_DEPENDS=	yes
 SHEBANG_FILES=	data/exploits/CVE-2017-7494/build.sh \
 		data/exploits/CVE-2017-7494/install-deps.sh \
 		external/source/shellcode/windows/build.sh \
