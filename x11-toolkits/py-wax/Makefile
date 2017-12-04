@@ -12,7 +12,7 @@ MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	User-friendly layer on top of wxPython
 
 NO_BUILD=	yes
-USES=		python
+USES=		python:2.7
 USE_WX=		2.8
 WX_COMPS=	python:run
 
