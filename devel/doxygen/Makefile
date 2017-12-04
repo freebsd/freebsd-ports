@@ -16,7 +16,7 @@ COMMENT=	Documentation system for C, C++, and other languages
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		bison cmake:outsource,noninja iconv python:2 shebangfix
+USES=		bison cmake:outsource,noninja iconv python shebangfix
 ALL_TARGET=	all
 CMAKE_ARGS+=	-DDOC_INSTALL_DIR:PATH=${DOCSDIR_REL}
 # Parallel jobs breaks when the DOCS option is on
