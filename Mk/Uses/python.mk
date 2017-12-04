@@ -302,6 +302,10 @@ WARNING+=	"PYTHON2_DEFAULT_VERSION is defined, consider using DEFAULT_VERSIONS=p
 WARNING+=	"PYTHON3_DEFAULT_VERSION is defined, consider using DEFAULT_VERSIONS=python3=${PYTHON3_DEFAULT_VERSION:S/^python//} instead"
 .endif
 
+.if ${PYTHON2_DEFAULT} != ${PYTHON_DEFAULT} && ${PYTHON3_DEFAULT} != ${PYTHON_DEFAULT}
+WARNING+=	"PYTHON_DEFAULT must be a version present in PYTHON2_DEFAULT or PYTHON3_DEFAULT, if you want more Python flavors, set BUILD_ALL_PYTHON_FLAVORS in your make.conf"
+.endif
+
 .if exists(${LOCALBASE}/bin/python)
 .if !defined(_PYTHON_DEFAULT_VERSION)
 _PYTHON_DEFAULT_VERSION!=	(${LOCALBASE}/bin/python -c \
