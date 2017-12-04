@@ -341,9 +341,11 @@ PYTHON3_DEFAULT_VERSION?=	python${PYTHON3_DEFAULT}
 .if ${_PYTHON_ARGS} == "2"
 _PYTHON_ARGS=		${PYTHON2_DEFAULT_VERSION:S/^python//}
 _WANTS_META_PORT=	2
+DEV_WARNING+=		"USES=python:2 is deprecated, use USES=python:2.7"
 .elif ${_PYTHON_ARGS} == "3"
 _PYTHON_ARGS=		${PYTHON3_DEFAULT_VERSION:S/^python//}
 _WANTS_META_PORT=	3
+DEV_WARNING+=		"USES=python:3 is deprecated, use USES=python:3.4+ or an appropriate version range"
 .endif  # ${_PYTHON_ARGS} == "2"
 
 .if defined(PYTHON_VERSION)
