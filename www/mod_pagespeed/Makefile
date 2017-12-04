@@ -2,7 +2,7 @@
 
 PORTNAME=	mod_pagespeed
 PORTVERSION=	1.12.34.2
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	www devel
 MASTER_SITES=	LOCAL/mmokhi:boringssl,chromium_base,chromium_build,googleurl,gflags_arch,gflags_src,libjpeg_turbo_src,yasm_patched,libwebp,modpb64 \
@@ -13,9 +13,6 @@ MAINTAINER=	mmokhi@FreeBSD.org
 COMMENT=	Apache module for rewriting web pages to reduce latency
 
 LICENSE=	APACHE20
-
-BROKEN_SSL=	base
-BROKEN_SSL_REASON_base=	needs openssl.pc
 
 BUILD_DEPENDS=	bash:shells/bash \
 		curl:ftp/curl \
@@ -34,7 +31,7 @@ LIB_DEPENDS=	libpng.so:graphics/png \
 		libicutu.so:devel/icu \
 		libopencv_legacy.so:graphics/opencv
 
-USES=		compiler:c++14-lang jpeg gmake localbase pkgconfig \
+USES=		compiler:c++14-lang gperf jpeg gmake localbase pkgconfig \
 		python shebangfix ssl tar:xz
 USE_APACHE=	22
 SHEBANG_GLOB=	*.gyp *.gypi *.py *.sh
@@ -145,7 +142,7 @@ post-patch:
 	    cd ${BUILD_WRKSRC}/third_party/google-sparsehash/gen/arch/freebsd && \
 	    ${MV} ia32 i386 && ${MV} x64 amd64 )
 	${REINPLACE_CMD} -e "s,%%LOCALBASE%%,${LOCALBASE},g" \
-	    ${WRKSRC}/base/base.gypi
+	    ${WRKSRC}/base/base.gypi ${WRKSRC}/third_party/serf/select_openssl.gyp
 	${REINPLACE_CMD} -e "s,%%PORTSSTAGE%%,${STAGEDIR},g" \
 	    ${WRKSRC}/install/Makefile
 	${FIND} ${WRKSRC} -type f \( -name "*.gyp" -o -name "*.gypi" \) -exec \
