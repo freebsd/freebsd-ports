@@ -3,6 +3,7 @@
 
 PORTNAME=	spike-proxy
 PORTVERSION=	1.4.8
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.immunitysec.com/downloads/
 DISTNAME=	SP${PORTVERSION:tl:C/\.//g}
@@ -13,9 +14,9 @@ COMMENT=	Tool looking for vulnerabilities in web applications
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}openssl>=0:security/py-openssl
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}openssl>=0:security/py-openssl@${PY_FLAVOR}
 
-USES=		python shebangfix tar:tgz
+USES=		python:2.7 shebangfix tar:tgz
 SHEBANG_FILES=	*.py
 NO_BUILD=	yes
 NO_ARCH=	yes
