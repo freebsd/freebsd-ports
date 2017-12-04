@@ -291,7 +291,6 @@ _PYTHON_ARGS:=		${_PYTHON_ARGS:Ntest}
 PYTHON_NO_DEPENDS=	yes
 _PYTHON_ARGS:=		${_PYTHON_ARGS:Nenv}
 .endif
-.endif
 
 # The port does not specify a build, run or test dependency, assume all are
 # required.
