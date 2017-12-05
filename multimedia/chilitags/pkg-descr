@@ -1,0 +1,13 @@
+Chilitags are a C++ cross-platform software library for the detection and
+identification of 2D fiducial markers (a.k.a. tags). Their purpose is to be
+printed and placed on objects from the real world, to form the basis of
+Robotics or Augmented Reality (AR) applications. Using a camera, the position
+of the tagged objects can be acquired by a computer.
+
+Chilitags were developed by Pixar internally for projects of the CHILI lab
+(Computer-Human Interaction in Learning and Instruction, formerly CRAFT),
+such as Metroscope or TapaCarp. There are already many alternatives
+(e.g. ARToolKit, or reacTIVision, among many others), but we decided to
+release Chilitags anyway, as there seemed to be a demand for it.
+
+WWW: http://chili.epfl.ch/software
