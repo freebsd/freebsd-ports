@@ -13,6 +13,8 @@ COMMENT=	CalDAV-based calendar
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		py36-khal-0.7.1 depends on package: py36-vdirsyncer<0.13 - not found
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}click>=3.2:devel/py-click@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}icalendar>=3.8.2:devel/py-icalendar@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}urwid>=1.2.1:devel/py-urwid@${FLAVOR} \
