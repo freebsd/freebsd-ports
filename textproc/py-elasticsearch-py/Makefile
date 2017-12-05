@@ -6,7 +6,7 @@ PORTVERSION=	5.4.0
 CATEGORIES=	textproc python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	zi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Official Python low-level client for Elasticsearch
 
 LICENSE=	APACHE20
