@@ -1,6 +1,6 @@
---- DLL430_v3/src/TI/DLL430/FetControl.cpp.orig	2016-03-12 13:23:34 UTC
-+++ DLL430_v3/src/TI/DLL430/FetControl.cpp
-@@ -214,7 +214,7 @@ bool FetControl::resetCommunication()
+--- DLL430_v3/src/TI/DLL430/FetControl.cpp.orig	2017-12-05 18:47:14.471975000 +0300
++++ DLL430_v3/src/TI/DLL430/FetControl.cpp	2017-12-05 18:47:14.610359000 +0300
+@@ -222,7 +222,7 @@ bool FetControl::resetCommunication()
  	data.push_back(0x00);
  	this->sendData(data);		// reset connection
  
