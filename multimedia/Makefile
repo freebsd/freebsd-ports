@@ -31,6 +31,7 @@
     SUBDIR += ccextractor
     SUBDIR += cclive
     SUBDIR += cheese
+    SUBDIR += chilitags
     SUBDIR += clipgrab
     SUBDIR += clive
     SUBDIR += clutter-gst
