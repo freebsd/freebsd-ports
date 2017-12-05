@@ -35,7 +35,7 @@ PLIST_FILES=	bin/dspdfviewer \
 
 # Build fails with LLVM 4.0.  Reported upstream as #191:
 # https://github.com/dannyedel/dspdfviewer/issues/191
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1200023
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1100511
 CFLAGS+=	-Wno-error=undefined-func-template
 .endif
 
