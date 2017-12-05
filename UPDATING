@@ -5,6 +5,19 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20171205:
+  AFFECTS: users of dns/powerdns
+  AUTHOR: krion@FreeBSD.org
+
+  Recursor passthrough removal: This will impact many installations.
+  Previously, the PowerDNS Authoritative Server contained a facility
+  for sending recursion desired queries to a resolving backend,
+  possibly after first consulting its local cache. This feature
+  (‘recursor=’) was frequently confusing and also delivered
+  inconsistent results, for example when a query ended up referring
+  to a CNAME that was outside of the Authoritative Server’s
+  knowledge.
+
 20171203:
   AFFECTS: users of sysutils/dsbmd
   AUTHOR: mk@freeshell.de
