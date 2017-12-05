@@ -1,20 +1,24 @@
---- ../nginx_upstream_module-1278ee5/config.orig	2016-08-07 15:39:47.000000000 -0400
-+++ ../nginx_upstream_module-1278ee5/config	2016-08-07 16:38:59.298414000 -0400
-@@ -1,14 +1,14 @@
- ngx_addon_name="ngx_http_tnt_module"
- 
--__lib_yajl="$ngx_addon_dir/third_party/yajl/build/yajl-2.1.0/lib/libyajl_s.a"
-+__lib_yajl="%%PREFIX%%/lib/libyajl.so"
- 
- __module_src_dir="$ngx_addon_dir/src"
- 
- __include_paths=" \
-           $ngx_addon_dir/src                                       \
+--- ../nginx_upstream_module-4ca8684/config.orig	2017-09-18 11:54:00.000000000 -0400
++++ ../nginx_upstream_module-4ca8684/config	2017-12-04 21:56:41.978227000 -0500
+@@ -7,18 +7,10 @@
            $ngx_addon_dir/third_party                               \
+           "
+ 
+-test -f $ngx_addon_dir/third_party/yajl/build/yajl-2.1.0/lib/libyajl_s.a &&
+-test -f $ngx_addon_dir/third_party/msgpuck/libmsgpuck.a && {
+-  libs="                                                                \
+-      $ngx_addon_dir/third_party/yajl/build/yajl-2.1.0/lib/libyajl_s.a  \
+-      $ngx_addon_dir/third_party/msgpuck/libmsgpuck.a                   \
+-      "
+-
+-  include_paths="${include_paths} \
 -          $ngx_addon_dir/third_party/msgpuck                       \
 -          $ngx_addon_dir/third_party/yajl/build/yajl-2.1.0/include \
++include_paths="${include_paths} \
 +          %%PREFIX%%/include/msgpuck \
 +          %%PREFIX%%/include/yajl \
            "
+-}
  
- __sources=" \
+ module_src_dir="$ngx_addon_dir/src"
+ 
