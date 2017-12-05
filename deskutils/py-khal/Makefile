@@ -25,7 +25,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}click>=3.2:devel/py-click@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pkginfo>0:sysutils/py-pkginfo@${FLAVOR}
 
-USES=		python
+USES=		python:3.4+
 USE_PYTHON=	autoplist distutils
 
 PLIST_FILES=	share/zsh/site-functions/__khal
