@@ -5,7 +5,7 @@ PORTVERSION=	1.0.0
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	tz@FreeBSD.org
+MAINTAINER=	idefix@fechner.net
 COMMENT=	This gem implements bcrypt_pdkfd
 
 LICENSE=	MIT

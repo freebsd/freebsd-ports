@@ -6,7 +6,7 @@ PORTVERSION=	8.7.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	tz@FreeBSD.org
+MAINTAINER=	idefix@fechner.net
 COMMENT=	Detects under what license a project is distributed
 
 LICENSE=	MIT

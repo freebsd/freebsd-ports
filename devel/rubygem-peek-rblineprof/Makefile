@@ -5,7 +5,7 @@ PORTVERSION=	0.2.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	tz@FreeBSD.org
+MAINTAINER=	idefix@fechner.net
 COMMENT=	Peek into how much each line of your Rails application takes
 
 LICENSE=	MIT
