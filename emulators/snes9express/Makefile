@@ -11,22 +11,22 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK interface for snes9x
 
 LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+BROKEN_sparc64=	does not compile on sparc64
 
 RUN_DEPENDS=	snes9x:emulators/snes9x
 
-USE_GNOME=	gtk20
 USES=		gettext pkgconfig
+USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
-
-BROKEN_sparc64=	does not compile on sparc64
 
 PORTDOCS=	AUTHORS ChangeLog NEWS README
 PLIST_FILES=	bin/${PORTNAME} \
 		%%DATADIR%%/snes.s9xskin \
 		%%DATADIR%%/snsp.s9xskin
 
-# fix build with clang
-CFLAGS+= -Wno-return-type
+OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|(gzFile\*)||' \
@@ -38,6 +38,8 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/*.s9xskin ${STAGEDIR}${DATADIR}
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
