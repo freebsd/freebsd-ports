@@ -540,6 +540,7 @@
     SUBDIR += nextcloud
     SUBDIR += nextcloud-calendar
     SUBDIR += nextcloud-contacts
+    SUBDIR += nextcloud-notes
     SUBDIR += nghttp2
     SUBDIR += nginx
     SUBDIR += nginx-devel
