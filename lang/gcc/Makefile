@@ -3,7 +3,7 @@
 
 PORTNAME=	gcc
 PORTVERSION=	${GCC_DEFAULT}
-CATEGORIES=	lang java
+CATEGORIES=	lang
 MASTER_SITES=	# not applicable
 DISTFILES=	# not applicable
 
