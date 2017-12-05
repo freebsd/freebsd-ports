@@ -6,7 +6,7 @@ PORTREVISION=	2
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	tz@FreeBSD.org
+MAINTAINER=	idefix@fechner.net
 COMMENT=	Ruby implementation of gRPC
 
 LICENSE=	BSD3CLAUSE

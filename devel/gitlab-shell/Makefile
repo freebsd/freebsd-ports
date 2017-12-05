@@ -9,7 +9,7 @@ DISTNAME=	${PORTNAME}-v${PORTVERSION}
 
 LICENSE=	MIT
 
-MAINTAINER=	tz@FreeBSD.org
+MAINTAINER=	idefix@fechner.net
 COMMENT=	GitLab Shell handles git commands for GitLab
 
 BUILD_DEPENDS=	gem:devel/ruby-gems \

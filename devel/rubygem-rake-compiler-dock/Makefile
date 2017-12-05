@@ -5,7 +5,7 @@ PORTVERSION=	0.6.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	tz@FreeBSD.org
+MAINTAINER=	idefix@fechner.net
 COMMENT=	Cross compiler environment for building Windows binary gems
 
 LICENSE=	MIT
