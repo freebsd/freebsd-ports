@@ -3,7 +3,7 @@
 
 PORTNAME=	php72
 DISTVERSION=	7.2.0RC6
-PORTREVISION?=	2
+PORTREVISION?=	3
 CATEGORIES?=	lang devel www
 MASTER_SITES=	https://downloads.php.net/~pollita/
 DISTNAME=	php-${DISTVERSION}
@@ -23,7 +23,8 @@ USE_AUTOTOOLS=	autoconf
 #USES+=		autoreconf gmake
 #GNU_CONFIGURE=	yes
 
-LIB_DEPENDS=	libpcre.so:devel/pcre
+LIB_DEPENDS=	libpcre.so:devel/pcre \
+		libargon2.so:security/libargon2
 
 CONFIGURE_ARGS+=--with-layout=GNU \
 		--localstatedir=/var \
@@ -33,6 +34,7 @@ CONFIGURE_ARGS+=--with-layout=GNU \
 		--enable-mysqlnd \
 		--with-libxml-dir=${LOCALBASE} \
 		--with-pcre-regex=${LOCALBASE} \
+		--with-password-argon2=${LOCALBASE} \
 		--program-prefix=""
 
 USE_GNOME=	libxml2
