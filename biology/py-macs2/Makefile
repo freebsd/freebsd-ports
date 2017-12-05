@@ -11,9 +11,9 @@ COMMENT=	Analysis of chromatin immunoprecipitation (ChIP) sequences
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>0:math/py-numpy@${PY_FLAVOR}
+BUILD_DEPENDS=	${PYNUMPY}
 
-USES=		python
+USES=		python:2.7
 USE_PYTHON=	autoplist concurrent cython distutils
 
 USE_GITHUB=	yes
