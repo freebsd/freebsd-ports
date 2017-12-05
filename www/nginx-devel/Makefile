@@ -127,6 +127,7 @@ OPTIONS_DEFINE=	\
 	SMALL_LIGHT \
 	SRCACHE \
 	VOD \
+	VTS \
 	X11 \
 	XSS
 
@@ -237,6 +238,7 @@ SLOWFS_CACHE_DESC=		3rd party slowfs_cache module
 SMALL_LIGHT_DESC=		3rd party small_light module
 SRCACHE_DESC=			3rd party srcache module
 VOD_DESC=			3rd party vod module
+VTS_DESC=			3rd party vts module
 X11_DESC=			graphics/ImageMagick[-nox11] dependency
 XSS_DESC=			3rd party xss module
 VIDEO_DESC=			Video module support
@@ -1041,6 +1043,14 @@ CONFIGURE_ARGS+=--add-dynamic-module=${WRKSRC_vod}
 .else
 CONFIGURE_ARGS+=--add-module=${WRKSRC_vod}
 .endif
+.endif
+
+.if ${PORT_OPTIONS:MVTS}
+NGINX_VTS_VERSION=	0.1.15
+GH_ACCOUNT+=	vozlt:vts
+GH_PROJECT+=	nginx-module-vts:vts
+GH_TAGNAME+=	v${NGINX_VTS_VERSION}:vts
+CONFIGURE_ARGS+=--add-module=${WRKSRC_vts}
 .endif
 
 .if ${PORT_OPTIONS:MXSS}
