@@ -3,7 +3,7 @@
 
 PORTNAME=	nginx
 PORTVERSION=	1.13.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	http://nginx.org/download/
 MASTER_SITES+=	LOCAL/osa
@@ -14,6 +14,10 @@ MAINTAINER?=	osa@FreeBSD.org
 COMMENT?=	Robust and small WWW server
 
 LICENSE=	BSD2CLAUSE
+
+CONFLICTS_INSTALL=	nginx
+
+PORTSCOUT=	limit:^1\.13\.[0-9]*
 
 USES+=		cpe
 
@@ -1137,9 +1141,9 @@ CONFIGURE_ARGS+=--add-module=${WRKSRC_arrayvar}
 .endif
 
 .if ${PORT_OPTIONS:MBROTLI}
-NGINX_BROTLI_VERSION=	12529813
+NGINX_BROTLI_VERSION=	14dede1
 LIB_DEPENDS+=	libbrotlicommon.so:archivers/brotli
-GH_ACCOUNT+=	google:brotli
+GH_ACCOUNT+=	eustas:brotli
 GH_PROJECT+=	ngx_brotli:brotli
 GH_TAGNAME+=	${NGINX_BROTLI_VERSION}:brotli
 .if ${PORT_OPTIONS:MDSO}
@@ -1262,6 +1266,11 @@ post-patch:
 	@${REINPLACE_CMD} \
 		's!%%PREFIX%%!${LOCALBASE}!g' \
 		${WRKSRC_nginx_tarantool}/config
+.endif
+.if ${PORT_OPTIONS:MBROTLI}
+	@${REINPLACE_CMD} \
+		'62s|\/usr\/local|${LOCALBASE}|' \
+		${WRKSRC_brotli}/config
 .endif
 
 pre-configure:
