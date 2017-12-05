@@ -11,9 +11,9 @@ EXTRACT_SUFX=	# none
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	CVS notification tool
 
-RUN_DEPENDS=	cvs:devel/cvs
-
 LICENSE=	BSD3CLAUSE  # see CVS repository on SourceForge
+
+RUN_DEPENDS=	cvs:devel/cvs
 
 USES=		python shebangfix
 SHEBANG_FILES=	${DISTNAME}
