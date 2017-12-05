@@ -1,0 +1,4 @@
+shared namespace shim for py-backports.* ports
+
+py-backports provides a common backports/__init__.py,
+which is shared among all py-backports.* ports.
