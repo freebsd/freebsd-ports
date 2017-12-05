@@ -5,6 +5,7 @@ sbin/acme.sh
 %%EXAMPLESDIR%%/deploy/cpanel_uapi.sh
 %%EXAMPLESDIR%%/deploy/dovecot.sh
 %%EXAMPLESDIR%%/deploy/exim4.sh
+%%EXAMPLESDIR%%/deploy/fritzbox.sh
 %%EXAMPLESDIR%%/deploy/haproxy.sh
 %%EXAMPLESDIR%%/deploy/keychain.sh
 %%EXAMPLESDIR%%/deploy/kong.sh
@@ -13,6 +14,7 @@ sbin/acme.sh
 %%EXAMPLESDIR%%/deploy/nginx.sh
 %%EXAMPLESDIR%%/deploy/opensshd.sh
 %%EXAMPLESDIR%%/deploy/pureftpd.sh
+%%EXAMPLESDIR%%/deploy/strongswan.sh
 %%EXAMPLESDIR%%/deploy/unifi.sh
 %%EXAMPLESDIR%%/deploy/vsftpd.sh
 %%EXAMPLESDIR%%/dnsapi/README.md
