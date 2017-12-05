@@ -1,6 +1,6 @@
---- ThirdParty/BSL430_DLL/BSL430_DLL/Physical_Interfaces/MSPBSL_PhysicalInterfaceUSB.cpp.orig	2017-12-05 15:03:57.734396000 +0300
-+++ ThirdParty/BSL430_DLL/BSL430_DLL/Physical_Interfaces/MSPBSL_PhysicalInterfaceUSB.cpp	2017-12-05 15:04:17.062811000 +0300
-@@ -189,7 +189,7 @@
+--- ThirdParty/BSL430_DLL/BSL430_DLL/Physical_Interfaces/MSPBSL_PhysicalInterfaceUSB.cpp.orig	2017-12-05 18:47:14.538669000 +0300
++++ ThirdParty/BSL430_DLL/BSL430_DLL/Physical_Interfaces/MSPBSL_PhysicalInterfaceUSB.cpp	2017-12-05 18:47:14.575461000 +0300
+@@ -189,7 +189,7 @@ uint16_t MSPBSL_PhysicalInterfaceUSB::RX
  			return ERROR_READING_DATA; 
  		}
  
