@@ -1,25 +1,28 @@
-# Created by: Erik B Knudsen <erkn@fysik.dtu.dk>
 # $FreeBSD$
 
 PORTNAME=	mcstas
-PORTVERSION=	2.2a
+DISTVERSION=	2.2a
 CATEGORIES=	science
-MASTER_SITES=	http://download.mcstas.org/${PORTNAME}-${PORTVERSION}/unix/McStas-${PORTVERSION}-UNIX-src/
-DISTNAME=	mcstas-${PORTVERSION}-src
+MASTER_SITES=	http://download.mcstas.org/${PORTNAME}-${DISTVERSION}/unix/McStas-${DISTVERSION}-UNIX-src/
+DISTNAME=	mcstas-${DISTVERSION}-src
 
 MAINTAINER=	erkn@fysik.dtu.dk
 COMMENT=	Monte Carlo neutron ray tracing package
 
-LICENSE=	GPLv2
+LICENSE=	LGPL21+
 
-USES=		bison:build cmake
+USES=		bison:build cmake:outsource
 CMAKE_ARGS=	"-Denable_mcstas=1"
 
-PLIST_SUB+=	PORTVERSION=${PORTVERSION}
-SUB_FILES=	pkg-deinstall pkg-install
+MANDIRS=	${PREFIX}/${PORTNAME}/${DISTVERSION}/doc/man/man1
+PLIST_SUB+=	DISTVERSION=${DISTVERSION}
+
+MCEXECS=	mcstas mcformat
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/mcstas/${PORTVERSION}/bin/mcformat
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/mcstas/${PORTVERSION}/bin/mcstas
+.for e in ${MCEXECS}
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${PORTNAME}/${DISTVERSION}/bin/${e}
+	${LN} -s ${PREFIX}/${PORTNAME}/${DISTVERSION}/bin/${e} ${STAGEDIR}${PREFIX}/bin/${e}
+.endfor
 
 .include <bsd.port.mk>
