@@ -7,7 +7,7 @@
 -#define XDIGGER_LIB_DIR     "/usr/lib/X11/xdigger"
 -#define XDIGGER_HISCORE_DIR "/var/X11R6/scores"
 +#define XDIGGER_LIB_DIR     "%%PREFIX%%/share/xdigger"
-+#define XDIGGER_HISCORE_DIR "%%PREFIX%%/share/xdigger"
++#define XDIGGER_HISCORE_DIR "/var/games"
  
  #define SOUND_DSP_AUDIO
  
