@@ -7,16 +7,12 @@
 name="lightdm"
 description="The light desktop manager (lightdm)"
 supervisor="supervise-daemon"
-command=%%PREFIX%%/bin/lightdm
+command=%%PREFIX%%/sbin/lightdm
 command_args=""
 pidfile="/var/run/lightdm.pid"
 
 depend(){
 	provide xlogin
 	keyword -login -shutdown
-	need localmount dbus moused cleanvar
-}
-
-start_pre{
-	export PATH=/bin:/sbin:/usr/bin:/usr/sbin:%%LOCALBASE%%/bin:%%LOCALBASE%%/sbin
+	need localmount dbus moused
 }
