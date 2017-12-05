@@ -1,8 +1,8 @@
 # Created by: Bernard Spil <brnrd@freebsd.org>
 # $FreeBSD$
 
-PORTNAME=	calendar
-PORTVERSION=	1.5.6
+PORTNAME=	notes
+PORTVERSION=	2.3.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/${PKGNAMEPREFIX:S/-//}/${PORTNAME}/releases/download/${DISTVERSIONPREFIX}${PORTVERSION}/
@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME}
 DIST_SUBDIR=	${PKGNAMEPREFIX:S/-//}/${DISTNAME}-${DISTVERSIONPREFIX}${PORTVERSION}
 
 MAINTAINER=	brnrd@freebsd.org
-COMMENT=	Calendar app for Nextcloud
+COMMENT=	Notes app for Nextcloud
 
 LICENSE=	AGPLv3
 
