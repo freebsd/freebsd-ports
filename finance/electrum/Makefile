@@ -3,6 +3,7 @@
 
 PORTNAME=	electrum
 PORTVERSION=	3.0.2
+PORTREVISION=	1
 CATEGORIES=	finance python
 MASTER_SITES=	https://download.electrum.org/${PORTVERSION}/ \
 		http://download.electrum.org/${PORTVERSION}/
@@ -32,8 +33,32 @@ USE_PYQT=	gui_run sip widgets
 USE_PYTHON=	autoplist distutils optsuffix
 PYDISTUTILS_PKGNAME=	Electrum
 NO_ARCH=	yes
+OPTIONS_SUB=	yes
+
+OPTIONS_DEFINE=	LEDGER TREZOR
+OPTIONS_DEFAULT=LEDGER TREZOR
+
+LEDGER_DESC=	Enable LEDGER Bitcoin hardware wallet support
+TREZOR_DESC=	Enable TREZOR Bitcoin hardware wallet support
+
+LEDGER_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}btchip-python>0:security/py-btchip-python@${FLAVOR}
+TREZOR_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}trezor>0:security/py-trezor@${FLAVOR}
+
+LEDGER_PLIST_FILES=	"@sample etc/devd/ledger_wallet.conf.sample"
+TREZOR_PLIST_FILES=	"@sample etc/devd/trezor_wallet.conf.sample"
+
+LEDGER_SUB_FILES=	pkg-message-hwwallet
+TREZOR_SUB_FILES=	pkg-message-hwwallet
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,%%PREFIX%%,${PREFIX},g' ${WRKSRC}/setup.py
+
+post-install-LEDGER-on:
+	${INSTALL_DATA} ${FILESDIR}/ledger_wallet.conf.sample \
+		${STAGEDIR}${PREFIX}/etc/devd
+
+post-install-TREZOR-on:
+	${INSTALL_DATA} ${FILESDIR}/trezor_wallet.conf.sample \
+		${STAGEDIR}${PREFIX}/etc/devd
 
 .include <bsd.port.mk>
