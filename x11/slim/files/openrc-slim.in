@@ -8,7 +8,6 @@ name="slim"
 description="The Simple Login Manager (SLiM)"
 command=%%PREFIX%%/bin/slim
 command_args=""
-command_background="true"
 pidfile="/var/run/slim.pid"
 
 depend(){
