@@ -15,6 +15,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN_powerpc64=	fails to compile: cc1: error: -Werror=c11-extensions: No option -Wc11-extensions
 
+FLAVORS=	default notls
+notls_PKGNAMESUFFIX=	-notls
+
 USES=		compiler gmake
 
 USE_GITHUB=	yes
@@ -24,10 +27,14 @@ CFLAGS+=	${CFLAGS_${CHOSEN_COMPILER_TYPE}}
 CFLAGS_clang=	-Wno-error=c11-extensions # 12.0 + -pedantic
 
 KORE_BIN=	kore${PKGNAMESUFFIX}
+EXAMPLESDIR=	${PREFIX}/share/examples/${KORE_BIN}
 PLIST_SUB=	KORE_BIN="${KORE_BIN}"
 
 OPTIONS_DEFINE=	DEBUG EXAMPLES HTTP JSONRPC PGSQL TASKS TLS
 OPTIONS_DEFAULT=	HTTP JSONRPC PGSQL TASKS TLS
+.if ${FLAVOR:U} == notls
+OPTIONS_EXCLUDE=	TLS
+.endif
 OPTIONS_SUB=	yes
 
 HTTP_DESC=	Build with HTTP support
