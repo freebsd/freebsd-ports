@@ -541,6 +541,7 @@
     SUBDIR += nextcloud-calendar
     SUBDIR += nextcloud-contacts
     SUBDIR += nextcloud-notes
+    SUBDIR += nextcloud-tasks
     SUBDIR += nghttp2
     SUBDIR += nginx
     SUBDIR += nginx-devel
