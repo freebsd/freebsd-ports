@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	consul-template
-PORTVERSION=	0.19.3
+PORTVERSION=	0.19.4
 DISTVERSIONPREFIX=	v
 CATEGORIES=	textproc
 
