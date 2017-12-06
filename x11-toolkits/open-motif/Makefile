@@ -4,7 +4,7 @@ PORTNAME=	open-motif
 PORTVERSION=	2.3.7
 CATEGORIES=	x11-toolkits
 # MASTER_SITES=	SF/${PORTNAME}/Motif%202.3.4%20Source%20Code/
-MASTER_SITES=	SF/motif/Motif%202.3.7%20Source%20Code/
+MASTER_SITES=	SF/motif/Motif%20${PORTVERSION}%20Source%20Code/
 DISTNAME=	motif-${PORTVERSION}
 
 MAINTAINER=	cy@FreeBSD.org
