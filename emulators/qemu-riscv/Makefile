@@ -2,30 +2,30 @@
 
 PORTNAME=	qemu
 PORTVERSION=	2.7.50
-PORTREVISION=	20170306
+PORTREVISION=	20171130
 CATEGORIES=	emulators
-PKGNAMESUFFIX?=	-riscv
+PKGNAMESUFFIX=	-riscv
 
 MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	QEMU with RISC-V (RV64GC, RV32GC) emulation support
 
 LICENSE=	GPLv2
 
+ONLY_FOR_ARCHS=	amd64 i386 powerpc powerpc64
 BROKEN_powerpc64=	fails to compile: async.c: internal compiler error: Segmentation fault
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	riscv
-GH_PROJECT=	riscv-qemu
-GH_TAGNAME=	2094f39
+GH_TUPLE=	riscv:riscv-qemu:7632a4d \
+		qemu:dtc:65cc4d2:dtc/dtc
 
 HAS_CONFIGURE=	yes
-USES=	gmake libtool makeinfo pkgconfig python:2,build
+USES=	gmake libtool makeinfo pkgconfig python:2.7,build
 USE_XORG=	pixman
 USE_GNOME+=	glib20
-ONLY_FOR_ARCHS=	amd64 i386 powerpc powerpc64
 
 CONFIGURE_ARGS+=--target-list=riscv64-softmmu,riscv32-softmmu \
 		--cc=${CC} \
+		--enable-fdt \
 		--disable-curl \
 		--disable-docs \
 		--disable-gtk \
