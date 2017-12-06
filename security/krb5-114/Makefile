@@ -18,7 +18,7 @@ COMMENT=		MIT implementation of RFC 4120 network authentication service
 LICENSE=		MIT
 
 DEPRECATED=		EOL twelve months after release of krb5-1.16
-EXPIRATION_DATE=	2017-12-31
+EXPIRATION_DATE=	2018-12-31
 
 CONFLICTS=		heimdal-[0-9]* srp-[0-9]* krb5-11[35]-[0-9]* \
 			krb5-1.[0-9]* krb5-devel-*
