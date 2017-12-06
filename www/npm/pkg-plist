@@ -20,7 +20,7 @@ lib/node_modules/npm/bin/npm
 @(,,755) lib/node_modules/npm/bin/npm-cli.js
 lib/node_modules/npm/bin/npm.cmd
 lib/node_modules/npm/bin/npx
-lib/node_modules/npm/bin/npx-cli.js
+@(,,755) lib/node_modules/npm/bin/npx-cli.js
 lib/node_modules/npm/bin/npx.cmd
 lib/node_modules/npm/changelogs/CHANGELOG-1.md
 lib/node_modules/npm/changelogs/CHANGELOG-2.md
