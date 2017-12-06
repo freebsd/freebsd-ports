@@ -2,13 +2,17 @@
 # $FreeBSD$
 
 PORTNAME=	mdocml
-PORTVERSION=	1.13.4
+PORTVERSION=	1.14.3
 CATEGORIES=	textproc
 MASTER_SITES=	http://mdocml.bsd.lv/snapshots/ \
 		LOCAL/uqs
+DISTNAME=	mandoc-${DISTVERSION}
 
 MAINTAINER=	uqs@FreeBSD.org
 COMMENT=	mdoc macro compiler
+
+LICENSE=	ISCL
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libsqlite3.so:databases/sqlite3
 
