@@ -41,8 +41,8 @@ GUI_LIB_DEPENDS=		libfltk.so:x11-toolkits/fltk \
 				libfontconfig.so:x11-fonts/fontconfig
 GUI_ON=				-DGuiModule:STRING=fltk
 GUI_CMAKE_OFF=			-DGuiModule:STRING=OFF
-GUI_USE+=			XORG=x11,xext,xfixes,xcursor,ice,sm,xpm,xinerama,xft
-GUI_USE+=			GL=glu
+GUI_USE+=			XORG=x11,xext,xfixes,xcursor,xrender,ice,sm,xpm,xinerama,xft
+GUI_USE+=			GL=gl,glu
 GUI_USES=			jpeg
 
 OSS_CMAKE_ON=			-DOssEnable:BOOL=ON
@@ -76,6 +76,13 @@ PORTEXAMPLES=	*
 
 CMAKE_ARGS+=	-DZYN_DATADIR:STRING=${DATADIR}
 CMAKE_ARGS+=	-DZYN_EXAMPLESDIR:STRING=${EXAMPLESDIR}
+
+.include <bsd.port.options.mk>
+
+# Build fix for ZynAddSubFx
+BUILD_DEPENDS+=	clang40:devel/llvm40
+CC=		clang40
+CXX=		clang++40
 
 .include <bsd.port.pre.mk>
 
