@@ -27,6 +27,25 @@ you update your ports collection, before attempting any port upgrades.
   the new dsbmd.conf.sample.
 
 20171130:
+  AFFECTS: all ports users
+  AUTHOR: adamw@FreeBSD.org
+
+  The ports tree has gained "flavors," which are a way to produce multiple
+  variations of a port. Some intended examples of this are language
+  modules being produced for multiple language versions, and lite/nox11 packages,
+  without needing separate ports for each variation. Python ports have already
+  been flavored (see the below entry). Flavor support must be added to
+  individual ports.
+
+  Flavors are already supported by make, pkg, poudriere, and synth; see the
+  manpages for those tools for usage instructions. Portmaster and portupgrade
+  don't support flavors yet, but community work on those tools is in progress.
+
+  Some bumps and breakages are inevitable for a major change such as this.
+  Please report breakages and monitor the ports@ list for solutions as they
+  become available.
+
+20171130:
   AFFECTS: */py*
   AUTHOR: mat@FreeBSD.org
 
