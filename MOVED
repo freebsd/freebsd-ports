@@ -9807,3 +9807,4 @@ games/linux-rtcw|games/iortcw|2017-12-01|Has expired: Use the native and open so
 java/bootstrap-openjdk|java/bootstrap-openjdk6|2017-12-01|Has expired: superseded by java/bootstrap-openjdk[68]
 lang/gcc46|lang/gcc6|2017-12-01|Has expired: Unsupported by upstream. Use GCC 6 or newer instead.
 security/krb5-113|security/krb5-114|2017-12-03|Has expired: EOL twelve months after release of krb5-1.15
+net/bird6|net/bird@ipv6|2017-12-06|Moved to a flavored version

@@ -1,7 +1,7 @@
 # Created by: Pav Lucistnik <pav@FreeBSD.org>
 # $FreeBSD$
 
-PORTNAME?=	bird
+PORTNAME=	bird
 PORTVERSION=	1.6.3
 PORTREVISION=	3
 CATEGORIES=	net
@@ -9,13 +9,16 @@ MASTER_SITES=	ftp://bird.network.cz/pub/bird/ \
 		http://bird.mpls.in/distfiles/bird/
 
 MAINTAINER=	melifaro@ipfw.ru
-COMMENT?=	Dynamic IP routing daemon (IPv4 version)
+COMMENT?=	Dynamic IP routing daemon (${FLAVOR:Uipv4:S/ip/IP/} version)
 
 LICENSE=	GPLv2
 
+FLAVORS=	ipv4 ipv6
+ipv6_PKGNAMESUFFIX=	6
+
 USES=		bison gmake ncurses readline
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=	--localstatedir=/var
+CONFIGURE_ARGS=	--localstatedir=/var
 
 OPTIONS_DEFINE?=	FIREWALL
 FIREWALL_DESC=	Enable firewall protocol
@@ -23,11 +26,14 @@ NO_OPTIONS_SORT=	yes
 
 MAKE_JOBS_UNSAFE=	yes
 
-USE_RC_SUBR=	${PORTNAME}
+USE_RC_SUBR=	${PKGBASE}
 
-SUB_LIST+=	PORTNAME=${PORTNAME}
-
+.if ${FLAVOR:U} == ipv6
+CONFIGURE_ARGS+=	--enable-ipv6
+PLIST_SUB=	VER=6
+.else
 PLIST_SUB?=	VER=""
+.endif
 
 FIREWALL_EXTRA_PATCHES+=	${FILESDIR}/firewall_support.patch
 
