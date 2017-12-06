@@ -33,6 +33,7 @@ USE_QT5=	core dbus gui location network opengl printsupport qml quick sensors \
 USE_JAVA=	yes
 JAVA_BUILD=	yes
 USE_GITHUB=	yes
+GH_PROJECT=	${PORTNAME:tl}
 GH_TUPLE=	rstudio:rmarkdown:aed26ac:rmarkdown/dependencies/common/rmarkdown \
 		rstudio:rsconnect:03c379b:rsconnect/dependencies/common/rsconnect
 
@@ -41,7 +42,6 @@ CMAKE_ARGS=	-DRSTUDIO_TARGET=Desktop \
 		-DFREEBSD_LIBDIR:STRING=${PREFIX}/lib
 MAKE_ENV=	HOME=${WRKDIR} \
 		ANT_OPTS="-Duser.home=${WRKDIR}"
-WRKSRC=		${WRKDIR}/${PORTNAME:tl}-${PORTVERSION}
 
 GWT_VERSION=	2.7.0
 GIN_VERSION=	1.5

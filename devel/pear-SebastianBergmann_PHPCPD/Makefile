@@ -12,8 +12,6 @@ COMMENT=	Copy/Paste Detector (CPD) for PHP code
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-WRKSRC=	${WRKDIR}/${PORTNAME:tl}-${DISTVERSION}
-
 BUILD_DEPENDS=	pear-ezc_ConsoleTools>=1.6.1:devel/pear-ezc_ConsoleTools \
 		pear-SebastianBergmann_FinderFacade>=1.2.2:devel/pear-SebastianBergmann_FinderFacade \
 		pear-PHP_Timer>=1.0.9:devel/pear-PHP_Timer \
@@ -23,13 +21,14 @@ RUN_DEPENDS=	pear-ezc_ConsoleTools>=1.6.1:devel/pear-ezc_ConsoleTools \
 		pear-PHP_Timer>=1.0.9:devel/pear-PHP_Timer \
 		pear-channel-phpunit>=20110327:devel/pear-channel-phpunit
 
+USES=	php
 USE_GITHUB=	yes
 GH_ACCOUNT=	sebastianbergmann
+GH_PROJECT=	${PORTNAME:tl}
+USE_PHP=	tokenizer
 
 NO_ARCH=	yes
 
-USES=	php
-USE_PHP=	tokenizer
 
 NO_BUILD=	yes
 
