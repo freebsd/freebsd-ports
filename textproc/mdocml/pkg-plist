@@ -4,24 +4,12 @@ bin/demandoc
 bin/mandoc
 bin/soelim
 bin/whatis
-@comment include/mandoc/man.h
-@comment include/mandoc/mandoc.h
-@comment include/mandoc/mandoc_aux.h
-@comment include/mandoc/mdoc.h
-@comment include/mandoc/roff.h
-lib/mandoc/libmandoc.a
 man/man1/apropos.1.gz
 man/man1/demandoc.1.gz
 @comment man/man1/man.1.gz
 man/man1/mandoc.1.gz
 man/man1/soelim.1.gz
 man/man1/whatis.1.gz
-man/man3/mandoc.3.gz
-man/man3/mandoc_escape.3.gz
-man/man3/mandoc_malloc.3.gz
-man/man3/mansearch.3.gz
-man/man3/mchars_alloc.3.gz
-man/man3/tbl.3.gz
 man/man5/man.conf.5.gz
 man/man5/mandoc.db.5.gz
 man/man7/eqn.7.gz
