@@ -3,7 +3,7 @@
 
 PORTNAME=	synth
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.01
+DISTVERSION=	2.02
 CATEGORIES=	ports-mgmt
 
 MAINTAINER=	ericturgeon.bsd@gmail.com
