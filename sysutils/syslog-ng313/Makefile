@@ -7,7 +7,7 @@ CATEGORIES=	sysutils
 DISTFILES=	syslog-ng-${DISTVERSION}.tar.gz
 MASTER_SITES=	https://github.com/balabit/syslog-ng/releases/download/syslog-ng-${DISTVERSION}/
 .if !defined(MASTERDIR)
-PKGNAMESUFFIX=	312
+PKGNAMESUFFIX=	313
 .endif
 
 MAINTAINER=	cy@FreeBSD.org
