@@ -25,8 +25,6 @@ GH_TUPLE=	nanopass:nanopass-framework-scheme:v1.9:nanopass/nanopass \
 		madler:zlib:v1.2.11:zlib/zlib \
 		dybvig:stex:v1.2.1:stex/stex
 
-WRKSRC=		${WRKDIR}/ChezScheme-${PORTVERSION}
-
 USES=		gmake iconv:lib ncurses
 USE_XORG=	x11
 HAS_CONFIGURE=	yes
