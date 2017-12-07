@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	codecov
-PORTVERSION=	2.0.9
+PORTVERSION=	2.0.10
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -22,8 +21,8 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ddt>0:devel/py-ddt@${FLAVOR} \
 USES=		python
 USE_PYTHON=	autoplist concurrent distutils
 
-USE_GITHUB=     yes
-GH_PROJECT=     ${PORTNAME}-python
+USE_GITHUB=	yes
+GH_PROJECT=	${PORTNAME}-python
 
 NO_ARCH=	yes
 
