@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	SQL-Translator
-PORTVERSION=	0.11021
-PORTREVISION=	2
+PORTVERSION=	0.11023
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -18,7 +17,6 @@ BUILD_DEPENDS=	p5-Carp-Clan>=0:devel/p5-Carp-Clan \
 		p5-DBI>=1.54:databases/p5-DBI \
 		p5-File-ShareDir>=1:devel/p5-File-ShareDir \
 		p5-JSON>=2:converters/p5-JSON \
-		p5-List-MoreUtils>=0.09:lang/p5-List-MoreUtils \
 		p5-Moo>=1.000003:devel/p5-Moo \
 		p5-Package-Variant>=1.001001:devel/p5-Package-Variant \
 		p5-Parse-RecDescent>=1.967.009:devel/p5-Parse-RecDescent \
@@ -38,6 +36,7 @@ TEST_DEPENDS=	p5-HTML-Parser>=0:www/p5-HTML-Parser \
 OPTIONS_DEFINE=	DIAGRAM
 DIAGRAM_DESC=	Diagram generation support
 
+NO_ARCH=	yes
 REINPLACE_ARGS=	-i ''
 USES=		perl5
 USE_PERL5=	configure
