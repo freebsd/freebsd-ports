@@ -1,11 +1,10 @@
-# Created by: Kris Moore <kmoore@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	sysadm
-PORTVERSION=	201711221044
+PORTVERSION=	201712070943
 CATEGORIES=	sysutils
 
-MAINTAINER=	kmoore@FreeBSD.org
+MAINTAINER=	jt@ixsystems.com
 COMMENT=	SysAdm API server
 
 LICENSE=	BSD3CLAUSE
@@ -18,7 +17,7 @@ MAKE_ARGS=	PREFIX=${STAGEDIR}${PREFIX}
 USE_GITHUB=	yes
 GH_ACCOUNT=	trueos
 GH_PROJECT=	sysadm
-GH_TAGNAME=	77986e0312dee41d2c03a644d952bb7c4a385e9f
+GH_TAGNAME=	dd4ab15bb46c0fac16bc2532293ca11a24e7f9d0
 
 .include <bsd.port.pre.mk>
 
