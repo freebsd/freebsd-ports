@@ -1,19 +1,10 @@
-%%DATADIR%%/import_dashboards
 %%FILEBEAT%%sbin/filebeat
 %%HEARTBEAT%%sbin/heartbeat
 %%METRICBEAT%%sbin/metricbeat
 %%PACKETBEAT%%sbin/packetbeat
-%%FILEBEAT%%@sample etc/filebeat.template-es2x.json.sample
-%%FILEBEAT%%@sample etc/filebeat.template.json.sample
 %%FILEBEAT%%@sample etc/filebeat.yml.sample
-%%HEARTBEAT%%@sample etc/heartbeat.template-es2x.json.sample
-%%HEARTBEAT%%@sample etc/heartbeat.template.json.sample
 %%HEARTBEAT%%@sample etc/heartbeat.yml.sample
-%%METRICBEAT%%@sample etc/metricbeat.template-es2x.json.sample
-%%METRICBEAT%%@sample etc/metricbeat.template.json.sample
 %%METRICBEAT%%@sample etc/metricbeat.yml.sample
-%%PACKETBEAT%%@sample etc/packetbeat.template-es2x.json.sample
-%%PACKETBEAT%%@sample etc/packetbeat.template.json.sample
 %%PACKETBEAT%%@sample etc/packetbeat.yml.sample
 @dir /var/db/beats
 %%FILEBEAT%%@dir /var/db/beats/filebeat
