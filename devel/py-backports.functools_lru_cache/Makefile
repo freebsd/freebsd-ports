@@ -13,7 +13,7 @@ COMMENT=	Backport of functools.lru_cache from Python 3.3
 LICENSE=	MIT
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools_scm>=1.15.0:devel/py-setuptools_scm@${FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}backports>0:devel/py-backports@${FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}backports>=0:devel/py-backports@${FLAVOR}
 
 NO_ARCH=	yes
 USE_PYTHON=	autoplist distutils
@@ -23,10 +23,8 @@ POST_PLIST=	trim-backports-namespace
 
 post-install:
 	@${RM} ${STAGEDIR}${PYTHON_SITELIBDIR}/backports/__init__.py*
-	@${RM} -r ${STAGEDIR}${PYTHON_SITELIBDIR}/backports/__pycache__
 
 trim-backports-namespace:
 	@${REINPLACE_CMD} '/backports\/__init__.py*/d' ${TMPPLIST}
-	@${REINPLACE_CMD} '/backports\/__pycache__*/d' ${TMPPLIST}
 
 .include <bsd.port.mk>
