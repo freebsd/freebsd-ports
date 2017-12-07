@@ -1,12 +1,11 @@
-# Created by: Ken Moore <ken@pcbsd.org>
 # $FreeBSD$
 
 PORTNAME=	lumina-coreutils
-PORTVERSION=	1.4.0
-PORTREVISION=	201711221050
+PORTVERSION=	1.4.1
+PORTREVISION=	201712071124
 CATEGORIES=	x11
 
-MAINTAINER=	kmoore@FreeBSD.org
+MAINTAINER=	jt@ixsystems.com
 COMMENT=	Lumina Desktop Environment
 
 LICENSE=	BSD3CLAUSE
@@ -30,7 +29,7 @@ USES=		qmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	trueos
 GH_PROJECT=	lumina
-GH_TAGNAME=	edd25bf35d0a9d54e72b294368fa3b2efa36e88d
+GH_TAGNAME=	7693a6e5b96d1adc4eccefe3758c5744ac9349fc
 WRKSRC_SUBDIR=	src-qt5/core-utils
 
 .if${PORT_OPTIONS:MI18N}

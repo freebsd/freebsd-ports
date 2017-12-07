@@ -129,8 +129,8 @@
     SUBDIR += kdeplasma-addons
     SUBDIR += kruler
     SUBDIR += ksshaskpass
-    SUBDIR += launchy
     SUBDIR += latte-dock
+    SUBDIR += launchy
     SUBDIR += libopensync-plugin-vformat-devel
     SUBDIR += libstreamanalyzer
     SUBDIR += libstreams
@@ -147,7 +147,6 @@
     SUBDIR += lumina-pdf
     SUBDIR += lumina-screenshot
     SUBDIR += lumina-textedit
-    SUBDIR += lumina-xdg-entry
     SUBDIR += mate-notification-daemon
     SUBDIR += mate-utils
     SUBDIR += mdh
