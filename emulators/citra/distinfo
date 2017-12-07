@@ -1,10 +1,10 @@
-TIMESTAMP = 1512421828
-SHA256 (citra-emu-citra-s20171204-56db8e08_GH0.tar.gz) = 4a03d4a5453ae51d7dce5c2b3af5e41839c82beb37ff1a49921d966a477914fc
-SIZE (citra-emu-citra-s20171204-56db8e08_GH0.tar.gz) = 1641549
+TIMESTAMP = 1512580283
+SHA256 (citra-emu-citra-s20171206-4b1253b5_GH0.tar.gz) = 6f6cf672837b089b24fbb7ad9b2a68556d871a64ff2f734693e9e53e5852d83c
+SIZE (citra-emu-citra-s20171206-4b1253b5_GH0.tar.gz) = 1643665
 SHA256 (citra-emu-ext-soundtouch-019d208_GH0.tar.gz) = f48c211bbabe7ad79e1c504af1082756c74241be6bab4aca13140803f4b694e7
 SIZE (citra-emu-ext-soundtouch-019d208_GH0.tar.gz) = 59366
-SHA256 (MerryMage-dynarmic-bb87d25_GH0.tar.gz) = c9ac2c24b410526b94984d700081a77da8e28f5e5f553f18a1e2d99ff8fd54f8
-SIZE (MerryMage-dynarmic-bb87d25_GH0.tar.gz) = 1246108
+SHA256 (MerryMage-dynarmic-f343c56_GH0.tar.gz) = 84d739b4300c04cdcb4b27d615329d75f10c7ca6c9dd1f6f46ec0a6397bdc2ee
+SIZE (MerryMage-dynarmic-f343c56_GH0.tar.gz) = 1246561
 SHA256 (benhoyt-inih-r40_GH0.tar.gz) = 0a7d8600c523ccd2d01a5bec2ef3a6482ada49794e67cf694d2bec796cb2c340
 SIZE (benhoyt-inih-r40_GH0.tar.gz) = 11436
 SHA256 (catchorg-Catch2-v2.0.1_GH0.tar.gz) = 5f31b93712e65d363f257ad0f0c02cfbed7a3988979d5f320ad7771e513d4cc8
