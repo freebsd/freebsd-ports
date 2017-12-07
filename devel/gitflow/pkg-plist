@@ -1,4 +1,5 @@
 bin/git-flow
+bin/git-flow-bugfix
 bin/git-flow-config
 bin/git-flow-feature
 bin/git-flow-hotfix
@@ -14,6 +15,12 @@ bin/gitflow-shFlags
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/hooks/filter-flow-release-branch-tag-message
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/hooks/filter-flow-release-finish-tag-message
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/hooks/filter-flow-release-start-version
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/hooks/post-flow-bugfix-delete
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/hooks/post-flow-bugfix-finish
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/hooks/post-flow-bugfix-publish
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/hooks/post-flow-bugfix-pull
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/hooks/post-flow-bugfix-start
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/hooks/post-flow-bugfix-track
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/hooks/post-flow-feature-delete
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/hooks/post-flow-feature-finish
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/hooks/post-flow-feature-publish
