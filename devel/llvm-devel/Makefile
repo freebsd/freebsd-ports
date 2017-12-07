@@ -250,7 +250,8 @@ COMMANDS+=	ld.lld \
 COMMANDS+=	lldb \
 		lldb-argdumper \
 		lldb-mi \
-		lldb-server
+		lldb-server \
+		lldb-test
 .endif
 
 .if ! ${OPTIONS_DEFINE:MCOMPILER_RT}
