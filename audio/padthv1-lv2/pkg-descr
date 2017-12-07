@@ -1,0 +1,12 @@
+An old-school polyphonic additive synthesizer with stereo fx.
+
+Based on the PADsynth algorithm, by Paul Nasca, as a special
+variant of additive synthesis.
+
+Features:
+* pure stand-alone JACK client with JACK-session, NSM and both JACK MIDI
+  and ALSA MIDI input support
+* LV2 instrument plugin.
+  URI: http://padthv1.sourceforge.net/lv2
+
+WWW: http://padthv1.sourceforge.net
