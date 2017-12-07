@@ -11,7 +11,7 @@ validate_env dp_RAWDEPENDS dp_DEPTYPE dp_DEPENDS_TARGET dp_DEPENDS_PRECLEAN \
 	dp_DEPENDS_CLEAN dp_DEPENDS_ARGS dp_USE_PACKAGE_DEPENDS \
 	dp_USE_PACKAGE_DEPENDS_ONLY dp_PKG_ADD dp_PKG_INFO dp_WRKDIR \
 	dp_PKGNAME dp_STRICT_DEPENDS dp_LOCALBASE dp_LIB_DIRS dp_SH \
-	dp_SCRIPTSDIR PORTSDIR dp_MAKE
+	dp_SCRIPTSDIR PORTSDIR dp_MAKE dp_MAKEFLAGS
 
 [ -n "${DEBUG_MK_SCRIPTS}" -o -n "${DEBUG_MK_SCRIPTS_DO_DEPENDS}" ] && set -x
 
@@ -23,7 +23,7 @@ install_depends()
 	target=$2
 	depends_args=$3
 	if [ -z "${dp_USE_PACKAGE_DEPENDS}" -a -z "${dp_USE_PACKAGE_DEPENDS_ONLY}" ]; then
-		${dp_MAKE} -C ${origin} -DINSTALLS_DEPENDS ${target} ${depends_args}
+		MAKEFLAGS="${dp_MAKEFLAGS}" ${dp_MAKE} -C ${origin} -DINSTALLS_DEPENDS ${target} ${depends_args}
 		return 0
 	fi
 
@@ -46,7 +46,7 @@ install_depends()
 		echo "===>   USE_PACKAGE_DEPENDS_ONLY set - not building missing dependency from source" >&2
 		exit 1
 	else
-		${dp_MAKE} -C ${origin} -DINSTALLS_DEPENDS ${target} ${depends_args}
+		MAKEFLAGS="${dp_MAKEFLAGS}" ${dp_MAKE} -C ${origin} -DINSTALLS_DEPENDS ${target} ${depends_args}
 	fi
 }
 
