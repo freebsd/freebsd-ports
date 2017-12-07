@@ -61,6 +61,7 @@ bin/sancov-devel
 %%LLDB%%bin/lldb-argdumper-devel
 %%LLDB%%bin/lldb-mi-devel
 %%LLDB%%bin/lldb-server-devel
+%%LLDB%%bin/lldb-test-devel
 %%EXTRAS%%bin/clang-apply-replacements-devel
 %%EXTRAS%%bin/clang-change-namespace-devel
 %%EXTRAS%%bin/clang-include-fixer-devel
@@ -129,6 +130,7 @@ llvm-devel/bin/llc
 %%LLDB%%llvm-devel/bin/lldb-argdumper
 %%LLDB%%llvm-devel/bin/lldb-mi
 %%LLDB%%llvm-devel/bin/lldb-server
+%%LLDB%%llvm-devel/bin/lldb-test
 llvm-devel/bin/lli
 llvm-devel/bin/llvm-ar
 llvm-devel/bin/llvm-as
@@ -1522,6 +1524,7 @@ llvm-devel/include/llvm/Config/Disassemblers.def
 llvm-devel/include/llvm/Config/Targets.def
 llvm-devel/include/llvm/Config/abi-breaking.h
 llvm-devel/include/llvm/Config/llvm-config.h
+llvm-devel/include/llvm/DebugInfo/CodeView/AppendingTypeTableBuilder.h
 llvm-devel/include/llvm/DebugInfo/CodeView/CVDebugRecord.h
 llvm-devel/include/llvm/DebugInfo/CodeView/CVRecord.h
 llvm-devel/include/llvm/DebugInfo/CodeView/CVSymbolVisitor.h
@@ -1552,6 +1555,7 @@ llvm-devel/include/llvm/DebugInfo/CodeView/FunctionId.h
 llvm-devel/include/llvm/DebugInfo/CodeView/GUID.h
 llvm-devel/include/llvm/DebugInfo/CodeView/LazyRandomTypeCollection.h
 llvm-devel/include/llvm/DebugInfo/CodeView/Line.h
+llvm-devel/include/llvm/DebugInfo/CodeView/MergingTypeTableBuilder.h
 llvm-devel/include/llvm/DebugInfo/CodeView/RecordName.h
 llvm-devel/include/llvm/DebugInfo/CodeView/RecordSerialization.h
 llvm-devel/include/llvm/DebugInfo/CodeView/SimpleTypeSerializer.h
@@ -1568,13 +1572,13 @@ llvm-devel/include/llvm/DebugInfo/CodeView/SymbolVisitorDelegate.h
 llvm-devel/include/llvm/DebugInfo/CodeView/TypeCollection.h
 llvm-devel/include/llvm/DebugInfo/CodeView/TypeDeserializer.h
 llvm-devel/include/llvm/DebugInfo/CodeView/TypeDumpVisitor.h
+llvm-devel/include/llvm/DebugInfo/CodeView/TypeHashing.h
 llvm-devel/include/llvm/DebugInfo/CodeView/TypeIndex.h
 llvm-devel/include/llvm/DebugInfo/CodeView/TypeIndexDiscovery.h
 llvm-devel/include/llvm/DebugInfo/CodeView/TypeRecord.h
 llvm-devel/include/llvm/DebugInfo/CodeView/TypeRecordMapping.h
 llvm-devel/include/llvm/DebugInfo/CodeView/TypeStreamMerger.h
 llvm-devel/include/llvm/DebugInfo/CodeView/TypeSymbolEmitter.h
-llvm-devel/include/llvm/DebugInfo/CodeView/TypeTableBuilder.h
 llvm-devel/include/llvm/DebugInfo/CodeView/TypeTableCollection.h
 llvm-devel/include/llvm/DebugInfo/CodeView/TypeVisitorCallbackPipeline.h
 llvm-devel/include/llvm/DebugInfo/CodeView/TypeVisitorCallbacks.h
@@ -1741,6 +1745,7 @@ llvm-devel/include/llvm/ExecutionEngine/Orc/RPCUtils.h
 llvm-devel/include/llvm/ExecutionEngine/Orc/RTDyldObjectLinkingLayer.h
 llvm-devel/include/llvm/ExecutionEngine/Orc/RawByteChannel.h
 llvm-devel/include/llvm/ExecutionEngine/Orc/RemoteObjectLayer.h
+llvm-devel/include/llvm/ExecutionEngine/Orc/SymbolStringPool.h
 llvm-devel/include/llvm/ExecutionEngine/OrcMCJITReplacement.h
 llvm-devel/include/llvm/ExecutionEngine/RTDyldMemoryManager.h
 llvm-devel/include/llvm/ExecutionEngine/RuntimeDyld.h
@@ -1966,6 +1971,7 @@ llvm-devel/include/llvm/Object/WindowsResource.h
 llvm-devel/include/llvm/ObjectYAML/COFFYAML.h
 llvm-devel/include/llvm/ObjectYAML/CodeViewYAMLDebugSections.h
 llvm-devel/include/llvm/ObjectYAML/CodeViewYAMLSymbols.h
+llvm-devel/include/llvm/ObjectYAML/CodeViewYAMLTypeHashing.h
 llvm-devel/include/llvm/ObjectYAML/CodeViewYAMLTypes.h
 llvm-devel/include/llvm/ObjectYAML/DWARFEmitter.h
 llvm-devel/include/llvm/ObjectYAML/DWARFYAML.h
@@ -2254,6 +2260,7 @@ llvm-devel/include/llvm/Transforms/Utils/BasicBlockUtils.h
 llvm-devel/include/llvm/Transforms/Utils/BreakCriticalEdges.h
 llvm-devel/include/llvm/Transforms/Utils/BuildLibCalls.h
 llvm-devel/include/llvm/Transforms/Utils/BypassSlowDivision.h
+llvm-devel/include/llvm/Transforms/Utils/CallPromotionUtils.h
 llvm-devel/include/llvm/Transforms/Utils/Cloning.h
 llvm-devel/include/llvm/Transforms/Utils/CodeExtractor.h
 llvm-devel/include/llvm/Transforms/Utils/CtorUtils.h
