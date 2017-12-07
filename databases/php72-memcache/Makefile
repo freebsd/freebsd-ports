@@ -5,7 +5,7 @@ PORTNAME=	memcache
 PORTVERSION=	3.0.8
 PORTREVISION=	1
 CATEGORIES=	databases
-PKGNAMEPREFIX=	php71-
+PKGNAMEPREFIX=	php72-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Memcached extension for PHP 7.2
