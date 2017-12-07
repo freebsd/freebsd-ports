@@ -622,6 +622,7 @@
     SUBDIR += p5-tagged
     SUBDIR += p5-xmms2
     SUBDIR += pacpl
+    SUBDIR += padthv1-lv2
     SUBDIR += paman
     SUBDIR += paprefs
     SUBDIR += patchage
