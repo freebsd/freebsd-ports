@@ -35,7 +35,7 @@ TLS_SRP_DESC=		TLS-SRP (Secure Remote Password) support
 CONFIGURE_ARGS=	--disable-werror \
 		--enable-imap --enable-pop3 --enable-rtsp --enable-smtp \
 		--with-zsh-functions-dir=${LOCALBASE}/share/zsh/site-functions \
-		--without-axtls
+		--without-axtls --without-brotli
 CONFIGURE_ENV=	LOCALBASE=${LOCALBASE} \
 		ac_cv_func_SSLv2_client_method=no
 GNU_CONFIGURE=	yes
