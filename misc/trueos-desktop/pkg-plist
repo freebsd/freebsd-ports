@@ -173,6 +173,8 @@ share/trueos/desktop-defaults/usr/local/share/wallpapers/TrueOS/trueos-2-1080.pn
 share/trueos/desktop-defaults/usr/local/share/wallpapers/TrueOS/trueos-2-4k.png
 share/trueos/desktop-defaults/usr/local/share/wallpapers/TrueOS/trueos-current-underconstruction-1080.png
 share/trueos/desktop-defaults/usr/local/share/wallpapers/TrueOS/trueos-current-underconstruction-4k.png
+share/trueos/desktop-defaults/usr/local/share/wallpapers/TrueOS/TrueOS_17-12_4K_grey.jpg
+share/trueos/desktop-defaults/usr/local/share/wallpapers/TrueOS/TrueOS_17-12_4K_purple.jpg
 share/trueos/desktop-defaults/usr/local/share/wallpapers/trueos-default.jpg
 share/trueos/desktop-defaults/usr/share/skel/.bashrc
 share/trueos/desktop-defaults/usr/share/skel/.cache/dconf/user

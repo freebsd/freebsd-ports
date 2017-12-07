@@ -111,6 +111,12 @@ if [ ! -e "/var/.openrc-migrate-10" ] ; then
 fi
 touch /var/.openrc-migrate-10
 
+if [ ! -e "/var/.openrc-migrate-11" ] ; then
+  /sbin/rc-update add avahi-daemon default
+  /sbin/rc-update add avahi-dnsconfd default
+fi
+touch /var/.openrc-migrate-11
+
 # 11-18-17
 # Prep for 17.12 release
 if [ ! -e "/var/.trueos-migrate-1" ] ; then
@@ -138,6 +144,8 @@ if [ ! -e "/var/.trueos-migrate-1" ] ; then
   /sbin/rc-update add autounmountd default
   /sbin/rc-update delete sndiod default
   /sbin/rc-update add mountlate default
+  /sbin/rc-update add avahi-daemon default
+  /sbin/rc-update add avahi-dnsconfd default
 fi
 touch /var/.trueos-migrate-1
 
