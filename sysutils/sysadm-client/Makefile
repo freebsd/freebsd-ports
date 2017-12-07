@@ -1,11 +1,10 @@
-# Created by: Kris Moore <kmoore@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	sysadm-client
-PORTVERSION=	201711221030
+PORTVERSION=	201712070942
 CATEGORIES=	sysutils
 
-MAINTAINER=	kmoore@FreeBSD.org
+MAINTAINER=	jt@ixsystems.com
 COMMENT=	SysAdm Qt5 Client
 
 LICENSE=	BSD3CLAUSE
@@ -19,7 +18,7 @@ MAKE_ARGS=	PREFIX=${STAGEDIR}${PREFIX}
 USE_GITHUB=	yes
 GH_ACCOUNT=	trueos
 GH_PROJECT=	sysadm-ui-qt
-GH_TAGNAME=	7ef723116f1ef12416d3878e490402ebf0c8458c
+GH_TAGNAME=	2f2bf060e750559110754a8a9c96ad6f4507bd27
 
 .include <bsd.port.pre.mk>
 
