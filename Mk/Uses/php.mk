@@ -382,6 +382,7 @@ simplexml_DEPENDS=	textproc/php${PHP_VER}-simplexml
 snmp_DEPENDS=	net-mgmt/php${PHP_VER}-snmp
 soap_DEPENDS=	net/php${PHP_VER}-soap
 sockets_DEPENDS=net/php${PHP_VER}-sockets
+sodium_DEPENDS=	security/php${PHP_VER}-sodium
 spl_DEPENDS=	devel/php${PHP_VER}-spl
 sqlite_DEPENDS=	databases/php${PHP_VER}-sqlite
 sqlite3_DEPENDS=databases/php${PHP_VER}-sqlite3
