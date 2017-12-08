@@ -13,7 +13,6 @@ COMMENT=	Userspace read-copy-update (RCU) data synchronization library
 LICENSE=	LGPL21
 
 BROKEN_aarch64=	Fails to build: Cannot build: unrecognized architecture detected
-BROKEN_armv6=	Fails to build: address argument to atomic builtin must be a pointer
 BROKEN_mips=	Fails to build: undefined reference to `__sync_bool_compare_and_swap_4
 BROKEN_mips64=	Fails to build: undefined reference to `__sync_bool_compare_and_swap_4
 

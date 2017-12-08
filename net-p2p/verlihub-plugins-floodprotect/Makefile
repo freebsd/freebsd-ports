@@ -10,8 +10,6 @@ DISTNAME=	${PLUGIN_NAME}
 
 MAINTAINER=	me@skylord.ru
 
-BROKEN_armv6=		fails to configure: checking for VERLIHUB - version >= 0... no (see config.log)
-
 PLUGIN_NAME=	floodprot
 PLUGIN_DESC=	Floodprotect
 

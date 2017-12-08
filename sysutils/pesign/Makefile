@@ -26,7 +26,6 @@ USE_LDCONFIG=	yes
 
 ONLY_FOR_ARCHS=		aarch64 armv6 armv7 amd64 i386
 ONLY_FOR_ARCHS_REASON=	UEFI specification only supports little-endian processors
-BROKEN_armv6=		fails to compile: error: EFI_VARIABLE_NON_VOLATILE redefined
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%CC%%|${CC}|g' ${WRKSRC}/Make.defaults
