@@ -611,6 +611,7 @@
     SUBDIR += p5-AnyEvent-ReverseHTTP
     SUBDIR += p5-AnyEvent-SCGI
     SUBDIR += p5-Apache-ASP
+    SUBDIR += p5-AnyEvent-WebSocket-Client
     SUBDIR += p5-Apache-Admin-Config
     SUBDIR += p5-Apache-AuthCookie
     SUBDIR += p5-Apache-AuthTicket
