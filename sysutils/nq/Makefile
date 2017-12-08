@@ -16,7 +16,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	chneukirchen
 USE_PERL5=	test
 
-MAKE_ARGS=	PREFIX="${PREFIX}" MANDIR="${PREFIX}/man"
+MAKE_ARGS=	CFLAGS="${CFLAGS}" PREFIX="${PREFIX}" MANDIR="${PREFIX}/man"
 TEST_TARGET=	check
 
 post-install:
