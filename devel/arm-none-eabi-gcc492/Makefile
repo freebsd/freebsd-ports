@@ -69,8 +69,6 @@ MAKE_ARGS+=	CXXFLAGS=-fbracket-depth=512
 .endif
 
 BROKEN_aarch64=		fails to package
-BROKEN_armv6=		error: no member named 'fancy_abort' in namespace 'std::__1'; did you mean simply 'fancy_abort'?
-BROKEN_armv7=		error: no member named 'fancy_abort' in namespace 'std::__1'; did you mean simply 'fancy_abort'?
 BROKEN_mips=		configure: error: cannot compute suffix of object files: cannot compile
 BROKEN_mips64=		configure: error: cannot compute suffix of object files: cannot compile
 
