@@ -18,6 +18,7 @@ USES=		perl5
 USE_PERL5=	test
 
 MAKE_ARGS=	CFLAGS="${CFLAGS}" \
+		PREFIX="${PREFIX}" \
 		MANDIR="${PREFIX}/man"
 TEST_TARGET=	check
 
