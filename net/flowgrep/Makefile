@@ -3,6 +3,7 @@
 
 PORTNAME=	flowgrep
 PORTVERSION=	0.9
+PORTREVISION=	1
 CATEGORIES=	net security
 MASTER_SITES=	http://www.monkey.org/~jose/software/flowgrep/
 DISTNAME=	flowgrep-${PORTVERSION}
@@ -12,8 +13,12 @@ COMMENT=	TCP stream/UDP/IP payload 'grep' utility
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/nidsmodule.so:net/pynids
 
-USES=		python
+LICENSE=	BSD4CLAUSE  # actually 3, but advertising clause is there
+
+USES=		python shebangfix
+SHEBANG_FILES=	flowgrep.py
 NO_BUILD=	yes
+NO_ARCH=	yes
 
 PLIST_FILES=	sbin/flowgrep man/man8/flowgrep.8.gz
 
