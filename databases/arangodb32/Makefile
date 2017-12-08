@@ -3,7 +3,7 @@
 
 PORTNAME=	arangodb
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.2.8
+DISTVERSION=	3.2.9
 CATEGORIES=	databases net
 PKGNAMESUFFIX=	32
 
@@ -14,6 +14,7 @@ LICENSE=	APACHE20
 
 ONLY_FOR_ARCHS=	amd64
 ONLY_FOR_ARCHS_REASON=	"Only builds on amd64"
+BROKEN_FreeBSD_10=	libc++ is too old
 USES=		gmake ssl cmake:outsource,noninja python:2.7 compiler
 USE_GITHUB=	yes
 
@@ -24,15 +25,6 @@ CMAKE_ARGS=	-DUSE_JEMALLOC:BOOL=off \
 USERS=		arangodb
 GROUPS=		arangodb
 USE_RC_SUBR=	arangod
-
-.include <bsd.port.pre.mk>
-
-.if ${COMPILER_TYPE} == clang && ${COMPILER_VERSION} < 40
-BUILD_DEPENDS+=	${LOCALBASE}/bin/clang40:devel/llvm40
-CPP=    ${LOCALBASE}/bin/clang-cpp40
-CC= ${LOCALBASE}/bin/clang40
-CXX=    ${LOCALBASE}/bin/clang++40
-.endif
 
 post-install:
 .for section in 1 8
@@ -50,4 +42,4 @@ post-install:
 	${RMDIR} ${STAGEDIR}${PREFIX}/var/log
 	${RMDIR} ${STAGEDIR}${PREFIX}/var
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
