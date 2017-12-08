@@ -1,0 +1,7 @@
+Mini-graphite that uses client-side java script to render graphs w/o
+depending on graphite.
+
+metronome implements the carbon protocol, so anything that can feed
+Graphite can feed metronome. We also accept submissions via POST.
+
+WWW: https://github.com/ahupowerdns/metronome

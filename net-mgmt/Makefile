@@ -123,6 +123,7 @@
     SUBDIR += lldpd
     SUBDIR += mbrowse
     SUBDIR += mdata-client
+    SUBDIR += metronome
     SUBDIR += mk-livestatus
     SUBDIR += monitoring-plugins
     SUBDIR += mrtg
