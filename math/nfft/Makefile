@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	nfft
-PORTVERSION=	3.3.2
+PORTVERSION=	3.4.0
 CATEGORIES=	math
 
 MAINTAINER=	mike.d.ft402@gmail.com
@@ -27,6 +27,8 @@ OPTIONS_SUB=	DOXYGEN
 
 DOXYGEN_BUILD_DEPENDS=	doxygen:devel/doxygen
 DOXYGEN_ALL_TARGET=	all doc
+
+INSTALL_TARGET=install-strip
 
 .include <bsd.port.pre.mk>
 
