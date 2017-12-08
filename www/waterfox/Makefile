@@ -2,6 +2,7 @@
 
 PORTNAME=	waterfox
 DISTVERSION=	56.0.s20171203
+PORTREVISION=	1
 CATEGORIES=	www ipv6
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -55,6 +56,7 @@ OPTIONS_DEFAULT=	BUNDLED_CAIRO
 
 post-patch:
 	@${REINPLACE_CMD} -e 's/%u/%U/' -e '/X-MultipleArgs/d' \
+		-e 's/firefox/${MOZILLA}/' \
 		-e 's/Firefox/${MOZILLA_NAME}/' \
 		${WATERFOX_DESKTOP}
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
