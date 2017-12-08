@@ -696,6 +696,7 @@
     SUBDIR += node_exporter
     SUBDIR += nomad
     SUBDIR += npadmin
+    SUBDIR += nq
     SUBDIR += nrg2iso
     SUBDIR += nut
     SUBDIR += nvclock
