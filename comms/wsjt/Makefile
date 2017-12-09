@@ -14,8 +14,7 @@ LICENSE=	GPLv3
 
 RUN_DEPENDS=	${LOCALBASE}/bin/kvasd:comms/kvasd \
 		${WSJT_DEPENDS}
-BUILD_DEPENDS=	python:lang/python \
-		${WSJT_DEPENDS}
+BUILD_DEPENDS=	${WSJT_DEPENDS}
 LIB_DEPENDS=	libfftw3.so:math/fftw3 \
 		libfftw3f.so:math/fftw3-float \
 		libsamplerate.so:audio/libsamplerate \
