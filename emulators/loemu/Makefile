@@ -12,11 +12,11 @@ COMMENT=	Simple frontend for various game emulators
 
 LICENSE=	GPLv2+
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-2.0/gtk/__init__.py:x11-toolkits/py-gtk2 \
-		${PYTHON_SITELIBDIR}/libxml2.py:textproc/py-libxml2 \
-		${PYTHON_SITELIBDIR}/libxslt.py:textproc/py-libxslt
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}libxml2>=0:textproc/py-libxml2@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}libxslt>=0:textproc/py-libxslt@${PY_FLAVOR}
 
 USES=		gettext python:2.7 shebangfix
+USE_GNOME=	pygtk2
 USE_PYTHON=	distutils
 NO_BUILD=	yes
 SHEBANG_FILES=	setup.py
