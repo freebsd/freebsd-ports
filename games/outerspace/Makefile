@@ -10,7 +10,7 @@ MASTER_SITES=	SF/ospace/OSLauncher/${PORTVERSION}
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	On-line strategy game
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pygame/__init__.py:devel/py-game
+RUN_DEPENDS=	${PYGAME}
 
 USES=		python:2.7
 NO_BUILD=	yes
