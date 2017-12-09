@@ -15,7 +15,7 @@ LICENSE=	LGPL21
 LIB_DEPENDS=	libbft.so:science/bft
 BUILD_DEPENDS=	swig:devel/swig13
 
-USES=		libtool python
+USES=		libtool python:2.7
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_path_PYEXE=${PYTHON_CMD}
