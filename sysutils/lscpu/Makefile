@@ -10,6 +10,7 @@ COMMENT=	Display information about the CPU architecture
 
 LICENSE=	BSD3CLAUSE
 
+BROKEN_aarch64=		fails to compile: lib/clang/3.8.0/include/cpuid.h:25:2: error: this header is for x86 only
 BROKEN_armv6=		fails to compile: lib/clang/5.0.0/include/cpuid.h:25:2: error: this header is for x86 only
 BROKEN_armv7=		fails to compile: lib/clang/5.0.0/include/cpuid.h:25:2: error: this header is for x86 only
 BROKEN_mips=		fails to compile: lscpu.c:10:19: error: cpuid.h: No such file or directory
