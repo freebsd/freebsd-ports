@@ -1,6 +1,6 @@
---- src/wayland-os.c.orig	2015-07-06 19:38:51 UTC
+--- src/wayland-os.c.orig	2017-08-08 18:20:52 UTC
 +++ src/wayland-os.c
-@@ -25,14 +25,20 @@
+@@ -25,6 +25,8 @@
  
  #define _GNU_SOURCE
  
@@ -9,20 +9,15 @@
  #include <sys/types.h>
  #include <sys/socket.h>
  #include <unistd.h>
- #include <fcntl.h>
+@@ -32,7 +34,6 @@
  #include <errno.h>
-+#ifdef HAVE_SYS_EPOLL_H
  #include <sys/epoll.h>
-+#endif
-+#ifdef HAVE_SYS_EVENT_H
-+#include <sys/event.h>
-+#endif
  
 -#include "../config.h"
  #include "wayland-os.h"
  
  static int
-@@ -62,26 +68,50 @@ wl_os_socket_cloexec(int domain, int typ
+@@ -62,26 +63,50 @@ wl_os_socket_cloexec(int domain, int type, int protoco
  {
  	int fd;
  
@@ -73,7 +68,7 @@
  
  	newfd = fcntl(fd, F_DUPFD, minfd);
  	return set_cloexec_or_close(newfd);
-@@ -123,15 +153,18 @@ wl_os_recvmsg_cloexec(int sockfd, struct
+@@ -123,15 +148,18 @@ wl_os_recvmsg_cloexec(int sockfd, struct msghdr *msg, 
  {
  	ssize_t len;
  
@@ -92,22 +87,10 @@
  int
  wl_os_epoll_create_cloexec(void)
  {
-@@ -148,6 +181,19 @@ wl_os_epoll_create_cloexec(void)
+@@ -148,6 +176,7 @@ wl_os_epoll_create_cloexec(void)
  	fd = epoll_create(1);
  	return set_cloexec_or_close(fd);
  }
-+#endif
-+
-+#ifdef HAVE_SYS_EVENT_H
-+int
-+wl_os_kqueue_create_cloexec(void)
-+{
-+	int fd;
-+
-+	fd = kqueue();
-+
-+	return set_cloexec_or_close(fd);
-+}
 +#endif
  
  int
