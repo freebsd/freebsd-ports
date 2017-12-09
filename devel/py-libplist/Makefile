@@ -13,6 +13,7 @@ PORTSCOUT=	ignore:1
 
 USES=		python:2.7
 USE_PYTHON=	flavors cython
+BINARY_ALIAS=	cython=cython-${PYTHON_VER}
 CONFIGURE_ENV=	PYTHON_LDFLAGS="`pkg-config --libs python-${PYTHON_VER}`"
 SLAVE_PORT=	yes
 MASTERDIR=	${.CURDIR:H:H}/devel/libplist
