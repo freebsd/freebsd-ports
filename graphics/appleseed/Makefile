@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	appleseed
-DISTVERSION=	1.6.0-beta
-PORTREVISION=	1
+DISTVERSION=	1.7.1-beta
 CATEGORIES=	graphics
 
 MAINTAINER=	danfe@FreeBSD.org
@@ -14,7 +13,8 @@ LICENSE=	MIT
 LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 		libpng.so:graphics/png \
 		libIlmImf.so:graphics/OpenEXR \
-		libxerces-c.so:textproc/xerces-c3
+		libxerces-c.so:textproc/xerces-c3 \
+		liboslexec.so:graphics/openshadinglanguage
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	${PORTNAME}hq
@@ -22,7 +22,7 @@ GH_ACCOUNT=	${PORTNAME}hq
 ONLY_FOR_ARCHS=	i386 amd64
 ONLY_FOR_ARCHS_REASON=	not ported to it yet
 
-USES=		cmake:outsource
+USES=		cmake:outsource compiler:env
 USE_QT4=	moc_build qmake_build rcc_build uic_build opengl
 
 LDFLAGS+=	-lboost_atomic
@@ -42,28 +42,31 @@ PLIST_SUB=	APPHOME=${CMAKE_INSTALL_PREFIX}
 SUB_FILES=	pkg-message
 SUB_LIST:=	${PLIST_SUB}
 
-OPTIONS_DEFINE=	CPP11 EXAMPLES OSL DISNEY
+OPTIONS_DEFINE=	CPP11 EXAMPLES DISNEY
 OPTIONS_DEFAULT=	DISNEY
 OPTIONS_SUB=	yes
 
 CPP11_DESC=	Build in C++11 mode
-OSL_DESC=	Open Shading Language support
 DISNEY_DESC=	Disney material support
 
 CPP11_CMAKE_ON=	-DUSE_CPP11:BOOL=ON
 
 EXAMPLES_CMAKE_OFF=	-DWITH_SAMPLES:BOOL=OFF
 
-OSL_CMAKE_ON=	-DWITH_OSL:BOOL=ON
-OSL_LIB_DEPENDS=	liboslexec.so:graphics/openshadinglanguage
-# src/appleseed/libappleseed.so: undefined reference to `typeinfo for OSL::RendererServices'
-OSL_BROKEN=	requires RTTI support in LLVM/OSL which is currently missing
-
 DISNEY_CMAKE_ON=	-DWITH_DISNEY_MATERIAL:BOOL=ON
 DISNEY_LIB_DEPENDS=	libOpenImageIO.so:graphics/openimageio \
 			libSeExprEditor.so:graphics/seexpr
 
+.include <bsd.port.pre.mk>
+
 post-patch:
 	@${RMDIR} ${WRKSRC}/sandbox/docs/api
+.if ${COMPILER_TYPE} == clang && ${COMPILER_VERSION} < 39
+	@${ECHO_MSG} "===>  Patching for Core Working Group (CWG) Defect 253 (see r455830)"
+	@${REINPLACE_CMD} -E 's,const (.*MDF ),\1,' \
+		${WRKSRC}/src/appleseed/renderer/modeling/bsdf/disneybrdf.cpp \
+		${WRKSRC}/src/appleseed/renderer/modeling/bsdf/microfacetbrdf.cpp \
+		${WRKSRC}/src/appleseed/foundation/meta/tests/test_microfacet.cpp
+.endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
