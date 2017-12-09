@@ -94,7 +94,7 @@ PORTSCOUT=	limit:\d+\.\d+\.\d+$$
 LDFLAGS+=	-L${LOCALBASE}/lib -fstack-protector
 
 USES=		charsetfix cpe gmake libtool pathfix \
-		perl5 python:build pkgconfig shebangfix tar:xz
+		perl5 python:2.7,build pkgconfig shebangfix tar:xz
 CPE_VENDOR=	redhat
 USE_PERL5=	build
 USE_LDCONFIG=	yes
