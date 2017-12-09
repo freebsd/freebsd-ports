@@ -73,6 +73,7 @@
     SUBDIR += p5-Bio-SCF
     SUBDIR += p5-BioPerl
     SUBDIR += p5-BioPerl-Run
+    SUBDIR += p5-TrimGalore
     SUBDIR += p5-transdecoder
     SUBDIR += paml
     SUBDIR += phrap
