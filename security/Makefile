@@ -1237,6 +1237,7 @@
     SUBDIR += truecrypt
     SUBDIR += tsshbatch
     SUBDIR += tthsum
+    SUBDIR += u2f-devd
     SUBDIR += umit
     SUBDIR += unhide
     SUBDIR += unicornscan
