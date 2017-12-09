@@ -12,6 +12,10 @@ COMMENT=	Go programming language
 
 LICENSE=	BSD3CLAUSE
 
+BROKEN_armv6 =		fails to build: go build runtime: go/pkg/tool/freebsd_arm/5g: wait: interrupted system call
+BROKEN_armv7 =		fails to build: go build runtime: go/pkg/tool/freebsd_arm/5g: wait: interrupted system call
+ONLY_FOR_ARCHS=		amd64 armv6 armv7 i386
+
 USES=		compiler shebangfix
 SHEBANG_LANG=	sh perl
 SHEBANG_FILES=	src/*.bash \
@@ -28,8 +32,6 @@ sh_OLD_CMD=	"/usr/bin/env bash"
 sh_CMD=		${SH}
 
 WRKSRC=		${WRKDIR}/go
-
-ONLY_FOR_ARCHS=		amd64 armv6 armv7 i386
 
 .include <bsd.port.pre.mk>
 

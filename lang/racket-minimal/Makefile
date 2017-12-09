@@ -21,6 +21,8 @@ LICENSE=	LGPL3
 
 LIB_DEPENDS=	libffi.so:devel/libffi
 
+BROKEN_armv6=		fails to compile: ./lightning/lightning.h:81:2: error: GNU lightning does not support the current target
+BROKEN_armv7=		fails to compile: ./lightning/lightning.h:81:2: error: GNU lightning does not support the current target
 BROKEN_i386=		fails to build: Seg fault (internal error) at 0x606060a
 BROKEN_powerpc64=	fails to build: jit.c: 'JIT_LOCAL4' undeclared (first use in this function)
 NOT_FOR_ARCHS=		aarch64 aarch64 sparc64
