@@ -3,4 +3,4 @@ in multiple languages. Unit is lightweight, polyglot, and dynamically
 configured via API. The design of the server allows reconfiguration of
 specific application parameters as needed by the engineering or operations.
 
-WWW: http://unit.nginx.org/
+WWW: https://unit.nginx.org
