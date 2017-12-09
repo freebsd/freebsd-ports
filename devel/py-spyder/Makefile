@@ -18,6 +18,7 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/PyQt4/QtGui.so:x11-toolkits/py-qt4-gui@${FLAVO
 		${PYTHON_SITELIBDIR}/PyQt4/QtWebKit.so:www/py-qt4-webkit@${FLAVOR} \
 		${PYTHON_SITELIBDIR}/PyQt4/QtNetwork.so:net/py-qt4-network@${FLAVOR}
 
+NO_ARCH=	yes
 USES=		desktop-file-utils python
 USE_PYTHON=	autoplist distutils
 MAKE_ENV=	USE_SETUPTOOLS=1
@@ -50,7 +51,7 @@ SYMPY_DESC=	Symbolic mathematics in the IPython Console
 
 DOCS_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>=0.6:textproc/py-sphinx@${FLAVOR}
 IPYTHON_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ipython>=1.0:devel/ipython@${FLAVOR} \
-	${PYTHON_PKGNAMEPREFIX}pyzmq>=2.1.11:net/py-pyzmq@${FLAVOR}
+			${PYTHON_PKGNAMEPREFIX}pyzmq>=2.1.11:net/py-pyzmq@${FLAVOR}
 JEDI_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}jedi>=0.8.1:devel/py-jedi@${FLAVOR}
 MATPLOT_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}matplotlib>=1.0:math/py-matplotlib@${FLAVOR}
 NUMPY_RUN_DEPENDS=	${PYNUMPY}
