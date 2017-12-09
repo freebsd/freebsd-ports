@@ -11,8 +11,8 @@ COMMENT=	FreeBSD Automated Release Bot
 
 LICENSE=	BSD3CLAUSE
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/zconfig:devel/py-zconfig
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zconfig>=0:devel/py-zconfig@${FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zconfig>=0:devel/py-zconfig@${FLAVOR}
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	threerings
