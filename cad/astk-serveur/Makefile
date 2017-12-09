@@ -31,7 +31,7 @@ LICENSE=	GPLv2
 RUN_DEPENDS+=	${SHELL_INSTALL_ASTER}:shells/${SHIADEP}
 
 .if !defined(CLIENT_SEUL)
-USES+=		gettext python shebangfix tk:build
+USES+=		gettext python:2.7 shebangfix tk:build
 SHEBANG_FILES=	unittest/run_test.py
 .else
 USES+=		tk
