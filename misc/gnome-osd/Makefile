@@ -14,7 +14,7 @@ COMMENT=	On-Screen-Display infrastructure using Pango text rendering
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gettext-tools gmake pathfix pkgconfig python
+USES=		gettext-tools gmake pathfix pkgconfig python:2.7
 USE_GNOME=	gnomeprefix intlhack pygnome2
 GNU_CONFIGURE=	yes
 NO_ARCH=	yes
