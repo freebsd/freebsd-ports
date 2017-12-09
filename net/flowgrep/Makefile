@@ -11,11 +11,11 @@ DISTNAME=	flowgrep-${PORTVERSION}
 MAINTAINER=	corsmith@gmail.com
 COMMENT=	TCP stream/UDP/IP payload 'grep' utility
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/nidsmodule.so:net/pynids
-
 LICENSE=	BSD4CLAUSE  # actually 3, but advertising clause is there
 
-USES=		python shebangfix
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pynids>=0:net/pynids@${PY_FLAVOR}
+
+USES=		python:2.7 shebangfix
 SHEBANG_FILES=	flowgrep.py
 NO_BUILD=	yes
 NO_ARCH=	yes
