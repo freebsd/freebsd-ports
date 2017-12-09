@@ -276,6 +276,9 @@ include/wine/windows/devicetopology.idl
 include/wine/windows/devpkey.h
 include/wine/windows/devpropdef.h
 include/wine/windows/dhcpcsdk.h
+include/wine/windows/dhtmldid.h
+include/wine/windows/dhtmled.h
+include/wine/windows/dhtmled.idl
 include/wine/windows/difxapi.h
 include/wine/windows/digitalv.h
 include/wine/windows/dimm.h
@@ -2120,6 +2123,7 @@ lib/wine/fakedlls/vssapi.dll
 %%WINE32%%lib/wine/fakedlls/w32sys.dll16
 lib/wine/fakedlls/wbemdisp.dll
 lib/wine/fakedlls/wbemprox.dll
+lib/wine/fakedlls/wdscore.dll
 lib/wine/fakedlls/webservices.dll
 lib/wine/fakedlls/wer.dll
 lib/wine/fakedlls/wevtapi.dll
@@ -2359,6 +2363,7 @@ lib/wine/libhid.def
 lib/wine/libhidclass.def
 lib/wine/libhlink.def
 lib/wine/libhtmlhelp.def
+lib/wine/libhttpapi.def
 lib/wine/libieframe.def
 lib/wine/libimagehlp.def
 lib/wine/libimm32.def
@@ -2783,6 +2788,7 @@ lib/wine/vssapi.dll.so
 %%WINE32%%lib/wine/w32sys.dll16.so
 lib/wine/wbemdisp.dll.so
 lib/wine/wbemprox.dll.so
+lib/wine/wdscore.dll.so
 lib/wine/webservices.dll.so
 lib/wine/wer.dll.so
 lib/wine/wevtapi.dll.so
