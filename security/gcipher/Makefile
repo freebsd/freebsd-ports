@@ -14,7 +14,7 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USE_GNOME=	pygnome2
-USES=		python shebangfix
+USES=		python:2.7 shebangfix
 SHEBANG_FILES=	src/gcipher
 NO_ARCH=	yes
 
