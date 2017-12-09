@@ -1,4 +1,5 @@
 bin/ndpiReader
+include/libndpi-%%MAJOR_VER%%/libndpi/libcache.h
 include/libndpi-%%MAJOR_VER%%/libndpi/ndpi_api.h
 include/libndpi-%%MAJOR_VER%%/libndpi/ndpi_define.h
 include/libndpi-%%MAJOR_VER%%/libndpi/ndpi_includes.h
