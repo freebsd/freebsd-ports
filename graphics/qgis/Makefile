@@ -3,8 +3,7 @@
 
 PORTNAME=	qgis
 DISTVERSIONPREFIX=	final-
-DISTVERSION=	2_18_12
-PORTREVISION=	1
+DISTVERSION=	2_18_14
 CATEGORIES=	graphics geography
 
 MAINTAINER=	rhurlin@gwdg.de
@@ -80,7 +79,7 @@ DEBUG_CMAKE_OFF=	-DCMAKE_BUILD_TYPE=Release
 
 GRASS_BUILD_DEPENDS=	grass72:databases/grass7
 GRASS_RUN_DEPENDS=	grass72:databases/grass7
-GRASS_CMAKE_ON=		-DWITH_GRASS7:BOOL=TRUE -DGRASS_PREFIX7=${LOCALBASE}/grass-7.2.1
+GRASS_CMAKE_ON=		-DWITH_GRASS7:BOOL=TRUE -DGRASS_PREFIX7=${LOCALBASE}/grass-7.2.2
 GRASS_FORCE_MAKE_JOBS=	NO
 GRASS_CMAKE_OFF=	-DWITH_GRASS7:BOOL=FALSE
 
@@ -107,6 +106,7 @@ PYTHON_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cycler>=0.10.0:devel/py-cycler@${PY
 			${PYTHON_PKGNAMEPREFIX}requests>=2.11.1:www/py-requests@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}six>=1.10.0:devel/py-six@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}sqlite3>=2.7.13:databases/py-sqlite3@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}wxPython-common>=3.0.2.0:x11-toolkits/py-wxPython-common@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}yaml>=3.11:devel/py-yaml@${PY_FLAVOR}
 PYTHON_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cycler>=0.10.0:devel/py-cycler@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}dateutil>=2.6.0:devel/py-dateutil@${PY_FLAVOR} \
@@ -130,6 +130,7 @@ PYTHON_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cycler>=0.10.0:devel/py-cycler@${PY_F
 			${PYTHON_PKGNAMEPREFIX}six>=1.10.0:devel/py-six@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}sqlite3>=2.7.13:databases/py-sqlite3@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}termcolor>=1.1.0:devel/py-termcolor@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}wxPython-common>=3.0.2.0:x11-toolkits/py-wxPython-common@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}yaml>=3.11:devel/py-yaml@${PY_FLAVOR}
 PYTHON_CMAKE_ON=	-DWITH_BINDINGS:BOOL=TRUE
 PYTHON_CMAKE_OFF=	-DWITH_BINDINGS:BOOL=FALSE
@@ -184,6 +185,7 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/debian/${PORTNAME}-icon${SZ}x${SZ}.png \
 		${STAGEDIR}${PREFIX}/share/icons/hicolor/${SZ}x${SZ}/apps/${PORTNAME}.png
 .endfor
+	${RM} /tmp/srs.db
 
 check:
 	(cd ${WRKSRC} ; ${SETENV} ${MAKE_ENV} ${MAKE_CMD} check)
