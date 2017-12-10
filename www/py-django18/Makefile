@@ -26,7 +26,9 @@ USE_PYTHON=	autoplist distutils
 SHEBANG_FILES=	django/bin/django-admin.py \
 		django/conf/project_template/manage.py
 
-CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}django-devel ${PYTHON_PKGNAMEPREFIX}django1[69] ${PYTHON_PKGNAMEPREFIX}django110
+CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}django-devel \
+			${PYTHON_PKGNAMEPREFIX}django11[01] \
+			${PYTHON_PKGNAMEPREFIX}django20
 CPE_VENDOR=		djangoproject
 
 DOCSDIR=	${PREFIX}/share/doc/py-django
