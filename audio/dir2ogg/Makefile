@@ -14,7 +14,7 @@ LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	faad:audio/faad \
-		mutagen-inspect:audio/py-mutagen \
+		${PYTHON_PKGNAMEPREFIX}mutagen>=0:audio/py-mutagen@${PY_FLAVOR} \
 		mplayer:multimedia/mplayer \
 		oggenc:audio/vorbis-tools
 

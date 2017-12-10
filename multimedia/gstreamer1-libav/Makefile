@@ -21,7 +21,7 @@ LIB_DEPENDS=	liborc-0.4.so:devel/orc \
 PORTSCOUT=	limitw:1,even
 
 USES=		compiler:features gettext-runtime gmake libtool localbase \
-		pkgconfig tar:xz
+		pkgconfig python:build tar:xz
 USE_LDCONFIG=	yes
 USE_GSTREAMER1=	yes
 USE_GNOME=	glib20
