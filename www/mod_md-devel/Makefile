@@ -5,6 +5,7 @@ PORTNAME=	mod_md
 PORTVERSION=	1.0.7
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
+PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
 PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	brnrd@FreeBSD.org
@@ -19,7 +20,7 @@ LIB_DEPENDS=	libaprutil-1.so:devel/apr1 \
 
 USES=		autoreconf libtool ssl
 USE_GITHUB=	yes
-USE_APACHE=	24
+USE_APACHE=	24+
 
 GH_ACCOUNT=	icing
 GH_PROJECT=	mod_md
@@ -45,6 +46,5 @@ post-install:
 		${WRKSRC}/src/a2md
 	${INSTALL} ${WRKSRC}/src/a2md ${STAGEDIR}${PREFIX}/bin/a2md
 	${RM} ${STAGEDIR}${PREFIX}/share/doc/mod_md/LICENSE
-#	${RM} ${STAGEDIR}${PREFIX}/bin/ext-a2md
 
 .include <bsd.port.post.mk>
