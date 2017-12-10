@@ -1,0 +1,10 @@
+--- doc/CMakeLists.txt.orig	2017-06-26 15:54:00 UTC
++++ doc/CMakeLists.txt
+@@ -20,6 +20,6 @@ if (UNIX AND NOT APPLE)
+ 		)
+ 	INSTALL (
+ 		FILES ${man1}
+-		DESTINATION "share/man/man1"
++		DESTINATION man/man1
+ 		)
+ endif ()
