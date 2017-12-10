@@ -1,0 +1,42 @@
+2017-12-10  Gerald Pfeifer  <gerald@pfeifer.com>
+
+        * Makefile.am: Only create relative symlinks for man pages.
+        * Makefile.in: Regenerate.
+
+--- UTC
+--- doc/Makefile.am	2009-02-18 02:31:25.000000000 +0000
++++ doc/Makefile.am	2017-12-10 21:27:14.321310000 +0000
+@@ -42,13 +42,13 @@
+ 	for i in $(GIT_GREPS);\
+ 	do\
+ 	    rm -f $(DESTDIR)$(mandir)/man1/$${i}.1;\
+-	    ln -s $(mandir)/man1/gitrgrep.1 $(DESTDIR)$(mandir)/man1/$${i}.1;\
++	    ln -s gitrgrep.1 $(DESTDIR)$(mandir)/man1/$${i}.1;\
+ 	done
+ 	\
+ 	for i in $(GIT_INTERNAL_MANS);\
+ 	do\
+ 	    rm -f $(DESTDIR)$(mandir)/man1/$${i}.1;\
+-	    ln -s $(mandir)/man1/gitinternal.1 $(DESTDIR)$(mandir)/man1/$${i}.1;\
++	    ln -s gitinternal.1 $(DESTDIR)$(mandir)/man1/$${i}.1;\
+ 	done
+ 	if [ "$(mandir)" != "$(prefix)/man" ]; then\
+ 	    for i in $(ORIG_MANS) $(GIT_INTERNAL_MANS); \
+--- doc/Makefile.in	2009-02-18 02:31:25.000000000 +0000
++++ doc/Makefile.in	2017-12-10 21:27:32.723308000 +0000
+@@ -969,13 +969,13 @@
+ 	for i in $(GIT_GREPS);\
+ 	do\
+ 	    rm -f $(DESTDIR)$(mandir)/man1/$${i}.1;\
+-	    ln -s $(mandir)/man1/gitrgrep.1 $(DESTDIR)$(mandir)/man1/$${i}.1;\
++	    ln -s gitrgrep.1 $(DESTDIR)$(mandir)/man1/$${i}.1;\
+ 	done
+ 	\
+ 	for i in $(GIT_INTERNAL_MANS);\
+ 	do\
+ 	    rm -f $(DESTDIR)$(mandir)/man1/$${i}.1;\
+-	    ln -s $(mandir)/man1/gitinternal.1 $(DESTDIR)$(mandir)/man1/$${i}.1;\
++	    ln -s gitinternal.1 $(DESTDIR)$(mandir)/man1/$${i}.1;\
+ 	done
+ 	if [ "$(mandir)" != "$(prefix)/man" ]; then\
+ 	    for i in $(ORIG_MANS) $(GIT_INTERNAL_MANS); \
