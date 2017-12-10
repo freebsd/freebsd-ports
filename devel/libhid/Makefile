@@ -17,7 +17,7 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/xsltproc:textproc/libxslt \
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-doxygen --disable-werror
 INSTALL_TARGET=	install-strip
-USES=		gmake libtool pathfix python
+USES=		gmake libtool pathfix python:2.7
 USE_LDCONFIG=	yes
 
 EXTRA_PATCHES=	${FILESDIR}/extra-patch-usb

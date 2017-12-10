@@ -19,7 +19,7 @@ BUILD_DEPENDS+=	gsed:textproc/gsed \
 		dtc>=1.4.1:sysutils/dtc
 BUILD_DEPENDS+=	${COMPILER}:devel/${COMPILER}
 
-USES=		gmake python:build shebangfix
+USES=		gmake python:2.7,build shebangfix
 BINARY_ALIAS=	swig=swig3.0 sed=gsed
 
 USE_GITHUB=	yes

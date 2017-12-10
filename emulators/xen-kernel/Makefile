@@ -14,7 +14,7 @@ LICENSE=	GPLv2
 
 ONLY_FOR_ARCHS=	amd64
 
-USES=		cpe gmake python:build
+USES=		cpe gmake python:2.7,build
 
 # We need to use ld from ports because the version in base doesn't
 # support the '--build-id' switch that's needed for live hypervisor

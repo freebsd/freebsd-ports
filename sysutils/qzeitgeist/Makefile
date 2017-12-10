@@ -18,7 +18,7 @@ LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	rapper:textproc/raptor2 \
-		${PYTHON_SITELIBDIR}/rdflib/__init__.py:textproc/py-rdflib
+		${PYTHON_PKGNAMEPREFIX}rdflib>=0:textproc/py-rdflib@${PY_FLAVOR}
 
 USES=		cmake kde:4 python:2.7,build tar:bzip2
 USE_KDE=	automoc4

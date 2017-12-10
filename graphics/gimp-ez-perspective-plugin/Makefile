@@ -22,7 +22,7 @@ LICENSE_DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gimp-2.0.pc:graphics/gimp-app \
 		${LOCALBASE}/libexec/gimp/2.2/python/gimpfu.py:graphics/py-gimp
 
-USES=		python:run zip
+USES=		python:2.7,run zip
 NO_BUILD=	yes
 NO_ARCH=	yes
 NO_WRKSUBDIR=	yes
