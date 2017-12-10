@@ -11,10 +11,8 @@ MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Team-based, networked, 2D shooter set in zero-gravity
 
 LICENSE=	GPLv2 GPLv3
-LICENSE_COMB=	dual
-
-NOT_FOR_ARCHS=		aarch64 armv6 armv7
-NOT_FOR_ARCHS_REASON=	fails to build: Disallowed architecture for this platform
+LICENSE_COMB=	dual  # not GPLv2+
+LICENSE_FILE_GPLv2=	${WRKSRC}/COPYING
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix="${PREFIX}" \
