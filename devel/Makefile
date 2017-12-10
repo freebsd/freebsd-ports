@@ -5535,6 +5535,7 @@
     SUBDIR += rubygem-metasm
     SUBDIR += rubygem-method_source
     SUBDIR += rubygem-micromachine
+    SUBDIR += rubygem-micromachine2
     SUBDIR += rubygem-minitest
     SUBDIR += rubygem-mixlib-archive
     SUBDIR += rubygem-mixlib-authentication
