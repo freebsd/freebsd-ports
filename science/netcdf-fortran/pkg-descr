@@ -1,10 +1,9 @@
-NetCDF (network Common Data Form) is an interface for array-oriented
-data access and a library that provides an implementation of the
-interface. The netCDF library also defines a machine-independent
-format for representing scientific data. Together, the interface,
-library, and format support the creation, access, and sharing of
-scientific data. The netCDF software was developed at the Unidata
+NetCDF (network Common Data Form) is an interface for array-oriented data access
+and a library that provides an implementation of the interface. The netCDF
+library also defines a machine-independent format for representing scientific
+data. Together, the interface, library, and format support the creation, access,
+and sharing of scientific data. The netCDF software was developed at the Unidata
 Program Center in Boulder, Colorado.
 
-WWW: http://www.unidata.ucar.edu/software/netcdf/
+WWW: https://www.unidata.ucar.edu/software/netcdf/
 WWW: https://github.com/Unidata/netcdf-fortran
