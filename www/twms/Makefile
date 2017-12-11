@@ -12,14 +12,14 @@ COMMENT=	Tiny WMS server
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pyproj/__init__.py:graphics/py-pyproj \
-		${PYTHON_SITELIBDIR}/web/__init__.py:www/webpy \
-		${PYTHON_PKGNAMEPREFIX}pillow>0:graphics/py-pillow
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyproj>0:graphics/py-pyproj@${PY_FLAVOR} \
+		${PYTHON_SITELIBDIR}/web/__init__.py:www/webpy@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pillow>0:graphics/py-pillow@${PY_FLAVOR}
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	Komzpa
 
-USES=		python shebangfix tar:bzip2
+USES=		python:2.7 shebangfix tar:bzip2
 SHEBANG_FILES=	twms.py
 NO_BUILD=	yes
 NO_ARCH=	yes

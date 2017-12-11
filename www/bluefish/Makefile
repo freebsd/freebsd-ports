@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libpcre.so:devel/pcre \
 		libenchant.so:textproc/enchant
 
-USES=		desktop-file-utils gettext gmake libtool localbase pkgconfig python \
+USES=		desktop-file-utils gettext gmake libtool localbase pkgconfig python:2.7 \
 		shared-mime-info shebangfix tar:bzip2
 SHEBANG_FILES=	data/css_decompressor
 python_OLD_CMD=	/usr/bin/python2.7
