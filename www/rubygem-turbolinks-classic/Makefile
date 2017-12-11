@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	turbolinks
-PORTVERSION=	2.5.3
+PORTVERSION=	2.5.4
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	-classic
