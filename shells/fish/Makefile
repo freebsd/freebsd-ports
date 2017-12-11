@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fish
-PORTVERSION=	2.6.0
+PORTVERSION=	2.7.0
 CATEGORIES=	shells
 MASTER_SITES=	http://fishshell.com/files/${PORTVERSION}/
 
