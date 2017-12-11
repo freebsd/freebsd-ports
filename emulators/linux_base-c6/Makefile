@@ -3,7 +3,7 @@
 
 PORTNAME=	c6
 PORTVERSION=	${LINUX_DIST_VER}
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	emulators linux
 PKGNAMEPREFIX=	linux_base-
 BIN_DISTNAMES=	bash-4.1.2-48.el6 \
@@ -39,7 +39,7 @@ LIB_DISTNAMES=	bzip2-libs-1.0.5-7.el6_0 \
 		krb5-libs-1.10.3-65.el6 \
 		libacl-2.2.49-7.el6_9.1 \
 		libattr-2.4.44-7.el6 \
-		libblkid-2.17.2-12.28.el6 \
+		libblkid-2.17.2-12.28.el6_9.1 \
 		libcap-2.16-5.5.el6 \
 		libcom_err-1.41.12-23.el6 \
 		libgcc-4.4.7-18.el6 \
@@ -47,7 +47,7 @@ LIB_DISTNAMES=	bzip2-libs-1.0.5-7.el6_0 \
 		libselinux-2.0.94-7.el6 \
 		libsepol-2.0.41-4.el6 \
 		libstdc++-4.4.7-18.el6 \
-		libuuid-2.17.2-12.28.el6 \
+		libuuid-2.17.2-12.28.el6_9.1 \
 		ncurses-libs-5.7-4.20090207.el6 \
 		nss-softokn-freebl-3.14.3-23.3.el6_8 \
 		pcre-7.8-7.el6 \
@@ -55,7 +55,7 @@ LIB_DISTNAMES=	bzip2-libs-1.0.5-7.el6_0 \
 		readline-6.0-4.el6 \
 		redhat-lsb-core-4.0-7.el6.centos \
 		slang-2.2.1-1.el6 \
-		util-linux-ng-2.17.2-12.28.el6 \
+		util-linux-ng-2.17.2-12.28.el6_9.1 \
 		zlib-1.2.3-29.el6
 SHARE_DISTNAMES=basesystem-10.0-4.el6 \
 		setup-2.8.14-23.el6
@@ -100,7 +100,7 @@ SRC_DISTFILES=	acl-2.2.49-7.el6_9.1${SRC_SUFX}:SOURCE \
 		setup-2.8.14-23.el6${SRC_SUFX}:SOURCE \
 		slang-2.2.1-1.el6${SRC_SUFX}:SOURCE \
 		texinfo-4.13a-8.el6${SRC_SUFX}:SOURCE \
-		util-linux-ng-2.17.2-12.28.el6${SRC_SUFX}:SOURCE \
+		util-linux-ng-2.17.2-12.28.el6_9.1${SRC_SUFX}:SOURCE \
 		which-2.19-6.el6${SRC_SUFX}:SOURCE \
 		zlib-1.2.3-29.el6${SRC_SUFX}:SOURCE
 
