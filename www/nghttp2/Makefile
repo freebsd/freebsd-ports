@@ -4,6 +4,7 @@
 PORTNAME=	nghttp2
 PORTVERSION=	1.28.0
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	www net
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -16,7 +17,7 @@ BUILD_DEPENDS=	libnghttp2>=${PORTVERSION}:www/libnghttp2
 LIB_DEPENDS=	libnghttp2.so:www/libnghttp2
 
 OPTIONS_DEFINE=	APP ASIO DOCS EXAMPLES HPACK SPDY
-OPTIONS_DEFAULT=APP HPACK SPDY
+OPTIONS_DEFAULT=APP HPACK
 OPTIONS_SUB=	yes
 APP_DESC=	Build h2load, nghttp, nghttpd and nghttpx
 SPDY_DESC=	Enable SPDY in h2load and nghttpx
