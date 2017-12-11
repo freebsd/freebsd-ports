@@ -99,7 +99,7 @@ UBOOT_MOVE=${UBOOT_MOVE_${FAMILY:tu}}
 .endif
 
 # Per family dependancies
-.if ${FAMILY} == allwinner64
+.if defined(FAMILY) && ${FAMILY} == allwinner64
 BUILD_DEPENDS+=	${LOCALBASE}/share/atf-allwinner/bl31.bin:sysutils/atf-allwinner
 MAKE_ENV+=	BL31=${LOCALBASE}/share/atf-allwinner/bl31.bin
 .endif
@@ -115,7 +115,7 @@ do-configure:
 
 # U-Boot for Allwinner 64bits SoCs is splited in two parts
 # Generate a single binary to ease deployement on sdcard
-.if ${FAMILY} == allwinner64
+.if defined(FAMILY) && ${FAMILY} == allwinner64
 post-build:
 	${CAT} ${WRKSRC}/spl/sunxi-spl.bin ${WRKSRC}/u-boot.itb > ${WRKSRC}/u-boot-sunxi-with-spl.bin
 .endif
