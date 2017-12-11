@@ -16,5 +16,6 @@ RUN_DEPENDS=	ninja:devel/ninja
 
 USES=		python:3.4+
 USE_PYTHON=	autoplist distutils noflavors
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
