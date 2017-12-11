@@ -17,10 +17,6 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 RUN_DEPENDS=	${LOCALBASE}/lib/Trf/pkgIndex.tcl:devel/tcl-trf	\
 		${LOCALBASE}/lib/tcllib/cmdline/pkgIndex.tcl:devel/tcllib
 
-BROKEN_aarch64=		fails to package: pkg-static: Unable to access file lib/critcl_md5c0.12/freebsd-armv6/md5c.so:No such file or directory
-BROKEN_armv6=		fails to package: pkg-static: Unable to access file lib/critcl_md5c0.12/freebsd-armv6/md5c.so:No such file or directory
-BROKEN_armv7=		fails to package: pkg-static: Unable to access file lib/critcl_md5c0.12/freebsd-armv7/md5c.so:No such file or directory
-
 USES+=		tcl:85+
 USE_GITHUB=	yes
 GH_ACCOUNT=	andreas-kupries
@@ -28,7 +24,7 @@ GH_ACCOUNT=	andreas-kupries
 TEST_TARGET=	test
 
 PLIST_SUB+=	VER=${PORTVERSION} \
-		ARCH=${ARCH:S/i386/ix86/}
+		ARCH=${ARCH:C/arm.*/arm/:S/i386/ix86/}
 PORTDOCS=	*
 
 NO_BUILD=	yes
