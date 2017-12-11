@@ -1,11 +1,11 @@
---- CMakeLists.txt.orig	2016-06-02 21:20:22 UTC
+--- CMakeLists.txt.orig	2017-07-10 22:46:01 UTC
 +++ CMakeLists.txt
 @@ -13,6 +13,9 @@ cmake_minimum_required(VERSION 2.8)
  
- set (VERSION 1.4.9)
+ set (VERSION 1.4.14)
  
-+include_directories(/usr/local/include)
-+link_directories(/usr/local/lib)
++include_directories(%%PREFIX%%/include)
++link_directories(%%PREFIX%%/lib)
 +
  if (WIN32)
  	execute_process(COMMAND cmd /c echo %DATE% %TIME% OUTPUT_VARIABLE TIMESTAMP
