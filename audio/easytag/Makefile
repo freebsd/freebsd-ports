@@ -3,6 +3,7 @@
 
 PORTNAME=	easytag
 PORTVERSION=	2.4.3
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	GNOME
 
@@ -19,10 +20,11 @@ LIB_DEPENDS=	libid3.so:audio/id3lib \
 		libid3tag.so:audio/libid3tag \
 		libvorbis.so:audio/libvorbis \
 		libFLAC.so:audio/flac \
-		libtag.so:audio/taglib
+		libtag.so:audio/taglib \
+		libogg.so:audio/libogg
 
 USES=		desktop-file-utils gettext-tools gmake pkgconfig tar:xz
-USE_GNOME=	gtk30 intlhack libxslt
+USE_GNOME=	cairo dconf:run gtk30 intlhack libxslt
 GLIB_SCHEMAS=	org.gnome.EasyTAG.gschema.xml org.gnome.EasyTAG.enums.xml
 INSTALLS_ICONS=	yes
 GNU_CONFIGURE=	yes
@@ -36,12 +38,14 @@ CONFIGURE_ARGS=	--disable-appdata-validate \
 PORTDOCS=	HACKING THANKS TODO
 
 OPTIONS_DEFINE=	WAVPACK NLS OPUS SPEEX DOCS
+OPTIONS_DEFAULT=	WAVPACK OPUS SPEEX	
 OPTIONS_SUB=	yes
 
 WAVPACK_LIB_DEPENDS=	libwavpack.so:audio/wavpack
 WAVPACK_CONFIGURE_ENABLE=	wavpack
 NLS_CONFIGURE_ENABLE=	nls
-OPUS_LIB_DEPENDS=	libopusfile.so:audio/opusfile
+OPUS_LIB_DEPENDS=	libopusfile.so:audio/opusfile \
+			libopus.so:audio/opus
 OPUS_CONFIGURE_ENABLE=	opus
 SPEEX_LIB_DEPENDS=	libspeex.so:audio/speex
 SPEEX_CONFIGURE_ENABLE=	speex
