@@ -3,7 +3,7 @@
 
 PORTNAME=	vigra
 DISTVERSION=	1.11.0
-PORTREVISION=	16
+PORTREVISION=	17
 CATEGORIES=	graphics
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
@@ -50,6 +50,12 @@ NUMPY_BUILD_DEPENDS=	nosetests:devel/py-nose \
 NUMPY_RUN_DEPENDS=	nosetests:devel/py-nose \
 			f2py:math/py-numpy
 NUMPY_LIB_DEPENDS=	libboost_python.so:devel/boost-python-libs
+# On FreeBSD < 11 libc++ lacks support for sized delete operators.
+# GCC dropped the builtin version of these operators in 6+ by
+# defaulting to gnu++14. Force c++11 instead.
+# For a more detailed discussion see:
+# https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=219484
+NUMPY_CXXFLAGS=		-std=gnu++11
 
 PNG_CMAKE_BOOL=		WITH_PNG
 PNG_LIB_DPEENDS=	libpng.so:graphics/png
