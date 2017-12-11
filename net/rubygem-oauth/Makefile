@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	oauth
-PORTVERSION=	0.5.3
+PORTVERSION=	0.5.4
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
