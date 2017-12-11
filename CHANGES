@@ -20,7 +20,7 @@ AUTHOR: mat@FreeBSD.org
   need FLAVORS to be set.  A USE_PYTHON=noflavors can be set if the port is
   using distutils but flavors are not wanted.
 
-  A new USE_PYTHON=optsuffix that will adds PYTHON_PKGNAMESUFFIX has been added
+  A new USE_PYTHON=optsuffix that will add PYTHON_PKGNAMESUFFIX has been added
   to cope with Python ports that did not have the Python PKGNAMEPREFIX but are
   flavored.
 
