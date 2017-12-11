@@ -1320,6 +1320,7 @@
     SUBDIR += py-paragrep
     SUBDIR += py-parsel
     SUBDIR += py-parsimonious
+    SUBDIR += py-parso
     SUBDIR += py-pdfminer
     SUBDIR += py-pss
     SUBDIR += py-pyPEG2
