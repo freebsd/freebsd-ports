@@ -5,4 +5,4 @@ you to work with memcached through handy OO and procedural interfaces.
 Note that this port uses unofficial development from
 https://github.com/websupport-sk/pecl-memcache (NON_BLOCKING_IO_php7 branch).
 
-WWW: https://pecl.php.net/package/memcache
+WWW: https://github.com/websupport-sk/pecl-memcache
