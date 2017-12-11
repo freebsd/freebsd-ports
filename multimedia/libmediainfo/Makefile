@@ -38,7 +38,6 @@ TINYXML2_CONFIGURE_ON=	--with-libtinyxml2=yes
 TINYXML2_LIB_DEPENDS=	libtinyxml2.so:textproc/tinyxml2
 
 post-patch:
-	@${TOUCH} ${WRKSRC}/aclocal.m4
 	@${REINPLACE_CMD} \
 		-e 's|lib/pkgconfig/|libdata/pkgconfig/|g' \
 		-e 's|-DMEDIAINFO_LIBMMS_FROMSOURCE||g' \
