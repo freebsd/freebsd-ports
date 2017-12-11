@@ -11,6 +11,9 @@ COMMENT=	Optimized HTTP/2 server including support for TLS 1.3 and HTTP/1.x
 
 LICENSE=	MIT
 
+BROKEN_armv6=		fails to compile: asm_arm.inc:139:36: '.syntax divided' arm assembly not supported
+BROKEN_armv7=		fails to compile: asm_arm.inc:139:36: '.syntax divided' arm assembly not supported
+
 USES=		cmake:noninja compiler:c11 cpe perl5 shebangfix ssl
 CPE_VENDOR=	h2o_project
 USE_GITHUB=	yes
