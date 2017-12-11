@@ -11,7 +11,7 @@ COMMENT=	Toolkit for statistical analysis of biological sequences
 LICENSE=	GPLv2
 
 BUILD_DEPENDS=	${PYNUMPY} \
-		${LOCALBASE}/bin/sphinx-build:textproc/py-sphinx@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}sphinx>=0:textproc/py-sphinx@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sqlalchemy10>=1.0.13:databases/py-sqlalchemy10@${FLAVOR}
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 

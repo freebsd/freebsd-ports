@@ -20,7 +20,7 @@ USE_LDCONFIG=	yes
 CONFIGURE_ARGS+=	--without-rbgen
 PLIST_SUB+=	PYTHON="@comment "
 .else
-USES+=		python
+USES+=		python:2.7
 CONFIGURE_ARGS+=	--with-python=${PYTHON_CMD}
 PLIST_SUB+=	PYTHON=""
 .endif

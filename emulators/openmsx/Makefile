@@ -18,7 +18,7 @@ LIB_DEPENDS=	libpng.so:graphics/png \
 		libao.so:audio/libao
 
 MAKEFILE=	GNUmakefile
-USES=		gmake python tcl
+USES=		gmake python:2.7 tcl
 USE_GCC=	yes
 USE_GL=		glew
 USE_SDL=	sdl ttf

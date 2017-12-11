@@ -12,7 +12,7 @@ COMMENT=	Conway's Game of Life and other cellular automata
 
 LICENSE=	GPLv2+
 
-USES=		compiler:c++11-lib cmake:outsource perl5 python
+USES=		compiler:c++11-lib cmake:outsource perl5 python:2.7
 USE_CXXSTD=	c++11
 USE_WX=		3.0
 
