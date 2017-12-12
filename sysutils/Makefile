@@ -1218,6 +1218,7 @@
     SUBDIR += u-boot-olimex-a20-som-evb
     SUBDIR += u-boot-olinuxino-lime
     SUBDIR += u-boot-orangepi-one
+    SUBDIR += u-boot-orangepi-pc2
     SUBDIR += u-boot-orangepi-plus-2e
     SUBDIR += u-boot-pandaboard
     SUBDIR += u-boot-pcduino3
