@@ -11,8 +11,8 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	dvl@FreeBSD.org
 COMMENT=	Fuzzy string matching using Levenshtein Distance
 
-LICENSE=	GPL
-LICENSE_FILE=	LICENSE.txt
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}python-Levenshtein>0:devel/py-python-Levenshtein@${FLAVOR}
 
