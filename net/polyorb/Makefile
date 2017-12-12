@@ -15,7 +15,7 @@ LICENSE=	GPLv3
 
 BUILD_DEPENDS=	xmlada>=3.2:textproc/xmlada
 
-USES=		ada gmake python:build shebangfix
+USES=		ada gmake python:2.7,build shebangfix
 GNU_CONFIGURE=	yes
 NO_MTREE=	yes
 YEAR=		2014

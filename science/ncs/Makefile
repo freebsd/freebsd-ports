@@ -12,8 +12,7 @@ COMMENT=	Code_Saturne Kernel
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	cs_preprocess:science/ecs	\
-		pyrcc4:textproc/py-qt4-xml
+BUILD_DEPENDS=	cs_preprocess:science/ecs
 LIB_DEPENDS=	libfvm.so:science/fvm	\
 		libmei.so:science/mei
 RUN_DEPENDS=	xmgrace:math/grace	\
@@ -21,9 +20,9 @@ RUN_DEPENDS=	xmgrace:math/grace	\
 		xterm:x11/xterm	\
 		cs_preprocess:science/ecs
 
-USES=		fortran gettext gmake iconv libtool pyqt:4 python shebangfix
+USES=		fortran gettext gmake iconv libtool pyqt:4 python:2.7 shebangfix
 USE_GNOME=	libxml2
-USE_PYQT=	core
+USE_PYQT=	core xml_build
 SHEBANG_FILES=	bin/runcase.in
 CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/libxml2
 GNU_CONFIGURE=	yes
