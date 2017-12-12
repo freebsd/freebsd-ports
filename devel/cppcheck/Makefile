@@ -12,8 +12,6 @@ COMMENT?=	Static analysis of C/C++ code
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_powerpc64=	fails to compile: analyzerinfo.cpp: 'to_string' is not a member of 'std'
-
 USES=			compiler:c++11-lib cmake tar:bzip2
 
 .if defined(GUI_ONLY)
