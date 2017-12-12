@@ -5,7 +5,7 @@
 +#define	AFS_PARAM_H
 +
 +/* Machine / Operating system information */
-+/* XXX temporarilyuse old sysname until new one is assigned
++/* XXX temporarily use old sysname until new one is assigned */
 +#define SYS_NAME	"i386_fbsd_110"
 +#define SYS_NAME_ID	SYS_NAME_ID_i386_fbsd_110
 +
