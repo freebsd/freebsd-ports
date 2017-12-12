@@ -1,6 +1,6 @@
---- configure.orig	2016-12-15 13:48:00 UTC
+--- configure.orig	2017-12-05 15:02:11 UTC
 +++ configure
-@@ -34144,13 +34144,15 @@ case $AFS_SYSNAME in
+@@ -25273,13 +25273,15 @@ case $AFS_SYSNAME in
  		;;
  
  	i386_fbsd_*)
@@ -20,7 +20,7 @@
  		;;
  
  	i386_dfbsd_*)
-@@ -34164,12 +34166,15 @@ case $AFS_SYSNAME in
+@@ -25293,12 +25295,15 @@ case $AFS_SYSNAME in
  		;;
  
  	amd64_fbsd_*)
