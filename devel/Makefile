@@ -5184,6 +5184,7 @@
     SUBDIR += quickcheck++
     SUBDIR += quilt
     SUBDIR += racer
+    SUBDIR += racerd
     SUBDIR += radare2
     SUBDIR += ragel
     SUBDIR += raknet
