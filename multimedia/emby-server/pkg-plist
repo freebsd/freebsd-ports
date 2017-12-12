@@ -188,7 +188,6 @@ lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/homescreensetti
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/homescreensettings/homescreensettingsdialog.template.html
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/homesections/homesections.css
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/homesections/homesections.js
-lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/htmlaudioplayer/blank.mp3
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/htmlaudioplayer/plugin.js
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/htmlvideoplayer/htmlmediahelper.js
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/htmlvideoplayer/plugin.js
@@ -307,7 +306,6 @@ lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/search/searchfi
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/search/searchfields.template.html
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/search/searchresults.js
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/search/searchresults.template.html
-lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/servernotifications.js
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/serverrestartdialog/serverrestartdialog.js
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/serviceworker/notifications.js
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/serviceworker/sync.js
@@ -456,7 +454,7 @@ lib/emby-server/dashboard-ui/bower_components/query-string/test.js
 lib/emby-server/dashboard-ui/bower_components/requirejs/LICENSE
 lib/emby-server/dashboard-ui/bower_components/requirejs/require.js
 lib/emby-server/dashboard-ui/bower_components/resize-observer-polyfill/LICENSE
-lib/emby-server/dashboard-ui/bower_components/resize-observer-polyfill/resizeobserver.js
+lib/emby-server/dashboard-ui/bower_components/resize-observer-polyfill/dist/ResizeObserver.js
 lib/emby-server/dashboard-ui/bower_components/vibrant/dist/vibrant.js
 lib/emby-server/dashboard-ui/bower_components/vibrant/dist/vibrant.min.js
 lib/emby-server/dashboard-ui/bower_components/vibrant/gulpfile.coffee
