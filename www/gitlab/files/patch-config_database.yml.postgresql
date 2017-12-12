@@ -1,4 +1,4 @@
---- config/database.yml.postgresql.orig	2017-06-07 20:58:14 UTC
+--- config/database.yml.postgresql.orig	2017-11-14 20:51:25 UTC
 +++ config/database.yml.postgresql
 @@ -6,7 +6,7 @@ production:
    encoding: unicode
@@ -8,4 +8,4 @@
 +  username: git
    # password:
    # host: localhost
-   # port: 5432 
+   # port: 5432
