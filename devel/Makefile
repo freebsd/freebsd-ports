@@ -820,6 +820,7 @@
     SUBDIR += go-glide
     SUBDIR += go-go.uuid
     SUBDIR += go-gocode
+    SUBDIR += go-godef
     SUBDIR += go-goregen
     SUBDIR += go-hashicorp-logutils
     SUBDIR += go-json-rest
