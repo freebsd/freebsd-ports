@@ -1670,6 +1670,7 @@
 %%WWWDIR%%/core/lib/Drupal/Core/Field/FormatterBase.php
 %%WWWDIR%%/core/lib/Drupal/Core/Field/FormatterInterface.php
 %%WWWDIR%%/core/lib/Drupal/Core/Field/FormatterPluginManager.php
+%%WWWDIR%%/core/lib/Drupal/Core/Field/MapFieldItemList.php
 %%WWWDIR%%/core/lib/Drupal/Core/Field/Plugin/DataType/Deriver/FieldItemDeriver.php
 %%WWWDIR%%/core/lib/Drupal/Core/Field/Plugin/DataType/FieldItem.php
 %%WWWDIR%%/core/lib/Drupal/Core/Field/Plugin/Field/FieldFormatter/BasicStringFormatter.php
@@ -1802,6 +1803,7 @@
 %%WWWDIR%%/core/lib/Drupal/Core/ImageToolkit/ImageToolkitOperationInterface.php
 %%WWWDIR%%/core/lib/Drupal/Core/ImageToolkit/ImageToolkitOperationManager.php
 %%WWWDIR%%/core/lib/Drupal/Core/ImageToolkit/ImageToolkitOperationManagerInterface.php
+%%WWWDIR%%/core/lib/Drupal/Core/Installer/ConfigOverride.php
 %%WWWDIR%%/core/lib/Drupal/Core/Installer/Exception/AlreadyInstalledException.php
 %%WWWDIR%%/core/lib/Drupal/Core/Installer/Exception/InstallProfileMismatchException.php
 %%WWWDIR%%/core/lib/Drupal/Core/Installer/Exception/InstallerException.php
@@ -2263,6 +2265,7 @@
 %%WWWDIR%%/core/lib/Drupal/Core/TypedData/ComplexDataDefinitionBase.php
 %%WWWDIR%%/core/lib/Drupal/Core/TypedData/ComplexDataDefinitionInterface.php
 %%WWWDIR%%/core/lib/Drupal/Core/TypedData/ComplexDataInterface.php
+%%WWWDIR%%/core/lib/Drupal/Core/TypedData/ComputedItemListTrait.php
 %%WWWDIR%%/core/lib/Drupal/Core/TypedData/DataDefinition.php
 %%WWWDIR%%/core/lib/Drupal/Core/TypedData/DataDefinitionInterface.php
 %%WWWDIR%%/core/lib/Drupal/Core/TypedData/DataReferenceBase.php
@@ -3751,6 +3754,7 @@
 %%WWWDIR%%/core/modules/content_moderation/tests/src/Kernel/EntityStateChangeValidationTest.php
 %%WWWDIR%%/core/modules/content_moderation/tests/src/Kernel/EntityTypeInfoTest.php
 %%WWWDIR%%/core/modules/content_moderation/tests/src/Kernel/InitialStateTest.php
+%%WWWDIR%%/core/modules/content_moderation/tests/src/Kernel/ModerationInformationTest.php
 %%WWWDIR%%/core/modules/content_moderation/tests/src/Kernel/ModerationStateFieldItemListTest.php
 %%WWWDIR%%/core/modules/content_moderation/tests/src/Kernel/ModerationStateWidgetTest.php
 %%WWWDIR%%/core/modules/content_moderation/tests/src/Kernel/StateFormatterTest.php
@@ -3773,6 +3777,7 @@
 %%WWWDIR%%/core/modules/content_translation/content_translation.permissions.yml
 %%WWWDIR%%/core/modules/content_translation/content_translation.services.yml
 %%WWWDIR%%/core/modules/content_translation/css/content_translation.admin.css
+%%WWWDIR%%/core/modules/content_translation/migration_templates/d6_taxonomy_term_translation.yml
 %%WWWDIR%%/core/modules/content_translation/src/Access/ContentTranslationManageAccessCheck.php
 %%WWWDIR%%/core/modules/content_translation/src/Access/ContentTranslationOverviewAccess.php
 %%WWWDIR%%/core/modules/content_translation/src/ContentTranslationHandler.php
@@ -3822,6 +3827,7 @@
 %%WWWDIR%%/core/modules/content_translation/tests/src/Kernel/ContentTranslationConfigImportTest.php
 %%WWWDIR%%/core/modules/content_translation/tests/src/Kernel/ContentTranslationSettingsApiTest.php
 %%WWWDIR%%/core/modules/content_translation/tests/src/Kernel/ContentTranslationSyncUnitTest.php
+%%WWWDIR%%/core/modules/content_translation/tests/src/Kernel/Migrate/d6/MigrateTaxonomyTermTranslationTest.php
 %%WWWDIR%%/core/modules/content_translation/tests/src/Unit/Access/ContentTranslationManageAccessCheckTest.php
 %%WWWDIR%%/core/modules/content_translation/tests/src/Unit/Menu/ContentTranslationLocalTasksTest.php
 %%WWWDIR%%/core/modules/contextual/config/schema/contextual.views.schema.yml
@@ -4465,6 +4471,7 @@
 %%WWWDIR%%/core/modules/file/tests/src/Kernel/FileItemTest.php
 %%WWWDIR%%/core/modules/file/tests/src/Kernel/FileItemValidationTest.php
 %%WWWDIR%%/core/modules/file/tests/src/Kernel/FileManagedUnitTestBase.php
+%%WWWDIR%%/core/modules/file/tests/src/Kernel/FileUrlTest.php
 %%WWWDIR%%/core/modules/file/tests/src/Kernel/Formatter/FileEntityFormatterTest.php
 %%WWWDIR%%/core/modules/file/tests/src/Kernel/LoadTest.php
 %%WWWDIR%%/core/modules/file/tests/src/Kernel/Migrate/MigrateFileStubTest.php
@@ -5283,6 +5290,7 @@
 %%WWWDIR%%/core/modules/locale/locale.module
 %%WWWDIR%%/core/modules/locale/locale.pages.inc
 %%WWWDIR%%/core/modules/locale/locale.permissions.yml
+%%WWWDIR%%/core/modules/locale/locale.post_update.php
 %%WWWDIR%%/core/modules/locale/locale.routing.yml
 %%WWWDIR%%/core/modules/locale/locale.services.yml
 %%WWWDIR%%/core/modules/locale/locale.translation.inc
@@ -7506,6 +7514,7 @@
 %%WWWDIR%%/core/modules/system/tests/fixtures/update/drupal-8.config-override-fix.php
 %%WWWDIR%%/core/modules/system/tests/fixtures/update/drupal-8.editor-editor_update_8001.php
 %%WWWDIR%%/core/modules/system/tests/fixtures/update/drupal-8.entity-data-revision-metadata-fields-2248983.php
+%%WWWDIR%%/core/modules/system/tests/fixtures/update/drupal-8.entity-test-initial.php
 %%WWWDIR%%/core/modules/system/tests/fixtures/update/drupal-8.entity-test-schema-converter-enabled.php
 %%WWWDIR%%/core/modules/system/tests/fixtures/update/drupal-8.field-schema-data-uninstall-2573667.php
 %%WWWDIR%%/core/modules/system/tests/fixtures/update/drupal-8.filled.standard.php.gz
@@ -7872,6 +7881,9 @@
 %%WWWDIR%%/core/modules/system/tests/modules/layout_test/templates/layout-test-1col.html.twig
 %%WWWDIR%%/core/modules/system/tests/modules/layout_test/templates/layout-test-2col.html.twig
 %%WWWDIR%%/core/modules/system/tests/modules/layout_test/templates/layout-test-plugin.html.twig
+%%WWWDIR%%/core/modules/system/tests/modules/lazy_route_provider_install_test/lazy_route_provider_install_test.info.yml
+%%WWWDIR%%/core/modules/system/tests/modules/lazy_route_provider_install_test/lazy_route_provider_install_test.services.yml
+%%WWWDIR%%/core/modules/system/tests/modules/lazy_route_provider_install_test/src/PluginManager.php
 %%WWWDIR%%/core/modules/system/tests/modules/link_generation_test/link_generation_test.info.yml
 %%WWWDIR%%/core/modules/system/tests/modules/link_generation_test/link_generation_test.module
 %%WWWDIR%%/core/modules/system/tests/modules/menu_test/config/install/language/nl/menu_test.menu_item.yml
@@ -7905,6 +7917,8 @@
 %%WWWDIR%%/core/modules/system/tests/modules/menu_test/src/Theme/TestThemeNegotiator.php
 %%WWWDIR%%/core/modules/system/tests/modules/module_autoload_test/module_autoload_test.info.yml
 %%WWWDIR%%/core/modules/system/tests/modules/module_autoload_test/src/SomeClass.php
+%%WWWDIR%%/core/modules/system/tests/modules/module_cachebin/module_cachebin.info.yml
+%%WWWDIR%%/core/modules/system/tests/modules/module_cachebin/module_cachebin.services.yml
 %%WWWDIR%%/core/modules/system/tests/modules/module_handler_test_multiple/module_handler_test_multiple.info.yml
 %%WWWDIR%%/core/modules/system/tests/modules/module_handler_test_multiple/module_handler_test_multiple.install
 %%WWWDIR%%/core/modules/system/tests/modules/module_handler_test_multiple/module_handler_test_multiple_child/module_handler_test_multiple_child.info.yml
@@ -7988,6 +8002,7 @@
 %%WWWDIR%%/core/modules/system/tests/modules/requirements1_test/requirements1_test.install
 %%WWWDIR%%/core/modules/system/tests/modules/requirements2_test/requirements2_test.info.yml
 %%WWWDIR%%/core/modules/system/tests/modules/router_test_directory/router_test.info.yml
+%%WWWDIR%%/core/modules/system/tests/modules/router_test_directory/router_test.install
 %%WWWDIR%%/core/modules/system/tests/modules/router_test_directory/router_test.permissions.yml
 %%WWWDIR%%/core/modules/system/tests/modules/router_test_directory/router_test.routing.yml
 %%WWWDIR%%/core/modules/system/tests/modules/router_test_directory/src/Access/DefinedTestAccessCheck.php
@@ -8250,6 +8265,7 @@
 %%WWWDIR%%/core/modules/system/tests/src/Functional/Update/DependencyMissingTest.php
 %%WWWDIR%%/core/modules/system/tests/src/Functional/Update/DependencyOrderingTest.php
 %%WWWDIR%%/core/modules/system/tests/src/Functional/Update/EntityUpdateAddRevisionTranslationAffectedTest.php
+%%WWWDIR%%/core/modules/system/tests/src/Functional/Update/EntityUpdateInitialTest.php
 %%WWWDIR%%/core/modules/system/tests/src/Functional/Update/EntityUpdateToRevisionableAndPublishableTest.php
 %%WWWDIR%%/core/modules/system/tests/src/Functional/Update/FieldSchemaDataUninstallUpdateTest.php
 %%WWWDIR%%/core/modules/system/tests/src/Functional/Update/FilterHtmlUpdateTest.php
@@ -8396,7 +8412,6 @@
 %%WWWDIR%%/core/modules/taxonomy/config/schema/taxonomy.views.schema.yml
 %%WWWDIR%%/core/modules/taxonomy/css/taxonomy.theme.css
 %%WWWDIR%%/core/modules/taxonomy/migration_templates/d6_taxonomy_term.yml
-%%WWWDIR%%/core/modules/taxonomy/migration_templates/d6_taxonomy_term_translation.yml
 %%WWWDIR%%/core/modules/taxonomy/migration_templates/d6_taxonomy_vocabulary.yml
 %%WWWDIR%%/core/modules/taxonomy/migration_templates/d6_taxonomy_vocabulary_translation.yml
 %%WWWDIR%%/core/modules/taxonomy/migration_templates/d6_term_node.yml
@@ -8553,7 +8568,6 @@
 %%WWWDIR%%/core/modules/taxonomy/tests/src/Kernel/Migrate/MigrateTaxonomyConfigsTest.php
 %%WWWDIR%%/core/modules/taxonomy/tests/src/Kernel/Migrate/MigrateTaxonomyTermStubTest.php
 %%WWWDIR%%/core/modules/taxonomy/tests/src/Kernel/Migrate/d6/MigrateTaxonomyTermTest.php
-%%WWWDIR%%/core/modules/taxonomy/tests/src/Kernel/Migrate/d6/MigrateTaxonomyTermTranslationTest.php
 %%WWWDIR%%/core/modules/taxonomy/tests/src/Kernel/Migrate/d6/MigrateTaxonomyVocabularyTest.php
 %%WWWDIR%%/core/modules/taxonomy/tests/src/Kernel/Migrate/d6/MigrateTaxonomyVocabularyTranslationTest.php
 %%WWWDIR%%/core/modules/taxonomy/tests/src/Kernel/Migrate/d6/MigrateTermNodeRevisionTest.php
@@ -10222,6 +10236,7 @@
 %%WWWDIR%%/core/tests/Drupal/FunctionalTests/Image/ToolkitTest.php
 %%WWWDIR%%/core/tests/Drupal/FunctionalTests/Image/ToolkitTestBase.php
 %%WWWDIR%%/core/tests/Drupal/FunctionalTests/Routing/CaseInsensitivePathTest.php
+%%WWWDIR%%/core/tests/Drupal/FunctionalTests/Routing/LazyRouteProviderInstallTest.php
 %%WWWDIR%%/core/tests/Drupal/FunctionalTests/Routing/PathEncodedTest.php
 %%WWWDIR%%/core/tests/Drupal/FunctionalTests/Theme/BartikTest.php
 %%WWWDIR%%/core/tests/Drupal/FunctionalTests/Theme/ClassyTest.php
