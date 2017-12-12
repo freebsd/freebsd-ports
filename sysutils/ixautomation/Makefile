@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ixautomation
-PORTVERSION=	17.12
+PORTVERSION=	17.12.01
 CATEGORIES=	sysutils
 
 MAINTAINER=	jmaloney@ixsystems.com
@@ -23,6 +23,6 @@ MAKE_ARGS=	PREFIX=${STAGEDIR}${PREFIX}
 USE_GITHUB=	yes
 GH_ACCOUNT=	ixsystems
 GH_PROJECT=	ixautomation
-GH_TAGNAME=	bc6867c919c08b00b4c4b1288e8d51edc57b29ac
+GH_TAGNAME=	1944bb58ddb5ff1b498482a933cc718168de64d4	
 
 .include <bsd.port.mk>
