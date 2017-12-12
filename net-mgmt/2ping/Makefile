@@ -13,7 +13,7 @@ LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 NO_ARCH=	yes
-USE_PYTHON=	autoplist distutils optsuffix
+USE_PYTHON=	autoplist distutils noflavors
 USES=		python:3.4+
 
 .include <bsd.port.mk>
