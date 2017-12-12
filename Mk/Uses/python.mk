@@ -451,7 +451,7 @@ FLAVOR=	${FLAVORS:[1]}
 .  endif
 .endif
 
-.if ${FLAVOR:Mpy[23]*}
+.if ${FLAVOR:Mpy[23][0-9]}
 _PYTHON_VERSION=	${FLAVOR:S/py//:C/(.)/\1./}
 .endif
 
