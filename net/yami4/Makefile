@@ -13,10 +13,8 @@ COMMENT=	Messaging library for distributed systems
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/gpl-3.0.txt
 
-BROKEN_powerpc64=	Does not build: error: snprintf is not a member of std
-
-# USES=		compiler:c++11-lib
 MAKE_ARGS=	OPTIONS="${CXXFLAGS}"
+CXXFLAGS+=	-D_GLIBCXX_USE_C99 # XXX ports/193528
 
 do-build :
 	${DO_MAKE_BUILD} -C ${WRKSRC}/src/core
