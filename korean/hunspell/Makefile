@@ -14,7 +14,7 @@ LICENSE_FILE_GPLv2+ =	${WRKSRC}/LICENSE.GPL
 LICENSE_FILE_LGPL21+ =	${WRKSRC}/LICENSE.LGPL
 LICENSE_FILE_MPL11=	${WRKSRC}/LICENSE.MPL
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>=0:devel/py-lxml
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>=0:devel/py-lxml@${PY_FLAVOR}
 TEST_DEPENDS=	hunspell:textproc/hunspell
 
 GH_ACCOUNT=	changwoo
@@ -22,7 +22,7 @@ GH_PROJECT=	${PORTNAME}-dict-ko
 USE_GITHUB=	yes
 
 NO_ARCH=	yes
-USES=		python:build,test
+USES=		python:2.7,build,test
 
 PLIST_FILES=	%%DATADIR%%/ko_KR.aff \
 		%%DATADIR%%/ko_KR.dic
