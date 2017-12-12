@@ -19,7 +19,6 @@ LICENSE_FILE_NCSA=	${WRKSRC}/tools/cling/LICENSE.TXT
 LICENSE_PERMS_LLVM=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 BROKEN_armv6=		fails to compile: AArch64TargetMachine.cpp: relocation truncated to fit: R_ARM_CALL against symbol '__aeabi_uldivmod'
-BROKEN_powerpc64=	fails to compile: IncrementalParser.cpp: 'to_string' is not a member of 'std'
 
 WRKSRC=		${WRKDIR}/src
 
