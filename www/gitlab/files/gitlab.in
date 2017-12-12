@@ -37,8 +37,10 @@ start_cmd="start_gitlab"
 stop_cmd="stop_gitlab"
 restart_cmd="restart_gitlab"
 
-gitlab_enable=${gitlab_enable:-"NO"}
-gitlab_authBackend=${gitlab_authBackend:-"http://127.0.0.1:8080"}
+: ${gitlab_enable:="NO"}
+: ${gitlab_authBackend:="http://127.0.0.1:8080"}
+: ${gitlab_workhorse_tcp:="NO"}
+: ${gitlab_workhorse_addr:="127.0.0.1:8181"}
 
 load_rc_config $name
 
@@ -58,7 +60,12 @@ mail_room_enabled=false
 mail_room_pid_path="$pid_path/mail_room.pid"
 gitlab_workhorse_dir=$(cd $app_root/../gitlab-workhorse && pwd)
 gitlab_workhorse_pid_path="$pid_path/gitlab-workhorse.pid"
-gitlab_workhorse_options="-listenUmask 0 -listenNetwork unix -listenAddr $socket_path/gitlab-workhorse.socket -authBackend $gitlab_authBackend -authSocket $rails_socket -documentRoot $app_root/public"
+if checkyesno gitlab_workhorse_tcp; then
+        gitlab_workhorse_listen="-listenNetwork tcp -listenAddr $gitlab_workhorse_addr"
+else
+        gitlab_workhorse_listen="-listenNetwork unix -listenAddr $socket_path/gitlab-workhorse.socket"
+fi
+gitlab_workhorse_options="-listenUmask 0 $gitlab_workhorse_listen -authBackend $gitlab_authBackend -authSocket $rails_socket -documentRoot $app_root/public"
 gitlab_workhorse_log="$app_root/log/gitlab-workhorse.log"
 gitlab_pages_enabled=false
 gitlab_pages_dir=$(cd $app_root/../gitlab-pages 2> /dev/null && pwd)
@@ -491,27 +498,54 @@ restart_gitlab(){
 
 ### Finally the input handling.
 
-case "$1" in
-  start|quietstart|faststart)
+case $gitlab_enable in
+  [yY][eE][sS])
+    case "$1" in
+      start|quietstart|faststart)
         start_gitlab
         ;;
-  stop|faststop)
+      stop|faststop)
         stop_gitlab
         ;;
-  restart)
+      restart)
         restart_gitlab
         ;;
-  reload|force-reload)
+      reload|force-reload)
 	reload_gitlab
         ;;
-  status)
+      status)
         print_status
         exit $gitlab_status
         ;;
-  *)
-        echo "Usage: service gitlab {start|quietstart|faststop|stop|restart|reload|status}"
+      *)
+        echo "Usage: service gitlab {start|quietstart|faststop|stop|restart|reload|onestart|onestop|onerestart|onreload|status}"
         exit 1
         ;;
+    esac
+    ;;
+  *)
+    case "$1" in
+      onestart)
+        start_gitlab
+        ;;
+      onestop)
+        stop_gitlab
+        ;;
+      onerestart)
+        restart_gitlab
+        ;;
+      onreload)
+        reload_gitlab
+        ;;
+      status)
+        print_status
+        exit $gitlab_status
+        ;;
+      *)
+        echo "Usage: service gitlab {start|quietstart|faststop|stop|restart|reload|onestart|onestop|onerestart|onreload|status}"
+        exit 1
+        ;;
+    esac
 esac
 
 exit
