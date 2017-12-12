@@ -566,6 +566,9 @@ RUN_DEPENDS+=	cython-${PYTHON_VER}:lang/cython@${PY_FLAVOR}
 .endif
 
 .if defined(_PYTHON_FEATURE_CONCURRENT)
+.if !defined(_PYTHON_FEATURE_FLAVORS) && (${_PYTHON_VERSION_MINIMUM:M3*} || ${_PYTHON_VERSION_MAXIMUM:M2*})
+DEV_WARNING+=	"USE_PYTHON=concurrent when only one of Python 2 or 3 is supported AND not using flavors does not make any sense"
+.endif
 _USES_POST+=		uniquefiles:dirs
 .if defined(_PYTHON_FEATURE_FLAVORS) && ${FLAVOR} == ${FLAVORS:[1]}
 UNIQUE_DEFAULT_LINKS=	yes
