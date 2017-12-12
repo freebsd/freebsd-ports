@@ -40,6 +40,7 @@ CONFIGURE_ARGS+=--with-readline=gnu \
 		ac_cv_prog_PLAINTEX=${LOCALBASE}/bin/tex \
 		ac_cv_prog_LATEX=${LOCALBASE}/bin/latex \
 		ac_cv_prog_PDFLATEX=${LOCALBASE}/bin/pdflatex
+TEST_TARGET=	check
 PORTDOCS=	*
 PORTEXAMPLES=	*
 
@@ -47,8 +48,6 @@ OPTIONS_DEFINE=	DOCS EXAMPLES GRIDBOX
 GRIDBOX_DESC=		Use the gridbox optimization for hidden3d
 
 GRIDBOX_CONFIGURE_OFF=	--disable-h3d-quadtree --enable-h3d-gridbox
-
-.include <bsd.port.options.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e \
@@ -58,10 +57,8 @@ post-patch:
 	@${REINPLACE_CMD} -e \
 		's|luaL_checkint(|(int)luaL_checkinteger(|' ${WRKSRC}/term/lua.trm
 
-.if ${PORT_OPTIONS:MDOCS}
-post-build:
+post-build-DOCS-on:
 	@cd ${WRKSRC}/docs && ${MAKE} groff
-.endif
 
 pre-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}/5.2 ; \
@@ -71,14 +68,11 @@ pre-install:
 post-install:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	cd ${WRKSRC}/demo && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}
-.if ${PORT_OPTIONS:MDOCS}
+
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/psdoc
 	cd ${WRKSRC}/docs && ${INSTALL_DATA} gnuplot.txt gnuplot.dvi \
 		gnuplot.ps ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC}/docs/psdoc && ${INSTALL_DATA} README ps_* ${STAGEDIR}${DOCSDIR}/psdoc
-.endif
-
-check test: build
-	@( cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_ARGS} check ; )
 
 .include <bsd.port.mk>
