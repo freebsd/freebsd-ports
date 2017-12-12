@@ -902,6 +902,10 @@
 %%SEAHUBDIR%%/seahub/api2/views.py
 %%SEAHUBDIR%%/seahub/api2/views_auth.py
 %%SEAHUBDIR%%/seahub/api2/views_misc.py
+%%SEAHUBDIR%%/seahub/api2/endpoints/file_history.py
+%%SEAHUBDIR%%/seahub/base/management/commands/clear_invalid_repo_data.py
+%%SEAHUBDIR%%/seahub/utils/file_revisions.py
+%%SEAHUBDIR%%/tests/api/endpoints/test_file_history.py
 %%SEAHUBDIR%%/seahub/auth/LICENSE
 %%SEAHUBDIR%%/seahub/auth/__init__.py
 %%SEAHUBDIR%%/seahub/auth/admin.py
