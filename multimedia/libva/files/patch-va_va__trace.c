@@ -1,6 +1,6 @@
---- va/va_trace.c.orig	2016-06-21 01:29:25 UTC
+--- va/va_trace.c.orig	2017-10-21 04:49:28 UTC
 +++ va/va_trace.c
-@@ -48,6 +48,9 @@
+@@ -50,6 +50,9 @@
  #include <sys/stat.h>
  #include <sys/syscall.h>
  #include <pthread.h>
@@ -10,7 +10,7 @@
  #include <unistd.h>
  #include <time.h>
  #include <errno.h>
-@@ -294,7 +297,13 @@ static void add_trace_config_info(
+@@ -291,7 +294,13 @@ static void add_trace_config_info(
  {
      struct trace_config_info *pconfig_info;
      int idx = 0;
@@ -24,7 +24,7 @@
  
      LOCK_RESOURCE(pva_trace);
  
-@@ -318,7 +327,13 @@ static void delete_trace_config_info(
+@@ -315,7 +324,13 @@ static void delete_trace_config_info(
  {
      struct trace_config_info *pconfig_info;
      int idx = 0;
@@ -38,7 +38,7 @@
  
      LOCK_RESOURCE(pva_trace);
  
-@@ -663,7 +678,13 @@ static struct trace_log_file *start_trac
+@@ -662,7 +677,13 @@ static struct trace_log_file *start_tracing2log_file(
  {
      struct trace_log_files_manager *plog_files_mgr = NULL;
      struct trace_log_file *plog_file = NULL;
@@ -52,7 +52,7 @@
      int i = 0;
  
      LOCK_RESOURCE(pva_trace);
-@@ -702,7 +723,13 @@ static void refresh_log_file(
+@@ -701,7 +722,13 @@ static void refresh_log_file(
      struct trace_context *ptra_ctx)
  {
      struct trace_log_file *plog_file = NULL;
@@ -66,7 +66,7 @@
      int i = 0;
  
      plog_file = ptra_ctx->plog_file;
-@@ -1226,7 +1253,13 @@ static void internal_TraceUpdateContext 
+@@ -1224,7 +1251,13 @@ static void internal_TraceUpdateContext (
  {
      struct trace_context *trace_ctx = NULL;
      int i = 0, delete = 1;
