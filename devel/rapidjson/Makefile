@@ -3,8 +3,8 @@
 
 PORTNAME=	rapidjson
 PORTVERSION=	1.1.0
-PORTREVISION=	2
 DISTVERSIONPREFIX=	v
+PORTREVISION=	2
 CATEGORIES=	devel textproc
 
 MAINTAINER=	yuri@rawbw.com
@@ -15,11 +15,7 @@ LICENSE_NAME=	RapidJSON
 LICENSE_FILE=	${WRKSRC}/license.txt
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-BROKEN_aarch64=		does not build: c++: error: the clang compiler does not support -march=native
-BROKEN_armv6=		does not build: c++: error: the clang compiler does not support -march=native
 BROKEN_armv7=		does not build: include/rapidjson/internal/../allocators.h:128:36: error: zero as null pointer constant
-BROKEN_sparc64=		does not build: c++: error: the clang compiler does not support -march=native
-BROKEN_powerpc64=	does not build: c++: error: the clang compiler does not support -march=native
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	miloyip
@@ -31,10 +27,8 @@ OPTIONS_DEFAULT=${OPTIONS_DEFINE}
 OPTIONS_SUB=	yes
 
 DOXYGEN_BUILD_DEPENDS=	doxygen:devel/doxygen
-DOXYGEN_CMAKE_ON=	-DRAPIDJSON_BUILD_DOC:BOOL=ON
-DOXYGEN_CMAKE_OFF=	-DRAPIDJSON_BUILD_DOC:BOOL=OFF
-EXAMPLES_CMAKE_ON=	-DRAPIDJSON_BUILD_EXAMPLES:BOOL=ON
-EXAMPLES_CMAKE_OFF=	-DRAPIDJSON_BUILD_EXAMPLES:BOOL=OFF
+DOXYGEN_CMAKE_BOOL=	RAPIDJSON_BUILD_DOC
+EXAMPLES_CMAKE_BOOL=	RAPIDJSON_BUILD_EXAMPLES
 
 CXXFLAGS+=	-Wno-c++98-compat # for EXAMPLES option, due to this bug: https://github.com/miloyip/rapidjson/issues/761
 CMAKE_ARGS=	-DRAPIDJSON_BUILD_TESTS:BOOL=OFF
