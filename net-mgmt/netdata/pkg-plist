@@ -239,7 +239,7 @@ libexec/netdata/python.d/python_modules/urllib3/contrib/_securetransport/binding
 libexec/netdata/python.d/python_modules/urllib3/contrib/_securetransport/low_level.py
 libexec/netdata/python.d/python_modules/urllib3/contrib/appengine.py
 libexec/netdata/python.d/python_modules/urllib3/contrib/ntlmpool.py
-libexec/netdata/python.d/python_modules/urllib3/contrib/%%PYTHON_PYOEXTENSION%%penssl.py
+libexec/netdata/python.d/python_modules/urllib3/contrib/pyopenssl.py
 libexec/netdata/python.d/python_modules/urllib3/contrib/securetransport.py
 libexec/netdata/python.d/python_modules/urllib3/contrib/socks.py
 libexec/netdata/python.d/python_modules/urllib3/exceptions.py
