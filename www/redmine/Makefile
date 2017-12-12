@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	redmine
-PORTVERSION=	3.2.7
-PORTREVISION=	1
+PORTVERSION=	3.2.8
 CATEGORIES=	www
 MASTER_SITES=	http://www.redmine.org/releases/
 
