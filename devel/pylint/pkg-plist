@@ -702,7 +702,6 @@ bin/symilar
 %%PYTHON_SITELIBDIR%%/pylint/test/functional/too_many_statements.py
 %%PYTHON_SITELIBDIR%%/pylint/test/functional/too_many_statements.txt
 %%PYTHON_SITELIBDIR%%/pylint/test/functional/trailing_comma_tuple.py
-%%PYTHON_SITELIBDIR%%/pylint/test/functional/trailing_comma_tuple.rc
 %%PYTHON_SITELIBDIR%%/pylint/test/functional/trailing_comma_tuple.txt
 %%PYTHON_SITELIBDIR%%/pylint/test/functional/trailing_newlines.py
 %%PYTHON_SITELIBDIR%%/pylint/test/functional/trailing_newlines.txt
