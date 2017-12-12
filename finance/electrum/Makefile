@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	electrum
-PORTVERSION=	3.0.2
-PORTREVISION=	1
+PORTVERSION=	3.0.3
 CATEGORIES=	finance python
 MASTER_SITES=	https://download.electrum.org/${PORTVERSION}/ \
 		http://download.electrum.org/${PORTVERSION}/
