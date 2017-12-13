@@ -1,0 +1,11 @@
+--- data/gui/preferences.ui.orig	2017-12-12 18:43:30 UTC
++++ data/gui/preferences.ui
+@@ -197,7 +197,7 @@
+                               <object class="GtkLabel" id="label5">
+                                 <property name="visible">True</property>
+                                 <property name="can_focus">False</property>
+-                                <property name="label" translatable="yes">&lt;b&gt;Alsa&lt;/b&gt;</property>
++                                <property name="label" translatable="yes">&lt;b&gt;OSS&lt;/b&gt;</property>
+                                 <property name="use_markup">True</property>
+                               </object>
+                             </child>

@@ -1,5 +1,7 @@
 bin/volumeicon
+%%NLS%%share/locale/de/LC_MESSAGES/volumeicon.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/volumeicon.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/volumeicon.mo
 %%DATADIR%%/gui/appicon.svg
 %%DATADIR%%/gui/preferences.ui
 %%DATADIR%%/icons/Black Gnome/1.png
