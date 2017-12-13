@@ -1,0 +1,22 @@
+Gnuplot is a portable multi-platform command-line driven graphing utility. It
+was originally created to allow scientists and students to visualize
+mathematical functions and data interactively, but has grown to support many
+non-interactive uses such as web scripting. It is also used as a plotting engine
+by third-party applications like Octave. Gnuplot has been supported and under
+active development since 1986.
+
+Gnuplot supports many types of plots in either 2D or 3D. It can draw using
+lines, points, boxes, contours, vector fields, surfaces, and various associated
+text. It also supports various specialized plot types. Gnuplot supports many
+different types of output: interactive screen terminals (with mouse and hotkey
+input), direct output to pen plotters or modern printers, and output to many
+file formats (eps, emf, fig, jpeg, LaTeX, pdf, png, postscript, ...). Gnuplot is
+easily extensible to include new output modes. Recent additions include
+interactive terminals based on wxWidgets (usable on multiple platforms), and Qt.
+Mouseable plots embedded in web pages can be generated using the svg or HTML5
+canvas terminal drivers.
+
+This is the lite version of the package, which doesn't support rendering
+directly on graphical terminals and other graphical feaures.
+
+WWW: http://www.gnuplot.info/
