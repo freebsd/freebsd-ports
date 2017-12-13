@@ -1,5 +1,5 @@
-%%X11%%bin/gnuplot
-libexec/gnuplot/5.2/gnuplot_x11
+bin/gnuplot
+%%X11%%libexec/gnuplot/5.2/gnuplot_x11
 man/man1/gnuplot-ja.1.gz
 man/man1/gnuplot.1.gz
 %%DATADIR%%/5.2/PostScript/8859-1.ps
