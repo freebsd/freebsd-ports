@@ -20,7 +20,7 @@ USE_PYTHON=	distutils autoplist
 
 OPTIONS_DEFINE=		YAML
 OPTIONS_DEFAULT=	YAML
-YAML_DESC=		Support parsing YAML responses
+YAML_DESC=		YAML response parsing support
 
 YAML_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}yaml>0:devel/py-yaml@${FLAVOR}
 
