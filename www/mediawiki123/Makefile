@@ -14,6 +14,9 @@ LICENSE=	GPLv2
 
 CONFLICTS=	mediawiki12[789]-[0-9]* mediawiki130-[0-9]*
 
+DEPRECATED=	Upstream no longer maintained
+EXPIRATION_DATE=2018-03-13
+
 USES=		php:web python:run shebangfix
 SHEBANG_FILES=	maintenance/dev/*.sh \
 		maintenance/hiphop/run-server \
