@@ -16,7 +16,7 @@ LICENSE=	MIT
 RUN_DEPENDS=	gmake:devel/gmake \
 		node>=0.8.0:www/node
 
-CONFLICTS_INSTALL=	npm npm2 npm3
+CONFLICTS_INSTALL=	npm npm-node4 npm-node6 npm-node8 npm2 npm3
 
 NO_ARCH=	yes
 NO_BUILD=	yes
