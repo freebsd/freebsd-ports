@@ -3,5 +3,4 @@
 # $FreeBSD$
 #
 
-cd "%%DATADIR%%"
-exec ./unoconv "$@"
+exec %%DATADIR%%/unoconv "$@"
