@@ -1,6 +1,6 @@
---- ./src/gtkutils.c.orig	2003-05-26 15:34:38.000000000 +0200
-+++ ./src/gtkutils.c	2014-03-30 20:05:17.338033553 +0200
-@@ -112,14 +112,14 @@
+--- src/gtkutils.c.orig	2003-05-26 13:34:38 UTC
++++ src/gtkutils.c
+@@ -112,14 +112,14 @@ GtkWidget *ut_spin_button_start_new(gcha
  
  /* shows simple message box */
  void ut_simple_message_box(gchar *message) {
