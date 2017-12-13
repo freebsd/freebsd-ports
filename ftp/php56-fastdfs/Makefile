@@ -1,12 +1,13 @@
 # $FreeBSD$
 
 PORTNAME=	fastdfs
-PORTVERSION=	5.0.11
+DISTVERSION=	5.0.11
 CATEGORIES=	ftp
-PKGNAMEPREFIX=	php56-
+PKGNAMEPREFIX?=	php56-
+IGNORE_WITH_PHP?=	70 71 72
 
 MAINTAINER=	daniel@blodan.se
-COMMENT=	PHP 5.6 module for accessing a FastDFS cluster
+COMMENT?=	PHP 5.6 module for accessing a FastDFS cluster
 
 LICENSE=	GPLv3+
 
@@ -19,7 +20,7 @@ GH_PROJECT=	fastdfs
 GH_TAGNAME=	1e50b4f
 
 USES=			php:ext
-PHP_VER=		56
+PHP_VER?=		56
 
 WRKSRC_SUBDIR=	php_client
 CONFIGURE_ENV=	ROOT=${LOCALBASE}
