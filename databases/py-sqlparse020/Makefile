@@ -16,4 +16,6 @@ NO_ARCH=	yes
 USES=		python
 USE_PYTHON=	autoplist concurrent distutils
 
+CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}sqlparse ${PYTHON_PKGNAMEPREFIX}sqlparse01
+
 .include <bsd.port.mk>
