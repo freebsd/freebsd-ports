@@ -22,6 +22,7 @@ CONFIGURE_ARGS=	--disable-tests --enable-gtk-doc
 
 USES=		autoreconf gmake libtool pathfix pkgconfig python tar:bz2
 USE_GNOME=	introspection pygobject3
+USE_PYTHON=	py3kplist
 
 PATHFIX_MAKEFILEIN=	Makefile.am
 
