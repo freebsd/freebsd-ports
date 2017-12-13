@@ -13,6 +13,7 @@
     SUBDIR += R-cran-scrapeR
     SUBDIR += R-cran-selectr
     SUBDIR += R-cran-shiny
+    SUBDIR += Stikked
     SUBDIR += UniversalFeedCreator
     SUBDIR += WebMagick
     SUBDIR += ach
