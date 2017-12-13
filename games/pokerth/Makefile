@@ -14,6 +14,8 @@ COMMENT=	Poker game written in C++/Qt4
 LICENSE=	AGPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		Fails to compile with protobuf 3.5.0
+
 LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 		libmikmod.so:audio/libmikmod \
 		libgnutls.so:security/gnutls \
