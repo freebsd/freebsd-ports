@@ -4,6 +4,7 @@
 PORTNAME=	gitlab
 PORTVERSION=	10.1.5
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	www devel
 
 MAINTAINER=	idefix@fechner.net
@@ -116,7 +117,7 @@ RUN_DEPENDS=	git>=2.14.1:devel/git \
 	rubygem-sidekiq-limit_fetch>=3.4:devel/rubygem-sidekiq-limit_fetch \
 	rubygem-rufus-scheduler>=3.4.0:devel/rubygem-rufus-scheduler \
 	rubygem-httparty>=0.13.3:www/rubygem-httparty \
-	rubygem-rainbow>=2.2:devel/rubygem-rainbow \
+	rubygem-rainbow2>=2.2:devel/rubygem-rainbow2 \
 	rubygem-settingslogic>=2.0.9:devel/rubygem-settingslogic \
 	rubygem-re2>=1.1.1:devel/rubygem-re2 \
 	rubygem-version_sorter>=2.1.0:textproc/rubygem-version_sorter \
