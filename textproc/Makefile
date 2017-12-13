@@ -645,7 +645,6 @@
     SUBDIR += p5-Lingua-EN-Words2Nums
     SUBDIR += p5-Lingua-Ident
     SUBDIR += p5-Lingua-Identify
-    SUBDIR += p5-Lingua-Identify-CLD
     SUBDIR += p5-Lingua-Ispell
     SUBDIR += p5-Lingua-PT-Stemmer
     SUBDIR += p5-Lingua-Preferred
@@ -1191,7 +1190,6 @@
     SUBDIR += pear-XML_HTMLSax
     SUBDIR += pear-XML_Wddx
     SUBDIR += pear-YAML
-    SUBDIR += pecl-cld
     SUBDIR += pecl-ctemplate
     SUBDIR += pecl-doublemetaphone
     SUBDIR += pecl-stem

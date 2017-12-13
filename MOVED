@@ -9810,3 +9810,7 @@ security/krb5-113|security/krb5-114|2017-12-03|Has expired: EOL twelve months af
 net/bird6|net/bird@ipv6|2017-12-06|Moved to a flavored version
 devel/kore-notls|devel/kore@notls|2017-12-06|Moved to a flavored version
 devel/llvm-cheri128|devel/llvm-cheri|2017-12-07|A single cheri compiler can now target 128-bit and 256-bit capabilities
+audio/cd-console||2017-12-13|Has expired: No public distfiles
+textproc/pecl-cld||2017-12-13|Has expired: Depends on expired devel/cld
+textproc/p5-Lingua-Identify-CLD||2017-12-13|Has expired: Depends on expired devel/cld
+devel/cld||2017-12-13|Has expired: Unfetchable for more than six months (google code has gone away)
