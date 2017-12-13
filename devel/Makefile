@@ -5644,6 +5644,7 @@
     SUBDIR += rubygem-rails-i18n-rails50
     SUBDIR += rubygem-rails-observers
     SUBDIR += rubygem-rainbow
+    SUBDIR += rubygem-rainbow2
     SUBDIR += rubygem-rake
     SUBDIR += rubygem-rake-compiler
     SUBDIR += rubygem-rake-compiler-dock
