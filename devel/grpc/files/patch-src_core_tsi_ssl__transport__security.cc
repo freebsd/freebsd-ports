@@ -1,14 +1,15 @@
---- src/core/tsi/ssl_transport_security.c.orig	2017-10-26 19:11:22 UTC
-+++ src/core/tsi/ssl_transport_security.c
-@@ -20,6 +20,7 @@
+--- src/core/tsi/ssl_transport_security.cc.orig	2017-12-13 01:39:01 UTC
++++ src/core/tsi/ssl_transport_security.cc
+@@ -19,7 +19,7 @@
+ #include "src/core/tsi/ssl_transport_security.h"
  
  #include <grpc/support/port_platform.h>
- 
+-
 +#include <sys/socket.h>
  #include <limits.h>
  #include <string.h>
  
-@@ -54,11 +55,10 @@
+@@ -56,11 +56,10 @@ extern "C" {
  #define TSI_SSL_MAX_PROTECTED_FRAME_SIZE_UPPER_BOUND 16384
  #define TSI_SSL_MAX_PROTECTED_FRAME_SIZE_LOWER_BOUND 1024
  
