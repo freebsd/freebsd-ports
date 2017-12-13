@@ -1,4 +1,4 @@
-bin/gnuplot
+%%X11%%bin/gnuplot
 libexec/gnuplot/5.2/gnuplot_x11
 man/man1/gnuplot-ja.1.gz
 man/man1/gnuplot.1.gz
@@ -17,7 +17,7 @@ man/man1/gnuplot.1.gz
 %%DATADIR%%/5.2/PostScript/koi8u.ps
 %%DATADIR%%/5.2/PostScript/prologue.ps
 %%DATADIR%%/5.2/PostScript/utf-8.ps
-%%DATADIR%%/5.2/app-defaults/Gnuplot
+%%X11%%%%DATADIR%%/5.2/app-defaults/Gnuplot
 %%DATADIR%%/5.2/colors_default.gp
 %%DATADIR%%/5.2/colors_mono.gp
 %%DATADIR%%/5.2/colors_podo.gp

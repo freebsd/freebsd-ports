@@ -6,14 +6,43 @@ CATEGORIES=	math graphics
 MASTER_SITES=	SF
 
 MAINTAINER=	glewis@FreeBSD.org
-COMMENT=	Command-line driven graphing utility
+COMMENT?=	Command-line driven graphing utility
 
 LICENSE=	Gnuplot
 LICENSE_NAME=	Gnuplot license
 LICENSE_FILE=	${WRKSRC}/Copyright
 LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 
-USES+=		groff iconv jpeg lua:53 pkgconfig readline
+CONFLICTS_INSTALL?=	gnuplot-lite-[0-9]*
+
+USES+=		groff iconv pkgconfig readline
+GNU_CONFIGURE=	yes
+LDFLAGS+=	-L${LOCALBASE}/lib ${ICONV_LIB}
+CONFIGURE_ARGS+=--with-readline=gnu \
+		--without-linux-vga \
+		--without-lisp-files \
+		--without-tutorial \
+		--with-qt=no
+
+.if defined(LITE)
+CONFIGURE_ARGS+=--disable-x11-mbfonts \
+		--disable-x11-external \
+		--disable-wxwidgets \
+		--without-x \
+		--without-ggi \
+		--without-gd \
+		--without-caca \
+		--without-wx \
+		--without-bitmap-terminals \
+		--without-gpic \
+		--without-mif \
+		--without-cairo \
+		--without-lua \
+		--without-latex \
+		--without-kpsexpand
+PLIST_SUB+=	X11="@comment "
+.else
+USES+=		jpeg lua:53
 USE_TEX=	kpathsea
 USE_GNOME+=	atk cairo gtk20 gdkpixbuf2
 USE_WX=		2.8
@@ -23,23 +52,19 @@ LIB_DEPENDS+=	libfontconfig.so:x11-fonts/fontconfig \
 		libgd.so:graphics/gd \
 		libpng.so:graphics/png \
 		libtiff.so:graphics/tiff
-GNU_CONFIGURE=	yes
-LDFLAGS+=	-L${LOCALBASE}/lib ${ICONV_LIB}
-CONFIGURE_ARGS+=--with-readline=gnu \
-		--with-kpsexpand \
-		--without-linux-vga \
-		--without-lisp-files \
-		--without-tutorial \
-		--with-bitmap-terminals \
+CONFIGURE_ARGS+=--with-bitmap-terminals \
 		--with-gd=${LOCALBASE} \
 		--with-gpic \
 		--with-mif \
+		--with-kpsexpand \
 		--with-latex \
-		--with-qt=no \
 		ac_cv_prog_KPSEXPAND=${LOCALBASE}/bin/kpsexpand \
 		ac_cv_prog_PLAINTEX=${LOCALBASE}/bin/tex \
 		ac_cv_prog_LATEX=${LOCALBASE}/bin/latex \
 		ac_cv_prog_PDFLATEX=${LOCALBASE}/bin/pdflatex
+PLIST_SUB+=	X11=""
+.endif
+
 TEST_TARGET=	check
 PORTDOCS=	*
 PORTEXAMPLES=	*
