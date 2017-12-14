@@ -3,6 +3,7 @@
 
 PORTNAME=	am-utils
 PORTVERSION=	6.2
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	sysutils net
 MASTER_SITES=	ftp://ftp.am-utils.org/pub/am-utils/ \
@@ -25,7 +26,8 @@ MAKE_JOBS_UNSAFE=yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared
 # Enable some filesystems which are not auto-detected with GENERIC kernel.
-CONFIGURE_ARGS+=	ac_cv_fs_nullfs=yes ac_cv_mnttab_type_nullfs='"nullfs"' ac_cv_mount_type_nullfs='"nullfs"' \
+CONFIGURE_ARGS+=	ac_cv_fs_mfs=yes ac_cv_mnttab_type_nullfs='"mfs"' ac_cv_mount_type_nullfs='"mfs"' \
+			ac_cv_fs_nullfs=yes ac_cv_mnttab_type_nullfs='"nullfs"' ac_cv_mount_type_nullfs='"nullfs"' \
 			ac_cv_fs_udf=yes ac_cv_mnttab_type_udf='"udf"' ac_cv_mount_type_udf='"udf"' \
 			ac_cv_fs_tmpfs=yes ac_cv_mnttab_type_tmpfs='"tmpfs"' ac_cv_mount_type_tmpfs='"tmpfs"'
 MAKE_ENV=	MAKEINFOFLAGS=--no-split
