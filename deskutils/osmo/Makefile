@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	osmo
-PORTVERSION=	0.2.14
-PORTREVISION=	3
+PORTVERSION=	0.4.2
 CATEGORIES=	deskutils
 MASTER_SITES=	SF/${PORTNAME}-pim/${PORTNAME}-pim/${PORTNAME}-${PORTVERSION}
 
@@ -16,11 +15,13 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libical.so:devel/libical \
 		libnotify.so:devel/libnotify \
 		libgringotts.so:security/libgringotts \
-		libgtkspell.so:textproc/gtkspell \
-		libwebkitgtk-1.0.so:www/webkit-gtk2
+		libwebkit2gtk-4.0.so:www/webkit2-gtk3 \
+		libgspell-1.so:textproc/gspell \
+		libicui18n.so:devel/icu \
+		libsoup-2.4.so:devel/libsoup
 
 USES=		gettext gmake libarchive pkgconfig sqlite
-USE_GNOME=	gtk20 libxml2
+USE_GNOME=	cairo gtk30 libxml2
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 
