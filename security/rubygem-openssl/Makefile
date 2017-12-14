@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	openssl
-PORTVERSION=	2.0.6
+PORTVERSION=	2.1.0
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
