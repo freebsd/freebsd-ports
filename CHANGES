@@ -10,25 +10,6 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
-20171214:
-AUTHOR: adamw@FreeBSD.org
-
-  Support for some deprecated variables is going to be removed soon. If
-  you use any of the following constructs (usually in /etc/make.conf),
-  you must switch to the new incantations:
-
-               OLD                                 NEW
-  -------------------------------    ------------------------------
-  WITH_[...]                         OPTIONS_SET= [...]
-  WITHOUT_[...]                      OPTIONS_UNSET= [...]
-  WITHOUT_NLS                        OPTIONS_UNSET= NLS
-  NOPORTDOCS                         OPTIONS_UNSET= DOCS
-  NOPORTEXAMPLES                     OPTIONS_UNSET= EXAMPLES
-  WITH_BDB_VER=[...]                 DEFAULT_VERSIONS+= bdb=[...]
-  OVERRIDE_LINUX_BASE_PORT=[...]     DEFAULT_VERSIONS+= linux=[...]
-  WITH_OPENSSL_BASE                  DEFAULT_VERSIONS+= ssl=base
-  WITH_OPENSSL_PORT                  DEFAULT_VERSIONS+= ssl=port
-
 20171130:
 AUTHOR: mat@FreeBSD.org
 
