@@ -1,6 +1,6 @@
---- examples/init-script.in.orig	2012-01-20 15:24:01 UTC
+--- examples/init-script.in.orig	2017-09-07 17:52:24 UTC
 +++ examples/init-script.in
-@@ -39,6 +39,12 @@ export LC_ALL
+@@ -41,6 +41,12 @@ export LC_ALL
  # The socket used by mimedefang to communicate with sendmail
  # SOCKET=$SPOOLDIR/mimedefang.sock
  
@@ -13,21 +13,21 @@
  # Run the multiplexor and filters as this user, not root.  RECOMMENDED
  MX_USER=@DEFANGUSER@
  
-@@ -136,11 +142,11 @@ MX_MAXIMUM=10
+@@ -138,11 +144,11 @@ MX_MAXIMUM=10
  
- # Limit slave processes' resident-set size to this many kilobytes.  Default
+ # Limit worker processes' resident-set size to this many kilobytes.  Default
  # is unlimited.
 -# MX_MAX_RSS=10000
 +MX_MAX_RSS=100000
  
- # Limit total size of slave processes' memory space to this many kilobytes.
+ # Limit total size of worker processes' memory space to this many kilobytes.
  # Default is unlimited.
 -# MX_MAX_AS=30000
 +MX_MAX_AS=300000
  
  # If you want to use the "notification" facility, set the appropriate port.
  # See the mimedefang-notify man page for details.
-@@ -187,7 +193,7 @@ then
+@@ -189,7 +195,7 @@ then
      . /etc/rc.subr
  
      name=$prog
@@ -36,7 +36,7 @@
      # default to not enabled, enable in rc.conf
      eval $rcvar=\${$rcvar:-NO}
  
-@@ -197,6 +203,7 @@ then
+@@ -199,6 +205,7 @@ then
      procname=$PROGDIR/$prog-multiplexor
      start_cmd="start_it"
      stop_cmd="stop_it"
@@ -44,7 +44,7 @@
      sig_reload="INT"
      reread_cmd="reread_it"
      # provide both "reload", the FreeBSD default, with a direct signal to
-@@ -207,6 +214,8 @@ fi
+@@ -209,6 +216,8 @@ fi
  # Make sure required vars are set
  SOCKET=${SOCKET:=$SPOOLDIR/$prog.sock}
  MX_SOCKET=${MX_SOCKET:=$SPOOLDIR/$prog-multiplexor.sock}
@@ -53,7 +53,7 @@
  
  start_it() {
      if test -r $PID ; then
-@@ -292,6 +301,29 @@ start_it() {
+@@ -294,6 +303,29 @@ start_it() {
  	kill `cat $MXPID`
  	return 1
      fi
@@ -83,7 +83,7 @@
      return 0
  }
  
-@@ -327,7 +359,7 @@ stop_it() {
+@@ -329,7 +361,7 @@ stop_it() {
      rm -f $MX_SOCKET > /dev/null 2>&1
      rm -f $SOCKET > /dev/null 2>&1
  
@@ -92,7 +92,7 @@
  	printf "Waiting for daemons to exit."
  	WAITPID=""
  	test -f $PID && WAITPID=`cat $PID`
-@@ -379,6 +411,12 @@ reread_it() {
+@@ -381,6 +413,12 @@ reread_it() {
  	fi
  }
  
