@@ -10,7 +10,7 @@ MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	PECL extension for a userspace equivalent of zend_parse_parameters()
 
 USES=		php:pecl
-IGNORE_WITH_PHP=	70 71
+IGNORE_WITH_PHP=	70 71 72
 
 CONFIGURE_ARGS=	--enable-params
 

@@ -15,7 +15,7 @@ LICENSE=	PHP30
 LIB_DEPENDS=	libcrack.so:security/cracklib
 
 USES=		php:pecl
-IGNORE_WITH_PHP=	70
+IGNORE_WITH_PHP=	70 71 72
 
 EXTRACT_AFTER_ARGS=--no-same-permissions --no-same-owner --exclude libcrack
 CONFIGURE_ARGS=	--with-crack=${LOCALBASE}

@@ -12,7 +12,7 @@ COMMENT=	PECL extension for the Unicode Bidi algorithm
 LIB_DEPENDS=	libfribidi.so:converters/fribidi
 
 USES=		php:pecl pkgconfig
-IGNORE_WITH_PHP=	70 71
+IGNORE_WITH_PHP=	70 71 72
 
 CONFIGURE_ARGS=	--with-fribidi=${LOCALBASE}
 
