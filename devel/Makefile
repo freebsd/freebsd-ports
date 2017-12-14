@@ -4194,6 +4194,7 @@
     SUBDIR += py-Products.validation
     SUBDIR += py-PyExecJS
     SUBDIR += py-PyLD
+    SUBDIR += py-PyODE
     SUBDIR += py-RPyC
     SUBDIR += py-Record
     SUBDIR += py-SymbolType
@@ -4617,7 +4618,6 @@
     SUBDIR += py-notify
     SUBDIR += py-numba
     SUBDIR += py-ocempgui
-    SUBDIR += py-ode
     SUBDIR += py-odfpy
     SUBDIR += py-offtrac
     SUBDIR += py-olefile

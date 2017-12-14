@@ -9814,3 +9814,4 @@ audio/cd-console||2017-12-13|Has expired: No public distfiles
 textproc/pecl-cld||2017-12-13|Has expired: Depends on expired devel/cld
 textproc/p5-Lingua-Identify-CLD||2017-12-13|Has expired: Depends on expired devel/cld
 devel/cld||2017-12-13|Has expired: Unfetchable for more than six months (google code has gone away)
+devel/py-ode|devel/py-PyODE|2017-12-14|Rename to reflect official Python modules naming scheme
