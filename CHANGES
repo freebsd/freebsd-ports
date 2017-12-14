@@ -10,8 +10,8 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
-20171214
-AUTHOT: adamw@FreeBSD.org
+20171214:
+AUTHOR: adamw@FreeBSD.org
 
   Support for some deprecated variables is going to be removed soon. If
   you use any of the following constructs (usually in /etc/make.conf),
