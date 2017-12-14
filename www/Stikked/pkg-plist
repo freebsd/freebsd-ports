@@ -1,5 +1,4 @@
-%%ETCDIR%%/stikked.php.sample
-
+@sample %%ETCDIR%%/stikked.php.sample
 %%WWWDIR%%/.htaccess
 %%WWWDIR%%/application/.htaccess
 %%WWWDIR%%/application/cache/.htaccess
