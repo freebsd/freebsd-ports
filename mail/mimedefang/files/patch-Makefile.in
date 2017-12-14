@@ -1,6 +1,6 @@
---- Makefile.in.orig	2012-01-20 15:20:32 UTC
+--- Makefile.in.orig	2016-09-29 20:20:27 UTC
 +++ Makefile.in
-@@ -156,14 +156,14 @@ install-redhat: install
+@@ -157,14 +157,14 @@ install-redhat: install
  
  install: all
  	$(INSTALL) -m 755 -d $(DESTDIR)${CONFDIR}
@@ -19,7 +19,7 @@
  			test ! -d $(DESTDIR)$(SPOOLDIR) && $(INSTALL) -m 750 -o $(DEFANGUSER) -d $(DESTDIR)$(SPOOLDIR) > /dev/null 2>&1 || true; \
  			test ! -d $(DESTDIR)$(QDIR) && $(INSTALL) -m 750 -o $(DEFANGUSER) -d $(DESTDIR)$(QDIR) > /dev/null 2>&1 || true; \
                  fi \
-@@ -185,11 +185,7 @@ install: all
+@@ -186,11 +186,7 @@ install: all
  	-test ! -d $(DESTDIR)$(SPOOLDIR) && mkdir -p $(DESTDIR)$(SPOOLDIR) && chmod 750 $(DESTDIR)$(SPOOLDIR) || true
  	-test ! -d $(DESTDIR)$(QDIR) && mkdir -p $(DESTDIR)$(QDIR) && chmod 750 $(DESTDIR)$(QDIR) || true
  
@@ -32,7 +32,7 @@
  
  	$(INSTALL) -m 755 $(INSTALL_STRIP_FLAG) mimedefang-multiplexor   $(DESTDIR)$(prefix)/bin/mimedefang-multiplexor
  	$(INSTALL) -m 755 $(INSTALL_STRIP_FLAG) md-mx-ctrl               $(DESTDIR)$(prefix)/bin/md-mx-ctrl
-@@ -210,11 +206,7 @@ install: all
+@@ -211,11 +207,7 @@ install: all
  	$(INSTALL) -m 644 mimedefang-protocol.7    $(DESTDIR)$(MANDIR)/man7/mimedefang-protocol.7
  	$(INSTALL) -m 644 mimedefang-notify.7      $(DESTDIR)$(MANDIR)/man7/mimedefang-notify.7
  	if test "$(HAVE_SPAM_ASSASSIN)" = "yes" ; then \
