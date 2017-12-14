@@ -1,0 +1,7 @@
+TIMESTAMP = 1513219474
+SHA256 (OmniSharp-omnisharp-server-g20150729-e1902915c_GH0.tar.gz) = 1ac89920c32288b9141a9bc23f4246cf003c4bac214bd007d8955fd256b05552
+SIZE (OmniSharp-omnisharp-server-g20150729-e1902915c_GH0.tar.gz) = 3004591
+SHA256 (icsharpcode-NRefactory-3f78bdbed_GH0.tar.gz) = a2363b7cd3961bb9799e70a400779da17f0d0799732889a6bc18585ecc663a5c
+SIZE (icsharpcode-NRefactory-3f78bdbed_GH0.tar.gz) = 1969655
+SHA256 (jbevain-cecil-4770957a0_GH0.tar.gz) = 540b888cf415918158851bb9402bb2b1bf0f6205f95121cc76c1632f2426ba4b
+SIZE (jbevain-cecil-4770957a0_GH0.tar.gz) = 439866
