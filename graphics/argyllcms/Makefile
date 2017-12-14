@@ -26,12 +26,12 @@ post-patch:
 	@${REINPLACE_CMD} 's:711:755:g' ${WRKSRC}/Jambase
 
 do-build:
-	@cd ${WRKSRC} && ${MAKE_ENV} jam -q -fJambase -j${MAKE_JOBS_NUMBER}
+	@cd ${WRKSRC} && ${MAKE_ENV} jam -dx -q -fJambase -j${MAKE_JOBS_NUMBER}
 
 do-install:
 	@cd ${WRKSRC} && ${SETENV} DESTDIR=${STAGEDIR} ${MAKE_ENV} \
 		REFSUBDIR=share/argyll/ref \
-		jam -q -fJambase -j${MAKE_JOBS_NUMBER} install
+		jam -dx -q -fJambase -j${MAKE_JOBS_NUMBER} install
 	${MV} ${STAGEDIR}${PREFIX}/bin/License.txt \
 		${STAGEDIR}${PREFIX}/share/argyll/
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/*
