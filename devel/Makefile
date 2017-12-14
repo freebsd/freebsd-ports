@@ -6061,6 +6061,7 @@
     SUBDIR += yaml2argdata
     SUBDIR += yasm
     SUBDIR += yasm-devel
+    SUBDIR += youcompleteme
     SUBDIR += z80-asm
     SUBDIR += z80asm
     SUBDIR += z80ex
