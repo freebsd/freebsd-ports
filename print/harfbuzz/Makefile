@@ -31,7 +31,7 @@ CONFIGURE_ARGS+=	--without-icu
 .else
 CONFIGURE_ARGS+=	--with-icu \
 		--disable-gtk-doc-html
-USES+=		compiler:c++0x
+USES+=		compiler:c++11-lib
 LIB_DEPENDS+=	libharfbuzz.so:print/harfbuzz \
 		libicudata.so:devel/icu
 
