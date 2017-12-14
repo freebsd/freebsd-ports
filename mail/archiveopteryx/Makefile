@@ -32,12 +32,13 @@ PLIST_SUB+=	USERS="${USERS}"
 PLIST_SUB+=	GROUPS="${GROUPS}"
 
 JAM?=		${LOCALBASE}/bin/jam
+JAMARG+=	-dx
 
 .include <bsd.port.pre.mk>
 
 # force Clang when on FreeBSD
 .if ${OPSYS} == FreeBSD
-JAMARG=	"-sCLANG=1"
+JAMARG+=	"-sCLANG=1"
 .endif
 
 post-patch:
