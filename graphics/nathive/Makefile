@@ -10,10 +10,11 @@ MASTER_SITES=	http://www.nathive.org/dl/ \
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Lightweight image editor
 
-LICENSE=	GPLv3
+LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gmake python:2 tar:tgz
+USES=		gmake python:2.7 shebangfix tar:tgz
+SHEBANG_GLOB=	*.py *.cy
 USE_GNOME=	pygtk2
 MAKEFILE=	makefile
 ALL_TARGET=	default
@@ -45,6 +46,6 @@ post-patch:
 		${WRKSRC}/${PORTNAME}.desktop
 
 post-build:
-	${STRIP_CMD} ${WRKSRC}/nathive/libc/*.so
+	@${STRIP_CMD} ${WRKSRC}/nathive/libc/*.so
 
 .include <bsd.port.mk>
