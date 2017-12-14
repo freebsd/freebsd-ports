@@ -13,6 +13,8 @@ COMMENT=	Optimizing Oberon-2 compiler of University of Kaiserslautern, Germany
 
 LICENSE=	GPLv2
 
+BROKEN=		Fails to build with new libxml2
+
 BUILD_DEPENDS=	xsltproc:textproc/libxslt
 RUN_DEPENDS=	libtool:devel/libtool
 LIB_DEPENDS=	libgc.so:devel/boehm-gc
