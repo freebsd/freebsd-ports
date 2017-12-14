@@ -33,9 +33,11 @@
 %%SITE_PERL%%/Mojolicious/Plugin/Minion/resources/public/minion/webfonts/fa-solid-900.woff2
 %%SITE_PERL%%/Mojolicious/Plugin/Minion/resources/templates/layouts/minion.html.ep
 %%SITE_PERL%%/Mojolicious/Plugin/Minion/resources/templates/minion/_limit.html.ep
+%%SITE_PERL%%/Mojolicious/Plugin/Minion/resources/templates/minion/_notifications.html.ep
 %%SITE_PERL%%/Mojolicious/Plugin/Minion/resources/templates/minion/_pagination.html.ep
 %%SITE_PERL%%/Mojolicious/Plugin/Minion/resources/templates/minion/dashboard.html.ep
 %%SITE_PERL%%/Mojolicious/Plugin/Minion/resources/templates/minion/jobs.html.ep
+%%SITE_PERL%%/Mojolicious/Plugin/Minion/resources/templates/minion/locks.html.ep
 %%SITE_PERL%%/Mojolicious/Plugin/Minion/resources/templates/minion/workers.html.ep
 %%PERL5_MAN3%%/Minion.3.gz
 %%PERL5_MAN3%%/Minion::Backend.3.gz
