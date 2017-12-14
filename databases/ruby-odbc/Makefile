@@ -13,6 +13,8 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	Ruby extension library to use ODBC data sources
 
+BROKEN_ruby24=	yes
+
 OPTIONS_DEFINe=	DOCS EXAMPLES
 
 LIB_DEPENDS=	libodbc.so:databases/unixODBC
