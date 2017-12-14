@@ -15,6 +15,6 @@ WRKSRC_SUBDIR=		extension
 
 USES=		php:pecl
 ONLY_FOR_ARCHS=	i386 amd64
-IGNORE_WITH_PHP=	70 71
+IGNORE_WITH_PHP=	70 71 72
 
 .include <bsd.port.mk>
