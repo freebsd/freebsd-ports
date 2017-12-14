@@ -3,6 +3,7 @@
 
 PORTNAME=	Stikked
 DISTVERSION=	0.12.0
+PORTREVISION=	1
 CATEGORIES=	www
 
 MAINTAINER=	dvl@FreeBSD.org
@@ -13,17 +14,34 @@ USES=		php:web
 USE_GITHUB=	yes
 GH_ACCOUNT=	claudehohl
 
-WANT_PGSQL=	client
-WANT_SQLITE=	client
-WANT_MYSQL=	client
-
-USE_PHP=	gd pdo session ctype filter pgsql
-PGSQL_USE=	PHP=pdo_pgsql
+USE_PHP=	ctype filter gd pgsql session
 
 NO_BUILD=	yes
 NO_ARCH=	yes
 
 SUB_FILES=	pkg-message
+
+OPTIONS_MULTI=	DB
+OPTIONS_MULTI_DB=	MYSQL PGSQL SQLITE
+OPTIONS_DEFAULT=	PGSQL
+
+MYSQL_DESC=	Include the PHP shared extension for MySQL
+PGSQL_DESC=	Include the PHP shared extension for PostgreSQL
+SQLITE_DESC=	Include the PHP shared extension for SQLite3
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MMYSQL}
+USE_PHP+=	mysql
+.endif
+
+.if ${PORT_OPTIONS:MPGSQL}
+USE_PHP+=	pgsql
+.endif
+
+.if ${PORT_OPTIONS:MSQLITE}
+USE_PHP+=	sqlite3
+.endif
 
 do-install:
 	${MKDIR} ${STAGEDIR}${ETCDIR}
