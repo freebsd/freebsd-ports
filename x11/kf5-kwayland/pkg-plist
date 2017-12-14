@@ -13,6 +13,7 @@ include/KF5/KWayland/Client/event_queue.h
 include/KF5/KWayland/Client/fakeinput.h
 include/KF5/KWayland/Client/fullscreen_shell.h
 include/KF5/KWayland/Client/idle.h
+include/KF5/KWayland/Client/idleinhibit.h
 include/KF5/KWayland/Client/keyboard.h
 include/KF5/KWayland/Client/kwaylandclient_export.h
 include/KF5/KWayland/Client/output.h
@@ -54,8 +55,10 @@ include/KF5/KWayland/Server/datasource_interface.h
 include/KF5/KWayland/Server/display.h
 include/KF5/KWayland/Server/dpms_interface.h
 include/KF5/KWayland/Server/fakeinput_interface.h
+include/KF5/KWayland/Server/filtered_display.h
 include/KF5/KWayland/Server/global.h
 include/KF5/KWayland/Server/idle_interface.h
+include/KF5/KWayland/Server/idleinhibit_interface.h
 include/KF5/KWayland/Server/keyboard_interface.h
 include/KF5/KWayland/Server/kwaylandserver_export.h
 include/KF5/KWayland/Server/output_interface.h
