@@ -463,11 +463,12 @@ PKGNAMESUFFIX=	${PYTHON_PKGNAMESUFFIX}
 .endif
 
 # To avoid having dependencies with @ and empty flavor:
-.if empty(FLAVOR)
-PY_FLAVOR=	${PYTHON_VERSION:S/^python/py/:S/.//}
-.else
-PY_FLAVOR=	${FLAVOR}
-.endif
+# _PYTHON_VERSION is either set by (first that matches):
+# - If using Python flavors, from the current Python flavor
+# - If using a version restriction (USES=python:3.4+), from the first
+#   acceptable default Python version.
+# - From PYTHON_DEFAULT
+PY_FLAVOR=	py${_PYTHON_VERSION:S/.//}
 
 # Pass PYTHON_VERSION down the dependency chain. This ensures that
 # port A -> B -> C all will use the same python version and do not
