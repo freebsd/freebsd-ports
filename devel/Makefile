@@ -3094,7 +3094,6 @@
     SUBDIR += p5-POSIX-strftime-Compiler
     SUBDIR += p5-POSIX-strptime
     SUBDIR += p5-PPerl
-    SUBDIR += p5-Pthread-GetThreadId
     SUBDIR += p5-PV
     SUBDIR += p5-Package-Constants
     SUBDIR += p5-Package-DeprecationManager
@@ -3207,6 +3206,7 @@
     SUBDIR += p5-Proc-WaitStat
     SUBDIR += p5-Project-Gantt
     SUBDIR += p5-Project-Libs
+    SUBDIR += p5-Pthread-GetThreadId
     SUBDIR += p5-Qudo
     SUBDIR += p5-RPSL-Parser
     SUBDIR += p5-RRDTool-OO
@@ -4268,9 +4268,9 @@
     SUBDIR += py-backports.csv
     SUBDIR += py-backports.functools_lru_cache
     SUBDIR += py-backports.shutil_get_terminal_size
+    SUBDIR += py-backports.tempfile
     SUBDIR += py-backports.weakref
     SUBDIR += py-backports_abc
-    SUBDIR += py-backports.tempfile
     SUBDIR += py-bandit
     SUBDIR += py-bcdoc
     SUBDIR += py-billiard
@@ -5673,8 +5673,8 @@
     SUBDIR += rubygem-ref
     SUBDIR += rubygem-request_store
     SUBDIR += rubygem-require_all
-    SUBDIR += rubygem-retriable
     SUBDIR += rubygem-resque
+    SUBDIR += rubygem-retriable
     SUBDIR += rubygem-retryable
     SUBDIR += rubygem-rgl
     SUBDIR += rubygem-rice
