@@ -11,6 +11,8 @@ DISTNAME=	${PORTNAME}pkg${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Webmail system xGate implemented by Servlet over IMAP4/POP3
 
+BROKEN=		unfetchable
+
 RUN_DEPENDS=	${APP_HOME}/bin/bootstrap.jar:www/tomcat6
 
 USES=		dos2unix tar:tgz
