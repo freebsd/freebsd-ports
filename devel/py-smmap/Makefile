@@ -11,6 +11,8 @@ COMMENT=	Pure python sliding memory map manager
 
 LICENSE=	BSD3CLAUSE
 
+CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}smmap2
+
 USES=		python
 USE_PYTHON=	autoplist distutils
 
