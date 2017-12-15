@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	${PYGAME}
 
-USES=		python:2 shebangfix tar:bz2
+USES=		python:2.7 shebangfix tar:bz2
 SHEBANG_FILES=	${PORTNAME}
 
 NO_ARCH=	yes
