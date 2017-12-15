@@ -30,8 +30,8 @@ MAKE_ARGS=	sitelibdir='$$(rubylibdir)' \
 
 .include <bsd.port.pre.mk>
 
-post-patch:
 .if ${RUBY_VER} >= 2.4
+post-patch:
 	@${REINPLACE_CMD} -e '/\/include\/ruby.h/d' ${WRKSRC}/depend
 .endif
 
