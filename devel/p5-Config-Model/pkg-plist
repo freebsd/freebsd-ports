@@ -12,6 +12,7 @@
 %%SITE_PERL%%/Config/Model/Backend/ShellVar.pm
 %%SITE_PERL%%/Config/Model/Backend/Yaml.pm
 %%SITE_PERL%%/Config/Model/BackendMgr.pm
+%%SITE_PERL%%/Config/Model/BackendTrackOrder.pm
 %%SITE_PERL%%/Config/Model/CheckList.pm
 %%SITE_PERL%%/Config/Model/Cookbook/CreateModelFromDoc.pod
 %%SITE_PERL%%/Config/Model/Describe.pm
@@ -32,6 +33,7 @@
 %%SITE_PERL%%/Config/Model/ObjTreeScanner.pm
 %%SITE_PERL%%/Config/Model/Report.pm
 %%SITE_PERL%%/Config/Model/Role/ComputeFunction.pm
+%%SITE_PERL%%/Config/Model/Role/FileHandler.pm
 %%SITE_PERL%%/Config/Model/Role/Grab.pm
 %%SITE_PERL%%/Config/Model/Role/HelpAsText.pm
 %%SITE_PERL%%/Config/Model/Role/NodeLoader.pm
@@ -81,6 +83,7 @@
 %%PERL5_MAN3%%/Config::Model::Backend::ShellVar.3.gz
 %%PERL5_MAN3%%/Config::Model::Backend::Yaml.3.gz
 %%PERL5_MAN3%%/Config::Model::BackendMgr.3.gz
+%%PERL5_MAN3%%/Config::Model::BackendTrackOrder.3.gz
 %%PERL5_MAN3%%/Config::Model::CheckList.3.gz
 %%PERL5_MAN3%%/Config::Model::Cookbook::CreateModelFromDoc.3.gz
 %%PERL5_MAN3%%/Config::Model::Describe.3.gz
@@ -101,6 +104,7 @@
 %%PERL5_MAN3%%/Config::Model::ObjTreeScanner.3.gz
 %%PERL5_MAN3%%/Config::Model::Report.3.gz
 %%PERL5_MAN3%%/Config::Model::Role::ComputeFunction.3.gz
+%%PERL5_MAN3%%/Config::Model::Role::FileHandler.3.gz
 %%PERL5_MAN3%%/Config::Model::Role::Grab.3.gz
 %%PERL5_MAN3%%/Config::Model::Role::HelpAsText.3.gz
 %%PERL5_MAN3%%/Config::Model::Role::NodeLoader.3.gz
