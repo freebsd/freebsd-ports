@@ -1,0 +1,7 @@
+bin/scim
+man/man1/scim.1.gz
+share/scim/plot_bar
+share/scim/plot_line
+share/scim/plot_pie
+share/scim/plot_scatter
+share/scim/scim_help
