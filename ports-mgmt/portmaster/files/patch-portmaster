@@ -1,11 +1,5 @@
 --- portmaster.orig	2017-12-15 12:40:13.818570000 +0100
 +++ portmaster	2017-12-15 16:49:11.583821000 +0100
-@@ -1,4 +1,4 @@
--#!/bin/sh
-+#!/bin/sh -x
- 
- # Copyright (c) 2005-2012 Douglas Barton, All rights reserved
- # Please see detailed copyright below
 @@ -1449,6 +1449,24 @@
  	fi
  }
