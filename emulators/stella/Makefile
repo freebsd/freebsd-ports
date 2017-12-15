@@ -16,6 +16,8 @@ LICENSE_FILE=	${WRKSRC}/License.txt
 
 LIB_DEPENDS=	libpng.so:graphics/png
 
+CONFLICTS_INSTALL=	rubygem-stella
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USE_SDL=	sdl2
