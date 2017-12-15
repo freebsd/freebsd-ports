@@ -2,7 +2,7 @@
 
 PORTNAME=	libsimdpp
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.0
+DISTVERSION=	2.1
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -17,5 +17,7 @@ GH_ACCOUNT=	p12tic
 NO_BUILD=	yes
 NO_ARCH=	yes
 TEST_TARGET=	check
+
+PLIST_SUB=	PORTVERSION="${PORTVERSION}"
 
 .include <bsd.port.mk>
