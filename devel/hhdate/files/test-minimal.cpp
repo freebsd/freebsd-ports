@@ -2,7 +2,7 @@
 // Only for testing installed header shortly.
 #include <iostream>
 
-#include "../date.h"
+#include "../include/date/date.h"
 
 int main()
 {

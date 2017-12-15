@@ -3,7 +3,7 @@
 
 PORTNAME=	tesseract
 PORTVERSION=	3.05.01
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 
 MAINTAINER=	pkubaj@anongoth.pl

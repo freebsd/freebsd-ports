@@ -6,8 +6,8 @@ mcstas/%%PORTVERSION%%/bin/mcformat
 mcstas/%%PORTVERSION%%/bin/mcstas
 mcstas/%%PORTVERSION%%/data/Al.nxs
 mcstas/%%PORTVERSION%%/data/Cu.nxs
-mcstas/%%PORTVERSION%%/doc/man/man1/mcformat-%%PORTVERSION%%.1
-mcstas/%%PORTVERSION%%/doc/man/man1/mcstas-%%PORTVERSION%%.1
+mcstas/%%PORTVERSION%%/doc/man/man1/mcformat-%%PORTVERSION%%.1.gz
+mcstas/%%PORTVERSION%%/doc/man/man1/mcstas-%%PORTVERSION%%.1.gz
 mcstas/%%PORTVERSION%%/environment
 mcstas/%%PORTVERSION%%/module
 mcstas/%%PORTVERSION%%/share/adapt_tree-lib.c
@@ -58,3 +58,5 @@ mcstas/%%PORTVERSION%%/share/ref-lib.c
 mcstas/%%PORTVERSION%%/share/ref-lib.h
 mcstas/%%PORTVERSION%%/share/vitess-lib.c
 mcstas/%%PORTVERSION%%/share/vitess-lib.h
+bin/mcstas
+bin/mcformat

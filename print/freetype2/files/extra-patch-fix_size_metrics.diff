@@ -1,0 +1,46 @@
+# Fix metrics on size request for scalable fonts.
+# Based on b0962ac34e66052ccfee7996e5468f30d4bd5a72 commit with changes for new version.
+# Reverts bcc74f4dafee25ea89f1d3144646cba7e30f9908 commit for src/truetype/ttdriver.c file.
+# Adapts 8ab08cff63eeb23b6c9f2c4470ae9809f2acf244 commit for src/truetype/ttobjs.c file.
+
+--- src/truetype/ttdriver.c.orig	2017-04-29 04:38:17 UTC
++++ src/truetype/ttdriver.c
+@@ -357,6 +357,8 @@
+     if ( FT_IS_SCALABLE( size->face ) )
+     {
+       error = tt_size_reset( ttsize, 0 );
++      if ( !error )
++        ttsize->root.metrics = *ttsize->metrics;
+ 
+ #ifdef TT_USE_BYTECODE_INTERPRETER
+       /* for the `MPS' bytecode instruction we need the point size */
+--- src/truetype/ttobjs.c.orig	2017-05-07 11:05:56 UTC
++++ src/truetype/ttobjs.c
+@@ -1262,6 +1262,13 @@
+     /*                                                               */
+     if ( face->header.Flags & 8 )
+     {
++      if ( !only_height )
++      {
++        size_metrics->x_scale = FT_DivFix( size_metrics->x_ppem << 6,
++                                           face->root.units_per_EM );
++        size_metrics->y_scale = FT_DivFix( size_metrics->y_ppem << 6,
++                                           face->root.units_per_EM );
++      }
+       /* the TT spec always asks for ROUND, not FLOOR or CEIL */
+       size_metrics->ascender = FT_PIX_ROUND(
+                                  FT_MulFix( face->root.ascender,
+@@ -1283,11 +1290,12 @@
+     {
+       /* base scaling values on integer ppem values, */
+       /* as mandated by the TrueType specification   */
++/*
+       size_metrics->x_scale = FT_DivFix( size_metrics->x_ppem << 6,
+                                          face->root.units_per_EM );
+       size_metrics->y_scale = FT_DivFix( size_metrics->y_ppem << 6,
+                                          face->root.units_per_EM );
+-
++*/
+       size_metrics->max_advance = FT_PIX_ROUND(
+                                     FT_MulFix( face->root.max_advance_width,
+                                                size_metrics->x_scale ) );

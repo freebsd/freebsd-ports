@@ -22,6 +22,7 @@ QT_NONSTANDARD=	yes  # Do not add unknown arguments to CONFIGURE_ARGS.
 
 USES=		python pyqt:4
 USE_PYQT=	sip core gui
+USE_PYTHON=	flavors
 USE_QT4=	corelib gui moc_build qmake_build
 
 OPTIONS_DEFINE=		DEBUG
@@ -29,7 +30,8 @@ DEBUG_CONFIGURE_ON=	--debug --trace
 
 QSCIDIR=	${PREFIX}/share/qt4/qsci
 CONFIGURE_ARGS=	--pyqt PyQt4 -d ${PYTHONPREFIX_SITELIBDIR}/PyQt4 -v ${SIPDIR} \
-		--apidir ${QSCIDIR} --qmake ${QMAKE} --pyqt-sipdir ${SIPDIR}
+		--apidir ${QSCIDIR} --qmake ${QMAKE} --pyqt-sipdir ${SIPDIR} \
+		--sip ${LOCALBASE}/bin/sip-${PYTHON_VER}
 WRKSRC=		${WRKDIR}/${DISTNAME}/Python
 ALL_TARGET=	#empty
 

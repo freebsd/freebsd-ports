@@ -1,7 +1,7 @@
 # Created by: Marc G. Fournier <scrappy@FreeBSD.org>
 # $FreeBSD$
 
-DISTVERSION?=	9.3.19
+DISTVERSION?=	9.3.20
 PORTREVISION=	0
 PKGNAMESUFFIX?=	${DISTVERSION:R:S/.//}${COMPONENT}
 

@@ -2,7 +2,7 @@
 
 PORTNAME=	solaar
 PORTVERSION=	g20170327
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 
 MAINTAINER=	tobik@FreeBSD.org
@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 RUN_DEPENDS=	${LOCALBASE}/lib/libhidapi.so:comms/hidapi
 
 USES=	python
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	distutils autoplist concurrent optsuffix
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	pwr
@@ -29,7 +29,7 @@ GH_TAGNAME=	53ec751
 NO_ARCH=	yes
 
 OPTIONS_DEFINE=	GUI
-GUI_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gobject3>=0:devel/py${PYTHON_MAJOR_VER:S/2//}-gobject3
+GUI_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gobject3>=0:devel/py-gobject3@${FLAVOR}
 
 post-patch:
 	@${CP} ${FILESDIR}/hidapi.py ${WRKSRC}/lib/hidapi/udev.py
@@ -40,5 +40,9 @@ post-patch:
 		${WRKSRC}/lib/logitech_receiver/listener.py
 	@${REINPLACE_CMD} 's|[[:<:]]cmd[[:>:]]|action|' \
 		${WRKSRC}/lib/solaar/cli/__init__.py
+
+post-install:
+	${INSTALL_DATA} ${FILESDIR}/devd-solaar.conf \
+		${STAGEDIR}${PREFIX}/etc/devd/solaar.conf.sample
 
 .include <bsd.port.mk>

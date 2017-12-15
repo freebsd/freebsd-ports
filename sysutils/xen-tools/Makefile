@@ -3,7 +3,7 @@
 PORTNAME=	xen
 PKGNAMESUFFIX=	-tools
 PORTVERSION=	4.7.2
-PORTREVISION=   2
+PORTREVISION=	2
 CATEGORIES=	sysutils emulators
 MASTER_SITES=	http://downloads.xenproject.org/release/xen/${PORTVERSION}/
 
@@ -29,7 +29,7 @@ ONLY_FOR_ARCHS=	amd64
 ONLY_FOR_ARCHS_REASON=	"not yet ported to anything other than amd64"
 
 USES=		cpe gettext gmake libtool localbase:ldflags perl5 pkgconfig \
-		python shebangfix
+		python:2.7 shebangfix
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes

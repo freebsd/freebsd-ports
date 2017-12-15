@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	agedu
-PORTVERSION=	20170831
-DISTVERSIONSUFFIX=	.fc6b2b5
+PORTVERSION=	20171202
+DISTVERSIONSUFFIX=	.8a8299e
 CATEGORIES=	sysutils
-MASTER_SITES=	LOCAL/sunpoet \
-		https://www.chiark.greenend.org.uk/~sgtatham/${PORTNAME}/
+MASTER_SITES=	https://www.chiark.greenend.org.uk/~sgtatham/${PORTNAME}/ \
+		LOCAL/sunpoet
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Unix utility for tracking down wasted disk space

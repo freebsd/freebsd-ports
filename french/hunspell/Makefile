@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	hunspell
-PORTVERSION=	6.1
+PORTVERSION=	6.2
 DISTVERSIONPREFIX=	french-dictionaries-v
 CATEGORIES=	french textproc
 MASTER_SITES=	http://www.dicollecte.org/download/fr/ \

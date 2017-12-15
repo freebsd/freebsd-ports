@@ -47,6 +47,11 @@ README=			${TEMPLATES}/README.category
 MOVEDDIR?=		${PORTSDIR}
 MOVEDFILE?=		MOVED
 
+# Ensure .CURDIR contains an absolute path without a trailing slash.  Failed
+# builds can occur when PORTSDIR is a symbolic link, or with something like
+# make -C /usr/ports/category/port/.
+.CURDIR:=		${.CURDIR:tA}
+
 .include "${PORTSDIR}/Mk/bsd.commands.mk"
 
 .MAIN: all

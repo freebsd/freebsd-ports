@@ -3,7 +3,7 @@
 
 PORTNAME=	parmgridgen
 PORTVERSION=	1.0
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	math science
 MASTER_SITES=	http://www.mgnet.org/mgnet/Codes/parmgridgen/ \
 		http://www-users.cs.umn.edu/~moulitsa/download/ \
@@ -13,9 +13,9 @@ DISTNAME=	ParMGridGen-${PORTVERSION}
 MAINTAINER=	devel@stasyan.com
 COMMENT=	Library for obtaining a sequence of successive coarse grids
 
-ALL_TARGET=	parallel
+LIB_DEPENDS=	libmpi.so:net/openmpi
 
-LIB_DEPENDS+=	libmpi.so:net/openmpi
+ALL_TARGET=	parallel
 USES=		gmake
 MAKE_JOBS_UNSAFE=	yes
 
@@ -34,9 +34,11 @@ post-patch:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/mgridgen ${STAGEDIR}${PREFIX}/bin/mgridgen
 	${INSTALL_PROGRAM} ${WRKSRC}/parmgridgen ${STAGEDIR}${PREFIX}/bin/parmgridgen
-	${INSTALL_PROGRAM} ${WRKSRC}/libmgrid.a ${STAGEDIR}${PREFIX}/lib/libmgrid.a
-	${INSTALL_PROGRAM} ${WRKSRC}/libparmgrid.a ${STAGEDIR}${PREFIX}/lib/libparmgrid.a
+	${INSTALL_DATA} ${WRKSRC}/libmgrid.a ${STAGEDIR}${PREFIX}/lib/libmgrid.a
+	${INSTALL_DATA} ${WRKSRC}/libparmgrid.a ${STAGEDIR}${PREFIX}/lib/libparmgrid.a
 	${INSTALL_DATA} ${WRKSRC}/mgridgen.h ${STAGEDIR}${PREFIX}/include/mgridgen.h
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}/README
 

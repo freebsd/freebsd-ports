@@ -31,9 +31,9 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/resource/istatserver_generated.conf \
 	${STAGEDIR}${PREFIX}/etc/istatserver/istatserver_generated.conf.sample
 	${INSTALL_MAN} ${WRKSRC}/resource/istatserver.1 \
-	 		${STAGEDIR}${MANPREFIX}/man/man1
+			${STAGEDIR}${MANPREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/resource/istatserver.conf.5 \
-	 		${STAGEDIR}${MANPREFIX}/man/man5
+			${STAGEDIR}${MANPREFIX}/man/man5
 	@${ECHO_CMD} '@postexec ${CHOWN} -R ${USERS}:${GROUPS} %D/etc/istatserver' >> ${TMPPLIST}
 
 .include <bsd.port.mk>

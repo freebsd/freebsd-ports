@@ -13,6 +13,7 @@ PYQT_DIST=	yes
 USES=		python pyqt:5
 USE_GL=		yes
 USE_PYQT=	sip_build core_run widgets_run
+USE_PYTHON=	flavors
 USE_QT5=	core gui designer widgets xml \
 		buildtools_build qmake_build
 

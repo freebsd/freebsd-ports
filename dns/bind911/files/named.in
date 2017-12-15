@@ -175,7 +175,8 @@ chroot_autoupdate()
 make_symlinks()
 {
 	checkyesno named_symlink_enable &&
-	    ln -fs "${named_chrootdir}${pidfile}" ${pidfile}
+	    ln -fs "${named_chrootdir}${pidfile}" ${pidfile} &&
+	    ln -fs "${named_chrootdir}${sessionkeyfile}" ${sessionkeyfile}
 }
 
 named_poststart()
@@ -203,6 +204,15 @@ find_pidfile()
 		pidfile="${_pidfile_from_conf}"
 	else
 		pidfile="/var/run/named/pid"
+	fi
+}
+
+find_sessionkeyfile()
+{
+	if get_pidfile_from_conf session-keyfile ${named_conf}; then
+		sessionkeyfile="${_pidfile_from_conf}"
+	else
+		sessionkeyfile="/var/run/named/session.key"
 	fi
 }
 
@@ -273,14 +283,24 @@ rndc()
 named_prestart()
 {
 	find_pidfile
+	find_sessionkeyfile
 
 	if [ -n "${named_pidfile}" ]; then
 		warn 'named_pidfile: now determined from the conf file'
 	fi
 
+	if [ -n "${named_sessionkeyfile}" ]; then
+		warn 'named_sessionkeyfile: now determined from the conf file'
+	fi
+
 	piddir=`/usr/bin/dirname ${pidfile}`
 	if [ ! -d ${piddir} ]; then
 		install -d -o ${named_uid} -g ${named_uid} ${piddir}
+	fi
+
+	sessionkeydir=`/usr/bin/dirname ${sessionkeyfile}`
+	if [ ! -d ${sessionkeydir} ]; then
+		install -d -o ${named_uid} -g ${named_uid} ${sessionkeydir}
 	fi
 
 	command_args="-u ${named_uid:=root} -c ${named_conf} ${command_args}"
@@ -302,6 +322,15 @@ named_prestart()
 	if [ -n "${named_chrootdir}" ]; then
 		rc_flags="${rc_flags} -t ${named_chrootdir}"
 		checkyesno named_chroot_autoupdate && chroot_autoupdate
+
+		case "${altlog_proglist}" in
+		  named)
+		    ;;
+		  *)
+		    warn 'Using chroot without setting altlog_proglist, logging may not'
+		    warn 'work correctly.  Run sysrc altlog_proglist+=named'
+		    ;;
+		esac
 	else
 		named_symlink_enable=NO
 	fi

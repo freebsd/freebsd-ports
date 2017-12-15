@@ -14,7 +14,7 @@ COMMENT=	FTP daemon that aims to be "very secure"
 LICENSE=	GPLv2
 
 #USERS=		ftp
-#GROUPS=		ftp
+#GROUPS=	ftp
 USES=		alias
 ALL_TARGET=	vsftpd
 USE_RC_SUBR=	vsftpd

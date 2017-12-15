@@ -10,6 +10,7 @@ MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Encryption utilities for Web Push payload
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-hkdf>=0.2:security/rubygem-hkdf \
 		rubygem-jwt>=0:www/rubygem-jwt

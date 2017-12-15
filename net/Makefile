@@ -28,7 +28,6 @@
     SUBDIR += aslookup
     SUBDIR += asterisk-chan_sccp
     SUBDIR += asterisk-g72x
-    SUBDIR += asterisk11
     SUBDIR += asterisk13
     SUBDIR += avahi
     SUBDIR += avahi-app
@@ -50,7 +49,6 @@
     SUBDIR += binkd
     SUBDIR += bird
     SUBDIR += bird-devel
-    SUBDIR += bird6
     SUBDIR += bittwist
     SUBDIR += bluemix-cli
     SUBDIR += bmon
@@ -93,6 +91,7 @@
     SUBDIR += cvsup-static
     SUBDIR += cvsync
     SUBDIR += czmq
+    SUBDIR += czmq4
     SUBDIR += daemonlogger
     SUBDIR += dante
     SUBDIR += daq
@@ -235,7 +234,6 @@
     SUBDIR += hostapd
     SUBDIR += howl
     SUBDIR += hping
-    SUBDIR += hping-devel
     SUBDIR += hs-aws
     SUBDIR += hs-connection
     SUBDIR += hs-gsasl
@@ -377,7 +375,6 @@
     SUBDIR += librouteros
     SUBDIR += librsync2
     SUBDIR += libsocket++
-    SUBDIR += libsocketcpp
     SUBDIR += libsrtp
     SUBDIR += libtnl
     SUBDIR += libtrace
@@ -558,7 +555,6 @@
     SUBDIR += p5-Event-tcp
     SUBDIR += p5-File-Rsync
     SUBDIR += p5-File-RsyncP
-    SUBDIR += p5-Filesys-SmbClient
     SUBDIR += p5-Frontier-RPC
     SUBDIR += p5-Geo-IP
     SUBDIR += p5-Geo-IP-PurePerl
@@ -578,6 +574,7 @@
     SUBDIR += p5-IP-Anonymous
     SUBDIR += p5-IP-Country
     SUBDIR += p5-IPC-Session
+    SUBDIR += p5-IPv6-Address
     SUBDIR += p5-JavaScript-RPC
     SUBDIR += p5-Kafka
     SUBDIR += p5-MaxMind-DB-Common
@@ -944,6 +941,10 @@
     SUBDIR += php71-soap
     SUBDIR += php71-sockets
     SUBDIR += php71-xmlrpc
+    SUBDIR += php72-ldap
+    SUBDIR += php72-soap
+    SUBDIR += php72-sockets
+    SUBDIR += php72-xmlrpc
     SUBDIR += phpldapadmin
     SUBDIR += pim6-tools
     SUBDIR += pim6dd
@@ -1027,6 +1028,7 @@
     SUBDIR += py-pcapy
     SUBDIR += py-pcs
     SUBDIR += py-port-for
+    SUBDIR += py-portend
     SUBDIR += py-pygeoip
     SUBDIR += py-pyldap
     SUBDIR += py-pynmsg
@@ -1063,6 +1065,7 @@
     SUBDIR += py-ripe.atlas.tools
     SUBDIR += py-s3cmd
     SUBDIR += py-s3transfer
+    SUBDIR += py-shodan
     SUBDIR += py-smbpasswd
     SUBDIR += py-soap2py
     SUBDIR += py-soappy
@@ -1086,9 +1089,6 @@
     SUBDIR += py-xmlrpc
     SUBDIR += py-zope.proxy
     SUBDIR += py-zsi
-    SUBDIR += py3-netifaces
-    SUBDIR += py3-pysocks
-    SUBDIR += py3-urllib3
     SUBDIR += pygopherd
     SUBDIR += pynids
     SUBDIR += pyrad
@@ -1169,6 +1169,7 @@
     SUBDIR += rubygem-fog-atmos
     SUBDIR += rubygem-fog-aws
     SUBDIR += rubygem-fog-aws0
+    SUBDIR += rubygem-fog-aws1
     SUBDIR += rubygem-fog-azure
     SUBDIR += rubygem-fog-brightbox
     SUBDIR += rubygem-fog-cloudatcost
@@ -1225,6 +1226,7 @@
     SUBDIR += rubygem-omniauth-github-discourse
     SUBDIR += rubygem-omniauth-github11
     SUBDIR += rubygem-omniauth-google-oauth2
+    SUBDIR += rubygem-omniauth-kerberos
     SUBDIR += rubygem-omniauth-oauth
     SUBDIR += rubygem-omniauth-oauth2
     SUBDIR += rubygem-omniauth-openid

@@ -5,6 +5,13 @@ linprocfs   /compat/linux/proc	linprocfs	rw	0	0
 
 Then run "mount /compat/linux/proc".
 
+Some programs need linsysfs mounted on /compat/linux/sys.  Add the
+following line to /etc/fstab:
+
+linsysfs    /compat/linux/sys	linsysfs	rw	0	0
+
+Then run "mount /compat/linux/sys".
+
 Some programs need tmpfs mounted on /compat/linux/dev/shm.  Add the
 following line to /etc/fstab:
 

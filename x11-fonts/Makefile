@@ -54,6 +54,7 @@
     SUBDIR += font-adobe-utopia-type1
     SUBDIR += font-alias
     SUBDIR += font-arabic-misc
+    SUBDIR += font-awesome
     SUBDIR += font-bh-100dpi
     SUBDIR += font-bh-75dpi
     SUBDIR += font-bh-lucidatypewriter-100dpi
@@ -104,6 +105,7 @@
     SUBDIR += gnu-unifont
     SUBDIR += gnu-unifont-ttf
     SUBDIR += gohufont
+    SUBDIR += google-fonts
     SUBDIR += hack-font
     SUBDIR += hanazono-fonts-ttf
     SUBDIR += hasklig

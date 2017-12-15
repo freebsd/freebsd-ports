@@ -24,21 +24,23 @@ USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	PeterMosmans
-GH_TAGNAME=	c9ba19c8b7fd131137373dbd1fccd6a8bb0628be
+GH_TAGNAME=	c9ba19c
 
 MAKE_JOBS_UNSAFE=	yes
 
-CONFIGURE_ARGS=	enable-camellia enable-cms enable-ec enable-ec2m enable-ec_nistp_64_gcc_128 \
+CONFIGURE_ARGS=	enable-camellia enable-cms enable-ec enable-ec2m \
 		enable-ecdh enable-ecdsa enable-gost enable-idea enable-md2 enable-mdc2 \
 		enable-rc2 enable-rc5 enable-rfc3779 enable-seed enable-ssl-trace \
 		enable-ssl2 enable-ssl2-methods enable-ssl3 enable-weak-ssl-ciphers \
 		experimental-jpake experimental-store \
 		no-gmp sctp shared threads zlib zlib-dynamic
+.if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "mips64el"
+CONFIGURE_ARGS+=	enable-ec_nistp_64_gcc_128
+.endif
 
 OPENSSLDIR?=	${PREFIX}/openssl-unsafe/etc
 PLIST_SUB+=	OPENSSLDIR=${OPENSSLDIR:S=^${PREFIX}/==}
 
-NOT_FOR_ARCHS=	i386
 
 .include "version.mk"
 

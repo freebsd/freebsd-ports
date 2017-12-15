@@ -11,7 +11,7 @@ DISTNAME=	gst-fluendo-mpegdemux-${PORTVERSION}
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	MPEG2 demuxing gstreamer plugin from fluendo
 
-LICENSE=	MPL
+LICENSE=	MPL11
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip

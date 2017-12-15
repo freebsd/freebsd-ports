@@ -13,9 +13,9 @@ COMMENT=	Python 2 and 3 compatibility utilities
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-TEST_DEPENDS?=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${FLAVOR}
 
-USES?=		python
+USES=		python
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes

@@ -1,0 +1,6 @@
+This package needs linsysfs mounted on /compat/linux/sys.  Add the
+following line to /etc/fstab:
+
+linsysfs    /compat/linux/sys	linsysfs	rw	0	0
+
+Then run "mount /compat/linux/sys".

@@ -1,4 +1,4 @@
---- CalculiX.h.orig	2017-04-02 12:59:25 UTC
+--- CalculiX.h.orig	2017-10-08 20:06:28 UTC
 +++ CalculiX.h
 @@ -15,12 +15,14 @@
  /*     along with this program; if not, write to the Free Software       */

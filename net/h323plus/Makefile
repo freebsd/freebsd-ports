@@ -10,7 +10,8 @@ DISTNAME=	${PORTNAME}-v${PORTVERSION:S/./_/g}
 MAINTAINER=	koue@chaosophia.net
 COMMENT=	H323 Video Conferencing library
 
-LICENSE=	MPL
+LICENSE=	MPL10 MPL11
+LICENSE_COMB=	multi
 
 LIB_DEPENDS=	libpt.so:devel/ptlib
 

@@ -1,16 +1,16 @@
---- libsoup/Makefile.in.orig	2014-03-10 13:11:37.184605224 +0000
-+++ libsoup/Makefile.in	2014-03-10 13:13:20.683597512 +0000
-@@ -176,7 +176,7 @@
- 	$(AM_CFLAGS) $(CFLAGS) $(libsoup_2_4_la_LDFLAGS) $(LDFLAGS) -o \
- 	$@
+--- libsoup/Makefile.in.orig	2016-04-26 12:36:13 UTC
++++ libsoup/Makefile.in
+@@ -290,7 +290,7 @@ libsoup_2_4_la_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC \
+ 	$(libsoup_2_4_la_CFLAGS) $(CFLAGS) $(libsoup_2_4_la_LDFLAGS) \
+ 	$(LDFLAGS) -o $@
  @BUILD_LIBSOUP_GNOME_TRUE@libsoup_gnome_2_4_la_DEPENDENCIES =  \
 -@BUILD_LIBSOUP_GNOME_TRUE@	libsoup-2.4.la $(am__DEPENDENCIES_1)
 +@BUILD_LIBSOUP_GNOME_TRUE@	$(am__DEPENDENCIES_1)
  am__libsoup_gnome_2_4_la_SOURCES_DIST = soup-cookie-jar-sqlite.c \
  	soup-gnome-features.c soup-proxy-resolver-gnome.h \
  	soup-proxy-resolver-gnome.c soup-password-manager-gnome.h \
-@@ -629,7 +629,7 @@
- @BUILD_LIBSOUP_GNOME_TRUE@	-export-symbols $(srcdir)/libsoup-gnome-2.4.sym
+@@ -788,7 +788,7 @@ TLD_DATA_FILE = $(top_srcdir)/data/effective_tld_names
+ @BUILD_LIBSOUP_GNOME_TRUE@	-export-dynamic
  
  @BUILD_LIBSOUP_GNOME_TRUE@libsoup_gnome_2_4_la_LIBADD = \
 -@BUILD_LIBSOUP_GNOME_TRUE@	libsoup-2.4.la			\
@@ -18,7 +18,7 @@
  @BUILD_LIBSOUP_GNOME_TRUE@	$(GLIB_LIBS)
  
  @BUILD_LIBSOUP_GNOME_TRUE@libsoup_gnome_2_4_la_SOURCES = \
-@@ -682,7 +682,7 @@
+@@ -848,7 +848,7 @@ INTROSPECTION_COMPILER_ARGS = --includedir=.
  @BUILD_LIBSOUP_GNOME_TRUE@@HAVE_INTROSPECTION_TRUE@	--include-uninstalled=$(builddir)/Soup-2.4.gir
  
  @BUILD_LIBSOUP_GNOME_TRUE@@HAVE_INTROSPECTION_TRUE@SoupGNOME_2_4_gir_CFLAGS = $(AM_CPPFLAGS)

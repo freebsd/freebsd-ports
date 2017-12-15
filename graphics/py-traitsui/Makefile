@@ -17,7 +17,7 @@ LICENSE_FILE_LGPL21=	${WRKSRC}/image_LICENSE_Nuvola.txt
 LICENSE_FILE_EPL=	${WRKSRC}/image_LICENSE_Eclipse.txt
 # See ${WRKSRC}/image_LICENSE.txt for per file license information
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}apptools>=4.3.0:devel/py-apptools
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}apptools>=4.3.0:devel/py-apptools@${FLAVOR}
 
 USES=		python:-2.7
 USE_PYTHON=	autoplist distutils

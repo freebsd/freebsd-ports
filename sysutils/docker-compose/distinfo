@@ -1,3 +1,3 @@
-TIMESTAMP = 1504616209
-SHA256 (docker-compose-1.16.1.tar.gz) = fb46a6a2c4d193a3ff1e4d7208eea920b629c81dc92257c87f3f93095cfb0bdf
-SIZE (docker-compose-1.16.1.tar.gz) = 212167
+TIMESTAMP = 1510341304
+SHA256 (docker-compose-1.17.1.tar.gz) = e29469dbd78457c82ddad674c0fa0b7afed065b2c73858d332dd6d20d92a8541
+SIZE (docker-compose-1.17.1.tar.gz) = 219947

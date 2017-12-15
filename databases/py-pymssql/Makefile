@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	pymssql
-PORTVERSION=	2.1.1
+PORTVERSION=	2.1.3
 CATEGORIES=	databases python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,12 +12,11 @@ COMMENT=	Python database interface for MS-SQL. Version 2
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	cython:lang/cython \
-		${PYTHON_PKGNAMEPREFIX}setuptools-git>0:devel/py-setuptools-git
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools-git>0:devel/py-setuptools-git@${FLAVOR}
 LIB_DEPENDS=	libsybdb.so:databases/freetds
 
 USES=		python
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	autoplist distutils cython
 
 post-extract:
 	@${RM} ${WRKSRC}/_mssql.c

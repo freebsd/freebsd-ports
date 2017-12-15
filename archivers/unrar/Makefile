@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	unrar
-PORTVERSION=	5.50b4
-PORTEPOCH=	5
+DISTVERSION=	5.50
+PORTEPOCH=	6
 CATEGORIES+=	archivers
 MASTER_SITES=	http://www.rarlab.com/rar/ \
 		LOCAL/sunpoet
-DISTNAME=	unrarsrc-5.5.5
+DISTNAME=	unrarsrc-5.5.8
 
 MAINTAINER?=	sunpoet@FreeBSD.org
 COMMENT=	Extract, view & test RAR archives

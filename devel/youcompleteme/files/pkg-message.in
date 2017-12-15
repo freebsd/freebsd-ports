@@ -1,0 +1,9 @@
+For JavaScript Semantic Completion:
+	cd %%VIMFILESDIR%%/third_party/ycmd/third_party/tern_runtime
+	pkg install npm
+	npm install --production
+
+For TypeScript Semantic Completion:
+	pkg install npm
+	npm install -g typescript
+

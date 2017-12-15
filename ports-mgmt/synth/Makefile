@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	synth
-PORTVERSION=	1.70
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
+DISTVERSION=	2.02
 CATEGORIES=	ports-mgmt
 
 MAINTAINER=	ericturgeon.bsd@gmail.com

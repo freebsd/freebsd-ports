@@ -13,7 +13,7 @@ COMMENT=	PECL extension to retrieve information from libstatgrab
 LIB_DEPENDS=	libstatgrab0.so:devel/libstatgrab0
 
 USES=		php:pecl
-IGNORE_WITH_PHP=	70 71
+IGNORE_WITH_PHP=	70 71 72
 
 CONFIGURE_ARGS=	--with-statgrab=${LOCALBASE}
 

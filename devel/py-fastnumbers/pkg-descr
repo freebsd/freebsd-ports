@@ -1,0 +1,9 @@
+py-fastnumbers provides:
+* drop-in replacements for the Python built-in int and float that on
+  average are up to 2x faster
+* a set of convenience functions that wrap the above int and float replacements
+  and provides easy, concise, powerful, fast and flexible error handling
+* a set of functions that can be used to rapidly identify if an input could be
+  converted to int or float
+
+WWW: https://github.com/SethMMorton/fastnumbers

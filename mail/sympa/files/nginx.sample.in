@@ -22,7 +22,7 @@ server {
 		fastcgi_pass	sympafcgi;
 	}
 	location /static-sympa {
-          alias %%DATADIR%%
+          alias %%DATADIR%%/static;
           access_log   off;
         }
 }

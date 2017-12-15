@@ -22,13 +22,8 @@ MAKE_ENV=	MAKEOBJDIR=${WRKSRC}/obj
 
 .include "${.CURDIR}/Makefile.sources"
 
-.if defined(ADA_DEFAULT) && ${ADA_DEFAULT} == 5
-USES+=		tar:bzip2
-.include "${.CURDIR}/../gcc5-aux/Makefile.version"
-.else
 USES+=		tar:xz
 .include "${.CURDIR}/../gcc6-aux/Makefile.version"
-.endif
 
 post-extract:
 	@${MKDIR} ${WRKSRC}/obj

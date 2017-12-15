@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	OpenEXR
-PORTVERSION=	2.2.0
-PORTREVISION=	8
+PORTVERSION=	2.2.1
+PORTREVISION=	0
 CATEGORIES=	graphics devel
 MASTER_SITES=	SAVANNAH/openexr/:dist \
 		LOCAL/mandree/:test
@@ -14,13 +14,10 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:dist \
 MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	High dynamic-range (HDR) image file format
 
-DEPRECATED=	Vulnerable with no upstream support
-EXPIRATION_DATE=2017-12-31
-
 LICENSE=	BSD3CLAUSE
 
 # exact version required to avoid hard-to-debug issues
-LIB_DEPENDS=	libImath-2_2.so.12:graphics/ilmbase
+LIB_DEPENDS=	libImath-2_2.so.23:graphics/ilmbase
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
@@ -58,7 +55,7 @@ USE_GCC=	yes
 .endif
 
 MAJORVER=	2_2
-VER=		22
+VER=		23
 
 PLIST_SUB=	MAJORVER=${MAJORVER}
 PLIST_SUB+=	VER=${VER}

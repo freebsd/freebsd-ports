@@ -7,5 +7,9 @@ lib/libfaad.a
 lib/libfaad.so
 lib/libfaad.so.2
 lib/libfaad.so.2.0.0
+lib/libfaad_drm.a
+lib/libfaad_drm.so
+lib/libfaad_drm.so.2
+lib/libfaad_drm.so.2.0.0
 lib/libmp4ff.a
 man/man1/faad.1.gz

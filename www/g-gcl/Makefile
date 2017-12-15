@@ -12,7 +12,7 @@ COMMENT=	Sample counter scripts for Graphic Counter Language
 
 RUN_DEPENDS=	gracula:graphics/gracula
 
-NO_BUILD= 	yes
+NO_BUILD=	yes
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/gracula

@@ -9,7 +9,7 @@ PKGNAMEPREFIX=	hashicorp-
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Service discovery and configuration made easy
 
-LICENSE=	MPL
+LICENSE=	MPL20
 
 BUILD_DEPENDS=	go:lang/go
 

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	App-GitGot
-PORTVERSION=	1.333
+PORTVERSION=	1.334
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -22,13 +22,11 @@ BUILD_DEPENDS=	p5-App-Cmd>=0:devel/p5-App-Cmd \
 		p5-File-chdir>=0:devel/p5-File-chdir \
 		p5-Git-Wrapper>=0.042:devel/p5-Git-Wrapper \
 		p5-IO-Prompt-Simple>=0:devel/p5-IO-Prompt-Simple \
-		p5-List-AllUtils>=0.09:devel/p5-List-AllUtils \
 		p5-Moo>=2:devel/p5-Moo \
 		p5-MooX-HandlesVia>=0.001008:devel/p5-MooX-HandlesVia \
 		p5-Net-GitHub>=0:net/p5-Net-GitHub \
 		p5-Path-Tiny>=0.072:devel/p5-Path-Tiny \
 		p5-PerlX-Maybe>=0:devel/p5-PerlX-Maybe \
-		p5-Term-ANSIColor>=0:devel/p5-Term-ANSIColor \
 		p5-Test-MockObject>=0:devel/p5-Test-MockObject \
 		p5-Try-Tiny>=0:lang/p5-Try-Tiny \
 		p5-YAML>=0:textproc/p5-YAML \
@@ -42,4 +40,11 @@ NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 502501
+BUILD_DEPENDS+=	p5-Scalar-List-Utils>=1.45:lang/p5-Scalar-List-Utils
+RUN_DEPENDS+=	p5-Scalar-List-Utils>=1.45:lang/p5-Scalar-List-Utils
+.endif
+
+.include <bsd.port.post.mk>

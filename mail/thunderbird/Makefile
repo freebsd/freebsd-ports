@@ -2,13 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	thunderbird
-DISTVERSION=	52.4.0
-PORTREVISION=	1
+DISTVERSION=	52.5.0
 CATEGORIES=	mail news net-im ipv6
 MASTER_SITES=	MOZILLA/${PORTNAME}/releases/${DISTVERSION}/source \
-		MOZILLA/${PORTNAME}/candidates/${DISTVERSION}-candidates/build3/source
-DISTFILES=	${PORTNAME}-${DISTVERSION}.source${EXTRACT_SUFX}
-EXTRACT_ONLY=	${PORTNAME}-${DISTVERSION}.source${EXTRACT_SUFX}
+		MOZILLA/${PORTNAME}/candidates/${DISTVERSION}-candidates/build1/source
+DISTFILES=	${DISTNAME}.source${EXTRACT_SUFX}
 
 MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	Mozilla Thunderbird is standalone mail and news that stands above
@@ -22,7 +20,7 @@ BUILD_DEPENDS=	nspr>=4.13.1:devel/nspr \
 		libvorbis>=1.3.5,3:audio/libvorbis \
 		libvpx>=1.5.0:multimedia/libvpx \
 		sqlite3>=3.17.0:databases/sqlite3 \
-		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3 \
+		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR} \
 		v4l_compat>0:multimedia/v4l_compat \
 		autoconf-2.13:devel/autoconf213 \
 		yasm:devel/yasm \
@@ -57,7 +55,6 @@ OPTIONS_DEFAULT=BUNDLED_CAIRO CANBERRA GTK3 LIGHTNING
 .include "${.CURDIR}/../../www/firefox/Makefile.options"
 .include <bsd.port.pre.mk>
 
-WRKSRC:=	${WRKDIR}/${PORTNAME}-${DISTVERSION}
 MOZSRC:=	${WRKSRC}/mozilla
 
 .if ${PORT_OPTIONS:MLIGHTNING}

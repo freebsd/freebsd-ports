@@ -5,10 +5,10 @@
  
  ifeq ($(INSTALL_DIR), )
 -INSTALLDIR = $(ERL_DIR)/addons/$(ESDL_VSN)
-+INSTALLDIR = $(STAGEDIR)$(ERL_DIR)/addons/$(ESDL_VSN)
++INSTALLDIR = $(DESTDIR)$(ERL_DIR)/addons/$(ESDL_VSN)
  else 
 -INSTALLDIR = $(INSTALL_DIR)/$(ESDL_VSN)
-+INSTALLDIR = $(STAGEDIR)$(INSTALL_DIR)/$(ESDL_VSN)
++INSTALLDIR = $(DESTDIR)$(INSTALL_DIR)/$(ESDL_VSN)
  endif
  
  ## I assume that make install are only made on unixes... :-)

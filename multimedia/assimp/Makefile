@@ -1,13 +1,11 @@
-# Created by: Yuri <yuri@tsoft.com>
 # $FreeBSD$
 
 PORTNAME=	assimp
-PORTVERSION=	4.0.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	2
+DISTVERSION=	4.0.1
 CATEGORIES=	multimedia
 
-MAINTAINER=	yuri@rawbw.com
+MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Library to import various 3D model formats in a uniform manner
 
 LICENSE=	BSD3CLAUSE
@@ -23,6 +21,8 @@ USE_LDCONFIG=	yes
 
 # CMAKE_ARGS instructs cmake to skip runtime path removal during install
 CMAKE_ARGS+=	-DCMAKE_SKIP_RPATH:BOOL=ON -DASSIMP_BUILD_TESTS:BOOL=OFF
+
+PLIST_SUB=	SHLIB_VER=${DISTVERSION}
 
 .include <bsd.port.pre.mk>
 

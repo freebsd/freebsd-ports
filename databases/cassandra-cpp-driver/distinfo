@@ -1,3 +1,3 @@
-TIMESTAMP = 1505915505
-SHA256 (datastax-cpp-driver-2.7.1_GH0.tar.gz) = eb22b7b148507253d2ca24f419e6768d5f9525dbc6f60afcd40906df3ae7cf8d
-SIZE (datastax-cpp-driver-2.7.1_GH0.tar.gz) = 623912
+TIMESTAMP = 1511426693
+SHA256 (datastax-cpp-driver-2.8.0_GH0.tar.gz) = bd437734921c8ad45fe2e81ae0ddf52cc16565a5a82eae5d3295426266c59b47
+SIZE (datastax-cpp-driver-2.8.0_GH0.tar.gz) = 1515087

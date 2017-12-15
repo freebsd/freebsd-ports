@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	cmocka
-PORTVERSION=	1.1.0
+PORTVERSION=	1.1.1
 CATEGORIES=	sysutils
 MASTER_SITES=	https://cmocka.org/files/1.1/ \
 		LOCAL/dteske
@@ -20,7 +20,7 @@ PLIST_FILES=	include/cmocka.h \
 		lib/cmake/cmocka/cmocka-config.cmake \
 		lib/libcmocka.so \
 		lib/libcmocka.so.0 \
-		lib/libcmocka.so.0.4.0 \
+		lib/libcmocka.so.0.4.1 \
 		libdata/pkgconfig/cmocka.pc
 
 OPTIONS_DEFINE=	STATIC

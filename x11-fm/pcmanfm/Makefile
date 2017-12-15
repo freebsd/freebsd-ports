@@ -12,8 +12,8 @@ COMMENT=	PCMan File Manager
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	libfm-gtk.so:x11/libfm \
-	libfontconfig.so:x11-fonts/fontconfig \
-	libfreetype.so:print/freetype2
+		libfontconfig.so:x11-fonts/fontconfig \
+		libfreetype.so:print/freetype2
 
 USES=		desktop-file-utils gettext gmake libtool localbase pkgconfig \
 		tar:xz

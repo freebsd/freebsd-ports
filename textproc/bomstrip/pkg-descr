@@ -16,4 +16,4 @@ issues, so there is absolutely no need to have three bytes (the
 utf-8-BOM) that do not say anything about the byte-order (since there
 is nothing to say).
 
-WWW: http://www.ueber.net/who/mjl/projects/bomstrip/
+WWW: https://www.ueber.net/who/mjl/projects/bomstrip/

@@ -11,7 +11,7 @@ COMMENT=	Pinocchio plugins for the nose testing framework
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}colorama>0:devel/py-colorama
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}colorama>0:devel/py-colorama@${FLAVOR}
 
 NO_ARCH=	yes
 USES=		python

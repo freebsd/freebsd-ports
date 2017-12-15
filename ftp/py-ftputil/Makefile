@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	High-level FTP client library
 
-USES=		python
+USES=		python:2.7
 USE_PYTHON=	distutils
 
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}

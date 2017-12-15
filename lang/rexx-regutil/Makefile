@@ -13,7 +13,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}
 MAINTAINER=	bob@eager.cx
 COMMENT=	Implementation of IBM's RexxUtil function library for Regina
 
-LICENSE=	MPL
+LICENSE=	MPL10
 
 BUILD_DEPENDS=	${LOCALBASE}/include/rexxsaa.h:lang/rexx-regina
 

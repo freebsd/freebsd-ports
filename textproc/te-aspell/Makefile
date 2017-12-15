@@ -10,7 +10,7 @@ CATEGORIES=	textproc
 MAINTAINER=	prudhvi-krishna-bsd@surapaneni.in
 COMMENT=	Aspell Telugu dictionary
 
-DICT=	 	te
+DICT=		te
 
 .include "${.CURDIR}/../../textproc/aspell/Makefile.inc"
 .include <bsd.port.post.mk>

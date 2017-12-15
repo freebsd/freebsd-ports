@@ -13,6 +13,10 @@ COMMENT=	Simple, fast, and accurate algorithm to estimate large phylogenies
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_aarch64=		fails to compile: c++: the clang compiler does not support '-march=native'
+BROKEN_armv6=		fails to compile: c++: the clang compiler does not support '-march=native'
+BROKEN_armv7=		fails to compile: c++: the clang compiler does not support '-march=native'
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	stephaneguindon
 

@@ -1,4 +1,4 @@
 bin/yahooquote
 %%SITE_PERL%%/Finance/YahooQuote.pm
-%%PERL5_MAN3%%/Finance::YahooQuote.3.gz
 %%PERL5_MAN1%%/yahooquote.1.gz
+%%PERL5_MAN3%%/Finance::YahooQuote.3.gz

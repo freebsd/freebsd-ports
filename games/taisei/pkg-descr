@@ -1,0 +1,8 @@
+Taisei (lit. Occident) is a fan-made Open Source clone of the Touhou
+series, written in C using SDL/OpenGL.
+
+Basically, it is a shoot'em up game with lots of bullets (the genre
+is literally called bullet hell). The game is mostly done and very
+playable, so feel free to give it a try!
+
+WWW: https://taisei-project.org/

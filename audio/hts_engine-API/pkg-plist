@@ -1,0 +1,11 @@
+bin/hts_engine
+include/HTS_engine.h
+lib/libHTSEngine.a
+%%DOCSDIR%%/AUTHORS
+%%DOCSDIR%%/COPYING
+%%DOCSDIR%%/ChangeLog
+%%DOCSDIR%%/INSTALL
+%%DOCSDIR%%/NEWS
+%%DOCSDIR%%/README
+@dir %%DOCSDIR%%
+@dir share/licenses/hts_engine-API-1.10

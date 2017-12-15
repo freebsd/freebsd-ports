@@ -92,7 +92,7 @@ pre-patch:
 	-@cd ${WRKDIR}/binutils-${BINUTILS_VERSION} && \
 	 ${MKDIR} sim/testsuite/sim/msp430 && \
 	 ${PATCH} ${DIST_PATCH_ARGS} < ${WRKDIR}/msp430-gcc-${PATCHSET_VERSION}_source-patches/binutils-${BINUTILS_VERSION:S/./_/g}.diff > /dev/null 2>&1
- 	# gdb patch contains chunks for files not included into distirbution
+	# gdb patch contains chunks for files not included into distirbution
 	@${ECHO_MSG} "====> Patch gdb (ignore error message, please)"
 	-@cd ${WRKDIR}/gdb-${GDB_VERSION} && \
 	 ${MKDIR} gas/config ld/emultempl && \

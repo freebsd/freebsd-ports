@@ -3,6 +3,7 @@
 
 PORTNAME=	pymetar
 PORTVERSION=	0.21
+PORTREVISION=	1
 CATEGORIES=	astro python geography
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 NO_ARCH=	yes
 USE_PYTHON=	autoplist distutils
-USES=		python:2 shebangfix
+USES=		python:2.7 shebangfix
 
 SHEBANG_FILES=	bin/${PORTNAME}
 

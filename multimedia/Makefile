@@ -28,8 +28,10 @@
     SUBDIR += bombono
     SUBDIR += bsdbktr_tvtune
     SUBDIR += camserv
+    SUBDIR += ccextractor
     SUBDIR += cclive
     SUBDIR += cheese
+    SUBDIR += chilitags
     SUBDIR += clipgrab
     SUBDIR += clive
     SUBDIR += clutter-gst
@@ -40,7 +42,6 @@
     SUBDIR += devede
     SUBDIR += dirac
     SUBDIR += dragon
-    SUBDIR += dtv
     SUBDIR += dtv-scan-tables
     SUBDIR += dumpmpeg
     SUBDIR += dv2jpg
@@ -170,6 +171,7 @@
     SUBDIR += kissdx
     SUBDIR += kmplayer-kde4
     SUBDIR += kodi
+    SUBDIR += kodi-devel
     SUBDIR += kplayer-kde4
     SUBDIR += kvazaar
     SUBDIR += l-smash
@@ -209,6 +211,7 @@
     SUBDIR += libsmacker
     SUBDIR += libtheora
     SUBDIR += libtuner
+    SUBDIR += libuvc
     SUBDIR += libv4l
     SUBDIR += libva
     SUBDIR += libva-intel-driver
@@ -306,7 +309,6 @@
     SUBDIR += php-pHash
     SUBDIR += pitivi
     SUBDIR += playd
-    SUBDIR += plexhometheater
     SUBDIR += plexmediaserver
     SUBDIR += plexmediaserver-plexpass
     SUBDIR += plexpy
@@ -328,10 +330,12 @@
     SUBDIR += py-kaa-imlib2
     SUBDIR += py-kaa-metadata
     SUBDIR += py-librtmp
+    SUBDIR += py-mido
     SUBDIR += py-mlt
     SUBDIR += py-moviepy
     SUBDIR += py-openlp
     SUBDIR += py-periscope
+    SUBDIR += py-pretty_midi
     SUBDIR += py-qt4-multimedia
     SUBDIR += py-qt4-phonon
     SUBDIR += py-qt5-multimedia
@@ -339,7 +343,6 @@
     SUBDIR += py-soco
     SUBDIR += py-subliminal
     SUBDIR += py-tvnamer
-    SUBDIR += py3-gstreamer1
     SUBDIR += pyjama
     SUBDIR += pymp
     SUBDIR += qmmp
@@ -373,6 +376,7 @@
     SUBDIR += sabbu
     SUBDIR += schroedinger
     SUBDIR += shotcut
+    SUBDIR += simplescreenrecorder
     SUBDIR += smpeg
     SUBDIR += smpeg2
     SUBDIR += smplayer
@@ -442,6 +446,7 @@
     SUBDIR += vtkmpeg2encode
     SUBDIR += w_scan
     SUBDIR += webcamd
+    SUBDIR += webcamoid
     SUBDIR += webvfx-qt5
     SUBDIR += win32-codecs
     SUBDIR += winff

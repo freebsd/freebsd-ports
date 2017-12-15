@@ -17,9 +17,8 @@ TEST_DEPENDS=	bash:shells/bash
 
 USE_GITHUB=	yes
 
-USES=		autoreconf gmake ncurses perl5 python shebangfix
+USES=		autoreconf gmake ncurses perl5 python:env shebangfix
 USE_PERL5=	test
-PYTHON_NO_DEPENDS=	yes
 GNU_CONFIGURE=	yes
 SUB_FILES=	pkg-message
 SHEBANG_FILES=	misc/*.pl misc/*.py misc/plot-bamstats test/test.pl

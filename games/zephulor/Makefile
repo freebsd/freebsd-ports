@@ -18,7 +18,7 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING.txt
 
 RUN_DEPENDS=	${PYGAME} \
-		${PYTHON_PKGNAMEPREFIX}tkinter>=0:x11-toolkits/py-tkinter
+		${PYTHON_PKGNAMEPREFIX}tkinter>=0:x11-toolkits/py-tkinter@${PY_FLAVOR}
 
 WRKSRC=		${WRKDIR}/zephulor-source
 

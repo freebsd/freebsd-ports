@@ -1,0 +1,9 @@
+llbuild is a set of libraries for building build systems. Unlike most build
+system projects which focus on the syntax for describing the build, llbuild
+is designed around a reusable, flexible, and scalable general purpose build
+engine capable of solving many "build system"-like problems. The project
+also includes additional libraries on top of that engine which provide
+support for constructing bespoke build systems (like swift build) or for
+building from Ninja manifests.
+
+WWW: https://github.com/apple/swift-llbuild

@@ -130,6 +130,7 @@
     SUBDIR += mygui-ogre
     SUBDIR += mygui-opengl
     SUBDIR += neXtaw
+    SUBDIR += ntk
     SUBDIR += nucleo
     SUBDIR += ocaml-lablgtk2
     SUBDIR += ocaml-labltk
@@ -218,9 +219,6 @@
     SUBDIR += py-wxPython28-common
     SUBDIR += py-wxPython30
     SUBDIR += py-xlib
-    SUBDIR += py34-tkinter
-    SUBDIR += py35-tkinter
-    SUBDIR += py36-tkinter
     SUBDIR += pypy-tkinter
     SUBDIR += qt4-declarative
     SUBDIR += qt4-gui
@@ -239,6 +237,7 @@
     SUBDIR += qt5-widgets
     SUBDIR += qt5pas
     SUBDIR += qtermwidget
+    SUBDIR += qtermwidget-l10n
     SUBDIR += qwt5
     SUBDIR += qwt5-designerplugin
     SUBDIR += qwt6
@@ -266,7 +265,6 @@
     SUBDIR += tile
     SUBDIR += tix
     SUBDIR += tk-wrapper
-    SUBDIR += tk84
     SUBDIR += tk85
     SUBDIR += tk86
     SUBDIR += tk87

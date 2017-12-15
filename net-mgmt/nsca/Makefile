@@ -3,6 +3,7 @@
 
 PORTNAME=	nsca
 PORTVERSION=	2.9.2
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/nagios/nsca-2.x/nsca-${PORTVERSION}
 

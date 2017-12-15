@@ -1,12 +1,13 @@
 # $FreeBSD$
 
 PORTNAME=	ejabberd
-PORTVERSION=	17.08
+PORTVERSION=	17.09
+PORTREVISION=	1
 CATEGORIES=	net-im
 MASTER_SITES=	http://www.process-one.net/downloads/${PORTNAME}/${PORTVERSION}/:p1 \
 		http://distfiles.pirateparty.in/ashish/:deps \
 		LOCAL/ashish:deps
-DISTFILES+=	${DISTNAME}.tgz:p1 ejabberd-deps-13.tar.xz:deps
+DISTFILES+=	${DISTNAME}.tgz:p1 ejabberd-deps-14.tar.xz:deps
 
 MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	Free and Open Source distributed fault-tolerant Jabber server
@@ -29,7 +30,8 @@ USE_RC_SUBR=	${PORTNAME}
 NOPRECIOUSMAKEVARS=	yes
 CPE_VENDOR=	process-one
 
-OPTIONS_DEFINE=	ODBC PAM DOCS MYSQL PGSQL ICONV RIAK ZLIB REDIS SIP SQLITE STUN TOOLS FULLXML
+OPTIONS_DEFINE=	ODBC PAM DOCS GRAPHICS MYSQL PGSQL ICONV RIAK ZLIB REDIS SIP SQLITE \
+		STUN TOOLS FULLXML
 OPTIONS_DEFAULT=	ICONV
 
 EJABBERD_LIBDIR=lib/erlang/lib
@@ -56,6 +58,12 @@ SIP_DESC=	SIP support
 STUN_DESC=	STUN/TURN support
 TOOLS_DESC=	Build development tools
 FULLXML_DESC=	Full XML support
+GRAPHICS_DESC=	Graphics images manipulation support
+GRAPHICS_LIB_DEPENDS=	libgd.so:graphics/gd \
+			libpng.so:graphics/png \
+			libwebp.so:graphics/webp
+GRAPHICS_USES=	jpeg
+GRAPHICS_CONFIGURE_ENABLE=	graphics
 PAM_CONFIGURE_ENABLE=	pam
 ODBC_CONFIGURE_ENABLE=	odbc
 MYSQL_CONFIGURE_ENABLE=	mysql
@@ -79,6 +87,9 @@ DOCS_MAKE_ARGS_OFF=	NOPORTDOCS=yes
 post-extract:
 	@${LN} -s ${WRKDIR}/deps ${WRKSRC}/
 
+post-patch:
+	@${REINPLACE_CMD} -e 's,^convert,${LOCALBASE}/bin/convert,' ${WRKSRC}/tools/captcha.sh
+
 pre-configure:
 	@${REINPLACE_CMD} -e 's,/usr/local,${LOCALBASE},g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's,%%LOCALBASE%%,${LOCALBASE},g' \
@@ -87,14 +98,21 @@ pre-configure:
 pre-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/${EJABBERD_LIBDIR}
 
-post-install:
-.if ${PORT_OPTIONS:MPAM}
+post-install-GRAPHICS-on:
+	@${CHMOD} +x ${STAGEDIR}${PREFIX}/${EJABBERD_LIBDIR}/${PORTNAME}-${PORTVERSION}/lib/eimp-1.0.1/priv/bin/eimp
+
+post-install-PAM-on:
 	@${INSTALL} -m 444 ${FILESDIR}/pam_ejabberd \
 		${STAGEDIR}${PREFIX}/etc/pam.d/ejabberd
 	@${INSTALL} -m 0750 ${STAGEDIR}${PREFIX}/${EJABBERD_LIBDIR}/${PORTNAME}-${PORTVERSION}/lib/epam-1.0.3/priv/bin/epam \
 		${STAGEDIR}${PREFIX}/${EJABBERD_LIBDIR}/${PORTNAME}-${PORTVERSION}/priv/bin/epam
-.endif
+
+post-install:
 	@${FIND} ${STAGEDIR}${PREFIX}/${EJABBERD_LIBDIR} -type f \
 		-name '*.so' -exec ${STRIP_CMD} {} \;
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	@${INSTALL} -m 0755 ${STAGEDIR}${PREFIX}/${EJABBERD_LIBDIR}/${PORTNAME}-${PORTVERSION}/priv/bin/captcha.sh \
+		${STAGEDIR}${DATADIR}
+	@${REINPLACE_CMD} -r -e '/captcha_cmd:/s,"[^"]+","${DATADIR}/captcha.sh",' ${STAGEDIR}${ETCDIR}/${PORTNAME}.yml.example
 
 .include <bsd.port.post.mk>

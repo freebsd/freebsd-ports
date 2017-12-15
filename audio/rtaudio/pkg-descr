@@ -1,0 +1,6 @@
+A set of C++ classes that provide a common API for realtime audio input/output
+across Linux (native ALSA, JACK, PulseAudio and OSS), Macintosh OS X
+(CoreAudio and JACK), and Windows (DirectSound, ASIO and WASAPI) operating
+systems.
+
+WWW: https://github.com/thestk/rtaudio

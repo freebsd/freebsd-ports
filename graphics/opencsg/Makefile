@@ -3,7 +3,7 @@
 
 PORTNAME=	opencsg
 PORTVERSION=	1.3.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.opencsg.org/
 DISTNAME=	OpenCSG-${PORTVERSION}
@@ -13,7 +13,7 @@ COMMENT=	Constructive Solid Geometry rendering library
 
 USES=		qmake
 USE_GL=		glew
-USE_QT4=  	corelib gui
+USE_QT4=	corelib gui
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 PLIST_SUB=      PORTVERSION=${PORTVERSION}
 

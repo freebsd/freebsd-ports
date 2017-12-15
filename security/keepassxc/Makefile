@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	keepassxc
-PORTVERSION=	2.2.1
+PORTVERSION=	2.2.2
 CATEGORIES=	security
 
 MAINTAINER=	melanhit@gmail.com

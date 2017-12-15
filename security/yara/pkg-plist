@@ -7,13 +7,17 @@ include/yara/atoms.h
 include/yara/compiler.h
 include/yara/error.h
 include/yara/exec.h
+include/yara/exefiles.h
 include/yara/filemap.h
 include/yara/hash.h
 include/yara/integers.h
 include/yara/libyara.h
 include/yara/limits.h
+include/yara/mem.h
 include/yara/modules.h
 include/yara/object.h
+include/yara/parser.h
+include/yara/proc.h
 include/yara/re.h
 include/yara/rules.h
 include/yara/scan.h
@@ -26,7 +30,7 @@ include/yara/utils.h
 lib/libyara.a
 lib/libyara.so
 lib/libyara.so.3
-lib/libyara.so.3.6.3
+lib/libyara.so.3.7.0
 libdata/pkgconfig/yara.pc
 man/man1/yara.1.gz
 man/man1/yarac.1.gz

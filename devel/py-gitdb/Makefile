@@ -14,9 +14,9 @@ COMMENT=	Pure Python git object database
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}smmap>=0.8.5:devel/py-smmap
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}smmap>=0.8.5:devel/py-smmap@${FLAVOR}
 
-USES=		python
+USES=		python:2.7
 USE_PYTHON=	autoplist distutils
 
 post-install:

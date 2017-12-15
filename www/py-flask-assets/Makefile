@@ -12,8 +12,8 @@ COMMENT=	Asset management for flask
 
 LICENSE=	BSD2CLAUSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Flask>=0:www/py-flask \
-		${PYTHON_PKGNAMEPREFIX}webassets>=0:www/py-webassets
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Flask>=0:www/py-flask@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}webassets>=0:www/py-webassets@${FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist distutils

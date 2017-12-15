@@ -1,12 +1,12 @@
 # $FreeBSD$
 
 PORTNAME=	gnupg
-PORTVERSION=	2.2.1
+PORTVERSION=	2.2.3
 CATEGORIES=	security
 MASTER_SITES=	GNUPG
 
 MAINTAINER=	adamw@FreeBSD.org
-COMMENT=	The GNU Privacy Guard (modern version)
+COMMENT=	Complete and free PGP implementation
 
 LICENSE=	GPLv3 LGPL3
 LICENSE_COMB=	multi
@@ -41,7 +41,8 @@ OPTIONS_SUB=	yes
 LDAP_DESC=	LDAP keyserver interface
 SCDAEMON_DESC=	Enable Smartcard daemon (with libusb)
 SUID_GPG_DESC=	Install GPG with suid
-# In jail, SUID is required to avoid warning (security.bsd.unprivileged_mlock sysctl is not used in jail).
+# In jail, SUID is required to avoid warning
+# (security.bsd.unprivileged_mlock sysctl is not used in jail).
 
 GNUTLS_CONFIGURE_ENABLE=gnutls
 GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls

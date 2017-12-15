@@ -1,0 +1,11 @@
+--- lib/smartdc/format-secondary-disk.orig	2017-05-22 19:41:07 UTC
++++ lib/smartdc/format-secondary-disk
+@@ -10,7 +10,7 @@
+ # By default we provision the whole disk as one partition
+ 
+ # load common functions and vars
+-. /lib/smartdc/common.lib
++. %%PREFIX%%/lib/smartdc/common.lib
+ 
+ DATADISKDEVICE='vtbd1'
+ GPART=/sbin/gpart

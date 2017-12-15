@@ -17,7 +17,7 @@ USES=		php:ext localbase:ldflags
 USE_GITHUB=	yes
 GH_ACCOUNT=	vanillahsu
 GH_PROJECT=	pecl-ctemplate
-IGNORE_WITH_PHP=	70 71
+IGNORE_WITH_PHP=	70 71 72
 
 CONFIGURE_ARGS=	--with-cTemplate=${LOCALBASE}
 

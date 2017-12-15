@@ -3,7 +3,7 @@
 
 PORTNAME=	gtkballs
 PORTVERSION=	3.1.5
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	games
 MASTER_SITES=	http://gtkballs.antex.ru/dist/
 
@@ -16,12 +16,12 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 USES=		gmake pkgconfig
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--localstatedir=${DATADIR}
-
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+CONFIGURE_ARGS=	--localstatedir=/var/games
 
 PORTDOCS=	AUTHORS ChangeLog NEWS README README.russian
+
+DESKTOP_ENTRIES="GtkBalls" "" ${PORTNAME} \
+		"${PORTNAME}" "Game;ArcadeGame;" ""
 
 OPTIONS_DEFINE=	DOCS NLS
 OPTIONS_SUB=	yes
@@ -29,13 +29,13 @@ OPTIONS_SUB=	yes
 NLS_CONFIGURE_ENABLE=	nls
 NLS_USES=	gettext
 
-DESKTOP_ENTRIES="GtkBalls" "" ${PORTNAME} \
-		"${PORTNAME}" "Game;ArcadeGame;" ""
-
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/gnome-gtkballs.png  \
 		${STAGEDIR}${PREFIX}/share/pixmaps/${PORTNAME}.png
+	${MV} ${STAGEDIR}/var/games/gtkballs-scores \
+		${STAGEDIR}/var/games/gtkballs-scores.sample
 
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 

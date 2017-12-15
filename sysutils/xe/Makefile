@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	xe
-PORTVERSION=	0.9
 DISTVERSIONPREFIX=	v
+DISTVERSION=	0.11
 CATEGORIES=	sysutils
 
 MAINTAINER=	tobik@FreeBSD.org
@@ -18,11 +18,13 @@ USES=		perl5
 USE_PERL5=	test
 
 MAKE_ARGS=	CFLAGS="${CFLAGS}" \
+		PREFIX="${PREFIX}" \
 		MANDIR="${PREFIX}/man"
 TEST_TARGET=	check
 
 PLIST_FILES=	bin/xe \
-		man/man1/xe.1.gz
+		man/man1/xe.1.gz \
+		share/zsh/site-functions/_xe
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/xe

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rinku
-PORTVERSION=	2.0.3
+PORTVERSION=	2.0.4
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 

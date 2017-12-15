@@ -3,5 +3,5 @@ include/mdf/mdf_fields.h
 lib/libmdf.a
 lib/libmdf.so
 lib/libmdf.so.0
-lib/libmdf.so.0.0.0
+lib/libmdf.so.0.6.0
 libdata/pkgconfig/libmdf.pc

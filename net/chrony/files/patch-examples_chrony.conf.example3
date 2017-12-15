@@ -5,7 +5,7 @@
  #
  # This is an example chrony configuration file.  You should copy it to
 -# /etc/chrony.conf after uncommenting and editing the options that you
-+# /usr/local/etc/chrony.conf after uncommenting and editing the options that you
++# %%PREFIX%%/etc/chrony.conf after uncommenting and editing the options that you
  # want to enable.  The more obscure options are not included.  Refer
  # to the documentation for these.
  #
@@ -31,7 +31,7 @@
  # to uncomment the following line and edit the file to set up the keys.
  
 -! keyfile /etc/chrony.keys
-+! keyfile /usr/local/etc/chrony.keys
++! keyfile %%PREFIX%%/etc/chrony.keys
  
  # chronyd can save the measurement history for the servers to files when
  # it it exits.  This is useful in 2 situations:

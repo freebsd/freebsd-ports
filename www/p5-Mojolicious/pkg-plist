@@ -43,6 +43,7 @@ bin/morbo
 %%SITE_PERL%%/Mojo/Message/Response.pm
 %%SITE_PERL%%/Mojo/Parameters.pm
 %%SITE_PERL%%/Mojo/Path.pm
+%%SITE_PERL%%/Mojo/Promise.pm
 %%SITE_PERL%%/Mojo/Reactor.pm
 %%SITE_PERL%%/Mojo/Reactor/EV.pm
 %%SITE_PERL%%/Mojo/Reactor/Poll.pm
@@ -122,7 +123,9 @@ bin/morbo
 %%SITE_PERL%%/Mojolicious/resources/public/favicon.ico
 %%SITE_PERL%%/Mojolicious/resources/public/mojo/failraptor.png
 %%SITE_PERL%%/Mojolicious/resources/public/mojo/jquery/jquery.js
+%%SITE_PERL%%/Mojolicious/resources/public/mojo/logo-black-2x.png
 %%SITE_PERL%%/Mojolicious/resources/public/mojo/logo-black.png
+%%SITE_PERL%%/Mojolicious/resources/public/mojo/logo-white-2x.png
 %%SITE_PERL%%/Mojolicious/resources/public/mojo/logo-white.png
 %%SITE_PERL%%/Mojolicious/resources/public/mojo/noraptor.png
 %%SITE_PERL%%/Mojolicious/resources/public/mojo/notfound.png
@@ -131,7 +134,6 @@ bin/morbo
 %%SITE_PERL%%/Mojolicious/resources/public/mojo/prettify/prettify-mojo-dark.css
 %%SITE_PERL%%/Mojolicious/resources/public/mojo/prettify/prettify-mojo-light.css
 %%SITE_PERL%%/Mojolicious/resources/public/mojo/prettify/run_prettify.js
-%%SITE_PERL%%/Mojolicious/resources/public/mojo/stripes.png
 %%SITE_PERL%%/Mojolicious/resources/templates/mojo/debug.html.ep
 %%SITE_PERL%%/Mojolicious/resources/templates/mojo/exception.html.ep
 %%SITE_PERL%%/Mojolicious/resources/templates/mojo/menubar.html.ep
@@ -182,6 +184,7 @@ bin/morbo
 %%PERL5_MAN3%%/Mojo::Message::Response.3.gz
 %%PERL5_MAN3%%/Mojo::Parameters.3.gz
 %%PERL5_MAN3%%/Mojo::Path.3.gz
+%%PERL5_MAN3%%/Mojo::Promise.3.gz
 %%PERL5_MAN3%%/Mojo::Reactor.3.gz
 %%PERL5_MAN3%%/Mojo::Reactor::EV.3.gz
 %%PERL5_MAN3%%/Mojo::Reactor::Poll.3.gz

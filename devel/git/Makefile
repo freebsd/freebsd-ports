@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	git
-DISTVERSION=	2.14.3
+DISTVERSION=	2.15.1
 CATEGORIES=	devel
 MASTER_SITES=	KERNEL_ORG/software/scm/git
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
@@ -15,6 +15,7 @@ MAINTAINER=	garga@FreeBSD.org
 COMMENT?=	Distributed source code management tool
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 CONFLICTS_INSTALL?=	git-gui-[0-9]* git-subversion-[0-9]* git-lite-[0-9]*
 

@@ -16,6 +16,7 @@ ONLY_FOR_ARCHS_REASON=	uses x86-only assembly from machine/cpufunc.h
 USES=		uidfix
 GNU_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}/consolehm/consolehm
+MAKE_ARGS+=	-e
 
 PLIST_FILES=	bin/chm man/man8/chm.8.gz
 

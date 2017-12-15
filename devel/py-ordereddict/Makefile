@@ -14,7 +14,7 @@ COMMENT=	Drop-in substitute for Py2.7's new collections
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		python:2 		# for graphics/py-blocking
+USES=		python:2		# for graphics/py-blocking
 USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

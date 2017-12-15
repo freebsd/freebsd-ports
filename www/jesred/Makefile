@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.linofee.org/~jel/webtools/src/ \
 		http://www.acad.bg/ftp/pub/src/misc/
 DISTNAME=	jesred-1.2pl1
 
-MAINTAINER=	dsh@vlink.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Redirector for Squid
 
 do-install:

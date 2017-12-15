@@ -219,7 +219,7 @@ PLIST_SUB+=	VCHKPW_MODE="${VCHKPW_MODE}"
 # User-configurable variables
 #
 # ONCHANGE_SCRIPT	- see README.onchange
-# MAILDROP 		- see README.maildrop
+# MAILDROP		- see README.maildrop
 #
 # Define these to change from the default behaviour
 #

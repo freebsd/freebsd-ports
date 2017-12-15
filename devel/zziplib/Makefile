@@ -10,7 +10,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}13/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library to provide transparent read access to zipped files
 
-LICENSE=	LGPL21 MPL
+LICENSE=	LGPL21 MPL11
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	zip:archivers/zip

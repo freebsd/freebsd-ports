@@ -1,0 +1,22 @@
+# $FreeBSD$
+
+PORTNAME=	erd
+DISTVERSIONPREFIX=	v
+DISTVERSION=	3.0.6
+CATEGORIES=	science
+
+MAINTAINER=	yuri@FreeBSD.org
+COMMENT=	AcesIII electron repulsion integrals
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+USES=		cmake:outsource fortran
+USE_GITHUB=	yes
+GH_ACCOUNT=	psi4
+USE_LDCONFIG=	yes
+
+CMAKE_ARGS=	-DBUILD_SHARED_LIBS:BOOL=ON \
+		-DENABLE_XHOST:BOOL=OFF
+
+.include <bsd.port.mk>

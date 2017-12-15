@@ -13,11 +13,10 @@ COMMENT=	Cython interface to comms/hidapi
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	cython:lang/cython
 LIB_DEPENDS=	libhidapi.so:comms/hidapi
 
 USES=		python
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	autoplist distutils cython
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|usb-1.0|usb|g' ${WRKSRC}/setup.py

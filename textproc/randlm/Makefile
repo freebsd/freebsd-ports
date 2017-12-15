@@ -26,6 +26,7 @@ INSTALL_TARGET=	install-strip
 
 BROKEN_aarch64=		fails to compile: invalid output constraint =a in asm
 BROKEN_armv6=		fails to compile: invalid output constraint =a in asm
+BROKEN_armv7=		fails to compile: BloomMap.cpp:275:58: error: ordered comparison between pointer and zero ('int *' and 'int')
 BROKEN_powerpc64=	fails to compile: error: 'itr' does not name a type
 
 post-patch:

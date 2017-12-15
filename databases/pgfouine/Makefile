@@ -29,8 +29,8 @@ do-install:
 	@cd ${WRKSRC}/include && ${COPYTREE_SHARE} \* ${STAGEDIR}${DATADIR}/include/
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/AUTHORS	${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/ChangeLog 	${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/THANKS 	${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/ChangeLog	${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/THANKS	${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/rpm-specific/sources/pgfouine-tutorial.txt ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

@@ -10,7 +10,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}e
 MAINTAINER=	lbartoletti@tuxfamily.org
 COMMENT=	Extract valid data from within an Open Street Map input file
 
-LICENSE=	MPL LGPL21 GPLv2
+LICENSE=	MPL11 LGPL21 GPLv2
 LICENSE_COMB=	dual
 
 LIB_DEPENDS=	libexpat.so:textproc/expat2

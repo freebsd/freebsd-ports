@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	thunderbird_labels
-PORTVERSION=	1.1.3
+PORTVERSION=	1.1.4
 DISTVERSIONPREFIX=	v
 CATEGORIES=	mail
 PKGNAMEPREFIX=	roundcube-
@@ -26,11 +26,14 @@ PLUGINDIR=	${WWWDIR:S,/${PORTNAME}$$,,}/roundcube/plugins/${PORTNAME}
 PLUGINDIR_REL=	${WWWDIR_REL:S,/${PORTNAME}$$,,}/roundcube/plugins/${PORTNAME}
 PLIST_SUB=	PLUGINDIR_REL="${PLUGINDIR_REL}"
 
+OPTIONS_DEFINE=	DOCS
+
 # This target is only meant to be used by the port maintainer.
 x-generate-plist: build
 	make makeplist | \
 	${SED} \
 	    -e "s,^\(%%PLUGINDIR_REL%%/config\.inc\.php\.sample$$\),@sample \1," \
+	    -e "s,^\(%%PLUGINDIR_REL%%/docs/\),%%PORTDOCS%%\1," \
 	    >${.CURDIR}/pkg-plist.tmp
 
 do-install:

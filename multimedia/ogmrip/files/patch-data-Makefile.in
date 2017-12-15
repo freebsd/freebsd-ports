@@ -1,6 +1,6 @@
---- data/Makefile.in.orig	2014-05-30 20:04:27.000000000 +0200
-+++ data/Makefile.in	2014-06-07 09:59:01.045874372 +0200
-@@ -719,10 +719,6 @@
+--- data/Makefile.in.orig	2016-02-26 14:45:06 UTC
++++ data/Makefile.in
+@@ -719,10 +719,6 @@ uninstall-am: uninstall-desktopDATA unin
  @HAVE_GTK_SUPPORT_TRUE@@INTLTOOL_DESKTOP_RULE@
  @HAVE_GTK_SUPPORT_TRUE@@INTLTOOL_SCHEMAS_RULE@
  

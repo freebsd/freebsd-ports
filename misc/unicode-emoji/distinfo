@@ -1,0 +1,11 @@
+TIMESTAMP = 1510207398
+SHA256 (unicode-emoji/5.0/emoji-data.txt) = ae7bb765f0ae7ccfdcb5d8a40ebcabc93202597d92391c698f82f99d73f94e86
+SIZE (unicode-emoji/5.0/emoji-data.txt) = 35041
+SHA256 (unicode-emoji/5.0/emoji-sequences.txt) = 617d0df67f9e1f294a17a9525ff6323d2a9c9403c80e3ac16b8ad65adc897125
+SIZE (unicode-emoji/5.0/emoji-sequences.txt) = 103383
+SHA256 (unicode-emoji/5.0/emoji-test.txt) = fcb5b1dab310dc8210af46372828453431fa6ecdafdae8e051cbb68eb698380c
+SIZE (unicode-emoji/5.0/emoji-test.txt) = 341770
+SHA256 (unicode-emoji/5.0/emoji-variation-sequences.txt) = 0609bcfc939a5799dd93f4a16b066210482d106dbf7827efbdf5ea83d7238ff2
+SIZE (unicode-emoji/5.0/emoji-variation-sequences.txt) = 36120
+SHA256 (unicode-emoji/5.0/emoji-zwj-sequences.txt) = b8080a9b282289d1ba302a2d48a6b01ebb9b4766a6864a037a69cb6acefefb99
+SIZE (unicode-emoji/5.0/emoji-zwj-sequences.txt) = 115207

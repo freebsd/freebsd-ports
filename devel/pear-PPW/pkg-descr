@@ -1,5 +1,0 @@
-The PHP Project Wizard (PPW) is a commandline tool that can be used to generate
-the scripts and configuration files necessary for the build automation of a PHP
-project.
-
-WWW: https://github.com/sebastianbergmann/php-project-wizard

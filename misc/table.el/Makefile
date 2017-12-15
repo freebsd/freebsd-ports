@@ -8,7 +8,7 @@ MASTER_SITES=	SF/table/table/${PORTVERSION}
 DISTNAME=	table-${PORTVERSION}.el.gz
 EXTRACT_SUFX=	# empty
 
-MAINTAINER=	dsh@vlink.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Create and edit WYSIWYG text based embedded tables in Emacs
 
 NO_BUILD=	yes

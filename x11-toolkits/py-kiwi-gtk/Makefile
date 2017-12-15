@@ -17,7 +17,7 @@ OPTIONS_DEFINE=	DOCS EXAMPLES
 NO_ARCH=	yes
 USE_GNOME=	libglade2 pygtk2
 USE_PYTHON=	autoplist distutils
-USES=		gettext python uniquefiles:dirs
+USES=		gettext python:2.7 uniquefiles:dirs
 
 PORTDOCS=	*
 PORTEXAMPLES=	*

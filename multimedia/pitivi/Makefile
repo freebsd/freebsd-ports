@@ -12,10 +12,10 @@ COMMENT=	Gstreamer based non-linear audio/video editor
 
 LICENSE=	LGPL21+
 
-RUN_DEPENDS=	py*-zope.interface>=0:devel/py-zope.interface \
-		${PYTHON_SITELIBDIR}/goocanvasmodule.so:graphics/py-goocanvas
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zope.interface>=0:devel/py-zope.interface@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}goocanvas>=0:graphics/py-goocanvas@${PY_FLAVOR}
 
-USES=		gettext gmake localbase pkgconfig python shebangfix tar:bzip2
+USES=		gettext gmake localbase pkgconfig python:2.7 shebangfix tar:bzip2
 SHEBANG_FILES=	bin/pitivi.in
 USE_GNOME=	intltool pygtk2
 USE_GSTREAMER=	gnonlin python good

@@ -5,8 +5,8 @@ PORTNAME=	fftw
 PORTVERSION=	2.1.5
 PORTREVISION?=	15
 CATEGORIES=	math
-MASTER_SITES=	ftp://ftp.fftw.org/pub/fftw/ 		\
-		ftp://ftp.fftw.org/pub/fftw/old/ 	\
+MASTER_SITES=	ftp://ftp.fftw.org/pub/fftw/		\
+		ftp://ftp.fftw.org/pub/fftw/old/	\
 		ftp://theory.lcs.mit.edu/pub/fftw/	\
 		ftp://pm.cse.rmit.edu.au/pub/dsp/fftw/
 

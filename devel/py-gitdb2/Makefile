@@ -13,7 +13,7 @@ COMMENT=	Git Object Database
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}smmap2>=2.0.0:devel/py-smmap2
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}smmap2>=2.0.0:devel/py-smmap2@${FLAVOR}
 
 NO_ARCH=	yes
 USE_PYTHON=	autoplist concurrent distutils

@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	pyicu
-PORTVERSION=	1.9.4
-PORTREVISION=	4
+PORTVERSION=	1.9.8
+PORTREVISION=
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,14 +15,16 @@ COMMENT=	Python extension wrapping IBM's ICU C++ API #'
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES?=		python
+LIB_DEPENDS=	libicudata.so:devel/icu
+
+USES=		python
+USE_CXXSTD=	c++11
 USE_PYTHON=	distutils autoplist
 
-MAKE_ENV+=	PYICU_INCLUDES="${PREFIX}/include" \
-		PYICU_CFLAGS="-w:-DPYICU_VER=\"${PORTVERSION}\"" \
-		PYICU_LFLAGS="-L${PREFIX}/lib"
-
-LIB_DEPENDS+=	libicudata.so:devel/icu
+MAKE_ENV+=	PYICU_INCLUDES="${LOCALBASE}/include" \
+		PYICU_CFLAGS="${CXXFLAGS:ts:}" \
+		PYICU_LFLAGS="-L${LOCALBASE}/lib"
+CFLAGS+=	-w -DPYICU_VER=\"${PORTVERSION}\"
 
 pre-configure:
 	@if [ ! -e ${LOCALBASE}/lib/libicule.so ]; then \

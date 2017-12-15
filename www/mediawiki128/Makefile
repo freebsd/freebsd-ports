@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mediawiki
-PORTVERSION=	1.28.2
+PORTVERSION=	1.28.3
 CATEGORIES=	www
 MASTER_SITES=	http://releases.wikimedia.org/mediawiki/${PORTVERSION:R}/
 PKGNAMESUFFIX=	128
@@ -12,7 +12,10 @@ COMMENT=	Wiki engine used by Wikipedia
 
 LICENSE=	GPLv2
 
-CONFLICTS=	mediawiki12[379]-[0-9]*
+CONFLICTS=	mediawiki12[379]-[0-9]* mediawiki130-[0-9]*
+
+DEPRECATED=	Upstream no longer maintained
+EXPIRATION_DATE=2018-03-13
 
 USES=		php:web shebangfix
 SHEBANG_FILES=	maintenance/dev/*.sh \

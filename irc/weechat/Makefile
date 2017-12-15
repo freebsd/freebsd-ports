@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	weechat
-PORTVERSION=	1.9.1
+PORTVERSION=	2.0
+PORTREVISION=	1
 CATEGORIES=	irc
 MASTER_SITES=	https://weechat.org/files/src/
 
@@ -16,7 +17,7 @@ LIB_DEPENDS+=	libcurl.so:ftp/curl \
 		libgcrypt.so:security/libgcrypt \
 		libgpg-error.so:security/libgpg-error
 
-USES=		cmake:outsource,noninja ncurses tar:xz
+USES=		cmake:outsource,noninja ncurses libtool tar:xz
 USE_LDCONFIG=	yes
 
 CMAKE_ARGS+=	-DENABLE_GUILE=no \
@@ -30,7 +31,7 @@ OPTIONS_SUB=		yes
 OPTIONS_EXCLUDE_powerpc64=	RUBY
 
 OPTIONS_GROUP=		PLUGINS
-OPTIONS_GROUP_PLUGINS=	ASPELL CHARSET JAVASCRIPT LUA PERL PYTHON RUBY TCL
+OPTIONS_GROUP_PLUGINS=	ASPELL CHARSET JAVASCRIPT LUA PERL PYTHON PHP RUBY TCL
 
 BACKTRACE_DESC=		Provide crash backtraces
 CA_BUNDLE_DESC=		Include CA bundle for certificate verification
@@ -42,50 +43,30 @@ JAVASCRIPT_DESC=	Javascript script support
 PYTHON_DESC=		Python script support
 RUBY_DESC=		Ruby script support
 
-ASPELL_CMAKE_BOOLL=	ENABLE_ASPELL
+.for _opt in ASPELL CHARSET ICONV JAVASCRIPT GNUTLS LUA NLS PERL PHP PYTHON RUBY TCL
+${_opt}_CMAKE_BOOL=	ENABLE_${_opt}
+.endfor
+
 ASPELL_LIB_DEPENDS=	libaspell.so:textproc/aspell
-
 BACKTRACE_CMAKE_BOOL=	ENABLE_BACKTRACE
-
 CA_BUNDLE_CMAKE_ON=	-DCA_FILE=${LOCALBASE}/share/certs/ca-root-nss.crt
 CA_BUNDLE_RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
-
-CHARSET_CMAKE_BOOL=	ENABLE_CHARSET
 CHARSET_IMPLIES=	ICONV
-
 DOCS_CMAKE_BOOL=	ENABLE_DOC
 DOCS_BUILD_DEPENDS=	${LOCALBASE}/bin/asciidoctor:textproc/rubygem-asciidoctor
-
-ICONV_CMAKE_BOOL=	ENABLE_ICONV
 ICONV_USES=		iconv
-
-JAVASCRIPT_CMAKE_BOOL=	ENABLE_JAVASCRIPT
 JAVASCRIPT_LIB_DEPENDS=	libv8.so:lang/v8
-
-GNUTLS_CMAKE_BOOL=	ENABLE_GNUTLS
 GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls
 GNUTLS_USES=		pkgconfig
-
-LUA_CMAKE_BOOL=		ENABLE_LUA
 LUA_USES=		lua pkgconfig
-
 MANPAGES_CMAKE_BOOL=	ENABLE_MAN
 MANPAGES_CMAKE_ON=	-DMANDIR=${MANPREFIX}/man
 MANPAGES_BUILD_DEPENDS=	${LOCALBASE}/bin/asciidoctor:textproc/rubygem-asciidoctor
-
-NLS_CMAKE_BOOL=		ENABLE_NLS
 NLS_USES=		gettext
-
-PERL_CMAKE_BOOL=	ENABLE_PERL
 PERL_USES=		perl5
-
-PYTHON_CMAKE_BOOL=	ENABLE_PYTHON
+PHP_USES=		php:embed
 PYTHON_USES=		python
-
-RUBY_CMAKE_BOOL=	ENABLE_RUBY
 RUBY_USE=		ruby=yes
-
-TCL_CMAKE_BOOL=		ENABLE_TCL
 TCL_USES=		tcl:85+
 
 .include <bsd.port.pre.mk>

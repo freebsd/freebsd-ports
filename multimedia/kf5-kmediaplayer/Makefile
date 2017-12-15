@@ -1,8 +1,7 @@
-# Created by: tcberner
 # $FreeBSD$
 
 PORTNAME=	kmediaplayer
-PORTVERSION=	${KDE_FRAMEWORKS_VERSION}
+DISTVERSION=	${KDE_FRAMEWORKS_VERSION}
 CATEGORIES=	multimedia kde kde-frameworks
 
 MAINTAINER=	kde@FreeBSD.org

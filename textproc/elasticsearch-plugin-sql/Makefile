@@ -14,7 +14,7 @@ LICENSE=	APACHE20
 
 RUN_DEPENDS=	elasticsearch>=1.7.0:textproc/elasticsearch
 
-CONFLICTS=      elasticsearch2-plugin-sql-2.*
+CONFLICTS=	elasticsearch2-plugin-sql-2.*
 
 USES=		zip
 NO_BUILD=	yes

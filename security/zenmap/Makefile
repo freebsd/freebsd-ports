@@ -7,7 +7,7 @@ MAINTAINER=	woodsb02@FreeBSD.org
 COMMENT=	GUI frontend for the Nmap scanning utility
 
 RUN_DEPENDS=	nmap:security/nmap \
-		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3
+		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${FLAVOR}
 
 MASTERDIR=	${.CURDIR}/../nmap
 PATCHDIR=	${.CURDIR}/files
@@ -16,7 +16,7 @@ DATADIR=	${PREFIX}/share/${PKGNAMEPREFIX}${PORTNAME}
 PKGDIR=		${.CURDIR}
 WRKSRC_SUBDIR=	${PKGNAMEPREFIX}${PORTNAME}
 
-USES=		dos2unix python tar:bzip2
+USES=		dos2unix python:2.7 tar:bzip2
 DOS2UNIX_GLOB=	*.xml
 USE_GNOME=	pygtk2
 USE_PYTHON=	autoplist distutils

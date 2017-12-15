@@ -11,7 +11,7 @@ COMMENT=	Use an IMAP server (like gmail) as normal storage
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}fusefs>=0.2:devel/py-fusefs
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}fusefs>=0.2:devel/py-fusefs@${FLAVOR}
 
 USES=		fuse python:2.7
 USE_PYTHON=	autoplist distutils

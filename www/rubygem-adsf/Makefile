@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	adsf
-PORTVERSION=	1.2.1
+PORTVERSION=	1.3.0
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -15,8 +15,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	rubygem-rack16>=1.0.0:www/rubygem-rack16
 
 NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
+USE_RUBY=	yes
 
 PLIST_FILES=	bin/adsf
 

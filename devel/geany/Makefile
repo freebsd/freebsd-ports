@@ -2,14 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	geany
-PORTVERSION=	1.31
+PORTVERSION=	1.32
 CATEGORIES=	devel editors
 MASTER_SITES=	http://download.geany.org/ SF
 
 MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	Fast and lightweight GTK+ IDE
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2

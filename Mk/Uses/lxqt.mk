@@ -23,17 +23,17 @@ _INCLUDE_USES_LXQT_MK=	yes
 IGNORE=	Incorrect 'USES+=lxqt:${lxqt_ARGS} takes no arguments
 .endif
 
+_LXQT_PROJECT=	${DISTNAME:S/-${DISTVERSION}//:tl}
+
 MASTER_SITE_LXQT+= \
 	https://github.com/lxde/%SUBDIR%/releases/download/${PORTVERSION}/ \
-	http://downloads.lxqt.org/%SUBDIR%/${PORTVERSION}/
-MASTER_SITE_LXQT_SUBDIR=	lxqt
+	https://downloads.lxqt.org/downloads/%SUBDIR%/${PORTVERSION}/
+MASTER_SITE_LXQT_SUBDIR=	${_LXQT_PROJECT}
 
-.if !defined(USE_GITHUB)
 MASTER_SITES?=	${MASTER_SITE_LXQT}
 MASTER_SITE_SUBDIR?=	${MASTER_SITE_LXQT_SUBDIR}
 
 DIST_SUBDIR=	lxqt
-.endif
 
 PLIST_SUB+=	LXQT_INCLUDEDIR="include/lxqt" \
 	LXQT_SHAREDIR="share/lxqt" \

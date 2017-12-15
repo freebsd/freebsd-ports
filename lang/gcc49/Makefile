@@ -14,7 +14,7 @@ COMMENT=	GNU Compiler Collection 4.9
 LICENSE=	GPLv3 GPLv3RLE
 LICENSE_COMB=	multi
 
-DEPRECATED=	Unsupported by upstream. Use GCC 5 or newer instead.
+DEPRECATED=	Unsupported by upstream. Use GCC 6 or newer instead.
 ONLY_FOR_ARCHS=	amd64 armv6 i386 powerpc powerpc64 sparc64
 
 LIB_DEPENDS=	libgmp.so:math/gmp \
@@ -81,6 +81,10 @@ CONFIGURE_ARGS+=--disable-bootstrap
 .else
 CONFIGURE_ARGS+=--with-build-config=bootstrap-debug
 ALL_TARGET=	bootstrap-lean
+.endif
+INSTALL_TARGET=	install-strip
+.if ${UID} != 0
+BINMODE=	755
 .endif
 CONFIGURE_ARGS+=--disable-nls \
 		--enable-gnu-indirect-function \

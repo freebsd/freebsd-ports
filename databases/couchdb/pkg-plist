@@ -2,9 +2,13 @@ bin/couch-config
 bin/couchdb
 bin/couchjs
 %%ETCDIR%%/default.ini
+@dir(couchdb,couchdb,0750) %%ETCDIR%%/default.d
+@dir(couchdb,couchdb,0750) %%ETCDIR%%/local.d
+@dir(couchdb,couchdb,0750) /var/db/couchdb
+@dir(couchdb,couchdb,0750) /var/log/couchdb
+@dir(couchdb,couchdb,0750) /var/run/couchdb
 @sample(couchdb,couchdb,600) %%ETCDIR%%/local.ini.sample
 etc/logrotate.d/couchdb
-lib/couchdb/bin/couchjs
 lib/couchdb/erlang/lib/couch-%%VERSION%%/ebin/couch.app
 lib/couchdb/erlang/lib/couch-%%VERSION%%/ebin/couch.beam
 lib/couchdb/erlang/lib/couch-%%VERSION%%/ebin/couch_app.beam
@@ -45,6 +49,7 @@ lib/couchdb/erlang/lib/couch-%%VERSION%%/ebin/couch_os_process.beam
 lib/couchdb/erlang/lib/couch-%%VERSION%%/ebin/couch_passwords.beam
 lib/couchdb/erlang/lib/couch-%%VERSION%%/ebin/couch_primary_sup.beam
 lib/couchdb/erlang/lib/couch-%%VERSION%%/ebin/couch_query_servers.beam
+lib/couchdb/erlang/lib/couch-%%VERSION%%/ebin/couch_rand.beam
 lib/couchdb/erlang/lib/couch-%%VERSION%%/ebin/couch_ref_counter.beam
 lib/couchdb/erlang/lib/couch-%%VERSION%%/ebin/couch_secondary_sup.beam
 lib/couchdb/erlang/lib/couch-%%VERSION%%/ebin/couch_server.beam
@@ -106,7 +111,6 @@ lib/couchdb/erlang/lib/ejson-0.1.0/ebin/mochinum.beam
 lib/couchdb/erlang/lib/ejson-0.1.0/priv/ejson.so
 lib/couchdb/erlang/lib/erlang-oauth/ebin/oauth.app
 lib/couchdb/erlang/lib/erlang-oauth/ebin/oauth.beam
-lib/couchdb/erlang/lib/etap/ebin/etap.beam
 lib/couchdb/erlang/lib/ibrowse-2.2.0/ebin/ibrowse.app
 lib/couchdb/erlang/lib/ibrowse-2.2.0/ebin/ibrowse.beam
 lib/couchdb/erlang/lib/ibrowse-2.2.0/ebin/ibrowse_app.beam
@@ -165,6 +169,7 @@ man/man1/couchjs.1.gz
 %%DATADIR%%/www/dialog/_admin_party.html
 %%DATADIR%%/www/dialog/_change_password.html
 %%DATADIR%%/www/dialog/_compact_cleanup.html
+%%DATADIR%%/www/dialog/_copy_document.html
 %%DATADIR%%/www/dialog/_create_admin.html
 %%DATADIR%%/www/dialog/_create_config.html
 %%DATADIR%%/www/dialog/_create_database.html
@@ -189,7 +194,6 @@ man/man1/couchjs.1.gz
 %%DATADIR%%/www/docs/_images/intro-consistency-06.png
 %%DATADIR%%/www/docs/_images/intro-consistency-07.png
 %%DATADIR%%/www/docs/_images/intro-tour-01.png
-%%DATADIR%%/www/docs/_images/intro-tour-02.png
 %%DATADIR%%/www/docs/_images/intro-tour-03.png
 %%DATADIR%%/www/docs/_images/intro-tour-04.png
 %%DATADIR%%/www/docs/_images/intro-tour-05.png
@@ -262,9 +266,6 @@ man/man1/couchjs.1.gz
 %%DATADIR%%/www/docs/_sources/cve/index.txt
 %%DATADIR%%/www/docs/_sources/experimental.txt
 %%DATADIR%%/www/docs/_sources/externals.txt
-%%DATADIR%%/www/docs/_sources/fauxton/addons.txt
-%%DATADIR%%/www/docs/_sources/fauxton/index.txt
-%%DATADIR%%/www/docs/_sources/fauxton/install.txt
 %%DATADIR%%/www/docs/_sources/install/freebsd.txt
 %%DATADIR%%/www/docs/_sources/install/index.txt
 %%DATADIR%%/www/docs/_sources/install/mac.txt
@@ -303,6 +304,7 @@ man/man1/couchjs.1.gz
 %%DATADIR%%/www/docs/_sources/whatsnew/1.4.txt
 %%DATADIR%%/www/docs/_sources/whatsnew/1.5.txt
 %%DATADIR%%/www/docs/_sources/whatsnew/1.6.txt
+%%DATADIR%%/www/docs/_sources/whatsnew/1.7.txt
 %%DATADIR%%/www/docs/_sources/whatsnew/index.txt
 %%DATADIR%%/www/docs/_static/ajax-loader.gif
 %%DATADIR%%/www/docs/_static/basic.css
@@ -386,9 +388,6 @@ man/man1/couchjs.1.gz
 %%DATADIR%%/www/docs/download.html
 %%DATADIR%%/www/docs/experimental.html
 %%DATADIR%%/www/docs/externals.html
-%%DATADIR%%/www/docs/fauxton/addons.html
-%%DATADIR%%/www/docs/fauxton/index.html
-%%DATADIR%%/www/docs/fauxton/install.html
 %%DATADIR%%/www/docs/http-api.html
 %%DATADIR%%/www/docs/index.html
 %%DATADIR%%/www/docs/install/freebsd.html
@@ -432,38 +431,16 @@ man/man1/couchjs.1.gz
 %%DATADIR%%/www/docs/whatsnew/1.4.html
 %%DATADIR%%/www/docs/whatsnew/1.5.html
 %%DATADIR%%/www/docs/whatsnew/1.6.html
+%%DATADIR%%/www/docs/whatsnew/1.7.html
 %%DATADIR%%/www/docs/whatsnew/index.html
 %%DATADIR%%/www/document.html
-%%DATADIR%%/www/fauxton/css/index.css
-%%DATADIR%%/www/fauxton/img/FontAwesome.otf
-%%DATADIR%%/www/fauxton/img/couchdb-site.png
-%%DATADIR%%/www/fauxton/img/couchdblogo.png
-%%DATADIR%%/www/fauxton/img/fontawesome-webfont.eot
-%%DATADIR%%/www/fauxton/img/fontawesome-webfont.svg
-%%DATADIR%%/www/fauxton/img/fontawesome-webfont.ttf
-%%DATADIR%%/www/fauxton/img/fontawesome-webfont.woff
-%%DATADIR%%/www/fauxton/img/fontcustom_fauxton.eot
-%%DATADIR%%/www/fauxton/img/fontcustom_fauxton.svg
-%%DATADIR%%/www/fauxton/img/fontcustom_fauxton.ttf
-%%DATADIR%%/www/fauxton/img/fontcustom_fauxton.woff
-%%DATADIR%%/www/fauxton/img/glyphicons-halflings-white.png
-%%DATADIR%%/www/fauxton/img/glyphicons-halflings.png
-%%DATADIR%%/www/fauxton/img/linen.png
-%%DATADIR%%/www/fauxton/img/loader.gif
-%%DATADIR%%/www/fauxton/img/minilogo.png
-%%DATADIR%%/www/fauxton/index.html
-%%DATADIR%%/www/fauxton/js/ace/mode-javascript.js
-%%DATADIR%%/www/fauxton/js/ace/mode-json.js
-%%DATADIR%%/www/fauxton/js/ace/theme-crimson_editor.js
-%%DATADIR%%/www/fauxton/js/ace/worker-javascript.js
-%%DATADIR%%/www/fauxton/js/ace/worker-json.js
-%%DATADIR%%/www/fauxton/js/require.js
 %%DATADIR%%/www/favicon.ico
 %%DATADIR%%/www/image/add.png
 %%DATADIR%%/www/image/apply.gif
 %%DATADIR%%/www/image/bg.png
 %%DATADIR%%/www/image/cancel.gif
 %%DATADIR%%/www/image/compact.png
+%%DATADIR%%/www/image/copy.png
 %%DATADIR%%/www/image/delete-mini.png
 %%DATADIR%%/www/image/delete.png
 %%DATADIR%%/www/image/grippie.gif
@@ -501,7 +478,7 @@ man/man1/couchjs.1.gz
 %%DATADIR%%/www/script/futon.browse.js
 %%DATADIR%%/www/script/futon.format.js
 %%DATADIR%%/www/script/futon.js
-%%DATADIR%%/www/script/jquery-ui-1.8.11.custom.min.js
+%%DATADIR%%/www/script/jquery-ui-1.10.4.custom.min.js
 %%DATADIR%%/www/script/jquery.couch.js
 %%DATADIR%%/www/script/jquery.dialog.js
 %%DATADIR%%/www/script/jquery.editinline.js
@@ -632,8 +609,3 @@ man/man1/couchjs.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/NOTICE.gz
 %%PORTDOCS%%%%DOCSDIR%%/README.gz
 %%PORTDOCS%%%%DOCSDIR%%/THANKS.gz
-@dir(couchdb,couchdb,750) %%ETCDIR%%/default.d
-@dir(couchdb,couchdb,750) %%ETCDIR%%/local.d
-@dir(couchdb,couchdb,750) /var/db/couchdb
-@dir(couchdb,couchdb,750) /var/log/couchdb
-@dir(couchdb,couchdb,750) /var/run/couchdb

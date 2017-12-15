@@ -1,4 +1,4 @@
---- manpages/CMakeLists.txt.orig	2017-01-05 15:57:47 UTC
+--- manpages/CMakeLists.txt.orig	2017-10-19 22:13:51 UTC
 +++ manpages/CMakeLists.txt
 @@ -2,8 +2,6 @@ set (ASCIIDOC_MANS
    man1/wsjtx.1.txt

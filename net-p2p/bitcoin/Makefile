@@ -2,8 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	bitcoin
-PORTVERSION=	0.15.0.1
+PORTVERSION=	0.15.1
 DISTVERSIONPREFIX=	v
+PORTREVISION?=	2
 CATEGORIES=	net-p2p finance
 
 MAINTAINER=	robbak@robbak.com

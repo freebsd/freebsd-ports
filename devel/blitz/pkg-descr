@@ -1,0 +1,4 @@
+Blitz++ is a C++ template class library that provides array objects for
+scientific computing. It is not a linear algebra or fft library.
+
+WWW: https://github.com/blitzpp/blitz

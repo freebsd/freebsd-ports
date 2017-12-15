@@ -1,7 +1,7 @@
-MySQLDumper is a PHP and Perl based tool for backing up MySQL databases.
-You can easily dump your data into a backup file and, if needed, restore it.
-It is especially suited for shared hosting webspaces, where you don't have
-shell access.  MySQLDumper is an open source project and released under the
-GPLv2 license.
+MySQLDumper is a PHP and Perl based tool for backing up MySQL databases. You can
+easily dump your data into a backup file and, if needed, restore it. It is
+especially suited for shared hosting webspaces, where you don't have shell
+access. MySQLDumper is an open source project and released under the GPLv2
+license.
 
-WWW: http://www.mysqldumper.net/
+WWW: https://sourceforge.net/projects/mysqldumper/

@@ -9,7 +9,7 @@ MASTER_SITES=	ISC/kea/${PORTVERSION}
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Alternative DHCP implementation by ISC
 
-LICENSE=	MPL
+LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	liblog4cplus.so:devel/log4cplus \

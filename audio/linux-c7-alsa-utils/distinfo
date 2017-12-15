@@ -1,7 +1,7 @@
-TIMESTAMP = 1485883566
-SHA256 (centos/alsa-utils-1.1.1-1.el7.i686.rpm) = 7fd9b45f6433e8e5bea2d545e2c78f42f53a3b2718bc224d9353803d404047bf
-SIZE (centos/alsa-utils-1.1.1-1.el7.i686.rpm) = 1078420
-SHA256 (centos/alsa-utils-1.1.1-1.el7.x86_64.rpm) = 0bf0c29a81d87cacafcc75a45cedb142d19380986d7f237d7700eb62f626b8dd
-SIZE (centos/alsa-utils-1.1.1-1.el7.x86_64.rpm) = 1085140
-SHA256 (centos/alsa-utils-1.1.1-1.el7.src.rpm) = 863821010341c00606fdc5141b3367b805c320ccf058496a8c2bf93353c4c81b
-SIZE (centos/alsa-utils-1.1.1-1.el7.src.rpm) = 1222992
+TIMESTAMP = 1507908855
+SHA256 (centos/alsa-utils-1.1.3-2.el7.i686.rpm) = b9ac7c02974977ea1fdad436ebf470bbe06cf15acf3fd6790ea62caec579c76b
+SIZE (centos/alsa-utils-1.1.3-2.el7.i686.rpm) = 1085192
+SHA256 (centos/alsa-utils-1.1.3-2.el7.x86_64.rpm) = ea6576894e9c3305318a6fc222b501f6f3de172d7ec8f949134e13c361025e8e
+SIZE (centos/alsa-utils-1.1.3-2.el7.x86_64.rpm) = 1092196
+SHA256 (centos/alsa-utils-1.1.3-2.el7.src.rpm) = 02110b9dfa1bb630ff7b30a6359083403aa3798e73eb3163666d88920b9b4265
+SIZE (centos/alsa-utils-1.1.3-2.el7.src.rpm) = 1238572

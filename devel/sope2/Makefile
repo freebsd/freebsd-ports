@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=		sope2
-PORTVERSION=		2.3.22
+PORTVERSION=		2.3.23
 PORTREVISION=	1
 CATEGORIES=		devel gnustep
 MASTER_SITES=		http://www.sogo.nu/files/downloads/SOGo/Sources/

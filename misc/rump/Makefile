@@ -11,7 +11,7 @@ COMMENT=	Virtualized NetBSD kernel components in userspace
 
 LICENSE=	BSD2CLAUSE
 
-NOT_FOR_ARCHS=	armv6 mips mips64 powerpc powerpc64 sparc64
+NOT_FOR_ARCHS=		armv6 armv7 mips mips64 powerpc powerpc64 sparc64
 NOT_FOR_ARCHS_REASON=	not yet ported to FreeBSD on this architecture
 
 USE_GITHUB=	yes
@@ -23,7 +23,7 @@ USE_LDCONFIG=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "i386" || ${ARCH} == "amd64"
+.if ${ARCH} == amd64 || ${ARCH} == i386
 PLIST_SUB+=	X8664=""
 .else
 PLIST_SUB+=	X8664="@comment "

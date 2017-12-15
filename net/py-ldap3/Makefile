@@ -12,7 +12,7 @@ COMMENT=	Strictly RFC 4511 conforming LDAP V3 pure Python client
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING.txt
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyasn1>0:devel/py-pyasn1
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyasn1>0:devel/py-pyasn1@${FLAVOR}
 
 NO_ARCH=	yes
 USES=		python:2.7+

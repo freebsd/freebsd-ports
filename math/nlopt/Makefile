@@ -17,8 +17,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libgmp.so:math/gmp \
 		libguile-2.0.so:lang/guile2
 BUILD_DEPENDS=	swig3.0:devel/swig30 \
-		${PYTHON_PKGNAMEPREFIX}numpy>=1.9.1,1:math/py-numpy
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.9.1,1:math/py-numpy
+		${PYTHON_PKGNAMEPREFIX}numpy>=1.9.1,1:math/py-numpy@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.9.1,1:math/py-numpy@${PY_FLAVOR}
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared

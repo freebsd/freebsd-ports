@@ -14,13 +14,12 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN=		fails to configure
 
-BUILD_DEPENDS=	cython:lang/cython \
-		${PYNUMPY}
+BUILD_DEPENDS=	${PYNUMPY}
 LIB_DEPENDS=	libembree.so:graphics/embree
 RUN_DEPENDS=	${PYNUMPY}
 
 USES=		localbase python:2
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	autoplist distutils cython
 USE_GITHUB=	yes
 GH_ACCOUNT=	scopatz
 

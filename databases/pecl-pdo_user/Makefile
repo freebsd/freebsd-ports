@@ -14,6 +14,6 @@ WRKSRC=		${WRKDIR}/PDO_USER-${PORTVERSION}
 
 USES=		php:pecl
 USE_PHP=	pdo:build
-IGNORE_WITH_PHP=	70 71
+IGNORE_WITH_PHP=	70 71 72
 
 .include <bsd.port.mk>

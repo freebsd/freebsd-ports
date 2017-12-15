@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	REminiscence
-PORTVERSION=	0.3.3
+PORTVERSION=	0.3.5
 CATEGORIES=	games
 MASTER_SITES=	http://cyxdown.free.fr/reminiscence/ \
-		http://mirror.amdmi3.ru/distfiles/
+		https://mirror.amdmi3.ru/distfiles/
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Rewritten engine for Flashback

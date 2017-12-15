@@ -17,7 +17,7 @@ RUN_DEPENDS=	trytond28_company_work_time>=2.8.0:finance/trytond28_company_work_t
 
 CONFLICTS=	trytond_timesheet-2.[46].*
 
-USES=		python
+USES=		python:2.7
 USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

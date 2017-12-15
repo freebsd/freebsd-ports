@@ -16,9 +16,9 @@ BUILD_DEPENDS=	pyside-rcc:devel/pyside-tools \
 LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libfreetype.so:print/freetype2 \
 		libboost_python.so:devel/boost-python-libs \
-		libpyside-python2.7.so:devel/pyside \
+		libpyside-python2.7.so:devel/pyside@${PY_FLAVOR} \
 		libCoin.so:graphics/Coin \
-		libpng16.so:graphics/png \
+		libpng.so:graphics/png \
 		libtiff.so:graphics/tiff \
 		libvtkFiltersTexture-6.2.so:math/vtk6 \
 		libTKernel.so:cad/opencascade \
@@ -29,10 +29,10 @@ LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libmed.so:french/med \
 		libshiboken-${PYTHON_VERSION}.so:devel/shiboken \
 		libhdf5.so:science/hdf5
-RUN_DEPENDS=	pivy>0:graphics/py-pivy
+RUN_DEPENDS=	pivy>0:graphics/py-pivy@${PY_FLAVOR}
 
 USES=		dos2unix compiler:c++11-lib cmake:outsource fortran jpeg \
-		python localbase
+		python:2.7 localbase
 USE_XORG=	ice sm x11 xext xt
 USE_GL=		gl glu
 USE_QT4=	qmake_build corelib gui moc_build network opengl rcc_build \
@@ -58,7 +58,7 @@ GH_TAGNAME=	f27617e
 OPTIONS_DEFINE=	COLLADA
 
 COLLADA_DESC=		Install pycollada for Collada files import
-COLLADA_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pycollada>0:graphics/py-pycollada
+COLLADA_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pycollada>0:graphics/py-pycollada@${PY_FLAVOR}
 
 DESKTOP_ENTRIES=${PORTNAME} "" "${PREFIX}/FreeCAD/data/freecad.svg" \
 		${PORTNAME} "Engineering;" false

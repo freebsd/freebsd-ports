@@ -10,7 +10,7 @@ MASTER_SITES=	ftp://ftp.frm2.tum.de/pub/jpulz/FreeBSD/distfiles/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	H323 Video Conferencing Program, compatible with NetMeeting
 
-LICENSE=	MPL
+LICENSE=	MPL10
 
 LIB_DEPENDS=	libh323_r.so:net/openh323
 

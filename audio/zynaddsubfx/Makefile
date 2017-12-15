@@ -2,11 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	zynaddsubfx
-PORTVERSION=	2.4.3
-PORTREVISION=	7
+PORTVERSION=	3.0.3
 CATEGORIES=	audio
 MASTER_SITES=	SF
-DISTNAME=	ZynAddSubFX-${PORTVERSION}
 
 MAINTAINER=	hselasky@FreeBSD.org
 COMMENT=	Realtime software synthesizer
@@ -14,19 +12,20 @@ COMMENT=	Realtime software synthesizer
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	libfftw3.so:math/fftw3 \
-		libmxml.so:textproc/mxml
+		libmxml.so:textproc/mxml \
+		liblo.so:audio/liblo
 
 USES=		tar:bzip2 cmake pkgconfig
+USE_LDCONFIG=	yes
 
-OPTIONS_DEFINE=		JACK GUI PORTAUDIO LASH LO DOCS EXAMPLES
-OPTIONS_DEFAULT=	JACK GUI PORTAUDIO
+OPTIONS_DEFINE=		OSS JACK GUI PORTAUDIO LASH DOCS EXAMPLES
+OPTIONS_DEFAULT=	OSS JACK GUI PORTAUDIO
 OPTIONS_RADIO=		AUDIO
 OPTIONS_RADIO_AUDIO=	ALSAMIDI DSSI
 OPTIONS_SUB=		yes
 
 ALSAMIDI_DESC=	MIDI input through ALSA
 DSSI_DESC=	DSSI Plugin
-LO_DESC=	Open Sound Control support via LibLO
 
 ALSAMIDI_LIB_DEPENDS=		libasound.so:audio/alsa-lib
 ALSAMIDI_CMAKE_OFF=		-DAlsaEnable:BOOL=OFF
@@ -37,27 +36,32 @@ DSSI_RUN_DEPENDS=		dssi>0:audio/dssi
 DSSI_CFLAGS=			-I${LOCALBASE}/include/dssi
 DSSI_CMAKE_OFF=			-DDssiEnable:BOOL=OFF
 
-GUI_LIB_DEPENDS=		libfltk.so:x11-toolkits/fltk
+GUI_LIB_DEPENDS=		libfltk.so:x11-toolkits/fltk \
+				libpng16.so:graphics/png \
+				libfontconfig.so:x11-fonts/fontconfig
 GUI_ON=				-DGuiModule:STRING=fltk
 GUI_CMAKE_OFF=			-DGuiModule:STRING=OFF
+GUI_USE+=			XORG=x11,xext,xfixes,xcursor,xrender,ice,sm,xpm,xinerama,xft
+GUI_USE+=			GL=gl,glu
+GUI_USES=			jpeg
 
-LO_LIB_DEPENDS=			liblo.so:audio/liblo
-LO_CMAKE_OFF=			-DLibloEnable:BOOL=OFF
+OSS_CMAKE_ON=			-DOssEnable:BOOL=ON
+OSS_CMAKE_OFF=			-DOssEnable:BOOL=OFF
 
 LASH_LIB_DEPENDS=		liblash.so:audio/lash
-LASH_CMAKE_OFF=			-DLashEnabe:BOOL=OFF
+LASH_CMAKE_OFF=			-DLashEnable:BOOL=OFF
 
 JACK_LIB_DEPENDS=		libjack.so:audio/jack
 JACK_CMAKE_OFF=			-DJackEnable:BOOL=OFF
 
 PORTAUDIO_LIB_DEPENDS=		libportaudio.so:audio/portaudio
-PORTAUDIO_CMAKE_OFF=		-DPaEnabe:BOOL=OFF
-PORTAUDIO_LDFLAGS=		-lportaudio
+PORTAUDIO_CMAKE_OFF=		-DPaEnable:BOOL=OFF
+PORTAUDIO_LDFLAGS=		-L${LOCALBASE}/lib -lportaudio
 
 PORTDOCS=	*
 
 DOCSRCDIR1=	${WRKSRC}
-DOC_FILES1=	AUTHORS.txt ChangeLog FAQ.txt HISTORY.txt README.txt
+DOC_FILES1=	AUTHORS.txt ChangeLog HISTORY.txt
 
 DOCSRCDIR2=	${WRKSRC}/doc
 DOCSDIR2=	${DOCSDIR}/doc
@@ -70,6 +74,16 @@ DOC_FILES3=	*.png *.jpg
 
 PORTEXAMPLES=	*
 
+CMAKE_ARGS+=	-DZYN_DATADIR:STRING=${DATADIR}
+CMAKE_ARGS+=	-DZYN_EXAMPLESDIR:STRING=${EXAMPLESDIR}
+
+.include <bsd.port.options.mk>
+
+# Build fix for ZynAddSubFx
+BUILD_DEPENDS+=	clang40:devel/llvm40
+CC=		clang40
+CXX=		clang++40
+
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "i386" || ${ARCH} == "amd64"
@@ -78,16 +92,13 @@ CFLAGS+=	-DASM_F2I_YES
 
 post-patch:
 	@${REINPLACE_CMD} -e \
-		'/FILES/s|^|#| ; \
-		 /DESTINATION/s|^|#| ; \
-		 /[[:blank:]])/s|^|#|' ${WRKSRC}/CMakeLists.txt
-	@${REINPLACE_CMD} -e \
 		's|-O3 .* -fomit-frame-pointer|| ; \
 		 /-DASM_F2I_YES/d ; \
-		 /-g #/d ; \
-		 /pthread/d ; \
-		 s|lib64|lib|' ${WRKSRC}/src/CMakeLists.txt
-	@${REINPLACE_CMD} -e 's|%%DATADIR%%|${DATADIR}|' ${WRKSRC}/src/Misc/Config.cpp
+		 /-g #/d' ${WRKSRC}/src/CMakeLists.txt
+
+post-configure-GUI-off:
+# kill a stray -lX11, fixed upstream
+	@${REINPLACE_CMD} -e 's| -lX11||' ${WRKSRC}/build.ninja
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}/banks \
@@ -101,7 +112,5 @@ post-install:
 	${INSTALL_DATA} ${DOC_FILES1:S|^|${DOCSRCDIR1}/|} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${DOC_FILES2:S|^|${DOCSRCDIR2}/|} ${STAGEDIR}${DOCSDIR2}
 	${INSTALL_DATA} ${DOC_FILES3:S|^|${DOCSRCDIR3}/|} ${STAGEDIR}${DOCSDIR3}
-	(cd ${WRKSRC}/instruments/examples && \
-		${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR})
 
 .include <bsd.port.post.mk>

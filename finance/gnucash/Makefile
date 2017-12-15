@@ -53,7 +53,7 @@ DATABASE_RUN_DEPENDS=	libdbi-drivers>=0:databases/libdbi-drivers
 DATABASE_CONFIGURE_ON=	--with-dbi-dbd-dir=${LOCALBASE}/lib/dbd
 LOCALE_TAX_CONFIGURE_ON=--enable-locale-specific-tax
 PYTHON_CONFIGURE_ON=	--enable-python
-PYTHON_USES=		python
+PYTHON_USES=		python:2.7
 GTKMM_USE=		GNOME=gtkmm24
 GTKMM_CONFIGURE_ON=	--enable-gtkmm
 GTKMM_CONFIGURE_OFF=	--disable-gtkmm

@@ -1,6 +1,7 @@
 bin/xfburn
 man/man1/xfburn.1.gz
 share/Thunar/sendto/thunar-sendto-xfburn.desktop
+share/appdata/xfburn.appdata.xml
 share/applications/xfburn.desktop
 share/icons/hicolor/16x16/stock/media/stock_xfburn-audio-cd.png
 share/icons/hicolor/16x16/stock/media/stock_xfburn-blank-cdrw.png

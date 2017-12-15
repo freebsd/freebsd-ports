@@ -2,12 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	inspircd
-PORTVERSION=	2.0.23
+PORTVERSION=	2.0.25
 DISTVERSIONPREFIX=	v
-PORTREVISION=	0
 CATEGORIES=	irc
 
-MAINTAINER=	feld@FreeBSD.org
+MAINTAINER=	dg@syrec.org
 COMMENT=	Modular C++ IRC daemon
 
 LICENSE=	GPLv2
@@ -48,7 +47,7 @@ CONFIGURE_ARGS=	--with-cc=${CXX} --config-dir=${ETCDIR} \
 		--enable-kqueue --disable-interactive \
 		--uid=${INSPIRCD_UID}
 
-OPTIONS_DEFINE=	MYSQL PGSQL SQLITE LDAPAUTH LDAPOPER GNUTLS OPENSSL PCRE POSIX
+OPTIONS_DEFINE=	MYSQL PGSQL SQLITE LDAPAUTH LDAPOPER GNUTLS OPENSSL PCRE POSIX GEOIP
 OPTIONS_DEFAULT=	OPENSSL POSIX
 
 GNUTLS_DESC=	Build m_ssl_gnutls module
@@ -60,6 +59,7 @@ PGSQL_DESC=	Build m_pgsql module
 SQLITE_DESC=	Build m_sqlite3 module
 PCRE_DESC=	Build m_regex_pcre module
 POSIX_DESC=	Build m_regex_posix module
+GEOIP_DESC=	Build m_geoip module
 
 .include <bsd.port.options.mk>
 
@@ -135,6 +135,14 @@ EXTRAS:=${EXTRAS},m_regex_posix.cpp
 PLIST_SUB+=	POSIX=""
 .else
 PLIST_SUB+=	POSIX="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MGEOIP}
+LIB_DEPENDS+=	libGeoIP.so:net/GeoIP
+EXTRAS:=${EXTRAS},m_geoip.cpp
+PLIST_SUB+=	GEOIP=""
+.else
+PLIST_SUB+=	GEOIP="@comment "
 .endif
 
 pre-configure:

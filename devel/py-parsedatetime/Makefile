@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	parsedatetime
-PORTVERSION=	2.1
+PORTVERSION=	2.4
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,7 +13,10 @@ COMMENT=	Python module for parsing 'human readable' date/time expressions
 
 LICENSE=	APACHE20
 
-USES=	python
+USES=		python
 USE_PYTHON=	distutils autoplist
+
+post-patch:
+	${REINPLACE_CMD} "/install_requires=\['future'\],/d" ${WRKSRC}/setup.py
 
 .include <bsd.port.mk>

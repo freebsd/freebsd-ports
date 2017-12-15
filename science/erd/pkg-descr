@@ -1,0 +1,8 @@
+Efficient electronic integrals in quantum chemistry, and their generalized
+derivatives for object oriented implementations of electronic structure
+calculations.
+
+Based on the paper:
+* http://onlinelibrary.wiley.com/doi/10.1002/jcc.21018/abstract
+
+WWW: https://github.com/psi4/erd

@@ -69,6 +69,7 @@ include/Alembic/AbcCoreFactory/All.h
 include/Alembic/AbcCoreFactory/IFactory.h
 %%HDF5%%include/Alembic/AbcCoreHDF5/All.h
 %%HDF5%%include/Alembic/AbcCoreHDF5/ReadWrite.h
+include/Alembic/AbcCoreLayer/Foundation.h
 include/Alembic/AbcCoreLayer/Read.h
 include/Alembic/AbcCoreLayer/Util.h
 include/Alembic/AbcCoreOgawa/All.h

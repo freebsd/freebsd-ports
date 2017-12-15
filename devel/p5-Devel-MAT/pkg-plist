@@ -26,6 +26,7 @@ bin/pmat-list-orphans
 %%SITE_ARCH%%/Devel/MAT/Tool/Symbols.pm
 %%SITE_ARCH%%/Devel/MAT/UI.pod
 %%SITE_ARCH%%/Devel/MAT/UserGuide.pod
+%%SITE_ARCH%%/Devel/MAT/UserGuide/IdentifyingAnSV.pod
 %%SITE_ARCH%%/auto/Devel/MAT/Dumper/Dumper.so
 %%SITE_ARCH%%/auto/Devel/MAT/MAT.so
 %%SITE_ARCH%%/auto/share/module/Devel-MAT-UI/icons/reachable-internal.svg
@@ -82,3 +83,4 @@ bin/pmat-list-orphans
 %%PERL5_MAN3%%/Devel::MAT::Tool::Symbols.3.gz
 %%PERL5_MAN3%%/Devel::MAT::UI.3.gz
 %%PERL5_MAN3%%/Devel::MAT::UserGuide.3.gz
+%%PERL5_MAN3%%/Devel::MAT::UserGuide::IdentifyingAnSV.3.gz

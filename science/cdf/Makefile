@@ -20,6 +20,7 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 BROKEN_aarch64=		fails to compile: error: use of undeclared identifier FP1ZEROsingle; did you mean FP1zeroSingle?
 BROKEN_armv6=		fails to compile: error: use of undeclared identifier FP1ZEROsingle; did you mean FP1zeroSingle?
+BROKEN_armv7=		fails to compile: error: use of undeclared identifier FP1ZEROsingle; did you mean FP1zeroSingle?
 
 USES=		fortran ncurses
 USE_LDCONFIG=	yes

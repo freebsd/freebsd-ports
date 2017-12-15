@@ -3,7 +3,7 @@
 
 PORTNAME=	mous
 PORTVERSION=	1.1a
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	audio
 MASTER_SITES=	GHC
 
@@ -12,6 +12,8 @@ COMMENT=	Simple yet powerful audio player
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
+
+BROKEN=		fails to build
 
 USES=		cmake
 USE_LDCONFIG=	yes

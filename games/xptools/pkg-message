@@ -1,0 +1,16 @@
+X-Plane itself does not need to be installed before using WED. However, WED will
+require that you choose the X-Plane folder before it will allow you to do
+anything. Create a working directory with the following structure before
+starting WED for the first time.
+
+working directory <-- Pick a name
+   |--Custom Scenery
+   |--Global Scenery
+   |--Resources
+         |--default scenery
+
+You can create it with the following commands:
+
+$ mkdir working_directory
+$ cd working_directory
+$ mkdir -p 'Custom Scenery' 'Global Scenery' 'Resources/default scenery'

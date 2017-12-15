@@ -15,7 +15,7 @@ LICENSE=	GPLv3
 
 BUILD_DEPENDS=	xmlada>=3.2:textproc/xmlada
 
-USES=		ada gmake python:build shebangfix
+USES=		ada gmake python:2.7,build shebangfix
 GNU_CONFIGURE=	yes
 NO_MTREE=	yes
 YEAR=		2014
@@ -42,7 +42,7 @@ CONFIGURE_ARGS=	--with-appli-perso="corba dsa moma" \
 # Polyorb 2014 = PCS version 6   GNAT GCC 4.9 = PCS version 6
 
 OPTIONS_DEFINE=	DOCS TESTSUITE
-OPTIONS_SUB=	TESTSUITE
+OPTIONS_SUB=	yes
 
 TESTSUITE_ALL_TARGET=	testsuite
 TESTSUITE_BUILD_DEPENDS=gnatpython>=20101207:devel/gnatpython

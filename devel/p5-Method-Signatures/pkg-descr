@@ -1,0 +1,18 @@
+Method::Signatures provides two new keywords, func and method, so that you can
+write subroutines with signatures instead of having to spell out my $self =
+shift; my($thing) = @_
+
+func is like sub but takes a signature where the prototype would normally go.
+This takes the place of my($foo, $bar) = @_ and does a whole lot more.
+
+method is like func but specifically for making methods. It will automatically
+provide the invocant as $self (by default). No more my $self = shift.
+
+It also allows signatures, very similar to Perl 6 signatures.
+
+It also does type checking, understanding all the types that Moose (or Mouse)
+would understand.
+
+And it does all this with no source filters.
+
+WWW: http://search.cpan.org/dist/Method-Signatures/

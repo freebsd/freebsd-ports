@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	gsed:textproc/gsed
 
-USES=		gettext gmake perl5 pkgconfig python tar:bzip2
+USES=		gettext gmake perl5 pkgconfig python:2.7 tar:bzip2
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-rtb-dir=${PREFIX}/lib/${PORTNAME}

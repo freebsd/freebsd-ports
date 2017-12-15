@@ -1,6 +1,6 @@
---- requirements_test.txt.orig	2015-02-04 13:43:57 UTC
+--- requirements_test.txt.orig	2016-01-05 00:10:38 UTC
 +++ requirements_test.txt
 @@ -1,2 +1 @@
--pytest==2.6.3
+-pytest==2.8.3
 -pytest-cov==1.7.0
 +pytest>=2.6.3

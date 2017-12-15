@@ -14,6 +14,8 @@ COMMENT=		Fast and Secure Tunnelling Daemon
 LICENSE=		BSD2CLAUSE
 LICENSE_FILE=		${WRKSRC}/COPYRIGHT
 
+BROKEN=			fails to build
+
 LIB_DEPENDS=		libjson-c.so:devel/json-c       \
 			libsodium.so:security/libsodium \
 			libuecc.so:security/libuecc

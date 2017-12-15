@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	salt
-PORTVERSION=	2017.7.1
-PORTREVISION=	1
+PORTVERSION=	2017.7.2
 CATEGORIES=	sysutils python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,17 +13,20 @@ COMMENT=	Distributed remote execution and configuration management system
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Jinja2>0:devel/py-Jinja2 \
-		${PYTHON_PKGNAMEPREFIX}MarkupSafe>0:textproc/py-MarkupSafe \
-		${PYTHON_PKGNAMEPREFIX}botocore>0:devel/py-botocore \
-		${PYTHON_PKGNAMEPREFIX}libcloud>=0.14.0:net/py-libcloud \
-		${PYTHON_PKGNAMEPREFIX}msgpack-python>=0.3:devel/py-msgpack-python \
-		${PYTHON_PKGNAMEPREFIX}progressbar>0:misc/py-progressbar \
-		${PYTHON_PKGNAMEPREFIX}requests>=1.0.0:www/py-requests \
-		${PYTHON_PKGNAMEPREFIX}tornado>=4.2.1:www/py-tornado \
-		${PYTHON_PKGNAMEPREFIX}yaml>0:devel/py-yaml
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Jinja2>0:devel/py-Jinja2@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}MarkupSafe>0:textproc/py-MarkupSafe@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}boto3>0:www/py-boto3@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}boto>=2.32.1:devel/py-boto@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}botocore>0:devel/py-botocore@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}libcloud>=0.14.0:net/py-libcloud@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}msgpack-python>=0.3:devel/py-msgpack-python@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}progressbar>0:misc/py-progressbar@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}requests>=1.0.0:www/py-requests@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}tornado>=4.2.1:www/py-tornado@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}yaml>0:devel/py-yaml@${FLAVOR}
 
-USES=		cpe python:2.7+
+USES=		cpe python
+
 CPE_VENDOR=	saltstack
 CPE_PRODUCT=	salt
 USE_PYTHON=	autoplist distutils
@@ -62,26 +64,26 @@ RAET_DESC=	Install dependencies required for RAET transport
 TCP_DESC=	Install dependencies required for TCP transport
 ZEROMQ_DESC=	Install dependencies required for ZeroMQ transport
 
-RAET_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}libnacl>=1.0.0:security/py-libnacl \
-			${PYTHON_PKGNAMEPREFIX}ioflo>=1.1.7:devel/py-ioflo \
-			${PYTHON_PKGNAMEPREFIX}raet>=0.6.0:net/py-raet
+RAET_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}libnacl>=1.0.0:security/py-libnacl@${FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}ioflo>=1.1.7:devel/py-ioflo@${FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}raet>=0.6.0:net/py-raet@${FLAVOR}
 
-TCP_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pycrypto>=2.6.1:security/py-pycrypto
+TCP_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pycrypto>=2.6.1:security/py-pycrypto@${FLAVOR}
 
-ZEROMQ_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyzmq>=2.2.0:net/py-pyzmq
-ZEROMQ_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyzmq>=2.2.0:net/py-pyzmq \
-			${PYTHON_PKGNAMEPREFIX}pycrypto>=2.6.1:security/py-pycrypto
+ZEROMQ_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyzmq>=2.2.0:net/py-pyzmq@${FLAVOR}
+ZEROMQ_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyzmq>=2.2.0:net/py-pyzmq@${FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}pycrypto>=2.6.1:security/py-pycrypto@${FLAVOR}
 
 .include <bsd.port.pre.mk>
 
 # Python 2.7-3.3 require enum34, unnecessary for Python 3.4+
 .if ${PYTHON_REL} < 3400
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}enum34>0:devel/py-enum34
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}enum34>0:devel/py-enum34@${FLAVOR}
 .endif
 
 # Python 3+ comes with futures built-in
 .if ${PYTHON_REL} < 3200
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}futures>=2.0:devel/py-futures
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}futures>=2.0:devel/py-futures@${FLAVOR}
 .endif
 
 post-patch:

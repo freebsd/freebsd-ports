@@ -1,0 +1,9 @@
+Yoshimi is an algorithmic MIDI software synthesizer, originally forked
+from ZynAddSubFX.  It synthesizes in real time, can run polyphonic or
+monophonic, with multiple simultaneous patches on one or more MIDI
+channels, and has broad microtonal capability.  It includes extensive
+addititive, subtractive, and pad synth capabilities which can be run
+simultaneously within the same patch.  It also has eight audio effects
+modules.
+
+WWW: http://yoshimi.github.io/

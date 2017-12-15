@@ -1,0 +1,10 @@
+The Notes app is a distraction free notes taking app. It supports 
+formatting using Markdown syntax. Notes are saved as files in your 
+Nextcloud, so you can view and edit them with every Nextcloud client. 
+Furthermore, a separate RESTful API allows for an easy integration into 
+third-party apps (currently, there are notes apps for Android and iOS which 
+allow convenient access to your Nextcloud notes). Further features include 
+marking notes as favorites and future versions will provide categories for 
+better organization.
+
+WWW: https://apps.nextcloud.com/apps/notes

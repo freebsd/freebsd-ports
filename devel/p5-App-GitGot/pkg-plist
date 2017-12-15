@@ -4,6 +4,7 @@ bin/got-complete
 %%SITE_PERL%%/App/GitGot/Command.pm
 %%SITE_PERL%%/App/GitGot/Command/add.pm
 %%SITE_PERL%%/App/GitGot/Command/chdir.pm
+%%SITE_PERL%%/App/GitGot/Command/checkout.pm
 %%SITE_PERL%%/App/GitGot/Command/clone.pm
 %%SITE_PERL%%/App/GitGot/Command/do.pm
 %%SITE_PERL%%/App/GitGot/Command/fetch.pm
@@ -11,6 +12,7 @@ bin/got-complete
 %%SITE_PERL%%/App/GitGot/Command/gc.pm
 %%SITE_PERL%%/App/GitGot/Command/lib.pm
 %%SITE_PERL%%/App/GitGot/Command/list.pm
+%%SITE_PERL%%/App/GitGot/Command/milk.pm
 %%SITE_PERL%%/App/GitGot/Command/move.pm
 %%SITE_PERL%%/App/GitGot/Command/mux.pm
 %%SITE_PERL%%/App/GitGot/Command/push.pm
@@ -34,6 +36,7 @@ bin/got-complete
 %%PERL5_MAN3%%/App::GitGot::Command.3.gz
 %%PERL5_MAN3%%/App::GitGot::Command::add.3.gz
 %%PERL5_MAN3%%/App::GitGot::Command::chdir.3.gz
+%%PERL5_MAN3%%/App::GitGot::Command::checkout.3.gz
 %%PERL5_MAN3%%/App::GitGot::Command::clone.3.gz
 %%PERL5_MAN3%%/App::GitGot::Command::do.3.gz
 %%PERL5_MAN3%%/App::GitGot::Command::fetch.3.gz
@@ -41,6 +44,7 @@ bin/got-complete
 %%PERL5_MAN3%%/App::GitGot::Command::gc.3.gz
 %%PERL5_MAN3%%/App::GitGot::Command::lib.3.gz
 %%PERL5_MAN3%%/App::GitGot::Command::list.3.gz
+%%PERL5_MAN3%%/App::GitGot::Command::milk.3.gz
 %%PERL5_MAN3%%/App::GitGot::Command::move.3.gz
 %%PERL5_MAN3%%/App::GitGot::Command::mux.3.gz
 %%PERL5_MAN3%%/App::GitGot::Command::push.3.gz

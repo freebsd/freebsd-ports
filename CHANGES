@@ -10,6 +10,90 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20171130:
+AUTHOR: mat@FreeBSD.org
+
+  Ports using USE_PYTHON=distutils are now flavored.  They will automatically
+  get flavors (py27, py34, py35, py36) depending on what versions they support.
+
+  There is also a USE_PYTHON=flavors for ports that do not use distutils but
+  need FLAVORS to be set.  A USE_PYTHON=noflavors can be set if the port is
+  using distutils but flavors are not wanted.
+
+  A new USE_PYTHON=optsuffix that will add PYTHON_PKGNAMESUFFIX has been added
+  to cope with Python ports that did not have the Python PKGNAMEPREFIX but are
+  flavored.
+
+  USES=python now also exports a PY_FLAVOR variable that contains the current
+  python flavor.  It can be used in dependency lines when the port itself is
+  not python flavored, for example, deskutils/calibre.
+
+  By default it will only generate flavors for the versions in PYTHON2_DEFAULT
+  and PYTHON3_DEFAULT.  Define BUILD_ALL_PYTHON_FLAVORS in your make.conf to
+  generate all possible flavors.  A port can set USE_PYTHON=allflavors to have
+  all the flavors and not simply the default ones.
+
+  In all the ports with Python dependencies, the *_DEPENDS entries MUST end
+  with the flavor so that the framework knows which to build/use.  This is done
+  by appending '@${PY_FLAVOR}' after the origin (or @${FLAVOR} if in a Python
+  module with Python flavors, as the content will be the same).  For example:
+
+    RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six@${PY_FLAVOR}
+
+20171130:
+AUTHOR: mat@FreeBSD.org
+
+  To help with flavored ports, helpers are available.  In these, replace <*>
+  with the flavor name.
+
+  *_PKGNAMEPREFIX *_PKGNAMESUFFIX *_PLIST *_DESCR will overwrite the variable.
+
+  *_CONFLICTS *_CONFLICTS_BUILD *_CONFLICTS_INSTALL *_PKG_DEPENDS
+  *_EXTRACT_DEPENDS *_PATCH_DEPENDS *_FETCH_DEPENDS *_BUILD_DEPENDS
+  *_LIB_DEPENDS *_RUN_DEPENDS *_TEST_DEPENDS will append to the variable.
+
+  For example:
+
+    flavor2_PKGNAMESUFFIX=	-foo
+
+  can replace:
+
+    .if ${FLAVOR:U} == flavor2
+    PKGNAMESUFFIX=	-foo
+    .endif
+
+20171130:
+AUTHOR: mat@FreeBSD.org
+
+  Flavors are a way to have multiple variations of a port.  The port is built
+  multiple times, with the variations.  To declare flavors, set the FLAVORS
+  variable to the flavors you want defined.  The first flavor will be the
+  default:
+
+    FLAVORS=   flavor1 flavor2
+
+  The flavors MUST be lowercase, and can contain [[:lower:][:digit:]_].
+
+  Then, when building the port, pass the FLAVOR as an argument after make to
+  select the flavor.
+
+    $ make install FLAVOR=flavor2
+
+  In the port, you can then change the behavior depending on the value of the
+  FLAVOR variable.  Note that the different flavors MUST have different
+  PKGNAMEs.  Be sure to guard against an empty FLAVOR variable by using
+  ${FLAVOR:U}:
+
+    .if ${FLAVOR:U} == flavor2
+    PKGNAMESUFFIX=	-foo
+    OPTIONS_DEFAULT+=   FOO
+    .endif
+
+  A tools guide is available at:
+        https://wiki.freebsd.org/Ports/FlavorsTools
+  A port migration guide is available at:
+        https://wiki.freebsd.org/Ports/FlavorsMigration
+
 20171020:
 AUTHOR: ak@FreeBSD.org
 

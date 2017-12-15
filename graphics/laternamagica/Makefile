@@ -2,6 +2,7 @@
 
 PORTNAME=	laternamagica
 PORTVERSION=	0.5
+PORTREVISION=	1
 CATEGORIES=	graphics gnustep
 MASTER_SITES=	SAVANNAH/gap
 DISTNAME=	LaternaMagica-${PORTVERSION}

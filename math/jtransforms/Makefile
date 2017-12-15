@@ -9,7 +9,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Multithreaded FFT library written in pure Java
 
-LICENSE=	GPLv2 LGPL20 MPL
+LICENSE=	GPLv2 LGPL20 MPL11
 LICENSE_COMB=	multi
 
 USES=		tar:bzip2

@@ -1,0 +1,21 @@
+This repository contains several LV2 plugins.
+* GxBottleRocket.lv2
+* GxGuvnor.lv2
+* GxHotBox.lv2
+* GxHyperion.lv2
+* GxQuack.lv2
+* GxSD1.lv2
+* GxSD2Lead.lv2
+* GxSVT.lv2
+* GxSaturator.lv2
+* GxSlowGear.lv2
+* GxSuperFuzz.lv2
+* GxSuppaToneBender.lv2
+* GxToneMachine.lv2
+* GxUVox720k.lv2
+* GxVBassPreAmp.lv2
+* GxVintageFuzzMaster.lv2
+* GxVmk2.lv2
+* GxVoodoFuzz.lv2
+
+WWW: https://github.com/brummer10/GxPlugins.lv2

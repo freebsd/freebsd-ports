@@ -10,7 +10,7 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	pfg@FreeBSD.org
 COMMENT=	Psalms from the Douai Bible in fortune file format
 
-LICENSE=	CC0-1.0 	#AKA Public Domain
+LICENSE=	CC0-1.0		# AKA Public Domain
 
 NO_ARCH=	yes
 NO_WRKSUBDIR=	yes

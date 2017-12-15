@@ -18,6 +18,7 @@ LIB_DEPENDS=	libnet.so:net/libnet
 BUILD_DEPENDS=	${LOCALBASE}/lib/libnids.a:net/libnids
 
 BROKEN_FreeBSD_12=	fails to compile: pcaputil.c: '/usr/include/pcap-int.h' file not found
+BROKEN_FreeBSD_11=	fails to compile: pcaputil.c: '/usr/include/pcap-int.h' file not found
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libnet=${LOCALBASE}

@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	wget
-DISTVERSION=	1.19.1
-PORTREVISION=	1
+DISTVERSION=	1.19.2
 CATEGORIES=	ftp www ipv6
 MASTER_SITES=	GNU
+EXTRACT_SUFX=	.tar.lz
 
 MAINTAINER=	vd@FreeBSD.org
 COMMENT=	Retrieve files from the Net via HTTP(S) and FTP

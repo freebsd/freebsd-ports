@@ -23,6 +23,7 @@
 %%SITE_PERL%%/Connector/Proxy/Net/LDAP/DN.pm
 %%SITE_PERL%%/Connector/Proxy/Net/LDAP/Simple.pm
 %%SITE_PERL%%/Connector/Proxy/Net/LDAP/Single.pm
+%%SITE_PERL%%/Connector/Proxy/Net/FTP.pm
 %%SITE_PERL%%/Connector/Proxy/Proc/SafeExec.pm
 %%SITE_PERL%%/Connector/Proxy/SOAP/Lite.pm
 %%SITE_PERL%%/Connector/Proxy/YAML.pm
@@ -51,3 +52,6 @@
 %%PERL5_MAN3%%/Connector::Proxy::Proc::SafeExec.3.gz
 %%PERL5_MAN3%%/Connector::Proxy::SOAP::Lite.3.gz
 %%PERL5_MAN3%%/Connector::Wrapper.3.gz
+%%SITE_PERL%%/Connector/Tee.pm
+%%PERL5_MAN3%%/Connector::Tee.3.gz
+%%PERL5_MAN3%%/Connector::Proxy::Net::FTP.3.gz

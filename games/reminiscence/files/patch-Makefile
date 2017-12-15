@@ -1,19 +1,21 @@
---- Makefile.orig	2017-04-01 06:34:29 UTC
+--- Makefile.orig	2017-11-01 12:18:57 UTC
 +++ Makefile
-@@ -2,11 +2,13 @@
+@@ -2,12 +2,13 @@
  SDL_CFLAGS   := `sdl2-config --cflags`
  SDL_LIBS     := `sdl2-config --libs`
  
+-DL_LIBS      := -ldl
 -MODPLUG_LIBS := -lmodplug
 -TREMOR_LIBS  := -lvorbisidec -logg
+-ZLIB_LIBS    := -lz
 +MODPLUG_CFLAGS := `pkg-config --cflags libmodplug`
-+MODPLUG_LIBS := `pkg-config --libs libmodplug`
-+TREMOR_CFLAGS := `pkg-config --cflags vorbisidec`
-+TREMOR_LIBS  := `pkg-config --libs vorbisidec`
- ZLIB_LIBS    := -lz
++MODPLUG_LIBS   := `pkg-config --libs libmodplug`
++TREMOR_CFLAGS  := `pkg-config --cflags vorbisidec`
++TREMOR_LIBS    := `pkg-config --libs vorbisidec`
++ZLIB_LIBS      := -lz
  
 -CXXFLAGS += -Wall -MMD $(SDL_CFLAGS) -DUSE_MODPLUG -DUSE_TREMOR -DUSE_ZLIB
 +CXXFLAGS += -Wall -MMD $(SDL_CFLAGS) $(MODPLUG_CFLAGS) $(TREMOR_CFLAGS) -DUSE_MODPLUG -DUSE_TREMOR -DUSE_ZLIB
  
- SRCS = collision.cpp cutscene.cpp file.cpp fs.cpp game.cpp graphics.cpp main.cpp menu.cpp \
+ SRCS = collision.cpp cutscene.cpp dynlib.cpp file.cpp fs.cpp game.cpp graphics.cpp main.cpp menu.cpp \
  	mixer.cpp mod_player.cpp ogg_player.cpp piege.cpp resource.cpp resource_aba.cpp \

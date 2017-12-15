@@ -14,6 +14,9 @@ LICENSE=	GPLv2
 
 CONFLICTS?=	nrpe-ssl nrpe3
 
+DEPRECATED=	EoL, please use nrpe3 instead
+EXPIRATION_DATE=	2018-01-01
+
 USES=		perl5
 USE_PERL5=	build
 USE_RC_SUBR=	nrpe2

@@ -3,7 +3,7 @@
 
 PORTNAME=	opencolorio
 PORTVERSION=	1.0.9
-PORTREVISION?=	2
+PORTREVISION?=	3
 CATEGORIES=	graphics multimedia
 
 MAINTAINER?=	FreeBSD@Shaneware.biz
@@ -37,6 +37,7 @@ SHEBANG_FILES=	share/sphinx/ExtractRstFromSourceCPP.py \
 
 BROKEN_aarch64=		Does not compile: error: use of undeclared identifier __builtin_ia32_emms
 BROKEN_armv6=		Does not compile: error: use of undeclared identifier __builtin_ia32_emms
+BROKEN_armv7=		Does not compile: error: use of undeclared identifier __builtin_ia32_emms
 BROKEN_mips64=		Does not compile: error: unrecognized command line option -msse2
 BROKEN_powerpc64=	Does not compile: error: unrecognized command line option -msse2
 BROKEN_sparc64=		Does not compile: error: unrecognized command line option -msse2
@@ -62,7 +63,7 @@ CMAKE_ARGS+=	-DOCIO_BUILD_APPS:BOOL=OFF \
 		-DPYTHON:STRING=${PYTHON_CMD}
 PLIST=		${PKGDIR}/pkg-plist-pyglue
 .else # master port
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Jinja2>0:devel/py-Jinja2
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Jinja2>0:devel/py-Jinja2@${PY_FLAVOR}
 LIB_DEPENDS=	libtinyxml.so:textproc/tinyxml \
 		libyaml-cpp03.so:devel/yaml-cpp03
 USES+=		python:2,build

@@ -18,6 +18,10 @@ BUILD_DEPENDS=	p5-XML-Parser>=0:textproc/p5-XML-Parser \
 LIB_DEPENDS=	libinotify.so:devel/libinotify
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pillow>=0:graphics/py-pillow
 
+BROKEN_armv6=		fails to compile: mono/arch/arm/arm-codegen.h:947:10: fatal error: 'mono/arch/arm/arm_dpimacros.h' file not found
+BROKEN_armv7=		fails to compile: mono/arch/arm/arm-codegen.h:947:10: fatal error: 'mono/arch/arm/arm_dpimacros.h' file not found
+ONLY_FOR_ARCHS=		amd64 armv6 armv7 i386 powerpc
+
 OPTIONS_DEFINE=		ACCEPTANCE_TESTS MONOLITE
 OPTIONS_DEFAULT=	MONOLITE
 ACCEPTANCE_TESTS_DESC=	Download and run the .Net acceptance tests
@@ -64,8 +68,6 @@ MAKE_ENV=	MONO_SHARED_DIR="${WRKDIR}" \
 
 TEST_TARGET=	check
 TEST_WRKSRC=	${WRKSRC}/mono/tests
-
-ONLY_FOR_ARCHS=		amd64 armv6 armv7 i386 powerpc
 
 PORTSCOUT=	limit:^\d+\.\d+\.[1-9]\d*
 

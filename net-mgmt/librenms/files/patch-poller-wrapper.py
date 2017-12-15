@@ -1,12 +1,12 @@
---- poller-wrapper.py.orig	2014-11-04 16:14:27 UTC
+--- poller-wrapper.py.orig	2017-05-28 21:54:20 UTC
 +++ poller-wrapper.py
 @@ -1,4 +1,4 @@
--#! /usr/bin/env python
+-#! /usr/bin/env python2
 +#! %%LOCALBASE%%/bin/python
  """
-  poller-wrapper A small tool which wraps around the Observium poller
-                 and tries to guide the polling process with a more modern
-@@ -38,6 +38,8 @@ except:
+  poller-wrapper A small tool which wraps around the poller and tries to
+                 guide the polling process with a more modern approach with a
+@@ -36,6 +36,8 @@ except:
      print "threading, Queue, sys, subprocess, time, os, json"
      sys.exit(2)
  

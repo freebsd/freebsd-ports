@@ -1,9 +1,8 @@
-# Created by: Dmitri Goutnik <dg@syrec.org>
 # $FreeBSD$
 
 PORTNAME=	liteide
-PORTVERSION=	32.2
 DISTVERSIONPREFIX=	x
+DISTVERSION=	33.1
 CATEGORIES=	devel editors
 
 MAINTAINER=	dg@syrec.org
@@ -41,6 +40,7 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/liteide.desktop ${STAGEDIR}${PREFIX}/share/applications
 	(cd ${WRKSRC}/deploy && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR})
 	(cd ${WRKSRC}/os_deploy/freebsd && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR})
+	${RM} ${STAGEDIR}${PREFIX}/lib/liteide/*.a
 .for sz in ${ICON_SIZES}
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/${sz}x${sz}/apps
 	${INSTALL_DATA} ${WRKSRC}/src/liteapp/images/liteide${sz}.png \

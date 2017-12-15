@@ -14,6 +14,7 @@ COMMENT=	Interpreter for the functional programming language Haskell 98
 BUILD_DEPENDS=	bash:shells/bash
 
 BROKEN_armv6=		fails to compile: cppinput.c: invalid preprocessing directive \#!
+BROKEN_armv7=		fails to compile: cppinput.c: invalid preprocessing directive \#!
 BROKEN_powerpc64=	fails to compile: cppinput.c: detected recursion whilst expanding macro "vector"
 
 WRKSRC=		${WRKDIR}/${DISTNAME}

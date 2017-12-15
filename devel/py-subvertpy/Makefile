@@ -14,7 +14,7 @@ LICENSE=	GPLv2
 
 BUILD_DEPENDS+=	svn:devel/subversion
 
-USES=		python
+USES=		python:2.7
 USE_PYTHON=	distutils autoplist
 MAKE_ENV=	HOME=/dev/null
 INSTALL_TARGET=	install-strip

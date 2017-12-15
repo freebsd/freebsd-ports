@@ -3,7 +3,7 @@
 
 PORTNAME=	chromium
 PORTVERSION=	61.0.3163.100
-PORTREVISION=	2
+PORTREVISION=	4
 CATEGORIES?=	www
 MASTER_SITES=	https://commondatastorage.googleapis.com/chromium-browser-official/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
@@ -16,8 +16,8 @@ LICENSE_COMB=	multi
 
 BUILD_DEPENDS=	python:lang/python \
 		bash:shells/bash \
-		${PYTHON_PKGNAMEPREFIX}Jinja2>0:devel/py-Jinja2 \
-		${PYTHON_PKGNAMEPREFIX}ply>0:devel/py-ply \
+		${PYTHON_PKGNAMEPREFIX}Jinja2>0:devel/py-Jinja2@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}ply>0:devel/py-ply@${PY_FLAVOR} \
 
 .if !defined(GN_ONLY)
 BUILD_DEPENDS+=	gperf:devel/gperf \
@@ -28,7 +28,7 @@ BUILD_DEPENDS+=	gperf:devel/gperf \
 		node:www/node \
 		${LOCALBASE}/include/linux/videodev2.h:multimedia/v4l_compat \
 		${LOCALBASE}/share/usbids/usb.ids:misc/usbids \
-		${PYTHON_PKGNAMEPREFIX}html5lib>0:www/py-html5lib
+		${PYTHON_PKGNAMEPREFIX}html5lib>0:www/py-html5lib@${PY_FLAVOR}
 .endif
 
 .if !defined(GN_ONLY)

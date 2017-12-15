@@ -40,7 +40,7 @@ include/uint32_unpack_big.h
 include/uint64_pack.h
 include/uint64_unpack.h
 lib/libtinynacl.a
-%%PORTDOCS%%man/man1/dq.1.gz
-%%PORTDOCS%%man/man1/dqcache-makekey.1.gz
-%%PORTDOCS%%man/man1/dqcache-start.1.gz
-%%PORTDOCS%%man/man8/dqcache.8.gz
+man/man1/dq.1.gz
+man/man1/dqcache-makekey.1.gz
+man/man1/dqcache-start.1.gz
+man/man8/dqcache.8.gz

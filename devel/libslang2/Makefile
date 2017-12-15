@@ -42,7 +42,7 @@ PNG_CONFIGURE_WITH=	png
 PNG_LIB_DEPENDS=	libpng.so:graphics/png
 ICONV_USES=		iconv
 ONIG_CONFIGURE_WITH=	onig
-ONIG_LIB_DEPENDS=	libonig.so:devel/oniguruma6
+ONIG_LIB_DEPENDS=	libonig.so:devel/oniguruma
 
 .include <bsd.port.pre.mk>
 

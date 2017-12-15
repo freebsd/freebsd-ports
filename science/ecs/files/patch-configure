@@ -1,0 +1,11 @@
+--- configure.orig	2015-05-05 08:41:58 UTC
++++ configure
+@@ -12415,7 +12415,7 @@ have_scotch_header=no
+ have_scotch=no
+ 
+ # Common library dependencies for SCOTCH
+-ecs_scotch_l0="-lm"
++ecs_scotch_l0="-lm $PTHREAD_LIBS"
+ ecs_scotch_l1="-lz -lm"
+ ecs_scotch_l2="-lm -lpthread"
+ ecs_scotch_l3="-lz -lm -lpthread"

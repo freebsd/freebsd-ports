@@ -13,10 +13,10 @@ COMMENT=	Ettus Research UHD driver framework
 
 LIB_DEPENDS=	libboost_python.so:devel/boost-python-libs
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/tuple/tuple.hpp:devel/boost-libs \
-		cheetah-analyze:devel/py-cheetah \
+		cheetah-analyze:devel/py-cheetah@${PY_FLAVOR} \
 		rst2html:textproc/py-docutils \
 		orcc:devel/orc \
-		${PYTHON_PKGNAMEPREFIX}mako>0:textproc/py-mako
+		${PYTHON_PKGNAMEPREFIX}mako>0:textproc/py-mako@${PY_FLAVOR}
 
 USE_GITHUB=     yes
 GH_ACCOUNT=     EttusResearch

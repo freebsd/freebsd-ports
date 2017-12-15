@@ -455,7 +455,6 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/developers-handbook/ipv6.html
 %%DOCSDIR%%/%%DOCLANG%%/books/developers-handbook/ix01.html
 %%DOCSDIR%%/%%DOCLANG%%/books/developers-handbook/kernel.html
-%%DOCSDIR%%/%%DOCLANG%%/books/developers-handbook/kernelbuild-new.html
 %%DOCSDIR%%/%%DOCLANG%%/books/developers-handbook/kernelbuild.html
 %%DOCSDIR%%/%%DOCLANG%%/books/developers-handbook/kerneldebug-console.html
 %%DOCSDIR%%/%%DOCLANG%%/books/developers-handbook/kerneldebug-dcons.html
@@ -559,6 +558,12 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/fdp-primer/ix01.html
 %%DOCSDIR%%/%%DOCLANG%%/books/fdp-primer/legalnotice.html
 %%DOCSDIR%%/%%DOCLANG%%/books/fdp-primer/make-includes.html
+%%DOCSDIR%%/%%DOCLANG%%/books/fdp-primer/manpages-examples-as-templates.html
+%%DOCSDIR%%/%%DOCLANG%%/books/fdp-primer/manpages-markup.html
+%%DOCSDIR%%/%%DOCLANG%%/books/fdp-primer/manpages-resources.html
+%%DOCSDIR%%/%%DOCLANG%%/books/fdp-primer/manpages-sample-structures.html
+%%DOCSDIR%%/%%DOCLANG%%/books/fdp-primer/manpages-sections.html
+%%DOCSDIR%%/%%DOCLANG%%/books/fdp-primer/manpages.html
 %%DOCSDIR%%/%%DOCLANG%%/books/fdp-primer/overview-doc.html
 %%DOCSDIR%%/%%DOCLANG%%/books/fdp-primer/overview.html
 %%DOCSDIR%%/%%DOCLANG%%/books/fdp-primer/po-translations-building.html
@@ -916,6 +921,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/dads-verbose-logs.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/distfile-survey.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/gnome-components.html
+%%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/go-libs.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/handbook.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/index.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/install.html
@@ -1011,11 +1017,9 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-display.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-dos2unix.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-drupal.html
-%%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-execinfo.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-fakeroot.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-fam.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-firebird.html
-%%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-fmake.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-fonts.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-fortran.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-fuse.html
@@ -1079,7 +1083,6 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-tcl.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-terminfo.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-tk.html
-%%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-twisted.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-uidfix.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-uniquefiles.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-varnish.html
@@ -1090,7 +1093,6 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/using-autotools.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/using-databases.html
-%%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/using-emacs.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/using-gettext.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/using-gnome.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/using-iconv.html

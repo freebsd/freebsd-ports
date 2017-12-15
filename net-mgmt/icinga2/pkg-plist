@@ -5,17 +5,16 @@ etc/bash_completion.d/icinga2
 @sample %%ETCDIR%%/conf.d/groups.conf.sample
 @sample %%ETCDIR%%/conf.d/hosts.conf.sample
 @sample %%ETCDIR%%/conf.d/notifications.conf.sample
-@sample %%ETCDIR%%/conf.d/satellite.conf.sample
 @sample %%ETCDIR%%/conf.d/services.conf.sample
 @sample %%ETCDIR%%/conf.d/templates.conf.sample
 @sample %%ETCDIR%%/conf.d/timeperiods.conf.sample
 @sample %%ETCDIR%%/conf.d/users.conf.sample
-@sample %%ETCDIR%%/constants.conf.sample
 @sample %%ETCDIR%%/features-available/api.conf.sample
 @sample %%ETCDIR%%/features-available/checker.conf.sample
 @sample %%ETCDIR%%/features-available/command.conf.sample
 @sample %%ETCDIR%%/features-available/compatlog.conf.sample
 @sample %%ETCDIR%%/features-available/debuglog.conf.sample
+@sample %%ETCDIR%%/features-available/elasticsearch.conf.sample
 @sample %%ETCDIR%%/features-available/gelf.conf.sample
 @sample %%ETCDIR%%/features-available/graphite.conf.sample
 %%MYSQL%%@sample(%%ICINGA2USER%%,%%ICINGA2GROUP%%,0640) %%ETCDIR%%/features-available/ido-mysql.conf.sample
@@ -31,47 +30,47 @@ etc/bash_completion.d/icinga2
 %%ETCDIR%%/features-enabled/checker.conf
 %%ETCDIR%%/features-enabled/mainlog.conf
 %%ETCDIR%%/features-enabled/notification.conf
+@sample %%ETCDIR%%/constants.conf.sample
 @sample %%ETCDIR%%/icinga2.conf.sample
 @sample %%ETCDIR%%/init.conf.sample
-%%ETCDIR%%/repository.d/README
 @sample %%ETCDIR%%/scripts/mail-host-notification.sh.sample
 @sample %%ETCDIR%%/scripts/mail-service-notification.sh.sample
 @sample %%ETCDIR%%/zones.conf.sample
 %%ETCDIR%%/zones.d/README
 lib/icinga2/libbase.so
-lib/icinga2/libbase.so.2.7.1
+lib/icinga2/libbase.so.2.8.0
 lib/icinga2/libchecker.so
-lib/icinga2/libchecker.so.2.7.1
+lib/icinga2/libchecker.so.2.8.0
 lib/icinga2/libcli.so
-lib/icinga2/libcli.so.2.7.1
+lib/icinga2/libcli.so.2.8.0
 lib/icinga2/libcompat.so
-lib/icinga2/libcompat.so.2.7.1
+lib/icinga2/libcompat.so.2.8.0
 lib/icinga2/libconfig.so
-lib/icinga2/libconfig.so.2.7.1
+lib/icinga2/libconfig.so.2.8.0
 %%DBBACKEND%%lib/icinga2/libdb_ido.so
-%%DBBACKEND%%lib/icinga2/libdb_ido.so.2.7.1
+%%DBBACKEND%%lib/icinga2/libdb_ido.so.2.8.0
 %%MYSQL%%lib/icinga2/libdb_ido_mysql.so
-%%MYSQL%%lib/icinga2/libdb_ido_mysql.so.2.7.1
+%%MYSQL%%lib/icinga2/libdb_ido_mysql.so.2.8.0
 %%PGSQL%%lib/icinga2/libdb_ido_pgsql.so
-%%PGSQL%%lib/icinga2/libdb_ido_pgsql.so.2.7.1
+%%PGSQL%%lib/icinga2/libdb_ido_pgsql.so.2.8.0
 lib/icinga2/libexecvpe.so
-lib/icinga2/libexecvpe.so.2.7.1
+lib/icinga2/libexecvpe.so.2.8.0
 lib/icinga2/libicinga.so
-lib/icinga2/libicinga.so.2.7.1
+lib/icinga2/libicinga.so.2.8.0
 lib/icinga2/liblivestatus.so
-lib/icinga2/liblivestatus.so.2.7.1
+lib/icinga2/liblivestatus.so.2.8.0
 lib/icinga2/libmethods.so
-lib/icinga2/libmethods.so.2.7.1
+lib/icinga2/libmethods.so.2.8.0
 lib/icinga2/libmmatch.so
-lib/icinga2/libmmatch.so.2.7.1
+lib/icinga2/libmmatch.so.2.8.0
 lib/icinga2/libnotification.so
-lib/icinga2/libnotification.so.2.7.1
+lib/icinga2/libnotification.so.2.8.0
 lib/icinga2/libperfdata.so
-lib/icinga2/libperfdata.so.2.7.1
+lib/icinga2/libperfdata.so.2.8.0
 lib/icinga2/libremote.so
-lib/icinga2/libremote.so.2.7.1
+lib/icinga2/libremote.so.2.8.0
 lib/icinga2/libsocketpair.so
-lib/icinga2/libsocketpair.so.2.7.1
+lib/icinga2/libsocketpair.so.2.8.0
 lib/icinga2/sbin/icinga2
 libexec/nagios/check_nscp_api
 man/man8/icinga2.8.gz
@@ -100,13 +99,14 @@ sbin/icinga2
 %%PORTDOCS%%%%DOCSDIR%%/markdown/16-upgrading-icinga-2.md
 %%PORTDOCS%%%%DOCSDIR%%/markdown/17-language-reference.md
 %%PORTDOCS%%%%DOCSDIR%%/markdown/18-library-reference.md
-%%PORTDOCS%%%%DOCSDIR%%/markdown/19-script-debugger.md
-%%PORTDOCS%%%%DOCSDIR%%/markdown/20-development.md
-%%PORTDOCS%%%%DOCSDIR%%/markdown/21-selinux.md
-%%PORTDOCS%%%%DOCSDIR%%/markdown/22-migrating-from-icinga-1x.md
-%%PORTDOCS%%%%DOCSDIR%%/markdown/23-appendix.md
+%%PORTDOCS%%%%DOCSDIR%%/markdown/19-technical-concepts.md
+%%PORTDOCS%%%%DOCSDIR%%/markdown/20-script-debugger.md
+%%PORTDOCS%%%%DOCSDIR%%/markdown/21-development.md
+%%PORTDOCS%%%%DOCSDIR%%/markdown/22-selinux.md
+%%PORTDOCS%%%%DOCSDIR%%/markdown/23-migrating-from-icinga-1x.md
+%%PORTDOCS%%%%DOCSDIR%%/markdown/24-appendix.md
+%%PORTDOCS%%%%DOCSDIR%%/markdown/images/advanced-topics/flapping-state-graph.png
 %%PORTDOCS%%%%DOCSDIR%%/markdown/images/advanced-topics/icinga2_external_checks_freshness_icingaweb2.png
-%%PORTDOCS%%%%DOCSDIR%%/markdown/images/distributed-monitoring/icinga2_distributed_bottom_up.png
 %%PORTDOCS%%%%DOCSDIR%%/markdown/images/distributed-monitoring/icinga2_distributed_endpoints.png
 %%PORTDOCS%%%%DOCSDIR%%/markdown/images/distributed-monitoring/icinga2_distributed_roles.png
 %%PORTDOCS%%%%DOCSDIR%%/markdown/images/distributed-monitoring/icinga2_distributed_scenarios_ha_master_clients.png
@@ -137,7 +137,8 @@ sbin/icinga2
 %%PORTDOCS%%%%DOCSDIR%%/markdown/images/distributed-monitoring/icinga2_windows_setup_wizard_05_nsclient_05.png
 %%PORTDOCS%%%%DOCSDIR%%/markdown/images/distributed-monitoring/icinga2_windows_setup_wizard_05_nsclient_06.png
 %%PORTDOCS%%%%DOCSDIR%%/markdown/images/distributed-monitoring/icinga2_windows_setup_wizard_05_nsclient_07.png
-%%PORTDOCS%%%%DOCSDIR%%/markdown/images/distributed-monitoring/icinga2_windows_setup_wizard_06.png
+%%PORTDOCS%%%%DOCSDIR%%/markdown/images/distributed-monitoring/icinga2_windows_setup_wizard_06_finish_no_ticket.png
+%%PORTDOCS%%%%DOCSDIR%%/markdown/images/distributed-monitoring/icinga2_windows_setup_wizard_06_finish_with_ticket.png
 %%PORTDOCS%%%%DOCSDIR%%/markdown/images/distributed-monitoring/icinga2_windows_setup_wizard_examine_config.png
 %%PORTDOCS%%%%DOCSDIR%%/markdown/images/getting-started/mariadb-centos7.png
 %%PORTDOCS%%%%DOCSDIR%%/markdown/images/getting-started/nano-syntax.png
@@ -154,6 +155,7 @@ sbin/icinga2
 %%MYSQL%%%%DATADIR%%-ido-mysql/schema/upgrade/2.4.0.sql
 %%MYSQL%%%%DATADIR%%-ido-mysql/schema/upgrade/2.5.0.sql
 %%MYSQL%%%%DATADIR%%-ido-mysql/schema/upgrade/2.6.0.sql
+%%MYSQL%%%%DATADIR%%-ido-mysql/schema/upgrade/2.8.0.sql
 %%PGSQL%%%%DATADIR%%-ido-pgsql/schema/pgsql.sql
 %%PGSQL%%%%DATADIR%%-ido-pgsql/schema/upgrade/2.0.2.sql
 %%PGSQL%%%%DATADIR%%-ido-pgsql/schema/upgrade/2.1.0.sql
@@ -162,6 +164,7 @@ sbin/icinga2
 %%PGSQL%%%%DATADIR%%-ido-pgsql/schema/upgrade/2.4.0.sql
 %%PGSQL%%%%DATADIR%%-ido-pgsql/schema/upgrade/2.5.0.sql
 %%PGSQL%%%%DATADIR%%-ido-pgsql/schema/upgrade/2.6.0.sql
+%%PGSQL%%%%DATADIR%%-ido-pgsql/schema/upgrade/2.8.0.sql
 %%DATADIR%%/include/command-icinga.conf
 %%DATADIR%%/include/command-nscp-local.conf
 %%DATADIR%%/include/command-plugins-manubulon.conf
@@ -191,12 +194,12 @@ sbin/icinga2
 %%DATADIR%%/include/windows-plugins
 share/vim/vimfiles/ftdetect/icinga2.vim
 share/vim/vimfiles/syntax/icinga2.vim
-@dir %%ETCDIR%%/pki
 @dir(%%ICINGA2USER%%,%%ICINGA2GROUP%%) /var/cache/icinga2
 @dir(%%ICINGA2USER%%,%%ICINGA2GROUP%%) /var/lib/icinga2/api/log
-@dir(%%ICINGA2USER%%,%%ICINGA2GROUP%%) /var/lib/icinga2/api/repository
 @dir(%%ICINGA2USER%%,%%ICINGA2GROUP%%) /var/lib/icinga2/api/zones
 @dir(%%ICINGA2USER%%,%%ICINGA2GROUP%%) /var/lib/icinga2/api
+@dir(%%ICINGA2USER%%,%%ICINGA2GROUP%%) /var/lib/icinga2/certificate-requests
+@dir(%%ICINGA2USER%%,%%ICINGA2GROUP%%) /var/lib/icinga2/certs
 @dir(%%ICINGA2USER%%,%%ICINGA2GROUP%%) /var/lib/icinga2
 @dir /var/lib
 @dir(%%ICINGA2USER%%,%%ICINGA2GROUP%%) /var/log/icinga2/compat/archives

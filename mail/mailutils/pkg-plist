@@ -169,7 +169,7 @@ include/mailutils/util.h
 include/mailutils/version.h
 include/mailutils/wordsplit.h
 include/mailutils/yyloc.h
-%%GUILE%%lib/libguile-mailutils-v-3.3.so
+%%GUILE%%lib/libguile-mailutils-v-%%VERSION%%.so
 lib/libmailutils.a
 lib/libmailutils.so
 lib/libmailutils.so.5

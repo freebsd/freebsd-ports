@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libvirt
-PORTVERSION=	3.8.0
+PORTVERSION=	3.9.0
 CATEGORIES=	devel
 MASTER_SITES=	http://libvirt.org/sources/ \
 		ftp://libvirt.org/libvirt/
@@ -94,7 +94,7 @@ PORTSCOUT=	limit:\d+\.\d+\.\d+$$
 LDFLAGS+=	-L${LOCALBASE}/lib -fstack-protector
 
 USES=		charsetfix cpe gmake libtool pathfix \
-		perl5 python:build pkgconfig shebangfix tar:xz
+		perl5 python:2.7,build pkgconfig shebangfix tar:xz
 CPE_VENDOR=	redhat
 USE_PERL5=	build
 USE_LDCONFIG=	yes
@@ -141,7 +141,7 @@ post-install:
 	@${RMDIR} ${STAGEDIR}${EXAMPLESDIR}/networks/autostart
 	@${MKDIR} ${STAGEDIR}${ETCDIR}/qemu/networks/autostart
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for doc in AUTHORS ChangeLog INSTALL NEWS README TODO
+.for doc in AUTHORS ChangeLog INSTALL NEWS README
 	${INSTALL_DATA} ${WRKSRC}/${doc} ${STAGEDIR}${DOCSDIR}
 .endfor
 

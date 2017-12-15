@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	semantik
-PORTVERSION=	0.9.5
-PORTREVISION=	1
+DISTVERSION=	0.9.5
+PORTREVISION=	2
 CATEGORIES=	deskutils kde
 MASTER_SITES=	http://ftp.waf.io/pub/release/ \
 		http://www.freehackers.org/~tnagy/release/
@@ -29,7 +29,8 @@ MAKE_ENV=	DESTDIR="${STAGEDIR}"
 USE_LDCONFIG=	yes
 
 SHEBANG_FILES=	${WRKSRC}/src/templates/beamer/wscript \
-		${WRKSRC}/src/templates/pdflatex/wscript
+		${WRKSRC}/src/templates/pdflatex/wscript \
+		waf
 
 PLIST_SUB=	PORTVERSION="${PORTVERSION}"
 

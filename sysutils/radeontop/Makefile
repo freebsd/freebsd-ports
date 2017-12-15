@@ -14,7 +14,7 @@ LICENSE=	GPLv3
 LIB_DEPENDS=	libpciaccess.so:devel/libpciaccess \
 		libdrm.so:graphics/libdrm
 
-NOT_FOR_ARCHS=		aarch64 armv6 mips mips64
+NOT_FOR_ARCHS=		aarch64 armv6 armv7 mips mips64
 NOT_FOR_ARCHS_REASON=	fails to compile: fatal error: amdgpu_drm.h file not found
 
 USE_GITHUB=	yes

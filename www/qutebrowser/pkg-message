@@ -1,0 +1,6 @@
+Currently, the port supports only the QtWebKit backend.
+
+On the first start, qutebrowser will warn that it cannot use QtWebEngine,
+one should press 'Force QtWebKit backend'. Or one could simply start it with:
+
+  qutebrowser --backend webkit

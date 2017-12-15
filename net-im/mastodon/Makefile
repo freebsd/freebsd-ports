@@ -3,7 +3,7 @@
 PORTNAME=	mastodon
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.0.0
-PORTREVISION=	1
+PORTREVISION=	4
 CATEGORIES=	net-im www
 
 MAINTAINER=	jrm@FreeBSD.org
@@ -34,7 +34,7 @@ BR_DEPENDS=	ffmpeg>0:multimedia/ffmpeg \
 		rubygem-active_model_serializers>=0.10.6:databases/rubygem-active_model_serializers \
 		rubygem-addressable>=2.5.1_1:www/rubygem-addressable \
 		rubygem-browser>=2.4.0:www/rubygem-browser \
-		rubygem-charlock_holmes>=0.7.3_5:textproc/rubygem-charlock_holmes \
+		rubygem-charlock_holmes>=0.7.5:textproc/rubygem-charlock_holmes \
 		rubygem-iso-639>=0.2.8:textproc/rubygem-iso-639 \
 		rubygem-cld3>=3.1.3_1:textproc/rubygem-cld3 \
 		rubygem-devise-rails5>=4.3.0:devel/rubygem-devise-rails5 \
@@ -45,7 +45,7 @@ BR_DEPENDS=	ffmpeg>0:multimedia/ffmpeg \
 		rubygem-hiredis>=0.6.1:databases/rubygem-hiredis \
 		rubygem-redis-namespace>=1.5.3:databases/rubygem-redis-namespace \
 		rubygem-htmlentities>=4.3.4:textproc/rubygem-htmlentities \
-		rubygem-http>=2.2.2:www/rubygem-http \
+		rubygem-http2>=2.2.2:www/rubygem-http2 \
 		rubygem-http_accept_language>=2.1.1:devel/rubygem-http_accept_language \
 		rubygem-httplog>=0.99.7:sysutils/rubygem-httplog \
 		rubygem-idn-ruby>=0.1.0:dns/rubygem-idn-ruby \
@@ -79,7 +79,7 @@ BR_DEPENDS=	ffmpeg>0:multimedia/ffmpeg \
 		rubygem-strong_migrations>=0.1.9:devel/rubygem-strong_migrations \
 		rubygem-twitter-text>=1.14.7:textproc/rubygem-twitter-text \
 		rubygem-tzinfo-data>=1.2017.2:devel/rubygem-tzinfo-data \
-		rubygem-webpacker-rails5>=2.0:devel/rubygem-webpacker-rails5 \
+		rubygem-webpacker-rails5>=3.0.2:devel/rubygem-webpacker-rails5 \
 		rubygem-webpush>=0.3.2_1:security/rubygem-webpush \
 		rubygem-json-ld-preloaded>=2.2.1:converters/rubygem-json-ld-preloaded \
 		rubygem-rdf-normalize>=0.3.2:www/rubygem-rdf-normalize \
@@ -96,7 +96,7 @@ USE_RC_SUBR=	mastodon_stream mastodon_web mastodon_workers
 USE_RUBY=	yes
 
 NODE_BIN=	${LOCALBASE}/bin/node
-NODE_ABI=	${NODE_VER:C/v4.*/46/:C/v6.*/48/:C/v8.*/57/}
+NODE_ABI=	${NODE_VER:C/v4.*/46/:C/v6.*/48/:C/v8.*/57/:C/v9.*/59/}
 PLIST_SUB=	NODE_ABI=${NODE_ABI}
 
 SHEBANG_FILES=	bin/*
@@ -127,7 +127,7 @@ do-install:
 		${WRKSRC}/node_modules/*/node_modules \
 		${WRKSRC}/node_modules/node-sass \
 		${WRKSRC}/node_modules/uws/build
-	@${RM} 	${WRKSRC}/Gemfile.lock \
+	@${RM}	${WRKSRC}/Gemfile.lock \
 		${WRKSRC}/lib/tasks/auto_annotate_models.rake \
 		${WRKSRC}/node_modules/uws/uws_darwin_* \
 		${WRKSRC}/node_modules/uws/uws_linux_* \

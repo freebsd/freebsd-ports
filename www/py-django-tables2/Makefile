@@ -13,8 +13,8 @@ COMMENT=	Table/data-grid framework for Django
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django18>=0:www/py-django18 \
-		${PYTHON_PKGNAMEPREFIX}six>=0:devel/py-six
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django18>=0:www/py-django18@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}six>=0:devel/py-six@${FLAVOR}
 
 NO_ARCH=	yes
 

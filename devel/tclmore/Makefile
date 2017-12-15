@@ -8,7 +8,7 @@ CATEGORIES=	devel tcl
 MASTER_SITES=	http://download.gna.org/tclmore/0.7/
 DISTNAME=	${PORTNAME}_${PORTVERSION}_src
 
-MAINTAINER=	dsh@vlink.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	More TCL commands
 
 USES=		gmake makeinfo tcl:tea

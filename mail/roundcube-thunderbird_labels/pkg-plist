@@ -3,6 +3,8 @@
 %%PLUGINDIR_REL%%/README.md
 %%PLUGINDIR_REL%%/composer.json
 @sample %%PLUGINDIR_REL%%/config.inc.php.sample
+%%PORTDOCS%%%%PLUGINDIR_REL%%/docs/README.md
+%%PORTDOCS%%%%PLUGINDIR_REL%%/docs/screenshot.png
 %%PLUGINDIR_REL%%/localization/bg_BG.inc
 %%PLUGINDIR_REL%%/localization/ca_ES.inc
 %%PLUGINDIR_REL%%/localization/cs_CZ.inc
@@ -13,8 +15,12 @@
 %%PLUGINDIR_REL%%/localization/hu_HU.inc
 %%PLUGINDIR_REL%%/localization/it_IT.inc
 %%PLUGINDIR_REL%%/localization/lv_LV.inc
+%%PLUGINDIR_REL%%/localization/nl_NL.inc
 %%PLUGINDIR_REL%%/localization/pl_PL.inc
+%%PLUGINDIR_REL%%/localization/pt_BR.inc
+%%PLUGINDIR_REL%%/localization/pt_PT.inc
 %%PLUGINDIR_REL%%/localization/ru_RU.inc
+%%PLUGINDIR_REL%%/localization/sk_SK.inc
 %%PLUGINDIR_REL%%/localization/uk_UA.inc
 %%PLUGINDIR_REL%%/skins/classic/tb_label.css
 %%PLUGINDIR_REL%%/skins/classic/thunderbird_32.png

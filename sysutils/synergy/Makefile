@@ -20,6 +20,7 @@ CPE_VENDOR=	synergy-foss
 USE_XORG=	ice xtst x11 sm xext xinerama xrandr xi
 USE_GITHUB=	yes
 GH_ACCOUNT=	symless
+GH_PROJECT=	synergy-core
 
 CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
 

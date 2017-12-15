@@ -16,6 +16,7 @@ BUILD_DEPENDS=	cook:devel/cook
 LIB_DEPENDS=	libpcre.so:devel/pcre
 
 BROKEN_armv6=		fails to compile: building for onyx-5.1.2_6: error code 1
+BROKEN_armv7=		fails to compile: building for onyx-5.1.2_6: error code 1
 BROKEN_mips=		fails to compile: building for onyx-5.1.2_6: error code 1
 BROKEN_mips64=		fails to compile: building for onyx-5.1.2_6: error code 1
 

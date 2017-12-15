@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	keychain
-PORTVERSION=	2.8.3
+PORTVERSION=	2.8.4
 CATEGORIES=	security
 MASTER_SITES=	http://www.funtoo.org/archive/keychain/ \
 		GENTOO
@@ -11,6 +11,7 @@ MAINTAINER=	garga@FreeBSD.org
 COMMENT=	User-friendly front-end to ssh-agent(1)
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING.txt
 
 USES=		tar:bzip2
 OPTIONS_DEFINE=	DOCS

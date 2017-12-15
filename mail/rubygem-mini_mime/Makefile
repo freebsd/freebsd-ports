@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	mini_mime
-PORTVERSION=	0.1.4
+PORTVERSION=	1.0.0
 CATEGORIES=	mail rubygems
 MASTER_SITES=	RG
 

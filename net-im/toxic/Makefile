@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	toxic
-PORTVERSION=	0.8.0
-PORTREVISION=	2
+PORTVERSION=	0.8.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net-im
 
@@ -17,7 +16,7 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libtoxcore.a:net-im/tox	\
 		${LOCALBASE}/include/linux/videodev2.h:multimedia/v4l_compat
 LIB_DEPENDS=	libvpx.so:multimedia/libvpx		\
 		libsodium.so:security/libsodium		\
-		libpng16.so:graphics/png		\
+		libpng.so:graphics/png		\
 		libopus.so:audio/opus			\
 		libcurl.so:ftp/curl			\
 		libv4l2.so:multimedia/libv4l		\

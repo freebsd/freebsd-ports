@@ -13,7 +13,7 @@ CONFIGURE_ARGS=		--enable QtCore
 PYQT_DIST=		yes
 
 USES=			python pyqt:4
-USE_PYTHON=		py3kplist
+USE_PYTHON=		py3kplist flavors
 USE_PYQT=		sip
 USE_QT4=		corelib qmake_build moc_build
 

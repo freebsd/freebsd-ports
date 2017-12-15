@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	virtualbox-ose
-PORTVERSION=	5.2.0
-PORTREVISION=	1
+PORTVERSION=	5.2.2
 CATEGORIES=	emulators
 MASTER_SITES=	http://download.virtualbox.org/virtualbox/${PORTVERSION}/
 DISTFILES=	VirtualBox-${PORTVERSION}${EXTRACT_SUFX} ${GUESTADDITIONS}
@@ -149,7 +148,7 @@ USE_TEX=	dvipsk:build formats:build
 
 .if ${PORT_OPTIONS:MPYTHON}
 USES+=		python
-USE_PYTHON=	distutils noegginfo
+USE_PYTHON=	distutils noegginfo noflavors
 PYDISTUTILS_PKGNAME=	vboxapi
 PYDISTUTILS_PKGVERSION=	1.0
 .else
@@ -161,7 +160,7 @@ CONFIGURE_ARGS+=	--enable-qt5
 PLIST_SUB+=	QT=""
 QT_NONSTANDARD=	yes
 USE_GL=		gl
-USE_QT5=	buildtools_build core dbus gui linguist_build opengl
+USE_QT5=	buildtools_build core dbus gui linguisttools_build opengl
 USE_QT5+=	printsupport widgets x11extras
 USE_XORG=	xcb
 INSTALLS_ICONS=	yes
@@ -326,7 +325,7 @@ do-build:
 .endif
 
 do-install:
-	${MKDIR} ${STAGEDIR}${DATADIR}
+	${MKDIR} ${STAGEDIR}${DATADIR}/sdk
 	cd ${KMK_BUILDDIR}/bin/sdk/bindings/xpcom && \
 	    ${COPYTREE_SHARE} "idl samples" ${STAGEDIR}${DATADIR}
 
@@ -337,7 +336,7 @@ do-install:
 	${MKDIR} ${STAGEDIR}${VBOX_DIR}
 	cd ${KMK_BUILDDIR}/bin && ${COPYTREE_SHARE} \
 	    "*.fd *.r0 *.rc *.so components" ${STAGEDIR}${VBOX_DIR}
-	${LN} -fs ${DATADIR}/sdk ${STAGEDIR}${VBOX_DIR}
+	${RLN} ${STAGEDIR}${DATADIR}/sdk ${STAGEDIR}${VBOX_DIR}
 
 	${INSTALL_SCRIPT} ${WRKSRC}/src/VBox/Installer/freebsd/VBox.sh \
 	    ${STAGEDIR}${VBOX_DIR}
@@ -355,7 +354,7 @@ do-install:
 	${MKDIR} ${STAGEDIR}${VBOX_DIR}/additions
 	${INSTALL_DATA} ${DISTDIR}/${GUESTADDITIONS} \
 	    ${STAGEDIR}${VBOX_DIR}/additions/
-	${LN} -fs ${VBOX_DIR}/additions/${GUESTADDITIONS} \
+	${RLN} ${STAGEDIR}${VBOX_DIR}/additions/${GUESTADDITIONS} \
 	    ${STAGEDIR}${VBOX_DIR}/additions/VBoxGuestAdditions.iso
 .endif
 
@@ -379,7 +378,7 @@ do-install:
 	cd ${KMK_BUILDDIR}/bin/sdk/bindings/xpcom/python/xpcom && \
 	    ${COPYTREE_SHARE} "*" ${STAGEDIR}${PYTHON_SITELIBDIR}/xpcom
 	@${MKDIR} ${STAGEDIR}${DATADIR}/sdk/bindings/xpcom/python
-	${LN} -fs ${PYTHON_SITELIBDIR}/xpcom \
+	${RLN} ${STAGEDIR}${PYTHON_SITELIBDIR}/xpcom \
 	    ${STAGEDIR}${DATADIR}/sdk/bindings/xpcom/python
 .endif
 

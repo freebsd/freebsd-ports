@@ -1,6 +1,6 @@
---- fortran/src/Makefile.in.orig	2016-05-10 21:24:52 UTC
+--- fortran/src/Makefile.in.orig	2017-06-15 17:14:28 UTC
 +++ fortran/src/Makefile.in
-@@ -241,7 +241,7 @@ am__v_FC_1 = 
+@@ -244,7 +244,7 @@ am__v_FC_1 = 
  FCLD = $(FC)
  FCLINK = $(LIBTOOL) $(AM_V_lt) --tag=FC $(AM_LIBTOOLFLAGS) \
  	$(LIBTOOLFLAGS) --mode=link $(FCLD) $(AM_FCFLAGS) $(FCFLAGS) \

@@ -527,7 +527,6 @@ lib/libpgcommon.a
 %%TZDATA%%%%DATADIR%%/timezone/CST6CDT
 %%TZDATA%%%%DATADIR%%/timezone/Canada/Atlantic
 %%TZDATA%%%%DATADIR%%/timezone/Canada/Central
-%%TZDATA%%%%DATADIR%%/timezone/Canada/East-Saskatchewan
 %%TZDATA%%%%DATADIR%%/timezone/Canada/Eastern
 %%TZDATA%%%%DATADIR%%/timezone/Canada/Mountain
 %%TZDATA%%%%DATADIR%%/timezone/Canada/Newfoundland

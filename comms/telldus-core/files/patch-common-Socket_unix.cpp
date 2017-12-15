@@ -9,7 +9,7 @@
  	#define SOCK_CLOEXEC 0
  #endif
  
-@@ -130,8 +130,10 @@ std::wstring Socket::read(int timeout) {
+@@ -128,8 +128,10 @@ std::wstring Socket::read(int timeout) {
  
  void Socket::stopReadWait() {
  	TelldusCore::MutexLocker locker(&d->mutex);

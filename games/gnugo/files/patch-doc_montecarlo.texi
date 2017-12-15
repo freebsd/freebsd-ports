@@ -1,0 +1,11 @@
+--- doc/montecarlo.texi.orig	2009-02-17 21:41:31 UTC
++++ doc/montecarlo.texi
+@@ -245,7 +245,7 @@ These can be combined arbitrarily but al
+ pattern to take effect. If contradictory properties are combined, the
+ pattern will never match.
+ 
+-@subsection Final Remarks
++@section Final Remarks
+ 
+ @itemize
+ @item  Move values are unsigned 32-bit integers. To avoid overflow in

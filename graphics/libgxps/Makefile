@@ -12,7 +12,7 @@ COMMENT=	GObject based library for rendering XPS documents
 
 LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libtiff.so:graphics/tiff \
-		libpng16.so:graphics/png \
+		libpng.so:graphics/png \
 		liblcms2.so:graphics/lcms2
 
 USES=		gettext gmake jpeg libtool libarchive localbase pathfix pkgconfig tar:xz

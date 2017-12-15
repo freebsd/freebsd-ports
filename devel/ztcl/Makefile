@@ -8,7 +8,7 @@ CATEGORIES=	devel tcl
 MASTER_SITES=	http://download.gna.org/ztcl/1.0/
 DISTNAME=	${PORTNAME}_${DISTVERSION}_src
 
-MAINTAINER=	dsh@vlink.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Zlib extension library for the Tcl
 
 LICENSE=	LGPL21

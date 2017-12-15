@@ -26,7 +26,7 @@ INSTALL_TARGET=	install-strip
 .if !defined(PIDGIN_SLAVE)
 # Pidgin slave ports that require the following functionality, must explicitly
 # set these macros themselves.
-USES+=		iconv python shebangfix
+USES+=		iconv python:2.7 shebangfix
 USE_LDCONFIG=	yes
 SHEBANG_FILES=	libpurple/purple-remote \
 		libpurple/purple-url-handler
@@ -41,13 +41,15 @@ PRPL_MODULES=
 
 CPE_VENDOR=	pidgin
 
-OPTIONS_DEFINE=	BONJOUR DBUS GNUTLS NSS SASL GSTREAMER VV IDN PERL TCLTK
+OPTIONS_DEFINE=	DBUS GNUTLS NSS SASL GSTREAMER VV IDN PERL TCLTK
 OPTIONS_GROUP=		PROTOCOLS
-OPTIONS_GROUP_PROTOCOLS=GG SAMETIME SILC IRC JABBER \
+OPTIONS_RADIO=	TLS
+OPTIONS_RADIO_TLS=	NSS GNUTLS
+OPTIONS_GROUP_PROTOCOLS=BONJOUR GG SAMETIME SILC IRC JABBER \
 			NOVELL OSCAR QQ SIMPLE ZEPHYR
 OPTIONS_DEFAULT=	BONJOUR DBUS NSS GSTREAMER VV IDN GG IRC JABBER \
 			NOVELL OSCAR QQ SIMPLE ZEPHYR
-BONJOUR_DESC=	mDNS support
+BONJOUR_DESC=	mDNS support and Bonjour protocol
 GNUTLS_DESC=	Use GNUTLS for encryption support
 NSS_DESC=	Use Mozilla NSS for encryption support
 SASL_DESC=	Cyrus SASL support (for jabberd)
@@ -208,7 +210,7 @@ CONFIGURE_ARGS+=	--disable-gtkspell
 .if ${PORT_OPTIONS:MDBUS}
 LIB_DEPENDS+=		libdbus-glib-1.so:devel/dbus-glib
 .if !defined(PIDGIN_SLAVE)
-RUN_DEPENDS+=		${PYTHON_SITELIBDIR}/dbus/__init__.py:devel/py-dbus
+RUN_DEPENDS+=		${PYTHON_PKGNAMEPREFIX}dbus>=0:devel/py-dbus@${PY_FLAVOR}
 .endif
 CONFIGURE_ARGS+=	--enable-dbus
 PLIST_SUB+=		DBUS=""

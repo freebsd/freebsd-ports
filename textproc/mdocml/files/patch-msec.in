@@ -1,6 +1,6 @@
 --- msec.in.orig	2014-12-13 14:06:34 UTC
 +++ msec.in
-@@ -22,16 +22,16 @@
+@@ -22,13 +22,13 @@
   * Be sure to escape strings.
   */
  
@@ -23,6 +23,3 @@
 +LINE("7",		"FreeBSD Miscellaneous Information Manual")
 +LINE("8",		"FreeBSD System Manager\'s Manual")
 +LINE("9",		"FreeBSD Kernel Developer\'s Manual")
- LINE("X11",		"X11 Developer\'s Manual")
- LINE("X11R6",		"X11 Developer\'s Manual")
- LINE("unass",		"Unassociated")

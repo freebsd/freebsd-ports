@@ -2,6 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	arm
+DEPRECATED=	arm has been replaced by security/nyx
 DISTVERSION=	1.4.5.0
 PORTREVISION=	1
 CATEGORIES=	security net python
@@ -15,7 +16,7 @@ COMMENT=	Terminal status monitor for Tor
 LICENSE=	GPLv3
 
 USE_PYTHON=	distutils
-USES=		python shebangfix tar:bzip2
+USES=		python:2.7 shebangfix tar:bzip2
 SHEBANG_FILES=	src/resources/torrcOverride/override.py
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

@@ -13,7 +13,7 @@ COMMENT=	Python password hashing framework supporting over 30 schemes
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>=1.1:devel/py-nose
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>=1.1:devel/py-nose@${FLAVOR}
 
 # Python 2.6,3.3-3.6
 USES=		python

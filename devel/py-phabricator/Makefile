@@ -12,8 +12,8 @@ COMMENT=	Phabricator API Bindings
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>0:devel/py-nose \
-		${PYTHON_PKGNAMEPREFIX}mock>0:devel/py-mock
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>0:devel/py-nose@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}mock>0:devel/py-mock@${FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist concurrent distutils

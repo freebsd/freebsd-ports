@@ -1,4 +1,3 @@
-include/mdds-%%API_VERSION%%/mdds/default_deleter.hpp
 include/mdds-%%API_VERSION%%/mdds/flat_segment_tree.hpp
 include/mdds-%%API_VERSION%%/mdds/flat_segment_tree_def.inl
 include/mdds-%%API_VERSION%%/mdds/flat_segment_tree_itr.hpp

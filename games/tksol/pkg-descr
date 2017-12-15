@@ -1,9 +1,0 @@
-WHAT IS TKSOL
--------------
-TkSol is a version of the card game solitaire written with the Tcl/Tk
-language.  A color monitor is highly recommended, especially if you want
-to get addicted to the game, as trying to see which card is black and
-which is red under monochrome can be rather eye soring :(.  TkSol comes
-with a set of cardfront [faceup card] bitmaps created by Joseph L.
-Traub (see cardbitmaps/copyright.h).  An initial set of cardback
-[facedown card] bitmaps was hacked up by James da Silva

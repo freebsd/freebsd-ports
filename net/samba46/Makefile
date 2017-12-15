@@ -13,13 +13,15 @@ COMMENT?=			Free SMB/CIFS and AD/DC server and client for Unix
 
 LICENSE=			GPLv3
 
-CONFLICTS?=			*samba3[2-6]-3.* samba4-4.0.* samba4[1-57-9]-4.* p5-Parse-Pidl-4.*
+IGNORE_NONTHREAD_PYTHON=	needs port lang/python${PYTHON_SUFFIX} to be build with THREADS support
+
+CONFLICTS_INSTALL?=		samba4-4.0.* samba4[1-57-9]-4.* p5-Parse-Pidl-4.*
 
 #EXTRA_PATCHES=		${PATCHDIR}/extra-patch-security:-p1
 
 SAMBA4_BASENAME=		samba
 SAMBA4_PORTNAME=		${SAMBA4_BASENAME}4
-SAMBA4_VERSION=			4.6.8
+SAMBA4_VERSION=			4.6.11
 SAMBA4_DISTNAME=		${SAMBA4_BASENAME}-${SAMBA4_VERSION:S|.p|pre|:S|.r|rc|:S|.t|tp|:S|.a|alpha|}
 
 WRKSRC?=			${WRKDIR}/${DISTNAME}
@@ -61,7 +63,7 @@ CONFIGURE_ARGS+=		--mandir="${MANPREFIX}/man" \
 # Flags
 CONFIGURE_ENV+=			PTHREAD_LDFLAGS="-lpthread"
 
-USES=				cpe compiler waf pkgconfig perl5 python:2 \
+USES=				cpe compiler waf pkgconfig perl5 python:2.7 \
 				readline iconv shebangfix
 USE_PERL5=			build
 USE_LDCONFIG=			${SAMBA4_LIBDIR}
@@ -73,15 +75,13 @@ PKGCONFIGDIR_REL?=		${PKGCONFIGDIR:S,^${PREFIX}/,,}
 PLIST_SUB+=			PKGCONFIGDIR=${PKGCONFIGDIR_REL}
 ##############################################################################
 # Options
-OPTIONS_DEFINE=			ADS AD_DC CUPS DEBUG \
-				DOCS FAM LDAP \
-				QUOTAS SYSLOG UTMP
-
-OPTIONS_DEFAULT:=		ADS AD_DC DEBUG \
-				DOCS FAM LDAP \
-				QUOTAS SYSLOG UTMP
-
 OPTIONS_SUB=			yes
+
+OPTIONS_DEFINE=			ADS AD_DC CUPS \
+				DOCS FAM LDAP \
+				QUOTAS SYSLOG UTMP
+
+OPTIONS_DEFAULT:=		${OPTIONS_DEFINE}
 
 AD_DC_DESC=			Active Directory Domain Controller support
 ADS_DESC=			Active Directory client support(implies LDAP)
@@ -92,7 +92,7 @@ PAM_SMBPASS_DESC=		PAM authentication via passdb backends
 QUOTAS_DESC=			Disk quota support
 UTMP_DESC=			UTMP accounting support
 ##############################################################################
-OPTIONS_DEFINE+=		DEVELOPER MANPAGES EXP_MODULES NTVFS
+OPTIONS_DEFINE+=		CUPS DEBUG DEVELOPER MANPAGES EXP_MODULES NTVFS
 
 DEVELOPER_DESC=			With development support(implies NTVFS)
 MANPAGES_DESC=			Build manpages from DOCBOOK templates
@@ -121,22 +121,21 @@ RUN_DEPENDS+=			libarchive>=3.1.2:archivers/libarchive
 # External Samba dependencies
 # Needed for IDL compiler
 BUILD_DEPENDS+=			p5-Parse-Yapp>=0:devel/p5-Parse-Yapp
-PLIST_SUB+=			PIDL=""
 # External Python modules
-BUILD_DEPENDS+=			${PYTHON_PKGNAMEPREFIX}dnspython>=1.9.4:dns/py-dnspython
-RUN_DEPENDS+=			${PYTHON_PKGNAMEPREFIX}dnspython>=1.9.4:dns/py-dnspython
+BUILD_DEPENDS+=			${PYTHON_PKGNAMEPREFIX}dnspython>=1.9.4:dns/py-dnspython@${PY_FLAVOR}
+RUN_DEPENDS+=			${PYTHON_PKGNAMEPREFIX}dnspython>=1.9.4:dns/py-dnspython@${PY_FLAVOR}
 PLIST_SUB+=			PY_DNSPYTHON="@comment "
 #
-BUILD_DEPENDS+=			${PYTHON_PKGNAMEPREFIX}iso8601>=0.1.11:devel/py-iso8601
-RUN_DEPENDS+=			${PYTHON_PKGNAMEPREFIX}iso8601>=0.1.11:devel/py-iso8601
+BUILD_DEPENDS+=			${PYTHON_PKGNAMEPREFIX}iso8601>=0.1.11:devel/py-iso8601@${PY_FLAVOR}
+RUN_DEPENDS+=			${PYTHON_PKGNAMEPREFIX}iso8601>=0.1.11:devel/py-iso8601@${PY_FLAVOR}
 PLIST_SUB+=			PY_ISO8601="@comment "
 # talloc
 BUILD_DEPENDS+=			talloc>=2.1.9:devel/talloc
 RUN_DEPENDS+=			talloc>=2.1.9:devel/talloc
 SAMBA4_BUNDLED_LIBS+=		!talloc
 # tevent
-BUILD_DEPENDS+=			tevent>=0.9.31:devel/tevent
-RUN_DEPENDS+=			tevent>=0.9.31:devel/tevent
+BUILD_DEPENDS+=			tevent>=0.9.34:devel/tevent
+RUN_DEPENDS+=			tevent>=0.9.34:devel/tevent
 SAMBA4_BUNDLED_LIBS+=		!tevent
 # tdb
 BUILD_DEPENDS+=			tdb>=1.3.12:databases/tdb
@@ -175,7 +174,6 @@ GDB_CMD?=			${LOCALBASE}/bin/gdb
 DEVELOPER_IMPLIES=		NTVFS
 DEVELOPER_BUILD_DEPENDS=	${GDB_CMD}:devel/gdb
 DEVELOPER_RUN_DEPENDS=		${GDB_CMD}:devel/gdb
-#DEVELOPER_CONFIGURE_ENABLE=	developer selftest
 DEVELOPER_CONFIGURE_ON=		--enable-developer --enable-selftest --abi-check-disable
 DEVELOPER_VARS_OFF=		GDB_CMD=true
 # XXX: Mostly used in conjuction with DEVELOPER option, don't enable it if you don't know what you are doing
@@ -208,8 +206,9 @@ AD_DC_CONFIGURE_OFF=		--without-ad-dc
 ADS_IMPLIES=			LDAP
 ADS_CONFIGURE_WITH=		ads dnsupdate
 
-LDAP_USE=			OPENLDAP=yes
 LDAP_CONFIGURE_WITH=		ldap
+LDAP_USE=			OPENLDAP=yes
+LDAP_VARS=			SAMBA4_MODULES+=idmap_ldap
 
 MANPAGES_BUILD_DEPENDS=		${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:textproc/docbook-xsl \
 				xsltproc:textproc/libxslt
@@ -226,19 +225,21 @@ MANPAGES_CONFIGURE_ENV_OFF=	XSLTPROC="true"
 
 .if ${PORT_OPTIONS:MEXP_MODULES}
 .	if !defined(WANT_EXP_MODULES) || empty(WANT_EXP_MODULES)
-WANT_EXP_MODULES=		vfs_cacheprime gpext_scripts gpext_security gpext_registry
+WANT_EXP_MODULES=		vfs_cacheprime
 .	endif
 .endif
 
-SAMBA4_MODULES+=		idmap_autorid idmap_rid idmap_hash idmap_tdb2 idmap_script
+SAMBA4_MODULES+=		idmap_nss idmap_autorid idmap_rid idmap_hash idmap_tdb idmap_tdb2 idmap_script nss-info_hash
 # List of extra modules taken from RHEL build
 # https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=197320
 .if ${PORT_OPTIONS:MADS}
-SAMBA4_MODULES+=		idmap_ad idmap_rfc2307 nss-info_rfc2307 nss-info_sfu nss-info_sfu20
+SAMBA4_MODULES+=		idmap_ad idmap_rfc2307 nss-info_template nss-info_rfc2307 nss-info_sfu nss-info_sfu20
 .endif
 
 .if ${PORT_OPTIONS:MDEVELOPER}
-SAMBA4_MODULES+=		auth_skel perfcount_test pdb_test vfs_shadow_copy_test vfs_skel_opaque vfs_skel_transparent vfs_fake_acls
+SAMBA4_MODULES+=		auth_skel pdb_test gpext_security gpext_registry gpext_scripts perfcount_test \
+				vfs_fake_dfq vfs_skel_opaque vfs_skel_transparent vfs_shadow_copy_test vfs_fake_acls \
+				vfs_nfs4acl_xattr
 .endif
 
 .if defined(WANT_EXP_MODULES) && !empty(WANT_EXP_MODULES)
@@ -250,11 +251,12 @@ CONFIGURE_ARGS+=		--bundled-libraries="${SAMBA4_BUNDLED_LIBS:Q:C|(\\\\ )+|,|g:S|
 .endif
 
 .if defined(SAMBA4_MODULES) && !empty(SAMBA4_MODULES)
-CONFIGURE_ARGS+=		--with-shared-modules="${SAMBA4_MODULES:Q:C|(\\\\ )+|,|g:S|\\||g}"
+CONFIGURE_ARGS+=		--with-shared-modules="${SAMBA4_MODULES:C|-|_|:Q:C|(\\\\ )+|,|g:S|\\||g}"
 .endif
-
+# XXX: Hack for nss-info_* -> nss_info/* modules
+# Add selected modules to the plist
 .for module in ${SAMBA4_MODULES}
-PLIST_FILES+=			lib/shared-modules/${module:C,_,/,:C,-,_,}.so
+PLIST_FILES+=			lib/shared-modules/${module:C|_|/|:C|-|_|}.so
 .endfor
 # !SAMBA4_SUBPORT
 .endif
@@ -307,7 +309,7 @@ SAMBA_MAN1+=			dbwrap_tool.1 findsmb.1 gentest.1 locktest.1 \
 SAMBA_MAN5+=			lmhosts.5 smbgetrc.5 smbpasswd.5 pam_winbind.conf.5 \
 				smb.conf.5
 
-SAMBA_MAN7+=			samba.7 winbind_krb5_locator.7
+SAMBA_MAN7+=			libsmbclient.7 samba.7 winbind_krb5_locator.7
 
 SAMBA_MAN8+=			cifsdd.8 eventlogadm.8 idmap_ad.8 idmap_autorid.8 idmap_hash.8 \
 				idmap_ldap.8 idmap_nss.8 idmap_rfc2307.8 idmap_rid.8 idmap_script.8 \
@@ -328,8 +330,6 @@ SAMBA_MAN8+=			cifsdd.8 eventlogadm.8 idmap_ad.8 idmap_autorid.8 idmap_hash.8 \
 				vfs_linux_xfs_sgid.8 vfs_btrfs.8 vfs_shell_snap.8 vfs_unityed_media.8
 
 PORTDOCS=			README.FreeBSD
-
-IGNORE_NONTHREAD_PYTHON=	needs port lang/python${PYTHON_SUFFIX} to be build with THREADS support
 
 post-extract:
 				@${RM} -r ${WRKSRC}/pidl/lib/Parse/Yapp
@@ -388,7 +388,7 @@ post-install:
 post-install-DOCS-on:
 				${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for doc in			${PORTDOCS}
-					${INSTALL_DATA} ${WRKDIR}/${doc} ${STAGEDIR}${DOCSDIR}
+				${INSTALL_DATA} ${WRKDIR}/${doc} ${STAGEDIR}${DOCSDIR}
 .endfor
 
 .if ${PORT_OPTIONS:MDEVELOPER}

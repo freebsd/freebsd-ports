@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pathutil
-PORTVERSION=	0.14.0
+PORTVERSION=	0.16.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 

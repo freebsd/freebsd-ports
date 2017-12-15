@@ -31,7 +31,7 @@ SHARED_USES=		libtool:build
 SHARED_USE=		LDCONFIG=yes
 SHARED_PLIST_FILES=	lib/libtommath.so \
 			lib/libtommath.so.${PORTVERSION:R:R} \
-		       	lib/libtommath.so.${PORTVERSION} \
+			lib/libtommath.so.${PORTVERSION} \
 			libdata/pkgconfig/libtommath.pc
 SHARED_VARS=		MAKEFILE=makefile.shared
 SHARED_VARS_OFF=	MAKEFILE=makefile

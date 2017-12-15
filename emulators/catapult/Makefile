@@ -18,7 +18,7 @@ RUN_DEPENDS=	openmsx:emulators/openmsx
 
 OPTIONS_DEFINE=	DEBUG DOCS
 
-USES=		gmake pkgconfig python:build
+USES=		gmake pkgconfig python:2.7,build
 USE_GCC=	yes
 USE_CXXSTD=	gnu++0x
 USE_GNOME=	gtk20 libxml2
@@ -38,6 +38,7 @@ MAKE_JOBS_UNSAFE=	yes
 
 BROKEN_aarch64=	fails to link: fails to detect libxml2 even though it is installed
 BROKEN_armv6=	fails to link: fails to detect libxml2 even though it is installed
+BROKEN_armv7=	fails to link: fails to detect libxml2 even though it is installed
 
 .include <bsd.port.options.mk>
 

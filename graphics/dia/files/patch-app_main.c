@@ -1,12 +1,19 @@
---- app/main.c.orig	Sun Mar 25 19:05:16 2001
-+++ app/main.c	Thu May 17 14:09:02 2001
-@@ -19,2 +19,4 @@
+--- app/main.c.orig	2014-08-24 15:44:07 UTC
++++ app/main.c
+@@ -17,12 +17,16 @@
+  */
+ #include <config.h>
  
 +#include <ieeefp.h>
 +
- #include "geometry.h"
-@@ -35,2 +37,4 @@
+ #include "app_procs.h"
+ 
+ #include "interface.h"
+ 
+ int main(int argc, char *argv[])
  {
 +  fpsetmask(0);
 +
    app_init(argc, argv);
+ 
+   if (!app_is_interactive())

@@ -17,6 +17,7 @@ LICENSE=	LGPL21
 
 BROKEN_aarch64=		does not link: undefined reference to sbrk
 BROKEN_armv6=		does not build: fails self-tests
+BROKEN_armv7=		does not build: fails self-tests
 BROKEN_mips=		does not build
 BROKEN_mips64=		does not build
 BROKEN_powerpc64=	does not build: error: r4rstest.scm: segment violation 11

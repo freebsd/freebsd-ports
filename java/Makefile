@@ -7,7 +7,6 @@
     SUBDIR += avis
     SUBDIR += berkeley-db
     SUBDIR += bluej
-    SUBDIR += bootstrap-openjdk
     SUBDIR += bootstrap-openjdk6
     SUBDIR += bootstrap-openjdk8
     SUBDIR += bouncycastle
@@ -57,6 +56,7 @@
     SUBDIR += jakarta-regexp
     SUBDIR += jamvm
     SUBDIR += jasmin
+    SUBDIR += jattach
     SUBDIR += java-checkstyle
     SUBDIR += java-cup
     SUBDIR += java-getopt
@@ -125,6 +125,7 @@
     SUBDIR += veditor
     SUBDIR += visualvm
     SUBDIR += wildfly10
+    SUBDIR += wildfly11
     SUBDIR += wildfly90
     SUBDIR += xdoclet
 

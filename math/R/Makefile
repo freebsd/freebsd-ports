@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=		R
-DISTVERSION=		3.4.2
+DISTVERSION=		3.4.3
+PORTREVISION=		1
 CATEGORIES=		math lang
 MASTER_SITES=		CRAN/src/base/R-${PORTVERSION:C|\..*||}
 
@@ -11,14 +12,22 @@ COMMENT=		Language for statistical computing and graphics
 
 LICENSE=		GPLv2
 
-ONLY_FOR_ARCHS=		aarch64 amd64 i386
+BROKEN_FreeBSD_10_armv6=	Fails to build
+ONLY_FOR_ARCHS=		aarch64 amd64 armv6 armv7 i386
 
 LIB_DEPENDS=		libcurl.so:ftp/curl \
 			libpcre.so:devel/pcre
 BUILD_DEPENDS=		texi2any:print/texinfo
-RUN_DEPENDS=		gmake:devel/gmake
+RUN_DEPENDS=		gmake:devel/gmake # R packages may require GNU make
+
+# possible TODO
+# - Use --with-recommended-packages=no by default
+# - Add an option for recommended packages
+# - Create ports for each of the recommended packages
+# - Create a meta-port for the recommended packages
 
 CONFIGURE_ARGS=		--disable-java \
+			--enable-R-shlib \
 			--with-readline \
 			rdocdir=${DOCSDIR}
 GNU_CONFIGURE=		yes
@@ -28,30 +37,28 @@ USES=			gmake iconv libtool localbase \
 USE_PERL5=		build
 USE_LDCONFIG=		${PREFIX}/lib/R/lib
 
-OPTIONS_DEFINE=		ICU INFO LDOUBLE LETTER LIBR MEMPROF NLS OPENMP RPROF X11
+OPTIONS_DEFINE=		FLANG ICU INFO LDOUBLE LETTER MEMPROF NLS OPENMP RPROF \
+			X11
+OPTIONS_EXCLUDE_aarch64=	FLANG OPENMP
+OPTIONS_EXCLUDE_armv6=	FLANG OPENMP
+OPTIONS_EXCLUDE_armv7=	FLANG OPENMP
+OPTIONS_EXCLUDE_i386=	FLANG
 OPTIONS_GROUP=		NEEDX11
 OPTIONS_GROUP_NEEDX11=	GHOSTSCRIPT JPEG CAIROPANGO PNG TCLTK TEXDOCS TIFF
-OPTIONS_SINGLE=		BLAS FORTRAN
+OPTIONS_SINGLE=		BLAS
 OPTIONS_SINGLE_BLAS=	ATLAS OPENBLAS NETLIB RBLAS
-OPTIONS_SINGLE_FORTRAN=	${OPTIONS_SINGLE_FORTRAN_${MACHINE_ARCH}}
-OPTIONS_SINGLE_FORTRAN_i386=	GFORTRAN
-OPTIONS_SINGLE_FORTRAN_aarch64=	GFORTRAN
-OPTIONS_SINGLE_FORTRAN_amd64=	GFORTRAN FLANG
 
 OPTIONS_SUB=		YES
 
 ATLAS_DESC=		ATLAS BLAS implementation
-FLANG_DESC=		Build Fortran source with flang
+FLANG_DESC=		Use flang instead of the default Fortran compiler
 GHOSTSCRIPT_DESC=	Graphics device for bitmap files via Ghostscript
 CAIROPANGO_DESC=	Cairo graphics device and Pango multi-language text
-GFORTRAN_DESC=		Build Fortran source with gfortran
 INFO_DESC=		GNU info manuals
 JPEG_DESC=		JPEG graphics device
 LDOUBLE_DESC=		Long double data type
 LETTER_DESC=		US letter paper
-LIBR_DESC=		Shared R library
 MEMPROF_DESC=		Memory profiling via Rprofmem() and tracemem()
-NEEDGCC_DESC=		Require GCC
 NEEDX11_DESC=		Require X11
 NETLIB_DESC=		Netlib BLAS implementation
 OPENBLAS_DESC=		OpenBLAS BLAS implementation
@@ -61,32 +68,20 @@ RPROF_DESC=		R profiling via Rprof()
 TEXDOCS_DESC=		Build/Install TeX-dependent documentation files
 X11_DESC=		X11 graphics device
 
-OPTIONS_DEFAULT=	CAIROPANGO GHOSTSCRIPT ICU INFO JPEG LDOUBLE LIBR PNG \
-			RBLAS RPROF TCLTK TIFF X11
-OPTIONS_DEFAULT_aarch64=GFORTRAN
-OPTIONS_DEFAULT_amd64=	FLANG
-OPTIONS_DEFAULT_i386=	GFORTRAN
+OPTIONS_DEFAULT=	CAIROPANGO GHOSTSCRIPT ICU INFO JPEG LDOUBLE OPENMP \
+			PNG RBLAS RPROF TIFF X11
 
 ATLAS_USES=		blaslapack:atlas
 ATLAS_CONFIGURE_ON=	--disable-BLAS-shlib
 ATLAS_VARS=		MANUAL_PACKAGE_BUILD=\
 "Choose a BLAS option other than ATLAS for package building."
 CAIROPANGO_IMPLIES=	X11
-CAIROPANGO_CONFIGURE_WITH=cairo
+CAIROPANGO_CONFIGURE_WITH=	cairo
 CAIROPANGO_USES=	gettext jpeg pkgconfig
 CAIROPANGO_USE=		GNOME=pango,cairo
-FLANG_USE=		binutils
-#FLANG_USES=		fortran:flang
+FLANG_USES=		fortran:flang
+FLANG_USES_OFF=		fortran
 FLANG_PREVENTS=		ATLAS OPENBLAS NETLIB
-FLANG_BUILD_DEPENDS=	flang:devel/flang
-FLANG_RUN_DEPENDS=	flang:devel/flang
-FLANG_VARS=		F77=flang FC=flang
-FLANG_LDFLAGS=		-L${LOCALBASE}/flang/lib -lflang -lexecinfo
-FLANG_CONFIGURE_ENV=	F77="${F77}" FC="${FC}" FFLAGS="${FFLAGS}"
-FLANG_MAKE_ENV=		F77="${F77}" FC="${FC}" FFLAGS="${FFLAGS}"
-#GFORTRAN_USE=		gcc=yes
-GFORTRAN_USES=		fortran
-GFORTRAN_RUN_DEPENDS=	wget:ftp/wget
 GHOSTSCRIPT_IMPLIES=	X11
 GHOSTSCRIPT_USES=	ghostscript
 ICU_CONFIGURE_WITH=	ICU
@@ -97,19 +92,16 @@ JPEG_IMPLIES=		X11
 JPEG_CONFIGURE_WITH=	jpeglib
 JPEG_CONFIGURE_ENV=	r_cv_header_jpeglib_h=yes
 JPEG_USES=		jpeg
-LDOUBLE_CONFIGURE_ENABLE=long-double
+LDOUBLE_CONFIGURE_ENABLE=	long-double
 LETTER_CONFIGURE_ENV=	R_PAPERSIZE=letter
-LIBR_CONFIGURE_ENABLE=	R-shlib
-LIBR_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-src_main_Makefile.in
-MEMPROF_CONFIGURE_ENABLE=memory-profiling
+MEMPROF_CONFIGURE_ENABLE=	memory-profiling
 NETLIB_USES=		blaslapack:netlib
 NETLIB_CONFIGURE_ON=	--disable-BLAS-shlib
 NLS_CONFIGURE_OFF=	--disable-nls
 NLS_USES=		gettext
 OPENBLAS_USES=		blaslapack:openblas
 OPENBLAS_CONFIGURE_ON=	--disable-BLAS-shlib
-OPENMP_CONFIGURE_ENABLE=openmp
-OPENMP_LIB_DEPENDS=	libomp.so:devel/openmp
+OPENMP_CONFIGURE_ENABLE=	openmp
 PNG_IMPLIES=		X11
 PNG_LIB_DEPENDS=	libpng.so:graphics/png
 PNG_CONFIGURE_WITH=	libpng
@@ -138,6 +130,15 @@ X11_USE=		xorg=ice,sm,x11,xext,xmu,xscrnsaver,xt
 LIBVER=		${PORTVERSION:R}
 PLIST_SUB=	LIBVER=${LIBVER}
 
+.include <bsd.port.options.mk>
+.include "compiler.mk"
+
+# LLVM, which gets pulled in with FLANG, provides libomp.  So, only depend on
+# devel/openmp, when GFORTRAN and OPENMP are on.
+.if ! ${PORT_OPTIONS:MFLANG} && ${PORT_OPTIONS:MOPENMP}
+LIB_DEPENDS+=	libomp.so:devel/openmp
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e "s|/usr/local|${LOCALBASE}|g" ${WRKSRC}/configure
 	@${REINPLACE_CMD} "s|%%LIBVER%%|${LIBVER}|" \
@@ -145,6 +146,12 @@ post-patch:
 		${WRKSRC}/src/extra/blas/Makefile.in \
 		${WRKSRC}/src/modules/lapack/Makefile.in
 
-.include <bsd.port.pre.mk>
-.include "compiler.mk"
-.include <bsd.port.post.mk>
+post-install-RBLAS-on:
+	@${REINPLACE_CMD} -e "s| -lR| -lR -lRblas|" \
+		${STAGEDIR}${PREFIX}/libdata/pkgconfig/libR.pc
+
+post-install-RBLAS-off:
+	@${REINPLACE_CMD} -e "s| -lR| -lR ${BLASLIB}|" \
+		${STAGEDIR}${PREFIX}/libdata/pkgconfig/libR.pc
+
+.include <bsd.port.mk>

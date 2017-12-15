@@ -2,6 +2,7 @@
 
 PORTNAME=	fastdfs
 PORTVERSION=	5.0.11
+PORTREVISION=	1
 CATEGORIES=	ftp
 
 MAINTAINER=	daniel@blodan.se
@@ -23,6 +24,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	happyfish100
 GH_TAGNAME=	1e50b4f
 
+SUB_FILES=	fdfs_status
+
 MAKE_ENV+=	DESTDIR=${STAGEDIR}
 
 do-build:
@@ -33,5 +36,6 @@ do-install:
 	@${MKDIR} ${STAGEDIR}/var/db/fastdfs
 	@${MKDIR} ${STAGEDIR}/var/db/fastdfs/tracker
 	@${MKDIR} ${STAGEDIR}/var/db/fastdfs/storage
+	${INSTALL_SCRIPT} ${WRKDIR}/fdfs_status ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>

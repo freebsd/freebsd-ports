@@ -1,0 +1,14 @@
+--- abcde.orig	2017-01-18 13:56:14 UTC
++++ abcde
+@@ -2012,7 +2012,10 @@ do_discid ()
+ 
+ 				LEADOUT="$(echo "$CDPARANOIAOUTPUT" | grep -Eo '^TOTAL[[:space:]]+([[:digit:]]+)' | get_last)"
+ 				OFFSETS="$(echo "$CDPARANOIAOUTPUT" | sed -n -e's/^ .* \([0-9]\+\) \[.*/\1/p')"
+-				makeids
++				case "$CDDBMETHOD" in
++					cddb) TRACKINFO=$($CDDISCID "$CDROM") ;;
++					musicbrainz) TRACKINFO=$($MUSICBRAINZ --command id --device "$CDROM") ;;
++				esac
+ 				;;
+ 			*)
+ 				case "$CDDBMETHOD" in

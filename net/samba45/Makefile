@@ -13,13 +13,13 @@ COMMENT?=			Free SMB/CIFS and AD/DC server and client for Unix
 
 LICENSE=			GPLv3
 
-CONFLICTS?=			*samba3[2-6]-3.* samba4-4.0.* samba4[1-46-9]-4.* p5-Parse-Pidl-4.*
+CONFLICTS?=			samba4-4.0.* samba4[1-46-9]-4.* p5-Parse-Pidl-4.*
 
 #EXTRA_PATCHES=		${PATCHDIR}/extra-patch-security:-p1
 
 SAMBA4_BASENAME=		samba
 SAMBA4_PORTNAME=		${SAMBA4_BASENAME}4
-SAMBA4_VERSION=			4.5.14
+SAMBA4_VERSION=			4.5.15
 SAMBA4_DISTNAME=		${SAMBA4_BASENAME}-${SAMBA4_VERSION:S|.p|pre|:S|.r|rc|:S|.t|tp|:S|.a|alpha|}
 
 WRKSRC?=			${WRKDIR}/${DISTNAME}
@@ -123,12 +123,12 @@ RUN_DEPENDS+=			libarchive>=3.1.2:archivers/libarchive
 BUILD_DEPENDS+=			p5-Parse-Yapp>=0:devel/p5-Parse-Yapp
 PLIST_SUB+=			PIDL=""
 # External Python modules
-BUILD_DEPENDS+=			${PYTHON_PKGNAMEPREFIX}dnspython>=1.9.4:dns/py-dnspython
-RUN_DEPENDS+=			${PYTHON_PKGNAMEPREFIX}dnspython>=1.9.4:dns/py-dnspython
+BUILD_DEPENDS+=			${PYTHON_PKGNAMEPREFIX}dnspython>=1.9.4:dns/py-dnspython@${PY_FLAVOR}
+RUN_DEPENDS+=			${PYTHON_PKGNAMEPREFIX}dnspython>=1.9.4:dns/py-dnspython@${PY_FLAVOR}
 PLIST_SUB+=			PY_DNSPYTHON="@comment "
 #
-BUILD_DEPENDS+=			${PYTHON_PKGNAMEPREFIX}iso8601>=0.1.11:devel/py-iso8601
-RUN_DEPENDS+=			${PYTHON_PKGNAMEPREFIX}iso8601>=0.1.11:devel/py-iso8601
+BUILD_DEPENDS+=			${PYTHON_PKGNAMEPREFIX}iso8601>=0.1.11:devel/py-iso8601@${PY_FLAVOR}
+RUN_DEPENDS+=			${PYTHON_PKGNAMEPREFIX}iso8601>=0.1.11:devel/py-iso8601@${PY_FLAVOR}
 PLIST_SUB+=			PY_ISO8601="@comment "
 # talloc
 BUILD_DEPENDS+=			talloc>=2.1.8:devel/talloc

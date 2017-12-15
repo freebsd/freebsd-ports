@@ -1,10 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	open-motif
-PORTVERSION=	2.3.7
+PORTVERSION=	2.3.8
 CATEGORIES=	x11-toolkits
 # MASTER_SITES=	SF/${PORTNAME}/Motif%202.3.4%20Source%20Code/
-MASTER_SITES=	SF/motif/Motif%202.3.7%20Source%20Code/
+MASTER_SITES=	SF/motif/Motif%20${PORTVERSION}%20Source%20Code/
 DISTNAME=	motif-${PORTVERSION}
 
 MAINTAINER=	cy@FreeBSD.org
@@ -21,7 +21,7 @@ USE_XORG=	x11 xaw xbitmaps xext xft xt xmu xrender sm ice
 LIB_DEPENDS=	libXp.so:x11/libXp \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
-		libpng16.so:graphics/png
+		libpng.so:graphics/png
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CPPFLAGS+=	-DCSRG_BASED -DXUSE_MTSAFE_API -DXNO_MTSAFE_PWDAPI -I${PREFIX}/include

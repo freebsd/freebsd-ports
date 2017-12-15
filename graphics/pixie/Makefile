@@ -3,7 +3,7 @@
 
 PORTNAME=	pixie
 PORTVERSION=	2.2.6
-PORTREVISION=	15
+PORTREVISION=	16
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/Pixie%20${PORTVERSION}
 DISTNAME=	Pixie-src-${PORTVERSION}
@@ -20,6 +20,7 @@ LIB_DEPENDS=	libIlmImf.so:graphics/OpenEXR \
 
 BROKEN_aarch64=		fails to compile: use of undeclared identifier CRenderer
 BROKEN_armv6=		fails to compile: use of undeclared identifier CRenderer
+BROKEN_armv7=		fails to compile: use of undeclared identifier CRenderer
 BROKEN_sparc64=		fails to compile
 
 USE_GL=		glu

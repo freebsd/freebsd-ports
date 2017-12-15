@@ -42,6 +42,8 @@ USE_LDCONFIG=	yes
 VEM=		${PORTVERSION:R:R}
 LIBS=		cmumps dmumps mumps_common pord smumps zmumps
 
+CONFLICTS=	mumps-5*
+
 .if defined(WITH_OPTIMIZED_FLAGS)
 FFLAGS+=	-O3 -ffast-math
 .endif
@@ -80,9 +82,9 @@ LIB_DEPENDS+=	liblapack.so:math/lapack
 RUN_DEPENDS+=	${LOCALBASE}/bin/mpirun:net/mpich2 \
 		${LOCALBASE}/lib/libblacs.a:math/blacs \
 		${LOCALBASE}/lib/libscalapack.a:math/scalapack
-CONFLICTS=	mumps-4*
+CONFLICTS+=	mumps-4*
 .else
-CONFLICTS=	mumps-mpich-4*
+CONFLICTS+=	mumps-mpich-4*
 .endif
 
 .ifndef WITH_MPI

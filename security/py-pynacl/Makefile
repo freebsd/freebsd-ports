@@ -2,36 +2,36 @@
 # $FreeBSD$
 
 PORTNAME=	pynacl
-PORTVERSION=	1.1.2
-PORTREVISION=	1
+DISTVERSION=	1.2.0
 CATEGORIES=	security python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	PyNaCl-${PORTVERSION}
 
-MAINTAINER=	yuri@rawbw.com
+MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	PyNaCl is a Python binding to the Networking and Cryptography library
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cffi>0:devel/py-cffi \
-		${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six
-BUILD_DEPENDS=	${RUN_DEPENDS}
-BUNDLED_NACL_LIB_DEPENDS_OFF=	libsodium.so:security/libsodium
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cffi>=1.4.1:devel/py-cffi@${FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cffi>=1.4.1:devel/py-cffi@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six@${FLAVOR}
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=3.2.1:devel/py-pytest@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}hypothesis>=1.11.4:devel/py-hypothesis@${FLAVOR}
 
 USES=		python localbase
 USE_PYTHON=	autoplist distutils
-BUNDLED_NACL_MAKE_ENV_OFF+=	SODIUM_INSTALL=system
 
 OPTIONS_DEFINE=	BUNDLED_NACL
 BUNDLED_NACL_DESC=	Use bundled NaCl version
+BUNDLED_NACL_LIB_DEPENDS_OFF=	libsodium.so:security/libsodium
+BUNDLED_NACL_MAKE_ENV_OFF=	SODIUM_INSTALL=system
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/nacl/_sodium.so
 
 do-test:
-	@cd ${WRKSRC} && ${SETENV} PYTHONPATH=../src ${PYTHON_CMD} -m pytest -rs tests
+	@cd ${WRKSRC} && ${SETENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR} ${PYTHON_CMD} -m pytest -rs tests
 
 .include <bsd.port.mk>

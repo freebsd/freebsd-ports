@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	lximage-qt
-PORTVERSION=	0.5.1
-PORTREVISION=	2
+PORTVERSION=	0.6.0
 CATEGORIES=	graphics
-MASTER_SITES=	LXQT/${PORTNAME}
+MASTER_SITES=	LXQT
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Image viewer and screenshot tool
@@ -20,7 +19,7 @@ USES=	cmake:outsource compiler:c++11-lib desktop-file-utils gettext-runtime \
 	localbase:ldflags lxqt pkgconfig tar:xz
 USE_GNOME=	glib20
 USE_QT5=	buildtools_build qmake_build core dbus gui linguisttools \
-	printsupport svg widgets x11extras
+	network printsupport svg widgets x11extras
 USE_LXQT=	buildtools libfmqt
 USE_XORG=	ice sm x11 xcb xext xfixes
 INSTALLS_ICONS=	yes

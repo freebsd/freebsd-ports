@@ -1,13 +1,13 @@
 bin/saga_cmd
 bin/saga_gui
 include/saga/saga_core/saga_api/api_core.h
-include/saga/saga_core/saga_api/compatibility.h
 include/saga/saga_core/saga_api/data_manager.h
 include/saga/saga_core/saga_api/dataobject.h
 include/saga/saga_core/saga_api/datetime.h
 include/saga/saga_core/saga_api/geo_tools.h
 include/saga/saga_core/saga_api/grid.h
 include/saga/saga_core/saga_api/grid_pyramid.h
+include/saga/saga_core/saga_api/grids.h
 include/saga/saga_core/saga_api/mat_tools.h
 include/saga/saga_core/saga_api/metadata.h
 include/saga/saga_core/saga_api/parameters.h
@@ -56,6 +56,7 @@ lib/saga/libgrid_gridding.so
 lib/saga/libgrid_spline.so
 lib/saga/libgrid_tools.so
 lib/saga/libgrid_visualisation.so
+lib/saga/libgrids_tools.so
 lib/saga/libimagery_classification.so
 lib/saga/libimagery_maxent.so
 lib/saga/libimagery_opencv.so
@@ -91,6 +92,7 @@ lib/saga/libsim_fire_spreading.so
 lib/saga/libsim_geomorphology.so
 lib/saga/libsim_hydrology.so
 lib/saga/libsim_ihacres.so
+lib/saga/libsim_landscape_evolution.so
 lib/saga/libsim_qm_of_esp.so
 lib/saga/libsim_rivflow.so
 lib/saga/libstatistics_grid.so
@@ -127,6 +129,9 @@ share/icons/hicolor/80x80/apps/saga.png
 share/icons/hicolor/8x8/apps/saga.png
 share/icons/hicolor/96x96/apps/saga.png
 share/pixmaps/saga.png
+@mode 0777
+@dir %%DATADIR%%
+@mode 0666
 %%DATADIR%%/accessories/CMakeLists.txt
 %%DATADIR%%/accessories/helper/make_arcsaga_toolboxes.bat
 %%DATADIR%%/accessories/helper/make_saga_release.bat
@@ -169,9 +174,6 @@ share/pixmaps/saga.png
 %%DATADIR%%/accessories/templates/template4saga-tools/my_tools_link2bin.vc10.sln
 %%DATADIR%%/accessories/templates/template4saga-tools/my_tools_link2src.vc10.sln
 %%DATADIR%%/accessories/templates/template4saga-tools/readme.txt
-@mode 0777
-@dir %%DATADIR%%
-@mode 0666
 %%DATADIR%%/saga.bra.txt
 %%DATADIR%%/saga.ger.txt
 %%DATADIR%%/saga.lng.txt
@@ -182,7 +184,11 @@ share/pixmaps/saga.png
 %%DATADIR%%/saga_tip.txt
 %%DATADIR%%/toolchains/climate.xml
 %%DATADIR%%/toolchains/cluster_terrain.xml
+%%DATADIR%%/toolchains/gc_simple_filter.xml
+%%DATADIR%%/toolchains/gc_tools.xml
+%%DATADIR%%/toolchains/grid_filter.xml
 %%DATADIR%%/toolchains/grid_list_simple_filter.xml
+%%DATADIR%%/toolchains/grid_notch_filter.xml
 %%DATADIR%%/toolchains/gridding.xml
 %%DATADIR%%/toolchains/group_files.xml
 %%DATADIR%%/toolchains/imagery.xml

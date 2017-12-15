@@ -7,4 +7,4 @@ and about 50 times as fast as logresolve.c from that distribution.  It is
 library, and about 3 times as fast as jdresolve, which is a Perl program
 that uses similar algorithms.
 
-WWW: http://BSDforge.com/projects/dns/fastresolve/
+WWW: https://BSDforge.com/projects/dns/fastresolve/

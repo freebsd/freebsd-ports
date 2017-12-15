@@ -3,16 +3,16 @@
 
 PORTNAME=	dwdiff
 PORTVERSION=	2.0.9
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	textproc
 MASTER_SITES=	http://os.ghalkes.nl/dist/ \
 		http://fossies.org/unix/privat/
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	Delimited word diff program
 
 LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 OPTIONS_DEFINE=	UNICODE NLS DOCS
 OPTIONS_DEFAULT=UNICODE
@@ -24,9 +24,8 @@ NLS_USES=	gettext
 UNICODE_CONFIGURE_WITH=	unicode
 UNICODE_LIB_DEPENDS=	libicudata.so:devel/icu
 
+USES=		localbase:ldflags tar:tgz
 HAS_CONFIGURE=	yes
-CFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--mandir=${MANPREFIX}/man
 
 post-patch:

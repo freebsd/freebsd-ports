@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pulseaudio
-PORTVERSION=	6.0
-PORTREVISION=	2
+PORTVERSION=	10.0
 CATEGORIES=	audio linux
 PKGNAMESUFFIX=	-libs
 LIB_DISTNAMES=	${LINUXNAME}-${DISTVERSIONFULL} \
@@ -17,7 +16,7 @@ CONFLICTS=	linux-c6-${LINUXNAME}-[0-9]*
 DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
 DOCSDIR=	${PREFIX}/usr/share/doc/${LINUXNAME}-${PORTVERSION}
 LINUXNAME=	${PORTNAME}${PKGNAMESUFFIX}
-RPMVERSION=	9.el7_3
+RPMVERSION=	3.el7
 USES=		linux:c7
 USE_LDCONFIG=	yes
 USE_LINUX=	dbuslibs libasyncns libsndfile tcp_wrappers-libs xorglibs
@@ -27,10 +26,6 @@ OPTIONS_DEFINE=	DOCS NLS
 OPTIONS_SUB=	yes
 
 post-patch:
-	@${RM} ${WRKSRC}/etc/pulse/client.conf.orig \
-		${WRKSRC}/usr/lib/pulseaudio/libpulsedsp.la \
-		${WRKSRC}/usr/lib/pulseaudio/libpulsecommon-6.0.la \
-		${WRKSRC}/usr/lib64/pulseaudio/libpulsedsp.la \
-		${WRKSRC}/usr/lib64/pulseaudio/libpulsecommon-6.0.la
+	@${RM} ${WRKSRC}/etc/pulse/client.conf.orig
 
 .include <bsd.port.mk>

@@ -423,6 +423,7 @@ share/icons/breeze-dark/actions/16/flag-yellow.svg
 share/icons/breeze-dark/actions/16/flag.svg
 share/icons/breeze-dark/actions/16/flash.svg
 share/icons/breeze-dark/actions/16/folder-new.svg
+share/icons/breeze-dark/actions/16/folder-stash.svg
 share/icons/breeze-dark/actions/16/folder-sync.svg
 share/icons/breeze-dark/actions/16/followmouse.svg
 share/icons/breeze-dark/actions/16/font-face.svg
@@ -1821,6 +1822,7 @@ share/icons/breeze-dark/actions/22/flag.svg
 share/icons/breeze-dark/actions/22/flash.svg
 share/icons/breeze-dark/actions/22/flower-shape.svg
 share/icons/breeze-dark/actions/22/folder-new.svg
+share/icons/breeze-dark/actions/22/folder-stash.svg
 share/icons/breeze-dark/actions/22/folder-sync.svg
 share/icons/breeze-dark/actions/22/followmouse.svg
 share/icons/breeze-dark/actions/22/foreignkey_constraint.svg
@@ -7217,6 +7219,7 @@ share/icons/breeze-dark/status/22/input-keyboard-virtual-off.svg
 share/icons/breeze-dark/status/22/input-keyboard-virtual-on.svg
 share/icons/breeze-dark/status/22/input-touchpad-off.svg
 share/icons/breeze-dark/status/22/input-touchpad-on.svg
+share/icons/breeze-dark/status/22/install.svg
 share/icons/breeze-dark/status/22/irc-channel-joined.svg
 share/icons/breeze-dark/status/22/irc-channel-parted.svg
 share/icons/breeze-dark/status/22/kdeconnect-tray.svg
@@ -7257,6 +7260,7 @@ share/icons/breeze-dark/status/22/state-ok.svg
 share/icons/breeze-dark/status/22/state-pause.svg
 share/icons/breeze-dark/status/22/state-sync.svg
 share/icons/breeze-dark/status/22/state-warning.svg
+share/icons/breeze-dark/status/22/uninstall.svg
 share/icons/breeze-dark/status/22/update-high.svg
 share/icons/breeze-dark/status/22/update-low.svg
 share/icons/breeze-dark/status/22/update-medium.svg
@@ -7786,6 +7790,7 @@ share/icons/breeze/actions/16/flag-yellow.svg
 share/icons/breeze/actions/16/flag.svg
 share/icons/breeze/actions/16/flash.svg
 share/icons/breeze/actions/16/folder-new.svg
+share/icons/breeze/actions/16/folder-stash.svg
 share/icons/breeze/actions/16/folder-sync.svg
 share/icons/breeze/actions/16/followmouse.svg
 share/icons/breeze/actions/16/font-face.svg
@@ -9320,6 +9325,7 @@ share/icons/breeze/actions/22/flag.svg
 share/icons/breeze/actions/22/flash.svg
 share/icons/breeze/actions/22/flower-shape.svg
 share/icons/breeze/actions/22/folder-new.svg
+share/icons/breeze/actions/22/folder-stash.svg
 share/icons/breeze/actions/22/folder-sync.svg
 share/icons/breeze/actions/22/followmouse.svg
 share/icons/breeze/actions/22/foreignkey_constraint.svg
@@ -14812,6 +14818,7 @@ share/icons/breeze/status/22/input-keyboard-virtual-off.svg
 share/icons/breeze/status/22/input-keyboard-virtual-on.svg
 share/icons/breeze/status/22/input-touchpad-off.svg
 share/icons/breeze/status/22/input-touchpad-on.svg
+share/icons/breeze/status/22/install.svg
 share/icons/breeze/status/22/irc-channel-joined.svg
 share/icons/breeze/status/22/irc-channel-parted.svg
 share/icons/breeze/status/22/kdeconnect-tray.svg
@@ -14852,6 +14859,7 @@ share/icons/breeze/status/22/state-ok.svg
 share/icons/breeze/status/22/state-pause.svg
 share/icons/breeze/status/22/state-sync.svg
 share/icons/breeze/status/22/state-warning.svg
+share/icons/breeze/status/22/uninstall.svg
 share/icons/breeze/status/22/update-high.svg
 share/icons/breeze/status/22/update-low.svg
 share/icons/breeze/status/22/update-medium.svg

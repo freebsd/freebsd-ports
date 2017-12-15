@@ -15,7 +15,7 @@ COMMENT=	Supybot - A Superb Python IRC bot
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		python tar:bzip2
+USES=		python:2.7 tar:bzip2
 USE_PYTHON=	distutils
 PYDISTUTILS_PKGVERSION=	0.83.1+darcs
 PYDISTUTILS_EGGINFO=	supybot-${PORTVERSION}-py${PYTHON_VER}.egg-info

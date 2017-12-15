@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libRmath
-PORTVERSION=	3.4.1
-PORTREVISION=	1
+DISTVERSION=	3.4.3
 CATEGORIES=	math lang
 MASTER_SITES=	CRAN/src/base/R-${PORTVERSION:C|\..*||}
 DISTNAME=	R-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}
@@ -13,6 +12,9 @@ COMMENT=	Standalone math library from R
 
 LICENSE=	GPLv2
 
+BROKEN_FreeBSD_10_armv6=	Fails to build
+ONLY_FOR_ARCHS=	aarch64 amd64 armv6 armv7 i386
+
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libpcre.so:devel/pcre
 
@@ -21,13 +23,23 @@ CONFIGURE_ARGS=	--disable-nls --with-ICU=no --with-cairo=no \
 		--with-jpeglib=no --with-libpng=no --with-libtiff=no \
 		--with-readline=no --with-tcltk=no --with-x=no \
 		--without-libintl-prefix
-CONFIGURE_ENV+=	ac_cv_header_iconv_h=no
+CONFIGURE_ENV+=	ac_cv_header_iconv_h=no FPICFLAGS=-fPIC
 GNU_CONFIGURE=	yes
-RMATH_SOVERSION=3
-USES=		fortran localbase
+RMATH_SOVERSION=${PORTVERSION:R}
+USES=		localbase
 USE_LDCONFIG=	yes
 
 PLIST_SUB=	RMATH_SOVERSION="${RMATH_SOVERSION}"
+
+OPTIONS_DEFINE=		FLANG
+OPTIONS_EXCLUDE_aarch64=	FLANG
+OPTIONS_EXCLUDE_armv6=	FLANG
+OPTIONS_EXCLUDE_armv7=	FLANG
+OPTIONS_EXCLUDE_i386=	FLANG
+
+FLANG_DESC=		Use flang instead of the default Fortran compiler
+FLANG_USES=		fortran:flang
+FLANG_USES_OFF=		fortran
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|(libdir)/pkgconfig|(prefix)/libdata/pkgconfig|g'\

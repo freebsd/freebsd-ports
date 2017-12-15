@@ -17,7 +17,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libdvdread.so:multimedia/libdvdread
 RUN_DEPENDS=	lsdvd:multimedia/lsdvd
 
-USES=		python
+USES=		python:2.7
 USE_PYTHON=	distutils autoplist
 
 post-patch:

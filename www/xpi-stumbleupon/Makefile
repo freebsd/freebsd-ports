@@ -9,7 +9,7 @@ CATEGORIES=	www
 MAINTAINER=	lapo@lapo.it
 COMMENT=	Collaborative surfing tool extension
 
-LICENSE=	MPL
+LICENSE=	MPL11
 
 XPI_NUM=	138
 XPI_ID=		{AE93811A-5C9A-4d34-8462-F7B864FC4696}

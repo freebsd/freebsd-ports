@@ -2,7 +2,7 @@
 
 PORTNAME=	msp430-debug-stack
 PORTVERSION=	3.10.001.000
-PORTREVISION=	2
+PORTREVISION=	6
 CATEGORIES=	devel
 MASTER_SITES=	http://www.ti.com/lit/sw/slac460v/ \
 		http://www.ti.com/lit/ug/slau320z/:doc1 \
@@ -18,12 +18,8 @@ COMMENT=	TI MSP430 debugging interface library
 
 LICENSE=	BSD3CLAUSE
 
-BROKEN=		fails to package
-
 LIB_DEPENDS=	libboost_filesystem.so:devel/boost-libs \
 		libhidapi.so:comms/hidapi
-
-BROKEN_powerpc64=	fails to compile: adapt_enum.h: 'to_string' is not a member of 'std'
 
 USES=		compiler:c++11-lib dos2unix gmake zip:infozip
 USE_LDCONFIG=	yes

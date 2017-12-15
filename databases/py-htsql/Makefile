@@ -17,7 +17,7 @@ LICENSE=	AGPLv3
 USES=		python:2
 USE_PYTHON=	distutils autoplist
 
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}yaml>0:devel/py-yaml \
-		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}yaml>0:devel/py-yaml@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${FLAVOR}
 
 .include <bsd.port.mk>

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nocc
-PORTVERSION=	1.9.6
+PORTVERSION=	1.9.7
 CATEGORIES=	mail www
 MASTER_SITES=	SF/${PORTNAME}/NOCC/${PORTVERSION}
 
@@ -17,6 +17,7 @@ USES=		php:web
 USE_PHP=	ctype iconv imap mbstring pcre session
 
 SUB_FILES=	pkg-message
+NO_ARCH=	yes
 NO_BUILD=	yes
 
 NOCCCOMP=	.htaccess favicon.ico robots.txt \

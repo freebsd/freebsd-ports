@@ -3,11 +3,12 @@
 
 PORTNAME=	lua
 PORTVERSION=	5.3.4
+PORTREVISION=	2
 CATEGORIES=	lang
 MASTER_SITES=	http://www.lua.org/ftp/
 PKGNAMESUFFIX=	53
 
-MAINTAINER=	gmesalazar@gmail.com
+MAINTAINER=	russ.haley@gmail.com
 COMMENT=	Small, compilable scripting language providing easy access to C code
 
 LICENSE=	MIT

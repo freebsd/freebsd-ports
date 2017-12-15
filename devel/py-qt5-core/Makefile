@@ -10,7 +10,7 @@ CONFIGURE_ARGS=	--enable QtCore
 PYQT_DIST=	yes
 
 USES=		python pyqt:5
-USE_PYTHON=	py3kplist
+USE_PYTHON=	py3kplist flavors
 USE_PYQT=	sip_build
 USE_QT5=	core qmake_build
 

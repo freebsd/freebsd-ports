@@ -10,7 +10,7 @@ PKGNAMESUFFIX=	01
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Library for generating documents in Open Document Format (ODF)
 
-LICENSE=	LGPL21 MPL
+LICENSE=	LGPL21 MPL20
 LICENSE_COMB=	dual
 
 LIB_DEPENDS=	librevenge-0.0.so:textproc/librevenge

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Finder
-PORTVERSION=	2.3.4
+PORTVERSION=	2.4.4
 CATEGORIES=	devel pear
 MASTER_SITES=	http://pear.symfony.com/get/
 PKGNAMEPREFIX=	pear-Symfony_Component_

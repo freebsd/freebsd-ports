@@ -2,15 +2,17 @@
 # $FreeBSD$
 
 PORTNAME=	lookout
-PORTVERSION=	1.4
+DISTVERSION=	1.4
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://catb.org/~esr/lookout/
 
 MAINTAINER=	jmohacsi@bsd.hu
 COMMENT=	Convert Outlook97 addressbook export files to KDE KAB/GNOME gnomecard
 
-USES=		python
+USES=		python shebangfix
 NO_BUILD=	yes
+SHEBANG_FILES=	lookout
 
 PLIST_FILES=	bin/lookout man/man1/lookout.1.gz
 

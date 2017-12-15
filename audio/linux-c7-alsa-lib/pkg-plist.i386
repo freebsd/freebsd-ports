@@ -1,8 +1,5 @@
 etc/asound.conf
 usr/bin/aserver
-usr/lib/alsa-lib/smixer/smixer-ac97.so
-usr/lib/alsa-lib/smixer/smixer-hda.so
-usr/lib/alsa-lib/smixer/smixer-sbase.so
 usr/lib/libasound.so.2
 usr/lib/libasound.so.2.0.0
 usr/share/alsa/alsa.conf
@@ -36,6 +33,7 @@ usr/share/alsa/cards/FWSpeakers.conf
 usr/share/alsa/cards/FireWave.conf
 usr/share/alsa/cards/GUS.conf
 usr/share/alsa/cards/HDA-Intel.conf
+usr/share/alsa/cards/HdmiLpeAudio.conf
 usr/share/alsa/cards/ICE1712.conf
 usr/share/alsa/cards/ICE1724.conf
 usr/share/alsa/cards/ICH-MODEM.conf
@@ -63,6 +61,7 @@ usr/share/alsa/cards/VXPocket.conf
 usr/share/alsa/cards/VXPocket440.conf
 usr/share/alsa/cards/YMF744.conf
 usr/share/alsa/cards/aliases.conf
+usr/share/alsa/cards/pistachio-card.conf
 usr/share/alsa/pcm/center_lfe.conf
 usr/share/alsa/pcm/default.conf
 usr/share/alsa/pcm/dmix.conf
@@ -80,8 +79,9 @@ usr/share/alsa/pcm/surround41.conf
 usr/share/alsa/pcm/surround50.conf
 usr/share/alsa/pcm/surround51.conf
 usr/share/alsa/pcm/surround71.conf
-usr/share/alsa/smixer.conf
 usr/share/alsa/topology/broadwell/broadwell.conf
+usr/share/alsa/topology/bxtrt298/bxt_i2s.conf
+usr/share/alsa/topology/sklrt286/skl_i2s.conf
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%%%DOCSDIR%%/asoundrc.txt

@@ -13,7 +13,7 @@ COMMENT=	Allows to import names that will be resolved when used in the code
 
 LICENSE=	ZPL21
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zope.proxy>=0:net/py-zope.proxy
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zope.proxy>=0:net/py-zope.proxy@${FLAVOR}
 
 USES=		python
 USE_PYTHON=	distutils autoplist

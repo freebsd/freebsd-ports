@@ -30,7 +30,7 @@ NODOCFILES=	edict_doc.txt edict_doc.html edicth.doc \
 
 # Where to install the data files
 DATADIR=	${PREFIX}/share/dict/edict-utf-8
-PLIST_SUB= 	OWNER="${SHAREOWN}" GROUP="${SHAREGRP}" MODE="${SHAREMODE}"
+PLIST_SUB=	OWNER="${SHAREOWN}" GROUP="${SHAREGRP}" MODE="${SHAREMODE}"
 
 NO_WRKSUBDIR=	yes
 

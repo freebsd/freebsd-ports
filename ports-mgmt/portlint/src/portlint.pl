@@ -15,7 +15,7 @@
 # was removed.
 #
 # $FreeBSD$
-# $MCom: portlint/portlint.pl,v 1.430 2017/10/08 17:56:03 jclarke Exp $
+# $MCom: portlint/portlint.pl,v 1.432 2017/12/07 03:23:53 jclarke Exp $
 #
 
 use strict;
@@ -50,7 +50,7 @@ $portdir = '.';
 # version variables
 my $major = 2;
 my $minor = 17;
-my $micro = 13;
+my $micro = 14;
 
 # default setting - for FreeBSD
 my $portsdir = '/usr/ports';
@@ -3440,7 +3440,7 @@ sub abspathname {
 				# MASTER_SITE_SUBDIR lines are ok.
 				$i = '';
 			}
-			if ($s =~ /\$\{[^}]*?$i/) {
+			if ($s =~ /\$\{[^}]*?\Q$i\E/) {
 				# If we're inside a make variable, we probably do not have
 				# an absolute path.
 				$i = '';

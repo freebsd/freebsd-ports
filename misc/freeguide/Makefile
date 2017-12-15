@@ -15,6 +15,7 @@ LICENSE_FILE=	${WRKSRC}/doc/COPYING
 RUN_DEPENDS=	tv_cat:textproc/p5-xmltv
 
 BROKEN_armv6=		fails to package: freeguide.1.gz: No such file or directory
+BROKEN_armv7=		fails to package: freeguide.1.gz: No such file or directory
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+

@@ -1,6 +1,6 @@
---- source3/smbd/quotas.c.orig	2016-09-22 06:42:48 UTC
+--- source3/smbd/quotas.c.orig	2017-01-11 07:55:15 UTC
 +++ source3/smbd/quotas.c
-@@ -144,6 +144,7 @@ static bool nfs_quotas(char *nfspath, ui
+@@ -125,6 +125,7 @@ static bool nfs_quotas(char *nfspath, ui
  	if (!cutstr)
  		return False;
  
@@ -8,7 +8,7 @@
  	memset(cutstr, '\0', len+1);
  	host = strncat(cutstr,mnttype, sizeof(char) * len );
  	DEBUG(5,("nfs_quotas: looking for mount on \"%s\"\n", cutstr));
-@@ -152,7 +153,7 @@ static bool nfs_quotas(char *nfspath, ui
+@@ -133,7 +134,7 @@ static bool nfs_quotas(char *nfspath, ui
  	args.gqa_pathp = testpath+1;
  	args.gqa_uid = uid;
  

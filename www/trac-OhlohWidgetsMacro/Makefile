@@ -13,10 +13,10 @@ COMMENT=	Trac macro to embed Ohloh widgets
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pycerberus>=0.3:devel/py-pycerberus \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pycerberus>=0.3:devel/py-pycerberus@${FLAVOR} \
 		tracd:www/trac
 
-USES=		python
+USES=		python:2.7
 USE_PYTHON=	distutils autoplist
 NO_ARCH=	yes
 

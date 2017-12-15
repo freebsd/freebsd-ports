@@ -12,7 +12,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	Random assortment of WSGI servers, middleware
 
-USES=		python
+USES=		python:2.7
 USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

@@ -41,7 +41,9 @@ DEFAULT${ver}_DESC=	Create link bin/povray -> bin/povray${ver}
 
 .for ver in ${POV_VERSIONS_ALL}
 . if ${PORT_OPTIONS:MDEFAULT${ver}}
+.  if !${PORT_OPTIONS:MPOVRAY${ver}}
 PORT_OPTIONS+=	POVRAY${ver}
+.  endif
 POV_VERSION=	${ver}
 . endif
 . if ${PORT_OPTIONS:MPOVRAY${ver}}

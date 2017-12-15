@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xfce4-genmon-plugin
-PORTVERSION=	4.0.0
+PORTVERSION=	4.0.1
 CATEGORIES=	sysutils xfce
 MASTER_SITES=	XFCE/src/panel-plugins/${PORTNAME}/${PORTVERSION:R}
 DIST_SUBDIR=	xfce4

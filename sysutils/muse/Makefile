@@ -10,6 +10,7 @@ MAINTAINER=	freebsd@spatula.net
 COMMENT=	Shows memory usage data
 
 BROKEN_armv6=		fails to compile: muse.c: variable has incomplete type 'struct vmmeter'
+BROKEN_armv7=		fails to compile: muse.c: variable has incomplete type 'struct vmmeter'
 BROKEN_mips=		fails to compile: muse.c: storage size of 'vmstats' isn't known
 BROKEN_mips64=		fails to compile: muse.c: storage size of 'vmstats' isn't known
 BROKEN_powerpc64=	fails to compile: muse.c: storage size of 'vmstats' isn't known

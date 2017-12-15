@@ -26,6 +26,7 @@ LIB_DEPENDS=		libfreetype.so:print/freetype2 \
 
 BROKEN_aarch64=		fails to compile: undefined reference to __va_copy
 BROKEN_armv6=		fails to compile: undefined reference to __va_copy
+BROKEN_armv7=		fails to compile: undefined reference to __va_copy
 BROKEN_powerpc64=	fails to compile: arena.h: Failed assertion: "arena_mapbits_allocated_get(chunk, pageind) != 0"
 BROKEN_sparc64=		fails to compile: vsnprintf is not a member of std
 

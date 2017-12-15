@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	olsrd
-PORTVERSION=	0.9.5
-PORTREVISION=	1
+DISTVERSION=	0.9.6.1
 CATEGORIES=	net
 MASTER_SITES=	http://www.olsr.org/releases/0.9/
 

@@ -1,4 +1,5 @@
 bin/preparetips5
+etc/xdg/kconfigwidgets.categories
 include/KF5/KConfigWidgets/KCModule
 include/KF5/KConfigWidgets/KCodecAction
 include/KF5/KConfigWidgets/KColorScheme

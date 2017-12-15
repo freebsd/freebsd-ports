@@ -3,6 +3,7 @@
 
 PORTNAME=	qsampler
 PORTVERSION=	0.4.0
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	SF \
 		http://download.linuxsampler.org/packages/

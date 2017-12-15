@@ -1,0 +1,32 @@
+--- CMakeLists.txt.orig	2016-03-06 16:11:56 UTC
++++ CMakeLists.txt
+@@ -15,13 +15,17 @@ find_package(PkgConfig)
+ 
+ #SET(CMAKE_INSTALL_PREFIX "/usr" )
+ 
+-pkg_check_modules(LV2 lv2 REQUIRED)
+-include_directories( ${LV2_INCLUDE_DIRS}  )
+-
+ pkg_check_modules(NTK ntk REQUIRED)
+ include_directories( ${NTK_INCLUDE_DIRS}  )
+ link_directories   ( ${NTK_LIBRARY_DIRS}  )
+ 
++pkg_check_modules(LV2 lv2 REQUIRED)
++include_directories( ${LV2_INCLUDE_DIRS}  )
++
++pkg_check_modules(CAIRO cairo REQUIRED)
++include_directories( ${CAIRO_INCLUDE_DIRS}  )
++link_directories   ( ${CAIRO_LIBRARY_DIRS}  )
++
+ SET(CMAKE_SHARED_LINKER_FLAGS "-fPIC -shared -Wl,-z,nodelete -Wl,--no-undefined")
+ 
+ IF(RELEASE_BUILD)
+@@ -81,6 +85,8 @@ ADD_LIBRARY(sorcer SHARED ${sources})
+ target_link_libraries( sorcer ${NTK_LIBRARIES}     )
+ #target_link_libraries( sorcer ${SNDFILE_LIBRARIES} )
+ 
++target_link_libraries( sorcer ${CAIRO_LIBRARIES}     )
++
+ # Remove "lib" part before name (sorcer.so, not libsorcer.so)
+ set_target_properties(sorcer PROPERTIES PREFIX "")
+ 

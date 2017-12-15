@@ -12,6 +12,8 @@ DISTNAME=	percona-server-${DISTVERSION}
 MAINTAINER=	flo@FreeBSD.org
 COMMENT?=	Multithreaded SQL database (server)
 
+BROKEN_armv6=		fails to compile: sql/mysqld.cc:198:19: error: cannot combine with previous 'type-name' declaration specifier
+BROKEN_armv7=		fails to compile: sql/mysqld.cc:198:19: error: cannot combine with previous 'type-name' declaration specifier
 NOT_FOR_ARCHS=		powerpc64
 NOT_FOR_ARCHS_REASON=	unsupported platform
 

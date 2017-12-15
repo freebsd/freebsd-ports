@@ -1,0 +1,4 @@
+A multiplatform C++ reimplementation of original Captain Claw (1997) platformer
+game using SDL2 and Box2D.
+
+WWW: https://github.com/pjasicek/OpenClaw

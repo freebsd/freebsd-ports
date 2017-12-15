@@ -1,7 +1,7 @@
-TIMESTAMP = 1508307352
-SHA256 (freebsd:10:x86:64/i386-wine-2.0.2_1,1.txz) = df6f5ca628b1537cec837e2a56bba7347afc9ef27d1b38cd474616cc27132e6f
-SIZE (freebsd:10:x86:64/i386-wine-2.0.2_1,1.txz) = 58769360
-SHA256 (freebsd:11:x86:64/i386-wine-2.0.2_1,1.txz) = feb982de4343a2e39591782422bc27bd8fe8fd5aa8aa95349a025ea6a31a3113
-SIZE (freebsd:11:x86:64/i386-wine-2.0.2_1,1.txz) = 58436732
-SHA256 (freebsd:12:x86:64/i386-wine-2.0.2_1,1.txz) = abbfd906b77c24dd85d428a4ce9b5ed1a4075ca1614a5b0c21ef1b3fc5f3460f
-SIZE (freebsd:12:x86:64/i386-wine-2.0.2_1,1.txz) = 57923672
+TIMESTAMP = 1509032743
+SHA256 (freebsd:10:x86:64/i386-wine-2.0.3,1.txz) = 996fd7bdeeef88faa68cf51ab788a5c6f5394c669df9d5df92ba707224f4f6b5
+SIZE (freebsd:10:x86:64/i386-wine-2.0.3,1.txz) = 58777800
+SHA256 (freebsd:11:x86:64/i386-wine-2.0.3,1.txz) = e9db79fadef6bad7cb7987b04e7de8d9b7351f66dddac2a7aa5c0995e64c81d9
+SIZE (freebsd:11:x86:64/i386-wine-2.0.3,1.txz) = 58436368
+SHA256 (freebsd:12:x86:64/i386-wine-2.0.3,1.txz) = 9ede9f625ccf7a0d35932037ff31fc67e68c62f0a3d3f9d70356896960cd25a7
+SIZE (freebsd:12:x86:64/i386-wine-2.0.3,1.txz) = 57971936

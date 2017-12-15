@@ -2,7 +2,7 @@
 
 PORTNAME=	kodi
 DISTVERSION=	17.3
-PORTREVISION=	2
+PORTREVISION=	4
 CATEGORIES=	multimedia java
 
 MAINTAINER=	mickael.maillot@gmail.com
@@ -57,7 +57,7 @@ LIB_DEPENDS=	libass.so:multimedia/libass \
 		libvorbis.so:audio/libvorbis \
 		libxslt.so:textproc/libxslt \
 		libyajl.so:devel/yajl
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR}
 
 ONLY_FOR_ARCHS=	amd64 armv6 armv7 i386
 KODI_ARCH_i386=	x86

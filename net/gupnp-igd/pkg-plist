@@ -15,10 +15,10 @@ share/gir-1.0/GUPnPIgd-1.0.gir
 share/gtk-doc/html/gupnp-igd/GUPnPSimpleIgd.html
 share/gtk-doc/html/gupnp-igd/GUPnPSimpleIgdThread.html
 share/gtk-doc/html/gupnp-igd/ch01.html
+share/gtk-doc/html/gupnp-igd/ch02.html
 share/gtk-doc/html/gupnp-igd/gupnp-igd.devhelp2
 share/gtk-doc/html/gupnp-igd/home.png
 share/gtk-doc/html/gupnp-igd/index.html
-share/gtk-doc/html/gupnp-igd/index.sgml
 share/gtk-doc/html/gupnp-igd/left-insensitive.png
 share/gtk-doc/html/gupnp-igd/left.png
 share/gtk-doc/html/gupnp-igd/right-insensitive.png

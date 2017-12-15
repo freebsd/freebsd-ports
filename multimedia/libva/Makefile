@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libva
-PORTVERSION=	1.8.3
+PORTVERSION=	2.0.0
 CATEGORIES=	multimedia
 
 MAINTAINER=	madpilot@FreeBSD.org
@@ -20,6 +20,7 @@ USE_GL=		gl
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-prefix=va
 USE_LDCONFIG=	yes
+INSTALL_TARGET=	install-strip
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	01org
@@ -28,21 +29,16 @@ LDFLAGS+=	-lpthread
 # prevent types conflict: videodev2.h vs. drm.h
 CFLAGS+=	-DHAVE_LINUX_INTEGER_TYPES
 
-OPTIONS_DEFINE=	DEBUG
+OPTIONS_DEFINE=	DEBUG WAYLAND
+WAYLAND_DESC=	Support wayland protocol
+OPTIONS_SUB=	yes
 
-.include <bsd.port.options.mk>
+DEBUG_CFLAGS=		-D_DEBUG
+DEBUG_CFLAGS_OFF=	-DNDEBUG
 
-.if ${PORT_OPTIONS:MDEBUG}
-CFLAGS+=	-D_DEBUG
-.else
-CFLAGS+=	-DNDEBUG
-.endif
-
-.include <bsd.port.pre.mk>
-
-.if defined(STRIP) && ${STRIP} != ""
-INSTALL_TARGET=	install-strip
-.endif
+WAYLAND_CONFIGURE_ENABLE=	wayland
+WAYLAND_LIB_DEPENDS=	libwayland-client.so:graphics/wayland
+WAYLAND_BUILD_DEPENDS=	gsed:textproc/gsed
 
 post-patch:	.SILENT
 	${REINPLACE_CMD} -e 's|\($$libdir\)/dri|\1/va|' \
@@ -52,4 +48,8 @@ post-patch:	.SILENT
 		${WRKSRC}/doc/Makefile.am
 	${REINPLACE_CMD} 's/-ldl//' ${WRKSRC}/va/Makefile.am
 
-.include <bsd.port.post.mk>
+post-configure-WAYLAND-on: .SILENT
+	${REINPLACE_CMD} -e 's|\(SED = \).*|\1${LOCALBASE}/bin/gsed|' \
+		${WRKSRC}/va/wayland/Makefile
+
+.include <bsd.port.mk>

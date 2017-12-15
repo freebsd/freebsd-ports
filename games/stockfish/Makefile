@@ -2,14 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	stockfish
-PORTVERSION=	5
+PORTVERSION=	8
 CATEGORIES=	games
-MASTER_SITES=	http://stockfish.s3.amazonaws.com/:src \
-		http://cl.ly/3x333m0G173F/download/:book \
-		http://www.execve.net/sf/:book
+MASTER_SITES=	http://stockfish.s3.amazonaws.com/:src
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
-DISTFILES=	${PORTNAME}-${PORTVERSION}-src.zip:src \
-		${PORTNAME}-231-book.zip:book
+DISTFILES=	${PORTNAME}-${PORTVERSION}-src.zip:src
 
 MAINTAINER=	execve@gmail.com
 COMMENT=	Open source chess engine
@@ -19,29 +16,25 @@ LICENSE=	GPLv3
 NOT_FOR_ARCHS=	sparc64
 BROKEN_aarch64=	Fails to build: cannot detect architecture
 BROKEN_armv6=	Fails to configure: config-sanity: Error 1
+BROKEN_armv7=	Fails to configure: config-sanity: Error 1
 BROKEN_mips64=	Fails to build: cannot detect architecture
 
 USES=		compiler gmake zip
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
-BOOKDIR=	.
 MYARCH=		${ARCH}
 MYCC=		${COMPILER_TYPE}
 TGTBLD=		build
 
 PLIST_FILES=	bin/stockfish
-PORTDATA=	Book.bin
-PORTDOCS=	Readme.md polyglot.ini
+PORTDATA=
+PORTDOCS=	Readme.md
 
-OPTIONS_DEFINE=	DOCS POPCNT PROFILE
+OPTIONS_DEFINE=	DOCS POPCNT
 
 POPCNT_DESC=	Use the POPCNT instruction
 
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MPROFILE}
-TGTBLD=		profile-build
-.endif
 
 .if ${PORT_OPTIONS:MPOPCNT} && ${ARCH} != amd64
 BROKEN=		POPCNT compiles only on amd64
@@ -69,12 +62,9 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/stockfish ${STAGEDIR}${PREFIX}/bin
-	@${MKDIR} ${STAGEDIR}${DATADIR}
-	${INSTALL_DATA} ${WRKDIR}/${BOOKDIR}/${PORTDATA} ${STAGEDIR}${DATADIR}
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/Readme.md ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/polyglot.ini ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

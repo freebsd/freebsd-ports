@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	aws-sdk-cpp
-PORTVERSION=	1.2.16
+PORTVERSION=	1.3.15
 CATEGORIES=	devel
 
 MAINTAINER=	ports@FreeBSD.org
@@ -14,13 +14,14 @@ LIB_DEPENDS=	libcurl.so:ftp/curl
 
 BROKEN_aarch64=		fails to build: runaway process
 BROKEN_armv6=		fails to build: runaway process
+BROKEN_armv7=		fails to build: runaway process
 BROKEN_powerpc64=	fails to build: runaway process
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	aws
 USES=		cmake pkgconfig compiler:c++11-lib ssl
 USE_LDCONFIG=	yes
-CXXFLAGS=	-Wno-error
+CXXFLAGS=	-Wno-error -Wno-c11-extensions
 
 post-patch:
 	${REINPLACE_CMD} -e "s,/pkgconfig,/../libdata/pkgconfig,g" \

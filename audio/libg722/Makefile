@@ -1,11 +1,11 @@
 # Created by: sobomax
 # $FreeBSD$
 
-PORTNAME=     	libg722
+PORTNAME=	libg722
 DISTVERSIONPREFIX=	v_
 DISTVERSION=	1_0_2
-#PORTREVISION= 	1
-CATEGORIES= 	audio
+#PORTREVISION=	1
+CATEGORIES=	audio
 
 MAINTAINER=	ports@sippysoft.com
 COMMENT=	Software G.722 decoding/encoding library

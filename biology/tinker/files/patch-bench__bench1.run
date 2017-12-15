@@ -1,5 +1,5 @@
---- bench/bench1.run.orig	Tue Jul 24 14:02:20 2001
-+++ bench/bench1.run	Wed Sep  5 13:57:02 2001
+--- bench/bench1.run.orig	2015-05-08 20:57:45 UTC
++++ bench/bench1.run
 @@ -1 +1 @@
--../bin/timer bench1 1 y
+-../bin/timer bench1 100 y
 +timer bench1 1 y

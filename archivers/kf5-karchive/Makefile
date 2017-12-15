@@ -1,4 +1,3 @@
-# Created by: tcberner
 # $FreeBSD$
 
 PORTNAME=	karchive

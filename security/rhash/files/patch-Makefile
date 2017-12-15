@@ -12,15 +12,6 @@
  LDFLAGS = $(OPTLDFLAGS)
  ADDCFLAGS =
  ADDLDFLAGS =
-@@ -71,7 +71,7 @@ lib-shared: $(SHAREDLIB)
- lib-static: $(LIBRHASH)
- 
- install: all install-binary install-data install-symlinks
--install-shared: $(SHARED_TRG) install-shared-binary install-data install-symlinks
-+install-shared: $(SHARED_TRG) install-shared-binary install-lib-static install-lib-shared install-data install-symlinks
- install-data: install-man install-conf
- uninstall: uninstall-binary uninstall-data uninstall-symlinks
- 
 @@ -106,7 +106,7 @@ install-man:
  
  install-conf:
@@ -34,8 +25,8 @@
  	+make -C librhash install-lib-static
  
  install-lib-shared: $(SHAREDLIB)
--	+make -C librhash install-lib-shared
-+	+make -C librhash install-lib-shared install-so-link
+-	+$(MAKE) -C librhash install-lib-shared
++	+$(MAKE) -C librhash install-lib-shared install-so-link
  
  $(SHAREDLIB):
  	+make -C librhash lib-shared

@@ -13,7 +13,7 @@ COMMENT=	Editable interval tree data structure for Python 2 and 3
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sortedcontainers>=0:devel/py-sortedcontainers
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sortedcontainers>=0:devel/py-sortedcontainers@${FLAVOR}
 
 USES=		python
 USE_PYTHON=	distutils autoplist

@@ -677,7 +677,7 @@ proxydeps() {
 			fi
 			already="${already} ${dep_file}"
 		done <<-EOT
-		$(ldd -a "${STAGEDIR}${file}" | \
+		$(env LD_LIBMAP_DISABLE=1 ldd -a "${STAGEDIR}${file}" | \
 			awk '\
 			BEGIN {section=0}\
 			/^\// {section++}\
@@ -841,9 +841,26 @@ gemdeps()
 	return $rc
 }
 
+flavors()
+{
+	local rc pkgnames uniques
+	rc=0
+	if [ -n "${FLAVOR}" ]; then
+		pkgnames=$(make -C "${CURDIR}" flavors-package-names|sort)
+		uniques=$(echo "${pkgnames}"|uniq)
+		if [ "$pkgnames" != "${uniques}" ]; then
+			err "Package names are not uniques with flavors:"
+			make -C "${CURDIR}" pretty-flavors-package-names >&2
+			err "maybe use <flavor>_PKGNAMEPREFIX/SUFFIX".
+			rc=1
+		fi
+	fi
+	return ${rc}
+}
+
 checks="shebang symlinks paths stripped desktopfileutils sharedmimeinfo"
 checks="$checks suidfiles libtool libperl prefixvar baselibs terminfo"
-checks="$checks proxydeps sonames perlcore no_arch gemdeps"
+checks="$checks proxydeps sonames perlcore no_arch gemdeps flavors"
 
 ret=0
 cd ${STAGEDIR}

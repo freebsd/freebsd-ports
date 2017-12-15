@@ -1,0 +1,6 @@
+include/DKH/DKH_MANGLE.h
+lib/libdkh.so
+share/cmake/dkh/dkhConfig.cmake
+share/cmake/dkh/dkhConfigVersion.cmake
+share/cmake/dkh/dkhTargets-%%CMAKE_BUILD_TYPE%%.cmake
+share/cmake/dkh/dkhTargets.cmake

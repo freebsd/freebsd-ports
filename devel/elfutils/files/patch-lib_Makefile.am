@@ -1,12 +1,12 @@
---- lib/Makefile.am.orig	2016-12-28 09:32:00 UTC
+--- lib/Makefile.am.orig	2017-08-02 12:06:25 UTC
 +++ lib/Makefile.am
 @@ -35,7 +35,8 @@ noinst_LIBRARIES = libeu.a
  
  libeu_a_SOURCES = xstrdup.c xstrndup.c xmalloc.c next_prime.c \
  		  crc32.c crc32_file.c md5.c sha1.c \
--		  color.c version.c
-+		  color.c version.c error.c obstack.c \
+-		  color.c printversion.c
++		  color.c printversion.c error.c obstack.c \
 +		  obstack_printf.c
  
  noinst_HEADERS = fixedsizehash.h libeu.h system.h dynamicsizehash.h list.h \
- 		 md5.h sha1.h eu-config.h
+ 		 md5.h sha1.h eu-config.h color.h printversion.h bpf.h

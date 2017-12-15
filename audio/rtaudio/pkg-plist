@@ -1,0 +1,6 @@
+include/rtaudio/RtAudio.h
+lib/librtaudio.a
+lib/librtaudio.so
+lib/librtaudio.so.6
+lib/librtaudio.so.6.0.0
+libdata/pkgconfig/rtaudio.pc

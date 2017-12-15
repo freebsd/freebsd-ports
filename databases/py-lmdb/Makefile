@@ -15,7 +15,7 @@ LICENSE_NAME=	OpenLDAP Public LIcense
 LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cffi>0.8:devel/py-cffi
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cffi>0.8:devel/py-cffi@${FLAVOR}
 LIB_DEPENDS=	liblmdb.so:databases/lmdb
 
 USES=		localbase python

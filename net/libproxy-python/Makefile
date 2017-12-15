@@ -18,7 +18,7 @@ PLIST=		${.CURDIR}/pkg-plist
 INSTALL_WRKSRC=	${CONFIGURE_WRKSRC}/bindings/python
 NO_ARCH=	yes
 NO_BUILD=	yes
-USES=		python
+USES=		python:2.7
 
 LIBPROXY_SLAVE=	python
 

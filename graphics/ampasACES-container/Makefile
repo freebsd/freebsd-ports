@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ampasACES-container
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.2
 CATEGORIES=	graphics devel
 
 MAINTAINER=	ports@FreeBSD.org

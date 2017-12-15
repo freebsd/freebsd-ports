@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	hdf5
-PORTVERSION=	1.8.19
-PORTREVISION=	1
+PORTVERSION=	1.8.20 # When PORTVERSION changes, please update french/med/files/patch-configure
 CATEGORIES=	science archivers graphics
 MASTER_SITES=	https://support.hdfgroup.org/ftp/HDF5/current18/src/	\
 		http://support.hdfgroup.org/ftp/HDF5/current18/src/	\
@@ -16,19 +15,25 @@ COMMENT=	Hierarchical Data Format library (from NCSA) 1.8
 LICENSE=	BSD4CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_sparc64=		Does not compile on ${ARCH}
+
 OPTIONS_DEFINE=	DEBUG EXAMPLES FORTRAN SZIP
 
-USES=		libtool:keepla tar:bzip2
+USES=		libtool:keepla localbase tar:bzip2
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
+PORTSUFF=	${PORTNAME}${PKGNAMESUFFIX}
 CONFIGURE_ARGS=	--enable-cxx \
 		--enable-instrument \
 		--enable-strict-format-checks \
 		--with-pthread=/usr \
 		--with-zlib=/usr \
 		--program-suffix=${PKGNAMESUFFIX} \
-		--includedir=${PREFIX}/include/${PORTNAME}${PKGNAMESUFFIX}
-EXAMPLESDIR=	${PREFIX}/share/examples/${PORTNAME}${PKGNAMESUFFIX}
+		--includedir=${PREFIX}/include/${PORTSUFF}
+EXAMPLESDIR=	${PREFIX}/share/examples/${PORTSUFF}
+
+SUFF2FIX=	tools/misc/h5cc.in tools/misc/h5redeploy.in	\
+		c++/src/h5c++.in fortran/src/h5fc.in
 
 .include <bsd.port.options.mk>
 
@@ -52,12 +57,6 @@ LIB_DEPENDS+=	libsz.so:science/szip
 CONFIGURE_ARGS+=--with-szlib=${LOCALBASE}
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "sparc64"
-BROKEN=		Does not compile on ${ARCH}
-.endif
-
 pre-configure:
 	${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
 	${REINPLACE_CMD} -e 's|-O3||g' ${WRKSRC}/config/gnu-flags
@@ -74,14 +73,21 @@ pre-configure:
 		${REINPLACE_CMD} -e 's|libhdf5|libhdf5${PKGNAMESUFFIX}|g'
 	${REINPLACE_CMD} -e 's|libhdf5|libhdf5${PKGNAMESUFFIX}|g'	\
 		${WRKSRC}/test/testlibinfo.sh.in
+.for pf in ${SUFF2FIX}
+	${REINPLACE_CMD} -e 's|%%SUFF%%|${PKGNAMESUFFIX}|g' ${WRKSRC}/${pf}
+.endfor
 
 post-configure:
 	${CP} -p ${WRKSRC}/src/libhdf5.settings.in	\
 		${WRKSRC}/src/libhdf5${PKGNAMESUFFIX}.settings.in
 	${CP} -p ${WRKSRC}/src/libhdf5.settings		\
 		${WRKSRC}/src/libhdf5${PKGNAMESUFFIX}.settings
+post-stage:
+.if ${PORT_OPTIONS:MFORTRAN}
+	${MV} ${STAGEDIR}${PREFIX}/bin/h5fc ${STAGEDIR}${PREFIX}/bin/h5fc${PKGNAMESUFFIX}
+.endif
 
 regression-test test: build
 	cd ${WRKSRC}/ && ${SETENV} ${MAKE_ENV} ${MAKE} check
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

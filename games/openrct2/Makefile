@@ -6,7 +6,6 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	0.1.1
 PORTREVISION=	2
 CATEGORIES=	games
-EXTRACT_ONLY=	${PORTNAME}-${PORTNAME}-${DISTVERSIONPREFIX}${DISTVERSION}_GH0${EXTRACT_SUFX}
 
 MAINTAINER=	pkubaj@anongoth.pl
 COMMENT=	Open source re-implementation of RollerCoaster Tycoon 2
@@ -23,8 +22,9 @@ LIB_DEPENDS=	libpng.so:graphics/png \
 		libfreetype.so:print/freetype2
 
 USE_GITHUB=	yes
+GH_ACCOUNT=	OpenRCT2
+GH_PROJECT=	OpenRCT2
 
-WRKSRC=		${WRKDIR}/OpenRCT2-${PORTVERSION}
 INSTALLS_ICONS=	yes
 USES=		compiler:c++14-lang cmake:outsource iconv localbase:ldflags pkgconfig ssl
 USE_GL=		gl

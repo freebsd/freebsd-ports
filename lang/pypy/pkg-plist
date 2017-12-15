@@ -22,6 +22,8 @@ bin/pypy
 %%PYPY_DIR%%/include/code.h
 %%PYPY_DIR%%/include/compile.h
 %%PYPY_DIR%%/include/complexobject.h
+%%PYPY_DIR%%/include/cpyext_descrobject.h
+%%PYPY_DIR%%/include/cpyext_memoryobject.h
 %%PYPY_DIR%%/include/cpyext_object.h
 %%PYPY_DIR%%/include/cpyext_unicodeobject.h
 %%PYPY_DIR%%/include/datetime.h
@@ -2125,6 +2127,7 @@ bin/pypy
 %%PYPY_DIR%%/lib_pypy/cffi.egg-info/requires.txt
 %%PYPY_DIR%%/lib_pypy/cffi.egg-info/top_level.txt
 %%PYPY_DIR%%/lib_pypy/cffi/__init__.py
+%%PYPY_DIR%%/lib_pypy/cffi/_cffi_errors.h
 %%PYPY_DIR%%/lib_pypy/cffi/_cffi_include.h
 %%PYPY_DIR%%/lib_pypy/cffi/_embedding.h
 %%PYPY_DIR%%/lib_pypy/cffi/_pycparser/README

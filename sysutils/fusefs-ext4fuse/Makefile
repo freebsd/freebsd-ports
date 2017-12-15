@@ -4,12 +4,13 @@
 PORTNAME=	ext4fuse
 PORTVERSION=	0.1.3
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	sysutils
 PKGNAMEPREFIX=	fusefs-
 
 MAINTAINER=	ehaupt@FreeBSD.org
-COMMENT=	EXT4 implementation for FUSE
+COMMENT=	Read-only ext4 implementation for FUSE
 
 LICENSE=	GPLv2
 

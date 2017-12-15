@@ -13,7 +13,7 @@ COMMENT=	Python config parser for json, yaml
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}yaml>=0:devel/py-yaml
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}yaml>=0:devel/py-yaml@${FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist distutils

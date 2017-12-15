@@ -14,6 +14,6 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5 shebangfix
 PLIST_FILES=	bin/jtop man/man1/jtop.1.gz
-SHEBANG_FILES= 	jtop.pl
+SHEBANG_FILES=	jtop.pl
 
 .include <bsd.port.mk>

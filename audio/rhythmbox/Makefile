@@ -69,10 +69,10 @@ MTP_LIB_DEPENDS=	libmtp.so:multimedia/libmtp \
 			libhal.so:sysutils/hal
 PYTHON_CONFIGURE_ENABLE=	python
 PYTHON_USES=		python:3.3+
-PYTHON_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}libpeas>=0:devel/py3-libpeas
+PYTHON_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}libpeas>=0:devel/py-libpeas@${PY_FLAVOR}
 # context plugin
 # webkit is for the context plugin, which is broken because
-# it needs textproc/py3-mako
+# it needs textproc/py-mako@${PY_FLAVOR}
 #WEBKIT_DESC=	HTML view support
 #WEBKIT_CONFIGURE_WITH=	webkit
 #WEBKIT_LIB_DEPENDS=	libwebkitgtk-3.0.so:www/webkit-gtk3

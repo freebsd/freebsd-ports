@@ -1,41 +1,11 @@
-From 9f74e09373f3be7b77f510ef8b0ae2c887f7b325 Mon Sep 17 00:00:00 2001
-From: Natanael Copa <ncopa@alpinelinux.org>
-Date: Tue, 4 Oct 2016 14:35:33 +0200
-Subject: [PATCH] [280] Fix build with libressl
-
-Closes #280
-
-Fix building with libressl which broke in commit fff741613 (Support for
-openssl 1.1.0).
-
-Bug: #280
-
-Signed-off-by: Natanael Copa <ncopa@alpinelinux.org>
----
  lib/mosquitto_internal.h | 3 +++
  src/mosquitto_passwd.c   | 4 ++--
  src/security_default.c   | 2 +-
  3 files changed, 6 insertions(+), 3 deletions(-)
 
-diff --git lib/mosquitto_internal.h lib/mosquitto_internal.h
-index 4b4cf85..700bbb0 100644
---- lib/mosquitto_internal.h
-+++ lib/mosquitto_internal.h
-@@ -25,6 +25,9 @@ and the Eclipse Distribution License is available at
- 
- #ifdef WITH_TLS
- #  include <openssl/ssl.h>
-+#  if OPENSSL_VERSION_NUMBER >= 0x10100000L && !defined(LIBRESSL_VERSION_NUMBER)
-+#    define HAVE_OPENSSL_OPAQUE_STRUCTS
-+#  endif
- #else
- #  include <time.h>
- #endif
-diff --git src/mosquitto_passwd.c src/mosquitto_passwd.c
-index de9a719..5b854d9 100644
---- src/mosquitto_passwd.c
+--- src/mosquitto_passwd.c.orig	2017-07-10 22:46:01 UTC
 +++ src/mosquitto_passwd.c
-@@ -90,7 +90,7 @@ int output_new_password(FILE *fptr, const char *username, const char *password)
+@@ -90,7 +90,7 @@ int output_new_password(FILE *fptr, const char *userna
  	unsigned char hash[EVP_MAX_MD_SIZE];
  	unsigned int hash_len;
  	const EVP_MD *digest;
@@ -44,7 +14,7 @@ index de9a719..5b854d9 100644
  	EVP_MD_CTX context;
  #else
  	EVP_MD_CTX *context;
-@@ -117,7 +117,7 @@ int output_new_password(FILE *fptr, const char *username, const char *password)
+@@ -117,7 +117,7 @@ int output_new_password(FILE *fptr, const char *userna
  		return 1;
  	}
  
@@ -53,11 +23,9 @@ index de9a719..5b854d9 100644
  	EVP_MD_CTX_init(&context);
  	EVP_DigestInit_ex(&context, digest, NULL);
  	EVP_DigestUpdate(&context, password, strlen(password));
-diff --git src/security_default.c src/security_default.c
-index 64ca846..9ad8708 100644
---- src/security_default.c
+--- src/security_default.c.orig	2017-07-10 22:46:01 UTC
 +++ src/security_default.c
-@@ -770,7 +770,7 @@ int mosquitto_psk_key_get_default(struct mosquitto_db *db, const char *hint, con
+@@ -790,7 +790,7 @@ int mosquitto_psk_key_get_default(struct mosquitto_db 
  int _pw_digest(const char *password, const unsigned char *salt, unsigned int salt_len, unsigned char *hash, unsigned int *hash_len)
  {
  	const EVP_MD *digest;

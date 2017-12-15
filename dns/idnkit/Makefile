@@ -3,13 +3,18 @@
 
 PORTNAME=	idnkit
 PORTVERSION=	1.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	dns
 MASTER_SITES=	http://www.nic.ad.jp/ja/idn/idnkit/download/sources/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library to handle internationalized domain names
+
+LICENSE=	JPNIC
+LICENSE_NAME=	Japan Network Information Center license
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 USES=		iconv libtool
 GNU_CONFIGURE=	yes

@@ -1,6 +1,6 @@
---- ./wscript.orig	2015-06-13 01:00:10.000000000 +0000
-+++ ./wscript	2015-08-09 20:15:06.617305973 +0000
-@@ -93,7 +93,7 @@
+--- wscript.orig	2017-07-22 22:25:22 UTC
++++ wscript
+@@ -88,7 +88,7 @@ def build(bld):
          SRC += ' tevent_port.c'
  
      if bld.env.standalone_tevent:
@@ -9,7 +9,7 @@
          private_library = False
      else:
          private_library = True
-@@ -121,7 +121,7 @@
+@@ -120,7 +120,7 @@ def build(bld):
                              cflags='-DPACKAGE_VERSION=\"%s\"' % VERSION)
  
  

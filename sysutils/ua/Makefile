@@ -7,7 +7,7 @@ CATEGORIES=	sysutils
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Finds sets of identical files
 
-LICENSE=	MPL
+LICENSE=	MPL11
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	euedge

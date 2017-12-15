@@ -1,0 +1,16 @@
+======================================================================
+You installed foo-yc20: an implementation of 1969 designed Yamaha
+combo organ, the YC-20.
+
+It works through the Jack sound server, and works as a soft-MIDI device.
+
+In order to use it, please:
+* Have Jack server running.
+* Have jack-keyboard (audio/jack-keyboard) running.
+* Have QjackCtl (audio/qjackctl) running.
+* Run the UI command foo-yc20.
+* In QjackCtl, connect:
+  * the MIDI input of foo-yc20 to the output of jack-keyboard.
+  * the foo-yc20 audio output to speakers through the Jack's 'system'.
+* Play the jack-keyboard.
+======================================================================

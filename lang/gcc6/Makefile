@@ -3,7 +3,7 @@
 
 PORTNAME=	gcc
 PORTVERSION=	6.4.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	lang java
 MASTER_SITES=	GCC/releases/gcc-${DISTVERSION}
 PKGNAMESUFFIX=	${SUFFIX}
@@ -66,14 +66,8 @@ CONFIGURE_ARGS+=	--disable-multilib
 
 .if ${ARCH} == amd64
 CONFIGURE_TARGET=	x86_64-portbld-${OPSYS:tl}${OSREL}
-.endif
 
-.if ${ARCH} == powerpc64
-CONFIGURE_ENV+=	UNAME_m="powerpc64"
-USE_GCC=	5	# Cannot require ourselves, needs to be at least 4.9.
-.endif
-
-.if ${ARCH} == aarch64 || ${ARCH} == armv6 || ${ARCH} == armv7
+.elif ${ARCH} == aarch64 || ${ARCH} == armv6 || ${ARCH} == armv7
 . if ${COMPILER_TYPE} == clang
 .  if empty(PORT_OPTIONS:MBOOTSTRAP)
 MAKE_ARGS+=CXXFLAGS=-fbracket-depth=512
@@ -81,6 +75,10 @@ MAKE_ARGS+=CXXFLAGS=-fbracket-depth=512
 MAKE_ARGS+=STAGE1_CXXFLAGS=-fbracket-depth=512
 .  endif
 . endif
+
+.elif ${ARCH} == powerpc64
+CONFIGURE_ENV+=	UNAME_m="powerpc64"
+USE_GCC=	5	# Cannot require ourselves, needs to be at least 4.9.
 .endif
 
 LANGUAGES:=	c,c++,objc,fortran
@@ -93,6 +91,10 @@ CONFIGURE_ARGS+=--disable-bootstrap
 .else
 CONFIGURE_ARGS+=--with-build-config=bootstrap-debug
 ALL_TARGET=	bootstrap-lean
+.endif
+INSTALL_TARGET=	install-strip
+.if ${UID} != 0
+BINMODE=	755
 .endif
 CONFIGURE_ARGS+=--disable-nls \
 		--enable-gnu-indirect-function \

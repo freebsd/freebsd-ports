@@ -13,7 +13,7 @@ COMMENT=	Simple but powerful config file reader and writer
 
 LICENSE=	BSD3CLAUSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six@${FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist distutils

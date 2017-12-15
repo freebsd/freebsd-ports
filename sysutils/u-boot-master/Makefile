@@ -5,7 +5,8 @@
 
 PORTNAME=	u-boot
 PORTVERSION=	${UBOOT_VERSION}
-DISTVERSIONPREFIX= ports-v
+PORTREVISION=	1
+DISTVERSIONPREFIX=	ports-v
 CATEGORIES=	sysutils
 PKGNAMESUFFIX?=	-${MODEL}
 
@@ -19,7 +20,7 @@ BUILD_DEPENDS+=	gsed:textproc/gsed \
 		dtc>=1.4.1:sysutils/dtc
 BUILD_DEPENDS+=	${COMPILER}:devel/${COMPILER}
 
-USES=		gmake python:build shebangfix
+USES=		gmake python:2.7,build shebangfix
 BINARY_ALIAS=	swig=swig3.0 sed=gsed
 
 USE_GITHUB=	yes
@@ -61,6 +62,9 @@ UBOOT_ARCH_ALLWINNER64=aarch64
 UBOOT_PLIST_ZYNQ_7000=u-boot.img boot.bin uEnv.txt
 UBOOT_MOVE_ZYNQ_7000=${WRKSRC}/spl/boot.bin ${.CURDIR}/files/uEnv.txt
 
+# Overrides for RPI family
+UBOOT_PLIST_RPI=	u-boot.bin
+
 # Uboot variables
 .if !defined(UBOOT_VERSION) && defined(UBOOT_VERSION_${FAMILY:tu})
 UBOOT_VERSION=${UBOOT_VERSION_${FAMILY:tu}}
@@ -94,14 +98,27 @@ COMPILER?=${CROSS_COMPILE}gcc
 UBOOT_MOVE=${UBOOT_MOVE_${FAMILY:tu}}
 .endif
 
+# Per family dependancies
+.if defined(FAMILY) && ${FAMILY} == allwinner64
+BUILD_DEPENDS+=	${LOCALBASE}/share/atf-allwinner/bl31.bin:sysutils/atf-allwinner
+MAKE_ENV+=	BL31=${LOCALBASE}/share/atf-allwinner/bl31.bin
+.endif
+
 # Each u-boot family has different files to include, bring them in.
 .for i in ${UBOOT_PLIST}
-PLIST_FILES+= ${UBOOT_DIR}/${i}
+PLIST_FILES+=	${UBOOT_DIR}/${i}
 .endfor
-PLIST_FILES+= ${UBOOT_DIR}/README
+PLIST_FILES+=	${UBOOT_DIR}/README
 
 do-configure:
 	(cd ${WRKSRC}; ${SETENV} ${CONFIGURE_ENV} ${MAKE_CMD} ${BOARD_CONFIG})
+
+# U-Boot for Allwinner 64bits SoCs is splited in two parts
+# Generate a single binary to ease deployement on sdcard
+.if defined(FAMILY) && ${FAMILY} == allwinner64
+post-build:
+	${CAT} ${WRKSRC}/spl/sunxi-spl.bin ${WRKSRC}/u-boot.itb > ${WRKSRC}/u-boot-sunxi-with-spl.bin
+.endif
 
 # If we need to put anything into WRKSRC, do so now so we can build the PLIST
 # in do-install

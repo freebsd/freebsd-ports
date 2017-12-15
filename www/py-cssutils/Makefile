@@ -20,11 +20,9 @@ OPTIONS_DEFINE=	EXAMPLES
 
 NO_ARCH=	yes
 USE_PYTHON=	autoplist concurrent distutils
-USES?=		python
+USES=		python
 
 PORTEXAMPLES=	*
-
-SLAVEDIRS=	www/py3-cssutils
 
 post-install-EXAMPLES-on:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/

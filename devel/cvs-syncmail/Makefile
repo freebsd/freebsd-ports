@@ -6,23 +6,22 @@ PORTVERSION=	2.1
 CATEGORIES=	devel python
 MASTER_SITES=	SF
 DISTNAME=	syncmail
-EXTRACT_SUFX=
+EXTRACT_SUFX=	# none
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	CVS notification tool
+
+LICENSE=	BSD3CLAUSE  # see CVS repository on SourceForge
+
+RUN_DEPENDS=	cvs:devel/cvs
 
 USES=		python shebangfix
 SHEBANG_FILES=	${DISTNAME}
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
+NO_ARCH=	yes
 
 PLIST_FILES=	bin/${DISTNAME}
-
-.include <bsd.port.pre.mk>
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} > 1000000
-RUN_DEPENDS=	cvs:devel/cvs
-.endif
 
 do-extract:
 	@${MKDIR} ${WRKSRC}
@@ -31,4 +30,4 @@ do-extract:
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${DISTNAME} ${STAGEDIR}${PREFIX}/bin/${DISTNAME}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

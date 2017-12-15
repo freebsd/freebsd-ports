@@ -1,0 +1,5 @@
+Nyx is a command-line monitor for Tor. With this you can get detailed real-time
+information about your relay such as bandwidth usage, connections, logs, and
+much more.
+
+WWW: https://nyx.torproject.org/

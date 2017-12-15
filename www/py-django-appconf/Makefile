@@ -12,7 +12,7 @@ COMMENT=	Helper class for handling configuration defaults gracefully
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six@${FLAVOR}
 
 NO_ARCH=	yes
 USES=		python:2.7+

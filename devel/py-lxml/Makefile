@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/doc/licenses/BSD.txt
 LIB_DEPENDS=	libxml2.so:textproc/libxml2 \
 		libxslt.so:textproc/libxslt
 
-USES+=		python uniquefiles:dirs
+USES=		python uniquefiles:dirs
 USE_PYTHON=	autoplist concurrent distutils
 
 LDFLAGS+=	-Wl,-rpath=${LOCALBASE}/lib

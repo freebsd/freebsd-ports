@@ -7,7 +7,7 @@
 -    'requests >= 2.6.1, != 2.11.0, < 2.12',
 -    'texttable >= 0.9.0, < 0.10',
 +    'requests >= 2.6.1, != 2.11.0, < 3',
-+    'texttable >= 0.9.0, < 1',
++    'texttable >= 0.9.0, < 2',
      'websocket-client >= 0.32.0, < 1.0',
      'docker >= 2.5.1, < 3.0',
      'dockerpty >= 0.4.1, < 0.5',

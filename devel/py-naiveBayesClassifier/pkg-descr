@@ -1,0 +1,21 @@
+Yet another general purpose Naive Bayesian classifier.
+(under heavy development)
+
+Naive Bayes Classifier is probably the most widely used text classifier, 
+it's a supervised learning algorithm. It can be used to classify blog posts
+or news articles into different categories like sports, entertainment and
+so forth. 
+
+Naive Bayes is a simple technique for constructing classifiers: models that
+assign class labels to problem instances, represented as vectors of feature
+values, where the class labels are drawn from some finite set. It is not a
+single algorithm for training such classifiers, but a family of algorithms
+based on a common principle: all naive Bayes classifiers assume that the value
+of a particular feature is independent of the value of any other feature,
+given the class variable. For example, a fruit may be considered to be an apple
+if it is red, round, and about 10 cm in diameter. A naive Bayes classifier
+considers each of these features to contribute independently to the probability
+that this fruit is an apple, regardless of any possible correlations between
+the color, roundness, and diameter features.
+
+WWW: https://pypi.python.org/pypi/naiveBayesClassifier

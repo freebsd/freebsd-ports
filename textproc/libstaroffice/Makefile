@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libstaroffice
-PORTVERSION=	0.0.4
-PORTREVISION=	2
+PORTVERSION=	0.0.5
 CATEGORIES=	textproc
 MASTER_SITES=	LODEV
 MASTER_SITE_SUBDIR=	#
@@ -21,7 +20,7 @@ BROKEN_powerpc64=	fails to configure: Could not find Boost implementation of sha
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
-USES=		libtool pathfix pkgconfig tar:xz
+USES=		compiler:c++11-lang libtool pathfix pkgconfig tar:xz
 
 CONFIGURE_ARGS=	--without-docs
 CPPFLAGS+=	-I${LOCALBASE}/include

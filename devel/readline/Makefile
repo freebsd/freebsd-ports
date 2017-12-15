@@ -3,6 +3,7 @@
 
 PORTNAME=	readline
 PORTVERSION=	7.0.${PATCHLEVEL}
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	GNU
 DISTNAME=	${PORTNAME}-${PORTVERSION:R}
@@ -37,9 +38,13 @@ PATCHFILES+=	${PORTNAME}${PORTVERSION:R:S|.||}-${patch:S|^|00|:S|.*(...)$|\1|}
 .endfor
 
 post-patch-TERMCAP-on:
+	# Comment out "Requires.private: tinfo" line since we do not have tinfo.pc in base system.
+	# See PR/223130 for details.
+	@${REINPLACE_CMD} -e '/^Requires.private: tinfo/ s|^|#|' ${WRKSRC}/readline.pc.in
 	@${REINPLACE_CMD} -e '/SHOBJ_LDFLAGS = / s| = |&-ltermcapw |' ${WRKSRC}/shlib/Makefile.in
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libhistory.so.7 ${STAGEDIR}${PREFIX}/lib/libreadline.so.7
+	${INSTALL_DATA} ${WRKSRC}/readline.pc ${STAGEDIR}${PREFIX}/libdata/pkgconfig
 
 .include <bsd.port.mk>

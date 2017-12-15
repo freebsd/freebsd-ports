@@ -18,7 +18,7 @@ GNU_CONFIGURE=	yes
 
 OPTIONS_DEFINE=		DOCS IMLIB2
 
-IMLIB2_LIB_DEPENDS= 	libImlib2.so:graphics/imlib2
+IMLIB2_LIB_DEPENDS=	libImlib2.so:graphics/imlib2
 IMLIB2_CONFIGURE_ENABLE=Imlib2
 
 post-extract:

@@ -267,6 +267,7 @@
     SUBDIR += muttils
     SUBDIR += nbsmtp
     SUBDIR += neomutt
+    SUBDIR += nextcloud-mail
     SUBDIR += nmh
     SUBDIR += nmzmail
     SUBDIR += noattach
@@ -488,6 +489,7 @@
     SUBDIR += php56-imap
     SUBDIR += php70-imap
     SUBDIR += php71-imap
+    SUBDIR += php72-imap
     SUBDIR += phplist
     SUBDIR += phpmailer
     SUBDIR += pine-pgp-filters
@@ -544,6 +546,7 @@
     SUBDIR += py-pymailq
     SUBDIR += py-pyspf
     SUBDIR += py-spambayes
+    SUBDIR += py-pyzmail
     SUBDIR += py-zope.sendmail
     SUBDIR += pymsgauth
     SUBDIR += pysieved
@@ -718,7 +721,6 @@
     SUBDIR += thunderbird
     SUBDIR += thunderbird-dictionaries
     SUBDIR += thunderbird-i18n
-    SUBDIR += tkrat2
     SUBDIR += tlb
     SUBDIR += tmda
     SUBDIR += tpop3d

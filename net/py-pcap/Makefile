@@ -15,7 +15,7 @@ COMMENT=	Python interface to LBL Packet Capture library (libpcap)
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		python
+USES=		python:2.7
 USE_PYTHON=	distutils autoplist
 
 OPTIONS_DEFINE=	LIBPCAP

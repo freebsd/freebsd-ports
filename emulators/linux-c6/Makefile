@@ -3,6 +3,7 @@
 
 PORTNAME=	linux-c6
 PORTVERSION=	${LINUX_DIST_VER}
+PORTREVISION=	1
 CATEGORIES=	emulators linux
 
 MAINTAINER=	emulation@FreeBSD.org
@@ -26,7 +27,6 @@ RUN_DEPENDS=	linux-c6-libasyncns>0:dns/linux-c6-libasyncns \
 		linux-c6-dbus-libs>0:devel/linux-c6-dbus-libs \
 		linux-c6-qt47>0:devel/linux-c6-qt47 \
 		linux-c6-dbus-glib>0:devel/linux-c6-dbus-glib \
-		linux-c6-ncurses-base>0:devel/linux-c6-ncurses-base \
 		linux-c6-xorg-libs>0:x11/linux-c6-xorg-libs \
 		linux-c6-fontconfig>0:x11-fonts/linux-c6-fontconfig \
 		linux-c6-cups-libs>0:print/linux-c6-cups-libs \

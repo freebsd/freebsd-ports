@@ -51,7 +51,7 @@ lib/libwcs-%%VERSION%%.a
 lib/libwcs.a
 lib/libwcs.so
 lib/libwcs.so.5
-lib/libwcs.so.5.16
+lib/libwcs.so.5.17
 libdata/pkgconfig/wcslib.pc
 man/man1/fitshdr.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES
@@ -60,8 +60,6 @@ man/man1/fitshdr.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/html/Bonne.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/annotated.html
-%%PORTDOCS%%%%DOCSDIR%%/html/arrowdown.png
-%%PORTDOCS%%%%DOCSDIR%%/html/arrowright.png
 %%PORTDOCS%%%%DOCSDIR%%/html/bc_s.png
 %%PORTDOCS%%%%DOCSDIR%%/html/bdwn.png
 %%PORTDOCS%%%%DOCSDIR%%/html/cel_8h.html
@@ -264,6 +262,8 @@ man/man1/fitshdr.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/html/log_8h.html
 %%PORTDOCS%%%%DOCSDIR%%/html/log_8h_source.html
 %%PORTDOCS%%%%DOCSDIR%%/html/memory.html
+%%PORTDOCS%%%%DOCSDIR%%/html/menu.js
+%%PORTDOCS%%%%DOCSDIR%%/html/menudata.js
 %%PORTDOCS%%%%DOCSDIR%%/html/nav_f.png
 %%PORTDOCS%%%%DOCSDIR%%/html/nav_g.png
 %%PORTDOCS%%%%DOCSDIR%%/html/nav_h.png

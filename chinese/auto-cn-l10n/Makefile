@@ -13,10 +13,10 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The automatic localization for Simplified Chinese zh_CN.eucCN locale
 
 NO_BUILD=	yes
-SUB_FILES=  	pkg-message
+SUB_FILES=	pkg-message
 REINPLACE_ARGS=	-i ""
 
-OPTIONS_DEFINE=	WQY FIREFLYTTF FCITX SCIM MINICHINPUT RELAXCONF
+OPTIONS_DEFINE=		WQY FIREFLYTTF FCITX SCIM MINICHINPUT RELAXCONF
 OPTIONS_DEFAULT=	WQY SCIM RELAXCONF
 WQY_DESC=		WenQuanYi Bitmap Song Font
 FIREFLYTTF_DESC=	Firefly TrueType Font
@@ -30,7 +30,7 @@ FIREFLYTTF_RUN_DEPENDS=	${LOCALBASE}/share/fonts/TrueType/fireflysung.ttf:chines
 FCITX_RUN_DEPENDS=	fcitx:chinese/fcitx
 SCIM_RUN_DEPENDS=	${LOCALBASE}/share/scim/tables/Wubi.bin:chinese/scim-tables \
 			${LOCALBASE}/lib/scim-1.0/1.4.0/IMEngine/pinyin.so:chinese/scim-pinyin
-MINICHINPUT_RUN_DEPENDS=	chinput:chinese/miniChinput
+MINICHINPUT_RUN_DEPENDS=chinput:chinese/miniChinput
 RELAXCONF_RUN_DEPENDS=	relaxconf:sysutils/relaxconf
 
 post-patch:

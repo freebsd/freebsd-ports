@@ -148,6 +148,7 @@
     SUBDIR += djview4-qt4
     SUBDIR += djvulibre
     SUBDIR += dmtx-utils
+    SUBDIR += drawpile
     SUBDIR += driconf
     SUBDIR += drm-next-kmod
     SUBDIR += dspdfviewer
@@ -236,7 +237,6 @@
     SUBDIR += geomorph
     SUBDIR += geomview
     SUBDIR += geos
-    SUBDIR += geos35
     SUBDIR += geoserver
     SUBDIR += gexiv2
     SUBDIR += giblib
@@ -279,6 +279,7 @@
     SUBDIR += glosm
     SUBDIR += glpng
     SUBDIR += gltt
+    SUBDIR += gmic-qt
     SUBDIR += gmt
     SUBDIR += gnash
     SUBDIR += gnofract4d
@@ -292,6 +293,7 @@
     SUBDIR += goocanvasmm2
     SUBDIR += goom
     SUBDIR += gource
+    SUBDIR += goxel
     SUBDIR += gpaint
     SUBDIR += gphoto2
     SUBDIR += gpicview
@@ -467,6 +469,7 @@
     SUBDIR += ksnapshot
     SUBDIR += kudu
     SUBDIR += l2p
+    SUBDIR += largetifftools
     SUBDIR += laternamagica
     SUBDIR += lcdtest
     SUBDIR += lcms
@@ -552,7 +555,6 @@
     SUBDIR += libzmf
     SUBDIR += lightzone
     SUBDIR += linplasma
-    SUBDIR += linux-adobesvg
     SUBDIR += linux-c6-cairo
     SUBDIR += linux-c6-dri
     SUBDIR += linux-c6-gdk-pixbuf2
@@ -792,6 +794,8 @@
     SUBDIR += php70-gd
     SUBDIR += php71-exif
     SUBDIR += php71-gd
+    SUBDIR += php72-exif
+    SUBDIR += php72-gd
     SUBDIR += phplot
     SUBDIR += picpuz
     SUBDIR += piddle
@@ -859,6 +863,7 @@
     SUBDIR += py-gd
     SUBDIR += py-gdal
     SUBDIR += py-gimp
+    SUBDIR += py-gizeh
     SUBDIR += py-glewpy
     SUBDIR += py-goocanvas
     SUBDIR += py-gphoto2
@@ -879,6 +884,7 @@
     SUBDIR += py-openexr
     SUBDIR += py-openimageio
     SUBDIR += py-paint
+    SUBDIR += py-photocollage
     SUBDIR += py-pillow
     SUBDIR += py-pivy
     SUBDIR += py-plotly
@@ -901,6 +907,7 @@
     SUBDIR += py-sane
     SUBDIR += py-scikit-image
     SUBDIR += py-seqdiag
+    SUBDIR += py-sk1
     SUBDIR += py-sorl-thumbnail
     SUBDIR += py-soya3d
     SUBDIR += py-stltools
@@ -908,10 +915,6 @@
     SUBDIR += py-traitsui
     SUBDIR += py-wand
     SUBDIR += py-webcolors
-    SUBDIR += py3-cairo
-    SUBDIR += py3-imagesize
-    SUBDIR += py3-pillow
-    SUBDIR += py3-pygraphviz
     SUBDIR += pygts
     SUBDIR += pymorph
     SUBDIR += pysvg

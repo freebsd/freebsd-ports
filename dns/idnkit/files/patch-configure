@@ -1,8 +1,23 @@
-Index: configure
-diff -u configure.orig configure
---- configure.orig	Tue Mar 11 08:53:20 2003
-+++ configure	Sun Sep  3 21:07:20 2006
-@@ -2633,7 +2644,37 @@
+--- configure.orig	2003-03-10 23:53:20 UTC
++++ configure
+@@ -762,14 +762,14 @@ yes)
+ 	libiconv=$prefix
+     fi
+     ICONVINC="-I$libiconv/include"
+-    ICONVLIB="-L$libiconv/lib -R$libiconv/lib -liconv"
++    ICONVLIB="-L$libiconv/lib -liconv"
+     ;;
+ *)
+     if test "$liteonly" = yes ; then
+ 	{ echo "configure: error: you can't set iconv options at all when you set value \"yes\" to --enable-liteonly, because lite library does not have iconv support." 1>&2; exit 1; }
+     fi
+     ICONVINC="-I$libiconv/include"
+-    ICONVLIB="-L$libiconv/lib -R$libiconv/lib -liconv"
++    ICONVLIB="-L$libiconv/lib -liconv"
+     ;;
+ esac
+ 
+@@ -2633,7 +2633,37 @@ fi
    ac_cv_flavor_gethostbyaddr=unknown
  else
    cat > conftest.$ac_ext <<EOF
@@ -41,7 +56,7 @@ diff -u configure.orig configure
  #include "confdefs.h"
  
      #include <stddef.h>
-@@ -2675,6 +2716,10 @@
+@@ -2675,6 +2705,10 @@ echo "$ac_t""$ac_cv_flavor_gethostbyaddr
  	ac_cv_type_ghba_addr_t='const char *'
  	ac_cv_type_ghba_addrlen_t='size_t'
  	;;

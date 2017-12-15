@@ -1,15 +1,14 @@
-# Created by: tcberner
 # $FreeBSD$
 
 PORTNAME=	khtml
-PORTVERSION=	${KDE_FRAMEWORKS_VERSION}
+DISTVERSION=	${KDE_FRAMEWORKS_VERSION}
 CATEGORIES=	www kde kde-frameworks
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KF5 KTHML rendering engine
 
 LIB_DEPENDS=	libgif.so:graphics/giflib \
-		libpng16.so:graphics/png
+		libpng.so:graphics/png
 
 USES=		cmake:outsource compiler:c++11-lib gettext gperf jpeg kde:5 \
 		tar:xz

@@ -9,8 +9,6 @@ PKGNAMESUFFIX=	-devel
 MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	LLVM and Clang
 
-BROKEN_powerpc64=	Does not build: error: vsnprintf was not declared in this scope
-
 LLVM_SUFFIX=	-devel
 LLVM_PREFIX=	${PREFIX}/llvm${LLVM_SUFFIX}
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}${LLVM_SUFFIX}
@@ -34,6 +32,9 @@ SUB_LIST=	LLVM_PREFIX="${LLVM_PREFIX}" LLVM_SUFFIX="${LLVM_SUFFIX}"
 
 CMAKE_INSTALL_PREFIX=	${LLVM_PREFIX}
 CMAKE_ARGS=	-DLLVM_BUILD_LLVM_DYLIB=ON
+CMAKE_ARGS+=	-DLLVM_ENABLE_RTTI=ON
+CMAKE_ARGS+=	-DLLVM_DEFAULT_TARGET_TRIPLE=${CONFIGURE_TARGET}
+CMAKE_ARGS+=	-DLLVM_HOST_TRIPLE=${CONFIGURE_TARGET}
 # Following commit https://github.com/kitware/cmake/commit/956054
 # we need to either change the whole man-shuffle below, or simply
 # redefine CMAKE_INSTALL_MANDIR
@@ -124,6 +125,7 @@ COMMANDS=	bugpoint \
 		llvm-as \
 		llvm-bcanalyzer \
 		llvm-cat \
+		llvm-cfi-verify \
 		llvm-config \
 		llvm-cov \
 		llvm-cvtres \
@@ -193,6 +195,22 @@ EXTRAS_PATTERN=	${EXTRAS_COMMANDS:tW:C/  */|/g}|${EXTRAS_LIBS:tW:C/  */|/g}
 
 .include <bsd.port.options.mk>
 
+# keep in sync with /usr/src/lib/clang/clang.build.mk 
+# ----------- start of sync block ------------------
+# Armv6 and armv7 uses hard float abi, unless the CPUTYPE has soft in it.
+# arm (for armv4 and armv5 CPUs) always uses the soft float ABI.
+# For all other targets, we stick with 'unknown'.
+.if ${ARCH:Marmv[67]*} && (!defined(CPUTYPE) || ${CPUTYPE:M*soft*} == "")
+TARGET_ABI=	-gnueabihf
+.elif ${ARCH:Marm*}
+TARGET_ABI=	-gnueabi  
+.else
+TARGET_ABI=
+.endif
+
+CONFIGURE_TARGET:=${ARCH:C/amd64/x86_64/:C/arm64/aarch64/}-portbld-${OPSYS:tl}${OSREL}${TARGET_ABI}
+# ----------- end of sync block --------------------
+
 .if ${PORT_OPTIONS:MCLANG}
 COMMANDS+=	c-index-test \
 		clang \
@@ -200,6 +218,7 @@ COMMANDS+=	c-index-test \
 		clang-check \
 		clang-cpp \
 		clang-format \
+		clang-func-mapping \
 		clang-import-test \
 		clang-offload-bundler \
 		clangd \
@@ -220,14 +239,17 @@ LIT_COMMANDS=	lit llvm-lit FileCheck
 .endif
 
 .if ${PORT_OPTIONS:MLLD}
-COMMANDS+=	ld.lld
+COMMANDS+=	ld.lld \
+		ld64.lld \
+		wasm-ld
 .endif
 
 .if ${PORT_OPTIONS:MLLDB}
 COMMANDS+=	lldb \
 		lldb-argdumper \
 		lldb-mi \
-		lldb-server
+		lldb-server \
+		lldb-test
 .endif
 
 .if ! ${OPTIONS_DEFINE:MCOMPILER_RT}
@@ -248,7 +270,7 @@ PLIST_SUB+=	OPENMP="@comment "
 .else
 .endif
 
-MAN1SRCS+=	bugpoint.1 llc.1 lli.1 llvm-ar.1 llvm-as.1 \
+MAN1SRCS+=	bugpoint.1 dsymutil.1 llc.1 lli.1 llvm-ar.1 llvm-as.1 \
 		llvm-bcanalyzer.1 llvm-build.1 llvm-config.1 llvm-cov.1 \
 		llvm-diff.1 llvm-dis.1 llvm-dwarfdump.1 \
 		llvm-extract.1 llvm-lib.1 llvm-link.1 llvm-nm.1 \
@@ -291,8 +313,7 @@ _COMPILER_RT_LIBS= \
 	libclang_rt.ubsan_standalone-x86_64.a.syms \
 	libclang_rt.ubsan_standalone-x86_64.so \
 	libclang_rt.ubsan_standalone_cxx-x86_64.a \
-	libclang_rt.ubsan_standalone_cxx-x86_64.a.syms \
-	libclang_rt.ubsan_standalone_cxx-x86_64.so
+	libclang_rt.ubsan_standalone_cxx-x86_64.a.syms
 .endif
 .if ${ARCH} == "i386"
 _COMPILER_RT_LIBS+= \
@@ -310,8 +331,7 @@ _COMPILER_RT_LIBS+= \
 	libclang_rt.ubsan_minimal-i386.so \
 	libclang_rt.ubsan_standalone-i386.a \
 	libclang_rt.ubsan_standalone-i386.so \
-	libclang_rt.ubsan_standalone_cxx-i386.a \
-	libclang_rt.ubsan_standalone_cxx-i386.so
+	libclang_rt.ubsan_standalone_cxx-i386.a
 .endif
 
 .if ${PORT_OPTIONS:MEXTRAS}
@@ -450,7 +470,7 @@ build-plist:
 	    if ($$0 ~ /${CLANG_PATTERN}/ && $$0 !~ /omp.h|${EXTRAS_PATTERN}|libclang_rt/) {printf "%%%%CLANG%%%%"} \
 	    if ($$0 ~ /${COMPILER_RT_PATTERN}/) \
 		{printf "%%%%COMPILER_RT%%%%"} \
-	    if ($$0 ~ /lld/ && $$0 !~ /lldb/) {printf "%%%%LLD%%%%"} \
+	    if ($$0 ~ /lld|wasm-ld/ && $$0 !~ /lldb/) {printf "%%%%LLD%%%%"} \
 	    if ($$0 ~ /(${EXTRAS_PATTERN})/) {printf "%%%%EXTRAS%%%%"} \
 	    if ($$0 ~ /(argdumper|lldb|six.py)/) {printf "%%%%LLDB%%%%"} \
 	    if ($$0 ~ /(lib[ig]*omp|omp.h)/) {printf "%%%%OPENMP%%%%"} \

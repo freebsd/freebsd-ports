@@ -95,28 +95,28 @@ MONGO_PLIST_FILES=		lib/syslog-ng/libafmongodb.so
 
 JSON_CONFIGURE_ENABLE=		json
 JSON_LIB_DEPENDS=		libjson-c.so:devel/json-c
-JSON_PLIST_FILES= 		lib/syslog-ng/libjson-plugin.so
+JSON_PLIST_FILES=		lib/syslog-ng/libjson-plugin.so
 
 JAVA_CONFIGURE_ENABLE=		java
 JAVA_BROKEN=			Unsupported maven downloads.
 JAVA_USE_JAVA=			yes
 JAVA_BUILD_DEPENDS=		gradle:devel/gradle
 JAVA_BUILD_DEPENDS=		bash:shells/bash
-JAVA_PLIST_FILES= 		lib/syslog-ng/libmod-java.so \
-			lib/syslog-ng/java-modules/syslog-ng-core.jar \
-			lib/syslog-ng/java-modules/log4j-1.2.16.jar \
-			lib/syslog-ng/java-modules/elastic.jar \
-			lib/syslog-ng/java-modules/http.jar \
-			lib/syslog-ng/java-modules/kafka.jar \
-			lib/syslog-ng/java-modules/java-modules.jar \
-			lib/syslog-ng/java-modules/hdfs.jar \
-			lib/syslog-ng/java-modules/syslog-ng-common.jar \
-			lib/syslog-ng/java-modules/dummy.jar
+JAVA_PLIST_FILES=		lib/syslog-ng/libmod-java.so \
+				lib/syslog-ng/java-modules/syslog-ng-core.jar \
+				lib/syslog-ng/java-modules/log4j-1.2.16.jar \
+				lib/syslog-ng/java-modules/elastic.jar \
+				lib/syslog-ng/java-modules/http.jar \
+				lib/syslog-ng/java-modules/kafka.jar \
+				lib/syslog-ng/java-modules/java-modules.jar \
+				lib/syslog-ng/java-modules/hdfs.jar \
+				lib/syslog-ng/java-modules/syslog-ng-common.jar \
+				lib/syslog-ng/java-modules/dummy.jar
 
 PYTHON_CONFIGURE_ON=		--enable-python --with-python=2.7
 PYTHON_CONFIGURE_OFF=		--disable-python
 PYTHON_USES=			python:2.7
-PYTHON_PLIST_FILES= 		lib/syslog-ng/libmod-python.so
+PYTHON_PLIST_FILES=		lib/syslog-ng/libmod-python.so
 
 .include <bsd.port.pre.mk>
 

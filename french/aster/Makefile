@@ -3,7 +3,6 @@
 
 PORTNAME=	aster
 DISTVERSION=	${ASTER_DISTVERSION}
-PORTREVISION=	5
 CATEGORIES=	french cad
 CATEGORIES=	french cad
 
@@ -35,14 +34,19 @@ LICENSE=	GPLv2
 BUILD_DEPENDS+=	astk-serveur>0:cad/astk-serveur	\
 		${SHELL_INSTALL_ASTER}:shells/${SHIADEP}	\
 		${LOCALBASE}/lib/libscotch.a:cad/scotch		\
+		${LOCALBASE}/lib/libGKlib.a:math/metis-edf	\
+		pylupdate4:textproc/py-qt4-xml			\
+		gnproc:sysutils/coreutils			\
 		python:lang/python				\
+		bash:shells/bash				\
 		${PYNUMPY}
 LIB_DEPENDS+=	libhdf5-18.so:science/hdf5-18			\
-		libmed.so:french/med				\
-		libmetis.so.0:math/metis-edf			\
-		libAsterInterface.so:science/tfel
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}gnuplot>0:math/py-gnuplot\
-		${LOCALBASE}/bin/onmetis:math/metis-edf		\
+		libmetis.so.2:math/metis-edf			\
+		libomp.so:devel/openmp				\
+		libmed.so:french/med
+#		libAsterInterface.so:science/mfront
+#		libAsterInterface.so:science/tfel
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}gnuplot>0:math/py-gnuplot@${PY_FLAVOR} \
 		${SHELL_INSTALL_ASTER}:shells/${SHIADEP}	\
 		astk-serveur>0:cad/astk-serveur
 
@@ -50,6 +54,7 @@ BROKEN_FreeBSD_12=	does not build (sed: ${STAGEDIR}${inst_dir}/${VE}/aster.conf:
 
 USES=		bison fortran gettext python:2 tk
 USE_BINUTILS=	yes
+USE_QT4=	linguisttools_build
 
 .if defined(WITH_ATLAS)
 USES+=		blaslapack:atlas
@@ -58,7 +63,10 @@ USES+=		blaslapack:netlib
 .endif
 
 HAS_CONFIGURE=	yes
-MAKE_ENV=	INCLUDES="${LOCALBASE}/include/hdf5-18 ${LOCALBASE}/include ${LOCALBASE}/include/metis"
+MAKE_ENV=	INCLUDES="${LOCALBASE}/include/hdf5-18 ${LOCALBASE}/include"	\
+		INCLUDEDIR="${LOCALBASE}/include/hdf5-18 ${LOCALBASE}/include"	\
+		LD_PRELOAD="${LOCALBASE}/lib/gcc${_GCC_VER}/libgcc_s.so.1"	\
+		LINKFLAGS="${LDFLAGS}" LD_LIBRARY_PATH="${LOCALBASE}/lib/gcc${_GCC_VER}"
 REINPLACE_ARGS=	-i ""
 
 VER=		${PORTVERSION:R}
@@ -90,12 +98,6 @@ PLIST_SUB+=	ASTK_CLIENT=""  ASTKDIR=${ASTKDIR}
 .else
 PLIST_SUB+=	ASTK_CLIENT="@comment " ASTKDIR=""
 .endif
-.if !defined(WITHOUT_EFICAS)
-RUN_DEPENDS+=	fr-eficas>0:french/eficas
-PLIST_SUB+=	EFICAS=""
-.else
-PLIST_SUB+=	EFICAS="@comment "
-.endif
 .if !defined(WITHOUT_GMSH)
 RUN_DEPENDS+=	${LOCALBASE}/bin/gmsh:cad/gmsh
 PLIST_SUB+=	GMSH=""
@@ -113,14 +115,15 @@ RUN_DEPENDS+=	${PYNUMPY}
 .endif
 
 .if !defined(WITH_MPI)
-MUMPS_PORT=	mumps
+MPISEQ=		-lmpiseq
+MUMPSLIB=	-L${LOCALBASE}/lib -ldmumps -lzmumps -lsmumps -lcmumps -lmumps_common -lpord ${MPISEQ}
+LIB_DEPENDS+=	libmpiseq.so.5:math/mumps-edf
 .else
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libblacs.a:math/blacs	\
 		${LOCALBASE}/lib/libscalapack.a:math/scalapack
-MUMPS_PORT=	mumps-mpich
-MUMPSLIB=	-L${LOCALBASE}/lib -ldmumps -lzmumps -lmumps_common -lpord -lscalapack -lblacs -lblacsc -lblacs -L${LOCALBASE}/lib -lmpich -lmpl
+MUMPSLIB=	-L${LOCALBASE}/lib -ldmumps -lzmumps -lsmumps -lcmumps -lmumps_common -lpord -lscalapack -lblacs -lblacsc -lblacs -L${LOCALBASE}/lib -lmpich -lmpl
+LIB_DEPENDS+=	libcmumps.so.5:math/mumps-edf
 .endif
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libcmumps.a:math/${MUMPS_PORT}
 
 .if defined(WITH_MPI)
 LIB_DEPENDS+=	libmpich.so:net/mpich2
@@ -174,10 +177,7 @@ PFX2FIX=	bin/as_run ${VE}/include/aster/asterc_config.h			\
 		${VE}/share/aster/CTestTestfile.cmake ${VE}/share/aster/config.txt
 inst_dir=	${PREFIX}/${PORTNAME}
 tools_dir=	${PREFIX}/${PORTNAME}/outils
-tools=		kmetis onmetis pmetis gnuplot
-.if !defined(WITHOUT_EFICAS)
-tools+=		eficas eficasQt
-.endif
+tools=		cmpfillin gpmetis graphchk m2gmetis mpmetis ndmetis gnuplot
 .if !defined(WITHOUT_GMSH)
 tools+=		gmsh
 .endif
@@ -209,7 +209,7 @@ pre-configure:
 		${WRKSRC}/products.py
 	${REINPLACE_CMD} -e "s|'gfortran'|'${FC}'|g;s|'gcc'|'${CC}'|g"	\
 		-e "s|'g++'|'${CXX}'|g" ${WRKSRC}/check_compilers.py
-	${REINPLACE_CMD} -e 's|%%FILESDIR%%|${FILESDIR}|' ${WRKSRC}/as_setup.py
+	${REINPLACE_CMD} -e "s|%%LOCALBASE%%|${LOCALBASE}|" ${WRKSRC}/as_setup.py
 .for sh in ${BASH2RC}
 	${REINPLACE_CMD} -e 's|/bin/bash|${SHELL_INSTALL_ASTER}|' ${WRKSRC}/${sh}
 .endfor
@@ -233,6 +233,7 @@ pre-configure:
 	${ECHO_CMD} "_install_astk = False"			>> ${WRKSRC}/setup.cfg
 	${ECHO_CMD} "_install_astk_serv = False"		>> ${WRKSRC}/setup.cfg
 	${ECHO_CMD} "_install_metis = False"			>> ${WRKSRC}/setup.cfg
+	${ECHO_CMD} "_install_mfront = False"			>> ${WRKSRC}/setup.cfg
 	${ECHO_CMD} "_install_mumps = False"			>> ${WRKSRC}/setup.cfg
 	${ECHO_CMD} "_install_omniORB = False"			>> ${WRKSRC}/setup.cfg
 	${ECHO_CMD} "_install_omniORBpy = False"		>> ${WRKSRC}/setup.cfg
@@ -243,13 +244,18 @@ pre-configure:
 	${ECHO_CMD} "OPT_ENV = 'verbose=True'"			>> ${WRKSRC}/setup.cfg
 	${ECHO_CMD} "HOME_SCOTCH = '${LOCALBASE}'"		>> ${WRKSRC}/setup.cfg
 	${ECHO_CMD} "HOME_METIS = '${LOCALBASE}'"		>> ${WRKSRC}/setup.cfg
+	${ECHO_CMD} "HOME_GMSH = '${LOCALBASE}'"		>> ${WRKSRC}/setup.cfg
+	${ECHO_CMD} "HOME_GIBI = '${LOCALBASE}'"		>> ${WRKSRC}/setup.cfg
+	${ECHO_CMD} "HOME_HOMARD = '${LOCALBASE}'"		>> ${WRKSRC}/setup.cfg
 	${ECHO_CMD} "INCLUDEDIR = ['${LOCALBASE}/include/hdf5-18', '${LOCALBASE}/include', '${LOCALBASE}/include/metis', ]"\
 			>> ${WRKSRC}/setup.cfg
 	${ECHO_CMD} "HOME_MUMPS = '${LOCALBASE}'"		>> ${WRKSRC}/setup.cfg
-	${ECHO_CMD} "HOME_MFRONT = '${LOCALBASE}'"		>> ${WRKSRC}/setup.cfg
-.if ${MUMPS_PORT} == "mumps-mpich"
+# Disable MFront at the moment (compilation error)
+#	${ECHO_CMD} "HOME_MFRONT = '${LOCALBASE}'"		>> ${WRKSRC}/setup.cfg
+#	${ECHO_CMD} "TFELHOME = '${LOCALBASE}'"			>> ${WRKSRC}/setup.cfg
+	${REINPLACE_CMD} -e "s|waf configure|waf configure --disable-mfront|"	\
+		${WRKSRC}/products.py
 	${ECHO_CMD} "MUMPSLIB = '${MUMPSLIB}'"			>> ${WRKSRC}/setup.cfg
-.endif
 	${ECHO_CMD} "CC='${CC}'"				>> ${WRKSRC}/setup.cfg
 	${ECHO_CMD} "gcc='${CC}'"				>> ${WRKSRC}/setup.cfg
 	${ECHO_CMD} "CXX='${CXX}'"				>> ${WRKSRC}/setup.cfg
@@ -257,7 +263,7 @@ pre-configure:
 	${ECHO_CMD} "F90='${FC}'"				>> ${WRKSRC}/setup.cfg
 	${ECHO_CMD} "MATHLIB='${lib_math} ${LDFLAGS} -lgfortran -lm -lkvm'"		\
 		>> ${WRKSRC}/setup.cfg
-	${ECHO_CMD} "OTHERLIB='-Xlinker -export-dynamic -lutil -lpthread -lz'"	\
+	${ECHO_CMD} "OTHERLIB='-Xlinker -export-dynamic ${MPISEQ} -lexecinfo -lutil -lpthread -lz'"	\
 		>> ${WRKSRC}/setup.cfg
 	${ECHO_CMD} "SYSLIB='-lpthread -lz'"			>> ${WRKSRC}/setup.cfg
 .if defined(WITH_MPI)
@@ -313,7 +319,7 @@ pre-configure:
 
 do-configure:
 	(cd ${CONFIGURE_WRKSRC}	\
-	&& TMPDIR=${WRKDIR} ${PYTHON_CMD} setup.pyo ${DEBUG_FLAGS}	\
+	&& TMPDIR=${WRKDIR} ${MAKE_ENV} ${PYTHON_CMD} setup.pyo ${DEBUG_FLAGS}	\
 		--prefix=${STAGEDIR}${inst_dir} test | tee ${CONFIGURE_LOG})
 	@${ECHO_MSG} "---------------- Debug ------------------"
 	${CAT} ${CONFIGURE_WRKSRC}/setup.log
@@ -365,6 +371,7 @@ post-install:
 	(cd ${STAGEDIR} && ${LN} -fs ${inst_dir}/${VE}/share/aster/${conf}	\
 		${STAGEDIR}${inst_dir}/STA${VE}/${conf})
 .endfor
+	${MKDIR} ${STAGEDIR}${tools_dir}
 .for outil in ${tools}
 	${LN} -fs ${LOCALBASE}/bin/${outil} ${STAGEDIR}${tools_dir}/${outil}
 .endfor
@@ -390,10 +397,10 @@ regression-test:	install
 	@${ECHO_MSG} "Note: homard must be installed to run some steps succesfully."
 	${CP} ${inst_dir}/${VE}/astout.export /tmp/
 	(cd ${inst_dir}/${VE} &&	\
-	${LOCALBASE}/aster/ASTK/ASTK_SERV/bin/as_run --list --all --vers=${VE}	\
+	${LOCALBASE}/aster/bin/as_run --list --all --vers=${VE}	\
 		--filter='"I" not in testlist' -o /tmp/list_seq )
 	(cd /tmp &&	\
-	${LOCALBASE}/aster/ASTK/ASTK_SERV/bin/as_run astout.export) || ${TRUE}
+	${LOCALBASE}/aster/bin/as_run astout.export) || ${TRUE}
 	@${ECHO_MSG} "Check /tmp/resu_test/NOOK"
 .endif
 

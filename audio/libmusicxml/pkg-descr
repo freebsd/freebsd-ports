@@ -1,0 +1,5 @@
+The MusicXML format represents common Western musical notation from the
+17th century onwards. It is an xml format that organizes the music into
+a header followed by the core music data.
+
+WWW: https://github.com/grame-cncm/libmusicxml

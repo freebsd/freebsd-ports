@@ -1,6 +1,6 @@
---- ./src/savegame.c.orig	2003-05-21 18:06:05.000000000 +0200
-+++ ./src/savegame.c	2014-03-30 20:05:17.338033553 +0200
-@@ -166,7 +166,7 @@
+--- src/savegame.c.orig	2003-05-21 16:06:05 UTC
++++ src/savegame.c
+@@ -166,7 +166,7 @@ gchar *save_game(gchar *rules, gint scor
          if((f = fopen(fname, "w")) != NULL) {
                  chmod(fname, 0600);
                  /* TODO: check for errors ! */

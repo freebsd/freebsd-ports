@@ -16,6 +16,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BROKEN_aarch64=	Fails to link: missing sbrk
 BROKEN_armv6=	Fails to build: unknown attribute __alloc_size__; also fails in assembler
+BROKEN_armv7=	Fails to build: unknown attribute __alloc_size__; also fails in assembler
 BROKEN_mips=	Fails to build: redefinition of GC_register_dynamic_libraries
 BROKEN_mips64=	Fails to build: redefinition of GC_register_dynamic_libraries
 BROKEN_sparc64=	Fails to build: do not know how to make sparc_mach_dep.lo

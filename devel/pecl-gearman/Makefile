@@ -15,6 +15,6 @@ LIB_DEPENDS=	libgearman.so:devel/gearmand
 
 USES=		php:pecl
 CONFIGURE_ARGS=	--with-gearman
-IGNORE_WITH_PHP=	70 71
+IGNORE_WITH_PHP=	70 71 72
 
 .include <bsd.port.mk>

@@ -2,4 +2,4 @@ A portable extension that provides the power of OpenSSL to Tcl programs.
 This extension can be used to utilize SSL encryption on top of any valid
 Tcl Channel - not just sockets!
 
-WWW: http://tls.sourceforge.net/
+WWW: http://core.tcl.tk/tcltls

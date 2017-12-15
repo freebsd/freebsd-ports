@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dns-lexicon
-PORTVERSION=	2.1.10
+PORTVERSION=	2.1.12
 CATEGORIES=	dns python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,9 +13,9 @@ COMMENT=	Manipulate DNS records on various DNS providers in a standardized way
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}future>=0.16:devel/py-future \
-		${PYTHON_PKGNAMEPREFIX}tldextract>=1.7.5:dns/py-tldextract \
-		${PYTHON_PKGNAMEPREFIX}requests>=2.11:www/py-requests
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}future>=0.16:devel/py-future@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}tldextract>=1.7.5:dns/py-tldextract@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}requests>=2.11:www/py-requests@${FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist distutils

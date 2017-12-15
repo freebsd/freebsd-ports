@@ -25,7 +25,7 @@ BROKEN_aarch64=	Fails to compile: error: declaration of divu_64_rest in global s
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == aarch64 || ${ARCH} == armv6
+.if ${ARCH} == aarch64 || ${ARCH} == armv6 || ${ARCH} == armv7
 CPPFLAGS+=	-DNO_ASM
 .endif
 

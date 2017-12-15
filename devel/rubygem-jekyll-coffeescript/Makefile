@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	jekyll-coffeescript
-PORTVERSION=	1.0.2
-PORTREVISION=	1
+PORTVERSION=	1.1.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 

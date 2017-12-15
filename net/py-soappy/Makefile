@@ -13,8 +13,8 @@ COMMENT=	SOAP Services for Python
 # Actual LICENSE is in GH Repo but not in pypi release
 LICENSE=	BSD3CLAUSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}defusedxml>0:devel/py-defusedxml \
-		${PYTHON_PKGNAMEPREFIX}wstools>0:textproc/py-wstools
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}defusedxml>0:devel/py-defusedxml@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}wstools>0:textproc/py-wstools@${FLAVOR}
 
 USES=		python:2 zip
 USE_PYTHON=	autoplist distutils

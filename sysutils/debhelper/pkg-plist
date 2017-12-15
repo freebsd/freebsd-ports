@@ -8,6 +8,7 @@ bin/dh_bugfiles
 bin/dh_builddeb
 bin/dh_clean
 bin/dh_compress
+bin/dh_dwz
 bin/dh_fixperms
 bin/dh_gconf
 bin/dh_gencontrol
@@ -112,5 +113,6 @@ bin/prerm-wm
 %%SITE_PERL%%/Debian/Debhelper/Dh_Getopt.pm
 %%SITE_PERL%%/Debian/Debhelper/Dh_Lib.pm
 %%SITE_PERL%%/Debian/Debhelper/Sequence/build_stamp.pm
+%%SITE_PERL%%/Debian/Debhelper/Sequence/dwz.pm
 %%SITE_PERL%%/Debian/Debhelper/Sequence/python_support.pm
 %%SITE_PERL%%/Debian/Debhelper/Sequence/systemd.pm

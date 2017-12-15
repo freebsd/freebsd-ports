@@ -1,0 +1,11 @@
+--- tools/misc/h5redeploy.in.orig	2017-06-15 15:47:13 UTC
++++ tools/misc/h5redeploy.in
+@@ -145,7 +145,7 @@ if [ -z "$includedir" ]; then
+     includedir='${prefix}'/include # use single quotes to prevent expansion of $
+ fi
+ 
+-for x in $h5tools; do
++for x in $h5tools%%SUFF%%; do
+     if [ -f $x ]; then
+ 	foundtools="$foundtools $x"
+ 	if [ ! -w $x ]; then

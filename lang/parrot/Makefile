@@ -3,7 +3,7 @@
 
 PORTNAME=	parrot
 PORTVERSION=	8.1.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.parrot.org/pub/parrot/releases/supported/${PORTVERSION}/ \
 		LOCAL/sunpoet
@@ -44,8 +44,6 @@ perl_OLD_CMD=	perl
 
 DOCSDIR=	share/doc/${PORTNAME}/${PORTVERSION}
 PLIST_SUB=	PARROT_VER="${PORTVERSION}"
-
-BROKEN_ia64=	Does not compile on ia64
 
 do-configure:
 	(cd ${WRKSRC} && ${PERL} ${CONFIGURE_SCRIPT} ${CONFIGURE_ARGS})

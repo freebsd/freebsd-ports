@@ -1,0 +1,4 @@
+Audit base system against known vulnerabilities and generate reports 
+including references to security advisories.
+It uses pkg audit and Vuxml database as is used for packages but this script
+checks base system.

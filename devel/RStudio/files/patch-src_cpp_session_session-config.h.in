@@ -1,0 +1,12 @@
+--- src/cpp/session/session-config.h.in.orig	2017-11-16 21:40:37 UTC
++++ src/cpp/session/session-config.h.in
+@@ -13,8 +13,7 @@
+  *
+  */
+ 
+-#define RSTUDIO_VERSION "${CPACK_PACKAGE_VERSION}"
+-#define RSTUDIO_GIT_REVISION_HASH "${RSTUDIO_GIT_REVISION_HASH}"
++#define RSTUDIO_VERSION "${RSTUDIO_VERSION}"
+ #cmakedefine RSTUDIO_SERVER
+ #cmakedefine RSTUDIO_UNVERSIONED_BUILD
+ #cmakedefine TRACE_PACKRAT_OUTPUT

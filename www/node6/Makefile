@@ -1,14 +1,14 @@
 # $FreeBSD$
 
 PORTNAME=	node
-PORTVERSION=	6.11.5
+PORTVERSION=	6.12.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 MASTER_SITES=	http://nodejs.org/dist/v${PORTVERSION}/
 PKGNAMESUFFIX=	6
 
 MAINTAINER=	bhughes@FreeBSD.org
-COMMENT=	V8 JavaScript for client and server (6.x)
+COMMENT=	V8 JavaScript for client and server (6.x LTS)
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -41,7 +41,7 @@ USES=		compiler:c++11-lib gmake python:2,build pkgconfig \
 HAS_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
-CONFLICTS_INSTALL=	node[45]-[0-9]* node01[02]-[0-9]* node-[0-9]* node-devel-[0-9]* iojs-[0-9]*
+CONFLICTS_INSTALL=	node[458]-[0-9]* node-[0-9]*
 
 ONLY_FOR_ARCHS=		amd64 armv6 armv7 i386
 

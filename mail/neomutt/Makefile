@@ -1,9 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	neomutt
-PORTVERSION=	20171013
+PORTVERSION=	20171208
 DISTVERSIONPREFIX=	${PORTNAME}-
-PORTREVISION=	1
 CATEGORIES=	mail
 
 MAINTAINER=	bapt@FreeBSD.org
@@ -105,7 +104,7 @@ post-install:
 	${RM} ${STAGEDIR}${PREFIX}/etc/mime*
 	${MV} ${STAGEDIR}${PREFIX}/etc/neomuttrc ${STAGEDIR}${PREFIX}/etc/neomuttrc.dist
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/neomutt \
-		${STAGEDIR}${PREFIX}/lib/neomutt/pgpring \
-		${STAGEDIR}${PREFIX}/lib/neomutt/pgpewrap
+		${STAGEDIR}${PREFIX}/libexec/neomutt/pgpring \
+		${STAGEDIR}${PREFIX}/libexec/neomutt/pgpewrap
 
 .include <bsd.port.mk>

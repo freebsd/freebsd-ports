@@ -1,2 +1,3 @@
-SHA256 (ssdeep-2.13.tar.gz) = 6e4ca94457cb50ff3343d4dd585473817a461a55a666da1c5a74667924f0f8c5
-SIZE (ssdeep-2.13.tar.gz) = 380712
+TIMESTAMP = 1510042278
+SHA256 (ssdeep-2.14.1.tar.gz) = ff2eabc78106f009b4fb2def2d76fb0ca9e12acf624cbbfad9b3eb390d931313
+SIZE (ssdeep-2.14.1.tar.gz) = 408831

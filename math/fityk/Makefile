@@ -46,7 +46,7 @@ OPTIONS_DEFAULT=	PYTHON
 OPTIONS_SUB=		yes
 
 DOCS_BUILD_DEPENDS=	sphinx-build:textproc/py-sphinx
-PYTHON_USES=		python
+PYTHON_USES=		python:2.7
 PYTHON_CONFIGURE_ENABLE=	python
 
 post-patch:

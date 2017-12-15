@@ -1,4 +1,0 @@
-lib/mysql/plugin/libpinba_engine.so
-lib/mysql/plugin/libpinba_engine.so.0
-lib/mysql/plugin/libpinba_engine.so.0.0.0
-%%DATADIR%%/default_tables.sql

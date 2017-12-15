@@ -10,6 +10,6 @@ MAINTAINER=	culot@FreeBSD.org
 COMMENT=	Pure-Python database engine
 
 USES=		python zip
-USE_PYTHON=	distutils
+USE_PYTHON=	distutils autoplist concurrent optsuffix
 
 .include <bsd.port.mk>

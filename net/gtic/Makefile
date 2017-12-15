@@ -9,7 +9,7 @@ MASTER_SITES=	ftp://ftp.kspu.kr.ua/pub/unix/FIDO/gtic/ \
 		ftp://ftp.braz.ru/pub/fido/gtic/
 DISTNAME=	${PORTNAME}-1.3b
 
-MAINTAINER=	dsh@vlink.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The GNU file forwarder (FSC-0087) for fidonet-like networks
 
 MAKE_ENV+=	DEFINES="${DEFINES}"

@@ -3,7 +3,7 @@
 
 PORTNAME=	pokerth
 PORTVERSION=	1.1.1
-PORTREVISION=	17
+PORTREVISION=	18
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/1.1
 DISTNAME=	PokerTH-${PORTVERSION}-src
@@ -21,7 +21,8 @@ LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 		libgsasl.so:security/gsasl \
 		libtinyxml.so:textproc/tinyxml \
 		libprotobuf.so:devel/protobuf
-BUILD_DEPENDS=	${LOCALBASE}/include/libircclient.h:irc/libircclient
+BUILD_DEPENDS=	${LOCALBASE}/include/libircclient.h:irc/libircclient \
+		protoc:devel/protobuf
 
 USES=		iconv gmake qmake tar:bzip2
 USE_QT4=	gui corelib network sql sql-sqlite3 \
@@ -42,6 +43,12 @@ post-patch:
 		${WRKSRC}/*.pro
 	@${FIND} ${WRKSRC} -name '*.cpp' -print0 | ${XARGS} -0 \
 		${REINPLACE_CMD} -e 's|[io]fstream|std::&|'
+
+pre-build:
+	(cd ${WRKSRC} && \
+		 protoc --cpp_out=src/third_party/protobuf chatcleaner.proto && \
+		 protoc --cpp_out=src/third_party/protobuf pokerth.proto \
+	)
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/pokerth

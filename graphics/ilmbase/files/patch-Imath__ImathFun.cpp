@@ -1,5 +1,5 @@
---- ./Imath/ImathFun.cpp.orig	2013-10-11 20:40:29.000000000 +0200
-+++ ./Imath/ImathFun.cpp	2014-01-29 13:16:44.000000000 +0100
+--- Imath/ImathFun.cpp.orig	2017-11-17 23:00:23 UTC
++++ Imath/ImathFun.cpp
 @@ -33,6 +33,7 @@
  ///////////////////////////////////////////////////////////////////////////
  
@@ -8,7 +8,7 @@
  #include "ImathFun.h"
  
  IMATH_INTERNAL_NAMESPACE_SOURCE_ENTER
-@@ -41,14 +42,14 @@
+@@ -41,14 +42,14 @@ IMATH_INTERNAL_NAMESPACE_SOURCE_ENTER
  float
  succf (float f)
  {
@@ -25,7 +25,7 @@
      {
          // Plus or minus zero.
  
-@@ -76,14 +77,14 @@
+@@ -76,14 +77,14 @@ succf (float f)
  float
  predf (float f)
  {

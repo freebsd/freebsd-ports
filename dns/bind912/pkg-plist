@@ -147,6 +147,7 @@ include/isc/commandline.h
 include/isc/condition.h
 include/isc/counter.h
 include/isc/crc64.h
+include/isc/deprecated.h
 include/isc/dir.h
 include/isc/entropy.h
 include/isc/errno.h
@@ -173,6 +174,7 @@ include/isc/lang.h
 include/isc/lex.h
 include/isc/lfsr.h
 include/isc/lib.h
+include/isc/likely.h
 include/isc/list.h
 include/isc/log.h
 include/isc/magic.h
@@ -311,7 +313,6 @@ man/man8/dnssec-settime.8.gz
 man/man8/dnssec-signzone.8.gz
 man/man8/dnssec-verify.8.gz
 man/man8/genrandom.8.gz
-man/man8/isc-hmac-fixup.8.gz
 man/man8/named-checkconf.8.gz
 man/man8/named-checkzone.8.gz
 man/man8/named-compilezone.8.gz
@@ -340,7 +341,6 @@ sbin/dnssec-settime
 sbin/dnssec-signzone
 sbin/dnssec-verify
 sbin/genrandom
-sbin/isc-hmac-fixup
 sbin/named
 sbin/named-checkconf
 sbin/named-checkzone

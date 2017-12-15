@@ -16,7 +16,7 @@ LICENSE_COMB=	dual
 BUILD_DEPENDS=	p5-Catalyst-Runtime>=0:www/p5-Catalyst-Runtime	\
 		p5-Class-C3-Componentised>=0:devel/p5-Class-C3-Componentised	\
 		p5-Class-Load>=0:devel/p5-Class-Load		\
-		p5-Moose>=0:devel/p5-Moose 				\
+		p5-Moose>=0:devel/p5-Moose			\
 		p5-URI-SmartURI>=0:net/p5-URI-SmartURI
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 

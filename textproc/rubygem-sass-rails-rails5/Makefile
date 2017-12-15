@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sass-rails
-PORTVERSION=	5.0.6
+PORTVERSION=	5.0.7
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	-rails5

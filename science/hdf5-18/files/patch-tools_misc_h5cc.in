@@ -1,0 +1,36 @@
+--- tools/misc/h5cc.in.orig	2017-06-15 15:47:13 UTC
++++ tools/misc/h5cc.in
+@@ -170,7 +170,7 @@ usage() {
+ # libhdf5.settings file reside in the lib directory.
+ showconfigure()
+ {
+-  cat ${libdir}/libhdf5.settings
++  cat ${libdir}/libhdf5%%SUFF%%.settings
+   status=$?
+ }
+ 
+@@ -327,9 +327,9 @@ if test "x$do_link" = "xyes"; then
+   shared_link=""
+ # conditionnaly link with the hl library  
+   if test "X$HL" = "Xhl"; then
+-   libraries=" $libraries -lhdf5_hl -lhdf5 "
++   libraries=" $libraries -lhdf5%%SUFF%%_hl -lhdf5%%SUFF%% "
+   else
+-   libraries=" $libraries  -lhdf5 "
++   libraries=" $libraries  -lhdf5%%SUFF%% "
+   fi
+   link_args="$link_args -L${libdir}"
+ 
+@@ -360,10 +360,10 @@ if test "x$do_link" = "xyes"; then
+     for lib in $libraries; do
+       case "$lib" in
+         -lhdf5)
+-          new_libraries="$new_libraries ${libdir}/libhdf5.a"
++          new_libraries="$new_libraries ${libdir}/libhdf5%%SUFF%%.a"
+           ;;
+         -lhdf5_hl)
+-          new_libraries="$new_libraries ${libdir}/libhdf5_hl.a"
++          new_libraries="$new_libraries ${libdir}/libhdf5%%SUFF%%_hl.a"
+           ;;
+         *)
+           new_libraries="$new_libraries $lib"

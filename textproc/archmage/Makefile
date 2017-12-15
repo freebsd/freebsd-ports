@@ -15,7 +15,7 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/chm/chm.py:textproc/pychm \
-		${PYTHON_SITELIBDIR}/BeautifulSoup.py:www/py-beautifulsoup32
+		${PYTHON_SITELIBDIR}/BeautifulSoup.py:www/py-beautifulsoup32@${FLAVOR}
 
 NO_BUILD=	yes
 USES=		cpe python:2 tar:bzip2

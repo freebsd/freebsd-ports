@@ -1,0 +1,33 @@
+LoadModule rpaf_module	%%APACHEMODDIR%%/mod_rpaf.so
+<IfModule mod_rpaf>
+  # Enable reverse proxy add forward
+  #RPAF_Enable On
+
+  # What IPs & bitmasked subnets to adjust requests for
+  #RPAF_ProxyIPs 127.0.0.1 10.0.0.0/24
+
+  # The header to use for the real IP address
+  #RPAF_Header X-Forwarded-For
+
+  # Update vhost name so ServerName & ServerAlias work
+  #RPAF_SetHostName Off
+
+  # Set the HTTPS environment variable
+  # to the header value contained in
+  # X-HTTPS, or X-Forwarded-HTTPS. For
+  # best results make sure that mod_ssl
+  # is NOT enabled.
+  #RPAF_SetHTTPS Off
+
+  # Set the server port to the header
+  # value contained in X-Port, or
+  # X-Forwarded-Port.
+  # (see https://github.com/gnif/mod_rpaf/issues/12)
+  #RPAF_SetPort Off
+
+  # Option to forbid request if not from
+  # trusted RPAF_ProxyIPs; otherwise
+  # cannot be done with Allow/Deny after
+  # remote addr substitution
+  #RPAF_ForbidIfNotProxy Off
+</IfModule>

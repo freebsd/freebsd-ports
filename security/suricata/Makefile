@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	suricata
-PORTVERSION=	4.0.0
+PORTVERSION=	4.0.3
 CATEGORIES=	security
 MASTER_SITES=	http://www.openinfosecfoundation.org/download/
 
@@ -109,7 +109,7 @@ REDIS_CONFIGURE_ON=		--enable-hiredis \
 				--with-libhiredis-includes=${LOCALBASE}/include \
 				--with-libhiredis-libraries=${LOCALBASE}/lib
 
-SC_USES=			python
+SC_USES=			python:2.7
 SC_CONFIGURE_ENABLE=		python
 
 TESTS_CONFIGURE_ENABLE=		unittests

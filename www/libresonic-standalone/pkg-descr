@@ -1,0 +1,9 @@
+Libresonic is a web-based media streamer and jukebox fork of Subsonic.
+
+Libresonic instantly transports your media to any HTTP connected device
+regardless of bitrate. You can stream to multiple players simultaneously.
+Libresonic is designed to handle very large music collections. By using
+transcoder plug-ins, Libresonic supports on-the-fly conversion and streaming
+of virtually any audio format, including MP3, OGG, WMA, FLAC, APE and more.
+
+WWW: http://www.libresonic.org

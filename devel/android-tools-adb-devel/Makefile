@@ -9,7 +9,6 @@ CONFLICTS_INSTALL=	${PORTNAME}-[0-9]*
 
 MASTERDIR=	${.CURDIR}/../android-tools-adb
 DISTINFO_FILE=	${.CURDIR}/distinfo
-EXTRA_PATCHES=	${.CURDIR}/files/patch-*
 
 GH_MYTAG=	${DISTVERSIONPREFIX}${DISTVERSION:C/-[0-9]*$//}
 

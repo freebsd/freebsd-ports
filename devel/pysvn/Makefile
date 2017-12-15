@@ -18,16 +18,15 @@ LIB_DEPENDS=	libsvn_client-1.so:devel/subversion \
 
 # Python3 ready
 USES=		python
-USE_PYTHON=	distutils noegginfo
+USE_PYTHON=	distutils noegginfo concurrent optsuffix
 PYDISTUTILS_CONFIGURE_TARGET=	configure
 PYDISTUTILS_CONFIGUREARGS=	--apr-inc-dir=${LOCALBASE}/include/apr-1 \
 				--svn-inc-dir=${LOCALBASE}/include/subversion-1 \
 				--pycxx-dir=${WRKSRC}/../Import/pycxx-6.2.8 \
 				--pycxx-src-dir=${WRKSRC}/../Import/pycxx-6.2.8/Src
 
-PLIST_SUB=	PYTHONVER=${PYTHON_VERSION:S/./_/:S/python//}
 PLIST_FILES=	%%PYTHON_SITELIBDIR%%/${PORTNAME}/__init__.py \
-		%%PYTHON_SITELIBDIR%%/${PORTNAME}/_pysvn_%%PYTHONVER%%.so
+		%%PYTHON_SITELIBDIR%%/${PORTNAME}/_pysvn_${PYTHON_VERSION:S/./_/:S/python//}.so
 
 WRKSRC_SUBDIR=	Source
 

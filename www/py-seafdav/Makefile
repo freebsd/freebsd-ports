@@ -16,6 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		python:-2.7 shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	haiwen
+USE_PYTHON=	flavors
 SHEBANG_FILES=	*.sh *.template wsgidav/addons/seafile/*.py
 
 NO_ARCH=	yes

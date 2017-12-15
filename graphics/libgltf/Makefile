@@ -2,14 +2,14 @@
 
 PORTNAME=	libgltf
 PORTVERSION=	0.0.2
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	graphics devel
 MASTER_SITES=	LODEV
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	C++ Library for rendering OpenGL models stored in glTF format
 
-LICENSE=	LGPL21 MPL
+LICENSE=	LGPL21 MPL20
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/ptr_container/ptr_map.hpp:devel/boost-libs \

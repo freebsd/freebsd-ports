@@ -13,7 +13,7 @@ bin/ntlm_auth
 bin/oLschema2ldif
 bin/pdbedit
 bin/profiles
-%%PIDL%%bin/pidl
+bin/pidl
 bin/regdiff
 bin/regpatch
 bin/regshell
@@ -125,12 +125,6 @@ include/samba4/util/tevent_werror.h
 include/samba4/util/time.h
 include/samba4/util_ldb.h
 include/samba4/wbclient.h
-@dir include/samba4/util
-@dir include/samba4/samba
-@dir include/samba4/ndr
-@dir include/samba4/gen_ndr
-@dir include/samba4/core
-@dir include/samba4
 lib/samba4/libdcerpc-binding.so
 lib/samba4/libdcerpc-binding.so.0
 lib/samba4/libdcerpc-samr.so
@@ -350,14 +344,11 @@ lib/samba4/private/libxattr-tdb-samba4.so
 %%AD_DC%%lib/shared-modules/service/winbindd.so
 %%AD_DC%%lib/shared-modules/service/wrepl.so
 %%AD_DC%%lib/shared-modules/vfs/posix_eadb.so
-%%DEVELOPER%%lib/shared-modules/vfs/nfs4acl_xattr.so
-%%DEVELOPER%%lib/shared-modules/vfs/fake_dfq.so
 lib/shared-modules/auth/script.so
 %%AD_DC%%lib/shared-modules/ldb/dns_notify.so
 lib/shared-modules/ldb/ildap.so
 lib/shared-modules/ldb/ldbsamba_extensions.so
 %%AD_DC%%lib/shared-modules/ldb/tombstone_reanimate.so
-lib/shared-modules/nss_info/hash.so
 lib/shared-modules/vfs/acl_tdb.so
 lib/shared-modules/vfs/acl_xattr.so
 lib/shared-modules/vfs/aio_fork.so
@@ -617,49 +608,31 @@ lib/shared-modules/vfs/zfsacl.so
 %%PYTHON_SITELIBDIR%%/samba/web_server/__init__.py
 %%PYTHON_SITELIBDIR%%/samba/xattr.py
 @unexec find %D/%%PYTHON_SITELIBDIR%%/samba -name '*.py[co]' -delete >/dev/null 2>&1
-@dir %%PYTHON_SITELIBDIR%%/samba/web_server
-@dir %%PYTHON_SITELIBDIR%%/samba/tests/samba_tool
-@dir %%PYTHON_SITELIBDIR%%/samba/tests/dcerpc
-@dir %%PYTHON_SITELIBDIR%%/samba/tests/blackbox
-@dir %%PYTHON_SITELIBDIR%%/samba/tests
-@dir %%PYTHON_SITELIBDIR%%/samba/samba3
-@dir %%PYTHON_SITELIBDIR%%/samba/provision
-@dir %%PYTHON_SITELIBDIR%%/samba/netcmd
-@dir %%PYTHON_SITELIBDIR%%/samba/dcerpc
-@dir %%PYTHON_SITELIBDIR%%/samba
-%%PIDL%%%%DATADIR%%/perl5/Parse/Pidl.pm
-%%PIDL%%%%DATADIR%%/perl5/Parse/Pidl/CUtil.pm
-%%PIDL%%%%DATADIR%%/perl5/Parse/Pidl/Compat.pm
-%%PIDL%%%%DATADIR%%/perl5/Parse/Pidl/Dump.pm
-%%PIDL%%%%DATADIR%%/perl5/Parse/Pidl/Expr.pm
-%%PIDL%%%%DATADIR%%/perl5/Parse/Pidl/IDL.pm
-%%PIDL%%%%DATADIR%%/perl5/Parse/Pidl/NDR.pm
-%%PIDL%%%%DATADIR%%/perl5/Parse/Pidl/ODL.pm
-%%PIDL%%%%DATADIR%%/perl5/Parse/Pidl/Samba3/ClientNDR.pm
-%%PIDL%%%%DATADIR%%/perl5/Parse/Pidl/Samba3/ServerNDR.pm
-%%PIDL%%%%DATADIR%%/perl5/Parse/Pidl/Samba4.pm
-%%PIDL%%%%DATADIR%%/perl5/Parse/Pidl/Samba4/COM/Header.pm
-%%PIDL%%%%DATADIR%%/perl5/Parse/Pidl/Samba4/COM/Proxy.pm
-%%PIDL%%%%DATADIR%%/perl5/Parse/Pidl/Samba4/COM/Stub.pm
-%%PIDL%%%%DATADIR%%/perl5/Parse/Pidl/Samba4/Header.pm
-%%PIDL%%%%DATADIR%%/perl5/Parse/Pidl/Samba4/NDR/Client.pm
-%%PIDL%%%%DATADIR%%/perl5/Parse/Pidl/Samba4/NDR/Parser.pm
-%%PIDL%%%%DATADIR%%/perl5/Parse/Pidl/Samba4/NDR/Server.pm
-%%PIDL%%%%DATADIR%%/perl5/Parse/Pidl/Samba4/Python.pm
-%%PIDL%%%%DATADIR%%/perl5/Parse/Pidl/Samba4/TDR.pm
-%%PIDL%%%%DATADIR%%/perl5/Parse/Pidl/Samba4/Template.pm
-%%PIDL%%%%DATADIR%%/perl5/Parse/Pidl/Typelist.pm
-%%PIDL%%%%DATADIR%%/perl5/Parse/Pidl/Util.pm
-%%PIDL%%%%DATADIR%%/perl5/Parse/Pidl/Wireshark/Conformance.pm
-%%PIDL%%%%DATADIR%%/perl5/Parse/Pidl/Wireshark/NDR.pm
-%%PIDL%%@dir %%DATADIR%%/perl5/Parse/Pidl/Wireshark
-%%PIDL%%@dir %%DATADIR%%/perl5/Parse/Pidl/Samba4/NDR
-%%PIDL%%@dir %%DATADIR%%/perl5/Parse/Pidl/Samba4/COM
-%%PIDL%%@dir %%DATADIR%%/perl5/Parse/Pidl/Samba4
-%%PIDL%%@dir %%DATADIR%%/perl5/Parse/Pidl/Samba3
-%%PIDL%%@dir %%DATADIR%%/perl5/Parse/Pidl
-%%PIDL%%@dir %%DATADIR%%/perl5/Parse
-%%PIDL%%@dir %%DATADIR%%/perl5
+%%DATADIR%%/perl5/Parse/Pidl.pm
+%%DATADIR%%/perl5/Parse/Pidl/CUtil.pm
+%%DATADIR%%/perl5/Parse/Pidl/Compat.pm
+%%DATADIR%%/perl5/Parse/Pidl/Dump.pm
+%%DATADIR%%/perl5/Parse/Pidl/Expr.pm
+%%DATADIR%%/perl5/Parse/Pidl/IDL.pm
+%%DATADIR%%/perl5/Parse/Pidl/NDR.pm
+%%DATADIR%%/perl5/Parse/Pidl/ODL.pm
+%%DATADIR%%/perl5/Parse/Pidl/Samba3/ClientNDR.pm
+%%DATADIR%%/perl5/Parse/Pidl/Samba3/ServerNDR.pm
+%%DATADIR%%/perl5/Parse/Pidl/Samba4.pm
+%%DATADIR%%/perl5/Parse/Pidl/Samba4/COM/Header.pm
+%%DATADIR%%/perl5/Parse/Pidl/Samba4/COM/Proxy.pm
+%%DATADIR%%/perl5/Parse/Pidl/Samba4/COM/Stub.pm
+%%DATADIR%%/perl5/Parse/Pidl/Samba4/Header.pm
+%%DATADIR%%/perl5/Parse/Pidl/Samba4/NDR/Client.pm
+%%DATADIR%%/perl5/Parse/Pidl/Samba4/NDR/Parser.pm
+%%DATADIR%%/perl5/Parse/Pidl/Samba4/NDR/Server.pm
+%%DATADIR%%/perl5/Parse/Pidl/Samba4/Python.pm
+%%DATADIR%%/perl5/Parse/Pidl/Samba4/TDR.pm
+%%DATADIR%%/perl5/Parse/Pidl/Samba4/Template.pm
+%%DATADIR%%/perl5/Parse/Pidl/Typelist.pm
+%%DATADIR%%/perl5/Parse/Pidl/Util.pm
+%%DATADIR%%/perl5/Parse/Pidl/Wireshark/Conformance.pm
+%%DATADIR%%/perl5/Parse/Pidl/Wireshark/NDR.pm
 %%AD_DC%%%%DATADIR%%/setup/DB_CONFIG
 %%AD_DC%%%%DATADIR%%/setup/ad-schema/MS-AD_Schema_2K8_Attributes.txt
 %%AD_DC%%%%DATADIR%%/setup/ad-schema/MS-AD_Schema_2K8_Classes.txt
@@ -748,10 +721,6 @@ lib/shared-modules/vfs/zfsacl.so
 %%AD_DC%%%%DATADIR%%/setup/slapd.conf
 %%AD_DC%%%%DATADIR%%/setup/spn_update_list
 %%AD_DC%%%%DATADIR%%/setup/ypServ30.ldif
-%%AD_DC%%@dir %%DATADIR%%/setup/display-specifiers
-%%AD_DC%%@dir %%DATADIR%%/setup/ad-schema
-%%AD_DC%%@dir %%DATADIR%%/setup
-%%AD_DC%%@dir %%DATADIR%%
 man/man1/dbwrap_tool.1.gz
 man/man1/findsmb.1.gz
 man/man1/gentest.1.gz
@@ -764,7 +733,7 @@ man/man1/nmblookup.1.gz
 man/man1/ntlm_auth.1.gz
 man/man1/oLschema2ldif.1.gz
 man/man1/profiles.1.gz
-%%PIDL%%man/man1/pidl.1.gz
+man/man1/pidl.1.gz
 man/man1/regdiff.1.gz
 man/man1/regpatch.1.gz
 man/man1/regshell.1.gz
@@ -783,17 +752,18 @@ man/man1/smbtree.1.gz
 man/man1/testparm.1.gz
 man/man1/vfstest.1.gz
 man/man1/wbinfo.1.gz
-%%PIDL%%man/man3/Parse::Pidl::Dump.3.gz
-%%PIDL%%man/man3/Parse::Pidl::NDR.3.gz
-%%PIDL%%man/man3/Parse::Pidl::Util.3.gz
-%%PIDL%%man/man3/Parse::Pidl::Wireshark::Conformance.3.gz
-%%PIDL%%man/man3/Parse::Pidl::Wireshark::NDR.3.gz
+man/man3/Parse::Pidl::Dump.3.gz
+man/man3/Parse::Pidl::NDR.3.gz
+man/man3/Parse::Pidl::Util.3.gz
+man/man3/Parse::Pidl::Wireshark::Conformance.3.gz
+man/man3/Parse::Pidl::Wireshark::NDR.3.gz
 man/man5/lmhosts.5.gz
 man/man5/pam_winbind.conf.5.gz
 man/man5/smb.conf.5.gz
 man/man5/smb4.conf.5.gz
 man/man5/smbgetrc.5.gz
 man/man5/smbpasswd.5.gz
+man/man7/libsmbclient.7.gz
 man/man7/samba.7.gz
 man/man7/winbind_krb5_locator.7.gz
 man/man8/cifsdd.8.gz

@@ -114,7 +114,10 @@ DEFAULT_PHP_VER?=	${PHP_DEFAULT:S/.//}
 # When adding a version, please keep the comment in
 # Mk/bsd.default-versions.mk in sync.
 PHP_VER?=	${DEFAULT_PHP_VER}
-.    if ${PHP_VER} == 71
+.    if ${PHP_VER} == 72
+PHP_EXT_DIR=   20170718
+PHP_EXT_INC=    pcre spl
+.    elif ${PHP_VER} == 71
 PHP_EXT_DIR=   20160303
 PHP_EXT_INC=    pcre spl
 .    elif ${PHP_VER} == 70
@@ -235,8 +238,6 @@ _INCLUDE_USES_PHP_POST_MK=yes
 
 .  if ${php_ARGS:Mext} || ${php_ARGS:Mzend}
 PHP_MODNAME?=	${PORTNAME}
-PHP_EXT_PKGMESSAGE=	${WRKDIR}/php-ext-pkg-message
-_PKGMESSAGES+=	${PHP_EXT_PKGMESSAGE}
 PHP_HEADER_DIRS+=	.
 # If there is no priority defined, we wing it.
 .    if !defined(PHP_MOD_PRIO)
@@ -285,18 +286,6 @@ add-plist-phpext:
 		>> ${TMPPLIST}
 	@${ECHO_CMD} "${PHP_EXT_INI_FILE}" \
 		>> ${TMPPLIST}
-	@${ECHO_CMD} "****************************************************************************" > ${PHP_EXT_PKGMESSAGE}
-	@${ECHO_CMD} "" >> ${PHP_EXT_PKGMESSAGE}
-	@${ECHO_CMD} "The following line has been added to your ${PREFIX}/${PHP_EXT_INI_FILE}" >> ${PHP_EXT_PKGMESSAGE}
-	@${ECHO_CMD} "configuration file to automatically load the installed extension:" >> ${PHP_EXT_PKGMESSAGE}
-	@${ECHO_CMD} "" >> ${PHP_EXT_PKGMESSAGE}
-.    if ${php_ARGS:Mzend}
-	@${ECHO_CMD} "zend_extension=${PHP_MODNAME}.so" >> ${PHP_EXT_PKGMESSAGE}
-.    else
-	@${ECHO_CMD} "extension=${PHP_MODNAME}.so" >> ${PHP_EXT_PKGMESSAGE}
-.    endif
-	@${ECHO_CMD} "" >> ${PHP_EXT_PKGMESSAGE}
-	@${ECHO_CMD} "****************************************************************************" >> ${PHP_EXT_PKGMESSAGE}
 .  endif
 
 # Extensions
@@ -315,9 +304,10 @@ _USE_PHP_ALL=	bcmath bitset bz2 calendar ctype curl dba dom \
 _USE_PHP_VER56=	${_USE_PHP_ALL} mssql mysql sybase_ct
 _USE_PHP_VER70=	${_USE_PHP_ALL}
 _USE_PHP_VER71=	${_USE_PHP_ALL}
+_USE_PHP_VER72=	${_USE_PHP_ALL} sodium
 
 bcmath_DEPENDS=	math/php${PHP_VER}-bcmath
-.    if ${PHP_VER} == 70 || ${PHP_VER} == 71
+.    if ${PHP_VER} == 70 || ${PHP_VER} == 71 || ${PHP_VER} == 72
 bitset_DEPENDS=	math/pecl-bitset
 .    else
 bitset_DEPENDS=	math/pecl-bitset2
@@ -342,7 +332,7 @@ iconv_DEPENDS=	converters/php${PHP_VER}-iconv
 igbinary_DEPENDS=	converters/pecl-igbinary
 imap_DEPENDS=	mail/php${PHP_VER}-imap
 interbase_DEPENDS=	databases/php${PHP_VER}-interbase
-.    if ${PHP_VER} == 70 || ${PHP_VER} == 71
+.    if ${PHP_VER} == 70 || ${PHP_VER} == 71 || ${PHP_VER} == 72
 intl_DEPENDS=	devel/php${PHP_VER}-intl
 .    else
 intl_DEPENDS=	devel/pecl-intl
@@ -392,6 +382,7 @@ simplexml_DEPENDS=	textproc/php${PHP_VER}-simplexml
 snmp_DEPENDS=	net-mgmt/php${PHP_VER}-snmp
 soap_DEPENDS=	net/php${PHP_VER}-soap
 sockets_DEPENDS=net/php${PHP_VER}-sockets
+sodium_DEPENDS=	security/php${PHP_VER}-sodium
 spl_DEPENDS=	devel/php${PHP_VER}-spl
 sqlite_DEPENDS=	databases/php${PHP_VER}-sqlite
 sqlite3_DEPENDS=databases/php${PHP_VER}-sqlite3

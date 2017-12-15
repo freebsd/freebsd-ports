@@ -15,6 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 BROKEN_aarch64=		fails to compile: comparison of integers of different signs: wchar_t and const int
 BROKEN_armv6=		fails to compile: comparison of integers of different signs: wchar_t and const int
+BROKEN_armv7=		fails to compile: comparison of integers of different signs: wchar_t and const int
 BROKEN_powerpc64=	fails to compile: overmap.cpp: 'pow' is not a member of 'std'
 
 USES=		alias compiler:c++11-lib gmake shebangfix

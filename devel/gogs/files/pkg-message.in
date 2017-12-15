@@ -1,0 +1,23 @@
+======================================================================
+You installed %%PORTNAME%%: Go Git Service.
+
+It is recommended to run %%PORTNAME%% as a service:
+# service gogs start
+
+To enable the service at startup you should execute the command:
+sysrc %%PORTNAME%%_enable="YES"
+
+You can also run %%PORTNAME%% manually with a command:
+# %%PORTNAME%%
+
+Connect to %%PORTNAME%% on the default port 3000:
+http://localhost:3000
+
+Configuration file is %%PREFIX%%/libexec/%%PORTNAME%%/custom/conf/app.ini.
+You can only edit it when %%PORTNAME%% isn't running.
+
+%%PORTNAME_FANCY%% needs an SSH daemon, so make sure sure you execute:
+sysrc sshd_enable="YES"
+and sshd is configured to listen on the same port that is configured
+in %%PORTNAME%%.
+======================================================================

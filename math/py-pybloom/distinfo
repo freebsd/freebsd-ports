@@ -1,2 +1,3 @@
-SHA256 (pybloom-1.1.tar.gz) = f90903f2229135833a3ce115709662a4f4ea49bdfffc7d62a3061bd9021ac485
-SIZE (pybloom-1.1.tar.gz) = 10089
+TIMESTAMP = 1509735915
+SHA256 (jaybaird-python-bloomfilter-v2.0_GH0.tar.gz) = 77ae847e70c4521d9bfdb768fa12610d90c0880eefcf8d9a6bc24824f676408d
+SIZE (jaybaird-python-bloomfilter-v2.0_GH0.tar.gz) = 10970

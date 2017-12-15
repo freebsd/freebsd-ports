@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gdal
-PORTVERSION=	2.2.2
+PORTVERSION=	2.2.3
 CATEGORIES=	graphics
 MASTER_SITES=	http://download.osgeo.org/gdal/${PORTVERSION}/ \
 		ftp://ftp.remotesensing.org/pub/gdal/${PORTVERSION}/ \
@@ -20,7 +20,7 @@ LIB_DEPENDS=	libgdal.so:graphics/gdal
 
 ALL_TARGET=	php_gdal.so php_gdalconst.so php_ogr.so php_osr.so
 CFLAGS+=	-fPIC
-IGNORE_WITH_PHP=70 71
+IGNORE_WITH_PHP=70 71 72
 MAKEFILE=	GNUmakefile
 PHP_MOD_NAME=	php_${PORTNAME}
 USES=		php:build gmake localbase tar:xz

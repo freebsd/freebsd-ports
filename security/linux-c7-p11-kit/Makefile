@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	p11-kit
-PORTVERSION=	0.20.7
-PORTREVISION=	1
+PORTVERSION=	0.23.5
 CATEGORIES=	security linux
 
 MAINTAINER=	emulation@FreeBSD.org

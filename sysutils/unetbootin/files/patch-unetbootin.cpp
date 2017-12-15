@@ -24,10 +24,10 @@
 +		struct statfs *fslist;
 +
 +		/*
-+		 * Find out VFS number assigned by kernel for MSDOSFS.
-+		 * This helps to ensure that it is configured with the
-+		 * kernel.  As a nice side effect, this also allows to
-+		 * compare a number instead of "msdosfs" string later.
++		 * Make sure that MSDOSFS is configured with the kernel.
++		 * As a nice side effect, this would allow to compare a
++		 * number (assigned by VFS) instead of "msdosfs" string
++		 * when iterating over mounted filesystems.
 +		 */
 +		if (getvfsbyname("msdosfs", &fsconf) == -1)
 +			goto out;

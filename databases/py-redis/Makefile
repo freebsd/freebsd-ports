@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	redis
-PORTVERSION=	2.10.5
+PORTVERSION=	2.10.6
 CATEGORIES=	databases python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -18,7 +18,7 @@ OPTIONS_DEFINE=	HIREDIS
 
 HIREDIS_DESC=	High performance response parser (via hiredis)
 
-HIREDIS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hiredis>0:databases/py-hiredis
+HIREDIS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hiredis>0:databases/py-hiredis@${FLAVOR}
 
 USES=		python
 USE_PYTHON=	distutils autoplist concurrent

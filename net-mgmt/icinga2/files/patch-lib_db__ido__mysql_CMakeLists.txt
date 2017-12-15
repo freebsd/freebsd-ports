@@ -1,6 +1,6 @@
---- lib/db_ido_mysql/CMakeLists.txt.orig	2016-08-17 14:19:24 UTC
-+++ lib/db_ido_mysql/CMakeLists.txt
-@@ -41,7 +41,7 @@ if(MYSQL_FOUND)
+--- lib/db_ido_mysql/CMakeLists.txt.orig	2017-03-29 09:55:49.000000000 +0200
++++ lib/db_ido_mysql/CMakeLists.txt	2017-05-30 16:24:26.685470000 +0200
+@@ -42,7 +42,7 @@ if(MYSQL_FOUND)
    )
  
    install_if_not_exists(

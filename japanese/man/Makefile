@@ -21,6 +21,9 @@ LICENSE=	GPLv2
 RUN_DEPENDS=	${LOCALBASE}/bin/groff:japanese/groff \
 		jless:japanese/less
 
+BROKEN_armv6 =		fails to compile: man.c:37:10: fatal error: 'config.h' file not found
+BROKEN_armv7 =		fails to compile: man.c:37:10: fatal error: 'config.h' file not found
+
 MAKE_ENV=	GZCAT=${GZCAT} GZIP_CMD="${GZIP_CMD}"
 USES=		shebangfix
 SHEBANG_FILES=	catman/catman.perl makewhatis/makewhatis.perl

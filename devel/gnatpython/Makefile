@@ -13,7 +13,7 @@ LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING3
 
 SNAPSHOT=	20140224
-USES=		python tar:bzip2
+USES=		python:2.7 tar:bzip2
 USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

@@ -4,13 +4,13 @@ PORTNAME=		goss
 PORTVERSION=		0.3.4
 DISTVERSIONPREFIX=	v
 PORTREVISION=		1
-CATEGORIES=	 	sysutils
+CATEGORIES=		sysutils
 
-MAINTAINER=	 	englishm@llnw.com
+MAINTAINER=		englishm@llnw.com
 COMMENT=		Quick and Easy server validation
 
 LICENSE=		APACHE20
-LICENSE_FILE=	 	${WRKSRC}/LICENSE
+LICENSE_FILE=		${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=		go:lang/go
 
@@ -19,8 +19,8 @@ ONLY_FOR_ARCHS_REASON=	go-ps only supports amd64
 
 USE_RC_SUBR=		goss
 
-USE_GITHUB=	 	yes
-GH_ACCOUNT=	 	aelsabbahy
+USE_GITHUB=		yes
+GH_ACCOUNT=		aelsabbahy
 GH_SUBDIR=		src/github.com/aelsabbahy/${PORTNAME}
 GH_TUPLE=		achanda:go-sysctl:6be7678:achanda/src/github.com/achanda/go-sysctl \
 			aelsabbahy:go-ps:4433868:gops/src/github.com/aelsabbahy/go-ps \

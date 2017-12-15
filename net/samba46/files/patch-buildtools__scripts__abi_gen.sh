@@ -1,4 +1,4 @@
---- buildtools/scripts/abi_gen.sh.orig	2016-01-26 11:45:46 UTC
+--- buildtools/scripts/abi_gen.sh.orig	2017-01-11 07:55:14 UTC
 +++ buildtools/scripts/abi_gen.sh
 @@ -9,6 +9,7 @@ GDBSCRIPT="gdb_syms.$$"
  cat <<EOF

@@ -1,12 +1,10 @@
-# Created by: Yuri Victorovich <yuri@rawbw.com>
 # $FreeBSD$
 
 PORTNAME=	cadabra2
-PORTVERSION=	2.1.5
-PORTREVISION=	3
+DISTVERSION=	2.1.6
 CATEGORIES=	math
 
-MAINTAINER=	yuri@rawbw.com
+MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Computer algebra system for solving field theory problems
 
 LICENSE=	LGPL3
@@ -21,8 +19,8 @@ LIB_DEPENDS=	libboost_python.so:devel/boost-python-libs \
 		libjsoncpp.so:devel/jsoncpp \
 		libgmp.so:math/gmp \
 		libuuid.so:misc/e2fsprogs-libuuid
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/sympy/__init__.py:math/py-sympy \
-		${PYTHON_SITELIBDIR}/matplotlib/__init__.py:math/py-matplotlib
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/sympy/__init__.py:math/py-sympy@${PY_FLAVOR} \
+		${PYTHON_SITELIBDIR}/matplotlib/__init__.py:math/py-matplotlib@${PY_FLAVOR}
 
 OPTIONS_DEFINE=	GUI
 OPTIONS_DEFAULT=GUI

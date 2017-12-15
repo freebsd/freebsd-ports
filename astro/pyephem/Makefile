@@ -6,6 +6,8 @@ PORTVERSION=	3.7.6.0
 PORTEPOCH=	1
 CATEGORIES=	astro math hamradio
 MASTER_SITES=	CHEESESHOP
+# XXX rename the directory too.
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Scientific-grade astronomical computations for Python

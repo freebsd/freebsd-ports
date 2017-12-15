@@ -1,0 +1,22 @@
+--- htdocs/application/config/stikked.php.dist.orig	2017-12-13 15:26:05 UTC
++++ htdocs/application/config/stikked.php.dist
+@@ -17,6 +17,19 @@ $config['site_name'] = 'Stikked';
+ $config['base_url'] = 'https://yourpastebin.com/';
+ 
+ /**
++ * TruePaste
++ *
++ * Should pastes be converted to HTML entities before saving.
++ *
++ * Default, for backwards compatibility, is false.
++ *
++ * Set to true if you want your paste to be saved as supplied.
++*/
++
++$config['true_paste'] = true;
++
++
++/**
+  * Database connection
+  *
+  * Credentials for your database

@@ -15,7 +15,7 @@ LICENSE_COMB=	multi
 BROKEN_powerpc64=	fails to compile: tuner_iic_device.cpp: EINVAL was not declared in this scope
 
 MAKE_ARGS+=	INSTALLDIR=${STAGEDIR}${PREFIX}
-MAKE_ARGS+= 	-D LIBTUNER_ENABLE_IIC
+MAKE_ARGS+=	-D LIBTUNER_ENABLE_IIC
 USE_LDCONFIG=	${PREFIX}/lib/libtuner
 
 .include <bsd.port.mk>

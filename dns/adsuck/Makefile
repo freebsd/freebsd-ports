@@ -17,7 +17,7 @@ LICENSE=	ISCL
 LIB_DEPENDS+=	libevent.so:devel/libevent \
 		libldns.so:dns/ldns
 
-CFLAGS+= 	-I${LOCALBASE}/include
+CFLAGS+=	-I${LOCALBASE}/include
 
 USE_RC_SUBR=	adsuck
 

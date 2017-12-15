@@ -318,7 +318,11 @@ libdata/pkgconfig/%%PORTNAME%%.pc
 %%DATADIR%%/%%PORTVERSION%%/sitelib/net/oauth/signature.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/net/oauth/token.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/net/server.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/net/server/monitor.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/packrat.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/peg.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/peg/derived.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/peg/primitives.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/pp.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/rfc/%3a5322.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/rfc/base64.scm
@@ -405,6 +409,7 @@ libdata/pkgconfig/%%PORTNAME%%.pc
 %%DATADIR%%/%%PORTVERSION%%/sitelib/%%PORTNAME%%/cgen/type.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/%%PORTNAME%%/cgen/unit.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/%%PORTNAME%%/char-set/boundary.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/%%PORTNAME%%/combinators.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/%%PORTNAME%%/control.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/%%PORTNAME%%/conditions.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/%%PORTNAME%%/debug.scm
@@ -413,6 +418,7 @@ libdata/pkgconfig/%%PORTNAME%%.pc
 %%DATADIR%%/%%PORTVERSION%%/sitelib/%%PORTNAME%%/interactive/support.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/%%PORTNAME%%/io.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/%%PORTNAME%%/misc.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/%%PORTNAME%%/mock.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/%%PORTNAME%%/partcont.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/%%PORTNAME%%/reader.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/%%PORTNAME%%/record.scm
@@ -550,6 +556,8 @@ libdata/pkgconfig/%%PORTNAME%%.pc
 %%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a145/assumptions.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a151.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a151/bitwise.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a158.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a158/generators-and-accumulators.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a17.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a17/generalized-set!.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a2.scm
@@ -656,6 +664,7 @@ libdata/pkgconfig/%%PORTNAME%%.pc
 %%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/144.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/145.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/151.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/158.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/17.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/2.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/23.scm
@@ -726,6 +735,7 @@ libdata/pkgconfig/%%PORTNAME%%.pc
 %%DATADIR%%/%%PORTVERSION%%/sitelib/util/buffer.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/util/bytevector.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/util/concurrent.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/util/concurrent/actor.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/util/concurrent/executor.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/util/concurrent/future.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/util/concurrent/shared-queue.scm

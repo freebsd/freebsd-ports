@@ -45,8 +45,8 @@ lib/kritaplugins/kritadynapaintop.so
 lib/kritaplugins/kritaembossfilter.so
 lib/kritaplugins/kritaexample.so
 lib/kritaplugins/kritaexperimentpaintop.so
-lib/kritaplugins/kritaexrexport.so
-lib/kritaplugins/kritaexrimport.so
+%%OPENEXR%%lib/kritaplugins/kritaexrexport.so
+%%OPENEXR%%lib/kritaplugins/kritaexrimport.so
 lib/kritaplugins/kritaextensioncolorsfilters.so
 lib/kritaplugins/kritafastcolortransferfilter.so
 lib/kritaplugins/kritafilterop.so
@@ -203,7 +203,7 @@ lib/libkritawidgetutils.so.%%SHLIB_VER%%
 share/applications/krita_bmp.desktop
 share/applications/krita_brush.desktop
 share/applications/krita_csv.desktop
-share/applications/krita_exr.desktop
+%%OPENEXR%%share/applications/krita_exr.desktop
 share/applications/krita_heightmap.desktop
 share/applications/krita_jpeg.desktop
 share/applications/krita_odg.desktop
@@ -516,7 +516,7 @@ share/icons/hicolor/scalable/apps/calligrakrita.svgz
 %%DATADIR%%/input/tabletpro.profile
 %%DATADIR%%/metadata/schemas/dc.schema
 %%DATADIR%%/metadata/schemas/exif.schema
-%%DATADIR%%/metadata/schemas/exrchannels.schema
+%%OPENEXR%%%%DATADIR%%/metadata/schemas/exrchannels.schema
 %%DATADIR%%/metadata/schemas/mkn.schema
 %%DATADIR%%/metadata/schemas/tiff.schema
 %%DATADIR%%/metadata/schemas/xmp.schema

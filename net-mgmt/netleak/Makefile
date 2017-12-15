@@ -26,7 +26,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USES=		perl5 shebangfix tar:tgz
 USE_PERL5=	run
-SHEBANG_FILES= 	netleak netleakd
+SHEBANG_FILES=	netleak netleakd
 
 PORTDOCS=	BUGS README TODO
 

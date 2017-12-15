@@ -12,10 +12,10 @@ LICENSE=	BSD2CLAUSE
 
 BUILD_DEPENDS=	bash:shells/bash \
 		nasm:devel/nasm \
-		${PYTHON_LIBDIR}/lib-dynload/_sqlite3.so:databases/py-sqlite3
+		${PYTHON_LIBDIR}/lib-dynload/_sqlite3.so:databases/py-sqlite3@${PY_FLAVOR}
 
 USES=		gmake \
-		python:build
+		python:2.7,build
 USE_GCC=	4.8
 USE_GITHUB=	yes
 GH_ACCOUNT=	freebsd

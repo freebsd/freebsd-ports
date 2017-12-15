@@ -12,13 +12,13 @@ COMMENT=	Password manager for the GNOME 2 desktop
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>0:devel/py-dbus \
-		${PYTHON_PKGNAMEPREFIX}pycrypto>0:security/py-pycrypto
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>0:devel/py-dbus@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pycrypto>0:security/py-pycrypto@${PY_FLAVOR}
 LIB_DEPENDS=	libcrack.so:security/cracklib
 RUN_DEPENDS:=	${BUILD_DEPENDS} \
 		${PYTHON_PKGNAMEPREFIX}cracklib>0:security/py-cracklib
 
-USES=		desktop-file-utils gettext gmake pathfix pkgconfig python \
+USES=		desktop-file-utils gettext gmake pathfix pkgconfig python:2.7 \
 		shared-mime-info shebangfix tar:bzip2
 SHEBANG_FILES=	src/revelation.py
 USE_GNOME=	gnomeprefix pygnome2 intltool

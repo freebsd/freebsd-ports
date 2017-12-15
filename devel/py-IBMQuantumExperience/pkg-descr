@@ -1,0 +1,6 @@
+The official API Client to use IBM Quantum Experience in Python.
+
+It allows to explore the world of quantum computing, check out user guides
+and interactive demos to learn more about quantum principles.
+
+WWW: https://github.com/IBM/qiskit-api-py

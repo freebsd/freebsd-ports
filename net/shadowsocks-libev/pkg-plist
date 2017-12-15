@@ -6,11 +6,18 @@ include/shadowsocks.h
 lib/libshadowsocks-libev.a
 lib/libshadowsocks-libev.la
 libdata/pkgconfig/shadowsocks-libev.pc
-man/man1/ss-local.1.gz
-man/man1/ss-manager.1.gz
-man/man1/ss-nat.1.gz
-man/man1/ss-redir.1.gz
-man/man1/ss-server.1.gz
-man/man1/ss-tunnel.1.gz
-man/man8/shadowsocks-libev.8.gz
-@sample etc/shadowsocks-libev/config.json.sample
+@sample %%ETCDIR%%/config.json.sample
+%%DOCS%%man/man1/ss-local.1.gz
+%%DOCS%%man/man1/ss-manager.1.gz
+%%DOCS%%man/man1/ss-nat.1.gz
+%%DOCS%%man/man1/ss-redir.1.gz
+%%DOCS%%man/man1/ss-server.1.gz
+%%DOCS%%man/man1/ss-tunnel.1.gz
+%%DOCS%%man/man8/shadowsocks-libev.8.gz
+%%DOCS%%%%DOCSDIR%%/shadowsocks-libev.html
+%%DOCS%%%%DOCSDIR%%/ss-local.html
+%%DOCS%%%%DOCSDIR%%/ss-manager.html
+%%DOCS%%%%DOCSDIR%%/ss-nat.html
+%%DOCS%%%%DOCSDIR%%/ss-redir.html
+%%DOCS%%%%DOCSDIR%%/ss-server.html
+%%DOCS%%%%DOCSDIR%%/ss-tunnel.html

@@ -1,0 +1,20 @@
+The following plugins are included:
+* Delay Plugins
+ - Delay Munge - Mono and Stereo
+* Distortion Plugins
+ - Tube - Mono and Stereo
+* Dynamics Plugins
+ - Compressor - Mono and Stereo
+* Filter Plugins
+ - Low Pass Mono and Stereo
+ - High Pass Mono and Stereo
+* Phaser Plugins
+ - Stereo Phaser - Mono In / Stereo In / Sum L+R In
+* Reverb Plugins
+ - ER Reverb - Mono In / Sum L+R In
+* Utility Plugins
+ - Input Module
+ - Meters
+ - Test Tones
+
+WWW: https://launchpad.net/invada-studio

@@ -11,6 +11,7 @@ MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Implements XML/HTML/XHTML Markup safe string for Python
 
 LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USE_PYTHON=	autoplist concurrent distutils
 USES=		python

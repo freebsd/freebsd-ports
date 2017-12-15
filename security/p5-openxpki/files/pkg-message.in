@@ -58,4 +58,7 @@ removing the "DBI" target from the "AUTH" facility in
 %%PREFIX%%/etc/openxpki/log.conf:
 
 log4perl.category.openxpki.auth = INFO, Logfile
+
+If you update across v1.19.0, please take care as recommended here:
+http://openxpki.readthedocs.io/en/latest/upgrading.html#release-v1-19 
 ==================================================================

@@ -1,0 +1,7 @@
+%%DATADIR%%/libresonic.war
+%%FFMPEG%%%%LIBRESONIC_HOME%%/transcode/ffmpeg
+%%FLAC%%%%LIBRESONIC_HOME%%/transcode/flac
+%%LAME%%%%LIBRESONIC_HOME%%/transcode/lame
+@postunexec test -d %%LIBRESONIC_HOME%% && (echo "Configuration information and database saved." && echo "If you you are permanently uninstalling this package" && echo "please remove %%LIBRESONIC_HOME%% and its contents manually.") || true
+@dir(%%USER%%,%%GROUP%%,750) %%LIBRESONIC_HOME%%/transcode
+@dir(%%USER%%,%%GROUP%%,750) %%LIBRESONIC_HOME%%

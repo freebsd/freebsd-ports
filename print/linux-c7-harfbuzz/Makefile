@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	harfbuzz
-PORTVERSION=	0.9.36
-PORTREVISION=	1
+PORTVERSION=	1.3.2
 CATEGORIES=	print linux
 
 MAINTAINER=	emulation@FreeBSD.org

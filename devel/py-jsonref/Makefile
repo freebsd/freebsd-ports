@@ -13,7 +13,7 @@ COMMENT=	Implementation of JSON Reference for Python
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>=1.0:www/py-requests
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>=1.0:www/py-requests@${FLAVOR}
 
 USES?=		python
 USE_PYTHON=	autoplist distutils

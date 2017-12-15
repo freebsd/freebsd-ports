@@ -13,11 +13,11 @@ COMMENT=	Extension for flake8 which uses pydocstyle to check docstrings
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS?=	${PYTHON_PKGNAMEPREFIX}flake8>=0:devel/py-flake8 \
-		${PYTHON_PKGNAMEPREFIX}flake8-polyfill>=0:devel/py-flake8-polyfill \
-		${PYTHON_PKGNAMEPREFIX}pydocstyle>=0:devel/py-pydocstyle
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}flake8>=0:devel/py-flake8@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}flake8-polyfill>=0:devel/py-flake8-polyfill@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pydocstyle>=0:devel/py-pydocstyle@${FLAVOR}
 
-USES?=		python
+USES=		python
 USE_PYTHON=	autoplist distutils
 NO_ARCH=	yes
 

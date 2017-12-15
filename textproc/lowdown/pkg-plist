@@ -1,4 +1,5 @@
 bin/lowdown
+bin/lowdown-diff
 include/lowdown.h
 lib/liblowdown.a
 man/man1/lowdown.1.gz

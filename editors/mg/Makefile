@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mg
-PORTVERSION=	20170828
+PORTVERSION=	20171014
 CATEGORIES=	editors
 MASTER_SITES=	http://homepage.boetes.org/software/mg/
 

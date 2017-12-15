@@ -1,0 +1,89 @@
+--- Make.inc/Makefile.FREEBSD10.PAR.orig	2017-08-08 07:32:58 UTC
++++ Make.inc/Makefile.FREEBSD10.PAR
+@@ -20,7 +20,7 @@
+ #
+ 
+ #SCOTCHDIR  = ${HOME}/scotch_6.0
+-#ISCOTCH    = -I$(SCOTCHDIR)/include
++ISCOTCH    = -I@LOCALBASE@/include
+ #
+ # You have to choose one among the following two lines depending on
+ # the type of analysis you want to perform. If you want to perform only
+@@ -28,16 +28,16 @@
+ # variable below); for both parallel and sequential analysis choose the second 
+ # line (remember to add -Dptscotch in the ORDERINGSF variable below)
+ 
+-#LSCOTCH    = -L$(SCOTCHDIR)/lib -lesmumps -lscotch -lscotcherr
+-#LSCOTCH    = -L$(SCOTCHDIR)/lib -lptesmumps -lptscotch -lptscotcherr
++#LSCOTCH    = -L@LOCALBASE@/lib -lesmumps -lscotch -lscotcherr
++LSCOTCH    = -L@LOCALBASE@/lib -lptesmumps -lptscotch -lptscotcherr
+ 
+ 
+ LPORDDIR = $(topdir)/PORD/lib/
+ IPORD    = -I$(topdir)/PORD/include/
+ LPORD    = -L$(LPORDDIR) -lpord
+ 
+-#LMETISDIR = /opt/metis-5.1.0/build/Linux-x86_64/libmetis
+-#IMETIS    = /opt/metis-5.1.0/include
++LMETISDIR = @LOCALBASE@/lib/parmetis
++IMETIS    = @LOCALBASE@/include/parmetis
+ 
+ # You have to choose one among the following two lines depending on
+ # the type of analysis you want to perform. If you want to perform only
+@@ -46,7 +46,7 @@ LPORD    = -L$(LPORDDIR) -lpord
+ # line (remember to add -Dparmetis in the ORDERINGSF variable below)
+ 
+ #LMETIS    = -L$(LMETISDIR) -lmetis
+-#LMETIS    = -L$(LMETISDIR) -lparmetis -lmetis
++LMETIS    = -L$(LMETISDIR) -lparmetis -lmetis
+ 
+ # The following variables will be used in the compilation process.
+ # Please note that -Dptscotch and -Dparmetis imply -Dscotch and -Dmetis respectively.
+@@ -66,34 +66,34 @@ IORDERINGSC = $(IMETIS) $(IPORD) $(ISCOT
+ 
+ PLAT    =
+ LIBEXT  = .a
+-OUTC    = -o ""
+-OUTF    = -o ""
++OUTC    = -o 
++OUTF    = -o 
+ RM      = /bin/rm -f
+-CC      = cc
+-FC      = gfortran48
+-FL      = gfortran48
++CC      = @CC@
++FC      = @FC@
++FL      = @FC@
+ #      keep a space at the end if options have to be separated from lib name
+-AR      = ar -vr "" 
++AR      = ar -vr 
+ RANLIB  = ranlib
+ LAPACK  = -llapack
+-SCALAP  = -lscalapack -lblacs
++SCALAP  = -L@LOCALBASE@/lib -lblacs -lblacsc -lblacsf77 -lscalapack
+ 
+ INCPAR  = -I/usr/local/include
+-LIBPAR  = $(SCALAP) $(LAPACK) -L/usr/local/lib -lmpi
++LIBPAR  = -L@LOCALBASE@/lib -lfmpich -lmpich -lmpl $(SCALAP)
+ 
+ INCSEQ  = -I$(topdir)/libseq
+ LIBSEQ  = $(LAPACK) -L$(topdir)/libseq -lmpiseq
+-LIBBLAS = -lblas
+-LIBOTHERS = -lpthread
++LIBBLAS = -L@LOCALBASE@/lib @LAPACK_LIBS@ @BLAS_LIBS@
++LIBOTHERS = -lpthread @GCCLIBDIR@ @FORTRANLIBS@
+ 
+ #Preprocessor defs for calling Fortran from C (-DAdd_ or -DAdd__ or -DUPPER)
+-CDEFS   = -DAdd_
++CDEFS   ?= -DAdd_
+ 
+ #Begin Optimized options
+ # uncomment -fopenmp in lines below to benefit from OpenMP
+-OPTF    = -O #-fopenmp
++OPTF    = @FCFLAGS@ #-fopenmp
+ OPTL    = -O #-fopenmp
+-OPTC    = -O -I. #-fopenmp
++OPTC    = @CFLAGS@ -I. #-fopenmp
+ #End Optimized options
+ INCS = $(INCPAR)
+ LIBS = $(LIBPAR)

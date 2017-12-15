@@ -8,15 +8,15 @@ CATEGORIES=	sysutils
 MAINTAINER=	wg@FreeBSD.org
 COMMENT=	Utility to modify the dynamic linker
 
-LICENSE=       GPLv3+
-LICENSE_FILE=  ${WRKSRC}/COPYING
+LICENSE=	GPLv3+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=          autoreconf gmake
-GNU_CONFIGURE= yes
+USES=		autoreconf gmake
+GNU_CONFIGURE=	yes
 
-USE_GITHUB=    yes
-GH_ACCOUNT=    NixOS
-GH_PROJECT=    patchelf
+USE_GITHUB=	yes
+GH_ACCOUNT=	NixOS
+GH_PROJECT=	patchelf
 
 OPTIONS_DEFINE=	DOCS
 

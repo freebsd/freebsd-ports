@@ -1,0 +1,22 @@
+--- etc/rc.d/triton.orig	2017-05-22 19:41:07 UTC
++++ etc/rc.d/triton
+@@ -7,16 +7,18 @@
+ . /etc/rc.subr
+ 
+ name="triton"
++rcvar=triton_enable
+ 
+ 
+ start_cmd="${name}_start"
+ stop_cmd=":"
+ 
+ load_rc_config $name
++: ${triton_enable:=NO}
+ 
+ triton_start()
+ {
+-  /lib/smartdc/triton
++  %%PREFIX%%/lib/smartdc/triton
+ }
+ 
+ run_rc_command "$1"

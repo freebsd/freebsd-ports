@@ -12,7 +12,7 @@ COMMENT=	Anarchic control version system without unnecessary re-merges
 LICENSE=	BSD3CLAUSE
 
 NO_ARCH=	yes
-USES=		python tar:xz
+USES=		python:2.7 tar:xz
 USE_PYTHON=	distutils autoplist
 
 PORTDOCS=	LICENSE.txt

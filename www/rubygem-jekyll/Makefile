@@ -3,6 +3,7 @@
 
 PORTNAME=	jekyll
 PORTVERSION=	3.6.2
+PORTREVISION=	1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -15,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	rubygem-addressable>=2.4:www/rubygem-addressable \
 		rubygem-colorator>=0.1:textproc/rubygem-colorator \
 		rubygem-jekyll-sass-converter>=1.0:textproc/rubygem-jekyll-sass-converter \
-		rubygem-jekyll-watch>=1.1:www/rubygem-jekyll-watch \
+		rubygem-jekyll-watch1>=1.1:www/rubygem-jekyll-watch1 \
 		rubygem-kramdown>=1.14:textproc/rubygem-kramdown \
 		rubygem-liquid>=4.0:textproc/rubygem-liquid \
 		rubygem-mercenary>=0.3.3:devel/rubygem-mercenary \

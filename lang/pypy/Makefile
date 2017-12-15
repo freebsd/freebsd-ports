@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME?=	pypy
-DISTVERSION?=	5.8.0	# Also update bsd.pypy.cffi.mk
+DISTVERSION?=	5.9.0	# Also update bsd.pypy.cffi.mk
 CATEGORIES=	lang python
 MASTER_SITES=	https://bitbucket.org/pypy/pypy/downloads/ http://buildbot.pypy.org/mirror/
 DISTNAME?=	${PORTNAME}2-v${PORTVERSION}-src
@@ -15,15 +15,17 @@ LICENSE_COMB=	multi
 LICENSE_FILE_MIT=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libexpat.so:textproc/expat2 \
-		libffi.so:devel/libffi
+		libffi.so:devel/libffi \
+		libunwind.so:devel/libunwind
 TEST_DEPENDS=	${LOCALBASE}/${PYPY_DIR}/lib_pypy/_gdbm_cffi.${PYPY_CFFI_VER}.so:databases/pypy-gdbm \
 		${LOCALBASE}/${PYPY_DIR}/lib_pypy/_sqlite3_cffi.${PYPY_CFFI_VER}.so:databases/pypy-sqlite3 \
 		${LOCALBASE}/${PYPY_DIR}/lib_pypy/_tkinter/tklib_cffi.${PYPY_CFFI_VER}.so:x11-toolkits/pypy-tkinter
 
-ONLY_FOR_ARCHS?=i386 amd64 armv6 powerpc64
+ONLY_FOR_ARCHS?=	amd64 armv6 armv7 i386 powerpc64
 ONLY_FOR_ARCHS_REASON?=	PyPy JIT only supported on these architectures
 
 BROKEN_armv6=		fails to package: pypy_objspace_std.c: Crash in JIT!
+BROKEN_armv7=		fails to package: pypy_objspace_std.c: Crash in JIT!
 BROKEN_powerpc64=	fails to compile: platcheck_109.c: fatal error: linux/auxvec.h: No such file or directory
 
 OPTIONS_SINGLE=	TRANS
@@ -92,7 +94,7 @@ PYPY_MINMEM_BUILD_DEPENDS=	pypy:lang/pypy
 .endif
 PYPY_VARS=	PYTHON_CMD=${LOCALBASE}/bin/pypy
 PYPY_MINMEM_VARS=	PYTHON_CMD="${SETENV} PYPY_GC_MAX_DELTA=200MB ${LOCALBASE}/bin/pypy --jit loop_longevity=300"
-PYTHON_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pycparser>=2.10:devel/py-pycparser
+PYTHON_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pycparser>=2.10:devel/py-pycparser@${PY_FLAVOR}
 PYTHON_USES=	python:2,build
 
 DESCR=		${.CURDIR}/pkg-descr
@@ -104,12 +106,9 @@ PLIST=		${.CURDIR}/pkg-plist
 .include "${MASTERDIR}/bsd.pypy.mk"
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "i386" || ${ARCH} == "armv6"
-PYPY_BITS=	32
-.elif ${ARCH} == "amd64" || ${ARCH} == "powerpc64"
-PYPY_BITS=	64
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1100000
+PYPY_ARGS=	--withoutmod-_vmprof
 .endif
-PLIST_SUB+=	PYPY_BITS="${PYPY_BITS}"
 
 post-extract:
 	${FIND} ${WRKSRC} -name '*.swn' -delete
@@ -120,7 +119,7 @@ pre-build:
 		${MKDIR} ${WRKDIR}/build; \
 		(cd ${WRKSRC}/pypy/goal; \
 			${SETENV} ${MAKE_ENV} TMPDIR=${WRKDIR}/build \
-			${PYTHON_CMD} ../../rpython/bin/rpython --source -Ojit targetpypystandalone.py); \
+			${PYTHON_CMD} ../../rpython/bin/rpython --source -Ojit targetpypystandalone.py ${PYPY_ARGS}); \
 	fi
 
 post-build:

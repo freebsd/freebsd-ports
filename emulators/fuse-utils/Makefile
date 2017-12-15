@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fuse-utils
-PORTVERSION=	1.3.4
+DISTVERSION=	1.4.0
 CATEGORIES=	emulators
 MASTER_SITES=	SF/fuse-emulator/${PORTNAME}/${PORTVERSION}
 
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libaudiofile.so:audio/libaudiofile \
 		libgcrypt.so:security/libgcrypt \
-		libpng16.so:graphics/png \
+		libpng.so:graphics/png \
 		libspectrum.so:emulators/libspectrum
 
 USES=		gettext iconv jpeg pkgconfig

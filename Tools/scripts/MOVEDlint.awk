@@ -38,6 +38,14 @@ BEGIN {
     portsdir = ENVIRON["PORTSDIR"] ? ENVIRON["PORTSDIR"] : "/usr/ports"
     if (ARGC == 1) {
         ARGV[ARGC++] = portsdir "/MOVED"
+        if (ENVIRON["BLAME"]) {
+            if (!system("test -d " portsdir "/.svn")) {
+                blame = "cd " portsdir "; svn blame MOVED 2>/dev/null"
+            } else if (!system("test -d " portsdir "/.git")) {
+                blame = "cd " portsdir "; git blame MOVED 2>/dev/null"
+            }
+
+        }
     }
     sort = "/usr/bin/sort -n"
     lastdate="1999-12-31"
@@ -72,35 +80,72 @@ $3 !~ /^20[0-3][0-9]-[01][0-9]-[0-3][0-9]$/ {
     }
     lastdate = $3
 
-    if (system("test -f " portsdir "/" $1 "/Makefile"))
+    from_flavor=""
+    if ($1 ~ "@") {
+        from_flavor=$1
+        sub("@.*", "", $1)
+        sub(".*@", "", from_flavor)
+    }
+
+    if (system("test -f " portsdir "/" $1 "/Makefile")) {
         delete missing[$1]
-    else
-        resurrected[$1] = NR
+    } else {
+        if (from_flavor != "") {
+            if (!system("test \"" from_flavor "\" = \"`make -C " portsdir "/" $1 " -VFLAVORS:M" from_flavor "`\"")) {
+                printf "%5d: %s still has the %s flavor\n", NR, $1, from_flavor | sort
+            }
+            # No else because the port is there but does not have the flavor,
+            # so it should be ok.
+        } else {
+            printf "%5d: %s must be marked as resurrected\n", NR, $1 | sort
+        }
+    }
 
     if ($2) {
+        to_flavor=""
+        if ($2 ~ "@") {
+            to_flavor=$2
+            sub("@.*", "", $2)
+            sub(".*@", "", to_flavor)
+        }
+
         if (system("test -f " portsdir "/" $2 "/Makefile"))
             missing[$2] = NR
-#        else
-#            delete resurrected[$2]
+        else
+            if (to_flavor != "") {
+                if (system("test \"" to_flavor "\" = \"`make -C " portsdir "/" $2 " -VFLAVORS:M" to_flavor "`\"")) {
+                    printf "%5d: %s does not have the %s flavor\n", NR, $2, to_flavor | sort
+                    error[NR] = 1
+                }
+            }
     }
 
 #    Produces too many false positives
-#    if ($4 ~ /^[a-z].*/)
-#       printf "Initial value of 'reason' is lowercase: %5d (%s)\n", NR, $4
+#    if ($4 ~ /^[a-z].*/) {
+#       printf "Initial value of 'reason' is lowercase: %5d (%s)\n", NR, $4 | sort
+#       error[NR] = 1
+#    }
 
-    if ($4 ~ /\.$/)
-        printf "%5d: Final character is a dot: (%s)\n", NR, $4
+    if ($4 ~ /\.$/) {
+        printf "%5d: Final character is a dot: (%s)\n", NR, $4 | sort
+        error[NR] = 1
+    }
 }
 
 END {
-    for (port in resurrected) {
-        printf "%5d: %s must be marked as resurrected\n", resurrected[port], port | sort
-        error[resurrected[port]] = 1
-    }
-
     for (port in missing) {
         printf "%5d: %s not found\n", missing[port], port | sort
         error[missing[port]] = 1
+    }
+
+    if (blame) {
+        line = 1
+        while (blame | getline) {
+            if (error[line])
+                printf "%5d!\n%5d! %s\n", line, line, $0 | sort
+            line++
+        }
+        close(blame)
     }
 
     close(sort)

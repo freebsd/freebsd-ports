@@ -1,4 +1,5 @@
 bin/kglobalaccel5
+etc/xdg/kglobalaccel.categories
 include/KF5/KGlobalAccel/KGlobalAccel
 include/KF5/KGlobalAccel/KGlobalShortcutInfo
 include/KF5/KGlobalAccel/kglobalaccel.h

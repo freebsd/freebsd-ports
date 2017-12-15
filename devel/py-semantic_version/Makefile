@@ -13,7 +13,7 @@ COMMENT=	Python library provides a few tools to handle SemVer in Python
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django18>0:www/py-django18
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django18>0:www/py-django18@${FLAVOR}
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	rbarrois

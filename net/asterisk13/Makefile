@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	asterisk
-PORTVERSION=	13.17.2
-PORTREVISION=	1
+PORTVERSION=	13.18.4
 CATEGORIES=	net
 MASTER_SITES=	http://downloads.asterisk.org/pub/telephony/%SUBDIR%/:DEFAULT,g729
 MASTER_SITE_SUBDIR=	asterisk/ \
@@ -20,8 +19,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libuuid.so:misc/e2fsprogs-libuuid \
 		libjansson.so:devel/jansson
 
-BROKEN_armv6=		fails to configure: the SPANDSP installation appears to be missing or broken
-ONLY_FOR_ARCHS=		amd64 armv6 i386 powerpc sparc64
+ONLY_FOR_ARCHS=		amd64 armv6 armv7 i386 powerpc sparc64
 
 EXTRACT_ONLY:=	${DISTNAME}${EXTRACT_SUFX}
 
@@ -73,6 +71,7 @@ OPTIONS_DEFAULT_amd64=		DAHDI BASE XMPP
 OPTIONS_DEFAULT_sparc64=	DAHDI GCC XMPP
 OPTIONS_DEFAULT_powerpc=	GCC XMPP
 OPTIONS_DEFAULT_armv6=		BASE
+OPTIONS_DEFAULT_armv7=		BASE
 
 OPTIONS_GROUP=			CODECS
 OPTIONS_GROUP_CODECS=		GSM NEWG711 SPEEX VORBIS

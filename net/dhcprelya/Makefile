@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dhcprelya
-PORTVERSION=	5.0
+PORTVERSION=	6.1
 CATEGORIES=	net
 
 MAINTAINER=	sem@semmy.ru
@@ -12,7 +12,7 @@ LICENSE=	BSD3CLAUSE
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	sem-hub
-GH_TAGNAME=	7be8923
+GH_TAGNAME=	a4d10c4
 
 USE_RC_SUBR=	dhcprelya
 

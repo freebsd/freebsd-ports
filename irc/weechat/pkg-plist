@@ -5,6 +5,7 @@ lib/weechat/plugins/alias.so
 lib/weechat/plugins/buflist.so
 lib/weechat/plugins/exec.so
 lib/weechat/plugins/fifo.so
+lib/weechat/plugins/fset.so
 lib/weechat/plugins/irc.so
 lib/weechat/plugins/logger.so
 lib/weechat/plugins/relay.so
@@ -25,6 +26,7 @@ libdata/pkgconfig/weechat.pc
 %%JAVASCRIPT%%lib/weechat/plugins/javascript.so
 %%LUA%%lib/weechat/plugins/lua.so
 %%PERL%%lib/weechat/plugins/perl.so
+%%PHP%%lib/weechat/plugins/php.so
 %%PYTHON%%lib/weechat/plugins/python.so
 %%RUBY%%lib/weechat/plugins/ruby.so
 %%TCL%%lib/weechat/plugins/tcl.so

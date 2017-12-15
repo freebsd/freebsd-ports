@@ -14,12 +14,12 @@ COMMENT=	Frontend to the Jamendo music network
 LICENSE=	GPLv2 CC-BY-NC-SA-3.0 PD
 LICENSE_COMB=	multi
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3 \
-		${PYTHON_PKGNAMEPREFIX}lxml>=2.2:devel/py-lxml \
-		${PYTHON_PKGNAMEPREFIX}simplejson>=2.0:devel/py-simplejson	\
-		${PYTHON_PKGNAMEPREFIX}gstreamer>=0.10:multimedia/py-gstreamer
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}lxml>=2.2:devel/py-lxml@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}simplejson>=2.0:devel/py-simplejson@${PY_FLAVOR}	\
+		${PYTHON_PKGNAMEPREFIX}gstreamer>=0.10:multimedia/py-gstreamer@${PY_FLAVOR}
 
-USES=		gettext python shebangfix
+USES=		gettext python:2.7 shebangfix
 SHEBANG_FILES=	src/pyjama.py
 USE_GSTREAMER=	core good bad gnomevfs
 USE_GNOME=	pygtk2

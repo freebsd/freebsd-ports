@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	active_model_serializers
-PORTVERSION=	0.10.6
-PORTREVISION=	1
+PORTVERSION=	0.10.7
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 

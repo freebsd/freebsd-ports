@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Horde_Kolab_Server
-PORTVERSION=	2.0.1
+DISTVERSION=	2.0.5
 CATEGORIES=	net www pear
 PKGNAMEPREFIX=	pear-
 

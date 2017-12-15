@@ -18,7 +18,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
-USES=		openal:al,alut python
+USES=		openal:al,alut python:2.7
 USE_PYTHON=	distutils autoplist
 WRKSRC=		${WRKDIR}/PyOpenAL-${PORTVERSION}
 EXAMPLESDIR=	${PREFIX}/share/examples/${PYTHON_PKGNAMEPREFIX}openal

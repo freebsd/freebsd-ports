@@ -21,7 +21,7 @@ DISTVERSION_TEXLIVE_SOURCE=	20150521
 WRKSRC=		${WRKDIR}/${DISTNAME}/utils/xpdfopen
 GNU_CONFIGURE=	yes
 CFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+= 	-L${LOCALBASE}/lib
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 PLIST_FILES=	bin/pdfclose \
 		bin/pdfopen \

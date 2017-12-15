@@ -4,4 +4,4 @@ automatically detected. Colors and highlighting can be combined and
 nested. New styles can also be created easily. This package was inspired 
 by the 'chalk' 'JavaScript' project.
 
-WWW: http://cran.r-project.org/web/packages/crayon/
+WWW: https://CRAN.R-project.org/package=crayon

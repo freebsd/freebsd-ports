@@ -15,6 +15,7 @@ MAINTAINER=	python@FreeBSD.org
 COMMENT=	Python library for the generation of HTML documents
 
 USES=		python:2 shebangfix
+USE_PYTHON=	flavors
 NO_BUILD=	yes
 NO_ARCH=	yes
 SHEBANG_FILES=	HTMLutil.py barchart.py

@@ -1,6 +1,28 @@
 --- mod_auth_mysql.c.orig	2005-06-22 16:17:45 UTC
 +++ mod_auth_mysql.c
-@@ -206,7 +206,7 @@
+@@ -98,6 +98,10 @@
+     #define _PORT STRING(PORT)
+   #endif
+ #else
++  /* MariaDB as of 10.2 does not declare MYSQL_PORT for the client */
++  #ifndef MYSQL_PORT
++    #define MYSQL_PORT 3306
++  #endif
+   #ifdef APACHE2
+     #define _PORT MYSQL_PORT		/* Use the one from MySQL */
+   #else
+@@ -108,6 +112,10 @@
+ #ifdef SOCKET				/* UNIX socket */
+   #define _SOCKET STRING(SOCKET)
+ #else
++  /* MariaDB as of 10.2 does not declare MYSQL_UNIX_ADDR for the client */
++  #ifndef MYSQL_UNIX_ADDR
++    #define MYSQL_UNIX_ADDR STRING(/tmp/mysql.sock)
++  #endif
+   #define _SOCKET MYSQL_UNIX_ADDR
+ #endif
+ 
+@@ -206,7 +214,7 @@
    #define SNPRINTF apr_snprintf
    #define PSTRDUP apr_pstrdup
    #define PSTRNDUP apr_pstrndup
@@ -9,7 +31,7 @@
    #define POOL apr_pool_t
    #include "http_request.h"   /* for ap_hook_(check_user_id | auth_checker)*/
    #include "ap_compat.h"
-@@ -237,7 +237,7 @@
+@@ -237,7 +245,7 @@
    #define SNPRINTF ap_snprintf
    #define PSTRDUP ap_pstrdup
    #define PSTRNDUP ap_pstrndup
@@ -18,7 +40,7 @@
    #define POOL pool
    #include <stdlib.h>
    #include "ap_sha1.h"
-@@ -589,87 +589,87 @@ static void * create_mysql_auth_dir_conf
+@@ -589,87 +597,87 @@ static void * create_mysql_auth_dir_conf
  static
  command_rec mysql_auth_cmds[] = {
  	AP_INIT_TAKE1("AuthMySQLHost", ap_set_string_slot,
@@ -127,7 +149,7 @@
  	OR_AUTHCFG, "mysql character set to be used"),
  
    { NULL }
-@@ -905,7 +905,16 @@ static char * format_remote_host(request
+@@ -905,7 +913,16 @@ static char * format_remote_host(request
  }
  
  static char * format_remote_ip(request_rec * r, char ** parm) {
@@ -145,7 +167,7 @@
  }
  
  static char * format_filename(request_rec * r, char ** parm) {
-@@ -1270,7 +1279,7 @@ static int mysql_check_auth(request_rec 
+@@ -1270,7 +1287,7 @@ static int mysql_check_auth(request_rec 
    int method = r->method_number;
  
  #ifdef APACHE2

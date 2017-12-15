@@ -12,14 +12,16 @@ COMMENT=	Java Development Kit 8
 
 LICENSE=	GPLv2
 
-ONLY_FOR_ARCHS=		amd64 armv6 armv7 i386
+ONLY_FOR_ARCHS=		aarch64 amd64 armv6 armv7 i386 powerpc64
 
 DISTINFO_FILE=	${.CURDIR}/distinfo.${JDK_ARCH}
+DISTVERSION_aarch64=	r453315
 DISTVERSION_amd64=	r450802
 DISTVERSION_arm=	r450802
 DISTVERSION_i386=	r450802
+DISTVERSION_ppc64=	r455236
 
-JDK_ARCH=	${ARCH:C/armv.*/arm/}
+JDK_ARCH=	${ARCH:C/armv.*/arm/:S/powerpc/ppc/}
 JDK_PORT=	openjdk8
 JDK_ROOT=	bootstrap-${PORTNAME}
 
@@ -32,7 +34,7 @@ INSTALLDIR=	${STAGEDIR}${PREFIX}/${JDK_ROOT}
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH:Marmv*}
+.if ${ARCH} == aarch64 || ${ARCH:Marmv*}
 RUN_DEPENDS+=	${LOCALBASE}/lib/libffi.so.6:devel/libffi
 .endif
 

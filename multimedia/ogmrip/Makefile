@@ -3,15 +3,14 @@
 
 PORTNAME=	ogmrip
 PORTVERSION=	1.0.1
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION:R}/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Application and libraries for encoding DVDs into DivX/OGM files
 
-LICENSE=	GPLv2 LGPL21
-LICENSE_COMB=	multi
+LICENSE=	GPLv2+  # from source, though COPYING says LGPLv2
 
 BUILD_DEPENDS=	mencoder:multimedia/mencoder \
 		mplayer:multimedia/mplayer \
@@ -26,106 +25,49 @@ RUN_DEPENDS=	lame:audio/lame \
 		mplayer:multimedia/mplayer \
 		ogmmerge:multimedia/ogmtools
 
+USES=		desktop-file-utils gmake libtool localbase:ldflags pathfix pkgconfig
+GNU_CONFIGURE=	yes
+USE_GNOME=	glib20 intlhack libxml2
+INSTALL_TARGET=	install-strip
+USE_LDCONFIG=	yes
+
 OPTIONS_DEFINE=	GTK2 ENCHANT MATROSKA MP4BOX NLS THEORA FAAC SRT DEBUG
 OPTIONS_DEFAULT=GTK2
+OPTIONS_SUB=	yes
 ENCHANT_DESC=	Enable spell checking for text subtitles
 MATROSKA_DESC=	Enable Matroska container support
 MP4BOX_DESC=	Enable Mpeg-4 container support
 THEORA_DESC=	Enable Ogg Theora video codec support
 SRT_DESC=	Enable SRT text subtitles support
 
-USES=		desktop-file-utils gmake libtool pathfix pkgconfig
-USE_GNOME=	glib20 intlhack libxml2
-USE_LDCONFIG=	yes
-
-GNU_CONFIGURE=	yes
-INSTALL_TARGET=	install-strip
-
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MGTK2}
-CONFIGURE_ARGS+=	--enable-gtk-support --enable-dbus-support \
-			--enable-libnotify-support
-LIB_DEPENDS+=		libdbus-glib-1.so:devel/dbus-glib \
+GTK2_CONFIGURE_ENABLE=	gtk-support dbus-support libnotify-support
+GTK2_LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib \
 			libnotify.so:devel/libnotify
-USE_GNOME+=		gconf2 libglade2
-GCONF_SCHEMAS=		ogmrip.schemas
-PLIST_SUB+=		GTK2_SUPPORT=""
-.else
-CONFIGURE_ARGS+=	--disable-gtk-support --disable-dbus-support \
-			--disable-libnotify-support
-PLIST_SUB+=		GTK2_SUPPORT="@comment "
-.endif
+GTK2_USE=		GNOME=gconf2,libglade2
+GTK2_VARS=		GCONF_SCHEMAS=ogmrip.schemas
 
-.if ${PORT_OPTIONS:MENCHANT}
-CONFIGURE_ARGS+=	--enable-enchant-support
-LIB_DEPENDS+=		libenchant.so:textproc/enchant
-PLIST_SUB+=		ENCHANT_SUPPORT=""
-.else
-CONFIGURE_ARGS+=	--disable-enchant-support
-PLIST_SUB+=		ENCHANT_SUPPORT="@comment "
-.endif
+ENCHANT_CONFIGURE_ENABLE=enchant-support
+ENCHANT_LIB_DEPENDS=	libenchant.so:textproc/enchant
 
-.if ${PORT_OPTIONS:MMATROSKA}
-CONFIGURE_ARGS+=	--enable-mkv-support
-RUN_DEPENDS+=		mkvmerge:multimedia/mkvtoolnix
-PLIST_SUB+=		MATROSKA_SUPPORT=""
-.else
-CONFIGURE_ARGS+=	--disable-mkv-support
-PLIST_SUB+=		MATROSKA_SUPPORT="@comment "
-.endif
+MATROSKA_CONFIGURE_ENABLE=mkv-support
+MATROSKA_RUN_DEPENDS=	mkvmerge:multimedia/mkvtoolnix
 
-.if ${PORT_OPTIONS:MMP4BOX}
-CONFIGURE_ARGS+=	--enable-mp4-support
-RUN_DEPENDS+=		mp4box:multimedia/gpac-mp4box
-PLIST_SUB+=		MP4BOX_SUPPORT=""
-.else
-CONFIGURE_ARGS+=	--disable-mp4-support
-PLIST_SUB+=		MP4BOX_SUPPORT="@comment "
-.endif
+MP4BOX_CONFIGURE_ENABLE=mp4-support
+MP4BOX_RUN_DEPENDS=	mp4box:multimedia/gpac-mp4box
 
-.if ${PORT_OPTIONS:MNLS}
-USES+=			gettext
-PLIST_SUB+=		NLS=""
-.else
-CONFIGURE_ARGS+=	--disable-nls
-PLIST_SUB+=		NLS="@comment "
-.endif
+NLS_USES=		gettext
+NLS_CONFIGURE_ENABLE=	nls
 
-.if ${PORT_OPTIONS:MTHEORA}
-CONFIGURE_ARGS+=	--enable-theora-support
-LIB_DEPENDS+=		libtheora.so:multimedia/libtheora
-PLIST_SUB+=		THEORA_SUPPORT=""
-.else
-CONFIGURE_ARGS+=	--disable-theora-support
-PLIST_SUB+=		THEORA_SUPPORT="@comment "
-.endif
+THEORA_CONFIGURE_ENABLE=theora-support
+THEORA_LIB_DEPENDS=	libtheora.so:multimedia/libtheora
 
-.if ${PORT_OPTIONS:MFAAC}
-CONFIGURE_ARGS+=	--enable-aac-support
-RUN_DEPENDS+=		faac:audio/faac
-PLIST_SUB+=		FAAC_SUPPORT=""
-.else
-CONFIGURE_ARGS+=	--disable-aac-support
-PLIST_SUB+=		FAAC_SUPPORT="@comment "
-.endif
+FAAC_CONFIGURE_ENABLE=	aac-support
+FAAC_RUN_DEPENDS=	faac:audio/faac
 
-.if ${PORT_OPTIONS:MSRT}
-CONFIGURE_ARGS+=	--enable-srt-support
-RUN_DEPENDS+=		gocr:graphics/gocr
-MAN1+=			subp2pgm.1 subptools.1
-PLIST_SUB+=		SRT_SUPPORT=""
-.else
-CONFIGURE_ARGS+=	--disable-srt-support
-PLIST_SUB+=		SRT_SUPPORT="@comment "
-.endif
+SRT_CONFIGURE_ENABLE=	srt-support
+SRT_RUN_DEPENDS=	gocr:graphics/gocr
 
-.if ${PORT_OPTIONS:MDEBUG}
-CONFIGURE_ARGS+=	--enable-maintainer-mode --enable-devel-mode
-.endif
+DEBUG_CONFIGURE_ON=	--enable-maintainer-mode --enable-devel-mode
 
 pre-everything::
 	@${ECHO_MSG} ""

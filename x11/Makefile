@@ -205,6 +205,7 @@
     SUBDIR += libxshmfence
     SUBDIR += lightdm
     SUBDIR += lightdm-gtk-greeter
+    SUBDIR += lilyterm
     SUBDIR += linux-c6-pixman
     SUBDIR += linux-c6-xorg-libs
     SUBDIR += linux-c7-pixman
@@ -258,6 +259,7 @@
     SUBDIR += p5-X11-Xlib
     SUBDIR += p5-XTerm-Conf
     SUBDIR += pantheon-terminal
+    SUBDIR += pcdm
     SUBDIR += pipeglade
     SUBDIR += pixman
     SUBDIR += plasma-scriptengine-python
@@ -367,6 +369,7 @@
     SUBDIR += xbrightness
     SUBDIR += xcalc
     SUBDIR += xcalib
+    SUBDIR += xcape
     SUBDIR += xcb
     SUBDIR += xcb-proto
     SUBDIR += xcb-util

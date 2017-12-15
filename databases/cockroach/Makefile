@@ -30,7 +30,7 @@ GROUPS=		cockroach
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-DCMAKE_CXX_FLAGS=-DNDEBUG)|-DCMAKE_CXX_FLAGS=-DNDEBUG) -DFAIL_ON_WARNINGS=OFF|g' \
-	  	${WRKSRC}/src/github.com/cockroachdb/cockroach/build/common.mk
+		${WRKSRC}/src/github.com/cockroachdb/cockroach/build/common.mk
 
 do-build:
 	@${SETENV} -i PATH="${PATH}" \

@@ -27,7 +27,7 @@ OPTIONS_DEFINE=	JYTHON
 PLUGINDIR=	share/eclipse/dropins/pydev/eclipse/plugins
 PYDEV_BUNDLES_INFO=	${PREFIX}/${PLUGINDIR}/bundles.info
 
-USES=		python zip
+USES=		python:2.7 zip
 
 .include <bsd.port.options.mk>
 

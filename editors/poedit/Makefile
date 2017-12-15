@@ -4,7 +4,7 @@
 
 PORTNAME=	poedit
 PORTVERSION=	1.8.4
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	editors
 MASTER_SITES=	https://github.com/vslavik/${PORTNAME}/releases/download/v${PORTVERSION}-oss/
 

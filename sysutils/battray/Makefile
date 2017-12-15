@@ -2,23 +2,21 @@
 # $FreeBSD$
 
 PORTNAME=	battray
-PORTVERSION=	2.1
+DISTVERSION=	2.3
+PORTREVISION=	1
 CATEGORIES=	sysutils python
-MASTER_SITES=	http://code.arp242.net/${BB_PROJECT}/get/${BB_COMMIT}.tar.gz?dummy=/
-DISTNAME=	${BB_ACCOUNT}-${BB_PROJECT}-${BB_COMMIT}
+DISTVERSIONPREFIX=	version-
 
 MAINTAINER=	tz@FreeBSD.org
 COMMENT=	Display notebook battery status in tray
 
 LICENSE=	MIT
 
-USE_GNOME=	py3gobject3
 USES=		python:3.3+
-USE_PYTHON=	autoplist distutils
+USE_GNOME=	py3gobject3
+USE_PYTHON=	autoplist distutils optsuffix
 
-
-BB_ACCOUNT=	Carpetsmoker
-BB_PROJECT=	${PORTNAME}
-BB_COMMIT=	011402fbc2a3
+USE_GITHUB=	yes
+GH_ACCOUNT=	Carpetsmoker
 
 .include <bsd.port.mk>

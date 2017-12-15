@@ -19,15 +19,15 @@ LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libtcl86.so:lang/tcl86
 RUN_DEPENDS=	${PYNUMPY} \
-		${PYTHON_PKGNAMEPREFIX}cycler>0:devel/py-cycler \
-		${PYTHON_PKGNAMEPREFIX}dateutil>=1.4:devel/py-dateutil \
-		${PYTHON_PKGNAMEPREFIX}pytz>=0:devel/py-pytz \
-		${PYTHON_PKGNAMEPREFIX}pyparsing>=0:devel/py-pyparsing \
-		${PYTHON_PKGNAMEPREFIX}tornado>0:www/py-tornado
+		${PYTHON_PKGNAMEPREFIX}cycler>0:devel/py-cycler@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dateutil>=1.4:devel/py-dateutil@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pytz>=0:devel/py-pytz@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pyparsing>=0:devel/py-pyparsing@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}tornado>0:www/py-tornado@${FLAVOR}
 
 USE_GITHUB=	yes
 
-USES=		compiler:c++11-lib gettext pkgconfig python:2.7 shebangfix uniquefiles:dirs
+USES=		compiler:c++11-lib gettext pkgconfig python shebangfix uniquefiles:dirs
 USE_PYTHON=	autoplist distutils
 CFLAGS+=	-I${LOCALBASE}/include
 
@@ -35,6 +35,11 @@ OPTIONS_DEFINE=		EXAMPLES GTKBACKEND GTKAGGBACKEND QT4AGGBACKEND \
 			QT5AGGBACKEND TKAGGBACKEND WXAGGBACKEND
 OPTIONS_DEFAULT=	GTKBACKEND GTKAGGBACKEND TKAGGBACKEND
 OPTIONS_SUB=		yes
+.if ${FLAVOR:U:Mpy3*}
+# x11-toolkits/py-gtk2, x11-toolkits/py-wxPython28 do not support Python 3
+OPTIONS_EXCLUDE=	GTKBACKEND GTKAGGBACKEND WXAGGBACKEND
+.endif
+
 GTKBACKEND_DESC=	GTK backend support
 GTKBACKEND_VARS=	GTK_BACKEND=True
 GTKBACKEND_VARS_OFF=	GTK_BACKEND=False
@@ -54,8 +59,8 @@ QT5AGGBACKEND_USE=	PYQT=sip,widgets
 QT5AGGBACKEND_VARS=	QT5AGG_BACKEND=True
 QT5AGGBACKEND_VARS_OFF=	QT5AGG_BACKEND=False
 TKAGGBACKEND_DESC=	TKAgg backend support
-TKAGGBACKEND_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tkinter>0:x11-toolkits/py-tkinter
-TKAGGBACKEND_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tkinter>0:x11-toolkits/py-tkinter
+TKAGGBACKEND_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tkinter>0:x11-toolkits/py-tkinter@${FLAVOR}
+TKAGGBACKEND_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tkinter>0:x11-toolkits/py-tkinter@${FLAVOR}
 TKAGGBACKEND_USES=	tk:run
 TKAGGBACKEND_VARS=	TKAGG_BACKEND=True
 TKAGGBACKEND_VARS_OFF=	TKAGG_BACKEND=False

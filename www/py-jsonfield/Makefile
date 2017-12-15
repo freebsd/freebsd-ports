@@ -13,7 +13,7 @@ COMMENT=	Reusable JSONField model for Django to store validated JSON
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django110>=0:www/py-django110
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django110>=0:www/py-django110@${FLAVOR}
 
 CONFLICTS_INSTALL=py*-django-jsonfield
 

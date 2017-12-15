@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mybb
-PORTVERSION=	1.8.12
+DISTVERSION=	1.8.14
 CATEGORIES=	www
 
 MAINTAINER=	joneum@FreeBSD.org
@@ -12,12 +12,12 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USE_GITHUB=	yes
-GH_TAGNAME=	${PORTNAME}_1812
+GH_TAGNAME=	${PORTNAME}_1814
 
-USES=		cpe mysql php
+USES=		cpe mysql php:web
 NO_BUILD=	yes
 NO_ARCH=	yes
-USE_PHP=	xsl mysql iconv gd xml
+USE_PHP=	xsl mysqli iconv gd xml
 SUB_FILES=	pkg-message
 WWWDIR?=	${PREFIX}/www/${PORTNAME}
 PLIST_SUB=	WWWOWN=${WWWOWN}

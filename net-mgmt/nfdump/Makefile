@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nfdump
-PORTVERSION=	1.6.15
-PORTREVISION=	1
+PORTVERSION=	1.6.16
 DISTVERSIONPREFIX=v
 CATEGORIES=	net-mgmt
 
@@ -36,7 +35,8 @@ NFDUMP15_DESC=		Enable compatibility with version 1.5
 NSEL_DESC=		Read and process ASA/NSEL/NEL event data
 
 post-patch:
-	@${REINPLACE_CMD} 's|-ggdb||' ${WRKSRC}/bin/Makefile.in
+	${REINPLACE_CMD} 's|-ggdb||' ${WRKSRC}/bin/Makefile.am
+	${REINPLACE_CMD} "s|1.6.15|${PORTVERSION}|" ${WRKSRC}/bin/Makefile.am
 
 .include <bsd.port.options.mk>
 

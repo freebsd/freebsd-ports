@@ -1,14 +1,17 @@
 # $FreeBSD$
 
 PORTNAME=	mysqlclient
-DISTVERSION=	1.3.8
+DISTVERSION=	1.3.12
 CATEGORIES=	databases python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	neel@neelc.org
 COMMENT=	MySQL database connector for Python
 
-USES?=		python mysql
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+USES=		iconv mysql python ssl
 USE_PYTHON=	distutils autoplist
 USE_GITHUB=	yes
 GH_ACCOUNT=	pymysql
@@ -20,6 +23,9 @@ PORTDOCS=	*
 DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
 
 OPTIONS_DEFINE=		DOCS
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/_mysql.so
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

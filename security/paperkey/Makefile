@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	paperkey
-PORTVERSION=	1.4
+PORTVERSION=	1.5
 CATEGORIES=	security
 MASTER_SITES=	http://www.jabberwocky.com/software/paperkey/ \
 		ZI

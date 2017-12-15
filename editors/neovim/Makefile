@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	neovim
-PORTVERSION=	0.2.0
 DISTVERSIONPREFIX=	v
+DISTVERSION=	0.2.2
 CATEGORIES=	editors
 
 MAINTAINER=	gor@clogic.com.ua

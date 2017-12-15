@@ -1,0 +1,13 @@
+CheMPS2 is a scientific library which contains a spin-adapted implementation
+of the density matrix renormalization group (DMRG) for ab initio quantum
+chemistry. This wavefunction method allows to obtain numerical accuracy in
+active spaces beyond the capabilities of full configuration interaction (FCI),
+and allows to extract the 2-, 3-, and 4-particle reduced density matrices
+(2-, 3- and 4-RDM) of the active space.
+
+For general active spaces up to 40 electrons in 40 orbitals can be handled with
+DMRG, and for one-dimensional active spaces up to 100 electrons in 100 orbitals.
+The 2-RDM of these active spaces can also be easily extracted, while the 3- and
+4-RDM are limited to about 28 orbitals.
+
+WWW: https://github.com/SebWouters/CheMPS2

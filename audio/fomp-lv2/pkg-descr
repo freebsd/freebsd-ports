@@ -1,0 +1,20 @@
+Fomp is an LV2 port of the MCP, VCO, FIL, and WAH plugins by Fons Adriaensen.
+
+There are 13 plugins in total: 1 auto-wah, 1 EQ, 3 chorus, 5 filters, and
+3 oscillators.
+
+The plugin implementations are identical to their LADSPA forebears, except the
+primary frequency port of oscillators and filters has been converted to Hz to
+facilitate use in any host without assuming the hidden tuning frequency of
+AlsaModularSynth. All other frequency ports remain as they were, using octaves
+for faithful Moog-like modulation.
+
+Aside from that, the main benefit of these LV2 ports is improved metadata: CV
+ports are distinguishable from audio ports, controls have units where
+applicable, documentation is built-in for display in host UIs, and so on.
+
+The oscillators and filters are mainly useful in modular synthesizers, but since
+CV ports are distinct from audio ports, they should work fine in non-modular
+hosts as well.
+
+WWW: http://drobilla.net/software/fomp

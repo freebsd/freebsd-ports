@@ -3,7 +3,7 @@
 
 PORTNAME=	glewpy
 PORTVERSION=	0.7.4
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	graphics python
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,9 +16,9 @@ PATCHFILES=	glewpy-${PORTVERSION}-generatedsources.diff.bz2
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Advanced OpenGL extensions to Python
 
-BUILD_DEPENDS=	pyrex>=0.9.6.2:devel/pyrex
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyrex>=0.9.6.2:devel/pyrex@${FLAVOR}
 
-USES=		python
+USES=		python:2.7
 USE_GL=		glew
 USE_PYTHON=	distutils
 

@@ -1,0 +1,6 @@
+PyODE is a set of open-source Python bindings for The Open Dynamics
+Engine, an open-source physics engine. PyODE also includes an XODE
+parser. Like ODE, PyODE may be distributed under the terms of either
+the GNU Lesser General Public License or a BSD-style license.
+
+WWW: http://pyode.sourceforge.net/

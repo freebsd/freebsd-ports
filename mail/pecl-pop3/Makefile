@@ -10,6 +10,6 @@ MAINTAINER=	buganini@gmail.com
 COMMENT=	POP3 Client Library for PHP
 
 USES=		php:pecl
-IGNORE_WITH_PHP=	70 71
+IGNORE_WITH_PHP=	70 71 72
 
 .include <bsd.port.mk>

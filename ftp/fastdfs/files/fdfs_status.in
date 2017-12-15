@@ -1,0 +1,9 @@
+#!/bin/sh
+
+. /etc/rc.subr
+
+load_rc_config "fdfs_client"
+
+: ${fdfs_client_config="%%PREFIX%%/etc/fdfs/client.conf"}
+
+%%PREFIX%%/bin/fdfs_monitor ${fdfs_client_config}|grep -E 'Group|Storage|id|ip_addr|last_synced_timestamp'|grep -v 'trunk file'

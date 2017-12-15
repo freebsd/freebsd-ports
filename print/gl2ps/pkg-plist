@@ -2,7 +2,8 @@ include/gl2ps.h
 lib/libgl2ps.a
 lib/libgl2ps.so
 lib/libgl2ps.so.1
-%%EXAMPLESDIR%%/gl2psTest.c
-%%EXAMPLESDIR%%/gl2psTestSimple.c
-%%EXAMPLESDIR%%/Makefile
+lib/libgl2ps.so.1.4.0
+%%PORTDOCS%%%%DOCSDIR%%/README.txt
 %%PORTDOCS%%%%DOCSDIR%%/gl2ps.pdf
+%%PORTDOCS%%%%DOCSDIR%%/gl2psTest.c
+%%PORTDOCS%%%%DOCSDIR%%/gl2psTestSimple.c

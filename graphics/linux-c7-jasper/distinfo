@@ -1,7 +1,7 @@
-TIMESTAMP = 1495989425
-SHA256 (centos/jasper-libs-1.900.1-30.el7_3.i686.rpm) = 33528f9a2f5eaffc09abaed6f5b81f336815820969406a24dfb7526d587ed54b
-SIZE (centos/jasper-libs-1.900.1-30.el7_3.i686.rpm) = 150988
-SHA256 (centos/jasper-libs-1.900.1-30.el7_3.x86_64.rpm) = 63ee65983ed5bd9f8d2516f4066d3642cdff69f63b5251a52470094e7a816150
-SIZE (centos/jasper-libs-1.900.1-30.el7_3.x86_64.rpm) = 153764
-SHA256 (centos/jasper-1.900.1-30.el7_3.src.rpm) = 37135c918505fca6233f9ab55193602bb9ed97dcde43a50ed6f2dae3a45038fc
-SIZE (centos/jasper-1.900.1-30.el7_3.src.rpm) = 1431947
+TIMESTAMP = 1507237078
+SHA256 (centos/jasper-libs-1.900.1-31.el7.i686.rpm) = 6f60e557e33dfac8acc50bf962d72eb4b5375eb23b643236d3f372e8019fe7f1
+SIZE (centos/jasper-libs-1.900.1-31.el7.i686.rpm) = 151108
+SHA256 (centos/jasper-libs-1.900.1-31.el7.x86_64.rpm) = 79b9c5cb17c3298f4061d49ffe147d55c33f24434cd2aa2a83f9c2bb503ad9dd
+SIZE (centos/jasper-libs-1.900.1-31.el7.x86_64.rpm) = 153856
+SHA256 (centos/jasper-1.900.1-31.el7.src.rpm) = 0d04e1dac769348aca9b45276245f2dfa6e49cf8ecaa092fb91dcf4aee035413
+SIZE (centos/jasper-1.900.1-31.el7.src.rpm) = 1432475

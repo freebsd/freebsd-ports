@@ -17,7 +17,7 @@ RUN_DEPENDS=	swipl:lang/swi-pl
 
 BROKEN_amd64=	fails to build: can't link shared libraries to static
 
-USES=		python
+USES=		python:2.7
 USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

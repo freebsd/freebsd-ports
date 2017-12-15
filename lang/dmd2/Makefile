@@ -17,6 +17,7 @@ LICENSE_FILE_DMD=	${WRKSRC}/dmd/src/backendlicense.txt
 LICENSE_PERMS_DMD=	no-dist-mirror no-dist-sell no-pkg-mirror no-pkg-sell auto-accept
 
 BROKEN_armv6=		dumps core: Assertion failed: (!signbit(Port::ldbl_nan)), function PortInitializer, file port.c
+BROKEN_armv7=		dumps core: Assertion failed: (!signbit(Port::ldbl_nan)), function PortInitializer, file port.c
 BROKEN_mips64=		fails to compile: cc1: unrecognized command line option -m32
 BROKEN_powerpc64=	fails to build: can't mangle function with unknown linkage (void*())
 BROKEN_sparc64=		fails to install: divide-by-zero error

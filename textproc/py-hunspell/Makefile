@@ -15,7 +15,7 @@ LICENSE=	LGPL3
 
 LIB_DEPENDS=	libhunspell-${HSPLVER}.so:textproc/hunspell
 
-USES?=		python
+USES=		python
 USES+=		localbase
 USE_PYTHON=	distutils
 

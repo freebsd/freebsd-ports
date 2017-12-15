@@ -14,7 +14,8 @@ DESCR=		${.CURDIR}/pkg-descr
 PLIST=		${.CURDIR}/pkg-plist
 
 USE_GNOME=	libxslt
-USES+=		python
+USES+=		python:2.7
+USE_PYTHON=	flavors
 CONFIGURE_ARGS=	--with-html-dir=${PREFIX}/share/doc \
 		--with-python=${PYTHON_CMD}
 

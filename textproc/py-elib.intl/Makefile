@@ -18,7 +18,7 @@ USE_GITHUB=	yes
 PORTSCOUT=	ignore:1
 
 NO_ARCH=	yes
-USES=		python
+USES=		python:2.7
 USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>

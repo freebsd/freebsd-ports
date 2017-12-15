@@ -66,7 +66,7 @@ DBUS_USES=	python:2
 DBUS_USE=	GNOME=glib20
 DBUS_LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib \
 			libdbus-1.so:devel/dbus
-DBUS_RUN_DEPENDS=	${PYTHON_SITELIBDIR}/dbus/_dbus.py:devel/py-dbus
+DBUS_RUN_DEPENDS=	${PYTHON_SITELIBDIR}/dbus/_dbus.py:devel/py-dbus@${PY_FLAVOR}
 MYSQL_USE=	MYSQL=yes
 MYSQL_CONFIGURE_OFF=--with-mysql-config=/nonexistent
 ACL_LIB_DEPENDS=	libsunacl.so:sysutils/libsunacl
@@ -90,9 +90,9 @@ post-patch:
 		s|%%LOCALBASE%%|${LOCALBASE}|g' \
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|\.dist|\.sample|g' \
-	    	${WRKSRC}/config/Makefile.in
+		${WRKSRC}/config/Makefile.in
 #	@${REINPLACE_CMD} -e 's|%%PYTHONCMD%%|${PYTHONCMD}|' \
-#	    	${WRKSRC}/contrib/shell_utils/afpstats
+#		${WRKSRC}/contrib/shell_utils/afpstats
 
 post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/contrib/macusers/macusers \

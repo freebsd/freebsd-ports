@@ -1,6 +1,6 @@
 # $FreeBSD$
 
-GEANY_VER=	1.31
+GEANY_VER=		1.32
 GEANY_PLUGINS_ALL=	addons \
 			autoclose \
 			automark \
@@ -42,6 +42,7 @@ GEANY_PLUGINS_ALL=	addons \
 			updatechecker \
 			vc \
 			webhelper \
+			workbench \
 			xmlsnippets
 
 addons_DESC=		various small addons
@@ -83,8 +84,10 @@ spellcheck_DESC=	spell check via Enchant
 tableconvert_DESC=	convert tabulator separated selection into a table
 treebrowser_DESC=	alternate file browser
 updatechecker_DESC=	check for new version of Geany
+utilslib_DESC=		utility library
 vc_DESC=		access to different version-control systems
 webhelper_DESC=		web development facilities
+workbench_DESC=		manage multiple projects in geany
 xmlsnippets_DESC=	XML/HTML tag autocompletion
 
 doc_DIR=		geanydoc
@@ -100,7 +103,10 @@ miniscript_DIR=		geanyminiscript
 numberedbookmarks_DIR=	geanynumberedbookmarks
 pg_DIR=			geanypg
 prj_DIR=		geanyprj
+utilslib_DIR=		utils
 vc_DIR=			geanyvc
 
 git-changebar_SWITCH=	--enable-gitchangebar
 pretty-printer_SWITCH=	--enable-pretty_printer
+
+GEANY_UTIL=		workbench

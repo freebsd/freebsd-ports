@@ -18,8 +18,6 @@ LICENSE_PERMS=	none
 
 LIB_DEPENDS=	libpcre.so:devel/pcre
 
-RESTRICTED=	Redistribution prohibited
-
 USES=		cmake tar:tgz
 USE_LDCONFIG=	yes
 

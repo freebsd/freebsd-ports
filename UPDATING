@@ -5,6 +5,228 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20171214:
+  AFFECTS: all ports users
+  AUTHOR: adamw@FreeBSD.org
+
+  Support for some deprecated variables is going to be removed soon. If
+  you use any of the following constructs (usually in /etc/make.conf),
+  you must switch to the new incantations:
+
+               OLD                                 NEW
+  -------------------------------    ------------------------------
+  WITH_[...]                         OPTIONS_SET= [...]
+  WITHOUT_[...]                      OPTIONS_UNSET= [...]
+  WITHOUT_NLS                        OPTIONS_UNSET= NLS
+  NOPORTDOCS                         OPTIONS_UNSET= DOCS
+  NOPORTEXAMPLES                     OPTIONS_UNSET= EXAMPLES
+  WITH_BDB_VER=[...]                 DEFAULT_VERSIONS+= bdb=[...]
+  OVERRIDE_LINUX_BASE_PORT=[...]     DEFAULT_VERSIONS+= linux=[...]
+  WITH_OPENSSL_BASE                  DEFAULT_VERSIONS+= ssl=base
+  WITH_OPENSSL_PORT                  DEFAULT_VERSIONS+= ssl=port
+
+20171205:
+  AFFECTS: users of dns/powerdns
+  AUTHOR: krion@FreeBSD.org
+
+  Recursor passthrough removal: This will impact many installations.
+  Previously, the PowerDNS Authoritative Server contained a facility
+  for sending recursion desired queries to a resolving backend,
+  possibly after first consulting its local cache. This feature
+  (‘recursor=’) was frequently confusing and also delivered
+  inconsistent results, for example when a query ended up referring
+  to a CNAME that was outside of the Authoritative Server’s
+  knowledge.
+
+20171203:
+  AFFECTS: users of sysutils/dsbmd
+  AUTHOR: mk@freeshell.de
+
+  Due to new configuration variables and new features, users of dsbmd
+  version 0.4.1 and earlier should consider recreating their dsbmd.conf from
+  the new dsbmd.conf.sample.
+
+20171130:
+  AFFECTS: all ports users
+  AUTHOR: adamw@FreeBSD.org
+
+  The ports tree has gained "flavors," which are a way to produce multiple
+  variations of a port. Some intended examples of this are language
+  modules being produced for multiple language versions, and lite/nox11 packages,
+  without needing separate ports for each variation. Python ports have already
+  been flavored (see the below entry). Flavor support must be added to
+  individual ports.
+
+  Flavors are already supported by make, pkg, poudriere, and synth; see the
+  manpages for those tools for usage instructions. Portmaster and portupgrade
+  don't support flavors yet, but community work on those tools is in progress.
+
+  Some bumps and breakages are inevitable for a major change such as this.
+  Please report breakages and monitor the ports@ list for solutions as they
+  become available.
+
+20171130:
+  AFFECTS: */py*
+  AUTHOR: mat@FreeBSD.org
+
+  Ports using Python via USES=python are now flavored.  All the py3-* ports
+  have been removed and folded into their py-* master ports.
+
+  People using Poudriere 3.2+ and binary packages do not have to do anything.
+
+  For other people, to build the Python 3.6 version of, for example,
+  databases/py-gdbm, you need to run:
+
+    # make FLAVOR=py36 install
+
+20171126:
+  AFFECTS: users of security/p5-openxpki
+  AUTHOR: dbaio@FreeBSD.org
+
+  OpenXPKI has been updated to 1.19.4, some important changes were made, please
+  see the upgrading documentation for more details:
+
+  http://openxpki.readthedocs.io/en/latest/upgrading.html
+
+20171126:
+  AFFECTS: users of mail/sympa
+  AUTHOR: dgeo@centrale-marseille.fr
+
+  Web's static dirs have moved to a single dedicated directory.
+  Users should review webserver's /static configuration (examples in
+  share/examples/sympa).
+
+20171119:
+  AFFECTS: users of sysutils/zrepl
+  AUTHOR: woodsb02@FreeBSD.org
+
+  Zrepl has been updated to 0.0.2, which introduces two changes that will
+  require existing users to change their zrepl.yml config file:
+    - global.logging is no longer a dictionary but a list.
+      Refer to the new format here: https://zrepl.github.io/configuration/logging.html
+    - source job field datasets renamed to filesystems.
+      Refer to the new format here: https://zrepl.github.io/configuration/jobs.html
+
+    https://zrepl.github.io/changelog.html#id1
+
+20171117:
+  AFFECTS: users of sysutils/terraform
+  AUTHOR: lifanov@FreeBSD.org
+
+  Terraform has been updated to 0.11, which introduces several incompatible
+  changes. Please follow upgrading guide when updating the package.
+
+    https://www.terraform.io/upgrade-guides/0-11.html
+
+20171114:
+  AFFECTS: users of ports-mgmt/poudriere
+  AUTHOR: bdrewery@FreeBSD.org
+
+  "poudriere options" now respects the -p flag while it did not before.
+  This means that it may create an empty directory when used now rather
+  than continue to use your existing options set.  You may want to not
+  use -p or move your existing options directory, in
+  /usr/local/etc/poudriere.d/*-options, to the new format with the
+  ports tree name in it.  Otherwise "poudriere bulk" will use the
+  new empty directory.
+
+  This behavior will likely change in 3.2.1 to be more backwards-compatible.
+
+20171112:
+  AFFECTS: consumers of devel/oniguruma*
+  AUTHOR: riggs@FreeBSD.org
+
+  Outdated versions of oniguruma have been removed from the ports
+  tree; devel/oniguruma is the only supported version, currently
+  replacing devel/oniguruma6.
+  pkg should handle this automatically while users of portmaster or
+  portupgrade might need to take additional manual steps:
+
+  for users of portmaster:
+	portmaster -o devel/oniguruma devel/oniguruma6
+	portmaster -r devel/oniguruma
+
+  for users of portupgrade:
+	portupgrade -o devel/oniguruma devel/oniguruma6
+	portupgrade -fr devel/oniguruma
+
+20171107:
+  AFFECTS: users of www/node
+  AUTHOR: bhughes@FreeBSD.org	
+
+  The www/node port has been updated to node.js v9.0.0, the latest
+  upstream release. A new port, www/node8, has been created for the
+  v8.x LTS branch. Users wanting to stay on v8.x can replace www/node
+  with www/node8 with one of the following commands:
+
+  # pkg install www/node8
+    or
+  # portmaster -o www/node8 www/node
+    or
+  # portupgrade -o www/node8 www/node
+
+20171107:
+  AFFECTS: users of security/libressl
+  AUTHOR: brnrd@FreeBSD.org
+
+  The port has been updated to the latest stable version 2.6 of LibreSSL.
+  The shared library versions of the libraries have been bumped.
+
+  After upgrading, manually update all packages that depend on any of the
+  libraries provided by LibreSSL (libssl, libcrypto and libtls) since the
+  versions of these libraries have changed. Normally, you can obtain the
+  list of dependent software by running the following command:
+
+  # pkg info -r libressl
+
+  Then you should rebuild all ports depending on libressl to avoid dangling
+  shared library dependencies. Poudriere and pkg handle this correctly,
+  portmaster and portupgrade users can use the following to rebuild all
+  dependent ports.
+
+  Portmaster users:
+      portmaster -r libressl
+  Portupgrade users:
+      portupgrade -fr security/libressl
+
+20171105
+  AFFECTS: users of www/mod_auth_cas
+  AUTHOR: brnrd@FreeBSD.org
+
+  The configuration of mod_auth_cas has changed since the previous
+  version. Visit the https://github.com/apereo/mod_auth_cas page for
+  an overview of all configuration parameters
+
+20171105:
+  AFFECTS: users of www/mod_rpaf2
+  AUTHOR: brnrd@FreeBSD.org
+
+  The configuration of mod_rpaf2 has been heavily modified since version
+  0.6. Have a look at https://github.com/gnif/mod_rpaf/tree/v0.8.4 to 
+  determine what you need to change in your configuration.
+
+20171031:
+  AFFECTS: users of editors/vim
+  AUTHOR: adamw@FreeBSD.org
+
+  The default vim language bindings have changed. Python 2 and 3 bindings
+  may now be enabled independently (the default vim package will continue
+  to depend on python-2.7).
+
+  Lua and Tcl bindings have been disabled by default. If you need these
+  bindings, you'll need to compile vim yourself. Note that bindings are
+  only for plugins written in those languages, and for interactive
+  debugging. Editing, indenting, linting, completing, and syntax-highlighting
+  those languages is NOT affected.
+
+20171026:
+  AFFECTS: users of devel/universal-ctags
+  AUTHOR: rodrigo@FreeBSD.org
+
+  Due to conflicts with emacs ctag (editors/emacs-devel, editors/emacs-nox11, editors/emacs),
+  the installed files will be prefixed with the 'u' character.
+  The new binaries will de named uctags and ureadtags.
+
 20171015:
   AFFECTS: people using WITHOUT_DEBUG
   AUTHOR: madpilot@FreeBSD.org
@@ -30,18 +252,6 @@ you update your ports collection, before attempting any port upgrades.
 
   The HPN option is currently disabled by default, and does not build,
   in the package.  This follows what happened in base as well.
-
- 20171006:
-  AFFECTS: users of graphics/netpbm
-  AUTHOR: tobik@FreeBSD.org
-
-  If you use portmaster/portupgrade/make to build your ports, please
-  uninstall the old netpbm version first before attempting to update to
-  netpbm 10.80.00:
-
-	pkg delete -f netpbm
-
-  It is recommended that you rebuild all dependent ports as well.
 
 20171004:
   AFFECTS: users of security/krb5-appl

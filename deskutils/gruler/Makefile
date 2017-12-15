@@ -11,6 +11,8 @@ MASTER_SITES=	http://BSDforge.com/projects/source/deskutils/gruler/ \
 MAINTAINER=	ps.ports@smyrak.com
 COMMENT=	Simple customizable GTK screen ruler
 
+BROKEN=		No public distfiles
+
 USES=		pkgconfig pathfix libtool
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnomeprefix libgnomeui libglade2

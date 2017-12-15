@@ -29,7 +29,7 @@ post-install:
 .include <bsd.port.pre.mk>
 
 .if ${PYTHON_REL} < 3500
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}typing>=0:devel/py-typing
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}typing>=0:devel/py-typing@${FLAVOR}
 .endif
 
 .include <bsd.port.post.mk>

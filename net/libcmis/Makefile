@@ -9,7 +9,7 @@ MASTER_SITES=	http://dev-www.libreoffice.org/src/
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Client library for the CMIS interface
 
-LICENSE=	LGPL20 MPL GPLv2
+LICENSE=	LGPL20 MPL11 GPLv2
 LICENSE_COMB=	dual
 
 LIB_DEPENDS=	libcurl.so:ftp/curl

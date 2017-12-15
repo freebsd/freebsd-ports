@@ -11,18 +11,16 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphics viewer for SVGAlib
 
 LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libtiff.so:graphics/tiff
 
-OPTIONS_DEFINE=	SDL DOCS
-
-USES=		gmake jpeg makeinfo
+USES=		gmake jpeg localbase:ldflags makeinfo
 ALL_TARGET=	zgv info
 INFO=		zgvrc
 
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+OPTIONS_DEFINE=	SDL DOCS
 
 .include <bsd.port.options.mk>
 
@@ -55,17 +53,15 @@ post-patch:
 		 's|SDL/SDL|SDL|g'
 
 do-install:
-	(cd ${WRKSRC}/src && ${INSTALL_PROGRAM} zgv \
-		${STAGEDIR}${PREFIX}/bin/zgv)
-	(cd ${WRKSRC}/doc && ${INSTALL_MAN} zgv.1 \
-		${STAGEDIR}${MANPREFIX}/man/man1/zgv.1)
-	(cd ${WRKSRC}/doc && ${INSTALL_DATA} sample.zgvrc \
-		${STAGEDIR}${PREFIX}/etc/zgvrc.sample)
-	(cd ${WRKSRC}/doc && ${INSTALL_DATA} zgv \
-		${STAGEDIR}${PREFIX}/${INFO_PATH}/zgvrc.info)
+	${INSTALL_PROGRAM} ${WRKSRC}/src/zgv ${STAGEDIR}${PREFIX}/bin/zgv
+	${INSTALL_MAN} ${WRKSRC}/doc/zgv.1 ${STAGEDIR}${MANPREFIX}/man/man1/zgv.1
+	${INSTALL_DATA} ${WRKSRC}/doc/sample.zgvrc ${STAGEDIR}${PREFIX}/etc/zgvrc.sample
+	${INSTALL_DATA} ${WRKSRC}/doc/zgv ${STAGEDIR}${PREFIX}/${INFO_PATH}/zgvrc.info
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in NEWS README SECURITY TODO INSTALL
-	(cd ${WRKSRC} && ${INSTALL_DATA} ${i} ${STAGEDIR}${DOCSDIR})
+	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
 
 .include <bsd.port.mk>

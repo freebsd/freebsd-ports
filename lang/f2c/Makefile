@@ -3,7 +3,7 @@
 
 PORTNAME=	f2c
 PORTVERSION=	20060810
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	lang
 MASTER_SITES=	LOCAL/maho/f2c
 DISTNAME=	${PORTNAME}
@@ -59,12 +59,12 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/f2c ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/src/f2c.h ${STAGEDIR}${PREFIX}/include
 	${INSTALL_MAN} ${WRKSRC}/src/f2c.1t ${STAGEDIR}${MAN1PREFIX}/man/man1/f2c.1
-	${INSTALL_LIB} ${WRKSRC}/libf2c/libf2c.a ${STAGEDIR}${PREFIX}/lib
+	${INSTALL_DATA} ${WRKSRC}/libf2c/libf2c.a ${STAGEDIR}${PREFIX}/lib
 	${INSTALL_LIB} ${WRKSRC}/libf2c/libf2c.so.${LIBVER} ${STAGEDIR}${PREFIX}/lib
 	${LN} -sf libf2c.so.${LIBVER} ${STAGEDIR}${PREFIX}/lib/libf2c.so
 
 do-install-DOCS-on:
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 do-install-FC-on:

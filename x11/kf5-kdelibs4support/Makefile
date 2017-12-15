@@ -1,8 +1,7 @@
-# Created by: tcberner
 # $FreeBSD$
 
 PORTNAME=	kdelibs4support
-PORTVERSION=	${KDE_FRAMEWORKS_VERSION}
+DISTVERSION=	${KDE_FRAMEWORKS_VERSION}
 CATEGORIES=	x11 kde kde-frameworks
 
 MAINTAINER=	kde@FreeBSD.org

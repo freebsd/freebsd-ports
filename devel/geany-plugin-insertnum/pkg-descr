@@ -3,4 +3,4 @@ with integer numbers, using start/step/base etc. specified by the
 user. For practical reasons, the number of lines is limited to
 100000. Lines shorter than the current selection are skipped.
 
-WWW: http://plugins.geany.org/geanyinsertnum.html
+WWW: https://plugins.geany.org/geanyinsertnum.html

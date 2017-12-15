@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	gitea
-PORTVERSION=	1.2.1
 DISTVERSIONPREFIX=	v
+DISTVERSION=	1.3.1
 CATEGORIES=	www
 
 MAINTAINER=	stb@lassitu.de
@@ -32,13 +32,22 @@ GROUPS=		git
 OPTIONS_DEFINE=	CERT PAM SQLITE
 CERT_DESC=	Automatic creation of self-signed certificates
 PAM_DESC=	Authentication using PAM
-SQLITE=		Add SQLite as database backend
 
 OPTIONS_DEFAULT=	${OPTIONS_DEFINE}
 
 CERT_VARS=	GO_TAGS+=cert
 PAM_VARS=	GO_TAGS+=pam
 SQLITE_VARS=	GO_TAGS+=sqlite
+
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1100513
+DAEMONARGS=	-S -l \$${gitea_facility} -s \$${gitea_priority} -t \$${name}
+.else
+DAEMONARGS=	-f
+.endif
+
+SUB_LIST+=	DAEMONARGS="${DAEMONARGS}"
 
 post-patch:
 	# Gitea releases don't supply the release version number; the

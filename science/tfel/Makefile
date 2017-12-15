@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tfel
-PORTVERSION=	2.0.4
-PORTREVISION=	1
+PORTVERSION=	3.0.2
 CATEGORIES=	science
 MASTER_SITES=	SF/${PORTNAME}/
 PKGNAMESUFFIX=	-mfront
@@ -13,20 +12,24 @@ COMMENT=	Code generation tool dedicated to material knowledge
 
 LICENSE=	GPLv3
 
+ONLY_FOR_ARCHS=	amd64 i386
+
 OPTIONS_DEFINE=		GNUPLOT PYTHON
 OPTIONS_DEFAULT=	GNUPLOT
+OPTIONS_SUB=		yes
 
 GNUPLOT_BUILD_DEPENDS=	gnuplot:math/gnuplot
 GNUPLOT_RUN_DEPENDS=	gnuplot:math/gnuplot
 
-PYTHON_CONFIGURE_ENABLE=	python
-PYTHON_USES=	python
+PYTHON_LIB_DEPENDS=	libboost_python.so:devel/boost-python-libs
+PYTHON_USES=		localbase python:2.7
+PYTHON_CONFIGURE_ARGS=	--enable-python-bindings
+PYTHON_CONFIGURE_WITH=	boost=${LOCALBASE}
 
-ONLY_FOR_ARCHS=	amd64 i386
-
-USES=		autoreconf libtool tar:bzip2
+USES=		libtool tar:bzip2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--enable-aster
+CONFIGURE_ARGS+=	--enable-abaqus
 USE_LDCONFIG=	yes
 
 .ifdef PACKAGE_BUILDING

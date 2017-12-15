@@ -14,7 +14,7 @@ COMMENT=	Extensible vector graphics editor with LaTeX support
 LICENSE=	GPLv3+
 
 RUN_DEPENDS=	xdg-open:devel/xdg-utils
-LIB_DEPENDS=	libpng16.so:graphics/png \
+LIB_DEPENDS=	libpng.so:graphics/png \
 		libfreetype.so:print/freetype2
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src

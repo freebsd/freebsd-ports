@@ -15,6 +15,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN_powerpc64=	fails to compile: cc1: error: -Werror=c11-extensions: No option -Wc11-extensions
 
+FLAVORS=	default notls
+notls_PKGNAMESUFFIX=	-notls
+
 USES=		compiler gmake
 
 USE_GITHUB=	yes
@@ -23,36 +26,40 @@ GH_ACCOUNT=	jorisvink
 CFLAGS+=	${CFLAGS_${CHOSEN_COMPILER_TYPE}}
 CFLAGS_clang=	-Wno-error=c11-extensions # 12.0 + -pedantic
 
+KORE_BIN=	kore${PKGNAMESUFFIX}
+EXAMPLESDIR=	${PREFIX}/share/examples/${KORE_BIN}
+PLIST_SUB=	KORE_BIN="${KORE_BIN}"
+
 OPTIONS_DEFINE=	DEBUG EXAMPLES HTTP JSONRPC PGSQL TASKS TLS
 OPTIONS_DEFAULT=	HTTP JSONRPC PGSQL TASKS TLS
+.if ${FLAVOR:U} == notls
+OPTIONS_EXCLUDE=	TLS
+.endif
 OPTIONS_SUB=	yes
 
 HTTP_DESC=	Build with HTTP support
 JSONRPC_DESC=	Build with JSON-RPC support
 TASKS_DESC=	Build with tasks support
 
-TASKS_VARS=	MAKE_ARGS+=TASKS=1
-
-PGSQL_IMPLIES=	HTTP
-PGSQL_VARS=	MAKE_ARGS+=PGSQL=1
-PGSQL_USES=	pgsql
-
-TLS_VARS_OFF=	MAKE_ARGS+=NOTLS=1
-TLS_USES=	ssl
-
-HTTP_VARS_OFF=	MAKE_ARGS+=NOHTTP=1
-# If TLS=off and HTTP=on kore will still link with libcrypto, so add
-# an OpenSSL dependency here.
-HTTP_USES=	ssl
+DEBUG_MAKE_ARGS=	DEBUG=1
 
 JSONRPC_IMPLIES=	HTTP
-JSONRPC_VARS=	MAKE_ARGS+=JSONRPC=1
 JSONRPC_LIB_DEPENDS=	libyajl.so:devel/yajl
+JSONRPC_MAKE_ARGS=	JSONRPC=1
 
-DEBUG_VARS=	MAKE_ARGS+=DEBUG=1
+HTTP_MAKE_ARGS_OFF=	NOHTTP=1
+# If TLS=off and HTTP=on kore will still link with libcrypto, so add
+# an OpenSSL dependency here.
+HTTP_USES=		ssl
 
-KORE_BIN=	kore${PKGNAMESUFFIX}
-PLIST_SUB=	KORE_BIN="${KORE_BIN}"
+PGSQL_IMPLIES=		HTTP
+PGSQL_MAKE_ARGS=	PGSQL=1
+PGSQL_USES=		pgsql
+
+TASKS_MAKE_ARGS=	TASKS=1
+
+TLS_MAKE_ARGS_OFF=	NOTLS=1
+TLS_USES=		ssl
 
 post-patch:
 # Disable kore's own optimizations flags, make sure the correct paths

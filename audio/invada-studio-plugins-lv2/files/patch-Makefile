@@ -1,0 +1,17 @@
+--- Makefile.orig	2009-08-22 09:05:51 UTC
++++ Makefile
+@@ -58,12 +58,12 @@ glade:	        
+ 
+ # OTHER TARGETS
+ 
+-install:
++install-unused:
+ 	@echo ""
+ 	@echo "use 'make install-user' to install in $(INSTALL_USER_PLUGINS_DIR) or 'make install-sys' to install in $(DESTDIR)$(INSTALL_SYS_PLUGINS_DIR)"
+ 	@echo ""
+ 
+-install-sys: 
++install: 
+ 	@echo ""
+ 	@echo "=================================="; 
+ 	@echo "Installing into $(DESTDIR)$(INSTALL_SYS_PLUGINS_DIR)"; 

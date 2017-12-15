@@ -11,3 +11,6 @@ http://localhost/icingaweb2/setup
 
 If you like to create the database schemas manually, you can find the
 SQL files at %%WWWDIR%%/etc/schema
+
+Be sure to always read the upgrading instructions and update database schemas
+if needed: https://www.icinga.com/docs/icingaweb2/latest/doc/80-Upgrading/

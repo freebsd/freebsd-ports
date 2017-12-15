@@ -1,12 +1,14 @@
---- config/policy.xml.orig	2016-05-09 19:28:58.000000000 +0200
-+++ config/policy.xml	2016-05-10 17:44:26.720503000 +0200
-@@ -64,4 +64,9 @@
-   <!-- <policy domain="coder" rights="none" pattern="HTTPS" /> -->
-   <!-- <policy domain="path" rights="none" pattern="@*" /> -->
-   <policy domain="cache" name="shared-secret" value="passphrase"/>
+--- config/policy.xml.orig	2017-09-23 12:22:07 UTC
++++ config/policy.xml
+@@ -64,6 +64,11 @@
+   <!-- <policy domain="resource" name="map" value="4GiB"/> -->
+   <!-- <policy domain="resource" name="width" value="10KP"/> -->
+   <!-- <policy domain="resource" name="height" value="10KP"/> -->
 +  <policy domain="coder" rights="none" pattern="EPHEMERAL" />
 +  <policy domain="coder" rights="none" pattern="URL" />
 +  <policy domain="coder" rights="none" pattern="HTTPS" />
 +  <policy domain="coder" rights="none" pattern="MVG" />
 +  <policy domain="coder" rights="none" pattern="MSL" />
- </policymap>
+   <!-- <policy domain="resource" name="area" value="100MP"/> -->
+   <!-- <policy domain="resource" name="disk" value="16EiB"/> -->
+   <!-- <policy domain="resource" name="file" value="768"/> -->

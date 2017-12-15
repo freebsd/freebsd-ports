@@ -2,14 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	consul-template
-PORTVERSION=	0.19.3
+PORTVERSION=	0.19.4
 DISTVERSIONPREFIX=	v
 CATEGORIES=	textproc
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Generic template rendering and notifications with Consul
 
-LICENSE=	MPL
+LICENSE=	MPL20
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/go:lang/go
 

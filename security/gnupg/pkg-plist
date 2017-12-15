@@ -29,6 +29,7 @@ man/man1/gpg2.1.gz
 man/man1/gpgconf.1.gz
 man/man1/gpgparsemail.1.gz
 man/man1/gpgsm.1.gz
+man/man1/gpgtar.1.gz
 man/man1/gpgv2.1.gz
 man/man1/scdaemon.1.gz
 man/man1/symcryptrun.1.gz

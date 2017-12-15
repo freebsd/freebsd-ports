@@ -13,7 +13,7 @@ COMMENT=	Object-oriented filesystem paths
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.rst
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>=0:devel/py-six
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>=0:devel/py-six@${FLAVOR}
 
 USES=		python
 USE_PYTHON=	distutils autoplist
@@ -22,7 +22,7 @@ NO_ARCH=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PYTHON_REL} < 3500
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}scandir>=0:sysutils/py-scandir
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}scandir>=0:sysutils/py-scandir@${FLAVOR}
 .endif
 
 do-test:

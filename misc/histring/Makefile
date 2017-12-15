@@ -2,13 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	histring
-PORTVERSION=	1.1.0
+DISTVERSION=	1.1.1-1
 CATEGORIES=	misc
-MASTER_SITES=	http://ess4.engr.uvic.ca/proj/histring/ \
-		LOCAL/roam/misc
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	uzsolt@uzsolt.hu
 COMMENT=	Highlight strings using the ANSI terminal escape sequences
+
+LICENSE=	GPLv2
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	suntong
 
 GNU_CONFIGURE=	yes
 PLIST_FILES=	bin/histring

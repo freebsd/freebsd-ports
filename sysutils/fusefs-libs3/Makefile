@@ -3,7 +3,7 @@
 
 PORTNAME=	fusefs-libs3
 DISTVERSIONPREFIX=	fuse-
-DISTVERSION=	3.2.0
+DISTVERSION=	3.2.1
 CATEGORIES=	sysutils
 
 MAINTAINER=	se@freebsd.org
@@ -18,7 +18,6 @@ USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	libfuse
 GH_PROJECT=	libfuse
-GH_TAGNAME=	d92bf83
 
 .include <bsd.port.pre.mk>
 

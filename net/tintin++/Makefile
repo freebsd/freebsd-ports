@@ -15,6 +15,8 @@ LICENSE_FILE=	${WRKSRC}/../COPYING
 
 LIB_DEPENDS=	libpcre.so:devel/pcre
 
+CONFLICTS_INSTALL?=	zh-tintin++
+
 OPTIONS_DEFINE=	BIG5 DOCS
 BIG5_DESC=	Big5 support
 

@@ -12,7 +12,7 @@ COMMENT=	MySQL bindings for python
 
 LICENSE=	BSD2CLAUSE
 
-USES=		mysql python
+USES=		mysql python:2.7
 USE_PYTHON=	autoplist distutils
 
 post-install:

@@ -16,6 +16,7 @@ LIB_DEPENDS=	libsigc-2.0.so:devel/libsigc++20 \
 		libnet6.so:net/net6
 
 BROKEN_armv6=		fails to compile: no member named 'name' in 'serialise::type_name<long long>'
+BROKEN_armv7=		fails to compile: no member named 'name' in 'serialise::type_name<long long>'
 
 USES=		pathfix pkgconfig libtool compiler:c++11-lang
 USE_CXXSTD=	c++11

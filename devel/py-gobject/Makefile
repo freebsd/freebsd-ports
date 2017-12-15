@@ -16,14 +16,15 @@ COMMENT=	Python bindings for GObject
 
 LICENSE=	LGPL21
 
-BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/pycairo.pc:graphics/py-cairo
+BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/pycairo.pc:graphics/py-cairo@${PY_FLAVOR}
 LIB_DEPENDS+=	libffi.so:devel/libffi
-RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/pycairo.pc:graphics/py-cairo
+RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/pycairo.pc:graphics/py-cairo@${PY_FLAVOR}
 
 PORTSCOUT=	ignore:1
 
 USES=		gmake libtool pathfix pkgconfig python:2 tar:xz shebangfix
 USE_GNOME=	glib20 introspection:build,run
+USE_PYTHON=	flavors
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--disable-docs --disable-introspection --with-ffi

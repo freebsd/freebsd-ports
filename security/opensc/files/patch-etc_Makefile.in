@@ -1,6 +1,6 @@
---- etc/Makefile.in.orig	2012-12-04 15:43:57.000000000 +0100
-+++ etc/Makefile.in	2012-12-05 10:07:46.000000000 +0100
-@@ -429,11 +429,7 @@
+--- etc/Makefile.in.orig	2017-07-19 07:30:34 UTC
++++ etc/Makefile.in
+@@ -548,11 +548,7 @@ opensc.conf: opensc.conf.in force
  
  install-exec-hook: opensc.conf
  	$(MKDIR_P) "$(DESTDIR)$(sysconfdir)"
@@ -9,7 +9,7 @@
 -	else \
 -		$(INSTALL_DATA) opensc.conf "$(DESTDIR)$(sysconfdir)/opensc.conf"; \
 -	fi
-+	$(INSTALL_DATA) opensc.conf "$(DESTDIR)$(sysconfdir)/opensc.conf-sample"
++	$(INSTALL_DATA) opensc.conf "$(DESTDIR)$(sysconfdir)/opensc.conf.sample"
  
- # Tell versions [3.59,3.63) of GNU make to not export all variables.
- # Otherwise a system limit (for SysV at least) may be exceeded.
+ uninstall-hook: opensc.conf
+ 	rm -f "$(DESTDIR)$(sysconfdir)/opensc.conf.new" "$(DESTDIR)$(sysconfdir)/opensc.conf"

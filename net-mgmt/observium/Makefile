@@ -12,10 +12,10 @@ DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 MAINTAINER=	dirkx@webweaving.org
 COMMENT=	Autodiscovering PHP/MySQL/SNMP based network monitoring
 
-LICENSE=        EULA
+LICENSE=	EULA
 LICENSE_NAME=	"Observium License Version 1.0"
 LICENSE_FILE=	${WRKSRC}/LICENSE.COMMUNITY
-LICENSE_PERMS=  dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

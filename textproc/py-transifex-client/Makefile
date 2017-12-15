@@ -13,8 +13,8 @@ COMMENT=	Command line interface for Transifex
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}urllib3>0:net/py-urllib3
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mock>0:devel/py-mock
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}urllib3>0:net/py-urllib3@${FLAVOR}
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mock>0:devel/py-mock@${FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist concurrent distutils

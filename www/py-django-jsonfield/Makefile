@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}django-
 MAINTAINER=	tj@FreeBSD.org
 COMMENT=	Reusable JSONField model for Django to store ad-hoc data
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django18>=0:www/py-django18
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django18>=0:www/py-django18@${FLAVOR}
 
 USES=		python
 USE_PYTHON=	distutils autoplist

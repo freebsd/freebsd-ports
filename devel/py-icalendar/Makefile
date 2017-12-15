@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	icalendar
-PORTVERSION=	3.11.1
+PORTVERSION=	3.11.7
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,10 +13,10 @@ COMMENT=	Parser and generator of iCalender files for Python
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.rst
 
-RUN_DEPENDS?=	${PYTHON_PKGNAMEPREFIX}dateutil>0:devel/py-dateutil \
-		${PYTHON_PKGNAMEPREFIX}pytz>0:devel/py-pytz
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dateutil>0:devel/py-dateutil@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pytz>0:devel/py-pytz@${FLAVOR}
 
-USES?=		python
+USES=		python
 USE_PYTHON=	autoplist concurrent distutils
 NO_ARCH=	yes
 

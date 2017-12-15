@@ -1,8 +1,0 @@
-This program emulates an AirPort Express for the purpose of streaming music
-from iTunes and compatible iPods. It implements a server for the Apple RAOP
-protocol. ShairPort does not support AirPlay v2 (video and photo streaming).
-
-It supports multiple simultaneous streams, if your audio output chain (as
-detected by libao) does so.
-
-WWW: https://github.com/albertz/shairport

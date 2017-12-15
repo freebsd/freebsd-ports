@@ -15,7 +15,7 @@ SRC_DISTFILES=	${DISTNAME}${SRC_SUFX}:SOURCE \
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Network Security Services (Linux CentOS ${LINUX_DIST_VER})
 
-LICENSE=	MPL
+LICENSE=	MPL20
 
 DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
 RPMVERSION=	4.el6_9

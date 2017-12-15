@@ -13,17 +13,16 @@ COMMENT=	HTTP client/server for asyncio
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-BUILD_DEPENDS=	cython:lang/cython
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}chardet>0:textproc/py3-chardet \
-		${PYTHON_PKGNAMEPREFIX}multidict>0:www/py-multidict \
-		${PYTHON_PKGNAMEPREFIX}yarl>0:www/py-yarl \
-		${PYTHON_PKGNAMEPREFIX}async_timeout>0:devel/py-async_timeout
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest \
-		${PYTHON_PKGNAMEPREFIX}pytest-timeout>0:devel/py-pytest-timeout \
-		${PYTHON_PKGNAMEPREFIX}gunicorn>0:www/py-gunicorn
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}chardet>0:textproc/py-chardet@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}multidict>0:www/py-multidict@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}yarl>0:www/py-yarl@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}async_timeout>0:devel/py-async_timeout@${FLAVOR}
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pytest-timeout>0:devel/py-pytest-timeout@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}gunicorn>0:www/py-gunicorn@${FLAVOR}
 
 USES=		python:3.4+
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	autoplist distutils cython
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/aiohttp/*.so

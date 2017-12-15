@@ -1,4 +1,4 @@
---- Makefile.orig	2015-08-05 01:03:53 UTC
+--- Makefile.orig	2011-12-17 02:49:27 UTC
 +++ Makefile
 @@ -35,16 +35,11 @@ SCRIPT_DIR    := $(TOP_DIR)/scripts
  TIGR_SRC_DIR  := $(TOP_DIR)/src/tigr
@@ -8,8 +8,7 @@
 -CXX  := $(filter /%,$(shell /bin/sh -c 'type g++'))
  SED  := $(filter /%,$(shell /bin/sh -c 'type sed'))
  CSH  := $(filter /%,$(shell /bin/sh -c 'type csh'))
--PERL := $(filter /%,$(shell /bin/sh -c 'type perl'))
-+PERL := ${LOCALBASE}/bin/perl
+ PERL := $(filter /%,$(shell /bin/sh -c 'type perl'))
  AR   := $(filter /%,$(shell /bin/sh -c 'type ar'))
  
 -CXXFLAGS = -O3
@@ -18,3 +17,12 @@
  
  FLATS = ACKNOWLEDGEMENTS COPYRIGHT INSTALL LICENSE Makefile README ChangeLog
  
+@@ -60,7 +55,7 @@ export BIN_DIR AUX_BIN_DIR CXX CC CFLAGS
+ .PHONY: all check clean dist scripts uninstall
+ 
+ 
+-all: kurtz tigr scripts
++all: kurtz tigr
+ 
+ 
+ check:

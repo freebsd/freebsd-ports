@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	cloudflare-scrape
-PORTVERSION=	1.8.1
+DISTVERSION=	1.9.0
 CATEGORIES=	net python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -11,7 +11,7 @@ COMMENT=	Python module to bypass Cloudflare's anti-bot page
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}PyExecJS>=0:devel/py-PyExecJS
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}PyExecJS>=0:devel/py-PyExecJS@${FLAVOR}
 
 USES=		python
 USE_PYTHON=     distutils autoplist

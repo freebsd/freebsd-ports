@@ -12,11 +12,11 @@ COMMENT=	ZODB blob support for Plone
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	zodb${PYTHON_PKGNAMESUFFIX}>=3.8.1:databases/zodb3 \
-		${PYTHON_PKGNAMEPREFIX}zope.proxy>=3.4:net/py-zope.proxy \
-		${PYTHON_PKGNAMEPREFIX}archetypes.schemaextender>=1.6:devel/py-archetypes.schemaextender \
-		${PYTHON_PKGNAMEPREFIX}plone.app.imaging>1.0:www/py-plone.app.imaging \
-		${PYTHON_PKGNAMEPREFIX}plone.scale>=0:www/py-plone.scale
+RUN_DEPENDS=	zodb${PYTHON_PKGNAMESUFFIX}>=3.8.1:databases/zodb3@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}zope.proxy>=3.4:net/py-zope.proxy@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}archetypes.schemaextender>=1.6:devel/py-archetypes.schemaextender@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}plone.app.imaging>1.0:www/py-plone.app.imaging@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}plone.scale>=0:www/py-plone.scale@${FLAVOR}
 
 NO_ARCH=	yes
 USES=		python:2.7

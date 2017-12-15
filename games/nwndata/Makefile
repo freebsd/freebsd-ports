@@ -5,8 +5,7 @@ PORTNAME=	nwndata
 PORTVERSION=	${NWNVER}
 PORTREVISION=	${NWNREV}
 CATEGORIES=	games
-MASTER_SITES=	http://files.bioware.com/neverwinternights/updates/linux/ \
-		http://nwdownloads.bioware.com/neverwinternights/linux/129/ \
+MASTER_SITES=	http://na.llnet.bioware.cdn.ea.com/u/f/eagames/bioware/neverwinternights/updates/linux/ \
 		http://lvlt.bioware.cdn.ea.com/bioware/u/f/eagames/bioware/neverwinternights/updates/linux/
 DISTNAME=	${NWRESOURCES}
 .if defined(CDROM_MOUNT) && exists(${CDROM_MOUNT}/KingmakerSetup.exe)

@@ -11,7 +11,7 @@ MAINTAINER=	daniel.ryslink@dialtelecom.cz
 COMMENT=	Program for generating battle cries
 
 NO_BUILD=	yes
-USES= 		perl5 shebangfix
+USES=		perl5 shebangfix
 SHEBANG_FILES=	gnarr
 
 .include <bsd.port.mk>

@@ -1,5 +1,5 @@
---- configure.ac.orig	2017-05-24 20:49:32.000000000 +0000
-+++ configure.ac	2017-08-28 14:09:04.029056190 +0000
+--- configure.ac.orig	2017-05-25 08:49:32.000000000 +1200
++++ configure.ac	2017-10-28 22:32:23.769653000 +1300
 @@ -564,12 +564,36 @@
       CORE_SYSTEM_NAME=linux
       ARCH="x86-freebsd"
@@ -66,26 +66,25 @@
  fi
  if test "$host_vendor" = "apple" ; then
    # standard application paths
-@@ -802,8 +832,17 @@
+@@ -802,8 +832,16 @@
      LIBS="$LIBS -framework CoreFoundation"
    fi
  elif test "$target_platform" = "target_raspberry_pi"; then
 -  ARCH="arm"
 +  CXXFLAGS="$CXXFLAGS -I$LOCALBASE/include/interface/vcos/pthreads/ -I$LOCALBASE/include/interface/vcos -I$LOCALBASE/include/interface/ -I$LOCALBASE/include/interface/vmcs_host/linux"
-+  ARCH="armv6-freebsd"
++  ARCH="$(uname -p)-freebsd"
    use_arch="arm"
 +  FFMPEG_OPTS="--cc=$CC --cxx=$CXX --disable-fast-unaligned --disable-vfp --disable-xlib --disable-libxcb --disable-libxcb-shm --disable-libxcb-xfixes --disable-libxcb-shape"
 +  if test "$use_platform" = "raspberry-pi2"; then
 +    CFLAGS="$CFLAGS -march=armv7a -mtune=cortex-a7 -mfpu=neon"
 +    CXXFLAGS="$CXXFLAGS -march=armv7a -mtune=cortex-a7 -mfpu=neon"
-+    ARCH="armv7-freebsd"
 +    FFMPEG_OPTS="${FFMPEG_OPTS} --enable-neon"
 +  fi
 +
  elif test "$use_arch" = "arm"; then
    CFLAGS="$CFLAGS -mno-apcs-stack-check"
    CXXFLAGS="$CXXFLAGS -mno-apcs-stack-check"
-@@ -921,6 +960,7 @@
+@@ -921,6 +959,7 @@
  
  # Check inotify availability
  AC_CHECK_HEADER([sys/inotify.h], AC_DEFINE([HAVE_INOTIFY],[1],[Define if we have inotify]),)
@@ -93,7 +92,7 @@
  
  # Python
  if test -z "$PYTHON_NOVERSIONCHECK"; then
-@@ -1169,12 +1209,13 @@
+@@ -1169,12 +1208,13 @@
  )
  
  #Check to see if libs are needed for functions that are often built-in to libc
@@ -108,7 +107,7 @@
  
  # platform dependent libraries
  if test "$host_vendor" = "apple" ; then
-@@ -1558,7 +1599,7 @@
+@@ -1558,7 +1598,7 @@
  
    if test "$cross_compiling" != "yes"; then
      if test "$use_debug" != "yes"; then
@@ -117,7 +116,7 @@
      fi
      if test "$use_optimizations" != "yes"; then
        FFMPEG_OPTS="${FFMPEG_OPTS} --disable-optimizations"
-@@ -1569,7 +1610,7 @@
+@@ -1569,7 +1609,7 @@
        SAVE_LIBS="$LIBS"
        # check for system installed ffmpeg. We require minimum versions.
        PKG_CHECK_MODULES([FFMPEG], [$FFMPEG_LIBNAMES],
@@ -126,7 +125,7 @@
          [FFMPEG_FOUND="false"])
  
        if test "${USE_STATIC_FFMPEG}" = "1" && test "$FFMPEG_FOUND" = "true"; then
-@@ -1596,7 +1637,11 @@
+@@ -1596,7 +1636,11 @@
      elif test "$with_ffmpeg" = "force"; then
        # always build our ffmpeg
        AC_MSG_NOTICE("FFmpeg installation forced by user - installing our version")
@@ -139,7 +138,7 @@
        export PKG_CONFIG_PATH="${ffmpeg_build}/ffmpeg-install/lib/pkgconfig:$PKG_CONFIG_PATH"
  
      elif test "$with_ffmpeg" != "no"; then
-@@ -1609,7 +1654,7 @@
+@@ -1609,7 +1653,7 @@
  
  if test "$FFMPEG_FOUND" != "true"; then
    PKG_CHECK_MODULES([FFMPEG], [$FFMPEG_LIBNAMES],
@@ -148,7 +147,7 @@
      [AC_MSG_ERROR("ffmpeg not found")])
  fi
  
-@@ -1633,9 +1678,9 @@
+@@ -1633,9 +1677,9 @@
  echo "Checking for SWIG installation"
  AC_PATH_PROG(SWIG_EXE, swig, "none")
  if test "$SWIG_EXE" = "none"; then
@@ -161,7 +160,7 @@
    fi
  fi
  if test "$SWIG_EXE" = "none"; then
-@@ -1928,7 +1973,7 @@
+@@ -1928,7 +1972,7 @@
    AC_PATH_PROG([TEXTUREPACKER], [TexturePacker], ["none"],
      [$PATH$PATH_SEPARATOR${abs_top_srcdir}/tools/depends/native/TexturePacker/bin])
    if test "$TEXTUREPACKER" = "none"; then
@@ -170,7 +169,7 @@
      TEXTUREPACKER="${abs_top_srcdir}/tools/depends/native/TexturePacker/bin/TexturePacker"
    fi
    if test -x "$TEXTUREPACKER"; then
-@@ -2148,6 +2193,8 @@
+@@ -2148,6 +2192,8 @@
    LIBS="$LIBS -L\$(abs_top_srcdir)/lib/ffmpeg/libswscale -lswscale"
  fi
  

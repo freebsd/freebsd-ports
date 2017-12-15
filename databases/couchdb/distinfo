@@ -1,2 +1,3 @@
-SHA256 (apache-couchdb-1.6.1.tar.gz) = 5a601b173733ce3ed31b654805c793aa907131cd70b06d03825f169aa48c8627
-SIZE (apache-couchdb-1.6.1.tar.gz) = 12085350
+TIMESTAMP = 1510617171
+SHA256 (apache-couchdb-1.7.1.tar.gz) = 91200aa6fbc6fa5e2f3d78ef40e39d8c1ec7c83ea1c2cd730d270658735b2cad
+SIZE (apache-couchdb-1.7.1.tar.gz) = 9963069

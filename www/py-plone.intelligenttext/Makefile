@@ -13,7 +13,7 @@ COMMENT=	Transforms from text/x-web-intelligent to text/html
 LICENSE=	GPLv2
 
 NO_ARCH=	yes
-USES=		python
+USES=		python:2.7
 USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>

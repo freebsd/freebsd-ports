@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	alembic
-PORTVERSION=	1.7.1
-PORTREVISION=	3
+PORTVERSION=	1.7.4
 CATEGORIES=	graphics
 
 MAINTAINER=	danfe@FreeBSD.org
@@ -24,6 +23,9 @@ OPTIONS_SUB=	yes
 
 HDF5_LIB_DEPENDS=	libhdf5.so:science/hdf5
 HDF5_CMAKE_ON=	-DUSE_HDF5:BOOL=ON
+
+PLIST_FILES=	lib/libAlembic.so.${PORTVERSION} \
+		lib/libAlembic.so.${PORTVERSION:R}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,H5Rdereference,&1,' \

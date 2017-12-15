@@ -33,6 +33,8 @@ TBR_CONFIG=	concurrent|inotify|xlib
 QMAKESPEC=	${WRKSRC}/mkspecs/freebsd-${QMAKE_COMPILER}
 INSTALL_TARGET=	sub-qmake-qmake-aux-pro-install_subtargets install_mkspecs
 
+BROKEN_powerpc64=	fails to compile: error: unrecognized command line option -std=c++11
+
 BUILD_WRKSRC=	${WRKSRC}/${PORTNAME}
 
 post-patch:

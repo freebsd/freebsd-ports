@@ -1,8 +1,8 @@
---- ./src/genlinedraw.orig	Wed Aug  4 04:59:09 2004
-+++ ./src/genlinedraw	Tue Aug 10 00:03:21 2004
+--- src/genlinedraw.orig	2014-05-22 18:53:16 UTC
++++ src/genlinedraw
 @@ -1,4 +1,4 @@
--#!/opt/bin/perl
+-#!/usr/bin/perl
 +#!/usr/bin/env perl
  
- # the generated tables mostly have NOT been checked so far!
- 
+ open TABLE, ">", "table/linedraw.h";
+ select TABLE;

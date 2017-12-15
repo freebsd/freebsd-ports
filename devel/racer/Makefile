@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	racer
-DISTVERSION=	2.0.9
+DISTVERSION=	2.0.10
 CATEGORIES=	devel
 
 MAINTAINER=	beyert@cs.ucr.edu
@@ -18,7 +18,6 @@ GH_ACCOUNT=	racer-rust
 PLIST_FILES=	bin/racer
 
 CARGO_CRATES=	aho-corasick-0.5.3 \
-		aho-corasick-0.6.3 \
 		ansi_term-0.9.0 \
 		atty-0.2.2 \
 		bitflags-0.7.0 \
@@ -33,14 +32,11 @@ CARGO_CRATES=	aho-corasick-0.5.3 \
 		log-0.3.7 \
 		matches-0.1.4 \
 		memchr-0.1.11 \
-		memchr-1.0.1 \
 		nom-1.2.4 \
 		quine-mc_cluskey-0.2.4 \
 		rand-0.3.15 \
 		regex-0.1.80 \
-		regex-0.2.2 \
 		regex-syntax-0.3.9 \
-		regex-syntax-0.4.1 \
 		rustc-serialize-0.3.24 \
 		semver-0.2.3 \
 		strsim-0.6.0 \
@@ -50,9 +46,7 @@ CARGO_CRATES=	aho-corasick-0.5.3 \
 		term-0.4.5 \
 		term_size-0.3.0 \
 		thread-id-2.0.0 \
-		thread-id-3.1.0 \
 		thread_local-0.2.7 \
-		thread_local-0.3.3 \
 		toml-0.1.30 \
 		toml-0.2.1 \
 		typed-arena-1.3.0 \
@@ -60,11 +54,8 @@ CARGO_CRATES=	aho-corasick-0.5.3 \
 		unicode-segmentation-1.2.0 \
 		unicode-width-0.1.4 \
 		unicode-xid-0.0.3 \
-		unreachable-0.1.1 \
 		utf8-ranges-0.1.3 \
-		utf8-ranges-1.0.0 \
 		vec_map-0.8.0 \
-		void-1.0.2 \
 		winapi-0.2.8 \
 		winapi-build-0.1.1
 

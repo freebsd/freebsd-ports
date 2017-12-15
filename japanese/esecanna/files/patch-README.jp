@@ -1,5 +1,5 @@
---- README.jp.orig	Fri Feb 25 02:22:33 2000
-+++ README.jp	Fri Feb 25 23:58:43 2000
+--- README.jp.orig	2000-09-09 03:38:39 UTC
++++ README.jp
 @@ -5,7 +5,7 @@
  
  １) えせかんなの設定
@@ -45,8 +45,3 @@
  
   えせかんなは /var/log/esecanna.log にログを吐きます。このログを見て、何が起き
  てるのか、手がかりを得ることが出来ます。
-@@ -58,4 +55,4 @@
- 大阪大学医学部医学科 学２ | 
-     Debian JP Project     | take@debian.or.jp
-       LILO, NetFort       | take@netfort.gr.jp
-==========================================================

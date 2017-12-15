@@ -2,18 +2,20 @@
 # $FreeBSD$
 
 PORTNAME=	xclip
-PORTVERSION=	0.12
-PORTREVISION=	2
+PORTVERSION=	0.13
 CATEGORIES=	x11
-MASTER_SITES=	SF
 
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Interface to X selections ("the clipboard") from the command line
 
 LICENSE=	GPLv2
 
+USE_GITHUB=	yes
+GH_ACCOUNT=	astrand
+
+USES=		autoreconf gmake iconv
 USE_XORG=	x11 xmu
-USES=		gmake
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	ac_cv_header_X11_Xmu_Atoms_h=yes \
 		ac_cv_header_X11_Intrinsic_h=yes \

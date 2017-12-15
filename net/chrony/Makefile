@@ -3,6 +3,7 @@
 
 PORTNAME=	chrony
 PORTVERSION=	3.1
+PORTREVISION=	3
 CATEGORIES=	net
 MASTER_SITES=	http://download.tuxfamily.org/chrony/
 
@@ -20,11 +21,9 @@ CPE_VENDOR=	tuxfamily
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--chronyvardir=/var/db/${PORTNAME} \
-		--infodir=${PREFIX}/info \
 		--sysconfdir=${PREFIX}/etc --mandir=${MANPREFIX}/man \
 		--datarootdir=${DATADIR} --docdir=${DOCSDIR} \
-		--with-user=chronyd
-LDFLAGS+=	-L${LOCALBASE}/lib
+		--with-user=chronyd --without-tomcrypt
 USE_RC_SUBR=	chronyd
 
 ALL_TARGET=	all
@@ -34,13 +33,17 @@ PORTEXAMPLES=	chrony.conf.example1 chrony.conf.example2 \
 		chrony.conf.example3 chrony.keys.example
 
 # XXX: there are also other potentially useful options worth looking into:
-#  --without-nss        Don't use NSS even if it is available
-#  --without-tomcrypt   Don't use libtomcrypt even if it is available
 #  --disable-pps        Disable PPS API support
-OPTIONS_DEFINE=		IPV6
+OPTIONS_DEFINE=		IPV6 NSS
+OPTIONS_DEFAULT=	NSS
 
 IPV6_CATEGORIES=	ipv6
 IPV6_CONFIGURE_OFF=	--disable-ipv6
+
+NSS_DESC=		Add support for more hashing algorithms
+NSS_CONFIGURE_OFF=	--without-nss
+NSS_LIB_DEPENDS=	libfreebl3.so:security/nss
+NSS_USES=		pkgconfig
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/chronyc

@@ -1,6 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	mariadb
+PORTREVISION=	0
 PKGNAMESUFFIX=	102-client
 
 COMMENT=	Multithreaded SQL database (client)
@@ -19,6 +20,11 @@ CMAKE_ARGS+=	-DWITHOUT_SERVER=1 \
 USE_LDCONFIG=	${PREFIX}/lib/mysql
 
 CLIENT_ONLY=	yes
+
+post-configure:
+	${REINPLACE_CMD} -Ee 's|(#define INCLUDE.*)"$$|\1 -I${PREFIX}/include"|' \
+		-e 's|(#define LIBS.*)"\\ $$|\1 -L${PREFIX}/lib "\\|' \
+		${WRKSRC}/libmariadb/mariadb_config/mariadb_config.c
 
 post-install:
 	${RM} ${STAGEDIR}${PREFIX}/share/aclocal/mysql.m4

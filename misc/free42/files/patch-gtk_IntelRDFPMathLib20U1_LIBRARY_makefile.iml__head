@@ -1,0 +1,11 @@
+--- gtk/IntelRDFPMathLib20U1/LIBRARY/makefile.iml_head.orig	2017-11-21 01:24:38 UTC
++++ gtk/IntelRDFPMathLib20U1/LIBRARY/makefile.iml_head
+@@ -344,7 +344,7 @@ else
+     endif
+ endif
+ 
+-ARCH_ALIAS := x86  ia64 EM64T x86_64 i686 amd64 Intel64 sun4u
++ARCH_ALIAS := x86  i386 ia64 EM64T x86_64 i686 amd64 Intel64 sun4u
+ ARCH_LIST  := IA32 IA64 EFI2  EFI2   IA32 EFI2  EFI2    EFI2
+ ARCH_TYPE  := IA32 IA64 EFI2  EFI2   IA32 EFI2  EFI2    EFI2
+ ARCH_TYPES := IA32 IA64 EFI2

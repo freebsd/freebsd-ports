@@ -3,7 +3,7 @@
 
 PORTNAME=	npm
 PORTVERSION=	3.10.10
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	LOCAL/sunpoet
 PKGNAMESUFFIX=	3
@@ -17,6 +17,9 @@ RUN_DEPENDS=	gmake:devel/gmake
 
 CONFLICTS_INSTALL=	npm npm2 npm4
 
+DEPRECATED=	Use www/npm or www/npm-node* instead
+EXPIRATION_DATE=2017-12-31
+
 OPTIONS_SINGLE=	BACKEND
 OPTIONS_SINGLE_BACKEND=	NODE NODE6
 OPTIONS_DEFAULT=NODE6
@@ -28,7 +31,7 @@ MANPREFIX=	${PREFIX}/lib/node_modules/npm
 NO_ARCH=	yes
 NO_BUILD=	yes
 REINPLACE_ARGS=	-i ''
-USES=		cpe python:2 shebangfix tar:xz
+USES=		cpe python:2.7 shebangfix tar:xz
 
 CPE_VENDOR=	npmjs
 CPE_PRODUCT=	node_packaged_modules

@@ -12,7 +12,7 @@ COMMENT=	Wikipedia bot for Python
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	${PKGNAMEPREFIX}httplib2>=0:www/py-httplib2
+RUN_DEPENDS=	${PKGNAMEPREFIX}httplib2>=0:www/py-httplib2@${FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist distutils
@@ -26,11 +26,11 @@ GOOGLE_DESC=	Support for Google search
 MWPARSE_DESC=	Support for MediaWiki parser
 PILLOW_DESC=	Support for image processing via pillow module
 
-ISBN_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}stdnum>=0:devel/py-stdnum
-PYDOT_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pydot>=0:graphics/py-pydot
-MYSQL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}oursql>=0:databases/py-oursql
-GOOGLE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}google>=0:www/py-google
-MWPARSE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mwparserfromhell>=0:textproc/py-mwparserfromhell
-PILLOW_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pillow>0:graphics/py-pillow
+ISBN_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}stdnum>=0:devel/py-stdnum@${FLAVOR}
+PYDOT_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pydot>=0:graphics/py-pydot@${FLAVOR}
+MYSQL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}oursql>=0:databases/py-oursql@${FLAVOR}
+GOOGLE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}google>=0:www/py-google@${FLAVOR}
+MWPARSE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mwparserfromhell>=0:textproc/py-mwparserfromhell@${FLAVOR}
+PILLOW_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pillow>0:graphics/py-pillow@${FLAVOR}
 
 .include <bsd.port.mk>

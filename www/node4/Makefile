@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	node
-PORTVERSION=	4.8.5
+PORTVERSION=	4.8.7
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 MASTER_SITES=	http://nodejs.org/dist/v${PORTVERSION}/
@@ -32,11 +32,11 @@ USES=		compiler:c++11-lib gmake python:2 pkgconfig localbase
 HAS_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
-CONFLICTS_INSTALL=	node[56]-[0-9]* node01[02]-[0-9]* node-[0-9]* node-devel-[0-9]* iojs-[0-9]*
+CONFLICTS_INSTALL=	node[568]-[0-9]* node-[0-9]*
 
 ONLY_FOR_ARCHS=	amd64 i386
 CONFIGURE_ARGS=	--prefix=${PREFIX_RELDEST} \
-	 	--without-npm \
+		--without-npm \
 		--shared-libuv \
 		--shared-zlib
 PREFIX_RELDEST=	${PREFIX:S,^${DESTDIR},,}

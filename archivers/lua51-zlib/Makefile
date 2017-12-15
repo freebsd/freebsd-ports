@@ -1,11 +1,11 @@
 # Created by: Sir l33tname <sirl33tname@gmail.com>
 # $FreeBSD$
 
-PORTNAME=	lua51
+PORTNAME=	zlib
 PORTVERSION=	1.2
 DISTVERSIONPREFIX=v
 CATEGORIES=	archivers
-PKGNAMESUFFIX=	-zlib
+PKGNAMEPREFIX=	lua51-
 
 MAINTAINER=	sirl33tname@gmail.com
 COMMENT=	Simple streaming interface to zlib for the Lua Programming Language

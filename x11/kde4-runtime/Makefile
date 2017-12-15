@@ -2,14 +2,13 @@
 
 PORTNAME=	kde-runtime
 PORTVERSION=	${KDE_APPLICATIONS_VERSION}
-PORTREVISION=	4
+PORTREVISION=	6
 CATEGORIES=	x11 kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Runtime components for KDE Plasma Desktop
 
-LIB_DEPENDS=	libIlmImf.so:graphics/OpenEXR \
-		libexiv2.so:graphics/exiv2 \
+LIB_DEPENDS=	libexiv2.so:graphics/exiv2 \
 		libwebp.so:graphics/webp \
 		libslp.so:net/openslp \
 		libssh.so:security/libssh \
@@ -38,7 +37,12 @@ SHEBANG_FILES=	khelpcenter/searchhandlers/*.pl \
 		khelpcenter/searchhandlers/*.pl.cmake \
 		kioslave/info/kde-info2html
 
-OPTIONS_DEFINE=	PULSEAUDIO ZEITGEIST
+OPTIONS_DEFINE=	OPENEXR PULSEAUDIO ZEITGEIST
+OPTIONS_DEFAULT=	OPENEXR
+OPTIONS_SUB=	yes
+
+OPENEXR_LIB_DEPENDS=	libIlmImf.so:graphics/OpenEXR
+OPENEXR_CMAKE_BOOL_OFF=	CMAKE_DISABLE_FIND_PACKAGE_OpenEXR
 
 PULSEAUDIO_DESC=Audio configuration via PulseAudio
 PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio \

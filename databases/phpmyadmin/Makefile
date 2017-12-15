@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	phpMyAdmin
-DISTVERSION=	4.7.5
+DISTVERSION=	4.7.6
 CATEGORIES=	databases www
 MASTER_SITES=	https://files.phpmyadmin.net/${PORTNAME}/${DISTVERSION}/
 DISTNAME=	${PORTNAME}-${DISTVERSION}-all-languages

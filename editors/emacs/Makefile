@@ -185,6 +185,17 @@ XWIDGETS_CONFIGURE_WITH=xwidgets
 XWIDGETS_LIB_DEPENDS=	libwebkitgtk-3.0.so:www/webkit-gtk3
 XWIDGETS_IMPLIES=	GTK3
 
+.include <bsd.port.options.mk>
+
+# has graphics/ImageMagick been compiled with OPENMP?
+.if ${PORT_OPTIONS:MMAGICK} && ${:!${GREP} -sc " \-fopenmp " ${LOCALBASE}/libdata/pkgconfig/ImageMagick.pc || true!} == "1"
+_MAGICK_WITH_OPENMP=	true
+.endif
+
+.ifdef _MAGICK_WITH_OPENMP
+USES+=	compiler:openmp
+.endif
+
 # With a desktop entry stage-qa will give a warning about requiring
 # desktop-file-utils and portlint -C will give a warning about INSTALL_ICONS,
 # but don't pull in those dependencies when X11 is off.

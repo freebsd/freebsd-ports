@@ -13,7 +13,7 @@ COMMENT=	Sends web server log entries to a PostgreSQL database
 LICENSE=	BSD3CLAUSE
 
 USES=		pgsql
-USE_RC_SUBR= 	020.pglogd.sh
+USE_RC_SUBR=	020.pglogd.sh
 SUB_FILES=	pkg-message
 
 .include <bsd.port.mk>

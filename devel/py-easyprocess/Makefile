@@ -13,9 +13,9 @@ COMMENT=	Easy to use python subprocess interface
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}paver>0:devel/py-paver \
-		${PYTHON_PKGNAMEPREFIX}cog>=2.3:devel/py-cog \
-		${PYTHON_PKGNAMEPREFIX}sphinx>0:textproc/py-sphinx
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}paver>0:devel/py-paver@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}cog>=2.3:devel/py-cog@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}sphinx>0:textproc/py-sphinx@${FLAVOR}
 
 NO_ARCH=	YES
 USE_PYTHON=	autoplist distutils

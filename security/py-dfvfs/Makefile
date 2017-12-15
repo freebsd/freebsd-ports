@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dfvfs
-PORTVERSION=	20170723
+PORTVERSION=	20171125
 CATEGORIES=	security devel python
 MASTER_SITES=	https://github.com/log2timeline/dfvfs/releases/download/${PORTVERSION}/ \
 		LOCAL/antoine
@@ -27,12 +27,12 @@ RUN_DEPENDS=	libbde>=a:devel/libbde \
 		libvmdk>=e:devel/libvmdk \
 		libvshadow>=0:devel/libvshadow \
 		libvslvm>=e:devel/libvslvm \
-		${PYTHON_PKGNAMEPREFIX}construct>=0:devel/py-construct \
-		${PYTHON_PKGNAMEPREFIX}dfdatetime>=0:security/py-dfdatetime \
-		${PYTHON_PKGNAMEPREFIX}pycrypto>=0:security/py-pycrypto \
-		${PYTHON_PKGNAMEPREFIX}pytsk>=0:sysutils/py-pytsk \
-		${PYTHON_PKGNAMEPREFIX}sqlite3>=0:databases/py-sqlite3
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mock>0:devel/py-mock
+		${PYTHON_PKGNAMEPREFIX}construct>=0:devel/py-construct@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dfdatetime>=0:security/py-dfdatetime@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pycrypto>=0:security/py-pycrypto@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pytsk>=0:sysutils/py-pytsk@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}sqlite3>=0:databases/py-sqlite3@${FLAVOR}
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mock>0:devel/py-mock@${FLAVOR}
 
 NO_ARCH=	yes
 USES=		python:2.7
@@ -42,7 +42,7 @@ USE_PYTHON=	distutils autoplist
 .include <bsd.port.pre.mk>
 
 .if ${PYTHON_REL} < 3300
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pyliblzma>=0:archivers/py-pyliblzma
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pyliblzma>=0:archivers/py-pyliblzma@${FLAVOR}
 TEST_ENV=	${MAKE_ENV} PYTHONHTTPSVERIFY=0
 .else
 TEST_DEPENDS+=	ca_root_nss>=0:security/ca_root_nss

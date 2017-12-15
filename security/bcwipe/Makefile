@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	bcwipe
-PORTVERSION=	1.9.9
+PORTVERSION=	1.9.13
 CATEGORIES=	security
 MASTER_SITES=	http://www.jetico.com/linux/ \
 		http://bsd.desa-hosting.de/distfiles/security/

@@ -2,6 +2,7 @@
 
 PORTNAME=	mod_pagespeed
 PORTVERSION=	1.12.34.2
+PORTREVISION=	4
 PORTEPOCH=	1
 CATEGORIES=	www devel
 MASTER_SITES=	LOCAL/mmokhi:boringssl,chromium_base,chromium_build,googleurl,gflags_arch,gflags_src,libjpeg_turbo_src,yasm_patched,libwebp,modpb64 \
@@ -30,7 +31,7 @@ LIB_DEPENDS=	libpng.so:graphics/png \
 		libicutu.so:devel/icu \
 		libopencv_legacy.so:graphics/opencv
 
-USES=		compiler:c++14-lang jpeg gmake localbase pkgconfig \
+USES=		compiler:c++14-lang gperf jpeg gmake localbase pkgconfig \
 		python shebangfix ssl tar:xz
 USE_APACHE=	22
 SHEBANG_GLOB=	*.gyp *.gypi *.py *.sh
@@ -38,7 +39,7 @@ SHEBANG_FILES=	build/fix_proto_and_invoke_protoc
 
 WRKSRC=		${WRKSRC_maindist}
 DOCSDIR=	${PREFIX}/share/doc/apache${APACHE_VERSION}
-CACHEDIR=	/var/cache/mod_pagespeed	
+CACHEDIR=	/var/cache/mod_pagespeed
 LOGSDIR=	/var/log/pagespeed
 CFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/apr-1 -I${WRKSRC} \
 		-Wno-error -Wno-deprecated-register -Wno-char-subscripts \
@@ -141,7 +142,7 @@ post-patch:
 	    cd ${BUILD_WRKSRC}/third_party/google-sparsehash/gen/arch/freebsd && \
 	    ${MV} ia32 i386 && ${MV} x64 amd64 )
 	${REINPLACE_CMD} -e "s,%%LOCALBASE%%,${LOCALBASE},g" \
-	    ${WRKSRC}/base/base.gypi
+	    ${WRKSRC}/base/base.gypi ${WRKSRC}/third_party/serf/select_openssl.gyp
 	${REINPLACE_CMD} -e "s,%%PORTSSTAGE%%,${STAGEDIR},g" \
 	    ${WRKSRC}/install/Makefile
 	${FIND} ${WRKSRC} -type f \( -name "*.gyp" -o -name "*.gypi" \) -exec \

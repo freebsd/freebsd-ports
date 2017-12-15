@@ -2,15 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	clickhouse
-PORTVERSION=	1.1.54289
+PORTVERSION=	1.1.54318
 DISTVERSIONPREFIX=	v
 DISTVERSIONSUFFIX=	-stable
 #DISTVERSIONSUFFIX=	-testing
-PORTREVISION=	3
+#PORTREVISION=	1
 CATEGORIES=	databases
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES=	19042816c4a1.patch:-p1
+PATCHFILES=	fa65bdcf4847.patch:-p1
 
 MAINTAINER=	proler@gmail.com
 COMMENT=	ClickHouse is an column-oriented database management system
@@ -33,7 +33,8 @@ LIB_DEPENDS=	libtcmalloc.so:devel/google-perftools \
 		liblz4.so:archivers/liblz4 \
 		libPocoNet.so:devel/poco \
 		libcpuid.so:sysutils/libcpuid \
-		libunwind.so:devel/libunwind
+		libunwind.so:devel/libunwind \
+		librdkafka.so:net/librdkafka
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	yandex

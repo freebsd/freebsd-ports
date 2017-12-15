@@ -1,2 +1,3 @@
-SHA256 (bftpd-4.4.tar.gz) = b805ebbdd3de993ca14d733ad9ad007ac342a1646b257d91a53ec87a36c7f741
-SIZE (bftpd-4.4.tar.gz) = 164940
+TIMESTAMP = 1509917585
+SHA256 (bftpd-4.6.tar.gz) = 071c7df63062cb707b91cb80fe07019add3a9e1b3527a8b479f044e0af6aa45e
+SIZE (bftpd-4.6.tar.gz) = 165123

@@ -6,7 +6,7 @@
 # french/eric6, german/eric6, russian/eric6
 
 PORTNAME=	eric6
-PORTVERSION=	6.1.11
+PORTVERSION=	17.10
 MASTER_SITES=	SF/eric-ide/${PORTNAME}/stable/${PORTVERSION}
 DISTNAME?=	${PORTNAME}-i18n-${I18N_LANG}-${PORTVERSION}
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
@@ -22,7 +22,7 @@ I18N_LANG?=	ru
 INSTALL_CMD?=	install-i18n.py -p ${STAGEDIR}
 MAKE_ENV+=	"HOME=${WRKDIR}"
 
-USES+=		python
+USES+=		python:2.7
 NO_BUILD=	yes
 PLIST_FILES?=	%%DATADIR%%/i18n/${PORTNAME}_${I18N_LANG}.qm
 EXTRA_PATCHES?=	${.CURDIR}/../../devel/eric6/files/extra-patch-install-i18n.py

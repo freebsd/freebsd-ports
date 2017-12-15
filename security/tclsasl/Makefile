@@ -7,7 +7,7 @@ PORTREVISION=	3
 CATEGORIES=	security tcl
 MASTER_SITES=	http://beepcore-tcl.sourceforge.net/
 
-MAINTAINER=	dsh@vlink.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tcl interface to the Cyrus SASLv2 library
 
 LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2

@@ -5,7 +5,7 @@ PORTVERSION=	3.0.2
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	tz@FreeBSD.org
+MAINTAINER=	idefix@fechner.net
 COMMENT=	Parsing Expressions for Ruby
 
 BUILD_DEPENDS=	rubygem-rake>=0:devel/rubygem-rake

@@ -17,7 +17,7 @@ COMMENT=	Portuguese hunspell dictionaries
 # We pick the common one among:
 # - pt_PT is licensed under GPLv2, LGPL21 and MPL11.
 # - pt_BR is licensed under LGPL3 and MPL.
-LICENSE=	MPL
+LICENSE=	MPL11
 
 NO_ARCH=	yes
 NO_BUILD=	yes

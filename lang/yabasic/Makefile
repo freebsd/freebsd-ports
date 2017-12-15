@@ -15,6 +15,7 @@ LICENSE_COMB=	multi
 USES=		bison ncurses
 GNU_CONFIGURE=	yes
 USE_XORG=	ice sm x11
+TEST_TARGET=	check
 
 PORTDOCS=	yabasic.htm
 PLIST_FILES=	bin/yabasic man/man1/yabasic.1.gz
@@ -29,10 +30,7 @@ post-patch:
 	@${REINPLACE_CMD} -e \
 		'/Intrinsic.h/d' ${WRKSRC}/yabasic.h
 
-post-build test:
-	@(cd ${WRKSRC} && ${DO_MAKE_BUILD} check)
-
-post-install:
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR})
 

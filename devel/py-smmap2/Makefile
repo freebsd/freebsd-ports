@@ -12,7 +12,7 @@ COMMENT=	Sliding-window memory map manager
 
 LICENSE=	BSD3CLAUSE
 
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>=0:devel/py-nose
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>=0:devel/py-nose@${FLAVOR}
 
 NO_ARCH=	yes
 USE_PYTHON=	autoplist concurrent distutils

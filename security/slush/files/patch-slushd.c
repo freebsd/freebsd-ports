@@ -1,4 +1,4 @@
---- slushd.c
+--- slushd.c.orig	1999-05-07 02:24:09 UTC
 +++ slushd.c
 @@ -40,11 +40,19 @@
  #include <ctype.h>
@@ -20,7 +20,7 @@
  #include <limits.h>
  #include <paths.h>
  #include <sys/types.h>
-@@ -653,59 +661,42 @@
+@@ -653,59 +661,42 @@ int process_control_word(const char *tok
  /* exits on error */
  void log_uwtmp(struct passwd *pw, struct in_addr *i, char *tty, int is_logout)
  {
@@ -56,15 +56,14 @@
 -	ut.ut_time = time(NULL);
 -	ut.ut_type = is_logout?DEAD_PROCESS:USER_PROCESS;
 -	ut.ut_pid = getpid();
--
++	memset(&ut, 0, sizeof ut);
++	gettimeofday(&ut.ut_tv, NULL);
++	strncpy(ut.ut_id, tty, sizeof ut.ut_id);
+ 
 -	strncpy(ut.ut_host, hostname, sizeof(ut.ut_host) - 1);
 -	ut.ut_host[sizeof(ut.ut_host) - 1] = 0;
 -	
 -	memcpy(&ut.ut_addr, i, sizeof(ut.ut_addr));
-+	memset(&ut, 0, sizeof ut);
-+	gettimeofday(&ut.ut_tv, NULL);
-+	strncpy(ut.ut_id, tty, sizeof ut.ut_id);
-+
 +	if (is_logout) {
 +		ut.ut_type = DEAD_PROCESS;
 +	} else {

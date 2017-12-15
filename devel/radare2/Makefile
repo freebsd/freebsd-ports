@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	radare2
-PORTVERSION=	1.0.2
+PORTVERSION=	2.0.1
 CATEGORIES=	devel
-MASTER_SITES=	http://rada.re/get/
 
 MAINTAINER=	torres.73a@gmail.com
 COMMENT=	Tools to disasm, debug, analyze, and manipulate binary files
@@ -15,12 +14,14 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS+=		pkg-config:devel/pkgconf
 LIB_DEPENDS+=		libcapstone.so:devel/capstone4
 
-NOT_FOR_ARCHS=		aarch64 armv6 mips mips64 powerpc powerpc64 sparc64
+NOT_FOR_ARCHS=		aarch64 armv6 armv7 mips mips64 powerpc powerpc64 sparc64
 NOT_FOR_ARCHS_REASON=	does not build: Unsupported BSD architecture
 
 CONFIGURE_ARGS+=	--with-syscapstone
 
 USES=		gmake pathfix pkgconfig tar:xz
+USE_GITHUB=	yes
+GH_ACCOUNT=	radare
 PATHFIX_MAKEFILEIN=	Makefile
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

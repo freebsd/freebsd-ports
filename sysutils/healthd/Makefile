@@ -24,7 +24,7 @@ SUB_FILES=	pkg-message
 
 OPTIONS_DEFINE=	IPV6 FULL_CONFIG DOCS
 
-FULL_CONFIG_DESC= 		Remotely reading the full config
+FULL_CONFIG_DESC=		Remotely reading the full config
 
 IPV6_CONFIGURE_ENABLE=		ipv6
 FULL_CONFIG_CONFIGURE_ENABLE=	full-config

@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2016-03-29 16:02:26 UTC
+--- CMakeLists.txt.orig	2017-07-27 15:53:21 UTC
 +++ CMakeLists.txt
-@@ -107,6 +107,10 @@ option (USE_EXTERNAL_ZLIB               
+@@ -106,6 +106,10 @@ option (USE_EXTERNAL_ZLIB                   "Use exter
  option (WITH_CLI                            "Build appleseed.cli"                                   ON)
  option (WITH_STUDIO                         "Build appleseed.studio"                                ON)
  option (WITH_TOOLS                          "Build appleseed tools"                                 ON)
@@ -9,10 +9,10 @@
 +option (WITH_HEADERS                        "Intall header files (to build samples)"                ON)
 +option (WITH_TESTS                          "Install unit tests and benchmarks"                     ON)
  option (WITH_PYTHON                         "Build Python bindings"                                 ON)
- option (WITH_ALEMBIC                        "Build Alembic support"                                 OFF)
- option (WITH_OSL                            "Build OSL support"                                     OFF)
-@@ -179,6 +183,9 @@ if (WITH_OSL)
-                     ${PROJECT_SOURCE_DIR}/src/appleseed/renderer/kernel/shading/stdosl.h)
+ option (WITH_DISNEY_MATERIAL                "Build Disney material"                                 OFF)
+ 
+@@ -168,6 +172,9 @@ else ()
+                          "Edit ${CMAKE_CURRENT_LIST_FILE} to add support for it.")
  endif ()
  
 +# XXX: avoid picking up lz4 headers from /usr/local/include == ${Boost_INCLUDE_DIRS}
@@ -20,8 +20,8 @@
 +include_directories (src/lz4)
  
  #--------------------------------------------------------------------------------------------------
- # Boost libraries.
-@@ -285,7 +292,6 @@ endif ()
+ # Auto-generate version headers.
+@@ -262,7 +269,6 @@ endif ()
  # Common include paths.
  include_directories (
      src/appleseed
@@ -29,7 +29,7 @@
      ${PYTHON_INCLUDE_DIRS}
  )
  
-@@ -601,7 +607,7 @@ endif ()
+@@ -579,7 +585,7 @@ endif ()
  
  find_package (Doxygen)
  
@@ -38,33 +38,36 @@
      configure_file (${PROJECT_SOURCE_DIR}/scripts/appleseed.doxyfile.in ${PROJECT_BINARY_DIR}/appleseed.doxyfile @ONLY)
      add_custom_target (
          doc ${DOXYGEN_EXECUTABLE} ${PROJECT_BINARY_DIR}/appleseed.doxyfile
-@@ -650,23 +656,33 @@ endif ()
- install (
+@@ -627,25 +633,35 @@ install (
      DIRECTORY
          sandbox/docs
-+    DESTINATION .
-+)
-+
-+if (WITH_SAMPLES)
-+install (
-+    DIRECTORY
-         sandbox/samples
+         sandbox/icons
+-        sandbox/samples
+         sandbox/settings
 -        sandbox/share
+         sandbox/stylesheets
      DESTINATION .
  )
-+endif ()
  
++if (WITH_SAMPLES)
  install (
 -    CODE "FILE (MAKE_DIRECTORY ${CMAKE_INSTALL_PREFIX}/images)"
 -    CODE "FILE (MAKE_DIRECTORY ${CMAKE_INSTALL_PREFIX}/images/autosave)"
 +    DIRECTORY
-+        sandbox/share
-+    DESTINATION ..
++        sandbox/samples
++    DESTINATION .
  )
++endif ()
  
-+if (WITH_TESTS)
  install (
      DIRECTORY
++        sandbox/share
++    DESTINATION ..
++)
++
++if (WITH_TESTS)
++install (
++    DIRECTORY
          "sandbox/tests/unit benchmarks"
          "sandbox/tests/unit tests"
      DESTINATION tests
@@ -75,7 +78,7 @@
  install (
      DIRECTORY src/appleseed/foundation
      DESTINATION include
-@@ -684,3 +700,4 @@ install (
+@@ -663,3 +679,4 @@ install (
      DESTINATION include
      FILES_MATCHING PATTERN "*.h"
  )

@@ -108,12 +108,12 @@ INSTALL_TARGET=	install-strip
 #			  default is "|preline LOCALBASE/bin/maildrop /etc/mailfilter"
 #			  do not forget the "|" at the start
 # USER_INDEX		- might confuse earlier versions of Internet Explorer
-# CGIBINDIR     	- location of your cgi directory
-# CGIBINSUBDIR  	- subdirectory to place cgi scripts in
-# CGIBINURL     	- location of your cgi directory in a URL
-# WEBDATADIR    	- location of your html files
-# WEBDATASUBDIR 	- subdirectory to place html files in
-# WEBDATAURL    	- location of your html files in a URL
+# CGIBINDIR		- location of your cgi directory
+# CGIBINSUBDIR		- subdirectory to place cgi scripts in
+# CGIBINURL		- location of your cgi directory in a URL
+# WEBDATADIR		- location of your html files
+# WEBDATASUBDIR		- subdirectory to place html files in
+# WEBDATAURL		- location of your html files in a URL
 CGIBINDIR?=	www/cgi-bin.default
 CGIBINSUBDIR?=	qmailadmin
 CGIBINURL?=	/cgi-bin

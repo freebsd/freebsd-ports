@@ -1,4 +1,4 @@
---- Makefile.orig	2017-05-09 15:04:09 UTC
+--- Makefile.orig	2017-10-20 04:48:01 UTC
 +++ Makefile
 @@ -6,7 +6,7 @@ EPREFIX        = $(PREFIX)
  
@@ -15,5 +15,14 @@
  EXAILEMANDIR   = $(DESTDIR)$(MANPREFIX)/man
 +BASHCOMPDIR    = $(ETCDIR)/bash_completion.d
  
- .PHONY: dist test completion coverage clean sanitycheck
+ .PHONY: dist test completion coverage clean sanitycheck builddir
  
+@@ -202,7 +203,7 @@ po/messages.pot: pot
+ # The "set -o pipefail" (only works on Bash) makes the whole thing die if any of the find fails.
+ # The "LC_ALL=C" disables any locale-dependent sort behavior.
+ pot:
+-	( set -o pipefail || true && \
++	( set || true && \
+ 	  export LC_ALL=C && cd po && \
+ 	  { find ../xl ../xlgui -name "*.py" | sort && \
+ 	    find ../data/ui -name "*.ui" | sort && \

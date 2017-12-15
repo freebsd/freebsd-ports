@@ -46,7 +46,7 @@ CLIENT_DESKTOP_ENTRIES=	"Blood Frontier" \
 			"bfclient" \
 			"Game;Shooter;" \
 			""
-DEDICATED_DESC= 	Build dedicated server
+DEDICATED_DESC=		Build dedicated server
 DEDICATED_PLIST_FILES=	bin/bfserver libexec/bfserver
 DEDICATED_ALL_TARGET=	server
 

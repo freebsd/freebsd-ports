@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	openpyxl
-PORTVERSION=	2.4.8
+PORTVERSION=	2.4.9
 CATEGORIES=	textproc python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,8 +13,8 @@ COMMENT=	Python library to read/write Excel 2007 xlsx/xlsm files
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENCE.rst
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}jdcal>=0:devel/py-jdcal \
-		${PYTHON_PKGNAMEPREFIX}et_xmlfile>=0:textproc/py-et_xmlfile
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}jdcal>=0:devel/py-jdcal@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}et_xmlfile>=0:textproc/py-et_xmlfile@${FLAVOR}
 
 NO_ARCH=	yes
 USES=		python

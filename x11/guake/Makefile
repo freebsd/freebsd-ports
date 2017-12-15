@@ -12,15 +12,15 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	gnome-common>=3.14.0:devel/gnome-common \
-		${PYTHON_PKGNAMEPREFIX}dbus>=0.84.0:devel/py-dbus \
-		${PYTHON_PKGNAMEPREFIX}notify>=0.1.1_9:devel/py-notify \
-		${PYTHON_PKGNAMEPREFIX}vte>=0.26.2_1:x11-toolkits/py-vte \
-		${PYTHON_PKGNAMEPREFIX}xdg>=0.19:devel/py-xdg
+		${PYTHON_PKGNAMEPREFIX}dbus>=0.84.0:devel/py-dbus@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}notify>=0.1.1_9:devel/py-notify@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}vte>=0.26.2_1:x11-toolkits/py-vte@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}xdg>=0.19:devel/py-xdg@${PY_FLAVOR}
 RUN_DEPENDS=	keybinder>=0.3.0:x11/keybinder \
-		${PYTHON_PKGNAMEPREFIX}dbus>=0.84.0:devel/py-dbus \
-		${PYTHON_PKGNAMEPREFIX}notify>=0.1.1_9:devel/py-notify \
-		${PYTHON_PKGNAMEPREFIX}vte>=0.26.2_1:x11-toolkits/py-vte \
-		${PYTHON_PKGNAMEPREFIX}xdg>=0.19:devel/py-xdg
+		${PYTHON_PKGNAMEPREFIX}dbus>=0.84.0:devel/py-dbus@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}notify>=0.1.1_9:devel/py-notify@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}vte>=0.26.2_1:x11-toolkits/py-vte@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}xdg>=0.19:devel/py-xdg@${PY_FLAVOR}
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 
@@ -38,7 +38,7 @@ NLS_CONFIGURE_ENABLE=	nls
 
 OPTIONS_DEFINE=	MANPAGES NLS
 OPTIONS_DEFAULT=	MANPAGES
-OPTIONS_SUB=	NLS
+OPTIONS_SUB=	yes
 
 PLIST_SUB+=	DESKTOPDIR="${DESKTOPDIR:S,${PREFIX}/,,}"
 

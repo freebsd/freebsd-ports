@@ -219,6 +219,7 @@ CONFIGURE_ARGS+=-b ${PREFIX}/bin \
 		-d ${PYTHONPREFIX_SITELIBDIR} \
 		-q ${QMAKE} \
 		--confirm-license \
+		--sip ${LOCALBASE}/bin/sip-${PYTHON_VER} \
 		--sipdir ${SIPDIR}
 
 # One of the things PyQt looks for to determine whether to build the Qt DBus
@@ -240,8 +241,8 @@ do-configure:
 _USE_PYQT_ALL+=			${_USE_PYQT${_PYQT_VERSION}_ONLY}
 .for comp in ${_USE_PYQT_ALL:O:u}
 _USE_PYQT_ALL_SUFFIXED+=		py-${comp} py-${comp}_build py-${comp}_run
-py-${comp}_BUILD_DEPENDS?=		${py-${comp}_PATH}:${py-${comp}_PORT}
-py-${comp}_RUN_DEPENDS?=		${py-${comp}_PATH}:${py-${comp}_PORT}
+py-${comp}_BUILD_DEPENDS?=		${py-${comp}_PATH}:${py-${comp}_PORT}@${PY_FLAVOR}
+py-${comp}_RUN_DEPENDS?=		${py-${comp}_PATH}:${py-${comp}_PORT}@${PY_FLAVOR}
 py-${comp}_build_BUILD_DEPENDS?=	${py-${comp}_BUILD_DEPENDS}
 py-${comp}_run_RUN_DEPENDS?=		${py-${comp}_RUN_DEPENDS}
 .endfor

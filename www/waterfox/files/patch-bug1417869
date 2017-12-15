@@ -1,0 +1,42 @@
+commit 22760bd00a04
+Author: JW Wang <jwwang@mozilla.com>
+Date:   Fri Nov 24 11:14:51 2017 +0100
+
+    Bug 1417869. P2 - abort the load algorithm early if media not allowed to load. r=jya, a=sledru
+    
+    MozReview-Commit-ID: DUxyo4ywCPW
+---
+ dom/html/HTMLMediaElement.cpp | 13 +++++++------
+ 1 file changed, 7 insertions(+), 6 deletions(-)
+
+diff --git dom/html/HTMLMediaElement.cpp dom/html/HTMLMediaElement.cpp
+index 5d51851047cf..c2106402c661 100644
+--- dom/html/HTMLMediaElement.cpp
++++ dom/html/HTMLMediaElement.cpp
+@@ -1956,6 +1956,13 @@ NS_IMETHODIMP HTMLMediaElement::Load()
+ 
+ void HTMLMediaElement::DoLoad()
+ {
++  // Check if media is allowed for the docshell.
++  nsCOMPtr<nsIDocShell> docShell = OwnerDoc()->GetDocShell();
++  if (docShell && !docShell->GetAllowMedia()) {
++    LOG(LogLevel::Debug, ("%p Media not allowed", this));
++    return;
++  }
++
+   if (mIsRunningLoadMethod) {
+     return;
+   }
+@@ -2497,12 +2504,6 @@ nsresult HTMLMediaElement::LoadResource()
+     mChannelLoader = nullptr;
+   }
+ 
+-  // Check if media is allowed for the docshell.
+-  nsCOMPtr<nsIDocShell> docShell = OwnerDoc()->GetDocShell();
+-  if (docShell && !docShell->GetAllowMedia()) {
+-    return NS_ERROR_FAILURE;
+-  }
+-
+   // Set the media element's CORS mode only when loading a resource
+   mCORSMode = AttrValueToCORSMode(GetParsedAttr(nsGkAtoms::crossorigin));
+ 

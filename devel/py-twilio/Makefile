@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	twilio
-PORTVERSION=	6.8.1
+PORTVERSION=	6.9.1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,9 +11,9 @@ COMMENT=	Python module for communicating with the Twilio API
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}httplib2>=0:www/py-httplib2 \
-		${PYTHON_PKGNAMEPREFIX}six>=0:devel/py-six \
-		${PYTHON_PKGNAMEPREFIX}pytz>=0:devel/py-pytz
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}httplib2>=0:www/py-httplib2@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}six>=0:devel/py-six@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pytz>=0:devel/py-pytz@${FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist concurrent distutils

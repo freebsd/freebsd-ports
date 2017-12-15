@@ -71,6 +71,8 @@ sbin/haproxy
 %%PORTDOCS%%%%DOCSDIR%%/management.txt
 %%PORTDOCS%%%%DOCSDIR%%/netscaler-client-ip-insertion-protocol.txt
 %%PORTDOCS%%%%DOCSDIR%%/network-namespaces.txt
+%%PORTDOCS%%%%DOCSDIR%%/peers.txt
+%%PORTDOCS%%%%DOCSDIR%%/peers-v2.0.txt
 %%PORTDOCS%%%%DOCSDIR%%/proxy-protocol.txt
 %%PORTDOCS%%%%DOCSDIR%%/queuing.fig
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/acl-content-sw.cfg

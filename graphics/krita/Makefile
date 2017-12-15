@@ -2,7 +2,7 @@
 
 PORTNAME=	krita
 PORTVERSION=	3.1.2.1
-PORTREVISION=	5
+PORTREVISION=	7
 CATEGORIES=	graphics kde
 MASTER_SITES=	KDE/stable/${PORTNAME}/3.1.2
 DIST_SUBDIR=	KDE/${PORTNAME}
@@ -14,8 +14,7 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/eigen3.pc:math/eigen3
-LIB_DEPENDS=	libIlmImf.so:graphics/OpenEXR \
-		libImath.so:graphics/ilmbase \
+LIB_DEPENDS=	libImath.so:graphics/ilmbase \
 		libOpenColorIO.so:graphics/opencolorio \
 		libX11.so:x11/libX11 \
 		libboost_system.so:devel/boost-libs \
@@ -39,11 +38,15 @@ USE_QT5=	buildtools_build concurrent core dbus gui network printsupport \
 		qmake_build quick svg testlib widgets x11extras xml
 USE_XORG=	ice sm xcb xext xi
 
-OPTIONS_DEFINE=		GMIC
+OPTIONS_DEFINE=		GMIC OPENEXR
+OPTIONS_DEFAULT=	OPENEXR
 OPTIONS_SUB=		yes
 
 GMIC_DESC=		Build the G'Mic plugin
 GMIC_CMAKE_BOOL=	WITH_GMIC
+
+OPENEXR_LIB_DEPENDS=	libIlmImf.so:graphics/OpenEXR
+OPENEXR_CMAKE_BOOL_OFF=	CMAKE_DISABLE_FIND_PACKAGE_OpenEXR
 
 CONFLICTS_INSTALL=	calligra-2*
 

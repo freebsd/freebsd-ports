@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rpi-firmware
-PORTVERSION=	1.20170811
+PORTVERSION=	1.20171029
 CATEGORIES=	sysutils
 
 MAINTAINER=	manu@freebsd.org

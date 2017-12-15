@@ -16,7 +16,7 @@ COMMENT?=	GIMP User Manual in English
 
 LICENSE=	GFDL
 
-BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/libxml2mod.so:textproc/py-libxml2 \
+BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/libxml2mod.so:textproc/py-libxml2@${PY_FLAVOR} \
 		${LOCALBASE}/share/xsl/docbook/xhtml/chunk.xsl:textproc/docbook-xsl
 
 USES=		gettext-tools gmake perl5 pkgconfig python:2 shebangfix tar:bzip2

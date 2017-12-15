@@ -13,6 +13,7 @@ LICENSE=	GPLv2 # only
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN_armv6=		fails to package: find: *: No such file or directory
+BROKEN_armv7=		fails to package: find: *: No such file or directory
 
 USES=		zip
 USE_JAVA=	yes

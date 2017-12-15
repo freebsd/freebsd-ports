@@ -12,6 +12,7 @@
     SUBDIR += bind9-devel
     SUBDIR += bind910
     SUBDIR += bind911
+    SUBDIR += bind912
     SUBDIR += bind99
     SUBDIR += bindgraph
     SUBDIR += bundy
@@ -62,6 +63,7 @@
     SUBDIR += dq
     SUBDIR += drool
     SUBDIR += dualserver
+    SUBDIR += dynip
     SUBDIR += erlang-idna
     SUBDIR += ez-ipupdate
     SUBDIR += fastresolve
@@ -186,8 +188,6 @@
     SUBDIR += py-pydnstable
     SUBDIR += py-pywdns
     SUBDIR += py-tldextract
-    SUBDIR += py3-dnspython
-    SUBDIR += py3-idna
     SUBDIR += radns
     SUBDIR += rbldnsd
     SUBDIR += rbllookup

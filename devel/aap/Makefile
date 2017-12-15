@@ -17,7 +17,7 @@ OPTIONS_DEFINE=	DOCS
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 
-USES=		python zip
+USES=		python:2.7 zip
 PLIST_SUB=	PORTVERSION="${PORTVERSION}"
 NO_ARCH=	yes
 

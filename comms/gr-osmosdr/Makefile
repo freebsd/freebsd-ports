@@ -20,7 +20,7 @@ LIB_DEPENDS=	libgnuradio-runtime.so:comms/gnuradio \
 		libboost_system.so:devel/boost-libs \
 		libboost_thread.so:devel/boost-libs
 
-USES=	cmake fortran pkgconfig python tar:tgz
+USES=	cmake fortran pkgconfig python:2.7 tar:tgz
 USE_LDCONFIG=	yes
 
 # See lib/CMakeLists.txt to enable more components

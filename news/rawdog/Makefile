@@ -12,9 +12,9 @@ COMMENT=	Simple RSS aggregator
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/feedparser.py:textproc/py-feedparser
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/feedparser.py:textproc/py-feedparser@${FLAVOR}
 
-USES=		python
+USES=		python:2.7
 USE_PYTHON=	distutils
 NO_ARCH=	yes
 

@@ -3,7 +3,7 @@
 
 PORTNAME=	pacpl
 PORTVERSION=	5.0.1
-PORTREVISION=	14
+PORTREVISION=	15
 CATEGORIES=	audio
 MASTER_SITES=	SF
 
@@ -11,6 +11,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl Audio Converter
 
 LICENSE=	GPLv3+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	p5-Audio-FLAC-Header>0:audio/p5-Audio-FLAC-Header \
 		p5-Audio-Scan>0:audio/p5-Audio-Scan \
@@ -53,7 +54,7 @@ SHORTEN_RUN_DEPENDS=	shorten:audio/shorten
 SOX_DESC=		Audio conversion support via SoX
 SOX_RUN_DEPENDS=	sox:audio/sox
 SPEEX_RUN_DEPENDS=	speexenc:audio/speex
-TOOLAME_RUN_DEPENDS+=	toolame:audio/toolame
+TOOLAME_RUN_DEPENDS=	toolame:audio/toolame
 TTA_RUN_DEPENDS=	ttaenc:audio/tta
 VORBIS_RUN_DEPENDS=	vorbiscomment:audio/vorbis-tools
 WAVPACK_RUN_DEPENDS=	wavpack:audio/wavpack
@@ -74,35 +75,30 @@ do-build:
 	@(cd ${WRKSRC} && pod2man pacpl pacpl.1)
 
 do-install:
-	(cd ${WRKSRC} && ${INSTALL_SCRIPT} pacpl \
-		${STAGEDIR}${PREFIX}/bin)
-	(cd ${WRKSRC} && ${INSTALL_MAN} pacpl.1 \
-		${STAGEDIR}${MANPREFIX}/man/man1)
+	${INSTALL_SCRIPT} ${WRKSRC}/pacpl ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/pacpl.1 ${STAGEDIR}${MANPREFIX}/man/man1
 	@${MKDIR} ${STAGEDIR}${ETCDIR}
-	(cd ${WRKSRC} && ${INSTALL_DATA} pacpl.png \
-		${STAGEDIR}${ETCDIR})
+	${INSTALL_DATA} ${WRKSRC}/pacpl.png ${STAGEDIR}${ETCDIR}
 .for i in codecs.conf pacpl.conf
-	(cd ${WRKSRC} && ${INSTALL_DATA} ${i} \
-		${STAGEDIR}${ETCDIR}/${i}.sample)
+	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${ETCDIR}/${i}.sample
 .endfor
 	@${MKDIR} ${STAGEDIR}${ETCDIR}/modules
-	(cd ${WRKSRC}/extra && ${INSTALL_DATA} sample.m \
-		${STAGEDIR}${ETCDIR}/modules)
+	${INSTALL_DATA} ${WRKSRC}/extra/sample.m ${STAGEDIR}${ETCDIR}/modules
 	@${MKDIR} ${STAGEDIR}${DATADIR}/locale
-	(cd ${WRKSRC}/po && ${INSTALL_DATA} *.po \
-		${STAGEDIR}${DATADIR}/locale)
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	(cd ${WRKSRC} && ${INSTALL_DATA} ChangeLog README \
-		${STAGEDIR}${DOCSDIR})
-	(cd ${WRKSRC}/extra && ${INSTALL_DATA} README.module \
-		${STAGEDIR}${DOCSDIR})
-	(cd ${WRKSRC}/plugins/gnome/nautilus && ${INSTALL_SCRIPT} PACPL-Convert \
-		${STAGEDIR}${PREFIX}/libexec)
+	${INSTALL_DATA} ${WRKSRC}/po/*.po ${STAGEDIR}${DATADIR}/locale
+	${INSTALL_SCRIPT} ${WRKSRC}/plugins/gnome/nautilus/PACPL-Convert \
+		${STAGEDIR}${PREFIX}/libexec
+
+do-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/ChangeLog ${WRKSRC}/README \
+		${WRKSRC}/extra/README.module ${STAGEDIR}${DOCSDIR}
+
 do-install-KDE4-on:
-	(cd ${WRKSRC}/plugins/kde && ${INSTALL_SCRIPT} PACPL-Konvert \
-		${STAGEDIR}${PREFIX}/libexec)
+	${INSTALL_SCRIPT} ${WRKSRC}/plugins/kde/PACPL-Konvert \
+		${STAGEDIR}${PREFIX}/libexec
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/kde4/services/ServiceMenus
-	(cd ${WRKSRC}/plugins/kde && ${INSTALL_DATA} pacpl.desktop \
-		${STAGEDIR}${PREFIX}/share/kde4/services/ServiceMenus)
+	${INSTALL_DATA} ${WRKSRC}/plugins/kde/pacpl.desktop \
+		${STAGEDIR}${PREFIX}/share/kde4/services/ServiceMenus
 
 .include <bsd.port.mk>

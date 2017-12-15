@@ -12,14 +12,14 @@ COMMENT=	Adds support for TinyMCE to Plone
 
 LICENSE=	LGPL21
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}plone.app.imaging>=1.0.2:www/py-plone.app.imaging \
-		${PYTHON_PKGNAMEPREFIX}plone.outputfilters>=0:www/py-plone.outputfilters \
-		${PYTHON_PKGNAMEPREFIX}plone.namedfile>0:www/py-plone.namedfile \
-		${PYTHON_PKGNAMEPREFIX}plone.app.layout>0:www/py-plone.app.layout \
-		${PYTHON_PKGNAMEPREFIX}plone.caching>0:www/py-plone.caching \
-		${PYTHON_PKGNAMEPREFIX}Products.ResourceRegistries>0:devel/py-Products.ResourceRegistries \
-		${PYTHON_PKGNAMEPREFIX}zope.app.content>0:devel/py-zope.app.content \
-		${PYTHON_PKGNAMEPREFIX}zope.schema>0:devel/py-zope.schema
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}plone.app.imaging>=1.0.2:www/py-plone.app.imaging@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}plone.outputfilters>=0:www/py-plone.outputfilters@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}plone.namedfile>0:www/py-plone.namedfile@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}plone.app.layout>0:www/py-plone.app.layout@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}plone.caching>0:www/py-plone.caching@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}Products.ResourceRegistries>0:devel/py-Products.ResourceRegistries@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}zope.app.content>0:devel/py-zope.app.content@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}zope.schema>0:devel/py-zope.schema@${FLAVOR}
 
 NO_ARCH=	yes
 USES=		python:2.7 zip

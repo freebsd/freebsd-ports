@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	e2fsprogs
-PORTVERSION=	1.43.6
-PORTREVISION?=	1
+PORTVERSION=	1.43.7
+PORTREVISION?=	4
 CATEGORIES?=	sysutils
 MASTER_SITES=	KERNEL_ORG/linux/kernel/people/tytso/${PORTNAME}/v${PORTVERSION}
 
@@ -22,20 +22,29 @@ PORTSCOUT=	ignore	# cannot handle the version in the directory
 BROKEN_aarch64=		fails to link: missing sbrk
 .endif
 
-USES=		cpe gmake pkgconfig tar:xz
+USES=		cpe gmake makeinfo pkgconfig tar:xz
 CPE_VENDOR=	e2fsprogs_project
 USE_CSTD=	gnu99
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=--disable-fsck \
+CONFIGURE_ARGS?=--disable-fsck \
 		--disable-e2initrd-helper \
-		--enable-libuuid \
-		--with-root-prefix='${PREFIX}'
+		--disable-libuuid \
+		--disable-uuidd \
+		--enable-libblkid \
+		--enable-elf-shlibs \
+		--libdir='${PREFIX}/lib/e2fsprogs/' \
+		--includedir='${PREFIX}/include/e2fsprogs/' \
+		--with-root-prefix='${PREFIX}' \
+		--without-included-gettext \
+		LDFLAGS='${LDFLAGS} -L${LOCALBASE}/lib -Wl,--rpath -Wl,${LOCALBASE}/lib/e2fsprogs'
 CPPFLAGS+=	-I${WRKSRC}/lib -I${LOCALBASE}/include # -D_EXT2_USE_C_VERSIONS
-MAKE_ARGS+=	LDFLAGS='${LDFLAGS} -L${LOCALBASE}/lib' pkgconfigdir='${PREFIX}/libdata/pkgconfig'
+MAKE_ARGS+=	pkgconfigdir='${PREFIX}/libdata/pkgconfig'
 MAKE_ENV+=	CHECK_CMD=@true
 
 .if !defined(MASTERDIR)
+INSTALL_TARGET=		install install-libs
+
 OPTIONS_DEFINE=		DOCS NLS FUSEFS PARALLELTESTS
 OPTIONS_EXCLUDE+=	EXAMPLES
 OPTIONS_SUB=		yes
@@ -50,7 +59,13 @@ SMALLTESTS_DESC=Run tests that need <500 MB disk space (DEFAULT)
 ALLTESTS_DESC=	Run most self-tests (needs more RAM/disk space)
 PARALLELTESTS_DESC=	Parallelize self-tests (needs more disk space)
 
+FUSEFS_CONFIGURE_ENABLE=	fuse2fs
+
 BUILD_DEPENDS+=	gdd:sysutils/coreutils
+
+LIB_DEPENDS+=	libblkid.so:misc/e2fsprogs-libblkid
+LIB_DEPENDS+=	libss.so:devel/e2fsprogs-libss
+LIB_DEPENDS+=	libuuid.so:misc/e2fsprogs-libuuid
 
 PORTDOCS=	NOTICE README RELEASE-NOTES SUBMITTING-PATCHES
 .endif
@@ -63,8 +78,6 @@ MAKE_ARGS+=	V=1
 
 .if ${PORT_OPTIONS:MFUSEFS}
 USES+=		fuse
-CONFIGURE_ARGS+=--enable-fuse2fs
-LDFLAGS+=	-L${LOCALBASE}/lib
 .endif
 
 .if ${PORT_OPTIONS:MNLS}
@@ -80,9 +93,9 @@ USE_PERL5=	build
 
 .if ${PORT_OPTIONS:MNLS}
 . if empty(ICONV_LIB)
-libintl=	"${LOCALBASE}/lib/libintl.a"
+libintl=	${LOCALBASE}/lib/libintl.a
 . else
-libintl=	"${LOCALBASE}/lib/libintl.a ${LOCALBASE}/lib/libiconv.a"
+libintl=	${LOCALBASE}/lib/libintl.a ${LOCALBASE}/lib/libiconv.a
 . endif
 .else
 CONFIGURE_ARGS+=--disable-nls
@@ -166,11 +179,11 @@ post-build:
 # system are statically linked against anything that is outside the root fs,
 # else we're in trouble if e2fsck is needed for boot:
 # (we don't use e2fsck.static, since we can link libc.so dynamically)
-	cd ${WRKSRC}/e2fsck && ${RM} e2fsck \
+	cd ${WRKSRC}/e2fsck && ${RM} -f e2fsck \
 		&& ${MAKE_CMD} e2fsck V=1 \
-		STATIC_LIBS="../lib/libext2fs.a ../lib/libcom_err.a \
-		../lib/libblkid.a ../lib/libuuid.a" \
-		LIBINTL=${libintl} LIBMAGIC=/usr/lib/libmagic.a\ -lz
+		LIBS="../lib/libsupport.a ../lib/libext2fs.a ../lib/libcom_err.a \
+		${LOCALBASE}/lib/libblkid.a ${LOCALBASE}/lib/libuuid.a ${libintl} ../lib/libe2p.a" \
+		LIBMAGIC=/usr/lib/libmagic.a\ -lz
 # Regression check: avoid a port (not upstream!) regression from 1.40.5,
 # check that e2fsck isn't dynalinked against anything but libc.so:
 	@${ECHO_CMD} -n "===>  checking that e2fsck depends on no shared objects outside /lib: "
@@ -206,7 +219,6 @@ post-build:
 .endif
 
 post-install:
-	${RM} ${STAGEDIR}${PREFIX}/sbin/uuidd
 	${INSTALL_PROGRAM} ${WRKSRC}/fsck_ext2fs ${STAGEDIR}${PREFIX}/sbin/
 	${INSTALL_MAN} ${FILESDIR}/fsck_ext2fs.8 ${STAGEDIR}${PREFIX}/man/man8/
 .if ${PORT_OPTIONS:MDOCS}
@@ -215,6 +227,17 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
 .endif
+# remove or relocate files installed by other ports already, or shadowing system files:
+	cd ${STAGEDIR}${PREFIX} && \
+		${XARGS} <${FILESDIR}/unwanted ${RM} && \
+		${RMDIR} include/e2fsprogs/blkid include/e2fsprogs/ss share/ss
+	${MV} ${STAGEDIR}${PREFIX}/bin/compile_et ${STAGEDIR}${PREFIX}/bin/e2fsprogs-compile_et
+	${MV} ${STAGEDIR}${PREFIX}/man/man1/compile_et.1 ${STAGEDIR}${PREFIX}/man/man1/e2fsprogs-compile_et.1
+	${MKDIR} ${STAGEDIR}${DATADIR}/et/
+	${MV} ${STAGEDIR}${PREFIX}/share/et/* ${STAGEDIR}${DATADIR}/et/
+	${REINPLACE_CMD} -e 's}^DIR=.*$$}DIR=${DATADIR}/et}' -i '' ${STAGEDIR}${PREFIX}/bin/e2fsprogs-compile_et
+	${RMDIR} ${STAGEDIR}${PREFIX}/share/et
+
 #
 # the next line closes .if ${MASTERDIR} == ${.CURDIR}
 .endif

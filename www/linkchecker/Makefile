@@ -14,8 +14,8 @@ COMMENT=	Check HTML documents for broken links
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dnspython>0:dns/py-dnspython \
-		${PYTHON_PKGNAMEPREFIX}requests>=2:www/py-requests
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dnspython>0:dns/py-dnspython@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}requests>=2:www/py-requests@${FLAVOR}
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
@@ -31,7 +31,7 @@ OPTIONS_SUB=		yes
 
 CLAMAV_DESC=		Clam Antivirus
 CLAMAV_RUN_DEPENDS=	clamscan:security/clamav
-GEOIP_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}GeoIP>0:net/py-GeoIP
+GEOIP_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}GeoIP>0:net/py-GeoIP@${FLAVOR}
 GTK2_USE=		gnome=pygtk2
 LOGIN_DESC=		Login form submission
 LOGIN_RUN_DEPENDS=	twill>=0:www/twill
@@ -39,11 +39,11 @@ NLS_USES=		gettext
 QT4_EXTRA_PATCHES_OFF=	${PATCHDIR}/extra-patch-noqt-setup.py
 QT4_USES=		pyqt:4
 QT4_USE=		PYQT=core_run,gui_run,help_run,qscintilla2_run,sql_run
-SQLITE3_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3
+SQLITE3_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${FLAVOR}
 SYNTAX_DESC=		HTML/CSS syntax check
 SYNTAX_RUN_DEPENDS=\
-		${PYTHON_PKGNAMEPREFIX}cssutils>=0.9.5:www/py-cssutils \
-		${PYTHON_PKGNAMEPREFIX}utidylib>=0.2:www/py-utidylib
+		${PYTHON_PKGNAMEPREFIX}cssutils>=0.9.5:www/py-cssutils@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}utidylib>=0.2:www/py-utidylib@${FLAVOR}
 
 .include <bsd.port.options.mk>
 

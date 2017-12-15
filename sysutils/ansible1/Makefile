@@ -5,15 +5,15 @@ PKGNAMESUFFIX=	1
 PORTVERSION=	1.9.6
 PORTREVISION=	1
 
-CONFLICTS=	ansible-*
+CONFLICTS=	ansible-* ansible23-*
 
 MASTERDIR=	${.CURDIR}/../ansible
 DISTINFO_FILE=	${.CURDIR}/distinfo
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}yaml>0:devel/py-yaml \
-		${PYTHON_PKGNAMEPREFIX}pycrypto>0:security/py-pycrypto \
-		${PYTHON_PKGNAMEPREFIX}paramiko>0:security/py-paramiko \
-		${PYTHON_PKGNAMEPREFIX}Jinja2>0:devel/py-Jinja2
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}yaml>0:devel/py-yaml@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pycrypto>0:security/py-pycrypto@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}paramiko>0:security/py-paramiko@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}Jinja2>0:devel/py-Jinja2@${PY_FLAVOR}
 
 USES=	cpe python:2 shebangfix
 

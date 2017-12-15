@@ -1,4 +1,4 @@
---- src/oss_backend.c.orig	2013-02-25 15:52:49 UTC
+--- src/oss_backend.c.orig	2015-03-02 22:54:36 UTC
 +++ src/oss_backend.c
 @@ -22,7 +22,7 @@
  //##############################################################################
@@ -154,13 +154,13 @@
  	{
 @@ -251,6 +277,7 @@ void oss_set_volume(int volume)
  	assert(m_mixer_fd != -1);
- 	assert(volume >= 0 && volume <= 100);
+ 	volume = (volume < 0 ? 0 : (volume > 100 ? 100 : volume));
  
 +#if 0
  	oss_mixer_value vr;
  	vr.dev = m_ext.dev;
  	vr.ctrl = m_ext.ctrl;
-@@ -286,9 +313,14 @@ void oss_set_volume(int volume)
+@@ -286,9 +313,24 @@ void oss_set_volume(int volume)
  		default:
  			return;
  	}
@@ -177,4 +177,14 @@
  	if(volume == 100)
  		m_actual_maxvalue = get_raw_value();
 +#endif
++}
++
++const gchar * oss_get_device()
++{
++	return NULL;
++}
++
++const GList * oss_get_device_names()
++{
++	return NULL;
  }

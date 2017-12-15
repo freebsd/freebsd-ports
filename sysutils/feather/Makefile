@@ -9,7 +9,7 @@ CATEGORIES=	sysutils python
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python script for managing tarsnap backups
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}yaml>=0:devel/py-yaml \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}yaml>=0:devel/py-yaml@${PY_FLAVOR} \
 		tarsnap>=0:sysutils/tarsnap
 
 USES=		python:2,run

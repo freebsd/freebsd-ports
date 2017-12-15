@@ -13,7 +13,7 @@ COMMENT=	Fast JSON encoder/decoder for Python
 
 LICENSE=	LGPL20
 
-USES=		python
+USES=		python:2.7
 USE_PYTHON=	distutils autoplist
 
 post-install:

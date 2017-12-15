@@ -10,7 +10,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION:S/./-/g}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XSLT 1.0 processor for Java
 
-LICENSE=	MPL
+LICENSE=	MPL10
 
 USES=		zip
 USE_JAVA=	yes

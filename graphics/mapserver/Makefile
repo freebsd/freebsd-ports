@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=		mapserver
-PORTVERSION=		7.0.6
+PORTVERSION=		7.0.7
 CATEGORIES=		graphics www geography
 MASTER_SITES=		http://download.osgeo.org/mapserver/
 
@@ -187,7 +187,7 @@ do-install:
 .endfor
 	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/libmapserver.so.${PORTVERSION} ${STAGEDIR}${PREFIX}/lib
 
-	@${LN} -sf libmapserver.so.7.0.6 ${STAGEDIR}${PREFIX}/lib/libmapserver.so.2
+	@${LN} -sf libmapserver.so.${PORTVERSION} ${STAGEDIR}${PREFIX}/lib/libmapserver.so.2
 	@${LN} -sf libmapserver.so.2 ${STAGEDIR}${PREFIX}/lib/libmapserver.so
 
 do-install-PHP-on:

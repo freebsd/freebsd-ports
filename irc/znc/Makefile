@@ -3,7 +3,7 @@
 
 PORTNAME=	znc
 PORTVERSION=	1.6.5
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	irc ipv6
 MASTER_SITES=	http://znc.in/releases/ \
 		http://znc.in/releases/archive/
@@ -54,7 +54,7 @@ PERL_USES=	perl5
 PYTHON_BUILD_DEPENDS=	swig30>=3.0.0:devel/swig30
 PYTHON_CONFIGURE_ON=	--enable-python=python-${PYTHON_VER} --enable-swig
 PYTHON_USE=	perl5=build
-PYTHON_USES=	perl5 python:3
+PYTHON_USES=	perl5 python:3.4+
 TCL_CONFIGURE_ENABLE=	tcl
 TCL_CONFIGURE_ON=	--with-tcl=${TCL_LIBDIR}
 TCL_USES=	tcl

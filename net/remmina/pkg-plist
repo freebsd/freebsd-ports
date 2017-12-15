@@ -4,9 +4,10 @@ include/remmina/remmina_trace_calls.h
 include/remmina/types.h
 libdata/pkgconfig/remmina.pc
 man/man1/remmina.1.gz
-share/appdata/remmina.appdata.xml
-share/applications/remmina.desktop
+share/applications/org.remmina.Remmina.desktop
+share/applications/remmina-file.desktop
 share/icons/hicolor/128x128/apps/remmina.png
+share/icons/hicolor/16x16/actions/remmina-dynres.png
 share/icons/hicolor/16x16/actions/remmina-fit-window.png
 share/icons/hicolor/16x16/actions/remmina-fullscreen.png
 share/icons/hicolor/16x16/actions/remmina-pin-down.png
@@ -17,6 +18,7 @@ share/icons/hicolor/16x16/apps/remmina-panel-inverted.png
 share/icons/hicolor/16x16/apps/remmina-panel.png
 share/icons/hicolor/16x16/apps/remmina.png
 share/icons/hicolor/16x16/emblems/remmina-sftp.png
+share/icons/hicolor/22x22/actions/remmina-dynres.png
 share/icons/hicolor/22x22/actions/remmina-fit-window.png
 share/icons/hicolor/22x22/actions/remmina-fullscreen.png
 share/icons/hicolor/22x22/actions/remmina-scale.png
@@ -91,6 +93,8 @@ share/icons/hicolor/scalable/apps/remmina.svg
 %%NLS%%share/locale/uz@cyrillic/LC_MESSAGES/remmina.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/remmina.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/remmina.mo
+share/metainfo/org.remmina.Remmina.appdata.xml
+share/mime/packages/remmina-mime.xml
 %%DATADIR%%/ui/remmina_about.glade
 %%DATADIR%%/ui/remmina_key_chooser.glade
 %%DATADIR%%/ui/remmina_main.glade

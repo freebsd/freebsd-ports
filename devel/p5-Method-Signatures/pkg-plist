@@ -1,0 +1,8 @@
+%%SITE_PERL%%/Method/Signatures.pm
+%%SITE_PERL%%/Method/Signatures/Modifiers.pm
+%%SITE_PERL%%/Method/Signatures/Parameter.pm
+%%SITE_PERL%%/Method/Signatures/Signature.pm
+%%SITE_PERL%%/Method/Signatures/Types.pm
+%%SITE_PERL%%/Method/Signatures/Utils.pm
+%%PERL5_MAN3%%/Method::Signatures.3.gz
+%%PERL5_MAN3%%/Method::Signatures::Modifiers.3.gz

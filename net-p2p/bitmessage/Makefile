@@ -12,18 +12,18 @@ COMMENT=	Secure P2P communications client
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3 \
-		${PYTHON_PKGNAMEPREFIX}qt4-core>=${PYQT4_VERSION}:devel/py-qt4-core \
-		${PYTHON_PKGNAMEPREFIX}qt4-network>=${PYQT4_VERSION}:net/py-qt4-network \
-		${PYTHON_PKGNAMEPREFIX}qt4-gui>=${PYQT4_VERSION}:x11-toolkits/py-qt4-gui \
-		${PYTHON_PKGNAMEPREFIX}msgpack-python>0:devel/py-msgpack-python \
-		${PYTHON_PKGNAMEPREFIX}pyopencl>0:devel/py-pyopencl
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}qt4-core>=${PYQT4_VERSION}:devel/py-qt4-core@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}qt4-network>=${PYQT4_VERSION}:net/py-qt4-network@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}qt4-gui>=${PYQT4_VERSION}:x11-toolkits/py-qt4-gui@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}msgpack-python>0:devel/py-msgpack-python@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pyopencl>0:devel/py-pyopencl@${FLAVOR}
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	Bitmessage
 GH_PROJECT=	PyBitmessage
 
-USES=		gmake python pyqt:4 ssl
+USES=		gmake python:2.7 pyqt:4 ssl
 USE_PYQT=	core_run gui_run network_run
 USE_PYTHON=	distutils autoplist
 INSTALLS_ICONS=	yes

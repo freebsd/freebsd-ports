@@ -1,30 +1,4 @@
-===>  COMPATIBILITY NOTE:
-      1.2.0 removed support for the old 0.9 database format.
-
-      More info:
-        * http://wiki.apache.org/couchdb/Breaking_changes?action=show&redirect=BreakingChanges
-
-===>  CONFIGURATION NOTES:
-
-      PERFORMANCE
-         For best response (minimal delay) most sites will wish to uncomment this line
-         from %%PREFIX%%/etc/couchdb/local.ini:
-
-            socket_options = [{recbuf, 262144}, {sndbuf, 262144}, {nodelay, true}]
-
-         Otherwise you'll see a large delay when establishing connections to the DB.
-
-      ADMIN ACCOUNT
-         By default no admin password or account is configured which leaves the DB
-         server open.  Add accounts to the bottom of %%PREFIX%%/etc/couchdb/local.ini
-         to secure your installation (by default CouchDB listens on localhost only).
-
-      DATABASE LOCATION
-	 The DB files themselves are now stored in /var/db/couchdb by default.
-	 Previous versions of this port defaulted to /var/lib/couchdb, and if
-	 you installed directly from source /usr/local/lib/couchdb.
-
-	 If you are upgrading you may need to move your DB files to /var/db/couchdb
-	 if you are not specifying database_dir and view_index_dir locations
-         in local.ini.
-
+ADMIN ACCOUNT
+By default no admin password or account is configured which leaves the DB
+server open.  Add accounts to the bottom of %%PREFIX%%/etc/couchdb/local.ini
+to secure your installation (by default CouchDB listens on localhost only).

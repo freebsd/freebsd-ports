@@ -1,10 +1,10 @@
---- src/tray.c.orig	2005-01-29 18:34:17 UTC
+--- src/tray.c.orig	2017-07-31 21:04:11 UTC
 +++ src/tray.c
-@@ -20,6 +20,7 @@
-  * USA
+@@ -21,6 +21,7 @@
   */
  
+ #include "cdplay.h"
 +#include "common.h"
  #include "tray.h"
- #include "../pixmaps/rip1.xpm"
- #include "../pixmaps/menuplay.xpm"
+ #include "rip.h"
+ #include "uihelper.h"

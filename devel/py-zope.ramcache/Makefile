@@ -13,12 +13,12 @@ COMMENT=	Zope RAM Cache
 
 LICENSE=	ZPL21
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zope.interface>=0:devel/py-zope.interface \
-		${PYTHON_PKGNAMEPREFIX}zope.location>=0:devel/py-zope.location \
-		${PYTHON_PKGNAMEPREFIX}zope.testing>=0:devel/py-zope.testing \
-		zodb${PYTHON_PKGNAMESUFFIX}>=0:databases/zodb3
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zope.interface>=0:devel/py-zope.interface@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}zope.location>=0:devel/py-zope.location@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}zope.testing>=0:devel/py-zope.testing@${FLAVOR} \
+		zodb${PYTHON_PKGNAMESUFFIX}>=0:databases/zodb3@${FLAVOR}
 
-USES=		python zip
+USES=		python:2.7 zip
 USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

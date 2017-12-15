@@ -1,0 +1,11 @@
+This is a Faust implementation of a 1969-designed Yamaha combo organ, the
+YC-20.  In addition to the Faust code, it has a Gtkmm UI with Jack audio
+and midi support.
+
+Original YC-20 organs have a touch vibrato control, which is vibrato induced by
+horizontal movement of the keys. As there very few (almost none) midi keyboards
+which produce such information, this feature has been left out of the emulation.
+Instead of the touch vibrato control, the control panel hosts a "realism"
+switch.
+
+WWW: https://github.com/sampov2/foo-yc20

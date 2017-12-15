@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	glpk
-PORTVERSION=	4.61
+DISTVERSION=	4.64
 CATEGORIES=	math
 MASTER_SITES=	GNU
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dg@syrec.org
 COMMENT=	GNU Linear Programming Kit
 
 LICENSE=	GPLv3+
@@ -16,8 +16,8 @@ LIB_DEPENDS=	libgmp.so:math/gmp
 
 CONFLICTS=	goblin-[0-9]*
 
-GNU_CONFIGURE=	yes
 USES=		gmake libtool localbase
+GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CFLAGS+=	-trigraphs
 CPPFLAGS+=	-D_LSEEK_DECLARED

@@ -15,6 +15,7 @@ COMMENT=	Java client library for the Spread Group Communication System
 BUILD_DEPENDS=	${ANT}:devel/apache-ant
 
 BROKEN_armv6=		fails to package: java/docs/*.html: No such file or directory
+BROKEN_armv7=		fails to package: java/docs/*.html: No such file or directory
 
 USE_JAVA=	YES
 JAVA_VERSION=	1.6+

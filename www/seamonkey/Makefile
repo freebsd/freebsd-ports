@@ -3,13 +3,12 @@
 
 PORTNAME=	seamonkey
 DISTVERSION=	2.49.1
-PORTREVISION=	1
+PORTREVISION=	7
 MOZILLA_VER=	52 # above + 3
 CATEGORIES?=	www mail news editors irc ipv6
 MASTER_SITES=	MOZILLA/${PORTNAME}/releases/${DISTVERSION}/source \
 		MOZILLA/${PORTNAME}/candidates/${DISTVERSION}-candidates/build4/source
-DISTFILES=	${PORTNAME}-${DISTVERSION}.source${EXTRACT_SUFX}
-EXTRACT_ONLY=	${PORTNAME}-${DISTVERSION}.source${EXTRACT_SUFX}
+DISTFILES=	${DISTNAME}.source${EXTRACT_SUFX}
 
 MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	The open source, standards compliant web browser
@@ -23,7 +22,7 @@ BUILD_DEPENDS=	nspr>=4.13.1:devel/nspr \
 		libvorbis>=1.3.5,3:audio/libvorbis \
 		libvpx>=1.5.0:multimedia/libvpx \
 		sqlite3>=3.17.0:databases/sqlite3 \
-		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3 \
+		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR} \
 		v4l_compat>0:multimedia/v4l_compat \
 		autoconf-2.13:devel/autoconf213 \
 		yasm:devel/yasm \
@@ -47,14 +46,13 @@ MOZ_PKGCONFIG_FILES=
 OPTIONS_DEFINE=	LDAP LIGHTNING RUST
 OPTIONS_SINGLE=	TOOLKIT
 OPTIONS_SINGLE_TOOLKIT=	GTK2 GTK3
-OPTIONS_DEFAULT=CANBERRA GTK2 LDAP LIGHTNING
+OPTIONS_DEFAULT=CANBERRA GTK3 LDAP LIGHTNING
 
 LDAP_DESC?=	LDAP support for Mailnews
 
 .include "${.CURDIR}/../../www/firefox/Makefile.options"
 .include <bsd.port.options.mk>
 
-WRKSRC:=	${WRKDIR}/${PORTNAME}-${DISTVERSION}
 MOZSRC:=	${WRKSRC}/mozilla
 
 .if ! ${PORT_OPTIONS:MLDAP}

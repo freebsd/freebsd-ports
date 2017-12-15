@@ -21,8 +21,6 @@ COMMENT=	Portable emulator for the Philips P2000 home computer
 
 LICENSE=	NONE # and commercial distribution is explicitly prohibited
 
-EXTRACT_DEPENDS=${UNZIP_CMD}:archivers/unzip
-
 M2000TAPES=	3DDoolhof2.cas		\
 		BrickWall.cas		\
 		Componist.cas		\
@@ -52,11 +50,10 @@ OPTIONS_DEFINE=	DOCS
 
 post-extract:
 	${MKDIR} ${WRKDIR}/tapeconv
-	${UNZIP_CMD} ${DISTDIR}/${DIST_SUBDIR}/tapeconv.zip -d ${WRKDIR}/tapeconv
-	${MV} ${WRKDIR}/tapeconv/PCM2CAS.C ${WRKDIR}/tapeconv/PCM2CAS.c
+	${UNZIP_NATIVE_CMD} ${DISTDIR}/${DIST_SUBDIR}/tapeconv.zip -d ${WRKDIR}/tapeconv
 
 post-build:
-	${CC} ${CFLAGS} ${LDFLAGS} -o ${WRKDIR}/tapeconv/PCM2CAS ${WRKDIR}/tapeconv/PCM2CAS.c
+	${CC} ${CFLAGS} ${LDFLAGS} -o ${WRKDIR}/tapeconv/PCM2CAS ${WRKDIR}/tapeconv/PCM2CAS.C
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/m2000.sh ${STAGEDIR}${PREFIX}/bin/m2000

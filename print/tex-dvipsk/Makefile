@@ -53,7 +53,7 @@ CONFIGURE_ARGS= --with-paper \
 		--with-system-libpng \
 		--with-system-zlib
 CFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+= 	-lpaper -L${LOCALBASE}/lib
+LDFLAGS+=	-lpaper -L${LOCALBASE}/lib
 
 INFO=	dvips
 

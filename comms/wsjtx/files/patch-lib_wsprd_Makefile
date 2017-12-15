@@ -1,4 +1,4 @@
---- lib/wsprd/Makefile.orig	2017-01-05 15:57:44 UTC
+--- lib/wsprd/Makefile.orig	2017-10-19 22:13:43 UTC
 +++ lib/wsprd/Makefile
 @@ -1,10 +1,10 @@
 -CC = gcc

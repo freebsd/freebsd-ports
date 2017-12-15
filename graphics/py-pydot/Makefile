@@ -14,7 +14,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	dot:graphics/graphviz \
-		${PYTHON_PKGNAMEPREFIX}pyparsing>=2.1.4:devel/py-pyparsing
+		${PYTHON_PKGNAMEPREFIX}pyparsing>=2.1.4:devel/py-pyparsing@${FLAVOR}
 
 NO_ARCH=	yes
 USE_PYTHON=	autoplist concurrent distutils

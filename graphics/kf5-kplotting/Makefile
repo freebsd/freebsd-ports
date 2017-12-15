@@ -1,8 +1,7 @@
-# Created by: tcberner
 # $FreeBSD$
 
 PORTNAME=	kplotting
-PORTVERSION=	${KDE_FRAMEWORKS_VERSION}
+DISTVERSION=	${KDE_FRAMEWORKS_VERSION}
 CATEGORIES=	graphics kde kde-frameworks
 
 MAINTAINER=	kde@FreeBSD.org

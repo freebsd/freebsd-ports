@@ -1,5 +1,0 @@
-=================================================
-To start shairport you need also to add
-avahi_daemon_enable="YES" and dbus_enable="YES"
-to /etc/rc.conf
-=================================================

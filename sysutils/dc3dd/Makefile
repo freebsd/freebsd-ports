@@ -14,6 +14,7 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BROKEN_armv6=		fails to compile: bit-field 'verify_error_if_negative_size__' has negative width
+BROKEN_armv7=		fails to compile: bit-field 'verify_error_if_negative_size__' has negative width
 
 USES=		gettext iconv gmake tar:bzip2
 GNU_CONFIGURE=	yes

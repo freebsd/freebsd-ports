@@ -12,7 +12,7 @@ COMMENT=	Python svg graph plotting library
 
 LICENSE=	LGPL3
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>=3.3.4:devel/py-lxml
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>=3.3.4:devel/py-lxml@${FLAVOR}
 
 NO_ARCH=	yes
 USES=		python

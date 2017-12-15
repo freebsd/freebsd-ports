@@ -20,7 +20,7 @@ share/applications/netsurf-gtk.desktop
 %%DATADIR%%/en/welcome.html
 %%DATADIR%%/favicon.png
 %%DATADIR%%/fr/Messages
-%%DATADIR%%/history.gtk3.ui
+%%DATADIR%%/globalhistory.gtk3.ui
 %%DATADIR%%/hotlist.gtk3.ui
 %%DATADIR%%/icons/arrow-l.png
 %%DATADIR%%/icons/content.png
@@ -37,6 +37,7 @@ share/applications/netsurf-gtk.desktop
 %%DATADIR%%/ja/welcome.html
 %%DATADIR%%/languages
 %%DATADIR%%/licence.html
+%%DATADIR%%/localhistory.gtk3.ui
 %%DATADIR%%/login.gtk3.ui
 %%DATADIR%%/maps.html
 %%DATADIR%%/netsurf-16x16.xpm

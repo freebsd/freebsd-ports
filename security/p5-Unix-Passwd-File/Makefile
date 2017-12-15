@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Unix-Passwd-File
-PORTVERSION=	0.24
+PORTVERSION=	0.250
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -28,4 +28,11 @@ NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 502501
+BUILD_DEPENDS+=	p5-Scalar-List-Utils>=1.45:lang/p5-Scalar-List-Utils
+RUN_DEPENDS+=	p5-Scalar-List-Utils>=1.45:lang/p5-Scalar-List-Utils
+.endif
+
+.include <bsd.port.post.mk>

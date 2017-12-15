@@ -1,6 +1,17 @@
---- cardcomm/pkcs11/src/dialogs/dialogsgtk/parent.c.orig	2017-05-10 13:28:54 UTC
+--- cardcomm/pkcs11/src/dialogs/dialogsgtk/beid-badpin.c.orig	2017-10-27 12:42:43 UTC
++++ cardcomm/pkcs11/src/dialogs/dialogsgtk/beid-badpin.c
+@@ -43,7 +43,7 @@ int main(int argc, char *argv[]) {
+         // create new message dialog with CANCEL button in standard places, in center of user's screen
+         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+ 
+-	char* msg;
++        char const *msg;
+         int attempts;
+ 
+         if ((argc == 2) && (argv[1] != NULL) && (strlen(argv[1]) == 1)
+--- cardcomm/pkcs11/src/dialogs/dialogsgtk/parent.c.orig	2017-10-27 12:42:43 UTC
 +++ cardcomm/pkcs11/src/dialogs/dialogsgtk/parent.c
-@@ -12,7 +12,7 @@ ssize_t get_parent_path(char *exec_path,
+@@ -12,7 +12,7 @@ ssize_t get_parent_path(char *exec_path, size_t exec_p
          ssize_t exec_path_len = -1;
          pid_t ppid = getppid();
  

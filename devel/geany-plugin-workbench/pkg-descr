@@ -1,0 +1,6 @@
+The Workbench plugin is an extension that makes it possible to
+manage multiple projects in geany. You can add geany projects to a
+workbench. From there you can add directories to the project to
+manage the files belonging to the project.
+
+WWW: https://plugins.geany.org/workbench.html

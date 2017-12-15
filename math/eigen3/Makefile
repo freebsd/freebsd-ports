@@ -10,7 +10,7 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Lightweight library for vector and matrix math
 
-LICENSE=	LGPL21 MPL
+LICENSE=	LGPL21 MPL20
 LICENSE_COMB=	multi
 
 CMAKE_ARGS=	-DPKGCONFIG_INSTALL_DIR:PATH="${PREFIX}/libdata/pkgconfig"

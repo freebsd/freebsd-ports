@@ -51,6 +51,7 @@ NO_BUILD=	yes
 
 BROKEN_aarch64=		Fails to install: runaway process
 BROKEN_armv6=		Fails to install: runaway process
+BROKEN_armv7=		Fails to install: runaway process
 BROKEN_mips64=		Fails to install: runaway process
 BROKEN_powerpc64=	Fails to install: runaway process
 

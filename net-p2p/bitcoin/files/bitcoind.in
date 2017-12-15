@@ -12,7 +12,7 @@
 # bitcoind_user (str)		Set to "bitcoin" by default.
 # bitcoind_group (str)		Set to "bitcoin" by default.
 # bitcoind_conf (str)		Set to "%%PREFIX%%/etc/bitcoind.conf" by default.
-# bitcoind_data (str)		Set to "/var/lib/bitcoin" by default.
+# bitcoind_data_dir (str)	Set to "/var/db/bitcoin" by default.
 # bitcoindlimits_enable (bool)	Set to "NO" by default.
 #				Set it to "YES" to enable bitcoindlimits
 # bitcoindlimits_args		Set to "-e -U ${bitcoind_user}" by default
@@ -121,7 +121,9 @@ bitcoind_start()
   ${daemon_command} -u "${bitcoind_user}" -p "${pidfile}" \
     ${command} \
     -conf="${bitcoind_config_file}" \
-    -datadir="${bitcoind_data_dir}" 2> /tmp/bitcoind.stderr > /tmp/bitcoind.stdout
+    -datadir="${bitcoind_data_dir}" \
+    2> "${bitcoind_data_dir}/bitcoind.stderr" \
+    > "${bitcoind_data_dir}/bitcoind.stdout"
 }
 
 bitcoind_stop()

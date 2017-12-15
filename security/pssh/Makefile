@@ -15,6 +15,6 @@ RUN_DEPENDS=	rsync:net/rsync
 
 NO_ARCH=	yes
 USES=		python
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	autoplist distutils concurrent optsuffix
 
 .include <bsd.port.mk>

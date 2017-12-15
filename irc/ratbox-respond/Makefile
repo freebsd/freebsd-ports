@@ -6,7 +6,7 @@ PORTVERSION=	1.0
 PORTREVISION=	3
 CATEGORIES=	irc sysutils
 MASTER_SITES=	http://www.ratbox.org/download/${PORTNAME}/ \
-    		http://mirrors.gigenet.com/ratbox/${PORTNAME}/ \
+		http://mirrors.gigenet.com/ratbox/${PORTNAME}/ \
 		ZI
 
 MAINTAINER=	zi@FreeBSD.org

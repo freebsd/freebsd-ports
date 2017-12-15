@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Net-HTTP-Spore
-PORTVERSION=	0.07
+PORTVERSION=	0.09
 CATEGORIES=	net www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -19,7 +19,7 @@ BUILD_DEPENDS=	p5-Class-Load>=0:devel/p5-Class-Load \
 		p5-IO-All>=0:devel/p5-IO-All \
 		p5-JSON>=0:converters/p5-JSON \
 		p5-Moose>=0:devel/p5-Moose \
-		p5-MooseX-Role-Parameterized>=0:devel/p5-MooseX-Role-Parameterized \
+		p5-MooseX-Role-Parameterized>=1.01:devel/p5-MooseX-Role-Parameterized \
 		p5-MooseX-Types>=0:devel/p5-MooseX-Types \
 		p5-MooseX-Types-URI>=0:devel/p5-MooseX-Types-URI \
 		p5-Try-Tiny>=0:lang/p5-Try-Tiny \

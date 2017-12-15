@@ -6,8 +6,8 @@ PORTVERSION=	1.7
 PORTREVISION=	3
 CATEGORIES=	security
 MASTER_SITES=	# empty
-DISTFILES=      # empty
-EXTRACT_ONLY=   # empty
+DISTFILES=	# empty
+EXTRACT_ONLY=	# empty
 
 MAINTAINER=	dean@odyssey.apana.org.au
 COMMENT=	Tool that replies with a standard answer to incoming identd requests

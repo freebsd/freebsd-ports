@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Parse-HTTP-UserAgent
-PORTVERSION=	0.39
-PORTREVISION=	1
+PORTVERSION=	0.42
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:BURAK
@@ -15,6 +14,10 @@ COMMENT=	Parser for the User Agent string
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
+BUILD_DEPENDS=	p5-JSON>=0:converters/p5-JSON \
+		p5-XML-Simple>=0:textproc/p5-XML-Simple \
+		p5-YAML>=0:textproc/p5-YAML
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Pod>=0:devel/p5-Test-Pod \
 		p5-Test-Pod-Coverage>=0:devel/p5-Test-Pod-Coverage
 

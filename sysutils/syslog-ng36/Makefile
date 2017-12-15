@@ -120,7 +120,7 @@ CONFIGURE_ARGS+=	--disable-sql
 .if ${PORT_OPTIONS:MJSON}
 LIB_DEPENDS+=		libjson-c.so:devel/json-c
 CONFIGURE_ARGS+=	--enable-json
-PLIST_FILES+= 		lib/syslog-ng/libjson-plugin.so
+PLIST_FILES+=		lib/syslog-ng/libjson-plugin.so
 .else
 CONFIGURE_ARGS+=        --disable-json
 .endif

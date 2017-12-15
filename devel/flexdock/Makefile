@@ -10,6 +10,7 @@ MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Swing windowing and docking framework
 
 BROKEN_armv6=		fails to package: flexdock/api: No such file or directory
+BROKEN_armv7=		fails to package: flexdock/api: No such file or directory
 
 USE_ANT=	yes
 USE_JAVA=	yes

@@ -1,4 +1,5 @@
 bin/g[
+bin/gb2sum
 bin/gbase32
 bin/gbase64
 bin/gbasename
@@ -103,6 +104,7 @@ bin/gwho
 bin/gwhoami
 bin/gyes
 libexec/coreutils/libstdbuf.so
+man/man1/gb2sum.1.gz
 man/man1/gbase32.1.gz
 man/man1/gbase64.1.gz
 man/man1/gbasename.1.gz

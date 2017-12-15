@@ -16,7 +16,7 @@ LIB_DEPENDS=	libproj.so:graphics/proj \
 		libgeos.so:graphics/geos \
 		libjson-c.so:devel/json-c
 
-CONFLICTS=	postgis20-2.0.* postgis-2.1.* postgis23-2.3.*
+CONFLICTS_INSTALL=	postgis20 postgis postgis23
 
 USES=		gettext gmake iconv:wchar_t libtool:keepla perl5 pgsql pkgconfig shebangfix
 GNU_CONFIGURE=	yes

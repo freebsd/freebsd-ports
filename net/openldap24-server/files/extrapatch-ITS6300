@@ -404,3 +404,31 @@
  
  	if ( LogTest( LDAP_DEBUG_ANY )) {
  		int t = ldap_pvt_thread_pool_backload( &connection_pool );
+--- libraries/liblutil/detach.c.orig	2017-06-01 20:01:07 UTC
++++ libraries/liblutil/detach.c
+@@ -73,7 +73,7 @@ lutil_detach( int debug, int do_close )
+ #ifdef HAVE_THR
+ 			pid = fork1();
+ #else
+-			pid = fork();
++			pid = rfork(RFPROC);
+ #endif
+ 			switch ( pid )
+ 			{
+--- servers/slapd/main.c.orig	2017-06-01 20:01:07 UTC
++++ servers/slapd/main.c
+@@ -923,12 +923,11 @@ unhandled_option:;
+ 		if ( pid ) {
+ 			char buf[4];
+ 			rc = EXIT_SUCCESS;
+-			close( waitfds[1] );
+ 			if ( read( waitfds[0], buf, 1 ) != 1 )
+ 				rc = EXIT_FAILURE;
+-			_exit( rc );
+-		} else {
++			close( waitfds[1] );
+ 			close( waitfds[0] );
++			_exit( rc );
+ 		}
+ 	}
+ #endif /* HAVE_WINSOCK */

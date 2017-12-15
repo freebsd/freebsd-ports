@@ -15,7 +15,7 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libfltk.so:x11-toolkits/fltk \
 		libfontconfig.so:x11-fonts/fontconfig \
-		libpng16.so:graphics/png
+		libpng.so:graphics/png
 
 GNU_CONFIGURE=	yes
 USES=		jpeg
