@@ -178,3 +178,12 @@
  # Final twiddling of compiler options to work around known bugs
  
  nativeccprofopts="$nativecccompopts"
+@@ -1723,7 +1728,7 @@ SYSLIB=-l\$(1)
+ MKLIB=${TOOLPREF}ar rc \$(1) \$(2); ${TOOLPREF}ranlib \$(1)
+ #ml let mklib out files opts = Printf.sprintf "${TOOLPREF}ar rc %s %s %s; ${TOOLPREF}ranlib %s" out opts files out;;
+ EOF
+-echo "ARCH=$arch" >> Makefile
++echo "SYSTEM_ARCH=$arch" >> Makefile
+ echo "MODEL=$model" >> Makefile
+ echo "SYSTEM=$system" >> Makefile
+ echo "NATIVECC=$nativecc" >> Makefile
