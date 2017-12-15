@@ -18,7 +18,7 @@ LICENSE_NAME_QPL10=	Q Public License, Version 1.0
 LICENSE_FILE_QPL10=	${WRKSRC}/LICENSE
 LICENSE_PERMS_QPL10=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-BROKEN_aarch64=		Does not build: No rule to make target aarch64.o, needed by libasmrun.a
+BROKEN_aarch64=		Does not build: sh: as: not found
 BROKEN_armv7=		Does not build: hasgot.c: undefined reference to `tgetent'
 BROKEN_powerpc64=	Does not build: error: too few arguments to function gethostbyname_r
 BROKEN_sparc64=	ocamlc.opt seg-faults, please try to fix
