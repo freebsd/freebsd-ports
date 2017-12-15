@@ -5,6 +5,21 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20171215:
+  AFFECTS: users of finance/gnucash
+  AUTHOR: madpilot@FreeBSD.org
+
+  The gnucash port has been converted too use flavors, the GUILE1
+  and GUILE2 options have been converted to flavors so that two
+  separate packages can be provided.
+
+  Since the next major release of gnucash will drop guile1 support,
+  the default flavor package is compiled against guile2, switching
+  the previous default.
+
+  Users who intend to stay on the guile1 version should deinstall
+  the default gnucash package and install the gnucash-guile1 package.
+
 20171214:
   AFFECTS: all ports users
   AUTHOR: adamw@FreeBSD.org
