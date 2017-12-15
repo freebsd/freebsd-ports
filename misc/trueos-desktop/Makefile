@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	trueos-desktop
-PORTVERSION=	201712111405
+PORTVERSION=	201712150936
 CATEGORIES=	misc
 MASTER_SITES=
 DISTFILES=
@@ -24,15 +24,12 @@ RUN_DEPENDS=	${LOCALBASE}/sbin/PCDMd:x11/pcdm \
 		${LOCALBASE}/bin/sysadm-client:sysutils/sysadm-client \
 		${LOCALBASE}/bin/lpreserver:sysutils/life-preserver \
 		${LOCALBASE}/bin/personacrypt:sysutils/personacrypt \
-		${LOCALBASE}/bin/pc-pdfviewer:graphics/pc-pdfviewer \
 		${LOCALBASE}/bin/pc-webkitviewer:www/pc-webkitviewer \
 		${LOCALBASE}/sbin/beadm:sysutils/beadm \
 		${LOCALBASE}/bin/xdg-open:devel/xdg-utils \
 		${LOCALBASE}/bin/xvkbd:x11/xvkbd \
 		${LOCALBASE}/sbin/anacron:sysutils/anacron \
 		cups-filters>=0:print/cups-filters \
-		paprefs>=0:audio/paprefs \
-		pavucontrol>=0:audio/pavucontrol \
 		drm-next-kmod>=g20170918:graphics/drm-next-kmod \
 		trueos-handbook>=0:misc/trueos-handbook \
 		lumina>=0:x11/lumina \
@@ -50,12 +47,6 @@ RUN_DEPENDS=	${LOCALBASE}/sbin/PCDMd:x11/pcdm \
 		git:devel/git \
 		xv>=0:graphics/xv \
 		tor>=0:security/tor \
-		fcitx-m17n>=0:textproc/fcitx-m17n \
-		fcitx-qt5>=0:textproc/fcitx-qt5 \
-		ja-fcitx-mozc>=0:japanese/fcitx-mozc \
-		ko-fcitx-hangul>=0:korean/fcitx-hangul \
-		zh-fcitx-configtool>=0:chinese/fcitx-configtool \
-		zh-fcitx-chewing>=0:chinese/fcitx-chewing \
 		socat>=0:net/socat \
 		mesa-demos>=0:graphics/mesa-demos \
 		dhcpcd>=0:net/dhcpcd \
@@ -71,6 +62,6 @@ MAKE_ARGS=	PREFIX=${STAGEDIR}${PREFIX}
 USE_GITHUB=     yes
 GH_ACCOUNT=     trueos
 GH_PROJECT=     trueos-core
-GH_TAGNAME=     cad413e3092fc2f535ffd55a707f7971e49cc7d8
+GH_TAGNAME=     a63230877dc8a3a27694ec10f929ff1004ce6c36
 
 .include <bsd.port.mk>

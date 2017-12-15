@@ -149,5 +149,19 @@ if [ ! -e "/var/.trueos-migrate-1" ] ; then
 fi
 touch /var/.trueos-migrate-1
 
+# 12-15-17
+# Post-17.12, switch everything back to the new track of services
+# (6-months of testing/fixing the new arrangement)
+if [ ! -e "/var/.trueos-migrate-2" ] ; then
+  #Turning off the linux-based subsystems
+  /sbin/rc-update delete dbus default
+  /sbin/rc-update delete hald default
+  /sbin/rc-update delete cups_browsed default
+  /sbin/rc-update delete avahi-daemon default
+  /sbin/rc-update delete avahi-dnsconfd default
+  #Turning on the BSD-based subsystems
+  /sbin/rc-update add sndiod default
+fi
+touch /var/.trueos-migrate-2
 
 exit 0
