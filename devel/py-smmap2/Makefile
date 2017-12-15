@@ -14,6 +14,8 @@ LICENSE=	BSD3CLAUSE
 
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>=0:devel/py-nose@${FLAVOR}
 
+CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}smmap
+
 NO_ARCH=	yes
 USE_PYTHON=	autoplist concurrent distutils
 USES=		python
