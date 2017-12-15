@@ -15,6 +15,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}smmap2>=2.0.0:devel/py-smmap2@${FLAVOR}
 
+CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}gitdb
+
 NO_ARCH=	yes
 USE_PYTHON=	autoplist concurrent distutils
 USES=		python
