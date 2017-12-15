@@ -1,0 +1,67 @@
+--- portmaster.orig	2017-12-15 12:40:13.818570000 +0100
++++ portmaster	2017-12-15 16:49:11.583821000 +0100
+@@ -1,4 +1,4 @@
+-#!/bin/sh
++#!/bin/sh -x
+ 
+ # Copyright (c) 2005-2012 Douglas Barton, All rights reserved
+ # Please see detailed copyright below
+@@ -1449,6 +1449,24 @@
+ 	fi
+ }
+ 
++find_new_port () {
++	# Global: new_port
++	local portdir flavor flavor_option
++
++	[ -n "$new_port" ] && return
++
++	portdir=$(dir_part "$1")
++	flavor=$(flavor_part "$1")
++	flavor_option=${flavor:+FLAVOR=$flavor}
++#	export_flavor $flavor
++	if pm_cd_pd $portdir; then
++		new_port=`pm_make -V PKGNAME ${flavor_option}`
++	else
++		new_port=`parse_index $portdir name` ||
++			fail "No entry for $portdir in $PM_INDEX"
++	fi
++}
++
+ check_for_updates () {
+ 	# Global: num_updates
+ 	local nf iport originflavor flavor origin port_ver do_update skip
+@@ -2148,24 +2166,6 @@
+ 	PM_NEEDS_UPDATE="${PM_NEEDS_UPDATE}${1} "
+ }
+ 
+-find_new_port () {
+-	# Global: new_port
+-	local portdir flavor flavor_option
+-
+-	[ -n "$new_port" ] && return
+-
+-	portdir=$(dir_part "$1")
+-	flavor=$(flavor_part "$1")
+-	flavor_option=${flavor:+FLAVOR=$flavor}
+-#	export_flavor $flavor
+-	if pm_cd_pd $portdir; then
+-		new_port=`pm_make -V PKGNAME ${flavor_option}`
+-	else
+-		new_port=`parse_index $portdir name` ||
+-			fail "No entry for $portdir in $PM_INDEX"
+-	fi
+-}
+-
+ update_build_l () {
+ 	local originflavor origin flavor iport
+ 
+@@ -3129,7 +3129,7 @@
+ 	dir=$(dir_part $1)
+ 	flavor=$(flavor_part $1)
+ 	pkgname=$(make -C "$pd/$dir" -V PKGNAME FLAVOR=$flavor) || return 1
+-	pkg info -x ${pkgname%-*}'-[^-]*'
++	pkg info -qx ${pkgname%-*}'-[^-]*'
+ }
+ 
+ if [ -z "$upg_port" -a -z "$REPLACE_ORIGIN" ]; then
