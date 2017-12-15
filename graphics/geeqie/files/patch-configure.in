@@ -1,0 +1,15 @@
+--- configure.in.orig	2017-11-27 13:02:57 UTC
++++ configure.in
+@@ -277,7 +277,11 @@ for dir in `echo "$withval" | tr : ' '`;
+ HAVE_LIRC=no
+ if test "x${lirc}" != "xno" ; then
+   AC_CHECK_HEADER(lirc/lirc_client.h,
+-    [AC_CHECK_LIB(lirc_client,lirc_init,[HAVE_LIRC=yes;LIBS=-llirc_client $LIBS;AC_DEFINE([HAVE_LIRC],[],[Define to 1 if LIRC must be used])],,)],)
++    [AC_CHECK_LIB(lirc_client,lirc_init,[
++      HAVE_LIRC=yes
++      LIBS="-llirc_client $LIBS"
++      AC_DEFINE([HAVE_LIRC],[],[Define to 1 if LIRC must be used])
++    ],,)],)
+ fi
+ AM_CONDITIONAL(HAVE_LIRC, [test "x$HAVE_LIRC" = xyes])
+ 
