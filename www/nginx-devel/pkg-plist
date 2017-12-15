@@ -6,13 +6,13 @@
 %%ETCDIR%%/win-utf
 @sample %%ETCDIR%%/mime.types-dist %%ETCDIR%%/mime.types
 @sample %%ETCDIR%%/nginx.conf-dist %%ETCDIR%%/nginx.conf
-%%WWWDATA%%@exec mkdir -p -m 755 %D/www/nginx-dist
-%%WWWDATA%%@exec if [ ! -d %D/www/nginx/ ] ; then ln -fs %D/www/nginx-dist %D/www/nginx; fi
+%%WWWDATA%%@postexec mkdir -p -m 755 %D/www/nginx-dist
+%%WWWDATA%%@postexec if [ ! -d %D/www/nginx/ ] ; then ln -fs %D/www/nginx-dist %D/www/nginx; fi
 %%WWWDATA%%www/nginx-dist/EXAMPLE_DIRECTORY-DONT_ADD_OR_TOUCH_ANYTHING
 %%WWWDATA%%www/nginx-dist/index.html
 %%WWWDATA%%www/nginx-dist/50x.html
-%%WWWDATA%%@exec chmod a-w %D/www/nginx-dist
-%%WWWDATA%%@unexec if [ -L %D/www/nginx ]; then rm -f %D/www/nginx; fi
+%%WWWDATA%%@postexec chmod a-w %D/www/nginx-dist
+%%WWWDATA%%@postunexec if [ -L %D/www/nginx ]; then rm -f %D/www/nginx; fi
 sbin/nginx
 @dir %%NGINX_TMPDIR%%
 @dir %%NGINX_LOGDIR%%
