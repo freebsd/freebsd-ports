@@ -1,10 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	tortoisehg
-PORTVERSION=	4.3.1
+PORTVERSION=	4.4.1
 CATEGORIES=	devel
 MASTER_SITES=	https://bitbucket.org/tortoisehg/targz/downloads/
-#MASTER_SITES=	http://cdn.bitbucket.org/tortoisehg/targz/downloads/
 
 MAINTAINER=	6yearold@gmail.com
 COMMENT=	GUI for Mercurial VCS
@@ -20,7 +19,7 @@ OPTIONS_DEFINE=	NAUTILUS NLS
 NAUTILUS_DESC=	Install TortoiseHG Nautilus extension
 OPTIONS_SUB=	yes
 
-USES=		pyqt:4 python:2.7
+USES=		pyqt:5 python:2.7
 USE_PYQT=	core gui network qscintilla2 xml
 NLS_USES=	gettext
 
