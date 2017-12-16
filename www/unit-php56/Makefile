@@ -1,6 +1,8 @@
 # Created by: Li-Wen Hsu <lwhsu@FreeBSD.org>
 # $FreeBSD$
 
+PHP_VER?=	56
+
 PKGNAMESUFFIX=	-php${PHP_VER}
 
 COMMENT=	PHP module for NGINX Unit
