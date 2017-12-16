@@ -17,10 +17,14 @@ validate_env dp_DEVELOPER dp_DISABLE_SIZE dp_DISTDIR dp_DISTINFO_FILE \
 
 set -u
 
-if [ ! -d "${dp_DISTDIR}" ]; then
-	mkdir -p "${dp_DISTDIR}"
-fi
-cd "${dp_DISTDIR}"
+case ${dp_TARGET} in
+	do-fetch|makesum)
+		if [ ! -d "${dp_DISTDIR}" ]; then
+			mkdir -p "${dp_DISTDIR}"
+		fi
+		cd "${dp_DISTDIR}"
+		;;
+esac
 
 for _file in "${@}"; do
 	file=${_file%%:*}
