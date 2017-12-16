@@ -19,7 +19,6 @@
     SUBDIR += afl
     SUBDIR += afterglow
     SUBDIR += aide
-    SUBDIR += aimsniff
     SUBDIR += akmos
     SUBDIR += amap
     SUBDIR += amavis-stats

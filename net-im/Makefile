@@ -123,7 +123,6 @@
     SUBDIR += pidgin-twitter
     SUBDIR += plasma-applet-ktp
     SUBDIR += poezio
-    SUBDIR += pork
     SUBDIR += profanity
     SUBDIR += prosody
     SUBDIR += prosody-modules
