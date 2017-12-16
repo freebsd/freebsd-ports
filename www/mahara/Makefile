@@ -12,6 +12,8 @@ COMMENT=	Open source ePortfolio system
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/../COPYING
 
+IGNORE_WITH_PHP=	70 71 72
+
 USES=		cpe php tar:bzip2
 USE_PHP=	dom gd session json curl xml xmlrpc openssl simplexml \
 		mcrypt zip

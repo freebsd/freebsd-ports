@@ -10,6 +10,8 @@ DISTNAME=	ftp_v${PORTVERSION}
 MAINTAINER=	danger@FreeBSD.org
 COMMENT=	Easily create, change, or delete virtual PureFTPd users
 
+IGNORE_WITH_PHP=	70 71 72
+
 WRKSRC=		${WRKDIR}/ftp
 
 USES=		php

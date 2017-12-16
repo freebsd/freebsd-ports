@@ -11,6 +11,8 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Server-side RSS aggregator written in PHP with MySQL
 
+IGNORE_WITH_PHP=	70 71 72
+
 NO_BUILD=	yes
 
 SUB_FILES=	pkg-message
