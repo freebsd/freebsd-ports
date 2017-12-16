@@ -1,0 +1,3 @@
+ActiveSupport::Cache store adapter for Flipper
+
+WWW: https://github.com/jnunemaker/flipper
