@@ -1,0 +1,33 @@
+From 76420459a13d9440b41864c93cb4ebb404bdab55 Mon Sep 17 00:00:00 2001
+From: Konstantin Tokarev <annulen@yandex.ru>
+Date: Thu, 12 Oct 2017 20:15:15 +0300
+Subject: [PATCH] Fix for 451c5a10: run adjustViewSize() after relayout
+
+Additional note for 451c5a10 + this:
+
+Since r162515 resize of FrameView that does not have scrollbars (or use
+overlay scrollbars) does not lead to automatic re-layout. In Trojita
+contentsSize() is called immediately after QWebPage::setViewportSize(),
+returning wrong result.
+
+Change-Id: I543b22d7bbe1514333007e5f99b97a7c12c19c1a
+---
+ Source/WebKit/qt/WebCoreSupport/QWebFrameAdapter.cpp | 3 +--
+ 1 file changed, 1 insertion(+), 2 deletions(-)
+
+diff --git a/Source/WebKit/qt/WebCoreSupport/QWebFrameAdapter.cpp b/Source/WebKit/qt/WebCoreSupport/QWebFrameAdapter.cpp
+index 941d8df603d9..df28e9f21f2c 100644
+--- Source/WebKit/qt/WebCoreSupport/QWebFrameAdapter.cpp
++++ Source/WebKit/qt/WebCoreSupport/QWebFrameAdapter.cpp
+@@ -961,10 +961,9 @@ void QWebFrameAdapter::setViewportSize(const QSize& size)
+     FrameView* view = frame->view();
+     ASSERT(view);
+     view->resize(size);
+-    view->adjustViewSize();
+-
+     if (view->needsLayout())
+         view->layout();
++    view->adjustViewSize();
+ }
+ 
+ 
