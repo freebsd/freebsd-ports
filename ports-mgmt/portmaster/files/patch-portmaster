@@ -1,5 +1,14 @@
-1;95;0c--- portmaster.orig	2017-12-15 12:40:13.818570000 +0100
-+++ portmaster	2017-12-15 16:49:11.583821000 +0100
+--- portmaster.orig	2017-12-14 17:26:55.000000000 +0100
++++ portmaster	2017-12-16 15:01:06.221836000 +0100
+@@ -1039,7 +1039,7 @@
+ 				return 0
+ 			else
+ 				reason=${moved##*|}
+-				[ "$3" != 'nonfatal' ] &&
++				[ "$flag" != 'nonfatal' ] &&
+ 					fail "The $sf port has been deleted: $reason"
+ 			fi ;;
+ 		${sf}\|*) moved_npd=${moved#*\|}	# New port directory
 @@ -1449,6 +1449,24 @@
  	fi
  }
@@ -50,16 +59,35 @@
  update_build_l () {
  	local originflavor origin flavor iport
  
-@@ -3129,7 +3129,7 @@
+@@ -2797,7 +2797,8 @@
+ 				numports=$(( $numports - 1 ))
+ 				continue
+ 			fi
+-			origin=`origin_from_pdb $port` ;;
++			origin=$(origin_from_pdb $port)
++			find_moved_port $origin $port nonfatal && origin=${moved_npd:-$origin} ;;
+ 		esac
+ 
+ 		case "$PM_NEEDS_UPDATE" in
+@@ -3033,7 +3034,7 @@
+ 			*)	echo '' ; no_valid_port ;;
+ 			esac
+ 		done ;;
+-	*)	upg_port=$(pkg query %n-%v $argv) ;;
++	*)	upg_port=$(pkg query %n-%v "$argv") ;;
+ 	esac
+ 
+ 	if [ -z "$portdir" -a -z "$upg_port" ]; then
+@@ -3129,7 +3130,7 @@
  	dir=$(dir_part $1)
  	flavor=$(flavor_part $1)
  	pkgname=$(make -C "$pd/$dir" -V PKGNAME FLAVOR=$flavor) || return 1
 -	pkg info -x ${pkgname%-*}'-[^-]*'
-+	pkg info -qx ${pkgname%-*}'-[^-]*'
++	pkg info -x ${pkgname%-*}'-[^-]*' 2>/dev/null
  }
  
  if [ -z "$upg_port" -a -z "$REPLACE_ORIGIN" ]; then
-@@ -3594,6 +3594,7 @@
+@@ -3594,6 +3595,7 @@
  	fi
  
  	pm_cd_pd $portdir
