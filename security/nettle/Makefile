@@ -36,8 +36,8 @@ PORTEXAMPLES=	*.c *.h
 CONFIGURE_ENV+=	CCPIC=-fPIC
 .endif
 
-post-patch:
 .if ${ARCH} == "mips64"
+post-patch:
 	@${REINPLACE_CMD} -e 's|__sgi|__unix__|' ${WRKSRC}/configure
 .endif
 
