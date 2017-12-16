@@ -1,7 +1,7 @@
 bin/keepassxc
 bin/keepassxc-cli
 %%AUTOTYPE%%lib/keepassxc/libkeepassx-autotype-xcb.so
-share/applications/org.keepassxc.desktop
+share/applications/org.keepassxc.KeePassXC.desktop
 share/icons/hicolor/128x128/apps/keepassxc-dark.png
 share/icons/hicolor/128x128/apps/keepassxc-locked.png
 share/icons/hicolor/128x128/apps/keepassxc-unlocked.png
@@ -40,6 +40,8 @@ share/icons/hicolor/scalable/apps/keepassxc-locked.svgz
 share/icons/hicolor/scalable/apps/keepassxc-unlocked.svgz
 share/icons/hicolor/scalable/apps/keepassxc.svgz
 share/icons/hicolor/scalable/mimetypes/application-x-keepassxc.svgz
+share/metainfo/org.keepassxc.KeePassXC.appdata.xml
+share/mime/packages/keepassxc.xml
 %%DATADIR%%/icons/application/128x128/apps/keepassxc-dark.png
 %%DATADIR%%/icons/application/128x128/apps/keepassxc-locked.png
 %%DATADIR%%/icons/application/128x128/apps/keepassxc-unlocked.png
@@ -202,6 +204,7 @@ share/icons/hicolor/scalable/mimetypes/application-x-keepassxc.svgz
 %%DATADIR%%/icons/database/C66_Money.png
 %%DATADIR%%/icons/database/C67_Certificate.png
 %%DATADIR%%/icons/database/C68_BlackBerry.png
+%%DATADIR%%/translations/keepassx_ca.qm
 %%DATADIR%%/translations/keepassx_cs.qm
 %%DATADIR%%/translations/keepassx_da.qm
 %%DATADIR%%/translations/keepassx_de.qm
@@ -230,5 +233,3 @@ share/icons/hicolor/scalable/mimetypes/application-x-keepassxc.svgz
 %%DATADIR%%/translations/keepassx_zh_CN.qm
 %%DATADIR%%/translations/keepassx_zh_TW.qm
 %%DATADIR%%/wordlists/eff_large.wordlist
-share/metainfo/org.keepassxc.appdata.xml
-share/mime/packages/keepassxc.xml
