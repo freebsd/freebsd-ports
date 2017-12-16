@@ -21,7 +21,7 @@ USE_PYTHON=	autoplist concurrent distutils
 USES=		python ssl
 
 post-patch:
-	@${REINPLACE_CMD} -e "s|swig\(', '-version\)|swig3.0\1|" ${WRKSRC}/${PYSETUP}
+	@${REINPLACE_CMD} -e "s|swig\(', '-version\)|swig3.0\1|" ${WRKSRC}/setup.py
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/M2Crypto/_m2crypto.so
