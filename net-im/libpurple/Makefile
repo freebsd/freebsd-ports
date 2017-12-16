@@ -3,7 +3,7 @@
 
 PORTNAME?=	libpurple
 PORTVERSION=	2.12.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES?=	net-im
 MASTER_SITES=	SF/pidgin/Pidgin/${PORTVERSION}
 DISTNAME=	pidgin-${PORTVERSION}
@@ -61,7 +61,7 @@ GG_DESC=	The Gadu-Gadu chat protocol
 IRC_DESC=	The Internet Relay Chat protocol
 JABBER_DESC=	The Jabber/XMPP/Google Talk protocol
 NOVELL_DESC=	The Novell GroupWise chat protocol
-OSCAR_DESC=	The AIM/ICQ/Oscar protocol
+OSCAR_DESC=	The ICQ/Oscar protocol
 QQ_DESC=	The Tercent QQ chat protocol
 SIMPLE_DESC=	The SIMPLE chat protocol
 ZEPHYR_DESC=	The Zephyr chat protocol
