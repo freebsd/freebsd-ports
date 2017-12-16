@@ -20,7 +20,7 @@ USES=		python:3.4+
 PLIST_FILES=	man/man1/lfm.1.gz
 
 post-patch:
-	@${REINPLACE_CMD} -e '/print(__doc__)/d' ${WRKSRC}/${PYSETUP}
+	@${REINPLACE_CMD} -e '/print(__doc__)/d' ${WRKSRC}/setup.py
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/lfm.1 ${STAGEDIR}${MAN1PREFIX}/man/man1/
