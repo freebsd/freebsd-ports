@@ -5,3 +5,4 @@ from the LevelDB API, except for:
 - All iteration except for single-step forward
 
 WWW: https://pypi.python.org/pypi/leveldb
+WWW: https://github.com/rjpower/py-leveldb

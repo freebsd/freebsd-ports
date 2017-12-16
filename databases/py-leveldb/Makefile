@@ -21,7 +21,7 @@ USE_PYTHON=	autoplist concurrent distutils
 USES=		localbase python
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' ${WRKSRC}/${PYSETUP}
+	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' ${WRKSRC}/setup.py
 	@${RM} -r ${WRKSRC}/leveldb/ ${WRKSRC}/snappy/
 
 post-install:
