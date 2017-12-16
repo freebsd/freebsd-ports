@@ -2,7 +2,7 @@
 
 PORTNAME=	portmaster
 PORTVERSION=	3.17.11
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	LOCAL/bdrewery/${PORTNAME}/ \
 		http://mirror.shatow.net/freebsd/${PORTNAME}/ \
