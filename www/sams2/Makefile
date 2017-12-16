@@ -11,6 +11,8 @@ COMMENT=	Squid Accounting Management System
 
 LICENSE=	BSD4CLAUSE
 
+IGNORE_WITH_PHP=	70 71 72
+
 LIB_DEPENDS=	libpcre.so:devel/pcre
 RUN_DEPENDS=	${LOCALBASE}/libexec/mysqld:${_MYSQL_SERVER}
 

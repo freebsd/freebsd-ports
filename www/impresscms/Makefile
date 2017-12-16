@@ -11,6 +11,8 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}_final
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Community Developed Content Management System
 
+IGNORE_WITH_PHP=	70 71 72
+
 USES=		cpe shebangfix python:run php zip:infozip
 SHEBANG_FILES=	htdocs/editors/FCKeditor/editor/dialog/fck_spellerpages/spellerpages/server-scripts/spellchecker.pl \
 		htdocs/libraries/phpopenid/admin/*.py htdocs/libraries/tcpdf/tools/tcpdf_addfont.php
