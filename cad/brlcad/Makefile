@@ -20,6 +20,8 @@ LIB_DEPENDS=	libdrm.so:graphics/libdrm \
 		libexpat.so:textproc/expat2 \
 		libfontconfig.so:x11-fonts/fontconfig
 
+CONFLICTS_INSTALL=	py[23][0-9]-epsilon
+
 USE_GL=		gl glu
 USE_XORG=	ice inputproto sm x11 xau xcb xdamage xdmcp xext xfixes xft xi \
 		xproto xrender xscrnsaver xt xxf86vm
