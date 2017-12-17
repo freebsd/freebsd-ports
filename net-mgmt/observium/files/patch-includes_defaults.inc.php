@@ -1,4 +1,4 @@
---- includes/defaults.inc.php.orig	2016-01-27 16:07:55 UTC
+--- includes/defaults.inc.php.orig	2017-09-07 22:26:04 UTC
 +++ includes/defaults.inc.php
 @@ -36,7 +36,7 @@ $config['db']['debug']      = TRUE;     
  
@@ -9,7 +9,7 @@
  #$config['html_dir']      = $config['install_dir'] . "/html";
  #$config['rrd_dir']       = $config['install_dir'] . "/rrd";
  #$config['template_dir']  = $config['install_dir'] . "/templates";
-@@ -49,27 +49,27 @@ $config['db']['debug']      = TRUE;     
+@@ -50,29 +50,29 @@ $config['db']['debug']      = TRUE;     
  
  // Location of executables
  
@@ -32,7 +32,6 @@
  $config['whois']          = "/usr/bin/whois";
 -$config['mtr']            = "/usr/bin/mtr";
 -$config['nmap']           = "/usr/bin/nmap";
--$config['nagios_plugins'] = "/usr/lib/nagios/plugins";
 -$config['ipmitool']       = "/usr/bin/ipmitool";
 -$config['virsh']          = "/usr/bin/virsh";
 -$config['dot']            = "/usr/bin/dot";
@@ -44,7 +43,6 @@
 -$config['wmic']           = "/bin/wmic";
 +$config['mtr']            = "/usr/local/sbin/mtr";
 +$config['nmap']           = "/usr/local/bin/nmap";
-+$config['nagios_plugins'] = "/usr/local/libexec/nagios";
 +$config['ipmitool']       = "/usr/local/bin/ipmitool";
 +$config['virsh']          = "/usr/local/bin/virsh";
 +$config['dot']            = "/usr/local/bin/dot";
@@ -55,5 +53,9 @@
 +$config['git']            = "/usr/local/bin/git"; // Used in show device config feature for git-enabled repos and rancid >= 3.2
 +$config['wmic']           = "/usr/local/bin/wmic";
  $config['file']           = "/usr/bin/file";
- 
- // RRD Format Settings
+ $config['wc']             = "/usr/bin/wc";
+-$config['sudo']           = "/usr/bin/sudo";
++$config['sudo']           = "/usr/local/bin/sudo";
+ $config['tail']           = "/usr/bin/tail";
+ $config['cut']            = "/usr/bin/cut";
+ $config['tr']             = "/usr/bin/tr";
