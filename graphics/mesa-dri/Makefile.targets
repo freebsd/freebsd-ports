@@ -3,6 +3,11 @@
 # this file holds common targets
 
 post-patch:
+# Use --link-static until ports/223191 is fixed
+	@${REINPLACE_CMD} -e '/$$LLVM_VERSION_MAJOR -ge 4/s|test |false |' ${WRKSRC}/configure
+. if ${COMPONENT} == osmesa
+	@${REINPLACE_CMD} -e '/$$LLVM_VERSION_MAJOR -ge 4/s|test |false |' ${WRKSRC}/configure.ac
+. endif
 .if ${OPSYS} == FreeBSD
 	@${REINPLACE_CMD} -e 's|x86_64|amd64|' ${WRKSRC}/configure
 . if ${COMPONENT} == osmesa
@@ -19,7 +24,7 @@ post-patch:
 . endif
 .endif
 	@${REINPLACE_CMD} -e 's|/etc/|${PREFIX}/etc/|g' \
-		${WRKSRC}/src/mesa/drivers/dri/common/xmlconfig.c
+		${WRKSRC}/src/util/xmlconfig.c
 
 pre-build: mesa-pre-build
 

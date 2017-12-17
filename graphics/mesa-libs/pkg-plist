@@ -1,3 +1,4 @@
+@comment etc/drirc
 %%EGL%%include/EGL/egl.h
 %%EGL%%include/EGL/eglext.h
 %%EGL%%include/EGL/eglextchromium.h
