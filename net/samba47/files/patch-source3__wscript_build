@@ -1,0 +1,18 @@
+--- source3/wscript_build.orig	2017-05-23 08:19:23 UTC
++++ source3/wscript_build
+@@ -741,6 +741,7 @@ bld.SAMBA3_LIBRARY('smbd_base',
+                         smbd_conn
+                         param_service
+                         AVAHI
++                        dns_sd
+                         PRINTBASE
+                         PROFILE
+                         LOCKING
+@@ -1129,6 +1130,7 @@ bld.SAMBA3_BINARY('client/smbclient',
+                       msrpc3
+                       RPC_NDR_SRVSVC
+                       cli_smb_common
++                      dns_sd
+                       archive
+                       ''')
+ 

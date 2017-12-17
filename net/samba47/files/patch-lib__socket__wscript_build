@@ -1,0 +1,10 @@
+--- lib/socket/wscript_build.orig	2017-01-11 07:55:14 UTC
++++ lib/socket/wscript_build
+@@ -2,6 +2,6 @@
+ 
+ bld.SAMBA_LIBRARY('interfaces',
+     source='interfaces.c',
+-    deps='samba-util',
++    deps='samba-util samba-debug',
+     private_library=True
+     )
