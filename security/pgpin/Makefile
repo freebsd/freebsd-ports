@@ -13,9 +13,6 @@ COMMENT=	PGP International version - improved for use in IN-CA
 
 LICENSE=	MIT
 
-DEPRECATED=	Does not support OpenPGP standards and uses untrustworthy algorithms
-EXPIRATION_DATE=2018-02-01
-
 PORTSCOUT=	ignore:1
 
 BROKEN_mips64=		Does not build
