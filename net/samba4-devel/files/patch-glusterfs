@@ -1,0 +1,31 @@
+--- lib/replace/system/filesys.h.orig	2017-12-16 01:37:41 UTC
++++ lib/replace/system/filesys.h
+@@ -213,8 +213,10 @@
+    this allows us to use a uniform error handling for our xattr
+    wrappers
+ */
+-#ifndef ENOATTR
++#if !defined(ENOATTR) && defined(ENODATA)
+ #define ENOATTR ENODATA
++#elif defined(ENOATTR) && !defined(ENODATA)
++#define ENODATA ENOATTR
+ #endif
+ 
+ 
+--- source3/modules/vfs_glusterfs.c.orig	2017-12-16 01:49:55 UTC
++++ source3/modules/vfs_glusterfs.c
+@@ -36,12 +36,13 @@
+  */
+ 
+ #include "includes.h"
++#include "system/filesys.h"
++#include "smbd/globals.h"
+ #include "smbd/smbd.h"
+ #include <stdio.h>
+ #include "api/glfs.h"
+ #include "lib/util/dlinklist.h"
+ #include "lib/util/tevent_unix.h"
+-#include "smbd/globals.h"
+ #include "lib/util/sys_rw.h"
+ #include "smbprofile.h"
+ #include "modules/posixacl_xattr.h"

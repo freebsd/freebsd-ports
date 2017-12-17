@@ -1,0 +1,40 @@
+--- source3/wscript_build.orig	2017-07-25 13:09:58 UTC
++++ source3/wscript_build
+@@ -240,11 +240,9 @@ bld.SAMBA3_SUBSYSTEM('SMBREGISTRY',
+                         talloc
+                         replace
+                         util_reg
+-                        samba-util
+-                        samba-security
+                         errors3
+                         dbwrap
+-                        samba3-util
++                        samba3util
+                         ''')
+ 
+ # Do not link against this use 'smbconf'
+@@ -509,7 +507,7 @@ bld.SAMBA3_LIBRARY('secrets3',
+ 
+ bld.SAMBA3_LIBRARY('smbldap',
+                     source='lib/smbldap.c',
+-                    deps='ldap lber samba-util smbconf',
++                    deps='ldap lber samba3util smbd_shim samba-debug smbconf',
+                     enabled=bld.CONFIG_SET("HAVE_LDAP"),
+                     private_library=False,
+                     abi_directory='lib/ABI',
+@@ -733,6 +731,7 @@ bld.SAMBA3_LIBRARY('smbd_base',
+                         smbd_conn
+                         param_service
+                         AVAHI
++                        dns_sd
+                         PRINTBASE
+                         PROFILE
+                         LOCKING
+@@ -1121,6 +1120,7 @@ bld.SAMBA3_BINARY('client/smbclient',
+                       msrpc3
+                       RPC_NDR_SRVSVC
+                       cli_smb_common
++                      dns_sd
+                       archive
+                       ''')
+ 
