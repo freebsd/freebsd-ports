@@ -1,0 +1,11 @@
+--- lib/param/wscript_build.orig	2017-01-11 07:55:14 UTC
++++ lib/param/wscript_build
+@@ -32,7 +32,7 @@ bld.SAMBA_GENERATOR('param_table_gen.c',
+ 
+ bld.SAMBA_LIBRARY('server-role',
+                   source='loadparm_server_role.c',
+-                  deps='samba-util',
++                  deps='samba-util samba-debug',
+                   private_library=True)
+ 
+ bld.SAMBA_LIBRARY('samba-hostconfig',

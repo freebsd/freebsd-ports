@@ -1,0 +1,32 @@
+--- dynconfig/wscript.orig	2017-01-11 07:55:14 UTC
++++ dynconfig/wscript
+@@ -137,6 +137,8 @@ dynconfig = {
+     'PKGCONFIGDIR' : {
+          'STD-PATH':  '${LIBDIR}/pkgconfig',
+          'FHS-PATH':  '${LIBDIR}/pkgconfig',
++         'OPTION':    '--with-pkgconfigdir',
++         'HELPTEXT':  'Where to put .pc files',
+     },
+     'CODEPAGEDIR' : {
+          'STD-PATH':  '${DATADIR}/codepages',
+@@ -242,8 +244,8 @@ dynconfig = {
+          'DELAY':     True,
+     },
+     'CONFIGFILE' : {
+-         'STD-PATH':  '${CONFIGDIR}/smb.conf',
+-         'FHS-PATH':  '${CONFIGDIR}/smb.conf',
++         'STD-PATH':  '${CONFIGDIR}/smb4.conf',
++         'FHS-PATH':  '${CONFIGDIR}/smb4.conf',
+          'DELAY':     True,
+     },
+     'LMHOSTSFILE' : {
+@@ -302,9 +304,6 @@ def configure(conf):
+         flavor = 'FHS-PATH'
+     else:
+         flavor = 'STD-PATH'
+-        if conf.env.PREFIX == '/usr' or conf.env.PREFIX == '/usr/local':
+-           Logs.error("Don't install directly under /usr or /usr/local without using the FHS option (--enable-fhs)")
+-           raise Utils.WafError("ERROR: invalid --prefix=%s value" % (conf.env.PREFIX))
+ 
+     explicit_set ={}
+ 
