@@ -1,4 +1,4 @@
---- source4/lib/http/http.c.orig	2017-01-11 07:55:15 UTC
+--- source4/lib/http/http.c.orig	2017-07-04 10:05:26 UTC
 +++ source4/lib/http/http.c
 @@ -112,7 +112,19 @@ static enum http_read_status http_parse_
  		return HTTP_ALL_DATA_READ;

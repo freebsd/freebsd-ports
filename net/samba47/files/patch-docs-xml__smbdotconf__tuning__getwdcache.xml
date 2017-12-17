@@ -1,0 +1,11 @@
+--- docs-xml/smbdotconf/tuning/getwdcache.xml.orig	2017-11-16 03:58:51 UTC
++++ docs-xml/smbdotconf/tuning/getwdcache.xml
+@@ -6,7 +6,7 @@
+     <para>This is a tuning option. When this is enabled a 
+     caching algorithm will be used to reduce the time taken for getwd() 
+     calls. This can have a significant impact on performance, especially 
+-    when the <smbconfoption name="wide smbconfoptions"/> parameter is set to <constant>no</constant>.</para>
++    when the <smbconfoption name="wide links"/> parameter is set to <constant>no</constant>.</para>
+ </description>
+ 
+ <value type="default">yes</value>

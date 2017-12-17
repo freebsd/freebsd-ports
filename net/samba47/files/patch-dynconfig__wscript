@@ -1,4 +1,4 @@
---- dynconfig/wscript.orig	2017-01-11 07:55:14 UTC
+--- dynconfig/wscript.orig	2017-07-04 10:05:25 UTC
 +++ dynconfig/wscript
 @@ -137,6 +137,8 @@ dynconfig = {
      'PKGCONFIGDIR' : {
@@ -9,7 +9,7 @@
      },
      'CODEPAGEDIR' : {
           'STD-PATH':  '${DATADIR}/codepages',
-@@ -242,8 +244,8 @@ dynconfig = {
+@@ -237,8 +239,8 @@ dynconfig = {
           'DELAY':     True,
      },
      'CONFIGFILE' : {
@@ -20,7 +20,7 @@
           'DELAY':     True,
      },
      'LMHOSTSFILE' : {
-@@ -302,9 +304,6 @@ def configure(conf):
+@@ -297,9 +299,6 @@ def configure(conf):
          flavor = 'FHS-PATH'
      else:
          flavor = 'STD-PATH'

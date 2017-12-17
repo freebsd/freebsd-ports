@@ -1,4 +1,4 @@
---- source3/client/dnsbrowse.c.orig	2017-01-11 07:55:15 UTC
+--- source3/client/dnsbrowse.c.orig	2017-07-04 10:05:25 UTC
 +++ source3/client/dnsbrowse.c
 @@ -91,7 +91,7 @@ static void do_smb_resolve(struct mdns_s
  		}
