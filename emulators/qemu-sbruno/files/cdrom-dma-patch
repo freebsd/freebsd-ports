@@ -1,10 +1,11 @@
-Index: include/hw/ide/internal.h
-@@ -27,7 +27,7 @@
- //#define DEBUG_IDE
- //#define DEBUG_IDE_ATAPI
- //#define DEBUG_AIO
+--- include/hw/ide/internal.h.orig	2017-11-19 18:54:05.000000000 -0700
++++ include/hw/ide/internal.h	2017-11-20 08:35:44.521365000 -0700
+@@ -15,7 +15,7 @@
+ #include "qapi/error.h"
+ 
+ /* debug IDE devices */
 -#define USE_DMA_CDROM
 +// #define USE_DMA_CDROM
  
- /* Bits of HD_STATUS */
- #define ERR_STAT		0x01
+ typedef struct IDEBus IDEBus;
+ typedef struct IDEDevice IDEDevice;
