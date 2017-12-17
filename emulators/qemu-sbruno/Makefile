@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	qemu
-PORTVERSION=	2.9.94.g20171023
+PORTVERSION=	2.11.50.g20171215
 CATEGORIES=	emulators
 MASTER_SITES=	GH
 PKGNAMESUFFIX?=	-sbruno
@@ -14,11 +14,10 @@ COMMENT?=	QEMU CPU Emulator - github bsd-user branch
 
 LICENSE=	GPLv2
 USE_GITHUB=	yes
-GH_ACCOUNT=	seanbruno
-GH_PROJECT=	${PORTNAME}-bsd-user
-GH_TAGNAME=	32c666c
+GH_TUPLE=	seanbruno:${PORTNAME}-bsd-user:8dcfea1 \
+		qemu:keycodemapdb:10739aa:keycodemapdb/ui/keycodemapdb
 HAS_CONFIGURE=	yes
-USES=		gmake pkgconfig bison perl5 python:2,build
+USES=		gmake pkgconfig bison perl5 python:2.7,build
 USE_PERL5=	build
 PATCH_STRIP=	-p1
 MAKE_ENV+=	BSD_MAKE="${MAKE}" V=1
@@ -263,9 +262,6 @@ post-patch:
 		${WRKSRC}/Makefile
 .endif
 
-#.if ${PORT_OPTIONS:MPCAP}
-#	@cd ${WRKSRC} && ${PATCH} --quiet < ${FILESDIR}/pcap-patch
-#.endif
 .if empty(PORT_OPTIONS:MCDROM_DMA)
 	@cd ${WRKSRC} && ${PATCH} --quiet < ${FILESDIR}/cdrom-dma-patch
 .endif
