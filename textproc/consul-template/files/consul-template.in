@@ -37,6 +37,7 @@ pidfile=/var/run/consul-template.pid
 procname="%%PREFIX%%/bin/consul-template"
 command="/usr/sbin/daemon"
 command_args="-f -p ${pidfile} /usr/bin/env ${consul_template_env} ${procname} -config=%%PREFIX%%/etc/consul-template.d ${consul_template_args}"
+sig_stop="INT"
 
 start_precmd=consul_template_startprecmd
 
