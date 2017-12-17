@@ -1,0 +1,76 @@
+--- ctdb/wscript.orig	2017-12-13 06:03:35 UTC
++++ ctdb/wscript
+@@ -86,6 +86,9 @@ def set_options(opt):
+     opt.add_option('--enable-ceph-reclock',
+                    help=("Enable Ceph CTDB recovery lock helper (default=no)"),
+                    action="store_true", dest='ctdb_ceph_reclock', default=False)
++    opt.add_option('--disable-ctdb-tests',
++                   help=("Disable CTDB tests (default=no)"),
++                   action="store_true", dest='ctdb_no_tests', default=False)
+ 
+     opt.add_option('--with-logdir',
+                    help=("Path to log directory"),
+@@ -210,7 +213,7 @@ def configure(conf):
+ 
+     if Options.options.ctdb_ceph_reclock:
+         if (conf.CHECK_HEADERS('rados/librados.h', False, False, 'rados') and
+-					conf.CHECK_LIB('rados', shlib=True)):
++                                                conf.CHECK_LIB('rados', shlib=True)):
+             Logs.info('Building with Ceph librados recovery lock support')
+             conf.define('HAVE_LIBRADOS', 1)
+         else:
+@@ -246,9 +249,15 @@ def configure(conf):
+                     conf.env.CTDB_VARDIR,
+                     conf.env.CTDB_RUNDIR))
+ 
+-    conf.env.CTDB_TEST_DATADIR = os.path.join(conf.env.EXEC_PREFIX,
+-                                              'share/ctdb/tests')
+-    conf.env.CTDB_TEST_LIBEXECDIR = os.path.join(conf.env.LIBEXECDIR, 'ctdb/tests')
++    if Options.options.ctdb_no_tests:
++        conf.env.ctdb_tests = False
++    else:
++        conf.env.ctdb_tests = True
++
++    if conf.env.ctdb_tests:
++        conf.env.CTDB_TEST_DATADIR = os.path.join(conf.env.EXEC_PREFIX,
++                                                    'share/ctdb/tests')
++        conf.env.CTDB_TEST_LIBEXECDIR = os.path.join(conf.env.LIBEXECDIR, 'ctdb/tests')
+ 
+     # Allow unified compilation and separate compilation of utilities
+     # to find includes
+@@ -573,9 +582,9 @@ def build(bld):
+     if bld.env.HAVE_LIBRADOS:
+         bld.SAMBA_BINARY('ctdb_mutex_ceph_rados_helper',
+                          source='utils/ceph/ctdb_mutex_ceph_rados_helper.c',
+-			 deps='talloc tevent rados',
+-			 includes='include',
+-			 install_path='${CTDB_HELPER_BINDIR}')
++                         deps='talloc tevent rados',
++                         includes='include',
++                         install_path='${CTDB_HELPER_BINDIR}')
+ 
+     sed_expr1 = 's|/usr/local/var/lib/ctdb|%s|g'  % (bld.env.CTDB_VARDIR)
+     sed_expr2 = 's|/usr/local/etc/ctdb|%s|g'      % (bld.env.CTDB_ETCDIR)
+@@ -718,6 +727,11 @@ def build(bld):
+     bld.install_dir(bld.env.CTDB_RUNDIR)
+     bld.install_dir(bld.env.CTDB_VARDIR)
+ 
++    if bld.env.ctdb_tests:
++        build_tests(bld)
++
++
++def build_tests(bld):
+     # Unit tests
+     ctdb_unit_tests = [
+         'db_hash_test',
+@@ -828,7 +842,9 @@ def build(bld):
+                               ib_deps,
+                          install_path='${CTDB_TEST_LIBEXECDIR}')
+ 
+-    if bld.env.HAVE_ROBUST_MUTEXES and sys.platform.startswith('linux'):
++    if bld.env.HAVE_ROBUST_MUTEXES and (
++        sys.platform.startswith('linux') or sys.platform.startswith('freebsd')
++    ):
+         bld.SAMBA_BINARY('test_mutex_raw',
+                          source='tests/src/test_mutex_raw.c',
+                          deps='pthread',

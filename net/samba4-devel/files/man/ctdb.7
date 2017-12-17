@@ -1,0 +1,783 @@
+'\" t
+.\"     Title: ctdb
+.\"    Author: 
+.\" Generator: DocBook XSL Stylesheets v1.79.1 <http://docbook.sf.net/>
+.\"      Date: 11/20/2017
+.\"    Manual: CTDB - clustered TDB database
+.\"    Source: ctdb
+.\"  Language: English
+.\"
+.TH "CTDB" "7" "11/20/2017" "ctdb" "CTDB \- clustered TDB database"
+.\" -----------------------------------------------------------------
+.\" * Define some portability stuff
+.\" -----------------------------------------------------------------
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.\" http://bugs.debian.org/507673
+.\" http://lists.gnu.org/archive/html/groff/2009-02/msg00013.html
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.ie \n(.g .ds Aq \(aq
+.el       .ds Aq '
+.\" -----------------------------------------------------------------
+.\" * set default formatting
+.\" -----------------------------------------------------------------
+.\" disable hyphenation
+.nh
+.\" disable justification (adjust text to left margin only)
+.ad l
+.\" -----------------------------------------------------------------
+.\" * MAIN CONTENT STARTS HERE *
+.\" -----------------------------------------------------------------
+.SH "NAME"
+ctdb \- Clustered TDB
+.SH "DESCRIPTION"
+.PP
+CTDB is a clustered database component in clustered Samba that provides a high\-availability load\-sharing CIFS server cluster\&.
+.PP
+The main functions of CTDB are:
+.sp
+.RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.sp -1
+.IP \(bu 2.3
+.\}
+Provide a clustered version of the TDB database with automatic rebuild/recovery of the databases upon node failures\&.
+.RE
+.sp
+.RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.sp -1
+.IP \(bu 2.3
+.\}
+Monitor nodes in the cluster and services running on each node\&.
+.RE
+.sp
+.RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.sp -1
+.IP \(bu 2.3
+.\}
+Manage a pool of public IP addresses that are used to provide services to clients\&. Alternatively, CTDB can be used with LVS\&.
+.RE
+.PP
+Combined with a cluster filesystem CTDB provides a full high\-availablity (HA) environment for services such as clustered Samba, NFS and other services\&.
+.SH "ANATOMY OF A CTDB CLUSTER"
+.PP
+A CTDB cluster is a collection of nodes with 2 or more network interfaces\&. All nodes provide network (usually file/NAS) services to clients\&. Data served by file services is stored on shared storage (usually a cluster filesystem) that is accessible by all nodes\&.
+.PP
+CTDB provides an "all active" cluster, where services are load balanced across all nodes\&.
+.SH "RECOVERY LOCK"
+.PP
+CTDB uses a
+\fIrecovery lock\fR
+to avoid a
+\fIsplit brain\fR, where a cluster becomes partitioned and each partition attempts to operate independently\&. Issues that can result from a split brain include file data corruption, because file locking metadata may not be tracked correctly\&.
+.PP
+CTDB uses a
+\fIcluster leader and follower\fR
+model of cluster management\&. All nodes in a cluster elect one node to be the leader\&. The leader node coordinates privileged operations such as database recovery and IP address failover\&. CTDB refers to the leader node as the
+\fIrecovery master\fR\&. This node takes and holds the recovery lock to assert its privileged role in the cluster\&.
+.PP
+By default, the recovery lock is implemented using a file (specified by
+\fICTDB_RECOVERY_LOCK\fR) residing in shared storage (usually) on a cluster filesystem\&. To support a recovery lock the cluster filesystem must support lock coherence\&. See
+\fBping_pong\fR(1)
+for more details\&.
+.PP
+The recovery lock can also be implemented using an arbitrary cluster mutex call\-out by using an exclamation point (\*(Aq!\*(Aq) as the first character of
+\fICTDB_RECOVERY_LOCK\fR\&. For example, a value of
+\fB!/usr/local/bin/myhelper recovery\fR
+would run the given helper with the specified arguments\&. See the source code relating to cluster mutexes for clues about writing call\-outs\&.
+.PP
+If a cluster becomes partitioned (for example, due to a communication failure) and a different recovery master is elected by the nodes in each partition, then only one of these recovery masters will be able to take the recovery lock\&. The recovery master in the "losing" partition will not be able to take the recovery lock and will be excluded from the cluster\&. The nodes in the "losing" partition will elect each node in turn as their recovery master so eventually all the nodes in that partition will be excluded\&.
+.PP
+CTDB does sanity checks to ensure that the recovery lock is held as expected\&.
+.PP
+CTDB can run without a recovery lock but this is not recommended as there will be no protection from split brains\&.
+.SH "PRIVATE VS PUBLIC ADDRESSES"
+.PP
+Each node in a CTDB cluster has multiple IP addresses assigned to it:
+.sp
+.RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.sp -1
+.IP \(bu 2.3
+.\}
+A single private IP address that is used for communication between nodes\&.
+.RE
+.sp
+.RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.sp -1
+.IP \(bu 2.3
+.\}
+One or more public IP addresses that are used to provide NAS or other services\&.
+.RE
+.sp
+.SS "Private address"
+.PP
+Each node is configured with a unique, permanently assigned private address\&. This address is configured by the operating system\&. This address uniquely identifies a physical node in the cluster and is the address that CTDB daemons will use to communicate with the CTDB daemons on other nodes\&.
+.PP
+Private addresses are listed in the file specified by the
+\fICTDB_NODES\fR
+configuration variable (see
+\fBctdbd.conf\fR(5), default
+/usr/local/etc/ctdb/nodes)\&. This file contains the list of private addresses for all nodes in the cluster, one per line\&. This file must be the same on all nodes in the cluster\&.
+.PP
+Private addresses should not be used by clients to connect to services provided by the cluster\&.
+.PP
+It is strongly recommended that the private addresses are configured on a private network that is separate from client networks\&. This is because the CTDB protocol is both unauthenticated and unencrypted\&. If clients share the private network then steps need to be taken to stop injection of packets to relevant ports on the private addresses\&. It is also likely that CTDB protocol traffic between nodes could leak sensitive information if it can be intercepted\&.
+.PP
+Example
+/usr/local/etc/ctdb/nodes
+for a four node cluster:
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+192\&.168\&.1\&.1
+192\&.168\&.1\&.2
+192\&.168\&.1\&.3
+192\&.168\&.1\&.4
+      
+.fi
+.if n \{\
+.RE
+.\}
+.SS "Public addresses"
+.PP
+Public addresses are used to provide services to clients\&. Public addresses are not configured at the operating system level and are not permanently associated with a particular node\&. Instead, they are managed by CTDB and are assigned to interfaces on physical nodes at runtime\&.
+.PP
+The CTDB cluster will assign/reassign these public addresses across the available healthy nodes in the cluster\&. When one node fails, its public addresses will be taken over by one or more other nodes in the cluster\&. This ensures that services provided by all public addresses are always available to clients, as long as there are nodes available capable of hosting this address\&.
+.PP
+The public address configuration is stored in a file on each node specified by the
+\fICTDB_PUBLIC_ADDRESSES\fR
+configuration variable (see
+\fBctdbd.conf\fR(5), recommended
+/usr/local/etc/ctdb/public_addresses)\&. This file contains a list of the public addresses that the node is capable of hosting, one per line\&. Each entry also contains the netmask and the interface to which the address should be assigned\&.
+.PP
+Example
+/usr/local/etc/ctdb/public_addresses
+for a node that can host 4 public addresses, on 2 different interfaces:
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+10\&.1\&.1\&.1/24 eth1
+10\&.1\&.1\&.2/24 eth1
+10\&.1\&.2\&.1/24 eth2
+10\&.1\&.2\&.2/24 eth2
+      
+.fi
+.if n \{\
+.RE
+.\}
+.PP
+In many cases the public addresses file will be the same on all nodes\&. However, it is possible to use different public address configurations on different nodes\&.
+.PP
+Example: 4 nodes partitioned into two subgroups:
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+Node 0:/usr/local/etc/ctdb/public_addresses
+	10\&.1\&.1\&.1/24 eth1
+	10\&.1\&.1\&.2/24 eth1
+
+Node 1:/usr/local/etc/ctdb/public_addresses
+	10\&.1\&.1\&.1/24 eth1
+	10\&.1\&.1\&.2/24 eth1
+
+Node 2:/usr/local/etc/ctdb/public_addresses
+	10\&.1\&.2\&.1/24 eth2
+	10\&.1\&.2\&.2/24 eth2
+
+Node 3:/usr/local/etc/ctdb/public_addresses
+	10\&.1\&.2\&.1/24 eth2
+	10\&.1\&.2\&.2/24 eth2
+      
+.fi
+.if n \{\
+.RE
+.\}
+.PP
+In this example nodes 0 and 1 host two public addresses on the 10\&.1\&.1\&.x network while nodes 2 and 3 host two public addresses for the 10\&.1\&.2\&.x network\&.
+.PP
+Public address 10\&.1\&.1\&.1 can be hosted by either of nodes 0 or 1 and will be available to clients as long as at least one of these two nodes are available\&.
+.PP
+If both nodes 0 and 1 become unavailable then public address 10\&.1\&.1\&.1 also becomes unavailable\&. 10\&.1\&.1\&.1 can not be failed over to nodes 2 or 3 since these nodes do not have this public address configured\&.
+.PP
+The
+\fBctdb ip\fR
+command can be used to view the current assignment of public addresses to physical nodes\&.
+.SH "NODE STATUS"
+.PP
+The current status of each node in the cluster can be viewed by the
+\fBctdb status\fR
+command\&.
+.PP
+A node can be in one of the following states:
+.PP
+OK
+.RS 4
+This node is healthy and fully functional\&. It hosts public addresses to provide services\&.
+.RE
+.PP
+DISCONNECTED
+.RS 4
+This node is not reachable by other nodes via the private network\&. It is not currently participating in the cluster\&. It
+\fIdoes not\fR
+host public addresses to provide services\&. It might be shut down\&.
+.RE
+.PP
+DISABLED
+.RS 4
+This node has been administratively disabled\&. This node is partially functional and participates in the cluster\&. However, it
+\fIdoes not\fR
+host public addresses to provide services\&.
+.RE
+.PP
+UNHEALTHY
+.RS 4
+A service provided by this node has failed a health check and should be investigated\&. This node is partially functional and participates in the cluster\&. However, it
+\fIdoes not\fR
+host public addresses to provide services\&. Unhealthy nodes should be investigated and may require an administrative action to rectify\&.
+.RE
+.PP
+BANNED
+.RS 4
+CTDB is not behaving as designed on this node\&. For example, it may have failed too many recovery attempts\&. Such nodes are banned from participating in the cluster for a configurable time period before they attempt to rejoin the cluster\&. A banned node
+\fIdoes not\fR
+host public addresses to provide services\&. All banned nodes should be investigated and may require an administrative action to rectify\&.
+.RE
+.PP
+STOPPED
+.RS 4
+This node has been administratively exclude from the cluster\&. A stopped node does no participate in the cluster and
+\fIdoes not\fR
+host public addresses to provide services\&. This state can be used while performing maintenance on a node\&.
+.RE
+.PP
+PARTIALLYONLINE
+.RS 4
+A node that is partially online participates in a cluster like a healthy (OK) node\&. Some interfaces to serve public addresses are down, but at least one interface is up\&. See also
+\fBctdb ifaces\fR\&.
+.RE
+.SH "CAPABILITIES"
+.PP
+Cluster nodes can have several different capabilities enabled\&. These are listed below\&.
+.PP
+RECMASTER
+.RS 4
+Indicates that a node can become the CTDB cluster recovery master\&. The current recovery master is decided via an election held by all active nodes with this capability\&.
+.sp
+Default is YES\&.
+.RE
+.PP
+LMASTER
+.RS 4
+Indicates that a node can be the location master (LMASTER) for database records\&. The LMASTER always knows which node has the latest copy of a record in a volatile database\&.
+.sp
+Default is YES\&.
+.RE
+.PP
+The RECMASTER and LMASTER capabilities can be disabled when CTDB is used to create a cluster spanning across WAN links\&. In this case CTDB acts as a WAN accelerator\&.
+.SH "LVS"
+.PP
+LVS is a mode where CTDB presents one single IP address for the entire cluster\&. This is an alternative to using public IP addresses and round\-robin DNS to loadbalance clients across the cluster\&.
+.PP
+This is similar to using a layer\-4 loadbalancing switch but with some restrictions\&.
+.PP
+One extra LVS public address is assigned on the public network to each LVS group\&. Each LVS group is a set of nodes in the cluster that presents the same LVS address public address to the outside world\&. Normally there would only be one LVS group spanning an entire cluster, but in situations where one CTDB cluster spans multiple physical sites it might be useful to have one LVS group for each site\&. There can be multiple LVS groups in a cluster but each node can only be member of one LVS group\&.
+.PP
+Client access to the cluster is load\-balanced across the HEALTHY nodes in an LVS group\&. If no HEALTHY nodes exists then all nodes in the group are used, regardless of health status\&. CTDB will, however never load\-balance LVS traffic to nodes that are BANNED, STOPPED, DISABLED or DISCONNECTED\&. The
+\fBctdb lvs\fR
+command is used to show which nodes are currently load\-balanced across\&.
+.PP
+In each LVS group, one of the nodes is selected by CTDB to be the LVS master\&. This node receives all traffic from clients coming in to the LVS public address and multiplexes it across the internal network to one of the nodes that LVS is using\&. When responding to the client, that node will send the data back directly to the client, bypassing the LVS master node\&. The command
+\fBctdb lvsmaster\fR
+will show which node is the current LVS master\&.
+.PP
+The path used for a client I/O is:
+.sp
+.RS 4
+.ie n \{\
+\h'-04' 1.\h'+01'\c
+.\}
+.el \{\
+.sp -1
+.IP "  1." 4.2
+.\}
+Client sends request packet to LVSMASTER\&.
+.RE
+.sp
+.RS 4
+.ie n \{\
+\h'-04' 2.\h'+01'\c
+.\}
+.el \{\
+.sp -1
+.IP "  2." 4.2
+.\}
+LVSMASTER passes the request on to one node across the internal network\&.
+.RE
+.sp
+.RS 4
+.ie n \{\
+\h'-04' 3.\h'+01'\c
+.\}
+.el \{\
+.sp -1
+.IP "  3." 4.2
+.\}
+Selected node processes the request\&.
+.RE
+.sp
+.RS 4
+.ie n \{\
+\h'-04' 4.\h'+01'\c
+.\}
+.el \{\
+.sp -1
+.IP "  4." 4.2
+.\}
+Node responds back to client\&.
+.RE
+.PP
+This means that all incoming traffic to the cluster will pass through one physical node, which limits scalability\&. You can send more data to the LVS address that one physical node can multiplex\&. This means that you should not use LVS if your I/O pattern is write\-intensive since you will be limited in the available network bandwidth that node can handle\&. LVS does work wery well for read\-intensive workloads where only smallish READ requests are going through the LVSMASTER bottleneck and the majority of the traffic volume (the data in the read replies) goes straight from the processing node back to the clients\&. For read\-intensive i/o patterns you can achieve very high throughput rates in this mode\&.
+.PP
+Note: you can use LVS and public addresses at the same time\&.
+.PP
+If you use LVS, you must have a permanent address configured for the public interface on each node\&. This address must be routable and the cluster nodes must be configured so that all traffic back to client hosts are routed through this interface\&. This is also required in order to allow samba/winbind on the node to talk to the domain controller\&. This LVS IP address can not be used to initiate outgoing traffic\&.
+.PP
+Make sure that the domain controller and the clients are reachable from a node
+\fIbefore\fR
+you enable LVS\&. Also ensure that outgoing traffic to these hosts is routed out through the configured public interface\&.
+.SS "Configuration"
+.PP
+To activate LVS on a CTDB node you must specify the
+\fICTDB_LVS_PUBLIC_IFACE\fR,
+\fICTDB_LVS_PUBLIC_IP\fR
+and
+\fICTDB_LVS_NODES\fR
+configuration variables\&.
+\fICTDB_LVS_NODES\fR
+specifies a file containing the private address of all nodes in the current node\*(Aqs LVS group\&.
+.PP
+Example:
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+CTDB_LVS_PUBLIC_IFACE=eth1
+CTDB_LVS_PUBLIC_IP=10\&.1\&.1\&.237
+CTDB_LVS_NODES=/usr/local/etc/ctdb/lvs_nodes
+	
+.fi
+.if n \{\
+.RE
+.\}
+.PP
+Example
+/usr/local/etc/ctdb/lvs_nodes:
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+192\&.168\&.1\&.2
+192\&.168\&.1\&.3
+192\&.168\&.1\&.4
+      
+.fi
+.if n \{\
+.RE
+.\}
+.PP
+Normally any node in an LVS group can act as the LVS master\&. Nodes that are highly loaded due to other demands maybe flagged with the "slave\-only" option in the
+\fICTDB_LVS_NODES\fR
+file to limit the LVS functionality of those nodes\&.
+.PP
+LVS nodes file that excludes 192\&.168\&.1\&.4 from being the LVS master node:
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+192\&.168\&.1\&.2
+192\&.168\&.1\&.3
+192\&.168\&.1\&.4 slave\-only
+      
+.fi
+.if n \{\
+.RE
+.\}
+.SH "TRACKING AND RESETTING TCP CONNECTIONS"
+.PP
+CTDB tracks TCP connections from clients to public IP addresses, on known ports\&. When an IP address moves from one node to another, all existing TCP connections to that IP address are reset\&. The node taking over this IP address will also send gratuitous ARPs (for IPv4, or neighbour advertisement, for IPv6)\&. This allows clients to reconnect quickly, rather than waiting for TCP timeouts, which can be very long\&.
+.PP
+It is important that established TCP connections do not survive a release and take of a public IP address on the same node\&. Such connections can get out of sync with sequence and ACK numbers, potentially causing a disruptive ACK storm\&.
+.SH "NAT GATEWAY"
+.PP
+NAT gateway (NATGW) is an optional feature that is used to configure fallback routing for nodes\&. This allows cluster nodes to connect to external services (e\&.g\&. DNS, AD, NIS and LDAP) when they do not host any public addresses (e\&.g\&. when they are unhealthy)\&.
+.PP
+This also applies to node startup because CTDB marks nodes as UNHEALTHY until they have passed a "monitor" event\&. In this context, NAT gateway helps to avoid a "chicken and egg" situation where a node needs to access an external service to become healthy\&.
+.PP
+Another way of solving this type of problem is to assign an extra static IP address to a public interface on every node\&. This is simpler but it uses an extra IP address per node, while NAT gateway generally uses only one extra IP address\&.
+.SS "Operation"
+.PP
+One extra NATGW public address is assigned on the public network to each NATGW group\&. Each NATGW group is a set of nodes in the cluster that shares the same NATGW address to talk to the outside world\&. Normally there would only be one NATGW group spanning an entire cluster, but in situations where one CTDB cluster spans multiple physical sites it might be useful to have one NATGW group for each site\&.
+.PP
+There can be multiple NATGW groups in a cluster but each node can only be member of one NATGW group\&.
+.PP
+In each NATGW group, one of the nodes is selected by CTDB to be the NATGW master and the other nodes are consider to be NATGW slaves\&. NATGW slaves establish a fallback default route to the NATGW master via the private network\&. When a NATGW slave hosts no public IP addresses then it will use this route for outbound connections\&. The NATGW master hosts the NATGW public IP address and routes outgoing connections from slave nodes via this IP address\&. It also establishes a fallback default route\&.
+.SS "Configuration"
+.PP
+NATGW is usually configured similar to the following example configuration:
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+CTDB_NATGW_NODES=/usr/local/etc/ctdb/natgw_nodes
+CTDB_NATGW_PRIVATE_NETWORK=192\&.168\&.1\&.0/24
+CTDB_NATGW_PUBLIC_IP=10\&.0\&.0\&.227/24
+CTDB_NATGW_PUBLIC_IFACE=eth0
+CTDB_NATGW_DEFAULT_GATEWAY=10\&.0\&.0\&.1
+      
+.fi
+.if n \{\
+.RE
+.\}
+.PP
+Normally any node in a NATGW group can act as the NATGW master\&. Some configurations may have special nodes that lack connectivity to a public network\&. In such cases, those nodes can be flagged with the "slave\-only" option in the
+\fICTDB_NATGW_NODES\fR
+file to limit the NATGW functionality of those nodes\&.
+.PP
+See the
+NAT GATEWAY
+section in
+\fBctdbd.conf\fR(5)
+for more details of NATGW configuration\&.
+.SS "Implementation details"
+.PP
+When the NATGW functionality is used, one of the nodes is selected to act as a NAT gateway for all the other nodes in the group when they need to communicate with the external services\&. The NATGW master is selected to be a node that is most likely to have usable networks\&.
+.PP
+The NATGW master hosts the NATGW public IP address
+\fICTDB_NATGW_PUBLIC_IP\fR
+on the configured public interfaces
+\fICTDB_NATGW_PUBLIC_IFACE\fR
+and acts as a router, masquerading outgoing connections from slave nodes via this IP address\&. If
+\fICTDB_NATGW_DEFAULT_GATEWAY\fR
+is set then it also establishes a fallback default route to the configured this gateway with a metric of 10\&. A metric 10 route is used so it can co\-exist with other default routes that may be available\&.
+.PP
+A NATGW slave establishes its fallback default route to the NATGW master via the private network
+\fICTDB_NATGW_PRIVATE_NETWORK\fRwith a metric of 10\&. This route is used for outbound connections when no other default route is available because the node hosts no public addresses\&. A metric 10 routes is used so that it can co\-exist with other default routes that may be available when the node is hosting public addresses\&.
+.PP
+\fICTDB_NATGW_STATIC_ROUTES\fR
+can be used to have NATGW create more specific routes instead of just default routes\&.
+.PP
+This is implemented in the
+11\&.natgw
+eventscript\&. Please see the eventscript file and the
+NAT GATEWAY
+section in
+\fBctdbd.conf\fR(5)
+for more details\&.
+.SH "POLICY ROUTING"
+.PP
+Policy routing is an optional CTDB feature to support complex network topologies\&. Public addresses may be spread across several different networks (or VLANs) and it may not be possible to route packets from these public addresses via the system\*(Aqs default route\&. Therefore, CTDB has support for policy routing via the
+13\&.per_ip_routing
+eventscript\&. This allows routing to be specified for packets sourced from each public address\&. The routes are added and removed as CTDB moves public addresses between nodes\&.
+.SS "Configuration variables"
+.PP
+There are 4 configuration variables related to policy routing:
+\fICTDB_PER_IP_ROUTING_CONF\fR,
+\fICTDB_PER_IP_ROUTING_RULE_PREF\fR,
+\fICTDB_PER_IP_ROUTING_TABLE_ID_LOW\fR,
+\fICTDB_PER_IP_ROUTING_TABLE_ID_HIGH\fR\&. See the
+POLICY ROUTING
+section in
+\fBctdbd.conf\fR(5)
+for more details\&.
+.SS "Configuration"
+.PP
+The format of each line of
+\fICTDB_PER_IP_ROUTING_CONF\fR
+is:
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+<public_address> <network> [ <gateway> ]
+      
+.fi
+.if n \{\
+.RE
+.\}
+.PP
+Leading whitespace is ignored and arbitrary whitespace may be used as a separator\&. Lines that have a "public address" item that doesn\*(Aqt match an actual public address are ignored\&. This means that comment lines can be added using a leading character such as \*(Aq#\*(Aq, since this will never match an IP address\&.
+.PP
+A line without a gateway indicates a link local route\&.
+.PP
+For example, consider the configuration line:
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+  192\&.168\&.1\&.99	192\&.168\&.1\&.1/24
+      
+.fi
+.if n \{\
+.RE
+.\}
+.PP
+If the corresponding public_addresses line is:
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+  192\&.168\&.1\&.99/24     eth2,eth3
+      
+.fi
+.if n \{\
+.RE
+.\}
+.PP
+\fICTDB_PER_IP_ROUTING_RULE_PREF\fR
+is 100, and CTDB adds the address to eth2 then the following routing information is added:
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+  ip rule add from 192\&.168\&.1\&.99 pref 100 table ctdb\&.192\&.168\&.1\&.99
+  ip route add 192\&.168\&.1\&.0/24 dev eth2 table ctdb\&.192\&.168\&.1\&.99
+      
+.fi
+.if n \{\
+.RE
+.\}
+.PP
+This causes traffic from 192\&.168\&.1\&.1 to 192\&.168\&.1\&.0/24 go via eth2\&.
+.PP
+The
+\fBip rule\fR
+command will show (something like \- depending on other public addresses and other routes on the system):
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+  0:		from all lookup local 
+  100:		from 192\&.168\&.1\&.99 lookup ctdb\&.192\&.168\&.1\&.99
+  32766:	from all lookup main 
+  32767:	from all lookup default 
+      
+.fi
+.if n \{\
+.RE
+.\}
+.PP
+\fBip route show table ctdb\&.192\&.168\&.1\&.99\fR
+will show:
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+  192\&.168\&.1\&.0/24 dev eth2 scope link
+      
+.fi
+.if n \{\
+.RE
+.\}
+.PP
+The usual use for a line containing a gateway is to add a default route corresponding to a particular source address\&. Consider this line of configuration:
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+  192\&.168\&.1\&.99	0\&.0\&.0\&.0/0	192\&.168\&.1\&.1
+      
+.fi
+.if n \{\
+.RE
+.\}
+.PP
+In the situation described above this will cause an extra routing command to be executed:
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+  ip route add 0\&.0\&.0\&.0/0 via 192\&.168\&.1\&.1 dev eth2 table ctdb\&.192\&.168\&.1\&.99
+      
+.fi
+.if n \{\
+.RE
+.\}
+.PP
+With both configuration lines,
+\fBip route show table ctdb\&.192\&.168\&.1\&.99\fR
+will show:
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+  192\&.168\&.1\&.0/24 dev eth2 scope link 
+  default via 192\&.168\&.1\&.1 dev eth2 
+      
+.fi
+.if n \{\
+.RE
+.\}
+.SS "Sample configuration"
+.PP
+Here is a more complete example configuration\&.
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+/usr/local/etc/ctdb/public_addresses:
+
+  192\&.168\&.1\&.98	eth2,eth3
+  192\&.168\&.1\&.99	eth2,eth3
+
+/usr/local/etc/ctdb/policy_routing:
+
+  192\&.168\&.1\&.98 192\&.168\&.1\&.0/24
+  192\&.168\&.1\&.98 192\&.168\&.200\&.0/24	192\&.168\&.1\&.254
+  192\&.168\&.1\&.98 0\&.0\&.0\&.0/0 	192\&.168\&.1\&.1
+  192\&.168\&.1\&.99 192\&.168\&.1\&.0/24
+  192\&.168\&.1\&.99 192\&.168\&.200\&.0/24	192\&.168\&.1\&.254
+  192\&.168\&.1\&.99 0\&.0\&.0\&.0/0 	192\&.168\&.1\&.1
+      
+.fi
+.if n \{\
+.RE
+.\}
+.PP
+The routes local packets as expected, the default route is as previously discussed, but packets to 192\&.168\&.200\&.0/24 are routed via the alternate gateway 192\&.168\&.1\&.254\&.
+.SH "NOTIFICATION SCRIPT"
+.PP
+When certain state changes occur in CTDB, it can be configured to perform arbitrary actions via a notification script\&. For example, sending SNMP traps or emails when a node becomes unhealthy or similar\&.
+.PP
+This is activated by setting the
+\fICTDB_NOTIFY_SCRIPT\fR
+configuration variable\&. The specified script must be executable\&.
+.PP
+Use of the provided
+/usr/local/etc/ctdb/notify\&.sh
+script is recommended\&. It executes files in
+/usr/local/etc/ctdb/notify\&.d/\&.
+.PP
+CTDB currently generates notifications after CTDB changes to these states:
+.RS 4
+init
+.RE
+.RS 4
+setup
+.RE
+.RS 4
+startup
+.RE
+.RS 4
+healthy
+.RE
+.RS 4
+unhealthy
+.RE
+.SH "DEBUG LEVELS"
+.PP
+Valid values for DEBUGLEVEL are:
+.RS 4
+ERR
+.RE
+.RS 4
+WARNING
+.RE
+.RS 4
+NOTICE
+.RE
+.RS 4
+INFO
+.RE
+.RS 4
+DEBUG
+.RE
+.SH "REMOTE CLUSTER NODES"
+.PP
+It is possible to have a CTDB cluster that spans across a WAN link\&. For example where you have a CTDB cluster in your datacentre but you also want to have one additional CTDB node located at a remote branch site\&. This is similar to how a WAN accelerator works but with the difference that while a WAN\-accelerator often acts as a Proxy or a MitM, in the ctdb remote cluster node configuration the Samba instance at the remote site IS the genuine server, not a proxy and not a MitM, and thus provides 100% correct CIFS semantics to clients\&.
+.PP
+See the cluster as one single multihomed samba server where one of the NICs (the remote node) is very far away\&.
+.PP
+NOTE: This does require that the cluster filesystem you use can cope with WAN\-link latencies\&. Not all cluster filesystems can handle WAN\-link latencies! Whether this will provide very good WAN\-accelerator performance or it will perform very poorly depends entirely on how optimized your cluster filesystem is in handling high latency for data and metadata operations\&.
+.PP
+To activate a node as being a remote cluster node you need to set the following two parameters in /etc/sysconfig/ctdb for the remote node:
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+CTDB_CAPABILITY_LMASTER=no
+CTDB_CAPABILITY_RECMASTER=no
+	
+.fi
+.if n \{\
+.RE
+.\}
+.PP
+Verify with the command "ctdb getcapabilities" that that node no longer has the recmaster or the lmaster capabilities\&.
+.SH "SEE ALSO"
+.PP
+\fBctdb\fR(1),
+\fBctdbd\fR(1),
+\fBctdbd_wrapper\fR(1),
+\fBctdb_diagnostics\fR(1),
+\fBltdbtool\fR(1),
+\fBonnode\fR(1),
+\fBping_pong\fR(1),
+\fBctdbd.conf\fR(5),
+\fBctdb-statistics\fR(7),
+\fBctdb-tunables\fR(7),
+\m[blue]\fB\%http://ctdb.samba.org/\fR\m[]
+.SH "AUTHOR"
+.br
+.PP
+This documentation was written by Ronnie Sahlberg, Amitay Isaacs, Martin Schwenke
+.SH "COPYRIGHT"
+.br
+Copyright \(co 2007 Andrew Tridgell, Ronnie Sahlberg
+.br
+.PP
+This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 3 of the License, or (at your option) any later version\&.
+.PP
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE\&. See the GNU General Public License for more details\&.
+.PP
+You should have received a copy of the GNU General Public License along with this program; if not, see
+\m[blue]\fB\%http://www.gnu.org/licenses\fR\m[]\&.
+.sp
