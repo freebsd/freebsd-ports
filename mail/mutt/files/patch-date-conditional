@@ -1,0 +1,97 @@
+--- PATCHES.orig	2017-12-03 03:10:17 UTC
++++ PATCHES
+@@ -0,0 +1 @@
++patch-1.5.0.ats.date_conditional.1
+--- hdrline.c.orig	2017-12-03 03:10:17 UTC
++++ hdrline.c
+@@ -428,6 +428,53 @@ hdr_format_str (char *dest,
+ 	const char *cp;
+ 	struct tm *tm; 
+ 	time_t T;
++	int i = 0, invert = 0;
++
++	if (optional && (op == '[' || op == '(')) {
++	  char *is;
++	  T = time(NULL);
++	  T -= (op == '(') ? hdr->received : hdr->date_sent;
++
++	  is = (char *)prefix;
++	  if( *is == '>' ) {
++	    invert = 1;
++	    ++is;
++	  }
++
++	  while( *is && *is != '?' ) {
++	    int t = strtol (is, &is, 10);
++	    switch (*(is++)) {
++	      case '?':
++		break;
++	      case 'y':
++		t *= 365 * 24 * 60 * 60;
++		break;
++	      case 'M':
++		t *= 30 * 24 * 60 * 60;
++		break;
++	      case 'w':
++		t *= 7 * 24 * 60 * 60;
++		break;
++	      case 'd':
++		t *= 24 * 60 * 60;
++		break;
++	      case 'h':
++		t *= 60 * 60;
++		break;
++	      case 'm':
++		t *= 60;
++		break;
++	    }
++	    i += t;
++	  }
++
++	  if (i < 0)
++	    i *= -1;
++
++	  if( (T > i || T < -1*i) ^ invert )
++	    optional = 0;
++	  break;
++	}
+ 
+ 	p = dest;
+ 
+--- muttlib.c.orig	2017-12-03 03:10:17 UTC
++++ muttlib.c
+@@ -1335,7 +1335,16 @@ void mutt_FormatString (char *dest,		/* 
+       if (*src == '?')
+       {
+ 	flags |= MUTT_FORMAT_OPTIONAL;
+-	src++;
++	ch = *(++src); /* save the character to switch on */
++	cp = prefix;
++	++src;
++	count = 0;
++	while (count < sizeof (prefix) && *src != '?')
++	{
++	  *cp++ = *src++;
++	  count++;
++	}
++	*cp = 0;
+       }
+       else
+       {
+@@ -1351,12 +1360,12 @@ void mutt_FormatString (char *dest,		/* 
+ 	  count++;
+ 	}
+ 	*cp = 0;
+-      }
+ 
+-      if (!*src)
+-	break; /* bad format */
++	if (!*src)
++	  break; /* bad format */
+ 
+-      ch = *src++; /* save the character to switch on */
++	ch = *src++; /* save the character to switch on */
++      }
+ 
+       if (flags & MUTT_FORMAT_OPTIONAL)
+       {
