@@ -1,7 +1,7 @@
 # Created by: timur@FreeBSD.org
 # $FreeBSD$
 
-PORTNAME?=			${SAMBA4_BASENAME}46
+PORTNAME?=			${SAMBA4_BASENAME}47
 PORTVERSION?=			${SAMBA4_VERSION}
 PORTREVISION?=			0
 CATEGORIES?=			net
@@ -15,13 +15,14 @@ LICENSE=			GPLv3
 
 IGNORE_NONTHREAD_PYTHON=	needs port lang/python${PYTHON_SUFFIX} to be build with THREADS support
 
-CONFLICTS_INSTALL?=		samba4-4.0.* samba4[1-57-9]-4.* p5-Parse-Pidl-4.*
+CONFLICTS?=			samba4-4.0.* samba4[1-689]-4.* p5-Parse-Pidl-4.*
 
-#EXTRA_PATCHES=		${PATCHDIR}/extra-patch-security:-p1
+EXTRA_PATCHES+=			${PATCHDIR}/0001-Zfs-provision-1.patch:-p1
+EXTRA_PATCHES+=			${PATCHDIR}/0001-Freenas-master-mdns-fixes-22.patch:-p1
 
 SAMBA4_BASENAME=		samba
 SAMBA4_PORTNAME=		${SAMBA4_BASENAME}4
-SAMBA4_VERSION=			4.6.11
+SAMBA4_VERSION=			4.7.3
 SAMBA4_DISTNAME=		${SAMBA4_BASENAME}-${SAMBA4_VERSION:S|.p|pre|:S|.r|rc|:S|.t|tp|:S|.a|alpha|}
 
 WRKSRC?=			${WRKDIR}/${DISTNAME}
@@ -34,6 +35,7 @@ VARDIR=				${DESTDIR}/var
 SAMBA4_RUNDIR=			${VARDIR}/run/${SAMBA4_PORTNAME}
 SAMBA4_LOGDIR=			${VARDIR}/log/${SAMBA4_PORTNAME}
 SAMBA4_LOCKDIR=			${VARDIR}/db/${SAMBA4_PORTNAME}
+SAMBA4_BINDDNSDIR=		${SAMBA4_LOCKDIR}/bind-dns
 SAMBA4_PRIVATEDIR=		${SAMBA4_LOCKDIR}/private
 SAMBA4_PAMDIR=			${PREFIX}/lib
 SAMBA4_LIBDIR=			${PREFIX}/lib/${SAMBA4_PORTNAME}
@@ -63,7 +65,7 @@ CONFIGURE_ARGS+=		--mandir="${MANPREFIX}/man" \
 # Flags
 CONFIGURE_ENV+=			PTHREAD_LDFLAGS="-lpthread"
 
-USES=				cpe compiler waf pkgconfig perl5 python:2.7 \
+USES=				cpe compiler waf pkgconfig perl5 \
 				readline iconv shebangfix
 USE_PERL5=			build
 USE_LDCONFIG=			${SAMBA4_LIBDIR}
@@ -77,35 +79,45 @@ PLIST_SUB+=			PKGCONFIGDIR=${PKGCONFIGDIR_REL}
 # Options
 OPTIONS_SUB=			yes
 
-OPTIONS_DEFINE=			ADS AD_DC CUPS \
-				DOCS FAM LDAP \
-				QUOTAS SYSLOG UTMP
-
+OPTIONS_DEFINE=			AD_DC ADS DEBUG DOCS FAM LDAP \
+				QUOTAS SYSLOG UTMP PROFILE
+# Make those default options
 OPTIONS_DEFAULT:=		${OPTIONS_DEFINE}
+# This shouldn't be default in the release
+OPTIONS_DEFINE+=		DEVELOPER MANDOC
 
-AD_DC_DESC=			Active Directory Domain Controller support
-ADS_DESC=			Active Directory client support(implies LDAP)
-EXP_MODULES_DESC=		Experimental modules(WANT_EXP_MODULES)
-FAM_DESC=			File Alteration Monitor support
-LDAP_DESC=			LDAP client support
-PAM_SMBPASS_DESC=		PAM authentication via passdb backends
-QUOTAS_DESC=			Disk quota support
-UTMP_DESC=			UTMP accounting support
-##############################################################################
-OPTIONS_DEFINE+=		CUPS DEBUG DEVELOPER MANPAGES EXP_MODULES NTVFS
+OPTIONS_DEFINE_amd64=		AESNI
+OPTIONS_DEFAULT_amd64=		AESNI
 
-DEVELOPER_DESC=			With development support(implies NTVFS)
-MANPAGES_DESC=			Build manpages from DOCBOOK templates
-NTVFS_DESC=			Build *DEPRECATED* NTVFS file server
+OPTIONS_DEFINE+=		CLUSTER CUPS GLUSTERFS GPGME NTVFS SPOTLIGHT
 
 OPTIONS_RADIO=			DNS ZEROCONF
 OPTIONS_RADIO_DNS=		NSUPDATE BIND99 BIND910 BIND911
-OPTIONS_RADIO_ZEROCONF=		AVAHI MDNSRESPONDER
+OPTIONS_RADIO_ZEROCONF=		MDNSRESPONDER AVAHI
+##############################################################################
+AD_DC_DESC=			Active Directory Domain Controller
+ADS_DESC=			Active Directory client(implies LDAP)
+AESNI_DESC=			Accelerated AES crypto functions(amd64 only)
+CLUSTER_DESC=			Clustering
+DEVELOPER_DESC=			With developer framework(implies NTVFS)
+FAM_DESC=			File Alteration Monitor
+GPGME_DESC=			GpgME
+GLUSTERFS_DESC=			GlusterFS
+LDAP_DESC=			LDAP client
+LIBZFS_DESC=			LibZFS
+SPOTLIGHT_DESC=			Spotlight
+MANDOC_DESC=			Build manpages from DOCBOOK templates
+NTVFS_DESC=			Build *DEPRECATED* NTVFS file server
+PICKY_DEVELOPER_DESC=		Treat compiler warnings as errors(implies DEVELOPER)
+PROFILE_DESC=			Profiling data
+QUOTAS_DESC=			Disk quota
+UTMP_DESC=			UTMP accounting
 
 BIND99_DESC=			Use Bind 9.9 as AD DC DNS server frontend
 BIND910_DESC=			Use Bind 9.10 as AD DC DNS server frontend
 BIND911_DESC=			Use Bind 9.11 as AD DC DNS server frontend
 NSUPDATE_DESC=			Use samba NSUPDATE utility for AD DC
+##############################################################################
 # XXX: Unconditional dependencies which can't be switched off(if present in the system)
 # popt
 LIB_DEPENDS+=			libpopt.so:devel/popt
@@ -115,75 +127,102 @@ LIB_DEPENDS+=			libinotify.so:devel/libinotify
 LIB_DEPENDS+=			libgnutls.so:security/gnutls
 # NFS4 ACL glue
 LIB_DEPENDS+=			libsunacl.so:sysutils/libsunacl
-# Libarchive
-BUILD_DEPENDS+=			libarchive>=3.1.2:archivers/libarchive
-RUN_DEPENDS+=			libarchive>=3.1.2:archivers/libarchive
+# Jansson
+BUILD_DEPENDS+=			jansson>=2.10:devel/jansson
+RUN_DEPENDS+=			jansson>=2.10:devel/jansson
 # External Samba dependencies
 # Needed for IDL compiler
 BUILD_DEPENDS+=			p5-Parse-Yapp>=0:devel/p5-Parse-Yapp
-# External Python modules
-BUILD_DEPENDS+=			${PYTHON_PKGNAMEPREFIX}dnspython>=1.9.4:dns/py-dnspython@${PY_FLAVOR}
-RUN_DEPENDS+=			${PYTHON_PKGNAMEPREFIX}dnspython>=1.9.4:dns/py-dnspython@${PY_FLAVOR}
-PLIST_SUB+=			PY_DNSPYTHON="@comment "
-#
-BUILD_DEPENDS+=			${PYTHON_PKGNAMEPREFIX}iso8601>=0.1.11:devel/py-iso8601@${PY_FLAVOR}
-RUN_DEPENDS+=			${PYTHON_PKGNAMEPREFIX}iso8601>=0.1.11:devel/py-iso8601@${PY_FLAVOR}
-PLIST_SUB+=			PY_ISO8601="@comment "
+# Libarchive
+BUILD_DEPENDS+=			libarchive>=3.1.2:archivers/libarchive
+RUN_DEPENDS+=			libarchive>=3.1.2:archivers/libarchive
+SAMBA4_BUNDLED_LIBS+=		!libarchive
+# cmocka
+BUILD_DEPENDS+=			cmocka>=1.1.1:sysutils/cmocka
+RUN_DEPENDS+=			cmocka>=1.1.1:sysutils/cmocka
+SAMBA4_BUNDLED_LIBS+=		!cmocka
 # talloc
 BUILD_DEPENDS+=			talloc>=2.1.9:devel/talloc
 RUN_DEPENDS+=			talloc>=2.1.9:devel/talloc
-SAMBA4_BUNDLED_LIBS+=		!talloc
+SAMBA4_BUNDLED_LIBS+=		!talloc,!pytalloc-util
 # tevent
 BUILD_DEPENDS+=			tevent>=0.9.34:devel/tevent
 RUN_DEPENDS+=			tevent>=0.9.34:devel/tevent
-SAMBA4_BUNDLED_LIBS+=		!tevent
+SAMBA4_BUNDLED_LIBS+=		!tevent,!pytevent
 # tdb
-BUILD_DEPENDS+=			tdb>=1.3.12:databases/tdb
-RUN_DEPENDS+=			tdb>=1.3.12:databases/tdb
-SAMBA4_BUNDLED_LIBS+=		!tdb
+BUILD_DEPENDS+=			tdb>=1.3.14:databases/tdb
+RUN_DEPENDS+=			tdb>=1.3.14:databases/tdb
+SAMBA4_BUNDLED_LIBS+=		!tdb,!pytdb
 # ldb
+SAMBA4_LDB=			12
+.if !defined(SAMBA4_LDB) || ${SAMBA4_LDB} == 13
+BUILD_DEPENDS+=			ldb13>=1.3.0:databases/ldb13
+RUN_DEPENDS+=			ldb13>=1.3.0:databases/ldb13
+.elif ${SAMBA4_LDB} == 12
+BUILD_DEPENDS+=			ldb12>=1.2.2:databases/ldb12
+RUN_DEPENDS+=			ldb12>=1.2.2:databases/ldb12
+.elif ${SAMBA4_LDB} == 11
 BUILD_DEPENDS+=			ldb>=1.1.29:databases/ldb
 RUN_DEPENDS+=			ldb>=1.1.29:databases/ldb
-SAMBA4_BUNDLED_LIBS+=		!ldb
-# Don't use external libcom_err, cmocka
-SAMBA4_BUNDLED_LIBS+=		com_err,cmocka
+.endif
+SAMBA4_BUNDLED_LIBS+=		!ldb,!pyldb,!pyldb-util
+# Don't use external libcom_err
+SAMBA4_BUNDLED_LIBS+=		com_err
 
+TEST_DEPENDS+=			python:lang/python \
+				bash:shells/bash \
+				tshark:net/tshark
+##############################################################################
 CONFIGURE_ARGS+=		\
 				--with-pam \
 				--with-iconv \
 				--with-winbind \
+				--with-regedit \
 				--disable-rpath \
+				--without-lttng \
 				--without-gettext \
 				--enable-pthreadpool \
+				--without-fake-kaserver \
+				--without-systemd \
+				--enable-gnutls \
+				--with-libarchive \
 				--with-acl-support \
 				--with-sendfile-support \
+				--disable-ctdb-tests \
 				${ICONV_CONFIGURE_BASE}
-
+##############################################################################
 BIND99_RUN_DEPENDS=		bind99>=9.9.0.0:dns/bind99
 BIND910_RUN_DEPENDS=		bind910>=9.10.0.0:dns/bind910
 BIND911_RUN_DEPENDS=		bind911>=9.11.0.0:dns/bind911
 NSUPDATE_RUN_DEPENDS=		samba-nsupdate:dns/samba-nsupdate
 
-DEBUG_CONFIGURE_ON=		--verbose --enable-debug
-DEBUG_MAKE_ARGS=		--verbose
-DEBUG_VARS=			WITH_DEBUG=yes
-
-# https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=194046
-GDB_CMD?=			${LOCALBASE}/bin/gdb
-# https://bugzilla.samba.org/show_bug.cgi?id=8969
-DEVELOPER_IMPLIES=		NTVFS
-DEVELOPER_BUILD_DEPENDS=	${GDB_CMD}:devel/gdb
-DEVELOPER_RUN_DEPENDS=		${GDB_CMD}:devel/gdb
-DEVELOPER_CONFIGURE_ON=		--enable-developer --enable-selftest --abi-check-disable
-DEVELOPER_VARS_OFF=		GDB_CMD=true
-# XXX: Mostly used in conjuction with DEVELOPER option, don't enable it if you don't know what you are doing
-NTVFS_CONFIGURE_WITH=		ntvfs-fileserver
-##############################################################################
 AVAHI_CONFIGURE_ENABLE=		avahi
 AVAHI_LIB_DEPENDS=		libavahi-client.so:net/avahi-app
 
 MDNSRESPONDER_CONFIGURE_ENABLE=	dnssd
 MDNSRESPONDER_LIB_DEPENDS=	libdns_sd.so:net/mDNSResponder
+##############################################################################
+DEBUG_CONFIGURE_ON=		--verbose --enable-debug
+DEBUG_MAKE_ARGS=		--verbose
+DEBUG_VARS_ON=			WITH_DEBUG=yes
+DEBUG_CFLAGS=			-g -ggdb -gdwarf-2 -gstrict-dwarf -O0
+# https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=194046
+GDB_CMD?=			${LOCALBASE}/bin/gdb
+# https://bugzilla.samba.org/show_bug.cgi?id=8969
+DEVELOPER_IMPLIES=		NTVFS
+DEVELOPER_CONFIGURE_ON=		--enable-developer --enable-selftest --abi-check-disable
+DEVELOPER_BUILD_DEPENDS=	${GDB_CMD}:devel/gdb
+DEVELOPER_TEST_DEPENDS=		${GDB_CMD}:devel/gdb
+DEVELOPER_VARS_OFF=		GDB_CMD=true
+
+PICKY_DEVELOPER_CONFIGURE_ON=	--picky-developer
+# XXX: Mostly used in conjuction with DEVELOPER option, don't enable it if you don't know what you are doing
+NTVFS_CONFIGURE_WITH=		ntvfs-fileserver
+##############################################################################
+AESNI_CONFIGURE_ON=		--accel-aes=intelaesni
+AESNI_CONFIGURE_OFF=		--accel-aes=none
+
+CLUSTER_CONFIGURE_WITH=		cluster-support
 
 CUPS_CONFIGURE_ENABLE=		cups iprint
 CUPS_LIB_DEPENDS=		libcups.so:print/cups
@@ -192,7 +231,22 @@ CUPS_LIB_DEPENDS=		libcups.so:print/cups
 FAM_USES=			fam
 FAM_CONFIGURE_WITH=		fam
 
+GLUSTERFS_CONFIGURE_ENABLE=	glusterfs
+GLUSTERFS_LIB_DEPENDS=		libglusterfs.so:net/glusterfs
+GLUSTERFS_VARS=			SAMBA4_MODULES+=vfs_glusterfs
+
+GPGME_CONFIGURE_WITH=		gpgme
+GPGME_LIB_DEPENDS=		libgpgme.so:security/gpgme
+
+PROFILE_CONFIGURE_WITH=		profiling-data
+
 QUOTAS_CONFIGURE_WITH=		quotas
+
+SPOTLIGHT_CONFIGURE_ENABLE=	spotlight
+SPOTLIGHT_BUILD_DEPENDS=	tracker>=1.4.1:sysutils/tracker
+SPOTLIGHT_RUN_DEPENDS=		tracker>=1.4.1:sysutils/tracker
+SPOTLIGHT_USES=			bison
+SPOTLIGHT_USE=			gnome=glib20
 
 SYSLOG_CONFIGURE_WITH=		syslog
 
@@ -210,9 +264,12 @@ LDAP_CONFIGURE_WITH=		ldap
 LDAP_USE=			OPENLDAP=yes
 LDAP_VARS=			SAMBA4_MODULES+=idmap_ldap
 
-MANPAGES_BUILD_DEPENDS=		${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:textproc/docbook-xsl \
+# LIBZFS_CONFIGURE_WITH=		libzfs
+# LIBZFS_VARS=			SAMBA4_MODULES+=vfs_zfs_space
+
+MANDOC_BUILD_DEPENDS=		${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:textproc/docbook-xsl \
 				xsltproc:textproc/libxslt
-MANPAGES_CONFIGURE_ENV_OFF=	XSLTPROC="true"
+MANDOC_CONFIGURE_ENV_OFF=	XSLTPROC="true"
 
 # !SAMBA4_SUBPORT
 .endif
@@ -223,10 +280,14 @@ MANPAGES_CONFIGURE_ENV_OFF=	XSLTPROC="true"
 
 .if !defined(SAMBA4_SUBPORT)
 
-.if ${PORT_OPTIONS:MEXP_MODULES}
-.	if !defined(WANT_EXP_MODULES) || empty(WANT_EXP_MODULES)
+.if !defined(WANT_EXP_MODULES) || empty(WANT_EXP_MODULES)
 WANT_EXP_MODULES=		vfs_cacheprime
-.	endif
+.endif
+
+.if ${WANT_EXP_MODULES:Mvfs_snapper}
+# snapper needs dbus
+LIB_DEPENDS+=			libdbus-1.so:devel/dbus
+LIB_DEPENDS+=			libdbus-glib-1.so:devel/dbus-glib
 .endif
 
 SAMBA4_MODULES+=		idmap_nss idmap_autorid idmap_rid idmap_hash idmap_tdb idmap_tdb2 idmap_script nss-info_hash
@@ -258,6 +319,50 @@ CONFIGURE_ARGS+=		--with-shared-modules="${SAMBA4_MODULES:C|-|_|:Q:C|(\\\\ )+|,|
 .for module in ${SAMBA4_MODULES}
 PLIST_FILES+=			lib/shared-modules/${module:C|_|/|:C|-|_|}.so
 .endfor
+# Python bindings
+.if defined(NO_PYTHON)
+USES+=				python:2.7,build,test
+CONFIGURE_ARGS+=		--disable-python
+PLIST_SUB+=			SAMBA4_PYTHON2="@comment " SAMBA4_PYTHON3="@comment "
+.else
+USES+=				python:2.7
+PLIST_SUB+=			SAMBA4_PYTHON2=""
+# External Python modules
+BUILD_DEPENDS+=			${PYTHON_PKGNAMEPREFIX}dnspython>=1.15.0:dns/py-dnspython@${PY_FLAVOR}
+RUN_DEPENDS+=			${PYTHON_PKGNAMEPREFIX}dnspython>=1.15.0:dns/py-dnspython@${PY_FLAVOR}
+
+BUILD_DEPENDS+=			${PYTHON_PKGNAMEPREFIX}iso8601>=0.1.11:devel/py-iso8601@${PY_FLAVOR}
+RUN_DEPENDS+=			${PYTHON_PKGNAMEPREFIX}iso8601>=0.1.11:devel/py-iso8601@${PY_FLAVOR}
+# XXX: This is a gross hack to make port use both Python 2.7+ and 3.3+
+# This is not officially supported, use at your own risk
+.if defined(WITH_SAMBA4_PYTHON3) && ${WITH_SAMBA4_PYTHON3:Mpython3\.[0-9]}
+SAMBA4_PYTHON3=			${WITH_SAMBA4_PYTHON3}
+SAMBA4_PYTHON3_VERSION:=	${SAMBA4_PYTHON3:S/^python//}
+SAMBA4_PYTHON3_VER:=		${SAMBA4_PYTHON3_VERSION:C/\.//}
+.if !exists(${PORTSDIR}/lang/python${SAMBA4_PYTHON3_VER})
+.error				unsupported or unknown Python version ${SAMBA4_PYTHON3_VERSION}
+.endif
+BUILD_DEPENDS+=			${SAMBA4_PYTHON3}:lang/python${SAMBA4_PYTHON3_VER}
+RUN_DEPENDS+=			${SAMBA4_PYTHON3}:lang/python${SAMBA4_PYTHON3_VER}
+# External Python modules
+BUILD_DEPENDS+=			py${SAMBA4_PYTHON3_VER}-dnspython>=1.15.0:dns/py-dnspython@py${SAMBA4_PYTHON3_VER}
+RUN_DEPENDS+=			py${SAMBA4_PYTHON3_VER}-dnspython>=1.15.0:dns/py-dnspython@py${SAMBA4_PYTHON3_VER}
+
+BUILD_DEPENDS+=			py${SAMBA4_PYTHON3_VER}-iso8601>=0.1.11:devel/py-iso8601@py${SAMBA4_PYTHON3_VER}
+RUN_DEPENDS+=			py${SAMBA4_PYTHON3_VER}-iso8601>=0.1.11:devel/py-iso8601@py${SAMBA4_PYTHON3_VER}
+# cpython-36m
+SAMBA4_PYTHON3_SO_ABI!=		[ ! -f "${LOCALBASE}/bin/${SAMBA4_PYTHON3}" ] || ${LOCALBASE}/bin/${SAMBA4_PYTHON3} -c 'import sysconfig; print(sysconfig.get_config_var("SOABI") or "")' 2>/dev/null
+SAMBA4_PYTHON3_SITELIBDIR=	lib/python${SAMBA4_PYTHON3_VERSION}/site-packages
+
+CONFIGURE_ENV+=			PYTHON3_SO_ABI_FLAG=.${SAMBA4_PYTHON3_SO_ABI}
+CONFIGURE_ARGS+=		--extra-python=${LOCALBASE}/bin/${SAMBA4_PYTHON3}
+
+PLIST_SUB+=			SAMBA4_PYTHON3="" SAMBA4_PYTHON3_SITELIBDIR="${SAMBA4_PYTHON3_SITELIBDIR}"
+.else
+PLIST_SUB+=			SAMBA4_PYTHON3="@comment "
+.endif
+.endif
+
 # !SAMBA4_SUBPORT
 .endif
 
@@ -266,10 +371,31 @@ PLIST_FILES+=			lib/shared-modules/${module:C|_|/|:C|-|_|}.so
 ##############################################################################
 
 .if !defined(SAMBA4_SUBPORT)
+
+# for libexecinfo: (so that __builtin_frame_address() finds the top of the stack)
+CFLAGS_amd64+=			-fno-omit-frame-pointer
+# No fancy color error messages
+CONFIGURE_ENV+=			NOCOLOR=yes WAF_LOG_FORMAT='%(c1)s%(zone)s%(c2)s %(message)s'
+MAKE_ENV+=			NOCOLOR=yes WAF_LOG_FORMAT='%(c1)s%(zone)s%(c2)s %(message)s'
+
+TEST_ENV+=			PYTHON="${PYTHON_CMD}" SHA1SUM=/sbin/sha1
+
+.if ${CHOSEN_COMPILER_TYPE} == clang
+CFLAGS+=			-fno-color-diagnostics
+.endif
+
+.if ${readline_ARGS} == port
+CFLAGS+=			-D_FUNCTION_DEF
+.endif
+# Make sure that the right version of Python is used by the tools
+# https://bugzilla.samba.org/show_bug.cgi?id=7305
+SHEBANG_FILES=			${PATCH_WRKSRC}/source4/scripting/bin/* ${PATCH_WRKSRC}/selftest/*
+
 SAMBA4_SUB=			SAMBA4_LOGDIR="${SAMBA4_LOGDIR}" \
 				SAMBA4_RUNDIR="${SAMBA4_RUNDIR}" \
 				SAMBA4_LOCKDIR="${SAMBA4_LOCKDIR}" \
 				SAMBA4_MODULEDIR="${SAMBA4_MODULEDIR}" \
+				SAMBA4_BINDDNSDIR="${SAMBA4_BINDDNSDIR}" \
 				SAMBA4_PRIVATEDIR="${SAMBA4_PRIVATEDIR}" \
 				SAMBA4_CONFDIR="${SAMBA4_CONFDIR}" \
 				SAMBA4_CONFIG="${SAMBA4_CONFIG}"
@@ -279,55 +405,6 @@ SUB_LIST+=			${SAMBA4_SUB}
 
 USE_RC_SUBR=			samba_server
 SUB_FILES=			pkg-message README.FreeBSD
-# Make sure that the right version of Python is used by the tools
-# https://bugzilla.samba.org/show_bug.cgi?id=7305
-SHEBANG_FILES=			${PATCH_WRKSRC}/source4/scripting/bin/*
-# No fancy color error messages
-
-# for libexecinfo: (so that __builtin_frame_address() finds the top of the stack)
-.if ${ARCH} == "amd64"
-CFLAGS+=			-fno-omit-frame-pointer
-.endif
-.if ${CHOSEN_COMPILER_TYPE} == clang
-CFLAGS+=			-fno-color-diagnostics
-.endif
-.if ${readline_ARGS} == port
-CFLAGS+=			-D_FUNCTION_DEF
-.endif
-CONFIGURE_ENV+=			NOCOLOR=yes WAF_LOG_FORMAT='%(c1)s%(zone)s%(c2)s %(message)s'
-MAKE_ENV+=			NOCOLOR=yes WAF_LOG_FORMAT='%(c1)s%(zone)s%(c2)s %(message)s'
-
-SAMBA_MAN1+=			dbwrap_tool.1 findsmb.1 gentest.1 locktest.1 \
-				log2pcap.1 masktest.1 mvxattr.1 ndrdump.1 nmblookup.1 \
-				nmblookup4.1 ntlm_auth.1 oLschema2ldif.1 \
-				profiles.1 regdiff.1 regpatch.1 regshell.1 \
-				regtree.1 rpcclient.1 sharesec.1 smbcacls.1 \
-				smbclient.1 smbcontrol.1 smbcquotas.1 smbget.1 \
-				smbstatus.1 smbtar.1 smbtorture.1 smbtree.1 \
-				testparm.1 vfstest.1 wbinfo.1
-
-SAMBA_MAN5+=			lmhosts.5 smbgetrc.5 smbpasswd.5 pam_winbind.conf.5 \
-				smb.conf.5
-
-SAMBA_MAN7+=			libsmbclient.7 samba.7 winbind_krb5_locator.7
-
-SAMBA_MAN8+=			cifsdd.8 eventlogadm.8 idmap_ad.8 idmap_autorid.8 idmap_hash.8 \
-				idmap_ldap.8 idmap_nss.8 idmap_rfc2307.8 idmap_rid.8 idmap_script.8 \
-				idmap_tdb.8 idmap_tdb2.8 net.8 nmbd.8 pam_winbind.8 pdbedit.8 \
-				samba-regedit.8 samba-tool.8 samba.8 smbd.8 smbpasswd.8 \
-				smbspool_krb5_wrapper.8 smbspool.8 smbta-util.8 vfs_acl_tdb.8 vfs_acl_xattr.8 \
-				vfs_aio_fork.8 vfs_aio_linux.8 vfs_aio_pthread.8 \
-				vfs_audit.8 vfs_cacheprime.8 vfs_cap.8 vfs_catia.8 vfs_ceph.8 \
-				vfs_commit.8 vfs_crossrename.8 vfs_default_quota.8 \
-				vfs_dirsort.8 vfs_extd_audit.8 vfs_fake_perms.8 vfs_fileid.8 \
-				vfs_fruit.8 vfs_full_audit.8 vfs_glusterfs.8 vfs_gpfs.8 vfs_media_harmony.8 \
-				vfs_netatalk.8 vfs_offline.8 vfs_prealloc.8 \
-				vfs_preopen.8 vfs_readahead.8 vfs_readonly.8 \
-				vfs_recycle.8 vfs_scannedonly.8 vfs_shadow_copy.8 \
-				vfs_shadow_copy2.8 vfs_snapper.8 vfs_smb_traffic_analyzer.8 \
-				vfs_streams_depot.8 vfs_streams_xattr.8 vfs_syncops.8 vfs_time_audit.8 \
-				vfs_tsmsm.8 vfs_worm.8 vfs_xattr_tdb.8 winbindd.8 \
-				vfs_linux_xfs_sgid.8 vfs_btrfs.8 vfs_shell_snap.8 vfs_unityed_media.8
 
 PORTDOCS=			README.FreeBSD
 
@@ -343,6 +420,8 @@ post-patch:
 					${PATCH_WRKSRC}/buildtools/scripts/abi_gen.sh
 				@${REINPLACE_CMD} -e 's|%%SAMBA4_CONFIG%%|${SAMBA4_CONFIG}|g' \
 					${PATCH_WRKSRC}/dynconfig/wscript
+				@${REINPLACE_CMD} -e '1s|/bin/bash|/bin/sh|' \
+					 ${PATCH_WRKSRC}/ctdb/tools/onnode
 
 # Use threading (or multiprocessing) but not thread (renamed in python 3+).
 pre-configure:
@@ -353,7 +432,9 @@ pre-configure:
 					${FALSE}; \
 				fi
 
-pre-build-MANPAGES-off:
+pre-build-MANDOC-off:
+				${MKDIR} ${BUILD_WRKSRC}/bin/default/docs-xml/
+				${CP} -rp ${BUILD_WRKSRC}/docs/manpages ${BUILD_WRKSRC}/bin/default/docs-xml/
 .for man in			libcli/nbt/man/nmblookup4.1 \
 				librpc/tools/ndrdump.1 \
 				source4/lib/registry/man/regdiff.1 \
@@ -366,21 +447,31 @@ pre-build-MANPAGES-off:
 				source4/torture/man/smbtorture.1 \
 				source4/utils/man/ntlm_auth4.1 \
 				source4/utils/man/oLschema2ldif.1
-					-@${MKDIR} `dirname ${BUILD_WRKSRC}/bin/default/${man}`
+					${MKDIR} `dirname ${BUILD_WRKSRC}/bin/default/${man}`
 					${INSTALL_MAN} ${FILESDIR}/man/`basename ${man}` ${BUILD_WRKSRC}/bin/default/${man}
 .endfor
-				-@${MKDIR} ${BUILD_WRKSRC}/bin/default/docs-xml/manpages
-.for man in			${SAMBA_MAN1} ${SAMBA_MAN5} ${SAMBA_MAN7} ${SAMBA_MAN8}
-					-${INSTALL_MAN} ${BUILD_WRKSRC}/docs/manpages/${man} ${BUILD_WRKSRC}/bin/default/docs-xml/manpages
+.if ${PORT_OPTIONS:MCLUSTER}
+				${MKDIR} ${BUILD_WRKSRC}/bin/default/ctdb/
+.	for man in		ctdb_diagnostics.1 ctdb.1 ctdbd_wrapper.1 ctdbd.1 \
+				ltdbtool.1 onnode.1 ping_pong.1 ctdbd.conf.5 \
+				ctdb.7 ctdb-statistics.7 ctdb-tunables.7
+					${INSTALL_MAN} ${FILESDIR}/man/${man} ${BUILD_WRKSRC}/bin/default/ctdb/
+.	endfor
+.endif
+
+post-install-rm-junk:
+.for f in vfs_aio_linux.8 vfs_btrfs.8 vfs_ceph.8 vfs_gpfs.8
+				${RM} ${STAGEDIR}${PREFIX}/man/man8/${f}
 .endfor
 
-post-install:
+post-install: post-install-rm-junk
 				${LN} -sf smb.conf.5.gz ${STAGEDIR}${PREFIX}/man/man5/smb4.conf.5.gz
 # Run post-install script
 .for dir in			${SAMBA4_LOGDIR} ${SAMBA4_RUNDIR} ${SAMBA4_LOCKDIR} ${SAMBA4_MODULEDIR}
 					${INSTALL} -d -m 0755 "${STAGEDIR}${dir}"
 .endfor
-				${INSTALL} -d -m 0700 "${STAGEDIR}${SAMBA4_PRIVATEDIR}"
+				${INSTALL} -d -m 0750 "${STAGEDIR}${SAMBA4_BINDDNSDIR}"
+				${INSTALL} -d -m 0750 "${STAGEDIR}${SAMBA4_PRIVATEDIR}"
 .for dir in			auth bind9 gensec gpext idmap ldb nss_info pdb perfcount process_model service vfs
 					${INSTALL} -d -m 0755 "${STAGEDIR}${SAMBA4_MODULEDIR}/${dir}"
 .endfor
@@ -390,11 +481,6 @@ post-install-DOCS-on:
 .for doc in			${PORTDOCS}
 				${INSTALL_DATA} ${WRKDIR}/${doc} ${STAGEDIR}${DOCSDIR}
 .endfor
-
-.if ${PORT_OPTIONS:MDEVELOPER}
-test: build
-				@(cd ${INSTALL_WRKSRC} && ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} ${INSTALL_WRKSRC}/${WAF_CMD} ${MAKE_ARGS} $@)
-.endif
 
 # !SAMBA4_SUBPORT
 .endif

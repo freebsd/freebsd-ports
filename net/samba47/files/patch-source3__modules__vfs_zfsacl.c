@@ -4,7 +4,7 @@ Date: Sat, 28 Oct 2017 16:13:16 +0200
 Subject: [PATCH] WIP: vfs_zfsacl: fix compilation error
 
 Bug: https://bugzilla.samba.org/show_bug.cgi?id=6133
---- source3/modules/vfs_zfsacl.c.orig	2017-10-25 10:55:08 UTC
+--- source3/modules/vfs_zfsacl.c.orig	2017-11-02 11:38:36 UTC
 +++ source3/modules/vfs_zfsacl.c
 @@ -51,6 +51,7 @@ static NTSTATUS zfs_get_nt_acl_common(st
  	SMB_STRUCT_STAT sbuf;

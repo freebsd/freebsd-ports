@@ -1,6 +1,6 @@
---- source3/librpc/crypto/gse.c.orig	2017-05-23 08:19:23 UTC
+--- source3/librpc/crypto/gse.c.orig	2017-07-04 10:05:25 UTC
 +++ source3/librpc/crypto/gse.c
-@@ -334,11 +334,12 @@ static NTSTATUS gse_get_client_auth_toke
+@@ -610,11 +610,12 @@ static NTSTATUS gse_get_server_auth_toke
  	struct gse_context *gse_ctx =
  		talloc_get_type_abort(gensec_security->private_data,
  				      struct gse_context);
@@ -13,4 +13,4 @@
 +	OM_uint32 gss_maj = -1;
  	OM_uint32 time_rec = 0;
  	struct timeval tv;
- 	struct cli_credentials *cli_creds = gensec_get_credentials(gensec_security);
+ 

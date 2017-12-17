@@ -1,0 +1,11 @@
+--- lib/replace/wscript.orig	2017-11-02 11:38:36 UTC
++++ lib/replace/wscript
+@@ -81,7 +81,7 @@ def configure(conf):
+     conf.CHECK_HEADERS('sys/atomic.h')
+     conf.CHECK_HEADERS('libgen.h')
+ 
+-    if conf.CHECK_CFLAGS('-Wno-format-truncation'):
++    if conf.CHECK_CFLAGS(['-Wno-format-truncation'] + conf.env.WERROR_CFLAGS):
+         conf.define('HAVE_WNO_FORMAT_TRUNCATION', '1')
+ 
+     # Check for process set name support

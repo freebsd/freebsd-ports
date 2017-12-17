@@ -1,6 +1,6 @@
---- source3/utils/net.c.orig	2017-08-08 06:56:05 UTC
+--- source3/utils/net.c.orig	2017-07-04 10:05:26 UTC
 +++ source3/utils/net.c
-@@ -1079,8 +1079,13 @@ static struct functable net_func[] = {
+@@ -1087,8 +1087,13 @@ static struct functable net_func[] = {
  		lp_set_cmdline("netbios name", c->opt_requester_name);
  	}
  

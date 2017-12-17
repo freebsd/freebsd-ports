@@ -1,4 +1,4 @@
---- source3/smbd/quotas.c.orig	2017-01-11 07:55:15 UTC
+--- source3/smbd/quotas.c.orig	2017-07-04 10:05:26 UTC
 +++ source3/smbd/quotas.c
 @@ -125,6 +125,7 @@ static bool nfs_quotas(char *nfspath, ui
  	if (!cutstr)

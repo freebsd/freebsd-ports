@@ -1,8 +1,8 @@
---- source3/wscript.orig	2017-05-23 08:19:23 UTC
+--- source3/wscript.orig	2017-07-04 10:05:26 UTC
 +++ source3/wscript
 @@ -47,6 +47,7 @@ def set_options(opt):
+     opt.SAMBA3_ADD_OPTION('sendfile-support')
      opt.SAMBA3_ADD_OPTION('utmp')
-     opt.SAMBA3_ADD_OPTION('pthreadpool', with_name="enable", without_name="disable", default=True)
      opt.SAMBA3_ADD_OPTION('avahi', with_name="enable", without_name="disable")
 +    opt.SAMBA3_ADD_OPTION('dnssd', with_name="enable", without_name="disable")
      opt.SAMBA3_ADD_OPTION('iconv')
@@ -26,7 +26,7 @@
      if Options.options.with_iconv:
          conf.env.with_iconv = True
          if not conf.CHECK_FUNCS_IN('iconv_open', 'iconv', headers='iconv.h'):
-@@ -1738,9 +1750,6 @@ main() {
+@@ -1748,9 +1760,6 @@ main() {
      if conf.CONFIG_SET('HAVE_VXFS'):
          default_shared_modules.extend(TO_LIST('vfs_vxfs'))
  

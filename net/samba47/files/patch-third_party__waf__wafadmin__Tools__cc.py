@@ -1,4 +1,4 @@
---- third_party/waf/wafadmin/Tools/cc.py.orig	2017-01-11 07:55:16 UTC
+--- third_party/waf/wafadmin/Tools/cc.py.orig	2017-07-04 10:05:26 UTC
 +++ third_party/waf/wafadmin/Tools/cc.py
 @@ -88,7 +88,7 @@ def c_hook(self, node):
  		raise Utils.WafError('Have you forgotten to set the feature "cc" on %s?' % str(self))
