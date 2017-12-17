@@ -34,7 +34,4 @@ pre-configure:
 		${FALSE}; \
 	fi
 
-post-install:
-	@${MV} ${STAGEDIR}/etc/OpenCL ${STAGEDIR}${PREFIX}/etc/
-
 .include <bsd.port.post.mk>
