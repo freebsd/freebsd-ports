@@ -76,7 +76,7 @@
 +			var_opt="$var_opt -V BUILD_DEPENDS -V LIB_DEPENDS" ;;
  		run-depends-list)
 - 			var_opt="$var_opt -V RUN_DEPENDS" ;;
-+ 			var_opt="$var_opt -V RUN_DEPENDS" -V LIB_DEPENDS" ;;
++ 			var_opt="$var_opt -V RUN_DEPENDS -V LIB_DEPENDS" ;;
  		*)
 @@ -2436,9 +2436,7 @@ dependency_check () {
  				confl_p=`pkg query -g "%n-%v" $glob 2>/dev/null`
