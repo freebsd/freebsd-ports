@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	yoshimi
-DISTVERSION=	1.5.5
+DISTVERSION=	1.5.6
 CATEGORIES=	audio
 
 MAINTAINER=	hello@blubee.me
@@ -29,9 +29,5 @@ USE_XORG=	x11 ice sm xext
 
 CMAKE_SOURCE_PATH=	${WRKSRC}/src
 INSTALLS_ICONS=	yes
-
-post-install:
-	@${MV} ${STAGEDIR}${PREFIX}/share/yoshimi/yoshimi-user-manual.pdf \
-		${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
