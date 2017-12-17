@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	postgis
-PORTVERSION=	2.3.5
+PORTVERSION=	2.4.2
 CATEGORIES=	databases geography
 MASTER_SITES=	http://download.osgeo.org/postgis/source/
-PKGNAMESUFFIX=	23
+PKGNAMESUFFIX=	24
 
 MAINTAINER=	lbartoletti@tuxfamily.org
 COMMENT=	Geographic objects support for PostgreSQL databases
@@ -17,7 +17,7 @@ LIB_DEPENDS=	libproj.so:graphics/proj \
 		libgeos.so:graphics/geos \
 		libjson-c.so:devel/json-c
 
-CONFLICTS=	postgis20  postgis21 postgis22 postgis24 postgis
+CONFLICTS_INSTALL=	postgis20  postgis21 postgis22 postgis23 postgis
 
 USES=		gettext gmake iconv:wchar_t libtool:keepla perl5 pgsql pkgconfig shebangfix
 GNU_CONFIGURE=	yes
@@ -64,17 +64,6 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 .include <bsd.port.pre.mk>
 
-post-patch:
-	@${GREP} -lR 'bin/bash' ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} -e "s|/bin/bash|/bin/sh|"
-	@${GREP} -lR '/usr/bin/psql' ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} \
-		-e "s|/usr/bin/psql|${LOCALBASE}/bin/pgsql|"
-	@${GREP} -lR '/usr/lib/postgresql/9.4/bin/psql' ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} \
-		-e "s|/usr/lib/postgresql/9.4/bin/psql|${LOCALBASE}/bin/pgsql|"
-	@${GREP} -lR '/usr/share/postgresql/contrib' ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} \
-		-e "s|/usr/share/postgresql/contrib|${LOCALBASE}/share/postgresql/contrib|"
-	@${GREP} -lR '/usr/share/postgresql/9.4/contrib' ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} \
-		-e "s|/usr/share/postgresql/9.4/contrib|${LOCALBASE}/share/postgresql/contrib/postgis-2.3|"
-
 pre-configure:
 	@${SH} ${PKGINSTALL} ${PORTNAME} PRE-INSTALL
 
@@ -90,17 +79,17 @@ post-install:
 .else
 	${RM} ${STAGEDIR}${PREFIX}/bin/shp2pgsql-gui
 .endif
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/liblwgeom-2.3.so.0.0.0
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/postgresql/postgis-2.3.so
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/liblwgeom-2.4.so.0.0.0
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/postgresql/postgis-2.4.so
 .if ${PORT_OPTIONS:MTOPOLOGY}
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/postgresql/postgis_topology-2.3.so
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/postgresql/postgis_topology-2.4.so
 .endif
 .if ${PORT_OPTIONS:MRASTER}
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/raster2pgsql
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/postgresql/rtpostgis-2.3.so
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/postgresql/rtpostgis-2.4.so
 .endif
 .if ${PORT_OPTIONS:MADDRSTD}
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/postgresql/address_standardizer-2.3.so
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/postgresql/address_standardizer-2.4.so
 .endif
 
 .include <bsd.port.post.mk>
