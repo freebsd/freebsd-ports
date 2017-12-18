@@ -1,7 +1,7 @@
 # Created by: timur@FreeBSD.org
 # $FreeBSD$
 
-PORTNAME?=			${SAMBA4_BASENAME}47
+PORTNAME?=			${SAMBA4_BASENAME}-devel
 PORTVERSION?=			${SAMBA4_VERSION}
 PORTREVISION?=			0
 CATEGORIES?=			net
