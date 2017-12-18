@@ -9,6 +9,8 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION:R}
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	New variant of NetHack
 
+BROKEN=		does not build: ./vaults.des: line 110, pos 9 : Core function 'level.depth' has unknown return type 'i'.
+
 GNU_CONFIGURE=	yes
 USES=		gmake groff ncurses
 MAKE_JOBS_UNSAFE=	yes
