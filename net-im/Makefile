@@ -3,7 +3,6 @@
 
     COMMENT = Instant messaging
 
-    SUBDIR += bsflite
     SUBDIR += centerim
     SUBDIR += centerim-devel
     SUBDIR += chattahoochie

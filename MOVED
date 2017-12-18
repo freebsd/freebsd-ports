@@ -9816,3 +9816,4 @@ devel/cld||2017-12-13|Has expired: Unfetchable for more than six months (google 
 devel/py-ode|devel/py-PyODE|2017-12-14|Rename to reflect official Python modules naming scheme
 net-im/pork||2017-12-16|Removed, AIM shut down on 2017-12-15
 security/aimsniff||2017-12-16|Removed, AIM shut down on 2017-12-15
+net-im/bsflite||2017-12-18|Removed, AIM shut down on 2017-12-15
