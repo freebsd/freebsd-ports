@@ -146,7 +146,19 @@
  # Final twiddling of compiler options to work around known bugs
  
  nativeccprofopts="$nativecccompopts"
-@@ -1723,7 +1730,7 @@ SYSLIB=-l\$(1)
+@@ -1701,6 +1708,11 @@ case "$buggycc" in
+     nativecccompopts="$nativecccompopts -fomit-frame-pointer";;
+ esac
+ 
++# Allow user-defined C compiler flags
++
++bytecccompopts="$bytecccompopts $CFLAGS"
++nativecccompopts="$nativecccompopts $CFLAGS"
++
+ # Finish generated files
+ 
+ cclibs="$cclibs $mathlib"
+@@ -1723,7 +1735,7 @@ SYSLIB=-l\$(1)
  MKLIB=${TOOLPREF}ar rc \$(1) \$(2); ${TOOLPREF}ranlib \$(1)
  #ml let mklib out files opts = Printf.sprintf "${TOOLPREF}ar rc %s %s %s; ${TOOLPREF}ranlib %s" out opts files out;;
  EOF
