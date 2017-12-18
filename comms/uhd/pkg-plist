@@ -143,13 +143,14 @@ share/man/man1/usrp_x3xx_fpga_burner.1.gz
 %%DATADIR%%/examples/test_messages
 %%DATADIR%%/examples/test_pps_input
 %%DATADIR%%/examples/test_timed_commands
+%%DATADIR%%/examples/twinrx_freq_hopping
 %%DATADIR%%/examples/tx_bursts
 %%DATADIR%%/examples/tx_samples_c
 %%DATADIR%%/examples/tx_samples_from_file
 %%DATADIR%%/examples/tx_timed_samples
 %%DATADIR%%/examples/tx_waveforms
 %%DATADIR%%/examples/txrx_loopback_to_file
-%%DATADIR%%/images/003.010.001.001.tag
+%%DATADIR%%/images/003.010.002.000.tag
 %%DATADIR%%/images/LICENSE
 %%DATADIR%%/images/bit/usrp_n200_r3_fpga.bit
 %%DATADIR%%/images/bit/usrp_n200_r4_fpga.bit
