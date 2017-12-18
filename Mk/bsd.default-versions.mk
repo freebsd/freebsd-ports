@@ -85,7 +85,7 @@ PYTHON2_DEFAULT?=	2.7
 PYTHON3_DEFAULT?=	3.6
 # Possible values: 2.2, 2.3, 2.4
 RUBY_DEFAULT?=		2.3
-# Possible values: 4.4, 4.5, 4.6
+# Possible values: 4.4, 4.5, 4.6, 4.7
 SAMBA_DEFAULT?=		4.4
 # Possible values: base, openssl, openssl-devel, libressl, libressl-devel
 .if !defined(SSL_DEFAULT)
