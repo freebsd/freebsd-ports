@@ -10,152 +10,114 @@ MAINTAINER=	dg@syrec.org
 COMMENT=	Modular C++ IRC daemon
 
 LICENSE=	GPLv2
-
-CONFLICTS=	inspircd-1.*
-
-USE_GITHUB=	yes
-GH_ACCOUNT=	inspircd
-
-USE_RC_SUBR=	${PORTNAME}
-MAKEFILE=	BSDmakefile
-
-USERS=	ircd
-GROUPS=	ircd
-INSPIRCD_UID=	72
-
-INSPIRCD_RUN?=	/var/run/${PORTNAME}
-INSPIRCD_LOG?=	/var/log/${PORTNAME}/ircd.log
-SUB_LIST+=	PORTNAME=${PORTNAME} \
-		INSPIRCD_LOG=${INSPIRCD_LOG} \
-		INSPIRCD_RUN=${INSPIRCD_RUN} \
-		USERS=${USERS} \
-		GROUPS=${GROUPS}
+LICENSE_FILE=	${WRKSRC}/docs/COPYING
 
 # Configure script is written in perl
 USES=		cpe perl5
 USE_PERL5=	build
-
 CPE_VENDOR=	inspire_ircd
 CPE_PRODUCT=	inspircd
+USE_GITHUB=	yes
 
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-cc=${CXX} --config-dir=${ETCDIR} \
-		--module-dir=${PREFIX}/lib/${PORTNAME}/modules \
-		--prefix=${PREFIX}/lib/${PORTNAME} \
-		--binary-dir=${PREFIX}/bin --library-dir=${PREFIX}/lib/${PORTNAME} \
-		--log-dir=${INSPIRCD_LOG} --data-dir=/var/db/inspircd \
-		--enable-kqueue --disable-interactive \
-		--uid=${INSPIRCD_UID}
+CONFIGURE_ARGS=	--with-cc=${CXX} \
+		--config-dir=${ETCDIR} \
+		--prefix=${PREFIX}/libexec/${PORTNAME} \
+		--binary-dir=${PREFIX}/bin \
+		--module-dir=${PREFIX}/libexec/${PORTNAME}/modules \
+		--log-dir=${INSPIRCD_LOGDIR} \
+		--data-dir=${INSPIRCD_DBDIR} \
+		--uid=${INSPIRCD_UID} \
+		--enable-kqueue \
+		--disable-interactive
 
-OPTIONS_DEFINE=	MYSQL PGSQL SQLITE LDAPAUTH LDAPOPER GNUTLS OPENSSL PCRE POSIX GEOIP
-OPTIONS_DEFAULT=	OPENSSL POSIX
+USE_RC_SUBR=	${PORTNAME}
+MAKEFILE=	BSDmakefile
 
+USERS=		ircd
+GROUPS=		ircd
+INSPIRCD_UID=	72
+
+INSPIRCD_DBDIR?=	/var/db/${PORTNAME}
+INSPIRCD_LOGDIR?=	/var/log/${PORTNAME}
+INSPIRCD_RUNDIR?=	/var/run/${PORTNAME}
+
+SUB_FILES=	pkg-deinstall
+SUB_LIST=	PORTNAME=${PORTNAME} \
+		INSPIRCD_DBDIR=${INSPIRCD_DBDIR} \
+		INSPIRCD_LOGDIR=${INSPIRCD_LOGDIR} \
+		INSPIRCD_RUNDIR=${INSPIRCD_RUNDIR} \
+		INSPIRCD_USER=${USERS} \
+		INSPIRCD_GROUP=${GROUPS}
+PLIST_SUB=	INSPIRCD_DBDIR=${INSPIRCD_DBDIR} \
+		INSPIRCD_LOGDIR=${INSPIRCD_LOGDIR} \
+		INSPIRCD_RUNDIR=${INSPIRCD_RUNDIR} \
+		INSPIRCD_USER=${USERS} \
+		INSPIRCD_GROUP=${GROUPS}
+
+CONFLICTS=	inspircd-1.*
+
+OPTIONS_DEFINE=	GEOIP GNUTLS IPV6 LDAPAUTH LDAPOPER MYSQL OPENSSL PCRE PGSQL POSIX SQLITE
+OPTIONS_DEFAULT=OPENSSL POSIX
+OPTIONS_SUB=	yes
+
+GEOIP_DESC=	Build m_geoip module
 GNUTLS_DESC=	Build m_ssl_gnutls module
 LDAPAUTH_DESC=	Build m_ldapauth module
 LDAPOPER_DESC=	Build m_ldapoper module
 MYSQL_DESC=	Build m_mysql module
 OPENSSL_DESC=	Build m_ssl_openssl module
-PGSQL_DESC=	Build m_pgsql module
-SQLITE_DESC=	Build m_sqlite3 module
 PCRE_DESC=	Build m_regex_pcre module
+PGSQL_DESC=	Build m_pgsql module
 POSIX_DESC=	Build m_regex_posix module
-GEOIP_DESC=	Build m_geoip module
+SQLITE_DESC=	Build m_sqlite3 module
 
-.include <bsd.port.options.mk>
+GEOIP_LIB_DEPENDS=	libGeoIP.so:net/GeoIP
+GEOIP_VARS=		extras+=m_geoip.cpp
 
-.if ${PORT_OPTIONS:MLDAPAUTH}
-USE_OPENLDAP=	yes
-EXTRAS:=${EXTRAS},m_ldapauth.cpp
-PLIST_SUB+=	LDAPAUTH=""
-.else
-PLIST_SUB+=	LDAPAUTH="@comment "
-.endif
+GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls
+GNUTLS_USES=		pkgconfig
+GNUTLS_CONFGURE_ENABLE=	gnutls
+GNUTLS_VARS=		extras+=m_ssl_gnutls.cpp
 
-.if ${PORT_OPTIONS:MLDAPOPER}
-USE_OPENLDAP=	yes
-EXTRAS:=${EXTRAS},m_ldapoper.cpp
-PLIST_SUB+=	LDAPOPER=""
-.else
-PLIST_SUB+=	LDAPOPER="@comment "
-.endif
+IPV6_CONFIGURE_ENABLE=	ipv6
 
-.if ${PORT_OPTIONS:MMYSQL}
-USE_MYSQL=	yes
-EXTRAS:=${EXTRAS},m_mysql.cpp
-PLIST_SUB+=	MYSQL=""
-.else
-PLIST_SUB+=	MYSQL="@comment "
-.endif
+LDAPAUTH_USE=		openldap=yes
+LDAPAUTH_VARS=		extras+=m_ldapauth.cpp
 
-.if ${PORT_OPTIONS:MPGSQL}
-USES+=		pgsql
-EXTRAS:=${EXTRAS},m_pgsql.cpp
-PLIST_SUB+=	PGSQL=""
-.else
-PLIST_SUB+=	PGSQL="@comment "
-.endif
+LDAPOPER_USE=		openldap=yes
+LDAPOPER_VARS=		extras+=m_ldapoper.cpp
 
-.if ${PORT_OPTIONS:MSQLITE}
-USES+=	pkgconfig sqlite
-EXTRAS:=${EXTRAS},m_sqlite3.cpp
-PLIST_SUB+=	SQLITE=""
-.else
-PLIST_SUB+=	SQLITE="@comment "
-.endif
+MYSQL_USES=		mysql
+MYSQL_VARS=		extras+=m_mysql.cpp
 
-.if ${PORT_OPTIONS:MGNUTLS}
-USES+=	pkgconfig
-LIB_DEPENDS+=	libgnutls.so:security/gnutls
-CONFIGURE_ARGS+=	--enable-gnutls
-EXTRAS:=${EXTRAS},m_ssl_gnutls.cpp
-PLIST_SUB+=	GNUTLS=""
-.else
-PLIST_SUB+=	GNUTLS="@comment "
-.endif
+OPENSSL_USES=		pkgconfig ssl
+OPENSSL_CONFIGURE_ENABLE=	openssl
+OPENSSL_VARS=		extras+=m_ssl_openssl.cpp
 
-.if ${PORT_OPTIONS:MOPENSSL}
-USES+=	ssl pkgconfig
-CONFIGURE_ARGS+=	--enable-openssl
-EXTRAS:=${EXTRAS},m_ssl_openssl.cpp
-PLIST_SUB+=	OPENSSL=""
-.else
-PLIST_SUB+=	OPENSSL="@comment "
-.endif
+PCRE_LIB_DEPENDS=	libpcre.so:devel/pcre
+PCRE_VARS=		extras+=m_regex_pcre.cpp
 
-.if ${PORT_OPTIONS:MPCRE}
-LIB_DEPENDS+=	libpcre.so:devel/pcre
-EXTRAS:=${EXTRAS},m_regex_pcre.cpp
-PLIST_SUB+=	PCRE=""
-.else
-PLIST_SUB+=	PCRE="@comment "
-.endif
+PGSQL_USES=		pgsql
+PGSQL_VARS=		extras+=m_pgsql.cpp
 
-.if ${PORT_OPTIONS:MPOSIX}
-EXTRAS:=${EXTRAS},m_regex_posix.cpp
-PLIST_SUB+=	POSIX=""
-.else
-PLIST_SUB+=	POSIX="@comment "
-.endif
+POSIX_VARS=		extras+=m_regex_posix.cpp
 
-.if ${PORT_OPTIONS:MGEOIP}
-LIB_DEPENDS+=	libGeoIP.so:net/GeoIP
-EXTRAS:=${EXTRAS},m_geoip.cpp
-PLIST_SUB+=	GEOIP=""
-.else
-PLIST_SUB+=	GEOIP="@comment "
-.endif
+SQLITE_USES=		pkgconfig sqlite
+SQLITE_VARS=		extras+=m_sqlite3.cpp
 
 pre-configure:
-	@if [ ${EXTRAS} ]; then \
-		cd ${WRKSRC} && ${CONFIGURE_CMD} --enable-extras=${EXTRAS} ; \
-	fi
+	@(cd ${WRKSRC}/src/modules && for m in ${EXTRAS}; do ${RLN} extra/$$m $$m; done)
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|DATA_PATH "/inspircd.pid"|"/var/run/inspircd/inspircd.pid"|' ${WRKSRC}/src/inspircd.cpp
+	@${REINPLACE_CMD} -e 's|DATA_PATH "/inspircd.pid"|"${INSPIRCD_RUNDIR}/inspircd.pid"|' ${WRKSRC}/src/inspircd.cpp
 	@${REINPLACE_CMD} -e 's|conf/examples|examples|g' ${WRKSRC}/docs/conf/inspircd.conf.example
 
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/${PORTNAME}/modules/*.so
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/libexec/${PORTNAME}/modules/*.so
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+	@${MKDIR} ${STAGEDIR}${INSPIRCD_DBDIR}
+	@${MKDIR} ${STAGEDIR}${INSPIRCD_LOGDIR}
+	@${MKDIR} ${STAGEDIR}${INSPIRCD_RUNDIR}
 
 .include <bsd.port.mk>
