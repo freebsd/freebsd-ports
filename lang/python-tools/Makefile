@@ -14,24 +14,21 @@ LICENSE=	PSFL
 
 PORTSCOUT=	ignore:1
 
-USES=		python shebangfix tar:xz uniquefiles
+USES=		python shebangfix tar:xz
+USE_PYTHON=	flavors concurrent
 NO_BUILD=	yes
 
 DIST_SUBDIR=	python
-DISTINFO_FILE=	${PORTSDIR}/lang/python${PYTHON_SUFFIX}/distinfo
-WRKSRC=		${WRKDIR}/Python-${PORTVERSION}/Tools/scripts
+DISTINFO_FILE=	${.CURDIR}/../python${PYTHON_SUFFIX}/distinfo
+WRKSRC_SUBDIR=		Tools/scripts
 
 SCRIPT_FILES=	byteyears checkpyc copytime crlf dutree \
 		lfcr ptags untabify
 PYLIB_FILES=	tabnanny timeit
-PLIST_FILES=	${SCRIPT_FILES:C/^.*/bin\/&/g} ${PYLIB_FILES:C/^.*/bin\/&/g}
+PLIST_FILES=	${SCRIPT_FILES:C|^|bin/|} ${PYLIB_FILES:C|^|bin/|}
 
-SHEBANG_FILES=	${SCRIPT_FILES:C/^.*/&\.py/g} \
-		../../Lib/tabnanny.py ../../Lib/timeit.py
-
-UNIQUE_SUFFIX=		-${PYTHON_VER}
-UNIQUE_SUFFIX_FILES=	${SCRIPT_FILES:C/^.*/bin\/&/g} \
-			${PYLIB_FILES:C/^.*/bin\/&/g}
+SHEBANG_FILES=	${SCRIPT_FILES:C|$|.py|} \
+		${PYLIB_FILES:C|.*|../../Lib/&.py|}
 
 .include <bsd.port.pre.mk>
 
