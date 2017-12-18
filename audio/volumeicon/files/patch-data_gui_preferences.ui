@@ -1,5 +1,5 @@
---- data/gui/preferences.ui.orig	2017-12-12 18:43:30 UTC
-+++ data/gui/preferences.ui
+--- data/gui/preferences.ui.orig	2015-03-02 23:54:36.000000000 +0100
++++ data/gui/preferences.ui	2017-12-18 17:23:45.219716000 +0100
 @@ -197,7 +197,7 @@
                                <object class="GtkLabel" id="label5">
                                  <property name="visible">True</property>
