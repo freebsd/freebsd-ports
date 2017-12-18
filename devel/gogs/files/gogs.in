@@ -2,5 +2,5 @@
 
 cd %%PREFIX%%/libexec/%%PORTNAME%% &&
 USER=%%GOGS_USER%% \
-HOME=$(getent passwd %%GOGS_USER%% | cut -d: -f6) \
-su -m %%GOGS_USER%% -c './%%PORTNAME%% web'
+HOME=$(echo ~%%GOGS_USER%%) \
+su -m %%GOGS_USER%% -c './%%PORTNAME%% web --config %%ETCDIR%%/conf/app.ini'

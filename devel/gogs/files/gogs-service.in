@@ -24,6 +24,7 @@ stop_cmd="%%PORTNAME%%_stop"
 load_rc_config ${name}
 
 : ${%%PORTNAME%%_enable="NO"}
+: ${%%PORTNAME%%_config="%%ETCDIR%%/conf/app.ini"}
 
 is_process_running() {
   local pidfile=$1
@@ -43,11 +44,11 @@ stop_daemon() {
     return 1
   fi
   export USER=%%GOGS_USER%%
-  export HOME=$(getent passwd %%GOGS_USER%% | cut -d: -f6)
+  export HOME=$(echo ~%%GOGS_USER%%)
   touch $logfile
   chmod 640 $logfile
   cd %%PREFIX%%/libexec/%%PORTNAME%%
-  /usr/sbin/daemon -P $pidfile -u %%GOGS_USER%% %%PREFIX%%/libexec/%%PORTNAME%%/%%PORTNAME%% web >>$logfile 2>&1
+  /usr/sbin/daemon -P $pidfile -u %%GOGS_USER%% %%PREFIX%%/libexec/%%PORTNAME%%/%%PORTNAME%% web --config ${%%PORTNAME%%_config} >>$logfile 2>&1
   if is_process_running $pidfile; then
     echo "started %%PORTNAME%% (pid=$(cat $pidfile))"
   else

@@ -1,6 +1,8 @@
 bin/gogs
 bin/gogs-rm-data
-@(%%GOGS_USER%%,%%GOGS_GROUP%%,640) libexec/gogs/custom/conf/app.ini
+@dir(%%GOGS_USER%%,%%GOGS_GROUP%%,750) %%ETCDIR%%/conf
+@dir(%%GOGS_USER%%,%%GOGS_GROUP%%,750) %%ETCDIR%%/https
+@sample(%%GOGS_USER%%,%%GOGS_GROUP%%,640) %%ETCDIR%%/conf/app.ini.sample
 etc/rc.d/gogs
 libexec/gogs/conf/app.ini
 libexec/gogs/conf/gitignore/Actionscript
@@ -232,6 +234,7 @@ libexec/gogs/conf/locale/locale_zh-TW.ini
 libexec/gogs/conf/locale/TRANSLATORS
 libexec/gogs/conf/README.md
 libexec/gogs/conf/readme/Default
+libexec/gogs/custom
 libexec/gogs/data
 libexec/gogs/gogs
 libexec/gogs/log
@@ -1719,10 +1722,7 @@ libexec/gogs/templates/user/settings/security.tmpl
 libexec/gogs/templates/user/settings/sshkeys.tmpl
 libexec/gogs/templates/user/settings/two_factor_enable.tmpl
 libexec/gogs/templates/user/settings/two_factor_recovery_codes.tmpl
-@dir(%%GOGS_USER%%,%%GOGS_GROUP%%,750) libexec/gogs/custom/conf
-@dir(%%GOGS_USER%%,%%GOGS_GROUP%%,750) libexec/gogs/custom/https
 @dir(%%GOGS_USER%%,%%GOGS_GROUP%%,750) %%GOGS_DBDIR%%/data
-@dir(%%GOGS_USER%%,%%GOGS_GROUP%%,750) %%GOGS_DBDIR%%/home
 @dir(%%GOGS_USER%%,%%GOGS_GROUP%%,750) %%GOGS_DBDIR%%/repositories
 @dir(%%GOGS_USER%%,%%GOGS_GROUP%%,750) %%GOGS_DBDIR%%
 @dir(%%GOGS_USER%%,%%GOGS_GROUP%%,750) %%GOGS_LOGDIR%%
