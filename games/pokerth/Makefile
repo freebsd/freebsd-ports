@@ -14,8 +14,6 @@ COMMENT=	Poker game written in C++/Qt4
 LICENSE=	AGPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN=		does not build: src/third_party/websocketpp/websocketpp/transport/asio/connection.hpp:422:45: error: use of class template 'boost::asio::strand' requires template arguments
-
 LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 		libmikmod.so:audio/libmikmod \
 		libgnutls.so:security/gnutls \
