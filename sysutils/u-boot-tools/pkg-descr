@@ -1,0 +1,7 @@
+U-Boot tools for creating and analyzing u-boot images.
+
+U-Boot images are used to embed kernels into a know format for u-boot.
+It can also be FIT (Flattened Image Tree) images when the source describing
+the image is written like a DTS (Device Tree Source).
+
+WWW: http://www.denx.de/wiki/U-Boot
