@@ -20,7 +20,7 @@ bin/nhmmscan
 bin/phmmer
 include/cachedb.h
 include/hmmer.h
-%%SSE2%%include/impl_sse.h
+include/impl_sse.h
 include/p7_config.h
 include/p7_gbands.h
 include/p7_gmxb.h
