@@ -9,7 +9,7 @@ CATEGORIES=	science gnome python
 MAINTAINER=	woodsb02@FreeBSD.org
 COMMENT=	GTK3-based genealogy program
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libosmgpsmap-1.0.so:x11-toolkits/osm-gps-map
