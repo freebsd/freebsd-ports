@@ -1,0 +1,23 @@
+--- src/libpostal_data.orig	2017-04-07 21:40:27 UTC
++++ src/libpostal_data
+@@ -78,9 +78,9 @@ download_multipart() {
+         else
+             max=$size;
+         fi;
+-        printf "%s\0%s\0%s\0%s\0%s\0" "$i" "$offset" "$max" "$url" "$part_filename"
++        printf "%s\0%s\0%s\0%s\0%s\0%s\0%s\0" "x" "$i" "$offset" "$max" "$url" "$part_filename"
+         offset=$((offset+CHUNK_SIZE))
+-    done | xargs -0 -n 5 -P $NUM_WORKERS sh -c "$DOWNLOAD_PART" --
++    done | xargs -0 -n 6 -P $NUM_WORKERS sh -c "$DOWNLOAD_PART" --
+ 
+     > $local_path
+ 
+@@ -176,6 +176,8 @@ if [ $COMMAND = "download" ]; then
+         download_file $LIBPOSTAL_LANG_CLASS_UPDATED_PATH $LIBPOSTAL_DATA_DIR $lang_class_s3_prefix $LIBPOSTAL_LANG_CLASS_FILE "language classifier data file" $LANGUAGE_CLASSIFIER_MODULE_DIR
+     fi
+ 
++    chown -R root:wheel $LIBPOSTAL_DATA_DIR
++
+     if [ "$LIBPOSTAL_DATA_DIR_VERSION" != "$LIBPOSTAL_VERSION_STRING" ]; then
+         echo $LIBPOSTAL_VERSION_STRING > $LIBPOSTAL_DATA_VERSION_FILE;
+     fi
