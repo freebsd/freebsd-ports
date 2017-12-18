@@ -1,3 +1,4 @@
-Package of econometric functions for modelling GARCH processes.
+Provides a collection of functions to analyze and model heteroskedastic
+behavior in financial time series models.
 
-WWW: http://cran.r-project.org/web/packages/fGarch/
+WWW: https://www.rmetrics.org
