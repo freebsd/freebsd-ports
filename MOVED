@@ -9817,3 +9817,4 @@ devel/py-ode|devel/py-PyODE|2017-12-14|Rename to reflect official Python modules
 net-im/pork||2017-12-16|Removed, AIM shut down on 2017-12-15
 security/aimsniff||2017-12-16|Removed, AIM shut down on 2017-12-15
 net-im/bsflite||2017-12-18|Removed, AIM shut down on 2017-12-15
+audio/last.fm||2017-12-18|Removed, Last.fm Radio shutdown in 2014-03

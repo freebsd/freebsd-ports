@@ -371,7 +371,6 @@
     SUBDIR += ladspa
     SUBDIR += lame
     SUBDIR += lash
-    SUBDIR += last.fm
     SUBDIR += lastfm-desktop
     SUBDIR += liba52
     SUBDIR += libaacplus
