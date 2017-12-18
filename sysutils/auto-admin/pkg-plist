@@ -12,6 +12,7 @@ man/man1/auto-change-group-gid.1.gz
 man/man1/auto-change-group-ownership.1.gz
 man/man1/auto-change-primary-group.1.gz
 man/man1/auto-change-uid.1.gz
+man/man1/auto-clean-disk.1.gz
 man/man1/auto-clean-pkgsrc.1.gz
 man/man1/auto-clean-ports.1.gz
 man/man1/auto-clean-tmp.1.gz
@@ -79,6 +80,7 @@ sbin/auto-change-group-gid
 sbin/auto-change-group-ownership
 sbin/auto-change-primary-group
 sbin/auto-change-uid
+sbin/auto-clean-disk
 sbin/auto-clean-pkgsrc
 sbin/auto-clean-ports
 sbin/auto-clean-tmp

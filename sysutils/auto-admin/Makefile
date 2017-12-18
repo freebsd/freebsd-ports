@@ -1,13 +1,12 @@
-# Created by: Jason Bacon <bacon4000@gmail.com>
 # $FreeBSD$
 
 PORTNAME=	auto-admin
-PORTVERSION=	0.4.0
+DISTVERSION=	0.4.1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://acadix.biz/Ports/distfiles/
 
-MAINTAINER=	bacon4000@gmail.com
-COMMENT=	Portable tools for automating system management
+MAINTAINER=	jwb@FreeBSD.org
+COMMENT=	Portable tools for automating systems management
 
 LICENSE=	BSD2CLAUSE
 
