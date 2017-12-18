@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	uhd
-PORTVERSION=	3.10.1.1
-PORTREVISION=	4
+PORTVERSION=	3.10.2.0
+#PORTREVISION=	4
 CATEGORIES=	comms hamradio
 MASTER_SITES=	http://files.ettus.com/binaries/images/
 DISTFILES=	${IMAGE_FILE}
@@ -20,7 +20,7 @@ BUILD_DEPENDS=	${LOCALBASE}/include/boost/tuple/tuple.hpp:devel/boost-libs \
 
 USE_GITHUB=     yes
 GH_ACCOUNT=     EttusResearch
-GH_TAGNAME=     c705922a08e32c8b0ec7ef6af6137835f87b2f42
+GH_TAGNAME=     bd6e21dc06cfca6f1165b1eba6ddbf5a46dc343c
 
 CONFLICTS=	usrp-[0-9]*
 
@@ -40,7 +40,7 @@ CMAKE_ARGS+=	-DPKG_LIB_DIR:STRING="share/uhd" -DUHD_TXRX_DEBUG_PRINTS="yes"
 # for excruciating debug use this -db
 #CMAKE_ARGS+=	--debug-output --trace
 
-IMAGE_FILE=	uhd-images_003.010.001.001-release.zip
+IMAGE_FILE=	uhd-images_003.010.002.000-release.zip
 
 OPTIONS_DEFINE= DOXYGEN
 #OPTIONS_DEFAULT= DOXYGEN

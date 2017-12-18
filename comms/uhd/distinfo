@@ -1,5 +1,5 @@
-TIMESTAMP = 1500117562
-SHA256 (uhd/uhd-images_003.010.001.001-release.zip) = 4526649bb37d7ba60ebcc1a016453f07de2bd087535d670b9eb3afd750379942
-SIZE (uhd/uhd-images_003.010.001.001-release.zip) = 57254771
-SHA256 (uhd/EttusResearch-uhd-3.10.1.1-c705922a08e32c8b0ec7ef6af6137835f87b2f42_GH0.tar.gz) = 55ecf69a0961fb58acda1753ca164a5074abc073f6beb303363ac440ca8acc42
-SIZE (uhd/EttusResearch-uhd-3.10.1.1-c705922a08e32c8b0ec7ef6af6137835f87b2f42_GH0.tar.gz) = 7540294
+TIMESTAMP = 1513524207
+SHA256 (uhd/uhd-images_003.010.002.000-release.zip) = a4ae7df05230c0ed7819ec34720a3a079f2f28ae6c52a0ee039fd58cab4ad906
+SIZE (uhd/uhd-images_003.010.002.000-release.zip) = 57471231
+SHA256 (uhd/EttusResearch-uhd-3.10.2.0-bd6e21dc06cfca6f1165b1eba6ddbf5a46dc343c_GH0.tar.gz) = 7ac7fd15f2be5ed44152d69f99dc4f7eb1d58a5f093841990c8650224d3f7f7a
+SIZE (uhd/EttusResearch-uhd-3.10.2.0-bd6e21dc06cfca6f1165b1eba6ddbf5a46dc343c_GH0.tar.gz) = 7554133
