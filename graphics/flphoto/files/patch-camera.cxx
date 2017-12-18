@@ -1,5 +1,5 @@
---- camera.cxx.orig	2008-09-15 21:32:33.000000000 +0800
-+++ camera.cxx	2008-09-15 21:33:49.000000000 +0800
+--- camera.cxx.orig	2006-07-18 01:11:22 UTC
++++ camera.cxx
 @@ -42,6 +42,7 @@
  #  define fl_mkdir(p)	mkdir(p)
  #else
@@ -18,7 +18,7 @@
  static void	progress_update(GPContext *context, unsigned id, float current,
  		                void *data);
  static void	purge_thumbnails(void);
-@@ -909,7 +909,6 @@
+@@ -909,7 +909,6 @@ static unsigned				// O - ID number
  progress_start(GPContext  *context,	// I - Current context
                 float      target,	// I - Target size
  	       const char *format,	// I - Progress text, if any

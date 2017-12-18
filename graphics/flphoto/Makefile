@@ -11,7 +11,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-source
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Basic image management and display program
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libgphoto2.so:graphics/libgphoto2 \
 		libfltk.so:x11-toolkits/fltk \
@@ -22,6 +23,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USES=		tar:bzip2
 USE_XORG=	xinerama
 GNU_CONFIGURE=	yes
+
 OPTIONS_DEFINE=	DOCS
 
 post-patch:
@@ -29,17 +31,19 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/flphoto ${STAGEDIR}${PREFIX}/bin/flphoto
-	${INSTALL_MAN} ${WRKSRC}/doc/flphoto.man ${STAGEDIR}${MANPREFIX}/man/man1/flphoto.1
+	${INSTALL_MAN} ${WRKSRC}/doc/flphoto.man ${STAGEDIR}${MAN1PREFIX}/man/man1/flphoto.1
 	${INSTALL_MAN} ${WRKSRC}/doc/album.man ${STAGEDIR}${MAN5PREFIX}/man/man5/album.5
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/*.jpg ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/*.html ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/*.png ${STAGEDIR}${DOCSDIR}
 .for lang in de en_CA en_GB es fr it nl pt
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/locale/${lang}
 	${INSTALL_DATA} ${WRKSRC}/po/${lang}.po \
 		${STAGEDIR}${PREFIX}/share/locale/${lang}/flphoto_${lang}
 .endfor
+
+do-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/*.jpg ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/*.html ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/*.png ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

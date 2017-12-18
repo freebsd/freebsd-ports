@@ -1,6 +1,6 @@
---- ./espmsg.c.orig	2005-01-23 04:52:44.000000000 +0100
-+++ ./espmsg.c	2012-12-22 12:41:39.000000000 +0100
-@@ -766,7 +766,7 @@
+--- espmsg.c.orig	2005-01-23 03:52:44 UTC
++++ espmsg.c
+@@ -766,7 +766,7 @@ translate_messages(const char *language)
      *bufptr++ = '&';
      *bufptr = '\0';
  
