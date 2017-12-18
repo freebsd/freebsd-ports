@@ -13,6 +13,9 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DEMO_DISTFILE:S/$/:demo/}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Development environment used to build 2D/3D/stereo graphics
 
+LICENSE=	LGPL20+  # from sources, though LICENSE file is LGPL21
+LICENSE_FILE=	${WRKSRC}/LICENSE.html
+
 USES=		jpeg perl5 shebangfix
 SHEBANG_FILES=	doc/*.pl
 USE_GL=		glu
@@ -45,16 +48,14 @@ DEMO_DISTFILE=	${DISTNAME:S,-devel-,-demo-,}${EXTRACT_SUFX}
 DEMO_WRKSRC=	${WRKDIR}/rmdemo
 .endif
 
-post-patch:
-.if ${PORT_OPTIONS:MEXAMPLES}
-	${REINPLACE_CMD} -e \
+post-patch-EXAMPLES-on:
+	@${REINPLACE_CMD} -e \
 		'/^RM/s|/usr|${PREFIX}| ; \
 		 /^OPENGL/s|/usr|${LOCALBASE}| ; \
 		 /^X11/s|/usr/X11R6|${LOCALBASE}| ; \
 		 /^OPT/s|-g|| ; \
 		 /^ARCH/s|-m32|| ; \
 		 /^JPEG/s|/usr|${LOCALBASE}|' ${DEMO_WRKSRC}/makeinclude
-.endif
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/include/rm
@@ -64,17 +65,19 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/lib/${f}.so.1 ${STAGEDIR}${PREFIX}/lib
 	${LN} -fs ${f}.so.1 ${STAGEDIR}${PREFIX}/lib/${f}.so
 .endfor
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/HTML/images
 	(cd ${WRKSRC} && ${INSTALL_DATA} FUTUREPLANS README RELEASENOTES \
 		${STAGEDIR}${DOCSDIR})
 	${INSTALL_DATA} ${WRKSRC}/doc/HTML/*.html ${STAGEDIR}${DOCSDIR}/HTML
 	${INSTALL_DATA} ${WRKSRC}/doc/HTML/images/* \
 		${STAGEDIR}${DOCSDIR}/HTML/images
-.if ${PORT_OPTIONS:MEXAMPLES}
+
+do-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/data
 	(cd ${DEMO_WRKSRC} && ${INSTALL_DATA} README configure makeinclude \
 		Makefile.x11 *.c *.h ${STAGEDIR}${EXAMPLESDIR})
 	${INSTALL_DATA} ${DEMO_WRKSRC}/data/* ${STAGEDIR}${EXAMPLESDIR}/data
-.endif
 
 .include <bsd.port.mk>
