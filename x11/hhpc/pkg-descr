@@ -1,0 +1,13 @@
+hhpc is an utility that hides the mouse pointer in X11. It functions by
+grabbing your mouse pointer at startup and replacing its bitmap with an
+empty one (thus hiding it). Then, it waits for the X server to notify it
+when a user tries to move or click the pointer. At this point, hhpc
+relinquishes control, replays the action the user just tried to execute and
+waits for the specified number of seconds (flag -i) before trying to grab
+the pointer and hide it again.
+
+Should hhpc not work out for you, unclutter is a good alternative. hhpc was
+created because unclutter doesn't seem to interoperate properly with
+hardware accelerated surfaces like those of video players using VAAPI.
+
+WWW: https://github.com/aktau/hhpc
