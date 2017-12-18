@@ -12,6 +12,8 @@ COMMENT=	POrtable Computing Language (POCL)
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		fails to package
+
 BUILD_DEPENDS=	llvm${LLVM_VERSION}>=0:devel/llvm${LLVM_VERSION} \
 		opencl>=2.1:devel/opencl
 LIB_DEPENDS=	libhwloc.so:devel/hwloc \
