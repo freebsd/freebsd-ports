@@ -67,9 +67,6 @@ cran-auto-plist:
 
 .if ${cran_ARGS:Mcompiles}
 _USES_install+= 755:cran-strip
-
-LIB_DEPENDS+=	libflang.so:devel/flang
-
 cran-strip:
 	${FIND} ${STAGEDIR}${PREFIX}/${R_MOD_DIR} -name '*.so' -exec ${STRIP_CMD} {} +
 .include "${PORTSDIR}/math/R/compiler.mk"
