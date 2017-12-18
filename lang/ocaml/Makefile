@@ -28,7 +28,6 @@ BROKEN_mips=	No ASM support
 USES=		cpe gmake tar:xz
 USE_LDCONFIG=	yes
 CPE_VENDOR=	inria
-REINPLACE_ARGS=	-i ""
 HAS_CONFIGURE=	yes
 ALL_TARGET=	world.opt
 STRIP=
@@ -36,8 +35,7 @@ SSP_UNSAFE=	yes
 MAKE_JOBS_UNSAFE=	yes
 
 CONFIGURE_ARGS=	-verbose -prefix "${PREFIX}" \
-		-cc "${CC} ${CFLAGS}" \
-		-as "${AS} ${ASFLAGS}" \
+		-cc "${CC}" \
 		-aspp "${CC} -c" \
 		-partialld "${LD} -r"
 
@@ -96,7 +94,6 @@ CONFIGURE_ARGS+=-no-graph
 .endif
 
 .include <bsd.port.pre.mk>
-.include "${FILESDIR}/manfiles"
 
 .if defined(NO_PROFILE) || ${ARCH:Mpowerpc} || ${ARCH:Mamd64}
 PLIST_SUB+=	PROF="@comment "
@@ -128,10 +125,7 @@ post-patch:
 		${WRKSRC}/testsuite/tests/asmcomp/Makefile
 
 post-configure:
-# CFLAGS safeness
 	@${REINPLACE_CMD} -E \
-		-e 's|(BYTECCCOMPOPTS[ \t]*=.*)|\1 ${CFLAGS}|' \
-		-e 's|(NATIVECCCOMPOPTS[ \t]*=.*)|\1 ${CFLAGS}|' \
 		-e '/^PTHREAD_LINK/s,-pthread,${THR_LD},g' \
 		${WRKSRC}/config/Makefile
 
