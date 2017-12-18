@@ -1,6 +1,6 @@
---- Makefile.in.orig	Sat Feb 14 17:17:57 2004
-+++ Makefile.in	Sat Feb 14 17:19:04 2004
-@@ -13,25 +13,13 @@
+--- Makefile.in.orig	2002-08-13 17:24:05 UTC
++++ Makefile.in
+@@ -13,13 +13,7 @@ bindir=@bindir@
  mandir=@mandir@
  themedir=@themedir@
  
@@ -15,15 +15,16 @@
  
  install: cthumb
  	install -d $(bindir) $(prefix)/share $(themedir) $(mandir)/man1
- 	install -m555 cthumb $(bindir)
+@@ -27,12 +21,6 @@ install: cthumb
  	install cthumb.1 $(mandir)/man1
  	$(CPR) themes/* $(themedir)
--
+ 
 -Makefile: Makefile.in VERSION configure
 -	./configure --prefix=/usr
 -
 -cthumb: cthumb.in VERSION configure
 -	./configure --prefix=/usr
- 
+-
  dist: cthumb.spec cthumb
  	# make prefix=$(shell pwd)/$(DD) install
+ 	install -d $(DD)
