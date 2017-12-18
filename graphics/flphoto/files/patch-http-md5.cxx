@@ -1,6 +1,6 @@
---- ./http-md5.cxx.orig	2012-12-22 12:42:25.000000000 +0100
-+++ ./http-md5.cxx	2012-12-22 12:42:28.000000000 +0100
-@@ -120,7 +120,7 @@
+--- http-md5.cxx.orig	2005-01-23 03:52:44 UTC
++++ http-md5.cxx
+@@ -120,7 +120,7 @@ HTTP::md5_string(const MD5Byte *sum,		/*
  {
    int		i;				/* Looping var */
    char		*md5ptr;			/* Pointer into MD5 string */
