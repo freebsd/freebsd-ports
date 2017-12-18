@@ -250,6 +250,7 @@
     SUBDIR += libisocodes
     SUBDIR += libkdeedu
     SUBDIR += libmetalink
+    SUBDIR += libpostal
     SUBDIR += libpri
     SUBDIR += libsupertone
     SUBDIR += libutf
