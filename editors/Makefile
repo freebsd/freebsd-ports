@@ -29,6 +29,7 @@
     SUBDIR += dkns
     SUBDIR += dlangide
     SUBDIR += drjava
+    SUBDIR += dte
     SUBDIR += e3
     SUBDIR += ecce
     SUBDIR += edith
