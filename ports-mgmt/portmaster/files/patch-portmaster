@@ -9,6 +9,15 @@
  export_flavor	() { local flavor="$1"; if [ "$FLAVOR" != "$flavor" ]; then
  			pm_v "===>>> Setting FLAVOR to '$flavor' (was '$FLAVOR')";
  			export FLAVOR="$flavor"; fi; }
+@@ -652,7 +652,7 @@ for var in "$@" ; do
+ 				export LOCAL_PACKAGEDIR ;;
+ 	--delete-packages)	PM_DELETE_PACKAGES=pm_delete_packages
+ 				export PM_DELETE_PACKAGES ;;
+-	--flavor=*)		PM_FLAVOR=${var#--flavor=} ;;
++#	--flavor=*)		PM_FLAVOR=${var#--flavor=} ;;
+ 	--update-if-newer)	PM_UPDATE_IF_NEWER=pm_update_if_newer
+ 				export PM_UPDATE_IF_NEWER ;;
+ 	--delete-build-only)	PM_DEL_BUILD_ONLY=pm_dbo
 @@ -1039,7 +1039,7 @@ find_moved_port () {
  				return 0
  			else
@@ -68,17 +77,22 @@
  update_build_l () {
  	local originflavor origin flavor iport
  
-@@ -2281,7 +2281,7 @@ make_dep_list () {
+@@ -2280,10 +2280,12 @@ make_dep_list () {
+ 
  	for dep_type in $*; do
  		case $dep_type in
++		all-depends-list)
++			var_opt="$var_opt -V BUILD_DEPENDS -V LIB_DEPENDS -V RUN_DEPENDS" ;;
  		build-depends-list)
 -			var_opt="$var_opt -V BUILD_DEPENDS" ;;
 +			var_opt="$var_opt -V BUILD_DEPENDS -V LIB_DEPENDS" ;;
  		run-depends-list)
-- 			var_opt="$var_opt -V RUN_DEPENDS" ;;
+-			var_opt="$var_opt -V RUN_DEPENDS" ;;
 + 			var_opt="$var_opt -V RUN_DEPENDS -V LIB_DEPENDS" ;;
  		*)
-@@ -2436,9 +2436,7 @@ dependency_check () {
+ 			fail "make_dep_list: Unsupported option '$dep_type'"
+ 		esac
+@@ -2436,9 +2438,7 @@ dependency_check () {
  				confl_p=`pkg query -g "%n-%v" $glob 2>/dev/null`
  				if [ -n "$confl_p" ]; then
  					confl_p=${confl_p%% *}
@@ -88,7 +102,7 @@
  					if [ "${d_port#$pd/}" = "$portdir" ]; then
  						echo -e "\n===>>> $origin seems to depend on $portdir"
  						echo '       which looks like a dependency loop'
-@@ -2797,7 +2795,12 @@ multiport () {
+@@ -2797,7 +2797,12 @@ multiport () {
  				numports=$(( $numports - 1 ))
  				continue
  			fi
@@ -102,7 +116,7 @@
  		esac
  
  		case "$PM_NEEDS_UPDATE" in
-@@ -3033,7 +3036,7 @@ if [ -z "$REPLACE_ORIGIN" ]; then
+@@ -3033,7 +3038,7 @@ if [ -z "$REPLACE_ORIGIN" ]; then
  			*)	echo '' ; no_valid_port ;;
  			esac
  		done ;;
@@ -111,7 +125,7 @@
  	esac
  
  	if [ -z "$portdir" -a -z "$upg_port" ]; then
-@@ -3129,12 +3132,13 @@ iport_from_pkgname () {
+@@ -3129,12 +3134,13 @@ iport_from_pkgname () {
  	dir=$(dir_part $1)
  	flavor=$(flavor_part $1)
  	pkgname=$(make -C "$pd/$dir" -V PKGNAME FLAVOR=$flavor) || return 1
@@ -127,7 +141,7 @@
  	# || fail "XXX Cannot find installed port '$portdir'"
  fi
  
-@@ -3594,6 +3598,7 @@ if [ -z "$use_package" ]; then
+@@ -3594,6 +3600,7 @@ if [ -z "$use_package" ]; then
  	fi
  
  	pm_cd_pd $portdir
