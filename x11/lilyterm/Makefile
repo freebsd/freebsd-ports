@@ -3,6 +3,7 @@
 PORTNAME=	lilyterm
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.9.9.4
+PORTREVISION=	1
 CATEGORIES=	x11
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -22,13 +23,14 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	Tetralet
 GH_PROJECT=	LilyTerm
 
-OPTIONS_DEFINE=	NLS
+OPTIONS_DEFINE=	DOCS NLS
 OPTIONS_SUB=	yes
 
-NLS_USES=	gettext
+NLS_USES=		gettext
 NLS_CONFIGURE_ENABLE=	nls
 
 post-install:
+	@${RM} -r ${STAGEDIR}${EXAMPLESDIR}
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/lilyterm
 	${MV} ${STAGEDIR}${PREFIX}/etc/xdg/lilyterm.conf \
 		${STAGEDIR}${PREFIX}/etc/xdg/lilyterm.conf.sample
