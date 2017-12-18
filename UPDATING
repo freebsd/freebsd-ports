@@ -5,6 +5,25 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20171218:
+  AFFECTS: users of devel/gogs
+  AUTHOR: dg@syrec.org
+
+  Gogs user has been changed to "git" and configuration files are now
+  located in /usr/local/etc/gogs. Users should update ownership of the
+  existing Gogs directories with
+
+  # chown -R git:git /var/db/gogs
+  # chown -R git:git /var/log/gogs
+
+  and either move or merge the contents of /var/db/gogs/home/.ssh with
+  /usr/local/git/.ssh.  After migration, /var/db/gogs/home can be removed,
+  and both the user "gogs" and the group "gogs" should be deleted:
+
+  # rm -rf /var/db/gogs/home
+  # pw userdel gogs
+  # pw groupdel gogs
+
 20171215:
   AFFECTS: users of finance/gnucash
   AUTHOR: madpilot@FreeBSD.org
