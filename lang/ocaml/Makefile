@@ -35,7 +35,6 @@ STRIP=
 SSP_UNSAFE=	yes
 MAKE_JOBS_UNSAFE=	yes
 
-MAKE_ENV+=	STAGEDIR="${STAGEDIR}"
 CONFIGURE_ARGS=	-verbose -prefix "${PREFIX}" \
 		-cc "${CC} ${CFLAGS}" \
 		-as "${AS} ${ASFLAGS}" \
@@ -121,8 +120,6 @@ post-patch:
 		-e '\|RANLIB|s|ranlib|${RANLIB}|' \
 		-e '\|bytecclinkopts=|s|""|"${LDFLAGS}"|' \
 		-e "\|nativecclinkopts=|s|''|\"${LDFLAGS:C/-Wl,//}\"|" \
-		-e '\|mksharedlib=|s|$$bytecc|& $$bytecclinkopts|' \
-		-e 's|-lbfd -ldl|-lbfd $$dllib|' \
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's,$$(ARCH),$$(SYSTEM_ARCH),' \
 		${WRKSRC}/Makefile ${WRKSRC}/asmrun/Makefile \
@@ -160,8 +157,5 @@ post-install:
 	${INSTALL_DATA} ${_DISTDIR}${DOCSDISTNAME}-refman.ps.gz ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${_DISTDIR}${DOCSDISTNAME}-refman.pdf ${STAGEDIR}${DOCSDIR}
 .endif
-
-# Fix permissions for ld.conf
-	@${CHMOD} 644 ${STAGEDIR}${PREFIX}/lib/ocaml/ld.conf
 
 .include <bsd.port.post.mk>
