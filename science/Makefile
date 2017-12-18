@@ -15,6 +15,7 @@
     SUBDIR += R-cran-eco
     SUBDIR += R-cran-epicalc
     SUBDIR += R-cran-etm
+    SUBDIR += R-cran-fastICA
     SUBDIR += R-cran-kernlab
     SUBDIR += R-cran-snow
     SUBDIR += R-cran-som

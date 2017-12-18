@@ -1,0 +1,4 @@
+Implementation of FastICA algorithm to perform Independent Component Analysis
+(ICA) and Projection Pursuit.
+
+WWW: https://CRAN.R-project.org/package=fastICA
