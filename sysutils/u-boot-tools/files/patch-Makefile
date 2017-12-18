@@ -1,0 +1,20 @@
+--- Makefile.orig	2017-09-11 18:10:40 UTC
++++ Makefile
+@@ -338,7 +338,7 @@ LD		= $(CROSS_COMPILE)ld.bfd
+ else
+ LD		= $(CROSS_COMPILE)ld
+ endif
+-CC		= $(CROSS_COMPILE)gcc
++CC		= $(CROSS_COMPILE)cc
+ CPP		= $(CC) -E
+ AR		= $(CROSS_COMPILE)ar
+ NM		= $(CROSS_COMPILE)nm
+@@ -633,7 +633,7 @@ UBOOTINCLUDE    := \
+ 		-I$(srctree)/arch/$(ARCH)/include \
+ 		-include $(srctree)/include/linux/kconfig.h
+ 
+-NOSTDINC_FLAGS += -nostdinc -isystem $(shell $(CC) -print-file-name=include)
++NOSTDINC_FLAGS += -isystem $(shell $(CC) -print-file-name=include)
+ CHECKFLAGS     += $(NOSTDINC_FLAGS)
+ 
+ # FIX ME
