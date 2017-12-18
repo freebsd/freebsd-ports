@@ -5,6 +5,7 @@
 %%T%%/bin/bootstrap.jar
 %%T%%/bin/catalina-tasks.xml
 %%T%%/bin/catalina.sh
+%%T%%/bin/ciphers.sh
 %%T%%/bin/commons-daemon-native.tar.gz
 %%T%%/bin/commons-daemon.jar
 %%T%%/bin/configtest.sh
