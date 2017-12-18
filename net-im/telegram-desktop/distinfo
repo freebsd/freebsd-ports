@@ -1,0 +1,11 @@
+TIMESTAMP = 1512711381
+SHA256 (telegramdesktop-tdesktop-v1.1.23_GH0.tar.gz) = 56b7fce84adf85a4af1c3174353169f32d0b0c052a4e7a284fc741fa96b04030
+SIZE (telegramdesktop-tdesktop-v1.1.23_GH0.tar.gz) = 16863984
+SHA256 (Microsoft-GSL-c5851a8_GH0.tar.gz) = 32fae541af0bc21cdf83922740db6a3a00fbb9cb9ace323fbc038b608ac36956
+SIZE (Microsoft-GSL-c5851a8_GH0.tar.gz) = 54462
+SHA256 (mapbox-variant-550ac2f_GH0.tar.gz) = 7ab3aa7c9fa672027f13721584df5f7ec09c0ecca499d374c6ac76e147ef7354
+SIZE (mapbox-variant-550ac2f_GH0.tar.gz) = 108686
+SHA256 (catchorg-Catch2-5ca44b68_GH0.tar.gz) = 8cdf2a345897bda1aaabffd4496dffe263768cef3e4254e74ae63545c8e12cc2
+SIZE (catchorg-Catch2-5ca44b68_GH0.tar.gz) = 375264
+SHA256 (telegramdesktop-libtgvoip-757a5d8e_GH0.tar.gz) = a745c2c097f6a98bf9443d0cee9e375f279571a18dcb51bf06684eccf82eb9c6
+SIZE (telegramdesktop-libtgvoip-757a5d8e_GH0.tar.gz) = 408328
