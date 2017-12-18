@@ -2,6 +2,7 @@
 
 PORTNAME=	libva
 PORTVERSION=	2.0.0
+PORTREVISION=	1
 CATEGORIES=	multimedia
 
 MAINTAINER=	madpilot@FreeBSD.org
@@ -41,8 +42,7 @@ WAYLAND_LIB_DEPENDS=	libwayland-client.so:graphics/wayland
 WAYLAND_BUILD_DEPENDS=	gsed:textproc/gsed
 
 post-patch:	.SILENT
-	${REINPLACE_CMD} -e 's|\($$libdir\)/dri|\1/va|' \
-		-e 's|$${libdir}/\(pkgconfig\)|${PREFIX}/libdata/\1|' \
+	${REINPLACE_CMD} -e 's|$${libdir}/\(pkgconfig\)|${PREFIX}/libdata/\1|' \
 		${WRKSRC}/configure.ac
 	${REINPLACE_CMD} '/^export VA_HEADER_/d' \
 		${WRKSRC}/doc/Makefile.am

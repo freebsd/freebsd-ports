@@ -2,7 +2,7 @@
 
 PORTNAME=	libva-vdpau-driver
 PORTVERSION=	0.7.4
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.freedesktop.org/software/vaapi/releases/${PORTNAME}/
 
@@ -23,7 +23,7 @@ USE_GL=		gl
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 
-PLIST_FILES=	lib/va/nvidia_drv_video.so lib/va/s3g_drv_video.so lib/va/vdpau_drv_video.so
+PLIST_FILES=	lib/dri/nvidia_drv_video.so lib/dri/s3g_drv_video.so lib/dri/vdpau_drv_video.so
 
 OPTIONS_DEFINE=	DEBUG
 
