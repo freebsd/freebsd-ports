@@ -1,0 +1,55 @@
+--- data/lilyterm.1.orig	2013-02-27 09:04:56 UTC
++++ data/lilyterm.1
+@@ -110,7 +110,7 @@ The following key bindings may custom or
+ Disable/Enable hyperlinks, function keys and right click menu for temporary.
+ 
+ .TP
+-.BI <Ctrl><T>
++.BI <Shift+Ctrl><T>
+ Add a New tab with current directory.
+ 
+ .TP
+@@ -134,7 +134,7 @@ Move current tab to First/Last.
+ Switch to 1st ~ 12th tab.
+ 
+ .TP
+-.BI <Ctrl><O>
++.BI <Shift+Ctrl><O>
+ Select all the text in the Vte Terminal box.
+ 
+ .TP
+@@ -158,11 +158,11 @@ Asks to scroll Up/Down 1 line on Vte Ter
+ Asks to scroll Up/Down on Vte Terminal box.
+ 
+ .TP
+-.BI <Ctrl><Delete/Insert>
++.BI <Shift+Ctrl><C>
+ Copy the text to clipboard / Paste the text in clipboard.
+ 
+ .TP
+-.BI <Shift><Delete/Insert>
++.BI <Shift+Ctrl><V>
+ Copy the text to primary clipboard / Paste the text in primary clipboard.
+ .br
+ i.e. Emulate a middle button mouse click to copy/paste the text.
+@@ -171,17 +171,17 @@ i.e. Emulate a middle button mouse click
+ Some key bindings that disabled by default but maybe useful:
+ 
+ .TP
+-.BI <Ctrl><Q>
++.BI <Shift+Ctrl><Q>
+ Close current tab.
+ .br
+ \fIUsing \fR\fB<Ctrl><D>\fR\fI or '\fR\fBexit\fR\fI' to close tabs is recommended.\fR
+ 
+ .TP
+-.BI <Ctrl><N>
++.BI <Shift+Ctrl><N>
+ Open a new window with current directory.
+ 
+ .TP
+-.BI <Ctrl><E>
++.BI <Shift+Ctrl><E>
+ Rename the current tab.
+ 
+ .SH FILE
