@@ -2,9 +2,7 @@
 #   $MCom: ports/finance/gnucash/Makefile,v 1.26 2008/12/31 03:25:18 mezz Exp $
 
 PORTNAME=	gnucash
-PORTVERSION=	2.6.18
-DISTVERSIONSUFFIX=-1
-PORTREVISION=	1
+PORTVERSION=	2.6.19
 CATEGORIES=	finance gnome
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20%28stable%29/${PORTVERSION}
 
@@ -28,11 +26,14 @@ RUN_DEPENDS=	p5-libwww>=0:www/p5-libwww \
 FLAVORS=		guile2 guile1
 
 guile1_PKGNAMESUFFIX=	-guile1
-guile1_LIB_DEPENDS=     libguile.so:lang/guile
+guile1_LIB_DEPENDS=     libguile.so:lang/guile \
+			libgmp.so:math/gmp \
+			libltdl.so:devel/libltdl
 guile1_BUILD_DEPENDS=	slib-guile>0:lang/slib-guile
 guile1_RUN_DEPENDS=	slib-guile>0:lang/slib-guile
 guile1_CONFLICTS_INSTALL=	gnucash-[0-9]*
-guile2_LIB_DEPENDS=     libguile-2.0.so:lang/guile2
+guile2_LIB_DEPENDS=     libguile-2.0.so:lang/guile2 \
+			libgc-threaded.so:devel/boehm-gc-threaded
 guile2_BUILD_DEPENDS=	slib-guile2>0:lang/slib-guile2
 guile2_RUN_DEPENDS=	slib-guile2>0:lang/slib-guile2
 guile2_CONFLICTS_INSTALL=	gnucash-guile1-[0-9]*
