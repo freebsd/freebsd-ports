@@ -12,6 +12,8 @@ MASTER_SITES=	http://www.eekim.com/software/cgihtml/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library that simplifies the task of writing CGI programs in C
 
+BROKEN_aarch64=		fails to link: -O: number expected, but got
+
 USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	DOCS
