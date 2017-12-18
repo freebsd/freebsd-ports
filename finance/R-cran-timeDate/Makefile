@@ -2,16 +2,17 @@
 # $FreeBSD$
 
 PORTNAME=	timeDate
-PORTVERSION=	3012.100
+DISTVERSION=	3042.101
 CATEGORIES=	finance
-DISTNAME=	${PORTNAME}_${PORTVERSION}
+DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	dbn@FreeBSD.org
-COMMENT=	Chronological and Calendar Objects
+COMMENT=	Rmetrics - Chronological and Calendar Objects
 
-LICENSE=	GPLv2 GPLv3
-LICENSE_COMB=	dual
+LICENSE=	GPLv2+
 
-USES=	cran:auto-plist
+TEST_DEPENDS=	R-cran-RUnit>0:devel/R-cran-RUnit
+
+USES=		cran:auto-plist
 
 .include <bsd.port.mk>
