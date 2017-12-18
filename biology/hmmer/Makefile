@@ -43,7 +43,6 @@ post-install-EXAMPLES-on:
 .include <bsd.port.pre.mk>
 
 .if ${MACHINE_CPU:Msse2}
-QMAKE_ARGS+=	UGENE_SSE2_DETECTED=1
 PLIST_SUB+=	SSE2=""
 .else
 PLIST_SUB+=	SSE2="@comment "
