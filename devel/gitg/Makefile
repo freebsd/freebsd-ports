@@ -13,6 +13,8 @@ COMMENT=	GTK-based git repository viewer
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		fails to configure
+
 BUILD_DEPENDS=	gsettings-desktop-schemas>=0:devel/gsettings-desktop-schemas \
 		valac:lang/vala
 LIB_DEPENDS=	libsoup-2.4.so:devel/libsoup \
