@@ -13,6 +13,8 @@ COMMENT=	Pluggable transport proxy
 
 LICENSE=	BSD3CLAUSE
 
+BROKEN=		fails to configure
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyptlib>=0.0.5:security/py-pyptlib@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pycrypto>=2.1:security/py-pycrypto@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}twisted>=0:devel/py-twisted@${FLAVOR} \
