@@ -9,7 +9,7 @@ MASTER_SITES=	SF
 MAINTAINER=	woodsb02@FreeBSD.org
 COMMENT=	Drivers and utilities for HP printers and All-in-One devices
 
-LICENSE=	GPLv2 MIT BSD3CLAUSE
+LICENSE=	GPLv2+ MIT BSD3CLAUSE
 LICENSE_COMB=	multi
 LICENSE_FILE=	${WRKSRC}/COPYING
 
