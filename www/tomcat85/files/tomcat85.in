@@ -58,6 +58,10 @@
 #   Set to "30" by default.
 #   Set the wait time (in seconds) for Tomcat process startup
 #
+# tomcat85_umask (str):
+#   Set to "0077" by default.
+#   Sets the umask for Tomcat process.
+#
 # You may symlink this script with other names to run multiple
 # instances of tomcat85 with different configurations.
 #
@@ -94,6 +98,7 @@ eval "_tomcat_logging_config=\${${name}_logging_config:-'${_tomcat_catalina_base
 eval "_tomcat_classpath=\${${name}_classpath:-''}"
 eval "_tomcat_java_opts=\${${name}_java_opts:-''}"
 eval "_tomcat_wait=\${${name}_wait:-'30'}"
+eval "_tomcat_umask=\${${name}_umask:-'0077'}"
 
 pidfile="/var/run/${name}.pid"
 
@@ -106,6 +111,7 @@ command="%%LOCALBASE%%/bin/jsvc"
 command_args="-java-home '${_tomcat_java_home}' \
 	-server \
 	-user ${_tomcat_catalina_user} \
+	-umask ${_tomcat_umask} \
 	-pidfile '${pidfile}' \
 	-wait ${_tomcat_wait} \
 	-outfile '${_tomcat_stdout}' \
