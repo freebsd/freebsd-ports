@@ -19,12 +19,12 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}msgpack-python>0:devel/py-msgpack-python@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}Pmw>0:x11-toolkits/py-Pmw@${FLAVOR}
 LIB_DEPENDS=	libfreetype.so:print/freetype2 \
-		libpng16.so:graphics/png \
+		libpng.so:graphics/png \
 		libmsgpackc.so:devel/msgpack
 
 WRKSRC=		${WRKDIR}/pymol
 
-USES=		compiler:c++11-lang python shebangfix tar:bz2
+USES=		compiler:c++11-lang python:2.7 shebangfix tar:bz2
 USE_GL=		gl glew glu glut
 USE_GNOME=	libxml2
 USE_PYTHON=	distutils concurrent  # autoplist is broken: https://sourceforge.net/p/pymol/bugs/189
