@@ -28,7 +28,7 @@ MAKE_ARGS=	DOCDIR=${STAGEDIR}${DOCSDIR} FREEBSD_PYTHON_VER=${PYTHON_VER}
 OPTIONS_DEFINE=	DOCS
 
 PLIST_FILES=	bin/ddgr \
-		share/man/man1/ddgr-${PYTHON_VER}.1.gz
+		man/man1/ddgr.1.gz
 PORTDOCS=	README.md
 
 .include <bsd.port.mk>

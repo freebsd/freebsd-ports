@@ -1,11 +1,21 @@
 --- Makefile.orig	2017-11-29 12:33:58 UTC
 +++ Makefile
-@@ -13,7 +13,7 @@ install:
+@@ -1,6 +1,6 @@
+ PREFIX ?= /usr/local
+ BINDIR = $(DESTDIR)$(PREFIX)/bin
+-MANDIR = $(DESTDIR)$(PREFIX)/share/man/man1
++MANDIR = $(DESTDIR)$(PREFIX)/man/man1
+ DOCDIR = $(DESTDIR)$(PREFIX)/share/doc/ddgr
+ 
+ .PHONY: all install uninstall
+@@ -11,9 +11,8 @@ install:
+ 	install -m755 -d $(BINDIR)
+ 	install -m755 -d $(MANDIR)
  	install -m755 -d $(DOCDIR)
- 	gzip -c ddgr.1 > ddgr.1.gz
+-	gzip -c ddgr.1 > ddgr.1.gz
  	install -m755 ddgr $(BINDIR)
 -	install -m644 ddgr.1.gz $(MANDIR)
-+	install -m644 ddgr.1.gz $(MANDIR)/ddgr-${FREEBSD_PYTHON_VER}.1.gz
++	install -m644 ddgr.1 $(MANDIR)
  	install -m644 README.md $(DOCDIR)
  	rm -f ddgr.1.gz
  
