@@ -1,5 +1,4 @@
 bin/dynare++
-info/dir
 lib/dynare/contrib/ms-sbvar/TZcode/MatlabFiles/a0asfun.m
 lib/dynare/contrib/ms-sbvar/TZcode/MatlabFiles/a0asgrad.m
 lib/dynare/contrib/ms-sbvar/TZcode/MatlabFiles/a0freefun.m
@@ -557,7 +556,7 @@ lib/dynare/matlab/internals.m
 lib/dynare/matlab/interpret_resol_info.m
 lib/dynare/matlab/irf.m
 lib/dynare/matlab/isbayes.m
-lib/dynare/matlab/isoctave.m
+%%OCTAVE%%lib/dynare/matlab/isoctave.m
 lib/dynare/matlab/isolder.m
 lib/dynare/matlab/jacob_element.m
 lib/dynare/matlab/k_order_pert.m
@@ -623,6 +622,7 @@ lib/dynare/matlab/missing/corrcoef/flag_implicit_skip_nan.m
 lib/dynare/matlab/missing/corrcoef/sumskipnan.m
 lib/dynare/matlab/missing/corrcoef/tcdf.m
 lib/dynare/matlab/missing/ilu/ilu.m
+%%OCTAVE%%lib/dynare/matlab/missing/isfile/isfile.m
 lib/dynare/matlab/missing/issquare/issquare.m
 lib/dynare/matlab/missing/nanmean/nanmean.m
 lib/dynare/matlab/missing/ordeig/ordeig.m
@@ -800,7 +800,7 @@ lib/dynare/matlab/modules/dseries/src/utilities/missing/demean/demean.m
 lib/dynare/matlab/modules/dseries/src/utilities/missing/get_cells_id/get_cells_id.m
 lib/dynare/matlab/modules/dseries/src/utilities/missing/ndim/ndim.m
 lib/dynare/matlab/modules/dseries/src/utilities/missing/sample_hp_filter/sample_hp_filter.m
-lib/dynare/matlab/modules/dseries/src/utilities/missing/user_has_octave_forge_package/user_has_octave_forge_package.m
+%%OCTAVE%%lib/dynare/matlab/modules/dseries/src/utilities/missing/user_has_octave_forge_package/user_has_octave_forge_package.m
 lib/dynare/matlab/modules/dseries/src/utilities/str/common_strings_in_cell_arrays.m
 lib/dynare/matlab/modules/dseries/src/utilities/str/get_random_string.m
 lib/dynare/matlab/modules/dseries/src/utilities/str/name2tex.m
@@ -957,7 +957,7 @@ lib/dynare/matlab/myboxplot.m
 lib/dynare/matlab/mydelete.m
 lib/dynare/matlab/name2index.m
 lib/dynare/matlab/non_linear_dsge_likelihood.m
-lib/dynare/matlab/octave_ver_less_than.m
+%%OCTAVE%%lib/dynare/matlab/octave_ver_less_than.m
 lib/dynare/matlab/one_sided_hp_filter.m
 lib/dynare/matlab/optimization/apprgrdn.m
 lib/dynare/matlab/optimization/bfgsi1.m
@@ -1088,7 +1088,7 @@ lib/dynare/matlab/posterior_sampler.m
 lib/dynare/matlab/posterior_sampler_core.m
 lib/dynare/matlab/posterior_sampler_initialization.m
 lib/dynare/matlab/posterior_sampler_iteration.m
-lib/dynare/matlab/preprocessor32/dynare_m
+%%OCTAVE%%lib/dynare/matlab/preprocessor%%ARCH%%/dynare_m
 lib/dynare/matlab/print_bytecode_dynamic_model.m
 lib/dynare/matlab/print_bytecode_static_model.m
 lib/dynare/matlab/print_info.m
@@ -1171,7 +1171,7 @@ lib/dynare/matlab/stoch_simul.m
 lib/dynare/matlab/stochastic_solvers.m
 lib/dynare/matlab/store_smoother_results.m
 lib/dynare/matlab/subset.m
-lib/dynare/matlab/supported_octave_version.m
+%%OCTAVE%%lib/dynare/matlab/supported_octave_version.m
 lib/dynare/matlab/symmetric_matrix_index.m
 lib/dynare/matlab/test_for_deep_parameters_calibration.m
 lib/dynare/matlab/th_autocovariances.m
@@ -1181,7 +1181,7 @@ lib/dynare/matlab/trust_region.m
 lib/dynare/matlab/uniform_specification.m
 lib/dynare/matlab/update_last_mh_history_file.m
 lib/dynare/matlab/user_has_matlab_license.m
-lib/dynare/matlab/user_has_octave_forge_package.m
+%%OCTAVE%%lib/dynare/matlab/user_has_octave_forge_package.m
 lib/dynare/matlab/utilities/dataset/describe_missing_data.m
 lib/dynare/matlab/utilities/dataset/descriptive_statistics.m
 lib/dynare/matlab/utilities/dataset/initialize_dataset.m
@@ -1208,7 +1208,6 @@ lib/dynare/matlab/utilities/general/isconst.m
 lib/dynare/matlab/utilities/general/isdiagonal.m
 lib/dynare/matlab/utilities/general/isestimation.m
 lib/dynare/matlab/utilities/general/iseven.m
-lib/dynare/matlab/utilities/general/isfile.m
 lib/dynare/matlab/utilities/general/isinestimationobjective.m
 lib/dynare/matlab/utilities/general/isint.m
 lib/dynare/matlab/utilities/general/isodd.m
@@ -1233,7 +1232,7 @@ lib/dynare/matlab/utilities/tests/src/dtest.m
 lib/dynare/matlab/utilities/tests/src/get_directory_description.m
 lib/dynare/matlab/utilities/tests/src/initialize_unit_tests_toolbox.m
 lib/dynare/matlab/utilities/tests/src/is_unitary_test_available.m
-lib/dynare/matlab/utilities/tests/src/missing/isoctave/isoctave.m
+%%OCTAVE%%lib/dynare/matlab/utilities/tests/src/missing/isoctave/isoctave.m
 lib/dynare/matlab/utilities/tests/src/missing/skipline/skipline.m
 lib/dynare/matlab/utilities/tests/src/mtest.m
 lib/dynare/matlab/utilities/tests/src/run_unitary_tests.m
@@ -1254,14 +1253,14 @@ lib/dynare/matlab/writecellofchar.m
 lib/dynare/matlab/writedata.m
 lib/dynare/matlab/writedata_text.m
 lib/dynare/matlab/writematrixofchar.m
-lib/dynare/mex/octave/A_times_B_kronecker_C.mex
-lib/dynare/mex/octave/block_kalman_filter.mex
-lib/dynare/mex/octave/bytecode.mex
-lib/dynare/mex/octave/dynare_simul_.mex
-lib/dynare/mex/octave/gensylv.mex
-lib/dynare/mex/octave/k_order_perturbation.mex
-lib/dynare/mex/octave/local_state_space_iteration_2.mex
-lib/dynare/mex/octave/mjdgges.mex
-lib/dynare/mex/octave/qmc_sequence.mex
-lib/dynare/mex/octave/qzcomplex.oct
-lib/dynare/mex/octave/sparse_hessian_times_B_kronecker_C.mex
+%%OCTAVE%%lib/dynare/mex/octave/A_times_B_kronecker_C.mex
+%%OCTAVE%%lib/dynare/mex/octave/block_kalman_filter.mex
+%%OCTAVE%%lib/dynare/mex/octave/bytecode.mex
+%%OCTAVE%%lib/dynare/mex/octave/dynare_simul_.mex
+%%OCTAVE%%lib/dynare/mex/octave/gensylv.mex
+%%OCTAVE%%lib/dynare/mex/octave/k_order_perturbation.mex
+%%OCTAVE%%lib/dynare/mex/octave/local_state_space_iteration_2.mex
+%%OCTAVE%%lib/dynare/mex/octave/mjdgges.mex
+%%OCTAVE%%lib/dynare/mex/octave/qmc_sequence.mex
+%%OCTAVE%%lib/dynare/mex/octave/qzcomplex.oct
+%%OCTAVE%%lib/dynare/mex/octave/sparse_hessian_times_B_kronecker_C.mex
