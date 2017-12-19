@@ -12,17 +12,19 @@ COMMENT=	U-boot related tools
 
 LICENSE=	GPLv2
 
-USES=	tar:bzip2 gmake python:2.7,build
+USES=	tar:bzip2 gmake python:2.7,build ssl
 
 CONFLICT=	uboot-mkimage
+ALL_TARGET=	tools-only
+MAKE_ARGS=	ARCH=sandbox \
+		CC="${CC}" \
+		KBUILD_VERBOSE=1 \
+		NOSTDINC_FLAGS="" \
 
 PLIST_FILES=	bin/mkimage bin/mkenvimage bin/dumpimage bin/fit_info
 
 do-configure:
-	(cd ${WRKSRC}/ && ${MAKE_CMD} sandbox_defconfig)
-
-do-build:
-	(cd ${WRKSRC}/ && ${MAKE_CMD} ARCH=sandbox tools-only)
+	(cd ${WRKSRC}/ && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} sandbox_defconfig)
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/tools/dumpimage ${STAGEDIR}${PREFIX}/bin
