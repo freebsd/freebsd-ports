@@ -1,0 +1,6 @@
+usbtop is a top-like utility that shows an estimated instantaneous bandwidth
+on USB buses and devices.
+
+It uses pcap(3) to capture USB traffic data, which in turn relies on /dev/bpf*.
+
+WWW: https://github.com/aguinet/usbtop

@@ -1,0 +1,10 @@
+--- CMakeLists.txt.orig	2017-12-17 21:14:26 UTC
++++ CMakeLists.txt
+@@ -16,6 +16,6 @@ find_package(Boost COMPONENTS thread sys
+ 
+ ##
+ 
+-include_directories(include)
++include_directories(include ${PCAP_INCLUDE_DIR} ${Boost_INCLUDE_DIR})
+ 
+ add_subdirectory(src)
