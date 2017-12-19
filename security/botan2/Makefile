@@ -15,6 +15,8 @@ LICENSE_FILE=	${WRKSRC}/license.txt
 
 LIB_DEPENDS=	libboost_filesystem.so:devel/boost-libs
 
+BROKEN_aarch64=		fails to compile: ./src/lib/block/aes/aes_armv8/aes_armv8.cpp:40:25: use of undeclared identifier 'vaeseq_u8'
+
 OPTIONS_DEFINE=		SQLITE3 SSL DOCS
 OPTIONS_DEFAULT=	SSL
 OPTIONS_SUB=		yes

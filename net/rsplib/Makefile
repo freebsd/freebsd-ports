@@ -12,6 +12,10 @@ COMMENT=	RSerPool Framework and Example Applications
 
 LICENSE=	GPLv3
 
+BROKEN_aarch64=		fails to compile: fractalgeneratorservice.cc:353:12: expected unqualified-id
+BROKEN_armv6=		fails to compile: fractalgeneratorservice.cc:353:12: expected unqualified-id
+BROKEN_armv7=		fails to compile: fractalgeneratorservice.cc:353:12: expected unqualified-id
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-maintainer-mode \
 		--enable-qt --with-qt-lib=${QT_LIBDIR} \

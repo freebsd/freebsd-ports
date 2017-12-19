@@ -37,6 +37,8 @@ LIB_DEPENDS=	libcppunit.so:devel/cppunit \
 		liborc-0.4.so:devel/orc
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+BROKEN_aarch64=		fails to compile: /usr/lib/clang/5.0.0/include/mmintrin.h:47:5: use of undeclared identifier '__builtin_ia32_emms'; did you mean '__builtin_isless'?
+
 # USES=compiler:c11 is necessary because base GCC fails:
 # volk/lib/volk_cpu.c: In function 'i_can_has_3dnow':
 # volk/lib/volk_cpu.c:62: error: can't find a register in class 'BREG' while reloading 'asm'
