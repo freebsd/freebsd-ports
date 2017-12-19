@@ -1128,6 +1128,9 @@ share/applications/pycharm-ce.desktop
 %%DATADIR%%/helpers/python-skeletons/django/forms/forms.py
 %%DATADIR%%/helpers/python-skeletons/django/forms/formsets.py
 %%DATADIR%%/helpers/python-skeletons/django/forms/models.py
+%%DATADIR%%/helpers/python-skeletons/django/views/__init__.py
+%%DATADIR%%/helpers/python-skeletons/django/views/generic/__init__.py
+%%DATADIR%%/helpers/python-skeletons/django/views/generic/base.py
 %%DATADIR%%/helpers/python-skeletons/functools.py
 %%DATADIR%%/helpers/python-skeletons/io.py
 %%DATADIR%%/helpers/python-skeletons/itertools.py
