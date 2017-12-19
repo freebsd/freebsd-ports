@@ -19,7 +19,7 @@ LIB_DEPENDS=	libfreetype.so:print/freetype2
 
 CPE_VERSION=	${PORTVERSION:C/^0\.//}
 
-USES=		cpe python:2,build
+USES=		cpe python:build
 BAM_VERSION=	0.4.0
 BAM_WRKSRC=	${WRKDIR}/bam-${BAM_VERSION}
 BAM_TARGET=	release
