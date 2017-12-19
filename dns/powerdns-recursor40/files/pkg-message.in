@@ -1,0 +1,11 @@
+
+*******************************************************************
+ If you want to use the powerdns recursor,
+ you need the following line in /etc/rc.conf(.local)
+
+    pdns_recursor_enable="YES"
+
+ Configuration templates are available in %%PREFIX%%/etc/pdns
+ as recursor.conf-dist.
+*******************************************************************
+
