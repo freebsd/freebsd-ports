@@ -1,0 +1,22 @@
+#!/bin/sh
+# $FreeBSD$
+
+case $2 in
+POST-DEINSTALL)
+    cat <<EOMSG
+
+To completely remove %%PORTNAME%%, you may wish to
+remove its configuration, database and log directories:
+
+    # rm -rf %%ETCDIR%% \\
+        %%INSPIRCD_DBDIR%% \\
+        %%INSPIRCD_LOGDIR%% \\
+        %%INSPIRCD_RUNDIR%%
+
+To remove the %%INSPIRCD_USER%% user and the %%INSPIRCD_GROUP%% group, run:
+
+    # pw groupdel %%INSPIRCD_GROUP%%
+    # pw userdel %%INSPIRCD_USER%%
+
+EOMSG
+esac
