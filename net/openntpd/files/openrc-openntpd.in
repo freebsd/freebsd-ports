@@ -20,12 +20,11 @@ command=%%PREFIX%%/sbin/ntpd
 required_files=$openntpd_config
 pidfile=/var/run/ntpd.pid
 command_args="$ntpd_args -f $openntpd_config -d -s"
+command_background="true"
 description="Network Time Protocol Daemon"
-supervisor=supervise-daemon
-supervise_daemon_args="-1 /var/log/openntpd.log -2 /var/log/openntpd.log"
-respawn_delay=30
+start_stop_daemon_args="--stdout /var/log/openntpd.log --stderr /var/log/openntpd.log"
 
 depend()
 {
-	need localmount
+	need localmount net-online
 }
