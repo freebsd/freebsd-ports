@@ -1,6 +1,7 @@
---- configure.orig	2016-10-18 13:06:39 UTC
+--- configure.orig	2017-10-03 14:59:10 UTC
 +++ configure
-@@ -19874,7 +19874,7 @@ fi
+@@ -22070,7 +22070,7 @@ fi
+ fi
  
  
  
