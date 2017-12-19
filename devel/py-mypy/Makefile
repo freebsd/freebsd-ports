@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mypy
-PORTVERSION=	0.530
+PORTVERSION=	0.560
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,12 +12,14 @@ COMMENT=	Optional static typing for Python
 
 LICENSE=	MIT PSFL
 LICENSE_COMB=	multi
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}typed-ast>=1.1.0:devel/py-typed-ast@${FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}typed-ast>=1.1.0:devel/py-typed-ast@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}psutil>=5.4.0:sysutils/py-psutil@${FLAVOR}
 
 NO_ARCH=	yes
-USES=		python:3.3+ shebangfix
-USE_PYTHON=	autoplist distutils
+USES=		python:3.4+ shebangfix
+USE_PYTHON=	autoplist concurrent distutils
 SHEBANG_FILES=	typeshed/tests/pytype_test.py
 
 .include <bsd.port.pre.mk>
