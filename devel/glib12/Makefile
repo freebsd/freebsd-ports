@@ -11,6 +11,9 @@ PKGNAMESUFFIX=	12
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Some useful routines of C programming (previous stable version)
 
+LICENSE=	LGPL21+
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USES=		libtool pathfix
