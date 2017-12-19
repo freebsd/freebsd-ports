@@ -46,10 +46,6 @@ TESTS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>=0:devel/py-nose@${FLAVOR}
 
 .include <bsd.port.pre.mk>
 
-.if ${PYTHON_VERSION} == ${PYTHON_DEFAULT_VERSION}
-PLIST_FILES+=	man/man1/f2py.1.gz
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e "s|%%FC%%|${FC}|" ${WRKSRC}/numpy/distutils/fcompiler/gnu.py
 	@${CP} ${FILESDIR}/site.cfg ${WRKSRC}/site.cfg
@@ -86,10 +82,7 @@ pre-configure-SUITESPARSE-off:
 	@${REINPLACE_CMD} -e "s|:%%LOCALBASE%%/include/suitesparse||" ${WRKSRC}/site.cfg
 
 post-install:
-	${INSTALL_MAN} ${WRKSRC}/doc/f2py/f2py.1 ${STAGEDIR}${MANPREFIX}/man/man1/f2py-${PYTHON_VER}.1
-.if ${PYTHON_VERSION} == ${PYTHON_DEFAULT_VERSION}
-	${LN} -sf f2py-${PYTHON_VER}.1 ${STAGEDIR}${MANPREFIX}/man/man1/f2py.1
-.endif
+	${INSTALL_MAN} ${WRKSRC}/doc/f2py/f2py.1 ${STAGEDIR}${MANPREFIX}/man/man1/f2py.1
 	${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR} -name '*.so' | ${XARGS} ${STRIP_CMD}
 
 post-install-DOCS-on:
