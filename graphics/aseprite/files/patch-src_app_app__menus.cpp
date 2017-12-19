@@ -1,15 +1,15 @@
---- src/app/app_menus.cpp.orig	2017-01-06 20:44:08 UTC
+--- src/app/app_menus.cpp.orig	2017-11-03 13:51:45 UTC
 +++ src/app/app_menus.cpp
-@@ -114,7 +114,7 @@ void AppMenus::reload()
-   }
+@@ -371,7 +371,7 @@ void AppMenus::initTheme()
+       menu->initTheme();
  }
  
 -bool AppMenus::rebuildRecentList()
 +void AppMenus::rebuildRecentList() // workaround for https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=213773
  {
-   MenuItem* list_menuitem = m_recentListMenuitem;
+   AppMenuItem* list_menuitem = dynamic_cast<AppMenuItem*>(m_recentListMenuitem);
    MenuItem* menuitem;
-@@ -122,7 +122,7 @@ bool AppMenus::rebuildRecentList()
+@@ -379,7 +379,7 @@ bool AppMenus::rebuildRecentList()
    // Update the recent file list menu item
    if (list_menuitem) {
      if (list_menuitem->hasSubmenuOpened())
@@ -18,8 +18,8 @@
  
      Command* cmd_open_file = CommandsModule::instance()->getCommandByName(CommandId::OpenFile);
  
-@@ -158,8 +158,6 @@ bool AppMenus::rebuildRecentList()
-       submenu->addChild(menuitem);
+@@ -426,8 +426,6 @@ bool AppMenus::rebuildRecentList()
+       }
      }
    }
 -
