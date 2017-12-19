@@ -37,6 +37,9 @@ lib/julia/libdSFMT.so
 lib/julia/libopenspecfun.so
 lib/julia/libopenspecfun.so.1
 lib/julia/libopenspecfun.so.1.3
+%%LLVM%%lib/julia/libLLVM.so
+%%LLVM%%lib/julia/libLLVM-3.9.so
+%%LLVM%%lib/julia/libLLVM-3.9.1.so
 %%GPL_LIBS%%lib/julia/libamd.so
 %%GPL_LIBS%%lib/julia/libcamd.so
 %%GPL_LIBS%%lib/julia/libccolamd.so
@@ -375,6 +378,7 @@ lib/libjulia.so.%%SOVERSION%%
 %%DATADIR%%/test/checked.jl
 %%DATADIR%%/test/choosetests.jl
 %%DATADIR%%/test/cmdlineargs.jl
+%%DATADIR%%/test/codegen.jl
 %%DATADIR%%/test/combinatorics.jl
 %%DATADIR%%/test/compile.jl
 %%DATADIR%%/test/complex.jl
@@ -391,6 +395,7 @@ lib/libjulia.so.%%SOVERSION%%
 %%DATADIR%%/test/dates/ranges.jl
 %%DATADIR%%/test/dates/rounding.jl
 %%DATADIR%%/test/dates/types.jl
+%%DATADIR%%/test/deprecation_exec.jl
 %%DATADIR%%/test/dict.jl
 %%DATADIR%%/test/dimensionful.jl
 %%DATADIR%%/test/distributed.jl
