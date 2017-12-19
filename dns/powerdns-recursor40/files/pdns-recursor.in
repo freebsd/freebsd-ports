@@ -1,0 +1,37 @@
+#!/bin/sh
+#
+# $$
+#
+
+# PROVIDE: pdns_recursor
+# REQUIRE: SERVERS cleanvar
+# BEFORE:  DAEMON
+# KEYWORD: shutdown
+
+#
+# Add the following lines to /etc/rc.conf to enable pdns_recursor:
+#
+# pdns_recursor_enable="YES"
+# pdns_recursor_flags="<set as needed>"
+#
+# See pdns_recursor(8) for flags.
+#
+
+. /etc/rc.subr
+
+name=pdns_recursor
+rcvar=pdns_recursor_enable
+
+command=%%PREFIX%%/sbin/pdns_recursor
+command_args="--daemon=yes"
+
+# set defaults
+
+pdns_recursor_enable=${pdns_recursor_enable:-"NO"}
+pdns_recursor_conf=${pdns_recursor_conf:-"%%PREFIX%%/etc/pdns/recursor.conf"}
+
+load_rc_config ${name}
+
+required_files=${pdns_recursor_conf}
+
+run_rc_command "$1"
