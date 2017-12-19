@@ -1,6 +1,0 @@
-This module implements an OO interface to the Aol Instant Messenger
-TOC protocol.  This version contains not much more than hacked code
-that merely connects to the aol TOC servers and acts on instant
-messages.
-
-WWW: http://search.cpan.org/dist/Net-AIM/

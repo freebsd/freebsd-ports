@@ -87,7 +87,6 @@
     SUBDIR += p5-Jabber-Connection
     SUBDIR += p5-Jabber-Lite
     SUBDIR += p5-Jabber-SimpleSend
-    SUBDIR += p5-Net-AIM
     SUBDIR += p5-Net-AOLIM
     SUBDIR += p5-Net-Async-XMPP
     SUBDIR += p5-Net-ICQ2000
