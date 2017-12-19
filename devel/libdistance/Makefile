@@ -11,13 +11,13 @@ COMMENT=	Compute the distance between two pieces of data
 
 LICENSE=	BSD3CLAUSE
 
-BUILD_DEPENDS=	swig2.0:devel/swig20
+BUILD_DEPENDS=	swig3.0:devel/swig30
 
 USES+=		fakeroot pkgconfig tcl
 USE_LDCONFIG=	yes
 
 MAKE_ARGS+=	INCLUDEDIR=${PREFIX}/include LIBDIR=${PREFIX}/lib
-MAKE_ARGS+=	MANDIR=${PREFIX}/man/man SWIG=swig2.0
+MAKE_ARGS+=	MANDIR=${PREFIX}/man/man SWIG=swig3.0
 CFLAGS+=	-fPIC
 
 pre-build:
