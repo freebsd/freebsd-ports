@@ -3,6 +3,7 @@
 
 PORTNAME=	libmediainfo
 PORTVERSION=	17.10
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	https://mediaarea.net/download/binary/mediainfo/${PORTVERSION}/ \
 		LOCAL/sunpoet
