@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	aiohttp
-PORTVERSION=	2.1.0
+PORTVERSION=	2.3.6
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,6 +18,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}chardet>0:textproc/py-chardet@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}yarl>0:www/py-yarl@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}async_timeout>0:devel/py-async_timeout@${FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pytest-mock>0:devel/py-pytest-mock@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-timeout>0:devel/py-pytest-timeout@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}gunicorn>0:www/py-gunicorn@${FLAVOR}
 
