@@ -33,6 +33,9 @@ RUN_DEPENDS=	endian:sysutils/endian \
 		ppmtogif:graphics/netpbm \
 		qhull:math/qhull5
 
+BROKEN_aarch64=		fails to compile: suma_utils.c:3043:10: statement requires expression of scalar type
+BROKEN_sparc64=		fails to compile: undefined reference to '_mcount'
+
 CONFLICTS=	im-[0-9]* \
 		nifticlib-[0-9]* \
 		open-usp-tukubai-[0-9]*
@@ -47,8 +50,6 @@ SHEBANG_FILES=	suma_change_spec \
 USE_GNOME=	glib20
 
 .include <bsd.port.options.mk>
-
-BROKEN_sparc64=	Does not compile: "undefined reference to '_mcount'"
 
 USE_GL=		gl glu glw
 USE_XORG=	x11 xext xi xmu xp xt
