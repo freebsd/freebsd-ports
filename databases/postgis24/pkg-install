@@ -1,0 +1,37 @@
+#!/bin/sh
+
+msg(){
+ echo "
+  ======================= GEOS Support Notice ========================
+  In order to use the GEOS support, you may need to specially compile
+  your version of PostgreSQL to link the C++ runtime library.
+  To do this, invoke the PostgreSQL Makefile script this way:
+
+  on csh shell:
+
+  setenv LDFLAGS -lstdc++
+  make
+
+  on sh or bash shell:
+
+  export LDFLAGS=-lstdc++
+  make
+
+  The initial LDFLAGS variable is passed through to the Makefile and
+  adds the C++ library to the linking stage.
+
+  ====================================================================
+"
+if [ -n "${PACKAGE_BUILDING}" ]; then
+    sleep 10
+fi
+
+
+}
+
+case "$2" in
+    PRE-INSTALL)
+        msg ;;
+    MESSAGE)
+        msg ;;
+esac
