@@ -6,6 +6,7 @@
     SUBDIR += 2d-rewriter
     SUBDIR += ALPSCore
     SUBDIR += InsightToolkit
+    SUBDIR += MOOSE-neural-simulator
     SUBDIR += PETSc
     SUBDIR += R-cran-AMORE
     SUBDIR += R-cran-DCluster
