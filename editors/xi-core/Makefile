@@ -5,7 +5,7 @@ PORTVERSION=	g20170612
 DISTVERSIONPREFIX=	v
 CATEGORIES=	editors
 
-MAINTAINER=	tobik@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Modern editor backend written in Rust
 
 LICENSE=	APACHE20
