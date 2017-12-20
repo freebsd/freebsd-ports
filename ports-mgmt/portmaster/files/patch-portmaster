@@ -43,7 +43,24 @@
  					fail "The $sf port has been deleted: $reason"
  			fi ;;
  		${sf}\|*) moved_npd=${moved#*\|}	# New port directory
-@@ -1449,6 +1440,24 @@ check_force_multi () {
+@@ -1349,15 +1340,7 @@ if [ -n "$CLEAN_PACKAGES" ]; then
+ fi	# [ -n "$CLEAN_PACKAGES" ]
+ 
+ if [ -n "$CHECK_DEPENDS" ]; then
+-	missing_deps=$(pkg check -dn)
+-	pkg query "%o %do" | while read origin dep; do
+-		for missing_dep in ${missing_deps}; do
+-			if [ "${missing_dep}" = "${dep}" ]; then
+-				echo "${origin} requires missing ${dep}"
+-				break
+-			fi
+-		done
+-	done
++	pkg check -dn
+ 	exit 0
+ fi
+ 
+@@ -1449,6 +1432,24 @@ check_force_multi () {
  	fi
  }
  
@@ -68,7 +85,7 @@
  check_for_updates () {
  	# Global: num_updates
  	local nf iport originflavor flavor origin port_ver do_update skip
-@@ -1622,7 +1631,7 @@ pm_pkg_create () {
+@@ -1622,7 +1623,7 @@ pm_pkg_create () {
  				pm_cd_pd $portdir
  				latest_link=`pm_make -V LATEST_LINK`
  				cd ${1}/Latest
@@ -77,7 +94,18 @@
  			fi
  
  			cd ${1}/${portdir%/*}
-@@ -2148,24 +2157,6 @@ update_pm_nu () {
+@@ -1994,8 +1995,8 @@ fi
+ if [ -n "$CLEAN_STALE" ]; then
+ 	[ -z "$no_del_list" ] && export no_del_list=':'
+ 
+-	find_stale_ports="pkg query -ae '%a = 1' '%?r %n-%v' | awk '/^0/ { print \$2 }'"
+-	for file in `eval $find_stale_ports` ; do
++	stale_ports=`pkg query -ae '%a = 1' '%?r %n-%v' | awk '/^0 / { print \$2 }'`
++	for file in $stale_ports; do
+ 		iport="${file%/+REQUIRED_BY}" ; iport=${iport#$pdb/}
+ 
+ 		case "$no_del_list" in *:${iport}:*) continue ;; esac
+@@ -2148,24 +2149,6 @@ update_pm_nu () {
  	PM_NEEDS_UPDATE="${PM_NEEDS_UPDATE}${1} "
  }
  
@@ -102,7 +130,7 @@
  update_build_l () {
  	local originflavor origin flavor iport
  
-@@ -2280,10 +2271,12 @@ make_dep_list () {
+@@ -2280,10 +2263,12 @@ make_dep_list () {
  
  	for dep_type in $*; do
  		case $dep_type in
@@ -117,7 +145,16 @@
  		*)
  			fail "make_dep_list: Unsupported option '$dep_type'"
  		esac
-@@ -2436,9 +2429,7 @@ dependency_check () {
+@@ -2364,7 +2349,7 @@ dependency_check () {
+ 				continue
+ 			case "$rundeps" in
+ 			*" ${dep} "*|*${dep}*)
+-				varname=`echo ${dep#$pd/} | sed 's#[-+/\.]#_#g'`
++				varname=`echo ${dep#$pd/} | sed 's#[-+/\.@]#_#g'`
+ 				rundep_list="$rundep_list $varname"
+ 				eval $varname=\"$portdir \$$varname\"
+ 				eval ${varname}_p=$dep
+@@ -2436,9 +2421,7 @@ dependency_check () {
  				confl_p=`pkg query -g "%n-%v" $glob 2>/dev/null`
  				if [ -n "$confl_p" ]; then
  					confl_p=${confl_p%% *}
@@ -127,7 +164,7 @@
  					if [ "${d_port#$pd/}" = "$portdir" ]; then
  						echo -e "\n===>>> $origin seems to depend on $portdir"
  						echo '       which looks like a dependency loop'
-@@ -2797,7 +2788,12 @@ multiport () {
+@@ -2797,7 +2780,12 @@ multiport () {
  				numports=$(( $numports - 1 ))
  				continue
  			fi
@@ -141,7 +178,7 @@
  		esac
  
  		case "$PM_NEEDS_UPDATE" in
-@@ -3033,7 +3029,7 @@ if [ -z "$REPLACE_ORIGIN" ]; then
+@@ -3033,7 +3021,7 @@ if [ -z "$REPLACE_ORIGIN" ]; then
  			*)	echo '' ; no_valid_port ;;
  			esac
  		done ;;
@@ -150,7 +187,7 @@
  	esac
  
  	if [ -z "$portdir" -a -z "$upg_port" ]; then
-@@ -3129,12 +3125,13 @@ iport_from_pkgname () {
+@@ -3129,12 +3117,13 @@ iport_from_pkgname () {
  	dir=$(dir_part $1)
  	flavor=$(flavor_part $1)
  	pkgname=$(make -C "$pd/$dir" -V PKGNAME FLAVOR=$flavor) || return 1
@@ -166,7 +203,7 @@
  	# || fail "XXX Cannot find installed port '$portdir'"
  fi
  
-@@ -3383,7 +3380,7 @@ fetch_package () {
+@@ -3383,7 +3372,7 @@ fetch_package () {
  	fi
  
  	if [ -z "$PM_ALWAYS_FETCH" ]; then
@@ -175,7 +212,7 @@
  			pm_v "===>>> Package exists, skipping fetch"
  			return 0
  		else
-@@ -3391,7 +3388,7 @@ fetch_package () {
+@@ -3391,7 +3380,7 @@ fetch_package () {
  		fi
  	else
  		do_fetch=do_fetch_always_fetch
@@ -184,7 +221,7 @@
  	fi
  
  	if [ -n "$do_fetch" ]; then
-@@ -3403,10 +3400,10 @@ fetch_package () {
+@@ -3403,10 +3392,10 @@ fetch_package () {
  			fi
  		fi
  
@@ -199,7 +236,7 @@
  		fi
  	fi
  }
-@@ -3420,9 +3417,11 @@ fetch_package () {
+@@ -3420,9 +3409,11 @@ fetch_package () {
  				release=packages-${release%-RELEASE*}-release ;;
  		9\.0-CURRENT*)	release=packages-9-current ;;
  		10\.0-CURRENT*)	release=packages-10-current ;;
@@ -213,7 +250,7 @@
  				release=packages-${release}-release ;;
  		esac
  
-@@ -3439,15 +3438,17 @@ fetch_package () {
+@@ -3439,15 +3430,17 @@ fetch_package () {
  	echo "===>>> Checking package repository for latest available version"
  
  	if [ -n "$LOCAL_PACKAGEDIR" ]; then
@@ -236,7 +273,7 @@
  				latest_pv=${latest_pv##*/}
  			else
  				pm_v "===>>> No local package for ${new_port}, attempting fetch"
-@@ -3510,7 +3511,7 @@ fetch_package () {
+@@ -3510,7 +3503,7 @@ fetch_package () {
  		fi
  	else
  		latest_pv=${latest_pv#*href=\"}
@@ -245,7 +282,7 @@
  	fi
  
  notnewer () {
-@@ -3594,6 +3595,7 @@ if [ -z "$use_package" ]; then
+@@ -3594,6 +3587,7 @@ if [ -z "$use_package" ]; then
  	fi
  
  	pm_cd_pd $portdir
@@ -253,7 +290,7 @@
  	[ -z "$DONT_PRE_CLEAN" ] && { pm_make clean NOCLEANDEPENDS=ncd ||
  		fail 'make clean failed'; }
  
-@@ -3635,7 +3637,7 @@ pkg_flavor () {
+@@ -3635,7 +3629,7 @@ pkg_flavor () {
  	eval pm_make -DNO_DEPENDS stage $port_log_args || fail "make stage failed for $portdir"
  else
  	[ -z "$local_package" ] && {
@@ -262,7 +299,16 @@
  fi
  
  # Ignore if no old port exists, or -F
-@@ -3762,14 +3764,14 @@ if [ -z "$use_package" ]; then
+@@ -3685,7 +3679,7 @@ if [ -n "$upg_port" -o -n "$ro_upg_port" ] && [ -z "$F
+ 	if [ -n "$upg_port" ]; then
+ 		case " $PM_PRESERVE_PORTS " in
+ 		*" $portdir "*)
+-			preserve_port=`echo $portdir | sed 's#[-+/\.]#_#g'`
++			preserve_port=`echo $portdir | sed 's#[-+/\.@]#_#g'`
+ 			eval preserve_port_files="\$${preserve_port}_files"
+ 			preserve_dir=`/usr/bin/mktemp -d ${TMPDIR}/d-${PM_PARENT_PID}-${preserve_port} 2>/dev/null` ||
+ 				fail "Could not create a temporary directory for $preserve_port in $TMPDIR"
+@@ -3762,14 +3756,14 @@ if [ -z "$use_package" ]; then
  else
  	[ -n "$local_package" ] && ppd=${LOCAL_PACKAGEDIR}/All
  
