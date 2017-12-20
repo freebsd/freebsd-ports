@@ -116,6 +116,7 @@ CPPFLAGS+=	-I${.CURDIR}/../ext4_utils/include
 CPPFLAGS+=	-I${.CURDIR}/../f2fs_utils
 CPPFLAGS+=	-I${.CURDIR}/../libselinux/include
 CPPFLAGS+=	-I${.CURDIR}/../libsparse/include
+CPPFLAGS+=	-I${.CURDIR}/../libziparchive/include
 CPPFLAGS+=	${CPPFLAGS.${.IMPSRC:T}}
 CPPFLAGS+=	$$(${PKG_CONFIG} libpcre --cflags 2>/dev/null)
 CPPFLAGS+=	$$(${PKG_CONFIG} libusb-1.0 --cflags 2>/dev/null)
