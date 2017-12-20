@@ -17,7 +17,7 @@ LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	boost-libs>0:devel/boost-libs \
-		swig>2:devel/swig20 \
+		swig3.0:devel/swig30 \
 		eigen>0:math/eigen3 \
 		gmm++>0:math/gmm++
 LIB_DEPENDS=	libsamplerate.so:audio/libsamplerate \
@@ -36,6 +36,7 @@ CMAKE_ARGS=	-DBUILD_CSOUNDVST:BOOL=OFF \
 		-DPYTHON_MODULE_INSTALL_DIR:PATH="${PYTHONPREFIX_SITELIBDIR}"
 USE_LDCONFIG=	yes
 SSP_UNSAFE=	yes
+BINARY_ALIAS=	swig=swig3.0
 
 SUB_FILES=	pkg-message
 
