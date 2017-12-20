@@ -6,7 +6,7 @@ PORTVERSION=	20160221
 PORTREVISION=	3
 CATEGORIES=	java devel
 
-MAINTAINER=	tobik@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Replacement for IntelliJ's fsnotifier
 
 LICENSE=	APACHE20
