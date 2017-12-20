@@ -26,6 +26,7 @@ lib/postgresql/euc_tw_and_big5.so
 lib/postgresql/latin2_and_win1250.so
 lib/postgresql/latin_and_mic.so
 lib/postgresql/libpqwalreceiver.so
+lib/postgresql/pgoutput.so
 lib/postgresql/plpgsql.so
 lib/postgresql/utf8_and_ascii.so
 lib/postgresql/utf8_and_big5.so
