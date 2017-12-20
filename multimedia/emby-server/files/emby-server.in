@@ -45,7 +45,7 @@ fi
 pidfile="/var/run/%%PORTNAME%%.pid"
 command="/usr/sbin/daemon"
 procname="%%LOCALBASE%%/bin/mono"
-command_args="-f -p ${pidfile} ${procname} %%PREFIX%%/lib/emby-server/MediaBrowser.Server.Mono.exe -ffmpeg %%LOCALBASE%%/bin/ffmpeg -ffprobe %%LOCALBASE%%/bin/ffprobe -programdata ${%%RC_NAME%%_data_dir}"
+command_args="-f -p ${pidfile} ${procname} %%PREFIX%%/lib/emby-server/MediaBrowser.Server.Mono.exe -os freebsd -ffmpeg %%LOCALBASE%%/bin/ffmpeg -ffprobe %%LOCALBASE%%/bin/ffprobe -programdata ${%%RC_NAME%%_data_dir}"
 
 start_precmd=%%RC_NAME%%_precmd
 %%RC_NAME%%_precmd()
