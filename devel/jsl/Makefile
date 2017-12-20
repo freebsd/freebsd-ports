@@ -19,6 +19,7 @@ MAKEFILE=	Makefile.ref
 MAKE_ARGS=	OS_CFLAGS="-DXP_UNIX -DHAVE_VA_COPY -DVA_COPY=va_copy"
 CFLAGS+=	-fPIC
 MAKE_JOBS_UNSAFE=	yes
+LLD_UNSAFE=	yes
 
 .include <bsd.port.pre.mk>
 
