@@ -32,7 +32,7 @@ USE_SDL=	sdl ttf
 SUB_FILES=	${PORTNAME}
 
 pre-build:
-	@${REINPLACE_CMD} -e 's/g++/${CXX}/' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's!g++!${CXX}!' ${WRKSRC}/Makefile
 
 do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}

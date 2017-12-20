@@ -14,9 +14,9 @@ COMMENT=	Three-Dimensional Structural Finite Element Program
 
 LICENSE=	GPLv2
 
-BROKEN_FreeBSD_10=	Does not build with clang on FreeBSD 10, causes segfaults when built with gcc
-
 RUN_DEPENDS=	ccx:cad/calculix-ccx
+
+BROKEN_FreeBSD_10=	Does not build with clang on FreeBSD 10, causes segfaults when built with gcc
 
 DIST_SOURCES=	cgx_${PORTVERSION}.all${EXTRACT_SUFX}
 DIST_HTM=	cgx_${PORTVERSION}.htm${EXTRACT_SUFX}
@@ -57,7 +57,7 @@ FFLAGS+=	-fpic
 .endif
 
 pre-build:
-	@${REINPLACE_CMD} -e 's/c++/${CXX}/g;' \
+	@${REINPLACE_CMD} -e 's!c++!${CXX}!g;' \
 		${WRKSRC}/libSNL/src/makefile
 	@${REINPLACE_CMD} -e 's+%%DOCSDIR%%+${DOCSDIR}+g; \
 	s+"firefox"+"${BROWSER}"+ ; \
