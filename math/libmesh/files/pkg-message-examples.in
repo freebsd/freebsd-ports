@@ -1,0 +1,13 @@
+======================================================================
+You installed libMesh, the library for numerical mesh simulations.
+
+You can run examples using for instance such command:
+
+$ cd %%EXAMPLESDIR%%/adaptivity/ex3 && gmake example-opt && ./run.sh
+
+Before running examples, please allow your user the write access:
+
+# chown -R {your-user}:users %%EXAMPLESDIR%%
+
+Examples require bash, gmake, libtool installed.
+======================================================================
