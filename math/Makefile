@@ -277,6 +277,7 @@
     SUBDIR += libRmath
     SUBDIR += libflame
     SUBDIR += liblbfgs
+    SUBDIR += libmesh
     SUBDIR += libmissing
     SUBDIR += libocas
     SUBDIR += liborigin

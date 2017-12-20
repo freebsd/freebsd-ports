@@ -1,0 +1,12 @@
+The libMesh library provides a framework for the numerical simulation of partial
+differential equations using arbitrary unstructured discretizations on serial
+and parallel platforms. A major goal of the library is to provide support for
+adaptive mesh refinement (AMR) computations in parallel while allowing a
+research scientist to focus on the physics they are modeling.
+
+libMesh is based on this publication:
+A C++ Library for Parallel Adaptive Mesh Refinement/Coarsening Simulations,"
+Engineering with Computers, vol. 22, no. 3-4, pp. 237-254, 2006,
+http://dx.doi.org/10.1007/s00366-006-0049-3
+
+WWW: http://libmesh.github.io
