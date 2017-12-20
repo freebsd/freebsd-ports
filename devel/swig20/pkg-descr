@@ -1,9 +1,0 @@
-SWIG is a tool for automatically generating the wrapper code needed
-to link collections of functions written in C/C++ with other
-programming languages.
-
-Using SWIG, it is possible to greatly simplify interface development
-and to put interesting interfaces on existing applications with
-little effort.
-
-WWW: http://www.swig.org/

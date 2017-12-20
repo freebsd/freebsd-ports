@@ -9819,3 +9819,4 @@ net-im/bsflite||2017-12-18|Removed, AIM shut down on 2017-12-15
 audio/last.fm||2017-12-18|Removed, Last.fm Radio shutdown in 2014-03
 net-im/p5-Net-AIM||2017-12-19|Removed, AIM shut down on 2017-12-15
 devel/swig13|devel/swig30|2017-12-20|swig 1.3 is not maintained, use swig 3.0
+devel/swig20|devel/swig30|2017-12-20|swig 2.0 is not maintained, use swig 3.0
