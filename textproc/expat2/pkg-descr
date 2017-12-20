@@ -1,4 +1,4 @@
 Expat is an XML 1.0 parser written in C. It aims to be fully
 conforming. It is currently not a validating XML processor.
 
-WWW: https://sourceforge.net/projects/expat/
+WWW: https://github.com/libexpat/libexpat
