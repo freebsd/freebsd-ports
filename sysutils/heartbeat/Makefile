@@ -72,8 +72,9 @@ DRAC3_LIB_DEPENDS=	libcurl.so:ftp/curl
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMGMT}
-BUILD_DEPENDS+=		swig:devel/swig13
+BUILD_DEPENDS+=		swig3.0:devel/swig30
 RUN_DEPENDS+=		${LOCALBASE}/libdata/pkgconfig/pygtk-2.0.pc:x11-toolkits/py-gtk2
+BINARY_ALIAS=		swig=swig3.0
 PLIST_SUB+=		MGMT=""
 .else
 CONFIGURE_ARGS+=	--disable-mgmt
