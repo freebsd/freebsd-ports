@@ -5932,7 +5932,6 @@
     SUBDIR += svn_load_dirs
     SUBDIR += svntrac
     SUBDIR += swank-clojure
-    SUBDIR += swig13
     SUBDIR += swig20
     SUBDIR += swig30
     SUBDIR += synfig
