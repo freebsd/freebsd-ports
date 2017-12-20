@@ -178,6 +178,15 @@
  		esac
  
  		case "$PM_NEEDS_UPDATE" in
+@@ -2880,7 +2880,7 @@
+ 		NO_DEP_UPDATES=no_dep_updates ; build_l=''
+ 		export NO_DEP_UPDATES build_l
+ 
+-		pm_cd_pd Mk && PM_WRKDIRPREFIX=`pm_make_b -V WRKDIRPREFIX` && pm_cd ~-
++		pm_cd_pd Mk && PM_WRKDIRPREFIX=`pm_make_b -V WRKDIRPREFIX` && pm_cd "$OLDPWD"
+ 	fi
+ 
+ 	if [ -n "$PM_BUILD_ONLY_LIST" ]; then
 @@ -3033,7 +3021,7 @@ if [ -z "$REPLACE_ORIGIN" ]; then
  			*)	echo '' ; no_valid_port ;;
  			esac
