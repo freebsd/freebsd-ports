@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/swift/LICENSE.txt
 
 BUILD_DEPENDS=	cmake:devel/cmake \
 		bash:shells/bash \
-		swig:devel/swig13 \
+		swig3.0:devel/swig30 \
 		python:lang/python \
 		sphinx-build:textproc/py-sphinx \
 		binutils>=2.25.1:devel/binutils
@@ -25,6 +25,7 @@ LIB_DEPENDS=	libicudata.so:devel/icu \
 
 REL_SNAP=	2017-04-22-a
 USE_GITHUB=	yes
+BINARY_ALIAS=	swig=swig3.0
 
 GH_ACCOUNT=	apple:DEFAULT,llvm,clang,dispatch,lldb,cmark,llbuild,swiftpm,xctest,xcfound
 GH_PROJECT=	swift:DEFAULT swift-llvm:llvm swift-clang:clang swift-lldb:lldb \
