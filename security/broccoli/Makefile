@@ -13,15 +13,15 @@ COMMENT=	Bro Client Communications Library
 
 LICENSE=	BSD3CLAUSE
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/bison:devel/bison \
-		${LOCALBASE}/bin/swig:devel/swig13
+BUILD_DEPENDS=	swig3.0:devel/swig30
 LIB_DEPENDS=	libGeoIP.so:net/GeoIP
 
 EXTRACT_AFTER_ARGS=	${DISTNAME}/aux/broccoli
 
-USES=		cmake:outsource ssl
+USES=		cmake:outsource ssl bison
 USE_LDCONFIG=	yes
 CMAKE_SOURCE_PATH=	${WRKSRC}/aux/broccoli
+BINARY_ALIAS=	swig=swig3.0
 
 .if defined(BRO_PREFIX)
 PREFIX=		${BRO_PREFIX}
