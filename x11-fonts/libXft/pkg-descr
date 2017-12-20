@@ -5,4 +5,4 @@ text drawing. When Render is not available, Xft uses the core protocol to draw
 client-side glyphs. This provides completely compatible support of client-side
 fonts for all X servers.
 
-WWW: http://fontconfig.org/
+WWW: https://www.freedesktop.org/wiki/Software/Xft/
