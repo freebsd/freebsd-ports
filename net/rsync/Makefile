@@ -3,8 +3,8 @@
 
 PORTNAME=	rsync
 PORTVERSION=	3.1.2
+PORTREVISION=	8
 CATEGORIES=	net ipv6
-PORTREVISION=	7
 MASTER_SITES=	http://rsync.samba.org/ftp/rsync/ \
 		https://rsync.samba.org/ftp/rsync/ \
 		ftp://ftp.fu-berlin.de/pub/unix/network/rsync/ \

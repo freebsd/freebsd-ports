@@ -1,0 +1,44 @@
+From: Jeriko One <jeriko.one@gmx.us>
+Date: Thu, 2 Nov 2017 23:44:19 -0700
+Subject: Check fname in recv_files sooner.
+Origin: https://git.samba.org/?p=rsync.git;a=commit;h=3e06d40029cfdce9d0f73d87cfd4edaf54be9c51
+Bug-Debian: https://bugs.debian.org/883667
+Bug-Debian-Security: https://security-tracker.debian.org/tracker/CVE-2017-17433
+
+---
+ receiver.c | 12 ++++++------
+ 1 file changed, 6 insertions(+), 6 deletions(-)
+
+diff --git a/receiver.c b/receiver.c
+index baae3a91..9fdafa15 100644
+--- a/receiver.c
++++ b/receiver.c
+@@ -574,6 +574,12 @@ int recv_files(int f_in, int f_out, char *local_name)
+ 			file = dir_flist->files[cur_flist->parent_ndx];
+ 		fname = local_name ? local_name : f_name(file, fbuf);
+ 
++		if (daemon_filter_list.head
++		    && check_filter(&daemon_filter_list, FLOG, fname, 0) < 0) {
++			rprintf(FERROR, "attempt to hack rsync failed.\n");
++			exit_cleanup(RERR_PROTOCOL);
++		}
++
+ 		if (DEBUG_GTE(RECV, 1))
+ 			rprintf(FINFO, "recv_files(%s)\n", fname);
+ 
+@@ -645,12 +651,6 @@ int recv_files(int f_in, int f_out, char *local_name)
+ 
+ 		cleanup_got_literal = 0;
+ 
+-		if (daemon_filter_list.head
+-		    && check_filter(&daemon_filter_list, FLOG, fname, 0) < 0) {
+-			rprintf(FERROR, "attempt to hack rsync failed.\n");
+-			exit_cleanup(RERR_PROTOCOL);
+-		}
+-
+ 		if (read_batch) {
+ 			int wanted = redoing
+ 				   ? we_want_redo(ndx)
+-- 
+2.15.1
+
