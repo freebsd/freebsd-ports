@@ -11,7 +11,7 @@ LICENSE=	LGPL20+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	pyside-rcc:devel/pyside-tools \
-		swig:devel/swig13 \
+		swig3.0:devel/swig30 \
 		${LOCALBASE}/libdata/pkgconfig/eigen3.pc:math/eigen3
 LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libfreetype.so:print/freetype2 \
