@@ -1,0 +1,9 @@
+U-Boot loader and related files for the A64-Olinuxino.
+
+To install this bootloader on an sdcard just do:
+dd if=/usr/local/share/u-boot/u-boot-a64-olinuxino/u-boot-sunxi-with-spl.bin of=/path/to/sdcarddevice bs=1k seek=8 conv=sync
+
+For information about running FreeBSD on Allwinner boards, see
+ https://wiki.freebsd.org/FreeBSD/arm/Allwinner
+
+WWW: http://www.denx.de/wiki/U-Boot
