@@ -21,9 +21,6 @@ BUILD_WRKSRC=	${WRKSRC}/${MYGUI_SUBDIR}
 INSTALL_WRKSRC=	${WRKSRC}/${MYGUI_SUBDIR}
 .endif
 
-BROKEN_aarch64=		fails to compile: memory:2050:9: error: cannot initialize a member subobject of type 'std::__1::basic_string<char> *' with an rvalue of type 'int'
-BROKEN_armv6=		fails to compile: memory:2050:9: error: cannot initialize a member subobject of type 'std::__1::basic_string<char> *' with an rvalue of type 'int'
-BROKEN_armv7=		fails to compile: memory:2050:9: error: cannot initialize a member subobject of type 'std::__1::basic_string<char> *' with an rvalue of type 'int'
 BROKEN_powerpc64=	fails to build
 
 USE_GITHUB=	yes
