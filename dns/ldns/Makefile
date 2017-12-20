@@ -66,8 +66,9 @@ INSTALL_TARGET=	install-pyldns
 
 CONFIGURE_ARGS+=--with-pyldns
 LIB_DEPENDS+=	libldns.so:dns/ldns
-BUILD_DEPENDS+=	swig2.0:devel/swig20
+BUILD_DEPENDS+=	swig3.0:devel/swig30
 CFLAGS+=	-I${OPENSSLINC}
+BINARY_ALIAS=	swig=swig3.0
 
 post-patch:
 	@${REINPLACE_CMD} \

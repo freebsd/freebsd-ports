@@ -2,7 +2,7 @@
 
 PORTNAME=	gnuradio
 PORTVERSION=	3.7.10.1
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	comms astro hamradio
 MASTER_SITES=	http://gnuradio.org/releases/gnuradio/ \
 		LOCAL/db
@@ -13,7 +13,7 @@ COMMENT=	Amateur Radio Software defined radio
 LICENSE=	GPLv3
 
 BUILD_DEPENDS=	sdl-config:devel/sdl12 \
-		swig2.0:devel/swig20 \
+		swig3.0:devel/swig30 \
 		cheetah:devel/py-cheetah@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}lxml>0:devel/py-lxml@${PY_FLAVOR} \
 		xdg-open:devel/xdg-utils \
@@ -47,7 +47,7 @@ USES=		cmake:outsource compiler:c11 iconv perl5 pkgconfig pyqt:4 python:2.7 sheb
 SHEBANG_FILES=	grc/scripts/freedesktop/grc_setup_freedesktop.in \
 		gnuradio-runtime/python/gnuradio/ctrlport/gr-ctrlport-monitor \
 		gnuradio-runtime/python/gnuradio/ctrlport/gr-perf-monitorx
-CMAKE_ARGS+=	-DSWIG_EXECUTABLE:STRING="${LOCALBASE}/bin/swig2.0"\
+CMAKE_ARGS+=	-DSWIG_EXECUTABLE:STRING="${LOCALBASE}/bin/swig3.0"\
 		-DICONV_PREFIX:STRING="${ICONV_PREFIX}" \
 		-DICONV_LIB:STRING="X${ICONV_LIB}" \
 		-DENABLE_GR_CTRLPORT="YES" \

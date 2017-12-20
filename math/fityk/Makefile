@@ -14,7 +14,7 @@ LICENSE=	GPLv2 # (or later)
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	boost-libs>=1.35:devel/boost-libs \
-		swig2.0:devel/swig20 \
+		swig3.0:devel/swig30 \
 		gnuplot:math/gnuplot
 RUN_DEPENDS=	gnuplot:math/gnuplot
 
@@ -32,6 +32,7 @@ WX_CONF_ARGS=	absolute
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
+BINARY_ALIAS=	swig=swig3.0
 
 CFLAGS+=	-D_GNU_SOURCE
 CPPFLAGS+=	-I${WRKDIR}/xylib-1.4 \
