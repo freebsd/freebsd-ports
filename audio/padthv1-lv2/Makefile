@@ -2,7 +2,7 @@
 
 PORTNAME=	padthv1
 DISTVERSIONPREFIX=	${PORTNAME}_
-DISTVERSION=	0_8_5
+DISTVERSION=	0_8_6
 CATEGORIES=	audio
 PKGNAMESUFFIX=	-lv2
 
@@ -23,6 +23,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	rncbc
 USE_GL=		gl
 USE_QT5=	core gui widgets xml buildtools_build qmake_build
+
+PLIST_SUB=	SHL3=${DISTVERSION:S/_/./g} SHL2=${DISTVERSION:C/([[:digit:]])_([[:digit:]])_[[:digit:]]/\1.\2/} SHL1=${DISTVERSION:C/([[:digit:]])_.*/\1/}
 
 CONFIGURE_ARGS=	--disable-alsa-midi
 
