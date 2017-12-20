@@ -15,3 +15,10 @@ Clients can also be found:
 www/rubygem-selenium-webdriver
 www/py-selenium
 devel/p5-Test-WWW-Selenium
+
+NOTE!
+If using an older firefox version, you might want to use this in rc.conf
+selenium_args="-enablePassThrough false"
+
+Please look it up in the documentation if you are experiencing wierdness
+together with firefox
