@@ -46,7 +46,8 @@ STAGE=		${WRKSRC}/_stage
 WITH_HTTP_PORT?=	80
 WITH_SSL_PORT?=		443
 
-PERL_BUILD_DEPENDS=	swig:devel/swig13
+PERL_BUILD_DEPENDS=	swig3.0:devel/swig30
+PERL_BINARY_ALIAS=	swig=swig3.0
 PERL_USES=	perl5
 DOCS_BUILD_DEPENDS=	doxygen:devel/doxygen
 
