@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	flcluster
-PORTVERSION=	1.0.3
+PORTVERSION=	1.0.4
 CATEGORIES=	comms hamradio
 MASTER_SITES=	SF/fldigi/${PORTNAME}
 
