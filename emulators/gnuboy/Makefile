@@ -15,6 +15,9 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libvga.so:graphics/svgalib
 
+ONLY_FOR_ARCHS=		amd64 i386
+ONLY_FOR_ARCHS_REASON=	relies on features specific to x86
+
 USES=		autoreconf compiler
 USE_SDL=	sdl
 USE_XORG=	x11
