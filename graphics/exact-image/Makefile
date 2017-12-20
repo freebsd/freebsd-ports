@@ -12,7 +12,7 @@ COMMENT=	Fast image processing library
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	swig:devel/swig13
+BUILD_DEPENDS=	swig3.0:devel/swig30
 LIB_DEPENDS=	libagg.so:graphics/agg \
 		libtiff.so:graphics/tiff \
 		libpng.so:graphics/png \
@@ -39,6 +39,7 @@ PLIST_FILES=	${BINS:S|^|bin/|} \
 		%%SITE_PERL%%/ExactImage.pm \
 		%%PYTHON_SITELIBDIR%%/ExactImage.py \
 		%%PYTHON_SITELIBDIR%%/_ExactImage.so
+BINARY_ALIAS=	swig=swig3.0
 
 post-extract:
 	@${RM} -r ${WRKSRC}/agg-2.4/
