@@ -2,8 +2,8 @@
 
 PORTNAME=	rpcs3
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.0.4-148
-DISTVERSIONSUFFIX=	-ga1fa10ac
+DISTVERSION=	0.0.4-178
+DISTVERSIONSUFFIX=	-ga285409f
 CATEGORIES=	emulators
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -20,14 +20,14 @@ LIB_DEPENDS=	libpng.so:graphics/png \
 		libavcodec.so:multimedia/ffmpeg
 
 ONLY_FOR_ARCHS=	amd64
-ONLY_FOR_ARCHS_REASON=	requires int128 and SSSE3
+ONLY_FOR_ARCHS_REASON=	requires int128 and SSE2
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	RPCS3
 GH_TUPLE=	RPCS3:hidapi:hidapi-0.8.0-rc1-25-gca39ce8:hidapi/3rdparty/hidapi \
 		RPCS3:yaml-cpp:release-0.5.3-62-g017626a:yamlcpp/Utilities/yaml-cpp \
 		akrzemi1:Optional:f27e790:Optional/3rdparty/Optional \
-		kobalicek:asmjit:1370fe6:asmjit/asmjit \
+		kobalicek:asmjit:673dcef:asmjit/asmjit \
 		Microsoft:GSL:fc5fce4:GSL/3rdparty/GSL \
 		USCiLab:cereal:v1.2.0:cereal/3rdparty/cereal \
 		zeux:pugixml:v1.8.1-148-g257fbb4:pugixml/3rdparty/pugixml
@@ -40,6 +40,7 @@ USE_XORG=	x11
 EXTRA_PATCHES+=	${EXTRA_PATCHES_${OPSYS}_${OSREL}}
 EXTRA_PATCHES_FreeBSD_10.3=	${PATCHDIR}/extra-patch-no-thread_local
 CMAKE_ARGS+=	-DCMAKE_SKIP_RPATH=on -DUSE_SYSTEM_LIBPNG=on -DUSE_SYSTEM_FFMPEG=on
+CONFIGURE_ENV+=	TRAVIS=1 # XXX Rename to be less generic
 CXXFLAGS+=	-D_GLIBCXX_USE_C99 # XXX ports/193528
 CXXFLAGS+=	-Wno-macro-redefined # __STDC_*_MACROS sys/cdefs.h vs. llvm-config
 LDFLAGS+=	-Wl,--as-needed # GLU
