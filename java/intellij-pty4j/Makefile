@@ -6,7 +6,7 @@ PORTVERSION=	0.5
 PORTREVISION=	1
 CATEGORIES=	java devel
 
-MAINTAINER=	tobik@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	FreeBSD-compatible replacement for IntelliJ's bundled Pty4J
 
 LICENSE=	EPL
