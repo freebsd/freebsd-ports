@@ -9822,3 +9822,4 @@ devel/swig13|devel/swig30|2017-12-20|swig 1.3 is not maintained, use swig 3.0
 devel/swig20|devel/swig30|2017-12-20|swig 2.0 is not maintained, use swig 3.0
 devel/android-tools-adb-devel|devel/android-tools-adb|2017-12-20|Out of date: use devel/android-tools-adb for now
 devel/android-tools-fastboot-devel|devel/android-tools-fastboot|2017-12-20|Out of date: use devel/android-tools-fastboot for now
+science/PETSc||2017-12-20|Removed this recently-added port, will commit over the resurrected port math/petsc
