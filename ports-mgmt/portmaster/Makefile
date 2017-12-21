@@ -3,9 +3,6 @@
 PORTNAME=	portmaster
 PORTVERSION=	3.18
 CATEGORIES=	ports-mgmt
-MASTER_SITES=	LOCAL/bdrewery/${PORTNAME}/ \
-		http://mirror.shatow.net/freebsd/${PORTNAME}/ \
-		GH
 
 MAINTAINER=	se@FreeBSD.org
 COMMENT=	Manage your ports without external databases or languages
