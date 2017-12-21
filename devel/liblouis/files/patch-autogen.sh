@@ -1,4 +1,4 @@
---- autogen.sh.orig	2015-08-31 14:19:59 UTC
+--- autogen.sh.orig	2017-12-04 15:51:01 UTC
 +++ autogen.sh
 @@ -28,8 +28,8 @@ set -e
  
