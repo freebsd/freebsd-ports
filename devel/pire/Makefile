@@ -13,6 +13,9 @@ COMMENT=	Perl Incompatible Regular Expressions library
 LICENSE=	LGPL3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+NOT_FOR_ARCHS=		powerpc powerpc64 sparc64
+NOT_FOR_ARCHS_REASON=	does not support big-endian architectures
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	dprokoptsev
 
@@ -21,8 +24,5 @@ INSTALL_TARGET=	install-strip
 USES=		autoreconf bison libtool
 USE_LDCONFIG=	yes
 TEST_TARGET=	check
-
-ONLY_FOR_ARCHS=		amd64 i386
-ONLY_FOR_ARCHS_REASON=	not yet ported to big-endian platforms
 
 .include <bsd.port.mk>
