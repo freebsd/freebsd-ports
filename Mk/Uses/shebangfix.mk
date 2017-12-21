@@ -65,6 +65,13 @@ ${lang}_OLD_CMD+= /usr/bin/${lang}
 ${lang}_OLD_CMD+= /usr/local/bin/${lang}
 .endfor
 
+.for pyver in 2 3
+python_OLD_CMD+= "/usr/bin/env python${pyver}"
+python_OLD_CMD+= /bin/python${pyver}
+python_OLD_CMD+= /usr/bin/python${pyver}
+python_OLD_CMD+= /usr/local/bin/python${pyver}
+.endfor
+
 .for lang in ${SHEBANG_LANG}
 .  if !defined(${lang}_CMD)
 IGNORE+=	missing definition for ${lang}_CMD
