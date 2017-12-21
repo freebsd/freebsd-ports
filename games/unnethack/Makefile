@@ -3,13 +3,17 @@
 
 PORTNAME=	unnethack
 DISTVERSION=	5.1.0-20131208
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION:R}
 
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	New variant of NetHack
 
-BROKEN=		does not build: ./vaults.des: line 110, pos 9 : Core function 'level.depth' has unknown return type 'i'.
+LICENSE=	nethack
+LICENSE_NAME=	NETHACK GENERAL PUBLIC LICENSE
+LICENSE_FILE=	${WRKSRC}/dat/license
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 GNU_CONFIGURE=	yes
 USES=		gmake groff ncurses

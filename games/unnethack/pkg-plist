@@ -6,6 +6,7 @@ bin/unnethack
 %%DATADIR%%/nhdat
 %%DATADIR%%/recover
 %%DATADIR%%/unnethack
+%%DATADIR%%/unnethackrc.default
 @mode 664
 %%VARDIR%%/logfile
 %%VARDIR%%/perm
