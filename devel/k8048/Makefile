@@ -11,13 +11,18 @@ COMMENT=	Programs Microchip PICs using Velleman K8048 board
 
 LICENSE=	BSD3CLAUSE
 
+BROKEN_aarch64=		invokes x86 assembler
+BROKEN_armv6=		invokes x86 assembler
+BROKEN_armv7=		invokes x86 assembler
+BROKEN_mips=		invokes x86 assembler
+BROKEN_mips64=		invokes x86 assembler
+BROKEN_sparc64=		invokes x86 assembler
+BROKEN_powerpc64=	invokes x86 assembler
+
 WRKSRC=		${WRKDIR}/${PORTNAME}/Src
 
 USES=		gmake
 ALL_TARGET=	build
-
-BROKEN_armv6=	fails to compile: invokes x86 asm
-BROKEN_armv7=	fails to compile: invokes x86 asm
 
 PLIST_FILES=	bin/${PORTNAME} bin/kio ${BIN_SYMLINKS}
 
