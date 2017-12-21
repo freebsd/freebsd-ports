@@ -6,11 +6,11 @@ PKGNAMESUFFIX=	-utils
 COMMENT=	Virtual Peer-to-Peer Currency (CLI and Utilities)
 SLAVE_PORT=	yes
 
+NOT_FOR_ARCHS=		powerpc powerpc64 sparc64
+NOT_FOR_ARCHS_REASON=	does not support big-endian architectures
+
 OPTIONS_DEFINE=		DEBUG HARDENING TESTS
 OPTIONS_DEFAULT=	HARDENING TESTS
-
-ONLY_FOR_ARCHS=		amd64 i386
-ONLY_FOR_ARCHS_REASON=	does not support big-endian architectures
 
 CONFIGURE_ARGS=	--without-daemon \
 		--without-gui \
