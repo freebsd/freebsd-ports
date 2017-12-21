@@ -15,6 +15,7 @@ include/libgig/Akai.h
 include/libgig/DLS.h
 include/libgig/Korg.h
 include/libgig/RIFF.h
+include/libgig/Serialization.h
 include/libgig/SF.h
 include/libgig/gig.h
 lib/libgig/libakai.a
@@ -23,8 +24,8 @@ lib/libgig/libakai.so.0
 lib/libgig/libakai.so.0.0.0
 lib/libgig/libgig.a
 lib/libgig/libgig.so
-lib/libgig/libgig.so.7
-lib/libgig/libgig.so.7.0.0
+lib/libgig/libgig.so.8
+lib/libgig/libgig.so.8.0.0
 libdata/pkgconfig/akai.pc
 libdata/pkgconfig/gig.pc
 man/man1/akaidump.1.gz
