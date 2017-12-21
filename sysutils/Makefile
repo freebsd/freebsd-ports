@@ -1200,6 +1200,7 @@
     SUBDIR += trueos-libqt5
     SUBDIR += tuptime
     SUBDIR += tw_cli
+    SUBDIR += twmn
     SUBDIR += tzdialog
     SUBDIR += u-boot-a13-olinuxino
     SUBDIR += u-boot-a64-olinuxino
