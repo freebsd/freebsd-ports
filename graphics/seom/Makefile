@@ -13,8 +13,8 @@ COMMENT=	Real-time capture library for OpenGL applications
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-ONLY_FOR_ARCHS=	i386 amd64
-ONLY_FOR_ARCHS_REASON=	not yet ported to anything except i386 and amd64
+ONLY_FOR_ARCHS=		amd64 i386
+ONLY_FOR_ARCHS_REASON=	not yet ported to any arch other than x86
 
 USES=		gmake tar:bzip2
 USE_XORG=	x11 xv xext
@@ -24,7 +24,7 @@ MAKE_ENV=	DATADIR="${DATADIR}"
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == i386 || ${ARCH} == amd64
+.if ${ARCH} == amd64 || ${ARCH} == i386
 BUILD_DEPENDS+=	yasm:devel/yasm
 .endif
 
