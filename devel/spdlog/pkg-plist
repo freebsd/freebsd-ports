@@ -11,12 +11,15 @@ include/spdlog/details/os.h
 include/spdlog/details/pattern_formatter_impl.h
 include/spdlog/details/registry.h
 include/spdlog/details/spdlog_impl.h
+include/spdlog/fmt/bundled/LICENSE.rst
 include/spdlog/fmt/bundled/format.cc
 include/spdlog/fmt/bundled/format.h
 include/spdlog/fmt/bundled/ostream.cc
 include/spdlog/fmt/bundled/ostream.h
 include/spdlog/fmt/bundled/posix.cc
 include/spdlog/fmt/bundled/posix.h
+include/spdlog/fmt/bundled/printf.cc
+include/spdlog/fmt/bundled/printf.h
 include/spdlog/fmt/bundled/time.h
 include/spdlog/fmt/fmt.h
 include/spdlog/fmt/ostr.h
@@ -34,9 +37,9 @@ include/spdlog/sinks/sink.h
 include/spdlog/sinks/stdout_sinks.h
 include/spdlog/sinks/syslog_sink.h
 include/spdlog/sinks/wincolor_sink.h
+include/spdlog/sinks/windebug_sink.h
 include/spdlog/spdlog.h
 include/spdlog/tweakme.h
 lib/cmake/spdlog/spdlogConfig.cmake
 lib/cmake/spdlog/spdlogConfigVersion.cmake
-lib/cmake/spdlog/spdlogTargets.cmake
 libdata/pkgconfig/spdlog.pc
