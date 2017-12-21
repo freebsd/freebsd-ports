@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pgcli
-PORTVERSION=	1.8.1
-PORTREVISION=	1
+PORTVERSION=	1.8.2
 CATEGORIES=	databases python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,7 +17,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cli-helpers>=1.0.1:devel/py-cli-helpers@${FL
 		${PYTHON_PKGNAMEPREFIX}click>=4.1:devel/py-click@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}configobj>=5.0.6:devel/py-configobj@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}humanize>=0.5.1:devel/py-humanize@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pgspecial>=1.8.0:databases/py-pgspecial@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pgspecial>=1.9.0:databases/py-pgspecial@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}prompt_toolkit>=1.0.10:devel/py-prompt_toolkit@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}psycopg2>=2.5.4:databases/py-psycopg2@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pygments>=2.0:textproc/py-pygments@${FLAVOR} \
