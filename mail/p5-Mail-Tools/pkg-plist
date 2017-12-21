@@ -18,6 +18,7 @@
 %%SITE_PERL%%/Mail/Internet.pod
 %%SITE_PERL%%/Mail/Mailer.pm
 %%SITE_PERL%%/Mail/Mailer.pod
+%%SITE_PERL%%/Mail/Mailer/qmail.pm
 %%SITE_PERL%%/Mail/Mailer/rfc822.pm
 %%SITE_PERL%%/Mail/Mailer/sendmail.pm
 %%SITE_PERL%%/Mail/Mailer/smtp.pm
@@ -27,7 +28,8 @@
 %%SITE_PERL%%/Mail/Send.pod
 %%SITE_PERL%%/Mail/Util.pm
 %%SITE_PERL%%/Mail/Util.pod
-%%SITE_PERL%%/Mail/Mailer/qmail.pm
+%%SITE_PERL%%/MailTools.pm
+%%SITE_PERL%%/MailTools.pod
 %%PERL5_MAN3%%/Mail::Address.3.gz
 %%PERL5_MAN3%%/Mail::Cap.3.gz
 %%PERL5_MAN3%%/Mail::Field.3.gz
@@ -40,3 +42,4 @@
 %%PERL5_MAN3%%/Mail::Mailer.3.gz
 %%PERL5_MAN3%%/Mail::Send.3.gz
 %%PERL5_MAN3%%/Mail::Util.3.gz
+%%PERL5_MAN3%%/MailTools.3.gz
