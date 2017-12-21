@@ -1278,9 +1278,9 @@
     SUBDIR += py-diff-match-patch
     SUBDIR += py-docutils
     SUBDIR += py-dsv
+    SUBDIR += py-elasticsearch
     SUBDIR += py-elasticsearch-curator-py
     SUBDIR += py-elasticsearch-dsl-py
-    SUBDIR += py-elasticsearch-py
     SUBDIR += py-elasticsearch2-dsl-py
     SUBDIR += py-elib.intl
     SUBDIR += py-empy

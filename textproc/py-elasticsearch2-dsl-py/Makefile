@@ -3,6 +3,7 @@
 
 PORTNAME=	py-elasticsearch2-dsl-py
 PORTVERSION=	2.1.0
+PORTREVISION=	1
 CATEGORIES=	textproc python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -11,7 +12,7 @@ COMMENT=	High level Python client for Elasticsearch
 
 LICENSE=	APACHE20
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}elasticsearch-py>=1.3.0:textproc/py-elasticsearch-py@${FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}elasticsearch>=1.3.0:textproc/py-elasticsearch@${FLAVOR}
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	elastic
