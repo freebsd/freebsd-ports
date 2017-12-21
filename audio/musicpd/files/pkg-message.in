@@ -25,12 +25,18 @@ Then start the server with
 or reboot.
 
 
-NOTE: The musicpd server is pretty useless without a client.
-      You might want to install one of the following ports too:
+NOTE: The musicpd server does not come with a client. In order
+      to use it, you need one. They come in all shapes and
+      sizes for many platforms (including iOS and Android for
+      remote controlling musicpd from your smartphone).
 
-      Command line: musicpc, ncmpc (Curses), ncmpcpp (Curses)
-      GNOME / GTK: glurp, gmpc
-      KDE / Qt: quimup, qmpdlient
+      In the FreeBSD ports tree, there is a number of clients as
+      well, for instance (non-exhaustive list):
+
+      Command line: musicpc
+      Curses: ncmpc, ncmpcpp, pms, pms-devel
+      GNOME / GTK: ario, gimmix, glurp, gmpc, sonata
+      KDE / Qt: cantana, quimup, qmpdlient
       Web: phpmp
 
 
