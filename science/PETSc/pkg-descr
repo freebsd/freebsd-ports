@@ -1,0 +1,7 @@
+A suite of data structures and routines for the scalable (parallel) solution of
+scientific applications modeled by partial differential equations. It supports
+MPI, and GPUs through CUDA or OpenCL, as well as hybrid MPI-GPU parallelism.
+PETSc (sometimes called PETSc/Tao) also contains the Tao optimization software
+library.
+
+WWW: http://www.mcs.anl.gov/petsc

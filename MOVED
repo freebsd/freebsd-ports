@@ -4357,7 +4357,6 @@ games/rtcw|games/linux-rtcw|2013-06-18|Renamed (Linux binary port)
 multimedia/p5-Video-Info||2013-06-19|Has expired: Broken for more than 6 months
 net-p2p/p5-pdonkey||2013-06-19|Removed: depends on expired multimedia/p5-Video-Info
 lang/boo||2013-06-19|Has expired: Broken for more than 6 months
-math/petsc-mpich||2013-06-19|Has expired: Broken for more than 6 months
 databases/py-MySQLdb41||2013-06-19|Depends on databases/mysql41-client, which was removed
 databases/py-MySQLdb50||2013-06-19|Depends on databases/mysql50-client, which was removed
 devel/bugzilla|devel/bugzilla40|2013-06-20|Renamed
@@ -6646,7 +6645,6 @@ math/jsmath-fonts-sprite||2014-09-01|Not staged
 math/jsmath||2014-09-01|Not staged
 math/kash3||2014-09-01|Not staged
 math/matrix||2014-09-01|Not staged
-math/petsc||2014-09-01|Not staged
 math/sdpa-gmp||2014-09-01|Not staged
 math/sedumi||2014-09-01|Not staged
 math/unixstat||2014-09-01|Not staged
@@ -9822,4 +9820,5 @@ devel/swig13|devel/swig30|2017-12-20|swig 1.3 is not maintained, use swig 3.0
 devel/swig20|devel/swig30|2017-12-20|swig 2.0 is not maintained, use swig 3.0
 devel/android-tools-adb-devel|devel/android-tools-adb|2017-12-20|Out of date: use devel/android-tools-adb for now
 devel/android-tools-fastboot-devel|devel/android-tools-fastboot|2017-12-20|Out of date: use devel/android-tools-fastboot for now
-science/PETSc||2017-12-20|Removed this recently-added port, will commit over the resurrected port math/petsc
+math/petsc|science/PETSc|2017-12-20|Recreated after it has been deleted in r366959 on 2014-09-01
+math/petsc-mpich|science/PETSc|2017-12-20|Recreated after it has been deleted in r321243 on 2013-06-19 (it was a slave port)
