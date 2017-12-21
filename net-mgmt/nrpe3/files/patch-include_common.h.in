@@ -1,0 +1,19 @@
+--- include/common.h.in.orig	2017-12-08 11:11:28 UTC
++++ include/common.h.in
+@@ -30,11 +30,16 @@
+ 
+ #ifdef HAVE_SSL
+ #include <@SSL_INC_PREFIX@@SSL_HDR@>
++#include <@SSL_INC_PREFIX@crypto.h>
+ # ifdef SSL_TYPE_openssl
+ #  include <@SSL_INC_PREFIX@err.h>
+ #  include <@SSL_INC_PREFIX@rand.h>
+ #  include <@SSL_INC_PREFIX@engine.h>
++#  include <@SSL_INC_PREFIX@crypto.h>
++#  if defined (LIBRESSL_VERSION_NUMBER)
++#   include <@SSL_INC_PREFIX@opensslfeatures.h>
++#  endif
+ # endif
+ #endif
+ 
+ #define PROGRAM_VERSION "3.2.1"
