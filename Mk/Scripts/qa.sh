@@ -48,7 +48,7 @@ shebangonefile() {
 	/bin/rc)
 		# whitelist some interpreters
 		;;
-	${LOCALBASE}/bin/python|${PREFIX}/bin/python)
+	${LOCALBASE}/bin/python|${PREFIX}/bin/python|${LOCALBASE}/bin/python2|${PREFIX}/bin/python2|${LOCALBASE}/bin/python3|${PREFIX}/bin/python3)
 		badinterp="${interp}"
 		;;
 	${LINUXBASE}/*) ;;
@@ -69,7 +69,7 @@ shebangonefile() {
 	/usr/bin/env)
 		interparg=$(sed -n -e '1s/^#![[:space:]]*[^[:space:]]*[[:space:]]*\([^[:space:]]*\).*/\1/p;2q' "${f}")
 		case "${interparg}" in
-		python)
+		python|python2|python3)
 			badinterp="${interp} ${interparg}"
 			;;
 		esac
