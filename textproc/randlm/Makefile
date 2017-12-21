@@ -3,7 +3,7 @@
 
 PORTNAME=	randlm
 PORTVERSION=	0.2.5
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	textproc
 MASTER_SITES=	SF/${PORTNAME}
 
@@ -16,7 +16,6 @@ RUN_DEPENDS=	${LOCALBASE}/include/google/sparse_hash_map:devel/sparsehash
 
 BROKEN_aarch64=		fails to compile: invalid output constraint =a in assembler
 BROKEN_armv6=		fails to compile: invalid output constraint =a in assembler
-BROKEN_armv7=		fails to compile: BloomMap.cpp:275:58: error: ordered comparison between pointer and zero ('int *' and 'int')
 BROKEN_powerpc64=	fails to compile: 'itr' does not name a type
 
 GNU_CONFIGURE=	yes
