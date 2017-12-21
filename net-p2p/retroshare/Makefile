@@ -4,7 +4,7 @@
 PORTNAME=	retroshare
 PORTVERSION=	0.6.1
 DISTVERSIONPREFIX=	v
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	net-p2p
 
 MAINTAINER=	peter@netkey.at
@@ -23,10 +23,6 @@ LIB_DEPENDS=	libsqlcipher.so:databases/sqlcipher \
 		libavcodec.so:multimedia/ffmpeg \
 		libcurl.so:ftp/curl \
 		libmicrohttpd.so:www/libmicrohttpd
-
-BROKEN_aarch64=		fails to compile due to clang 4.0 regression: util/bdthreads.cc:132:10: ordered comparison between pointer and zero
-BROKEN_armv6=		fails to compile due to clang 4.0 regression: util/bdthreads.cc:132:10: ordered comparison between pointer and zero
-BROKEN_armv7=		fails to compile due to clang 4.0 regression: util/bdthreads.cc:132:10: ordered comparison between pointer and zero
 
 USES=		compiler:features desktop-file-utils dos2unix pkgconfig qmake ssl
 USE_GNOME=	glib20 libxml2 libxslt
