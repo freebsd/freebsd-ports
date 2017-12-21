@@ -2,5 +2,3 @@ mono-kmod is a FreeBSD kernel module enables you to execute ECMA and
 .NET applications without preceding the native code generator in the
 command line. That means you can call a binary with "./hello.exe"
 instead of "mono hello.exe".
-
-WWW: http://www.alpha-tierchen.de/~bkoenig/mono-kmod/
