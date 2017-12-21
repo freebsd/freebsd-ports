@@ -11,6 +11,7 @@ MAINTAINER=	thomas@bartelmess.io
 COMMENT=	Tool for centralized log collection
 
 LICENSE=	GPLv3+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		tar:tgz
 USE_JAVA=	yes
