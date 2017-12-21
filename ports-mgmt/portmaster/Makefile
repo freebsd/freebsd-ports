@@ -2,7 +2,7 @@
 
 PORTNAME=	portmaster
 PORTVERSION=	3.17.11
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	LOCAL/bdrewery/${PORTNAME}/ \
 		http://mirror.shatow.net/freebsd/${PORTNAME}/ \
@@ -32,14 +32,14 @@ verify: checksum
 
 do-build:
 .for file in portmaster files/portmaster.rc.sample files/portmaster.8
-	${SED} -e 's#/usr/local#${LOCALBASE}#g' ${WRKSRC}/${file} \
-	  > ${WRKDIR}/${file:T}
+	${REINPLACE_CMD} -e 's#/usr/local#${LOCALBASE}#g' \
+	    -e 's#%%PKGNAME%%#${PKGNAME}#g' ${WRKSRC}/${file}
 .endfor
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKDIR}/portmaster \
+	${INSTALL_SCRIPT} ${WRKSRC}/portmaster \
 	    ${STAGEDIR}${PREFIX}/sbin
-	${INSTALL_DATA} ${WRKDIR}/portmaster.rc.sample \
+	${INSTALL_DATA} ${WRKSRC}/files/portmaster.rc.sample \
 	    ${STAGEDIR}${PREFIX}/etc
 	${INSTALL_MAN} ${WRKSRC}/files/portmaster.8 \
 	    ${STAGEDIR}${MAN8PREFIX}/man/man8
