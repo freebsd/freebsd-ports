@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	smenu
-PORTVERSION=	0.9.9
+PORTVERSION=	0.9.10
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 
@@ -10,6 +10,8 @@ COMMENT=	Terminal utility to interactively filter text
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE.rst
+
+USES=	localbase ncurses:port
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	p-gen
