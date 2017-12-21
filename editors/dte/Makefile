@@ -2,7 +2,7 @@
 
 PORTNAME=	dte
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.5
+DISTVERSION=	1.6
 CATEGORIES=	editors
 
 MAINTAINER=	dg@syrec.org
@@ -29,6 +29,8 @@ OPTIONS_DEFINE=	DOCS
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/dte
+
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_MAN} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
