@@ -31,7 +31,7 @@ I18N_DESC=	Install localization files
 
 .include <bsd.port.options.mk>
 
-if ${PORT_OPTIONS:MMULTIMEDIA}
+.if ${PORT_OPTIONS:MMULTIMEDIA}
 RUN_DEPENDS+=	gstreamer1-plugins-core>=0:multimedia/gstreamer1-plugins-core
 .endif
 
