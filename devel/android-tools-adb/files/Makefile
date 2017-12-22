@@ -101,7 +101,7 @@ SRCS+= stderr_write.c
 
 REVISION?= $$(${GIT} rev-parse --short=12 HEAD 2>/dev/null || echo unknown)
 
-CPPFLAGS+= -DADB_VERSION="\"26.0.0 rc1-${REVISION}-android\""
+CPPFLAGS+= -DADB_VERSION="\"27.0.0-0 ${REVISION}-android\""
 CPPFLAGS+= -DADB_HOST=1
 CPPFLAGS+= -DHAVE_FORKEXEC=1
 CPPFLAGS+= -DHAVE_SYMLINKS
