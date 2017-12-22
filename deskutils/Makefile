@@ -144,6 +144,7 @@
     SUBDIR += lumina-fm
     SUBDIR += lumina-mediaplayer
     SUBDIR += lumina-notify
+    SUBDIR += lumina-pdf
     SUBDIR += lumina-screenshot
     SUBDIR += lumina-textedit
     SUBDIR += lumina-xdg-entry
