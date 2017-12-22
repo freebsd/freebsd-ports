@@ -19,7 +19,7 @@ LICENSE_FILE_PD=	${WRKSRC}/libselinux/NOTICE
 LIB_DEPENDS=	libpcre.so:devel/pcre
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	android jbeich:extras,libselinux
+GH_ACCOUNT=	aosp-mirror jbeich:extras,libselinux
 GH_PROJECT=	platform_system_core platform_system_extras:extras \
 		platform_external_libselinux:libselinux
 GH_TAGNAME?=	android-7.1.2_r17:libselinux
