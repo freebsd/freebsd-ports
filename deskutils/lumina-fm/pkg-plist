@@ -1,4 +1,5 @@
 bin/lumina-fm
+man/man1/lumina-fm.1.gz
 share/applications/lumina-fm.desktop
 share/lumina-desktop/i18n/lumina-fm_af.qm
 share/lumina-desktop/i18n/lumina-fm_ar.qm
@@ -13,6 +14,7 @@ share/lumina-desktop/i18n/lumina-fm_da.qm
 share/lumina-desktop/i18n/lumina-fm_de.qm
 share/lumina-desktop/i18n/lumina-fm_el.qm
 share/lumina-desktop/i18n/lumina-fm_en_GB.qm
+share/lumina-desktop/i18n/lumina-fm_en_AU.qm
 share/lumina-desktop/i18n/lumina-fm_en_ZA.qm
 share/lumina-desktop/i18n/lumina-fm_es.qm
 share/lumina-desktop/i18n/lumina-fm_et.qm
