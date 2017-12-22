@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mediainfo
-PORTVERSION=	17.10
+PORTVERSION=	17.12
 CATEGORIES=	multimedia
 MASTER_SITES=	https://mediaarea.net/download/binary/${PORTNAME}/${PORTVERSION}/ \
 		LOCAL/sunpoet
