@@ -1,4 +1,5 @@
 bin/lumina-fileinfo
+man/man1/lumina-fileinfo.1.gz
 share/applications/lumina-fileinfo.desktop
 share/lumina-desktop/i18n/l-fileinfo_af.qm
 share/lumina-desktop/i18n/l-fileinfo_ar.qm
@@ -13,6 +14,7 @@ share/lumina-desktop/i18n/l-fileinfo_da.qm
 share/lumina-desktop/i18n/l-fileinfo_de.qm
 share/lumina-desktop/i18n/l-fileinfo_el.qm
 share/lumina-desktop/i18n/l-fileinfo_en_GB.qm
+share/lumina-desktop/i18n/l-fileinfo_en_AU.qm
 share/lumina-desktop/i18n/l-fileinfo_en_ZA.qm
 share/lumina-desktop/i18n/l-fileinfo_es.qm
 share/lumina-desktop/i18n/l-fileinfo_et.qm
