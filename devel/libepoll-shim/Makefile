@@ -18,7 +18,8 @@ GH_TAGNAME=	c04b26b
 USE_LDCONFIG=	yes
 
 USES=		compiler uidfix
-MAKE_ARGS=	LIBDIR=${PREFIX}/lib INCSDIR=${PREFIX}/include/libepoll-shim/sys
+MAKE_ARGS=	INCSDIR=${PREFIX}/include/libepoll-shim/sys \
+		LIBDIR=${PREFIX}/lib WITHOUT_PROFILE=yes
 
 .include <bsd.port.pre.mk>
 
