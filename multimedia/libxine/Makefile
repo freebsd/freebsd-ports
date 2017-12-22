@@ -63,6 +63,7 @@ CONFIGURE_ARGS=	--with-w32-path=${LOCALBASE}/lib/win32 \
 		--disable-musepack \
 		--enable-dvb
 MAKE_ENV=	V=1
+LLD_UNSAFE=	yes
 
 DOCSDIR=	${PREFIX}/share/doc/xine-lib
 # Please sync with XINE_PLUGINSDIR in multimedia/xine
