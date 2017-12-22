@@ -11,8 +11,8 @@ COMMENT=	Single molecule sequence assembler
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/README.license.GPL
 
-LIB_DEPENDS+=	libboost_regex.so:devel/boost-libs
-RUN_DEPENDS+=	gnuplot:math/gnuplot
+LIB_DEPENDS=	libboost_regex.so:devel/boost-libs
+RUN_DEPENDS=	gnuplot:math/gnuplot
 
 USES=		compiler:openmp gmake perl5
 USE_JAVA=	yes
