@@ -3,7 +3,7 @@
 
 PORTNAME=	lastfm-desktop
 PORTVERSION=	2.1.36
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	audio
 
 MAINTAINER=	vg@FreeBSD.org
@@ -42,10 +42,6 @@ VLC_DESC=		Multimedia via Phonon-VLC
 VLC_RUN_DEPENDS=	phonon-vlc>=0.6.1:multimedia/phonon-vlc
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 1100000
-BROKEN=		does not buld: Application.cpp:433:25: error: ordered comparison between pointer and zero ('void *' and 'int')
-.endif
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
