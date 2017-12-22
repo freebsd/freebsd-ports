@@ -4,4 +4,3 @@ include/libepoll-shim/sys/timerfd.h
 lib/libepoll-shim.a
 lib/libepoll-shim.so
 lib/libepoll-shim.so.0
-@comment lib/libepoll-shim_p.a
