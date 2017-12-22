@@ -14,6 +14,7 @@
     SUBDIR += bowtie
     SUBDIR += bowtie2
     SUBDIR += bwa
+    SUBDIR += canu
     SUBDIR += cd-hit
     SUBDIR += cdbfasta
     SUBDIR += chemeq
