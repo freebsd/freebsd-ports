@@ -5,15 +5,4 @@ CorsixTH.  After most of the original engine has been reimplemented, the
 the project will serve as a base from which extensions and improvements to
 the original game can be made.
 
-At the moment, game assets (graphics, sounds, levels, translations, etc.)
-are loaded from the original game files.  Therefore, you will require a
-pre-existing Theme Hospital install in order to use CorsixTH.  If you've
-got a copy of the original game disk lying around, then great -- copy the
-HOSP folder (which should contain directories called Data, QData, Levels,
-etc.) from the root of the CD to somewhere on your hard drive, and use
-this for the theme_hospital_install setting later.  If you are unable to
-acquire the full game data files, then the demo can be downloaded easily
-and used instead (though the demo only has one level, and lacks most of
-the management screens).
-
 WWW: https://github.com/CorsixTH/CorsixTH
