@@ -1,8 +1,8 @@
 TIMESTAMP = 1509048179
 SHA256 (fastboot.1?id=706e754) = 2af01b064440952a82f1602691a0fecc030302722a71444946fb70d9c423d283
 SIZE (fastboot.1?id=706e754) = 5906
-SHA256 (android-platform_system_core-android-8.1.0_r2_GH0.tar.gz) = 29c58327e06c9c938f8f3c0d3e991339eb98c53026203fbafc564e85cb6538bc
-SIZE (android-platform_system_core-android-8.1.0_r2_GH0.tar.gz) = 5227210
+SHA256 (aosp-mirror-platform_system_core-android-8.1.0_r2_GH0.tar.gz) = 29c58327e06c9c938f8f3c0d3e991339eb98c53026203fbafc564e85cb6538bc
+SIZE (aosp-mirror-platform_system_core-android-8.1.0_r2_GH0.tar.gz) = 5227210
 SHA256 (jbeich-platform_system_extras-android-8.1.0_r2_GH0.tar.gz) = 3ffa650a11b546928ffd9cf9688aea379151cb71f90fa6ef3d7ab4bf56a9dc67
 SIZE (jbeich-platform_system_extras-android-8.1.0_r2_GH0.tar.gz) = 196070852
 SHA256 (jbeich-platform_external_libselinux-android-7.1.2_r17_GH0.tar.gz) = 659e43d3e14b4f4fe8955975ad268310bfad0529f408fb33342ed70ae0d456c7

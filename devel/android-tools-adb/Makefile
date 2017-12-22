@@ -12,7 +12,7 @@ COMMENT=	Android debug bridge command line tool
 LICENSE=	APACHE20
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	android
+GH_ACCOUNT=	aosp-mirror
 GH_PROJECT=	platform_system_core
 
 # Emulate GH_COMMIT without causing desync
