@@ -4720,6 +4720,7 @@
     SUBDIR += py-pyelftools
     SUBDIR += py-pyev
     SUBDIR += py-pyface
+    SUBDIR += py-pyfcm
     SUBDIR += py-pyflakes
     SUBDIR += py-pygdbmi
     SUBDIR += py-pygit2
