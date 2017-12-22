@@ -1,0 +1,13 @@
+This is a game for the whole family. You play cute fluffy little
+bunnies and hop on each other's heads.
+
+At the beginning you are in the menu, where you have to let each
+active player jump over the tree trunk to enter the play area, and
+then walk to the right. You will then enter the arena. The aim is
+to jump on the other bunnies' heads...
+
+Jump 'n Bump was originally a DOS game by Brainchild Design, which
+was open sourced under the GPL license and ported to SDL, and then
+SDL2.
+
+WWW: https://gitlab.com/LibreGames/jumpnbump

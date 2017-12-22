@@ -1,0 +1,13 @@
+bin/gobpack
+bin/jnbpack
+bin/jnbunpack
+bin/jumpnbump
+%%LAUNCHER%%bin/jumpnbump-menu
+share/appdata/jumpnbump.appdata.xml
+%%LAUNCHER%%share/applications/jumpnbump-menu.desktop
+share/applications/jumpnbump.desktop
+share/icons/jumpnbump.png
+%%DATADIR%%/jumpbump.dat
+%%LAUNCHER%%%%DATADIR%%/jumpnbump_menu.glade
+%%NLS%%share/locale/fr/LC_MESSAGES/jumpnbump-menu.mo
+share/man/man6/jumpnbump.6
