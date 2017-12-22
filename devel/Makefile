@@ -4235,6 +4235,7 @@
     SUBDIR += py-anyjson
     SUBDIR += py-apache_conf_parser
     SUBDIR += py-apipkg
+    SUBDIR += py-apns2
     SUBDIR += py-appdirs
     SUBDIR += py-application
     SUBDIR += py-apptools
