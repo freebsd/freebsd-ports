@@ -1,0 +1,15 @@
+Fix find_soname when lld is the system linker
+
+--- cmake/scripts/freebsd/Macros.cmake.orig	2017-12-21 00:17:03 UTC
++++ cmake/scripts/freebsd/Macros.cmake
+@@ -73,8 +73,8 @@ function(find_soname lib)
+   string(STRIP "${${lib}_FILENAME}" ${lib}_FILENAME)
+   if(NOT ${lib}_FILENAME)
+     execute_process(COMMAND ${CMAKE_C_COMPILER} -nostdlib -o /dev/null -Wl,-t ${link_lib}
+-                    OUTPUT_QUIET
+-                    ERROR_VARIABLE _TMP_FILENAME)
++                    ERROR_QUIET
++                    OUTPUT_VARIABLE _TMP_FILENAME)
+     string(REGEX MATCH ".*lib${liblow}.so" ${lib}_FILENAME ${_TMP_FILENAME})
+   endif()
+   if(${lib}_FILENAME)
