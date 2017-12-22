@@ -9642,12 +9642,12 @@ www/linux-seamonkey||2017-11-22|Has expired: Use native www/seamonkey instead
 graphics/linux-adobesvg||2017-11-22|Has expired: not supported by linux-firefox 52 or later
 sysutils/qjail2||2017-11-26|Has expired: Only for FreeBSD 8 and 9, use sysutils/qjail[4] instead
 www/newsbeuter|www/newsboat|2017-11-27|Port was renamed
-devel/buildbot|devel/py-buildbot|2017-11-29|Rename to comply with PyPI scheme.
-devel/buildbot-console-view|devel/py-buildbot-console-view|2017-11-29|Rename to comply with PyPI scheme.
-devel/buildbot-pkg|devel/py-buildbot-pkg|2017-11-29|Rename to comply with PyPI scheme.
-devel/buildbot-waterfall-view|devel/py-buildbot-waterfall-view|2017-11-29|Rename to comply with PyPI scheme.
-devel/buildbot-worker|devel/py-buildbot-worker|2017-11-29|Rename to comply with PyPI scheme.
-devel/buildbot-www|devel/py-buildbot-www|2017-11-29|Rename to comply with PyPI scheme.
+devel/buildbot|devel/py-buildbot|2017-11-29|Rename to comply with PyPI scheme
+devel/buildbot-console-view|devel/py-buildbot-console-view|2017-11-29|Rename to comply with PyPI scheme
+devel/buildbot-pkg|devel/py-buildbot-pkg|2017-11-29|Rename to comply with PyPI scheme
+devel/buildbot-waterfall-view|devel/py-buildbot-waterfall-view|2017-11-29|Rename to comply with PyPI scheme
+devel/buildbot-worker|devel/py-buildbot-worker|2017-11-29|Rename to comply with PyPI scheme
+devel/buildbot-www|devel/py-buildbot-www|2017-11-29|Rename to comply with PyPI scheme
 emulators/ppsspp-devel|emulators/ppsspp|2017-11-29|Out of date: use emulators/ppsspp for now
 audio/shairport|audio/shairport-sync|2017-11-29|Has expired: Officially unmaintained upstream. Use audio/shairport-sync instead
 accessibility/py3-speech-dispatcher|accessibility/py-speech-dispatcher@py36|2017-11-30|Moved to a flavored, generic, version
@@ -9801,7 +9801,7 @@ security/webshag||2017-12-01|Has expired: Abandoned
 www/p5-Yahoo-Lifestyle||2017-12-01|Has expired: This service has been shut down
 games/linux-rtcw|games/iortcw|2017-12-01|Has expired: Use the native and open source games/iortcw instead
 java/bootstrap-openjdk|java/bootstrap-openjdk6|2017-12-01|Has expired: superseded by java/bootstrap-openjdk[68]
-lang/gcc46|lang/gcc6|2017-12-01|Has expired: Unsupported by upstream. Use GCC 6 or newer instead.
+lang/gcc46|lang/gcc6|2017-12-01|Has expired: Unsupported by upstream. Use GCC 6 or newer instead
 security/krb5-113|security/krb5-114|2017-12-03|Has expired: EOL twelve months after release of krb5-1.15
 net/bird6|net/bird@ipv6|2017-12-06|Moved to a flavored version
 devel/kore-notls|devel/kore@notls|2017-12-06|Moved to a flavored version
