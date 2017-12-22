@@ -1,4 +1,5 @@
 bin/lumina-calculator
+man/man1/lumina-calculator.1.gz
 share/applications/lumina-calculator.desktop
 share/lumina-desktop/i18n/l-calc_af.qm
 share/lumina-desktop/i18n/l-calc_ar.qm
@@ -13,6 +14,7 @@ share/lumina-desktop/i18n/l-calc_da.qm
 share/lumina-desktop/i18n/l-calc_de.qm
 share/lumina-desktop/i18n/l-calc_el.qm
 share/lumina-desktop/i18n/l-calc_en_GB.qm
+share/lumina-desktop/i18n/l-calc_en_AU.qm
 share/lumina-desktop/i18n/l-calc_en_ZA.qm
 share/lumina-desktop/i18n/l-calc_es.qm
 share/lumina-desktop/i18n/l-calc_et.qm

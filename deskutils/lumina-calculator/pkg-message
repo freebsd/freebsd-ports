@@ -1,0 +1,7 @@
+The Lumina Desktop Environment has been installed!
+
+An entry for for launching Lumina from a graphical login manager has already been added to the system, but if you with to start Lumina manually, you will need to do one of the following:
+1) Run "start-lumina-desktop" directly from the command line after logging in.
+2) Put the line "exec start-lumina-desktop" at the end of your user's "~/.xinitrc" file before running startx with any special X11 flags
+
+Also note that the system-wide default settings for Lumina are contained in ${PREFIX}/etc/luminaDesktop.conf[.dist]. While it is possible to customize the desktop to the user's liking after logging in, you may want to adjust the default settings as necessary if there are multiple user accounts on this system.
