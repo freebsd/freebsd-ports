@@ -3,6 +3,7 @@
 PROG_CXX=fastboot
 BINDIR?=/usr/bin
 FILESDIR?=${DOCDIR}/${PROG}
+VERSION?=0.0.0-0
 
 FILES=	*.md
 
@@ -98,9 +99,7 @@ SRCS+=	FileMap.cpp
 .PATH:	${.CURDIR}/../libziparchive
 SRCS+=	zip_archive.cc
 
-REVISION?=	$$(${GIT} rev-parse --short=12 HEAD 2>/dev/null || echo unknown)
-
-CPPFLAGS+=	-DFASTBOOT_VERSION="\"27.0.0-0 ${REVISION}-android\""
+CPPFLAGS+=	-DFASTBOOT_VERSION="\"${VERSION}\""
 CPPFLAGS+=	-Doff64_t=off_t
 CPPFLAGS+=	-Dftruncate64=ftruncate
 CPPFLAGS+=	-Dlseek64=lseek
@@ -133,7 +132,6 @@ LDADD+=	$$(${PKG_CONFIG} libusb-1.0 --libs 2>/dev/null || echo -lusb)
 LDADD+=	-lz \-lpthread
 DPADD+=	${LIBPCRE} ${LIBPTHREAD} ${LIBUSB} ${LIBZ}
 
-GIT?=		git
 PKG_CONFIG?=	pkg-config
 
 beforeinstall:
