@@ -1,4 +1,5 @@
 bin/lumina-mediaplayer
+man/man1/lumina-mediaplayer.1.gz
 share/applications/lumina-mediaplayer.desktop
 share/lumina-desktop/i18n/l-mediap_af.qm
 share/lumina-desktop/i18n/l-mediap_ar.qm
@@ -13,6 +14,7 @@ share/lumina-desktop/i18n/l-mediap_da.qm
 share/lumina-desktop/i18n/l-mediap_de.qm
 share/lumina-desktop/i18n/l-mediap_el.qm
 share/lumina-desktop/i18n/l-mediap_en_GB.qm
+share/lumina-desktop/i18n/l-mediap_en_AU.qm
 share/lumina-desktop/i18n/l-mediap_en_ZA.qm
 share/lumina-desktop/i18n/l-mediap_es.qm
 share/lumina-desktop/i18n/l-mediap_et.qm
