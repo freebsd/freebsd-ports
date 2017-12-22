@@ -1,6 +1,9 @@
 bin/lumina-config
 bin/lumina-search
 bin/lumina-xconfig
+man/man1/lumina-config.1.gz
+man/man1/lumina-search.1.gz
+man/man1/lumina-xconfig.1.gz
 share/applications/lumina-config.desktop
 share/applications/lumina-search.desktop
 share/applications/lumina-xconfig.desktop
@@ -17,6 +20,7 @@ share/lumina-desktop/i18n/lumina-config_da.qm
 share/lumina-desktop/i18n/lumina-config_de.qm
 share/lumina-desktop/i18n/lumina-config_el.qm
 share/lumina-desktop/i18n/lumina-config_en_GB.qm
+share/lumina-desktop/i18n/lumina-config_en_AU.qm
 share/lumina-desktop/i18n/lumina-config_en_ZA.qm
 share/lumina-desktop/i18n/lumina-config_es.qm
 share/lumina-desktop/i18n/lumina-config_et.qm
@@ -83,6 +87,7 @@ share/lumina-desktop/i18n/lumina-search_da.qm
 share/lumina-desktop/i18n/lumina-search_de.qm
 share/lumina-desktop/i18n/lumina-search_el.qm
 share/lumina-desktop/i18n/lumina-search_en_GB.qm
+share/lumina-desktop/i18n/lumina-search_en_AU.qm
 share/lumina-desktop/i18n/lumina-search_en_ZA.qm
 share/lumina-desktop/i18n/lumina-search_es.qm
 share/lumina-desktop/i18n/lumina-search_et.qm
@@ -149,6 +154,7 @@ share/lumina-desktop/i18n/lumina-xconfig_da.qm
 share/lumina-desktop/i18n/lumina-xconfig_de.qm
 share/lumina-desktop/i18n/lumina-xconfig_el.qm
 share/lumina-desktop/i18n/lumina-xconfig_en_GB.qm
+share/lumina-desktop/i18n/lumina-xconfig_en_AU.qm
 share/lumina-desktop/i18n/lumina-xconfig_en_ZA.qm
 share/lumina-desktop/i18n/lumina-xconfig_es.qm
 share/lumina-desktop/i18n/lumina-xconfig_et.qm
