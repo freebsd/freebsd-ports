@@ -1,0 +1,5 @@
+obfs4 (a.k.a. The Obfuscator) is a transport with the same features as
+ScrambleSuit but utilizing Dan Bernstein's elligator2 technique for public
+key obfuscation, and the ntor protocol for one-way authentication.
+
+WWW: https://trac.torproject.org/projects/tor/wiki/doc/PluggableTransports/obfs4proxy
