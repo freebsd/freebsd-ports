@@ -24,7 +24,7 @@ GH_ACCOUNT=	rncbc
 USE_GL=		gl
 USE_QT5=	core gui widgets xml buildtools_build qmake_build
 
-PLIST_SUB=	SHL3=${DISTVERSION:S/_/./g} SHL2=${DISTVERSION:C/([[:digit:]])_([[:digit:]])_[[:digit:]]/\1.\2/} SHL1=${DISTVERSION:C/([[:digit:]])_.*/\1/}
+PLIST_SUB=	SHL3=${PORTVERSION} SHL2=${PORTVERSION:R} SHL1=${PORTVERSION:R:R}
 
 CONFIGURE_ARGS=	--disable-alsa-midi
 
