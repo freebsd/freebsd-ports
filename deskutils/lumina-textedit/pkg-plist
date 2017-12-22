@@ -1,5 +1,6 @@
 bin/lte
 bin/lumina-textedit
+man/man1/lumina-textedit.1.gz
 share/applications/lumina-textedit.desktop
 share/lumina-desktop/i18n/l-te_af.qm
 share/lumina-desktop/i18n/l-te_ar.qm
@@ -14,6 +15,7 @@ share/lumina-desktop/i18n/l-te_da.qm
 share/lumina-desktop/i18n/l-te_de.qm
 share/lumina-desktop/i18n/l-te_el.qm
 share/lumina-desktop/i18n/l-te_en_GB.qm
+share/lumina-desktop/i18n/l-te_en_AU.qm
 share/lumina-desktop/i18n/l-te_en_ZA.qm
 share/lumina-desktop/i18n/l-te_es.qm
 share/lumina-desktop/i18n/l-te_et.qm
