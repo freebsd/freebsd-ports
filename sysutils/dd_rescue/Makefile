@@ -13,9 +13,9 @@ COMMENT=	dd tool suitable for rescuing data from a medium with errors
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gmake
+GNU_CONFIGURE=	yes
+USES=		autoreconf gmake
 USE_CSTD=	gnu89
-USE_AUTOTOOLS=	autoconf autoheader
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 ALL_TARGET=	default
