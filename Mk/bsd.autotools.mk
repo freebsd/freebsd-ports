@@ -7,7 +7,7 @@
 #	wrath of countless folks, and be unceremoniously backed out by
 #	the maintainer and/or portmgr.
 
-Autotools_Include_MAINTAINER=	autotools@FreeBSD.org
+Autotools_Include_MAINTAINER=	tijl@FreeBSD.org
 
 #---------------------------------------------------------------------------
 # USE_AUTOTOOLS= tool[:env] ...

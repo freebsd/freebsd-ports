@@ -11,7 +11,7 @@
 #			be used when a port does not generate its own libtool
 #			script and relies on the system to provide one.
 #
-# MAINTAINER:	autotools@FreeBSD.org
+# MAINTAINER:	tijl@FreeBSD.org
 
 .if !defined(_INCLUDE_USES_LIBTOOL_MK)
 _INCLUDE_USES_LIBTOOL_MK=	yes
