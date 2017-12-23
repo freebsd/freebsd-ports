@@ -1,6 +1,6 @@
-TIMESTAMP = 1506084780
-SHA256 (stellarium-0.16.1.tar.gz) = b001c252afddaa1c470fb444fcbb5595b7f7a7db028d884743d20bcb5635fd20
-SIZE (stellarium-0.16.1.tar.gz) = 206118721
+TIMESTAMP = 1513853534
+SHA256 (Stellarium-stellarium-v0.17.0_GH0.tar.gz) = c5be273f880de06bf02d0432d2caf8e2beb8b1695beda86ce7eb75988f237436
+SIZE (Stellarium-stellarium-v0.17.0_GH0.tar.gz) = 252733565
 SHA256 (stellarium_user_guide-0.16.1-1.pdf) = 8767feca7d36e63678e9daa107273084d84c7231e187d258d45cb0f801e18edd
 SIZE (stellarium_user_guide-0.16.1-1.pdf) = 25945137
 SHA256 (stars_4_1v0_1.cat) = 7a2084e5e45610bbffae9448d9552d8a8dd191e5b1a07b0e47d27622fab4a979
