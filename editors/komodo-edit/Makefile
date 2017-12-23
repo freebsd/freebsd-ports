@@ -12,6 +12,7 @@ COMMENT=	Multi-language editor from ActiveState
 
 CONFLICTS=	komodo-ide-6*
 
+BROKEN=		unfetchable
 RESTRICTED=	Distribution not permitted
 
 ONLY_FOR_ARCHS=	i386 amd64
