@@ -12,9 +12,6 @@ COMMENT=	Console graphics viewer using the svga console graphics library
 
 LIB_DEPENDS=	libvga.so:graphics/svgalib
 
-ONLY_FOR_ARCHS=		amd64 i386
-ONLY_FOR_ARCHS_REASON=	relies on features specific to x86 (svgalib)
-
 USES=		gmake jpeg tar:tgz
 ALL_TARGET=	seejpeg
 CPPFLAGS+=	-I${LOCALBASE}/include
