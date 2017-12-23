@@ -3,6 +3,7 @@
 
 PORTNAME=	backuppc
 PORTVERSION=	4.1.4
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	https://github.com/backuppc/backuppc/releases/download/${PORTVERSION}/ \
 		SF

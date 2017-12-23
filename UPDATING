@@ -5,6 +5,34 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20171223:
+  AFFECTS: users of samba44
+  AUTHOR: antoine@FreeBSD.org
+
+  The default version of samba has been switched from 4.4 to 4.6.
+  Upgrade instructions:
+
+  For package users having samba44 installed indirectly (as a dependency):
+    # pkg upgrade
+
+  For package users having samba44 installed directly (leaf port):
+    # pkg upgrade
+    # pkg install samba46
+
+  For ports users:
+    If you want to keep samba44, add DEFAULT_VERSIONS+= samba=4.4 to make.conf
+
+    If you want to upgrade to samba46, remove samba44:
+    # pkg delete -f samba44
+
+    Portmaster users:
+    # portmaster net/samba46
+    # portmaster -a
+
+    Portupgrade users:
+    # portinstall net/samba46
+    # portupgrade -a
+
 20171218:
   AFFECTS: users of devel/gogs
   AUTHOR: dg@syrec.org

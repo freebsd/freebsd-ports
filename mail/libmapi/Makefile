@@ -56,11 +56,7 @@ DOXYGEN_BUILD_DEPENDS=	doxygen:devel/doxygen
 DOXYGEN_CONFIGURE_ENV_OFF=	ac_cv_path_DOXYGEN=""
 PLIST_SUB=	SAMBA=${SAMBAPORT:T}
 
-.include <bsd.port.pre.mk>
-
-.if ${SAMBA_DEFAULT} == 4.4
 BROKEN=		fails to build
-.endif
 
 #  --enable-openchange-qt4 Compile OpenChange Qt4 wrapper.
 
@@ -83,4 +79,4 @@ post-install:
 	@${STRIP_CMD} ${STAGEDIR}/${PREFIX}/lib/shared-modules/dcerpc_server/*.so
 	@${STRIP_CMD} ${STAGEDIR}/${PREFIX}/modules/dcerpc_mapiproxy*/*.so
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
