@@ -4,6 +4,11 @@ share/applications/flacon.desktop
 share/icons/hicolor/16x16/apps/flacon.png
 share/icons/hicolor/32x32/apps/flacon.png
 share/icons/hicolor/48x48/apps/flacon.png
+share/icons/hicolor/64x64/apps/flacon.png
+share/icons/hicolor/128x128/apps/flacon.png
+share/icons/hicolor/256x256/apps/flacon.png
+share/icons/hicolor/512x512/apps/flacon.png
+share/icons/hicolor/scalable/apps/flacon.svg
 %%DATADIR%%/translations/flacon_cs.qm
 %%DATADIR%%/translations/flacon_cs_CZ.qm
 %%DATADIR%%/translations/flacon_de.qm
