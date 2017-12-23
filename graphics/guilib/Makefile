@@ -15,10 +15,6 @@ USE_SDL=	sdl
 USES=		gmake libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	aclocal:env
 INSTALL_TARGET=	install-strip
-
-post-configure:
-	@${REINPLACE_CMD} -e 's|^ACLOCAL =.*|ACLOCAL = ${ACLOCAL}|g' ${WRKSRC}/Makefile
 
 .include <bsd.port.mk>
