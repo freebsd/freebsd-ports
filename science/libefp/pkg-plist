@@ -1,9 +1,11 @@
 include/efp.h
 lib/libefp.so
+lib/libefp.so.1.5
 share/cmake/libefp/libefpConfig.cmake
 share/cmake/libefp/libefpConfigVersion.cmake
 share/cmake/libefp/libefpTargets-%%CMAKE_BUILD_TYPE%%.cmake
 share/cmake/libefp/libefpTargets.cmake
+share/cmake/libefp/FindTargetLAPACK.cmake
 %%DATADIR%%/fraglib/2aminopyridine.efp
 %%DATADIR%%/fraglib/acetamide-gp.efp
 %%DATADIR%%/fraglib/acetamide-hb.efp
