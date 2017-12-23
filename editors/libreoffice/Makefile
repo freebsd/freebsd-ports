@@ -211,7 +211,6 @@ TEST_CONFIGURE_ENABLE=	cve-tests
 WEBDAV_CONFIGURE_ENABLE=	neon
 WEBDAV_LIB_DEPENDS=	libneon.so:www/neon
 
-ACLOCAL_ARGS=	-I "${WRKSRC}/m4"
 CPPFLAGS+=	-isystem ${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
