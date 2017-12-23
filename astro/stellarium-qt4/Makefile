@@ -14,7 +14,7 @@ COMMENT=	3D photo-realistic sky renderer (planetarium)
 
 LICENSE=	GPLv2+
 
-CONFLICTS_INSTALL=	${PORTNAME}-0.13.*
+CONFLICTS_INSTALL=	${PORTNAME}-0.17.*
 PORTSCOUT=	limit:^0\.12\.			# track only 0.12.x (legacy)
 
 USES=		cmake gettext iconv
