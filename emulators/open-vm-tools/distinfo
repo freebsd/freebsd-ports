@@ -1,3 +1,3 @@
-TIMESTAMP = 1503010753
-SHA256 (vmware-open-vm-tools-stable-10.1.10_GH0.tar.gz) = ce03c8827389ea272a5c072366b6bff381b2eddad94750c6a9433a0dea61c762
-SIZE (vmware-open-vm-tools-stable-10.1.10_GH0.tar.gz) = 3543342
+TIMESTAMP = 1513787562
+SHA256 (vmware-open-vm-tools-stable-10.2.0_GH0.tar.gz) = 40dccff0630034b4985ac7a0d3bfcf89025e9a57f518e561db8c6fd7322bf029
+SIZE (vmware-open-vm-tools-stable-10.2.0_GH0.tar.gz) = 3200084
