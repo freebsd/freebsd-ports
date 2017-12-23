@@ -1,0 +1,10 @@
+--- configure.in.orig	2010-05-04 16:28:05 UTC
++++ configure.in
+@@ -5,6 +5,7 @@ AC_PREREQ(2.59)
+ AC_INIT(yui, 3.2.05, citycat4@ngs.ru)
+ AC_CONFIG_SRCDIR([tyui/yui1.cc])
+ AC_CONFIG_HEADER([config.h])
++AC_CONFIG_MACRO_DIR([m4])
+ 
+ # Auxilary scripts
+ AC_CONFIG_AUX_DIR(cfgaux)
