@@ -12,7 +12,7 @@
  #endif
  
  
---- source3/modules/vfs_glusterfs.c.orig	2017-12-16 01:49:55 UTC
+--- source3/modules/vfs_glusterfs.c.orig	2017-12-23 08:02:15 UTC
 +++ source3/modules/vfs_glusterfs.c
 @@ -36,12 +36,13 @@
   */
@@ -22,7 +22,7 @@
 +#include "smbd/globals.h"
  #include "smbd/smbd.h"
  #include <stdio.h>
- #include "api/glfs.h"
+ #include <glusterfs/api/glfs.h>
  #include "lib/util/dlinklist.h"
  #include "lib/util/tevent_unix.h"
 -#include "smbd/globals.h"

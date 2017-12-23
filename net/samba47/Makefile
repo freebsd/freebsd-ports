@@ -22,7 +22,7 @@ EXTRA_PATCHES+=			${PATCHDIR}/0001-Freenas-master-mdns-fixes-22.patch:-p1
 
 SAMBA4_BASENAME=		samba
 SAMBA4_PORTNAME=		${SAMBA4_BASENAME}4
-SAMBA4_VERSION=			4.7.3
+SAMBA4_VERSION=			4.7.4
 SAMBA4_DISTNAME=		${SAMBA4_BASENAME}-${SAMBA4_VERSION:S|.p|pre|:S|.r|rc|:S|.t|tp|:S|.a|alpha|}
 
 WRKSRC?=			${WRKDIR}/${DISTNAME}
@@ -75,6 +75,7 @@ CONFIGURE_LOG=			bin/config.log
 PKGCONFIGDIR?=			${PREFIX}/libdata/pkgconfig
 PKGCONFIGDIR_REL?=		${PKGCONFIGDIR:S,^${PREFIX}/,,}
 PLIST_SUB+=			PKGCONFIGDIR=${PKGCONFIGDIR_REL}
+SUB_LIST+=			PKGCONFIGDIR=${PKGCONFIGDIR_REL}
 ##############################################################################
 # Options
 OPTIONS_SUB=			yes
@@ -159,8 +160,8 @@ SAMBA4_LDB=			12
 BUILD_DEPENDS+=			ldb13>=1.3.0:databases/ldb13
 RUN_DEPENDS+=			ldb13>=1.3.0:databases/ldb13
 .elif ${SAMBA4_LDB} == 12
-BUILD_DEPENDS+=			ldb12>=1.2.2:databases/ldb12
-RUN_DEPENDS+=			ldb12>=1.2.2:databases/ldb12
+BUILD_DEPENDS+=			ldb12>=1.2.3:databases/ldb12
+RUN_DEPENDS+=			ldb12>=1.2.3:databases/ldb12
 .elif ${SAMBA4_LDB} == 11
 BUILD_DEPENDS+=			ldb>=1.1.29:databases/ldb
 RUN_DEPENDS+=			ldb>=1.1.29:databases/ldb
@@ -169,6 +170,11 @@ SAMBA4_BUNDLED_LIBS+=		!ldb,!pyldb,!pyldb-util
 # Don't use external libcom_err
 SAMBA4_BUNDLED_LIBS+=		com_err
 
+# Set the test environment variables
+TEST_ENV+=			PYTHON="${PYTHON_CMD}" \
+				SHA1SUM=/sbin/sha1 \
+				SHA256SUM=/sbin/sha256 \
+				MD5SUM=/sbin/md5
 TEST_DEPENDS+=			python:lang/python \
 				bash:shells/bash \
 				tshark:net/tshark
@@ -204,24 +210,25 @@ MDNSRESPONDER_LIB_DEPENDS=	libdns_sd.so:net/mDNSResponder
 ##############################################################################
 DEBUG_CONFIGURE_ON=		--verbose --enable-debug
 DEBUG_MAKE_ARGS=		--verbose
-DEBUG_VARS_ON=			WITH_DEBUG=yes
 DEBUG_CFLAGS=			-g -ggdb -gdwarf-2 -gstrict-dwarf -O0
+DEBUG_VARS=			WITH_DEBUG=yes
 # https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=194046
 GDB_CMD?=			${LOCALBASE}/bin/gdb
 # https://bugzilla.samba.org/show_bug.cgi?id=8969
+PICKY_DEVELOPER_IMPLIES=	DEVELOPER
+PICKY_DEVELOPER_CONFIGURE_ON=	--picky-developer
+
 DEVELOPER_IMPLIES=		NTVFS
 DEVELOPER_CONFIGURE_ON=		--enable-developer --enable-selftest --abi-check-disable
 DEVELOPER_BUILD_DEPENDS=	${GDB_CMD}:devel/gdb
 DEVELOPER_TEST_DEPENDS=		${GDB_CMD}:devel/gdb
 DEVELOPER_VARS_OFF=		GDB_CMD=true
-
-PICKY_DEVELOPER_CONFIGURE_ON=	--picky-developer
-# XXX: Mostly used in conjuction with DEVELOPER option, don't enable it if you don't know what you are doing
+# XXX: Mostly used in conjuction with the DEVELOPER option, don't enable it
+# if you don't know what you are doing
+#NTVFS_PREVENTS=			AD_DC
+#NTVFS_PREVENTS_MSG=		NTVFS can't be combined with AD_DC
 NTVFS_CONFIGURE_WITH=		ntvfs-fileserver
 ##############################################################################
-AESNI_CONFIGURE_ON=		--accel-aes=intelaesni
-AESNI_CONFIGURE_OFF=		--accel-aes=none
-
 CLUSTER_CONFIGURE_WITH=		cluster-support
 
 CUPS_CONFIGURE_ENABLE=		cups iprint
@@ -324,9 +331,11 @@ PLIST_FILES+=			lib/shared-modules/${module:C|_|/|:C|-|_|}.so
 USES+=				python:2.7,build,test
 CONFIGURE_ARGS+=		--disable-python
 PLIST_SUB+=			SAMBA4_PYTHON2="@comment " SAMBA4_PYTHON3="@comment "
+SUB_LIST+=			SAMBA4_PYTHON2="@comment " SAMBA4_PYTHON3="@comment "
 .else
 USES+=				python:2.7
 PLIST_SUB+=			SAMBA4_PYTHON2=""
+SUB_LIST+=			SAMBA4_PYTHON2=""
 # External Python modules
 BUILD_DEPENDS+=			${PYTHON_PKGNAMEPREFIX}dnspython>=1.15.0:dns/py-dnspython@${PY_FLAVOR}
 RUN_DEPENDS+=			${PYTHON_PKGNAMEPREFIX}dnspython>=1.15.0:dns/py-dnspython@${PY_FLAVOR}
@@ -358,8 +367,10 @@ CONFIGURE_ENV+=			PYTHON3_SO_ABI_FLAG=.${SAMBA4_PYTHON3_SO_ABI}
 CONFIGURE_ARGS+=		--extra-python=${LOCALBASE}/bin/${SAMBA4_PYTHON3}
 
 PLIST_SUB+=			SAMBA4_PYTHON3="" SAMBA4_PYTHON3_SITELIBDIR="${SAMBA4_PYTHON3_SITELIBDIR}"
+SUB_LIST+=			SAMBA4_PYTHON3="" SAMBA4_PYTHON3_SITELIBDIR="${SAMBA4_PYTHON3_SITELIBDIR}"
 .else
 PLIST_SUB+=			SAMBA4_PYTHON3="@comment "
+SUB_LIST+=			SAMBA4_PYTHON3="@comment "
 .endif
 .endif
 
@@ -371,19 +382,21 @@ PLIST_SUB+=			SAMBA4_PYTHON3="@comment "
 ##############################################################################
 
 .if !defined(SAMBA4_SUBPORT)
-
+# Require llvm 4.0 and AMD64
+.if ${PORT_OPTIONS:MAESNI} && ${ARCH} == "amd64" && ${OSVERSION} >= 1200511
+CONFIGURE_ARGS+=		--accel-aes=intelaesni
+PLIST_FILES+=			lib/samba4/private/libaesni-intel-samba4.so
+.else
+CONFIGURE_ARGS+=		--accel-aes=none
+.endif
 # for libexecinfo: (so that __builtin_frame_address() finds the top of the stack)
 CFLAGS_amd64+=			-fno-omit-frame-pointer
 # No fancy color error messages
 CONFIGURE_ENV+=			NOCOLOR=yes WAF_LOG_FORMAT='%(c1)s%(zone)s%(c2)s %(message)s'
 MAKE_ENV+=			NOCOLOR=yes WAF_LOG_FORMAT='%(c1)s%(zone)s%(c2)s %(message)s'
-
-TEST_ENV+=			PYTHON="${PYTHON_CMD}" SHA1SUM=/sbin/sha1
-
 .if ${CHOSEN_COMPILER_TYPE} == clang
 CFLAGS+=			-fno-color-diagnostics
 .endif
-
 .if ${readline_ARGS} == port
 CFLAGS+=			-D_FUNCTION_DEF
 .endif
