@@ -1,6 +1,42 @@
 --- portmaster.orig	2017-12-21 09:02:44 UTC
 +++ portmaster
-@@ -2264,12 +2264,14 @@ make_dep_list () {
+@@ -1616,15 +1616,14 @@ pm_pkg_create () {
+ 				NB_DELETE="${NB_DELETE}${pkg} "
+ 			fi
+ 		elif [ "$1" = "$PACKAGES" ]; then
+-			local pkg ; pkg=`echo $2.*`
++			local pkg ; pkg=$2.txz
+ 
+ 			if [ -z "$PM_INDEX_ONLY" ]; then
+-				local latest_link
++				local pkg_latest_file
+ 
+ 				pm_cd_pd $portdir
+-				latest_link=`pm_make -V LATEST_LINK`
+-				cd ${1}/Latest
+-				$PM_SU_CMD ln -sf ../All/$pkg ${latest_link}.txz
++				pkg_latest_file=`pm_make -V PKGLATESTFILE`
++				$PM_SU_CMD install -lr $1/All/$pkg ${pkg_latest_file}
+ 			fi
+ 
+ 			cd ${1}/${portdir%/*}
+@@ -1803,6 +1802,7 @@ set_distfiles_and_subdir () {
+ }
+ 
+ delete_stale_distfiles () {
++	[ -n "$DISTDIR" ] || return # DISTDIR not set because of PM_PACKAGES
+ 	# Global: distfiles_checked
+ 	local file answer
+ 
+@@ -1849,6 +1849,7 @@ delete_stale_distfiles () {
+ }
+ 
+ delete_all_distfiles () {
++	[ -n "$DISTDIR" ] || return # DISTDIR not set because of PM_PACKAGES
+ 	# Global: delete_all DISTDIR
+ 	local origin rc delete_current
+ 
+@@ -2264,12 +2265,14 @@ make_dep_list () {
  
  	for dep_type in $*; do
  		case $dep_type in
@@ -20,3 +56,67 @@
  		*)
  			fail "make_dep_list: Unsupported option '$dep_type'"
  		esac
+@@ -3302,7 +3305,7 @@ pm_cd_pd $portdir
+ 
+ if [ -n "$PM_BUILD_ONLY_LIST" ]; then
+ 	case "$build_only_dl_g" in
+-	*" $pd/$portdir "*)
++	*" $pd/$portdir "*|*" $portdir "*)
+ 		[ -n "$PM_PACKAGES_BUILD" ] && PM_PACKAGES_BUILD=doing_build_only_dep
+ 		[ -n "$PM_DEL_BUILD_ONLY" ] && PM_DEL_BUILD_ONLY=doing_build_only_dep ;;
+ 	*)	[ -n "$PM_PACKAGES_BUILD" ] && PM_PACKAGES_BUILD=pmp_build
+@@ -3402,31 +3405,19 @@ fetch_package () {
+ }
+ 	if [ -z "$PACKAGESITE" -a -z "$PM_PACKAGES_LOCAL" ]; then
+ 		release=`uname -r`
++		major_rel=${release%.*}
++		arch=`uname -p`
+ 
+-		case "$release" in
+-		[789]\.[0-9]-STABLE|[789]\.[0-9]-PRERELEASE)
+-				release=packages-${release%%\.*}-stable ;;
+-		[789]\.[0-9]-RELEASE*)
+-				release=packages-${release%-RELEASE*}-release ;;
+-		9\.0-CURRENT*)	release=packages-9-current ;;
+-		10\.0-CURRENT*)	release=packages-10-current ;;
+-		11\.0-CURRENT*)	release=packages-11-current ;;
+-		12\.0-CURRENT*)	release=packages-12-current ;;
+-		*RC[0-9]*)	release=${release%-RC[0-9]*}
+-				release=packages-${release}-release ;;
+-		*BETA[0-9]*)	release=${release%-BETA[0-9]*}
+-				release=packages-${release}-release ;;
+-		esac
+ 
+-		sitepath="${PACKAGEROOT:-"http://ftp.freebsd.org"}/pub/FreeBSD/ports/`uname -p`/${release}/"
+-		unset release
++		sitepath="${PACKAGEROOT:-"http://pkg.freebsd.org"}/FreeBSD:$major_rel:$arch/latest/All/"
++		unset release major_rel arch
+ 	else
+ 		sitepath="${PACKAGESITE%/}"
+ 		sitepath="${sitepath%Latest}"
+ 		sitepath="${sitepath%All}"
+ 	fi
+ 
+-	sitepath="${sitepath%/}/${portdir%/*}/"
++#	sitepath="${sitepath%/}/${portdir%/*}/" # may be required for local packages
+ 
+ 	echo "===>>> Checking package repository for latest available version"
+ 
+@@ -3437,11 +3428,12 @@ fetch_package () {
+ 			latest_pv=${local_package##*/}
+ 		fi
+ 		if [ -z "$latest_pv" -a -z "$PM_INDEX_ONLY" ]; then
+-			s=`pm_make -V LATEST_LINK`
+-			echo "===>>> ... checking: ${LOCAL_PACKAGEDIR}/Latest/${s}.txz"
+-			if [ -r "${LOCAL_PACKAGEDIR}/Latest/${s}.txz" ]; then
+-				local_package=${LOCAL_PACKAGEDIR}/Latest/${s}.txz
+-				latest_pv=`readlink ${LOCAL_PACKAGEDIR}/Latest/${s}.txz`
++			s=`pm_make -V PKGLATESTFILE`
++
++			echo "===>>> ... checking: ${s}"
++			if [ -r "${s}" ]; then
++				local_package=${s}
++				latest_pv=`readlink ${s}`
+ 				latest_pv=${latest_pv##*/}
+ 			else
+ 				pm_v "===>>> No local package for ${new_port}, attempting fetch"
