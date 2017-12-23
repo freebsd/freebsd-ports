@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	pydio
-PORTVERSION=	8.0.1
+PORTVERSION=	8.0.2
 CATEGORIES=	www
 MASTER_SITES=	https://download.pydio.com/pub/core/archives/
 DISTNAME=	${PORTNAME}-core-${PORTVERSION}
@@ -28,6 +28,8 @@ post-patch:
 	# Remove unneeded sample file for IIS
 	@${RM} ${WRKSRC}/web.config.sample
 	@${RM} ${WRKSRC}/data/web.config
+	# Remove not working sample file for Nginx
+	@${RM} ${WRKSRC}/nginx.conf.sample
 
 	# Remove dead symlinks shipped in upstream
 	@${RM} ${WRKSRC}/plugins/gui.ajax/res/mui/less
