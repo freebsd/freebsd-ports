@@ -1,0 +1,22 @@
+--- lib/vm-util.orig
++++ lib/vm-util
+@@ -55,7 +55,7 @@
+ # @modifies VM_NO_UG
+ #
+ util::check_bhyve_support(){
+-    local _mesg _result
++    local _mesg _mesg1 _mesg2 _result
+ 
+     # basic checks
+     [ `id -u` -ne 0 ] && util::err "virtual machines can only be managed by root"
+@@ -73,7 +73,9 @@
+     fi
+ 
+     # check ept for intel
+-    _mesg=$(grep -E '^[ ]+VT-x' /var/run/dmesg.boot | tail -n 1)
++    _mesg1=$(grep -E '^[ ]+VT-x' /var/run/dmesg.boot | tail -n 1)
++    _mesg2=$(grep -E '^[ ]+Secondary Processor Controls' /var/run/dmesg.boot | tail -n 1)
++    _mesg="${_mesg1}${_mesg2}"
+ 
+     if [ -n "${_mesg}" ]; then
+ 
