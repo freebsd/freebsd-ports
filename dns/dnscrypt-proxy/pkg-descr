@@ -11,7 +11,7 @@ is often the weakest point of the chain, against man-in-the-middle attacks.
 It also provides some confidentiality to DNS queries.
 
 Reference links:
-1. https://www.opendns.com/technology/dnscrypt/
-2. http://dnscurve.org
+1. https://www.opendns.com/about/innovations/dnscrypt/
+2. https://dnscurve.org/
 
-WWW: http://dnscrypt.org
+WWW: https://dnscrypt.org/

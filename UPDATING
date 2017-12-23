@@ -6,6 +6,14 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 20171223:
+  AFFECTS: users of dns/dnscrypt-proxy
+  AUTHOR: egypcio@googlemail.com
+
+  The 1.9.5_3 update of dns/dnscrypt-proxy replaces the default resolver used
+  by dnscrypt-proxy (cisco/OpenDNS) by a random one that does not log entries
+  and supports dnssec.
+
+20171223:
   AFFECTS: users of samba44
   AUTHOR: antoine@FreeBSD.org
 

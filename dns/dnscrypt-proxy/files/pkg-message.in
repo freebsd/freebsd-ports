@@ -1,22 +1,27 @@
 
 This port/software comes all 'working out of the box'.
 
-By default this port is using OpenDNS' resolvers, other services are possible.
+By default this port is using random resolvers.
+Better to select one of your own choice.
 
 To enable dnscrypt-proxy at boot:
-sysrc dnscrypt_proxy_enable=YES
-sysrc dnscrypt_proxy_flags='-a 127.0.0.2'
+  sysrc dnscrypt_proxy_enable=YES
+  sysrc dnscrypt_proxy_flags="-a 127.0.0.2"
+or:
+  sysrc dnscrypt_proxy_enable=YES
+  sysrc dnscrypt_proxy_conf="%%PREFIX%%/etc/dnscrypt-proxy.conf"
 
-or
-
-sysrc dnscrypt_proxy_enable=YES
-sysrc dnscrypt_proxy_conf="/usr/local/etc/dnscrypt-proxy.conf"
-
-
-** You cannot mix the config file with the other rc.conf flags / settings. **
-
+Be sure to setup above IP address/alias, so dnscrypt-proxy can bind correctly.
 
 To view available options, run:
-%%PREFIX%%/sbin/dnscrypt-proxy --help
-or read the manual: `man dnscrypt-proxy`
+  %%PREFIX%%/sbin/dnscrypt-proxy --help
+or read the manual:
+  man dnscrypt-proxy
+
+**************************************************
+*                                                *
+*   You can't mix the config file option with    *
+* other options or flags/settings in the rc.conf *
+*                                                *
+**************************************************
 
