@@ -1,10 +1,10 @@
 # $FreeBSD$
 
-# This port opens too many files during build, more than the default setting. Its build is known to succeed with kern.maxfiles="25000" (in /boot/loader.conf).
+# This port opens too many files during build, more than the default setting. Its build is known to succeed with MAX_FILES=15000 in poudriere.conf
 
 PORTNAME=	RStudio
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.1.385
+DISTVERSION=	1.1.405
 CATEGORIES=	devel math java
 MASTER_SITES=	https://s3.amazonaws.com/rstudio-dictionaries/:dictionaries \
 		https://s3.amazonaws.com/rstudio-buildtools/:buildtools
