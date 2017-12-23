@@ -2,7 +2,7 @@
 
 PORTNAME=	cyrus-imapd
 PORTVERSION=	3.0.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.cyrusimap.org/cyrus-imapd/ \
 		http://cyrusimap.org/releases/
@@ -45,9 +45,10 @@ CPE_VENDOR=	cmu
 CPE_PRODUCT=	cyrus_imap_server
 
 OPTIONS_DEFINE=		AUTOCREATE BACKUP CLAMAV HTTP IDLED LDAP LMDB MURDER \
-			MYSQL NNTP PGSQL REPLICATION SNMP SQLITE SQUAT DOCS
+			MYSQL NNTP PGSQL REPLICATION SNMP SQLITE SQUAT XAPIAN \
+			DOCS
 #OPTIONS_DEFINE+=	DRAC
-OPTIONS_DEFAULT=	CLAMAV IDLED SQLITE SQUAT
+OPTIONS_DEFAULT=	AUTOCREATE CLAMAV IDLED SQLITE SQUAT
 OPTIONS_SUB=		yes
 AUTOCREATE_DESC=	Enable autocreate support
 AUTOCREATE_CONFIGURE_ENABLE=	autocreate
@@ -81,9 +82,7 @@ MURDER_DESC=		Enable IMAP Murder support
 MURDER_CONFIGURE_ENABLE=murder
 MURDER_MAKE_ENV=	PTHREAD_LIBS="-lpthread"
 MYSQL_USES=		mysql
-MYSQL_CONFIGURE_ON=	--with-mysql=yes \
-			--with-mysql-libdir=${LOCALBASE}/lib/mysql \
-			--with-mysql-incdir=${LOCALBASE}/include/mysql
+MYSQL_CONFIGURE_WITH=	mysql
 NNTP_DESC=		Enable NNTP support
 NNTP_CONFIGURE_ENABLE=	nntp
 PGSQL_USES=		pgsql
@@ -97,11 +96,9 @@ SQLITE_CONFIGURE_ON=	--with-sqlite=${LOCALBASE}
 SQLITE_BROKEN_OFF=	SQLITE is requited
 SQUAT_DESC=		Enable Squat support
 SQUAT_CONFIGURE_OFF=	--disable-squat
-# Need additional patch to xapian
-#OPTIONS_DEFINE+=	XAPIAN
-#XAPIAN_DESC=		Enable Xapian support
-#XAPIAN_CONFIGURE_ENABLE=xapian
-#XAPIAN_LIB_DEPENDS=	libxapian.so:databases/xapian-core
+XAPIAN_DESC=		Enable Xapian support
+XAPIAN_CONFIGURE_ENABLE=xapian
+XAPIAN_LIB_DEPENDS=	libxapian.so:databases/xapian-core
 
 OPTIONS_RADIO=			GSSAPI
 OPTIONS_RADIO_GSSAPI=		GSSAPI_HEIMDAL GSSAPI_MIT
