@@ -1,6 +1,15 @@
---- src/pam_fprint_enroll.c~	2009-01-08 15:31:21.000000000 -0600
-+++ src/pam_fprint_enroll.c	2011-11-13 02:15:43.976691333 -0600
-@@ -47,7 +47,7 @@ static struct fp_dscv_dev *discover_devi
+--- src/pam_fprint_enroll.c.orig	2009-01-08 21:31:21 UTC
++++ src/pam_fprint_enroll.c
+@@ -26,7 +26,7 @@
+ #include <unistd.h>
+ #include <getopt.h>
+ 
+-#include <libfprint/fprint.h>
++#include <fprint.h>
+ 
+ static const char *finger_names[] = {
+ 	[LEFT_THUMB] = "Left Thumb",
+@@ -47,7 +47,7 @@ static struct fp_dscv_dev *discover_device(struct fp_d
  	struct fp_dscv_dev *ddev = NULL;
  	int i;
  
