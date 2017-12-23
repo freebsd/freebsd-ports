@@ -16,11 +16,10 @@ GH_ACCOUNT=	w8tvi
 GH_PROJECT=	dircproxy
 GH_TAGNAME=	dc563b3
 
-USE_AUTOTOOLS=	aclocal autoheader automake autoconf
-AUTOMAKE_ARGS=	--add-missing --copy
 GNU_CONFIGURE=	yes
 SUB_FILES+=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
+USES=		autoreconf
 
 post-install:
 	@cd ${WRKSRC}/doc && ${MAKE_CMD} install-man DESTDIR=${STAGEDIR}
