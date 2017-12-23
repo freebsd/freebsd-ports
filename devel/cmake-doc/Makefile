@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	cmake
-DISTVERSION=	3.9.6
+DISTVERSION=	3.10.1
 CATEGORIES=	devel
 MASTER_SITES=	https://www.cmake.org/files/v${PORTVERSION:R}/
 PKGNAMESUFFIX=	-doc
@@ -12,9 +12,9 @@ COMMENT=	HTML and Qt Creator helpfiles for CMake
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/Copyright.txt
 
-DISTINFO_FILE=	${.CURDIR}/../cmake/distinfo
-
 BUILD_DEPENDS=	sphinx-build:textproc/py-sphinx
+
+DISTINFO_FILE=	${.CURDIR}/../cmake/distinfo
 
 NO_ARCH=	yes
 USES=		cmake:outsource

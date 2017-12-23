@@ -100,6 +100,10 @@ MPIF77=	${LOCALBASE}/bin/mpif77
 MPICC=	${LOCALBASE}/bin/mpicc
 .endif
 
+# USES=fortran already forces FC to a supported fortran compiler;
+# assume mpicc points to a compatible compiler and force that, too.
+CC=	${MPICC}
+
 pre-configure:
 	${CP} -p ${WRKSRC}/Makefile ${WRKSRC}/Makefile.dist
 	${CP} ${WRKSRC}/SLmake.inc.example ${WRKSRC}/SLmake.inc
