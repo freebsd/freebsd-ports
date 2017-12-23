@@ -1,2 +1,3 @@
-SHA256 (xorg/lib/libXres-1.0.7.tar.bz2) = 26899054aa87f81b17becc68e8645b240f140464cf90c42616ebb263ec5fa0e5
-SIZE (xorg/lib/libXres-1.0.7.tar.bz2) = 282925
+TIMESTAMP = 1513525107
+SHA256 (xorg/lib/libXres-1.2.0.tar.bz2) = ff75c1643488e64a7cfbced27486f0f944801319c84c18d3bd3da6bf28c812d4
+SIZE (xorg/lib/libXres-1.2.0.tar.bz2) = 286635
