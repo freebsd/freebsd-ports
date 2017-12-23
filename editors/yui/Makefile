@@ -20,11 +20,9 @@ BROKEN_mips64=		fails to compile: cast from unsigned char* to unsigned int loses
 BROKEN_sparc64=		fails to compile
 BROKEN_powerpc64=	fails to build: strip: open tyui/y failed: No such file or directory
 
-USES=		tar:bzip2
-USE_AUTOTOOLS=	autoconf aclocal
-
-ACLOCAL_ARGS=	-I m4
+GNU_CONFIGURE=	yes
 MAKE_ENV=	LIBPATH=${PREFIX}/lib
+USES=		autoreconf tar:bzip2
 
 OPTIONS_DEFINE=	DOCS
 
