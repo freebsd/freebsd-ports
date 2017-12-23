@@ -16,8 +16,7 @@ COMMENT=	DCOM/WMI client implementation
 OPTIONS_DEFINE=	PYTHON
 PYTHON_DESC=	Build Python bindings
 
-USE_AUTOTOOLS=	autoconf:env autoheader:env
-USES=		iconv gmake tar:bzip2
+USES=		autoreconf:build gmake iconv tar:bzip2
 
 MAKEFILE=	GNUmakefile
 MAKE_ARGS+=	ZENHOME="${PREFIX}" INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
