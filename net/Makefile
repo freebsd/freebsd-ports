@@ -376,6 +376,7 @@
     SUBDIR += librsync2
     SUBDIR += libsocket++
     SUBDIR += libsrtp
+    SUBDIR += libstorj
     SUBDIR += libtnl
     SUBDIR += libtrace
     SUBDIR += libunp
