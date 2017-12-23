@@ -1,0 +1,9 @@
+Showdown is a simple Markdown viewer written in Vala and GTK 3, featuring:
+
+  - GitHub inspired default stylesheet.
+  - Table of contents navigation.
+  - Integrated search bar
+  - User styles (~/.config/showdown/stylesheet.css)
+  - User scripts (~/.config/showdown/script.js)
+
+WWW: https://github.com/craigbarnes/showdown

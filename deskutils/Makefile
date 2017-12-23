@@ -221,6 +221,7 @@
     SUBDIR += rubygem-shellplay
     SUBDIR += rubygem-taskjuggler
     SUBDIR += semantik
+    SUBDIR += showdown
     SUBDIR += shutter
     SUBDIR += silence
     SUBDIR += simpleagenda
