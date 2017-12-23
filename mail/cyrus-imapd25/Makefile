@@ -160,7 +160,6 @@ PLIST_SUB+=	CLAMAV="@comment "
 .if ${PORT_OPTIONS:MDRAC}
 IGNORE=		DRAC is not available
 # EXTRA_PATCHES+=	${FILESDIR}/extra-patch-cmulocal__sasl2.m4
-# USE_AUTOTOOLS=	autoconf autoheader
 .endif
 
 .if ${PORT_OPTIONS:MHTTP} || ${PORT_OPTIONS:MSQLITE}
