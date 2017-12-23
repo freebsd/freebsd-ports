@@ -181,7 +181,6 @@ lib/nss_winbind.so.1
 lib/nss_wins.so.1
 lib/pam_winbind.so
 %%CUPS%%libexec/samba/smbspool_krb5_wrapper
-%%AESNI%%lib/samba4/private/libaesni-intel-samba4.so
 %%AD_DC%%lib/samba4/private/libdlz-bind9-for-torture-samba4.so
 %%AD_DC%%lib/samba4/private/libposix-eadb-samba4.so
 %%AD_DC%%lib/samba4/private/libprocess-model-samba4.so
