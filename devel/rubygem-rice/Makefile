@@ -13,9 +13,9 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BROKEN_powerpc64=	fails to configure: could not find ruby.h
 
+GNU_CONFIGURE=	yes
 USE_RUBY=	yes
 USES=		gem
-USE_AUTOTOOLS=	aclocal autoconf
 INSTDIR=	${PREFIX}/${GEM_LIB_DIR}
 
 # Fixup path in mkmf-rice.rb so things that build using it can find -lrice.
