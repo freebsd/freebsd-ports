@@ -1,0 +1,15 @@
+Openvsp uses libxml, without explicitly looking for it; in CMake 3.9
+this was still OK as some other module included it. That implicit
+search has gone away, so add it explicitly where it is used.
+
+--- src/vsp/CMakeLists.txt.orig	2017-09-16 22:18:44 UTC
++++ src/vsp/CMakeLists.txt
+@@ -3,6 +3,8 @@ CMAKE_MINIMUM_REQUIRED(VERSION 2.8)
+ # include the CTest framework
+ include(CTest)
+ 
++find_package(libXml2)
++
+ IF("${CMAKE_SYSTEM}" MATCHES "Linux")
+ 	SET( LINUX_LIBS
+ 		pthread
