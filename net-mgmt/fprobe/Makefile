@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	farrokhi@FreeBSD.org
 COMMENT=	Tool that collects network traffic data
 
 LICENSE=	GPLv2
