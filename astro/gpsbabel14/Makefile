@@ -17,10 +17,10 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libexpat.so:textproc/expat2
 
-USE_AUTOTOOLS=	autoconf
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-expathdr=${LOCALBASE}/include \
 		--with-libexpat=${LOCALBASE}/lib
+USES=		autoreconf
 
 PLIST_FILES=	bin/gpsbabel
 
