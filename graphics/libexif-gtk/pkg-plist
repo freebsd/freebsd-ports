@@ -14,6 +14,7 @@ include/libexif-gtk/gtk-exif-entry-version.h
 include/libexif-gtk/gtk-exif-entry.h
 lib/libexif-gtk.a
 lib/libexif-gtk.so
+lib/libexif-gtk.so.5
 lib/libexif-gtk.so.5.1.0
 libdata/pkgconfig/libexif-gtk.pc
 %%NLS%%share/locale/de/LC_MESSAGES/libexif-gtk-5.mo
