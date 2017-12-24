@@ -10,8 +10,6 @@ DISTNAME=	${PORTNAME}-src-${DISTVERSION}
 MAINTAINER=	crees@FreeBSD.org
 COMMENT=	Common Desktop Environment
 
-BROKEN=		fails to build after CVE-2017-16611 fix to libXfont
-
 BUILD_DEPENDS=	ksh93:shells/ksh93			\
 		bdftopcf:x11-fonts/bdftopcf		\
 		mkfontdir:x11-fonts/mkfontdir	\
