@@ -8,8 +8,11 @@ bin/sympa_smtpc
 %%ETCDIR%%/README
 libexec/sympa/Conf.pm
 libexec/sympa/Sympa.pm
-libexec/sympa/Sympa/Admin.pm
 libexec/sympa/Sympa/Alarm.pm
+libexec/sympa/Sympa/Aliases.pm
+libexec/sympa/Sympa/Aliases/CheckSMTP.pm
+libexec/sympa/Sympa/Aliases/External.pm
+libexec/sympa/Sympa/Aliases/Template.pm
 libexec/sympa/Sympa/Archive.pm
 libexec/sympa/Sympa/Auth.pm
 libexec/sympa/Sympa/Bulk.pm
@@ -33,7 +36,6 @@ libexec/sympa/Sympa/DatabaseDriver/Sybase.pm
 libexec/sympa/Sympa/DatabaseManager.pm
 libexec/sympa/Sympa/Datasource.pm
 libexec/sympa/Sympa/Family.pm
-libexec/sympa/Sympa/Fetch.pm
 libexec/sympa/Sympa/HTML/FormatText.pm
 libexec/sympa/Sympa/HTMLDecorator.pm
 libexec/sympa/Sympa/HTMLSanitizer.pm
@@ -61,6 +63,7 @@ libexec/sympa/Sympa/Request/Collection.pm
 libexec/sympa/Sympa/Request/Handler.pm
 libexec/sympa/Sympa/Request/Handler/auth.pm
 libexec/sympa/Sympa/Request/Handler/add.pm
+libexec/sympa/Sympa/Request/Handler/close_list.pm
 libexec/sympa/Sympa/Request/Handler/confirm.pm
 libexec/sympa/Sympa/Request/Handler/del.pm
 libexec/sympa/Sympa/Request/Handler/distribute.pm
@@ -88,6 +91,11 @@ libexec/sympa/Sympa/Request/Handler/subscribe.pm
 libexec/sympa/Sympa/Request/Handler/unknown.pm
 libexec/sympa/Sympa/Request/Handler/verify.pm
 libexec/sympa/Sympa/Request/Handler/which.pm
+libexec/sympa/Sympa/Request/Handler/create_automatic_list.pm
+libexec/sympa/Sympa/Request/Handler/create_list.pm
+libexec/sympa/Sympa/Request/Handler/decl.pm
+libexec/sympa/Sympa/Request/Handler/move_list.pm
+libexec/sympa/Sympa/Request/Handler/open_list.pm
 libexec/sympa/Sympa/Request/Message.pm
 libexec/sympa/Sympa/Report.pm
 libexec/sympa/Sympa/Robot.pm
@@ -201,6 +209,10 @@ man/man1/upgrade_shared_repository.1.gz
 man/man1/upgrade_sympa_password.1.gz
 man/man3/Sympa.3Sympa.gz
 man/man3/Sympa::Alarm.3Sympa.gz
+man/man3/Sympa::Aliases.3Sympa.gz
+man/man3/Sympa::Aliases::CheckSMTP.3Sympa.gz
+man/man3/Sympa::Aliases::External.3Sympa.gz
+man/man3/Sympa::Aliases::Template.3Sympa.gz
 man/man3/Sympa::Archive.3Sympa.gz
 man/man3/Sympa::Bulk.3Sympa.gz
 man/man3/Sympa::CommandDef.3Sympa.gz
@@ -243,7 +255,11 @@ man/man3/Sympa::Request::Collection.3Sympa.gz
 man/man3/Sympa::Request::Handler.3Sympa.gz
 man/man3/Sympa::Request::Handler::add.3Sympa.gz
 man/man3/Sympa::Request::Handler::auth.3Sympa.gz
+man/man3/Sympa::Request::Handler::close_list.3Sympa.gz
 man/man3/Sympa::Request::Handler::confirm.3Sympa.gz
+man/man3/Sympa::Request::Handler::create_automatic_list.3Sympa.gz
+man/man3/Sympa::Request::Handler::create_list.3Sympa.gz
+man/man3/Sympa::Request::Handler::decl.3Sympa.gz
 man/man3/Sympa::Request::Handler::del.3Sympa.gz
 man/man3/Sympa::Request::Handler::distribute.3Sympa.gz
 man/man3/Sympa::Request::Handler::finished.3Sympa.gz
@@ -259,7 +275,9 @@ man/man3/Sympa::Request::Handler::invite.3Sympa.gz
 man/man3/Sympa::Request::Handler::last.3Sympa.gz
 man/man3/Sympa::Request::Handler::lists.3Sympa.gz
 man/man3/Sympa::Request::Handler::modindex.3Sympa.gz
+man/man3/Sympa::Request::Handler::move_list.3Sympa.gz
 man/man3/Sympa::Request::Handler::move_user.3Sympa.gz
+man/man3/Sympa::Request::Handler::open_list.3Sympa.gz
 man/man3/Sympa::Request::Handler::reject.3Sympa.gz
 man/man3/Sympa::Request::Handler::remind.3Sympa.gz
 man/man3/Sympa::Request::Handler::review.3Sympa.gz
@@ -334,6 +352,7 @@ man/man5/edit_list.conf.5.gz
 man/man5/ldap_alias_manager.conf.5.gz
 man/man5/list_config.5.gz
 man/man5/nrcpt_by_domain.conf.5.gz
+man/man5/sympa_scenario.5.gz
 man/man5/sympa.conf.5.gz
 man/man5/sympa.wsdl.5.gz
 man/man5/sympa_database.5.gz
@@ -419,7 +438,6 @@ share/doc/smtpc/smtpc.1.md
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/web_help.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/sympa.mo
 %%DATADIR%%/defaults/auth.conf
-%%DATADIR%%/defaults/ca-bundle.crt
 %%DATADIR%%/defaults/charset.conf
 %%DATADIR%%/defaults/crawlers_detection.conf
 %%DATADIR%%/defaults/create_list.conf
@@ -587,6 +605,8 @@ share/doc/smtpc/smtpc.1.md
 %%DATADIR%%/defaults/scenari/send.intranetorprivate
 %%DATADIR%%/defaults/scenari/send.newsletter
 %%DATADIR%%/defaults/scenari/send.newsletterkeyonly
+%%DATADIR%%/defaults/scenari/send.owner
+%%DATADIR%%/defaults/scenari/send.ownerauth
 %%DATADIR%%/defaults/scenari/send.private
 %%DATADIR%%/defaults/scenari/send.private_smime
 %%DATADIR%%/defaults/scenari/send.privateandeditorkey
@@ -649,9 +669,6 @@ share/doc/smtpc/smtpc.1.md
 %%DATADIR%%/defaults/web_tt2/arcsearch_form.tt2
 %%DATADIR%%/defaults/web_tt2/aside_menu.tt2
 %%DATADIR%%/defaults/web_tt2/authorization_reject.tt2
-%%DATADIR%%/defaults/web_tt2/automatic_lists.tt2
-%%DATADIR%%/defaults/web_tt2/automatic_lists_management_request.tt2
-%%DATADIR%%/defaults/web_tt2/automatic_lists_request.tt2
 %%DATADIR%%/defaults/web_tt2/blacklist.tt2
 %%DATADIR%%/defaults/web_tt2/button_footer.tt2
 %%DATADIR%%/defaults/web_tt2/button_header.tt2
@@ -659,12 +676,11 @@ share/doc/smtpc/smtpc.1.md
 %%DATADIR%%/defaults/web_tt2/change_email.tt2
 %%DATADIR%%/defaults/web_tt2/change_email_request.tt2
 %%DATADIR%%/defaults/web_tt2/choosepasswd.tt2
-%%DATADIR%%/defaults/web_tt2/close_list.tt2
 %%DATADIR%%/defaults/web_tt2/compose_mail.tt2
 %%DATADIR%%/defaults/web_tt2/confirm_action.tt2
 %%DATADIR%%/defaults/web_tt2/copy_template.tt2
 %%DATADIR%%/defaults/web_tt2/crash.tt2
-%%DATADIR%%/defaults/web_tt2/create_list.tt2
+%%DATADIR%%/defaults/web_tt2/create_automatic_list_request.tt2
 %%DATADIR%%/defaults/web_tt2/create_list_request.tt2
 %%DATADIR%%/defaults/web_tt2/css.tt2
 %%DATADIR%%/defaults/web_tt2/css_ie.tt2
@@ -712,7 +728,6 @@ share/doc/smtpc/smtpc.1.md
 %%DATADIR%%/defaults/web_tt2/import.tt2
 %%DATADIR%%/defaults/web_tt2/info.tt2
 %%DATADIR%%/defaults/web_tt2/including_lists.tt2
-%%DATADIR%%/defaults/web_tt2/install_pending_list.tt2
 %%DATADIR%%/defaults/web_tt2/ja/css.tt2
 %%DATADIR%%/defaults/web_tt2/ko/css.tt2
 %%DATADIR%%/defaults/web_tt2/latest_arc.tt2
@@ -817,7 +832,6 @@ share/doc/smtpc/smtpc.1.md
 %%DATADIR%%/static/external/foundation/js/foundation/responsive-tables.js
 %%DATADIR%%/static/external/foundation/js/vendor/fastclick.js
 %%DATADIR%%/static/external/foundation/js/vendor/jquery.cookie.js
-%%DATADIR%%/static/external/foundation/js/vendor/jquery.js
 %%DATADIR%%/static/external/foundation/js/vendor/modernizr.js
 %%DATADIR%%/static/external/foundation/js/vendor/placeholder.js
 %%DATADIR%%/static/external/html5shiv/html5shiv.js
@@ -842,6 +856,7 @@ share/doc/smtpc/smtpc.1.md
 %%DATADIR%%/static/external/jquery-ui.js
 %%DATADIR%%/static/external/jquery.jqplot.css
 %%DATADIR%%/static/external/jquery.jqplot.min.js
+%%DATADIR%%/static/external/jquery-migrate.js
 %%DATADIR%%/static/external/jquery.js
 %%DATADIR%%/static/external/modernizr.custom.js
 %%DATADIR%%/static/external/respondjs/respond.min.js
