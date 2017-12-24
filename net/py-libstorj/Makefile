@@ -14,7 +14,7 @@ LICENSE=	LGPL21+
 BUILD_DEPENDS=	swig3.0:devel/swig30
 LIB_DEPENDS=	libstorj.so:net/libstorj
 
-USES=		localbase python:2.7+
+USES=		localbase python:2.7
 USE_PYTHON=	autoplist distutils
 USE_GITHUB=	yes
 GH_ACCOUNT=	Storj
