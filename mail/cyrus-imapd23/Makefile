@@ -54,6 +54,7 @@ BDB_CONFIGURE_ON=	--with-bdb-incdir=${BDB_INCLUDE_DIR} \
 DRAC_DESC=		Enable DRAC support
 DRAC_CONFIGURE_ON=	--with-drac=${LOCALBASE}
 DRAC_BUILD_DEPENDS=	${LOCALBASE}/lib/libdrac.a:mail/drac
+DRAC_USES=		autoreconf
 IDLED_DESC=		Enable IMAP idled support
 IDLED_CONFIGURE_ENABLE=	idled
 LDAP_PTLOADER_DESC=	Enable LDAP ptloader
@@ -101,7 +102,6 @@ DRAC_EXTRA_PATCHES=	${WRKSRC}/contrib/drac_auth.patch \
 			${FILESDIR}/extra-patch-configure.in \
 			${FILESDIR}/extra-patch-cmulocal_ucdsnmp.m4 \
 			${FILESDIR}/extra-patch-cmulocal_sasl2.m4
-DRAC_USE=	AUTOTOOLS=autoconf,autoheader
 
 MANDIRS=	${CYRUS_PREFIX}/man
 
