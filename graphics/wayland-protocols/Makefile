@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	wayland-protocols
-PORTVERSION=	1.10
+PORTVERSION=	1.12
 CATEGORIES=	graphics wayland
 MASTER_SITES=	https://wayland.freedesktop.org/releases/
 
