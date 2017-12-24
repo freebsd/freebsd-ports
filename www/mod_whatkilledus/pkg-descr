@@ -20,4 +20,4 @@ Activating mod_whatkilledus:
      be able to create or append to this log file, as the log file is
      not opened until a crash occurs.
 
-WWW: http://people.apache.org/~trawick/exception_hook.html
+WWW: https://emptyhammock.com/projects/httpd/diag/legacy_exception_hook.html
