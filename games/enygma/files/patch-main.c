@@ -1,5 +1,5 @@
---- main.c.orig	Sun Sep 14 23:23:51 2008
-+++ main.c	Sun Sep 14 22:13:48 2008
+--- main.c.orig	2004-02-28 10:01:16 UTC
++++ main.c
 @@ -11,6 +11,7 @@
  
  #include <stdio.h>
@@ -8,7 +8,7 @@
  
  #include "enigma.h"
  
-@@ -131,7 +132,7 @@
+@@ -131,7 +132,7 @@ int main(int argc, char **argv) {
  			char *fname;
  			char *sequence;
  			gamestate **movie;

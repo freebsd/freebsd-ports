@@ -14,9 +14,9 @@ COMMENT=	Text-based puzzle game
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENCE
 
-USES=		ncurses
+USES=		localbase ncurses
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=/var/games
-CPPFLAGS+=	-I${NCURSESINC} -I${LOCALBASE}/include
+CPPFLAGS+=	-I${NCURSESINC}
 
 .include <bsd.port.mk>
