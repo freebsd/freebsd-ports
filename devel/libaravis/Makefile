@@ -25,7 +25,6 @@ LIB_DEPENDS+=		libxml2.so:textproc/libxml2 \
 USES=			pkgconfig autoreconf libtool gmake
 USE_LDCONFIG=		yes
 GNU_CONFIGURE=		yes
-AUTOMAKE_ARGS=		--add-missing --copy
 MAKE_ARGS=		pkgconfigdir="${PREFIX}/libdata/pkgconfig"
 
 OPTIONS_DEFINE=		DOCS NLS FAST_HEARTBEAT USB
