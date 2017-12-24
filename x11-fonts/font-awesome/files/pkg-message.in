@@ -6,3 +6,6 @@ line to the "Modules" section of your X Windows configuration file:
 Add the following line to the "Files" section of X Windows configuration file:
 
         FontPath "%%FONTSDIR%%/"
+
+If you're upgrading from Font Awesome v4, you may need to update your configs
+to the new font families "Font Awesome 5 Free" and "Font Awesome 5 Free Solid".

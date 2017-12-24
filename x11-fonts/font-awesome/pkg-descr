@@ -1,8 +1,8 @@
-Font Awesome is a full suite of 675 pictographic icons for easy scalable
-vector graphics on websites, created and maintained by Dave Gandy.
+Font Awesome is a suite of pictographic icons for easy scalable vector
+graphics, created and maintained by Dave Gandy.
 
-This package installs only ttf/otf fonts suitable for use in X.Org applications.
-The corresponding web fonts (woff/woff2) aren't installed. You can find them
-installed by a lot of other ports.
+This package installs only free TTF and OTF fonts suitable for use in X.Org
+applications.  The corresponding web fonts aren't installed.  You can find
+them installed by a lot of other ports.
 
-WWW: http://fontawesome.io/
+WWW: https://fontawesome.com/
