@@ -1,22 +1,6 @@
---- Makefile.in.orig	2011-09-19 05:06:21.000000000 +0900
-+++ Makefile.in	2012-03-17 19:18:58.000000000 +0900
-@@ -156,6 +156,7 @@
- ECHO_N = @ECHO_N@
- ECHO_T = @ECHO_T@
- EGREP = @EGREP@
-+EXAMPLE = @EXAMPLE@
- EXEEXT = @EXEEXT@
- FONTFILENAME = @FONTFILENAME@
- GDLIB_CONFIG = @GDLIB_CONFIG@
-@@ -259,6 +260,7 @@
- STRIP = @STRIP@
- TEXI2DVI = @TEXI2DVI@
- TOPDIRS = @TOPDIRS@
-+TUTORIAL = @TUTORIAL@
- UPDATE_DESKTOP_DATABASE = @UPDATE_DESKTOP_DATABASE@
- UPDATE_MIME_DATABASE = @UPDATE_MIME_DATABASE@
- USE_INCLUDED_LIBINTL = @USE_INCLUDED_LIBINTL@
-@@ -330,11 +332,11 @@
+--- Makefile.in.orig	2014-03-17 03:14:44 UTC
++++ Makefile.in
+@@ -362,11 +362,11 @@ target_alias = @target_alias@
  top_build_prefix = @top_build_prefix@
  top_builddir = @top_builddir@
  top_srcdir = @top_srcdir@
