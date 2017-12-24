@@ -15,7 +15,7 @@ COMMENT=	Ruby extension library to use ODBC data sources
 
 BROKEN_RUBY24=	yes
 
-OPTIONS_DEFINe=	DOCS EXAMPLES
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
 LIB_DEPENDS=	libodbc.so:databases/unixODBC
 
