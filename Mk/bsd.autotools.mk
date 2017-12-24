@@ -13,8 +13,7 @@ Autotools_Include_MAINTAINER=	tijl@FreeBSD.org
 # USE_AUTOTOOLS= tool[:env] ...
 #
 # 'tool' can currently be one of the following:
-#	autoconf, autoheader
-#	automake, aclocal
+#	autoconf, automake
 #
 # ':env' is used to specify that the environmental variables are needed
 #	but the relevant tool should NOT be run as part of the
@@ -26,14 +25,8 @@ Autotools_Include_MAINTAINER=	tijl@FreeBSD.org
 # AUTOMAKE_ARGS=...
 #	- Extra arguments passed to automake during configure step
 #
-# ACLOCAL_ARGS=...
-#	- Arguments passed to aclocal during configure step
-#
 # AUTOCONF_ARGS=...
 #	- Extra arguments passed to autoconf during configure step
-#
-# AUTOHEADER_ARGS=...
-#	- Extra arguments passed to autoheader during configure step
 #
 #---------------------------------------------------------------------------
 
@@ -42,8 +35,7 @@ Autotools_Include_MAINTAINER=	tijl@FreeBSD.org
 #---------------------------------------------------------------------------
 
 # Known autotools components
-_AUTOTOOLS_ALL=	autoconf autoheader \
-		automake aclocal
+_AUTOTOOLS_ALL=	autoconf automake
 
 #---------------------------------------------------------------------------
 # Primary magic to break out the USE_AUTOTOOLS stanza into something
@@ -89,14 +81,8 @@ IGNORE+=	Bad autotool stanza: ${_AUTOTOOLS_BADCOMP:O:u}
 .endif
 
 #---------------------------------------------------------------------------
-# automake and aclocal
+# automake
 #---------------------------------------------------------------------------
-
-.if defined(_AUTOTOOL_aclocal) && ${_AUTOTOOL_aclocal} == "yes"
-_AUTOTOOL_automake?=	env
-_AUTOTOOL_rule_aclocal=	yes
-GNU_CONFIGURE=		yes
-.endif
 
 .if defined(_AUTOTOOL_automake)
 AUTOMAKE_VERSION=	1.15
@@ -112,33 +98,19 @@ GNU_CONFIGURE?=			yes
 .if defined(AUTOMAKE_VERSION)
 AUTOMAKE=		${LOCALBASE}/bin/automake-${AUTOMAKE_VERSION}
 AUTOMAKE_DIR=		${LOCALBASE}/share/automake-${AUTOMAKE_VERSION}
-ACLOCAL=		${LOCALBASE}/bin/aclocal-${AUTOMAKE_VERSION}
-ACLOCAL_DIR=		${LOCALBASE}/share/aclocal-${AUTOMAKE_VERSION}
-
-. if defined(_AUTOTOOL_aclocal)
-ACLOCAL_ARGS?=		--automake-acdir=${ACLOCAL_DIR}
-. endif
 
 AUTOMAKE_VARS=		AUTOMAKE=${AUTOMAKE} \
 			AUTOMAKE_DIR=${AUTOMAKE_DIR} \
 			AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
-			AUTOMAKE_APIVER=${AUTOMAKE_APIVER} \
-			ACLOCAL=${ACLOCAL} \
-			ACLOCAL_DIR=${ACLOCAL_DIR}
+			AUTOMAKE_APIVER=${AUTOMAKE_APIVER}
 
 AUTOMAKE_DEPENDS=	${AUTOMAKE}:${AUTOMAKE_PORT}
 BUILD_DEPENDS+=		${AUTOMAKE_DEPENDS}
 .endif
 
 #---------------------------------------------------------------------------
-# autoconf and autoheader
+# autoconf
 #---------------------------------------------------------------------------
-
-.if defined(_AUTOTOOL_autoheader) && ${_AUTOTOOL_autoheader} == "yes"
-_AUTOTOOL_autoconf=		yes
-_AUTOTOOL_rule_autoheader=	yes
-GNU_CONFIGURE?=			yes
-.endif
 
 .if defined(_AUTOTOOL_autoconf)
 AUTOCONF_VERSION=	2.69
@@ -153,7 +125,6 @@ GNU_CONFIGURE?=			yes
 .if defined(AUTOCONF_VERSION)
 AUTOCONF=		${LOCALBASE}/bin/autoconf-${AUTOCONF_VERSION}
 AUTOCONF_DIR=		${LOCALBASE}/share/autoconf-${AUTOCONF_VERSION}
-AUTOHEADER=		${LOCALBASE}/bin/autoheader-${AUTOCONF_VERSION}
 AUTOIFNAMES=		${LOCALBASE}/bin/ifnames-${AUTOCONF_VERSION}
 AUTOM4TE?=		${LOCALBASE}/bin/autom4te-${AUTOCONF_VERSION}
 AUTORECONF=		${LOCALBASE}/bin/autoreconf-${AUTOCONF_VERSION}
@@ -162,7 +133,6 @@ AUTOUPDATE=		${LOCALBASE}/bin/autoupdate-${AUTOCONF_VERSION}
 
 AUTOCONF_VARS=		AUTOCONF=${AUTOCONF} \
 			AUTOCONF_DIR=${AUTOCONF_DIR} \
-			AUTOHEADER=${AUTOHEADER} \
 			AUTOIFNAMES=${AUTOIFNAMES} \
 			AUTOM4TE=${AUTOM4TE} \
 			AUTORECONF=${AUTORECONF} \
@@ -190,14 +160,7 @@ ${var:tu}_ENV+=		${AUTOTOOLS_VARS}
 # Make targets
 #---------------------------------------------------------------------------
 
-_USES_configure+=460:run-autotools-aclocal 461:run-autotools-autoconf \
-	462:run-autotools-autoheader 463:run-autotools-automake
-
-.if defined(_AUTOTOOL_rule_aclocal) && !target(run-autotools-aclocal)
-run-autotools-aclocal:
-	@(cd ${CONFIGURE_WRKSRC} && ${SETENV} ${AUTOTOOLS_ENV} ${ACLOCAL} \
-		${ACLOCAL_ARGS})
-.endif
+_USES_configure+=461:run-autotools-autoconf 463:run-autotools-automake
 
 .if defined(_AUTOTOOL_rule_autoconf) && !target(run-autotools-autoconf)
 run-autotools-autoconf:
@@ -209,10 +172,4 @@ run-autotools-autoconf:
 run-autotools-automake:
 	@(cd ${CONFIGURE_WRKSRC} && ${SETENV} ${AUTOTOOLS_ENV} ${AUTOMAKE} \
 		${AUTOMAKE_ARGS})
-.endif
-
-.if defined(_AUTOTOOL_rule_autoheader) && !target(run-autotools-autoheader)
-run-autotools-autoheader:
-	@(cd ${CONFIGURE_WRKSRC} && ${SETENV} ${AUTOTOOLS_ENV} ${AUTOHEADER} \
-		${AUTOHEADER_ARGS})
 .endif
