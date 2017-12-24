@@ -22,7 +22,6 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/${PORTNAME}
 
 USES=		autoreconf compiler:c11 gmake pathfix pkgconfig ssl
 GNU_CONFIGURE=	yes
-AUTOMAKE_ARGS=	--gnu --add-missing --copy
 CONFIGURE_ARGS+=	CFLAGS="-I${LOCALBASE}/include"
 
 OPTIONS_DEFINE=	BSC NAT SQLITE
