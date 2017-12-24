@@ -1,6 +1,6 @@
---- setup.py.orig	2016-02-13 18:11:15 UTC
+--- setup.py.orig	2017-12-24 15:32:10 UTC
 +++ setup.py
-@@ -83,7 +83,9 @@ params.update({
+@@ -112,7 +112,9 @@ params.update({
                   'pysmi.parser',
                   'pysmi.codegen',
                   'pysmi.borrower',
