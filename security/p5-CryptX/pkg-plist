@@ -95,6 +95,7 @@
 %%SITE_ARCH%%/Crypt/PRNG/Yarrow.pm
 %%SITE_ARCH%%/Crypt/Stream/ChaCha.pm
 %%SITE_ARCH%%/Crypt/Stream/RC4.pm
+%%SITE_ARCH%%/Crypt/Stream/Rabbit.pm
 %%SITE_ARCH%%/Crypt/Stream/Salsa20.pm
 %%SITE_ARCH%%/Crypt/Stream/Sober128.pm
 %%SITE_ARCH%%/Crypt/Stream/Sosemanuk.pm
@@ -198,6 +199,7 @@
 %%PERL5_MAN3%%/Crypt::PRNG::Yarrow.3.gz
 %%PERL5_MAN3%%/Crypt::Stream::ChaCha.3.gz
 %%PERL5_MAN3%%/Crypt::Stream::RC4.3.gz
+%%PERL5_MAN3%%/Crypt::Stream::Rabbit.3.gz
 %%PERL5_MAN3%%/Crypt::Stream::Salsa20.3.gz
 %%PERL5_MAN3%%/Crypt::Stream::Sober128.3.gz
 %%PERL5_MAN3%%/Crypt::Stream::Sosemanuk.3.gz
