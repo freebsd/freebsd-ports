@@ -21,7 +21,7 @@ CONFLICTS_INSTALL?=		samba4-4.0.* samba4[1-57-9]-4.* p5-Parse-Pidl-4.*
 
 SAMBA4_BASENAME=		samba
 SAMBA4_PORTNAME=		${SAMBA4_BASENAME}4
-SAMBA4_VERSION=			4.6.11
+SAMBA4_VERSION=			4.6.12
 SAMBA4_DISTNAME=		${SAMBA4_BASENAME}-${SAMBA4_VERSION:S|.p|pre|:S|.r|rc|:S|.t|tp|:S|.a|alpha|}
 
 WRKSRC?=			${WRKDIR}/${DISTNAME}
@@ -327,7 +327,7 @@ SAMBA_MAN8+=			cifsdd.8 eventlogadm.8 idmap_ad.8 idmap_autorid.8 idmap_hash.8 \
 				vfs_shadow_copy2.8 vfs_snapper.8 vfs_smb_traffic_analyzer.8 \
 				vfs_streams_depot.8 vfs_streams_xattr.8 vfs_syncops.8 vfs_time_audit.8 \
 				vfs_tsmsm.8 vfs_worm.8 vfs_xattr_tdb.8 winbindd.8 \
-				vfs_linux_xfs_sgid.8 vfs_btrfs.8 vfs_shell_snap.8 vfs_unityed_media.8
+				vfs_linux_xfs_sgid.8 vfs_btrfs.8 vfs_shell_snap.8 vfs_unityed_media.8 vfs_zfsacl.8
 
 PORTDOCS=			README.FreeBSD
 
