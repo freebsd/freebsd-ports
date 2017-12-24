@@ -3,7 +3,7 @@
 PORTNAME=	z3
 DISTVERSIONPREFIX=	${PORTNAME}-
 DISTVERSION=	4.5.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 
 MAINTAINER=	6yearold@gmail.com
@@ -30,6 +30,7 @@ PYTHON_DESC=		Enable python bindings
 PYTHON_CONFIGURE_ON=	--python
 PYTHON_USES=		python:2.7
 PYTHON_USES_OFF=	python:2.7,build
+PYTHON_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>0:devel/py-setuptools@${PY_FLAVOR}
 
 STATIC_DESC=		Build static z3 library
 STATIC_CONFIGURE_ON=	--staticlib
