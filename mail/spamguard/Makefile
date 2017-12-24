@@ -11,10 +11,9 @@ COMMENT=	MTA spam prevention program for qmail/postfix/sendmail
 
 LICENSE=	BSD3CLAUSE
 
-USE_AUTOTOOLS=	automake
-
 WRKSRC=		${WRKDIR}/${PORTNAME}
 GNU_CONFIGURE=	yes
+USES=		autoreconf
 
 OPTIONS_DEFINE=	DOCS
 
@@ -25,9 +24,6 @@ DOCS_TR=	BENIOKU BENIOKU.DigitalUnix COPYING DEGISIKLIKLER \
 		GUNCELLEME KURULUM KURULUM-SONRASI YAPILACAKLAR YAZARLAR
 
 SUB_FILES=	pkg-message
-
-pre-configure:
-	cd ${WRKSRC}; ./autogen.sh
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/tr
