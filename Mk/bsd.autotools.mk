@@ -13,7 +13,7 @@ Autotools_Include_MAINTAINER=	tijl@FreeBSD.org
 # USE_AUTOTOOLS= tool[:env] ...
 #
 # 'tool' can currently be one of the following:
-#	autoconf, automake
+#	autoconf
 #
 # ':env' is used to specify that the environmental variables are needed
 #	but the relevant tool should NOT be run as part of the
@@ -21,9 +21,6 @@ Autotools_Include_MAINTAINER=	tijl@FreeBSD.org
 #
 # In addition, these variables can be set in the port Makefile to be
 # passed to the relevant tools:
-#
-# AUTOMAKE_ARGS=...
-#	- Extra arguments passed to automake during configure step
 #
 # AUTOCONF_ARGS=...
 #	- Extra arguments passed to autoconf during configure step
@@ -35,7 +32,7 @@ Autotools_Include_MAINTAINER=	tijl@FreeBSD.org
 #---------------------------------------------------------------------------
 
 # Known autotools components
-_AUTOTOOLS_ALL=	autoconf automake
+_AUTOTOOLS_ALL=	autoconf
 
 #---------------------------------------------------------------------------
 # Primary magic to break out the USE_AUTOTOOLS stanza into something
@@ -81,34 +78,6 @@ IGNORE+=	Bad autotool stanza: ${_AUTOTOOLS_BADCOMP:O:u}
 .endif
 
 #---------------------------------------------------------------------------
-# automake
-#---------------------------------------------------------------------------
-
-.if defined(_AUTOTOOL_automake)
-AUTOMAKE_VERSION=	1.15
-AUTOMAKE_APIVER=	1.15
-AUTOMAKE_PORT=		devel/automake
-
-. if ${_AUTOTOOL_automake} == "yes"
-_AUTOTOOL_rule_automake=	yes
-GNU_CONFIGURE?=			yes
-. endif
-.endif
-
-.if defined(AUTOMAKE_VERSION)
-AUTOMAKE=		${LOCALBASE}/bin/automake-${AUTOMAKE_VERSION}
-AUTOMAKE_DIR=		${LOCALBASE}/share/automake-${AUTOMAKE_VERSION}
-
-AUTOMAKE_VARS=		AUTOMAKE=${AUTOMAKE} \
-			AUTOMAKE_DIR=${AUTOMAKE_DIR} \
-			AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
-			AUTOMAKE_APIVER=${AUTOMAKE_APIVER}
-
-AUTOMAKE_DEPENDS=	${AUTOMAKE}:${AUTOMAKE_PORT}
-BUILD_DEPENDS+=		${AUTOMAKE_DEPENDS}
-.endif
-
-#---------------------------------------------------------------------------
 # autoconf
 #---------------------------------------------------------------------------
 
@@ -148,7 +117,7 @@ BUILD_DEPENDS+=		${AUTOCONF_DEPENDS}
 # Add to the environment
 #---------------------------------------------------------------------------
 
-AUTOTOOLS_VARS=		${AUTOMAKE_VARS} ${AUTOCONF_VARS}
+AUTOTOOLS_VARS=		${AUTOCONF_VARS}
 
 .if defined(AUTOTOOLS_VARS) && !empty(AUTOTOOLS_VARS)
 . for var in AUTOTOOLS CONFIGURE MAKE SCRIPTS
@@ -160,16 +129,10 @@ ${var:tu}_ENV+=		${AUTOTOOLS_VARS}
 # Make targets
 #---------------------------------------------------------------------------
 
-_USES_configure+=461:run-autotools-autoconf 463:run-autotools-automake
+_USES_configure+=461:run-autotools-autoconf
 
 .if defined(_AUTOTOOL_rule_autoconf) && !target(run-autotools-autoconf)
 run-autotools-autoconf:
 	@(cd ${CONFIGURE_WRKSRC} && ${SETENV} ${AUTOTOOLS_ENV} ${AUTOCONF} \
 		${AUTOCONF_ARGS})
-.endif
-
-.if defined(_AUTOTOOL_rule_automake) && !target(run-autotools-automake)
-run-autotools-automake:
-	@(cd ${CONFIGURE_WRKSRC} && ${SETENV} ${AUTOTOOLS_ENV} ${AUTOMAKE} \
-		${AUTOMAKE_ARGS})
 .endif
