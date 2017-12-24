@@ -1,5 +1,5 @@
---- memory.c.orig	Sun Sep 14 23:24:09 2008
-+++ memory.c	Sun Sep 14 21:58:40 2008
+--- memory.c.orig	2004-02-28 10:01:16 UTC
++++ memory.c
 @@ -12,6 +12,7 @@
  #include <stdio.h>
  #include <stdlib.h>

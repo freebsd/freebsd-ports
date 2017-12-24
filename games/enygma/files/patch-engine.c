@@ -1,6 +1,6 @@
---- engine.c.orig	Sun Sep 14 23:23:42 2008
-+++ engine.c	Sun Sep 14 22:06:32 2008
-@@ -181,7 +181,7 @@
+--- engine.c.orig	2004-02-29 14:39:00 UTC
++++ engine.c
+@@ -181,7 +181,7 @@ gamestate *make_move (gamestate *state, 
       * process teleporters
       */
      if (i == '#') {
