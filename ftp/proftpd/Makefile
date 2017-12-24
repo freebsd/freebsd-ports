@@ -49,7 +49,6 @@ PORTDOCS=	*
 
 MAKE_JOBS_UNSAFE=	yes
 USES+=		cpe gmake libtool
-USE_AUTOTOOLS=	autoconf
 GNU_CONFIGURE=	yes
 
 .if !defined(_BUILDING_PROFTPD_MODULE)
