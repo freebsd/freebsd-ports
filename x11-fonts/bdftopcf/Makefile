@@ -8,6 +8,8 @@ CATEGORIES=	x11-fonts
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Convert X font from BDF to PCF
 
+USES=		localbase
+
 XORG_CAT=	app
 USE_XORG=	fontsproto xproto
 
