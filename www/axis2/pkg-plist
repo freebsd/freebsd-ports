@@ -136,6 +136,8 @@
 %%APPHOME%%/webapps/axis2/WEB-INF/lib/neethi-LICENSE.txt
 %%APPHOME%%/webapps/axis2/WEB-INF/lib/stax2-api-3.1.1.jar
 %%APPHOME%%/webapps/axis2/WEB-INF/lib/stax2-api.LICENSE.txt
+%%APPHOME%%/webapps/axis2/WEB-INF/lib/taglibs-standard-impl-1.2.5.jar
+%%APPHOME%%/webapps/axis2/WEB-INF/lib/taglibs-standard-spec-1.2.5.jar
 %%APPHOME%%/webapps/axis2/WEB-INF/lib/tribes-6.0.16.jar
 %%APPHOME%%/webapps/axis2/WEB-INF/lib/tribes-LICENSE.txt
 %%APPHOME%%/webapps/axis2/WEB-INF/lib/woden-core-1.0M10.jar
@@ -153,6 +155,7 @@
 %%APPHOME%%/webapps/axis2/WEB-INF/lib/xmlschema-core-2.2.1.jar
 %%APPHOME%%/webapps/axis2/WEB-INF/lib/xmlschema-core-LICENSE.txt
 %%APPHOME%%/webapps/axis2/WEB-INF/modules/addressing-%%PORTVERSION%%.mar
+%%APPHOME%%/webapps/axis2/WEB-INF/modules/axis2-jaxws-mar-%%PORTVERSION%%.mar
 %%APPHOME%%/webapps/axis2/WEB-INF/modules/mex-%%PORTVERSION%%.mar
 %%APPHOME%%/webapps/axis2/WEB-INF/modules/modules.list
 %%APPHOME%%/webapps/axis2/WEB-INF/modules/mtompolicy-%%PORTVERSION%%.mar
@@ -160,7 +163,7 @@
 %%APPHOME%%/webapps/axis2/WEB-INF/modules/scripting-%%PORTVERSION%%.mar
 %%APPHOME%%/webapps/axis2/WEB-INF/modules/soapmonitor-%%PORTVERSION%%.mar
 %%APPHOME%%/webapps/axis2/WEB-INF/services/services.list
-%%APPHOME%%/webapps/axis2/WEB-INF/services/version.aar
+%%APPHOME%%/webapps/axis2/WEB-INF/services/version-%%PORTVERSION%%.aar
 %%APPHOME%%/webapps/axis2/WEB-INF/tags/status.tag
 %%APPHOME%%/webapps/axis2/WEB-INF/views/listFaultyService.jsp
 %%APPHOME%%/webapps/axis2/WEB-INF/views/listServices.jsp
