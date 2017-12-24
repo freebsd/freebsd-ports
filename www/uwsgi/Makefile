@@ -3,7 +3,7 @@
 
 PORTNAME=	uwsgi
 PORTVERSION=	2.0.15
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www python
 MASTER_SITES=	http://projects.unbit.it/downloads/
 
@@ -29,7 +29,9 @@ USERS=		uwsgi
 GROUPS=		uwsgi
 
 PLIST_FILES=	bin/uwsgi \
-		%%PYTHON_SITELIBDIR%%/uwsgidecorators.py
+		${PYTHON_SITELIBDIR}/uwsgidecorators.py
+
+SUB_LIST=	PYTHON_VER=${PYTHON_VER}
 
 OPTIONS_DEFINE=	DEBUG JSON PCRE XML
 

@@ -51,7 +51,7 @@ rcvar=uwsgi_enable
 
 load_rc_config $name
 
-command=%%PREFIX%%/bin/uwsgi
+command=%%PREFIX%%/bin/uwsgi-%%PYTHON_VER%%
 
 : ${uwsgi_enable="NO"}
 : ${uwsgi_socket="/tmp/${name}.sock"}
