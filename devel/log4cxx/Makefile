@@ -17,7 +17,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libapr-1.so:devel/apr1
 
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	automake:env autoconf:env
 USES=		pathfix libtool
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
