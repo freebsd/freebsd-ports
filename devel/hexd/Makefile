@@ -1,7 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	hexd
-PORTVERSION=	g20170531
+DISTVERSIONPREFIX=v
+DISTVERSION=	1.0.0
 CATEGORIES=	devel
 
 MAINTAINER=	mail@dbalan.in
@@ -13,7 +14,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		gmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	FireyFly
-GH_TAGNAME=	934a506
 
 PLIST_FILES=	bin/hexd \
 		man/man1/hexd.1.gz
