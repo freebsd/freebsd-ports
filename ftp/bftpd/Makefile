@@ -11,8 +11,9 @@ COMMENT=	Very configurable FTP server that can do chroot easily
 
 LICENSE=	GPLv2
 
-USE_AUTOTOOLS=	autoconf
-CONFIGURE_ARGS+=	--enable-pam
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--enable-pam
+USES=		autoreconf
 
 WRKSRC=	${WRKDIR}/${PORTNAME}
 
