@@ -16,11 +16,5 @@ BROKEN_powerpc64=	fails to configure: could not find ruby.h
 GNU_CONFIGURE=	yes
 USE_RUBY=	yes
 USES=		autoreconf:build gem
-INSTDIR=	${PREFIX}/${GEM_LIB_DIR}
-
-# Fixup path in mkmf-rice.rb so things that build using it can find -lrice.
-post-install:
-	${REINPLACE_CMD} -e 's,${STAGEDIR}${INSTDIR},${INSTDIR},g' \
-		${STAGEDIR}${INSTDIR}/ruby/lib/mkmf-rice.rb
 
 .include <bsd.port.mk>
