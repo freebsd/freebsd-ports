@@ -26,7 +26,6 @@ RUN_DEPENDS=	OpenEXR>=1.0:graphics/OpenEXR
 
 BROKEN_powerpc64=	fails to configure: libvigraimpex is required to compile Enblend
 
-USE_AUTOTOOLS=	automake:env autoconf:env
 USES=		compiler:features gmake jpeg localbase makeinfo
 CONFIGURE_ARGS=	--with-boost-filesystem
 
