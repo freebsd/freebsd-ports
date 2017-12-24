@@ -1,0 +1,7 @@
+Snuffleupagus is a PHP7+ module designed to drastically raise the cost
+of attacks against websites.  This is achieved by killing entire bug
+classes and providing a powerful virtual-patching system, allowing the
+administrator to fix specific vulnerabilities without having to touch
+the PHP code.
+
+WWW: https://snuffleupagus.readthedocs.io/
