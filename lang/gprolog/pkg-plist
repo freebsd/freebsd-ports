@@ -1,4 +1,4 @@
-bin/fd2c
+%%FD%%bin/fd2c
 bin/gplc
 bin/gprolog
 bin/hexgplc
@@ -10,7 +10,7 @@ gprolog-%%GPROLOG_VER%%/ChangeLog
 gprolog-%%GPROLOG_VER%%/NEWS
 gprolog-%%GPROLOG_VER%%/README
 gprolog-%%GPROLOG_VER%%/VERSION
-gprolog-%%GPROLOG_VER%%/bin/fd2c
+%%FD%%gprolog-%%GPROLOG_VER%%/bin/fd2c
 gprolog-%%GPROLOG_VER%%/bin/gplc
 gprolog-%%GPROLOG_VER%%/bin/gprolog
 gprolog-%%GPROLOG_VER%%/bin/hexgplc
@@ -20,12 +20,12 @@ gprolog-%%GPROLOG_VER%%/bin/wam2ma
 gprolog-%%GPROLOG_VER%%/gprolog.ico
 gprolog-%%GPROLOG_VER%%/include/fd_to_c.h
 gprolog-%%GPROLOG_VER%%/include/gprolog.h
-gprolog-%%GPROLOG_VER%%/lib/all_fd_bips.o
+%%FD%%gprolog-%%GPROLOG_VER%%/lib/all_fd_bips.o
 gprolog-%%GPROLOG_VER%%/lib/all_pl_bips.o
 gprolog-%%GPROLOG_VER%%/lib/debugger.o
-gprolog-%%GPROLOG_VER%%/lib/libbips_fd.a
+%%FD%%gprolog-%%GPROLOG_VER%%/lib/libbips_fd.a
 gprolog-%%GPROLOG_VER%%/lib/libbips_pl.a
-gprolog-%%GPROLOG_VER%%/lib/libengine_fd.a
+%%FD%%gprolog-%%GPROLOG_VER%%/lib/libengine_fd.a
 gprolog-%%GPROLOG_VER%%/lib/libengine_pl.a
 gprolog-%%GPROLOG_VER%%/lib/liblinedit.a
 gprolog-%%GPROLOG_VER%%/lib/top_level.o
