@@ -15,7 +15,6 @@ BUILD_DEPENDS=	bash:shells/bash
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-fftw3=${PREFIX}
 USES=		autoreconf libtool
-USE_AUTOTOOLS=	autoconf:env
 USE_LDCONFIG=	yes
 TEST_TARGET=	check
 
