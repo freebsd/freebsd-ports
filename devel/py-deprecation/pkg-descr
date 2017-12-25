@@ -1,0 +1,15 @@
+The deprecation library provides a deprecated decorator and a
+fail_if_not_removed decorator for your tests. Together, the two enable the
+automation of several things:
+- The docstring of a deprecated method gets the deprecation details appended to
+  the end of it. If you generate your API docs direct from your source, you
+  don't need to worry about writing your own notification. You also don't need
+  to worry about forgetting to write it. It's done for you.
+- Rather than having code live on forever because you only deprecated it but
+  never actually moved on from it, you can have your tests tell you when it's
+  time to remove the code. The @deprecated decorator can be told when it's time
+  to entirely remove the code, which causes @fail_if_not_removed to raise an
+  AssertionError, causing either your unittest or py.test tests to fail.
+
+WWW: https://pypi.python.org/pypi/deprecation
+WWW: https://github.com/briancurtin/deprecation
