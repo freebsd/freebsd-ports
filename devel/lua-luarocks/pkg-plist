@@ -22,6 +22,7 @@ bin/luarocks-admin-%%LUA_VER%%
 %%LUA_MODSHAREDIR%%/luarocks/fetch/git_file.lua
 %%LUA_MODSHAREDIR%%/luarocks/fetch/git_http.lua
 %%LUA_MODSHAREDIR%%/luarocks/fetch/git_https.lua
+%%LUA_MODSHAREDIR%%/luarocks/fetch/git_ssh.lua
 %%LUA_MODSHAREDIR%%/luarocks/fetch/hg.lua
 %%LUA_MODSHAREDIR%%/luarocks/fetch/hg_http.lua
 %%LUA_MODSHAREDIR%%/luarocks/fetch/hg_https.lua
@@ -30,6 +31,7 @@ bin/luarocks-admin-%%LUA_VER%%
 %%LUA_MODSHAREDIR%%/luarocks/fetch/svn.lua
 %%LUA_MODSHAREDIR%%/luarocks/fs.lua
 %%LUA_MODSHAREDIR%%/luarocks/fs/lua.lua
+%%LUA_MODSHAREDIR%%/luarocks/fs/tools.lua
 %%LUA_MODSHAREDIR%%/luarocks/fs/unix.lua
 %%LUA_MODSHAREDIR%%/luarocks/fs/unix/tools.lua
 %%LUA_MODSHAREDIR%%/luarocks/fs/win32.lua
