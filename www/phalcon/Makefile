@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	phalcon
-PORTVERSION=	3.2.4
 DISTVERSIONPREFIX=	v
+DISTVERSION=	3.3.0
 CATEGORIES=	www
 
 MAINTAINER=	linpct@gmail.com
@@ -11,10 +11,10 @@ COMMENT=	Phalcon PHP Framework written in C-language
 
 LICENSE=	BSD3CLAUSE
 
+ONLY_FOR_ARCHS=		amd64 armv6 armv7 i386
+
 USES=		php:ext
 USE_PHP=	hash:build json:build pdo:build
-
-ONLY_FOR_ARCHS=		amd64 armv6 armv7 i386
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	phalcon
