@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	Kvantum
-PORTVERSION=	0.10.4
-PORTREVISION=	2
+PORTVERSION=	0.10.5
 DISTVERSIONPREFIX=	V
 CATEGORIES=	x11-themes
 PKGNAMEPREFIX=	qt5-style-
@@ -17,7 +16,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	tsujan
 
 USES=		compiler:c++11-lang qmake
-USE_QT5=	core gui svg widgets x11extras buildtools_build
+USE_QT5=	core gui svg widgets x11extras buildtools_build linguisttools_build
 USE_XORG=	x11 xext
 USE_GL=		gl
 
