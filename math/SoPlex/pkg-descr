@@ -1,0 +1,18 @@
+SoPlex is an optimization package for solving linear programming problems (LPs)
+based on an advanced implementation of the primal and dual revised simplex
+algorithm. It provides special support for the exact solution of LPs with
+rational input data. It can be used as a standalone solver reading MPS or LP
+format files via a command line interface as well as embedded into other
+programs via a C++ class library. The main features of SoPlex are:
+
+* presolving, scaling, exploitation of sparsity, hot-starting from any regular
+  basis
+* column- and row-oriented form of the simplex algorithm
+* an object-oriented software design written in C++
+* a compile-time option to use 80bit extended ("quad") precision for numerically
+  difficult LPs
+* an LP iterative refinement procedure to compute high-precision solution
+* routines for an exact rational LU factorization and continued fraction
+  approximations in order to compute exact solutions.
+
+WWW: http://soplex.zib.de

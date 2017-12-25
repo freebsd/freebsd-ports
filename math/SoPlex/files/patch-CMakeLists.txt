@@ -1,0 +1,71 @@
+--- CMakeLists.txt.orig	2017-09-04 15:12:27 UTC
++++ CMakeLists.txt
+@@ -45,33 +45,33 @@ set(CMAKE_MACOSX_RPATH ON)
+ set(CMAKE_CXX_STANDARD 11)
+ 
+ # create target to update the githash
+-file(WRITE ${CMAKE_BINARY_DIR}/soplex_update_githash.cmake "
+-find_program(GIT git)
+-if(GIT)
+-   execute_process(
+-      COMMAND \${GIT} describe --always --dirty
+-      WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+-      OUTPUT_VARIABLE GITHASH OUTPUT_STRIP_TRAILING_WHITESPACE)
+-   if(GITHASH STREQUAL \"\")
+-      set(GITHASH \"------\")
+-   endif()
+-   string(REGEX REPLACE \"^.*-g\" \"\" GITHASH \${GITHASH})
+-else()
+-   set(GITHASH \"------\")
+-endif()
+-if(GITHASH STREQUAL \"------\")
+-   # read stored hash from file
+-   file(STRINGS \${DST} GITHASH)
+-   string(REGEX REPLACE \"#define SPX_GITHASH \" \"\" GITHASH \${GITHASH})
+-else()
+-   file(WRITE \${DST} \"#define SPX_GITHASH \\\"\${GITHASH}\\\"\")
+-endif()
+-message(STATUS \"Git hash: \" \${GITHASH})
+-")
++#file(WRITE ${CMAKE_BINARY_DIR}/soplex_update_githash.cmake "
++#find_program(GIT git)
++#if(GIT)
++#   execute_process(
++#      COMMAND \${GIT} describe --always --dirty
++#      WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
++#      OUTPUT_VARIABLE GITHASH OUTPUT_STRIP_TRAILING_WHITESPACE)
++#   if(GITHASH STREQUAL \"\")
++#      set(GITHASH \"------\")
++#   endif()
++#   string(REGEX REPLACE \"^.*-g\" \"\" GITHASH \${GITHASH})
++#else()
++#   set(GITHASH \"------\")
++#endif()
++#if(GITHASH STREQUAL \"------\")
++#   # read stored hash from file
++#   file(STRINGS \${DST} GITHASH)
++#   string(REGEX REPLACE \"#define SPX_GITHASH \" \"\" GITHASH \${GITHASH})
++#else()
++#   file(WRITE \${DST} \"#define SPX_GITHASH \\\"\${GITHASH}\\\"\")
++#endif()
++#message(STATUS \"Git hash: \" \${GITHASH})
++#")
+ # encode the current git hash into the binary
+-add_custom_target(soplex_update_githash
+-                  COMMAND ${CMAKE_COMMAND} -DDST=${PROJECT_SOURCE_DIR}/src/git_hash.cpp
+-                                           -P ${CMAKE_BINARY_DIR}/soplex_update_githash.cmake)
++#add_custom_target(soplex_update_githash
++#                  COMMAND ${CMAKE_COMMAND} -DDST=${PROJECT_SOURCE_DIR}/src/git_hash.cpp
++#                                           -P ${CMAKE_BINARY_DIR}/soplex_update_githash.cmake)
+ 
+ option(LEGACY "Build SoPlex in legacy mode" OFF)
+ if(CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
+@@ -85,7 +85,7 @@ if(LEGACY)
+     add_definitions(-DTHREADLOCAL=)
+ endif()
+ 
+-if(NOT "${CMAKE_CXX_COMPILE_FEATURES}" MATCHES "cxx_thread_local")
++if(NOT "${CMAKE_CXX_COMPILE_FEATURES}" MATCHES "cxx_thread_local" OR FREEBSD_NO_CXX_THREAD_LOCAL_BUG224581)
+     add_definitions(-DTHREADLOCAL=)
+ endif()
+ 
