@@ -40,7 +40,6 @@ GH_SUBDIR=	llvm:llvm clang:clang lldb:lldb cmark:cmark llbuild:llbuild \
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USES=		autoreconf:build compiler:c++14-lang libtool localbase:ldflags iconv libedit ninja perl5 pkgconfig sqlite
-USE_AUTOTOOLS=	autoconf:env
 
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
