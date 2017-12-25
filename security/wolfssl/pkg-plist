@@ -201,6 +201,6 @@ include/wolfssl/wolfcrypt/wolfmath.h
 include/wolfssl/wolfio.h
 lib/libwolfssl.a
 lib/libwolfssl.so
-lib/libwolfssl.so.14
-lib/libwolfssl.so.14.0.0
+lib/libwolfssl.so.15
+lib/libwolfssl.so.15.0.0
 libdata/pkgconfig/wolfssl.pc
