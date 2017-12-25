@@ -766,5 +766,6 @@
     SUBDIR += xspread
     SUBDIR += yacas
     SUBDIR += z3
+    SUBDIR += zimpl
 
 .include <bsd.port.subdir.mk>
