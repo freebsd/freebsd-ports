@@ -12,6 +12,7 @@ man/man1/tin.1.gz
 man/man1/tinews.pl.1.gz
 man/man1/tinurl_handler.pl.1.gz
 man/man1/w2r.pl.1.gz
+man/man5/rtin.5.gz
 man/man5/tin.5.gz
 man/man5/tin_mbox.5.gz
 man/man5/tin_mmdf.5.gz
