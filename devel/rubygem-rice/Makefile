@@ -13,7 +13,6 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BROKEN_powerpc64=	fails to configure: could not find ruby.h
 
-GNU_CONFIGURE=	yes
 USE_RUBY=	yes
 USES=		autoreconf:build gem
 
