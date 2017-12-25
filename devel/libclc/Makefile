@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libclc
-DISTVERSION=	0.3.0.20170927
+DISTVERSION=	0.3.0.20171127
 CATEGORIES=	devel
 
 MAINTAINER=	x11@FreeBSD.org
@@ -17,14 +17,14 @@ BUILD_DEPENDS=	llvm${LLVMVER}>=4.0:devel/llvm${LLVMVER} \
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	llvm-mirror
-GH_TAGNAME=	81f74b2
+GH_TAGNAME=	d638441
 
 # ninja based build is broken since commit 598792bc (16 sep 2016)
 USES=		gmake python:2.7,build gmake
 USE_LDCONFIG=	yes
 MAKE_ENV=	MAKE=${GMAKE} DESTDIR=${STAGEDIR}
 
-LLVMVER=	${MESA_LLVM_VER:U40}
+LLVMVER=	${MESA_LLVM_VER:U50}
 
 ALL_TARGET=
 
