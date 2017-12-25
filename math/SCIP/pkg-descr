@@ -1,0 +1,16 @@
+SCIP is currently one of the fastest non-commercial solvers for mixed integer
+programming (MIP) and mixed integer nonlinear programming (MINLP). It is also
+a framework for constraint integer programming and branch-cut-and-price. It
+allows for total control of the solution process and the access of detailed
+information down to the guts of the solver.
+
+Features:
+* very fast standalone solver for linear programming (LP), mixed integer
+  programming (MIP), and mixed integer nonlinear programming (MINLP)
+* framework for branching, cutting plane separation, pricing, and propagation
+* large C-API, C++ wrapper classes for user plugins
+* interfaces to other applications and programming languages
+* open LP solver support
+* highly flexible through many possible user plugins
+
+WWW: http://scip.zib.de
