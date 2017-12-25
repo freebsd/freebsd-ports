@@ -9,6 +9,8 @@ COMMENT=	Data encoding library
 
 LICENSE=	BSD3CLAUSE
 
+CONFLICTS_INSTALL=	hs-dataenc-[0-9]*
+
 USE_CABAL=	conduit exceptions stringsearch
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
