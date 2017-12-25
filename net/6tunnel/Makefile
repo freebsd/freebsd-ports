@@ -13,7 +13,7 @@ COMMENT=	TCP proxy for applications that do not speak IPv6
 LICENSE=	GPLv2
 
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	autoconf
+USES=		autoreconf
 ALL_TARGET=	default
 
 USE_GITHUB=	yes
