@@ -2,22 +2,27 @@
 # $FreeBSD$
 
 PORTNAME=	gnu-cobol
-PORTVERSION=	1.1
-PORTREVISION=	2
+PORTVERSION=	2.2
 CATEGORIES=	lang
 MASTER_SITES=	GNU/gnucobol
+DISTNAME=	gnucobol-${PORTVERSION}
 
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Open-source COBOL compiler
 
+LICENSE=	GPLv3 LGPL3
+LICENSE_COMB=	multi
+
 LIB_DEPENDS=	libgmp.so:math/gmp
 
-USES=		bdb gmake libtool ncurses
+USES=		bdb gmake libtool ncurses tar:xz
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 
-INFO=		gnu-cobol
+INFO=		gnucobol
+DATADIR=	${PREFIX}/share/gnucobol
 
+INSTALL_TARGET=	install-strip
 CPPFLAGS+=	-I${BDB_INCLUDE_DIR} -I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
