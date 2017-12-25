@@ -4,16 +4,10 @@ Date: Mon, 9 Oct 2017 20:10:26 +0100
 Subject: [PATCH] vaapi: Use libva2 message callbacks
 
 They are no longer global, so they work vaguely sensibly.
----
- video/vaapi.c | 32 +++++++++++++++++++++++++++++---
- 1 file changed, 29 insertions(+), 3 deletions(-)
-
-diff --git a/video/vaapi.c b/video/vaapi.c
-index 6bedbbaa18..3b1cb9cc41 100644
---- video/vaapi.c
+--- video/vaapi.c.orig	2017-09-13 01:40:14 UTC
 +++ video/vaapi.c
-@@ -40,9 +40,27 @@ int va_get_colorspace_flag(enum mp_csp csp)
-     return 0;
+@@ -112,9 +112,27 @@ static void va_get_formats(struct mp_vaa
+     ctx->image_formats = formats;
  }
  
 -// VA message callbacks are global and do not have a context parameter, so it's
@@ -43,7 +37,7 @@ index 6bedbbaa18..3b1cb9cc41 100644
  static pthread_mutex_t va_log_mutex = PTHREAD_MUTEX_INITIALIZER;
  static struct mp_vaapi_ctx **va_mpv_clients;
  static int num_va_mpv_clients;
-@@ -77,6 +95,7 @@ static void va_info_callback(const char *msg)
+@@ -149,6 +167,7 @@ static void va_info_callback(const char 
  {
      va_message_callback(msg, MSGL_V);
  }
@@ -51,7 +45,7 @@ index 6bedbbaa18..3b1cb9cc41 100644
  
  static void open_lavu_vaapi_device(struct mp_vaapi_ctx *ctx)
  {
-@@ -108,6 +127,10 @@ struct mp_vaapi_ctx *va_initialize(VADisplay *display, struct mp_log *plog,
+@@ -181,6 +200,10 @@ struct mp_vaapi_ctx *va_initialize(VADis
          },
      };
  
@@ -62,15 +56,15 @@ index 6bedbbaa18..3b1cb9cc41 100644
      pthread_mutex_lock(&va_log_mutex);
      MP_TARRAY_APPEND(NULL, va_mpv_clients, num_va_mpv_clients, res);
      pthread_mutex_unlock(&va_log_mutex);
-@@ -118,6 +141,7 @@ struct mp_vaapi_ctx *va_initialize(VADisplay *display, struct mp_log *plog,
+@@ -191,6 +214,7 @@ struct mp_vaapi_ctx *va_initialize(VADis
      vaSetErrorCallback(va_error_callback);
      vaSetInfoCallback(va_info_callback);
  #endif
 +#endif
  
-     int major, minor;
-     int status = vaInitialize(display, &major, &minor);
-@@ -154,6 +178,7 @@ void va_destroy(struct mp_vaapi_ctx *ctx)
+     int major_version, minor_version;
+     int status = vaInitialize(display, &major_version, &minor_version);
+@@ -231,6 +255,7 @@ void va_destroy(struct mp_vaapi_ctx *ctx
          if (ctx->destroy_native_ctx)
              ctx->destroy_native_ctx(ctx->native_ctx);
  
@@ -78,7 +72,7 @@ index 6bedbbaa18..3b1cb9cc41 100644
          pthread_mutex_lock(&va_log_mutex);
          for (int n = 0; n < num_va_mpv_clients; n++) {
              if (va_mpv_clients[n] == ctx) {
-@@ -164,6 +189,7 @@ void va_destroy(struct mp_vaapi_ctx *ctx)
+@@ -241,6 +266,7 @@ void va_destroy(struct mp_vaapi_ctx *ctx
          if (num_va_mpv_clients == 0)
              TA_FREEP(&va_mpv_clients); // avoid triggering leak detectors
          pthread_mutex_unlock(&va_log_mutex);
