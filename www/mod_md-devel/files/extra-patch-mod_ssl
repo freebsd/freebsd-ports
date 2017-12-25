@@ -1,8 +1,3 @@
-https://github.com/icing/mod_md/blob/master/patches/mod_ssl_md-2.4.x-v5.diff
-
-Fix for using a fallback certificate on initial signup of a
-Managed Domain. Requires also a changed mod_ssl patch (v5) to take effect.
-
 Index: modules/ssl/ssl_engine_init.c
 ===================================================================
 --- modules/ssl/ssl_engine_init.c	(revision 1808124)
@@ -182,7 +177,7 @@ Index: modules/ssl/ssl_engine_kernel.c
 +                
 +                if (SSL_check_private_key(ssl) < 1) {
 +                    ap_log_cerror(APLOG_MARK, APLOG_WARNING, 0, c, APLOGNO()
-+                                  "Challenbge certificate and private key %s "
++                                  "Challenge certificate and private key %s "
 +                                  "do not match", servername);
 +                    return APR_EGENERAL;
 +                }
@@ -208,7 +203,7 @@ Index: modules/ssl/ssl_private.h
      server_rec *server;
      
      const char *cipher_suite; /* cipher suite used in last reneg */
-+    int service_unavailable;  /* thouugh we negotiate SSL, no requests will be served */
++    int service_unavailable;  /* though we negotiate SSL, no requests will be served */
  } SSLConnRec;
  
  /* BIG FAT WARNING: SSLModConfigRec has unusual memory lifetime: it is
