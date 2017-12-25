@@ -91,6 +91,7 @@
     SUBDIR += R-cran-units
     SUBDIR += R-cran-xts
     SUBDIR += R-cran-zoo
+    SUBDIR += SoPlex
     SUBDIR += aamath
     SUBDIR += abacus
     SUBDIR += abakus

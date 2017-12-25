@@ -1,0 +1,27 @@
+--- src/CMakeLists.txt.orig	2017-09-04 15:08:47 UTC
++++ src/CMakeLists.txt
+@@ -159,20 +159,20 @@ set(headers
+     wallclocktimer.h)
+ 
+ # create soplex library with pic
+-add_library(libsoplex-pic STATIC ${sources})
++add_library(libsoplex-pic SHARED ${sources})
+ set_target_properties(libsoplex-pic PROPERTIES
+     POSITION_INDEPENDENT_CODE on
+     VERSION ${SOPLEX_VERSION_MAJOR}.${SOPLEX_VERSION_MINOR}.${SOPLEX_VERSION_PATCH}.${SOPLEX_VERSION_SUB}
+     SOVERSION ${SOPLEX_VERSION_MAJOR}.${SOPLEX_VERSION_MINOR})
+-add_dependencies(libsoplex-pic soplex_update_githash)
++#add_dependencies(libsoplex-pic soplex_update_githash)
+ target_link_libraries(libsoplex-pic ${libs})
+ 
+ # create soplex library without pic
+-add_library(libsoplex STATIC ${sources})
++add_library(libsoplex SHARED ${sources})
+ set_target_properties(libsoplex PROPERTIES
+     VERSION ${SOPLEX_VERSION_MAJOR}.${SOPLEX_VERSION_MINOR}.${SOPLEX_VERSION_PATCH}.${SOPLEX_VERSION_SUB}
+     SOVERSION ${SOPLEX_VERSION_MAJOR}.${SOPLEX_VERSION_MINOR})
+-add_dependencies(libsoplex soplex_update_githash)
++#add_dependencies(libsoplex soplex_update_githash)
+ target_link_libraries(libsoplex ${libs})
+ 
+ # create soplex binary using library without pic
