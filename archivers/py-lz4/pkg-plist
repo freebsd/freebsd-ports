@@ -6,9 +6,6 @@
 %%PYTHON_SITELIBDIR%%/lz4/block/__init__.pyc
 %%PYTHON_SITELIBDIR%%/lz4/block/__init__.pyo
 %%PYTHON_SITELIBDIR%%/lz4/block/_block.so
-%%PYTHON_SITELIBDIR%%/lz4/deprecated.py
-%%PYTHON_SITELIBDIR%%/lz4/deprecated.pyc
-%%PYTHON_SITELIBDIR%%/lz4/deprecated.pyo
 %%PYTHON_SITELIBDIR%%/lz4/frame/__init__.py
 %%PYTHON_SITELIBDIR%%/lz4/frame/__init__.pyc
 %%PYTHON_SITELIBDIR%%/lz4/frame/__init__.pyo
