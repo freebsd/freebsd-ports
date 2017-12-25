@@ -1,6 +1,6 @@
---- Makefile.in.orig	Sat May 17 20:50:51 2003
-+++ Makefile.in	Sun Dec 21 12:19:52 2003
-@@ -159,7 +154,6 @@
+--- Makefile.in.orig	2003-05-18 01:50:51 UTC
++++ Makefile.in
+@@ -159,7 +159,6 @@ $(srcdir)/config.h.in: $(srcdir)/stamp-h
  		$(MAKE) $(srcdir)/stamp-h.in; \
  	else :; fi
  $(srcdir)/stamp-h.in: $(top_srcdir)/configure.in $(ACLOCAL_M4) acconfig.h
