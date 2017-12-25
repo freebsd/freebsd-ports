@@ -9822,3 +9822,4 @@ devel/android-tools-fastboot-devel|devel/android-tools-fastboot|2017-12-20|Out o
 math/petsc|science/PETSc|2017-12-20|Recreated after it has been deleted in r366959 on 2014-09-01
 math/petsc-mpich|science/PETSc|2017-12-20|Recreated after it has been deleted in r321243 on 2013-06-19 (it was a slave port)
 textproc/py-elasticsearch-py|textproc/py-elasticsearch|2017-12-21|Rename to match PyPI naming
+japanese/egg-canna||2017-12-25|Has expired: Requires Emacs versions before 23
