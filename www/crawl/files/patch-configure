@@ -1,6 +1,6 @@
---- configure.orig	Sun Dec 21 12:18:11 2003
-+++ configure	Sun Dec 21 12:18:28 2003
-@@ -2545,11 +2545,11 @@
+--- configure.orig	2003-05-18 01:50:55 UTC
++++ configure
+@@ -2545,11 +2545,11 @@ echo "${ECHO_T}no" >&6
    *)
       echo "$as_me:$LINENO: result: $withval" >&5
  echo "${ECHO_T}$withval" >&6
