@@ -1,6 +1,6 @@
---- configure.orig	2017-10-02 15:49:13 UTC
+--- configure.orig	2017-12-21 17:31:27 UTC
 +++ configure
-@@ -22846,7 +22846,7 @@ fi
+@@ -23308,7 +23308,7 @@ fi
  
  
  case "$host_os" in
@@ -9,7 +9,7 @@
      dri3_default=yes
      ;;
  *)
-@@ -26399,9 +26399,19 @@ if test "x$enable_opencl" = xyes; then
+@@ -27028,9 +27028,19 @@ if test "x$enable_opencl" = xyes; then
          as_fn_error $? "cannot enable OpenCL without Gallium" "$LINENO" 5
      fi
  
@@ -29,7 +29,7 @@
  
      if test "x$have_libclc" = xno; then
          as_fn_error $? "pkg-config cannot find libclc.pc which is required to build clover.
-@@ -26464,9 +26474,6 @@ rm -f core conftest.err conftest.$ac_obj
+@@ -27096,9 +27106,6 @@ rm -f core conftest.err conftest.$ac_obj
          CLANG_LIBDIR=${LLVM_LIBDIR}
      fi
      CLANG_RESOURCE_DIR=$CLANG_LIBDIR/clang/${LLVM_VERSION}

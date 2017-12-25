@@ -14,7 +14,7 @@
 MESAVERSION=	${MESABASEVERSION}${MESASUBVERSION:C/^(.)/.\1/}
 MESADISTVERSION=${MESABASEVERSION}${MESASUBVERSION:C/^(.)/-\1/}
 
-MESABASEVERSION=	17.3.0
+MESABASEVERSION=	17.3.1
 # if there is a subversion, don't include the '-' between 7.11-rc2.
 MESASUBVERSION=
 
@@ -45,7 +45,7 @@ LIB_DEPENDS+=	libelf.so:devel/libelf
 .endif
 
 USES+=		compiler:c++11-lib bison gettext-tools gmake libtool \
-		localbase pathfix pkgconfig python:2,build shebangfix tar:xz
+		localbase pathfix pkgconfig python:2.7,build shebangfix tar:xz
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 
@@ -77,7 +77,7 @@ INSTALL_TARGET=	install-strip
 # need LLVM for libEGL wherever possible, but mixing GCC and LLVM breaks Gallium
 .if ${CHOSEN_COMPILER_TYPE} == clang \
  || (${COMPONENT} == libs && ${ARCH} != sparc64)	# no working LLVM
-MESA_LLVM_VER?=	40
+MESA_LLVM_VER?=	50
 .endif
 
 .if "${MESA_LLVM_VER}" != ""
