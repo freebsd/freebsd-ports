@@ -14,8 +14,8 @@ LICENSE=	MIT
 
 RUN_DEPENDS=	${LOCALBASE}/lib/TclxmlConfig.sh:devel/tclxml
 
+GNU_CONFIGURE=	yes
 USES=		tcl:wrapper,build
-USE_AUTOTOOLS=	autoconf:autoconf
 WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION}
 
 .include <bsd.port.mk>
