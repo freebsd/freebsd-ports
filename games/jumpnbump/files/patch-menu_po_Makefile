@@ -1,0 +1,12 @@
+--- menu/po/Makefile.orig	2017-05-24 18:01:25 UTC
++++ menu/po/Makefile
+@@ -12,7 +12,8 @@ clean:
+ 
+ install:
+ 	for lang in $(LANGS) ; do \
+-	  install -D -m 0644 $$lang.mo $(DESTDIR)$(DATADIR)/locale/$$lang/LC_MESSAGES/jumpnbump-menu.mo ; \
++	  install -d $(DESTDIR)$(DATADIR)/locale/$$lang/LC_MESSAGES ; \
++	  install -m 0644 $$lang.mo $(DESTDIR)$(DATADIR)/locale/$$lang/LC_MESSAGES/jumpnbump-menu.mo ; \
+ 	done
+ 
+ uninstall:

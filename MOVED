@@ -520,7 +520,6 @@ java/javel||2009-03-23|Has expired: unmaintained, does not work with current ver
 java/guavac||2009-03-23|Has expired: unmaintained, does not work with current versions of GCC, needs gcc295 which has been failing to build for months
 graphics/xrml||2009-03-23|Has expired: unmaintained, does not work with current versions of GCC, needs gcc295 which has been failing to build for months
 graphics/renderpark||2009-03-23|Has expired: unmaintained, does not work with current versions of GCC, needs gcc295 which has been failing to build for months
-games/jumpnbump||2009-03-23|Has expired: Tcl 8.0 support is going to be dropped
 irc/blackened||2009-03-23|Has expired: Broken and abandonware
 devel/libg++||2009-03-23|Has expired: unmaintained, does not work with current versions of GCC, needs gcc295 which has been failing to build for months
 devel/freescope||2009-03-23|Has expired: unmaintained, does not work with current versions of GCC, needs gcc295 which has been failing to build for months
