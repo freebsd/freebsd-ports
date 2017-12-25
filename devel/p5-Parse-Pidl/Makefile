@@ -12,6 +12,9 @@ COMMENT=		IDL compiler written in Perl
 
 LICENSE=		GPLv3
 
+DEPRECATED=		yes
+EXPIRATION_DATE=	2018-01-01
+
 BUILD_DEPENDS=		p5-Parse-Yapp>=0:devel/p5-Parse-Yapp
 RUN_DEPENDS:=		${BUILD_DEPENDS}
 
