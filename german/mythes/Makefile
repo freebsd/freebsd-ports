@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	mythes
-PORTVERSION=	2017.12.17
+PORTVERSION=	2017.12.24
 CATEGORIES=	german textproc
 MASTER_SITES=	LOCAL/sunpoet/${PORTNAME}/
 DISTNAME=	Deutscher-Thesaurus-${PORTVERSION:C/\.//g}
