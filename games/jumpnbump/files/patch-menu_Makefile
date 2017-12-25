@@ -1,0 +1,15 @@
+--- menu/Makefile.orig	2017-05-24 18:01:25 UTC
++++ menu/Makefile
+@@ -20,8 +20,10 @@ clean:
+ 	$(MAKE) -C po clean
+ 
+ install:
+-	install -D -m 644 jumpnbump_menu.glade $(DESTDIR)$(GAMEDATADIR)/jumpnbump/jumpnbump_menu.glade
+-	install -D -m 755 jumpnbump_menu.py $(DESTDIR)$(BINDIR)/jumpnbump-menu
++	install -d $(DESTDIR)$(GAMEDATADIR)/jumpnbump/
++	install -m 644 jumpnbump_menu.glade $(DESTDIR)$(GAMEDATADIR)/jumpnbump/jumpnbump_menu.glade
++	install -d $(DESTDIR)$(BINDIR)
++	install -m 755 jumpnbump_menu.py $(DESTDIR)$(BINDIR)/jumpnbump-menu
+ 
+ 	$(MAKE) -C po install
+ 
