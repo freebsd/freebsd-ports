@@ -17,7 +17,6 @@ USES=		libtool
 USE_GITHUB=	yes
 GH_ACCOUNT=	chokkan
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	autoconf:env
 
 OPTIONS_DEFINE=	OPTIMIZED DOCS
 OPTIMIZED_DESC=	SSE2 optimization routines
