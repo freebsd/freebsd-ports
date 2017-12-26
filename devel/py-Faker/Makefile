@@ -1,8 +1,8 @@
 # Created by: Alfred Perlstein <alfred@freebsd.org>
 # $FreeBSD$
 
-PORTNAME=	fake-factory
-PORTVERSION=	0.5.7
+PORTNAME=	Faker
+PORTVERSION=	0.8.8
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
