@@ -4,6 +4,7 @@ PORTNAME=	seahub
 DISTVERSIONPREFIX=	v
 DISTVERSION=	${SEAHUB_VER}
 DISTVERSIONSUFFIX=	-pro
+PORTREVISION=	1
 CATEGORIES=	www
 
 MAINTAINER=	ultima@FreeBSD.org
@@ -23,7 +24,6 @@ RUN_DEPENDS=	bash:shells/bash \
 		${PYTHON_PKGNAMEPREFIX}django-post_office>=0:www/py-django-post_office@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}django-constance>=0:www/py-django-constance@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}gunicorn>=0:www/py-gunicorn@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}flup>=0:www/py-flup@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}chardet>=0:textproc/py-chardet@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dateutil>=0:devel/py-dateutil@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=0:www/py-requests@${PY_FLAVOR} \
