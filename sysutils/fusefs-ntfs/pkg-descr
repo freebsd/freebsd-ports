@@ -5,4 +5,4 @@ and Windows 8 NTFS file systems. Almost the full POSIX filesystem
 functionality is supported, the major exceptions are changing the file
 ownerships and the access rights.
 
-WWW: http://www.tuxera.com/community/open-source-ntfs-3g/
+WWW: https://www.tuxera.com/community/open-source-ntfs-3g/
