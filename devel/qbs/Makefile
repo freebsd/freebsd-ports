@@ -2,13 +2,13 @@
 
 PORTNAME=	qbs
 DISTVERSIONPREFIX=	src-
-DISTVERSION=	1.9.0
+DISTVERSION=	1.10.0
 CATEGORIES=	devel
 MASTER_SITES=	QT/official_releases/${PORTNAME}/${PORTVERSION}
 DIST_SUBDIR=	KDE/Qt/qbs
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	Qt Build Suite
+COMMENT=	Qbs Build Suite
 
 LICENSE=	GPLv3 LGPL21
 LICENSE_COMB=	dual
@@ -34,8 +34,6 @@ DOCS_ALL_TARGET=	docs
 DOCS_INSTALL_TARGET=	install_docs
 
 PLIST_SUB=		SHLIB_VERSION="${PORTVERSION}"
-
-WRKSRC=			${WRKDIR}/dist/${DISTNAME}
 
 pre-configure:
 # We piggyback on QMAKE_LIBDIR_FLAGS to make sure -L${WRKSRC}/lib is passed to
