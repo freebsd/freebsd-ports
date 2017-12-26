@@ -1,0 +1,25 @@
+commit bd17df85baf4
+Author: Andrea Marchesini <amarchesini@mozilla.com>
+Date:   Tue Nov 14 08:18:41 2017 +0100
+
+    Bug 1413741 - Improve the use of XHR.mProxy in workers after the dispatching of sync OpenRunnable, r=smaug a=gchang
+    
+    --HG--
+    extra : source : 063022b93ec40d00601a21b92525a4285f984484
+---
+ dom/xhr/XMLHttpRequestWorker.cpp | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git dom/xhr/XMLHttpRequestWorker.cpp dom/xhr/XMLHttpRequestWorker.cpp
+index c337bb258767..9954da23493f 100644
+--- dom/xhr/XMLHttpRequestWorker.cpp
++++ dom/xhr/XMLHttpRequestWorker.cpp
+@@ -1895,7 +1895,7 @@ XMLHttpRequestWorker::Open(const nsACString& aMethod,
+   ++mProxy->mOpenCount;
+   runnable->Dispatch(Terminating, aRv);
+   if (aRv.Failed()) {
+-    if (!--mProxy->mOpenCount) {
++    if (mProxy && !--mProxy->mOpenCount) {
+       ReleaseProxy();
+     }
+ 

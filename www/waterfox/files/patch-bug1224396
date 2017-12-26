@@ -1,0 +1,146 @@
+commit 94f55f3a6124
+Author: Lee Salzman <lsalzman@mozilla.com>
+Date:   Wed Nov 22 12:19:29 2017 -0500
+
+    Bug 1224396 - Skia path allocation cleanups. r=msreckovic a=gchang
+    
+    MozReview-Commit-ID: GAf2vC1Fucv
+    
+    --HG--
+    extra : source : db4543ce21ce1e8a1c81b685a16e61f71db2f602
+---
+ gfx/skia/skia/include/core/SkPathRef.h  | 24 ++++++++++++++----------
+ gfx/skia/skia/src/core/SkArenaAlloc.cpp | 23 ++++++++++++++++++-----
+ gfx/skia/skia/src/core/SkArenaAlloc.h   |  5 ++++-
+ 3 files changed, 36 insertions(+), 16 deletions(-)
+
+diff --git gfx/skia/skia/include/core/SkPathRef.h gfx/skia/skia/include/core/SkPathRef.h
+index 5e6fda7d85b2..24870c64fbc0 100644
+--- gfx/skia/skia/include/core/SkPathRef.h
++++ gfx/skia/skia/include/core/SkPathRef.h
+@@ -16,7 +16,7 @@
+ #include "SkRRect.h"
+ #include "SkRect.h"
+ #include "SkRefCnt.h"
+-#include <stddef.h> // ptrdiff_t
++#include "../private/SkTemplates.h"
+ 
+ class SkRBuffer;
+ class SkWBuffer;
+@@ -433,31 +433,35 @@ private:
+      */
+     void makeSpace(size_t size) {
+         SkDEBUGCODE(this->validate();)
+-        ptrdiff_t growSize = size - fFreeSpace;
+-        if (growSize <= 0) {
++        if (size <= fFreeSpace) {
+             return;
+         }
++        size_t growSize = size - fFreeSpace;
+         size_t oldSize = this->currSize();
+         // round to next multiple of 8 bytes
+         growSize = (growSize + 7) & ~static_cast<size_t>(7);
+         // we always at least double the allocation
+-        if (static_cast<size_t>(growSize) < oldSize) {
++        if (growSize < oldSize) {
+             growSize = oldSize;
+         }
+         if (growSize < kMinSize) {
+             growSize = kMinSize;
+         }
+-        size_t newSize = oldSize + growSize;
++        constexpr size_t maxSize = std::numeric_limits<size_t>::max();
++        size_t newSize;
++        if (growSize <= maxSize - oldSize) {
++            newSize = oldSize + growSize;
++        } else {
++            SK_ABORT("Path too big.");
++        }
+         // Note that realloc could memcpy more than we need. It seems to be a win anyway. TODO:
+         // encapsulate this.
+         fPoints = reinterpret_cast<SkPoint*>(sk_realloc_throw(fPoints, newSize));
+         size_t oldVerbSize = fVerbCnt * sizeof(uint8_t);
+-        void* newVerbsDst = reinterpret_cast<void*>(
+-                                reinterpret_cast<intptr_t>(fPoints) + newSize - oldVerbSize);
+-        void* oldVerbsSrc = reinterpret_cast<void*>(
+-                                reinterpret_cast<intptr_t>(fPoints) + oldSize - oldVerbSize);
++        void* newVerbsDst = SkTAddOffset<void>(fPoints, newSize - oldVerbSize);
++        void* oldVerbsSrc = SkTAddOffset<void>(fPoints, oldSize - oldVerbSize);
+         memmove(newVerbsDst, oldVerbsSrc, oldVerbSize);
+-        fVerbs = reinterpret_cast<uint8_t*>(reinterpret_cast<intptr_t>(fPoints) + newSize);
++        fVerbs = SkTAddOffset<uint8_t>(fPoints, newSize);
+         fFreeSpace += growSize;
+         SkDEBUGCODE(this->validate();)
+     }
+diff --git gfx/skia/skia/src/core/SkArenaAlloc.cpp gfx/skia/skia/src/core/SkArenaAlloc.cpp
+index eca3aa97d761..57a19093d065 100644
+--- gfx/skia/skia/src/core/SkArenaAlloc.cpp
++++ gfx/skia/skia/src/core/SkArenaAlloc.cpp
+@@ -8,6 +8,7 @@
+ #include <algorithm>
+ #include <cstddef>
+ #include "SkArenaAlloc.h"
++#include "SkTypes.h"
+ 
+ static char* end_chain(char*) { return nullptr; }
+ 
+@@ -95,19 +96,31 @@ void SkArenaAlloc::ensureSpace(uint32_t size, uint32_t alignment) {
+     // This must be conservative to add the right amount of extra memory to handle the alignment
+     // padding.
+     constexpr uint32_t alignof_max_align_t = 8;
+-    uint32_t objSizeAndOverhead = size + headerSize + sizeof(Footer);
++    constexpr uint32_t maxSize = std::numeric_limits<uint32_t>::max();
++    constexpr uint32_t overhead = headerSize + sizeof(Footer);
++    SkASSERT_RELEASE(size <= maxSize - overhead);
++    uint32_t objSizeAndOverhead = size + overhead;
+     if (alignment > alignof_max_align_t) {
+-        objSizeAndOverhead += alignment - 1;
++        uint32_t alignmentOverhead = alignment - 1;
++        SkASSERT_RELEASE(objSizeAndOverhead <= maxSize - alignmentOverhead);
++        objSizeAndOverhead += alignmentOverhead;
+     }
+ 
+-    uint32_t allocationSize = std::max(objSizeAndOverhead, fExtraSize * fFib0);
+-    fFib0 += fFib1;
+-    std::swap(fFib0, fFib1);
++    uint32_t minAllocationSize;
++    if (fExtraSize <= maxSize / fFib0) {
++        minAllocationSize = fExtraSize * fFib0;
++        fFib0 += fFib1;
++        std::swap(fFib0, fFib1);
++    } else {
++        minAllocationSize = maxSize;
++    }
++    uint32_t allocationSize = std::max(objSizeAndOverhead, minAllocationSize);
+ 
+     // Round up to a nice size. If > 32K align to 4K boundary else up to max_align_t. The > 32K
+     // heuristic is from the JEMalloc behavior.
+     {
+         uint32_t mask = allocationSize > (1 << 15) ? (1 << 12) - 1 : 16 - 1;
++        SkASSERT_RELEASE(allocationSize <= maxSize - mask);
+         allocationSize = (allocationSize + mask) & ~mask;
+     }
+ 
+diff --git gfx/skia/skia/src/core/SkArenaAlloc.h gfx/skia/skia/src/core/SkArenaAlloc.h
+index 494696ce768d..05d3336684e9 100644
+--- gfx/skia/skia/src/core/SkArenaAlloc.h
++++ gfx/skia/skia/src/core/SkArenaAlloc.h
+@@ -157,6 +157,7 @@ private:
+     template <typename T>
+     char* commonArrayAlloc(uint32_t count) {
+         char* objStart;
++        SkASSERT_RELEASE(count <= std::numeric_limits<uint32_t>::max() / sizeof(T));
+         uint32_t arraySize = SkTo<uint32_t>(count * sizeof(T));
+         uint32_t alignment = SkTo<uint32_t>(alignof(T));
+ 
+@@ -164,7 +165,9 @@ private:
+             objStart = this->allocObject(arraySize, alignment);
+             fCursor = objStart + arraySize;
+         } else {
+-            uint32_t totalSize = arraySize + sizeof(Footer) + sizeof(uint32_t);
++            constexpr uint32_t overhead = sizeof(Footer) + sizeof(uint32_t);
++            SkASSERT_RELEASE(arraySize <= std::numeric_limits<uint32_t>::max() - overhead);
++            uint32_t totalSize = arraySize + overhead;
+             objStart = this->allocObjectWithFooter(totalSize, alignment);
+ 
+             // Can never be UB because max value is alignof(T).

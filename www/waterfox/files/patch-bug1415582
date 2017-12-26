@@ -1,0 +1,34 @@
+commit 1ab98367b3c1
+Author: Randell Jesup <rjesup@jesup.org>
+Date:   Wed Nov 8 11:00:24 2017 -0500
+
+    Bug 1415582 - Mirror changes done to Encoder InitDone to decoder. r=bwc, a=gchang
+    
+    --HG--
+    extra : source : 833205c1f498bed137fb2e0a06d14ef31e3c0609
+---
+ media/webrtc/signaling/src/media-conduit/WebrtcGmpVideoCodec.h | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git media/webrtc/signaling/src/media-conduit/WebrtcGmpVideoCodec.h media/webrtc/signaling/src/media-conduit/WebrtcGmpVideoCodec.h
+index b8067a278f18..50189c488df1 100644
+--- media/webrtc/signaling/src/media-conduit/WebrtcGmpVideoCodec.h
++++ media/webrtc/signaling/src/media-conduit/WebrtcGmpVideoCodec.h
+@@ -449,7 +449,7 @@ private:
+   class InitDoneCallback : public GetGMPVideoDecoderCallback
+   {
+   public:
+-    explicit InitDoneCallback(WebrtcGmpVideoDecoder* aDecoder,
++    explicit InitDoneCallback(const RefPtr<WebrtcGmpVideoDecoder>& aDecoder,
+                               const RefPtr<GmpInitDoneRunnable>& aInitDone)
+       : mDecoder(aDecoder),
+         mInitDone(aInitDone)
+@@ -465,7 +465,7 @@ private:
+     }
+ 
+   private:
+-    WebrtcGmpVideoDecoder* mDecoder;
++    RefPtr<WebrtcGmpVideoDecoder> mDecoder;
+     RefPtr<GmpInitDoneRunnable> mInitDone;
+   };
+ 

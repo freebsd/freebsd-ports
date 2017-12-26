@@ -1,0 +1,286 @@
+commit d83a24ce6fb3
+Author: Xidorn Quan <me@upsuper.org>
+Date:   Tue Nov 28 17:06:51 2017 -0600
+
+    Bug 1412145 - Drop more backpointers of CSSOM objects in dtor and unlink. r=bz, a=gchang
+    
+    MozReview-Commit-ID: Ftg3WMBBNlO
+---
+ layout/style/GroupRule.cpp          |  7 +++++++
+ layout/style/GroupRule.h            |  1 +
+ layout/style/MediaList.h            |  4 +++-
+ layout/style/ServoCSSRuleList.cpp   |  2 ++
+ layout/style/ServoKeyframeRule.cpp  | 12 ++++++++++--
+ layout/style/ServoKeyframesRule.cpp | 23 ++++++++++++++++-------
+ layout/style/ServoMediaRule.cpp     | 17 +++++++++++++++--
+ layout/style/ServoPageRule.cpp      |  2 ++
+ layout/style/ServoStyleRule.cpp     |  1 +
+ layout/style/nsCSSRules.cpp         | 31 +++++++++++++++++++++++++++----
+ 10 files changed, 84 insertions(+), 16 deletions(-)
+
+diff --git layout/style/GroupRule.cpp layout/style/GroupRule.cpp
+index 28739e1818eb..32bd8c83e43a 100644
+--- layout/style/GroupRule.cpp
++++ layout/style/GroupRule.cpp
+@@ -198,6 +198,13 @@ GeckoGroupRuleRules::SizeOfExcludingThis(MallocSizeOf aMallocSizeOf) const
+ // ServoGroupRuleRules
+ //
+ 
++ServoGroupRuleRules::~ServoGroupRuleRules()
++{
++  if (mRuleList) {
++    mRuleList->DropReference();
++  }
++}
++
+ #ifdef DEBUG
+ void
+ ServoGroupRuleRules::List(FILE* out, int32_t aIndent) const
+diff --git layout/style/GroupRule.h layout/style/GroupRule.h
+index ac9e26921f0b..5c336e5c3611 100644
+--- layout/style/GroupRule.h
++++ layout/style/GroupRule.h
+@@ -87,6 +87,7 @@ struct ServoGroupRuleRules
+     // Do we ever clone Servo rules?
+     MOZ_ASSERT_UNREACHABLE("stylo: Cloning GroupRule not implemented");
+   }
++  ~ServoGroupRuleRules();
+ 
+   void SetParentRule(GroupRule* aParentRule) {
+     if (mRuleList) {
+diff --git layout/style/MediaList.h layout/style/MediaList.h
+index 4e8c12a2461a..b95e6ec26895 100644
+--- layout/style/MediaList.h
++++ layout/style/MediaList.h
+@@ -84,7 +84,9 @@ protected:
+   virtual nsresult Delete(const nsAString& aOldMedium) = 0;
+   virtual nsresult Append(const nsAString& aNewMedium) = 0;
+ 
+-  virtual ~MediaList() {}
++  virtual ~MediaList() {
++    MOZ_ASSERT(!mStyleSheet, "Backpointer should have been cleared");
++  }
+ 
+   // not refcounted; sheet will let us know when it goes away
+   // mStyleSheet is the sheet that needs to be dirtied when this
+diff --git layout/style/ServoCSSRuleList.cpp layout/style/ServoCSSRuleList.cpp
+index 37ce9be9f337..31f481899964 100644
+--- layout/style/ServoCSSRuleList.cpp
++++ layout/style/ServoCSSRuleList.cpp
+@@ -234,6 +234,8 @@ ServoCSSRuleList::GetDOMCSSRuleType(uint32_t aIndex) const
+ 
+ ServoCSSRuleList::~ServoCSSRuleList()
+ {
++  MOZ_ASSERT(!mStyleSheet, "Backpointer should have been cleared");
++  MOZ_ASSERT(!mParentRule, "Backpointer should have been cleared");
+   DropAllRules();
+ }
+ 
+diff --git layout/style/ServoKeyframeRule.cpp layout/style/ServoKeyframeRule.cpp
+index 1be82c3100c5..6ca8a1815f8c 100644
+--- layout/style/ServoKeyframeRule.cpp
++++ layout/style/ServoKeyframeRule.cpp
+@@ -35,7 +35,10 @@ public:
+     return NS_OK;
+   }
+ 
+-  void DropReference() { mRule = nullptr; }
++  void DropReference() {
++    mRule = nullptr;
++    mDecls->SetOwningRule(nullptr);
++  }
+ 
+   DeclarationBlock* GetCSSDeclaration(Operation aOperation) final
+   {
+@@ -81,7 +84,9 @@ public:
+   }
+ 
+ private:
+-  virtual ~ServoKeyframeDeclaration() {}
++  virtual ~ServoKeyframeDeclaration() {
++    MOZ_ASSERT(!mRule, "Backpointer should have been cleared");
++  }
+ 
+   ServoKeyframeRule* mRule;
+   RefPtr<ServoDeclarationBlock> mDecls;
+@@ -102,6 +107,9 @@ NS_INTERFACE_MAP_END_INHERITING(nsDOMCSSDeclaration)
+ 
+ ServoKeyframeRule::~ServoKeyframeRule()
+ {
++  if (mDeclaration) {
++    mDeclaration->DropReference();
++  }
+ }
+ 
+ NS_IMPL_ADDREF_INHERITED(ServoKeyframeRule, dom::CSSKeyframeRule)
+diff --git layout/style/ServoKeyframesRule.cpp layout/style/ServoKeyframesRule.cpp
+index 9a7252a5a639..7341b954ec60 100644
+--- layout/style/ServoKeyframesRule.cpp
++++ layout/style/ServoKeyframesRule.cpp
+@@ -90,7 +90,12 @@ public:
+   {
+     mStyleSheet = nullptr;
+     mParentRule = nullptr;
+-    DropAllRules();
++    for (css::Rule* rule : mRules) {
++      if (rule) {
++        rule->SetStyleSheet(nullptr);
++        rule->SetParentRule(nullptr);
++      }
++    }
+   }
+ 
+   size_t SizeOfIncludingThis(MallocSizeOf aMallocSizeOf) const
+@@ -103,15 +108,16 @@ public:
+   }
+ 
+ private:
+-  virtual ~ServoKeyframeList() {}
++  virtual ~ServoKeyframeList() {
++    MOZ_ASSERT(!mParentRule, "Backpointer should have been cleared");
++    MOZ_ASSERT(!mStyleSheet, "Backpointer should have been cleared");
++    DropAllRules();
++  }
+ 
+   void DropAllRules()
+   {
+-    for (css::Rule* rule : mRules) {
+-      if (rule) {
+-        rule->SetStyleSheet(nullptr);
+-        rule->SetParentRule(nullptr);
+-      }
++    if (mParentRule || mStyleSheet) {
++      DropReference();
+     }
+     mRules.Clear();
+     mRawRule = nullptr;
+@@ -163,6 +169,9 @@ ServoKeyframesRule::ServoKeyframesRule(RefPtr<RawServoKeyframesRule> aRawRule,
+ 
+ ServoKeyframesRule::~ServoKeyframesRule()
+ {
++  if (mKeyframeList) {
++    mKeyframeList->DropReference();
++  }
+ }
+ 
+ NS_IMPL_ADDREF_INHERITED(ServoKeyframesRule, dom::CSSKeyframesRule)
+diff --git layout/style/ServoMediaRule.cpp layout/style/ServoMediaRule.cpp
+index 002ae20ffd0b..fbda581a377f 100644
+--- layout/style/ServoMediaRule.cpp
++++ layout/style/ServoMediaRule.cpp
+@@ -24,6 +24,9 @@ ServoMediaRule::ServoMediaRule(RefPtr<RawServoMediaRule> aRawRule,
+ 
+ ServoMediaRule::~ServoMediaRule()
+ {
++  if (mMediaList) {
++    mMediaList->SetStyleSheet(nullptr);
++  }
+ }
+ 
+ NS_IMPL_ADDREF_INHERITED(ServoMediaRule, CSSMediaRule)
+@@ -33,8 +36,18 @@ NS_IMPL_RELEASE_INHERITED(ServoMediaRule, CSSMediaRule)
+ NS_INTERFACE_MAP_BEGIN_CYCLE_COLLECTION_INHERITED(ServoMediaRule)
+ NS_INTERFACE_MAP_END_INHERITING(CSSMediaRule)
+ 
+-NS_IMPL_CYCLE_COLLECTION_INHERITED(ServoMediaRule, CSSMediaRule,
+-                                   mMediaList)
++NS_IMPL_CYCLE_COLLECTION_CLASS(ServoMediaRule)
++
++NS_IMPL_CYCLE_COLLECTION_UNLINK_BEGIN_INHERITED(ServoMediaRule, CSSMediaRule)
++  if (tmp->mMediaList) {
++    tmp->mMediaList->SetStyleSheet(nullptr);
++    tmp->mMediaList = nullptr;
++  }
++NS_IMPL_CYCLE_COLLECTION_UNLINK_END
++
++NS_IMPL_CYCLE_COLLECTION_TRAVERSE_BEGIN_INHERITED(ServoMediaRule, CSSMediaRule)
++  NS_IMPL_CYCLE_COLLECTION_TRAVERSE(mMediaList)
++NS_IMPL_CYCLE_COLLECTION_TRAVERSE_END
+ 
+ /* virtual */ already_AddRefed<css::Rule>
+ ServoMediaRule::Clone() const
+diff --git layout/style/ServoPageRule.cpp layout/style/ServoPageRule.cpp
+index 97c718ed1ba9..93e8ff334122 100644
+--- layout/style/ServoPageRule.cpp
++++ layout/style/ServoPageRule.cpp
+@@ -26,6 +26,7 @@ ServoPageRuleDeclaration::ServoPageRuleDeclaration(
+ 
+ ServoPageRuleDeclaration::~ServoPageRuleDeclaration()
+ {
++  mDecls->SetOwningRule(nullptr);
+ }
+ 
+ // QueryInterface implementation for ServoPageRuleDeclaration
+@@ -141,6 +142,7 @@ NS_IMPL_CYCLE_COLLECTION_UNLINK_BEGIN_INHERITED(ServoPageRule, CSSPageRule)
+   // NS_IMPL_CYCLE_COLLECTION_UNLINK_PRESERVED_WRAPPER which we can't use
+   // directly because the wrapper is on the declaration, not on us.
+   tmp->mDecls.ReleaseWrapper(static_cast<nsISupports*>(p));
++  tmp->mDecls.mDecls->SetOwningRule(nullptr);
+ NS_IMPL_CYCLE_COLLECTION_UNLINK_END
+ 
+ NS_IMPL_CYCLE_COLLECTION_TRAVERSE_BEGIN_INHERITED(ServoPageRule, CSSPageRule)
+diff --git layout/style/ServoStyleRule.cpp layout/style/ServoStyleRule.cpp
+index 1d7470eef037..855e643515f9 100644
+--- layout/style/ServoStyleRule.cpp
++++ layout/style/ServoStyleRule.cpp
+@@ -28,6 +28,7 @@ ServoStyleRuleDeclaration::ServoStyleRuleDeclaration(
+ 
+ ServoStyleRuleDeclaration::~ServoStyleRuleDeclaration()
+ {
++  mDecls->SetOwningRule(nullptr);
+ }
+ 
+ // QueryInterface implementation for ServoStyleRuleDeclaration
+diff --git layout/style/nsCSSRules.cpp layout/style/nsCSSRules.cpp
+index 5081244c6a53..0bdedc4a3b03 100644
+--- layout/style/nsCSSRules.cpp
++++ layout/style/nsCSSRules.cpp
+@@ -212,12 +212,25 @@ ImportRule::~ImportRule()
+ NS_IMPL_ADDREF_INHERITED(ImportRule, CSSImportRule)
+ NS_IMPL_RELEASE_INHERITED(ImportRule, CSSImportRule)
+ 
+-NS_IMPL_CYCLE_COLLECTION_INHERITED(ImportRule, CSSImportRule, mMedia, mChildSheet)
+-
+ // QueryInterface implementation for ImportRule
+ NS_INTERFACE_MAP_BEGIN_CYCLE_COLLECTION_INHERITED(ImportRule)
+ NS_INTERFACE_MAP_END_INHERITING(CSSImportRule)
+ 
++NS_IMPL_CYCLE_COLLECTION_CLASS(ImportRule)
++
++NS_IMPL_CYCLE_COLLECTION_UNLINK_BEGIN_INHERITED(ImportRule, CSSImportRule)
++  if (tmp->mChildSheet) {
++    tmp->mChildSheet->SetOwnerRule(nullptr);
++    tmp->mChildSheet = nullptr;
++  }
++  tmp->mMedia = nullptr;
++NS_IMPL_CYCLE_COLLECTION_UNLINK_END
++
++NS_IMPL_CYCLE_COLLECTION_TRAVERSE_BEGIN_INHERITED(ImportRule, CSSImportRule)
++  NS_IMPL_CYCLE_COLLECTION_TRAVERSE(mMedia)
++  NS_IMPL_CYCLE_COLLECTION_TRAVERSE(mChildSheet)
++NS_IMPL_CYCLE_COLLECTION_TRAVERSE_END
++
+ #ifdef DEBUG
+ /* virtual */ void
+ ImportRule::List(FILE* out, int32_t aIndent) const
+@@ -342,8 +355,18 @@ NS_IMPL_RELEASE_INHERITED(MediaRule, CSSMediaRule)
+ NS_INTERFACE_MAP_BEGIN_CYCLE_COLLECTION_INHERITED(MediaRule)
+ NS_INTERFACE_MAP_END_INHERITING(CSSMediaRule)
+ 
+-NS_IMPL_CYCLE_COLLECTION_INHERITED(MediaRule, CSSMediaRule,
+-                                   mMedia)
++NS_IMPL_CYCLE_COLLECTION_CLASS(MediaRule)
++
++NS_IMPL_CYCLE_COLLECTION_UNLINK_BEGIN_INHERITED(MediaRule, CSSMediaRule)
++  if (tmp->mMedia) {
++    tmp->mMedia->SetStyleSheet(nullptr);
++    tmp->mMedia = nullptr;
++  }
++NS_IMPL_CYCLE_COLLECTION_UNLINK_END
++
++NS_IMPL_CYCLE_COLLECTION_TRAVERSE_BEGIN_INHERITED(MediaRule, CSSMediaRule)
++  NS_IMPL_CYCLE_COLLECTION_TRAVERSE(mMedia)
++NS_IMPL_CYCLE_COLLECTION_TRAVERSE_END
+ 
+ /* virtual */ void
+ MediaRule::SetStyleSheet(StyleSheet* aSheet)
