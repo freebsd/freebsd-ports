@@ -35,6 +35,7 @@
 %%SITE_PERL%%/Bio/Phylo/Matrices/MatrixRole.pm
 %%SITE_PERL%%/Bio/Phylo/Matrices/TypeSafeData.pm
 %%SITE_PERL%%/Bio/Phylo/Mediators/TaxaMediator.pm
+%%SITE_PERL%%/Bio/Phylo/Models/Substitution/Binary.pm
 %%SITE_PERL%%/Bio/Phylo/Models/Substitution/Dna.pm
 %%SITE_PERL%%/Bio/Phylo/Models/Substitution/Dna/F81.pm
 %%SITE_PERL%%/Bio/Phylo/Models/Substitution/Dna/GTR.pm
@@ -52,8 +53,11 @@
 %%SITE_PERL%%/Bio/Phylo/NeXML/Meta.pm
 %%SITE_PERL%%/Bio/Phylo/NeXML/Meta/XMLLiteral.pm
 %%SITE_PERL%%/Bio/Phylo/NeXML/Writable.pm
+%%SITE_PERL%%/Bio/Phylo/NeXML/XML2JSON.pm
 %%SITE_PERL%%/Bio/Phylo/Parsers/Abstract.pm
 %%SITE_PERL%%/Bio/Phylo/Parsers/Adjacency.pm
+%%SITE_PERL%%/Bio/Phylo/Parsers/Cdao.pm
+%%SITE_PERL%%/Bio/Phylo/Parsers/Dwca.pm
 %%SITE_PERL%%/Bio/Phylo/Parsers/Fasta.pm
 %%SITE_PERL%%/Bio/Phylo/Parsers/Fastq.pm
 %%SITE_PERL%%/Bio/Phylo/Parsers/Figtree.pm
@@ -61,6 +65,7 @@
 %%SITE_PERL%%/Bio/Phylo/Parsers/Newick.pm
 %%SITE_PERL%%/Bio/Phylo/Parsers/Nexml.pm
 %%SITE_PERL%%/Bio/Phylo/Parsers/Nexus.pm
+%%SITE_PERL%%/Bio/Phylo/Parsers/Nhx.pm
 %%SITE_PERL%%/Bio/Phylo/Parsers/Phylip.pm
 %%SITE_PERL%%/Bio/Phylo/Parsers/Phyloxml.pm
 %%SITE_PERL%%/Bio/Phylo/Parsers/Table.pm
@@ -99,6 +104,7 @@
 %%SITE_PERL%%/Bio/Phylo/Unparsers/Adjacency.pm
 %%SITE_PERL%%/Bio/Phylo/Unparsers/Cdao.pm
 %%SITE_PERL%%/Bio/Phylo/Unparsers/Fasta.pm
+%%SITE_PERL%%/Bio/Phylo/Unparsers/Figtree.pm
 %%SITE_PERL%%/Bio/Phylo/Unparsers/Hennig86.pm
 %%SITE_PERL%%/Bio/Phylo/Unparsers/Html.pm
 %%SITE_PERL%%/Bio/Phylo/Unparsers/Json.pm
@@ -106,6 +112,7 @@
 %%SITE_PERL%%/Bio/Phylo/Unparsers/Newick.pm
 %%SITE_PERL%%/Bio/Phylo/Unparsers/Nexml.pm
 %%SITE_PERL%%/Bio/Phylo/Unparsers/Nexus.pm
+%%SITE_PERL%%/Bio/Phylo/Unparsers/Nhx.pm
 %%SITE_PERL%%/Bio/Phylo/Unparsers/Nwmsrdf.pm
 %%SITE_PERL%%/Bio/Phylo/Unparsers/Pagel.pm
 %%SITE_PERL%%/Bio/Phylo/Unparsers/Phylip.pm
@@ -119,6 +126,7 @@
 %%SITE_PERL%%/Bio/Phylo/Util/IDPool.pm
 %%SITE_PERL%%/Bio/Phylo/Util/Logger.pm
 %%SITE_PERL%%/Bio/Phylo/Util/MOP.pm
+%%SITE_PERL%%/Bio/Phylo/Util/Math.pm
 %%SITE_PERL%%/Bio/Phylo/Util/OptionalInterface.pm
 %%SITE_PERL%%/Bio/Phylo/Util/StackTrace.pm
 %%SITE_PERL%%/Bio/PhyloRole.pm
@@ -159,6 +167,13 @@
 %%PERL5_MAN3%%/Bio::Phylo::Matrices::MatrixRole.3.gz
 %%PERL5_MAN3%%/Bio::Phylo::Matrices::TypeSafeData.3.gz
 %%PERL5_MAN3%%/Bio::Phylo::Mediators::TaxaMediator.3.gz
+%%PERL5_MAN3%%/Bio::Phylo::Models::Substitution::Binary.3.gz
+%%PERL5_MAN3%%/Bio::Phylo::Models::Substitution::Dna.3.gz
+%%PERL5_MAN3%%/Bio::Phylo::Models::Substitution::Dna::F81.3.gz
+%%PERL5_MAN3%%/Bio::Phylo::Models::Substitution::Dna::GTR.3.gz
+%%PERL5_MAN3%%/Bio::Phylo::Models::Substitution::Dna::HKY85.3.gz
+%%PERL5_MAN3%%/Bio::Phylo::Models::Substitution::Dna::JC69.3.gz
+%%PERL5_MAN3%%/Bio::Phylo::Models::Substitution::Dna::K80.3.gz
 %%PERL5_MAN3%%/Bio::Phylo::NeXML::DOM.3.gz
 %%PERL5_MAN3%%/Bio::Phylo::NeXML::DOM::Document.3.gz
 %%PERL5_MAN3%%/Bio::Phylo::NeXML::DOM::Document::Libxml.3.gz
@@ -170,8 +185,11 @@
 %%PERL5_MAN3%%/Bio::Phylo::NeXML::Meta.3.gz
 %%PERL5_MAN3%%/Bio::Phylo::NeXML::Meta::XMLLiteral.3.gz
 %%PERL5_MAN3%%/Bio::Phylo::NeXML::Writable.3.gz
+%%PERL5_MAN3%%/Bio::Phylo::NeXML::XML2JSON.3.gz
 %%PERL5_MAN3%%/Bio::Phylo::Parsers::Abstract.3.gz
 %%PERL5_MAN3%%/Bio::Phylo::Parsers::Adjacency.3.gz
+%%PERL5_MAN3%%/Bio::Phylo::Parsers::Cdao.3.gz
+%%PERL5_MAN3%%/Bio::Phylo::Parsers::Dwca.3.gz
 %%PERL5_MAN3%%/Bio::Phylo::Parsers::Fasta.3.gz
 %%PERL5_MAN3%%/Bio::Phylo::Parsers::Fastq.3.gz
 %%PERL5_MAN3%%/Bio::Phylo::Parsers::Figtree.3.gz
@@ -179,6 +197,7 @@
 %%PERL5_MAN3%%/Bio::Phylo::Parsers::Newick.3.gz
 %%PERL5_MAN3%%/Bio::Phylo::Parsers::Nexml.3.gz
 %%PERL5_MAN3%%/Bio::Phylo::Parsers::Nexus.3.gz
+%%PERL5_MAN3%%/Bio::Phylo::Parsers::Nhx.3.gz
 %%PERL5_MAN3%%/Bio::Phylo::Parsers::Phylip.3.gz
 %%PERL5_MAN3%%/Bio::Phylo::Parsers::Phyloxml.3.gz
 %%PERL5_MAN3%%/Bio::Phylo::Parsers::Table.3.gz
@@ -217,6 +236,7 @@
 %%PERL5_MAN3%%/Bio::Phylo::Unparsers::Adjacency.3.gz
 %%PERL5_MAN3%%/Bio::Phylo::Unparsers::Cdao.3.gz
 %%PERL5_MAN3%%/Bio::Phylo::Unparsers::Fasta.3.gz
+%%PERL5_MAN3%%/Bio::Phylo::Unparsers::Figtree.3.gz
 %%PERL5_MAN3%%/Bio::Phylo::Unparsers::Hennig86.3.gz
 %%PERL5_MAN3%%/Bio::Phylo::Unparsers::Html.3.gz
 %%PERL5_MAN3%%/Bio::Phylo::Unparsers::Json.3.gz
@@ -224,6 +244,7 @@
 %%PERL5_MAN3%%/Bio::Phylo::Unparsers::Newick.3.gz
 %%PERL5_MAN3%%/Bio::Phylo::Unparsers::Nexml.3.gz
 %%PERL5_MAN3%%/Bio::Phylo::Unparsers::Nexus.3.gz
+%%PERL5_MAN3%%/Bio::Phylo::Unparsers::Nhx.3.gz
 %%PERL5_MAN3%%/Bio::Phylo::Unparsers::Nwmsrdf.3.gz
 %%PERL5_MAN3%%/Bio::Phylo::Unparsers::Pagel.3.gz
 %%PERL5_MAN3%%/Bio::Phylo::Unparsers::Phylip.3.gz
@@ -237,6 +258,7 @@
 %%PERL5_MAN3%%/Bio::Phylo::Util::IDPool.3.gz
 %%PERL5_MAN3%%/Bio::Phylo::Util::Logger.3.gz
 %%PERL5_MAN3%%/Bio::Phylo::Util::MOP.3.gz
+%%PERL5_MAN3%%/Bio::Phylo::Util::Math.3.gz
 %%PERL5_MAN3%%/Bio::Phylo::Util::OptionalInterface.3.gz
 %%PERL5_MAN3%%/Bio::Phylo::Util::StackTrace.3.gz
 %%PERL5_MAN3%%/Bio::PhyloRole.3.gz
