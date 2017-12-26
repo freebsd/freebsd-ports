@@ -1,0 +1,22 @@
+commit 8b02d6d479da
+Author: JW Wang <jwwang@mozilla.com>
+Date:   Fri Dec 8 10:01:18 2017 +0800
+
+    Bug 1415441 - Eagerly init gMediaDecoderLog to debug crash. r=cpearce, a=jcristau
+---
+ dom/media/MediaDecoder.cpp | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git dom/media/MediaDecoder.cpp dom/media/MediaDecoder.cpp
+index cbf97ddf084d..5de31894d9d9 100644
+--- dom/media/MediaDecoder.cpp
++++ dom/media/MediaDecoder.cpp
+@@ -280,6 +280,8 @@ void
+ MediaDecoder::InitStatics()
+ {
+   MOZ_ASSERT(NS_IsMainThread());
++  // Eagerly init gMediaDecoderLog to work around bug 1415441.
++  MOZ_LOG(gMediaDecoderLog, LogLevel::Info, ("MediaDecoder::InitStatics"));
+ }
+ 
+ NS_IMPL_ISUPPORTS(MediaMemoryTracker, nsIMemoryReporter)

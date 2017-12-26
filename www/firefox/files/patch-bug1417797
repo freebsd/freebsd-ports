@@ -1,0 +1,25 @@
+commit 95077ef89979
+Author: Dan Minor <dminor@mozilla.com>
+Date:   Mon Nov 20 07:09:19 2017 -0500
+
+    Bug 1417797 - Stop callback in WebrtcGmpVideoDecoder::ReleaseGmp. r=jesup, a=gchang
+    
+    --HG--
+    extra : source : d0eb2fe1a7389d40d1abdccbeeaef9c4b30ae7b1
+---
+ media/webrtc/signaling/src/media-conduit/WebrtcGmpVideoCodec.cpp | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git media/webrtc/signaling/src/media-conduit/WebrtcGmpVideoCodec.cpp media/webrtc/signaling/src/media-conduit/WebrtcGmpVideoCodec.cpp
+index 53212d888dcb..e3063ea3fefb 100644
+--- media/webrtc/signaling/src/media-conduit/WebrtcGmpVideoCodec.cpp
++++ media/webrtc/signaling/src/media-conduit/WebrtcGmpVideoCodec.cpp
+@@ -923,6 +923,8 @@ int32_t
+ WebrtcGmpVideoDecoder::ReleaseGmp()
+ {
+   LOGD(("GMP Released:"));
++  RegisterDecodeCompleteCallback(nullptr);
++
+   if (mGMPThread) {
+     mGMPThread->Dispatch(
+         WrapRunnableNM(&WebrtcGmpVideoDecoder::ReleaseGmp_g,

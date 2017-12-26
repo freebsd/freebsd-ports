@@ -1,0 +1,32 @@
+commit 2eda8f3435d6
+Author: Andreas Pehrson <pehrsons@mozilla.com>
+Date:   Fri Dec 1 10:52:18 2017 -0500
+
+    Bug 1419363 - Switch to WeakPtr. r=jib a=gchang
+    
+    --HG--
+    extra : source : e0a21cc26e07b19383d2bf5038b88eed211de53e
+---
+ dom/html/HTMLMediaElement.cpp | 5 ++++-
+ 1 file changed, 4 insertions(+), 1 deletion(-)
+
+diff --git dom/html/HTMLMediaElement.cpp dom/html/HTMLMediaElement.cpp
+index 12ea373e8782..285a36400ad9 100644
+--- dom/html/HTMLMediaElement.cpp
++++ dom/html/HTMLMediaElement.cpp
+@@ -5168,11 +5168,14 @@ public:
+   {
+     NS_ASSERTION(NS_IsMainThread(), "Should be on main thread.");
+ 
++    if (!mElement) {
++      return;
++    }
+     mElement->NotifyMediaStreamTracksAvailable(aStream);
+   }
+ 
+ private:
+-  HTMLMediaElement* mElement;
++  WeakPtr<HTMLMediaElement> mElement;
+ };
+ 
+ class HTMLMediaElement::MediaStreamTrackListener :
