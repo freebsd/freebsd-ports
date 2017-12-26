@@ -1,0 +1,10 @@
+Adept (Automatic Differentiation using Expression Templates) is a free C++
+software library that enables algorithms to be automatically differentiated,
+very useful for a wide range of applications that involve mathematical
+optimization. It uses an operator overloading approach, so very little code
+modification is required. Moreover, the way that expression templates have
+been used and several other important optimizations mean that reverse-mode
+differentiation is significantly faster than other C++ libraries that provide
+equivalent functionality.
+
+WWW: http://www.met.reading.ac.uk/clouds/adept/

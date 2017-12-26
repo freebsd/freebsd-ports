@@ -99,6 +99,7 @@
     SUBDIR += abs
     SUBDIR += acalc
     SUBDIR += add
+    SUBDIR += adept
     SUBDIR += algae
     SUBDIR += alglib
     SUBDIR += algotutor
