@@ -1,0 +1,6 @@
+diff-so-fancy is normally used to format git's diff output.
+
+In order to configure git to use diff-so-fancy automatically, you can run:
+    $ git config --global core.pager "diff-so-fancy | less -R"
+
+See %%DOCSDIR%%/readme.md for more information.

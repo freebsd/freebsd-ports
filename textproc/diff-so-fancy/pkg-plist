@@ -1,0 +1,5 @@
+bin/diff-so-fancy
+%%SITE_PERL%%/DiffHighlight.pm
+%%DOCSDIR%%/history.md
+%%DOCSDIR%%/pro-tips.md
+%%DOCSDIR%%/readme.md
