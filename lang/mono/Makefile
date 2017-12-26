@@ -57,6 +57,7 @@ USE_GNOME=	glib20
 USE_PERL5=	build
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
+LLD_UNSAFE=	yes
 SHEBANG_FILES=	scripts/mono-heapviz
 
 CONFIGURE_ARGS=	--disable-dtrace
