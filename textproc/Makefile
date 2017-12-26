@@ -113,6 +113,7 @@
     SUBDIR += dictem
     SUBDIR += dictfmt
     SUBDIR += dictionary
+    SUBDIR += diff-so-fancy
     SUBDIR += diffmark
     SUBDIR += diffsplit
     SUBDIR += diffstat
