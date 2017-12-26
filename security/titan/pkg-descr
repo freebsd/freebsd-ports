@@ -1,0 +1,8 @@
+titan is designed based on the belief that password management belongs
+to the command line, deep into the Unix heartland, the shell.
+
+Titan is more than "just a password manager". It also supports encrypting
+individual files, so Titan can be used as a file encryption program as well
+as a password manager.
+
+WWW: https://www.titanpasswordmanager.org
