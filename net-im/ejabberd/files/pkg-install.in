@@ -14,11 +14,13 @@ chown -R %%USERS%%:%%GROUPS%%  %%PREFIX%%/%%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%POR
 find %%PREFIX%%/%%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%% -type f -print0 | xargs -0 chmod %%SHAREMODE%%
 find %%PREFIX%%/%%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%% -type f -print0 | xargs -0 chown %%SHAREOWN%%:%%SHAREGRP%%
 
+chmod +x %%PREFIX%%/%%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/fs-2.12.0/priv/kqueue
+
 %%PAM%%chmod 4750 %%PREFIX%%/%%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/epam-1.0.3/priv/bin/epam \
 %%PAM%%	     %%PREFIX%%/%%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/priv/bin/epam
 %%PAM%%chown root:%%GROUPS%% %%PREFIX%%/%%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/epam-1.0.3/priv/bin/epam \
 %%PAM%%	     %%PREFIX%%/%%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/priv/bin/epam
 
-%%GRAPHICS%%chmod +x %%PREFIX%%/%%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/eimp-1.0.1/priv/bin/eimp
+%%GRAPHICS%%chmod +x %%PREFIX%%/%%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/eimp-1.0.2/priv/bin/eimp
 
 exit 0

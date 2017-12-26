@@ -1,4 +1,4 @@
---- Makefile.in.orig	2017-09-28 13:21:11 UTC
+--- Makefile.in.orig	2017-11-20 12:14:44 UTC
 +++ Makefile.in
 @@ -21,7 +21,7 @@ SBINDIR = $(DESTDIR)@sbindir@
  LIBDIR =  $(DESTDIR)@libdir@
@@ -9,7 +9,7 @@
  
  # /share/doc/ejabberd
  PACKAGE_TARNAME = @PACKAGE_TARNAME@
-@@ -50,10 +50,10 @@ MSGSDIR = $(PRIVDIR)/msgs
+@@ -59,10 +59,10 @@ JSDIR = $(PRIVDIR)/js
  SQLDIR = $(PRIVDIR)/sql
  
  # /var/lib/ejabberd/
@@ -23,7 +23,7 @@
  
  # /var/lib/ejabberd/.erlang.cookie
  COOKIEFILE = $(SPOOLDIR)/.erlang.cookie
-@@ -113,7 +113,7 @@ JOIN_PATHS=$(if $(wordlist 2,1000,$(1)),
+@@ -123,7 +123,7 @@ JOIN_PATHS=$(if $(wordlist 2,1000,$(1)),
  VERSIONED_DEP=$(if $(DEP_$(1)_VERSION),$(DEP_$(1)_VERSION),$(1))
  
  ELIXIR_TO_DEST=$(LIBDIR) $(call VERSIONED_DEP,$(word 2,$(1))) $(wordlist 5,1000,$(1))
@@ -32,16 +32,7 @@
  MAIN_TO_DEST=$(LIBDIR) $(call VERSIONED_DEP,ejabberd) $(1)
  TO_DEST_SINGLE=$(if $(subst XdepsX,,X$(word 1,$(1))X),$(call MAIN_TO_DEST,$(1)),$(if $(subst XlibX,,X$(word 3,$(1))X),$(call DEPS_TO_DEST,$(1)),$(call ELIXIR_TO_DEST,$(1))))
  TO_DEST=$(foreach path,$(1),$(call JOIN_PATHS,$(call TO_DEST_SINGLE,$(subst /, ,$(path)))))
-@@ -123,7 +123,7 @@ FILES_WILDCARD=$(call FILTER_DIRS,$(fore
- 
- ifeq ($(MAKECMDGOALS),copy-files-sub)
- 
--DEPS:=$(sort $(shell $(REBAR) -q list-deps|$(SED) -e '/[a-z0-9_-]+\s/d;s/ .*//'))
-+DEPS:=$(sort $(shell $(REBAR) -q list-deps|$(SED) -rne '/^[a-zA-Z0-9_-]{1,} (TAG|REV)/s/^([^ ]*).*/\1/p'))
- 
- DEPS_FILES=$(call FILES_WILDCARD,$(foreach DEP,$(DEPS),deps/$(DEP)/ebin/*.beam deps/$(DEP)/ebin/*.app deps/$(DEP)/priv/* deps/$(DEP)/priv/lib/* deps/$(DEP)/priv/bin/* deps/$(DEP)/include/*.hrl deps/$(DEP)/COPY* deps/$(DEP)/LICENSE* deps/$(DEP)/lib/*/ebin/*.beam deps/$(DEP)/lib/*/ebin/*.app))
- DEPS_FILES_FILTERED=$(filter-out %/epam deps/elixir/ebin/elixir.app,$(DEPS_FILES))
-@@ -170,9 +170,7 @@ install: all copy-files
+@@ -183,9 +183,7 @@ install: all copy-files
  	#
  	# Configuration files
  	$(INSTALL) -d -m 750 $(G_USER) $(ETCDIR)
@@ -52,7 +43,7 @@
  	$(SED) -e "s*{{rootdir}}*@prefix@*g" \
  		-e "s*{{installuser}}*@INSTALLUSER@*g" \
  		-e "s*{{bindir}}*@bindir@*g" \
-@@ -181,16 +179,15 @@ install: all copy-files
+@@ -194,16 +192,15 @@ install: all copy-files
  		-e "s*{{localstatedir}}*@localstatedir@*g" \
  		-e "s*{{docdir}}*@docdir@*g" \
  		-e "s*{{erl}}*@ERL@*g" \
@@ -73,7 +64,7 @@
  	# Elixir binaries
  	[ -d $(BINDIR) ] || $(INSTALL) -d -m 755 $(BINDIR)
  	[ -f deps/elixir/bin/iex ] && $(INSTALL) -m 550 $(G_USER) deps/elixir/bin/iex $(BINDIR)/iex || true
-@@ -225,11 +222,13 @@ install: all copy-files
+@@ -238,11 +235,13 @@ install: all copy-files
  	chmod -R 750 $(LOGDIR)
  	#
  	# Documentation

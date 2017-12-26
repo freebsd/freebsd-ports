@@ -1,13 +1,12 @@
 # $FreeBSD$
 
 PORTNAME=	ejabberd
-PORTVERSION=	17.09
-PORTREVISION=	1
+PORTVERSION=	17.11
 CATEGORIES=	net-im
 MASTER_SITES=	http://www.process-one.net/downloads/${PORTNAME}/${PORTVERSION}/:p1 \
 		http://distfiles.pirateparty.in/ashish/:deps \
 		LOCAL/ashish:deps
-DISTFILES+=	${DISTNAME}.tgz:p1 ejabberd-deps-14.tar.xz:deps
+DISTFILES+=	${DISTNAME}.tgz:p1 ejabberd-deps-15.tar.xz:deps
 
 MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	Free and Open Source distributed fault-tolerant Jabber server
@@ -99,7 +98,7 @@ pre-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/${EJABBERD_LIBDIR}
 
 post-install-GRAPHICS-on:
-	@${CHMOD} +x ${STAGEDIR}${PREFIX}/${EJABBERD_LIBDIR}/${PORTNAME}-${PORTVERSION}/lib/eimp-1.0.1/priv/bin/eimp
+	@${CHMOD} +x ${STAGEDIR}${PREFIX}/${EJABBERD_LIBDIR}/${PORTNAME}-${PORTVERSION}/lib/eimp-1.0.2/priv/bin/eimp
 
 post-install-PAM-on:
 	@${INSTALL} -m 444 ${FILESDIR}/pam_ejabberd \
@@ -114,5 +113,6 @@ post-install:
 	@${INSTALL} -m 0755 ${STAGEDIR}${PREFIX}/${EJABBERD_LIBDIR}/${PORTNAME}-${PORTVERSION}/priv/bin/captcha.sh \
 		${STAGEDIR}${DATADIR}
 	@${REINPLACE_CMD} -r -e '/captcha_cmd:/s,"[^"]+","${DATADIR}/captcha.sh",' ${STAGEDIR}${ETCDIR}/${PORTNAME}.yml.example
+	@${CHMOD} +x ${STAGEDIR}${PREFIX}/${EJABBERD_LIBDIR}/${PORTNAME}-${PORTVERSION}/lib/fs-2.12.0/priv/kqueue
 
 .include <bsd.port.post.mk>
