@@ -1,0 +1,42 @@
+--- Makefile.orig	2017-11-13 07:48:52 UTC
++++ Makefile
+@@ -1,6 +1,8 @@
+-CC=gcc
+-override CFLAGS+=-std=c99 -Wall -g
+-PREFIX=/usr/
++CC?=gcc
++CFLAGS?=-std=c99 -Wall -g
++CFLAGS+=-std=c99 -Wall
++PREFIX?=/usr/
++MANDIR?=$(PREFIX)/share/man
+ LIBS=-lcrypto -lsqlite3 -lrt
+ PROG=titan
+ OBJS=$(patsubst %.c, %.o, $(wildcard *.c))
+@@ -12,20 +14,20 @@ all: $(PROG)
+ 	$(CC) $(CFLAGS) -c $< -o $@
+ 
+ $(PROG): $(OBJS)
+-	$(CC) $(OBJS) $(LIBS) -o $@
++	$(CC) $(OBJS) $(LDFLAGS) $(LIBS) -o $@
+ 
+ clean:
+ 	rm -f *.o
+ 	rm -f $(PROG)
+ 
+ install: all
+-	if [ ! -d $(PREFIX)/share/man/man1 ];then	\
+-		mkdir -p $(PREFIX)/share/man/man1;	\
++	if [ ! -d $(DESTDIR)$(MANDIR)/man1 ];then	\
++		mkdir -p $(DESTDIR)$(MANDIR)/man1;	\
+ 	fi
+-	cp titan.1 $(PREFIX)/share/man/man1/
+-	gzip -f $(PREFIX)/share/man/man1/titan.1
+-	cp titan $(PREFIX)/bin/
++	cp titan.1 $(DESTDIR)$(MANDIR)/man1/
++	gzip -f $(DESTDIR)$(MANDIR)/man1/titan.1
++	cp titan $(DESTDIR)$(PREFIX)/bin/
+ 
+ uninstall:
+ 	rm $(PREFIX)/bin/titan
+-	rm $(PREFIX)/share/man/man1/titan.1.gz
++	rm $(DESTDIR)$(MANDIR)/man1/titan.1.gz
