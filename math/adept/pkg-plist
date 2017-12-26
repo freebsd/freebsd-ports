@@ -44,5 +44,5 @@ include/adept_arrays.h
 lib/libadept.so
 lib/libadept.so.0
 lib/libadept.so.0.0.0
-%%PORTDOCS%%%%DOCSDIR%%/adept_documentation.pdf
-%%PORTDOCS%%%%DOCSDIR%%/adept_reference.pdf
+%%PDFTEXDOCS%%%%DOCSDIR%%/adept_documentation.pdf
+%%PDFTEXDOCS%%%%DOCSDIR%%/adept_reference.pdf
