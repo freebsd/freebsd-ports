@@ -1,0 +1,26 @@
+commit 69f7bf805f94
+Author: Lee Salzman <lsalzman@mozilla.com>
+Date:   Tue Nov 21 16:55:20 2017 -0500
+
+    Bug 1418447 - Limit Skia edge builder allocations. r=milan, a=abillings
+    
+    MozReview-Commit-ID: 1SnxwtoYJJm
+    
+    --HG--
+    extra : source : a81b848ebcc668f10a73eff586cebed570533b48
+---
+ gfx/skia/skia/src/core/SkEdgeBuilder.cpp | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git gfx/skia/skia/src/core/SkEdgeBuilder.cpp gfx/skia/skia/src/core/SkEdgeBuilder.cpp
+index ceb8f1ad3105..af8da00a2f04 100644
+--- gfx/skia/skia/src/core/SkEdgeBuilder.cpp
++++ gfx/skia/skia/src/core/SkEdgeBuilder.cpp
+@@ -248,6 +248,7 @@ int SkEdgeBuilder::buildPoly(const SkPath& path, const SkIRect* iclip, int shift
+         // clipping can turn 1 line into (up to) kMaxClippedLineSegments, since
+         // we turn portions that are clipped out on the left/right into vertical
+         // segments.
++        SkASSERT_RELEASE(maxEdgeCount <= std::numeric_limits<int>::max() / SkLineClipper::kMaxClippedLineSegments);
+         maxEdgeCount *= SkLineClipper::kMaxClippedLineSegments;
+     }
+ 

@@ -1,0 +1,159 @@
+commit bc308d794057
+Author: Karl Tomlinson <karlt+@karlt.net>
+Date:   Sat Nov 4 19:00:46 2017 +1300
+
+    Bug 1382366 - Disable AudioCallback -> SystemClockDriver fallback before disowning graph. f=pehrsons, r=padenot, a=gchang
+    
+    MozReview-Commit-ID: ESr6yxjPVWf
+    
+    --HG--
+    extra : rebase_source : 6ed3093ab9dec68515f39353dc46ab40780cd161
+    extra : source : 53f055298fa9d2446fd90ad8a51fefd3b15b16c1
+---
+ dom/media/GraphDriver.cpp | 38 +++++++++++---------------------------
+ dom/media/GraphDriver.h   | 14 ++++++++------
+ 2 files changed, 19 insertions(+), 33 deletions(-)
+
+diff --git dom/media/GraphDriver.cpp dom/media/GraphDriver.cpp
+index 13944338e3d7..62c847e90155 100644
+--- dom/media/GraphDriver.cpp
++++ dom/media/GraphDriver.cpp
+@@ -33,8 +33,7 @@ GraphDriver::GraphDriver(MediaStreamGraphImpl* aGraphImpl)
+     mWaitState(WAITSTATE_RUNNING),
+     mCurrentTimeStamp(TimeStamp::Now()),
+     mPreviousDriver(nullptr),
+-    mNextDriver(nullptr),
+-    mScheduled(false)
++    mNextDriver(nullptr)
+ { }
+ 
+ void GraphDriver::SetGraphTime(GraphDriver* aPreviousDriver,
+@@ -121,12 +120,6 @@ void GraphDriver::SetPreviousDriver(GraphDriver* aPreviousDriver)
+   mPreviousDriver = aPreviousDriver;
+ }
+ 
+-bool GraphDriver::Scheduled()
+-{
+-  GraphImpl()->GetMonitor().AssertCurrentThreadOwns();
+-  return mScheduled;
+-}
+-
+ ThreadedDriver::ThreadedDriver(MediaStreamGraphImpl* aGraphImpl)
+   : GraphDriver(aGraphImpl)
+ { }
+@@ -216,8 +209,7 @@ ThreadedDriver::Start()
+     // Note: mThread may be null during event->Run() if we pass to NewNamedThread!  See AudioInitTask
+     nsresult rv = NS_NewNamedThread("MediaStreamGrph", getter_AddRefs(mThread));
+     if (NS_SUCCEEDED(rv)) {
+-      rv = mThread->EventTarget()->Dispatch(event.forget(), NS_DISPATCH_NORMAL);
+-      mScheduled = NS_SUCCEEDED(rv);
++      mThread->EventTarget()->Dispatch(event.forget(), NS_DISPATCH_NORMAL);
+     }
+   }
+ }
+@@ -545,6 +537,7 @@ AudioCallbackDriver::AudioCallbackDriver(MediaStreamGraphImpl* aGraphImpl)
+   , mAddedMixer(false)
+   , mInCallback(false)
+   , mMicrophoneActive(false)
++  , mShouldFallbackIfError(false)
+   , mFromFallback(false)
+ {
+   LOG(LogLevel::Debug, ("AudioCallbackDriver ctor for graph %p", aGraphImpl));
+@@ -765,13 +758,13 @@ AudioCallbackDriver::Start()
+        "to ensure it runs after previous shutdown."));
+   RefPtr<AsyncCubebTask> initEvent =
+     new AsyncCubebTask(AsAudioCallbackDriver(), AsyncCubebOperation::INIT);
+-  nsresult rv = initEvent->Dispatch();
+-  mScheduled = NS_SUCCEEDED(rv);
++  initEvent->Dispatch();
+ }
+ 
+ bool
+ AudioCallbackDriver::StartStream()
+ {
++  mShouldFallbackIfError = true;
+   if (cubeb_stream_start(mAudioStream) != CUBEB_OK) {
+     NS_WARNING("Could not start cubeb stream for MSG.");
+     return false;
+@@ -1015,6 +1008,10 @@ AudioCallbackDriver::DataCallback(const AudioDataValue* aInputBuffer,
+                                mSampleRate, mOutputChannels);
+ 
+   if (!stillProcessing) {
++    // About to hand over control of the graph.  Do not start a new driver if
++    // StateCallback() receives an error for this stream while the main thread
++    // or another driver has control of the graph.
++    mShouldFallbackIfError = false;
+     // Enter shutdown mode. The stable-state handler will detect this
+     // and complete shutdown if the graph does not get restarted.
+     mGraphImpl->SignalMainThreadCleanup();
+@@ -1028,6 +1025,7 @@ AudioCallbackDriver::DataCallback(const AudioDataValue* aInputBuffer,
+   }
+ 
+   if (switching) {
++    mShouldFallbackIfError = false;
+     // If the audio stream has not been started by the previous driver or
+     // the graph itself, keep it alive.
+     MonitorAutoLock mon(mGraphImpl->GetMonitor());
+@@ -1052,22 +1050,8 @@ AudioCallbackDriver::StateCallback(cubeb_state aState)
+ {
+   LOG(LogLevel::Debug, ("AudioCallbackDriver State: %d", aState));
+ 
+-  if (aState == CUBEB_STATE_ERROR) {
+-    if (!mAudioStream) {
+-      // If we don't have an audio stream here, this means that the stream
+-      // initialization has failed. A fallback on a SystemCallDriver will happen at
+-      // the callsite of `cubeb_stream_init`.
+-      return;
+-    }
+-
++  if (aState == CUBEB_STATE_ERROR && mShouldFallbackIfError) {
+     MonitorAutoLock lock(GraphImpl()->GetMonitor());
+-
+-    if (NextDriver() && NextDriver()->Scheduled()) {
+-      // We are switching to another driver that has already been scheduled
+-      // to be initialized and started. There's nothing for us to do here.
+-      return;
+-    }
+-
+     // Fall back to a driver using a normal thread. If needed,
+     // the graph will try to re-open an audio stream later.
+     SystemClockDriver* nextDriver = new SystemClockDriver(GraphImpl());
+diff --git dom/media/GraphDriver.h dom/media/GraphDriver.h
+index 4857d74b114a..1f8b9386c6fa 100644
+--- dom/media/GraphDriver.h
++++ dom/media/GraphDriver.h
+@@ -146,9 +146,6 @@ public:
+   void SetNextDriver(GraphDriver* aNextDriver);
+   void SetPreviousDriver(GraphDriver* aPreviousDriver);
+ 
+-  /* Return whether we have been scheduled to start. */
+-  bool Scheduled();
+-
+   /**
+    * If we are running a real time graph, get the current time stamp to schedule
+    * video frames. This has to be reimplemented by real time drivers.
+@@ -252,9 +249,6 @@ protected:
+   // driver at the end of this iteration.
+   // This must be accessed using the {Set,Get}NextDriver methods.
+   RefPtr<GraphDriver> mNextDriver;
+-  // This is initially false, but set to true as soon the driver has been
+-  // scheduled to start through GraphDriver::Start().
+-  bool mScheduled;
+   virtual ~GraphDriver()
+   { }
+ };
+@@ -558,6 +552,14 @@ private:
+    * True if microphone is being used by this process. This is synchronized by
+    * the graph's monitor. */
+   Atomic<bool> mMicrophoneActive;
++  /* Indication of whether a fallback SystemClockDriver should be started if
++   * StateCallback() receives an error.  No mutex need be held during access.
++   * The transition to true happens before cubeb_stream_start() is called.
++   * After transitioning to false on the last DataCallback(), the stream is
++   * not accessed from another thread until the graph thread either signals
++   * main thread cleanup or dispatches an event to switch to another
++   * driver. */
++  bool mShouldFallbackIfError;
+   /* True if this driver was created from a driver created because of a previous
+    * AudioCallbackDriver failure. */
+   bool mFromFallback;
