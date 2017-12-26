@@ -1116,6 +1116,7 @@
     SUBDIR += smenu
     SUBDIR += smp_utils
     SUBDIR += snap
+    SUBDIR += snooze
     SUBDIR += snowlog
     SUBDIR += socket
     SUBDIR += socklog
