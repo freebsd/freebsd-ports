@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mwlib
-PORTVERSION=	0.15.14
-PORTREVISION=	8
+PORTVERSION=	0.15.19
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -32,7 +31,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}apipkg>=1.2:devel/py-apipkg@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}timelib>=0.2:devel/py-timelib@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}webob>=0.9.6.1:www/py-webob@${FLAVOR}
 
-USES=		python:2 shebangfix zip
+USES=		python:2.7 shebangfix zip
 SHEBANG_FILES=	mwlib/EasyTimeline.pl mwlib/writer/*.py \
 		mwlib/refine/*.py mwlib/parser/*.py \
 		mwlib/net/*.py mwlib/siteinfo/*.py
