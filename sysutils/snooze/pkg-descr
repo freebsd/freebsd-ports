@@ -1,0 +1,22 @@
+Snooze waits until a particular time and then runs a command.
+Together with a service supervision system such as runsv(8) (from
+sysutils/runit), this can be used to replace cron(8).
+
+Benefits over cron(8):
+
+- mnemonic syntax
+- no overlapping job runs possible
+- filtering by ISO week and day of year
+- no centralized daemon required (no fuzzing with multiple
+  users/permissions)    
+- can easily disable jobs or force their execution
+  instantly
+- have custom logs
+- very robust with respect to external time changes
+- can use a file timestamp to ensure minimum waiting time between two
+  runs, even across reboots
+- randomized delays
+- variable slack
+- ad-hoc usage possible, just run the program from command line
+
+WWW: https://github.com/chneukirchen/snooze
