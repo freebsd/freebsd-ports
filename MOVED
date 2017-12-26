@@ -9824,3 +9824,4 @@ math/petsc-mpich|science/PETSc|2017-12-20|Recreated after it has been deleted in
 textproc/py-elasticsearch-py|textproc/py-elasticsearch|2017-12-21|Rename to match PyPI naming
 japanese/egg-canna||2017-12-25|Has expired: Requires Emacs versions before 23
 editors/tree-widget||2017-12-26|Has expired: Now part of Emacs
+www/py-flup|www/py-flup6|2017-12-26|forked, for py3k support

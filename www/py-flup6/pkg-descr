@@ -1,0 +1,6 @@
+This Python package is a random collection of WSGI modules
+
+It is a fork of Allan Saddi's flup package, and is intended to
+support both python2 and python3 from a single code base.
+
+WWW: https://bitbucket.org/denisenkom/flup
