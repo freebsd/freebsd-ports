@@ -41,6 +41,7 @@ lib/libskgbasemodeler.so.%%SHLIB_VER%%
 %%QT_PLUGINDIR%%/skrooge_import_iif.so
 %%QT_PLUGINDIR%%/skrooge_import_json.so
 %%QT_PLUGINDIR%%/skrooge_import_kmy.so
+%%QT_PLUGINDIR%%/skrooge_import_ledger.so
 %%QT_PLUGINDIR%%/skrooge_import_mmb.so
 %%QT_PLUGINDIR%%/skrooge_import_mny.so
 %%QT_PLUGINDIR%%/skrooge_import_mt940.so
@@ -113,6 +114,7 @@ share/doc/HTML/en/skrooge/dashboard_categories.png
 share/doc/HTML/en/skrooge/dashboard_highlighted.png
 share/doc/HTML/en/skrooge/dashboard_income.png
 share/doc/HTML/en/skrooge/dashboard_interest.png
+share/doc/HTML/en/skrooge/dashboard_pfs.png
 share/doc/HTML/en/skrooge/dashboard_portfolio.png
 share/doc/HTML/en/skrooge/dashboard_quotes.png
 share/doc/HTML/en/skrooge/dashboard_report.png
@@ -384,6 +386,7 @@ share/kservices5/org.kde.skrooge-import-afb120.desktop
 share/kservices5/org.kde.skrooge-import-backend-aqbanking.desktop
 share/kservices5/org.kde.skrooge-import-backend-weboob.desktop
 share/kservices5/org.kde.skrooge-import-backend-weboob0g.desktop
+share/kservices5/org.kde.skrooge-import-backend-weboob_coming.desktop
 share/kservices5/org.kde.skrooge-import-backend.desktop
 share/kservices5/org.kde.skrooge-import-csv.desktop
 share/kservices5/org.kde.skrooge-import-gnc.desktop
@@ -391,6 +394,7 @@ share/kservices5/org.kde.skrooge-import-gsb.desktop
 share/kservices5/org.kde.skrooge-import-iif.desktop
 share/kservices5/org.kde.skrooge-import-json.desktop
 share/kservices5/org.kde.skrooge-import-kmy.desktop
+share/kservices5/org.kde.skrooge-import-ledger.desktop
 share/kservices5/org.kde.skrooge-import-mmb.desktop
 share/kservices5/org.kde.skrooge-import-mny.desktop
 share/kservices5/org.kde.skrooge-import-mt940.desktop
@@ -861,6 +865,8 @@ share/mime/packages/x-skg.xml
 %%DATADIR%%/images/splash.png
 %%DATADIR%%/quotes/BitcoinAverage.txt
 %%DATADIR%%/quotes/BitcoinCharts.txt
+%%DATADIR%%/quotes/Google.txt
 %%DATADIR%%/quotes/GrandTrunk.txt
 %%DATADIR%%/quotes/Skrooge.txt
 %%DATADIR%%/quotes/Stooq.txt
+%%DATADIR%%/quotes/Yahoo.txt
