@@ -1,0 +1,231 @@
+commit 8dce7d3eb6a3
+Author: Valentin Gosu <valentin.gosu@gmail.com>
+Date:   Thu Nov 9 16:32:51 2017 +0100
+
+    Bug 1414425 - Make sure the appropriate triggeringPrincipal is set for a meta refresh. r=bz, a=gchang
+    
+    MozReview-Commit-ID: 4Kn6P4hnx74
+    
+    --HG--
+    extra : source : 229546747cbf04cf71a235275d7c2eb2520a298b
+---
+ browser/base/content/tab-content.js                |  2 +-
+ .../content/test/general/browser_refreshBlocker.js |  2 +-
+ docshell/base/nsDocShell.cpp                       | 28 +++++++++++++++-------
+ docshell/base/nsDocShell.h                         | 12 +++++++---
+ docshell/base/nsIRefreshURI.idl                    | 23 ++++++++++++++----
+ 5 files changed, 50 insertions(+), 17 deletions(-)
+
+diff --git browser/base/content/tab-content.js browser/base/content/tab-content.js
+index 4d85ada0321b..5497a1cc208d 100644
+--- browser/base/content/tab-content.js
++++ browser/base/content/tab-content.js
+@@ -995,7 +995,7 @@ var RefreshBlocker = {
+ 
+       let URI = Services.io.newURI(data.URI);
+ 
+-      refreshURI.forceRefreshURI(URI, data.delay, true);
++      refreshURI.forceRefreshURI(URI, null, data.delay, true);
+     }
+   },
+ 
+diff --git browser/base/content/test/general/browser_refreshBlocker.js browser/base/content/test/general/browser_refreshBlocker.js
+index cd82cf40b479..4a280d4cb12b 100644
+--- browser/base/content/test/general/browser_refreshBlocker.js
++++ browser/base/content/test/general/browser_refreshBlocker.js
+@@ -20,7 +20,7 @@ async function attemptFakeRefresh(browser, expectRefresh) {
+   await ContentTask.spawn(browser, expectRefresh, async function(contentExpectRefresh) {
+     let URI = docShell.QueryInterface(Ci.nsIWebNavigation).currentURI;
+     let refresher = docShell.QueryInterface(Ci.nsIRefreshURI);
+-    refresher.refreshURI(URI, 0, false, true);
++    refresher.refreshURI(URI, null, 0, false, true);
+ 
+     Assert.equal(refresher.refreshPending, contentExpectRefresh,
+       "Got the right refreshPending state");
+diff --git docshell/base/nsDocShell.cpp docshell/base/nsDocShell.cpp
+index 3ded70a66fe8..83cb87dd8255 100644
+--- docshell/base/nsDocShell.cpp
++++ docshell/base/nsDocShell.cpp
+@@ -6831,7 +6831,8 @@ nsDocShell::ScrollByPages(int32_t aNumPages)
+ //*****************************************************************************
+ 
+ NS_IMETHODIMP
+-nsDocShell::RefreshURI(nsIURI* aURI, int32_t aDelay, bool aRepeat,
++nsDocShell::RefreshURI(nsIURI* aURI, nsIPrincipal* aPrincipal,
++                       int32_t aDelay, bool aRepeat,
+                        bool aMetaRefresh)
+ {
+   NS_ENSURE_ARG(aURI);
+@@ -6860,7 +6861,7 @@ nsDocShell::RefreshURI(nsIURI* aURI, int32_t aDelay, bool aRepeat,
+   }
+ 
+   nsCOMPtr<nsITimerCallback> refreshTimer =
+-    new nsRefreshTimer(this, aURI, aDelay, aRepeat, aMetaRefresh);
++    new nsRefreshTimer(this, aURI, aPrincipal, aDelay, aRepeat, aMetaRefresh);
+ 
+   uint32_t busyFlags = 0;
+   GetBusyFlags(&busyFlags);
+@@ -6891,6 +6892,7 @@ nsDocShell::RefreshURI(nsIURI* aURI, int32_t aDelay, bool aRepeat,
+ 
+ nsresult
+ nsDocShell::ForceRefreshURIFromTimer(nsIURI* aURI,
++                                     nsIPrincipal* aPrincipal,
+                                      int32_t aDelay,
+                                      bool aMetaRefresh,
+                                      nsITimer* aTimer)
+@@ -6911,11 +6913,11 @@ nsDocShell::ForceRefreshURIFromTimer(nsIURI* aURI,
+     }
+   }
+ 
+-  return ForceRefreshURI(aURI, aDelay, aMetaRefresh);
++  return ForceRefreshURI(aURI, aPrincipal, aDelay, aMetaRefresh);
+ }
+ 
+ NS_IMETHODIMP
+-nsDocShell::ForceRefreshURI(nsIURI* aURI, int32_t aDelay, bool aMetaRefresh)
++nsDocShell::ForceRefreshURI(nsIURI* aURI, nsIPrincipal* aPrincipal, int32_t aDelay, bool aMetaRefresh)
+ {
+   NS_ENSURE_ARG(aURI);
+ 
+@@ -6963,6 +6965,13 @@ nsDocShell::ForceRefreshURI(nsIURI* aURI, int32_t aDelay, bool aMetaRefresh)
+     loadInfo->SetLoadType(nsIDocShellLoadInfo::loadRefresh);
+   }
+ 
++  // If the principal is null, the refresh will have a triggeringPrincipal
++  // derived from the referrer URI, or will be set to the system principal
++  // if there is no refererrer. See LoadURI()
++  if (aPrincipal) {
++    loadInfo->SetTriggeringPrincipal(aPrincipal);
++  }
++
+   /*
+    * LoadURI(...) will cancel all refresh timers... This causes the
+    * Timer and its refreshData instance to be released...
+@@ -7203,7 +7212,7 @@ nsDocShell::SetupRefreshURIFromHeader(nsIURI* aBaseURI,
+           return NS_ERROR_FAILURE;
+         }
+ 
+-        rv = RefreshURI(uri, seconds * 1000, false, true);
++        rv = RefreshURI(uri, aPrincipal, seconds * 1000, false, true);
+       }
+     }
+   }
+@@ -13793,9 +13802,12 @@ nsDocShell::SetLayoutHistoryState(nsILayoutHistoryState* aLayoutHistoryState)
+   return NS_OK;
+ }
+ 
+-nsRefreshTimer::nsRefreshTimer(nsDocShell* aDocShell, nsIURI* aURI,
++nsRefreshTimer::nsRefreshTimer(nsDocShell* aDocShell,
++                               nsIURI* aURI,
++                               nsIPrincipal* aPrincipal,
+                                int32_t aDelay, bool aRepeat, bool aMetaRefresh)
+-  : mDocShell(aDocShell), mURI(aURI), mDelay(aDelay), mRepeat(aRepeat),
++  : mDocShell(aDocShell), mURI(aURI), mPrincipal(aPrincipal),
++    mDelay(aDelay), mRepeat(aRepeat),
+     mMetaRefresh(aMetaRefresh)
+ {
+ }
+@@ -13822,7 +13834,7 @@ nsRefreshTimer::Notify(nsITimer* aTimer)
+     // Get the delay count to determine load type
+     uint32_t delay = 0;
+     aTimer->GetDelay(&delay);
+-    mDocShell->ForceRefreshURIFromTimer(mURI, delay, mMetaRefresh, aTimer);
++    mDocShell->ForceRefreshURIFromTimer(mURI, mPrincipal, delay, mMetaRefresh, aTimer);
+   }
+   return NS_OK;
+ }
+diff --git docshell/base/nsDocShell.h docshell/base/nsDocShell.h
+index f805deaa2edf..57fc63fe5795 100644
+--- docshell/base/nsDocShell.h
++++ docshell/base/nsDocShell.h
+@@ -114,8 +114,12 @@ class nsRefreshTimer : public nsITimerCallback
+                      , public nsINamed
+ {
+ public:
+-  nsRefreshTimer(nsDocShell* aDocShell, nsIURI* aURI, int32_t aDelay,
+-                 bool aRepeat, bool aMetaRefresh);
++  nsRefreshTimer(nsDocShell* aDocShell,
++                 nsIURI* aURI,
++                 nsIPrincipal* aPrincipal,
++                 int32_t aDelay,
++                 bool aRepeat,
++                 bool aMetaRefresh);
+ 
+   NS_DECL_THREADSAFE_ISUPPORTS
+   NS_DECL_NSITIMERCALLBACK
+@@ -125,6 +129,7 @@ public:
+ 
+   RefPtr<nsDocShell> mDocShell;
+   nsCOMPtr<nsIURI> mURI;
++  nsCOMPtr<nsIPrincipal> mPrincipal;
+   int32_t mDelay;
+   bool mRepeat;
+   bool mMetaRefresh;
+@@ -259,7 +264,8 @@ public:
+   // ForceRefreshURI method on nsIRefreshURI, but makes sure to take
+   // the timer involved out of mRefreshURIList if it's there.
+   // aTimer must not be null.
+-  nsresult ForceRefreshURIFromTimer(nsIURI* aURI, int32_t aDelay,
++  nsresult ForceRefreshURIFromTimer(nsIURI* aURI, nsIPrincipal* aPrincipal,
++                                    int32_t aDelay,
+                                     bool aMetaRefresh, nsITimer* aTimer);
+ 
+   friend class OnLinkClickEvent;
+diff --git docshell/base/nsIRefreshURI.idl docshell/base/nsIRefreshURI.idl
+index f872d8b7f5cf..3e85e4c516c6 100644
+--- docshell/base/nsIRefreshURI.idl
++++ docshell/base/nsIRefreshURI.idl
+@@ -18,23 +18,33 @@ interface nsIRefreshURI : nsISupports {
+       * queued and executed when the current load finishes. 
+       *
+       * @param aUri The uri to refresh.
++      * @param aPrincipal The triggeringPrincipal for the refresh load
++      *   May be null, in which case a principal will be built based on the
++      *   referrer URI of the previous docshell load, or will use the system
++      *   principal when there is no referrer.
+       * @param aMillis The number of milliseconds to wait.
+       * @param aRepeat Flag to indicate if the uri is to be 
+       *                repeatedly refreshed every aMillis milliseconds.
+       * @param aMetaRefresh Flag to indicate if this is a Meta refresh.
+       */
+-    void refreshURI(in nsIURI aURI, in long aMillis, in boolean aRepeat,
++    void refreshURI(in nsIURI aURI, in nsIPrincipal aPrincipal,
++                    in long aMillis, in boolean aRepeat,
+                     in boolean aMetaRefresh);
+ 
+     /**
+       * Loads a URI immediately as if it were a refresh.
+       *
+       * @param aURI The URI to refresh.
++      * @param aPrincipal The triggeringPrincipal for the refresh load
++      *   May be null, in which case a principal will be built based on the
++      *   referrer URI of the previous docshell load, or will use the system
++      *   principal when there is no referrer.
+       * @param aMillis The number of milliseconds by which this refresh would
+       *                be delayed if it were not being forced.
+       * @param aMetaRefresh Flag to indicate if this is a meta refresh.
+       */
+-    void forceRefreshURI(in nsIURI aURI, in long aMillis, in boolean aMetaRefresh);
++    void forceRefreshURI(in nsIURI aURI, in nsIPrincipal aPrincipal,
++                         in long aMillis, in boolean aMetaRefresh);
+ 
+     /**
+       * Checks the passed in channel to see if there is a refresh header, 
+@@ -57,10 +67,15 @@ interface nsIRefreshURI : nsISupports {
+       * the current page finishes loading. 
+       *
+       * @param aBaseURI base URI to resolve refresh uri with.
+-      * @param principal the associated principal
++      * @param aPrincipal The triggeringPrincipal for the refresh load
++      *   May be null, in which case a principal will be built based on the
++      *   referrer URI of the previous docshell load, or will use the system
++      *   principal when there is no referrer.
+       * @param aHeader  The meta refresh header string.
+       */
+-    void setupRefreshURIFromHeader(in nsIURI aBaseURI, in nsIPrincipal principal, in ACString aHeader);
++    void setupRefreshURIFromHeader(in nsIURI aBaseURI,
++                                   in nsIPrincipal principal,
++                                   in ACString aHeader);
+ 
+     /**
+       * Cancels all timer loads.

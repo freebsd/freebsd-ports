@@ -1,0 +1,52 @@
+commit 2d5001acfa08
+Author: Tim Huang <tihuang@mozilla.com>
+Date:   Tue Nov 28 14:56:55 2017 -0500
+
+    Bug 1410134 - Fix the remove-while-iterating for RemoveCookiesWithOriginAttributes. r=jdm, a=gchang
+    
+    MozReview-Commit-ID: u56N4084lL
+    
+    --HG--
+    extra : source : ffab26e34d92c1fc2e5103d2bad3625e180963bb
+---
+ netwerk/cookie/nsCookieService.cpp | 24 ++++++++++--------------
+ 1 file changed, 10 insertions(+), 14 deletions(-)
+
+diff --git netwerk/cookie/nsCookieService.cpp netwerk/cookie/nsCookieService.cpp
+index 7d939da101e2..0692b7088751 100644
+--- netwerk/cookie/nsCookieService.cpp
++++ netwerk/cookie/nsCookieService.cpp
+@@ -4899,23 +4899,19 @@ nsCookieService::RemoveCookiesWithOriginAttributes(
+     }
+ 
+     // Pattern matches. Delete all cookies within this nsCookieEntry.
+-    const nsCookieEntry::ArrayType& cookies = entry->GetCookies();
++    uint32_t cookiesCount = entry->GetCookies().Length();
+ 
+-    while (!cookies.IsEmpty()) {
+-      nsCookie *cookie = cookies.LastElement();
+-
+-      nsAutoCString host;
+-      cookie->GetHost(host);
+-
+-      nsAutoCString name;
+-      cookie->GetName(name);
+-
+-      nsAutoCString path;
+-      cookie->GetPath(path);
++    for (nsCookieEntry::IndexType i = 0 ; i < cookiesCount; ++i) {
++      // Remove the first cookie from the list.
++      nsListIter iter(entry, 0);
++      RefPtr<nsCookie> cookie = iter.Cookie();
+ 
+       // Remove the cookie.
+-      nsresult rv = Remove(host, entry->mOriginAttributes, name, path, false);
+-      NS_ENSURE_SUCCESS(rv, rv);
++      RemoveCookieFromList(iter);
++
++      if (cookie) {
++        NotifyChanged(cookie, u"deleted");
++      }
+     }
+   }
+   DebugOnly<nsresult> rv = transaction.Commit();
