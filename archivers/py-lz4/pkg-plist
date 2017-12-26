@@ -10,9 +10,6 @@
 %%PYTHON_SITELIBDIR%%/lz4/frame/__init__.pyc
 %%PYTHON_SITELIBDIR%%/lz4/frame/__init__.pyo
 %%PYTHON_SITELIBDIR%%/lz4/frame/_frame.so
-%%PYTHON_SITELIBDIR%%/lz4/lz4version.py
-%%PYTHON_SITELIBDIR%%/lz4/lz4version.pyc
-%%PYTHON_SITELIBDIR%%/lz4/lz4version.pyo
 %%PYTHON_SITELIBDIR%%/lz4/version.py
 %%PYTHON_SITELIBDIR%%/lz4/version.pyc
 %%PYTHON_SITELIBDIR%%/lz4/version.pyo
