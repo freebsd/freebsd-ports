@@ -280,6 +280,7 @@
     SUBDIR += najitool
     SUBDIR += newer
     SUBDIR += nms
+    SUBDIR += nnn
     SUBDIR += nsf
     SUBDIR += numchar
     SUBDIR += nut

@@ -1,0 +1,20 @@
+--- Makefile.orig	2017-12-25 13:40:20 UTC
++++ Makefile
+@@ -10,7 +10,7 @@ ifeq ($(shell pkg-config ncursesw && ech
+ 	CFLAGS += $(shell pkg-config --cflags ncursesw)
+ 	LDLIBS += $(shell pkg-config --libs   ncursesw)
+ else
+-	LDLIBS += -lncurses
++	LDLIBS += -lncursesw
+ endif
+ 
+ DISTFILES = nlay nnn.c nnn.h nnn.1 Makefile README.md LICENSE
+@@ -23,7 +23,7 @@ all: $(BIN) $(PLAYER)
+ $(SRC): nnn.h
+ 
+ $(BIN): $(SRC)
+-	$(CC) -O2 $(CFLAGS) -o $@ $^ $(LDFLAGS) $(LDLIBS)
++	$(CC) $(CFLAGS) -o $@ $^ $(LDFLAGS) $(LDLIBS)
+ 	strip $@
+ 
+ debug: $(SRC)
