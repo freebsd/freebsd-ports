@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	activerecord-jdbc-adapter
-PORTVERSION=	1.3.24
+PORTVERSION=	51.0
 CATEGORIES=	databases rubygems java
 MASTER_SITES=	RG
 
@@ -13,7 +13,7 @@ LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	jruby:lang/jruby \
-		rubygem-activerecord4>=2.2:databases/rubygem-activerecord4
+		rubygem-activerecord5>=5.1.0:databases/rubygem-activerecord5
 
 NO_ARCH=	yes
 USE_RUBY=	yes
