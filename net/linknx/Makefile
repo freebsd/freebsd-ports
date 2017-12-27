@@ -1,4 +1,4 @@
-# Created by: Björn König <bkoenig@alpha-tierchen.de>
+# Created by: Bjorn Konig <bkoenig@alpha-tierchen.de>
 # $FreeBSD$
 
 PORTNAME=	linknx

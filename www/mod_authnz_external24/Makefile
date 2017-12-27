@@ -1,4 +1,4 @@
-# Created by: José García Juanino <jjuanino@gmail.com>
+# Created by: Jose Garcia Juanino <jjuanino@gmail.com>
 # $FreeBSD$
 
 PORTNAME=	mod_authnz_external
