@@ -1,5 +1,0 @@
-PWLib is a multi-platform code library that can be used to write
-applications that will compile and run on the BSD Unixes, Windows, Linux
-and a few other Unix variants. It was developed by Equivalence Ltd Pty.
-
-It is used by the OpenH323 library.

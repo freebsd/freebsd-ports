@@ -1,8 +1,0 @@
-OhPhone is a H323 Video Conferencing Program compatible with other
-H323 video conferencing programs including Microsoft NetMeeting.
-
-OhPhone supports full duplex audio and bi-directional video.
-It requires a full duplex sound card for audio support
-and a Bt848/878 based video card (using the bktr driver) for video capture.
-
-It uses the OpenH323 and PWLib libraries, developed by Equivalence Pty.
