@@ -4,7 +4,7 @@
 PORTNAME=	beignet
 DISTVERSION=	1.3.2
 DISTVERSIONSUFFIX=	-source
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang
 MASTER_SITES=	https://01.org/sites/default/files/
 
@@ -29,7 +29,7 @@ USE_GL=		gl egl
 USE_LDCONFIG=	${LOCALBASE}/lib/${PORTNAME}
 SHEBANG_FILES=	src/git_sha1.sh backend/kernels/compile.sh
 ALL_TARGET=	all
-LLVMVER=	${MESA_LLVM_VER:U40}
+LLVMVER=	${MESA_LLVM_VER:U50}
 
 CMAKE_ARGS+=	-DLLVM_CONFIG_EXECUTABLE=${LOCALBASE}/bin/llvm-config${LLVMVER}
 
