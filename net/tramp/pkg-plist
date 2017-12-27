@@ -1,15 +1,7 @@
-%%EMACS20_ONLY%%%%TRAMP_LISPDIR%%/base64.el
-%%EMACS20_ONLY%%%%TRAMP_LISPDIR%%/base64.elc
-%%EMACS20_ONLY%%%%TRAMP_LISPDIR%%/format-spec.el
-%%EMACS20_ONLY%%%%TRAMP_LISPDIR%%/format-spec.elc
-%%EMACS20_ONLY%%%%TRAMP_LISPDIR%%/md5.el
-%%EMACS20_ONLY%%%%TRAMP_LISPDIR%%/md5.elc
-%%EMACS20_ONLY%%%%TRAMP_LISPDIR%%/run-at-time.el
-%%EMACS20_ONLY%%%%TRAMP_LISPDIR%%/run-at-time.elc
-%%EMACS20_ONLY%%%%TRAMP_LISPDIR%%/uudecode.el
-%%EMACS20_ONLY%%%%TRAMP_LISPDIR%%/uudecode.elc
 %%TRAMP_LISPDIR%%/tramp-adb.el
 %%TRAMP_LISPDIR%%/tramp-adb.elc
+%%TRAMP_LISPDIR%%/tramp-cache.el
+%%TRAMP_LISPDIR%%/tramp-cache.elc
 %%TRAMP_LISPDIR%%/tramp-cmds.el
 %%TRAMP_LISPDIR%%/tramp-cmds.elc
 %%TRAMP_LISPDIR%%/tramp-compat.el
@@ -25,15 +17,9 @@
 %%TRAMP_LISPDIR%%/tramp-sh.elc
 %%TRAMP_LISPDIR%%/tramp-smb.el
 %%TRAMP_LISPDIR%%/tramp-smb.elc
-@comment %%TRAMP_LISPDIR%%/tramp-util.el
-@comment %%TRAMP_LISPDIR%%/tramp-util.elc
 %%TRAMP_LISPDIR%%/tramp-uu.el
 %%TRAMP_LISPDIR%%/tramp-uu.elc
-@comment %%TRAMP_LISPDIR%%/tramp-vc.el
-@comment %%TRAMP_LISPDIR%%/tramp-vc.elc
 %%TRAMP_LISPDIR%%/tramp.el
 %%TRAMP_LISPDIR%%/tramp.elc
-%%TRAMP_LISPDIR%%/tramp-cache.el
-%%TRAMP_LISPDIR%%/tramp-cache.elc
 %%TRAMP_LISPDIR%%/trampver.el
 %%TRAMP_LISPDIR%%/trampver.elc

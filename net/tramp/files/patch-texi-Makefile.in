@@ -6,17 +6,8 @@
  		  $(if $(findstring yes, @INSTALL_CHAPTER@), trampinst.texi)
 -INFO_FILES	= $(localinfodir)/tramp
 -INSTALL_FILES	= $(DESTDIR)$(infodir)/tramp
-+INFO_FILES	= $(localinfodir)/tramp21.info
-+INSTALL_FILES	= $(DESTDIR)$(infodir)/tramp21.info
++INFO_FILES	= $(localinfodir)/tramp.info
++INSTALL_FILES	= $(DESTDIR)$(infodir)/tramp.info
  CLEAN_FILES	= @TRAMP_CLEAN_FILES@ $(wildcard $(localinfodir)/*)
  
  # To be used by maintainer only.
-@@ -59,7 +59,7 @@
- 
- tramp: $(INFO_FILES) $(localinfodir)/dir
- 
--install: tramp $(INSTALL_FILES) $(DESTDIR)$(infodir)/dir
-+install: tramp $(INSTALL_FILES)
- 
- clean:
- 	$(RM) $(CLEAN_FILES)
