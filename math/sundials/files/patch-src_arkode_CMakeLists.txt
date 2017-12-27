@@ -1,0 +1,22 @@
+--- src/arkode/CMakeLists.txt.orig	2017-11-07 23:47:45 UTC
++++ src/arkode/CMakeLists.txt
+@@ -112,6 +112,19 @@ IF(BUILD_SHARED_LIBS)
+     TARGET_LINK_LIBRARIES(sundials_arkode_shared m)
+   ENDIF()
+ 
++
++  IF(UNIX)
++    TARGET_LINK_LIBRARIES(sundials_arkode_shared m)
++  ENDIF()
++
++  IF(LAPACK_FOUND)
++    TARGET_LINK_LIBRARIES(sundials_arkode_shared ${LAPACK_LIBRARIES})
++  ENDIF()
++
++  IF(KLU_FOUND)
++    TARGET_LINK_LIBRARIES(sundials_arkode_shared ${KLU_LIBRARIES})
++  ENDIF ()
++
+   # Set the library name and make sure it is not deleted
+   SET_TARGET_PROPERTIES(sundials_arkode_shared
+     PROPERTIES OUTPUT_NAME sundials_arkode CLEAN_DIRECT_OUTPUT 1)
