@@ -25,6 +25,10 @@ LIB_DEPENDS=	libpng.so:graphics/png
 LIB_DEPENDS+=	libvpx.so:multimedia/libvpx
 .endif
 
+.ifdef PKGNAMESUFFIX
+PORTSCOUT=	ignore:1
+.endif
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	DCurrent
 GH_TAGNAME?=	21f884c
