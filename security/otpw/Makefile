@@ -16,6 +16,7 @@ USERS=		${PORTNAME}
 
 MAKE_ARGS=	CC="${CC}"
 USES=		gmake
+LLD_UNSAFE=	yes	# lld lacks built-in search paths
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/otpw-gen ${STAGEDIR}${PREFIX}/bin
