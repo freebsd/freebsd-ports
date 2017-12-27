@@ -18,6 +18,7 @@ LIB_DEPENDS=	libgmp.so:math/gmp
 
 USES=		perl5
 USE_PERL5=	configure
+LLD_UNSAFE=	yes	# lld defaults to -ztext
 
 PARI_WRKSRC=	${WRKDIR}/pari-2.3.5
 
