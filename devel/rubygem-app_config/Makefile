@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	app_config
-PORTVERSION=	2.5.3
+PORTVERSION=	2.6.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
