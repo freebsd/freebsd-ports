@@ -23,6 +23,7 @@ include/GL/internal/dri_interface.h
 @comment include/GLES3/gl3platform.h
 @comment include/KHR/khrplatform.h
 @comment include/gbm.h
+%%INTEL_VDRIVER%%include/vulkan/vulkan_intel.h
 %%I915_DRIVER%%lib/dri/i915_dri.so
 %%I965_DRIVER%%lib/dri/i965_dri.so
 %%FREEDRENO_GDRIVER%%lib/dri/kgsl_dri.so
@@ -80,6 +81,8 @@ include/GL/internal/dri_interface.h
 %%VDPAU%%%%RADEONSI_GDRIVER%%lib/vdpau/libvdpau_radeonsi.so.1
 %%VDPAU%%%%RADEONSI_GDRIVER%%lib/vdpau/libvdpau_radeonsi.so.1.0
 %%VDPAU%%%%RADEONSI_GDRIVER%%lib/vdpau/libvdpau_radeonsi.so.1.0.0
+%%INTEL_VDRIVER%%lib/libvulkan_intel.so
+%%RADEON_VDRIVER%%lib/libvulkan_radeon.so
 @comment lib/libwayland-egl.so
 @comment lib/libwayland-egl.so.1
 @comment lib/libwayland-egl.so.1.0.0
@@ -90,3 +93,5 @@ libdata/pkgconfig/dri.pc
 @comment libdata/pkgconfig/glesv2.pc
 @comment libdata/pkgconfig/osmesa.pc
 @comment libdata/pkgconfig/wayland-egl.pc
+%%INTEL_VDRIVER%%share/vulkan/icd.d/intel_icd.%%ARCH%%.json
+%%RADEON_VDRIVER%%share/vulkan/icd.d/radeon_icd.%%ARCH%%.json
