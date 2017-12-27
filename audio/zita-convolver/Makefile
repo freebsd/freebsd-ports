@@ -16,9 +16,9 @@ LICENSE_FILE=	${WRKSRC}/../COPYING
 BUILD_DEPENDS=	${LOCALBASE}/include/fftw3.h:math/fftw3
 LIB_DEPENDS=	libfftw3f.so:math/fftw3-float
 
-BROKEN_aarch64=		fails to compile: c++: the clang compiler does not support '-march=native'
-BROKEN_armv6=		fails to compile: c++: the clang compiler does not support '-march=native'
-BROKEN_armv7=		fails to compile: c++: the clang compiler does not support '-march=native'
+#BROKEN_aarch64=		fails to compile: c++: the clang compiler does not support '-march=native'
+#BROKEN_armv6=		fails to compile: c++: the clang compiler does not support '-march=native'
+#BROKEN_armv7=		fails to compile: c++: the clang compiler does not support '-march=native'
 
 USES=		compiler:c++11-lib gmake localbase:ldflags tar:bz2
 USE_LDCONFIG=	yes

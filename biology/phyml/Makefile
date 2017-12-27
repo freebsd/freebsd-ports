@@ -13,9 +13,9 @@ COMMENT=	Simple, fast, and accurate algorithm to estimate large phylogenies
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_aarch64=		fails to compile: c++: the clang compiler does not support '-march=native'
-BROKEN_armv6=		fails to compile: c++: the clang compiler does not support '-march=native'
-BROKEN_armv7=		fails to compile: c++: the clang compiler does not support '-march=native'
+#BROKEN_aarch64=		fails to compile: c++: the clang compiler does not support '-march=native'
+#BROKEN_armv6=		fails to compile: c++: the clang compiler does not support '-march=native'
+#BROKEN_armv7=		fails to compile: c++: the clang compiler does not support '-march=native'
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	stephaneguindon
@@ -50,6 +50,9 @@ BIN_SUFFIX=		# none
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|-O2 .* $${ARCH_flag}|$${CFLAGS}|' ${WRKSRC}/configure.ac
+.if ${ARCH} != amd64 && ${ARCH} != i386
+	@${REINPLACE_CMD} -e 's|VECTOR_FLAG=-march=native|dnl &|' ${WRKSRC}/configure.ac
+.endif
 	@${REINPLACE_CMD} -e 's|malloc.h|stdlib.h|' ${WRKSRC}/src/utilities.h
 
 post-install-DOCS-on:
