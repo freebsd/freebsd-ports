@@ -498,7 +498,6 @@
     SUBDIR += nyancat
     SUBDIR += nylon
     SUBDIR += ocserv
-    SUBDIR += ohphone
     SUBDIR += olsrd
     SUBDIR += omnitty
     SUBDIR += onenetd
@@ -509,7 +508,6 @@
     SUBDIR += openbgpd
     SUBDIR += openbsc
     SUBDIR += openggsn
-    SUBDIR += openh323
     SUBDIR += openldap24-client
     SUBDIR += openldap24-sasl-client
     SUBDIR += openldap24-server

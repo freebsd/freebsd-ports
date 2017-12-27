@@ -4129,7 +4129,6 @@
     SUBDIR += pure-stldict
     SUBDIR += pure-stllib
     SUBDIR += pushmi
-    SUBDIR += pwlib
     SUBDIR += py-Acquisition
     SUBDIR += py-AddOns
     SUBDIR += py-Automat
