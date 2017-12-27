@@ -3,7 +3,7 @@
 
 PORTNAME=	abcde
 PORTVERSION=	2.8.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://abcde.einval.com/download/
 
@@ -16,14 +16,14 @@ LICENSE_COMB=	dual
 RUN_DEPENDS=	cd-discid:audio/cd-discid \
 		cdparanoia:audio/cdparanoia \
 		lame:audio/lame \
-		${PYTHON_PKGNAMEPREFIX}eyed3>=0.7:audio/py-eyed3@${PY_FLAVOR} \
+		eyeD3:audio/py-eyed3 \
 		oggenc:audio/vorbis-tools \
 		bash:shells/bash
 
 NO_ARCH=	yes
 NO_BUILD=	yes
 
-USES=		python:run shebangfix
+USES=		shebangfix
 SHEBANG_FILES=	abcde abcde-musicbrainz-tool cddb-tool
 
 SUB_FILES=	pkg-message
