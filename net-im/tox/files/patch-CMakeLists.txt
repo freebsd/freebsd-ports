@@ -1,0 +1,26 @@
+--- CMakeLists.txt.orig	2017-12-27 18:43:18 UTC
++++ CMakeLists.txt
+@@ -349,23 +349,6 @@ if(NOT SPECTEST)
+   endif()
+ endif()
+ 
+-if(MSGPACK_FOUND)
+-  add_c_executable(toxcore-sut
+-    testing/hstox/binary_decode.c
+-    testing/hstox/binary_encode.c
+-    testing/hstox/driver.c
+-    testing/hstox/methods.c
+-    testing/hstox/packet_kinds.c
+-    testing/hstox/test_main.c
+-    testing/hstox/util.c)
+-  target_link_modules(toxcore-sut
+-    toxcore
+-    ${MSGPACK_LIBRARIES})
+-  if(SPECTEST)
+-    add_test(NAME spectest COMMAND ${SPECTEST} $<TARGET_FILE:toxcore-sut>)
+-  endif()
+-endif()
+-
+ ################################################################################
+ #
+ # :: Automated regression tests
