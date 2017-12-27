@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	pandas
-DISTVERSION=	0.21.0
+DISTVERSION=	0.21.1
 CATEGORIES=	math devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,25 +16,6 @@ RUN_DEPENDS:=	${BUILD_DEPENDS} \
 		${PYTHON_PKGNAMEPREFIX}dateutil>=1.5:devel/py-dateutil@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytz>0:devel/py-pytz@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${FLAVOR}
-TEST_DEPENDS:=	${RUN_DEPENDS} \
-		nosetests-${PYTHON_VER}:devel/py-nose \
-		${PYTHON_PKGNAMEPREFIX}sqlalchemy10>0:databases/py-sqlalchemy10@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}boto>0:devel/py-boto@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}lxml>0:devel/py-lxml@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}tables>=3.0.0:devel/py-tables@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}bottleneck>0:math/py-bottleneck@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}matplotlib>0:math/py-matplotlib@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}numexpr>=2.4.6:math/py-numexpr@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}scipy>0:science/py-scipy@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}openpyxl>=2.2.0:textproc/py-openpyxl@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}xlrd>0:textproc/py-xlrd@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}xlwt>0:textproc/py-xlwt@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}XlsxWriter>0:textproc/py-xlsxwriter@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}beautifulsoup>0:www/py-beautifulsoup@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}html5lib>0:www/py-html5lib@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}Jinja2>0:devel/py-Jinja2@${FLAVOR}
-# Note: we cannot include math/py-statsmodels in TEST_DEPENDS because it
-# depends upon us for BUILD and RUN.
 
 OPTIONS_DEFINE=		MPL SCIPY
 OPTIONS_GROUP=		ACCEL STORAGE HTML EXCEL
@@ -45,6 +26,9 @@ OPTIONS_GROUP_HTML=	LXML HTML5LIB JINJA2
 OPTIONS_GROUP_EXCEL=	XLRD XLWT OPENPYXL XLSX
 OPTIONS_RADIO_SQL=	ALCHEMY10 ALCHEMY11
 OPTIONS_DEFAULT=	BTLNCK NUMEXPR
+
+# Note: we cannot include math/py-statsmodels in *_DEPENDS because it
+# depends upon us for BUILD and RUN.
 
 MPL_DESC=	Support graphical plotting output via math/py-matplotlib
 SCIPY_DESC=	Support various statistical functions via science/py-scipy
@@ -95,26 +79,10 @@ SUB_FILES=	pkg-message
 
 # Official support for 2.7, 3.5, and 3.6
 USES=		python
-USE_PYTHON=	autoplist distutils cython
-
-# Uncomment the following line to enable regression-test
-# on a headless (X11-less) host (eg: RedPorts)
-#USES+=		display:regression-test
-
-XUNITFILE=	${WRKDIR}/nosetests.xml
-NOSE_ENV=	http_proxy=${HTTP_PROXY}
-NOSE_ARGS=	${PORTNAME} --exe --with-xunit --xunit-file=${XUNITFILE}
+USE_PYTHON=	autoplist distutils
 
 post-install:
 	@${FIND} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR} \
 		-name '*.so' -exec ${STRIP_CMD} {} +
-
-regression-test: build
-	@(cd ${WRKSRC} && \
-		${PYTHON_CMD} ${PYSETUP} build_ext --inplace && \
-		${PYTHON_CMD} -c 'import pandas.util.print_versions as pv; pv.show_versions()' && \
-		( ${SETENV} ${NOSE_ENV} nosetests-${PYTHON_VER} ${NOSE_ARGS} || ${TRUE} ) && \
-		${PYTHON_CMD} ${SCRIPTDIR}/print_skipped.py ${XUNITFILE} \
-	)
 
 .include <bsd.port.mk>
