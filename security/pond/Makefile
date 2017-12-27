@@ -22,6 +22,8 @@ LIB_DEPENDS=	libgtkspell.so:textproc/gtkspell \
 		libtspi.so:security/trousers
 
 BROKEN=		wrong build depends
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2018-01-27
 
 USES=		go
 PLIST_FILES=	bin/pond-server bin/pond

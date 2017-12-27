@@ -14,6 +14,8 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BROKEN=		fails to build
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2018-01-27
 
 LIB_DEPENDS=	liblo.so:audio/liblo \
 		liblrdf.so:textproc/liblrdf \

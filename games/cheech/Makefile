@@ -16,6 +16,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libgnet-2.0.so:net/gnet2
 
 BROKEN=		fails to compile: ustring.h: expected ';' at end of declaration list
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2018-01-27
 
 OPTIONS_DEFINE=	DOCS
 

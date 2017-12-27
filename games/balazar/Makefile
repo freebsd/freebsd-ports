@@ -23,6 +23,8 @@ RUN_DEPENDS=	soya_editor:graphics/py-soya3d@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}twisted>=0:devel/py-twisted@${FLAVOR}
 
 BROKEN=		fails to package: pkg-static: py27-twisted-17.5.0_1 conflicts with py27-twistedCore-15.2.1 (installs files into the same place)
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2018-01-27
 NO_ARCH=	yes
 
 USES=		gettext python:2.7 tar:bzip2

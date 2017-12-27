@@ -15,6 +15,8 @@ LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN=		conflicting dependencies
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2018-01-27
 
 LIB_DEPENDS=	libcal3d.so:graphics/cal3d \
 		libfreetype.so:print/freetype2

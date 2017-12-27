@@ -14,6 +14,8 @@ LIB_DEPENDS=	libvorbis.so:audio/libvorbis \
 		libao.so:audio/libao
 
 BROKEN=		fails to compile: trackable.h: expected ';' at end of declaration list
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2018-01-27
 
 USES=		pathfix pkgconfig libtool
 GNU_CONFIGURE=	yes

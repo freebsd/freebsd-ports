@@ -16,6 +16,8 @@ USES=		dos2unix python shebangfix
 SHEBANG_FILES=	examples/*.py
 USE_PYTHON=	distutils autoplist
 BROKEN=		checksum mismatch
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2018-01-27
 
 PORTDOCS=	InlineEgg.html Changelog README
 PORTEXAMPLES=	*

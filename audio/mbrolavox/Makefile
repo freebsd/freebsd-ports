@@ -12,6 +12,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Voices for MBROLA voice synthesizer
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2018-01-27
 
 USES=		zip:infozip
 NO_BUILD=	yes

@@ -10,6 +10,8 @@ MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	Security-enhancing Java/JS filtering extension
 
 BROKEN=		checksum mismatch
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2018-01-27
 XPI_ID=		{73a6fe31-595d-460b-a920-fcc0f8843232}
 XPI_NUM=	722
 

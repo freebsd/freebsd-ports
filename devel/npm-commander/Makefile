@@ -11,6 +11,9 @@ COMMENT=	node.js command-line interfaces made easy
 
 LICENSE=	APACHE20
 
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2018-01-27
+
 BUILD_DEPENDS=	npm>=0:www/npm
 RUN_DEPENDS=	npm>=0:www/npm \
 		${LOCALBASE}/lib/node_modules/graceful-readlink/index.js:devel/npm-graceful-readlink

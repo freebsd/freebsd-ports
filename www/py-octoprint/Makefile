@@ -44,6 +44,8 @@ USES=		python:2.7
 
 USE_PYTHON=	autoplist distutils
 BROKEN=		checksum mismatch
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2018-01-27
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	kevans91

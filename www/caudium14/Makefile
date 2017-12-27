@@ -12,6 +12,9 @@ DISTNAME=	Caudium-${CAUDIUMVERSION}
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Free webserver based on the Roxen Challenger 1.3 code base
 
+DEPRECATED=	Depends on expiring lang/pike78
+EXPIRATION_DATE=	2018-01-27
+
 BUILD_DEPENDS=	pike78:lang/pike78
 LIB_DEPENDS=	libsablot.so:textproc/sablotron
 RUN_DEPENDS=	lsof:sysutils/lsof

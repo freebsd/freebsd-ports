@@ -21,6 +21,8 @@ BUILD_DEPENDS=	pear-Symfony_Component_Console>=1.1.0:devel/pear-Symfony_Componen
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 BROKEN=		unfetchable, redirects to https://phpunit.de/
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2018-01-27
 
 USE_PHP=	tokenizer
 PEAR_CHANNEL=	phpunit
