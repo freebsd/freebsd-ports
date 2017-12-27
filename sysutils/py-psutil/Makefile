@@ -16,6 +16,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mock>=0:devel/py-mock@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}unittest2>=0:devel/py-unittest2@${FLAVOR}
 
+CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}psutil121
+
 USE_PYTHON=	autoplist concurrent distutils
 USES=		python
 
