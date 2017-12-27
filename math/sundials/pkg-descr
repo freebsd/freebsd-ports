@@ -1,0 +1,11 @@
+SUNDIALS is a SUite of Nonlinear and DIfferential/ALgebraic equation Solvers.
+It consists of the following six solvers: CVODE, solves initial value problems
+for ordinary differential equation (ODE) systems; CVODES, solves ODE systems and
+includes sensitivity analysis capabilities (forward and adjoint); ARKODE, solves
+initial value ODE problems with additive Runge-Kutta methods, include support
+for IMEX methods; IDA, solves initial value problems for differential-algebraic
+equation (DAE) systems; IDAS, solves DAE systems and includes sensitivity
+analysis capabilities (forward and adjoint); KINSOL, solves nonlinear algebraic
+systems.
+
+WWW: https://computation.llnl.gov/projects/sundials
