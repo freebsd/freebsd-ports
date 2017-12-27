@@ -15,12 +15,12 @@ LICENSE_FILE=	${WRKSRC}/Copying.txt
 
 CONFLICTS=	mldonkey{-{core,gui},}-devel-[0-9]*
 
-USES=		iconv tar:bzip2 gmake
-USE_AUTOTOOLS=	autoconf:env
+USES=		autoreconf iconv tar:bzip2 gmake
 USE_OCAML=	yes
 USE_OCAML_CAMLP4=yes
 GNU_CONFIGURE=	yes
 ALL_TARGET=	opt
+AUTORECONF_WRKSRC=	${WRKSRC}/config
 MAKE_ENV+=	OCAMLRUNPARAM="l=256M"
 MAKE_JOBS_UNSAFE=	yes
 
@@ -106,12 +106,10 @@ post-patch:
 		${FILESDIR}/wrapper.sh > \
 		${WRKDIR}/wrapper.sh
 	@${REINPLACE_CMD} -E \
-		-e 's|%%AUTOCONF%%|${AUTOCONF}|' \
-		${BUILD_WRKSRC}/config/Makefile.in
-	@${REINPLACE_CMD} -E \
 		-e 's@(\+)(lablgtk2)@\1site-lib/\2@' \
 		-e 's@(\+)(labl\$$\(GTK\))@\1site-lib/\2@' \
 		-e 's@(OCAMLLIB/)(\$$LABLGTK_NAME)@\1site-lib/\2@' \
+		-e 's@(AC_DEFINE\([^,]*,[^,]*,)\)@\1 desc)@' \
 		${WRKSRC}/config/configure.in \
 		${WRKSRC}/config/Makefile.in
 	@${REINPLACE_CMD} -E \
@@ -123,9 +121,6 @@ post-patch:
 		-e 's|http://www.bluetack.co.uk/config/antip2p.txt|http://www.bluetack.co.uk/config/level1.gz|' \
 		${WRKSRC}/src/daemon/common/commonOptions.ml \
 		${WRKSRC}/src/networks/donkey/donkeyServers.ml
-
-pre-configure:
-	@cd ${WRKSRC}/config && ${AUTOCONF}
 
 do-install:
 .if ${PORT_OPTIONS:MCORE}
