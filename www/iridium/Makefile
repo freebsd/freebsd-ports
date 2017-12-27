@@ -16,7 +16,7 @@ LICENSE=	BSD3CLAUSE LGPL21 MPL11
 LICENSE_COMB=	multi
 
 BUILD_DEPENDS=	gperf:devel/gperf \
-		clang40:devel/llvm40 \
+		clang50:devel/llvm50 \
 		yasm:devel/yasm \
 		python:lang/python \
 		ffmpeg>=3.2.2,1:multimedia/ffmpeg \
@@ -72,8 +72,8 @@ MAKE_ARGS=	-C out/${BUILDTYPE}
 ALL_TARGET=	chrome
 INSTALLS_ICONS=	yes
 
-CC=		clang40
-CXX=		clang++40
+CC=		clang50
+CXX=		clang++50
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-clang
 
 # Run "./out/${BUILDTYPE}/gn args out/${BUILDTYPE} --list" for all variables.
