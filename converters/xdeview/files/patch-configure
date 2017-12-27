@@ -1,11 +1,11 @@
---- configure.orig	Thu Jan  9 08:22:00 1997
-+++ configure	Thu Nov  4 11:29:23 1999
-@@ -3148,7 +3148,7 @@
+--- configure.orig	2004-03-01 23:06:18 UTC
++++ configure
+@@ -2447,7 +2447,7 @@ EOF
  
  fi
  
 -for ac_hdr in fcntl.h unistd.h memory.h malloc.h errno.h direct.h
 +for ac_hdr in fcntl.h unistd.h memory.h errno.h direct.h
  do
- ac_safe=`echo "$ac_hdr" | tr './\055' '___'`
+ ac_safe=`echo "$ac_hdr" | sed 'y%./+-%__p_%'`
  echo $ac_n "checking for $ac_hdr""... $ac_c" 1>&6

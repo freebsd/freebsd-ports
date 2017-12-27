@@ -1,5 +1,5 @@
---- tcl/uutcl.c.orig	Sat Feb 19 18:56:55 2005
-+++ tcl/uutcl.c	Sat Feb 19 18:57:08 2005
+--- tcl/uutcl.c.orig	2002-03-06 13:52:45 UTC
++++ tcl/uutcl.c
 @@ -48,14 +48,6 @@
  #include <tcl.h>
  #endif
