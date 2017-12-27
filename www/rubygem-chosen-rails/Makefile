@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	chosen-rails
-PORTVERSION=	1.5.2
+PORTVERSION=	1.8.2
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
