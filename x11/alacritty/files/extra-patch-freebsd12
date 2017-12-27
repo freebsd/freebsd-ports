@@ -1,7 +1,7 @@
 https://github.com/jwilm/alacritty/issues/618
 
---- cargo-crates/libc-0.2.30/src/unix/bsd/freebsdlike/freebsd/aarch64.rs.orig	2017-08-27 15:32:17 UTC
-+++ cargo-crates/libc-0.2.30/src/unix/bsd/freebsdlike/freebsd/aarch64.rs
+--- cargo-crates/libc-0.2.34/src/unix/bsd/freebsdlike/freebsd/aarch64.rs.orig	2017-08-27 15:32:17 UTC
++++ cargo-crates/libc-0.2.34/src/unix/bsd/freebsdlike/freebsd/aarch64.rs
 @@ -7,10 +7,12 @@ s! {
      pub struct stat {
          pub st_dev: ::dev_t,
@@ -35,8 +35,8 @@ https://github.com/jwilm/alacritty/issues/618
      }
  }
  
---- cargo-crates/libc-0.2.30/src/unix/bsd/freebsdlike/freebsd/mod.rs.orig	2017-08-27 15:32:17 UTC
-+++ cargo-crates/libc-0.2.30/src/unix/bsd/freebsdlike/freebsd/mod.rs
+--- cargo-crates/libc-0.2.34/src/unix/bsd/freebsdlike/freebsd/mod.rs.orig	2017-08-27 15:32:17 UTC
++++ cargo-crates/libc-0.2.34/src/unix/bsd/freebsdlike/freebsd/mod.rs
 @@ -1,8 +1,8 @@
  pub type fflags_t = u32;
  pub type clock_t = i32;
@@ -64,8 +64,8 @@ https://github.com/jwilm/alacritty/issues/618
          pub d_name: [::c_char; 256],
      }
  
---- cargo-crates/libc-0.2.30/src/unix/bsd/freebsdlike/freebsd/x86.rs.orig	2017-08-27 05:14:57 UTC
-+++ cargo-crates/libc-0.2.30/src/unix/bsd/freebsdlike/freebsd/x86.rs
+--- cargo-crates/libc-0.2.34/src/unix/bsd/freebsdlike/freebsd/x86.rs.orig	2017-08-27 05:14:57 UTC
++++ cargo-crates/libc-0.2.34/src/unix/bsd/freebsdlike/freebsd/x86.rs
 @@ -7,25 +7,30 @@ s! {
      pub struct stat {
          pub st_dev: ::dev_t,
@@ -103,8 +103,8 @@ https://github.com/jwilm/alacritty/issues/618
 +        pub st_spare: [::uint64_t; 10],
      }
  }
---- cargo-crates/libc-0.2.30/src/unix/bsd/freebsdlike/freebsd/x86_64.rs.orig	2017-08-27 15:32:17 UTC
-+++ cargo-crates/libc-0.2.30/src/unix/bsd/freebsdlike/freebsd/x86_64.rs
+--- cargo-crates/libc-0.2.34/src/unix/bsd/freebsdlike/freebsd/x86_64.rs.orig	2017-08-27 15:32:17 UTC
++++ cargo-crates/libc-0.2.34/src/unix/bsd/freebsdlike/freebsd/x86_64.rs
 @@ -7,10 +7,12 @@ s! {
      pub struct stat {
          pub st_dev: ::dev_t,
@@ -138,8 +138,8 @@ https://github.com/jwilm/alacritty/issues/618
      }
  }
  
---- cargo-crates/libc-0.2.30/src/unix/bsd/freebsdlike/mod.rs.orig	2017-08-27 15:32:17 UTC
-+++ cargo-crates/libc-0.2.30/src/unix/bsd/freebsdlike/mod.rs
+--- cargo-crates/libc-0.2.34/src/unix/bsd/freebsdlike/mod.rs.orig	2017-08-27 15:32:17 UTC
++++ cargo-crates/libc-0.2.34/src/unix/bsd/freebsdlike/mod.rs
 @@ -1,4 +1,4 @@
 -pub type dev_t = u32;
 +pub type dev_t = u64;
@@ -169,8 +169,8 @@ https://github.com/jwilm/alacritty/issues/618
              });
      }
  
---- cargo-crates/mio-0.6.10/src/sys/unix/kqueue.rs.orig	2017-07-30 20:12:31 UTC
-+++ cargo-crates/mio-0.6.10/src/sys/unix/kqueue.rs
+--- cargo-crates/mio-0.6.11/src/sys/unix/kqueue.rs.orig	2017-07-30 20:12:31 UTC
++++ cargo-crates/mio-0.6.11/src/sys/unix/kqueue.rs
 @@ -44,6 +44,7 @@ macro_rules! kevent {
              fflags: 0,
              data: 0,
