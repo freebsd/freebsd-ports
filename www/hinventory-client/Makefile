@@ -11,6 +11,8 @@ MAINTAINER=	tom@h-inventory.com
 COMMENT=	H-Inventory Client for FreeBSD
 
 BROKEN=		does not fetch, upstream gone
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2018-01-27
 
 NO_BUILD=	yes
 NO_ARCH=	yes

@@ -11,6 +11,8 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN=		tries to clone git repository during build phase
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2018-01-27
 
 BUILD_DEPENDS=	rust>=1.19.0_2:lang/rust \
 		portaudio>0:audio/portaudio

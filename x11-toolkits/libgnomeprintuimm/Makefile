@@ -12,6 +12,8 @@ MAINTAINER=	bland@FreeBSD.org
 COMMENT=	C++ wrappers for the GNOME print support library
 
 BROKEN=		fails to build
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2018-01-27
 
 LIB_DEPENDS=	libgtkmm-2.4.so:x11-toolkits/gtkmm24 \
 		libgnomeprintmm-2.5.so:print/libgnomeprintmm

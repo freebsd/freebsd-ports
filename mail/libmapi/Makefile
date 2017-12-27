@@ -57,6 +57,8 @@ DOXYGEN_CONFIGURE_ENV_OFF=	ac_cv_path_DOXYGEN=""
 PLIST_SUB=	SAMBA=${SAMBAPORT:T}
 
 BROKEN=		fails to build
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2018-01-27
 
 #  --enable-openchange-qt4 Compile OpenChange Qt4 wrapper.
 

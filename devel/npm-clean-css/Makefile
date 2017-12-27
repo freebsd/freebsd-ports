@@ -11,6 +11,9 @@ COMMENT=	Fast and efficient CSS optimizer for node.js and the Web
 
 LICENSE=	APACHE20
 
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2018-01-27
+
 BUILD_DEPENDS=	npm>=0:www/npm
 RUN_DEPENDS=	npm>=0:www/npm \
 		${LOCALBASE}/lib/node_modules/source-map/source-map.js:devel/npm-source-map \

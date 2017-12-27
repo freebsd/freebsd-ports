@@ -14,6 +14,9 @@ EXTRACT_SUFX=	.zip
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MBROLA speech synthesizer for Linux
 
+DEPRECATED=	Depends on expiring audio/mbrolavox
+EXPIRATION_DATE=	2018-01-27
+
 RUN_DEPENDS=	mbrolavox>0:audio/mbrolavox
 
 CONFLICTS=	mbrola-*

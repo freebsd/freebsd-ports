@@ -11,6 +11,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Instrument editor for gig files
 
 BROKEN=		fails to build
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2018-01-27
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

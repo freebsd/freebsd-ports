@@ -16,6 +16,9 @@ COMMENT=	Rule-based Dispatching and Generic Functions
 LICENSE=	PSFL ZPL21
 LICENSE_COMB=	dual
 
+DEPRECATED=	Depends on expiring devel/py-protocols-devel
+EXPIRATION_DATE=	2018-01-27
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Extremes>=1.1:devel/py-extremes@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}PyProtocols>=1.0.a0.r2302:devel/py-protocols-devel@${FLAVOR}
 

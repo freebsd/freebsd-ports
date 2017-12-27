@@ -14,6 +14,8 @@ COMMENT=	Arcade Emulator for M68000, M68020 and Z80 based hardware
 LICENSE=	ART10
 
 BROKEN=		fails to link
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2018-01-27
 
 BUILD_DEPENDS=	nasm>0:devel/nasm
 LIB_DEPENDS=	libpng.so:graphics/png
