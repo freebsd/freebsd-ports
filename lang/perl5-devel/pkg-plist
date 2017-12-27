@@ -1003,6 +1003,7 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%MAN1%%/perl5275delta.1.gz
 %%MAN1%%/perl5276delta.1.gz
 %%MAN1%%/perl5277delta.1.gz
+%%MAN1%%/perl5278delta.1.gz
 %%MAN1%%/perl561delta.1.gz
 %%MAN1%%/perl56delta.1.gz
 %%MAN1%%/perl581delta.1.gz
@@ -1805,6 +1806,7 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%PRIV_LIB%%/pod/perl5275delta.pod
 %%PRIV_LIB%%/pod/perl5276delta.pod
 %%PRIV_LIB%%/pod/perl5277delta.pod
+%%PRIV_LIB%%/pod/perl5278delta.pod
 %%PRIV_LIB%%/pod/perl561delta.pod
 %%PRIV_LIB%%/pod/perl56delta.pod
 %%PRIV_LIB%%/pod/perl581delta.pod
@@ -2011,6 +2013,7 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%PRIV_LIB%%/unicore/To/Vo.pl
 %%PRIV_LIB%%/unicore/To/WB.pl
 %%PRIV_LIB%%/unicore/To/_PerlLB.pl
+%%PRIV_LIB%%/unicore/To/_PerlSCX.pl
 %%PRIV_LIB%%/unicore/To/_PerlWB.pl
 %%PRIV_LIB%%/unicore/UCD.pl
 %%PRIV_LIB%%/unicore/lib/Age/NA.pl
