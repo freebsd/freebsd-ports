@@ -11,6 +11,15 @@
  
  
  MAJVERS = 3
+@@ -33,7 +33,7 @@ VERSION = $(MAJVERS).$(MINVERS)
+ CPPFLAGS += -I. -D_REENTRANT -D_POSIX_PTHREAD_SEMANTICS -DENABLE_VECTOR_MODE 
+ CXXFLAGS += -fPIC -Wall
+ CXXFLAGS += -ffast-math -funroll-loops -O3
+-CXXFLAGS += -march=native
++#CXXFLAGS += -march=native
+ LDLFAGS += 
+ LDLIBS +=
+ 
 @@ -45,9 +45,10 @@ ZITA-CONVOLVER_DEP = -lfftw3f -lpthread
  ZITA-CONVOLVER_O = zita-convolver.o
  ZITA-CONVOLVER_H = zita-convolver.h 

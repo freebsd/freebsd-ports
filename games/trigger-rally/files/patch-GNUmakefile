@@ -1,5 +1,14 @@
 --- GNUmakefile.orig	2016-11-05 17:27:10 UTC
 +++ GNUmakefile
+@@ -21,7 +21,7 @@ SRCFILES        := $(shell find $(PROJDI
+ OBJFILES        := $(patsubst %.cpp, %.o, $(SRCFILES))
+ DEPFILES        := $(patsubst %.cpp, %.d, $(SRCFILES))
+ WARNINGS        ?= -Wall -Wextra -pedantic
+-OPTIMS          ?= -march=native -mtune=native -Ofast
++OPTIMS          ?= -mtune=native -Ofast
+ DMACROS         := -DNDEBUG -DUNIX -DPACKAGE_VERSION=\"$(DISTVER)\"
+ INCDIRS         := -I'./include'
+ CXXFLAGS        += -std=c++11 $(WARNINGS) $(OPTIMS)
 @@ -125,7 +125,7 @@ $(TR_EXEFILE): $(OBJFILES)
  		printf "\t%s\n" $$file; \
  		done;
