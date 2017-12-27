@@ -2,26 +2,23 @@
 # $FreeBSD$
 
 PORTNAME=	txamqp
-PORTVERSION=	0.3
-PORTREVISION=	4
+PORTVERSION=	0.8.1
 CATEGORIES=	net python
-MASTER_SITES=	http://launchpadlibrarian.net/30388120/ \
-		# http://launchpad.net/txamqp/trunk/${PORTVERSION}/+download/
+MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	python-${PORTNAME}_${PORTVERSION}.orig
+DISTNAME=	txAMQP-${PORTVERSION}
 
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Twisted Python library for the AMQP messaging protocol
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}thrift>=0:devel/py-thrift@${FLAVOR} \
+LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+xRUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>=0:devel/py-six@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}twisted>=0:devel/py-twisted@${FLAVOR}
 
 NO_ARCH=	yes
-USES=		python:2
+USES=		python
 USE_PYTHON=	autoplist distutils
-
-WRKSRC=		${WRKDIR}/python-${PORTNAME}-${PORTVERSION}
-
-# TODO: Install txAMQP examples.
 
 .include <bsd.port.mk>
