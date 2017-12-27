@@ -1,2 +1,3 @@
-SHA256 (python-txamqp_0.3.orig.tar.gz) = c3900aa1e837711a06a881ae76f575af66f9e3d562bfe8ca22918477325050e4
-SIZE (python-txamqp_0.3.orig.tar.gz) = 153402
+TIMESTAMP = 1514380295
+SHA256 (txAMQP-0.8.1.tar.gz) = 3328a6f5020dc017e149bc281689b3618c13622df11b1164e041d7db1851e7d1
+SIZE (txAMQP-0.8.1.tar.gz) = 39544
