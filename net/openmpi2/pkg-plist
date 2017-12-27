@@ -83,7 +83,7 @@
 %%MPIDIR%%/lib/libmpi.la
 %%MPIDIR%%/lib/libmpi.so
 %%MPIDIR%%/lib/libmpi.so.20
-%%MPIDIR%%/lib/libmpi.so.20.10.1
+%%MPIDIR%%/lib/libmpi.so.20.10.2
 %%MPIDIR%%/lib/libmpi_cxx.la
 %%MPIDIR%%/lib/libmpi_cxx.so
 %%MPIDIR%%/lib/libmpi_cxx.so.20
@@ -91,11 +91,11 @@
 %%MPIDIR%%/lib/libmpi_mpifh.la
 %%MPIDIR%%/lib/libmpi_mpifh.so
 %%MPIDIR%%/lib/libmpi_mpifh.so.20
-%%MPIDIR%%/lib/libmpi_mpifh.so.20.11.0
+%%MPIDIR%%/lib/libmpi_mpifh.so.20.11.1
 %%MPIDIR%%/lib/libmpi_usempi.la
 %%MPIDIR%%/lib/libmpi_usempi.so
 %%MPIDIR%%/lib/libmpi_usempi.so.20
-%%MPIDIR%%/lib/libmpi_usempi.so.20.10.0
+%%MPIDIR%%/lib/libmpi_usempi.so.20.10.1
 %%MPIDIR%%/lib/libompitrace.la
 %%MPIDIR%%/lib/libompitrace.so
 %%MPIDIR%%/lib/libompitrace.so.20
@@ -103,11 +103,11 @@
 %%MPIDIR%%/lib/libopen-pal.la
 %%MPIDIR%%/lib/libopen-pal.so
 %%MPIDIR%%/lib/libopen-pal.so.20
-%%MPIDIR%%/lib/libopen-pal.so.20.10.1
+%%MPIDIR%%/lib/libopen-pal.so.20.10.2
 %%MPIDIR%%/lib/libopen-rte.la
 %%MPIDIR%%/lib/libopen-rte.so
 %%MPIDIR%%/lib/libopen-rte.so.20
-%%MPIDIR%%/lib/libopen-rte.so.20.10.1
+%%MPIDIR%%/lib/libopen-rte.so.20.10.2
 %%MPIDIR%%/lib/mpi.mod
 %%MPIDIR%%/lib/openmpi/libompi_dbg_msgq.la
 %%MPIDIR%%/lib/openmpi/libompi_dbg_msgq.so
@@ -752,7 +752,6 @@
 %%MPIDIR%%/%%DATADIR%%/help-dash-host.txt
 %%MPIDIR%%/%%DATADIR%%/help-errmgr-base.txt
 %%MPIDIR%%/%%DATADIR%%/help-ess-base.txt
-%%MPIDIR%%/%%DATADIR%%/help-ess-hnp.txt
 %%MPIDIR%%/%%DATADIR%%/help-hostfile.txt
 %%MPIDIR%%/%%DATADIR%%/help-mca-base.txt
 %%MPIDIR%%/%%DATADIR%%/help-mca-bml-r2.txt
