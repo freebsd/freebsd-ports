@@ -234,9 +234,6 @@ share/icons/hicolor/64x64/apps/kodi.png
 %%DATADIR%%/addons/metadata.common.fanart.tv/addon.xml
 %%DATADIR%%/addons/metadata.common.fanart.tv/fanarttv.xml
 %%DATADIR%%/addons/metadata.common.fanart.tv/icon.png
-%%DATADIR%%/addons/metadata.common.htbackdrops.com/addon.xml
-%%DATADIR%%/addons/metadata.common.htbackdrops.com/htbackdrops.xml
-%%DATADIR%%/addons/metadata.common.htbackdrops.com/icon.png
 %%DATADIR%%/addons/metadata.common.imdb.com/addon.xml
 %%DATADIR%%/addons/metadata.common.imdb.com/changelog.txt
 %%DATADIR%%/addons/metadata.common.imdb.com/icon.png
@@ -2272,6 +2269,7 @@ share/icons/hicolor/64x64/apps/kodi.png
 %%DATADIR%%/system/keyboardlayouts/greek.xml
 %%DATADIR%%/system/keyboardlayouts/hebrew.xml
 %%DATADIR%%/system/keyboardlayouts/hungarian.xml
+%%DATADIR%%/system/keyboardlayouts/icelandic.xml
 %%DATADIR%%/system/keyboardlayouts/italian.xml
 %%DATADIR%%/system/keyboardlayouts/korean.xml
 %%DATADIR%%/system/keyboardlayouts/lithuanian.xml

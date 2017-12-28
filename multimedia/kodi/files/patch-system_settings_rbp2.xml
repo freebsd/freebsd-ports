@@ -1,5 +1,5 @@
---- ./system/settings/rbp2.xml.orig	2016-11-24 09:26:41 UTC
-+++ ./system/settings/rbp2.xml
+--- system/settings/rbp2.xml.orig	2017-11-14 16:55:01 UTC
++++ system/settings/rbp2.xml
 @@ -4,7 +4,7 @@
      <category id="videoplayer">
        <group id="3">

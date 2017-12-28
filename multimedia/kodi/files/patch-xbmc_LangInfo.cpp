@@ -1,6 +1,6 @@
---- xbmc/LangInfo.cpp.orig	2016-02-20 15:21:19 UTC
+--- xbmc/LangInfo.cpp.orig	2017-11-14 16:55:01 UTC
 +++ xbmc/LangInfo.cpp
-@@ -282,8 +282,8 @@ void CLangInfo::CRegion::SetGlobalLocale
+@@ -284,8 +284,8 @@ void CLangInfo::CRegion::SetGlobalLocale()
    // decimal separator is changed depending of the current language
    // (ie. "," in French or Dutch instead of "."). This breaks atof() and
    // others similar functions.

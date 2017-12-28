@@ -1,4 +1,4 @@
---- tools/depends/target/ffmpeg/autobuild.sh.orig	2016-10-08 UTC
+--- tools/depends/target/ffmpeg/autobuild.sh.orig	2017-11-14 16:55:01 UTC
 +++ tools/depends/target/ffmpeg/autobuild.sh
 @@ -1,4 +1,4 @@
 -#!/bin/bash
@@ -6,7 +6,7 @@
  #
  #      Copyright (C) 2005-2013 Team XBMC
  #      http://xbmc.org
-@@ -27,7 +27,8 @@ BASE_URL=$(grep "BASE_URL=" FFMPEG-VERSI
+@@ -27,7 +27,8 @@ BASE_URL=$(grep "BASE_URL=" FFMPEG-VERSION | sed 's/BA
  VERSION=$(grep "VERSION=" FFMPEG-VERSION | sed 's/VERSION=//g')
  ARCHIVE=ffmpeg-$(echo "${VERSION}" | sed 's/\//-/g').tar.gz
  
@@ -16,7 +16,7 @@
    echo "usage $(basename $0) 
         [-p | --prefix]    ... ffmepg install prefix
         [-d | --download]  ... no build, download tarfile only
-@@ -82,6 +83,46 @@ do
+@@ -87,6 +88,46 @@ do
        FLAGS="$FLAGS --extra-cxxflags=\"${1#*=}\""
        shift
        ;;
@@ -63,7 +63,7 @@
      -j)
        BUILDTHREADS=$2
        shift 2
-@@ -100,7 +141,7 @@ do
+@@ -105,7 +146,7 @@ do
    esac
  done
  
@@ -72,7 +72,7 @@
  [ ${BUILDTHREADS} -eq 0 ] && BUILDTHREADS=1
  
  [ -z ${VERSION} ] && exit 3
-@@ -110,12 +151,12 @@ then
+@@ -115,12 +156,12 @@ then
    [ "$VERSION" == "$CURVER" ] && exit 0
  fi
  
@@ -89,7 +89,7 @@
  if [ -d ${FFMPEG_PREFIX} ]
  then
    [ -w ${FFMPEG_PREFIX} ] || SUDO="sudo"
-@@ -123,9 +164,9 @@ else
+@@ -128,9 +169,9 @@ else
    [ -w $(dirname ${FFMPEG_PREFIX}) ] || SUDO="sudo"
  fi
  
@@ -102,7 +102,7 @@
  
  CFLAGS="$CFLAGS" CXXFLAGS="$CXXFLAGS" LDFLAGS="$LDFLAGS" \
  ./configure --prefix=$FFMPEG_PREFIX \
-@@ -162,11 +203,11 @@ CFLAGS="$CFLAGS" CXXFLAGS="$CXXFLAGS" LD
+@@ -167,11 +208,11 @@ CFLAGS="$CFLAGS" CXXFLAGS="$CXXFLAGS" LDFLAGS="$LDFLAG
  	--disable-mipsdspr2 \
          ${FLAGS}
  
