@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	openarena
-DISTVERSION=	${GAMEVERSION}.s${SVNREVISION}
-PORTREVISION=	3
-PORTEPOCH=	1
+PORTVERSION=	${GAMEVERSION}.s${SVNREVISION}
+PORTEPOCH=	2
 MASTER_SITES=	SF/oarena/src \
 		http://files.poulsander.com/~poul19/public_files/oa/dev088/
 DISTNAME=	${PORTNAME}-engine-source-${GAMEVERSION}
