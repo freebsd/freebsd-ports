@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	kodi
-DISTVERSION=	17.3
-PORTREVISION=	5
+DISTVERSION=	17.6
 CATEGORIES=	multimedia java
 
 MAINTAINER=	mickael.maillot@gmail.com
@@ -77,14 +76,14 @@ CONFIGURE_ENV=	OPENSSL_LIBS="-L${OPENSSLLIB}" \
 		OPENSSL_CFLAGS="-I${OPENSSLINC}"
 
 KODI_CODENAME=		Krypton
-FFMPEG_VERS=		3.1.6
+FFMPEG_VERS=		3.1.11
 LIBDVDCSS_TAGNAME=	2f12236
 LIBDVDNAV_TAGNAME=	981488f
 LIBDVDREAD_TAGNAME=	17d99db
 
 USE_GITHUB=	yes
 GH_TUPLE=	xbmc:xbmc:${PORTVERSION}-${KODI_CODENAME} \
-		xbmc:FFmpeg:${FFMPEG_VERS}-${KODI_CODENAME}:ffmpeg/tools/depends/target/ffmpeg \
+		xbmc:FFmpeg:${FFMPEG_VERS}-${KODI_CODENAME}-17.5:ffmpeg/tools/depends/target/ffmpeg \
 		xbmc:libdvdcss:${LIBDVDCSS_TAGNAME}:libdvdcss/tools/depends/target/libdvdcss/native \
 		xbmc:libdvdnav:${LIBDVDNAV_TAGNAME}:libdvdnav/tools/depends/target/libdvdnav/native \
 		xbmc:libdvdread:${LIBDVDREAD_TAGNAME}:libdvdread/tools/depends/target/libdvdread/native

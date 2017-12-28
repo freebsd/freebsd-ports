@@ -1,4 +1,4 @@
---- xbmc/cores/VideoPlayer/Process/overrides/linux/ProcessInfoLinux.cpp.orig	2017-03-04 19:48:40 UTC
+--- xbmc/cores/VideoPlayer/Process/overrides/linux/ProcessInfoLinux.cpp.orig	2017-11-14 16:55:01 UTC
 +++ xbmc/cores/VideoPlayer/Process/overrides/linux/ProcessInfoLinux.cpp
 @@ -22,7 +22,7 @@
  #include "threads/SingleLock.h"

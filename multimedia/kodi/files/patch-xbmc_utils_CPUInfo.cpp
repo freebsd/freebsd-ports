@@ -1,6 +1,6 @@
---- xbmc/utils/CPUInfo.cpp.orig	2016-04-24 UTC
+--- xbmc/utils/CPUInfo.cpp.orig	2017-11-14 16:55:01 UTC
 +++ xbmc/utils/CPUInfo.cpp
-@@ -584,6 +584,14 @@ bool CCPUInfo::getTemperature(CTemperatu
+@@ -604,6 +604,14 @@ bool CCPUInfo::getTemperature(CTemperature& temperatur
  #if defined(TARGET_DARWIN_OSX)
    value = SMCGetTemperature(SMC_KEY_CPU_TEMP);
    scale = 'c';
@@ -15,13 +15,13 @@
  #else
    int         ret   = 0;
    FILE        *p    = NULL;
-@@ -937,6 +945,9 @@ bool CCPUInfo::HasNeon()
- #elif defined(TARGET_DARWIN_IOS)
-   has_neon = 1;
+@@ -955,6 +963,9 @@ bool CCPUInfo::HasNeon()
+     has_neon = (CAndroidFeatures::HasNeon()) ? 1 : 0;
  
-+#elif defined(__FreeBSD__) && defined(__ARM_NEON__)
+ #elif defined(TARGET_DARWIN_IOS)
 +  has_neon = 1;
 +
++#elif defined(__FreeBSD__) && defined(__ARM_NEON__)
+   has_neon = 1;
+ 
  #elif defined(TARGET_LINUX) && defined(__ARM_NEON__)
-   if (has_neon == -1)
-   {
