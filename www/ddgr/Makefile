@@ -4,6 +4,7 @@
 PORTNAME=	ddgr
 PORTVERSION=	1.2
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	www
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -18,7 +19,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>=0:www/py-requests@${PY_FLAVOR} \
 USE_GITHUB=	yes
 GH_ACCOUNT=	jarun
 
-USES=		python:3.4+
+USES=		python:3.4+ shebangfix
+SHEBANG_FILES=	${PORTNAME}
 NO_ARCH=	yes
 NO_BUILD=	yes
 
