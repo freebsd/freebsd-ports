@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	darktable
-PORTVERSION=	2.2.5
-PORTREVISION=	4
+PORTVERSION=	2.4.0
 CATEGORIES=	graphics
 MASTER_SITES=	https://github.com/darktable-org/${PORTNAME}/releases/download/release-${PORTVERSION:C/\.rc/rc/}/
 
@@ -71,7 +70,7 @@ GRAPHMAGICK_CMAKE_OFF=	-DUSE_GRAPHICSMAGICK:BOOL=OFF
 LIBSECRET_LIB_DEPENDS=	libsecret-1.so:security/libsecret
 LIBSECRET_CMAKE_OFF=	-DUSE_LIBSECRET:BOOL=OFF
 
-LUA_USES=		lua:52
+LUA_USES=		lua:53
 LUA_CMAKE_OFF=		-DUSE_LUA:BOOL=OFF
 
 # FIXME: Even with NLS turned off, darktable(1) is still linked to
@@ -97,8 +96,8 @@ WEBP_CMAKE_OFF=		-DUSE_WEBP:BOOL=OFF
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == amd64 && ${CHOSEN_COMPILER_TYPE} == clang
-# Enable OpenMP support with Clang 4.0.
-LLVM_VER=	40
+# Enable OpenMP support with Clang 5.0.
+LLVM_VER=	50
 BUILD_DEPENDS+=	clang${LLVM_VER}:devel/llvm${LLVM_VER}
 
 CPP=		clang-cpp${LLVM_VER}
