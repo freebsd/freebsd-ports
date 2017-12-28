@@ -33,6 +33,7 @@ lib/syncplay/resources/key_go.png
 lib/syncplay/resources/lock.png
 lib/syncplay/resources/lock_open.png
 lib/syncplay/resources/lua/intf/syncplay.lua
+lib/syncplay/resources/mpc-be.png
 lib/syncplay/resources/mpc-hc.png
 lib/syncplay/resources/mpc-hc64.png
 lib/syncplay/resources/mplayer.png
@@ -61,6 +62,7 @@ lib/syncplay/syncplay/messages_ru.py
 lib/syncplay/syncplay/players/__init__.py
 lib/syncplay/syncplay/players/basePlayer.py
 lib/syncplay/syncplay/players/mpc.py
+lib/syncplay/syncplay/players/mpcbe.py
 lib/syncplay/syncplay/players/mplayer.py
 lib/syncplay/syncplay/players/mpv.py
 lib/syncplay/syncplay/players/playerFactory.py
@@ -75,8 +77,9 @@ lib/syncplay/syncplay/ui/__init__.py
 lib/syncplay/syncplay/ui/consoleUI.py
 lib/syncplay/syncplay/ui/gui.py
 lib/syncplay/syncplay/utils.py
+lib/syncplay/syncplay/vendor/Qt.py
 lib/syncplay/syncplay/vendor/__init__.py
-lib/syncplay/syncplay/vendor/qt4reactor.py
+lib/syncplay/syncplay/vendor/qt5reactor.py
 %%CLIENT%%%%VLC%%lib/vlc/lua/intf/syncplay.lua
 share/app-install/icons/syncplay.png
 %%CLIENT%%share/applications/syncplay.desktop
