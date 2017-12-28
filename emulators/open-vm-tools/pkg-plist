@@ -55,7 +55,6 @@ share/vmware-tools/vm-support
 %%DATADIR%%/messages/ko/toolboxcmd.vmsg
 %%DATADIR%%/messages/ko/vmtoolsd.vmsg
 %%DATADIR%%/messages/zh_CN/toolboxcmd.vmsg
-@rmtry share/vmware-tools/tools.conf
 @rmtry etc/vmware-tools/plugins
 etc/pam.d/vmtoolsd
 @dir %%DATADIR%%/scripts/vmware
