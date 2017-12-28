@@ -1,0 +1,14 @@
+Many libraries in compiled languages such as C or C++ provide ".pc" files to
+specify the flags required for compiling and linking against those libraries.
+Traditionally, the command line program "pkg-config" is used to query these
+files. PkgConfig::LibPkgConf provides a Perl level API using "libpkgconf" to
+these files.
+
+PkgConfig::LibPkgConf provides a simplified interface for getting the existence,
+version, cflags and library flags needed for compiling against a package, using
+the default compiled in configuration of "pkgconf". For a more powerful, but
+complicated interface see PkgConfig::LibPkgConf::Client. In addition,
+PkgConfig::LibPkgConf::Util provides some useful utility functions that are also
+provided by "pkgconf".
+
+WWW: http://search.cpan.org/dist/PkgConfig-LibPkgConf/
