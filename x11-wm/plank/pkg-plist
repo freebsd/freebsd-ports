@@ -35,6 +35,7 @@ share/icons/hicolor/64x64/apps/plank.svg
 %%NLS%%share/locale/eu/LC_MESSAGES/plank.mo
 %%NLS%%share/locale/fi/LC_MESSAGES/plank.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/plank.mo
+%%NLS%%share/locale/ga/LC_MESSAGES/plank.mo
 %%NLS%%share/locale/gd/LC_MESSAGES/plank.mo
 %%NLS%%share/locale/gl/LC_MESSAGES/plank.mo
 %%NLS%%share/locale/he/LC_MESSAGES/plank.mo
