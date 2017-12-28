@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	ShellCheck
-PORTVERSION=	0.4.6
+PORTVERSION=	0.4.7
 CATEGORIES=	devel haskell
 
 MAINTAINER=	pizzamig@FreeBSD.org
