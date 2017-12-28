@@ -3,7 +3,7 @@
 
 PORTNAME=	gazpacho
 PORTVERSION=	0.7.2
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	devel python
 MASTER_SITES=	GNOME/sources/gazpacho/${PORTVERSION:R}
 
@@ -28,6 +28,9 @@ OPTIONS_DEFINE=	DOCS EXAMPLES
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|share/doc/gazpacho/examples|${EXAMPLESDIR}|g' ${WRKSRC}/setup.py
+
+post-install:
+	${INSTALL_DATA} ${WRKSRC}/gazpacho.desktop ${STAGEDIR}${PREFIX}/share/applications/
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
