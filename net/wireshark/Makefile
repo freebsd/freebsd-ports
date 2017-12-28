@@ -3,7 +3,7 @@
 
 PORTNAME?=	wireshark
 PORTVERSION=	2.4.3
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.wireshark.org/download/src/ \
 		http://ftp.uni-kl.de/pub/wireshark/src/ \
@@ -40,8 +40,7 @@ LIB_DEPENDS+=	libgpg-error.so:security/libgpg-error \
 		libgcrypt.so:security/libgcrypt \
 		liblz4.so:archivers/liblz4 \
 		libnghttp2.so:www/libnghttp2 \
-		libsnappy.so:archivers/snappy \
-		libspandsp.so:comms/spandsp
+		libsnappy.so:archivers/snappy
 
 CFLAGS+=	-funit-at-a-time
 LIBS+=		-L${LOCALBASE}/lib
@@ -92,7 +91,8 @@ KRB_BASE_USES=		gssapi
 KRB_HEIMDAL_USES=	gssapi:heimdal
 KRB_MIT_USES=		gssapi:mit
 
-RTP_LIB_DEPENDS=	libportaudio.so:audio/portaudio
+RTP_LIB_DEPENDS=	libportaudio.so:audio/portaudio \
+    			libspandsp.so:comms/spandsp
 RTP_CPPFLAGS=		-I${LOCALBASE}/include
 SNMP_LIB_DEPENDS=	libsmi.so:net-mgmt/libsmi
 CARES_LIB_DEPENDS=	libcares.so:dns/c-ares
@@ -110,7 +110,7 @@ GTK2_CONFIGURE_ON=	--with-gtk=2 --with-qt=no
 GTK3_CONFIGURE_ON=	--with-gtk=3 --with-qt=no
 QT5_CONFIGURE_ON=	--with-qt=5 --with-gtk=no
 LUA_CONFIGURE_WITH=	lua
-RTP_CONFIGURE_WITH=	portaudio
+RTP_CONFIGURE_WITH=	portaudio spandsp
 SNMP_CONFIGURE_WITH=	libsmi
 CARES_CONFIGURE_WITH=	c-ares
 GEOIP_CONFIGURE_WITH=	geoip
