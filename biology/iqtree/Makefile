@@ -2,8 +2,7 @@
 
 PORTNAME=	iqtree
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.6.beta4
-PORTREVISION=	1
+DISTVERSION=	1.6.1
 CATEGORIES=	biology
 
 MAINTAINER=	jrm@FreeBSD.org
@@ -12,12 +11,12 @@ COMMENT=	Efficient phylogenomic software by maximum likelihood
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_aarch64=	fails to compile: unrecognized command line option '-msse3'
+BROKEN_armv6=	fails to compile: unrecognized command line options '-m32' and '-msse3'
+BROKEN_armv7=	fails to compile: unrecognized command line options '-m32' and '-msse3'
+
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/eigen3.pc:math/eigen3
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/eigen3.pc:math/eigen3
-
-BROKEN_aarch64=		fails to compile: unrecognized command line option '-msse3'
-BROKEN_armv6=		fails to compile: unrecognized command line options '-m32' and '-msse3'
-BROKEN_armv7=		fails to compile: unrecognized command line options '-m32' and '-msse3'
 
 USES=		cmake compiler:openmp
 USE_GITHUB=	yes
