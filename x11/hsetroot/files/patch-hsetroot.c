@@ -17,6 +17,24 @@
      " -tile <image>              Render an image tiled\n"
      " -full <image>              Render an image maximum aspect\n"
      " -extend <image>            Render an image max aspect and fill borders\n"
+@@ -165,7 +166,7 @@ parse_color(char *arg, PColor c, int a)
+ int
+ load_image(ImageMode mode, const char *arg, int alpha, Imlib_Image rootimg, OutputInfo *outputs, int noutputs)
+ {
+-  int imgW, imgH, o;
++  int i, imgW, imgH, o;
+   Imlib_Image buffer = imlib_load_image(arg);
+ 
+   if (!buffer)
+@@ -193,7 +194,7 @@ load_image(ImageMode mode, const char *arg, int alpha,
+ 
+   imlib_context_set_image(rootimg);
+ 
+-  for (int i = 0; i < noutputs; i++) {
++  for (i = 0; i < noutputs; i++) {
+     OutputInfo o = outputs[i];
+     printf("output %d: size(%d, %d) pos(%d, %d)\n", i, o.w, o.h, o.x, o.y);
+ 
 @@ -229,6 +230,20 @@ load_image(ImageMode mode, const char *arg, int alpha,
            }
          }
