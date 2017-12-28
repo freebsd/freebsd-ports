@@ -13,6 +13,8 @@ COMMENT?=	OCAML client for multiple peer-to-peer networks
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/Copying.txt
 
+BUILD_DEPENDS=	${LOCALBASE}/share/aclocal/ax_pthread.m4:devel/autoconf-archive
+
 CONFLICTS=	mldonkey{-{core,gui},}-devel-[0-9]*
 
 USES=		autoreconf iconv tar:bzip2 gmake
