@@ -15,7 +15,7 @@
 # was removed.
 #
 # $FreeBSD$
-# $MCom: portlint/portlint.pl,v 1.432 2017/12/07 03:23:53 jclarke Exp $
+# $MCom: portlint/portlint.pl,v 1.443 2017/12/28 23:42:15 jclarke Exp $
 #
 
 use strict;
@@ -50,7 +50,7 @@ $portdir = '.';
 # version variables
 my $major = 2;
 my $minor = 17;
-my $micro = 14;
+my $micro = 15;
 
 # default setting - for FreeBSD
 my $portsdir = '/usr/ports';
@@ -153,7 +153,7 @@ my @varlist =  qw(
 	WRKDIR WRKSRC NO_WRKSUBDIR SCRIPTDIR FILESDIR
 	PKGDIR COMMENT DESCR PLIST PKGCATEGORY PKGINSTALL PKGDEINSTALL
 	PKGREQ PKGMESSAGE DISTINFO_FILE .CURDIR USE_LDCONFIG USE_AUTOTOOLS
-	USE_GNOME USE_PERL5 INDEXFILE PKGORIGIN CONFLICTS PKG_VERSION
+	USE_GNOME USE_PERL5 USE_QT5 INDEXFILE PKGORIGIN CONFLICTS PKG_VERSION
 	PLIST_FILES PLIST_DIRS PORTDOCS PORTEXAMPLES
 	OPTIONS_DEFINE OPTIONS_RADIO OPTIONS_SINGLE OPTIONS_MULTI
 	OPTIONS_GROUP OPTIONS_SUB INSTALLS_OMF USE_RC_SUBR USES DIST_SUBDIR
@@ -218,7 +218,7 @@ my $ulineno = -1;
 my $uulineno = -1;
 my @muses = ();
 while (my $mline = <MK>) {
-	if ($uulineno == -1 && $mline =~ /^USE_/ && $mline !~ /^USE_GITHUB/) {
+	if ($uulineno == -1 && $mline =~ /^USE_/) {
 		$uulineno = $.;
 	}
     if ($mline =~ /^USES[?+]?=\s*(.*)/) {
@@ -558,6 +558,7 @@ sub checkplist {
 	my $item_count = 0;
 	my $owner_seen = 0;
 	my $group_seen = 0;
+	my $found_so = 0;
 
 	# Variables that are allowed to be out-of-sync in the XXXDIR check.
 	# E.g., %%PORTDOCS%%%%RUBY_MODDOCDIR%% will be OK because there is
@@ -773,10 +774,13 @@ sub checkplist {
 			$makevar{USE_LDCONFIG} eq '') {
 			&perror("WARN", $file, $., "installing shared libraries, ".
 				"please define USE_LDCONFIG as appropriate");
+		} elsif ($_ =~ m|lib[^\/]+\.so(\.\d+)?$|) {
+			$found_so++;
 		}
 
 		if ($_ =~ m|^share/icons/.*/| &&
-			$makevar{INSTALLS_ICONS} eq '') {
+			$makevar{INSTALLS_ICONS} eq '' &&
+			needs_installs_icons()) {
 			&perror("WARN", $file, $., "installing icons, ".
 				"please define INSTALLS_ICONS as appropriate");
 		}
@@ -902,6 +906,11 @@ sub checkplist {
 
 	if (!$seen_special && $item_count < $numpitems) {
 		&perror("WARN", $file, -1, "There are only $item_count items in the plist.  Consider using PLIST_FILES instead of pkg-plist when installing less than $numpitems items.");
+	}
+
+	if ($makevar{USE_LDCONFIG} ne '' && !$found_so) {
+		&perror("WARN", $file, -1, "You have defined USE_LDCONFIG, but this ".
+			"port does not install any shared objects.");
 	}
 
 	close(IN);
@@ -1074,6 +1083,7 @@ sub check_depends_syntax {
 			if ($k =~ /^#/) {
 				last;
 			}
+			my $ok = $k;
 			if ($k =~ /^\$\{(\w+)\}$/) {
 				$k = get_makevar($1);
 			}
@@ -1084,8 +1094,8 @@ sub check_depends_syntax {
 
 			print "OK: checking dependency value for $j.\n"
 				if ($verbose);
-			if ($k =~ /\$\{((PATCH_|EXTRACT_|LIB_|BUILD_|RUN_|TEST_|FETCH_)*DEPENDS)}/) {
-				&perror("WARN", $file, -1, "do not set $j to $k. ".
+			if ($ok =~ /\$\{((PATCH_|EXTRACT_|LIB_|BUILD_|RUN_|TEST_|FETCH_)*DEPENDS)}/) {
+				&perror("WARN", $file, -1, "do not set $j to $ok. ".
 					"Instead, explicity list out required $j dependencies.");
 			}
 
@@ -1099,7 +1109,7 @@ sub check_depends_syntax {
 			}
 			my %m = ();
 			$m{'dep'} = $l[0];
-			$m{'dir'} = $l[1];
+			$m{'dir'} = (split(/\@/, $l[1]))[0];
 			$m{'tgt'} = $l[2] // '';
 			my %depmvars = ();
 			foreach my $dv ($m{'dep'}, $m{'dir'}, $m{'tgt'}) {
@@ -1474,9 +1484,14 @@ sub checkmakefile {
 					"If possible, install this file with a different name.");
 			}
 			if ($plist_file =~ m|^share/icons/.*/| &&
-				$makevar{INSTALLS_ICONS} eq '') {
+				$makevar{INSTALLS_ICONS} eq '' &&
+		        needs_installs_icons()) {
 				&perror("WARN", "", -1, "PLIST_FILES: installing icons, ".
 					"please define INSTALLS_ICONS as appropriate");
+			}
+			if ($plist_file =~ /%%[\w_\d]+%%/) {
+				&perror("FATAL", "", -1, "PLIST_FILES: files cannot contain ".
+					"%%FOO%% variables.  Use make variables and logic instead");
 			}
 
 		}
@@ -1650,6 +1665,20 @@ sub checkmakefile {
 		my %seen = ();
 		@popt = grep { !$seen{$_}++ } @popt;
 	}
+	foreach my $i (@popt) {
+		if ($i eq 'PORTDOCS') {
+			if (!grep(/^DOCS$/, @opt)) {
+				&perror("FATAL", $file, -1, "PORTDOCS appears in plist ".
+					"but DOCS is not listed in OPTIONS_DEFINE.");
+			}
+		} elsif ($i eq 'PORTEXAMPLES') {
+			if (!grep(/^EXAMPLES$/, @opt)) {
+				&perror("FATAL", $file, -1, "PORTEXAMPLES appears in plist ".
+					"but EXAMPLES is not listed in OPTIONS_DEFINE.");
+			}
+		}
+	}
+
 	foreach my $i ((@opt, @aopt)) {
 		# skip global options
 		next if ($i eq 'DOCS' or $i eq 'NLS' or $i eq 'EXAMPLES' or $i eq 'IPV6' or $i eq 'X11' or $i eq 'DEBUG');
@@ -1820,6 +1849,14 @@ sub checkmakefile {
 	if ($makevar{USE_GNOME} =~ /pkgconfig/) {
 		&perror("WARN", $file, -1, "USE_GNOME=pkgconfig is now obsolete. ".
 			"Use USES[+]=pkgconfig instead.");
+	}
+
+	#
+	# whole file: using INSTALLS_ICONS when it is not wanted
+	#
+	if (!($makevar{INSTALLS_ICONS} eq '') &&
+		!needs_installs_icons()) {
+		&perror("WARN", $file, -1, "INSTALLS_ICONS is set, but should not be.");
 	}
 
 	#
@@ -1999,8 +2036,8 @@ xargs xmkmf
 				&& $curline !~ /^CATEGORIES(.)?=[^\n]+$i/m
 				&& $curline !~ /^(\w+)?USES(.)?=[^\n]+$i/m
 				&& $curline !~ /^WX_COMPS(.)?=[^\n]+$i/m
-				&& $curline !~ /^ONLY_FOR_ARCHS_REASON(.)?=[^\n]+$i/m
-				&& $curline !~ /^NOT_FOR_ARCHS_REASON(.)?=[^\n]+$i/m
+				&& $curline !~ /^ONLY_FOR_ARCHS_REASON(_[\w\d]+)?(.)?=[^\n]+$i/m
+				&& $curline !~ /^NOT_FOR_ARCHS_REASON(_[\w\d]+)?(.)?=[^\n]+$i/m
 				&& $curline !~ /^SHEBANG_FILES(.)?=[^\n]+$i/m
 				&& $curline !~ /^[A-Z0-9_]+_DESC=[^\n]+$i/m
 				&& $curline !~ /^\s*#.+$/m
@@ -2182,6 +2219,17 @@ xargs xmkmf
 	if ($whole =~ /^USE_GNOME[?:]?=\s*(.*)$/m) {
 		if ($1 =~ /gnomehack/) {
 			$use_gnome_hack = 1;
+		}
+	}
+
+	#
+	# whole file: USE_KDE check
+	#
+	if ($whole =~ /^USE_KDE[?:]?=\s*(.*)$/m) {
+		if ($makevar{USES} !~ /\bkde:5/) {
+			my $lineno = &linenumber($`);
+			&perror("WARN", $file, $lineno, "USE_KDE is defined without ".
+				"defining USES=kde:5");
 		}
 	}
 
@@ -3569,6 +3617,13 @@ sub urlcheck {
 				"extra \":\".");
 	}
 }
+
+# GNOME wants INSTALL_ICONS, but Qt-based applications, including KDE, don't.
+# Be pessimistic: everything needs it unless we know it doesn't.
+sub needs_installs_icons {
+	return $makevar{USE_QT5} eq ''
+}
+
 sub TRUE {1;}
 
 # Local variables:
