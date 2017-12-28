@@ -1,9 +1,9 @@
---- ./lib/Makefile.in.orig	2013-11-17 13:45:58.000000000 +0000
-+++ ./lib/Makefile.in	2014-07-03 14:52:41.000000000 +0000
-@@ -684,7 +684,6 @@
- noinst_LTLIBRARIES = libplank-internal.la
+--- lib/Makefile.in.orig	2017-03-27 19:50:52 UTC
++++ lib/Makefile.in
+@@ -767,7 +767,6 @@ noinst_LTLIBRARIES = libplank-internal.la
  libplank_internal_la_CFLAGS = \
  	$(AM_CFLAGS) \
+ 	-fPIC \
 -	-fvisibility=internal \
  	$(NULL)
  
