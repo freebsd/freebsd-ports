@@ -2,12 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	chef
-PORTVERSION=	13.2.20
-PORTREVISION=	3
+PORTVERSION=	13.6.4
 CATEGORIES=	sysutils
 MASTER_SITES=	RG
 
-MAINTAINER=	renchap@cocoa-x.com
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Systems integration framework. Client part
 
 LICENSE=	APACHE20
@@ -15,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-addressable>=0:www/rubygem-addressable \
 		rubygem-bundler>=1.10:sysutils/rubygem-bundler \
-		rubygem-chef-config>=13.2.20:sysutils/rubygem-chef-config \
+		rubygem-chef-config>=${PORTVERSION}:sysutils/rubygem-chef-config \
 		rubygem-chef-zero>=13.0:sysutils/rubygem-chef-zero \
 		rubygem-diff-lcs>=1.2.4:textproc/rubygem-diff-lcs \
 		rubygem-erubis>=2.7:www/rubygem-erubis \
@@ -53,6 +52,9 @@ USE_RC_SUBR=	chef_client
 SHEBANG_FILES=	spec/functional/assets/chefinittest \
 		spec/functional/assets/testchefsubsys
 SHEBANG_LANG=	ksh
+
+post-patch:
+	@${REINPLACE_CMD} -e '1d' ${WRKSRC}/spec/data/apt/chef-integration-test*/debian/rules
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/distro/common/man/man1/*.1 ${STAGEDIR}${MANPREFIX}/man/man1/
