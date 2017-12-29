@@ -12,7 +12,7 @@ COMMENT=	Django REST framework
 
 LICENSE=	BSD2CLAUSE
 
-USES=		python:2.7+
+USES=		python
 USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

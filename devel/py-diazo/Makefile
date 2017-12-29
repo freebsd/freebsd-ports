@@ -20,7 +20,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>0:devel/py-lxml@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}webob>=0:www/py-webob@${FLAVOR}
 
 NO_ARCH=	yes
-USES=		python:2.7+
+USES=		python
 USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>

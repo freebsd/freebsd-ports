@@ -15,7 +15,7 @@ LICENSE=	MIT
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Flask>=0.10:www/py-flask@${FLAVOR}
 
 NO_ARCH=	yes
-USES=		python:2.7+
+USES=		python
 USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

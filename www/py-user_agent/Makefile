@@ -14,7 +14,7 @@ LICENSE=	MIT
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six@${FLAVOR}
 
 NO_ARCH=	yes
-USES=		python:2.7+
+USES=		python
 USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>

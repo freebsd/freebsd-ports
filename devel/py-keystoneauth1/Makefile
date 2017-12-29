@@ -21,7 +21,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}iso8601>=0.1.11:devel/py-iso8601@${FLAVOR} \
 
 NO_ARCH=	yes
 
-USES=		python:2.7+
+USES=		python
 USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>

@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	postfix:mail/postfix
 
 NO_ARCH=	yes
-USES=		python:2.7+
+USES=		python
 USE_PYTHON=	autoplist distutils concurrent
 
 PLIST_FILES=	man/man1/pqshell.1.gz

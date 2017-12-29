@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>=1.10:devel/py-six@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}funcsigs>=1.0.2:devel/py-funcsigs@${FLAVOR}
 
-USES=		python:2.7+
+USES=		python
 USE_PYTHON=	autoplist distutils
 
 USE_GITHUB=	yes

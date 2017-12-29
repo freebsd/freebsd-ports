@@ -18,7 +18,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dnspython>=0:dns/py-dnspython@${PY_FLAVOR} \
 USE_GITHUB=	yes
 GH_ACCOUNT=	darkoperator
 
-USES=		python:2.7+ shebangfix
+USES=		python shebangfix
 NO_BUILD=	yes
 NO_ARCH=	yes
 

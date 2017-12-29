@@ -13,7 +13,7 @@ MAINTAINER=	jnlin@freebsd.cs.nctu.edu.tw
 COMMENT=	Port of the serialize and unserialize functions of PHP to Python
 
 NO_ARCH=	yes
-USES=		python:2.7+
+USES=		python
 USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>

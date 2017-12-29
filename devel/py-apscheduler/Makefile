@@ -21,7 +21,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=2.5.1:devel/py-pytest@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-capturelog>=0.7:devel/py-pytest-capturelog@${FLAVOR}
 
 NO_ARCH=	yes
-USES=		python:2.7+
+USES=		python
 USE_PYTHON=	autoplist distutils
 TEST_ENV=	${MAKE_ENV} TZ=UTC
 

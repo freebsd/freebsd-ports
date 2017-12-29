@@ -25,7 +25,7 @@ RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}openssl>=16.0.0:security/py-openssl@${FLAVO
 
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mock>=0:devel/py-mock@${FLAVOR}
 
-USES=		python:2.7+	# Actually 2.7+,3.3+
+USES=		python
 USE_PYTHON=	autoplist distutils
 
 NO_ARCH=	yes
