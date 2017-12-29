@@ -10,8 +10,10 @@ PKGNAMESUFFIX=	06
 MAINTAINER=	renchap@cocoa-x.com
 COMMENT=	Unified interface to key/value stores
 
-NO_ARCH=	yes
+DEPRECATED=	Use devel/rubygem-moneta instead
+EXPIRATION_DATE=2018-01-31
 
+NO_ARCH=	yes
 USE_RUBY=	yes
 USES=		gem
 
