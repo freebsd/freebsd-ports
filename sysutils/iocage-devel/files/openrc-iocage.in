@@ -22,13 +22,13 @@ depend()
 start()
 {
 	ebegin "Starting $name"
-	%%PREFIX%%/sbin/iocage rcboot
+	%%PREFIX%%/bin/iocage rcboot
 	eend $?
 }
 
 stop()
 {
 	ebegin "Stopping $name"
-	%%PREFIX%%/sbin/iocage rcshutdown
+	%%PREFIX%%/bin/iocage rcshutdown
 	eend $?
 }
