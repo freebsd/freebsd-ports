@@ -27,6 +27,7 @@ INSTALLS_ICONS=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+LLD_UNSAFE=	yes	# lld disallows preemption of protected visibility syms
 
 DOCSDIR=	${PREFIX}/share/doc/xine-ui
 
