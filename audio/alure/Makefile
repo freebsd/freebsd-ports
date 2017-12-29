@@ -1,4 +1,4 @@
-# Created by: nemysis <nemysis@gmx.ch>
+ # Created by: nemysis <nemysis@gmx.ch2
 # $FreeBSD$
 
 PORTNAME=	alure
@@ -14,6 +14,7 @@ LICENSE=	MIT
 
 USES=		cmake openal:soft pkgconfig
 USE_LDCONFIG=	yes
+LLD_UNSAFE=	yes	# lld disallows preemption of protected visibility syms
 CMAKE_ARGS=	-DBUILD_STATIC:BOOL=FALSE
 
 PORTDOCS=	*
