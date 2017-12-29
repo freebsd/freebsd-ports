@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	chef-config
-PORTVERSION=	13.2.20
+PORTVERSION=	13.6.4
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
