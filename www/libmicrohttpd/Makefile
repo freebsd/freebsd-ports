@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libmicrohttpd
-PORTVERSION=	0.9.52
+DISTVERSION=	0.9.58
 CATEGORIES=	www
 MASTER_SITES=	GNU
 
@@ -27,14 +27,6 @@ GNUTLS_CONFIGURE_WITH=	libgcrypt-prefix=${LOCALBASE} gnutls=${LOCALBASE}
 GNUTLS_CONFIGURE_ENABLE=https
 
 INFO=		libmicrohttpd libmicrohttpd-tutorial
-
-PLIST_FILES=	include/microhttpd.h \
-		lib/libmicrohttpd.a \
-		lib/libmicrohttpd.so \
-		lib/libmicrohttpd.so.12 \
-		lib/libmicrohttpd.so.12.40.0 \
-		libdata/pkgconfig/libmicrohttpd.pc \
-		man/man3/libmicrohttpd.3.gz
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|bin_PROGRAMS =|noinst_PROGRAMS +=|' \
