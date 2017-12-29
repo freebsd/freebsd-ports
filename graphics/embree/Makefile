@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	embree
-PORTVERSION=	2.12.0
-PORTREVISION=	1
+PORTVERSION=	2.17.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	graphics
 
@@ -17,32 +16,42 @@ ONLY_FOR_ARCHS_REASON=	heavy use of SSE instructions
 
 USE_GITHUB=	yes
 
-USES=		cmake
-USE_GL=		glut
-USE_XORG=	xmu
+USES=		cmake compiler:env
+USE_GL=		gl glu glut
+USE_XORG=	xi xmu
 USE_LDCONFIG=	yes
 
-CMAKE_ARGS=	-DEMBREE_TASKING_SYSTEM:STRING=INTERNAL \
-		-DEMBREE_ISPC_SUPPORT:BOOL=OFF
-
-CXXFLAGS+=	-msse2					# required on i386
+CMAKE_ARGS=	-DEMBREE_TASKING_SYSTEM:STRING=INTERNAL
 
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}2
 PLIST_SUB+=	VERSION=${DISTVERSION}
 
-OPTIONS_DEFINE=	IMAGEMAGICK JPEG OPENEXR PNG
-IMAGEMAGICK_DESC=	BMP, GIF, PNG, TGA, TIFF image formats support
+OPTIONS_DEFINE=	IMAGEMAGICK ISPC JPEG PNG
+OPTIONS_DEFAULT=	ISPC
+OPTIONS_SUB=	yes
 
+IMAGEMAGICK_DESC=	BMP, GIF, PNG, TGA, TIFF image formats support
 IMAGEMAGICK_LIB_DEPENDS=	libMagick++-6.so:graphics/ImageMagick
 IMAGEMAGICK_CMAKE_ON=	-DEMBREE_TUTORIALS_IMAGE_MAGICK:BOOL=ON
+
+ISPC_DESC=		ISPC applications support
+ISPC_BUILD_DEPENDS=	ispc:devel/ispc
+ISPC_CMAKE_OFF=		-DEMBREE_ISPC_SUPPORT:BOOL=OFF
 
 JPEG_USES=		jpeg
 JPEG_CMAKE_OFF=		-DEMBREE_TUTORIALS_LIBJPEG:BOOL=OFF
 
-OPENEXR_LIB_DEPENDS=	libIlmImf.so:graphics/OpenEXR
-OPENEXR_CMAKE_OFF=	-DEMBREE_TUTORIALS_OPENEXR:BOOL=OFF
-
 PNG_LIB_DEPENDS=	libpng.so:graphics/png
 PNG_CMAKE_OFF=		-DEMBREE_TUTORIALS_LIBPNG:BOOL=OFF
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+post-patch:
+	@${REINPLACE_CMD} -e 's,#else,#elif defined(MAP_HUGETLB),' \
+		${WRKSRC}/common/sys/alloc.cpp
+# Old versions of Clang (e.g. on FreeBSD 10.x) do not support `-z' options
+.if ${COMPILER_VERSION} < 35
+	@${REINPLACE_CMD} -e '/ -z /d' ${WRKSRC}/common/cmake/clang.cmake
+.endif
+
+.include <bsd.port.post.mk>

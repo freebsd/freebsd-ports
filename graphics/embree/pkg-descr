@@ -7,4 +7,8 @@ These kernels are optimized for photo-realistic rendering on the latest
 Intel processors with support for SSE, AVX, AVX2, AVX512, and the 16-wide
 Intel Xeon Phi coprocessor vector instructions.
 
+Embree supports applications written with the Intel SPMD Program Compiler
+(ISPC, available as `devel/ispc' port) by also providing an ISPC interface
+to the core ray tracing algorithms.
+
 WWW: https://embree.github.io/
