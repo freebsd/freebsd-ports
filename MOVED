@@ -9828,3 +9828,4 @@ net/openh323||2017-12-27|Abandoned in 2007, continued as net/h323plus
 net/ohphone||2017-12-27|Part of OpenH323 project, abandoned in 2007
 devel/pwlib||2017-12-27|Part of OpenH323 project, abandoned in 2007, continued as devel/ptlib
 deskutils/etask||2017-12-27|Has expired: Unsupported by upstream since 2007
+misc/p5-Asterisk|misc/p5-asterisk-perl|2017-12-29|Rename to match upstream naming
