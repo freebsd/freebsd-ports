@@ -1,0 +1,11 @@
+#!/sbin/openrc-run
+
+name="xrdp-sesman"
+command="%%PREFIX%%/sbin/${name}"
+command_args="--nodaemon"
+pidfile="/var/run/${name}.pid"
+
+
+depend() {
+	need xrdp
+}
