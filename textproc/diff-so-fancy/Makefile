@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	diff-so-fancy
-PORTVERSION=	1.1.1
+PORTVERSION=	1.2.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	textproc
 
@@ -29,7 +29,7 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/diff-so-fancy ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/lib/DiffHighlight.pm \
 		${STAGEDIR}${PREFIX}/${SITE_PERL_REL}
-	${INSTALL_DATA} ${WRKSRC}/history.md ${WRKSRC}/pro-tips.md \
-		${WRKSRC}/readme.md ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README.md ${WRKSRC}/history.md \
+		${WRKSRC}/pro-tips.md ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
