@@ -1,4 +1,5 @@
-SXML is a skimpy XML parsing and grafting C library that you can use
-to read and write XML-like configuration file for your application.
+SXML is a skimpy XML parsing and grafting C library that you can use to read
+and write XML-like configuration file for your application.
 
+Author:	Kouichi ABE (WALL) <kouichi@MysticWALL.COM>
 WWW: http://www.MysticWALL.COM/software/sxml/index.html

@@ -1,0 +1,11 @@
+--- examples/Makefile.in.orig	2008-02-05 14:03:37 UTC
++++ examples/Makefile.in
+@@ -34,7 +34,7 @@ INSTALL_PROGRAM=@INSTALL_PROGRAM@ -s
+ INSTALL_DATA=@INSTALL_DATA@
+ 
+ DEFS= @DEFS@
+-OPTS= -fforce-mem -fforce-addr -fstrength-reduce -funroll-loops -finline-functions
++OPTS= -fstrength-reduce -funroll-loops -finline-functions
+ CPPFLAGS= -I.. -L..
+ CFLAGS= ${DEFS} ${CPPFLAGS} ${OPTS} @CFLAGS@
+ 
