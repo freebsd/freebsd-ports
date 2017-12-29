@@ -1,4 +1,4 @@
- #
+#
 # MOVED -- A list of (recently) moved or removed ports
 #
 # $FreeBSD$
@@ -7923,7 +7923,6 @@ cad/slffea||2015-11-28|Has expired: Broken for more than 6 months
 audio/cripple||2015-11-28|Has expired: Broken for more than 6 months
 cad/geda-gattrib||2015-11-28|Has expired: Broken for more than 6 months
 cad/findhier||2015-11-28|Has expired: Broken for more than 6 months
-audio/wmmp||2015-11-28|Has expired: Broken for more than 6 months
 x11/avant-window-navigator||2015-11-28|Has expired: Broken for more than 6 months
 cad/geda-netlist||2015-11-28|Has expired: Broken for more than 6 months
 deskutils/libopensync-plugin-sunbird||2015-11-28|Has expired: Broken for more than 6 months
