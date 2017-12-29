@@ -27,6 +27,7 @@ CPE_VENDOR=	e2fsprogs_project
 USE_CSTD=	gnu99
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
+LLD_UNSAFE=	yes
 CONFIGURE_ARGS?=--disable-fsck \
 		--disable-e2initrd-helper \
 		--disable-libuuid \
