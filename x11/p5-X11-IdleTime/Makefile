@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	X11-IdleTime
-PORTVERSION=	0.5
-PORTREVISION=	2
+PORTVERSION=	0.09
 CATEGORIES=	x11 perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,20 +13,19 @@ COMMENT=	Perl module that reports number of seconds that X11 has been idle
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Inline>=0:devel/p5-Inline \
-		p5-Inline-C>=0:devel/p5-Inline-C
+BUILD_DEPENDS=	p5-Inline>=0.44:devel/p5-Inline \
+		p5-Inline-C>=0.44:devel/p5-Inline-C
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 MAKE_JOBS_UNSAFE=	yes
-
-USE_XORG=	x11 xscrnsaver
 USES=		perl5
-USE_PERL5=	configure patch
+USE_PERL5=	configure
+USE_XORG=	x11 xext xscrnsaver
 
 post-patch:
-.for i in IdleTime.pm
-	@${REINPLACE_CMD} -e 's|/usr/X11R6|${LOCALBASE}|g' ${WRKSRC}/${i}
-	@${PERL} -pi -e "s,[\d\.]+,${PORTVERSION:C/0./0.0/}, if m{VERSION}" ${WRKSRC}/${i}
-.endfor
+	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' ${WRKSRC}/IdleTime.pm ${WRKSRC}/Makefile.PL
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/X11/IdleTime/IdleTime.so
 
 .include <bsd.port.mk>
