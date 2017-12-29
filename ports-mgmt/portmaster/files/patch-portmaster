@@ -1,5 +1,21 @@
---- portmaster.orig	2017-12-21 09:02:44 UTC
+--- portmaster.orig	2017-12-29 22:11:06 UTC
 +++ portmaster
+@@ -113,13 +113,13 @@ kill_bad_children () {
+ 		[ "$pid" -gt 25 ] || continue
+ 		case "$ppid" in
+ 		1)	case "$command" in
+-			*" progcmd "*) pm_kill $pid ;;
++			*" $progcmd "*) pm_kill $pid ;;
+ 			*'make -DBATCH checksum'*|*'/fetch '*|\[sh\]) pm_kill -9 $pid ;;
+ 			esac ;;
+ 		*)	[ $pgid -eq $mypgid ] || continue
+ 			[ $pid -eq $PM_PARENT_PID ] && continue
+ 			case "$command" in
+-			*" progcmd "*) pm_kill $pid ;;
++			*" $progcmd "*) pm_kill $pid ;;
+ 			*'make -DBATCH checksum'*|*'/fetch '*|\[sh\]) pm_kill $pid ;;
+ 			esac ;;
+ 		esac
 @@ -1616,15 +1616,14 @@ pm_pkg_create () {
  				NB_DELETE="${NB_DELETE}${pkg} "
  			fi
