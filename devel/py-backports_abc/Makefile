@@ -12,7 +12,8 @@ COMMENT=	Backport of recent additions to the 'collections.abc' module
 
 LICENSE=	PSFL
 
-USES=		python
+NO_ARCH=	yes
+USES=		python:-3.4
 USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>
