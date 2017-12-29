@@ -3,4 +3,4 @@ into other  applications. It is reentrant, fast, supports HTTP 1.1, and
 permits listening on multiple ports. The API is simple and still powerful
 enough to allow programmers to use the entire HTTP feature set.
 
-WWW: http://www.gnu.org/software/libmicrohttpd/
+WWW: https://www.gnu.org/software/libmicrohttpd/

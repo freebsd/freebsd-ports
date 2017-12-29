@@ -1,0 +1,8 @@
+include/microhttpd.h
+info/libmicrohttpd_performance_data.png
+lib/libmicrohttpd.a
+lib/libmicrohttpd.so
+lib/libmicrohttpd.so.12
+lib/libmicrohttpd.so.12.46.0
+libdata/pkgconfig/libmicrohttpd.pc
+man/man3/libmicrohttpd.3.gz
