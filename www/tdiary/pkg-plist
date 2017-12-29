@@ -113,9 +113,6 @@ bin/%%TDIARY_SCRIPT%%
 %%WWWDIR%%/misc/lib/compatible.rb
 %%WWWDIR%%/misc/lib/fcgi_patch.rb
 %%WWWDIR%%/misc/migrate.rb
-%%WWWDIR%%/misc/paas/cloudfoundry/Gemfile
-%%WWWDIR%%/misc/paas/cloudfoundry/Gemfile.lock
-%%WWWDIR%%/misc/paas/cloudfoundry/tdiary.conf
 %%WWWDIR%%/misc/paas/heroku/Gemfile.local
 %%WWWDIR%%/misc/paas/heroku/Gemfile.lock
 %%WWWDIR%%/misc/paas/heroku/misc/plugin/system_update.rb
@@ -2266,7 +2263,6 @@ bin/%%TDIARY_SCRIPT%%
 @dir %%WWWDIR%%/misc/paas/heroku
 @dir %%WWWDIR%%/misc/paas/heroku/misc
 @dir %%WWWDIR%%/misc/paas/heroku/misc/plugin
-@dir %%WWWDIR%%/misc/paas/cloudfoundry
 @dir %%WWWDIR%%/misc/paas
 @dir %%WWWDIR%%/misc/lib
 @dir %%WWWDIR%%/misc/filter/plugin/ja
