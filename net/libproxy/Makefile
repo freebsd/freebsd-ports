@@ -10,6 +10,9 @@ CATEGORIES?=	net devel
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT?=	Library that provides automatic proxy configuration management
 
+LICENSE=	LGPL21+
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 CPE_VENDOR=		libproxy_project
 PATHFIX_CMAKELISTSTXT=	devfiles.cmk
 USE_GITHUB=		yes
