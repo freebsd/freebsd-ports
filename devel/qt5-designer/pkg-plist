@@ -177,7 +177,7 @@
 %%QT_CMAKEDIR%%/Qt5Designer/Qt5DesignerConfig.cmake
 %%QT_CMAKEDIR%%/Qt5Designer/Qt5DesignerConfigVersion.cmake
 %%QT_CMAKEDIR%%/Qt5Designer/Qt5Designer_QQuickWidgetPlugin.cmake
-%%QT_CMAKEDIR%%/Qt5Designer/Qt5Designer_QWebViewPlugin.cmake
+%%WEBKIT%%%%QT_CMAKEDIR%%/Qt5Designer/Qt5Designer_QWebViewPlugin.cmake
 %%QT_BINDIR%%/designer
 %%QT_LIBDIR%%/libQt5Designer.prl
 %%QT_LIBDIR%%/libQt5Designer.so
@@ -196,7 +196,7 @@
 %%QT_MKSPECDIR%%/modules/qt_lib_designercomponents_private.pri
 %%QT_PLUGINDIR%%/designer/libqquickwidget.so
 %%DEBUG%%%%QT_PLUGINDIR%%/designer/libqquickwidget.so.debug
-%%QT_PLUGINDIR%%/designer/libqwebview.so
-%%DEBUG%%%%QT_PLUGINDIR%%/designer/libqwebview.so.debug
+%%WEBKIT%%%%QT_PLUGINDIR%%/designer/libqwebview.so
+%%WEBKIT%%%%DEBUG%%%%QT_PLUGINDIR%%/designer/libqwebview.so.debug
 libdata/pkgconfig/Qt5Designer.pc
 share/pixmaps/designer-qt5.png
