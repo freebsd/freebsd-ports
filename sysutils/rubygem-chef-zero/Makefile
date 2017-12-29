@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	chef-zero
-PORTVERSION=	13.0.0
+PORTVERSION=	13.1.0
 CATEGORIES=	sysutils
 MASTER_SITES=	RG
 
-MAINTAINER=	renchap@cocoa-x.com
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Self-contained, easy-setup, fast-start in-memory Chef server
 
 LICENSE=	APACHE20
