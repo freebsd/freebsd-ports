@@ -13,7 +13,7 @@ COMMENT=	Python interface to Amazon Web Services
 LICENSE=	MIT
 
 NO_ARCH=	yes
-USES=		python:2.7+
+USES=		python
 USE_PYTHON=	autoplist concurrent distutils
 
 CONFLICTS_INSTALL=	p5-Net-Amazon-Route53-[0-9]*

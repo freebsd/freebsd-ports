@@ -52,7 +52,7 @@ USE_GITHUB=	yes
 GH_PROJECT=	Flexget
 
 NO_ARCH=	yes
-USES=		python:2.7+
+USES=		python
 USE_PYTHON=	autoplist distutils
 
 post-extract:

@@ -18,7 +18,7 @@ BUILD_DEPENDS=	swig3.0:devel/swig30 \
 RUN_DEPENDS=	pcsc-lite>0:devel/pcsc-lite
 
 ## Python3 is supported
-USES=		python:2.7+
+USES=		python
 USE_PYTHON=	autoplist distutils
 BINARY_ALIAS=	swig=swig3.0
 

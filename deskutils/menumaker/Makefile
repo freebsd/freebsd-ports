@@ -12,7 +12,7 @@ COMMENT=	Menu generator for X Window Managers and desktop environments
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gmake python:2.7+
+USES=		gmake python
 GNU_CONFIGURE=	yes
 NO_ARCH=	yes
 

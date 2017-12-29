@@ -23,7 +23,7 @@ TESTS_BUILD_DEPENDS=	${RUN_DEPENDS} \
 			${TEST_DEPENDS}
 
 NO_ARCH=	yes
-USES=		python:2.7+
+USES=		python
 USE_PYTHON=	autoplist distutils
 
 do-test:

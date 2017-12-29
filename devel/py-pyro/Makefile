@@ -17,7 +17,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}serpent>=1.23:devel/py-serpent@${FLAVOR}
 
 NO_ARCH=	yes
-USES=		dos2unix python:2.7+
+USES=		dos2unix python
 USE_PYTHON=	autoplist concurrent distutils
 
 PORTDOCS=	*

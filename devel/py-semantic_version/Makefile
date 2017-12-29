@@ -21,8 +21,7 @@ GH_PROJECT=	python-semanticversion
 
 NO_ARCH=	yes
 
-# Actually 2.7,3.4+
-USES=		python:2.7+
+USES=		python
 USE_PYTHON=	autoplist concurrent distutils
 
 do-test:
