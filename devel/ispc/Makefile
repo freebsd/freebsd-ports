@@ -23,7 +23,7 @@ USE_GITHUB=	yes
 
 ALL_TARGET=	default
 MAKE_ENV=	LLVM_HOME="${LOCALBASE}"
-CLANG_VERSION=	40
+CLANG_VERSION=	50
 SHEBANG_FILES=	*.py
 
 MAKE_ARGS=	LLVM_CONFIG=${LOCALBASE}/bin/llvm-config${CLANG_VERSION} \
@@ -35,6 +35,10 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|python|${PYTHON_CMD}| ; s|@$$(C|$$(C|' \
 		${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e '/alloca\.h/d' ${WRKSRC}/util.cpp
+.if ${CLANG_VERSION} >= 50
+	@${REINPLACE_CMD} -e '/^LLVM_LIBS=/s|$$| -lexecinfo|' \
+		${WRKSRC}/Makefile
+.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ispc ${STAGEDIR}${PREFIX}/bin
