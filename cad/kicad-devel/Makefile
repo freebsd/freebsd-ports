@@ -3,7 +3,7 @@
 
 PORTNAME=	kicad
 DISTVERSION=	r${GIT_SRC_DATE}
-PORTREVISION=	4
+#PORTREVISION=	1
 CATEGORIES=	cad
 MASTER_SITES=	LOCAL/mr
 PKGNAMESUFFIX=	-devel
@@ -14,26 +14,26 @@ COMMENT=		Schematic and PCB editing software
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	${LOCALBASE}/include/glm/glm.hpp:math/glm
+BUILD_DEPENDS=	${LOCALBASE}/include/glm/glm.hpp:math/glm \
+		${LOCALBASE}/bin/swig3.0:devel/swig30
 LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 		libcurl.so:ftp/curl
 
 CONFLICTS=	kicad-4.*
 
-DOCVERSION=	1.1
 LIBVERSION=	1.0
 
 #CXXFLAGS+=	-std=c++11
 CXXFLAGS+=	-msse
 USE_GL=		glew glu gl
 USE_WX=		3.0
-WX_COMPS=	wx
+WX_COMPS=	wx wx:build python:build
 USE_GNOME=	atk cairo	# Required by libwx_gtk2_aui-2.8.so
 USE_XORG+=	pixman
 
 BROKEN_aarch64=		Fails to compile: use of undeclared identifier builtin_ia32_emms
 
-OPTIONS_DEFINE=	DOCS
+#OPTIONS_DEFINE=	DOCS
 
 PLIST_SUB=	OPSYS=${OPSYS}	\
 		DESKTOPDIR=${DESKTOPDIR:S|^${PREFIX}/||}
@@ -42,7 +42,8 @@ BINS=		cvpcb eeschema gerbview kicad pcbnew
 EXTRAS2RM=	linux-non_unicode linux wings3d LINUX.README	\
 		contrib_makefiles.txt running_kicad_under_W98.txt
 USES=		desktop-file-utils shared-mime-info compiler:c++11-lib tar:bzip2 cmake \
-		gettext python ssl
+		gettext python shebangfix ssl
+SHEBANG_FILES=	pcbnew/python/plugins/touch_slider_wizard.py
 
 CMAKE_ARGS=	-DLOCALBASE="${LOCALBASE}" \
 		-DCMAKE_BUILD_TYPE="Debug" \
@@ -51,13 +52,9 @@ CMAKE_ARGS=	-DLOCALBASE="${LOCALBASE}" \
 		-DCMAKE_INCLUDE_PATH="${LOCALBASE}/include" \
 		-DwxWidgets_CONFIG_EXECUTABLE="${WX_CONFIG}" \
 		-DwxWidgets_USE_DEBUG=ON \
-		-DKICAD_SKIP_BOOST=YES
-
-.if exists(${LOCALBASE}/bin/konqueror)
-RUN_DEPENDS+=	konqueror:x11/kde4-baseapps
-.else
-RUN_DEPENDS+=	xpdf:graphics/xpdf
-.endif
+		-DKICAD_SKIP_BOOST=YES \
+		-DKICAD_SPICE=OFF \
+		-DKICAD_USE_OCE=OFF
 
 .include "Makefile.git_rev"
 
