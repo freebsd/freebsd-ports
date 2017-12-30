@@ -1,0 +1,11 @@
+--- plugins-scripts/Makefile.am.orig	2017-12-16 17:32:11 UTC
++++ plugins-scripts/Makefile.am
+@@ -20,7 +20,7 @@ WIN_MODULES=\
+   Nagios/CheckLogfiles/Search/Wevtutil.pm
+ 
+ 
+-SED=/bin/sed
++SED=/usr/bin/sed
+ GREP=/bin/grep
+ CAT=/bin/cat
+ ECHO=/bin/echo
