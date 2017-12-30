@@ -2,11 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	tetzle
-PORTVERSION=	2.1.1
-PORTREVISION=	1
+PORTVERSION=	2.1.2
 CATEGORIES=	games
-MASTER_SITES=	http://gottcode.org/tetzle/ \
-		http://mirror.amdmi3.ru/distfiles/
+MASTER_SITES=	https://gottcode.org/tetzle/ \
+		https://mirror.amdmi3.ru/distfiles/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	amdmi3@FreeBSD.org
