@@ -27,6 +27,8 @@ load_rc_config "$name"
 
 : ${clamav_clamd_enable:=NO}
 : ${clamav_clamd_socket="%%CLAMAV_CLAMD_SOCKET%%"}
+: ${clamav_clamd_pidfile="%%CLAMAV_CLAMD_PIDFILE%%"}
+: ${clamav_clamd_user="%%CLAMAVUSER%%"}
 
 command=%%PREFIX%%/sbin/clamd
 required_dirs=%%DBDIR%%
@@ -39,6 +41,10 @@ reload_cmd="%%PREFIX%%/bin/clamdscan --reload"
 #clamav .93 won't start without a valid main.c[vl]d file
 clamav_clamd_precmd()
 {
+	local rundir=${clamav_clamd_pidfile%/*}
+	if [ ! -d $rundir ] ; then
+		install -d -m 0755 -o ${clamav_clamd_user} -g ${clamav_clamd_user} $rundir
+	fi
 	if [ ! -f %%DBDIR%%/main.cvd -a ! -f %%DBDIR%%/main.cld ];then
 		echo "Missing %%DBDIR%%/*.cvd or *.cld files.  You must run freshclam first"
 		exit 1
