@@ -17,6 +17,7 @@ lib/erlang/lib/gpb-%%VERSION%%/ebin/gpb_gen_translators.beam
 lib/erlang/lib/gpb-%%VERSION%%/ebin/gpb_gen_types.beam
 lib/erlang/lib/gpb-%%VERSION%%/ebin/gpb_gen_verifiers.beam
 lib/erlang/lib/gpb-%%VERSION%%/ebin/gpb_lib.beam
+lib/erlang/lib/gpb-%%VERSION%%/ebin/gpb_names.beam
 lib/erlang/lib/gpb-%%VERSION%%/ebin/gpb_parse.beam
 lib/erlang/lib/gpb-%%VERSION%%/ebin/gpb_scan.beam
 lib/erlang/lib/gpb-%%VERSION%%/include/gpb.hrl
@@ -50,6 +51,7 @@ lib/erlang/lib/gpb-%%VERSION%%/src/gpb_gen_translators.erl
 lib/erlang/lib/gpb-%%VERSION%%/src/gpb_gen_types.erl
 lib/erlang/lib/gpb-%%VERSION%%/src/gpb_gen_verifiers.erl
 lib/erlang/lib/gpb-%%VERSION%%/src/gpb_lib.erl
+lib/erlang/lib/gpb-%%VERSION%%/src/gpb_names.erl
 lib/erlang/lib/gpb-%%VERSION%%/src/gpb_parse.erl
 lib/erlang/lib/gpb-%%VERSION%%/src/gpb_parse.yrl
 lib/erlang/lib/gpb-%%VERSION%%/src/gpb_scan.erl
