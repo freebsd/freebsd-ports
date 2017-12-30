@@ -1718,6 +1718,7 @@
     SUBDIR += py-jsonfield
     SUBDIR += py-jswebkit
     SUBDIR += py-kallithea
+    SUBDIR += py-lesscpy
     SUBDIR += py-libsass
     SUBDIR += py-mechanize
     SUBDIR += py-meld
