@@ -13,6 +13,9 @@ COMMENT=	Python Interface to FITS Formatted Files
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+DEPRECATED=	Use astro/py-astropy instead
+EXPIRATION_DATE=2018-01-31
+
 BUILD_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}d2to1>=0:devel/py-d2to1@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}stsci.distutils>=0:devel/py-stsci.distutils@${FLAVOR}
