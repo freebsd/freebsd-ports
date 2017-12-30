@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	oxidized
-PORTVERSION=	0.19.0
-PORTREVISION=	1
+PORTVERSION=	0.21.0
 CATEGORIES=	net-mgmt rubygems
 MASTER_SITES=	RG
 
@@ -13,8 +12,7 @@ COMMENT=	Network device configuration backup tool
 LICENSE=	APACHE20
 
 RUN_DEPENDS=	rubygem-asetus>=0.1:devel/rubygem-asetus \
-		rubygem-net-ssh>=3.0.2:security/rubygem-net-ssh \
-		rubygem-net-telnet>=0:security/rubygem-net-telnet \
+		rubygem-net-ssh>=4.1.0:security/rubygem-net-ssh \
 		rubygem-rugged>=0.21.4:devel/rubygem-rugged \
 		rubygem-slop3>=3.5:devel/rubygem-slop3
 
@@ -24,8 +22,7 @@ USE_RC_SUBR=	oxidized
 
 USE_RUBY=	yes
 USES=		gem shebangfix
-SHEBANG_FILES=	extra/oxidized.runit \
-		extra/auto-reload-config.runit
+SHEBANG_FILES=	extra/*.runit
 
 USERS=		oxidized
 GROUPS=		oxidized
