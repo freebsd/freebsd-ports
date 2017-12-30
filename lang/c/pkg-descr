@@ -12,4 +12,4 @@ instantly.
 C is fast. Being able to write a small, fast, and portable C "script" is great.
 One can pass around a C "script" just like s/he would a BASH script.
 
-WWW: https://www.github.com/ryanmjacobs/c
+WWW: https://github.com/ryanmjacobs/c
