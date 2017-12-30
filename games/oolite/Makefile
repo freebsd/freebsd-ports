@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=		oolite
-PORTVERSION=		1.84
-PORTREVISION=	5
+PORTVERSION=		1.86
 CATEGORIES=		games gnustep
-MASTER_SITES=		https://github.com/OoliteProject/oolite/releases/download/1.84/
+MASTER_SITES=		https://github.com/OoliteProject/oolite/releases/download/1.86/
 DISTNAME=		${PORTNAME}-source-${PORTVERSION}
 DIST_SUBDIR=		oolite
 
@@ -56,8 +55,6 @@ BROKEN_aarch64=		fails to configure: error: These compiler flags are invalid: -O
 BROKEN_armv6=		fails to compile: your compiler does not follow the C++ specification for temporary object destruction order
 BROKEN_armv7=		fails to compile: your compiler does not follow the C++ specification for temporary object destruction order
 
-.include <bsd.port.pre.mk>
-
 post-patch: .SILENT
 	${REINPLACE_CMD} -e 's/GNUSTEP_USER_ROOT/GNUSTEP_LOCAL_ROOT/ ; \
 		s/sdl-config/$${SDL_CONFIG}/ ; \
@@ -82,4 +79,4 @@ do-install:
 		${STAGEDIR}${PREFIX}/share/pixmaps
 	(cd ${WRKSRC}/Doc && ${COPYTREE_SHARE} "${PORTDOCS}" ${STAGEDIR}${DOCSDIR})
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
