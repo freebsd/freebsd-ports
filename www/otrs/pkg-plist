@@ -927,6 +927,8 @@ otrs/Kernel/System/SupportDataCollector/Plugin/OTRS/Ticket/OpenTickets.pm
 otrs/Kernel/System/SupportDataCollector/Plugin/OTRS/Ticket/SearchIndexModule.pm
 otrs/Kernel/System/SupportDataCollector/Plugin/OTRS/Ticket/StaticDBOrphanedRecords.pm
 otrs/Kernel/System/SupportDataCollector/Plugin/OTRS/TimeSettings.pm
+otrs/Kernel/System/SupportDataCollector/Plugin/OTRS/UI/AgentSkinUsage.pm
+otrs/Kernel/System/SupportDataCollector/Plugin/OTRS/UI/AgentThemeUsage.pm
 otrs/Kernel/System/SupportDataCollector/Plugin/OTRS/Version.pm
 otrs/Kernel/System/SupportDataCollector/Plugin/Webserver/Apache/LoadedModules.pm
 otrs/Kernel/System/SupportDataCollector/Plugin/Webserver/Apache/MPMModel.pm
@@ -993,6 +995,7 @@ otrs/Kernel/System/Ticket/TicketSearch.pm
 otrs/Kernel/System/Time.pm
 otrs/Kernel/System/Type.pm
 otrs/Kernel/System/UnitTest.pm
+otrs/Kernel/System/UnitTest/Driver.pm
 otrs/Kernel/System/UnitTest/Helper.pm
 otrs/Kernel/System/UnitTest/Selenium.pm
 otrs/Kernel/System/UnitTest/Selenium/WebElement.pm
