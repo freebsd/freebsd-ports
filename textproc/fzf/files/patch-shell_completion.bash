@@ -1,6 +1,6 @@
---- shell/completion.bash.orig	2017-12-03 14:55:24.000000000 +0000
-+++ shell/completion.bash	2017-12-29 20:46:41.906877000 +0000
-@@ -219,7 +219,8 @@
+--- shell/completion.bash.orig	2017-12-03 14:55:24 UTC
++++ shell/completion.bash
+@@ -219,7 +219,8 @@ _fzf_complete_kill() {
  
    local selected fzf
    fzf="$(__fzfcmd_complete)"
