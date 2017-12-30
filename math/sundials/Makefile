@@ -2,6 +2,7 @@
 
 PORTNAME=	sundials
 DISTVERSION=	3.1.0
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	https://computation.llnl.gov/projects/sundials/download/
 
@@ -39,9 +40,9 @@ EXAMPLES_CMAKE_ON=	-DEXAMPLES_INSTALL_PATH=${EXAMPLESDIR}
 
 HYPRE_CMAKE_BOOL=	HYPRE_ENABLE
 HYPRE_CMAKE_ON=		-DHYPRE_INCLUDE_DIR=${LOCALBASE}/include \
-			-DHYPRE_LIBRARY_DIR=${LOCALBASE}/lib \
-			-DMPI_ENABLE:BOOL=ON
+			-DHYPRE_LIBRARY_DIR=${LOCALBASE}/lib
 HYPRE_LIB_DEPENDS=	libHYPRE.so:science/hypre
+HYPRE_IMPLIES=		MPI
 
 LAPACK_USES=		blaslapack:openblas fortran
 LAPACK_CMAKE_BOOL=	LAPACK_ENABLE
@@ -49,32 +50,23 @@ LAPACK_CMAKE_ON=	-DSUNDIALS_INDEX_TYPE:STRING=int32_t \
 			-DFREEBSD_GCC_DIR:STRING=${LOCALBASE}/lib/gcc${GCC_DEFAULT:S/.//} # assumes that fortran:gcc is used
 
 MPI_CMAKE_ON=		-DMPI_ENABLE:BOOL=ON
+MPI_LIB_DEPENDS=	libmpich.so:net/mpich2
 
 PETSC_CMAKE_BOOL=	PETSC_ENABLE
 PETSC_CMAKE_ON=		-DPETSC_INCLUDE_DIR=${LOCALBASE}/include \
-			-DPETSC_LIBRARY_DIR=${LOCALBASE}/lib \
-			-DMPI_ENABLE:BOOL=ON
+			-DPETSC_LIBRARY_DIR=${LOCALBASE}/lib
 PETSC_LIB_DEPENDS=	libpetsc.so:science/PETSc
+PETSC_IMPLIES=		MPI
 
-SUPERLU_CMAKE_BOOL=	SUPERLUMT_ENABLE
-SUPERLU_CMAKE_ON=	-DSUPERLUMT_INCLUDE_DIR=${LOCALBASE}/include/superlu_mt \
+SUPERLUMT_CMAKE_BOOL=	SUPERLUMT_ENABLE
+SUPERLUMT_CMAKE_ON=	-DSUPERLUMT_INCLUDE_DIR=${LOCALBASE}/include/superlu_mt \
 			-DSUPERLUMT_LIBRARY_DIR=${LOCALBASE}/lib \
-			-DSUPERLUMT_THREAD_TYPE=Pthread
-SUPERLUMT_DEPENDS=	libsuperlu_mt_PTHREAD.so:math/superlu_mt
+			-DSUPERLUMT_THREAD_TYPE=Pthread \
+			-DFREEBSD_GCC_DIR:STRING=${LOCALBASE}/lib/gcc${GCC_DEFAULT:S/.//} # assumes that fortran:gcc is used
+SUPERLUMT_LIB_DEPENDS=	libsuperlu_mt_PTHREAD.so:math/superlu_mt
+SUPERLUMT_PREVENTS=	LAPACK  # LAPACK requires SUNDIALS_INDEX_TYPE=int32, and SUPERLUMT requires SUNDIALS_INDEX_TYPE=int64
 
 PORTEXAMPLES=	*
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MMPI} || ${PORT_OPTIONS:MHYPRE} || ${PORT_OPTIONS:MPETSC}
-LIB_DEPENDS+=	libmpich.so:net/mpich2
-
-PLIST_FILES=	include/nvector/nvector_parallel.h \
-		include/sundials/sundials_mpi_types.h \
-		lib/libsundials_nvecparallel.so \
-		lib/libsundials_nvecparallel.so.${DISTVERSION:R:R} \
-		lib/libsundials_nvecparallel.so.${DISTVERSION}
-.endif
 
 post-install:
 	@${RM} ${STAGEDIR}${PREFIX}/LICENSE

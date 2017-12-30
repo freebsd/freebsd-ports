@@ -33,6 +33,7 @@ include/kinsol/kinsol_bbdpre.h
 include/kinsol/kinsol_direct.h
 include/kinsol/kinsol_impl.h
 include/kinsol/kinsol_spils.h
+%%MPI%%include/nvector/nvector_parallel.h
 %%HYPRE%%include/nvector/nvector_parhyp.h
 %%PETSC%%include/nvector/nvector_petsc.h
 include/nvector/nvector_pthreads.h
@@ -48,6 +49,7 @@ include/sundials/sundials_iterative.h
 include/sundials/sundials_linearsolver.h
 include/sundials/sundials_math.h
 include/sundials/sundials_matrix.h
+%%MPI%%include/sundials/sundials_mpi_types.h
 include/sundials/sundials_nvector.h
 include/sundials/sundials_pcg.h
 include/sundials/sundials_sparse.h
@@ -66,6 +68,7 @@ include/sunlinsol/sunlinsol_spbcgs.h
 include/sunlinsol/sunlinsol_spfgmr.h
 include/sunlinsol/sunlinsol_spgmr.h
 include/sunlinsol/sunlinsol_sptfqmr.h
+%%SUPERLUMT%%include/sunlinsol/sunlinsol_superlumt.h
 include/sunmatrix/sunmatrix_band.h
 include/sunmatrix/sunmatrix_dense.h
 include/sunmatrix/sunmatrix_sparse.h
@@ -87,6 +90,9 @@ lib/libsundials_idas.so.%%SHLY3%%
 lib/libsundials_kinsol.so
 lib/libsundials_kinsol.so.%%SHL1%%
 lib/libsundials_kinsol.so.%%SHL3%%
+%%MPI%%lib/libsundials_nvecparallel.so
+%%MPI%%lib/libsundials_nvecparallel.so.%%SHL1%%
+%%MPI%%lib/libsundials_nvecparallel.so.%%SHL3%%
 %%HYPRE%%lib/libsundials_nvecparhyp.so
 %%HYPRE%%lib/libsundials_nvecparhyp.so.%%SHL1%%
 %%HYPRE%%lib/libsundials_nvecparhyp.so.%%SHL3%%
@@ -126,6 +132,9 @@ lib/libsundials_sunlinsolspgmr.so.%%SHLX3%%
 lib/libsundials_sunlinsolsptfqmr.so
 lib/libsundials_sunlinsolsptfqmr.so.%%SHLX1%%
 lib/libsundials_sunlinsolsptfqmr.so.%%SHLX3%%
+%%SUPERLUMT%%lib/libsundials_sunlinsolsuperlumt.so
+%%SUPERLUMT%%lib/libsundials_sunlinsolsuperlumt.so.%%SHLX1%%
+%%SUPERLUMT%%lib/libsundials_sunlinsolsuperlumt.so.%%SHLX3%%
 lib/libsundials_sunmatrixband.so
 lib/libsundials_sunmatrixband.so.%%SHLX1%%
 lib/libsundials_sunmatrixband.so.%%SHLX3%%
