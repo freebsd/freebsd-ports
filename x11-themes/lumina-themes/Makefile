@@ -2,6 +2,7 @@
 
 PORTNAME=	lumina-themes
 PORTVERSION=	201710311100
+PORTREVISION=	1
 CATEGORIES=	x11-themes
 
 MAINTAINER=	jt@ixsystems.com
