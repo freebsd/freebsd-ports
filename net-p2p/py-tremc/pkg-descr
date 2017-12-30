@@ -1,0 +1,7 @@
+Curses interface for transmission.
+
+Python3 fork of the no longer maintained transmission-remote-cli. Some
+extra modifications have been included and development will follow the
+original project as much as possible.
+
+WWW: https://github.com/louipc/tremc
