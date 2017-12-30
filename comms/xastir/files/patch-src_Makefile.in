@@ -1,0 +1,15 @@
+--- src/Makefile.in.orig	2014-09-12 19:05:57 UTC
++++ src/Makefile.in
+@@ -522,6 +522,12 @@ distclean-compile:
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/xa_config.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/xastir_udp_client.Po@am__quote@
+ 
++ifeq ($(host_cpu),sparc64)
++draw_symbols.o: draw_symbols.c
++@am__fastdepCC_TRUE@	$(patsubst -O%,-O0,$(COMPILE)) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<
++@am__fastdepCC_TRUE@	$(am__mv) $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Po
++endif
++
+ .c.o:
+ @am__fastdepCC_TRUE@	$(COMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<
+ @am__fastdepCC_TRUE@	$(am__mv) $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Po
