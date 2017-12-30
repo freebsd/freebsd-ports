@@ -61,6 +61,7 @@ SDL_USE=	sql
 OPENGL_USE=	gl
 MYSQL_USE=	mysql=yes
 PGSQL_USES=	pgsql
+LLD_UNSAFE=	yes
 
 .include <bsd.port.pre.mk>
 
