@@ -3,7 +3,7 @@
 
 PORTNAME=	gegl
 PORTVERSION=	0.3.20
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	GIMP
 PKGNAMESUFFIX=	3
@@ -21,7 +21,7 @@ LIB_DEPENDS=	libbabl-0.1.so:x11/babl \
 		libpng.so:graphics/png
 
 USES=		cpe gettext gmake jpeg libtool localbase pathfix pkgconfig \
-		shebangfix tar:bzip2
+		shebangfix uniquefiles tar:bzip2
 USE_GNOME=	glib20 intltool introspection:build
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
@@ -39,6 +39,10 @@ EXAMPLES=	2geglbuffer \
 		geglbuffer-clock hello-world sdl-draw
 
 SHEBANG_FILES=	tools/xml_insert.sh
+
+# Fix conflicts with graphics/gegl and sysutils/coreutils
+EXAMPLESDIR=	${PREFIX}/share/examples/gegl${PKGNAMESUFFIX}
+UNIQUE_SUFFIX_FILES=	bin/gcut bin/gegl
 
 OPTIONS_SUB=	yes
 OPTIONS_DEFINE=	CAIRO ENSCRIPT EXIV2 FFMPEG PIXBUF GRAPHVIZ JASPER \
@@ -127,26 +131,19 @@ PLIST_SUB+=	PANGOCAIRO="@comment "
 .endif
 
 post-patch:
-	${REINPLACE_CMD} "s/lua >/lua-${LUA_VER} >/g" ${WRKSRC}/configure
-.if ! ${PORT_OPTIONS:MEXAMPLES}
-	${REINPLACE_CMD} -e 's|tools examples|tools|g' \
-		${WRKSRC}/Makefile.in
-.endif
-	${REINPLACE_CMD} -e 's|\(lua\)\(5\.1\)|\1-\2|g ; s|x86_64|amd64|g' \
+	${REINPLACE_CMD} -e "s/lua >/lua-${LUA_VER} >/g" \
+		-e 's|\(lua\)\(5\.1\)|\1-\2|g ; s|x86_64|amd64|g' \
 		${WRKSRC}/configure
 
-post-install:
-.if ${PORT_OPTIONS:MEXAMPLES}
+post-patch-EXAMPLES-off:
+	${REINPLACE_CMD} -e 's|tools examples|tools|g' \
+		${WRKSRC}/Makefile.in
+
+post-install-EXAMPLES-on:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/data
 	${INSTALL_DATA} ${WRKSRC}/examples/data/surfer.png ${STAGEDIR}${EXAMPLESDIR}/data
 .for ex in ${EXAMPLES}
 	${INSTALL_DATA} ${WRKSRC}/examples/${ex}.c ${STAGEDIR}${EXAMPLESDIR}
 .endfor
-# temporary hacks to allow parallel install
-	@${MV} ${STAGEDIR}${PREFIX}/share/examples/gegl \
-		${STAGEDIR}${PREFIX}/share/examples/gegl3
-.endif
-# temporary hacks to allow parallel install
-	@${MV} ${STAGEDIR}${PREFIX}/bin/gegl ${STAGEDIR}${PREFIX}/bin/gegl3
 
 .include <bsd.port.mk>
