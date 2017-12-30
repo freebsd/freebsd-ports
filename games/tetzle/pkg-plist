@@ -14,6 +14,7 @@ share/icons/hicolor/scalable/apps/tetzle.svg
 share/man/man6/tetzle.6
 share/metainfo/tetzle.appdata.xml
 share/pixmaps/tetzle.xpm
+%%DATADIR%%/translations/tetzle_ca.qm
 %%DATADIR%%/translations/tetzle_cs.qm
 %%DATADIR%%/translations/tetzle_de.qm
 %%DATADIR%%/translations/tetzle_en.qm
