@@ -1,4 +1,4 @@
 slop (Select Operation) is an application that collects a screen selection
 from the user and prints the selection's coordinates to stdout.
 
-WWW: http://www.github.com/naelstrof/slop
+WWW: https://github.com/naelstrof/slop
