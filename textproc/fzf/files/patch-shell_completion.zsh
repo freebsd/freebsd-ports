@@ -1,6 +1,6 @@
---- shell/completion.zsh.orig	2017-12-03 14:55:24.000000000 +0000
-+++ shell/completion.zsh	2017-12-29 20:54:22.283164000 +0000
-@@ -163,7 +163,9 @@
+--- shell/completion.zsh.orig	2017-12-03 14:55:24 UTC
++++ shell/completion.zsh
+@@ -163,7 +163,9 @@ fzf-completion() {
    # Kill completion (do not require trigger sequence)
    if [ $cmd = kill -a ${LBUFFER[-1]} = ' ' ]; then
      fzf="$(__fzfcmd_complete)"
