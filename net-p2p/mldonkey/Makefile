@@ -3,7 +3,7 @@
 
 PORTNAME=	mldonkey
 PORTVERSION=	3.1.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES+=	net-p2p
 MASTER_SITES=	SF
 
@@ -13,24 +13,16 @@ COMMENT?=	OCAML client for multiple peer-to-peer networks
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/Copying.txt
 
-BUILD_DEPENDS=	${LOCALBASE}/share/aclocal/ax_pthread.m4:devel/autoconf-archive
-
 CONFLICTS=	mldonkey{-{core,gui},}-devel-[0-9]*
 
-USES=		autoreconf iconv tar:bzip2 gmake
+USES=		gmake iconv tar:bzip2
 USE_OCAML=	yes
 USE_OCAML_CAMLP4=yes
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	ac_cv_lib_charset_locale_charset=no
 ALL_TARGET=	opt
-AUTORECONF_WRKSRC=	${WRKSRC}/config
 MAKE_ENV+=	OCAMLRUNPARAM="l=256M"
 MAKE_JOBS_UNSAFE=	yes
-
-CONFIGURE_ARGS+=${ICONV_CONFIGURE_ARG}
-CONFIGURE_ENV+=	NEWCXX="${CXX}" \
-		PTHREAD_LIBS="-lpthread"
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 
 SUB_FILES=	pkg-message
 
@@ -107,12 +99,11 @@ post-patch:
 		-e "s|%%SH%%|${SH}|" \
 		${FILESDIR}/wrapper.sh > \
 		${WRKDIR}/wrapper.sh
-	@${REINPLACE_CMD} -E \
-		-e 's@(\+)(lablgtk2)@\1site-lib/\2@' \
-		-e 's@(\+)(labl\$$\(GTK\))@\1site-lib/\2@' \
-		-e 's@(OCAMLLIB/)(\$$LABLGTK_NAME)@\1site-lib/\2@' \
-		-e 's@(AC_DEFINE\([^,]*,[^,]*,)\)@\1 desc)@' \
-		${WRKSRC}/config/configure.in \
+	@${REINPLACE_CMD} \
+		-e 's|$$OCAMLLIB/$$LABLGTK_NAME|$$OCAMLLIB/site-lib/$$LABLGTK_NAME|' \
+		${WRKSRC}/config/configure
+	@${REINPLACE_CMD} \
+		-e 's|+labl|+site-lib/labl|' \
 		${WRKSRC}/config/Makefile.in
 	@${REINPLACE_CMD} -E \
 		-e 's@(#include <)(lablgtk2/)@\1site-lib/\2@'  \
