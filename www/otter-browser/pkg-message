@@ -1,0 +1,9 @@
+=============================================================================
+
+To switch to the newer QtWebEngine web backend, add this section to the
+~/.config/otter/otter.conf:
+
+[Backends]
+Web=qtwebengine
+
+=============================================================================
