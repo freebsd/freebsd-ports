@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	oxidized-web
-PORTVERSION=	0.7.1
-PORTREVISION=	3
+PORTVERSION=	0.9.3
 CATEGORIES=	net-mgmt rubygems
 MASTER_SITES=	RG
 
@@ -14,11 +13,12 @@ LICENSE=	APACHE20
 
 RUN_DEPENDS=	rubygem-emk-sinatra-url-for>=0.2:www/rubygem-emk-sinatra-url-for \
 		rubygem-haml4>=4.0:www/rubygem-haml4 \
-		rubygem-oxidized>=0.13:net-mgmt/rubygem-oxidized \
-		rubygem-puma2>=2.8:www/rubygem-puma2 \
+		rubygem-htmlentities>=4.3:textproc/rubygem-htmlentities \
+		rubygem-oxidized>=0.21.0:net-mgmt/rubygem-oxidized \
+		rubygem-puma>=3:www/rubygem-puma \
 		rubygem-sass>=3.3:textproc/rubygem-sass \
-		rubygem-sinatra-contrib>=1.4:www/rubygem-sinatra-contrib \
-		rubygem-sinatra1>=1.4:www/rubygem-sinatra1
+		rubygem-sinatra1>=1.4.6:www/rubygem-sinatra1 \
+		rubygem-sinatra-contrib>=1.4.6:www/rubygem-sinatra-contrib
 
 NO_ARCH=	yes
 USE_RUBY=	yes
