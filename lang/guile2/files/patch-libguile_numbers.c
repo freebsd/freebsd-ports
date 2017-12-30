@@ -1,6 +1,18 @@
---- libguile/numbers.c.orig	2014-03-12 13:24:54 UTC
+--- libguile/numbers.c.orig	2016-12-15 00:03:33 UTC
 +++ libguile/numbers.c
-@@ -183,7 +183,7 @@ static double atanh (double x) { return 
+@@ -45,7 +45,11 @@
+ #  include <config.h>
+ #endif
+ 
++/* With old GCC, do not override _Static_assert: it conflicts with
++   #include <complex.h> below. */
++#if __clang__ || (__GNUC__ >= 4 && __GNUC_MINOR__ >= 6)
+ #include <verify.h>
++#endif
+ #include <assert.h>
+ 
+ #include <math.h>
+@@ -183,7 +187,7 @@ static double atanh (double x) { return 0.5 * log ((1 
  
  
  #if defined (GUILE_I)
