@@ -24,7 +24,7 @@ SHEBANG_FILES=	scripts/*.pl scripts/get-maptools.sh \
 SUB_FILES=	pkg-message
 
 OPTIONS_DEFINE=	SHAPELIB DBFAWK MAGICK CURL GEOTIFF GDAL GPSMAN FESTIVAL \
-		    RTREE ERRORPOP BDB OPTCFLAGS
+		RTREE ERRORPOP BDB
 
 SHAPELIB_DESC=	Include Shapelib support
 DBFAWK_DESC=	Include DBFAWK Support
@@ -37,7 +37,6 @@ FESTIVAL_DESC=	Include Festival Voice Synthesis Support
 RTREE_DESC=	Enable spatial indexing of shapefiles
 ERRORPOP_DESC=	Send error popups to stderr
 BDB_DESC=	Tiger Map Caching using Berkeley DB
-OPTCFLAGS_DESC=	Use optimized CFLAGS (-O2 -pipe)
 
 OPTIONS_DEFAULT=	SHAPELIB DBFAWK MAGICK CURL RTREE BDB
 
@@ -70,9 +69,5 @@ ERRORPOP_CONFIGURE_WITH=	errorpopups
 
 BDB_USES=		bdb
 BDB_CONFIGURE_ON=	--with-bdb-incdir=${BDB_INCLUDE_DIR} --with-bdb-libdir=${BDB_LIB_DIR}
-
-OPTCFLAGS_CFLAGS=	-O2 -pipe
-
-BROKEN_sparc64=		Does not compile on sparc64
 
 .include <bsd.port.mk>
