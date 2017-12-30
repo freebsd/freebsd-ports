@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	alacritty
-PORTVERSION=	g20171224
+PORTVERSION=	g20171229
 CATEGORIES=	x11
 
 MAINTAINER=	ports@FreeBSD.org
@@ -17,7 +17,7 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	jwilm
-GH_TAGNAME=	2879830f1d9245da1bf6947f9738d1b1c85380ee
+GH_TAGNAME=	8ce553f28a2ae0d022a774e8341e66dca4079b63
 GH_TUPLE=	jwilm:rust-fontconfig:be2b94de833ec69cf767186262a5fb8360fa5b45:servofontconfig \
 		jwilm:libfontconfig:5c1845e1bffa11cf4d3e6fb27f456bf5c814ce1b:servofontconfigsys
 
