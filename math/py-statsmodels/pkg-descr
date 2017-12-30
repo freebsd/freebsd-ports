@@ -21,4 +21,4 @@ Main Features:
 * developement and testing which is not considered "production ready", including
   Mixed models, GARCH and GMM estimators, kernel regression, panel data models.
 
-WWW: https://www.github.com/statsmodels/statsmodels
+WWW: https://github.com/statsmodels/statsmodels
