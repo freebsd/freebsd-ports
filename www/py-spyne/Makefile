@@ -3,6 +3,7 @@
 
 PORTNAME=	spyne
 PORTVERSION=	2.12.14
+PORTREVISION=	1
 CATEGORIES=	www devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,6 +17,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytz>=0:devel/py-pytz@${FLAVOR}
 
 NO_ARCH=	yes
 USE_PYTHON=	autoplist concurrent distutils
-USES=		python:2.7
+USES=		python
 
 .include <bsd.port.mk>
