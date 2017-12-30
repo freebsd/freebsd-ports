@@ -1,4 +1,4 @@
---- portmaster.orig	2017-12-29 22:11:06 UTC
+--- portmaster.orig	2017-12-21 09:02:44 UTC
 +++ portmaster
 @@ -113,13 +113,13 @@ kill_bad_children () {
  		[ "$pid" -gt 25 ] || continue
@@ -36,6 +36,15 @@
  			fi
  
  			cd ${1}/${portdir%/*}
+@@ -1665,7 +1664,7 @@ find_dl_distfiles () {
+ 	else
+ 		# Old method, for now
+ 		if pm_cd $pd/$1; then
+-			dist_list=`pm_make_b -V OPTIONSFILE`
++			dist_list=`pm_make_b -V OPTIONS_FILE`
+ 			dist_list="${dist_list%options}distfiles"
+ 		else
+ 			# The port might have moved, etc.; so take a stab at it,
 @@ -1803,6 +1802,7 @@ set_distfiles_and_subdir () {
  }
  
