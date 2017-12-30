@@ -1,4 +1,4 @@
-TIMESTAMP = 1514150633
+TIMESTAMP = 1514567954
 SHA256 (rust/crates/aho-corasick-0.6.4.tar.gz) = d6531d44de723825aa81398a6415283229725a00fa30713812ab9323faa82fc4
 SIZE (rust/crates/aho-corasick-0.6.4.tar.gz) = 25443
 SHA256 (rust/crates/android_glue-0.2.3.tar.gz) = 000444226fcff248f2bc4c7625be32c63caccfecc2723a2b9f78a7487a49c407
@@ -347,8 +347,8 @@ SHA256 (rust/crates/xml-rs-0.7.0.tar.gz) = 3c1cb601d29fe2c2ac60a2b2e5e293994d87a
 SIZE (rust/crates/xml-rs-0.7.0.tar.gz) = 50980
 SHA256 (rust/crates/yaml-rust-0.4.0.tar.gz) = 57ab38ee1a4a266ed033496cf9af1828d8d6e6c1cfa5f643a2809effcae4d628
 SIZE (rust/crates/yaml-rust-0.4.0.tar.gz) = 44668
-SHA256 (jwilm-alacritty-g20171224-2879830f1d9245da1bf6947f9738d1b1c85380ee_GH0.tar.gz) = 5150f365bee07c2aa6f3154babc6c7a44d734d00ab6645c95c3c36774554b9e0
-SIZE (jwilm-alacritty-g20171224-2879830f1d9245da1bf6947f9738d1b1c85380ee_GH0.tar.gz) = 808550
+SHA256 (jwilm-alacritty-g20171229-8ce553f28a2ae0d022a774e8341e66dca4079b63_GH0.tar.gz) = dc42be8a55c1c95f384d1f3d5d57c394fde614a2959cb786c1d43d23a3a23f2e
+SIZE (jwilm-alacritty-g20171229-8ce553f28a2ae0d022a774e8341e66dca4079b63_GH0.tar.gz) = 808646
 SHA256 (jwilm-rust-fontconfig-be2b94de833ec69cf767186262a5fb8360fa5b45_GH0.tar.gz) = 5a47c92236d778a0b98cf6baedd523378f063ff6c8e833b0f9e4bf99af098e99
 SIZE (jwilm-rust-fontconfig-be2b94de833ec69cf767186262a5fb8360fa5b45_GH0.tar.gz) = 9483
 SHA256 (jwilm-libfontconfig-5c1845e1bffa11cf4d3e6fb27f456bf5c814ce1b_GH0.tar.gz) = a224a159dce16b23dc6824fff767df82de3eeb3e74497e080f455037a21d0052
