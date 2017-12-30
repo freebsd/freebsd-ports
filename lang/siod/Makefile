@@ -16,6 +16,7 @@ BROKEN_armv7=		fails to link: ld: siod: hidden symbol `__aeabi_uidivmod' in /usr
 BROKEN_mips64=		fails to link: final link failed: Nonrepresentable section on output
 
 USE_LDCONFIG=	yes
+LLD_UNSAFE=	yes
 
 NO_WRKSUBDIR=	yes
 MAKEFILE=	makefile
