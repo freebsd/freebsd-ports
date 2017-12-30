@@ -5,4 +5,4 @@ Cabal implementations of its own temporary file and folder functions so
 that you can use them without linking against Cabal or depending on it
 being installed.
 
-WWW: http://www.github.com/batterseapower/temporary
+WWW: https://github.com/batterseapower/temporary
