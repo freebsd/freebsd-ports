@@ -22,13 +22,13 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 USE_QT5=	core gui widgets buildtools_build qmake_build
 USES=		cmake:run desktop-file-utils libarchive \
 		shared-mime-info
-CMAKE_ARGS=	-DBUILD_QtDialog:bool=on \
-		-DBUILD_CursesDialog:BOOL=OFF \
-		-DSPHINX_MAN:BOOL=ON \
-		-DCMAKE_USE_SYSTEM_LIBRARIES:BOOL=ON \
-		-DCMAKE_DATA_DIR:STRING="/${DATADIR_REL}" \
+CMAKE_OFF=	BUILD_CursesDialog \
+		CMake_SPHINX_DEPEND_ON_EXECUTABLES
+CMAKE_ON=	BUILD_QtDialog \
+		CMAKE_USE_SYSTEM_LIBRARIES \
+		SPHINX_MAN 
+CMAKE_ARGS=	-DCMAKE_DATA_DIR:STRING="/${DATADIR_REL}" \
 		-DCMAKE_DOC_DIR:STRING="/${DOCSDIR_REL}" \
-		-DCMake_SPHINX_DEPEND_ON_EXECUTABLES:BOOL=OFF
 
 ALL_TARGET=	cmake-gui documentation
 INSTALL_WRKSRC=	${WRKSRC}/Source/QtDialog
