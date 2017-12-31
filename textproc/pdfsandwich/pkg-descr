@@ -1,0 +1,6 @@
+pdfsandwich generates "sandwich" OCR pdf files, i.e. pdf files which contain
+only images (but no editable text) will be processed by optical character
+recognition (OCR) and the text will be added to each page invisibly "behind"
+the images.
+
+WWW: https://sourceforge.net/projects/pdfsandwich
