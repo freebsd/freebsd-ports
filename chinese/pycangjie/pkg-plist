@@ -1,0 +1,7 @@
+%%PYTHON_SITELIBDIR%%/cangjie/__init__.py
+%%PYTHON_SITELIBDIR%%/cangjie/__pycache__/__init__.cpython-36.%%PYTHON_PYOEXTENSION%%
+%%PYTHON_SITELIBDIR%%/cangjie/__pycache__/__init__.cpython-36.pyc
+%%PYTHON_SITELIBDIR%%/cangjie/_core.so
+%%PYTHON_SITELIBDIR%%/cangjie/errors.so
+%%PYTHON_SITELIBDIR%%/cangjie/filters.so
+%%PYTHON_SITELIBDIR%%/cangjie/versions.so
