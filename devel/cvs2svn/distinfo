@@ -1,4 +1,3 @@
-SHA256 (cvs2svn-2.4.0.tar.gz) = a6677fc3e7b4374020185c61c998209d691de0c1b01b53e59341057459f6f116
-SIZE (cvs2svn-2.4.0.tar.gz) = 514891
-SHA256 (cvs2svn-2.4.0-r5433.diff.bz2) = a20d854df3c3cbd6a554e99fd7f9bf33dab7520e577ca04dacd20b08a40a7c9f
-SIZE (cvs2svn-2.4.0-r5433.diff.bz2) = 57278
+TIMESTAMP = 1511674397
+SHA256 (cvs2svn-2.5.0.tar.gz) = 6409d118730722f439760d41c08a5bfd05e5d3ff4a666050741e4a5dc2076aea
+SIZE (cvs2svn-2.5.0.tar.gz) = 539332
