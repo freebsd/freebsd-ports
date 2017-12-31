@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	omniauth-saml
-PORTVERSION=	1.7.0
+PORTVERSION=	1.8.1
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
