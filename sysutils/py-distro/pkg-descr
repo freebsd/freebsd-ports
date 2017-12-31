@@ -1,0 +1,10 @@
+distro (for: Linux Distribution) provides information about the Linux
+distribution it runs on, such as a reliable machine-readable ID, or version
+information.
+
+It is a renewed alternative implementation for Python's original
+platform.linux_distribution function, but it also provides much more
+functionality which isn't necessarily Python bound like a command-line
+interface.
+
+WWW: https://github.com/nir0s/distro

@@ -891,6 +891,7 @@
     SUBDIR += py-crontab
     SUBDIR += py-diffoscope
     SUBDIR += py-dirsync
+    SUBDIR += py-distro
     SUBDIR += py-dlipower
     SUBDIR += py-docker
     SUBDIR += py-drmaa
