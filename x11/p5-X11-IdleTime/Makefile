@@ -22,6 +22,8 @@ USES=		perl5
 USE_PERL5=	configure
 USE_XORG=	x11 xext xscrnsaver
 
+PORTSCOUT=	skipv:0.5
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' ${WRKSRC}/IdleTime.pm ${WRKSRC}/Makefile.PL
 
