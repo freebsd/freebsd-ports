@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	nasm
-PORTVERSION=	2.13.01
+PORTVERSION=	2.13.02
 PORTEPOCH=	1
 CATEGORIES=	devel lang
 MASTER_SITES=	http://www.nasm.us/pub/nasm/releasebuilds/${PORTVERSION}/
 
-MAINTAINER=	serio.jeffrey@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	General-purpose multi-platform x86 and amd64 assembler
 
 LICENSE=	BSD2CLAUSE
