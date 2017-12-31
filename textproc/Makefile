@@ -1160,6 +1160,7 @@
     SUBDIR += pcrs
     SUBDIR += pdfgrep
     SUBDIR += pdfoutline
+    SUBDIR += pdfsandwich
     SUBDIR += pdftohtml
     SUBDIR += pear-File_Fortune
     SUBDIR += pear-File_MARC
