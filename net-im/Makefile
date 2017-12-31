@@ -127,6 +127,7 @@
     SUBDIR += proxy65
     SUBDIR += psi
     SUBDIR += psimedia
+    SUBDIR += purple-hangouts
     SUBDIR += py-fbmq
     SUBDIR += py-jabber
     SUBDIR += py-jabberbot
