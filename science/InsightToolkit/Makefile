@@ -3,6 +3,7 @@
 
 PORTNAME=	InsightToolkit
 PORTVERSION=	4.13.0
+PORTREVISION=	1
 CATEGORIES=	science biology
 MASTER_SITES=	SF/itk/itk/${ITK_VER}
 
