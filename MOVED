@@ -9829,3 +9829,6 @@ net/ohphone||2017-12-27|Part of OpenH323 project, abandoned in 2007
 devel/pwlib||2017-12-27|Part of OpenH323 project, abandoned in 2007, continued as devel/ptlib
 deskutils/etask||2017-12-27|Has expired: Unsupported by upstream since 2007
 misc/p5-Asterisk|misc/p5-asterisk-perl|2017-12-29|Rename to match upstream naming
+www/npm2|www/npm|2017-12-31|Has expired: use www/npm or www/npm-node* instead
+www/npm3|www/npm|2017-12-31|Has expired: use www/npm or www/npm-node* instead
+net/rubygem-fog-aws0|net/rubygem-fog-aws|2017-12-31|Has expired: use net/rubygem-fog-aws or net/rubygem-fog-aws1 instead
