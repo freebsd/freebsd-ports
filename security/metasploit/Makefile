@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	metasploit
-PORTVERSION=	4.16.26
+PORTVERSION=	4.16.28
 CATEGORIES=	security
 
 MAINTAINER=	tanawts@gmail.com
@@ -46,6 +46,7 @@ RUN_DEPENDS=	nmap:security/nmap \
 		rubygem-windows_error>=0:devel/rubygem-windows_error \
 		rubygem-pdf-reader>=0:print/rubygem-pdf-reader \
 		rubygem-dnsruby>=0:dns/rubygem-dnsruby \
+		rubygem-mqtt>=0:net/rubygem-mqtt \
 		rubygem-net-ssh>=0:security/rubygem-net-ssh \
 		rubygem-ruby_smb>=0:net/rubygem-ruby_smb \
 		rubygem-rex-arch>=0:security/rubygem-rex-arch \
