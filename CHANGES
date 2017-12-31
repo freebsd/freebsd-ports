@@ -10,6 +10,20 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20171231:
+AUTHOR: kde@FreeBSD.org
+
+  USES=cmake now supports two additional list variables: 
+    * CMAKE_ON  : List of variables to turn on
+    * CMAKE_OFF : List of variables to turn off
+  This can be used as a shortcut to append these to CMAKE_ARGS.
+
+  For example ports that previously set 
+    CMAKE_ARGS=		-DVAR1:BOOL=TRUE -DVAR2:BOOL=TRUE -DVAR3:BOOL=FALSE
+  can now set this as
+    CMAKE_ON=		VAR1 VAR2
+    CMAKE_OFF=		VAR3
+
 20171130:
 AUTHOR: mat@FreeBSD.org
 
