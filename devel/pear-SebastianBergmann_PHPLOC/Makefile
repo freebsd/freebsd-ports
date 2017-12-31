@@ -2,30 +2,35 @@
 # $FreeBSD$
 
 PORTNAME=	PHPLOC
-PORTVERSION=	2.0.3
+DISTVERSION=	4.0.1
 CATEGORIES=	devel pear
-MASTER_SITES=	http://pear.phpunit.de/get/
 PKGNAMEPREFIX=	pear-SebastianBergmann_
-DISTNAME=	phploc-${PORTVERSION}
 
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Tool for quickly measuring the size of a PHP project
 
 LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	pear-Symfony_Component_Console>=1.1.0:devel/pear-Symfony_Component_Console \
-		pear-SebastianBergmann_FinderFacade>=1.1.0:devel/pear-SebastianBergmann_FinderFacade \
-		pear-SebastianBergmann_Git>=1.0.0:devel/pear-SebastianBergmann_Git \
-		pear-SebastianBergmann_Version>=1.0.0:devel/pear-SebastianBergmann_Version \
-		${PEARDIR}/.channels/pear.phpunit.de.reg:devel/pear-channel-phpunit
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+RUN_DEPENDS=	pear-Symfony_Component_Console>=2.4.4:devel/pear-Symfony_Component_Console \
+		pear-SebastianBergmann_FinderFacade>=1.2.2:devel/pear-SebastianBergmann_FinderFacade \
+		pear-SebastianBergmann_Git>=1.2.0:devel/pear-SebastianBergmann_Git \
+		pear-SebastianBergmann_Version>=2.0.1:devel/pear-SebastianBergmann_Version \
+		pear-channel-phpunit>=20110327:devel/pear-channel-phpunit
 
-BROKEN=		unfetchable, redirects to https://phpunit.de/
-DEPRECATED=	Broken for more than 6 months
-EXPIRATION_DATE=	2018-01-27
+USES=	php
+USE_GITHUB=	yes
+GH_ACCOUNT=	sebastianbergmann
+GH_PROJECT=	${PORTNAME:tl}
 
-USE_PHP=	tokenizer
-PEAR_CHANNEL=	phpunit
-USES=	pear
+NO_ARCH=	yes
+
+NO_BUILD=	yes
+
+PLIST_FILES=	${DATADIR}/Publisher.php
+
+do-install:
+	${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/src/Publisher.php ${STAGEDIR}${DATADIR}
 
 .include <bsd.port.mk>
