@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	cacti
-PORTVERSION=	1.1.28
+PORTVERSION=	1.1.29
 CATEGORIES=	net-mgmt www
 MASTER_SITES=	http://www.cacti.net/downloads/ \
 		ftp://ftpmirror.uk/freebsd-ports/cacti/
@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.cacti.net/downloads/ \
 MAINTAINER=	freebsd-ports@dan.me.uk
 COMMENT=	Web-driven graphing interface for RRDTool
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rrdtool:databases/rrdtool
