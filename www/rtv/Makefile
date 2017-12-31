@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rtv
-PORTVERSION=	1.20.0
+PORTVERSION=	1.21.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 
@@ -17,12 +17,13 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>=1.10.0:devel/py-six@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}beautifulsoup>=4.5.1:www/py-beautifulsoup@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}decorator>=4.0.10:devel/py-decorator@${FLAVOR}
 
+USES=		python
+USE_PYTHON=	distutils autoplist concurrent optsuffix
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	michael-lazar
 
 NO_ARCH=	yes
-USES=		python
-USE_PYTHON=	distutils autoplist concurrent optsuffix
 
 .include <bsd.port.pre.mk>
 
