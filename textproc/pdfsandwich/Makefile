@@ -3,7 +3,7 @@
 PORTNAME=	pdfsandwich
 DISTVERSION=	0.1.6
 CATEGORIES=	textproc
-MASTER_SITES=	SF/${PORTNAME}/pdfsandwich%20${PORTNAME}/
+MASTER_SITES=	SF/${PORTNAME}/pdfsandwich%20${DISTVERSION}/
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Command line tool generating "sandwich" OCR pdf files
