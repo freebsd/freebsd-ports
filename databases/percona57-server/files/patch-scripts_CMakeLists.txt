@@ -1,6 +1,6 @@
---- scripts/CMakeLists.txt.orig	2016-11-27 19:44:54 UTC
-+++ scripts/CMakeLists.txt
-@@ -347,6 +347,8 @@ MACRO(EXTRACT_LINK_LIBRARIES target var)
+--- scripts/CMakeLists.txt.orig	2017-12-11 07:56:49.000000000 +0000
++++ scripts/CMakeLists.txt	2017-12-31 14:59:46.762799000 +0000
+@@ -332,6 +332,8 @@
            GET_FILENAME_COMPONENT(lib "${lib}" NAME_WE)
            STRING(REGEX REPLACE "^lib" "" lib "${lib}")
            SET(${var} "${${var}}-l${lib} " ) 
@@ -9,13 +9,15 @@
          ELSE()
            SET(${var} "${${var}}-l${lib} " ) 
          ENDIF()
-@@ -432,13 +434,11 @@ ELSE()
+@@ -419,7 +421,6 @@
  
    IF(WITH_SYSTEMD)
      SET(BIN_SCRIPTS
 -      mysql_config
        mysqldumpslow
        ps_tokudb_admin
+       ps_mysqld_helper
+@@ -427,7 +428,6 @@
        )
    ELSE()
      SET(BIN_SCRIPTS
@@ -23,7 +25,7 @@
        mysqldumpslow
        mysqld_multi
        mysqld_safe
-@@ -473,7 +473,7 @@ ELSE()
+@@ -464,7 +464,7 @@
    FOREACH(file ${BIN_SCRIPTS})
      IF(EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/${file}.sh)
        CONFIGURE_FILE(${CMAKE_CURRENT_SOURCE_DIR}/${file}.sh

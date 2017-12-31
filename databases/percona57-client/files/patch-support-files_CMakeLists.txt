@@ -1,24 +1,14 @@
---- support-files/CMakeLists.txt.orig	2016-11-27 19:44:54 UTC
-+++ support-files/CMakeLists.txt
-@@ -44,14 +44,17 @@ ELSE()
-   SET(inst_location ${INSTALL_SUPPORTFILESDIR})
- ENDIF()
- 
-+IF(FALSE)
- SET(inifile my-default)
- CONFIGURE_FILE(${CMAKE_CURRENT_SOURCE_DIR}/${inifile}.cnf.sh 
-                ${CMAKE_CURRENT_BINARY_DIR}/${inifile}.${ini_file_extension} @ONLY)
- INSTALL(FILES ${CMAKE_CURRENT_BINARY_DIR}/${inifile}.${ini_file_extension}
-         DESTINATION ${inst_location} COMPONENT IniFiles)
-+ENDIF()
- 
- IF(UNIX)
+--- support-files/CMakeLists.txt.orig	2017-12-11 07:56:49.000000000 +0000
++++ support-files/CMakeLists.txt	2017-12-31 14:35:25.047786000 +0000
+@@ -47,6 +47,7 @@
+     SET (PIDOF "pgrep -d' ' -f")
+   ENDIF()
    SET(prefix ${CMAKE_INSTALL_PREFIX})
-+IF(FALSE)
++  IF(FALSE)
    FOREACH(script  mysqld_multi.server mysql-log-rotate)
      CONFIGURE_FILE(${CMAKE_CURRENT_SOURCE_DIR}/${script}.sh 
                     ${CMAKE_CURRENT_BINARY_DIR}/${script} @ONLY )
-@@ -68,9 +71,11 @@ IF(UNIX)
+@@ -59,9 +60,11 @@
    IF(INSTALL_SUPPORTFILESDIR)
      INSTALL(FILES magic DESTINATION ${inst_location} COMPONENT SupportFiles)
    ENDIF()
@@ -30,7 +20,7 @@
    SET(bindir ${prefix}/${INSTALL_BINDIR})
    SET(sbindir ${prefix}/${INSTALL_SBINDIR})
    SET(scriptdir ${prefix}/${INSTALL_SCRIPTDIR})
-@@ -83,3 +88,4 @@ IF(UNIX)
+@@ -74,3 +77,4 @@
      PERMISSIONS OWNER_READ OWNER_WRITE OWNER_EXECUTE GROUP_READ 
      GROUP_EXECUTE WORLD_READ WORLD_EXECUTE)
  ENDIF()
