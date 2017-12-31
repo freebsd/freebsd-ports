@@ -7,7 +7,7 @@ PORTEPOCH=	1
 CATEGORIES=	devel lang
 MASTER_SITES=	http://www.nasm.us/pub/nasm/releasebuilds/${PORTVERSION}/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	zeising@FreeBSD.org
 COMMENT=	General-purpose multi-platform x86 and amd64 assembler
 
 LICENSE=	BSD2CLAUSE
