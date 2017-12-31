@@ -1,0 +1,13 @@
+bin/libcangjie_bench
+bin/libcangjie_cli
+bin/libcangjie_dbbuilder
+include/cangjie/cangjie.h
+include/cangjie/cangjiechar.h
+include/cangjie/cangjiecharlist.h
+include/cangjie/cangjiecommon.h
+include/cangjie/cangjieerrors.h
+lib/libcangjie.so
+lib/libcangjie.so.2
+lib/libcangjie.so.2.0.1
+libdata/pkgconfig/cangjie.pc
+%%DATADIR%%/cangjie.db

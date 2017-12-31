@@ -1,0 +1,5 @@
+This is a C library implementing the Cangjie input method.
+This library is based on Wan Leung Wong's original libcangjie
+with some updated API.
+
+WWW: https://github.com/Cangjians/libcangjie

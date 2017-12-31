@@ -59,6 +59,7 @@
     SUBDIR += kcfonts
     SUBDIR += kde4-l10n-zh_CN
     SUBDIR += kde4-l10n-zh_TW
+    SUBDIR += libcangjie
     SUBDIR += libchewing
     SUBDIR += libpinyin
     SUBDIR += libreoffice-zh_CN
