@@ -22,4 +22,4 @@ making the %%PREFIX%%/etc/sasldb* file(s) readable by group mail (this should
 be the default for new installs).
 
 If you are upgrading from prior postfix version, review the RELEASE_NOTES to
-familiarize yourself with new features and incompatabilities.
+familiarize yourself with new features and incompatibilities.

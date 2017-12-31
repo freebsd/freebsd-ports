@@ -1,4 +1,4 @@
-Fabric3 is a fork of Fabric to provide compatability with Python 3.4+.
+Fabric3 is a fork of Fabric to provide compatibility with Python 3.4+.
 The port still works with Python 2.7.
 
 WWW: https://github.com/mathiasertl/fabric/
