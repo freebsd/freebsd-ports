@@ -1,0 +1,4 @@
+This is a Python wrapper to libcangjie,
+the library implementing the Cangjie input method.
+
+WWW: http://cangjians.github.io/projects/pycangjie/
