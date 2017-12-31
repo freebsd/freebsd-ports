@@ -9,8 +9,8 @@ Subject: Make build against Qt 5.9.0
 
 diff --git a/qt5/style/qtcurve.h b/qt5/style/qtcurve.h
 index 6930c08..aedcd16 100644
---- a/qt5/style/qtcurve.h
-+++ b/qt5/style/qtcurve.h
+--- qt5/style/qtcurve.h
++++ qt5/style/qtcurve.h
 @@ -379,7 +379,7 @@ private:
      void emitMenuSize(QWidget *w, unsigned short size, bool force=false);
      void emitStatusBarState(QStatusBar *sb);
