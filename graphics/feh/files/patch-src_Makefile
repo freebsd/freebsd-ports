@@ -1,0 +1,11 @@
+--- src/Makefile.orig	2017-12-28 18:28:35 UTC
++++ src/Makefile
+@@ -5,8 +5,6 @@ TARGETS = \
+ 	events.c \
+ 	feh_png.c \
+ 	filelist.c \
+-	getopt.c \
+-	getopt1.c \
+ 	gib_hash.c \
+ 	gib_imlib.c \
+ 	gib_list.c \
