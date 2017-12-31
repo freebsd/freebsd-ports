@@ -7,8 +7,11 @@ PORTREVISION=	5
 CATEGORIES=	databases
 MASTER_SITES=	MYSQL/MySQL-Proxy
 
-MAINTAINER=	swills@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Monitor, analyze, or transform the communication of MySQL
+
+DEPRECATED=	No longer maintained and not recommended for production use
+EXPIRATION_DATE=	2018-01-30
 
 LICENSE=	GPLv2
 
