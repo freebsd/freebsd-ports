@@ -11,7 +11,6 @@ COMMENT=	Parse liquid tags easily
 
 LICENSE=	MIT
 
-BUILD_DEPENDS=	rubygem-rdoc>=5.0.0:devel/rubygem-rdoc
 RUN_DEPENDS=	rubygem-extras>=0.3:devel/rubygem-extras \
 		rubygem-liquid>=3.0:textproc/rubygem-liquid
 
