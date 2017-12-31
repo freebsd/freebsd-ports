@@ -12,11 +12,12 @@ COMMENT=	Python wrapper to libcangjie
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	cython:lang/cython
 LIB_DEPENDS=	libcangjie.so:chinese/libcangjie
 
-USES=		autoreconf gmake libtool pkgconfig sqlite python:3.2+
+USES=		autoreconf gmake libtool pkgconfig sqlite python:3.4+
+USE_PYTHON=	cython
 GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	CYTHON=${LOCALBASE}/bin/cython-${PYTHON_VER}
 USE_GITHUB=	yes
 GH_ACCOUNT=	Cangjians
 GH_PROJECT=	pycangjie
