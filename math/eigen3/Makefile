@@ -16,6 +16,7 @@ LICENSE_COMB=	multi
 CMAKE_ARGS=	-DPKGCONFIG_INSTALL_DIR:PATH="${PREFIX}/libdata/pkgconfig"
 USES=		cmake:outsource tar:bzip2
 NO_BUILD=	yes
+NO_ARCH=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTNAME}-5a0156e40feb
 
