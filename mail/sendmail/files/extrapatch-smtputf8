@@ -1,0 +1,600 @@
+diff --git a/sendmail/conf.c b/sendmail/conf.c
+index c73334e..28328e6 100644
+--- sendmail/conf.c.orig
++++ sendmail/conf.c
+@@ -314,6 +314,9 @@ setdefaults(e)
+ 	e->e_xfqgrp = NOQGRP;
+ 	e->e_xfqdir = NOQDIR;
+ 	e->e_ctime = curtime();
++#if _FFR_EAI
++	e->e_smtputf8 = false;
++#endif
+ 	SevenBitInput = false;			/* option 7 */
+ 	MaxMciCache = 1;			/* option k */
+ 	MciCacheTimeout = 5 MINUTES;		/* option K */
+@@ -5746,6 +5749,9 @@ char	*CompileOptions[] =
+ 	"DNSMAP",
+ # endif
+ #endif
++#if _FFR_EAI
++	"EAI",
++#endif
+ #if EGD
+ 	"EGD",
+ #endif
+@@ -6590,3 +6596,6 @@ char	*FFRCompileOptions[] =
+ 	NULL
+ };
+
++#if _FFR_EAI && _FFR_EIGHT_BIT_ADDR_OK
++#error "Cannot enable both of these FFRs"
++#endif
+diff --git a/sendmail/domain.c b/sendmail/domain.c
+index 4d1b92d..adaa6ac 100644
+--- sendmail/domain.c.orig
++++ sendmail/domain.c
+@@ -13,6 +13,9 @@
+
+ #include <sendmail.h>
+ #include "map.h"
++#if _FFR_EAI
++#include <unicode/uidna.h>
++#endif
+
+ #if NAMED_BIND
+ SM_RCSID("@(#)$Id: domain.c,v 8.205 2013-11-22 20:51:55 ca Exp $ (with name server)")
+@@ -236,6 +239,26 @@ getmxrr(host, mxhosts, mxprefs, droplocalhost, rcode, tryfallback, pttl)
+ 	if (host[0] == '[')
+ 		goto punt;
+
++#if _FFR_EAI
++	if (!addr_is_ascii(host))
++	{
++		char buf[1024];
++		UErrorCode error = U_ZERO_ERROR;
++		UIDNAInfo info = UIDNA_INFO_INITIALIZER;
++		UIDNA *idna;
++		int anl;
++
++		idna = uidna_openUTS46(UIDNA_NONTRANSITIONAL_TO_ASCII, &error);
++		anl = uidna_nameToASCII_UTF8(idna,
++					     host, strlen(host),
++					     buf, sizeof(buf) - 1,
++					     &info,
++					     &error);
++		uidna_close(idna);
++		host = sm_rpool_strdup_x(CurEnv->e_rpool, buf);
++	}
++#endif /* _FFR_EAI */
++
+ 	/*
+ 	**  If we don't have MX records in our host switch, don't
+ 	**  try for MX records.  Note that this really isn't "right",
+diff --git a/sendmail/err.c b/sendmail/err.c
+index 0594eb9..67d0d09 100644
+--- sendmail/err.c.orig
++++ sendmail/err.c
+@@ -1010,15 +1010,23 @@ fmtmsg(eb, to, num, enhsc, eno, fmt, ap)
+ 		(void) sm_strlcpyn(eb, spaceleft, 2,
+ 				   shortenstring(to, MAXSHORTSTR), "... ");
+ 		spaceleft -= strlen(eb);
++#if _FFR_EAI
++		eb += strlen(eb);
++#else
+ 		while (*eb != '\0')
+ 			*eb++ &= 0177;
++#endif
+ 	}
+
+ 	/* output the message */
+ 	(void) sm_vsnprintf(eb, spaceleft, fmt, ap);
+ 	spaceleft -= strlen(eb);
++#if _FFR_EAI
++	eb += strlen(eb);
++#else
+ 	while (*eb != '\0')
+ 		*eb++ &= 0177;
++#endif
+
+ 	/* output the error code, if any */
+ 	if (eno != 0)
+diff --git a/sendmail/main.c b/sendmail/main.c
+index 38eebbf..43e17a5 100644
+--- sendmail/main.c.orig
++++ sendmail/main.c
+@@ -1854,6 +1854,9 @@ main(argc, argv, envp)
+
+ 	/* MIME message/xxx subtypes that can be treated as messages */
+ 	setclass('s', "rfc822");
++#ifdef _FFR_EAI
++	setclass('s', "global");
++#endif
+
+ 	/* MIME Content-Transfer-Encodings that can be encoded */
+ 	setclass('e', "7bit");
+diff --git a/sendmail/parseaddr.c b/sendmail/parseaddr.c
+index 2adb39c..9ab0729 100644
+--- sendmail/parseaddr.c.orig
++++ sendmail/parseaddr.c
+@@ -273,12 +273,14 @@ invalidaddr(addr, delimptr, isrcpt)
+ 	}
+ 	for (; *addr != '\0'; addr++)
+ 	{
++#ifndef _FFR_EAI
+ 		if (!EightBitAddrOK && (*addr & 0340) == 0200)
+ 		{
+ 			setstat(EX_USAGE);
+ 			result = true;
+ 			*addr = BAD_CHAR_REPLACEMENT;
+ 		}
++#endif
+ 		if (++len > MAXNAME - 1)
+ 		{
+ 			char saved = *addr;
+@@ -350,7 +352,7 @@ hasctrlchar(addr, isrcpt, complain)
+ 			}
+ 			result = "too long";
+ 		}
+-		if (!EightBitAddrOK && !quoted && (*addr < 32 || *addr == 127))
++		if (!quoted && ((unsigned char)*addr < 32 || *addr == 127))
+ 		{
+ 			result = "non-printable character";
+ 			*addr = BAD_CHAR_REPLACEMENT;
+@@ -368,6 +370,7 @@ hasctrlchar(addr, isrcpt, complain)
+ 				break;
+ 			}
+ 		}
++#ifndef _FFR_EAI
+ 		if (!EightBitAddrOK && (*addr & 0340) == 0200)
+ 		{
+ 			setstat(EX_USAGE);
+@@ -375,6 +378,7 @@ hasctrlchar(addr, isrcpt, complain)
+ 			*addr = BAD_CHAR_REPLACEMENT;
+ 			continue;
+ 		}
++#endif
+ 	}
+ 	if (quoted)
+ 		result = "unbalanced quote"; /* unbalanced quote */
+diff --git a/sendmail/queue.c b/sendmail/queue.c
+index a323301..95344d3 100644
+--- sendmail/queue.c.orig
++++ sendmail/queue.c
+@@ -665,6 +665,10 @@ queueup(e, announce, msync)
+ 		*p++ = 'n';
+ 	if (bitset(EF_SPLIT, e->e_flags))
+ 		*p++ = 's';
++#if _FFR_EAI
++	if (e->e_smtputf8)
++		*p++ = 'e';
++#endif
+ 	*p++ = '\0';
+ 	if (buf[0] != '\0')
+ 		(void) sm_io_fprintf(tfp, SM_TIME_DEFAULT, "F%s\n", buf);
+@@ -4285,6 +4289,12 @@ readqf(e, openonly)
+ 				  case 'w':	/* warning sent */
+ 					e->e_flags |= EF_WARNING;
+ 					break;
++
++#if _FFR_EAI
++				  case 'e':	/* message requires EAI */
++					e->e_smtputf8 = true;
++					break;
++#endif /* _FFR_EAI */
+ 				}
+ 			}
+ 			break;
+@@ -4550,6 +4560,23 @@ readqf(e, openonly)
+ 	/* other checks? */
+ #endif /* _FFR_QF_PARANOIA */
+
++#if _FFR_EAI
++	/*
++	** If this message originates from something other than
++	** srvrsmtp.c, then it might use UTF8 addresses but not be
++	** marked.  We'll just add the mark so we're sure that it
++	** either can be delivered or will be returned.
++	*/
++	if (!e->e_smtputf8) {
++		ADDRESS *q;
++		for (q = e->e_sendqueue; q != NULL; q = q->q_next)
++			if (!addr_is_ascii(q->q_paddr) && !e->e_smtputf8)
++				e->e_smtputf8 = true;
++		if (!addr_is_ascii(e->e_from.q_paddr) && !e->e_smtputf8)
++			e->e_smtputf8 = true;
++	}
++#endif /* _FFR_EAI */
++
+ 	/* possibly set ${dsn_ret} macro */
+ 	if (bitset(EF_RET_PARAM, e->e_flags))
+ 	{
+diff --git a/sendmail/recipient.c b/sendmail/recipient.c
+index 3fad957..09eac64 100644
+--- sendmail/recipient.c.orig
++++ sendmail/recipient.c
+@@ -508,6 +508,11 @@ recipient(new, sendq, aliaslevel, e)
+ 		p = e->e_from.q_mailer->m_addrtype;
+ 		if (p == NULL)
+ 			p = "rfc822";
++#ifdef _FFR_EAI
++		if (sm_strcasecmp(p, "rfc822") == 0 &&
++		    !addr_is_ascii(q->q_user))
++			p = "utf-8";
++#endif
+ 		if (sm_strcasecmp(p, "rfc822") != 0)
+ 		{
+ 			(void) sm_snprintf(frbuf, sizeof(frbuf), "%s; %.800s",
+diff --git a/sendmail/savemail.c b/sendmail/savemail.c
+index 6de8f2f..8a9df36 100644
+--- sendmail/savemail.c.orig
++++ sendmail/savemail.c
+@@ -744,6 +744,34 @@ returntosender(msg, returnq, flags, e)
+ 	return ret;
+ }
+
++
++/*
++** DSNTYPENAME -- Returns the DSN name of the addrtype for this address
++**
++**	Sendmail's addrtypes are largely in different universes, and
++**	'fred' may be a valid address in different addrtype
++**	universes.
++**
++**	EAI extends the rfc822 universe rather than introduce a new
++**	universe.  Because of that, sendmail uses the rfc822 addrtype,
++**	but names it utf-8 when the EAI DSN extension requires that.
++*/
++
++const char *
++dsntypename(addrtype, addr)
++	const char * addrtype;
++	const char * addr;
++{
++	if (sm_strcasecmp(addrtype, "rfc822") != 0)
++		return addrtype;
++#ifdef _FFR_EAI
++	if (!addr_is_ascii(addr))
++		return "utf-8";
++#endif
++	return "rfc822";
++}
++
++
+ /*
+ **  ERRBODY -- output the body of an error message.
+ **
+@@ -1082,7 +1110,13 @@ errbody(mci, e, separator)
+ 		(void) sm_strlcpyn(buf, sizeof(buf), 2, "--", e->e_msgboundary);
+ 		if (!putline("", mci) ||
+ 		    !putline(buf, mci) ||
++#ifdef _FFR_EAI
++		    !putline(e->e_parent->e_smtputf8
++			     ? "Content-Type: message/global-delivery-status"
++			     : "Content-Type: message/delivery-status", mci) ||
++#else
+ 		    !putline("Content-Type: message/delivery-status", mci) ||
++#endif
+ 		    !putline("", mci))
+ 			goto writeerr;
+
+@@ -1223,7 +1257,8 @@ errbody(mci, e, separator)
+ 					(void) sm_snprintf(actual,
+ 							   sizeof(actual),
+ 							   "%s; %.700s@%.100s",
+-							   p, q->q_user,
++							   dsntypename(p, q->q_user),
++							   q->q_user,
+ 							   MyHostName);
+ 				}
+ 				else
+@@ -1231,7 +1266,8 @@ errbody(mci, e, separator)
+ 					(void) sm_snprintf(actual,
+ 							   sizeof(actual),
+ 							   "%s; %.800s",
+-							   p, q->q_user);
++							   dsntypename(p, q->q_user),
++							   q->q_user);
+ 				}
+ 			}
+
+@@ -1248,6 +1284,21 @@ errbody(mci, e, separator)
+ 									   actual);
+ 			}
+
++#ifdef _FFR_EAI
++			if (sm_strncasecmp("rfc822;", q->q_finalrcpt, 7) == 0 &&
++			    !addr_is_ascii(q->q_user)) {
++			        char utf8rcpt[1024];
++				char * a;
++				a = strchr(q->q_finalrcpt, ';');
++				while(*a == ';' || *a == ' ')
++					a++;
++				sm_snprintf(utf8rcpt, 1023,
++					    "utf-8; %.800s", a);
++				q->q_finalrcpt = sm_rpool_strdup_x(e->e_rpool,
++								   utf8rcpt);
++			}
++#endif
++
+ 			if (q->q_finalrcpt != NULL)
+ 			{
+ 				(void) sm_snprintf(buf, sizeof(buf),
+@@ -1373,9 +1424,21 @@ errbody(mci, e, separator)
+
+ 			if (!putline(buf, mci))
+ 				goto writeerr;
++#ifdef _FFR_EAI
++			if (e->e_parent->e_smtputf8)
++				(void) sm_strlcpyn(buf, sizeof(buf), 2,
++						   "Content-Type: message/global",
++						   sendbody ? "" : "-headers");
++			else
++				(void) sm_strlcpyn(buf, sizeof(buf), 2,
++						   "Content-Type: ",
++						sendbody ? "message/rfc822"
++							 : "text/rfc822-headers");
++#else
+ 			(void) sm_strlcpyn(buf, sizeof(buf), 2, "Content-Type: ",
+ 					sendbody ? "message/rfc822"
+ 						 : "text/rfc822-headers");
++#endif
+ 			if (!putline(buf, mci))
+ 				goto writeerr;
+
+diff --git a/sendmail/sendmail.h b/sendmail/sendmail.h
+index b2d0211..63a2378 100644
+--- sendmail/sendmail.h.orig
++++ sendmail/sendmail.h
+@@ -781,8 +781,13 @@ MCI
+ #else
+ # define MCIF_NOTSTICKY	0
+ #endif
++#if _FFR_EAI
++#define MCIF_EAI	0x40000000	/* SMTPUTF8 supported */
++#else
++#define MCIF_EAI	0x00000000	/* for MCIF_EXTENS */
++#endif /* _FFR_EAI */
+
+-#define MCIF_EXTENS	(MCIF_EXPN | MCIF_SIZE | MCIF_8BITMIME | MCIF_DSN | MCIF_8BITOK | MCIF_AUTH | MCIF_ENHSTAT | MCIF_TLS | MCIF_AUTH2)
++#define MCIF_EXTENS	(MCIF_EXPN | MCIF_SIZE | MCIF_8BITMIME | MCIF_DSN | MCIF_8BITOK | MCIF_AUTH | MCIF_ENHSTAT | MCIF_TLS | MCIF_AUTH2 | MCIF_EAI)
+
+ /* states */
+ #define MCIS_CLOSED	0		/* no traffic on this connection */
+@@ -921,6 +926,9 @@ struct envelope
+ 	ADDRESS		e_from;		/* the person it is from */
+ 	char		*e_sender;	/* e_from.q_paddr w comments stripped */
+ 	char		**e_fromdomain;	/* the domain part of the sender */
++#if _FFR_EAI
++	bool		e_smtputf8;	/* whether the sender demanded SMTPUTF8 */
++#endif
+ 	ADDRESS		*e_sendqueue;	/* list of message recipients */
+ 	ADDRESS		*e_errorqueue;	/* the queue for error responses */
+
+@@ -1928,6 +1936,9 @@ struct termescape
+ #define D_CANONREQ	'c'	/* canonification required (cf) */
+ #define D_IFNHELO	'h'	/* use if name for HELO */
+ #define D_FQMAIL	'f'	/* fq sender address required (cf) */
++#if _FFR_EAI
++#define D_EAI		'I'	/* EAI supported */
++#endif
+ #define D_FQRCPT	'r'	/* fq recipient address required (cf) */
+ #define D_SMTPS		's'	/* SMTP over SSL (smtps) */
+ #define D_UNQUALOK	'u'	/* unqualified address is ok (cf) */
+@@ -2355,7 +2366,7 @@ EXTERN bool	ForkQueueRuns;	/* fork for each job when running the queue */
+ EXTERN bool	FromFlag;	/* if set, "From" person is explicit */
+ EXTERN bool	FipsMode;
+ EXTERN bool	GrabTo;		/* if set, get recipients from msg */
+-EXTERN bool	EightBitAddrOK;	/* we'll let 8-bit addresses through */
++EXTERN bool	EightBitAddrOK; /* we'll let 8-bit addresses through */
+ EXTERN bool	HasEightBits;	/* has at least one eight bit input byte */
+ EXTERN bool	HasWildcardMX;	/* don't use MX records when canonifying */
+ EXTERN bool	HoldErrs;	/* only output errors to transcript */
+@@ -2855,6 +2866,10 @@ extern bool	xtextok __P((char *));
+ extern int	xunlink __P((char *));
+ extern char	*xuntextify __P((char *));
+
++#if _FFR_EAI
++extern bool	addr_is_ascii __P((const char *));
++#endif
++
+ #if _FFR_RCPTFLAGS
+ extern bool	newmodmailer __P((ADDRESS *, int));
+ #endif
+diff --git a/sendmail/srvrsmtp.c b/sendmail/srvrsmtp.c
+index b05348d..91e6956 100644
+--- sendmail/srvrsmtp.c.orig
++++ sendmail/srvrsmtp.c
+@@ -65,6 +65,9 @@ static bool	NotFirstDelivery = false;
+ #define SRV_REQ_AUTH	0x0400	/* require AUTH */
+ #define SRV_REQ_SEC	0x0800	/* require security - equiv to AuthOptions=p */
+ #define SRV_TMP_FAIL	0x1000	/* ruleset caused a temporary failure */
++#if _FFR_EAI
++# define SRV_OFFER_EAI	0x2000	/* offer SMTPUTF* */
++#endif
+
+ static unsigned int	srvfeatures __P((ENVELOPE *, char *, unsigned int));
+
+@@ -122,6 +125,29 @@ extern ENVELOPE	BlankEnvelope;
+ #define SKIP_SPACE(s)	while (isascii(*s) && isspace(*s))	\
+ 				(s)++
+
++#if _FFR_EAI
++/*
++** ADDR_IS_ASCII -- check whether an address is 100% printable ASCII
++**
++**	Parameters:
++**		a -- an address (or other string)
++**
++**	Returns:
++**		TRUE if a is non-NULL and points to only printable ASCII
++**		FALSE if a is NULL and points to printable ASCII
++**		FALSE if a is non-NULL and points to something containing 8-bittery
++*/
++
++bool
++addr_is_ascii(a)
++	const char * a;
++{
++	while (a != NULL && *a != '\0' && *a >= ' ' && (unsigned char)*a < 127)
++		a++;
++	return (a != NULL && *a == '\0');
++}
++#endif
++
+ /*
+ **  PARSE_ESMTP_ARGS -- parse EMSTP arguments (for MAIL, RCPT)
+ **
+@@ -722,10 +748,21 @@ do								\
+ #else
+ # define auth_active	false
+ #endif
++#ifdef _FFR_EAI
++#define GET_PROTOCOL()					\
++	(e->e_smtputf8					\
++	    ? (auth_active				\
++		? (tls_active ? "UTF8SMTPSA" : "UTF8SMTPA") \
++		: (tls_active ? "UTF8SMTPS"  : "UTF8SMTP")) \
++            : (auth_active				\
++		? (tls_active ? "ESMTPSA" : "ESMTPA")	\
++		: (tls_active ? "ESMTPS"  : "ESMTP")))
++#else
+ #define GET_PROTOCOL()					\
+ 	(auth_active					\
+ 	    ? (tls_active ? "ESMTPSA" : "ESMTPA")	\
+ 	    : (tls_active ? "ESMTPS"  : "ESMTP"))
++#endif
+
+ static bool SevenBitInput_Saved;	/* saved version of SevenBitInput */
+
+@@ -898,6 +935,9 @@ smtp(nullserver, d_flags, e)
+ 		| (bitset(TLS_I_NO_VRFY, TLS_Srv_Opts) ? SRV_NONE
+ 						       : SRV_VRFY_CLT)
+ #endif /* STARTTLS */
++#if _FFR_EAI
++		| SRV_OFFER_EAI
++#endif /* _FFR_EAI */
+ 		;
+ 	if (nullserver == NULL)
+ 	{
+@@ -2523,6 +2563,10 @@ smtp(nullserver, d_flags, e)
+ 			if (SendMIMEErrors && bitset(SRV_OFFER_DSN, features))
+ 				message("250-DSN");
+ #endif /* DSN */
++#if _FFR_EAI
++			if (bitset(SRV_OFFER_EAI, features))
++				message("250-SMTPUTF8");
++#endif /* _FFR_EAI */
+ 			if (bitset(SRV_OFFER_ETRN, features))
+ 				message("250-ETRN");
+ #if SASL
+@@ -2696,6 +2740,18 @@ smtp(nullserver, d_flags, e)
+ 			if (Errors > 0)
+ 				sm_exc_raisenew_x(&EtypeQuickAbort, 1);
+
++#if _FFR_EAI
++			if (e->e_smtputf8) {
++				protocol = GET_PROTOCOL();
++				macdefine(&e->e_macro, A_PERM, 'r', protocol);
++			}
++			/* UTF8 addresses are only legal with SMTPUTF8 */
++			if (!e->e_smtputf8 && !addr_is_ascii(e->e_from.q_paddr)) {
++				usrerr("553 5.6.7 That address requires SMTPUTF8");
++				sm_exc_raisenew_x(&EtypeQuickAbort, 1);
++			}
++#endif
++
+ #if SASL
+ # if _FFR_AUTH_PASSING
+ 			/* set the default AUTH= if the sender didn't */
+@@ -2933,6 +2989,13 @@ smtp(nullserver, d_flags, e)
+ 				usrerr("501 5.0.0 Missing recipient");
+ 				goto rcpt_done;
+ 			}
++#if _FFR_EAI
++			if (!e->e_smtputf8 && !addr_is_ascii(a->q_paddr))
++			{
++				usrerr("553 5.6.7 Address requires SMTPUTF8");
++				goto rcpt_done;
++			}
++#endif
+
+ 			if (delimptr != NULL && *delimptr != '\0')
+ 				*delimptr++ = '\0';
+@@ -4820,6 +4883,17 @@ mail_esmtp_args(a, kp, vp, e)
+
+ 		/* XXX: check whether more characters follow? */
+ 	}
++#if _FFR_EAI
++	else if (sm_strcasecmp(kp, "smtputf8") == 0)
++	{
++		if (!bitset(SRV_OFFER_EAI, e->e_features))
++		{
++			usrerr("504 5.7.0 Sorry, SMTPUTF8 not supported/enabled");
++			/* NOTREACHED */
++		}
++		e->e_smtputf8 = true;
++	}
++#endif
+ 	else
+ 	{
+ 		usrerr("555 5.5.4 %s parameter unrecognized", kp);
+@@ -5174,6 +5248,9 @@ static struct
+ 	{ 'C',	SRV_REQ_SEC	},
+ 	{ 'D',	SRV_OFFER_DSN	},
+ 	{ 'E',	SRV_OFFER_ETRN	},
++#if _FFR_EAI
++	{ 'I',	SRV_OFFER_EAI	},
++#endif
+ 	{ 'L',	SRV_REQ_AUTH	},
+ #if PIPELINING
+ # if _FFR_NO_PIPE
+diff --git a/sendmail/usersmtp.c b/sendmail/usersmtp.c
+index 24d38ee..cbc6bb7 100644
+--- sendmail/usersmtp.c.orig
++++ sendmail/usersmtp.c
+@@ -465,6 +465,10 @@ helo_options(line, firstline, m, mci, e)
+ 		mci->mci_flags |= MCIF_PIPELINED;
+ 	else if (sm_strcasecmp(line, "verb") == 0)
+ 		mci->mci_flags |= MCIF_VERB;
++#if _FFR_EAI
++	else if (sm_strcasecmp(line, "smtputf8") == 0)
++		mci->mci_flags |= MCIF_EAI;
++#endif /* _FFR_EAI */
+ #if STARTTLS
+ 	else if (sm_strcasecmp(line, "starttls") == 0)
+ 		mci->mci_flags |= MCIF_TLS;
+@@ -2027,6 +2031,19 @@ smtpmailfrom(m, mci, e)
+ 		return EX_TEMPFAIL;
+ 	}
+
++#if _FFR_EAI
++	/*
++	**  Abort right away if the message needs SMTPUTF8 and the
++	**  server does not advertise SMTPUTF8.
++	*/
++
++	if (e->e_smtputf8 && !bitset(MCIF_EAI, mci->mci_flags)) {
++		usrerrenh("5.6.7", "%s does not support SMTPUTF8", CurHostName);
++		mci_setstat(mci, EX_NOTSTICKY, "5.6.7", NULL);
++		return EX_DATAERR;
++	}
++#endif /* _FFR_EAI */
++
+ 	/* set up appropriate options to include */
+ 	if (bitset(MCIF_SIZE, mci->mci_flags) && e->e_msgsize > 0)
+ 	{
+@@ -2040,6 +2057,14 @@ smtpmailfrom(m, mci, e)
+ 		bufp = optbuf;
+ 	}
+
++#if _FFR_EAI
++	if (e->e_smtputf8) {
++		(void) sm_snprintf(bufp, SPACELEFT(optbuf, bufp),
++				 " SMTPUTF8");
++		bufp += strlen(bufp);
++	}
++#endif /* _FFR_EAI */
++
+ 	bodytype = e->e_bodytype;
+ 	if (bitset(MCIF_8BITMIME, mci->mci_flags))
+ 	{
