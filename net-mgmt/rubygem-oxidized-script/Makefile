@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	oxidized-script
-PORTVERSION=	0.3.1
+PORTVERSION=	0.5.0
 CATEGORIES=	net-mgmt rubygems
 MASTER_SITES=	RG
 
