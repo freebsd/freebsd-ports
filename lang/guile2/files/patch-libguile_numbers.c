@@ -6,7 +6,7 @@
  
 +/* With old GCC, do not override _Static_assert: it conflicts with
 +   #include <complex.h> below. */
-+#if __clang__ || (__GNUC__ >= 4 && __GNUC_MINOR__ >= 6)
++#if defined(__clang__) || (__GNUC__ * 10 + __GNUC_MINOR__ >= 46)
  #include <verify.h>
 +#endif
  #include <assert.h>
