@@ -1,36 +1,5 @@
 @(root,%%WWWGRP%%,4550) bin/wfwl_syslog
 @sample(root,%%WWWGRP%%,0640) %%ETCDIR%%/webfwlog.conf.sample
-%%PORTDOCS%%%%DOCSDIR%%/examples/basic
-%%PORTDOCS%%%%DOCSDIR%%/examples/current_count
-%%PORTDOCS%%%%DOCSDIR%%/examples/current_dport
-%%PORTDOCS%%%%DOCSDIR%%/examples/last20hosts
-%%PORTDOCS%%%%DOCSDIR%%/examples/latest_logged_packets
-%%PORTDOCS%%%%DOCSDIR%%/examples/recent_active
-%%PORTDOCS%%%%DOCSDIR%%/examples/tcpports
-%%PORTDOCS%%%%DOCSDIR%%/examples/tcpsyn
-%%PORTDOCS%%%%DOCSDIR%%/examples/udpports
-%%PORTDOCS%%%%DOCSDIR%%/mysql/README
-%%PORTDOCS%%%%DOCSDIR%%/mysql/mysql_data_table.sql
-%%PORTDOCS%%%%DOCSDIR%%/mysql/scripts/snort_view
-%%PORTDOCS%%%%DOCSDIR%%/mysql/scripts/wfwl_function_grants
-%%PORTDOCS%%%%DOCSDIR%%/mysql/scripts/wfwl_functions
-%%PORTDOCS%%%%DOCSDIR%%/mysql/scripts/wfwl_grants
-%%PORTDOCS%%%%DOCSDIR%%/mysql/scripts/wfwl_hostnames_create
-%%PORTDOCS%%%%DOCSDIR%%/mysql/scripts/wfwl_hostnames_create_bin
-%%PORTDOCS%%%%DOCSDIR%%/mysql/scripts/wfwl_reports_addcol
-%%PORTDOCS%%%%DOCSDIR%%/mysql/scripts/wfwl_reports_altercol
-%%PORTDOCS%%%%DOCSDIR%%/mysql/scripts/wfwl_reports_create
-%%PORTDOCS%%%%DOCSDIR%%/mysql/scripts/wfwl_services_create
-@(,,0555) %%PORTDOCS%%%%DOCSDIR%%/mysql/setup
-%%PORTDOCS%%%%DOCSDIR%%/pgsql/README
-%%PORTDOCS%%%%DOCSDIR%%/pgsql/pgsql_data_table.sql
-%%PORTDOCS%%%%DOCSDIR%%/pgsql/scripts/snort_view
-%%PORTDOCS%%%%DOCSDIR%%/pgsql/scripts/wfwl_functions
-%%PORTDOCS%%%%DOCSDIR%%/pgsql/scripts/wfwl_hostnames_create
-%%PORTDOCS%%%%DOCSDIR%%/pgsql/scripts/wfwl_reports_addcol
-%%PORTDOCS%%%%DOCSDIR%%/pgsql/scripts/wfwl_reports_create
-%%PORTDOCS%%%%DOCSDIR%%/pgsql/scripts/wfwl_services_create
-@(,,0555) %%PORTDOCS%%%%DOCSDIR%%/pgsql/setup
 %%WWWDIR%%/include/config.php
 %%WWWDIR%%/include/criteria.php
 %%WWWDIR%%/include/debug.php
@@ -53,3 +22,40 @@
 %%WWWDIR%%/include/update_cache.php
 %%WWWDIR%%/index.php
 %%WWWDIR%%/style.css
+%%PORTDOCS%%%%DOCSDIR%%/examples/basic
+%%PORTDOCS%%%%DOCSDIR%%/examples/current_count
+%%PORTDOCS%%%%DOCSDIR%%/examples/current_dport
+%%PORTDOCS%%%%DOCSDIR%%/examples/last20hosts
+%%PORTDOCS%%%%DOCSDIR%%/examples/latest_logged_packets
+%%PORTDOCS%%%%DOCSDIR%%/examples/recent_active
+%%PORTDOCS%%%%DOCSDIR%%/examples/tcpports
+%%PORTDOCS%%%%DOCSDIR%%/examples/tcpsyn
+%%PORTDOCS%%%%DOCSDIR%%/examples/udpports
+%%PORTDOCS%%%%DOCSDIR%%/mysql/README
+%%PORTDOCS%%%%DOCSDIR%%/mysql/mysql_data_table.sql
+%%PORTDOCS%%%%DOCSDIR%%/mysql/scripts/snort_view
+%%PORTDOCS%%%%DOCSDIR%%/mysql/scripts/wfwl_function_grants
+%%PORTDOCS%%%%DOCSDIR%%/mysql/scripts/wfwl_functions
+%%PORTDOCS%%%%DOCSDIR%%/mysql/scripts/wfwl_grants
+%%PORTDOCS%%%%DOCSDIR%%/mysql/scripts/wfwl_hostnames_create
+%%PORTDOCS%%%%DOCSDIR%%/mysql/scripts/wfwl_hostnames_create_bin
+%%PORTDOCS%%%%DOCSDIR%%/mysql/scripts/wfwl_reports_addcol
+%%PORTDOCS%%%%DOCSDIR%%/mysql/scripts/wfwl_reports_altercol
+%%PORTDOCS%%%%DOCSDIR%%/mysql/scripts/wfwl_reports_create
+%%PORTDOCS%%%%DOCSDIR%%/mysql/scripts/wfwl_services_create
+@mode 0755
+%%PORTDOCS%%%%DOCSDIR%%/mysql/setup
+@mode 0644
+%%PORTDOCS%%%%DOCSDIR%%/pgsql/README
+%%PORTDOCS%%%%DOCSDIR%%/pgsql/pgsql_data_table.sql
+%%PORTDOCS%%%%DOCSDIR%%/pgsql/scripts/snort_view
+%%PORTDOCS%%%%DOCSDIR%%/pgsql/scripts/wfwl_functions
+%%PORTDOCS%%%%DOCSDIR%%/pgsql/scripts/wfwl_hostnames_create
+%%PORTDOCS%%%%DOCSDIR%%/pgsql/scripts/wfwl_reports_addcol
+%%PORTDOCS%%%%DOCSDIR%%/pgsql/scripts/wfwl_reports_create
+%%PORTDOCS%%%%DOCSDIR%%/pgsql/scripts/wfwl_services_create
+%%PORTDOCS%%%%DOCSDIR%%/pgsql/README.geoip
+%%PORTDOCS%%%%DOCSDIR%%/pgsql/pgsql_geoip2_tables.sql
+@mode 0755
+%%PORTDOCS%%%%DOCSDIR%%/pgsql/setup
+@mode 0644
