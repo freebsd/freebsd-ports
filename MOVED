@@ -9834,3 +9834,7 @@ www/npm3|www/npm|2017-12-31|Has expired: use www/npm or www/npm-node* instead
 net/rubygem-fog-aws0|net/rubygem-fog-aws|2017-12-31|Has expired: use net/rubygem-fog-aws or net/rubygem-fog-aws1 instead
 net-mgmt/nrpe|net-mgmt/nrpe3|2018-01-01|nrpe 2.0 not maintained, use nrpe 3.0
 net-mgmt/nrpe-ssl|net-mgmt/nrpe3|2018-01-01|nrpe 2.0 not maintained, use nrpe 3.0
+security/gnupg20|security/gnupg|2018-01-01|Has expired: Will reach EOL upstream on 2017-12-31
+dns/dualserver|dns/dnsmasq|2018-01-01|Has expired: Please migrate to dns/dnsmasq. Over the years dualserver becomes unmaintenaible.
+devel/p5-Parse-Pidl44|devel/p5-Parse-Pidl|2018-01-01|Has expired: use devel/p5-Parse-Pidl instead
+sysutils/DTraceToolkit||2018-01-01|Has expired: Now maintained as part of the base system
