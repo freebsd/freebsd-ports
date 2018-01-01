@@ -95,7 +95,8 @@ lib/ceph/erasure-code/libec_shec_sse3.so
 lib/ceph/erasure-code/libec_shec_sse4.so
 lib/ceph/libceph-common.so
 lib/ceph/libceph-common.so.0
-lib/ceph/mgr/mgr_module.py
+lib/ceph/mgr/balancer/__init__.py
+lib/ceph/mgr/balancer/module.py
 lib/ceph/mgr/dashboard/__init__.py
 lib/ceph/mgr/dashboard/cephfs_clients.py
 lib/ceph/mgr/dashboard/servers.html
@@ -112,6 +113,7 @@ lib/ceph/mgr/dashboard/rbd_iscsi.py
 lib/ceph/mgr/dashboard/rbd_mirroring.html
 lib/ceph/mgr/dashboard/rbd_mirroring.py
 lib/ceph/mgr/dashboard/rbd_pool.html
+lib/ceph/mgr/dashboard/standby.html
 lib/ceph/mgr/dashboard/static/favicon.ico
 lib/ceph/mgr/dashboard/static/logo-mini.png
 lib/ceph/mgr/dashboard/static/underscore-min.js
@@ -1170,6 +1172,11 @@ lib/ceph/mgr/dashboard/README.rst
 lib/ceph/mgr/dashboard/filesystem.html
 lib/ceph/mgr/dashboard/types.py
 lib/ceph/mgr/dashboard/HACKING.rst
+lib/ceph/mgr/influx/__init__.py
+lib/ceph/mgr/influx/module.py
+lib/ceph/mgr/localpool/__init__.py
+lib/ceph/mgr/localpool/module.py
+lib/ceph/mgr/mgr_module.py
 lib/ceph/mgr/prometheus/__init__.py
 lib/ceph/mgr/prometheus/module.py
 lib/ceph/mgr/restful/api/request.py
@@ -1186,6 +1193,8 @@ lib/ceph/mgr/restful/module.py
 lib/ceph/mgr/restful/decorators.py
 lib/ceph/mgr/restful/hooks.py
 lib/ceph/mgr/restful/__init__.py
+lib/ceph/mgr/selftest/__init__.py
+lib/ceph/mgr/selftest/module.py
 lib/ceph/mgr/status/__init__.py
 lib/ceph/mgr/status/module.py
 lib/ceph/mgr/zabbix/__init__.py
@@ -1315,6 +1324,7 @@ lib/rados-classes/libcls_version.so.1.0.0
 libexec/ceph/ceph-osd-prestart.sh
 libexec/ceph/ceph_common.sh
 man/man8/ceph-authtool.8.gz
+man/man8/ceph-bluestore-tool.8.gz
 man/man8/ceph-clsinfo.8.gz
 man/man8/ceph-conf.8.gz
 man/man8/ceph-create-keys.8.gz
