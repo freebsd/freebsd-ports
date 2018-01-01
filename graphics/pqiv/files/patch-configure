@@ -1,0 +1,22 @@
+--- configure.orig	2017-12-12 20:06:03 UTC
++++ configure
+@@ -267,16 +267,16 @@ fi
+ # Auto-determine available backends
+ if [ -z "$BACKENDS" ]; then
+ 	echo -n "Checking for supported backends..             "
+-	BACKENDS="$($MAKE get_available_backends ${PKG_CONFIG:+PKG_CONFIG="$PKG_CONFIG"} | awk '/^BACKENDS:/ {print substr($0, 11);}')"
++	BACKENDS="$($MAKE get_available_backends ${PKG_CONFIG:+PKG_CONFIG="$PKG_CONFIG"} | awk '/^BACKENDS:/ {print substr($0, 11);}') "
+ 	echo "${BACKENDS:-(none)}"
+ fi
+ 
+ # Disable explicitly disabled and enable explicitly enabled backends
+ for BACKEND in ${DISABLED_BACKENDS}; do
+-	BACKENDS="${BACKENDS//${BACKEND} /}"
++	BACKENDS="${BACKENDS/${BACKEND}/}"
+ done
+ for BACKEND in ${ENFORCED_BACKENDS}; do
+-	BACKENDS="${BACKEND} ${BACKENDS//${BACKEND} /}"
++	BACKENDS="${BACKEND} ${BACKENDS/${BACKEND} /}"
+ done
+ 
+ echo "Building with backends:                       ${BACKENDS:-(none)}"
