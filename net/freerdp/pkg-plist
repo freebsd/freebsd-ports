@@ -1,5 +1,6 @@
 bin/winpr-hash
 bin/winpr-makecert
+%%WAYLAND%%bin/wlfreerdp
 %%X11%%bin/xfreerdp
 include/freerdp2/freerdp/addin.h
 include/freerdp2/freerdp/altsec.h
@@ -123,6 +124,8 @@ include/freerdp2/freerdp/utils/signal.h
 include/freerdp2/freerdp/utils/stopwatch.h
 include/freerdp2/freerdp/version.h
 include/freerdp2/freerdp/window.h
+%%WAYLAND%%include/uwac0/uwac/uwac-tools.h
+%%WAYLAND%%include/uwac0/uwac/uwac.h
 include/winpr2/winpr/asn1.h
 include/winpr2/winpr/bcrypt.h
 include/winpr2/winpr/bitstream.h
@@ -196,6 +199,9 @@ lib/libfreerdp-client2.so.2.0.0
 lib/libfreerdp2.so
 lib/libfreerdp2.so.2
 lib/libfreerdp2.so.2.0.0
+%%WAYLAND%%lib/libuwac0.so
+%%WAYLAND%%lib/libuwac0.so.0
+%%WAYLAND%%lib/libuwac0.so.0.0.1
 lib/libwinpr-tools2.so
 lib/libwinpr-tools2.so.2
 lib/libwinpr-tools2.so.2.0.0
@@ -204,6 +210,7 @@ lib/libwinpr2.so.2
 lib/libwinpr2.so.2.0.0
 libdata/pkgconfig/freerdp-client2.pc
 libdata/pkgconfig/freerdp2.pc
+%%WAYLAND%%libdata/pkgconfig/uwac0.pc
 libdata/pkgconfig/winpr-tools2.pc
 libdata/pkgconfig/winpr2.pc
 share/cmake/Modules/FreeRDP-Client2/FreeRDP-ClientConfig.cmake
@@ -214,11 +221,16 @@ share/cmake/Modules/FreeRDP2/FreeRDPConfig.cmake
 share/cmake/Modules/FreeRDP2/FreeRDPConfigVersion.cmake
 share/cmake/Modules/FreeRDP2/FreeRDPTargets-%%CMAKE_BUILD_TYPE%%.cmake
 share/cmake/Modules/FreeRDP2/FreeRDPTargets.cmake
+%%WAYLAND%%share/cmake/Modules/uwac0/uwac-%%CMAKE_BUILD_TYPE%%.cmake
+%%WAYLAND%%share/cmake/Modules/uwac0/uwac.cmake
+%%WAYLAND%%share/cmake/Modules/uwac0/uwacConfig.cmake
+%%WAYLAND%%share/cmake/Modules/uwac0/uwacConfigVersion.cmake
 share/cmake/Modules/WinPR2/WinPRConfig.cmake
 share/cmake/Modules/WinPR2/WinPRConfigVersion.cmake
 share/cmake/Modules/WinPR2/WinPRTargets-%%CMAKE_BUILD_TYPE%%.cmake
 share/cmake/Modules/WinPR2/WinPRTargets.cmake
 share/man/man1/winpr-hash.1
 share/man/man1/winpr-makecert.1
+%%WAYLAND%%share/man/man1/wlfreerdp.1
 %%X11%%share/man/man1/xfreerdp.1
 share/man/man7/wlog.7
