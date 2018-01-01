@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xpath
-PORTVERSION=	2.1.0
+PORTVERSION=	3.0.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -11,7 +11,7 @@ COMMENT=	DSL for generating XPath Expressions
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-nokogiri>=1.3:textproc/rubygem-nokogiri
+RUN_DEPENDS=	rubygem-nokogiri>=1.8:textproc/rubygem-nokogiri
 
 NO_ARCH=	yes
 USE_RUBY=	yes
