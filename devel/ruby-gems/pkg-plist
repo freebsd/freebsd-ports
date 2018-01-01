@@ -3,6 +3,7 @@ bin/gem%%RUBY_VER_SHORT%%
 %%RUBY_SITELIBDIR%%/rubygems.rb
 %%RUBY_SITELIBDIR%%/rubygems/available_set.rb
 %%RUBY_SITELIBDIR%%/rubygems/basic_specification.rb
+%%RUBY_SITELIBDIR%%/rubygems/bundler_version_finder.rb
 %%RUBY_SITELIBDIR%%/rubygems/command.rb
 %%RUBY_SITELIBDIR%%/rubygems/command_manager.rb
 %%RUBY_SITELIBDIR%%/rubygems/commands/build_command.rb
@@ -29,6 +30,8 @@ bin/gem%%RUBY_VER_SHORT%%
 %%RUBY_SITELIBDIR%%/rubygems/commands/search_command.rb
 %%RUBY_SITELIBDIR%%/rubygems/commands/server_command.rb
 %%RUBY_SITELIBDIR%%/rubygems/commands/setup_command.rb
+%%RUBY_SITELIBDIR%%/rubygems/commands/signin_command.rb
+%%RUBY_SITELIBDIR%%/rubygems/commands/signout_command.rb
 %%RUBY_SITELIBDIR%%/rubygems/commands/sources_command.rb
 %%RUBY_SITELIBDIR%%/rubygems/commands/specification_command.rb
 %%RUBY_SITELIBDIR%%/rubygems/commands/stale_command.rb
@@ -148,6 +151,7 @@ bin/gem%%RUBY_VER_SHORT%%
 %%RUBY_SITELIBDIR%%/rubygems/security/policy.rb
 %%RUBY_SITELIBDIR%%/rubygems/security/signer.rb
 %%RUBY_SITELIBDIR%%/rubygems/security/trust_dir.rb
+%%RUBY_SITELIBDIR%%/rubygems/security_option.rb
 %%RUBY_SITELIBDIR%%/rubygems/server.rb
 %%RUBY_SITELIBDIR%%/rubygems/source.rb
 %%RUBY_SITELIBDIR%%/rubygems/source/git.rb
