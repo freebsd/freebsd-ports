@@ -1,23 +1,5 @@
---- Makefile.in.orig	2017-01-19 00:10:01 UTC
+--- Makefile.in.orig	2018-01-01 11:17:18 UTC
 +++ Makefile.in
-@@ -29,13 +29,13 @@ bindir = $(exec_prefix)/bin
- 
- SHELL = /bin/sh
- 
--CFILES=         bwbasic.c bwb_cmd.c bwb_cnd.c bwb_dio.c bwb_elx.c\
--                bwb_exp.c bwb_fnc.c bwb_inp.c bwb_int.c bwb_ops.c\
-+CFILES=         bwbasic.c bwb_cmd.c bwb_cnd.c bwb_dio.c\
-+                bwb_exp.c bwb_fnc.c bwb_inp.c bwb_int.c\
-                 bwb_prn.c bwb_stc.c bwb_str.c bwb_tbl.c bwb_var.c\
- 		bwd_cmd.c bwd_fun.c bwx_tty.c
- 
--OFILES=         bwbasic.o bwb_cmd.o bwb_cnd.o bwb_dio.o bwb_elx.o\
--                bwb_exp.o bwb_fnc.o bwb_inp.o bwb_int.o bwb_ops.o\
-+OFILES=         bwbasic.o bwb_cmd.o bwb_cnd.o bwb_dio.o\
-+                bwb_exp.o bwb_fnc.o bwb_inp.o bwb_int.o\
-                 bwb_prn.o bwb_stc.o bwb_str.o bwb_tbl.o bwb_var.o\
- 		bwd_cmd.o bwd_fun.o bwx_tty.o
-  
 @@ -66,8 +66,8 @@ bwbasic:	$(OFILES)
  		$(CC) $(OFILES) -lm -o $@ $(LDFLAGS)
  
@@ -25,7 +7,7 @@
 -renum:
 -	$(CC) renum.c -o renum
 +renum:		renum.o
-+		$(CC) renum.o -o $@ $(LDFLAGS) 
++	$(CC)	renum.o -o $@ $(LDFLAGS) 
  
  $(OFILES):      $(HFILES)
  
