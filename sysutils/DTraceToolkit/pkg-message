@@ -1,6 +1,0 @@
-**************************************************************
-* At this point it is prudent to remind you that DTrace      *
-* support in FreeBSD is incomplete and experimental. Many of *
-* these scripts will not work as they are either too Solaris *
-* specific or use probes which are unsupported at this time. *
-**************************************************************
