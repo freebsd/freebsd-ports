@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	vlc
-DISTVERSION=	2.2.6
-PORTREVISION=	5
+DISTVERSION=	2.2.8
 PORTEPOCH=	4
 CATEGORIES=	multimedia audio ipv6 net www
 MASTER_SITES=	http://download.videolan.org/pub/videolan/${PORTNAME}/${DISTVERSION:S/a$//}/ \
@@ -20,9 +19,9 @@ LIB_DEPENDS=	libgcrypt.so:security/libgcrypt \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
 		libidn.so:dns/libidn
-BUILD_DEPENDS=	ffmpeg>=2.0:multimedia/ffmpeg \
+BUILD_DEPENDS=	ffmpeg>=3.4.1,1:multimedia/ffmpeg \
 		yasm:devel/yasm
-RUN_DEPENDS=	ffmpeg>=2.0:multimedia/ffmpeg
+RUN_DEPENDS=	ffmpeg>=3.4.1,1:multimedia/ffmpeg
 
 # VLC git (post 2.2.4) requires C++11 support and passes the appropriate flag
 # to the compiler. Until the port is updated, we explicitly pass -std=c++11 to
@@ -45,10 +44,10 @@ CONFIGURE_ARGS=	--enable-avcodec --enable-avformat --enable-dvbpsi \
 		--enable-swscale --enable-vlc \
 		--disable-alsa --disable-chromaprint --disable-crystalhd \
 		--disable-dc1394 --disable-decklink --disable-directfb \
-		--disable-dv1394 --disable-egl --disable-fdkaac \
+		--disable-dv1394 --disable-fdkaac \
 		--disable-gles1 --disable-gles2 --disable-kai --disable-kva \
-		--disable-libvnc --disable-opencv --disable-projectm \
-		--disable-quicksync --disable-telx \
+		--disable-vnc --disable-opencv --disable-projectm \
+		--disable-telx \
 		--disable-tiger --disable-tremor --disable-udev \
 		--disable-update-check --disable-vcdx --disable-vsxu \
 		--disable-wasapi --disable-x26410b \
@@ -61,15 +60,14 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 CFLAGS_i386=	-fomit-frame-pointer
 LIBS+=		-L${LOCALBASE}/lib
 
-OPTIONS_DEFINE=	A52 AALIB ASS AVAHI CACA DBUS DCA DIRAC DOCS DVDREAD \
-		DVDNAV FAAD FLAC FLUID FRIBIDI GME GNOMEVFS2 GNUTLS \
+OPTIONS_DEFINE=	A52 AALIB ASS AVAHI CACA DBUS DCA DOCS DVDREAD \
+		DVDNAV FAAD FLAC FLUID FREERDP FRIBIDI GME GNOMEVFS2 GNUTLS \
 		GOOM HTTPD JACK KATE LIBBLURAY LIBRSVG2 LIBSSH2 LIRC \
-		LIVEMEDIA LUA MAD MATROSKA MODPLUG \
-		MPEG2 MTP MUSEPACK NCURSES NLS NOTIFY OGG OPTIMIZED_CFLAGS \
-		OPUS PNG PULSEAUDIO QT4 QT5 REALRTSP RUNROOT SAMPLERATE \
-		SCHROEDINGER SDL SHOUTCAST SKINS SMB SNDIO STREAM SPEEX \
-		TAGLIB THEORA TWOLAME UPNP V4L VAAPI VCD VDPAU VORBIS \
-		X11 X264 X265 ZVBI
+		LIVEMEDIA LUA MAD MATROSKA MODPLUG MPEG2 MTP MUSEPACK \
+		NCURSES NLS NOTIFY OGG OPTIMIZED_CFLAGS OPUS PNG PULSEAUDIO \
+		QT4 QT5 REALRTSP RUNROOT SAMPLERATE SIDPLAY SCHROEDINGER \
+		SDL SHOUTCAST SKINS SMB SNDIO STREAM SPEEX TAGLIB THEORA \
+		TWOLAME UPNP V4L VAAPI VCD VDPAU VORBIS X11 X264 X265 ZVBI
 OPTIONS_DEFAULT=A52 AVAHI DBUS DCA DVDREAD DVDNAV FAAD FLAC GNUTLS \
 		HTTPD LIVEMEDIA LUA MAD MATROSKA MPEG2 OGG OPTIMIZED_CFLAGS \
 		OPUS PNG QT5 SAMPLERATE STREAM SPEEX TAGLIB THEORA TWOLAME V4L \
@@ -116,9 +114,6 @@ DBUS_CONFIGURE_ENABLE=	dbus
 DCA_LIB_DEPENDS=	libdca.so:multimedia/libdca
 DCA_CONFIGURE_ENABLE=	dca
 
-DIRAC_LIB_DEPENDS=	libdirac_decoder.so:multimedia/dirac
-DIRAC_CONFIGURE_ENABLE=	dirac
-
 DVDREAD_LIB_DEPENDS=	libdvdread.so:multimedia/libdvdread
 DVDREAD_CONFIGURE_ENABLE=	dvdread
 
@@ -136,10 +131,11 @@ FLAC_CONFIGURE_ENABLE=	flac
 FLUID_LIB_DEPENDS=	libfluidsynth.so:audio/fluidsynth
 FLUID_CONFIGURE_ENABLE=	fluidsynth
 
-# XXX vlc doesn't seem to like the freerdp version in ports
-#FREERDP_LIB_DEPENDS=	libfreerdp-core.so:net/freerdp
-#FREERDP_CONFIGURE_ENABLE=	libfreerdp
-CONFIGURE_ARGS+=	-disable-freerdp
+FREERDP_LIB_DEPENDS=	libfreerdp2.so:net/freerdp
+FREERDP_CONFIGURE_ENABLE=	freerdp
+FREERDP_CONFIGURE_ENV=	FREERDP_CFLAGS="-I${LOCALBASE}/include/freerdp2 \
+					-I${LOCALBASE}/include/winpr2" \
+			FREERDP_LIBS="-L${LOCALBASE}/lib"
 
 FRIBIDI_LIB_DEPENDS=	libfribidi.so:converters/fribidi
 FRIBIDI_CONFIGURE_ENABLE=	fribidi
@@ -261,11 +257,9 @@ SCHROEDINGER_CONFIGURE_ENABLE=	schroedinger
 SDL_USE=		SDL=image
 SDL_CONFIGURE_ENABLE=	sdl sdl-image
 
-# libsidplay build broken with:
-# /usr/bin/ld: /usr/local/lib/sidplay/builders/libresid-builder.a(resid-builder.o): relocation R_X86_64_32S against `_ZTV12ReSIDBuilder' can not be used when making a shared object; recompile with -fPIC
-#SIDPLAY_LIB_DEPENDS=	libsidplay2.so:audio/libsidplay2
-#SIDPLAY_LDFLAGS=	-L${LOCALBASE}/lib/sidplay/builders
-#SIDPLAY_CONFIGURE_ENABLE=	sid
+SIDPLAY_LIB_DEPENDS=	libsidplay2.so:audio/libsidplay2
+SIDPLAY_LDFLAGS=	-L${LOCALBASE}/lib/sidplay/builders
+SIDPLAY_CONFIGURE_ENABLE=	sid
 CONFIGURE_ARGS+=	--disable-sid
 
 SHOUTCAST_LIB_DEPENDS=	libshout.so:audio/libshout
@@ -312,7 +306,7 @@ VORBIS_CONFIGURE_ENABLE=vorbis
 
 X11_USE=		GL=gl XORG=xcb,xproto
 X11_LIB_DEPENDS=	libxcb-keysyms.so:x11/xcb-util-keysyms
-X11_CONFIGURE_ENABLE=	glx xcb xvideo
+X11_CONFIGURE_ENABLE=	xcb xvideo
 X11_CONFIGURE_WITH=	x
 
 X264_LIB_DEPENDS=	libx264.so:multimedia/libx264
