@@ -1,6 +1,4 @@
 bin/gscan2pdf
-bin/scanadf-perl
-bin/scanimage-perl
 %%SITE_PERL%%/Gscan2pdf/Canvas.pm
 %%SITE_PERL%%/Gscan2pdf/Config.pm
 %%SITE_PERL%%/Gscan2pdf/Cuneiform.pm
@@ -8,11 +6,11 @@ bin/scanimage-perl
 %%SITE_PERL%%/Gscan2pdf/Dialog/Renumber.pm
 %%SITE_PERL%%/Gscan2pdf/Dialog/Scan.pm
 %%SITE_PERL%%/Gscan2pdf/Dialog/Scan/CLI.pm
-%%SITE_PERL%%/Gscan2pdf/Dialog/Scan/Sane.pm
+%%SITE_PERL%%/Gscan2pdf/Dialog/Scan/Image_Sane.pm
 %%SITE_PERL%%/Gscan2pdf/Document.pm
 %%SITE_PERL%%/Gscan2pdf/EntryCompletion.pm
 %%SITE_PERL%%/Gscan2pdf/Frontend/CLI.pm
-%%SITE_PERL%%/Gscan2pdf/Frontend/Sane.pm
+%%SITE_PERL%%/Gscan2pdf/Frontend/Image_Sane.pm
 %%SITE_PERL%%/Gscan2pdf/NetPBM.pm
 %%SITE_PERL%%/Gscan2pdf/Ocropus.pm
 %%SITE_PERL%%/Gscan2pdf/Page.pm
@@ -20,11 +18,9 @@ bin/scanimage-perl
 %%SITE_PERL%%/Gscan2pdf/Scanner/Options.pm
 %%SITE_PERL%%/Gscan2pdf/Scanner/Profile.pm
 %%SITE_PERL%%/Gscan2pdf/Tesseract.pm
+%%SITE_PERL%%/Gscan2pdf/Translation.pm
 %%SITE_PERL%%/Gscan2pdf/Unpaper.pm
 man/man1/gscan2pdf.1.gz
-man/man1/scanadf-perl.1.gz
-man/man1/scanimage-perl.1.gz
-share/appdata/gscan2pdf.appdata.xml
 share/applications/gscan2pdf.desktop
 %%DATADIR%%/gscan2pdf-papyrus.svg
 %%DATADIR%%/gscan2pdf.svg
@@ -71,4 +67,5 @@ share/locale/tr/LC_MESSAGES/gscan2pdf.mo
 share/locale/uk/LC_MESSAGES/gscan2pdf.mo
 share/locale/zh_CN/LC_MESSAGES/gscan2pdf.mo
 share/locale/zh_TW/LC_MESSAGES/gscan2pdf.mo
+share/metainfo/gscan2pdf.appdata.xml
 share/pixmaps/gscan2pdf.svg
