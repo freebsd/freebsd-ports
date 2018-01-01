@@ -13,8 +13,6 @@ COMMENT?=	Nagios Remote Plugin Executor
 
 LICENSE=	GPLv2
 
-CONFLICTS=	nrpe nrpe-ssl
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	NagiosEnterprises
 
