@@ -1,24 +1,5 @@
 --- docs/CMakeLists.txt.orig	2014-09-11 19:08:18 UTC
 +++ docs/CMakeLists.txt
-@@ -92,11 +92,16 @@ ExtractRstCPP(${CMAKE_SOURCE_DIR}/export
- ExtractRstCPP(${CMAKE_SOURCE_DIR}/export/OpenColorIO/OpenColorTransforms.h developers/api/OpenColorTransforms.rst)
- ExtractRstCPP(${CMAKE_SOURCE_DIR}/export/OpenColorIO/OpenColorTypes.h developers/api/OpenColorTypes.rst)
- 
-+if(OCIO_BUILD_PYGLUE)
-+        set(DEPLIST OpenColorIO PyOpenColorIO)
-+else()
-+        set(DEPLIST OpenColorIO)
-+endif()
-+
- add_custom_target(doc ALL
-     COMMAND PYTHONPATH=${PYTHONPATH} ${EXTDIST_BINPATH}/sphinx-build -b html . ${CMAKE_CURRENT_BINARY_DIR}/build-html
-     DEPENDS
--        OpenColorIO
--        PyOpenColorIO
-+        ${DEPLIST}
-         ${CMAKE_BINARY_DIR}/docs/conf.py
-         developers/api/OpenColorIO.rst
-         developers/api/OpenColorTransforms.rst
 @@ -110,12 +115,11 @@ add_custom_target(doc ALL
  add_dependencies(doc Sphinx) 
  

@@ -1,15 +1,5 @@
 --- src/core/CMakeLists.txt.orig	2014-09-12 04:38:18.000000000 +0930
 +++ src/core/CMakeLists.txt
-@@ -4,8 +4,8 @@
- include_directories(
-     ${CMAKE_SOURCE_DIR}/export/
-     ${CMAKE_BINARY_DIR}/export/
--    ${EXTERNAL_INCLUDE_DIRS}
-     ${CMAKE_SOURCE_DIR}/ext/oiio/src/include
-+    ${EXTERNAL_INCLUDE_DIRS}
- )
- 
- file(GLOB_RECURSE core_src_files "${CMAKE_SOURCE_DIR}/src/core/*.cpp")
 @@ -81,13 +81,3 @@ if(OCIO_BUILD_STATIC)
      install(TARGETS OpenColorIO_STATIC DESTINATION ${CMAKE_INSTALL_EXEC_PREFIX}/lib)
  endif()
