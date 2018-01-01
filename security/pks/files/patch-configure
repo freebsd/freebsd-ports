@@ -1,21 +1,28 @@
---- ./configure.in.orig	2004-01-18 00:19:56.000000000 +0100
-+++ ./configure.in	2014-08-15 18:32:37.000000000 +0200
-@@ -74,126 +74,6 @@
+--- configure.orig	2004-01-17 23:19:56 UTC
++++ configure
+@@ -2530,141 +2530,6 @@ echo "${ECHO_T}Compiler Optimizations Enabled" >&6
+ fi;
+ 
  # Checks for libraries.
- dnl Checks for Berkeley DB
- AC_MSG_CHECKING(for Berkeley DB)
--AC_ARG_WITH(db,
--[  --with-db=DIR           Use Berkeley DB in DIR],
--[DBINC=NO
+-echo "$as_me:$LINENO: checking for Berkeley DB" >&5
+-echo $ECHO_N "checking for Berkeley DB... $ECHO_C" >&6
+-
+-# Check whether --with-db or --without-db was given.
+-if test "${with_db+set}" = set; then
+-  withval="$with_db"
+-  DBINC=NO
 -  DBLIB=NO
 -  DBHDR=NO
 -  S=1
 -  case "$withval" in
 -  yes|no)
--      AC_ERROR(Berkeley DB was not found. Please check your installation or use --with-db=PATH)
+-      { { echo "$as_me:$LINENO: error: Berkeley DB was not found. Please check your installation or use --with-db=PATH" >&5
+-echo "$as_me: error: Berkeley DB was not found. Please check your installation or use --with-db=PATH" >&2;}
+-   { (exit 1); exit 1; }; }
 -     ;;
 -  *)
--  AC_MSG_RESULT($withval)
+-  echo "$as_me:$LINENO: result: $withval" >&5
+-echo "${ECHO_T}$withval" >&6
 -  if test x${withval} = x ; then
 -          withval=/tmp
 -  fi
@@ -60,11 +67,15 @@
 -          S=$?
 -  fi
 -  if test $S -eq 1 ; then
--      AC_ERROR(Berkeley DB was not found. Please check your installation or use --with-db=DIR)
+-      { { echo "$as_me:$LINENO: error: Berkeley DB was not found. Please check your installation or use --with-db=DIR" >&5
+-echo "$as_me: error: Berkeley DB was not found. Please check your installation or use --with-db=DIR" >&2;}
+-   { (exit 1); exit 1; }; }
 -  fi
--  AC_MSG_RESULT(yes)
--  esac ],
--[DBINC=NO
+-  echo "$as_me:$LINENO: result: yes" >&5
+-echo "${ECHO_T}yes" >&6
+-  esac
+-else
+-  DBINC=NO
 -  DBLIB=NO
 -  DBHDR=NO
 -  S=1
@@ -120,10 +131,14 @@
 -  fi
 -
 -  if test $S -eq 1 ; then
--      AC_ERROR(Berkeley DB was not found. Please check your installation or use --with-db=DIR)
+-      { { echo "$as_me:$LINENO: error: Berkeley DB was not found. Please check your installation or use --with-db=DIR" >&5
+-echo "$as_me: error: Berkeley DB was not found. Please check your installation or use --with-db=DIR" >&2;}
+-   { (exit 1); exit 1; }; }
 -  fi
--  AC_MSG_RESULT(yes) ]
--)
- AC_SUBST(DBINC)
- AC_SUBST(DBLIB)
- AC_SUBST(DBHDR)
+-  echo "$as_me:$LINENO: result: yes" >&5
+-echo "${ECHO_T}yes" >&6
+-
+-fi;
+ 
+ 
+ 
