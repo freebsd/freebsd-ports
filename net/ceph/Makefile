@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	ceph
-DISTVERSION=	v12.2.0
-PORTREVISION=	2
+DISTVERSIONPREFIX=	v
+DISTVERSION=	12.2.2
 CATEGORIES=	net
 
 MAINTAINER=	wjw@digiware.nl
@@ -53,7 +53,6 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	ceph:DEFAULT
 GH_TUPLE+=	ceph:ceph-erasure-code-corpus:2d7d78b:ceph_erasure_code_corpus/ceph-erasure-code-corpus
 GH_TUPLE+=	ceph:ceph-object-corpus:f0ba19f:ceph_object_corpus/ceph-object-corpus
-GH_TUPLE+=	ceph:Beast:d8db5f1:Beast/src/Beast
 GH_TUPLE+=	ceph:civetweb:de23828:civetweb/src/civetweb
 GH_TUPLE+=	01org:isa-l_crypto:603529a:isa_l_crypto/src/crypto/isa-l/isa-l_crypto
 GH_TUPLE+=	ceph:gf-complete:7e61b44:gf_complete/src/erasure-code/jerasure/gf-complete
@@ -68,6 +67,8 @@ GH_TUPLE+=	facebook:zstd:dc99312:zstd/src/zstd
 
 CMAKE_BUILD_TYPE=	Release
 CMAKE_ARGS=	\
+	-D CMAKE_C_LINK_FLAGS:STRING=" -fuse-ld=/usr/bin/ld.lld" \
+	-D CMAKE_CXX_LINK_FLAGS:STRING=" -fuse-ld=/usr/bin/ld.lld" \
 	-D WITH_SYSTEM_BOOST:BOOL=ON \
 	-D CEPH_MAN_DIR:STRING=man \
 	-D WITH_LTTNG:BOOL=OFF \
@@ -79,7 +80,8 @@ CMAKE_ARGS=	\
 	-D HAVE_BABELTRACE:BOOL=OFF \
 	-D WITH_LIBCEPHFS:BOOL=OFF \
 	-D WITH_CEPHFS:BOOL=OFF \
-	-D WITH_EMBEDDED:BOOL=OFF
+	-D WITH_EMBEDDED:BOOL=OFF \
+	-D WITH_RADOSGW_BEAST_FRONTEND:BOOL=OFF
 
 SHEBANG_FILES=src/rbdmap src/ceph-post-file.in src/rbd-replay-many \
 	src/brag/client/ceph-brag src/ceph-rest-api \
