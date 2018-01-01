@@ -728,6 +728,7 @@
     SUBDIR += p5-Image-ObjectDetect
     SUBDIR += p5-Image-PBMlib
     SUBDIR += p5-Image-Pngslimmer
+    SUBDIR += p5-Image-Sane
     SUBDIR += p5-Image-Scale
     SUBDIR += p5-Image-Size
     SUBDIR += p5-Image-Size-FillFullSelect
