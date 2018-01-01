@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	webpush
-PORTVERSION=	0.3.2
-PORTREVISION=	1
+PORTVERSION=	0.3.3
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
@@ -13,7 +12,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-hkdf>=0.2:security/rubygem-hkdf \
-		rubygem-jwt>=0:www/rubygem-jwt
+		rubygem-jwt>=2.0:www/rubygem-jwt
 
 USES=		gem
 USE_RUBY=	yes
