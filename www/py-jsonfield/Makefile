@@ -3,6 +3,7 @@
 
 PORTNAME=	jsonfield
 PORTVERSION=	2.0.2
+PORTREVISION=	1
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,9 +14,7 @@ COMMENT=	Reusable JSONField model for Django to store validated JSON
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django110>=0:www/py-django110@${FLAVOR}
-
-CONFLICTS_INSTALL=py*-django-jsonfield
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django111>=0:www/py-django111@${FLAVOR}
 
 USES=		python
 USE_PYTHON=	distutils autoplist
