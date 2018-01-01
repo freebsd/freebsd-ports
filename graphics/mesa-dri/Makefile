@@ -68,7 +68,7 @@ BUILD_DEPENDS+=		${PYTHON_PKGNAMEPREFIX}mako>0:textproc/py-mako@${PY_FLAVOR}
 .endif
 
 .if ${VULKAN_DRIVERS:MINTEL}
-. if ${/usr/bin/ld:L:tA} != "/usr/bin/ld.lld"
+. if ${/usr/bin/ld:L:tA} != /usr/bin/ld.lld
 # --build-id isn't supported by old GNU ld.bfd in base
 USE_BINUTILS=		yes
 LDFLAGS+=		-B${LOCALBASE}/bin
