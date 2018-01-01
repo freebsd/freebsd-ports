@@ -312,7 +312,7 @@ MOZ_OPTIONS+=	--enable-optimize
 .else
 MOZ_OPTIONS+=	--disable-optimize
 . if ${MOZILLA_VER:R:R} >= 56
-.  if ${/usr/bin/ld:L:tA} != "/usr/bin/ld.lld"
+.  if ${/usr/bin/ld:L:tA} != /usr/bin/ld.lld
 # ld 2.17 barfs on Stylo built with -C opt-level=0
 USE_BINUTILS=	yes
 LDFLAGS+=		-B${LOCALBASE}/bin
