@@ -1,3 +1,4 @@
+%%QT_BINDIR%%/canbusutil
 %%QT_INCDIR%%/QtSerialBus/%%FULLVER%%/QtSerialBus/private/qcanbusdevice_p.h
 %%QT_INCDIR%%/QtSerialBus/%%FULLVER%%/QtSerialBus/private/qmodbus_symbols_p.h
 %%QT_INCDIR%%/QtSerialBus/%%FULLVER%%/QtSerialBus/private/qmodbusadu_p.h
@@ -50,6 +51,8 @@
 %%QT_INCDIR%%/QtSerialBus/qtserialbusversion.h
 %%QT_CMAKEDIR%%/Qt5SerialBus/Qt5SerialBusConfig.cmake
 %%QT_CMAKEDIR%%/Qt5SerialBus/Qt5SerialBusConfigVersion.cmake
+%%QT_CMAKEDIR%%/Qt5SerialBus/Qt5SerialBus_PeakCanBusPlugin.cmake
+%%QT_CMAKEDIR%%/Qt5SerialBus/Qt5SerialBus_TinyCanBusPlugin.cmake
 %%QT_LIBDIR%%/libQt5SerialBus.prl
 %%QT_LIBDIR%%/libQt5SerialBus.so
 %%QT_LIBDIR%%/libQt5SerialBus.so.5
@@ -58,4 +61,8 @@
 %%DEBUG%%%%QT_LIBDIR%%/libQt5SerialBus.so.%%FULLVER%%.debug
 %%QT_MKSPECDIR%%/modules/qt_lib_serialbus.pri
 %%QT_MKSPECDIR%%/modules/qt_lib_serialbus_private.pri
+%%QT_PLUGINDIR%%/canbus/libqtpeakcanbus.so
+%%DEBUG%%%%QT_PLUGINDIR%%/canbus/libqtpeakcanbus.so.debug
+%%QT_PLUGINDIR%%/canbus/libqttinycanbus.so
+%%DEBUG%%%%QT_PLUGINDIR%%/canbus/libqttinycanbus.so.debug
 libdata/pkgconfig/Qt5SerialBus.pc
