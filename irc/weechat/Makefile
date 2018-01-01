@@ -76,10 +76,6 @@ CMAKE_ARGS+=	-DENABLE_PYTHON3:BOOL=true \
 		-DPYTHON_LIBRARY:FILEPATH=${LOCALBASE}/lib/libpython${PYTHON_VER}m.so
 .endif
 
-.if !empty(PORT_OPTIONS:MRUBY) && (${ARCH} == "amd64" || ${ARCH} == "i386")
-LIB_DEPENDS+=   libunwind.so:devel/libunwind
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|$${LIBDIR}/../pkgconfig|$${CMAKE_INSTALL_PREFIX}/libdata/pkgconfig|' \
 		${WRKSRC}/CMakeLists.txt
