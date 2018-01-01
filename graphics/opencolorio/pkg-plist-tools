@@ -3,8 +3,3 @@ bin/ociocheck
 bin/ocioconvert
 bin/ociodisplay
 bin/ociolutimage
-@comment include/OpenColorIO/OpenColorABI.h
-@comment include/OpenColorIO/OpenColorIO.h
-@comment include/OpenColorIO/OpenColorTransforms.h
-@comment include/OpenColorIO/OpenColorTypes.h
-@comment libdata/pkgconfig/OpenColorIO.pc

@@ -3,7 +3,7 @@
 
 PORTNAME=	opencolorio
 PORTVERSION=	1.0.9
-PORTREVISION?=	3
+PORTREVISION?=	4
 CATEGORIES=	graphics multimedia
 
 MAINTAINER?=	FreeBSD@Shaneware.biz
@@ -14,9 +14,11 @@ LICENSE=	BSD3CLAUSE
 USE_GITHUB=	yes
 GH_ACCOUNT=	imageworks
 GH_PROJECT=	OpenColorIO
-GH_TAGNAME=	a557a85454
+GH_TAGNAME=	67e455b97e
 
 OPTIONS_DEFINE=	DOCS
+
+DOCS_CMAKE_BOOL=	OCIO_BUILD_DOCS
 
 LDFLAGS+=	-L${LOCALBASE}/lib
 USES=		alias cmake:outsource pkgconfig shebangfix
@@ -29,11 +31,11 @@ SHEBANG_FILES=	share/sphinx/ExtractRstFromSourceCPP.py \
 		share/sphinx/ExtractRstFromSourceSimple.py \
 		src/pyglue/createPyDocH.py
 
-#.if ${MACHINE_CPU:Msse2}
-#CMAKE_ARGS+=	-DOCIO_USE_SSE:BOOL=ON
-#.else
-#CMAKE_ARGS+=	-DOCIO_USE_SSE:BOOL=OFF
-#.endif
+.if ${MACHINE_CPU:Msse2}
+CMAKE_ARGS+=	-DOCIO_USE_SSE:BOOL=ON
+.else
+CMAKE_ARGS+=	-DOCIO_USE_SSE:BOOL=OFF
+.endif
 
 BROKEN_aarch64=		Does not compile: error: use of undeclared identifier __builtin_ia32_emms
 BROKEN_armv6=		Does not compile: error: use of undeclared identifier __builtin_ia32_emms
@@ -45,18 +47,22 @@ BROKEN_sparc64=		Does not compile: error: unrecognized command line option -msse
 .include <bsd.port.options.mk>
 
 .if defined(OCIO_SLAVE) && ${OCIO_SLAVE} == tools
-LIB_DEPENDS=	libOpenImageIO.so:graphics/openimageio \
+LIB_DEPENDS=	liblcms2.so:graphics/lcms2 \
+		libOpenImageIO.so:graphics/openimageio \
 		libOpenColorIO.so:graphics/opencolorio
 CMAKE_ARGS+=	-DOCIO_BUILD_APPS:BOOL=ON \
 		-DOCIO_BUILD_SHARED:BOOL=OFF \
 		-DOCIO_BUILD_PYGLUE:BOOL=OFF
-USE_GL=		glew glut
+USE_GL=		gl glu glut glew
+USE_XORG=	xi xmu
 PLIST=		${PKGDIR}/pkg-plist-tools
 EXTRA_PATCHES=	${FILESDIR}/extra-patch-CMakeLists.txt \
 		${FILESDIR}/extra-tools-patch-src_core_CMakeLists.txt
 .elif defined(OCIO_SLAVE) && ${OCIO_SLAVE} == pymodule
-LIB_DEPENDS=	libOpenImageIO.so:graphics/openimageio
+LIB_DEPENDS=	libOpenImageIO.so:graphics/openimageio \
+		libOpenColorIO.so:graphics/opencolorio
 USES+=		python
+USE_PYTHON=	flavors
 CMAKE_ARGS+=	-DOCIO_BUILD_APPS:BOOL=OFF \
 		-DOCIO_BUILD_SHARED:BOOL=OFF \
 		-DOCIO_BUILD_PYGLUE:BOOL=ON \
@@ -80,12 +86,6 @@ CMAKE_ARGS+=	-DOCIO_BUILD_APPS:BOOL=OFF \
 # be used to build a python 3 module
 PLIST=		${PKGDIR}/pkg-plist
 EXTRA_PATCHES=	${FILESDIR}/extra-patch-src_core_CMakeLists.txt
-.endif
-
-.if ${PORT_OPTIONS:MDOCS}
-CMAKE_ARGS+=	-DOCIO_BUILD_DOCS:BOOL=ON
-.else
-CMAKE_ARGS+=	-DOCIO_BUILD_DOCS:BOOL=OFF
 .endif
 
 post-patch:
