@@ -3,14 +3,14 @@
 
 PORTNAME=	libvmime
 PORTVERSION=	0.9.2
-PORTREVISION=	2
 DISTVERSIONPREFIX=	v
+PORTREVISION=	2
 CATEGORIES=	mail
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	All-in-one Internet mail library
 
-LICENSE=	GPLv3
+LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libgnutls.so:security/gnutls \
