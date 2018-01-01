@@ -3,7 +3,7 @@
 
 PORTNAME=	kicad
 DISTVERSION=	r${GIT_SRC_DATE}
-#PORTREVISION=	1
+PORTREVISION=	1
 CATEGORIES=	cad
 MASTER_SITES=	LOCAL/mr
 PKGNAMESUFFIX=	-devel
@@ -27,7 +27,7 @@ LIBVERSION=	1.0
 CXXFLAGS+=	-msse
 USE_GL=		glew glu gl
 USE_WX=		3.0
-WX_COMPS=	wx wx:build python:build
+WX_COMPS=	wx wx:build wx:run python:build python:run
 USE_GNOME=	atk cairo	# Required by libwx_gtk2_aui-2.8.so
 USE_XORG+=	pixman
 
