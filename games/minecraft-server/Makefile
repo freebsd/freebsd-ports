@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	minecraft-server
-PORTVERSION=	1.11.2
+PORTVERSION=	1.12.2
 CATEGORIES=	games java
 MASTER_SITES=	https://s3.amazonaws.com/Minecraft.Download/versions/${PORTVERSION}/
 DISTFILES=	minecraft_server.${PORTVERSION}.jar
@@ -45,6 +45,8 @@ CONFIG_FILES=	banned-ips.json \
 
 DAEMON_VARS=	USE_RC_SUBR=minecraft
 DAEMON_RUN_DEPENDS=	tmux:sysutils/tmux
+
+NO_ARCH=	yes
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/${PORTNAME}
