@@ -513,6 +513,7 @@
     SUBDIR += openldap24-server
     SUBDIR += openmpi
     SUBDIR += openmpi2
+    SUBDIR += openmpi3
     SUBDIR += openmq
     SUBDIR += openmq-client
     SUBDIR += openntpd
