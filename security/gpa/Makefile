@@ -33,7 +33,7 @@ NLS_CONFIGURE_ENABLE=	nls
 
 pre-configure:
 	@(if [ ! -e ${LOCALBASE}/bin/gpgsm ] ; then \
-	${ECHO_MSG} "gpa requires gpgsm. (Re)Install security/gnupg20 with the GPGSM option ON" ; \
+	${ECHO_MSG} "gpa requires gpgsm. (Re)Install security/gnupg with the GPGSM option ON" ; \
 	exit 1; \
 	fi)
 
