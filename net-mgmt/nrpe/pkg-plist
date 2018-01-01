@@ -1,4 +1,0 @@
-@sample etc/nrpe.cfg.sample
-libexec/nagios/check_nrpe2
-sbin/nrpe2
-@dir(%%NAGIOSUSER%%,%%NAGIOSGROUP%%,755) %%NRPE_PIDDIR%%
