@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	phylip
-PORTVERSION=	3.696
+PORTVERSION=	3.697
 PORTEPOCH=	1
 CATEGORIES=	biology
 MASTER_SITES=	http://evolution.gs.washington.edu/phylip/download/
