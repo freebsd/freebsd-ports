@@ -39,7 +39,7 @@ FUSE_CMAKE_BOOL=BUILD_FUSE
 FUSE_PLIST_FILES=bin/aft-mtp-mount
 
 QT_CMAKE_BOOL=	BUILD_QT_UI
-QT_PLIST_FILES=bin/android-file-transfer \
+QT_PLIST_FILES=	bin/android-file-transfer \
 		share/applications/android-file-transfer.desktop \
 		share/icons/hicolor/128x128/apps/android-file-transfer.png
 
