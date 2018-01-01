@@ -2,12 +2,12 @@
 .\"     Title: pee
 .\"    Author: Joey Hess
 .\" Generator: DocBook XSL Stylesheets v1.76.1 <http://docbook.sf.net/>
-.\"      Date: 2006-03-14
+.\"      Date: 2016-12-20
 .\"    Manual: moreutils
 .\"    Source: moreutils
 .\"  Language: English
 .\"
-.TH "PEE" "1" "2006\-03\-14" "moreutils" "moreutils"
+.TH "PEE" "1" "2016\-12\-20" "moreutils" "moreutils"
 .\" -----------------------------------------------------------------
 .\" * Define some portability stuff
 .\" -----------------------------------------------------------------
@@ -31,7 +31,7 @@
 pee \- tee standard input to pipes
 .SH "SYNOPSIS"
 .HP \w'\fBpee\fR\ 'u
-\fBpee\fR [[\fI"command"\fR...]]
+\fBpee\fR [\-\-[no\-]ignore\-sigpipe] [\-\-[no\-]ignore\-write\-errors] [[\fI"command"\fR...]]
 .SH "DESCRIPTION"
 .PP
 \fBpee\fR
@@ -42,10 +42,30 @@ but for pipes\&. Each command is run and fed a copy of the standard input\&. The
 Note that while this is similar to
 \fBtee\fR, a copy of the input is not sent to stdout, like tee does\&. If that is desired, use
 \fBpee cat \&.\&.\&.\fR
+.SH "OPTIONS"
+.PP
+\fB\-\-ignore\-sigpipe\fR, \fB\-\-no\-ignore\-sigpipe\fR
+.RS 4
+Do (not) ignore SIGPIPE\&. Any command started by
+\fBpee\fR
+might cause a SIGPIPE when it exists\&. If you ignore SIGPIPE, you probably also want to ignore write errors (see below)\&. Ignoring SIGPIPE is the default behaviour\&.
+.RE
+.PP
+\fB\-\-ignore\-write\-errors\fR, \fB\-\-no\-ignore\-write\-errors\fR
+.RS 4
+Do (not) ignore write errors\&. When a command started by
+\fBpee\fR
+is no more accepting data via the pipe between itself and
+\fBpee\fR, a write error occurs in
+\fBpee\fR\&. If this error is not ignored,
+\fBpee\fR
+is going to terminate all child processes and exists\&. Ignoring write errors is the default behaviour\&.
+.RE
 .SH "SEE ALSO"
 .PP
 
-\fBtee\fR(1)
+\fBtee\fR(1),
+\fBpipe\fR(7)
 .SH "AUTHOR"
 .PP
 Miek Gieben
