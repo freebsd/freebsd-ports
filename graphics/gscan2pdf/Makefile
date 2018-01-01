@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gscan2pdf
-PORTVERSION=	1.8.2
-PORTREVISION=	1
+PORTVERSION=	1.8.10
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
@@ -19,7 +18,7 @@ BUILD_DEPENDS=	p5-Config-General>=2.40:devel/p5-Config-General \
 		p5-Log-Log4perl>0:devel/p5-Log-Log4perl \
 		p5-Readonly>0:devel/p5-Readonly \
 		ImageMagick>0:graphics/ImageMagick \
-		p5-Sane>=0.05:graphics/p5-Sane \
+		p5-Image-Sane>=0.14:graphics/p5-Image-Sane \
 		p5-Set-IntSpan>=1.10:math/p5-Set-IntSpan \
 		p5-List-MoreUtils>0:lang/p5-List-MoreUtils \
 		p5-Try-Tiny>0:lang/p5-Try-Tiny \
