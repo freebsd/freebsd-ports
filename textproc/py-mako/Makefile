@@ -3,6 +3,7 @@
 
 PORTNAME=	mako
 PORTVERSION=	1.0.7
+PORTREVISION=	1
 CATEGORIES=	textproc www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -21,6 +22,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}beaker>=1.1:www/py-beaker@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}Babel>0:devel/py-babel@${FLAVOR}
 
 USES=		python
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	autoplist concurrent distutils
 
 .include <bsd.port.mk>
