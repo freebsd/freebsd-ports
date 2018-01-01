@@ -1,0 +1,110 @@
+--- Makefile.orig	1994-01-26 17:32:33 UTC
++++ Makefile
+@@ -26,7 +26,7 @@ MAKE = make
+ CP = cp
+ 
+ # How to compile C programs
+-CC = cc
++#CC = cc
+ 
+ # You may also want to change the CFLAGS variable, which will be passed on 
+ # to all subdirectories.    If you do that, the changes will only work right if you
+@@ -38,7 +38,7 @@ FOOBAR-sun4=-Bstatic
+ 
+ STATICFLAG=FOOBAR${HOST_ARCH}
+ 
+-CFLAGS = -g -I.  ${$(STATICFLAG)} 
++CFLAGS += -I.  ${$(STATICFLAG)}
+ # The following is better if you want to make sure you run with SYSV defined
+ # CFLAGS = -g -I.  ${$(STATICFLAG)}  -DSYSV
+ # Also, for SGI Irix, compile in K&R mode
+@@ -49,9 +49,9 @@ CFLAGS = -g -I.  ${$(STATICFLAG)} 
+ # LDLIBS variable.
+ #
+ # For Sun and BSD systems, the following should work...
+-LDLIBS =
++# LDLIBS =
+ # On BSD 4.4 systems, you will need the following
+-# LDLIBS = -lcompat
++LDLIBS = -s -lcompat
+ # On SGI machines, we need -lsun for getpw...(), and -lc_s saves some space.
+ # LDLIBS = -lsun -lc_s
+ # ISC SysVr3.2.2 has a shared C library and requires libinet.a to resolve
+@@ -72,10 +72,10 @@ CONFIGDIR = .
+ #	install -s -c $(LOCALBINDIR) $$file
+ #
+ #INSTALL = cp
+-INSTALL = install -c -s
++INSTALL = install -c
+ 
+ # Root of installation tree
+-INSTROOT = /usr/local
++INSTROOT = ${PREFIX}
+ #
+ # This is where binaries should be copied
+ LOCALBINDIR = ${INSTROOT}/bin
+@@ -96,9 +96,9 @@ MAILCAPDIR = ${INSTROOT}/etc
+ # This helps with the "for" constructs below on some platforms:
+ SHELL=/bin/sh
+ 
+-install: basics
++install: install-all
+ 
+-basics::
++all basics::
+ 	(cd metamail ; $(MAKE)  CONFIGDIR=../${CONFIGDIR}  CFLAGS="${CFLAGS}" CC="${CC}"  LDLIBS="${LDLIBS}")
+ 	-${RM} bin/metamail
+ 	(cd bin; ${LN} ../metamail/metamail metamail)
+@@ -115,9 +115,9 @@ basics::
+ 	(cd richmail ; $(MAKE)  CONFIGDIR=../${CONFIGDIR}  CFLAGS="${CFLAGS}" CC="${CC}"  LDLIBS="${LDLIBS}")
+ 	-${RM} bin/richtext
+ 	(cd bin; ${LN} ../richmail/richtext richtext)
++	(cd fonts ; $(MAKE)  CONFIGDIR=../${CONFIGDIR}  CFLAGS="${CFLAGS}" CC="${CC}"   LDLIBS="${LDLIBS}" FONTSUFFIX="${FONTSUFFIX}")
+ 	-${RM} bin/richtoatk
+ 	(cd bin; ${LN} ../richmail/richtoatk richtoatk)
+-	(cd fonts ; $(MAKE)  CONFIGDIR=../${CONFIGDIR}  CFLAGS="${CFLAGS}" CC="${CC}"   LDLIBS="${LDLIBS}" FONTSUFFIX="${FONTSUFFIX}")
+ 	-${RM} bin/shownonascii
+ 	(cd bin; ${LN} ../fonts/shownonascii shownonascii)
+ 	-${RM} bin/mailto-hebrew
+@@ -127,28 +127,27 @@ install-all: basics 
+ 	@(cd bin; 				\
+ 	for file in *; 				\
+ 	do 					\
+-	    target=$(LOCALBINDIR)/$$file; 	\
++	    target=$(DESTDIR)$(LOCALBINDIR)/$$file; 	\
+ 	    echo "installing binary $$target";	\
+ 	    ${INSTALL} $$file $$target; 	\
+ 	done)
+ 	@(cd man;				\
+ 	for file in *.1;			\
+ 	do 					\
+-	    target=$(MAN1DIR)/`basename $$file .1`.$(MAN1EXT); \
++	    target=$(DESTDIR)$(MAN1DIR)/`basename $$file .1`.$(MAN1EXT); \
+ 	    echo "installing man page $$target";\
+ 	    ${CP} $$file $$target; 		\
+ 	done)
+ 	@(cd man;				\
+ 	for file in *.4;			\
+ 	do 					\
+-	    target=$(MAN4DIR)/`basename $$file .4`.$(MAN4EXT); \
++	    target=$(DESTDIR)$(MAN4DIR)/`basename $$file .4`.$(MAN4EXT); \
+ 	    echo "installing man page $$target";\
+ 	    ${CP} $$file $$target; 		\
+ 	done)
+-	@echo "Renaming old mailcap file to $(MAILCAPDIR)/mailcap.old
+-	-mv $(MAILCAPDIR)/mailcap $(MAILCAPDIR)/mailcap.old
+ 	@echo "installing file $(MAILCAPDIR)/mailcap"
+-	${CP} mailcap $(MAILCAPDIR)
++	${CP} mailcap $(DESTDIR)$(MAILCAPDIR)
++	(cd fonts ; $(MAKE) PREFIX=${DESTDIR}${PREFIX} CONFIGDIR=../${CONFIGDIR}  CFLAGS="${CFLAGS}" CC="${CC}"   LDLIBS="${LDLIBS}" FONTSUFFIX="${FONTSUFFIX}" install)
+ 
+ uninstall-all:
+ 	@(cd bin; 				\
+@@ -179,7 +178,6 @@ clean:
+ 	-${RM} -rf *.BAK
+ 	(cd metamail ; $(MAKE) clean)
+ 	(cd richmail ; $(MAKE) clean)
+-	(cd fonts ; $(MAKE) FONTSUFFIX="${FONTSUFFIX}" clean)
+ 
+ cleanbin:
+ 	-${RM} bin/metamail
