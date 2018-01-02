@@ -11,7 +11,7 @@
 # icinga2_enable (bool):    Set to "NO" by default.
 #                           Set it to "YES" to enable icinga2.
 # icinga2_flags (str):      Set to "" by default.
-# icinga2_configfile (str): Set to "%%PREFIX%%/etc/icinga2/icinga2.cfg" by default.
+# icinga2_configfile (str): Set to "%%PREFIX%%/etc/icinga2/icinga2.conf" by default.
 # icinga2_mkvar (bool):     Set to "NO" by default.
 #                           Set it to "YES" to have the rc script create all
 #                           directories in /var (needed when /var is on a ramdisk)
