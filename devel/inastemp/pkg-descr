@@ -1,0 +1,22 @@
+Inastemp provides a set of C++ classes to make vectorization with intrinsics
+easier. It aims at developing numerical kernels by separating the algorithm
+from the hardware target. Inastemp comes with several examples and patterns
+related to widespread use-cases.
+
+Features:
+
+* The following x86 SIMD types are currently supported:
+  * SSE3, SSSE3, SSE4.1, SSE4.2, AVX, AVX2, AVX512-KNL, AVX512-SKL
+* The following Powere PC SIMD types are currently supported:
+  * Power-8 Altivec/VMX
+* arithmetic operators */+- are provided
+* CPU capacities are detected automatically during the CMake stage
+* The compiler capacities are detected automatically during the CMake stage
+* The library purely contains of headers, no linkage is necessary.
+* CPU detection may use Intel SDE
+* Unit-tests may use Intel SDE
+* Fast intrinsic exp() function (if not supported natively by the compiler)
+* Explicit branches vectorization several patterns which represent many
+  applications are demonstrated
+
+WWW: https://gitlab.mpcdf.mpg.de/bbramas/inastemp
