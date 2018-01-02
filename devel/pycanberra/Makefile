@@ -1,9 +1,10 @@
 # Created by: blubee <hello@blubee.me>
 # $FreeBSD$
 
-PORTNAME=		pycanberra
-DISTVERSION=		1
-CATEGORIES=		devel
+PORTNAME=	pycanberra
+DISTVERSION=	1
+PORTREVISION=	1
+CATEGORIES=	devel
 
 MAINTAINER=	hello@blubee.me
 COMMENT=	Very basic wrapper for libcanberra
@@ -20,7 +21,7 @@ GH_TAGNAME=	88c53cd
 
 post-patch:
 	@(cd ${WRKSRC} && ${MKDIR} ${WRKSRC}/pycanberra && \
-	${MV} pycanberra.py ${WRKSRC}/pycanbberra && \
+	${MV} pycanberra.py ${WRKSRC}/pycanberra && \
 	${TOUCH} __init__.py)
 
 .include <bsd.port.mk>
