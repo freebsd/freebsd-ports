@@ -2,4 +2,4 @@ RDoc produces HTML and command-line documentation for Ruby projects. RDoc
 includes the +rdoc+ and +ri+ tools for generating and displaying online
 documentation. See RDoc for a description of RDoc's markup and basic use.
 
-WWW: http://docs.seattlerb.org/rdoc
+WWW: https://ruby.github.io/rdoc/
