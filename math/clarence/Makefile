@@ -5,11 +5,13 @@ PORTNAME=	clarence
 PORTVERSION=	0.4.4
 PORTREVISION=	8
 CATEGORIES=	math python
-MASTER_SITES=	http://www.sourcefiles.org/Productivity_Tools/Calculators/ \
-		ftp://ftp.tu-chemnitz.de/.SAN0/pub/linux/sunsite.unc-mirror/distributions/sourcemage/grimoire/fallback/fallback/
+MASTER_SITES=	# disappeared
 
 MAINTAINER=	psh@iki.fi
 COMMENT=	Programmer's calculator
+
+DEPRECATED=		Mastersite disappeared
+EXPIRATION_DATE=	2018-03-01
 
 USES=		python:2.7 shebangfix
 USE_GNOME=	pygtk2
