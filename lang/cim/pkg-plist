@@ -1,0 +1,11 @@
+bin/cim
+bin/cim2latex
+bin/cim2ps
+bin/cimindent
+include/cim.h
+lib/libcim-atr.a
+lib/libcim.a
+lib/libcim.so
+lib/libcim.so.3
+lib/libcim.so.3.0.0
+man/man1/cim.1.gz
