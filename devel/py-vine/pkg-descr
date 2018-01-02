@@ -1,3 +1,6 @@
 Promise library for Python.
 
+This library is used internally by the AMQP framework provided by the
+Celery project.
+
 WWW: https://github.com/celery/vine/
