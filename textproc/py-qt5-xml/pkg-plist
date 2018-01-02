@@ -8,6 +8,4 @@ bin/pyrcc5
 %%PYQT_SIPDIR%%/QtXml/QtXmlmod.sip
 %%PYQT_SIPDIR%%/QtXml/qdom.sip
 %%PYQT_SIPDIR%%/QtXml/qxml.sip
-%%PYQT_SIPDIR%%/pylupdate/pylupdatemod.sip
-%%PYQT_SIPDIR%%/pyrcc/pyrccmod.sip
 %%API%%share/qt5/qsci/api/python/QtXml.api

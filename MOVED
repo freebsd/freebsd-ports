@@ -9838,3 +9838,4 @@ dns/dualserver|dns/dnsmasq|2018-01-01|Has expired: Please migrate to dns/dnsmasq
 devel/p5-Parse-Pidl44|devel/p5-Parse-Pidl|2018-01-01|Has expired: use devel/p5-Parse-Pidl instead
 sysutils/DTraceToolkit||2018-01-01|Has expired: Now maintained as part of the base system
 www/rubygem-jwt2|www/rubygem-jwt|2018-01-02|www/rubygem-jwt has been updated to 2.x
+misc/py-qt5-doc||2018-01-02|No longer shipped by upstream

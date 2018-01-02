@@ -6,6 +6,7 @@
 %%PYQT_SIPDIR%%/QtNetwork/qdnslookup.sip
 %%PYQT_SIPDIR%%/QtNetwork/qhostaddress.sip
 %%PYQT_SIPDIR%%/QtNetwork/qhostinfo.sip
+%%PYQT_SIPDIR%%/QtNetwork/qhstspolicy.sip
 %%PYQT_SIPDIR%%/QtNetwork/qhttpmultipart.sip
 %%PYQT_SIPDIR%%/QtNetwork/qlocalserver.sip
 %%PYQT_SIPDIR%%/QtNetwork/qlocalsocket.sip
@@ -14,6 +15,7 @@
 %%PYQT_SIPDIR%%/QtNetwork/qnetworkconfiguration.sip
 %%PYQT_SIPDIR%%/QtNetwork/qnetworkcookie.sip
 %%PYQT_SIPDIR%%/QtNetwork/qnetworkcookiejar.sip
+%%PYQT_SIPDIR%%/QtNetwork/qnetworkdatagram.sip
 %%PYQT_SIPDIR%%/QtNetwork/qnetworkdiskcache.sip
 %%PYQT_SIPDIR%%/QtNetwork/qnetworkinterface.sip
 %%PYQT_SIPDIR%%/QtNetwork/qnetworkproxy.sip
@@ -27,6 +29,7 @@
 %%PYQT_SIPDIR%%/QtNetwork/qsslcertificateextension.sip
 %%PYQT_SIPDIR%%/QtNetwork/qsslcipher.sip
 %%PYQT_SIPDIR%%/QtNetwork/qsslconfiguration.sip
+%%PYQT_SIPDIR%%/QtNetwork/qssldiffiehellmanparameters.sip
 %%PYQT_SIPDIR%%/QtNetwork/qsslellipticcurve.sip
 %%PYQT_SIPDIR%%/QtNetwork/qsslerror.sip
 %%PYQT_SIPDIR%%/QtNetwork/qsslkey.sip
