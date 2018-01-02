@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	licensee
-PORTVERSION=	8.7.0
+PORTVERSION=	9.6.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
