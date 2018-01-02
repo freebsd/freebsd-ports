@@ -12,8 +12,8 @@ COMMENT=	Ruby gem for handling of Twitter texts
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-unf>=0.1.0:textproc/rubygem-unf \
-		rubygem-idn-ruby>=0:dns/rubygem-idn-ruby
+RUN_DEPENDS=	rubygem-idn-ruby>=0:dns/rubygem-idn-ruby \
+		rubygem-unf>=0.1.0:textproc/rubygem-unf
 
 NO_ARCH=	yes
 USE_RUBY=	yes
