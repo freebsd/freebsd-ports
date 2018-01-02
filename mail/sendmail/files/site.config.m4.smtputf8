@@ -1,2 +1,2 @@
-APPENDDEF(`confLIBS', ` -L/usr/lib/x86_64-linux-gnu -licui18n -licuuc -licudata')
-define(`conf_sendmail_ENVDEF', `-D_FFR_EAI')
+APPENDDEF(`confLIBS', `-licui18n -licuuc -licudata')
+APPENDDEF(`conf_sendmail_ENVDEF', `-D_FFR_EAI')
