@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	net-ping
-PORTVERSION=	1.7.8
+PORTVERSION=	2.0.2
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
@@ -10,7 +10,7 @@ COMMENT=	Collection of classes that provide different ways to ping computers
 
 LICENSE=	APACHE20
 
-USE_RUBY=	yes
 USES=		gem
+USE_RUBY=	yes
 
 .include <bsd.port.mk>
