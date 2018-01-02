@@ -4,7 +4,7 @@
 PORTNAME=	gitlab
 PORTVERSION=	10.1.5
 DISTVERSIONPREFIX=	v
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www devel
 
 MAINTAINER=	idefix@fechner.net
@@ -58,7 +58,7 @@ RUN_DEPENDS=	git>=2.14.1:devel/git \
 	rubygem-omniauth_crowd>=2.2.0:devel/rubygem-omniauth_crowd \
 	rubygem-omniauth-authentiq>=0.3.1:net/rubygem-omniauth-authentiq \
 	rubygem-rack-oauth2>=1.2.1:security/rubygem-rack-oauth2 \
-	rubygem-jwt>=1.5.6:www/rubygem-jwt \
+	rubygem-jwt1>=1.5.6:www/rubygem-jwt1 \
 	rubygem-recaptcha>=3.0:devel/rubygem-recaptcha \
 	rubygem-akismet>=2.0:devel/rubygem-akismet \
 	rubygem-devise-two-factor>=3.0.0:security/rubygem-devise-two-factor \
@@ -122,7 +122,7 @@ RUN_DEPENDS=	git>=2.14.1:devel/git \
 	rubygem-re2>=1.1.1:devel/rubygem-re2 \
 	rubygem-version_sorter>=2.1.0:textproc/rubygem-version_sorter \
 	rubygem-redis-rails>=5.0.1:www/rubygem-redis-rails \
-	rubygem-redis>=3.2:databases/rubygem-redis \
+	rubygem-redis3>=3.2:databases/rubygem-redis3 \
 	rubygem-connection_pool>=2.0:net/rubygem-connection_pool \
 	rubygem-hipchat>=1.5.0:net-im/rubygem-hipchat \
 	rubygem-jira-ruby>=1.4:devel/rubygem-jira-ruby \
