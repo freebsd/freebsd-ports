@@ -2077,7 +2077,6 @@ finance/xinvest||2011-05-02|Has expired: Outdated, abandoned
 finance/xquote||2011-05-02|Has expired: Outdated, abandoned
 french/plgrenouille||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
 editors/xemacs-devel-mule-xft||2011-05-02|Remove, editors/xemacs-devel-mule builds with xft support now
-lang/cim||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
 lang/clips||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
 lang/eiffel||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
 lang/libutils||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
@@ -9835,6 +9834,6 @@ net/rubygem-fog-aws0|net/rubygem-fog-aws|2017-12-31|Has expired: use net/rubygem
 net-mgmt/nrpe|net-mgmt/nrpe3|2018-01-01|nrpe 2.0 not maintained, use nrpe 3.0
 net-mgmt/nrpe-ssl|net-mgmt/nrpe3|2018-01-01|nrpe 2.0 not maintained, use nrpe 3.0
 security/gnupg20|security/gnupg|2018-01-01|Has expired: Will reach EOL upstream on 2017-12-31
-dns/dualserver|dns/dnsmasq|2018-01-01|Has expired: Please migrate to dns/dnsmasq. Over the years dualserver becomes unmaintenaible.
+dns/dualserver|dns/dnsmasq|2018-01-01|Has expired: Please migrate to dns/dnsmasq; over the years dualserver has become unmaintainable
 devel/p5-Parse-Pidl44|devel/p5-Parse-Pidl|2018-01-01|Has expired: use devel/p5-Parse-Pidl instead
 sysutils/DTraceToolkit||2018-01-01|Has expired: Now maintained as part of the base system
