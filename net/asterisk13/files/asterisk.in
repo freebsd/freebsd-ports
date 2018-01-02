@@ -61,7 +61,7 @@ asterisk_stop()
 		return 1
 	fi
 	echo 'Stopping asterisk.'
-	if [ ${asterisk_stopsleep} > 0 ]; then
+	if [ ${asterisk_stopsleep} -gt 0 ]; then
 		sleep ${asterisk_stopsleep}
 	fi
 	$command -nqrx 'core stop now'
