@@ -586,4 +586,4 @@ lib/tk%%TK_VER%%/xmfbox.tcl
 %%TKMAN%%man/mann/ttk_widget.tk86.n.gz
 %%TKMAN%%man/mann/winfo.tk86.n.gz
 %%TKMAN%%man/mann/wm.tk86.n.gz
-libdata/pkgconfig/tk.pc
+libdata/pkgconfig/tk86.pc
