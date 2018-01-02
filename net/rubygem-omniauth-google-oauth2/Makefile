@@ -2,6 +2,7 @@
 
 PORTNAME=	omniauth-google-oauth2
 PORTVERSION=	0.5.2
+PORTREVISION=	1
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
