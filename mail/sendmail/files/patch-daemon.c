@@ -1,12 +1,10 @@
---- sendmail/daemon.c.orig	2016-06-12 18:25:14.196269000 -0400
-+++ sendmail/daemon.c	2016-06-12 18:31:47.159880000 -0400
-@@ -754,6 +754,10 @@
+--- sendmail/daemon.c.orig	2015-02-28 00:50:03 UTC
++++ sendmail/daemon.c
+@@ -754,6 +754,8 @@ getrequests(e)
  						anynet_ntoa(&RealHostAddr));
  			}
  
-+#ifdef USE_BLACKLIST
-+			blacklist_init();
-+#endif
++			BLACKLIST_INIT();
 +
  			if (pipefd[0] != -1)
  			{
