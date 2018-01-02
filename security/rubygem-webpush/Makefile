@@ -12,7 +12,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-hkdf>=0.2:security/rubygem-hkdf \
-		rubygem-jwt>=2.0:www/rubygem-jwt
+		rubygem-jwt2>=2.0:www/rubygem-jwt2
 
 USES=		gem
 USE_RUBY=	yes
