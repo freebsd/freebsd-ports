@@ -9837,3 +9837,4 @@ security/gnupg20|security/gnupg|2018-01-01|Has expired: Will reach EOL upstream 
 dns/dualserver|dns/dnsmasq|2018-01-01|Has expired: Please migrate to dns/dnsmasq; over the years dualserver has become unmaintainable
 devel/p5-Parse-Pidl44|devel/p5-Parse-Pidl|2018-01-01|Has expired: use devel/p5-Parse-Pidl instead
 sysutils/DTraceToolkit||2018-01-01|Has expired: Now maintained as part of the base system
+www/rubygem-jwt2|www/rubygem-jwt|2018-01-02|www/rubygem-jwt has been updated to 2.x
