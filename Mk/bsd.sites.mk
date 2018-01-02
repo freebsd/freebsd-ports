@@ -140,23 +140,23 @@ MASTER_SITE_DEBIAN+= \
 
 .if !defined(IGNORE_MASTER_SITE_DEBIAN_NON_US)
 MASTER_SITE_DEBIAN_NON_US+= \
-	ftp://ftp.au.debian.org/debian-non-US/%SUBDIR%/ \
+	http://ftp.au.debian.org/debian-non-US/%SUBDIR%/ \
 	ftp://ftp.bg.debian.org/debian-non-US/%SUBDIR%/ \
 	ftp://ftp.br.debian.org/debian-non-US/%SUBDIR%/ \
-	ftp://ftp.cl.debian.org/debian-non-US/%SUBDIR%/ \
+	http://ftp.cl.debian.org/debian-non-US/%SUBDIR%/ \
 	ftp://ftp.cz.debian.org/debian-non-US/%SUBDIR%/ \
 	ftp://ftp.de.debian.org/debian-non-US/%SUBDIR%/ \
 	ftp://ftp.ee.debian.org/debian-non-US/%SUBDIR%/ \
 	ftp://ftp.es.debian.org/debian-non-US/%SUBDIR%/ \
 	ftp://ftp.fi.debian.org/debian-non-US/%SUBDIR%/ \
 	ftp://ftp.fr.debian.org/debian-non-US/%SUBDIR%/ \
-	ftp://ftp.hk.debian.org/debian-non-US/%SUBDIR%/ \
-	ftp://ftp.hr.debian.org/debian-non-US/%SUBDIR%/ \
+	http://ftp.hk.debian.org/debian-non-US/%SUBDIR%/ \
+	http://ftp.hr.debian.org/debian-non-US/%SUBDIR%/ \
 	ftp://ftp.hu.debian.org/debian-non-US/%SUBDIR%/ \
-	ftp://ftp.ie.debian.org/debian-non-US/%SUBDIR%/ \
+	http://ftp.ie.debian.org/debian-non-US/%SUBDIR%/ \
 	ftp://ftp.is.debian.org/debian-non-US/%SUBDIR%/ \
-	ftp://ftp.it.debian.org/debian-non-US/%SUBDIR%/ \
-	ftp://ftp.jp.debian.org/debian-non-US/%SUBDIR%/ \
+	http://ftp.it.debian.org/debian-non-US/%SUBDIR%/ \
+	http://ftp.jp.debian.org/debian-non-US/%SUBDIR%/ \
 	ftp://ftp.nl.debian.org/debian-non-US/%SUBDIR%/ \
 	ftp://ftp.no.debian.org/debian-non-US/%SUBDIR%/ \
 	ftp://ftp.pl.debian.org/debian-non-US/%SUBDIR%/ \
@@ -165,10 +165,9 @@ MASTER_SITE_DEBIAN_NON_US+= \
 	ftp://ftp.si.debian.org/debian-non-US/%SUBDIR%/ \
 	ftp://ftp.sk.debian.org/debian-non-US/%SUBDIR%/ \
 	ftp://ftp.uk.debian.org/debian-non-US/%SUBDIR%/ \
-	ftp://ftp.wa.au.debian.org/debian-non-US/%SUBDIR%/ \
+	http://ftp.wa.au.debian.org/debian-non-US/%SUBDIR%/ \
 	ftp://ftp2.de.debian.org/debian-non-US/%SUBDIR%/ \
 	ftp://ftp.snt.utwente.nl/pub/linux/debian-non-US/%SUBDIR%/ \
-	ftp://ftp.df.lth.se/pub/debian-non-US/%SUBDIR%/ \
 	ftp://ftp.acc.umu.se/debian-non-US/%SUBDIR%/ \
 	ftp://mirror.symnds.com/debian-non-US/%SUBDIR%/
 .endif
