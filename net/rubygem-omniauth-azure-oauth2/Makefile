@@ -3,6 +3,7 @@
 
 PORTNAME=	omniauth-azure-oauth2
 PORTVERSION=	0.0.9
+PORTREVISION=	1
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
