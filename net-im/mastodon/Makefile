@@ -3,7 +3,7 @@
 PORTNAME=	mastodon
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-im www
 
 MAINTAINER=	jrm@FreeBSD.org
@@ -65,7 +65,7 @@ BR_DEPENDS=	ffmpeg>0:multimedia/ffmpeg \
 		rubygem-rack-timeout>=0.4:www/rubygem-rack-timeout \
 		rubygem-rails-i18n>=5.0:devel/rubygem-rails-i18n \
 		rubygem-rails-settings-cached-rails5>=0.6:www/rubygem-rails-settings-cached-rails5 \
-		rubygem-redis>=3.3:databases/rubygem-redis \
+		rubygem-redis3>=3.3:databases/rubygem-redis3 \
 		rubygem-mario-redis-lock>=1.2:databases/rubygem-mario-redis-lock \
 		rubygem-rqrcode>=0.10:www/rubygem-rqrcode \
 		rubygem-ruby-oembed>=0.12:www/rubygem-ruby-oembed \
