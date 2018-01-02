@@ -1,16 +1,24 @@
---- sendmail/sendmail.h.orig	2016-06-12 18:23:05.239106000 -0400
-+++ sendmail/sendmail.h	2016-06-12 18:42:38.972341000 -0400
-@@ -2647,6 +2647,13 @@
- extern char	*milter_unknown __P((char *, ENVELOPE *, char *));
- #endif /* MILTER */
+--- sendmail/sendmail.h.orig	2015-06-19 12:59:29 UTC
++++ sendmail/sendmail.h
+@@ -57,6 +57,10 @@ SM_UNUSED(static char SmailId[]) = "@(#)
+ #endif /* _DEFINE */
  
+ #include "bf.h"
 +#if USE_BLACKLIST
-+/* blacklistd functions */
-+void blacklist_init(void);
-+void blacklist_notify(int, int, char *);
 +#include <blacklist.h>
 +#endif
++#include "blacklist_client.h"
+ #include "timers.h"
+ #include <sm/exc.h>
+ #include <sm/heap.h>
+@@ -2544,6 +2548,10 @@ EXTERN int ConnectionRateWindowSize;
+ EXTERN bool	SSLEngineInitialized;
+ #endif /* STARTTLS && USE_OPENSSL_ENGINE */
+ 
++#if USE_BLACKLIST
++EXTERN bool	UseBlacklist;
++#endif
 +
- extern char	*addquotes __P((char *, SM_RPOOL_T *));
- extern char	*arpadate __P((char *));
- extern bool	atobool __P((char *));
+ /*
+ **  Declarations of useful functions
+ */
