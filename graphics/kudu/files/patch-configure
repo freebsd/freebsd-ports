@@ -1,6 +1,6 @@
---- configure.orig	Tue Sep 12 23:25:45 2006
-+++ configure	Fri Sep 15 00:47:10 2006
-@@ -3095,7 +3095,7 @@
+--- configure.orig	2006-09-12 19:25:45 UTC
++++ configure
+@@ -3095,7 +3095,7 @@ cat >>confdefs.h <<\_ACEOF
  #define HAVE_PYTHON_H 1
  _ACEOF
  
@@ -9,7 +9,7 @@
  		fi
  
  		# Check for Python library path
-@@ -3115,7 +3115,7 @@
+@@ -3115,7 +3115,7 @@ echo "${ECHO_T}$python_path" >&6
  			#AC_MSG_ERROR([cannot find Python library path])
  			have_python=0
  		else
