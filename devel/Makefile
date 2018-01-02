@@ -1196,6 +1196,7 @@
     SUBDIR += icu-lx
     SUBDIR += idutils
     SUBDIR += imake
+    SUBDIR += inastemp
     SUBDIR += include-what-you-use
     SUBDIR += inifiled
     SUBDIR += inilib
