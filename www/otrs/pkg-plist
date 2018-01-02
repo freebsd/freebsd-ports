@@ -5,7 +5,7 @@ otrs/.mailfilter.dist
 otrs/.procmailrc.dist
 otrs/ARCHIVE
 @sample otrs/Kernel/Config.pm.dist otrs/Kernel/Config.pm
-otrs/Kernel/Config.pod.dist
+@sample otrs/Kernel/Config.pod.dist otrs/Kernel/Config.pod
 otrs/Kernel/Config/Defaults.pm
 otrs/Kernel/Config/Files/CloudServices.xml
 otrs/Kernel/Config/Files/Daemon.xml
@@ -518,6 +518,7 @@ otrs/Kernel/Output/HTML/Templates/Standard/InstallerLicenseText.tt
 otrs/Kernel/Output/HTML/Templates/Standard/InstallerSystem.tt
 otrs/Kernel/Output/HTML/Templates/Standard/LinkObject.tt
 otrs/Kernel/Output/HTML/Templates/Standard/Login.tt
+otrs/Kernel/Output/HTML/Templates/Standard/MetaFloater.tt
 otrs/Kernel/Output/HTML/Templates/Standard/MobileNotAvailableWidget.tt
 otrs/Kernel/Output/HTML/Templates/Standard/Motd.tt
 otrs/Kernel/Output/HTML/Templates/Standard/NoPermission.tt
@@ -926,6 +927,8 @@ otrs/Kernel/System/SupportDataCollector/Plugin/OTRS/Ticket/OpenTickets.pm
 otrs/Kernel/System/SupportDataCollector/Plugin/OTRS/Ticket/SearchIndexModule.pm
 otrs/Kernel/System/SupportDataCollector/Plugin/OTRS/Ticket/StaticDBOrphanedRecords.pm
 otrs/Kernel/System/SupportDataCollector/Plugin/OTRS/TimeSettings.pm
+otrs/Kernel/System/SupportDataCollector/Plugin/OTRS/UI/AgentSkinUsage.pm
+otrs/Kernel/System/SupportDataCollector/Plugin/OTRS/UI/AgentThemeUsage.pm
 otrs/Kernel/System/SupportDataCollector/Plugin/OTRS/Version.pm
 otrs/Kernel/System/SupportDataCollector/Plugin/Webserver/Apache/LoadedModules.pm
 otrs/Kernel/System/SupportDataCollector/Plugin/Webserver/Apache/MPMModel.pm
@@ -992,6 +995,7 @@ otrs/Kernel/System/Ticket/TicketSearch.pm
 otrs/Kernel/System/Time.pm
 otrs/Kernel/System/Type.pm
 otrs/Kernel/System/UnitTest.pm
+otrs/Kernel/System/UnitTest/Driver.pm
 otrs/Kernel/System/UnitTest/Helper.pm
 otrs/Kernel/System/UnitTest/Selenium.pm
 otrs/Kernel/System/UnitTest/Selenium/WebElement.pm
