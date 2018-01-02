@@ -5,13 +5,16 @@ PORTNAME=	adgali
 PORTVERSION=	0.2.4
 PORTREVISION=	15
 CATEGORIES=	games devel
-MASTER_SITES=	http://www.sourcefiles.org/Programming/Libraries/Games/
+MASTER_SITES=	# disappeared
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open source game library useful for 2D game development
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+DEPRECATED=	Mastersite disappeared
+EXPIRATION_DATE=	2018-03-01
 
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libtiff.so:graphics/tiff \

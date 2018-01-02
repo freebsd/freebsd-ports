@@ -5,9 +5,7 @@ PORTNAME=	august
 PORTVERSION=	0.63b
 PORTREVISION=	5
 CATEGORIES=	www editors
-MASTER_SITES=	http://fossies.org/unix/www/old/ \
-		http://www.sourcefiles.org/Editors/HTML/ \
-		http://www.erjobe.info/mainwiki/pmwiki/uploads/Main/August/
+MASTER_SITES=	http://www.erjobe.info/mainwiki/pmwiki/uploads/Main/August/
 DISTNAME=	${PORTNAME}${PORTVERSION}.src
 
 MAINTAINER=	ports@FreeBSD.org
