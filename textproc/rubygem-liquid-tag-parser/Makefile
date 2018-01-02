@@ -18,4 +18,6 @@ NO_ARCH=	yes
 USE_RUBY=	yes
 USES=		gem
 
+NOPORTDOCS=	yes
+
 .include <bsd.port.mk>
