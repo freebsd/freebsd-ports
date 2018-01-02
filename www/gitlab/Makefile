@@ -4,7 +4,7 @@
 PORTNAME=	gitlab
 PORTVERSION=	10.1.5
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www devel
 
 MAINTAINER=	idefix@fechner.net
@@ -253,3 +253,4 @@ do-install:
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/www/${PORTNAME})
 
 .include <bsd.port.mk>
+
