@@ -1,5 +1,5 @@
---- src/globals.h.orig	2006-09-12 21:50:10.000000000 +0400
-+++ src/globals.h	2010-03-06 20:43:04.000000000 +0300
+--- src/globals.h.orig	2006-09-12 17:50:10 UTC
++++ src/globals.h
 @@ -52,6 +52,10 @@
  #include <sys/timeb.h>
  #include <sys/stat.h>
