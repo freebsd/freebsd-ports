@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	wdm
-PORTVERSION=	0.1.0
+PORTVERSION=	0.1.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
