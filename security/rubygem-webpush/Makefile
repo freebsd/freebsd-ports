@@ -12,11 +12,10 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-hkdf>=0.2:security/rubygem-hkdf \
-		rubygem-jwt2>=2.0:www/rubygem-jwt2
+		rubygem-jwt>=2.0:www/rubygem-jwt
 
 USES=		gem
 USE_RUBY=	yes
-
 NO_ARCH=	yes
 
 .include <bsd.port.mk>
