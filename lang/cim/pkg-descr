@@ -1,0 +1,12 @@
+The SIMULA programming language was designed and built by Ole-Johan Dahl 
+and Kristen Nygaard at the Norwegian Computing Centre (NCC) in Oslo 
+between 1962 and 1967.1 It was originally designed and implemented as a 
+language for discrete event simulation, but was later expanded and 
+reimplemented as a full scale general purpose programming language.
+
+Although SIMULA never became widely used, the language has been highly 
+influential on modern programming methodology. Among other things SIMULA 
+introduced important object-oriented programming concepts like classes and
+objects, inheritance, and dynamic binding.
+
+WWW: http://folk.uio.no/simula67/cim.shtml
