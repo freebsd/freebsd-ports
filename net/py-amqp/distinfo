@@ -1,2 +1,3 @@
-SHA256 (amqp-1.4.9.tar.gz) = 2dea4d16d073c902c3b89d9b96620fb6729ac0f7a923bbc777cb4ad827c0c61a
-SIZE (amqp-1.4.9.tar.gz) = 79392
+TIMESTAMP = 1513951660
+SHA256 (amqp-2.2.2.tar.gz) = cba1ace9d4ff6049b190d8b7991f9c1006b443a5238021aca96dd6ad2ac9da22
+SIZE (amqp-2.2.2.tar.gz) = 103128
