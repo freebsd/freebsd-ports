@@ -15,6 +15,7 @@ USE_KDE=	kdelibs automoc4 pykde4
 USE_QT4=	moc_build qmake_build rcc_build uic_build
 DISTINFO_FILE=	${.CURDIR:H:H}/devel/py-pykde4/distinfo
 
+NO_ARCH=	yes
 SHEBANG_FILES=	pykdeuic4.py
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/tools/${PORTNAME}
