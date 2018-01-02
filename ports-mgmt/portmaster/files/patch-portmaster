@@ -1,5 +1,14 @@
 --- portmaster.orig	2017-12-21 09:02:44 UTC
 +++ portmaster
+@@ -51,7 +51,7 @@ fi
+ #=============== Begin functions we always want to have ===============
+ 
+ version () {
+-	local pkgname="%%PKGNAME%%"
++	local pkgname="portmaster-3.18_4"
+ 	echo '' ; echo "===>>> Version ${pkgname##*-}"
+ 	#svn='$FreeBSD: user/dougb/portmaster/portmaster 241090 2012-10-01 08:32:05Z dougb $'
+ }
 @@ -113,13 +113,13 @@ kill_bad_children () {
  		[ "$pid" -gt 25 ] || continue
  		case "$ppid" in
@@ -16,7 +25,49 @@
  			*'make -DBATCH checksum'*|*'/fetch '*|\[sh\]) pm_kill $pid ;;
  			esac ;;
  		esac
-@@ -1616,15 +1616,14 @@ pm_pkg_create () {
+@@ -412,7 +412,7 @@ usage () {
+ 	echo "    [[[--packages|-P]|[--packages-only|-PP]] | [--packages-build]]"
+ 	echo "    [--packages-if-newer] [--delete-build-only] [--always-fetch]"
+ 	echo "    [--local-packagedir=<path>] [--packages-local] [--delete-packages]"
+-	echo "    [--no-confirm] [--no-term-title] [--no-index-fetch]"
++	echo "    [--backup-format=<fmt>] [--no-confirm] [--no-term-title] [--no-index-fetch]"
+ 	echo "    [--index|--index-first|--index-only] [-m <arguments for make>]"
+ 	echo "    [-x <glob pattern to exclude from building>]"
+ 	echo "$progname [Common flags] <full name of port directory in $pdb>"
+@@ -653,6 +653,8 @@ for var in "$@" ; do
+ 				export LOCAL_PACKAGEDIR ;;
+ 	--delete-packages)	PM_DELETE_PACKAGES=pm_delete_packages
+ 				export PM_DELETE_PACKAGES ;;
++	--backup-format=*)	BACKUP_FORMAT=${var#--backup-format=}
++				export BACKUP_FORMAT ;;
+ #	--flavor=*)		PM_FLAVOR=${var#--flavor=} ;;
+ 	--update-if-newer)	PM_UPDATE_IF_NEWER=pm_update_if_newer
+ 				export PM_UPDATE_IF_NEWER ;;
+@@ -1589,7 +1591,7 @@ init_packages () {
+ }
+ 
+ pm_pkg_create () {
+-	local pkgdir backup
++	local pkgdir backup format_option
+ 
+ 	init_packages
+ 
+@@ -1602,12 +1604,13 @@ pm_pkg_create () {
+ 		echo "===>>> Creating a package for new version $2"
+ 	else
+ 		pkgdir=$1 ; echo ''
++		format_option=${BACKUP_FORMAT:+-f $BACKUP_FORMAT}
+ 		echo "===>>> Creating a backup package for old version $2"
+ 		backup=backup
+ 	fi
+ 
+ 	pm_cd $pkgdir || fail "Cannot cd into $pkgdir to create a package"
+-	if $PM_SU_CMD pkg create $2; then
++	if $PM_SU_CMD pkg create $format_option $2; then
+ 		if [ "$1" = "$pbu" ]; then
+ 			if [ -n "$BACKUP" ]; then
+ 				echo "	===>>> Package saved to $1" ; echo ''
+@@ -1616,15 +1619,14 @@ pm_pkg_create () {
  				NB_DELETE="${NB_DELETE}${pkg} "
  			fi
  		elif [ "$1" = "$PACKAGES" ]; then
@@ -36,7 +87,7 @@
  			fi
  
  			cd ${1}/${portdir%/*}
-@@ -1665,7 +1664,7 @@ find_dl_distfiles () {
+@@ -1665,7 +1667,7 @@ find_dl_distfiles () {
  	else
  		# Old method, for now
  		if pm_cd $pd/$1; then
@@ -45,7 +96,7 @@
  			dist_list="${dist_list%options}distfiles"
  		else
  			# The port might have moved, etc.; so take a stab at it,
-@@ -1803,6 +1802,7 @@ set_distfiles_and_subdir () {
+@@ -1803,6 +1805,7 @@ set_distfiles_and_subdir () {
  }
  
  delete_stale_distfiles () {
@@ -53,7 +104,7 @@
  	# Global: distfiles_checked
  	local file answer
  
-@@ -1849,6 +1849,7 @@ delete_stale_distfiles () {
+@@ -1849,6 +1852,7 @@ delete_stale_distfiles () {
  }
  
  delete_all_distfiles () {
@@ -61,7 +112,7 @@
  	# Global: delete_all DISTDIR
  	local origin rc delete_current
  
-@@ -2264,12 +2265,14 @@ make_dep_list () {
+@@ -2264,12 +2268,14 @@ make_dep_list () {
  
  	for dep_type in $*; do
  		case $dep_type in
@@ -81,7 +132,7 @@
  		*)
  			fail "make_dep_list: Unsupported option '$dep_type'"
  		esac
-@@ -3302,7 +3305,7 @@ pm_cd_pd $portdir
+@@ -3302,7 +3308,7 @@ pm_cd_pd $portdir
  
  if [ -n "$PM_BUILD_ONLY_LIST" ]; then
  	case "$build_only_dl_g" in
@@ -90,7 +141,7 @@
  		[ -n "$PM_PACKAGES_BUILD" ] && PM_PACKAGES_BUILD=doing_build_only_dep
  		[ -n "$PM_DEL_BUILD_ONLY" ] && PM_DEL_BUILD_ONLY=doing_build_only_dep ;;
  	*)	[ -n "$PM_PACKAGES_BUILD" ] && PM_PACKAGES_BUILD=pmp_build
-@@ -3402,31 +3405,19 @@ fetch_package () {
+@@ -3402,31 +3408,19 @@ fetch_package () {
  }
  	if [ -z "$PACKAGESITE" -a -z "$PM_PACKAGES_LOCAL" ]; then
  		release=`uname -r`
@@ -127,7 +178,7 @@
  
  	echo "===>>> Checking package repository for latest available version"
  
-@@ -3437,11 +3428,12 @@ fetch_package () {
+@@ -3437,11 +3431,12 @@ fetch_package () {
  			latest_pv=${local_package##*/}
  		fi
  		if [ -z "$latest_pv" -a -z "$PM_INDEX_ONLY" ]; then
