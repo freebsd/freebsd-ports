@@ -11,6 +11,9 @@ COMMENT=	Pure python sliding memory map manager
 
 LICENSE=	BSD3CLAUSE
 
+DEPRECATED=	Use devel/py-smmap2 instead
+EXPIRATION_DATE=2018-01-31
+
 CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}smmap2
 
 USES=		python
