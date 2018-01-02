@@ -4,11 +4,11 @@
 PORTNAME=	ossec-hids
 PORTVERSION=	2.8.3
 DISTVERSIONPREFIX=	v
-PORTREVISION?=	2
+PORTREVISION?=	3
 CATEGORIES=	security
 PKGNAMESUFFIX=	-server
 
-MAINTAINER=	brd@FreeBSD.org
+MAINTAINER=	dominik.lisiak@bemsoft.pl
 COMMENT?=	Security tool to monitor and check logs and intrusions
 
 USE_GITHUB=	yes
@@ -96,7 +96,7 @@ do-build:
 .if defined(CLIENT_ONLY)
 	@cd ${WRKSRC}/src;${MAKE} setagent;${MAKE} all;${MAKE} build
 .elif defined(LOCAL_ONLY)
-	@cd ${WRKSRC}/src;${MAKE} setlocal;${MAKE} all;${MAKE} build
+	@cd ${WRKSRC}/src;${MAKE} setlocal;${MAKE} setdb;${MAKE} all;${MAKE} build
 .else
 	@cd ${WRKSRC}/src;${MAKE} setdb;${MAKE} all;${MAKE} build
 .endif
