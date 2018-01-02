@@ -1,2 +1,3 @@
-SHA256 (rubygem/snmp-1.1.1.gem) = 6af90f3d9156d15d78e07a819c5829d70f8d5b26349f679e13735060885ba796
-SIZE (rubygem/snmp-1.1.1.gem) = 203776
+TIMESTAMP = 1514155098
+SHA256 (rubygem/snmp-1.2.0.gem) = e0a0b76497ac4a6f2238098f2379fc6ea39d1b96a72b4b76c86ebf35557b8d98
+SIZE (rubygem/snmp-1.2.0.gem) = 205824
