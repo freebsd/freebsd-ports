@@ -1,4 +1,4 @@
---- Gemfile.orig	2017-11-14 20:51:25 UTC
+--- Gemfile.orig	2017-12-07 12:02:52 UTC
 +++ Gemfile
 @@ -1,49 +1,49 @@
  source 'https://rubygems.org'
@@ -33,8 +33,9 @@
  gem 'doorkeeper', '~> 4.2.0'
  gem 'doorkeeper-openid_connect', '~> 1.2.0'
 -gem 'omniauth', '~> 1.4.2'
+-gem 'omniauth-auth0', '~> 1.4.1'
 +gem 'omniauth', '>= 1.4.2'
- gem 'omniauth-auth0', '~> 1.4.1'
++gem 'omniauth-auth0', '>= 1.4.1'
  gem 'omniauth-azure-oauth2', '~> 0.0.9'
  gem 'omniauth-cas3', '~> 1.1.4'
  gem 'omniauth-facebook', '~> 4.0.0'
@@ -44,9 +45,10 @@
 +gem 'omniauth-google-oauth2', '>= 0.5.2'
  gem 'omniauth-kerberos', '~> 0.3.0', group: :kerberos
  gem 'omniauth-oauth2-generic', '~> 0.2.2'
- gem 'omniauth-saml', '~> 1.7.0'
+-gem 'omniauth-saml', '~> 1.7.0'
 -gem 'omniauth-shibboleth', '~> 1.2.0'
 -gem 'omniauth-twitter', '~> 1.2.0'
++gem 'omniauth-saml', '>= 1.7.0'
 +gem 'omniauth-shibboleth', '>= 1.2.0'
 +gem 'omniauth-twitter', '>= 1.2.0'
  gem 'omniauth_crowd', '~> 2.2.0'
@@ -183,7 +185,7 @@
  
  # Flowdock integration
  gem 'gitlab-flowdock-git-hook', '~> 1.0.1'
-@@ -199,13 +199,13 @@ gem 'asana', '~> 0.6.0'
+@@ -199,23 +199,23 @@ gem 'asana', '~> 0.6.0'
  gem 'ruby-fogbugz', '~> 0.2.1'
  
  # Kubernetes integration
@@ -199,8 +201,12 @@
  gem 'babosa', '~> 1.0.2'
  
  # Sanitizes SVG input
-@@ -215,7 +215,7 @@ gem 'loofah', '~> 2.0.3'
- gem 'licensee', '~> 8.7.0'
+-gem 'loofah', '~> 2.0.3'
++gem 'loofah', '>= 2.0.3'
+ 
+ # Working with license
+-gem 'licensee', '~> 8.7.0'
++gem 'licensee', '>= 8.7.0'
  
  # Protect against bruteforcing
 -gem 'rack-attack', '~> 4.4.1'
