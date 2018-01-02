@@ -3,7 +3,7 @@
 
 PORTNAME=	avogadro
 PORTVERSION=	1.1.1
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	science
 MASTER_SITES=	SF
 
@@ -13,10 +13,11 @@ COMMENT=	Advanced molecular editor and viewer
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	eigen2>2:math/eigen2
 LIB_DEPENDS=	libopenbabel.so:science/openbabel
 
-USES=		cmake desktop-file-utils pkgconfig tar:bzip2
+# We need to add a RUN_DEPENDS on eigen2, as the cmake file shiped with 
+# avogadro to use it, contains 'find_package(Eigen2 REQUIRED)'.
+USES=		cmake desktop-file-utils eigen:2,build,run pkgconfig tar:bzip2
 USE_GL=		glu gl
 USE_QT4=	gui network opengl \
 		linguisttools_build moc_build qmake_build rcc_build uic_build

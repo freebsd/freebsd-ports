@@ -37,11 +37,10 @@ LIB_DEPENDS=	libImath-2_2.so:graphics/ilmbase \
 		libwpg-0.3.so:graphics/libwpg03 \
 		libwps-0.3.so:textproc/libwps03
 
-BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/eigen3.pc:math/eigen3 \
-		pstoedit:graphics/pstoedit
+BUILD_DEPENDS=	pstoedit:graphics/pstoedit
 RUN_DEPENDS=	pstoedit:graphics/pstoedit
 
-USES=		cmake:outsource cpe compiler:c++11-lib desktop-file-utils \
+USES=		cmake:outsource cpe compiler:c++11-lib desktop-file-utils eigen:3 \
 		gettext iconv:translit jpeg kde:5 localbase:ldflags perl5 pkgconfig \
 		shared-mime-info sqlite tar:xz
 USE_KDE=	activities archive auth bookmarks codecs completion config \

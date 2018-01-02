@@ -12,7 +12,6 @@ COMMENT=	KDE4 digital photo management application
 
 .include "${.CURDIR}/Makefile.common"
 
-BUILD_DEPENDS=	${LOCALBASE}/include/eigen3/Eigen/Eigen:math/eigen3
 LIB_DEPENDS=	libtiff.so:graphics/tiff \
 		liblcms.so:graphics/lcms \
 		libpng.so:graphics/png \
@@ -24,7 +23,7 @@ LIB_DEPENDS=	libtiff.so:graphics/tiff \
 		libkgeomap.so:astro/libkgeomap \
 		libboost_graph.so:devel/boost-libs
 
-USES+=		pkgconfig shebangfix
+USES+=		eigen:3 pkgconfig shebangfix
 USE_KDE+=	libkdcraw libkexiv2 libkipi runtime_run
 USE_QT4+=	sql-sqlite3_run
 USE_LDCONFIG=	yes

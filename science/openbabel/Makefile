@@ -12,15 +12,13 @@ COMMENT=	Chemistry file translation program
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	eigen>=0:math/eigen3
-
 BROKEN_powerpc64=	Does not build: relocation truncated to fit: R_PPC64_TOC16_DS
 
 CONFLICTS_INSTALL=	babel-*
 
 USE_CXXSTD=	gnu++98
 USE_GNOME=	libxml2
-USES=		cmake:outsource
+USES=		cmake:outsource eigen:3
 CMAKE_ARGS=	-DBUILD_GUI=off
 USE_LDCONFIG=	yes
 

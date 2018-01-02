@@ -10,6 +10,23 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20180102:
+AUTHOR: kde@FreeBSD.org
+  
+  There is a new USES=eigen to depend on math/eigen[23].
+  
+  Usage: 
+    USES=eigen:<version>[,<type>]
+
+    version: 2 or 3 (required)
+    type:    build (default), run
+
+  For example:
+    USES=eigen:2,build,run
+  will add a BUILD- and RUN_DEPENDS on math/eigen2, and
+    USES=eigen:3 
+  will add a BUILD_DEPENDS on math/eigen3.
+
 20171231:
 AUTHOR: kde@FreeBSD.org
 

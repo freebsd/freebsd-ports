@@ -16,8 +16,7 @@ LICENSE_COMB=	multi
 
 BROKEN_sparc64=	does not build: fails to compile all_files.cpp
 
-BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/eigen3.pc:math/eigen3 \
-		${LOCALBASE}/lib/libntl.a:math/ntl
+BUILD_DEPENDS=	${LOCALBASE}/lib/libntl.a:math/ntl
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 		libmpfr.so:math/mpfr \
 		libgmp.so:math/gmp
@@ -25,7 +24,7 @@ LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 #TODO math/mpfi, math/rs, graphics/qglviewer
 #Not yet in ports
 
-USES=		cmake shebangfix tar:xz
+USES=		cmake eigen:3 shebangfix tar:xz
 USE_LDCONFIG=	yes
 SHEBANG_FILES=	scripts/cgal_create_CMakeLists \
 		scripts/cgal_create_cmake_script
