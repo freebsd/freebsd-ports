@@ -119,6 +119,7 @@ bin/pyuic5
 %%PYQT_SIPDIR%%/QtCore/qcryptographichash.sip
 %%PYQT_SIPDIR%%/QtCore/qdatastream.sip
 %%PYQT_SIPDIR%%/QtCore/qdatetime.sip
+%%PYQT_SIPDIR%%/QtCore/qdeadlinetimer.sip
 %%PYQT_SIPDIR%%/QtCore/qdir.sip
 %%PYQT_SIPDIR%%/QtCore/qdiriterator.sip
 %%PYQT_SIPDIR%%/QtCore/qeasingcurve.sip
@@ -159,6 +160,7 @@ bin/pyuic5
 %%PYQT_SIPDIR%%/QtCore/qobject.sip
 %%PYQT_SIPDIR%%/QtCore/qobjectcleanuphandler.sip
 %%PYQT_SIPDIR%%/QtCore/qobjectdefs.sip
+%%PYQT_SIPDIR%%/QtCore/qoperatingsystemversion.sip
 %%PYQT_SIPDIR%%/QtCore/qparallelanimationgroup.sip
 %%PYQT_SIPDIR%%/QtCore/qpauseanimation.sip
 %%PYQT_SIPDIR%%/QtCore/qpluginloader.sip

@@ -6,13 +6,16 @@ CATEGORIES=	devel python
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Python bindings for the Qt5 toolkit, QtCore module
 
-CONFIGURE_ARGS=	--enable QtCore
+PYQT_MODULE=	QtCore
+CONFIGURE_ARGS=	${PYQT5_MODULES_ALL:N${PYQT_MODULE}:C/.*/--disable=&/} \
+		--enable=${PYQT_MODULE}
+
 PYQT_DIST=	yes
 
 USES=		python pyqt:5
 USE_PYTHON=	py3kplist flavors
 USE_PYQT=	sip_build
-USE_QT5=	core qmake_build
+USE_QT5=	core buildtools_build qmake_build
 
 OPTIONS_DEFINE=	API DEBUG
 OPTIONS_DEFAULT=API

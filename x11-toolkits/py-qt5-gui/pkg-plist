@@ -37,6 +37,7 @@
 %%PYQT_SIPDIR%%/QtGui/qopenglpixeltransferoptions.sip
 %%PYQT_SIPDIR%%/QtGui/qopenglshaderprogram.sip
 %%PYQT_SIPDIR%%/QtGui/qopengltexture.sip
+%%PYQT_SIPDIR%%/QtGui/qopengltextureblitter.sip
 %%PYQT_SIPDIR%%/QtGui/qopengltimerquery.sip
 %%PYQT_SIPDIR%%/QtGui/qopenglversionfunctions.sip
 %%PYQT_SIPDIR%%/QtGui/qopenglvertexarrayobject.sip

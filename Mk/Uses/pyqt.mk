@@ -61,10 +61,10 @@ MASTER_SITES_PYQT5=	SF/pyqt/PyQt5/PyQt-${PORTVERSION} \
 MASTER_SITES_QSCI2=	SF/pyqt/QScintilla2/QScintilla-${PORTVERSION} \
 			GENTOO
 
-SIP_VERSION=		4.19.2
+SIP_VERSION=		4.19.6
 QSCI2_VERSION=		2.9.1
-PYQT4_VERSION=		4.12
-PYQT5_VERSION=		5.7.1
+PYQT4_VERSION=		4.12.1
+PYQT5_VERSION=		5.9.2
 
 SIP_DISTNAME=		sip-${SIP_VERSION}
 PYQT4_DISTNAME=		PyQt4_gpl_x11-${PYQT4_VERSION}
@@ -77,10 +77,10 @@ PYQT5_LICENSE=		GPLv3
 
 # PyQt components split up into pyqt4/pyqt5/...
 _USE_PYQT_ALL=		core dbus dbussupport demo designer designerplugin \
-			doc gui multimedia network opengl qscintilla2 \
+			gui multimedia network opengl qscintilla2 \
 			sql svg test webkit xml xmlpatterns sip
 # List of components only in pyqt4
-_USE_PYQT4_ONLY=	assistant declarative \
+_USE_PYQT4_ONLY=	assistant declarative doc \
 			help phonon script scripttools
 # List of components only in pyqt5
 _USE_PYQT5_ONLY=	multimediawidgets printsupport qml serialport \

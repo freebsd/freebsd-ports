@@ -12,7 +12,7 @@ USES=		metaport python pyqt:5
 USE_PYTHON=	flavors
 
 OPTIONS_DEFINE=	core dbus dbussupport demo designer \
-		designerplugin doc gui multimedia multimediawidgets \
+		designerplugin gui multimedia multimediawidgets \
 		network opengl printsupport qml qscintilla2 sql \
 		serialport svg test webkit webkitwidgets \
 		widgets xml xmlpatterns
