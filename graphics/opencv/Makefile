@@ -65,7 +65,7 @@ DC1394_LIB_DEPENDS=	libdc1394.so:multimedia/libdc1394
 DC1394_CMAKE_BOOL=	WITH_1394
 
 EIGEN3_DESC=		Eigen 3 support
-EIGEN3_BUILD_DEPENDS=	${LOCALBASE}/include/eigen3/Eigen/Eigen:math/eigen3
+EIGEN3_USES=		eigen:3
 EIGEN3_CMAKE_BOOL=	WITH_EIGEN
 
 . if !defined(OCV_SLAVE)

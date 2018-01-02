@@ -14,13 +14,11 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 BROKEN=		Needs work to use math/eigen3 currently in ports
 
-BUILD_DEPENDS=	eigen>3:math/eigen3
-
 USE_GITHUB=	yes
 GH_PROJECT=	Code-Eli
 GH_ACCOUNT=	ddmarshall
 
-USES=		cmake:outsource compiler:c++11-lib
+USES=		cmake:outsource compiler:c++11-lib eigen:3
 PORTEXAMPLES=	AirfoilFitExample VSPPodExample test
 ALL_TARGET=	all
 

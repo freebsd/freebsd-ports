@@ -12,10 +12,9 @@ COMMENT=	Numerical simulation of partial differential equations
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	eigen>0:math/eigen3
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs
 
-USES=		autoreconf gmake libtool
+USES=		autoreconf eigen:3 gmake libtool
 GNU_CONFIGURE=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	libMesh
