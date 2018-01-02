@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	redeclipse
-PORTVERSION=	1.5.8
+PORTVERSION=	1.6.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	games
 
@@ -12,9 +12,9 @@ COMMENT=	Single-player and multi-player first-person ego-shooter
 LICENSE=	MIT ZLIB
 LICENSE_COMB=	multi
 
-RUN_DEPENDS=	redeclipse-data>=${PORTVERSION}:games/redeclipse-data
-
 BROKEN_sparc64=	does not build on sparc64
+
+RUN_DEPENDS=	redeclipse-data>=${PORTVERSION}:games/redeclipse-data
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	red-eclipse
