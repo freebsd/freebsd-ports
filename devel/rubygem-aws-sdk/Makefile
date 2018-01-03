@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	aws-sdk
-PORTVERSION=	2.10.110
+DISTVERSION=	2.10.111
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -12,8 +12,9 @@ LICENSE=	APACHE20
 
 RUN_DEPENDS=	rubygem-aws-sdk-resources>=${PORTVERSION}:devel/rubygem-aws-sdk-resources
 
-NO_ARCH=	yes
 USES=		gem
 USE_RUBY=	yes
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
