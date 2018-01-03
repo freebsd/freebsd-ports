@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME?=	pypy
-DISTVERSION?=	5.9.0	# Also update bsd.pypy.cffi.mk
 CATEGORIES=	lang python
 MASTER_SITES=	https://bitbucket.org/pypy/pypy/downloads/ http://buildbot.pypy.org/mirror/
-DISTNAME?=	${PORTNAME}2-v${PORTVERSION}-src
+DISTNAME?=	${PORTNAME}2-v${DISTVERSION}-src
 
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Fast, compliant implementation of the Python language
@@ -15,8 +14,7 @@ LICENSE_COMB=	multi
 LICENSE_FILE_MIT=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libexpat.so:textproc/expat2 \
-		libffi.so:devel/libffi \
-		libunwind.so:devel/libunwind
+		libffi.so:devel/libffi
 TEST_DEPENDS=	${LOCALBASE}/${PYPY_DIR}/lib_pypy/_gdbm_cffi.${PYPY_CFFI_VER}.so:databases/pypy-gdbm \
 		${LOCALBASE}/${PYPY_DIR}/lib_pypy/_sqlite3_cffi.${PYPY_CFFI_VER}.so:databases/pypy-sqlite3 \
 		${LOCALBASE}/${PYPY_DIR}/lib_pypy/_tkinter/tklib_cffi.${PYPY_CFFI_VER}.so:x11-toolkits/pypy-tkinter
@@ -47,7 +45,7 @@ OPTIONS_SLAVE=	PYTHON
 .endif
 
 ALL_TARGET=	${PORTNAME}-c
-BUILD_WRKSRC?=	${WRKDIR}/build/usession-release-pypy2.7-v${PORTVERSION}-0/testing_1
+BUILD_WRKSRC?=	${WRKDIR}/build/usession-release-pypy2.7-v${DISTVERSION}-0/testing_1
 MAKE_ENV+=	PYPY_LOCALBASE=${LOCALBASE} LDSHARED="${CC} -shared"
 PACKAGE_ARGS?=	--without-gdbm --without-sqlite3 --without-tk
 USE_LDCONFIG=	${PREFIX}/${PYPY_DIR}/bin
@@ -95,7 +93,7 @@ PYPY_MINMEM_BUILD_DEPENDS=	pypy:lang/pypy
 PYPY_VARS=	PYTHON_CMD=${LOCALBASE}/bin/pypy
 PYPY_MINMEM_VARS=	PYTHON_CMD="${SETENV} PYPY_GC_MAX_DELTA=200MB ${LOCALBASE}/bin/pypy --jit loop_longevity=300"
 PYTHON_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pycparser>=2.10:devel/py-pycparser@${PY_FLAVOR}
-PYTHON_USES=	python:2,build
+PYTHON_USES=	python:2.7,build
 
 DESCR=		${.CURDIR}/pkg-descr
 DISTINFO_FILE=	${.CURDIR}/distinfo
@@ -106,8 +104,10 @@ PLIST=		${.CURDIR}/pkg-plist
 .include "${MASTERDIR}/bsd.pypy.mk"
 .include <bsd.port.pre.mk>
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1100000
+.if ${OPSYS} == FreeBSD && (${OSVERSION} < 1100000 || (${ARCH} != i386 && ${ARCH} != amd64))
 PYPY_ARGS=	--withoutmod-_vmprof
+.else
+LIB_DEPENDS+=	libunwind.so:devel/libunwind
 .endif
 
 post-extract:
@@ -154,7 +154,6 @@ do-test:
 pkg-plist: stage
 	${TAR} -tf ${WRKDIR}/build/${PYPY_DIR}.tar.bz2 > ${WRKDIR}/.plist-files-gen
 	${REINPLACE_CMD} -e 's|^${PYPY_DIR}|%%PYPY_DIR%%|g' \
-		-e 's|_${PYPY_BITS}_|_%%PYPY_BITS%%_|g' \
 		-e 's|${PYPY_CFFI_VER}|%%PYPY_CFFI_VER%%|g' \
 		-e 's/\(.*\/__pycache__\)\/$$/@dir \1/g' \
 		-e '/\/$$/d' \

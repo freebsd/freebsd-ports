@@ -1,14 +1,11 @@
---- rpython/rlib/rvmprof/cintf.py.orig	2017-10-03 10:49:20 UTC
+--- rpython/rlib/rvmprof/cintf.py.orig	2017-12-27 19:18:35 UTC
 +++ rpython/rlib/rvmprof/cintf.py
-@@ -47,7 +47,10 @@ else:
-     # Guessing a BSD-like Unix platform
-     compile_extra += ['-DVMPROF_UNIX']
-     compile_extra += ['-DVMPROF_MAC']
--    _libs = []
-+    if sys.platform.startswith('freebsd'):
-+        _libs = ['unwind']
-+    else:
-+        _libs = []
+@@ -17,7 +17,7 @@ class VMProfPlatformUnsupported(Exceptio
  
+ # vmprof works only on x86 for now
+ IS_SUPPORTED = detect_cpu.autodetect().startswith('x86')
+-if sys.platform == 'win32':
++if sys.platform in ('freebsd10', 'win32'):
+     IS_SUPPORTED = False
  
- eci_kwds = dict(
+ ROOT = py.path.local(rpythonroot).join('rpython', 'rlib', 'rvmprof')
