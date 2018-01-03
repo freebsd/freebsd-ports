@@ -28,7 +28,7 @@ LIB_DEPENDS=	libmusicbrainz5.so:audio/libmusicbrainz5 \
 USES=		desktop-file-utils gettext gmake gnome libtool localbase \
 		pathfix pkgconfig tar:xz
 USE_GNOME=	intlhack gnomeprefix gtk30 introspection:build \
-		py3gobject3
+		pygobject3
 USE_XORG=	ice xproto
 GNU_CONFIGURE=	yes
 USE_GSTREAMER1=	flac lame jpeg cdparanoia vorbis

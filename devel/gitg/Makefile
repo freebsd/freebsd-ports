@@ -50,6 +50,6 @@ NLS_USES_OFF=	gettext-tools
 NLS_CONFIGURE_ENABLE=	nls
 PYTHON_USES=	python:3.2+
 PYTHON_CONFIGURE_ENABLE=	python
-PYTHON_USE=	GNOME=py3gobject3
+PYTHON_USE=	GNOME=pygobject3
 
 .include <bsd.port.mk>

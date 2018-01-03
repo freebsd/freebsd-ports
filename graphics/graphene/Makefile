@@ -12,7 +12,7 @@ COMMENT=	Optimizations for speeding up vector operations
 LICENSE=	MIT
 
 USES=		gnome meson pkgconfig python:3.4+ shebangfix tar:xz
-USE_GNOME=	glib20 py3gobject3
+USE_GNOME=	glib20 pygobject3
 
 OPTIONS_SUB=	yes
 OPTIONS_DEFINE=	GTKDOC #INTROSPECTION

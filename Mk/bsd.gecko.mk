@@ -344,8 +344,7 @@ MOZ_OPTIONS+=	--disable-gstreamer
 .endif
 
 .if ${PORT_OPTIONS:MGCONF}
-BUILD_DEPENDS+=	${gconf2_DETECT}:${gconf2_LIB_DEPENDS:C/.*://}
-USE_GNOME+=		gconf2:build
+USE_GNOME+=		gconf2
 MOZ_OPTIONS+=	--enable-gconf
 .else
 MOZ_OPTIONS+=	--disable-gconf

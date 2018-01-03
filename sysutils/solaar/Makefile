@@ -29,7 +29,8 @@ GH_TAGNAME=	53ec751
 NO_ARCH=	yes
 
 OPTIONS_DEFINE=	GUI
-GUI_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gobject3>=0:devel/py-gobject3@${FLAVOR}
+GUI_USES=	gnome
+GUI_USE=	gnome=pygobject3:run
 
 post-patch:
 	@${CP} ${FILESDIR}/hidapi.py ${WRKSRC}/lib/hidapi/udev.py

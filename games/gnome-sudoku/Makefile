@@ -24,7 +24,7 @@ PORTSCOUT=	limitw:1,even
 
 USES=		gettext gmake gnome localbase pathfix \
 		pkgconfig python:3.3+ shebangfix tar:xz
-USE_GNOME=	cairo gtk30 intlhack libxml2:build py3gobject3
+USE_GNOME=	cairo gtk30 intlhack libxml2:build pygobject3
 INSTALLS_ICONS=	yes
 GNU_CONFIGURE=	yes
 

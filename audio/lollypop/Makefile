@@ -22,7 +22,7 @@ LIB_DEPENDS=	libnotify.so:devel/libnotify \
 
 USES=	shebangfix python:3.4+ pkgconfig gettext gmake sqlite tar:xz
 GNU_CONFIGURE=	yes
-USE_GNOME=	glib20 gtk30 py3gobject3 introspection:build intltool intlhack
+USE_GNOME=	glib20 gtk30 pygobject3 introspection:build intltool intlhack
 USE_GSTREAMER1=	yes mpg123 ogg flac opus libav faad good speex
 USE_PYTHON=	py3kplist
 INSTALLS_ICONS=	yes

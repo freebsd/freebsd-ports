@@ -19,7 +19,7 @@ RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/xdg/__init__.py:devel/py-xdg@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pylast>0:audio/py-pylast@${FLAVOR} \
 		git:devel/git
 
-USE_GNOME=	gtk30 py3gobject3
+USE_GNOME=	gtk30 pygobject3
 USES=		python:3.4+
 USE_PYTHON=	distutils autoplist optsuffix
 USE_GSTREAMER=	core good bad soup
