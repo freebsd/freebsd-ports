@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cgal
-PORTVERSION=	4.9
-PORTREVISION=	8
+PORTVERSION=	4.10.1
 CATEGORIES=	math
 MASTER_SITES=	https://github.com/${PORTNAME:tu}/${PORTNAME}/releases/download/releases/${DISTNAME}/
 DISTNAME=	${PORTNAME:tu}-${PORTVERSION}
@@ -29,11 +28,11 @@ USE_LDCONFIG=	yes
 SHEBANG_FILES=	scripts/cgal_create_CMakeLists \
 		scripts/cgal_create_cmake_script
 
-OPTIONS_DEFINE=	VISUALIZATION QT5
+OPTIONS_DEFINE=		VISUALIZATION QT5
 VISUALIZATION_IMPLIES=	QT5
-OPTIONS_SUB=	yes
+OPTIONS_SUB=		yes
 
-VISUALIZATION_DESC=	Visualization Required for most demos (Qt5 Geomview)
+VISUALIZATION_DESC=		Visualization Required for most demos (Qt5 Geomview)
 VISUALIZATION_LIB_DEPENDS=	libgeomview.so:graphics/geomview
 
 .include <bsd.port.options.mk>
