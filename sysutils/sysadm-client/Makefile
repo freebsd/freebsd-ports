@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	sysadm-client
-PORTVERSION=	201712070942
+PORTVERSION=	201801031217
 CATEGORIES=	sysutils
 
 MAINTAINER=	jt@ixsystems.com
