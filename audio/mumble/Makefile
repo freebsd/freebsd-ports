@@ -3,7 +3,7 @@
 
 PORTNAME=	mumble
 PORTVERSION=	1.2.19
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	audio
 
 MAINTAINER=	feld@FreeBSD.org
@@ -60,6 +60,8 @@ PORTAUDIO_LIB_DEPENDS=	libportaudio.so:audio/portaudio
 .if ${COMPILER_TYPE} == gcc
 CONFIG+=	no-pch
 .endif
+
+EXTRA_PATCHES=	${FILESDIR}/extrapatch-fix-build-boost-1.66:-p1
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-ldl||' ${WRKSRC}/overlay_gl/overlay_gl.pro
