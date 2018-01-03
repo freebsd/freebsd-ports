@@ -12,6 +12,9 @@ COMMENT=	Handles rebuilding of Jekyll sites when a file changes
 
 LICENSE=	MIT
 
+DEPRECATED=	Use www/rubygem-jekyll-watch instead
+EXPIRATION_DATE=2018-01-31
+
 RUN_DEPENDS=	rubygem-listen>=3.0:devel/rubygem-listen
 
 PORTSCOUT=	limit:^1\.
