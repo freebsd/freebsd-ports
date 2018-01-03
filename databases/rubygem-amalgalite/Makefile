@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	amalgalite
-PORTVERSION=	1.6.0
+PORTVERSION=	1.6.1
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
