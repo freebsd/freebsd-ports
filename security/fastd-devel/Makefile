@@ -2,7 +2,7 @@
 
 PORTNAME=		fastd
 PORTVERSION=		18.a.20151111
-PORTREVISION=		4
+PORTREVISION=		5
 CATEGORIES=		security net
 MASTER_SITES=		https://git.universe-factory.net/fastd/snapshot/
 PKGNAMESUFFIX=		-devel
