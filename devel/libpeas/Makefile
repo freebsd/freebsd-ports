@@ -39,13 +39,12 @@ PLIST=          ${.CURDIR}/pkg-plist
 .if ${LIBPEAS_SLAVE} == python
 USES+=		python
 USE_PYTHON=	flavors
-.if ${FLAVOR:Upy27:Mpy2*}
 USE_GNOME+=	pygobject3
+.if ${FLAVOR:Upy27:Mpy2*}
 CONFIGURE_ARGS+=	--disable-python3
 BUILD_WRKSRC=	${WRKSRC}/loaders/python
 INSTALL_WRKSRC=	${WRKSRC}/loaders/python
 .else
-USE_GNOME+=	py3gobject3
 CONFIGURE_ARGS+=	--disable-python2 \
 			ac_cv_path_PYTHON3_CONFIG=${LOCALBASE}/bin/python${PYTHON_VER}-config
 BUILD_WRKSRC=	${WRKSRC}/loaders/python3

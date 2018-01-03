@@ -18,11 +18,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 PORTSCOUT=	limitw:1,even
 
 USES=		gmake libtool localbase pathfix pkgconfig python tar:xz
-.if ${FLAVOR:Upy27:Mpy2*}
 USE_GNOME=	pygobject3
-.else
-USE_GNOME=	py3gobject3
-.endif
 py34_PLIST=	${.CURDIR}/pkg-plist-py3
 py35_PLIST=	${.CURDIR}/pkg-plist-py3
 py36_PLIST=	${.CURDIR}/pkg-plist-py3

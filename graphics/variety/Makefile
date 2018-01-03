@@ -22,7 +22,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}beautifulsoup>=4.3.2:www/py-beautifulsoup@${
 		${PYTHON_PKGNAMEPREFIX}pycurl>=7.19.5.1:ftp/py-pycurl@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dbus>=1.1.1_1:devel/py-dbus@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}exiv2>=0.3.2_3:graphics/py-exiv2@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}gobject3>=3.14.0:devel/py-gobject3@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}httplib2>=0.9:www/py-httplib2@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pillow>=2.6.0:graphics/py-pillow@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}lxml>=3.4.1_1:devel/py-lxml@${FLAVOR} \
@@ -39,7 +38,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}beautifulsoup>=4.3.2:www/py-beautifulsoup@${
 
 SHEBANG_FILES=	bin/variety data/scripts/*
 
-USES=	desktop-file-utils gettext python:2 shebangfix
+USES=	desktop-file-utils gettext python:2 shebangfix gnome
+USE_GNOME=	pygobject3:run
 USE_PYTHON=	distutils
 
 WRKSRC=	${WRKDIR}/variety

@@ -30,7 +30,7 @@ PORTSCOUT=	limitw:1,even
 USES=		desktop-file-utils gettext gmake gnome libtool localbase \
 		pathfix pkgconfig python:3.2+ tar:xz
 USE_GNOME=	cairo gdkpixbuf2 gtksourceview3 intlhack introspection \
-		libxml2 py3gobject3
+		libxml2 pygobject3
 USE_XORG=	sm x11
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-updater \

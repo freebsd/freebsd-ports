@@ -28,7 +28,7 @@ PORTSCOUT=	limitw:1,even
 
 NO_ARCH=	yes
 USES=		gettext gmake gnome pathfix pkgconfig python:3.4+ tar:xz
-USE_GNOME=	gtk30 py3gobject3 intlhack
+USE_GNOME=	gtk30 pygobject3 intlhack
 INSTALLS_ICONS=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
