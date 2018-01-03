@@ -3,7 +3,7 @@
 PORTNAME=	mastodon
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-im www
 
 MAINTAINER=	jrm@FreeBSD.org
@@ -65,7 +65,7 @@ BR_DEPENDS=	ffmpeg>0:multimedia/ffmpeg \
 		rubygem-rack-timeout>=0.4:www/rubygem-rack-timeout \
 		rubygem-rails-i18n>=5.0:devel/rubygem-rails-i18n \
 		rubygem-rails-settings-cached-rails5>=0.6:www/rubygem-rails-settings-cached-rails5 \
-		rubygem-redis3>=3.3:databases/rubygem-redis3 \
+		rubygem-redis>=4.0:databases/rubygem-redis \
 		rubygem-mario-redis-lock>=1.2:databases/rubygem-mario-redis-lock \
 		rubygem-rqrcode>=0.10:www/rubygem-rqrcode \
 		rubygem-ruby-oembed>=0.12:www/rubygem-ruby-oembed \
@@ -78,7 +78,7 @@ BR_DEPENDS=	ffmpeg>0:multimedia/ffmpeg \
 		rubygem-simple_form-rails5>=3.4:devel/rubygem-simple_form-rails5 \
 		rubygem-sprockets-rails-rails5>=3.2:devel/rubygem-sprockets-rails-rails5 \
 		rubygem-strong_migrations>=0.1.9:devel/rubygem-strong_migrations \
-		rubygem-twitter-text>=1.14:textproc/rubygem-twitter-text \
+		rubygem-twitter-text1>=1.14:textproc/rubygem-twitter-text1 \
 		rubygem-tzinfo-data>=1.2017:devel/rubygem-tzinfo-data \
 		rubygem-webpacker-rails5>=3.0:devel/rubygem-webpacker-rails5 \
 		rubygem-webpush>=0.3.2_1:security/rubygem-webpush \
