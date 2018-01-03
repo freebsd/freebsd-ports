@@ -8,6 +8,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/problem-reports/article.txt
 %%DOCSDIR%%/%%DOCLANG%%/articles/remote-install/article.txt
 %%DOCSDIR%%/%%DOCLANG%%/books/developers-handbook/book.txt
+%%DOCSDIR%%/%%DOCLANG%%/books/faq/book.txt
 %%DOCSDIR%%/%%DOCLANG%%/books/fdp-primer/book.txt
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/book.txt
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/book.txt

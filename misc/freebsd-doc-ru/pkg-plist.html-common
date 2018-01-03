@@ -15,7 +15,6 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/pam/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/pr-guidelines/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/problem-reports/docbook.css
-%%DOCSDIR%%/%%DOCLANG%%/articles/relaydelay/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/releng/branches-head.png
 %%DOCSDIR%%/%%DOCLANG%%/articles/releng/branches-releng3.png
 %%DOCSDIR%%/%%DOCLANG%%/articles/releng/branches-releng4.png

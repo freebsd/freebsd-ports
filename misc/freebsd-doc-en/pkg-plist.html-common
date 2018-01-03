@@ -58,7 +58,6 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/rc-scripting/imagelib/callouts/7.png
 %%DOCSDIR%%/%%DOCLANG%%/articles/rc-scripting/imagelib/callouts/8.png
 %%DOCSDIR%%/%%DOCLANG%%/articles/rc-scripting/imagelib/callouts/9.png
-%%DOCSDIR%%/%%DOCLANG%%/articles/relaydelay/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/releng/branches-head.png
 %%DOCSDIR%%/%%DOCLANG%%/articles/releng/branches-releng3.png
 %%DOCSDIR%%/%%DOCLANG%%/articles/releng/branches-releng4.png
@@ -114,7 +113,6 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/dev-model/orghierarchy2.png
 %%DOCSDIR%%/%%DOCLANG%%/books/dev-model/portsstatus.png
 %%DOCSDIR%%/%%DOCLANG%%/books/dev-model/proc-add-committer.png
-%%DOCSDIR%%/%%DOCLANG%%/books/dev-model/proc-add-cvsup.png
 %%DOCSDIR%%/%%DOCLANG%%/books/dev-model/proc-commit.png
 %%DOCSDIR%%/%%DOCLANG%%/books/dev-model/proc-contrib.png
 %%DOCSDIR%%/%%DOCLANG%%/books/dev-model/proc-elections.png

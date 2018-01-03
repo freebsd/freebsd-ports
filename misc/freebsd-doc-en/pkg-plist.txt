@@ -28,7 +28,6 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/pr-guidelines/article.txt
 %%DOCSDIR%%/%%DOCLANG%%/articles/problem-reports/article.txt
 %%DOCSDIR%%/%%DOCLANG%%/articles/rc-scripting/article.txt
-%%DOCSDIR%%/%%DOCLANG%%/articles/relaydelay/article.txt
 %%DOCSDIR%%/%%DOCLANG%%/articles/releng/article.txt
 %%DOCSDIR%%/%%DOCLANG%%/articles/remote-install/article.txt
 %%DOCSDIR%%/%%DOCLANG%%/articles/serial-uart/article.txt
