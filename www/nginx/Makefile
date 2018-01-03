@@ -3,7 +3,7 @@
 
 PORTNAME=	nginx
 PORTVERSION=	1.12.2
-PORTREVISION?=	3
+PORTREVISION?=	4
 PORTEPOCH=	2
 CATEGORIES=	www
 MASTER_SITES=	http://nginx.org/download/
@@ -347,7 +347,7 @@ CONFIGURE_ARGS+=--with-http_addition_module
 .endif
 
 .if ${PORT_OPTIONS:MHTTP_AUTH_DIGEST}
-GIT_AUTH_DIGEST_VERSION=	519dc2a
+GIT_AUTH_DIGEST_VERSION=	274490c
 GH_ACCOUNT+=	atomx:auth_digest
 GH_PROJECT+=	nginx-http-auth-digest:auth_digest
 GH_TAGNAME+=	${GIT_AUTH_DIGEST_VERSION}:auth_digest
