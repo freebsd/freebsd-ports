@@ -19,6 +19,7 @@ lib/elixir/lib/quantum/ebin/Elixir.Quantum.RunStrategy.beam
 lib/elixir/lib/quantum/ebin/Elixir.Quantum.Scheduler.beam
 lib/elixir/lib/quantum/ebin/Elixir.Quantum.Supervisor.beam
 lib/elixir/lib/quantum/ebin/Elixir.Quantum.TaskRegistry.beam
+lib/elixir/lib/quantum/ebin/Elixir.Quantum.TaskStagesSupervisor.beam
 lib/elixir/lib/quantum/ebin/Elixir.Quantum.Util.beam
 lib/elixir/lib/quantum/ebin/Elixir.Quantum.beam
 lib/elixir/lib/quantum/ebin/quantum.app
@@ -40,5 +41,6 @@ lib/elixir/lib/quantum/lib/quantum/run_strategy/random.ex
 lib/elixir/lib/quantum/lib/quantum/scheduler.ex
 lib/elixir/lib/quantum/lib/quantum/supervisor.ex
 lib/elixir/lib/quantum/lib/quantum/task_registry.ex
+lib/elixir/lib/quantum/lib/quantum/task_stages_supervisor.ex
 lib/elixir/lib/quantum/lib/quantum/util.ex
 %%PORTDOCS%%%%DOCSDIR%%/README.md
