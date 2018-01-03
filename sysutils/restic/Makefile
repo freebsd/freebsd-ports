@@ -1,28 +1,38 @@
 # $FreeBSD$
 
 PORTNAME=	restic
-PORTVERSION=	0.7.1
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
+DISTVERSION=	0.8.1
 CATEGORIES=	sysutils
 
-MAINTAINER=	wg@FreeBSD.org
-COMMENT=	Restic backup program
+MAINTAINER=	gregf@hugops.pw
+COMMENT=	Fast, secure, efficient backup program
 
 LICENSE=	BSD2CLAUSE
 
 USES=		go
 USE_GITHUB=	yes
 
-PLIST_FILES=	bin/restic
+GO_PKGNAME=	github.com/${GH_ACCOUNT}/${PORTNAME}
+GO_TARGET=	${GO_PKGNAME}/cmd/${PORTNAME}
 
-post-patch:
-	@${REINPLACE_CMD} -e "s@%%PREFIX%%@${PREFIX}@g" ${WRKSRC}/src/cmds/restic/cmd_autocomplete.go
+OPTIONS_SUB=	yes
+PLIST_SUB=	PORTNAME=${PORTNAME}
 
-do-build:
-	@(cd ${GO_WRKSRC}; ${SETENV} ${MAKE_ENV} ${GO_ENV} ${GO_CMD} run build.go)
+OPTIONS_DEFINE=		BASH ZSH
+OPTIONS_DEFAULT=	BASH ZSH
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+post-install:
+	${INSTALL_MAN} ${WRKSRC}/doc/man/* ${STAGEDIR}${MANPREFIX}/man/man1
+
+post-install-BASH-on:
+	${INSTALL} -d ${STAGEDIR}${PREFIX}/etc/bash_completion.d/
+	${INSTALL_SCRIPT} ${WRKSRC}/doc/bash-completion.sh \
+		${STAGEDIR}${PREFIX}/etc/bash_completion.d/${PORTNAME}.sh
+
+post-install-ZSH-on:
+	${INSTALL} -d ${STAGEDIR}${PREFIX}/share/zsh/site-functions/
+	${INSTALL_DATA} ${WRKSRC}/doc/zsh-completion.zsh \
+		${STAGEDIR}${PREFIX}/share/zsh/site-functions/_${PORTNAME}
 
 .include <bsd.port.mk>
