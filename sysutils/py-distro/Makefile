@@ -13,7 +13,7 @@ COMMENT=	Linux OS platform information API
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		python:2.7+ shebangfix
+USES=		python shebangfix
 USE_PYTHON=	autoplist concurrent distutils
 SHEBANG_FILES=	query_local_distro.py
 NO_ARCH=	yes
