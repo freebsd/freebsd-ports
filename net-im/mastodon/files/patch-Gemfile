@@ -26,6 +26,15 @@
  gem 'idn-ruby', require: 'idn'
  gem 'kaminari', '~> 1.1'
  gem 'link_header', '~> 0.0'
+@@ -54,7 +53,7 @@ gem 'rack-cors', '~> 0.4', require: 'rac
+ gem 'rack-timeout', '~> 0.4'
+ gem 'rails-i18n', '~> 5.0'
+ gem 'rails-settings-cached', '~> 0.6'
+-gem 'redis', '~> 3.3', require: ['redis', 'redis/connection/hiredis']
++gem 'redis', '>= 3.3', require: ['redis', 'redis/connection/hiredis']
+ gem 'mario-redis-lock', '~> 1.2', require: 'redis_lock'
+ gem 'rqrcode', '~> 0.10'
+ gem 'ruby-oembed', '~> 0.12', require: 'oembed'
 @@ -75,45 +74,6 @@ gem 'webpush'
  gem 'json-ld-preloaded', '~> 2.2.1'
  gem 'rdf-normalize', '~> 0.3.1'
