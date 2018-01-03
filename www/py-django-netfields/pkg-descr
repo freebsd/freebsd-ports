@@ -1,0 +1,4 @@
+Django netfields makes proper PostgreSQL net related fields for Django.  Custom
+fields include IP Addresses in CIDR Format, and fields for MAC Addresses.
+
+WWW: https://github.com/jimfunk/django-postgresql-netfields
