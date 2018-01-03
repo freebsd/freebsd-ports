@@ -1606,6 +1606,7 @@
     SUBDIR += py-django-mezzanine-filebrowser
     SUBDIR += py-django-mezzanine-grappelli
     SUBDIR += py-django-mptt
+    SUBDIR += py-django-netfields
     SUBDIR += py-django-openid-auth
     SUBDIR += py-django-otp
     SUBDIR += py-django-otp-yubikey
