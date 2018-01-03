@@ -11,7 +11,7 @@ COMMENT=	Ruby distributed lock using Redis, with emphasis in transparency
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-redis>=4:databases/rubygem-redis
+RUN_DEPENDS=	rubygem-redis>=3.0.5:databases/rubygem-redis
 
 USES=		gem
 USE_RUBY=	yes
