@@ -257,7 +257,6 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/rc-scripting/rcng-hookup.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/rc-scripting/rcng-task.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/rc-scripting/trademarks.html
-%%DOCSDIR%%/%%DOCLANG%%/articles/relaydelay/index.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/releng/ackno.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/releng/distribution.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/releng/extensibility.html
@@ -920,6 +919,9 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/dads-use-posix-standards.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/dads-verbose-logs.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/distfile-survey.html
+%%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/flavors-auto.html
+%%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/flavors-using.html
+%%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/flavors.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/gnome-components.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/go-libs.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/handbook.html
@@ -959,6 +961,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/porting-desc.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/porting-order-broken.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/porting-order-depends.html
+%%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/porting-order-flavors.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/porting-order-license.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/porting-order-maintainer.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/porting-order-options.html
@@ -986,6 +989,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/security-fix.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/security-notify.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/security.html
+%%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/shell-completion.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/slow-configure.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/slow-modifying.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/slow-patch.html
