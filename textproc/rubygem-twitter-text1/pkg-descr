@@ -1,0 +1,7 @@
+A Ruby gem that provides text handling for Twitter messages.
+
+The main use cases for this gem are unified handling of
+various auto-linking mechanisms and extraction of
+usernames, lists, hashtags and URLs.
+
+WWW: https://github.com/twitter/twitter-text
