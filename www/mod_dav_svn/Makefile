@@ -18,9 +18,9 @@ PKGDIR=		${.CURDIR}
 
 SVN_BUILD_ADDONS=	yes
 
-.include "${MASTERDIR}/Makefile.common"
-
 USE_APACHE=	22+
+
+.include "${MASTERDIR}/Makefile.common"
 
 CONFIGURE_ARGS+=	--with-apxs=${APXS} \
 			--with-apache-libexecdir \
