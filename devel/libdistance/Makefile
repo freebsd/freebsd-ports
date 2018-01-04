@@ -23,6 +23,10 @@ CFLAGS+=	-fPIC
 pre-build:
 	mkdir -p ${STAGEDIR}/usr/local/tests/${PORTNAME}
 
+post-patch:
+	${REINPLACE_CMD} 's|%%TCL_SHLIB_VER%%|${TCL_SHLIB_VER}|' \
+	    ${WRKSRC}/swig/tcl/Makefile
+
 MAKE_JOBS_UNSAFE=	yes
 
 .include <bsd.port.mk>

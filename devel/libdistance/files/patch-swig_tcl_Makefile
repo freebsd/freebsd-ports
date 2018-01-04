@@ -17,7 +17,7 @@
 -distance.so: distance_wrap.o
 -	gcc -shared  distance_wrap.o ../../libdistance.a \
 -	    -o distance.so
-+CFLAGS=	-I ../.. `pkg-config --cflags tcl` -fPIC
++CFLAGS=	-I ../.. `pkg-config --cflags tcl%%TCL_SHLIB_VER%%` -fPIC
 +SWIG?=	swig
  
 -clean:
