@@ -1,8 +1,8 @@
-%%PERL5_MAN3%%/MooseX::Async.3.gz
-%%PERL5_MAN3%%/MooseX::Async::Meta::Class.3.gz
-%%PERL5_MAN3%%/MooseX::Async::Meta::Method::State.3.gz
 %%SITE_PERL%%/MooseX/Async.pm
 %%SITE_PERL%%/MooseX/Async/Meta/Class.pm
 %%SITE_PERL%%/MooseX/Async/Meta/Method/State.pm
 %%SITE_PERL%%/MooseX/Async/Meta/Role.pm
 %%SITE_PERL%%/MooseX/Async/Meta/Trait.pm
+%%PERL5_MAN3%%/MooseX::Async.3.gz
+%%PERL5_MAN3%%/MooseX::Async::Meta::Class.3.gz
+%%PERL5_MAN3%%/MooseX::Async::Meta::Method::State.3.gz
