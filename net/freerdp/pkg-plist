@@ -43,6 +43,7 @@ include/freerdp2/freerdp/client/rdpei.h
 include/freerdp2/freerdp/client/rdpgfx.h
 include/freerdp2/freerdp/client/rdpsnd.h
 include/freerdp2/freerdp/client/remdesk.h
+include/freerdp2/freerdp/client/sshagent.h
 include/freerdp2/freerdp/client/tsmf.h
 include/freerdp2/freerdp/codec/audio.h
 include/freerdp2/freerdp/codec/bitmap.h
@@ -229,8 +230,8 @@ share/cmake/Modules/WinPR2/WinPRConfig.cmake
 share/cmake/Modules/WinPR2/WinPRConfigVersion.cmake
 share/cmake/Modules/WinPR2/WinPRTargets-%%CMAKE_BUILD_TYPE%%.cmake
 share/cmake/Modules/WinPR2/WinPRTargets.cmake
-share/man/man1/winpr-hash.1
-share/man/man1/winpr-makecert.1
-%%WAYLAND%%share/man/man1/wlfreerdp.1
-%%X11%%share/man/man1/xfreerdp.1
-share/man/man7/wlog.7
+%%MANPAGES%%man/man1/winpr-hash.1.gz
+%%MANPAGES%%man/man1/winpr-makecert.1.gz
+%%WAYLAND%%%%MANPAGES%%man/man1/wlfreerdp.1.gz
+%%X11%%%%MANPAGES%%man/man1/xfreerdp.1.gz
+%%MANPAGES%%man/man7/wlog.7.gz
