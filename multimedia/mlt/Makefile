@@ -2,7 +2,7 @@
 
 PORTNAME=	mlt
 PORTVERSION=	6.4.1
-PORTREVISION?=	5
+PORTREVISION?=	6
 CATEGORIES?=	multimedia
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}
 
@@ -12,7 +12,7 @@ COMMENT?=	Multimedia framework for TV broadcasting
 LICENSE?=	GPLv2 GPLv3 LGPL21
 LICENSE_COMB?=	multi
 
-USES+=		alias gmake pkgconfig
+USES+=		alias eigen:3 gmake pkgconfig
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--enable-gpl --enable-gpl3 --target-os=FreeBSD
 
