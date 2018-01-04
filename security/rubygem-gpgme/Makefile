@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gpgme
-PORTVERSION=	2.0.15
+PORTVERSION=	2.0.16
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
