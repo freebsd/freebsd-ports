@@ -1,0 +1,18 @@
+--- winpr/CMakeLists.txt.orig	2017-11-28 14:26:30 UTC
++++ winpr/CMakeLists.txt
+@@ -180,7 +180,14 @@ if(BUILD_TESTING)
+ 	add_subdirectory(test)
+ endif()
+ 
+-install_freerdp_man(wlog.7 7)
++if(WITH_MANPAGES)
++	if(BSD)
++	   install(FILES wlog.7 DESTINATION man/man7)
++	else()
++	   install_freerdp_man(wlog.7 7)
++	endif()
++endif(WITH_MANPAGES)
++
+ # Exporting
+ 
+ if(${CMAKE_VERSION} VERSION_GREATER "2.8.10")
