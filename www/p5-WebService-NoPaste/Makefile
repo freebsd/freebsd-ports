@@ -29,9 +29,9 @@ USES=		perl5 shebangfix
 SHEBANG_FILES=	nopaste
 
 X11_BUILD_DEPENDS=	p5-Clipboard>=0:x11/p5-Clipboard
-X11_EXTRA_PATCHES_OFF=	${FILESDIR}/extrapatch-lib-WebService-NoPaste.pm
+X11_EXTRA_PATCHES_OFF=	${PATCHDIR}/extra-patch-lib-WebService-NoPaste.pm
 
-post-patch:
-	-@${RM} ${WRKSRC}/lib/WebService/NoPaste.pm.orig
+post-patch-X11-off:
+	@${RM} ${WRKSRC}/lib/WebService/NoPaste.pm.orig
 
 .include <bsd.port.mk>
