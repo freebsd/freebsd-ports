@@ -188,6 +188,7 @@
     SUBDIR += consul
     SUBDIR += consul_exporter
     SUBDIR += consul-alerts
+    SUBDIR += container-diff
     SUBDIR += contractor
     SUBDIR += copytape
     SUBDIR += coreutils
