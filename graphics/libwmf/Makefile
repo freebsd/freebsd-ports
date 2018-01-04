@@ -7,7 +7,7 @@ PORTREVISION=	15
 CATEGORIES=	graphics
 MASTER_SITES=	SF/wvware/${PORTNAME}/${PORTVERSION}
 
-MAINTAINER=	junovitch@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tools and library for converting Microsoft WMF (windows metafile)
 
 LICENSE=	GPLv2+
