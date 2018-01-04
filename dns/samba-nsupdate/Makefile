@@ -18,8 +18,7 @@ ISCVERSION=		9.8.6
 
 MAKE_JOBS_UNSAFE=	yes
 
-USE_AUTOTOOLS=		autoconf autoheader
-USES=			ssl
+USES=			autoreconf libtool ssl
 GNU_CONFIGURE=		yes
 
 CONFIGURE_ARGS+=	\

@@ -3,6 +3,7 @@
 
 PORTNAME=	imlib2
 PORTVERSION=	1.4.10
+PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	graphics enlightenment
 MASTER_SITES=	SF/enlightenment/imlib2-src/${PORTVERSION}
@@ -63,10 +64,10 @@ CONFIGURE_ARGS+=	--enable-amd64
 CONFIGURE_ARGS+=	--disable-amd64
 .endif
 
-post-patch-X11-on:
+post-patch-X11-off:
 	@${REINPLACE_CMD} -e '/MY_LIBS =/s/-lXext -lX11//' \
 		${WRKSRC}/src/lib/Makefile.in
-	@${REINPLACE_CMD} -e '/# ifndef X_DISPLAY_MISSING/,/# endif/ d' \
+	@${REINPLACE_CMD} -e '/#ifndef X_DISPLAY_MISSING/,/#endif/ d' \
 		${WRKSRC}/src/lib/Imlib2.h
 
 .include <bsd.port.mk>

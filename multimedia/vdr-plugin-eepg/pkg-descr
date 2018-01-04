@@ -3,12 +3,12 @@ providers on their portal channels. This EEPG data is transmitted in a
 non-standard format on a non-standard PID.
 
 Currently the following EEPG formats are supported:
--Mediahighway 1 (CanaalDigitaalNL, CSat, Cyfra+)
--Mediahighway 2 (Digital+)
--Sky Italy
--Sky UK
--Freesat
--Premiere
--NagraGuide (CanaalDigitaalNL, only in test)
+- Mediahighway 1 (CanaalDigitaalNL, CSat, Cyfra+)
+- Mediahighway 2 (Digital+)
+- Sky Italy
+- Sky UK
+- Freesat
+- Premiere
+- NagraGuide (CanaalDigitaalNL, only in test)
 
-WWW: http://projects.vdr-developer.org/projects/plg-eepg
+WWW: https://projects.vdr-developer.org/projects/plg-eepg

@@ -1,0 +1,4 @@
+%%PORTNAME%% requires model data (about 1.5GB) which can be downloaded using
+the following command:
+
+# %%PREFIX%%/bin/libpostal_data download all %%LIBPOSTAL_DATADIR%%

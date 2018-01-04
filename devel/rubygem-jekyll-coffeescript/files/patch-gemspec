@@ -1,11 +1,11 @@
---- jekyll-coffeescript.gemspec.orig	2017-07-11 12:23:41 UTC
+--- jekyll-coffeescript.gemspec.orig	2017-12-07 12:16:58 UTC
 +++ jekyll-coffeescript.gemspec
-@@ -20,7 +20,7 @@ Gem::Specification.new do |s|
-     s.specification_version = 4
+@@ -21,7 +21,7 @@ Gem::Specification.new do |s|
  
      if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
+       s.add_runtime_dependency(%q<coffee-script>.freeze, ["~> 2.2"])
 -      s.add_runtime_dependency(%q<coffee-script-source>.freeze, ["~> 1.11.1"])
 +      s.add_runtime_dependency(%q<coffee-script-source>.freeze, ["~> 1.11", ">= 1.11.1"])
-       s.add_runtime_dependency(%q<coffee-script>.freeze, ["~> 2.2"])
-       s.add_development_dependency(%q<jekyll>.freeze, [">= 2.0"])
        s.add_development_dependency(%q<bundler>.freeze, ["~> 1.5"])
+       s.add_development_dependency(%q<jekyll>.freeze, [">= 2.0"])
+       s.add_development_dependency(%q<rake>.freeze, [">= 0"])

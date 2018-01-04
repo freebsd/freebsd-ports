@@ -25,18 +25,18 @@ LIB_DEPENDS=	libstartup-notification-1.so:x11/startup-notification \
 		libcjs.so:lang/cjs \
 		libcinnamon-menu-3.so:x11/cinnamon-menus \
 		libaccountsservice.so:sysutils/accountsservice
-RUN_DEPENDS=	py*-dbus>=0:devel/py-dbus \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>=0:devel/py-dbus@${PY_FLAVOR} \
 		ca_root_nss>=0:security/ca_root_nss \
 		gnome-themes-standard>=3.0.0:x11-themes/gnome-themes-standard \
 		cinnamon-control-center:sysutils/cinnamon-control-center \
 		cinnamon-translations>=0:misc/cinnamon-translations \
 		cinnamon-screensaver:x11/cinnamon-screensaver \
 		nemo:x11-fm/nemo \
-		py*-pillow>=0:graphics/py-pillow \
-		py*-lxml>=0:devel/py-lxml
+		${PYTHON_PKGNAMEPREFIX}pillow>=0:graphics/py-pillow@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}lxml>=0:devel/py-lxml@${PY_FLAVOR}
 
 USES=		autoreconf compiler:c11 gettext gmake libtool \
-		pathfix pkgconfig python shebangfix
+		pathfix pkgconfig python:2.7 shebangfix
 USE_GNOME=	evolutiondataserver3 gconf2 gnomedesktop3 \
 		gnomeprefix gtk30 intlhack introspection:build
 

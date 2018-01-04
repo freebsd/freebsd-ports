@@ -14,3 +14,9 @@ set(LIBLZMA_INCLUDE_DIR "/usr/include" CACHE PATH
     "Directory where LibLZMA headers are located.")
 set(LIBLZMA_LIBRARY "/usr/lib/liblzma.so" CACHE PATH
     "LibLZMA library to link against..")
+
+# Modern FreeBSD systems are assumed to have libpkg installed,
+# so enable its use in CPack for the direct generation of FreeBSD
+# packages from software (outside of ports, say) that uses CMake.
+set(CPACK_ENABLE_FREEBSD_PKG ON CACHE BOOL "Enable pkg(8) generator in CPack")
+

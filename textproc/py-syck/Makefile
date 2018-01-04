@@ -15,7 +15,7 @@ COMMENT=	Python binding for Syck, a YAML parser and emitter
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libsyck.a:textproc/syck
 
-USES=		python
+USES=		python:2.7
 USE_PYTHON=	distutils autoplist
 
 post-patch:

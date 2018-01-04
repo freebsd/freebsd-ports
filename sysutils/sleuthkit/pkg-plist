@@ -56,7 +56,7 @@ include/tsk/vs/tsk_vs.h
 lib/libtsk.a
 lib/libtsk.so
 lib/libtsk.so.13
-lib/libtsk.so.13.3.1
+lib/libtsk.so.13.4.0
 man/man1/blkcalc.1.gz
 man/man1/blkcat.1.gz
 man/man1/blkls.1.gz

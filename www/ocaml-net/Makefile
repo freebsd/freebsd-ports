@@ -14,6 +14,8 @@ COMMENT=	OCaml modules for Internet applications
 
 LICENSE=	GPLv2
 
+BROKEN=		fails to build
+
 BUILD_DEPENDS=	${SA_DIR}/pcre/pcre.a:devel/ocaml-pcre
 RUN_DEPENDS=	${SA_DIR}/pcre/pcre.a:devel/ocaml-pcre
 

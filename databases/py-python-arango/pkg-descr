@@ -1,0 +1,8 @@
+A python driver for ArangoDB.
+
+Features:
+* Clean, Pythonic interface
+* Lightweight
+* High ArangoDB REST API coverage
+
+WWW: https://github.com/joowani/python-arango

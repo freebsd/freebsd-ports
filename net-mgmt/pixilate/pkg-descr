@@ -7,5 +7,4 @@ pixilate - is currently capable of generating TCP/UDP/ICMP (various ICMP
      types), and IGMP utilizing the Libnet 1.1.x library available from
      http://www.packetfactory.net.  NOTE: Libnet 1.0.x is NOT compatible."
 
-
 WWW: http://winfingerprint.sourceforge.net/pixilate.php

@@ -16,6 +16,9 @@ LICENSE_FILE=	${WRKSRC}/docs/license.txt
 BUILD_DEPENDS=	${LOCALBASE}/include/CL/cl.h:devel/opencl \
 		gsed:textproc/gsed
 
+NOT_FOR_ARCHS=		powerpc powerpc64 sparc64
+NOT_FOR_ARCHS_REASON=	fails to compile: compiling for big-endian architecture not supported
+
 USE_GITHUB=	yes
 
 ALL_TARGET=	default

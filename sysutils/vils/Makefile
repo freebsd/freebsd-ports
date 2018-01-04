@@ -16,6 +16,7 @@ LICENSE=	BSD2CLAUSE
 RUN_DEPENDS=	zsh:shells/zsh
 
 NO_BUILD=	yes
+NO_ARCH=	yes
 NO_WRKSUBDIR=	yes
 
 EXTRACT_CMD=	${CP}

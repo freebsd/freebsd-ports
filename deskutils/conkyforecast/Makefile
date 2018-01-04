@@ -18,7 +18,7 @@ RUN_DEPENDS=	conky:sysutils/conky \
 		pidof:sysutils/pidof
 
 USES=		gettext python fonts
-USE_PYTHON=	distutils
+USE_PYTHON=	distutils concurrent optsuffix
 SUB_FILES=	pkg-message
 
 WRKSRC=		${WRKDIR}/src

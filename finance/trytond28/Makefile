@@ -14,13 +14,13 @@ COMMENT=	Tryton Application Platform (Server)
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/mx/__init__.py:lang/py-mx-base \
-		${PYTHON_PKGNAMEPREFIX}psycopg2>0:databases/py-psycopg2 \
-		${PYTHON_PKGNAMEPREFIX}lxml>0:devel/py-lxml \
-		${PYTHON_PKGNAMEPREFIX}Genshi>0.5.1:textproc/py-genshi \
-		${PYTHON_PKGNAMEPREFIX}relatorio>=0.6.0:print/py-relatorio \
-		${PYTHON_PKGNAMEPREFIX}polib>=0.7.0:devel/py-polib \
-		${PYTHON_PKGNAMEPREFIX}dateutil>=1.5:devel/py-dateutil
+BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/mx/__init__.py:lang/py-mx-base@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}psycopg2>0:databases/py-psycopg2@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}lxml>0:devel/py-lxml@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}Genshi>0.5.1:textproc/py-genshi@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}relatorio>=0.6.0:print/py-relatorio@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}polib>=0.7.0:devel/py-polib@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dateutil>=1.5:devel/py-dateutil@${FLAVOR}
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 CONFLICTS=	trytond-2.[46].*
@@ -42,7 +42,7 @@ SUB_LIST=	PYTHON_SITELIBDIR=${PYTHON_SITELIBDIR} \
 PIDDIR?=	/var/run
 LOGDIR?=	/var/log
 
-USES=		python
+USES=		python:2.7
 USE_PYTHON=	autoplist distutils
 
 post-patch:
@@ -52,19 +52,19 @@ post-patch:
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MWEBDAV}
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}PyWebDAV>=0:www/py-pywebdav
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}PyWebDAV>=0:www/py-pywebdav@${FLAVOR}
 .endif
 
 .if ${PORT_OPTIONS:MPYOPENSSL}
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}openssl>=0:security/py-openssl
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}openssl>=0:security/py-openssl@${FLAVOR}
 .endif
 
 .if ${PORT_OPTIONS:MPYDOT}
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pydot>=0:graphics/py-pydot
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pydot>=0:graphics/py-pydot@${FLAVOR}
 .endif
 
 .if ${PORT_OPTIONS:MPYTZ}
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pytz>=0:devel/py-pytz
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pytz>=0:devel/py-pytz@${FLAVOR}
 .endif
 
 post-install:

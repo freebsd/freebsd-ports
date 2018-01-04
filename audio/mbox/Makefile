@@ -12,8 +12,8 @@ COMMENT=	Program intended to help with organizing your music files
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ogg>0:audio/py-ogg \
-		${PYTHON_PKGNAMEPREFIX}vorbis>0:audio/py-vorbis \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ogg>0:audio/py-ogg@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}vorbis>0:audio/py-vorbis@${FLAVOR} \
 		lame:audio/lame \
 		oggenc:audio/vorbis-tools \
 		mplayer:multimedia/mplayer

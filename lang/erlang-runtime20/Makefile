@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	erlang
-PORTVERSION=	20.1.7
+PORTVERSION=	20.2.2
 CATEGORIES=	lang parallel java
 MASTER_SITES=	http://www.erlang.org/download/:erlangorg		\
 		http://erlang.stacken.kth.se/download/:erlangorg	\
@@ -19,9 +19,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 PATCH_SITES=	http://olgeni.olgeni.com/~olgeni/distfiles/ \
 		LOCAL/olgeni
-PATCHFILES=	patch-otp-20.1.1 patch-otp-20.1.2 patch-otp-20.1.3 \
-		patch-otp-20.1.4 patch-otp-20.1.5 patch-otp-20.1.6 \
-		patch-otp-20.1.7
+PATCHFILES=	patch-otp-20.2.1 patch-otp-20.2.2
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Functional programming language from Ericsson
@@ -65,20 +63,15 @@ OPTIONS_EXCLUDE_i386=		DTRACE
 # ld(1) fails to link probes: missing __dtrace_erlang___* symbols
 OPTIONS_EXCLUDE_aarch64=	DTRACE
 
-ERL_RELEASE=	20.1
+ERL_RELEASE=	20.2
 
 USES=		gmake ncurses perl5
 USE_PERL5=	build
 GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-APP_UPGRADE=	erts           9.1 9.1.5 \
-		lib/compiler 7.1.2 7.1.3 \
-		lib/diameter   2.1 2.1.2 \
-		lib/inets    6.4.2 6.4.4 \
-		lib/snmp     5.2.7 5.2.8 \
-		lib/ssh        4.6 4.6.2 \
-		lib/ssl      8.2.1 8.2.2
+APP_UPGRADE=	lib/mnesia 4.15.2 4.15.3 \
+		lib/ssh     4.6.3  4.6.4
 
 .include <bsd.port.options.mk>
 

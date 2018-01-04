@@ -14,8 +14,8 @@ INSTALL_WRKSRC=	${BUILD_WRKSRC}
 DESCR=		${.CURDIR}/pkg-descr
 PLIST=		${.CURDIR}/pkg-plist
 
-USE_GNOME+=	libxml2
-USES+=		python:2 gettext-runtime
+USE_GNOME=	libxml2
+USES=		python gettext-runtime
 USE_PYTHON=	autoplist distutils
 
 CPPFLAGS+=	`${PYTHON_CMD}-config --cflags`

@@ -15,10 +15,8 @@ LICENSE=	BSD3CLAUSE GPLv2
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE-DUAL.txt
 
-USES=		perl5 ssl tar:tgz
+USES=		autoreconf perl5 ssl tar:tgz
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	autoconf aclocal autoheader
-ACLOCAL_ARGS+=	-I ${WRKSRC}/infrastructure/m4
 CFLAGS+=	-I${OPENSSLINC}
 LDFLAGS+=	-L${OPENSSLLIB} -lexecinfo
 

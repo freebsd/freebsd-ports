@@ -19,7 +19,7 @@ you need to add
 
 somewhere in your config files and add a line like
 
-   ManagedDomain your_domain.example.org www.your_domain.example.org
+   MDomain your_domain.example.org www.your_domain.example.org
 
 Full documentation in the project's wiki 
 	https://github.com/icing/mod_md/wiki

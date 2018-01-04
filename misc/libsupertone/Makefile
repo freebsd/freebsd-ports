@@ -17,8 +17,6 @@ LIB_DEPENDS=	libaudiofile.so:audio/libaudiofile \
 		libtiff.so:graphics/tiff \
 		libxml2.so:textproc/libxml2
 
-BROKEN_armv6=		fails to configure: Can't build without spandsp
-
 USES=		tar:tgz libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

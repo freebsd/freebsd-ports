@@ -1,3 +1,4 @@
+.gitmessage      svn-properties=fbsd:nokeywords=yes;svn:eol-style=native;svn:mime-type=text/plain
 bsd.*.mk         svn-properties=svn:keywords=FreeBSD=%H;svn:eol-style=native;svn:mime-type=text/plain
 distinfo*        svn-properties=fbsd:nokeywords=yes;svn:eol-style=native;svn:mime-type=text/plain
 extrapatch-*     svn-properties=fbsd:nokeywords=yes;svn:eol-style=native;svn:mime-type=text/plain

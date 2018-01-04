@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	car
-DISTVERSION=	2.1-5
+DISTVERSION=	2.1-6
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -17,7 +17,6 @@ TEST_DEPENDS=	R-cran-lmtest>0:finance/R-cran-lmtest \
 		R-cran-MatrixModels>0:math/R-cran-MatrixModels \
 		R-cran-SparseM>0:math/R-cran-SparseM \
 		R-cran-lme4>0:math/R-cran-lme4 \
-		R-cran-nloptr>0:math/R-cran-nloptr \
 		R-cran-sandwich>0:math/R-cran-sandwich \
 		R-cran-survey>0:math/R-cran-survey
 

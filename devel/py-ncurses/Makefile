@@ -15,7 +15,7 @@ COMMENT=	Ncurses binding for Python
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
-USES=		ncurses python
+USES=		ncurses python:2.7
 USE_PYTHON=	distutils autoplist
 
 post-patch:

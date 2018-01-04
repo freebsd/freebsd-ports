@@ -86,9 +86,6 @@ post-patch-DOCS-on:
 		-e 's,^#\(user-manual\) http://www.privoxy.org/user-manual/,\1 ${DOCSDIR}/user-manual,' \
 		${WRKSRC}/config
 
-pre-configure:
-	@(cd ${WRKSRC}; ${AUTOHEADER})
-
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/privoxy/templates
 	${INSTALL_PROGRAM} ${WRKSRC}/privoxy ${STAGEDIR}${PREFIX}/sbin

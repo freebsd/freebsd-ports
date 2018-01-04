@@ -11,7 +11,7 @@ COMMENT=	Python client for the Imgur API
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>=2.7:www/py-requests
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>=2.7:www/py-requests@${FLAVOR}
 
 NO_ARCH=	yes
 USES=		python

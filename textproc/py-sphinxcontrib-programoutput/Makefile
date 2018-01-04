@@ -13,7 +13,7 @@ COMMENT=	Sphinx extension to include program output
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>=1.3.5:textproc/py-sphinx
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>=1.3.5:textproc/py-sphinx@${FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist distutils

@@ -5,7 +5,7 @@ PORTVERSION=	1.2.0
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	tz@FreeBSD.org
+MAINTAINER=	idefix@fechner.net
 COMMENT=	Take a peek into the MySQL queries made
 
 LICENSE=	MIT

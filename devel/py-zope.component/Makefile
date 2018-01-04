@@ -14,8 +14,8 @@ COMMENT=	Zope Component Architecture
 LICENSE=	ZPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zope.event>=0:devel/py-zope.event \
-		${PYTHON_PKGNAMEPREFIX}zope.interface>=4.1.0:devel/py-zope.interface
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zope.event>=0:devel/py-zope.event@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}zope.interface>=4.1.0:devel/py-zope.interface@${FLAVOR}
 
 NO_ARCH=	yes
 USES=		python

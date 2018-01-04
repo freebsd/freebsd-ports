@@ -2,8 +2,13 @@ include/suil-0/suil/suil.h
 lib/libsuil-0.so
 lib/libsuil-0.so.0
 lib/libsuil-0.so.%%SUILVERSION%%
-lib/suil-0/libsuil_gtk2_in_qt4.so
-lib/suil-0/libsuil_qt4_in_gtk2.so
+%%QT4%%lib/suil-0/libsuil_gtk2_in_qt4.so
+%%QT5%%lib/suil-0/libsuil_gtk2_in_qt5.so
+%%QT4%%lib/suil-0/libsuil_qt4_in_gtk2.so
+%%QT5%%lib/suil-0/libsuil_qt5_in_gtk2.so
 lib/suil-0/libsuil_x11_in_gtk2.so
-lib/suil-0/libsuil_x11_in_qt4.so
+lib/suil-0/libsuil_x11_in_gtk3.so
+%%QT4%%lib/suil-0/libsuil_x11_in_qt4.so
+%%QT5%%lib/suil-0/libsuil_x11_in_qt5.so
+lib/suil-0/libsuil_x11.so
 libdata/pkgconfig/suil-0.pc

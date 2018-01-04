@@ -25,8 +25,8 @@ LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
 		libsamplerate.so:audio/libsamplerate \
 		libshout-idjc.so:audio/shout-idjc
 RUN_DEPENDS=	oggenc:audio/vorbis-tools \
-		${PYTHON_PKGNAMEPREFIX}mutagen>=0:audio/py-mutagen \
-		${PYTHON_PKGNAMEPREFIX}dbus>=0.8:devel/py-dbus
+		${PYTHON_PKGNAMEPREFIX}mutagen>=0:audio/py-mutagen@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dbus>=0.8:devel/py-dbus@${PY_FLAVOR}
 
 OPTIONS_DEFINE=	DOCS NLS
 OPTIONS_SUB=	YES

@@ -19,7 +19,7 @@ CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}fusepy # fuse.py
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
-USES=		fuse pkgconfig python iconv
+USES=		fuse pkgconfig python:2.7 iconv
 USE_PYTHON=	distutils autoplist
 
 PORTDOCS=	AUTHORS Changelog FAQ INSTALL README.1st README.historic \

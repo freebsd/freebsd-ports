@@ -13,9 +13,9 @@ COMMENT=	Mount mediawikis
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	py*-fusefs>=0.2:devel/py-fusefs
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}fusefs>=0.2:devel/py-fusefs@${FLAVOR}
 
-USES=		fuse python
+USES=		fuse python:2.7
 USE_PYTHON=	autoplist distutils
 PORTDOCS=	AUTHORS ChangeLog HACKING NEWS README TODO
 NO_ARCH=	yes

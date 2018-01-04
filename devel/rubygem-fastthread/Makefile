@@ -11,6 +11,8 @@ COMMENT=	Optimized replacement for thread.rb primitives
 
 LICENSE=	LGPL21
 
+BROKEN_RUBY24=	yes
+
 USE_RUBY=	yes
 USES=		gem
 

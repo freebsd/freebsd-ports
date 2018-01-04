@@ -16,8 +16,8 @@ LICENSE=	PSFL
 
 PORTSCOUT=	ignore:1
 
-USE_PYTHON=	distutils autoplist
 USES=		python tar:xz tk
+USE_PYTHON=	distutils autoplist allflavors
 
 DIST_SUBDIR=	python
 DISTINFO_FILE=	${PORTSDIR}/lang/python${PYTHON_SUFFIX}/distinfo

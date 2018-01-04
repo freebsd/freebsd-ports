@@ -1,0 +1,38 @@
+--- source3/wscript.orig	2017-07-04 10:05:26 UTC
++++ source3/wscript
+@@ -47,6 +47,7 @@ def set_options(opt):
+     opt.SAMBA3_ADD_OPTION('sendfile-support')
+     opt.SAMBA3_ADD_OPTION('utmp')
+     opt.SAMBA3_ADD_OPTION('avahi', with_name="enable", without_name="disable")
++    opt.SAMBA3_ADD_OPTION('dnssd', with_name="enable", without_name="disable")
+     opt.SAMBA3_ADD_OPTION('iconv')
+     opt.SAMBA3_ADD_OPTION('acl-support')
+     opt.SAMBA3_ADD_OPTION('dnsupdate')
+@@ -868,6 +869,17 @@ msg.msg_accrightslen = sizeof(fd);
+         conf.SET_TARGET_TYPE('avahi-common', 'EMPTY')
+         conf.SET_TARGET_TYPE('avahi-client', 'EMPTY')
+ 
++    if Options.options.with_dnssd:
++        conf.env.with_dnssd = True
++        if not conf.CHECK_HEADERS('dns_sd.h'):
++            conf.env.with_dnssd = False
++        if not conf.CHECK_FUNCS_IN('DNSServiceRegister', 'dns_sd'):
++            conf.env.with_dnssd = False
++        if conf.env.with_dnssd:
++            conf.DEFINE('WITH_DNSSD_SUPPORT', 1)
++    else:
++        conf.SET_TARGET_TYPE('dns_sd', 'EMPTY')
++
+     if Options.options.with_iconv:
+         conf.env.with_iconv = True
+         if not conf.CHECK_FUNCS_IN('iconv_open', 'iconv', headers='iconv.h'):
+@@ -1748,9 +1760,6 @@ main() {
+     if conf.CONFIG_SET('HAVE_VXFS'):
+         default_shared_modules.extend(TO_LIST('vfs_vxfs'))
+ 
+-    if conf.CONFIG_SET('HAVE_DBUS'):
+-        default_shared_modules.extend(TO_LIST('vfs_snapper'))
+-
+     explicit_shared_modules = TO_LIST(Options.options.shared_modules, delimiter=',')
+     explicit_static_modules = TO_LIST(Options.options.static_modules, delimiter=',')
+ 

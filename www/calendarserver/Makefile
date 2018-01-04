@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	calendarserver
-PORTVERSION=	9.0
+PORTVERSION=	9.1
 DISTVERSIONPREFIX=	CalendarServer-
 CATEGORIES=	    www python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,27 +12,28 @@ COMMENT=	Calendar and Contacts Server from Apple (RFC 4791, RFC 6352)
 LICENSE=	APACHE20
 
 RUN_DEPENDS=	memcached:databases/memcached \
-		${PYTHON_PKGNAMEPREFIX}calendar>=2.1:devel/py-calendar \
-		${PYTHON_PKGNAMEPREFIX}PyGreSQL>=5.0:databases/py-PyGreSQL \
-		${PYTHON_PKGNAMEPREFIX}pycrypto>=2.6.1:security/py-pycrypto \
-		${PYTHON_PKGNAMEPREFIX}dateutil>=2.5.3:devel/py-dateutil \
-		${PYTHON_PKGNAMEPREFIX}openssl>=16.0.0:security/py-openssl \
-		${PYTHON_PKGNAMEPREFIX}pg8000>=1.10.6:databases/py-pg8000 \
-		${PYTHON_PKGNAMEPREFIX}psutil>=4.3.0:sysutils/py-psutil \
-		${PYTHON_PKGNAMEPREFIX}pytz>=2016.7:devel/py-pytz \
-		${PYTHON_PKGNAMEPREFIX}service_identity>=16.0.0:security/py-service_identity \
-		${PYTHON_PKGNAMEPREFIX}setproctitle>=1.1.10:devel/py-setproctitle \
-		${PYTHON_PKGNAMEPREFIX}sqlite3>=2.7:databases/py-sqlite3 \
-		${PYTHON_PKGNAMEPREFIX}twext>=0.20160817:devel/py-twext \
-		${PYTHON_PKGNAMEPREFIX}twisted>=16.4.1:devel/py-twisted \
-		${PYTHON_PKGNAMEPREFIX}xattr>=0.7.8:devel/py-xattr \
-		${PYTHON_PKGNAMEPREFIX}zope.interface>=4.1.3:devel/py-zope.interface
+		${PYTHON_PKGNAMEPREFIX}calendar>=2.1:devel/py-calendar@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}PyGreSQL>=5.0:databases/py-PyGreSQL@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pycrypto>=2.6.1:security/py-pycrypto@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dateutil>=2.5.3:devel/py-dateutil@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}kerberos>=1.2.5:security/py-kerberos@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}openssl>=16.0.0:security/py-openssl@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pg8000>=1.10.6:databases/py-pg8000@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}psutil>=4.3.0:sysutils/py-psutil@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pytz>=2016.7:devel/py-pytz@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}service_identity>=16.0.0:security/py-service_identity@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}setproctitle>=1.1.10:devel/py-setproctitle@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}sqlite3>=2.7:databases/py-sqlite3@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}twext>=0.20170227:devel/py-twext@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}twisted>=16.6.0:devel/py-twisted@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}xattr>=0.7.8:devel/py-xattr@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}zope.interface>=4.1.3:devel/py-zope.interface@${FLAVOR}
 
 PORTDOCS=	*
 PORTEXAMPLES=	*
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
-USES=	pgsql:9.1+ python:2.7
+USES=		pgsql:9.1+ python:2.7
 USE_PYTHON=	autoplist distutils
 USE_GITHUB=	yes
 GH_ACCOUNT=	apple
@@ -62,7 +63,7 @@ USERS=			${CALDAVD_USER}
 GROUPS=			${CALDAVD_USER}
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|"{}a1+unknown".format(base_version)|"9.0"|' ${WRKSRC}/setup.py
+	@${REINPLACE_CMD} -e 's|"{}a1+unknown".format(base_version)|"${PORTVERSION}"|' ${WRKSRC}/setup.py
 	@${REINPLACE_CMD} -e 's|"/etc/caldavd/caldavd.plist"|"${ETCDIR}/caldavd.plist"|g' ${WRKSRC}/twistedcaldav/stdconfig.py
 	@${REINPLACE_CMD} -e 's|/etc/caldavd|${ETCDIR}|g' ${WRKSRC}/conf/caldavd.plist
 	@${REINPLACE_CMD} -e 's|daemon|caldavd|g' ${WRKSRC}/conf/caldavd.plist

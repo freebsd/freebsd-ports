@@ -1,0 +1,29 @@
+--- examples/CMakeLists.txt.orig	2013-01-16 06:38:32 UTC
++++ examples/CMakeLists.txt
+@@ -7,7 +7,7 @@ if (BUILD_C_BINDINGS)
+     set_target_properties(flann_example_c PROPERTIES COMPILE_FLAGS -std=c99)
+ 
+     add_dependencies(examples flann_example_c)
+-    install (TARGETS flann_example_c DESTINATION bin )
++    install (TARGETS flann_example_c DESTINATION ${EXAMPLES_SUBDIR})
+ endif()
+ 
+ if (HDF5_FOUND)
+@@ -20,7 +20,7 @@ if (HDF5_FOUND)
+     endif()
+ 
+     add_dependencies(examples flann_example_cpp)
+-    install (TARGETS flann_example_cpp DESTINATION bin)
++    install (TARGETS flann_example_cpp DESTINATION ${EXAMPLES_SUBDIR})
+ 
+ 
+     if (USE_MPI AND HDF5_IS_PARALLEL)
+@@ -28,7 +28,7 @@ if (HDF5_FOUND)
+         target_link_libraries(flann_example_mpi flann_cpp ${HDF5_LIBRARIES} ${MPI_LIBRARIES} ${Boost_LIBRARIES})
+ 
+         add_dependencies(examples flann_example_mpi)
+-        install (TARGETS flann_example_mpi DESTINATION bin)
++        install (TARGETS flann_example_mpi DESTINATION ${EXAMPLES_SUBDIR})
+     endif()
+ else()
+     message("hdf5 library not found, not compiling flann_example.cpp")

@@ -1,5 +1,0 @@
-bin/identify-cld
-%%SITE_ARCH%%/Lingua/Identify/CLD.pm
-%%SITE_ARCH%%/auto/Lingua/Identify/CLD/CLD.so
-%%PERL5_MAN1%%/identify-cld.1.gz
-%%PERL5_MAN3%%/Lingua::Identify::CLD.3.gz

@@ -1,0 +1,4 @@
+HTTP::FormData is utility-belt to build form data request bodies. It provides
+support for 'application/x-www-form-urlencoded' and 'multipart/form-data' types.
+
+WWW: https://github.com/httprb/form_data

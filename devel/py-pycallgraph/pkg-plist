@@ -1,8 +1,4 @@
-bin/pycallgraph
 man/man1/pycallgraph.1.gz
-%%PYTHON_SITELIBDIR%%/pycallgraph.py
-%%PYTHON_SITELIBDIR%%/pycallgraph.pyc
-%%PYTHON_SITELIBDIR%%/pycallgraph.pyo
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/all.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/basic.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/colours.py

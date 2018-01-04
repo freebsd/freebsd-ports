@@ -13,7 +13,7 @@ COMMENT=	Tokyo Cabinet Python bindings
 
 LIB_DEPENDS=	libtokyocabinet.so:databases/tokyocabinet
 
-USES=		python
+USES=		python:2.7
 USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.pre.mk>

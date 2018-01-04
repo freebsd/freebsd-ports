@@ -18,7 +18,7 @@ RUN_DEPENDS=	trytond28_calendar>=2.8.0:finance/trytond28_calendar
 
 CONFLICTS=	trytond_calendar_classification-2.[46].*
 
-USES=		python
+USES=		python:2.7
 USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

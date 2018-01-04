@@ -10,6 +10,9 @@ MASTER_SITES=	http://www.cl.cam.ac.uk/~mgk25/download/
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Lossless compression for bi-level images such as scanned pages, faxes
 
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 USE_LDCONFIG=	yes
 MANS=		jbgtopbm.1 pbmtojbg.1
 BINS=		jbgtopbm pbmtojbg jbgtopbm85 pbmtojbg85

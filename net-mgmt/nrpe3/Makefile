@@ -13,8 +13,6 @@ COMMENT?=	Nagios Remote Plugin Executor
 
 LICENSE=	GPLv2
 
-CONFLICTS=	nrpe nrpe-ssl
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	NagiosEnterprises
 
@@ -35,9 +33,8 @@ MONPLUGINS_DESC=Use net-mgmt/monitoring-plugins
 
 SSL_USES=		ssl
 SSL_CONFIGURE_ENABLE=	ssl
-SSL_CONFIGURE_ON=	--with-ssl=${OPENSSLDIR} \
-			--with-ssl-inc=${OPENSSLINC} \
-			--with-ssl-lib=${OPENSSLLIB}
+SSL_CONFIGURE_WITH=	ssl=${OPENSSLBASE} ssl-inc=${OPENSSLINC} ssl-lib=${OPENSSLLIB}
+SSL_CFLAGS=		-I${OPENSSLINC}
 
 ARGS_CONFIGURE_ON=	--enable-command-args
 ARGS_CONFIGURE_OFF=	--disable-command-args

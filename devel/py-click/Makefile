@@ -12,7 +12,7 @@ COMMENT=	Python package for creating command line interfaces
 
 LICENSE=	BSD3CLAUSE
 
-USES?=		python
+USES=		python
 USE_PYTHON=	distutils autoplist
 NO_ARCH=	yes
 

@@ -1,2 +1,3 @@
-SHA256 (django-countries-3.4.1.tar.gz) = 5bdda9d2c3473b519371428d88517f29befad7e35dfc489e8b0f95cb2aa941dc
-SIZE (django-countries-3.4.1.tar.gz) = 267627
+TIMESTAMP = 1514286689
+SHA256 (django-countries-5.0.tar.gz) = f9acf49a1d6a5a47dbe96833d2c8fd3680c480f5c4cbc05c3a4028554cc4415c
+SIZE (django-countries-5.0.tar.gz) = 444232

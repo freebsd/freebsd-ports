@@ -17,6 +17,7 @@ LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/lgpl.txt
 
 USES=		python shebangfix
+USE_PYTHON=	flavors
 NO_BUILD=	yes
 NO_ARCH=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION}

@@ -1,6 +1,6 @@
---- image.cxx.orig	2006-11-18 14:56:11.000000000 +0100
-+++ image.cxx	2012-05-09 12:28:28.000000000 +0200
-@@ -92,6 +92,7 @@
+--- image.cxx.orig	2006-11-18 13:56:11 UTC
++++ image.cxx
+@@ -92,6 +92,7 @@ extern "C" {
  
  #ifdef HAVE_LIBPNG
  #  include <png.h>

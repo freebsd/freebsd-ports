@@ -12,9 +12,9 @@ COMMENT=	Elegant WebSockets for your Flask apps
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Flask>=0:www/py-flask \
-		${PYTHON_PKGNAMEPREFIX}gevent>=0:devel/py-gevent \
-		${PYTHON_PKGNAMEPREFIX}gevent-websocket>=0:www/py-gevent-websocket
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Flask>=0:www/py-flask@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}gevent>=0:devel/py-gevent@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}gevent-websocket>=0:www/py-gevent-websocket@${FLAVOR}
 
 USES=		python
 USE_PYTHON=	distutils autoplist

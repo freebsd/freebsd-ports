@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rocksdb
-PORTVERSION=	5.8.6
+PORTVERSION=	5.9.2
 DISTVERSIONPREFIX=	${PORTNAME}-
 CATEGORIES=	databases
 
@@ -15,11 +15,8 @@ LICENSE_FILE_APACHE20=	${WRKSRC}/LICENSE.Apache
 LICENSE_FILE_GPLv2=	${WRKSRC}/COPYING
 
 BROKEN_DragonFly=	does not build on DragonFly BSD using GCC with -Werror
-BROKEN_aarch64=	does not build: the clang compiler does not support -march=native
-BROKEN_armv6=	does not build: the clang compiler does not support -march=native
-BROKEN_armv7=	does not build: /nxb-bin/usr/bin/ld: undefined reference to symbol `__gnu_Unwind_Find_exidx@@FBSD_1.4' (try adding -lc)
-BROKEN_powerpc64=	does not build: the clang compiler does not support -march=native
-BROKEN_sparc64=	cannot build: uses unknown compiler flags
+BROKEN_armv6?=		does not build: db/c.cc:2281:44: implicit conversion loses integer precision: 'uint64_t' (aka 'unsigned long long') to 'size_t' (aka 'unsigned int')
+BROKEN_armv7?=		does not build: /nxb-bin/usr/bin/ld: undefined reference to symbol `__gnu_Unwind_Find_exidx@@FBSD_1.4' (try adding -lc) #'`
 
 BUILD_DEPENDS=	bash:shells/bash
 LIB_DEPENDS=	libgflags.so:devel/gflags \
@@ -79,6 +76,9 @@ CFLAGS+=	-D_GLIBCXX_USE_C99
 post-patch:
 	@${REINPLACE_CMD} -e '/^dummy :=/d; /^all: / s| $$(TESTS)||' ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e 's| -fno-builtin-memcmp||; s| -ltcmalloc||' ${WRKSRC}/build_tools/build_detect_platform
+.if ${ARCH} != amd64 && ${ARCH} != i386
+	@${REINPLACE_CMD} -e 's| -march=native||' ${WRKSRC}/build_tools/build_detect_platform
+.endif
 	@${REINPLACE_CMD} -e 's|#include "gtest/gtest.h"|#include "gtest.h"|' ${WRKSRC}/third-party/gtest-1.7.0/fused-src/gtest/gtest-all.cc
 .if defined(WITHOUT_PROFILE)
 	@${REINPLACE_CMD} -e '/pg = / s| -pg||' ${WRKSRC}/Makefile

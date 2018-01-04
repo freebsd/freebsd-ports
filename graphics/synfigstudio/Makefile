@@ -13,6 +13,8 @@ COMMENT=	Vector-based 2D animation software package
 LICENSE=	GPLv2+
 
 BROKEN=		missing header
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2018-01-27
 
 BUILD_DEPENDS=	etl>=0.04.19_1:devel/etl
 LIB_DEPENDS=	libsynfig.so:devel/synfig

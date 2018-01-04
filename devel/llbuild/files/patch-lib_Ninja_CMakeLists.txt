@@ -1,8 +1,0 @@
---- lib/Ninja/CMakeLists.txt.orig	2016-10-20 04:49:37 UTC
-+++ lib/Ninja/CMakeLists.txt
-@@ -4,3 +4,5 @@ add_llbuild_library(llbuildNinja
-   ManifestLoader.cpp
-   Parser.cpp
-   )
-+
-+target_link_libraries(llbuildNinja llvmSupport curses)

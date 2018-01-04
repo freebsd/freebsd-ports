@@ -17,7 +17,7 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libcmph.so:devel/cmph
 RUN_DEPENDS=	${LOCALBASE}/lib/libcmph.so:devel/cmph
 
 USES=		php:ext
-IGNORE_WITH_PHP=	70
+IGNORE_WITH_PHP=	70 71 72
 
 CFLAGS+=	-L${LOCALBASE}/lib
 

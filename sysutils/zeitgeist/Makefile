@@ -16,9 +16,9 @@ LICENSE_COMB=	multi
 BUILD_DEPENDS=	valac:lang/vala \
 		dee-tool:devel/dee \
 		rapper:textproc/raptor2 \
-		${PYTHON_PKGNAMEPREFIX}rdflib>=4.1.1:textproc/py-rdflib
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/xdg/__init__.py:devel/py-xdg \
-		${PYTHON_SITELIBDIR}/dbus/__init__.py:devel/py-dbus
+		${PYTHON_PKGNAMEPREFIX}rdflib>=4.1.1:textproc/py-rdflib@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/xdg/__init__.py:devel/py-xdg@${PY_FLAVOR} \
+		${PYTHON_SITELIBDIR}/dbus/__init__.py:devel/py-dbus@${PY_FLAVOR}
 
 USE_GNOME=	intlhack glib20 introspection:build
 GNU_CONFIGURE=	yes

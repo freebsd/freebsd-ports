@@ -3,7 +3,7 @@
 
 PORTNAME=	qpy
 PORTVERSION=	1.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www python
 MASTER_SITES=	http://www.mems-exchange.org/software/qpy/ \
 		LOCAL/sunpoet
@@ -15,7 +15,7 @@ COMMENT=	Generating safely-quoted html text from python code
 OPTIONS_DEFINE=	DOCS
 
 USE_PYTHON=	autoplist distutils
-USES=		python:2
+USES=		python:2.7
 
 PORTDOCS=	CHANGES.txt LICENSE.txt README.txt
 

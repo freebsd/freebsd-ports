@@ -1,4 +1,4 @@
---- Plugins/CDIReader/cdilib.c.orig	2016-11-19 09:40:46 UTC
+--- Plugins/CDIReader/cdilib.c.orig	2016-11-14 15:41:57 UTC
 +++ Plugins/CDIReader/cdilib.c
 @@ -47,7 +47,7 @@
  #define _XOPEN_SOURCE 600

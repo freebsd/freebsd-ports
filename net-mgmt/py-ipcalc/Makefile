@@ -11,7 +11,7 @@ MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Module to perform IP subnet calculations
 
 USES=		python
-USE_PYTHON=	distutils
+USE_PYTHON=	distutils autoplist
 NO_ARCH=	yes
 
 .include <bsd.port.mk>

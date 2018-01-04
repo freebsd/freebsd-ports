@@ -11,12 +11,12 @@ COMMENT=	New features in unittest backported to Python 2
 
 LICENSE=	BSD3CLAUSE
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}linecache2>0:devel/py-linecache2 \
-		${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six \
-		${PYTHON_PKGNAMEPREFIX}traceback2>0:devel/py-traceback2
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}linecache2>0:devel/py-linecache2 \
-		${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six \
-		${PYTHON_PKGNAMEPREFIX}traceback2>0:devel/py-traceback2
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}linecache2>0:devel/py-linecache2@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}traceback2>0:devel/py-traceback2@${FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}linecache2>0:devel/py-linecache2@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}traceback2>0:devel/py-traceback2@${FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist distutils

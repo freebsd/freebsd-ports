@@ -11,6 +11,8 @@ COMMENT=	Free, flexible, elegant, easy-to-use content management system
 
 LICENSE=	GPLv2
 
+IGNORE_WITH_PHP=	70 71 72
+
 USES=		cpe php:web
 USE_PHP=	json mbstring mysql pcre xml zlib
 NO_BUILD=	yes

@@ -12,10 +12,10 @@ COMMENT=	Python library for OAuth 1.0/a, 2.0, and Ofly consumers
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>=1.2.3:www/py-requests
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>=1.2.1:devel/py-nose \
-		${PYTHON_PKGNAMEPREFIX}mock>=1.0.1:devel/py-mock \
-		${PYTHON_PKGNAMEPREFIX}pycrypto>=2.5:security/py-pycrypto
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>=1.2.3:www/py-requests@${FLAVOR}
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>=1.2.1:devel/py-nose@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}mock>=1.0.1:devel/py-mock@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pycrypto>=2.5:security/py-pycrypto@${FLAVOR}
 
 USES=		python
 USE_GITHUB=	yes

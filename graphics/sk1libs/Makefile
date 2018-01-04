@@ -17,7 +17,7 @@ LICENSE_FILE=	${WRKSRC}/GNU_LGPL_v2
 LIB_DEPENDS=	liblcms.so:graphics/lcms \
 		libfreetype.so:print/freetype2
 
-USES=		jpeg python
+USES=		jpeg python:2.7
 USE_PYTHON=	distutils
 PYDISTUTILS_BUILD_TARGET=build_ext
 PYDISTUTILS_BUILDARGS=	-L${LOCALBASE}/lib \

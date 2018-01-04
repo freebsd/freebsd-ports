@@ -2,8 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	mythtv
-PORTVERSION=	0.28.7
-PORTREVISION=	1
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.27.5
+PORTEPOCH=	1
 CATEGORIES=	multimedia
 
 MAINTAINER=	ports@FreeBSD.org
@@ -31,7 +32,6 @@ CONFLICTS=	mythtv-frontend-[0-9]*
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	MythTV
-GH_TAGNAME=	ad97d24
 
 WRKSRC_SUBDIR=	${PORTNAME}
 
@@ -91,22 +91,22 @@ SUB_FILES=	pkg-message
 
 .if ${PORT_OPTIONS:MBINDINGS}
 CONFIGURE_ARGS+=	--python=${PYTHON_CMD}
-USES+=		python
+USES+=		python:2.7
 PYDISTUTILS_PKGNAME=MythTV
 PYDISTUTILS_PKGVERSION=0.27._1
 
-BUILD_DEPENDS+=	py*-lxml>=0:devel/py-lxml \
-		${PYTHON_PKGNAMEPREFIX}MySQLdb>=1.2.2:databases/py-MySQLdb \
-		${PYTHON_PKGNAMEPREFIX}urlgrabber>=3.1.0_1:www/py-urlgrabber \
+BUILD_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}lxml>=0:devel/py-lxml@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}MySQLdb>=1.2.2:databases/py-MySQLdb@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}urlgrabber>=3.1.0_1:www/py-urlgrabber@${PY_FLAVOR} \
 		p5-HTTP-Request-Params>=0:www/p5-HTTP-Request-Params \
 		p5-LWP-UserAgent-Determined>=0:www/p5-LWP-UserAgent-Determined \
 		p5-Net-UPnP>=0:multimedia/p5-Net-UPnP \
 		p5-IO-Socket-INET6>=2.51:net/p5-IO-Socket-INET6 \
 		p5-DBI>=0:databases/p5-DBI \
 		p5-DBD-mysql>0:databases/p5-DBD-mysql
-RUN_DEPENDS+=	py*-lxml>=0:devel/py-lxml \
-		${PYTHON_PKGNAMEPREFIX}MySQLdb>=1.2.2:databases/py-MySQLdb \
-		${PYTHON_PKGNAMEPREFIX}urlgrabber>=3.1.0_1:www/py-urlgrabber \
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}lxml>=0:devel/py-lxml@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}MySQLdb>=1.2.2:databases/py-MySQLdb@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}urlgrabber>=3.1.0_1:www/py-urlgrabber@${PY_FLAVOR} \
 		p5-HTTP-Request-Params>=0:www/p5-HTTP-Request-Params \
 		p5-LWP-UserAgent-Determined>=0:www/p5-LWP-UserAgent-Determined \
 		p5-Net-UPnP>=0:multimedia/p5-Net-UPnP \

@@ -16,10 +16,4 @@ USE_RUBY=	yes
 USES=		gem shebangfix
 SHEBANG_FILES=	examples/*.rb
 
-.include <bsd.port.pre.mk>
-
-.if ${RUBY_VER} >= 2.2
-EXTRA_PATCHES+=		${FILESDIR}/extra-patch-ext_bdb1_recnum.c
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -15,11 +15,11 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	${CHIRP_DEPENDS}
 RUN_DEPENDS=	${CHIRP_DEPENDS}
-CHIRP_DEPENDS=	${PYTHON_PKGNAMEPREFIX}libxml2>0:textproc/py-libxml2 \
-		${PYTHON_PKGNAMEPREFIX}serial>0:comms/py-serial \
-		${PYTHON_PKGNAMEPREFIX}gtk2>0:x11-toolkits/py-gtk2
+CHIRP_DEPENDS=	${PYTHON_PKGNAMEPREFIX}libxml2>0:textproc/py-libxml2@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}serial>0:comms/py-serial@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}gtk2>0:x11-toolkits/py-gtk2@${FLAVOR}
 
-USES=		desktop-file-utils gettext python
+USES=		desktop-file-utils gettext python:2.7
 USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

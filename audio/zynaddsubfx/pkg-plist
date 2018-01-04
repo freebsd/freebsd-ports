@@ -1,5 +1,49 @@
-bin/zynaddsubfx
+%%GUI%%bin/zynaddsubfx
+%%GUI%%bin/zynaddsubfx-ext-gui
 %%DSSI%%lib/dssi/libzynaddsubfx_dssi.so
+lib/lv2/ZynAddSubFX.lv2presets/Arpeggios.ttl
+lib/lv2/ZynAddSubFX.lv2presets/Bass.ttl
+lib/lv2/ZynAddSubFX.lv2presets/Brass.ttl
+lib/lv2/ZynAddSubFX.lv2presets/Choir and Voice.ttl
+lib/lv2/ZynAddSubFX.lv2presets/Collection.ttl
+lib/lv2/ZynAddSubFX.lv2presets/Companion.ttl
+lib/lv2/ZynAddSubFX.lv2presets/Cormi_Noise.ttl
+lib/lv2/ZynAddSubFX.lv2presets/Cormi_Sound.ttl
+lib/lv2/ZynAddSubFX.lv2presets/Drums.ttl
+lib/lv2/ZynAddSubFX.lv2presets/Dual.ttl
+lib/lv2/ZynAddSubFX.lv2presets/Fantasy.ttl
+lib/lv2/ZynAddSubFX.lv2presets/Guitar.ttl
+lib/lv2/ZynAddSubFX.lv2presets/Laba170bank.ttl
+lib/lv2/ZynAddSubFX.lv2presets/Misc.ttl
+lib/lv2/ZynAddSubFX.lv2presets/Noises.ttl
+lib/lv2/ZynAddSubFX.lv2presets/Organ.ttl
+lib/lv2/ZynAddSubFX.lv2presets/Pads.ttl
+lib/lv2/ZynAddSubFX.lv2presets/Plucked.ttl
+lib/lv2/ZynAddSubFX.lv2presets/Reed and Wind.ttl
+lib/lv2/ZynAddSubFX.lv2presets/Rhodes.ttl
+lib/lv2/ZynAddSubFX.lv2presets/Splitted.ttl
+lib/lv2/ZynAddSubFX.lv2presets/Strings.ttl
+lib/lv2/ZynAddSubFX.lv2presets/Synth.ttl
+lib/lv2/ZynAddSubFX.lv2presets/SynthPiano.ttl
+lib/lv2/ZynAddSubFX.lv2presets/manifest.ttl
+lib/lv2/ZynAddSubFX.lv2presets/net-wisdom.ttl
+lib/lv2/ZynAddSubFX.lv2presets/olivers-100.ttl
+lib/lv2/ZynAddSubFX.lv2presets/olivers-other.ttl
+lib/lv2/ZynAddSubFX.lv2presets/the_mysterious_bank.ttl
+lib/lv2/ZynAddSubFX.lv2presets/the_mysterious_bank_2.ttl
+lib/lv2/ZynAddSubFX.lv2presets/the_mysterious_bank_3.ttl
+lib/lv2/ZynAddSubFX.lv2presets/the_mysterious_bank_4.ttl
+lib/lv2/ZynAddSubFX.lv2/ZynAddSubFX.so
+lib/lv2/ZynAddSubFX.lv2/manifest.ttl
+lib/lv2/ZynAddSubFX.lv2/presets.ttl
+lib/lv2/ZynAddSubFX.lv2/ZynAddSubFX.ttl
+lib/lv2/ZynAddSubFX.lv2/ZynAddSubFX_ui.so
+lib/lv2/ZynAddSubFX.lv2/ZynAddSubFX_ui.ttl
+lib/vst/ZynAddSubFX.so
+%%GUI%%share/applications/zynaddsubfx-jack.desktop
+%%GUI%%share/applications/zynaddsubfx-alsa.desktop
+%%GUI%%share/applications/zynaddsubfx-oss.desktop
+share/pixmaps/zynaddsubfx.svg
 %%DATADIR%%/banks/Arpeggios/0001-Arpeggio1.xiz
 %%DATADIR%%/banks/Arpeggios/0002-Arpeggio2.xiz
 %%DATADIR%%/banks/Arpeggios/0003-Arpeggio3.xiz
@@ -79,120 +123,342 @@ bin/zynaddsubfx
 %%DATADIR%%/banks/Collection/0003-Soft Vibes.xiz
 %%DATADIR%%/banks/Collection/0004-Simple Chimes.xiz
 %%DATADIR%%/banks/Collection/0005-Silver Bell.xiz
-%%DATADIR%%/banks/Collection/0008-Ethereal.xiz
-%%DATADIR%%/banks/Collection/0010-Trem Lead.xiz
-%%DATADIR%%/banks/Collection/0012-Trem Synth Piano 3.xiz
-%%DATADIR%%/banks/Collection/0013-Trem Synth.xiz
-%%DATADIR%%/banks/Collection/0015-Simple Square.xiz
-%%DATADIR%%/banks/Collection/0016-Full Square.xiz
-%%DATADIR%%/banks/Collection/0017-Super Square.xiz
-%%DATADIR%%/banks/Collection/0018-Steel Wire.xiz
-%%DATADIR%%/banks/Collection/0019-Metal Drips.xiz
-%%DATADIR%%/banks/Collection/0020-Fantasia.xiz
-%%DATADIR%%/banks/Collection/0021-Soft.xiz
-%%DATADIR%%/banks/Collection/0022-Ultra Soft.xiz
-%%DATADIR%%/banks/Collection/0023-Whistle.xiz
-%%DATADIR%%/banks/Collection/0024-Wipe Whistle.xiz
-%%DATADIR%%/banks/Collection/0025-Ghost Whistle.xiz
-%%DATADIR%%/banks/Collection/0028-Echo Bubbles.xiz
-%%DATADIR%%/banks/Collection/0029-Full Strings.xiz
-%%DATADIR%%/banks/Collection/0030-Slow Strings.xiz
-%%DATADIR%%/banks/Collection/0032-Pizzicato Strings.xiz
-%%DATADIR%%/banks/Collection/0033-Sweep Synth.xiz
-%%DATADIR%%/banks/Collection/0034-Warm Synth.xiz
-%%DATADIR%%/banks/Collection/0035-Hard Synth.xiz
-%%DATADIR%%/banks/Collection/0036-Bright Synth.xiz
-%%DATADIR%%/banks/Collection/0037-Multi Synth.xiz
-%%DATADIR%%/banks/Collection/0038-Slow Saw.xiz
-%%DATADIR%%/banks/Collection/0039-Medium Saw.xiz
-%%DATADIR%%/banks/Collection/0040-Hard Saw.xiz
-%%DATADIR%%/banks/Collection/0041-Voiced Saw.xiz
-%%DATADIR%%/banks/Collection/0042-Sweep Saw.xiz
-%%DATADIR%%/banks/Collection/0044-Wipe Synth.xiz
-%%DATADIR%%/banks/Collection/0045-Hard Stereo Sweep Synth.xiz
-%%DATADIR%%/banks/Collection/0046-Master Synth Low.xiz
-%%DATADIR%%/banks/Collection/0047-Master Synth High.xiz
-%%DATADIR%%/banks/Collection/0048-Sharp Synth.xiz
-%%DATADIR%%/banks/Collection/0050-Fretless Bass.xiz
-%%DATADIR%%/banks/Collection/0051-Decay Bass.xiz
-%%DATADIR%%/banks/Collection/0052-Steel Bass.xiz
-%%DATADIR%%/banks/Collection/0053-Synth Bass.xiz
-%%DATADIR%%/banks/Collection/0054-Distorted Bass.xiz
-%%DATADIR%%/banks/Collection/0057-Sub Delay.xiz
-%%DATADIR%%/banks/Collection/0058-Reed Organ.xiz
-%%DATADIR%%/banks/Collection/0059-Soft Organ.xiz
-%%DATADIR%%/banks/Collection/0060-Thin Pipe.xiz
-%%DATADIR%%/banks/Collection/0061-Great Organ.xiz
-%%DATADIR%%/banks/Collection/0062-Hammond Organ.xiz
-%%DATADIR%%/banks/Collection/0063-Percussion Organ.xiz
-%%DATADIR%%/banks/Collection/0064-Sines.xiz
-%%DATADIR%%/banks/Collection/0067-Soft Flute.xiz
-%%DATADIR%%/banks/Collection/0068-Warm Flute.xiz
-%%DATADIR%%/banks/Collection/0071-Ocarina.xiz
-%%DATADIR%%/banks/Collection/0073-Variable Reed.xiz
-%%DATADIR%%/banks/Collection/0075-Smooth.xiz
-%%DATADIR%%/banks/Collection/0077-Matrix.xiz
-%%DATADIR%%/banks/Collection/0078-Sweep Matrix.xiz
-%%DATADIR%%/banks/Collection/0079-Ice Field.xiz
-%%DATADIR%%/banks/Collection/0080-Hollow Ice Field.xiz
-%%DATADIR%%/banks/Collection/0081-Beyond.xiz
-%%DATADIR%%/banks/Collection/0083-Sweep Pad.xiz
-%%DATADIR%%/banks/Collection/0084-Breathy Pad.xiz
-%%DATADIR%%/banks/Collection/0085-Bottle.xiz
-%%DATADIR%%/banks/Collection/0086-ReedBank.xiz
-%%DATADIR%%/banks/Collection/0087-Sweep Rushes.xiz
-%%DATADIR%%/banks/Collection/0088-Rushes.xiz
-%%DATADIR%%/banks/Collection/0089-Medium Rushes.xiz
-%%DATADIR%%/banks/Collection/0090-Bright Rushes.xiz
-%%DATADIR%%/banks/Collection/0091-Bright Rush Pipe.xiz
-%%DATADIR%%/banks/Collection/0092-Bright Rush Long Tail.xiz
-%%DATADIR%%/banks/Collection/0093-Voyager.xiz
-%%DATADIR%%/banks/Collection/0094-Soft Voyager.xiz
-%%DATADIR%%/banks/Collection/0095-Soft Voyager Reverse.xiz
-%%DATADIR%%/banks/Collection/0096-Echo Choir.xiz
-%%DATADIR%%/banks/Collection/0097-Sharp.xiz
-%%DATADIR%%/banks/Collection/0098-Sharp and Warm.xiz
-%%DATADIR%%/banks/Collection/0099-Sharp and Deep.xiz
-%%DATADIR%%/banks/Collection/0100-Sharp Reed.xiz
-%%DATADIR%%/banks/Collection/0101-Far Reed.xiz
-%%DATADIR%%/banks/Collection/0103-Clarinet.xiz
-%%DATADIR%%/banks/Collection/0104-Bassoon.xiz
-%%DATADIR%%/banks/Collection/0106-Aooww.xiz
-%%DATADIR%%/banks/Collection/0107-Daooww.xiz
-%%DATADIR%%/banks/Collection/0108-Yaooww.xiz
-%%DATADIR%%/banks/Collection/0109-Yiee.xiz
-%%DATADIR%%/banks/Collection/0110-Eeoow.xiz
-%%DATADIR%%/banks/Collection/0112-Overdrive.xiz
-%%DATADIR%%/banks/Collection/0113-Overdrive 2.xiz
-%%DATADIR%%/banks/Collection/0114-Overdrive 3.xiz
-%%DATADIR%%/banks/Collection/0116-Power Guitar 1.xiz
-%%DATADIR%%/banks/Collection/0117-Power Guitar 2.xiz
-%%DATADIR%%/banks/Collection/0120-Wet Brass.xiz
-%%DATADIR%%/banks/Collection/0122-Extended Rushes.xiz
-%%DATADIR%%/banks/Collection/0123-Prophesy.xiz
-%%DATADIR%%/banks/Collection/0125-Pan Pipe 32.xiz
-%%DATADIR%%/banks/Collection/0126-Pan Pipe.xiz
-%%DATADIR%%/banks/Collection/0127-Pan Pipe 96.xiz
-%%DATADIR%%/banks/Collection/0131-Lite Guitar.xiz
-%%DATADIR%%/banks/Collection/0132-Trem Guitar.xiz
-%%DATADIR%%/banks/Collection/0133-Smooth Guitar.xiz
-%%DATADIR%%/banks/Collection/0134-Nylon Guitar.xiz
-%%DATADIR%%/banks/Collection/0139-Home Piano.xiz
-%%DATADIR%%/banks/Collection/0140-Moonlight Piano.xiz
-%%DATADIR%%/banks/Collection/0141-Soft Piano1.xiz
-%%DATADIR%%/banks/Collection/0142-Soft Piano2.xiz
-%%DATADIR%%/banks/Collection/0143-Space Piano.xiz
-%%DATADIR%%/banks/Collection/0146-Space Voice.xiz
-%%DATADIR%%/banks/Collection/0147-Space Voice 2.xiz
-%%DATADIR%%/banks/Collection/0149-Soft Choir.xiz
-%%DATADIR%%/banks/Collection/0150-Full Choir.xiz
-%%DATADIR%%/banks/Collection/0151-Soft Ahh.xiz
-%%DATADIR%%/banks/Collection/0152-Breathy Ahh.xiz
-%%DATADIR%%/banks/Collection/0155-Super Pad.xiz
-%%DATADIR%%/banks/Collection/0156-Hyper Pad.xiz
-%%DATADIR%%/banks/Collection/0157-Hyper Matrix.xiz
-%%DATADIR%%/banks/Collection/0158-Extreme.xiz
-%%DATADIR%%/banks/Collection/0160-Wind and Surf.xiz
+%%DATADIR%%/banks/Collection/0006-Soft Hammer.xiz
+%%DATADIR%%/banks/Collection/0007-Ethereal.xiz
+%%DATADIR%%/banks/Collection/0008-Metal Drips.xiz
+%%DATADIR%%/banks/Collection/0009-Trem Lead.xiz
+%%DATADIR%%/banks/Collection/0010-Trem Synth Piano 3.xiz
+%%DATADIR%%/banks/Collection/0011-Trem Synth.xiz
+%%DATADIR%%/banks/Collection/0012-Simple Square.xiz
+%%DATADIR%%/banks/Collection/0013-Full Square.xiz
+%%DATADIR%%/banks/Collection/0014-Super Square.xiz
+%%DATADIR%%/banks/Collection/0015-Steel Wire.xiz
+%%DATADIR%%/banks/Collection/0016-Echo Bubbles.xiz
+%%DATADIR%%/banks/Collection/0017-Fantasia.xiz
+%%DATADIR%%/banks/Collection/0018-Sub Delay.xiz
+%%DATADIR%%/banks/Collection/0019-Soft.xiz
+%%DATADIR%%/banks/Collection/0020-Ultra Soft.xiz
+%%DATADIR%%/banks/Collection/0021-Whistle.xiz
+%%DATADIR%%/banks/Collection/0022-Wipe Whistle.xiz
+%%DATADIR%%/banks/Collection/0023-Ghost Whistle.xiz
+%%DATADIR%%/banks/Collection/0024-Full Strings.xiz
+%%DATADIR%%/banks/Collection/0025-Slow Strings.xiz
+%%DATADIR%%/banks/Collection/0026-Pizzicato Strings.xiz
+%%DATADIR%%/banks/Collection/0027-Sweep Synth.xiz
+%%DATADIR%%/banks/Collection/0028-Warm Synth.xiz
+%%DATADIR%%/banks/Collection/0029-Hard Synth.xiz
+%%DATADIR%%/banks/Collection/0030-Bright Synth.xiz
+%%DATADIR%%/banks/Collection/0031-Multi Synth.xiz
+%%DATADIR%%/banks/Collection/0032-Slow Saw.xiz
+%%DATADIR%%/banks/Collection/0033-Medium Saw.xiz
+%%DATADIR%%/banks/Collection/0034-Hard Saw.xiz
+%%DATADIR%%/banks/Collection/0035-Voiced Saw.xiz
+%%DATADIR%%/banks/Collection/0036-Sweep Saw.xiz
+%%DATADIR%%/banks/Collection/0037-Stereo Sweep Saw.xiz
+%%DATADIR%%/banks/Collection/0038-Wipe Synth.xiz
+%%DATADIR%%/banks/Collection/0039-Hard Stereo Sweep Synth.xiz
+%%DATADIR%%/banks/Collection/0040-Master Synth Low.xiz
+%%DATADIR%%/banks/Collection/0041-Master Synth High.xiz
+%%DATADIR%%/banks/Collection/0042-Sharp Synth.xiz
+%%DATADIR%%/banks/Collection/0043-Fretless Bass.xiz
+%%DATADIR%%/banks/Collection/0044-Decay Bass.xiz
+%%DATADIR%%/banks/Collection/0045-Steel Bass.xiz
+%%DATADIR%%/banks/Collection/0046-Synth Bass.xiz
+%%DATADIR%%/banks/Collection/0047-Distorted Bass.xiz
+%%DATADIR%%/banks/Collection/0048-Variable Reed.xiz
+%%DATADIR%%/banks/Collection/0049-Reed Organ.xiz
+%%DATADIR%%/banks/Collection/0050-Soft Organ.xiz
+%%DATADIR%%/banks/Collection/0051-Thin Pipe.xiz
+%%DATADIR%%/banks/Collection/0052-Great Organ.xiz
+%%DATADIR%%/banks/Collection/0053-64ft Organ.xiz
+%%DATADIR%%/banks/Collection/0054-Hammond Organ.xiz
+%%DATADIR%%/banks/Collection/0055-Percussion Organ.xiz
+%%DATADIR%%/banks/Collection/0056-Sines.xiz
+%%DATADIR%%/banks/Collection/0057-Soft Flute.xiz
+%%DATADIR%%/banks/Collection/0058-Warm Flute.xiz
+%%DATADIR%%/banks/Collection/0059-Ocarina.xiz
+%%DATADIR%%/banks/Collection/0060-Beyond.xiz
+%%DATADIR%%/banks/Collection/0061-Sweep Pad.xiz
+%%DATADIR%%/banks/Collection/0062-Sweep Matrix.xiz
+%%DATADIR%%/banks/Collection/0063-Matrix.xiz
+%%DATADIR%%/banks/Collection/0064-Slow Deep Matrix.xiz
+%%DATADIR%%/banks/Collection/0065-Ice Field.xiz
+%%DATADIR%%/banks/Collection/0066-Hollow Ice Field.xiz
+%%DATADIR%%/banks/Collection/0067-Smooth.xiz
+%%DATADIR%%/banks/Collection/0068-Rushes.xiz
+%%DATADIR%%/banks/Collection/0069-Medium Rushes.xiz
+%%DATADIR%%/banks/Collection/0070-Bright Rushes.xiz
+%%DATADIR%%/banks/Collection/0071-Bright Rush Long Tail.xiz
+%%DATADIR%%/banks/Collection/0072-Extended Rushes.xiz
+%%DATADIR%%/banks/Collection/0073-Bright Rush Pipe.xiz
+%%DATADIR%%/banks/Collection/0074-Sweep Rushes.xiz
+%%DATADIR%%/banks/Collection/0075-Breathy Pad.xiz
+%%DATADIR%%/banks/Collection/0076-ReedBank.xiz
+%%DATADIR%%/banks/Collection/0077-Voyager.xiz
+%%DATADIR%%/banks/Collection/0078-Soft Voyager.xiz
+%%DATADIR%%/banks/Collection/0079-Soft Voyager Reverse.xiz
+%%DATADIR%%/banks/Collection/0080-Echo Choir.xiz
+%%DATADIR%%/banks/Collection/0081-Sharp.xiz
+%%DATADIR%%/banks/Collection/0082-Sharp and Warm.xiz
+%%DATADIR%%/banks/Collection/0083-Sharp and Deep.xiz
+%%DATADIR%%/banks/Collection/0084-Sharp Reed.xiz
+%%DATADIR%%/banks/Collection/0085-Far Reed.xiz
+%%DATADIR%%/banks/Collection/0086-Clarinet.xiz
+%%DATADIR%%/banks/Collection/0087-Bassoon.xiz
+%%DATADIR%%/banks/Collection/0088-Aooww.xiz
+%%DATADIR%%/banks/Collection/0089-Daooww.xiz
+%%DATADIR%%/banks/Collection/0090-Yaooww.xiz
+%%DATADIR%%/banks/Collection/0091-Yiee.xiz
+%%DATADIR%%/banks/Collection/0092-Eeoow.xiz
+%%DATADIR%%/banks/Collection/0093-Overdrive.xiz
+%%DATADIR%%/banks/Collection/0094-Overdrive 2.xiz
+%%DATADIR%%/banks/Collection/0095-Overdrive 3.xiz
+%%DATADIR%%/banks/Collection/0096-Power Guitar 1.xiz
+%%DATADIR%%/banks/Collection/0097-Power Guitar 2.xiz
+%%DATADIR%%/banks/Collection/0098-Wet Brass.xiz
+%%DATADIR%%/banks/Collection/0099-Wet Brass 2.xiz
+%%DATADIR%%/banks/Collection/0100-Prophesy.xiz
+%%DATADIR%%/banks/Collection/0101-Bottle.xiz
+%%DATADIR%%/banks/Collection/0102-Pan Pipe 32.xiz
+%%DATADIR%%/banks/Collection/0103-Pan Pipe.xiz
+%%DATADIR%%/banks/Collection/0104-Pan Pipe 96.xiz
+%%DATADIR%%/banks/Collection/0105-Lite Guitar.xiz
+%%DATADIR%%/banks/Collection/0106-Trem Guitar.xiz
+%%DATADIR%%/banks/Collection/0107-Smooth Guitar.xiz
+%%DATADIR%%/banks/Collection/0108-Nylon Guitar.xiz
+%%DATADIR%%/banks/Collection/0109-Tunnel Piano.xiz
+%%DATADIR%%/banks/Collection/0110-Home Piano.xiz
+%%DATADIR%%/banks/Collection/0111-Moonlight Piano.xiz
+%%DATADIR%%/banks/Collection/0112-Soft Piano1.xiz
+%%DATADIR%%/banks/Collection/0113-Soft Piano2.xiz
+%%DATADIR%%/banks/Collection/0114-Space Piano.xiz
+%%DATADIR%%/banks/Collection/0115-Space Voice.xiz
+%%DATADIR%%/banks/Collection/0116-Far Space Voice.xiz
+%%DATADIR%%/banks/Collection/0117-Space Voice 2.xiz
+%%DATADIR%%/banks/Collection/0118-Soft Choir.xiz
+%%DATADIR%%/banks/Collection/0119-Full Choir.xiz
+%%DATADIR%%/banks/Collection/0120-Soft Ahh.xiz
+%%DATADIR%%/banks/Collection/0121-Breathy Ahh.xiz
+%%DATADIR%%/banks/Collection/0122-Another Choir.xiz
+%%DATADIR%%/banks/Collection/0123-Light Choir.xiz
+%%DATADIR%%/banks/Collection/0124-Super Pad.xiz
+%%DATADIR%%/banks/Collection/0125-Hyper Pad.xiz
+%%DATADIR%%/banks/Collection/0126-Hyper Matrix.xiz
+%%DATADIR%%/banks/Collection/0127-Extreme.xiz
+%%DATADIR%%/banks/Collection/0128-Wind and Surf.xiz
+%%DATADIR%%/banks/Companion/.bankdir
+%%DATADIR%%/banks/Companion/0004-Muffled Bells.xiz
+%%DATADIR%%/banks/Companion/0006-Tinkle Bell.xiz
+%%DATADIR%%/banks/Companion/0010-Metal Sweep.xiz
+%%DATADIR%%/banks/Companion/0011-Slow Steel.xiz
+%%DATADIR%%/banks/Companion/0013-Bright Metal.xiz
+%%DATADIR%%/banks/Companion/0014-Metal Tines.xiz
+%%DATADIR%%/banks/Companion/0016-Soft Metal.xiz
+%%DATADIR%%/banks/Companion/0019-Warm Square Swell.xiz
+%%DATADIR%%/banks/Companion/0021-Bubbles.xiz
+%%DATADIR%%/banks/Companion/0024-Solo.xiz
+%%DATADIR%%/banks/Companion/0025-Wind Whistle.xiz
+%%DATADIR%%/banks/Companion/0028-Theramin.xiz
+%%DATADIR%%/banks/Companion/0037-Special Saw.xiz
+%%DATADIR%%/banks/Companion/0038-Smooth Saw.xiz
+%%DATADIR%%/banks/Companion/0039-Slow Morph.xiz
+%%DATADIR%%/banks/Companion/0040-Shimmer.xiz
+%%DATADIR%%/banks/Companion/0041-Buzz.xiz
+%%DATADIR%%/banks/Companion/0042-Variable Synth.xiz
+%%DATADIR%%/banks/Companion/0045-Bite.xiz
+%%DATADIR%%/banks/Companion/0051-Orc Voice.xiz
+%%DATADIR%%/banks/Companion/0054-Sub Phase Bass.xiz
+%%DATADIR%%/banks/Companion/0055-Thick Bass.xiz
+%%DATADIR%%/banks/Companion/0056-Wide Bass.xiz
+%%DATADIR%%/banks/Companion/0057-Ultra Bass.xiz
+%%DATADIR%%/banks/Companion/0060-Stopped Pipe.xiz
+%%DATADIR%%/banks/Companion/0074-Smooth Expanded.xiz
+%%DATADIR%%/banks/Companion/0078-Brassy.xiz
+%%DATADIR%%/banks/Companion/0079-Brassy Flutter.xiz
+%%DATADIR%%/banks/Companion/0080-Soft Brass.xiz
+%%DATADIR%%/banks/Companion/0081-Post Horn.xiz
+%%DATADIR%%/banks/Companion/0092-Wind Pipes.xiz
+%%DATADIR%%/banks/Companion/0106-Harpsichord.xiz
+%%DATADIR%%/banks/Companion/0107-Cathedral Harp.xiz
+%%DATADIR%%/banks/Companion/0108-Angel Harp.xiz
+%%DATADIR%%/banks/Companion/0110-Angel Piano.xiz
+%%DATADIR%%/banks/Companion/0112-SciFi Piano.xiz
+%%DATADIR%%/banks/Companion/0114-Space Pipes.xiz
+%%DATADIR%%/banks/Companion/0116-Soprano.xiz
+%%DATADIR%%/banks/Companion/0117-Boy Choir.xiz
+%%DATADIR%%/banks/Companion/0118-Ooo.xiz
+%%DATADIR%%/banks/Companion/0119-Ghost Choir.xiz
+%%DATADIR%%/banks/Companion/0121-Ghost Ensemble.xiz
+%%DATADIR%%/banks/Companion/0127-Hoover.xiz
+%%DATADIR%%/banks/Cormi_Noise/.bankdir
+%%DATADIR%%/banks/Cormi_Noise/0002-Sparo_01.xiz
+%%DATADIR%%/banks/Cormi_Noise/0003-Laser_01.xiz
+%%DATADIR%%/banks/Cormi_Noise/0005-Elettrico.xiz
+%%DATADIR%%/banks/Cormi_Noise/0006-Ronzio_01.xiz
+%%DATADIR%%/banks/Cormi_Noise/0007-Ronzio_02.xiz
+%%DATADIR%%/banks/Cormi_Noise/0008-Ronzio_03.xiz
+%%DATADIR%%/banks/Cormi_Noise/0010-Interferenze.xiz
+%%DATADIR%%/banks/Cormi_Noise/0012-Passa_astronave.xiz
+%%DATADIR%%/banks/Cormi_Noise/0013-Passa_asteroide.xiz
+%%DATADIR%%/banks/Cormi_Noise/0015-Nave.xiz
+%%DATADIR%%/banks/Cormi_Noise/0017-Strano_01.xiz
+%%DATADIR%%/banks/Cormi_Noise/0018-Strano_02.xiz
+%%DATADIR%%/banks/Cormi_Noise/0020-Acqua.xiz
+%%DATADIR%%/banks/Cormi_Noise/0021-Asteroide.xiz
+%%DATADIR%%/banks/Cormi_Noise/0024-tastiera.xiz
+%%DATADIR%%/banks/Cormi_Noise/0026-beepA.xiz
+%%DATADIR%%/banks/Cormi_Noise/0027-beepB.xiz
+%%DATADIR%%/banks/Cormi_Noise/0028-beepC.xiz
+%%DATADIR%%/banks/Cormi_Noise/0033-buao.xiz
+%%DATADIR%%/banks/Cormi_Noise/0034-creepy.xiz
+%%DATADIR%%/banks/Cormi_Noise/0036-Trillo.xiz
+%%DATADIR%%/banks/Cormi_Noise/0037-Trillo1.xiz
+%%DATADIR%%/banks/Cormi_Noise/0038-Trillo2.xiz
+%%DATADIR%%/banks/Cormi_Noise/0039-Trillo5.xiz
+%%DATADIR%%/banks/Cormi_Noise/0041-Scherzo.xiz
+%%DATADIR%%/banks/Cormi_Noise/0043-Grave.xiz
+%%DATADIR%%/banks/Cormi_Noise/0045-Fischia_01.xiz
+%%DATADIR%%/banks/Cormi_Noise/0046-Fischia_02.xiz
+%%DATADIR%%/banks/Cormi_Noise/0047-Fischia_03.xiz
+%%DATADIR%%/banks/Cormi_Noise/0049-Resonance Pad2.xiz
+%%DATADIR%%/banks/Cormi_Noise/0050-Resonance Pad2.xiz
+%%DATADIR%%/banks/Cormi_Noise/0052-ImpossibleDream1.xiz
+%%DATADIR%%/banks/Cormi_Noise/0053-ImpossibleDream4.xiz
+%%DATADIR%%/banks/Cormi_Noise/0054-Delayed Echo.xiz
+%%DATADIR%%/banks/Cormi_Noise/0057-Glass_01.xiz
+%%DATADIR%%/banks/Cormi_Noise/0059-Tremulo_01.xiz
+%%DATADIR%%/banks/Cormi_Noise/0061-Campane.xiz
+%%DATADIR%%/banks/Cormi_Sound/0001-Bassoon.xiz
+%%DATADIR%%/banks/Cormi_Sound/0002-Bassoon2.xiz
+%%DATADIR%%/banks/Cormi_Sound/0003-Bassoon3.xiz
+%%DATADIR%%/banks/Cormi_Sound/0004-Volo.xiz
+%%DATADIR%%/banks/Cormi_Sound/0006-Arpeggio_01.xiz
+%%DATADIR%%/banks/Cormi_Sound/0007-Arpeggio_02.xiz
+%%DATADIR%%/banks/Cormi_Sound/0008-Arpeggio_03.xiz
+%%DATADIR%%/banks/Cormi_Sound/0009-Glass Arpeggio2.xiz
+%%DATADIR%%/banks/Cormi_Sound/0011-abracadabra.xiz
+%%DATADIR%%/banks/Cormi_Sound/0012-Ghost Whistle.xiz
+%%DATADIR%%/banks/Cormi_Sound/0013-Spazio1.xiz
+%%DATADIR%%/banks/Cormi_Sound/0014-Spazio2.xiz
+%%DATADIR%%/banks/Cormi_Sound/0015-Space Synth.xiz
+%%DATADIR%%/banks/Cormi_Sound/0016-SpaceAtmo.xiz
+%%DATADIR%%/banks/Cormi_Sound/0017-friendly sines.xiz
+%%DATADIR%%/banks/Cormi_Sound/0019-Acquoso_1.xiz
+%%DATADIR%%/banks/Cormi_Sound/0020-Acquoso_5.xiz
+%%DATADIR%%/banks/Cormi_Sound/0021-Acquoso_6.xiz
+%%DATADIR%%/banks/Cormi_Sound/0023-Fagotto_01.xiz
+%%DATADIR%%/banks/Cormi_Sound/0024-Fagotto_02.xiz
+%%DATADIR%%/banks/Cormi_Sound/0025-Fagotto_03.xiz
+%%DATADIR%%/banks/Cormi_Sound/0027-Delicato_01.xiz
+%%DATADIR%%/banks/Cormi_Sound/0028-Delicato_02.xiz
+%%DATADIR%%/banks/Cormi_Sound/0029-Delicato_03.xiz
+%%DATADIR%%/banks/Cormi_Sound/0031-Wah_dolce_1.xiz
+%%DATADIR%%/banks/Cormi_Sound/0032-Wah_dolce_2.xiz
+%%DATADIR%%/banks/Cormi_Sound/0033-Long Space Choir 2.xiz
+%%DATADIR%%/banks/Cormi_Sound/0034-Choir Pad4.xiz
+%%DATADIR%%/banks/Cormi_Sound/0035-Ancient_Echos.xiz
+%%DATADIR%%/banks/Cormi_Sound/0036-Campane.xiz
+%%DATADIR%%/banks/Cormi_Sound/0037-Chorus.xiz
+%%DATADIR%%/banks/Cormi_Sound/0038-HellVoice.xiz
+%%DATADIR%%/banks/Cormi_Sound/0039-Chorus2.xiz
+%%DATADIR%%/banks/Cormi_Sound/0041-DarkNight.xiz
+%%DATADIR%%/banks/Cormi_Sound/0042-LightDawn.xiz
+%%DATADIR%%/banks/Cormi_Sound/0043-Fiiuu.xiz
+%%DATADIR%%/banks/Cormi_Sound/0045-Spazio_profondo1.xiz
+%%DATADIR%%/banks/Cormi_Sound/0046-Spazio_Profondo2.xiz
+%%DATADIR%%/banks/Cormi_Sound/0047-Spazio_Profondo3.xiz
+%%DATADIR%%/banks/Cormi_Sound/0049-DolcePiano_01.xiz
+%%DATADIR%%/banks/Cormi_Sound/0050-DolcePiano_02.xiz
+%%DATADIR%%/banks/Cormi_Sound/0051-DolcePiano_03.xiz
+%%DATADIR%%/banks/Cormi_Sound/0053-Ding_01.xiz
+%%DATADIR%%/banks/Cormi_Sound/0054-Ding_02.xiz
+%%DATADIR%%/banks/Cormi_Sound/0056-Senza_tempo.xiz
+%%DATADIR%%/banks/Cormi_Sound/0057-Senza_tempo_2.xiz
+%%DATADIR%%/banks/Cormi_Sound/0058-Senza_tempo_3.xiz
+%%DATADIR%%/banks/Cormi_Sound/0059-Senza_tempo_4.xiz
+%%DATADIR%%/banks/Cormi_Sound/0060-Senza_tempo_5.xiz
+%%DATADIR%%/banks/Cormi_Sound/0062-Sospirato_01.xiz
+%%DATADIR%%/banks/Cormi_Sound/0063-Sospirato_02.xiz
+%%DATADIR%%/banks/Cormi_Sound/0064-Sospirato_03.xiz
+%%DATADIR%%/banks/Cormi_Sound/0065-Synth_piano_03.xiz
+%%DATADIR%%/banks/Cormi_Sound/0066-Synth_Piano_02.xiz
+%%DATADIR%%/banks/Cormi_Sound/0068-Piano.xiz
+%%DATADIR%%/banks/Cormi_Sound/0069-Pianola.xiz
+%%DATADIR%%/banks/Cormi_Sound/0070-clavicembalo.xiz
+%%DATADIR%%/banks/Cormi_Sound/0072-Zufolo_1.xiz
+%%DATADIR%%/banks/Cormi_Sound/0073-Zufolo_2.xiz
+%%DATADIR%%/banks/Cormi_Sound/0074-Zufolo_3.xiz
+%%DATADIR%%/banks/Cormi_Sound/0075-Zufolo_4.xiz
+%%DATADIR%%/banks/Cormi_Sound/0076-Pinkollo.xiz
+%%DATADIR%%/banks/Cormi_Sound/0078-Tremulo_01.xiz
+%%DATADIR%%/banks/Cormi_Sound/0079-Tremulo_02.xiz
+%%DATADIR%%/banks/Cormi_Sound/0081-Organetto_01.xiz
+%%DATADIR%%/banks/Cormi_Sound/0082-Organetto_02.xiz
+%%DATADIR%%/banks/Cormi_Sound/0084-Organo_01.xiz
+%%DATADIR%%/banks/Cormi_Sound/0085-Organo_02.xiz
+%%DATADIR%%/banks/Cormi_Sound/0086-Organo_03.xiz
+%%DATADIR%%/banks/Cormi_Sound/0087-Harp 3.xiz
+%%DATADIR%%/banks/Cormi_Sound/0088-Harp4.xiz
+%%DATADIR%%/banks/Cormi_Sound/0090-Dolcino_01.xiz
+%%DATADIR%%/banks/Cormi_Sound/0091-Dolcino_02.xiz
+%%DATADIR%%/banks/Cormi_Sound/0092-Dolcino_03.xiz
+%%DATADIR%%/banks/Cormi_Sound/0093-Dolcino_04.xiz
+%%DATADIR%%/banks/Cormi_Sound/0095-Accordian.xiz
+%%DATADIR%%/banks/Cormi_Sound/0096-padNice.xiz
+%%DATADIR%%/banks/Cormi_Sound/0097-k.xiz
+%%DATADIR%%/banks/Cormi_Sound/0098-z.xiz
+%%DATADIR%%/banks/Cormi_Sound/0099-a.xiz
+%%DATADIR%%/banks/Cormi_Sound/0100-Steel Rhodes.xiz
+%%DATADIR%%/banks/Cormi_Sound/0101-Sweet_Night.xiz
+%%DATADIR%%/banks/Cormi_Sound/0102-Sweet_Night_2.xiz
+%%DATADIR%%/banks/Cormi_Sound/0103-Gocce.xiz
+%%DATADIR%%/banks/Cormi_Sound/0104-Ice Rhodes2.xiz
+%%DATADIR%%/banks/Cormi_Sound/0105-Voluttuoso.xiz
+%%DATADIR%%/banks/Cormi_Sound/0106-Entropia.xiz
+%%DATADIR%%/banks/Cormi_Sound/0108-Arcano.xiz
+%%DATADIR%%/banks/Cormi_Sound/0109-Arcano2.xiz
+%%DATADIR%%/banks/Cormi_Sound/0110-Arcano3.xiz
+%%DATADIR%%/banks/Cormi_Sound/0112-Glass_01.xiz
+%%DATADIR%%/banks/Cormi_Sound/0113-Glass_02a.xiz
+%%DATADIR%%/banks/Cormi_Sound/0114-Glass_02b.xiz
+%%DATADIR%%/banks/Cormi_Sound/0115-Glass_03.xiz
+%%DATADIR%%/banks/Cormi_Sound/0116-Glass_04.xiz
+%%DATADIR%%/banks/Cormi_Sound/0119-Arcadia_1.xiz
+%%DATADIR%%/banks/Cormi_Sound/0120-Arcadia_2.xiz
+%%DATADIR%%/banks/Cormi_Sound/0121-Arcadia_3.xiz
+%%DATADIR%%/banks/Cormi_Sound/0122-Arcadia_4.xiz
+%%DATADIR%%/banks/Cormi_Sound/0124-Armonica.xiz
+%%DATADIR%%/banks/Cormi_Sound/0125-Fanfara.xiz
+%%DATADIR%%/banks/Cormi_Sound/0126-Polvere.xiz
+%%DATADIR%%/banks/Cormi_Sound/0127-Comb Filter.xiz
+%%DATADIR%%/banks/Cormi_Sound/0128-Synth Pad 5.xiz
+%%DATADIR%%/banks/Cormi_Sound/0129-Bello.xiz
+%%DATADIR%%/banks/Cormi_Sound/0130-abbellimento.xiz
+%%DATADIR%%/banks/Cormi_Sound/0131-Carino.xiz
+%%DATADIR%%/banks/Cormi_Sound/0132-Cigno.xiz
+%%DATADIR%%/banks/Cormi_Sound/0133-fluido.xiz
+%%DATADIR%%/banks/Cormi_Sound/0136-Romantico.xiz
+%%DATADIR%%/banks/Cormi_Sound/0137-Romantico2.xiz
+%%DATADIR%%/banks/Cormi_Sound/0138-romanticone.xiz
+%%DATADIR%%/banks/Cormi_Sound/0139-Emptyness3.xiz
+%%DATADIR%%/banks/Cormi_Sound/0140-Foglie.xiz
+%%DATADIR%%/banks/Cormi_Sound/0142-Solitudine.xiz
+%%DATADIR%%/banks/Cormi_Sound/0144-Inquietudine.xiz
+%%DATADIR%%/banks/Cormi_Sound/0145-c.xiz
+%%DATADIR%%/banks/Cormi_Sound/0146-Ancestrale.xiz
+%%DATADIR%%/banks/Cormi_Sound/0147-Attesa.xiz
+%%DATADIR%%/banks/Cormi_Sound/0148-vento.xiz
+%%DATADIR%%/banks/Cormi_Sound/0149-pioggia.xiz
+%%DATADIR%%/banks/Cormi_Sound/0150-nebbia.xiz
+%%DATADIR%%/banks/Cormi_Sound/0151-Memory.xiz
+%%DATADIR%%/banks/Cormi_Sound/0152-Memory2.xiz
+%%DATADIR%%/banks/Cormi_Sound/0153-Memory3.xiz
+%%DATADIR%%/banks/Cormi_Sound/0155-contorno.xiz
+%%DATADIR%%/banks/Cormi_Sound/0156-fantasia.xiz
+%%DATADIR%%/banks/Cormi_Sound/0157-nostalgia.xiz
+%%DATADIR%%/banks/Cormi_Sound/0158-patetico.xiz
+%%DATADIR%%/banks/Cormi_Sound/0159-Destino.xiz
+%%DATADIR%%/banks/Cormi_Sound/ReadMe.txt
 %%DATADIR%%/banks/Drums/0001-Drums Kit1.xiz
 %%DATADIR%%/banks/Dual/0001-Layered1.xiz
 %%DATADIR%%/banks/Dual/0002-Layered2.xiz
@@ -238,6 +504,70 @@ bin/zynaddsubfx
 %%DATADIR%%/banks/Guitar/0065-Clean Guitar1.xiz
 %%DATADIR%%/banks/Guitar/0066-Electric Guitar.xiz
 %%DATADIR%%/banks/Guitar/0097-Space Guitar.xiz
+%%DATADIR%%/banks/Laba170bank/0001-SquareToSine.xiz
+%%DATADIR%%/banks/Laba170bank/0002-GaussToSine.xiz
+%%DATADIR%%/banks/Laba170bank/0003-MorphingOrgan.xiz
+%%DATADIR%%/banks/Laba170bank/0004-ThinLead.xiz
+%%DATADIR%%/banks/Laba170bank/0005-BrightLead.xiz
+%%DATADIR%%/banks/Laba170bank/0006-GenericLead.xiz
+%%DATADIR%%/banks/Laba170bank/0007-MorphingSuperSaw.xiz
+%%DATADIR%%/banks/Laba170bank/0008-BrassyFlute.xiz
+%%DATADIR%%/banks/Laba170bank/0009-GenericLead2.xiz
+%%DATADIR%%/banks/Laba170bank/0027-ShortFlute.xiz
+%%DATADIR%%/banks/Laba170bank/0028-PianoBell.xiz
+%%DATADIR%%/banks/Laba170bank/0029-PianoHarp.xiz
+%%DATADIR%%/banks/Laba170bank/0030-ScaredPulse.xiz
+%%DATADIR%%/banks/Laba170bank/0031-Twang2.xiz
+%%DATADIR%%/banks/Laba170bank/0032-Twang1.xiz
+%%DATADIR%%/banks/Laba170bank/0037-FatPatch.xiz
+%%DATADIR%%/banks/Laba170bank/0038-FatPatchSimpler.xiz
+%%DATADIR%%/banks/Laba170bank/0039-FatPatchSimpler2.xiz
+%%DATADIR%%/banks/Laba170bank/0046-NoisyGuitar.xiz
+%%DATADIR%%/banks/Laba170bank/0047-NoisyGuitar2.xiz
+%%DATADIR%%/banks/Laba170bank/0048-NoisyGuitar3.xiz
+%%DATADIR%%/banks/Laba170bank/0049-guitar-PowerChorder.xiz
+%%DATADIR%%/banks/Laba170bank/0050-SynGuitarAcoustic1.xiz
+%%DATADIR%%/banks/Laba170bank/0051-SynGuitarAcoustic2.xiz
+%%DATADIR%%/banks/Laba170bank/0052-SynGuitarAcoustic3.xiz
+%%DATADIR%%/banks/Laba170bank/0054-DevilsFiddle.xiz
+%%DATADIR%%/banks/Laba170bank/0055-DevilsFiddle2.xiz
+%%DATADIR%%/banks/Laba170bank/0085-PanFluteSawPad.xiz
+%%DATADIR%%/banks/Laba170bank/0086-BlownPiano.xiz
+%%DATADIR%%/banks/Laba170bank/0087-ChoirPatch.xiz
+%%DATADIR%%/banks/Laba170bank/0088-InfraSoundPad.xiz
+%%DATADIR%%/banks/Laba170bank/0089-InfraSound2.xiz
+%%DATADIR%%/banks/Laba170bank/0090-Pad-RingModSine.xiz
+%%DATADIR%%/banks/Laba170bank/0091-FatPad.xiz
+%%DATADIR%%/banks/Laba170bank/0092-VibratingPad.xiz
+%%DATADIR%%/banks/Laba170bank/0097-AnalogBass.xiz
+%%DATADIR%%/banks/Laba170bank/0098-DoublePadBass.xiz
+%%DATADIR%%/banks/Laba170bank/0099-SharpBass1.xiz
+%%DATADIR%%/banks/Laba170bank/0100-SharpBass4.xiz
+%%DATADIR%%/banks/Laba170bank/0101-SharpBass5.xiz
+%%DATADIR%%/banks/Laba170bank/0102-PluckedWithTailBassy.xiz
+%%DATADIR%%/banks/Laba170bank/0103-PluckedAnalogBass.xiz
+%%DATADIR%%/banks/Laba170bank/0108-NoisyPulseLead.xiz
+%%DATADIR%%/banks/Laba170bank/0109-NoisyPulseLead2.xiz
+%%DATADIR%%/banks/Laba170bank/0110-wierdSchwoop.xiz
+%%DATADIR%%/banks/Laba170bank/0111-PoorAccordion.xiz
+%%DATADIR%%/banks/Laba170bank/0112-PoorTrumpet.xiz
+%%DATADIR%%/banks/Laba170bank/0113-BassyChirp.xiz
+%%DATADIR%%/banks/Laba170bank/0114-hoarseorgan.xiz
+%%DATADIR%%/banks/Laba170bank/0115-MysticlBells.xiz
+%%DATADIR%%/banks/Laba170bank/0129-chip-SlowSawStrings.xiz
+%%DATADIR%%/banks/Laba170bank/0130-chip-SIDarpSoft.xiz
+%%DATADIR%%/banks/Laba170bank/0131-chip-SIDarpSharp.xiz
+%%DATADIR%%/banks/Laba170bank/0132-chip-SIDarpSharp2.xiz
+%%DATADIR%%/banks/Laba170bank/0133-chip-HarshSaw.xiz
+%%DATADIR%%/banks/Laba170bank/0134-chip-VibratoLead.xiz
+%%DATADIR%%/banks/Laba170bank/0135-chip-VibratoLead2.xiz
+%%DATADIR%%/banks/Laba170bank/0136-chip-PWM-VibratoLead.xiz
+%%DATADIR%%/banks/Laba170bank/0137-chip-PolyDistorted.xiz
+%%DATADIR%%/banks/Laba170bank/0138-chip-PolyDistorted2.xiz
+%%DATADIR%%/banks/Laba170bank/0146-PluckedWithVibTail.xiz
+%%DATADIR%%/banks/Laba170bank/0147-PluckedWithTail2.xiz
+%%DATADIR%%/banks/Laba170bank/0148-PluckedWithTail.xiz
+%%DATADIR%%/banks/Laba170bank/descriptions.txt
 %%DATADIR%%/banks/Misc/0001-Memories.xiz
 %%DATADIR%%/banks/Misc/0002-Bells 1.xiz
 %%DATADIR%%/banks/Misc/0003-Bells 2.xiz
@@ -367,10 +697,10 @@ bin/zynaddsubfx
 %%DATADIR%%/banks/Rhodes/0065-Steel Rhodes.xiz
 %%DATADIR%%/banks/Rhodes/0067-RhodesPad1.xiz
 %%DATADIR%%/banks/Rhodes/0068-RhodesPad2.xiz
-%%DATADIR%%/banks/Splited/0001-Strings and Reed1.xiz
-%%DATADIR%%/banks/Splited/0002-Strings and Reed2.xiz
-%%DATADIR%%/banks/Splited/0003-Strings and Flute.xiz
-%%DATADIR%%/banks/Splited/0033-Choir and Reed.xiz
+%%DATADIR%%/banks/Splitted/0001-Strings and Reed1.xiz
+%%DATADIR%%/banks/Splitted/0002-Strings and Reed2.xiz
+%%DATADIR%%/banks/Splitted/0003-Strings and Flute.xiz
+%%DATADIR%%/banks/Splitted/0033-Choir and Reed.xiz
 %%DATADIR%%/banks/Strings/0001-Saw Strings 1.xiz
 %%DATADIR%%/banks/Strings/0002-Saw Strings 2.xiz
 %%DATADIR%%/banks/Strings/0003-Saw Strings 3.xiz
@@ -451,3 +781,431 @@ bin/zynaddsubfx
 %%DATADIR%%/banks/SynthPiano/0069-Synth Piano 3 det.xiz
 %%DATADIR%%/banks/SynthPiano/0070-Synth Piano 4.xiz
 %%DATADIR%%/banks/SynthPiano/0071-Synth Piano 5.xiz
+%%DATADIR%%/banks/net-wisdom/.bankdir
+%%DATADIR%%/banks/net-wisdom/0001-Stereo laser gun.xiz
+%%DATADIR%%/banks/net-wisdom/0002-Mod beeps.xiz
+%%DATADIR%%/banks/net-wisdom/0003-Rising bleeps.xiz
+%%DATADIR%%/banks/net-wisdom/0004-Filter rise.xiz
+%%DATADIR%%/banks/net-wisdom/0005-Order of Chaos.xiz
+%%DATADIR%%/banks/net-wisdom/0006-Robotix FM.xiz
+%%DATADIR%%/banks/net-wisdom/0007-broke robot.xiz
+%%DATADIR%%/banks/net-wisdom/0008-droplets for chords.xiz
+%%DATADIR%%/banks/net-wisdom/0009-Fantasy Canyon X.xiz
+%%DATADIR%%/banks/net-wisdom/0010-Batman 2.xiz
+%%DATADIR%%/banks/net-wisdom/0011-Ping.xiz
+%%DATADIR%%/banks/net-wisdom/0012-Alien Sound.xiz
+%%DATADIR%%/banks/net-wisdom/0013-Hoover.xiz
+%%DATADIR%%/banks/net-wisdom/0014-wyatt1sequenz.xiz
+%%DATADIR%%/banks/net-wisdom/0015-bizzarro.xiz
+%%DATADIR%%/banks/net-wisdom/0016-Ioio_01.xiz
+%%DATADIR%%/banks/net-wisdom/0017-Own Metal Sound after  2.xiz
+%%DATADIR%%/banks/net-wisdom/0018-Metal Sound 2.xiz
+%%DATADIR%%/banks/net-wisdom/0019-star chimes.xiz
+%%DATADIR%%/banks/net-wisdom/0020-Angry Saw.xiz
+%%DATADIR%%/banks/net-wisdom/0021-Ugly Bells.xiz
+%%DATADIR%%/banks/net-wisdom/0022-Ghost Bells.xiz
+%%DATADIR%%/banks/net-wisdom/0023-bubblefx.xiz
+%%DATADIR%%/banks/net-wisdom/0024-Rich Stereo Wind.xiz
+%%DATADIR%%/banks/net-wisdom/0025-old echoed ambient.xiz
+%%DATADIR%%/banks/net-wisdom/0026-White Music 1.xiz
+%%DATADIR%%/banks/net-wisdom/0027-ping pong drum.xiz
+%%DATADIR%%/banks/net-wisdom/0028-Fast Bass.xiz
+%%DATADIR%%/banks/net-wisdom/0029-Res-Synth Bass 3.xiz
+%%DATADIR%%/banks/net-wisdom/0030-Analog Bass.xiz
+%%DATADIR%%/banks/net-wisdom/0037-buzz.xiz
+%%DATADIR%%/banks/net-wisdom/0031-Chip Bass 3.xiz
+%%DATADIR%%/banks/net-wisdom/0032-Chip Bass 4.xiz
+%%DATADIR%%/banks/net-wisdom/0033-Vangelis Saw - A.xiz
+%%DATADIR%%/banks/net-wisdom/0034-Vangelis Saw - B.xiz
+%%DATADIR%%/banks/net-wisdom/0035-Vangelis Saw - C.xiz
+%%DATADIR%%/banks/net-wisdom/0036-Vangelis Saw - D.xiz
+%%DATADIR%%/banks/net-wisdom/0038-Saw String 1.xiz
+%%DATADIR%%/banks/net-wisdom/0039-StarWind Strings.xiz
+%%DATADIR%%/banks/net-wisdom/0040-brightstrings.xiz
+%%DATADIR%%/banks/net-wisdom/0041-Electronic Strings.xiz
+%%DATADIR%%/banks/net-wisdom/0042-Rick Wright_s String.xiz
+%%DATADIR%%/banks/net-wisdom/0043-Ominous Strings.xiz
+%%DATADIR%%/banks/net-wisdom/0044-RichSpace00.xiz
+%%DATADIR%%/banks/net-wisdom/0045-Galactic Pad.xiz
+%%DATADIR%%/banks/net-wisdom/0046-Synthy Pad.xiz
+%%DATADIR%%/banks/net-wisdom/0047-Soft Pad.xiz
+%%DATADIR%%/banks/net-wisdom/0048-galaxzy-soft.xiz
+%%DATADIR%%/banks/net-wisdom/0049-Noise-Phased Pad.xiz
+%%DATADIR%%/banks/net-wisdom/0050-Flanged Pad.xiz
+%%DATADIR%%/banks/net-wisdom/0051-Aura.xiz
+%%DATADIR%%/banks/net-wisdom/0052-Sine Effect.xiz
+%%DATADIR%%/banks/net-wisdom/0053-ContinuumBeatPad.xiz
+%%DATADIR%%/banks/net-wisdom/0054-onemorepad.xiz
+%%DATADIR%%/banks/net-wisdom/0055-RadioPulsePad.xiz
+%%DATADIR%%/banks/net-wisdom/0056-Ethereal Sub.xiz
+%%DATADIR%%/banks/net-wisdom/0057-Useless Lush.xiz
+%%DATADIR%%/banks/net-wisdom/0058-Classic Slightly-filtered.xiz
+%%DATADIR%%/banks/net-wisdom/0059-SUBsaw.xiz
+%%DATADIR%%/banks/net-wisdom/0060-Subsyn Pad.xiz
+%%DATADIR%%/banks/net-wisdom/0061-and Yet another one.xiz
+%%DATADIR%%/banks/net-wisdom/0062-Glass Organ 1.xiz
+%%DATADIR%%/banks/net-wisdom/0063-similSynth Pad.xiz
+%%DATADIR%%/banks/net-wisdom/0064-LostForWordsPad.xiz
+%%DATADIR%%/banks/net-wisdom/0065-WindSaw.xiz
+%%DATADIR%%/banks/net-wisdom/0066-Comb Filter.xiz
+%%DATADIR%%/banks/net-wisdom/0067-Beeping Pad.xiz
+%%DATADIR%%/banks/net-wisdom/0068-Vint Beep Pad.xiz
+%%DATADIR%%/banks/net-wisdom/0069-Vint Beep Pad mod.xiz
+%%DATADIR%%/banks/net-wisdom/0070-Sub Lush Sweep.xiz
+%%DATADIR%%/banks/net-wisdom/0071-Angelic choir.xiz
+%%DATADIR%%/banks/net-wisdom/0072-2-36AM Lush.xiz
+%%DATADIR%%/banks/net-wisdom/0073-1-46AM Lush.xiz
+%%DATADIR%%/banks/net-wisdom/0074-20-36PM Lush.xiz
+%%DATADIR%%/banks/net-wisdom/0075-Synth Piano 3.xiz
+%%DATADIR%%/banks/net-wisdom/0076-Bells 3.xiz
+%%DATADIR%%/banks/net-wisdom/0077-Seraphim Organ.xiz
+%%DATADIR%%/banks/net-wisdom/0079-Enhanced SpCh.xiz
+%%DATADIR%%/banks/net-wisdom/0078-StillLagoonSine.xiz
+%%DATADIR%%/banks/net-wisdom/0080-wahiano01.xiz
+%%DATADIR%%/banks/net-wisdom/0081-Smooth 1.xiz
+%%DATADIR%%/banks/net-wisdom/0082-Smooth 1 FM.xiz
+%%DATADIR%%/banks/net-wisdom/0083-wavy 1.xiz
+%%DATADIR%%/banks/net-wisdom/0084-progressive-house-pluck.xiz
+%%DATADIR%%/banks/net-wisdom/0085-Cindi - A.xiz
+%%DATADIR%%/banks/net-wisdom/0086-Cindi - B.xiz
+%%DATADIR%%/banks/net-wisdom/0087-Cindi - C.xiz
+%%DATADIR%%/banks/net-wisdom/0088-Prophet horn 1.xiz
+%%DATADIR%%/banks/net-wisdom/0089-Prophet horn 2.xiz
+%%DATADIR%%/banks/net-wisdom/0090-Trancehum.xiz
+%%DATADIR%%/banks/net-wisdom/0091-Noisy Tone-Percussion.xiz
+%%DATADIR%%/banks/net-wisdom/0092-Retro Sound_.xiz
+%%DATADIR%%/banks/net-wisdom/0093-Hum 1.xiz
+%%DATADIR%%/banks/net-wisdom/0094-Flute.xiz
+%%DATADIR%%/banks/net-wisdom/0108-chord.xiz
+%%DATADIR%%/banks/net-wisdom/0095-Second_Rendezvous_Part_1.xiz
+%%DATADIR%%/banks/net-wisdom/0096-Trash Synth mod.xiz
+%%DATADIR%%/banks/net-wisdom/0097-Old radio lead 1.xiz
+%%DATADIR%%/banks/net-wisdom/0098-Octave trem lead.xiz
+%%DATADIR%%/banks/net-wisdom/0099-Plucked Synth.xiz
+%%DATADIR%%/banks/net-wisdom/0100-dropofwater.xiz
+%%DATADIR%%/banks/net-wisdom/0101-wha ping.xiz
+%%DATADIR%%/banks/net-wisdom/0102-progressive-lead-1.xiz
+%%DATADIR%%/banks/net-wisdom/0103-square-lead.xiz
+%%DATADIR%%/banks/net-wisdom/0104-asaliah.xiz
+%%DATADIR%%/banks/net-wisdom/0105-Filter Trem clean.xiz
+%%DATADIR%%/banks/net-wisdom/0106-Quantize Lead.xiz
+%%DATADIR%%/banks/net-wisdom/0107-Computer Game.xiz
+%%DATADIR%%/banks/net-wisdom/0109-smp_lead.xiz
+%%DATADIR%%/banks/net-wisdom/0110-Smooth 2.xiz
+%%DATADIR%%/banks/net-wisdom/0111-Smooth 3.xiz
+%%DATADIR%%/banks/net-wisdom/0112-Fat Saw.xiz
+%%DATADIR%%/banks/net-wisdom/0113-kua-kua.xiz
+%%DATADIR%%/banks/net-wisdom/0114-Ehh_.xiz
+%%DATADIR%%/banks/net-wisdom/0115-Harp 3.xiz
+%%DATADIR%%/banks/net-wisdom/0116-Stratotron II.xiz
+%%DATADIR%%/banks/net-wisdom/0117-Tubular Bells.xiz
+%%DATADIR%%/banks/net-wisdom/0118-Echo synth bells.xiz
+%%DATADIR%%/banks/net-wisdom/0119-galaxzy-guitar.xiz
+%%DATADIR%%/banks/net-wisdom/0120-Talking clav.xiz
+%%DATADIR%%/banks/net-wisdom/0121-Ocarina.xiz
+%%DATADIR%%/banks/net-wisdom/0122-Enveloped Pulse Lead.xiz
+%%DATADIR%%/banks/net-wisdom/0123-Nice Guitar - huh.xiz
+%%DATADIR%%/banks/net-wisdom/0124-Rlstic Accordion.xiz
+%%DATADIR%%/banks/net-wisdom/0125-Noise whistle.xiz
+%%DATADIR%%/banks/net-wisdom/0126-Vibes 7c1.xiz
+%%DATADIR%%/banks/net-wisdom/0127-Vibes no_trem.xiz
+%%DATADIR%%/banks/net-wisdom/0128-Marimba 3.xiz
+%%DATADIR%%/banks/olivers-100/0001-Folk Flute.xiz
+%%DATADIR%%/banks/olivers-100/0002-Bamboo Flute.xiz
+%%DATADIR%%/banks/olivers-100/0003-FM Flute.xiz
+%%DATADIR%%/banks/olivers-100/0004-Triple Osc Flute.xiz
+%%DATADIR%%/banks/olivers-100/0005-Soprano Double Reed.xiz
+%%DATADIR%%/banks/olivers-100/0006-FM Saxophone.xiz
+%%DATADIR%%/banks/olivers-100/0007-FM Saxophone 2.xiz
+%%DATADIR%%/banks/olivers-100/0008-Concertina.xiz
+%%DATADIR%%/banks/olivers-100/0009-FM Brass 1.xiz
+%%DATADIR%%/banks/olivers-100/0010-FM Brass 2.xiz
+%%DATADIR%%/banks/olivers-100/0011-FM Brass 3.xiz
+%%DATADIR%%/banks/olivers-100/0012-Harmonica.xiz
+%%DATADIR%%/banks/olivers-100/0013-Soft Guitar.xiz
+%%DATADIR%%/banks/olivers-100/0014-Dist Jazz Guitar.xiz
+%%DATADIR%%/banks/olivers-100/0015-Dist Jazz Guitar 2.xiz
+%%DATADIR%%/banks/olivers-100/README
+%%DATADIR%%/banks/olivers-100/0016-Banjoey.xiz
+%%DATADIR%%/banks/olivers-100/0017-Twang Bass.xiz
+%%DATADIR%%/banks/olivers-100/0018-Bass Guitar - Slap.xiz
+%%DATADIR%%/banks/olivers-100/0019-FM Sitar.xiz
+%%DATADIR%%/banks/olivers-100/0020-King-O-Funk.xiz
+%%DATADIR%%/banks/olivers-100/0021-EP - Twangy.xiz
+%%DATADIR%%/banks/olivers-100/0022-EP - Muted.xiz
+%%DATADIR%%/banks/olivers-100/0023-EP - Brighter.xiz
+%%DATADIR%%/banks/olivers-100/0024-Far Out EP.xiz
+%%DATADIR%%/banks/olivers-100/0025-Clavinoid.xiz
+%%DATADIR%%/banks/olivers-100/0026-Harpsichord.xiz
+%%DATADIR%%/banks/olivers-100/0027-Toy Piano.xiz
+%%DATADIR%%/banks/olivers-100/0028-Mallets.xiz
+%%DATADIR%%/banks/olivers-100/0029-Steel Drums.xiz
+%%DATADIR%%/banks/olivers-100/0030-Balinese Chimes.xiz
+%%DATADIR%%/banks/olivers-100/0031-Muffled Chimes.xiz
+%%DATADIR%%/banks/olivers-100/0032-Drum Kit.xiz
+%%DATADIR%%/banks/olivers-100/0033-Big Crunchy.xiz
+%%DATADIR%%/banks/olivers-100/0034-Big Flangey.xiz
+%%DATADIR%%/banks/olivers-100/0035-Numanesque.xiz
+%%DATADIR%%/banks/olivers-100/0036-240 Grit Lead.xiz
+%%DATADIR%%/banks/olivers-100/0037-320 Grit Lead.xiz
+%%DATADIR%%/banks/olivers-100/0038-Gentle Triangle Lead.xiz
+%%DATADIR%%/banks/olivers-100/0039-Sliding Squares Lead.xiz
+%%DATADIR%%/banks/olivers-100/0040-Pheasant Lead.xiz
+%%DATADIR%%/banks/olivers-100/0041-Plinker Bell.xiz
+%%DATADIR%%/banks/olivers-100/0042-Low pH Lead.xiz
+%%DATADIR%%/banks/olivers-100/0043-Hovabotalilfanfeer.xiz
+%%DATADIR%%/banks/olivers-100/0044-Muted Fanfare.xiz
+%%DATADIR%%/banks/olivers-100/0045-Bink Bink Lead.xiz
+%%DATADIR%%/banks/olivers-100/0046-Bogus PWM Lead.xiz
+%%DATADIR%%/banks/olivers-100/0047-Dirty Vibrato Lead.xiz
+%%DATADIR%%/banks/olivers-100/0048-Wichita Whoop.xiz
+%%DATADIR%%/banks/olivers-100/0049-Bitey Triangle Lead.xiz
+%%DATADIR%%/banks/olivers-100/0050-70s Triangle Lead.xiz
+%%DATADIR%%/banks/olivers-100/0051-Agro Odds Lead.xiz
+%%DATADIR%%/banks/olivers-100/0052-Soft Synth Brass.xiz
+%%DATADIR%%/banks/olivers-100/0053-The Quack.xiz
+%%DATADIR%%/banks/olivers-100/0054-Funky Reso Bass.xiz
+%%DATADIR%%/banks/olivers-100/0055-ssaB oseR yknuF.xiz
+%%DATADIR%%/banks/olivers-100/0056-Creeky Reso Base.xiz
+%%DATADIR%%/banks/olivers-100/0057-Synth Bass.xiz
+%%DATADIR%%/banks/olivers-100/0058-Basic Thick Bass.xiz
+%%DATADIR%%/banks/olivers-100/0059-Dirt Encrusted Bass.xiz
+%%DATADIR%%/banks/olivers-100/0060-Punch Bass.xiz
+%%DATADIR%%/banks/olivers-100/0061-Formant Bass.xiz
+%%DATADIR%%/banks/olivers-100/0062-Distorted BIG Bass.xiz
+%%DATADIR%%/banks/olivers-100/0063-Bass Analogy.xiz
+%%DATADIR%%/banks/olivers-100/0064-Frankenstein Bass.xiz
+%%DATADIR%%/banks/olivers-100/0065-Osiris Pad.xiz
+%%DATADIR%%/banks/olivers-100/0066-Phased Pad.xiz
+%%DATADIR%%/banks/olivers-100/0067-Growing Pad.xiz
+%%DATADIR%%/banks/olivers-100/0068-Vintage Sweep Pad.xiz
+%%DATADIR%%/banks/olivers-100/0069-Mellow Echo Pad.xiz
+%%DATADIR%%/banks/olivers-100/0070-Flanged Wind Pad.xiz
+%%DATADIR%%/banks/olivers-100/0071-Warble Pad.xiz
+%%DATADIR%%/banks/olivers-100/0072-Organz from Outta Space.xiz
+%%DATADIR%%/banks/olivers-100/0073-Shimmer Swell.xiz
+%%DATADIR%%/banks/olivers-100/0074-80s Poly 5ths.xiz
+%%DATADIR%%/banks/olivers-100/0075-Swell 5ths.xiz
+%%DATADIR%%/banks/olivers-100/0076-Vastness 5ths.xiz
+%%DATADIR%%/banks/olivers-100/0077-Celestial 5ths.xiz
+%%DATADIR%%/banks/olivers-100/0078-Supersaw Snit.xiz
+%%DATADIR%%/banks/olivers-100/0079-Subtle Supersaw Strings.xiz
+%%DATADIR%%/banks/olivers-100/0080-Jarre Strings.xiz
+%%DATADIR%%/banks/olivers-100/0081-Phased String Machine.xiz
+%%DATADIR%%/banks/olivers-100/0082-Tronic Strings.xiz
+%%DATADIR%%/banks/olivers-100/0083-Tronic Voices.xiz
+%%DATADIR%%/banks/olivers-100/0084-Welcome to the 80s.xiz
+%%DATADIR%%/banks/olivers-100/0085-Bright 80s Horn Stab.xiz
+%%DATADIR%%/banks/olivers-100/0086-Star Voyage Pad.xiz
+%%DATADIR%%/banks/olivers-100/0087-Breathy Too.xiz
+%%DATADIR%%/banks/olivers-100/0088-Outer Galaxy Pad.xiz
+%%DATADIR%%/banks/olivers-100/0089-Iz Da Beatz.xiz
+%%DATADIR%%/banks/olivers-100/0090-Vintage Unison.xiz
+%%DATADIR%%/banks/olivers-100/0091-Breezy Chord.xiz
+%%DATADIR%%/banks/olivers-100/0092-Airy Chord.xiz
+%%DATADIR%%/banks/olivers-100/0093-Chimey Chord.xiz
+%%DATADIR%%/banks/olivers-100/0094-Donk Donk Chord.xiz
+%%DATADIR%%/banks/olivers-100/0095-Gross and Distorted.xiz
+%%DATADIR%%/banks/olivers-100/0096-Drifty Noisy 5ths.xiz
+%%DATADIR%%/banks/olivers-100/0097-Passing Comet.xiz
+%%DATADIR%%/banks/olivers-100/0098-Sweepy Noisy Pulses.xiz
+%%DATADIR%%/banks/olivers-100/0099-Robot Overlords.xiz
+%%DATADIR%%/banks/olivers-100/0100-Scrubbed Launch.xiz
+%%DATADIR%%/banks/olivers-100/0101-Alien Lawnmower.xiz
+%%DATADIR%%/banks/olivers-100/0102-RacecaR.xiz
+%%DATADIR%%/banks/olivers-100/0103-Electric Swell.xiz
+%%DATADIR%%/banks/olivers-100/0104-Classic FM Twang.xiz
+%%DATADIR%%/banks/olivers-100/0105-Ominosity.xiz
+%%DATADIR%%/banks/olivers-100/0106-Unpleasantly Drunk.xiz
+%%DATADIR%%/banks/olivers-100/0107-Hammering Metal.xiz
+%%DATADIR%%/banks/olivers-100/0108-Boiling Cauldron.xiz
+%%DATADIR%%/banks/olivers-100/0109-Crickets.xiz
+%%DATADIR%%/banks/olivers-100/0110-Jumbo Jet.xiz
+%%DATADIR%%/banks/olivers-100/0111-Alien Chimes.xiz
+%%DATADIR%%/banks/olivers-100/0112-Synth Hero Lead.xiz
+%%DATADIR%%/banks/olivers-100/0113-Jan H Lead.xiz
+%%DATADIR%%/banks/olivers-100/0114-Soft Saw Lead.xiz
+%%DATADIR%%/banks/olivers-100/0115-Growling Magma.xiz
+%%DATADIR%%/banks/olivers-100/0116-Chirpy lead.xiz
+%%DATADIR%%/banks/olivers-100/0117-Devolved 5ths.xiz
+%%DATADIR%%/banks/olivers-100/0118-Flangey Swell.xiz
+%%DATADIR%%/banks/olivers-100/0119-Demo 1 Swell.xiz
+%%DATADIR%%/banks/olivers-100/0120-Phaser Pad.xiz
+%%DATADIR%%/banks/olivers-100/0122-Nu Gritar.xiz
+%%DATADIR%%/banks/olivers-100/0121-Another OB Thang.xiz
+%%DATADIR%%/banks/olivers-100/0123-Double Bass.xiz
+%%DATADIR%%/banks/olivers-100/0124-Simple Clonewheel.xiz
+%%DATADIR%%/banks/olivers-100/0125-Simple Clonewheel Percussion.xiz
+%%DATADIR%%/banks/olivers-100/0126-Prayer I.xiz
+%%DATADIR%%/banks/olivers-100/0127-Prayer II.xiz
+%%DATADIR%%/banks/olivers-100/0128-Vibra Toe Lead.xiz
+%%DATADIR%%/banks/olivers-other/.bankdir
+%%DATADIR%%/banks/olivers-other/0001-Bender Lead.xiz
+%%DATADIR%%/banks/olivers-other/0002-Yessound.xiz
+%%DATADIR%%/banks/olivers-other/0003-Deetwooned.xiz
+%%DATADIR%%/banks/olivers-other/0004-Bitey Bitey.xiz
+%%DATADIR%%/banks/olivers-other/0005-Bitey Bitey II.xiz
+%%DATADIR%%/banks/olivers-other/0006-Wailing PWM Lead.xiz
+%%DATADIR%%/banks/olivers-other/0007-Cutting PWM Lead.xiz
+%%DATADIR%%/banks/olivers-other/0008-Slippery Lead.xiz
+%%DATADIR%%/banks/olivers-other/0009-AS - Flute 2.xiz
+%%DATADIR%%/banks/olivers-other/0010-FM Clarinet Lead.xiz
+%%DATADIR%%/banks/olivers-other/0011-Blue Lead.xiz
+%%DATADIR%%/banks/olivers-other/0014-Warm Pad.xiz
+%%DATADIR%%/banks/olivers-other/0015-Choo Stab.xiz
+%%DATADIR%%/banks/olivers-other/0016-Choo Stab II.xiz
+%%DATADIR%%/banks/olivers-other/0028-Nasal Bass.xiz
+%%DATADIR%%/banks/olivers-other/0019-Distorted Organ.xiz
+%%DATADIR%%/banks/olivers-other/0020-Organ w_ Vibrato.xiz
+%%DATADIR%%/banks/olivers-other/0021-Funky Alien Clavinet.xiz
+%%DATADIR%%/banks/olivers-other/0022-Reedy thing.xiz
+%%DATADIR%%/banks/olivers-other/0023-Space Flute.xiz
+%%DATADIR%%/banks/olivers-other/0024-Rustic flute thingy.xiz
+%%DATADIR%%/banks/olivers-other/0025-Country Fiddle.xiz
+%%DATADIR%%/banks/olivers-other/0026-String section.xiz
+%%DATADIR%%/banks/olivers-other/0027-Country Twang Guitar.xiz
+%%DATADIR%%/banks/olivers-other/0029-Fretless Bass.xiz
+%%DATADIR%%/banks/olivers-other/0033-Train Bell.xiz
+%%DATADIR%%/banks/olivers-other/0034-Drip.xiz
+%%DATADIR%%/banks/olivers-other/0035-Clunk.xiz
+%%DATADIR%%/banks/olivers-other/0036-Tick.xiz
+%%DATADIR%%/banks/olivers-other/0037-Nostromo.xiz
+%%DATADIR%%/banks/olivers-other/0038-Deep Zyn.xiz
+%%DATADIR%%/banks/olivers-other/0039-Hoover Craft.xiz
+%%DATADIR%%/banks/olivers-other/0042-Crunchy Bass.xiz
+%%DATADIR%%/banks/olivers-other/0043-Funk Bass.xiz
+%%DATADIR%%/banks/olivers-other/0044-Saw Bass.xiz
+%%DATADIR%%/banks/olivers-other/0045-Soft Saw Bass.xiz
+%%DATADIR%%/banks/olivers-other/0046-Pwink Bass.xiz
+%%DATADIR%%/banks/olivers-other/0047-FM Growly Bass.xiz
+%%DATADIR%%/banks/olivers-other/0048-Flangey Bass.xiz
+%%DATADIR%%/banks/olivers-other/0049-Grungy Synth Bass.xiz
+%%DATADIR%%/banks/the_mysterious_bank/0001-strings_pad.xiz
+%%DATADIR%%/banks/the_mysterious_bank/0002-analog_strings.xiz
+%%DATADIR%%/banks/the_mysterious_bank/0003-smooth_strings_pad.xiz
+%%DATADIR%%/banks/the_mysterious_bank/0004-trance_strings_pad.xiz
+%%DATADIR%%/banks/the_mysterious_bank/0005-mega_string.xiz
+%%DATADIR%%/banks/the_mysterious_bank/0007-bass.xiz
+%%DATADIR%%/banks/the_mysterious_bank/0008-bass2.xiz
+%%DATADIR%%/banks/the_mysterious_bank/0009-agressive_bass.xiz
+%%DATADIR%%/banks/the_mysterious_bank/0010-synth_bass.xiz
+%%DATADIR%%/banks/the_mysterious_bank/0011-synth_bass_fat.xiz
+%%DATADIR%%/banks/the_mysterious_bank/0013-supersaw.xiz
+%%DATADIR%%/banks/the_mysterious_bank/0014-supersaw_wihout_release.xiz
+%%DATADIR%%/banks/the_mysterious_bank/0015-superpulse.xiz
+%%DATADIR%%/banks/the_mysterious_bank/0016-sine_pad.xiz
+%%DATADIR%%/banks/the_mysterious_bank/0018-organ1.xiz
+%%DATADIR%%/banks/the_mysterious_bank/0022-rock_organ.xiz
+%%DATADIR%%/banks/the_mysterious_bank/0020-pulse_organ.xiz
+%%DATADIR%%/banks/the_mysterious_bank/0021-rock_organ+distorsion.xiz
+%%DATADIR%%/banks/the_mysterious_bank/0023-space_organ.xiz
+%%DATADIR%%/banks/the_mysterious_bank/0024-space_organ2.xiz
+%%DATADIR%%/banks/the_mysterious_bank/0026-bell_pad.xiz
+%%DATADIR%%/banks/the_mysterious_bank/0027-inna_bell_like.xiz
+%%DATADIR%%/banks/the_mysterious_bank/0029-hard_pulse.xiz
+%%DATADIR%%/banks/the_mysterious_bank/0030-power_pulsions_lead.xiz
+%%DATADIR%%/banks/the_mysterious_bank/0031-wah_sine.xiz
+%%DATADIR%%/banks/the_mysterious_bank/0032-.xiz
+%%DATADIR%%/banks/the_mysterious_bank/0034-alert_!.xiz
+%%DATADIR%%/banks/the_mysterious_bank/0035-alarm2.xiz
+%%DATADIR%%/banks/the_mysterious_bank/0036-glitch.xiz
+%%DATADIR%%/banks/the_mysterious_bank/0037-the_rain.xiz
+%%DATADIR%%/banks/the_mysterious_bank/0038-the_starting_machine.xiz
+%%DATADIR%%/banks/the_mysterious_bank/0039-thunder.xiz
+%%DATADIR%%/banks/the_mysterious_bank/README
+%%DATADIR%%/banks/the_mysterious_bank_2/0001-analog strings.xiz
+%%DATADIR%%/banks/the_mysterious_bank_2/0003-fingered_bass.xiz
+%%DATADIR%%/banks/the_mysterious_bank_2/0004-synth_bass.xiz
+%%DATADIR%%/banks/the_mysterious_bank_2/0005-synth_bass_2.xiz
+%%DATADIR%%/banks/the_mysterious_bank_2/0006-synth_bass_3.xiz
+%%DATADIR%%/banks/the_mysterious_bank_2/0007-synth_bass_4.xiz
+%%DATADIR%%/banks/the_mysterious_bank_2/0009-organ1.xiz
+%%DATADIR%%/banks/the_mysterious_bank_2/0010-organ2.xiz
+%%DATADIR%%/banks/the_mysterious_bank_2/0011-organ3.xiz
+%%DATADIR%%/banks/the_mysterious_bank_2/0012-church_organ.xiz
+%%DATADIR%%/banks/the_mysterious_bank_2/0014-synth_bell.xiz
+%%DATADIR%%/banks/the_mysterious_bank_2/0015-rhodes1.xiz
+%%DATADIR%%/banks/the_mysterious_bank_2/0016-pseudo_steeldrums.xiz
+%%DATADIR%%/banks/the_mysterious_bank_2/0017-musicbox.xiz
+%%DATADIR%%/banks/the_mysterious_bank_2/0019-sine_pad.xiz
+%%DATADIR%%/banks/the_mysterious_bank_2/0020-sine_pad2.xiz
+%%DATADIR%%/banks/the_mysterious_bank_2/0021-power_dnb.xiz
+%%DATADIR%%/banks/the_mysterious_bank_2/0022-fantasy_choir.xiz
+%%DATADIR%%/banks/the_mysterious_bank_2/0023-heavy_metal_guitar.xiz
+%%DATADIR%%/banks/the_mysterious_bank_2/0024-synth_flute.xiz
+%%DATADIR%%/banks/the_mysterious_bank_2/0026-kick.xiz
+%%DATADIR%%/banks/the_mysterious_bank_2/0027-hithat.xiz
+%%DATADIR%%/banks/the_mysterious_bank_2/0028-snare.xiz
+%%DATADIR%%/banks/the_mysterious_bank_2/0030-canyon_wind.xiz
+%%DATADIR%%/banks/the_mysterious_bank_2/0031-etrange_sound.xiz
+%%DATADIR%%/banks/the_mysterious_bank_2/0032-mega_alert.xiz
+%%DATADIR%%/banks/the_mysterious_bank_2/0033-new_glitch.xiz
+%%DATADIR%%/banks/the_mysterious_bank_2/0034-radio.xiz
+%%DATADIR%%/banks/the_mysterious_bank_2/0035-the_drunk_world.xiz
+%%DATADIR%%/banks/the_mysterious_bank_2/0036-ufo.xiz
+%%DATADIR%%/banks/the_mysterious_bank_2/0037-ufo2.xiz
+%%DATADIR%%/banks/the_mysterious_bank_2/0038-8_bit_car.xiz
+%%DATADIR%%/banks/the_mysterious_bank_3/0001-soft_strings.xiz
+%%DATADIR%%/banks/the_mysterious_bank_3/0002-sines_pad.xiz
+%%DATADIR%%/banks/the_mysterious_bank_3/0003-at_saturnus.xiz
+%%DATADIR%%/banks/the_mysterious_bank_3/0004-echoes.xiz
+%%DATADIR%%/banks/the_mysterious_bank_3/0005-echoes2.xiz
+%%DATADIR%%/banks/the_mysterious_bank_3/0007-compad.xiz
+%%DATADIR%%/banks/the_mysterious_bank_3/0008-padding.xiz
+%%DATADIR%%/banks/the_mysterious_bank_3/0009-res_pad.xiz
+%%DATADIR%%/banks/the_mysterious_bank_3/0010-supersaw.xiz
+%%DATADIR%%/banks/the_mysterious_bank_3/0011-portal2_lead.xiz
+%%DATADIR%%/banks/the_mysterious_bank_3/0013-fantasy_bell.xiz
+%%DATADIR%%/banks/the_mysterious_bank_3/0014-dreaming_bells.xiz
+%%DATADIR%%/banks/the_mysterious_bank_3/0015-dreaming_bells_dnb.xiz
+%%DATADIR%%/banks/the_mysterious_bank_3/0016-mega_bell.xiz
+%%DATADIR%%/banks/the_mysterious_bank_3/0017-in_the_space.xiz
+%%DATADIR%%/banks/the_mysterious_bank_3/0019-a_bass.xiz
+%%DATADIR%%/banks/the_mysterious_bank_3/0020-synth_bass.xiz
+%%DATADIR%%/banks/the_mysterious_bank_3/0021-synth_bass_2.xiz
+%%DATADIR%%/banks/the_mysterious_bank_3/0022-synth_bass_3.xiz
+%%DATADIR%%/banks/the_mysterious_bank_3/0023-dnb_bass.xiz
+%%DATADIR%%/banks/the_mysterious_bank_3/0024-fat_dnb_bass.xiz
+%%DATADIR%%/banks/the_mysterious_bank_3/0026-cool_organ.xiz
+%%DATADIR%%/banks/the_mysterious_bank_3/0027-cool_organ2.xiz
+%%DATADIR%%/banks/the_mysterious_bank_3/0029-new_arpeggio_3.xiz
+%%DATADIR%%/banks/the_mysterious_bank_3/0030-from_new_arp3.xiz
+%%DATADIR%%/banks/the_mysterious_bank_3/0032-ufo_blues.xiz
+%%DATADIR%%/banks/the_mysterious_bank_3/0033-ufo_funk.xiz
+%%DATADIR%%/banks/the_mysterious_bank_3/0034-synth_guitar.xiz
+%%DATADIR%%/banks/the_mysterious_bank_3/0035-taped_instrument.xiz
+%%DATADIR%%/banks/the_mysterious_bank_3/0037-computer.xiz
+%%DATADIR%%/banks/the_mysterious_bank_3/0038-falling_stars.xiz
+%%DATADIR%%/banks/the_mysterious_bank_3/0039-real_glitch.xiz
+%%DATADIR%%/banks/the_mysterious_bank_4/0001-res_strings_pad.xiz
+%%DATADIR%%/banks/the_mysterious_bank_4/0002-another_respad.xiz
+%%DATADIR%%/banks/the_mysterious_bank_4/0003-strings_pad.xiz
+%%DATADIR%%/banks/the_mysterious_bank_4/0004-strings_pad_2.xiz
+%%DATADIR%%/banks/the_mysterious_bank_4/0005-synth_strings.xiz
+%%DATADIR%%/banks/the_mysterious_bank_4/0007-from_another_space.xiz
+%%DATADIR%%/banks/the_mysterious_bank_4/0008-from_another_galaxy.xiz
+%%DATADIR%%/banks/the_mysterious_bank_4/0009-from_another_planet.xiz
+%%DATADIR%%/banks/the_mysterious_bank_4/0010-unamed_pad.xiz
+%%DATADIR%%/banks/the_mysterious_bank_4/0011-arpeggio1.xiz
+%%DATADIR%%/banks/the_mysterious_bank_4/0013-metal_bell.xiz
+%%DATADIR%%/banks/the_mysterious_bank_4/0014-bell.xiz
+%%DATADIR%%/banks/the_mysterious_bank_4/0015-belly.xiz
+%%DATADIR%%/banks/the_mysterious_bank_4/0016-sine_pad.xiz
+%%DATADIR%%/banks/the_mysterious_bank_4/0017-wil_aow_space.xiz
+%%DATADIR%%/banks/the_mysterious_bank_4/0019-bass_pad.xiz
+%%DATADIR%%/banks/the_mysterious_bank_4/0020-bass_pad_fat.xiz
+%%DATADIR%%/banks/the_mysterious_bank_4/0021-synth_bass.xiz
+%%DATADIR%%/banks/the_mysterious_bank_4/0022-synth_bass_2.xiz
+%%DATADIR%%/banks/the_mysterious_bank_4/0023-hard_bass.xiz
+%%DATADIR%%/banks/the_mysterious_bank_4/0024-pseudo_doublebass.xiz
+%%DATADIR%%/banks/the_mysterious_bank_4/0025-synth_bass_3.xiz
+%%DATADIR%%/banks/the_mysterious_bank_4/0027-funky_lead.xiz
+%%DATADIR%%/banks/the_mysterious_bank_4/0028-daft_punk_lead.xiz
+%%DATADIR%%/banks/the_mysterious_bank_4/0029-synth_guitar.xiz
+%%DATADIR%%/banks/the_mysterious_bank_4/0031-rhodes.xiz
+%%DATADIR%%/banks/the_mysterious_bank_4/0032-rhodes_2.xiz
+%%DATADIR%%/banks/the_mysterious_bank_4/0033-80s_rhodes.xiz
+%%DATADIR%%/banks/the_mysterious_bank_4/0035-organ.xiz
+%%DATADIR%%/banks/the_mysterious_bank_4/0036-organ_not_distorted.xiz
+%%DATADIR%%/banks/the_mysterious_bank_4/0037-old_organ.xiz
+%%DATADIR%%/banks/the_mysterious_bank_4/0039-jazz_guitar.xiz

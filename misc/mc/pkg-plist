@@ -263,6 +263,7 @@ man/man1/mcview.1.gz
 %%EDITOR%%%%DATADIR%%/syntax/glsl.syntax
 %%EDITOR%%%%DATADIR%%/syntax/go.syntax
 %%EDITOR%%%%DATADIR%%/syntax/haskell.syntax
+%%EDITOR%%%%DATADIR%%/syntax/hive.syntax
 %%EDITOR%%%%DATADIR%%/syntax/html.syntax
 %%EDITOR%%%%DATADIR%%/syntax/idl.syntax
 %%EDITOR%%%%DATADIR%%/syntax/ini.syntax
@@ -278,6 +279,7 @@ man/man1/mcview.1.gz
 %%EDITOR%%%%DATADIR%%/syntax/m4.syntax
 %%EDITOR%%%%DATADIR%%/syntax/mail.syntax
 %%EDITOR%%%%DATADIR%%/syntax/makefile.syntax
+%%EDITOR%%%%DATADIR%%/syntax/markdown.syntax
 %%EDITOR%%%%DATADIR%%/syntax/ml.syntax
 %%EDITOR%%%%DATADIR%%/syntax/named.syntax
 %%EDITOR%%%%DATADIR%%/syntax/nemerle.syntax
@@ -292,6 +294,7 @@ man/man1/mcview.1.gz
 %%EDITOR%%%%DATADIR%%/syntax/povray.syntax
 %%EDITOR%%%%DATADIR%%/syntax/procmail.syntax
 %%EDITOR%%%%DATADIR%%/syntax/properties.syntax
+%%EDITOR%%%%DATADIR%%/syntax/protobuf.syntax
 %%EDITOR%%%%DATADIR%%/syntax/puppet.syntax
 %%EDITOR%%%%DATADIR%%/syntax/python.syntax
 %%EDITOR%%%%DATADIR%%/syntax/r.syntax
@@ -306,6 +309,7 @@ man/man1/mcview.1.gz
 %%EDITOR%%%%DATADIR%%/syntax/syntax.syntax
 %%EDITOR%%%%DATADIR%%/syntax/tcl.syntax
 %%EDITOR%%%%DATADIR%%/syntax/texinfo.syntax
+%%EDITOR%%%%DATADIR%%/syntax/ts.syntax
 %%EDITOR%%%%DATADIR%%/syntax/tt.syntax
 %%EDITOR%%%%DATADIR%%/syntax/unknown.syntax
 %%EDITOR%%%%DATADIR%%/syntax/verilog.syntax

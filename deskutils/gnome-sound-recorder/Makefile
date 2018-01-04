@@ -14,7 +14,7 @@ LIB_DEPENDS=	libgjs.so:lang/gjs
 
 PORTSCOUT=	limitw:1,even
 
-USES=		gettext gmake gnome libtool pathfix pkgconfig python:3 tar:xz
+USES=		gettext gmake gnome libtool pathfix pkgconfig python:3.4+ tar:xz
 USE_GNOME=	gnomedesktop3 gtk30 intlhack introspection:build
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes

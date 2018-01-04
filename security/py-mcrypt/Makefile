@@ -17,7 +17,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libmcrypt.so:security/libmcrypt
 
-USES=		python
+USES=		python:2.7
 USE_PYTHON=	distutils autoplist
 PYDISTUTILS_BUILDARGS=	-L${LOCALBASE}/lib
 PYDISTUTILS_BUILD_TARGET=	build_ext

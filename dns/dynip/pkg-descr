@@ -1,0 +1,29 @@
+dynip is a daemon that monitors your host system ISP assigned dynamic IP
+address. If it changes, dynip automatically updates the dynamic DNS IP
+address at your dynamic DNS hosting provider then posts an informational
+message to the host system log followed by sending an informational email
+to user root.
+
+The dynip daemon and the daily script are very simple Bourne Shell type
+scripts containing self documenting embedded comments. They use the
+"fetch" command to issue the standard browser style URL format used by
+most dynamic DNS hosting providers for the purpose of actual updating
+the registered IP address with the new IP address. There are some small
+variations in the URL format depending on the dynamic DNS hosting
+provider being used.
+
+Mandatory requirements. The host that is running dynip "MUST" be cabled
+directly to the ISP modem and be using the public routable dynamic IP 
+address assigned by the ISP.
+
+Includes templates for these dynamic DNS hosting providers
+     namecheap.com
+     freedns.afraid.org
+     changeip.com
+     no-ip.com
+     zoneedit.com
+     easydns.com
+and is simple to configure for other providers that use a variation
+of the URL format.
+
+WWW: http://dynip.sourceforge.net/

@@ -14,7 +14,7 @@ COMMENT=	TOMOE GTK+ library
 LIB_DEPENDS=	libtomoe.so:japanese/tomoe
 
 GNU_CONFIGURE=	yes
-USES=		gmake libtool pathfix pkgconfig python:build
+USES=		gmake libtool pathfix pkgconfig python:2.7,build
 USE_GNOME=	gtk20
 USE_LDCONFIG=	yes
 

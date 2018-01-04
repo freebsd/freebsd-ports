@@ -13,7 +13,7 @@ COMMENT=	World Timezone Definitions for Python
 
 LICENSE=	MIT
 
-USES?=		python zip
+USES=		python zip
 USE_PYTHON=	autoplist distutils
 
 NO_ARCH=	yes

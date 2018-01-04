@@ -17,7 +17,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libicudata.so:devel/icu
 
-USES?=		python
+USES=		python
 USE_CXXSTD=	c++11
 USE_PYTHON=	distutils autoplist
 

@@ -2,26 +2,30 @@
 # $FreeBSD$
 
 PORTNAME=	libitl
-PORTVERSION=	0.7.0
-PORTREVISION=	1
+PORTVERSION=	0.8.0
+DISTVERSIONPREFIX=	v
 CATEGORIES=	arabic
-MASTER_SITES=	SF/arabeyes/ITL%20Library%20%28${PORTNAME}%29/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	cpm@FreeBSD.org
 COMMENT=	API abstraction to common Islamic calculations
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-GNU_CONFIGURE=	yes
-USE_LDCONFIG=	${PREFIX}/lib/itl
-MAKE_JOBS_UNSAFE=	yes
+USES=		cmake pkgconfig
+USE_LDCONFIG=	yes
 
-post-install:
-.for f in libitl.so libitl.so.0
-	${RM} ${STAGEDIR}${PREFIX}/lib/itl/$f
-	${LN} -s libitl.so.0.0.7 ${STAGEDIR}${PREFIX}/lib/itl/$f
-.endfor
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/itl/libitl.so
+USE_GITHUB=	yes
+GH_ACCOUNT=	arabeyes-org
+GH_PROJECT=	ITL
+GH_TAGNAME=	f8f41cc
+
+PORTDOCS=	*
+
+OPTIONS_DEFINE=	DOCS
+
+post-install-DOCS-on:
+	(cd ${WRKSRC}/new_method/references && ${COPYTREE_SHARE} \
+		"${PORTDOCS}" ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>

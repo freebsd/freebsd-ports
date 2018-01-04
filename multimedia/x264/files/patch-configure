@@ -1,6 +1,6 @@
---- configure.orig	2017-06-26 20:45:05 UTC
+--- configure.orig	2017-12-25 21:45:05 UTC
 +++ configure
-@@ -682,12 +682,6 @@ case $host_cpu in
+@@ -692,12 +692,6 @@ case $host_cpu in
          AS_EXT=".asm"
          ASFLAGS="$ASFLAGS -DARCH_X86_64=0 -I\$(SRCPATH)/common/x86/"
          if [ $compiler = GNU ]; then
@@ -13,16 +13,16 @@
              CFLAGS="-m32 $CFLAGS"
              LDFLAGS="-m32 $LDFLAGS"
          fi
-@@ -702,7 +696,7 @@ case $host_cpu in
+@@ -712,7 +706,7 @@ case $host_cpu in
              ASFLAGS="$ASFLAGS -f elf32"
          fi
          ;;
 -    x86_64)
 +    amd64|x86_64)
          ARCH="X86_64"
-         AS="${AS-yasm}"
+         AS="${AS-nasm}"
          AS_EXT=".asm"
-@@ -776,7 +770,7 @@ case $host_cpu in
+@@ -786,7 +780,7 @@ case $host_cpu in
              AS="${AS-${CC}}"
          fi
          ;;
@@ -31,16 +31,16 @@
          ARCH="AARCH64"
          stack_alignment=16
          AS="${AS-${CC}}"
-@@ -875,7 +869,7 @@ elif [ $compiler = ICC -a $ARCH = X86 ]; then
+@@ -888,7 +882,7 @@ elif [ $compiler = ICC -a $ARCH = X86 ]; then
      fi
  fi
  
 -if [ $asm = auto -a \( $ARCH = X86 -o $ARCH = X86_64 \) ] ; then
 +if [ $cli_libx264 != system -a $asm = auto -a \( $ARCH = X86 -o $ARCH = X86_64 \) ] ; then
-     if ! as_check "vpmovzxwd ymm0, xmm0" ; then
+     if ! as_check "vmovdqa32 [eax]{k1}{z}, zmm0" ; then
          VER=`($AS --version || echo no assembler) 2>/dev/null | head -n 1`
          echo "Found $VER"
-@@ -889,9 +883,6 @@ if [ $asm = auto -a \( $ARCH = X86 -o $ARCH = X86_64 \
+@@ -901,9 +895,6 @@ if [ $asm = auto -a \( $ARCH = X86 -o $ARCH = X86_64 \
  fi
  
  if [ $asm = auto -a $ARCH = ARM ] ; then
@@ -50,7 +50,7 @@
      cc_check '' '' '__asm__("add r0, r1, r2");' && define HAVE_ARM_INLINE_ASM
      if [ $compiler = CL ] && cpp_check '' '' 'defined(_M_ARM) && _M_ARM >= 7' ; then
          define HAVE_ARMV6
-@@ -902,9 +893,8 @@ if [ $asm = auto -a $ARCH = ARM ] ; then
+@@ -914,9 +905,8 @@ if [ $asm = auto -a $ARCH = ARM ] ; then
          cc_check '' '' '__asm__("vadd.i16 q0, q0, q0");' && define HAVE_NEON
          ASFLAGS="$ASFLAGS -c"
      else
@@ -62,7 +62,7 @@
      fi
  fi
  
-@@ -931,9 +921,8 @@ if [ $asm = auto -a $ARCH = MIPS ] ; then
+@@ -943,9 +933,8 @@ if [ $asm = auto -a $ARCH = MIPS ] ; then
      if cc_check '' '' '__asm__("addvi.b $w0, $w1, 1");' ; then
          define HAVE_MSA
      else
@@ -74,7 +74,7 @@
      fi
  fi
  
-@@ -1245,10 +1234,6 @@ if cc_check '' -Wshadow ; then
+@@ -1257,10 +1246,6 @@ if cc_check '' -Wshadow ; then
      CFLAGS="-Wshadow $CFLAGS"
  fi
  
@@ -85,7 +85,7 @@
  if [ $compiler = ICC -o $compiler = ICL ] ; then
      if cc_check 'extras/intel_dispatcher.h' '' 'x264_intel_dispatcher_override();' ; then
          define HAVE_INTEL_DISPATCHER
-@@ -1284,6 +1269,9 @@ if [ "$opencl" = "yes" ]; then
+@@ -1296,6 +1281,9 @@ if [ "$opencl" = "yes" ]; then
          opencl="yes"
          define HAVE_OPENCL
          libdl="-ldl"

@@ -13,7 +13,7 @@ COMMENT=	LDAP integration for django.contrib.auth
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django18>=1.3.1:www/py-django18
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django18>=1.3.1:www/py-django18@${FLAVOR}
 
 NO_ARCH=	yes
 USES=		python
@@ -22,9 +22,9 @@ USE_PYTHON=	autoplist distutils
 .include <bsd.port.pre.mk>
 
 .if ${PYTHON_REL} < 3000
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}ldap>0:net/py-ldap
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}ldap>0:net/py-ldap@${FLAVOR}
 .else
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pyldap>0:net/py-pyldap
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pyldap>0:net/py-pyldap@${FLAVOR}
 .endif
 
 .include <bsd.port.post.mk>

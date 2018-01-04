@@ -11,6 +11,8 @@ COMMENT=	Web picture gallery script
 
 LICENSE=	GPLv3
 
+IGNORE_WITH_PHP=	70 71 72
+
 OPTIONS_DEFINE=	DOCS IMAGEMAGICK
 IMAGEMAGICK_DESC=	Use ImageMagick instead of PHP GD extension
 

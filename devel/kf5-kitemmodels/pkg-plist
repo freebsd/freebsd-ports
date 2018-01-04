@@ -1,3 +1,4 @@
+etc/xdg/kitemmodels.categories
 include/KF5/KItemModels/KBreadcrumbSelectionModel
 include/KF5/KItemModels/KCheckableProxyModel
 include/KF5/KItemModels/KConcatenateRowsProxyModel

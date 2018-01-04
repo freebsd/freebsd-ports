@@ -2,4 +2,4 @@ kiwi offers a set of enhanced widgets for Python based on PyGTK.
 It also includes a framework designed to make creating Python
 applications using PyGTK and libglade much simpler.
 
-WWW: http://www.async.com.br/projects/kiwi
+WWW: https://pypi.python.org/pypi/kiwi-gtk

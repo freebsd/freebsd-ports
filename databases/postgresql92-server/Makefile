@@ -30,6 +30,7 @@ USES+=		tar:bzip2 cpe
 .if !defined(NO_BUILD)
 USES+=	gmake
 GNU_CONFIGURE=	yes
+LLD_UNSAFE=	yes
 .endif
 
 PG_USER?=	pgsql

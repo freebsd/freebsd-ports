@@ -10,7 +10,8 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	dvl@FreeBSD.org
 COMMENT=	Fast computation of Levenshtein distance and string similarity
 
-LICENSE=	GNU
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		python
 USE_PYTHON=	distutils autoplist

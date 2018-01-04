@@ -3,6 +3,7 @@
 
 PORTNAME=	unoconv
 PORTVERSION=	0.6
+PORTREVISION=	1
 CATEGORIES=	textproc python
 MASTER_SITES=	http://dag.wieers.com/home-made/${PORTNAME}/ \
 		SF/nemysisfreebsdp/textproc/:icons

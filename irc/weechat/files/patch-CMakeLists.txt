@@ -1,4 +1,4 @@
---- CMakeLists.txt.orig	2017-05-13 05:07:57 UTC
+--- CMakeLists.txt.orig	2017-12-03 10:55:08 UTC
 +++ CMakeLists.txt
 @@ -64,6 +64,10 @@ else()
    set(LIBDIR ${CMAKE_INSTALL_PREFIX}/lib/${PROJECT_NAME})
@@ -11,7 +11,7 @@
  if(NOT DEFINED SHAREDIR)
    set(SHAREDIR ${CMAKE_INSTALL_PREFIX}/share)
  endif()
-@@ -88,11 +92,13 @@ option(ENABLE_GNUTLS     "Enable SSLv3/T
+@@ -88,12 +92,14 @@ option(ENABLE_GNUTLS     "Enable SSLv3/T
  option(ENABLE_LARGEFILE  "Enable Large File Support"                 ON)
  option(ENABLE_ALIAS      "Enable Alias plugin"                       ON)
  option(ENABLE_ASPELL     "Enable Aspell plugin"                      ON)
@@ -21,11 +21,12 @@
  option(ENABLE_CHARSET    "Enable Charset plugin"                     ON)
  option(ENABLE_EXEC       "Enable Exec plugin"                        ON)
  option(ENABLE_FIFO       "Enable FIFO plugin"                        ON)
+ option(ENABLE_FSET       "Enable Fast Set plugin"                    ON)
 +option(ENABLE_ICONV      "Enable character conversion support"       ON)
  option(ENABLE_IRC        "Enable IRC plugin"                         ON)
  option(ENABLE_LOGGER     "Enable Logger plugin"                      ON)
  option(ENABLE_RELAY      "Enable Relay plugin"                       ON)
-@@ -168,6 +174,7 @@ endif()
+@@ -170,6 +176,7 @@ endif()
  # Check for libgcrypt
  find_package(GCRYPT REQUIRED)
  add_definitions(-DHAVE_GCRYPT)
@@ -33,7 +34,7 @@
  list(APPEND EXTRA_LIBS ${GCRYPT_LDFLAGS})
  
  # Check for GnuTLS
-@@ -186,10 +193,12 @@ endif()
+@@ -188,10 +195,12 @@ endif()
  find_package(ZLIB REQUIRED)
  add_definitions(-DHAVE_ZLIB)
  
@@ -50,7 +51,7 @@
  endif()
  
  # Check for CURL
-@@ -248,7 +257,7 @@ set(exec_prefix "\${prefix}")
+@@ -250,7 +259,7 @@ set(exec_prefix "\${prefix}")
  set(libdir "\${exec_prefix}/lib")
  set(includedir "\${prefix}/include")
  configure_file(${CMAKE_CURRENT_SOURCE_DIR}/weechat.pc.in ${CMAKE_CURRENT_BINARY_DIR}/weechat.pc @ONLY)

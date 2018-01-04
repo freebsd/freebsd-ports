@@ -12,10 +12,10 @@ COMMENT=	Backend storage application for graphite
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}twisted>=0:devel/py-twisted \
-		${PYTHON_PKGNAMEPREFIX}txamqp>=0.3:net/py-txamqp \
-		${PYTHON_PKGNAMEPREFIX}whisper>=0.9.10:databases/py-whisper \
-		${PYTHON_PKGNAMEPREFIX}django18>=1.4:www/py-django18
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}twisted>=0:devel/py-twisted@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}txamqp>=0.3:net/py-txamqp@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}whisper>=0.9.10:databases/py-whisper@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}django18>=1.4:www/py-django18@${FLAVOR}
 
 NO_ARCH=	yes
 USE_PYTHON=	distutils

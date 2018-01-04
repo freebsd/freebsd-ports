@@ -12,7 +12,7 @@ COMMENT=	GNU Radio OsmoSDR module
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	swig:devel/swig13 \
+BUILD_DEPENDS=	swig3.0:devel/swig30 \
 		cheetah:devel/py-cheetah
 LIB_DEPENDS=	libgnuradio-runtime.so:comms/gnuradio \
 		libgnuradio-pmt.so:comms/gnuradio \
@@ -20,8 +20,9 @@ LIB_DEPENDS=	libgnuradio-runtime.so:comms/gnuradio \
 		libboost_system.so:devel/boost-libs \
 		libboost_thread.so:devel/boost-libs
 
-USES=	cmake fortran pkgconfig python tar:tgz
+USES=	cmake fortran pkgconfig python:2.7 tar:tgz
 USE_LDCONFIG=	yes
+BINARY_ALIAS=	swig=swig3.0
 
 # See lib/CMakeLists.txt to enable more components
 CMAKE_ARGS+=	-DENABLE_DEFAULT:BOOL=OFF \

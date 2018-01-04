@@ -2,7 +2,7 @@
 
 PORTNAME=	gnuradio
 PORTVERSION=	3.7.10.1
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	comms astro hamradio
 MASTER_SITES=	http://gnuradio.org/releases/gnuradio/ \
 		LOCAL/db
@@ -13,15 +13,15 @@ COMMENT=	Amateur Radio Software defined radio
 LICENSE=	GPLv3
 
 BUILD_DEPENDS=	sdl-config:devel/sdl12 \
-		swig2.0:devel/swig20 \
-		cheetah:devel/py-cheetah \
-		${PYTHON_PKGNAMEPREFIX}lxml>0:devel/py-lxml \
+		swig3.0:devel/swig30 \
+		cheetah:devel/py-cheetah@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}lxml>0:devel/py-lxml@${PY_FLAVOR} \
 		xdg-open:devel/xdg-utils \
 		guile:lang/guile \
 		aconnect:audio/alsa-utils \
 		git:devel/git \
 		${PYNUMPY} \
-		${PYTHON_SITELIBDIR}/ephem/__init__.py:astro/pyephem
+		${PYTHON_SITELIBDIR}/ephem/__init__.py:astro/pyephem@${PY_FLAVOR}
 LIB_DEPENDS=	libcppunit.so:devel/cppunit \
 		libcodec2.so:audio/codec2 \
 		libfftw3.so:math/fftw3 \
@@ -37,6 +37,8 @@ LIB_DEPENDS=	libcppunit.so:devel/cppunit \
 		liborc-0.4.so:devel/orc
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+BROKEN_aarch64=		fails to compile: /usr/lib/clang/5.0.0/include/mmintrin.h:47:5: use of undeclared identifier '__builtin_ia32_emms'; did you mean '__builtin_isless'?
+
 # USES=compiler:c11 is necessary because base GCC fails:
 # volk/lib/volk_cpu.c: In function 'i_can_has_3dnow':
 # volk/lib/volk_cpu.c:62: error: can't find a register in class 'BREG' while reloading 'asm'
@@ -45,7 +47,7 @@ USES=		cmake:outsource compiler:c11 iconv perl5 pkgconfig pyqt:4 python:2.7 sheb
 SHEBANG_FILES=	grc/scripts/freedesktop/grc_setup_freedesktop.in \
 		gnuradio-runtime/python/gnuradio/ctrlport/gr-ctrlport-monitor \
 		gnuradio-runtime/python/gnuradio/ctrlport/gr-perf-monitorx
-CMAKE_ARGS+=	-DSWIG_EXECUTABLE:STRING="${LOCALBASE}/bin/swig2.0"\
+CMAKE_ARGS+=	-DSWIG_EXECUTABLE:STRING="${LOCALBASE}/bin/swig3.0"\
 		-DICONV_PREFIX:STRING="${ICONV_PREFIX}" \
 		-DICONV_LIB:STRING="X${ICONV_LIB}" \
 		-DENABLE_GR_CTRLPORT="YES" \
@@ -80,7 +82,7 @@ TESTING_DESC=	Include testing support
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 
 DOXYGEN_BUILD_DEPENDS=	doxygen:devel/doxygen \
-			sphinx-apidoc:textproc/py-sphinx \
+			sphinx-apidoc:textproc/py-sphinx@${PY_FLAVOR} \
 			dot:graphics/graphviz \
 			xmlto:textproc/xmlto \
 			freefont-ttf>0:x11-fonts/freefont-ttf

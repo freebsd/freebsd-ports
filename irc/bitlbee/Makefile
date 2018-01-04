@@ -41,7 +41,7 @@ LIBPURPLE_PREVENTS_MSG=	If libpurple is enabled, all native protocols must be di
 OTR_DESC=		Off-the-Record Messaging support
 LIBPURPLE_DESC=		Use libpurple for protocol support
 MSN_DESC=		Microsoft Messenger support
-OSCAR_DESC=		OSCAR (ICQ, AIM) support
+OSCAR_DESC=		OSCAR (ICQ) support
 SKYPE_DESC=		Skype support
 TWITTER_DESC=		Twitter support
 YAHOO_DESC=		Yahoo! Messenger support
@@ -83,7 +83,7 @@ OTR_LIB_DEPENDS=	libotr.so.5:security/libotr \
 			libgpg-error.so:security/libgpg-error
 SKYPE_CONFIGURE_ON=	--skype=1
 SKYPE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Skype4Py>0:net-im/py-skype4py
-SKYPE_USES=		python
+SKYPE_USES=		python:2.7
 TWITTER_CONFIGURE_OFF=	--twitter=0
 YAHOO_CONFIGURE_OFF=	--yahoo=0
 

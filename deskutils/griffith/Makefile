@@ -13,10 +13,10 @@ COMMENT=	Lightweight film collection manager
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>=0:databases/py-sqlite3 \
-		${PYTHON_PKGNAMEPREFIX}sqlalchemy10>=0.5:databases/py-sqlalchemy10 \
-		${PYTHON_PKGNAMEPREFIX}pillow>=0:graphics/py-pillow \
-		${PYTHON_PKGNAMEPREFIX}reportlab1>=1.19:print/py-reportlab1
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>=0:databases/py-sqlite3@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}sqlalchemy10>=0.5:databases/py-sqlalchemy10@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pillow>=0:graphics/py-pillow@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}reportlab1>=1.19:print/py-reportlab1@${PY_FLAVOR}
 
 USES=		gmake gettext python:2 shebangfix tar:xz
 SHEBANG_FILES=	griffith
@@ -28,10 +28,10 @@ OPTIONS_DEFINE=		CHARDET LXML
 OPTIONS_DEFAULT=	LXML
 
 CHARDET_DESC=		chardet support
-CHARDET_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}chardet>=0:textproc/py-chardet
+CHARDET_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}chardet>=0:textproc/py-chardet@${PY_FLAVOR}
 
 LXML_DESC=		lxml support
-LXML_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>=0:devel/py-lxml
+LXML_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>=0:devel/py-lxml@${PY_FLAVOR}
 
 post-patch:
 .for file in Makefile

@@ -22,6 +22,8 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 LIB_DEPENDS=	libpari.so:math/pari
 
 BROKEN=		does not compile: paridecl.h: conflicting types for 'mulreal'
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2018-01-27
 NOT_FOR_ARCHS=		aarch64
 NOT_FOR_ARCHS_REASON=	fails to compile: the collector has not been ported to this machine/OS combination
 

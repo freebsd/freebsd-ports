@@ -5,4 +5,4 @@ Every potential security flaw found in a given source code file (matching
 an entry in the ruleset) is called a ``hit,'' and the set of hits found
 during any particular run is called the ``hitlist.''
 
-WWW: http://www.dwheeler.com/flawfinder/
+WWW: https://www.dwheeler.com/flawfinder/

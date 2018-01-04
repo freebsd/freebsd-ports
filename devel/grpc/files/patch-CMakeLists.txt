@@ -1,4 +1,4 @@
---- CMakeLists.txt.orig	2017-10-26 19:11:22 UTC
+--- CMakeLists.txt.orig	2017-12-13 01:39:01 UTC
 +++ CMakeLists.txt
 @@ -144,7 +144,8 @@ if("${gRPC_CARES_PROVIDER}" STREQUAL "mo
      set(gRPC_INSTALL FALSE)
@@ -10,39 +10,39 @@
    if(TARGET c-ares::cares)
      set(_gRPC_CARES_LIBRARIES c-ares::cares)
    endif()
-@@ -828,6 +829,7 @@ add_library(gpr
-   src/core/lib/support/tmpfile_windows.c
-   src/core/lib/support/wrap_memcpy.c
+@@ -829,6 +830,7 @@ add_library(gpr
+   src/core/lib/support/tmpfile_windows.cc
+   src/core/lib/support/wrap_memcpy.cc
  )
 +set_target_properties(gpr PROPERTIES VERSION ${PACKAGE_VERSION} SOVERSION 1)
  
  if(WIN32 AND MSVC)
    set_target_properties(gpr PROPERTIES COMPILE_PDB_NAME "gpr"
-@@ -1220,6 +1222,7 @@ add_library(grpc
-   src/core/ext/filters/workarounds/workaround_utils.c
-   src/core/plugin_registry/grpc_plugin_registry.c
+@@ -1209,6 +1211,7 @@ add_library(grpc
+   src/core/ext/filters/workarounds/workaround_utils.cc
+   src/core/plugin_registry/grpc_plugin_registry.cc
  )
 +set_target_properties(grpc PROPERTIES VERSION ${PACKAGE_VERSION} SOVERSION 1)
  
  if(WIN32 AND MSVC)
    set_target_properties(grpc PROPERTIES COMPILE_PDB_NAME "grpc"
-@@ -1533,6 +1536,7 @@ add_library(grpc_cronet
-   src/core/ext/filters/load_reporting/server_load_reporting_plugin.c
-   src/core/plugin_registry/grpc_cronet_plugin_registry.c
+@@ -1523,6 +1526,7 @@ add_library(grpc_cronet
+   src/core/ext/filters/load_reporting/server_load_reporting_plugin.cc
+   src/core/plugin_registry/grpc_cronet_plugin_registry.cc
  )
 +set_target_properties(grpc_cronet PROPERTIES VERSION ${PACKAGE_VERSION} SOVERSION 1)
  
  if(WIN32 AND MSVC)
    set_target_properties(grpc_cronet PROPERTIES COMPILE_PDB_NAME "grpc_cronet"
-@@ -2383,6 +2387,7 @@ add_library(grpc_unsecure
-   src/core/ext/filters/workarounds/workaround_utils.c
-   src/core/plugin_registry/grpc_unsecure_plugin_registry.c
+@@ -2390,6 +2394,7 @@ target_include_directories(grpc_unsecure
+   PRIVATE ${CMAKE_CURRENT_BINARY_DIR}/third_party/cares/cares
+   PRIVATE ${CMAKE_CURRENT_BINARY_DIR}/third_party/gflags/include
  )
 +set_target_properties(grpc_unsecure PROPERTIES VERSION ${PACKAGE_VERSION} SOVERSION 1)
  
- if(WIN32 AND MSVC)
-   set_target_properties(grpc_unsecure PROPERTIES COMPILE_PDB_NAME "grpc_unsecure"
-@@ -2598,6 +2603,7 @@ add_library(grpc++
+ target_link_libraries(grpc_unsecure
+   ${_gRPC_BASELIB_LIBRARIES}
+@@ -2580,6 +2585,7 @@ add_library(grpc++
    src/cpp/util/time_cc.cc
    src/cpp/codegen/codegen_init.cc
  )
@@ -50,7 +50,7 @@
  
  if(WIN32 AND MSVC)
    set_target_properties(grpc++ PROPERTIES COMPILE_PDB_NAME "grpc++"
-@@ -3097,6 +3103,7 @@ add_library(grpc++_cronet
+@@ -3066,6 +3072,7 @@ add_library(grpc++_cronet
    third_party/nanopb/pb_decode.c
    third_party/nanopb/pb_encode.c
  )
@@ -58,7 +58,7 @@
  
  if(WIN32 AND MSVC)
    set_target_properties(grpc++_cronet PROPERTIES COMPILE_PDB_NAME "grpc++_cronet"
-@@ -3297,6 +3304,7 @@ add_library(grpc++_error_details
+@@ -3266,6 +3273,7 @@ add_library(grpc++_error_details
    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/status/status.grpc.pb.h
    src/cpp/util/error_details.cc
  )
@@ -66,7 +66,7 @@
  
  if(WIN32 AND MSVC)
    set_target_properties(grpc++_error_details PROPERTIES COMPILE_PDB_NAME "grpc++_error_details"
-@@ -3423,6 +3431,7 @@ add_library(grpc++_reflection
+@@ -3392,6 +3400,7 @@ add_library(grpc++_reflection
    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/reflection/v1alpha/reflection.pb.h
    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/reflection/v1alpha/reflection.grpc.pb.h
  )
@@ -74,7 +74,7 @@
  
  if(WIN32 AND MSVC)
    set_target_properties(grpc++_reflection PROPERTIES COMPILE_PDB_NAME "grpc++_reflection"
-@@ -3846,6 +3855,7 @@ add_library(grpc++_unsecure
+@@ -3815,6 +3824,7 @@ add_library(grpc++_unsecure
    src/cpp/util/time_cc.cc
    src/cpp/codegen/codegen_init.cc
  )
@@ -82,7 +82,7 @@
  
  if(WIN32 AND MSVC)
    set_target_properties(grpc++_unsecure PROPERTIES COMPILE_PDB_NAME "grpc++_unsecure"
-@@ -4159,6 +4169,7 @@ add_library(grpc_plugin_support
+@@ -4128,6 +4138,7 @@ add_library(grpc_plugin_support
    src/compiler/python_generator.cc
    src/compiler/ruby_generator.cc
  )
@@ -90,7 +90,7 @@
  
  if(WIN32 AND MSVC)
    set_target_properties(grpc_plugin_support PROPERTIES COMPILE_PDB_NAME "grpc_plugin_support"
-@@ -4668,6 +4679,7 @@ endif (gRPC_BUILD_TESTS)
+@@ -4637,6 +4648,7 @@ endif (gRPC_BUILD_TESTS)
  add_library(grpc_csharp_ext SHARED
    src/csharp/ext/grpc_csharp_ext.c
  )
@@ -98,7 +98,7 @@
  
  if(WIN32 AND MSVC)
    set_target_properties(grpc_csharp_ext PROPERTIES COMPILE_PDB_NAME "grpc_csharp_ext"
-@@ -10740,7 +10752,6 @@ add_executable(grpc_cpp_plugin
+@@ -10696,7 +10708,6 @@ add_executable(grpc_cpp_plugin
    src/compiler/cpp_plugin.cc
  )
  

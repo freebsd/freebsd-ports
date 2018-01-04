@@ -1,6 +1,6 @@
---- src/pthread_debug.cc.orig	2017-07-03 08:59:29 UTC
+--- src/pthread_debug.cc.orig	2017-11-21 10:41:21 UTC
 +++ src/pthread_debug.cc
-@@ -76,6 +76,7 @@ void print_pthread_attr(const char *call
+@@ -80,6 +80,7 @@ void print_pthread_attr(const char *call
  }
  
  
@@ -8,11 +8,11 @@
  void print_pthread_mutexattr(const char *caller,  pthread_mutexattr_t *m_attr)
  {
    (void) caller;
-@@ -120,6 +121,7 @@ void print_pthread_condattr(const char *
-   (void) c_attr;
+@@ -109,6 +110,7 @@ void print_pthread_mutexattr(const char 
+   }
  #endif
  }
 +#endif
  
  
- int PTHREAD_Debug = 0;
+ void print_pthread_condattr(const char *caller, pthread_condattr_t *c_attr)

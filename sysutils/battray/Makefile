@@ -13,8 +13,8 @@ COMMENT=	Display notebook battery status in tray
 LICENSE=	MIT
 
 USES=		python:3.3+
-USE_GNOME=	py3gobject3
-USE_PYTHON=	autoplist distutils
+USE_GNOME=	pygobject3
+USE_PYTHON=	autoplist distutils optsuffix
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	Carpetsmoker

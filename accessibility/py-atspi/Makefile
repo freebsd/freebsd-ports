@@ -19,8 +19,12 @@ RUN_DEPENDS=	${LOCALBASE}/libexec/at-spi2-registryd:accessibility/at-spi2-core
 CONFLICTS=	at-spi-1.[0-9]*
 PORTSCOUT=	limitw:1,even
 
-USES=		gettext gmake gnome localbase pathfix pkgconfig python:2 tar:xz
+USES=		gettext gmake gnome localbase pathfix pkgconfig python tar:xz
+USE_PYTHON=	flavors
 USE_GNOME=	intlhack pygobject3
+py34_PLIST=	${.CURDIR}/pkg-plist-py3
+py35_PLIST=	${.CURDIR}/pkg-plist-py3
+py36_PLIST=	${.CURDIR}/pkg-plist-py3
 GNU_CONFIGURE=	yes
 
 .include <bsd.port.mk>

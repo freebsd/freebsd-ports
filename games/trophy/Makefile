@@ -11,25 +11,23 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Single player racing game
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libclanCore.so:devel/clanlib1
 
-USES=		pkgconfig
-
+USES=		pkgconfig localbase
 GNU_CONFIGURE=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include
-LIBS+=		-L${LOCALBASE}/lib
 
-PORTDOCS=	AUTHORS COPYING ChangeLog README TODO
+PORTDOCS=	AUTHORS ChangeLog README TODO
 
 OPTIONS_DEFINE=	DOCS
 
 post-patch:
-	${REINPLACE_CMD} -e "/^icondir =/s,icons,pixmaps," \
+	@${REINPLACE_CMD} -e "/^icondir =/s,icons,pixmaps," \
 		${WRKSRC}/resources/Makefile.in
 
 post-install-DOCS-on:
-	${MKDIR} ${STAGEDIR}${DOCSDIR} && \
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

@@ -11,9 +11,9 @@ MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Wallpaper management tool for the ROX desktop
 
 RUN_DEPENDS=	${LOCALBASE}/bin/rox:x11-fm/rox-filer \
-		${LOCALBASE}/lib/ROX-Lib2/python/rox/__init__.py:devel/py-roxlib
+		${PYTHON_PKGNAMEPREFIX}roxlib>=0:devel/py-roxlib
 
-USES=		python
+USES=		python:2.7
 
 WRKSRC=		${WRKDIR}/Wallpaper
 

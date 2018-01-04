@@ -5,6 +5,170 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20180102:
+  AFFECTS: users of devel/awscli
+  AUTHOR: bhughes@FreeBSD.org
+
+  The package name for devel/awscli has changed (back) to just awscli.
+  The introduction of flavors erroneously caused the awscli package to
+  be renamed to py27-awscli.
+
+20171230:
+  AFFECTS: users of net-im/ejabberd
+  AUTHOR: ashish@FreeBSD.org
+
+  If you are building ejabberd 17.11 on a host, which already has an older 
+  version of ejabberd installed, then build process will fail with "unknown type
+  specifier" errors. As a workaround, please uninstall ejabberd before building
+  ejabberd.
+
+  This has been reported upstream at:
+  https://github.com/processone/ejabberd/issues/2194
+
+20171223:
+  AFFECTS: users of dns/dnscrypt-proxy
+  AUTHOR: egypcio@googlemail.com
+
+  The 1.9.5_3 update of dns/dnscrypt-proxy replaces the default resolver used
+  by dnscrypt-proxy (cisco/OpenDNS) by a random one that does not log entries
+  and supports dnssec.
+
+20171223:
+  AFFECTS: users of samba44
+  AUTHOR: antoine@FreeBSD.org
+
+  The default version of samba has been switched from 4.4 to 4.6.
+  Upgrade instructions:
+
+  For package users having samba44 installed indirectly (as a dependency):
+    # pkg upgrade
+
+  For package users having samba44 installed directly (leaf port):
+    # pkg upgrade
+    # pkg install samba46
+
+  For ports users:
+    If you want to keep samba44, add DEFAULT_VERSIONS+= samba=4.4 to make.conf
+
+    If you want to upgrade to samba46, remove samba44:
+    # pkg delete -f samba44
+
+    Portmaster users:
+    # portmaster net/samba46
+    # portmaster -a
+
+    Portupgrade users:
+    # portinstall net/samba46
+    # portupgrade -a
+
+20171218:
+  AFFECTS: users of devel/gogs
+  AUTHOR: dg@syrec.org
+
+  Gogs user has been changed to "git" and configuration files are now
+  located in /usr/local/etc/gogs. Users should update ownership of the
+  existing Gogs directories with
+
+  # chown -R git:git /var/db/gogs
+  # chown -R git:git /var/log/gogs
+
+  and either move or merge the contents of /var/db/gogs/home/.ssh with
+  /usr/local/git/.ssh.  After migration, /var/db/gogs/home can be removed,
+  and both the user "gogs" and the group "gogs" should be deleted:
+
+  # rm -rf /var/db/gogs/home
+  # pw userdel gogs
+  # pw groupdel gogs
+
+20171215:
+  AFFECTS: users of finance/gnucash
+  AUTHOR: madpilot@FreeBSD.org
+
+  The gnucash port has been converted too use flavors, the GUILE1
+  and GUILE2 options have been converted to flavors so that two
+  separate packages can be provided.
+
+  Since the next major release of gnucash will drop guile1 support,
+  the default flavor package is compiled against guile2, switching
+  the previous default.
+
+  Users who intend to stay on the guile1 version should deinstall
+  the default gnucash package and install the gnucash-guile1 package.
+
+20171214:
+  AFFECTS: all ports users
+  AUTHOR: adamw@FreeBSD.org
+
+  Support for some deprecated variables is going to be removed soon. If
+  you use any of the following constructs (usually in /etc/make.conf),
+  you must switch to the new incantations:
+
+               OLD                                 NEW
+  -------------------------------    ------------------------------
+  WITH_[...]                         OPTIONS_SET= [...]
+  WITHOUT_[...]                      OPTIONS_UNSET= [...]
+  WITHOUT_NLS                        OPTIONS_UNSET= NLS
+  NOPORTDOCS                         OPTIONS_UNSET= DOCS
+  NOPORTEXAMPLES                     OPTIONS_UNSET= EXAMPLES
+  WITH_BDB_VER=[...]                 DEFAULT_VERSIONS+= bdb=[...]
+  OVERRIDE_LINUX_BASE_PORT=[...]     DEFAULT_VERSIONS+= linux=[...]
+  WITH_OPENSSL_BASE                  DEFAULT_VERSIONS+= ssl=base
+  WITH_OPENSSL_PORT                  DEFAULT_VERSIONS+= ssl=port
+
+20171205:
+  AFFECTS: users of dns/powerdns
+  AUTHOR: krion@FreeBSD.org
+
+  Recursor passthrough removal: This will impact many installations.
+  Previously, the PowerDNS Authoritative Server contained a facility
+  for sending recursion desired queries to a resolving backend,
+  possibly after first consulting its local cache. This feature
+  (‘recursor=’) was frequently confusing and also delivered
+  inconsistent results, for example when a query ended up referring
+  to a CNAME that was outside of the Authoritative Server’s
+  knowledge.
+
+20171203:
+  AFFECTS: users of sysutils/dsbmd
+  AUTHOR: mk@freeshell.de
+
+  Due to new configuration variables and new features, users of dsbmd
+  version 0.4.1 and earlier should consider recreating their dsbmd.conf from
+  the new dsbmd.conf.sample.
+
+20171130:
+  AFFECTS: all ports users
+  AUTHOR: adamw@FreeBSD.org
+
+  The ports tree has gained "flavors," which are a way to produce multiple
+  variations of a port. Some intended examples of this are language
+  modules being produced for multiple language versions, and lite/nox11 packages,
+  without needing separate ports for each variation. Python ports have already
+  been flavored (see the below entry). Flavor support must be added to
+  individual ports.
+
+  Flavors are already supported by make, pkg, poudriere, and synth; see the
+  manpages for those tools for usage instructions. Portmaster and portupgrade
+  don't support flavors yet, but community work on those tools is in progress.
+
+  Some bumps and breakages are inevitable for a major change such as this.
+  Please report breakages and monitor the ports@ list for solutions as they
+  become available.
+
+20171130:
+  AFFECTS: */py*
+  AUTHOR: mat@FreeBSD.org
+
+  Ports using Python via USES=python are now flavored.  All the py3-* ports
+  have been removed and folded into their py-* master ports.
+
+  People using Poudriere 3.2+ and binary packages do not have to do anything.
+
+  For other people, to build the Python 3.6 version of, for example,
+  databases/py-gdbm, you need to run:
+
+    # make FLAVOR=py36 install
+
 20171126:
   AFFECTS: users of security/p5-openxpki
   AUTHOR: dbaio@FreeBSD.org

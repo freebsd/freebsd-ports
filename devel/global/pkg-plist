@@ -85,6 +85,7 @@ share/gtags/script/global-client
 share/gtags/script/gtags-client
 share/gtags/script/htags-client
 share/gtags/script/less-global
+share/gtags/script/maps2conf.pl
 share/gtags/script/pygments_parser.py
 share/gtags/style.css
 share/gtags/vim74-gtags-cscope.patch

@@ -66,6 +66,7 @@ bin/xscreensaver-hacks/energystream
 bin/xscreensaver-hacks/engine
 bin/xscreensaver-hacks/epicycle
 bin/xscreensaver-hacks/eruption
+bin/xscreensaver-hacks/esper
 bin/xscreensaver-hacks/euler2d
 bin/xscreensaver-hacks/extrusion
 bin/xscreensaver-hacks/fadeplot
@@ -215,8 +216,8 @@ bin/xscreensaver-hacks/twang
 bin/xscreensaver-hacks/unicrud
 bin/xscreensaver-hacks/unknownpleasures
 bin/xscreensaver-hacks/vermiculate
-bin/xscreensaver-hacks/vigilance
 bin/xscreensaver-hacks/vidwhacker
+bin/xscreensaver-hacks/vigilance
 bin/xscreensaver-hacks/voronoi
 bin/xscreensaver-hacks/wander
 bin/xscreensaver-hacks/webcollage
@@ -303,6 +304,7 @@ man/man6/energystream.6.gz
 man/man6/engine.6.gz
 man/man6/epicycle.6.gz
 man/man6/eruption.6.gz
+man/man6/esper.6.gz
 man/man6/euler2d.6.gz
 man/man6/extrusion.6.gz
 man/man6/fadeplot.6.gz
@@ -555,6 +557,7 @@ share/pixmaps/xscreensaver.xpm
 %%DATADIR%%/config/engine.xml
 %%DATADIR%%/config/epicycle.xml
 %%DATADIR%%/config/eruption.xml
+%%DATADIR%%/config/esper.xml
 %%DATADIR%%/config/euler2d.xml
 %%DATADIR%%/config/extrusion.xml
 %%DATADIR%%/config/fadeplot.xml

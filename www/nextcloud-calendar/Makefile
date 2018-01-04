@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME}
 DIST_SUBDIR=	${PKGNAMEPREFIX:S/-//}/${DISTNAME}-${DISTVERSIONPREFIX}${PORTVERSION}
 
 MAINTAINER=	brnrd@freebsd.org
-COMMENT=	Contacts app for Nextcloud
+COMMENT=	Calendar app for Nextcloud
 
 LICENSE=	AGPLv3
 

@@ -123,10 +123,10 @@ bin/morbo
 %%SITE_PERL%%/Mojolicious/resources/public/favicon.ico
 %%SITE_PERL%%/Mojolicious/resources/public/mojo/failraptor.png
 %%SITE_PERL%%/Mojolicious/resources/public/mojo/jquery/jquery.js
+%%SITE_PERL%%/Mojolicious/resources/public/mojo/logo-black-2x.png
 %%SITE_PERL%%/Mojolicious/resources/public/mojo/logo-black.png
-%%SITE_PERL%%/Mojolicious/resources/public/mojo/logo-black@2x.png
+%%SITE_PERL%%/Mojolicious/resources/public/mojo/logo-white-2x.png
 %%SITE_PERL%%/Mojolicious/resources/public/mojo/logo-white.png
-%%SITE_PERL%%/Mojolicious/resources/public/mojo/logo-white@2x.png
 %%SITE_PERL%%/Mojolicious/resources/public/mojo/noraptor.png
 %%SITE_PERL%%/Mojolicious/resources/public/mojo/notfound.png
 %%SITE_PERL%%/Mojolicious/resources/public/mojo/pinstripe-dark.png

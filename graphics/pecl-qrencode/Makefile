@@ -15,7 +15,7 @@ COMMENT=	PECL extension for generate qrcode
 LICENSE=	BSD2CLAUSE
 
 LIB_DEPENDS=	libqrencode.so:graphics/libqrencode \
-		libpng16.so:graphics/png
+		libpng.so:graphics/png
 
 USES=		php:ext
 USE_GITHUB=	yes

@@ -2,13 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	unifi5
-PORTVERSION=	5.6.24
+PORTVERSION=	5.6.26
 PORTREVISION=	0
 CATEGORIES=	net-mgmt java
-MASTER_SITES=	https://www.ubnt.com/downloads/unifi/${PORTVERSION}/ \
-		https://dl.ubnt.com/unifi/${PORTVERSION}-${UNIFI_TAG}/ \
-		LOCAL/feld/${PORTNAME}-${PORTVERSION}/
-DISTNAME=	UniFi.unix
+MASTER_SITES=	http://dl.ubnt.com/unifi/${PORTVERSION}/
+DISTNAME=	unifi_sysvinit_all
+EXTRACT_SUFX=	.deb
 DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	feld@FreeBSD.org
@@ -18,15 +17,17 @@ RUN_DEPENDS=	mongodb>0:databases/mongodb \
 		snappyjava>0:archivers/snappy-java
 
 BUILD=		0
-BUNDLEDFW=	3.8.6.6650
 TOMCATVER=	7.0.82
-UNIFI_TAG=	e2998a5aab
 
 SUB_LIST+=	USERS=${USERS} GROUPS=${GROUPS} JAVASHAREDIR=${JAVASHAREDIR} \
 		JAVA=${JAVA}
 PLIST_SUB+=	BUILDVERSION="${PORTVERSION}.${BUILD}" BUNDLEDFW="${BUNDLEDFW}" TOMCATVER="${TOMCATVER}"
 
-USES=		cpe zip
+EXTRACT_CMD=	/usr/bin/ar
+EXTRACT_BEFORE_ARGS=	-p
+EXTRACT_AFTER_ARGS=	data.tar.xz | ${TAR} -xf -
+
+USES=		cpe
 CPE_VENDOR=	ubnt
 CPE_PRODUCT=	unifi_controller
 USE_JAVA=	yes
@@ -43,18 +44,17 @@ USE_RC_SUBR=	unifi
 USERS=		unifi
 GROUPS=		unifi
 
-WRKSRC=		${WRKDIR}/UniFi
+NO_WRKSUBDIR=	yes
 
-RESTRICTED=	Redistribution of bundled firmware images is not permitted
 CONFLICTS=	unifi2-* unifi3-* unifi4-*
 
 post-patch:
-	${RM} ${WRKSRC}/lib/snappy-java-1.1.2.6.jar
-	(cd ${WRKSRC}/lib && ${LN} -s ${JAVAJARDIR}/snappy-java.jar snappy-java-1.1.2.6.jar)
+	${RM} ${WRKSRC}/usr/lib/unifi/lib/snappy-java-1.1.2.6.jar ${WRKSRC}/usr/lib/unifi/bin/*
+	(cd ${WRKSRC}/usr/lib/unifi/lib && ${LN} -s ${JAVAJARDIR}/snappy-java.jar snappy-java-1.1.2.6.jar)
 
 do-install:
 	${MKDIR} ${STAGEDIR}${JAVASHAREDIR}/unifi
-	(cd ${WRKSRC} && ${COPYTREE_SHARE} \* ${STAGEDIR}${JAVASHAREDIR}/unifi/)
+	(cd ${WRKSRC}/usr/lib/unifi && ${COPYTREE_SHARE} \* ${STAGEDIR}${JAVASHAREDIR}/unifi/)
 	${LN} -sf ${PREFIX}/bin/mongod ${STAGEDIR}${JAVASHAREDIR}/unifi/bin/mongod
 # Create directories that will be writable by unifi
 .for i in data logs run work

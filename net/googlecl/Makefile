@@ -11,9 +11,9 @@ COMMENT=	Command line tools for the Google Data APIs
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/License
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gdata>0:devel/py-gdata \
-		${PYTHON_PKGNAMEPREFIX}oauth2client>0:security/py-oauth2client \
-		${PYTHON_PKGNAMEPREFIX}httplib2>0:www/py-httplib2
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gdata>0:devel/py-gdata@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}oauth2client>0:security/py-oauth2client@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}httplib2>0:www/py-httplib2@${FLAVOR}
 
 USES=		python:2
 USE_PYTHON=	autoplist distutils

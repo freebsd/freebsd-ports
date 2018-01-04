@@ -12,7 +12,7 @@ COMMENT=	Simple Jabber Bot for Python
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}xmpppy>0:net-im/py-xmpppy
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}xmpppy>0:net-im/py-xmpppy@${FLAVOR}
 
 USES=		python:2
 USE_PYTHON=	distutils autoplist

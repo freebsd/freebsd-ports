@@ -1,0 +1,11 @@
+--- makefile.orig	2017-12-18 03:43:13 UTC
++++ makefile
+@@ -277,7 +277,7 @@ reconfigure:
+ 	@${PYTHON} ${PETSC_ARCH}/lib/petsc/conf/reconfigure-${PETSC_ARCH}.py
+ #
+ install:
+-	@${PYTHON} ./config/install.py -destDir=${DESTDIR}
++	@${PYTHON} ./config/install.py -destDir=${DESTDIR}${PREFIX}
+ 	${OMAKE} PETSC_ARCH=${PETSC_ARCH} PETSC_DIR=${PETSC_DIR} mpi4py-install petsc4py-install
+ 
+ newall:

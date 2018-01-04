@@ -12,7 +12,7 @@ COMMENT=	Caching front-end based on the Dogpile lock
 
 LICENSE=	BSD3CLAUSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gdbm>0:databases/py-gdbm
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gdbm>0:databases/py-gdbm@${FLAVOR}
 
 USES=		python
 USE_PYTHON=	distutils autoplist

@@ -13,7 +13,7 @@ LICENSE=	PHP301
 LIB_DEPENDS=	libnewt.so:devel/newt
 
 USES=		php:pecl
-IGNORE_WITH_PHP=	70 71
+IGNORE_WITH_PHP=	70 71 72
 
 post-patch:
 	@${REINPLACE_CMD} -e '/SEARCH_PATH/ s,=",="${LOCALBASE} ${PREFIX} ,' \

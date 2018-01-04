@@ -12,7 +12,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Probability And Statistics Utils for Python
 
-USES=		python tar:tgz
+USES=		python:2.7 tar:tgz
 USE_PYTHON=	distutils autoplist
 
 post-install:

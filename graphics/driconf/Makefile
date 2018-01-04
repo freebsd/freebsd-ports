@@ -16,7 +16,7 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-2.0/gtk/__init__.py:x11-toolkits/py-gtk2
 USE_GL=		glut
 USE_PYTHON=	distutils
 NO_BUILD=	yes
-USES=		gettext python
+USES=		gettext python:2.7
 PYDISTUTILS_EGGINFODIR=	${STAGEDIR}${PREFIX}/lib/driconf
 
 pre-patch:

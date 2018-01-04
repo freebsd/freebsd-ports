@@ -3,6 +3,7 @@
 
 PORTNAME=	npm
 PORTVERSION=	4.6.1
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	LOCAL/sunpoet
 PKGNAMESUFFIX=	4
@@ -15,12 +16,12 @@ LICENSE=	MIT
 RUN_DEPENDS=	gmake:devel/gmake \
 		node>=0.8.0:www/node
 
-CONFLICTS_INSTALL=	npm npm2 npm3
+CONFLICTS_INSTALL=	npm npm-node4 npm-node6 npm-node8 npm2 npm3
 
 NO_ARCH=	yes
 NO_BUILD=	yes
 REINPLACE_ARGS=	-i ''
-USES=		cpe python:2,run tar:xz
+USES=		cpe python:2.7,run tar:xz
 
 CPE_VENDOR=	npmjs
 CPE_PRODUCT=	node_packaged_modules

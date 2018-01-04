@@ -1,6 +1,6 @@
---- lib/gitlab/recaptcha.rb.orig	2017-11-18 21:06:32 UTC
+--- lib/gitlab/recaptcha.rb.orig	2017-11-14 20:51:25 UTC
 +++ lib/gitlab/recaptcha.rb
-@@ -3,8 +3,8 @@ module Gitlab
+@@ -5,8 +5,8 @@ module Gitlab
      def self.load_configurations!
        if current_application_settings.recaptcha_enabled
          ::Recaptcha.configure do |config|

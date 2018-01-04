@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	sc-im
-PORTVERSION=	0.6.0
-PORTREVISION=	1
+PORTVERSION=	0.7.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	math
 
@@ -15,7 +14,7 @@ LIB_DEPENDS=	libxlsreader.so:math/libxls \
 		libzip.so:archivers/libzip \
 		libxlsxwriter.so:math/libxlsxwriter
 
-USES=		gmake pkgconfig lua:51
+USES=		gmake pkgconfig lua:51 ncurses
 USE_GITHUB=	yes
 GH_ACCOUNT=	andmarti1424
 USE_GNOME=	libxml2
@@ -25,10 +24,6 @@ CFLAGS+=	-DXLSX_EXPORT -DXLS
 LIBS+=		-lxlsreader -lxlsxwriter
 MAKE_ENV+=	LDLIBS="${LIBS}"
 MAKE_ARGS+=	CC="${CC}" prefix="${PREFIX}" MANDIR="${MANPREFIX}/man/man1"
-
-PLIST_FILES=	bin/scim \
-		man/man1/scim.1.gz \
-		share/scim/scim_help
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/scim

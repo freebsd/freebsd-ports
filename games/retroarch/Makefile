@@ -44,7 +44,7 @@ OPENAL_USES=		openal:soft
 OPENAL_CONFIGURE_ENABLE=al
 NETPLAY_CONFIGURE_ENABLE=	netplay
 PYTHON_CONFIGURE_ENABLE=python
-PYTHON_USES=		python:3
+PYTHON_USES=		python:3.4+
 V4L_LIB_DEPENDS=	libv4l2.so:multimedia/libv4l
 V4L_BUILD_DEPENDS=	v4l_compat>0:multimedia/v4l_compat
 V4L_CONFIGURE_ENABLE=	v4l2
@@ -78,6 +78,10 @@ post-patch:
 		add_include_dirs ${LOCALBASE}/include;\
 		add_library_dirs ${LOCALBASE}/lib| ; \
 		/^check_lib OSS_LIB/d' \
+		${WRKSRC}/qb/config.libs.sh
+
+post-patch-PYTHON-on:
+	@${REINPLACE_CMD} -e '/check_pkgconf PYTHON/s/python3/python-${PYTHON_VER}/' \
 		${WRKSRC}/qb/config.libs.sh
 
 post-install:

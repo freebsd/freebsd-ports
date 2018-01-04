@@ -15,7 +15,7 @@ LICENSE=	GPLv2
 RUN_DEPENDS=	${PYNUMPY}
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-USES=		pyqt:4 python
+USES=		pyqt:4 python:2.7
 USE_PYQT=	gui svg
 USE_PYTHON=	distutils autoplist
 

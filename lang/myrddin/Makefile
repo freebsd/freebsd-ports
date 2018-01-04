@@ -16,6 +16,7 @@ ONLY_FOR_ARCHS=	amd64
 USES=	gmake
 
 HAS_CONFIGURE=	yes
+CONFIGURE_ARGS=	--prefix "${PREFIX}"
 WRKSRC=	${WRKDIR}/mc
 TEST_TARGET=	check
 

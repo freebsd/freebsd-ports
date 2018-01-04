@@ -1,6 +1,6 @@
---- ./src/cmds/cmds.cpp.orig	2012-12-02 18:48:47.000000000 -0500
-+++ ./src/cmds/cmds.cpp	2012-12-02 18:54:38.000000000 -0500
-@@ -89,9 +89,9 @@
+--- src/cmds/cmds.cpp.orig	2016-03-24 23:43:09 UTC
++++ src/cmds/cmds.cpp
+@@ -89,9 +89,9 @@ cmds::cmds( QWidget* parent)
  
  
  	QPalette newPalette = QPalette();

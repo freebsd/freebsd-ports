@@ -3,7 +3,7 @@
 # $FreeBSD$
 #
 # PROVIDE: nslcd
-# REQUIRE: NETWORKING ldconfig resolv kstart
+# REQUIRE: NETWORKING slapd ldconfig resolv kstart
 # BEFORE: syslogd
 # KEYWORD: shutdown
 #

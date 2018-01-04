@@ -12,6 +12,8 @@ DISTNAME=	Zikula_Core-${PORTVERSION}.build20
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MVC web application framework (PHP/MySQL)
 
+IGNORE_WITH_PHP=	70 71 72
+
 WRKSRC=		${WRKDIR}/Zikula_Core-${PORTVERSION}
 USES=		zip php:web mysql
 NO_BUILD=	yes

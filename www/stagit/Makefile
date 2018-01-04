@@ -21,6 +21,8 @@ MAKE_ARGS=	CC="${CC}" \
 		CFLAGS="${CFLAGS}" \
 		LDFLAGS="${LDFLAGS} -lgit2"
 
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
 post-patch:
 	@${REINPLACE_CMD} '/strlcat\.o/d; /strlcpy\.o/d' ${WRKSRC}/Makefile
 
@@ -28,7 +30,11 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR} ${STAGEDIR}${EXAMPLESDIR} ${STAGEDIR}${PREFIX}/man/man1
 	${INSTALL_PROGRAM} ${WRKSRC}/stagit ${WRKSRC}/stagit-index ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/stagit.1 ${WRKSRC}/stagit-index.1 ${STAGEDIR}${PREFIX}/man/man1
+
+do-install-DOCS-on:
 	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
+
+do-install-EXAMPLES-on:
 .for f in example_create.sh example_post-receive.sh favicon.png logo.png style.css
 	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${EXAMPLESDIR}
 .endfor

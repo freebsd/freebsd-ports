@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	wbxml2
-PORTVERSION=	0.11.5
+PORTVERSION=	0.11.6
 CATEGORIES=	textproc devel
 MASTER_SITES=	SF/libwbxml/libwbxml/${PORTVERSION}
 DISTNAME=	libwbxml-${PORTVERSION}

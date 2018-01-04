@@ -13,9 +13,9 @@ COMMENT=	Simple Library to Allow Python Applications to Use CouchDB
 
 LICENSE=	BSD3CLAUSE
 
-RUN_DEPENDS=    ${PYTHON_PKGNAMEPREFIX}simplejson>=0:devel/py-simplejson
+RUN_DEPENDS=    ${PYTHON_PKGNAMEPREFIX}simplejson>=0:devel/py-simplejson@${FLAVOR}
 
 USES=		python
-USE_PYTHON=	distutils pythonprefix
+USE_PYTHON=	distutils autoplist concurrent pythonprefix
 
 .include <bsd.port.mk>

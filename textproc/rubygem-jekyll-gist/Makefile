@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	jekyll-gist
-PORTVERSION=	1.4.1
+PORTVERSION=	1.5.0
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
@@ -16,6 +16,8 @@ RUN_DEPENDS=	rubygem-octokit>=4.2:net/rubygem-octokit
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USES=		gem
+USES=		gem shebangfix
+
+SHEBANG_FILES=	script/*
 
 .include <bsd.port.mk>

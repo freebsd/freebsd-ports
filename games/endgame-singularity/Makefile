@@ -14,12 +14,12 @@ COMMENT=	Simulates the life of a true AI
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/GPL.txt
 
-RUN_DEPENDS=	py*-game>=1.8:devel/py-game \
+RUN_DEPENDS=	${PYGAME} \
 		${PYNUMPY}
 
 USE_GITHUB=	yes
 
-USES=		python
+USES=		python:2.7
 USE_PYTHON=	autoplist distutils
 USE_SDL=	image mixer
 PORTDOCS=	AUTHORS Changelog README.txt TODO

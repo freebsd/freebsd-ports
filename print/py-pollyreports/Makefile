@@ -19,6 +19,6 @@ USE_PYTHON=	autoplist distutils
 OPTIONS_DEFINE=	REPORTLAB
 
 REPORTLAB_DESC=	Install Reportlab
-REPORTLAB_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}reportlab>=3.0:print/py-reportlab
+REPORTLAB_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}reportlab>=3.0:print/py-reportlab@${FLAVOR}
 
 .include <bsd.port.mk>

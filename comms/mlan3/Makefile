@@ -17,6 +17,8 @@ NO_WRKSUBDIR=	yes
 USES=		dos2unix uidfix zip
 DOS2UNIX_GLOB=	*.c *.h
 
+CONFLICTS_INSTALL=	shells/fish
+
 post-patch:
 	@${REINPLACE_CMD} -e '/int main/s/short argc/int argc/' \
 		${WRKSRC}/apps/gethumd/gethumd.c ${WRKSRC}/apps/shaapp/shaapp.c

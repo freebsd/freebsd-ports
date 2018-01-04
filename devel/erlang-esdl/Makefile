@@ -4,13 +4,16 @@ PORTNAME=	esdl
 PORTVERSION=	1.0.1
 PORTREVISION=	13
 CATEGORIES=	devel
-PKGNAMEPREFIX=	erlang-
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
+PKGNAMEPREFIX=	erlang-
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
 DIST_SUBDIR=	erlang
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Library for accessing SDL and OpenGL through Erlang
+
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/license.terms
 
 BUILD_DEPENDS=	erl:lang/erlang
 RUN_DEPENDS:=	${BUILD_DEPENDS}
@@ -23,39 +26,25 @@ USE_GL=		gl glu
 USE_SDL=	sdl
 ALL_TARGET=	target
 PLIST_SUB=	VERSION="${PORTVERSION}"
-MAKE_ENV+=	STAGEDIR="${STAGEDIR}"
 
 OPTIONS_DEFINE=	SDL_TTF SDL_IMAGE
 OPTIONS_DEFAULT=SDL_TTF SDL_IMAGE
+OPTIONS_SUB=	yes
 SDL_TTF_DESC=	SDL_ttf support
+SDL_TTF_USE=	SDL=ttf
 SDL_IMAGE_DESC=	SDL_image support
-
-.include <bsd.port.pre.mk>
-
-.if ${PORT_OPTIONS:MSDL_TTF}
-USE_SDL+=	ttf
-PLIST_SUB+=	SDL_TTF=""
-.else
-PLIST_SUB+=	SDL_TTF="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MSDL_IMAGE}
-USE_SDL+=	image
-PLIST_SUB+=	SDL_IMAGE=""
-.else
-PLIST_SUB+=	SDL_IMAGE="@comment "
-.endif
+SDL_IMAGE_USE=	SDL=image
 
 post-patch:
 	@${REINPLACE_CMD} -Ee 's|addons|lib|' ${WRKSRC}/Makefile
-.if ${PORT_OPTIONS:MSDL_TTF}
+
+post-patch-SDL_TTF-on:
 	@${REINPLACE_CMD} -e '/ENABLE_SDL_TTF = / s|no|yes|' ${WRKSRC}/Makefile
-.endif
-.if ${PORT_OPTIONS:MSDL_IMAGE}
+
+post-patch-SDL_IMAGE-on:
 	@${REINPLACE_CMD} -e '/ENABLE_SDL_IMAGE = / s|no|yes|' ${WRKSRC}/Makefile
-.endif
 
 post-install:
 	@${LN} -sf ${PORTNAME}-${PORTVERSION} ${STAGEDIR}${PREFIX}/lib/erlang/lib/${PORTNAME}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

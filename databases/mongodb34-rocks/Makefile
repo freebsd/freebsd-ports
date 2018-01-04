@@ -19,6 +19,8 @@ COMMENT=	Distributed document-oriented database with a RocksDB Storage Engine
 LICENSE=	AGPLv3 APACHE20
 LICENSE_COMB=	multi
 
+BROKEN=		fails to link
+
 ONLY_FOR_ARCHS=	amd64
 ONLY_FOR_ARCHS_REASON=	"Only supported on amd64 (i386 deprecated in v3)"
 

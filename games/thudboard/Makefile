@@ -10,10 +10,10 @@ MASTER_SITES=	http://www.million.nl/file/
 MAINTAINER=	lme@FreeBSD.org
 COMMENT=	The Discworld Boardgame Board
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tkinter>0:x11-toolkits/py-tkinter
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tkinter>0:x11-toolkits/py-tkinter@${PY_FLAVOR}
 
 NO_WRKSUBDIR=	yes
-USES=		python
+USES=		python:2.7
 
 SUB_FILES=	thudboard
 

@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	openvsp
-PORTVERSION=	3.13.3
-PORTREVISION=	1
+PORTVERSION=	3.14.2
 DISTVERSIONPREFIX=	${GH_PROJECT}_
 CATEGORIES=	cad
 
@@ -26,6 +25,10 @@ LIB_DEPENDS=	libdrm.so:graphics/libdrm \
 BUILD_DEPENDS=	${LOCALBASE}/lib/libopenNURBS.a:graphics/opennurbs \
 		${LOCALBASE}/include/glm/glm.hpp:math/glm \
 		${LOCALBASE}/libdata/pkgconfig/pthread-stubs.pc:devel/libpthread-stubs
+
+BROKEN_aarch64=		fails to compile: invokes x86 asm
+BROKEN_armv6=		fails to compile: invokes x86 asm
+BROKEN_armv7=		fails to compile: invokes x86 asm
 
 CMAKE_SOURCE_PATH=	${WRKSRC}/SuperProject
 CMAKE_INSTALL_PREFIX=	${STAGEDIR}${PREFIX}

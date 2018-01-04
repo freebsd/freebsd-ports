@@ -13,7 +13,7 @@ COMMENT=	Manipulation of IPv4, IPv6, CIDR, EUI and MAC network addresses
 LICENSE=	BSD3CLAUSE MIT
 LICENSE_COMB=	multi
 
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=2.4.2:devel/py-pytest
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=2.4.2:devel/py-pytest@${FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist concurrent distutils

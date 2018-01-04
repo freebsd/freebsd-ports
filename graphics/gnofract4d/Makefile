@@ -21,7 +21,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	edyoung
 
 USES=		desktop-file-utils display:build jpeg localbase pathfix \
-		pkgconfig python shared-mime-info shebangfix
+		pkgconfig python:2.7 shared-mime-info shebangfix
 SHEBANG_FILES=	fractutils/get.py
 USE_GNOME=	intlhack libxslt:build pygtk2
 USE_PYTHON=	distutils autoplist

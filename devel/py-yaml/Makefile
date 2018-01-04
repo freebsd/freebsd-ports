@@ -18,7 +18,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 OPTIONS_DEFINE=	LIBYAML EXAMPLES
 LIBYAML_DESC=	Use textproc/libyaml for faster parsing
 
-USES?=		python
+USES=		python
 USE_PYTHON=	distutils autoplist
 
 EXAMPLESDIR=	${PREFIX}/share/examples/${PKGNAMEPREFIX}${PORTNAME}

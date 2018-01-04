@@ -1,0 +1,4 @@
+RDF::Query allows SPARQL and RDQL queries to be run against an RDF model,
+returning rows of matching results.
+
+WWW: http://search.cpan.org/dist/RDF-Query/

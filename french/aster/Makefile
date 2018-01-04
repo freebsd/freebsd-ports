@@ -46,7 +46,7 @@ LIB_DEPENDS+=	libhdf5-18.so:science/hdf5-18			\
 		libmed.so:french/med
 #		libAsterInterface.so:science/mfront
 #		libAsterInterface.so:science/tfel
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}gnuplot>0:math/py-gnuplot\
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}gnuplot>0:math/py-gnuplot@${PY_FLAVOR} \
 		${SHELL_INSTALL_ASTER}:shells/${SHIADEP}	\
 		astk-serveur>0:cad/astk-serveur
 

@@ -1,6 +1,6 @@
---- Makefile.orig	2016-04-11 14:08:50.000000000 +0200
-+++ Makefile	2016-05-02 09:51:27.848060000 +0200
-@@ -16,6 +16,7 @@
+--- Makefile.orig	2017-06-22 12:44:14.000000000 +0300
++++ Makefile	2017-12-05 18:35:24.639422000 +0300
+@@ -16,6 +16,7 @@ MAKE_PCH += -x c++-header
  USE_PCH += -include $(PCH_HEADER)
  
  export BOOST_DIR
@@ -8,7 +8,7 @@
  export BIT32
  export STATIC
  export DEBUG
-@@ -76,15 +77,15 @@
+@@ -76,15 +77,15 @@ ifeq ($(PLATFORM),Linux)
  
  	HIDOBJ := $(LIBTHIRD)/hid-libusb.o
  else
@@ -29,7 +29,7 @@
  	endif
  
  	ifdef BOOST_DIR
-@@ -92,9 +93,14 @@
+@@ -92,9 +93,14 @@ else
  	LIBDIRS += -L$(BOOST_DIR)/lib
  	endif
  

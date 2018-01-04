@@ -11,7 +11,7 @@ COMMENT=	Python module for creating GDSII stream files
 
 LICENSE=	GPLv3
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>0:math/py-numpy
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>0:math/py-numpy@${FLAVOR}
 
 USES=		python
 USE_PYTHON=	distutils autoplist

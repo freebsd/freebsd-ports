@@ -14,7 +14,7 @@ BUILD_DEPENDS=	asciidoc:textproc/asciidoc\
 		docbook-xsl>=1.0:textproc/docbook-xsl\
 		xsltproc:textproc/libxslt
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs\
-		libpng16.so:graphics/png \
+		libpng.so:graphics/png \
 		libfltk.so:x11-toolkits/fltk \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libportaudio.so:audio/portaudio \

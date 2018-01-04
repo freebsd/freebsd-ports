@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Horde_Imsp
-PORTVERSION=	2.0.5
+DISTVERSION=	2.0.10
 CATEGORIES=	databases www pear
 
 MAINTAINER=	horde@FreeBSD.org

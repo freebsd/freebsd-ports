@@ -9,12 +9,13 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	Python Bindings for XMMS2
 
-BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/Pyrex/__init__.py:devel/pyrex
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyrex>0:devel/pyrex@${FLAVOR}
 LIB_DEPENDS+=	libxmmsclient.so:audio/xmms2
 
 MASTERDIR=	${.CURDIR}/../xmms2
 
-USES=		python
+USES=		python:2.7
+USE_PYTHON=	flavors
 
 PLIST=		${.CURDIR}/pkg-plist
 

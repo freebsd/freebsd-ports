@@ -12,12 +12,11 @@ COMMENT=	Small net top tool
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_powerpc64=	fails to compile: inode2prog.cpp: snprintf is not a member of std
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	raboof
 
 USES=	gmake shebangfix
+CXXFLAGS+=	-D_GLIBCXX_USE_C99 # XXX ports/193528
 
 SHEBANG_FILES=	determineVersion.sh
 bash_CMD=	/bin/sh

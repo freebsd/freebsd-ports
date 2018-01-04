@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	percona57
-PORTREVISION?=	2
+PORTREVISION?=	0
 PKGNAMESUFFIX=	-pam-for-mysql
 
 COMMENT=	PAM plugin for MySQL

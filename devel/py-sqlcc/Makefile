@@ -12,9 +12,9 @@ COMMENT=	Python SQL Command Composer
 
 LICENSE=	BSD2CLAUSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pythk>=0:devel/pythk
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pythk>=0:devel/pythk@${FLAVOR}
 
-USES=		python
+USES=		python:2.7
 USE_PYTHON=	distutils
 
 .include <bsd.port.mk>

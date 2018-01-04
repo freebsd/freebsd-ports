@@ -1,0 +1,23 @@
+--- third-party/LuaJIT-2.1.0-beta3/src/Makefile.orig	2017-12-04 09:31:02 UTC
++++ third-party/LuaJIT-2.1.0-beta3/src/Makefile
+@@ -24,7 +24,7 @@ NODOTABIVER= 51
+ # removing the '#' in front of them. Make sure you force a full recompile
+ # with "make clean", followed by "make" if you change any options.
+ #
+-DEFAULT_CC = gcc
++DEFAULT_CC = cc
+ #
+ # LuaJIT builds as a native 32 or 64 bit binary by default.
+ CC= $(DEFAULT_CC)
+@@ -585,9 +585,9 @@ endif
+ endif
+ endif
+ 
+-Q= @
++#Q= @
+ E= @echo
+-#Q=
++Q=
+ #E= @:
+ 
+ ##############################################################################

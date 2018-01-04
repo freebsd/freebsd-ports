@@ -13,8 +13,8 @@ COMMENT=	Python Progress Bar and Percent Indicator Utility
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>0:devel/py-nose \
-		${PYTHON_PKGNAMEPREFIX}psutil>=0.5.1:sysutils/py-psutil
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>0:devel/py-nose@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}psutil>=0.5.1:sysutils/py-psutil@${FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist distutils
@@ -24,7 +24,7 @@ NO_ARCH=	yes
 OPTIONS_DEFINE=	PSUTIL
 
 PSUTIL_DESC=		Support monitoring CPU and memory usage
-PSUTIL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}psutil>=0.5.1:sysutils/py-psutil
+PSUTIL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}psutil>=0.5.1:sysutils/py-psutil@${FLAVOR}
 
 do-test:
 	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYDISTUTILS_SETUP} test

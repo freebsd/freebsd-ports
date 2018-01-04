@@ -3,6 +3,7 @@
 
 PORTNAME=	tig
 PORTVERSION=	2.3.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/jonas/tig/releases/download/${DISTNAME}/
 
@@ -11,8 +12,6 @@ COMMENT=	Text-mode interface for git
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
-
-RUN_DEPENDS=	git:devel/git
 
 USES=		iconv gmake ncurses readline:port
 GNU_CONFIGURE=	yes
@@ -24,8 +23,13 @@ INSTALL_TARGET=	install
 
 PLIST_FILES=	bin/tig etc/tigrc
 
-OPTIONS_DEFINE=	MANPAGES
+OPTIONS_DEFINE=	GIT MANPAGES
 OPTIONS_DEFAULT=MANPAGES
+
+GIT_DESC=	Install devel/git as runtime dependency
+
+GIT_RUN_DEPENDS=	git:devel/git
+GIT_VARS_OFF=	PKGMESSAGE="${.CURDIR}/pkg-message-git"
 
 MANPAGES_BUILD_DEPENDS=	asciidoc:textproc/asciidoc \
 			xmlto:textproc/xmlto

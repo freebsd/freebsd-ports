@@ -13,7 +13,7 @@ COMMENT=	TrustedPickle is a Python (de)Pickler with a way to verify the data
 
 LICENSE=	BSD2CLAUSE
 
-USES=		dos2unix python tar:tgz
+USES=		dos2unix python:2.7 tar:tgz
 NO_ARCH=	yes
 
 PLIST_FILES=	%%PYTHON_SITELIBDIR%%/TrustedPickle.py \

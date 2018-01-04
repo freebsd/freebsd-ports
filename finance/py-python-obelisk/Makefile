@@ -14,9 +14,9 @@ COMMENT=	Python native client for the obelisk blockchain server
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}twisted>0:devel/py-twisted \
-		${PYTHON_PKGNAMEPREFIX}ecdsa>0:security/py-ecdsa \
-		${PYTHON_PKGNAMEPREFIX}pyzmq>=14.5.0:net/py-pyzmq
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}twisted>0:devel/py-twisted@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}ecdsa>0:security/py-ecdsa@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pyzmq>=14.5.0:net/py-pyzmq@${FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist distutils

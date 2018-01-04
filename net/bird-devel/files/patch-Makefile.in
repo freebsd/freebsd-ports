@@ -1,0 +1,15 @@
+--- Makefile.in.orig	2017-04-29 22:26:04 UTC
++++ Makefile.in
+@@ -163,11 +163,7 @@ install: all
+ 	if test -n "@CLIENT@" ; then								\
+ 		$(INSTALL_PROGRAM) $(exedir)/birdc $(DESTDIR)/$(sbindir)/birdc ;		\
+ 	fi
+-	if ! test -f $(DESTDIR)/@CONFIG_FILE@ ; then						\
+-		$(INSTALL_DATA) $(srcdir)/doc/bird.conf.example $(DESTDIR)/@CONFIG_FILE@ ;	\
+-	else											\
+-		echo "Not overwriting old bird.conf" ;						\
+-	fi
++	$(INSTALL_DATA) $(srcdir)/doc/bird.conf.example $(DESTDIR)/@CONFIG_FILE@.example
+ 
+ install-docs:
+ 	$(INSTALL) -d $(DESTDIR)/$(docdir)

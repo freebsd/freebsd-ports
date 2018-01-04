@@ -26,6 +26,7 @@ CPE_VENDOR=	boehm-demers-weiser
 CPE_PRODUCT=	garbage_collector
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
+TEST_TARGET=	check
 CONFIGURE_ARGS=	--enable-cplusplus --disable-static
 MAKE_JOBS_UNSAFE=	yes
 
@@ -96,8 +97,5 @@ post-install:
 	(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
 
 .endif
-
-regression-test: build
-	(cd ${WRKSRC} && ${MAKE_CMD} check)
 
 .include <bsd.port.mk>

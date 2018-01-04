@@ -74,7 +74,6 @@ lib/libKF5NewStuffCore.so.%%KDE_FRAMEWORKS_VERSION%%
 %%QT_QMLDIR%%/org/kde/newstuff/qml/NewStuffList.qml
 %%QT_QMLDIR%%/org/kde/newstuff/qmldir
 share/kf5/kmoretools/presets-kmoretools/_INFO
-share/kf5/kmoretools/presets-kmoretools/_update_all_files.sh
 share/kf5/kmoretools/presets-kmoretools/angrysearch.desktop
 share/kf5/kmoretools/presets-kmoretools/catfish.desktop
 share/kf5/kmoretools/presets-kmoretools/com.uploadedlobster.peek.desktop

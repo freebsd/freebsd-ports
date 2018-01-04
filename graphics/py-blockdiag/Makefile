@@ -13,9 +13,9 @@ COMMENT=	Simple block-diagram image generator
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PKGNAMEPREFIX}pillow>=2.2.1:graphics/py-pillow \
-		${PKGNAMEPREFIX}funcparserlib>=0.3.6:devel/py-funcparserlib \
-		${PKGNAMEPREFIX}webcolors>=0:graphics/py-webcolors
+RUN_DEPENDS=	${PKGNAMEPREFIX}pillow>=2.2.1:graphics/py-pillow@${FLAVOR} \
+		${PKGNAMEPREFIX}funcparserlib>=0.3.6:devel/py-funcparserlib@${FLAVOR} \
+		${PKGNAMEPREFIX}webcolors>=0:graphics/py-webcolors@${FLAVOR}
 
 USES=	python:-3.4
 USE_PYTHON=	autoplist distutils
@@ -33,7 +33,7 @@ PDF_DESC=	Enable PDF output
 OPTIONS_DEFAULT=	PDF
 
 IPAFONT_RUN_DEPENDS=	${LOCALBASE}/share/font-ipa/ipag.otf:japanese/font-ipa
-PDF_RUN_DEPENDS=	${PKGNAMEPREFIX}reportlab>0:print/py-reportlab
+PDF_RUN_DEPENDS=	${PKGNAMEPREFIX}reportlab>0:print/py-reportlab@${FLAVOR}
 
 post-patch:
 	${REINPLACE_CMD} 's|%%LOCALBASE%%|${LOCALBASE}|' ${WRKSRC}/src/blockdiag/utils/bootstrap.py

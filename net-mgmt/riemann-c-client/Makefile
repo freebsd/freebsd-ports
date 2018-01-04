@@ -4,6 +4,7 @@
 PORTNAME=	riemann-c-client
 PORTVERSION=	1.10.1
 DISTVERSIONPREFIX=	${PORTNAME}-
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	dch@skunkwerks.at

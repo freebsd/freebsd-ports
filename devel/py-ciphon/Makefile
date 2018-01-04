@@ -12,7 +12,7 @@ COMMENT=	Module for python that adds cpan-like functionality
 
 LICENSE=	BSD2CLAUSE
 
-USES=		python
+USES=		python:2.7
 USE_PYTHON=	distutils
 
 post-install:

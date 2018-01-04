@@ -16,6 +16,10 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.TXT
 
 BROKEN_RUBY22=	yes
 BROKEN_RUBY23=	yes
+BROKEN_RUBY24=	yes
+
+DEPRECATED=	Does not build with current versions of ruby
+EXPIRATION_DATE=	2018-01-14
 
 NO_ARCH=	yes
 USES=		zip

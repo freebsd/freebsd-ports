@@ -1,5 +1,5 @@
---- ThirdParty/BSL430_DLL/Makefile.orig	2015-04-22 12:01:02 UTC
-+++ ThirdParty/BSL430_DLL/Makefile
+--- ThirdParty/BSL430_DLL/Makefile.orig	2016-02-29 15:26:38.000000000 +0300
++++ ThirdParty/BSL430_DLL/Makefile	2017-12-05 18:35:24.642830000 +0300
 @@ -47,11 +47,15 @@ ifeq ($(PLATFORM),Linux)
  	INCLUDES += -I$(BOOST_DIR)
  	endif

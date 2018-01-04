@@ -1,0 +1,8 @@
+This class provides an interface to interact with a web server that
+provides services via the WebSocket protocol in an AnyEvent context.
+It uses Protocol::WebSocket rather than reinventing the wheel. You could
+use AnyEvent and Protocol::WebSocket directly if you wanted finer grain
+control, but if that is not necessary then this class may save you some
+time.
+
+WWW: https://github.com/plicease/AnyEvent-WebSocket-Client

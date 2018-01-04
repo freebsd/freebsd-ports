@@ -11,10 +11,10 @@ COMMENT=	Application to keep a local mirror of web comics
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>0:www/py-requests
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>0:www/py-requests@${FLAVOR}
 
 USES=		python
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	distutils autoplist concurrent optsuffix
 
 post-patch:
 	@${REINPLACE_CMD} 's|share/man/man1|man/man1|' ${WRKSRC}/setup.py

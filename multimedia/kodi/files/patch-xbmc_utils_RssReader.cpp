@@ -1,8 +1,8 @@
 Fix bogus pointer comparisons.
 
---- xbmc/utils/RssReader.cpp.orig	2017-01-21 21:11:51 UTC
+--- xbmc/utils/RssReader.cpp.orig	2017-11-14 16:55:01 UTC
 +++ xbmc/utils/RssReader.cpp
-@@ -266,11 +266,11 @@ void CRssReader::GetNewsItems(TiXmlEleme
+@@ -269,11 +269,11 @@ void CRssReader::GetNewsItems(TiXmlElement* channelXml
    if (m_tagSet.empty())
      AddTag("title");
  

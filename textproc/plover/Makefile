@@ -12,11 +12,11 @@ COMMENT=	Open source solution for stenography
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}xlib>=0:x11-toolkits/py-xlib \
-		${PYTHON_PKGNAMEPREFIX}serial>=0:comms/py-serial \
-		${PYTHON_PKGNAMEPREFIX}lockfile>=0:devel/py-lockfile
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}xlib>=0:x11-toolkits/py-xlib@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}serial>=0:comms/py-serial@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}lockfile>=0:devel/py-lockfile@${FLAVOR}
 
-USES=		python
+USES=		python:2.7
 USE_PYTHON=	distutils
 USE_WX=		3.0+
 WX_COMPS=	wx

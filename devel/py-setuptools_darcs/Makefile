@@ -13,7 +13,7 @@ COMMENT=	Setuptools plugin for darcs
 
 BUILD_DEPENDS=		darcsver:devel/py-darcsver
 
-USES=		python
+USES=		python:2.7
 USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2017-12-31 01:19:25 UTC
++++ CMakeLists.txt
+@@ -288,7 +288,7 @@ configure_file(${INASTEMP_SOURCE_DIR}/CM
+     @ONLY IMMEDIATE
+ )
+ if(INASTEMP_DO_INSTALL)
+-    install(FILES  ${INASTEMP_BINARY_DIR}/InastempInfo.cmake  DESTINATION lib/  )
++    install(FILES  ${INASTEMP_BINARY_DIR}/InastempInfo.cmake  DESTINATION lib/cmake  )
+ endif()
+ 
+ if(INASTEMP_AS_SUBPROJECT)

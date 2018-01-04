@@ -7,10 +7,28 @@ depends on different modules with module-specific .api files.
 Also fixes a bug where dbus support drops multiple -I flags produced
 by pkg-config --cflags dbus-1 .
 
---- configure.py.orig	2016-07-25 13:55:28.000000000 +0000
-+++ configure.py	2016-09-14 18:42:40.977955000 +0000
-@@ -1460,8 +1460,9 @@
-
+--- configure.py.orig	2017-11-23 14:44:03 UTC
++++ configure.py
+@@ -503,7 +503,7 @@ class TargetConfiguration:
+         self.no_pydbus = False
+         self.no_qml_plugin = False
+         self.no_tools = False
+-        self.prot_is_public = (self.py_platform.startswith('linux') or self.py_platform == 'darwin')
++        self.prot_is_public = (self.py_platform.startswith('linux') or self.py_platform.startswith('freebsd') or self.py_platform == 'darwin')
+         self.qmake = self._find_exe('qmake')
+         self.qmake_spec = ''
+         self.qmake_spec_default = ''
+@@ -773,7 +773,7 @@ class TargetConfiguration:
+         """
+ 
+         # The platform may have changed so update the default.
+-        if self.py_platform.startswith('linux') or self.py_platform == 'darwin':
++        if self.py_platform.startswith('linux') or self.py_platform.startswith('freebsd') or self.py_platform == 'darwin':
+             self.prot_is_public = True
+ 
+         self.vend_inc_dir = self.py_venv_inc_dir
+@@ -1450,8 +1450,9 @@ def generate_makefiles(target_config, verbose, parts, 
+ 
      # Add the internal modules if they are required.
      if not target_config.no_tools:
 -        pyqt_modules.append('pylupdate')
@@ -18,15 +36,17 @@ by pkg-config --cflags dbus-1 .
 +        if "QtXml" in target_config.pyqt_modules:
 +            pyqt_modules.append('pylupdate')
 +            pyqt_modules.append('pyrcc')
-
+ 
      for mname in pyqt_modules:
          metadata = MODULE_METADATA[mname]
-@@ -1504,18 +1505,19 @@
-
-     generate_sip_module_code(target_config, verbose, parts, tracing, 'Qt',
-             sip_flags, False)
+@@ -1493,20 +1494,17 @@ def generate_makefiles(target_config, verbose, parts, 
+ 
+     f.close()
+ 
+-    generate_sip_module_code(target_config, verbose, parts, tracing, 'Qt',
+-            fatal_warnings, sip_flags, False)
 -    subdirs.append('Qt')
-
+-
      wrappers = []
      if not target_config.no_tools:
 -        # Generate the pylupdate5 and pyrcc5 wrappers.
@@ -43,17 +63,16 @@ by pkg-config --cflags dbus-1 .
 +                wrappers.append((tool,
 +                        generate_tool_wrapper(target_config, tool + '5',
 +                                'PyQt5.%s_main' % tool)))
-+
 +        if "QtCore" in target_config.pyqt_modules:
 +            # Generate the pyuic5 wrapper.
 +            wrappers.append(('pyuic',
                  generate_tool_wrapper(target_config, 'pyuic5',
                          'PyQt5.uic.pyuic')))
-
-@@ -1533,23 +1535,6 @@
+ 
+@@ -1524,23 +1522,6 @@ def generate_makefiles(target_config, verbose, parts, 
                      source_path('examples', 'quick', 'tutorials', 'extending',
                              'chapter6-plugins'))
-
+ 
 -    # Generate the QScintilla API file.
 -    if target_config.qsci_api:
 -        inform("Generating the QScintilla API file...")
@@ -74,12 +93,12 @@ by pkg-config --cflags dbus-1 .
      # Generate the Python dbus module.
      if target_config.pydbus_module_dir != '':
          mname = 'dbus'
-@@ -1577,14 +1562,18 @@
+@@ -1568,14 +1549,18 @@ def generate_makefiles(target_config, verbose, parts, 
      out_f.write('''TEMPLATE = subdirs
  CONFIG += ordered nostrip
  SUBDIRS = %s
 +''' % (' '.join(subdirs)))
-
+ 
 +    if "QtCore" in target_config.pyqt_modules:
 +        out_f.write('''
  init_py.files = %s
@@ -87,7 +106,7 @@ by pkg-config --cflags dbus-1 .
  INSTALLS += init_py
 -''' % (' '.join(subdirs), source_path('__init__.py'), root_dir))
 +''' % (source_path('__init__.py'), root_dir))
-
+ 
 -    # Install the uic module.
 -    out_f.write('''
 +        if not target_config.no_tools:
@@ -96,8 +115,17 @@ by pkg-config --cflags dbus-1 .
  uic_package.files = %s
  uic_package.path = %s
  INSTALLS += uic_package
-@@ -1620,11 +1609,12 @@
-
+@@ -1603,6 +1588,8 @@ INSTALLS += tools
+     # Install the .sip files.
+     if target_config.pyqt_sip_dir:
+         for mname, metadata in MODULE_METADATA.items():
++            if mname not in pyqt_modules:
++                continue
+             if metadata.public and mname != 'Qt':
+                 sip_files = matching_files(source_path('sip', mname, '*.sip'))
+ 
+@@ -1628,11 +1615,12 @@ INSTALLS += pep484_stubs
+ 
      # Install the QScintilla .api file.
      if target_config.qsci_api:
 +        api_list = ' '.join(['%s.api' % m for m in target_config.pyqt_modules])
@@ -108,6 +136,15 @@ by pkg-config --cflags dbus-1 .
  INSTALLS += qscintilla_api
 -''' % qmake_quote(target_config.qsci_api_dir + '/api/python'))
 +''' % (api_list, qmake_quote(target_config.qsci_api_dir + '/api/python')))
-
+ 
      out_f.close()
-
+ 
+@@ -2604,7 +2592,7 @@ target.files = $$PY_MODULE
+     pro_lines.append('INSTALLS += target')
+ 
+     # This optimisation could apply to other platforms.
+-    if 'linux' in target_config.qmake_spec and not target_config.static:
++    if not target_config.static:
+         if target_config.py_version >= 0x030000:
+             entry_point = 'PyInit_%s' % target_name
+         else:

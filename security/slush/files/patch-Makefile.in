@@ -1,6 +1,6 @@
---- Makefile.in.orig	Tue Apr  6 01:05:04 1999
-+++ Makefile.in	Sat Jan 29 16:23:51 2000
-@@ -9,8 +9,8 @@
+--- Makefile.in.orig	1999-04-06 08:05:04 UTC
++++ Makefile.in
+@@ -9,8 +9,8 @@ MANDIR=/usr/man/man8
  
  CC=@CC@
  INSTALL=@INSTALL@
@@ -11,7 +11,7 @@
  
  all: slush slushd
  
-@@ -38,7 +38,7 @@
+@@ -38,7 +38,7 @@ $(MANDIR)/slush.8: slush.8
  install: $(SBINDIR)/slushd $(MANDIR)/slush.8
  
  cert:

@@ -15,11 +15,11 @@ LICENSE=	GPLv3
 
 RUN_DEPENDS=	trytond28>=2.8.2:finance/trytond28 \
 		trytond28_company>=2.8.0:finance/trytond28_company \
-		${PYTHON_PKGNAMEPREFIX}dateutil>=1.5:devel/py-dateutil
+		${PYTHON_PKGNAMEPREFIX}dateutil>=1.5:devel/py-dateutil@${FLAVOR}
 
 CONFLICTS=	trytond_account-2.[46].*
 
-USES=		python
+USES=		python:2.7
 USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

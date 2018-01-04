@@ -13,7 +13,7 @@ COMMENT=	QCT GUI commit tool
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		pyqt:4 python
+USES=		pyqt:4 python:2.7
 USE_PYQT=	gui
 USE_PYTHON=	distutils
 WRKSRC=		${WRKDIR}/qct

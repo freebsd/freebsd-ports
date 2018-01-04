@@ -12,9 +12,9 @@ COMMENT=	Functional and load web tester
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}docutils>0:textproc/py-docutils \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}docutils>0:textproc/py-docutils@${FLAVOR} \
 		${LOCALBASE}/bin/gnuplot:math/gnuplot \
-		${PYTHON_PKGNAMEPREFIX}webunit>=1.3.8:www/py-webunit \
+		${PYTHON_PKGNAMEPREFIX}webunit>=1.3.8:www/py-webunit@${FLAVOR} \
 		tcpwatch.py:net/tcpwatch
 
 USES=		python:2

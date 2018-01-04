@@ -12,7 +12,7 @@ COMMENT=	Calendar program for women
 
 LICENSE=	GPLv2+
 
-USES=		python:run shebangfix tar:bzip2
+USES=		python:2.7,run shebangfix tar:bzip2
 SHEBANG_FILES=	cycle.py
 USE_WX=		3.0+
 WX_COMPS=	python
@@ -31,12 +31,15 @@ do-install:
 	(cd ${WRKSRC} && ${INSTALL_DATA} cal_year.py dialogs.py p_rotor.py \
 		save_load.py set_dir.py setup.py \
 		${STAGEDIR}${PREFIX}/lib/${PORTNAME})
-	@${MKDIR} ${STAGEDIR}${DATADIR}/bitmaps ${STAGEDIR}${DATADIR}/icons/mini \
+	@${MKDIR} ${STAGEDIR}${DATADIR}/bitmaps \
+		${STAGEDIR}${DATADIR}/icons/mini \
 		${STAGEDIR}${DATADIR}/icons/large
 	${INSTALL_DATA} ${WRKSRC}/bitmaps/*.[pb]* ${STAGEDIR}${DATADIR}/bitmaps
 	${INSTALL_DATA} ${WRKSRC}/icons/*.xpm ${STAGEDIR}${DATADIR}/icons
-	${INSTALL_DATA} ${WRKSRC}/icons/mini/*.xpm ${STAGEDIR}${DATADIR}/icons/mini
-	${INSTALL_DATA} ${WRKSRC}/icons/large/*.xpm ${STAGEDIR}${DATADIR}/icons/large
+	${INSTALL_DATA} ${WRKSRC}/icons/mini/*.xpm \
+		${STAGEDIR}${DATADIR}/icons/mini
+	${INSTALL_DATA} ${WRKSRC}/icons/large/*.xpm \
+		${STAGEDIR}${DATADIR}/icons/large
 # These locale directories are not part of mtree(8) template yet
 .for l in ca cs gl sk
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/locale/${l}/LC_MESSAGES

@@ -12,9 +12,9 @@ COMMENT=	Py.test plugin to capture log messages
 
 LICENSE=	MIT
 
-RUN_DEPENDS?=	${PYTHON_PKGNAMEPREFIX}py>=1.1.1:devel/py-py
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}py>=1.1.1:devel/py-py@${FLAVOR}
 
-USES?=		python
+USES=		python
 USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>

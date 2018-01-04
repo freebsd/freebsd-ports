@@ -13,15 +13,15 @@ COMMENT=	Unique and feature rich Image Viewer
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}game>0:devel/py-game \
-		${PYTHON_PKGNAMEPREFIX}pillow>0:graphics/py-pillow
+RUN_DEPENDS=	${PYGAME} \
+		${PYTHON_PKGNAMEPREFIX}pillow>0:graphics/py-pillow@${PY_FLAVOR}
 
 NO_ARCH=	yes
 NO_BUILD=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-USES=		python:run shebangfix
+USES=		python:2.7 shebangfix
 SHEBANG_FILES=	imgv.py
 
 post-patch:

@@ -16,6 +16,8 @@ LICENSE=	GPLv3
 LIB_DEPENDS=	libxml++-2.6.so:textproc/libxml++26
 
 BROKEN=		fails to compile: ustring.h: expected ';' at end of declaration list
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2018-01-27
 
 USES=	gmake pkgconfig
 

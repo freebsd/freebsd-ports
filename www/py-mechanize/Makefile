@@ -13,7 +13,7 @@ COMMENT=	Stateful programmatic web browsing in Python
 
 LICENSE=	BSD3CLAUSE
 
-USES=		python
+USES=		python:2.7
 USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

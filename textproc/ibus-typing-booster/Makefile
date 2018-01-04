@@ -11,18 +11,16 @@ COMMENT=	Faster typing by context sensitive completion
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/xdg/Menu.py:devel/py3-xdg		\
-		${PYTHON_SITELIBDIR}/gi/_gi.so:devel/py3-gobject3	\
-		${PYTHON_LIBDIR}/lib-dynload/_sqlite3.so:databases/${PYTHON_PKGNAMEPREFIX}sqlite3
+BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/xdg/Menu.py:devel/py-xdg@${PY_FLAVOR}		\
+		${PYTHON_LIBDIR}/lib-dynload/_sqlite3.so:databases/py-sqlite3@${PY_FLAVOR}
 LIB_DEPENDS=	libibus-1.0.so:textproc/ibus	\
 		libm17n.so:devel/m17n-lib
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/xdg/Menu.py:devel/py3-xdg		\
-		${PYTHON_SITELIBDIR}/dbus/bus.py:devel/py3-dbus		\
-		${PYTHON_SITELIBDIR}/hunspell.so:textproc/py3-hunspell	\
-		${PYTHON_SITELIBDIR}/gi/_gi.so:devel/py3-gobject3	\
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/xdg/Menu.py:devel/py-xdg@${PY_FLAVOR}		\
+		${PYTHON_SITELIBDIR}/dbus/bus.py:devel/py-dbus@${PY_FLAVOR}		\
+		${PYTHON_SITELIBDIR}/hunspell.so:textproc/py-hunspell@${PY_FLAVOR}	\
 		${LOCALBASE}/share/unicode/ucd/Index.txt:textproc/UCD	\
 		${LOCALBASE}/share/unicode/cldr/readme.html:textproc/CLDR\
-		${PYTHON_LIBDIR}/lib-dynload/_sqlite3.so:databases/${PYTHON_PKGNAMEPREFIX}sqlite3
+		${PYTHON_LIBDIR}/lib-dynload/_sqlite3.so:databases/py-sqlite3@${PY_FLAVOR}
 TEST_DEPENDS=	${LOCALBASE}/share/hunspell/de_DE.dic:german/hunspell	\
 		${LOCALBASE}/share/hunspell/ko_KR.aff:korean/hunspell	\
 		${LOCALBASE}/share/hunspell/en_US.aff:textproc/en-hunspell
@@ -30,7 +28,8 @@ TEST_DEPENDS=	${LOCALBASE}/share/hunspell/de_DE.dic:german/hunspell	\
 USE_GITHUB=	yes
 GH_ACCOUNT=	mike-fabian
 
-USES=		autoreconf gettext gmake iconv pathfix pkgconfig python:3.3+
+USES=		autoreconf gettext gmake gnome iconv pathfix pkgconfig python:3.3+
+USE_GNOME=	pygobject3
 GNU_CONFIGURE=	yes
 NO_ARCH=	yes
 TEST_TARGET=	check

@@ -2,4 +2,4 @@ BFT stands for Base Functions and Types.
 It is destined to be used by scientific codes (CFD) often using
 some form of parallelism, especially MPI.
 
-WWW: http://www.code-saturne.org/
+WWW: https://www.code-saturne.org/

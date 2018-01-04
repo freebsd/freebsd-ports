@@ -10,7 +10,7 @@ DISTNAME=	gnonlin-${PORTVERSION}
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	GStreamer lib for writing non-linear audio and video
 
-USES=		libtool pkgconfig python:3,build tar:xz
+USES=		libtool pkgconfig python:3.4+,build tar:xz
 GNU_CONFIGURE=	yes
 USE_GSTREAMER1=	good
 INSTALL_TARGET=	install-strip

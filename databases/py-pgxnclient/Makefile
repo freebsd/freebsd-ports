@@ -11,6 +11,6 @@ MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	Command line tool to interact with the PostgreSQL Extension Network
 
 USES=		python
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	distutils autoplist concurrent optsuffix
 
 .include <bsd.port.mk>

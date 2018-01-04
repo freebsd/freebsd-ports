@@ -12,7 +12,7 @@ COMMENT=	Riak Protocol Buffers Messages
 
 LICENSE=	APACHE20
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}protobuf>=2.4.1:devel/py-protobuf
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}protobuf>=2.4.1:devel/py-protobuf@${FLAVOR}
 
 USES=		python:-2.7
 USE_PYTHON=	autoplist distutils

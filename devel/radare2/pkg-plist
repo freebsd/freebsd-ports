@@ -1,6 +1,4 @@
 bin/r2
-bin/r2-docker
-bin/r2-indent
 bin/r2agent
 bin/r2pm
 bin/rabin2
@@ -75,7 +73,6 @@ include/libr/r_util/r_file.h
 include/libr/r_util/r_graph.h
 include/libr/r_util/r_hex.h
 include/libr/r_util/r_id_storage.h
-include/libr/r_util/r_interval.h
 include/libr/r_util/r_json.h
 include/libr/r_util/r_log.h
 include/libr/r_util/r_mem.h
@@ -110,6 +107,7 @@ include/libr/sdb/buffer.h
 include/libr/sdb/cdb.h
 include/libr/sdb/cdb_make.h
 include/libr/sdb/config.h
+include/libr/sdb/dict.h
 include/libr/sdb/ht.h
 include/libr/sdb/ls.h
 include/libr/sdb/sdb.h
@@ -185,10 +183,7 @@ lib/libr_syscall.so
 lib/libr_syscall.so.%%PORTVERSION%%
 lib/libr_util.so
 lib/libr_util.so.%%PORTVERSION%%
-lib/radare2/%%PORTVERSION%%/asm_LM32.so
-lib/radare2/%%PORTVERSION%%/asm_propeller.so
 lib/radare2/%%PORTVERSION%%/bin_xtr_dyldcache.so
-lib/radare2/%%PORTVERSION%%/parse_z80_pseudo.so
 lib/radare2/last
 libdata/pkgconfig/r_anal.pc
 libdata/pkgconfig/r_asm.pc
@@ -240,7 +235,6 @@ man/man7/esil.7.gz
 %%PORTDOCS%%%%DOCSDIR%%/dospart
 %%PORTDOCS%%%%DOCSDIR%%/dwarf-line.rsc
 %%PORTDOCS%%%%DOCSDIR%%/emscripten
-%%PORTDOCS%%%%DOCSDIR%%/endian
 %%PORTDOCS%%%%DOCSDIR%%/esil
 %%PORTDOCS%%%%DOCSDIR%%/flirt
 %%PORTDOCS%%%%DOCSDIR%%/fortunes.creepy
@@ -261,11 +255,11 @@ man/man7/esil.7.gz
 %%PORTDOCS%%%%DOCSDIR%%/kvast
 %%PORTDOCS%%%%DOCSDIR%%/lang-plugins
 %%PORTDOCS%%%%DOCSDIR%%/license
+%%PORTDOCS%%%%DOCSDIR%%/macos.md
 %%PORTDOCS%%%%DOCSDIR%%/macros
 %%PORTDOCS%%%%DOCSDIR%%/maemo
 %%PORTDOCS%%%%DOCSDIR%%/objc.pl
 %%PORTDOCS%%%%DOCSDIR%%/oo
-%%PORTDOCS%%%%DOCSDIR%%/osx.md
 %%PORTDOCS%%%%DOCSDIR%%/plugins
 %%PORTDOCS%%%%DOCSDIR%%/portscan.r2
 %%PORTDOCS%%%%DOCSDIR%%/qnx
@@ -275,6 +269,7 @@ man/man7/esil.7.gz
 %%PORTDOCS%%%%DOCSDIR%%/releases
 %%PORTDOCS%%%%DOCSDIR%%/repo
 %%PORTDOCS%%%%DOCSDIR%%/rgraph
+%%PORTDOCS%%%%DOCSDIR%%/sdb_ordinal.md
 %%PORTDOCS%%%%DOCSDIR%%/siol.md
 %%PORTDOCS%%%%DOCSDIR%%/solaris
 %%PORTDOCS%%%%DOCSDIR%%/static
@@ -294,6 +289,7 @@ man/man7/esil.7.gz
 %%DATADIR%%/%%PORTVERSION%%/cons/behelit
 %%DATADIR%%/%%PORTVERSION%%/cons/cga
 %%DATADIR%%/%%PORTVERSION%%/cons/consonance
+%%DATADIR%%/%%PORTVERSION%%/cons/cutter
 %%DATADIR%%/%%PORTVERSION%%/cons/dark
 %%DATADIR%%/%%PORTVERSION%%/cons/focus
 %%DATADIR%%/%%PORTVERSION%%/cons/lima
@@ -328,7 +324,7 @@ man/man7/esil.7.gz
 %%DATADIR%%/%%PORTVERSION%%/fcnsign/types-arm-ios-64.sdb
 %%DATADIR%%/%%PORTVERSION%%/fcnsign/types-linux.sdb
 %%DATADIR%%/%%PORTVERSION%%/fcnsign/types-windows.sdb
-%%DATADIR%%/%%PORTVERSION%%/fcnsign/types-x86-osx-64.sdb
+%%DATADIR%%/%%PORTVERSION%%/fcnsign/types-x86-macos-64.sdb
 %%DATADIR%%/%%PORTVERSION%%/fcnsign/types-x86-windows-32.sdb
 %%DATADIR%%/%%PORTVERSION%%/fcnsign/types-x86-windows-64.sdb
 %%DATADIR%%/%%PORTVERSION%%/fcnsign/types.sdb
@@ -344,8 +340,12 @@ man/man7/esil.7.gz
 %%DATADIR%%/%%PORTVERSION%%/format/dll/gsprop32.sdb
 %%DATADIR%%/%%PORTVERSION%%/format/dll/iertutil.sdb
 %%DATADIR%%/%%PORTVERSION%%/format/dll/kernel32.sdb
+%%DATADIR%%/%%PORTVERSION%%/format/dll/mfc30.sdb
+%%DATADIR%%/%%PORTVERSION%%/format/dll/mfc40.sdb
 %%DATADIR%%/%%PORTVERSION%%/format/dll/mfc42.sdb
 %%DATADIR%%/%%PORTVERSION%%/format/dll/mfc42u.sdb
+%%DATADIR%%/%%PORTVERSION%%/format/dll/mfc71.sdb
+%%DATADIR%%/%%PORTVERSION%%/format/dll/mfc71u.sdb
 %%DATADIR%%/%%PORTVERSION%%/format/dll/mfc90u.sdb
 %%DATADIR%%/%%PORTVERSION%%/format/dll/msi.sdb
 %%DATADIR%%/%%PORTVERSION%%/format/dll/mstlsapi.sdb
@@ -373,6 +373,7 @@ man/man7/esil.7.gz
 %%DATADIR%%/%%PORTVERSION%%/format/elf32
 %%DATADIR%%/%%PORTVERSION%%/format/elf64
 %%DATADIR%%/%%PORTVERSION%%/format/elf_enums
+%%DATADIR%%/%%PORTVERSION%%/format/mz
 %%DATADIR%%/%%PORTVERSION%%/format/pe32
 %%DATADIR%%/%%PORTVERSION%%/format/trx
 %%DATADIR%%/%%PORTVERSION%%/hud/main
@@ -489,6 +490,8 @@ man/man7/esil.7.gz
 %%DATADIR%%/%%PORTVERSION%%/www/enyo/vendors/jquery.min.js
 %%DATADIR%%/%%PORTVERSION%%/www/enyo/vendors/jquery.scrollTo.min.js
 %%DATADIR%%/%%PORTVERSION%%/www/enyo/vendors/lodash.min.js
+%%DATADIR%%/%%PORTVERSION%%/www/f/index.html
+%%DATADIR%%/%%PORTVERSION%%/www/f/r2.js
 %%DATADIR%%/%%PORTVERSION%%/www/favicon.ico
 %%DATADIR%%/%%PORTVERSION%%/www/graph/img/arrow.gif
 %%DATADIR%%/%%PORTVERSION%%/www/graph/img/arrow_d.gif

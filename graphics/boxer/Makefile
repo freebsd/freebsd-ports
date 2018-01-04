@@ -20,7 +20,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	box:graphics/box
 
-USES=		python
+USES=		python:2.7
 USE_GNOME=	pygtk2
 USE_PYTHON=	distutils autoplist
 USE_LDCONFIG=	yes

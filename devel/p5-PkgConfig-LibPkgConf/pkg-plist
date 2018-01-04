@@ -1,0 +1,13 @@
+%%SITE_ARCH%%/PkgConfig/LibPkgConf.pm
+%%SITE_ARCH%%/PkgConfig/LibPkgConf/Client.pm
+%%SITE_ARCH%%/PkgConfig/LibPkgConf/Fragment.pm
+%%SITE_ARCH%%/PkgConfig/LibPkgConf/Package.pm
+%%SITE_ARCH%%/PkgConfig/LibPkgConf/Test.pm
+%%SITE_ARCH%%/PkgConfig/LibPkgConf/Util.pm
+%%SITE_ARCH%%/PkgConfig/LibPkgConf/XS.pm
+%%SITE_ARCH%%/auto/PkgConfig/LibPkgConf/LibPkgConf.so
+%%PERL5_MAN3%%/PkgConfig::LibPkgConf.3.gz
+%%PERL5_MAN3%%/PkgConfig::LibPkgConf::Client.3.gz
+%%PERL5_MAN3%%/PkgConfig::LibPkgConf::Fragment.3.gz
+%%PERL5_MAN3%%/PkgConfig::LibPkgConf::Package.3.gz
+%%PERL5_MAN3%%/PkgConfig::LibPkgConf::Util.3.gz

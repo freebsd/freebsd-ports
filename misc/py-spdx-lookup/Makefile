@@ -12,7 +12,7 @@ COMMENT=	SPDX license list query tool
 
 LICENSE=	BSD2CLAUSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}spdx>0:misc/py-spdx
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}spdx>0:misc/py-spdx@${FLAVOR}
 
 USES=		python:3.3+
 USE_PYTHON=	autoplist distutils

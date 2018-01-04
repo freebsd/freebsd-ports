@@ -39,6 +39,7 @@ GH_ACCOUNT=	ClusterLabs
 USES=		autoreconf gmake libtool pathfix pkgconfig python shebangfix
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
+USE_PYTHON=	py3kplist
 USE_RC_SUBR=	${PORTNAME}
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-fatal-warnings \

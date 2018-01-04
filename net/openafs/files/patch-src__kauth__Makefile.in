@@ -1,4 +1,4 @@
---- src/kauth/Makefile.in.orig	2016-12-14 18:28:29 UTC
+--- src/kauth/Makefile.in.orig	2017-12-05 14:52:48 UTC
 +++ src/kauth/Makefile.in
 @@ -12,6 +12,8 @@ INSTALL_DATA = @INSTALL_DATA@
  INSTALL_PROGRAM = @INSTALL_PROGRAM@

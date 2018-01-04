@@ -180,15 +180,12 @@ libexec/dwarffortress/libstdc++.so.6
 %%DATADIR%%/data/speech/past_mercenary_profession.txt
 %%DATADIR%%/data/speech/past_profession_no_year.txt
 %%DATADIR%%/data/speech/past_profession_year.txt
-%%DATADIR%%/data/speech/past_scouting_profession.txt
 %%DATADIR%%/data/speech/past_snatcher_profession.txt
 %%DATADIR%%/data/speech/past_thief_profession.txt
 %%DATADIR%%/data/speech/past_wandering_profession.txt
 %%DATADIR%%/data/speech/positive.txt
 %%DATADIR%%/data/speech/same_site_ab_specific_hf_seeker.txt
 %%DATADIR%%/data/speech/same_site_specific_hf_seeker.txt
-%%DATADIR%%/data/speech/scouting_profession.txt
-%%DATADIR%%/data/speech/scouting_profession_year.txt
 %%DATADIR%%/data/speech/site_specific_hf_seeker.txt
 %%DATADIR%%/data/speech/slayer.txt
 %%DATADIR%%/data/speech/snatcher_profession.txt

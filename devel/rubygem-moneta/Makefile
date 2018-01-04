@@ -2,12 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	moneta
-PORTVERSION=	0.7.19
-PORTREVISION=	1
+PORTVERSION=	1.0.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	renchap@cocoa-x.com
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Unified interface to key/value stores
 
 LICENSE=	MIT
@@ -17,9 +16,6 @@ NO_ARCH=	yes
 USE_RUBY=	yes
 USES=		gem shebangfix
 SHEBANG_FILES=	script/install-kyotocabinet \
-		script/kill-travis \
-		script/start-services \
-		script/upload-bundle \
-		script/wait-services
+		script/start-services
 
 .include <bsd.port.mk>

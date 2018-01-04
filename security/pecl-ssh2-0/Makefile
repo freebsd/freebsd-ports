@@ -17,7 +17,7 @@ LIB_DEPENDS=	libssh2.so:security/libssh2
 PORTSCOUT=	limit:^0.*
 
 USES=		php:pecl
-IGNORE_WITH_PHP=	70 71
+IGNORE_WITH_PHP=	70 71 72
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib ${EXTRA_LIBS}

@@ -12,11 +12,10 @@ COMMENT=	Compiler for SCSS flavor of the Sass language
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six \
-		${PYTHON_PKGNAMEPREFIX}enum34>0:devel/py-enum34 \
-		${PYTHON_PKGNAMEPREFIX}pathlib>0:devel/py-pathlib
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six@${FLAVOR} \
+		${PY_ENUM34} ${PY_PATHLIB}
 LIB_DEPENDS=	libpcre.so:devel/pcre
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${FLAVOR}
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	Kronuz

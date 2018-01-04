@@ -14,7 +14,7 @@ LICENSE=	APACHE20
 
 LIB_DEPENDS=	libzookeeper_mt.so:devel/libzookeeper
 
-USES=		python
+USES=		python:2.7
 USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>

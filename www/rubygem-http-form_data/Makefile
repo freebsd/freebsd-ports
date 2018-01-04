@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	http-form_data
-PORTVERSION=	1.0.3
+PORTVERSION=	2.0.0
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 

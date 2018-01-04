@@ -18,9 +18,10 @@ LIB_DEPENDS=	libgoocanvas.so:graphics/goocanvas
 PLIST_FILES=	%%PYTHON_SITELIBDIR%%/goocanvasmodule.so \
 		libdata/pkgconfig/pygoocanvas.pc
 USE_GNOME=	pygtk2
+USE_PYTHON=	flavors
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-docs
-USES=		gmake libtool pathfix pkgconfig python tar:bzip2
+USES=		gmake libtool pathfix pkgconfig python:2.7 tar:bzip2
 INSTALL_TARGET=	install-strip
 
 post-patch:

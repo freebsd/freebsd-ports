@@ -16,7 +16,7 @@ GH_ACCOUNT=	kusumi
 USE_GITHUB=	yes
 
 USES=		python
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	autoplist distutils concurrent optsuffix
 
 PLIST_FILES=	man/man1/fileobj.1.gz
 

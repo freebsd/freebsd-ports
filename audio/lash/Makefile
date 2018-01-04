@@ -36,7 +36,8 @@ OPTIONS_SUB=	yes
 
 PYTHON_DESC=	Build pylash
 PYTHON_USES=	python
-PYTHON_BUILD_DEPENDS=	swig:devel/swig13
+PYTHON_BUILD_DEPENDS=	swig3.0:devel/swig30
+PYTHON_BINARY_ALIAS=	swig=swig3.0
 PYTHON_CONFIGURE_ENABLE=pylash
 PYTHON_BROKEN=	Does not package
 

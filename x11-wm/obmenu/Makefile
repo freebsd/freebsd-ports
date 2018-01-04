@@ -13,7 +13,7 @@ COMMENT=	Menu manager for Openbox supporting both static and pipe menus
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		python shebangfix
+USES=		python:2.7 shebangfix
 USE_GNOME=	pygtk2
 USE_PYTHON=	distutils
 PYDISTUTILS_PKGNAME=	obMenu

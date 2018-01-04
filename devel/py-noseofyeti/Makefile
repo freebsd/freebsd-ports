@@ -8,21 +8,21 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	truckman@FreeBSD.org
 COMMENT=	Nose plugin providing BDD dsl for Python
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>0:devel/py-nose \
-		${PYTHON_PKGNAMEPREFIX}fudge>0:devel/py-fudge \
-		${PYTHON_PKGNAMEPREFIX}should_dsl>0:devel/py-should_dsl
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six@${FLAVOR}
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>0:devel/py-nose@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}fudge>0:devel/py-fudge@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}should_dsl>0:devel/py-should_dsl@${FLAVOR}
 
 OPTIONS_DEFINE=	DOCS
 DOCS_BUILD_DEPENDS=	\
-		${PYTHON_PKGNAMEPREFIX}nose>0:devel/py-nose \
-		${PYTHON_PKGNAMEPREFIX}fudge>0:devel/py-fudge \
-		${PYTHON_PKGNAMEPREFIX}sphinx>0:textproc/py-sphinx \
-		${PYTHON_PKGNAMEPREFIX}pinocchio>0:devel/py-pinocchio \
-		${PYTHON_PKGNAMEPREFIX}should_dsl>0:devel/py-should_dsl
+		${PYTHON_PKGNAMEPREFIX}nose>0:devel/py-nose@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}fudge>0:devel/py-fudge@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}sphinx>0:textproc/py-sphinx@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pinocchio>0:devel/py-pinocchio@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}should_dsl>0:devel/py-should_dsl@${FLAVOR}
 
 NO_ARCH=	yes
-USES=		python shebangfix
+USES=		python:2.7 shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	delfick
 GH_PROJECT=	nose-of-yeti

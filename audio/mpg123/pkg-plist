@@ -7,7 +7,7 @@ include/mpg123.h
 include/out123.h
 lib/libmpg123.so
 lib/libmpg123.so.0
-lib/libmpg123.so.0.44.6
+lib/libmpg123.so.0.44.7
 lib/libout123.so
 lib/libout123.so.0
 lib/libout123.so.0.2.1

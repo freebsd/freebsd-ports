@@ -7,13 +7,18 @@ CATEGORIES=	comms hamradio
 MASTER_SITES=	http://fkurz.net/ham/ebook4cw/
 
 MAINTAINER=	hamradio@FreeBSD.org
-COMMENT=	gui front end for ebooks2cw
+COMMENT=	Gui front end for ebooks2cw
+
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	ebook2cw:comms/ebook2cw
 
-USE_WX=	2.8
+USE_WX=		2.8
 
 PORTDOCS=	*
+
+OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|wx-config|${WX_CONFIG:S,${PREFIX}/bin/,,}|g' \
@@ -23,11 +28,13 @@ post-patch:
 	     ${WRKSRC}/Makefile
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/ebook2cwgui ${STAGEDIR}${PREFIX}/bin/ebook2cwgui
-	@${INSTALL_DATA} ${WRKSRC}/ebook2cwgui.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/ebook2cwgui ${STAGEDIR}${PREFIX}/bin/ebook2cwgui
+	${INSTALL_DATA} ${WRKSRC}/ebook2cwgui.1 ${STAGEDIR}${MANPREFIX}/man/man1
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for f in README COPYING ChangeLog
-	@${INSTALL_DATA} ${WRKSRC}/$f ${STAGEDIR}${DOCSDIR}/$f
+.for f in README ChangeLog
+	${INSTALL_DATA} ${WRKSRC}/$f ${STAGEDIR}${DOCSDIR}/$f
 .endfor
 
 .include <bsd.port.mk>

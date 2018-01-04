@@ -1,2 +1,3 @@
-SHA256 (libosmocore-0.9.0.tar.gz) = d09489630396941bdb4d123aba1a17595fd3ac9684a7a4874bc14387854bc2b4
-SIZE (libosmocore-0.9.0.tar.gz) = 573118
+TIMESTAMP = 1509796944
+SHA256 (libosmocore-0.10.2.tar.gz) = d25431a464989599fb8f5c3d80c9ae4e971563dca0283d785ec21979d49b1e3a
+SIZE (libosmocore-0.10.2.tar.gz) = 839366

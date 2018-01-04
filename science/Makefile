@@ -4,7 +4,10 @@
     COMMENT = Scientific ports
 
     SUBDIR += 2d-rewriter
+    SUBDIR += ALPSCore
     SUBDIR += InsightToolkit
+    SUBDIR += MOOSE-neural-simulator
+    SUBDIR += PETSc
     SUBDIR += R-cran-AMORE
     SUBDIR += R-cran-DCluster
     SUBDIR += R-cran-Epi
@@ -14,11 +17,13 @@
     SUBDIR += R-cran-eco
     SUBDIR += R-cran-epicalc
     SUBDIR += R-cran-etm
+    SUBDIR += R-cran-fastICA
     SUBDIR += R-cran-kernlab
     SUBDIR += R-cran-snow
     SUBDIR += R-cran-som
     SUBDIR += R-cran-udunits2
     SUBDIR += afni
+    SUBDIR += aircraft-datcom
     SUBDIR += avogadro
     SUBDIR += bddsolve
     SUBDIR += bft
@@ -94,6 +99,7 @@
     SUBDIR += mbdyn
     SUBDIR += mcstas
     SUBDIR += mcstas-comps
+    SUBDIR += mcxtrace
     SUBDIR += medit
     SUBDIR += meep
     SUBDIR += mei
@@ -164,6 +170,7 @@
     SUBDIR += py-pupynere
     SUBDIR += py-pyaixi
     SUBDIR += py-pydicom
+    SUBDIR += py-pymol
     SUBDIR += py-pysal
     SUBDIR += py-pyteomics
     SUBDIR += py-pyteomics.biolccc

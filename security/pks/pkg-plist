@@ -4,11 +4,10 @@ bin/pks-queue-run.sh
 bin/pksclient
 sbin/pksd
 bin/pksdctl
-etc/pksd.conf.sample
+@sample etc/pksd.conf.sample
 %%DATADIR%%/mail_intro
 %%DATADIR%%/pks-commands.html
 %%DATADIR%%/pks-commands.php
-%%EXAMPLESDIR%%/pksd.conf
 man/man5/pksd.conf.5.gz
 man/man8/pgpsplit.8.gz
 man/man8/pks-intro.8.gz

@@ -20,7 +20,6 @@ COMMENT=	MariaDB database connector for C
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING.LIB
 
-BROKEN_armv6=		fails to configure: CMake Error: Generator: execution of make failed
 BROKEN_powerpc64=	fails to compile: my_stmt_codec.c: error: invalid use of void expression
 
 CONFLICTS_INSTALL=	mariadb[0-9]*-client-* \

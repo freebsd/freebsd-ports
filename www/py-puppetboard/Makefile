@@ -12,11 +12,11 @@ COMMENT=	Web interface to PuppetDB
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Flask>=0.10.1:www/py-flask \
-		${PYTHON_PKGNAMEPREFIX}Flask-WTF>=0.9.4:www/py-flask-wtf \
-		${PYTHON_PKGNAMEPREFIX}MarkupSafe>=0.19:textproc/py-MarkupSafe \
-		${PYTHON_PKGNAMEPREFIX}pypuppetdb>=0.1.1:databases/py-pypuppetdb \
-		${PYTHON_PKGNAMEPREFIX}requests>=2.2.1:www/py-requests
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Flask>=0.10.1:www/py-flask@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}Flask-WTF>=0.9.4:www/py-flask-wtf@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}MarkupSafe>=0.19:textproc/py-MarkupSafe@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pypuppetdb>=0.1.1:databases/py-pypuppetdb@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}requests>=2.2.1:www/py-requests@${FLAVOR}
 
 CONFLICTS_INSTALL=puppetboard02-*
 USE_GITHUB=	yes

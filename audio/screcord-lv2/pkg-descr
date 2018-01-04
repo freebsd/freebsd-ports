@@ -1,0 +1,4 @@
+A simple LV2 capture plugin that is able to capture mono and a stereo streams,
+saving them to files of any audio format supported by libsndfile.
+
+WWW: https://github.com/brummer10/screcord.lv2

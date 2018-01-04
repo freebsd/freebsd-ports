@@ -1,0 +1,21 @@
+--- src/kinsol/CMakeLists.txt.orig	2017-11-07 23:48:14 UTC
++++ src/kinsol/CMakeLists.txt
+@@ -110,6 +110,18 @@ IF(BUILD_SHARED_LIBS)
+     TARGET_LINK_LIBRARIES(sundials_kinsol_shared m)
+   ENDIF()
+ 
++  IF(UNIX)
++    TARGET_LINK_LIBRARIES(sundials_kinsol_shared m)
++  ENDIF()
++
++  IF(LAPACK_FOUND)
++    TARGET_LINK_LIBRARIES(sundials_kinsol_shared ${LAPACK_LIBRARIES})
++  ENDIF()
++
++  IF(KLU_FOUND)
++    TARGET_LINK_LIBRARIES(sundials_kinsol_shared ${KLU_LIBRARIES})
++  ENDIF()
++
+   # Set the library name and make sure it is not deleted
+   SET_TARGET_PROPERTIES(sundials_kinsol_shared
+     PROPERTIES OUTPUT_NAME sundials_kinsol CLEAN_DIRECT_OUTPUT 1)

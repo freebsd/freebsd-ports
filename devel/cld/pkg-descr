@@ -1,9 +1,0 @@
-A port from the CLD (Compact Language Detector) library embedded in
-Google's Chromium browser.  The library detects the language from
-provided UTF-8 text (plain text or HTML).  It is implemented in C++,
-with very basic Python bindings.
-
-You most likely need devel/cld2 port: version 2 of CLD.  This port is here
-only to for pecl-cld until it support CLD version 2.
-
-WWW: https://code.google.com/p/chromium-compact-language-detector/

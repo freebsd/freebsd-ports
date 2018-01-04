@@ -2,8 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	ddgr
-PORTVERSION=	1.1
+PORTVERSION=	1.2
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	www
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -12,13 +13,14 @@ COMMENT=	DuckDuckGo from the terminal
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>=0:www/py3-requests \
-		${PYTHON_PKGNAMEPREFIX}urllib3>=0:net/py3-urllib3
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>=0:www/py-requests@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}urllib3>=0:net/py-urllib3@${PY_FLAVOR}
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	jarun
 
-USES=		python:3
+USES=		python:3.4+ shebangfix
+SHEBANG_FILES=	${PORTNAME}
 NO_ARCH=	yes
 NO_BUILD=	yes
 

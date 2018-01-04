@@ -3,7 +3,6 @@
 
 PORTNAME=	opengl
 PORTEPOCH=	1
-PORTREVISION=	1
 CATEGORIES=	x11 devel python
 
 MAINTAINER=	kde@FreeBSD.org
@@ -15,6 +14,7 @@ PYQT_DIST=	yes
 USES=		python pyqt:4
 USE_GL=		gl
 USE_PYQT=	sip_build core_run gui_run
+USE_PYTHON=	flavors
 USE_QT4=	corelib gui opengl moc_build qmake_build
 
 OPTIONS_DEFINE=	API DEBUG

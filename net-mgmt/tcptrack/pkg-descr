@@ -5,4 +5,4 @@ connections in a manner similar to the UNIX top(1) command. It displays
 source and destination addresses, ports, connection state, idle time, and
 bandwidth usage.
 
-WWW: http://BSDforge.com/projects/net-mgmt/tcptrack/
+WWW: https://BSDforge.com/projects/net-mgmt/tcptrack/

@@ -6,17 +6,17 @@
 # REQUIRE: NETWORKING
 # KEYWORD: shutdown
 
-# Add the following lines to /etc/rc.conf to enable %%NAME%%:
+# Add the following lines to /etc/rc.conf to enable fprobe:
 #
-#%%NAME%%_enable="YES"
+# fprobe_enable="YES"
 #
-# See fprobe(8) for %%NAME%%_flags
+# See fprobe(8) for fprobe_flags
 #
 
 . /etc/rc.subr
 
-name="%%NAME%%"
-rcvar=%%NAME%%_enable
+name="fprobe"
+rcvar=fprobe_enable
 
 load_rc_config "$name"
 

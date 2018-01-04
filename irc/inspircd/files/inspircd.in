@@ -17,10 +17,10 @@
 #
 # inspircd_config="%%ETCDIR%%/inspircd.conf"
 #                          -- path to config file
-# inspircd_pidfile="%%INSPIRCD_RUN%%/inspircd.pid"
+# inspircd_pidfile="%%INSPIRCD_RUNDIR%%/inspircd.pid"
 #                          -- location of pidfile: must match setting
 #                             in ${inspircd_conffile}
-# inspircd_logfile="%%INSPIRCD_LOG%%"
+# inspircd_logfile="%%INSPIRCD_LOGDIR%%/inspircd.log"
 #                          -- file inspircd writes logs to
 #
 . /etc/rc.subr
@@ -32,34 +32,19 @@ load_rc_config ${name}
 
 : ${inspircd_enable:=NO}
 : ${inspircd_config="%%ETCDIR%%/inspircd.conf"}
-: ${inspircd_pidfile="%%INSPIRCD_RUN%%/inspircd.pid"}
-: ${inspircd_user="%%USERS%%"}
-: ${inspircd_group="%%GROUPS%%"}
-: ${inspircd_data=/var/db/inspircd}
-: ${inspircd_logfile="%%INSPIRCD_LOG%%"}
-: ${inspircd_flags="${inspircd_flags} --logfile ${inspircd_logfile} --config ${inspircd_config}"}
+: ${inspircd_pidfile="%%INSPIRCD_RUNDIR%%/inspircd.pid"}
+: ${inspircd_user="%%INSPIRCD_USER%%"}
+: ${inspircd_group="%%INSPIRCD_GROUP%%"}
+: ${inspircd_data="%%INSPIRCD_DBDIR%%"}
+: ${inspircd_logfile="%%INSPIRCD_LOGDIR%%/inspircd.log"}
 : ${inspircd_chdir="%%ETCDIR%%"}
 
 command=/usr/sbin/daemon
-command_args=" -f %%PREFIX%%/bin/inspircd --nofork ${inspircd_flags}"
+command_args="-f %%PREFIX%%/bin/inspircd --nofork --config ${inspircd_config} --logfile ${inspircd_logfile} ${inspircd_flags}"
 procname=%%PREFIX%%/bin/inspircd
 pidfile=${inspircd_pidfile}
 required_files=${inspircd_config}
 configtest_cmd=inspircd_configtest
-start_precmd=inspircd_prestart
 extra_commands="reload status"
-
-inspircd_prestart()
-{
-	# inspircd_flags gets applied too early if we don't do this.
-	# I didn't want to force people to update their rc.conf files
-	# and change the inspircd_flags to something else.
-        rc_flags=""
-
-	for i in ${inspircd_pidfile} ${inspircd_logfile}; do
-		install -d -m 755 -o ${inspircd_user} -g ${inspircd_group} ${i%/*}
-	done
-	install -d -m 755 -o ${inspircd_user} -g ${inspircd_group} ${inspircd_data}
-}
 
 run_rc_command "$1"

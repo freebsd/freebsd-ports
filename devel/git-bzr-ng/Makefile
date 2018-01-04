@@ -20,7 +20,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	termie
 GH_TAGNAME=	9878a30
 
-USES=		python:2,run shebangfix
+USES=		python:2.7,run shebangfix
 SHEBANG_FILES=	git-bzr
 NO_BUILD=	yes
 NO_ARCH=	yes

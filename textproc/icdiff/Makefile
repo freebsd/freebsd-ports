@@ -12,7 +12,7 @@ COMMENT=	Improved colored diff
 LICENSE=	PSFL
 
 USES=		python
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	distutils autoplist concurrent optsuffix
 NO_ARCH=	yes
 
 .include <bsd.port.mk>

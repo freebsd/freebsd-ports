@@ -1,0 +1,10 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+case $2 in
+	POST-DEINSTALL)
+		/bin/rm "%%VIMFILESDIR%%/doc/tags"
+		;;
+esac

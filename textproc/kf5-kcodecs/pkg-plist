@@ -1,3 +1,4 @@
+etc/xdg/kcodecs.categories
 include/KF5/KCodecs/KCharsets
 include/KF5/KCodecs/KCodecs
 include/KF5/KCodecs/KEmailAddress

@@ -15,8 +15,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 # See ${WRKSRC}/image_LICENSE.txt for information that other
 # files *LICENSE* are not used
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}traits>=4.5.0:devel/py-traits \
-		${PYTHON_PKGNAMEPREFIX}configobj>=5.0.:devel/py-configobj
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}traits>=4.5.0:devel/py-traits@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}configobj>=5.0.:devel/py-configobj@${FLAVOR}
 
 USES=		python:-2.7
 USE_PYTHON=	autoplist distutils

@@ -13,7 +13,7 @@ COMMENT=	Useful extra bits for Python
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}testtools>0:devel/py-testtools
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}testtools>0:devel/py-testtools@${FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist distutils

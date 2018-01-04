@@ -4,11 +4,12 @@ PORTNAME=	stdiff
 PORTVERSION=	0.2.1
 CATEGORIES=	sysutils python
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}/
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	araujo@FreeBSD.org
 COMMENT=	Spot The Difference is a file integrity checker
 
-USES=		python
+USES=		python:2.7
 USE_PYTHON=	distutils
 
 OPTIONS_DEFINE=	DOCS

@@ -20,7 +20,6 @@ IGNORE_FreeBSD_10=	Doesnt build for FreeBSD 10.x
 BUILD_DEPENDS=	\
 	yasm:devel/yasm \
 	pkgconf:devel/pkgconf \
-	cython>=0.25.2:lang/cython \
 	sphinx-build:textproc/py-sphinx \
 	${LOCALBASE}/lib/libatomic_ops.a:devel/libatomic_ops \
 	gperf:devel/gperf
@@ -50,6 +49,7 @@ RUN_DEPENDS=	\
 CONFLICTS_INSTALL=	ceph
 
 USES=	gmake cmake:outsource,noninja python:2.7 fuse gettext-runtime shebangfix
+USE_PYTHON=	cython
 USE_GITHUB=	yes
 GH_ACCOUNT=	wjwithagen:DEFAULT
 GH_TUPLE+=	ceph:ceph-erasure-code-corpus:2d7d78b:ceph_erasure_code_corpus/ceph-erasure-code-corpus

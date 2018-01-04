@@ -1,0 +1,8 @@
+bin/trim_galore
+%%DATADIR%%/test_files/4_seqs_with_Ns.fastq.gz
+%%DATADIR%%/test_files/colorspace_file.fastq
+%%DATADIR%%/test_files/empty_file.fastq
+%%DATADIR%%/test_files/illumina_100K.fastq.gz
+%%DATADIR%%/test_files/nextera_100K.fastq.gz
+%%DATADIR%%/test_files/smallRNA_100K.fastq.gz
+%%DATADIR%%/test_files/truncated.fq.gz

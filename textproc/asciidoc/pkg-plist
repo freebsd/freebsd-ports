@@ -19,7 +19,7 @@ bin/asciidoc.py
 @sample %%ETCDIR%%/filters/graphviz/graphviz-filter.conf.sample
 %%ETCDIR%%/filters/graphviz/graphviz2png.py
 @sample %%ETCDIR%%/filters/latex/latex-filter.conf.sample
-%%ETCDIR%%/filters/latex/latex2png.py
+%%ETCDIR%%/filters/latex/latex2img.py
 @sample %%ETCDIR%%/filters/music/music-filter.conf.sample
 %%ETCDIR%%/filters/music/music2png.py
 @sample %%ETCDIR%%/filters/source/source-highlight-filter.conf.sample
@@ -62,13 +62,18 @@ bin/asciidoc.py
 @sample %%ETCDIR%%/lang-el.conf.sample
 @sample %%ETCDIR%%/lang-en.conf.sample
 @sample %%ETCDIR%%/lang-es.conf.sample
+@sample %%ETCDIR%%/lang-fi.conf.sample
 @sample %%ETCDIR%%/lang-fr.conf.sample
 @sample %%ETCDIR%%/lang-hu.conf.sample
+@sample %%ETCDIR%%/lang-id.conf.sample
 @sample %%ETCDIR%%/lang-it.conf.sample
+@sample %%ETCDIR%%/lang-ja.conf.sample
 @sample %%ETCDIR%%/lang-nl.conf.sample
+@sample %%ETCDIR%%/lang-pl.conf.sample
 @sample %%ETCDIR%%/lang-pt-BR.conf.sample
 @sample %%ETCDIR%%/lang-ro.conf.sample
 @sample %%ETCDIR%%/lang-ru.conf.sample
+@sample %%ETCDIR%%/lang-sv.conf.sample
 @sample %%ETCDIR%%/lang-uk.conf.sample
 @sample %%ETCDIR%%/latex.conf.sample
 @sample %%ETCDIR%%/slidy.conf.sample

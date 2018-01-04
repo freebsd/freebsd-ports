@@ -1,5 +1,7 @@
 @sample %%ETCDIR%%/master.sample
 @sample %%ETCDIR%%/minion.sample
 %%PYTHON_SITELIBDIR%%/salt/_syspaths.py
-%%PYTHON_SITELIBDIR%%/salt/_syspaths.pyc
-%%PYTHON_SITELIBDIR%%/salt/_syspaths.pyo
+%%PYTHON2%%%%PYTHON_SITELIBDIR%%/salt/_syspaths.pyc
+%%PYTHON2%%%%PYTHON_SITELIBDIR%%/salt/_syspaths.pyo
+%%PYTHON3%%%%PYTHON_SITELIBDIR%%/salt/__pycache__/_syspaths.cpython-%%PYTHON_SUFFIX%%.pyc
+%%PYTHON3%%%%PYTHON_SITELIBDIR%%/salt/__pycache__/_syspaths.cpython-%%PYTHON_SUFFIX%%.%%PYTHON_PYOEXTENSION%%

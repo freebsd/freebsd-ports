@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mimedefang
-PORTVERSION=	2.78
-PORTREVISION=	2
+PORTVERSION=	2.83
 CATEGORIES=	mail
 MASTER_SITES=	http://www.mimedefang.org/static/ \
 		http://fossies.org/linux/misc/
@@ -26,7 +25,6 @@ OPTIONS_DEFAULT=	CLAMAV
 CLAMAV_DESC=	Enable Clamav
 
 USES=		perl5 shebangfix
-SHEBANG_FILES=	script/mimedefang-util
 perl_OLD_CMD=	perl
 GNU_CONFIGURE=	yes
 
@@ -55,22 +53,15 @@ CONFIG_FILES=	mimedefang-filter sa-mimedefang.cf mimedefang-ip-key
 
 .include <bsd.port.options.mk>
 
-.if !exists( /usr/include/libmilter/mfapi.h )
-BUILD_DEPENDS+=	${LOCALBASE}/include/libmilter/mfapi.h:mail/libmilter
-.endif
+.include "${PORTSDIR}/mail/sendmail/bsd.milter.mk"
 
-.if exists( ${LOCALBASE}/include/libmilter/mfapi.h )
+.if defined(WITH_SENDMAIL_PORT)
 CONFIGURE_ARGS+=	--with-milterinc=${LOCALBASE}/include --with-milterlib=${LOCALBASE}/lib
 .endif
 
-.if defined (MIMEDEFANG_DISABLE_CLAMAV) || ! ${PORT_OPTIONS:MCLAMAV}
-CONFIGURE_ARGS+=	--disable-antivirus \
-			--disable-clamav \
-			--disable-clamd
-.else
-BUILD_DEPENDS+=	clamscan:security/clamav
-RUN_DEPENDS+=	clamscan:security/clamav
-.endif
+CLAMAV_BUILD_DEPENDS+=		clamscan:security/clamav
+CLAMAV_RUN_DEPENDS+=		clamscan:security/clamav
+CLAMAV_CONFIGURE_ENABLE+=	antivirus clamav clamd
 
 post-patch:
 	@${REINPLACE_CMD} -e '/fgrep -e/d' ${WRKSRC}/configure
@@ -91,4 +82,5 @@ post-install:
 	@cd ${WRKSRC}/examples/ && ${INSTALL_DATA} stream-by-domain-filter \
 		suggested-minimum-filter-for-windows-clients README ${STAGEDIR}${EXAMPLESDIR}/
 .endif
+
 .include <bsd.port.mk>

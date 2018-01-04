@@ -1,0 +1,39 @@
+commit 7c15d03b1e83
+Author: Blake Kaplan <mrbkap@gmail.com>
+Date:   Mon Dec 18 19:39:45 2017 -0500
+
+    Bug 1399400 - Use a strong reference when handling mTextField. r=bz a=jcristau
+    
+    MozReview-Commit-ID: IqzGDM4ezeW
+    
+    --HG--
+    extra : rebase_source : 8f9a1f72360fcabdc6e57fec3dbdda1bd705fd03
+    extra : source : 02d457ace9bb8430e25cfb3a1fb6b0303c9d01c5
+---
+ layout/forms/nsNumberControlFrame.cpp | 6 ++++--
+ 1 file changed, 4 insertions(+), 2 deletions(-)
+
+diff --git layout/forms/nsNumberControlFrame.cpp layout/forms/nsNumberControlFrame.cpp
+index 00b4492f23f1..68819267c906 100644
+--- layout/forms/nsNumberControlFrame.cpp
++++ layout/forms/nsNumberControlFrame.cpp
+@@ -592,15 +592,17 @@ nsNumberControlFrame::HandleFocusEvent(WidgetEvent* aEvent)
+ {
+   if (aEvent->mOriginalTarget != mTextField) {
+     // Move focus to our text field
++    RefPtr<HTMLInputElement> textField = HTMLInputElement::FromContent(mTextField);
+     IgnoredErrorResult ignored;
+-    HTMLInputElement::FromContent(mTextField)->Focus(ignored);
++    textField->Focus(ignored);
+   }
+ }
+ 
+ void
+ nsNumberControlFrame::HandleSelectCall()
+ {
+-  HTMLInputElement::FromContent(mTextField)->Select();
++  RefPtr<HTMLInputElement> textField = HTMLInputElement::FromContent(mTextField);
++  textField->Select();
+ }
+ 
+ #define STYLES_DISABLING_NATIVE_THEMING \

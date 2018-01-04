@@ -17,7 +17,7 @@ OPTIONS_DEFINE=	DOCS EXAMPLES
 
 PYSCRIPT_MANUAL=doc/manual/pyscript.pdf
 
-USES=		python
+USES=		python:2.7
 USE_PYTHON=	distutils
 USE_TEX=	latex dvipsk
 

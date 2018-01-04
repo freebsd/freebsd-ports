@@ -13,12 +13,12 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	texi2html:textproc/texi2html \
-		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3
+		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR}
 LIB_DEPENDS=	libvorbis.so:audio/libvorbis \
 		libao.so:audio/libao \
 		libassetml.so:devel/libassetml \
 		libdbus-glib-1.so:devel/dbus-glib
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3 \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR} \
 		gnucap:cad/gnucap
 
 USES=		display:configure gettext gmake libtool localbase pathfix \

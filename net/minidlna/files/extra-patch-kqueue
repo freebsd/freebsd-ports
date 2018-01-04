@@ -311,7 +311,7 @@ index ebe8095..e3eaddc 100644
 +		return 0;
 +	}
 +
-+	while( scanning )
++	while( GETFLAG(SCANNING_MASK) )
 +	{
 +		if( quitting )
 +			goto quitting;

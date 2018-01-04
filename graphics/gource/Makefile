@@ -17,7 +17,7 @@ LIB_DEPENDS=	libSDL_image.so:graphics/sdl_image \
 		libfreetype.so:print/freetype2 \
 		libpcre.so:devel/pcre \
 		libboost_filesystem.so:devel/boost-libs \
-		libpng16.so:graphics/png
+		libpng.so:graphics/png
 RUN_DEPENDS=	${LOCALBASE}/include/glm/glm.hpp:math/glm
 
 GNU_CONFIGURE=	yes

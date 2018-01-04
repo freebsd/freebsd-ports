@@ -1,0 +1,10 @@
+MOOSE is designed to simulate neural systems ranging from biochemical signaling
+to complex models of single neurons, circuits, and large networks. A typical
+use case is to model neural activity-driven synaptic plasticity, in which
+network activity to synapses triggers biochemical reaction-diffusion events,
+which in turn modulate ion channels to give rise to synaptic plasticity.
+MOOSE can operate at many levels of detail, from stochastic chemical
+computations, to multicompartment single-neuron models, to spiking neuron
+network models.
+
+WWW: http://moose.ncbs.res.in

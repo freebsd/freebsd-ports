@@ -28,7 +28,6 @@ NOT_FOR_ARCHS=	arm armv6 armv7 i386 mips powerpc
 NOT_FOR_ARCHS_REASON=	can only be built on 64bit platforms
 
 USES=		gmake libtool readline uidfix ssl
-USE_AUTOTOOLS=	autoheader aclocal
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-readline\

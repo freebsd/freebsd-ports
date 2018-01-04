@@ -14,7 +14,7 @@ COMMENT=	Generic Transparent Proxies
 
 LICENSE=	ZPL21
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zope.interface>=3.3.0:devel/py-zope.interface
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zope.interface>=3.3.0:devel/py-zope.interface@${FLAVOR}
 
 USES=		python zip
 USE_PYTHON=	distutils autoplist

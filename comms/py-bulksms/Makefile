@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	craig001@lerwick.hopto.org
 COMMENT=	Python client for the BulkSMS.co.uk HTTP API
 
-USES=			python
+USES=			python:2.7
 USE_PYTHON=		distutils
 PYDISTUTILS_PKGNAME=	BulkSMS
 PYDISTUTILS_PKGVERSION=	1.0

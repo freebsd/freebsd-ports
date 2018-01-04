@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libFOX-1.6.so:x11-toolkits/fox16 \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
-		libpng16.so:graphics/png
+		libpng.so:graphics/png
 
 USES=		desktop-file-utils gmake localbase pathfix
 USE_XORG=	x11 xft xrandr xrender

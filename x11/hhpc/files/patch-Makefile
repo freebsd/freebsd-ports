@@ -1,0 +1,23 @@
+--- Makefile.orig	2014-08-25 15:37:45 UTC
++++ Makefile
+@@ -51,7 +51,7 @@ CFLAGS_COMMON ?= \
+ 	-pedantic \
+ 	-std=c99
+ 
+-CFLAGS ?= $(CFLAGS_COMMON)
++CFLAGS += $(CFLAGS_COMMON)
+ 
+ CC ?= cc $(CFLAGS)
+ 
+@@ -66,10 +66,7 @@ debug: CFLAGS += $(WARN) \
+ 	-DDEBUG
+ debug: $(EXECUTABLE)
+ 
+-release: CFLAGS += \
+-	-s \
+-	-O2 \
+-	-DNDEBUG
++release: CFLAGS += -DNDEBUG
+ release: $(EXECUTABLE)
+ 
+ $(EXECUTABLE): $(OBJECTS)

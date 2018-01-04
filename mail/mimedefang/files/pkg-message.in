@@ -16,5 +16,3 @@ Also, you can install some anti-virus software to check your mail, for example:
       Open source AV package with automatic virus definition updates
    security/f-prot
       F-Prot Antivirus for BSD Workstations
-   security/vscan
-      Evaluation version of a DOS/Windows/Linux file virus scanner

@@ -21,7 +21,6 @@ SHEBANG_FILES=	programs/dtdocbook/sgmls/sgmls.pl \
 USE_LDCONFIG=	${PREFIX}/dt/lib
 USE_RC_SUBR=	dtcms dtspc
 USE_XORG=	xinerama xp xt
-USE_XZ=		yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 ALL_TARGET=	World

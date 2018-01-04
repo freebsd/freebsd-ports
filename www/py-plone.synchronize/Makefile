@@ -14,7 +14,7 @@ COMMENT=	Simple decorators to support synchronized methods
 LICENSE=	BSD3CLAUSE
 
 NO_ARCH=	yes
-USES=		python zip
+USES=		python:2.7 zip
 USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>

@@ -14,7 +14,7 @@ COMMENT=	Python bindings for Shapelib
 
 LICENSE=	LGPL20
 
-USES=		python
+USES=		python:2.7
 USE_LDCONFIG=	yes
 USE_PYTHON=	distutils
 
@@ -42,10 +42,4 @@ post-install-EXAMPLES-on:
 	${INSTALL_DATA} ${WRKSRC}/$f ${STAGEDIR}${EXAMPLESDIR}
 .endfor
 
-.include <bsd.port.pre.mk>
-
-.if ${PYTHON_MAJOR_VER} != 2
-IGNORE=	does not work with ${PYTHON_VERSION}
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

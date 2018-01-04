@@ -10,6 +10,7 @@ bin/rzxtool
 bin/scl2trd
 bin/snap2tzx
 bin/snapconv
+bin/snapdump
 bin/tape2pulses
 bin/tape2wav
 bin/tapeconv
@@ -27,6 +28,7 @@ man/man1/rzxtool.1.gz
 man/man1/scl2trd.1.gz
 man/man1/snap2tzx.1.gz
 man/man1/snapconv.1.gz
+man/man1/snapdump.1.gz
 man/man1/tape2pulses.1.gz
 man/man1/tape2wav.1.gz
 man/man1/tapeconv.1.gz

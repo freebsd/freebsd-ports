@@ -16,7 +16,7 @@ OPTIONS_DEFINE=	PSUTIL
 OPTIONS_DEFAULT=	PSUTIL
 
 PSUTIL_DESC=	Use psutil for better performance
-PSUTIL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}psutil>1.0.0:sysutils/py-psutil
+PSUTIL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}psutil>1.0.0:sysutils/py-psutil@${FLAVOR}
 
 USES=		python
 USE_PYTHON=	distutils autoplist

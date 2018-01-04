@@ -14,7 +14,7 @@ LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USE_PYTHON=	autoplist concurrent distutils
-USES?=		localbase python sqlite:3
+USES=		localbase python sqlite:3
 
 GH_ACCOUNT=	rogerbinns
 USE_GITHUB=	yes

@@ -1,0 +1,23 @@
+Snort 3 is the next major release of the Snort utility:
+
+Here are some key features of Snort 3:
+
+    Support multiple packet processing threads
+    Use a shared configuration and attribute table
+    Use a simple, scriptable configuration
+    Make key components pluggable
+    Autodetect services for portless configuration
+    Support sticky buffers in rules
+    Autogenerate reference documentation
+    Provide better cross platform support
+    Facilitate component testing
+
+Additional features on the roadmap include:
+
+    Use a shared network map
+    Support pipelining of packet processing
+    Support hardware offload and data plane integration
+    Support proxy mode
+    Windows support
+
+WWW: http://www.snort.org/

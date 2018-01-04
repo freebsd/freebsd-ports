@@ -11,9 +11,9 @@ COMMENT=	Initial tagging script for notmuch mail
 
 LICENSE=	ISCL
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools_scm>=0:devel/py-setuptools_scm
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}chardet>=0:textproc/py-chardet \
-	${PYTHON_PKGNAMEPREFIX}notmuch>=0:mail/py-notmuch \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools_scm>=0:devel/py-setuptools_scm@${FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}chardet>=0:textproc/py-chardet@${FLAVOR} \
+	${PYTHON_PKGNAMEPREFIX}notmuch>=0:mail/py-notmuch@${FLAVOR} \
 	notmuch:mail/notmuch
 
 USES=		python
@@ -22,13 +22,13 @@ USE_PYTHON=	autoplist distutils
 OPTIONS_DEFINE=	MANPAGES
 OPTIONS_DEFAULT=	MANPAGES
 
-MANPAGES_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>=0:textproc/py-sphinx
+MANPAGES_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>=0:textproc/py-sphinx@${FLAVOR}
 MANPAGES_PLIST_FILES=	man/man1/afew.1.gz
 
 NO_ARCH=	yes
 
 post-build-MANPAGES-on:
-	${MAKE} -C ${WRKSRC}/docs man
+	${MAKE} -C ${WRKSRC}/docs SPHINXBUILD=sphinx-build-${PYTHON_VER} man
 
 post-install-MANPAGES-on:
 	${INSTALL_MAN} ${WRKSRC}/docs/build/man/afew.1 ${STAGEDIR}${PREFIX}/man/man1/

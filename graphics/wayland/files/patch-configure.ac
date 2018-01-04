@@ -1,16 +1,13 @@
---- configure.ac.orig	2016-06-01 00:11:10 UTC
+--- configure.ac.orig	2017-08-08 18:20:52 UTC
 +++ configure.ac
-@@ -63,6 +63,28 @@ AC_SUBST(GCC_CFLAGS)
+@@ -63,6 +63,25 @@ AC_SUBST(GCC_CFLAGS)
  
  AC_CHECK_FUNCS([accept4 mkostemp posix_fallocate])
  
 +AC_CHECK_HEADERS([sys/signalfd.h sys/timerfd.h])
 +
-+# Use epoll on Linux or kqueue on BSD
-+AC_CHECK_HEADERS([sys/epoll.h sys/event.h])
-+if test "x$ac_cv_header_sys_epoll_h" != "xyes" && test "x$ac_cv_header_sys_event_h" != "xyes"; then
-+       AC_MSG_ERROR([Can't find sys/epoll.h or sys/event.h. Please ensure either epoll or kqueue is available.])
-+fi
++# Use epoll on Linux and epoll-shim (kqueue) on BSD
++AC_CHECK_HEADERS([sys/epoll.h])
 +
 +# Credential support on FreeBSD
 +AC_CHECK_HEADERS([sys/ucred.h])
@@ -29,7 +26,7 @@
  AC_ARG_ENABLE([libraries],
  	      [AC_HELP_STRING([--disable-libraries],
  			      [Disable compilation of wayland libraries])],
-@@ -98,11 +120,12 @@ AC_SUBST([ICONDIR])
+@@ -98,17 +117,21 @@ AC_SUBST([ICONDIR])
  
  if test "x$enable_libraries" = "xyes"; then
  	PKG_CHECK_MODULES(FFI, [libffi])
@@ -44,13 +41,12 @@
  		      [[#include <sys/timerfd.h>]])
  	AC_CHECK_DECL(CLOCK_MONOTONIC,[],
  		      [AC_MSG_ERROR("CLOCK_MONOTONIC is needed to compile wayland libraries")],
-@@ -110,6 +133,9 @@ if test "x$enable_libraries" = "xyes"; t
+ 		      [[#include <time.h>]])
  	AC_CHECK_HEADERS([execinfo.h])
  fi
- 
++
 +EPOLLSHIM_LIBS="-lepoll-shim"
 +AC_SUBST(EPOLLSHIM_LIBS)
-+
+ 
  PKG_CHECK_MODULES(EXPAT, [expat], [],
  	[AC_CHECK_HEADERS(expat.h, [],
- 		[AC_MSG_ERROR([Can't find expat.h. Please install expat.])])

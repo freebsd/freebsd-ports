@@ -11,8 +11,6 @@ COMMENT=	Fast C++ regex library
 
 LICENSE=	BSD3CLAUSE
 
-BROKEN_powerpc64=	fails to compile: prefilter_tree.cc: 'to_string' is not a member of 'std'
-
 MAKE_ARGS=	CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" SED_INPLACE="${SED} -i ''" prefix=${PREFIX}
 USE_LDCONFIG=	yes
 USES=		compiler:c++11-lang gmake pathfix

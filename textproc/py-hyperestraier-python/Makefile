@@ -13,7 +13,7 @@ MAINTAINER=	jun-g@daemonfreaks.com
 COMMENT=	Pure Python HyperEstraier library
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
-USES=		python
+USES=		python:2.7
 USE_PYTHON=	distutils
 
 PORTEXAMPLES=	example.py asyn_example.py

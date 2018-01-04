@@ -16,7 +16,7 @@ LICENSE=	MIT
 PORTDOCS=	README.rst \
 		HISTORY.rst
 
-USES=		python
+USES=		python:2.7
 USE_PYTHON=	distutils autoplist
 
 OPTIONS_DEFINE=	DOCS

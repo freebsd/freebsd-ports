@@ -16,11 +16,7 @@ GH_PROJECT=	hashdeep
 GH_TAGNAME=	cd2ed74
 
 USE_GITHUB=	yes
-USE_AUTOTOOLS=	autoconf:env autoheader:env automake:env aclocal:env
-USES=		gmake
+USES=		autoreconf gmake
 GNU_CONFIGURE=	yes
-
-pre-configure:
-	(cd ${WRKSRC}; ${SH} bootstrap.sh)
 
 .include <bsd.port.mk>

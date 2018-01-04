@@ -68,12 +68,8 @@ do-install:
 LIB_DEPENDS+=	libdbus-glib-1.so:devel/dbus-glib
 RUN_DEPENDS+=	pydbus-common>=0:devel/pydbus-common
 USE_LDCONFIG=	yes
-.if ${SLAVE_PORT} == python2
-USES+=		python:2
-.endif
-.if ${SLAVE_PORT} == python3
-USES+=		python:3
-.endif
+USES+=		python
+USE_PYTHON=	flavors
 
 post-install:
 	@${RM} -r ${STAGEDIR}${PREFIX}/include/dbus-1.0 \

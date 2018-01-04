@@ -10,11 +10,11 @@ PKGNAMESUFFIX=	# empty
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Python interface to the Avahi mDNS system
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gdbm>0:databases/py-gdbm \
-		${PYTHON_SITELIBDIR}/dbus/_dbus.py:devel/py-dbus
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gdbm>0:databases/py-gdbm@${FLAVOR} \
+		${PYTHON_SITELIBDIR}/dbus/_dbus.py:devel/py-dbus@${FLAVOR}
 LIB_DEPENDS=	libavahi-client.so:net/avahi-app
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gdbm>0:databases/py-gdbm \
-		${PYTHON_SITELIBDIR}/dbus/_dbus.py:devel/py-dbus
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gdbm>0:databases/py-gdbm@${FLAVOR} \
+		${PYTHON_SITELIBDIR}/dbus/_dbus.py:devel/py-dbus@${FLAVOR}
 
 MASTERDIR=	${.CURDIR}/../avahi-app
 BUILD_WRKSRC=	${WRKSRC}/avahi-python
@@ -26,6 +26,7 @@ AVAHI_SLAVE=	python
 
 USE_GNOME=	pygtk2
 USES=		python:2
+USE_PYTHON=	flavors
 MANPAGES=	avahi-bookmarks.1 avahi-discover.1
 
 post-patch:

@@ -14,8 +14,8 @@ LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/COPYING.LGPL
 
 BUILD_DEPENDS=	vapigen:lang/vala \
-	${PYTHON_PKGNAMEPREFIX}libxml2>=2.8.0:textproc/py-libxml2 \
-	${PYTHON_PKGNAMEPREFIX}libxslt>=1.1.28:textproc/py-libxslt
+	${PYTHON_PKGNAMEPREFIX}libxml2>=2.8.0:textproc/py-libxml2@${PY_FLAVOR} \
+	${PYTHON_PKGNAMEPREFIX}libxslt>=1.1.28:textproc/py-libxslt@${PY_FLAVOR}
 LIB_DEPENDS=	libgtop-2.0.so:devel/libgtop \
 	libdbus-glib-1.so:devel/dbus-glib \
 	libstartup-notification-1.so:x11/startup-notification

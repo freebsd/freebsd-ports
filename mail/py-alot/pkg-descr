@@ -1,0 +1,6 @@
+Alot is a terminal-based mail user agent based on the Notmuch mail indexer.
+It is written in Python using the Urwid toolkit and features a modular and
+command prompt driven interface to provide a full MUA experience as an
+alternative to the Emacs mode shipped with Notmuch.
+
+WWW: https://github.com/pazz/alot

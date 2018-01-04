@@ -771,4 +771,4 @@ bin/f2py
 %%PYTHON_SITELIBDIR%%/numpy/version.py
 %%PYTHON_SITELIBDIR%%/numpy/version.pyc
 %%PYTHON_SITELIBDIR%%/numpy/version.pyo
-man/man1/f2py-%%PYTHON_VER%%.1.gz
+man/man1/f2py.1.gz

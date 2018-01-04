@@ -12,10 +12,10 @@ COMMENT=	Python-Based Framework for Rapid Web Development
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}crank>=0:devel/py-crank \
-		${PYTHON_PKGNAMEPREFIX}webob>=1.2:www/py-webob \
-		${PYTHON_PKGNAMEPREFIX}MarkupSafe>=0:textproc/py-MarkupSafe \
-		${PYTHON_PKGNAMEPREFIX}repoze.lru>=0:devel/py-repoze.lru
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}crank>=0:devel/py-crank@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}webob>=1.2:www/py-webob@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}MarkupSafe>=0:textproc/py-MarkupSafe@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}repoze.lru>=0:devel/py-repoze.lru@${FLAVOR}
 
 USES=		python
 USE_PYTHON=	distutils autoplist

@@ -15,8 +15,8 @@ COMMENT=	Advanced outline editor for programmers
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.TXT
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3 \
-		${PYTHON_PKGNAMEPREFIX}docutils>0:textproc/py-docutils \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}docutils>0:textproc/py-docutils@${FLAVOR} \
 		silvercity>0:textproc/silvercity
 
 USES=		pyqt:4 python:2 shebangfix zip
@@ -32,7 +32,7 @@ DESKTOP_ENTRIES="Leo" "Literate Editor with Outlines" \
 OPTIONS_DEFINE=		PYENCHANT
 
 PYENCHANT_DESC=		Spell checking support via PyEnchant
-PYENCHANT_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}enchant>0:textproc/py-enchant
+PYENCHANT_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}enchant>0:textproc/py-enchant@${FLAVOR}
 
 post-patch:
 	@${LN} -sf leo/dist/leo-install.py ${WRKSRC}/leo-install.py

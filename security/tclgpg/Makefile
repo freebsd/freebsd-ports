@@ -19,6 +19,8 @@ USES=		autoreconf gmake tcl:tea
 USE_LDCONFIG=	yes
 WRKSRC=		${WRKDIR}/tclgpg-4cfd9fa949
 BROKEN=		checksum mismatch
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2018-01-27
 
 PLIST_FILES=	lib/gpg1.0/libgpg1.0.so \
 		lib/gpg1.0/pkgIndex.tcl \

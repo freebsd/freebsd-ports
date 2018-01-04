@@ -13,21 +13,14 @@ COMMENT=	GNOME utility that provides network information statistics
 
 BUILD_DEPENDS=	itstool:textproc/itstool
 LIB_DEPENDS=	libgtop-2.0.so:devel/libgtop
+RUN_DEPENDS=	${LOCALBASE}/bin/dig:dns/bind-tools
 
 USE_GNOME=	gtk30 intlhack libxml2:build
-USES=		gettext gmake libtool pathfix pkgconfig tar:xz
+USES=		gettext gmake libtool localbase:ldflags pathfix pkgconfig tar:xz
 INSTALLS_ICONS=	yes
 GNU_CONFIGURE=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
 
 GLIB_SCHEMAS=	org.gnome.gnome-nettool.gschema.xml
-
-.include <bsd.port.options.mk>
-
-.if ${OPSYS} == DragonFly || (${OPSYS} == FreeBSD && ${OSVERSION} > 1000000)
-RUN_DEPENDS+=	${LOCALBASE}/bin/dig:dns/bind-tools
-.endif
 
 .include <bsd.port.mk>

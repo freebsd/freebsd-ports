@@ -3,7 +3,7 @@
 
 PORTNAME=	freeradius
 DISTVERSION=	3.0.15
-PORTREVISION=	2
+PORTREVISION=	4
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.freeradius.org/pub/freeradius/%SUBDIR%/ \
 		ftp://ftp.ntua.gr/pub/net/radius/freeradius/%SUBDIR%/ \
@@ -39,6 +39,9 @@ CFLAGS+=	${CPPFLAGS}
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 PLIST_SUB=	PORTVERSION=${DISTVERSION} LIBVER=0${PORTVERSION:C/\./0/g}
+
+# Default requirements for rc script
+_REQUIRE=	NETWORKING SERVERS
 
 OPTIONS_SUB=	yes
 OPTIONS_DEFINE=	USER LDAP MYSQL PGSQL UNIXODBC FIREBIRD REDIS \
@@ -98,7 +101,7 @@ PGSQL_CONFIGURE_WITH=		rlm_sql_postgresql
 PYTHON_CONFIGURE_WITH=		rlm_python
 PYTHON_CONFIGURE_ON=		--with-rlm-python-lib-dir=${PYTHON_LIBDIR} \
 				--with-rlm-python-include-dir=${PYTHON_INCLUDEDIR}
-PYTHON_USES=			python gettext-runtime
+PYTHON_USES=			python:2.7 gettext-runtime
 PYTHON_VARS=			SHEBANG_FILES+=src/modules/rlm_python/*.py
 REDIS_CONFIGURE_WITH=		rlm_redis rlm_rediswho
 REDIS_LIB_DEPENDS=		libhiredis.so:databases/hiredis
@@ -120,9 +123,6 @@ UNIXODBC_CONFIGURE_WITH=	rlm_sql_unixodbc
 UNIXODBC_LIB_DEPENDS=		libodbc.so:databases/unixODBC
 
 .include <bsd.port.options.mk>
-
-# Default requirements for rc script
-_REQUIRE=	NETWORKING SERVERS
 
 .if ${PORT_OPTIONS:MUSER}
 SUB_LIST+=	RUN_AS_USER="yes"

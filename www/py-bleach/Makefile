@@ -13,9 +13,9 @@ COMMENT=	Easy whitelist-based HTML-sanitizing tool
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six \
-		${PYTHON_PKGNAMEPREFIX}html5lib>=0.999:www/py-html5lib
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>=1.3:devel/py-nose
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}html5lib>=0.999:www/py-html5lib@${FLAVOR}
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>=1.3:devel/py-nose@${FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist distutils

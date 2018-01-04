@@ -32,5 +32,5 @@ stop_cmd="%%PREFIX%%/bin/init-ceph $*"
 restart_cmd="%%PREFIX%%/bin/init-ceph $*"
 condrestart_cmd="%%PREFIX%%/bin/init-ceph $*"
 
-run_rc_command "$1" 
+run_rc_command "$1" "$*"
 

@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	turbolinks
-PORTVERSION=	2.5.3
+PORTVERSION=	2.5.4
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	-classic
@@ -13,6 +13,9 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
 RUN_DEPENDS?=	rubygem-coffee-rails4>=4.0.1:devel/rubygem-coffee-rails4
+
+DEPRECATED=	Use www/rubygem-turbolinks instead
+EXPIRATION_DATE=2018-01-31
 
 PORTSCOUT=	limit:^2\.5
 

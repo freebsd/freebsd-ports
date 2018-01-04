@@ -3,7 +3,7 @@
 
 PORTNAME=	simpleviewer
 PORTVERSION=	2.92
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	https://bitbucket.org/andreyu/simple-viewer-gl/get/
 DISTNAME=	v${PORTVERSION}	# version tag, thus no embedded ${PORTNAME}
@@ -24,8 +24,6 @@ LIB_DEPENDS=	libIlmImf.so:graphics/OpenEXR \
 		libpng.so:graphics/png \
 		libtiff.so:graphics/tiff \
 		libwebp.so:graphics/webp
-
-BROKEN_powerpc64=	fails to build: fileslist.cpp: '::printf' has not been declared
 
 USES=		cmake compiler:c++11-lang jpeg pkgconfig tar:bzip2
 USE_GL=		glu

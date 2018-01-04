@@ -1,8 +1,8 @@
-TIMESTAMP = 1501924835
-SHA256 (xbmc-xbmc-17.3-17.3-Krypton_GH0.tar.gz) = 1de8653a3729cefd1baaf09ecde5ace01a1e3a58fbf29d48c1363f2503d331a1
-SIZE (xbmc-xbmc-17.3-17.3-Krypton_GH0.tar.gz) = 58466114
-SHA256 (xbmc-FFmpeg-3.1.6-Krypton_GH0.tar.gz) = 01f914742f6af8afd1d2eb076425975e24c4eed75f5d57f1c816086dc4625192
-SIZE (xbmc-FFmpeg-3.1.6-Krypton_GH0.tar.gz) = 11170735
+TIMESTAMP = 1511187422
+SHA256 (xbmc-xbmc-17.6-17.6-Krypton_GH0.tar.gz) = c8312fe92e5bab1cdac1da93d60baed88fa1574146c50c44e3c86d01671c2b1d
+SIZE (xbmc-xbmc-17.6-17.6-Krypton_GH0.tar.gz) = 58275293
+SHA256 (xbmc-FFmpeg-3.1.11-Krypton-17.5_GH0.tar.gz) = 7df8bce40765b39de5766ca9d08b5b9ac1f498c65c805c989461b907cee6b7c0
+SIZE (xbmc-FFmpeg-3.1.11-Krypton-17.5_GH0.tar.gz) = 11188798
 SHA256 (xbmc-libdvdcss-2f12236_GH0.tar.gz) = 7affd787569960bcca6a7a83dfbe807b461653ee9793c59551dabb88e640b3f4
 SIZE (xbmc-libdvdcss-2f12236_GH0.tar.gz) = 95311
 SHA256 (xbmc-libdvdnav-981488f_GH0.tar.gz) = b59d75536336893ef0e32a6660770b2250e0369d52ff02319d41def621fb42db

@@ -1,6 +1,6 @@
---- config.mk.orig	2015-05-07 13:21:22 UTC
+--- config.mk.orig	2017-07-10 22:46:01 UTC
 +++ config.mk
-@@ -241,7 +241,7 @@ ifeq ($(WITH_DOCS),yes)
+@@ -249,7 +249,7 @@ ifeq ($(WITH_DOCS),yes)
  endif
  
  INSTALL?=install

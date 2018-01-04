@@ -30,6 +30,7 @@ PLIST_SUB=	PORTVERSION=${PORTVERSION} \
 		PYTHON_VERSION=${PYTHON_VERSION}
 
 USES=		cmake python:2 tar:bzip2
+USE_PYTHON=	flavors
 USE_LDCONFIG=	yes
 
 .include <bsd.port.pre.mk>

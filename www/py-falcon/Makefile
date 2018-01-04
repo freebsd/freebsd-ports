@@ -12,12 +12,11 @@ COMMENT=	High-performance Python framework for building cloud APIs
 
 LICENSE=	APACHE20
 
-BUILD_DEPENDS=	cython>=0.11.2:lang/cython
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}testtools>=0:devel/py-testtools \
-		${PYTHON_PKGNAMEPREFIX}six>=1.1.0:devel/py-six \
-		${PYTHON_PKGNAMEPREFIX}mimeparse>=0.1.4:devel/py-mimeparse
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}testtools>=0:devel/py-testtools@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}six>=1.1.0:devel/py-six@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}mimeparse>=0.1.4:devel/py-mimeparse@${FLAVOR}
 
 USES=		python
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	distutils autoplist cython
 
 .include <bsd.port.mk>

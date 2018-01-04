@@ -1,4 +1,3 @@
-# Created by: Erik B Knudsen <erkn@fysik.dtu.dk>
 # $FreeBSD$
 
 PORTNAME=	mcstas
@@ -10,16 +9,20 @@ DISTNAME=	mcstas-${PORTVERSION}-src
 MAINTAINER=	erkn@fysik.dtu.dk
 COMMENT=	Monte Carlo neutron ray tracing package
 
-LICENSE=	GPLv2
+LICENSE=	LGPL21+
 
-USES=		bison:build cmake
+USES=		bison:build cmake:outsource
 CMAKE_ARGS=	"-Denable_mcstas=1"
 
+MANDIRS=	${PREFIX}/${PORTNAME}/${DISTVERSION}/doc/man/man1
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
-SUB_FILES=	pkg-deinstall pkg-install
+
+MCEXECS=	mcstas mcformat
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/mcstas/${PORTVERSION}/bin/mcformat
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/mcstas/${PORTVERSION}/bin/mcstas
+.for e in ${MCEXECS}
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${PORTNAME}/${PORTVERSION}/bin/${e}
+	${LN} -s ${PREFIX}/${PORTNAME}/${PORTVERSION}/bin/${e} ${STAGEDIR}${PREFIX}/bin/${e}
+.endfor
 
 .include <bsd.port.mk>

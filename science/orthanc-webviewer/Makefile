@@ -3,6 +3,7 @@
 
 PORTNAME=	orthanc-webviewer
 PORTVERSION=	2.3
+PORTREVISION=	1
 CATEGORIES=	science graphics
 MASTER_SITES=	http://orthanc-server.com/downloads/get.php?path=/plugin-webviewer/:main \
 		http://www.orthanc-server.com/downloads/third-party/WebViewer/:thirdparty

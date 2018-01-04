@@ -14,7 +14,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYNUMPY} \
-		${PYTHON_PKGNAMEPREFIX}python-lzo>0:archivers/py-python-lzo
+		${PYTHON_PKGNAMEPREFIX}python-lzo>0:archivers/py-python-lzo@${FLAVOR}
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_GITHUB=	yes

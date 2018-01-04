@@ -25,7 +25,7 @@ RUN_DEPENDS=	meld:textproc/meld \
 		yelp:x11/yelp
 
 USES=		compiler:c++11-lang gettext gmake libtool localbase:ldflags pathfix \
-		pkgconfig python tar:xz
+		pkgconfig python:2.7 tar:xz
 USE_GNOME=	cairo gdkpixbuf2 gnomedocutils gnomeprefix gnomevfs2 intltool libgnomeui
 USE_XORG=	ice sm
 GNU_CONFIGURE=	yes

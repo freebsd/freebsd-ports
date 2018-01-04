@@ -12,11 +12,11 @@ COMMENT=	Twitter client written in Python
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Babel>=1.3:devel/py-babel
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}notify>=0.1.1:devel/py-notify \
-	${PYTHON_PKGNAMEPREFIX}setproctitle>=1.1.7:devel/py-setproctitle \
-	${PYTHON_PKGNAMEPREFIX}Jinja2>=2.7.1:devel/py-Jinja2 \
-	${PYTHON_PKGNAMEPREFIX}libturpial>=1.7.0:net-im/py-libturpial
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Babel>=1.3:devel/py-babel@${FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}notify>=0.1.1:devel/py-notify@${FLAVOR} \
+	${PYTHON_PKGNAMEPREFIX}setproctitle>=1.1.7:devel/py-setproctitle@${FLAVOR} \
+	${PYTHON_PKGNAMEPREFIX}Jinja2>=2.7.1:devel/py-Jinja2@${FLAVOR} \
+	${PYTHON_PKGNAMEPREFIX}libturpial>=1.7.0:net-im/py-libturpial@${FLAVOR}
 
 USES=		pyqt:4 python:2
 USE_PYQT=	core_run gui_run network_run phonon_run webkit_run

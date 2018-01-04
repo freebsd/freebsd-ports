@@ -3,7 +3,7 @@
 
 PORTNAME=	openexr
 PORTVERSION=	1.2.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	graphics python
 MASTER_SITES=	http://excamera.com/files/ \
 		CHEESESHOP
@@ -15,7 +15,7 @@ COMMENT=	Python module for ILM's OpenEXR image format and library
 
 LIB_DEPENDS=	libIlmImf.so:graphics/OpenEXR
 
-USES=		python
+USES=		python:2.7
 USE_PYTHON=	distutils autoplist
 
 post-extract:

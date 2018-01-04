@@ -12,6 +12,7 @@ MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Packet sniffer that displays TCP information like top(1)
 
 LICENSE=	LGPL21
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		ncurses
 GNU_CONFIGURE=	yes

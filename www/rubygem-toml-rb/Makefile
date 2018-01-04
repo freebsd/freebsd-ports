@@ -1,11 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	toml-rb
-PORTVERSION=	1.0.0
+PORTVERSION=	1.1.1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	tz@FreeBSD.org
+MAINTAINER=	idefix@fechner.net
 COMMENT=	TOML parser using Citrus parsing library
 
 LICENSE=	MIT

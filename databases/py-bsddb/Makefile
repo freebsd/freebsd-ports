@@ -17,7 +17,7 @@ LICENSE=	PSFL
 PORTSCOUT=	ignore:1
 
 USE_PYTHON=	distutils autoplist
-USES=		bdb python tar:xz
+USES=		bdb python:2.7 tar:xz
 
 DIST_SUBDIR=	python
 DISTINFO_FILE=	${PORTSDIR}/lang/python${PYTHON_SUFFIX}/distinfo
@@ -27,12 +27,6 @@ PYDISTUTILS_INSTALLARGS+=	--install-lib ${PYTHON_LIBDIR}/lib-dynload
 
 MAKE_ENV=	BSDDB_VERSION=${BDB_LIB_NAME}
 
-.include <bsd.port.pre.mk>
-
-.if ${PYTHON_REL} >= 3000
-IGNORE=	bsddb package was removed from core standard library since 3.0, use databases/py-bsddb3 instead
-.endif
-
 post-extract:
 	@${CP} ${FILESDIR}/setup.py ${WRKSRC}
 
@@ -41,4 +35,4 @@ post-patch:
 		's,^\(#include.*\)\(db\.h.*\)$$,\1${BDB_INCLUDE_DIR}/\2,' \
 		${WRKSRC}/bsddb.h
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

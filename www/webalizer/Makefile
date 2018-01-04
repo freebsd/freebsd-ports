@@ -17,7 +17,7 @@ COMMENT=	Web server log file analysis program
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS+=	libpng16.so:graphics/png
+LIB_DEPENDS+=	libpng.so:graphics/png
 
 GNU_CONFIGURE=	yes
 DOCSDIR?=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}

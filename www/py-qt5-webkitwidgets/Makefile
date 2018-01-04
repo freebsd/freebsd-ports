@@ -1,7 +1,6 @@
 # $FreeBSD$
 
 PORTNAME=	webkitwidgets
-PORTREVISION=	1
 CATEGORIES=	www devel python
 
 MAINTAINER=	kde@FreeBSD.org
@@ -13,6 +12,7 @@ PYQT_DIST=	yes
 USES=		python pyqt:5
 USE_GL=		gl
 USE_PYQT=	sip_build core_run printsupport_run webkit_run widgets_run
+USE_PYTHON=	flavors
 USE_QT5=	core gui network printsupport webkit widgets \
 		qmake_build
 

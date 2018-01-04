@@ -1,5 +1,0 @@
-Official low-level client for Elasticsearch. It's goal is to provide common
-ground for all Elasticsearch-related code in Python; because of this it tries
-to be opinion-free and very extendable.
-
-WWW: http://elasticsearch-py.readthedocs.org/en/master/

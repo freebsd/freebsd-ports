@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sympa
-PORTVERSION=	6.2.22
+DISTVERSION=	6.2.24
 CATEGORIES=	mail
 
 MAINTAINER=	dgeo@centrale-marseille.fr
@@ -58,8 +58,6 @@ USES=		autoreconf cpe fakeroot perl5 shebangfix
 
 SHEBANG_FILES=	po/sympa/xgettext.pl \
 		po/sympa/add-lang.pl \
-		src/bin/find_missing_messages.pl \
-		src/bin/arcrepair.pl
 
 GNU_CONFIGURE=	yes
 ICONSDIR?=	www/icons
@@ -100,7 +98,7 @@ USE_RC_SUBR=	sympa
 CONFLICTS=	sympa-5*
 
 OPTIONS_DEFINE=	FASTCGI APACHE NLS
-OPTIONS_DEFAULT=APACHE
+OPTIONS_DEFAULT=APACHE NLS
 OPTIONS_RADIO=	DATABASE
 OPTIONS_RADIO_DATABASE=	PGSQL SYBASE MYSQL
 OPTIONS_SUB=	yes

@@ -12,7 +12,7 @@ PKGNAMESUFFIX=	2
 MAINTAINER=	m.tsatsenko@gmail.com
 COMMENT=	Pure-Python PDF toolkit
 
-USES=		python:2.7+
+USES=		python
 USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

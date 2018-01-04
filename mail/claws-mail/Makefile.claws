@@ -1,6 +1,6 @@
 # $FreeBSD$
 
-PORTVERSION=	3.15.1
+PORTVERSION=	3.16.0
 CATEGORIES?=	mail
 MASTER_SITES=	http://www.claws-mail.org/download.php?file=releases/
 

@@ -17,7 +17,8 @@ PLIST_FILES=	%%PYTHON_SITELIBDIR%%/dnet.so \
 
 LIBDNET_SLAVE=	yes
 
-USES=		python
+USES=		python:2.7
+USE_PYTHON=	flavors
 CONFIGURE_ARGS=	--with-python=${PYTHON_CMD}
 
 .if defined(MAINTAINER_MODE)

@@ -15,7 +15,7 @@ LICENSE_COMB=		dual
 LICENSE_FILE_GPLv2=	${WRKSRC}/LICENSE_GPL_v2.txt
 LICENSE_FILE_GPLv3=	${WRKSRC}/LICENSE_GPL_v3.txt
 
-USES=			compiler:features gmake python:build zip
+USES=			compiler:features gmake python:2.7,build zip
 USE_LDCONFIG=		yes
 LDFLAGS+=		-L${LOCALBASE}/lib
 

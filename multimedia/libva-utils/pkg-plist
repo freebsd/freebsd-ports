@@ -1,8 +1,10 @@
 bin/avcenc
 bin/h264encode
-bin/vainfo
 bin/jpegenc
 bin/loadjpeg
 bin/mpeg2vaenc
 bin/mpeg2vldemo
 bin/putsurface
+bin/vainfo
+bin/vavpp
+bin/vp9enc

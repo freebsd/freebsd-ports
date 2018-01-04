@@ -1,16 +1,16 @@
---- setup.py.orig	Tue Sep 12 13:54:16 2006
-+++ setup.py	Tue Sep 12 13:55:22 2006
-@@ -7,8 +7,6 @@
- from gazpacho import __version__
+--- setup.py.orig	2007-03-05 16:06:37 UTC
++++ setup.py
+@@ -8,8 +8,6 @@ from gazpacho import __version__
  
+ templates = []
  data_files = [
 -    ('share/doc/gazpacho', ('AUTHORS', 'ChangeLog', 'CONTRIBUTORS',
 -                            'COPYING', 'README', 'NEWS')),
      ('share/doc/gazpacho/examples', listfiles('examples', '*')),
      ('$datadir/catalogs', listfiles('catalogs', 'base.xml')),
      ('$datadir/pixmaps', listfiles('pixmaps', '*.png')),
-@@ -17,7 +15,6 @@
-     ]
+@@ -34,7 +32,6 @@ data_files.extend(list_plugins())
+ 
  resources = dict(locale='$prefix/share/locale')
  global_resources = dict(
 -    doc='$prefix/share/doc/gazpacho',

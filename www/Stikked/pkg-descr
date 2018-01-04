@@ -1,0 +1,24 @@
+Stikked is an Open-Source PHP Pastebin, with the aim of keeping a simple and
+easy to use user interface. Stikked allows you to easily share code with anyone
+you wish. Based on the original Stikked with lots of bugfixes and improvements.
+
+Prerequisites
+
+* Webservers: Apache, Lighttpd, Nginx, Cherokee
+* Databases: MySQL, PostgreSQL, SQLite
+* PHP version 5.6 or newer
+* PHP-GD for the creation of QR-codes
+
+Here are some features:
+
+* Easy setup
+* Syntax highlighting for many languages
+* Paste replies
+* Diff view between the original paste and the reply
+* An API
+* Search pastes
+* Encrypted pastes
+* Burn on reading
+* Anti-Spam features
+
+WWW: https://github.com/claudehohl/Stikked

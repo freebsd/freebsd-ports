@@ -22,7 +22,7 @@ MPV_DESC=	Mpv media player support
 # This port installs the following files in shared dirs
 # PLIST_FILES=	bin/mps
 USES=		python
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	distutils autoplist concurrent optsuffix
 
 MPLAYER_RUN_DEPENDS=	mplayer:multimedia/mplayer
 MPV_RUN_DEPENDS=	mpv:multimedia/mpv

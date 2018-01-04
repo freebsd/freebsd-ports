@@ -1,0 +1,27 @@
+From 36f84744031430747d27bfb2087c7ae51019a70a Mon Sep 17 00:00:00 2001
+From: Sergei Golubchik <serg@mariadb.org>
+Date: Fri, 10 Nov 2017 12:48:52 +0100
+Subject: [PATCH] MDEV-14337 mysqld_safe may suppress error messages with
+ --log-output=file
+
+don't close stdout/stderr, redirect them to /dev/null instead.
+otherwise redirections like >&2 fail with "invalid file descriptor"
+---
+ scripts/mysqld_safe.sh | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/scripts/mysqld_safe.sh b/scripts/mysqld_safe.sh
+index b644184b1e1d..46b376890939 100644
+--- scripts/mysqld_safe.sh.orig
++++ scripts/mysqld_safe.sh
+@@ -868,8 +868,8 @@ if expr "${-}" : '.*x' > /dev/null
+ then
+   :
+ else
+-  exec 1>&-
+-  exec 2>&-
++  exec 1>/dev/null
++  exec 2>/dev/null
+ fi
+ 
+ while true

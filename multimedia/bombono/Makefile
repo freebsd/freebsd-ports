@@ -26,6 +26,8 @@ RUN_DEPENDS=	gm:graphics/GraphicsMagick \
 		toolame:audio/toolame
 
 BROKEN=		fails to compile: weakref.h: macro "static_assert" passed 3 arguments, but takes just 2
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2018-01-27
 
 USES=		desktop-file-utils gettext pkgconfig scons shared-mime-info \
 		tar:bzip2

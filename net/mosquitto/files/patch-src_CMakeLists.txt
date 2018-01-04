@@ -1,4 +1,4 @@
---- src/CMakeLists.txt.orig	2016-08-17 11:05:14 UTC
+--- src/CMakeLists.txt.orig	2017-07-10 22:46:01 UTC
 +++ src/CMakeLists.txt
 @@ -77,6 +77,7 @@ if (WIN32 OR CYGWIN)
  endif (WIN32 OR CYGWIN)
@@ -8,16 +8,16 @@
  
  add_executable(mosquitto ${MOSQ_SRCS})
  
-@@ -86,7 +87,7 @@ if (UNIX)
+@@ -96,7 +97,7 @@ if (UNIX)
  	if (APPLE)
  		set (MOSQ_LIBS ${MOSQ_LIBS} dl m)
  	else (APPLE)
--		set (MOSQ_LIBS ${MOSQ_LIBS} rt dl m)
-+		set (MOSQ_LIBS ${MOSQ_LIBS} rt m)
- 	endif (APPLE)
- endif (UNIX)
- 
-@@ -127,6 +128,5 @@ if (${WITH_TLS} STREQUAL ON)
+-		set (MOSQ_LIBS ${MOSQ_LIBS} dl m)
++		set (MOSQ_LIBS ${MOSQ_LIBS} m)
+ 		find_library(LIBRT rt)
+ 		if (LIBRT)
+ 			set (MOSQ_LIBS ${MOSQ_LIBS} rt)
+@@ -141,6 +142,5 @@ if (${WITH_TLS} STREQUAL ON)
  endif (${WITH_TLS} STREQUAL ON)
  
  if (UNIX)

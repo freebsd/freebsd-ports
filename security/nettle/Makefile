@@ -36,6 +36,11 @@ PORTEXAMPLES=	*.c *.h
 CONFIGURE_ENV+=	CCPIC=-fPIC
 .endif
 
+.if ${ARCH} == "mips64"
+post-patch:
+	@${REINPLACE_CMD} -e 's|__sgi|__unix__|' ${WRKSRC}/configure
+.endif
+
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/lib*.so
 

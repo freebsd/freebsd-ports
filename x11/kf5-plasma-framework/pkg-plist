@@ -174,6 +174,9 @@ lib/libKF5PlasmaQuick.so.%%KDE_FRAMEWORKS_VERSION%%
 %%QT_QMLDIR%%/org/kde/plasma/components.3/ScrollBar.qml
 %%QT_QMLDIR%%/org/kde/plasma/components.3/Slider.qml
 %%QT_QMLDIR%%/org/kde/plasma/components.3/SpinBox.qml
+%%QT_QMLDIR%%/org/kde/plasma/components.3/Switch.qml
+%%QT_QMLDIR%%/org/kde/plasma/components.3/SwitchDelegate.qml
+%%QT_QMLDIR%%/org/kde/plasma/components.3/SwitchIndicator.qml
 %%QT_QMLDIR%%/org/kde/plasma/components.3/TabBar.qml
 %%QT_QMLDIR%%/org/kde/plasma/components.3/TabButton.qml
 %%QT_QMLDIR%%/org/kde/plasma/components.3/TextArea.qml

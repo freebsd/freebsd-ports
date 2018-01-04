@@ -13,8 +13,6 @@ COMMENT=	Simple tool to export pf (packet filter) logs to XML files
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_sparc64=	cannot compile: error in C++ code
-
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 OPTIONS_DEFINE=	EXPAT DOCS EXAMPLES

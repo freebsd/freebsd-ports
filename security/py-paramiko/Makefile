@@ -13,11 +13,11 @@ COMMENT=	Python SSH2 protocol library
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}bcrypt>0:security/py-bcrypt \
-		${PYTHON_PKGNAMEPREFIX}cryptography>0:security/py-cryptography \
-		${PYTHON_PKGNAMEPREFIX}ecdsa>0:security/py-ecdsa \
-		${PYTHON_PKGNAMEPREFIX}pyasn1>0:devel/py-pyasn1 \
-		${PYTHON_PKGNAMEPREFIX}pynacl>0:security/py-pynacl
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}bcrypt>0:security/py-bcrypt@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}cryptography>0:security/py-cryptography@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}ecdsa>0:security/py-ecdsa@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pyasn1>0:devel/py-pyasn1@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pynacl>0:security/py-pynacl@${FLAVOR}
 
 USES?=		python
 USE_PYTHON=	autoplist concurrent distutils

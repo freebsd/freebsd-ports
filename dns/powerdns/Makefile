@@ -1,11 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	powerdns
-PORTVERSION=	4.0.4
-PORTREVISION=	6
+DISTVERSION=	4.1.0
+PORTREVISION=	1
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://downloads.powerdns.com/releases/
-DISTNAME=	pdns-${PORTVERSION}
+DISTNAME=	pdns-${DISTVERSION}
 
 MAINTAINER=	tremere@cainites.net
 COMMENT=	Advanced DNS server with multiple backends including SQL
@@ -78,9 +78,9 @@ OPENLDAP_CXXFLAGS=	-DLDAP_DEPRECATED=1
 OPENLDAP_USE=		OPENLDAP=YES
 OPENLDAP_VARS=		MODULES+=ldap
 
-OPTALGO_CONFIGURE_ON=	--enable-botan1.10 \
+OPTALGO_CONFIGURE_ON=	--enable-botan \
 			--enable-libsodium
-OPTALGO_LIB_DEPENDS=	libbotan-1.10.so:security/botan110 \
+OPTALGO_LIB_DEPENDS=	libbotan-2.so:security/botan2 \
 			libsodium.so:security/libsodium
 
 PGSQL_CONFIGURE_ON=	--with-pgsql=${LOCALBASE}

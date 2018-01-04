@@ -4,8 +4,11 @@
 PORTNAME=	bitcoin
 PORTVERSION=	0.15.1
 DISTVERSIONPREFIX=	v
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES=	net-p2p finance
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES=	1ec0c0a01c31.patch:-p1
 
 MAINTAINER=	robbak@robbak.com
 COMMENT?=	Virtual Peer-to-Peer Currency Client (QT)

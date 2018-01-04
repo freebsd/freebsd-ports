@@ -1,4 +1,4 @@
---- debian/qgis.desktop.orig	2016-10-21 12:14:02 UTC
+--- debian/qgis.desktop.orig	2017-10-27 12:00:21 UTC
 +++ debian/qgis.desktop
 @@ -1,7 +1,9 @@
  [Desktop Entry]
@@ -10,3 +10,16 @@
  GenericName=Geographic Information System
  GenericName[ar]=نظام المعلومات الجغرافي
  GenericName[az]=Coğrafi informasiya sistemi
+@@ -47,9 +49,9 @@ GenericName[th]=ระบบสารสนเทศ�
+ GenericName[tr]=Coğrafi bilgi sistemi
+ GenericName[uk]=Геоінформаційна система
+ GenericName[uz]=Geografik axborot tizimi
+-Icon=qgis
+-TryExec=/usr/bin/qgis
+-Exec=/usr/bin/qgis %F
++Icon=qgis-icon
++TryExec=/usr/local/bin/qgis
++Exec=/usr/local/bin/qgis %F
+ Terminal=false
+ StartupNotify=false
+ Categories=Qt;Education;Science;Geography;

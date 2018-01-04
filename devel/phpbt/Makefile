@@ -32,7 +32,7 @@ OPTIONS_DEFAULT=GNATS
 OPTIONS_SUB=	yes
 
 GNATS_DESC=	Install script to convert entries from GNATS
-GNATS_USES=	python:run shebangfix
+GNATS_USES=	python:2.7,run shebangfix
 
 post-extract-GNATS-off:
 	@${RM} ${WRKSRC}/contrib/gnats-to-phpbt.py

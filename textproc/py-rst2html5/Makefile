@@ -12,11 +12,11 @@ COMMENT=	Produces HTML5 documents from reStructuredText sources
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Genshi>=0.7:textproc/py-genshi \
-	${PYTHON_PKGNAMEPREFIX}pygments>=2.1:textproc/py-pygments \
-	${PYTHON_PKGNAMEPREFIX}docutils>=0.12:textproc/py-docutils
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Genshi>=0.7:textproc/py-genshi@${FLAVOR} \
+	${PYTHON_PKGNAMEPREFIX}pygments>=2.1:textproc/py-pygments@${FLAVOR} \
+	${PYTHON_PKGNAMEPREFIX}docutils>=0.12:textproc/py-docutils@${FLAVOR}
 
-USES=	python
+USES=	python:2.7
 USE_PYTHON=	distutils autoplist
 NO_ARCH=	yes
 

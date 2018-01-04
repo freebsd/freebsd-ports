@@ -10,6 +10,7 @@ MAINTAINER=	rwestlun@gmail.com
 COMMENT=	Minesweeper-style game for text-mode terminals
 
 LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	rwestlund

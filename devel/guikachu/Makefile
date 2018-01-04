@@ -15,6 +15,8 @@ LIB_DEPENDS=	libgnomeuimm-2.6.so:x11-toolkits/libgnomeuimm26 \
 		libgnomevfsmm-2.6.so:devel/gnome-vfsmm
 
 BROKEN=		fails to build: ustring.h: expected ';' at end of declaration list
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2018-01-27
 
 USES=		gmake pathfix pkgconfig shared-mime-info desktop-file-utils
 USE_GNOME=	gnomeprefix intlhack libgnomeui

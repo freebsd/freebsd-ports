@@ -11,7 +11,7 @@ COMMENT=	shutil.which for those not using Python 3.3
 
 LICENSE=	PSFL
 
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${FLAVOR}
 
 USES=		python:-3.3
 USE_GITHUB=	yes

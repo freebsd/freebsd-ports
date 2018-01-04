@@ -14,6 +14,7 @@ MASTERDIR=	${.CURDIR}/../../devel/subversion
 PKGDIR=		${.CURDIR}
 
 USES+=		python
+USE_PYTHON=	flavors py3kplist
 
 SVN_BUILD_BINDINGS=	yes
 SVN_BUILD_ADDONS=	yes

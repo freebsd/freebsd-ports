@@ -13,6 +13,8 @@ COMMENT=	Set of fonts by Adobe designed for coders
 LICENSE=	OFL11
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+PORTSCOUT=	skipv:variable-fonts
+
 NO_ARCH=	yes
 NO_BUILD=	yes
 USES=		fonts

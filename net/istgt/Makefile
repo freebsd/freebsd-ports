@@ -22,7 +22,7 @@ SUB_FILES=	pkg-message
 OPTIONS_DEFINE=	SYMLNKDEV VBOXVD DOCS
 
 SYMLNKDEV_DESC=	Allow symbolic link for device file
-VBOXVD_DESC=	Build with VBox VD support (no X11 required)
+VBOXVD_DESC=	VirtualBox VD support (no X11 required)
 
 SYMLNKDEV_CONFIGURE_ON=	--enable-symlink-device
 

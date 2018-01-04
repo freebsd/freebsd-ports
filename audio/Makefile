@@ -3,6 +3,9 @@
 
     COMMENT = Audio tools
 
+    SUBDIR += GxSwitchlessWah-lv2
+    SUBDIR += HVSC-Update
+    SUBDIR += Maaate
     SUBDIR += aacgain
     SUBDIR += aacplusenc
     SUBDIR += abcde
@@ -66,7 +69,6 @@
     SUBDIR += carla
     SUBDIR += cava
     SUBDIR += ccaudio2
-    SUBDIR += cd-console
     SUBDIR += cd-discid
     SUBDIR += cd2mp3
     SUBDIR += cddb-bundle
@@ -141,6 +143,7 @@
     SUBDIR += faac
     SUBDIR += faad
     SUBDIR += fapg
+    SUBDIR += faust
     SUBDIR += fcplay
     SUBDIR += fdk-aac
     SUBDIR += fdmf
@@ -176,11 +179,12 @@
     SUBDIR += flake
     SUBDIR += flite
     SUBDIR += fluid-soundfont
+    SUBDIR += fluidplug-lv2
     SUBDIR += fluidsynth
     SUBDIR += fluidsynth-dssi
     SUBDIR += fmit
-    SUBDIR += foo-yc20
     SUBDIR += fomp-lv2
+    SUBDIR += foo-yc20
     SUBDIR += forked-daapd
     SUBDIR += fpc-a52
     SUBDIR += fpc-mad
@@ -318,8 +322,12 @@
     SUBDIR += hexter
     SUBDIR += hs-ALUT
     SUBDIR += hs-libmpd
+<<<<<<< HEAD
     SUBDIR += hs-OpenAL
     SUBDIR += HVSC-Update
+=======
+    SUBDIR += hts_engine-API
+>>>>>>> 6d23e4136f530c9a3b8bc98db90a4c53c6c50b5d
     SUBDIR += hydrogen
     SUBDIR += hydrogen-devel
     SUBDIR += icecast-kh
@@ -368,7 +376,6 @@
     SUBDIR += ladspa
     SUBDIR += lame
     SUBDIR += lash
-    SUBDIR += last.fm
     SUBDIR += lastfm-desktop
     SUBDIR += liba52
     SUBDIR += libaacplus
@@ -621,6 +628,7 @@
     SUBDIR += p5-Test-Corpus-Audio-MPD
     SUBDIR += p5-xmms2
     SUBDIR += pacpl
+    SUBDIR += padthv1-lv2
     SUBDIR += paman
     SUBDIR += paprefs
     SUBDIR += patchage
@@ -686,8 +694,6 @@
     SUBDIR += py-tagpy
     SUBDIR += py-vorbis
     SUBDIR += py-xmms2
-    SUBDIR += py3-mutagen
-    SUBDIR += py3-pylast
     SUBDIR += pytone
     SUBDIR += qjackctl
     SUBDIR += qmidiarp
@@ -727,6 +733,7 @@
     SUBDIR += sbagen
     SUBDIR += sc3-plugins
     SUBDIR += schismtracker
+    SUBDIR += screcord-lv2
     SUBDIR += scrobbler
     SUBDIR += sdl_mixer
     SUBDIR += sdl_sound
@@ -849,6 +856,7 @@
     SUBDIR += wildmidi
     SUBDIR += wmalbum
     SUBDIR += wmix
+    SUBDIR += wmmp
     SUBDIR += wmrecord
     SUBDIR += wmsmixer
     SUBDIR += workman

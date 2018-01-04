@@ -1,0 +1,10 @@
+Parso is a Python parser that supports error recovery and round-trip
+parsing for different Python versions (in multiple Python versions).
+Parso is also able to list multiple syntax errors in your python file.
+
+Parso has been battle-tested by jedi. It was pulled out of jedi to be
+useful for other projects as well.
+
+Parso consists of a small API to parse Python and analyse the syntax tree.
+
+WWW: https://github.com/davidhalter/parso

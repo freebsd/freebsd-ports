@@ -15,17 +15,17 @@ LICENSE_NAME=	Repoze License
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}PasteDeploy>=1.5.0:www/py-pastedeploy \
-		${PYTHON_PKGNAMEPREFIX}repoze.lru>=0.4:devel/py-repoze.lru \
-		${PYTHON_PKGNAMEPREFIX}translationstring>=0.4:textproc/py-translationstring \
-		${PYTHON_PKGNAMEPREFIX}venusian>=1.0,1:devel/py-venusian \
-		${PYTHON_PKGNAMEPREFIX}webob>=1.3.1:www/py-webob \
-		${PYTHON_PKGNAMEPREFIX}zope.deprecation>=3.5.0:devel/py-zope.deprecation \
-		${PYTHON_PKGNAMEPREFIX}zope.interface>=3.8.0:devel/py-zope.interface
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}PasteDeploy>=1.5.0:www/py-pastedeploy@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}repoze.lru>=0.4:devel/py-repoze.lru@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}translationstring>=0.4:textproc/py-translationstring@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}venusian>=1.0,1:devel/py-venusian@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}webob>=1.3.1:www/py-webob@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}zope.deprecation>=3.5.0:devel/py-zope.deprecation@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}zope.interface>=3.8.0:devel/py-zope.interface@${FLAVOR}
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-#TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}WebTest>=1.1:www/py-WebTest \
-#		${PYTHON_PKGNAMEPREFIX}zope.component>=3.6.0:devel/py-zope.component
+#TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}WebTest>=1.1:www/py-WebTest@${FLAVOR} \
+#		${PYTHON_PKGNAMEPREFIX}zope.component>=3.6.0:devel/py-zope.component@${FLAVOR}
 
 NO_ARCH=	yes
 USES=		python

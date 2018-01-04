@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	virtualbox-ose
-PORTVERSION=	5.2.0
-PORTREVISION=	1
+PORTVERSION=	5.2.4
 CATEGORIES=	emulators
 MASTER_SITES=	http://download.virtualbox.org/virtualbox/${PORTVERSION}/
 DISTFILES=	VirtualBox-${PORTVERSION}${EXTRACT_SUFX} ${GUESTADDITIONS}
@@ -149,7 +148,7 @@ USE_TEX=	dvipsk:build formats:build
 
 .if ${PORT_OPTIONS:MPYTHON}
 USES+=		python
-USE_PYTHON=	distutils noegginfo
+USE_PYTHON=	distutils noegginfo noflavors
 PYDISTUTILS_PKGNAME=	vboxapi
 PYDISTUTILS_PKGVERSION=	1.0
 .else
@@ -161,7 +160,7 @@ CONFIGURE_ARGS+=	--enable-qt5
 PLIST_SUB+=	QT=""
 QT_NONSTANDARD=	yes
 USE_GL=		gl
-USE_QT5=	buildtools_build core dbus gui linguist_build opengl
+USE_QT5=	buildtools_build core dbus gui linguisttools_build opengl
 USE_QT5+=	printsupport widgets x11extras
 USE_XORG=	xcb
 INSTALLS_ICONS=	yes

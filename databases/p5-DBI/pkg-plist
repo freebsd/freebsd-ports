@@ -18,6 +18,7 @@ bin/dbiproxy
 %%SITE_ARCH%%/DBD/Gofer/Transport/null.pm
 %%SITE_ARCH%%/DBD/Gofer/Transport/pipeone.pm
 %%SITE_ARCH%%/DBD/Gofer/Transport/stream.pm
+%%SITE_ARCH%%/DBD/Mem.pm
 %%SITE_ARCH%%/DBD/NullP.pm
 %%SITE_ARCH%%/DBD/Proxy.pm
 %%SITE_ARCH%%/DBD/Sponge.pm
@@ -82,6 +83,7 @@ bin/dbiproxy
 %%PERL5_MAN3%%/DBD::Gofer::Transport::null.3.gz
 %%PERL5_MAN3%%/DBD::Gofer::Transport::pipeone.3.gz
 %%PERL5_MAN3%%/DBD::Gofer::Transport::stream.3.gz
+%%PERL5_MAN3%%/DBD::Mem.3.gz
 %%PERL5_MAN3%%/DBD::Proxy.3.gz
 %%PERL5_MAN3%%/DBD::Sponge.3.gz
 %%PERL5_MAN3%%/DBI.3.gz

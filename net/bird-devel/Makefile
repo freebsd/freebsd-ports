@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	bird
-PORTVERSION=	20130301
-PORTREVISION=	1
+DISTVERSION=	2.0.0-pre1
 CATEGORIES=	net
-MASTER_SITES=	http://bird.mpls.in/distfiles/bird/
+MASTER_SITES=	ftp://bird.network.cz/pub/bird/ \
+		http://bird.mpls.in/distfiles/bird/
 PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	melifaro@ipfw.ru
@@ -15,28 +15,11 @@ CONFLICTS=	bird-[0-9]*
 
 USES=		bison gmake readline
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--localstatedir=/var --enable-mpls
+CONFIGURE_ARGS=	--localstatedir=/var
 USE_CSTD=	gnu89
-
-OPTIONS_DEFINE=	KMPLS
-KMPLS_DESC=	kernel MPLS support
 
 MAKE_JOBS_UNSAFE=	yes
 
 USE_RC_SUBR=	bird
-
-KMPLS_CONFIGURE_ON=	--enable-kmpls
-
-post-install:
-	@${ECHO_MSG}
-	@${ECHO_MSG} =====================================================================
-	@${ECHO_MSG}
-	@${ECHO_MSG} "        WARNING: Please take a look on kern/134931"
-	@${ECHO_MSG} "        WARNING: before using multiple fibs!"
-	@${ECHO_MSG} "        8.2-STABLE kernel patch available here:"
-	@${ECHO_MSG} "        http://static.ipfw.ru/patches/rtsock_82S-20110725.diff"
-	@${ECHO_MSG}
-	@${ECHO_MSG} =====================================================================
-	@${ECHO_MSG}
 
 .include <bsd.port.mk>

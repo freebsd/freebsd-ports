@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	luarocks
-PORTVERSION=	2.3.0
+PORTVERSION=	2.4.3
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 PKGNAMEPREFIX=	${LUA_PKGNAMEPREFIX}
@@ -28,27 +28,6 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} \
 ALL_TARGET=	build
 
 OPTIONS_DEFINE=	LUAJIT
-
-OPTIONS_GROUP=		BUILD FETCH
-BUILD_DESC=		Build backends
-OPTIONS_GROUP_BUILD=	CMAKE GMAKE
-FETCH_DESC=		Fetch from repositories
-OPTIONS_GROUP_FETCH=	CVS GIT HG SVN
-
-CMAKE_DESC=		CMake support
-CMAKE_RUN_DEPENDS=	cmake:devel/cmake
-GMAKE_DESC=		GNU Make support
-GMAKE_RUN_DEPENDS=	gmake:devel/gmake
-
-CVS_DESC=		CVS support
-CVS_RUN_DEPENDS=	cvs:devel/cvs-devel
-GIT_DESC=		Git support
-GIT_RUN_DEPENDS=	git:devel/git
-HG_DESC=		Mercurial support
-HG_RUN_DEPENDS=		hg:devel/mercurial
-SVN_DESC=		Subversion support
-SVN_RUN_DEPENDS=	svn:devel/subversion
-
 LUAJIT_DESC=		Use LuaJIT instead of Lua
 LUAJIT_BUILD_DEPENDS=	luajit:lang/luajit
 LUAJIT_RUN_DEPENDS=	luajit:lang/luajit

@@ -18,6 +18,8 @@ EXTRACT_ONLY=	crafty-${PORTVERSION}.zip
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Chess program for playing and analyzing games
 
+BROKEN=		fails to build: Could not read profile default.profdata: No such file or directory
+
 WRKSRC=		${WRKDIR}
 
 USES=		gmake zip

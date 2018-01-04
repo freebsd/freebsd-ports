@@ -2,6 +2,7 @@
 
 PORTNAME=	ostatus2
 PORTVERSION=	2.0.1
+PORTREVISION=	2
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -12,8 +13,8 @@ LICENSE=	MIT
 
 RUN_DEPENDS=	rubygem-addressable>=2.4:www/rubygem-addressable \
 		rubygem-nokogiri>=1.6:textproc/rubygem-nokogiri \
-		rubygem-openssl>=2.0:security/rubygem-openssl \
-		rubygem-http>=2.0:www/rubygem-http
+		rubygem-openssl20>=2.0:security/rubygem-openssl20 \
+		rubygem-http2>=2.0:www/rubygem-http2
 
 NO_ARCH=	yes
 

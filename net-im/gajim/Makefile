@@ -12,11 +12,11 @@ COMMENT=	Jabber client based on a plugin system
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}openssl>=0:security/py-openssl \
-		${PYTHON_PKGNAMEPREFIX}sqlite3>=0:databases/py-sqlite3 \
-		${PYTHON_PKGNAMEPREFIX}pyasn1>=0:devel/py-pyasn1 \
-		${PYTHON_PKGNAMEPREFIX}nbxmpp>0:net-im/py-nbxmpp \
-		${PYTHON_PKGNAMEPREFIX}python-gnupg>0:security/py-python-gnupg
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}openssl>=0:security/py-openssl@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}sqlite3>=0:databases/py-sqlite3@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pyasn1>=0:devel/py-pyasn1@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}nbxmpp>0:net-im/py-nbxmpp@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}python-gnupg>0:security/py-python-gnupg@${PY_FLAVOR}
 
 NO_ARCH=	yes
 USES=		cpe dos2unix gmake localbase pathfix python:2.7 tar:bzip2
@@ -36,9 +36,9 @@ CRYPTO_DESC=	End to end encryption support
 GUPNP_DESC=	UPnP IGD protocol support
 SPELL_DESC=	Spell checking support
 
-AVAHI_RUN_DEPENDS=	avahi-discover:net/py-avahi
-CRYPTO_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pycrypto>0:security/py-pycrypto
-DBUS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>=0.82.2:devel/py-dbus
+AVAHI_RUN_DEPENDS=	avahi-discover:net/py-avahi@${PY_FLAVOR}
+CRYPTO_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pycrypto>0:security/py-pycrypto@${PY_FLAVOR}
+DBUS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>=0.82.2:devel/py-dbus@${PY_FLAVOR}
 GUPNP_RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gupnp/__init__.py:net/gupnp-igd
 NLS_USES=		gettext
 SPELL_LIB_DEPENDS=	libgtkspell.so:textproc/gtkspell

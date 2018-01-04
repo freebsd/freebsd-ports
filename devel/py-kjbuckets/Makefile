@@ -18,7 +18,7 @@ LICENSE_FILE=	${WRKSRC}/../COPYRIGHT.txt
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
-USES=		python
+USES=		python:2.7
 USE_PYTHON=	distutils autoplist
 WRKSRC=		${WRKDIR}/${DISTNAME}/kjbuckets
 

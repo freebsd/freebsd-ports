@@ -1,0 +1,11 @@
+--- configure.ac.orig	2017-04-07 21:40:27 UTC
++++ configure.ac
+@@ -19,7 +19,7 @@ AC_CONFIG_HEADERS([config.h])
+ AC_PROG_CC_C99
+ AC_PROG_INSTALL
+ 
+-LDFLAGS="$LDFLAGS -L/usr/local/lib"
++#LDFLAGS="$LDFLAGS -L/usr/local/lib"
+ 
+ # Checks for libraries.
+ AC_SEARCH_LIBS([log],

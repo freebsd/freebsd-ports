@@ -2,12 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	treeline
-PORTVERSION=	1.4.1
-PORTREVISION=	9
+PORTVERSION=	2.0.2
 CATEGORIES=	deskutils python
 MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}/:treeline \
-		http://treeline.bellz.org/plugins/:plugins \
-		http://depot.fsck.ch/mirror/distfiles/:treeline,plugins
+		http://treeline.bellz.org/plugins2/:plugins
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:treeline
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
@@ -20,8 +18,9 @@ LICENSE_FILE=	${WRKSRC}/doc/LICENSE
 BUILD_DEPENDS=	aspell:textproc/aspell
 RUN_DEPENDS=	aspell:textproc/aspell
 
-USES=		python:2 pyqt:4
-USE_PYQT=	gui network sip_build	
+USES=		python:3.4+ pyqt:4 shebangfix
+SHEBANG_FILES=	source/treeline.py
+USE_PYQT=	gui network sip_build
 NO_BUILD=	yes
 NO_ARCH=	yes
 
@@ -30,19 +29,20 @@ WRKSRC=		${WRKDIR}/TreeLine
 DESKTOP_ENTRIES=	"TreeLine" "" "${DATADIR}/icons/tree/treeline.png" \
 			"${PORTNAME}" "Utility;" false
 
-OPTIONS_DEFINE=		DOCS HTTPLOAD
+OPTIONS_DEFINE=		DOCS PLUGINS
 OPTIONS_SUB=		yes
 
-HTTPLOAD_DESC=		httpLoad plugin
-HTTPLOAD_DISTFILES=	httpload2.py:plugins
+PLUGINS_DESC=		Additional plugins: httpload, treepadexport, updateref
+PLUGINS_DISTFILES=	httpload.py:plugins \
+			treepadexport.py:plugins \
+			updateref.py:plugins \
 
 do-install:
 	(cd ${WRKSRC} && ${PYTHON_CMD} install.py -b ${STAGEDIR} -p ${PREFIX} \
 		-d ${DOCSDIR} -i ${DATADIR}/icons)
-	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/${PORTNAME}/plugins
 
-do-install-HTTPLOAD-on:
-	${INSTALL_DATA} ${DISTDIR}/httpload2.py \
-		${STAGEDIR}${PREFIX}/lib/${PORTNAME}/plugins
+do-install-PLUGINS-on:
+	(cd ${DISTDIR} && ${INSTALL_DATA} ${PLUGINS_DISTFILES:S/:plugins//} \
+		${STAGEDIR}${DATADIR}/plugins)
 
 .include <bsd.port.mk>

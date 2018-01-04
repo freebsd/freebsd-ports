@@ -14,8 +14,8 @@ COMMENT=	Manipulate PDF documents from the command line
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}more-itertools>=2.2:devel/py-more-itertools \
-		${PYTHON_PKGNAMEPREFIX}pdf2>=1.24:print/py-pdf2
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}more-itertools>=2.2:devel/py-more-itertools@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pdf2>=1.24:print/py-pdf2@${FLAVOR}
 
 USES=		python:2.7
 USE_PYTHON=	autoplist distutils

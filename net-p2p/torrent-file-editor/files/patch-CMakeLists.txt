@@ -1,14 +1,5 @@
---- CMakeLists.txt.orig	2017-09-26 09:30:09 UTC
+--- CMakeLists.txt.orig	2017-12-11 09:39:35 UTC
 +++ CMakeLists.txt
-@@ -46,7 +46,7 @@ if(CMAKE_BUILD_TYPE STREQUAL Release OR CMAKE_BUILD_TY
-   set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Werror")
- 
-   # #warning is not an error
--  if(NOT APPLE)
-+  if(NOT APPLE AND NOT CMAKE_SYSTEM_NAME STREQUAL FreeBSD)
-     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-error=cpp")
-   else()
-     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-#warnings")
 @@ -108,6 +108,7 @@ if(QT5_BUILD)
  else()
    find_package(Qt4 REQUIRED)

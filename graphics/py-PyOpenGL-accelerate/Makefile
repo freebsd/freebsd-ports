@@ -13,11 +13,10 @@ COMMENT=	OpenGL acceleration code for PyOpenGL
 
 LICENSE=	BSD3CLAUSE
 
-BUILD_DEPENDS=	cython:lang/cython \
-		${PYNUMPY}
+BUILD_DEPENDS=	${PYNUMPY}
 RUN_DEPENDS=	${PYNUMPY}
 
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	autoplist distutils cython
 USES=		python
 
 .include <bsd.port.mk>

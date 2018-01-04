@@ -16,7 +16,7 @@ LICENSE=	BSD3CLAUSE
 CONFIGURE_ARGS=	--enable-test-helpers
 USES=		php:zend tar:tgz
 SUB_FILES=	pkg-message
-IGNORE_WITH_PHP=	70 71
+IGNORE_WITH_PHP=	70 71 72
 # This needs to be loaded *after* devel/php-xdebug
 PHP_MOD_PRIO=	30
 

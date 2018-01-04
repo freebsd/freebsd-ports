@@ -16,15 +16,15 @@ COMMENT=	Easy to use Bitcoin client (legacy version)
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENCE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dnspython>0:dns/py-dnspython \
-		${PYTHON_PKGNAMEPREFIX}ecdsa>0:security/py-ecdsa \
-		${PYTHON_PKGNAMEPREFIX}jsonrpclib>0:devel/py-jsonrpclib \
-		${PYTHON_PKGNAMEPREFIX}pbkdf2>=1.3:security/py-pbkdf2 \
-		${PYTHON_PKGNAMEPREFIX}protobuf>=2.6.0:devel/py-protobuf \
-		${PYTHON_PKGNAMEPREFIX}pyaes>0:security/py-pyaes \
-		${PYTHON_PKGNAMEPREFIX}pysocks>=0:net/py-pysocks \
-		${PYTHON_PKGNAMEPREFIX}requests>=2.4.3:www/py-requests \
-		${PYTHON_PKGNAMEPREFIX}qrcode>=5.1:textproc/py-qrcode
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dnspython>0:dns/py-dnspython@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}ecdsa>0:security/py-ecdsa@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}jsonrpclib>0:devel/py-jsonrpclib@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pbkdf2>=1.3:security/py-pbkdf2@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}protobuf>=2.6.0:devel/py-protobuf@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pyaes>0:security/py-pyaes@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pysocks>=0:net/py-pysocks@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}requests>=2.4.3:www/py-requests@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}qrcode>=5.1:textproc/py-qrcode@${FLAVOR}
 
 CONFLICTS_INSTALL=	electrum-3.*
 
@@ -41,8 +41,8 @@ OPTIONS_DEFAULT=LEDGER TREZOR
 LEDGER_DESC=	Enable LEDGER Bitcoin hardware wallet support
 TREZOR_DESC=	Enable TREZOR Bitcoin hardware wallet support
 
-LEDGER_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}btchip-python>0:security/py-btchip-python
-TREZOR_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}trezor>0:security/py-trezor
+LEDGER_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}btchip-python>0:security/py-btchip-python@${FLAVOR}
+TREZOR_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}trezor>0:security/py-trezor@${FLAVOR}
 
 LEDGER_PLIST_FILES=	"@sample etc/devd/ledger_wallet.conf.sample"
 TREZOR_PLIST_FILES=	"@sample etc/devd/trezor_wallet.conf.sample"

@@ -1,5 +1,4 @@
 bin/u2f-host
-@sample etc/devd/u2f.conf.sample
 include/u2f-host/u2f-host-types.h
 include/u2f-host/u2f-host-version.h
 include/u2f-host/u2f-host.h

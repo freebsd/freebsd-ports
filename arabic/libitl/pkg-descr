@@ -1,5 +1,10 @@
-The Islamic Tools and Libraries (ITL) is a project to provide a
-plethora of useful Islamic tools and applications as well as a
-comprehensive feature-full Islam-centric library. The ITL
-project currently includes full lunar-centric time measurement
-routines.
+The Islamic Tools and Libraries (ITL) project provides a fully
+featured library for performing common Islamic calculations.
+
+ITL is currently composed of two library-modules:
+
+* prayertime: Geographically-aware prayer time and Qibla calculation
+  routines.
+* hijri: Hijri date generation/calculation and conversion routines.
+
+WWW: https://github.com/arabeyes-org/ITL

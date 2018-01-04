@@ -25,14 +25,14 @@ LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib \
 		libgjs.so:lang/gjs \
 		libtracker-sparql-1.0.so:sysutils/tracker \
 		libzapojit-0.0.so:net/libzapojit
-RUN_DEPENDS=	py2?-dbus>0:devel/py-dbus \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>0:devel/py-dbus@${PY_FLAVOR} \
 		${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss \
 		unoconv:textproc/unoconv
 
 PORTSCOUT=	limitw:1,even
 
 USES=		compiler:c++11-lib gettext gmake gnome libtool pathfix \
-		pkgconfig tar:xz
+		pkgconfig python:2.7 tar:xz
 USE_GNOME=	gnomedesktop3 gtk30 intlhack \
 		introspection:build librsvg2 libxml2
 GNU_CONFIGURE=	yes

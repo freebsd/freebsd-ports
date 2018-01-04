@@ -154,6 +154,7 @@ while ! "${svn}" ci -F commit.txt "${branch}"; do
 		echo "Saving commit log to ${save_log}"
 		break
 	fi
+	${EDITOR:-vi} commit.txt
 done
 rm -rf "${dir}"
 trap - 0

@@ -1,0 +1,10 @@
+###################################################################
+
+Please do run "tremc --create-config" to create the configuration
+file with default values.
+
+NOTE: A config file won't be created unless you provide this
+option at least once. After that, it is rewritten whenever tremc
+exits.
+
+###################################################################

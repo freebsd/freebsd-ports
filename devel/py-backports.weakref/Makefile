@@ -12,7 +12,7 @@ COMMENT=	Backport of the weakref module from Python 3.4
 
 LICENSE=	PSFL
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools_scm>0:devel/py-setuptools_scm
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools_scm>0:devel/py-setuptools_scm@${FLAVOR}
 
 NO_ARCH=	yes
 USES=		python:2.7

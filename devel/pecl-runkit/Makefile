@@ -12,7 +12,7 @@ COMMENT=	PECL extension to modify constants, user-defined functions, and classes
 LICENSE=	PHP30
 
 USES=		php:pecl
-IGNORE_WITH_PHP=	70
+IGNORE_WITH_PHP=	70 71 72
 
 CONFIGURE_ARGS=	--enable-runkit=classkit
 

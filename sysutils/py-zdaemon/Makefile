@@ -13,7 +13,7 @@ COMMENT=	Daemon Process Control Library and Tools for Unix-bases Systems
 LICENSE=	ZPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zconfig>0:devel/py-zconfig
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zconfig>0:devel/py-zconfig@${FLAVOR}
 
 NO_ARCH=	yes
 USES=		python zip

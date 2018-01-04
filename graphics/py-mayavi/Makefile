@@ -26,10 +26,10 @@ BUILD_DEPENDS=	vtk6>=6.1.0_8:math/vtk6 \
 		py27-sphinx>=1.3.1_2:textproc/py-sphinx
 RUN_DEPENDS=	vtk6>=6.1.0_8:math/vtk6 \
 		${PYNUMPY} \
-		${PYTHON_PKGNAMEPREFIX}envisage>=4.4.0:devel/py-envisage \
-		${PYTHON_PKGNAMEPREFIX}pyface>=4.5.2:devel/py-pyface \
-		${PYTHON_PKGNAMEPREFIX}scimath>=4.1.2:science/py-scimath \
-		${PYTHON_PKGNAMEPREFIX}traitsui>=4.5.1:graphics/py-traitsui
+		${PYTHON_PKGNAMEPREFIX}envisage>=4.4.0:devel/py-envisage@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pyface>=4.5.2:devel/py-pyface@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}scimath>=4.1.2:science/py-scimath@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}traitsui>=4.5.1:graphics/py-traitsui@${FLAVOR}
 
 USES=		python:-2.7 shebangfix tar:bzip2
 USE_PYTHON=	autoplist distutils

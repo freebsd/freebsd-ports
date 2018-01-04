@@ -13,6 +13,8 @@ COMMENT=	Javascript CSS pre-processor
 LICENSE=	APACHE20
 
 BROKEN=		fails to package
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2018-01-27
 
 BUILD_DEPENDS=	npm>=0:www/npm
 RUN_DEPENDS=	npm>=0:www/npm

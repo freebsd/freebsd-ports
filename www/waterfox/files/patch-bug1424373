@@ -1,0 +1,305 @@
+commit 3512ab03dd1f
+Author: Mike Conley <mconley@mozilla.com>
+Date:   Mon Dec 18 11:19:53 2017 -0500
+
+    Bug 1424373 - Don't set crash reporting prefs when showing about:tabcrashed for a crash without a report. r=Mossop a=jcristau
+---
+ browser/base/content/aboutTabCrashed.js            |  1 +
+ .../test/tabcrashed/browser_autoSubmitRequest.js   | 63 ++++++++++++++++++++--
+ .../content/test/tabcrashed/browser_withoutDump.js | 10 +---
+ browser/base/content/test/tabcrashed/head.js       | 12 +++++
+ browser/modules/ContentCrashHandlers.jsm           | 13 +++--
+ 5 files changed, 83 insertions(+), 16 deletions(-)
+
+diff --git browser/base/content/aboutTabCrashed.js browser/base/content/aboutTabCrashed.js
+index 822e3f78d4b5..8fccc92aa0fe 100644
+--- browser/base/content/aboutTabCrashed.js
++++ browser/base/content/aboutTabCrashed.js
+@@ -303,6 +303,7 @@ var AboutTabCrashed = {
+       includeURL,
+       URL,
+       autoSubmit,
++      hasReport: this.hasReport,
+     });
+   },
+ };
+diff --git browser/base/content/test/tabcrashed/browser_autoSubmitRequest.js browser/base/content/test/tabcrashed/browser_autoSubmitRequest.js
+index a86b1e2c79b7..e04ebc80cdea 100644
+--- browser/base/content/test/tabcrashed/browser_autoSubmitRequest.js
++++ browser/base/content/test/tabcrashed/browser_autoSubmitRequest.js
+@@ -19,9 +19,9 @@ requestLongerTimeout(2);
+ add_task(async function test_show_form() {
+   await SpecialPowers.pushPrefEnv({
+     set: [[AUTOSUBMIT_PREF, false]],
+-  })
++  });
+ 
+-  return BrowserTestUtils.withNewTab({
++  await BrowserTestUtils.withNewTab({
+     gBrowser,
+     url: PAGE,
+   }, async function(browser) {
+@@ -66,9 +66,9 @@ add_task(async function test_show_form() {
+ add_task(async function test_show_form() {
+   await SpecialPowers.pushPrefEnv({
+     set: [[AUTOSUBMIT_PREF, true]],
+-  })
++  });
+ 
+-  return BrowserTestUtils.withNewTab({
++  await BrowserTestUtils.withNewTab({
+     gBrowser,
+     url: PAGE,
+   }, async function(browser) {
+@@ -95,3 +95,58 @@ add_task(async function test_show_form() {
+               "Autosubmission pref should have been set.");
+   });
+ });
++
++/**
++ * Tests that we properly set the autoSubmit preference if the user is
++ * presented with a tabcrashed page without a crash report.
++ */
++add_task(async function test_no_offer() {
++  // We should default to sending the report.
++  Assert.ok(TabCrashHandler.prefs.getBoolPref("sendReport"));
++
++  await SpecialPowers.pushPrefEnv({
++    set: [[AUTOSUBMIT_PREF, false]],
++  });
++
++  await BrowserTestUtils.withNewTab({
++    gBrowser,
++    url: PAGE,
++  }, async function(browser) {
++    await TabStateFlusher.flush(browser);
++
++    // Make it so that it seems like no dump is available for the next crash.
++    prepareNoDump();
++
++    // Now crash the browser.
++    await BrowserTestUtils.crashBrowser(browser);
++
++    // eslint-disable-next-line mozilla/no-cpows-in-tests
++    let doc = browser.contentDocument;
++
++    // Ensure the request to autosubmit is invisible, since there's no report.
++    let requestRect = doc.getElementById("requestAutoSubmit")
++                         .getBoundingClientRect();
++    Assert.equal(0, requestRect.height,
++                 "Request for autosubmission has no height");
++    Assert.equal(0, requestRect.width,
++                 "Request for autosubmission has no width");
++
++    // Since the pref is set to false, the checkbox should be
++    // unchecked.
++    let autoSubmit = doc.getElementById("autoSubmit");
++    Assert.ok(!autoSubmit.checked,
++              "Checkbox for autosubmission is not checked.");
++
++    let restoreButton = doc.getElementById("restoreTab");
++    restoreButton.click();
++
++    await BrowserTestUtils.browserLoaded(browser, false, PAGE);
++
++    // The autosubmission pref should now be set.
++    Assert.ok(!Services.prefs.getBoolPref(AUTOSUBMIT_PREF),
++              "Autosubmission pref should not have changed.");
++  });
++
++  // We should not have changed the default value for sending the report.
++  Assert.ok(TabCrashHandler.prefs.getBoolPref("sendReport"));
++});
+diff --git browser/base/content/test/tabcrashed/browser_withoutDump.js browser/base/content/test/tabcrashed/browser_withoutDump.js
+index 62d997240af4..33bc2b3164a1 100644
+--- browser/base/content/test/tabcrashed/browser_withoutDump.js
++++ browser/base/content/test/tabcrashed/browser_withoutDump.js
+@@ -2,16 +2,8 @@
+ 
+ const PAGE = "data:text/html,<html><body>A%20regular,%20everyday,%20normal%20page.";
+ 
+-/**
+- * Monkey patches TabCrashHandler.getDumpID to return null in order to test
+- * about:tabcrashed when a dump is not available.
+- */
+ add_task(async function setup() {
+-  let originalGetDumpID = TabCrashHandler.getDumpID;
+-  TabCrashHandler.getDumpID = function(browser) { return null; };
+-  registerCleanupFunction(() => {
+-    TabCrashHandler.getDumpID = originalGetDumpID;
+-  });
++  prepareNoDump();
+ });
+ 
+ /**
+diff --git browser/base/content/test/tabcrashed/head.js browser/base/content/test/tabcrashed/head.js
+index e437acbcc4d5..9102e409ee91 100644
+--- browser/base/content/test/tabcrashed/head.js
++++ browser/base/content/test/tabcrashed/head.js
+@@ -121,3 +121,15 @@ async function setupLocalCrashReportServer() {
+     env.set("MOZ_CRASHREPORTER_URL", serverUrl);
+   });
+ }
++
++/**
++ * Monkey patches TabCrashHandler.getDumpID to return null in order to test
++ * about:tabcrashed when a dump is not available.
++ */
++function prepareNoDump() {
++  let originalGetDumpID = TabCrashHandler.getDumpID;
++  TabCrashHandler.getDumpID = function(browser) { return null; };
++  registerCleanupFunction(() => {
++    TabCrashHandler.getDumpID = originalGetDumpID;
++  });
++}
+diff --git browser/modules/ContentCrashHandlers.jsm browser/modules/ContentCrashHandlers.jsm
+index 36e60ede4f03..524d6a86a50a 100644
+--- browser/modules/ContentCrashHandlers.jsm
++++ browser/modules/ContentCrashHandlers.jsm
+@@ -361,8 +361,14 @@ this.TabCrashHandler = {
+    *        even if they are empty.
+    */
+   maybeSendCrashReport(message) {
+-    if (!AppConstants.MOZ_CRASHREPORTER)
++    if (!AppConstants.MOZ_CRASHREPORTER) {
++      return;
++    }
++
++    if (!message.data.hasReport) {
++      // There was no report, so nothing to do.
+       return;
++    }
+ 
+     let browser = message.target.browser;
+ 
+@@ -374,8 +380,9 @@ this.TabCrashHandler = {
+ 
+     let childID = this.browserMap.get(browser);
+     let dumpID = this.childMap.get(childID);
+-    if (!dumpID)
+-      return
++    if (!dumpID) {
++      return;
++    }
+ 
+     if (!message.data.sendReport) {
+       Services.telemetry.getHistogramById("FX_CONTENT_CRASH_NOT_SUBMITTED").add(1);
+
+commit a4a421108540
+Author: Mike Conley <mconley@mozilla.com>
+Date:   Thu Dec 21 16:36:13 2017 -0500
+
+    Bug 1424373 - Rename crash report submission pref. r=Mossop a=jcristau
+---
+ browser/app/profile/firefox.js                                      | 2 +-
+ browser/base/content/test/tabcrashed/browser_autoSubmitRequest.js   | 2 +-
+ browser/components/preferences/in-content/privacy.xul               | 6 +++---
+ .../tests/browser_bug1020245_openPreferences_to_paneContent.js      | 4 ++--
+ .../components/sessionstore/test/browser_background_tab_crash.js    | 2 +-
+ browser/modules/ContentCrashHandlers.jsm                            | 4 ++--
+ browser/modules/test/browser/browser_UnsubmittedCrashHandler.js     | 4 ++--
+ 7 files changed, 12 insertions(+), 12 deletions(-)
+
+diff --git browser/app/profile/firefox.js browser/app/profile/firefox.js
+index 8c29be0acc58..a1844936fdea 100644
+--- browser/app/profile/firefox.js
++++ browser/app/profile/firefox.js
+@@ -1664,7 +1664,7 @@ pref("browser.crashReports.unsubmittedCheck.enabled", false);
+ // without a user choice before we suppress the notification for
+ // some number of days.
+ pref("browser.crashReports.unsubmittedCheck.chancesUntilSuppress", 4);
+-pref("browser.crashReports.unsubmittedCheck.autoSubmit", false);
++pref("browser.crashReports.unsubmittedCheck.autoSubmit2", false);
+ 
+ // Preferences for the form autofill system extension
+ // The truthy values of "extensions.formautofill.available" are "on" and "detect",
+diff --git browser/base/content/test/tabcrashed/browser_autoSubmitRequest.js browser/base/content/test/tabcrashed/browser_autoSubmitRequest.js
+index e04ebc80cdea..1d4a70a1d145 100644
+--- browser/base/content/test/tabcrashed/browser_autoSubmitRequest.js
++++ browser/base/content/test/tabcrashed/browser_autoSubmitRequest.js
+@@ -1,7 +1,7 @@
+ "use strict";
+ 
+ const PAGE = "data:text/html,<html><body>A%20regular,%20everyday,%20normal%20page.";
+-const AUTOSUBMIT_PREF = "browser.crashReports.unsubmittedCheck.autoSubmit";
++const AUTOSUBMIT_PREF = "browser.crashReports.unsubmittedCheck.autoSubmit2";
+ 
+ const {TabStateFlusher} =
+   Cu.import("resource:///modules/sessionstore/TabStateFlusher.jsm", {});
+diff --git browser/components/preferences/in-content-new/privacy.xul browser/components/preferences/in-content-new/privacy.xul
+index 7eb882972ffa..1d34065ac7e5 100644
+--- browser/components/preferences/in-content-new/privacy.xul
++++ browser/components/preferences/in-content-new/privacy.xul
+@@ -161,8 +161,8 @@
+ 
+   <!-- Data Choices tab -->
+ #ifdef MOZ_CRASHREPORTER
+-  <preference id="browser.crashReports.unsubmittedCheck.autoSubmit"
+-              name="browser.crashReports.unsubmittedCheck.autoSubmit"
++  <preference id="browser.crashReports.unsubmittedCheck.autoSubmit2"
++              name="browser.crashReports.unsubmittedCheck.autoSubmit2"
+               type="bool"/>
+ #endif
+ 
+@@ -671,7 +671,7 @@
+ #ifdef MOZ_CRASHREPORTER
+   <hbox align="center">
+     <checkbox id="automaticallySubmitCrashesBox"
+-              preference="browser.crashReports.unsubmittedCheck.autoSubmit"
++              preference="browser.crashReports.unsubmittedCheck.autoSubmit2"
+               label="&alwaysSubmitCrashReports1.label;"
+               accesskey="&alwaysSubmitCrashReports1.accesskey;"/>
+     <label id="crashReporterLearnMore"
+diff --git browser/components/sessionstore/test/browser_background_tab_crash.js browser/components/sessionstore/test/browser_background_tab_crash.js
+index 9df18999a32f..34d92a9bdb39 100644
+--- browser/components/sessionstore/test/browser_background_tab_crash.js
++++ browser/components/sessionstore/test/browser_background_tab_crash.js
+@@ -147,7 +147,7 @@ add_task(async function test_background_crash_simple() {
+  */
+ add_task(async function test_background_crash_autosubmit_backlogged() {
+   await SpecialPowers.pushPrefEnv({
+-    set: [["browser.crashReports.unsubmittedCheck.autoSubmit", true]],
++    set: [["browser.crashReports.unsubmittedCheck.autoSubmit2", true]],
+   });
+ 
+   await setupBackgroundTabs(async function([tab1, tab2]) {
+diff --git browser/modules/ContentCrashHandlers.jsm browser/modules/ContentCrashHandlers.jsm
+index a5f95677c006..7127e2785c3a 100644
+--- browser/modules/ContentCrashHandlers.jsm
++++ browser/modules/ContentCrashHandlers.jsm
+@@ -885,11 +885,11 @@ this.UnsubmittedCrashHandler = {
+ 
+   get autoSubmit() {
+     return Services.prefs
+-                   .getBoolPref("browser.crashReports.unsubmittedCheck.autoSubmit");
++                   .getBoolPref("browser.crashReports.unsubmittedCheck.autoSubmit2");
+   },
+ 
+   set autoSubmit(val) {
+-    Services.prefs.setBoolPref("browser.crashReports.unsubmittedCheck.autoSubmit",
++    Services.prefs.setBoolPref("browser.crashReports.unsubmittedCheck.autoSubmit2",
+                                val);
+   },
+ 
+diff --git browser/modules/test/browser/browser_UnsubmittedCrashHandler.js browser/modules/test/browser/browser_UnsubmittedCrashHandler.js
+index 12c673ca92d2..2e79413d0a15 100644
+--- browser/modules/test/browser/browser_UnsubmittedCrashHandler.js
++++ browser/modules/test/browser/browser_UnsubmittedCrashHandler.js
+@@ -398,7 +398,7 @@ add_task(async function test_can_submit_several() {
+  * and sends the pending crash reports.
+  */
+ add_task(async function test_can_submit_always() {
+-  let pref = "browser.crashReports.unsubmittedCheck.autoSubmit";
++  let pref = "browser.crashReports.unsubmittedCheck.autoSubmit2";
+   Assert.equal(Services.prefs.getBoolPref(pref), false,
+                "We should not be auto-submitting by default");
+ 
+@@ -442,7 +442,7 @@ add_task(async function test_can_submit_always() {
+  */
+ add_task(async function test_can_auto_submit() {
+   await SpecialPowers.pushPrefEnv({ set: [
+-    ["browser.crashReports.unsubmittedCheck.autoSubmit", true],
++    ["browser.crashReports.unsubmittedCheck.autoSubmit2", true],
+   ]});
+ 
+   let reportIDs = await createPendingCrashReports(3);

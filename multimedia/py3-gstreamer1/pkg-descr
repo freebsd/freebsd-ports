@@ -1,5 +1,0 @@
-gst-python provides a convenient wrapper for the GStreamer library for
-use in Python programs, and takes care of many of the boring details
-such as managing memory and type casting.
-
-WWW: http://gstreamer.freedesktop.org/

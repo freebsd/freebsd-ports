@@ -50,16 +50,16 @@ post-install:
 .include <bsd.port.pre.mk>
 
 .if ! ${SSL_DEFAULT:Mlibressl*}
-BUILD_DEPENDS+=		${NONEXISTENT}:security/libressl:stage
-CPPFLAGS+=		-I${WRKDIR}/libressl/include
-LDFLAGS+=		-L${WRKDIR}/libressl/lib
 . ifnmake describe
 STAGEDIR_libressl!=	${MAKE} -V STAGEDIR -C ${PORTSDIR}/security/libressl
 . endif
-
-pre-configure:
-	(cd ${STAGEDIR_libressl}${LOCALBASE} && ${COPYTREE_SHARE} \
-		. ${WRKDIR}/libressl "! -name *.so*")
+BUILD_DEPENDS+=	${NONEXISTENT}:security/libressl:stage
+CPPFLAGS+=	-I${STAGEDIR_libressl}${LOCALBASE}/include
+LDFLAGS+=	${STAGEDIR_libressl}${LOCALBASE}/lib/libtls.a \
+		${STAGEDIR_libressl}${LOCALBASE}/lib/libssl.a \
+		${STAGEDIR_libressl}${LOCALBASE}/lib/libcrypto.a
+post-configure:
+	${REINPLACE_CMD} 's/-l[a-z]*//g' ${WRKSRC}/GNUmakefile 
 .endif # SSL_DEFAULT
 
 .include <bsd.port.post.mk>

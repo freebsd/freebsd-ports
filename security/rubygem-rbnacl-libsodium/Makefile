@@ -5,7 +5,7 @@ PORTVERSION=	1.0.13
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	tz@FreeBSD.org
+MAINTAINER=	idefix@fechner.net
 COMMENT=	Port rbnacl with bundled libsodium
 
 LICENSE=	MIT

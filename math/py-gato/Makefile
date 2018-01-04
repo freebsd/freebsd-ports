@@ -14,7 +14,7 @@ COMMENT=	Python-based toolbox to visualise algorithms on graphs
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LGPL.txt
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tkinter>0:x11-toolkits/py-tkinter
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tkinter>0:x11-toolkits/py-tkinter@${FLAVOR}
 
 NO_ARCH=	yes
 PORTEXAMPLES=	*

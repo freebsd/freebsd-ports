@@ -3,7 +3,7 @@
 
 PORTNAME=	gdbm
 PORTVERSION=	${PYTHON_PORTVERSION}
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	databases python
 MASTER_SITES=	PYTHON/ftp/python/${PORTVERSION}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,7 +19,7 @@ LIB_DEPENDS=	libgdbm.so:databases/gdbm
 PORTSCOUT=	ignore:1
 
 USES=		python tar:xz
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	distutils autoplist allflavors
 
 PYDISTUTILS_INSTALLARGS+=	--install-lib ${PYTHONPREFIX_LIBDIR}/lib-dynload
 

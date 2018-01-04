@@ -16,7 +16,7 @@ COMMENT=	New C++ interface for PostgreSQL
 CONFLICTS=	postgresql-libpqxx-[2-4].*
 PORTSCOUT=	limit:^2\.
 
-USES+=		gmake libtool pathfix pgsql pkgconfig python:build shebangfix
+USES+=		gmake libtool pathfix pgsql pkgconfig python:2.7,build shebangfix
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 PLIST_SUB=	PORTVERSION=${PORTVERSION}

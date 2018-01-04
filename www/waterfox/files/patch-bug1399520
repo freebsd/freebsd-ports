@@ -1,0 +1,93 @@
+commit b4603106d015
+Author: Liang-Heng Chen <xeonchen@gmail.com>
+Date:   Thu Oct 19 22:29:41 2017 -0400
+
+    Bug 1399520 - Avoid race condition. r=dragana
+    
+    MozReview-Commit-ID: 6Pd2HXqBgX4
+---
+ modules/libjar/nsJAR.cpp | 26 ++++++++++++++++++--------
+ modules/libjar/nsJAR.h   |  8 +++++---
+ 2 files changed, 23 insertions(+), 11 deletions(-)
+
+diff --git modules/libjar/nsJAR.cpp modules/libjar/nsJAR.cpp
+index 80589e03f92b..b3121d99ef0a 100644
+--- modules/libjar/nsJAR.cpp
++++ modules/libjar/nsJAR.cpp
+@@ -43,11 +43,27 @@ NS_IMPL_QUERY_INTERFACE(nsJAR, nsIZipReader)
+ NS_IMPL_ADDREF(nsJAR)
+ 
+ // Custom Release method works with nsZipReaderCache...
++// Release might be called from multi-thread, we have to
++// take this function carefully to avoid delete-after-use.
+ MozExternalRefCountType nsJAR::Release(void)
+ {
+   nsrefcnt count;
+   NS_PRECONDITION(0 != mRefCnt, "dup release");
+-  count = --mRefCnt;
++
++  RefPtr<nsZipReaderCache> cache;
++  if (mRefCnt == 2) { // don't use a lock too frequently
++    // Use a mutex here to guarantee mCache is not racing and the target instance
++    // is still valid to increase ref-count.
++    MutexAutoLock lock(mLock);
++    cache = mCache;
++    mCache = nullptr;
++  }
++  if (cache) {
++    DebugOnly<nsresult> rv = cache->ReleaseZip(this);
++    MOZ_ASSERT(NS_SUCCEEDED(rv), "failed to release zip file");
++  }
++
++  count = --mRefCnt; // don't access any member variable after this line
+   NS_LOG_RELEASE(this, count, "nsJAR");
+   if (0 == count) {
+     mRefCnt = 1; /* stabilize */
+@@ -56,13 +72,7 @@ MozExternalRefCountType nsJAR::Release(void)
+     delete this;
+     return 0;
+   }
+-  if (1 == count && mCache) {
+-#ifdef DEBUG
+-    nsresult rv =
+-#endif
+-      mCache->ReleaseZip(this);
+-    NS_ASSERTION(NS_SUCCEEDED(rv), "failed to release zip file");
+-  }
++
+   return count;
+ }
+ 
+diff --git modules/libjar/nsJAR.h modules/libjar/nsJAR.h
+index 7f675c93003b..4fe948680fbf 100644
+--- modules/libjar/nsJAR.h
++++ modules/libjar/nsJAR.h
+@@ -12,6 +12,7 @@
+ #include "mozilla/Logging.h"
+ #include "prinrval.h"
+ 
++#include "mozilla/Atomics.h"
+ #include "mozilla/Mutex.h"
+ #include "nsIComponentManager.h"
+ #include "nsCOMPtr.h"
+@@ -75,8 +76,9 @@ class nsJAR final : public nsIZipReader
+       mReleaseTime = PR_INTERVAL_NO_TIMEOUT;
+     }
+ 
+-    void SetZipReaderCache(nsZipReaderCache* cache) {
+-      mCache = cache;
++    void SetZipReaderCache(nsZipReaderCache* aCache) {
++      mozilla::MutexAutoLock lock(mLock);
++      mCache = aCache;
+     }
+ 
+     nsresult GetNSPRFileDesc(PRFileDesc** aNSPRFileDesc);
+@@ -89,7 +91,7 @@ class nsJAR final : public nsIZipReader
+     RefPtr<nsZipArchive>     mZip;            // The underlying zip archive
+     PRIntervalTime           mReleaseTime;    // used by nsZipReaderCache for flushing entries
+     nsZipReaderCache*        mCache;          // if cached, this points to the cache it's contained in
+-    mozilla::Mutex           mLock;
++    mozilla::Mutex           mLock;           // protect mCache and mZip
+     int64_t                  mMtime;
+     bool                     mOpened;
+     bool                     mIsOmnijar;

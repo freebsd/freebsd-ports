@@ -51,8 +51,6 @@ bash_CMD=	${SH}
 IGNORE?=You must manually fetch the J2SE SDK download for the Linux platform (${DISTNAME}${EXTRACT_SUFX}) from ${DOWNLOAD_URL}, place it in ${DISTDIR} and then run make again
 .endif
 
-.include <bsd.port.options.mk>
-
 .if ${PORT_OPTIONS:MDEMO}
 DEMO_UPDATE_VERSION=	${JDK_UPDATE_VERSION}
 .if ${DEMO_UPDATE_VERSION} != ${JDK_UPDATE_VERSION}

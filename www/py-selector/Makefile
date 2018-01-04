@@ -12,7 +12,7 @@ COMMENT=	WSGI request delegation (a.k.a. routing)
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}resolver>=0.2.1:devel/py-resolver
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}resolver>=0.2.1:devel/py-resolver@${FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist distutils

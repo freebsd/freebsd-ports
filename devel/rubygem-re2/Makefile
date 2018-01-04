@@ -5,7 +5,7 @@ PORTVERSION=	1.1.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	tz@FreeBSD.org
+MAINTAINER=	idefix@fechner.net
 COMMENT=	Ruby bindings to re2
 
 LICENSE=	BSD3CLAUSE

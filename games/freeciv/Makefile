@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	freeciv
-PORTVERSION=	2.5.7
+PORTVERSION=	2.5.9
 CATEGORIES=	games
 MASTER_SITES=	SF/freeciv/Freeciv%20${PORTVERSION:R}/${PORTVERSION} \
 		http://download.gna.org/freeciv/stable/
@@ -45,6 +45,8 @@ IGNORE=		cannot use SDL without X11: re-run make config
 .if ${PORT_OPTIONS:MX11}
 LIB_DEPENDS+=	libtiff.so:graphics/tiff \
 		libpng.so:graphics/png \
+		libfontconfig.so:x11-fonts/fontconfig \
+		libfreetype.so:print/freetype2 \
 		libggz.so:games/libggz \
 		libggz-gtk.so:games/ggz-gtk-client \
 		libggzcore.so:games/ggz-client-libs \

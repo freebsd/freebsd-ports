@@ -1,0 +1,31 @@
+--- desktop/CMakeLists.txt.orig	2017-06-26 15:54:00 UTC
++++ desktop/CMakeLists.txt
+@@ -1,8 +1,8 @@
+-find_program(XDGICON xdg-icon-resource)
+-find_program(XDGMENU xdg-desktop-menu)
+-find_program(XDGMIME xdg-mime)
++#find_program(XDGICON xdg-icon-resource)
++#find_program(XDGMENU xdg-desktop-menu)
++#find_program(XDGMIME xdg-mime)
+ 
+-if( XDGICON )
++if( FALSE )
+ 	install(CODE "
+ 		execute_process(COMMAND ${XDGICON} install --novendor ${CMAKE_CURRENT_SOURCE_DIR}/drawpile-16x16.png --size 16 drawpile)
+ 		execute_process(COMMAND ${XDGICON} install --novendor ${CMAKE_CURRENT_SOURCE_DIR}/drawpile-32x32.png --size 32 drawpile)
+@@ -18,13 +18,13 @@ if( XDGICON )
+ 	")
+ endif()
+ 
+-if( XDGMENU )
++if( FALSE )
+ 	install(CODE "
+ 		execute_process(COMMAND ${XDGMENU} install --novendor ${CMAKE_CURRENT_SOURCE_DIR}/drawpile.desktop)
+ 	")
+ endif()
+ 
+-if( XDGMIME )
++if( FALSE )
+ 	install(CODE "
+ 		execute_process(COMMAND ${XDGMIME} install ${CMAKE_CURRENT_SOURCE_DIR}/x-drawpile.xml)
+ 	")

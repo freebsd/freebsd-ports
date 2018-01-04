@@ -16,6 +16,6 @@ LIB_DEPENDS=	libtokyotyrant.so:databases/tokyotyrant
 
 USES=		php:pecl pkgconfig
 USE_PHP=	session:build
-IGNORE_WITH_PHP=	70
+IGNORE_WITH_PHP=	70 71 72
 
 .include <bsd.port.mk>

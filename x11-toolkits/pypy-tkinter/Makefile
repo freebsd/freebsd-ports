@@ -2,7 +2,6 @@
 # $FreeBSD$
 
 PORTNAME=	tkinter
-PORTVERSION=	${PYTHON_PORTVERSION}
 CATEGORIES=	x11-toolkits python
 
 MAINTAINER=	python@FreeBSD.org

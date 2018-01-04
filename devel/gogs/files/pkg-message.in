@@ -13,7 +13,7 @@ You can also run %%PORTNAME%% manually with a command:
 Connect to %%PORTNAME%% on the default port 3000:
 http://localhost:3000
 
-Configuration file is %%PREFIX%%/libexec/%%PORTNAME%%/custom/conf/app.ini.
+Configuration file is %%ETCDIR%%/conf/app.ini.
 You can only edit it when %%PORTNAME%% isn't running.
 
 %%PORTNAME_FANCY%% needs an SSH daemon, so make sure sure you execute:

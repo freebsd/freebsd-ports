@@ -11,11 +11,9 @@ COMMENT=	Qt4 graphical Wine frontend
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	pyrcc4:textproc/py-qt4-xml
 RUN_DEPENDS=	xterm:x11/xterm \
 		cabextract:archivers/cabextract \
-		icotool:graphics/icoutils \
-		${PYTHON_SITELIBDIR}/PyQt4/QtGui.so:x11-toolkits/py-qt4-gui
+		icotool:graphics/icoutils
 
 DATADIRLIB=	${PREFIX}/lib/${PORTNAME}
 
@@ -23,8 +21,9 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	dswd
 GH_PROJECT=	Swine
 
-USES=		gmake python
+USES=		gmake python:2.7 pyqt:4
 NO_BUILD=	yes
+USE_PYQT=	gui_run xml_build
 USE_QT4=	linguist_build
 ONLY_FOR_ARCHS=	i386 amd64
 

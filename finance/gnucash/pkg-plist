@@ -467,6 +467,7 @@ share/applications/gnucash.desktop
 %%PORTDOCS%%%%DOCSDIR%%/Money95stocks_fr.qif
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README-ca.win32-bin.txt
 %%PORTDOCS%%%%DOCSDIR%%/README-de.win32-bin.txt
 %%PORTDOCS%%%%DOCSDIR%%/README-fr.win32-bin.txt
 %%PORTDOCS%%%%DOCSDIR%%/README-it.win32-bin.txt

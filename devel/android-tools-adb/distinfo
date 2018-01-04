@@ -1,11 +1,7 @@
-TIMESTAMP = 1502781926
-SHA256 (android-platform_system_core-android-8.0.0_r24_GH0.tar.gz) = 6b55a409e6c03f58add5a0d13765ebcb6aee7ecef6452ef5d780228209cb8a3a
-SIZE (android-platform_system_core-android-8.0.0_r24_GH0.tar.gz) = 5190913
+TIMESTAMP = 1509048179
+SHA256 (aosp-mirror-platform_system_core-android-8.1.0_r2_GH0.tar.gz) = 29c58327e06c9c938f8f3c0d3e991339eb98c53026203fbafc564e85cb6538bc
+SIZE (aosp-mirror-platform_system_core-android-8.1.0_r2_GH0.tar.gz) = 5227210
 SHA256 (mbrubeck-android-completion-c1b0656_GH0.tar.gz) = ca3311ba47a5edd56c929ac9aae57c02c2c3f1636519c5f67abb00b6e3ecd75c
 SIZE (mbrubeck-android-completion-c1b0656_GH0.tar.gz) = 5967
-SHA256 (android-platform_development-android-8.0.0_r24_GH0.tar.gz) = 1477bab3bfe7202ab7bc716a20deb99e5c151d69df44a6a478e7de2cf10acb4d
-SIZE (android-platform_development-android-8.0.0_r24_GH0.tar.gz) = 93766075
-SHA256 (46de1d7f03b7.patch) = 93bf49a9a93f2b660f39041f8dbd179ea8f1170c1bebeee42f7df1dc1c393579
-SIZE (46de1d7f03b7.patch) = 12346
-SHA256 (5d002b8d6ae0.patch) = 0d105587abea3afbfd320a95be3f8532f213778a6f699150c4d4477334c9eef2
-SIZE (5d002b8d6ae0.patch) = 1385
+SHA256 (aosp-mirror-platform_development-android-8.1.0_r2_GH0.tar.gz) = bc9cdaf522147ce6a4d11e695394ce6044940172f8a19150e613adc4ae77279c
+SIZE (aosp-mirror-platform_development-android-8.1.0_r2_GH0.tar.gz) = 93884716

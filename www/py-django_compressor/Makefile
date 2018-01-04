@@ -13,10 +13,10 @@ COMMENT=	Compresses linked and inline JavaScript/CSS into a single cached file
 
 LICENSE=	MIT
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}versiontools>=1.8.2:devel/py-versiontools
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django-appconf>=0.4:www/py-django-appconf \
-		${PYTHON_PKGNAMEPREFIX}rcssmin>=0:archivers/py-rcssmin \
-		${PYTHON_PKGNAMEPREFIX}rjsmin>=0:archivers/py-rjsmin
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}versiontools>=1.8.2:devel/py-versiontools@${FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django-appconf>=0.4:www/py-django-appconf@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}rcssmin>=0:archivers/py-rcssmin@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}rjsmin>=0:archivers/py-rjsmin@${FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist distutils
@@ -28,9 +28,9 @@ LXML_DESC=		Enable LxmlParser
 HTML5LIB_DESC=		Enable Html5LibParser
 SLIMIT_DESC=		Enable SlimIt JavaScript filter
 
-BEAUTIFULSOUP_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}beautifulsoup>=4:www/py-beautifulsoup
-LXML_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}lxml>0:devel/py-lxml
-HTML5LIB_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}html5lib>0:www/py-html5lib
-SLIMIT_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}slimit>=0.8.1:www/py-slimit
+BEAUTIFULSOUP_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}beautifulsoup>=4:www/py-beautifulsoup@${FLAVOR}
+LXML_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}lxml>0:devel/py-lxml@${FLAVOR}
+HTML5LIB_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}html5lib>0:www/py-html5lib@${FLAVOR}
+SLIMIT_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}slimit>=0.8.1:www/py-slimit@${FLAVOR}
 
 .include <bsd.port.mk>

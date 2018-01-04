@@ -18,7 +18,7 @@ RUN_DEPENDS=	bzr:devel/bzr
 
 WRKSRC=		${WRKDIR}/externals
 
-USES=		python
+USES=		python:2.7
 USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

@@ -7,3 +7,5 @@ sync events from various devices with your Nextcloud and edit them online.
  * Attendees! Invite people to your events.
  * We're not reinventing the wheel! Based on the great davclient.js, 
    ical.js and fullcalendar libraries.
+
+WWW: https://apps.nextcloud.com/apps/calendar

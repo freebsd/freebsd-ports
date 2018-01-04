@@ -2,7 +2,7 @@
 
 PORTNAME=		tdb
 PORTVERSION=		1.3.15
-PORTREVISION=		0
+PORTREVISION=		1
 PORTEPOCH=		1
 CATEGORIES=		databases
 MASTER_SITES=		SAMBA
@@ -53,27 +53,27 @@ PLIST_FILES+=		%%PYTHON_SITELIBDIR%%/tdb.so \
 			%%PYTHON_SITELIBDIR%%/_tdb_text.py
 # XXX: This is a gross hack to make port use both Python 2.7+ and 3.3+
 # This is not officially supported, use at your own risk
-.if defined(WITH_SAMBA_PYTHON3) && ${WITH_SAMBA_PYTHON3:Mpython3\.[0-9]}
-SAMBA_PYTHON3=		${WITH_SAMBA_PYTHON3}
-SAMBA_PYTHON3_VERSION:=	${SAMBA_PYTHON3:S/^python//}
-SAMBA_PYTHON3_VER:=	${SAMBA_PYTHON3_VERSION:C/\.//}
-.if !exists(${PORTSDIR}/lang/python${SAMBA_PYTHON3_VER})
-.error			unsupported or unknown Python version ${SAMBA_PYTHON3_VERSION}
+.if defined(WITH_SAMBA4_PYTHON3) && ${WITH_SAMBA4_PYTHON3:Mpython3\.[0-9]}
+SAMBA4_PYTHON3=		${WITH_SAMBA4_PYTHON3}
+SAMBA4_PYTHON3_VERSION:=${SAMBA4_PYTHON3:S/^python//}
+SAMBA4_PYTHON3_VER:=	${SAMBA4_PYTHON3_VERSION:C/\.//}
+.if !exists(${PORTSDIR}/lang/python${SAMBA4_PYTHON3_VER})
+.error			unsupported or unknown Python version ${SAMBA4_PYTHON3_VERSION}
 .endif
-BUILD_DEPENDS+=		${SAMBA_PYTHON3}:lang/python${SAMBA_PYTHON3_VER}
-RUN_DEPENDS+=		${SAMBA_PYTHON3}:lang/python${SAMBA_PYTHON3_VER}
+BUILD_DEPENDS+=		${SAMBA4_PYTHON3}:lang/python${SAMBA4_PYTHON3_VER}
+RUN_DEPENDS+=		${SAMBA4_PYTHON3}:lang/python${SAMBA4_PYTHON3_VER}
 # cpython-36m
-SAMBA_PYTHON3_SO_ABI!=	[ ! -f "${LOCALBASE}/bin/${SAMBA_PYTHON3}" ] || ${LOCALBASE}/bin/${SAMBA_PYTHON3} -c 'import sysconfig; print(sysconfig.get_config_var("SOABI") or "")' 2>/dev/null
-SAMBA_PYTHON3_SITELIBDIR=lib/python${SAMBA_PYTHON3_VERSION}/site-packages
+SAMBA4_PYTHON3_SO_ABI!=	[ ! -f "${LOCALBASE}/bin/${SAMBA4_PYTHON3}" ] || ${LOCALBASE}/bin/${SAMBA4_PYTHON3} -c 'import sysconfig; print(sysconfig.get_config_var("SOABI") or "")' 2>/dev/null
+SAMBA4_PYTHON3_SITELIBDIR=lib/python${SAMBA4_PYTHON3_VERSION}/site-packages
 
-CONFIGURE_ENV+=		PYTHON3_SO_ABI_FLAG=.${SAMBA_PYTHON3_SO_ABI}
-CONFIGURE_ARGS+=	--extra-python=${LOCALBASE}/bin/${SAMBA_PYTHON3}
+CONFIGURE_ENV+=		PYTHON3_SO_ABI_FLAG=.${SAMBA4_PYTHON3_SO_ABI}
+CONFIGURE_ARGS+=	--extra-python=${LOCALBASE}/bin/${SAMBA4_PYTHON3}
 
-PLIST_SUB+=		SAMBA_PYTHON3_SO_ABI=${SAMBA_PYTHON3_SO_ABI} \
-			SAMBA_PYTHON3_SITELIBDIR=${SAMBA_PYTHON3_SITELIBDIR}
+PLIST_SUB+=		SAMBA4_PYTHON3_SO_ABI=${SAMBA4_PYTHON3_SO_ABI} \
+			SAMBA4_PYTHON3_SITELIBDIR=${SAMBA4_PYTHON3_SITELIBDIR}
 
-PLIST_FILES+=		%%SAMBA_PYTHON3_SITELIBDIR%%/tdb.so \
-			%%SAMBA_PYTHON3_SITELIBDIR%%/_tdb_text.py
+PLIST_FILES+=		%%SAMBA4_PYTHON3_SITELIBDIR%%/tdb.so \
+			%%SAMBA4_PYTHON3_SITELIBDIR%%/_tdb_text.py
 .endif
 .endif
 
@@ -124,8 +124,8 @@ post-install:
 .endfor
 .if !defined(NO_PYTHON)
 			${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/tdb.so
-.if defined(SAMBA_PYTHON3)
-			${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SAMBA_PYTHON3_SITELIBDIR}/tdb.so
+.if defined(SAMBA4_PYTHON3)
+			${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SAMBA4_PYTHON3_SITELIBDIR}/tdb.so
 .endif
 .endif
 

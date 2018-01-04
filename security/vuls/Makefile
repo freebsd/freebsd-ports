@@ -2,8 +2,8 @@
 
 PORTNAME=	vuls
 DISTVERSIONPREFIX=	v
-DISTVERSION=		0.4.1-8
-DISTVERSIONSUFFIX=	-gab68ad5
+DISTVERSION=		0.4.2-2
+DISTVERSIONSUFFIX=	-g383220f
 CATEGORIES=	security
 
 MAINTAINER=	iscandr@gmail.com
@@ -86,7 +86,7 @@ GH_TUPLE+=	klauspost:cpuid:09cded8:cpuid/src/github.com/klauspost/cpuid
 GH_TUPLE+=	klauspost:crc32:1bab8b3:crc32/src/github.com/klauspost/crc32
 GH_TUPLE+=	knqyf263:go-deb-version:9865fe1:godebversion/src/github.com/knqyf263/go-deb-version
 GH_TUPLE+=	knqyf263:go-rpm-version:74609b8:gorpmversion/src/github.com/knqyf263/go-rpm-version
-GH_TUPLE+=	kotakanbe:go-cve-dictionary:c20fa7e:gocvedictionary/src/github.com/kotakanbe/go-cve-dictionary
+GH_TUPLE+=	kotakanbe:go-cve-dictionary:a64c5fc:gocvedictionary/src/github.com/kotakanbe/go-cve-dictionary
 GH_TUPLE+=	kotakanbe:go-pingscanner:v0.1.0:gopingscanner/src/github.com/kotakanbe/go-pingscanner
 GH_TUPLE+=	kotakanbe:goval-dictionary:3523cc1:govaldictionary/src/github.com/kotakanbe/goval-dictionary
 GH_TUPLE+=	kotakanbe:logrus-prefixed-formatter:75edb2e:logrusprefixedformatter/src/github.com/kotakanbe/logrus-prefixed-formatter

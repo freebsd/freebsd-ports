@@ -1,6 +1,7 @@
 Webfwlog-%%VERSION%% has been installed in %%WWWDIR%%.
-You should update your web server's configuration to provide access to this
-directory.
+
+You should update your web server's configuration to provide access to
+%%WWWDIR%%.
 
 You should also read the README in the mysql or pgsql directoy in
 %%DOCSDIR%% for information on setting up your MySQL or

@@ -11,14 +11,14 @@ DSP effects:
 Visual effects:
 	Spectrum Analyzer, and projectM audio visulaliser
 Output system support:
-	PulseAudio, OSS, OSS4, jack, ALSA, and Qt multimedia API
+	PulseAudio, OSS, OSS4, jack, ALSA, Qt multimedia API, and shoutcast
 Other features:
 	multi-band equalizer, Last.fm/Libre.fm scrobbler, global hotkey,
 	streaming (MP3, Vorbis, AAC, AAC+ via IceCast/ShoutCast) and browser,
-	CDDB, removable device detection (via HAL or UDisks), cover art,
-	multiple playlists, MMS, file type determination and converter, MPRIS,
-	CUE sheet, embedded CUE (for FLAC and WavPack), ReplayGain,
+	CDDB, removable device detection (via HAL or UDisks), cover art, MMS,
+	multiple playlists, file type determination and converter, ReplayGain,
+	CUE sheet, embedded CUE (for FLAC and WavPack), MPRIS, archived media,
 	automatic charset detection for cue files and ShoutCast metadata,
-	video playback via Mplayer, lyrics (using lyrics.wikia.com), simple
+	video playback via Mplayer, dump, lyrics (using lyrics.wikia.com), simple
 	UI, and skinned UI (supports all skins for XMMS and Winamp 2.x)
 WWW: http://qmmp.ylsoftware.com/

@@ -1,13 +1,21 @@
---- device/hid/BUILD.gn.orig	2017-04-19 19:06:34 UTC
-+++ device/hid/BUILD.gn
-@@ -56,6 +56,13 @@ source_set("hid") {
-     deps += [ "//device/udev_linux" ]
+--- device/hid/BUILD.gn.orig	2017-12-03 15:37:09.320721000 -0800
++++ device/hid/BUILD.gn	2017-12-03 15:37:32.146570000 -0800
+@@ -63,6 +63,21 @@
+     ]
    }
  
 +  if (is_bsd) {
 +    sources -= [
 +      "hid_connection_linux.cc",
 +      "hid_connection_linux.h",
++    ]
++    sources += [
++      "hid_connection_freebsd.cc",
++      "hid_connection_freebsd.h",
++      "hid_device_info_freebsd.cc",
++      "hid_device_info_freebsd.h",
++      "hid_service_freebsd.cc",
++      "hid_service_freebsd.h",
 +    ]
 +  }
 +

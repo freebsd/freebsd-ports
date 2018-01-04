@@ -9,6 +9,8 @@ MASTER_SITES=	http://cdn.skylable.com/source/
 MAINTAINER=	vg@FreeBSD.org
 COMMENT=	SXDrive Web app
 
+IGNORE_WITH_PHP=	70 71 72
+
 RUN_DEPENDS=	sxinit:net-mgmt/sx
 
 USES=		cpe php:web

@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	koobs@FreeBSD.org
 COMMENT=	Internationalized Domain Names in Applications (IDNA)
 
-USES?=		python	# Actually, 2.6-2.7,3.3-3.6
+USES=		python	# Actually, 2.6-2.7,3.3-3.6
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes

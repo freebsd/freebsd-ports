@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Horde_Kolab_Storage
-PORTVERSION=	2.0.2
+DISTVERSION=	2.2.3
 CATEGORIES=	mail www pear
 
 MAINTAINER=	horde@FreeBSD.org

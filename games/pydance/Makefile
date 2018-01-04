@@ -18,7 +18,7 @@ COMMENT=	Dancing simulation game similar to the kind in arcades
 BUILD_DEPENDS=	${PYGAME}
 RUN_DEPENDS=	${PYGAME}
 
-USES=		python shebangfix
+USES=		python:2.7 shebangfix
 SHEBANG_FILES=	pydance.py utils/findbpm.py
 USE_PYTHON=	distutils noegginfo
 SUB_FILES=	pkg-message

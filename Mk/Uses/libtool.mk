@@ -11,7 +11,7 @@
 #			be used when a port does not generate its own libtool
 #			script and relies on the system to provide one.
 #
-# MAINTAINER:	autotools@FreeBSD.org
+# MAINTAINER:	tijl@FreeBSD.org
 
 .if !defined(_INCLUDE_USES_LIBTOOL_MK)
 _INCLUDE_USES_LIBTOOL_MK=	yes
@@ -65,7 +65,7 @@ patch-libtool:
 		-e '/if.*prog.*linkmode.*relink !=.*mode/s/if.*;/if :;/'\
 		-e '/if.*linkmode.*prog.*mode.* = relink/s/||.*;/;/'	\
 		-e '/if.*prog.*linkmode.*relink = .*mode/s/||.*;/;/'	\
-		-e 's/|-p|-pg|/|-B*|-fstack-protector*|-p|-pg|/'
+		-e 's/|-p|-pg|/|-B*|-fstack-protector*|-fuse-ld=*|-p|-pg|/'
 
 _USES_stage+=	790:patch-lafiles
 patch-lafiles:

@@ -25,6 +25,8 @@
 #			Default: not set, unless BATCH or PACKAGE_BUILDING is defined
 #
 # Variables for ports:
+# CMAKE_ON		Appends -D<var>:bool=ON  to the CMAKE_ARGS,
+# CMAKE_OFF		Appends -D<var>:bool=OFF to the CMAKE_ARGS.
 # CMAKE_ARGS		- Arguments passed to cmake
 #			Default: see below
 # CMAKE_BUILD_TYPE	- Type of build (cmake predefined build types).
@@ -88,6 +90,13 @@ CMAKE_ARGS+=		-DCMAKE_C_COMPILER:STRING="${CC}" \
 			-DTHREADS_HAVE_PTHREAD_ARG:BOOL=YES \
 			-DCMAKE_INSTALL_RPATH_USE_LINK_PATH=YES \
 			-DCMAKE_VERBOSE_MAKEFILE:BOOL=ON
+
+# Handle the option-like CMAKE_ON and CMAKE_OFF lists.
+.for _bool_kind in ON OFF
+.  if defined(CMAKE_${_bool_kind})
+CMAKE_ARGS+=		${CMAKE_${_bool_kind}:C/.*/-D&:BOOL=${_bool_kind}/}
+.  endif
+.endfor
 
 CMAKE_INSTALL_PREFIX?=	${PREFIX}
 

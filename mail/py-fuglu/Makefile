@@ -13,9 +13,9 @@ COMMENT=	Mail scanning daemon for Postfix written in Python
 LICENSE=	APACHE20
 
 RUN_DEPENDS=	postfix:mail/postfix \
-		${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six
+		${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six@${FLAVOR}
 
-USES=		python:2.4+
+USES=		python:2.7
 USE_PYTHON=	autoplist distutils
 
 USE_RC_SUBR=	fuglu
@@ -36,13 +36,13 @@ SPAMASSASSIN_DESC=	Use SpamAssassin
 SPF_DESC=		Use SPF (in FuGlu)
 SQL_DESC=		Use SQL
 
-BEAUTIFULSOUP_RUN_DEPENDS=	${PYTHON_SITELIBDIR}/bs4/__init__.py:www/py-beautifulsoup
+BEAUTIFULSOUP_RUN_DEPENDS=	${PYTHON_SITELIBDIR}/bs4/__init__.py:www/py-beautifulsoup@${FLAVOR}
 CLAMAV_RUN_DEPENDS=	clamd:security/clamav
-DKIM_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dkimpy>0:mail/py-dkimpy
-MAGIC_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}magic>0:devel/py-magic
+DKIM_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dkimpy>0:mail/py-dkimpy@${FLAVOR}
+MAGIC_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}magic>0:devel/py-magic@${FLAVOR}
 SPAMASSASSIN_RUN_DEPENDS=	spamassassin>=0:mail/spamassassin
-SPF_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyspf>0:mail/py-pyspf
-SQL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlalchemy10>=1.0:databases/py-sqlalchemy10
+SPF_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyspf>0:mail/py-pyspf@${FLAVOR}
+SQL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlalchemy10>=1.0:databases/py-sqlalchemy10@${FLAVOR}
 
 post-extract:
 	@${REINPLACE_CMD} -e "s|'/etc|'etc|g" ${WRKSRC}/setup.py

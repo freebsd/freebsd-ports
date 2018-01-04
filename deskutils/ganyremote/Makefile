@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	anyremote:comms/anyremote
 
-USES=		gettext python shebangfix
+USES=		gettext python:2.7 shebangfix
 SHEBANG_FILES=	ganyremote
 USE_GNOME=	pygtk2
 GNU_CONFIGURE=	yes

@@ -1,16 +1,16 @@
 H2O is a very fast HTTP server written in C. It can also be used as a library.
+
 It supports:
 
 - HTTP/1.0, HTTP/1.1
-- [HTTP/2](http://http2.github.io/)
-- draft 16 (and draft 14 to support older clients)
+- HTTP/2
 - persistent connections
 - chunked encoding
 - negotiation methods: NPN, ALPN, Upgrade, direct
 - dependency and weight-based prioritization
 - server push
 - TLS up to 1.3
-- uses [OpenSSL](https://www.openssl.org/)
+- support OpenSSL and LibreSSL
 - forward secrecy
 - AEAD ciphers
 - OCSP stapling (automatically enabled)
@@ -18,6 +18,7 @@ It supports:
 - conditional GET using last-modified / etag
 - mime-type configuration
 - reverse proxy
-- persistent upstream connection
+- websocket support
+- embedded mruby interpreter for high speed custom functions
 
 WWW: https://github.com/h2o/h2o

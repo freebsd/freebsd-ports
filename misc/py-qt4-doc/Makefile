@@ -17,6 +17,7 @@ NO_BUILD=	yes
 
 USES=		python pyqt:4
 USE_PYQT=	#
+USE_PYTHON=	flavors
 
 DOCSDIR=	${PREFIX}/share/doc/py-qt4
 

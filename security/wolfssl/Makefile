@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	wolfssl
-PORTVERSION=	3.12.2
+PORTVERSION=	3.13.0
 CATEGORIES=	security devel
 MASTER_SITES=	http://www.wolfssl.com/
 

@@ -11,7 +11,7 @@ COMMENT=	Fork of python-ldap with Python 3 support
 
 LICENSE=	PSFL
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyasn1-modules>=0:devel/py-pyasn1-modules
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyasn1-modules>=0:devel/py-pyasn1-modules@${FLAVOR}
 
 CONFLICTS_INSTALL=	py27-ldap
 USES=		python

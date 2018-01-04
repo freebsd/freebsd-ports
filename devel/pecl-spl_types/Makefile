@@ -18,7 +18,7 @@ RE2C_RUN_DEPENDS=	re2c:devel/re2c
 
 USE_PHP=	spl
 USES=		php:pecl
-IGNORE_WITH_PHP=	70 71
+IGNORE_WITH_PHP=	70 71 72
 
 CONFIGURE_ARGS=	--enable-spl-types
 CFLAGS+=	-I${LOCALBASE}/include

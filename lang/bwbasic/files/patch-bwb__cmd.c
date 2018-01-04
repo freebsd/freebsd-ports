@@ -1,10 +1,10 @@
---- bwb_cmd.c.orig	2017-01-19 00:10:00 UTC
+--- bwb_cmd.c.orig	2018-01-01 11:17:18 UTC
 +++ bwb_cmd.c
-@@ -38,6 +38,7 @@
+@@ -40,6 +40,7 @@
  
  
  
 +#include <string.h>
  #include "bwbasic.h"
  
- 
+ static void bwb_copy_file (char *Source, char *Target);

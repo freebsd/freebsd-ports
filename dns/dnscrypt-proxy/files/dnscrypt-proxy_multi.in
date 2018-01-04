@@ -16,8 +16,8 @@
 #                                 Set to YES to enable dnscrypt-proxy.
 # {instance_id}_uid (str):        Set to "_dnscrypt-proxy" by default.
 #                              	  User to switch to after starting.
-# {instance_id}_resolver (str):   Set to "opendns" by default.
-#                              	  Choose a different upstream resolver.
+# {instance_id}_resolver (str):   Set to "random" by default.
+#                              	  Better to select one of your own choice.
 # {instance_id}_pidfile (str):    default: "/var/run/dnscrypt-proxy.pid"
 #                              	  Location of pid file.
 # {instance_id}_logfile (str):	  default: "/var/log/dnscrypt-proxy.log"
@@ -57,7 +57,7 @@ for i in $dnscrypt_proxy_instances; do
     eval dnscrypt_proxy_logfile_tmp=\${${i}_logfile}
 
 :   ${dnscrypt_proxy_uid_tmp:=_dnscrypt-proxy}       # User to run daemon as
-:   ${dnscrypt_proxy_resolver_tmp:=cisco}            # resolver to use
+:   ${dnscrypt_proxy_resolver_tmp:=random}            # resolver to use
 :   ${dnscrypt_proxy_pidfile_tmp:=/var/run/${i}.pid} # Path to pid file
 :   ${dnscrypt_proxy_logfile_tmp:=/var/log/${i}.log} # Path to log file
 

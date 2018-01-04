@@ -12,8 +12,8 @@ COMMENT=	Utility functions for handling MIDI data in a nice/intuitive way
 LICENSE=	MIT
 
 RUN_DEPENDS=	${PYNUMPY} \
-		${PYTHON_PKGNAMEPREFIX}mido>=1.1.16:multimedia/py-mido \
-		${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six
+		${PYTHON_PKGNAMEPREFIX}mido>=1.1.16:multimedia/py-mido@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six@${FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist distutils

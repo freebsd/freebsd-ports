@@ -1,9 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	percona-toolkit
-PORTVERSION=	2.2.17
+PORTVERSION=	3.0.5
 CATEGORIES=	databases
-MASTER_SITES=	http://www.percona.com/downloads/${PORTNAME}/${PORTVERSION}/tarball/
+MASTER_SITES=	https://www.percona.com/downloads/${PORTNAME}/${PORTVERSION}/source/tarball/
 
 MAINTAINER=	flo@FreeBSD.org
 COMMENT=	Collection of essential command-line utilities for MySQL

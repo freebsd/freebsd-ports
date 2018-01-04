@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	cld3
-DISTVERSION=	3.2.1
+DISTVERSION=	3.2.2
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 

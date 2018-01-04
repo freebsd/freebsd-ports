@@ -11,7 +11,7 @@ COMMENT=	Run a subprocess in a pseudo terminal
 
 LICENSE=	ISCL
 
-USES?=		python
+USES=		python
 USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

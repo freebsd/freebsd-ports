@@ -17,17 +17,15 @@ LIB_DEPENDS=	libxerces-c.so:textproc/xerces-c3 \
 BUILD_DEPENDS=	jam:devel/jam
 RUN_DEPENDS=	${LOCALBASE}/${DATADIR_REL}/servers.ini:games/glest-data
 
-USES=		dos2unix openal:al,alut pkgconfig zip lua:51
-USE_AUTOTOOLS=	automake:env autoconf:env
+USES=		autoreconf:build dos2unix localbase lua:51 openal:al,alut \
+		pkgconfig zip
 USE_SDL=	yes
 USE_GL=		yes
 GNU_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	mk/linux/configure
-CPPFLAGS+=		-I${LOCALBASE}/include
-LIBS+=			-L${LOCALBASE}/lib
 SUB_FILES=		glest-wrapper pkg-message
 
-JAM_CMD=		${LOCALBASE}/bin/jam -qa
+JAM_CMD=		${LOCALBASE}/bin/jam -q -a -dx
 
 OPTIONS_DEFINE=	DOCS EDITOR
 OPTIONS_SUB=	yes
@@ -47,9 +45,6 @@ pre-extract:
 	@${MKDIR} ${WRKDIR}/${DISTNAME}
 
 post-patch:
-	@${REINPLACE_CMD} -e "s|%%ACLOCAL%%|${ACLOCAL}|g" \
-		-e "s|%%AUTOCONF%%|${AUTOCONF}|g" \
-		${WRKSRC}/mk/linux/autogen.sh
 	@${REINPLACE_CMD} \
 		-e 's|PTHREAD_LIBS="-l[$$]flag"|PTHREAD_LIBS="-lpthread"|g' \
 		-e 's|pthreads library -l[$$]flag|pthreads library -lpthread|g' \
@@ -77,8 +72,7 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/glest-wrapper \
 		${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
-.if ${PORT_OPTIONS:MEDITOR}
+do-install-EDITOR-on:
 	${INSTALL_PROGRAM} ${WRKSRC}/glest_editor ${STAGEDIR}${PREFIX}/bin/
-.endif
 
 .include <bsd.port.mk>

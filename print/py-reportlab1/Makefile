@@ -21,7 +21,7 @@ CONFLICTS=	py*-reportlab[^1]-[^1].* \
 
 PORTSCOUT=	ignore:1	# Last version of 1.X branch
 
-USES=		python
+USES=		python:2.7
 USE_PYTHON=	distutils autoplist
 
 WRKSRC=		${WRKDIR}/reportlab_${PORTVERSION:S/./_/g}/reportlab

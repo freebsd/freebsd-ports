@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libefp
-DISTVERSION=	1.4.2
+DISTVERSION=	1.5.0
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org

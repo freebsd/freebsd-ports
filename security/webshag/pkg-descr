@@ -1,5 +1,0 @@
-Webshag is a multi-threaded, multi-platform web server audit tool. Written in
-Python, it gathers commonly useful functionalities for web server auditing like
-website crawling, URL scanning or file fuzzing.
-
-WWW: http://www.scrt.ch/en/attack/downloads/webshag

@@ -2,6 +2,7 @@
 
 PORTNAME=	gnustep-back
 PORTVERSION=	0.25.1
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits gnustep
 MASTER_SITES=	GNUSTEP/core
 

@@ -17,7 +17,7 @@ LICENSE=	GPLv2 # only `GPL' is mentioned, assuming v2
 BUILD_DEPENDS=	${LOCALBASE}/include/ltxml12/lt-safe.h:textproc/ltxml
 RUN_DEPENDS=	${LOCALBASE}/include/ltxml12/lt-safe.h:textproc/ltxml
 
-USES=		python
+USES=		python:2.7
 USE_PYTHON=	distutils autoplist
 USE_LDCONFIG=	yes
 

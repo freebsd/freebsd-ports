@@ -16,7 +16,7 @@ COMMENT=	Python library to access freedesktop.org standards
 LICENSE=	LGPL20
 
 NO_ARCH=	yes
-USES=		python:2
+USES=		python
 USE_PYTHON=	autoplist distutils
 
 post-patch:

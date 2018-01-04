@@ -2,12 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	pgpdump
-PORTVERSION=	0.31
+PORTVERSION=	0.32
 CATEGORIES=	security
 MASTER_SITES=	http://www.mew.org/~kazu/proj/pgpdump/
 
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	PGP packet visualizer
+
+LICENSE=	BSD3CLAUSE
 
 GNU_CONFIGURE=	yes
 

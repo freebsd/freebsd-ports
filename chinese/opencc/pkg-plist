@@ -9,6 +9,7 @@ include/opencc/ConversionChain.hpp
 include/opencc/Converter.hpp
 include/opencc/DartsDict.hpp
 include/opencc/Dict.hpp
+include/opencc/DictConverter.hpp
 include/opencc/DictEntry.hpp
 include/opencc/DictGroup.hpp
 include/opencc/Exception.hpp

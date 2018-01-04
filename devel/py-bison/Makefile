@@ -15,11 +15,11 @@ COMMENT=	Python-based parsing at the speed of C
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	pyrex>=0.9.6.2:devel/pyrex
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyrex>=0.9.6.2:devel/pyrex@${FLAVOR}
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
-USES=		bison:both python
+USES=		bison:both python:2.7
 USE_PYTHON=	distutils autoplist
 
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}

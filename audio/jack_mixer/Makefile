@@ -14,13 +14,12 @@ LICENSE=	GPLv2 # only
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libjack.so:audio/jack
-BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/fpconst.py:math/py-fpconst \
-		${LOCALBASE}/include/pygtk-2.0/pygtk/pygtk.h:x11-toolkits/py-gtk2
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}fpconst>=0:math/py-fpconst@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}fpconst>=0:math/py-fpconst@${PY_FLAVOR}
 
-USES=		libtool pkgconfig python shebangfix
+USES=		libtool pkgconfig python:2.7 shebangfix
 SHEBANG_FILES=	jack_mixer.py
-USE_GNOME=	gconf2
+USE_GNOME=	gconf2 pygtk2
 GCONF_SCHEMAS=	jack_mixer.schemas
 INSTALLS_ICONS=	yes
 

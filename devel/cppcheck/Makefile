@@ -12,8 +12,6 @@ COMMENT?=	Static analysis of C/C++ code
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_powerpc64=	fails to compile: analyzerinfo.cpp: 'to_string' is not a member of 'std'
-
 USES=			compiler:c++11-lib cmake tar:bzip2
 
 .if defined(GUI_ONLY)
@@ -46,8 +44,8 @@ RULES_USES=		localbase:ldflags
 TEST_CMAKE_BOOL=	BUILD_TESTS
 
 HTMLREPORT_DESC=	Install cppcheck-htmlreport
-HTMLREPORT_USES=	python:2,${PYUSE:C/ /,/W}
-HTMLREPORT_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pygments>0:textproc/py-pygments
+HTMLREPORT_USES=	python:${PYUSE:C/ /,/W}
+HTMLREPORT_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pygments>0:textproc/py-pygments@${PY_FLAVOR}
 HTMLREPORT_PLIST_FILES=	bin/cppcheck-htmlreport
 HTMLREPORT_VARS=	PYUSE+=run
 
@@ -56,7 +54,7 @@ MANPAGES_BUILD_DEPENDS=	xsltproc:textproc/libxslt \
 
 MATCHCOMPILER_DESC=	Build-time optimizations via Python
 MATCHCOMPILER_CMAKE_BOOL=	USE_MATCHCOMPILER
-MATCHCOMPILER_USES=	python:2,${PYUSE:C/ /,/W}
+MATCHCOMPILER_USES=	python:${PYUSE:C/ /,/W}
 MATCHCOMPILER_VARS=	PYUSE+=build
 
 post-install-HTMLREPORT-on:

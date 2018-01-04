@@ -1,0 +1,24 @@
+--- architecture/osclib/oscpack/Makefile.orig	2017-06-07 15:07:18 UTC
++++ architecture/osclib/oscpack/Makefile
+@@ -14,6 +14,13 @@ ARCHFLAGS 	:=
+ CXXFLAGS += -fPIC
+ 
+ else
++ifeq ($(system), FreeBSD)
++subprojects := ip ip/posix osc
++sources     := $(sort $(wildcard ip/*.cpp)  $(wildcard ip/posix/*.cpp)  $(wildcard osc/*.cpp))
++ARCHFLAGS 	:=
++CXXFLAGS += -fPIC
++
++else
+ ifeq ($(system), GNU/kFreeBSD)
+ subprojects := ip ip/posix osc
+ sources     := $(sort $(wildcard ip/*.cpp)  $(wildcard ip/posix/*.cpp)  $(wildcard osc/*.cpp))
+@@ -26,6 +33,7 @@ ARCHFLAGS 	:=
+ endif
+ endif
+ endif
++endif
+ 
+ VPATH = $(subprojects)
+ 

@@ -19,13 +19,14 @@ USES=		autoreconf cpe gmake jpeg libtool pkgconfig tar:bzip2 \
 CPE_VENDOR=	redhat
 
 BUILD_DEPENDS=	spice-protocol>=0.12.10:devel/spice-protocol \
-		${PYTHON_PKGNAMEPREFIX}pyparsing>=2.0.1:devel/py-pyparsing
+		${PYTHON_PKGNAMEPREFIX}pyparsing>=2.0.1:devel/py-pyparsing@${PY_FLAVOR}
 RUN_DEPENDS=	spice-protocol>=0.12.10:devel/spice-protocol
 
 .if defined(SPICE_SLAVE)
 PORTREVISION=	1
 CATEGORIES+=	python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+USES:=		${USES:Npython} python:2.7
 BUILD_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}gtk2>=0:x11-toolkits/py-gtk2
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}gtk2>=0:x11-toolkits/py-gtk2
 CONFIGURE_ARGS+=	--with-python

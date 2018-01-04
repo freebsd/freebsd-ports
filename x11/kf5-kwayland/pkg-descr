@@ -5,4 +5,4 @@ mechanism from the Wayland API is replaced by signals; data types are adjusted
 to be what a Qt developer expects, e.g. two arguments of int are represented by
 a QPoint or a QSize.
 
-WWW: http://api.kde.org/frameworks-api/frameworks5-apidocs/kwayland/html/index.html
+WWW: https://api.kde.org/frameworks/kwayland/html/index.html

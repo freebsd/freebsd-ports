@@ -12,9 +12,9 @@ COMMENT=	Object-Document-Mapper for working with MongoDB
 
 LICENSE=	MIT
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>0:devel/py-nose \
-		${PYTHON_PKGNAMEPREFIX}rednose>0:devel/py-rednose
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pymongo>=2.7:databases/pymongo
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>0:devel/py-nose@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}rednose>0:devel/py-rednose@${FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pymongo>=2.7:databases/pymongo@${FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist distutils

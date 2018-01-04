@@ -18,7 +18,7 @@ LIB_DEPENDS=	libportaudio.so:audio/portaudio \
 BUILD_DEPENDS=	python:lang/python
 RUN_DEPENDS=	python:lang/python
 
-USES=		cmake desktop-file-utils python readline shared-mime-info \
+USES=		cmake desktop-file-utils python:2.7 readline shared-mime-info \
 		shebangfix tar:bzip2
 SHEBANG_FILES=	python-ui/*.py tools/atari-convert-dir.py \
 		tools/debugger/hatari_profile.py tools/hconsole/*.py

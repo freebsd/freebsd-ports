@@ -1,0 +1,11 @@
+Add the following lines to /etc/periodic.conf(.local) to enable periodic check
+	daily_status_security_baseaudit_enable="YES"
+	daily_status_security_baseaudit_quiet="NO"
+
+Use pkg_chroots to provide a default list of chroots
+and pkg_jails to provide a default list of jails (or '*' for all jails)
+for all pkg periodic scripts, or set
+	daily_status_security_baseaudit_chroots
+and
+	daily_status_security_baseaudit_jails
+for this script only.

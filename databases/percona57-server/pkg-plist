@@ -15,6 +15,8 @@ bin/mysql_tzinfo_to_sql
 bin/mysql_upgrade
 bin/mysqlxtest
 bin/perror
+bin/ps-admin
+bin/ps_mysqld_helper
 bin/ps_tokudb_admin
 bin/replace
 bin/resolveip
@@ -65,7 +67,6 @@ bin/zlib_decompress
 %%DATADIR%%/japanese/errmsg.sys
 %%DATADIR%%/korean/errmsg.sys
 %%DATADIR%%/magic
-%%DATADIR%%/my-default.cnf
 %%DATADIR%%/mysqld_multi.server
 %%DATADIR%%/mysql-log-rotate
 %%DATADIR%%/mysql_security_commands.sql
@@ -86,6 +87,7 @@ bin/zlib_decompress
 %%DATADIR%%/swedish/errmsg.sys
 %%DATADIR%%/ukrainian/errmsg.sys
 %%DATADIR%%/uninstall_rewriter.sql
+include/mysql/mysqlx_ername.h
 include/mysql/mysqlx_error.h
 include/mysql/mysqlx_version.h
 @dir lib/mysql/plugin/debug
@@ -98,10 +100,13 @@ lib/mysql/plugin/adt_null.so
 lib/mysql/plugin/audit_log.so
 lib/mysql/plugin/auth.so
 lib/mysql/plugin/auth_test_plugin.so
+lib/mysql/plugin/connection_control.so
 lib/mysql/plugin/daemon_example.ini
+lib/mysql/plugin/group_replication.so
 lib/mysql/plugin/ha_example.so
 lib/mysql/plugin/keyring_file.so
 lib/mysql/plugin/keyring_udf.so
+lib/mysql/plugin/keyring_vault.so
 lib/mysql/plugin/libdaemon_example.so
 lib/mysql/plugin/libfnv1a_udf.so
 lib/mysql/plugin/libfnv_udf.so

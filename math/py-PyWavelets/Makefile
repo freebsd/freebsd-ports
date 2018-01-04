@@ -13,17 +13,15 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	${PYNUMPY} \
-		cython:lang/cython \
-		${PYTHON_PKGNAMEPREFIX}pillow>=1.7:graphics/py-pillow
+		${PYTHON_PKGNAMEPREFIX}pillow>=1.7:graphics/py-pillow@${FLAVOR}
 RUN_DEPENDS=	${PYNUMPY} \
-		cython:lang/cython \
-		${PYTHON_PKGNAMEPREFIX}pillow>=1.7:graphics/py-pillow
+		${PYTHON_PKGNAMEPREFIX}pillow>=1.7:graphics/py-pillow@${FLAVOR}
 
 USE_GITHUB=	yes
 GH_PROJECT=	pywt
 
-USES=		cpe python
-USE_PYTHON=	autoplist distutils
+USES=		cpe python:2.7
+USE_PYTHON=	autoplist distutils cython cython_run
 
 PYDISTUTILS_BUILD_TARGET=	build build_ext
 PYDISTUTILS_BUILDARGS+=		saveopts

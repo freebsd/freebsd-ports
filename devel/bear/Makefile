@@ -15,7 +15,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	rizsotto
 GH_PROJECT=	Bear
 
-USES=		cmake shebangfix python:2.7+
+USES=		cmake shebangfix python
 USE_LDCONFIG=	yes
 
 SHEBANG_FILES=	bear/main.py.in

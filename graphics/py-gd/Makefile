@@ -14,7 +14,7 @@ COMMENT=	Python interface to the GD library
 
 LIB_DEPENDS=	libgd.so:graphics/gd
 
-USES=		python
+USES=		python:2.7
 USE_PYTHON=	distutils autoplist pythonprefix
 PYSETUP=	setup.py
 

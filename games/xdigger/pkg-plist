@@ -5,5 +5,5 @@ man/man6/xdigger.6.gz
 %%DATADIR%%/diamond.au
 %%DATADIR%%/step.au
 %%DATADIR%%/stone.au
-@(,games,644) %%DATADIR%%/xdigger.hiscore
 %%DATADIR%%/xdigger.level
+@sample(,games,664) /var/games/xdigger.hiscore.sample

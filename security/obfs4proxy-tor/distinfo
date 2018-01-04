@@ -1,0 +1,13 @@
+TIMESTAMP = 1513794378
+SHA256 (obfs4proxy-0.0.7.tar.xz) = c07a1a690ebab3057c8b566e1a4902439c77d1ba5c35bbf42fcdc5b46ab3ca63
+SIZE (obfs4proxy-0.0.7.tar.xz) = 56184
+SHA256 (Yawning-goptlib-9b7a700_GH0.tar.gz) = 8c93d2c7e0221e54ef94f2eccde6e7b0e78258a39df5e38c97458ba57e2f460c
+SIZE (Yawning-goptlib-9b7a700_GH0.tar.gz) = 20819
+SHA256 (agl-ed25519-5312a61_GH0.tar.gz) = 8508e21ca8bf39df655cd7d7ade16b168530a2dbc3791c00f0d2a62ca9003faa
+SIZE (agl-ed25519-5312a61_GH0.tar.gz) = 107273
+SHA256 (dchest-siphash-4ebf1de_GH0.tar.gz) = 141deaa15ced586e5808e42ecfc127cccdfb1cb6f2a58389357e499b21aace74
+SIZE (dchest-siphash-4ebf1de_GH0.tar.gz) = 10542
+SHA256 (golang-crypto-d585fd2_GH0.tar.gz) = d8680943f1dd9203d156f6491b4106939becf4f4ee4f616b79e573ed9096f650
+SIZE (golang-crypto-d585fd2_GH0.tar.gz) = 1440857
+SHA256 (golang-net-d866cfc_GH0.tar.gz) = 9555e426a10cb8d94ad3b0ee5d6a0ed4c38211055da98af92d085929b5559f33
+SIZE (golang-net-d866cfc_GH0.tar.gz) = 929432

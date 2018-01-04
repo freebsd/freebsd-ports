@@ -96,10 +96,10 @@ include/vlc/plugins/vlc_xml.h
 include/vlc/vlc.h
 lib/libvlc.so
 lib/libvlc.so.5
-lib/libvlc.so.5.5.0
+lib/libvlc.so.5.5.1
 lib/libvlccore.so
 lib/libvlccore.so.8
-lib/libvlccore.so.8.0.0
+lib/libvlccore.so.8.0.1
 libdata/pkgconfig/libvlc.pc
 libdata/pkgconfig/vlc-plugin.pc
 man/man1/vlc-wrapper.1.gz

@@ -1,5 +1,5 @@
---- slush.c-	Mon Oct 27 06:19:50 2003
-+++ slush.c	Mon Oct 27 06:21:46 2003
+--- slush.c.orig	1999-05-07 02:24:09 UTC
++++ slush.c
 @@ -34,7 +34,10 @@
  #include <signal.h>
  #include <string.h>

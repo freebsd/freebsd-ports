@@ -34,7 +34,7 @@ PORTDOCS=	ANTLRException.gif closure.gif cpp-runtime.html \
 OPTIONS_DEFINE=	PYTHON DOCS
 OPTIONS_SUB=	yes
 
-PYTHON_USES=		python
+PYTHON_USES=		python:2.7
 PYTHON_PORTDOCS=	python-runtime.html
 
 post-extract:

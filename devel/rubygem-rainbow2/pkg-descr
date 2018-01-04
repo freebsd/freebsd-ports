@@ -1,0 +1,16 @@
+Rainbow extends ruby String class adding methods to wrap the string
+with ANSI escape codes.
+
+Rainbow adds following methods to String class:
+
+ * foreground(color) (with color and colour aliases)
+ * background(color)
+ * reset
+ * bright
+ * italic (not well supported by terminal emulators).
+ * underline
+ * blink
+ * inverse
+ * hide.
+
+WWW: https://github.com/sickill/rainbow

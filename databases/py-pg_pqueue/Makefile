@@ -14,7 +14,7 @@ COMMENT=	PostgreSQL PQ Protocol Modules
 
 LICENSE=	BSD3CLAUSE
 
-USES=		python
+USES=		python:2.7
 USE_PYTHON=	distutils autoplist
 
 OPTIONS_DEFINE=	DOCS

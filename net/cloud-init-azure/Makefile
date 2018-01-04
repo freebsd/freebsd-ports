@@ -16,18 +16,18 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	dmidecode>0:sysutils/dmidecode \
 		e2fsprogs>0:sysutils/e2fsprogs \
 		python>0:lang/python \
-		${PYTHON_PKGNAMEPREFIX}boto>0:devel/py-boto \
-		${PYTHON_PKGNAMEPREFIX}Jinja2>0:devel/py-Jinja2 \
-		${PYTHON_PKGNAMEPREFIX}cheetah>0:devel/py-cheetah \
-		${PYTHON_PKGNAMEPREFIX}prettytable>0:devel/py-prettytable \
-		${PYTHON_PKGNAMEPREFIX}configobj>0:devel/py-configobj \
-		${PYTHON_PKGNAMEPREFIX}yaml>0:devel/py-yaml \
-		${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six \
-		${PYTHON_PKGNAMEPREFIX}serial>0:comms/py-serial \
-		${PYTHON_PKGNAMEPREFIX}requests>0:www/py-requests \
-		${PYTHON_PKGNAMEPREFIX}oauthlib>0:security/py-oauthlib \
-		${PYTHON_PKGNAMEPREFIX}jsonpatch>0:devel/py-jsonpatch \
-		${PYTHON_PKGNAMEPREFIX}jsonpointer>0:devel/py-jsonpointer
+		${PYTHON_PKGNAMEPREFIX}boto>0:devel/py-boto@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}Jinja2>0:devel/py-Jinja2@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}cheetah>0:devel/py-cheetah@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}prettytable>0:devel/py-prettytable@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}configobj>0:devel/py-configobj@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}yaml>0:devel/py-yaml@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}serial>0:comms/py-serial@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}requests>0:www/py-requests@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}oauthlib>0:security/py-oauthlib@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}jsonpatch>0:devel/py-jsonpatch@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}jsonpointer>0:devel/py-jsonpointer@${FLAVOR}
 
 ETCDIR=		${PREFIX}/etc/cloud
 

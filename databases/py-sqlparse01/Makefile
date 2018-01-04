@@ -17,6 +17,6 @@ NO_ARCH=	yes
 USE_PYTHON=	autoplist distutils
 USES=		python
 
-CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}sqlparse
+CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}sqlparse ${PYTHON_PKGNAMEPREFIX}sqlparse020
 
 .include <bsd.port.mk>

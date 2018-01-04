@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	snmp
-PORTVERSION=	1.1.1
+PORTVERSION=	1.2.0
 CATEGORIES=	net-mgmt rubygems
 MASTER_SITES=	RG
 

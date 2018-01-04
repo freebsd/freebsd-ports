@@ -10,6 +10,8 @@ MASTER_SITES=	MYSQL/eventum
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Eventum issue tracking system
 
+IGNORE_WITH_PHP=	70 71 72
+
 USES=		cpe php:web
 CPE_VENDOR=	mysql
 NO_BUILD=	yes

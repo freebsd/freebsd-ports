@@ -3,4 +3,5 @@ man/man1/drool.1.gz
 man/man5/drool.conf.5.gz
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/NOTES.md
 %%PORTDOCS%%%%DOCSDIR%%/README.md

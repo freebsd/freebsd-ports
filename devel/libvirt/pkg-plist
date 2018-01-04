@@ -244,6 +244,7 @@ share/augeas/lenses/tests/test_virtlogd.aug
 %%DOCSDIR%%%%PORTVERSION%%/html/secureusage.html
 %%DOCSDIR%%%%PORTVERSION%%/html/securityprocess.html
 %%DOCSDIR%%%%PORTVERSION%%/html/storage.html
+%%DOCSDIR%%%%PORTVERSION%%/html/support.html
 %%DOCSDIR%%%%PORTVERSION%%/html/testapi.html
 %%DOCSDIR%%%%PORTVERSION%%/html/testsuites.html
 %%DOCSDIR%%%%PORTVERSION%%/html/testtck.html

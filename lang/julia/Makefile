@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	julia
-PORTVERSION=	0.6.0
-PORTREVISION=	1
+PORTVERSION=	0.6.2
 DISTVERSIONSUFFIX=	-full
 CATEGORIES=	lang math
 MASTER_SITES=	https://github.com/JuliaLang/julia/releases/download/v${PORTVERSION}/
@@ -14,18 +13,17 @@ COMMENT=	Julia Language: A fresh approach to technical computing
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-LIB_DEPENDS=	libunwind.so:devel/libunwind \
-		libutf8proc.so:textproc/utf8proc \
-		libopenblasp.so:math/openblas \
+ONLY_FOR_ARCHS=	amd64 i386
+
+LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libgit2.so:devel/libgit2 \
 		libgmp.so:math/gmp \
 		libmpfr.so:math/mpfr \
-		libpcre2-8.so:devel/pcre2
-BUILD_DEPENDS=	llvm-config40:devel/llvm40 \
-		pcre2-config:devel/pcre2 \
-		patchelf:sysutils/patchelf
-
-ONLY_FOR_ARCHS=	amd64 i386
+		libopenblasp.so:math/openblas \
+		libpcre2-8.so:devel/pcre2 \
+		libutf8proc.so:textproc/utf8proc
+BUILD_DEPENDS=	patchelf:sysutils/patchelf \
+		pcre2-config:devel/pcre2
 
 USES=		gmake compiler:c++11-lib fortran
 USE_LDCONFIG=	yes
@@ -42,12 +40,13 @@ PLIST_SUB=	VERSION="${PORTVERSION:R}" \
 CXXFLAGS+=	-stdlib=libc++ -std=c++11
 MAKE_ARGS+=	prefix=${PREFIX} JCXXFLAGS="${CXXFLAGS}" \
 		FORCE_ASSERTIONS=${FORCE_ASSERTIONS} \
+		USE_SYSTEM_CURL=1 \
 		USE_GPL_LIBS=${USE_GPL_LIBS}
 
 OPTIONS_DEFINE=	EXAMPLES DEBUG DOCS GPL_LIBS DESKTOP NATIVE
 OPTIONS_DEFAULT=	SYSLIBM
 OPTIONS_GROUP=	PRIVATE
-OPTIONS_GROUP_PRIVATE=	ARPACK
+OPTIONS_GROUP_PRIVATE=	ARPACK LLVM
 OPTIONS_SINGLE=	LIBM
 OPTIONS_SINGLE_LIBM=	SYSLIBM OPENLIBM
 OPTIONS_SUB=	yes
@@ -76,8 +75,15 @@ DESKTOP_VARS=	INSTALL_TARGET+=install-desktop \
 
 ARPACK_DESC=	Build self-shipped private arpack-ng
 ARPACK_MAKE_ARGS=	USE_SYSTEM_ARPACK=0
-ARPACK_LIB_DEPENDS_OFF=	libarpack.so:math/arpack-ng
 ARPACK_MAKE_ARGS_OFF=	USE_SYSTEM_ARPACK=1
+ARPACK_LIB_DEPENDS_OFF=	libarpack.so:math/arpack-ng
+
+LLVM_DESC=	Build self-shipped private LLVM
+LLVM_MAKE_ARGS=	USE_SYSTEM_LLVM=0
+LLVM_MAKE_ARGS_OFF=	USE_SYSTEM_LLVM=1 LLVM_CONFIG=llvm-config40
+LLVM_BUILD_DEPENDS=	cmake:devel/cmake
+LLVM_BUILD_DEPENDS_OFF=	llvm-config40:devel/llvm40
+LLVM_USES=	python:build perl5
 
 SYSLIBM_DESC=	Build with system libm
 SYSLIBM_MAKE_ARGS=	USE_SYSTEM_LIBM=1
@@ -88,7 +94,7 @@ OPENLIBM_LIB_DEPENDS=	libopenlibm.so:math/openlibm
 
 .include <bsd.port.options.mk>
 
-NATIVE_DESC=		Build with native CPU jit tuning
+NATIVE_DESC=		Build with native CPU JIT tuning
 .if ${PORT_OPTIONS:MNATIVE}
 MAKE_ARGS+=	JULIA_CPU_TARGET=native
 .else

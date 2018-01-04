@@ -13,7 +13,7 @@ COMMENT=	Numeric array manipulation extension module for Python
 
 LICENSE=	BSD3CLAUSE
 
-USES=		python shebangfix
+USES=		python:2.7 shebangfix
 SHEBANG_FILES=	Examples/convolve/benchmark.py
 USE_PYTHON=	distutils autoplist
 

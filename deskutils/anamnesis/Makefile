@@ -12,11 +12,11 @@ COMMENT=	Clipboard manager that stores all clipboard history
 
 LICENSE=	GPLv3
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3 \
-		${PYTHON_PKGNAMEPREFIX}gtk2>0:x11-toolkits/py-gtk2 \
-		${PYTHON_PKGNAMEPREFIX}xdg>0:devel/py-xdg
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}gtk2>0:x11-toolkits/py-gtk2@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}xdg>0:devel/py-xdg@${PY_FLAVOR}
 
-USES=		python shebangfix
+USES=		python:2.7 shebangfix
 PORTDOCS=	ChangeLog README
 OPTIONS_DEFINE=	DOCS
 NO_ARCH=	yes

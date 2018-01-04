@@ -13,7 +13,7 @@ COMMENT=	Web Framework For Python
 
 LICENSE=	PD
 
-USES=		python
+USES=		python:2.7
 USE_PYTHON=	autoplist distutils
 PYDISTUTILS_PKGNAME=	web.py
 

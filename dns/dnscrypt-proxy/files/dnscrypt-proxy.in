@@ -15,8 +15,8 @@
 #                               settings and only use the config file.
 # dnscrypt_proxy_uid (str):	Set to "_dnscrypt-proxy" by default.
 #                              	User to switch to after starting.
-# dnscrypt_proxy_resolver (str):Set to "cisco" by default.
-#                              	Choose a different upstream resolver.
+# dnscrypt_proxy_resolver (str):Set to "random" by default.
+#                              	Better to select one of your own choice.
 # dnscrypt_proxy_pidfile (str):	default: "/var/run/dnscrypt-proxy.pid"
 #                              	Location of pid file.
 # dnscrypt_proxy_logfile (str):	default: "/var/log/dnscrypt-proxy.log"
@@ -36,7 +36,7 @@ load_rc_config ${name}
 
 : ${dnscrypt_proxy_enable:=NO}
 : ${dnscrypt_proxy_uid=_dnscrypt-proxy} # User to run daemon as
-: ${dnscrypt_proxy_resolver=cisco} # resolver to use
+: ${dnscrypt_proxy_resolver=random} # resolver to use
 : ${dnscrypt_proxy_pidfile=/var/run/dnscrypt-proxy.pid} # Path to pid file
 : ${dnscrypt_proxy_logfile=/var/log/dnscrypt-proxy.log} # Path to log file
 

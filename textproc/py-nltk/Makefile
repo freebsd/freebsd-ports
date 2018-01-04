@@ -13,9 +13,9 @@ COMMENT=	Natural language toolkit written in python
 
 LICENSE=	APACHE20
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tkinter>=0:x11-toolkits/py-tkinter \
-		${PYTHON_PKGNAMEPREFIX}yaml>=3.09:devel/py-yaml \
-		${PYTHON_PKGNAMEPREFIX}sqlite3>=0:databases/py-sqlite3
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tkinter>=0:x11-toolkits/py-tkinter@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}yaml>=3.09:devel/py-yaml@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}sqlite3>=0:databases/py-sqlite3@${FLAVOR}
 
 USES=		python
 USE_PYTHON=	distutils autoplist

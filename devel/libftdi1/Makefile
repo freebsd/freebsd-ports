@@ -44,7 +44,8 @@ CMAKE_ARGS+=	-DEXAMPLES:BOOL=false
 .if ${PORT_OPTIONS:MPYTHON}
 USES+=		python:2
 CMAKE_ARGS+=	-DPYTHON_BINDINGS:BOOL=true
-BUILD_DEPENDS+=	swig2.0:devel/swig20
+BUILD_DEPENDS+=	swig3.0:devel/swig30
+BINARY_ALIAS=	swig=swig3.0
 .else
 CMAKE_ARGS+=	-DPYTHON_BINDINGS:BOOL=false
 .endif

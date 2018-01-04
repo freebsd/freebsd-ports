@@ -20,9 +20,8 @@ CONFLICTS_BUILD=openssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	samtools
 
-USES=		autoreconf gmake perl5 python shebangfix
+USES=		autoreconf gmake perl5 python:env shebangfix
 USE_PERL5=	test
-PYTHON_NO_DEPENDS=	yes
 GNU_CONFIGURE=	yes
 SUB_FILES=	pkg-message
 SHEBANG_FILES=	misc/* test/test.pl

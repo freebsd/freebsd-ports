@@ -3,7 +3,7 @@
 
 PORTNAME=	murmur
 PORTVERSION=	1.2.19
-PORTREVISION=	7
+PORTREVISION=	9
 CATEGORIES=	audio net
 
 MAINTAINER=	feld@FreeBSD.org
@@ -18,7 +18,7 @@ LIB_DEPENDS=	libprotobuf.so:devel/protobuf
 USERS=		murmur
 GROUPS=		murmur
 USES=		compiler:c++11-lang qmake pkgconfig ssl
-USE_QT4=	moc_build corelib network xml sql sql-sqlite3_run
+USE_QT4=	moc_build corelib network sql xml
 
 USE_GITHUB=	YES
 GH_ACCOUNT=	mumble-voip
@@ -30,8 +30,10 @@ QMAKE_ARGS=	"CONFIG+=${CONFIG}"
 USE_RC_SUBR=	murmur
 SUB_LIST+=	USERS="${USERS}" GROUPS="${GROUPS}"
 
-OPTIONS_DEFINE=	ICE DBUS BONJOUR DOCS
-OPTIONS_DEFAULT=	BONJOUR
+OPTIONS_DEFINE=	BONJOUR DBUS DOCS ICE
+OPTIONS_DEFAULT=	BONJOUR DOCS MYSQL SQLITE
+OPTIONS_MULTI=	SQL
+OPTIONS_MULTI_SQL=	MYSQL SQLITE
 ICE_DESC=	Ice Support
 BONJOUR_DESC=	Bonjour Support
 
@@ -53,6 +55,18 @@ CONFIG+=	no-dbus
 LIB_DEPENDS+=	libdns_sd.so:net/mDNSResponder
 .else
 CONFIG+=	no-bonjour
+.endif
+
+.if ${PORT_OPTIONS:MMYSQL}
+USE_QT4+=	sql-mysql
+.else
+CONFIG+=	no-sql-mysql
+.endif
+
+.if ${PORT_OPTIONS:MSQLITE}
+USE_QT4+=	sql-sqlite3_run
+.else
+CONFIG+=	no-sqlite3_run
 .endif
 
 .include <bsd.port.pre.mk>

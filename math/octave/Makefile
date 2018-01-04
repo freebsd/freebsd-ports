@@ -3,7 +3,7 @@
 
 PORTNAME=	octave
 PORTVERSION=	4.0.3
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	math
 MASTER_SITES=	GNU
 
@@ -38,7 +38,7 @@ LIB_DEPENDS=	libGraphicsMagick.so:graphics/GraphicsMagick \
 		libfreetype.so:print/freetype2
 
 USES=		charsetfix fortran gmake libtool perl5 pkgconfig readline tar:xz
-USE_LDCONFIG=	yes
+USE_LDCONFIG=	${PREFIX}/lib/${PORTNAME}/${PORTVERSION}
 USE_PERL5=	build
 USE_TEX=	dvipsk:build
 GNU_CONFIGURE=	yes
@@ -65,13 +65,13 @@ CONFIGURE_ARGS=	--host=${GNU_HOST} \
 
 OPTIONS_DEFINE=	DOCS
 
-OPTIONS_RADIO=  BLAS
-OPTIONS_RADIO_BLAS=     OPENBLAS NETLIB ATLAS
-OPTIONS_DEFAULT=        OPENBLAS
+OPTIONS_RADIO=		BLAS
+OPTIONS_RADIO_BLAS=	OPENBLAS NETLIB ATLAS
+OPTIONS_DEFAULT=	OPENBLAS
 
-OPENBLAS_USES=  blaslapack:openblas
-NETLIB_USES=    blaslapack:netlib
-ATLAS_USES=     blaslapack:atlas
+OPENBLAS_USES=	blaslapack:openblas
+NETLIB_USES=	blaslapack:netlib
+ATLAS_USES=		blaslapack:atlas
 
 INFO=		octave liboctave
 

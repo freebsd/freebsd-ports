@@ -2,7 +2,7 @@
 
 PORTNAME=	mlt
 PORTVERSION=	6.4.1
-PORTREVISION?=	5
+PORTREVISION?=	6
 CATEGORIES?=	multimedia
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}
 
@@ -12,7 +12,7 @@ COMMENT?=	Multimedia framework for TV broadcasting
 LICENSE?=	GPLv2 GPLv3 LGPL21
 LICENSE_COMB?=	multi
 
-USES+=		alias gmake pkgconfig
+USES+=		alias eigen:3 gmake pkgconfig
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--enable-gpl --enable-gpl3 --target-os=FreeBSD
 
@@ -154,7 +154,8 @@ COMMENT=	${LANGUAGE} bindings for the MLT multimedia framework
 LICENSE=	LGPL21
 LICENSE_COMB=	single
 
-BUILD_DEPENDS+=	swig:devel/swig13
+BUILD_DEPENDS+=	swig3.0:devel/swig30
+BINARY_ALIAS=	swig=swig3.0
 
 _CFLAGS=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
 CFLAGS+=	${_CFLAGS}

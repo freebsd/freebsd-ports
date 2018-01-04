@@ -1,2 +1,3 @@
-SHA256 (percona-toolkit-2.2.17.tar.gz) = 5a49c84bd8cf9dceca943f1e2879d0a67b58b73325dc7db725aec81a6a125262
-SIZE (percona-toolkit-2.2.17.tar.gz) = 1420968
+TIMESTAMP = 1513448742
+SHA256 (percona-toolkit-3.0.5.tar.gz) = 6ca8dd50fcff8a6030026201a5224bd3446d66c2c2ce484dc5c4cfae359c955b
+SIZE (percona-toolkit-3.0.5.tar.gz) = 50831861

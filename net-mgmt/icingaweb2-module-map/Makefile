@@ -2,7 +2,7 @@
 
 PORTNAME=	icingaweb2-module-map
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.0.3
+DISTVERSION=	1.0.4
 CATEGORIES=	net-mgmt www
 
 MAINTAINER=	lme@FreeBSD.org

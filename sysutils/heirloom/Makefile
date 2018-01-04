@@ -13,8 +13,6 @@ COMMENT=	Collection of standard Unix utilities
 BUILD_DEPENDS=	ksh:shells/pdksh
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-BROKEN_armv6=		dumps core: Assertion failed: (!NodePtr->isKnownSentinel()), function operator*, file ilist_iterator.h
-
 USES=		gmake ncurses tar:bzip2
 MAKE_ARGS=	CC=${CC} CFLAGS="${CFLAGS}" ROOT="${STAGEDIR}" \
 		LCURS="-L${LOCALBASE}/lib -lncurses"

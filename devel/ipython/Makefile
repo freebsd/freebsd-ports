@@ -14,14 +14,14 @@ COMMENT=	Enhanced Interactive Python shell
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING.rst
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pexpect>=0:misc/py-pexpect \
-		${PYTHON_PKGNAMEPREFIX}sqlite3>=2:databases/py-sqlite3 \
-		${PYTHON_PKGNAMEPREFIX}decorator>=0:devel/py-decorator \
-		${PYTHON_PKGNAMEPREFIX}pickleshare>=0:databases/py-pickleshare \
-		${PYTHON_PKGNAMEPREFIX}prompt_toolkit>=1.0.4:devel/py-prompt_toolkit \
-		${PYTHON_PKGNAMEPREFIX}pygments>=0:textproc/py-pygments \
-		${PYTHON_PKGNAMEPREFIX}simplegeneric>0.8:devel/py-simplegeneric \
-		${PYTHON_PKGNAMEPREFIX}traitlets>=4.2:devel/py-traitlets
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pexpect>=0:misc/py-pexpect@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}sqlite3>=2:databases/py-sqlite3@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}decorator>=0:devel/py-decorator@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pickleshare>=0:databases/py-pickleshare@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}prompt_toolkit>=1.0.4:devel/py-prompt_toolkit@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pygments>=0:textproc/py-pygments@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}simplegeneric>0.8:devel/py-simplegeneric@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}traitlets>=4.2:devel/py-traitlets@${FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist distutils
@@ -34,10 +34,10 @@ PORTEXAMPLES=	*
 .include <bsd.port.pre.mk>
 
 .if ${PYTHON_REL} < 3000
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}backports.shutil_get_terminal_size>=0:devel/py-backports.shutil_get_terminal_size
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}backports.shutil_get_terminal_size>=0:devel/py-backports.shutil_get_terminal_size@${FLAVOR}
 .endif
 .if ${PYTHON_REL} < 3400
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pathlib2>=0:devel/py-pathlib2
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pathlib2>=0:devel/py-pathlib2@${FLAVOR}
 .endif
 
 post-install:

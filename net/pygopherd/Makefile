@@ -12,7 +12,7 @@ COMMENT=	Multiprotocol Information Server
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		python
+USES=		python:2.7
 USE_PYTHON=	distutils
 
 USE_GITHUB=	yes

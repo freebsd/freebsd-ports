@@ -12,7 +12,7 @@ COMMENT=	Python library to use the pseudo-tty of a docker container
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}docker>0:sysutils/py-docker
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}docker>0:sysutils/py-docker@${FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist distutils

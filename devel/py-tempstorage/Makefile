@@ -13,10 +13,10 @@ COMMENT=	RAM-based storage for ZODB
 
 LICENSE=	ZPL21
 
-RUN_DEPENDS=	zodb${PYTHON_PKGNAMESUFFIX}>=3.9.0:databases/zodb3 \
-		${PYTHON_PKGNAMEPREFIX}zope.testing>0:devel/py-zope.testing
+RUN_DEPENDS=	zodb${PYTHON_PKGNAMESUFFIX}>=3.9.0:databases/zodb3@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}zope.testing>0:devel/py-zope.testing@${FLAVOR}
 
-USES=		python zip
+USES=		python:2.7 zip
 USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

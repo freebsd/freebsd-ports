@@ -13,7 +13,7 @@ COMMENT=	ECDSA cryptographic signature library (pure python)
 
 LICENSE=	MIT
 
-USES?=		python
+USES=		python
 USE_PYTHON=	distutils autoplist
 
 regression-test: build

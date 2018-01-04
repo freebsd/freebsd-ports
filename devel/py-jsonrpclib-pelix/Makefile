@@ -12,7 +12,7 @@ COMMENT=	JSON-RPC over HTTP that mirrors xmlrpclib syntax
 
 LICENSE=	APACHE20
 
-USES=		python:3
+USES=		python:3.4+
 USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

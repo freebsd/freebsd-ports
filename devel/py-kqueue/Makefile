@@ -13,7 +13,7 @@ EXTRACT_SUFX=		.tbz
 MAINTAINER=		ports2@dclg.ca
 COMMENT=		Python interface to kqueue(2) and kevent(2) system calls
 
-USES=		python tar:bzip2
+USES=		python:2.7 tar:bzip2
 FILES=		kqsyscallmodule.so KQueue.py KQueue.pyc
 PLIST_FILES=	${FILES:S+^+%%PYTHON_SITELIBDIR%%/+g}
 MAKE_ENV=	MAINCC=${CC}

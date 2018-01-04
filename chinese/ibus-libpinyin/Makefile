@@ -18,6 +18,7 @@ LIB_DEPENDS=	libsqlite3.so:databases/sqlite3 \
 
 USES=		compiler:c++11-lib gmake python pkgconfig gettext
 USE_GNOME=	glib20
+USE_PYTHON=	py3kplist
 
 WRKSRC=	${WRKDIR}/${DISTNAME}
 

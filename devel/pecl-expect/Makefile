@@ -14,7 +14,7 @@ LICENSE=	PHP301
 LIB_DEPENDS=	libexpect.so:lang/expect
 
 USES=		php:pecl tcl:86
-IGNORE_WITH_PHP=	70
+IGNORE_WITH_PHP=	70 71 72
 
 CFLAGS+=	-I${TCL_INCLUDEDIR}
 CONFIGURE_ARGS+=--with-expect=${LOCALBASE}

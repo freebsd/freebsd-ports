@@ -19,7 +19,7 @@ RUN_DEPENDS=	rubygem-actionpack50>=${PORTVERSION}:www/rubygem-actionpack50 \
 		rubygem-rake>=0.8.7:devel/rubygem-rake \
 		rubygem-thor>=0.18.1:devel/rubygem-thor
 
-CONFLICTS_INSTALL=	rubygem-railties rubygem-railties4 rubygem-railties41
+CONFLICTS_INSTALL=	rubygem-railties4 rubygem-railties5
 
 PORTSCOUT=	limit:^5\.0\.
 

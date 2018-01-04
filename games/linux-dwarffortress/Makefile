@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dwarffortress
-DISTVERSION=	0.43.05
-PORTREVISION=	2
+DISTVERSION=	0.44.02
 CATEGORIES=	games linux
 MASTER_SITES=	http://www.bay12games.com/dwarves/
 PKGNAMEPREFIX=	linux-

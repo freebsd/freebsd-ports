@@ -16,6 +16,10 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libtiff.so:graphics/tiff
 
+BROKEN_aarch64=		invalid output constraint =A in assembler
+BROKEN_armv6=		invalid output constraint =A in assembler
+BROKEN_armv7=		invalid output constraint =A in assembler
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USES=		gmake jpeg zip
@@ -25,10 +29,6 @@ MAKEFILE=	MakefileKyra
 MAKE_ENV=	MAKE_KYRA=RELEASE KYRA_OPENGL=YES
 MAKE_ARGS=	CC="${CC}" CXX="${CXX}" LD="${CXX}" \
 		RELEASE_CFLAGS="${CFLAGS}" RELEASE_CXXFLAGS="${CXXFLAGS}"
-
-BROKEN_aarch64=		Fails to compile: error: invalid output constraint =A in asm
-BROKEN_armv6=		Fails to compile: error: invalid output constraint =A in asm
-BROKEN_armv7=		Fails to compile: error: invalid output constraint =A in asm
 
 do-install:
 .for i in encoder spriteed

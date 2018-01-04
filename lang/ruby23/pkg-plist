@@ -748,6 +748,7 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%RUBY_LIBDIR%%/rubygems/resolver/stats.rb
 %%RUBY_LIBDIR%%/rubygems/resolver/vendor_set.rb
 %%RUBY_LIBDIR%%/rubygems/resolver/vendor_specification.rb
+%%RUBY_LIBDIR%%/rubygems/safe_yaml.rb
 %%RUBY_LIBDIR%%/rubygems/security.rb
 %%RUBY_LIBDIR%%/rubygems/security/policies.rb
 %%RUBY_LIBDIR%%/rubygems/security/policy.rb
@@ -7978,6 +7979,9 @@ man/man1/%%RUBY_NAME%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Resolver/soft_missing-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Resolver/stats-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/RubyVersionMismatch/cdesc-RubyVersionMismatch.ri
+%%RDOC%%%%RUBY_RIDIR%%/Gem/SafeYAML/cdesc-SafeYAML.ri
+%%RDOC%%%%RUBY_RIDIR%%/Gem/SafeYAML/load-c.ri
+%%RDOC%%%%RUBY_RIDIR%%/Gem/SafeYAML/safe_load-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Security/Exception/cdesc-Exception.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Security/Policy/cdesc-Policy.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Security/Policy/check_cert-i.ri

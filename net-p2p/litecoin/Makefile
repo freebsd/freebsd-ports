@@ -3,10 +3,13 @@
 
 PORTNAME=	litecoin
 PORTVERSION=	0.14.2
-PORTREVISION=	1
+PORTREVISION=	4
 DISTVERSIONPREFIX=	v
 PORTREVISION=	2
 CATEGORIES=	net-p2p finance
+
+PATCH_SITES=	https://github.com/bitcoin/bitcoin/commit/
+PATCHFILES=	1ec0c0a01c31.patch:-p1
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT?=	Virtual Peer-to-Peer Currency Client (QT)

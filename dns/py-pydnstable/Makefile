@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 LIB_DEPENDS=	libdnstable.so:dns/dnstable
 
 USE_PYTHON=	autoplist distutils
-USES=		pkgconfig python
+USES=		pkgconfig python:2.7
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}/${PYTHON_SITELIBDIR}/dnstable.so

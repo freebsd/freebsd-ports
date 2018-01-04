@@ -1,0 +1,8 @@
+Arduino from the command line on FreeBSD
+
+This is a makefile written by Craig Leres that makes it possible
+to build Arduino sketches with FreeBSD make from the command line.
+It includes an example sketch and Makefile which is optionally
+installed in share/examples/arduino-bsd-mk
+
+WWW: https://xse.com/leres/arduino/arduino-bsd-mk/

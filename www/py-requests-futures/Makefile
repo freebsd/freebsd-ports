@@ -15,14 +15,14 @@ LICENSE=	APACHE20
 USES=		python
 USE_PYTHON=	autoplist distutils
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>0:www/py-requests
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>0:www/py-requests@${FLAVOR}
 
 NO_ARCH=	yes
 
 .include <bsd.port.pre.mk>
 
 .if ${PYTHON_VER} == "2.7"
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}futures>0:devel/py-futures
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}futures>0:devel/py-futures@${FLAVOR}
 .endif
 
 .include <bsd.port.post.mk>

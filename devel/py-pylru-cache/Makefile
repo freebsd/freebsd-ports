@@ -14,7 +14,7 @@ COMMENT=	LRU cache for Python
 LICENSE=	BSD3CLAUSE GPLv3
 LICENSE_COMB=	dual
 
-USES?=		python
+USES=		python
 USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

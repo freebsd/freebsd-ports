@@ -1456,11 +1456,11 @@
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/desktop/ios/startup-iphone-portrait@2x.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/desktop/ios/startup-iphone5-portrait@2x.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/index.html
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/js/chunk-0-bb830932ee7c29ff7909-plex-3.27.1-882399d.js
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/js/main-1-95fd3600d0e11d7adf89-plex-3.27.1-882399d.js
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/js/vendors-2-183d8893d9e39dde7229-plex-3.27.1-882399d.js
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/main.b1a281d419806dd0a0f1b6db53c1be5d.css
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/main.v3.eaef9ddd7819bc73b0acb588445171ef.css
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/js/chunk-0-2714d638e568cbe75296-plex-3.31.1-c2be46c.js
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/js/main-1-f823eebe2c9373dce804-plex-3.31.1-c2be46c.js
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/js/vendors-2-06f52ba5db151b4fd0ca-plex-3.31.1-c2be46c.js
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/main.7cf69ef3c773fed2fee22d3d3e743c69.css
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/main.v3.dd35bf4ed31c95b6ac7c24b4f6af45d8.css
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/setup.html
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/translations/af.json
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/translations/ar.json
@@ -1528,6 +1528,7 @@
 %%DATADIR%%/Resources/Profiles/PlayStation 4 App.xml
 %%DATADIR%%/Resources/Profiles/Plex Home Theater-RaspberryPi.xml
 %%DATADIR%%/Resources/Profiles/Plex Home Theater.xml
+%%DATADIR%%/Resources/Profiles/Plexamp.xml
 %%DATADIR%%/Resources/Profiles/Popcorn Hour.xml
 %%DATADIR%%/Resources/Profiles/Roku-3.1.xml
 %%DATADIR%%/Resources/Profiles/Roku-5.x.xml
@@ -2754,6 +2755,7 @@
 %%DATADIR%%/Resources/crossdomain.xml
 %%DATADIR%%/Resources/dh512.pem
 %%DATADIR%%/Resources/distribution.txt
+%%DATADIR%%/Resources/empty
 %%DATADIR%%/Resources/empty.ts
 %%DATADIR%%/Resources/empty.vtt
 %%DATADIR%%/Resources/fonts.conf
@@ -2837,6 +2839,7 @@
 %%DATADIR%%/libsoci_sqlite3.so.3.0.0
 %%DATADIR%%/libsqlite3.so.0
 %%DATADIR%%/libssl.so.1.0.0
+%%DATADIR%%/libswresample.so.2
 %%DATADIR%%/libswscale.so.4
 %%DATADIR%%/libtag.so.1
 %%DATADIR%%/libxml2.so.9

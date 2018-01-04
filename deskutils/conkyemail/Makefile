@@ -13,7 +13,7 @@ COMMENT=	Email script for conky
 
 RUN_DEPENDS=	conky:sysutils/conky
 
-USES=		python
+USES=		python:2.7
 USE_PYTHON=	distutils
 NO_BUILD=	yes
 NO_ARCH=	yes

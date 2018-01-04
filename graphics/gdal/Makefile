@@ -3,6 +3,7 @@
 
 PORTNAME=	gdal
 PORTVERSION=	2.2.3
+PORTREVISION=	1
 CATEGORIES=	graphics geography
 MASTER_SITES=	http://download.osgeo.org/gdal/${PORTVERSION}/ \
 		ftp://ftp.remotesensing.org/pub/gdal/${PORTVERSION}/ \

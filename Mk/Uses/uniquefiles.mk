@@ -56,6 +56,19 @@
 #				  list of files to be iterated over.
 #				  Default: empty
 #
+# UNIQUE_SUFFIX_TYPES		- A list of TAGS to defined more complex unique
+#				  suffix handling.  It can, for example, handle
+#				  man pages by doing:
+#
+#		UNIQUE_SUFFIX_TYPES+=	SUFFIX_MAN
+#		UNIQUE_SUFFIX_MAN_WITH_EXT=	.[1-9ln]
+#		UNIQUE_SUFFIX_MAN_EXTRA_EXT=	.gz
+#		UNIQUE_FIND_SUFFIX_MAN_FILES=	${EGREP} -he '^man/man[1-9ln]/.*$$' ${TMPPLIST} 2>/dev/null
+#
+#				  The make(1) target that renames the files
+#				  runs before the man pages are compressed,
+#				  this is what the EXTRA_EXT bit is for.
+#
 # NOTE:	multiple logical instances are not supported by pkg and the original
 # pkg_tools at the moment.
 #
@@ -68,6 +81,8 @@ UNIQUE_PREFIX?=		${PKGNAMEPREFIX}
 UNIQUE_SUFFIX?=		${PKGNAMESUFFIX}
 UNIQUE_PREFIX_FILES?=	# empty
 UNIQUE_SUFFIX_FILES?=	# empty
+
+UNIQUE_SUFFIX_TYPES+=	SUFFIX
 
 .if ${uniquefiles_ARGS:Mdirs}
 DOCSDIR=	${PREFIX}/share/doc/${UNIQUE_PREFIX}${PORTNAME}
@@ -94,7 +109,7 @@ _DO_CONDITIONAL_SYMLINK=	\
 	if [ ! -e ${STAGEDIR}${PREFIX}/$${fname} -a ! -L ${STAGEDIR}${PREFIX}/$${fname} ]; then \
 		${ECHO_MSG} "Link: @$${fname} --> $${newf}"; \
 		${RLN} ${STAGEDIR}${PREFIX}/$${newf} ${STAGEDIR}${PREFIX}/$${fname}; \
-		${ECHO_CMD} LINKED:$${newf}:$${fname} >> ${_UNIQUEPKGLIST}; \
+		${ECHO_CMD} LINKED:$${newf}%%EXTRA_EXT%%:$${fname}%%EXTRA_EXT%% >> ${_UNIQUEPKGLIST}; \
 	fi
 .else
 # We are not symlinking the renamed binary.
@@ -113,7 +128,7 @@ move-uniquefiles:
 		${ECHO_MSG} "Move: $${fname} --> $${newf}" ; \
 		${MV} ${STAGEDIR}${PREFIX}/$${fname} ${STAGEDIR}${PREFIX}/$${newf}; \
 		${ECHO_CMD} MOVED:$${fname}:$${newf} >> ${_UNIQUEPKGLIST}; \
-		${_DO_CONDITIONAL_SYMLINK}; \
+		${_DO_CONDITIONAL_SYMLINK:S/%%EXTRA_EXT%%//g}; \
 	else \
 		${ECHO_MSG} "Makefile error: UNIQUE (prefix): $${fname} not found"; \
 		${FALSE}; \
@@ -126,7 +141,7 @@ move-uniquefiles:
 			${ECHO_MSG} "Move: $${fname} --> $${newf}" ; \
 			${MV} ${STAGEDIR}${PREFIX}/$${fname} ${STAGEDIR}${PREFIX}/$${newf}; \
 			${ECHO_CMD} MOVED:$${fname}:$${newf} >> ${_UNIQUEPKGLIST}; \
-			${_DO_CONDITIONAL_SYMLINK}; \
+			${_DO_CONDITIONAL_SYMLINK:S/%%EXTRA_EXT%%//g}; \
 		else \
 			${ECHO_MSG} "Makefile error: UNIQUE (prefix): $${fname} not found"; \
 			${FALSE}; \
@@ -134,36 +149,51 @@ move-uniquefiles:
 	done;
 .endif
 
-.if ${UNIQUE_SUFFIX_FILES} || ${UNIQUE_FIND_SUFFIX_FILES}
+.for sufxtype in ${UNIQUE_SUFFIX_TYPES}
+.  if (defined(UNIQUE_${sufxtype}_FILES) && ${UNIQUE_${sufxtype}_FILES}) || \
+     (defined(UNIQUE_FIND_${sufxtype}_FILES) && ${UNIQUE_FIND_${sufxtype}_FILES})
+.    if defined(UNIQUE_${sufxtype}_WITH_EXT) && ${UNIQUE_${sufxtype}_WITH_EXT}
+	@${ECHO_MSG} "===> Creating unique files: Move ${sufxtype:S|SUFFIX_||} files needing SUFFIX";
+.    else
 	@${ECHO_MSG} "===> Creating unique files: Move files needing SUFFIX";
-.endif
-.for entry in ${UNIQUE_SUFFIX_FILES}
+.    endif
+.  endif
+.  for entry in ${UNIQUE_${sufxtype}_FILES}
 	@fname=${entry}; \
+	if [ -n "${UNIQUE_${sufxtype}_EXTRA_EXT}" ]; then \
+		fname=$${fname%${UNIQUE_${sufxtype}_EXTRA_EXT}}; \
+	fi; \
 	if [ -e ${STAGEDIR}${PREFIX}/$${fname} -o -L ${STAGEDIR}${PREFIX}/$${fname} ]; then \
-		newf=$${fname%/*}/$${fname##*/}${UNIQUE_SUFFIX}; \
+		ofname=$${fname##*/}; \
+		newf=$${fname%/*}/$${ofname%${UNIQUE_${sufxtype}_WITH_EXT}}${UNIQUE_SUFFIX}$${ofname#$${ofname%${UNIQUE_${sufxtype}_WITH_EXT}}}; \
 		${ECHO_MSG} "Move: $${fname} --> $${newf}"; \
 		${MV} ${STAGEDIR}${PREFIX}/$${fname} ${STAGEDIR}${PREFIX}/$${newf}; \
-		${ECHO_CMD} MOVED:$${fname}:$${newf} >> ${_UNIQUEPKGLIST}; \
-		${_DO_CONDITIONAL_SYMLINK}; \
+		${ECHO_CMD} MOVED:$${fname}${UNIQUE_${sufxtype}_EXTRA_EXT}:$${newf}${UNIQUE_${sufxtype}_EXTRA_EXT} >> ${_UNIQUEPKGLIST}; \
+		${_DO_CONDITIONAL_SYMLINK:S/%%EXTRA_EXT%%/${UNIQUE_${sufxtype}_EXTRA_EXT}/g}; \
 	else \
 		${ECHO_MSG} "Makefile error: UNIQUE (suffix): $${fname} not found"; \
 		${FALSE}; \
 	fi;
-.endfor
-.if ${UNIQUE_FIND_SUFFIX_FILES}
-	@for fname in `${UNIQUE_FIND_SUFFIX_FILES}`; do \
+.  endfor
+.  if defined(UNIQUE_FIND_${sufxtype}_FILES) && ${UNIQUE_FIND_${sufxtype}_FILES}
+	@for fname in `${UNIQUE_FIND_${sufxtype}_FILES}`; do \
+		if [ -n "${UNIQUE_${sufxtype}_EXTRA_EXT}" ]; then \
+			fname=$${fname%${UNIQUE_${sufxtype}_EXTRA_EXT}}; \
+		fi; \
 		if [ -e ${STAGEDIR}${PREFIX}/$${fname} -o -L ${STAGEDIR}${PREFIX}/$${fname} ]; then \
-			newf=$${fname%/*}/$${fname##*/}${UNIQUE_SUFFIX}; \
+			ofname=$${fname##*/}; \
+			newf=$${fname%/*}/$${ofname%${UNIQUE_${sufxtype}_WITH_EXT}}${UNIQUE_SUFFIX}$${ofname#$${ofname%${UNIQUE_${sufxtype}_WITH_EXT}}}; \
 			${ECHO_MSG} "Move: $${fname} --> $${newf}"; \
 			${MV} ${STAGEDIR}${PREFIX}/$${fname} ${STAGEDIR}${PREFIX}/$${newf}; \
-			${ECHO_CMD} MOVED:$${fname}:$${newf} >> ${_UNIQUEPKGLIST}; \
-			${_DO_CONDITIONAL_SYMLINK}; \
+			${ECHO_CMD} MOVED:$${fname}${UNIQUE_${sufxtype}_EXTRA_EXT}:$${newf}${UNIQUE_${sufxtype}_EXTRA_EXT} >> ${_UNIQUEPKGLIST}; \
+			${_DO_CONDITIONAL_SYMLINK:S/%%EXTRA_EXT%%/${UNIQUE_${sufxtype}_EXTRA_EXT}/g}; \
 		else \
 			${ECHO_MSG} "Makefile error: UNIQUE (suffix): $${fname} not found"; \
 			${FALSE}; \
 		fi; \
 	done;
-.endif
+.  endif
+.endfor
 
 # Using .if exists(${_UNIQUEPKGPLIST} below instead of the sh test
 # does not work in poudriere. It works fine on the CLI, though...

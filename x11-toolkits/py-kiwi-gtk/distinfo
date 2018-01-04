@@ -1,2 +1,3 @@
-SHA256 (kiwi-gtk-1.9.38.tar.gz) = ce4b1cf461c93b40ea3ac1a030d2b3be1a964c8fe08f0f6b5e0ef5c84209976f
-SIZE (kiwi-gtk-1.9.38.tar.gz) = 698175
+TIMESTAMP = 1514410342
+SHA256 (kiwi-gtk-1.11.1.tar.gz) = bc24a35fd0824ed770425e38588b1052f1331f964b77dc31ccc50e4a187bcef6
+SIZE (kiwi-gtk-1.11.1.tar.gz) = 680449

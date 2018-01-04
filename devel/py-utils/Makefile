@@ -11,7 +11,7 @@ DISTNAME=	pythonutils-${PORTVERSION}
 MAINTAINER=	daniel@netwalk.org
 COMMENT=	General utility modules that simplify common programming in Python
 
-USES=		python zip
+USES=		python:2.7 zip
 USE_PYTHON=	distutils autoplist
 
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}

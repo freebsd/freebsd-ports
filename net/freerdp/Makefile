@@ -3,7 +3,7 @@
 
 PORTNAME=	freerdp
 DISTVERSION=	2.0.0-rc0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net comms ipv6
 
 MAINTAINER=	kevans@FreeBSD.org
@@ -20,13 +20,13 @@ USES=		alias cmake:outsource compiler:c++11-lib cpe gettext localbase pathfix pk
 USE_LDCONFIG=	yes
 CPE_VENDOR=	freerdp_project
 
-CMAKE_ARGS+=	-DWITH_LIBSYSTEMD=OFF -DWITH_WAYLAND=OFF -DWITH_GSTREAMER_0_10=OFF ${CMAKE_ARGS_${ARCH}}
+CMAKE_ARGS+=	-DWITH_LIBSYSTEMD=OFF -DWITH_GSTREAMER_0_10=OFF ${CMAKE_ARGS_${ARCH}}
 
 CMAKE_ARGS_aarch64=	-DWITH_NEON=ON
 CFLAGS_aarch64=		-D__ARM_NEON__=__ARM_NEON # clang
 
-OPTIONS_DEFINE=		ALSA CUPS FFMPEG GSTREAMER PULSEAUDIO X11
-OPTIONS_DEFAULT=	CUPS GSTREAMER X11
+OPTIONS_DEFINE=		ALSA CUPS FFMPEG GSTREAMER PULSEAUDIO WAYLAND X11
+OPTIONS_DEFAULT=	CUPS GSTREAMER WAYLAND X11
 OPTIONS_SUB=		yes
 
 OPTIONS_DEFINE_armv6=	NEON
@@ -46,7 +46,7 @@ FFMPEG_LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
 FFMPEG_CMAKE_BOOL=	WITH_FFMPEG
 
 GSTREAMER_CMAKE_BOOL=	WITH_GSTREAMER_1_0
-GSTREAMER_USE=		gnome=glib20 gstreamer1=yes xorg=x11,xextproto,xext,xrandr
+GSTREAMER_USE=		gnome=glib20 gstreamer1=yes xorg=x11,xext,xextproto,xrandr
 GSTREAMER_LIB_DEPENDS=	libgstbase-1.0.so:multimedia/gstreamer1
 
 NEON_DESC=		Enable	Media Processing Engine instructions
@@ -60,11 +60,19 @@ PULSEAUDIO_CMAKE_BOOL=	WITH_PULSE
 
 SSE_CMAKE_BOOL=		WITH_SSE2
 
+WAYLAND_DESC=		Build FreeRDP Wayland client
+WAYLAND_BUILD_DEPENDS=	${LOCALBASE}/include/linux/input.h:multimedia/v4l_compat
+WAYLAND_LIB_DEPENDS=	libepoll-shim.so:devel/libepoll-shim \
+			libwayland-client.so:graphics/wayland \
+			libwayland-cursor.so:graphics/wayland \
+			libxkbcommon.so:x11/libxkbcommon
+WAYLAND_CMAKE_BOOL=	WITH_WAYLAND
+
 X11_DESC=		Build FreeRDP X11 client
 X11_BUILD_DEPENDS=	xmlto:textproc/xmlto
 X11_CMAKE_BOOL=		WITH_X11
 X11_CMAKE_OFF=		-DWITH_XKBFILE=OFF
-X11_USE=		xorg=x11,xkbfile,xcursor,xextproto,xv,xinerama,xext,xrandr,xi,xfixes,xrender
+X11_USE=		xorg=x11,xcursor,xext,xextproto,xfixes,xi,xinerama,xkbfile,xrandr,xrender,xv
 
 .include <bsd.port.pre.mk>
 

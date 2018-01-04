@@ -23,7 +23,7 @@ NO_OPTIONS_SORT=	yes
 TRACE_DESC=		Build with GNAT-specific symbolic tracing functionality
 
 DOCS_USES=		python:build
-DOCS_BUILD_DEPENDS=	sphinx-build:textproc/py-sphinx \
+DOCS_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>0:textproc/py-sphinx \
 			${PYTHON_PKGNAMEPREFIX}sphinxcontrib-adadomain>0:textproc/py-sphinxcontrib-adadomain
 TRACE_EXTRA_PATCHES=	${FILESDIR}/extra-src_ahven-framework.adb
 

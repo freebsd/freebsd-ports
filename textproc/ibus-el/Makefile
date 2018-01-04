@@ -14,7 +14,7 @@ COMMENT=	IBus client for GNU Emacs
 RUN_DEPENDS=	ibus-daemon:textproc/ibus \
 		${PYTHON_SITELIBDIR}/Xlib/X.py:x11-toolkits/py-xlib
 
-USES=		python:run
+USES=		python:2.7,run
 USE_EMACS=	yes
 
 LICENSE=	GPLv3

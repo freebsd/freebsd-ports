@@ -14,11 +14,11 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	${PYNUMPY} \
-		${PYTHON_PKGNAMEPREFIX}networkx>=1.9.0:math/py-networkx \
-		${PYTHON_PKGNAMEPREFIX}scipy>=0.9.0:science/py-scipy
+		${PYTHON_PKGNAMEPREFIX}networkx>=1.9.0:math/py-networkx@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}scipy>=0.9.0:science/py-scipy@${FLAVOR}
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
-USES=		python
+USES=		python:2.7
 USE_PYTHON=	autoplist distutils
 NO_ARCH=	yes
 

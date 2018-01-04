@@ -13,7 +13,7 @@ COMMENT=	Yelded DBF reader/writer for Python
 
 LICENSE=	GPLv2
 
-USES=		python
+USES=		python:2.7
 USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

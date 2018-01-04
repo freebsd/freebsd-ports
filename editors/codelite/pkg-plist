@@ -26,6 +26,8 @@ lib/codelite/ExternalTools.so
 lib/codelite/HelpPlugin.so
 lib/codelite/MemCheck.so
 lib/codelite/Outline.so
+lib/codelite/PHPLint.so
+lib/codelite/PHPRefactoring.so
 lib/codelite/QMakePlugin.so
 %%SFTP%%lib/codelite/SFTP.so
 lib/codelite/SnipWiz.so
@@ -39,6 +41,7 @@ lib/codelite/Wizards.so
 lib/codelite/WordCompletion.so
 lib/codelite/ZoomNavigator.so
 lib/codelite/abbreviation.so
+lib/codelite/codelite_vim.so
 lib/codelite/codelitephp.so
 lib/codelite/cppchecker.so
 lib/codelite/cscope.so
@@ -64,12 +67,17 @@ share/applications/codelite.desktop
 %%DATADIR%%/config/accelerators.conf.default
 %%DATADIR%%/config/build_settings.xml.default
 %%DATADIR%%/config/cfg/avr.cfg
+%%DATADIR%%/config/cfg/cppcheck-cfg.rng
+%%DATADIR%%/config/cfg/gnu.cfg
 %%DATADIR%%/config/cfg/gtk.cfg
+%%DATADIR%%/config/cfg/microsoft_sal.cfg
 %%DATADIR%%/config/cfg/posix.cfg
 %%DATADIR%%/config/cfg/qt.cfg
 %%DATADIR%%/config/cfg/sdl.cfg
+%%DATADIR%%/config/cfg/sfml.cfg
 %%DATADIR%%/config/cfg/std.cfg
 %%DATADIR%%/config/cfg/windows.cfg
+%%DATADIR%%/config/cfg/wxwidgets.cfg
 %%DATADIR%%/config/codelite.xml.default
 %%DATADIR%%/config/debuggers.xml.default
 %%DATADIR%%/dics/en_GB.aff
@@ -93,7 +101,10 @@ share/applications/codelite.desktop
 %%DATADIR%%/images/splashscreen.png
 %%DATADIR%%/images/splashscreen@2x.png
 %%DATADIR%%/javascript.zip
+%%DATADIR%%/jsctags.zip
 %%DATADIR%%/lexers/lexers.json
+%%DATADIR%%/php.sample
+%%DATADIR%%/phprefactor.phar
 %%DATADIR%%/rc/menu.xrc
 %%DATADIR%%/resources/abbrev.png
 %%DATADIR%%/resources/compfile.png

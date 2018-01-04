@@ -13,7 +13,7 @@ LICENSE=	BSD3CLAUSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pdagent>0:net-mgmt/py-pdagent
 
-USES=	python shebangfix
+USES=	python:2.7 shebangfix
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	PagerDuty

@@ -13,8 +13,8 @@ COMMENT=	Utilities for using Babel in django
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=    ${PYTHON_PKGNAMEPREFIX}django18>=0:www/py-django18 \
-		${PYTHON_PKGNAMEPREFIX}Babel>=0:devel/py-babel
+RUN_DEPENDS=    ${PYTHON_PKGNAMEPREFIX}django18>=0:www/py-django18@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}Babel>=0:devel/py-babel@${FLAVOR}
 
 NO_ARCH=	yes
 

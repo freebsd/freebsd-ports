@@ -170,6 +170,7 @@
     SUBDIR += ppmd-7z
     SUBDIR += ppunpack
     SUBDIR += pxz
+    SUBDIR += py-acefile
     SUBDIR += py-attic
     SUBDIR += py-backports.lzma
     SUBDIR += py-borgbackup
@@ -189,7 +190,6 @@
     SUBDIR += py-rjsmin
     SUBDIR += py-warctools
     SUBDIR += py-xopen
-    SUBDIR += py3-libarchive-c
     SUBDIR += qpress
     SUBDIR += quazip
     SUBDIR += quazip-qt5

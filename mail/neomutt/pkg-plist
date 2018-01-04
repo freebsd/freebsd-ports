@@ -1,7 +1,7 @@
 bin/neomutt
-lib/neomutt/pgpewrap
-lib/neomutt/pgpring
-lib/neomutt/smime_keys
+libexec/neomutt/pgpewrap
+libexec/neomutt/pgpring
+libexec/neomutt/smime_keys
 man/man1/neomutt.1.gz
 man/man1/pgpewrap_neomutt.1.gz
 man/man1/pgpring_neomutt.1.gz
@@ -83,7 +83,6 @@ man/man5/neomuttrc.5.gz
 %%PORTDOCS%%%%DOCSDIR%%/mimesupport.html
 %%PORTDOCS%%%%DOCSDIR%%/mime.types
 %%PORTDOCS%%%%DOCSDIR%%/miscellany.html
-%%PORTDOCS%%%%DOCSDIR%%/neomutt-syntax.vim
 %%PORTDOCS%%%%DOCSDIR%%/optionalfeatures.html
 %%PORTDOCS%%%%DOCSDIR%%/reference.html
 %%PORTDOCS%%%%DOCSDIR%%/samples/Mush.rc

@@ -1,0 +1,15 @@
+twmn is a notification system for tiling window managers. It consists of the
+two programs:
+
+twmnc: command line tool to send notifications to twmnd. You can also use
+notify-send for a similar purpose, but twmnc is more powerful. See
+twmnc --help for more information.
+
+twmnd: daemon listening to notification requests and showing them one after
+another. Configure it at ~/.config/twmn/twmn.conf. The file is generated the
+first time twmnd is launched.
+
+Notifications are shown in a one-line bar called the notification slide.
+They can be navigated through and activated with shortcuts.
+
+WWW: https://github.com/sboli/twmn

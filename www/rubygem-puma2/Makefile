@@ -13,6 +13,9 @@ COMMENT=	Fast, multithreaded and highly concurrent ruby web server
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Use www/rubygem-puma instead
+EXPIRATION_DATE=2018-01-31
+
 PORTSCOUT=	limit:^2\.
 
 USE_RUBY=	yes

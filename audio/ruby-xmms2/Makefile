@@ -18,6 +18,10 @@ USE_GNOME=	glib20
 
 BROKEN_RUBY22=	yes
 BROKEN_RUBY23=	yes
+BROKEN_RUBY24=	yes
+
+DEPRECATED=     Does not build with current versions of ruby
+EXPIRATION_DATE=	2018-01-12
 
 PLIST=		${.CURDIR}/pkg-plist
 

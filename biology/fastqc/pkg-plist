@@ -1,0 +1,206 @@
+bin/fastqc
+%%DATADIR%%/Configuration/adapter_list.txt
+%%DATADIR%%/Configuration/contaminant_list.txt
+%%DATADIR%%/Configuration/limits.txt
+%%DATADIR%%/Help/1 Introduction/1.1 What is FastQC.html
+%%DATADIR%%/Help/2 Basic Operations/2.1 Opening a sequence file.html
+%%DATADIR%%/Help/2 Basic Operations/2.2 Evaluating Results.html
+%%DATADIR%%/Help/2 Basic Operations/2.3 Saving a Report.html
+%%DATADIR%%/Help/3 Analysis Modules/1 Basic Statistics.html
+%%DATADIR%%/Help/3 Analysis Modules/10 Adapter Content.html
+%%DATADIR%%/Help/3 Analysis Modules/11 Kmer Content.html
+%%DATADIR%%/Help/3 Analysis Modules/12 Per Tile Sequence Quality.html
+%%DATADIR%%/Help/3 Analysis Modules/2 Per Base Sequence Quality.html
+%%DATADIR%%/Help/3 Analysis Modules/3 Per Sequence Quality Scores.html
+%%DATADIR%%/Help/3 Analysis Modules/4 Per Base Sequence Content.html
+%%DATADIR%%/Help/3 Analysis Modules/5 Per Sequence GC Content.html
+%%DATADIR%%/Help/3 Analysis Modules/6 Per Base N Content.html
+%%DATADIR%%/Help/3 Analysis Modules/7 Sequence Length Distribution.html
+%%DATADIR%%/Help/3 Analysis Modules/8 Duplicate Sequences.html
+%%DATADIR%%/Help/3 Analysis Modules/9 Overrepresented Sequences.html
+%%DATADIR%%/Help/3 Analysis Modules/duplication_levels.png
+%%DATADIR%%/Help/3 Analysis Modules/kmer_profiles.png
+%%DATADIR%%/Help/3 Analysis Modules/per_base_gc_content.png
+%%DATADIR%%/Help/3 Analysis Modules/per_base_n_content.png
+%%DATADIR%%/Help/3 Analysis Modules/per_base_quality.png
+%%DATADIR%%/Help/3 Analysis Modules/per_base_sequence_content.png
+%%DATADIR%%/Help/3 Analysis Modules/per_sequence_gc_content.png
+%%DATADIR%%/Help/3 Analysis Modules/per_sequence_quality.png
+%%DATADIR%%/Help/3 Analysis Modules/per_tile_quality.png
+%%DATADIR%%/Help/3 Analysis Modules/sequence_length_distribution.png
+%%DATADIR%%/Templates/Icons/error.png
+%%DATADIR%%/Templates/Icons/fastqc_icon.png
+%%DATADIR%%/Templates/Icons/tick.png
+%%DATADIR%%/Templates/Icons/warning.png
+%%DATADIR%%/Templates/fastqc2fo.xsl
+%%DATADIR%%/Templates/header_template.html
+%%JAVAJARDIR%%/fastqc/cisd-jhdf5.jar
+%%JAVAJARDIR%%/fastqc/jbzip2-0.9.jar
+%%JAVAJARDIR%%/fastqc/net/sourceforge/iharder/base64/Base64$1.class
+%%JAVAJARDIR%%/fastqc/net/sourceforge/iharder/base64/Base64$InputStream.class
+%%JAVAJARDIR%%/fastqc/net/sourceforge/iharder/base64/Base64$OutputStream.class
+%%JAVAJARDIR%%/fastqc/net/sourceforge/iharder/base64/Base64.class
+%%JAVAJARDIR%%/fastqc/org/apache/commons/math3/analysis/UnivariateFunction.class
+%%JAVAJARDIR%%/fastqc/org/apache/commons/math3/analysis/solvers/AbstractUnivariateSolver.class
+%%JAVAJARDIR%%/fastqc/org/apache/commons/math3/analysis/solvers/AllowedSolution.class
+%%JAVAJARDIR%%/fastqc/org/apache/commons/math3/analysis/solvers/BaseAbstractUnivariateSolver.class
+%%JAVAJARDIR%%/fastqc/org/apache/commons/math3/analysis/solvers/BaseUnivariateSolver.class
+%%JAVAJARDIR%%/fastqc/org/apache/commons/math3/analysis/solvers/BracketedUnivariateSolver.class
+%%JAVAJARDIR%%/fastqc/org/apache/commons/math3/analysis/solvers/BrentSolver.class
+%%JAVAJARDIR%%/fastqc/org/apache/commons/math3/analysis/solvers/UnivariateSolver.class
+%%JAVAJARDIR%%/fastqc/org/apache/commons/math3/analysis/solvers/UnivariateSolverUtils.class
+%%JAVAJARDIR%%/fastqc/org/apache/commons/math3/distribution/AbstractIntegerDistribution.class
+%%JAVAJARDIR%%/fastqc/org/apache/commons/math3/distribution/AbstractRealDistribution$1.class
+%%JAVAJARDIR%%/fastqc/org/apache/commons/math3/distribution/AbstractRealDistribution.class
+%%JAVAJARDIR%%/fastqc/org/apache/commons/math3/distribution/BetaDistribution.class
+%%JAVAJARDIR%%/fastqc/org/apache/commons/math3/distribution/BinomialDistribution.class
+%%JAVAJARDIR%%/fastqc/org/apache/commons/math3/distribution/CauchyDistribution.class
+%%JAVAJARDIR%%/fastqc/org/apache/commons/math3/distribution/ChiSquaredDistribution.class
+%%JAVAJARDIR%%/fastqc/org/apache/commons/math3/distribution/FDistribution.class
+%%JAVAJARDIR%%/fastqc/org/apache/commons/math3/distribution/GammaDistribution.class
+%%JAVAJARDIR%%/fastqc/org/apache/commons/math3/distribution/HypergeometricDistribution.class
+%%JAVAJARDIR%%/fastqc/org/apache/commons/math3/distribution/IntegerDistribution.class
+%%JAVAJARDIR%%/fastqc/org/apache/commons/math3/distribution/NormalDistribution.class
+%%JAVAJARDIR%%/fastqc/org/apache/commons/math3/distribution/PascalDistribution.class
+%%JAVAJARDIR%%/fastqc/org/apache/commons/math3/distribution/PoissonDistribution.class
+%%JAVAJARDIR%%/fastqc/org/apache/commons/math3/distribution/RealDistribution.class
+%%JAVAJARDIR%%/fastqc/org/apache/commons/math3/distribution/SaddlePointExpansion.class
+%%JAVAJARDIR%%/fastqc/org/apache/commons/math3/distribution/TDistribution.class
+%%JAVAJARDIR%%/fastqc/org/apache/commons/math3/distribution/WeibullDistribution.class
+%%JAVAJARDIR%%/fastqc/org/apache/commons/math3/distribution/ZipfDistribution.class
+%%JAVAJARDIR%%/fastqc/org/apache/commons/math3/exception/ConvergenceException.class
+%%JAVAJARDIR%%/fastqc/org/apache/commons/math3/exception/DimensionMismatchException.class
+%%JAVAJARDIR%%/fastqc/org/apache/commons/math3/exception/MathArithmeticException.class
+%%JAVAJARDIR%%/fastqc/org/apache/commons/math3/exception/MathIllegalArgumentException.class
+%%JAVAJARDIR%%/fastqc/org/apache/commons/math3/exception/MathIllegalNumberException.class
+%%JAVAJARDIR%%/fastqc/org/apache/commons/math3/exception/MathIllegalStateException.class
+%%JAVAJARDIR%%/fastqc/org/apache/commons/math3/exception/MathInternalError.class
+%%JAVAJARDIR%%/fastqc/org/apache/commons/math3/exception/MaxCountExceededException.class
+%%JAVAJARDIR%%/fastqc/org/apache/commons/math3/exception/NoBracketingException.class
+%%JAVAJARDIR%%/fastqc/org/apache/commons/math3/exception/NotFiniteNumberException.class
+%%JAVAJARDIR%%/fastqc/org/apache/commons/math3/exception/NotPositiveException.class
+%%JAVAJARDIR%%/fastqc/org/apache/commons/math3/exception/NotStrictlyPositiveException.class
+%%JAVAJARDIR%%/fastqc/org/apache/commons/math3/exception/NullArgumentException.class
+%%JAVAJARDIR%%/fastqc/org/apache/commons/math3/exception/NumberIsTooLargeException.class
+%%JAVAJARDIR%%/fastqc/org/apache/commons/math3/exception/NumberIsTooSmallException.class
+%%JAVAJARDIR%%/fastqc/org/apache/commons/math3/exception/OutOfRangeException.class
+%%JAVAJARDIR%%/fastqc/org/apache/commons/math3/exception/TooManyEvaluationsException.class
+%%JAVAJARDIR%%/fastqc/org/apache/commons/math3/exception/util/ArgUtils.class
+%%JAVAJARDIR%%/fastqc/org/apache/commons/math3/exception/util/ExceptionContext.class
+%%JAVAJARDIR%%/fastqc/org/apache/commons/math3/exception/util/ExceptionContextProvider.class
+%%JAVAJARDIR%%/fastqc/org/apache/commons/math3/exception/util/Localizable.class
+%%JAVAJARDIR%%/fastqc/org/apache/commons/math3/exception/util/LocalizedFormats.class
+%%JAVAJARDIR%%/fastqc/org/apache/commons/math3/random/AbstractWell.class
+%%JAVAJARDIR%%/fastqc/org/apache/commons/math3/random/BitsStreamGenerator.class
+%%JAVAJARDIR%%/fastqc/org/apache/commons/math3/random/RandomData.class
+%%JAVAJARDIR%%/fastqc/org/apache/commons/math3/random/RandomDataImpl.class
+%%JAVAJARDIR%%/fastqc/org/apache/commons/math3/random/RandomGenerator.class
+%%JAVAJARDIR%%/fastqc/org/apache/commons/math3/random/Well19937c.class
+%%JAVAJARDIR%%/fastqc/org/apache/commons/math3/special/Beta$1.class
+%%JAVAJARDIR%%/fastqc/org/apache/commons/math3/special/Beta.class
+%%JAVAJARDIR%%/fastqc/org/apache/commons/math3/special/Erf.class
+%%JAVAJARDIR%%/fastqc/org/apache/commons/math3/special/Gamma$1.class
+%%JAVAJARDIR%%/fastqc/org/apache/commons/math3/special/Gamma.class
+%%JAVAJARDIR%%/fastqc/org/apache/commons/math3/util/ArithmeticUtils.class
+%%JAVAJARDIR%%/fastqc/org/apache/commons/math3/util/ContinuedFraction.class
+%%JAVAJARDIR%%/fastqc/org/apache/commons/math3/util/DoubleArray.class
+%%JAVAJARDIR%%/fastqc/org/apache/commons/math3/util/FastMath$ExpFracTable.class
+%%JAVAJARDIR%%/fastqc/org/apache/commons/math3/util/FastMath$ExpIntTable.class
+%%JAVAJARDIR%%/fastqc/org/apache/commons/math3/util/FastMath$lnMant.class
+%%JAVAJARDIR%%/fastqc/org/apache/commons/math3/util/FastMath.class
+%%JAVAJARDIR%%/fastqc/org/apache/commons/math3/util/FastMathCalc.class
+%%JAVAJARDIR%%/fastqc/org/apache/commons/math3/util/FastMathLiteralArrays.class
+%%JAVAJARDIR%%/fastqc/org/apache/commons/math3/util/Incrementor$1.class
+%%JAVAJARDIR%%/fastqc/org/apache/commons/math3/util/Incrementor$MaxCountExceededCallback.class
+%%JAVAJARDIR%%/fastqc/org/apache/commons/math3/util/Incrementor.class
+%%JAVAJARDIR%%/fastqc/org/apache/commons/math3/util/MathUtils.class
+%%JAVAJARDIR%%/fastqc/org/apache/commons/math3/util/Precision.class
+%%JAVAJARDIR%%/fastqc/org/apache/commons/math3/util/ResizableDoubleArray.class
+%%JAVAJARDIR%%/fastqc/sam-1.103.jar
+%%JAVAJARDIR%%/fastqc/uk/ac/babraham/FastQC/Analysis/AnalysisListener.class
+%%JAVAJARDIR%%/fastqc/uk/ac/babraham/FastQC/Analysis/AnalysisQueue.class
+%%JAVAJARDIR%%/fastqc/uk/ac/babraham/FastQC/Analysis/AnalysisRunner.class
+%%JAVAJARDIR%%/fastqc/uk/ac/babraham/FastQC/Analysis/OfflineRunner.class
+%%JAVAJARDIR%%/fastqc/uk/ac/babraham/FastQC/Dialogs/AboutDialog$1.class
+%%JAVAJARDIR%%/fastqc/uk/ac/babraham/FastQC/Dialogs/AboutDialog.class
+%%JAVAJARDIR%%/fastqc/uk/ac/babraham/FastQC/Dialogs/FastQCTitlePanel$SmoothJLabel.class
+%%JAVAJARDIR%%/fastqc/uk/ac/babraham/FastQC/Dialogs/FastQCTitlePanel.class
+%%JAVAJARDIR%%/fastqc/uk/ac/babraham/FastQC/Dialogs/WelcomePanel.class
+%%JAVAJARDIR%%/fastqc/uk/ac/babraham/FastQC/FastQCApplication$1.class
+%%JAVAJARDIR%%/fastqc/uk/ac/babraham/FastQC/FastQCApplication.class
+%%JAVAJARDIR%%/fastqc/uk/ac/babraham/FastQC/FastQCConfig.class
+%%JAVAJARDIR%%/fastqc/uk/ac/babraham/FastQC/FastQCMenuBar.class
+%%JAVAJARDIR%%/fastqc/uk/ac/babraham/FastQC/FileFilters/BAMFileFilter.class
+%%JAVAJARDIR%%/fastqc/uk/ac/babraham/FastQC/FileFilters/CasavaFastQFileFilter.class
+%%JAVAJARDIR%%/fastqc/uk/ac/babraham/FastQC/FileFilters/FastQFileFilter.class
+%%JAVAJARDIR%%/fastqc/uk/ac/babraham/FastQC/FileFilters/GobyFileFilter.class
+%%JAVAJARDIR%%/fastqc/uk/ac/babraham/FastQC/FileFilters/MappedBAMFileFilter.class
+%%JAVAJARDIR%%/fastqc/uk/ac/babraham/FastQC/FileFilters/SequenceFileFilter.class
+%%JAVAJARDIR%%/fastqc/uk/ac/babraham/FastQC/Graphs/BaseGroup.class
+%%JAVAJARDIR%%/fastqc/uk/ac/babraham/FastQC/Graphs/LineGraph.class
+%%JAVAJARDIR%%/fastqc/uk/ac/babraham/FastQC/Graphs/QualityBoxPlot.class
+%%JAVAJARDIR%%/fastqc/uk/ac/babraham/FastQC/Graphs/TileGraph.class
+%%JAVAJARDIR%%/fastqc/uk/ac/babraham/FastQC/Help/HelpDialog.class
+%%JAVAJARDIR%%/fastqc/uk/ac/babraham/FastQC/Help/HelpIndexRoot$FileSorter.class
+%%JAVAJARDIR%%/fastqc/uk/ac/babraham/FastQC/Help/HelpIndexRoot.class
+%%JAVAJARDIR%%/fastqc/uk/ac/babraham/FastQC/Help/HelpPage.class
+%%JAVAJARDIR%%/fastqc/uk/ac/babraham/FastQC/Help/HelpPageDisplay$HelpEditor.class
+%%JAVAJARDIR%%/fastqc/uk/ac/babraham/FastQC/Help/HelpPageDisplay.class
+%%JAVAJARDIR%%/fastqc/uk/ac/babraham/FastQC/Help/HelpSearchPanel.class
+%%JAVAJARDIR%%/fastqc/uk/ac/babraham/FastQC/Modules/AbstractQCModule.class
+%%JAVAJARDIR%%/fastqc/uk/ac/babraham/FastQC/Modules/AdapterContent$Adapter.class
+%%JAVAJARDIR%%/fastqc/uk/ac/babraham/FastQC/Modules/AdapterContent$ResultsTable.class
+%%JAVAJARDIR%%/fastqc/uk/ac/babraham/FastQC/Modules/AdapterContent.class
+%%JAVAJARDIR%%/fastqc/uk/ac/babraham/FastQC/Modules/BasicStats$ResultsTable.class
+%%JAVAJARDIR%%/fastqc/uk/ac/babraham/FastQC/Modules/BasicStats.class
+%%JAVAJARDIR%%/fastqc/uk/ac/babraham/FastQC/Modules/DuplicationLevel.class
+%%JAVAJARDIR%%/fastqc/uk/ac/babraham/FastQC/Modules/GCModel/GCModel.class
+%%JAVAJARDIR%%/fastqc/uk/ac/babraham/FastQC/Modules/GCModel/GCModelValue.class
+%%JAVAJARDIR%%/fastqc/uk/ac/babraham/FastQC/Modules/KmerContent$Kmer.class
+%%JAVAJARDIR%%/fastqc/uk/ac/babraham/FastQC/Modules/KmerContent$ResultsTable.class
+%%JAVAJARDIR%%/fastqc/uk/ac/babraham/FastQC/Modules/KmerContent.class
+%%JAVAJARDIR%%/fastqc/uk/ac/babraham/FastQC/Modules/ModuleConfig.class
+%%JAVAJARDIR%%/fastqc/uk/ac/babraham/FastQC/Modules/ModuleFactory.class
+%%JAVAJARDIR%%/fastqc/uk/ac/babraham/FastQC/Modules/NContent.class
+%%JAVAJARDIR%%/fastqc/uk/ac/babraham/FastQC/Modules/OverRepresentedSeqs$OverrepresentedSeq.class
+%%JAVAJARDIR%%/fastqc/uk/ac/babraham/FastQC/Modules/OverRepresentedSeqs$ResultsTable.class
+%%JAVAJARDIR%%/fastqc/uk/ac/babraham/FastQC/Modules/OverRepresentedSeqs.class
+%%JAVAJARDIR%%/fastqc/uk/ac/babraham/FastQC/Modules/PerBaseQualityScores.class
+%%JAVAJARDIR%%/fastqc/uk/ac/babraham/FastQC/Modules/PerBaseSequenceContent.class
+%%JAVAJARDIR%%/fastqc/uk/ac/babraham/FastQC/Modules/PerSequenceGCContent.class
+%%JAVAJARDIR%%/fastqc/uk/ac/babraham/FastQC/Modules/PerSequenceQualityScores.class
+%%JAVAJARDIR%%/fastqc/uk/ac/babraham/FastQC/Modules/PerTileQualityScores.class
+%%JAVAJARDIR%%/fastqc/uk/ac/babraham/FastQC/Modules/QCModule.class
+%%JAVAJARDIR%%/fastqc/uk/ac/babraham/FastQC/Modules/SequenceLengthDistribution.class
+%%JAVAJARDIR%%/fastqc/uk/ac/babraham/FastQC/Report/HTMLReportArchive.class
+%%JAVAJARDIR%%/fastqc/uk/ac/babraham/FastQC/Report/stylesheet.txt
+%%JAVAJARDIR%%/fastqc/uk/ac/babraham/FastQC/Resources/error.png
+%%JAVAJARDIR%%/fastqc/uk/ac/babraham/FastQC/Resources/fastqc_icon.png
+%%JAVAJARDIR%%/fastqc/uk/ac/babraham/FastQC/Resources/fastqc_icon.svg
+%%JAVAJARDIR%%/fastqc/uk/ac/babraham/FastQC/Resources/fastqc_icon_100.png
+%%JAVAJARDIR%%/fastqc/uk/ac/babraham/FastQC/Resources/tick.png
+%%JAVAJARDIR%%/fastqc/uk/ac/babraham/FastQC/Resources/warning.png
+%%JAVAJARDIR%%/fastqc/uk/ac/babraham/FastQC/Results/ResultsPanel$ModuleRenderer.class
+%%JAVAJARDIR%%/fastqc/uk/ac/babraham/FastQC/Results/ResultsPanel.class
+%%JAVAJARDIR%%/fastqc/uk/ac/babraham/FastQC/Sequence/BAMFile.class
+%%JAVAJARDIR%%/fastqc/uk/ac/babraham/FastQC/Sequence/Contaminant/Contaminant.class
+%%JAVAJARDIR%%/fastqc/uk/ac/babraham/FastQC/Sequence/Contaminant/ContaminantHit.class
+%%JAVAJARDIR%%/fastqc/uk/ac/babraham/FastQC/Sequence/Contaminant/ContaminentFinder.class
+%%JAVAJARDIR%%/fastqc/uk/ac/babraham/FastQC/Sequence/Fast5File.class
+%%JAVAJARDIR%%/fastqc/uk/ac/babraham/FastQC/Sequence/FastQFile.class
+%%JAVAJARDIR%%/fastqc/uk/ac/babraham/FastQC/Sequence/QualityEncoding/PhredEncoding.class
+%%JAVAJARDIR%%/fastqc/uk/ac/babraham/FastQC/Sequence/Sequence.class
+%%JAVAJARDIR%%/fastqc/uk/ac/babraham/FastQC/Sequence/SequenceFactory.class
+%%JAVAJARDIR%%/fastqc/uk/ac/babraham/FastQC/Sequence/SequenceFile.class
+%%JAVAJARDIR%%/fastqc/uk/ac/babraham/FastQC/Sequence/SequenceFileGroup.class
+%%JAVAJARDIR%%/fastqc/uk/ac/babraham/FastQC/Sequence/SequenceFormatException.class
+%%JAVAJARDIR%%/fastqc/uk/ac/babraham/FastQC/Statistics/NormalDistribution.class
+%%JAVAJARDIR%%/fastqc/uk/ac/babraham/FastQC/Statistics/PearsonCorrelation.class
+%%JAVAJARDIR%%/fastqc/uk/ac/babraham/FastQC/Utilities/CasavaBasename.class
+%%JAVAJARDIR%%/fastqc/uk/ac/babraham/FastQC/Utilities/HotColdColourGradient.class
+%%JAVAJARDIR%%/fastqc/uk/ac/babraham/FastQC/Utilities/ImageToBase64.class
+%%JAVAJARDIR%%/fastqc/uk/ac/babraham/FastQC/Utilities/MultiMemberGZIPInputStream.class
+%%JAVAJARDIR%%/fastqc/uk/ac/babraham/FastQC/Utilities/NameFormatException.class
+%%JAVAJARDIR%%/fastqc/uk/ac/babraham/FastQC/Utilities/NanoporeBasename.class
+%%JAVAJARDIR%%/fastqc/uk/ac/babraham/FastQC/Utilities/QualityCount.class
+%%JAVAJARDIR%%/fastqc/uk/ac/babraham/FastQC/Utilities/RGB.class

@@ -1,7 +1,6 @@
 Index: tools/runidn/resolver.c
-diff -u -p tools/runidn/resolver.c.orig tools/runidn/resolver.c
---- tools/runidn/resolver.c.orig	Fri Nov 29 23:26:57 2002
-+++ tools/runidn/resolver.c	Sun Sep  3 21:20:21 2006
+--- tools/runidn/resolver.c.orig	2002-11-29 14:26:57 UTC
++++ tools/runidn/resolver.c
 @@ -726,7 +726,7 @@ ENTRY(gethostbyname2_r)(const char *name
  
  #ifdef HAVE_GETHOSTBYADDR_R

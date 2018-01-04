@@ -13,7 +13,7 @@ COMMENT=	GTK+2 based drum machine
 
 LICENSE=	GPLv2
 
-USES=		gmake pkgconfig python:build shebangfix
+USES=		gmake pkgconfig python:2.7,build shebangfix
 SHEBANG_FILES=	genexport.py
 USE_GNOME=	gtk20
 

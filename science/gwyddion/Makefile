@@ -3,7 +3,7 @@
 
 PORTNAME=	gwyddion
 PORTVERSION=	2.45
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	science graphics
 MASTER_SITES=	SF
 
@@ -40,7 +40,7 @@ OPTIONS_SUB=		yes
 
 PERL_USES=		perl5
 PERL_CONFIGURE_WITH=	perl
-PYTHON_USES=		python
+PYTHON_USES=		python:2.7
 PYTHON_USE=		gnome=pygtksourceview
 PYTHON_CONFIGURE_ENABLE=	pygwy
 PYTHON_CONFIGURE_WITH=	gtksourceview python

@@ -46,11 +46,11 @@ lib/libral/plugins/libvcard.so.1
 lib/libral/plugins/libvcard.so.1.0.1
 libdata/pkgconfig/libral.pc
 share/applications/rubrica2.desktop
-share/locale/de/LC_MESSAGES/rubrica2.mo
-share/locale/fr/LC_MESSAGES/rubrica2.mo
-share/locale/it/LC_MESSAGES/rubrica2.mo
-share/locale/ru/LC_MESSAGES/rubrica2.mo
-share/locale/uk/LC_MESSAGES/rubrica2.mo
+%%NLS%%share/locale/de/LC_MESSAGES/rubrica2.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/rubrica2.mo
+%%NLS%%share/locale/it/LC_MESSAGES/rubrica2.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/rubrica2.mo
+%%NLS%%share/locale/uk/LC_MESSAGES/rubrica2.mo
 share/mime-info/rubrica2.keys
 share/mime-info/rubrica2.mime
 share/pixmaps/rubrica2/16x16/ccare.png

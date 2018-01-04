@@ -9,6 +9,9 @@ MASTER_SITES=	http://s-tech.elsat.net.pl/braa/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool for making SNMP queries
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 LIB_DEPENDS=	libnetsnmp.so:net-mgmt/net-snmp
 
 USES=		gmake
@@ -21,15 +24,15 @@ PLIST_FILES=	bin/braa
 OPTIONS_DEFINE=	DOCS
 
 post-patch:
-.for file in Makefile
 	@${REINPLACE_CMD} -e \
 		's|CFLAGS =|CFLAGS+=${CFLAGS}|g ; \
 		s|LDFLAGS =|LDFLAGS?=${LDFLAGS}|g ; \
-		s|strip $$(OUT)||g' ${WRKSRC}/${file}
-.endfor
+		s|strip $$(OUT)||g' ${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 

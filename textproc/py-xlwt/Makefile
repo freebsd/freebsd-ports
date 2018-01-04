@@ -12,7 +12,7 @@ COMMENT=	Writing data and formatting information from Excel files
 
 LICENSE=	BSD4CLAUSE
 
-USES=		python
+USES=		python:2.7
 USE_PYTHON=	autoplist concurrent distutils
 
 .include <bsd.port.mk>

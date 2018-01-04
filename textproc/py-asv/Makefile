@@ -13,7 +13,7 @@ COMMENT=	Extensible Python module to parse simple text file formats like CSV
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		python
+USES=		python:2.7
 NO_ARCH=	yes
 
 PORTDOCS=	README THANKS

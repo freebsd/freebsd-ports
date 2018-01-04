@@ -15,7 +15,7 @@ LICENSE=	BSD2CLAUSE
 
 RUN_DEPENDS=	tracd:www/trac
 
-USES=		python
+USES=		python:2.7
 USE_PYTHON=	distutils autoplist
 NO_ARCH=	yes
 

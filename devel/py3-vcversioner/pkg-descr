@@ -1,5 +1,0 @@
-You can write a setup.py with no version information specified, and
-vcversioner will find a recent, properly-formatted VCS tag and extract a
-version from it.
-
-WWW: https://github.com/habnabit/vcversioner

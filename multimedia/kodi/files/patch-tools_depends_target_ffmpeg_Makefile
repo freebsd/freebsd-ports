@@ -1,6 +1,6 @@
---- tools/depends/target/ffmpeg/Makefile.orig	2016-02-20 15:21:19 UTC
+--- tools/depends/target/ffmpeg/Makefile.orig	2017-11-14 16:55:01 UTC
 +++ tools/depends/target/ffmpeg/Makefile
-@@ -24,6 +24,11 @@ ffmpg_config += --enable-libdcadec
+@@ -24,6 +24,11 @@ ffmpg_config += --enable-encoder=png --enable-encoder=
  ifeq ($(CROSS_COMPILING), yes)
    ffmpg_config += --arch=$(CPU) --enable-cross-compile
  endif
@@ -11,4 +11,4 @@
 +endif
  ifeq ($(OS), linux)
    ffmpg_config += --target-os=$(OS) --cpu=$(CPU)
-   ffmpg_config += --enable-vdpau --enable-vaapi
+   ffmpg_config += --enable-vdpau --enable-vaapi --enable-pic

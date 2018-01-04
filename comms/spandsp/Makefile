@@ -15,13 +15,7 @@ LIB_DEPENDS=	libtiff.so:graphics/tiff
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
-USES=		autoreconf gmake libtool
-
-CPPFLAGS+=	-I${LOCALBASE}/include
-LIBS+=		-L${LOCALBASE}/lib
-
+USES=		autoreconf gmake libtool localbase
 USE_LDCONFIG=	yes
-
-CONFLICTS=	spandsp-devel-[0-9]*
 
 .include <bsd.port.mk>

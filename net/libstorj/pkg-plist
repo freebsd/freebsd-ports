@@ -1,0 +1,7 @@
+bin/storj
+include/storj.h
+lib/libstorj.a
+lib/libstorj.so
+lib/libstorj.so.0
+lib/libstorj.so.0.0.0
+libdata/pkgconfig/libstorj.pc

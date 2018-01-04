@@ -23,8 +23,7 @@
     SUBDIR += orca
     SUBDIR += py-atspi
     SUBDIR += py-papi
-    SUBDIR += py3-atspi
-    SUBDIR += py3-speech-dispatcher
+    SUBDIR += py-speech-dispatcher
     SUBDIR += qt4-accessible
     SUBDIR += redshift
     SUBDIR += rubygem-atk

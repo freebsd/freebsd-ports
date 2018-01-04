@@ -13,7 +13,7 @@ COMMENT=	Convenient library for writing REST clients
 
 LICENSE=	BSD3CLAUSE
 
-RUN_DEPENDS=	${PKGNAMEPREFIX}httplib2>=0:www/py-httplib2
+RUN_DEPENDS=	${PKGNAMEPREFIX}httplib2>=0:www/py-httplib2@${FLAVOR}
 
 USES=		python
 USE_PYTHON=	distutils autoplist

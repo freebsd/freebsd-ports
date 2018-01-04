@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libclutter-glx-1.0.so:graphics/clutter \
 		libgee-0.8.so:devel/libgee \
 		libxklavier.so:x11/libxklavier
-RUN_DEPENDS=	py2?-atspi>=2.1.91:accessibility/py-atspi
+RUN_DEPENDS=	py2?-atspi>=2.1.91:accessibility/py-atspi@${PY_FLAVOR}
 
 USES=		gettext gmake gnome libtool pathfix pkgconfig python:2 \
 		shebangfix tar:xz

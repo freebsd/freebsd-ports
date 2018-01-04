@@ -1,8 +1,8 @@
 bin/h2o
-share/h2o/annotate-backtrace-symbols
-share/h2o/fetch-ocsp-response
-share/h2o/kill-on-close
-share/h2o/start_server
+%%DATADIR%%/annotate-backtrace-symbols
+%%DATADIR%%/fetch-ocsp-response
+%%DATADIR%%/kill-on-close
+%%DATADIR%%/start_server
 %%DATADIR%%/ca-bundle.crt
 %%DATADIR%%/fastcgi-cgi
 %%DATADIR%%/setuidgid

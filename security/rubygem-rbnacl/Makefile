@@ -5,7 +5,7 @@ PORTVERSION=	4.0.2
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	tz@FreeBSD.org
+MAINTAINER=	idefix@fechner.net
 COMMENT=	Networking and Cryptography (NaCl) library
 
 LICENSE=	MIT

@@ -1,4 +1,5 @@
 bin/kquitapp5
+etc/xdg/kdbusaddons.categories
 include/KF5/KDBusAddons/KDBusConnectionPool
 include/KF5/KDBusAddons/KDBusInterProcessLock
 include/KF5/KDBusAddons/KDBusService

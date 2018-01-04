@@ -3,20 +3,20 @@
 
 PORTNAME=	tilecache
 PORTVERSION=	2.11
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics python geography www
 MASTER_SITES=	http://tilecache.org/
 
 MAINTAINER=	joris.dedieu@gmail.com
 COMMENT=	Python-based WMS-C/TMS server
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}flup>0:www/py-flup \
-		${PYTHON_PKGNAMEPREFIX}Paste>0:www/py-paste
-
 LICENSE=	BSD3CLAUSE MIT
 LICENSE_COMB=	multi
 
-USES=		python shebangfix
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}flup6>0:www/py-flup6@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}Paste>0:www/py-paste@${FLAVOR}
+
+USES=		python:2.7 shebangfix
 USE_PYTHON=	distutils autoplist
 SHEBANG_FILES=	tilecache.cgi tilecache.fcgi
 

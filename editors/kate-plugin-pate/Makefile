@@ -9,7 +9,7 @@ DISTNAME=	kate-${PORTVERSION}
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Support for Python plugins in Kate
 
-USES=		cmake:outsource,noninja kde:4 python tar:xz
+USES=		cmake:outsource,noninja kde:4 python:2.7 tar:xz
 USE_KDE=	kdelibs automoc4 kate \
 		pykde4_build pykde4_run
 USE_QT4=	gui webkit \

@@ -14,10 +14,10 @@ COMMENT=	Buildbot Worker Daemon
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}future>=0.15.2:devel/py-future \
-		${PYTHON_PKGNAMEPREFIX}twisted>=14.0.1:devel/py-twisted
-TEST_DEPENDS=	trial:devel/py-twisted \
-		${PYTHON_PKGNAMEPREFIX}mock>0:devel/py-mock
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}future>=0.15.2:devel/py-future@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}twisted>=14.0.1:devel/py-twisted@${FLAVOR}
+TEST_DEPENDS=	trial:devel/py-twisted@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}mock>0:devel/py-mock@${FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist distutils

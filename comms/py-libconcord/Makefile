@@ -17,7 +17,7 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libconcord.so:comms/libconcord
 
 USE_LDCONFIG=	yes
-USES=		python:2.7+ tar:bzip2
+USES=		python:2.7 tar:bzip2
 WRKSRC_SUBDIR=	libconcord/bindings/python
 USE_PYTHON=	distutils
 

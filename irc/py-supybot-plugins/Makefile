@@ -12,9 +12,9 @@ DISTNAME=	Supybot-plugins-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Official plugin pack for Supybot
 
-RUN_DEPENDS=	supybot:irc/py-supybot
+RUN_DEPENDS=	supybot:irc/py-supybot@${PY_FLAVOR}
 
-USES=		python tar:bzip2
+USES=		python:2.7 tar:bzip2
 
 post-extract:
 # Delete, because it now included in irc/py-supybot

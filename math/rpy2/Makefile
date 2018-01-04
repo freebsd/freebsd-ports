@@ -17,7 +17,7 @@ LIB_DEPENDS=	libR.so:math/R
 RUN_DEPENDS=	${PYNUMPY}
 
 USES=		fortran python readline
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	distutils autoplist concurrent optsuffix
 LDFLAGS+=	-Wl,--as-needed
 
 pre-configure:

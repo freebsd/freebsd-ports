@@ -514,6 +514,8 @@ sbin/gitea
 %%DATADIR%%/options/locale/locale_lv-LV.ini
 %%DATADIR%%/options/locale/locale_nb-NO.ini
 %%DATADIR%%/options/locale/locale_nl-NL.ini
+%%DATADIR%%/options/locale/locale_nn-NO.ini
+%%DATADIR%%/options/locale/locale_no-NO.ini
 %%DATADIR%%/options/locale/locale_pl-PL.ini
 %%DATADIR%%/options/locale/locale_pt-BR.ini
 %%DATADIR%%/options/locale/locale_ru-RU.ini
@@ -537,9 +539,11 @@ sbin/gitea
 %%DATADIR%%/public/img/auth/twitter.png
 %%DATADIR%%/public/img/avatar_default.png
 %%DATADIR%%/public/img/checkmark.png
+%%DATADIR%%/public/img/discord.png
 %%DATADIR%%/public/img/favicon.ico
 %%DATADIR%%/public/img/favicon.png
 %%DATADIR%%/public/img/gitea-lg.png
+%%DATADIR%%/public/img/gitea-safari.svg
 %%DATADIR%%/public/img/gitea-sm.png
 %%DATADIR%%/public/img/gogs.ico
 %%DATADIR%%/public/img/openid-16x16.png
@@ -1946,7 +1950,6 @@ sbin/gitea
 %%DATADIR%%/templates/org/create.tmpl
 %%DATADIR%%/templates/org/header.tmpl
 %%DATADIR%%/templates/org/home.tmpl
-%%DATADIR%%/templates/org/member/invite.tmpl
 %%DATADIR%%/templates/org/member/members.tmpl
 %%DATADIR%%/templates/org/settings/delete.tmpl
 %%DATADIR%%/templates/org/settings/hook_new.tmpl
@@ -1958,8 +1961,11 @@ sbin/gitea
 %%DATADIR%%/templates/org/team/repositories.tmpl
 %%DATADIR%%/templates/org/team/sidebar.tmpl
 %%DATADIR%%/templates/org/team/teams.tmpl
+%%DATADIR%%/templates/repo/activity.tmpl
 %%DATADIR%%/templates/repo/bare.tmpl
+%%DATADIR%%/templates/repo/branch/list.tmpl
 %%DATADIR%%/templates/repo/branch_dropdown.tmpl
+%%DATADIR%%/templates/repo/commit_status.tmpl
 %%DATADIR%%/templates/repo/commits.tmpl
 %%DATADIR%%/templates/repo/commits_table.tmpl
 %%DATADIR%%/templates/repo/create.tmpl
@@ -1975,6 +1981,7 @@ sbin/gitea
 %%DATADIR%%/templates/repo/graph.tmpl
 %%DATADIR%%/templates/repo/header.tmpl
 %%DATADIR%%/templates/repo/home.tmpl
+%%DATADIR%%/templates/repo/issue/branch_selector_field.tmpl
 %%DATADIR%%/templates/repo/issue/comment_tab.tmpl
 %%DATADIR%%/templates/repo/issue/label_precolors.tmpl
 %%DATADIR%%/templates/repo/issue/labels.tmpl
@@ -1999,12 +2006,14 @@ sbin/gitea
 %%DATADIR%%/templates/repo/pulls/tab_menu.tmpl
 %%DATADIR%%/templates/repo/release/list.tmpl
 %%DATADIR%%/templates/repo/release/new.tmpl
+%%DATADIR%%/templates/repo/search.tmpl
 %%DATADIR%%/templates/repo/settings/branches.tmpl
 %%DATADIR%%/templates/repo/settings/collaboration.tmpl
 %%DATADIR%%/templates/repo/settings/deploy_keys.tmpl
 %%DATADIR%%/templates/repo/settings/githook_edit.tmpl
 %%DATADIR%%/templates/repo/settings/githooks.tmpl
 %%DATADIR%%/templates/repo/settings/hook_delete_modal.tmpl
+%%DATADIR%%/templates/repo/settings/hook_discord.tmpl
 %%DATADIR%%/templates/repo/settings/hook_gitea.tmpl
 %%DATADIR%%/templates/repo/settings/hook_gogs.tmpl
 %%DATADIR%%/templates/repo/settings/hook_history.tmpl
@@ -2016,6 +2025,8 @@ sbin/gitea
 %%DATADIR%%/templates/repo/settings/nav.tmpl
 %%DATADIR%%/templates/repo/settings/navbar.tmpl
 %%DATADIR%%/templates/repo/settings/options.tmpl
+%%DATADIR%%/templates/repo/settings/protected_branch.tmpl
+%%DATADIR%%/templates/repo/sub_menu.tmpl
 %%DATADIR%%/templates/repo/user_cards.tmpl
 %%DATADIR%%/templates/repo/view_file.tmpl
 %%DATADIR%%/templates/repo/view_list.tmpl
@@ -2064,8 +2075,9 @@ sbin/gitea
 %%DATADIR%%/templates/user/settings/navbar.tmpl
 %%DATADIR%%/templates/user/settings/openid.tmpl
 %%DATADIR%%/templates/user/settings/organization.tmpl
-%%DATADIR%%/templates/user/settings/password.tmpl
 %%DATADIR%%/templates/user/settings/profile.tmpl
+%%DATADIR%%/templates/user/settings/repos.tmpl
+%%DATADIR%%/templates/user/settings/security.tmpl
 %%DATADIR%%/templates/user/settings/twofa.tmpl
 %%DATADIR%%/templates/user/settings/twofa_enroll.tmpl
 @owner git

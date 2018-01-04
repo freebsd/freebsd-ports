@@ -1,0 +1,9 @@
+McXtrace - Monte Carlo ray tracing simulations of X-ray experiments.
+
+McXtrace is a tool for simulating X-ray instrumentation and experiments using a
+ray-tracing formalism. Currently the main use of McXtrace is in the field of 
+synchrotron beamline instrumentation design, but various other uses have been 
+found, such as designing X-ray telescopes or for laboratory source-based
+equipment.
+
+WWW: http://www.mcxtrace.org

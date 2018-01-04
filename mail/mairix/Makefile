@@ -11,6 +11,9 @@ COMMENT=	Indexing and searching in Maildir, MH, or mbox folders
 
 LICENSE=	GPLv2
 
+BROKEN_armv6=		fails to build under emulation: qemu: uncaught target signal 11 (Segmentation fault) - core dumped
+BROKEN_armv7=		fails to build under emulation: qemu: uncaught target signal 11 (Segmentation fault) - core dumped
+
 USES=		bison gmake
 HAS_CONFIGURE=	yes
 

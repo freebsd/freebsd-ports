@@ -1,5 +1,5 @@
---- screen.c.orig	Sun Sep 14 23:24:17 2008
-+++ screen.c	Sun Sep 14 22:01:21 2008
+--- screen.c.orig	2004-02-28 10:01:16 UTC
++++ screen.c
 @@ -13,6 +13,7 @@
   */
  

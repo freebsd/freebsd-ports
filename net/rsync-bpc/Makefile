@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rsync-bpc
-PORTVERSION=	3.0.9.8
+DISTVERSION=	3.0.9.11
 CATEGORIES=	net
 
 MAINTAINER=	moiseev@mezonplus.ru

@@ -1,6 +1,6 @@
---- Makefile.include.in.orig	2016-02-20 15:21:19 UTC
+--- Makefile.include.in.orig	2017-11-14 16:55:01 UTC
 +++ Makefile.include.in
-@@ -47,7 +47,8 @@ INCLUDES+=-I@abs_top_srcdir@/addons/libr
+@@ -47,7 +47,8 @@ INCLUDES+=-I@abs_top_srcdir@/addons/library.kodi.adsp
  INCLUDES+=-I@abs_top_srcdir@/addons/library.kodi.audioengine
  INCLUDES+=-I@abs_top_srcdir@/addons/library.xbmc.pvr
  INCLUDES+=-I@abs_top_srcdir@/addons/library.xbmc.codec
@@ -8,7 +8,7 @@
 +#INCLUDES+=$(sort @INCLUDES@)
 +INCLUDES+=@INCLUDES@
  INCLUDES+=-I@abs_top_srcdir@/xbmc/linux
- INCLUDES+=-I@abs_top_srcdir@/xbmc/cores/dvdplayer
+ INCLUDES+=-I@abs_top_srcdir@/xbmc/cores/VideoPlayer
  DEFINES+= \
 @@ -95,22 +96,22 @@ GEN_DEPS=\
  

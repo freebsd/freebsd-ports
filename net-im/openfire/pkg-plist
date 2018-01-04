@@ -26,6 +26,7 @@
 %%DATADIR%%/lib/startup.jar
 %%DATADIR%%/logs
 %%DATADIR%%/plugins/admin/plugin.xml
+%%DATADIR%%/plugins/admin/webapp/META-INF/admin.tld
 %%DATADIR%%/plugins/admin/webapp/WEB-INF/admin.tld
 %%DATADIR%%/plugins/admin/webapp/WEB-INF/classes/openfire_init.xml
 %%DATADIR%%/plugins/admin/webapp/WEB-INF/decorators.xml
@@ -37,8 +38,6 @@
 %%DATADIR%%/plugins/admin/webapp/WEB-INF/lib/readme.txt
 %%DATADIR%%/plugins/admin/webapp/WEB-INF/lib/versions.txt
 %%DATADIR%%/plugins/admin/webapp/WEB-INF/sitemesh.xml
-%%DATADIR%%/plugins/admin/webapp/WEB-INF/tags/admin/contentBox.tagx
-%%DATADIR%%/plugins/admin/webapp/WEB-INF/tags/admin/infoBox.tagx
 %%DATADIR%%/plugins/admin/webapp/WEB-INF/web.xml
 %%DATADIR%%/plugins/admin/webapp/favicon.ico
 %%DATADIR%%/plugins/admin/webapp/images/add-16x16.gif
@@ -323,6 +322,13 @@
 %%DATADIR%%/resources/database/upgrade/25/openfire_postgresql.sql
 %%DATADIR%%/resources/database/upgrade/25/openfire_sqlserver.sql
 %%DATADIR%%/resources/database/upgrade/25/openfire_sybase.sql
+%%DATADIR%%/resources/database/upgrade/26/openfire_db2.sql
+%%DATADIR%%/resources/database/upgrade/26/openfire_hsqldb.sql
+%%DATADIR%%/resources/database/upgrade/26/openfire_mysql.sql
+%%DATADIR%%/resources/database/upgrade/26/openfire_oracle.sql
+%%DATADIR%%/resources/database/upgrade/26/openfire_postgresql.sql
+%%DATADIR%%/resources/database/upgrade/26/openfire_sqlserver.sql
+%%DATADIR%%/resources/database/upgrade/26/openfire_sybase.sql
 %%DATADIR%%/resources/database/upgrade/4/openfire_db2.sql
 %%DATADIR%%/resources/database/upgrade/4/openfire_hsqldb.sql
 %%DATADIR%%/resources/database/upgrade/4/openfire_mysql.sql
@@ -368,10 +374,10 @@
 %%DATADIR%%/resources/security
 %%DATADIR%%/resources/spank/WEB-INF/web.xml
 %%DATADIR%%/resources/spank/index.html
-%%PLUGINS%%%%DATADIR%%/plugins/avatarResizer.jar
 %%PLUGINS%%%%DATADIR%%/plugins/bookmarks.jar
 %%PLUGINS%%%%DATADIR%%/plugins/broadcast.jar
 %%PLUGINS%%%%DATADIR%%/plugins/callbackOnOffline.jar
+%%PLUGINS%%%%DATADIR%%/plugins/candy.jar
 %%PLUGINS%%%%DATADIR%%/plugins/clientControl.jar
 %%PLUGINS%%%%DATADIR%%/plugins/contentFilter.jar
 %%PLUGINS%%%%DATADIR%%/plugins/dbaccess.jar
@@ -380,6 +386,7 @@
 %%PLUGINS%%%%DATADIR%%/plugins/fastpath.jar
 %%PLUGINS%%%%DATADIR%%/plugins/gojara.jar
 %%PLUGINS%%%%DATADIR%%/plugins/hazelcast.jar
+%%PLUGINS%%%%DATADIR%%/plugins/inverse.jar
 %%PLUGINS%%%%DATADIR%%/plugins/jingleNodes.jar
 %%PLUGINS%%%%DATADIR%%/plugins/jmxweb.jar
 %%PLUGINS%%%%DATADIR%%/plugins/justmarried.jar
@@ -399,10 +406,10 @@
 %%PLUGINS%%%%DATADIR%%/plugins/sip.jar
 %%PLUGINS%%%%DATADIR%%/plugins/stunserver.jar
 %%PLUGINS%%%%DATADIR%%/plugins/subscription.jar
+%%PLUGINS%%%%DATADIR%%/plugins/tikitoken.jar
 %%PLUGINS%%%%DATADIR%%/plugins/userCreation.jar
 %%PLUGINS%%%%DATADIR%%/plugins/userImportExport.jar
 %%PLUGINS%%%%DATADIR%%/plugins/userservice.jar
-%%PLUGINS%%%%DATADIR%%/plugins/websocket.jar
 %%PLUGINS%%%%DATADIR%%/plugins/xmldebugger.jar
 @dir %%VARDB%%
 @dir %%VARLOG%%

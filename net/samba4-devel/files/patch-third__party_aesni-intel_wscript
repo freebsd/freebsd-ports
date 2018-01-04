@@ -1,0 +1,33 @@
+--- third_party/aesni-intel/wscript.orig	2017-09-17 19:15:34 UTC
++++ third_party/aesni-intel/wscript
+@@ -4,14 +4,20 @@ import Utils
+ 
+ def configure(conf):
+     if Options.options.accel_aes.lower() == "intelaesni":
+-        if conf.CHECK_CFLAGS('-Wp,-E,-lang-asm', ''):
+-            if conf.env['SYSTEM_UNAME_MACHINE'] == 'x86_64':
++        asm_flags = ('-Wp,-E,-lang-asm', '-xassembler-with-cpp')
++        for f in asm_flags:
++            if conf.CHECK_CFLAGS(f, ''):
++                conf.DEFINE('AESNI_INTEL_CFLAGS', f)
++                break
++
++        if conf.CONFIG_SET('AESNI_INTEL_CFLAGS'):
++            if conf.env['SYSTEM_UNAME_MACHINE'] in ('x86_64', 'amd64'):
+                 print("Compiling with Intel AES instructions")
+                 conf.DEFINE('HAVE_AESNI_INTEL', 1)
+             else:
+                 raise Utils.WafError('--aes-accel=intelaesni selected and non x86_64 CPU')
+         else:
+-            raise Utils.WafError('--aes-accel=intelaesni selected and compiler rejects -Wp,-E,-lang-asm')
++            raise Utils.WafError('--aes-accel=intelaesni selected and compiler rejects ' + str(asm_flags))
+ 
+ def build(bld):
+     if not bld.CONFIG_SET('HAVE_AESNI_INTEL'):
+@@ -19,5 +25,5 @@ def build(bld):
+ 
+     bld.SAMBA_LIBRARY('aesni-intel',
+         source='aesni-intel_asm.c',
+-        cflags='-Wp,-E,-lang-asm',
++        cflags=bld.CONFIG_GET('AESNI_INTEL_CFLAGS'),
+         private_library=True)

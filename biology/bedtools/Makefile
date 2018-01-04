@@ -13,9 +13,6 @@ COMMENT=	Toolset for genome arithmetic
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_armv6=		fails to compile: implicit instantiation of undefined template __static_assert_test<false>
-BROKEN_armv7=		fails to compile: implicit instantiation of undefined template __static_assert_test<false>
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	arq5x
 GH_PROJECT=	bedtools2

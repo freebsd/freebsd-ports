@@ -16,7 +16,7 @@ GH_ACCOUNT=	DNS-OARC
 GH_PROJECT=	PacketQ
 USE_GITHUB=	yes
 
-USES=		autoreconf
+USES=		autoreconf compiler:c++11-lib
 GNU_CONFIGURE=	yes
 
 OPTIONS_DEFINE=	DOCS

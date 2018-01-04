@@ -1,0 +1,18 @@
+NFFT is a software library, written in C, for computing non-equispaced fast
+Fourier transforms and related variations. It implements the following
+transforms:
+
+1. Non-equispaced fast Fourier transform (NFFT)
+ - forward transform (NFFT), i.e. frequency to time/space domain
+ - adjoint transform (adjoint NFFT), i.e. time/space to frequency domain
+
+2. Generalisations
+ - to arbitrary nodes in time and frequency domain (NNFFT)
+ - to real-valued data, i.e. (co)sine transforms, (NFCT, NFST)
+ - to the sphere S^2 (NFSFT)
+ - to the rotation group (NFSOFT)
+ - to the hyperbolic cross (NSFFT)
+3. Generalised inverse transformations based on iterative methods, e.g.
+   CGNR/CGNE
+
+WWW: https://www-user.tu-chemnitz.de/~potts/nfft

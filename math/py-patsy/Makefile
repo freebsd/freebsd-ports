@@ -14,7 +14,7 @@ LICENSE=	BSD3CLAUSE PSFL
 LICENSE_COMB=	multi
 
 RUN_DEPENDS=	${PYNUMPY} \
-		${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six
+		${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six@${FLAVOR}
 
 USES=		python zip
 USE_PYTHON=	distutils autoplist

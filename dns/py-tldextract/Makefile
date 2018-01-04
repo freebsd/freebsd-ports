@@ -12,7 +12,7 @@ COMMENT=	Separate the TLD from the registered domain and subdomains of a URL
 
 LICENSE=	BSD3CLAUSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}idna>=2.0:dns/py-idna
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}idna>=2.0:dns/py-idna@${FLAVOR}
 
 USES=	python
 USE_PYTHON=	autoplist distutils

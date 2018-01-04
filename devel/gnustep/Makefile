@@ -3,7 +3,7 @@
 
 PORTNAME=	gnustep
 PORTVERSION=	1.28.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel lang gnustep
 
 MAINTAINER=	theraven@FreeBSD.org

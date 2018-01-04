@@ -19,7 +19,7 @@ GRAPHVIZ_DESC=	graphviz for graph-ancestry
 RSYNC_DESC=	rsync for rspush
 
 WRKSRC=		${WRKDIR}/bzrtools
-USES=		python
+USES=		python:2.7
 USE_PYTHON=	distutils
 PYDISTUTILS_PKGNAME=	BzrTools
 

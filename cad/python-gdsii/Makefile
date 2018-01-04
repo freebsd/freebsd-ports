@@ -11,7 +11,7 @@ COMMENT=	GDSII manipulation library
 
 LICENSE=	LGPL3
 
-RUN_DEPENDS=    ${PYTHON_PKGNAMEPREFIX}yaml>0:devel/py-yaml
+RUN_DEPENDS=    ${PYTHON_PKGNAMEPREFIX}yaml>0:devel/py-yaml@${FLAVOR}
 
 USES=		python
 USE_PYTHON=	distutils autoplist

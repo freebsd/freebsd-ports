@@ -6,25 +6,14 @@ bin/vmware-namespace-cmd
 bin/vmware-rpctool
 bin/vmware-toolbox-cmd
 bin/vmware-vmblock-fuse
+%%X11%%bin/vmware-user
 %%X11%%bin/vmware-user-suid-wrapper
 %%X11%%etc/xdg/autostart/vmware-user.desktop
 bin/vmware-xferlogs
-include/libDeployPkg/guestcust-events.h
-include/libDeployPkg/imgcust-api.h
-include/libDeployPkg/includeCheck.h
-include/libDeployPkg/linuxDeployment.h
-include/libDeployPkg/log.h
-include/libDeployPkg/process.h
-include/libDeployPkg/rpcout.h
-include/libDeployPkg/vm_basic_types.h
 include/vmGuestLib/includeCheck.h
 include/vmGuestLib/vmGuestLib.h
 include/vmGuestLib/vmSessionId.h
 include/vmGuestLib/vm_basic_types.h
-lib/libDeployPkg.a
-lib/libDeployPkg.so
-lib/libDeployPkg.so.0
-lib/libDeployPkg.so.0.0.0
 lib/libguestlib.a
 lib/libguestlib.so
 lib/libguestlib.so.0
@@ -40,7 +29,6 @@ lib/libvmtools.so.0.0.0
 @dir lib/vmware-tools/modules/input
 lib/open-vm-tools/plugins/common/libhgfsServer.so
 lib/open-vm-tools/plugins/common/libvix.so
-lib/open-vm-tools/plugins/vmsvc/libdeployPkgPlugin.so
 lib/open-vm-tools/plugins/vmsvc/libguestInfo.so
 lib/open-vm-tools/plugins/vmsvc/libpowerOps.so
 lib/open-vm-tools/plugins/vmsvc/libtimeSync.so
@@ -51,7 +39,6 @@ lib/open-vm-tools/plugins/vmsvc/libvmbackup.so
 lib/vmware-tools/modules/drivers/vmblock.ko
 lib/vmware-tools/modules/drivers/vmmemctl.ko
 lib/vmware-tools/modules/drivers/vmxnet.ko
-libdata/pkgconfig/libDeployPkg.pc
 libdata/pkgconfig/vmguestlib.pc
 sbin/mount_vmblock
 share/vmware-tools/poweroff-vm-default
@@ -68,7 +55,6 @@ share/vmware-tools/vm-support
 %%DATADIR%%/messages/ko/toolboxcmd.vmsg
 %%DATADIR%%/messages/ko/vmtoolsd.vmsg
 %%DATADIR%%/messages/zh_CN/toolboxcmd.vmsg
-@rmtry share/vmware-tools/tools.conf
 @rmtry etc/vmware-tools/plugins
 etc/pam.d/vmtoolsd
 @dir %%DATADIR%%/scripts/vmware

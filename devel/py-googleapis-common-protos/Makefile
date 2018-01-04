@@ -11,7 +11,7 @@ COMMENT=	Common protobufs used in Google APIs
 
 LICENSE=	APACHE20
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}protobuf>0:devel/py-protobuf
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}protobuf>0:devel/py-protobuf@${FLAVOR}
 
 USES=		python
 USE_PYTHON=	distutils autoplist

@@ -1,0 +1,8 @@
+HTTP wrapper around [NRefactory] allowing C# editor plugins
+to be written for any editor in any language.
+
+This is the server component for the Vim OmniSharp plugin,
+YouCompleteMe, Sublime Text 2, Sublime Text 3, Emacs
+OmniSharp plugin and Atom plugin
+
+WWW: https://github.com/OmniSharp/omnisharp-server

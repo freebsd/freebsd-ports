@@ -13,7 +13,7 @@ COMMENT=	LDAP3 auth provider for Matrix Synapse
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ldap3>=0.9.5:net/py-ldap3
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ldap3>=0.9.5:net/py-ldap3@${FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist distutils

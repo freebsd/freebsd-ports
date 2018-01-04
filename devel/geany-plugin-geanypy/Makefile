@@ -7,7 +7,7 @@ CATEGORIES=	devel
 MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	Geany plugin: ${${GEANY_PLUGIN}_DESC}
 
-USES=		python
+USES=		python:2.7
 USE_GNOME=	pygtk2
 
 .include "${.CURDIR}/../geany-plugins/files/Makefile.common"

@@ -13,7 +13,7 @@ COMMENT=	Classes and setuptools plugin for Mercurial repositories
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES?=		python zip
+USES=		python zip
 USE_PYTHON=	distutils autoplist
 NO_ARCH=	yes
 

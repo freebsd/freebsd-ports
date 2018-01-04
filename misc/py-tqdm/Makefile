@@ -12,7 +12,7 @@ COMMENT=	Fast, extensible progress bar for Python
 LICENSE=	MIT MPL20
 LICENSE_COMB=	multi
 
-USES?=		python
+USES=		python
 USE_PYTHON=	autoplist distutils
 NO_ARCH=	yes
 

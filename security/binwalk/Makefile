@@ -13,7 +13,7 @@ LICENSE=	MIT
 USES=		python
 USE_GITHUB=	yes
 GH_ACCOUNT=	devttys0
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	autoplist distutils optsuffix concurrent
 
 RUN_DEPENDS=	7z:archivers/p7zip \
 		cabextract:archivers/cabextract

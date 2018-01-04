@@ -15,7 +15,7 @@ COMMENT=	Fast implementation of the xmlrpc spec for Python
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		python
+USES=		python:2.7
 USE_PYTHON=	distutils autoplist
 
 OPTIONS_DEFINE=	EXAMPLES

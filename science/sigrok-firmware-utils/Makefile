@@ -15,7 +15,7 @@ COMMENT=	Sigrok firmware extraction utils
 
 LICENSE=	GPLv2
 
-USES=		python:3
+USES=		python:3.4+
 NO_BUILD=	yes
 
 PORTDOCS=	README.parsepe

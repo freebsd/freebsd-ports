@@ -28,7 +28,7 @@ RUN_DEPENDS=	adb:devel/android-tools-adb
 USE_GITHUB=	yes
 GH_ACCOUNT=	facebook
 
-USES=		autoreconf gmake ncurses perl5 python:3,build
+USES=		autoreconf gmake ncurses perl5 python:3.4+,build
 USE_PERL5=	build # pod2man
 BASH_CMD?=	bash # can be zsh
 GNU_CONFIGURE=	yes

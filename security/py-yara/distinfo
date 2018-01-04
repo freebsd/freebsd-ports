@@ -1,3 +1,3 @@
-TIMESTAMP = 1499319091
-SHA256 (yara-python-3.6.3.tar.gz) = 614252c90a3e03f309c91460efd2a50dd4dce4b6306eccef268d146a9c59fba2
-SIZE (yara-python-3.6.3.tar.gz) = 301219
+TIMESTAMP = 1510327536
+SHA256 (yara-python-3.7.0.tar.gz) = bedb10a9be398616fc1a5d4bb14f369ed88e4dec5f6455047e3e4efee01890e0
+SIZE (yara-python-3.7.0.tar.gz) = 313646

@@ -37,6 +37,7 @@
 %%SITE_PERL%%/Test2/Manual/Anatomy.pm
 %%SITE_PERL%%/Test2/Manual/Anatomy/EndToEnd.pm
 %%SITE_PERL%%/Test2/Manual/Anatomy/Event.pm
+%%SITE_PERL%%/Test2/Manual/Concurrency.pm
 %%SITE_PERL%%/Test2/Manual/Contributing.pm
 %%SITE_PERL%%/Test2/Manual/Testing.pm
 %%SITE_PERL%%/Test2/Manual/Testing/Introduction.pm
@@ -140,6 +141,7 @@
 %%PERL5_MAN3%%/Test2::Manual::Anatomy.3.gz
 %%PERL5_MAN3%%/Test2::Manual::Anatomy::EndToEnd.3.gz
 %%PERL5_MAN3%%/Test2::Manual::Anatomy::Event.3.gz
+%%PERL5_MAN3%%/Test2::Manual::Concurrency.3.gz
 %%PERL5_MAN3%%/Test2::Manual::Contributing.3.gz
 %%PERL5_MAN3%%/Test2::Manual::Testing.3.gz
 %%PERL5_MAN3%%/Test2::Manual::Testing::Introduction.3.gz

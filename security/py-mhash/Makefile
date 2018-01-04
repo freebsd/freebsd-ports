@@ -17,7 +17,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libmhash.so:security/mhash
 
-USES=		python
+USES=		python:2.7
 USE_PYTHON=	distutils autoplist
 
 CFLAGS+=	-I${LOCALBASE}/include

@@ -11,6 +11,8 @@ DISTNAME=	${PORTNAME}.${PORTVERSION}
 MAINTAINER=	kevlo@FreeBSD.org
 COMMENT=	PHP based music database
 
+IGNORE_WITH_PHP=	70 71 72
+
 RUN_DEPENDS=	lame:audio/lame \
 		oggenc:audio/vorbis-tools \
 		zip:archivers/zip

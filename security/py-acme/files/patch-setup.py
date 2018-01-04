@@ -1,4 +1,4 @@
---- setup.py.orig	2017-06-26 10:16:14 UTC
+--- setup.py.orig	2017-12-07 17:15:47 UTC
 +++ setup.py
 @@ -12,7 +12,6 @@ install_requires = [
      # rsa_recover_prime_factors (>=0.8)
@@ -8,11 +8,11 @@
      'PyOpenSSL>=0.13',
      'pyrfc3339',
      'pytz',
-@@ -35,6 +34,7 @@ if sys.version_info < (2, 7):
+@@ -31,6 +30,7 @@ if sys.version_info < (2, 7):
      ])
  
  dev_extras = [
 +    'mock',
-     'nose',
+     'pytest',
+     'pytest-xdist',
      'tox',
- ]

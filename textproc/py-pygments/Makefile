@@ -13,7 +13,7 @@ COMMENT=	Syntax highlighter written in Python
 
 LICENSE=	BSD2CLAUSE
 
-USES?=		python
+USES=		python
 USE_PYTHON=	distutils concurrent autoplist
 NO_ARCH=	yes
 

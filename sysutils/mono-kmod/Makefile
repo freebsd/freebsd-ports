@@ -11,6 +11,8 @@ COMMENT=	Execute .NET applications from command line
 
 ONLY_FOR_ARCHS=		amd64 arm i386
 
+DEPRECATED=	mastersite disappeared, unfetchable
+
 SUB_FILES=	pkg-message
 
 USES=		kmod uidfix tar:bzip2

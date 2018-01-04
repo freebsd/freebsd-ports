@@ -11,7 +11,7 @@ COMMENT=	Module for performing transliteration
 
 LICENSE=	BSD
 
-USES=		python tar:bzip2
+USES=		python:2.7 tar:bzip2
 USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>

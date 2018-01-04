@@ -5,6 +5,7 @@ PORTNAME=	cclib
 PORTVERSION=	1.5.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel python
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	robak@FreeBSD.org
 COMMENT=	Parsers And Algorithms For Computational Chemistry

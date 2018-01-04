@@ -14,8 +14,8 @@ COMMENT=	Python SQL toolkit and Object Relational Mapper 1.0.x
 
 LICENSE=	MIT
 
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest \
-		${PYTHON_PKGNAMEPREFIX}mock>0:devel/py-mock
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}mock>0:devel/py-mock@${FLAVOR}
 
 USES=		python
 USE_PYTHON=	distutils autoplist
@@ -34,10 +34,10 @@ OPTIONS_DEFAULT=	SQLITE
 MSSQL_DESC=	MS SQL Server backend
 SYBASE_DESC=	Sybase backend
 
-MSSQL_RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pymssql.py:databases/py-pymssql
-PGSQL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}psycopg2>=2.0.8:databases/py-psycopg2
-SQLITE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3
-SYBASE_RUN_DEPENDS=	${PYTHON_SITELIBDIR}/Sybase.py:databases/py-sybase
+MSSQL_RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pymssql.py:databases/py-pymssql@${FLAVOR}
+PGSQL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}psycopg2>=2.0.8:databases/py-psycopg2@${FLAVOR}
+SQLITE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${FLAVOR}
+SYBASE_RUN_DEPENDS=	${PYTHON_SITELIBDIR}/Sybase.py:databases/py-sybase@${FLAVOR}
 
 PORTDOCS=		*
 PORTEXAMPLES=		*
@@ -45,11 +45,11 @@ PORTEXAMPLES=		*
 .include <bsd.port.pre.mk>
 
 .if ${PYTHON_REL} < 3000
-MYSQL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}MySQLdb>=1.2.2:databases/py-MySQLdb
+MYSQL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}MySQLdb>=1.2.2:databases/py-MySQLdb@${FLAVOR}
 #.else
 # At the moment databases/py-pymysql does not build with Python3
 # See https://github.com/petehunt/PyMySQL#python-3-0-support
-#MYSQL_RUN_DEPENDS+=	pymysql>=0.5:databases/py-pymysql
+#MYSQL_RUN_DEPENDS+=	pymysql>=0.5:databases/py-pymysql@${FLAVOR}
 .endif
 
 pre-build:

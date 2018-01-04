@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_GNOME=	libxml2:build
 XORG_CAT=	proto
-USES=		python:2.7+
+USES=		python
 USE_PYTHON=	py3kplist
 NO_ARCH=	yes
 

@@ -11,6 +11,8 @@ MASTER_SITES=	SF/evocms/${PORTNAME}/b2evo%20${PORTVERSION}-stable
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multilingual, multiuser, multi-blog engine
 
+IGNORE_WITH_PHP=	70 71 72
+
 USES=		cpe dos2unix php:web zip
 
 B2EVO_DATE?=	stable-2011-03-23

@@ -1,0 +1,15 @@
+This computer program calculates static stability, high lift and control, and
+dynamic derivative characteristics using the methods contained in the USAF
+Stability and Control Datcom (Data Compendium). Configuration geometry,
+attitude, and Mach range capabilities are consistent with those accommodated by
+the Datcom. The program contains a trim option that computes control
+deflections and aerodynamic increments for vehicle trim at subsonic Mach
+numbers.
+
+WWW: http://www.pdas.com/datcom.html
+
+This project is a modified version of the publically released USAF aircraft
+datcom. The goal of the project is to update the code and make it more usable
+by the end user.
+
+WWW: https://github.com/arktools/aircraft-datcom

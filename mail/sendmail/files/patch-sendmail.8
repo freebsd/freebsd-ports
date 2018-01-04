@@ -1,0 +1,14 @@
+--- sendmail/sendmail.8.orig	2014-06-13 14:57:59 UTC
++++ sendmail/sendmail.8
+@@ -537,6 +537,11 @@ for this amount of time, 
+ failed messages will be returned to the sender.  
+ The default is five days.
+ .TP
++UseBlacklist
++If set, send authentication failure and success notifications to the
++.BR blacklistd (8)
++daemon.
++.TP
+ .RI UserDatabaseSpec= userdatabase
+ If set, a user database is consulted to get forwarding information.
+ You can consider this an adjunct to the aliasing mechanism, 

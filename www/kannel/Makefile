@@ -19,8 +19,6 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 LIB_DEPENDS=	libpcre.so:devel/pcre
 
-BROKEN_armv6=		fails to configure: Unable to find MySQL client libraries
-
 PORTSCOUT=	skipv:1.5.0
 
 USERS=		kannel

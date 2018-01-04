@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USES=		python shebangfix zip
+USES=		python:2.7 shebangfix zip
 SHEBANG_FILES=	platform.py
 NO_ARCH=	yes
 

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	File_Iterator
-PORTVERSION=	1.4.2
+DISTVERSION=	1.4.5
 CATEGORIES=	devel www pear
 PKGNAMEPREFIX=	pear-
 
@@ -19,15 +19,14 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	sebastianbergmann
 GH_PROJECT=	php-file-iterator
 
+NO_ARCH=	yes
+
 NO_BUILD=	yes
 
-PHP_DIR=	share/PHP
-
-PLIST_FILES=	${PHP_DIR}/${PORTNAME}/Iterator.php
+PLIST_FILES=	${DATADIR}/Iterator.php
 
 do-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/${PHP_DIR}/${PORTNAME}
-	${INSTALL_SCRIPT} ${WRKSRC}/src/Iterator.php \
-		${STAGEDIR}${PREFIX}/${PHP_DIR}/${PORTNAME}
+	${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/src/Iterator.php ${STAGEDIR}${DATADIR}
 
 .include <bsd.port.mk>

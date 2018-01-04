@@ -14,16 +14,15 @@ COMMENT=	Nonlinear least squares minimizer
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	eigen>=3.2.2:math/eigen3
 LIB_DEPENDS=	libglog.so:devel/glog
 RUN_DEPENDS:=	${BUILD_DEPENDS:Meigen*}
 
-USES=		cmake:outsource compiler:${OPENMP}c++11-lib localbase shebangfix
+USES=		cmake:outsource compiler:${OPENMP}c++11-lib eigen:3 localbase shebangfix
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 SHEBANG_FILES=	examples/slam/pose_graph_*/plot_results.py \
 		scripts/make_docs.py
-CMAKE_ARGS=	-DCXX11=on -DBUILD_SHARED_LIBS=on
+CMAKE_ON=	CXX11 BUILD_SHARED_LIBS
 LDFLAGS+=	-Wl,--as-needed # -lccolamd -lcholmod -lrt from suitesparse
 PLIST_SUB=	VERSION=${DISTVERSION:C/rc.*//}
 EXAMPLESDIR=	${PREFIX}/share/examples/${PORTNAME:S/-solver//}
@@ -42,7 +41,7 @@ CUSTOM_BLAS_DESC=	Handcoded BLAS routines instead of Eigen
 CUSTOM_BLAS_CMAKE_BOOL=	CUSTOM_BLAS
 
 DOCS_BUILD_DEPENDS=	sphinx-build:textproc/py-sphinx
-DOCS_USES=		python:build
+DOCS_USES=		python:2.7,build
 DOCS_CMAKE_BOOL=	BUILD_DOCUMENTATION
 
 EXAMPLES_CMAKE_BOOL=	BUILD_EXAMPLES
@@ -67,26 +66,27 @@ TEST_IMPLIES=		GFLAGS
 
 LAPACK_DESC=		Linear Algebra PACKage
 LAPACK_USES=		fortran # LDFLAGS
-LAPACK_CMAKE_ON=	-DBLAS_LIBRARIES="${BLASLIB}" -DLAPACK_LIBRARIES="${LAPACKLIB}"
+LAPACK_CMAKE_ON=	-DBLAS_LIBRARIES:FILEPATH="${BLASLIB}" \
+			-DLAPACK_LIBRARIES:FILEPATH="${LAPACKLIB}"
 LAPACK_CMAKE_BOOL=	LAPACK
 ATLAS_USES=		blaslapack:atlas
-ATLAS_CMAKE_ON=		-DBLA_VENDOR="ATLAS"
+ATLAS_CMAKE_ON=		-DBLA_VENDOR:STRING="ATLAS"
 ATLAS_IMPLIES=		LAPACK
 GOTOBLAS_DESC=		Goto blas implementation
 GOTOBLAS_USES=		blaslapack:gotoblas
-GOTOBLAS_CMAKE_ON=	-DBLA_VENDOR="Goto"
+GOTOBLAS_CMAKE_ON=	-DBLA_VENDOR:STRING="Goto"
 GOTOBLAS_IMPLIES=	LAPACK
 NETLIB_USES=		blaslapack:netlib
-NETLIB_CMAKE_ON=	-DBLA_VENDOR="Generic"
+NETLIB_CMAKE_ON=	-DBLA_VENDOR:STRING="Generic"
 NETLIB_IMPLIES=		LAPACK
 OPENBLAS_USES=		blaslapack:openblas
-OPENBLAS_CMAKE_ON=	-DBLA_VENDOR="OpenBLAS"
+OPENBLAS_CMAKE_ON=	-DBLA_VENDOR:STRING="OpenBLAS"
 OPENBLAS_IMPLIES=	LAPACK
 
 SPARSE_DESC=		Sparse linear algebra library
 CXSPARSE_DESC=		CXSparse support
 CXSPARSE_LIB_DEPENDS=	libcxsparse.so:math/suitesparse
-CXSPARSE_CMAKE_ON=	-DCXSPARSE_INCLUDE_DIR="${LOCALBASE}/include/suitesparse"
+CXSPARSE_CMAKE_ON=	-DCXSPARSE_INCLUDE_DIR:PATH="${LOCALBASE}/include/suitesparse"
 CXSPARSE_CMAKE_BOOL=	CXSPARSE
 EIGENSPARSE_DESC=	Simplicial Cholesky factorization in Eigen
 EIGENSPARSE_CMAKE_BOOL=	EIGENSPARSE

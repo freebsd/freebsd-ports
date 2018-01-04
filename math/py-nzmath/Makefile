@@ -11,7 +11,7 @@ DISTNAME=	NZMATH-${PORTVERSION}
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Number theory oriented calculation system
 
-USES=		python
+USES=		python:2.7
 USE_PYTHON=	distutils
 PYDISTUTILS_PKGNAME=	NZMATH
 

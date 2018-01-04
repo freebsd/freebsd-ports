@@ -13,7 +13,7 @@ COMMENT=	Zope Broken Object Interfaces
 
 LICENSE=	ZPL21
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zope.interface>=0:devel/py-zope.interface
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zope.interface>=0:devel/py-zope.interface@${FLAVOR}
 
 USES=		python zip
 USE_PYTHON=	distutils autoplist

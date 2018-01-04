@@ -13,22 +13,22 @@ COMMENT=	Highly available, distributed, eventually consistent object/blob store
 
 LICENSE=	APACHE20
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pbr>=0.5.21:devel/py-pbr
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pbr>=0.5.21:devel/py-pbr@${FLAVOR}
 
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}PasteDeploy>0:www/py-pastedeploy \
-		${PYTHON_PKGNAMEPREFIX}dnspython>=1.10.0:dns/py-dnspython \
-		${PYTHON_PKGNAMEPREFIX}eventlet>=0.9.8:net/py-eventlet \
-		${PYTHON_PKGNAMEPREFIX}netifaces>=0:net/py-netifaces \
-		${PYTHON_PKGNAMEPREFIX}python-swiftclient>=0:databases/py-python-swiftclient \
-		${PYTHON_PKGNAMEPREFIX}simplejson>=0:devel/py-simplejson \
-		${PYTHON_PKGNAMEPREFIX}sqlite3>=0:databases/py-sqlite3 \
-		${PYTHON_PKGNAMEPREFIX}webob>=0.9.8:www/py-webob \
-		${PYTHON_PKGNAMEPREFIX}xattr>=0:devel/py-xattr \
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}PasteDeploy>0:www/py-pastedeploy@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dnspython>=1.10.0:dns/py-dnspython@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}eventlet>=0.9.8:net/py-eventlet@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}netifaces>=0:net/py-netifaces@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}python-swiftclient>=0:databases/py-python-swiftclient@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}simplejson>=0:devel/py-simplejson@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}sqlite3>=0:databases/py-sqlite3@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}webob>=0.9.8:www/py-webob@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}xattr>=0:devel/py-xattr@${FLAVOR} \
 		memcached>=0:databases/memcached \
 		rsync>=3.0:net/rsync
 
-USES=		python:2
+USES=		python:2.7
 USE_PYTHON=	distutils autoplist
 USE_RC_SUBR=	swift
 USERS=		swift

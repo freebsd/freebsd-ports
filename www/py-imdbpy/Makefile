@@ -15,7 +15,7 @@ COMMENT=	Retrieve and manage the data of the IMDb movie database
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>=0:devel/py-lxml
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>=0:devel/py-lxml@${FLAVOR}
 
 OPTIONS_DEFINE=	DOCS SQLALCHEMY
 OPTIONS_DEFAULT=SQLALCHEMY
@@ -29,8 +29,8 @@ SHEBANG_FILES=	docs/goodies/download_applydiffs.py \
 
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
 
-SQLALCHEMY_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlalchemy-migrate>=0.10.0:databases/py-sqlalchemy-migrate \
-			${PYTHON_PKGNAMEPREFIX}sqlalchemy10>=0:databases/py-sqlalchemy10
+SQLALCHEMY_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlalchemy-migrate>=0.10.0:databases/py-sqlalchemy-migrate@${FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}sqlalchemy10>=0:databases/py-sqlalchemy10@${FLAVOR}
 
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/

@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	codelite
-PORTVERSION=	10.0
-PORTREVISION=	2
+PORTVERSION=	11.0
 CATEGORIES=	editors devel
 
 MAINTAINER=	mmokhi@FreeBSD.org

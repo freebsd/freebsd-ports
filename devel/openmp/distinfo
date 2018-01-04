@@ -1,3 +1,3 @@
-TIMESTAMP = 1504637833
-SHA256 (openmp-5.0.0.src.tar.xz) = c0ef081b05e0725a04e8711d9ecea2e90d6c3fbb1622845336d3d095d0a3f7c5
-SIZE (openmp-5.0.0.src.tar.xz) = 2074004
+TIMESTAMP = 1510687290
+SHA256 (openmp-5.0.1.src.tar.xz) = adb635cdd2f9f828351b1e13d892480c657fb12500e69c70e007bddf0fca2653
+SIZE (openmp-5.0.1.src.tar.xz) = 2075472

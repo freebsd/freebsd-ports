@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	memcache
-PORTVERSION=	3.0.8
-PORTREVISION=	1
+PORTVERSION=	3.0.9
 CATEGORIES=	databases
 PKGNAMEPREFIX=	php71-
 
@@ -26,7 +25,7 @@ USES=		dos2unix php:ext
 
 GH_ACCOUNT=	websupport-sk
 GH_PROJECT=	pecl-${PORTNAME}
-GH_TAGNAME=	5041d2f
+GH_TAGNAME=	e702b5f
 USE_GITHUB=	yes
 
 post-install-EXAMPLES-on:

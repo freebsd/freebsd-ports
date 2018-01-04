@@ -10,6 +10,7 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Python bindings for the Qt 4 toolkit (meta port)
 
 USES=		metaport python pyqt:4
+USE_PYTHON=	flavors
 
 OPTIONS_DEFINE=		assistant core dbus dbussupport declarative \
 			demo designer designerplugin doc gui help \

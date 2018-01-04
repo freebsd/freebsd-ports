@@ -36,7 +36,7 @@ MYSQL_USE=		MYSQL=yes
 MYSQL_CONFIGURE_WITH=	mysql
 PYTHON_DESC=		Enable Python module
 PYTHON_USE=		GNOME=pygtk2
-PYTHON_USES=		python
+PYTHON_USES=		python:2.7
 PYTHON_CONFIGURE_OFF=	--with-python=no
 RUBY_DESC=		Enable Ruby module
 RUBY_BROKEN=		Does not build

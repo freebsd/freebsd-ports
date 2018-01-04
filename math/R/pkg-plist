@@ -104,8 +104,8 @@ lib/R/include/S.h
 %%RBLAS%%lib/R/lib/libRblas.so.%%LIBVER%%
 %%RBLAS%%lib/R/lib/libRlapack.so
 %%RBLAS%%lib/R/lib/libRlapack.so.%%LIBVER%%
-%%LIBR%%lib/R/lib/libR.so
-%%LIBR%%lib/R/lib/libR.so.%%LIBVER%%
+lib/R/lib/libR.so
+lib/R/lib/libR.so.%%LIBVER%%
 lib/R/library/KernSmooth/DESCRIPTION
 lib/R/library/KernSmooth/INDEX
 lib/R/library/KernSmooth/Meta/features.rds
@@ -1524,7 +1524,7 @@ lib/R/share/texmf/tex/latex/omsaett.fd
 lib/R/share/texmf/tex/latex/omscmtt.fd
 lib/R/share/texmf/tex/latex/ts1aer.fd
 lib/R/share/texmf/tex/latex/ts1aett.fd
-%%LIBR%%libdata/pkgconfig/libR.pc
+libdata/pkgconfig/libR.pc
 man/man1/R.1.gz
 man/man1/Rscript.1.gz
 %%DOCSDIR%%/html/Rlogo.pdf

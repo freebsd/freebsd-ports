@@ -13,7 +13,7 @@ COMMENT=	Python scripts to get wmi data classes in a dict
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}impacket>=0:net/py-impacket
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}impacket>=0:net/py-impacket@${FLAVOR}
 
 NO_ARCH=	yes
 USES=		python

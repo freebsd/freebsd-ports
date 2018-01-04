@@ -13,11 +13,11 @@ COMMENT=	Zope catalog index for paths
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}AccessControl>0:security/py-AccessControl \
-		${PYTHON_PKGNAMEPREFIX}transaction>0:devel/py-transaction \
-		zodb${PYTHON_PKGNAMESUFFIX}>0:databases/zodb3
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}AccessControl>0:security/py-AccessControl@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}transaction>0:devel/py-transaction@${FLAVOR} \
+		zodb${PYTHON_PKGNAMESUFFIX}>0:databases/zodb3@${FLAVOR}
 
-USES=		python zope zip
+USES=		python:2.7 zope zip
 USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

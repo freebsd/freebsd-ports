@@ -11,7 +11,7 @@ COMMENT=	Client/server based crash-reporting system
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=	autoreconf
+USES=		autoreconf compiler:c++11-lib
 GNU_CONFIGURE=	yes
 
 USE_GITHUB=	yes

@@ -14,8 +14,8 @@ COMMENT=	Database Query Language (MySQL Backend for HTSQL)
 
 LICENSE=	AGPLv3
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}htsql>2.3:databases/py-htsql \
-		${PYTHON_PKGNAMEPREFIX}MySQLdb>0:databases/py-MySQLdb
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}htsql>2.3:databases/py-htsql@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}MySQLdb>0:databases/py-MySQLdb@${FLAVOR}
 
 USES=		python:2
 USE_PYTHON=	distutils autoplist

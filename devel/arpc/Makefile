@@ -4,6 +4,7 @@
 PORTNAME=	arpc
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.6
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	ed@FreeBSD.org
@@ -12,13 +13,18 @@ COMMENT=	GRPC-like RPC library that supports file descriptor passing
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyPEG2>=2.15.2:textproc/py3-pyPEG2 \
-		${PYTHON_PKGNAMEPREFIX}toposort>=1.5:devel/py3-toposort
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyPEG2>=2.15.2:textproc/py-pyPEG2@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}toposort>=1.5:devel/py-toposort@${PY_FLAVOR}
 LIB_DEPENDS=	libargdata.so:devel/argdata
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyPEG2>=2.15.2:textproc/py3-pyPEG2 \
-		${PYTHON_PKGNAMEPREFIX}toposort>=1.5:devel/py3-toposort
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyPEG2>=2.15.2:textproc/py-pyPEG2@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}toposort>=1.5:devel/py-toposort@${PY_FLAVOR}
 
-USES=		cmake localbase:ldflags python:3 tar:xz
+BROKEN_armv6=		fails to build: *** Signal 11
+BROKEN_armv7=		fails to build: *** Signal 11
+
+USES=		cmake localbase:ldflags python:3.4+ shebangfix tar:xz
+python_OLD_CMD=	"/usr/bin/env python3"
+SHEBANG_FILES=	scripts/aprotoc.py
 USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	NuxiNL

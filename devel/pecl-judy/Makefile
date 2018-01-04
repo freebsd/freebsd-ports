@@ -17,6 +17,6 @@ BUILD_DEPENDS=	Judy>=0:devel/judy
 
 CONFIGURE_ARGS=	--with-judy=${LOCALBASE}
 USES=		php:pecl
-IGNORE_WITH_PHP=	70 71
+IGNORE_WITH_PHP=	70 71 72
 
 .include <bsd.port.mk>

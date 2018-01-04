@@ -5,10 +5,11 @@ PORTVERSION=	1.0.0
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	tz@FreeBSD.org
+MAINTAINER=	idefix@fechner.net
 COMMENT=	This gem implements bcrypt_pdkfd
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	rubygem-minitest>=5:devel/rubygem-minitest \
 		rubygem-rake-compiler>=0.9.7:devel/rubygem-rake-compiler \

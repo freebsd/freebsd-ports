@@ -2,7 +2,7 @@
 
 PORTNAME=	libva-vdpau-driver
 PORTVERSION=	0.7.4
-PORTREVISION=	7
+PORTREVISION=	9
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.freedesktop.org/software/vaapi/releases/${PORTNAME}/
 
@@ -21,17 +21,13 @@ USES=		libtool gmake localbase pkgconfig tar:bzip2
 USE_GL=		gl
 
 GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
 
-PLIST_FILES=	lib/va/nvidia_drv_video.so lib/va/s3g_drv_video.so lib/va/vdpau_drv_video.so
+PLIST_FILES=	lib/dri/nvidia_drv_video.so lib/dri/s3g_drv_video.so lib/dri/vdpau_drv_video.so
 
 OPTIONS_DEFINE=	DEBUG
+
 DEBUG_CONFIGURE_ENABLE=	debug
-
-.include <bsd.port.pre.mk>
-
-.if defined(STRIP) && ${STRIP} != ""
-INSTALL_TARGET=	install-strip
-.endif
 
 post-patch:	.SILENT
 	${REINPLACE_CMD} -e '/LIBS/{ s/-ldl//; s/-lrt//; }' \
@@ -39,4 +35,4 @@ post-patch:	.SILENT
 		-e '/\^vdpau_version/s|$$CC -E|& ${CPPFLAGS}|' \
 		 ${WRKSRC}/configure
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

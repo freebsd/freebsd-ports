@@ -22,7 +22,7 @@ LIB_DEPENDS=	libspatialite.so:databases/spatialite \
 
 OPTIONS_DEFINE=	DOCS
 
-USES=		iconv python
+USES=		iconv python:2.7
 USE_PYTHON=	autoplist concurrent distutils
 
 .include <bsd.port.pre.mk>

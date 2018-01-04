@@ -10,7 +10,7 @@ MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Lego NXT library
 
 SUB_FILES=	pkg-message
-USES=		python:build scons shebangfix
+USES=		python:2.7,build scons shebangfix
 USE_LDCONFIG=	yes
 SHEBANG_FILES=	make_flash_header.py
 

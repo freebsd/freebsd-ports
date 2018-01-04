@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	global
-PORTVERSION=	6.5.7
+PORTVERSION=	6.6.1
 CATEGORIES=	devel
 MASTER_SITES=	GNU
 
@@ -17,10 +17,12 @@ OPTIONS_DEFINE=	DOCS
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
-USES=		libtool ncurses perl5
+USES=		libtool ncurses perl5 shebangfix
 
 INFO=		global
-PORTDOCS=	AUTHORS COPYING ChangeLog FAQ INSTALL LICENSE NEWS README THANKS
+PORTDOCS=	AUTHORS ChangeLog FAQ INSTALL LICENSE NEWS README THANKS
+
+SHEBANG_GLOB=	*.pl
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^gtags_DATA = / s|AUTHOR.*THANKS||' ${WRKSRC}/Makefile.in

@@ -13,7 +13,7 @@ COMMENT=	Simple module to parse ISO 8601 dates
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=2.4.2:devel/py-pytest
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=2.4.2:devel/py-pytest@${FLAVOR}
 
 USES=		python
 USE_PYTHON=	distutils autoplist

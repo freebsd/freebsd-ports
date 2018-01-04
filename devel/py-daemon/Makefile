@@ -13,8 +13,8 @@ COMMENT=	Well-behaved daemon framework for Python
 
 LICENSE=	APACHE20
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}docutils>=0:textproc/py-docutils \
-		${PYTHON_PKGNAMEPREFIX}lockfile>=0.10:devel/py-lockfile
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}docutils>=0:textproc/py-docutils@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}lockfile>=0.10:devel/py-lockfile@${FLAVOR}
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes

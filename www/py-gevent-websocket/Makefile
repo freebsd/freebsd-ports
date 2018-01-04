@@ -13,7 +13,7 @@ COMMENT=	WebSocket library for the gevent networking library
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gevent>=0:devel/py-gevent
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gevent>=0:devel/py-gevent@${FLAVOR}
 
 USES=		python
 USE_PYTHON=	distutils autoplist

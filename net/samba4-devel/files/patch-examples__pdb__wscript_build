@@ -1,0 +1,11 @@
+--- examples/pdb/wscript_build.orig	2017-11-14 06:05:12 UTC
++++ examples/pdb/wscript_build
+@@ -3,7 +3,7 @@
+ bld.SAMBA3_MODULE('pdb_test',
+                  subsystem='pdb',
+                  source='test.c',
+-                 deps='samba-util',
++                 deps='samba-util samba-debug',
+                  init_function='',
+                  internal_module=bld.SAMBA3_IS_STATIC_MODULE('pdb_test'),
+                  enabled=bld.SAMBA3_IS_ENABLED_MODULE('pdb_test'))

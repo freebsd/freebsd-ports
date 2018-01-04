@@ -11,7 +11,7 @@ COMMENT=	Test the integrity of communications over networks and firewalls
 
 LICENSE=	GPLv3
 
-USES=		python tar:tgz
+USES=		python:2.7 tar:tgz
 USE_PYTHON=	distutils
 
 PORTDOCS=	*

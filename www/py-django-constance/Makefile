@@ -13,10 +13,10 @@ COMMENT=	Dynamic Django settings
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}redis>=0:databases/py-redis \
-		${PYTHON_PKGNAMEPREFIX}coverage>=0:devel/py-coverage \
-		${PYTHON_PKGNAMEPREFIX}django-picklefield>=0:www/py-django-picklefield \
-		${PYTHON_PKGNAMEPREFIX}django18>=1.8:www/py-django18
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}redis>=0:databases/py-redis@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}coverage>=0:devel/py-coverage@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}django-picklefield>=0:www/py-django-picklefield@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}django18>=1.8:www/py-django18@${FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist distutils

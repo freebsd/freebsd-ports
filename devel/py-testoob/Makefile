@@ -22,6 +22,6 @@ NO_ARCH=	yes
 USES=		python tar:bzip2
 USE_PYTHON=	autoplist distutils
 
-TWISTED_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}twisted>=0:devel/py-twisted
+TWISTED_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}twisted>=0:devel/py-twisted@${FLAVOR}
 
 .include <bsd.port.mk>

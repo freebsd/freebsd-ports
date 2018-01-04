@@ -16,8 +16,6 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2
 
-BROKEN_powerpc64=	fails to compile: jsoncpp.cpp: 'snprintf' is not a member of 'std'
-
 USES=		compiler:c++14-lang gettext libtool pkgconfig
 GNU_CONFIGURE=	yes
 USE_GNOME=	cairo gdkpixbuf2 gtk20

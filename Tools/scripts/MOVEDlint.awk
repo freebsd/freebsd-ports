@@ -80,15 +80,44 @@ $3 !~ /^20[0-3][0-9]-[01][0-9]-[0-3][0-9]$/ {
     }
     lastdate = $3
 
+    from_flavor=""
+    if ($1 ~ "@") {
+        from_flavor=$1
+        sub("@.*", "", $1)
+        sub(".*@", "", from_flavor)
+    }
+
     if (system("test -f " portsdir "/" $1 "/Makefile")) {
         delete missing[$1]
     } else {
-        printf "%5d: %s must be marked as resurrected\n", NR, $1 | sort
+        if (from_flavor != "") {
+            if (!system("test \"" from_flavor "\" = \"`make -C " portsdir "/" $1 " -VFLAVORS:M" from_flavor "`\"")) {
+                printf "%5d: %s still has the %s flavor\n", NR, $1, from_flavor | sort
+            }
+            # No else because the port is there but does not have the flavor,
+            # so it should be ok.
+        } else {
+            printf "%5d: %s must be marked as resurrected\n", NR, $1 | sort
+        }
     }
 
     if ($2) {
+        to_flavor=""
+        if ($2 ~ "@") {
+            to_flavor=$2
+            sub("@.*", "", $2)
+            sub(".*@", "", to_flavor)
+        }
+
         if (system("test -f " portsdir "/" $2 "/Makefile"))
             missing[$2] = NR
+        else
+            if (to_flavor != "") {
+                if (system("test \"" to_flavor "\" = \"`make -C " portsdir "/" $2 " -VFLAVORS:M" to_flavor "`\"")) {
+                    printf "%5d: %s does not have the %s flavor\n", NR, $2, to_flavor | sort
+                    error[NR] = 1
+                }
+            }
     }
 
 #    Produces too many false positives

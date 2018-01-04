@@ -7,7 +7,6 @@
     SUBDIR += avis
     SUBDIR += berkeley-db
     SUBDIR += bluej
-    SUBDIR += bootstrap-openjdk
     SUBDIR += bootstrap-openjdk6
     SUBDIR += bootstrap-openjdk8
     SUBDIR += bouncycastle

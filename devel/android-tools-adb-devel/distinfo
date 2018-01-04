@@ -1,7 +1,0 @@
-TIMESTAMP = 1506632263
-SHA256 (android-platform_system_core-android-o-preview-4-4534-g612b47630f6f_GH0.tar.gz) = 44672e3c0af18bf9b696da1d71b84eff5df60aaef1dca2eb2ec64b4fbbc4d22b
-SIZE (android-platform_system_core-android-o-preview-4-4534-g612b47630f6f_GH0.tar.gz) = 5274221
-SHA256 (mbrubeck-android-completion-c1b0656_GH0.tar.gz) = ca3311ba47a5edd56c929ac9aae57c02c2c3f1636519c5f67abb00b6e3ecd75c
-SIZE (mbrubeck-android-completion-c1b0656_GH0.tar.gz) = 5967
-SHA256 (android-platform_development-android-o-preview-4-62-g417a8e237642_GH0.tar.gz) = 44ecd4159178ab9410c883954c0a3bf5b3bc6d6d6e485dad75267626e186604e
-SIZE (android-platform_development-android-o-preview-4-62-g417a8e237642_GH0.tar.gz) = 93204552

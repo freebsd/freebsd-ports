@@ -30,7 +30,7 @@ freevo_uid=`pw usershow ${freevo_user} | awk -F: '{print $3}'`
 freevo_dir=`pw usershow ${freevo_user} | awk -F: '{print $9}'`
 
 command="%%PREFIX%%/bin/freevo"
-command_interpreter="%%PREFIX%%/bin/%%PYTHON_VERSION%%"
+command_interpreter="%%PYTHON_CMD%%"
 
 # freevo needs PATH set so it can determine python version
 export PATH=/bin:/usr/bin:%%PREFIX%%/bin:${freevo_dir}/bin

@@ -11,7 +11,7 @@ COMMENT=	Graphviz to LaTeX converter
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyparsing>=1.4.8:devel/py-pyparsing \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyparsing>=1.4.8:devel/py-pyparsing@${FLAVOR} \
 		dot:graphics/graphviz
 
 NO_ARCH=	yes

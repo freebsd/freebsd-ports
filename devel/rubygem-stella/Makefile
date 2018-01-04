@@ -24,6 +24,9 @@ RUN_DEPENDS=	rubygem-benelux>=0.6.1:devel/rubygem-benelux \
 		rubygem-whois>=1.6.6:net/rubygem-whois \
 		rubygem-yajl-ruby>=0.7.9:devel/rubygem-yajl-ruby
 
+# bin/stella
+CONFLICTS_INSTALL=	stella
+
 NO_ARCH=	yes
 USE_RUBY=	yes
 USES=		gem shebangfix

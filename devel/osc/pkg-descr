@@ -1,4 +1,4 @@
-osc is a command-line client fot openSUSE build service. It is
+osc is a command-line client for openSUSE build service. It is
 written in Python, and in addition to the commandline interface it
 also provides a Python module, for use by other Python programs.
 

@@ -21,5 +21,6 @@ GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USES=		gmake libtool pathfix pkgconfig python:2 tar:bzip2
 USE_GNOME=	glib20 libxslt pygtk2
+USE_PYTHON=	flavors
 
 .include <bsd.port.mk>

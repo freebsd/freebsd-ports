@@ -19,7 +19,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	p5-XML-Parser>=0:textproc/p5-XML-Parser
 
-USES=		gmake localbase python shebangfix
+USES=		gmake localbase python:2.7 shebangfix
 SHEBANG_FILES=	src/gtknetcat.in src/gtknetcat.py
 USE_GNOME=	intlhack pygtk2
 GNU_CONFIGURE=	yes

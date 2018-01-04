@@ -1,6 +1,6 @@
-This project contains all the necessary code to connect, send and
-receive messages to/from an AMQP-compliant peer or broker (Qpid,
-OpenAMQ, RabbitMQ) using Twisted. It also includes support for using
-Thrift RPC over AMQP in Twisted applications.
+This project contains all the necessary code to connect, send and receive
+messages to/from an AMQP-compliant peer or broker (Qpid, OpenAMQ, RabbitMQ)
+using Twisted. It also includes support for using Thrift RPC over AMQP in
+Twisted applications.
 
-WWW: https://launchpad.net/txamqp
+WWW: https://pypi.python.org/pypi/txAMQP

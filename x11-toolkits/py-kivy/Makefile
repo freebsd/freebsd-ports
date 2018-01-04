@@ -16,17 +16,16 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN=		fails to build
 
-BUILD_DEPENDS=	cython:lang/cython
 LIB_DEPENDS=	libmtdev.so:devel/libmtdev
-TEST_DEPENDS=	nosetests-${PYTHON_VER}:devel/py-nose
+TEST_DEPENDS=	nosetests-${PYTHON_VER}:devel/py-nose@${FLAVOR}
 
 MAKE_ENV=	KIVY_NO_CONFIG=yes KIVY_NO_FILELOG=yes USE_OPENGL_ES2=1 \
 		PYTHONPATH=${WRKSRC}
 
 USE_GITHUB=	yes
-USES=		display:test python uniquefiles:dirs
+USES=		display:test python:2.7 uniquefiles:dirs
 USE_GL=		egl gl glesv2
-USE_PYTHON=	autoplist concurrent distutils
+USE_PYTHON=	autoplist concurrent distutils cython
 
 PYDISTUTILS_BUILD_TARGET=	build_ext
 PYDISTUTILS_BUILDARGS=		--inplace
@@ -53,20 +52,20 @@ SPELLING_DESC=	Spell checking support
 TEXT_DESC=	Text rendering support (compulsory)
 WINDOW_DESC=	Window support (compulsory)
 
-DOCS_BUILD_DEPENDS=	sphinx-build:textproc/py-sphinx
+DOCS_BUILD_DEPENDS=	sphinx-build:textproc/py-sphinx@${FLAVOR}
 ENCHANT_DESC=		Spell checking support via Enchant
-ENCHANT_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}enchant>=0:textproc/py-enchant
+ENCHANT_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}enchant>=0:textproc/py-enchant@${FLAVOR}
 GSTREAMER_MAKE_ENV=	USE_GSTREAMER=1
 GSTREAMER_MAKE_ENV_OFF=	USE_GSTREAMER=0
 GSTREAMER_LIB_DEPENDS=	libgstreamer-1.0.so:multimedia/gstreamer1
-GSTREAMER_RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pygst.py:multimedia/py-gstreamer
+GSTREAMER_RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pygst.py:multimedia/py-gstreamer@${FLAVOR}
 GSTREAMER_USES=		pkgconfig
-OPENCV_RUN_DEPENDS=	${PYTHON_SITELIBDIR}/cv.py:graphics/py-opencv
+OPENCV_RUN_DEPENDS=	${PYTHON_SITELIBDIR}/cv.py:graphics/py-opencv@${FLAVOR}
 PIL_DESC=		Text and window rendering support via Pillow
-PIL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pillow>0:graphics/py-pillow
+PIL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pillow>0:graphics/py-pillow@${FLAVOR}
 PYGAME_DESC=		Window, text and image rendering support via PyGame
-PYGAME_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}game>0:devel/py-game
-PYGLET_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyglet>0:graphics/py-pyglet
+PYGAME_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}game>0:devel/py-game@${FLAVOR}
+PYGLET_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyglet>0:graphics/py-pyglet@${FLAVOR}
 SDL2_DESC=		Simple Direct Media Layer v2.0 support
 SDL2_MAKE_ENV=		USE_SDL2=1
 SDL2_MAKE_ENV_OFF=	USE_SDL2=0

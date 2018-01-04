@@ -1,0 +1,8 @@
+--- rsrc/OOC/xml/oberon-doc.dtd.orig	2017-12-14 16:40:51 UTC
++++ rsrc/OOC/xml/oberon-doc.dtd
+@@ -1,5 +1,4 @@
+ <?xml version='1.0' encoding='US-ASCII'?>
+-
+ <!ELEMENT bullet EMPTY>
+ <!ELEMENT dots EMPTY>
+ <!ELEMENT minus EMPTY>

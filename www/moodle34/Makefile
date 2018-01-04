@@ -14,7 +14,6 @@ LICENSE=	GPLv3
 
 CONFLICTS=	moodle31-3.1.[0-9]* moodle32-3.2.[0-9]* moodle33-3.3.[0-9]*
 
-DEFAULT_VERSIONS=	php=70
 IGNORE_WITH_PHP=	56
 
 USES=		cpe php tar:tgz

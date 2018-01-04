@@ -249,6 +249,7 @@
     SUBDIR += libisocodes
     SUBDIR += libkdeedu
     SUBDIR += libmetalink
+    SUBDIR += libpostal
     SUBDIR += libpri
     SUBDIR += libsupertone
     SUBDIR += libutf
@@ -278,6 +279,7 @@
     SUBDIR += najitool
     SUBDIR += newer
     SUBDIR += nms
+    SUBDIR += nnn
     SUBDIR += nsf
     SUBDIR += numchar
     SUBDIR += nut
@@ -297,7 +299,6 @@
     SUBDIR += p5-Array-LineReader
     SUBDIR += p5-Array-PrintCols
     SUBDIR += p5-Array-RefElem
-    SUBDIR += p5-Asterisk
     SUBDIR += p5-Asterisk-FastAGI
     SUBDIR += p5-Bot-Training
     SUBDIR += p5-Bot-Training-MegaHAL
@@ -352,6 +353,7 @@
     SUBDIR += p5-Text-FIGlet
     SUBDIR += p5-Tie-DxHash
     SUBDIR += p5-Zen-Koans
+    SUBDIR += p5-asterisk-perl
     SUBDIR += pantry
     SUBDIR += parley
     SUBDIR += pastebinit
@@ -381,6 +383,7 @@
     SUBDIR += py-fuzzy
     SUBDIR += py-glance
     SUBDIR += py-osd
+    SUBDIR += py-palettable
     SUBDIR += py-pexpect
     SUBDIR += py-powerline-status
     SUBDIR += py-progressbar
@@ -391,15 +394,12 @@
     SUBDIR += py-qt4-demo
     SUBDIR += py-qt4-doc
     SUBDIR += py-qt5-demo
-    SUBDIR += py-qt5-doc
     SUBDIR += py-socli
     SUBDIR += py-spdx
     SUBDIR += py-spdx-lookup
     SUBDIR += py-tqdm
     SUBDIR += py-YABT
     SUBDIR += py-yolk
-    SUBDIR += py3-pexpect
-    SUBDIR += py3-tqdm
     SUBDIR += pylize
     SUBDIR += qbrew
     SUBDIR += qlas

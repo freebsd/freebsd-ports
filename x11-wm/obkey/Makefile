@@ -17,7 +17,7 @@ LICENSE=	MIT
 
 RUN_DEPENDS=	py27-gtk2>=2.14:x11-toolkits/py-gtk2
 
-USES=		desktop-file-utils gettext python
+USES=		desktop-file-utils gettext python:2.7
 USE_PYTHON=	distutils
 NO_ARCH=	yes
 

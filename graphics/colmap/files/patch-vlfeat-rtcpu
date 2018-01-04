@@ -1,6 +1,6 @@
 build: don't force SSE2/AVX, enable at runtime instead
 
---- CMakeLists.txt.orig	2017-05-22 13:02:37 UTC
+--- CMakeLists.txt.orig	2017-11-21 22:46:29 UTC
 +++ CMakeLists.txt
 @@ -17,8 +17,6 @@ include(CheckCXXCompilerFlag)
  # the CMake policies in this file
@@ -17,36 +17,37 @@ build: don't force SSE2/AVX, enable at runtime instead
  
 +option(SIMD_ENABLED "Whether to enable SIMD optimizations" ON)
  option(OPENMP_ENABLED "Whether to enable OpenMP" ON)
- option(LTO_ENABLED "Whether to enable link-time optimization" ON)
+ option(IPO_ENABLED "Whether to enable interprocedural optimization" ON)
  option(CUDA_ENABLED "Whether to enable CUDA, if available" ON)
---- src/ext/VLFeat/CMakeLists.txt.orig	2017-09-02 10:11:38 UTC
+--- src/ext/VLFeat/CMakeLists.txt.orig	2017-11-21 22:46:29 UTC
 +++ src/ext/VLFeat/CMakeLists.txt
-@@ -1,14 +1,25 @@
--if(IS_GNU OR IS_CLANG)
--    if(NOT HAS_AVX_EXTENSION)
--        add_definitions(-DVL_DISABLE_AVX)
--    endif()
-+set(VLFEAT_SOURCE_FILES)
+@@ -70,16 +70,16 @@ set(VLFEAT_SOURCE_FILES
+     vlad.h)
  
--    if(NOT HAS_SSE2_EXTENSION)
--        add_definitions(-DVL_DISABLE_SSE2)
--    endif()
-+if(CMAKE_SYSTEM_PROCESSOR MATCHES "[ix].?86|amd64|AMD64")
-+    set(IS_X86 TRUE)
-+endif()
+ if(IS_GNU OR IS_CLANG)
+-    if(HAS_AVX_EXTENSION)
+-        list(APPEND VLFEAT_SOURCE_FILES
++    if(SIMD_ENABLED AND CMAKE_SYSTEM_PROCESSOR MATCHES "[ix].?86|amd64|AMD64")
++        set(AVX_SOURCES
+              mathop_avx.c
+              mathop_avx.h)
+     else()
+         add_definitions(-DVL_DISABLE_AVX)
+     endif()
+ 
+-    if(HAS_SSE2_EXTENSION)
+-        list(APPEND VLFEAT_SOURCE_FILES
++    if(SIMD_ENABLED AND CMAKE_SYSTEM_PROCESSOR MATCHES "[ix].?86|amd64|AMD64")
++        set(SSE2_SOURCES
+              mathop_sse2.c
+              mathop_sse2.h
+              imopv_sse2.c
+@@ -88,8 +88,12 @@ if(IS_GNU OR IS_CLANG)
+         add_definitions(-DVL_DISABLE_SSE2)
+     endif()
  
 -    set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${SSE_FLAGS}")
 -    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${SSE_FLAGS}")
-+if(SIMD_ENABLED AND IS_X86 AND NOT IS_MSVC)
-+    set(SSE2_SOURCES
-+        imopv_sse2.c
-+        imopv_sse2.h
-+        mathop_sse2.c
-+        mathop_sse2.h)
-+    set(AVX_SOURCES
-+        mathop_avx.c
-+        mathop_avx.h)
-+
 +    list(APPEND VLFEAT_SOURCE_FILES ${AVX_SOURCES} ${SSE2_SOURCES})
 +
 +    set_source_files_properties(${AVX_SOURCES}
@@ -56,32 +57,3 @@ build: don't force SSE2/AVX, enable at runtime instead
  else()
      add_definitions(-DVL_DISABLE_AVX)
      add_definitions(-DVL_DISABLE_SSE2)
-@@ -18,7 +29,7 @@ if(NOT OPENMP_ENABLED OR NOT OPENMP_FOUND)
-     add_definitions(-DVL_DISABLE_OPENMP)
- endif()
- 
--set(VLFEAT_SOURCE_FILES
-+list(APPEND VLFEAT_SOURCE_FILES
-     aib.c
-     aib.h
-     array.c
-@@ -52,8 +63,6 @@ set(VLFEAT_SOURCE_FILES
-     ikmeans_lloyd.tc
-     imopv.c
-     imopv.h
--    imopv_sse2.c
--    imopv_sse2.h
-     kdtree.c
-     kdtree.h
-     kmeans.c
-@@ -64,10 +73,6 @@ set(VLFEAT_SOURCE_FILES
-     liop.h
-     mathop.c
-     mathop.h
--    mathop_avx.c
--    mathop_avx.h
--    mathop_sse2.c
--    mathop_sse2.h
-     mser.c
-     mser.h
-     pgm.c

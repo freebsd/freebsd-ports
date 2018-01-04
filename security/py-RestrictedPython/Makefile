@@ -13,7 +13,7 @@ COMMENT=	Restricted execution environment for Python
 
 LICENSE=	ZPL21
 
-USES=		python:2 zip
+USES=		python zip
 USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

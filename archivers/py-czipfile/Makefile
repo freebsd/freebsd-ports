@@ -12,7 +12,7 @@ COMMENT=	Fast C-based zipfile decryption for Python
 
 LICENSE=	PSFL
 
-USES=		python
+USES=		python:2.7
 USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>

@@ -11,18 +11,14 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Dynamic memory debugging and profiling library
 
+ONLY_FOR_ARCHS=	amd64 i386
+
 LIB_DEPENDS=	libelf.so.0:devel/libelf
 
 WRKSRC=		${WRKDIR}/${PORTNAME}/build/unix
 
-ONLY_FOR_ARCHS=	i386 amd64
+USES=		gettext gmake
 USE_LDCONFIG=	yes
-
-USES=		gmake
-
-XMAN1=		hexwords.1 mleak.1 mpatrol.1 mprof.1 \
-		mpsym.1 mptrace.1 mpedit.1
-XMAN3=		libmpatrol.3 libmpalloc.3
 
 DOCS=		README mpatrol.dvi mpatrol.guide mpatrol.html mpatrol.info \
 		mpatrol.pdf mpatrol.ps mpatrol.texi mpatrol.txt refcard.dvi \
@@ -35,6 +31,8 @@ DOCSIMG=	cc1.eps cc1.jpg cc1.pdf \
 		mpatrol.eps mpatrol.jpg mpatrol.pdf mpatrol.txt \
 		test.eps test.jpg test.pdf \
 		trace.eps trace.jpg trace.pdf
+MAKE_JOBS_UNSAFE=	yes
+
 OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.pre.mk>
@@ -50,12 +48,8 @@ do-install:
 .for file in mpatrol mleak mptrace mprof
 	${INSTALL_PROGRAM} ${WRKSRC}/${file} ${STAGEDIR}${PREFIX}/bin
 .endfor
-.for file in ${XMAN1}
-	${INSTALL_MAN} ${WRKSRC}/../../man/man1/${file} ${STAGEDIR}${PREFIX}/man/man1
-.endfor
-.for file in ${XMAN3}
-	${INSTALL_MAN} ${WRKSRC}/../../man/man3/${file} ${STAGEDIR}${PREFIX}/man/man3
-.endfor
+	${INSTALL_MAN} ${WRKSRC}/../../man/man1/*.1 ${STAGEDIR}${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/../../man/man3/*.3 ${STAGEDIR}${PREFIX}/man/man3
 .for lib in mpalloc mpatrol mpatrolmt
 	${INSTALL_DATA} ${WRKSRC}/lib${lib}.a ${STAGEDIR}${PREFIX}/lib
 	${INSTALL_PROGRAM} ${WRKSRC}/lib${lib}.so.1 ${STAGEDIR}${PREFIX}/lib
@@ -65,8 +59,10 @@ do-install:
 .for file in mpatrol.h mpalloc.h mpdebug.h
 	${INSTALL_DATA} ${WRKSRC}/../../src/${file} ${STAGEDIR}${PREFIX}/include
 .endfor
-	${MKDIR} ${STAGEDIR}${PREFIX}/include/mpatrol
+	@${MKDIR} ${STAGEDIR}${PREFIX}/include/mpatrol
 	${INSTALL_DATA} ${WRKSRC}/../../tools/*.h ${STAGEDIR}${PREFIX}/include/mpatrol
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for file in ${DOCS}
 	${INSTALL_DATA} ${WRKSRC}/../../doc/${file} ${STAGEDIR}${DOCSDIR}

@@ -20,6 +20,7 @@ CPE_VENDOR=	synergy-foss
 USE_XORG=	ice xtst x11 sm xext xinerama xrandr xi
 USE_GITHUB=	yes
 GH_ACCOUNT=	symless
+GH_PROJECT=	synergy-core
 
 CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
 
@@ -31,8 +32,6 @@ PORTEXAMPLES=	synergy.conf.example synergy.conf.example-basic \
 		synergy.conf.example-advanced
 
 OPTIONS_DEFINE=	EXAMPLES
-
-BROKEN_sparc64=	cannot build: C++ code errors
 
 post-extract:
 	@${MKDIR} ${WRKSRC}/ext/gtest-1.6.0

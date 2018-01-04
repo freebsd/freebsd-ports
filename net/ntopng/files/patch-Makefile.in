@@ -1,8 +1,18 @@
---- Makefile.in.orig	2017-08-12 15:15:33 UTC
+--- Makefile.in.orig	2017-12-06 11:11:19 UTC
 +++ Makefile.in
-@@ -89,7 +89,7 @@ endif
- HAS_ZEROMQ=$(shell pkg-config --exists libzmq; echo $$?)
- ifeq ($(HAS_ZEROMQ), 0)
+@@ -34,7 +34,8 @@ LIBPCAP=-lpcap
+ MONGOOSE_HOME=${PWD}/third-party/mongoose
+ MONGOOSE_INC=-I$(MONGOOSE_HOME)
+ ######
+-HAS_LUAJIT=$(shell pkg-config --exists luajit; echo $$?)
++# Force using embedded luajit
++HAS_LUAJIT=1
+ ifeq ($(HAS_LUAJIT), 0)
+ 	LUAJIT_INC = $(shell pkg-config --cflags luajit)
+ 	LUAJIT_LIB = $(shell pkg-config --libs luajit)
+@@ -91,7 +92,7 @@ ifeq (@NEDGE@, 0)
+  HAS_ZEROMQ=$(shell pkg-config --exists libzmq; echo $$?)
+  ifeq ($(HAS_ZEROMQ), 0)
  	ZEROMQ_INC = $(shell pkg-config --cflags libzmq)
 -	ZMQ_STATIC=/usr/local/lib/libzmq.a
 +	ZMQ_STATIC=/nonexistent

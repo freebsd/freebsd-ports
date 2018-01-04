@@ -1,0 +1,19 @@
+--- Src/CMakeLists.txt.orig	2017-12-31 01:18:23 UTC
++++ Src/CMakeLists.txt
+@@ -20,7 +20,7 @@ file(
+ FOREACH(hpp_file ${hpp_in_dir})	
+     file(RELATIVE_PATH relative_hpp_file ${CMAKE_CURRENT_SOURCE_DIR} ${hpp_file})
+     if(INASTEMP_DO_INSTALL)
+-        INSTALL( FILES ${hpp_file} DESTINATION include/${relative_hpp_file} )
++        INSTALL( FILES ${hpp_file} DESTINATION include/inastemp/${relative_hpp_file} )
+     endif()
+ 
+     if($ENV{VERBOSE})
+@@ -29,6 +29,6 @@ FOREACH(hpp_file ${hpp_in_dir})	
+ ENDFOREACH()
+ 
+ if(INASTEMP_DO_INSTALL)
+-    INSTALL( FILES "${INASTEMP_BINARY_DIR}/Src/InastempConfig.h" DESTINATION include/Src )
++    INSTALL( FILES "${INASTEMP_BINARY_DIR}/Src/InastempConfig.h" DESTINATION include/inastemp/Src )
+ endif()
+ 

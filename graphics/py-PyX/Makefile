@@ -12,7 +12,7 @@ COMMENT=	Python package for creating encapsulated PostScript figures
 
 LICENSE=	GPLv2
 
-USES=		python:3
+USES=		python:3.4+
 USE_TEX=	latex:build
 USE_PYTHON=	autoplist distutils
 

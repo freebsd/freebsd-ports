@@ -14,7 +14,7 @@ COMMENT=	Python OpenSSL Wrappers
 
 LICENSE=	BSD3CLAUSE
 
-USES=		python ssl
+USES=		python:2.7 ssl
 USE_PYTHON=	distutils
 PYDISTUTILS_PKGNAME=	POW
 

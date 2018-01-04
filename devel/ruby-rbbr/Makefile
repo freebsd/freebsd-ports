@@ -18,6 +18,10 @@ RUN_DEPENDS=	rubygem-gettext>=0:devel/rubygem-gettext \
 
 BROKEN_RUBY22=	yes
 BROKEN_RUBY23=	yes
+BROKEN_RUBY24=	yes
+
+DEPRECATED=	Does not build with current versions of ruby
+EXPIRATION_DATE=	2018-01-14
 
 OPTIONS_DEFINE=	DOCS
 

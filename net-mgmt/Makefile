@@ -123,6 +123,7 @@
     SUBDIR += lldpd
     SUBDIR += mbrowse
     SUBDIR += mdata-client
+    SUBDIR += metronome
     SUBDIR += mk-livestatus
     SUBDIR += monitoring-plugins
     SUBDIR += mrtg
@@ -195,8 +196,6 @@
     SUBDIR += nfsen
     SUBDIR += ng_ipacct
     SUBDIR += nitpicker
-    SUBDIR += nrpe
-    SUBDIR += nrpe-ssl
     SUBDIR += nrpe3
     SUBDIR += nsca
     SUBDIR += nsca-client
@@ -298,6 +297,7 @@
     SUBDIR += prometheus
     SUBDIR += pushgateway
     SUBDIR += py-adal
+    SUBDIR += py-dnsdiag
     SUBDIR += py-ipcalc
     SUBDIR += py-ipy
     SUBDIR += py-msrest
@@ -312,7 +312,6 @@
     SUBDIR += py-snmp4-mibs
     SUBDIR += py-snmp_passpersist
     SUBDIR += py-yapsnmp
-    SUBDIR += py3-dnsdiag
     SUBDIR += qkismet
     SUBDIR += rackmonkey
     SUBDIR += rancid3

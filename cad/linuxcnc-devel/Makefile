@@ -46,7 +46,7 @@ CONFIGURE_ARGS=	--with-realtime=uspace --enable-non-distributable=yes \
 		CXXFLAGS="-I${LOCALBASE}/include" CXX="${CXX}" CC="${CC}" \
 		--with-locale-dir="${PREFIX}/share/locale" --with-python=${PYTHON_CMD}
 MAKE_ENV=	BUILD_VERBOSE=1
-USES=		autoreconf gettext gmake ncurses pkgconfig python readline shebangfix tk
+USES=		autoreconf gettext gmake ncurses pkgconfig python:2.7 readline shebangfix tk
 USE_GL=		gl glu
 USE_GNOME=	cairo gdkpixbuf2 libgnomeprintui pygtksourceview
 USE_XORG=	ice sm x11 xext xft xinerama xmu xrender xscrnsaver xt

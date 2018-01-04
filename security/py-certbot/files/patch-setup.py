@@ -1,4 +1,4 @@
---- setup.py.orig	2017-06-26 10:13:14 UTC
+--- setup.py.orig	2017-12-07 17:14:54 UTC
 +++ setup.py
 @@ -42,7 +42,6 @@ install_requires = [
      'ConfigArgParse>=0.9.3',
@@ -13,6 +13,6 @@
      'coverage',
      'ipdb',
 +    'mock',
-     'nose',
-     'pylint==1.4.2',  # upstream #248
-     'tox',
+     'pytest',
+     'pytest-cov',
+     'pytest-xdist',

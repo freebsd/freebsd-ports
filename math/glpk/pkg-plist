@@ -3,4 +3,4 @@ include/glpk.h
 lib/libglpk.a
 lib/libglpk.so
 lib/libglpk.so.40
-lib/libglpk.so.40.2.2
+lib/libglpk.so.40.2.3

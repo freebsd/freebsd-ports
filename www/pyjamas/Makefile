@@ -12,7 +12,7 @@ MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Port of Google Web Toolkit to Python
 
 # install/require some libraries in sys.prefix
-USES=		python
+USES=		python:2.7
 USE_PYTHON=	distutils autoplist pythonprefix
 
 REINPLACE_ARGS=	-i '' -e 's,../../bin,${PREFIX}/bin,'

@@ -13,6 +13,6 @@ LICENSE=	PHP301
 
 USES=		php:pecl
 USE_PHP=	dom:build xml:build xsl:build
-IGNORE_WITH_PHP=	70
+IGNORE_WITH_PHP=	70 71 72
 
 .include <bsd.port.mk>

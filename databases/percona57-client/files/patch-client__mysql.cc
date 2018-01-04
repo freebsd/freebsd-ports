@@ -28,12 +28,3 @@
  #else
    rl_attempted_completion_function= (CPPFunction*)&new_mysql_completion;
    rl_completion_entry_function= &no_completion;
-@@ -2886,7 +2888,7 @@ static char **new_mysql_completion(const char *text,
-                                    int end MY_ATTRIBUTE((unused)))
- {
-   if (!status.batch && !quick)
--#if defined(USE_NEW_READLINE_INTERFACE)
-+#if defined(USE_NEW_READLINE_INTERFACE) || defined(USE_LIBEDIT_INTERFACE)
-     return rl_completion_matches(text, new_command_generator);
- #else
-     return completion_matches((char *)text, (CPFunction *)new_command_generator);

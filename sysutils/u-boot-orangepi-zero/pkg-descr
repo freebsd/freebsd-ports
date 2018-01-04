@@ -1,0 +1,19 @@
+U-Boot loader for OrangePi Zero.
+
+To install this bootloader on an sdcard just do :
+dd if=/usr/local/share/u-boot/u-boot-orangepi-zero/u-boot-sunxi-with-spl.bin of=/path/to/sdcarddevice bs=1k seek=8 conv=notrunc,sync
+
+This version is patched so that:
+ * ELF and API features are enabled.
+ * The default environment is trimmed to just what's needed to boot.
+ * The saveenv command writes to the file u-boot.env on the FAT partition.
+ * The DTB file name is chosen based on the board model and passed to ubldr.bin
+   using the fdtfile env variable. ubldr.bin loads the DTB from /boot/dtb/ on
+   the FreeBSD partition.
+ * By default, it loads PIE ubldr.bin from file ubldr.bin on the FAT partition
+   to address 0x42000000, and launches it.
+
+For information about running FreeBSD on Allwinner boards, see
+ https://wiki.freebsd.org/FreeBSD/arm/Allwinner
+
+For general information about U-Boot see WWW: http://www.denx.de/wiki/U-Boot

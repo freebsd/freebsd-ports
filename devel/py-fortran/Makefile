@@ -16,7 +16,7 @@ LICENSE=	MIT
 
 RUN_DEPENDS=	${PYNUMERIC}
 
-USES=		python
+USES=		python:2.7
 USE_PYTHON=	autoplist distutils
 NO_ARCH=	yes
 

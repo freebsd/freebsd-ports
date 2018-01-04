@@ -11,11 +11,11 @@ MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Video thumbnail provider for the ROX file manager
 
 RUN_DEPENDS=	${LOCALBASE}/bin/rox:x11-fm/rox-filer \
-		${LOCALBASE}/lib/ROX-Lib2/python/rox/__init__.py:devel/py-roxlib
+		${PYTHON_PKGNAMEPREFIX}roxlib>=0:devel/py-roxlib
 
 WRKSRC=		${WRKDIR}/VideoThumbnail
 
-USES=		python
+USES=		python:2.7
 
 do-build:
 	@${PYTHON_CMD} -m compileall ${WRKSRC}

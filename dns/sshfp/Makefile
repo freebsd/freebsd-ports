@@ -11,11 +11,12 @@ COMMENT=	Generate SSHFP DNS records from knownhosts files or ssh-keyscan
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/dns/__init__.py:dns/py-dnspython \
-		${PYTHON_PKGNAMEPREFIX}ipcalc>=0.6:net-mgmt/py-ipcalc \
-		${PYTHON_SITELIBDIR}/ldns.py:dns/py-ldns
+RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/dns/__init__.py:dns/py-dnspython@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}ipcalc>=0.6:net-mgmt/py-ipcalc@${FLAVOR} \
+		${PYTHON_SITELIBDIR}/ldns.py:dns/py-ldns@${FLAVOR}
 
 USES=		python shebangfix
+USE_PYTHON=	flavors concurrent optsuffix
 NO_ARCH=	yes
 NO_BUILD=	yes
 USE_GITHUB=	yes

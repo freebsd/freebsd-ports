@@ -1,4 +1,4 @@
-TIMESTAMP = 1511438029
+TIMESTAMP = 1513976971
 SHA256 (rebar3-cache-16.tar.gz) = 8cfdb82b775cd5200cdfc9632b65441f5d5ddd6e2446d2c92a88d586ab663822
 SIZE (rebar3-cache-16.tar.gz) = 2512862
 SHA256 (bbmustache-1.3.0.tar) = e68a9e25358319256c5efa336915e859b7ca18eaf1a1a7b5c14c4fa4f5735710
@@ -21,5 +21,5 @@ SHA256 (relx-3.24.3.tar) = e38616dcb5353957772a6249d07a66d2255576b5c8d063cfd1d8d
 SIZE (relx-3.24.3.tar) = 83968
 SHA256 (ssl_verify_fun-1.1.3.tar) = 2e120e6505d6e9ededb2836611dfe2f7028432dc280957998e154307b5ea92fe
 SIZE (ssl_verify_fun-1.1.3.tar) = 14848
-SHA256 (rebar-rebar3-3.4.7_GH0.tar.gz) = 19b3d9cddef2e7eefcdf3ca66d1c649847c010edab4e0d2dbfa54161145a3d87
-SIZE (rebar-rebar3-3.4.7_GH0.tar.gz) = 273247
+SHA256 (rebar-rebar3-3.5.0_GH0.tar.gz) = e95e9d1f2ce219f548d4f49ad41409af02069190f19e2b6717585eef6ee77501
+SIZE (rebar-rebar3-3.5.0_GH0.tar.gz) = 283063

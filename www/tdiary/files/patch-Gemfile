@@ -1,6 +1,6 @@
---- Gemfile.orig	2017-06-29 08:19:50 UTC
+--- Gemfile.orig	2017-12-29 12:13:03 UTC
 +++ Gemfile
-@@ -6,35 +6,3 @@ gem 'fastimage'
+@@ -6,40 +6,3 @@ gem 'fastimage'
  gem 'emot'
  gem 'mail'
  gem 'rake'
@@ -15,8 +15,13 @@
 -  gem 'redcarpet'
 -  gem 'octokit'
 -
+-  platforms :ruby_22, :ruby_23, :ruby_24 do
+-    gem 'ruby-debug-ide'
+-    gem 'debase'
+-  end
+-
 -  group :test do
--    gem 'pry-byebug', platforms: [:ruby_21, :ruby_22, :ruby_23, :ruby_24]
+-    gem 'pry-byebug', platforms: [:ruby_22, :ruby_23, :ruby_24]
 -    gem 'test-unit'
 -    gem 'rspec'
 -    gem 'capybara', require: 'capybara/rspec'

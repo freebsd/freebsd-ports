@@ -1,0 +1,144 @@
+--- configure.orig	2004-01-17 23:19:56 UTC
++++ configure
+@@ -2530,141 +2530,6 @@ echo "${ECHO_T}Compiler Optimizations Enabled" >&6
+ fi;
+ 
+ # Checks for libraries.
+-echo "$as_me:$LINENO: checking for Berkeley DB" >&5
+-echo $ECHO_N "checking for Berkeley DB... $ECHO_C" >&6
+-
+-# Check whether --with-db or --without-db was given.
+-if test "${with_db+set}" = set; then
+-  withval="$with_db"
+-  DBINC=NO
+-  DBLIB=NO
+-  DBHDR=NO
+-  S=1
+-  case "$withval" in
+-  yes|no)
+-      { { echo "$as_me:$LINENO: error: Berkeley DB was not found. Please check your installation or use --with-db=PATH" >&5
+-echo "$as_me: error: Berkeley DB was not found. Please check your installation or use --with-db=PATH" >&2;}
+-   { (exit 1); exit 1; }; }
+-     ;;
+-  *)
+-  echo "$as_me:$LINENO: result: $withval" >&5
+-echo "${ECHO_T}$withval" >&6
+-  if test x${withval} = x ; then
+-          withval=/tmp
+-  fi
+-  if test $S -a -r ${withval}/build_unix/db4.h -a \
+-          -r "`ls ${withval}/build_unix/.libs/libdb-4.*.a 2>/dev/null | tail -1`"; then
+-          DBINC=-I`echo ${withval}/build_unix/`
+-          DBLIB=`ls ${withval}/build_unix/.libs/libdb-4.*.a 2>/dev/null | tail -1`
+-          DBHDR="db4.h"
+-          grep 'DB_VERSION_MAJOR	4$' ${withval}/build_unix/db4.h >/dev/null 2>&1
+-          S=$?
+-  fi
+-  if test $S -a -r ${withval}/build_unix/db.h -a \
+-          -r "`ls ${withval}/build_unix/.libs/libdb-4.*.a 2>/dev/null | tail -1`"; then
+-          DBINC=-I`echo ${withval}/build_unix`
+-          DBLIB=`ls ${withval}/build_unix/.libs/libdb-4.*.a 2>/dev/null | tail -1`
+-          DBHDR="db.h"
+-          grep 'DB_VERSION_MAJOR	4$' ${withval}/build_unix/db.h >/dev/null 2>&1
+-          S=$?
+-  fi
+-  if test $S -a -r ${withval}/include/db4/db.h -a \
+-          -r ${withval}/lib/db4/libdb.a ; then
+-          DBINC="-I${withval}/include/db4"
+-          DBLIB="-L${withval}/lib/db4 -ldb"
+-          DBHDR="db.h"
+-          grep 'DB_VERSION_MAJOR	4$' ${withval}/include/db4/db.h >/dev/null 2>&1
+-          S=$?
+-  fi
+-  if test $S -a -r ${withval}/include/db4.h -a \
+-          -r ${withval}/lib/libdb.a ; then
+-          DBINC="-I${withval}/include"
+-          DBLIB="-L${withval}/lib -ldb"
+-          DBHDR="db4.h"
+-          grep 'DB_VERSION_MAJOR	4$' ${withval}/include/db4.h >/dev/null 2>&1
+-          S=$?
+-  fi
+-  if test $S -a -r ${withval}/include/db.h -a \
+-          -r ${withval}/lib/libdb.a ; then
+-          DBINC="-I${withval}/include"
+-          DBLIB="-L${withval}/lib -ldb"
+-          DBHDR="db.h"
+-          grep 'DB_VERSION_MAJOR	4$' ${withval}/include/db.h >/dev/null 2>&1
+-          S=$?
+-  fi
+-  if test $S -eq 1 ; then
+-      { { echo "$as_me:$LINENO: error: Berkeley DB was not found. Please check your installation or use --with-db=DIR" >&5
+-echo "$as_me: error: Berkeley DB was not found. Please check your installation or use --with-db=DIR" >&2;}
+-   { (exit 1); exit 1; }; }
+-  fi
+-  echo "$as_me:$LINENO: result: yes" >&5
+-echo "${ECHO_T}yes" >&6
+-  esac
+-else
+-  DBINC=NO
+-  DBLIB=NO
+-  DBHDR=NO
+-  S=1
+-
+-  if test $S -a -r /usr/local/include/db4.h -a \
+-          -r /usr/local/lib/libdb.a ; then
+-          DBINC="-I/usr/local/include"
+-          DBLIB="-L/usr/local/lib -ldb"
+-          DBHDR="db4.h"
+-          grep 'DB_VERSION_MAJOR	4$' /usr/local/include/db4.h >/dev/null 2>&1
+-          S=$?
+-  fi
+-  if test $S -a -r /usr/local/include/db.h -a \
+-          -r /usr/local/lib/libdb.a ; then
+-          DBINC="-I/usr/local/include"
+-          DBLIB="-L/usr/local/lib -ldb"
+-          DBHDR="db.h"
+-          grep 'DB_VERSION_MAJOR	4$' /usr/local/include/db.h >/dev/null 2>&1
+-          S=$?
+-  fi
+-  if test $S -a -r /usr/include/db4.h -a \
+-          -r /usr/lib/libdb.a ; then
+-          DBINC=""
+-          DBLIB="-L/usr/lib -ldb"
+-          DBHDR="db4.h"
+-          grep 'DB_VERSION_MAJOR	4$' /usr/include/db4.h >/dev/null 2>&1
+-          S=$?
+-  fi
+-  if test $S -a -r /usr/include/db.h -a \
+-          -r /usr/lib/libdb.a ; then
+-          DBINC=""
+-          DBLIB="-L/usr/lib -ldb"
+-          DBHDR="db.h"
+-          grep 'DB_VERSION_MAJOR	4$' /usr/include/db.h >/dev/null 2>&1
+-          S=$?
+-  fi
+-  DIR=`ls -d ../db-4.*/. 2>/dev/null | tail -1`
+-  if test $S -a -r ${DIR}/build_unix/db4.h -a \
+-          -r "`ls ${DIR}/build_unix/.libs/libdb-4.*.a 2>/dev/null | tail -1`"; then
+-          DBINC=-I`echo ${DIR}/build_unix/`
+-          DBLIB=`ls ${DIR}/build_unix/.libs/libdb-4.*.a 2>/dev/null | tail -1`
+-          DBHDR="db4.h"
+-          grep 'DB_VERSION_MAJOR	4$' ${DIR}/build_unix/db4.h >/dev/null 2>&1
+-          S=$?
+-  fi
+-  if test $S -a -r ${DIR}/build_unix/db.h -a \
+-          -r "`ls ${DIR}/build_unix/.libs/libdb-4.*.a 2>/dev/null | tail -1`"; then
+-          DBINC=-I`echo ${DIR}/build_unix`
+-          DBLIB=`ls ${DIR}/build_unix/.libs/libdb-4.*.a 2>/dev/null | tail -1`
+-          DBHDR="db.h"
+-          grep 'DB_VERSION_MAJOR	4$' ${DIR}/build_unix/db.h >/dev/null 2>&1
+-          S=$?
+-  fi
+-
+-  if test $S -eq 1 ; then
+-      { { echo "$as_me:$LINENO: error: Berkeley DB was not found. Please check your installation or use --with-db=DIR" >&5
+-echo "$as_me: error: Berkeley DB was not found. Please check your installation or use --with-db=DIR" >&2;}
+-   { (exit 1); exit 1; }; }
+-  fi
+-  echo "$as_me:$LINENO: result: yes" >&5
+-echo "${ECHO_T}yes" >&6
+-
+-fi;
+ 
+ 
+ 

@@ -14,7 +14,7 @@ LICENSE=	PHP301
 LIB_DEPENDS=	libdrizzle.so:databases/libdrizzle
 
 USES=		php:pecl
-IGNORE_WITH_PHP=	70
+IGNORE_WITH_PHP=	70 71 72
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 

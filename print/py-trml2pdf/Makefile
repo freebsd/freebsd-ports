@@ -11,13 +11,14 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	ports@caomhin.org
 COMMENT=	Tiny RML2PDF easily creates PDF documents
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pillow>0:graphics/py-pillow \
-		${PYTHON_PKGNAMEPREFIX}reportlab1>=0:print/py-reportlab1
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pillow>0:graphics/py-pillow@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}reportlab1>=0:print/py-reportlab1@${FLAVOR}
 
 NO_BUILD=	yes
 NO_ARCH=	yes
 
-USES=		python shebangfix tar:bzip2
+USES=		python:2.7 shebangfix tar:bzip2
+USE_PYTHON=	flavors
 SHEBANG_FILES=	trml2pdf/trml2pdf.py
 
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}

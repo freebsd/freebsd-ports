@@ -65,7 +65,7 @@ DC1394_LIB_DEPENDS=	libdc1394.so:multimedia/libdc1394
 DC1394_CMAKE_BOOL=	WITH_1394
 
 EIGEN3_DESC=		Eigen 3 support
-EIGEN3_BUILD_DEPENDS=	${LOCALBASE}/include/eigen3/Eigen/Eigen:math/eigen3
+EIGEN3_USES=		eigen:3
 EIGEN3_CMAKE_BOOL=	WITH_EIGEN
 
 . if !defined(OCV_SLAVE)
@@ -142,6 +142,7 @@ LIB_DEPENDS+=	libopencv_legacy.so:graphics/opencv
 BUILD_DEPENDS+=	${PYNUMPY}
 RUN_DEPENDS+=	${PYNUMPY}
 USES+=		fortran python:2.7
+USE_PYTHON=	flavors
 CMAKE_ARGS+=	-DBUILD_opencv_python:BOOL=On
 . for module in apps java stitching superres videostab
 CMAKE_ARGS+=	-DBUILD_opencv_${module}:BOOL=Off

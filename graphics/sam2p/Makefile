@@ -13,11 +13,15 @@ COMMENT=	Converts raster (bitmap) image formats into PS or PDF files
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-#USE_GITHUB=	yes
-GH_ACCOUNT=	pts
-
 RUN_DEPENDS=	zip:archivers/zip \
 		tif22pnm:graphics/tif22pnm
+
+BROKEN_aarch64=		running make Makedep... error; configure: error: cannot compute depends
+BROKEN_armv6=		running make Makedep... error; configure: error: cannot compute depends
+BROKEN_armv7=		running make Makedep... error; configure: error: cannot compute depends
+
+#USE_GITHUB=	yes
+GH_ACCOUNT=	pts
 
 USES=		ghostscript:run gmake jpeg:run perl5
 USE_PERL5=	build

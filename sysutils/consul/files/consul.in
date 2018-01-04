@@ -37,9 +37,6 @@ command="/usr/sbin/daemon"
 command_args="-f -p ${pidfile} /usr/bin/env ${consul_env} ${procname} agent -data-dir=${consul_dir} -config-dir=%%PREFIX%%/etc/consul.d ${consul_args}"
 
 start_precmd=consul_startprecmd
-restart_precmd=consul_checkconfig
-reload_precmd=consul_checkconfig
-configtest_cmd=consul_checkconfig
 
 consul_startprecmd()
 {
@@ -50,12 +47,6 @@ consul_startprecmd()
         if [ ! -d ${consul_dir} ]; then
                 install -d -o ${consul_user} -g ${consul_group} ${consul_dir}
         fi
-	consul_checkconfig
-}
-
-consul_checkconfig()
-{
-	${procname} validate /usr/local/etc/consul.d
 }
 
 run_rc_command "$1"

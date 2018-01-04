@@ -78,12 +78,14 @@ etc/radiator/dictionary.sip
 %%SITE_PERL%%/Radius/AuthPORTLIMITCHECK.pm
 %%SITE_PERL%%/Radius/AuthPRESENCESQL.pm
 %%SITE_PERL%%/Radius/AuthRADIATORLB.pm
+%%SITE_PERL%%/Radius/AuthRADIATORPROXY.pm
 %%SITE_PERL%%/Radius/AuthRADIUS.pm
 %%SITE_PERL%%/Radius/AuthRADIUSBYATTR.pm
 %%SITE_PERL%%/Radius/AuthRADKEY.pm
 %%SITE_PERL%%/Radius/AuthRADMIN.pm
 %%SITE_PERL%%/Radius/AuthRADSEC.pm
 %%SITE_PERL%%/Radius/AuthRATELIMIT.pm
+%%SITE_PERL%%/Radius/AuthRATELIMITSOURCE.pm
 %%SITE_PERL%%/Radius/AuthRODOPI.pm
 %%SITE_PERL%%/Radius/AuthROUNDROBIN.pm
 %%SITE_PERL%%/Radius/AuthRSAAM.pm
@@ -119,6 +121,7 @@ etc/radiator/dictionary.sip
 %%SITE_PERL%%/Radius/Context.pm
 %%SITE_PERL%%/Radius/DES.pm
 %%SITE_PERL%%/Radius/DHCP.pm
+%%SITE_PERL%%/Radius/DHCPPeer.pm
 %%SITE_PERL%%/Radius/DHCPv6.pm
 %%SITE_PERL%%/Radius/DHCPv6Client.pm
 %%SITE_PERL%%/Radius/DiaAttrList.pm
@@ -188,6 +191,7 @@ etc/radiator/dictionary.sip
 %%SITE_PERL%%/Radius/Nas/Colubris.pm
 %%SITE_PERL%%/Radius/Nas/Computone.pm
 %%SITE_PERL%%/Radius/Nas/Cyclades.pm
+%%SITE_PERL%%/Radius/Nas/Generic.pm
 %%SITE_PERL%%/Radius/Nas/Hiper.pm
 %%SITE_PERL%%/Radius/Nas/Juniper.pm
 %%SITE_PERL%%/Radius/Nas/Livingston.pm
@@ -221,6 +225,7 @@ etc/radiator/dictionary.sip
 %%SITE_PERL%%/Radius/RadSec.pm
 %%SITE_PERL%%/Radius/Radius.pm
 %%SITE_PERL%%/Radius/RadiusDiameterGateway.pm
+%%SITE_PERL%%/Radius/RadiusProxyAlg.pm
 %%SITE_PERL%%/Radius/RadpwtstGui.pm
 %%SITE_PERL%%/Radius/Rcrypt.pm
 %%SITE_PERL%%/Radius/Realm.pm
@@ -262,8 +267,10 @@ etc/radiator/dictionary.sip
 %%SITE_PERL%%/Radius/Tacacsplus.pm
 %%SITE_PERL%%/Radius/User.pm
 %%SITE_PERL%%/Radius/Util.pm
+%%SITE_PERL%%/Radius/UtilClient.pm
 %%SITE_PERL%%/Radius/UtilSocket6.pm
+%%SITE_PERL%%/Radius/VSA.pm
+%%SITE_PERL%%/Radius/VSA/VendorGeneric.pm
 %%SITE_PERL%%/Radius/WiMAX.pm
 %%SITE_PERL%%/Radius/WiMAXTLV.pm
 %%SITE_PERL%%/Radius/Win32Service.pm
-%%SITE_PERL%%/radhostname.pl

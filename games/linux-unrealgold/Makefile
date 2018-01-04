@@ -34,7 +34,6 @@ OPTIONS_DEFINE=	DOCS
 CDDIRS=		Help Maps Maps/UPak Music Sounds Sounds/int System Textures
 
 .include <bsd.port.pre.mk>
-.include <bsd.port.options.mk>
 
 UT_DATADIR!=	cd ${PORTSDIR}/games/linux-ut && ${MAKE} -V DATADIR
 

@@ -11,14 +11,14 @@ COMMENT=	Helper to test WSGI applications
 
 LICENSE=	MIT
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six \
-		${PYTHON_PKGNAMEPREFIX}beautifulsoup>=4:www/py-beautifulsoup \
-		${PYTHON_PKGNAMEPREFIX}waitress>0:www/py-waitress \
-		${PYTHON_PKGNAMEPREFIX}webob>=1.2:www/py-webob
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six \
-		${PYTHON_PKGNAMEPREFIX}beautifulsoup>=4:www/py-beautifulsoup \
-		${PYTHON_PKGNAMEPREFIX}waitress>0:www/py-waitress \
-		${PYTHON_PKGNAMEPREFIX}webob>=1.2:www/py-webob
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}beautifulsoup>=4:www/py-beautifulsoup@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}waitress>0:www/py-waitress@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}webob>=1.2:www/py-webob@${FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}beautifulsoup>=4:www/py-beautifulsoup@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}waitress>0:www/py-waitress@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}webob>=1.2:www/py-webob@${FLAVOR}
 
 USE_GITHUB=	yes
 

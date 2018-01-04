@@ -1,6 +1,6 @@
---- Makefile.in.orig
+--- Makefile.in.orig	2010-03-26 07:56:17 UTC
 +++ Makefile.in
-@@ -30,11 +30,11 @@
+@@ -30,11 +30,11 @@ CTAGS=@CTAGS@
  EDITOR=@EDITOR@
  
  INSTALL=@INSTALL@
@@ -9,12 +9,12 @@
  INSTALL_DATA=@INSTALL_DATA@
  
  DEFS= @DEFS@
--OPTS= -fforce-mem -fforce-addr -fstrength-reduce -funroll-loops -finline-functions
+-OPTS= -fforce-addr -fstrength-reduce -funroll-loops -finline-functions
 +OPTS= -fstrength-reduce -funroll-loops -finline-functions
  CPPFLAGS= -I@srcdir@
  CFLAGS= ${DEFS} ${CPPFLAGS} ${OPTS} @CFLAGS@
  
-@@ -121,43 +121,43 @@
+@@ -121,43 +121,43 @@ libsxmlrpc.dylib: ${SXMLRPC_SOBJ}
  install:: check-dirs install-libsxml install-libsxmlrpc
  
  install-libsxml::
@@ -33,7 +33,7 @@
  	if [ -f ${SXML_SLIB} ]; then \
 -	  ${INSTALL} ${SXML_SLIB} ${libdir}; \
 -	  (cd ${libdir}; ${LN_S} ${SXML_SLIB} ${SXML_LIB}); \
-+	  ${INSTALL} ${SXML_SLIB} ${DESTDIR}${libdir}; \
++	  ${INSTALL_PROGRAM} ${SXML_SLIB} ${DESTDIR}${libdir}; \
 +	  (cd ${DESTDIR}${libdir}; ${LN_S} ${SXML_SLIB} ${SXML_LIB}); \
  	fi
  	if [ -f ${SXML_DYLIB} ]; then \
@@ -61,7 +61,7 @@
  	if [ -f ${SXMLRPC_SLIB} ]; then \
 -	  ${INSTALL} ${SXMLRPC_SLIB} ${libdir}; \
 -	  (cd ${libdir}; ${LN_S} ${SXMLRPC_SLIB} ${SXMLRPC_LIB}); \
-+	  ${INSTALL} ${SXMLRPC_SLIB} ${DESTDIR}${libdir}; \
++	  ${INSTALL_PROGRAM} ${SXMLRPC_SLIB} ${DESTDIR}${libdir}; \
 +	  (cd ${DESTDIR}${libdir}; ${LN_S} ${SXMLRPC_SLIB} ${SXMLRPC_LIB}); \
  	fi
  	if [ -f ${SXMLRPC_DYLIB} ]; then \
@@ -77,9 +77,9 @@
 -	@if [ ! -d ${prefix}     ]; then ${MKDIR} ${prefix};     fi
 -	@if [ ! -d ${libdir}     ]; then ${MKDIR} ${libdir};     fi
 -	@if [ ! -d ${includedir} ]; then ${MKDIR} ${includedir}; fi
-+	@if [ ! -d ${DESTDIR}${prefix}     ]; then ${MKDIR} ${DESTDIR}${prefix};     fi
-+	@if [ ! -d ${DESTDIR}${libdir}     ]; then ${MKDIR} ${DESTDIR}${libdir};     fi
-+	@if [ ! -d ${DESTDIR}${includedir} ]; then ${MKDIR} ${DESTDIR}${includedir}; fi
++	@if [ ! -d ${prefix}     ]; then ${MKDIR} ${DESTDIR}${prefix};     fi
++	@if [ ! -d ${libdir}     ]; then ${MKDIR} ${DESTDIR}${libdir};     fi
++	@if [ ! -d ${includedir} ]; then ${MKDIR} ${DESTDIR}${includedir}; fi
  
  ###############################################################################
  

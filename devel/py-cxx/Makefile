@@ -11,7 +11,7 @@ DISTNAME=	pycxx-${PORTVERSION}
 MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	Make it easier to extend Python with C++
 
-USES=		python
+USES=		python:2.7
 USE_PYTHON=	distutils pythonprefix
 PYDISTUTILS_PKGNAME=	CXX
 PYDISTUTILS_PKGVERSION=	5.3

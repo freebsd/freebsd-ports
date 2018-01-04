@@ -1,6 +1,6 @@
---- configure.orig
+--- configure.orig	2003-03-10 23:53:20 UTC
 +++ configure
-@@ -762,14 +762,14 @@
+@@ -762,14 +762,14 @@ yes)
  	libiconv=$prefix
      fi
      ICONVINC="-I$libiconv/include"
@@ -17,7 +17,7 @@
      ;;
  esac
  
-@@ -2633,7 +2633,37 @@
+@@ -2633,7 +2633,37 @@ fi
    ac_cv_flavor_gethostbyaddr=unknown
  else
    cat > conftest.$ac_ext <<EOF
@@ -56,7 +56,7 @@
  #include "confdefs.h"
  
      #include <stddef.h>
-@@ -2675,6 +2705,10 @@
+@@ -2675,6 +2705,10 @@ echo "$ac_t""$ac_cv_flavor_gethostbyaddr
  	ac_cv_type_ghba_addr_t='const char *'
  	ac_cv_type_ghba_addrlen_t='size_t'
  	;;

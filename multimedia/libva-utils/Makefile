@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libva-utils
-PORTVERSION=	1.8.3
+PORTVERSION=	2.0.0
 CATEGORIES=	multimedia
 
 MAINTAINER=	madpilot@FreeBSD.org
@@ -16,6 +16,7 @@ USES=		autoreconf gmake libtool pkgconfig tar:bzip2
 #USE_XORG=	glproto pciaccess xext xfixes
 #USE_GL=	gl
 GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	01org
@@ -26,19 +27,8 @@ GH_ACCOUNT=	01org
 
 OPTIONS_DEFINE=	DEBUG
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MDEBUG}
-CFLAGS+=	-D_DEBUG
-.else
-CFLAGS+=	-DNDEBUG
-.endif
-
-.include <bsd.port.pre.mk>
-
-.if defined(STRIP) && ${STRIP} != ""
-INSTALL_TARGET=	install-strip
-.endif
+DEBUG_CFLAGS=		-D_DEBUG
+DEBUG_CFLAGS_OFF=	-DNDEBUG
 
 #post-patch:	.SILENT
 #	${REINPLACE_CMD} -e 's|\($$libdir\)/dri|\1/va|' \
@@ -50,4 +40,4 @@ INSTALL_TARGET=	install-strip
 #		${WRKSRC}/doc/Makefile.am
 #	${REINPLACE_CMD} 's/-ldl//' ${WRKSRC}/va/Makefile.am
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -16,6 +16,10 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libenet.so:net/enet \
 		libcurl.so:ftp/curl
 
+BROKEN_aarch64=		fails to compile: OBULLET.cpp:41:9: constant expression evaluates to -1 which cannot be narrowed to type 'char'
+BROKEN_armv6=		fails to compile: OBULLET.cpp:41:9: constant expression evaluates to -1 which cannot be narrowed to type 'char'
+BROKEN_armv7=		fails to compile: OBULLET.cpp:41:9: constant expression evaluates to -1 which cannot be narrowed to type 'char'
+
 USES=		compiler:c++11-lib gmake localbase openal:al pkgconfig tar:xz
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-nls # no translations ATM

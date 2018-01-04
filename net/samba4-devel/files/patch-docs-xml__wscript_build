@@ -1,0 +1,11 @@
+diff --git a/docs-xml/wscript_build b/docs-xml/wscript_build
+index 0bd08d11cdb..6c5a74d2c73 100644
+--- docs-xml/wscript_build
++++ docs-xml/wscript_build
+@@ -160,3 +160,6 @@ if ('XSLTPROC_MANPAGES' in bld.env and bld.env['XSLTPROC_MANPAGES']):
+ 
+     if bld.CONFIG_SET('HAVE_KRB5_LOCATE_PLUGIN_H'):
+         bld.SAMBAMANPAGES(krb5_locator_manpages)
++
++    if bld.SAMBA3_IS_ENABLED_MODULE('vfs_zfsacl'):
++        bld.SAMBAMANPAGES('manpages/vfs_zfsacl.8')

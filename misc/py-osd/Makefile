@@ -13,7 +13,7 @@ MAINTAINER=	novel@FreeBSD.org
 COMMENT=	Python wrapper for osd, for displaying text on your X display
 
 LIB_DEPENDS=	libxosd.so:misc/xosd
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}twisted>=0:devel/py-twisted
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}twisted>=0:devel/py-twisted@${FLAVOR}
 
 USES=		python
 USE_PYTHON=	distutils autoplist

@@ -1,4 +1,4 @@
---- doc/man-pages/Makefile.in.orig	2016-12-14 18:28:29 UTC
+--- doc/man-pages/Makefile.in.orig	2017-12-05 14:52:48 UTC
 +++ doc/man-pages/Makefile.in
 @@ -2,6 +2,7 @@
  

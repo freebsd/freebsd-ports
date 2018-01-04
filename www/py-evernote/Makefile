@@ -12,8 +12,8 @@ COMMENT=	Evernote SDK for Python
 
 LICENSE=	BSD2CLAUSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}oauth2>0:net/py-oauth2 \
-		${PYTHON_PKGNAMEPREFIX}thrift>0:devel/py-thrift
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}oauth2>0:net/py-oauth2@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}thrift>0:devel/py-thrift@${FLAVOR}
 
 USES=		python:-2.7
 USE_PYTHON=	autoplist distutils

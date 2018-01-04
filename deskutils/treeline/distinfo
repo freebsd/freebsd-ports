@@ -1,4 +1,9 @@
-SHA256 (treeline-1.4.1.tar.gz) = d66e0fcae9bcb5e54f664381f6af73f360f9ff46c91787a126c7197fbe685489
-SIZE (treeline-1.4.1.tar.gz) = 499500
-SHA256 (httpload2.py) = 30f243207369f294eb0442bfd752dd104f82f158791b97223bbc20a6fd266593
-SIZE (httpload2.py) = 3206
+TIMESTAMP = 1512751209
+SHA256 (treeline-2.0.2.tar.gz) = 80379b6ebb5b825a02f4b8d0bb65d78f9895db5e25065f85353833e9d8ebd4c8
+SIZE (treeline-2.0.2.tar.gz) = 451377
+SHA256 (httpload.py) = 39739537bbb3e9a7969d215b919036c4b69ca6a3a09a0905e04962b7f60bc460
+SIZE (httpload.py) = 3237
+SHA256 (treepadexport.py) = 0dce2dfe5c4ef4483c79348e433ff24898ffeda3751da9d5fbd392949bd1afaa
+SIZE (treepadexport.py) = 3875
+SHA256 (updateref.py) = 409142d5d4ec7e28f025c5e7c90eefaa4b54824231ab74dab8fd877b48b0e8d8
+SIZE (updateref.py) = 4113

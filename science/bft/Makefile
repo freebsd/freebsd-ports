@@ -11,7 +11,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Code_Saturne Base Functions and Types library
 
-LICENSE=	LGPL21
+LICENSE=	LGPL21+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
@@ -26,7 +27,7 @@ pre-configure:
 	# No useful doc there
 	${REINPLACE_CMD} -e 's|tests doc|tests|' ${WRKSRC}/Makefile.in
 
-regression-test:
+do-test:
 .for pg in ${TESTSBIN}
 	(cd ${WRKSRC}/tests; ./${pg} arg1 arg2)
 .endfor

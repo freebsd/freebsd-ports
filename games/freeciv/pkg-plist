@@ -65,6 +65,7 @@ share/applications/freeciv-server.desktop
 %%PORTDOCS%%%%DOCSDIR%%/README.rulesets
 %%PORTDOCS%%%%DOCSDIR%%/README.scorelog
 %%PORTDOCS%%%%DOCSDIR%%/README.sound
+%%PORTDOCS%%%%DOCSDIR%%/README.tilesets
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 %%X11%%share/icons/hicolor/128x128/apps/freeciv-client.png
 %%X11%%share/icons/hicolor/128x128/apps/freeciv-modpack.png

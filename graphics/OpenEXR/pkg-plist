@@ -96,8 +96,8 @@ lib/libIlmImf-%%MAJORVER%%.so.%%VER%%
 lib/libIlmImf-%%MAJORVER%%.so.%%VER%%.0.0
 lib/libIlmImf.a
 lib/libIlmImf.so
-lib/libIlmImfUtil-%%MAJORVER%%.so.22
-lib/libIlmImfUtil-%%MAJORVER%%.so.22.0.0
+lib/libIlmImfUtil-%%MAJORVER%%.so.%%VER%%
+lib/libIlmImfUtil-%%MAJORVER%%.so.%%VER%%.0.0
 lib/libIlmImfUtil.a
 lib/libIlmImfUtil.so
 libdata/pkgconfig/OpenEXR.pc

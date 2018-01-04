@@ -13,9 +13,9 @@ MAINTAINER=	sergio@softshark.org
 COMMENT=	The eGenix mx Extensions - EXPERIMENTAL Package
 
 BUILD_DEPENDS=	${LOCALBASE}/include/gmp.h:math/gmp
-#RUN_DEPENDS=	${PYTHON_SITELIBDIR}/mx/BeeBase/BeeBase.py:lang/py-mx-base
+#RUN_DEPENDS=	${PYTHON_SITELIBDIR}/mx/BeeBase/BeeBase.py:lang/py-mx-base@${FLAVOR}
 
-USES=		python
+USES=		python:2.7
 USE_PYTHON=	distutils
 PYDISTUTILS_PKGNAME=	egenix-mx-experimental
 

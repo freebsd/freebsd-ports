@@ -45,7 +45,6 @@ MAKE_ARGS+=	PREFIX="${STAGEDIR}${LOCALBASE}" \
 OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.pre.mk>
-.include <bsd.port.options.mk>
 
 PLIST=		${PKGDIR}/pkg-plist.emacs20
 # depends on flim

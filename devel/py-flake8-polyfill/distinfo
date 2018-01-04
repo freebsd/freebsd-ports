@@ -1,3 +1,3 @@
-TIMESTAMP = 1486303750
-SHA256 (flake8-polyfill-1.0.1.tar.gz) = c77056b1e2cfce7b39d7634370062baf02438962a7d176ea717627b83b17f609
-SIZE (flake8-polyfill-1.0.1.tar.gz) = 8094
+TIMESTAMP = 1514842147
+SHA256 (flake8-polyfill-1.0.2.tar.gz) = e44b087597f6da52ec6393a709e7108b2905317d0c0b744cdca6208e670d8eda
+SIZE (flake8-polyfill-1.0.2.tar.gz) = 7591

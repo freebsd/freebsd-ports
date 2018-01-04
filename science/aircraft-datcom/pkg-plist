@@ -1,0 +1,4 @@
+bin/aircraft-datcom
+bin/aircraft-datcom-plot
+%%PORTDOCS%%%%DOCSDIR%%/Users'_Manual Vol_1.pdf
+%%PORTDOCS%%%%DOCSDIR%%/Users'_Manual Vol_2.pdf

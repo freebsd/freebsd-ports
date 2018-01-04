@@ -13,19 +13,18 @@ COMMENT=	Analysis and visualization toolkit for volumetric data
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING.txt
 
-BUILD_DEPENDS=	cython:lang/cython \
+BUILD_DEPENDS=	${PYNUMPY} \
+		${PYTHON_PKGNAMEPREFIX}pyembree>0:graphics/py-pyembree@${FLAVOR}
+RUN_DEPENDS=	isympy:math/py-sympy@${FLAVOR} \
 		${PYNUMPY} \
-		${PYTHON_PKGNAMEPREFIX}pyembree>0:graphics/py-pyembree
-RUN_DEPENDS=	isympy:math/py-sympy \
-		${PYNUMPY} \
-		${PYTHON_PKGNAMEPREFIX}pyembree>0:graphics/py-pyembree \
-		${PYTHON_PKGNAMEPREFIX}matplotlib>=1.5.3:math/py-matplotlib \
-		${PYTHON_PKGNAMEPREFIX}ipython>=1.0:devel/ipython
+		${PYTHON_PKGNAMEPREFIX}pyembree>0:graphics/py-pyembree@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}matplotlib>=1.5.3:math/py-matplotlib@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}ipython>=1.0:devel/ipython@${FLAVOR}
 LIB_DEPENDS=	libembree.so:graphics/embree \
 		libomp.so:devel/openmp
 
-USES=		dos2unix localbase python:-3.5
-USE_PYTHON=	autoplist distutils
+USES=		dos2unix localbase python:2.7
+USE_PYTHON=	autoplist distutils cython
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|check_for_pyembree() is not None|True|; s|check_for_openmp() is True|True|" \

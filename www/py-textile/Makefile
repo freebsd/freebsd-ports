@@ -12,8 +12,8 @@ COMMENT=	Textile markup generator written in Python
 
 LICENSE=	BSD2CLAUSE
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest-runner>0:devel/py-pytest-runner \
-		${PYTHON_PKGNAMEPREFIX}pytest>=2.8:devel/py-pytest
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest-runner>0:devel/py-pytest-runner@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pytest>=2.8:devel/py-pytest@${FLAVOR}
 
 USES=		python
 USE_PYTHON=	distutils autoplist

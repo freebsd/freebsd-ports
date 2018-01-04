@@ -1,6 +1,36 @@
---- lib/Makefile.in.orig	2009-07-13 16:56:33.000000000 -0500
-+++ lib/Makefile.in	2009-07-13 16:57:14.000000000 -0500
-@@ -241,7 +241,7 @@
+--- lib/Makefile.in.orig	2003-03-12 16:14:41 UTC
++++ lib/Makefile.in
+@@ -196,12 +196,12 @@ all: all-localdir all-subdirs
+ @LITEONLY_FALSE@all-localdir: $(LIB).la $(LITELIB).la $(SAMPLES)
+ 
+ $(LIB).la: $(OBJS)
+-	$(LIBTOOL) --mode=link $(LD) $(LDFLAGS) -o $@ \
++	$(LIBTOOL) --mode=link $(CC) $(LDFLAGS) -o $@ \
+ 	    -version-info $(LIB_CURRENT):$(LIB_REVISION):$(LIB_AGE) \
+ 	    -rpath $(libdir) $(OBJS)
+ 
+ $(TESTLIB).la: $(OBJS)
+-	$(LIBTOOL) --mode=link $(LD) $(LDFLAGS) -o $@ \
++	$(LIBTOOL) --mode=link $(CC) $(LDFLAGS) -o $@ \
+ 	    -version-info $(LIB_CURRENT):$(LIB_REVISION):$(LIB_AGE) \
+ 	    -rpath $(libdir) $(OBJS)
+ 
+@@ -219,12 +219,12 @@ resconflite.lo: resconf.c
+ 	    -c $(srcdir)/resconf.c
+ 
+ $(LITELIB).la: $(LITELIB_OBJS)
+-	$(LIBTOOL) --mode=link $(LD) $(LDFLAGS) -o $@ \
++	$(LIBTOOL) --mode=link $(CC) $(LDFLAGS) -o $@ \
+ 	    -version-info $(LIB_CURRENT):$(LIB_REVISION):$(LIB_AGE) \
+ 	    -rpath $(libdir) $(LITELIB_OBJS)
+ 
+ $(TESTLITELIB).la: $(LITELIB_OBJS)
+-	$(LIBTOOL) --mode=link $(LD) $(LDFLAGS) -o $@ \
++	$(LIBTOOL) --mode=link $(CC) $(LDFLAGS) -o $@ \
+ 	    -version-info $(LIB_CURRENT):$(LIB_REVISION):$(LIB_AGE) \
+ 	    -rpath $(libdir) $(LITELIB_OBJS)
+ 
+@@ -241,7 +241,7 @@ install: install-localdir install-subdir
  
  install-common:
  	$(MKINSTALLDIRS) $(DESTDIR)$(libdir)
@@ -9,7 +39,7 @@
  	    $(DESTDIR)$(libdir)/$(LITELIB).la
  	-[ -f $(DESTDIR)$(libdir)/$(LITELIB).a ] \
  	    && $(RANLIB) $(DESTDIR)$(libdir)/$(LITELIB).a
-@@ -262,7 +262,7 @@
+@@ -262,7 +262,7 @@ install-common:
  
  install-nolite:
  	$(MKINSTALLDIRS) $(DESTDIR)$(libdir)

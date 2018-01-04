@@ -13,7 +13,7 @@ COMMENT=	Python dict that keeps keys in insertion sorted order
 
 LICENSE=	MIT
 
-USES=		python
+USES=		python:2.7
 USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>

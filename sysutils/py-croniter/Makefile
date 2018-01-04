@@ -12,7 +12,7 @@ COMMENT=	Iteration support for datetime objects with cron like format
 
 LICENSE=	MIT
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dateutil>=1.5:devel/py-dateutil
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dateutil>=1.5:devel/py-dateutil@${FLAVOR}
 
 USES=		python zip
 USE_PYTHON=	distutils autoplist

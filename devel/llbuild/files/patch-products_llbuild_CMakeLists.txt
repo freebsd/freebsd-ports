@@ -1,9 +1,9 @@
---- products/llbuild/CMakeLists.txt.orig	2016-10-20 04:49:37 UTC
+--- products/llbuild/CMakeLists.txt.orig	2017-12-05 12:40:29 UTC
 +++ products/llbuild/CMakeLists.txt
-@@ -11,3 +11,14 @@ target_link_libraries(llbuild
-   sqlite3
-   curses
-   )
+@@ -13,3 +13,14 @@ target_link_libraries(llbuild
+ if(NOT ${CMAKE_SYSTEM_NAME} STREQUAL "Windows")
+   target_link_libraries(llbuild curses)
+ endif()
 +
 +install(TARGETS llbuild
 +        COMPONENT llbuild

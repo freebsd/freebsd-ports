@@ -9,6 +9,8 @@ DISTNAME=	pcgen${PORTVERSION:S/.//g}_full
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Java-based RPG character generator and maintenance program
 
+LICENSE=	LGPL21
+
 USES=		zip
 WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION:S/.//g}
 USE_JAVA=	yes

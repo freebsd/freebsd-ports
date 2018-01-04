@@ -12,11 +12,11 @@ COMMENT=	Enterprise scalable realtime graphing platform
 
 LICENSE=	APACHE20
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cairo>=1.8.10:graphics/py-cairo \
-		${PYTHON_PKGNAMEPREFIX}carbon>=${PORTVERSION}:databases/py-carbon \
-		${PYTHON_PKGNAMEPREFIX}django18>=1.4:www/py-django18 \
-		${PYTHON_PKGNAMEPREFIX}django-tagging>=0.3.1:www/py-django-tagging \
-		${PYTHON_PKGNAMEPREFIX}pytz>0:devel/py-pytz \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cairo>=1.8.10:graphics/py-cairo@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}carbon>=${PORTVERSION}:databases/py-carbon@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}django18>=1.4:www/py-django18@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}django-tagging>=0.3.1:www/py-django-tagging@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pytz>0:devel/py-pytz@${FLAVOR} \
 		xorg-fonts-truetype>=0:x11-fonts/xorg-fonts-truetype
 
 FETCH_ARGS=	-o ${DISTNAME}${EXTRACT_SUFX}

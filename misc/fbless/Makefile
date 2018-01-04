@@ -10,7 +10,7 @@ COMMENT=	Text-mode fb2 books reader
 
 LICENSE=	GPLv2
 
-USES=		python
+USES=		python:2.7
 USE_PYTHON=	distutils
 USE_GITHUB=	yes
 GH_ACCOUNT=	matimatik

@@ -10,20 +10,18 @@ MASTER_SITES=	SF/${PORTNAME}/Open%20Yahtzee/Open%20Yahtzee%20${PORTVERSION}
 MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	Full-featured classic dice game Yahtzee
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/scoped_ptr.hpp:devel/boost-libs
 
-USES=		compiler:c++11-lib tar:bzip2
+USES=		compiler:c++11-lib localbase:ldflags tar:bzip2
+USE_CXXSTD=	c++11
 USE_WX=		2.8
 WX_CONF_ARGS=	absolute
 GNU_CONFIGURE=	yes
 
-CXXFLAGS+=	-I${LOCALBASE}/include -std=c++11
-LDFLAGS+=	-L${LOCALBASE}/lib
-
-DESKTOP_ENTRIES="Open Yahtzee" "${COMMENT}" "${LOCALBASE}/share/pixmaps/openyahtzee.png" \
+DESKTOP_ENTRIES="Open Yahtzee" "" "${LOCALBASE}/share/pixmaps/openyahtzee.png" \
 		"${PORTNAME}" "Game;" false
 
 PLIST_FILES=	bin/openyahtzee \

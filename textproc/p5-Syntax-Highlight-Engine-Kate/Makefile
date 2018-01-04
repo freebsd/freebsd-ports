@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Syntax-Highlight-Engine-Kate
-PORTVERSION=	0.12
+PORTVERSION=	0.13
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-

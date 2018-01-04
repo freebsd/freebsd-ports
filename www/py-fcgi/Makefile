@@ -14,7 +14,7 @@ EXTRACT_ONLY=	#
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python FastCGI interface library
 
-USES=		python
+USES=		python:2.7
 NO_WRKSUBDIR=	yes
 
 post-extract:

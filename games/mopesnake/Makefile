@@ -21,7 +21,7 @@ RUN_DEPENDS=	${PYGAME}
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-pc-${DISTVERSION}
 
-USES=		python zip
+USES=		python:2.7 zip
 NO_ARCH=	yes
 
 PORTDOCS=	index.html

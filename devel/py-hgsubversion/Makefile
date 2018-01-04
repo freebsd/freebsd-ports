@@ -22,9 +22,9 @@ USE_PYTHON=	autoplist distutils
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSUBVERTPY}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}subvertpy>=0:devel/py-subvertpy
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}subvertpy>=0:devel/py-subvertpy@${FLAVOR}
 .else
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}subversion>=0:devel/py-subversion
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}subversion>=0:devel/py-subversion@${FLAVOR}
 .endif
 
 .include <bsd.port.mk>

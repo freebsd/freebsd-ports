@@ -13,7 +13,7 @@ COMMENT=	Plugin core for use by pytest-cov, nose-cov and nose2-cov
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}coverage>=3.6:devel/py-coverage
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}coverage>=3.6:devel/py-coverage@${FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist distutils

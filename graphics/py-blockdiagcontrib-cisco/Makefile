@@ -9,7 +9,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Networking shapes for blockdiag designed by Cisco
 
-RUN_DEPENDS=	${PKGNAMEPREFIX}blockdiag>=0.8.0:graphics/py-blockdiag
+RUN_DEPENDS=	${PKGNAMEPREFIX}blockdiag>=0.8.0:graphics/py-blockdiag@${FLAVOR}
 
 USES=		python:2
 USE_PYTHON=	distutils autoplist

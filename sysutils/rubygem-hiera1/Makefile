@@ -18,6 +18,9 @@ RUN_DEPENDS=	rubygem-json_pure>=0:devel/rubygem-json_pure
 
 CONFLICTS_INSTALL=	rubygem-hiera-*
 
+DEPRECATED=	Use sysutils/rubygem-hiera instead
+EXPIRATION_DATE=2018-01-31
+
 NO_ARCH=	yes
 
 USE_RUBY=	yes

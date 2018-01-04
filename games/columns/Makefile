@@ -22,6 +22,8 @@ GNU_CONFIGURE=	yes
 DATADIR=	${PREFIX}/share/Columns
 PORTDOCS=	README
 
+CONFLICTS_INSTALL=	autogen
+
 OPTIONS_DEFINE=	DOCS
 
 post-configure:

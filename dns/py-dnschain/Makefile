@@ -12,7 +12,7 @@ COMMENT=	Library for looking up blockchain data via DNSChain
 
 LICENSE=	MPL20
 
-USES=		python
+USES=		python:2.7
 USE_PYTHON=	autoplist distutils
 NO_ARCH=	yes
 

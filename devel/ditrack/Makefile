@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	svn:devel/subversion
 
-USES=		python shebangfix tar:tgz
+USES=		python:2.7 shebangfix tar:tgz
 SHEBANG_FILES=	upgrade-0.7-db.py
 USE_PYTHON=	distutils
 PYDISTUTILS_PKGNAME=	DITrack

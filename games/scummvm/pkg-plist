@@ -25,6 +25,7 @@ share/pixmaps/scummvm.xpm
 %%DATADIR%%/scummmodern.zip
 %%DATADIR%%/sky.cpt
 %%DATADIR%%/teenagent.dat
+%%DATADIR%%/titanic.dat
 %%DATADIR%%/tony.dat
 %%DATADIR%%/toon.dat
 %%DATADIR%%/translations.dat

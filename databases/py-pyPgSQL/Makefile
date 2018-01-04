@@ -15,7 +15,7 @@ BROKEN=		Invalid checksum
 
 RUN_DEPENDS=	${DATETIME_DEP}:lang/py-mx-base
 
-USES=	pgsql python
+USES=	pgsql python:2.7
 USE_PYTHON=	distutils
 
 DOCS=		Announce ChangeLog README README.html

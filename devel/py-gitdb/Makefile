@@ -14,9 +14,14 @@ COMMENT=	Pure Python git object database
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}smmap>=0.8.5:devel/py-smmap
+DEPRECATED=	Use devel/py-gitdb2 instead
+EXPIRATION_DATE=2018-01-31
 
-USES=		python
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}smmap>=0.8.5:devel/py-smmap@${FLAVOR}
+
+CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}gitdb2
+
+USES=		python:2.7
 USE_PYTHON=	autoplist distutils
 
 post-install:

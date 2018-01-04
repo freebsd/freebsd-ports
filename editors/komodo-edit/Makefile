@@ -4,7 +4,8 @@
 PORTNAME=	komodo-edit
 PORTVERSION=	10.2.2
 CATEGORIES=	editors
-MASTER_SITES=	http://downloads.activestate.com/Komodo/releases/${PORTVERSION}/
+MASTER_SITES=	http://downloads.activestate.com/Komodo/releases/${PORTVERSION}/ \
+		http://downloads.activestate.com/Komodo/releases/archive/${PORTVERSION:R:R}.x/${PORTVERSION}/
 DISTNAME=	Komodo-Edit-${PORTVERSION}-17703-linux-x86
 
 MAINTAINER=	allanjude@FreeBSD.org

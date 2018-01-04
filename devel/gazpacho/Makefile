@@ -3,7 +3,7 @@
 
 PORTNAME=	gazpacho
 PORTVERSION=	0.7.2
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	devel python
 MASTER_SITES=	GNOME/sources/gazpacho/${PORTVERSION:R}
 
@@ -13,10 +13,10 @@ COMMENT=	GUI builder for the GTK+ toolkit
 LICENSE=	LGPL21+ # source mentions LGPL20+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}kiwi-gtk>=0:x11-toolkits/py-kiwi-gtk
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}kiwi-gtk>=0:x11-toolkits/py-kiwi-gtk@${FLAVOR}
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USES=		desktop-file-utils gettext python
+USES=		desktop-file-utils gettext python:2.7
 USE_GNOME=	pygtk2
 USE_PYTHON=	distutils
 NO_BUILD=	yes
@@ -28,6 +28,9 @@ OPTIONS_DEFINE=	DOCS EXAMPLES
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|share/doc/gazpacho/examples|${EXAMPLESDIR}|g' ${WRKSRC}/setup.py
+
+post-install:
+	${INSTALL_DATA} ${WRKSRC}/gazpacho.desktop ${STAGEDIR}${PREFIX}/share/applications/
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

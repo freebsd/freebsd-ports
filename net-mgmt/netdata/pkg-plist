@@ -22,7 +22,9 @@
 @sample(netdata,netdata,0640) %%ETCDIR%%/fping.conf.sample
 @sample(netdata,netdata,0640) %%ETCDIR%%/health.d/apache.conf.sample
 @sample(netdata,netdata,0640) %%ETCDIR%%/health.d/backend.conf.sample
+@sample(netdata,netdata,0640) %%ETCDIR%%/health.d/beanstalkd.conf.sample
 @sample(netdata,netdata,0640) %%ETCDIR%%/health.d/bind_rndc.conf.sample
+@sample(netdata,netdata,0640) %%ETCDIR%%/health.d/couchdb.conf.sample
 @sample(netdata,netdata,0640) %%ETCDIR%%/health.d/cpu.conf.sample
 @sample(netdata,netdata,0640) %%ETCDIR%%/health.d/disks.conf.sample
 @sample(netdata,netdata,0640) %%ETCDIR%%/health.d/elasticsearch.conf.sample
@@ -51,6 +53,10 @@
 @sample(netdata,netdata,0640) %%ETCDIR%%/health.d/softnet.conf.sample
 @sample(netdata,netdata,0640) %%ETCDIR%%/health.d/squid.conf.sample
 @sample(netdata,netdata,0640) %%ETCDIR%%/health.d/swap.conf.sample
+@sample(netdata,netdata,0640) %%ETCDIR%%/health.d/tcp_conn.conf.sample
+@sample(netdata,netdata,0640) %%ETCDIR%%/health.d/tcp_listen.conf.sample
+@sample(netdata,netdata,0640) %%ETCDIR%%/health.d/tcp_mem.conf.sample
+@sample(netdata,netdata,0640) %%ETCDIR%%/health.d/tcp_orphans.conf.sample
 @sample(netdata,netdata,0640) %%ETCDIR%%/health.d/tcp_resets.conf.sample
 @sample(netdata,netdata,0640) %%ETCDIR%%/health.d/udp_errors.conf.sample
 @sample(netdata,netdata,0640) %%ETCDIR%%/health.d/varnish.conf.sample
@@ -73,12 +79,14 @@
 @group
 @sample(netdata,netdata,0640) %%ETCDIR%%/python.d.conf.sample
 @sample(netdata,netdata,0640) %%ETCDIR%%/python.d/apache.conf.sample
-@sample(netdata,netdata,0640) %%ETCDIR%%/python.d/apache_cache.conf.sample
+@sample(netdata,netdata,0640) %%ETCDIR%%/python.d/beanstalk.conf.sample
 @sample(netdata,netdata,0640) %%ETCDIR%%/python.d/bind_rndc.conf.sample
 @sample(netdata,netdata,0640) %%ETCDIR%%/python.d/chrony.conf.sample
+@sample(netdata,netdata,0640) %%ETCDIR%%/python.d/couchdb.conf.sample
 @sample(netdata,netdata,0640) %%ETCDIR%%/python.d/cpufreq.conf.sample
 @sample(netdata,netdata,0640) %%ETCDIR%%/python.d/dovecot.conf.sample
 @sample(netdata,netdata,0640) %%ETCDIR%%/python.d/dns_query_time.conf.sample
+@sample(netdata,netdata,0640) %%ETCDIR%%/python.d/dnsdist.conf.sample
 @sample(netdata,netdata,0640) %%ETCDIR%%/python.d/elasticsearch.conf.sample
 @sample(netdata,netdata,0640) %%ETCDIR%%/python.d/example.conf.sample
 @sample(netdata,netdata,0640) %%ETCDIR%%/python.d/exim.conf.sample
@@ -99,6 +107,7 @@
 @sample(netdata,netdata,0640) %%ETCDIR%%/python.d/phpfpm.conf.sample
 @sample(netdata,netdata,0640) %%ETCDIR%%/python.d/postfix.conf.sample
 @sample(netdata,netdata,0640) %%ETCDIR%%/python.d/postgres.conf.sample
+@sample(netdata,netdata,0640) %%ETCDIR%%/python.d/powerdns.conf.sample
 @sample(netdata,netdata,0640) %%ETCDIR%%/python.d/rabbitmq.conf.sample
 @sample(netdata,netdata,0640) %%ETCDIR%%/python.d/redis.conf.sample
 @sample(netdata,netdata,0640) %%ETCDIR%%/python.d/retroshare.conf.sample
@@ -153,6 +162,7 @@ libexec/netdata/plugins.d/alarm-notify.sh
 libexec/netdata/plugins.d/alarm-test.sh
 libexec/netdata/plugins.d/apps.plugin
 libexec/netdata/plugins.d/cgroup-name.sh
+libexec/netdata/plugins.d/cgroup-network-helper.sh
 libexec/netdata/plugins.d/charts.d.dryrun-helper.sh
 libexec/netdata/plugins.d/charts.d.plugin
 libexec/netdata/plugins.d/fping.plugin
@@ -163,12 +173,14 @@ libexec/netdata/plugins.d/python.d.plugin
 libexec/netdata/plugins.d/tc-qos-helper.sh
 libexec/netdata/python.d/README.md
 libexec/netdata/python.d/apache.chart.py
-libexec/netdata/python.d/apache_cache.chart.py
+libexec/netdata/python.d/beanstalk.chart.py
 libexec/netdata/python.d/bind_rndc.chart.py
 libexec/netdata/python.d/chrony.chart.py
+libexec/netdata/python.d/couchdb.chart.py
 libexec/netdata/python.d/cpufreq.chart.py
 libexec/netdata/python.d/cpuidle.chart.py
 libexec/netdata/python.d/dns_query_time.chart.py
+libexec/netdata/python.d/dnsdist.chart.py
 libexec/netdata/python.d/dovecot.chart.py
 libexec/netdata/python.d/elasticsearch.chart.py
 libexec/netdata/python.d/example.chart.py
@@ -190,11 +202,22 @@ libexec/netdata/python.d/ovpn_status_log.chart.py
 libexec/netdata/python.d/phpfpm.chart.py
 libexec/netdata/python.d/postfix.chart.py
 libexec/netdata/python.d/postgres.chart.py
+libexec/netdata/python.d/powerdns.chart.py
 libexec/netdata/python.d/python-modules-installer.sh
 libexec/netdata/python.d/python_modules/__init__.py
 libexec/netdata/python.d/python_modules/base.py
-libexec/netdata/python.d/python_modules/lm_sensors.py
-libexec/netdata/python.d/python_modules/msg.py
+libexec/netdata/python.d/python_modules/bases/FrameworkServices/ExecutableService.py
+libexec/netdata/python.d/python_modules/bases/FrameworkServices/LogService.py
+libexec/netdata/python.d/python_modules/bases/FrameworkServices/MySQLService.py
+libexec/netdata/python.d/python_modules/bases/FrameworkServices/SimpleService.py
+libexec/netdata/python.d/python_modules/bases/FrameworkServices/SocketService.py
+libexec/netdata/python.d/python_modules/bases/FrameworkServices/UrlService.py
+libexec/netdata/python.d/python_modules/bases/FrameworkServices/__init__.py
+libexec/netdata/python.d/python_modules/bases/__init__.py
+libexec/netdata/python.d/python_modules/bases/charts.py
+libexec/netdata/python.d/python_modules/bases/collection.py
+libexec/netdata/python.d/python_modules/bases/loaders.py
+libexec/netdata/python.d/python_modules/bases/loggers.py
 libexec/netdata/python.d/python_modules/pyyaml2/__init__.py
 libexec/netdata/python.d/python_modules/pyyaml2/composer.py
 libexec/netdata/python.d/python_modules/pyyaml2/constructor.py
@@ -229,6 +252,9 @@ libexec/netdata/python.d/python_modules/pyyaml3/resolver.py
 libexec/netdata/python.d/python_modules/pyyaml3/scanner.py
 libexec/netdata/python.d/python_modules/pyyaml3/serializer.py
 libexec/netdata/python.d/python_modules/pyyaml3/tokens.py
+libexec/netdata/python.d/python_modules/third_party/__init__.py
+libexec/netdata/python.d/python_modules/third_party/lm_sensors.py
+libexec/netdata/python.d/python_modules/third_party/ordereddict.py
 libexec/netdata/python.d/python_modules/urllib3/__init__.py
 libexec/netdata/python.d/python_modules/urllib3/_collections.py
 libexec/netdata/python.d/python_modules/urllib3/connection.py
@@ -239,7 +265,7 @@ libexec/netdata/python.d/python_modules/urllib3/contrib/_securetransport/binding
 libexec/netdata/python.d/python_modules/urllib3/contrib/_securetransport/low_level.py
 libexec/netdata/python.d/python_modules/urllib3/contrib/appengine.py
 libexec/netdata/python.d/python_modules/urllib3/contrib/ntlmpool.py
-libexec/netdata/python.d/python_modules/urllib3/contrib/%%PYTHON_PYOEXTENSION%%penssl.py
+libexec/netdata/python.d/python_modules/urllib3/contrib/pyopenssl.py
 libexec/netdata/python.d/python_modules/urllib3/contrib/securetransport.py
 libexec/netdata/python.d/python_modules/urllib3/contrib/socks.py
 libexec/netdata/python.d/python_modules/urllib3/exceptions.py
@@ -282,10 +308,10 @@ sbin/netdata
 %%DATADIR%%/web/.well-known/dnt/cookies
 %%DATADIR%%/web/css/bootstrap-3.3.7.css
 %%DATADIR%%/web/css/bootstrap-slate-flat-3.3.7.css
+%%DATADIR%%/web/css/bootstrap-slider-10.0.0.min.css
 %%DATADIR%%/web/css/bootstrap-theme-3.3.7.min.css
 %%DATADIR%%/web/css/bootstrap-toggle-2.2.2.min.css
 %%DATADIR%%/web/css/c3-0.4.11.min.css
-%%DATADIR%%/web/css/font-awesome.min.css
 %%DATADIR%%/web/css/morris-0.5.1.css
 %%DATADIR%%/web/dashboard.css
 %%DATADIR%%/web/dashboard.html
@@ -298,12 +324,6 @@ sbin/netdata
 %%DATADIR%%/web/demosites.html
 %%DATADIR%%/web/demosites2.html
 %%DATADIR%%/web/favicon.ico
-%%DATADIR%%/web/fonts/FontAwesome.otf
-%%DATADIR%%/web/fonts/fontawesome-webfont.eot
-%%DATADIR%%/web/fonts/fontawesome-webfont.svg
-%%DATADIR%%/web/fonts/fontawesome-webfont.ttf
-%%DATADIR%%/web/fonts/fontawesome-webfont.woff
-%%DATADIR%%/web/fonts/fontawesome-webfont.woff2
 %%DATADIR%%/web/fonts/glyphicons-halflings-regular.eot
 %%DATADIR%%/web/fonts/glyphicons-halflings-regular.svg
 %%DATADIR%%/web/fonts/glyphicons-halflings-regular.ttf
@@ -333,6 +353,7 @@ sbin/netdata
 %%DATADIR%%/web/index.html
 %%DATADIR%%/web/infographic.html
 %%DATADIR%%/web/lib/bootstrap-3.3.7.min.js
+%%DATADIR%%/web/lib/bootstrap-slider-10.0.0.min.js
 %%DATADIR%%/web/lib/bootstrap-table-1.11.0.min.js
 %%DATADIR%%/web/lib/bootstrap-table-export-1.11.0.min.js
 %%DATADIR%%/web/lib/bootstrap-toggle-2.2.2.min.js
@@ -340,12 +361,15 @@ sbin/netdata
 %%DATADIR%%/web/lib/d3-3.5.17.min.js
 %%DATADIR%%/web/lib/dygraph-combined-dd74404.js
 %%DATADIR%%/web/lib/dygraph-smooth-plotter-dd74404.js
+%%DATADIR%%/web/lib/fontawesome-all-5.0.1.min.js
 %%DATADIR%%/web/lib/gauge-1.3.2.min.js
 %%DATADIR%%/web/lib/jquery-2.2.4.min.js
 %%DATADIR%%/web/lib/jquery.easypiechart-97b5824.min.js
 %%DATADIR%%/web/lib/jquery.peity-3.2.0.min.js
 %%DATADIR%%/web/lib/jquery.sparkline-2.1.2.min.js
+%%DATADIR%%/web/lib/lz-string-1.4.4.min.js
 %%DATADIR%%/web/lib/morris-0.5.1.min.js
+%%DATADIR%%/web/lib/pako-1.0.6.min.js
 %%DATADIR%%/web/lib/perfect-scrollbar-0.6.15.min.js
 %%DATADIR%%/web/lib/raphael-2.2.4-min.js
 %%DATADIR%%/web/lib/tableExport-1.6.0.min.js

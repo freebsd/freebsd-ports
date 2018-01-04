@@ -1,0 +1,16 @@
+
+The configuration file is in %%ETCDIR%%/stikked.php
+
+This package contains a true_paste feature which has been sent
+upstream but has not yet been included.
+
+There are the minimal configuration items:
+
+Set driver to one of:
+
+* 'postgre'
+* 'mysqli'
+* 'sqlite'
+
+Set appropriate values in the 'Database connection' section.
+

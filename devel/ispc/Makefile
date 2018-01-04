@@ -4,6 +4,7 @@
 PORTNAME=	ispc
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.9.2
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -15,14 +16,14 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 ONLY_FOR_ARCHS=		amd64 i386
 ONLY_FOR_ARCHS_REASON=	only available for x86 architectures
 
-BUILD_DEPENDS=	clang${CLANG_VERSION}:lang/clang${CLANG_VERSION}
+BUILD_DEPENDS=	clang${CLANG_VERSION}:devel/llvm${CLANG_VERSION}
 
 USES=		bison gmake python:build shebangfix
 USE_GITHUB=	yes
 
 ALL_TARGET=	default
 MAKE_ENV=	LLVM_HOME="${LOCALBASE}"
-CLANG_VERSION=	38
+CLANG_VERSION=	50
 SHEBANG_FILES=	*.py
 
 MAKE_ARGS=	LLVM_CONFIG=${LOCALBASE}/bin/llvm-config${CLANG_VERSION} \
@@ -34,6 +35,10 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|python|${PYTHON_CMD}| ; s|@$$(C|$$(C|' \
 		${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e '/alloca\.h/d' ${WRKSRC}/util.cpp
+.if ${CLANG_VERSION} >= 50
+	@${REINPLACE_CMD} -e '/^LLVM_LIBS=/s|$$| -lexecinfo|' \
+		${WRKSRC}/Makefile
+.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ispc ${STAGEDIR}${PREFIX}/bin

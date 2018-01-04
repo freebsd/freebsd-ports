@@ -17,7 +17,7 @@ LIB_DEPENDS=	libtre.so:textproc/libtre
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
-USES=		python tar:bzip2
+USES=		python:2.7 tar:bzip2
 USE_PYTHON=	distutils autoplist
 
 BUILD_WRKSRC=	${WRKSRC}/python

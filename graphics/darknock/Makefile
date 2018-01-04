@@ -20,22 +20,18 @@ USE_QT4=	gui linguisttools_build moc_build rcc_build uic_build
 PORTDOCS=	changelog
 PLIST_FILES=	bin/darknock share/pixmaps/darknock.png
 
-DESKTOP_ENTRIES=	"${PORTNAME}" \
-			"${COMMENT}" \
-			"${PREFIX}/share/pixmaps/${PORTNAME}.png" \
-			"${PORTNAME}" \
-			"Graphics;Qt;" \
-			"true"
+DESKTOP_ENTRIES="${PORTNAME}" \
+		"" \
+		"${PREFIX}/share/pixmaps/${PORTNAME}.png" \
+		"${PORTNAME}" \
+		"Graphics;Qt;" \
+		"true"
 
 OPTIONS_DEFINE=	DOCS NLS
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MNLS}
 .for lang in fr it pl ro sv tr
-PLIST_FILES+=	%%DATADIR%%/locale/darknock_${lang}.qm
+NLS_PLIST_FILES+=	%%DATADIR%%/locale/darknock_${lang}.qm
 .endfor
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/share/darknock|${DATADIR}|g' \
@@ -47,13 +43,13 @@ pre-configure:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/images/${PORTNAME}.png ${STAGEDIR}${PREFIX}/share/pixmaps
-.if ${PORT_OPTIONS:MNLS}
+
+do-install-NLS-on:
 	@${MKDIR} ${STAGEDIR}${DATADIR}/locale
 	${INSTALL_DATA} ${WRKSRC}/locale/*.qm ${STAGEDIR}${DATADIR}/locale
-.endif
-.if ${PORT_OPTIONS:MDOCS}
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/changelog ${STAGEDIR}${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>

@@ -13,6 +13,8 @@ COMMENT=	Introspection bindings for libical
 LIB_DEPENDS=	libical.so:devel/libical
 
 BROKEN=		Does not build with libical >= 2.0
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2018-01-27
 
 USES=		compiler:c11 gettext gmake libtool pathfix pkgconfig tar:xz
 USE_GNOME=	glib20 introspection:build libxml2

@@ -5,20 +5,23 @@ PORTNAME=	tuxpuck
 PORTVERSION=	0.8.2
 PORTREVISION=	23
 CATEGORIES=	games
-MASTER_SITES=	http://www.sourcefiles.org/Games/Sports/Miscellaneous/
+MASTER_SITES=	# disappeared
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Shufflepuck Cafe Clone
 
 LICENSE=	GPLv2
 
+DEPRECATED=	Mastersite disappeared
+EXPIRATION_DATE=	2018-03-01
+
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libogg.so:audio/libogg \
 		libvorbis.so:audio/libvorbis \
 		libfreetype.so:print/freetype2
 
-USE_SDL=	sdl
 USES=		gmake jpeg
+USE_SDL=	sdl
 ALL_TARGET=	${PORTNAME}
 MAKE_JOBS_UNSAFE=	yes
 

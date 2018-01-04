@@ -21,7 +21,7 @@ LIB_DEPENDS=	libenchant.so:textproc/enchant \
 		libicutu.so:devel/icu \
 		libharfbuzz.so:print/harfbuzz \
 		libharfbuzz-icu.so:print/harfbuzz-icu \
-		libpng16.so:graphics/png \
+		libpng.so:graphics/png \
 		libwebp.so:graphics/webp \
 		libcurl.so:ftp/curl \
 		libsoup-2.4.so:devel/libsoup \

@@ -13,23 +13,21 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 BUILD_DEPENDS=	${PYNUMPY} \
-		${LOCALBASE}/bin/cython:lang/cython \
-		${PYTHON_PKGNAMEPREFIX}six>=1.4:devel/py-six \
-		${PYTHON_PKGNAMEPREFIX}scipy>=0.9:science/py-scipy \
-		${PYTHON_PKGNAMEPREFIX}numpydoc>=0.6:textproc/py-numpydoc
+		${PYTHON_PKGNAMEPREFIX}six>=1.4:devel/py-six@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}scipy>=0.9:science/py-scipy@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}numpydoc>=0.6:textproc/py-numpydoc@${FLAVOR}
 RUN_DEPENDS=	${PYNUMPY} \
-		${LOCALBASE}/bin/cython:lang/cython \
-		${PYTHON_PKGNAMEPREFIX}six>=1.4:devel/py-six \
-		${PYTHON_PKGNAMEPREFIX}scipy>=0.9:science/py-scipy \
-		${PYTHON_PKGNAMEPREFIX}numpydoc>=0.6:textproc/py-numpydoc \
-		${PYTHON_PKGNAMEPREFIX}pillow>=1.7:graphics/py-pillow \
-		${PYTHON_PKGNAMEPREFIX}networkx>=1.8:math/py-networkx \
-		${PYTHON_PKGNAMEPREFIX}matplotlib>=1.1:math/py-matplotlib \
-		${PYTHON_PKGNAMEPREFIX}PyWavelets>=0.4:math/py-PyWavelets
+		${PYTHON_PKGNAMEPREFIX}six>=1.4:devel/py-six@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}scipy>=0.9:science/py-scipy@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}numpydoc>=0.6:textproc/py-numpydoc@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pillow>=1.7:graphics/py-pillow@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}networkx>=1.8:math/py-networkx@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}matplotlib>=1.1:math/py-matplotlib@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}PyWavelets>=0.4:math/py-PyWavelets@${FLAVOR}
 
-USES=		cpe python
+USES=		cpe python:2.7
 USE_GITHUB=	yes
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	autoplist distutils cython cython_run
 
 PYDISTUTILS_BUILD_TARGET=	build build_ext
 PYDISTUTILS_BUILDARGS+=		saveopts

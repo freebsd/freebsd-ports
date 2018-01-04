@@ -3,7 +3,7 @@
 
 PORTNAME=	quilt
 PORTVERSION=	0.65
-PORTSREVISION=	2
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	SAVANNAH
 
@@ -11,6 +11,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Collection of bash scripts to ease working with patch files
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	bash:shells/bash \
 		gcp:sysutils/coreutils \
@@ -26,10 +27,6 @@ RUN_DEPENDS:=	${BUILD_DEPENDS} \
 USES=		desthack gmake perl5
 NO_ARCH=	yes
 
-OPTIONS_DEFINE=	RPMBUILD DOCS NLS
-OPTIONS_SUB=	yes
-RPMBUILD_DESC=	rpmbuild support
-
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-sed=${LOCALBASE}/bin/gsed \
 		--without-getopt \
@@ -39,12 +36,16 @@ CONFIGURE_ARGS=	--with-sed=${LOCALBASE}/bin/gsed \
 
 PORTDOCS=	README README.MAIL quilt.pdf
 
+OPTIONS_DEFINE=	RPMBUILD DOCS NLS
+OPTIONS_SUB=	yes
+RPMBUILD_DESC=	rpmbuild support
+
 RPMBUILD_BUILD_DEPENDS=	rpm:archivers/rpm4
 RPMBUILD_RUN_DEPENDS=	rpm:archivers/rpm4
-RPMBUILD_CONFIGURE_OFF=	--without-rpmbuild
+RPMBUILD_CONFIGURE_WITH=rpmbuild
 
 NLS_USES=		gettext
-NLS_CONFIGURE_OFF=	--disable-nls
+NLS_CONFIGURE_ENABLE=	nls
 
 DOCS_EXTRA_PATCHES_OFF=	${PATCHDIR}/extra-patch-Makefile.in
 

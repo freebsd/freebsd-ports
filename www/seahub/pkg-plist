@@ -167,7 +167,7 @@
 %%SEAHUBDIR%%/media/assets/scripts/app/models/invitation.js
 %%SEAHUBDIR%%/media/assets/scripts/app/models/pub-repo.3f52334f11d8.js
 %%SEAHUBDIR%%/media/assets/scripts/app/models/pub-repo.js
-%%SEAHUBDIR%%/media/assets/scripts/app/models/repo.aa8c0bb5b31e.js
+%%SEAHUBDIR%%/media/assets/scripts/app/models/repo.0107fad33a90.js
 %%SEAHUBDIR%%/media/assets/scripts/app/models/repo.js
 %%SEAHUBDIR%%/media/assets/scripts/app/models/share-admin-folder.982c3cf07a5b.js
 %%SEAHUBDIR%%/media/assets/scripts/app/models/share-admin-folder.js
@@ -187,15 +187,15 @@
 %%SEAHUBDIR%%/media/assets/scripts/app/views/activities.js
 %%SEAHUBDIR%%/media/assets/scripts/app/views/activity-item.bea485958936.js
 %%SEAHUBDIR%%/media/assets/scripts/app/views/activity-item.js
-%%SEAHUBDIR%%/media/assets/scripts/app/views/add-group-repo.54094112928d.js
+%%SEAHUBDIR%%/media/assets/scripts/app/views/add-group-repo.421c65cb2a57.js
 %%SEAHUBDIR%%/media/assets/scripts/app/views/add-group-repo.js
 %%SEAHUBDIR%%/media/assets/scripts/app/views/add-pub-repo.6e432a7b9e31.js
 %%SEAHUBDIR%%/media/assets/scripts/app/views/add-pub-repo.js
 %%SEAHUBDIR%%/media/assets/scripts/app/views/add-pubrepo-item.83b33d2ec341.js
 %%SEAHUBDIR%%/media/assets/scripts/app/views/add-pubrepo-item.js
-%%SEAHUBDIR%%/media/assets/scripts/app/views/add-repo.2f36e08971d2.js
+%%SEAHUBDIR%%/media/assets/scripts/app/views/add-repo.00014b4db1ba.js
 %%SEAHUBDIR%%/media/assets/scripts/app/views/add-repo.js
-%%SEAHUBDIR%%/media/assets/scripts/app/views/create-pub-repo.1e0da660b6c5.js
+%%SEAHUBDIR%%/media/assets/scripts/app/views/create-pub-repo.a8a55f502d9e.js
 %%SEAHUBDIR%%/media/assets/scripts/app/views/create-pub-repo.js
 %%SEAHUBDIR%%/media/assets/scripts/app/views/deleted-repo.2d15376c9faf.js
 %%SEAHUBDIR%%/media/assets/scripts/app/views/deleted-repo.js
@@ -217,7 +217,7 @@
 %%SEAHUBDIR%%/media/assets/scripts/app/views/dialogs/repo-history-settings.js
 %%SEAHUBDIR%%/media/assets/scripts/app/views/dialogs/repo-share-link-admin.69b3699a5c20.js
 %%SEAHUBDIR%%/media/assets/scripts/app/views/dialogs/repo-share-link-admin.js
-%%SEAHUBDIR%%/media/assets/scripts/app/views/dir.2526116a077f.js
+%%SEAHUBDIR%%/media/assets/scripts/app/views/dir.4c60628e3348.js
 %%SEAHUBDIR%%/media/assets/scripts/app/views/dir.js
 %%SEAHUBDIR%%/media/assets/scripts/app/views/dirent-details.346773d1083c.js
 %%SEAHUBDIR%%/media/assets/scripts/app/views/dirent-details.js
@@ -229,7 +229,7 @@
 %%SEAHUBDIR%%/media/assets/scripts/app/views/file-comment.js
 %%SEAHUBDIR%%/media/assets/scripts/app/views/file-comments.ae44060542dc.js
 %%SEAHUBDIR%%/media/assets/scripts/app/views/file-comments.js
-%%SEAHUBDIR%%/media/assets/scripts/app/views/fileupload.0237979487bb.js
+%%SEAHUBDIR%%/media/assets/scripts/app/views/fileupload.049aac3276c0.js
 %%SEAHUBDIR%%/media/assets/scripts/app/views/fileupload.js
 %%SEAHUBDIR%%/media/assets/scripts/app/views/folder-perm.356001e438d1.js
 %%SEAHUBDIR%%/media/assets/scripts/app/views/folder-perm.js
@@ -251,7 +251,7 @@
 %%SEAHUBDIR%%/media/assets/scripts/app/views/group-members.js
 %%SEAHUBDIR%%/media/assets/scripts/app/views/group-repo.36d38b85baca.js
 %%SEAHUBDIR%%/media/assets/scripts/app/views/group-repo.js
-%%SEAHUBDIR%%/media/assets/scripts/app/views/group-settings.54474821c0ee.js
+%%SEAHUBDIR%%/media/assets/scripts/app/views/group-settings.9568b4537cdb.js
 %%SEAHUBDIR%%/media/assets/scripts/app/views/group-settings.js
 %%SEAHUBDIR%%/media/assets/scripts/app/views/group.492d9dabef8c.js
 %%SEAHUBDIR%%/media/assets/scripts/app/views/group.js
@@ -285,7 +285,7 @@
 %%SEAHUBDIR%%/media/assets/scripts/app/views/share-admin-folder.js
 %%SEAHUBDIR%%/media/assets/scripts/app/views/share-admin-folders.a6ff47989ba5.js
 %%SEAHUBDIR%%/media/assets/scripts/app/views/share-admin-folders.js
-%%SEAHUBDIR%%/media/assets/scripts/app/views/share-admin-repo.2c28d31f78eb.js
+%%SEAHUBDIR%%/media/assets/scripts/app/views/share-admin-repo.3116ca93e4e7.js
 %%SEAHUBDIR%%/media/assets/scripts/app/views/share-admin-repo.js
 %%SEAHUBDIR%%/media/assets/scripts/app/views/share-admin-repos.e2b964af5a8f.js
 %%SEAHUBDIR%%/media/assets/scripts/app/views/share-admin-repos.js
@@ -297,7 +297,7 @@
 %%SEAHUBDIR%%/media/assets/scripts/app/views/share-admin-upload-link.js
 %%SEAHUBDIR%%/media/assets/scripts/app/views/share-admin-upload-links.bb406c0f1843.js
 %%SEAHUBDIR%%/media/assets/scripts/app/views/share-admin-upload-links.js
-%%SEAHUBDIR%%/media/assets/scripts/app/views/share.40b076bf64ea.js
+%%SEAHUBDIR%%/media/assets/scripts/app/views/share.7e1dc5d93639.js
 %%SEAHUBDIR%%/media/assets/scripts/app/views/share.js
 %%SEAHUBDIR%%/media/assets/scripts/app/views/shared-repo.887016f9da47.js
 %%SEAHUBDIR%%/media/assets/scripts/app/views/shared-repo.js
@@ -315,7 +315,7 @@
 %%SEAHUBDIR%%/media/assets/scripts/app/views/widgets/popover.js
 %%SEAHUBDIR%%/media/assets/scripts/build.a0552a4ed8dc.js
 %%SEAHUBDIR%%/media/assets/scripts/build.js
-%%SEAHUBDIR%%/media/assets/scripts/common.ae223b00c632.js
+%%SEAHUBDIR%%/media/assets/scripts/common.ec612ea79889.js
 %%SEAHUBDIR%%/media/assets/scripts/common.js
 %%SEAHUBDIR%%/media/assets/scripts/dist/build.00c133b18e9e.txt
 %%SEAHUBDIR%%/media/assets/scripts/dist/build.d9508a510082.js
@@ -387,9 +387,9 @@
 %%SEAHUBDIR%%/media/assets/scripts/dist/lib/jquery.iframe-transport.js
 %%SEAHUBDIR%%/media/assets/scripts/dist/lib/require.75e6d0132deb.js
 %%SEAHUBDIR%%/media/assets/scripts/dist/lib/require.js
-%%SEAHUBDIR%%/media/assets/scripts/dist/main.48792e8c6fb0.js
+%%SEAHUBDIR%%/media/assets/scripts/dist/main.7d53cc8ae55a.js
 %%SEAHUBDIR%%/media/assets/scripts/dist/main.js
-%%SEAHUBDIR%%/media/assets/scripts/dist/sysadmin-main.9b7e528270f9.js
+%%SEAHUBDIR%%/media/assets/scripts/dist/sysadmin-main.8c0c961e6f32.js
 %%SEAHUBDIR%%/media/assets/scripts/dist/sysadmin-main.js
 %%SEAHUBDIR%%/media/assets/scripts/file-tree.ef8a19e97e35.js
 %%SEAHUBDIR%%/media/assets/scripts/file-tree.js
@@ -399,7 +399,7 @@
 %%SEAHUBDIR%%/media/assets/scripts/i18n/ca/djangojs.js
 %%SEAHUBDIR%%/media/assets/scripts/i18n/cs/djangojs.9dbef50d1ad9.js
 %%SEAHUBDIR%%/media/assets/scripts/i18n/cs/djangojs.js
-%%SEAHUBDIR%%/media/assets/scripts/i18n/de/djangojs.23fee097d616.js
+%%SEAHUBDIR%%/media/assets/scripts/i18n/de/djangojs.12a5583dba40.js
 %%SEAHUBDIR%%/media/assets/scripts/i18n/de/djangojs.js
 %%SEAHUBDIR%%/media/assets/scripts/i18n/el/djangojs.30265339e750.js
 %%SEAHUBDIR%%/media/assets/scripts/i18n/el/djangojs.js
@@ -413,7 +413,7 @@
 %%SEAHUBDIR%%/media/assets/scripts/i18n/es/djangojs.js
 %%SEAHUBDIR%%/media/assets/scripts/i18n/fi/djangojs.799e628eacb2.js
 %%SEAHUBDIR%%/media/assets/scripts/i18n/fi/djangojs.js
-%%SEAHUBDIR%%/media/assets/scripts/i18n/fr/djangojs.f90e47da71e4.js
+%%SEAHUBDIR%%/media/assets/scripts/i18n/fr/djangojs.ed920db95a16.js
 %%SEAHUBDIR%%/media/assets/scripts/i18n/fr/djangojs.js
 %%SEAHUBDIR%%/media/assets/scripts/i18n/he/djangojs.f701701595f1.js
 %%SEAHUBDIR%%/media/assets/scripts/i18n/he/djangojs.js
@@ -431,7 +431,7 @@
 %%SEAHUBDIR%%/media/assets/scripts/i18n/lv/djangojs.js
 %%SEAHUBDIR%%/media/assets/scripts/i18n/nl/djangojs.b3c580d87d21.js
 %%SEAHUBDIR%%/media/assets/scripts/i18n/nl/djangojs.js
-%%SEAHUBDIR%%/media/assets/scripts/i18n/pl/djangojs.d590b729280e.js
+%%SEAHUBDIR%%/media/assets/scripts/i18n/pl/djangojs.d672b47df45f.js
 %%SEAHUBDIR%%/media/assets/scripts/i18n/pl/djangojs.js
 %%SEAHUBDIR%%/media/assets/scripts/i18n/pt-br/djangojs.7ed00277fd1b.js
 %%SEAHUBDIR%%/media/assets/scripts/i18n/pt-br/djangojs.js
@@ -441,7 +441,7 @@
 %%SEAHUBDIR%%/media/assets/scripts/i18n/sk/djangojs.js
 %%SEAHUBDIR%%/media/assets/scripts/i18n/sl/djangojs.b4d2169424f0.js
 %%SEAHUBDIR%%/media/assets/scripts/i18n/sl/djangojs.js
-%%SEAHUBDIR%%/media/assets/scripts/i18n/sv/djangojs.318fcdbb2ec8.js
+%%SEAHUBDIR%%/media/assets/scripts/i18n/sv/djangojs.3e3accb77c80.js
 %%SEAHUBDIR%%/media/assets/scripts/i18n/sv/djangojs.js
 %%SEAHUBDIR%%/media/assets/scripts/i18n/th/djangojs.f53496bdd5ff.js
 %%SEAHUBDIR%%/media/assets/scripts/i18n/th/djangojs.js
@@ -585,7 +585,7 @@
 %%SEAHUBDIR%%/media/assets/scripts/sysadmin-app/views/device-trusted-ipaddresses.js
 %%SEAHUBDIR%%/media/assets/scripts/sysadmin-app/views/device.ef1bef7c60ea.js
 %%SEAHUBDIR%%/media/assets/scripts/sysadmin-app/views/device.js
-%%SEAHUBDIR%%/media/assets/scripts/sysadmin-app/views/dir.1aa7c70e53d0.js
+%%SEAHUBDIR%%/media/assets/scripts/sysadmin-app/views/dir.a8f8afc3d704.js
 %%SEAHUBDIR%%/media/assets/scripts/sysadmin-app/views/dir.js
 %%SEAHUBDIR%%/media/assets/scripts/sysadmin-app/views/dirent.46ace69d5584.js
 %%SEAHUBDIR%%/media/assets/scripts/sysadmin-app/views/dirent.js
@@ -699,7 +699,6 @@
 %%SEAHUBDIR%%/media/img/file/24/word.png
 %%SEAHUBDIR%%/media/img/folder-192.png
 %%SEAHUBDIR%%/media/img/folder-24.png
-%%SEAHUBDIR%%/media/img/folder-beige-192.png
 %%SEAHUBDIR%%/media/img/folder-read-only-192.png
 %%SEAHUBDIR%%/media/img/folder-read-only-24.png
 %%SEAHUBDIR%%/media/img/grid-white.png
@@ -857,9 +856,11 @@
 %%SEAHUBDIR%%/seahub/api2/endpoints/file_comment.py
 %%SEAHUBDIR%%/seahub/api2/endpoints/file_comments.py
 %%SEAHUBDIR%%/seahub/api2/endpoints/file_comments_counts.py
+%%SEAHUBDIR%%/seahub/api2/endpoints/file_history.py
 %%SEAHUBDIR%%/seahub/api2/endpoints/file_tag.py
 %%SEAHUBDIR%%/seahub/api2/endpoints/group_discussion.py
 %%SEAHUBDIR%%/seahub/api2/endpoints/group_discussions.py
+%%SEAHUBDIR%%/seahub/api2/endpoints/group_libraries.py
 %%SEAHUBDIR%%/seahub/api2/endpoints/group_members.py
 %%SEAHUBDIR%%/seahub/api2/endpoints/groups.py
 %%SEAHUBDIR%%/seahub/api2/endpoints/invitation.py
@@ -964,6 +965,7 @@
 %%SEAHUBDIR%%/seahub/base/management/__init__.py
 %%SEAHUBDIR%%/seahub/base/management/commands/__init__.py
 %%SEAHUBDIR%%/seahub/base/management/commands/changepassword.py
+%%SEAHUBDIR%%/seahub/base/management/commands/clear_invalid_repo_data.py
 %%SEAHUBDIR%%/seahub/base/management/commands/createsuperuser.py
 %%SEAHUBDIR%%/seahub/base/management/commands/export_users.py
 %%SEAHUBDIR%%/seahub/base/middleware.py
@@ -1083,6 +1085,14 @@
 %%SEAHUBDIR%%/seahub/notifications/urls.py
 %%SEAHUBDIR%%/seahub/notifications/utils.py
 %%SEAHUBDIR%%/seahub/notifications/views.py
+%%SEAHUBDIR%%/seahub/oauth/__init__.py
+%%SEAHUBDIR%%/seahub/oauth/admin.py
+%%SEAHUBDIR%%/seahub/oauth/backends.py
+%%SEAHUBDIR%%/seahub/oauth/migrations/__init__.py
+%%SEAHUBDIR%%/seahub/oauth/models.py
+%%SEAHUBDIR%%/seahub/oauth/tests.py
+%%SEAHUBDIR%%/seahub/oauth/urls.py
+%%SEAHUBDIR%%/seahub/oauth/views.py
 %%SEAHUBDIR%%/seahub/onlyoffice/__init__.py
 %%SEAHUBDIR%%/seahub/onlyoffice/admin.py
 %%SEAHUBDIR%%/seahub/onlyoffice/migrations/__init__.py
@@ -1234,6 +1244,7 @@
 %%SEAHUBDIR%%/seahub/templates/sysadmin/sys_inst_info_user.html
 %%SEAHUBDIR%%/seahub/templates/sysadmin/sys_inst_search_user.html
 %%SEAHUBDIR%%/seahub/templates/sysadmin/sys_invitations_admin.html
+%%SEAHUBDIR%%/seahub/templates/sysadmin/sys_link_search.html
 %%SEAHUBDIR%%/seahub/templates/sysadmin/sys_org_admin.html
 %%SEAHUBDIR%%/seahub/templates/sysadmin/sys_org_info_base.html
 %%SEAHUBDIR%%/seahub/templates/sysadmin/sys_org_info_group.html
@@ -1248,6 +1259,7 @@
 %%SEAHUBDIR%%/seahub/templates/sysadmin/sys_statistic_user.html
 %%SEAHUBDIR%%/seahub/templates/sysadmin/sys_terms_admin.html
 %%SEAHUBDIR%%/seahub/templates/sysadmin/sys_trafficadmin.html
+%%SEAHUBDIR%%/seahub/templates/sysadmin/sys_upload_link_admin.html
 %%SEAHUBDIR%%/seahub/templates/sysadmin/sys_user_admin_ldap_imported.html
 %%SEAHUBDIR%%/seahub/templates/sysadmin/sys_useradmin.html
 %%SEAHUBDIR%%/seahub/templates/sysadmin/sys_useradmin_admins.html
@@ -1319,17 +1331,6 @@
 %%SEAHUBDIR%%/seahub/two_factor/gateways/twilio/middleware.py
 %%SEAHUBDIR%%/seahub/two_factor/gateways/twilio/urls.py
 %%SEAHUBDIR%%/seahub/two_factor/gateways/twilio/views.py
-%%SEAHUBDIR%%/seahub/two_factor/locale/ar/LC_MESSAGES/django.po
-%%SEAHUBDIR%%/seahub/two_factor/locale/de/LC_MESSAGES/django.po
-%%SEAHUBDIR%%/seahub/two_factor/locale/en/LC_MESSAGES/django.po
-%%SEAHUBDIR%%/seahub/two_factor/locale/en_GB/LC_MESSAGES/django.po
-%%SEAHUBDIR%%/seahub/two_factor/locale/es/LC_MESSAGES/django.po
-%%SEAHUBDIR%%/seahub/two_factor/locale/fr/LC_MESSAGES/django.po
-%%SEAHUBDIR%%/seahub/two_factor/locale/he_IL/LC_MESSAGES/django.po
-%%SEAHUBDIR%%/seahub/two_factor/locale/nl/LC_MESSAGES/django.po
-%%SEAHUBDIR%%/seahub/two_factor/locale/pt_BR/LC_MESSAGES/django.po
-%%SEAHUBDIR%%/seahub/two_factor/locale/sv/LC_MESSAGES/django.po
-%%SEAHUBDIR%%/seahub/two_factor/locale/zh_CN/LC_MESSAGES/django.po
 %%SEAHUBDIR%%/seahub/two_factor/management/__init__.py
 %%SEAHUBDIR%%/seahub/two_factor/management/commands/__init__.py
 %%SEAHUBDIR%%/seahub/two_factor/management/commands/two_factor_disable.py
@@ -1365,6 +1366,7 @@
 %%SEAHUBDIR%%/seahub/urls.py
 %%SEAHUBDIR%%/seahub/utils/__init__.py
 %%SEAHUBDIR%%/seahub/utils/devices.py
+%%SEAHUBDIR%%/seahub/utils/file_revisions.py
 %%SEAHUBDIR%%/seahub/utils/file_size.py
 %%SEAHUBDIR%%/seahub/utils/file_types.py
 %%SEAHUBDIR%%/seahub/utils/html.py
@@ -1526,8 +1528,11 @@
 %%SEAHUBDIR%%/static/scripts/build.js
 %%SEAHUBDIR%%/static/scripts/common.js
 %%SEAHUBDIR%%/static/scripts/file-tree.js
+%%SEAHUBDIR%%/static/scripts/i18n/ar/djangojs.js
 %%SEAHUBDIR%%/static/scripts/i18n/ca/djangojs.js
+%%SEAHUBDIR%%/static/scripts/i18n/cs/djangojs.js
 %%SEAHUBDIR%%/static/scripts/i18n/de/djangojs.js
+%%SEAHUBDIR%%/static/scripts/i18n/el/djangojs.js
 %%SEAHUBDIR%%/static/scripts/i18n/en/djangojs.js
 %%SEAHUBDIR%%/static/scripts/i18n/es-ar/djangojs.js
 %%SEAHUBDIR%%/static/scripts/i18n/es-mx/djangojs.js
@@ -1551,6 +1556,7 @@
 %%SEAHUBDIR%%/static/scripts/i18n/th/djangojs.js
 %%SEAHUBDIR%%/static/scripts/i18n/tr/djangojs.js
 %%SEAHUBDIR%%/static/scripts/i18n/uk/djangojs.js
+%%SEAHUBDIR%%/static/scripts/i18n/vi/djangojs.js
 %%SEAHUBDIR%%/static/scripts/i18n/zh-cn/djangojs.js
 %%SEAHUBDIR%%/static/scripts/i18n/zh-tw/djangojs.js
 %%SEAHUBDIR%%/static/scripts/lib/backbone.js
@@ -1683,10 +1689,12 @@
 %%SEAHUBDIR%%/tests/api/endpoints/test_file_comment.py
 %%SEAHUBDIR%%/tests/api/endpoints/test_file_comments.py
 %%SEAHUBDIR%%/tests/api/endpoints/test_file_comments_counts.py
+%%SEAHUBDIR%%/tests/api/endpoints/test_file_history.py
 %%SEAHUBDIR%%/tests/api/endpoints/test_file_tag.py
 %%SEAHUBDIR%%/tests/api/endpoints/test_file_view.py
 %%SEAHUBDIR%%/tests/api/endpoints/test_group_discussion.py
 %%SEAHUBDIR%%/tests/api/endpoints/test_group_discussions.py
+%%SEAHUBDIR%%/tests/api/endpoints/test_group_libraries.py
 %%SEAHUBDIR%%/tests/api/endpoints/test_group_members.py
 %%SEAHUBDIR%%/tests/api/endpoints/test_groups.py
 %%SEAHUBDIR%%/tests/api/endpoints/test_invitation.py
@@ -1834,6 +1842,7 @@
 %%SEAHUBDIR%%/tests/seahub/views/repo/test_repo_history_view.py
 %%SEAHUBDIR%%/tests/seahub/views/repo/test_shared_dir.py
 %%SEAHUBDIR%%/tests/seahub/views/repo/test_shared_upload_link.py
+%%SEAHUBDIR%%/tests/seahub/views/sysadmin/test_link_search.py
 %%SEAHUBDIR%%/tests/seahub/views/sysadmin/test_sys_inst_admin.py
 %%SEAHUBDIR%%/tests/seahub/views/sysadmin/test_sys_inst_info_admins.py
 %%SEAHUBDIR%%/tests/seahub/views/sysadmin/test_sys_inst_info_user.py

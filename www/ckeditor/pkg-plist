@@ -89,6 +89,7 @@
 %%WWWDIR%%/plugins/a11yhelp/dialogs/lang/de-ch.js
 %%WWWDIR%%/plugins/a11yhelp/dialogs/lang/de.js
 %%WWWDIR%%/plugins/a11yhelp/dialogs/lang/el.js
+%%WWWDIR%%/plugins/a11yhelp/dialogs/lang/en-au.js
 %%WWWDIR%%/plugins/a11yhelp/dialogs/lang/en-gb.js
 %%WWWDIR%%/plugins/a11yhelp/dialogs/lang/en.js
 %%WWWDIR%%/plugins/a11yhelp/dialogs/lang/eo.js
@@ -288,6 +289,7 @@
 %%WWWDIR%%/plugins/specialchar/dialogs/lang/pl.js
 %%WWWDIR%%/plugins/specialchar/dialogs/lang/pt-br.js
 %%WWWDIR%%/plugins/specialchar/dialogs/lang/pt.js
+%%WWWDIR%%/plugins/specialchar/dialogs/lang/ro.js
 %%WWWDIR%%/plugins/specialchar/dialogs/lang/ru.js
 %%WWWDIR%%/plugins/specialchar/dialogs/lang/si.js
 %%WWWDIR%%/plugins/specialchar/dialogs/lang/sk.js
@@ -312,6 +314,7 @@
 %%WWWDIR%%/plugins/templates/templates/images/template1.gif
 %%WWWDIR%%/plugins/templates/templates/images/template2.gif
 %%WWWDIR%%/plugins/templates/templates/images/template3.gif
+%%WWWDIR%%/plugins/widget/images/handle.png
 %%WWWDIR%%/plugins/wsc/LICENSE.md
 %%WWWDIR%%/plugins/wsc/README.md
 %%WWWDIR%%/plugins/wsc/dialogs/ciframe.html

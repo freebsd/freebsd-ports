@@ -11,7 +11,7 @@ DISTNAME=	jabberpy-${PORTVERSION}-0
 MAINTAINER=	flz@FreeBSD.org
 COMMENT=	Python Jabber library
 
-USES=		python
+USES=		python:2.7
 USE_PYTHON=	distutils autoplist
 PLIST_FILES=	${PYTHONPREFIX_SITELIBDIR:S;${PREFIX}/;;}/jabber.pth
 

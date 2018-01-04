@@ -1,5 +1,6 @@
 bin/kwalletd5
 bin/kwallet-query
+etc/xdg/kwallet.categories
 include/KF5/KWallet/KWallet
 include/KF5/KWallet/kwallet.h
 include/KF5/KWallet/kwallet_export.h

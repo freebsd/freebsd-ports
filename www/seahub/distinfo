@@ -1,3 +1,5 @@
-TIMESTAMP = 1507925081
-SHA256 (haiwen-seahub-v6.2.0-pro_GH0.tar.gz) = c5c04a6d6ff7e868a5f69342167191c32f505e19960d79e9b6bbfced5e20048b
-SIZE (haiwen-seahub-v6.2.0-pro_GH0.tar.gz) = 9341508
+TIMESTAMP = 1513799169
+SHA256 (/usr/ports/distfiles) = bb2afa1715d8499e891d117d8432cfafa8def2488869f160d9fe70cb90e4ec65
+SIZE (/usr/ports/distfiles) = 373
+SHA256 (haiwen-seahub-v6.2.4-pro_GH0.tar.gz) = ca09cfe5e8587c0548a50e029af43826af89def82f6e611168baefc92672910b
+SIZE (haiwen-seahub-v6.2.4-pro_GH0.tar.gz) = 9443199

@@ -10,6 +10,8 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-devel/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	NetOffice is a free web based project-management environment
 
+IGNORE_WITH_PHP=	70 71 72
+
 NO_BUILD=	yes
 NO_ARCH=	yes
 USES=		php:web mysql

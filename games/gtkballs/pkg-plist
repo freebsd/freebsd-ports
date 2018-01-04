@@ -1,12 +1,7 @@
-bin/gtkballs
+@(,games,2555) bin/gtkballs
 man/man6/gtkballs.6x.gz
 %%DATADIR%%/COPYING
 %%DATADIR%%/gtkballs-logo.png
-@group games
-@mode 664
-%%DATADIR%%/gtkballs-scores
-@mode
-@group
 %%DATADIR%%/gtkballs_16x16.png
 %%DATADIR%%/themes/5balls-Big/blue.xpm
 %%DATADIR%%/themes/5balls-Big/blue_destroy1.xpm
@@ -533,3 +528,4 @@ man/man6/gtkballs.6x.gz
 %%NLS%%share/locale/pl/LC_MESSAGES/gtkballs.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/gtkballs.mo
 share/pixmaps/gtkballs.png
+@sample(,games,664) /var/games/gtkballs-scores.sample

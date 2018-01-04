@@ -16,11 +16,11 @@ LICENSE_COMB=	multi
 LICENSE_FILE_GPLv2=	${WRKSRC}/LICENSE-CODE.txt
 LICENSE_FILE_MIT=	${WRKSRC}/LICENSE-MEDIA.txt
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pygame/__init__.py:devel/py-game
+RUN_DEPENDS=	${PYGAME}
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USES=		python:run zip
+USES=		python:2.7,run zip
 NO_BUILD=	yes
 NO_ARCH=	yes
 

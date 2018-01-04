@@ -1,9 +1,0 @@
-%%PYTHON_SITELIBDIR%%/dbx/__init__.py
-%%PYTHON_SITELIBDIR%%/dbx/__init__.pyc
-%%PYTHON_SITELIBDIR%%/dbx/__init__.pyo
-%%PYTHON_SITELIBDIR%%/dbx/mysql.py
-%%PYTHON_SITELIBDIR%%/dbx/mysql.pyc
-%%PYTHON_SITELIBDIR%%/dbx/mysql.pyo
-%%PYTHON_SITELIBDIR%%/dbx/sqlite.py
-%%PYTHON_SITELIBDIR%%/dbx/sqlite.pyc
-%%PYTHON_SITELIBDIR%%/dbx/sqlite.pyo

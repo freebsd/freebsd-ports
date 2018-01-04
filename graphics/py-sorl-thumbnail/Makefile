@@ -13,12 +13,12 @@ COMMENT=	Sorl-thumbnail provides an easy way to generate image thumbnails
 
 LICENSE=	BSD3CLAUSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pillow>0:graphics/py-pillow
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pillow>0:graphics/py-pillow@${FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist distutils
 
-DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
+DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}@${FLAVOR}
 
 OPTIONS_DEFINE=	DJANGO PDF WORD
 DJANGO_DESC=	Enable Django
@@ -30,7 +30,7 @@ OPTIONS_DEFAULT=	DJANGO
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDJANGO}
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/django/bin/django-admin.py:www/py-django18
+RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/django/bin/django-admin.py:www/py-django18@${FLAVOR}
 .endif
 
 .if ${PORT_OPTIONS:MPDF}

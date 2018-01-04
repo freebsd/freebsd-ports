@@ -14,10 +14,6 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		python
-USE_PYTHON=	distutils
-
-PLIST_FILES=	%%PYTHON_SITELIBDIR%%/munkres.py \
-		%%PYTHON_SITELIBDIR%%/munkres.pyc \
-		%%PYTHON_SITELIBDIR%%/munkres.pyo
+USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

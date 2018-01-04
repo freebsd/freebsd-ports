@@ -14,12 +14,14 @@ COMMENT=	Python implementation of an Erlang node
 LICENSE=	LGPL20
 
 USES=			python
-USE_PYTHON=		distutils
+USE_PYTHON=		distutils autoplist
 PYDISTUTILS_PKGNAME=	py_${PORTNAME}
 DOCSDIR=	${PREFIX}/share/doc/py_${PORTNAME}
 # EXAMPLESDIR=	${PREFIX}/share/examples/py_${PORTNAME}
 
 OPTIONS_DEFINE=	DOCS
+
+PORTDOCS=	README
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

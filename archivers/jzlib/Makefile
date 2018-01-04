@@ -9,9 +9,13 @@ MASTER_SITES=	http://www.jcraft.com/jzlib/
 MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	Reimplementation of zlib in pure Java
 
+LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
+
 USES=		zip
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
+NO_ARCH=	yes
 
 JAR_FILE=	${WRKSRC}/src/main/java/${PORTNAME}.jar
 
@@ -26,12 +30,16 @@ do-build:
 		${JAR} -cf ${PORTNAME}.jar
 
 do-install:
+	${INSTALL_DATA} ${JAR_FILE} ${STAGEDIR}/${JAVAJARDIR}/${PORTNAME}.jar
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}/${DOCSDIR}
 .for file in ChangeLog LICENSE.txt README
-	@${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}/${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}/${DOCSDIR}
 .endfor
+
+do-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}/${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/example/* ${STAGEDIR}/${EXAMPLESDIR}
-	${INSTALL_DATA} ${JAR_FILE} ${STAGEDIR}/${JAVAJARDIR}/${PORTNAME}.jar
 
 .include <bsd.port.mk>

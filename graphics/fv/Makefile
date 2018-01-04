@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Viewer of hdr/pfm images
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
 
 LIB_DEPENDS=	libpng.so:graphics/png
 
@@ -28,11 +28,7 @@ PLIST_FILES=	bin/${PORTNAME}
 
 OPTIONS_DEFINE=	DEBUG DOCS
 
-.include <bsd.port.options.mk>
-
-.if ! ${PORT_OPTIONS:MDEBUG}
-CXXFLAGS+=	-DNDEBUG
-.endif
+DEBUG_CXXFLAGS_OFF=	-DNDEBUG
 
 post-patch:
 	@${REINPLACE_CMD} -e \
@@ -42,6 +38,8 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 

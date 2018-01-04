@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	bareos-webui
-PORTVERSION=	16.2.6
+PORTVERSION=	16.2.7
 DISTVERSIONPREFIX=	Release/
 CATEGORIES=	www sysutils
 
@@ -17,7 +17,7 @@ GH_ACCOUNT=	bareos
 GH_PROJECT=	bareos-webui
 
 USES=		php
-USE_PHP=	openssl
+USE_PHP=	openssl gettext
 NO_BUILD=	yes
 NO_ARCH=	yes
 

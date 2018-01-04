@@ -1,0 +1,13 @@
+This software analyzes all files of your project and collect all PHP classes,
+functions and constants found in your project. For the collection of classes,
+functions and constants it determined all modules of PHP needed to be installed
+on the webserver for your project.
+
+To display the result of the analyze you can choose different ways. One way is
+to display an output on your command line. But what do you do if you don't have
+a command line access on the server you want to test?  Then you use the testfile
+generator of aPHPbreakdown! It generates a testfile you can upload to the
+webserver, or sent it to you customer to upload it, and run it very simple in
+the browser.
+
+WWW: http://gitlab.code-mesa.com/code-mesa/aphpbreakdown/

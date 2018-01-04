@@ -11,7 +11,7 @@ DISTNAME=	SilverCity-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lexing package for over 20 programming and markup languages
 
-USES=		dos2unix python
+USES=		dos2unix python:2.7
 USE_PYTHON=	distutils
 PYDISTUTILS_PKGNAME=	SilverCity
 

@@ -17,4 +17,4 @@ Comparison between 'htop' and 'top'
 	* In 'htop' you can kill multiple processes at once.
 	* 'top' is older, hence, more tested.
 
-WWW: http://htop.sourceforge.net/
+WWW: http://hisham.hm/htop/

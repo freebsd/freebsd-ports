@@ -11,7 +11,7 @@ DISTNAME=	pyXLWriter-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python library for generating Excel-compatible spreadsheets
 
-USES=		python zip
+USES=		python:2.7 zip
 USE_PYTHON=	distutils autoplist
 
 PORTEXAMPLES=	*

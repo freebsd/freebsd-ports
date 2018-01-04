@@ -1,4 +1,4 @@
---- fdtoverlay.c.orig	2017-11-27 12:39:15 UTC
+--- fdtoverlay.c.orig	2017-09-27 10:00:10 UTC
 +++ fdtoverlay.c
 @@ -26,7 +26,9 @@
  #include <stdio.h>

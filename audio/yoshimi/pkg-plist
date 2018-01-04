@@ -27,6 +27,7 @@ share/applications/yoshimi.desktop
 %%PORTDOCS%%%%DOCSDIR%%/Histories/Yoshimi_1.5.1-features.txt
 %%PORTDOCS%%%%DOCSDIR%%/Histories/Yoshimi_1.5.2-features.txt
 %%PORTDOCS%%%%DOCSDIR%%/Histories/Yoshimi_1.5.3-features.txt
+%%PORTDOCS%%%%DOCSDIR%%/Histories/Yoshimi_1.5.4_features.txt
 %%PORTDOCS%%%%DOCSDIR%%/Histories/Yoshimi_License_History.txt
 %%PORTDOCS%%%%DOCSDIR%%/Histories/Zyn_ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/Histories/Zyn_HISTORY.txt
@@ -47,10 +48,10 @@ share/applications/yoshimi.desktop
 %%PORTDOCS%%%%DOCSDIR%%/Vector_Control.txt
 %%PORTDOCS%%%%DOCSDIR%%/Yoshi-Zyn_Sound_Differences.txt
 %%PORTDOCS%%%%DOCSDIR%%/Yoshi_Zyn_NRPNs.txt
-%%PORTDOCS%%%%DOCSDIR%%/Yoshimi_1.5.4_features.txt
+%%PORTDOCS%%%%DOCSDIR%%/Yoshimi_1.5.5_1.5.6_features.txt
 %%PORTDOCS%%%%DOCSDIR%%/Yoshimi_Only_NRPNs.txt
 %%PORTDOCS%%%%DOCSDIR%%/Yoshimi_Quote.txt
-%%PORTDOCS%%%%DOCSDIR%%/yoshimi-user-manual.pdf
+%%PORTDOCS%%%%DOCSDIR%%/yoshimi-user-manual-1.5.6.pdf
 share/icons/hicolor/scalable/apps/yoshimi.svg
 share/icons/hicolor/scalable/apps/yoshimi_alt.svg
 share/metainfo/yoshimi.appdata.xml

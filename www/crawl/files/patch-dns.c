@@ -1,6 +1,6 @@
---- dns.c.orig	Sun May 18 10:21:33 2003
-+++ dns.c	Mon May 30 16:20:14 2005
-@@ -562,8 +562,13 @@
+--- dns.c.orig	2003-05-18 01:21:33 UTC
++++ dns.c
+@@ -562,8 +562,13 @@ dns_resolve(char *ip, struct addrinfo **
          if (res != 0) {
                  fprintf(stderr, "%s: getaddrinfo(%s): %s\n", __func__,
  		    ip, gai_strerror(res));

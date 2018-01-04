@@ -15,6 +15,9 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libgd.so:graphics/gd
 
+BROKEN_armv6 =		fails to build: parse.c:(.text+0x174): undefined reference to 'fgettok'
+BROKEN_armv7 =		fails to build: parse.c:(.text+0x174): undefined reference to 'fgettok'
+
 USES=		tar:bzip2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-gd

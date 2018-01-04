@@ -9,4 +9,5 @@ lib/libconcurrent.a
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/float2.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/makefile
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/many_context1.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/strsplit.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/time_slice1.c

@@ -13,7 +13,7 @@ COMMENT=	Extended pickling support for Python objects
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tornado>0:www/py-tornado
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tornado>0:www/py-tornado@${FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist distutils

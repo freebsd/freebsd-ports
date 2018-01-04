@@ -12,11 +12,11 @@ COMMENT=	Simple application for managing personal data
 
 LICENSE=	GPLv2+
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pycrypto>0:security/py-pycrypto
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pycrypto>0:security/py-pycrypto@${FLAVOR}
 
 NO_ARCH=	yes
 
-USES=		python
+USES=		python:2.7
 USE_GNOME=	pygtk2
 USE_PYTHON=	autoplist distutils
 

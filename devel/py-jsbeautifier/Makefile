@@ -12,8 +12,8 @@ COMMENT=	JavaScript unobfuscator and beautifier
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>=1.6.1:devel/py-six \
-		${PYTHON_PKGNAMEPREFIX}editorconfig>=0.12.0:editors/py-editorconfig
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>=1.6.1:devel/py-six@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}editorconfig>=0.12.0:editors/py-editorconfig@${FLAVOR}
 
 USES?=		python
 USE_PYTHON=	distutils autoplist

@@ -16,8 +16,7 @@ COMMENT=	DCOM/WMI client implementation
 OPTIONS_DEFINE=	PYTHON
 PYTHON_DESC=	Build Python bindings
 
-USE_AUTOTOOLS=	autoconf:env autoheader:env
-USES=		iconv gmake tar:bzip2
+USES=		autoreconf:build gmake iconv tar:bzip2
 
 MAKEFILE=	GNUmakefile
 MAKE_ARGS+=	ZENHOME="${PREFIX}" INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
@@ -29,7 +28,7 @@ PROGS=	bin/wmic bin/winexe
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPYTHON}
-USES+=		python
+USES+=		python:2.7
 MAKE_ARGS+=	PYTHON="${PYTHON_CMD}" PY_LIBDIR="${PYTHONPREFIX_SITELIBDIR}"
 PLIST_SUB+=	PYTHON=""
 .else

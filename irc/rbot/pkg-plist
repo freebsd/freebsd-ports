@@ -7,6 +7,8 @@ bin/rbotdb
 %%RUBY_SITELIBDIR%%/rbot/core/config.rb
 %%RUBY_SITELIBDIR%%/rbot/core/filters_ui.rb
 %%RUBY_SITELIBDIR%%/rbot/core/irclog.rb
+%%RUBY_SITELIBDIR%%/rbot/core/journal.rb
+%%RUBY_SITELIBDIR%%/rbot/core/journal_irclog.rb
 %%RUBY_SITELIBDIR%%/rbot/core/unicode.rb
 %%RUBY_SITELIBDIR%%/rbot/core/userdata.rb
 %%RUBY_SITELIBDIR%%/rbot/core/utils/agent.rb
@@ -15,12 +17,16 @@ bin/rbotdb
 %%RUBY_SITELIBDIR%%/rbot/core/utils/httputil.rb
 %%RUBY_SITELIBDIR%%/rbot/core/utils/parse_time.rb
 %%RUBY_SITELIBDIR%%/rbot/core/utils/utils.rb
+%%RUBY_SITELIBDIR%%/rbot/core/utils/where_is.rb
 %%RUBY_SITELIBDIR%%/rbot/core/utils/wordlist.rb
 %%RUBY_SITELIBDIR%%/rbot/core/webservice.rb
 %%RUBY_SITELIBDIR%%/rbot/core/wordlist_ui.rb
 %%RUBY_SITELIBDIR%%/rbot/irc.rb
 %%RUBY_SITELIBDIR%%/rbot/ircbot.rb
 %%RUBY_SITELIBDIR%%/rbot/ircsocket.rb
+%%RUBY_SITELIBDIR%%/rbot/journal.rb
+%%RUBY_SITELIBDIR%%/rbot/journal/mongo.rb
+%%RUBY_SITELIBDIR%%/rbot/journal/postgres.rb
 %%RUBY_SITELIBDIR%%/rbot/language.rb
 %%RUBY_SITELIBDIR%%/rbot/load-gettext.rb
 %%RUBY_SITELIBDIR%%/rbot/maskdb.rb

@@ -1,0 +1,6 @@
+Palettable (formerly brewer2mpl) is a library of color palettes for Python.
+It's written in pure Python with no dependencies, but it can supply color maps
+for matplotlib. You can use Palettable to customize matplotlib plots or supply
+colors for a web application.
+
+WWW: https://jiffyclub.github.io/palettable

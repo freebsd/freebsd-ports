@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Horde_Scheduler
-PORTVERSION=	2.0.1
+DISTVERSION=	2.0.3
 CATEGORIES=	devel www pear
 
 MAINTAINER=	horde@FreeBSD.org

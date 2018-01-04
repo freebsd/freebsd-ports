@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	bencode.py
-PORTVERSION=	1.2.0
-PORTREVISION=	1
+PORTVERSION=	2.0.0
 CATEGORIES=	converters devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,8 +14,8 @@ LICENSE_NAME=	BitTorrent Open Source License
 LICENSE_TEXT=	See http://directory.fsf.org/wiki/License:BitTorrentOSL1.1
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pbr>=1.9:devel/py-pbr
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=0:devel/py-pytest
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pbr>=1.9:devel/py-pbr@${FLAVOR}
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=0:devel/py-pytest@${FLAVOR}
 
 NO_ARCH=	yes
 USES=		python

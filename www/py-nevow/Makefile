@@ -15,7 +15,7 @@ COMMENT=	Web application templating system, based on the Twisted Woven
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}twisted>=0:devel/py-twisted
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}twisted>=0:devel/py-twisted@${FLAVOR}
 
 USE_PYTHON=	autoplist distutils
 USES=		gettext python

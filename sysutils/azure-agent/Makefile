@@ -16,7 +16,7 @@ RUN_DEPENDS=	python:lang/python \
 		bash:shells/bash \
 		base64:converters/base64 \
 		dmidecode:sysutils/dmidecode \
-		${PYTHON_PKGNAMEPREFIX}pyasn1>=0:devel/py-pyasn1 \
+		${PYTHON_PKGNAMEPREFIX}pyasn1>=0:devel/py-pyasn1@${FLAVOR} \
 		${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 
 NO_BUILD=	yes

@@ -1,0 +1,4 @@
+Pure Ruby gem that implements the MQTT protocol, a lightweight protocol for
+publish/subscribe messaging.
+
+WWW: http://github.com/njh/ruby-mqtt

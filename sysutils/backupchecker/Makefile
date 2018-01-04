@@ -14,7 +14,7 @@ USE_GITHUB=	yes
 
 NO_ARCH=	yes
 USES=		python:3.3+
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	autoplist distutils optsuffix
 
 PORTDOCS=	README.md
 

@@ -1,7 +1,7 @@
---- tcl/Makefile.in.orig	Thu Jun  6 13:09:05 1996
-+++ tcl/Makefile.in	Wed Apr  2 00:06:10 1997
-@@ -95,8 +95,8 @@
- 	rm -f uuwish [Xx]deview gif2gfp
+--- tcl/Makefile.in.orig	2001-06-04 16:26:57 UTC
++++ tcl/Makefile.in
+@@ -95,8 +95,8 @@ new:		clean
+ 	rm -f uuwish
  	make all
  
 -uuwish:		$(OBJ) ../uulib/libuu.a
@@ -9,5 +9,5 @@
 +uuwish:		$(OBJ)
 +	$(CC) -o $@ $(OBJ) -luu $(LIBS)
  
- xdeview:	xdeview.head tk_MFSbox.tcl xdeview.tail
- 	rm -f $@
+ xdeview:
+ 	chmod 755 $@

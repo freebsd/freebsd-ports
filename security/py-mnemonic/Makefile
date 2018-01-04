@@ -12,7 +12,7 @@ COMMENT=	Implementation of Bitcoin BIP-0039
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pbkdf2>=1.3:security/py-pbkdf2
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pbkdf2>=1.3:security/py-pbkdf2@${FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist distutils

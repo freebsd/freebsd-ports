@@ -14,9 +14,9 @@ COMMENT=		MongoEngine support for django-tastypie
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS?=	${PYTHON_PKGNAMEPREFIX}django-tastypie>=0.9.12:www/py-django-tastypie \
-		${PYTHON_PKGNAMEPREFIX}mongoengine>=0.8.7:devel/py-mongoengine \
-		${PYTHON_PKGNAMEPREFIX}django18>0:www/py-django18
+RUN_DEPENDS?=	${PYTHON_PKGNAMEPREFIX}django-tastypie>=0.9.12:www/py-django-tastypie@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}mongoengine>=0.8.7:devel/py-mongoengine@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}django18>0:www/py-django18@${FLAVOR}
 
 USE_GITHUB=		yes
 GH_ACCOUNT=		wlanslovenija

@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	liblzo2.so:archivers/lzo2
 
-USES=		python:2
+USES=		python
 USE_PYTHON=	autoplist distutils
 CFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/lzo
 

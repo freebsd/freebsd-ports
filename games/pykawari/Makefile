@@ -18,7 +18,7 @@ RUN_DEPENDS=	ninix:games/ninix-aya
 
 BUILD_WRKSRC=	${WRKSRC}/build/src
 
-USES=		gmake python zip
+USES=		gmake python:2.7 zip
 MAKEFILE=	gcc.mak
 MAKE_ARGS=	CXX="${CXX}" CFLAGS="${CXXFLAGS}" \
 		PYTHONBASE="${PYTHONBASE}" PYTHON_VERSION="${PYTHON_VERSION}"

@@ -12,7 +12,7 @@ COMMENT=	Python style guide checker
 
 LICENSE=	MIT # mentioned as "Expat"
 
-USES?=		python
+USES=		python
 USE_PYTHON=	autoplist concurrent distutils
 NO_ARCH=	yes
 

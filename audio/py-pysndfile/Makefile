@@ -11,13 +11,12 @@ COMMENT=	Cython wrapper class for reading/writing soundfiles using libsndfile
 
 LICENSE=	LGPL3
 
-BUILD_DEPENDS=	cython:lang/cython \
-		${PYTHON_PKGNAMEPREFIX}numpy>0:math/py-numpy
+BUILD_DEPENDS=	${PYNUMPY}
 LIB_DEPENDS=	libsndfile.so:audio/libsndfile
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>0:math/py-numpy
+RUN_DEPENDS=	${PYNUMPY}
 
 USES=		python localbase
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	distutils autoplist cython
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/pysndfile/_pysndfile.so

@@ -1,4 +1,4 @@
---- templates/install.tmpl.orig	2017-11-17 23:20:54 UTC
+--- templates/install.tmpl.orig	2017-11-22 19:46:14 UTC
 +++ templates/install.tmpl
 @@ -8,12 +8,9 @@
  			<div class="ui attached segment">
@@ -37,3 +37,12 @@
  						<label for="run_user">{{.i18n.Tr "install.run_user"}}</label>
  						<input id="run_user" name="run_user" value="{{.run_user}}" required>
  						<span class="help">{{.i18n.Tr "install.run_user_helper"}}</span>
+@@ -115,7 +112,7 @@
+ 						<input id="app_url" name="app_url" value="{{.app_url}}" placeholder="e.g. https://try.gogs.io" required>
+ 						<span class="help">{{.i18n.Tr "install.app_url_helper"}}</span>
+ 					</div>
+-					<div class="inline required field">
++					<div class="disabled inline required field">
+ 						<label for="log_root_path">{{.i18n.Tr "install.log_root_path"}}</label>
+ 						<input id="log_root_path" name="log_root_path" value="{{.log_root_path}}" placeholder="log" required>
+ 						<span class="help">{{.i18n.Tr "install.log_root_path_helper"}}</span>

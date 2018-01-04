@@ -5,7 +5,7 @@ DISTVERSION=	0.7.0.beta18
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	tz@FreeBSD.org
+MAINTAINER=	idefix@fechner.net
 COMMENT=	Suite of instrumentation metric primitives
 
 LICENSE=	RUBY

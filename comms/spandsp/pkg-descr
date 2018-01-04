@@ -1,5 +1,4 @@
-Spandsp is a DSP library for telephony and fax functions. It
-basically, also implements a complete software fax machine to
-send and, or receive messages.
+Spandsp is a library of many DSP functions for telephony. These range from
+simple modules, such as DTMF detection, to a complete software FAX machine.
 
-WWW: http://www.soft-switch.org/
+WWW: https://www.soft-switch.org/

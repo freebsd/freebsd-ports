@@ -1,8 +1,0 @@
---- configure.ac.orig	2016-06-26 19:35:17.000000000 +0900
-+++ configure.ac	2016-11-26 22:49:34.137729000 +0900
-@@ -140,4 +140,4 @@
- # Regenerate autoloads.
- AC_MSG_NOTICE([regenerate autoloads])
- rm -f lisp/tramp-loaddefs.el
--make EMACS=${EMACS} -s -C lisp autoloads
-+gmake EMACS_INFO=${EMACS_INFO} -s -C lisp autoloads

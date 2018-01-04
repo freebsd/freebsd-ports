@@ -11,4 +11,4 @@ The default output from dwdiff is the new text, with the deleted and inserted
 parts annotated with markers. Command line options are available to change
 both what is printed, and the markers.
 
-WWW: http://os.ghalkes.nl/dwdiff.html
+WWW: https://os.ghalkes.nl/dwdiff.html

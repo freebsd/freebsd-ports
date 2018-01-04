@@ -2,7 +2,7 @@ The file information utility from the Lumina Desktop.
 This can be used to view details about individual files in addition to
 permitting the user to easily modify XDG *.desktop entries.
 
-NOTE: Installing this utility will enable more options within the Insight file 
-manager (deskutils/lumina-fm), as well as the Lumina desktop itself (x11/lumina-core)
+NOTE: Installing this utility will enable more options within the insight file 
+manager lumina-fm, as well as the Lumina desktop itself lumina-core.
 
 WWW: http://lumina-desktop.org

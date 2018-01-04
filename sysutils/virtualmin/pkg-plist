@@ -600,6 +600,7 @@ lib/webmin/virtual-server/help/config_edit_homes.html
 lib/webmin/virtual-server/help/config_edit_homes.nl.html
 lib/webmin/virtual-server/help/config_edit_quota.html
 lib/webmin/virtual-server/help/config_edit_quota.nl.html
+lib/webmin/virtual-server/help/config_everything_tmpl.html
 lib/webmin/virtual-server/help/config_fcgid_max.html
 lib/webmin/virtual-server/help/config_fcgid_max.nl.html
 lib/webmin/virtual-server/help/config_force_email.html
@@ -722,6 +723,7 @@ lib/webmin/virtual-server/help/config_netmask6.html
 lib/webmin/virtual-server/help/config_netmask6.nl.html
 lib/webmin/virtual-server/help/config_nodeniedssh.html
 lib/webmin/virtual-server/help/config_nodeniedssh.nl.html
+lib/webmin/virtual-server/help/config_nopostfix_extra_user.html
 lib/webmin/virtual-server/help/config_openssl_cnf.html
 lib/webmin/virtual-server/help/config_openssl_cnf.nl.html
 lib/webmin/virtual-server/help/config_other_doms.html
@@ -2291,6 +2293,7 @@ lib/webmin/virtual-server/save_newsv.cgi
 lib/webmin/virtual-server/save_newupdate.cgi
 lib/webmin/virtual-server/save_newuser.cgi
 lib/webmin/virtual-server/save_pass.cgi
+lib/webmin/virtual-server/save_peripcerts.cgi
 lib/webmin/virtual-server/save_phpmode.cgi
 lib/webmin/virtual-server/save_phpver.cgi
 lib/webmin/virtual-server/save_plan.cgi

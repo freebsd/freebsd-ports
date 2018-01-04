@@ -12,8 +12,8 @@ MAINTAINER=	fbsd@opal.com
 COMMENT=	Kaa Media Repository - media file metadata parser
 
 LIB_DEPENDS=	libdvdread.so:multimedia/libdvdread
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}kaa-base>0:multimedia/py-kaa-base \
-		${PYTHON_PKGNAMEPREFIX}exiv2>0:graphics/py-exiv2
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}kaa-base>0:multimedia/py-kaa-base@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}exiv2>0:graphics/py-exiv2@${FLAVOR}
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		python:2

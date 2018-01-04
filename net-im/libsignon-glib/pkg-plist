@@ -12,7 +12,7 @@ lib/libsignon-glib.so.1
 lib/libsignon-glib.so.1.0.0
 %%PYTHON_SITELIBDIR%%/gi/overrides/Signon.py
 %%PYTHON_SITELIBDIR%%/gi/overrides/Signon.pyc
-%%PYTHON_SITELIBDIR%%/gi/overrides/Signon.%%PYTHON_PYOEXTENSION%%
+%%PYTHON_SITELIBDIR%%/gi/overrides/Signon.pyo
 libdata/pkgconfig/libsignon-glib.pc
 share/gir-1.0/Signon-1.0.gir
 share/gtk-doc/html/libsignon-glib/SignonAuthService.html

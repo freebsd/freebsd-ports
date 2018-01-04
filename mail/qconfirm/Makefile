@@ -20,24 +20,24 @@ ALL_TARGET=	default
 OPTIONS_DEFINE=	DOCS
 
 do-configure:
-	${ECHO_CMD} "${CC} ${CFLAGS}" > ${WRKSRC}/src/conf-cc
-	${ECHO_CMD} "${CC} ${LDFLAGS}" > ${WRKSRC}/src/conf-ld
+	@${ECHO_CMD} "${CC} ${CFLAGS}" > ${WRKSRC}/src/conf-cc
+	@${ECHO_CMD} "${CC} ${LDFLAGS}" > ${WRKSRC}/src/conf-ld
 
 do-build:
 	(cd ${WRKSRC} && package/compile)
 
 do-install:
-	(cd ${WRKSRC}/command && ${INSTALL_PROGRAM} * \
-		${STAGEDIR}${PREFIX}/bin)
-	(cd ${WRKSRC}/man && ${INSTALL_MAN} *.1 \
-		${STAGEDIR}${MANPREFIX}/man/man1)
+	${INSTALL_PROGRAM} ${WRKSRC}/command/* ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/man/*.1 ${STAGEDIR}${MANPREFIX}/man/man1
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	(cd ${WRKSRC}/doc && ${INSTALL_DATA} *.html \
-		${STAGEDIR}${DOCSDIR})
+	${INSTALL_DATA} ${WRKSRC}/doc/*.html ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC}/package && ${INSTALL_DATA} CHANGES README \
 		${STAGEDIR}${DOCSDIR})
 
-test: build
-	(cd ${WRKSRC} && package/check)
+do-test:
+	# XXX: this dies with bus error; the port may be faulty as well
+	cd ${WRKSRC} && package/check
 
 .include <bsd.port.mk>

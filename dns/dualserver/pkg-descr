@@ -1,6 +1,0 @@
-Combined DHCP/DNS Server for Small LAN. Dynamic DHCP allocates/renew host
-addresses while Caching DNS Server first try resolving from DHCP allotted
-names then from Cache then only forwarding to External DNS Servers. Auto
-Config and auto Dynamic DNS update.
-
-WWW: https://sourceforge.net/projects/dhcp-dns-server/

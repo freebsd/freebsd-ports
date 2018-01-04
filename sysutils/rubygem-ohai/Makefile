@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	ohai
-PORTVERSION=	13.2.0
+PORTVERSION=	13.7.0
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	renchap@cocoa-x.com
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ohai profiles your system and emits JSON
 
 LICENSE=	APACHE20

@@ -1,0 +1,106 @@
+--- distro.py.orig	2017-12-24 16:29:31 UTC
++++ distro.py
+@@ -1,4 +1,4 @@
+-# Copyright 2015,2016 Nir Cohen
++# Copyright 2015,2016,2017 Nir Cohen
+ #
+ # Licensed under the Apache License, Version 2.0 (the "License");
+ # you may not use this file except in compliance with the License.
+@@ -932,9 +932,16 @@ class LinuxDistribution(object):
+                 cmd = ('lsb_release', '-a')
+                 stdout = subprocess.check_output(cmd, stderr=devnull)
+             except OSError:  # Command not found
+-                return {}
++                try:
++                    cmd = ('uname', '-rs')
++                    stdout = subprocess.check_output(cmd, stderr=devnull)
++                except OSError:
++                    return {}
+         content = stdout.decode(sys.getfilesystemencoding()).splitlines()
+-        return self._parse_lsb_release_content(content)
++        if cmd[0] == 'lsb_release':
++            return self._parse_lsb_release_content(content)
++        else:
++            return self._parse_uname_content(content)
+ 
+     @staticmethod
+     def _parse_lsb_release_content(lines):
+@@ -958,6 +965,18 @@ class LinuxDistribution(object):
+                 continue
+             k, v = kv
+             props.update({k.replace(' ', '_').lower(): v.strip()})
++        return props
++
++    @staticmethod
++    def _parse_uname_content(lines):
++        props = {}
++        match = re.search(r'^([^\s]+)\s+([\d\.]+)', lines[0].strip())
++        if match:
++            name, version = match.groups()
++            props['id'] = name.lower()
++            props['distributor_id'] = name
++            props['release'] = version
++            props['description'] = name + ' ' + version
+         return props
+ 
+     @cached_property
+--- tests/resources/distros/freebsd111/bin/uname.orig	2017-12-31 03:40:48 UTC
++++ tests/resources/distros/freebsd111/bin/uname
+@@ -0,0 +1,4 @@
++#!/bin/bash
++
++echo "FreeBSD 11.1-RELEASE"
++
+--- tests/resources/distros/netbsd711/bin/uname.orig	2017-12-31 03:40:48 UTC
++++ tests/resources/distros/netbsd711/bin/uname
+@@ -0,0 +1,4 @@
++#!/bin/bash
++
++echo "NetBSD 7.1.1"
++
+--- tests/resources/distros/openbsd62/bin/uname.orig	2017-12-31 03:40:48 UTC
++++ tests/resources/distros/openbsd62/bin/uname
+@@ -0,0 +1,4 @@
++#!/bin/bash
++
++echo "OpenBSD 6.2"
++
+--- tests/test_distro.py.orig	2017-12-24 16:26:25 UTC
++++ tests/test_distro.py
+@@ -450,6 +450,36 @@ class TestLSBRelease(DistroTestCase):
+     #     }
+     #     self._test_outcome(desired_outcome)
+ 
++    def test_openbsd62_uname(self):
++        self._test_outcome({
++            'id': 'openbsd',
++            'name': 'OpenBSD',
++            'version': '6.2',
++            'pretty_name': 'OpenBSD 6.2',
++            'pretty_version': '6.2',
++            'best_version': '6.2'
++        })
++
++    def test_netbsd711_uname(self):
++        self._test_outcome({
++            'id': 'netbsd',
++            'name': 'NetBSD',
++            'version': '7.1.1',
++            'pretty_name': 'NetBSD 7.1.1',
++            'pretty_version': '7.1.1',
++            'best_version': '7.1.1'
++        })
++
++    def test_freebsd111_uname(self):
++        self._test_outcome({
++            'id': 'freebsd',
++            'name': 'FreeBSD',
++            'version': '11.1',
++            'pretty_name': 'FreeBSD 11.1',
++            'pretty_version': '11.1',
++            'best_version': '11.1'
++        })
++
+     def test_ubuntu14normal_lsb_release(self):
+         self._setup_for_distro(os.path.join(TESTDISTROS, 'lsb',
+                                             'ubuntu14_normal'))

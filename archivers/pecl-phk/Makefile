@@ -13,7 +13,7 @@ LICENSE=	PHP301
 
 USES=		php:pecl
 USE_PHP=	hash:build
-IGNORE_WITH_PHP=	70 71
+IGNORE_WITH_PHP=	70 71 72
 
 CONFIGURE_ARGS=	--enable-phk
 

@@ -12,17 +12,17 @@ COMMENT=	Cache purging support for Zope 2 applications
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}five.globalrequest>=0:devel/py-five.globalrequest \
-		${PYTHON_PKGNAMEPREFIX}plone.registry>=0:www/py-plone.registry \
-		${PYTHON_PKGNAMEPREFIX}z3c.caching>0:devel/py-z3c.caching \
-		${PYTHON_PKGNAMEPREFIX}zope.annotation>=0:devel/py-zope.annotation \
-		${PYTHON_PKGNAMEPREFIX}zope.component>=0:devel/py-zope.component \
-		${PYTHON_PKGNAMEPREFIX}zope.event>=0:devel/py-zope.event \
-		${PYTHON_PKGNAMEPREFIX}zope.i18nmessageid>=0:textproc/py-zope.i18nmessageid \
-		${PYTHON_PKGNAMEPREFIX}zope.interface>=0:devel/py-zope.interface \
-		${PYTHON_PKGNAMEPREFIX}zope.lifecycleevent>=0:devel/py-zope.lifecycleevent \
-		${PYTHON_PKGNAMEPREFIX}zope.schema>0:devel/py-zope.schema \
-		${PYTHON_PKGNAMEPREFIX}zope.testing>0:devel/py-zope.testing
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}five.globalrequest>=0:devel/py-five.globalrequest@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}plone.registry>=0:www/py-plone.registry@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}z3c.caching>0:devel/py-z3c.caching@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}zope.annotation>=0:devel/py-zope.annotation@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}zope.component>=0:devel/py-zope.component@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}zope.event>=0:devel/py-zope.event@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}zope.i18nmessageid>=0:textproc/py-zope.i18nmessageid@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}zope.interface>=0:devel/py-zope.interface@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}zope.lifecycleevent>=0:devel/py-zope.lifecycleevent@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}zope.schema>0:devel/py-zope.schema@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}zope.testing>0:devel/py-zope.testing@${FLAVOR}
 
 NO_ARCH=	yes
 USES=		python:2.7

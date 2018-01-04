@@ -13,7 +13,7 @@ COMMENT=	Python Lex-Yacc
 
 LICENSE=	BSD3CLAUSE
 
-USES?=		python
+USES=		python
 USES+=		shebangfix
 USE_PYTHON=	autoplist concurrent distutils
 NO_ARCH=	yes

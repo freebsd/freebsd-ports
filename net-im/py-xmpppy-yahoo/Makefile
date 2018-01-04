@@ -18,7 +18,7 @@ EJABBERD_DESC=	transport with ejabberd
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/xmpp/__init__.py:net-im/py-xmpppy \
 		${PYTHON_SITELIBDIR}/DNS/__init__.py:dns/py-dns
 
-USES=		python
+USES=		python:2.7
 NO_BUILD=	yes
 FILES=		adhoc.py config.py jep0133.py roomlist.py xmlconfig.py \
 		yahoo_helpers.py avatar.py htmlutils.py migratespool.py toolbox.py \

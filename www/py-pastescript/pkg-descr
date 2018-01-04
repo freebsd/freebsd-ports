@@ -12,4 +12,5 @@ It includes some built-in features;
 * Serving up web applications, with configuration based on
   paste.deploy.
 
+WWW: https://pypi.python.org/pypi/pastescript
 WWW: http://pythonpaste.org/script/

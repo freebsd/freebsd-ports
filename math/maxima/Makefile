@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	maxima
-PORTVERSION=	5.40.0
-PORTREVISION=	1
+PORTVERSION=	5.41.0
 CATEGORIES=	math lisp tk
 MASTER_SITES=	SF/maxima/Maxima-source/${PORTVERSION}-source
 
@@ -11,19 +10,20 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Symbolic mathematics program
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/${LISPPORT}
 PATCH_DEPENDS=	${LOCALBASE}/bin/bash:shells/bash
 RUN_DEPENDS=	${LOCALBASE}/bin/${LISPPORT} \
 		${LOCALBASE}/bin/gnuplot:math/gnuplot
 
-USES=			gmake makeinfo perl5 python:build tk:85+ shared-mime-info
-USE_PERL5=		build
-GNU_CONFIGURE=		yes
-CONFIGURE_ARGS+=	--prefix=${PREFIX} \
-			--with-posix-shell=/bin/sh \
-			--with-wish=${WISH} \
-			${LISPSELECT}
+USES=		gmake makeinfo perl5 python:build tk:85+ shared-mime-info
+USE_PERL5=	build
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-posix-shell=/bin/sh \
+		--with-wish=${WISH} \
+		${LISPSELECT}
+TEST_TARGET=	check
 
 INFO=		maxima imaxima xmaxima
 
@@ -31,6 +31,8 @@ PLIST_SUB=	BINDIR=${BINDIRECTORY}
 PLIST_SUB+=	LISPBIN=${LISPBINARY}
 PLIST_SUB+=	MAXIMABIN=${MAXIMABINARY}
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
+
+PORTDATA=	*
 
 OPTIONS_SINGLE=		LISP
 OPTIONS_SINGLE_LISP=	CLISP CMUCL GCL SBCL
@@ -102,25 +104,21 @@ CONFIGURE_ENV+=	MAKEINFO="${LOCALBASE}/bin/makeinfo"
 
 post-patch:
 	@${GREP} -Fe '.core' -l -r ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} \
-	-e 's;\.core;_core;g'
+		-e 's;\.core;_core;g'
 	@${FIND} -X ${WRKSRC}/interfaces/xmaxima -name 'Makefile.in' | ${XARGS} \
-	${REINPLACE_CMD} -e "s;tclsh;${TCLSH};g"
+		${REINPLACE_CMD} -e "s;tclsh;${TCLSH};g"
 	@${REINPLACE_CMD} -e "s;/usr;${LOCALBASE};g" ${WRKSRC}/src/intl.lisp
 	@${REINPLACE_CMD} -e 's;$$maxima_image_base;$${maxima_image_base};g' \
-	${WRKSRC}/src/maxima.in
+		${WRKSRC}/src/maxima.in
 .if defined(MAXIMA_LISP_OPTIONS) && !empty(MAXIMA_LISP_OPTIONS)
 	@${REINPLACE_CMD} -e 's;"@SBCL_NAME@";@SBCL_NAME@;g' \
-	${WRKSRC}/src/maxima.in
+		${WRKSRC}/src/maxima.in
 	@${REINPLACE_CMD} -e 's;"$$(SBCL_NAME)";$$(SBCL_NAME);g' \
-	${WRKSRC}/src/Makefile.in
+		${WRKSRC}/src/Makefile.in
 .endif
 
 pre-build:
 	@${FIND} ${WRKSRC} \( -name '*.bak' -o -name '*.fbsd10bak' -o \
-	-name '*.orig' \) -delete
-
-check regression-test test: build
-	@cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} \
-	check
+		-name '*.orig' \) -delete
 
 .include <bsd.port.post.mk>

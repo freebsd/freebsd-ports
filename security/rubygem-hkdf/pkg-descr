@@ -2,4 +2,4 @@ A ruby implementation of RFC5869: HMAC-based Extract-and-Expand Key
 Derivation Function (HKDF). The goal of HKDF is to take some source key
 material and generate suitable cryptographic keys from it.
 
-WWW: http://github.com/jtdowney/hkdf
+WWW: https://github.com/jtdowney/hkdf

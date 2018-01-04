@@ -1,5 +1,14 @@
 --- CMakeLists.txt.orig	2015-08-23 17:14:40 UTC
 +++ CMakeLists.txt
+@@ -5,7 +5,7 @@ if(UNIX)
+     if(APPLE)
+         set(CMAKE_CXX_FLAGS "-std=c++11 -stdlib=libc++")
+     else()
+-        set(CMAKE_CXX_FLAGS "-std=c++11 -Wall -Wextra -march=native")
++        set(CMAKE_CXX_FLAGS "-std=c++11 -Wall -Wextra")
+     endif()
+ endif()
+ 
 @@ -137,7 +137,7 @@ if(UNIX AND NOT APPLE)
      install(DIRECTORY src/ DESTINATION include/gnuspeechsa FILES_MATCHING PATTERN "*.h")
      install(DIRECTORY data DESTINATION share/gnuspeech/gnuspeechsa)

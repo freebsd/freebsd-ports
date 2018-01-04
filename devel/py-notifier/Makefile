@@ -14,7 +14,7 @@ COMMENT=	Generic notifier/event scheduler abstraction
 
 LICENSE=	LGPL20
 
-USES=		python shebangfix
+USES=		python:2.7 shebangfix
 SHEBANG_FILES=	examples/*.py
 USE_PYTHON=	distutils
 PYDISTUTILS_PKGNAME=	pynotifier

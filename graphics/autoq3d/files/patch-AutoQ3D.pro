@@ -1,6 +1,6 @@
---- ./AutoQ3D.pro.orig	2012-12-02 18:48:47.000000000 -0500
-+++ ./AutoQ3D.pro	2012-12-02 18:48:47.000000000 -0500
-@@ -8,6 +8,7 @@
+--- AutoQ3D.pro.orig	2016-03-24 23:43:09 UTC
++++ AutoQ3D.pro
+@@ -8,6 +8,7 @@ RC_FILE=AutoQ3D.rc
  win32:LIBS+= -L$(QTDIR)/plugins/imageformats -lqjpeg4
  
  QT +=	opengl

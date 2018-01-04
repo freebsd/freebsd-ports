@@ -2,6 +2,7 @@
 
 PORTNAME=	ndmpd
 PORTVERSION=	1.2
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	araujo@FreeBSD.org
@@ -10,7 +11,7 @@ COMMENT=	Network Data Management Protocol daemon
 LICENSE=	BSD3CLAUSE
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	araujobsd
+GH_ACCOUNT=	iXsystems	
 GH_PROJECT=	ndmpd
 GH_TAGNAME=	ffde7d1
 

@@ -15,12 +15,12 @@ LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	iso-codes>=0:misc/iso-codes \
-		py*-chardet>=0:textproc/py-chardet \
-		py*-enchant>=1.5.1:textproc/py-enchant
+		${PYTHON_PKGNAMEPREFIX}chardet>=0:textproc/py-chardet@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}enchant>=1.5.1:textproc/py-enchant@${FLAVOR}
 
 USE_GNOME=	pygtk2 intltool
 USE_PYTHON=	distutils
-USES=		desktop-file-utils python
+USES=		desktop-file-utils python:2.7
 INSTALLS_ICONS=	yes
 NO_ARCH=	yes
 

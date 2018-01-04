@@ -1,7 +1,6 @@
 # $FreeBSD$
 
 PORTNAME=	sql
-PORTREVISION=	1
 CATEGORIES=	databases devel python
 
 MAINTAINER=	kde@FreeBSD.org
@@ -13,6 +12,7 @@ PYQT_DIST=	yes
 USES=		python pyqt:5
 USE_GL=		gl
 USE_PYQT=	sip_build core_run widgets_run
+USE_PYTHON=	flavors
 USE_QT5=	core gui sql widgets buildtools_build qmake_build
 
 OPTIONS_DEFINE=	API DEBUG

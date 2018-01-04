@@ -13,15 +13,16 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 # Set the build/run depends on setuptools instead of adding distutils to USE_PYTHON
 # because the crmsh build uses autotools which then calls setup.py.
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>0:devel/${PYTHON_PKGNAMEPREFIX}setuptools
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>0:devel/py-lxml \
-		${PYTHON_PKGNAMEPREFIX}setuptools>0:devel/${PYTHON_PKGNAMEPREFIX}setuptools \
-		${PYTHON_PKGNAMEPREFIX}yaml>0:devel/py-yaml
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>0:devel/py-setuptools@${FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>0:devel/py-lxml@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}setuptools>0:devel/py-setuptools@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}yaml>0:devel/py-yaml@${FLAVOR}
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	ClusterLabs
 
 USES=		autoreconf gmake python:2 shebangfix
+USE_PYTHON=	flavors
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-ocf-root=${PREFIX}/lib/ocf
 NO_ARCH=	yes

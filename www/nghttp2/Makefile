@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nghttp2
-PORTVERSION=	1.28.0
+PORTVERSION=	1.29.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www net
 
@@ -15,12 +15,10 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	libnghttp2>=${PORTVERSION}:www/libnghttp2
 LIB_DEPENDS=	libnghttp2.so:www/libnghttp2
 
-OPTIONS_DEFINE=	APP ASIO DOCS EXAMPLES HPACK SPDY
-OPTIONS_DEFAULT=APP HPACK SPDY
+OPTIONS_DEFINE=	APP ASIO DOCS EXAMPLES HPACK
+OPTIONS_DEFAULT=APP HPACK
 OPTIONS_SUB=	yes
 APP_DESC=	Build h2load, nghttp, nghttpd and nghttpx
-SPDY_DESC=	Enable SPDY in h2load and nghttpx
-SPDY_IMPLIES=	APP
 
 CONFIGURE_ARGS=	--disable-python-bindings --with-jemalloc
 CONFIGURE_ENV=	OPENSSL_CFLAGS="-I${OPENSSLINC}" \
@@ -56,9 +54,6 @@ EXAMPLES_LIB_DEPENDS=	libevent_openssl.so:devel/libevent
 HPACK_BUILD_DEPENDS=	jansson>=2.5:devel/jansson
 HPACK_CONFIGURE_ENABLE=	hpack-tools
 HPACK_LIB_DEPENDS=	libjansson.so:devel/jansson
-SPDY_BUILD_DEPENDS=	spdylay>=1.3.2:www/spdylay
-SPDY_CONFIGURE_WITH=	spdylay
-SPDY_LIB_DEPENDS=	libspdylay.so:www/spdylay
 
 .include <bsd.port.options.mk>
 

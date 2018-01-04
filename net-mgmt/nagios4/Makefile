@@ -16,7 +16,7 @@ COMMENT=	Powerful network monitoring system
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	libltdl.so:devel/libltdl \
-		libpng16.so:graphics/png \
+		libpng.so:graphics/png \
 		libgd.so:graphics/gd
 
 USES=		cpe gmake jpeg perl5

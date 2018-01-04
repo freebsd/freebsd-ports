@@ -1,6 +1,6 @@
-TIMESTAMP = 1509655985
-SHA256 (openssl-1.0.2/openssl-1.0.2m.tar.gz) = 8c6ff15ec6b319b50788f42c7abc2890c08ba5a1cdcd3810eb9092deada37b0f
-SIZE (openssl-1.0.2/openssl-1.0.2m.tar.gz) = 5373776
+TIMESTAMP = 1512655797
+SHA256 (openssl-1.0.2/openssl-1.0.2n.tar.gz) = 370babb75f278c39e0c50e8c4e7493bc0f18db6867478341a832a982fd15a8fe
+SIZE (openssl-1.0.2/openssl-1.0.2n.tar.gz) = 5375802
 SHA256 (openssl-1.0.2/1001-crypto-hmac-support-EVP_MD_CTX_FLAG_ONESHOT-and-set-.patch) = 2eddcb7ab342285cb637ce6b6be143cca835f449f35dd9bb8c7b9167ba2117a7
 SIZE (openssl-1.0.2/1001-crypto-hmac-support-EVP_MD_CTX_FLAG_ONESHOT-and-set-.patch) = 3717
 SHA256 (openssl-1.0.2/1002-backport-changes-from-upstream-padlock-module.patch) = aee88a24622ce9d71e38deeb874e58435dcf8ff5690f56194f0e4a00fb09b260

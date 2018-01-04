@@ -12,9 +12,9 @@ COMMENT=	Guest Environment for Google Compute Engine
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}boto>0:devel/py-boto \
-		${PYTHON_PKGNAMEPREFIX}netaddr>0:net/py-netaddr \
-		${PYTHON_PKGNAMEPREFIX}netifaces>0:net/py-netifaces \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}boto>0:devel/py-boto@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}netaddr>0:net/py-netaddr@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}netifaces>0:net/py-netifaces@${FLAVOR} \
 		sudo:security/sudo
 
 USES=		python

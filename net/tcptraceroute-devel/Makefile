@@ -18,6 +18,9 @@ LIB_DEPENDS=	libnet.so:net/libnet
 
 CONFLICTS=	tcptraceroute-1.4*
 
+DEPRECATED=	Use net/tcptraceroute instead
+EXPIRATION_DATE=2018-01-31
+
 PORTDOCS=	tcptraceroute.1.html tcptraceroute.lsm AUTHORS \
 		COPYING ChangeLog NEWS README examples.txt
 

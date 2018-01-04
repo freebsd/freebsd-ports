@@ -14,12 +14,11 @@ COMMENT=	Python wrapper for the Liblo OSC Library
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	cython${PYTHON_VER:M3.*:S/^3/-3/}:lang/cython${PYTHON_MAJOR_VER:M3}
 LIB_DEPENDS=	liblo.so:audio/liblo
 
 USES=		localbase:ldflags python
 USES=		python
-USE_PYTHON=	distutils # autoplist fails to add the manpage files
+USE_PYTHON=	distutils cython
 MAKE_ENV+=	PREFIX=${PREFIX} LOCALBASE=${LOCALBASE}
 
 post-patch:

@@ -12,12 +12,12 @@ COMMENT=	Command line interface for working with github gists
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}docopt>0:devel/py-docopt \
-		${PYTHON_PKGNAMEPREFIX}python-gnupg>0:security/py-python-gnupg \
-		${PYTHON_PKGNAMEPREFIX}requests>0:www/py-requests \
-		${PYTHON_PKGNAMEPREFIX}simplejson>0:devel/py-simplejson
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mock>0:devel/py-mock \
-		${PYTHON_PKGNAMEPREFIX}responses>0:devel/py-responses
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}docopt>0:devel/py-docopt@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}python-gnupg>0:security/py-python-gnupg@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}requests>0:www/py-requests@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}simplejson>0:devel/py-simplejson@${FLAVOR}
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mock>0:devel/py-mock@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}responses>0:devel/py-responses@${FLAVOR}
 
 USES=		python
 USE_GITHUB=	yes

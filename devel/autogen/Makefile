@@ -15,6 +15,9 @@ BUILD_DEPENDS=	bash:shells/bash
 LIB_DEPENDS=	libguile-2.0.so:lang/guile2
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+# bin/columns
+CONFLICTS_INSTALL=	columns
+
 CONFIGURE_ARGS=	--datadir=${PREFIX}/share --with-libguile=yes --with-libxml2=yes
 CONFIGURE_ENV=	CONFIG_SHELL=${LOCALBASE}/bin/bash
 GNU_CONFIGURE=	yes

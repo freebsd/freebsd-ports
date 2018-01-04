@@ -24,6 +24,7 @@ USE_GNOME=	intlhack gnomeprefix gtk30 libgda5 gtksourceview3 libxml2 \
 		introspection:build
 USES=		desktop-file-utils gettext gmake libtool pathfix \
 		pkgconfig python tar:xz
+USE_PYTHON=	py3kplist
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes

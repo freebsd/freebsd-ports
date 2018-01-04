@@ -18,7 +18,7 @@ USE_GITHUB=
 GH_ACCOUNT=	ymattw
 
 USES=		python
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	distutils autoplist concurrent optsuffix
 NO_ARCH=	yes
 
 OPTIONS_DEFINE=	DOCS

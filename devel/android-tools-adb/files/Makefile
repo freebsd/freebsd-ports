@@ -4,6 +4,7 @@ PROG_CXX=adb
 NO_MAN=
 BINDIR?=/usr/bin
 FILESDIR?=${DOCDIR}/${PROG}
+VERSION?= 0.0.0-0
 
 FILES= *.[Tt][Xx][Tt]
 
@@ -99,9 +100,7 @@ SRCS+= logger_write.c
 SRCS+= logprint.c
 SRCS+= stderr_write.c
 
-REVISION?= $$(${GIT} rev-parse --short=12 HEAD 2>/dev/null || echo unknown)
-
-CPPFLAGS+= -DADB_VERSION="\"26.0.0 rc1-${REVISION}-android\""
+CPPFLAGS+= -DADB_VERSION="\"${VERSION}\""
 CPPFLAGS+= -DADB_HOST=1
 CPPFLAGS+= -DHAVE_FORKEXEC=1
 CPPFLAGS+= -DHAVE_SYMLINKS
@@ -139,7 +138,6 @@ TEST_LDADD+= $$(${GMOCK_CONFIG} --libs --ldflags)
 TEST_OBJS+= ${TEST_SRCS:R:S/$/.o/}
 CLEANFILES+= ${PROG}_test ${TEST_OBJS}
 
-GIT?= git
 GTEST_CONFIG?= gtest-config
 GMOCK_CONFIG?= gmock-config
 PKG_CONFIG?= pkg-config

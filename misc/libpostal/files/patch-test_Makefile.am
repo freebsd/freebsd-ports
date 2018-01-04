@@ -1,0 +1,20 @@
+--- test/Makefile.am.orig	2017-04-07 21:40:27 UTC
++++ test/Makefile.am
+@@ -1,9 +1,9 @@
+-CFLAGS_BASE = -Wfloat-equal -Wpointer-arith -std=gnu99 -DLIBPOSTAL_DATA_DIR='"$(datadir)/libpostal"' -g
++CFLAGS_BASE = -Wfloat-equal -Wpointer-arith -std=gnu99 -DLIBPOSTAL_DATA_DIR='"$(datadir)"'
+ CFLAGS_O0 = $(CFLAGS_BASE) -O0
+ CFLAGS_O1 = $(CFLAGS_BASE) -O1
+ CFLAGS_O2 = $(CFLAGS_BASE) -O2
+ CFLAGS_O3 = $(CFLAGS_BASE) -O3
+-DEFAULT_INCLUDES = -I.. -I/usr/local/include
++DEFAULT_INCLUDES = -I..
+ 
+ CFLAGS = $(CFLAGS_BASE)
+ 
+@@ -11,4 +11,4 @@ TESTS = test_libpostal
+ noinst_PROGRAMS = test_libpostal
+ test_libpostal_SOURCES = test.c test_expand.c test_parser.c test_transliterate.c test_numex.c test_trie.c test_string_utils.c test_crf_context.c
+ test_libpostal_LDADD = ../src/libpostal.la $(CBLAS_LIBS)
+-test_libpostal_CFLAGS = $(CFLAGS_O3)
++test_libpostal_CFLAGS = $(CFLAGS_BASE)

@@ -11,7 +11,7 @@ COMMENT=	Embedded Perl
 
 LICENSE=	PHP301
 
-IGNORE_WITH_PHP=	70 71
+IGNORE_WITH_PHP=	70 71 72
 
 USES=		perl5 php:pecl
 

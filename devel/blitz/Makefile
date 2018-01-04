@@ -10,7 +10,7 @@ COMMENT=	Blitz++ Multi-Dimensional Array Library for C++
 LICENSE=	ART20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		gmake libtool localbase python:build
+USES=		gmake libtool localbase python:2.7,build
 USE_GITHUB=	yes
 GH_ACCOUNT=	blitzpp
 GNU_CONFIGURE=	yes

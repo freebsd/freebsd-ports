@@ -14,7 +14,7 @@ COMMENT=	Python-based SPAM reduction system
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		python shebangfix tar:tgz
+USES=		python:2.7 shebangfix tar:tgz
 SHEBANG_FILES=	bin/tmda-* contrib/collectaddys contrib/def2html \
 		contrib/printcdb contrib/printdbm contrib/smtp-check-sender \
 		contrib/tofmipd.init

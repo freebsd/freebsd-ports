@@ -72,6 +72,7 @@
     SUBDIR += p5-WWW-BitTorrent
     SUBDIR += phex
     SUBDIR += py-py2play
+    SUBDIR += py-tremc
     SUBDIR += py-transmissionrpc
     SUBDIR += py-vertex
     SUBDIR += qbittorrent
@@ -107,6 +108,7 @@
     SUBDIR += verlihub-plugins-messanger
     SUBDIR += verlihub-plugins-stats
     SUBDIR += vuze
+    SUBDIR += xmrig
     SUBDIR += xnap
     SUBDIR += zetacoin
     SUBDIR += zetacoin-nox11

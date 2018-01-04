@@ -12,8 +12,8 @@ COMMENT=	Sphinx Fulltoc Extension
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${PKGNAMEPREFIX}pbr>=1.8.1:devel/py-pbr
-RUN_DEPENDS=	${PKGNAMEPREFIX}sphinx>=1.1.3:textproc/py-sphinx
+BUILD_DEPENDS=	${PKGNAMEPREFIX}pbr>=1.8.1:devel/py-pbr@${FLAVOR}
+RUN_DEPENDS=	${PKGNAMEPREFIX}sphinx>=1.1.3:textproc/py-sphinx@${FLAVOR}
 
 USES=		python
 USE_PYTHON=	distutils autoplist

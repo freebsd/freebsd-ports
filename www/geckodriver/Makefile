@@ -2,7 +2,7 @@
 
 PORTNAME=	geckodriver
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.19.0
+DISTVERSION=	0.19.1
 CATEGORIES=	www
 
 MAINTAINER=	daniel@blodan.se
@@ -32,6 +32,8 @@ CARGO_CRATES=	advapi32-sys-0.1.2 \
 		crossbeam-0.2.10 \
 		dbghelp-sys-0.2.0 \
 		flate2-0.2.19 \
+		fuchsia-zircon-0.2.1 \
+		fuchsia-zircon-sys-0.2.0 \
 		gcc-0.3.42 \
 		httparse-1.2.2 \
 		hyper-0.10.10 \
@@ -96,7 +98,7 @@ CARGO_CRATES=	advapi32-sys-0.1.2 \
 		uuid-0.1.18 \
 		vec_map-0.8.0 \
 		void-1.0.2 \
-		webdriver-0.31.0 \
+		webdriver-0.32.0 \
 		winapi-0.2.8 \
 		winapi-build-0.1.1 \
 		winreg-0.3.5 \

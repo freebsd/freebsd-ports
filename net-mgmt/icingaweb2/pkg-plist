@@ -1,3 +1,4 @@
+bin/icingacli
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/apache/icingaweb2.conf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bash_completion.d/icingacli
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/nginx/icingaweb2.conf

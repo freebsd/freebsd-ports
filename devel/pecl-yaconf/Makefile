@@ -11,7 +11,7 @@ COMMENT=	PHP Persistent Configurations Container
 LICENSE=	PHP301
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-IGNORE_WITH_PHP=56
+IGNORE_WITH_PHP=56 72
 USES=		php:pecl
 
 .include <bsd.port.mk>

@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	jekyll-redirect-from
-PORTVERSION=	0.12.1
-PORTREVISION=	1
+PORTVERSION=	0.13.0
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
@@ -17,8 +16,7 @@ RUN_DEPENDS=	rubygem-jekyll>=3.3:www/rubygem-jekyll
 NO_ARCH=	yes
 USE_RUBY=	yes
 USES=		gem shebangfix
-SHEBANG_FILES=	script/cibuild \
-		script/bootstrap \
-		script/release
+
+SHEBANG_FILES=	script/*
 
 .include <bsd.port.mk>

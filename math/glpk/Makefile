@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	glpk
-DISTVERSION=	4.63
+DISTVERSION=	4.64
 CATEGORIES=	math
 MASTER_SITES=	GNU
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dg@syrec.org
 COMMENT=	GNU Linear Programming Kit
 
 LICENSE=	GPLv3+

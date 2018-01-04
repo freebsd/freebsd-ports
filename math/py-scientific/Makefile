@@ -16,7 +16,7 @@ BUILD_DEPENDS=	${PYNUMPY}
 LIB_DEPENDS=	libnetcdf.so:science/netcdf
 RUN_DEPENDS=	${PYNUMPY}
 
-USES=		python
+USES=		python:2.7
 USE_PYTHON=	distutils autoplist
 
 DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}

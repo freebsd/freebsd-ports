@@ -1,13 +1,22 @@
---- Makefile.orig	2015-01-05 15:14:09.374220605 +0100
-+++ Makefile	2015-01-05 15:15:17.854285530 +0100
-@@ -1,9 +1,8 @@
- VERSION   := 1.3.1
+--- Makefile.orig	2017-10-27 15:25:56 UTC
++++ Makefile
+@@ -3,15 +3,14 @@ VERSION = 24
+ srcdir = .
+ VPATH = $(srcdir)
  
- PREFIX    := /usr/local
--MANPREFIX := $(PREFIX)/share/man
-+MANPREFIX := $(PREFIX)/man
+-PREFIX = /usr/local
+-MANPREFIX = $(PREFIX)/share/man
++PREFIX ?= /usr/local
++MANPREFIX = $(PREFIX)/man
  
--CC        ?= gcc
- CFLAGS    += -std=c99 -Wall -pedantic
- CPPFLAGS  += -I$(PREFIX)/include -D_XOPEN_SOURCE=500 -DHAVE_LIBEXIF -DHAVE_GIFLIB
- LDFLAGS   += -L$(PREFIX)/lib
+-CC = cc
+-DEF_CFLAGS = -std=c99 -Wall -pedantic
++DEF_CFLAGS = -std=c99 -Wall -pedantic $$(pkg-config --cflags xft)
+ DEF_CPPFLAGS = -I/usr/include/freetype2
+ 
+ # autoreload backend: inotify/nop
+-AUTORELOAD = inotify
++AUTORELOAD = nop
+ 
+ # enable features requiring giflib (-lgif)
+ HAVE_GIFLIB = 1

@@ -1,3 +1,4 @@
 @sample etc/bird.conf.example etc/bird.conf
 sbin/bird
 sbin/birdc
+sbin/birdcl

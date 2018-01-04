@@ -1,6 +1,6 @@
---- lib/tls_mosq.h.orig	2015-05-07 13:21:22 UTC
+--- lib/tls_mosq.h.orig	2017-07-10 22:46:01 UTC
 +++ lib/tls_mosq.h
-@@ -20,8 +20,9 @@ Contributors:
+@@ -26,8 +26,9 @@ Contributors:
  #ifdef WITH_TLS
  
  #include <openssl/ssl.h>

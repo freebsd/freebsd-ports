@@ -13,8 +13,8 @@ COMMENT=	Multi-platform launcher for the Freespace 2 Source Code Project
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/GPLv2.txt
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}markdown>0:textproc/py-markdown \
-		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}markdown>0:textproc/py-markdown@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR}
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	scp-fs2open

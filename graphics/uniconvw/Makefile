@@ -18,9 +18,9 @@ LICENSE_FILE_LGPL20+ =	${WRKSRC}/src/GNU_LGPL_v2
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/sk1libs/__init__.py:graphics/sk1libs \
 		${PYTHON_SITELIBDIR}/uniconvertor/__init__.py:graphics/uniconvertor \
-		${PYTHON_SITELIBDIR}/gtk-2.0/gtk/__init__.py:x11-toolkits/py-gtk2
+		${PYTHON_SITELIBDIR}/gtk-2.0/gtk/__init__.py:x11-toolkits/py-gtk2@${FLAVOR}
 
-USES=		desktop-file-utils python
+USES=		desktop-file-utils python:2.7
 USE_PYTHON=	distutils
 NO_ARCH=	yes
 

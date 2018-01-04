@@ -42,6 +42,7 @@ BDB_DESC?=		Berkeley DB support
 BDB1_DESC?=		Berkeley DB 1.85 support
 BITTORRENT_DESC?=	BitTorrent file sharing support
 BOOST_DESC?=		Boost C++ libraries support
+BROTLI_DESC?=		Brotli compression support
 BZIP2_DESC?=		bzip2 compression support
 CACA_DESC?=		libcaca graphics library support
 CAIRO_DESC?=		Cairo graphics library support

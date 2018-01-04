@@ -705,6 +705,7 @@ share/kf5/kdoctools/customization/ro/lang.entities
 share/kf5/kdoctools/customization/ro/strings.entities
 share/kf5/kdoctools/customization/ro/user.entities
 share/kf5/kdoctools/customization/ru/catalog.xml
+share/kf5/kdoctools/customization/ru/entities/ccbysa4-notice.docbook
 share/kf5/kdoctools/customization/ru/entities/fdl-notice.docbook
 share/kf5/kdoctools/customization/ru/entities/gpl-notice.docbook
 share/kf5/kdoctools/customization/ru/entities/help-menu.docbook
@@ -714,6 +715,7 @@ share/kf5/kdoctools/customization/ru/entities/lgpl-notice.docbook
 share/kf5/kdoctools/customization/ru/entities/report-bugs.docbook
 share/kf5/kdoctools/customization/ru/entities/underArtisticLicense.docbook
 share/kf5/kdoctools/customization/ru/entities/underBSDLicense.docbook
+share/kf5/kdoctools/customization/ru/entities/underCCBYSA4.docbook
 share/kf5/kdoctools/customization/ru/entities/underFDL.docbook
 share/kf5/kdoctools/customization/ru/entities/underGPL.docbook
 share/kf5/kdoctools/customization/ru/entities/underLGPL.docbook

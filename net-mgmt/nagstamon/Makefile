@@ -15,7 +15,7 @@ COMMENT=	Nagios status monitor for your desktop
 LICENSE=	GPLv2
 
 RUN_DEPENDS=	sox:audio/sox \
-		${PYTHON_PKGNAMEPREFIX}keyring>=1.3:security/py-keyring
+		${PYTHON_PKGNAMEPREFIX}keyring>=1.3:security/py-keyring@${FLAVOR}
 
 USES=		cpe python:2
 CPE_VENDOR=	henri_wahl

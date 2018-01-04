@@ -3,11 +3,10 @@
 
 PORTNAME=	mesa-dri
 PORTVERSION=	${MESAVERSION}
+PORTREVISION=	1
 CATEGORIES=	graphics
 
 COMMENT=	OpenGL hardware acceleration drivers for DRI2+
-
-RUN_DEPENDS=	${LOCALBASE}/lib/libtxc_dxtn.so:graphics/s2tc
 
 USE_XORG=	dri2proto dri3proto glproto presentproto x11 xdamage xext \
 		xfixes xshmfence xv xvmc
@@ -31,6 +30,7 @@ VDPAU_LIB_DEPENDS=	libvdpau.so:multimedia/libvdpau
 
 ALL_DRI_DRIVERS=	I915 I965 RADEON R200 SWRAST
 ALL_GALLIUM_DRIVERS=	FREEDRENO R300 R600 RADEONSI SVGA SWRAST VC4
+ALL_VULKAN_DRIVERS=	INTEL RADEON
 
 DRI_DRIVERS=		SWRAST	# classic swrast
 .if "${MESA_LLVM_VER}" != ""
@@ -38,12 +38,15 @@ GALLIUM_DRIVERS=	SWRAST	# llvmpipe
 .else
 GALLIUM_DRIVERS=	""
 .endif
+VULKAN_DRIVERS=		#
+
 .if ${ARCH} == amd64 || ${ARCH} == i386 \
  || ${ARCH} == powerpc || ${ARCH} == powerpc64
 DRI_DRIVERS+=		RADEON R200
 GALLIUM_DRIVERS+=	R300 R600
 . if "${MESA_LLVM_VER}" != ""	# until PPC gets LLVM in base
 GALLIUM_DRIVERS+=	RADEONSI
+VULKAN_DRIVERS+=	RADEON
 . endif
 .endif
 .if ${ARCH} == amd64 || ${ARCH} == i386
@@ -52,6 +55,7 @@ GALLIUM_DRIVERS+=	SVGA
 . if ${OPSYS} == FreeBSD && ${OSVERSION} < 1100000
 EXTRA_PATCHES+=	${PATCHDIR}/extra-src_mesa_drivers_dri_i965_intel__screen.c
 . endif
+VULKAN_DRIVERS+=	INTEL
 .elif ${ARCH} == aarch64 || ${ARCH} == armv6 || ${ARCH} == armv7
 GALLIUM_DRIVERS+=	FREEDRENO VC4
 . if ${ARCH} == armv6 || ${ARCH} == armv7
@@ -59,8 +63,21 @@ EXTRA_PATCHES+=	${PATCHDIR}/extra-src_gallium_drivers_vc4_Makefile.in
 . endif
 .endif
 
+.if ${VULKAN_DRIVERS}
+BUILD_DEPENDS+=		${PYTHON_PKGNAMEPREFIX}mako>0:textproc/py-mako@${PY_FLAVOR}
+.endif
+
+.if ${VULKAN_DRIVERS:MINTEL}
+. if ${/usr/bin/ld:L:tA} != /usr/bin/ld.lld
+# --build-id isn't supported by old GNU ld.bfd in base
+USE_BINUTILS=		yes
+LDFLAGS+=		-B${LOCALBASE}/bin
+. endif
+.endif
+
 CONFIGURE_ARGS+=	--with-dri-drivers="${DRI_DRIVERS:tl}" \
-			--with-gallium-drivers="${GALLIUM_DRIVERS:tl}"
+			--with-gallium-drivers="${GALLIUM_DRIVERS:tl}" \
+			--with-vulkan-drivers="${VULKAN_DRIVERS:tl}"
 
 .for _d in ${ALL_DRI_DRIVERS}
 . if ${DRI_DRIVERS:M${_d}}
@@ -75,6 +92,14 @@ PLIST_SUB+=	${_d}_DRIVER="@comment "
 PLIST_SUB+=	${_gd}_GDRIVER=""
 . else
 PLIST_SUB+=	${_gd}_GDRIVER="@comment "
+. endif
+.endfor
+
+.for _vd in ${ALL_VULKAN_DRIVERS}
+. if ${VULKAN_DRIVERS:M${_vd}}
+PLIST_SUB+=	${_vd}_VDRIVER="" ARCH="${ARCH}"
+. else
+PLIST_SUB+=	${_vd}_VDRIVER="@comment "
 . endif
 .endfor
 

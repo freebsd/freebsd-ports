@@ -175,6 +175,5 @@ include/MYGUI/Plugin.h
 include/MYGUI/StrangeButton.h
 lib/Plugin_StrangeButton.so
 lib/libMyGUIEngine.so
-lib/libMyGUIEngine.so.3
-lib/libMyGUIEngine.so.3.2.2
+lib/libMyGUIEngine.so.3.2.3
 libdata/pkgconfig/MYGUI.pc

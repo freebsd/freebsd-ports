@@ -62,7 +62,7 @@
     SUBDIR += doc
     SUBDIR += dq
     SUBDIR += drool
-    SUBDIR += dualserver
+    SUBDIR += dynip
     SUBDIR += erlang-idna
     SUBDIR += ez-ipupdate
     SUBDIR += fastresolve
@@ -171,6 +171,7 @@
     SUBDIR += pear-Net_DNS2
     SUBDIR += powerdns
     SUBDIR += powerdns-recursor
+    SUBDIR += powerdns-recursor40
     SUBDIR += public_suffix_list
     SUBDIR += py-dns
     SUBDIR += py-dns-lexicon
@@ -187,8 +188,6 @@
     SUBDIR += py-pydnstable
     SUBDIR += py-pywdns
     SUBDIR += py-tldextract
-    SUBDIR += py3-dnspython
-    SUBDIR += py3-idna
     SUBDIR += radns
     SUBDIR += rbldnsd
     SUBDIR += rbllookup

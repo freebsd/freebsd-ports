@@ -12,6 +12,8 @@ COMMENT=	REDAXO content management system
 
 LICENSE=	GPLv2
 
+IGNORE_WITH_PHP=	70 71 72
+
 NO_BUILD=	yes
 
 SUB_FILES+=	pkg-message pkg-deinstall

@@ -1,0 +1,8 @@
+WMmp is a dockable musicpd (MPD) client applet for Window Maker.
+
+It offers controls to play, pause, stop the music, as well as
+navigate back and forth the current playlist.
+
+musicpd volume can be set with the mouse wheel.
+
+WWW: https://github.com/yogsothoth/wmmp

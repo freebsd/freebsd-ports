@@ -11,7 +11,7 @@ COMMENT=	PinYin engine for IBus
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}xdg>0:devel/py-xdg \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}xdg>0:devel/py-xdg@${PY_FLAVOR} \
 		${LOCALBASE}/share/gir-1.0/IBus-1.0.gir:textproc/ibus
 LIB_DEPENDS=	libpyzy-1.0.so:chinese/pyzy \
 		libibus-1.0.so:textproc/ibus \
@@ -19,6 +19,7 @@ LIB_DEPENDS=	libpyzy-1.0.so:chinese/pyzy \
 
 USES=		compiler:c++11-lib gmake pkgconfig python autoreconf libtool
 USE_GNOME=	glib20
+USE_PYTHON=	py3kplist
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-dependency-tracking --disable-lua-extension
 

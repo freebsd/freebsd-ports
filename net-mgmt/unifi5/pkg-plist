@@ -62,7 +62,6 @@
 %%JAVASHAREDIR%%/unifi/lib/tomcat-embed-logging-juli-%%TOMCATVER%%.jar
 %%JAVASHAREDIR%%/unifi/lib/tomcat-embed-logging-log4j-%%TOMCATVER%%.jar
 %%JAVASHAREDIR%%/unifi/lib/urlrewritefilter-4.0.4.jar
-%%JAVASHAREDIR%%/unifi/readme.txt
 %%JAVASHAREDIR%%/unifi/webapps/ROOT/WEB-INF/resourcerewrite.xml
 %%JAVASHAREDIR%%/unifi/webapps/ROOT/WEB-INF/urlrewrite.xml
 %%JAVASHAREDIR%%/unifi/webapps/ROOT/WEB-INF/web.xml

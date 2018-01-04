@@ -13,6 +13,8 @@ COMMENT=	PHP-based survey building and runing system
 
 LICENSE=	GPLv2
 
+IGNORE_WITH_PHP=	70 71 72
+
 USES=		cpe php:web
 
 # http://docs.limesurvey.org/Installation&structure=English+Instructions+for+LimeSurvey

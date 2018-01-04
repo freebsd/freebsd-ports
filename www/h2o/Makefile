@@ -1,17 +1,21 @@
-# Created by: Dave Cottlehuber <dch@skunkwerks.at>
+# Created by: Dave Cottlehuber <dch@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	h2o
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.2.3
+DISTVERSION=	2.2.4
 CATEGORIES=	www
 
-MAINTAINER=	dch@skunkwerks.at
+MAINTAINER=	dch@FreeBSD.org
 COMMENT=	Optimized HTTP/2 server including support for TLS 1.3 and HTTP/1.x
 
-LICENSE=	MIT
+LICENSE=	MIT BSD2CLAUSE
+LICENSE_COMB=	multi
 
-USES=		cmake:noninja compiler:c11 cpe perl5 shebangfix ssl
+BROKEN_armv6=		fails to compile: asm_arm.inc:139:36: '.syntax divided' arm assembly not supported
+BROKEN_armv7=		fails to compile: asm_arm.inc:139:36: '.syntax divided' arm assembly not supported
+
+USES=		cmake:noninja compiler:c11 cpe perl5 shebangfix ssl pkgconfig
 CPE_VENDOR=	h2o_project
 USE_GITHUB=	yes
 USE_PERL5=	run
@@ -20,7 +24,7 @@ SHEBANG_FILES=	share/h2o/start_server
 
 PORTDOCS=	README.md
 
-SUB_FILES=	${PORTNAME}
+SUB_FILES=	${PORTNAME} ${PORTNAME}.conf.sample
 SUB_LIST+=	H2O_USER=${H2O_USER} \
 		H2O_GROUP=${H2O_GROUP} \
 		H2O_LOGDIR=${H2O_LOGDIR}
@@ -52,15 +56,17 @@ MRUBY_VARS=		RUBY_NO_RUN_DEPENDS=yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|exec perl|exec ${LOCALBASE}/bin/perl|' \
 		${WRKSRC}/share/h2o/annotate-backtrace-symbols \
+		${WRKSRC}/share/h2o/fastcgi-cgi \
 		${WRKSRC}/share/h2o/fetch-ocsp-response \
 		${WRKSRC}/share/h2o/kill-on-close \
+		${WRKSRC}/share/h2o/setuidgid \
 		${WRKSRC}/share/h2o/start_server
 
 post-install:
 	${MKDIR} ${STAGEDIR}${ETCDIR} \
 		${STAGEDIR}${H2O_LOGDIR}
 	${INSTALL_DATA} \
-		${FILESDIR}/${PORTNAME}.conf.sample \
+		${WRKDIR}/${PORTNAME}.conf.sample \
 		${STAGEDIR}${ETCDIR}/${PORTNAME}.conf.sample
 
 post-install-DOCS-on:

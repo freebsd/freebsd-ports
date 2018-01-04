@@ -1,0 +1,13 @@
+A small and easy to use console text editor, featuring
+
+  - Multiple buffers/tabs
+  - Unlimited undo/redo
+  - Search and replace
+  - Syntax highlighting
+  - Customizable color schemes
+  - Customizable key bindings
+  - Command language with auto-completion
+  - Jump to definition (using ctags)
+  - Jump to compiler error
+
+WWW: https://craigbarnes.gitlab.io/dte/

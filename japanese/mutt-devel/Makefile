@@ -134,14 +134,6 @@ post-patch:
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}.ac
 .endif
 
-post-configure:
-	@${REINPLACE_CMD} -E "\
-		s|^(s%\@ACLOCAL\@%).+(%g)|\1${ACLOCAL}\2|; \
-		s|^(s%\@AUTOCONF\@%).+(%g)|\1${AUTOCONF}\2|; \
-		s|^(s%\@AUTOMAKE\@%).+(%g)|\1${AUTOMAKE}\2|; \
-		s|^(s%\@AUTOHEADER\@%).+(%g)|\1${AUTOHEADER}\2|" \
-		${BUILD_WRKSRC}/config.status
-
 .if ${PORT_OPTIONS:MDOCS}
 post-install:
 	${INSTALL_DATA} ${_DISTDIR}/INSTALL.JA-PATCH.ja ${STAGEDIR}${DOCSDIR}

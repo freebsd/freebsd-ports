@@ -1,0 +1,23 @@
+--- src/cpp/core/CMakeLists.txt.orig	2017-11-16 21:40:37 UTC
++++ src/cpp/core/CMakeLists.txt
+@@ -143,16 +143,17 @@ if (UNIX)
+    }
+    "
+    HAVE_SCANDIR_POSIX)
+-
+    # platform introspection
+    check_symbol_exists(SA_NOCLDWAIT "signal.h" HAVE_SA_NOCLDWAIT)
+    check_symbol_exists(SO_PEERCRED "sys/socket.h" HAVE_SO_PEERCRED)
++   set(CMAKE_REQUIRED_LIBRARIES ${FREEBSD_LIBDIR}/libinotify.so)
+    check_function_exists(inotify_init1 HAVE_INOTIFY_INIT1)
++   set(CMAKE_REQUIRED_LIBRARIES "")
+    check_function_exists(getpeereid HAVE_GETPEEREID)
+    check_function_exists(setresuid HAVE_SETRESUID)
+-   if(EXISTS "/proc/self")
++   #if(EXISTS "/proc/self")
+       set(HAVE_PROCSELF TRUE)
+-   endif()
++   #endif()
+    configure_file (${CMAKE_CURRENT_SOURCE_DIR}/config.h.in
+                    ${CMAKE_CURRENT_BINARY_DIR}/config.h)
+ 

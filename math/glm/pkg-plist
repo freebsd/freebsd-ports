@@ -210,12 +210,6 @@ include/glm/gtx/rotate_vector.inl
 include/glm/gtx/scalar_multiplication.hpp
 include/glm/gtx/scalar_relational.hpp
 include/glm/gtx/scalar_relational.inl
-include/glm/gtx/simd_mat4.hpp
-include/glm/gtx/simd_mat4.inl
-include/glm/gtx/simd_quat.hpp
-include/glm/gtx/simd_quat.inl
-include/glm/gtx/simd_vec4.hpp
-include/glm/gtx/simd_vec4.inl
 include/glm/gtx/spline.hpp
 include/glm/gtx/spline.inl
 include/glm/gtx/std_based_type.hpp

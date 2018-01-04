@@ -14,10 +14,11 @@ COMMENT=	Xmpp to irc transport
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/xmpp/__init__.py:net-im/py-xmpppy \
-		${PYTHON_PKGNAMEPREFIX}irc>0:irc/py-irc
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/xmpp/__init__.py:net-im/py-xmpppy@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}irc>0:irc/py-irc@${FLAVOR}
 
-USES=		python
+USES=		python:2.7
+USE_PYTHON=	flavors
 NO_BUILD=	yes
 NO_ARCH=	yes
 FILES=		irc.py jep0106.py jep0133.py test_jep0106.py

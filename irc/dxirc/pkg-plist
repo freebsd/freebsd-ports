@@ -1,7 +1,7 @@
-%%FOX%%bin/dxirc-fox
-%%QT%%bin/dxirc-qt
-%%FOX%%share/applications/dxirc-fox.desktop
-%%QT%%share/applications/dxirc-qt.desktop
+%%FOX16%%bin/dxirc-fox
+%%NO_FOX16%%bin/dxirc-qt
+%%FOX16%%share/applications/dxirc-fox.desktop
+%%NO_FOX16%%share/applications/dxirc-qt.desktop
 %%DATADIR%%/COPYING
 %%DATADIR%%/icons/arrow_down.png
 %%DATADIR%%/icons/arrow_refresh.png

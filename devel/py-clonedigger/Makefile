@@ -14,7 +14,7 @@ COMMENT=	Detect similar code in Python and Java programs
 
 LICENSE=	GPLv2
 
-USES=		python
+USES=		python:2.7
 USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

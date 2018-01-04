@@ -1,3 +1,4 @@
+etc/xdg/krunner.categories
 include/KF5/KRunner/KRunner/AbstractRunner
 include/KF5/KRunner/KRunner/QueryMatch
 include/KF5/KRunner/KRunner/RunnerContext

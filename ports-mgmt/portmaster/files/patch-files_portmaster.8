@@ -1,0 +1,21 @@
+--- files/portmaster.8.orig	2017-12-21 09:02:44 UTC
++++ files/portmaster.8
+@@ -37,6 +37,7 @@ Common Flags:
+ .Op Fl -packages-if-newer
+ .Op Fl -delete-build-only
+ .Op Fl -always-fetch
++.Op Fl -backup-format=<fmt>
+ .Op Fl -local-packagedir=<path>
+ .Op Fl -packages-local
+ .Op Fl -delete-packages
+@@ -415,6 +416,10 @@ use package if newer than installed even if the packag
+ the latest according to the ports tree
+ .It Fl -always-fetch
+ fetch package even if it already exists locally
++.It Fl -backup-format=<fmt>
++the archive format to use for backlup packages instead of the default of txz,
++which can take a long time for large packages.
++Supported formats are: tar, tgz, tbz, and txz (from fastest to slowest).
+ .It Fl -local-packagedir=<path>
+ where local packages can be found,
+ will fall back to fetching if no local version exists.

@@ -15,7 +15,7 @@ EXTRACT_ONLY=	Numeric-${PORTVERSION}${EXTRACT_SUFX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Numeric Extension to Python
 
-USES=		python
+USES=		python:2.7
 USE_PYTHON=	distutils autoplist
 
 WRKSRC=		${WRKDIR}/Numeric-${PORTVERSION}

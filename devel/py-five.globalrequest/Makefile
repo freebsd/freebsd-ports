@@ -13,7 +13,7 @@ COMMENT=	Zope 2 integration for zope.globalrequest
 
 LICENSE=	ZPL21
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zope.globalrequest>=0:devel/py-zope.globalrequest
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zope.globalrequest>=0:devel/py-zope.globalrequest@${FLAVOR}
 
 USES=		python
 USE_PYTHON=	distutils autoplist

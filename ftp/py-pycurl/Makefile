@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pycurl
-PORTVERSION=	7.43.0
+PORTVERSION=	7.43.0.1
 CATEGORIES=	ftp python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,10 +17,18 @@ LICENSE_MIT=	${WRKSRC}/COPYING-MIT
 
 LIB_DEPENDS=	libcurl.so:ftp/curl
 
+OPTIONS_DEFINE=	DOCS
+
 USE_PYTHON=	autoplist concurrent distutils
 USES=		python ssl
 
+PORTDOCS=	AUTHORS INSTALL.rst README.rst RELEASE-NOTES.rst
+
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/${PORTNAME}.so
+
+post-install-DOCS-on:
+	${MKDIR} ${STAGEDIR}${DOCSDIR}/
+	cd ${WRKSRC}/ && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}/
 
 .include <bsd.port.mk>

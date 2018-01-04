@@ -16,10 +16,13 @@ COMMENT=	Rule-based Dispatching and Generic Functions
 LICENSE=	PSFL ZPL21
 LICENSE_COMB=	dual
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Extremes>=1.1:devel/py-extremes \
-		${PYTHON_PKGNAMEPREFIX}PyProtocols>=1.0.a0.r2302:devel/py-protocols-devel
+DEPRECATED=	Depends on expiring devel/py-protocols-devel
+EXPIRATION_DATE=	2018-01-27
 
-USES=		python
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Extremes>=1.1:devel/py-extremes@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}PyProtocols>=1.0.a0.r2302:devel/py-protocols-devel@${FLAVOR}
+
+USES=		python:2.7
 USE_PYTHON=	distutils autoplist
 
 # to have a platform/release indipendent directory (necessary for strip cmd)

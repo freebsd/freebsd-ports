@@ -13,7 +13,7 @@ COMMENT=	Python module to customize the process title
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
-USES?=		python
+USES=		python
 USE_PYTHON=	autoplist distutils
 
 PORTDOCS=	HISTORY.rst README.rst

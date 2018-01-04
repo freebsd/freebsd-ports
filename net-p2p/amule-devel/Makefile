@@ -101,7 +101,7 @@ UPNP_LIB_DEPENDS=	libupnp.so:devel/upnp
 UPNP_CONFIGURE_OFF=	--disable-upnp
 
 WEBSERVER_CONFIGURE_ON=	--enable-webserver
-WEBSERVER_LIB_DEPENDS=	libpng16.so:graphics/png
+WEBSERVER_LIB_DEPENDS=	libpng.so:graphics/png
 
 WXCAS_CONFIGURE_ON=	--enable-wxcas
 

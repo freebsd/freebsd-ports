@@ -2,34 +2,27 @@
 # $FreeBSD$
 
 PORTNAME=	freedoom
-PORTVERSION=	0.7
+PORTVERSION=	0.10.1
 CATEGORIES=	games
-MASTER_SITES=	SAVANNAH/${PORTNAME}/${PORTNAME}-iwad
+MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/v${PORTVERSION}/
 PKGNAMEPREFIX=	${DMPKGNAMEPREFIX}
-DISTNAME=	${PORTNAME}-iwad-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Complete Doom-based game IWAD that is Free Software
 
 USES=		zip
 NO_BUILD=	yes
+NO_ARCH=	yes
 
 DATADIR=	${DMDIR}/${PORTNAME}
-DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
 
-PLIST_FILES=	%%DATADIR%%/doom2.wad
-PLIST_DIRS=	%%DATADIR%%
-PORTDOCS=	ChangeLog NEWS README
-
-OPTIONS_DEFINE=	DOCS
+PLIST_FILES=	%%DATADIR%%/freedoom1.wad \
+		%%DATADIR%%/freedoom2.wad
 
 do-install:
-	${MKDIR} ${STAGEDIR}${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/doom2.wad ${STAGEDIR}${DATADIR}
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for f in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
-.endfor
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/freedoom1.wad ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/freedoom2.wad ${STAGEDIR}${DATADIR}
 
 .include "${.CURDIR}/../doom-data/Makefile.include"
 

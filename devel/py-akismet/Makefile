@@ -14,7 +14,7 @@ COMMENT=	Python interface to the Akismet API
 
 LICENSE=	BSD3CLAUSE
 
-USES=		python zip
+USES=		python:2.7 zip
 USE_PYTHON=	distutils
 PYDISTUTILS_PKGNAME=	akismet
 

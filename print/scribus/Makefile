@@ -24,13 +24,13 @@ LIB_DEPENDS=	liblcms.so:graphics/lcms \
 		libcairo.so:graphics/cairo \
 		libhyphen.so:textproc/hyphen \
 		libfontconfig.so:x11-fonts/fontconfig
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tkinter>0:x11-toolkits/py-tkinter \
-		${PYTHON_SITELIBDIR}/PIL/_imaging.so:graphics/py-pillow
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tkinter>0:x11-toolkits/py-tkinter@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pillow>=0:graphics/py-pillow@${PY_FLAVOR}
 
 USE_QT4=	corelib gui linguist_build moc_build qmake_build rcc_build uic_build xml network
 USE_GNOME=	libartlgpl2 libxml2
 USES=		cmake:outsource desktop-file-utils ghostscript:run jpeg \
-		pkgconfig python shared-mime-info tar:xz
+		pkgconfig python:2.7 shared-mime-info tar:xz
 USE_LDCONFIG=	yes
 
 CMAKE_ARGS+=	-DWANT_HUNSPELL=YES -Wno-ferror-limit

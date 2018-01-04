@@ -18,6 +18,6 @@ LICENSE=	GPLv3
 LIB_DEPENDS=	libkyotocabinet.so:databases/kyotocabinet
 
 USE_PYTHON=	autoplist distutils
-USES=		python:3
+USES=		python:3.4+
 
 .include <bsd.port.mk>

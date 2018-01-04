@@ -14,7 +14,6 @@ LICENSE=	MIT
 ONLY_FOR_ARCHS=	amd64
 
 BUILD_DEPENDS=	gnustat:sysutils/coreutils \
-		${LOCALBASE}/libdata/pkgconfig/eigen3.pc:math/eigen3 \
 		${LOCALBASE}/lib/libntl.a:math/ntl \
 		cmake:devel/cmake
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
@@ -34,7 +33,7 @@ LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 		libGLw.so:graphics/libGLw \
 		libGLU.so:graphics/libGLU
 
-USES=		gmake jpeg sqlite ssl
+USES=		eigen:3 gmake jpeg sqlite ssl
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	X-Plane

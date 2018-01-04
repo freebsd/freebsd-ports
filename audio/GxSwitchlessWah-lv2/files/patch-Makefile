@@ -1,0 +1,47 @@
+--- Makefile.orig	2017-12-08 06:25:07 UTC
++++ Makefile
+@@ -8,25 +8,25 @@
+ 	endif
+ 
+ 	# check CPU and supported optimization flags
+-	ifneq ($(shell cat /proc/cpuinfo | grep sse3 ) , )
+-		SSE_CFLAGS = -msse3 -mfpmath=sse
+-	else ifneq ($(shell cat /proc/cpuinfo | grep sse2 ) , )
+-		SSE_CFLAGS = -msse2 -mfpmath=sse
+-	else ifneq ($(shell cat /proc/cpuinfo | grep sse ) , )
+-		SSE_CFLAGS = -msse -mfpmath=sse
+-		else ifneq ($(shell cat /proc/cpuinfo | grep ARM ) , )
+-		ifneq ($(shell cat /proc/cpuinfo | grep ARMv7 ) , )
+-			ifneq ($(shell cat /proc/cpuinfo | grep vfpd32 ) , )
+-				SSE_CFLAGS = -march=armv7 -mfpu=vfpv3 
+-			else ifneq ($(shell cat /proc/cpuinfo | grep vfpv3 ) , )
+-				SSE_CFLAGS = -march=armv7 -mfpu=vfpv3
+-			endif
+-		else
+-			ARMCPU = "YES"
+-		endif
+-	else
+-		SSE_CFLAGS =
+-	endif
++	#ifneq ($(shell cat /proc/cpuinfo | grep sse3 ) , )
++	#	SSE_CFLAGS = -msse3 -mfpmath=sse
++	#else ifneq ($(shell cat /proc/cpuinfo | grep sse2 ) , )
++	#	SSE_CFLAGS = -msse2 -mfpmath=sse
++	#else ifneq ($(shell cat /proc/cpuinfo | grep sse ) , )
++	#	SSE_CFLAGS = -msse -mfpmath=sse
++	#	else ifneq ($(shell cat /proc/cpuinfo | grep ARM ) , )
++	#	ifneq ($(shell cat /proc/cpuinfo | grep ARMv7 ) , )
++	#		ifneq ($(shell cat /proc/cpuinfo | grep vfpd32 ) , )
++	#			SSE_CFLAGS = -march=armv7 -mfpu=vfpv3 
++	#		else ifneq ($(shell cat /proc/cpuinfo | grep vfpv3 ) , )
++	#			SSE_CFLAGS = -march=armv7 -mfpu=vfpv3
++	#		endif
++	#	else
++	#		ARMCPU = "YES"
++	#	endif
++	#else
++	#	SSE_CFLAGS =
++	#endif
+ 
+ 	# set bundle name
+ 	NAME = gx_switchless_wah

@@ -18,7 +18,7 @@ RUN_DEPENDS=	trytond28_party>=2.8.0:finance/trytond28_party
 
 CONFLICTS=	trytond_party_siret-2.[46].*
 
-USES=		python
+USES=		python:2.7
 USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

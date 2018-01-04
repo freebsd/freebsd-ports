@@ -1,6 +1,6 @@
---- ./ImathTest/testBoxAlgo.cpp.orig	2013-06-18 21:51:38.000000000 +0200
-+++ ./ImathTest/testBoxAlgo.cpp	2014-01-29 13:16:44.000000000 +0100
-@@ -356,7 +356,7 @@
+--- ImathTest/testBoxAlgo.cpp.orig	2017-11-17 23:00:23 UTC
++++ ImathTest/testBoxAlgo.cpp
+@@ -356,7 +356,7 @@ entryAndExitPoints1 ()
  	Box3f ()
      };
  

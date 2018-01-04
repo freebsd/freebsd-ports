@@ -14,7 +14,6 @@ COMMENT=	Reimplementation of portions of the pygame API using SDL2
 LICENSE=	LGPL21+ ZLIB
 LICENSE_COMB=	multi
 
-BUILD_DEPENDS=	cython:lang/cython
 LIB_DEPENDS=	libpng.so:graphics/png
 
 # Upstream tends to reroll distfiles before moving under /release/
@@ -22,9 +21,11 @@ PORTSCOUT=	site:http://www.renpy.org/dl/release/
 
 USES=		jpeg python
 USE_SDL=	image2 mixer2 ttf2
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	autoplist distutils cython
 EXCLUDE=	gen gen3 PKG-INFO '*.egg-info'
 EXTRACT_AFTER_ARGS=${EXCLUDE:S,^,--exclude ,}
+
+BINARY_ALIAS=	cython=cython-${PYTHON_VER}
 
 post-install:
 	${FIND} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR} -name \*.so \

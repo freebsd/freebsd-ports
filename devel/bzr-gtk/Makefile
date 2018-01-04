@@ -15,10 +15,10 @@ LICENSE=	GPLv2
 
 BUILD_DEPENDS=	bzr:devel/bzr
 RUN_DEPENDS=	bzr:devel/bzr \
-		${PYTHON_PKGNAMEPREFIX}cairo>=0:graphics/py-cairo
+		${PYTHON_PKGNAMEPREFIX}cairo>=0:graphics/py-cairo@${FLAVOR}
 
 
-USES=		desktop-file-utils python
+USES=		desktop-file-utils python:2.7
 USE_PYTHON=	distutils autoplist
 USE_GNOME=	pygtk2
 INSTALLS_ICONS=	yes

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fish
-PORTVERSION=	2.6.0
+PORTVERSION=	2.7.0
 CATEGORIES=	shells
 MASTER_SITES=	http://fishshell.com/files/${PORTVERSION}/
 
@@ -13,9 +13,11 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS+=	libpcre2-32.so:devel/pcre2
 
-USES=		autoreconf cpe gmake libtool ncurses pkgconfig pathfix python:3 \
+USES=		autoreconf cpe gmake libtool ncurses pkgconfig pathfix python:3.4+ \
 		localbase compiler:c++11-lang shebangfix
 SHEBANG_FILES=	share/tools/*.py share/tools/web_config/webconfig.py
+
+CONFLICTS_INSTALL=	comms/mlan3
 
 GNU_CONFIGURE=	yes
 

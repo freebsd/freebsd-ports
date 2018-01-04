@@ -41,7 +41,7 @@ LIB_DEPENDS=	libstartup-notification-1.so:x11/startup-notification \
 		libcogl.so:graphics/cogl \
 		libclutter-1.0.so:graphics/clutter \
 		libgjs.so:lang/gjs
-RUN_DEPENDS=	py*-dbus>=0:devel/py-dbus \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>=0:devel/py-dbus@${PY_FLAVOR} \
 		nss>=0:security/nss \
 		gnome-control-center:sysutils/gnome-control-center \
 		ca_root_nss>=0:security/ca_root_nss \
@@ -50,7 +50,7 @@ RUN_DEPENDS=	py*-dbus>=0:devel/py-dbus \
 PORTSCOUT=	limitw:1,even
 
 USES=		compiler:c11 cpe gettext gmake gnome libtool localbase \
-		pathfix pkgconfig sqlite tar:xz webplugin:native
+		pathfix pkgconfig python:3.4+ sqlite tar:xz webplugin:native
 USE_GNOME=	cairo evolutiondataserver3 gdkpixbuf2 gtk30 intltool \
 		introspection libxml2
 USE_XORG=	x11 xcomposite xdamage xext xfixes xi xrandr

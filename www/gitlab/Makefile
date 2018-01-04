@@ -2,11 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	gitlab
-PORTVERSION=	10.1.4
+PORTVERSION=	10.1.5
 DISTVERSIONPREFIX=	v
+PORTREVISION=	3
 CATEGORIES=	www devel
 
-MAINTAINER=	tz@FreeBSD.org
+MAINTAINER=	idefix@fechner.net
 COMMENT=	Web GUI for managing git repositories
 
 LICENSE=	MIT
@@ -57,7 +58,7 @@ RUN_DEPENDS=	git>=2.14.1:devel/git \
 	rubygem-omniauth_crowd>=2.2.0:devel/rubygem-omniauth_crowd \
 	rubygem-omniauth-authentiq>=0.3.1:net/rubygem-omniauth-authentiq \
 	rubygem-rack-oauth2>=1.2.1:security/rubygem-rack-oauth2 \
-	rubygem-jwt>=1.5.6:www/rubygem-jwt \
+	rubygem-jwt1>=1.5.6:www/rubygem-jwt1 \
 	rubygem-recaptcha>=3.0:devel/rubygem-recaptcha \
 	rubygem-akismet>=2.0:devel/rubygem-akismet \
 	rubygem-devise-two-factor>=3.0.0:security/rubygem-devise-two-factor \
@@ -80,7 +81,7 @@ RUN_DEPENDS=	git>=2.14.1:devel/git \
 	rubygem-hamlit>=2.6.1:www/rubygem-hamlit \
 	rubygem-carrierwave>=1.1:www/rubygem-carrierwave \
 	rubygem-dropzonejs-rails>=0.7.1:www/rubygem-dropzonejs-rails \
-	rubygem-fog-aws>=1.4:net/rubygem-fog-aws \
+	rubygem-fog-aws1>=1.4:net/rubygem-fog-aws1 \
 	rubygem-fog-core>=1.44:devel/rubygem-fog-core \
 	rubygem-fog-google>=0.5:net/rubygem-fog-google \
 	rubygem-fog-local>=0.3:net/rubygem-fog-local \
@@ -116,12 +117,12 @@ RUN_DEPENDS=	git>=2.14.1:devel/git \
 	rubygem-sidekiq-limit_fetch>=3.4:devel/rubygem-sidekiq-limit_fetch \
 	rubygem-rufus-scheduler>=3.4.0:devel/rubygem-rufus-scheduler \
 	rubygem-httparty>=0.13.3:www/rubygem-httparty \
-	rubygem-rainbow>=2.2:devel/rubygem-rainbow \
+	rubygem-rainbow2>=2.2:devel/rubygem-rainbow2 \
 	rubygem-settingslogic>=2.0.9:devel/rubygem-settingslogic \
 	rubygem-re2>=1.1.1:devel/rubygem-re2 \
 	rubygem-version_sorter>=2.1.0:textproc/rubygem-version_sorter \
 	rubygem-redis-rails>=5.0.1:www/rubygem-redis-rails \
-	rubygem-redis>=3.2:databases/rubygem-redis \
+	rubygem-redis3>=3.2:databases/rubygem-redis3 \
 	rubygem-connection_pool>=2.0:net/rubygem-connection_pool \
 	rubygem-hipchat>=1.5.0:net-im/rubygem-hipchat \
 	rubygem-jira-ruby>=1.4:devel/rubygem-jira-ruby \
@@ -222,7 +223,6 @@ post-patch-MYSQL-off:
 	${REINPLACE_CMD} -e "/gem 'peek-mysql2'/d" ${WRKSRC}/Gemfile
 
 post-patch-PGSQL-on:
-	${REINPLACE_CMD} -e "/gem 'pg'/d" ${WRKSRC}/Gemfile
 	${CP} ${WRKSRC}/config/database.yml.postgresql ${WRKSRC}/config/database.yml.sample
 
 post-patch-PGSQL-off:

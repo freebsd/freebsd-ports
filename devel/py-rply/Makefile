@@ -13,7 +13,7 @@ COMMENT=	Pure python parser generator, that also works with RPython
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}appdirs>0:devel/py-appdirs
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}appdirs>0:devel/py-appdirs@${FLAVOR}
 
 USES=		python
 USE_PYTHON=	distutils autoplist

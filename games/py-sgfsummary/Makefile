@@ -12,9 +12,10 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SGF Summarizer
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/sgflib.py:games/py-sgflib
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/sgflib.py:games/py-sgflib@${FLAVOR}
 
 USES=		python shebangfix tar:tgz
+USE_PYTHON=	flavors
 SHEBANG_FILES=	sgfsummary.py
 WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION}
 NO_BUILD=	yes

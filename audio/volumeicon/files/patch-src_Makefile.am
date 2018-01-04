@@ -1,0 +1,19 @@
+--- src/Makefile.am.orig	2015-03-02 23:54:36.000000000 +0100
++++ src/Makefile.am	2017-12-18 17:23:45.222731000 +0100
+@@ -5,11 +5,15 @@ LIBS = @GTK_LIBS@ @ALSA_LIBS@ @X11_LIBS@
+ 
+ bin_PROGRAMS = volumeicon
+ 
+-if ENABLE_OSS
++if ENABLE_OSS4
+ BACKEND = oss_backend.c oss_backend.h
+ else
++if ENABLE_OSS3
++BACKEND = oss3_backend.c oss_backend.h
++else
+ BACKEND = alsa_backend.c alsa_backend.h alsa_volume_mapping.h alsa_volume_mapping.c
+ endif
++endif
+ 
+ volumeicon_SOURCES = \
+ 	volumeicon.c \

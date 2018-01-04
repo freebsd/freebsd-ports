@@ -1,9 +1,9 @@
-%%PYTHON_SITELIBDIR%%/augeas.%%PYTHON_PYOEXTENSION%%
 %%PYTHON_SITELIBDIR%%/augeas.py
 %%PYTHON_SITELIBDIR%%/augeas.pyc
-%%PYTHON_SITELIBDIR%%/augeas/__init__.%%PYTHON_PYOEXTENSION%%
+%%PYTHON_SITELIBDIR%%/augeas.pyo
 %%PYTHON_SITELIBDIR%%/augeas/__init__.py
 %%PYTHON_SITELIBDIR%%/augeas/__init__.pyc
-%%PYTHON_SITELIBDIR%%/augeas/ffi.%%PYTHON_PYOEXTENSION%%
+%%PYTHON_SITELIBDIR%%/augeas/__init__.pyo
 %%PYTHON_SITELIBDIR%%/augeas/ffi.py
 %%PYTHON_SITELIBDIR%%/augeas/ffi.pyc
+%%PYTHON_SITELIBDIR%%/augeas/ffi.pyo

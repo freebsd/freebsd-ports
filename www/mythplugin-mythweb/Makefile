@@ -12,6 +12,8 @@ COMMENT=	Frontend for scheduling and managing recordings on your MythTV Box
 
 LICENSE=	GPLv2
 
+IGNORE_WITH_PHP=	70 71 72
+
 RUN_DEPENDS=	p5-DBD-mysql>=0:databases/p5-DBD-mysql
 
 USE_GITHUB=	yes

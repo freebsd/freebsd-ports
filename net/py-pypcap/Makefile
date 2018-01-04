@@ -14,12 +14,12 @@ COMMENT=	Simplified object-oriented Python extension module for libpcap
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	pyrexc:devel/pyrex
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyrex>0:devel/pyrex@${FLAVOR}
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	dugsong
 
-USES=		python
+USES=		python:2.7
 USE_PYTHON=	distutils autoplist
 
 post-patch:

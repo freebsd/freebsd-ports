@@ -50,9 +50,6 @@ SERDISP_CPPFLAGS=	-I${LOCALBASE}/include
 X11_USE=		xorg=x11
 X11_CONFIGURE_ENABLE=	libX11
 
-# Empty args to aclocal required!
-ACLOCAL_ARGS=
-
 LCDPROC_DRIVERS=bayrad \
 		CFontz \
 		CFontzPacket \

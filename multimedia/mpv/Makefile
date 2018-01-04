@@ -4,7 +4,7 @@
 PORTNAME=	mpv
 PORTVERSION=	0.27.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	2
+PORTREVISION=	4
 PORTEPOCH=	1
 CATEGORIES=	multimedia audio
 
@@ -36,7 +36,6 @@ CONFIGURE_ARGS=	--docdir="${EXAMPLESDIR}" \
 		--disable-optimize \
 		--disable-pdf \
 		--disable-rubberband \
-		--disable-vaapi-wayland \
 		--disable-vapoursynth \
 		--disable-vapoursynth-lazy \
 		--enable-libmpv-shared
@@ -152,6 +151,15 @@ ZSH_USES=			perl5
 ZSH_USE=			PERL5=build
 ZSH_CONFIGURE_ENV=		BIN_PERL="${PERL}"
 ZSH_CONFIGURE_ENABLE=		zsh-comp
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MVAAPI} && ${PORT_OPTIONS:MWAYLAND}
+CONFIGURE_ARGS+=	--enable-vaapi-wayland
+LIB_DEPENDS+=		libva-wayland.so:multimedia/libva
+.else
+CONFIGURE_ARGS+=	--disable-vaapi-wayland
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/pkgconfig/mpv.pc|data/pkgconfig/mpv.pc|g' \

@@ -1,7 +1,0 @@
-#################################################################
-
-The support for lastfm:// URIs in Konqueror and Firefox will only
-work in browser instances started after the installation of this
-package.
-
-#################################################################

@@ -1,6 +1,6 @@
---- src/plugins/grass/CMakeLists.txt.orig	2016-10-21 12:14:02 UTC
+--- src/plugins/grass/CMakeLists.txt.orig	2017-10-27 12:00:21 UTC
 +++ src/plugins/grass/CMakeLists.txt
-@@ -202,6 +202,7 @@ MACRO(ADD_GRASSPLUGIN GRASS_BUILD_VERSIO
+@@ -202,6 +202,7 @@ MACRO(ADD_GRASSPLUGIN GRASS_BUILD_VERSION)
        qgis_app
        qgis_gui
        ${OPENPTY_LIBRARY}

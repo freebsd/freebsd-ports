@@ -13,10 +13,10 @@ COMMENT=	Support for django models over LDAP
 
 LICENSE=	BSD2CLAUSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django18>=1.6.0:www/py-django18 \
-		${PYTHON_PKGNAMEPREFIX}ldap>=2.0:net/py-ldap
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django18>=1.6.0:www/py-django18@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}ldap>=2.0:net/py-ldap@${FLAVOR}
 
-USES=		python
+USES=		python:2.7
 USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

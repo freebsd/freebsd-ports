@@ -17,10 +17,10 @@ LICENSE=	GPLv2
 RUN_DEPENDS+=	dot:graphics/graphviz
 
 USES=		python shebangfix
-USE_PYTHON=	distutils
+USE_PYTHON=	distutils autoplist concurrent
 SHEBANG_FILES=	examples/*.py
 
-EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
+EXAMPLESDIR=	${PREFIX}/share/examples/${PYTHON_PKGNAMEPREFIX}${PORTNAME}
 
 OPTIONS_DEFINE=	EXAMPLES
 

@@ -79,7 +79,7 @@
 -	@$(INSTALL_DATA) tk.pc $(LIB_INSTALL_DIR)/pkgconfig/tk.pc
 +	@echo "Installing pkg-config file to $(INSTALL_ROOT)$(prefix)/libdata/pkgconfig/"
 +	@$(INSTALL_DATA_DIR) $(INSTALL_ROOT)$(prefix)/libdata/pkgconfig
-+	@$(INSTALL_DATA) tk.pc $(INSTALL_ROOT)$(prefix)/libdata/pkgconfig/tk.pc
++	@$(INSTALL_DATA) tk.pc $(INSTALL_ROOT)$(prefix)/libdata/pkgconfig/tk86.pc
  
  install-libraries: libraries
  	@for i in "$(SCRIPT_INSTALL_DIR)" "$(SCRIPT_INSTALL_DIR)/images" \

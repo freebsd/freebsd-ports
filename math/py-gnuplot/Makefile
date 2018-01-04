@@ -18,7 +18,7 @@ BUILD_DEPENDS=	${PYNUMPY}
 RUN_DEPENDS=	gnuplot:math/gnuplot \
 		${PYNUMPY}
 
-USES=		python
+USES=		python:2.7
 USE_PYTHON=	distutils autoplist
 NO_ARCH=	yes
 

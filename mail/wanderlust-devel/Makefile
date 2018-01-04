@@ -25,7 +25,6 @@ CONFLICTS=	wanderlust-*-2.14.*
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
 .include <bsd.port.pre.mk>
-.include <bsd.port.options.mk>
 
 MIMEUI_PORT_NAME=	${MIMEUI_PRODUCT}
 MIMEUI_PRODUCT=	semi

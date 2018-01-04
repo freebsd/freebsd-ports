@@ -11,8 +11,8 @@ COMMENT=	Framework for courier filter development in python
 
 BUILD_DEPENDS=	courier-config:mail/courier
 
-USES=		python
-USE_PYTHON=	distutils
+USES=		python:2.7
+USE_PYTHON=	distutils concurrent optsuffix
 NO_ARCH=	yes
 
 MAILOWN=	courier
@@ -60,7 +60,7 @@ OPTIONS_DEFAULT=	DEBUG WHITELIST_RELAY WHITELIST_AUTH
 
 PYDISTUTILS_INSTALLARGS:=${PYDISTUTILS_INSTALLARGS} --install-scripts=${PYSCRIPTSDIR}
 
-CLAMAV_CLAMD_RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pyclamd.py:security/py-pyclamd
+CLAMAV_CLAMD_RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pyclamd.py:security/py-pyclamd@${FLAVOR}
 
 post-extract:
 	${MV} ${WRKSRC}/pythonfilter.conf ${WRKSRC}/pythonfilter.conf.sample

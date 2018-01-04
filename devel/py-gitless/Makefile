@@ -14,9 +14,9 @@ COMMENT=	Version control system built on top of Git
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}clint>=0.3.6:devel/py-clint \
-		${PYTHON_PKGNAMEPREFIX}pygit2>=0.23.0:devel/py-pygit2 \
-		${PYTHON_PKGNAMEPREFIX}sh>=1.11:devel/py-sh \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}clint>=0.3.6:devel/py-clint@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pygit2>=0.23.0:devel/py-pygit2@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}sh>=1.11:devel/py-sh@${FLAVOR} \
 		git:devel/git
 
 USES=		python

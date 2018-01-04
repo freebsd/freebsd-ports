@@ -16,7 +16,7 @@ GH_ACCOUNT=	jcs
 
 USE_XORG=	x11 xfixes xi xt
 
-MAKE_ARGS=	X11BASE="${PREFIX}"
+MAKE_ARGS=	X11BASE="${LOCALBASE}"
 
 PLIST_FILES=	bin/xbanish \
 		man/man1/xbanish.1.gz

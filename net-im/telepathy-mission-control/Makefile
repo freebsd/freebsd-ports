@@ -14,7 +14,7 @@ COMMENT=	Telepathy component to apps to abstract details of connection managers
 LIB_DEPENDS=	libtelepathy.so:net-im/libtelepathy \
 		libdbus-glib-1.so:devel/dbus-glib
 
-USES=		gmake libtool pathfix pkgconfig
+USES=		gmake libtool pathfix pkgconfig python:2.7,build
 USE_GNOME=	glib20 libxslt
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

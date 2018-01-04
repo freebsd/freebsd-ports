@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	colmap
-DISTVERSION=	3.2
-PORTREVISION=	4
+DISTVERSION=	3.3
 CATEGORIES=	graphics
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -19,19 +18,18 @@ LICENSE_FILE_MIT=	${WRKSRC}/src/ext/PoissonRecon/LICENSE
 LICENSE_FILE_SIFTGPU=	${WRKSRC}/src/ext/SiftGPU/LICENSE
 LICENSE_PERMS_SIFTGPU=	dist-mirror pkg-mirror auto-accept
 
-BUILD_DEPENDS=	eigen>=3:math/eigen3
 LIB_DEPENDS=	libboost_filesystem.so:devel/boost-libs \
 		libglog.so:devel/glog \
 		libfreeimage.so:graphics/freeimage \
 		libceres.so:math/ceres-solver
 
-USES=		cmake compiler:${OPENMP}c++11-lib fortran localbase sqlite
+USES=		cmake compiler:${OPENMP}c++11-lib eigen:3 fortran localbase sqlite
 USE_GITHUB=	yes
 USE_GL=		gl glew
 USE_QT5=	qmake_build buildtools_build core gui opengl_build widgets
 EXCLUDE=	SQLite
 EXTRACT_AFTER_ARGS=	${EXCLUDE:S,^,--exclude src/ext/,}
-CMAKE_ARGS=	-DBOOST_STATIC=off -DCUDA_ENABLED=off
+CMAKE_OFF=	BOOST_STATIC CUDA_ENABLED
 CFLAGS+=	-DVL_OS_LINUX=1
 CXXFLAGS+=	-D_GLIBCXX_USE_C99 -D_GLIBCXX_USE_C99_MATH_TR1 \
 		-D_DECLARE_C99_LDBL_MATH # XXX ports/193528

@@ -3,4 +3,4 @@ compaction and framing API interfaces.  It can now be used to create a context
 from an RDFS/OWL definition, and optionally include a JSON-LD representation of
 the ontology itself.
 
-WWW: http://github.com/ruby-rdf/json-ld
+WWW: https://github.com/ruby-rdf/json-ld

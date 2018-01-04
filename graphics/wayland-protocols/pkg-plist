@@ -1,6 +1,7 @@
 libdata/pkgconfig/wayland-protocols.pc
 %%DATADIR%%/stable/presentation-time/presentation-time.xml
 %%DATADIR%%/stable/viewporter/viewporter.xml
+%%DATADIR%%/stable/xdg-shell/xdg-shell.xml
 %%DATADIR%%/unstable/fullscreen-shell/fullscreen-shell-unstable-v1.xml
 %%DATADIR%%/unstable/idle-inhibit/idle-inhibit-unstable-v1.xml
 %%DATADIR%%/unstable/input-method/input-method-unstable-v1.xml
@@ -13,6 +14,7 @@ libdata/pkgconfig/wayland-protocols.pc
 %%DATADIR%%/unstable/tablet/tablet-unstable-v2.xml
 %%DATADIR%%/unstable/text-input/text-input-unstable-v1.xml
 %%DATADIR%%/unstable/xdg-foreign/xdg-foreign-unstable-v1.xml
+%%DATADIR%%/unstable/xdg-foreign/xdg-foreign-unstable-v2.xml
 %%DATADIR%%/unstable/xdg-output/xdg-output-unstable-v1.xml
 %%DATADIR%%/unstable/xdg-shell/xdg-shell-unstable-v5.xml
 %%DATADIR%%/unstable/xdg-shell/xdg-shell-unstable-v6.xml

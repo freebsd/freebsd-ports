@@ -14,10 +14,10 @@ LICENSE=	GPLv2 LGPL21 MIT
 LICENSE_COMB=	multi
 
 BUILD_DEPENDS=	${PYNUMPY}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}matplotlib>0:math/py-matplotlib
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}matplotlib>0:math/py-matplotlib@${FLAVOR}
 LIB_DEPENDS=	libgeos.so:graphics/geos
 
-USES=		python
+USES=		python:2.7
 USE_PYTHON=	distutils autoplist
 
 DATADIR=	${PREFIX}/share/py-${PORTNAME}-data

@@ -1,0 +1,2 @@
+APPENDDEF(`confLIBS', `-licui18n -licuuc -licudata')
+APPENDDEF(`conf_sendmail_ENVDEF', `-D_FFR_EAI')

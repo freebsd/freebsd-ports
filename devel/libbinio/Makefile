@@ -12,8 +12,6 @@ COMMENT=	Binary I/O stream class library
 
 LICENSE=	LGPL21
 
-BROKEN_armv6=		dumps core: internal compiler failure: Unknown addressing mode for CP reference!
-
 USES=		autoreconf libtool pathfix
 GNU_CONFIGURE=	yes
 USE_GITHUB=	yes

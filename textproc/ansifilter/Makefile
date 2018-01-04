@@ -12,9 +12,7 @@ COMMENT=	Customizable ANSI Code Converter
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_powerpc64=	fails to compile: cc1plus: error: unrecognized command line option -std=c++11
-
-USES=		gmake tar:bzip2
+USES=		compiler:c++11-lib gmake tar:bzip2
 MAKEFILE=	makefile
 
 PORTDOCS=	ChangeLog README

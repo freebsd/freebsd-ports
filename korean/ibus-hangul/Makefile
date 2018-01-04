@@ -18,5 +18,6 @@ INSTALLS_ICONS=	yes
 INSTALL_TARGET=	install-strip
 USE_GNOME=	gtk30 intlhack pygobject3
 USES=		gettext gmake libtool pkgconfig python
+USE_PYTHON=	py3kplist
 
 .include <bsd.port.mk>

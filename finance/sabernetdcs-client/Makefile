@@ -15,11 +15,11 @@ COMMENT=	SaberNet DCS - A labor data collection system
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyro>=0:devel/py-pyro
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyro>=0:devel/py-pyro@${FLAVOR}
 
 USE_GNOME=	pygtk2
 USE_PYTHON=	distutils
-USES=		python tar:bzip2
+USES=		python:2.7 tar:bzip2
 DOCSDIR=	${PREFIX}/share/doc/sndcs
 DATADIR=	${PREFIX}/share/sndcs
 SUB_FILES=	pkg-message

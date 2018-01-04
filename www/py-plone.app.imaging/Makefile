@@ -12,12 +12,12 @@ COMMENT=	User-configurable, blob-aware image scaling for Plone
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}plone.scale>0:www/py-plone.scale \
-		${PYTHON_PKGNAMEPREFIX}z3c.caching>0:devel/py-z3c.caching \
-		${PYTHON_PKGNAMEPREFIX}five.globalrequest>0:devel/py-five.globalrequest
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}plone.scale>0:www/py-plone.scale@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}z3c.caching>0:devel/py-z3c.caching@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}five.globalrequest>0:devel/py-five.globalrequest@${FLAVOR}
 
 NO_ARCH=	yes
-USES=		python zip
+USES=		python:2.7 zip
 USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>

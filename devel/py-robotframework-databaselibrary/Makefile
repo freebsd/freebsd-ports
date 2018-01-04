@@ -12,7 +12,7 @@ COMMENT=	Utilities meant for Robot Frameworks usage
 
 LICENSE=	APACHE20
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}robotframework>=2.7.5:devel/py-robotframework
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}robotframework>=2.7.5:devel/py-robotframework@${FLAVOR}
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	franz-see

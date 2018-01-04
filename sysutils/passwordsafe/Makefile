@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	passwordsafe
-DISTVERSION=	1.02.1BETA
+DISTVERSION=	1.03BETA
 CATEGORIES=	sysutils
 
 MAINTAINER=	brnrd@FreeBSD.org
@@ -10,7 +10,8 @@ COMMENT=	Popular secure and convenient password manager
 LICENSE=	ART20
 
 LIB_DEPENDS=	libuuid.so:misc/e2fsprogs-libuuid \
-		libxerces-c.so:textproc/xerces-c3
+		libxerces-c.so:textproc/xerces-c3 \
+		libqrencode.so:graphics/libqrencode
 BUILD_DEPENDS=	zip:archivers/zip
 
 NOT_FOR_ARCHS=		aarch64 armv6 armv7
@@ -36,6 +37,8 @@ GH_PROJECT=	${GH_ACCOUNT}
 
 WX_COMP=	wx
 WANT_WX_VER=	3.0
+
+LDFLAGS=	-L${PREFIX}/lib -lqrencode
 
 ALL_TARGET=	unicoderelease
 

@@ -78,6 +78,7 @@ include/sbml/conversion/ConversionProperties.h
 include/sbml/conversion/SBMLConverter.h
 include/sbml/conversion/SBMLConverterRegister.h
 include/sbml/conversion/SBMLConverterRegistry.h
+include/sbml/conversion/SBMLConverterTypes.h
 include/sbml/conversion/SBMLFunctionDefinitionConverter.h
 include/sbml/conversion/SBMLIdConverter.h
 include/sbml/conversion/SBMLInferUnitsConverter.h
@@ -412,6 +413,7 @@ lib/cmake/sbml-static-config.cmake
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/perl/printsupported.pl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/perl/promoteParameters.pl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/perl/readSBML.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/perl/renameSId.pl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/perl/stripPackage.pl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/perl/translateMath.pl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/perl/unsetAnnotation.pl
@@ -425,6 +427,7 @@ lib/cmake/sbml-static-config.cmake
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/python/addModelHistory.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/python/addingEvidenceCodes_1.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/python/addingEvidenceCodes_2.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/python/append_to_note.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/python/appendAnnotation.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/python/callExternalValidator.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/python/convertSBML.py
@@ -448,6 +451,7 @@ lib/cmake/sbml-static-config.cmake
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/python/readSBML.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/python/replaceOneFD.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/python/setIdFromNames.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/python/stringInput.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/python/stripPackage.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/python/translateMath.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/python/unsetAnnotation.py
@@ -523,6 +527,7 @@ lib/cmake/sbml-static-config.cmake
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample-models/from-spec/level-3/conversionfactor2.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample-models/from-spec/level-3/delay.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample-models/from-spec/level-3/dimerization.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample-models/from-spec/level-3/enzymekineticext.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample-models/from-spec/level-3/enzymekinetics.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample-models/from-spec/level-3/events.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample-models/from-spec/level-3/fullydeterminedevent.xml

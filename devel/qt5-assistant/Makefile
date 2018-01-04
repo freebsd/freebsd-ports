@@ -2,13 +2,14 @@
 
 PORTNAME=	assistant
 DISTVERSION=	${QT5_VERSION}
+PORTREVISION=	1
 CATEGORIES=	devel
 PKGNAMEPREFIX=	qt5-
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt 5 documentation browser
 
-USE_QT5=	core gui help network printsupport sql webkit widgets \
+USE_QT5=	core gui help network printsupport sql widgets \
 		buildtools_build sql-sqlite3_run
 QT_DIST=	tools
 USES=		qmake

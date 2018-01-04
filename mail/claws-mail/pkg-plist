@@ -70,6 +70,7 @@ include/claws-mail/editldap_basedn.h
 include/claws-mail/edittags.h
 include/claws-mail/editvcard.h
 include/claws-mail/enriched.h
+include/claws-mail/entity.h
 include/claws-mail/etpan/etpan-errors.h
 include/claws-mail/etpan/etpan-ssl.h
 include/claws-mail/etpan/etpan-thread-manager-types.h
@@ -306,13 +307,15 @@ share/icons/hicolor/64x64/apps/claws-mail.png
 %%NLS%%share/locale/es/LC_MESSAGES/claws-mail.mo
 %%NLS%%share/locale/fi/LC_MESSAGES/claws-mail.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/claws-mail.mo
-%%NLS%%share/locale/he/LC_MESSAGES/claws-mail.mo
 %%NLS%%share/locale/hu/LC_MESSAGES/claws-mail.mo
 %%NLS%%share/locale/id_ID/LC_MESSAGES/claws-mail.mo
 %%NLS%%share/locale/it/LC_MESSAGES/claws-mail.mo
+%%NLS%%share/locale/ja/LC_MESSAGES/claws-mail.mo
 %%NLS%%share/locale/nb/LC_MESSAGES/claws-mail.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/claws-mail.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/claws-mail.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/claws-mail.mo
+%%NLS%%share/locale/ro/LC_MESSAGES/claws-mail.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/claws-mail.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/claws-mail.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/claws-mail.mo

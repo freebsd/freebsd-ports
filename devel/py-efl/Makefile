@@ -14,20 +14,12 @@ COMMENT=	Python bindings for EFL and Elementary
 LICENSE=	GPLv3 LGPL3
 LICENSE_COMB=	multi
 
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>=0.83:devel/py-dbus@${FLAVOR}
 LIB_DEPENDS=	libefl.so:devel/efl
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>=0.83:devel/py-dbus@${FLAVOR}
 
 DIST_SUBDIR=	enlightenment
 USES=		pkgconfig python tar:xz
 USE_PYTHON=	autoplist distutils
 
-.include <bsd.port.pre.mk>
-
-.if ${PYTHON_REL} < 3000
-BUILD_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}dbus>=0.83:devel/py-dbus
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}dbus>=0.83:devel/py-dbus
-.else
-BUILD_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}dbus>=0.83:devel/py3-dbus
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}dbus>=0.83:devel/py3-dbus
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
