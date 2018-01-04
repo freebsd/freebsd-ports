@@ -28,7 +28,7 @@ OPTIONS_DEFINE=	DOCS EXAMPLES
 
 post-patch:
 	@${REINPLACE_CMD} \
-		-e "s|pkg-config tcl|pkg-config tk|" \
+		-e "s|pkg-config tcl|pkg-config tk${TK_SHLIB_VER}|" \
 		-e "s|-ltcl\$$(tclvers)|-ltcl${TCL_SHLIB_VER}|" \
 		-e "s|-ltk\$$(tclvers)|-ltk${TK_SHLIB_VER}|" \
 		${WRKSRC}/Makefile
