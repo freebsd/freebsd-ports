@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fog-dynect
-PORTVERSION=	0.2.0
+PORTVERSION=	0.3.0
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
