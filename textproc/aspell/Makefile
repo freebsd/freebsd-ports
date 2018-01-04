@@ -3,9 +3,12 @@
 
 PORTNAME=	aspell
 PORTVERSION=	0.60.6.1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	textproc
 MASTER_SITES=	GNU/aspell
+
+PATCH_SITES=	https://github.com/GNUAspell/aspell/commit/
+PATCHFILES=	8089fa02122f.patch:-p1
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Spelling checker with better suggestion logic than ispell
