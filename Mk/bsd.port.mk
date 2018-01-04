@@ -1061,6 +1061,11 @@ STAGEDIR?=	${WRKDIR}/stage
 NOTPHONY?=
 FLAVORS?=
 FLAVOR?=
+# Disallow forced FLAVOR as make argument since we cannot change it to the
+# proper default.
+.if empty(FLAVOR) && !empty(.MAKEOVERRIDES:MFLAVOR)
+.error FLAVOR may not be passed empty as a make argument.
+.endif
 # Store env FLAVOR for later
 .if !defined(_FLAVOR)
 _FLAVOR:=	${FLAVOR}
