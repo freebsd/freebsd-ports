@@ -53,6 +53,7 @@ check_dep() {
 	local _dep wrkdir show_dep
 
 	for _dep ; do
+		unset FLAOVR
 		myifs=${IFS}
 		IFS=:
 		set -- ${_dep}
@@ -65,7 +66,10 @@ check_dep() {
 
 		case "${d}" in
 		*@*/*) ;; # Ignore @ in the path which would not be a flavor
-		*@*) d=${d%@*} ;;
+		*@*)
+			export FLAVOR=${d##*@}
+			d=${d%@*}
+			;;
 		esac
 
 		case " ${checked} " in
