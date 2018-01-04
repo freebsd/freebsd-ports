@@ -126,7 +126,7 @@ py-multimediawidgets_PATH=	${PYQT_PY_RELNAME}-multimediawidgets>=${PYQT_VERSION}
 py-qml_PATH=			${PYQT_PY_RELNAME}-qml>=${PYQT_VERSION}
 py-printsupport_PATH=		${PYQT_PY_RELNAME}-printsupport>=${PYQT_VERSION}
 py-serialport_PATH=		${PYQT_PY_RELNAME}-serialport>=${PYQT_VERSION}
-py-webkitwidgets_PATH= 		${PYQT_PY_RELNAME}-webkitwidgets>=${PYQT_VERSION}
+py-webkitwidgets_PATH=		${PYQT_PY_RELNAME}-webkitwidgets>=${PYQT_VERSION}
 py-widgets_PATH=		${PYQT_PY_RELNAME}-widgets>=${PYQT_VERSION}
 
 py-sip_PORT=		devel/py-sip
@@ -160,7 +160,7 @@ py-multimediawidgets_PORT=	multimedia/py-qt5-multimediawidgets
 py-qml_PORT=			lang/py-qt5-qml
 py-printsupport_PORT=		print/py-qt5-printsupport
 py-serialport_PORT=		comms/py-qt5-serialport
-py-webkitwidgets_PORT= 		www/py-qt5-webkitwidgets
+py-webkitwidgets_PORT=		www/py-qt5-webkitwidgets
 py-widgets_PORT=		x11-toolkits/py-qt5-widgets
 
 py-assistant_DESC=	Python bindings for QtAssistant module
@@ -192,7 +192,7 @@ py-multimediawidgets_DESC=	Python bindings for QtMultimediaWidgets module
 py-qml_DESC=			Python bindings for Qml module
 py-printsupport_DESC=		Python bindings for Printsupport module
 py-serialport_DESC=		Python bindings for QtSerialPort
-py-webkitwidgets_DESC= 		Python bindings for QtWebKitWidgets module
+py-webkitwidgets_DESC=		Python bindings for QtWebKitWidgets module
 py-widgets_DESC=		Python bindings for QTWidgets module
 
 SIPDIR_REL=	share/py-sip/PyQt${_PYQT_VERSION}
