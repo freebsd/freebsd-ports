@@ -12,8 +12,6 @@ COMMENT=	MySQL API module for Ruby
 LICENSE=	GPLv2 RUBY
 LICENSE_COMB=	dual
 
-BROKEN_RUBY24=	yes
-
 USE_RUBY=	yes
 USES=		gem mysql
 
