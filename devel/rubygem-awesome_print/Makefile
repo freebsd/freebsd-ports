@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	awesome_print
-PORTVERSION=	1.6.1
+PORTVERSION=	1.8.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
