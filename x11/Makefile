@@ -281,6 +281,7 @@
     SUBDIR += qterminal
     SUBDIR += qterminal-l10n
     SUBDIR += qxkb
+    SUBDIR += radare-cutter
     SUBDIR += randrproto
     SUBDIR += recordproto
     SUBDIR += rendercheck
