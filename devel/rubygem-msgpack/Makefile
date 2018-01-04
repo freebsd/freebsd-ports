@@ -14,8 +14,6 @@ USE_RUBY=	yes
 USES=		gem
 STRIPDIR=	${STAGEDIR}${PREFIX}/${GEMS_BASE_DIR}
 
-BROKEN_RUBY24=	yes
-
 post-install:
 	${FIND} ${STRIPDIR} -type f \( -name '*.o' -o -name '*.so' \) | ${XARGS} ${STRIP_CMD}
 
