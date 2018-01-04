@@ -3,6 +3,7 @@
 
 PORTNAME=	tk
 PORTVERSION=	8.6.8
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	SF/tcl/Tcl/${PORTVERSION} TCLTK/tcl8_6
 PKGNAMESUFFIX=	${PORTVERSION:R:S/.//}
@@ -64,6 +65,8 @@ post-patch:
 	     s|@TK_BUILD_STUB_LIB_PATH@|@TK_STUB_LIB_PATH@|; \
 	     s|@TK_SRC_DIR@|${PREFIX}/include/tk${TK_VER}|' \
 	     ${WRKSRC}/tkConfig.sh.in
+	${REINPLACE_CMD} -e '/^Requires/s|tcl|tcl${SHORT_TK_VER}|' \
+	    ${WRKSRC}/tk.pc.in
 
 regression-test:	build
 	cd ${WRKSRC}; ${MAKE} test
