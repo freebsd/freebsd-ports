@@ -53,7 +53,7 @@ check_dep() {
 	local _dep wrkdir show_dep
 
 	for _dep ; do
-		unset FLAOVR
+		unset FLAVOR
 		myifs=${IFS}
 		IFS=:
 		set -- ${_dep}
