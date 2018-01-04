@@ -1,6 +1,8 @@
 /distfiles
 /packages
+/*/*/Makefile.local
 /*/*/work
+/*/*/work-*
 /INDEX-[0-9]*
 *~
 *.rej
