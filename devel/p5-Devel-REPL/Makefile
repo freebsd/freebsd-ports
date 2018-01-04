@@ -3,6 +3,7 @@
 
 PORTNAME=	Devel-REPL
 PORTVERSION=	1.003028
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -17,7 +18,6 @@ LICENSE_FILE=	${WRKSRC}/LICENCE
 BUILD_DEPENDS=	p5-Moose>=0.93:devel/p5-Moose \
 	p5-MooseX-Object-Pluggable>=0.0009:devel/p5-MooseX-Object-Pluggable \
 	p5-MooseX-Getopt>=0.18:devel/p5-MooseX-Getopt \
-	p5-MooseX-AttributeHelpers>=0.16:devel/p5-MooseX-AttributeHelpers \
 	p5-namespace-autoclean>0:devel/p5-namespace-autoclean \
 	p5-File-HomeDir>0:devel/p5-File-HomeDir \
 	p5-Task-Weaken>0:devel/p5-Task-Weaken \
@@ -33,6 +33,7 @@ BUILD_DEPENDS=	p5-Moose>=0.93:devel/p5-Moose \
 	p5-Sys-SigAction>0:devel/p5-Sys-SigAction
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
 
