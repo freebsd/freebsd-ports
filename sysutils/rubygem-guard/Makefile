@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	guard
-PORTVERSION=	2.14.1
+PORTVERSION=	2.14.2
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-formatador>=0.2.4:devel/rubygem-formatador \
 		rubygem-listen>=2.7:devel/rubygem-listen \
-		rubygem-lumberjack>=1.0:devel/rubygem-lumberjack \
+		rubygem-lumberjack>=1.0.12:devel/rubygem-lumberjack \
 		rubygem-nenv>=0.1:devel/rubygem-nenv \
 		rubygem-notiffany>=0:devel/rubygem-notiffany \
 		rubygem-pry>=0.9.12:devel/rubygem-pry \
