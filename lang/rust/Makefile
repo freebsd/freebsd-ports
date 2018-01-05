@@ -160,24 +160,15 @@ post-patch:
 # If we override the versions and date of the bootstraps (for instance
 # on aarch64 where we provide our own bootstraps), we need to update
 # places where they are recorded.
-	@if test "${BOOTSTRAPS_DATE_${ARCH}}" && \
-	test "${BOOTSTRAPS_DATE_${ARCH}}" != "${BOOTSTRAPS_DATE}"; then \
-		${REINPLACE_CMD} -e \
+	@${REINPLACE_CMD} -e \
 		's|^date:.*|date: ${BOOTSTRAPS_DATE_${ARCH}:U${BOOTSTRAPS_DATE}}|' \
-		${WRKSRC}/src/stage0.txt; \
-	fi
-	@if test "${RUST_BOOTSTRAP_VERSION_${ARCH}}" && \
-	test "${RUST_BOOTSTRAP_VERSION_${ARCH}}" != "${RUST_BOOTSTRAP_VERSION}"; then \
-		${REINPLACE_CMD} -e \
+		${WRKSRC}/src/stage0.txt
+	@${REINPLACE_CMD} -e \
 		's|^rustc:.*|rustc: ${RUST_BOOTSTRAP_VERSION_${ARCH}:U${RUST_BOOTSTRAP_VERSION}}|' \
-		${WRKSRC}/src/stage0.txt; \
-	fi
-	@if test "${CARGO_BOOTSTRAP_VERSION_${ARCH}}" && \
-	test "${CARGO_BOOTSTRAP_VERSION_${ARCH}}" != "${CARGO_BOOTSTRAP_VERSION}"; then \
-		${REINPLACE_CMD} -e \
+		${WRKSRC}/src/stage0.txt
+	@${REINPLACE_CMD} -e \
 		's|^cargo:.*|cargo: ${CARGO_BOOTSTRAP_VERSION_${ARCH}:U${CARGO_BOOTSTRAP_VERSION}}|' \
-		${WRKSRC}/src/stage0.txt; \
-	fi
+		${WRKSRC}/src/stage0.txt
 # After patching crates, we need to update their corresponding
 # `.cargo-checksum.json` to reflect the new checksums verified by Cargo.
 	@for dir in "${WRKSRC}/src/vendor/libc" "${WRKSRC}/src/vendor/openssl" "${WRKSRC}/src/vendor/openssl-sys"; do \
