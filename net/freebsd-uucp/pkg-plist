@@ -33,15 +33,19 @@ libexec/uucpd
 sbin/uuchk
 sbin/uuconv
 @owner uucp
+@mode 04555
 bin/uucp
 bin/uuname
 bin/uux
 @group uucp
+@mode 06550
 libexec/uucp/uuxqt
 @group dialer
+@mode 06555
 bin/cu
 bin/uustat
 libexec/uucp/uucico
+@mode
 @owner
 @group
 @preexec pw usermod uucp -s %D/libexec/uucp/uucico
