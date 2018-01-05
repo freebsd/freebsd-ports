@@ -126,11 +126,6 @@ pre-fetch:
 	fi
 
 RUST_STD_DIR=		${RUST_STD_BOOTSTRAP:T:R:R}
-LIBSTD_SUFFIX_aarch64=	0b5479f9b944419b
-LIBSTD_SUFFIX_amd64=	d5600fa473bb2268
-LIBSTD_SUFFIX_i386=	7c10a38de31dc096
-LIBSTD=			${RUST_STD_DIR}/rust-std-${RUST_TARGET}/lib/rustlib/${RUST_TARGET}/lib/libstd-${LIBSTD_SUFFIX_${ARCH}:U${LIBSTD_SUFFIX}}.rlib
-STDF=			${LIBSTD:T:R:S/lib//}.0.o
 
 post-extract:
 	@${MKDIR} \
@@ -147,12 +142,16 @@ post-extract:
 .if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1200031
 	${TAR} -x -C ${WRKSRC} -f ${DISTDIR}/${DIST_SUBDIR}/${RUST_STD_BOOTSTRAP}
 	${CC} ${CFLAGS} -fPIC -c -o ${WRKSRC}/old_fstat.o ${FILESDIR}/old_fstat.c
-	(cd ${WRKSRC} && ${AR} x ${WRKSRC}/${LIBSTD} ${STDF})
-	${LD} -r -o ${WRKSRC}/std.xx.o ${WRKSRC}/${STDF} ${WRKSRC}/old_fstat.o
-	${MV} ${WRKSRC}/std.xx.o ${WRKSRC}/${STDF}
-	(cd ${WRKSRC} && ${AR} r ${WRKSRC}/${LIBSTD} ${STDF})
-	${TAR} -cy --format=ustar -C ${WRKSRC} -f ${WRKSRC}/rustc.tbz ${RUST_STD_DIR}
-	${MV} ${WRKSRC}/rustc.tbz ${WRKSRC}/build/cache/${RUST_STD_BOOTSTRAP}
+	(set -ex; cd ${WRKSRC}; \
+	 libstd="$$(echo "${RUST_STD_DIR}/rust-std-${RUST_TARGET}/lib/rustlib/${RUST_TARGET}/lib/"libstd-*.rlib)"; \
+	 hash="$$(basename "$$libstd" .rlib | ${SED} 's/^libstd-//')"; \
+	 std_o="std-$$hash.0.o"; \
+	 ${AR} x "$$libstd" "$$std_o"; \
+	 ${LD} -r -o std.xx.o "$$std_o" old_fstat.o; \
+	 ${MV} std.xx.o "$$std_o"; \
+	 ${AR} r "$$libstd" "$$std_o")
+	${TAR} -cz --format=ustar -C ${WRKSRC} -f ${WRKSRC}/rust-std.tar.gz ${RUST_STD_DIR}
+	${MV} ${WRKSRC}/rust-std.tar.gz ${WRKSRC}/build/cache/${RUST_STD_BOOTSTRAP}
 .endif
 
 post-patch:
