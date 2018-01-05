@@ -28,8 +28,6 @@ PLIST_SUB+=	INCLUDEDIR="include/${PORTNAME}" LIBDIR="lib/${PORTNAME}"
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 
-BROKEN_aarch64=		Fails to compile: error in backend: Do not know how to split this operator's operand!
-
 OPTIONS_DEFINE=	AIRPLAY AO APE AVCODEC CDDA CURL ET FAAD FAM FLAC \
 		GME GVFS ICES JACK MAD MDNS MMS \
 		MODPLUG MPG123 MUSEPACK PULSEAUDIO SAMBA SID \
