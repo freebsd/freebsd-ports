@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	links
-DISTVERSION=	2.13
+DISTVERSION=	2.14
 PORTEPOCH=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	http://links.twibright.com/download/
@@ -11,36 +11,35 @@ MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Lynx-like text WWW browser
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 CONFLICTS=	links-0* links-hacked-[0-9]* links1-[0-9]*
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=	--with-ssl --without-pmshell --without-atheos \
-			--without-gpm --without-fb --without-windows
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+CONFIGURE_ARGS=	--with-ssl --without-pmshell --without-atheos \
+		--without-gpm --without-fb --without-windows
 
-USES=		cpe ssl tar:bzip2
+USES=		cpe localbase:ldflags ssl gettext-runtime
+USE_GNOME=	librsvg2 glib20 gdkpixbuf2 cairo
 
 CPE_VENDOR=	twibright
 
-OPTIONS_DEFINE=	CIPHERSTRING DIRECTFB IPV6 SVGALIB THREADS TRANS UTF8 X11
+PLIST_FILES=	bin/links man/man1/links.1.gz
 
-CIPHERSTRING_DESC=	Select the OpenSSL ciphers used via CIPHERSTRING
-DIRECTFB_DESC=	DirectFB graphics support
-SVGALIB_DESC=	SVGALib graphics support
-TRANS_DESC=	Hack for background transparency
-UTF8_DESC=	UTF-8 support
-X11_DESC=	X11 graphics support
-
+OPTIONS_DEFINE=	CIPHERSTRING DIRECTFB IPV6 NLS SVGALIB THREADS TRANS UTF8 X11
 OPTIONS_DEFAULT=	UTF8 X11
 
-PLIST_FILES=	bin/links man/man1/links.1.gz
+CIPHERSTRING_DESC=	Select the OpenSSL ciphers used via CIPHERSTRING
+DIRECTFB_DESC=		DirectFB graphics support
+TRANS_DESC=		Hack for background transparency
 
 DIRECTFB_LIB_DEPENDS=	libdirectfb.so:devel/directfb
 DIRECTFB_CONFIGURE_WITH=directfb
 
 IPV6_CONFIGURE_WITH=	ipv6
+
+NLS_USES=		gettext-runtime
+NLS_CONFIGURE_ENABLE=	gettext-runtime
 
 SVGALIB_LIB_DEPENDS=	libvga.so:graphics/svgalib
 SVGALIB_CONFIGURE_WITH=	svgalib
@@ -52,7 +51,9 @@ TRANS_EXTRA_PATCHES=	${FILESDIR}/extra-terminal.c.diff
 
 UTF8_CONFIGURE_ENABLE=	utf8
 
-X11_USE=	xorg=x11,xproto
+X11_USE=		xorg=x11,xproto
+X11_LIB_DEPENDS=	libevent.so:devel/libevent \
+			libfontconfig.so:x11-fonts/fontconfig
 X11_CONFIGURE_WITH=	x
 X11_PLIST_FILES=	share/pixmaps/links.xpm
 
