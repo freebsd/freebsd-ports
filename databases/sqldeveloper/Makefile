@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sqldeveloper
-PORTVERSION=	4.2.0.17.089.1709
+PORTVERSION=	17.4.0.355.2349
 DISTVERSIONSUFFIX=-no-jre
 CATEGORIES=	databases java
 MASTER_SITES=	#http://www.oracle.com/technetwork/developer-tools/sql-developer/overview/index.html
@@ -13,18 +13,21 @@ COMMENT=	Graphical tool for database development
 
 RUN_DEPENDS=	bash:shells/bash
 
+# http://www.oracle.com/technetwork/licenses/sqldev-license-152021.html
+LICENSE_NAME=	OTN
+LICENSE_PERMS=	no-dist-mirror no-dist-sell no-pkg-mirror
+
 USES=		zip
 USE_JAVA=	yes
+INSTALLS_ICONS=	yes
 
 JAVA_VERSION=	1.8+
 
 NO_BUILD=	yes
 
-RESTRICTED=	Packaging prohibited by Oracle license
-
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 WRKSRC=		${WRKDIR}/${PORTNAME}
-SUB_FILES=	${PORTNAME}.sh
+SUB_FILES=	${PORTNAME}.sh ${PORTNAME}.desktop
 SUB_LIST=	JAVA_HOME=${JAVA_HOME} PORTNAME=${PORTNAME}
 
 .include <bsd.port.pre.mk>
@@ -46,7 +49,7 @@ do-install:
 	${ECHO_MSG} " [ DONE ]"
 
 .for d in configuration dataminer dropins dvt equinox \
-    external ide javavm jdbc jdev jlib jviews modules \
+    external ide javavm jdbc jdev jlib jviews module modules \
     netbeans ords rdbms sleepycat sqldeveloper sqlj svnkit
 	${ECHO_MSG} -n ">> Installing data directory '${d}'..."
 	cd ${WRKSRC} && ${FIND} ${d} -type d \
@@ -63,8 +66,12 @@ do-install:
 	${ECHO_MSG} " [ DONE ]"
 .endfor
 
-	${ECHO_MSG} -n ">> Installing icon ..."
-	${INSTALL_DATA} ${WRKSRC}/icon.png ${STAGEDIR}/${DATADIR}/icon.png
+	@${ECHO_MSG} ">> Installing icon and desktop file ..."
+	@${MKDIR} ${STAGEDIR}/${PREFIX}/share/applications/ \
+	    ${STAGEDIR}/${PREFIX}/share/icons/hicolor/32x32/apps/
+	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}.desktop ${STAGEDIR}/${PREFIX}/share/applications/
+	${INSTALL_DATA} ${WRKSRC}/icon.png ${STAGEDIR}/${PREFIX}/share/icons/hicolor/32x32/apps/${PORTNAME}.png
+
 	${ECHO_MSG} " [ DONE ]"
 
 .include <bsd.port.post.mk>
