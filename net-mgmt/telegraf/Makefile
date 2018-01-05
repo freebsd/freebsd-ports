@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	telegraf
-DISTVERSION=	1.4.4
+DISTVERSION=	1.5.0
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	girgen@FreeBSD.org
@@ -25,12 +25,13 @@ GH_TUPLE=	collectd:go-collectd:2ce1445:collectd_org/src/collectd.org \
 		apache:thrift:4aaa92ec:thrift/src/github.com/apache/thrift \
 		aws:aws-sdk-go:c861d27d:aws_sdk_go/src/github.com/aws/aws-sdk-go \
 		beorn7:perks:4c0e845:perks/src/github.com/beorn7/perks \
-		bsm:sarama-cluster:ccdc080:sarama_cluster/src/github.com/bsm/sarama-cluster \
+		bsm:sarama-cluster:abf0394:sarama_cluster/src/github.com/bsm/sarama-cluster \
 		cenkalti:backoff:b02f2bb:backoff/src/github.com/cenkalti/backoff \
 		couchbase:go-couchbase:bfe555a:go_couchbase/src/github.com/couchbase/go-couchbase \
 		couchbase:gomemcached:4a25d2f:gomemcached/src/github.com/couchbase/gomemcached \
 		couchbase:goutils:5823a0c:goutils/src/github.com/couchbase/goutils \
 		davecgh:go-spew:346938d:go_spew/src/github.com/davecgh/go-spew \
+		dgrijalva:jwt-go:dbeaa93:jwt_go/src/github.com/dgrijalva/jwt-go \
 		moby:moby:f5ec1e293:docker/src/github.com/docker/docker \
 		docker:go-connections:990a1a1:go_connections/src/github.com/docker/go-connections \
 		eapache:go-resiliency:b86b1ec:go_resiliency/src/github.com/eapache/go-resiliency \
@@ -52,7 +53,7 @@ GH_TUPLE=	collectd:go-collectd:2ce1445:collectd_org/src/collectd.org \
 		influxdata:tail:a395bf9:tail/src/github.com/influxdata/tail \
 		influxdata:toml:5d1d907:toml/src/github.com/influxdata/toml \
 		influxdata:wlog:7c63b0a:wlog/src/github.com/influxdata/wlog \
-		jackc:pgx:b84338d:pgx/src/github.com/jackc/pgx \
+		jackc:pgx:63f58fd:pgx/src/github.com/jackc/pgx \
 		jmespath:go-jmespath:bd40a43:go_jmespath/src/github.com/jmespath/go-jmespath \
 		kardianos:osext:c2c54e5:osext/src/github.com/kardianos/osext \
 		kardianos:service:6d3a0ee:service/src/github.com/kardianos/service \
@@ -60,10 +61,12 @@ GH_TUPLE=	collectd:go-collectd:2ce1445:collectd_org/src/collectd.org \
 		matttproud:golang_protobuf_extensions:c12348c:golang_protobuf_extensions/src/github.com/matttproud/golang_protobuf_extensions \
 		Microsoft:go-winio:ce2922f:go_winio/src/github.com/Microsoft/go-winio \
 		miekg:dns:99f84ae:dns/src/github.com/miekg/dns \
+		mitchellh:mapstructure:d0303fe:mapstructure/src/github.com/mitchellh/mapstructure \
+		multiplay:go-ts3:07477f4:go_ts3/src/github.com/multiplay/go-ts3 \
 		naoina:go-stringutil:6b638e9:go_stringutil/src/github.com/naoina/go-stringutil \
 		nats-io:go-nats:ea95856:nats/src/github.com/nats-io/nats \
 		nats-io:nuid:289cccf:nuid/src/github.com/nats-io/nuid \
-		nsqio:go-nsq:a53d495:go_nsq/src/github.com/nsqio/go-nsq \
+		nsqio:go-nsq:eee57a3:go_nsq/src/github.com/nsqio/go-nsq \
 		opencontainers:runc:89ab7f2c:runc/src/github.com/opencontainers/runc \
 		opentracing:opentracing-go:06f47b4:opentracing_go/src/github.com/opentracing/opentracing-go \
 		opentracing-contrib:go-observer:a52f234:go_observer/src/github.com/opentracing-contrib/go-observer \
@@ -79,9 +82,9 @@ GH_TUPLE=	collectd:go-collectd:2ce1445:collectd_org/src/collectd.org \
 		rcrowley:go-metrics:1f30fe9:go_metrics/src/github.com/rcrowley/go-metrics \
 		samuel:go-zookeeper:1d7be4e:go_zookeeper/src/github.com/samuel/go-zookeeper \
 		satori:go.uuid:5bf94b6:go_uuid/src/github.com/satori/go.uuid \
-		shirou:gopsutil:48fc561:gopsutil/src/github.com/shirou/gopsutil \
+		shirou:gopsutil:384a551:gopsutil/src/github.com/shirou/gopsutil \
 		shirou:w32:3c9377f:w32/src/github.com/shirou/w32 \
-		Shopify:sarama:c01858a:sarama/src/github.com/Shopify/sarama \
+		Shopify:sarama:3b1b388:sarama/src/github.com/Shopify/sarama \
 		Sirupsen:logrus:61e43dc:logrus/src/github.com/Sirupsen/logrus \
 		soniah:gosnmp:5ad50dc:gosnmp/src/github.com/soniah/gosnmp \
 		sparrc:gdm:81089da:gdm/src/github.com/sparrc/gdm \
@@ -98,7 +101,7 @@ GH_TUPLE=	collectd:go-collectd:2ce1445:collectd_org/src/collectd.org \
 		golang:net:f249948:net/src/golang.org/x/net \
 		golang:sys:7397344:sys/src/golang.org/x/sys \
 		golang:text:506f9d5:text/src/golang.org/x/text \
-		golang:tools:05e91d06:tools/src/golang.org/x/tools \
+		golang:tools:b790d0ba:tools/src/golang.org/x/tools \
 		fatih:pool:6e328e6:pool_v2/src/gopkg.in/fatih/pool.v2 \
 		go-fsnotify:fsnotify:a8a77c9:fsnotify/src/gopkg.in/fsnotify.v1/fsnotify \
 		gorethink:gorethink:7ab832f:gorethink_v3/src/gopkg.in/gorethink/gorethink.v3 \
