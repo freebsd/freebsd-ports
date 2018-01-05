@@ -15,13 +15,14 @@ LICENSE=	LGPL20
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes
-USES=		gmake libtool
+USES=		compiler:features gmake libtool
 USE_SDL=	sdl
 USE_LDCONFIG=	yes
 CONFIGURE_ENV=	GLBASE="${LOCALBASE}" \
 		CC="${CXX}" REAL_CC="${CC}" \
 		SDL_CONFIG="${SDL_CONFIG}"
 CPPFLAGS+=	-I${LOCALBASE}/include
+CFLAGS+=	${COMPILER_FEATURES:Mc++11:C/.+/-Wno-error=narrowing/}
 
 #If you want to try the opengl/gtk player (which doesn't seem to work)
 #comment out the following line.
