@@ -1,8 +1,11 @@
 bin/sqldeveloper
+share/applications/sqldeveloper.desktop
+share/icons/hicolor/32x32/apps/sqldeveloper.png
 %%DATADIR%%/configuration/bundles.info
 %%DATADIR%%/configuration/oracle.datamodeler.bundles.info
 %%DATADIR%%/configuration/oracle.ide.sqldev.bundles.info
 %%DATADIR%%/dataminer/demos/workflows/apply workflow.xml
+%%DATADIR%%/dataminer/demos/workflows/apply_workflow.xml
 %%DATADIR%%/dataminer/demos/workflows/build_workflow.xml
 %%DATADIR%%/dataminer/demos/workflows/codegen_workflow.xml
 %%DATADIR%%/dataminer/scripts/XMLSchema.xsd
@@ -149,6 +152,7 @@ bin/sqldeveloper
 %%DATADIR%%/dataminer/scripts/upgradeRepo12_1_0_2_6To12_2_0_0_0.sql
 %%DATADIR%%/dataminer/scripts/upgradeRepo12_2_0_0_0To12_2_0_0_1.sql
 %%DATADIR%%/dataminer/scripts/upgradeRepo12_2_0_0_1To12_2_0_0_2.sql
+%%DATADIR%%/dataminer/scripts/upgradeRepo12_2_0_0_2To12_2_0_0_3.sql
 %%DATADIR%%/dataminer/scripts/upgradeRepoFromORToBinary.sql
 %%DATADIR%%/dataminer/scripts/upgradeRepoWithNewTableSpace.sql
 %%DATADIR%%/dataminer/scripts/upgradeRepository.sql
@@ -171,6 +175,9 @@ bin/sqldeveloper
 %%DATADIR%%/external/oracle.dvt-jclient.jar
 %%DATADIR%%/external/oracle.dvt-utils.jar
 %%DATADIR%%/external/oracle.external.antlr.jar
+%%DATADIR%%/external/oracle.external.apache.commons-codec.jar
+%%DATADIR%%/external/oracle.external.apache.commons-collections4.jar
+%%DATADIR%%/external/oracle.external.apache.commons-logging.jar
 %%DATADIR%%/external/oracle.external.apache_httpclient.jar
 %%DATADIR%%/external/oracle.external.apexlistener.jar
 %%DATADIR%%/external/oracle.external.aqb.jar
@@ -202,7 +209,6 @@ bin/sqldeveloper
 %%DATADIR%%/external/oracle.external.jxlayer.jar
 %%DATADIR%%/external/oracle.external.ldap.jar
 %%DATADIR%%/external/oracle.external.log4j.jar
-%%DATADIR%%/external/oracle.external.logging.jar
 %%DATADIR%%/external/oracle.external.miglayout.jar
 %%DATADIR%%/external/oracle.external.nlsrtl.jar
 %%DATADIR%%/external/oracle.external.objectweb-asm.jar
@@ -223,6 +229,7 @@ bin/sqldeveloper
 %%DATADIR%%/external/oracle.external.spatial.jar
 %%DATADIR%%/external/oracle.external.sqldev.jsch.jar
 %%DATADIR%%/external/oracle.external.sqlj-rt.jar
+%%DATADIR%%/external/oracle.external.stringtemplate.jar
 %%DATADIR%%/external/oracle.external.sunjaxb.jar
 %%DATADIR%%/external/oracle.external.svnkit.jar
 %%DATADIR%%/external/oracle.external.timing.jar
@@ -243,7 +250,6 @@ bin/sqldeveloper
 %%DATADIR%%/external/oracle.orahelp-helpshare.jar
 %%DATADIR%%/external/oracle.orahelp-ohj.jar
 %%DATADIR%%/external/oracle.xmlef.jar
-%%DATADIR%%/icon.png
 %%DATADIR%%/ide/bin/SplashFontBranding.png
 %%DATADIR%%/ide/bin/edt.properties
 %%DATADIR%%/ide/bin/encodings.xml
@@ -301,7 +307,6 @@ bin/sqldeveloper
 %%DATADIR%%/ide/extensions/oracle.ide.vhv.jar
 %%DATADIR%%/ide/extensions/oracle.ide.webbrowser.jar
 %%DATADIR%%/ide/extensions/oracle.ide.webupdate.jar
-%%DATADIR%%/ide/extensions/oracle.ideimpl.apple.jar
 %%DATADIR%%/ide/extensions/oracle.ideimpl.peek.jar
 %%DATADIR%%/ide/lib/TimingFramework.jar
 %%DATADIR%%/ide/lib/annotations.jar
@@ -401,6 +406,8 @@ bin/sqldeveloper
 %%DATADIR%%/jviews/icu4j-55_1.jar
 %%DATADIR%%/jviews/jviews-diagrammer.jar
 %%DATADIR%%/jviews/jviews-framework-lib.jar
+%%DATADIR%%/module/el-api-2.2.1-b04.jar
+%%DATADIR%%/module/javax.el-2.2.5.jar
 %%DATADIR%%/modules/asm-3.1.jar
 %%DATADIR%%/modules/com.sun.xml.bind.jaxb-core.jar
 %%DATADIR%%/modules/com.sun.xml.bind.jaxb-impl.jar
@@ -445,6 +452,7 @@ bin/sqldeveloper
 %%DATADIR%%/modules/oracle.help/ohj.jar
 %%DATADIR%%/modules/oracle.help/oracle_ice.jar
 %%DATADIR%%/modules/oracle.javatools/javamodel-rt.jar
+%%DATADIR%%/modules/oracle.javatools/javatools-annotations.jar
 %%DATADIR%%/modules/oracle.javatools/javatools-exports.jar
 %%DATADIR%%/modules/oracle.javatools/javatools-jndi-local.jar
 %%DATADIR%%/modules/oracle.javatools/javatools-nodeps.jar
@@ -466,7 +474,6 @@ bin/sqldeveloper
 %%DATADIR%%/modules/org.apache.http.components.httpmime-4.5.1.jar
 %%DATADIR%%/modules/org.glassfish.javax.el.jar
 %%DATADIR%%/modules/org.glassfish.javax.json.jar
-%%DATADIR%%/netbeans/fcpbridge/.lastModified
 %%DATADIR%%/netbeans/fcpbridge/config/Modules/com-oracle-jdeveloper-extcache.xml
 %%DATADIR%%/netbeans/fcpbridge/config/Modules/com-oracle-jdeveloper-nbactions.xml
 %%DATADIR%%/netbeans/fcpbridge/config/Modules/com-oracle-jdeveloper-nbbridge.xml
@@ -486,7 +493,6 @@ bin/sqldeveloper
 %%DATADIR%%/netbeans/fcpbridge/update_tracking/com-oracle-jdeveloper-nbbridge.xml
 %%DATADIR%%/netbeans/fcpbridge/update_tracking/com-oracle-jdeveloper-nbwindowsystem.xml
 %%DATADIR%%/netbeans/fcpbridge/update_tracking/org-netbeans-core-dynamicconfig.xml
-%%DATADIR%%/netbeans/ide/.lastModified
 %%DATADIR%%/netbeans/ide/config/Modules/com-googlecode-javaewah-JavaEWAH.xml
 %%DATADIR%%/netbeans/ide/config/Modules/com-jcraft-jsch.xml
 %%DATADIR%%/netbeans/ide/config/Modules/com-jcraft-jzlib.xml
@@ -541,7 +547,6 @@ bin/sqldeveloper
 %%DATADIR%%/netbeans/ide/update_tracking/org-netbeans-modules-editor-document.xml
 %%DATADIR%%/netbeans/ide/update_tracking/org-netbeans-modules-editor-guards.xml
 %%DATADIR%%/netbeans/ide/update_tracking/org-netbeans-modules-editor-util.xml
-%%DATADIR%%/netbeans/platform/.lastModified
 %%DATADIR%%/netbeans/platform/config/ModuleAutoDeps/org-netbeans-api-progress.xml
 %%DATADIR%%/netbeans/platform/config/ModuleAutoDeps/org-netbeans-core-startup.xml
 %%DATADIR%%/netbeans/platform/config/ModuleAutoDeps/org-netbeans-core.xml
@@ -1082,10 +1087,7 @@ bin/sqldeveloper
 %%DATADIR%%/ords/docs/javadoc/listener/overview-summary.html
 %%DATADIR%%/ords/docs/javadoc/listener/overview-tree.html
 %%DATADIR%%/ords/docs/javadoc/listener/package-list
-%%DATADIR%%/ords/docs/javadoc/listener/resources/background.gif
-%%DATADIR%%/ords/docs/javadoc/listener/resources/tab.gif
-%%DATADIR%%/ords/docs/javadoc/listener/resources/titlebar.gif
-%%DATADIR%%/ords/docs/javadoc/listener/resources/titlebar_end.gif
+%%DATADIR%%/ords/docs/javadoc/listener/script.js
 %%DATADIR%%/ords/docs/javadoc/listener/stylesheet.css
 %%DATADIR%%/ords/docs/javadoc/plugin-api-javadoc.jar
 %%DATADIR%%/ords/docs/javadoc/plugin-api/allclasses-frame.html
@@ -1124,12 +1126,18 @@ bin/sqldeveloper
 %%DATADIR%%/ords/docs/javadoc/plugin-api/oracle/dbtools/plugin/api/collections/package-tree.html
 %%DATADIR%%/ords/docs/javadoc/plugin-api/oracle/dbtools/plugin/api/collections/package-use.html
 %%DATADIR%%/ords/docs/javadoc/plugin-api/oracle/dbtools/plugin/api/conf/Configuration.html
+%%DATADIR%%/ords/docs/javadoc/plugin-api/oracle/dbtools/plugin/api/conf/ConfigurationSetting.Builder.html
+%%DATADIR%%/ords/docs/javadoc/plugin-api/oracle/dbtools/plugin/api/conf/ConfigurationSetting.html
 %%DATADIR%%/ords/docs/javadoc/plugin-api/oracle/dbtools/plugin/api/conf/class-use/Configuration.html
+%%DATADIR%%/ords/docs/javadoc/plugin-api/oracle/dbtools/plugin/api/conf/class-use/ConfigurationSetting.Builder.html
+%%DATADIR%%/ords/docs/javadoc/plugin-api/oracle/dbtools/plugin/api/conf/class-use/ConfigurationSetting.html
 %%DATADIR%%/ords/docs/javadoc/plugin-api/oracle/dbtools/plugin/api/conf/package-frame.html
 %%DATADIR%%/ords/docs/javadoc/plugin-api/oracle/dbtools/plugin/api/conf/package-summary.html
 %%DATADIR%%/ords/docs/javadoc/plugin-api/oracle/dbtools/plugin/api/conf/package-tree.html
 %%DATADIR%%/ords/docs/javadoc/plugin-api/oracle/dbtools/plugin/api/conf/package-use.html
 %%DATADIR%%/ords/docs/javadoc/plugin-api/oracle/dbtools/plugin/api/di/AvailableDependencies.html
+%%DATADIR%%/ords/docs/javadoc/plugin-api/oracle/dbtools/plugin/api/di/InstanceLocator.html
+%%DATADIR%%/ords/docs/javadoc/plugin-api/oracle/dbtools/plugin/api/di/InstanceProvider.html
 %%DATADIR%%/ords/docs/javadoc/plugin-api/oracle/dbtools/plugin/api/di/PriorityComparator.html
 %%DATADIR%%/ords/docs/javadoc/plugin-api/oracle/dbtools/plugin/api/di/annotations/ApplicationScoped.html
 %%DATADIR%%/ords/docs/javadoc/plugin-api/oracle/dbtools/plugin/api/di/annotations/Optional.html
@@ -1146,6 +1154,8 @@ bin/sqldeveloper
 %%DATADIR%%/ords/docs/javadoc/plugin-api/oracle/dbtools/plugin/api/di/annotations/package-tree.html
 %%DATADIR%%/ords/docs/javadoc/plugin-api/oracle/dbtools/plugin/api/di/annotations/package-use.html
 %%DATADIR%%/ords/docs/javadoc/plugin-api/oracle/dbtools/plugin/api/di/class-use/AvailableDependencies.html
+%%DATADIR%%/ords/docs/javadoc/plugin-api/oracle/dbtools/plugin/api/di/class-use/InstanceLocator.html
+%%DATADIR%%/ords/docs/javadoc/plugin-api/oracle/dbtools/plugin/api/di/class-use/InstanceProvider.html
 %%DATADIR%%/ords/docs/javadoc/plugin-api/oracle/dbtools/plugin/api/di/class-use/PriorityComparator.html
 %%DATADIR%%/ords/docs/javadoc/plugin-api/oracle/dbtools/plugin/api/di/package-frame.html
 %%DATADIR%%/ords/docs/javadoc/plugin-api/oracle/dbtools/plugin/api/di/package-summary.html
@@ -1181,7 +1191,9 @@ bin/sqldeveloper
 %%DATADIR%%/ords/docs/javadoc/plugin-api/oracle/dbtools/plugin/api/http/annotations/package-use.html
 %%DATADIR%%/ords/docs/javadoc/plugin-api/oracle/dbtools/plugin/api/i18n/LocalePreference.html
 %%DATADIR%%/ords/docs/javadoc/plugin-api/oracle/dbtools/plugin/api/i18n/Translatable.html
+%%DATADIR%%/ords/docs/javadoc/plugin-api/oracle/dbtools/plugin/api/i18n/annotations/TranslatableDescription.html
 %%DATADIR%%/ords/docs/javadoc/plugin-api/oracle/dbtools/plugin/api/i18n/annotations/TranslatableText.html
+%%DATADIR%%/ords/docs/javadoc/plugin-api/oracle/dbtools/plugin/api/i18n/annotations/class-use/TranslatableDescription.html
 %%DATADIR%%/ords/docs/javadoc/plugin-api/oracle/dbtools/plugin/api/i18n/annotations/class-use/TranslatableText.html
 %%DATADIR%%/ords/docs/javadoc/plugin-api/oracle/dbtools/plugin/api/i18n/annotations/package-frame.html
 %%DATADIR%%/ords/docs/javadoc/plugin-api/oracle/dbtools/plugin/api/i18n/annotations/package-summary.html
@@ -1271,7 +1283,6 @@ bin/sqldeveloper
 %%DATADIR%%/ords/docs/javadoc/plugin-api/oracle/dbtools/plugin/api/routes/package-use.html
 %%DATADIR%%/ords/docs/javadoc/plugin-api/oracle/dbtools/plugin/api/security/AuthenticationChallenge.Builder.html
 %%DATADIR%%/ords/docs/javadoc/plugin-api/oracle/dbtools/plugin/api/security/AuthenticationChallenge.html
-%%DATADIR%%/ords/docs/javadoc/plugin-api/oracle/dbtools/plugin/api/security/AuthenticationChallenges.html
 %%DATADIR%%/ords/docs/javadoc/plugin-api/oracle/dbtools/plugin/api/security/AuthorizationConstraint.html
 %%DATADIR%%/ords/docs/javadoc/plugin-api/oracle/dbtools/plugin/api/security/AuthorizationError.html
 %%DATADIR%%/ords/docs/javadoc/plugin-api/oracle/dbtools/plugin/api/security/EndUserAuthorizationConstraint.html
@@ -1282,16 +1293,10 @@ bin/sqldeveloper
 %%DATADIR%%/ords/docs/javadoc/plugin-api/oracle/dbtools/plugin/api/security/PrivilegeSet.html
 %%DATADIR%%/ords/docs/javadoc/plugin-api/oracle/dbtools/plugin/api/security/PrivilegeSets.html
 %%DATADIR%%/ords/docs/javadoc/plugin-api/oracle/dbtools/plugin/api/security/Privileges.html
-%%DATADIR%%/ords/docs/javadoc/plugin-api/oracle/dbtools/plugin/api/security/annotations/Challenge.html
-%%DATADIR%%/ords/docs/javadoc/plugin-api/oracle/dbtools/plugin/api/security/annotations/ChallengeParameter.html
 %%DATADIR%%/ords/docs/javadoc/plugin-api/oracle/dbtools/plugin/api/security/annotations/Privilege.html
-%%DATADIR%%/ords/docs/javadoc/plugin-api/oracle/dbtools/plugin/api/security/annotations/Realm.html
 %%DATADIR%%/ords/docs/javadoc/plugin-api/oracle/dbtools/plugin/api/security/annotations/Transport.html
 %%DATADIR%%/ords/docs/javadoc/plugin-api/oracle/dbtools/plugin/api/security/annotations/TransportPolicy.html
-%%DATADIR%%/ords/docs/javadoc/plugin-api/oracle/dbtools/plugin/api/security/annotations/class-use/Challenge.html
-%%DATADIR%%/ords/docs/javadoc/plugin-api/oracle/dbtools/plugin/api/security/annotations/class-use/ChallengeParameter.html
 %%DATADIR%%/ords/docs/javadoc/plugin-api/oracle/dbtools/plugin/api/security/annotations/class-use/Privilege.html
-%%DATADIR%%/ords/docs/javadoc/plugin-api/oracle/dbtools/plugin/api/security/annotations/class-use/Realm.html
 %%DATADIR%%/ords/docs/javadoc/plugin-api/oracle/dbtools/plugin/api/security/annotations/class-use/Transport.html
 %%DATADIR%%/ords/docs/javadoc/plugin-api/oracle/dbtools/plugin/api/security/annotations/class-use/TransportPolicy.html
 %%DATADIR%%/ords/docs/javadoc/plugin-api/oracle/dbtools/plugin/api/security/annotations/package-frame.html
@@ -1300,7 +1305,6 @@ bin/sqldeveloper
 %%DATADIR%%/ords/docs/javadoc/plugin-api/oracle/dbtools/plugin/api/security/annotations/package-use.html
 %%DATADIR%%/ords/docs/javadoc/plugin-api/oracle/dbtools/plugin/api/security/class-use/AuthenticationChallenge.Builder.html
 %%DATADIR%%/ords/docs/javadoc/plugin-api/oracle/dbtools/plugin/api/security/class-use/AuthenticationChallenge.html
-%%DATADIR%%/ords/docs/javadoc/plugin-api/oracle/dbtools/plugin/api/security/class-use/AuthenticationChallenges.html
 %%DATADIR%%/ords/docs/javadoc/plugin-api/oracle/dbtools/plugin/api/security/class-use/AuthorizationConstraint.html
 %%DATADIR%%/ords/docs/javadoc/plugin-api/oracle/dbtools/plugin/api/security/class-use/AuthorizationError.html
 %%DATADIR%%/ords/docs/javadoc/plugin-api/oracle/dbtools/plugin/api/security/class-use/EndUserAuthorizationConstraint.html
@@ -1337,11 +1341,8 @@ bin/sqldeveloper
 %%DATADIR%%/ords/docs/javadoc/plugin-api/overview-summary.html
 %%DATADIR%%/ords/docs/javadoc/plugin-api/overview-tree.html
 %%DATADIR%%/ords/docs/javadoc/plugin-api/package-list
-%%DATADIR%%/ords/docs/javadoc/plugin-api/resources/background.gif
-%%DATADIR%%/ords/docs/javadoc/plugin-api/resources/tab.gif
-%%DATADIR%%/ords/docs/javadoc/plugin-api/resources/titlebar.gif
-%%DATADIR%%/ords/docs/javadoc/plugin-api/resources/titlebar_end.gif
 %%DATADIR%%/ords/docs/javadoc/plugin-api/route-patterns.html
+%%DATADIR%%/ords/docs/javadoc/plugin-api/script.js
 %%DATADIR%%/ords/docs/javadoc/plugin-api/security-guide.html
 %%DATADIR%%/ords/docs/javadoc/plugin-api/serialized-form.html
 %%DATADIR%%/ords/docs/javadoc/plugin-api/stylesheet.css
@@ -1371,9 +1372,8 @@ bin/sqldeveloper
 %%DATADIR%%/ords/examples/getting-started/rest-connection-1.png
 %%DATADIR%%/ords/examples/getting-started/rest-connection-2.png
 %%DATADIR%%/ords/examples/plugins/lib/javax.inject.jar
-%%DATADIR%%/ords/examples/plugins/lib/ojdbc7-12.1.0.2-19030178-18642808.jar
+%%DATADIR%%/ords/examples/plugins/lib/ojdbc8-12.2.0.1.jar
 %%DATADIR%%/ords/examples/plugins/lib/plugin-api.jar
-%%DATADIR%%/ords/examples/plugins/lib/servlet-api-2.5.jar
 %%DATADIR%%/ords/examples/plugins/plugin-demo/.classpath
 %%DATADIR%%/ords/examples/plugins/plugin-demo/.project
 %%DATADIR%%/ords/examples/plugins/plugin-demo/build.xml
@@ -1532,9 +1532,11 @@ bin/sqldeveloper
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/lib/fop.jar
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/lib/jlfgr.jar
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/lib/js.jar
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/lib/log4j.jar
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/lib/olap_api.jar
-%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/lib/pdfbox-app-2.0.0.jar
-%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/lib/rsyntaxtextarea.jar
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/lib/pdfbox-app-2.0.2.jar
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/lib/rsyntaxtextarea-3.0.0-SNAPSHOT.jar
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/lib/saxon-9.1.0.8.jar
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/lib/serializer-2.7.0.jar
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/lib/xalan-2.7.0.jar
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/lib/xml-apis-ext.jar
@@ -2267,6 +2269,7 @@ bin/sqldeveloper
 %%DATADIR%%/sqldeveloper/extensions/oracle.olapdv.jar
 %%DATADIR%%/sqldeveloper/extensions/oracle.olapdv/lib/olapdvhelp.jar
 %%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.cloud.jar
+%%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.cloud.migrations.jar
 %%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.datamodeler_reports.jar
 %%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.dbanavigator.jar
 %%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.dbcart.jar
@@ -2277,6 +2280,8 @@ bin/sqldeveloper
 %%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.jar
 %%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.jdbcproxy.jar
 %%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.listener.jar
+%%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.macos.jar
+%%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.metrics.jar
 %%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.migration.application.jar
 %%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.migration.db2.jar
 %%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.migration.jar
@@ -2314,6 +2319,8 @@ bin/sqldeveloper
 %%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.timesten.jar
 %%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.tuning.jar
 %%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.unit_test.jar
+%%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.unit_test/sql/createRepositoryRoles.sql
+%%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.unit_test/sql/createRepositoryUser.sql
 %%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.utils.jar
 %%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.worksheet.jar
 %%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.xmlschema.jar
@@ -2321,17 +2328,17 @@ bin/sqldeveloper
 %%DATADIR%%/sqldeveloper/lib/PropertyStorage.jar
 %%DATADIR%%/sqldeveloper/lib/antlr-all-2.7.6.jar
 %%DATADIR%%/sqldeveloper/lib/antlr-runtime-3.1.3.jar
+%%DATADIR%%/sqldeveloper/lib/antlr-runtime.jar
 %%DATADIR%%/sqldeveloper/lib/aopalliance-repackaged.jar
 %%DATADIR%%/sqldeveloper/lib/asm.jar
 %%DATADIR%%/sqldeveloper/lib/aurora.jar
-%%DATADIR%%/sqldeveloper/lib/com.mxgraph.jar
 %%DATADIR%%/sqldeveloper/lib/common.jar
 %%DATADIR%%/sqldeveloper/lib/commons-codec.jar
+%%DATADIR%%/sqldeveloper/lib/commons-collections4.jar
 %%DATADIR%%/sqldeveloper/lib/commons-logging.jar
-%%DATADIR%%/sqldeveloper/lib/dom4j.jar
+%%DATADIR%%/sqldeveloper/lib/curvesapi.jar
 %%DATADIR%%/sqldeveloper/lib/editor.jar
 %%DATADIR%%/sqldeveloper/lib/emapi.jar
-%%DATADIR%%/sqldeveloper/lib/geronimo-stax-api_1.0_spec.jar
 %%DATADIR%%/sqldeveloper/lib/hk2-api.jar
 %%DATADIR%%/sqldeveloper/lib/hk2-locator.jar
 %%DATADIR%%/sqldeveloper/lib/hk2-utils.jar
@@ -2349,11 +2356,14 @@ bin/sqldeveloper
 %%DATADIR%%/sqldeveloper/lib/jersey-client.jar
 %%DATADIR%%/sqldeveloper/lib/jersey-common.jar
 %%DATADIR%%/sqldeveloper/lib/jersey-guava.jar
+%%DATADIR%%/sqldeveloper/lib/jgraphx.jar
 %%DATADIR%%/sqldeveloper/lib/jline.jar
 %%DATADIR%%/sqldeveloper/lib/jsch.jar
 %%DATADIR%%/sqldeveloper/lib/json.jar
 %%DATADIR%%/sqldeveloper/lib/jzlib.jar
-%%DATADIR%%/sqldeveloper/lib/log4j.jar
+%%DATADIR%%/sqldeveloper/lib/log4j-1.2-api.jar
+%%DATADIR%%/sqldeveloper/lib/log4j-api.jar
+%%DATADIR%%/sqldeveloper/lib/log4j-core.jar
 %%DATADIR%%/sqldeveloper/lib/low-level-api.jar
 %%DATADIR%%/sqldeveloper/lib/mongodbjdbc.jar
 %%DATADIR%%/sqldeveloper/lib/mvclient.jar
@@ -2378,7 +2388,9 @@ bin/sqldeveloper
 %%DATADIR%%/sqldeveloper/lib/sdoutl.jar
 %%DATADIR%%/sqldeveloper/lib/sdovis.jar
 %%DATADIR%%/sqldeveloper/lib/slf4j-api.jar
+%%DATADIR%%/sqldeveloper/lib/stax-api.jar
 %%DATADIR%%/sqldeveloper/lib/stringtemplate-3.1b1.jar
+%%DATADIR%%/sqldeveloper/lib/stringtemplate.jar
 %%DATADIR%%/sqldeveloper/lib/xmlbeans.jar
 %%DATADIR%%/sqlj/lib/runtime12.jar
 %%DATADIR%%/svnkit/antlr-runtime.jar
