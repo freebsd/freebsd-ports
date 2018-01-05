@@ -4,8 +4,8 @@
 PORTNAME=	oniguruma
 PORTVERSION=	6.6.1
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	devel textproc
-PKGNAMESUFFIX=	6
 
 MAINTAINER=	rob@theseusnetworking.com
 COMMENT=	BSDL Regular Expressions library compatible with POSIX/GNU/Perl
