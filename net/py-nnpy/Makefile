@@ -2,6 +2,7 @@
 
 PORTNAME=	nnpy
 PORTVERSION=	1.3
+PORTREVISION=	1
 CATEGORIES=	net python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,5 +18,8 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		python
 USE_PYTHON=	autoplist distutils
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/_nnpy*.so
 
 .include <bsd.port.mk>
