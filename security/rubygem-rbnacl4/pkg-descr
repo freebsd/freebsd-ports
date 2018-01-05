@@ -1,0 +1,4 @@
+The Networking and Cryptography (NaCl) library provides a high-level toolkit for
+building cryptographic systems and protocols.
+
+WWW: https://github.com/cryptosphere/rbnacl
