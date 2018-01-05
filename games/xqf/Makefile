@@ -35,8 +35,6 @@ GEOIP_LIB_DEPENDS=	libGeoIP.so:net/GeoIP
 
 BZIP2_CONFIGURE_ENABLE=	bzip2
 
-BROKEN_aarch64=		Fails to linkld: final link failed: Bad value
-
 post-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/docs/xqfdocs.html ${STAGEDIR}${DOCSDIR}
