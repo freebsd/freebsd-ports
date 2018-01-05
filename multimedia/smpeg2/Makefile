@@ -16,7 +16,8 @@ LICENSE_COMB=	multi
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
-USES=		libtool
+CFLAGS+=	${COMPILER_FEATURES:Mc++11:C/.+/-Wno-error=narrowing/}
+USES=		compiler:features libtool
 USE_SDL=	sdl2
 USE_LDCONFIG=	yes
 
