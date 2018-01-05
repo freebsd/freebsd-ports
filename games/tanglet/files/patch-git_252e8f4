@@ -1,0 +1,28 @@
+Backport (adapted to 1.4.0) that fixes `make install' with Qt 5.9:
+
+    /usr/local/lib/qt5/bin/qmake -install qinstall /wrkdirs/usr/ports/games/tanglet/work/tanglet-1.4.0/translations/*.qm /wrkdirs/usr/ports/games/tanglet/work/stage/usr/local/share/tanglet/translations/*.qm
+    Error: usage: [-exe] source target
+    *** Error code 3 (ignored)
+
+From 252e8f406a709dadcd915459c4137471df64b04a Mon Sep 17 00:00:00 2001
+From: Graeme Gott <graeme@gottcode.org>
+Date: Sat, 1 Jul 2017 04:59:28 -0400
+Subject: [PATCH] FIXED: Did not always install translations in Linux.
+
+---
+ src/src.pro | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/src/src.pro b/src/src.pro
+index 5b8c318..3d20cc3 100644
+--- tanglet.pro
++++ tanglet.pro
+@@ -121,7 +121,7 @@ macx {
+ 	appdata.files = icons/tanglet.appdata.xml
+ 	appdata.path = $$PREFIX/share/appdata/
+ 
+-	qm.files = translations/*.qm
++	qm.files = $$replace(TRANSLATIONS, .ts, .qm)
+ 	qm.path = $$PREFIX/share/tanglet/translations
+ 	qm.CONFIG += no_check_exist
+ 
