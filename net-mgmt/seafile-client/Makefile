@@ -3,6 +3,7 @@
 PORTNAME=	seafile-client
 DISTVERSIONPREFIX=	v
 DISTVERSION=	${SEAFILE_CLIENT_VER}
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	ultima@FreeBSD.org
@@ -13,8 +14,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 BUILD_DEPENDS=	valac:lang/vala
 LIB_DEPENDS=	libsearpc.so:devel/libsearpc \
-		libevhtp.so:www/libevhtp \
-		libzdb.so:databases/libzdb \
 		libcurl.so:ftp/curl \
 		libinotify.so:devel/libinotify \
 		libccnet.so:net-mgmt/ccnet-client \
