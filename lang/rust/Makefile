@@ -172,6 +172,9 @@ post-patch:
 # After patching crates, we need to update their corresponding
 # `.cargo-checksum.json` to reflect the new checksums verified by Cargo.
 	@for dir in "${WRKSRC}/src/vendor/libc" "${WRKSRC}/src/vendor/openssl" "${WRKSRC}/src/vendor/openssl-sys"; do \
+		if ! test -d "$$dir"; then \
+			continue; \
+		fi; \
 		cd "$$dir"; \
 		for file in $$(${FIND} * -name "*.orig"); do \
 			old_checksum=$$(${SHA256} -q "$$file"); \
@@ -186,6 +189,9 @@ post-patch:
 # fix is applied. We'll need them in `do-configure` to update the
 # `.cargo-checksum.json` files.
 	@for crate in ${CRATES_PATCHED_BY_FBSD10_FIX}; do \
+		if ! test -d "${WRKSRC}/$$crate"; then \
+			continue; \
+		fi; \
 		for file in $$(${FIND} "${WRKSRC}/$$crate" -name "config.rpath"); do \
 			${CP} "$$file" "$$file.orig"; \
 		done; \
@@ -205,6 +211,9 @@ do-configure:
 # `do-configure`. Like after `extra-path-ino64`, we need to update
 # `.cargo-checksum.json`.
 	@for crate in ${CRATES_PATCHED_BY_FBSD10_FIX}; do \
+		if ! test -d "${WRKSRC}/$$crate"; then \
+			continue; \
+		fi; \
 		cd "${WRKSRC}/$$crate"; \
 		for file in $$(${FIND} * -name "*.orig"); do \
 			old_checksum=$$(${SHA256} -q "$$file"); \
