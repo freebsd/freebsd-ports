@@ -6,6 +6,7 @@
 # PROVIDE:	microcode_update
 # REQUIRE:	root mountcritlocal
 # KEYWORD:	nojail
+# BEFORE:	SERVERS
 
 #
 # Add the following line to /etc/rc.conf to enable flow-capture:
