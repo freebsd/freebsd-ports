@@ -10,6 +10,14 @@ Mismerges found by comparing changes with Firefox 56
            if (elem) {
              elem->NodeInfoChanged(newDoc);
            }
+--- media/libcubeb/src/moz.build
++++ media/libcubeb/src/moz.build
+@@ -89,4 +89,4 @@ CFLAGS += CONFIG['MOZ_ALSA_CFLAGS']
+ CFLAGS += CONFIG['MOZ_PULSEAUDIO_CFLAGS']
+ 
+ # We allow warnings for third-party code that can be updated from upstream.
+-AllowCompilerWarnings()
++ALLOW_COMPILER_WARNINGS = True
 --- security/nss/lib/softoken/softkver.h.orig
 +++ security/nss/lib/softoken/softkver.h
 @@ -26,6 +26,6 @@
