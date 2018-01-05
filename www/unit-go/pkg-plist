@@ -1,6 +1,6 @@
 %%GO_LIBDIR%%/unit.a
-%%GO_SRCDIR%%/%%GO_PKGNAME%%/cbytes-1.6.go
-%%GO_SRCDIR%%/%%GO_PKGNAME%%/cbytes-1.7.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/darwin-cflags.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ldflags-lrt.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/nxt_go_array.c
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/nxt_go_array.h
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/nxt_go_lib.c
