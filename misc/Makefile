@@ -465,6 +465,7 @@
     SUBDIR += tempcontrol
     SUBDIR += termatrix
     SUBDIR += teseq
+    SUBDIR += thefuck
     SUBDIR += timediff
     SUBDIR += tkcron
     SUBDIR += tkinfo

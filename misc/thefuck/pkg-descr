@@ -1,0 +1,10 @@
+Thefuck is a magnificent app which corrects your previous console command.
+It tries to match a rule for the previous command, creates a new command
+using the matched rule and runs it. Thefuck comes with a lot of predefined
+rules, but you can create your own rules as well.
+
+You should place this command in your shell config file:
+
+eval $(thefuck --alias)
+
+WWW: https://github.com/nvbn/thefuck
