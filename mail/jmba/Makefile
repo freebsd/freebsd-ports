@@ -10,9 +10,8 @@ MAINTAINER=	romain@FreeBSD.org
 COMMENT=	Junk Mail Buffering Agent
 
 GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	ac_cv_func_gettext=no ac_cv_lib_intl_main=no
 USES=	gmake tar:bzip2
-
-BROKEN_aarch64=	Fails to build: gmake: msgfmt: Command not found
 
 PLIST_FILES=	bin/jmba \
 		man/man1/jmba.1.gz
