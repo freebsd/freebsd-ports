@@ -1,0 +1,5 @@
+If you observe segfaults during program exit, this is likely due to a
+bug in the boost libraries. It does not affect Monero behavior and is
+triggered by your malloc.conf(3) config.
+See https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=224599 for more
+details.
