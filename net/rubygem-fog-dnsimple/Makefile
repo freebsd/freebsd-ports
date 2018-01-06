@@ -3,6 +3,7 @@
 
 PORTNAME=	fog-dnsimple
 PORTVERSION=	1.0.0
+PORTREVISION=	1
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
