@@ -72,7 +72,7 @@
  
  # API
  gem 'grape', '~> 1.0'
-@@ -87,13 +87,13 @@ gem 'hashie-forbidden_attributes'
+@@ -87,25 +87,25 @@ gem 'hashie-forbidden_attributes'
  gem 'kaminari', '~> 1.0'
  
  # HAML
@@ -89,7 +89,9 @@
  
  # for backups
  gem 'fog-aws', '~> 1.4'
-@@ -102,10 +102,10 @@ gem 'fog-google', '~> 0.5'
+-gem 'fog-core', '~> 1.44'
++gem 'fog-core', '>= 1.44'
+ gem 'fog-google', '~> 0.5'
  gem 'fog-local', '~> 0.3'
  gem 'fog-openstack', '~> 0.1'
  gem 'fog-rackspace', '~> 0.1.1'
