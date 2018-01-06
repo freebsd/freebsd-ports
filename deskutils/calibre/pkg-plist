@@ -1181,6 +1181,8 @@ lib/calibre/calibre/plugins/hunspell.so
 lib/calibre/calibre/plugins/icu.so
 lib/calibre/calibre/plugins/imageops.so
 lib/calibre/calibre/plugins/libheadless.so
+lib/calibre/calibre/plugins/libmtp.so
+lib/calibre/calibre/plugins/libusb.so
 lib/calibre/calibre/plugins/lzma_binding.so
 lib/calibre/calibre/plugins/lzx.so
 lib/calibre/calibre/plugins/matcher.so
@@ -2087,12 +2089,4 @@ share/icons/hicolor/64x64/mimetypes/gnome-mime-application-x-mobipocket-ebook.pn
 share/icons/hicolor/64x64/mimetypes/gnome-mime-application-x-topaz-ebook.png
 share/icons/hicolor/64x64/mimetypes/gnome-mime-text-lrs.png
 share/icons/hicolor/64x64/mimetypes/text-lrs.png
-share/mime/application/epub+zip.xml
-share/mime/application/x-kindle-application.xml
-share/mime/application/x-mobi8-ebook.xml
-share/mime/application/x-mobipocket-ebook.xml
-share/mime/application/x-mobipocket-subscription.xml
-share/mime/application/x-sony-bbeb.xml
-share/mime/application/x-topaz-ebook.xml
 share/mime/packages/calibre-mimetypes.xml
-share/mime/text/lrs.xml

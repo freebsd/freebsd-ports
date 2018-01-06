@@ -1,4 +1,4 @@
---- src/calibre/linux.py.orig	2017-07-28 04:07:52 UTC
+--- src/calibre/linux.py.orig	2018-01-05 05:41:54 UTC
 +++ src/calibre/linux.py
 @@ -841,7 +841,7 @@ class PostInstall:
                  f.close()
@@ -18,9 +18,9 @@
  Icon=calibre-viewer
  Categories=Graphics;Viewer;
  '''
-@@ -1021,7 +1021,7 @@ Name=Edit E-book
- GenericName=Edit E-books
- Comment=Edit e-books in various formats
+@@ -1021,7 +1021,7 @@ Name=E-book Editor
+ GenericName=Editor for E-books
+ Comment=Edit E-books in various formats
  TryExec=ebook-edit
 -Exec=ebook-edit --detach %f
 +Exec=ebook-edit %f
