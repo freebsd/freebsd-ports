@@ -1119,7 +1119,6 @@
     SUBDIR += snap
     SUBDIR += snooze
     SUBDIR += snowlog
-    SUBDIR += socket
     SUBDIR += socklog
     SUBDIR += solaar
     SUBDIR += sortu
