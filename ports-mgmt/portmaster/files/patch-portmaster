@@ -1,16 +1,5 @@
 --- portmaster.orig	2017-12-21 09:02:44 UTC
 +++ portmaster
-@@ -51,9 +51,8 @@ fi
- #=============== Begin functions we always want to have ===============
- 
- version () {
--	local pkgname="%%PKGNAME%%"
-+	local pkgname="portmaster-3.18_6"
- 	echo '' ; echo "===>>> Version ${pkgname##*-}"
--	#svn='$FreeBSD: user/dougb/portmaster/portmaster 241090 2012-10-01 08:32:05Z dougb $'
- }
- 
- fail () {
 @@ -113,13 +112,13 @@ kill_bad_children () {
  		[ "$pid" -gt 25 ] || continue
  		case "$ppid" in
