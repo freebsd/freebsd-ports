@@ -261,7 +261,6 @@
     SUBDIR += dt
     SUBDIR += dtc
     SUBDIR += dtpstree
-    SUBDIR += DTraceToolkit
     SUBDIR += du2ps
     SUBDIR += duff
     SUBDIR += dunst
