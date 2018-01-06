@@ -19,7 +19,7 @@ post-patch:
 		${WRKSRC}/setup.py
 
 pre-build:
-	${CP} $$(make FLAVOR= -C ${MASTERDIR} -V WRKSRC)/libminiupnpc.a ${WRKSRC}
+	${CP} $$(${SETENV} -u FLAVOR make -C ${MASTERDIR} -V WRKSRC)/libminiupnpc.a ${WRKSRC}
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/miniupnpc.so
