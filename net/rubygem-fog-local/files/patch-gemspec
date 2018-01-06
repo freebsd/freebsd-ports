@@ -1,0 +1,11 @@
+--- fog-local.gemspec.orig	2018-01-06 07:09:34 UTC
++++ fog-local.gemspec
+@@ -24,7 +24,7 @@ Gem::Specification.new do |s|
+       s.add_development_dependency(%q<bundler>.freeze, ["~> 1.7"])
+       s.add_development_dependency(%q<rake>.freeze, ["~> 10.0"])
+       s.add_development_dependency(%q<shindo>.freeze, ["~> 0.3"])
+-      s.add_runtime_dependency(%q<fog-core>.freeze, ["~> 1.27"])
++      s.add_runtime_dependency(%q<fog-core>.freeze, [">= 1.27"])
+     else
+       s.add_dependency(%q<bundler>.freeze, ["~> 1.7"])
+       s.add_dependency(%q<rake>.freeze, ["~> 10.0"])
