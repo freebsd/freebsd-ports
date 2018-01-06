@@ -1,0 +1,20 @@
+--- utp.cpp.orig	2013-05-14 23:05:36 UTC
++++ utp.cpp
+@@ -1698,7 +1698,7 @@ void UTPSocket::apply_ledbat_ccontrol(size_t bytes_ack
+ 	// used in parse_log.py
+ 	LOG_UTP("0x%08x: actual_delay:%u our_delay:%d their_delay:%u off_target:%d max_window:%u "
+ 			"delay_base:%u delay_sum:%d target_delay:%d acked_bytes:%u cur_window:%u "
+-			"scaled_gain:%f rtt:%u rate:%u quota:%d wnduser:%u rto:%u timeout:%d get_microseconds:"I64u" "
++			"scaled_gain:%f rtt:%u rate:%u quota:%d wnduser:%u rto:%u timeout:%d get_microseconds:" I64u " "
+ 			"cur_window_packets:%u packet_size:%u their_delay_base:%u their_actual_delay:%u",
+ 			this, actual_delay, our_delay / 1000, their_hist.get_value() / 1000,
+ 			(int)off_target / 1000, (uint)(max_window),  our_hist.delay_base,
+@@ -1783,7 +1783,7 @@ size_t UTP_ProcessIncoming(UTPSocket *conn, const byte
+ 
+ 	if (pk_flags >= ST_NUM_STATES) return 0;
+ 
+-	LOG_UTPV("0x%08x: Got %s. seq_nr:%u ack_nr:%u state:%s version:%u timestamp:"I64u" reply_micro:%u",
++	LOG_UTPV("0x%08x: Got %s. seq_nr:%u ack_nr:%u state:%s version:%u timestamp:" I64u " reply_micro:%u",
+ 			 conn, flagnames[pk_flags], pk_seq_nr, pk_ack_nr, statenames[conn->state], conn->version,
+ 			 conn->version == 0?(uint64)(pf->tv_sec) * 1000000 + pf->tv_usec:uint64(pf1->tv_usec),
+ 			 conn->version == 0?(uint32)(pf->reply_micro):(uint32)(pf1->reply_micro));
