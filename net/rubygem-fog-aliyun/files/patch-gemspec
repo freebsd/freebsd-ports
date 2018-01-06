@@ -1,0 +1,11 @@
+--- fog-aliyun.gemspec.orig	2018-01-06 07:24:21 UTC
++++ fog-aliyun.gemspec
+@@ -28,7 +28,7 @@ Gem::Specification.new do |s|
+       s.add_development_dependency(%q<rubocop>.freeze, ["~> 0.40.0"])
+       s.add_development_dependency(%q<mime-types>.freeze, [">= 2.6.2", "~> 2.6"])
+       s.add_development_dependency(%q<pry-nav>.freeze, [">= 0"])
+-      s.add_runtime_dependency(%q<fog-core>.freeze, ["~> 1.27"])
++      s.add_runtime_dependency(%q<fog-core>.freeze, [">= 1.27"])
+       s.add_runtime_dependency(%q<fog-json>.freeze, ["~> 1.0"])
+       s.add_runtime_dependency(%q<ipaddress>.freeze, ["~> 0.8"])
+       s.add_runtime_dependency(%q<xml-simple>.freeze, ["~> 1.1"])
