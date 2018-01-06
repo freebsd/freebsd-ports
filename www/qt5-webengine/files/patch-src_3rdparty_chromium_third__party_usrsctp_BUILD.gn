@@ -1,0 +1,15 @@
+--- src/3rdparty/chromium/third_party/usrsctp/BUILD.gn.orig	2017-01-26 00:49:31 UTC
++++ src/3rdparty/chromium/third_party/usrsctp/BUILD.gn
+@@ -112,6 +112,12 @@ static_library("usrsctp") {
+       "__Userspace_os_Linux",
+       "_GNU_SOURCE",
+     ]
++  } else if (is_bsd) {
++    # For now, freebsd hard coding, differentiate different bsd is a plan
++    defines += [
++      "__Userspace_os_FreeBSD",
++    ]
++    cflags += [ "-U__FreeBSD__" ]
+   } else if (is_mac || is_ios) {
+     defines += [
+       "HAVE_SA_LEN",

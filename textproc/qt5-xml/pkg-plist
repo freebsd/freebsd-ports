@@ -1,3 +1,4 @@
+%%QT_INCDIR%%/QtXml/%%FULLVER%%/QtXml/private/qtxml-config_p.h
 %%QT_INCDIR%%/QtXml/%%FULLVER%%/QtXml/private/qxml_p.h
 %%QT_INCDIR%%/QtXml/QDomAttr
 %%QT_INCDIR%%/QtXml/QDomCDATASection
@@ -34,6 +35,7 @@
 %%QT_INCDIR%%/QtXml/QtXmlDepends
 %%QT_INCDIR%%/QtXml/QtXmlVersion
 %%QT_INCDIR%%/QtXml/qdom.h
+%%QT_INCDIR%%/QtXml/qtxml-config.h
 %%QT_INCDIR%%/QtXml/qtxmlglobal.h
 %%QT_INCDIR%%/QtXml/qtxmlversion.h
 %%QT_INCDIR%%/QtXml/qxml.h

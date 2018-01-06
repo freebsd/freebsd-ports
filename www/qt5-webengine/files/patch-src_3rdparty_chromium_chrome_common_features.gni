@@ -1,0 +1,11 @@
+--- src/3rdparty/chromium/chrome/common/features.gni.orig	2017-01-26 00:49:10 UTC
++++ src/3rdparty/chromium/chrome/common/features.gni
+@@ -43,7 +43,7 @@ declare_args() {
+   enable_hotwording = is_chrome_branded && is_chromeos
+ 
+   enable_one_click_signin =
+-      is_win || is_mac || (is_linux && !is_chromeos && !is_chromecast)
++      is_win || is_mac || is_bsd || (is_linux && !is_chromeos && !is_chromecast)
+ 
+   # Set to true to bundle all the mash related mojo services into chrome.
+   # Specify --mash to chrome to have chrome start the mash environment.

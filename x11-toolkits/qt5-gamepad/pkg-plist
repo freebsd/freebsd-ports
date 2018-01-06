@@ -1,6 +1,7 @@
 %%QT_INCDIR%%/QtGamepad/%%FULLVER%%/QtGamepad/private/qgamepadbackend_p.h
 %%QT_INCDIR%%/QtGamepad/%%FULLVER%%/QtGamepad/private/qgamepadbackendfactory_p.h
 %%QT_INCDIR%%/QtGamepad/%%FULLVER%%/QtGamepad/private/qgamepadbackendplugin_p.h
+%%QT_INCDIR%%/QtGamepad/%%FULLVER%%/QtGamepad/private/qtgamepad-config_p.h
 %%QT_INCDIR%%/QtGamepad/QGamepad
 %%QT_INCDIR%%/QtGamepad/QGamepadKeyNavigation
 %%QT_INCDIR%%/QtGamepad/QGamepadManager
@@ -10,6 +11,7 @@
 %%QT_INCDIR%%/QtGamepad/qgamepad.h
 %%QT_INCDIR%%/QtGamepad/qgamepadkeynavigation.h
 %%QT_INCDIR%%/QtGamepad/qgamepadmanager.h
+%%QT_INCDIR%%/QtGamepad/qtgamepad-config.h
 %%QT_INCDIR%%/QtGamepad/qtgamepadglobal.h
 %%QT_INCDIR%%/QtGamepad/qtgamepadversion.h
 %%QT_CMAKEDIR%%/Qt5Gamepad/Qt5GamepadConfig.cmake

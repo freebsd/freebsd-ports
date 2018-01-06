@@ -7,6 +7,7 @@
 %%QT_INCDIR%%/QtTest/%%FULLVER%%/QtTest/private/qbenchmarkmeasurement_p.h
 %%QT_INCDIR%%/QtTest/%%FULLVER%%/QtTest/private/qbenchmarkmetric_p.h
 %%QT_INCDIR%%/QtTest/%%FULLVER%%/QtTest/private/qbenchmarkperfevents_p.h
+%%QT_INCDIR%%/QtTest/%%FULLVER%%/QtTest/private/qbenchmarktimemeasurers_p.h
 %%QT_INCDIR%%/QtTest/%%FULLVER%%/QtTest/private/qbenchmarkvalgrind_p.h
 %%QT_INCDIR%%/QtTest/%%FULLVER%%/QtTest/private/qcsvbenchmarklogger_p.h
 %%QT_INCDIR%%/QtTest/%%FULLVER%%/QtTest/private/qplaintestlogger_p.h
@@ -17,6 +18,7 @@
 %%QT_INCDIR%%/QtTest/%%FULLVER%%/QtTest/private/qtestcorelist_p.h
 %%QT_INCDIR%%/QtTest/%%FULLVER%%/QtTest/private/qtestelement_p.h
 %%QT_INCDIR%%/QtTest/%%FULLVER%%/QtTest/private/qtestelementattribute_p.h
+%%QT_INCDIR%%/QtTest/%%FULLVER%%/QtTest/private/qtesthelpers_p.h
 %%QT_INCDIR%%/QtTest/%%FULLVER%%/QtTest/private/qtestlog_p.h
 %%QT_INCDIR%%/QtTest/%%FULLVER%%/QtTest/private/qtestresult_p.h
 %%QT_INCDIR%%/QtTest/%%FULLVER%%/QtTest/private/qtesttable_p.h
@@ -42,6 +44,7 @@
 %%QT_INCDIR%%/QtTest/QtTest
 %%QT_INCDIR%%/QtTest/QtTestDepends
 %%QT_INCDIR%%/QtTest/QtTestGui
+%%QT_INCDIR%%/QtTest/QtTestNetwork
 %%QT_INCDIR%%/QtTest/QtTestVersion
 %%QT_INCDIR%%/QtTest/QtTestWidgets
 %%QT_INCDIR%%/QtTest/qbenchmark.h
@@ -50,6 +53,7 @@
 %%QT_INCDIR%%/QtTest/qtest.h
 %%QT_INCDIR%%/QtTest/qtest_global.h
 %%QT_INCDIR%%/QtTest/qtest_gui.h
+%%QT_INCDIR%%/QtTest/qtest_network.h
 %%QT_INCDIR%%/QtTest/qtest_widgets.h
 %%QT_INCDIR%%/QtTest/qtestaccessible.h
 %%QT_INCDIR%%/QtTest/qtestassert.h

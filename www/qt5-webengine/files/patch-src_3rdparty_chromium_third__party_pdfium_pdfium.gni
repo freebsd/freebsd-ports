@@ -1,0 +1,11 @@
+--- src/3rdparty/chromium/third_party/pdfium/pdfium.gni.orig	2017-12-15 17:45:56.915001000 -0500
++++ src/3rdparty/chromium/third_party/pdfium/pdfium.gni	2017-12-15 17:45:31.223848000 -0500
+@@ -9,7 +9,7 @@
+ declare_args() {
+   # On Android there's no system FreeType. On Windows and Mac, only a few
+   # methods are used from it.
+-  pdfium_bundle_freetype = !is_linux
++  pdfium_bundle_freetype = false
+ 
+   # Build PDFium either with or without v8 support.
+   pdf_enable_v8 = pdf_enable_v8_override

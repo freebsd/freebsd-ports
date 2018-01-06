@@ -1,0 +1,29 @@
+--- src/3rdparty/chromium/chrome/BUILD.gn.orig	2017-01-26 00:49:07 UTC
++++ src/3rdparty/chromium/chrome/BUILD.gn
+@@ -132,7 +132,7 @@ if (!is_android && !is_mac) {
+     data = [
+       "$root_out_dir/resources.pak",
+     ]
+-    if (is_linux || is_win) {
++    if (is_linux || is_bsd || is_win) {
+       data += [
+         "$root_out_dir/chrome_100_percent.pak",
+         "$root_out_dir/locales/en-US.pak",
+@@ -212,7 +212,7 @@ if (!is_android && !is_mac) {
+       sources += [ "app/chrome_exe_main_aura.cc" ]
+     }
+ 
+-    if (is_linux) {
++    if (is_linux || is_bsd) {
+       sources += [
+         "app/chrome_dll_resource.h",
+         "app/chrome_main.cc",
+@@ -1539,7 +1539,7 @@ if (enable_resource_whitelist_generation
+   }
+ }
+ 
+-if (is_linux) {
++if (is_linux || is_bsd) {
+   action("manpage") {
+     if (is_chrome_branded) {
+       name = "Google Chrome"

@@ -1,0 +1,24 @@
+--- src/3rdparty/chromium/device/serial/BUILD.gn.orig	2017-01-26 00:49:14 UTC
++++ src/3rdparty/chromium/device/serial/BUILD.gn
+@@ -6,7 +6,7 @@ import("//build/config/features.gni")
+ import("//mojo/public/tools/bindings/mojom.gni")
+ 
+ # Library works only on desktop platforms.
+-assert(is_win || is_linux || is_mac)
++assert(is_win || is_linux || is_bsd || is_mac)
+ 
+ config("platform_support") {
+   visibility = [ ":serial" ]
+@@ -55,6 +55,12 @@ static_library("serial") {
+   if (use_udev) {
+     deps += [ "//device/udev_linux" ]
+   }
++  if (is_bsd) {
++    sources -= [
++      "serial_device_enumerator_linux.cc",
++      "serial_device_enumerator_linux.h"
++    ]
++  }
+   if (is_chromeos) {
+     deps += [
+       "//chromeos",

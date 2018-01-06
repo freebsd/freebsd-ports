@@ -12,7 +12,7 @@ BROKEN_powerpc64=	Does not build
 
 USE_QT5=	core network buildtools_build
 QT_DIST=	${PORTNAME}
-USES=		qmake
+USES=		qmake:norecursive
 USE_LDCONFIG=	${PREFIX}/${QT_LIBDIR_REL}
 
 .include <bsd.port.mk>

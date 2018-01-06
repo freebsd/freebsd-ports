@@ -1,0 +1,61 @@
+--- src/3rdparty/chromium/ui/base/BUILD.gn.orig	2017-01-26 00:49:31 UTC
++++ src/3rdparty/chromium/ui/base/BUILD.gn
+@@ -348,7 +348,7 @@ component("base") {
+     sources += [ "touch/touch_device_android.cc" ]
+   } else if (is_ios) {
+     sources += [ "touch/touch_device_ios.cc" ]
+-  } else if (is_linux) {
++  } else if (is_linux || is_bsd) {
+     sources += [ "touch/touch_device_linux.cc" ]
+   } else {
+     # Empty implementation for all other cases.
+@@ -450,11 +450,11 @@ component("base") {
+     ]
+   }
+ 
+-  if (!use_aura || !is_linux) {
++  if (!use_aura || !(is_linux || is_bsd)) {
+     sources -= [ "resource/resource_bundle_auralinux.cc" ]
+   }
+ 
+-  if (is_linux) {
++  if (is_linux || is_bsd) {
+     deps += [ "//build/linux:fontconfig" ]
+   }
+ 
+@@ -462,7 +462,7 @@ component("base") {
+     configs += [ "//build/config/linux:glib" ]
+   }
+ 
+-  if (is_linux) {
++  if (is_linux || is_bsd) {
+     if (!toolkit_views && !use_aura) {
+       sources -= [
+         "dragdrop/drag_utils.cc",
+@@ -801,7 +801,7 @@ test("ui_base_unittests") {
+       "ime/win/imm32_manager_unittest.cc",
+       "ime/win/tsf_input_scope_unittest.cc",
+     ]
+-    if (is_linux && use_aura && !is_chromeos) {
++    if ((is_linux || is_bsd) && use_aura && !is_chromeos) {
+       sources += [ "ime/input_method_auralinux_unittest.cc" ]
+     }
+     if (use_x11) {
+@@ -924,7 +924,7 @@ test("ui_base_unittests") {
+     ]
+   }
+ 
+-  if (is_android || is_linux || is_mac || is_win) {
++  if (is_android || is_linux || is_bsd || is_mac || is_win) {
+     # TODO(brettw): We should be able to depend on //ui/resources:ui_test_pak
+     # instead of depending directly on the non-test .pak files, but depending
+     # on ui_test_pak seems to have no effect.
+@@ -937,7 +937,7 @@ test("ui_base_unittests") {
+       "//third_party/mesa:osmesa",
+     ]
+   }
+-  if (is_linux || is_win) {
++  if (is_linux || is_bsd || is_win) {
+     data += [
+       # TODO(brettw): Remove these two lines.
+       "$root_out_dir/ui/en-US.pak",

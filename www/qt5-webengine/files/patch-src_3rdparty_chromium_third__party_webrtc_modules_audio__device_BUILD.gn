@@ -1,0 +1,20 @@
+--- src/3rdparty/chromium/third_party/webrtc/modules/audio_device/BUILD.gn.orig	2017-01-26 00:50:17 UTC
++++ src/3rdparty/chromium/third_party/webrtc/modules/audio_device/BUILD.gn
+@@ -77,7 +77,7 @@ rtc_static_library("audio_device") {
+   ]
+ 
+   include_dirs = []
+-  if (is_linux) {
++  if (is_linux || is_bsd) {
+     include_dirs += [ "linux" ]
+   }
+   if (is_ios) {
+@@ -125,7 +125,7 @@ rtc_static_library("audio_device") {
+     if (rtc_use_dummy_audio_file_devices) {
+       defines += [ "WEBRTC_DUMMY_FILE_DEVICES" ]
+     } else {
+-      if (is_linux) {
++      if (is_linux || is_bsd) {
+         sources += [
+           "linux/alsasymboltable_linux.cc",
+           "linux/alsasymboltable_linux.h",

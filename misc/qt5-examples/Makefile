@@ -19,7 +19,7 @@ USES=		tar:xz
 USE_QT5=	#
 
 DESCR=		${.CURDIR:H:H}/devel/qt5/pkg-descr
-DISTINFO_FILE=	${.CURDIR:H:H}/misc/qt5-doc/distinfo
+DISTINFO_FILE=	${.CURDIR}/distinfo
 
 EXAMPLESDIR=	${PREFIX}/share/examples/qt5
 # The destination location depends on the values given in

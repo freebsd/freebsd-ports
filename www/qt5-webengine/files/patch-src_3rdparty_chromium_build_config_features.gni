@@ -1,0 +1,19 @@
+--- src/3rdparty/chromium/build/config/features.gni.orig	2017-01-26 00:49:07 UTC
++++ src/3rdparty/chromium/build/config/features.gni
+@@ -67,13 +67,13 @@ declare_args() {
+   # libudev usage. This currently only affects the content layer.
+   use_udev = is_linux && !is_chromecast
+ 
+-  use_dbus = is_linux && !is_chromecast
++  use_dbus = (is_linux || is_bsd) && !is_chromecast
+ 
+   # Option controlling the use of GConf (the classic GNOME configuration
+   # system).
+-  use_gconf = is_linux && !is_chromeos && !is_chromecast
++  use_gconf = (is_linux || is_bsd) && !is_chromeos && !is_chromecast
+ 
+-  use_gio = is_linux && !is_chromeos && !is_chromecast
++  use_gio = (is_linux || is_bsd) && !is_chromeos && !is_chromecast
+ 
+   # Whether or not to use external popup menu.
+   use_external_popup_menu = is_android || is_mac

@@ -25,6 +25,7 @@
     SUBDIR += py-papi
     SUBDIR += py-speech-dispatcher
     SUBDIR += qt4-accessible
+    SUBDIR += qt5-speech
     SUBDIR += redshift
     SUBDIR += rubygem-atk
     SUBDIR += speech-dispatcher

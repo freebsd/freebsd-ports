@@ -1,0 +1,16 @@
+--- src/3rdparty/chromium/gpu/ipc/service/BUILD.gn.orig	2017-12-15 17:07:13.968625000 -0500
++++ src/3rdparty/chromium/gpu/ipc/service/BUILD.gn	2017-12-15 17:08:34.840034000 -0500
+@@ -104,11 +104,12 @@
+     ]
+     libs += [ "android" ]
+   }
+-  if (is_linux && ui_compositor_image_transport) {
++  if ((is_linux || is_bsd) && ui_compositor_image_transport) {
+     sources += [ "image_transport_surface_linux.cc" ]
+   }
+   if (use_x11) {
+     sources += [ "x_util.h" ]
++    configs += [ "//build/config/linux:x11" ]
+   }
+   if (use_ozone) {
+     sources += [

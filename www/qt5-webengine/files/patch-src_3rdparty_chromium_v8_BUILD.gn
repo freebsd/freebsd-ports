@@ -1,0 +1,41 @@
+--- src/3rdparty/chromium/v8/BUILD.gn.orig	2017-06-20 05:10:02.000000000 -0400
++++ src/3rdparty/chromium/v8/BUILD.gn	2017-12-16 11:25:43.174788000 -0500
+@@ -348,7 +348,7 @@
+   # TODO(jochen): Add support for compiling with simulators.
+ 
+   if (is_debug) {
+-    if (is_linux && v8_enable_backtrace) {
++    if ((is_linux || is_bsd) && v8_enable_backtrace) {
+       ldflags += [ "-rdynamic" ]
+     }
+ 
+@@ -2282,7 +2282,7 @@
+     sources += [ "src/base/platform/platform-posix.cc" ]
+   }
+ 
+-  if (is_linux) {
++  if (is_linux && !is_bsd) {
+     sources += [
+       "src/base/debug/stack_trace_posix.cc",
+       "src/base/platform/platform-linux.cc",
+@@ -2292,6 +2292,12 @@
+       "dl",
+       "rt",
+     ]
++  } else if (is_bsd) {
++    sources += [
++      "src/base/debug/stack_trace_posix.cc",
++      "src/base/platform/platform-freebsd.cc",
++    ]
++    libs = [ "rt", "execinfo" ]
+   } else if (is_android) {
+     if (current_toolchain == host_toolchain) {
+       libs = [
+@@ -2429,6 +2435,7 @@
+     sources = [
+       "src/snapshot/mksnapshot.cc",
+     ]
++    libs = [ "execinfo" ]
+ 
+     configs = [ ":internal_config" ]
+ 

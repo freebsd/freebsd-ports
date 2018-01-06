@@ -1,5 +1,6 @@
 %%QT_BINDIR%%/canbusutil
 %%QT_INCDIR%%/QtSerialBus/%%FULLVER%%/QtSerialBus/private/qcanbusdevice_p.h
+%%QT_INCDIR%%/QtSerialBus/%%FULLVER%%/QtSerialBus/private/qcanbusdeviceinfo_p.h
 %%QT_INCDIR%%/QtSerialBus/%%FULLVER%%/QtSerialBus/private/qmodbus_symbols_p.h
 %%QT_INCDIR%%/QtSerialBus/%%FULLVER%%/QtSerialBus/private/qmodbusadu_p.h
 %%QT_INCDIR%%/QtSerialBus/%%FULLVER%%/QtSerialBus/private/qmodbusclient_p.h
@@ -10,9 +11,12 @@
 %%QT_INCDIR%%/QtSerialBus/%%FULLVER%%/QtSerialBus/private/qmodbusserver_p.h
 %%QT_INCDIR%%/QtSerialBus/%%FULLVER%%/QtSerialBus/private/qmodbustcpclient_p.h
 %%QT_INCDIR%%/QtSerialBus/%%FULLVER%%/QtSerialBus/private/qmodbustcpserver_p.h
+%%QT_INCDIR%%/QtSerialBus/%%FULLVER%%/QtSerialBus/private/qtserialbus-config_p.h
 %%QT_INCDIR%%/QtSerialBus/QCanBus
 %%QT_INCDIR%%/QtSerialBus/QCanBusDevice
+%%QT_INCDIR%%/QtSerialBus/QCanBusDeviceInfo
 %%QT_INCDIR%%/QtSerialBus/QCanBusFactory
+%%QT_INCDIR%%/QtSerialBus/QCanBusFactoryV2
 %%QT_INCDIR%%/QtSerialBus/QCanBusFrame
 %%QT_INCDIR%%/QtSerialBus/QModbusClient
 %%QT_INCDIR%%/QtSerialBus/QModbusDataUnit
@@ -34,6 +38,7 @@
 %%QT_INCDIR%%/QtSerialBus/QtSerialBusVersion
 %%QT_INCDIR%%/QtSerialBus/qcanbus.h
 %%QT_INCDIR%%/QtSerialBus/qcanbusdevice.h
+%%QT_INCDIR%%/QtSerialBus/qcanbusdeviceinfo.h
 %%QT_INCDIR%%/QtSerialBus/qcanbusfactory.h
 %%QT_INCDIR%%/QtSerialBus/qcanbusframe.h
 %%QT_INCDIR%%/QtSerialBus/qmodbusclient.h
@@ -48,6 +53,7 @@
 %%QT_INCDIR%%/QtSerialBus/qmodbustcpclient.h
 %%QT_INCDIR%%/QtSerialBus/qmodbustcpserver.h
 %%QT_INCDIR%%/QtSerialBus/qserialbusglobal.h
+%%QT_INCDIR%%/QtSerialBus/qtserialbus-config.h
 %%QT_INCDIR%%/QtSerialBus/qtserialbusversion.h
 %%QT_CMAKEDIR%%/Qt5SerialBus/Qt5SerialBusConfig.cmake
 %%QT_CMAKEDIR%%/Qt5SerialBus/Qt5SerialBusConfigVersion.cmake

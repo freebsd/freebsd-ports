@@ -1,0 +1,23 @@
+Obtained from: https://github.com/keepassx/keepassx/pull/202
+
+From 83900e35bd18807ce17c779a570b3c52a182fa95 Mon Sep 17 00:00:00 2001
+From: Aleix Pol <aleixpol@kde.org>
+Date: Wed, 29 Mar 2017 01:17:12 +0200
+Subject: [PATCH] Fix build with Qt branch 5.9
+
+keepassx/tests/modeltest.cpp:451: undefined reference to `bool QTest::qCompare<int, unsigned int>(int const&, unsigned int const&, char const*, char const*, char const*, int)'
+---
+ tests/modeltest.cpp | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+--- tests/modeltest.cpp
++++ tests/modeltest.cpp
+@@ -447,7 +447,7 @@ void ModelTest::data()
+     // Check that the alignment is one we know about
+     QVariant textAlignmentVariant = model->data ( model->index ( 0, 0 ), Qt::TextAlignmentRole );
+     if ( textAlignmentVariant.isValid() ) {
+-        int alignment = textAlignmentVariant.toInt();
++        const uint alignment = textAlignmentVariant.toUInt();
+         QCOMPARE( alignment, ( alignment & ( Qt::AlignHorizontal_Mask | Qt::AlignVertical_Mask ) ) );
+     }
+ 

@@ -1,0 +1,20 @@
+--- src/3rdparty/chromium/build/config/clang/BUILD.gn.orig	2017-01-26 00:49:07 UTC
++++ src/3rdparty/chromium/build/config/clang/BUILD.gn
+@@ -20,7 +20,7 @@ config("find_bad_constructs") {
+         rebase_path("${clang_base_path}/lib/libFindBadConstructs.dylib",
+                     root_build_dir),
+       ]
+-    } else if (is_linux || is_android) {
++    } else if (is_linux || is_bsd || is_android) {
+       cflags += [
+         "-Xclang",
+         "-load",
+@@ -37,7 +37,7 @@ config("find_bad_constructs") {
+       "find-bad-constructs",
+     ]
+ 
+-    if ((is_linux || is_android) && !is_chromecast) {
++    if ((is_linux || is_bsd || is_android) && !is_chromecast) {
+       cflags += [
+         "-Xclang",
+         "-plugin-arg-find-bad-constructs",

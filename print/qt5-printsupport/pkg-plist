@@ -11,6 +11,8 @@
 %%QT_INCDIR%%/QtPrintSupport/%%FULLVER%%/QtPrintSupport/private/qprintengine_win_p.h
 %%QT_INCDIR%%/QtPrintSupport/%%FULLVER%%/QtPrintSupport/private/qprinter_p.h
 %%QT_INCDIR%%/QtPrintSupport/%%FULLVER%%/QtPrintSupport/private/qprinterinfo_p.h
+%%QT_INCDIR%%/QtPrintSupport/%%FULLVER%%/QtPrintSupport/private/qtprintsupport-config_p.h
+%%QT_INCDIR%%/QtPrintSupport/%%FULLVER%%/QtPrintSupport/private/qtprintsupportglobal_p.h
 %%QT_INCDIR%%/QtPrintSupport/%%FULLVER%%/QtPrintSupport/qpa/qplatformprintdevice.h
 %%QT_INCDIR%%/QtPrintSupport/%%FULLVER%%/QtPrintSupport/qpa/qplatformprintersupport.h
 %%QT_INCDIR%%/QtPrintSupport/%%FULLVER%%/QtPrintSupport/qpa/qplatformprintplugin.h
@@ -33,6 +35,7 @@
 %%QT_INCDIR%%/QtPrintSupport/qprinterinfo.h
 %%QT_INCDIR%%/QtPrintSupport/qprintpreviewdialog.h
 %%QT_INCDIR%%/QtPrintSupport/qprintpreviewwidget.h
+%%QT_INCDIR%%/QtPrintSupport/qtprintsupport-config.h
 %%QT_INCDIR%%/QtPrintSupport/qtprintsupportglobal.h
 %%QT_INCDIR%%/QtPrintSupport/qtprintsupportversion.h
 %%QT_CMAKEDIR%%/Qt5PrintSupport/Qt5PrintSupportConfig.cmake

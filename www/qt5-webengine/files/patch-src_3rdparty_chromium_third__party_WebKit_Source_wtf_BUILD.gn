@@ -1,0 +1,13 @@
+--- src/3rdparty/chromium/third_party/WebKit/Source/wtf/BUILD.gn.orig	2017-01-26 00:49:28 UTC
++++ src/3rdparty/chromium/third_party/WebKit/Source/wtf/BUILD.gn
+@@ -284,6 +284,10 @@ component("wtf") {
+     libs = [ "dl" ]
+   }
+ 
++  if (is_bsd) {
++    libs = [ "execinfo" ]
++  }
++
+   if (is_mac) {
+     libs = [
+       "CoreFoundation.framework",

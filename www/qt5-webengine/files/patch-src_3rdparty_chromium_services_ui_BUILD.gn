@@ -1,0 +1,18 @@
+--- src/3rdparty/chromium/services/ui/BUILD.gn.orig	2017-01-26 00:49:17 UTC
++++ src/3rdparty/chromium/services/ui/BUILD.gn
+@@ -13,7 +13,6 @@ group("all") {
+   testonly = true
+   deps = [
+     ":ui",
+-    "//services/ui/ime/test_ime_driver",
+     "//services/ui/test_wm",
+   ]
+ }
+@@ -38,7 +37,6 @@ service("ui") {
+ 
+   data_deps = [
+     ":manifest",
+-    "//services/ui/ime/test_ime_driver",
+   ]
+ 
+   resources = [

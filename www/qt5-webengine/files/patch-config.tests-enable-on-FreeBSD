@@ -1,0 +1,15 @@
+--- config.tests/khr/khr.pro.orig	2017-04-19 08:32:39 UTC
++++ config.tests/khr/khr.pro
+@@ -3,4 +3,4 @@
+ 
+ CONFIG-=qt
+ 
+-linux:SOURCES += khr.cpp
++SOURCES += khr.cpp
+--- config.tests/snappy/snappy.pro.orig	2017-04-11 14:08:45 UTC
++++ config.tests/snappy/snappy.pro
+@@ -1,3 +1,3 @@
+-linux:SOURCES += snappy.cpp
++SOURCES += snappy.cpp
+ LIBS += -lsnappy
+ CONFIG -= qt

@@ -1,9 +1,8 @@
---- qtwayland.pro.orig	2016-10-28 06:24:31 UTC
+--- qtwayland.pro.orig  2017-06-23 10:50:50 UTC
 +++ qtwayland.pro
-@@ -1,4 +1,5 @@
+@@ -1,3 +1,4 @@
 -requires(linux:!android)
 +requires(!android)
 +requires(linux|freebsd)
- 
- load(configure)
- qtCompileTest(wayland)
+ requires(qtHaveModule(gui))
+ load(qt_parts)

@@ -1,0 +1,11 @@
+--- src/3rdparty/chromium/device/geolocation/BUILD.gn.orig	2017-01-26 00:49:14 UTC
++++ src/3rdparty/chromium/device/geolocation/BUILD.gn
+@@ -89,7 +89,7 @@ component("geolocation") {
+   if (is_android) {
+     sources -= [ "wifi_data_provider_common.cc" ]
+   }
+-  if (is_chromeos || (is_linux && !use_dbus)) {
++  if (is_chromeos || (is_linux && !use_dbus) || is_bsd) {
+     sources -= [ "wifi_data_provider_linux.cc" ]
+   }
+   if (is_linux && use_dbus) {

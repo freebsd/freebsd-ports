@@ -10,7 +10,7 @@ COMMENT=	Qt sensors module
 
 USE_QT5=	core qml quick buildtools_build
 QT_DIST=	${PORTNAME}
-USES=		qmake
+USES=		qmake:norecursive
 
 USE_LDCONFIG=	${PREFIX}/${QT_LIBDIR_REL}
 

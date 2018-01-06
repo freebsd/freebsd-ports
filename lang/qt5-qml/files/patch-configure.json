@@ -1,0 +1,12 @@
+Do not enter src/quick for checks; we do not build this directory in this port
+and it expects qt5-gui to be installed.
+--- configure.json
++++ configure.json
+@@ -1,6 +1,5 @@
+ {
+     "subconfigs": [
+-        "src/qml",
+-        "src/quick"
++        "src/qml"
+     ]
+ }

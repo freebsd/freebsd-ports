@@ -41,18 +41,26 @@ QT_DEFINES+=	-STYLE_GTK
 QT_CONFIG+=	-gtk
 .endif
 
-# libQt5PlatformSupport.a is installed by qt5-core but needed for the gtk style plugin
 post-configure:
-	${LN} -s ${QT_LIBDIR}/libQt5PlatformSupport.a \
-		${WRKSRC}/lib/libQt5PlatformSupport.a
+.for d in src/tools/uic src/widgets ${MORE_WRKSRCS}
+	${MKDIR} ${WRKSRC}/${d}
+	cd ${WRKSRC}/${d} && ${SETENV} ${QMAKE_ENV} ${_QMAKE} ${QMAKE_ARGS} ${WRKSRC}/${d}
+.endfor
 
 pre-build:
-	@cd ${WRKSRC}/src/tools/uic && \
+	cd ${WRKSRC}/src/tools/uic && \
 		${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} \
 		${_MAKE_JOBS} ${MAKE_ARGS} ${ALL_TARGET}
 
-post-install:
+post-build:
 .for d in ${MORE_WRKSRCS}
+	@cd ${WRKSRC}/${d} && \
+		${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} \
+		${_MAKE_JOBS} ${MAKE_ARGS} ${ALL_TARGET}
+.endfor
+
+post-install:
+.for d in src/tools/uic ${MORE_WRKSRCS}
 	@cd ${WRKSRC}/${d} && \
 		${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} \
 		${MAKE_ARGS} ${INSTALL_TARGET}

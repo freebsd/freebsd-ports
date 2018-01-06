@@ -1,0 +1,38 @@
+--- src/3rdparty/chromium/third_party/sqlite/BUILD.gn.orig	2017-01-26 00:49:30 UTC
++++ src/3rdparty/chromium/third_party/sqlite/BUILD.gn
+@@ -22,7 +22,7 @@ if (!use_system_sqlite) {
+       # sqlite3Fts3InitTok).
+       cflags += [ "-Wno-unused-function" ]
+     }
+-    if (is_linux) {
++    if (is_linux || is_bsd) {
+       cflags += [
+         # SQLite doesn"t believe in compiler warnings,
+         # preferring testing.
+@@ -187,7 +187,7 @@ if (!use_system_sqlite) {
+     public_configs = [ ":sqlite_export" ]
+   }
+ 
+-  if (is_linux) {
++  if (is_linux || is_bsd) {
+     executable("sqlite_shell") {
+       # So shell.c can find the correct sqlite3.h.
+       include_dirs = [ "amalgamation" ]
+@@ -216,7 +216,7 @@ if (use_system_sqlite) {
+ 
+   config("sqlite_config") {
+     defines = [ "USE_SYSTEM_SQLITE" ]
+-    if (is_ios) {
++    if (is_ios || is_bsd) {
+       libs = [ "sqlite3" ]
+     } else {
+       assert(false, "extra flags to use system sqlite3 library missing")
+@@ -235,7 +235,7 @@ if (use_system_sqlite) {
+     }
+   }
+ 
+-  if (is_ios) {
++  if (is_ios || is_bsd) {
+     source_set("sqlite_recover") {
+       sources = [
+         # TODO(shess): Move out of the SQLite source tree, perhaps to ext/.

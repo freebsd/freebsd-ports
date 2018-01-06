@@ -1,0 +1,11 @@
+--- src/3rdparty/chromium/third_party/pdfium/BUILD.gn.orig	2017-01-26 00:50:14 UTC
++++ src/3rdparty/chromium/third_party/pdfium/BUILD.gn
+@@ -44,7 +44,7 @@ config("pdfium_core_config") {
+   cflags = []
+   configs = [ ":pdfium_common_config" ]
+   defines = [ "V8_DEPRECATION_WARNINGS" ]
+-  if (is_linux) {
++  if (is_linux || is_bsd) {
+     if (current_cpu == "x64") {
+       defines += [ "_FX_CPU_=_FX_X64_" ]
+       cflags += [ "-fPIC" ]

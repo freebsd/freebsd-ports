@@ -1,0 +1,20 @@
+--- src/3rdparty/chromium/build/config/sanitizers/BUILD.gn.orig	2017-01-26 00:49:07 UTC
++++ src/3rdparty/chromium/build/config/sanitizers/BUILD.gn
+@@ -405,7 +405,7 @@ config("lsan_flags") {
+ 
+ config("msan_flags") {
+   if (is_msan) {
+-    assert(is_linux, "msan only supported on linux x86_64")
++    assert(is_linux || is_bsd, "msan only supported on linux x86_64")
+     msan_blacklist_path =
+         rebase_path("//tools/msan/blacklist.txt", root_build_dir)
+     cflags = [
+@@ -418,7 +418,7 @@ config("msan_flags") {
+ 
+ config("tsan_flags") {
+   if (is_tsan) {
+-    assert(is_linux, "tsan only supported on linux x86_64")
++    assert(is_linux || is_bsd, "tsan only supported on linux x86_64")
+     tsan_blacklist_path =
+         rebase_path("//tools/memory/tsan_v2/ignores.txt", root_build_dir)
+     cflags = [

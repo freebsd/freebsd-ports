@@ -15,8 +15,9 @@
 +INCS=-I../im-client -I$(prefix)/include -I$(prefix)/include/qt5 `pkg-config Qt5Core Qt5Gui Qt5DBus --cflags`
  MODVERSION=`pkg-config --modversion Qt5Gui`
  QTINC=`pkg-config --variable=includedir Qt5Gui`
- INCS+=-I$(QTINC)/QtGui/$(MODVERSION)/QtGui
+-INCS+=-I$(QTINC)/QtGui/$(MODVERSION)/QtGui
 -#INCS+=-I/usr/include/i386-linux-gnu/qt5/QtGui/$(MODVERSION)/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtGui/$(MODVERSION)/QtGui
++INCS+=-I$(QTINC)/QtGui/$(MODVERSION) -I$(QTINC)/QtGui/$(MODVERSION)/QtGui -I$(QTINC)/QtCore/$(MODVERSION)
  
 -CXXFLAGS=$(OPTFLAGS) $(INCS) -Wall -D_REENTRANT -DUNIX=1 -fPIC  -DQT5 -DQT_SHARED -DQT_IMMODULE -DPIC -DDEBUG="0$(GCIN_DEBUG)"
 +CXXFLAGS+=$(INCS) -Wall -D_REENTRANT -DUNIX=1 -fPIC  -DQT5 -DQT_SHARED -DQT_IMMODULE -DPIC -DDEBUG="0$(GCIN_DEBUG)"

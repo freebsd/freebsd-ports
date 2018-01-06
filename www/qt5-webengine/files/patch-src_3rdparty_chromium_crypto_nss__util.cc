@@ -1,7 +1,7 @@
---- src/3rdparty/chromium/crypto/nss_util.cc.orig	2017-04-23 10:32:17 UTC
+--- src/3rdparty/chromium/crypto/nss_util.cc.orig	2017-01-26 00:49:14 UTC
 +++ src/3rdparty/chromium/crypto/nss_util.cc
-@@ -15,7 +15,7 @@
- 
+@@ -20,7 +20,7 @@
+ #include "base/threading/thread_task_runner_handle.h"
  #include "crypto/nss_util_internal.h"
  
 -#if defined(OS_OPENBSD)
@@ -9,7 +9,7 @@
  #include <sys/mount.h>
  #include <sys/param.h>
  #endif
-@@ -158,10 +158,10 @@ void UseLocalCacheOfNSSDatabaseIfNFS(con
+@@ -150,10 +150,10 @@ void UseLocalCacheOfNSSDatabaseIfNFS(con
    base::FileSystemType fs_type = base::FILE_SYSTEM_UNKNOWN;
    if (base::GetFileSystemType(database_dir, &fs_type))
      db_on_nfs = (fs_type == base::FILE_SYSTEM_NFS);

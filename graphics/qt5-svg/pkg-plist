@@ -1,5 +1,4 @@
 %%QT_INCDIR%%/QtSvg/%%FULLVER%%/QtSvg/private/qsvgfont_p.h
-%%QT_INCDIR%%/QtSvg/%%FULLVER%%/QtSvg/private/qsvgfunctions_wince_p.h
 %%QT_INCDIR%%/QtSvg/%%FULLVER%%/QtSvg/private/qsvggraphics_p.h
 %%QT_INCDIR%%/QtSvg/%%FULLVER%%/QtSvg/private/qsvghandler_p.h
 %%QT_INCDIR%%/QtSvg/%%FULLVER%%/QtSvg/private/qsvgnode_p.h

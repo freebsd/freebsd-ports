@@ -1,0 +1,11 @@
+--- src/3rdparty/chromium/components/crash/content/app/BUILD.gn.orig	2017-01-26 00:49:11 UTC
++++ src/3rdparty/chromium/components/crash/content/app/BUILD.gn
+@@ -145,7 +145,7 @@ source_set("app_non_mac_win") {
+       "//breakpad:breakpad_handler",
+       "//sandbox",
+     ]
+-  } else if (is_posix && !is_ios) {
++  } else if (is_posix && !is_ios && !is_bsd) {
+     deps += [ "//breakpad:client" ]
+   }
+ }

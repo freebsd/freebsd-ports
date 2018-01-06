@@ -1,0 +1,11 @@
+--- src/3rdparty/chromium/tools/perf/chrome_telemetry_build/BUILD.gn.orig	2017-12-15 17:17:15.832652000 -0500
++++ src/3rdparty/chromium/tools/perf/chrome_telemetry_build/BUILD.gn	2017-12-15 17:17:42.136926000 -0500
+@@ -93,7 +93,7 @@
+     data_deps += [ "//chrome:reorder_imports" ]
+   }
+ 
+-  if (is_linux) {
++  if (is_linux && !is_bsd) {
+     data_deps += [
+       "//tools/xdisplaycheck",
+       "//breakpad:dump_syms($host_toolchain)",
