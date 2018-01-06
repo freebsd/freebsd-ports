@@ -1,6 +1,6 @@
 --- Gemfile.orig	2017-12-15 18:14:57 UTC
 +++ Gemfile
-@@ -11,7 +11,7 @@ gem 'uglifier', '~> 3.2'
+@@ -11,11 +11,11 @@ gem 'uglifier', '~> 3.2'
  
  gem 'hamlit-rails', '~> 0.2'
  gem 'pg', '~> 0.20'
@@ -9,6 +9,11 @@
  gem 'dotenv-rails', '~> 2.2'
  
  gem 'aws-sdk', '~> 2.10', require: false
+-gem 'fog-core', '~> 1.45'
++gem 'fog-core', '>= 1.45'
+ gem 'fog-local', '~> 0.4', require: false
+ gem 'fog-openstack', '~> 0.1', require: false
+ gem 'paperclip', '~> 5.1'
 @@ -23,7 +23,6 @@ gem 'paperclip-av-transcoder', '~> 0.6'
  
  gem 'active_model_serializers', '~> 0.10'
