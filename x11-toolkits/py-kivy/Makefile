@@ -21,7 +21,7 @@ TEST_DEPENDS=	nosetests-${PYTHON_VER}:devel/py-nose@${FLAVOR}
 MAKE_ENV=	KIVY_NO_CONFIG=yes KIVY_NO_FILELOG=yes USE_OPENGL_ES2=1 \
 		PYTHONPATH=${WRKSRC}
 
-USES=		display:test python:2.7+ uniquefiles:dirs
+USES=		display:test python:2.7 uniquefiles:dirs
 USE_GITHUB=	yes
 USE_GL=		egl gl glesv2
 USE_PYTHON=	autoplist concurrent cython distutils
