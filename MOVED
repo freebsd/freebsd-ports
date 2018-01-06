@@ -9840,3 +9840,4 @@ sysutils/DTraceToolkit||2018-01-01|Has expired: Now maintained as part of the ba
 www/rubygem-jwt2|www/rubygem-jwt|2018-01-02|www/rubygem-jwt has been updated to 2.x
 misc/py-qt5-doc||2018-01-02|No longer shipped by upstream
 audio/beast||2018-01-05|Has expired: 4.5 years old version, six versions behind, requires old toolchain, and unmaintained.
+devel/p5-MooseX-Role-WithOverloading||2018-01-06|Has expired: deprecated by upstream (obsolete with modern Moose)
