@@ -3427,7 +3427,6 @@
     SUBDIR += p5-Test-Benchmark
     SUBDIR += p5-Test-BinaryData
     SUBDIR += p5-Test-Bits
-    SUBDIR += p5-Test-Block
     SUBDIR += p5-Test-CPAN-Meta
     SUBDIR += p5-Test-CPAN-Meta-YAML
     SUBDIR += p5-Test-CheckDeps
