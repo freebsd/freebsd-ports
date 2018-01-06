@@ -9,7 +9,7 @@ MAINTAINER=	swills@FreeBSD.org
 COMMENT=	GUI for radare2 reverse engineering framework
 
 LICENSE=	GPLv3
-LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE_FILE=	${WRKSRC}/../COPYING
 
 LIB_DEPENDS=	libr2.so:devel/radare2
 
