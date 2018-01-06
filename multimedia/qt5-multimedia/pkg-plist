@@ -1,9 +1,9 @@
 %%QT_INCDIR%%/QtMultimedia/%%FULLVER%%/QtMultimedia/private/gstvideoconnector_p.h
-%%QT_INCDIR%%/QtMultimedia/%%FULLVER%%/QtMultimedia/private/playlistfileparser_p.h
 %%QT_INCDIR%%/QtMultimedia/%%FULLVER%%/QtMultimedia/private/qabstractvideobuffer_p.h
 %%QT_INCDIR%%/QtMultimedia/%%FULLVER%%/QtMultimedia/private/qaudiobuffer_p.h
 %%QT_INCDIR%%/QtMultimedia/%%FULLVER%%/QtMultimedia/private/qaudiodevicefactory_p.h
 %%QT_INCDIR%%/QtMultimedia/%%FULLVER%%/QtMultimedia/private/qaudiohelpers_p.h
+%%QT_INCDIR%%/QtMultimedia/%%FULLVER%%/QtMultimedia/private/qaudiosystempluginext_p.h
 %%QT_INCDIR%%/QtMultimedia/%%FULLVER%%/QtMultimedia/private/qcamera_p.h
 %%QT_INCDIR%%/QtMultimedia/%%FULLVER%%/QtMultimedia/private/qdeclarativevideooutput_backend_p.h
 %%QT_INCDIR%%/QtMultimedia/%%FULLVER%%/QtMultimedia/private/qdeclarativevideooutput_p.h
@@ -14,7 +14,6 @@
 %%QT_INCDIR%%/QtMultimedia/%%FULLVER%%/QtMultimedia/private/qgstreameraudioprobecontrol_p.h
 %%QT_INCDIR%%/QtMultimedia/%%FULLVER%%/QtMultimedia/private/qgstreamerbufferprobe_p.h
 %%QT_INCDIR%%/QtMultimedia/%%FULLVER%%/QtMultimedia/private/qgstreamerbushelper_p.h
-%%QT_INCDIR%%/QtMultimedia/%%FULLVER%%/QtMultimedia/private/qgstreamergltexturerenderer_p.h
 %%QT_INCDIR%%/QtMultimedia/%%FULLVER%%/QtMultimedia/private/qgstreamermessage_p.h
 %%QT_INCDIR%%/QtMultimedia/%%FULLVER%%/QtMultimedia/private/qgstreamermirtexturerenderer_p.h
 %%QT_INCDIR%%/QtMultimedia/%%FULLVER%%/QtMultimedia/private/qgstreamervideoinputdevicecontrol_p.h
@@ -49,10 +48,13 @@
 %%QT_INCDIR%%/QtMultimedia/%%FULLVER%%/QtMultimedia/private/qmediastoragelocation_p.h
 %%QT_INCDIR%%/QtMultimedia/%%FULLVER%%/QtMultimedia/private/qmemoryvideobuffer_p.h
 %%QT_INCDIR%%/QtMultimedia/%%FULLVER%%/QtMultimedia/private/qmultimediautils_p.h
+%%QT_INCDIR%%/QtMultimedia/%%FULLVER%%/QtMultimedia/private/qplaylistfileparser_p.h
 %%QT_INCDIR%%/QtMultimedia/%%FULLVER%%/QtMultimedia/private/qsamplecache_p.h
 %%QT_INCDIR%%/QtMultimedia/%%FULLVER%%/QtMultimedia/private/qsgvideonode_p.h
 %%QT_INCDIR%%/QtMultimedia/%%FULLVER%%/QtMultimedia/private/qsoundeffect_pulse_p.h
 %%QT_INCDIR%%/QtMultimedia/%%FULLVER%%/QtMultimedia/private/qsoundeffect_qaudio_p.h
+%%QT_INCDIR%%/QtMultimedia/%%FULLVER%%/QtMultimedia/private/qtmultimedia-config_p.h
+%%QT_INCDIR%%/QtMultimedia/%%FULLVER%%/QtMultimedia/private/qtmultimediaglobal_p.h
 %%QT_INCDIR%%/QtMultimedia/%%FULLVER%%/QtMultimedia/private/qtmultimediaquickdefs_p.h
 %%QT_INCDIR%%/QtMultimedia/%%FULLVER%%/QtMultimedia/private/qvideoframe_p.h
 %%QT_INCDIR%%/QtMultimedia/%%FULLVER%%/QtMultimedia/private/qvideoframeconversionhelper_p.h
@@ -232,7 +234,9 @@
 %%QT_INCDIR%%/QtMultimedia/qradiotunercontrol.h
 %%QT_INCDIR%%/QtMultimedia/qsound.h
 %%QT_INCDIR%%/QtMultimedia/qsoundeffect.h
+%%QT_INCDIR%%/QtMultimedia/qtmultimedia-config.h
 %%QT_INCDIR%%/QtMultimedia/qtmultimediadefs.h
+%%QT_INCDIR%%/QtMultimedia/qtmultimediaglobal.h
 %%QT_INCDIR%%/QtMultimedia/qtmultimediaversion.h
 %%QT_INCDIR%%/QtMultimedia/qvideodeviceselectorcontrol.h
 %%QT_INCDIR%%/QtMultimedia/qvideoencodersettingscontrol.h
@@ -250,7 +254,6 @@
 %%QT_INCDIR%%/QtMultimediaQuick_p/QtMultimediaQuick_pDepends
 %%QT_INCDIR%%/QtMultimediaQuick_p/QtMultimediaQuick_pVersion
 %%QT_INCDIR%%/QtMultimediaQuick_p/qtmultimediaquick_pversion.h
-%%QT_INCDIR%%/QtMultimediaWidgets/%%FULLVER%%/QtMultimediaWidgets/private/qeglimagetexturesurface_p.h
 %%QT_INCDIR%%/QtMultimediaWidgets/%%FULLVER%%/QtMultimediaWidgets/private/qpaintervideosurface_p.h
 %%QT_INCDIR%%/QtMultimediaWidgets/%%FULLVER%%/QtMultimediaWidgets/private/qvideowidget_p.h
 %%QT_INCDIR%%/QtMultimediaWidgets/QCameraViewfinder

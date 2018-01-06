@@ -1,0 +1,11 @@
+--- src/3rdparty/chromium/chrome/browser/ui/BUILD.gn.orig	2017-01-26 00:49:09 UTC
++++ src/3rdparty/chromium/chrome/browser/ui/BUILD.gn
+@@ -3090,7 +3090,7 @@ split_static_library("ui") {
+       ]
+     }
+   }
+-  if (is_linux) {  # Both desktop Linux and ChromeOS.
++  if (is_linux || is_bsd) {  # Both desktop Linux and ChromeOS.
+     sources += [
+       "certificate_dialogs.cc",
+       "certificate_dialogs.h",

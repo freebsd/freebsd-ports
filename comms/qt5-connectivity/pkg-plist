@@ -2,6 +2,7 @@
 %%QT_INCDIR%%/QtBluetooth/%%FULLVER%%/QtBluetooth/private/adapter_p.h
 %%QT_INCDIR%%/QtBluetooth/%%FULLVER%%/QtBluetooth/private/agent_p.h
 %%QT_INCDIR%%/QtBluetooth/%%FULLVER%%/QtBluetooth/private/androidbroadcastreceiver_p.h
+%%QT_INCDIR%%/QtBluetooth/%%FULLVER%%/QtBluetooth/private/bluetoothmanagement_p.h
 %%QT_INCDIR%%/QtBluetooth/%%FULLVER%%/QtBluetooth/private/bluez5_helper_p.h
 %%QT_INCDIR%%/QtBluetooth/%%FULLVER%%/QtBluetooth/private/bluez_data_p.h
 %%QT_INCDIR%%/QtBluetooth/%%FULLVER%%/QtBluetooth/private/device1_bluez5_p.h
@@ -33,6 +34,7 @@
 %%QT_INCDIR%%/QtBluetooth/%%FULLVER%%/QtBluetooth/private/osxbtledeviceinquiry_p.h
 %%QT_INCDIR%%/QtBluetooth/%%FULLVER%%/QtBluetooth/private/osxbtnotifier_p.h
 %%QT_INCDIR%%/QtBluetooth/%%FULLVER%%/QtBluetooth/private/osxbtobexsession_p.h
+%%QT_INCDIR%%/QtBluetooth/%%FULLVER%%/QtBluetooth/private/osxbtperipheralmanager_p.h
 %%QT_INCDIR%%/QtBluetooth/%%FULLVER%%/QtBluetooth/private/osxbtrfcommchannel_p.h
 %%QT_INCDIR%%/QtBluetooth/%%FULLVER%%/QtBluetooth/private/osxbtsdpinquiry_p.h
 %%QT_INCDIR%%/QtBluetooth/%%FULLVER%%/QtBluetooth/private/osxbtservicerecord_p.h
@@ -42,7 +44,6 @@
 %%QT_INCDIR%%/QtBluetooth/%%FULLVER%%/QtBluetooth/private/properties_p.h
 %%QT_INCDIR%%/QtBluetooth/%%FULLVER%%/QtBluetooth/private/qbluetoothaddress_p.h
 %%QT_INCDIR%%/QtBluetooth/%%FULLVER%%/QtBluetooth/private/qbluetoothdevicediscoveryagent_p.h
-%%QT_INCDIR%%/QtBluetooth/%%FULLVER%%/QtBluetooth/private/qbluetoothdevicediscoverytimer_osx_p.h
 %%QT_INCDIR%%/QtBluetooth/%%FULLVER%%/QtBluetooth/private/qbluetoothdeviceinfo_p.h
 %%QT_INCDIR%%/QtBluetooth/%%FULLVER%%/QtBluetooth/private/qbluetoothhostinfo_p.h
 %%QT_INCDIR%%/QtBluetooth/%%FULLVER%%/QtBluetooth/private/qbluetoothlocaldevice_p.h
@@ -61,6 +62,8 @@
 %%QT_INCDIR%%/QtBluetooth/%%FULLVER%%/QtBluetooth/private/qlowenergycontroller_p.h
 %%QT_INCDIR%%/QtBluetooth/%%FULLVER%%/QtBluetooth/private/qlowenergyserviceprivate_p.h
 %%QT_INCDIR%%/QtBluetooth/%%FULLVER%%/QtBluetooth/private/qprivatelinearbuffer_p.h
+%%QT_INCDIR%%/QtBluetooth/%%FULLVER%%/QtBluetooth/private/qtbluetooth-config_p.h
+%%QT_INCDIR%%/QtBluetooth/%%FULLVER%%/QtBluetooth/private/remotedevicemanager_p.h
 %%QT_INCDIR%%/QtBluetooth/%%FULLVER%%/QtBluetooth/private/serveracceptancethread_p.h
 %%QT_INCDIR%%/QtBluetooth/%%FULLVER%%/QtBluetooth/private/service_p.h
 %%QT_INCDIR%%/QtBluetooth/%%FULLVER%%/QtBluetooth/private/servicediscoverybroadcastreceiver_p.h
@@ -118,6 +121,7 @@
 %%QT_INCDIR%%/QtBluetooth/qlowenergydescriptordata.h
 %%QT_INCDIR%%/QtBluetooth/qlowenergyservice.h
 %%QT_INCDIR%%/QtBluetooth/qlowenergyservicedata.h
+%%QT_INCDIR%%/QtBluetooth/qtbluetooth-config.h
 %%QT_INCDIR%%/QtBluetooth/qtbluetoothversion.h
 %%QT_INCDIR%%/QtNfc/%%FULLVER%%/QtNfc/private/adapter_p.h
 %%QT_INCDIR%%/QtNfc/%%FULLVER%%/QtNfc/private/agent_p.h

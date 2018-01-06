@@ -1,0 +1,17 @@
+--- src/3rdparty/chromium/components/plugins/renderer/BUILD.gn.orig	2017-01-26 00:49:12 UTC
++++ src/3rdparty/chromium/components/plugins/renderer/BUILD.gn
+@@ -19,6 +19,7 @@ static_library("renderer") {
+   }
+ 
+   deps = [
++    "//v8",
+     "//content/public/child",
+     "//content/public/common",
+     "//content/public/renderer",
+@@ -27,6 +28,5 @@ static_library("renderer") {
+     "//third_party/WebKit/public:blink",
+     "//third_party/re2",
+     "//ui/base",
+-    "//v8",
+   ]
+ }

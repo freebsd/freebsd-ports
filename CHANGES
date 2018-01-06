@@ -10,6 +10,20 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20180106:
+AUTHOR: kde@FreeBSD.org
+
+  USES=qmake now accepts a new variable, QMAKE_CONFIGURE_ARGS.
+
+  Starting with Qt 5.8.0, qmake can use configure.json files to help define
+  configuration options and configuration time checks. These options are
+  generally in the form '-foo -no-bar', and must be passed after "--" at the
+  end of qmake's command line.
+
+  The QMAKE_CONFIGURE_ARGS variable allows one to set those options, and
+  USES=qmake takes care of passing them at the right position when invoking
+  qmake.
+
 20180102:
 AUTHOR: kde@FreeBSD.org
   

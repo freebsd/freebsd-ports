@@ -1,0 +1,11 @@
+--- src/3rdparty/chromium/ui/resources/ui_resources.grd.orig	2017-01-26 00:49:32 UTC
++++ src/3rdparty/chromium/ui/resources/ui_resources.grd
+@@ -15,7 +15,7 @@
+       <!-- KEEP THESE IN ALPHABETICAL ORDER!  DO NOT ADD TO RANDOM PLACES JUST
+            BECAUSE YOUR RESOURCES ARE FUNCTIONALLY RELATED OR FALL UNDER THE
+            SAME CONDITIONALS. -->
+-      <if expr="is_linux and use_aura">
++      <if expr="(is_linux or is_bsd) and use_aura">
+         <structure type="chrome_scaled_image" name="IDR_AURA_CURSOR_BIG_ALIAS" file="common/pointers/alias_big.png" />
+         <structure type="chrome_scaled_image" name="IDR_AURA_CURSOR_BIG_CELL" file="common/pointers/cell_big.png" />
+         <structure type="chrome_scaled_image" name="IDR_AURA_CURSOR_BIG_COL_RESIZE" file="common/pointers/sb_h_double_arrow_big.png" />

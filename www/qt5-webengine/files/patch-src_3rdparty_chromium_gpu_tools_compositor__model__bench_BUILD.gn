@@ -1,0 +1,11 @@
+--- src/3rdparty/chromium/gpu/tools/compositor_model_bench/BUILD.gn.orig	2017-01-26 00:49:14 UTC
++++ src/3rdparty/chromium/gpu/tools/compositor_model_bench/BUILD.gn
+@@ -4,7 +4,7 @@
+ 
+ import("//build/config/ui.gni")
+ 
+-if (is_linux && !is_chromeos && current_cpu != "arm" && use_x11) {
++if ((is_linux || is_bsd) && !is_chromeos && current_cpu != "arm" && use_x11) {
+   executable("compositor_model_bench") {
+     sources = [
+       "compositor_model_bench.cc",

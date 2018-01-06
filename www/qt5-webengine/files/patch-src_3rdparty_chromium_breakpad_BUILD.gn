@@ -1,0 +1,11 @@
+--- src/3rdparty/chromium/breakpad/BUILD.gn.orig	2017-01-26 00:49:07 UTC
++++ src/3rdparty/chromium/breakpad/BUILD.gn
+@@ -468,7 +468,7 @@ if (is_mac) {
+   }
+ }
+ 
+-if (is_linux || is_android) {
++if (is_linux || is_bsd || is_android) {
+   if (current_toolchain == host_toolchain) {
+     executable("symupload") {
+       sources = [

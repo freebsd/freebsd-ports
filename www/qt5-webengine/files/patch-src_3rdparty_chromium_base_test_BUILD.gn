@@ -1,0 +1,11 @@
+--- src/3rdparty/chromium/base/test/BUILD.gn.orig	2017-01-26 00:49:07 UTC
++++ src/3rdparty/chromium/base/test/BUILD.gn
+@@ -303,7 +303,7 @@ static_library("run_all_base_unittests")
+   ]
+ }
+ 
+-if (is_linux) {
++if (is_linux || is_bsd) {
+   shared_library("malloc_wrapper") {
+     testonly = true
+     sources = [

@@ -1,0 +1,45 @@
+--- src/3rdparty/chromium/build/toolchain/gcc_toolchain.gni.orig	2017-01-26 00:49:07 UTC
++++ src/3rdparty/chromium/build/toolchain/gcc_toolchain.gni
+@@ -11,6 +11,11 @@ import("//build/toolchain/cc_wrapper.gni
+ import("//build/toolchain/goma.gni")
+ import("//build/toolchain/toolchain.gni")
+ 
++declare_args() {
++  extra_cxxflags = ""
++  extra_ldflags = ""
++}
++
+ # This template defines a toolchain for something that works like gcc
+ # (including clang).
+ #
+@@ -482,14 +487,23 @@ template("clang_toolchain") {
+   }
+ 
+   gcc_toolchain(target_name) {
+-    prefix = rebase_path("$clang_base_path/bin", root_build_dir)
+-    cc = "$prefix/clang"
+-    cxx = "$prefix/clang++"
+-    ld = cxx
++    if (is_bsd) {
++      cc = "${toolprefix}clang"
++      cxx = "${toolprefix}clang++"
++      ld = cxx
++      readelf = "readelf"
++      ar = "${toolprefix}ar"
++      nm = "${toolprefix}nm"
++    } else {
++      prefix = rebase_path("$clang_base_path/bin", root_build_dir)
++      cc = "$prefix/clang"
++      cxx = "$prefix/clang++"
++      ld = cxx
+ 
+-    readelf = "${toolprefix}readelf"
+-    ar = "${toolprefix}ar"
+-    nm = "${toolprefix}nm"
++      readelf = "${toolprefix}readelf"
++      ar = "${toolprefix}ar"
++      nm = "${toolprefix}nm"
++    }
+ 
+     forward_variables_from(invoker, [ "strip" ])
+ 

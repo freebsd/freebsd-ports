@@ -12,16 +12,17 @@
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qbytedata_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qcfsocketnotifier_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qcollator_p.h
+%%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qconfig_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qcore_mac_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qcore_unix_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qcoreapplication_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qcorecmdlineargs_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qcoreglobaldata_p.h
-%%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qcrashhandler_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qdatastream_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qdataurl_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qdatetime_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qdatetimeparser_p.h
+%%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qdeadlinetimer_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qdebug_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qdir_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qdoublescanprint_p.h
@@ -51,6 +52,7 @@
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qfilesystemwatcher_polling_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qfilesystemwatcher_win_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qfinalstate_p.h
+%%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qfloat16_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qfreelist_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qfsfileengine_iterator_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qfsfileengine_p.h
@@ -59,6 +61,7 @@
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qfutureinterface_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qfuturewatcher_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qgb18030codec_p.h
+%%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qglobal_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qharfbuzz_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qhistorystate_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qhooks_p.h
@@ -100,6 +103,7 @@
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qnoncontiguousbytedevice_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qnumeric_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qobject_p.h
+%%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qoperatingsystemversion_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qorderedmutexlocker_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qparallelanimationgroup_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qpodlist_p.h
@@ -133,6 +137,7 @@
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qsystemlibrary_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qsystemsemaphore_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qt_pch.h
+%%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qtcore-config_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qtemporaryfile_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qtextcodec_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qtextstream_p.h
@@ -206,6 +211,7 @@
 %%QT_INCDIR%%/QtCore/QDataStream
 %%QT_INCDIR%%/QtCore/QDate
 %%QT_INCDIR%%/QtCore/QDateTime
+%%QT_INCDIR%%/QtCore/QDeadlineTimer
 %%QT_INCDIR%%/QtCore/QDebug
 %%QT_INCDIR%%/QtCore/QDebugStateSaver
 %%QT_INCDIR%%/QtCore/QDeferredDeleteEvent
@@ -231,7 +237,7 @@
 %%QT_INCDIR%%/QtCore/QFinalState
 %%QT_INCDIR%%/QtCore/QFlag
 %%QT_INCDIR%%/QtCore/QFlags
-%%QT_INCDIR%%/QtCore/QForeachContainer
+%%QT_INCDIR%%/QtCore/QFloat16
 %%QT_INCDIR%%/QtCore/QFunctionPointer
 %%QT_INCDIR%%/QtCore/QFuture
 %%QT_INCDIR%%/QtCore/QFutureInterface
@@ -326,6 +332,7 @@
 %%QT_INCDIR%%/QtCore/QObjectData
 %%QT_INCDIR%%/QtCore/QObjectList
 %%QT_INCDIR%%/QtCore/QObjectUserData
+%%QT_INCDIR%%/QtCore/QOperatingSystemVersion
 %%QT_INCDIR%%/QtCore/QPair
 %%QT_INCDIR%%/QtCore/QParallelAnimationGroup
 %%QT_INCDIR%%/QtCore/QPauseAnimation
@@ -382,6 +389,7 @@
 %%QT_INCDIR%%/QtCore/QStaticArrayData
 %%QT_INCDIR%%/QtCore/QStaticAssertFailure
 %%QT_INCDIR%%/QtCore/QStaticByteArrayData
+%%QT_INCDIR%%/QtCore/QStaticByteArrayMatcherBase
 %%QT_INCDIR%%/QtCore/QStaticPlugin
 %%QT_INCDIR%%/QtCore/QStaticStringData
 %%QT_INCDIR%%/QtCore/QStorageInfo
@@ -499,12 +507,7 @@
 %%QT_INCDIR%%/QtCore/qcommandlineoption.h
 %%QT_INCDIR%%/QtCore/qcommandlineparser.h
 %%QT_INCDIR%%/QtCore/qcompilerdetection.h
-%%QT_INCDIR%%/QtCore/qconfig-dist.h
-%%QT_INCDIR%%/QtCore/qconfig-large.h
-%%QT_INCDIR%%/QtCore/qconfig-medium.h
-%%QT_INCDIR%%/QtCore/qconfig-minimal.h
-%%QT_INCDIR%%/QtCore/qconfig-nacl.h
-%%QT_INCDIR%%/QtCore/qconfig-small.h
+%%QT_INCDIR%%/QtCore/qconfig-bootstrapped.h
 %%QT_INCDIR%%/QtCore/qconfig.h
 %%QT_INCDIR%%/QtCore/qcontainerfwd.h
 %%QT_INCDIR%%/QtCore/qcontiguouscache.h
@@ -513,6 +516,7 @@
 %%QT_INCDIR%%/QtCore/qcryptographichash.h
 %%QT_INCDIR%%/QtCore/qdatastream.h
 %%QT_INCDIR%%/QtCore/qdatetime.h
+%%QT_INCDIR%%/QtCore/qdeadlinetimer.h
 %%QT_INCDIR%%/QtCore/qdebug.h
 %%QT_INCDIR%%/QtCore/qdir.h
 %%QT_INCDIR%%/QtCore/qdiriterator.h
@@ -523,7 +527,6 @@
 %%QT_INCDIR%%/QtCore/qeventtransition.h
 %%QT_INCDIR%%/QtCore/qexception.h
 %%QT_INCDIR%%/QtCore/qfactoryinterface.h
-%%QT_INCDIR%%/QtCore/qfeatures.h
 %%QT_INCDIR%%/QtCore/qfile.h
 %%QT_INCDIR%%/QtCore/qfiledevice.h
 %%QT_INCDIR%%/QtCore/qfileinfo.h
@@ -531,9 +534,9 @@
 %%QT_INCDIR%%/QtCore/qfilesystemwatcher.h
 %%QT_INCDIR%%/QtCore/qfinalstate.h
 %%QT_INCDIR%%/QtCore/qflags.h
+%%QT_INCDIR%%/QtCore/qfloat16.h
 %%QT_INCDIR%%/QtCore/qfunctions_nacl.h
 %%QT_INCDIR%%/QtCore/qfunctions_vxworks.h
-%%QT_INCDIR%%/QtCore/qfunctions_wince.h
 %%QT_INCDIR%%/QtCore/qfunctions_winrt.h
 %%QT_INCDIR%%/QtCore/qfuture.h
 %%QT_INCDIR%%/QtCore/qfutureinterface.h
@@ -580,6 +583,7 @@
 %%QT_INCDIR%%/QtCore/qobjectcleanuphandler.h
 %%QT_INCDIR%%/QtCore/qobjectdefs.h
 %%QT_INCDIR%%/QtCore/qobjectdefs_impl.h
+%%QT_INCDIR%%/QtCore/qoperatingsystemversion.h
 %%QT_INCDIR%%/QtCore/qpair.h
 %%QT_INCDIR%%/QtCore/qparallelanimationgroup.h
 %%QT_INCDIR%%/QtCore/qpauseanimation.h
@@ -629,6 +633,7 @@
 %%QT_INCDIR%%/QtCore/qsystemdetection.h
 %%QT_INCDIR%%/QtCore/qsystemsemaphore.h
 %%QT_INCDIR%%/QtCore/qt_windows.h
+%%QT_INCDIR%%/QtCore/qtcore-config.h
 %%QT_INCDIR%%/QtCore/qtcoreversion.h
 %%QT_INCDIR%%/QtCore/qtemporarydir.h
 %%QT_INCDIR%%/QtCore/qtemporaryfile.h
@@ -658,6 +663,7 @@
 %%QT_INCDIR%%/QtCore/qxmlstream.h
 %%QT_CMAKEDIR%%/Qt5/Qt5Config.cmake
 %%QT_CMAKEDIR%%/Qt5/Qt5ConfigVersion.cmake
+%%QT_CMAKEDIR%%/Qt5/Qt5ModuleLocation.cmake
 %%QT_CMAKEDIR%%/Qt5Core/Qt5CTestMacros.cmake
 %%QT_CMAKEDIR%%/Qt5Core/Qt5CoreConfig.cmake
 %%QT_CMAKEDIR%%/Qt5Core/Qt5CoreConfigExtras.cmake

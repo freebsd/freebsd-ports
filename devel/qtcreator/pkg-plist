@@ -722,8 +722,6 @@ libexec/qtcreator/sdktool
 %%PORTDOCS%%%%DOCSDIR%%/qtcreator-dev/projectexplorer-glob.html
 %%PORTDOCS%%%%DOCSDIR%%/qtcreator-dev/projectexplorer-gnumakeparser-members.html
 %%PORTDOCS%%%%DOCSDIR%%/qtcreator-dev/projectexplorer-gnumakeparser.html
-%%PORTDOCS%%%%DOCSDIR%%/qtcreator-dev/projectexplorer-gnumakeparsertester-members.html
-%%PORTDOCS%%%%DOCSDIR%%/qtcreator-dev/projectexplorer-gnumakeparsertester.html
 %%PORTDOCS%%%%DOCSDIR%%/qtcreator-dev/projectexplorer-headerpath-members.html
 %%PORTDOCS%%%%DOCSDIR%%/qtcreator-dev/projectexplorer-headerpath.html
 %%PORTDOCS%%%%DOCSDIR%%/qtcreator-dev/projectexplorer-ibuildconfigurationfactory-members.html
@@ -938,8 +936,6 @@ libexec/qtcreator/sdktool
 %%PORTDOCS%%%%DOCSDIR%%/qtcreator-dev/projectexplorer-workingdirectoryaspect.html
 %%PORTDOCS%%%%DOCSDIR%%/qtcreator-dev/projectexplorer-xcodebuildparser-members.html
 %%PORTDOCS%%%%DOCSDIR%%/qtcreator-dev/projectexplorer-xcodebuildparser.html
-%%PORTDOCS%%%%DOCSDIR%%/qtcreator-dev/projectexplorer-xcodebuildparsertester-members.html
-%%PORTDOCS%%%%DOCSDIR%%/qtcreator-dev/projectexplorer-xcodebuildparsertester.html
 %%PORTDOCS%%%%DOCSDIR%%/qtcreator-dev/projectexplorer.html
 %%PORTDOCS%%%%DOCSDIR%%/qtcreator-dev/qmlerror-members.html
 %%PORTDOCS%%%%DOCSDIR%%/qtcreator-dev/qmlerror.html

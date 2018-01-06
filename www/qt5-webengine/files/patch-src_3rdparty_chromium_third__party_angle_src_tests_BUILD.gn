@@ -1,0 +1,65 @@
+--- src/3rdparty/chromium/third_party/angle/src/tests/BUILD.gn.orig	2017-01-26 00:50:09 UTC
++++ src/3rdparty/chromium/third_party/angle/src/tests/BUILD.gn
+@@ -41,7 +41,7 @@ test("angle_unittests") {
+   ]
+ }
+ 
+-if (is_win || is_linux || is_mac || is_android) {
++if (is_win || is_linux || is_mac || is_android || is_bsd) {
+   end2end_gypi = exec_script("//build/gypi_to_gn.py",
+                              [
+                                rebase_path("angle_end2end_tests.gypi"),
+@@ -82,7 +82,7 @@ if (is_win || is_linux || is_mac || is_a
+       "//third_party/angle:libANGLE_config",
+     ]
+ 
+-    if (is_linux && !is_component_build) {
++    if ((is_linux || is_bsd) && !is_component_build) {
+       # Set rpath to find libEGL.so and libGLESv2.so even in a non-component build.
+       configs += [ "//build/config/gcc:rpath_for_built_shared_libraries" ]
+     }
+@@ -175,7 +175,7 @@ if (build_angle_deqp_tests) {
+     # Ask the system headers to expose all the regular function otherwise
+     # dEQP doesn't compile and produces warnings about implicitly defined
+     # functions.
+-    if (is_linux) {
++    if (is_linux || is_bsd) {
+       # This has to be GNU_SOURCE as on Linux dEQP uses syscall()
+       defines += [ "_GNU_SOURCE" ]
+     }
+@@ -198,7 +198,7 @@ if (build_angle_deqp_tests) {
+     ]
+   }
+ 
+-  if (is_linux || is_android) {
++  if (is_linux || is_android || is_bsd) {
+     deqp_undefine_configs += [ "//build/config/gcc:no_exceptions" ]
+   }
+ 
+@@ -234,7 +234,7 @@ if (build_angle_deqp_tests) {
+     if (is_win) {
+       sources += rebase_path(deqp_gypi.deqp_libtester_sources_win, ".", "../..")
+     }
+-    if (is_linux || is_android) {
++    if (is_linux || is_android || is_bsd) {
+       sources +=
+           rebase_path(deqp_gypi.deqp_libtester_sources_unix, ".", "../..")
+     }
+@@ -262,7 +262,7 @@ if (build_angle_deqp_tests) {
+ 
+     # Taken from gpu/BUILD.gn
+     # TODO(jmadill): this should be in a shared location
+-    if (is_linux && !is_chromecast) {
++    if ((is_linux || is_bsd) && !is_chromecast) {
+       libs = [ "pci" ]
+     }
+   }
+@@ -335,7 +335,7 @@ if (build_angle_deqp_tests) {
+         "../../../deqp/src/data/",
+       ]
+ 
+-      if (is_linux && !is_component_build) {
++      if ((is_linux || is_bsd) && !is_component_build) {
+         # Set rpath to find *.so files even in a non-component build.
+         configs += [ "//build/config/gcc:rpath_for_built_shared_libraries" ]
+       }

@@ -1,25 +1,11 @@
---- src/3rdparty/chromium/third_party/webrtc/voice_engine/voice_engine_defines.h.orig	2016-11-07 14:46:18 UTC
+--- src/3rdparty/chromium/third_party/webrtc/voice_engine/voice_engine_defines.h.orig	2017-01-26 00:50:17 UTC
 +++ src/3rdparty/chromium/third_party/webrtc/voice_engine/voice_engine_defines.h
-@@ -203,19 +203,21 @@ inline int VoEChannelId(int moduleId) {
- 
- // *** LINUX ***
- 
--#ifdef WEBRTC_LINUX
-+#if defined(WEBRTC_LINUX) || defined(BSD)
- 
- #include <arpa/inet.h>
- #include <netinet/in.h>
+@@ -210,7 +210,7 @@ inline int VoEChannelId(int moduleId) {
  #include <pthread.h>
  #include <sys/socket.h>
  #include <sys/types.h>
-+#ifndef BSD
- #ifndef QNX
+-#ifndef QNX
++#if !defined(QNX) && !defined(WEBRTC_BSD)
  #include <linux/net.h>
  #ifndef ANDROID
  #include <sys/soundcard.h>
- #endif  // ANDROID
- #endif  // QNX
-+#endif  // BSD
- #include <errno.h>
- #include <fcntl.h>
- #include <sched.h>

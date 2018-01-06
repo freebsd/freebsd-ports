@@ -1,0 +1,11 @@
+--- src/3rdparty/chromium/gpu/BUILD.gn.orig	2017-01-26 00:49:14 UTC
++++ src/3rdparty/chromium/gpu/BUILD.gn
+@@ -93,7 +93,7 @@ test("command_buffer_gles2_tests") {
+     libs += [ "android" ]
+     deps += [ "//ui/android:ui_java" ]
+   }
+-  if (is_linux && !is_component_build) {
++  if ((is_linux || is_bsd) && !is_component_build) {
+     configs += [ "//build/config/gcc:rpath_for_built_shared_libraries" ]
+   }
+ }

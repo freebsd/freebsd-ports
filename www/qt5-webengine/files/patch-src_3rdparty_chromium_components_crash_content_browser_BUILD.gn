@@ -1,0 +1,21 @@
+--- src/3rdparty/chromium/components/crash/content/browser/BUILD.gn.orig	2017-01-26 00:49:11 UTC
++++ src/3rdparty/chromium/components/crash/content/browser/BUILD.gn
+@@ -16,7 +16,7 @@ source_set("browser") {
+ 
+   deps = [
+     "//base",
+-    "//breakpad:client",
++    #"//breakpad:client",
+     "//components/crash/content/app",
+     "//content/public/browser",
+     "//content/public/common",
+@@ -39,7 +39,7 @@ source_set("browser") {
+   # This is not in the GYP build but this target includes breakpad client
+   # headers, so add the dependency here.
+   if (is_posix && !is_ios) {
+-    configs += [ "//breakpad:client_config" ]
+-    public_configs = [ "//breakpad:client_config" ]
++    #configs += [ "//breakpad:client_config" ]
++    #public_configs = [ "//breakpad:client_config" ]
+   }
+ }

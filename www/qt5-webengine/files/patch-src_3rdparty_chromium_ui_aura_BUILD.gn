@@ -1,0 +1,11 @@
+--- src/3rdparty/chromium/ui/aura/BUILD.gn.orig	2017-01-26 00:49:31 UTC
++++ src/3rdparty/chromium/ui/aura/BUILD.gn
+@@ -361,7 +361,7 @@ test("aura_unittests") {
+     "//ui/gl:test_support",
+   ]
+ 
+-  if (is_linux) {
++  if (is_linux || is_bsd) {
+     deps += [ "//third_party/mesa" ]
+   }
+ 

@@ -1,0 +1,83 @@
+--- src/3rdparty/chromium/base/BUILD.gn.orig	2017-01-26 00:49:07 UTC
++++ src/3rdparty/chromium/base/BUILD.gn
+@@ -1076,6 +1076,35 @@ component("base") {
+     public_deps += [ "//base/allocator:unified_allocator_shim" ]
+   }
+ 
++  if (is_bsd) {
++    sources -= [
++      "files/file_util_linux.cc",
++      "files/file_path_watcher_linux.cc",
++      "process/process_linux.cc",
++      "process/process_iterator_linux.cc",
++      "process/process_metrics_linux.cc",
++      "process/process_handle_linux.cc",
++      "sys_info_linux.cc",
++      "trace_event/malloc_dump_provider.cc",
++      "trace_event/malloc_dump_provider.h",
++      "debug/proc_maps_linux.cc",
++      "debug/proc_maps_linux.h",
++    ]
++    sources += [
++      "files/file_path_watcher_stub.cc",
++      "process/process_handle_freebsd.cc",
++      "process/process_iterator_freebsd.cc",
++      "process/process_metrics_freebsd.cc",
++      "sys_info_freebsd.cc",
++    ]
++    libs = [
++      "execinfo", # logging.cc
++      "kvm"       # process_metrics_freebsd
++    ]
++  }
++
++
++
+   # Allow more direct string conversions on platforms with native utf8
+   # strings
+   if (is_mac || is_ios || is_chromeos || is_chromecast) {
+@@ -1347,7 +1376,7 @@ component("base") {
+   }
+ 
+   # Linux.
+-  if (is_linux) {
++  if (is_linux || is_bsd) {
+     if (is_asan || is_lsan || is_msan || is_tsan) {
+       # For llvm-sanitizer.
+       data += [ "//third_party/llvm-build/Release+Asserts/lib/libstdc++.so.6" ]
+@@ -1372,7 +1401,7 @@ component("base") {
+       "//base/third_party/xdg_user_dirs",
+     ]
+   } else {
+-    # Non-Linux.
++    # Non-Linux/BSD.
+     sources -= [
+       "nix/mime_util_xdg.cc",
+       "nix/mime_util_xdg.h",
+@@ -1388,6 +1417,13 @@ component("base") {
+     }
+   }
+ 
++  if (is_bsd) {
++    sources -= [
++      "threading/platform_thread_linux.cc",
++    ]
++    sources += [ "threading/platform_thread_freebsd.cc" ]
++  }
++
+   # iOS
+   if (is_ios) {
+     set_sources_assignment_filter([])
+@@ -2154,6 +2190,12 @@ test("base_unittests") {
+     set_sources_assignment_filter(sources_assignment_filter)
+   }
+ 
++  if (is_bsd) {
++    sources -= [
++      "debug/proc_maps_linux_unittest.cc",
++    ]
++  }
++
+   if (is_win) {
+     deps += [ "//base:scoped_handle_test_dll" ]
+     if (current_cpu == "x64") {

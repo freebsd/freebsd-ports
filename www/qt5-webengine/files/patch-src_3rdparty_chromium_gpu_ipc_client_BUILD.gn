@@ -1,0 +1,10 @@
+--- src/3rdparty/chromium/gpu/ipc/client/BUILD.gn.orig	2017-01-26 00:49:14 UTC
++++ src/3rdparty/chromium/gpu/ipc/client/BUILD.gn
+@@ -51,6 +51,7 @@ source_set("ipc_client_sources") {
+   configs += [
+     "//build/config/compiler:no_size_t_to_int_warning",
+     "//gpu:gpu_implementation",
++    "//build/config/linux:x11",
+   ]
+   deps = [
+     "//base",

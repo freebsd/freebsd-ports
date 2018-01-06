@@ -7,7 +7,6 @@
 %%QT_INCDIR%%/QtOpenGL/%%FULLVER%%/QtOpenGL/private/qglgradientcache_p.h
 %%QT_INCDIR%%/QtOpenGL/%%FULLVER%%/QtOpenGL/private/qglpaintdevice_p.h
 %%QT_INCDIR%%/QtOpenGL/%%FULLVER%%/QtOpenGL/private/qglpixelbuffer_p.h
-%%QT_INCDIR%%/QtOpenGL/%%FULLVER%%/QtOpenGL/private/qglshadercache_meego_p.h
 %%QT_INCDIR%%/QtOpenGL/%%FULLVER%%/QtOpenGL/private/qglshadercache_p.h
 %%QT_INCDIR%%/QtOpenGL/%%FULLVER%%/QtOpenGL/private/qgraphicsshadereffect_p.h
 %%QT_INCDIR%%/QtOpenGL/%%FULLVER%%/QtOpenGL/private/qpaintengineex_opengl2_p.h

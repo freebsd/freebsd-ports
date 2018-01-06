@@ -1,11 +1,11 @@
---- src/3rdparty/chromium/media/capture/video/file_video_capture_device_factory.cc.orig	2017-04-23 10:37:42 UTC
+--- src/3rdparty/chromium/media/capture/video/file_video_capture_device_factory.cc.orig	2017-01-26 00:49:15 UTC
 +++ src/3rdparty/chromium/media/capture/video/file_video_capture_device_factory.cc
-@@ -50,7 +50,7 @@ void FileVideoCaptureDeviceFactory::GetD
-   device_names->push_back(VideoCaptureDevice::Name(
+@@ -53,7 +53,7 @@ void FileVideoCaptureDeviceFactory::GetD
+ #elif defined(OS_MACOSX)
        command_line_file_path.value(), kFileVideoCaptureDeviceName,
-       VideoCaptureDevice::Name::AVFOUNDATION));
+       VideoCaptureApi::MACOSX_AVFOUNDATION
 -#elif defined(OS_LINUX)
 +#elif defined(OS_LINUX) || defined(OS_BSD)
-   device_names->push_back(VideoCaptureDevice::Name(
        command_line_file_path.value(), kFileVideoCaptureDeviceName,
-       VideoCaptureDevice::Name::V4L2_SINGLE_PLANE));
+       VideoCaptureApi::LINUX_V4L2_SINGLE_PLANE
+ #else

@@ -6,7 +6,9 @@
 %%QT_INCDIR%%/QtSensors/%%FULLVER%%/QtSensors/private/qdistancesensor_p.h
 %%QT_INCDIR%%/QtSensors/%%FULLVER%%/QtSensors/private/qgyroscope_p.h
 %%QT_INCDIR%%/QtSensors/%%FULLVER%%/QtSensors/private/qholstersensor_p.h
+%%QT_INCDIR%%/QtSensors/%%FULLVER%%/QtSensors/private/qhumiditysensor_p.h
 %%QT_INCDIR%%/QtSensors/%%FULLVER%%/QtSensors/private/qirproximitysensor_p.h
+%%QT_INCDIR%%/QtSensors/%%FULLVER%%/QtSensors/private/qlidsensor_p.h
 %%QT_INCDIR%%/QtSensors/%%FULLVER%%/QtSensors/private/qlightsensor_p.h
 %%QT_INCDIR%%/QtSensors/%%FULLVER%%/QtSensors/private/qmagnetometer_p.h
 %%QT_INCDIR%%/QtSensors/%%FULLVER%%/QtSensors/private/qorientationsensor_p.h
@@ -19,6 +21,7 @@
 %%QT_INCDIR%%/QtSensors/%%FULLVER%%/QtSensors/private/qsensorgesturemanagerprivate_p.h
 %%QT_INCDIR%%/QtSensors/%%FULLVER%%/QtSensors/private/qtapsensor_p.h
 %%QT_INCDIR%%/QtSensors/%%FULLVER%%/QtSensors/private/qtiltsensor_p.h
+%%QT_INCDIR%%/QtSensors/%%FULLVER%%/QtSensors/private/qtsensors-config_p.h
 %%QT_INCDIR%%/QtSensors/%%FULLVER%%/QtSensors/private/sensorlog_p.h
 %%QT_INCDIR%%/QtSensors/%%FULLVER%%/QtSensors/private/simulatorgesturescommon_p.h
 %%QT_INCDIR%%/QtSensors/QAccelerometer
@@ -45,9 +48,15 @@
 %%QT_INCDIR%%/QtSensors/QHolsterFilter
 %%QT_INCDIR%%/QtSensors/QHolsterReading
 %%QT_INCDIR%%/QtSensors/QHolsterSensor
+%%QT_INCDIR%%/QtSensors/QHumidityFilter
+%%QT_INCDIR%%/QtSensors/QHumidityReading
+%%QT_INCDIR%%/QtSensors/QHumiditySensor
 %%QT_INCDIR%%/QtSensors/QIRProximityFilter
 %%QT_INCDIR%%/QtSensors/QIRProximityReading
 %%QT_INCDIR%%/QtSensors/QIRProximitySensor
+%%QT_INCDIR%%/QtSensors/QLidFilter
+%%QT_INCDIR%%/QtSensors/QLidReading
+%%QT_INCDIR%%/QtSensors/QLidSensor
 %%QT_INCDIR%%/QtSensors/QLightFilter
 %%QT_INCDIR%%/QtSensors/QLightReading
 %%QT_INCDIR%%/QtSensors/QLightSensor
@@ -95,7 +104,9 @@
 %%QT_INCDIR%%/QtSensors/qdistancesensor.h
 %%QT_INCDIR%%/QtSensors/qgyroscope.h
 %%QT_INCDIR%%/QtSensors/qholstersensor.h
+%%QT_INCDIR%%/QtSensors/qhumiditysensor.h
 %%QT_INCDIR%%/QtSensors/qirproximitysensor.h
+%%QT_INCDIR%%/QtSensors/qlidsensor.h
 %%QT_INCDIR%%/QtSensors/qlightsensor.h
 %%QT_INCDIR%%/QtSensors/qmagnetometer.h
 %%QT_INCDIR%%/QtSensors/qorientationsensor.h
@@ -113,6 +124,7 @@
 %%QT_INCDIR%%/QtSensors/qsensorsglobal.h
 %%QT_INCDIR%%/QtSensors/qtapsensor.h
 %%QT_INCDIR%%/QtSensors/qtiltsensor.h
+%%QT_INCDIR%%/QtSensors/qtsensors-config.h
 %%QT_INCDIR%%/QtSensors/qtsensorsversion.h
 %%QT_CMAKEDIR%%/Qt5Sensors/Qt5SensorsConfig.cmake
 %%QT_CMAKEDIR%%/Qt5Sensors/Qt5SensorsConfigVersion.cmake

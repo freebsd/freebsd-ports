@@ -1,48 +1,59 @@
-The hotplug API is not available on FreeBSD <= 10.3.
-
-The API was added in base r302080, so it is part of FreeBSD 11.0+. It was
-MFC'ed to stable/10 in r302275, which is between __FreeBSD_version's 1003505
-(r302228) and 1003506 (r304611).
---- src/3rdparty/chromium/device/usb/usb_service_impl.cc.orig	2017-04-20 16:14:07 UTC
+--- src/3rdparty/chromium/device/usb/usb_service_impl.cc.orig	2017-01-26 00:49:14 UTC
 +++ src/3rdparty/chromium/device/usb/usb_service_impl.cc
-@@ -482,6 +482,7 @@ UsbServiceImpl::UsbServiceImpl(
+@@ -26,7 +26,11 @@
+ #include "device/usb/usb_error.h"
+ #include "device/usb/webusb_descriptors.h"
+ #include "net/base/io_buffer.h"
+-#include "third_party/libusb/src/libusb/libusb.h"
++#if defined(OS_FREEBSD)
++#  include <libusb.h>
++#else
++#  include "third_party/libusb/src/libusb/libusb.h"
++#endif
+ 
+ #if defined(OS_WIN)
+ #include <setupapi.h>
+@@ -213,6 +217,7 @@ UsbServiceImpl::UsbServiceImpl(
    }
    context_ = new UsbContext(platform_context);
  
-+#if defined(__FreeBSD_version) && __FreeBSD_version >= 1003506
++#if !defined(OS_FREEBSD)
    rv = libusb_hotplug_register_callback(
        context_->context(),
        static_cast<libusb_hotplug_event>(LIBUSB_HOTPLUG_EVENT_DEVICE_ARRIVED |
-@@ -492,6 +493,7 @@ UsbServiceImpl::UsbServiceImpl(
-   if (rv == LIBUSB_SUCCESS) {
-     hotplug_enabled_ = true;
+@@ -225,6 +230,8 @@ UsbServiceImpl::UsbServiceImpl(
    }
-+#endif
  
    RefreshDevices();
++#endif // !defined(OS_FREEBSD)
++
  #if defined(OS_WIN)
-@@ -504,7 +506,9 @@ UsbServiceImpl::UsbServiceImpl(
+   DeviceMonitorWin* device_monitor = DeviceMonitorWin::GetForAllInterfaces();
+   if (device_monitor) {
+@@ -234,8 +241,10 @@ UsbServiceImpl::UsbServiceImpl(
+ }
  
  UsbServiceImpl::~UsbServiceImpl() {
-   if (hotplug_enabled_) {
-+#if defined(__FreeBSD_version) && __FreeBSD_version >= 1003506
++#if !defined(OS_FREEBSD)
+   if (hotplug_enabled_)
      libusb_hotplug_deregister_callback(context_->context(), hotplug_handle_);
-+#endif
-   }
-   for (const auto& map_entry : devices_) {
-     map_entry.second->OnDisconnect();
-@@ -744,6 +748,7 @@ void UsbServiceImpl::RemoveDevice(scoped
++#endif // !defined(OS_FREEBSD)
+   for (auto* platform_device : ignored_devices_)
+     libusb_unref_device(platform_device);
+ }
+@@ -477,6 +486,7 @@ void UsbServiceImpl::RemoveDevice(scoped
+   device->OnDisconnect();
  }
  
++#if !defined(OS_FREEBSD)
  // static
-+#if defined(__FreeBSD_version) && __FreeBSD_version >= 1003506
  int LIBUSB_CALL UsbServiceImpl::HotplugCallback(libusb_context* context,
                                                  PlatformUsbDevice device,
-                                                 libusb_hotplug_event event,
-@@ -799,5 +804,6 @@ void UsbServiceImpl::OnPlatformDeviceRem
-   }
-   libusb_unref_device(platform_device);
- }
-+#endif  // defined(__FreeBSD_version) && __FreeBSD_version >= 1003506
+@@ -514,6 +524,7 @@ int LIBUSB_CALL UsbServiceImpl::HotplugC
  
- }  // namespace device
+   return 0;
+ }
++#endif // !defined(OS_FREEBSD)
+ 
+ void UsbServiceImpl::OnPlatformDeviceAdded(PlatformUsbDevice platform_device) {
+   DCHECK(CalledOnValidThread());

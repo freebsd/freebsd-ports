@@ -1,0 +1,11 @@
+--- src/3rdparty/chromium/device/battery/BUILD.gn.orig	2017-01-26 00:49:14 UTC
++++ src/3rdparty/chromium/device/battery/BUILD.gn
+@@ -47,7 +47,7 @@ if (!is_android) {
+       ]
+     }
+ 
+-    if (is_linux && !is_chromeos) {
++    if ((is_linux || is_bsd) && !is_chromeos) {
+       if (use_dbus) {
+         configs += [ "//build/config/linux/dbus" ]
+         deps += [ "//dbus" ]

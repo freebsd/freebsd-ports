@@ -1,0 +1,19 @@
+--- src/3rdparty/chromium/components/policy/BUILD.gn.orig	2017-01-26 00:49:12 UTC
++++ src/3rdparty/chromium/components/policy/BUILD.gn
+@@ -14,6 +14,7 @@ import("//tools/grit/grit_rule.gni")
+ gen_policy_templates_common = true
+ gen_policy_templates_win = is_win
+ gen_policy_templates_linux = is_linux
++gen_policy_templates_bsd = is_bsd
+ gen_policy_templates_android = is_android
+ gen_policy_templates_mac = is_mac
+ 
+@@ -126,7 +127,7 @@ if (enable_configuration_policy) {
+       outputs += policy_templates_android_outputs
+       defines += [ "gen_policy_templates_android" ]
+     }
+-    if (gen_policy_templates_linux) {
++    if (gen_policy_templates_linux || gen_policy_templates_bsd) {
+       outputs += policy_templates_linux_outputs
+       defines += [ "gen_policy_templates_linux" ]
+     }

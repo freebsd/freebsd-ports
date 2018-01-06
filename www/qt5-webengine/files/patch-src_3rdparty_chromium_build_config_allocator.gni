@@ -1,0 +1,11 @@
+--- src/3rdparty/chromium/build/config/allocator.gni.orig	2017-01-26 00:49:07 UTC
++++ src/3rdparty/chromium/build/config/allocator.gni
+@@ -44,7 +44,7 @@ assert(use_allocator == "none" || use_al
+ assert(!is_win || use_allocator == "none", "Tcmalloc doesn't work on Windows.")
+ 
+ assert(
+-    !use_experimental_allocator_shim || is_linux || is_android || is_win,
++    !use_experimental_allocator_shim || is_linux || is_android || is_win || is_bsd,
+     "use_experimental_allocator_shim supported only on Linux, Android and Windows targets")
+ 
+ if (is_win && use_experimental_allocator_shim) {

@@ -2,14 +2,12 @@
 
 PORTNAME=	network
 DISTVERSION=	${QT5_VERSION}
-PORTREVISION=	1
 CATEGORIES=	net ipv6
 PKGNAMEPREFIX=	qt5-
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt network module
 
-LIB_DEPENDS=	libproxy.so:net/libproxy
 RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 
 USES=		ssl
@@ -22,14 +20,20 @@ USE_LDCONFIG=	${PREFIX}/${QT_LIBDIR_REL}
 BUILD_WRKSRC=	${WRKSRC}/src/${PORTNAME}
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
 
-QT_DEFINES=	LIBPROXY OPENSSL SSL
-QT_CONFIG=	libproxy openssl
+QT_DEFINES=	OPENSSL SSL
+QT_CONFIG=	openssl
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
 		${BUILD_WRKSRC}/ssl/qsslsocket_openssl.cpp
 	@${REINPLACE_CMD} -e 's|%%OPENSSLLIB%%|${OPENSSLLIB}|g' \
 		${BUILD_WRKSRC}/ssl/qsslsocket_openssl_symbols.cpp
+
+post-configure:
+.for d in src/network src/plugins/bearer/generic
+	${MKDIR} ${WRKSRC}/${d}
+	cd ${WRKSRC}/${d} && ${SETENV} ${QMAKE_ENV} ${_QMAKE} ${QMAKE_ARGS} ${WRKSRC}/${d}
+.endfor
 
 post-build:
 	@cd ${WRKSRC}/src/plugins/bearer/generic && \

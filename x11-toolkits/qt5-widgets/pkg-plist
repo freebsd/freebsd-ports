@@ -73,7 +73,6 @@
 %%QT_INCDIR%%/QtWidgets/%%FULLVER%%/QtWidgets/private/qmdiarea_p.h
 %%QT_INCDIR%%/QtWidgets/%%FULLVER%%/QtWidgets/private/qmdisubwindow_p.h
 %%QT_INCDIR%%/QtWidgets/%%FULLVER%%/QtWidgets/private/qmenu_p.h
-%%QT_INCDIR%%/QtWidgets/%%FULLVER%%/QtWidgets/private/qmenu_wince_resource_p.h
 %%QT_INCDIR%%/QtWidgets/%%FULLVER%%/QtWidgets/private/qmenubar_p.h
 %%QT_INCDIR%%/QtWidgets/%%FULLVER%%/QtWidgets/private/qpixmapfilter_p.h
 %%QT_INCDIR%%/QtWidgets/%%FULLVER%%/QtWidgets/private/qpixmapstyle_p.h
@@ -107,6 +106,8 @@
 %%QT_INCDIR%%/QtWidgets/%%FULLVER%%/QtWidgets/private/qtreeview_p.h
 %%QT_INCDIR%%/QtWidgets/%%FULLVER%%/QtWidgets/private/qtreewidget_p.h
 %%QT_INCDIR%%/QtWidgets/%%FULLVER%%/QtWidgets/private/qtreewidgetitemiterator_p.h
+%%QT_INCDIR%%/QtWidgets/%%FULLVER%%/QtWidgets/private/qtwidgets-config_p.h
+%%QT_INCDIR%%/QtWidgets/%%FULLVER%%/QtWidgets/private/qtwidgetsglobal_p.h
 %%QT_INCDIR%%/QtWidgets/%%FULLVER%%/QtWidgets/private/qundostack_p.h
 %%QT_INCDIR%%/QtWidgets/%%FULLVER%%/QtWidgets/private/qwidget_p.h
 %%QT_INCDIR%%/QtWidgets/%%FULLVER%%/QtWidgets/private/qwidgetaction_p.h
@@ -119,10 +120,6 @@
 %%QT_INCDIR%%/QtWidgets/%%FULLVER%%/QtWidgets/private/qwidgettextcontrol_p_p.h
 %%QT_INCDIR%%/QtWidgets/%%FULLVER%%/QtWidgets/private/qwidgetwindow_p.h
 %%QT_INCDIR%%/QtWidgets/%%FULLVER%%/QtWidgets/private/qwindowcontainer_p.h
-%%QT_INCDIR%%/QtWidgets/%%FULLVER%%/QtWidgets/private/qwindowscestyle_p.h
-%%QT_INCDIR%%/QtWidgets/%%FULLVER%%/QtWidgets/private/qwindowscestyle_p_p.h
-%%QT_INCDIR%%/QtWidgets/%%FULLVER%%/QtWidgets/private/qwindowsmobilestyle_p.h
-%%QT_INCDIR%%/QtWidgets/%%FULLVER%%/QtWidgets/private/qwindowsmobilestyle_p_p.h
 %%QT_INCDIR%%/QtWidgets/%%FULLVER%%/QtWidgets/private/qwindowsstyle_p.h
 %%QT_INCDIR%%/QtWidgets/%%FULLVER%%/QtWidgets/private/qwindowsstyle_p_p.h
 %%QT_INCDIR%%/QtWidgets/%%FULLVER%%/QtWidgets/private/qwindowsvistastyle_p.h
@@ -474,6 +471,8 @@
 %%QT_INCDIR%%/QtWidgets/qtreeview.h
 %%QT_INCDIR%%/QtWidgets/qtreewidget.h
 %%QT_INCDIR%%/QtWidgets/qtreewidgetitemiterator.h
+%%QT_INCDIR%%/QtWidgets/qtwidgets-config.h
+%%QT_INCDIR%%/QtWidgets/qtwidgetsglobal.h
 %%QT_INCDIR%%/QtWidgets/qtwidgetsversion.h
 %%QT_INCDIR%%/QtWidgets/qundogroup.h
 %%QT_INCDIR%%/QtWidgets/qundostack.h
@@ -481,7 +480,6 @@
 %%QT_INCDIR%%/QtWidgets/qwhatsthis.h
 %%QT_INCDIR%%/QtWidgets/qwidget.h
 %%QT_INCDIR%%/QtWidgets/qwidgetaction.h
-%%QT_INCDIR%%/QtWidgets/qwidgetsfunctions_wince.h
 %%QT_INCDIR%%/QtWidgets/qwizard.h
 %%GTK3%%%%QT_CMAKEDIR%%/Qt5Gui/Qt5Gui_QGtk3ThemePlugin.cmake
 %%QT_CMAKEDIR%%/Qt5Widgets/Qt5WidgetsConfig.cmake

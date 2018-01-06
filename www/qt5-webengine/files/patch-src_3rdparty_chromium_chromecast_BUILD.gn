@@ -1,0 +1,11 @@
+--- src/3rdparty/chromium/chromecast/BUILD.gn.orig	2017-01-26 00:49:11 UTC
++++ src/3rdparty/chromium/chromecast/BUILD.gn
+@@ -51,7 +51,7 @@ cast_test_group("cast_tests") {
+     tests += [ "//gpu:gpu_unittests" ]
+   }
+ 
+-  if (is_linux) {
++  if (is_linux || is_bsd) {
+     tests += [ "//chromecast/crash:cast_crash_unittests" ]
+   }
+ 

@@ -11,6 +11,7 @@
 %%QT_INCDIR%%/QtWebSockets/QMaskGenerator
 %%QT_INCDIR%%/QtWebSockets/QWebSocket
 %%QT_INCDIR%%/QtWebSockets/QWebSocketCorsAuthenticator
+%%QT_INCDIR%%/QtWebSockets/QWebSocketProtocol
 %%QT_INCDIR%%/QtWebSockets/QWebSocketServer
 %%QT_INCDIR%%/QtWebSockets/QtWebSockets
 %%QT_INCDIR%%/QtWebSockets/QtWebSocketsDepends

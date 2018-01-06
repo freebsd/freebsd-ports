@@ -1,0 +1,20 @@
+--- src/3rdparty/chromium/media/base/BUILD.gn.orig	2017-01-26 00:49:15 UTC
++++ src/3rdparty/chromium/media/base/BUILD.gn
+@@ -309,7 +309,7 @@ target(link_target_type, "base") {
+     allow_circular_includes_from += [ "//media/base/android" ]
+   }
+ 
+-  if (is_linux && use_x11) {
++  if ((is_linux || is_bsd) && use_x11) {
+     configs += [
+       "//build/config/linux:x11",
+       "//build/config/linux:xext",
+@@ -345,7 +345,7 @@ target(link_target_type, "base") {
+     deps += [ ":media_yasm" ]
+   }
+ 
+-  if (is_linux || is_win) {
++  if (is_linux || is_bsd || is_win) {
+     sources += [
+       "keyboard_event_counter.cc",
+       "keyboard_event_counter.h",

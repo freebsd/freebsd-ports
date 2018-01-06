@@ -16,6 +16,7 @@
 %%QT_INCDIR%%/QtDBus/%%FULLVER%%/QtDBus/private/qdbusthreaddebug_p.h
 %%QT_INCDIR%%/QtDBus/%%FULLVER%%/QtDBus/private/qdbusutil_p.h
 %%QT_INCDIR%%/QtDBus/%%FULLVER%%/QtDBus/private/qdbusxmlparser_p.h
+%%QT_INCDIR%%/QtDBus/%%FULLVER%%/QtDBus/private/qtdbusglobal_p.h
 %%QT_INCDIR%%/QtDBus/QDBusAbstractAdaptor
 %%QT_INCDIR%%/QtDBus/QDBusAbstractInterface
 %%QT_INCDIR%%/QtDBus/QDBusAbstractInterfaceBase
@@ -61,6 +62,7 @@
 %%QT_INCDIR%%/QtDBus/qdbusservicewatcher.h
 %%QT_INCDIR%%/QtDBus/qdbusunixfiledescriptor.h
 %%QT_INCDIR%%/QtDBus/qdbusvirtualobject.h
+%%QT_INCDIR%%/QtDBus/qtdbusglobal.h
 %%QT_INCDIR%%/QtDBus/qtdbusversion.h
 %%QT_CMAKEDIR%%/Qt5DBus/Qt5DBusConfig.cmake
 %%QT_CMAKEDIR%%/Qt5DBus/Qt5DBusConfigExtras.cmake

@@ -1,25 +1,13 @@
---- configure.orig	2016-02-24 19:25:11 UTC
+--- configure.orig	2017-11-14 13:26:30 UTC
 +++ configure
-@@ -4108,11 +4108,11 @@ if [ '!' -e "$outpath/bin/qmake" ]; then
-         echo "QT_MAJOR_VERSION = $QT_MAJOR_VERSION" >> "$mkfile"
-         echo "QT_MINOR_VERSION = $QT_MINOR_VERSION" >> "$mkfile"
-         echo "QT_PATCH_VERSION = $QT_PATCH_VERSION" >> "$mkfile"
--        echo "EXTRA_CFLAGS = $EXTRA_CFLAGS" >> "$mkfile"
--        echo "EXTRA_CXXFLAGS = $EXTRA_CXXFLAGS" >> "$mkfile"
-+        echo "EXTRA_CFLAGS = $EXTRA_CFLAGS $CFLAGS" >> "$mkfile"
-+        echo "EXTRA_CXXFLAGS = $EXTRA_CXXFLAGS $CXXFLAGS" >> "$mkfile"
-         echo "QTOBJS =" $EXTRA_OBJS >> "$mkfile"
-         echo "QTSRCS =" $EXTRA_SRCS >> "$mkfile"
--        echo "LFLAGS = $EXTRA_LFLAGS" >> "$mkfile"
-+        echo "LFLAGS = $EXTRA_LFLAGS $LDFLAGS" >> "$mkfile"
-         echo "EXEEXT = $EXEEXT" >> "$mkfile"
-         echo "RM_F = rm -f" >> "$mkfile"
-         echo "RM_RF = rm -rf" >> "$mkfile"
-@@ -4131,6 +4131,7 @@ if [ '!' -e "$outpath/bin/qmake" ]; then
+@@ -799,6 +799,10 @@ if [ '!' -f "$outpath/bin/qmake" ] ; then 
              fi
          fi
-     done
-+    exit 0
  
++    if [ -z "${BUILD_QMAKE}" ]; then
++        exit 0
++    fi
++
      if [ "$OPT_VERBOSE" = yes ]; then
          # Show the output of make
+         (cd "$outpath/qmake"; "$MAKE") || exit 2
