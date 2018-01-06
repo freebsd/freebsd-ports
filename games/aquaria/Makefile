@@ -37,6 +37,7 @@ CMAKE_ARGS+=	-DAQUARIA_DEFAULT_DATA_DIR="${DATADIR}" \
 		-DAQUARIA_INTERNAL_TINYXML2=off \
 		-DAQUARIA_INTERNAL_ZLIB=off
 LDFLAGS+=	-Wl,--as-needed # avoid overlinking (vorbis deps)
+LLD_UNSAFE=	yes # XXX ports/219089
 SUB_FILES=	pkg-message
 PLIST_FILES=	bin/aquaria
 PORTDATA=	*
