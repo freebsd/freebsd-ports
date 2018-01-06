@@ -2978,7 +2978,6 @@
     SUBDIR += p5-MooseX-Role-Matcher
     SUBDIR += p5-MooseX-Role-Parameterized
     SUBDIR += p5-MooseX-Role-Strict
-    SUBDIR += p5-MooseX-Role-WithOverloading
     SUBDIR += p5-MooseX-Runnable
     SUBDIR += p5-MooseX-SemiAffordanceAccessor
     SUBDIR += p5-MooseX-SetOnce
