@@ -1,4 +1,4 @@
---- third_party/boringssl/crypto/cpu-aarch64-linux.c.orig	2017-09-27 21:43:59 UTC
+--- third_party/boringssl/crypto/cpu-aarch64-linux.c.orig	2018-01-02 23:09:20 UTC
 +++ third_party/boringssl/crypto/cpu-aarch64-linux.c
 @@ -16,7 +16,42 @@
  
