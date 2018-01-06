@@ -37,6 +37,7 @@ CMAKE_OFF=	AQUARIA_INTERNAL_FREETYPE \
 		AQUARIA_INTERNAL_TINYXML2 \
 		AQUARIA_INTERNAL_ZLIB
 LDFLAGS+=	-Wl,--as-needed # avoid overlinking (vorbis deps)
+LLD_UNSAFE=	yes # XXX ports/219089
 SUB_FILES=	pkg-message
 PLIST_FILES=	bin/aquaria
 PORTDATA=	*
