@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fluent-logger
-PORTVERSION=	0.7.1
+PORTVERSION=	0.7.2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
