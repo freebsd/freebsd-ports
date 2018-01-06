@@ -1,0 +1,166 @@
+text-match.cc:476:8: error: no viable conversion from 'pan::StringView' to 'std::__1::basic_string<char>'
+   s = tmp;
+       ^~~
+/usr/include/c++/v1/string:767:5: note: candidate constructor not viable: no known conversion from 'pan::StringView' to 'const std::__1::basic_string<char> &' for 1st argument
+    basic_string(const basic_string& __str);
+    ^
+/usr/include/c++/v1/string:772:5: note: candidate constructor not viable: no known conversion from 'pan::StringView' to 'std::__1::basic_string<char> &&' for 1st argument
+    basic_string(basic_string&& __str)
+    ^
+/usr/include/c++/v1/string:782:31: note: candidate constructor not viable: no known conversion from 'pan::StringView' to 'const char *' for 1st argument
+    _LIBCPP_INLINE_VISIBILITY basic_string(const _CharT* __s);
+                              ^
+/usr/include/c++/v1/string:815:5: note: candidate constructor not viable: no known conversion from 'pan::StringView' to 'initializer_list<char>' for 1st argument
+    basic_string(initializer_list<_CharT> __il);
+    ^
+../../pan/general/string-view.h:98:10: note: candidate function
+         operator const std::string () const { return to_string(); }
+         ^
+/usr/include/c++/v1/string:834:44: note: passing argument to parameter '__str' here
+    basic_string& operator=(basic_string&& __str)
+                                           ^
+article-filter.cc:165:46: error: invalid suffix on literal; C++11 requires a space between literal
+      and identifier [-Wreserved-user-defined-literal]
+            g_snprintf (buf, sizeof(buf), "%"G_GUINT64_FORMAT, xit->number);
+                                             ^
+nntp.cc:366:49: error: invalid suffix on literal; C++11 requires a space between literal and
+      identifier [-Wreserved-user-defined-literal]
+   _commands.push_back (build_command ("XOVER %"G_GUINT64_FORMAT"-%"G_GUINT64_FORMAT"\r\n", l...
+                                                ^
+nntp.cc:366:69: error: invalid suffix on literal; C++11 requires a space between literal and
+      identifier [-Wreserved-user-defined-literal]
+   _commands.push_back (build_command ("XOVER %"G_GUINT64_FORMAT"-%"G_GUINT64_FORMAT"\r\n", l...
+                                                                    ^
+nntp.cc:379:49: error: invalid suffix on literal; C++11 requires a space between literal and
+      identifier [-Wreserved-user-defined-literal]
+   _commands.push_back (build_command ("XZVER %"G_GUINT64_FORMAT"-%"G_GUINT64_FORMAT"\r\n", l...
+                                                ^
+nntp.cc:379:69: error: invalid suffix on literal; C++11 requires a space between literal and
+      identifier [-Wreserved-user-defined-literal]
+   _commands.push_back (build_command ("XZVER %"G_GUINT64_FORMAT"-%"G_GUINT64_FORMAT"\r\n", l...
+                                                                    ^
+nntp.cc:420:51: error: invalid suffix on literal; C++11 requires a space between literal and
+      identifier [-Wreserved-user-defined-literal]
+   _commands.push_back (build_command ("ARTICLE %"G_GUINT64_FORMAT"\r\n", article_number));
+                                                  ^
+nntp.cc:462:48: error: invalid suffix on literal; C++11 requires a space between literal and
+      identifier [-Wreserved-user-defined-literal]
+   _commands.push_back (build_command ("HEAD %"G_GUINT64_FORMAT"\r\n", article_number));
+                                               ^
+nntp.cc:490:48: error: invalid suffix on literal; C++11 requires a space between literal and
+      identifier [-Wreserved-user-defined-literal]
+   _commands.push_back (build_command ("BODY %"G_GUINT64_FORMAT"\r\n", article_number));
+                                               ^
+numbers.cc:270:50: error: invalid suffix on literal; C++11 requires a space between literal and
+      identifier [-Wreserved-user-defined-literal]
+        bytes = g_snprintf (buf, sizeof(buf), "%"G_GUINT64_FORMAT",", r.low);
+                                                 ^
+
+numbers.cc:272:51: error: invalid suffix on literal; C++11 requires a space between literal and
+      identifier [-Wreserved-user-defined-literal]
+         bytes = g_snprintf (buf, sizeof(buf), "%"G_GUINT64_FORMAT"-%"G_GUINT64_FORMAT",", r....
+                                                  ^
+
+numbers.cc:272:71: error: invalid suffix on literal; C++11 requires a space between literal and
+      identifier [-Wreserved-user-defined-literal]
+         bytes = g_snprintf (buf, sizeof(buf), "%"G_GUINT64_FORMAT"-%"G_GUINT64_FORMAT",", r....
+                                                                      ^
+task-xover.cc:394:41: error: invalid suffix on literal; C++11 requires a space between literal and
+      identifier [-Wreserved-user-defined-literal]
+                xref = buf = g_strdup_printf("%s %s:%"G_GUINT64_FORMAT,
+                                                      ^
+
+--- pan/data-impl/article-filter.cc.orig	2016-03-12 23:32:41 UTC
++++ pan/data-impl/article-filter.cc
+@@ -162,7 +162,7 @@ ArticleFilter :: test_article (const Data        & dat
+             s += xit->group;
+             s += ':';
+             char buf[32];
+-            g_snprintf (buf, sizeof(buf), "%"G_GUINT64_FORMAT, xit->number);
++            g_snprintf (buf, sizeof(buf), "%" G_GUINT64_FORMAT, xit->number);
+             s += buf;
+             s += ' ';
+           }
+--- pan/general/string-view.h.orig	2011-06-02 10:17:28 UTC
++++ pan/general/string-view.h
+@@ -95,7 +95,7 @@ namespace pan
+          std::string to_string () const {return empty()
+                                          ? std::string()
+                                          : std::string(str,str+len); }
+-         operator const std::string () const { return to_string(); }
++         operator std::string () const { return to_string(); }
+ 
+          StringView substr (const char * start, const char * end) const;
+          void substr (const char * start, const char * end, StringView& setme) const;
+--- pan/tasks/nntp.cc.orig	2016-11-23 21:06:54 UTC
++++ pan/tasks/nntp.cc
+@@ -363,7 +363,7 @@ NNTP :: xover (const Quark   & group,
+    _listener = l;
+ 
+    enter_group(group);
+-   _commands.push_back (build_command ("XOVER %"G_GUINT64_FORMAT"-%"G_GUINT64_FORMAT"\r\n", low, high));
++   _commands.push_back (build_command ("XOVER %" G_GUINT64_FORMAT "-%" G_GUINT64_FORMAT "\r\n", low, high));
+    write_next_command ();
+ }
+ 
+@@ -376,7 +376,7 @@ NNTP :: xzver (const Quark   & group,
+    _listener = l;
+ 
+    enter_group(group);
+-   _commands.push_back (build_command ("XZVER %"G_GUINT64_FORMAT"-%"G_GUINT64_FORMAT"\r\n", low, high));
++   _commands.push_back (build_command ("XZVER %" G_GUINT64_FORMAT "-%" G_GUINT64_FORMAT "\r\n", low, high));
+    write_next_command ();
+ }
+ 
+@@ -417,7 +417,7 @@ NNTP :: article (const Quark     & group,
+ 
+    enter_group(group);
+ 
+-   _commands.push_back (build_command ("ARTICLE %"G_GUINT64_FORMAT"\r\n", article_number));
++   _commands.push_back (build_command ("ARTICLE %" G_GUINT64_FORMAT "\r\n", article_number));
+ 
+    write_next_command ();
+ }
+@@ -459,7 +459,7 @@ NNTP :: get_headers (const Quark     & group,
+ 
+    enter_group(group);
+ 
+-   _commands.push_back (build_command ("HEAD %"G_GUINT64_FORMAT"\r\n", article_number));
++   _commands.push_back (build_command ("HEAD %" G_GUINT64_FORMAT "\r\n", article_number));
+ 
+    write_next_command ();
+ }
+@@ -487,7 +487,7 @@ NNTP :: get_body (const Quark     & group,
+ 
+    enter_group(group);
+ 
+-   _commands.push_back (build_command ("BODY %"G_GUINT64_FORMAT"\r\n", article_number));
++   _commands.push_back (build_command ("BODY %" G_GUINT64_FORMAT "\r\n", article_number));
+ 
+    write_next_command ();
+ }
+--- pan/tasks/task-xover.cc.orig	2016-03-07 21:09:53 UTC
++++ pan/tasks/task-xover.cc
+@@ -391,7 +391,7 @@ TaskXOver::on_nntp_line_process(NNTP * nntp, const Str
+ 	// if news server doesn't provide an xref, fake one
+ 	char * buf(0);
+ 	if (xref.empty())
+-		xref = buf = g_strdup_printf("%s %s:%"G_GUINT64_FORMAT,
++		xref = buf = g_strdup_printf("%s %s:%" G_GUINT64_FORMAT,
+ 				nntp->_server.c_str(), nntp->_group.c_str(), number);
+ 
+ 	uint64_t& h(_high[nntp->_server]);
+--- pan/usenet-utils/numbers.cc.orig	2011-06-02 10:17:28 UTC
++++ pan/usenet-utils/numbers.cc
+@@ -267,9 +267,9 @@ Numbers :: to_string (std::string & str) const
+       Range r (*it);
+ 
+       if (r.low == r.high)
+-        bytes = g_snprintf (buf, sizeof(buf), "%"G_GUINT64_FORMAT",", r.low);
++        bytes = g_snprintf (buf, sizeof(buf), "%" G_GUINT64_FORMAT ",", r.low);
+       else
+-         bytes = g_snprintf (buf, sizeof(buf), "%"G_GUINT64_FORMAT"-%"G_GUINT64_FORMAT",", r.low, r.high);
++         bytes = g_snprintf (buf, sizeof(buf), "%" G_GUINT64_FORMAT "-%" G_GUINT64_FORMAT ",", r.low, r.high);
+       temp.append(buf, bytes);
+    }
+ 
