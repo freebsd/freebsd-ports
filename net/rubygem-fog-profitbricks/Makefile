@@ -3,6 +3,7 @@
 
 PORTNAME=	fog-profitbricks
 PORTVERSION=	4.1.1
+PORTREVISION=	1
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
