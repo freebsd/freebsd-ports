@@ -1,0 +1,11 @@
+--- fog-json.gemspec.orig	2018-01-06 07:22:16 UTC
++++ fog-json.gemspec
+@@ -22,7 +22,7 @@ Gem::Specification.new do |s|
+     s.specification_version = 4
+ 
+     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
+-      s.add_runtime_dependency(%q<fog-core>.freeze, ["~> 1.0"])
++      s.add_runtime_dependency(%q<fog-core>.freeze, [">= 1.0"])
+       s.add_runtime_dependency(%q<multi_json>.freeze, ["~> 1.10"])
+       s.add_development_dependency(%q<bundler>.freeze, ["~> 1.5"])
+       s.add_development_dependency(%q<rake>.freeze, [">= 0"])
