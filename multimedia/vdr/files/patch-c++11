@@ -1,0 +1,74 @@
+--- ci.c.orig	2012-05-29 11:13:40 UTC
++++ ci.c
+@@ -845,9 +845,9 @@ void cCiDateTime::SendDateTime(void)
+      int D = tm_gmt.tm_mday;
+      int L = (M == 1 || M == 2) ? 1 : 0;
+      int MJD = 14956 + D + int((Y - L) * 365.25) + int((M + 1 + L * 12) * 30.6001);
+-#define DEC2BCD(d) (((d / 10) << 4) + (d % 10))
++#define DEC2BCD(d) uint8_t(((d / 10) << 4) + (d % 10))
+      struct tTime { uint16_t mjd; uint8_t h, m, s; short offset; };
+-     tTime T = { mjd : htons(MJD), h : DEC2BCD(tm_gmt.tm_hour), m : DEC2BCD(tm_gmt.tm_min), s : DEC2BCD(tm_gmt.tm_sec), offset : htons(tm_loc.tm_gmtoff / 60) };
++     tTime T = { mjd : htons(MJD), h : DEC2BCD(tm_gmt.tm_hour), m : DEC2BCD(tm_gmt.tm_min), s : DEC2BCD(tm_gmt.tm_sec), offset : short(htons(tm_loc.tm_gmtoff / 60)) };
+      bool OldDumpTPDUDataTransfer = DumpTPDUDataTransfer;
+      DumpTPDUDataTransfer &= DumpDateTime;
+      if (DumpDateTime)
+--- dvbsubtitle.c.orig	2012-05-08 08:17:17 UTC
++++ dvbsubtitle.c
+@@ -851,7 +851,7 @@ int cDvbSubtitleConverter::ConvertFragments(const ucha
+      if (Length > PayloadOffset + SubstreamHeaderLength) {
+         int64_t pts = PesHasPts(Data) ? PesGetPts(Data) : 0;
+         if (pts)
+-           dbgconverter("Converter PTS: %"PRId64"\n", pts);
++           dbgconverter("Converter PTS: %" PRId64 "\n", pts);
+         const uchar *data = Data + PayloadOffset + SubstreamHeaderLength; // skip substream header
+         int length = Length - PayloadOffset - SubstreamHeaderLength; // skip substream header
+         if (ResetSubtitleAssembler)
+@@ -887,7 +887,7 @@ int cDvbSubtitleConverter::Convert(const uchar *Data, 
+      if (Length > PayloadOffset) {
+         int64_t pts = PesGetPts(Data);
+         if (pts)
+-           dbgconverter("Converter PTS: %"PRId64"\n", pts);
++           dbgconverter("Converter PTS: %" PRId64 "\n", pts);
+         const uchar *data = Data + PayloadOffset;
+         int length = Length - PayloadOffset;
+         if (length > 3) {
+@@ -946,7 +946,7 @@ void cDvbSubtitleConverter::Action(void)
+                     if (AssertOsd()) {
+                        sb->Draw(osd);
+                        Timeout.Set(sb->Timeout() * 1000);
+-                       dbgconverter("PTS: %"PRId64"  STC: %"PRId64" (%"PRId64") timeout: %d\n", sb->Pts(), cDevice::PrimaryDevice()->GetSTC(), Delta, sb->Timeout());
++                       dbgconverter("PTS: %" PRId64 "  STC: %" PRId64 " (%" PRId64 ") timeout: %d\n", sb->Pts(), cDevice::PrimaryDevice()->GetSTC(), Delta, sb->Timeout());
+                        }
+                     bitmaps->Del(sb);
+                     }
+@@ -1044,7 +1044,7 @@ int cDvbSubtitleConverter::ExtractSegment(const uchar 
+             page->SetTimeout(pageTimeout);
+             page->SetState(bs.GetBits(2));
+             bs.SkipBits(2); // reserved
+-            dbgpages("Update page id %d version %d pts %"PRId64" timeout %d state %d\n", pageId, page->Version(), page->Pts(), page->Timeout(), page->State());
++            dbgpages("Update page id %d version %d pts %" PRId64 " timeout %d state %d\n", pageId, page->Version(), page->Pts(), page->Timeout(), page->State());
+             while (!bs.IsEOF()) {
+                   cSubtitleRegion *region = page->GetRegionById(bs.GetBits(8), true);
+                   bs.SkipBits(8); // reserved
+--- recording.c.orig	2012-06-09 13:57:30 UTC
++++ recording.c
+@@ -1643,7 +1643,7 @@ cIndexFile::cIndexFile(const char *FileName, bool Reco
+            delta = int(buf.st_size % sizeof(tIndexTs));
+            if (delta) {
+               delta = sizeof(tIndexTs) - delta;
+-              esyslog("ERROR: invalid file size (%"PRId64") in '%s'", buf.st_size, *fileName);
++              esyslog("ERROR: invalid file size (%" PRId64 ") in '%s'", buf.st_size, *fileName);
+               }
+            last = int((buf.st_size + delta) / sizeof(tIndexTs) - 1);
+            if (!Record && last >= 0) {
+--- remote.c.orig	2012-01-16 16:57:00 UTC
++++ remote.c
+@@ -124,7 +124,7 @@ bool cRemote::PutMacro(eKeys Key)
+ bool cRemote::Put(uint64_t Code, bool Repeat, bool Release)
+ {
+   char buffer[32];
+-  snprintf(buffer, sizeof(buffer), "%016"PRIX64, Code);
++  snprintf(buffer, sizeof(buffer), "%016" PRIX64, Code);
+   return Put(buffer, Repeat, Release);
+ }
+ 
