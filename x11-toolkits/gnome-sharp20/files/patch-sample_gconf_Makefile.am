@@ -1,0 +1,11 @@
+--- sample/gconf/Makefile.am.orig	2017-08-20 08:02:28 UTC
++++ sample/gconf/Makefile.am
+@@ -22,7 +22,7 @@ sample.exe: $(SCHEMA) $(srcdir)/sample.g
+ 	$(CSC) /out:sample.exe $(FILES) $(REFERENCES) $(RESOURCES)
+ 
+ Settings.cs: $(SCHEMA)
+-	MONO_PATH=$(top_builddir)/gconf/GConf/gconf-sharp.dll:${MONO_PATH} $(RUNTIME) $(GCONFDIR)/tools/gconfsharp-schemagen.exe Sample $(SCHEMA) > Settings.cs
++	MONO_PATH=$(top_builddir)/gconf/GConf/:${MONO_PATH} $(RUNTIME) $(GCONFDIR)/tools/gconfsharp-schemagen.exe Sample $(SCHEMA) > Settings.cs
+ 
+ CLEANFILES = sample.exe Settings.cs
+ 
