@@ -3228,7 +3228,7 @@ lang/python-doc-postscript-letter||2012-04-17|This port was broken for a long ti
 mail/dbmail20||2012-04-18|Has expired: No longer supported upstream. No ports depend on this
 mail/dbmail21||2012-04-18|Has expired: No longer supported upstream. No ports depend on this
 mail/dbmail23||2012-04-18|Has expired: No longer supported upstream. No ports depend on this
-math/octave-forge-times||2012-04-18|Depreciated upstream
+math/octave-forge-times||2012-04-18|Deprecated upstream
 www/fpc-httpd13||2012-04-19|Obsolete freepascal unit. Use www/fpc-httpd22 instead of it
 www/fpc-httpd20||2012-04-19|Obsolete freepascal unit. Use www/fpc-httpd22 instead of it
 editors/lazarus-gtk2||2012-04-20|Never fully added. Use editors/lazarus instead
@@ -5217,7 +5217,7 @@ sysutils/rsyslog6-dbi||2013-11-25|Has expired: Use sysutils/rsyslog7
 www/trac-gitplugin||2013-11-25|Removed: this plugin has been included in the Trac 1.0 distribution
 audio/mpc|audio/musicpc|2013-11-26|Renamed to avoid conflict with math/mpc
 deskutils/q4wine|emulators/q4wine|2013-11-26|Move to better category
-devel/p5-MooseX-ChainedAccessors||2013-11-27|Has expired: Marked as depreciated upstream
+devel/p5-MooseX-ChainedAccessors||2013-11-27|Has expired: Marked as deprecated upstream
 devel/py-distribute|devel/py-setuptools|2013-11-27|Replaced with setuptools
 devel/zmq-devel|net/libzmq3|2013-11-28|Rename according to upstream and move to more suitable category
 devel/czmq|net/czmq|2013-11-29|Move to a more suitable category and with other libzmq ports
@@ -9465,7 +9465,7 @@ sysutils/rubygem-SyslogLogger||2017-07-31|Has expired: Project is EOL'd because 
 multimedia/avbin||2017-07-31|Has expired: Unfetchable for more than six months (google code has gone away)
 games/gondola||2017-07-31|Depends on expired multimedia/avbin
 sysutils/flyback||2017-07-31|Unfetchable for more than six months (google code has gone away)
-multimedia/py-ffmpeg||2017-07-31|Has expired: Depreciated upstream in favour of ffpyplayer
+multimedia/py-ffmpeg||2017-07-31|Has expired: Deprecated upstream in favour of ffpyplayer
 devel/cloudabi-binutils-aarch64|devel/cloudabi-toolchain|2017-07-31|ELF-toolchain based tools should be used instead
 devel/cloudabi-binutils-x86_64|devel/cloudabi-toolchain|2017-07-31|ELF-toolchain based tools should be used instead
 security/openvas-libraries|security/openvas8-libraries|2017-08-03|Renamed to include openvas 9 ports
@@ -9841,4 +9841,4 @@ www/rubygem-jwt2|www/rubygem-jwt|2018-01-02|www/rubygem-jwt has been updated to 
 misc/py-qt5-doc||2018-01-02|No longer shipped by upstream
 audio/beast||2018-01-05|Has expired: 4.5 years old version, six versions behind, requires old toolchain, and unmaintained.
 devel/p5-MooseX-Role-WithOverloading||2018-01-06|Has expired: deprecated by upstream (obsolete with modern Moose)
-devel/p5-Test-Block||2018-01-06|Has expired: Marked as depreciated upstream
+devel/p5-Test-Block||2018-01-06|Has expired: Marked as deprecated upstream
