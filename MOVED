@@ -9841,3 +9841,4 @@ www/rubygem-jwt2|www/rubygem-jwt|2018-01-02|www/rubygem-jwt has been updated to 
 misc/py-qt5-doc||2018-01-02|No longer shipped by upstream
 audio/beast||2018-01-05|Has expired: 4.5 years old version, six versions behind, requires old toolchain, and unmaintained.
 devel/p5-MooseX-Role-WithOverloading||2018-01-06|Has expired: deprecated by upstream (obsolete with modern Moose)
+devel/p5-Test-Block||2018-01-06|Has expired: Marked as depreciated upstream
