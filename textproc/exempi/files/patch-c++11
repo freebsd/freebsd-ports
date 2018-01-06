@@ -1,0 +1,147 @@
+Fix type mismatch in calls to XMPMeta::GetProperty
+
+kXMP_NoOptions is (XMP_OptionBits) whereas the final argument to
+XMPMeta::GetProperty takes (XMP_OptionBits*)
+
+https://cgit.freedesktop.org/exempi/commit/?id=b6ff77dd74a1
+
+--- source/XMPFiles/FormatSupport/ID3_Support.hpp.orig	2014-08-31 20:39:29 UTC
++++ source/XMPFiles/FormatSupport/ID3_Support.hpp
+@@ -700,28 +700,28 @@ namespace ID3_Support 
+ 			LFA_WriteUns8( file, 'G' );
+ 
+ 			// title //////////////////////////////////////////////////////
+-			if ( meta->GetLocalizedText( kXMP_NS_DC, "title", "", "x-default", 0, &utf8, kXMP_NoOptions ))
++			if ( meta->GetLocalizedText( kXMP_NS_DC, "title", "", "x-default", 0, &utf8, 0 ))
+ 			{
+ 				LFA_Seek( file, -128 + 3, SEEK_END);
+ 				ReconcileUtils::UTF8ToLatin1( utf8.c_str(), utf8.size(), &latin1 );
+ 				LFA_Write( file, latin1.c_str(), MIN( 30, (XMP_Int32)latin1.size() ) );
+ 			}
+ 			// artist //////////////////////////////////////////////////////
+-			if ( meta->GetProperty( kXMP_NS_DM, "artist", &utf8, kXMP_NoOptions ))
++			if ( meta->GetProperty( kXMP_NS_DM, "artist", &utf8, 0 ))
+ 			{
+ 				LFA_Seek( file, -128 + 33, SEEK_END);
+ 				ReconcileUtils::UTF8ToLatin1( utf8.c_str(), utf8.size(), &latin1 );
+ 				LFA_Write( file, latin1.c_str(), MIN( 30, (XMP_Int32)latin1.size() ) );
+ 			}
+ 			// album //////////////////////////////////////////////////////
+-			if ( meta->GetProperty( kXMP_NS_DM, "album", &utf8, kXMP_NoOptions ))
++			if ( meta->GetProperty( kXMP_NS_DM, "album", &utf8, 0 ))
+ 			{
+ 				LFA_Seek( file, -128 + 63, SEEK_END);
+ 				ReconcileUtils::UTF8ToLatin1( utf8.c_str(), utf8.size(), &latin1 );
+ 				LFA_Write( file, latin1.c_str(), MIN( 30, (XMP_Int32)latin1.size() ) );
+ 			}
+ 			// year //////////////////////////////////////////////////////
+-			if ( meta->GetProperty( kXMP_NS_XMP, "CreateDate", &utf8, kXMP_NoOptions ))
++			if ( meta->GetProperty( kXMP_NS_XMP, "CreateDate", &utf8, 0 ))
+ 			{
+ 				XMP_DateTime dateTime;
+ 				SXMPUtils::ConvertToDate( utf8, &dateTime );
+@@ -733,14 +733,14 @@ namespace ID3_Support 
+ 				}
+ 			}
+ 			// comment (write 30 bytes first, see truncation later) ////////////
+-			if ( meta->GetProperty( kXMP_NS_DM, "logComment", &utf8, kXMP_NoOptions ))
++			if ( meta->GetProperty( kXMP_NS_DM, "logComment", &utf8, 0 ))
+ 			{
+ 				LFA_Seek ( file, -128 + 97, SEEK_END );
+ 				ReconcileUtils::UTF8ToLatin1 ( utf8.c_str(), utf8.size(), &latin1 );
+ 				LFA_Write ( file, latin1.c_str(), MIN ( 30, (XMP_Int32)latin1.size() ) );
+ 			}
+ 			// genre ////////////////////////////////////////////////////////////////
+-			if ( meta->GetProperty( kXMP_NS_DM, "genre", &utf8, kXMP_NoOptions ))
++			if ( meta->GetProperty( kXMP_NS_DM, "genre", &utf8, 0 ))
+ 			{
+ 				XMP_Uns8 genreNo = 0;
+ 
+@@ -760,7 +760,7 @@ namespace ID3_Support 
+ 			}
+ 			
+ 			// trackNo ////////////////////////////////////////////////////////////
+-			if ( meta->GetProperty( kXMP_NS_DM, "trackNumber", &utf8, kXMP_NoOptions ))
++			if ( meta->GetProperty( kXMP_NS_DM, "trackNumber", &utf8, 0 ))
+ 			{
+ 				XMP_Uns8 trackNo = 0;
+ 				try
+--- source/XMPFiles/FormatSupport/RIFF_Support.cpp.orig	2014-08-31 20:39:29 UTC
++++ source/XMPFiles/FormatSupport/RIFF_Support.cpp
+@@ -604,7 +604,7 @@ static void exportXMPtoBextChunk( RIFF_MetaHandler* ha
+ 	// prepare buffer, need to know CodingHistory size as the only variable
+ 	XMP_Int32 bextBufferSize = MIN_BEXT_SIZE - 8; // -8 because of header
+ 	std::string value;
+-	if ( xmp->GetProperty( bextCodingHistory.ns, bextCodingHistory.prop, &value, kXMP_NoOptions ))
++	if ( xmp->GetProperty( bextCodingHistory.ns, bextCodingHistory.prop, &value, 0 ))
+ 	{
+ 		bextBufferSize += ((XMP_StringLen)value.size()) + 1 ; // add to size (and a trailing zero)
+ 	}
+@@ -616,35 +616,35 @@ static void exportXMPtoBextChunk( RIFF_MetaHandler* ha
+ 
+ 	// grab props, write into buffer, remove from XMP ///////////////////////////
+ 	// bextDescription ------------------------------------------------
+-	if ( xmp->GetProperty( bextDescription.ns, bextDescription.prop, &value, kXMP_NoOptions ) )
++	if ( xmp->GetProperty( bextDescription.ns, bextDescription.prop, &value, 0 ) )
+ 	{
+ 		setBextField( &value, (XMP_Uns8*) buffer, 0, 256 );
+ 		xmp->DeleteProperty( bextDescription.ns, bextDescription.prop)					;
+ 		chunkUsed = true;
+ 	}
+ 	// bextOriginator -------------------------------------------------
+-	if ( xmp->GetProperty( bextOriginator.ns , bextOriginator.prop, &value, kXMP_NoOptions ) )
++	if ( xmp->GetProperty( bextOriginator.ns , bextOriginator.prop, &value, 0 ) )
+ 	{
+ 		setBextField( &value, (XMP_Uns8*) buffer, 256, 32 );
+ 		xmp->DeleteProperty( bextOriginator.ns , bextOriginator.prop );
+ 		chunkUsed = true;
+ 	}
+ 	// bextOriginatorRef ----------------------------------------------
+-	if ( xmp->GetProperty( bextOriginatorRef.ns , bextOriginatorRef.prop, &value, kXMP_NoOptions ) )
++	if ( xmp->GetProperty( bextOriginatorRef.ns , bextOriginatorRef.prop, &value, 0 ) )
+ 	{
+ 		setBextField( &value, (XMP_Uns8*) buffer, 256+32, 32 );
+ 		xmp->DeleteProperty( bextOriginatorRef.ns , bextOriginatorRef.prop );
+ 		chunkUsed = true;
+ 	}
+ 	// bextOriginationDate --------------------------------------------
+-	if ( xmp->GetProperty( bextOriginationDate.ns , bextOriginationDate.prop, &value, kXMP_NoOptions ) )
++	if ( xmp->GetProperty( bextOriginationDate.ns , bextOriginationDate.prop, &value, 0 ) )
+ 	{
+ 		setBextField( &value, (XMP_Uns8*) buffer, 256+32+32, 10 );
+ 		xmp->DeleteProperty( bextOriginationDate.ns , bextOriginationDate.prop );
+ 		chunkUsed = true;
+ 	}
+ 	// bextOriginationTime --------------------------------------------
+-	if ( xmp->GetProperty( bextOriginationTime.ns , bextOriginationTime.prop, &value, kXMP_NoOptions ) )
++	if ( xmp->GetProperty( bextOriginationTime.ns , bextOriginationTime.prop, &value, 0 ) )
+ 	{
+ 		setBextField( &value, (XMP_Uns8*) buffer, 256+32+32+10, 8 );
+ 		xmp->DeleteProperty( bextOriginationTime.ns , bextOriginationTime.prop );
+@@ -652,7 +652,7 @@ static void exportXMPtoBextChunk( RIFF_MetaHandler* ha
+ 	}
+ 	// bextTimeReference ----------------------------------------------
+ 	// thanx to friendly byte order, all 8 bytes can be written in one go:
+-	if ( xmp->GetProperty( bextTimeReference.ns, bextTimeReference.prop, &value, kXMP_NoOptions ) )
++	if ( xmp->GetProperty( bextTimeReference.ns, bextTimeReference.prop, &value, 0 ) )
+ 	{
+ 		try
+ 		{
+@@ -675,7 +675,7 @@ static void exportXMPtoBextChunk( RIFF_MetaHandler* ha
+ 	xmp->DeleteProperty( bextVersion.ns, bextVersion.prop );
+ 
+ 	// bextUMID -------------------------------------------------------
+-	if ( xmp->GetProperty( bextUMID.ns, bextUMID.prop, &value, kXMP_NoOptions ) )
++	if ( xmp->GetProperty( bextUMID.ns, bextUMID.prop, &value, 0 ) )
+ 	{
+ 		std::string rawStr;
+ 	
+@@ -694,7 +694,7 @@ static void exportXMPtoBextChunk( RIFF_MetaHandler* ha
+ 	}
+ 
+ 	// bextCodingHistory ----------------------------------------------
+-	if ( xmp->GetProperty( bextCodingHistory.ns, bextCodingHistory.prop, &value, kXMP_NoOptions ) )
++	if ( xmp->GetProperty( bextCodingHistory.ns, bextCodingHistory.prop, &value, 0 ) )
+ 	{
+ 		std::string ascii;
+ 		convertToASCII( value.data(), (XMP_StringLen) value.size() , &ascii, (XMP_StringLen) value.size() );
