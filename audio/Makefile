@@ -322,12 +322,8 @@
     SUBDIR += hexter
     SUBDIR += hs-ALUT
     SUBDIR += hs-libmpd
-<<<<<<< HEAD
     SUBDIR += hs-OpenAL
-    SUBDIR += HVSC-Update
-=======
     SUBDIR += hts_engine-API
->>>>>>> 6d23e4136f530c9a3b8bc98db90a4c53c6c50b5d
     SUBDIR += hydrogen
     SUBDIR += hydrogen-devel
     SUBDIR += icecast-kh
@@ -493,7 +489,6 @@
     SUBDIR += lv2file
     SUBDIR += lvtk
     SUBDIR += lxmusic
-    SUBDIR += Maaate
     SUBDIR += mac
     SUBDIR += madfufw
     SUBDIR += madplay

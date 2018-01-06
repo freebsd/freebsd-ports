@@ -582,8 +582,6 @@
     SUBDIR += logtool
     SUBDIR += logwatch
     SUBDIR += lookat
-    SUBDIR += LPRng
-    SUBDIR += LPRngTool
     SUBDIR += lr
     SUBDIR += lscpu
     SUBDIR += lsof
@@ -1263,7 +1261,6 @@
     SUBDIR += udfclient
     SUBDIR += uefi-edk2-bhyve
     SUBDIR += uefi-edk2-bhyve-csm
-    SUBDIR += UEFITool
     SUBDIR += ufs_copy
     SUBDIR += uhidd
     SUBDIR += uif2iso
