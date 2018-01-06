@@ -1,0 +1,11 @@
+--- fog-digitalocean.gemspec.orig	2018-01-06 07:14:10 UTC
++++ fog-digitalocean.gemspec
+@@ -31,7 +31,7 @@ Gem::Specification.new do |s|
+       s.add_development_dependency(%q<mime-types>.freeze, [">= 0"])
+       s.add_development_dependency(%q<mime-types-data>.freeze, [">= 0"])
+       s.add_development_dependency(%q<rubocop>.freeze, [">= 0"])
+-      s.add_runtime_dependency(%q<fog-core>.freeze, ["~> 1.42"])
++      s.add_runtime_dependency(%q<fog-core>.freeze, [">= 1.42"])
+       s.add_runtime_dependency(%q<fog-json>.freeze, [">= 1.0"])
+       s.add_runtime_dependency(%q<fog-xml>.freeze, [">= 0.1"])
+       s.add_runtime_dependency(%q<ipaddress>.freeze, [">= 0.5"])
