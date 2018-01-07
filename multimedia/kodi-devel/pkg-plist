@@ -1194,13 +1194,14 @@ share/icons/hicolor/64x64/apps/kodi.png
 %%DATADIR%%/cmake/ProjectMacros.cmake
 %%DATADIR%%/media/Fonts/arial.ttf
 %%DATADIR%%/media/Fonts/teletext.ttf
-%%DATADIR%%/media/Splash.png
 %%DATADIR%%/media/banner.png
 %%DATADIR%%/media/icon120x120.png
 %%DATADIR%%/media/icon16x16.png
 %%DATADIR%%/media/icon256x256.png
 %%DATADIR%%/media/icon32x32.png
 %%DATADIR%%/media/icon48x48.png
+%%DATADIR%%/media/icon80x80.png
+%%DATADIR%%/media/splash.jpg
 %%DATADIR%%/privacy-policy.txt
 %%DATADIR%%/system/addon-manifest.xml
 %%DATADIR%%/system/colors.xml
@@ -1369,6 +1370,7 @@ share/icons/hicolor/64x64/apps/kodi.png
 %%DATADIR%%/system/shaders/GL/1.5/gl_videofilter_vertex.glsl
 %%DATADIR%%/system/shaders/GL/1.5/gl_yuv2rgb_basic.glsl
 %%DATADIR%%/system/shaders/GL/1.5/gl_yuv2rgb_vertex.glsl
+%%DATADIR%%/system/shaders/GL/4.0/gl_yuv2rgb_filter4.glsl
 %%DATADIR%%/system/shaders/convolution-4x4.glsl
 %%DATADIR%%/system/shaders/convolution-4x4_d3d.fx
 %%DATADIR%%/system/shaders/convolution-6x6.glsl
