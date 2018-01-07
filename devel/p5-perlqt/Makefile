@@ -2,6 +2,7 @@
 
 PORTNAME=	perlqt
 PORTVERSION=	${KDE4_VERSION}
+PORTREVISION=	1
 CATEGORIES=	devel kde kde-kde4 perl5
 PKGNAMEPREFIX=	p5-
 
@@ -15,6 +16,7 @@ USES=		cmake:outsource kde:4 perl5 tar:xz
 USE_KDE=	smokeqt qimageblitz
 USE_QT4=	corelib dbus gui network xml \
 		qmake_build moc_build uic_build rcc_build
+USE_CXXSTD=	gnu++98
 
 # Respect PREFIX
 CMAKE_ARGS+=	-DCUSTOM_PERL_SITE_ARCH_DIR=${PREFIX}/${SITE_ARCH_REL}
