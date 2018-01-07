@@ -2,6 +2,7 @@
 
 PORTNAME=	imageformats
 DISTVERSION=	${QT5_VERSION}
+PORTREVISION=	1
 CATEGORIES=	graphics
 PKGNAMEPREFIX=	qt5-
 
@@ -15,6 +16,6 @@ LIB_DEPENDS=	libjasper.so:graphics/jasper \
 
 USE_QT5=	core gui buildtools_build
 QT_DIST=	${PORTNAME}
-USES=		qmake
+USES=		localbase qmake
 
 .include <bsd.port.mk>
